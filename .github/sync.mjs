@@ -23,6 +23,7 @@ const CONFIG = {
   syncExt: new Set([".rb", ".sh"]), // 允许同步的文件类型
   onlySyncFixed: true, // 是否仅同步内容被修正过的文件
   lowPriority: parseBucketPriorityFile(),
+  rbSources: "rb-sources.csv",
 };
 const destFilesCache = new Map();
 
@@ -84,12 +85,8 @@ async function syncDir(src, dest, repo = "") {
     destFilesCache.set(destLowerCase, { dest, src: src.slice(CONFIG.tmpDir.length + 1), repo });
 
     if ([".rb", ".sh"].includes(ext)) {
-      if (!content) content = fs.readFileSync(src, "utf8");
+      if (!content) content = fs.readFileSync(src, "utf8").trim();
       const rawContent = content;
-
-      if (".rb" === ext) {
-        content = content.replaceAll("\r\n", "\n").trim();
-      }
 
       if (basename.startsWith("node")) {
         content = content.replace(/(https:\/\/nodejs\.org\/dist\/)/gim, "https://registry.npmmirror.com/-/binary/node/");
@@ -143,8 +140,19 @@ async function gitCommit() {
 
 function updateInstall() {
   const installUrl = `${isDebug ? "https://ghproxy.com/" : ""}https://raw.githubusercontent.com/Homebrew/install/master/install.sh`;
-  execSync(`curl  -fsSLO ${installUrl}`);
-  fs.readFileSync("install.sh", "utf8").replaceAll("https://github.com/Homebrew/", "https://ghproxy.com/github.com/Homebrew/");
+  execSync(`curl -fsSLO ${installUrl}`);
+  const content = fs.readFileSync("install.sh", "utf8")
+    .replaceAll("https://github.com/Homebrew/", "https://ghproxy.com/github.com/Homebrew/");
+  fs.writeFileSync('install.sh', content, 'utf8');
+}
+
+function outputSources() {
+  const sources = [];
+  for (const item of destFilesCache.values()) {
+    sources.push(`${item.repo}, ${item.src}`);
+  }
+
+  if (sources.length > 0) fs.writeFileSync(CONFIG.rbSources, sources.join('\n'), 'utf8');
 }
 
 async function sync() {
@@ -173,7 +181,8 @@ async function sync() {
     gitCommit();
   }
 
-  console.log("Done!", bucketFiles, scriptsFiles, `Total: ${destFilesCache.size}`);
+  outputSources();
+  console.log("Done!", bucketFiles, `Total: ${destFilesCache.size}`);
 }
 
 sync();

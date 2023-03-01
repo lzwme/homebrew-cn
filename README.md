@@ -22,16 +22,22 @@ brew install https://ghproxy/raw.githubusercontent.com/lzwme/homebrew-cn/main/Fo
 
 ## 国内 Macbook 安装与配置 Homebrew 参考
 
-执行如下命令进行安装：
+执行如下命令进行安装和配置：
 
 ```bash
 # 安装 Homebrew
-
+/bin/bash -c "$(curl -fsSL https://ghproxy.com/raw.githubusercontent.com/lzwme/homebrew-cn/HEAD/install.sh)"
 
 # 添加 `lzwme/homebrew-cn` 仓库源
 brew tap lzwme/cn
 
-# todo: 设置...
+# 设置环境变了，指定二进制预编译包使用阿里云镜像
+# https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles 也可设置为清华源
+echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles' >> ~/.bash_profile
+source ~/.bash_profile
+
+# 更新
+brew update
 ```
 
 ## Sync From
