@@ -21,7 +21,7 @@ const CONFIG = {
   ],
   filter: /\.gitkeep|__/,
   syncExt: new Set([".rb", ".sh"]), // 允许同步的文件类型
-  onlySyncFixed: true, // 是否仅同步内容被修正过的文件
+  onlySyncFixed: false, // 是否仅同步内容被修正过的文件
   lowPriority: parseBucketPriorityFile(),
   rbSources: "rb-sources.csv",
 };
@@ -82,7 +82,6 @@ async function syncDir(src, dest, repo = "") {
         return total;
       }
     }
-    destFilesCache.set(destLowerCase, { dest, src: src.slice(CONFIG.tmpDir.length + 1), repo });
 
     if ([".rb", ".sh"].includes(ext)) {
       if (!content) content = fs.readFileSync(src, "utf8").trim();
@@ -104,6 +103,8 @@ async function syncDir(src, dest, repo = "") {
     } else {
       fs.writeFileSync(dest, fs.readFileSync(src));
     }
+
+    destFilesCache.set(destLowerCase, { dest, src: src.slice(CONFIG.tmpDir.length + 1), repo });
 
     return ++total;
   }
