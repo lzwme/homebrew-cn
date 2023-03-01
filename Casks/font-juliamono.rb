@@ -1,0 +1,26 @@
+cask "font-juliamono" do
+  version "0.048"
+  sha256 "27cd3846a263a6f4b1d341b43d18cdf70608bd09ec017594b196891965dd2753"
+
+  url "https://ghproxy.com/https://github.com/cormullion/juliamono/releases/download/v#{version}/JuliaMono.tar.gz"
+  name "JuliaMono"
+  desc "Monospaced typeface designed for programming in Julia"
+  homepage "https://github.com/cormullion/juliamono"
+
+  font "JuliaMono-Black.ttf"
+  font "JuliaMono-BlackItalic.ttf"
+  font "JuliaMono-Bold.ttf"
+  font "JuliaMono-BoldItalic.ttf"
+  font "JuliaMono-BoldLatin.ttf"
+  font "JuliaMono-ExtraBold.ttf"
+  font "JuliaMono-ExtraBoldItalic.ttf"
+  font "JuliaMono-Light.ttf"
+  font "JuliaMono-LightItalic.ttf"
+  font "JuliaMono-Medium.ttf"
+  font "JuliaMono-MediumItalic.ttf"
+  font "JuliaMono-Regular.ttf"
+  font "JuliaMono-RegularItalic.ttf"
+  font "JuliaMono-RegularLatin.ttf"
+  font "JuliaMono-SemiBold.ttf"
+  font "JuliaMono-SemiBoldItalic.ttf"
+end
