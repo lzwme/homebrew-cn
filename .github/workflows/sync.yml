@@ -1,0 +1,17 @@
+name: Sync
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '5 0 * * *'
+jobs:
+  sync:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: sync
+        run: node .github/sync.mjs
+        env:
+          SYNC: 1
