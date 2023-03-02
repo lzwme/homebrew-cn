@@ -31,7 +31,7 @@ brew install https://ghproxy.com/github.com/lzwme/homebrew-cn/blob/main/Formula/
 # 添加 `lzwme/homebrew-cn` 仓库源
 brew tap lzwme/cn
 
-# 设置环境变了，指定二进制预编译包使用阿里云镜像
+# 设置环境变量，指定二进制预编译包使用阿里云镜像
 # https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles 也可设置为清华源
 echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles' >> ~/.bash_profile
 source ~/.bash_profile
