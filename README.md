@@ -17,7 +17,7 @@ brew search switchhosts
 brew install lzwme/cn/switchhosts
 
 # 也可以一次性从 rb 应用文件安装 (后续若有更新也只能手动检查判断)
-brew install https://ghproxy/raw.githubusercontent.com/lzwme/homebrew-cn/main/Formula/<formula>.rb
+brew install https://ghproxy.com/github.com/lzwme/homebrew-cn/blob/main/Formula/<formula>.rb
 ```
 
 ## 国内 Macbook 安装与配置 Homebrew 参考
