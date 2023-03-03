@@ -3,18 +3,18 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https://docs.dstack.ai/"
-  url "https://files.pythonhosted.org/packages/92/de/8fa6143ce22dd1f8c4506308372b121113d25ad48f27f06e933af244951e/dstack-0.1.tar.gz"
-  sha256 "4812eae5589d14cd8962185dfe7bfa109d1d41045a082d1d06a8743648bb8d69"
+  url "https://files.pythonhosted.org/packages/d7/1c/41a171ebe14bfa5d2084e75baa580bb6800732c6c722ec50ed3502827264/dstack-0.1.2.tar.gz"
+  sha256 "70f5fbb22e52e2f9533cf07808cb53794ac215904065128ac2706e6765592172"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e068083e61a949e2637b45d0cbb9c61126f86e6190c533c4f1e21b95acf9b96c"
-    sha256 cellar: :any,                 arm64_monterey: "3a5d49302e1fd3bc970ea9ce1866a87b7b85dac5c8bfe57d25f3209c1ecb7edc"
-    sha256 cellar: :any,                 arm64_big_sur:  "93bb524d2258218c245e3edd41079853611e740137462cf31ecf1a76569abfb2"
-    sha256 cellar: :any,                 ventura:        "f4f3caff6edcff2c2a7e5e92838de63f10a4f81a9e7533fa67bf6d618d319806"
-    sha256 cellar: :any,                 monterey:       "d4920ebc7f913a6a03cfd85105111777000fcd5b828aa226837908ed52ed2442"
-    sha256 cellar: :any,                 big_sur:        "df67e3c62e5e18c3c9ad5cf33ccafe5d90efde4c9ce88d109e4c2f936d33bd72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e0bc7025d5549a763ea82320887e13943216b38e3d71950899ad564ced0d9cc"
+    sha256 cellar: :any,                 arm64_ventura:  "6084c3981b1f981c580cd5532ebfbcbbe854572995129177d77a9f7bf2689866"
+    sha256 cellar: :any,                 arm64_monterey: "d754203a9c3c309c761c8f5eb63f4d7a16b20735c75460bdc828c371f9a5344c"
+    sha256 cellar: :any,                 arm64_big_sur:  "f18f701c8202771552799a737e34c3d33fa9f6b3b4a75c77cf809ecd5465ff2e"
+    sha256 cellar: :any,                 ventura:        "dae5655a0eea22931db869bb3bf2720640e0b380c59f33eaf506629477f87c41"
+    sha256 cellar: :any,                 monterey:       "652bd1a046fb1ec14732c4791abeafcacf132fa341f1a5f0951f3be6b1c98a1f"
+    sha256 cellar: :any,                 big_sur:        "4a84f8db13a033c9600bd9f0ef6f7ec9013c0241ae9bd4157570f4b6f3c4079a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "44a4207a7c2036320b37783640425deecd70553fabe52b8a812769c213a3518b"
   end
 
   depends_on "rust" => :build # for cryptography
@@ -46,13 +46,13 @@ class Dstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/c0/63/5dd782da5653528c35ca2ec7f44a41ec3121cda8701f14c6416912118dc6/boto3-1.26.69.tar.gz"
-    sha256 "eb8cde24a4c5755c35126e8cd460e6b51c63d04292419e7e95721232720c7e5b"
+    url "https://files.pythonhosted.org/packages/00/25/556635bff0509b43f99d11ff6c258a8f39827a82330a705a20206df6eabb/boto3-1.26.81.tar.gz"
+    sha256 "898fa38387e2f5a9136aec6cf9caa0a44ddbf78f1c4aaa33f7b1611ac44b4a4d"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/db/31/720ac07bd096fdd24fbeb42111638b41fd220e618790b94ada77a6bd1f3e/botocore-1.29.69.tar.gz"
-    sha256 "7e1bebca013544fbc298cb58603bfccd5f71b49c720a5c33c07cf5dfc8145a1f"
+    url "https://files.pythonhosted.org/packages/91/cc/5518bc41e62aec1e12518f443ba5bacc6bdaa8d78700bde0167d0f57ca7c/botocore-1.29.81.tar.gz"
+    sha256 "b140c865fce64097c54cba37420c27f24b26cdec0fc00ce83ad439d3bdb053e1"
   end
 
   resource "certifi" do
@@ -86,8 +86,8 @@ class Dstack < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/dd/03/bf64108dfff38ed6d6201caca18bfeaf1edb3a8a2a4ab1702a7d092b3baf/fastapi-0.91.0.tar.gz"
-    sha256 "ff2fa93af3f2f982b07b5f96e8512565b3ef0e5f8f02469dbfd6bc27f6fd9a9e"
+    url "https://files.pythonhosted.org/packages/11/92/6577adcb71d85378700765b5298929ac0fcafaa47a7c39bdc205289d9c74/fastapi-0.92.0.tar.gz"
+    sha256 "023a0f5bd2c8b2609014d3bba1e14a1d7df96c6abea0a73070621c9862b9a4de"
   end
 
   resource "git-url-parse" do
@@ -101,8 +101,8 @@ class Dstack < Formula
   end
 
   resource "GitPython" do
-    url "https://files.pythonhosted.org/packages/ef/8d/50658d134d89e080bb33eb8e2f75d17563b5a9dfb75383ea1a78e1df6fff/GitPython-3.1.30.tar.gz"
-    sha256 "769c2d83e13f5d938b7688479da374c4e3d49f71549aaf462b646db9602ea6f8"
+    url "https://files.pythonhosted.org/packages/5f/11/2b0f60686dbda49028cec8c66bd18a5e82c96d92eef4bc34961e35bb3762/GitPython-3.1.31.tar.gz"
+    sha256 "8ce3bcf69adfdf7c7d503e78fd3b1c492af782d58893b650adb2ac8912ddd573"
   end
 
   resource "h11" do
@@ -131,8 +131,8 @@ class Dstack < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/33/e9/ac8a93e9eda3891ecdfecf5e01c060bbd2c44d4e3e77efc83b9c7ce9db32/markdown-it-py-2.1.0.tar.gz"
-    sha256 "cf7e59fed14b5ae17c0006eff14a2d9a00ed5f3a846148153899a0224e2c07da"
+    url "https://files.pythonhosted.org/packages/e4/c0/59bd6d0571986f72899288a95d9d6178d0eebd70b6650f1bb3f0da90f8f7/markdown-it-py-2.2.0.tar.gz"
+    sha256 "7c9a5e412688bc771c67432cbfebcdd686c93ce6484913dccf06cb5a0bea35a1"
   end
 
   resource "MarkupSafe" do
@@ -143,6 +143,11 @@ class Dstack < Formula
   resource "mdurl" do
     url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/47/d5/aca8ff6f49aa5565df1c826e7bf5e85a6df852ee063600c1efa5b932968c/packaging-23.0.tar.gz"
+    sha256 "b6ad297f8907de0fa2fe1ccbd26fdaf387f5f47c7275fedf8cce89f99446cf97"
   end
 
   resource "paramiko" do
@@ -171,8 +176,8 @@ class Dstack < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/53/17/34e54e352f6a3d304044e52d5ddd5cd621a62ec8fb7af08cc73af65dd3e1/pydantic-1.10.4.tar.gz"
-    sha256 "b9a3859f24eb4e097502a3be1fb4b2abb79b6103dd9e2e0edb70613a4459a648"
+    url "https://files.pythonhosted.org/packages/28/59/5d2fc3499d9ce8ce48ee7e00f043d5cc429a9198bd96c3512809428ade15/pydantic-1.10.5.tar.gz"
+    sha256 "9e337ac83686645a46db0e825acceea8e02fca4062483f40e9ae178e8bd1103a"
   end
 
   resource "Pygments" do
@@ -210,6 +215,11 @@ class Dstack < Formula
     sha256 "125d96d20c92b946b983d0d392b84ff945461e5a06d3867e9f9e575f8697b67f"
   end
 
+  resource "rich-argparse" do
+    url "https://files.pythonhosted.org/packages/97/00/354a53222e3716e6cbfd975a3d2c14e61db75701cb14a522ffe2f79fc51a/rich_argparse-1.0.0.tar.gz"
+    sha256 "a1a00a8a75b3c66afbd38e8611d307f95afe5311dc0e63323cf591abb4183f32"
+  end
+
   resource "s3transfer" do
     url "https://files.pythonhosted.org/packages/e1/eb/e57c93d5cd5edf8c1d124c831ef916601540db70acd96fa21fe60cef1365/s3transfer-0.6.0.tar.gz"
     sha256 "2ed07d3866f523cc561bf4a00fc5535827981b117dd7876f036b0c1aca42c947"
@@ -231,13 +241,13 @@ class Dstack < Formula
   end
 
   resource "SQLAlchemy" do
-    url "https://files.pythonhosted.org/packages/f1/e7/0152db23d667385d6be69d189de6a3c63d660096faa906b7fb013ee46b23/SQLAlchemy-2.0.3.tar.gz"
-    sha256 "c2b924f6d0162ed1c0d8f47db1e56498702b1c3c953ad84f0eefbf5b4e53bb05"
+    url "https://files.pythonhosted.org/packages/12/31/dc22e2255cc148423b02a1e76fabb94df522b1c2ec68c293f44a66309fa1/SQLAlchemy-2.0.4.tar.gz"
+    sha256 "95a18e1a6af2114dbd9ee4f168ad33070d6317e11bafa28d983cc7b585fe900b"
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/fc/b1/314fc4a9c937f5eac43ca2a5123aa886180482adb9a79716cd9f9c6365c5/starlette-0.24.0.tar.gz"
-    sha256 "7925947f177a19e906c6ace10f07c64c4f9fdf7d509caaac6589f7cc0cfd95f3"
+    url "https://files.pythonhosted.org/packages/3b/89/f873d6392441a8be9bcbc0abbc92aa73849879e72565331bd9b54cfb8675/starlette-0.25.0.tar.gz"
+    sha256 "854c71e73736c429c2bdb07801f2c76c9cba497e7c3cf4988fde5e95fe4cdb3c"
   end
 
   resource "tqdm" do
@@ -266,11 +276,13 @@ class Dstack < Formula
 
   test do
     system "git", "init", "--initial-branch=main"
-    expected = "No tracked branch configured for branch main"
-    assert_equal expected, shell_output("#{bin}/dstack init 2>&1", 1).chomp
+
+    expected = "No remote branch configured for branch main"
+    output = shell_output("#{bin}/dstack init 2>&1", 1).chomp
+    assert_match expected, output
 
     output = shell_output("#{bin}/dstack tags add -a #{testpath} 2>&1 brewtest", 1).chomp
-    assert_equal "No tracked branch configured for branch main", output
+    assert_match expected, output
 
     assert_match version.to_s, shell_output("#{bin}/dstack --version")
   end

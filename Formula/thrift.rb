@@ -4,9 +4,9 @@ class Thrift < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://www.apache.org/dyn/closer.lua?path=thrift/0.18.0/thrift-0.18.0.tar.gz"
-    mirror "https://archive.apache.org/dist/thrift/0.18.0/thrift-0.18.0.tar.gz"
-    sha256 "7c19389cb7910a20e58b8e46903c8c1a36353008f9fcc1b03f748accf9b5f3e1"
+    url "https://www.apache.org/dyn/closer.lua?path=thrift/0.18.1/thrift-0.18.1.tar.gz"
+    mirror "https://archive.apache.org/dist/thrift/0.18.1/thrift-0.18.1.tar.gz"
+    sha256 "04c6f10e5d788ca78e13ee2ef0d2152c7b070c0af55483d6b942e29cff296726"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -16,13 +16,13 @@ class Thrift < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "066e17da8cc768ef4d7a824a91fb8109e07a3e515dc389ba587a9d13b86590de"
-    sha256 cellar: :any,                 arm64_monterey: "2cea6a1b7ecfbb46a6a0dbb01fd0e3c0af390962588f6a259b9f3c1c058418bd"
-    sha256 cellar: :any,                 arm64_big_sur:  "a4fcedab0b6865969910c044a1338e00930a2556ad5bb4459980ef30c7b96b38"
-    sha256 cellar: :any,                 ventura:        "8399a41321ed5c4b446d8cfcfd82996730051c5264193ca1cf3aa811591a7fa8"
-    sha256 cellar: :any,                 monterey:       "201a2f5ea640aeb581222eb80074f77353ee4f9232de8968343569d5289759b9"
-    sha256 cellar: :any,                 big_sur:        "6c2d26ae8aefe3fd9289c3f4bee11b0d7b8cac64dd65e398594f980f609f925b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e0278c5a7fbbbd5c8fc233a40733145f7446398f0f15cf25403de70db6ae1df"
+    sha256 cellar: :any,                 arm64_ventura:  "82591c3d842a3cadcb1b639204e84542de312863b61513a1dd8a72c542a96188"
+    sha256 cellar: :any,                 arm64_monterey: "932ab09d7b343ebc02f0661b305d94dc69770a37b403161256f9ac4778ab5c69"
+    sha256 cellar: :any,                 arm64_big_sur:  "d2f6a0b9cc82d3b72562915947fee1c6b483ffa6b87e57013c3f3438c4e33910"
+    sha256 cellar: :any,                 ventura:        "ebfa59b9d51bd2558445c7bbeb3ca17255718a42ab92ddacd56b5c2dec53a689"
+    sha256 cellar: :any,                 monterey:       "a7831c8263916b6046b2683e1367ca6787e2561c9ce66db090dd7517f2834201"
+    sha256 cellar: :any,                 big_sur:        "20da9a6b17c787d33ecaa1e6960591f60db7afd16237d7ecc1c23bda55788704"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf0617a356f75b693bac1428c20c96353071ae0f1a4c7c33fab1e884c964469f"
   end
 
   head do

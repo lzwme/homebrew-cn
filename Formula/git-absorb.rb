@@ -6,19 +6,19 @@ class GitAbsorb < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d0f3d41d8445e31714d8d66f0d1a0f6aae2e2299f1f025e3c415c3d11991bd00"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "83c16e3ffef3dd481430b749205ae3641a59afefb9310e47e1115ff69b74af3d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "aa6b23c233a0d98cfb89d4bb176fdbe2df7b50dd4ee5a2240bceaae122f9a75c"
-    sha256 cellar: :any_skip_relocation, ventura:        "77884b0a9421cc5c48500e3f0b628b32267d6f8b1367dbb70c48910a4376a232"
-    sha256 cellar: :any_skip_relocation, monterey:       "f25d3d5001d76c1b63b81fce361edc226715dc836976db61a12f6f549357544e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fa3c6be5f0a957b0b8bb09c747fe53edfc887b7ee54de7ffdeafe0894e4dc737"
-    sha256 cellar: :any_skip_relocation, catalina:       "a9477274dcab704bad3fe12491219cab7ceb34e86f33837bc6f167bac360b281"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03f77860b7c154728702b956ac364f0d063384272cca1c2f9af915fa8adca56f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "f678d1bc4450f8c028afedde10949fd35b44ac7bd591fb5b4e5d0b1239183fcf"
+    sha256 cellar: :any,                 arm64_monterey: "6e03cfe030c55dcbf0511102585a15b35215c09cb7772126caf85a1b02163c15"
+    sha256 cellar: :any,                 arm64_big_sur:  "80462448e675d5204cd6d689b6148a5cc9887a8cd906eb6fe303734e571aaaf9"
+    sha256 cellar: :any,                 ventura:        "ce2e708695292d3b8e917e8a5dc0193d8477391f6ad1eb014858ea3554e00332"
+    sha256 cellar: :any,                 monterey:       "58e08d227361fb9ba3673db8d24fc7ab938be1d23273522eb21bb123a733c2e0"
+    sha256 cellar: :any,                 big_sur:        "8a78cb69ba8dd23088fcdb9cbe16482d0f6f79b35472945ae40d132b5a612d0d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b4a50cb88696997435a845c23d5f4ece11fbaf4bcc7dbaa7de3bd8c6300a415"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
-
-  uses_from_macos "zlib"
+  depends_on "libgit2"
 
   def install
     system "cargo", "install", *std_cargo_args
@@ -42,5 +42,13 @@ class GitAbsorb < Formula
     (testpath/"test").write "bar"
     system "git", "add", "test"
     system "git", "absorb"
+
+    linkage_with_libgit2 = (bin/"git-absorb").dynamically_linked_libraries.any? do |dll|
+      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
+
+      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
+    end
+
+    assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."
   end
 end

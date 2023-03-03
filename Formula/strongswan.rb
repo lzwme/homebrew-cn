@@ -4,8 +4,8 @@ class Strongswan < Formula
   license "GPL-2.0-or-later"
 
   stable do
-    url "https://download.strongswan.org/strongswan-5.9.9.tar.bz2"
-    sha256 "5e16580998834658c17cebfb31dd637e728669cf2fdd325460234a4643b8d81d"
+    url "https://download.strongswan.org/strongswan-5.9.10.tar.bz2"
+    sha256 "3b72789e243c9fa6f0a01ccaf4f83766eba96a5e5b1e071d36e997572cf34654"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -20,12 +20,12 @@ class Strongswan < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "b807171b7233a19e5aff90c8e894fe13498ddf99cb91725282789a9307d47ef4"
-    sha256 arm64_monterey: "8e3359440d4fb6cacdc441bc6012e961e600c2a1dc3fe3b3ed9139f94afdc24d"
-    sha256 arm64_big_sur:  "0842335933de43099b650a7f824e18969d06057038e2dae03550bf523e61847b"
-    sha256 ventura:        "525ca8f4645fa25890dd0274c1d52c6582cd4139bbee844bd9bbe1d81bfb6769"
-    sha256 monterey:       "7acb116d50bde511af63e743bb7ebfb77814ae80874768fae53a428ed9a9764c"
-    sha256 big_sur:        "9dca837e856c501e852870fac0b46dc83e838e4023ffb3f82717bf967620e9c8"
+    sha256 arm64_ventura:  "7f8dfb65a6b80fd094681254964cb83ef3a53f450810e216a09ded77b9e21c24"
+    sha256 arm64_monterey: "458115e28f8d288d0bef09aae6f58633267d09828b9f707afa078df91667b3c1"
+    sha256 arm64_big_sur:  "681d0298881986ea6783881549fb54ffc4d0a2a7a1149a7a3d90fbb3cb211275"
+    sha256 ventura:        "abce93609425fff9d80e69280895bfce4da5f5d4df5a55f84521615500a81dc0"
+    sha256 monterey:       "1573bed24c2dfa52eabaa7bf1321d4c106359a5454837c62fc956e0f316e72fb"
+    sha256 big_sur:        "d4da4b2f209b28820ee6422a9739134791499802a61e5ebff2757743e71e9c13"
   end
 
   head do

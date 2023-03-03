@@ -2,18 +2,18 @@ class Cbmc < Formula
   desc "C Bounded Model Checker"
   homepage "https://www.cprover.org/cbmc/"
   url "https://github.com/diffblue/cbmc.git",
-      tag:      "cbmc-5.77.0",
-      revision: "e1e7dc7426168bca56ee92bf1513053c7db99317"
+      tag:      "cbmc-5.78.0",
+      revision: "a8abbf157233e33347dee68e6e3bfee1e385d208"
   license "BSD-4-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "453919f71d38db4f44c3974ac70659af3300c8eacca7bc322dbbf395b88f73c6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "de82c8d75c966a84fc3b42eed83b7a2f20a997d7b084c4a5ce6f5651ab9531d7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "53ec42a725291b232fc60048c406889b81fa6e9a3802fb4ccc664cd5333aff30"
-    sha256 cellar: :any_skip_relocation, ventura:        "eaab1f626bcaddff3ecf54b06dd59e359baf8409b497f7a9b17001a9f2bb5525"
-    sha256 cellar: :any_skip_relocation, monterey:       "714c16a692750666f5248c3aa5d149b6a9629e6374ab892e1dc76244f782f4e2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "30740c86337d468bb57dd10af2fb05bdd8c6e1e315766571b217ee8f957e8e9c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0ca64c974ca35935ca175799276a5e2dd21ea09ae77da8b8df25b664bc6fef1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "be173d332a7e2e72a2273afb9c3c6216c7c7aa4b0edacf0e3c409c6ab4227986"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e35093624b33a6ac96e3feb9ee3a3825e948fa503c8c9a39c8748f78bb82f555"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "087ff26ff208888f73db435dc12d84bbf279f3318e70f3b7dd78f6705a3e3067"
+    sha256 cellar: :any_skip_relocation, ventura:        "a19b5ad3ebe762e15ca5edf6d1a57fb597ed0b85b1d47269b3b2b6bcf85b7752"
+    sha256 cellar: :any_skip_relocation, monterey:       "ba00ed3a9068ca7b56433d5aa5c02867f1666296f689daf83b6d1b99ca9914d4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f4bbffde31ceda4e3411aa109cf1d573af3e61f750d325466b8c1f72f8ddc059"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80409e3a26b297dc82f386f204460eb22a9db69b8d4c660dc17b94427e71f850"
   end
 
   depends_on "cmake" => :build
@@ -27,7 +27,7 @@ class Cbmc < Formula
   fails_with gcc: "5"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-Dsat_impl=minisat2;cadical", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 

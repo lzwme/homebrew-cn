@@ -6,18 +6,19 @@ class GitCliff < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "140c4efcb8b45ef6e10c03149cbe389902d5760975946735b2332bd4ab0ab1d8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "86a236c3ee1bcc79834b2577f2390294e35cab2dec7d071dff068c2e7f113a94"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b691a7e991fb2ae72769ad154554950b5146814f7770ddd929418ad2585f6e04"
-    sha256 cellar: :any_skip_relocation, ventura:        "ff442e44188be57039d40a8f699a5ea1a435afb48b369f7ebf619cc8fc2717bd"
-    sha256 cellar: :any_skip_relocation, monterey:       "c6005bd7415db2a68e38c465a086b8ba4b728f31d108b00d27b65ddfad8a1115"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cd37cb16494736347f879cdc3b6caae77fa5d831e6c129525f56e51197d9e554"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5f6579d52cdb2eb44b30928ce0d892d4e5b8d774f3f2722f0b9100772d79f23"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "c08ca9f5c00f3baab1a60a19eeaaf73ee7f45e8e1c26fa67b9bb47c37bae45bf"
+    sha256 cellar: :any,                 arm64_monterey: "27be94c69e032f84359cc08d41d48871eea8314f10e26b41d476e34ba90d8709"
+    sha256 cellar: :any,                 arm64_big_sur:  "d35d6f738bf2fe0c5356cd31864281d916065d17f81b975d2467a034b247fa46"
+    sha256 cellar: :any,                 ventura:        "fc9eab446ba8ea16a5130b328ab0e63b66ca235203858be192dd875e62f35948"
+    sha256 cellar: :any,                 monterey:       "30ca3297bf40e449fa42542a033e85117ef9c4ac931535e2bbf6b195d61b9a95"
+    sha256 cellar: :any,                 big_sur:        "5bd60af9b0798824bcffb767e501e30f92fc2c33c7e7c6bdd29734c14a36e073"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e91b344b9cf48f8fbdbb8454165f190c637400e8b692ba2af91c4a37bfacd91a"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
-
-  uses_from_macos "zlib"
+  depends_on "libgit2"
 
   def install
     system "cargo", "install", *std_cargo_args(path: "git-cliff")
@@ -38,5 +39,13 @@ class GitCliff < Formula
     system "git", "commit", "-m", "chore: initial commit"
     changelog = "### Miscellaneous Tasks\n\n- Initial commit"
     assert_match changelog, shell_output("git cliff")
+
+    linkage_with_libgit2 = (bin/"git-cliff").dynamically_linked_libraries.any? do |dll|
+      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
+
+      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
+    end
+
+    assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."
   end
 end

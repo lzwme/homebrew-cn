@@ -2,8 +2,8 @@ class Testkube < Formula
   desc "Kubernetes-native framework for test definition and execution"
   homepage "https://testkube.io"
   # testkube should only be updated every 5 releases on multiples of 5
-  url "https://ghproxy.com/https://github.com/kubeshop/testkube/archive/v1.9.15.tar.gz"
-  sha256 "d7b3177c7360a7f2513fa2eda3ab8c1abc73fcec2a09d31ae43e54805a8b714c"
+  url "https://ghproxy.com/https://github.com/kubeshop/testkube/archive/v1.9.20.tar.gz"
+  sha256 "f1ad7ac434c996e15fa63d83ad7e351654952c24863dee1d04ca2e17e43a9fb1"
   license "MIT"
   head "https://github.com/kubeshop/testkube.git", branch: "main"
 
@@ -13,13 +13,13 @@ class Testkube < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "95c8aa11915d022e7d6f70af997571fc0794b00bc71666db0a32aa8a43e48962"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "95c8aa11915d022e7d6f70af997571fc0794b00bc71666db0a32aa8a43e48962"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "95c8aa11915d022e7d6f70af997571fc0794b00bc71666db0a32aa8a43e48962"
-    sha256 cellar: :any_skip_relocation, ventura:        "81a75056d831244ac8e208fb23bd447b75bab17be08953378ca1a92c3cd467ac"
-    sha256 cellar: :any_skip_relocation, monterey:       "81a75056d831244ac8e208fb23bd447b75bab17be08953378ca1a92c3cd467ac"
-    sha256 cellar: :any_skip_relocation, big_sur:        "81a75056d831244ac8e208fb23bd447b75bab17be08953378ca1a92c3cd467ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95ae2533ea3bdc0ae0f1fefbbb0f5d5121a4606c85baf38d907fbb1c0f60b907"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "93bece5ae4981c53385cc4f3f1d806056be8cf629b89936644753d8f2f943c6b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "93bece5ae4981c53385cc4f3f1d806056be8cf629b89936644753d8f2f943c6b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "93bece5ae4981c53385cc4f3f1d806056be8cf629b89936644753d8f2f943c6b"
+    sha256 cellar: :any_skip_relocation, ventura:        "0a4ef3c70d4168e612457a7bc9e686791de99691907b6bfd9d0726130da0b087"
+    sha256 cellar: :any_skip_relocation, monterey:       "99c447877f8bad40667f6e9c3753a9e7e80bf50193ad9497967d47cd8da4deec"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0a4ef3c70d4168e612457a7bc9e686791de99691907b6bfd9d0726130da0b087"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4615e9fce69e5e25f5f88fb6b67fa82c39a9a9927dd626b9c105d7b0e43c79d"
   end
 
   depends_on "go" => :build
@@ -44,7 +44,7 @@ class Testkube < Formula
 
   test do
     output = shell_output("#{bin}/kubectl-testkube get tests 2>&1", 1)
-    assert_match("error: invalid configuration: no configuration has been provided", output)
+    assert_match("unknown context type", output)
 
     output = shell_output("#{bin}/kubectl-testkube help")
     assert_match("Testkube entrypoint for kubectl plugin", output)

@@ -1,18 +1,18 @@
 class VirustotalCli < Formula
   desc "Command-line interface for VirusTotal"
   homepage "https://github.com/VirusTotal/vt-cli"
-  url "https://ghproxy.com/https://github.com/VirusTotal/vt-cli/archive/0.11.1.tar.gz"
-  sha256 "76e546a612a1eee0d0522be8dd8cd9d9c4ae42645417335bd05038d835befbd1"
+  url "https://ghproxy.com/https://github.com/VirusTotal/vt-cli/archive/0.12.0.tar.gz"
+  sha256 "9214228416e7748d1eff4ef62cbc7f784c60a14a3224de26799df179d09994ed"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d1f742b449fb60a15fbdfac466d785ac4c1ed31fb28b456b0d214c8ea765ef11"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d1f742b449fb60a15fbdfac466d785ac4c1ed31fb28b456b0d214c8ea765ef11"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d1f742b449fb60a15fbdfac466d785ac4c1ed31fb28b456b0d214c8ea765ef11"
-    sha256 cellar: :any_skip_relocation, ventura:        "9b5920d97a5b8ef4a0df7c02f46add85084becffc8c1dd466b8dcb40f90dfcd5"
-    sha256 cellar: :any_skip_relocation, monterey:       "9b5920d97a5b8ef4a0df7c02f46add85084becffc8c1dd466b8dcb40f90dfcd5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9b5920d97a5b8ef4a0df7c02f46add85084becffc8c1dd466b8dcb40f90dfcd5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1b0a3cb29e4db006518a120bf4bdfa4f972d192c74b0c238b3c15fafc860cfb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "60e69ef5580692fc032b137662d1d12efce9cce6c72232d0f14595508b5aef1c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "60e69ef5580692fc032b137662d1d12efce9cce6c72232d0f14595508b5aef1c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "60e69ef5580692fc032b137662d1d12efce9cce6c72232d0f14595508b5aef1c"
+    sha256 cellar: :any_skip_relocation, ventura:        "8aabe8fb702a176f2ac5f455659433f797cd2d4f37e028d9af1e2c4a668f1162"
+    sha256 cellar: :any_skip_relocation, monterey:       "8aabe8fb702a176f2ac5f455659433f797cd2d4f37e028d9af1e2c4a668f1162"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8aabe8fb702a176f2ac5f455659433f797cd2d4f37e028d9af1e2c4a668f1162"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d9d351ff0ee7f1e6b422911a3f98be5899b2e96121bfef4f9d07c136159f889"
   end
 
   depends_on "go" => :build

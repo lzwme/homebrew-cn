@@ -1,8 +1,8 @@
 class Alluxio < Formula
   desc "Open Source Memory Speed Virtual Distributed Storage"
   homepage "https://www.alluxio.io/"
-  url "https://downloads.alluxio.io/downloads/files/2.9.1/alluxio-2.9.1-bin.tar.gz"
-  sha256 "6f964be791c29d8c47bd7a87c798d668eade293d324543b51eefb8f5a3f7f6b1"
+  url "https://downloads.alluxio.io/downloads/files/2.9.2/alluxio-2.9.2-bin.tar.gz"
+  sha256 "d511cc8ad3f5249f9f471e0fa5193945f13390ade4cedddec5cb29d3989cf1d0"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Alluxio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a8e749ffce5b7ec29fc80b9cc955600b095959e748395bc306e316acd1af849f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a8e749ffce5b7ec29fc80b9cc955600b095959e748395bc306e316acd1af849f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a8e749ffce5b7ec29fc80b9cc955600b095959e748395bc306e316acd1af849f"
-    sha256 cellar: :any_skip_relocation, ventura:        "3019c4436d34bdfa4cf6d3797ad92619ca5c2c68c3b093074d4c195773ae94d1"
-    sha256 cellar: :any_skip_relocation, monterey:       "3019c4436d34bdfa4cf6d3797ad92619ca5c2c68c3b093074d4c195773ae94d1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3019c4436d34bdfa4cf6d3797ad92619ca5c2c68c3b093074d4c195773ae94d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8e749ffce5b7ec29fc80b9cc955600b095959e748395bc306e316acd1af849f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "36e2fcb11b4650673f03a41bcfdf3b23199c3b7a9411bcb35e40cdee8b8a9bd3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "36e2fcb11b4650673f03a41bcfdf3b23199c3b7a9411bcb35e40cdee8b8a9bd3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "36e2fcb11b4650673f03a41bcfdf3b23199c3b7a9411bcb35e40cdee8b8a9bd3"
+    sha256 cellar: :any_skip_relocation, ventura:        "5f10bc6b5a20da394c5b0458a663d88e7acf09b0ae1bdb86c32211253dfa9be5"
+    sha256 cellar: :any_skip_relocation, monterey:       "5f10bc6b5a20da394c5b0458a663d88e7acf09b0ae1bdb86c32211253dfa9be5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5f10bc6b5a20da394c5b0458a663d88e7acf09b0ae1bdb86c32211253dfa9be5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "36e2fcb11b4650673f03a41bcfdf3b23199c3b7a9411bcb35e40cdee8b8a9bd3"
   end
 
   # Alluxio requires Java 8 or Java 11

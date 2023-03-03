@@ -3,19 +3,19 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/d9/29/72005d2febed5ea652215a41d178a734b5529e6aac43a0c9b96ffebcbff5/snakemake-7.23.1.tar.gz"
-  sha256 "4dc960a721d2d8eaebd9b10e56564e3742f78c65d36cd31966ed205afcc4253d"
+  url "https://files.pythonhosted.org/packages/73/68/9e3abae0a119b8237f2f0e8053afdaa37f41637b1804d51dbc1b0d49bda2/snakemake-7.24.0.tar.gz"
+  sha256 "4a8a27e104ca0fd9ec178797c278691e76d46b015ee3075f6768ff426225e12d"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "86c8a789a3d8e149f7809393e46cf186787ae7ef7b9bcb6a78298c5323689d58"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3889313e9f0fd66bb5a87919d574374a35ee84e8927e211ed9ecdddeb58ca3e1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1d0c4e8fb158358e64a894e64cfb9003c46fed271b86ad521fa83d6ad9fc031b"
-    sha256 cellar: :any_skip_relocation, ventura:        "815d4cdadfaf555374727c39706c733965f75b0d43bc5c1541d4e5913cd30e2e"
-    sha256 cellar: :any_skip_relocation, monterey:       "6ca0e3ae8305f7d4d1e44c87529122509d7ca7e119ed9789c857911462b140a4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f6a2ae40baf4d3994319d1e623570eafbc8461a516625c634b2e3f7ef0b55471"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c29294c554290a426992df737c8fc90c61f8174312ca97f07fd169711390765"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b0e2ef6fcb8d62fe6ca4bec6fa833fc9dfd871a768436ca3bf1efb96d48da426"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "39cd9c82c3a72364a5a052c43a42fccb61d9ce46ab7a268f3769e0754fd011c3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "47ca710b6f6e47f82c7719ef966dfc4ce2c3d2db92cdc92e0de5039767847358"
+    sha256 cellar: :any_skip_relocation, ventura:        "d4eb6a48b1493ce2948bad425c551a91a40d3ff847d57df80b1d5035afe74bb4"
+    sha256 cellar: :any_skip_relocation, monterey:       "003fb5841c4ea41f8f24063a3de8a22a9f186c8f74f58a28cbb6d50eb01c842e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e0464cb1ad9df0283fe102b4e8313aee19da70108c82d18d8363164ba5ff5816"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aea754a051c7ce923ad7a88c54fc80c27f3c0be480a2169c51d1b62db6c93156"
   end
 
   depends_on "cbc"
@@ -65,8 +65,8 @@ class Snakemake < Formula
   end
 
   resource "fastjsonschema" do
-    url "https://files.pythonhosted.org/packages/7a/62/6df03bacda3544b5872d0b30f79c599ab84fc598858c77a77e1587d61ba3/fastjsonschema-2.16.2.tar.gz"
-    sha256 "01e366f25d9047816fe3d288cbfc3e10541daf0af2044763f3d0ade42476da18"
+    url "https://files.pythonhosted.org/packages/62/70/0b49eee4a6aef4b67699e65fe8b8f4a3a25d39971bcd6f1c930a91141f3b/fastjsonschema-2.16.3.tar.gz"
+    sha256 "4a30d6315a68c253cfa8f963b9697246315aa3db89f98b97235e345dedfb0b8e"
   end
 
   resource "gitdb" do
@@ -170,8 +170,8 @@ class Snakemake < Formula
   end
 
   resource "toposort" do
-    url "https://files.pythonhosted.org/packages/8d/c3/44e51b42160145e4ebeb7d86ab93bd933fa9498f94e183ef8a47c6de8b2f/toposort-1.9.tar.gz"
-    sha256 "f41a34490d44934b533a7bdaff979ee8a47203fd2d8a746db83f2d5ab12458b9"
+    url "https://files.pythonhosted.org/packages/69/19/8e955d90985ecbd3b9adb2a759753a6840da2dff3c569d412b2c9217678b/toposort-1.10.tar.gz"
+    sha256 "bfbb479c53d0a696ea7402601f4e693c97b0367837c8898bc6471adfca37a6bd"
   end
 
   resource "traitlets" do
@@ -185,8 +185,8 @@ class Snakemake < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/11/eb/e06e77394d6cf09977d92bff310cb0392930c08a338f99af6066a5a98f92/wrapt-1.14.1.tar.gz"
-    sha256 "380a85cf89e0e69b7cfbe2ea9f765f004ff419f34194018a6827ac0e3edfed4d"
+    url "https://files.pythonhosted.org/packages/f8/7d/73e4e3cdb2c780e13f9d87dc10488d7566d8fd77f8d68f0e416bfbd144c7/wrapt-1.15.0.tar.gz"
+    sha256 "d06730c6aed78cee4126234cf2d071e01b44b915e725a6cb439a879ec9754a3a"
   end
 
   resource "yte" do

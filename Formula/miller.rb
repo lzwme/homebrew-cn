@@ -1,19 +1,19 @@
 class Miller < Formula
   desc "Like sed, awk, cut, join & sort for name-indexed data such as CSV"
   homepage "https://github.com/johnkerl/miller"
-  url "https://ghproxy.com/https://github.com/johnkerl/miller/releases/download/v6.6.0/miller-6.6.0.tar.gz"
-  sha256 "943616a95989fbb8ea7ca47625391b8a86fd009a041eff3636e50443fea05406"
+  url "https://ghproxy.com/https://github.com/johnkerl/miller/releases/download/v6.7.0/miller-6.7.0.tar.gz"
+  sha256 "45c86dbb35e326184740eded13d61e9900187dfde72d9c46789d429373c7566f"
   license "BSD-2-Clause"
   head "https://github.com/johnkerl/miller.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4f15c667d483806cecf54417a92dba36f531dc890eaaca544a06329fc7d0e54c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2f87ee090ffd27b3bd479b7a142f9e1333eca795612218d4b1db6da3cf7817af"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "570d116995e94833b25d0b6368211a07838c9a27ea1a1c30cbc255163853c795"
-    sha256 cellar: :any_skip_relocation, ventura:        "6881ed287b53f1d54fa2cab8e8004020e932dd9b6126f76a3ee3772cf069cf34"
-    sha256 cellar: :any_skip_relocation, monterey:       "f2b6906eb444901e811b81037bfab8979968ed487b55394f669588af3259aaa6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "623e34e534c169c5dd6027f04cf94be23d0c64757c3aeb70e78f212543ff37ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b3fdba4b4017fe7ea97dce4377c5cf8ff1d94262b753cfe70a099324b5edeb5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f660c35ac5b44237c7ac9661f96e9f390463e65168bf0c60b87ef78050ca995d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "52b9ea49217fe86d4fb1256c11d3c2800941a4fa2fc01628cb43d39c217df035"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ff8723673231b469bfb071b885844157c0be35b90b5b056a3e473802393da30c"
+    sha256 cellar: :any_skip_relocation, ventura:        "772230895bd0705ce04a71efdfd1a723363e67a91c9f6f0a9a6791c073faf40e"
+    sha256 cellar: :any_skip_relocation, monterey:       "0ecc8d24b18582acec88e09ec02647709aa67bdd09dce229ff7e2c7381abc08d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d5538aa063f5551af443f39c387b6ef9a00b82a77c2f4e570fb7fd0ae5a866e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae4dc0d22e3b664200b68d08b2eae6dc22fd3070a289de08e9485e85de3360bc"
   end
 
   depends_on "go" => :build

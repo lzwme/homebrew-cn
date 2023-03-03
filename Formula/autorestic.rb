@@ -1,20 +1,19 @@
 class Autorestic < Formula
   desc "High level CLI utility for restic"
   homepage "https://autorestic.vercel.app/"
-  url "https://ghproxy.com/https://github.com/cupcakearmy/autorestic/archive/v1.7.5.tar.gz"
-  sha256 "8fef2ac2e4de39a4c4e0668133455c1c30dd2a4b002f872a29a37dd44e321d80"
+  url "https://ghproxy.com/https://github.com/cupcakearmy/autorestic/archive/v1.7.6.tar.gz"
+  sha256 "2dfbf45a51ae9736251aba429c41d35c320dd3e101fdb6a0c0ea235310b0db06"
   license "Apache-2.0"
   head "https://github.com/cupcakearmy/autorestic.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8be9d247c26a6908c55532027a424aab7d8008b0324a431a635c5ebcf30e94f9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8be9d247c26a6908c55532027a424aab7d8008b0324a431a635c5ebcf30e94f9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8be9d247c26a6908c55532027a424aab7d8008b0324a431a635c5ebcf30e94f9"
-    sha256 cellar: :any_skip_relocation, ventura:        "e5015b446ddb05c993c125d2aa69c2dfa4154b0e63040274302f178f396d4520"
-    sha256 cellar: :any_skip_relocation, monterey:       "e5015b446ddb05c993c125d2aa69c2dfa4154b0e63040274302f178f396d4520"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e5015b446ddb05c993c125d2aa69c2dfa4154b0e63040274302f178f396d4520"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94bfe95394d1d9a5cad7387b41612ed3a9f56cfe3e5d0aeed8112c3b1a1e8700"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "45820b7b08647c3cfdce913ad07681b7332a3b58807632b76da024101cdbbc54"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "45820b7b08647c3cfdce913ad07681b7332a3b58807632b76da024101cdbbc54"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "45820b7b08647c3cfdce913ad07681b7332a3b58807632b76da024101cdbbc54"
+    sha256 cellar: :any_skip_relocation, ventura:        "32f50e602661bb6294920c18dc92468cced32cf2ac7b4cb1183a7ce7dde87c2d"
+    sha256 cellar: :any_skip_relocation, monterey:       "32f50e602661bb6294920c18dc92468cced32cf2ac7b4cb1183a7ce7dde87c2d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "32f50e602661bb6294920c18dc92468cced32cf2ac7b4cb1183a7ce7dde87c2d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ca4421de1bc7ff17d52fdcf4f378231fd6dab72d01f41e0bf5c6b2bc655024a"
   end
 
   depends_on "go" => :build

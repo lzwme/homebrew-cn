@@ -11,19 +11,19 @@ class GitInteractiveRebaseTool < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5faa42fb7474744e9c2b5448043dde3ead40fbcbbd24dbd43950302369afc4a2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b9727e1d5aec0e849818716a0fa4f14c6d02acb328ccd63948e722f654fc2c1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5e88ba510f016b5dbdefceabde27bc5936a5deafbda134cfd8506431d0ddff15"
-    sha256 cellar: :any_skip_relocation, ventura:        "65998f238f4d19f13abdf898127020b0317cf154017b80905a424f5e844f5702"
-    sha256 cellar: :any_skip_relocation, monterey:       "82c9e95663d8c05cf158893598efced283ed431b13a4e68bd480daff9710d904"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6f010ca910bc6f593c2f1eaa4721da475c78714c26e7376971b7b41eed0e5191"
-    sha256 cellar: :any_skip_relocation, catalina:       "5d875c81fc6d2167cd343ade0f984ea08a870313199f5673fa947a4c7b0c8fb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8f2a282a775c0141646641ac96e532e0e59a088a0a6a93dd0f877a39d94217e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "1ac575cd58d30c97816c09ba486d3fa1d2057dbafb79d55d9971215260d39480"
+    sha256 cellar: :any,                 arm64_monterey: "451279b234f20f109fecc9be99dfbcb15a8986406976d321c27a400880bc87cc"
+    sha256 cellar: :any,                 arm64_big_sur:  "80d377b60f769fa652d925fcd479e7be55bf6010474ba2c25da7e76fb4d56625"
+    sha256 cellar: :any,                 ventura:        "e89b99d8937eec1932f5416d573c5ae708d6b0a4b43d2063b4dda2a75ee60001"
+    sha256 cellar: :any,                 monterey:       "28bd974a0057f0e47e65a6d890e30eecba9f4a8cdb52ff3c2b4c2b5463bc6bc8"
+    sha256 cellar: :any,                 big_sur:        "4f41d96eed608acf08a0c35fb541317567b2b2ccd756f12fd284fcc6780abe53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2af72c4cc5358d03fa418bcec51f14c468c9864dd7bb3769585d98fc6e793fb"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
-
-  uses_from_macos "zlib"
+  depends_on "libgit2"
 
   def install
     system "cargo", "install", *std_cargo_args
@@ -54,5 +54,13 @@ class GitInteractiveRebaseTool < Formula
 
     assert_equal 0, $CHILD_STATUS.exitstatus
     assert_equal expected_git_rebase_todo, todo_file.read
+
+    linkage_with_libgit2 = executable.dynamically_linked_libraries.any? do |dll|
+      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
+
+      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
+    end
+
+    assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."
   end
 end
