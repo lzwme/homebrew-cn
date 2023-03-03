@@ -8,7 +8,7 @@
 
 ```bash
 # 添加当前仓库源
-brew tap lzwme/cn
+brew tap lzwme/cn --custom-remote https://ghproxy.com/github.com/lzwme/homebrew-cn
 
 # 搜索某个应用
 brew search switchhosts
@@ -28,13 +28,20 @@ brew install https://ghproxy.com/github.com/lzwme/homebrew-cn/blob/main/Formula/
 # 安装 Homebrew
 /bin/bash -c "$(curl -fsSL https://ghproxy.com/raw.githubusercontent.com/lzwme/homebrew-cn/HEAD/install.sh)"
 
-# 添加 `lzwme/homebrew-cn` 仓库源
-brew tap lzwme/cn
+# 设置环境变量
+echo 'export HOMEBREW_NO_ANALYTICS=1' >> ~/.bash_profile
+echo 'export HOMEBREW_NO_INSTALL_FROM_API=1' >> ~/.bash_profile
 
-# 设置环境变量，指定二进制预编译包使用阿里云镜像
-# https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles 也可设置为清华源
+#指定二进制预编译包使用 `阿里云镜像`
 echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles' >> ~/.bash_profile
+echo 'export HOMEBREW_API_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles/api' >> ~/.bash_profile
+# https://mirrors.ustc.edu.cn/homebrew-bottles # 中科大
+# https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles # 清华
+
 source ~/.bash_profile
+
+# 添加 `lzwme/homebrew-cn` 仓库源
+brew tap lzwme/cn --custom-remote https://ghproxy.com/github.com/lzwme/homebrew-cn
 
 # 更新
 brew update
