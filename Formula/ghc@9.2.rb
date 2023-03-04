@@ -1,8 +1,8 @@
 class GhcAT92 < Formula
   desc "Glorious Glasgow Haskell Compilation System"
   homepage "https://haskell.org/ghc/"
-  url "https://downloads.haskell.org/~ghc/9.2.6/ghc-9.2.6-src.tar.xz"
-  sha256 "7a54cf0398ad488b4ed219e15d1d1e64c0b6876c43a0564550dd11f0540d7305"
+  url "https://downloads.haskell.org/~ghc/9.2.7/ghc-9.2.7-src.tar.xz"
+  sha256 "a253567a17b734a4c0dd0ffa296d33c2a5b5a54a77df988806a2a1e1ca7e88b8"
   # We build bundled copies of libffi and GMP so GHC inherits the licenses
   license all_of: [
     "BSD-3-Clause",
@@ -16,13 +16,13 @@ class GhcAT92 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "28d6710105f629352b4711950c724581f8e75f5684e12eebe5a8f43e68af7756"
-    sha256 cellar: :any,                 arm64_monterey: "439ba2bcfac0f609dc7df2106c470ee7197cbf72f79840c47c903f011ef98295"
-    sha256 cellar: :any,                 arm64_big_sur:  "cdd35073a1976c1ae313cd7453d4751330b6c9ac2953f78ca75065b229859a86"
-    sha256                               ventura:        "c02ca17f7dcd01d598eddb249e1ea6cccc90f30cefe03ff61d80ff1d00263f7d"
-    sha256                               monterey:       "c27b9577c0a4b2d6368a92f71cb4c73b94350b95160dd65623c3b795f1a2ea57"
-    sha256                               big_sur:        "6a528b1182d006b11def5f831a7114de7d5f802969847f73a67babebb33e0611"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74c74f4278340084aa273533472ad9b86c1449e3c51898bc6b8c7f5438b4219b"
+    sha256 cellar: :any,                 arm64_ventura:  "0af1db969ed72a0f25561a2054d5c67a8a15b247234a08a0fa8159e77d50a19b"
+    sha256 cellar: :any,                 arm64_monterey: "550b2f48a19740c84a7d147938084f97300a75529bd86d6d7c7cf504f7a6d2a1"
+    sha256 cellar: :any,                 arm64_big_sur:  "51e4d62fd94a3727f0e7215f23d6ee4b9b5200c749ec444847328cd9220e366a"
+    sha256                               ventura:        "41d9d7f56277c1c754c0e886366075d3fbba7a697a01930a92ed5e047faa9a84"
+    sha256                               monterey:       "b7256998d71a45df0753a2fd7f464fe7ae6e1801085136d6af6c1e2042ec4309"
+    sha256                               big_sur:        "7b2ca4c7eebaea706e55a6442eb40569d784f301e5446d7adc606013808876f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e73d344e6e4e686a13fdbd2cdbb22658b74aec42e0eb42c27412c5fc28de8f7e"
   end
 
   keg_only :versioned_formula

@@ -1,8 +1,8 @@
 class Dafny < Formula
   desc "Verification-aware programming language"
   homepage "https://github.com/dafny-lang/dafny/blob/master/README.md"
-  url "https://ghproxy.com/https://github.com/dafny-lang/dafny/archive/refs/tags/v3.13.0.tar.gz"
-  sha256 "8536bc0650e3801cfb21bd0fc65d2c802940917eb572719d0695c763765c2ea0"
+  url "https://ghproxy.com/https://github.com/dafny-lang/dafny/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "f1d7fd7f438bc9f7772b4035aa0065d518e62a55711a38822ecadcad4d65e446"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class Dafny < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0bb2e5af4b30628859f2f3f7ce1b696ad9ecdb007d4def6c986b666abe8cd175"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d185a2006fa15c829d292c028d11cb647736296820a6e8a381ce6f62ac3b3f88"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ec3479c309a967e4eb70950fe4cdb169a26d1a7cae14522b51b4841f33ee2653"
-    sha256 cellar: :any_skip_relocation, ventura:        "5e19141d67faa259296513b4a66e41c21b0e38a42e21865fc11fad78fd99ef32"
-    sha256 cellar: :any_skip_relocation, monterey:       "61a99305fcb989115d173c44a91b3c7de26577a931fb2565ae8b36421c201026"
-    sha256 cellar: :any_skip_relocation, big_sur:        "46ff56f12ddff5825e8479a9d7697dd9bf1d84ed690d70ef2ff8f2958907ac28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a2a52b0e65a99455f164a9113cf519795c47a853adcca95c6b37769bacec383"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2de46d77301715659320ec274aac3671c8928f0f2824a951f31dc418e97c5e34"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "75f863b4a43115317619842091f9e7116faa7630fea34e6a6cd13a201051f212"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d4e362ed36030cbddac3a806d1d535b1d7e0952425e4eea1b33e12da945c3e5e"
+    sha256 cellar: :any_skip_relocation, ventura:        "42446815acf78d6cc88546a90bef29a323adb7f3617a7c1d4548db9367dd6132"
+    sha256 cellar: :any_skip_relocation, monterey:       "78ee7cc7c13f89cdd86ef6b8991b794d5834ce13ada79e1be7cce2833b3f751e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "dff060e112f2c71f27f81e5475259fa7654091ee527d1b93cc79f64dced4bddc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2bebceea164d81e2b4669ede2bad7447c63aae2f771cd1b8f502353254f871a6"
   end
 
   depends_on "dotnet@6"

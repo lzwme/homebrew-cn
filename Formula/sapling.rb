@@ -1,19 +1,20 @@
 class Sapling < Formula
   desc "Source control client"
   homepage "https://sapling-scm.com"
-  url "https://ghproxy.com/https://github.com/facebook/sapling/archive/refs/tags/0.2.20230124-180750-hf8cd450a.tar.gz"
-  sha256 "0bfa0145edb269e3b9efedd658dbd17fff20c57c2524d08d12be3b75a69a36ed"
+  url "https://ghproxy.com/https://github.com/facebook/sapling/archive/refs/tags/0.2.20230228-144002-h9440b05e.tar.gz"
+  sha256 "70483afad6d0b437cb755447120a34b1996ec09a7e835b40ac8cccdfe44e4b90"
   license "GPL-2.0-or-later"
   head "https://github.com/facebook/sapling.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "5aae62d7eaf9b8ae4ecd457e17f4eee3756eeb73cd91afcbbf14f6b52637c5a0"
-    sha256 cellar: :any,                 arm64_monterey: "267bf9cdca87d786d14b383a68a28eec93f173ce5704c6c197ec610665f85f7a"
-    sha256 cellar: :any,                 arm64_big_sur:  "2d6f53c7cb45d76d1fe181c5dfb79ec559d837a5db1c5f7ae2d385a7291401d3"
-    sha256 cellar: :any,                 ventura:        "572a16c9cc4ebdc267b7515eb016d422bd277c46e4ee4758d4b3640fa69e8222"
-    sha256 cellar: :any,                 monterey:       "2596ef4cea6b5cc0177bbb70d1695b2e1729796d6f75c0146a2fdc5da77daf6e"
-    sha256 cellar: :any,                 big_sur:        "5308a2311873a6cad5e9828fac701aff3a846b854a0b17875ba208630c9350e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "419baf25b6c60081bfa4dce3648aaa9455225d06c9462eb6a94cc71ba5d8090f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "b9aee4101baae22fe8b0e32a8eb9f086f63967851a9410960e36d3541c98845e"
+    sha256 cellar: :any,                 arm64_monterey: "bcaa04164fc08e79065d1899e8ade085047090b40c63174fb81fa02ac8437646"
+    sha256 cellar: :any,                 arm64_big_sur:  "5a0d6120c941935d1d0159b76b967968ca3421ec7f61fedb8d3bf0a6804589c5"
+    sha256 cellar: :any,                 ventura:        "e90c415a3327d7e0823c5b4e31b3d84514bc19f25687d5e9a5c231d686a07c7e"
+    sha256 cellar: :any,                 monterey:       "484be2fe2b901132f7c9cecb918dae45c7f43518a6ce2d2b57b816aeb536a7ac"
+    sha256 cellar: :any,                 big_sur:        "bf39795492d13fa68e0a247982b913031d1ea873543c548c8aa790250b32ba60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "993b6d4628338f297b17eb1be68ffbea8bba85f54c76659e1db38d53b22974b1"
   end
 
   depends_on "cmake" => :build
@@ -30,6 +31,8 @@ class Sapling < Formula
     ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
     ENV["SAPLING_VERSION"] = version.to_s
 
+    # Don't allow the build to break our shim configuration.
+    inreplace "eden/scm/distutils_rust/__init__.py", '"HOMEBREW_CCCFG"', '"NONEXISTENT"'
     system "make", "-C", "eden/scm", "install-oss", "PREFIX=#{prefix}", "PYTHON=#{python3}", "PYTHON3=#{python3}"
   end
 

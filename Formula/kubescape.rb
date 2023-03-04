@@ -1,30 +1,27 @@
 class Kubescape < Formula
   desc "Kubernetes testing according to Hardening Guidance by NSA and CISA"
-  homepage "https://github.com/armosec/kubescape"
-  url "https://ghproxy.com/https://github.com/armosec/kubescape/archive/v2.0.161.tar.gz"
-  sha256 "165222d24db46b70a664fd70e8918f478c39c05ef30bbcbfb57c05307d88ce6a"
+  homepage "https://github.com/kubescape/kubescape"
+  url "https://ghproxy.com/https://github.com/kubescape/kubescape/archive/refs/tags/v2.2.3.tar.gz"
+  sha256 "3b81836f850e02fd0a2b4918ed398e14ab324885486a4d374cb7069a5fbb0502"
   license "Apache-2.0"
-  head "https://github.com/armosec/kubescape.git", branch: "master"
+  head "https://github.com/kubescape/kubescape.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "69ef7dc344edda8dc0cf2cebdf86169a63675fd0fbe08c9e57707add42839a3a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "264415412177372be6ce2e92673a7469115ff6ce6c29a6efec1eb2a733821695"
-    sha256 cellar: :any_skip_relocation, monterey:       "b33d66b12dbd461c7038a53fde23f027046ca30efe51bf66407abe96abf5d934"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b38436d3d186c443b5deb669ac7be828296618d0f938dd68dc97340517d58f8b"
-    sha256 cellar: :any_skip_relocation, catalina:       "520774f9ca98acc82a4f86d2cc36e83684ad411f41bed5c262296647e1787b5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8f380152c0c592450d46da3f3731853a452de6fe0a2fe824212465711ff6a9d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e2faf4b4c825d83ee7e3abd4cbae9c51379f67520a1cdff1a54e264bd63c9cd1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ed796c76c8ca44ddc67401693385b492dca04e9f291b638aad1d306acd67566"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "17e198130609a3ddbb75e3a6fe5e9b3b32a1e5b05a13924e375bbc2842069379"
+    sha256 cellar: :any_skip_relocation, ventura:        "65a740dcb94c9b4824e5dcab98526e5679c49fc4f06c45c18de3cdab88dc5957"
+    sha256 cellar: :any_skip_relocation, monterey:       "78afb26e85e6e9c460ffe19cace3de8527e55dfea8e0794293680837b9ffcbe8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e773eac61d5504bff6cd0124a6ad598dd9f9172d0ff2149e1b3d4d7e23ae27f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2ca469dec79c2b93337ca096644cf85ad6ffe12f7c204bae27bf0e79a8cdf67"
   end
-
-  # Kubescape has been disabled since it fails to build with libgit2 upstream
-  # https://github.com/Homebrew/homebrew-core/pull/106523
-  disable! date: "2022-08-11", because: :does_not_build
 
   depends_on "go" => :build
 
   def install
     ldflags = %W[
       -s -w
-      -X github.com/armosec/kubescape/v2/core/cautils.BuildNumber=v#{version}
+      -X github.com/kubescape/kubescape/v2/core/cautils.BuildNumber=v#{version}
     ]
 
     system "go", "build", *std_go_args(ldflags: ldflags)

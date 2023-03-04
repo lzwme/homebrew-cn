@@ -1,8 +1,8 @@
 class Metals < Formula
   desc "Scala language server"
   homepage "https://github.com/scalameta/metals"
-  url "https://ghproxy.com/https://github.com/scalameta/metals/archive/refs/tags/v0.11.10.tar.gz"
-  sha256 "18bcdb08aca2a38409e4af03f1108611285c1d20b9044e5cf2ecd8efa5fc60a2"
+  url "https://ghproxy.com/https://github.com/scalameta/metals/archive/refs/tags/v0.11.11.tar.gz"
+  sha256 "99c03bd5f6f6d3aa68d684f016ab6bb09175fa67953ddaa362f8a936bb3da72f"
   license "Apache-2.0"
 
   # Some version tags don't become a release, so it's necessary to check the
@@ -13,13 +13,13 @@ class Metals < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9da7788da6c9110a23572c8684427f315ad60c8b25ef330a9a0a9c0de6312756"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f7c65425141c48a074d3df2784fa064a8def4563c997be1af37ab9239cdbe837"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "02cca9ff46fd2e7a7a44889088a1d2e19d361910709ec559da2db85e5715a872"
-    sha256 cellar: :any_skip_relocation, ventura:        "68ccef84d5a2b1fdc63ed6563ee42ca949aa2ea394dd9363b747ea87d9c0d6c4"
-    sha256 cellar: :any_skip_relocation, monterey:       "234254769de9d71391e33776f3ce485da1d94a5f508b24efc5d3e8edeb93406d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "eb94192ade2c871662e435ced28054fb26cc919411463a30de8eee725e1ad8c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc81cb083c46dcb021629981c39d4bdf185aca21bf22a358e38dcac66416d323"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9e0c3616186a0ff1cc299acda01a311d1e06518b2cb100665c7ed5359c5744fa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "97a5e3e083acaedb1d8b3c971e684232d9d4fc9ca81617bed820f2bed3f28332"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2d3e4a92a34c8abf89bcc4e44e366ea2b4a86e4e8140495e3336602cd3bded2a"
+    sha256 cellar: :any_skip_relocation, ventura:        "826789d9fd5f6afe75185d56fe8e7d00653489abfecd95f8eb00428225dab732"
+    sha256 cellar: :any_skip_relocation, monterey:       "36b99f076cea687011a4d6821ae1d7a1646d469c8c39e00dd6179f630646fdb8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a8a8e5bba8dcb2813ca2994468d3e5b38212f033c196004ecd5340218839f327"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "14a4192df56f7015786392bdd07aa5d6068c79b557ae3c74c6dd36926ea37c40"
   end
 
   depends_on "sbt" => :build

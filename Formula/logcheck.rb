@@ -1,8 +1,8 @@
 class Logcheck < Formula
   desc "Mail anomalies in the system logfiles to the administrator"
   homepage "https://packages.debian.org/sid/logcheck"
-  url "https://deb.debian.org/debian/pool/main/l/logcheck/logcheck_1.4.1.tar.xz"
-  sha256 "6ea06d7a4607c025cb45d7ab230d8b0245b26015a03f13ce109874817ca2d853"
+  url "https://deb.debian.org/debian/pool/main/l/logcheck/logcheck_1.4.2.tar.xz"
+  sha256 "0c651deb31dc201f1584ecea292b259932bae6e3e8cef846db3109e89a7f217e"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,7 +11,7 @@ class Logcheck < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0dd5a372a2cf9bee6870ea922f2cdb988c6f73316d7323c2b60147735467575f"
+    sha256 cellar: :any_skip_relocation, all: "80c5420361fea2b961a749a213e5a4c769d6784f8034528eecae7365b9fd252e"
   end
 
   on_macos do

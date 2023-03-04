@@ -1,18 +1,18 @@
 class Difftastic < Formula
   desc "Diff that understands syntax"
   homepage "https://github.com/Wilfred/difftastic"
-  url "https://ghproxy.com/https://github.com/Wilfred/difftastic/archive/refs/tags/0.43.1.tar.gz"
-  sha256 "4fb73145923e6fc41ece74fd3b5697a826e30b2fa4ff959b10b8f9786bb95571"
+  url "https://ghproxy.com/https://github.com/Wilfred/difftastic/archive/refs/tags/0.45.0.tar.gz"
+  sha256 "8c4cc0ad50800d6e5705d768e2ad1a32ac0a4a44318102fd8c1198a59422992b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7965a86dff95a89f0dc6ad276af47f8e68915df3eb01d0a148f9c3bf01062e2e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "152fd92d3ea06b8d4f9b1c66216734aed7fe3cab1d98a28fa0a54b545c6b96fb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "075ab34319f4531b7223ea2e964d9ffbefb4b8deba7fdcc338bbef2f6d7a9394"
-    sha256 cellar: :any_skip_relocation, ventura:        "80c9d7efa977cd55aa7042af48bc6b49082cdd9658334cd1b541b4ce6cfc7fdf"
-    sha256 cellar: :any_skip_relocation, monterey:       "3c18f642e1f9e50f7f39f9da92000153f368efc1088443ff2a2feb05ac8b26c1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "25dccb452732379d2a39b648cea5432ed9a42ced3af5609bd7c5a2a8fc7ffd79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "84f86864bd360d39e7c035be6e40756a7012d92ab9fca35944a5c14a6ac3ef05"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eae0b71036320a077b8eebd6e6261ec2560366ebda92d15daa4836b91745886c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "059b1ced1319b42aee054f25cc79b7d696f38f9f8972293a7d050acbf802ea68"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "85a26633a6e28b82844ea6e29cd3d2b9aaea242df8edfcccb912948aed062090"
+    sha256 cellar: :any_skip_relocation, ventura:        "0f696008d2d1393af42119a8a04554a364fc3cf578c4f328b07292b406ccc38f"
+    sha256 cellar: :any_skip_relocation, monterey:       "51e89846ec562e7803e65c6fb088b70947a464d96fbe2bad57ec721db8599c73"
+    sha256 cellar: :any_skip_relocation, big_sur:        "227a2ae3e788de9ad1f76e5879e7ef210cbd93279c0c02efd6b026df204bda38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a37df192020e7c7fbfcd8bdbda42576c43131a9f68947e9ec8b53261ef2089c7"
   end
 
   depends_on "rust" => :build
