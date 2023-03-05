@@ -3,18 +3,18 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/1c/ca/71abaf1693183e19ac52838aae4839ebd787a89ab03f9b9605aa0002429b/dxpy-0.340.1.tar.gz"
-  sha256 "2e9173d8aeaf0de925d91487c482879af8c32a2ad0b684528936ed1cdf61abec"
+  url "https://files.pythonhosted.org/packages/64/b0/b146a5a0687b7bf05566c1270cb48371fe2a2a4eb81465d7ef89f5ac07a4/dxpy-0.341.0.tar.gz"
+  sha256 "a95ae8329a502817697bbb075ae56ec48a2be6b46992fd26aa0cca864defcb66"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a5282191a3cd3c70f2666aaa4dd72a445fedc3ac9363141c91354cb0d12d9947"
-    sha256 cellar: :any,                 arm64_monterey: "dd62586c53b77c2c0b79a6947a8e800085ec9ef02a4578625d543d11b58013c3"
-    sha256 cellar: :any,                 arm64_big_sur:  "9e38d31ff7d5b40b3c77a41f1bfb7bd16fcbfd45aeb1a86451a30f24615e5052"
-    sha256 cellar: :any,                 ventura:        "63fd8672df95ed75c1f2db6142b7b9a636aefb7a2119dbca8d57bb19c2a9db06"
-    sha256 cellar: :any,                 monterey:       "70626941d4c6e92234d532d6d8449e29fd4556796ea595dca80d87dbec1aa271"
-    sha256 cellar: :any,                 big_sur:        "a8cd96e9d3a874e05ac32d629c43de6adf43f86a347a83412c58ef05a10b921d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2774c98157313049564e5d15396b731625f84dc781678f42eea09122685695b6"
+    sha256 cellar: :any,                 arm64_ventura:  "37fabe6c1088ce33ed7f747f5ea907f366621cecc6d5f2ffb89cc616771dd344"
+    sha256 cellar: :any,                 arm64_monterey: "caed1a6b6f4b3cdad72d9ce7b8a22d621a6b0b524e2e7f9bb379ddeff8059e7e"
+    sha256 cellar: :any,                 arm64_big_sur:  "96054cd814ece678a48d9da6b3314a6de4cefa9c6097f12664b760a8ab44c585"
+    sha256 cellar: :any,                 ventura:        "a5dff572e337370f166cab42872177f2be52364ef9ef88bfa1cfcd30108dc198"
+    sha256 cellar: :any,                 monterey:       "0b42a36a74835793adaabf79cf6f84810b2e99b085b86d6f60c3964f939503f7"
+    sha256 cellar: :any,                 big_sur:        "85c5325e5ddfa95fcc1e3ebaa202e7dc7071ab0947e7cb89d79543bbd1496a94"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f410d9e2bcc8e26f1b6d235195b29578a7e1a05bfcdd9ceaa592425f8f25f041"
   end
 
   depends_on "rust" => :build # for cryptography

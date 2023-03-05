@@ -2,20 +2,20 @@ class Odin < Formula
   desc "Programming language with focus on simplicity, performance and modern systems"
   homepage "https://odin-lang.org/"
   url "https://github.com/odin-lang/Odin.git",
-      tag:      "dev-2023-02",
-      revision: "fcc920ed39c706240ef011fdba7fd1442b01b4d9"
-  version "2023-02"
+      tag:      "dev-2023-03",
+      revision: "2d71ab6f2907c14651da8fb231a695b4a60f2c68"
+  version "2023-03"
   license "BSD-3-Clause"
   head "https://github.com/odin-lang/Odin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8553b9bdc848191c8cc49cc6e11bd53b8692602560c07616a8508f4b4311354a"
-    sha256 cellar: :any,                 arm64_monterey: "377774a9f6c133b477326faccfe82aa2681d158118fa948ad230f2087696695f"
-    sha256 cellar: :any,                 arm64_big_sur:  "22aef51ce76136ee1425dbf256bd5c52c24d30e2ce223261de04d44de13ff2cf"
-    sha256 cellar: :any,                 ventura:        "e3e9e7332d5e3c49075cc9aa2384864b6e93b22094f2668c63452f3c714a7903"
-    sha256 cellar: :any,                 monterey:       "47e6032c3ff329c5225e2f9e6ef76831edbc206d0fd38fdc91a2fcf772b647f6"
-    sha256 cellar: :any,                 big_sur:        "6f1e90986221997a4d7c65298cb90d35ab2bbaa3454224cbe8ea4e1a4b655277"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6759ca31a8d6a50a242e6f771e91394f20f042677ee2be22eb43bc4fdb5e1c31"
+    sha256 cellar: :any,                 arm64_ventura:  "6430a89638b77ea2870e0d61efd768cbcaafaa48fb4b0568ec23e2103a2916f9"
+    sha256 cellar: :any,                 arm64_monterey: "a0ad1dfb7edf4c0ef8cbe97d0d2eb41973d2b41943e4602331df7b8fed5f2982"
+    sha256 cellar: :any,                 arm64_big_sur:  "6fcac62caf3b82bd63fb56541e1c73b16517db7f17c447df25098b4bb38b87f0"
+    sha256 cellar: :any,                 ventura:        "182a2c249d8b6b1895efae2a2732cf5dd8c07766f0161a5688324cb1790d3379"
+    sha256 cellar: :any,                 monterey:       "2edfd958ddca8142cf7f58c4bca603e5683ab291f0d08c12355ae184028868e5"
+    sha256 cellar: :any,                 big_sur:        "c5452bf4ccc058b84ca55ca53c165fc431876cc837efdcb5b8ffe05aafcabe9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d300f5c76a9456eda725119d97dae087d9f8c6e27d73809dcbf09750c0e4169"
   end
 
   depends_on "llvm@14"
@@ -26,10 +26,9 @@ class Odin < Formula
     llvm = deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+(\.\d+)*)?$/) }
 
     # Keep version number consistent and reproducible for tagged releases.
-    # Issue ref: https://github.com/odin-lang/Odin/issues/1772
-    inreplace "build_odin.sh", "dev-$(date +\"%Y-%m\")", "dev-#{version}" unless build.head?
-
-    system "make", "release"
+    args = []
+    args << "ODIN_VERSION=dev-#{version}" unless build.head?
+    system "make", "release", *args
     libexec.install "odin", "core", "shared"
     (bin/"odin").write <<~EOS
       #!/bin/bash

@@ -1,19 +1,18 @@
 class TemplateGlib < Formula
   desc "GNOME templating library for GLib"
   homepage "https://gitlab.gnome.org/GNOME/template-glib"
-  url "https://download.gnome.org/sources/template-glib/3.36/template-glib-3.36.0.tar.xz"
-  sha256 "1c129525ae64403a662f7666f6358386a815668872acf11cb568ab39bba1f421"
+  url "https://download.gnome.org/sources/template-glib/3.36/template-glib-3.36.1.tar.xz"
+  sha256 "3b167a17385ad745afbe20fadf8106c66d30c5bd746d5aa1d9bdb7e803f6a503"
   license "LGPL-2.1-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_ventura:  "7000f81cbd5236aa9e0bf70da2c98ef863b3149b8df04a02b13fbbf4ddd5d44b"
-    sha256 cellar: :any, arm64_monterey: "d8f59e2becba0ca4f4a8cfe84e4a267dbfc84a2264f36c45fbb99bd97fe93553"
-    sha256 cellar: :any, arm64_big_sur:  "d6a2fb29f7d64b8d4e7972eb0f65396cff0fb7522011fac4bedff013efbcd0fe"
-    sha256 cellar: :any, ventura:        "7428702cc2136dc1d4d3c5bcb53a327d1331a1aead0d45a02d50029fb27bacbf"
-    sha256 cellar: :any, monterey:       "4af0e6fe31c9292a6e0bcfb52fe0bf5ef643f4c6fb5905873fc25bffbd2cb9f2"
-    sha256 cellar: :any, big_sur:        "51e0f8bd19c26f7175482d581f60985fa8bccf7090e01929e92b28858d6f8cb6"
-    sha256               x86_64_linux:   "0ee3bc0d18e77f69efbf558af857a3360a3729cbf1563b8c66423c435b5e918c"
+    sha256 cellar: :any, arm64_ventura:  "774bc15db0c2b5e299f8e4d76ae83fc37204259beae21a5c8801c646f2b50c33"
+    sha256 cellar: :any, arm64_monterey: "df91f7944d110734160bcddd075cacb63080a9840204dc0a5b1878d0cdfca8c7"
+    sha256 cellar: :any, arm64_big_sur:  "323d025d1978534f458a7f877c9e4d8ea482b3fe50a00d36686b6ebb65922fd7"
+    sha256 cellar: :any, ventura:        "c07351a7b8832768973284fff89386299773e20fd07eb8def24d887005bf0b7d"
+    sha256 cellar: :any, monterey:       "c54b5045304c7098837709210ebd74a584a9c1565c9a654fa4fc6771e7912e6f"
+    sha256 cellar: :any, big_sur:        "4dead442226961da575f6d5c1a9745822baab6e874217375b29cabbf579ca33d"
+    sha256               x86_64_linux:   "20c6c8571b256ebcd3e6d76f1ea10241a87d60bb6f9ddf0e91dae900e7d7b7f9"
   end
 
   depends_on "bison" => :build # does not appear to work with system bison
