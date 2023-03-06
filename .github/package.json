@@ -1,0 +1,16 @@
+{
+  "name": "@lzwme/homebrew-cn",
+  "version": "1.0.0",
+  "description": "适合中国大陆用户使用的 [Homebrew](https://brew.sh) 应用代理镜像库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@lzwme/fe-utils": "*",
+    "json5": "^2.2.3"
+  }
+}
