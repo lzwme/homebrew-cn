@@ -1,18 +1,18 @@
 class GitWorkspace < Formula
   desc "Sync personal and work git repositories from multiple providers"
   homepage "https://github.com/orf/git-workspace"
-  url "https://ghproxy.com/https://github.com/orf/git-workspace/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "b9dcc7ad2c88f63a12af4caafee05b433391a6607252330335d37676686b24f3"
+  url "https://ghproxy.com/https://github.com/orf/git-workspace/archive/refs/tags/v1.2.1.tar.gz"
+  sha256 "42413850a298f8d82737b7b1370b8c15be55927368d109eba7a599e498a441c1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b4916e5b9e140e8aeb2a9a64d7cca8c52ca06874def20ad5a9102f9da0452692"
-    sha256 cellar: :any,                 arm64_monterey: "ea678e42dbf3219e6ce8f4ac63efa60395d98687ea63a110c2d7d18bd77c4523"
-    sha256 cellar: :any,                 arm64_big_sur:  "8f20667732dd785d5351c7ff3b57a6135016f859e35b905223ba734f1248c5c9"
-    sha256 cellar: :any,                 ventura:        "65d327ce21f699882553e2bebe0e212a92ea9fda20dd59efed63a4c764ab293f"
-    sha256 cellar: :any,                 monterey:       "10de2f2e50332fcf6ba52ca55d1305a0090788819b5845e3386208bb5b263001"
-    sha256 cellar: :any,                 big_sur:        "689f88d6e2773f27f42d0b46245a9b14e0450ab7ccf093d48a8339209913df73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "00d10db5bf3a4ecef3a7e1fac699b0d7f1a8b0c7eaa5659c2cb72ecf720dea69"
+    sha256 cellar: :any,                 arm64_ventura:  "e625c6e986197e317d036f6edb60a57bc6d091fa16279d801a43ade85fad2c36"
+    sha256 cellar: :any,                 arm64_monterey: "18e680082435e5dc6302e084b600b5bbb6bc3671704db4ee095b5e1c7937e924"
+    sha256 cellar: :any,                 arm64_big_sur:  "c0c46de4cdbff22a5a7f2699e03105ad8cfdcf1f650ce937a53d2ff5e5c57857"
+    sha256 cellar: :any,                 ventura:        "be2690acf2355877c7155fe6c5b548d8d10bef91c9947290a6c4b85fdf246f92"
+    sha256 cellar: :any,                 monterey:       "c0985177ea20a45a8d1893b18e9c82983f65b8129cd0bd84cec8bf694d06cc3f"
+    sha256 cellar: :any,                 big_sur:        "3a9964159fe6eaeccd2cb3d6b529c77d8237f97ce79a38671a21a23f39b474e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ad471abc371d219b650d57dbcaf070261a887855ddf04c84d6d3f44692bd890"
   end
 
   depends_on "pkg-config" => :build
