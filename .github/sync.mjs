@@ -52,10 +52,10 @@ async function checkout(repo, dirName) {
   try {
     const dirpath = path.resolve(CONFIG.tmpDir, dirName);
     if (fs.existsSync(dirpath)) {
-      execSync(`cd "${dirpath}" && git pull`, 'pipe', CONFIG.tmpDir);
+      execSync(`cd "${dirpath}" && git pull`, 'inherit', CONFIG.tmpDir);
     } else {
       repo = isDebug ? `https://ghproxy.com//github.com/${repo}` : `https://github.com/${repo}.git`;
-      execSync(`git clone --depth 1 ${repo} ${dirName}`, 'pipe', CONFIG.tmpDir)
+      execSync(`git clone --depth 1 ${repo} ${dirName}`, 'inherit', CONFIG.tmpDir)
     }
   } catch (error) {
     logger.error(`checkout ${repo} failed!`, error.message);
@@ -137,7 +137,7 @@ async function syncDir(src, dest, repo = "") {
 }
 
 async function gitCommit() {
-  const changes = execSync("git status --short", 'inherit', rootDir).trim(); // --untracked-files=no
+  const changes = execSync("git status --short", "pipe", rootDir).stdout.trim(); // --untracked-files=no
   if (changes.length > 5) {
     logger.info("Changes:\n", changes);
     const cmds = [
@@ -156,7 +156,7 @@ async function gitCommit() {
 
 function updateInstall() {
   const installUrl = `${isDebug ? "https://ghproxy.com/" : ""}https://raw.githubusercontent.com/Homebrew/install/master/install.sh`;
-  execSync(`curl -fsSLO ${installUrl}`, "pipe", rootDir);
+  execSync(`curl -fsSLO ${installUrl}`, "inherit", rootDir);
   const content = fs
     .readFileSync("install.sh", "utf8")
     .replaceAll("https://github.com/Homebrew/", "https://ghproxy.com/github.com/Homebrew/");
@@ -188,7 +188,7 @@ async function sync() {
     logger.info(`sync for ${color.greenBright(repo)}`);
 
     if (repo.startsWith("http") && repo.endsWith(".rb")) {
-      execSync(`curl -fsSLO ${repo}`, "pipe", tmpRbFileDir);
+      execSync(`curl -fsSLO ${repo}`, "inherit", tmpRbFileDir);
       stats.repo.abc++;
       continue;
     }
