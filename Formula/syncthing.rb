@@ -1,8 +1,8 @@
 class Syncthing < Formula
   desc "Open source continuous file synchronization application"
   homepage "https://syncthing.net/"
-  url "https://ghproxy.com/https://github.com/syncthing/syncthing/archive/v1.23.1.tar.gz"
-  sha256 "2e1f1b146f18630a3dfa1480a333f39366d855dc6749fe23dc029a61f5fe4cd1"
+  url "https://ghproxy.com/https://github.com/syncthing/syncthing/archive/v1.23.2.tar.gz"
+  sha256 "036bff4610791aa278a40cdda530e412bf44958c7951b720160c31c87b03d61c"
   license "MPL-2.0"
   head "https://github.com/syncthing/syncthing.git", branch: "main"
 
@@ -12,20 +12,16 @@ class Syncthing < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2f99b50924f35ba44663ff155e5145fe208082468bec8b27a4902318ab1d2ebf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9732af6ea84bd42f920faeb32832fadcedc5f59c68796241e2bebd0d42d07b5d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d8d4a6349fdd99b654e8e811e3415503e342be57df18c78c53bd2c6b8e9aac2c"
-    sha256 cellar: :any_skip_relocation, ventura:        "b7cd29949e4179fe899d67bf626392688b305a59920876837330ff8b4433bed1"
-    sha256 cellar: :any_skip_relocation, monterey:       "f68abc5b36f103daff4f608be6fe649496216eaf30d852e3c60da96c57cc93b2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c2071bfaca4e5fab7acbe0b591025c0d142cd1e5b696bb8713ca44dc5db5efc0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe9b690ed914f9ea87bbead57374b9a7bf948a271435be3593d187b2a72621fc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f38202452e04d2792a13ae4163c803fb36e5d32c3c346881fa1a5e4896df725"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "255051209c261de1f9097e32cc78cc20b579e4592fd1af18ae7369979d3b3615"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "415492dc76a5afc6fd87bde5240c9a86cd467ebde04353b1077708e7e8c6d5b7"
+    sha256 cellar: :any_skip_relocation, ventura:        "f0531afb1c4ec4c56426d195fb34a6e23e213c8f132cdeca1e7f79189d212470"
+    sha256 cellar: :any_skip_relocation, monterey:       "0981cc59d6dbd520b7b504a3d8227d4984bb91131a19dda874791ddd28e56266"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e3b69e6daa66860c143bb88699c3e79fda2c514c478ade316154eb188208cd68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49079dd6ac980eade7774193fb0b4b9c956c1b8712abfaffc3416f6667d50e62"
   end
 
-  # Support for go 1.20 is merged upstream but not yet landed in a tag:
-  # https://github.com/syncthing/syncthing/pull/8769
-  # Remove on next release.
-  depends_on "go@1.19" => :build
+  depends_on "go" => :build
 
   def install
     build_version = build.head? ? "v0.0.0-#{version}" : "v#{version}"

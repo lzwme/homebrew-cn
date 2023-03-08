@@ -1,9 +1,9 @@
 class GoAT119 < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.19.6.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.19.6.src.tar.gz"
-  sha256 "d7f0013f82e6d7f862cc6cb5c8cdb48eef5f2e239b35baa97e2f1a7466043767"
+  url "https://go.dev/dl/go1.19.7.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.19.7.src.tar.gz"
+  sha256 "775bdf285ceaba940da8a2fe20122500efd7a0b65dbcee85247854a8d7402633"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,13 +12,13 @@ class GoAT119 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "c60ef2d487bc835f5517faec0f2030b8b991bfacf86f821b1530eb6b1bfc7061"
-    sha256 arm64_monterey: "e52e672e364338f9aa6a5c46e375e6f0f4a75a142b135f197da2ae664543743f"
-    sha256 arm64_big_sur:  "8f718370e37cad168918de62d9185a6b9f05823756373cf85b96190f4d2b3f01"
-    sha256 ventura:        "1f6af2af7764cf8b54746708dc1a2105a751d6c26b3f576040cdc4cf2fa5cfa6"
-    sha256 monterey:       "80bcd46bde3b726a6d68b14bcbaf0800d9f293b05e542921877ea9ebbb80e850"
-    sha256 big_sur:        "0858d01fa96a6ad32aff91830c009eb9aeb67d996624def140a6ce342579c7c6"
-    sha256 x86_64_linux:   "28e9ce5e8408a4569f54b1b60b658a6dc61360f0d3a716bd5caaa7ed75de1bfd"
+    sha256 arm64_ventura:  "a46a8456370252e6977c98f3b4381f4583d66d53db472958e5e418bc75521891"
+    sha256 arm64_monterey: "b68913931e339e827fe3d3c7af2ee2274d748c0ac4d4df4733b558878dc2532d"
+    sha256 arm64_big_sur:  "cb70d673492be6ee2c97ddb15ebcb493dd354240603a323adfe405c32e3d1939"
+    sha256 ventura:        "996727c3658a85fc6ae6e8ec6d5aa3f8c7116f72e5cf656591f653a97b7a3113"
+    sha256 monterey:       "dbd832dc3de1803281181da47d0c14b5c806b2bfd42c50695c294526002c40ff"
+    sha256 big_sur:        "54ecdc3adbb41da5300a70a514fed7007785a57f7d032038fd5b3af205ac50e0"
+    sha256 x86_64_linux:   "885365c7290af0fe48e9afe6226cd8ce68d208def902706ea84d174276f57962"
   end
 
   keg_only :versioned_formula

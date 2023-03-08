@@ -3,18 +3,18 @@ class Weasyprint < Formula
 
   desc "Convert HTML to PDF"
   homepage "https://www.courtbouillon.org/weasyprint"
-  url "https://files.pythonhosted.org/packages/75/d0/d4524038147f240d029979ca0c51ab23c2f4fe06a3f5530dfbb9d2b1b95a/weasyprint-58.0.tar.gz"
-  sha256 "70f482cad8e53c2c3eae9cf86af412eb93405b16ac8781b519ea3326d475bd6f"
+  url "https://files.pythonhosted.org/packages/6d/65/e23a2b71b3d7c2032633ea51023640f9abb13148994adb88cd789513d304/weasyprint-58.1.tar.gz"
+  sha256 "6173009e313be65807fefbf78a8051ceb7a93776efda7ebbb88c13f5769794f3"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ff3c80d2afdd533aad42c9b4b43539c9725402db36d241a3f54bc8770a856c14"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d1fa24d02259bb57c40424b2b0252a3657468c1915fdf456af3bc85f06ff8854"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9d2b3f2587e1ab4dfbc4f2659f29ea6b8c903c96eae315514d7656b127f774a3"
-    sha256 cellar: :any_skip_relocation, ventura:        "3886e814df231e9530818d295ae02356d2fa39aa943fb47a5f0ba0d95a72c024"
-    sha256 cellar: :any_skip_relocation, monterey:       "62ad297d5ee50101be7bd5a069597d05fb34752b57184e177898ee50c3f9dd23"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c41bd4f49d3fad78de4b6e4aa2c35fde6e24d31c9a9ecda29103c693a70dc0ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad73636644aef311fa7a22972263765c746f92b5647c26762b7640a12e6952dd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a03170404b1c57d30bc4f8da67d849b2a2e6fbb1f095acc053fab4e2e2897cb7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5c52631cd2944b61aae586ac43b0caff0ecbdc0aab39939328aa5593757dcdce"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cd6d31897465dd87c4aace8bb42c038d6dcef0d9d51ce5d8ae4d8624eaa54235"
+    sha256 cellar: :any_skip_relocation, ventura:        "ce2f3edceb6cf17574fcea652c4d860e90e5b46756a19d1096d987db60a4623c"
+    sha256 cellar: :any_skip_relocation, monterey:       "ed97a036ac28a526d30fb12105be4731d66c94d6dd189341282fba7ec3f225cf"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5530cabb30b844003e7f60b1b65276955e7e5d4ffe39525c78764a08ada06b07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa268fc9f14b6c418a00d8aedba26b816b94a7bc77bf67a805bc2465600c0f5c"
   end
 
   depends_on "fonttools"

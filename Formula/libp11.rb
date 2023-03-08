@@ -11,14 +11,14 @@ class Libp11 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "11713444dbf087edd87fc04858797938ec4d4fada46c4c3eac7e7dc6d0ac891b"
-    sha256 cellar: :any,                 arm64_monterey: "b5b73420ecd69a357cc8592e118adb85e2071d689fa7b9d45578051b0b05d18b"
-    sha256 cellar: :any,                 arm64_big_sur:  "17e248e27821ac929a5e8d13d6b5e70dafa8106987cb867cd8e7c02ed8b6385f"
-    sha256 cellar: :any,                 ventura:        "47298110be110bd8bb81e720725b3afaf470a3cb5aed809b7f253bcf3d0c2118"
-    sha256 cellar: :any,                 monterey:       "e34a9f8f5e18a7729b6970e14b421e203015dc576e9eab187a7142575e7a670e"
-    sha256 cellar: :any,                 big_sur:        "8fd62e64790b4eeb4d706f25c1a0d5760e852908f603478032553101002968b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48fcd4d18d7fb24d1adba6b902a102ad0de908b6f1e007eb7d07a8ab123ef3af"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "6af6b0d767af1cb7ec7c3a7265bbdeafb86921fc2e7f5966be2efc9007b8a3d2"
+    sha256 cellar: :any,                 arm64_monterey: "0be4080fadb8580fe8b9618dc2a37670919dc21a0a22d4375d295c3fa40aee98"
+    sha256 cellar: :any,                 arm64_big_sur:  "2c61eab1e9b91d1158a719ca59253a3b65562a7f55c32909319b5359bca5e705"
+    sha256 cellar: :any,                 ventura:        "da2d7d7a89310ef22f4326c9128f491961bff43ded083b1b52e8240076777c44"
+    sha256 cellar: :any,                 monterey:       "0cc69d822cbf9a934c9c72e1ff421958367333a9fa69f060fba581afb58731c5"
+    sha256 cellar: :any,                 big_sur:        "1546eb96b8f270994559dc63591f852ef0f6fbbcf93f92c8e8071a60db2cb9d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6370c44a401aca7e4f6fe02e2220a1c8b8791d697f8c88dbb5a0a2de0c297349"
   end
 
   head do
@@ -32,10 +32,15 @@ class Libp11 < Formula
   depends_on "openssl@3"
 
   def install
+    openssl = deps.find { |d| d.name.match?(/^openssl/) }
+                  .to_formula
+    enginesdir = Utils.safe_popen_read("pkg-config", "--variable=enginesdir", "libcrypto").chomp
+    enginesdir.sub!(openssl.prefix.realpath, prefix)
+
     system "./bootstrap" if build.head?
     system "./configure", *std_configure_args,
                           "--disable-silent-rules",
-                          "--with-enginesdir=#{lib}/engines-1.1"
+                          "--with-enginesdir=#{enginesdir}"
     system "make", "install"
     pkgshare.install "examples/auth.c"
   end

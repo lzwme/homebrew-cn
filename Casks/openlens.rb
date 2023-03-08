@@ -1,9 +1,9 @@
 cask "openlens" do
   arch arm: "-arm64"
 
-  version "6.4.1"
-  sha256 arm:   "0b879cfec55756fbecfb22abdddc834dae10c28e1e77a04a82119ef99b690cb1",
-         intel: "30729dd7b6ae396fb6e9a8f71cc36120e176af6dab3916cc8732ac7ca548c8f0"
+  version "6.4.4"
+  sha256 arm:   "3bc2969ddaa1ba0e513198f6752411b2d974735b52b416f738d90e5b64574d94",
+         intel: "f86c6e3158de2cdbc14d0582346cfd2a1ba731dabcc5f4eb65379ada5258e603"
 
   url "https://ghproxy.com/https://github.com/MuhammedKalkan/OpenLens/releases/download/v#{version}/OpenLens-#{version}#{arch}.dmg"
   name "OpenLens"

@@ -1,8 +1,8 @@
 class Cpl < Formula
   desc "ISO-C libraries for developing astronomical data-reduction tasks"
   homepage "https://www.eso.org/sci/software/cpl/"
-  url "ftp://ftp.eso.org/pub/dfs/pipelines/libraries/cpl/cpl-7.3.tar.gz"
-  sha256 "f4e0578ec211f934cf973c46ab2a3c9ca51e17578ef4087e5cc6a04ec5d61289"
+  url "ftp://ftp.eso.org/pub/dfs/pipelines/libraries/cpl/cpl-7.3.1.tar.gz"
+  sha256 "54546d763e7f75cb679f711c62bc962211328a35064edb6b9455e306458ebe15"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Cpl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "bad7979fecf86da06cb306c6a00a16a40370452a4c0b4f994331f04bb78e1419"
-    sha256 cellar: :any,                 arm64_monterey: "1ac331b2ec31beb396b54264445f11bed88ffc71fba99510907ba59f59c3051e"
-    sha256 cellar: :any,                 arm64_big_sur:  "20b5ded33184328a219f424fffef0ef75181844f6b2185ba3ddd2156778c98ae"
-    sha256 cellar: :any,                 ventura:        "d160f167805735de6d96c9638d3a402e1c001f77ae8b8317390e988c0049acce"
-    sha256 cellar: :any,                 monterey:       "1f20df9a017b56086461f97ccdfa7b8928a70ff8a9e76669cd96bf10314d5e10"
-    sha256 cellar: :any,                 big_sur:        "fc9d98fb32cbeaee37ed9b56dd2f04403599c7c1e8b000ab72a5e35436aebd85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c0f41d4deb1de802c8fa6fc192c4498559bf14afea13ccb19e94ee1b893f257"
+    sha256 cellar: :any,                 arm64_ventura:  "cdfe3609dc92d5182e9b326200c82a3114e4f367d9177d57b5b3c1b3e98c0688"
+    sha256 cellar: :any,                 arm64_monterey: "5fd426dfc5de6c429cd02e062cd1bf6b94e6c5f24c8e72e7deef3c65bc745792"
+    sha256 cellar: :any,                 arm64_big_sur:  "d9757db02ceb67dd9f70a3d1db0de863678d44ef9acb58c42d4b343e5d9d1a40"
+    sha256 cellar: :any,                 ventura:        "1e386174aa9fdc9ac4e03e7cd28843b6bb0c908d8b6d87867fa1a1f0992850b5"
+    sha256 cellar: :any,                 monterey:       "88cb133f3f1233c18abf8505a9f68720763800078a2bd2ac5d91d66022ea82fa"
+    sha256 cellar: :any,                 big_sur:        "61e749dcdde769f33f1eacbdfa67afd952184bffde2be756ef45cb60d4058671"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e1dd5f8e9ae578b52831a6b18f29498e0479dd8f260e6c7dc7e888d2e9e3909"
   end
 
   depends_on "cfitsio"

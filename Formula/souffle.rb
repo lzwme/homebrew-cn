@@ -1,18 +1,18 @@
 class Souffle < Formula
   desc "Logic Defined Static Analysis"
   homepage "https://souffle-lang.github.io"
-  url "https://ghproxy.com/https://github.com/souffle-lang/souffle/archive/refs/tags/2.3.tar.gz"
-  sha256 "db03f2d7a44dffb6ad5bc65637e5ba2b7c8ae6f326d83bcccb17986beadc4a31"
+  url "https://ghproxy.com/https://github.com/souffle-lang/souffle/archive/refs/tags/2.4.tar.gz"
+  sha256 "951f12272023dd3a1b398318ab24eb567bebad1d5f5b623e89c088e1418836af"
   license "UPL-1.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3b1853e3a70ec76c6ca4d257a253cba8582cfbca1fc80c06fad7b42b6328f135"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c1f4a719ceb130824a49acde3de6cd541061451f18933d14bbe2cdea937728a2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "144fb3fa8aa3b1d790bf852546ddfc0e8bc318e7bbfc5ce04794a51ef9fb7adc"
-    sha256 cellar: :any_skip_relocation, ventura:        "8581f4a69c3976be0b59f020d31479e09c789e451bd2aeb630a3624c9a2b9a58"
-    sha256 cellar: :any_skip_relocation, monterey:       "e0aee7dd23a81e2d0ac981711a5518fb74f61c1dc769b1082e4e354915c64c28"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3e09e3883678bc524d7162c1b59a7175f654f33476a8a4cb8c56e1c7c05c62b6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c0cc4fef22fd9d69ce94cbc39d3b4c29818f9202a1df2ae361e4e2786c1934f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ad8e61f58dedd5eebccd1a7512f77f15b832e060d46373bec4ed563320da20fb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "660b4427e40bef8305b9883c2a6287d5a04772a59c888d0017c0d1ea33e20cb5"
+    sha256 cellar: :any_skip_relocation, ventura:        "f85ce27bdf76085ff1e8828202809dfd6d1d304578fc26e4b2d283105808dd17"
+    sha256 cellar: :any_skip_relocation, monterey:       "274a7e2b76855cd451a66fca1b16e68cad6497d127c1f00d8a2254bae4c1ff53"
+    sha256 cellar: :any_skip_relocation, big_sur:        "421864326246cf50896f7fe863944c9b0aa26d8cb2fb11a6f987f158adf897ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8d92874c542c5f262ab0b4ba030ace501983e6076fe191194140211159f86a3"
   end
 
   depends_on "bison" => :build # Bison included in macOS is out of date.

@@ -1,19 +1,18 @@
 class JavaServiceWrapper < Formula
   desc "Simplify the deployment, launch and monitoring of Java applications"
   homepage "https://wrapper.tanukisoftware.com/"
-  url "https://downloads.sourceforge.net/project/wrapper/wrapper_src/Wrapper_3.5.51_20221111/wrapper_3.5.51_src.tar.gz"
-  sha256 "5e4833820b452d80adde03f4178c2adfc4c51c2a28ff1f9b0f3cf3fd3aa6bc1d"
+  url "https://downloads.sourceforge.net/project/wrapper/wrapper_src/Wrapper_3.5.52_20230307/wrapper_3.5.52_src.tar.gz"
+  sha256 "8b69e5e5ec24391071ebc93603f99f1c37f0eca5bcfee03d0d9acd230e8aaac5"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a8cfa2f92470f1d8a666658c5f2bef6eab0bf53abe21db76482882792e41d918"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7e2c14b3893101f056fdd68864726d791b77917455058b0b3fbc7fdb5fb736ed"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "948fbff85cb90372a7e83f81736155f1fd47137dcc1087855cfd4287cfcf728e"
-    sha256 cellar: :any_skip_relocation, ventura:        "c889d8e2e4c1b7e26459049c834304921ff3c1c8d271b68f94e24633a166436e"
-    sha256 cellar: :any_skip_relocation, monterey:       "acc39a0d13c9e76df08f925fa2c51db04eb3750bde9b3185f115ce1b6dd076dc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "45d19d745fd7709f6844bad90429ba9b4f61a6d714414dbcdd193b92e536d898"
-    sha256 cellar: :any_skip_relocation, catalina:       "f18c55c09c27697e6efb78f4d34e94a2bf3b71dd21c6c64227278685cdd604f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c492f5312502fadd421dd4e95a81f9ba5f9f10d25786ab022051d69edafb821"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7afc3050718d9c2826d7085cc8555df0a7d9e310dd827bfaf8f870f10033c8a0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2219b472b7b4fd67e7cb7083245b96f5772fe17e81266ff30d57956e267f86e4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0be1155f459adf66ca9c0c8e4fdc20f63fedfd083e10ac8abacd9ebb3ecaadb3"
+    sha256 cellar: :any_skip_relocation, ventura:        "ddf46c6defb6371cd3308dac66c1bca037b505edbd0ef1a1b0d071955cd30e42"
+    sha256 cellar: :any_skip_relocation, monterey:       "65d6e4110c5e34d3d00a03e72579b64ad26e418477b5683e88b7f2e2d7811552"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3612e7eea8c6e62317962965e62e168a50489698bdc0d67026051b33ddcc2745"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "781b137b40dd264fbac45f3c08744e165eac1bf8729b6279f43b6af6f86d8458"
   end
 
   depends_on "ant" => :build

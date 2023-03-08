@@ -2,19 +2,19 @@ class Kn < Formula
   desc "Command-line interface for managing Knative Serving and Eventing resources"
   homepage "https://github.com/knative/client"
   url "https://github.com/knative/client.git",
-      tag:      "knative-v1.9.0",
-      revision: "df40f5a38991c7698b9b1382ee29d75209e114e8"
+      tag:      "knative-v1.9.1",
+      revision: "1ce39bb21b231548631149fe1e19a736ae91cdc3"
   license "Apache-2.0"
   head "https://github.com/knative/client.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "abc5a3ea7c44c8d90f18cdc35f45b25fbe7ab2ba203aff6832a8a38a931ed779"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "abc5a3ea7c44c8d90f18cdc35f45b25fbe7ab2ba203aff6832a8a38a931ed779"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "abc5a3ea7c44c8d90f18cdc35f45b25fbe7ab2ba203aff6832a8a38a931ed779"
-    sha256 cellar: :any_skip_relocation, ventura:        "e03b0af4f654e8414b37a0d10b97a3d29999dd49a1224d3e75a2ed5a4ea3d8db"
-    sha256 cellar: :any_skip_relocation, monterey:       "e03b0af4f654e8414b37a0d10b97a3d29999dd49a1224d3e75a2ed5a4ea3d8db"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e03b0af4f654e8414b37a0d10b97a3d29999dd49a1224d3e75a2ed5a4ea3d8db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61d9fffaeb65a3e444c487a7283109d7edefe93fb18b071e34fcf59965575ed1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29c740a019b368ad7315415abdbef3c702f2a8de097e55bd05434cfd0edab164"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "29c740a019b368ad7315415abdbef3c702f2a8de097e55bd05434cfd0edab164"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "29c740a019b368ad7315415abdbef3c702f2a8de097e55bd05434cfd0edab164"
+    sha256 cellar: :any_skip_relocation, ventura:        "b9a99ee6d6ecfc25b57492a875c10f5f37e5f902cd5e6143930a6fac88ca01a3"
+    sha256 cellar: :any_skip_relocation, monterey:       "b9a99ee6d6ecfc25b57492a875c10f5f37e5f902cd5e6143930a6fac88ca01a3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b9a99ee6d6ecfc25b57492a875c10f5f37e5f902cd5e6143930a6fac88ca01a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0acfaa1271e62e24c0baac8967dc148b1718a31e114726ee16adc5c4685cc589"
   end
 
   depends_on "go" => :build

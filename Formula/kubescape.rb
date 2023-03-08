@@ -1,19 +1,19 @@
 class Kubescape < Formula
   desc "Kubernetes testing according to Hardening Guidance by NSA and CISA"
   homepage "https://github.com/kubescape/kubescape"
-  url "https://ghproxy.com/https://github.com/kubescape/kubescape/archive/refs/tags/v2.2.3.tar.gz"
-  sha256 "3b81836f850e02fd0a2b4918ed398e14ab324885486a4d374cb7069a5fbb0502"
+  url "https://ghproxy.com/https://github.com/kubescape/kubescape/archive/refs/tags/v2.2.4.tar.gz"
+  sha256 "46a1114302bb1aa1391f13bc97d29f7d5b24d1ced20a7e772550157a7a458c95"
   license "Apache-2.0"
   head "https://github.com/kubescape/kubescape.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e2faf4b4c825d83ee7e3abd4cbae9c51379f67520a1cdff1a54e264bd63c9cd1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ed796c76c8ca44ddc67401693385b492dca04e9f291b638aad1d306acd67566"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "17e198130609a3ddbb75e3a6fe5e9b3b32a1e5b05a13924e375bbc2842069379"
-    sha256 cellar: :any_skip_relocation, ventura:        "65a740dcb94c9b4824e5dcab98526e5679c49fc4f06c45c18de3cdab88dc5957"
-    sha256 cellar: :any_skip_relocation, monterey:       "78afb26e85e6e9c460ffe19cace3de8527e55dfea8e0794293680837b9ffcbe8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e773eac61d5504bff6cd0124a6ad598dd9f9172d0ff2149e1b3d4d7e23ae27f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2ca469dec79c2b93337ca096644cf85ad6ffe12f7c204bae27bf0e79a8cdf67"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e1fe80a71365704d8379a916d83639888b9cc47215d16f368499e206f6dccf68"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d0bbd7dd9627b2dfa8d562c951f4117c669c9ad7a105561b0ba9366f20d0d4ef"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "105c39d1dd8609033e9115e9133fa79773037644ed95198ebc433ebb94499c24"
+    sha256 cellar: :any_skip_relocation, ventura:        "7d37b8bf026b7730040c19cf79bb4c529138571786ec763b8b6bed979680bd0b"
+    sha256 cellar: :any_skip_relocation, monterey:       "42c8ee07cf4f0355d36c6dbf0dc244325f66475a69bdfa51bf9da38702224147"
+    sha256 cellar: :any_skip_relocation, big_sur:        "22b7c1ee4d1a906ab748f7b04a5dcfe9345220bb7235d70b0b2fdf2a0cf430b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0e15fd77ef99f46bded10ea9cd85ccf0c347e795419f1551caba42eaa906838"
   end
 
   depends_on "go" => :build

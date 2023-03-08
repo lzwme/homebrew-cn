@@ -1,9 +1,9 @@
 class Mpich < Formula
   desc "Implementation of the MPI Message Passing Interface standard"
   homepage "https://www.mpich.org/"
-  url "https://www.mpich.org/static/downloads/4.1/mpich-4.1.tar.gz"
-  mirror "https://fossies.org/linux/misc/mpich-4.1.tar.gz"
-  sha256 "8b1ec63bc44c7caa2afbb457bc5b3cd4a70dbe46baba700123d67c48dc5ab6a0"
+  url "https://www.mpich.org/static/downloads/4.1.1/mpich-4.1.1.tar.gz"
+  mirror "https://fossies.org/linux/misc/mpich-4.1.1.tar.gz"
+  sha256 "ee30471b35ef87f4c88f871a5e2ad3811cd9c4df32fd4f138443072ff4284ca2"
   license "mpich2"
 
   livecheck do
@@ -12,13 +12,13 @@ class Mpich < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3e341acad9f0aa46a1b608c266e2b5758d82ecb381c3e3203da949c5ba23e40e"
-    sha256 cellar: :any,                 arm64_monterey: "c862543b4a115e3791ce91a2d7e49b67d27be1217306b9261afbea13611b67f7"
-    sha256 cellar: :any,                 arm64_big_sur:  "969ac9f09d8eacbe4a41c1709bc9be2b1acaeb4006426b600503c3e8e94b2c03"
-    sha256 cellar: :any,                 ventura:        "93cac873004c401ac1e39b6974acc09780c9585e0e507321aa105622cf067c93"
-    sha256 cellar: :any,                 monterey:       "3a1ec5b83e3df79148fde43caba1035371d1abdecf5f35b6ab66095e618acfae"
-    sha256 cellar: :any,                 big_sur:        "37b11557d5f01027366c3e567dde4277e429367364523648491a777f8bf14fd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c437d0b243699f91743f7741e96f849203db75c0ef60fa932c627407b732cf1"
+    sha256 cellar: :any,                 arm64_ventura:  "e04effdf4808868b13d7266342f8cf5d623bbf25a75131d9136c5d92161767b9"
+    sha256 cellar: :any,                 arm64_monterey: "0405a53cbd8a5f88d3bba1c3c9b8345a5a6917c275b6d0e8f6bb05ebb7a2b745"
+    sha256 cellar: :any,                 arm64_big_sur:  "2e1a1bb67ee2fabaa2f52016991c20e8f53460827975ba5c1b78b1b63faa1d4c"
+    sha256 cellar: :any,                 ventura:        "56244601d7e600b770c9ddb6f708d28eada16b86d2be6d8221a753cd85a5296c"
+    sha256 cellar: :any,                 monterey:       "b32aed7219b25627e96bf5ef5424f67670fef14faf5e3c6696636347d18d883e"
+    sha256 cellar: :any,                 big_sur:        "2664fedfb37f20ee7d2e678f40cfebb617197bbcf4cc44530380f878c0ced1dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b87a6065195986091a7ac0b55fc52db1cee70a6af76d48293a791a5f048065b7"
   end
 
   head do

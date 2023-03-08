@@ -1,18 +1,18 @@
 class Lighthouse < Formula
   desc "Rust Ethereum 2.0 Client"
   homepage "https://github.com/sigp/lighthouse"
-  url "https://ghproxy.com/https://github.com/sigp/lighthouse/archive/refs/tags/v3.5.0.tar.gz"
-  sha256 "c8f007328e804bca78f057d6f4264666b6fc87f152d1173bc832af34f4b9e8b6"
+  url "https://ghproxy.com/https://github.com/sigp/lighthouse/archive/refs/tags/v3.5.1.tar.gz"
+  sha256 "5e5c7a5f9ac4dd7d079f43a0e872ba80ed647457a4008be2a61e061cc0226aee"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0577d01d009cc0653eab214e762cd0f33dd9174a1bf4a1d9268425d4f9b71856"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5a1a942ed97c1df5ce8b08a573066b638680bb4e6a303290ac4c6849f675af61"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3f8b0efb07d79290675be6585072e0e2aa426c0654d0242d18c24c6d1b1f338f"
-    sha256 cellar: :any_skip_relocation, ventura:        "b79bd836cce25acb585308e71cf19405169d6823a15fdaf77f961fa8b437ba98"
-    sha256 cellar: :any_skip_relocation, monterey:       "0b2989ba02e7fe2f4be23477729f86732f4e4bc650d2099522823c742bf9b1b1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ba8b886ef8449078833c50f473b48941d4ae4bd7abfbbacc0d5b5bfc7fd3e48f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e04ddeaeeca28fbe39354e5ff4f54872e53ea8de2972bd060d174497ee854285"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "10968d29f2797b9bc1c527735e689a2e68f0d0e3cfb4f7384d0d4273ad63963f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e863d0997ff9765a967e7e3f5927fc97e34495fa30e5b47b30abe531cd18a575"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cc9bf914ed4a92ec5b14085c5440c0fe2056ad63550b922fcf0059aa4bf84046"
+    sha256 cellar: :any_skip_relocation, ventura:        "5f4c546247f6d54bd44441b25004e27b0742cc787babcc9ce32ac0e18935136c"
+    sha256 cellar: :any_skip_relocation, monterey:       "827ef59765895c1c6a3e0502bcb7bc0474c22ae40515f55020d3998a92f5a690"
+    sha256 cellar: :any_skip_relocation, big_sur:        "256ba111c641c669d1905cc23821ce0263b420e7981e8fc1b3f65f03981513cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "714a82f4ff2625998868974f9069ceb55f0933dfacdb2e3ddfe0f2dbee675205"
   end
 
   depends_on "cmake" => :build
