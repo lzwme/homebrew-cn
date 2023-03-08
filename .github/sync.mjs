@@ -148,7 +148,7 @@ async function gitCommit() {
       `git push`,
     ];
 
-    for (const cmd of cmds) execSync(cmd, "pipe", CONFIG.tmpDir);
+    for (const cmd of cmds) execSync(cmd, "inherit", rootDir);
   } else {
     logger.info("Not Updated");
   }
