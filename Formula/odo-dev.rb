@@ -7,6 +7,14 @@ class OdoDev < Formula
   license "Apache-2.0"
   head "https://github.com/redhat-developer/odo.git", branch: "main"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "79f6e74e8e605335aa6b841b328fcb014b4680dc2d41de4d49293f0976a6a7fb"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "acc7899b7060ba2ed4c4dc1883ce0c91ec104b39307b5369dc34d9017839293f"

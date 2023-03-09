@@ -3,18 +3,18 @@ require "language/node"
 class CloudflareWrangler2 < Formula
   desc "CLI tool for Cloudflare Workers"
   homepage "https://github.com/cloudflare/workers-sdk"
-  url "https://registry.npmjs.org/wrangler/-/wrangler-2.12.1.tgz"
-  sha256 "61b973ad812ea434e57f0d7d7e4c51345e317e04028aa116ce0df5d01e80970c"
+  url "https://registry.npmjs.org/wrangler/-/wrangler-2.12.2.tgz"
+  sha256 "de505b7d17fb8a8220ebb95f685bc99187b48bd3e49ff797a6673eb3d1a728dc"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c82f52a9f69dc686505a4a46cd6b7e408f24e9e451e2e022a06619f3676ff4c9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c82f52a9f69dc686505a4a46cd6b7e408f24e9e451e2e022a06619f3676ff4c9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c82f52a9f69dc686505a4a46cd6b7e408f24e9e451e2e022a06619f3676ff4c9"
-    sha256 cellar: :any_skip_relocation, ventura:        "37173b5569ebb4280ed859daf24865c1b518a650e273fe3646e296afbb8ee1da"
-    sha256 cellar: :any_skip_relocation, monterey:       "37173b5569ebb4280ed859daf24865c1b518a650e273fe3646e296afbb8ee1da"
-    sha256 cellar: :any_skip_relocation, big_sur:        "37173b5569ebb4280ed859daf24865c1b518a650e273fe3646e296afbb8ee1da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0f63db120b2628ce75e9a73b2172f11e505e6950ac10c3bb43d2ba851f74d10"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "803ca4f878b06c6b9c18111cd70a1a24faf1fcffcaae352224043790792f9928"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "803ca4f878b06c6b9c18111cd70a1a24faf1fcffcaae352224043790792f9928"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "803ca4f878b06c6b9c18111cd70a1a24faf1fcffcaae352224043790792f9928"
+    sha256 cellar: :any_skip_relocation, ventura:        "f48f9c14dba8475d32355f73be49e2833c3fb9adf1577c271b1f9126cb85f304"
+    sha256 cellar: :any_skip_relocation, monterey:       "f48f9c14dba8475d32355f73be49e2833c3fb9adf1577c271b1f9126cb85f304"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f48f9c14dba8475d32355f73be49e2833c3fb9adf1577c271b1f9126cb85f304"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2c6819ed36f08faf4aa37446744ec98cc0809cec388b748b85f67995fc2b38b"
   end
 
   depends_on "node"

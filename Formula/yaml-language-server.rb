@@ -3,18 +3,18 @@ require "language/node"
 class YamlLanguageServer < Formula
   desc "Language Server for Yaml Files"
   homepage "https://github.com/redhat-developer/yaml-language-server"
-  url "https://registry.npmjs.org/yaml-language-server/-/yaml-language-server-1.11.0.tgz"
-  sha256 "8fe7fc5db9d89d73c5091936b349faee4761e7fcf26612f4322146aea86702c6"
+  url "https://registry.npmjs.org/yaml-language-server/-/yaml-language-server-1.12.0.tgz"
+  sha256 "38739615283eb32371959ea808869009a315e12faddbdc32b536a463354a2df4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7e68fb5c597e6c45e36d4d32eac4db6aa906efb9522678382e6e2888329086ea"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7e68fb5c597e6c45e36d4d32eac4db6aa906efb9522678382e6e2888329086ea"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7e68fb5c597e6c45e36d4d32eac4db6aa906efb9522678382e6e2888329086ea"
-    sha256 cellar: :any_skip_relocation, ventura:        "d7a78fe8232a249cb1f71569bf7f65123329c5ffd75fd2fe391312d12743b681"
-    sha256 cellar: :any_skip_relocation, monterey:       "d7a78fe8232a249cb1f71569bf7f65123329c5ffd75fd2fe391312d12743b681"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d7a78fe8232a249cb1f71569bf7f65123329c5ffd75fd2fe391312d12743b681"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e68fb5c597e6c45e36d4d32eac4db6aa906efb9522678382e6e2888329086ea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b87e88ec455f481a6f67e95a02f9e2b88638c75955722c9148d4de1b27854e1c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b87e88ec455f481a6f67e95a02f9e2b88638c75955722c9148d4de1b27854e1c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b87e88ec455f481a6f67e95a02f9e2b88638c75955722c9148d4de1b27854e1c"
+    sha256 cellar: :any_skip_relocation, ventura:        "7c9e2035a2629025130aef99e439be0178c72b6647b910a170dd4f52bd1a9081"
+    sha256 cellar: :any_skip_relocation, monterey:       "7c9e2035a2629025130aef99e439be0178c72b6647b910a170dd4f52bd1a9081"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7c9e2035a2629025130aef99e439be0178c72b6647b910a170dd4f52bd1a9081"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b87e88ec455f481a6f67e95a02f9e2b88638c75955722c9148d4de1b27854e1c"
   end
 
   depends_on "node"

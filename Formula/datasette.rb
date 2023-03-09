@@ -2,19 +2,19 @@ class Datasette < Formula
   include Language::Python::Virtualenv
   desc "Open source multi-tool for exploring and publishing data"
   homepage "https://docs.datasette.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/bf/fb/0d1e106b08f5bdf3ab936c404b5d7998cf2144b50d77765af873e847b16a/datasette-0.64.1.tar.gz"
-  sha256 "ca30c37e515400b3ba1b07dfe51093238e33baca75ccf3d163645cf5b3c80fd5"
+  url "https://files.pythonhosted.org/packages/63/57/255eec3f6e51f8662c758df7c58b8456596a3919369dd543b5445321a8b3/datasette-0.64.2.tar.gz"
+  sha256 "e9e16edbd3af2e11a2f251964fd8d9b7f9e4c4189790bc6c23f0fafa8ee458fc"
   license "Apache-2.0"
   head "https://github.com/simonw/datasette.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5da02493d09cd8bfff6e9ad207b640bde3b04e974c758c0789f2a893658fe2f8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fc2e2f31cb0e8c841261740d3e69d5ba0e309edc3c8fffd71479e92323149a3e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "90236ea43cfb1b336b759b3136e7ec6c885da0d5f75c869f67bb07ae1c897859"
-    sha256 cellar: :any_skip_relocation, ventura:        "99aeb8590c215d302af7e15880f8b15bd0768dd558782f64a2ace327fe2c0c0d"
-    sha256 cellar: :any_skip_relocation, monterey:       "58fc7233bfe382c4a7017746b08b8dc2ee0a2dcf1b4370c1964804971db9d0ac"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ff2a6ea2bad36d332fe4ac974e3c53fd94e7decf477ddb80fb50a9fab1c9c2c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05cd6e7d14f9e3a8951e37b4f30adc20b72793d1ebac593a81cca891135d5439"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c59c8266cebb0a555d01bd4354af981beae19fdb12e404167b3827d522332476"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "04fff03e4360a9dd63c3b7836cce78e4ef1f9e740eb89cfd2a9231e38f5b4a84"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "180f2385840379d3c20ad689763979c5842b4a0d462f81c75efddcd8fcc8376f"
+    sha256 cellar: :any_skip_relocation, ventura:        "33acdf9cda51cdef2c788b5fc048d59d306f7f02c9cc89c9c2f54cc69944e03f"
+    sha256 cellar: :any_skip_relocation, monterey:       "dcab5ff678b64fced320b5808e76cedf301f48bd5d3831061331e2435b064bc9"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ba8a3afd30e8791cbfa85d0b2c95dc63066a544163a5e0bd8d6d3c5257277f52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d3d6a43938ab302b672346897c7ab36385e613edb967fa817a3580d2d07d37f"
   end
 
   depends_on "python-typing-extensions"
@@ -23,8 +23,8 @@ class Datasette < Formula
   depends_on "six"
 
   resource "aiofiles" do
-    url "https://files.pythonhosted.org/packages/86/26/6e5060a159a6131c430e8a01ec8327405a19a449a506224b394e36f2ebc9/aiofiles-22.1.0.tar.gz"
-    sha256 "9107f1ca0b2a5553987a94a3c9959fe5b491fdf731389aa5b7b1bd0733e32de6"
+    url "https://files.pythonhosted.org/packages/40/a0/07be94aecba162ed5147359f9883e82afd2ac13aed33678a008fc8c36f8b/aiofiles-23.1.0.tar.gz"
+    sha256 "edd247df9a19e0db16534d4baaf536d6609a43e1de5401d7a4c1c148753a1635"
   end
 
   resource "anyio" do
@@ -98,8 +98,8 @@ class Datasette < Formula
   end
 
   resource "MarkupSafe" do
-    url "https://files.pythonhosted.org/packages/1d/97/2288fe498044284f39ab8950703e88abbac2abbdf65524d576157af70556/MarkupSafe-2.1.1.tar.gz"
-    sha256 "7f91197cc9e48f989d12e4e6fbc46495c446636dfc81b9ccf50bb0ec74b91d4b"
+    url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
+    sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
   end
 
   resource "mergedeep" do
@@ -118,8 +118,8 @@ class Datasette < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/46/40/a933ac570bf7aad12a298fc53458115cc74053474a72fbb8201d7dc06d3d/python-multipart-0.0.5.tar.gz"
-    sha256 "f7bb5f611fc600d15fa47b3974c8aa16e93724513b49b5f95c81e6624c83fa43"
+    url "https://files.pythonhosted.org/packages/2d/23/abcfad10c3348cb6358400f8adbc21b523bbc6c954494fd0974428068672/python_multipart-0.0.6.tar.gz"
+    sha256 "e9925a80bb668529f1b67c7fdb0a5dacdd7cbfc6fb0bff3ea443fe22bdd62132"
   end
 
   resource "rfc3986" do

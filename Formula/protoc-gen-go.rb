@@ -1,20 +1,19 @@
 class ProtocGenGo < Formula
   desc "Go support for Google's protocol buffers"
   homepage "https://github.com/protocolbuffers/protobuf-go"
-  url "https://ghproxy.com/https://github.com/protocolbuffers/protobuf-go/archive/v1.28.1.tar.gz"
-  sha256 "df0b3dceeff0e1b6d029e60f076edd0d852cb8f3c2fe4fe3fe40164f16ec9b6b"
+  url "https://ghproxy.com/https://github.com/protocolbuffers/protobuf-go/archive/v1.29.0.tar.gz"
+  sha256 "b0ed4f3d61e3783837f119fc89a99eac4415632d4c98d1a0f93d8499023d72fa"
   license "BSD-3-Clause"
   head "https://github.com/protocolbuffers/protobuf-go.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ac0b2d7f4f50e8400be8bb27486a33dbbcdec1358ba7ac4a4e8436561d158aa3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d136978460dd87b8a0b85015081ccc4a5b1cdb3a3651a67e835ff08c54f1ef94"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d136978460dd87b8a0b85015081ccc4a5b1cdb3a3651a67e835ff08c54f1ef94"
-    sha256 cellar: :any_skip_relocation, ventura:        "25e91ecfa07dedca75170da086bbea7e789486b5bf73215ea638de92b792bd9b"
-    sha256 cellar: :any_skip_relocation, monterey:       "73b37dbb28c01533b89a2828d6a3ea25036e8b091ca2a079a7411801e313d628"
-    sha256 cellar: :any_skip_relocation, big_sur:        "73b37dbb28c01533b89a2828d6a3ea25036e8b091ca2a079a7411801e313d628"
-    sha256 cellar: :any_skip_relocation, catalina:       "73b37dbb28c01533b89a2828d6a3ea25036e8b091ca2a079a7411801e313d628"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "19c8d17a42340e69455184e35902e123075e9631d032739f690c90bc984cda6c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0bb6b5c800554bc6e9661dfa2bd90643cd9431e1acdff6f115f017dba5e0a123"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0bb6b5c800554bc6e9661dfa2bd90643cd9431e1acdff6f115f017dba5e0a123"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0bb6b5c800554bc6e9661dfa2bd90643cd9431e1acdff6f115f017dba5e0a123"
+    sha256 cellar: :any_skip_relocation, ventura:        "1823b6a7ac2a0759a278b73f9e68eea9b58f2c0008ecd43e70946889b83ed330"
+    sha256 cellar: :any_skip_relocation, monterey:       "1823b6a7ac2a0759a278b73f9e68eea9b58f2c0008ecd43e70946889b83ed330"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1823b6a7ac2a0759a278b73f9e68eea9b58f2c0008ecd43e70946889b83ed330"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc6e8ddf60d4d62f3d6c23e15ee154d350809b7b972c88ed6c4825d346840559"
   end
 
   depends_on "go" => :build
