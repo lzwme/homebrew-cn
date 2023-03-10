@@ -3,19 +3,19 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://ghproxy.com/https://github.com/aws/aws-cli/archive/2.11.0.tar.gz"
-  sha256 "30dc7235fba29d18c19460dcb3d54ca7d105dd5fb9ef84408cfad673a7817961"
+  url "https://ghproxy.com/https://github.com/aws/aws-cli/archive/2.11.1.tar.gz"
+  sha256 "038a0c9c1050ff1b1dbd8850c73e8760edee7f1c67420212866f48afc2afe3a7"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7e88e7d01ab0ef431681bdf62afb05e8f191175fe9a5f6bd0f861776f7174571"
-    sha256 cellar: :any,                 arm64_monterey: "2bb91dada8dc1d9de08156f80fde55909b49fb09cc814455e7bf1c03fe13c97d"
-    sha256 cellar: :any,                 arm64_big_sur:  "0065d99daacf37867254ed8cfe3902f38661ac3540e89d0a5ad97b93d2a60071"
-    sha256 cellar: :any,                 ventura:        "93939b9e7ba79e6204ec9d20aa8376bd4fe59c9a70a0dce22e0307fadb435da2"
-    sha256 cellar: :any,                 monterey:       "ded6a6443f333a848fef36a083ec06765e9fd157745fbf94096295749f7d5c9b"
-    sha256 cellar: :any,                 big_sur:        "f672f646611274768c6242d588ace7651757c9feb31e2bd8670cbbbf5f03086a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a86d2e044ae9d491190c03efb2f6767b1fe2cbd88495455f9db50cdc9e04b793"
+    sha256 cellar: :any,                 arm64_ventura:  "77e6566ef6bd19ecc19e81fb0db9772cc927cd159ff6209f445e3fbc6417feac"
+    sha256 cellar: :any,                 arm64_monterey: "7ad82492f75f04f97e2d526939cbab331078be6acb14ef6a77eaef1c29b1d765"
+    sha256 cellar: :any,                 arm64_big_sur:  "6379464bc536a2f032ed5b60ca4f4c54248507c3a0709ac0509778979d62c0cb"
+    sha256 cellar: :any,                 ventura:        "f98260f47e663f64564c2c54230dffb31798b1e86f8e812a549070ded4bb820b"
+    sha256 cellar: :any,                 monterey:       "46bea2e4cfabf0b150f7b9a0c6592c83e0a6b2a5437b0ee417feb3a0fb74a215"
+    sha256 cellar: :any,                 big_sur:        "7ab3fe0fb0be771e1a0cb4ecc168e3a881389529b362a57da55ebd1004fde33e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0673e76a0442f229661c1df1b6f455a3d480884bbede8923b1f69aa22225ecea"
   end
 
   depends_on "cmake" => :build
@@ -31,8 +31,8 @@ class Awscli < Formula
   # 2. Ignore `docutils` and `six`. Update all other PyPI packages
 
   resource "awscrt" do
-    url "https://files.pythonhosted.org/packages/ae/98/dda092078f2d47bad08e184ab9d364b8f89166497062bc1cf811c0bbbde2/awscrt-0.16.10.tar.gz"
-    sha256 "3101499b479b82f0403f615bf520c1f8b9506818d275e3e28ade25cc6bcdb92b"
+    url "https://files.pythonhosted.org/packages/a2/90/c59a1be4b9978331f363370c991a7ab766aef207adafadcdbd52899c4da2/awscrt-0.16.11.tar.gz"
+    sha256 "39b5b98e28e1e4004f332abed2d6cbbb8679b580588ea857a453eccf729c9761"
   end
 
   resource "cffi" do
@@ -46,8 +46,8 @@ class Awscli < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/e3/3f/41186b1f2fd86a542d399175f6b8e43f82cd4dfa51235a0b030a042b811a/cryptography-38.0.4.tar.gz"
-    sha256 "175c1a818b87c9ac80bb7377f5520b7f31b3ef2a0004e2420319beadedb67290"
+    url "https://files.pythonhosted.org/packages/fa/f3/f4b8c175ea9a1de650b0085858059050b7953a93d66c97ed89b93b232996/cryptography-39.0.2.tar.gz"
+    sha256 "bc5b871e977c8ee5a1bbc42fa8d19bcc08baf0c51cbf1586b0e87a2694dde42f"
   end
 
   resource "distro" do

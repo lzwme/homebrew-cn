@@ -25,14 +25,14 @@ class Qt < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "c3baece41853ddd1928f64a057eaeed59486a50f0a92456a3b97efd55ea858ce"
-    sha256 cellar: :any,                 arm64_monterey: "94718efac13eeebd0c07ff7015a36a67f3331a6c72c3721a4cad64f3fa21a057"
-    sha256 cellar: :any,                 arm64_big_sur:  "40ed1b9f974b9b55d9b0e4365884850137f119070dcf6b65ef7e1f73ac042a90"
-    sha256 cellar: :any,                 ventura:        "2d523d232f62d4c8075038975881d8914f8eb3de8972a5bcde6aab68259749bb"
-    sha256 cellar: :any,                 monterey:       "9260a401d7e42ac0a04532017d96582d74266b3989d0948dfc04daa1c4a7b697"
-    sha256 cellar: :any,                 big_sur:        "2e10b637e50bba986e030aacbea23613558e1e36a982d45fac3be73941c04ae8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a47d43bf6dbdd6bf03c432d07900a87ff6878b092f4356bab413424b69879108"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "317951f1b836fece38f97fb936147beab7f80b625876ea52466d109b81c9e45d"
+    sha256 cellar: :any,                 arm64_monterey: "ebcc6f3ac45d6f04cda36ff264ffbd6db23c204d35cec51a9cb2d28a77e1f3e1"
+    sha256 cellar: :any,                 arm64_big_sur:  "d4cda62ec74850293c2eaaf6dcef6fbfb00f0414e59cd427cfc8fc103428e3a7"
+    sha256 cellar: :any,                 ventura:        "5f26fa0a76419d504ebc4ef9ede6a00f249f0c0fbb4ab12c5ffb91ea2134a2ae"
+    sha256 cellar: :any,                 monterey:       "c0b5aa8d5e08a834a1b034fb57921a97efb36501809b266ac65a128c1baa13b1"
+    sha256 cellar: :any,                 big_sur:        "b8952ac78246fc8f435fdbb5662f2b25c83d9810d3c7e297a98b2e52df9600df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b19257e9549b41f382e75eaed8cbacf482a092487f93312a145f4926e742ad6e"
   end
 
   depends_on "cmake"      => [:build, :test]
@@ -249,12 +249,54 @@ class Qt < Formula
       include.install_symlink f/"Headers" => f.stem
     end
 
+    # Install a qtversion.xml to ease integration with QtCreator
+    # As far as we can tell, there is no ability to make the Qt buildsystem
+    # generate this and it's in the Qt source tarball at all.
+    # Multiple people on StackOverflow have asked for this and it's a pain
+    # to add Qt to QtCreator (the official IDE) without it.
+    # Given Qt upstream seems extremely unlikely to accept this: let's ship our
+    # own version.
+    # If you read this and you can eliminate it or upstream it: please do!
+    # More context in https://github.com/Homebrew/homebrew-core/pull/124923
+    qtversion_xml = share/"qtcreator/QtProject/qtcreator/qtversion.xml"
+    qtversion_xml.dirname.mkpath
+    qtversion_xml.write <<~XML
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE QtCreatorQtVersions>
+      <qtcreator>
+      <data>
+        <variable>QtVersion.0</variable>
+        <valuemap type="QVariantMap">
+        <value type="int" key="Id">1</value>
+        <value type="QString" key="Name">Qt %{Qt:Version} (#{HOMEBREW_PREFIX})</value>
+        <value type="QString" key="QMakePath">#{opt_bin}/qmake</value>
+        <value type="QString" key="QtVersion.Type">Qt4ProjectManager.QtVersion.Desktop</value>
+        <value type="QString" key="autodetectionSource"></value>
+        <value type="bool" key="isAutodetected">false</value>
+        </valuemap>
+      </data>
+      <data>
+        <variable>Version</variable>
+        <value type="int">1</value>
+      </data>
+      </qtcreator>
+    XML
+
     return unless OS.mac?
 
     bin.glob("*.app") do |app|
       libexec.install app
       bin.write_exec_script libexec/app.basename/"Contents/MacOS"/app.stem
     end
+  end
+
+  def caveats
+    <<~EOS
+      You can add Homebrew's Qt to QtCreator's "Qt Versions" in:
+        Preferences > Qt Versions > Link with Qt...
+      pressing "Choose..." and selecting as the Qt installation path:
+        #{HOMEBREW_PREFIX}
+    EOS
   end
 
   test do

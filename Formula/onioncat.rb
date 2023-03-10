@@ -1,19 +1,19 @@
 class Onioncat < Formula
   desc "VPN-adapter that provides location privacy using Tor or I2P"
   homepage "https://www.onioncat.org"
-  url "https://ghproxy.com/https://github.com/rahra/onioncat/archive/refs/tags/v4.10.0.tar.gz"
-  sha256 "4b73566fa44038584bb458faee002b72aabc250b6975ae01d4efbb8de4db3a15"
+  url "https://ghproxy.com/https://github.com/rahra/onioncat/archive/refs/tags/v4.11.0.tar.gz"
+  sha256 "75ff9eed332e97a9efb7999bbe48867d00e06ac20601cc72b87897d5b1859f99"
   license "GPL-3.0-only"
   head "https://github.com/rahra/onioncat.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7e6c123df954d5c78e62a82d846f54f5cf0be41c92540489ab7e60cb91c24cbe"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b7c31f0b1a06f658193237bd0e39c111eab5d4f9576dc7994b52f8a77c43ab29"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "85b3f6e04f2e5d71e1b806fbca8a6a840ad4692213cf5fc7dab714ba75a2a89d"
-    sha256 cellar: :any_skip_relocation, ventura:        "825df40f45067cf347d696631dede86fd2ef895245282544052b93fee9de0c22"
-    sha256 cellar: :any_skip_relocation, monterey:       "ae9055e77589f86621f686b3e243150b95be340dece26c203c38291ed1929270"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c7c0705c39509d327c5015695b200dc3bfb153566854426be0836074fc980bb2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "519b2c32d2464693c136295c8c6261530a0f07835275ddeacda857f1240033ea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "313d9bc109a8fdd7f9ceb5995e359e071e6ea822f4f20a550b6c84687e638894"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d8c8dba362799a9d9646efb169e854dc964dd0f76c3837a746f074a436e0f6b9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b7b14ce567dc873d3caae2039c68b510c0311698e5d8cc89e62cd4b46d9f3258"
+    sha256 cellar: :any_skip_relocation, ventura:        "03dbf70b4079c360e0fe10e7909068bf277be34b9780402faf525697b7b7cfb0"
+    sha256 cellar: :any_skip_relocation, monterey:       "3bf2a843df22a579b0965685c779df4165d0db2be9ffeeef32e2769136fd0cb7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d3be4e31eed45930e85c8043abf03fc34ebc668bc5f9e2d8b09c4dfec8ae6090"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7909dd65c46856bf1ba00a9253d6b51cd4c1b23b2595a57d0018607ca02bd94"
   end
 
   depends_on "autoconf" => :build

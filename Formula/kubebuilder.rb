@@ -2,22 +2,21 @@ class Kubebuilder < Formula
   desc "SDK for building Kubernetes APIs using CRDs"
   homepage "https://github.com/kubernetes-sigs/kubebuilder"
   url "https://github.com/kubernetes-sigs/kubebuilder.git",
-      tag:      "v3.9.0",
-      revision: "26f605e889b2215120f73ea42b081efac99f5162"
+      tag:      "v3.9.1",
+      revision: "cbccafa75d58bf6ac84c2f5d34ad045980f551be"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/kubebuilder.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4af118ea04ec3ec503d79d797562063b427fbc1b7c23a4f5d234bfcc439d8fe4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "64d8d84ded09d6f0930e7ed81e46f775507f2df52962a078af421fa63f562af9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "62b7dbe83f8cdcd6874c000b377c997352f0aa69186892e7953522b7432bfd78"
-    sha256 cellar: :any_skip_relocation, ventura:        "3f988dccf0784d6edc0d4b9463c6c5df4892cb9ddea79e4fbf9bb52155072657"
-    sha256 cellar: :any_skip_relocation, monterey:       "71639a600f55228313c89fca35d61a10ad512f2913d5d75a83dbe94e60bede03"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5cf477bc39a63b3f9b389f59a1db62eec83a5315634c28f01bb776e325a56f28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "baa5b916968af2b81b20947537303dfbd46908fa609ea34e5b6ac7a166c313c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6261700ad55bbb826bb6e2d2e635577f90d4b8955e94ddce95bdca7cfe5e9937"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "92d905520a80675ce6a474787ef1d78860ab1433f4727889085a462575a86617"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "589af5dbdf89c8379b8924a80755abe2fd73ac39f9b10844c83e13446fad97df"
+    sha256 cellar: :any_skip_relocation, ventura:        "85904ce288e95a66b5a9b592ad89b2606eae1a061d8bd4067bc1da7e2399a3e3"
+    sha256 cellar: :any_skip_relocation, monterey:       "be8c48f02adcaaa9f7777c46799903ed71d0e8a5c41c5d21ffae81415a23478f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e28b1b7e6100d1e0a48e8fb791771a04d19a7c2aad7de51632af3bc908860713"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94bc9cff679bbc23d9e2ca280c36c946a0d49b0c6e30589c208daaf2f35f9125"
   end
 
-  depends_on "git-lfs" => :build
   depends_on "go"
 
   def install
