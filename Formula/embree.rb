@@ -1,19 +1,19 @@
 class Embree < Formula
   desc "High-performance ray tracing kernels"
   homepage "https://embree.github.io/"
-  url "https://ghproxy.com/https://github.com/embree/embree/archive/v4.0.0.tar.gz"
-  sha256 "bb967241f9516712a9f8e399ed7f756d7baeec3c85c223c0005ede8b95c9fa61"
+  url "https://ghproxy.com/https://github.com/embree/embree/archive/v4.0.1.tar.gz"
+  sha256 "1fa3982fa3531f1b6e81f19e6028ae8a62b466597f150b853440fe35ef7c6c06"
   license "Apache-2.0"
   head "https://github.com/embree/embree.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "25c2267519a75993c6b0435f53a28ddaad3c8e1d36d02b7c14fc24a4ace31487"
-    sha256 cellar: :any,                 arm64_monterey: "88bf2039af072c9f650ffb5d2a43c309b1c40c386c71f6ed00eecb82a687ce99"
-    sha256 cellar: :any,                 arm64_big_sur:  "0eee015b5c72e005d51a2d5494d764554906334598fb78be9707841142c8a1be"
-    sha256 cellar: :any,                 ventura:        "163d14cadb8c1efafe8c280a9d8c1365e61d21372ea86236b6b23c80b21dd223"
-    sha256 cellar: :any,                 monterey:       "beca63794b0cb6eefc282ba0604f112b7608dad142c648e948e306f1a1d24241"
-    sha256 cellar: :any,                 big_sur:        "efe39d5be89404e6ab2d6cbab82414f30c4c963e55c75eb6defa76508a129e1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0f8b57e3141a5fe1445f8781692ef1b96f31bef4da609dd34a270a748a2a1f8"
+    sha256 cellar: :any,                 arm64_ventura:  "9d286384529b74c5f76c315370a958d9b620a1988d5792eaa42a25afa04b62bb"
+    sha256 cellar: :any,                 arm64_monterey: "a9a933e23a99f06a9801606fe590a885fc4a8f3b94bcaee39bddfb8f642b1f43"
+    sha256 cellar: :any,                 arm64_big_sur:  "c34012a71735e3c74a471a7b663fbc48a89975c002b3611606c403adbff6c715"
+    sha256 cellar: :any,                 ventura:        "e914825520760206a839a4dffac63512602d5885d652d50f5810512d790c7db6"
+    sha256 cellar: :any,                 monterey:       "604d5050a0fa7f47b1b8149c0f80212a1bb36621abf56e491729ea36623f60f2"
+    sha256 cellar: :any,                 big_sur:        "66f75b4f486c4d8afe91ee87ced611e373b01f7652e51aacba11903b44fec5a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bbbde01042832114be21228702964d9976fcd363065cf355f64bc4858e1b40a0"
   end
 
   depends_on "cmake" => :build

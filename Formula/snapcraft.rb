@@ -4,8 +4,8 @@ class Snapcraft < Formula
   desc "Package any app for every Linux desktop, server, cloud or device"
   homepage "https://snapcraft.io/"
   url "https://github.com/snapcore/snapcraft.git",
-      tag:      "7.2.11",
-      revision: "524866d22bf323e66c40d07c7da96c5920aa882f"
+      tag:      "7.3.1",
+      revision: "bef32e264fb1b8061da3370d7435bace9316409e"
   license "GPL-3.0-only"
 
   livecheck do
@@ -14,13 +14,13 @@ class Snapcraft < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "0e11bb06d0ee748d778acf4e1a9b211ffd41b8cf218acca087a7b1332a82db19"
-    sha256 cellar: :any,                 arm64_monterey: "7c30b7fb7185df78440f613bf95ab059aae2258e49450464f2bee370624bd3dc"
-    sha256 cellar: :any,                 arm64_big_sur:  "6f0c23f0a149ce389d66ec4f9eef6b4e2f678ea85b47c58158a9db7184c0288a"
-    sha256 cellar: :any,                 ventura:        "942bade2f4bef0ba919f0c07d04d1e35d1adfd8c935517735b49bc1aeb58f4be"
-    sha256 cellar: :any,                 monterey:       "b612a67d75463931b1f1b2fa9c1ba2d8f31e1a80251a734849cda4491677c6ed"
-    sha256 cellar: :any,                 big_sur:        "672744643ab64e53d0745a2f3681e461a172d02efc1d1b90872b1af9d3046dcd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e72ede553cc97ee998995aae513c84ab35f05715133f607a2ca82df04bebc71d"
+    sha256 cellar: :any,                 arm64_ventura:  "aefaecba12fae1dbc52ae18514faca03be6397b6236860df0f3e3899dc75d388"
+    sha256 cellar: :any,                 arm64_monterey: "248bba61d21cfab6791150a91e80f580e83909cc07e78356724d80f3d0ebf451"
+    sha256 cellar: :any,                 arm64_big_sur:  "1713e7af9ed12e0f331cb18f864ad24715672be1f20ef2ff771120c20e70f85b"
+    sha256 cellar: :any,                 ventura:        "14829fdec73c7c3cec1dbbfe5c69e50ff9894b312f1f2df386a82843e0fc350b"
+    sha256 cellar: :any,                 monterey:       "989464742304aaaa539aeada038dcadc914a9bc5eb9b852868d11dcdb44b5881"
+    sha256 cellar: :any,                 big_sur:        "487989f927202a18f32f3a44c307aecbbe487465cb273221d4da3d0e31b8afaa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e4c76c266f500238e20be3eb0c1dd283a9e68e6179b7e28fe9e3c06499a6882"
   end
 
   depends_on "rust" => :build # for cryptography

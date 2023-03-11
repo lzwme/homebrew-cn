@@ -6,7 +6,7 @@ class Ffmpeg < Formula
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
-  revision 5
+  revision 6
   head "https://github.com/FFmpeg/FFmpeg.git", branch: "master"
 
   livecheck do
@@ -15,13 +15,13 @@ class Ffmpeg < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "db3af0538b50603b756a603ae58f9dbbcfc39ed46098942dec811f7de07e97ee"
-    sha256 arm64_monterey: "75791347c901a770e1f68025c7dcb86cb072de62a0e1e398c79231b358eb3fa4"
-    sha256 arm64_big_sur:  "77263b07cf948f7b06bbe27bc8948632d570b6f368ed90c6a8df132617020cf5"
-    sha256 ventura:        "bfb42173452b3984cc490cdbc362bd4612a455aa5072cb5b8bd662523ccaa083"
-    sha256 monterey:       "8892c40116e59aa46c1a5ed0540e8d0a434b0e1f6aab74d7ca879f5bd25f0da0"
-    sha256 big_sur:        "b723f702701ec05b25e82e21340a6fdc7aa280918494b2b1a5b1295d8b76aa14"
-    sha256 x86_64_linux:   "3738250fe83dac52ec52da6c5a8f521510a69ef6a0b61c570de173c7c1201077"
+    sha256 arm64_ventura:  "99aacc5cab3b71f132ebaf3e8cbe8235cda3078e9820dfc24135078ec608c5a0"
+    sha256 arm64_monterey: "ac5436368882331110b92f8df01510c0fea993e5084d7b7c395fd3ac5e984093"
+    sha256 arm64_big_sur:  "d380061e143866ca55c483727c88cb50dc11064a7c3d4f888a3c304d7d713c7d"
+    sha256 ventura:        "a6b64aed8704b50a4fd6c029aaf7a30962b910dc5c636edae473977e4ddb2a3f"
+    sha256 monterey:       "4ca7613682e05f9c8c1cdb0f15085798170e3b93df6c9f3baaf57f3090d3b350"
+    sha256 big_sur:        "5de6de2e959bb72a80cfd2d215a583f687a396b523992c852ac63c3323b5cdfb"
+    sha256 x86_64_linux:   "582b9a75bb118b1d7cc518a70e2521d5eaf7f5c4da6957a92d432fa56afd986b"
   end
 
   depends_on "pkg-config" => :build

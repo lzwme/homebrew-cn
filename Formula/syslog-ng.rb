@@ -1,18 +1,18 @@
 class SyslogNg < Formula
   desc "Log daemon with advanced processing pipeline and a wide range of I/O methods"
   homepage "https://www.syslog-ng.com"
-  url "https://ghproxy.com/https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.1.0/syslog-ng-4.1.0.tar.gz"
-  sha256 "6e8f73aa0195b3a668d0911d050284abc6c11dbb04a1c526156b57a22409e24f"
+  url "https://ghproxy.com/https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.1.1/syslog-ng-4.1.1.tar.gz"
+  sha256 "d7df3cfa32d1a750818d94b8ea582dea54c37226e7b55a88c3d2f3a543d8f20e"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
 
   bottle do
-    sha256 arm64_ventura:  "a98bc7e7599e186e37e37763780a4e2d9ac60a65abc17d97c962bdf9190cece1"
-    sha256 arm64_monterey: "7e8fedd0988c648ade04af6145af7d4c7bade33e1c9855b2ea635675372249b6"
-    sha256 arm64_big_sur:  "325192b75694e14b35f7e6ecde47b1dfe18663d6d6aa2351cc0141d74de4a468"
-    sha256 ventura:        "acfc5ef3758c9b675e01004a072bafffc0fd2a4ac9af70d88a51e6d5fcf8ef02"
-    sha256 monterey:       "a66a56c192e5c180d11fe1ab483ab1eb37e3643f895b9d4ff41168714c83d324"
-    sha256 big_sur:        "eba311d8ec7c95aa18299e9582e5f05975d4536314bc7d1de07a6c85b392ce32"
-    sha256 x86_64_linux:   "dddd26b1bdd3534a4f1a3125efb32a569fd1aec296ac6454dc662e28f00a3fdb"
+    sha256 arm64_ventura:  "16bf633f59ad036d6e650158fb59117c550343eb58d466b0d040f882265c8ba8"
+    sha256 arm64_monterey: "14ccb4f5c314f9ede695ebe9111a00a0586f78727238cd8ad73f0d5b68f07ec6"
+    sha256 arm64_big_sur:  "709b699daef970fd6ccb402bdc26cfec4ab9b7fb3788229aed020e2f472c0700"
+    sha256 ventura:        "a9f44d1b0c7b4aaa16afe94010adb12161b1f55a67b082fdf54f42fc57dbfd7c"
+    sha256 monterey:       "e3220609629c1fccf365c5fefc4ffb27d599752bafc0c07e5959009678569054"
+    sha256 big_sur:        "1ad45ff8d5203d8840c3ee6c89eea51c966ed66a79e7d2538d617a0e04054fcf"
+    sha256 x86_64_linux:   "d39f3a52b0231ecb5dcc63d4ae61f912bad59a19e430d594bbc481945bb5bac9"
   end
 
   depends_on "autoconf" => :build

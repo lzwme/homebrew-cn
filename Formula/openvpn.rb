@@ -1,9 +1,9 @@
 class Openvpn < Formula
   desc "SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension"
   homepage "https://openvpn.net/community/"
-  url "https://swupdate.openvpn.org/community/releases/openvpn-2.6.0.tar.gz"
-  mirror "https://build.openvpn.net/downloads/releases/openvpn-2.6.0.tar.gz"
-  sha256 "ebec933263c9850ef6f7ce125e2f22214be60b1cbb8ccff18892643fe083ae8f"
+  url "https://swupdate.openvpn.org/community/releases/openvpn-2.6.1.tar.gz"
+  mirror "https://build.openvpn.net/downloads/releases/openvpn-2.6.1.tar.gz"
+  sha256 "8cbc4fd8ce27b85107b449833c3b30fb05f1ca3c81b46a0ba8658036944266bc"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
 
   livecheck do
@@ -12,13 +12,13 @@ class Openvpn < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "69dc018b3a179e25733e578f8b0e5ef739276735f8ac7ffda18ce5cc5e8e1656"
-    sha256 arm64_monterey: "bde1352f1d7b7f5e4994423e19e831fa70ccb7f49ebd9b1a017d7a1f8c65b18f"
-    sha256 arm64_big_sur:  "2b48cf1ad09c2f244221cfedf9e20d9b78dd2203ddf1846f0202d35eba197af8"
-    sha256 ventura:        "a87aa6cb0582f1c92c767f5fab8571c25a3e8fa395e84beebce7fca05c9579fe"
-    sha256 monterey:       "cd79db428eca07fcd1c2ac05065652e8218548b1284d92f0f56a50409919e0db"
-    sha256 big_sur:        "7a57fde7f9e9c031ece4e08ed8a5ac305798df02777f087806a3edea8a621414"
-    sha256 x86_64_linux:   "161f111c6e1f900058dbc640d5b2dede54bfbb07b4ee0db0551df40ea08dd376"
+    sha256 arm64_ventura:  "90e8b15b5b20dfad593ff5f5746dc173b109b80deb4e9dbf650bd16844c773e6"
+    sha256 arm64_monterey: "b62a0185ce3555a53c54809b30b152009c93084ee6351025bd118f9b52925967"
+    sha256 arm64_big_sur:  "4f53c925ea33d5910d39a59652060e318d15f3294c5cf0ebe2044de0c9113a85"
+    sha256 ventura:        "1e75170ba24ca9da2ab930d2af8049755b5e8b55bc2ed76e25feb9bf5c028570"
+    sha256 monterey:       "1154004d0cd5e657648ff9adb07184c56930a4368bc56e7dd9e322768ca388a3"
+    sha256 big_sur:        "1b07207a0d080f6405172b124e5560d6154f3759c43454d8027cf7788cbc5749"
+    sha256 x86_64_linux:   "a1e9c9ed3fa8cf3e2b8e37ce19d84abfeb9d48565cccce791ebca30aef648aa6"
   end
 
   depends_on "pkg-config" => :build
@@ -29,6 +29,7 @@ class Openvpn < Formula
 
   on_linux do
     depends_on "libcap-ng"
+    depends_on "libnl"
     depends_on "linux-pam"
     depends_on "net-tools"
   end

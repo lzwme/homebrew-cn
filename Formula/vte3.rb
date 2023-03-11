@@ -6,13 +6,14 @@ class Vte3 < Formula
   license "LGPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "a00b29654da9ca4848e6440138f45b4d4a38b21a1b9779d56e37a98c5e8b5294"
-    sha256 arm64_monterey: "32675fbdc8616a47b50b39a49b9d7550c4419edf37bcd9468e56c641ef588ce3"
-    sha256 arm64_big_sur:  "909ff146ce0049d2e476e8ff1f03fab93175f20a08fff748574f17fcb41a822f"
-    sha256 ventura:        "bfd378f646a32825f99fa4e343608d192334d1dea115a723bb0604ca2c8e1fd1"
-    sha256 monterey:       "c9d67b4e8136264b9e9f86c194fb71dfaf2a43d88d1a1b2d21480f1a83a85db1"
-    sha256 big_sur:        "cc5261cf75d92b3001278501e02c760ea5684dcf167d294571bc0187a7aad918"
-    sha256 x86_64_linux:   "689ecb9ebb72864529863e971c4551ebb2bd061ba2bc9bf4ae7e11fad1c1fb6f"
+    rebuild 1
+    sha256 arm64_ventura:  "a683fb92c4f391ed6413c6e8cb6124f27aff51972ffa9c735107b6514487c1da"
+    sha256 arm64_monterey: "8a932ead3a2a76c69d38365b1111b10019c43c9b6679355e49b52d603a120191"
+    sha256 arm64_big_sur:  "db8905f5fa38775ad09d77b913f360237468e4bde55144a34a0f1069372f7730"
+    sha256 ventura:        "2dd42d6838d0653954160c524a3c5b32c872ef5b58cd247311c2e4964794b8f9"
+    sha256 monterey:       "3c042884cab3ba7a8b5aab1b80a43afd769c04824054a6201b77f47d2f390fcb"
+    sha256 big_sur:        "ea674d064b2f7370102152d793ec476f325ab2abe1eb83b9c353ee99a86568c8"
+    sha256 x86_64_linux:   "9955bf7f3cce30c875febbfa0f28b8d1d2b589fdfd03277ef2a38527f61c8d13"
   end
 
   depends_on "gettext" => :build
@@ -25,6 +26,7 @@ class Vte3 < Formula
   depends_on "glib"
   depends_on "gnutls"
   depends_on "gtk+3"
+  depends_on "gtk4"
   depends_on "icu4c"
   depends_on macos: :mojave
   depends_on "pango"
@@ -59,6 +61,7 @@ class Vte3 < Formula
 
     system "meson", "setup", "build", "-Dgir=true",
                                       "-Dgtk3=true",
+                                      "-Dgtk4=true",
                                       "-Dgnutls=true",
                                       "-Dvapi=true",
                                       "-D_b_symbolic_functions=false",
@@ -79,6 +82,10 @@ class Vte3 < Formula
       }
     EOS
     flags = shell_output("pkg-config --cflags --libs vte-2.91").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *flags
+    system "./test"
+
+    flags = shell_output("pkg-config --cflags --libs vte-2.91-gtk4").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end

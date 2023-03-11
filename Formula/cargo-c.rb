@@ -1,8 +1,8 @@
 class CargoC < Formula
   desc "Helper program to build and install c-like libraries"
   homepage "https://github.com/lu-zero/cargo-c"
-  url "https://ghproxy.com/https://github.com/lu-zero/cargo-c/archive/v0.9.16.tar.gz"
-  sha256 "a84e31fa1718db05f0c7708aff0688858362113d35828e0bc478199b5761256f"
+  url "https://ghproxy.com/https://github.com/lu-zero/cargo-c/archive/v0.9.17.tar.gz"
+  sha256 "95fcf50505516dfa6a941e666d1388810da9d7a9e1c623c09068faef5d50b3b9"
   license "MIT"
 
   livecheck do
@@ -11,14 +11,13 @@ class CargoC < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "b452870a06a79ffda6ec7b60f3d760bc0cb067c9422c219ce705527ec5d444d3"
-    sha256 cellar: :any,                 arm64_monterey: "b53172ed73cc4268613f9870343ab6ab7ee96641a7b57b81844b872bb2c0e83c"
-    sha256 cellar: :any,                 arm64_big_sur:  "56108ebba57f6c567d5d9b7140e2bc55aea825490245087a4ba66d3ee4d6fc67"
-    sha256 cellar: :any,                 ventura:        "265efbdde7578b23e7367217bd55be2e4c6dc7a3cdc91eeed926654f35ce1a1a"
-    sha256 cellar: :any,                 monterey:       "957df28bb398d7b90414705aeeae0a6f44034e79a0b4486b7d9b94511192d276"
-    sha256 cellar: :any,                 big_sur:        "1d6005dad67847e1305cce8eb6360c3ec7de27a46e56afe83fdbc9e7ba244231"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "099581139fd30570ba857941c20c264c722c330848097237d4c4f4bbb905d853"
+    sha256 cellar: :any,                 arm64_ventura:  "06583c259ff52596d677d6d078177b8332ce5fad390990ee3108f8fba6e9e9f9"
+    sha256 cellar: :any,                 arm64_monterey: "be0c8ca9ef2d47c48150f939a877d051f3787d2e87cfbd74731e3204c4d6dc9b"
+    sha256 cellar: :any,                 arm64_big_sur:  "605bb7037f3477534a3336ad9726eca9fc3446f954ceb8e246ef2ca88f7227cc"
+    sha256 cellar: :any,                 ventura:        "45ac6c9062fc126ecdb9ba842ba20a9ad13a1a9169ae834173c14fd71eb4dc35"
+    sha256 cellar: :any,                 monterey:       "e41b15f1bcc06b631d63bd7122c781b65e80bf9ec75cb615ec8d535298aaddf8"
+    sha256 cellar: :any,                 big_sur:        "c15d8d1ca92e96e55044953512134c5ad3e4a3bcc53e81b09c7cacd7bb620f2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d15aa74f00c90a13d60a4f5e00ff14693ba68bfc83c81228beb7832a81a9608f"
   end
 
   depends_on "rust" => :build
