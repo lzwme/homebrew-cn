@@ -2,9 +2,10 @@ cask "epson-printer-drivers" do
   version "12.62"
   sha256 :no_check
 
-  url "https://download.epson-europe.com/pub/download/6515/epson651532eu.dmg"
+  url "https://download.epson-europe.com/pub/download/6515/epson651532eu.dmg",
+      verified: "download.epson-europe.com"
   name "Epson Printer Drivers"
-  desc ""
+  desc "Drivers for Epson printers"
   homepage "https://epson.com/"
 
   depends_on macos: ">= :el_capitan"

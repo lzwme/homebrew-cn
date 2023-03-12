@@ -1,8 +1,8 @@
 class Ki18n < Formula
   desc "KDE Gettext-based UI text internationalization"
   homepage "https://api.kde.org/frameworks/ki18n/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.103/ki18n-5.103.0.tar.xz"
-  sha256 "38ea91627f427d9ab74ebaa278163a5a94af2eaba5ac9e3d16a472d9457840e6"
+  url "https://download.kde.org/stable/frameworks/5.104/ki18n-5.104.0.tar.xz"
+  sha256 "fe815b9e28c680fa472c7ab56e4d7934a8915f19409734a13433797a4be14ee1"
   license all_of: [
     "BSD-3-Clause",
     "LGPL-2.0-or-later",
@@ -18,13 +18,13 @@ class Ki18n < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "369fb06504604e1ea2c058a7989a2716b04e51807f5ebf195cdfc58499612c16"
-    sha256 cellar: :any,                 arm64_monterey: "603c8ceb1f11d90610a8fdae4ff8f57720895cb216482eb80d663d26a3794157"
-    sha256 cellar: :any,                 arm64_big_sur:  "42c9ad24f18f326cc88bcd8d5a895754a2e30fe00d235b7e94662332debc2245"
-    sha256 cellar: :any,                 ventura:        "50a37aaa66ec1c2e10eee527e6c8e0874524757dbd17e165ee87f106964a8417"
-    sha256 cellar: :any,                 monterey:       "fb45e3d7fc04e99cabfcf4ada3191408ebcbd3cc0de8c89c04914e716b83ed4e"
-    sha256 cellar: :any,                 big_sur:        "bdfe3937f8d8f27a88abc103a371d1d50cac7a7abaddd2fea4411bfe81eec32e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a821816353597785461f72360e674d37735f09170a51fc8fdd6bdf6f4cdc902b"
+    sha256 cellar: :any,                 arm64_ventura:  "c64ee2b990abca45c92454ce2721e6856e9f5eba2db4f8a32f349c1927c94b28"
+    sha256 cellar: :any,                 arm64_monterey: "843873fe132706b6a0f4493e8c656e633f65ac0b20248ced785419e5dac016d2"
+    sha256 cellar: :any,                 arm64_big_sur:  "75855ddd0773f1dec095e066b9c6d00ad3757db48a9909d2beceb9d05ad25772"
+    sha256 cellar: :any,                 ventura:        "005536c8d471a093191f09a657043c864b9a2c9cf5ac5885ccfdca23b9adcce4"
+    sha256 cellar: :any,                 monterey:       "7095ddc5cffefb22fe82f69a3596a238398bfb0141c013f25557a3d2ab6e8e72"
+    sha256 cellar: :any,                 big_sur:        "f241873c4b3642ac4bab34d4e75c88cbb0d78d82a6dc91720590d0f437d07cb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b01e76347ff832ecb184db06031ab04c7423de8da0b4d95fe8013ec0fb8bca20"
   end
 
   depends_on "cmake" => [:build, :test]

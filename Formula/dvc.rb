@@ -3,18 +3,18 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/a9/c0/2332bb0b6e511322c844ceffc52a2cae13cab43af8f92d6c6b570aabfc23/dvc-2.47.0.tar.gz"
-  sha256 "dd1bbae4ae2df56864d0d74f62da6aa1750a6c806705a1ca5586f924f77c3212"
+  url "https://files.pythonhosted.org/packages/aa/35/931d1155c0c55fc6701373ed4ab0abd33d8fbb2fe53756cf45425b334b29/dvc-2.47.1.tar.gz"
+  sha256 "722c9600c4a5bc2be752ce599d1a6e1d21767bfb1a30c02d2b65a6fb2eddae15"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "abba7cb1487b1613fe90205f475d6dca2d0bc35e2201a07e8df7b5c66453018f"
-    sha256 cellar: :any,                 arm64_monterey: "9ec7b4857e98439a06d10b9da52d7f2786f752b0344258ce91b37d58923c4277"
-    sha256 cellar: :any,                 arm64_big_sur:  "167723e7893e550ac7a7f94693d994c3349909bfe10a28b7fa55c2127f53403a"
-    sha256 cellar: :any,                 ventura:        "7f1dd1eb909ff9d35ead2a1384f62b32cca5603bd1916c574c43738630cf6392"
-    sha256 cellar: :any,                 monterey:       "2ca9e0bbc9b6bb9e6e27ae4e515be9b52853852a74fa36527977c049f61991f9"
-    sha256 cellar: :any,                 big_sur:        "719fd152f6e0afad1633e4ad004818c5b790a190f6ee7a4a2c045faef4fb7fc5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ee6e44b5543cf4add1cebf3d32d27c9ba3d20dad58aade6cfa7651f35be46f7"
+    sha256 cellar: :any,                 arm64_ventura:  "ce5e1e5b21697647e3cbe1bc9c0a43443d59b9f4a862f056277527a2b04f24d2"
+    sha256 cellar: :any,                 arm64_monterey: "bb547d5e3511318f16badfdabf18b5f6527a7574bb5b64385015712d0236438f"
+    sha256 cellar: :any,                 arm64_big_sur:  "e79814c7eb922ac8dfdc412ba6fba1d78c3959260db39b6edbc826a29d689cf2"
+    sha256 cellar: :any,                 ventura:        "b5c6bea5079604477fbf4fcec9e775ff3300378eb760b31c089027c5199bbb33"
+    sha256 cellar: :any,                 monterey:       "cc56733550d7a1bbddf7f6b433d613e23815e02a4294541ca03baec45ca4ed1a"
+    sha256 cellar: :any,                 big_sur:        "9c3200e3fe65355b116f2e6ac34ec0f7afedbed987a1d4999c460169554c918c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dce1e9cafc6a249ea6e671a1c4677a715900fa3b3a7408130264529abc069451"
   end
 
   depends_on "openjdk" => :build # for hydra-core
@@ -263,8 +263,8 @@ class Dvc < Formula
   end
 
   resource "dvc-data" do
-    url "https://files.pythonhosted.org/packages/6c/d3/b9d54689f62dfc119b4b7c9ee92400cecbd48254dd956a90b194e429760b/dvc-data-0.42.1.tar.gz"
-    sha256 "a05607ac6b5f13b2d3dff369730b60b0b0274f7340fe429bee4cfe3231856edc"
+    url "https://files.pythonhosted.org/packages/eb/b6/103b6dff46a85e5a017de7ce9523e8d7f1bf0f20162315e33bb7ef96c9a3/dvc-data-0.42.3.tar.gz"
+    sha256 "0e02ce462baa3bfe5c0cd5ae27a6ad0215a3654c3f61332d739747105f7b7508"
   end
 
   resource "dvc-gdrive" do
@@ -728,8 +728,8 @@ class Dvc < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c5/52/fe421fb7364aa738b3506a2d99e4f3a56e079c0a798e9f4fa5e14c60922f/urllib3-1.26.14.tar.gz"
-    sha256 "076907bf8fd355cde77728471316625a4d2f7e713c125f51953bb5b3eecf4f72"
+    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
+    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
   end
 
   resource "vine" do

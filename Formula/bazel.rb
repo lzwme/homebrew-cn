@@ -11,12 +11,13 @@ class Bazel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cf296194c78d9492b0aae2c96cd29006ec117bb2a719e8bc15b4c46f9a9c1744"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a032edbc8fd3eee5a7bc5d253584b96170c8f7a5ac7d3913485882447f005370"
-    sha256 cellar: :any_skip_relocation, ventura:        "9e47495b16033b80e251d5a074beee9977353f10e29d4474039b41ee81039cd7"
-    sha256 cellar: :any_skip_relocation, monterey:       "2e022e59b6699c4e0bdcdcfad8ffb8f0c3bcb5f338c39a9ef2a0ab1cd64686ab"
-    sha256 cellar: :any_skip_relocation, big_sur:        "64f2ca97758a56136362230f6c91d736a24a32b839679ad97bfd1c4eae7f65d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5926be4eac6720e401753a55753601aa234b943c074658f52ec358c3daef0ba8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "df86287349173c1830cf2e71a1640ebc774895e757e77e7666606ee11d728771"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cbcc58d69861fefd25fec0475eb3172776959215bf2730013c4e835fdbe6885e"
+    sha256 cellar: :any_skip_relocation, ventura:        "0992a514c8db86cd2d1c711407d522f5f4a00ae99eaa2bde4463b9bb8c59d76e"
+    sha256 cellar: :any_skip_relocation, monterey:       "9f770c9ba81d9baeeee4ade3e99297c6cdaa36d4c0fd20bf31f73a8d346186a8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "627db23a3d3ea7b0ec6d07a06436eccd2aeda7ed8a3c2a3571528f1cb774c8cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "97407c6c6d2344a792a99df75cd4bf7a7a591782bcf4e30ec966bd2dd6302770"
   end
 
   depends_on "python@3.11" => :build
@@ -56,7 +57,8 @@ class Bazel < Formula
       system "./output/bazel", "--output_user_root",
                                buildpath/"output_user_root",
                                "build",
-                               "scripts:bash_completion"
+                               "scripts:bash_completion",
+                               "scripts:fish_completion"
 
       bin.install "scripts/packages/bazel.sh" => "bazel"
       ln_s libexec/"bin/bazel-real", bin/"bazel-#{version}"
@@ -65,6 +67,7 @@ class Bazel < Formula
 
       bash_completion.install "bazel-bin/scripts/bazel-complete.bash"
       zsh_completion.install "scripts/zsh_completion/_bazel"
+      fish_completion.install "bazel-bin/scripts/bazel.fish"
     end
   end
 

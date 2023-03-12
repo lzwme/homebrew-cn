@@ -4,7 +4,7 @@ cask "rescribe" do
 
   url "https://rescribe.xyz/rescribe/#{version}/darwin/rescribe.zip"
   name "rescribe"
-  desc "Easy-to-use desktop tool for performing OCR on image files, PDFs and Google Books"
+  desc "Desktop tool for performing OCR on image files, PDFs and Google Books"
   homepage "https://rescribe.xyz/rescribe/"
 
   livecheck do

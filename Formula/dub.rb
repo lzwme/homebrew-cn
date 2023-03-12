@@ -13,16 +13,17 @@ class Dub < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d955e6574a5ee0e3e1a5d3921d6bb1f9edf4bfa866645adbfd263786c58e6375"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b32a6af7b3c734ef0b5e0084d3bb2b66e09262ba351404a592f626fd9d027847"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5dbc1624e4313e95d94800d8015bd7c23957cf64a354af4add4c7e349c844b50"
-    sha256 cellar: :any_skip_relocation, ventura:        "d94ef92e56886da1333be60bd335d8ed001a5bc85e6cc4eb115540539e2081d9"
-    sha256 cellar: :any_skip_relocation, monterey:       "bec55a20482aa6a6c4a364ba4addc90efe9c25091ebf45e792e68e289feb6e3d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6e7817d0d879e9a96b9e14db78d16c6c5b4f6d8ed44e37061d16c59eb6fdb469"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ad9a025ebe764f94dbc23116b68b6b10682d0ec4886c0d0663860203055841f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb542fcbf6ddaec5b3d5c788add6653e4d6d9db3150e5dcbdf6296320ae482d2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c5b054a34d92dfdaba92707eb67c6e93b606452adcf42b4553cdbd0694cb1ea0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "03b9179be706b9aac8b1941a05d54466d7d8a9f24fb33a51c9bffb0180705785"
+    sha256 cellar: :any_skip_relocation, ventura:        "1faab36973c26f70f499cc43549e6adbb895b29c41443dbcf7c29803f0773d22"
+    sha256 cellar: :any_skip_relocation, monterey:       "4fcca89c3bc1e7103c1783b4cb873e54e0201299529c66b57bd95329839f6428"
+    sha256 cellar: :any_skip_relocation, big_sur:        "520a6d3e284ea9368e103eca031897581bee157b2f3a0cd0df867ca9329d8e9e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "677c684f31011e515eadf2f3c66abf96ea4b050e2e1a00906cca8e9dd7863371"
   end
 
-  depends_on "ldc" => :build
+  depends_on "ldc" => [:build, :test]
   depends_on "pkg-config"
 
   uses_from_macos "curl"
@@ -33,11 +34,26 @@ class Dub < Formula
     system "bin/dub", "scripts/man/gen_man.d"
     bin.install "bin/dub"
     man1.install Dir["scripts/man/*.1"]
+
+    bash_completion.install "scripts/bash-completion/dub.bash" => "dub"
     zsh_completion.install "scripts/zsh-completion/_dub"
     fish_completion.install "scripts/fish-completion/dub.fish"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/dub --version").split(/[ ,]/)[2]
+    assert_match "DUB version #{version}", shell_output("#{bin}/dub --version")
+
+    (testpath/"dub.json").write <<~EOS
+      {
+        "name": "brewtest",
+        "description": "A simple D application"
+      }
+    EOS
+    (testpath/"source/app.d").write <<~EOS
+      import std.stdio;
+      void main() { writeln("Hello, world!"); }
+    EOS
+    system "#{bin}/dub", "build", "--compiler=#{Formula["ldc"].opt_bin}/ldc2"
+    assert_equal "Hello, world!", shell_output("#{testpath}/brewtest").chomp
   end
 end

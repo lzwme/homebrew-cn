@@ -6,20 +6,34 @@ class Sslyze < Formula
   license "AGPL-3.0-only"
 
   stable do
-    url "https://files.pythonhosted.org/packages/a9/cf/8c5ac396f6d51cee5cfc5d4353bf64b9a1a1b00270699de09bb617177647/sslyze-5.1.1.tar.gz"
-    sha256 "17edf03121904b28be4c75938db192df706e6be1ba172b8741135921cfd661e5"
+    url "https://files.pythonhosted.org/packages/6d/88/78873e6c157ba91a3427ca319f9f82dad708d2531908d90e6bb7f0840b35/sslyze-5.1.2.tar.gz"
+    sha256 "2ca25629f038010134d62a65627c91b0041cba836533947989176ad97c5b4285"
 
     resource "nassl" do
       url "https://ghproxy.com/https://github.com/nabla-c0d3/nassl/archive/5.0.0.tar.gz"
       sha256 "b1529de53e1017a4b69ad656bcef762633aec54c86c9ec016879d657bf463297"
+
+      # type fix patch, remove in next release
+      patch do
+        url "https://github.com/nabla-c0d3/nassl/commit/377a85b32d6914ddba3913389f0a5a3cfbb9f20c.patch?full_index=1"
+        sha256 "c225f9cad6a2bcd4d5e8acbce64ea77cad5408644d53036a65ba8deb43f78a37"
+      end
+      # patch to support arm builds, remove in next release
+      patch do
+        url "https://github.com/nabla-c0d3/nassl/commit/95f466aff36ef553429df2e95a974b3281df7709.patch?full_index=1"
+        sha256 "47af75c41d028ab777781f0f3942570c221e88fc607cd476846346b6b257838f"
+      end
     end
   end
 
   bottle do
-    sha256 cellar: :any,                 ventura:      "9e3ce117c8b58e6a5d8b2fad1e3c7f70afc55999603ac5c21e406cfcc7074b67"
-    sha256 cellar: :any,                 monterey:     "3cae04cb9e8ed1bee11dd14c64c510713fba8886088c18b7f83fd662c3dbfddc"
-    sha256 cellar: :any,                 big_sur:      "9f3e2384c4fcb9c303e875c213bb15cf24a82d1e624443020f725183be704567"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "dcb74982224beda452dabf47c8036db69e398255d5c3116fba1711e043cea53b"
+    sha256 cellar: :any,                 arm64_ventura:  "51e6f2193028406f4f111ce14ea70d4cf7799d5465e2e47f333268f3891bc5d6"
+    sha256 cellar: :any,                 arm64_monterey: "d876ac135e6290c369e340f574dd0bbd7d305eac4d4862c8c2baa7bad2acc8e5"
+    sha256 cellar: :any,                 arm64_big_sur:  "fbb20963d11b5897e019ad433414d5e15c1638db6a6e7fb67eb1d51ad8d73fb2"
+    sha256 cellar: :any,                 ventura:        "02ab0fa2d54edb2f1db60177434aea2daf175214ae38e00809ac9d9e375868cc"
+    sha256 cellar: :any,                 monterey:       "5b21d05496524c033be6c49a662a1611a4dfa5ad99b462418c5d06fa68458019"
+    sha256 cellar: :any,                 big_sur:        "30e5dd1d57c1ccd843192e286f389fc49b762c5d952efeeeb179e79f143f78e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96cf2ee7f54a8474e7be42964a4574b8bd0392d3a35ea650ba69a993198e1818"
   end
 
   head do
@@ -32,10 +46,11 @@ class Sslyze < Formula
 
   depends_on "pyinvoke" => :build
   depends_on "rust" => :build # for cryptography
-  depends_on arch: :x86_64 # https://github.com/nabla-c0d3/nassl/issues/83
   depends_on "openssl@1.1"
+  depends_on "pycparser"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
+
   uses_from_macos "libffi", since: :catalina
 
   resource "cffi" do
@@ -44,18 +59,13 @@ class Sslyze < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/e3/3f/41186b1f2fd86a542d399175f6b8e43f82cd4dfa51235a0b030a042b811a/cryptography-38.0.4.tar.gz"
-    sha256 "175c1a818b87c9ac80bb7377f5520b7f31b3ef2a0004e2420319beadedb67290"
-  end
-
-  resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
-    sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
+    url "https://files.pythonhosted.org/packages/fa/f3/f4b8c175ea9a1de650b0085858059050b7953a93d66c97ed89b93b232996/cryptography-39.0.2.tar.gz"
+    sha256 "bc5b871e977c8ee5a1bbc42fa8d19bcc08baf0c51cbf1586b0e87a2694dde42f"
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/53/17/34e54e352f6a3d304044e52d5ddd5cd621a62ec8fb7af08cc73af65dd3e1/pydantic-1.10.4.tar.gz"
-    sha256 "b9a3859f24eb4e097502a3be1fb4b2abb79b6103dd9e2e0edb70613a4459a648"
+    url "https://files.pythonhosted.org/packages/8b/87/200171b36005368bc4c114f01cb9e8ae2a3f3325a47da8c710cc58cfd00c/pydantic-1.10.6.tar.gz"
+    sha256 "cf95adb0d1671fc38d8c43dd921ad5814a735e7d9b4d9e437c088002863854fd"
   end
 
   resource "pyOpenSSL" do
