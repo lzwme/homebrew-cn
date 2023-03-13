@@ -5,6 +5,11 @@ class Liblerc < Formula
   sha256 "91431c2b16d0e3de6cbaea188603359f87caed08259a645fd5a3805784ee30a0"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "bda5945718a4ae8c186d1c0574c70667b95b6e2cf1cd95060fc3a7b4c78a63cb"
     sha256 cellar: :any,                 arm64_monterey: "ac9a9d7025ab1fd8e49d79518ce278bd9c3a08a782478a6eebf793c663e9673d"

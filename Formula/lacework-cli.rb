@@ -8,16 +8,23 @@ class LaceworkCli < Formula
   head "https://github.com/lacework/go-sdk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "55ed882f0c18ce903062bf014a01f846bb0fdf8dd4411a6050dbc877430d160e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "86da66f8b5cf43631ef1b5921c0f0f6de804717aae8e99ede463107d3dc383b3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b154808bb45d5638376e1ee0ae52c059cc0d65bafd6e384384cfed69fc918b0d"
-    sha256 cellar: :any_skip_relocation, ventura:        "9bce51ef45897a5c7c8a30ada63ac1076ef14f95385ab2bf2e87a1a2b295f246"
-    sha256 cellar: :any_skip_relocation, monterey:       "f2b2c07b35faa272dcd9b02e6c171419d36b22693c0002f9c34bc461db639c9d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "765c686973bb298177672e6d084407f9e5b91b4113bd5f4fcdfcded6036fbdba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e286e0619901f2840e75946d5a2b10b95c4a1be5beb27e095360a69fc6ee4334"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ea2afc025a8acc5a40bfae0a54c98c6ffa1020f11fbe3cdd7f3da18d75416570"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dcaa926797e7d303e78dd133598e7bdd1c3ce2f6d63fb475a3080f33498411b9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "01a122c5b2ebab5b26b2c463ccc28778fd5eceb8a2f6c989fab84dd9d776ca5e"
+    sha256 cellar: :any_skip_relocation, ventura:        "c39eeaba38aed6048386c2a95da0cc5eb262e127c8f5f1fb337690b5763edc6b"
+    sha256 cellar: :any_skip_relocation, monterey:       "fbd35ec3dc2adea607f35e2beae2fbcb1c399a8c8d4c94d2216676fccf8e82dc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7529e7387f7a9d75f615bffa6908060b7c464b633ea7e506253261ffd61b9da8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "672a20a2c8cf1823693737c63160861be53ec25a6a534dfce465b8b3dab71fe1"
   end
 
   depends_on "go" => :build
+
+  # Enable completions, remove after merged and released
+  patch do
+    url "https://github.com/lacework/go-sdk/commit/750bad27d89fe925a9f69377a87bc738907aecff.patch?full_index=1"
+    sha256 "aa962fbaf173503a67c7bf86c5120f76723a983f7f3e118484bf0ae102c13cc6"
+  end
 
   def install
     ldflags = %W[
@@ -27,6 +34,8 @@ class LaceworkCli < Formula
       -X github.com/lacework/go-sdk/cli/cmd.BuildTime=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(output: bin/"lacework", ldflags: ldflags), "./cli"
+
+    generate_completions_from_executable(bin/"lacework", "completion", base_name: "lacework")
   end
 
   test do

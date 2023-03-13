@@ -6,16 +6,16 @@ class Libgda < Formula
   # The executable tools are GPL-2.0-or-later, but these are considered experimental
   # and not installed by default. The license should be updated when tools are installed.
   license "LGPL-2.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 arm64_ventura:  "2ad13b6485c1e19fc2f02105116efb13d841d2cdba99630dbf48300a7860668a"
-    sha256 arm64_monterey: "1fe5095ef5f30564b1dbec5ac8698d6ab9c3f64b8d422015680a17d8b3d26c4a"
-    sha256 arm64_big_sur:  "fb1c0eb0fddccfa6a7849b1cdceb7cc5e1bcae895bf91dcc7d095f3633722ace"
-    sha256 ventura:        "ca2d498ae544cc55c2ee83ed79307306aa9b3454b5ec8d995ad1fdfcca6556b6"
-    sha256 monterey:       "62535c82a43635e59e8f3bb177b0e7ec9649262d6bb9e861e4a8fcc987aac5c0"
-    sha256 big_sur:        "edf500167b129ef94c8b81a919292c27a5072860e28cf198564f66bf1b5140e3"
-    sha256 x86_64_linux:   "88a4d46e93408d4a0dfd32fc6db0ae04291b15f0b92080c26e64925b370cde33"
+    sha256 arm64_ventura:  "799870ada5491b29dfb5b8a9a0d4334f531166cc6fddb21fd82438fc08fed9b9"
+    sha256 arm64_monterey: "0256d4371104f081140440e55caa0574a6a50dfaa85b959a3dbeefd595cba19c"
+    sha256 arm64_big_sur:  "a3659901c2e025869a202521f3f002fa43dbebb2620c44991510e9ea480356f0"
+    sha256 ventura:        "7d44fcfd33753ebb70cae62895997dfef29d22883eeaade00035bb7ba2dae1ae"
+    sha256 monterey:       "4639bf64ccd60afcdad48e70a95e3fa3f6949ce206588500e59c93909fa1bc12"
+    sha256 big_sur:        "b1765e96a889c64da0b3d8c841999fff887791c1e43f919a601f025acf632903"
+    sha256 x86_64_linux:   "ee867a6ff4b253fc4bf1f39757e68a03f4347d0856601e825e258fbefda22db5"
   end
 
   depends_on "gettext" => :build

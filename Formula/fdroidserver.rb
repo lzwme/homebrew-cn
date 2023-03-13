@@ -3,18 +3,18 @@ class Fdroidserver < Formula
 
   desc "Create and manage Android app repositories for F-Droid"
   homepage "https://f-droid.org"
-  url "https://files.pythonhosted.org/packages/31/e0/8068b4def4b69bb5ab9e71374b97358ec23562a7f0c62d542858b0796068/fdroidserver-2.2.0.tar.gz"
-  sha256 "18af655cf4a8d7b9cf621968f02196dda8931ed776186b0797b137900b59bd18"
+  url "https://files.pythonhosted.org/packages/75/72/ea1e1e9d7d0ade051279b8676e6025f8c14dd64a5edeb76f2208e23c7720/fdroidserver-2.2.1.tar.gz"
+  sha256 "6dcba0b747bfc9ebe4d441c56cf0c8aeab70a58cd0d1248462892e933a382302"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "65c083f35537cfaa95d0c890506c44fa9022ee07a27cf534556edfec07b7c5b7"
-    sha256 cellar: :any,                 arm64_monterey: "d65197e45610d275fead2f02cf519bb617588fbb8154011f150c6b4cacb5c75a"
-    sha256 cellar: :any,                 arm64_big_sur:  "22af3327d4d43ac49108d8e60a015959e43ececf1f0fb0fbe838622e997969d7"
-    sha256 cellar: :any,                 ventura:        "4043063d7d8dae6665279286311886b8f74771e4cfa941625765bda3d635ecbb"
-    sha256 cellar: :any,                 monterey:       "cf13c51bba206b22b100bb39f96e194dd7cb2c81036156759fa17bfa36b2a29d"
-    sha256 cellar: :any,                 big_sur:        "c5c6f00c85a5b252ae32429ee5c1bd6fe24097a23fb7b77f0a9a4336e209f0cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8db2ff92ba31e3edfd79fddfde015f8fd93be73374e99e89173ac410e180648"
+    sha256 cellar: :any,                 arm64_ventura:  "1dfa8eaf9258b7f4f4c11d835a2dbdd0e7bbb0822c60277914ca8eab8f4c5187"
+    sha256 cellar: :any,                 arm64_monterey: "0333cbc673ea633883fd53980a3ee8f8b7b073733eca817eb8b278a4e5321fd9"
+    sha256 cellar: :any,                 arm64_big_sur:  "53474140d8e9aaa5b062e24c594d0583465b01ae22b6f47b37b1ad86713fe6e7"
+    sha256 cellar: :any,                 ventura:        "4bf3761681207d494fce173a9a796cb44befce627bdd416ae8d6cf351a38fc0f"
+    sha256 cellar: :any,                 monterey:       "5c253aba55accd6c27d2013c7494a9b7076562193d5fe97fa7e7996f660732ee"
+    sha256 cellar: :any,                 big_sur:        "018155dd30df4ccab1cd748b1719ab07307d30d5be3fb8852f65f89b0e1b0f30"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cdd5c3914550a6c0723b93009716c73543604562a4d3265f9b4876b178554ed"
   end
 
   depends_on "pkg-config" => :build
@@ -71,8 +71,8 @@ class Fdroidserver < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/96/d7/1675d9089a1f4677df5eb29c3f8b064aa1e70c1251a0a8a127803158942d/charset-normalizer-3.0.1.tar.gz"
-    sha256 "ebea339af930f8ca5d7a699b921106c6e29c617fe9606fa7baa043c1cdae326f"
+    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
+    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
   end
 
   resource "click" do
@@ -96,8 +96,8 @@ class Fdroidserver < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/6a/f5/a729774d087e50fffd1438b3877a91e9281294f985bda0fd15bf99016c78/cryptography-39.0.1.tar.gz"
-    sha256 "d1f6198ee6d9148405e49887803907fe8962a23e6c6f83ea7d98f1c0de375695"
+    url "https://files.pythonhosted.org/packages/fa/f3/f4b8c175ea9a1de650b0085858059050b7953a93d66c97ed89b93b232996/cryptography-39.0.2.tar.gz"
+    sha256 "bc5b871e977c8ee5a1bbc42fa8d19bcc08baf0c51cbf1586b0e87a2694dde42f"
   end
 
   resource "cycler" do
@@ -136,8 +136,8 @@ class Fdroidserver < Formula
   end
 
   resource "matplotlib" do
-    url "https://files.pythonhosted.org/packages/65/c2/34158ff731a12802228434e8d17d2ebb5097394ab9d065205cc262cf2a6f/matplotlib-3.7.0.tar.gz"
-    sha256 "8f6efd313430d7ef70a38a3276281cb2e8646b3a22b3b21eb227da20e15e6813"
+    url "https://files.pythonhosted.org/packages/b7/65/d6e00376dbdb6c227d79a2d6ec32f66cfb163f0cd924090e3133a4f85a11/matplotlib-3.7.1.tar.gz"
+    sha256 "7b73305f25eab4541bd7ee0b96d87e53ae9c9f1823be5659b806cd85786fe882"
   end
 
   resource "networkx" do
