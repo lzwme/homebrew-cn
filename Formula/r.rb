@@ -4,7 +4,7 @@ class R < Formula
   url "https://cran.r-project.org/src/base/R-4/R-4.2.2.tar.gz"
   sha256 "0ff62b42ec51afa5713caee7c4fde7a0c45940ba39bef8c5c9487fef0c953df5"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://cran.rstudio.com/banner.shtml"
@@ -12,13 +12,13 @@ class R < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "fc5834a3ae121615ddd4d37b9c9ead1eaa8a49ddb62924db85783e89eaca7523"
-    sha256 arm64_monterey: "da8a9d616ad6378683b2c053a1eb21979de6fb87f0b2a167dc817e3621efabd4"
-    sha256 arm64_big_sur:  "27dfc85cb338bd47ab2c4d2056084c0c0c2b7b2e7274487da1d33c5b6e02f5b3"
-    sha256 ventura:        "10efb9286514143cb2a29ed3722122434a844c70c211b9b6b1ae6aa6ac6efcc4"
-    sha256 monterey:       "f7198e01cae195c5b91a8a2105fb1bfd5a76376f97b30c84f4e76fe3dff9c42a"
-    sha256 big_sur:        "c30d89edffe0b4e6b56fea24ddf0b594e08b96d372d45767f052363647ba985c"
-    sha256 x86_64_linux:   "7662bb5a6d42fdf07da6b41b2a47df8c8f9dc36f6e4438912826041c65c11b65"
+    sha256 arm64_ventura:  "0fe014e59c2ed22e9ea0c8aac69a210ab02f0a2fe8ef723259d222af2483cfec"
+    sha256 arm64_monterey: "4f5c3e951faeab2fa0ebdbe1372137b454367f030a56a0cd2dbbe659a45e6c53"
+    sha256 arm64_big_sur:  "21ba6256d1859d658a4d2eed2819e7cec8212015198d68296bfa9658b44cfb1c"
+    sha256 ventura:        "99b2091f3c7dd5bc5eebe387946cff48f2e060d155780ad5540d09e5be727e89"
+    sha256 monterey:       "01137a01ff37e7590fb4af60319506127526b070c32544c904405430256fe6ca"
+    sha256 big_sur:        "6c9f6899ffed2ae7a46767d8a830c535aeabc95b6dfa0a4d4e36e25295542b55"
+    sha256 x86_64_linux:   "1097ba2bcefadd30e75a92dbc62172728cac5fef27631e733e45db92d3b1e304"
   end
 
   depends_on "pkg-config" => :build
@@ -63,10 +63,6 @@ class R < Formula
   end
 
   def install
-    # BLAS detection fails with Xcode 12 due to missing prototype
-    # https://bugs.r-project.org/bugzilla/show_bug.cgi?id=18024
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
-
     args = [
       "--prefix=#{prefix}",
       "--enable-memory-profiling",
