@@ -3,18 +3,18 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/15/89/7c56cd54c65d3d5d72870e5a0b7109d62ad8aba3260e1dc74f4261301be2/dvc-2.47.2.tar.gz"
-  sha256 "476b29e680eaa6aec24d5462872d32e603b6e420c2e344c079dca8aa6debd239"
+  url "https://files.pythonhosted.org/packages/2d/64/e79983e8233e7a72367b81df7bad4e5d8a2cb9c3bc7d949f0eaba216c780/dvc-2.48.0.tar.gz"
+  sha256 "3368499afc83e782c1935858d75b756781dbe01f499c707a528475b704485095"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "193f74e5c1b16b7fee409b496feb8aaca55e102aa978f0371668f45feb56e5b1"
-    sha256 cellar: :any,                 arm64_monterey: "87711f33bbae2c169b09d9b1cde31da9d67fa1ee561f36032059b35cbc83eb8e"
-    sha256 cellar: :any,                 arm64_big_sur:  "ad17db1bcfc7bd328150db3a048cf70f50f0a92afe581ef767af4b2c213799b8"
-    sha256 cellar: :any,                 ventura:        "249f0d6460569cc0968121f1b27e55d3d7c6be282ad039d1cdb92b2c258e4555"
-    sha256 cellar: :any,                 monterey:       "fa013caee83ab34962753b022ef87c8ff088672a625e946027860ab1db287700"
-    sha256 cellar: :any,                 big_sur:        "3269951332714a6f2abdfc759ee6713766ab4a4ffa6cef9599c1d94c6470a17c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9402e0177a772516de16f218d758f5112625c733952dfbf8517dfc1889ded00d"
+    sha256 cellar: :any,                 arm64_ventura:  "fe3056acf54c4261205cac86fd8fb26582ada6208a73ee0b0aabcd3306496250"
+    sha256 cellar: :any,                 arm64_monterey: "cbc0ecf6331c09d87b8f13d98e541ca31c8fef4a24a7831eb61f5b0e87d3c755"
+    sha256 cellar: :any,                 arm64_big_sur:  "dbe1763cfa177aec3d3e11c85f509e058c5210d6c218bcd95dd9282ff24bae3f"
+    sha256 cellar: :any,                 ventura:        "a9760e708215a853df1b8d9bebfcefa431d708e77c61a182d81a00abd0a4be6d"
+    sha256 cellar: :any,                 monterey:       "83d43c4b609ecf678a0fe75710ea0a463efe61ef28ab673cac266a2a01053c6d"
+    sha256 cellar: :any,                 big_sur:        "ae29135ad2b48d8735a892d199593fae5881e5f5f14e400c5bfd62c82524e3f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb3693f7127c7a442ab9f9b4b92b1a54e6b4f1ee2b9e0e8cf07fcacdb3be885a"
   end
 
   depends_on "openjdk" => :build # for hydra-core
@@ -563,8 +563,8 @@ class Dvc < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/8f/5f/01180534cebac14f3a792bf2f74fc99d34531c950c308fdebd9721e85550/platformdirs-3.1.0.tar.gz"
-    sha256 "accc3665857288317f32c7bebb5a8e482ba717b474f3fc1d18ca7f9214be0cef"
+    url "https://files.pythonhosted.org/packages/79/c4/f98a05535344f79699bbd494e56ac9efc986b7a253fe9f4dba7414a7f505/platformdirs-3.1.1.tar.gz"
+    sha256 "024996549ee88ec1a9aa99ff7f8fc819bb59e2c3477b410d90a16d32d6e707aa"
   end
 
   resource "portalocker" do
@@ -703,8 +703,8 @@ class Dvc < Formula
   end
 
   resource "sqltrie" do
-    url "https://files.pythonhosted.org/packages/8c/9b/a2a1880ec7b0239a82e67ec6b80d95c1b1c12b5733bac9cfacb33d7f7e54/sqltrie-0.1.1.tar.gz"
-    sha256 "68cef67532d45809c0d51a9c14c911ac91d6de8e643445f5c36f28680c81fe9c"
+    url "https://files.pythonhosted.org/packages/18/d0/7a90ff727cc57442150c09af778c9d998e1e8a302d2daeb76da5283a1aa7/sqltrie-0.2.0.tar.gz"
+    sha256 "b520b4712493a863454ac3cf912e392f55af9d6c2c08ab80a7a7b19d36a8052d"
   end
 
   resource "sshfs" do
