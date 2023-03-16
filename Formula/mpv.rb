@@ -7,13 +7,14 @@ class Mpv < Formula
   head "https://github.com/mpv-player/mpv.git", branch: "master"
 
   bottle do
-    sha256 arm64_ventura:  "59627b5fbb11803bd8db14af08be33e5beb3f61884d6d13835da7692d0c010bd"
-    sha256 arm64_monterey: "7bc67fb2808c25f6de78f14f2946ef308b763da1e8769f6f4f8a318f9a206339"
-    sha256 arm64_big_sur:  "a58e7a3cad058720cc95cd0c370d05cf15b99105f66e5f9dcd590f7e5a3c7111"
-    sha256 ventura:        "d2a9981c37f83e9cbba3ca0f7a7782171e0127f4b6feb9fc39ccfb2c6e669eb5"
-    sha256 monterey:       "e4eddee0593bce8815635fc4e3456d005e8752eab4ac200809e5b31ea4b1068f"
-    sha256 big_sur:        "2e3fd725069bf6327d9a120cf06cebd661ca6021598840cdf0996fabcd0b2be2"
-    sha256 x86_64_linux:   "67951d2e57ef616734850e396502748009690fb5493026999d54d9a18029ee40"
+    rebuild 1
+    sha256 arm64_ventura:  "689de14813b3c3a78a422a16caeaf50f3b87d28ede6a5b55a86ec9959b6297e5"
+    sha256 arm64_monterey: "9b10b04f204965195a78cfc4280573c4f5cbf959ac217fbf4143789cd92bb0e5"
+    sha256 arm64_big_sur:  "857858c19c5351702c61e3a3a981ff210df88cacacdf822fadfae962d4d212ca"
+    sha256 ventura:        "c837585624867487c3daa54eed45f650d87b932f00cd86488b7b496eeb2b1562"
+    sha256 monterey:       "f83de70b1617563029baed7053c70cb60190fa735af0d7dda5aa7362209760a5"
+    sha256 big_sur:        "f85d10395e7c7a3ba7281230dd02d0420368391dfa4c6b94fef0c6da9f6a2c95"
+    sha256 x86_64_linux:   "52707f5b23a76a0975d1e4d9462700075e3abda67665d2222ca0c2e3a4873d91"
   end
 
   depends_on "docutils" => :build
@@ -62,6 +63,9 @@ class Mpv < Formula
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
+
+    bash_completion.install "etc/mpv.bash-completion" => "mpv"
+    zsh_completion.install "etc/_mpv.zsh" => "_mpv"
   end
 
   test do

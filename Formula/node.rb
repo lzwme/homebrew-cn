@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v19.7.0/node-v19.7.0.tar.xz"
-  sha256 "511847f724ea405f85e25803cbcf8b131b14cd06b2d7046698bd2760c404bfc3"
+  url "https://registry.npmmirror.com/-/binary/node/v19.8.0/node-v19.8.0.tar.xz"
+  sha256 "3b7c07e2780920718c1ac7d24b67335f048dd9c3dd695691f41da80f4ea349a6"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "2b169bdadd952785132a18e8fed56202e4099666c17af41753869a2693c13f8e"
-    sha256 arm64_monterey: "2b80149c95bcda41a09ee3b9ebf2db2a8f04c5404e6fff3c1c5656f01b09fbdd"
-    sha256 arm64_big_sur:  "f299eaa1eefbe95d1cc33eefeb3ba7d0e5226502f30a50c786e31f19af15a7ce"
-    sha256 ventura:        "49580200fd04d54cf16abe88b238993bb460a134e081d1bbe0d246f98eb9ab82"
-    sha256 monterey:       "6362474eda5a7b9bf839ff50e5662c93d5eb4338f131d72f060c430a670f22b3"
-    sha256 big_sur:        "cf7119f9ee23e931f92dffb80739940e955895092a584467bf1c2cc81dc9b54f"
-    sha256 x86_64_linux:   "894ea1ed6b5df8bd1a6483776123401f38051eec2d144d0aaee881790c477ed3"
+    sha256 arm64_ventura:  "03bcb402804315db2c98efe7efa3d438820fcb45fc4884a37eb3c8368b877144"
+    sha256 arm64_monterey: "26c3faaa0b34845d4f5cf4f78a721972d87589bbcef4f803ac3e19a9cace506c"
+    sha256 arm64_big_sur:  "2fb9618fe3b7690a8fca08f12693abc3b17eb73fe626e51c735d8d5f1f29957e"
+    sha256 ventura:        "8a75e8e2bbdbe988220ec845ccfcffb75eaa36959195a3408528ba31f3bc27b9"
+    sha256 monterey:       "732c0c487a953a3329d203fb6570915dd2995bc654a19ab977074e1b5cbeabf3"
+    sha256 big_sur:        "d2f7c2fc9bfdd4d5bd14d7d5eff46f036c59db398b36c12237c67e9a8eccf977"
+    sha256 x86_64_linux:   "533ff99398f31f51134e8500d389ed1e92d504adfd47f4ebf101acc2ef4e1e8b"
   end
 
   depends_on "pkg-config" => :build
@@ -49,8 +49,8 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-9.5.0.tgz"
-    sha256 "c575d22ce4fe7436ce0c60a38dcf9d3a95bb60660eb2ccc751dace3ba7d0852a"
+    url "https://registry.npmjs.org/npm/-/npm-9.5.1.tgz"
+    sha256 "f5f0cbf0d054e604bf9497b94f095f892702e9259361a6577b0a0fd49755cfbf"
   end
 
   def install

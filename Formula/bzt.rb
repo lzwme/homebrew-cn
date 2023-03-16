@@ -3,19 +3,19 @@ class Bzt < Formula
 
   desc "BlazeMeter Taurus"
   homepage "https://gettaurus.org/"
-  url "https://files.pythonhosted.org/packages/89/db/3620c82c719446ac01e2f0c1629df884bee4b3335c4313a990465b83fedb/bzt-1.16.20.tar.gz"
-  sha256 "597206309ee0945368643a44adb2ecd3049746e62819f34c0da4bf8dba246e65"
+  url "https://files.pythonhosted.org/packages/9e/92/3537a9b581a1cc2ce8c596137a426991d152552fec6c631bfbfa38b27c48/bzt-1.16.21.tar.gz"
+  sha256 "99e4a353533b3a545fb163bb4f86b258a59124ef5f6a7399354ba6aef731f16a"
   license "Apache-2.0"
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7e95c92232fa9eeb77282274d77bbc3b80a04e35b056d8538bd811c6434700d2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8112c82dac1155238adfb55aa55ee1276b5da1622c12cd9bca88a08b50062a8c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d53deb18ed46c4febce295fdbf755efcf798d7c41ccfdf4c10f49914a18c4db8"
-    sha256 cellar: :any_skip_relocation, ventura:        "03608adfb340aa64cb4af70ee4758c9dd417f4b9e77cea6f6635448e73fccd74"
-    sha256 cellar: :any_skip_relocation, monterey:       "e39543d13bf5d86a1493543c5c7bc31350292d80840a3b88281ab62c359927e1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "38be2e9c6b1c064eae265019d3c0f27c3544ada5050d693b4b32ecf1dd4274ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "379d7d20c7fbd3a0e594dfed7fa678a9f6a24245690d608b3f8c0e324a08e201"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "14f79a7fbc39b23cf85f66eeaa13d316e9ed63c0d674b3f8d3100128192d22d7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3c61bc565bad6a9f11e32a74eaaf8ea38ef57b6f7ca1ca74085fd860ab253bfd"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "54738621485b93235016dd7d02ea8c605cd45a246b70284364746fd2b536d8e7"
+    sha256 cellar: :any_skip_relocation, ventura:        "2cb6e8283015246375d9106d75a22b8b306dcee8e68475dfd54aadfb624a91a2"
+    sha256 cellar: :any_skip_relocation, monterey:       "cf8e4a5c4108d9f8a414a72e17e0108b2fa139d5332a1216620580281a0025f7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2f7d4649704ba0d9bf22dd67cd1007ce136288a7bb4f3cb40ec85bfc2bf334eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c5d1aeb122dbfe566303f6ad8b51936ee3f3a3a9642622b85a9b45923b6d8ec"
   end
 
   depends_on "cmake" => :build
@@ -110,6 +110,11 @@ class Bzt < Formula
     sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
   end
 
+  resource "influxdb" do
+    url "https://files.pythonhosted.org/packages/86/4f/a9c524576677c1694b149e09d4fd6342e4a1d9a5f409e437168a14d6d150/influxdb-5.3.1.tar.gz"
+    sha256 "46f85e7b04ee4b3dee894672be6a295c94709003a7ddea8820deec2ac4d8b27a"
+  end
+
   resource "lxml" do
     url "https://files.pythonhosted.org/packages/06/5a/e11cad7b79f2cf3dd2ff8f81fa8ca667e7591d3d8451768589996b65dec1/lxml-4.9.2.tar.gz"
     sha256 "2455cfaeb7ac70338b3257f41e21f0724f4b5b0c0e7702da67ee6c3640835b67"
@@ -118,6 +123,11 @@ class Bzt < Formula
   resource "molotov" do
     url "https://files.pythonhosted.org/packages/54/22/5820c7cad221514a04d9cdada884476e35c5972d7b84f88755094beab4fc/molotov-2.6.tar.gz"
     sha256 "0f52d260b4566709882a12710eff9b5863604f88c9bc03749cab4f9de462771a"
+  end
+
+  resource "msgpack" do
+    url "https://files.pythonhosted.org/packages/dc/a1/eba11a0d4b764bc62966a565b470f8c6f38242723ba3057e9b5098678c30/msgpack-1.0.5.tar.gz"
+    sha256 "c075544284eadc5cddc70f4757331d99dcbc16b2bbd4849d15f8aae4cf36d31c"
   end
 
   resource "multidict" do
@@ -143,6 +153,16 @@ class Bzt < Formula
   resource "psutil" do
     url "https://files.pythonhosted.org/packages/3d/7d/d05864a69e452f003c0d77e728e155a89a2a26b09e64860ddd70ad64fb26/psutil-5.9.4.tar.gz"
     sha256 "3d7f9739eb435d4b1338944abe23f49584bde5395f27487d2ee25ad9a8774a62"
+  end
+
+  resource "python-dateutil" do
+    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
+    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+  end
+
+  resource "pytz" do
+    url "https://files.pythonhosted.org/packages/03/3e/dc5c793b62c60d0ca0b7e58f1fdd84d5aaa9f8df23e7589b39cc9ce20a03/pytz-2022.7.1.tar.gz"
+    sha256 "01a0681c4b9684a28304615eba55d1ab31ae00bf68ec157ec3708a8182dbbcd0"
   end
 
   resource "PyVirtualDisplay" do
@@ -181,8 +201,8 @@ class Bzt < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/a2/b8/6a06ff0f13a00fc3c3e7d222a995526cbca26c1ad107691b6b1badbbabf1/wheel-0.38.4.tar.gz"
-    sha256 "965f5259b566725405b05e7cf774052044b1ed30119b5d586b2703aafe8719ac"
+    url "https://files.pythonhosted.org/packages/fc/ef/0335f7217dd1e8096a9e8383e1d472aa14717878ffe07c4772e68b6e8735/wheel-0.40.0.tar.gz"
+    sha256 "cd1196f3faee2b31968d626e1731c94f99cbdb67cf5a46e4f5656cbee7738873"
   end
 
   resource "yarl" do

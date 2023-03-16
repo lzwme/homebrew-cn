@@ -1,20 +1,19 @@
 class Geoipupdate < Formula
   desc "Automatic updates of GeoIP2 and GeoIP Legacy databases"
   homepage "https://github.com/maxmind/geoipupdate"
-  url "https://ghproxy.com/https://github.com/maxmind/geoipupdate/archive/v4.10.0.tar.gz"
-  sha256 "12e0083eb56eb39f4304fc21ef07af566702a0d5b843f3a19d3e5e5e33099230"
+  url "https://ghproxy.com/https://github.com/maxmind/geoipupdate/archive/v4.11.0.tar.gz"
+  sha256 "0b5273f81e7f191714a5ec16507b0765c62b6b7ed80fcf2133368c8015d91fdd"
   license "Apache-2.0"
   head "https://github.com/maxmind/geoipupdate.git", branch: "main"
 
   bottle do
-    sha256 arm64_ventura:  "de64c2ee211a888d9cf7d97f6895c3bd52a11ca1ccba5fac1d75d3f03adcd333"
-    sha256 arm64_monterey: "fa1c58550c7a922498c844a0ab9b94edcc3dfd790b9ea4c02380ef11d47f5a5a"
-    sha256 arm64_big_sur:  "ef5c0597ef2faf8809975df62ba4438e15768683f043e6296e59a50ac858782d"
-    sha256 ventura:        "2fa6ad7de9355328a1a90fe149f74254f7bc5dd1a0d7768f36ea69a31f623cdc"
-    sha256 monterey:       "2f38b64724d094657593800a7973e7fbf39b230835865d2108cfe63d0a103fa6"
-    sha256 big_sur:        "d0d3b637cba55a86581b099329cbbd3254bddd59306b58e32bce2b787c081dfe"
-    sha256 catalina:       "cfeed208e46eb157a2c97ebbb71d9505e47da872ccfa67eae5ae2c594b037b0d"
-    sha256 x86_64_linux:   "e15f1b36f5a8348e414bd94fde2bf39095b1b60b0eae81f69ffb30c36d7cc316"
+    sha256 arm64_ventura:  "17450940e17bf4b545815fb61fbd777f02d026dc1a1d6253ad22f7f581cecb3d"
+    sha256 arm64_monterey: "a50870246ed218c50c3a77c7d9efe40f6b23c541c15d0056ef71ed4f45c19b96"
+    sha256 arm64_big_sur:  "19cee05c7f9432d18aece98484d10129898fc98b799f56c9969ed11568d17f23"
+    sha256 ventura:        "a7ad1a9d9e73a5b82ccf4c2c7df9372e3a3e776e44f190f6b6e3063d5b69fdc4"
+    sha256 monterey:       "4c5cbe614c186ba599b19395684e4287c1e4a8d1f17bb1ceb03c8722001da8a7"
+    sha256 big_sur:        "81cd0c73f9e76ef46450c8132d5d00a4d33c672424375cc1433d2964886b97ed"
+    sha256 x86_64_linux:   "241065938b037aeafbd3d3817c9a715057ca12ff52e8f688e4fe98e8963f3345"
   end
 
   depends_on "go" => :build
