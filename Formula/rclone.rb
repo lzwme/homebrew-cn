@@ -1,19 +1,19 @@
 class Rclone < Formula
   desc "Rsync for cloud storage"
   homepage "https://rclone.org/"
-  url "https://ghproxy.com/https://github.com/rclone/rclone/archive/v1.62.1.tar.gz"
-  sha256 "ce3b51edda9d0a476d9abc276ac6a374c7d6ba8be22caa8e33845797e6fc4f98"
+  url "https://ghproxy.com/https://github.com/rclone/rclone/archive/v1.62.2.tar.gz"
+  sha256 "6741c81ae5b5cb48a04055f280f6e220ed4b35d26fe43f59510d0f7740044748"
   license "MIT"
   head "https://github.com/rclone/rclone.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4eb5284043d102c818f0e90885549db3faea5a298fd6de418b11a01d5ffd586e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c317c3786d2b1de1741d88f9a45029925bfe829ab67d7373b39f73daaa6cb94"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d287f4a5f4081237fb641b226a44efbe8d57a0b8c305f9189e9575808c073e97"
-    sha256 cellar: :any_skip_relocation, ventura:        "ddd0a8b88e487ec83e5f13823980150eb9435374f410691afb67d8569f946484"
-    sha256 cellar: :any_skip_relocation, monterey:       "69b3ef403bfabc58908eabd5d5c5b18c92a6dc67dec818d0247416475e5fa663"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f0ce2143634506c14721c24069f57b231d8d0b660ded87ec2f92597d133b5a5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cafa57fe7d5a362e42fdd86a143132a0c99fc1d3e2abf25b366f5e3530c57179"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7345e71d5ef09336ddb9d14fba834865f1e67383fd539fd23d15b390518d433d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dd52c77a6c93776d3c00427c72ef9939a20852cc4e127f4b53217e99ececc77d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "de8521803b7339f2db26da43e01bea273232fef21a2355e5cadafa4c6ad937ba"
+    sha256 cellar: :any_skip_relocation, ventura:        "f19db43ea7842ec49358d2929b9b02a0a83a48899ec1cbcd7ef485a42d30c8f1"
+    sha256 cellar: :any_skip_relocation, monterey:       "ceffdeb0a1565ec24deec3b7caa40b4765bd1d5b39a9f672d02742f29af3afd8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "94b30c50fb83cdcda00c3cd99f37f55c1b601777027f7e9e967f838fc486c804"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "460f2761041265100f86d3aee988af3452377e7092347270fb563cbda1dea085"
   end
 
   depends_on "go" => :build

@@ -1,10 +1,11 @@
 class Rpm < Formula
   desc "Standard unix software packaging tool"
   homepage "https://rpm.org/"
-  url "https://ftp.osuosl.org/pub/rpm/releases/rpm-4.18.x/rpm-4.18.0.tar.bz2"
-  sha256 "2a17152d7187ab30edf2c2fb586463bdf6388de7b5837480955659e5e9054554"
+  url "https://ftp.osuosl.org/pub/rpm/releases/rpm-4.18.x/rpm-4.18.1.tar.bz2"
+  sha256 "37f3b42c0966941e2ad3f10fde3639824a6591d07197ba8fd0869ca0779e1f56"
   license "GPL-2.0-only"
   version_scheme 1
+  head "https://github.com/rpm-software-management/rpm.git", branch: "master"
 
   livecheck do
     url "https://rpm.org/download.html"
@@ -12,10 +13,9 @@ class Rpm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura: "b53546064adccbad8b399e755dee7ce53b7e5740bafb0c9f57c21755bbd44a4e"
-    sha256 ventura:       "c3479781c5af9756f03f0fa03ae34a8810aa5fe4a5a578c012be0aa6d2778b18"
-    sha256 x86_64_linux:  "92fa3dcdb9eb03d3db9941ac7ee1a01a380aa78bdf8d0446f397ac699ff02ca1"
+    sha256 arm64_ventura: "6705d70ecbc4e00acde775fb29b27a5b451e440b0e6c37d5bd539925fb1c5bc0"
+    sha256 ventura:       "d48de12b7598c45696e25a5fce486fcb90f4eecf5a4e7224fead7d7592890299"
+    sha256 x86_64_linux:  "98bb5f4798bc874e8fe11186bf96923c5adc5f68d35143616e7c001def9550fe"
   end
 
   depends_on "gettext"
@@ -39,10 +39,11 @@ class Rpm < Formula
 
   conflicts_with "rpm2cpio", because: "both install `rpm2cpio` binaries"
 
-  # Fix -flat_namespace being used on Big Sur and later.
+  # Fix an "expected expression" error.
+  # Upstreamed at https://github.com/rpm-software-management/rpm/pull/2434.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+    url "https://github.com/rpm-software-management/rpm/commit/5375b90150b5468ea9985b81f10dc8fae20d9db4.patch?full_index=1"
+    sha256 "24c4c8ffc5259204797b9ef6050edb5bfef4e03940866bf30e9d41256179ec55"
   end
 
   def install
