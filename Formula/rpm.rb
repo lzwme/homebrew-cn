@@ -1,11 +1,20 @@
 class Rpm < Formula
   desc "Standard unix software packaging tool"
   homepage "https://rpm.org/"
-  url "https://ftp.osuosl.org/pub/rpm/releases/rpm-4.18.x/rpm-4.18.1.tar.bz2"
-  sha256 "37f3b42c0966941e2ad3f10fde3639824a6591d07197ba8fd0869ca0779e1f56"
   license "GPL-2.0-only"
   version_scheme 1
   head "https://github.com/rpm-software-management/rpm.git", branch: "master"
+
+  stable do
+    url "https://ftp.osuosl.org/pub/rpm/releases/rpm-4.18.x/rpm-4.18.1.tar.bz2"
+    sha256 "37f3b42c0966941e2ad3f10fde3639824a6591d07197ba8fd0869ca0779e1f56"
+
+    # Fix an "expected expression" error. Remove on next release.
+    patch do
+      url "https://github.com/rpm-software-management/rpm/commit/b960c0b43a080287a7c13533eeb2d9f288db1414.patch?full_index=1"
+      sha256 "28417a368e4d4a6c722944a8fe325212b3cea96b6d355437c6366606a7ca0d00"
+    end
+  end
 
   livecheck do
     url "https://rpm.org/download.html"
@@ -13,9 +22,10 @@ class Rpm < Formula
   end
 
   bottle do
-    sha256 arm64_ventura: "6705d70ecbc4e00acde775fb29b27a5b451e440b0e6c37d5bd539925fb1c5bc0"
-    sha256 ventura:       "d48de12b7598c45696e25a5fce486fcb90f4eecf5a4e7224fead7d7592890299"
-    sha256 x86_64_linux:  "98bb5f4798bc874e8fe11186bf96923c5adc5f68d35143616e7c001def9550fe"
+    rebuild 1
+    sha256 arm64_ventura: "2d97d36743ae989839e7ef4c4d3f396c2f7cd5ab7ff87b429510a4bb9b047cf7"
+    sha256 ventura:       "d5085f39aee9be16443d96ba081f46cfb80818dc6f0c3bb5367f6d79b62c51fd"
+    sha256 x86_64_linux:  "f7021265bd0654607b2e50709a8e29f0be08e3da8ca407566b04109fa0d176e8"
   end
 
   depends_on "gettext"
@@ -38,13 +48,6 @@ class Rpm < Formula
   end
 
   conflicts_with "rpm2cpio", because: "both install `rpm2cpio` binaries"
-
-  # Fix an "expected expression" error.
-  # Upstreamed at https://github.com/rpm-software-management/rpm/pull/2434.
-  patch do
-    url "https://github.com/rpm-software-management/rpm/commit/5375b90150b5468ea9985b81f10dc8fae20d9db4.patch?full_index=1"
-    sha256 "24c4c8ffc5259204797b9ef6050edb5bfef4e03940866bf30e9d41256179ec55"
-  end
 
   def install
     ENV.append "LDFLAGS", "-lomp" if OS.mac?

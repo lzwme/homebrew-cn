@@ -17,17 +17,18 @@ class Got < Formula
     sha256 ventura:        "fedc5283c67903b13c3179b2e4f028a0ee2607de5ea348cead64adccc68abe29"
     sha256 monterey:       "7b78ebc651efb8178eaf3baf49a8549b874187f4eda717737685513457995bc4"
     sha256 big_sur:        "286c8e5373691559b492c873152d857a37bf7d0f70c552ece315069aa8cc6d9f"
+    sha256 x86_64_linux:   "bdfaf34a35a338c02cea202dc5294089a0b326e515a623e6b92d34d9a968909f"
   end
 
   depends_on "bison" => :build
   depends_on "pkg-config" => :build
   depends_on "libevent"
-  depends_on :macos # FIXME: build fails on Linux.
   depends_on "ncurses"
   depends_on "openssl@1.1"
   uses_from_macos "zlib"
 
   on_linux do
+    depends_on "libbsd"
     depends_on "libmd"
     depends_on "util-linux" # for libuuid
   end
