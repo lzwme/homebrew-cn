@@ -8,19 +8,19 @@ class Mbedtls < Formula
 
   livecheck do
     url :stable
-    strategy :github_latest
     regex(%r{href=.*?/tag/(?:mbedtls[._-])?v?(\d+(?:\.\d+)+)["' >]}i)
+    strategy :github_latest
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "75fae44abe3175d39a82a1c138459ea33fa6e6b62ef515f14271967a07f3824a"
-    sha256 cellar: :any,                 arm64_monterey: "68f6114531bdd17099a5d221920ef82ac358b5678c456f8d167b9405e5b31e70"
-    sha256 cellar: :any,                 arm64_big_sur:  "7a1b70f3d34628213b037c908777aca1a67ffb24cda8121abfc1f95cd11396b7"
-    sha256 cellar: :any,                 ventura:        "7c0052d3fa0e301750d84e9a7b04a4b1162807f24adca123ada45f20e60d4359"
-    sha256 cellar: :any,                 monterey:       "dd2c1c332beceb70c109653b2ce23561bd8d8b3cd057e3c73638847f01e7b6ea"
-    sha256 cellar: :any,                 big_sur:        "87e14b2db21d3a1f97c00e9b725d5b6ae29f7a3d3afb72b7f017c7af5d33ce72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7837ee52a3ab9f96358106e9fdd881d753ee82e97312c3b8be667e743708e3ec"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "f7ba34fc61d3246cd0613922df69f2607741b528e3c0ddfd07250c366a1b8352"
+    sha256 cellar: :any,                 arm64_monterey: "a74c0e95e23ee4ba92efdd6639575b57513313b22dd739b5f5bbc0a1028cfdad"
+    sha256 cellar: :any,                 arm64_big_sur:  "700bfca8dc0c813e5ada099ce4447070f8b3b870d3ffae7a551873d9edde3e71"
+    sha256 cellar: :any,                 ventura:        "87733b552725daa9d248cd43f370dbd306d628f107915040ab6b9404cf76b442"
+    sha256 cellar: :any,                 monterey:       "1d22fe8643320336647d3400912d782bbb73b0cd95d11f233dbb47a343b23eb6"
+    sha256 cellar: :any,                 big_sur:        "5de73a9242b98781def686f73f1163fa801066194927f578b1c9a5f584306484"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa8801cace5b342aa221a9c0c98e50e51db0273731072ff1b647946c82df0e31"
   end
 
   depends_on "cmake" => :build
@@ -32,6 +32,8 @@ class Mbedtls < Formula
       s.gsub! "//#define MBEDTLS_THREADING_PTHREAD", "#define MBEDTLS_THREADING_PTHREAD"
       # allow use of mutexes within mbed TLS
       s.gsub! "//#define MBEDTLS_THREADING_C", "#define MBEDTLS_THREADING_C"
+      # enable DTLS-SRTP extension
+      s.gsub! "//#define MBEDTLS_SSL_DTLS_SRTP", "#define MBEDTLS_SSL_DTLS_SRTP"
     end
 
     system "cmake", "-S", ".", "-B", "build",

@@ -1,9 +1,9 @@
 cask "archi" do
   arch arm: "-Silicon", intel: ""
 
-  version "5.0.0"
-  sha256 arm:   "4ed1255a9fbf6889282327030fd696fcb642d07b4be06b80bd4f6ed3ece78bf6",
-         intel: "2e3f0d874ed211344c0ae00ac28610ff7febcfacaed96a9c09233e5923eadd2f"
+  version "5.0.1"
+  sha256 arm:   "d7389380a0b5231e1a86b4e45f5627f8205733119b321755c4af277b0a0a6a49",
+         intel: "3131acdd18736ec842b058594c67e76f5a98c8d6053aa7a24e56efb9a2c42dc1"
 
   url "https://www.archimatetool.com/downloads/archive.php?/#{version}/Archi-Mac-#{version}#{arch}.dmg"
   name "archi"

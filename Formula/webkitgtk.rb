@@ -1,8 +1,8 @@
 class Webkitgtk < Formula
   desc "GTK interface to WebKit"
   homepage "https://webkitgtk.org"
-  url "https://webkitgtk.org/releases/webkitgtk-2.38.5.tar.xz"
-  sha256 "40c20c43022274df5893f22b1054fa894c3eea057389bb08aee08c5b0bb0c1a7"
+  url "https://webkitgtk.org/releases/webkitgtk-2.40.0.tar.xz"
+  sha256 "a4607ea1bf89669e89b1cb2c63faaec513f93de09b6ae60cc71d6a8aab7ab393"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,7 +11,7 @@ class Webkitgtk < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "fa7f309762791e239d5ad1a28a73dc84351bb6cf4bb479e30c274024e623ffa2"
+    sha256 x86_64_linux: "9eae32fefd570f137c415fc2989494e0ca12e658d6b62dfeee76140031247581"
   end
 
   depends_on "cmake" => :build
@@ -23,6 +23,7 @@ class Webkitgtk < Formula
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "glib"
+  depends_on "gst-plugins-bad"
   depends_on "gst-plugins-base"
   depends_on "gstreamer"
   depends_on "gtk+3"
@@ -36,6 +37,7 @@ class Webkitgtk < Formula
   depends_on "libpng"
   depends_on "libsecret"
   depends_on "libsoup"
+  depends_on "libwpe"
   depends_on "libxcomposite"
   depends_on "libxt"
   depends_on :linux # Use JavaScriptCore.Framework on macOS.
@@ -45,9 +47,11 @@ class Webkitgtk < Formula
   depends_on "systemd"
   depends_on "webp"
   depends_on "woff2"
+  depends_on "wpebackend-fdo"
 
   uses_from_macos "perl" => :build
   uses_from_macos "ruby" => :build
+  uses_from_macos "unifdef" => :build
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
   uses_from_macos "sqlite"
@@ -66,7 +70,6 @@ class Webkitgtk < Formula
       -DUSE_GSTREAMER_GL=OFF
       -DUSE_JPEGXL=ON
       -DUSE_LIBHYPHEN=OFF
-      -DUSE_WPE_RENDERER=OFF
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
