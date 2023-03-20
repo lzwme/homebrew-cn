@@ -3,8 +3,8 @@ class GraphTool < Formula
 
   desc "Efficient network analysis for Python 3"
   homepage "https://graph-tool.skewed.de/"
-  url "https://downloads.skewed.de/graph-tool/graph-tool-2.47.tar.bz2"
-  sha256 "4d35404c60a74bdac8c18d44c67f8a27aedaa9f197e9b03ac517383e5daaddbb"
+  url "https://downloads.skewed.de/graph-tool/graph-tool-2.48.tar.bz2"
+  sha256 "871336d649c231a667502dec9b871f4e396186760a254877ba010b65b0fd7be6"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -13,13 +13,13 @@ class GraphTool < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "5771f0f7c4250d225fe8b44f4e4b444b86f71b0fc3109ded34b03a4c3ea6f59e"
-    sha256                               arm64_monterey: "6a82668cd4e46b6792a89043169c859ccb11a5db4080cfb15ea155289a5cfd60"
-    sha256                               arm64_big_sur:  "d4c092a6d1eb4f9f481e7d81e7e1291a171aaf1577972ccdb9b5146cdf4889f6"
-    sha256                               ventura:        "67978e16560a030104fbbf86b8584717384cabecc3cbd0cf00f134cd9199d991"
-    sha256                               monterey:       "4cedf65e77a4db969727522b25a1c9129b528b0624bbf7007c1cee826e47e5d9"
-    sha256                               big_sur:        "19c5e8095bcd475c16dc8b79bfd74a75bc07988f4ec9d6833fb7a31c7f8a062e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "55763d7fa0af7359cd310f8f9cc8bedca8271ce0864b4282874d49f794bff004"
+    sha256                               arm64_ventura:  "4eacc8d767cefb78475ebbc92a90d2a22f30f73ba827b2b0616fe8ab7c2be065"
+    sha256                               arm64_monterey: "2b563d9d88303a2d1df6c869d283db03834618c14fff7016146517111f45a568"
+    sha256                               arm64_big_sur:  "d1f355bb99a11843487745e1c4d38939b986665ed6e9580f81f2b7b8f5124233"
+    sha256                               ventura:        "99d6ff149cbc917eb2f488395cc3f810acb36daa35507b1d7bb1dabf4420a3bf"
+    sha256                               monterey:       "31d7890f95e0fbe8ad2f81d87b7d75670a995f370765ebd91ef951dca41bde04"
+    sha256                               big_sur:        "e8330899e7b9d3b51f91cf3ec59087ca2d1ef87df20bb5dbd9b8d502a3a3fa0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b956b47fc6c79a8a6b9331665d2a283dee539aab23a6bab7e7278c54fb5e265b"
   end
 
   depends_on "autoconf" => :build
@@ -131,7 +131,7 @@ class GraphTool < Formula
 
   test do
     (testpath/"test.py").write <<~EOS
-      import graph_tool as gt
+      import graph_tool.all as gt
       g = gt.Graph()
       v1 = g.add_vertex()
       v2 = g.add_vertex()
