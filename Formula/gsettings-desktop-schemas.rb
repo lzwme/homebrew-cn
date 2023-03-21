@@ -1,19 +1,18 @@
 class GsettingsDesktopSchemas < Formula
   desc "GSettings schemas for desktop components"
   homepage "https://download.gnome.org/sources/gsettings-desktop-schemas/"
-  url "https://download.gnome.org/sources/gsettings-desktop-schemas/43/gsettings-desktop-schemas-43.0.tar.xz"
-  sha256 "5d5568282ab38b95759d425401f7476e56f8cbf2629885587439f43bd0b84bbe"
+  url "https://download.gnome.org/sources/gsettings-desktop-schemas/44/gsettings-desktop-schemas-44.0.tar.xz"
+  sha256 "eb2de45cad905994849e642a623adeb75d41b21b0626d40d2a07b8ea281fec0e"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "af182c58a3eb7b6cdebdcbd1fb34b52450ae758101656d4b555c3f5bc7bffb8f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "af182c58a3eb7b6cdebdcbd1fb34b52450ae758101656d4b555c3f5bc7bffb8f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "af182c58a3eb7b6cdebdcbd1fb34b52450ae758101656d4b555c3f5bc7bffb8f"
-    sha256 cellar: :any_skip_relocation, ventura:        "af182c58a3eb7b6cdebdcbd1fb34b52450ae758101656d4b555c3f5bc7bffb8f"
-    sha256 cellar: :any_skip_relocation, monterey:       "af182c58a3eb7b6cdebdcbd1fb34b52450ae758101656d4b555c3f5bc7bffb8f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "af182c58a3eb7b6cdebdcbd1fb34b52450ae758101656d4b555c3f5bc7bffb8f"
-    sha256 cellar: :any_skip_relocation, catalina:       "af182c58a3eb7b6cdebdcbd1fb34b52450ae758101656d4b555c3f5bc7bffb8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "43a118bc1e52f9b8b21db50f93783c08cbc99fc51cb4d14a9a3bfd9e87c3697b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "34378cb4fbe92b9bbfdad8b568a851a604701e6de75a9e844183253103a97dd8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "34378cb4fbe92b9bbfdad8b568a851a604701e6de75a9e844183253103a97dd8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "34378cb4fbe92b9bbfdad8b568a851a604701e6de75a9e844183253103a97dd8"
+    sha256 cellar: :any_skip_relocation, ventura:        "34378cb4fbe92b9bbfdad8b568a851a604701e6de75a9e844183253103a97dd8"
+    sha256 cellar: :any_skip_relocation, monterey:       "34378cb4fbe92b9bbfdad8b568a851a604701e6de75a9e844183253103a97dd8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "34378cb4fbe92b9bbfdad8b568a851a604701e6de75a9e844183253103a97dd8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2523f822bacf9adf85f948fd40244e1685f3fd795522278a92b0f48e85df5b00"
   end
 
   depends_on "gobject-introspection" => :build

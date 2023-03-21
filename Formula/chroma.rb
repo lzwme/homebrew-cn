@@ -1,18 +1,18 @@
 class Chroma < Formula
   desc "General purpose syntax highlighter in pure Go"
   homepage "https://github.com/alecthomas/chroma"
-  url "https://ghproxy.com/https://github.com/alecthomas/chroma/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "ad0bce3d6ba4397a866e5c8728c146fb370a2b0adb1d35fccdf7d515a9c7f553"
+  url "https://ghproxy.com/https://github.com/alecthomas/chroma/archive/refs/tags/v2.6.0.tar.gz"
+  sha256 "bcd6062eb7795d4b903ca2b4a7c20be103e03a46362820cb0c3f2e19e9ffa687"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e4889845ddce854637e224f4cf4ed59e1f716b92de4718350e17503527acf3d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ded385775f84ae171c849dd9703958f971cd60e9d8e59e3b6074f0523a9bc09"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b0e4ed00aa01eb204acb20b4a9ce0df01f63d5679e2bdc8a912dbed33ff63bae"
-    sha256 cellar: :any_skip_relocation, ventura:        "31a81973322299347854d6d345926994085b0fc0def31ec5b5be101fd412ce98"
-    sha256 cellar: :any_skip_relocation, monterey:       "e2129fce44a5a21346108c6189f3d71a3eb73302a54b7903eb722da894407d26"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ee54d945456962981db50803d5b1b6d9b9d4c4fdc3d10c1599a1143d7b083ed6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9fae77d46027c1186162003bcc54cda72289971e909772a1a801cfa490c1453"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fad20894b203419714ca5f7f0d435a2b766d5025507ab549142a7c71fd0c08c2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fad20894b203419714ca5f7f0d435a2b766d5025507ab549142a7c71fd0c08c2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fad20894b203419714ca5f7f0d435a2b766d5025507ab549142a7c71fd0c08c2"
+    sha256 cellar: :any_skip_relocation, ventura:        "12149bee60597da7c86329b0ac6e7df9ee73f2f5ad2857e736452437f693121a"
+    sha256 cellar: :any_skip_relocation, monterey:       "12149bee60597da7c86329b0ac6e7df9ee73f2f5ad2857e736452437f693121a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "12149bee60597da7c86329b0ac6e7df9ee73f2f5ad2857e736452437f693121a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8da7f24ab8af374653aa0d2a8ee2c4ea29385909e67a6f3ef13df77c47d8b78"
   end
 
   depends_on "go" => :build

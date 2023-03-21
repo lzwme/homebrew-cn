@@ -1,19 +1,19 @@
 class CargoAbout < Formula
   desc "Cargo plugin to generate list of all licenses for a crate"
   homepage "https://github.com/EmbarkStudios/cargo-about"
-  url "https://ghproxy.com/https://github.com/EmbarkStudios/cargo-about/archive/refs/tags/0.5.4.tar.gz"
-  sha256 "3ad7c295a57da252433a1dd4ef277add2f1842e7c9554341a31a2c3daab82c33"
+  url "https://ghproxy.com/https://github.com/EmbarkStudios/cargo-about/archive/refs/tags/0.5.5.tar.gz"
+  sha256 "04531afbe3405010abb35b761b9629f784739590253cb7157b337419b1168208"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/EmbarkStudios/cargo-about.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1a37a22fa843c840f168b172584aabde00335f37e4afb7c7060d7cac9fbe3d2d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f93a9d8e541c20c4b611e51ab16954b239243a04ccd0a9203250b67c0d107f27"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2984e82e6f5314ec2455a579b4edea21568fe44e675978ccb952de6f9c9a8ea1"
-    sha256 cellar: :any_skip_relocation, ventura:        "28a0656929e072e84ebd2605b04723f3ebd7ab3d4e503973cd4bf55d2ec049ce"
-    sha256 cellar: :any_skip_relocation, monterey:       "91875552c725e48a71005d07c34caa4e7bb832b738a5a7b893ea46964266a615"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cea1d58aeae6ac4fcdacd5e10261ce0cd5afe1fca7603811a2140d66a4c9cd79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e0ac09af4b4ad1db5116e76fcb094f2ec535c446b6374261a6fbc12da00b3f2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e117c22db052e9f5dbabd923c38bfe9d81a1088afcc2578280d590b8937cd257"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2b39957b3c6055441fc2801b456e9040104881bde4d8b364c861919e64f78b99"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7f865a645b2d2cb0c1689f615229fffff21ce0c3d2170cb941e41f156790e7b6"
+    sha256 cellar: :any_skip_relocation, ventura:        "db552e24f1db5c38ba2c01a1753045deae82b5cf04a564150b28b2fdb25e603a"
+    sha256 cellar: :any_skip_relocation, monterey:       "96c51eb39a7f87c4b5a7ac254f9e3d5de5cc25966d73e8538d3abbc220b01dd2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "242b1a7b15d4e8b0fdeb761fcea1de9a594c7290b0ae1a65bdaac13d088f92f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b30a2cc000b593c05fe2cfcdcb08add2e9d20f25179a783782f038cdf1079a1"
   end
 
   depends_on "rust" # uses `cargo` at runtime

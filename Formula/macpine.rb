@@ -21,13 +21,14 @@ class Macpine < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4e1da6b8f34a22fc5fc63ba08b7bfac98e49810dc48480eb02d482e58027faff"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "31fdc359d83fed29fe4dd9d31c0a2e47c847d24769fedee8830b2387ee095422"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "86804d74a4c347c33f10d281e0194d4847a74c5b9995ceaa3f3eec8e4305b0c7"
-    sha256 cellar: :any_skip_relocation, ventura:        "d6436309f60f3f0b4280a4fd4d1d78ab7cda32377815958d868f0e09cd750717"
-    sha256 cellar: :any_skip_relocation, monterey:       "b73b6106d67192cbcaaefdd79dc4e7600e0898ca02ab500be56acf525880b14c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cdd5fd51572c843ac660d140a6c48f229e90b531cb1ad169e448781d6b2a0d78"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f18fb694cde179cafbffe3b48f2bcee4f89b2604aa44ce43557b757433403987"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae25520460c488e1bd6d2cf9e3137a6dea39356f6f07ee2e86b2f516d0560c4c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7efd71cf4578bf9abe3ce07202eb62d7e43087751bd98e15c566978283d5192b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "40a28553c4c47e3b5fc264d41d7f468fc10ed8f585b5e7ea6ea8e12351f8bbf2"
+    sha256 cellar: :any_skip_relocation, ventura:        "5dbe2d92fe49d24b7bbddfeb54e0cc28e4df024227d28f55443dba532f7589e1"
+    sha256 cellar: :any_skip_relocation, monterey:       "5a1326dc4664559743bb31f0c37c2de9c57783793ce1d889bb3269129316a5c2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "126db80dd234e69a8e7e60af5557932ea8647748870b1c210e059e0acc6ea8a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c294e421b90228e402c66017909669ce94717bf4fb5499347bd764c2e680082"
   end
 
   depends_on "go" => :build
@@ -37,6 +38,7 @@ class Macpine < Formula
 
   def install
     system "make", "install", "PREFIX=#{prefix}"
+    generate_completions_from_executable(bin/"alpine", "completion")
   end
 
   test do
