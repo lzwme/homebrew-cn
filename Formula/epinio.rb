@@ -1,18 +1,18 @@
 class Epinio < Formula
   desc "CLI for Epinio, the Application Development Engine for Kubernetes"
   homepage "https://epinio.io/"
-  url "https://ghproxy.com/https://github.com/epinio/epinio/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "46e7072cdeb01bf36a48cb6dce3d4a7cfa9bb468a996fc1926b2504235fd55ec"
+  url "https://ghproxy.com/https://github.com/epinio/epinio/archive/refs/tags/v1.7.1.tar.gz"
+  sha256 "61721f2c6599358353eae6325c1ea4ba769cdaee29f1e5602bb0fc279dc65cb0"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "251ba5f68fb2ce384a807ac596255f669a3c6a0efd0cf11ef808d65b8edb2c3c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fed19e8e25696650cdbf7482f8b6754be3811c76a3a1d9381509ad474090f01c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "deacbe2108dba57bebba059f3c55a2a17887faf4373ec7f968665b8d80c131ad"
-    sha256 cellar: :any_skip_relocation, ventura:        "594740426998bf03d635d45c621069a3770f3c4f9f76ff97cddb6998306b0d5a"
-    sha256 cellar: :any_skip_relocation, monterey:       "8d5128a5c8c265d2812b35694e8b785e7705e8c50217f1bf50117fb40ec76d73"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d2e5897a7924f81dba12862faa5adc1deca79eb6cbad9d56aa5fae9f17ae499d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "daf2547901fa464a3916fe1c36c9d24ea85b2a167ee9b2c8b65dcdb022dfae12"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "47f2b7176f148d2de36604f84e2ccea7171320af6455d5396f1c788b1bfdc0eb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c5d77c7dc055d802805f3f76a9fd9b8557651abddd0d4f93d8a589290ec4ef4f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "65dcb228f5ea0aecb2c3ba1d85624eac98d76e8c15cf87b2209683f1e7896dce"
+    sha256 cellar: :any_skip_relocation, ventura:        "05b4a6d9fd078f09afdd3f037a7b3bd420c25ea25b4e4282a9d90ee711f95165"
+    sha256 cellar: :any_skip_relocation, monterey:       "8d1474f7f9b47570521502580304b3f00cb6ea4b21d4a0683c3a52eba22ce89a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d05de4f6b6c43da844db409e8c907d10144259498f559b19ed1364981fbd8e3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fbb9bd723cf1ad7bee7889ad495ead2ae4d1f30fedc721f7c6993361ffa9ce0c"
   end
 
   depends_on "go" => :build

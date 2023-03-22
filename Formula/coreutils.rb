@@ -1,20 +1,19 @@
 class Coreutils < Formula
   desc "GNU File, Shell, and Text utilities"
   homepage "https://www.gnu.org/software/coreutils"
-  url "https://ftp.gnu.org/gnu/coreutils/coreutils-9.1.tar.xz"
-  mirror "https://ftpmirror.gnu.org/coreutils/coreutils-9.1.tar.xz"
-  sha256 "61a1f410d78ba7e7f37a5a4f50e6d1320aca33375484a3255eddf17a38580423"
+  url "https://ftp.gnu.org/gnu/coreutils/coreutils-9.2.tar.xz"
+  mirror "https://ftpmirror.gnu.org/coreutils/coreutils-9.2.tar.xz"
+  sha256 "6885ff47b9cdb211de47d368c17853f406daaf98b148aaecdf10de29cc04b0b3"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "ae9dc313da2a3971c8e633d9f3262fd1bd431c303207b3346924aed60bb0965d"
-    sha256 arm64_monterey: "6a9a4988eda436fb5bdb5969044579c2e618e21eee8c8bbe32614ad29fe56bd7"
-    sha256 arm64_big_sur:  "85ef910aa223d48c0e73fc187aba54b86930c86f906e3d079ed0b114762bb24e"
-    sha256 ventura:        "4564009003601fb30335e57453cee93deaeab1eadf4473050e9e70198c21c892"
-    sha256 monterey:       "7c9f988b4f9207415a5c96efd32376bc8cf2b280a7a36fbebb0b8fc334a14056"
-    sha256 big_sur:        "e446ef889d70bc377d67fa2d7f6a1fbc9faaee444a9e9086a1f5bd484069e5c0"
-    sha256 catalina:       "0d2117fa63dfcbb678c4e499f9ca0413c2c5bfa0a1bbdefde620434f2ead93a0"
-    sha256 x86_64_linux:   "3c2fbec99344b50d620695d16197eb112cb8bee6d3f9e47cb682484755b91f38"
+    sha256 arm64_ventura:  "bacaafcfdabeca3a39e9cfc0400df7468f69e28ffc669d572a3e5a34a06d53da"
+    sha256 arm64_monterey: "5076ee683ec021506f83687a9b2ad5e5643ef9825784cf5a92d184e947bda127"
+    sha256 arm64_big_sur:  "520e8794b284d98d3dbe262de507fff25220f0ef9d767fc1270a79c9e1dc0a77"
+    sha256 ventura:        "b4439c7050df83748c37b8a5f12654b37cea9570fc94ebeff2768ad8fa6ac5da"
+    sha256 monterey:       "a77168243e2d4986defc28326f3be7551b5f8e29a0d3d13f069705a365787dca"
+    sha256 big_sur:        "bc28c6f4164b76818ee392eb4baf463525c824a5510b9a943fafcd7539443014"
+    sha256 x86_64_linux:   "f3e617fa620aa745ebdf1ffa3d6e9d262c729e12af51c3782f576baf33189ff7"
   end
 
   head do

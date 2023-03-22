@@ -4,7 +4,7 @@ class MingwW64 < Formula
   url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v10.0.0.tar.bz2"
   sha256 "ba6b430aed72c63a3768531f6a3ffc2b0fde2c57a3b251450dcf489a894f0894"
   license "ZPL-2.1"
-  revision 4
+  revision 5
 
   livecheck do
     url :stable
@@ -12,13 +12,13 @@ class MingwW64 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "39b804fa198652bd2e9d473565c56a046277900d461ae3655c0c8b682883af6d"
-    sha256 arm64_monterey: "0521776568eb0e9679786f018d039d34812707e612dd7e9c4386b68dd9795719"
-    sha256 arm64_big_sur:  "a79dd245e41408d99c8c56058abc92dff217226c75f7a295487f4f8decdb32b2"
-    sha256 ventura:        "6428be6af902e84e7140e14ac3b0c8020e9cf1a4fc5d3d1572b71cfcf4d9c6a5"
-    sha256 monterey:       "74ba47e2c89fa34b659c5de15c043f4d351614b31aa521087319cc45e5cb18f0"
-    sha256 big_sur:        "aaca080d095b87555a9e6112704ac9185ef50ef8b7f44e636cb7c1b78a4222df"
-    sha256 x86_64_linux:   "c0537e835211b32f2744d62f103aff2793eaaf59028e6ef3920819c48bfdc9d5"
+    sha256 arm64_ventura:  "ee1d61e35831277e15210ea706229cc8cbe16b206717255a520f236b5012aa24"
+    sha256 arm64_monterey: "c926536c55942ed1ccbfc3ebbeb7d50d20639cdbfc4e81fa67e650d66fe45d7a"
+    sha256 arm64_big_sur:  "708388e37455b9234f7aa49bdcbe09cb3ef19f8cb5978d79e73e9da55f0360c3"
+    sha256 ventura:        "c7f1f733d4990046a37915f690b731db78d8721eec963782773af317f14e7f09"
+    sha256 monterey:       "ebb56a2250a5ed9b7f77ff13a444f3d7c86c6cc01bde8027b3c0b0b6b9c3dbe4"
+    sha256 big_sur:        "394186157ca868084bf0bdabbdd4ed57a8e659ef9b3ddb34ff02be228705c70e"
+    sha256 x86_64_linux:   "9a7375f3e26b052d84d35dab0ec35f76aa6634c0a7da4d0076a9188d6a26781e"
   end
 
   # Apple's makeinfo is old and has bugs
@@ -33,6 +33,14 @@ class MingwW64 < Formula
     url "https://ftp.gnu.org/gnu/binutils/binutils-2.40.tar.xz"
     mirror "https://ftpmirror.gnu.org/binutils/binutils-2.40.tar.xz"
     sha256 "0f8a4c272d7f17f369ded10a4aca28b8e304828e95526da482b0ccc4dfc9d8e1"
+
+    # Fix linking failures in ld against import lib. Fixed upstream but still
+    # present in 2.40. Can remove this once 2.41 is released.
+    # https://sourceware.org/bugzilla/show_bug.cgi?id=30079
+    patch do
+      url "https://sourceware.org/git/?p=binutils-gdb.git;a=commitdiff_plain;h=b7eab2a9d4f4e92692daf14b09fc95ca11b72e30;hp=0d2f72332c7606fa3181b54dceef82d1af403624"
+      sha256 "99e943c9ea549c0a815493ea54f73e1af005224faa042bf2a4fa459325006c1b"
+    end
   end
 
   resource "gcc" do

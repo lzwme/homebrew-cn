@@ -1,19 +1,19 @@
 class Hyperfine < Formula
   desc "Command-line benchmarking tool"
   homepage "https://github.com/sharkdp/hyperfine"
-  url "https://ghproxy.com/https://github.com/sharkdp/hyperfine/archive/v1.16.0.tar.gz"
-  sha256 "87186d3d41ee9552d6c3151a8cbba5b155b4aee350a15ecb159471ba6250ac8e"
+  url "https://ghproxy.com/https://github.com/sharkdp/hyperfine/archive/v1.16.1.tar.gz"
+  sha256 "ffb3298945cbe2c068ca1a074946d55b9add83c9df720eda2ed7f3d94d7e65d2"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/sharkdp/hyperfine.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "48fc10af9c516a05fdb41bee042a54b1233b7fbbc762420c4691418fa7ae44d1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "95e5fdeeccd8e1e33e4debb11814b4d6631393e14c0ae0acb789da57c936f3db"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e14254ba2959fac01d1749fc2803ce6ed423df62204097e802a4c64d178fbe3e"
-    sha256 cellar: :any_skip_relocation, ventura:        "25e9d36240f69a91c52f5e50b2b0195e51c9855690d5a3e1ed4fd61702fbddba"
-    sha256 cellar: :any_skip_relocation, monterey:       "d18e905cb2945bf8bb3152ff91db41a83923e4c2c9b0b298ad045ca3a912c6cc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d66e5f88231036a4a5f1fe4574b9cdc00a5a465195f54ebaaf4b78a15d843ec4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41ed871b110f168a87521d7fedfe50291ae05df65c253db46ab2e6ce1e4f757f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f4e64bbc834bbd95693893999e6c35a5bb6969cbeae3546c49b9f529dbfae02"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b0bcdddf7842693ae990fc3eb86aff4ceba2af89384e42955493df395fe91f6b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bd00a8876e57807b5f49effaadd67cccaaf50b7448711ef2241686dbf2851b45"
+    sha256 cellar: :any_skip_relocation, ventura:        "e14e672beb3f0e3d1ca36bb3a9c6031b0fbaa556198b721319a826c26e314b28"
+    sha256 cellar: :any_skip_relocation, monterey:       "129cfb0dc06d2eb4f578161057803e7c3d43ed766a2fe3b2c1ef335d2fdd03c7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2b40fc1aa7e9e652b7553289845f2581b627e92bb4ae3bb2bcc1088cded48a89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "230b38f81f89342f97006f8d4301c39176ee9780d80d8a59a0be8b1d88704254"
   end
 
   depends_on "rust" => :build

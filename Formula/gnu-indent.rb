@@ -1,24 +1,19 @@
 class GnuIndent < Formula
   desc "C code prettifier"
   homepage "https://www.gnu.org/software/indent/"
-  url "https://ftp.gnu.org/gnu/indent/indent-2.2.12.tar.gz"
-  mirror "https://ftpmirror.gnu.org/indent/indent-2.2.12.tar.gz"
-  sha256 "e77d68c0211515459b8812118d606812e300097cfac0b4e9fb3472664263bb8b"
+  url "https://ftp.gnu.org/gnu/indent/indent-2.2.13.tar.gz"
+  mirror "https://ftpmirror.gnu.org/indent/indent-2.2.13.tar.gz"
+  sha256 "9e64634fc4ce6797b204bcb8897ce14fdd0ab48ca57696f78767c59cae578095"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 arm64_ventura:  "66cd2b91e533849daea9cfabbf525ddcc76d2086a8a8b4657e6fa236df2ab7d9"
-    sha256 arm64_monterey: "2311fb51012e426bd4cf01047a98cbcf70a5bf343aa089dc706d1e3c84b05964"
-    sha256 arm64_big_sur:  "bf082593202d39ea4c2929b333d544c72ef23d16fed04f570e1f4227098ebf6e"
-    sha256 ventura:        "62ad5f27bb1a7676e87485f53b6d25635d5d3de0a76268b0dfaa66c82d6f2a0a"
-    sha256 monterey:       "f23364d4a472c8c1430967e887da54e319bf94687cdeb718988dde87459691cd"
-    sha256 big_sur:        "af4b5212440cdbb8c1c80bef3a13ca33bbdbd49918d24588af3a9eb44e484dab"
-    sha256 catalina:       "82a12279be8834591a2104253ac562978b557c26b262dd8d5bfbf6e7b1103dd1"
-    sha256 mojave:         "e960e3f35f6a77daef487f54158953522f58a27caf27e39e0c17702754718ee1"
-    sha256 high_sierra:    "3280e6e9fc0c5cc895367291fc328dccae5f2e36606dd503b5721d449bc33eb8"
-    sha256 sierra:         "98bcdee2e49d7e165a07ce6468d2c1a3030db7205472d015ba516e43f5a1e0fd"
-    sha256 x86_64_linux:   "e3ef74b022310ffe3742480791e140ee05b61b315cfcb7de9fa6ebdac77a7b92"
+    sha256 arm64_ventura:  "90269c7d0cb032e8defb0ed1a46222decdf12856f47206d7290aa42f41f64dc5"
+    sha256 arm64_monterey: "ed32867a9b921557dcbd8eab24d0bd8045f6525d9000d0034fa9ed2a14e23a54"
+    sha256 arm64_big_sur:  "e60464107020d08df53cf12dd388825cbeefd0d1ecf986f00cdf890d7cc58413"
+    sha256 ventura:        "97399d01070ba20f588dde6cddf6a20353a1e2def99bd99d9f11d0d3c8f12748"
+    sha256 monterey:       "ece97222820cb413acad02586561c87d8cda14370e6b4d0e2e5d47f5e7774402"
+    sha256 big_sur:        "cf85276b497f4cf5e909ee415393207ad67c94bb9aa130e564f92f7b435d09a6"
+    sha256 x86_64_linux:   "0e3f4a54c4abad7a07b57331772f24737237413f9ad4bd67ed8827909b515ced"
   end
 
   depends_on "gettext"

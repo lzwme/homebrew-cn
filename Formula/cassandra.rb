@@ -4,24 +4,24 @@ class Cassandra < Formula
 
   desc "Eventually consistent, distributed key-value store"
   homepage "https://cassandra.apache.org"
-  url "https://www.apache.org/dyn/closer.lua?path=cassandra/4.1.0/apache-cassandra-4.1.0-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/cassandra/4.1.0/apache-cassandra-4.1.0-bin.tar.gz"
-  sha256 "e4fd6ef4a9e32eb297886c4bf04b42a8c740864e1fe8cc93deb240d576d607ae"
+  url "https://www.apache.org/dyn/closer.lua?path=cassandra/4.1.1/apache-cassandra-4.1.1-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/cassandra/4.1.1/apache-cassandra-4.1.1-bin.tar.gz"
+  sha256 "7ce3103a76b8af76ffd8488d6bf484e1f175119617f3205ae0526c71d816c6f7"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dda2455a952b5c13eff5f8ed7d6e3fd12f8b473d0acf969eef529c01e7262159"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "26497667e88a297847fc70df9df523ca3dcf2e6bb52b3c8b48bb9f221bfa8446"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1c670a228ea5298163efb99a3215476424802305e1ce0942901f11f08b9830fb"
-    sha256 cellar: :any_skip_relocation, ventura:        "4f0f7ff4b12546d0a3bc19cde3bcf1373506be98dc1ce5f8c6ebd2e130de7953"
-    sha256 cellar: :any_skip_relocation, monterey:       "a0d96a62ef5a3dfac4f3eda755519b35f83cc57db727ac102b4d92cba2ac4549"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e8575ba10cca5156a8ae1c83c0d10f3708567141b16b6363fa7fa693726afcaa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee0b557fcbe7fa1cc0a66c21abae6e8ba12e1593a006553cf024b1ca9dbcdaff"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8774eace236b20daa4a56478a405d27f401c7a76989297ffa763355af4816c7e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5a306be7cd40ec363e835b64898f66cec8e2318602ed702d5e81291134c37e9c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e291c7bef0e729eaf18ff845656f79bd66f689c2cc1fef4cae1be47f15e92f1e"
+    sha256 cellar: :any_skip_relocation, ventura:        "5ab5ef53c7b9d5ffba3f6d6050fe5a7f57f664d96fc4c21327af3968d57ae393"
+    sha256 cellar: :any_skip_relocation, monterey:       "616061b5752e4d9733d3a79fe5f17448d501b8d0603164367753450a85754660"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e41419931ed8dc7416b1758f868d55177767c7034c15d5c93ae61766b829ae9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34c371d1340142ab1e52ec01633574c6afc40c64d606f5309463f9684eaa38ef"
   end
 
   depends_on "libcython" => :build
   depends_on "openjdk@11"
-  depends_on "python@3.10" # Python 3.11 issue: https://issues.apache.org/jira/browse/CASSANDRA-18088
+  depends_on "python@3.11"
   depends_on "six"
 
   resource "thrift" do
@@ -53,7 +53,7 @@ class Cassandra < Formula
     (var/"lib/cassandra").mkpath
     (var/"log/cassandra").mkpath
 
-    python3 = "python3.10"
+    python3 = "python3.11"
     venv = virtualenv_create(libexec/"vendor", python3)
     venv.pip_install resources
 

@@ -20,12 +20,13 @@ class Strongswan < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "7f8dfb65a6b80fd094681254964cb83ef3a53f450810e216a09ded77b9e21c24"
-    sha256 arm64_monterey: "458115e28f8d288d0bef09aae6f58633267d09828b9f707afa078df91667b3c1"
-    sha256 arm64_big_sur:  "681d0298881986ea6783881549fb54ffc4d0a2a7a1149a7a3d90fbb3cb211275"
-    sha256 ventura:        "abce93609425fff9d80e69280895bfce4da5f5d4df5a55f84521615500a81dc0"
-    sha256 monterey:       "1573bed24c2dfa52eabaa7bf1321d4c106359a5454837c62fc956e0f316e72fb"
-    sha256 big_sur:        "d4da4b2f209b28820ee6422a9739134791499802a61e5ebff2757743e71e9c13"
+    rebuild 1
+    sha256 arm64_ventura:  "a4d2de1acc7e1aa6caf1a05afd32754b54aa8b813d06d8ccd51297e51604125d"
+    sha256 arm64_monterey: "2eae78bb4794a0a8f98474db0682df5a701ebfbeb7060630160949011c3f8ce9"
+    sha256 arm64_big_sur:  "2c37898d4819ed9bd2eb3b738f5701b8c893361610e0b09e772901a3270ef8ca"
+    sha256 ventura:        "a34c8e83cfa2d6f455fa0ac65426617def9eda97e62c059ca6244638b83f9f7a"
+    sha256 monterey:       "f8f3d931112bced8b776907d95dd0d15b73d1e060eceedf02dcf7ca492ae8dc9"
+    sha256 big_sur:        "66965a075e7b58ff0e031539182298dc4c1cf85072a7327b25031e0660d7d4ec"
   end
 
   head do
@@ -65,6 +66,7 @@ class Strongswan < Formula
       --enable-pgp
       --enable-pkcs1
       --enable-pkcs8
+      --enable-pkcs11
       --enable-pki
       --enable-pubkey
       --enable-revocation

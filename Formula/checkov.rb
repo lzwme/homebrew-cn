@@ -4,18 +4,18 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 15 releases on multiples of 15
-  url "https://files.pythonhosted.org/packages/78/a0/c467288efd584bdba966b18e1e8f65248aac6b00c4586bfad9c043eb25fd/checkov-2.3.90.tar.gz"
-  sha256 "ecd872d0f55e55578c42f3bd611df34c3f389a0ba3c36d8f924ea45e6158ad74"
+  url "https://files.pythonhosted.org/packages/aa/14/6321c062e0dbf656ee4e952f8fc1193ce3f051ed4523889aab203cca5fa4/checkov-2.3.105.tar.gz"
+  sha256 "57832fa4c53605b4cda7a3892b82fb278929333467ba372c431ae300e1736dc6"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "702f1591244a8461ebf5776cc73eecb2baa1318fe73dfe1f6589cffee4ba2352"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cce4d5b25e5f91752d5fb9a7623c68cf957380aa0680b9eff6dff526388d7e4a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a506a2393ac35670496a7919e03ed52d6486234e17af045143b98948beaffbae"
-    sha256 cellar: :any_skip_relocation, ventura:        "dc0644a4e036eda2c8d21f79b3796bbbbad8d1f680e8f66fe7a789542d97faf8"
-    sha256 cellar: :any_skip_relocation, monterey:       "b9c70ec61496d334f2a306d4201738a12210c2f431296886738f53629950d98d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "32f57068e327be3cc63876f48a5de04c450223d0117c87a30a83d11385bc6489"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cac44661fa629e4452c01d8991777c2d0da9b0960d376b0bd4aa59039c176d8c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7a1da08eb86a39cb598a28b3c646e54974169081e3bece937b49805a0ebba47c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3b0a03c2f5fb0111136170c492f4452971fa6843fb5d96de3efbaef8706b2b8b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "93e756357f51206878003634214d4f0883a44474659971db1d29e2423fd24cf5"
+    sha256 cellar: :any_skip_relocation, ventura:        "b36531bc7e063351d92e7066a42c51ec74169f7b5aac7bde855007b96286b37f"
+    sha256 cellar: :any_skip_relocation, monterey:       "32b8b484a3d94d55f0b85e43d88c334a98fbb2c919cf6e70ace2c02bc6ab6852"
+    sha256 cellar: :any_skip_relocation, big_sur:        "809bea62bad423659b11a0bd78e9a163244aa43ed5f72cb0eb3dad55ba3b27cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "60000f75eeff73e338a8c7d149dc76ce7ec1a26645231eb47758097a98c7d79f"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -46,8 +46,8 @@ class Checkov < Formula
   end
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/ac/43/b4ac2e533f86b96414a471589948da660925b95b50b1296bd25cd50c0e3e/argcomplete-2.1.1.tar.gz"
-    sha256 "72e08340852d32544459c0c19aad1b48aa2c3a96de8c6e5742456b4f538ca52f"
+    url "https://files.pythonhosted.org/packages/6d/da/c47f62d2695a2ae9dbc5cd5ef141933f830f512002f8c9bf7527eb3fedd8/argcomplete-3.0.2.tar.gz"
+    sha256 "fb929c2f609f195a2b11dc914924149b45c2b55b9f48283362e18b8d35f855c1"
   end
 
   resource "async-timeout" do
@@ -76,18 +76,18 @@ class Checkov < Formula
   end
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/75/f8/de84282681c5a8307f3fff67b64641627b2652752d49d9222b77400d02b8/beautifulsoup4-4.11.2.tar.gz"
-    sha256 "bc4bdda6717de5a2987436fb8d72f45dc90dd856bdfd512a1314ce90349a0106"
+    url "https://files.pythonhosted.org/packages/c5/4c/b5b7d6e1d4406973fb7f4e5df81c6f07890fa82548ac3b945deed1df9d48/beautifulsoup4-4.12.0.tar.gz"
+    sha256 "c5fceeaec29d09c84970e47c65f2f0efe57872f7cff494c9691a26ec0ff13234"
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/1e/f6/252c68d619f4f0b6e9ac16ef3b699d2dee863bdec250e1a42e273d2ec1ec/boto3-1.26.90.tar.gz"
-    sha256 "1d33abca60643d14f90a9e77d94085ebfd8f8bf8f157f582466f6b3a141bab8c"
+    url "https://files.pythonhosted.org/packages/d7/f7/514ce0b134e47deaf16427e0cd26196a98cf4d61c7fb831259079b69fd6d/boto3-1.26.95.tar.gz"
+    sha256 "945d32fa9bbbb5fc775378bc2c19278797b54ad57e24bd4dbd46ab27f0938152"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/76/0e/89c2706ebbbfbb3b6b8baded188221d2e9afc54388e60a3d76795d4cb94b/botocore-1.29.90.tar.gz"
-    sha256 "2dbbc2c7d93ddefcf9896268597212d446e5d416fbceb1b12c793660fa9f83f3"
+    url "https://files.pythonhosted.org/packages/da/b3/ed07e3fce0367179aea51d11a344381e77485d3c410004f39dd6339e97b9/botocore-1.29.95.tar.gz"
+    sha256 "e9ffd4a2fc415c313eda03713c212e3121084fdcb21e20aac5b15924a4ae5a9d"
   end
 
   resource "cached-property" do
@@ -171,8 +171,8 @@ class Checkov < Formula
   end
 
   resource "dpath" do
-    url "https://files.pythonhosted.org/packages/88/b2/abc5803f37a2ea1045d68765acfcb4ec166bc9e08c3ba451c53af29a73f2/dpath-1.5.0.tar.gz"
-    sha256 "496615b4ea84236d18e0d286122de74869a60e0f87e2c7ec6787ff286c48361b"
+    url "https://files.pythonhosted.org/packages/42/97/b95b0cc68026e002471ea595a07962b5250f6a0348e495d8b6c33df88e5b/dpath-2.1.4.tar.gz"
+    sha256 "3380a77d0db4abf104125860ff6eb4bd07c97c65b81aad42a609717089a1bed0"
   end
 
   resource "frozenlist" do
@@ -201,8 +201,8 @@ class Checkov < Formula
   end
 
   resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/90/07/6397ad02d31bddf1841c9ad3ec30a693a3ff208e09c2ef45c9a8a5f85156/importlib_metadata-6.0.0.tar.gz"
-    sha256 "e354bedeb60efa6affdcc8ae121b73544a7aa74156d047311948f6d711cd378d"
+    url "https://files.pythonhosted.org/packages/e2/d8/3d431bade4598ad9e33be9da41d15e6607b878008e922d122659ab01b077/importlib_metadata-6.1.0.tar.gz"
+    sha256 "43ce9281e097583d758c2c708c4376371261a02c34682491a8e98352365aad20"
   end
 
   resource "Jinja2" do
@@ -419,7 +419,7 @@ class Checkov < Formula
     EOS
 
     output = shell_output("#{bin}/checkov -f #{testpath}/test.tf 2>&1", 1)
-    assert_match "Passed checks: 4, Failed checks: 6, Skipped checks: 0", output
+    assert_match "Passed checks: 4, Failed checks: 7, Skipped checks: 0", output
 
     (testpath/"test2.tf").write <<~EOS
       resource "aws_s3_bucket" "foo-bucket" {
@@ -436,6 +436,6 @@ class Checkov < Formula
       }
     EOS
     output = shell_output("#{bin}/checkov -f #{testpath}/test2.tf 2>&1", 1)
-    assert_match "Passed checks: 4, Failed checks: 5, Skipped checks: 1", output
+    assert_match "Passed checks: 4, Failed checks: 6, Skipped checks: 1", output
   end
 end

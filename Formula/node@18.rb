@@ -11,13 +11,14 @@ class NodeAT18 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "b75c931440c01dd75a2b58d208adcf931cdc9d65b9e76f53bd0cd99f6d2f9bbf"
-    sha256 arm64_monterey: "897fb1dca959435c24c9ac94b0a30a3739bab734d2750cda29ae421830db458d"
-    sha256 arm64_big_sur:  "1febcb763ca4d358a77137c61818ce19873710d161caba26c2788960a5bc7274"
-    sha256 ventura:        "907c1b8a770bf1244baf8d426aafb7419e5bba9ce9ee28f789c2cbb50595687f"
-    sha256 monterey:       "ad879cd6dd0c25e50ebac167c077cd7aa57ecf5440f926f6dac9622b4b85b5c6"
-    sha256 big_sur:        "ed958a6ac42d1139377b78608962a534bb8bae994d50be0c56608f0abd0709db"
-    sha256 x86_64_linux:   "7d5e6c0658054f2722c6a028ca9a1fd0e421b5c21e37d74a0eb8225999de6b74"
+    rebuild 1
+    sha256 arm64_ventura:  "bcbe5b65b0a0118b4af1825b7f4c8266ecd5cb2cc4a9ddc2b83698ac7f41b456"
+    sha256 arm64_monterey: "f2a994e36985857027594565d0d5d0a4ce086ce2b84f94d53c983f2e33282828"
+    sha256 arm64_big_sur:  "817ebac06a44b6caf5174046e93c2f61a1d33c96705a7b70542f1891737851ef"
+    sha256 ventura:        "971d9e3c187e07010cace1ed4060fea6e1e39954c774d4c71f26006e67fb8885"
+    sha256 monterey:       "28e65c8b98dbd64b1857e913da8fbce6820cf9ba4fd3df32b99210641f8e869f"
+    sha256 big_sur:        "2b6b7f8b86d36e5e25d45ac8d9542a869d7887e1d29ef5d659d05f100da02b4e"
+    sha256 x86_64_linux:   "f0d65d6c8c3644edcf5a01353a45f1dd2918e987501058a56394cfde87545920"
   end
 
   keg_only :versioned_formula
@@ -55,7 +56,7 @@ class NodeAT18 < Formula
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
 
     # make sure subprocesses spawned by make are using our Python 3
-    ENV["PYTHON"] = which("python3.10")
+    ENV["PYTHON"] = which("python3.11")
 
     args = %W[
       --prefix=#{prefix}
