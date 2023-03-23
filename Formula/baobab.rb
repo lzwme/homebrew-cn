@@ -1,21 +1,21 @@
 class Baobab < Formula
   desc "Gnome disk usage analyzer"
   homepage "https://wiki.gnome.org/Apps/Baobab"
-  url "https://download.gnome.org/sources/baobab/43/baobab-43.0.tar.xz"
-  sha256 "52c6864118f5697f5a5736882dcda27db22e7220bc492838deecc699246cdb26"
+  url "https://download.gnome.org/sources/baobab/44/baobab-44.0.tar.xz"
+  sha256 "845b63bb9123d74568c8126c571bbc74273483ff920179a2cf1eddbbefa1bfc0"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "696a1ee25cc6f0c4dec94272b120f01eb3fd97d65f512e7563cf69982681fe9f"
-    sha256 arm64_monterey: "36e7a78b2ac54de9c2a941eeae4699221a255b00700368391fe899890cee0b99"
-    sha256 arm64_big_sur:  "5743961c7cb063883844064fad670e28b30a0659b05e3c6359457b48b0279542"
-    sha256 ventura:        "2c39108ca5e7b83099425b15cc5560eaf494554d2cc6cce0fb434059fe6ec2f5"
-    sha256 monterey:       "8602055a45c12aac7ca949c24d244ad8eb823ba9728849eb19916e7b47a2bed7"
-    sha256 big_sur:        "87a993cb66ebb1b1b3e4175bd0ed78d09fbebc3468d6872b2f207c11dc9ba6e5"
-    sha256 catalina:       "58ba5831f86cce5d2eeaff71254000aa10ed5cb249553270f50d8956e91c0760"
-    sha256 x86_64_linux:   "a8e1d5e8a4bd3bd5ab45d1d2378de419695d4da58e111a3d64113f9d5e7da30b"
+    sha256 arm64_ventura:  "51ceb0c963e73eed95c217497c225c1567a96bd0c351bb8fdd8f0f340096f637"
+    sha256 arm64_monterey: "6415103c8d7a5abb1cd0d3964b7e0e4adb2b648952c5a765de3406625de2c0ca"
+    sha256 arm64_big_sur:  "e344b2469eed54edaea7e2e643d7018075cf212d3d715b991dbdb5d87ae6ae63"
+    sha256 ventura:        "b3ab0b152bbb0e004e9bb4e297494f530b8a6e4aceb68ed1fde9fb46e058b18e"
+    sha256 monterey:       "7045d114d65ca8b07f7534fff54959329a147803051a8772d17ad8e192a179b5"
+    sha256 big_sur:        "91f456b18cbb84f6dd510bb3faf7593ff2c735b361b9a26fa3611d5cc9c01a1e"
+    sha256 x86_64_linux:   "5bf6be47037b1bb21274c6bee9544c15805280705bc9a9d52b5b1445c9a3ba67"
   end
 
+  depends_on "desktop-file-utils" => :build
   depends_on "gettext" => :build
   depends_on "itstool" => :build
   depends_on "meson" => :build

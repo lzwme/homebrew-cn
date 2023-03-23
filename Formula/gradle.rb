@@ -11,15 +11,18 @@ class Gradle < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7ed643823d2fd2cf01f4a5aab323ed5aaf7950efd0f42056f68656e06952b23e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "66be180af20d99e9b1c87a052e4ad2ee50761ada5c5aa2240bf02b1bad68ef0e"
   end
 
-  depends_on "openjdk"
+  # TODO: Switch to `openjdk` on 8.2 release. 8.0 and 8.1 series cannot be run
+  # on Java 20: https://github.com/gradle/gradle/issues/23488.
+  depends_on "openjdk@17"
 
   def install
     rm_f Dir["bin/*.bat"]
     libexec.install %w[bin docs lib src]
-    env = Language::Java.overridable_java_home_env("19")
+    env = Language::Java.overridable_java_home_env("17")
     (bin/"gradle").write_env_script libexec/"bin/gradle", env
   end
 

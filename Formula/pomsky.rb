@@ -1,19 +1,19 @@
 class Pomsky < Formula
   desc "Regular expression language"
   homepage "https://pomsky-lang.org/"
-  url "https://ghproxy.com/https://github.com/rulex-rs/pomsky/archive/refs/tags/v0.9.tar.gz"
-  sha256 "bb9414b37c721e1f0dac373c6b250d278556f119e40cb1903b9f8a2238a972a0"
+  url "https://ghproxy.com/https://github.com/rulex-rs/pomsky/archive/refs/tags/v0.10.tar.gz"
+  sha256 "a7c02046c8919c16204d66161dfffd4e752ce86657213cb114fe0df9f561a657"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/rulex-rs/pomsky.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cde41360135f32e1dbff5262783389ca8d9cea35a0f37f4477354fc679603281"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f028bec0428e542dabf8421a1437cd8862ca02136f1ccb5b1ea11a340f59e426"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3bcffeb4ebc8cdfe8aae2996081a941092fa8c6a7785389aa50ca5fe1a0af968"
-    sha256 cellar: :any_skip_relocation, ventura:        "95d5c57f43e7755d9088a84f923ad68e3a362314113f5a4d1cdba046b352c539"
-    sha256 cellar: :any_skip_relocation, monterey:       "75edb8c7e06b54fb78349392f60ab49e03844bf2c739a1a44f704347e75b9583"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f15b6afdad27659c8597194932104ca4adb3e49e6b619695547406c3c37c8e5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1c4516f29ca77af397d190e5a949a6a26d031477340df9cc6e512a5f10bacba"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6bc84242e960decb30596151d9ffa6f7141bf9952c102a3b68e1e33e8b178b44"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "79c1fb83c49630eb05d5005a071676c7a82d4a0b3a49db913806ffa043661dd2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "27c7b47d0b580a43d932faf0ed064479b71fc2657be5ad250e10681a6c09c028"
+    sha256 cellar: :any_skip_relocation, ventura:        "50d1717df00fc80230fa8db2785beb78c3d20e33e55c7b3216e4862a01b930c7"
+    sha256 cellar: :any_skip_relocation, monterey:       "9f688b014c303d98a47b92df85c83dab197a96ad40c0e44f1ca227ffcd14c0d8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "66debf5cb72985eb6a7933aaacd8070ffdf17f1fd021562e9f417f316c34cdeb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bae27e061c5f9cfe506bfbc2513f901fe5bacc5a1a7e4e5602a1de68a61012bb"
   end
 
   depends_on "rust" => :build

@@ -1,27 +1,27 @@
 class TotpCli < Formula
   desc "Authy/Google Authenticator like TOTP CLI tool written in Go"
   homepage "https://yitsushi.github.io/totp-cli/"
-  url "https://ghproxy.com/https://github.com/yitsushi/totp-cli/archive/v1.2.6.tar.gz"
-  sha256 "ff64b624a9ac5c1afcb8d0ae506439e0e7048db976d4e4940a9e5a0ff7f8e107"
+  url "https://ghproxy.com/https://github.com/yitsushi/totp-cli/archive/v1.2.7.tar.gz"
+  sha256 "a7b9b2baa3603d1a354f382ffc9c4bf5495c6648c04636f81e345cf46497370f"
   license "MIT"
   head "https://github.com/yitsushi/totp-cli.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d55ff097af79ea814ab863807ea0da863a6d7f81f7ddeaf52a39626ecb11c0ae"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d55ff097af79ea814ab863807ea0da863a6d7f81f7ddeaf52a39626ecb11c0ae"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d55ff097af79ea814ab863807ea0da863a6d7f81f7ddeaf52a39626ecb11c0ae"
-    sha256 cellar: :any_skip_relocation, ventura:        "6224212bb66dcde7d63577a68a6c7009f310a098685d112af0570a2bdc86fc23"
-    sha256 cellar: :any_skip_relocation, monterey:       "6224212bb66dcde7d63577a68a6c7009f310a098685d112af0570a2bdc86fc23"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6224212bb66dcde7d63577a68a6c7009f310a098685d112af0570a2bdc86fc23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c9ebfd82da77e953c0398724cb97ece537458954858f5b51965d027f62b9ca1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b5224ed6bdc5b05e54ed6b58f331cea7f801ff753b7546191ced0d9cdabe83e2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b5224ed6bdc5b05e54ed6b58f331cea7f801ff753b7546191ced0d9cdabe83e2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b5224ed6bdc5b05e54ed6b58f331cea7f801ff753b7546191ced0d9cdabe83e2"
+    sha256 cellar: :any_skip_relocation, ventura:        "a7e3b93bced68c494f1ac8e0d39eb25ed25ea7ce34db052c7004d432d0902f62"
+    sha256 cellar: :any_skip_relocation, monterey:       "a7e3b93bced68c494f1ac8e0d39eb25ed25ea7ce34db052c7004d432d0902f62"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a7e3b93bced68c494f1ac8e0d39eb25ed25ea7ce34db052c7004d432d0902f62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f1cde0cb10aecdfd3208f835a7b97a523355789c39ede0085a4e0909ecf165c"
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "0"
-    system "go", "build", *std_go_args
+    system "go", "build", *std_go_args(ldflags: "-s -w")
+
+    zsh_completion.install "_totp-cli"
   end
 
   test do

@@ -1,12 +1,12 @@
 class AdwaitaIconTheme < Formula
   desc "Icons for the GNOME project"
   homepage "https://developer.gnome.org"
-  url "https://download.gnome.org/sources/adwaita-icon-theme/43/adwaita-icon-theme-43.tar.xz"
-  sha256 "2e3ac77d32a6aa5554155df37e8f0a0dd54fc5a65fd721e88d505f970da32ec6"
+  url "https://download.gnome.org/sources/adwaita-icon-theme/44/adwaita-icon-theme-44.0.tar.xz"
+  sha256 "4889c5601bbfecd25d80ba342209d0a936dcf691ee56bd6eca4cde361f1a664c"
   license any_of: ["LGPL-3.0-or-later", "CC-BY-SA-3.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "79f3f53c3f0d0bf11c7bec0f906fd2f87c3cec7009622f15b6dde5fa1a0557d5"
+    sha256 cellar: :any_skip_relocation, all: "b873f8eb0fea7128cc034431285b4c9eb28bf8b5512ebc1103b79366350001ca"
   end
 
   depends_on "gettext" => :build
@@ -28,7 +28,7 @@ class AdwaitaIconTheme < Formula
     # Someone who understands GTK+3 could probably write better tests that
     # check if GTK+3 can find the icons.
     png = "weather-storm-symbolic.symbolic.png"
-    assert_predicate share/"icons/Adwaita/96x96/status/#{png}", :exist?
+    assert_predicate share/"icons/Adwaita/16x16/status/#{png}", :exist?
     assert_predicate share/"icons/Adwaita/index.theme", :exist?
   end
 end

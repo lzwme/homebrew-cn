@@ -1,19 +1,18 @@
 class SqlxCli < Formula
   desc "Command-line utility for SQLx, the Rust SQL toolkit"
   homepage "https://github.com/launchbadge/sqlx"
-  url "https://ghproxy.com/https://github.com/launchbadge/sqlx/archive/v0.6.2.tar.gz"
-  sha256 "d8bf6470f726296456080ab9eef04ae348323e832dd10a20ec25d82fbb48c39a"
+  url "https://ghproxy.com/https://github.com/launchbadge/sqlx/archive/v0.6.3.tar.gz"
+  sha256 "965a6fbbadc88917e37390ba244952c2893f29ca36831dad8c268f6bdf1afc45"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4e4901201ba0a070e8e6d89c5a79dad091b5c683de4682b10de52fa65549cf3b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5153d0b8338a833781b23861e68d1262e391ae3a32492a66ecd3a02d070edbd0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0ce6f164581fa51b9d4797bfd8def06d86b4de9451ebc423e7a68e170c893cc8"
-    sha256 cellar: :any_skip_relocation, ventura:        "188ef7dcab83d604e53efec308b34a1d1050f822c482f421313d8d4feedcaacf"
-    sha256 cellar: :any_skip_relocation, monterey:       "6f611c4dcb4d55530045d4b8fdf046198809c845bdeb05260fd112efd4970d75"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3f2b4014f9e23b3c8216374bca8c8b2ed6917c3d920ff5c1f824472062704685"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02dff02d06fb0bf0f3ac0aa961822c5fec25612b3edad2788f20eb6a847f447c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1c4cd1259a1c897289e855e44d7daa5f7e4bee6dae43e176cc25c925edc17e3c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6d1efde3edbb42c9b76fedded39666261b4b5d095279e6d0424165245c626470"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "671ce41fe5ad478f8d4d487bb04e787cf8bb3ccfdd47eb4f05b1472720b72631"
+    sha256 cellar: :any_skip_relocation, ventura:        "35595ec27f1a1e99682a2c274cf9ff80e37eb3cbf1778b21ed50b772771e7b02"
+    sha256 cellar: :any_skip_relocation, monterey:       "b27d38431b1a33c3d45a0910b98c0c0c02f2a392690606c9ab9604a8c24f44da"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8c49cb0cdc84c846af5558996c961fd0a49738bcf94888b2108934cec13f4a45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0aed9ded5bb315407e9749149a447ad7d22553d8d33b6990e964572b06a8955"
   end
 
   depends_on "rust" => :build
@@ -21,12 +20,6 @@ class SqlxCli < Formula
   on_linux do
     depends_on "pkg-config" => :build
     depends_on "openssl@3"
-  end
-
-  # fixes https://github.com/launchbadge/sqlx/issues/2198 for rust >= 1.65
-  patch do
-    url "https://github.com/launchbadge/sqlx/commit/2fdf85b212332647dc4ac47e087df946151feedf.patch?full_index=1"
-    sha256 "8f72bff76a88e5311aa4b83744a509ba0ac4effa9d6335ba3986ebedfee6051a"
   end
 
   def install

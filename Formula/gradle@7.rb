@@ -11,17 +11,19 @@ class GradleAT7 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f9d5fc4303991482505708d4b7488160859cd29c0739ab89370f4fb4b218cd0d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "cee7e61f4d6d993f9ebbd352aa66b97eb09ae51ef5da855820851699a39c82bb"
   end
 
   keg_only :versioned_formula
 
-  depends_on "openjdk"
+  # TODO: Check if support for running on Java 20 is backported to Gradle 7.x.
+  depends_on "openjdk@17"
 
   def install
     rm_f Dir["bin/*.bat"]
     libexec.install %w[bin docs lib src]
-    env = Language::Java.overridable_java_home_env("19")
+    env = Language::Java.overridable_java_home_env("17")
     (bin/"gradle").write_env_script libexec/"bin/gradle", env
   end
 

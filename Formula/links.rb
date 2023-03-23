@@ -1,8 +1,8 @@
 class Links < Formula
   desc "Lynx-like WWW browser that supports tables, menus, etc."
   homepage "http://links.twibright.com/"
-  url "http://links.twibright.com/download/links-2.28.tar.bz2"
-  sha256 "2fd5499b13dee59457c132c167b8495c40deda75389489c6cccb683193f454b4"
+  url "http://links.twibright.com/download/links-2.29.tar.bz2"
+  sha256 "22aa96c0b38e1a6f8f7ed9d7a4167a47fc37246097759ef6059ecf8f9ead7998"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
 
   livecheck do
@@ -11,15 +11,13 @@ class Links < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "94c4e2c60e55c797cba12f8e32e7c16a5e5b0117ba79680c41e5ec8dc587d963"
-    sha256 cellar: :any,                 arm64_monterey: "86447d391cbadebc15d53bdba2dc5e824d7a8fd554ac9e805894f58dab48f6d5"
-    sha256 cellar: :any,                 arm64_big_sur:  "eeb988eb931d99c381b413f7623596aafe8f0c8c573b5291cbaf157115046ee1"
-    sha256 cellar: :any,                 ventura:        "5c15b0dc7ba7ed27f06cf198b2043bbc4a8ce194f42b6b5b56e8453c8643a391"
-    sha256 cellar: :any,                 monterey:       "d472501f6e0e5f18babd9f3f40503d774229ba9476034c7e0eca8455cce2870c"
-    sha256 cellar: :any,                 big_sur:        "4dcfbaad5a0e797b81674c6454912b2a9ab192af1f8e434794a4a3938a6e0d82"
-    sha256 cellar: :any,                 catalina:       "0d676b66beb64c78ba9d6e1e4af1e2c533a3e2ce2c9c6fa826edb525ff86ec5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4cf574763d64bf60fa5f757fb70c560cc65934cd410e7a581a099e188849578d"
+    sha256 cellar: :any,                 arm64_ventura:  "e4540d989d8df24a0d763b4dc535576fbb211e650649af2c9099169e096034a1"
+    sha256 cellar: :any,                 arm64_monterey: "2cde4b9112e61d1a69a3d9db2bee59c77bf64d23bfed82fbd81b1071416c413d"
+    sha256 cellar: :any,                 arm64_big_sur:  "2e0ff6048ef5e174bd94968f1d396287fcaffb953239559595aa4bf8b4cd188c"
+    sha256 cellar: :any,                 ventura:        "52131e67784ec2407a7ebdf3a0a4374cf67035fdb79f2a81df4f1c3fb66607fa"
+    sha256 cellar: :any,                 monterey:       "b250161b88f02bda634cb0ff689ea54310c6eaefc12de9eb1b87d4e18e8cab58"
+    sha256 cellar: :any,                 big_sur:        "0aa338ed370f3071ef1a015e8417890d91fddf7742618c4a5e2c66c98a730276"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af912ec13c9a8f37b63312cf7c4fa971c31dab5c41aed62bbad9a0377d0c2a2c"
   end
 
   depends_on "pkg-config" => :build

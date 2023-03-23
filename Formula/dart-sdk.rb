@@ -1,18 +1,18 @@
 class DartSdk < Formula
   desc "Dart Language SDK, including the VM, dart2js, core libraries, and more"
   homepage "https://dart.dev"
-  url "https://ghproxy.com/https://github.com/dart-lang/sdk/archive/refs/tags/2.19.4.tar.gz"
-  sha256 "3b41fc5c897f67a6a6b8080150b0ec15e7002096fdd3a735c139a4d25af5ed32"
+  url "https://ghproxy.com/https://github.com/dart-lang/sdk/archive/refs/tags/2.19.5.tar.gz"
+  sha256 "ccd347f61810bef153ca1dd55168207852ea73fc86ae55111c6e8f8e307dbbfa"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89dd6a2765aaa70ad15566fb501a27a944950d7f1cafd5cb13eff1aeb3b11f90"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f6233df09dfda634511870c1e23eacf81e018e8abefda6d7ba902fa53c14e881"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0d83d0a60ba9fe72ad0330cc77fb4a1da1b53854219f73fe7271b10926d0e8ac"
-    sha256 cellar: :any_skip_relocation, ventura:        "263cfd3b0f6d18422df449b314454d75211336d3355fc5e7494dcb301a9e00e3"
-    sha256 cellar: :any_skip_relocation, monterey:       "b69de926b8f46e00b0ccba4dfa08b522d5278bae35b8bb18b47a4ff835886a91"
-    sha256 cellar: :any_skip_relocation, big_sur:        "929813add55c7f5f2ca5a842e5374230a1946a0b8a910bb656bcefcd2032284a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5594d7e9a4d2131a3edc70e4c9b22c19ceee430198de0b357e11c55573372c80"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ceaca095f71c21280bf2ed1bd1f1b8550b9fecd17931bb92c94ce93b0bf25131"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "96ad679de8c7a75a3b5342f6601eebebe80854a955dd53af79b327a22fd63225"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "53fc593f871fc8fba056a03a9ccd7829a3172228c01bb3d45402a6c925101813"
+    sha256 cellar: :any_skip_relocation, ventura:        "13944a74a597a72259673bb9a43030158a6071d915195007ffc374792c03f7fe"
+    sha256 cellar: :any_skip_relocation, monterey:       "9a15fb886b3ce9852ba7d462c3f98dc10d45581aa53e4ea0e6601454f6f40727"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9af6adb1b35c79dc7d4b76848ee2bbf82839c913c14076395ecf1c797d978a55"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22fe7237c7c59cd3c65648ec076524a7b8061d6fea8d64c6e49f8c033c880d95"
   end
 
   depends_on "ninja" => :build

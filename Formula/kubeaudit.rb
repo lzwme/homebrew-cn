@@ -1,20 +1,19 @@
 class Kubeaudit < Formula
   desc "Helps audit your Kubernetes clusters against common security controls"
   homepage "https://github.com/Shopify/kubeaudit"
-  url "https://ghproxy.com/https://github.com/Shopify/kubeaudit/archive/refs/tags/v0.21.0.tar.gz"
-  sha256 "a72a3c7297949e97a1718175244bba6d10fbbafac4fe4fac935fb357792dd5fd"
+  url "https://ghproxy.com/https://github.com/Shopify/kubeaudit/archive/refs/tags/v0.22.0.tar.gz"
+  sha256 "b65c871afecd8bc31378e545c9a324cbd33f5f917ea34e700b9d5d2cd50e6336"
   license "MIT"
   head "https://github.com/Shopify/kubeaudit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5f7c46dae012041d86de28e5297a487f2b8a3fa6d97329cca9c568cb6a8714e0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "77cc43fe82d8ff38a46f8532a5076236de2668ef0cdf46464904e21dd728e7b7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c3590c3ca81fbcf2bf32a93029514c9607012999cd6e37e86e15bd4825f1e25d"
-    sha256 cellar: :any_skip_relocation, ventura:        "5afce8e9f1cca2160c68421d3b33fc16daabf19f570cc2022756056c634f74e6"
-    sha256 cellar: :any_skip_relocation, monterey:       "e97aac2f2de5e15703d45f9bdaeec2fb3501e4a13189fe36ce8d22a2176f84f5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d7ec90388067e8cd526c5d60d92bce1e03540185ea0c85d2ad8496f275ec9a49"
-    sha256 cellar: :any_skip_relocation, catalina:       "4605074050fa2af78e2d45d940e3561237fbb7f6da006e2cc1787af5d78aa50c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98d572d3994d5e2c182fde04f2a7ce3c04d8ece8f08d7f8c1e953f4dea11c6cf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25182cb3673ecc130a7388569efd87c993c1df18232239769560490321908d2c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "25182cb3673ecc130a7388569efd87c993c1df18232239769560490321908d2c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "25182cb3673ecc130a7388569efd87c993c1df18232239769560490321908d2c"
+    sha256 cellar: :any_skip_relocation, ventura:        "9d575ab322f5b909657aa0d6d26121d1499dbf3848a914db24ddf48634c7e3ad"
+    sha256 cellar: :any_skip_relocation, monterey:       "9d575ab322f5b909657aa0d6d26121d1499dbf3848a914db24ddf48634c7e3ad"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9d575ab322f5b909657aa0d6d26121d1499dbf3848a914db24ddf48634c7e3ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a730adb1713ef8a805957e98d94ec67a70e6aaae6873c1b5b69e183725a81813"
   end
 
   depends_on "go" => :build

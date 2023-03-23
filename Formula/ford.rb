@@ -3,19 +3,19 @@ class Ford < Formula
 
   desc "Automatic documentation generator for modern Fortran programs"
   homepage "https://github.com/Fortran-FOSS-Programmers/ford"
-  url "https://files.pythonhosted.org/packages/bd/61/a3b68e21575ffa5edad26e444172135ad47ad3af5495daa6b0efb2eb5584/FORD-6.2.0.tar.gz"
-  sha256 "6bb0884726be2499e4a591b3ff1cebb9e9782b12bf04a2d8294c56637cd97399"
+  url "https://files.pythonhosted.org/packages/ea/d4/57cd696162d780a6ec717a3b109673d67069d6d43982ee3947e4ab6e2014/FORD-6.2.1.tar.gz"
+  sha256 "5364471dbc01963d1928139177ec67b5d023b92aa56d34c019479ed87fc3dd57"
   license "GPL-3.0-or-later"
   head "https://github.com/Fortran-FOSS-Programmers/ford.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "718167f7b77ece582a60ac3a80f596b9f6c6c95988b8c0aae857d794aad08b71"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "76d4f04bf895c48b43333d8ca797ba48f35418da773f28338ce124baf9ff7dae"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7daa948a7cde3f051a44b90046aba70b76a6892b7c87505281a880c51fccdc6f"
-    sha256 cellar: :any_skip_relocation, ventura:        "16f733f34b9a49577180df3bddcdaadd1cb945892745f3ad4d07979d33532a97"
-    sha256 cellar: :any_skip_relocation, monterey:       "fe93a5f9b0f71017bafe40aa8f6f7b6fd3eb7f24be132990e0b4b262ed467fb6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "af1ebd0f49841d06bf19cc303b01b8fafcf586b3b41490cf7f19047b44e6c340"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "814616371b2f9f6a9d2692cfea5cbb720f87ef6e3ef3a3f13cdbb22e9cb5df6c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "38ae6a2f6fbd2ddd4a5a1e30c5bf980dcc450d26ab8c5bcd0cbae15038026ebc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2533032806d0c631e79993d02e5fcd48ac60148d033ac4a4a68eb0dca2a9e196"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d05507632339c6fcc383352749386f1da9345607d67e9613d3c6dd9ce2fe0d5f"
+    sha256 cellar: :any_skip_relocation, ventura:        "c6781519beefdee2c499dc677dc9fb7c705d667a14a65071d7e986a5c60a3154"
+    sha256 cellar: :any_skip_relocation, monterey:       "0b85677c73c7457004bf5c5fe55ee6a05e49dc19c66ccc8c4c63549f414a7493"
+    sha256 cellar: :any_skip_relocation, big_sur:        "86e6bda2495d7219709f09ea71356f278a354bcd8152b8f0dc8babbce31bde65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "86a79444f8476f2efc7cf221f398b97213938e8076ade6cf90ff38d3c039f0b6"
   end
 
   depends_on "graphviz"
@@ -25,8 +25,8 @@ class Ford < Formula
   uses_from_macos "libxslt"
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/75/f8/de84282681c5a8307f3fff67b64641627b2652752d49d9222b77400d02b8/beautifulsoup4-4.11.2.tar.gz"
-    sha256 "bc4bdda6717de5a2987436fb8d72f45dc90dd856bdfd512a1314ce90349a0106"
+    url "https://files.pythonhosted.org/packages/c5/4c/b5b7d6e1d4406973fb7f4e5df81c6f07890fa82548ac3b945deed1df9d48/beautifulsoup4-4.12.0.tar.gz"
+    sha256 "c5fceeaec29d09c84970e47c65f2f0efe57872f7cff494c9691a26ec0ff13234"
   end
 
   resource "graphviz" do
@@ -40,8 +40,8 @@ class Ford < Formula
   end
 
   resource "Markdown" do
-    url "https://files.pythonhosted.org/packages/85/7e/133e943e97a943d2f1d8bae0c5060f8ac50e6691754eb9dbe036b047a9bb/Markdown-3.4.1.tar.gz"
-    sha256 "3b809086bb6efad416156e00a0da66fe47618a5d6918dd688f53f40c8e4cfeff"
+    url "https://files.pythonhosted.org/packages/66/bf/a7c9e8cc23c105633b74e3280c2b06d13273da0df389e59395188d440017/Markdown-3.4.2.tar.gz"
+    sha256 "e104be388c28462b4e83bd0ddfc68eff6022305cc4b5ab14caf8d235fae132b9"
   end
 
   resource "markdown-include" do

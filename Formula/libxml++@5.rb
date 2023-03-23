@@ -1,8 +1,8 @@
 class LibxmlxxAT5 < Formula
   desc "C++ wrapper for libxml"
   homepage "https://libxmlplusplus.sourceforge.io/"
-  url "https://download.gnome.org/sources/libxml++/5.0/libxml++-5.0.2.tar.xz"
-  sha256 "7c17cc3e5a2214314dee5a1354f4b436f266ded6185232a0534f352a76240d5a"
+  url "https://download.gnome.org/sources/libxml++/5.0/libxml++-5.0.3.tar.xz"
+  sha256 "13074f59e3288a378cafe9e6847df17f764c23fa29bc94f3305b8bf81efb2cf7"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,14 +11,13 @@ class LibxmlxxAT5 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a0a175d17f147bbb84833ef4d68817287eca7f06727b079db2bff59fa68c4dac"
-    sha256 cellar: :any,                 arm64_monterey: "9421a78d289abe9cbe85aae2d4b35be65d3cdc142f6c7fce8fc5e5e1d29ae747"
-    sha256 cellar: :any,                 arm64_big_sur:  "28eb0093a129b7b8684db54399ccf65f57caa15534d29c91a5ee5912afcb5749"
-    sha256 cellar: :any,                 ventura:        "f264149e96b1915be258811fdf981d1a4ef791a1eb4dc70054f280e40f786a22"
-    sha256 cellar: :any,                 monterey:       "4a1d6468ae69ad46ac361d401b97fd435eb152674ee17d28c1af7c182d0c4091"
-    sha256 cellar: :any,                 big_sur:        "506f4ffdf7491d11af9ac6b9cb55a7e189298040a74b10e83a5159e7ca5839a7"
-    sha256 cellar: :any,                 catalina:       "3fee4844226ffcd22178834583d01a4d9de309d1dccd19f15639e7391c384c0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61f50f7e65f056db4354f9c22b9d665617fa57d69e0b511b309120a86b205d0a"
+    sha256 cellar: :any,                 arm64_ventura:  "44b7d0a7b1df798e24fe089f756d7cb753f61a255032656b98bbd9eaa875d687"
+    sha256 cellar: :any,                 arm64_monterey: "402886e8723705afd171a13979fd1747248dbd84921ddd4bf24b858a7480c016"
+    sha256 cellar: :any,                 arm64_big_sur:  "e65f8bd5d6cb617dc604bf1314e16f63d517bf7093946300009666adc6588c7d"
+    sha256 cellar: :any,                 ventura:        "1d885ff317148d2287d6d412588610820ca1d5fe319ef701a3d437d618fc13fc"
+    sha256 cellar: :any,                 monterey:       "628476efe87ca3733d28ba8e2475fd970c06b82329c8abdbd1410d21714de7af"
+    sha256 cellar: :any,                 big_sur:        "3865e4b03542d13e2b08da4cd6e03c6997ea2b60fb67b1b270dadf5247afc701"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc9d878e7bf2c2d942eb652457f1b4e6ddee47c98c9e931e235a6490ded7e828"
   end
 
   depends_on "meson" => :build

@@ -1,18 +1,18 @@
 class Psysh < Formula
   desc "Runtime developer console, interactive debugger and REPL for PHP"
   homepage "https://psysh.org/"
-  url "https://ghproxy.com/https://github.com/bobthecow/psysh/releases/download/v0.11.12/psysh-v0.11.12.tar.gz"
-  sha256 "726041f2dd45fe14c96dff604602b363428e9e507d43ddbb7d90ea841d236c0b"
+  url "https://ghproxy.com/https://github.com/bobthecow/psysh/releases/download/v0.11.13/psysh-v0.11.13.tar.gz"
+  sha256 "67233440d885aeafa4685d78d6dc576fa61bbd17613a016f79b0ca1777e930ae"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e1c5ac589d76ecf33aca97295e2fe338624261cdd05243d9340eb201d75680d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e1c5ac589d76ecf33aca97295e2fe338624261cdd05243d9340eb201d75680d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6e1c5ac589d76ecf33aca97295e2fe338624261cdd05243d9340eb201d75680d"
-    sha256 cellar: :any_skip_relocation, ventura:        "7f338278e4470fb1a72dcc536f4bc025ded98925a341845b142c4c3b97303fed"
-    sha256 cellar: :any_skip_relocation, monterey:       "7f338278e4470fb1a72dcc536f4bc025ded98925a341845b142c4c3b97303fed"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7f338278e4470fb1a72dcc536f4bc025ded98925a341845b142c4c3b97303fed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e1c5ac589d76ecf33aca97295e2fe338624261cdd05243d9340eb201d75680d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d89fda5a363e7ccc79934af6af49949f1195d6e2ae40fd4c6514d219dae66550"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d89fda5a363e7ccc79934af6af49949f1195d6e2ae40fd4c6514d219dae66550"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d89fda5a363e7ccc79934af6af49949f1195d6e2ae40fd4c6514d219dae66550"
+    sha256 cellar: :any_skip_relocation, ventura:        "ac9f59a4ddcc8cc461855bf105b277b2d2edf5616057e9f2c9844ec170167a4e"
+    sha256 cellar: :any_skip_relocation, monterey:       "ac9f59a4ddcc8cc461855bf105b277b2d2edf5616057e9f2c9844ec170167a4e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ac9f59a4ddcc8cc461855bf105b277b2d2edf5616057e9f2c9844ec170167a4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d89fda5a363e7ccc79934af6af49949f1195d6e2ae40fd4c6514d219dae66550"
   end
 
   depends_on "php"

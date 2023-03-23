@@ -13,13 +13,14 @@ class Vault < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5e2a661e9fb868ab767d7d27f86e8ff42e39e93d44b994f92970d208f7459623"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6337f6e8569b48c355ef041835892cd3bf3cccf424fe126334b8dcab9bb41e73"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d15325982de1b160d41167707aca87366ee0d46c08ee78f1e79cc929d83a304c"
-    sha256 cellar: :any_skip_relocation, ventura:        "559e4e520dff5044784a9702ad88114882b4b20e54e234872ecc1bc7ef33421c"
-    sha256 cellar: :any_skip_relocation, monterey:       "03bcf2dfcb60960643cefa2bcda303893f6ffa18473e1387de66789e204ac671"
-    sha256 cellar: :any_skip_relocation, big_sur:        "76864e7f2620eaa6e13aeacc278d16756cd9feadba4232f7cac1fec3a88e8af8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2725d3a2a5928ff094d09742a446da13ad8d067bdf91206c056d6687ff470235"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f0ab46d056d76a5fdbc093400ac4b711f5e0c3bc53487181d6ea737c94f18016"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "43ea4b9235deb691b2b993802072ebf63dca789b6a2bee539147227c8b810517"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0c0db75816520d3bc8d72f2192e5f13c46e0ae6cb946e9ec28408b5cdb447ea2"
+    sha256 cellar: :any_skip_relocation, ventura:        "caaa90952a983daa65c2509791fbc2d599d0c30eb3dddb06dda66b125f92dcd3"
+    sha256 cellar: :any_skip_relocation, monterey:       "b9f7655499eb8b6e2dacbfde911b7f6e8a3ab667a1f8c8d4fc9b2948a277a3d1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "fb0028c775d22728e6112e89c2bb63618ac14acead4e28015c6387aca7b7481f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "687e9eaab2c25653904fc1590d1a8ede63472de49eed2d7305e32ec0b51833db"
   end
 
   depends_on "go" => :build
@@ -32,7 +33,7 @@ class Vault < Formula
     # Needs both `npm` and `python` in PATH
     ENV.prepend_path "PATH", Formula["node@18"].opt_libexec/"bin"
     ENV.prepend_path "PATH", "#{ENV["GOPATH"]}/bin"
-    ENV["PYTHON"] = "python3.10"
+    ENV["PYTHON"] = "python3.11"
     system "make", "bootstrap", "static-dist", "dev-ui"
     bin.install "bin/vault"
   end

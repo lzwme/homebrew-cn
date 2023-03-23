@@ -6,7 +6,7 @@ class Gnuradio < Formula
   url "https://ghproxy.com/https://github.com/gnuradio/gnuradio/archive/refs/tags/v3.10.5.1.tar.gz"
   sha256 "85d90147f7f28450bff75eeefd2b44adc88b231d29fe8e86cc3a65437dba6d9f"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
   head "https://github.com/gnuradio/gnuradio.git", branch: "main"
 
   livecheck do
@@ -15,13 +15,13 @@ class Gnuradio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "adf192e79e33e86b94254fe0e3a7fe8d5c789520886ae8912f2d40105cabd605"
-    sha256 cellar: :any,                 arm64_monterey: "e33b77e660384be14263ff98f87e4d3e86c59cdc06d12a91c2acf8621297f8c1"
-    sha256 cellar: :any,                 arm64_big_sur:  "c76fff7354de3bb9802973b344a0c0e45805d83da6c36ec8022536a6f6875510"
-    sha256 cellar: :any,                 ventura:        "cdbb7467b9ae2acd1f39952b82fe888b33afd7fec9690cbd9e8bb95eb693a814"
-    sha256 cellar: :any,                 monterey:       "040894fa5d9283c35cc2dda5daa792af3e2b5c8b6d7c050935d2df83f9be4e6f"
-    sha256 cellar: :any,                 big_sur:        "7de4cbab3ba95bcce00a2a327e622c0bb3717e6fcb05addcc2e5b795cc3a842a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "467375a5bcaf9d1c4995e195344215cba05d4382af3a645a4a17435628b71c5c"
+    sha256 cellar: :any,                 arm64_ventura:  "3f5a10e67ac517e9b07b54f73a2a72385d0fc83881cee7cabb93140c139ec839"
+    sha256 cellar: :any,                 arm64_monterey: "173bd51b1b96ad23e5a1a9b666605d6b4a82ec212fd45ada78422de7c56807d9"
+    sha256 cellar: :any,                 arm64_big_sur:  "f427847136a3c1e42c62b0ebac7b66f43cdf2af422e560c2d5c3d45d580a6bd3"
+    sha256 cellar: :any,                 ventura:        "e4b3f1ebb08696652ed01a297c77b126f84d72fd3a21f83d54bef967aee176d3"
+    sha256 cellar: :any,                 monterey:       "9d940bff0a0560b4ba6c5f166acf6c3ebbf8dc6b083aa00cf8ac72bccb3710ef"
+    sha256 cellar: :any,                 big_sur:        "eee97e69df8363afd6017ecdc60479fedfe06e695019deef9a5c2a7370137ec5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c401d1987ebc9170291fb7e4cd36daa098601ee9cda87b36488ccb738a4b828"
   end
 
   depends_on "cmake" => :build
@@ -36,6 +36,7 @@ class Gnuradio < Formula
   depends_on "gsl"
   depends_on "gtk+3"
   depends_on "jack"
+  depends_on "libsndfile"
   depends_on "libyaml"
   depends_on "log4cpp"
   depends_on "numpy"
