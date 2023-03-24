@@ -1,24 +1,22 @@
 class Symengine < Formula
   desc "Fast symbolic manipulation library written in C++"
   homepage "https://sympy.org"
-  url "https://ghproxy.com/https://github.com/symengine/symengine/releases/download/v0.9.0/symengine-0.9.0.tar.gz"
-  sha256 "dcf174ac708ed2acea46691f6e78b9eb946d8a2ba62f75e87cf3bf4f0d651724"
+  url "https://ghproxy.com/https://github.com/symengine/symengine/releases/download/v0.10.0/symengine-0.10.0.tar.gz"
+  sha256 "27eae7982f010e4901a5922d44e0de4b81c3b8dd52c57b147a1994f0541da50e"
   license "MIT"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "5e9da40908b2b1a4dd09e1d150db04c1fea72ede228e5df81cb4ba7fd699b48c"
-    sha256 cellar: :any,                 arm64_monterey: "a21f1ecb176e2381decdbc6571f59541f496d6a0e051830e30580efec1243a48"
-    sha256 cellar: :any,                 arm64_big_sur:  "5761bf631464fe6891de913a4f96804a5b40a90bbe419dc3887b25d9f155c58e"
-    sha256 cellar: :any,                 ventura:        "e653de90c0bf275adcdfe257ba6dd4891c226eff6a1782bf6ef4d25ca007b446"
-    sha256 cellar: :any,                 monterey:       "8af8b961cbd4dec429440094b7dc5dea18ff766682f013b915d2688497ccc626"
-    sha256 cellar: :any,                 big_sur:        "db330d18c95e408e3ad4ae1496cedc00313218fe08a11c8f5590e27d9016af81"
-    sha256 cellar: :any,                 catalina:       "6a0483496434c4d7205a05295db8862d068c92c2e6c7c92cb0dbafeb147d3fc7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f113390949772bbe3514e1a7e49c78a29c9e3f2fae7dbac59415b06bf5b2a58b"
+    sha256 cellar: :any,                 arm64_ventura:  "7f3c867ef7955d3fb493fc5c0611a407ce6206c5bc66aa145abfde0ba5fe6492"
+    sha256 cellar: :any,                 arm64_monterey: "053474e4925f7b4a9526df0fd4bd618848fe2b177cbbb1734e6a317e0a822c1e"
+    sha256 cellar: :any,                 arm64_big_sur:  "3626c0ce21405e35146182bc58a421988c8feb104ab2cc6590c820fa49450aaa"
+    sha256 cellar: :any,                 ventura:        "234f80764f1e2666ab7b18bc69e8f593d780174d15d777e353ea1532c93efdfa"
+    sha256 cellar: :any,                 monterey:       "cb1f59e36fa69dced7ac91ba0cd5fd86715926b3d00a433491ebad1ca67f7e06"
+    sha256 cellar: :any,                 big_sur:        "6cc101b8d049c2661ad3649a200b5483265732e49aa19d70f395e6e797f29ef9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6371e750145378cec5f9e6709120658bb74cada3a45a1a5fb85f4e52e0965cf8"
   end
 
+  depends_on "cereal" => :build
   depends_on "cmake" => :build
-  depends_on "cereal"
   depends_on "flint"
   depends_on "gmp"
   depends_on "libmpc"
@@ -37,6 +35,7 @@ class Symengine < Formula
   end
 
   def install
+    llvm = deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+)?$/) }
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_SHARED_LIBS=ON",
                     "-DWITH_GMP=ON",
@@ -45,7 +44,7 @@ class Symengine < Formula
                     "-DINTEGER_CLASS=flint",
                     "-DWITH_LLVM=ON",
                     "-DWITH_COTIRE=OFF",
-                    "-DLLVM_DIR=#{Formula["llvm"].opt_lib}/cmake/llvm",
+                    "-DLLVM_DIR=#{llvm.opt_lib}/cmake/llvm",
                     "-DWITH_SYMENGINE_THREAD_SAFE=ON",
                     "-DWITH_SYSTEM_CEREAL=ON",
                     *std_cmake_args
