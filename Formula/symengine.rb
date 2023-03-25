@@ -1,18 +1,18 @@
 class Symengine < Formula
   desc "Fast symbolic manipulation library written in C++"
   homepage "https://sympy.org"
-  url "https://ghproxy.com/https://github.com/symengine/symengine/releases/download/v0.10.0/symengine-0.10.0.tar.gz"
-  sha256 "27eae7982f010e4901a5922d44e0de4b81c3b8dd52c57b147a1994f0541da50e"
+  url "https://ghproxy.com/https://github.com/symengine/symengine/releases/download/v0.10.1/symengine-0.10.1.tar.gz"
+  sha256 "9c007c99e9633f5549a55fa7a66ebcbcf9e04092eb55f7bb781c22b9cf0570c4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7f3c867ef7955d3fb493fc5c0611a407ce6206c5bc66aa145abfde0ba5fe6492"
-    sha256 cellar: :any,                 arm64_monterey: "053474e4925f7b4a9526df0fd4bd618848fe2b177cbbb1734e6a317e0a822c1e"
-    sha256 cellar: :any,                 arm64_big_sur:  "3626c0ce21405e35146182bc58a421988c8feb104ab2cc6590c820fa49450aaa"
-    sha256 cellar: :any,                 ventura:        "234f80764f1e2666ab7b18bc69e8f593d780174d15d777e353ea1532c93efdfa"
-    sha256 cellar: :any,                 monterey:       "cb1f59e36fa69dced7ac91ba0cd5fd86715926b3d00a433491ebad1ca67f7e06"
-    sha256 cellar: :any,                 big_sur:        "6cc101b8d049c2661ad3649a200b5483265732e49aa19d70f395e6e797f29ef9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6371e750145378cec5f9e6709120658bb74cada3a45a1a5fb85f4e52e0965cf8"
+    sha256 cellar: :any,                 arm64_ventura:  "068f145d1f1cb87416969785f5b346dda3a22149b16cb941b7a9081cbfc6c286"
+    sha256 cellar: :any,                 arm64_monterey: "85be7ed6a7211d22b62a38f79c0c62e97df0c6291858858c727ab56b5f58cc6c"
+    sha256 cellar: :any,                 arm64_big_sur:  "834eb27d500386bb1ed2f59d719ced3e12271e840eb410defd329c2a898f26da"
+    sha256 cellar: :any,                 ventura:        "f5d927e548ecc4451b6e8ff15e00f90028197b39cc69410a5f85a7ba691a7931"
+    sha256 cellar: :any,                 monterey:       "e97e8b51cceee620ce781fd12c949f8550fe1fe209f30c1ea7fa8862d13dd50f"
+    sha256 cellar: :any,                 big_sur:        "b630e8857dced409674f7b7d6106f854cd6ca4b67346012f990a8a24580d00f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8425f1dd5377f23b6dfd99ab8243f2315d987ad0151c6b56fd650a162a504eb1"
   end
 
   depends_on "cereal" => :build
