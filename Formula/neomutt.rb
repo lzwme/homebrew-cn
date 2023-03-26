@@ -7,21 +7,20 @@ class Neomutt < Formula
   head "https://github.com/neomutt/neomutt.git", branch: "main"
 
   bottle do
-    sha256 arm64_ventura:  "4b3c8c61fde2d7de2b71820d092d2ed608b57e3bd6ece5cb90e329db0673922a"
-    sha256 arm64_monterey: "b14f7dbe38dfa60b5917ebd28d5ff1f423643d172f34b12ce80cbf5ccdf6db89"
-    sha256 arm64_big_sur:  "94adec37ccdcd843b9ef06fb317181b9bc7a73c1c924cdd539aad9de7317f5b6"
-    sha256 ventura:        "280654d534129e77c803df3736faa51b65bec962ea076f612c7281403cf4bf3a"
-    sha256 monterey:       "bf490308b5e20353c6497811d78e9e2b07a918c00027b27d61b6bbe25c3f5687"
-    sha256 big_sur:        "398a157054e175b0eff40e4112ee859202819760d25cd31469c9e71f570faa4f"
-    sha256 x86_64_linux:   "44e72c18326ed9d3d9d3f997bcfa696b93d16ac629660a296f35de3860a59cd6"
+    rebuild 1
+    sha256 arm64_ventura:  "dfe562773cad7fc3e15ed43c02a18959e51114ed5cdc27fe3873ea4542b7de53"
+    sha256 arm64_monterey: "cb33abce1c1d806a7ec4d7df13b95a9599cc35e7279276a5b474325a04894a06"
+    sha256 arm64_big_sur:  "cb5e81ba3b6e50854bfbf46e9e4cf9f691aaa8b50051a2f6408c942ceaf3dbb3"
+    sha256 ventura:        "59994a21cccbdddf3d99bc7db646ae5b8c61761f48e45e71917c996169bb07ad"
+    sha256 monterey:       "5aa8a643b310ae26c536e79732544e7396459ddf162e5cfe4e097602222b2536"
+    sha256 big_sur:        "a3bc1e42d3a011c1c20d34353973189d7cfd72d469247f7974368b6d31721f02"
+    sha256 x86_64_linux:   "9cd2589f3e22f89dd1c3849741fe1ff29565b1e7a0a4999610d7984d40858690"
   end
 
   depends_on "docbook-xsl" => :build
   depends_on "pkg-config" => :build
   # The build breaks when it tries to use system `tclsh`.
   depends_on "tcl-tk" => :build
-  # FIXME: Should be `uses_from_macos`, but `./configure` can't find system `libsasl2`.
-  depends_on "cyrus-sasl"
   depends_on "gettext"
   depends_on "gpgme"
   depends_on "libidn2"
@@ -30,34 +29,52 @@ class Neomutt < Formula
   depends_on "ncurses"
   depends_on "notmuch"
   depends_on "openssl@1.1"
+  depends_on "pcre2"
   depends_on "tokyo-cabinet"
 
   uses_from_macos "libxslt" => :build # for xsltproc
+  uses_from_macos "cyrus-sasl"
   uses_from_macos "krb5"
   uses_from_macos "zlib"
+
+  # Fix finding macOS `libsasl2`.
+  # https://github.com/neomutt/neomutt/pull/3780
+  patch do
+    url "https://github.com/neomutt/neomutt/commit/6d28a555f52e437e5966e769c5cda82e8b643ad9.patch?full_index=1"
+    sha256 "17d9af6955ba7267d4ed0b2ca5bfacfa01e81b2de96246ff7c885bef1035eb35"
+  end
 
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 
     args = %W[
       --prefix=#{prefix}
+      --sysconfdir=#{etc}
+      --autocrypt
       --gss
       --disable-idn
       --idn2
       --lmdb
+      --nls
       --notmuch
+      --pcre2
       --sasl
+      --sqlite
       --tokyocabinet
-      --with-gpgme=#{Formula["gpgme"].opt_prefix}
+      --zlib
       --with-lua=#{Formula["lua"].opt_prefix}
+      --with-ncurses=#{Formula["ncurses"].opt_prefix}
       --with-ssl=#{Formula["openssl@1.1"].opt_prefix}
-      --with-ui=ncurses
+      --with-sqlite=#{Formula["sqlite"].opt_prefix}
     ]
 
     args << "--pkgconf" if OS.linux?
 
     system "./configure", *args
-    system "make", "install"
+    # Do this in separate steps because parallel `make install` fails intermittently.
+    # Reported upstream at https://github.com/neomutt/neomutt/issues/3783
+    system "make"
+    ENV.deparallelize { system "make", "install" }
   end
 
   test do

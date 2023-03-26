@@ -1,21 +1,19 @@
 class Hexgui < Formula
   desc "GUI for playing Hex over Hex Text Protocol"
   homepage "https://sourceforge.net/p/benzene/hexgui/"
-  url "https://ghproxy.com/https://github.com/apetresc/hexgui/archive/v0.9.3.tar.gz"
-  sha256 "e7bf9daebe39c4efb06d758c5634c6fa25e97031ffa98592c378af89a03e9e8d"
-  license "GPL-3.0"
-  revision 2
+  url "https://ghproxy.com/https://github.com/apetresc/hexgui/archive/refs/tags/v0.9.4.tar.gz"
+  sha256 "902ebcdf46ac9b90fec6ebd2e24e8d12f2fb291ea4ef711abe407f13c4301eb8"
+  license "GPL-3.0-or-later"
   head "https://github.com/apetresc/hexgui.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "43ce6a38f7648dea8565662c92ca28a992360b3b6d37fb3183b378f7e8e5b9b5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0f149b8a959fc5ebcb74812f2a7a510ed6b2eb81e5dd4e2c38884227230f7d3b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fd232f1904e299ac277879e1336ed8c3bb79b74cdd52a54a45a3f8f28b319a1b"
-    sha256 cellar: :any_skip_relocation, ventura:        "9fd7cce8968fcc39cd73aad8c222263947c8902f26355f40da3e7fc071cb088f"
-    sha256 cellar: :any_skip_relocation, monterey:       "0bf896b0edea271ffc39eb6e88ce67f7a11af82fa4fc34300e0f683d62740cd7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c97d11e9eb40d0d036fc47e824535fbd182a9929518413983d097ae069324161"
-    sha256 cellar: :any_skip_relocation, catalina:       "208f0a509c18272214b091e415c3b79b936a7d225d003ffaf9d238247bf85b27"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cbd351ccc8565756b93c85d46d24d50387ec805911c52737bb8f7e804c0357f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "28d9d6d7ec542660e6760f7fbce2101b2259e096cd5ba57aaee7c39cd7399ba6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd4e9603173284cc9b7c066832fccc7e175f6bbad1b1e4fbee348fe658c1695a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "67b948cd8592fa945919c0c3817e7fc4ef946c63f0eea2ce6eff0948a4d7b391"
+    sha256 cellar: :any_skip_relocation, ventura:        "d8e8fd7679f0f5a55f8c2221049542ac4241c1c0ac3bbd2a05401bdf4b702401"
+    sha256 cellar: :any_skip_relocation, monterey:       "d81898239d18db373e084173879a20bb068b5addb64e197cb89eea039aacd487"
+    sha256 cellar: :any_skip_relocation, big_sur:        "604a0d381b523b54292f65b3e9ab20b3085e5a8f0c84065516c74bd38ce1245b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f3482e21058facf382c8920f29980679e4b168d2a5380ca9f995bb8e6383f4b"
   end
 
   depends_on "ant" => :build

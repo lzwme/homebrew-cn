@@ -3,19 +3,19 @@ class PreCommit < Formula
 
   desc "Framework for managing multi-language pre-commit hooks"
   homepage "https://pre-commit.com/"
-  url "https://files.pythonhosted.org/packages/59/5d/157a051b2a402d7d27eb7c478fd7c1a231b94779054b3d7aef1719378e2d/pre_commit-3.2.0.tar.gz"
-  sha256 "818f0d998059934d0f81bb3667e3ccdc32da6ed7ccaac33e43dc231561ddaaa9"
+  url "https://files.pythonhosted.org/packages/c9/31/5055de265076eb86e5088b5439aefb948b1aba23f2984aa9a075aae5d9e1/pre_commit-3.2.1.tar.gz"
+  sha256 "b5aee7d75dbba21ee161ba641b01e7ae10c5b91967ebf7b2ab0dfae12d07e1f1"
   license "MIT"
   head "https://github.com/pre-commit/pre-commit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "37fad7396b7344f94d7596cfdbdfdae03a792fead4204e3baa67e72c596aa2c6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "37fad7396b7344f94d7596cfdbdfdae03a792fead4204e3baa67e72c596aa2c6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "37fad7396b7344f94d7596cfdbdfdae03a792fead4204e3baa67e72c596aa2c6"
-    sha256 cellar: :any_skip_relocation, ventura:        "1eb8d2639bae8880f0f09eeb8080a2a89e4d91f47ea186b2c33d1894fd92a4da"
-    sha256 cellar: :any_skip_relocation, monterey:       "1eb8d2639bae8880f0f09eeb8080a2a89e4d91f47ea186b2c33d1894fd92a4da"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1eb8d2639bae8880f0f09eeb8080a2a89e4d91f47ea186b2c33d1894fd92a4da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f22658172de8b255c98a47e4c0bb6f8a467934f1d2bf0885aeb360641da6c762"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "54ce3fbb6ab19d62b7be7cfdad44245996f3b0799f47d360f4e24be18445ea27"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "54ce3fbb6ab19d62b7be7cfdad44245996f3b0799f47d360f4e24be18445ea27"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "54ce3fbb6ab19d62b7be7cfdad44245996f3b0799f47d360f4e24be18445ea27"
+    sha256 cellar: :any_skip_relocation, ventura:        "e11ca37bf20a91d51180c1cd62649d8ca548497e0066cf22c6badd227350f317"
+    sha256 cellar: :any_skip_relocation, monterey:       "e11ca37bf20a91d51180c1cd62649d8ca548497e0066cf22c6badd227350f317"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e11ca37bf20a91d51180c1cd62649d8ca548497e0066cf22c6badd227350f317"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d536445d960ec6175e0dceeff56888b89f5da1f9d2702ce92b30927996c179af"
   end
 
   depends_on "python@3.11"
@@ -29,8 +29,8 @@ class PreCommit < Formula
   end
 
   resource "identify" do
-    url "https://files.pythonhosted.org/packages/85/0d/5d875ec52e1a0b8290d5cf1995f1afc9f6830146b8c6565d800b47522e46/identify-2.5.21.tar.gz"
-    sha256 "7671a05ef9cfaf8ff63b15d45a91a1147a03aaccb2976d4e9bd047cbbc508471"
+    url "https://files.pythonhosted.org/packages/9c/85/2dad5866648c6b1772d5cb9b0ca1810f214e5d5e72f231dfb6891300358a/identify-2.5.22.tar.gz"
+    sha256 "f7a93d6cf98e29bd07663c60728e7a4057615068d7a639d132dc883b2d54d31e"
   end
 
   resource "nodeenv" do
