@@ -3,27 +3,24 @@ class Mujs < Formula
   homepage "https://www.mujs.com/"
   # use tag not tarball so the version in the pkg-config file isn't blank
   url "https://github.com/ccxvii/mujs.git",
-      tag:      "1.3.2",
-      revision: "0e611cdc0c81a90dabfcb2ab96992acca95b886d"
+      tag:      "1.3.3",
+      revision: "57e3f01d5f29c5823be725d96284488edf5f8ae1"
   license "ISC"
   head "https://github.com/ccxvii/mujs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "67b0f0b5da7f7068bc5ceaae7cb2057d7523aadecf4b92da8eb967ae7bd049d1"
-    sha256 cellar: :any,                 arm64_monterey: "2c27809e1c3b82eac6cad849b735d9da958ca6b235fa8f6bb777a74759d106a0"
-    sha256 cellar: :any,                 arm64_big_sur:  "d5877bcfd36acbd4a40ae2e225fb13a5af73c78147c2f8b260a8f3b4432f9427"
-    sha256 cellar: :any,                 ventura:        "35b4f3d06f7e7efa10ebb992e5c88c343f225eb86a4b7abf5b848ef707d81f36"
-    sha256 cellar: :any,                 monterey:       "008c3cef8cf1aca12fbfe055a82be756e3bf79b7bdaebb9b999b2d92c83f1979"
-    sha256 cellar: :any,                 big_sur:        "e9f7444b3d9590a01d1e214c4b2e7df388b4c7cbfe52cbbaff42b0b693a834b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3accf35f6e3756676992e88f1e4e5600829cf99f59dd149379a3baf6e6b140f1"
+    sha256 cellar: :any,                 arm64_ventura:  "57f55b475fce9fa70922a921ab4dddfa3965a792f49ec799a9611b3d7b1702cb"
+    sha256 cellar: :any,                 arm64_monterey: "7330ba0c1e957592f3661a323899c79d3fbaf4ca7e48580d088d70690b10671f"
+    sha256 cellar: :any,                 arm64_big_sur:  "f0ad6b7e39ffe4e5f1ed836c0f0e8c5d77ef16b4d7e875ae0c416a4a3c28068c"
+    sha256 cellar: :any,                 ventura:        "4b3eaa4e4b9932d97c89dff726aa7ca304be22dfaa7784123aa24e1a015a0cc6"
+    sha256 cellar: :any,                 monterey:       "e796d11fc60bc135656b59431e0ed715d488d705eac575985e91191c2435fe12"
+    sha256 cellar: :any,                 big_sur:        "75b161624db6ed915a83d21c8da9a205c0585866540d5fef972764a97983636f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33d9cd1bca8a34431d33b59b5ad5bc3d245fc288646b39e586577fcf43df7e33"
   end
 
   on_linux do
     depends_on "readline"
   end
-
-  # patch for finding libmujs.a, remove in next release
-  patch :DATA
 
   def install
     system "make", "release"
@@ -40,29 +37,3 @@ class Mujs < Formula
     assert_equal "104", shell_output("#{bin}/mujs test.js").chomp
   end
 end
-
-__END__
-diff --git a/Makefile b/Makefile
-index 8e6078a..d95576f 100644
---- a/Makefile
-+++ b/Makefile
-@@ -90,15 +90,13 @@ $(OUT)/libmujs.$(SO_EXT): one.c $(HDRS)
- 	@ mkdir -p $(@D)
- 	$(CC) $(CFLAGS) $(CPPFLAGS) -fPIC -shared $(LDFLAGS) -o $@ $< -lm
- 
--libmujs ?= libmujs.a
--
--$(OUT)/mujs: $(OUT)/main.o $(OUT)/$(libmujs)
-+$(OUT)/mujs: $(OUT)/libmujs.o $(OUT)/main.o
- 	@ mkdir -p $(@D)
--	$(CC) $(LDFLAGS) -o $@ $< -L$(OUT) -l:$(libmujs) $(LIBREADLINE) -lm
-+	$(CC) $(LDFLAGS) -o $@ $^ $(LIBREADLINE) -lm
- 
--$(OUT)/mujs-pp: $(OUT)/pp.o $(OUT)/$(libmujs)
-+$(OUT)/mujs-pp: $(OUT)/libmujs.o $(OUT)/pp.o
- 	@ mkdir -p $(@D)
--	$(CC) $(LDFLAGS) -o $@ $< -L$(OUT) -l:$(libmujs) -lm
-+	$(CC) $(LDFLAGS) -o $@ $^ -lm
- 
- .PHONY: $(OUT)/mujs.pc
- $(OUT)/mujs.pc:

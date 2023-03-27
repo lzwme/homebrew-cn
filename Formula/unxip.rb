@@ -1,15 +1,17 @@
 class Unxip < Formula
   desc "Fast Xcode unarchiver"
   homepage "https://github.com/saagarjha/unxip"
-  url "https://github.com/saagarjha/unxip.git", tag: "v1.1.3", revision: "b3ce1ab4728d4173390c97eddd28e821ad9e2974"
+  url "https://github.com/saagarjha/unxip.git",
+      tag:      "v2.0",
+      revision: "02f1e0dcb7362bb60b1c0e54f5d2ed3dea791343"
   license "LGPL-3.0-only"
   head "https://github.com/saagarjha/unxip.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bddf8b07397d4c839a0f320c354977d3622081e55920a2c41466ad6c39d68a74"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b26280852145a3c51e1b691f71cfb62793eb4c58d538be43397f9d6eec5dcdf4"
-    sha256 cellar: :any_skip_relocation, ventura:        "19581f87ee5acb52288cb8187934b351e743cee640e75502302bc5ff750e9731"
-    sha256 cellar: :any_skip_relocation, monterey:       "ad19fb1ab40d2cc0e0eaba1ada17451983da268a5a9535e0a7313308431f89f1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "93c232832fc646962d1e983a237bd6f95024ac4fc62eaf20f2651297621b31e2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6890f08c026bc5c38858819aaae723138db92d6cd36104388ac31ac4294e676d"
+    sha256 cellar: :any_skip_relocation, ventura:        "5cb9bf7de5d955966f7384186c981211b8f94502dcbaeb7cc5e7bbd185172d89"
+    sha256 cellar: :any_skip_relocation, monterey:       "a5eb987258ffbd77e2591e87650a27f92c5d2d9ef69e64f4e3bb3be4669a08e5"
   end
 
   depends_on xcode: :build

@@ -1,19 +1,19 @@
 class A2ps < Formula
   desc "Any-to-PostScript filter"
   homepage "https://www.gnu.org/software/a2ps/"
-  url "https://ftp.gnu.org/gnu/a2ps/a2ps-4.15.2.tar.gz"
-  mirror "https://ftpmirror.gnu.org/a2ps/a2ps-4.15.2.tar.gz"
-  sha256 "ec52904a9fac126416b32ac9a2405f3d617dda97d65299e1a415554fe033d225"
+  url "https://ftp.gnu.org/gnu/a2ps/a2ps-4.15.3.tar.gz"
+  mirror "https://ftpmirror.gnu.org/a2ps/a2ps-4.15.3.tar.gz"
+  sha256 "d00e81e0eb4dcbf2d4963d89e1df2bb66f71e66d73b4152c43cf9838e6aaf7c7"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "4eb394a91ad3dbc4fe18d5318710494d5d7e9b9047e739a8514c3fc184cde383"
-    sha256 arm64_monterey: "4aa5f9c6dfe0c3b8d2bc180d8b73670af91f268d71031ac2d79101873db1f5ee"
-    sha256 arm64_big_sur:  "70af5c9e051d7680e0cb1c0835bbcf9fd9ba2451dcc148258697280979c2cc19"
-    sha256 ventura:        "47281f6cf74e0d0daa63e81a232287c4efeb4b3efb952463f1f489b67f18f1c4"
-    sha256 monterey:       "5af11af19b77e06c846f77bbe20547141718e929b57a72d8210b709803f56710"
-    sha256 big_sur:        "982335fb7f5862dd1501d7ac6830ae2b1de0f5922d063697e00176e391ebb47a"
-    sha256 x86_64_linux:   "40d0bf74b992ce203583febda02b3074d743f1b98acd2de77bb68d422466e4b4"
+    sha256 arm64_ventura:  "286151bd3ac11ed7236dae1c32107560e976ab6283ca0512de3ff3dcb54ba840"
+    sha256 arm64_monterey: "a3e581417c271087217bddae7c41e186791e445425d9e5e69886c0ff69ac2fc8"
+    sha256 arm64_big_sur:  "610389285d270fcbfbc378254b4ed87825a8ea68b351348f12548958d6f36771"
+    sha256 ventura:        "63d06cf7e978d2683f8edb8f3a064b911c6a092127eae6065bbaf1a3977f5fdf"
+    sha256 monterey:       "b1019c9b31a42441a149e5e33a555500f42ac050c1f9540dc2a25f9e173f89f5"
+    sha256 big_sur:        "502ca02498f3781c2920c2bebb97c5719cb22a01630518792507e3bdffa08f53"
+    sha256 x86_64_linux:   "14d8d6816b1429db55f8012c07253aebfba582ae1cf0daf4b7fc7eb5aeb13d20"
   end
 
   depends_on "pkg-config" => :build

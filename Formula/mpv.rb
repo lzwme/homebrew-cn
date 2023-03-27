@@ -4,17 +4,17 @@ class Mpv < Formula
   url "https://ghproxy.com/https://github.com/mpv-player/mpv/archive/refs/tags/v0.35.1.tar.gz"
   sha256 "41df981b7b84e33a2ef4478aaf81d6f4f5c8b9cd2c0d337ac142fc20b387d1a9"
   license :cannot_represent
+  revision 1
   head "https://github.com/mpv-player/mpv.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 arm64_ventura:  "97d3eea7b6a202553b1a0ca2c105c8b3bfbd039988cc94d2da11c7a7c20cc71d"
-    sha256 arm64_monterey: "91faa31149eb24d146c10cd2e50be3304bdf92e23a25d990404be14313747b20"
-    sha256 arm64_big_sur:  "651508e679ccac252746c09d799d2641347b8fc11c49c60e23f21950fb7e3f8a"
-    sha256 ventura:        "600e189b9fc5647f6a0dd13ab8568453d8cbae7c0c96b7305f9669a9ab875b85"
-    sha256 monterey:       "2941c3a054af7d9ab646bcb59cca728435f9cca5d5835d090a08dbbed90993d7"
-    sha256 big_sur:        "93c1df95bd94e56161c083d9804527ccfcad8b5e3915b5328ef96c49241bd4f1"
-    sha256 x86_64_linux:   "25bba077e85fd93be995b769fe809cc0368154ed214ac2391d43332ac850f78c"
+    sha256 arm64_ventura:  "231980d52bb3d8dc1e496dc00cb4a601d48219db303fb8f75a5f95b68a246b36"
+    sha256 arm64_monterey: "e71fd837920adb77b0bc55016dfa1d0a76f71bcba43797a45f1c30c33b31c3ec"
+    sha256 arm64_big_sur:  "12147706325bb13ce4939f3ba7d02edc232a552feb529fa9169ede577fe74faf"
+    sha256 ventura:        "ae4d24028370346e03b423b5081ce826a1c01b2c17c838e53ce0ddfabd72351f"
+    sha256 monterey:       "1b79eae6454c427bc3d0b95fe512ff727009dc47e9f2ff1029bd6139e68743f4"
+    sha256 big_sur:        "5e5cc7e84d6c1e20a5107ca77e8d14729f299eb941a0b69cf48f5f912f3be8ac"
+    sha256 x86_64_linux:   "516b4e12e778b8e157b03821ab308e41a9881d58cd5a156181f4f5eb7d5d54c3"
   end
 
   depends_on "docutils" => :build

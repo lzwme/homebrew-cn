@@ -1,20 +1,18 @@
 class SwitchaudioOsx < Formula
   desc "Change macOS audio source from the command-line"
   homepage "https://github.com/deweller/switchaudio-osx/"
-  url "https://ghproxy.com/https://github.com/deweller/switchaudio-osx/archive/1.1.0.tar.gz"
-  sha256 "1e77f938c681b68e56187e66e11c524f2d337f54142d1cdbbd8dafec1153317d"
+  url "https://ghproxy.com/https://github.com/deweller/switchaudio-osx/archive/1.2.0.tar.gz"
+  sha256 "5f5c28c805108666abcb6676be80f01b9ea699f2946aef9f4876ecd0150cecdd"
   license "MIT"
   head "https://github.com/deweller/switchaudio-osx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c33e14ec4b34a9514c06ab392b36c2f5fcf579aee16fed0fb02fc3a4b935ee27"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a6bf6a7e8873d101da1d5f24be8a8c3470af13f56ed21de847685ebf9e6efad8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "631619e7f83da181c8287e6795de8d54c03cab15bf29ba4ce5b5c0fb1f3aafcb"
-    sha256 cellar: :any_skip_relocation, ventura:        "9ad594e05d7bee40a400641d34a06c59fcd2483f6e588ff98ac7faec379181a1"
-    sha256 cellar: :any_skip_relocation, monterey:       "7d94bc90f9d9d0362c8fc36634170bd3e433dfd5a61b8bad3243205f4af81bec"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4e6b47d1a51d71706f160ed4f19cc6fe6cacd1370eab298c029976ae6c32484e"
-    sha256 cellar: :any_skip_relocation, catalina:       "59e92aaf09b86e49b6bd5f4300db02cf0812118e08146eaa2c540cb8e34b1a6b"
-    sha256 cellar: :any_skip_relocation, mojave:         "e48cf16dc12a923093b4ddf5467f8234d129e5bdc15f1df1fdad30ec251e7f35"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da2a612f01ce8fae3a6eb693eb15eb76c4c9339ff41e81ffbdbd192136f17568"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "603e97346a04b22121dba84f440b5f8404fbf6869730f670c299bc86de2d50a2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5645403020079f9b72b767f71d69ef6ac3c6d86b1624b3033008668ecc96fb9c"
+    sha256 cellar: :any_skip_relocation, ventura:        "19f126eaaf57e3c4256edc17c5232f13cd30cb23723b3516a1964035e7e39f7e"
+    sha256 cellar: :any_skip_relocation, monterey:       "326a79e597ff28fc9b7c33330a243f24e405df96575b3982f05b694d7342cb96"
+    sha256 cellar: :any_skip_relocation, big_sur:        "77c56a2b3a3dba41a19dc6ce73beceab37a7375081eebe9937d77a2a29cb9a91"
   end
 
   depends_on xcode: :build

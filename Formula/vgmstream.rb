@@ -2,9 +2,9 @@ class Vgmstream < Formula
   desc "Library for playing streamed audio formats from video games"
   homepage "https://vgmstream.org"
   url "https://github.com/vgmstream/vgmstream.git",
-      tag:      "r1810",
-      revision: "8b0204f3fce845df91adc68e43669f9b660d7c63"
-  version "r1810"
+      tag:      "r1831",
+      revision: "9f99e742df8115297cc265244f451e769a3ab23b"
+  version "r1831"
   license "ISC"
   version_scheme 1
   head "https://github.com/vgmstream/vgmstream.git", branch: "master"
@@ -16,18 +16,20 @@ class Vgmstream < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9c33d45ccb9c4d5929f6f546910bac2cde9e91f5863c52796dcbc469774cfdee"
-    sha256 cellar: :any,                 arm64_monterey: "c084986ba0059c842b2c86aa31d7d350fed5aa34727b40ce85c1ddd15703e9e1"
-    sha256 cellar: :any,                 arm64_big_sur:  "5f38f449d113fcec67928267c6cb1d43ac16219870a79dc050316e803d2154f4"
-    sha256 cellar: :any,                 ventura:        "6cd768a16e82be6e9d884d9dfcd83a1a2ecd0c5c6f1a4be9e2da45e0886ee87a"
-    sha256 cellar: :any,                 monterey:       "3d662fcc0a3eff7a71550839a73f27b90f82a78a1b73cbbec11ef677f2f512cf"
-    sha256 cellar: :any,                 big_sur:        "8e842266ae020d3f4379310f7ec6f2847b0d449c3166387a8655218280a8a5a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8fdc19f1fdfe926dd933fb9cc79ba61e58d8b6f299107ed399a98630ab9c0f48"
+    sha256 cellar: :any,                 arm64_ventura:  "bfc0154bb0901adaeda48885c322b9fa9f6d46c921aa996ef62f136ca28782d8"
+    sha256 cellar: :any,                 arm64_monterey: "64442bbfea388d7e93912efe19091c6f7419e360959fb1326a934e1a1f35fe13"
+    sha256 cellar: :any,                 arm64_big_sur:  "bac4d6baa5855ebee547c5d30c4d87061ddd44d81f4e945c9c984ca2503fd96c"
+    sha256 cellar: :any,                 ventura:        "7f85c8ac1858ac624025c4ed78f4e76da7884e46270aaa1cfc4ebfc24f984161"
+    sha256 cellar: :any,                 monterey:       "5cfc66e71191a5084f0d66d8ce278190108d68f019065686ca01840cefd40e30"
+    sha256 cellar: :any,                 big_sur:        "6b91045eeb72b9c7cb010ca83f45e8486f41b450b7d5725c17f074695b9ba63a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aceb7486fd67b49487cd7f596a9541973586bc94b209b59b910700c4c949fe55"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cmake" => :build
+  depends_on "libtool" => :build
+  depends_on "pkg-config" => :build
   depends_on "ffmpeg"
   depends_on "jansson"
   depends_on "libao"

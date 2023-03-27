@@ -1,10 +1,30 @@
 class Neomutt < Formula
   desc "E-mail reader with support for Notmuch, NNTP and much more"
   homepage "https://neomutt.org/"
-  url "https://ghproxy.com/https://github.com/neomutt/neomutt/archive/20230322.tar.gz"
-  sha256 "47f024d4ae2d976f95b626c5fe6cad6ef22ed187426efbd7cf61435ba1790a48"
   license "GPL-2.0-or-later"
   head "https://github.com/neomutt/neomutt.git", branch: "main"
+
+  # Remove `stable` block when patches are no longer needed.
+  stable do
+    url "https://ghproxy.com/https://github.com/neomutt/neomutt/archive/20230322.tar.gz"
+    sha256 "47f024d4ae2d976f95b626c5fe6cad6ef22ed187426efbd7cf61435ba1790a48"
+
+    # Fix finding macOS `libsasl2`.
+    # https://github.com/neomutt/neomutt/pull/3780
+    # Remove in next release.
+    patch do
+      url "https://github.com/neomutt/neomutt/commit/86b17a56eced0bcd68b72ced6ecf90ac00b6470d.patch?full_index=1"
+      sha256 "fe2beee22c45b4847edb9a3d2f874e76d229b6407e25d6f1405d9475d1d93717"
+    end
+
+    # Fix parallelisation issue in `make install`.
+    # https://github.com/neomutt/neomutt/pull/3787
+    # Remove `INSTALL_DIR` argument in `make install` when removing this patch.
+    patch do
+      url "https://github.com/neomutt/neomutt/commit/8f8b6eed0e7b6cd7f5175a6bf1ee260af1eecfe5.patch?full_index=1"
+      sha256 "19eab49bcf51f7386ef0f3c75e6a307021412a00d63b3325a85907c9c1f23149"
+    end
+  end
 
   bottle do
     rebuild 1
@@ -37,13 +57,6 @@ class Neomutt < Formula
   uses_from_macos "krb5"
   uses_from_macos "zlib"
 
-  # Fix finding macOS `libsasl2`.
-  # https://github.com/neomutt/neomutt/pull/3780
-  patch do
-    url "https://github.com/neomutt/neomutt/commit/6d28a555f52e437e5966e769c5cda82e8b643ad9.patch?full_index=1"
-    sha256 "17d9af6955ba7267d4ed0b2ca5bfacfa01e81b2de96246ff7c885bef1035eb35"
-  end
-
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 
@@ -68,13 +81,9 @@ class Neomutt < Formula
       --with-sqlite=#{Formula["sqlite"].opt_prefix}
     ]
 
-    args << "--pkgconf" if OS.linux?
-
     system "./configure", *args
-    # Do this in separate steps because parallel `make install` fails intermittently.
-    # Reported upstream at https://github.com/neomutt/neomutt/issues/3783
-    system "make"
-    ENV.deparallelize { system "make", "install" }
+    # Remove `INSTALL_DIR` argument when the parallelisation patch is no longer needed.
+    system "make", "INSTALL_DIR=install -d -m 755", "install"
   end
 
   test do

@@ -4,15 +4,16 @@ class Fastnetmon < Formula
   url "https://ghproxy.com/https://github.com/pavel-odintsov/fastnetmon/archive/refs/tags/v1.2.4.tar.gz"
   sha256 "84cd5db0e270f6c268923592eabd5cb0d1689293d9d9f6f0634af548b29f9bb4"
   license "GPL-2.0-only"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "dec1a78e6dde2bbd9f86db7c71af6bc20204344a73309600dad02a19a9c04e27"
-    sha256 cellar: :any,                 arm64_monterey: "369bc03e7536620d462c81dbcd252ee59868d4fac3d1c9e0756ce51d9c5ddf28"
-    sha256 cellar: :any,                 arm64_big_sur:  "f6e47615be89812ef189e10c90e775e3702d7f0b8392fa50e5e08f868e99de6c"
-    sha256 cellar: :any,                 ventura:        "2a6d299ed92a78eae6f4cfa010ccd1d5c0f1a179f9036bae3d724e6ce60e1eb3"
-    sha256 cellar: :any,                 monterey:       "4f1986994bd9c1c950cb3b04e41c6a94cd7f6ff7abe5db2bdf7751c0ec591aad"
-    sha256 cellar: :any,                 big_sur:        "631635075f6ae2fcfdc9cccd5ad73bda5ed22616fe1f2d412bb0cd9410add200"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4eecbde2f55c9e3df9f834cd4c75d50768c46d2d18a28e69e5216da178a80267"
+    sha256 cellar: :any,                 arm64_ventura:  "23fc7d480eff73bca7de3c1c76c8bf8fd6818e64702ea1c8137c979d54391331"
+    sha256 cellar: :any,                 arm64_monterey: "9cbc72a618f520f9bb4abf1f1db8bb12284ce57cc438edaad80b3ae95be7b468"
+    sha256 cellar: :any,                 arm64_big_sur:  "7b3d612544afad9701d371f2402ece3ff22331f7d625ae9b83921e78b7d92cb6"
+    sha256 cellar: :any,                 ventura:        "88b4529a8a7555ecf9d56ce599be5d2dbcb5357f43de6a3ff975ef3971afd405"
+    sha256 cellar: :any,                 monterey:       "28706df7d6dc8fa3cc7c612a88bb473f530b34bd514229aa1a06ed04024c7fb2"
+    sha256 cellar: :any,                 big_sur:        "8b4e728fff747e420324048363c7fa5be36566532b01970e8a125d9ae9028dd9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e30639b46dc1e5fd0f9f4fb55cca0b47c85034438d0eb11a399ba18785fa2d2"
   end
 
   depends_on "cmake" => :build

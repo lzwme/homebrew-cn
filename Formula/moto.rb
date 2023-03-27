@@ -3,21 +3,24 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/ad/b2/2434103a5915c2e5278176e72d805c2adcf9ca6b739f7142d6f46fc66d82/moto-4.1.5.tar.gz"
-  sha256 "63542b7b9f307b00fae460b42d15cf9346de3ad3b1287fba38fc68f3c05e4da4"
+  url "https://files.pythonhosted.org/packages/11/01/832e60faae3d2909bba00570b3e4f6c718b683c81cb08b7d498a509e234e/moto-4.1.6.tar.gz"
+  sha256 "fdcc2731212ca050a28b2bc83e87628294bcbd55cb4f4c4692f972023fb1e7e6"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9dae5dba7467dc5b44a07278cab962a9e5409eaee9fbf6a6abbba0488c96ff67"
-    sha256 cellar: :any,                 arm64_monterey: "e55673a900ab0321599eb6d455ea667682317870390804025c629202a13bc56d"
-    sha256 cellar: :any,                 arm64_big_sur:  "c95a966b92b4fb9b496d0b5c84e5d7620fd8ed3a2d83bc7e2bfc959359e58418"
-    sha256 cellar: :any,                 ventura:        "a71d29e16acc082ead2bc29d3417e494959d3ec8bb7e28adec0eb7b2a0ec9705"
-    sha256 cellar: :any,                 monterey:       "f624d8992addcee2bcf3300cdfbabf44422b4a9f8e07d7cdeb240e1ffae80986"
-    sha256 cellar: :any,                 big_sur:        "69fa4dc4429e6cd6d719cf6f78cffbf88710ead8b7cde891480fa722453c7bfd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6b5c8837bc1e5a6e50359e986ba3872cde77ee13f9c7a581faa457ab11bdaa7"
+    sha256 cellar: :any,                 arm64_ventura:  "8de9df9b733ab06b607e1210c091b16f5e73fb3715e1b2d41caccff2012d42c3"
+    sha256 cellar: :any,                 arm64_monterey: "11ea23974c95e45b0a9ca82be1ce8da1fb4c80597f90369cfcaed1cbc80051d6"
+    sha256 cellar: :any,                 arm64_big_sur:  "de362c9b3966bc9d3856e4a4f94c054ea5de5659da37b501bfc452b3bd9ffac6"
+    sha256 cellar: :any,                 ventura:        "9d9c29c475a16b88fedd2b0726ad96c21b9cb9b9bef71e603af9cede984cd608"
+    sha256 cellar: :any,                 monterey:       "22dcec419ee4c301bbf02b500ad5ed930d0ca51cd69cde2533e6ce58bcfed002"
+    sha256 cellar: :any,                 big_sur:        "d6cca952835380cf12b678b7fa8f9e4a5a0a2814cab7254a19a38babc2f09c38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c06453821f7cb46897d8404ee91507127b5a6dcbe887b27ff52a05883132eae"
   end
 
-  depends_on "rust" => :build # for cryptography
+  # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
+  depends_on "pkg-config" => :build
+  depends_on "rust" => :build
+  depends_on "openssl@1.1"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -39,13 +42,13 @@ class Moto < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/00/74/13c56870c2eaa4a806702e185332995b0e70ab9d613758e5bb997a97dc93/boto3-1.26.94.tar.gz"
-    sha256 "9f156f4da4b0a15924196e1a8e3439d1b99cd4a463588e4bb103d1cfaf5618fa"
+    url "https://files.pythonhosted.org/packages/fb/ec/5858ac091814eb2e1b2465caed840aa51e9378be4f1cfe83d92d453d5e41/boto3-1.26.99.tar.gz"
+    sha256 "d9fd57d6e98fd919cdbd613428f685e05b48c71477fda1aa7fbf51867262c7d1"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/a5/ad/862e4d2f7ddbd08e3ec3f0c8c0d3a9921960ed3fe65721013b808ae15fb6/botocore-1.29.94.tar.gz"
-    sha256 "3748b79e6fc95c19d890aa7439a53b9d468a4c4918439b2ba5cc3c13bfaff817"
+    url "https://files.pythonhosted.org/packages/43/aa/8988b1e133fe703e5603b3bfd3d62e1e77f6aa969543d4ffce89b8e5838a/botocore-1.29.99.tar.gz"
+    sha256 "d1770b4fe5531870af7a81e9897b2092d2f89e4ba8cb7abbbaf3ab952f6b8a6f"
   end
 
   resource "certifi" do
@@ -59,8 +62,8 @@ class Moto < Formula
   end
 
   resource "cfn-lint" do
-    url "https://files.pythonhosted.org/packages/84/32/256af1fd26f751a71b4e72c3be06baa6538e6409760f9b4822d935cc7d81/cfn-lint-0.75.0.tar.gz"
-    sha256 "b95dff0f30bea9ed6d5ab5063eddb9feb416c00c360c6b588b58c0371b00294d"
+    url "https://files.pythonhosted.org/packages/dd/90/c9480d1481dd99786d13388d6745995bdf1d17a9450e6dbd574dead7c71c/cfn-lint-0.75.1.tar.gz"
+    sha256 "b878cf1a2e3fbf9e70ddcab672e1bed5edf87679f183ea1d4e80ac15dde4b57e"
   end
 
   resource "charset-normalizer" do
@@ -74,8 +77,8 @@ class Moto < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/fa/f3/f4b8c175ea9a1de650b0085858059050b7953a93d66c97ed89b93b232996/cryptography-39.0.2.tar.gz"
-    sha256 "bc5b871e977c8ee5a1bbc42fa8d19bcc08baf0c51cbf1586b0e87a2694dde42f"
+    url "https://files.pythonhosted.org/packages/15/d9/c679e9eda76bfc0d60c9d7a4084ca52d0631d9f24ef04f818012f6d1282e/cryptography-40.0.1.tar.gz"
+    sha256 "2803f2f8b1e95f614419926c7e6f55d828afc614ca5ed61543877ae668cc3472"
   end
 
   resource "docker" do
@@ -203,6 +206,11 @@ class Moto < Formula
     sha256 "aefc51675b0b533d56bb5fd1c8c6c0522fe31896679882e1c4c63d5e4a0fccb3"
   end
 
+  resource "py-partiql-parser" do
+    url "https://files.pythonhosted.org/packages/68/8f/7b37ff6ca28c3f335dd50b4cbb7f4e26c60f16ebd7d89011def96a9354e3/py-partiql-parser-0.1.0.tar.gz"
+    sha256 "03ef60b871ee341204775201918b27da611b7b0ddfa63688ca393d5ea8ed2a26"
+  end
+
   resource "pyasn1" do
     url "https://files.pythonhosted.org/packages/a4/db/fffec68299e6d7bad3d504147f9094830b704527a7fc098b721d38cc7fa7/pyasn1-0.4.8.tar.gz"
     sha256 "aef77c9fb94a3ac588e87841208bdec464471d9871bd5050a287cc9a475cd0ba"
@@ -214,8 +222,8 @@ class Moto < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/8b/87/200171b36005368bc4c114f01cb9e8ae2a3f3325a47da8c710cc58cfd00c/pydantic-1.10.6.tar.gz"
-    sha256 "cf95adb0d1671fc38d8c43dd921ad5814a735e7d9b4d9e437c088002863854fd"
+    url "https://files.pythonhosted.org/packages/43/5f/e53a850fd32dddefc998b6bfcbda843d4ff5b0dcac02a92e414ba6c97d46/pydantic-1.10.7.tar.gz"
+    sha256 "cfc83c0678b6ba51b0532bea66860617c4cd4251ecf76e9846fa5a9f3454e97e"
   end
 
   resource "pyparsing" do
@@ -304,6 +312,10 @@ class Moto < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     virtualenv_install_with_resources
   end
 
