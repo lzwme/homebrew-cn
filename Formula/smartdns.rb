@@ -1,19 +1,19 @@
 class Smartdns < Formula
   desc "Rule-based DNS server for fast IP resolution, DoT/DoH/DoQ supported"
   homepage "https://github.com/mokeyish/smartdns-rs"
-  url "https://ghproxy.com/https://github.com/mokeyish/smartdns-rs/archive/refs/tags/0.5.1.tar.gz"
-  sha256 "4043abf132579781e9004691ef528db3cd8297f9c75ff5f3759a507ef118174c"
+  url "https://ghproxy.com/https://github.com/mokeyish/smartdns-rs/archive/refs/tags/0.5.2.tar.gz"
+  sha256 "f8f1cf190bbe3a03f7022558b6fcc1abd2447ccc5b64813ec21f9eaada4798ec"
   license "GPL-3.0-only"
   head "https://github.com/mokeyish/smartdns-rs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8eeef710c9574f88b30b4097c1882ee77f4bb80ca749a59960d48925e7e70d84"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c2c09fa10349c2dfd14af4a3f2534c1140c024f321ba629eee8bf46ab31ad551"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "574bec2971e4b9ea95f1149398655e8eee7af85fe7fb04bf8d0f082416dcddf7"
-    sha256 cellar: :any_skip_relocation, ventura:        "fd609ec68d9c8ca8dafe333d5cf8807fb1fef75ee12305f870b78b3f1b95d0de"
-    sha256 cellar: :any_skip_relocation, monterey:       "185614110459aad3d12f60e707a0ce33d2d5063f22c4452141688c877b49890b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "36e1437485e2ec2a9ebf35e65e45ac5eeb4c6421d3a3cca5f1fe1535c08f0fe4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df98bd0eb3821b794e5c0da0545d51e410fa493cc5f131db90a9b8598af91d93"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "493ed441ace54ab542524fa052360876a578cb49d5aa77a841487ee745eee4bf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d8fef25531cddc5badaa34e13d973721e24a5a63283650fab6197a63c28599df"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "51ad30bc939e7caa062532ca7e44ab7699ac78e9ddad8568d00a7d88d54413c9"
+    sha256 cellar: :any_skip_relocation, ventura:        "1ce7f2a603ed139bbeae99e4c9f7e252b2daa266b69cc91ce0df530caf5d2ea7"
+    sha256 cellar: :any_skip_relocation, monterey:       "1f2f0523ee2d8a073f9ab923af8b62fcdd1cd0f88b6786411cee07049cef5d4f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7d04eb9e242bf3eefeab3f55fcdef1fc7a42a0d2461efb5c38efd8a94065e2ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ddcf3fd47633efddf84f5d9ae19b8d1eac64d339b8bb3d15946c1dfa1b7ebfe"
   end
 
   depends_on "rust" => :build

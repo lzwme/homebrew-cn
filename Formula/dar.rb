@@ -11,11 +11,14 @@ class Dar < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "2e1279a73d3d474c2e555d0b751bc2b9a3d477458acc7fb42e36949540b24aa9"
-    sha256 arm64_monterey: "3d906d174e5bde0fc8bbab53c8783096b4a4e2887b5638a844565c1845bf8b92"
-    sha256 arm64_big_sur:  "99411d919bd8f1005ebfe0b9ecace628485263f81ee687545a42b485c798c7e2"
-    sha256 monterey:       "932c401475261bbf614062508b448fb5d7b3bc770a49a9236948b3cc8a8ec2a2"
-    sha256 big_sur:        "9c82b987d80d5f503af0ff1d984852bbec241fd1871e3fcacd71c7bf9bff06e9"
+    rebuild 1
+    sha256 arm64_ventura:  "47f220d659367a0098936e2697fef01b9cc2c49f3715fb0b50a16ef23c4fd927"
+    sha256 arm64_monterey: "85a0849487757f13941c3f1dbcefd584340c963a92a266ebe27ea6d09b8b9990"
+    sha256 arm64_big_sur:  "44b35f1cb406249c14b156320628097bb8bc16cebdfc912af9d92b878985d149"
+    sha256 ventura:        "2c1c7f8fece7a12e09b3b76829e0746e4b479c97aa90d6a17c783751d997fdad"
+    sha256 monterey:       "6c4c0d6e2a7d1c27e9a7537ac8f7981e9f14c2875d1c1cdba7b4cc37b0251149"
+    sha256 big_sur:        "dafa054370b41b2e044e5aaec0c3893b04e912e1ea4af7e207517f4dede2055d"
+    sha256 x86_64_linux:   "f27e08cfabdc944c092d7745f39673bfc28b11c849afa2ba993d6e02f0b5f8b3"
   end
 
   depends_on "argon2"
@@ -23,10 +26,6 @@ class Dar < Formula
   depends_on "lzo"
 
   uses_from_macos "zlib"
-
-  on_intel do
-    depends_on "upx" => :build
-  end
 
   def install
     system "./configure", "--prefix=#{prefix}",

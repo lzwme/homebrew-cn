@@ -1,19 +1,19 @@
 class Lux < Formula
   desc "Fast and simple video downloader"
   homepage "https://github.com/iawia002/lux"
-  url "https://ghproxy.com/https://github.com/iawia002/lux/archive/v0.17.0.tar.gz"
-  sha256 "29cfabfd968565f834de63b7ba13a4b4eb4759b72003fb7aab5db98b060521e6"
+  url "https://ghproxy.com/https://github.com/iawia002/lux/archive/v0.17.1.tar.gz"
+  sha256 "9174b4f38d68632e71eb76796a13ff7594c1ef8ddd8d4260b40430fbb621c814"
   license "MIT"
   head "https://github.com/iawia002/lux.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c0977a6271a83ea0e9e089502894561a683e10e2b3f60386f9a75b299c03d237"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c0977a6271a83ea0e9e089502894561a683e10e2b3f60386f9a75b299c03d237"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c0977a6271a83ea0e9e089502894561a683e10e2b3f60386f9a75b299c03d237"
-    sha256 cellar: :any_skip_relocation, ventura:        "22e62eca53b5e2f4dce35ae0dce0eb990265ed317bed5c5d4b82fb216cfff51a"
-    sha256 cellar: :any_skip_relocation, monterey:       "22e62eca53b5e2f4dce35ae0dce0eb990265ed317bed5c5d4b82fb216cfff51a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "22e62eca53b5e2f4dce35ae0dce0eb990265ed317bed5c5d4b82fb216cfff51a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5c02706e201cb46b8c96d7371e444dfdb054083620a05a3c104da241681dcde"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b632e988ab9acf91455e1015ed283e2fe7db3e2e86bedb4810715f890aacdb81"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b632e988ab9acf91455e1015ed283e2fe7db3e2e86bedb4810715f890aacdb81"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b632e988ab9acf91455e1015ed283e2fe7db3e2e86bedb4810715f890aacdb81"
+    sha256 cellar: :any_skip_relocation, ventura:        "cc6988a8e9823ea323ee3f110deda0f5627a7d75c07373104168788ef6061546"
+    sha256 cellar: :any_skip_relocation, monterey:       "cc6988a8e9823ea323ee3f110deda0f5627a7d75c07373104168788ef6061546"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cc6988a8e9823ea323ee3f110deda0f5627a7d75c07373104168788ef6061546"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "828fedc7038f2b176f6f8c74683736dcfd1d50e0ff7224519807bc11e9bc616c"
   end
 
   depends_on "go" => :build

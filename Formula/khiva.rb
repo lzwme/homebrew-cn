@@ -42,6 +42,9 @@ class Khiva < Formula
                     "-L#{Formula["arrayfire"].opt_lib}", "-laf",
                     "-L#{lib}", "-lkhiva",
                     "-o", "test"
+    # OpenCL does not work on ephemeral ARM CI.
+    return if Hardware::CPU.arm? && OS.mac? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
+
     system "./test"
   end
 end

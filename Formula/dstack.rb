@@ -3,21 +3,24 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https://docs.dstack.ai/"
-  url "https://files.pythonhosted.org/packages/ad/b6/1a478b792f648fa4c51ff6a15479a2dd9dab8dd0383c66c1b235c0eed5b4/dstack-0.2.1.tar.gz"
-  sha256 "a6a350baed2ff18d0904f97789477aad2ced6afb4449ff2e9ce291c91ae54e78"
+  url "https://files.pythonhosted.org/packages/41/8d/036b54640c0f85b322fcdcec403777c29d5c03730d6fd62e61d0f198ef8e/dstack-0.2.2.tar.gz"
+  sha256 "d76ed66ab4368a0f22d9869f333c0e2b3cd19c1d9816089b8dedcf70792aa0df"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7f2ac05979379d7e85cddfa2abcab3474f22e21af31794f8089ea794e819fea6"
-    sha256 cellar: :any,                 arm64_monterey: "784307f472a3c2cce3e54b3abc45e624bda7f1bc9826ca7950ceda04b62fd21d"
-    sha256 cellar: :any,                 arm64_big_sur:  "71da5ff5de7fb50beb7879abc004e5c637c8e1e7ca64e3c7e1adb8870c8bba20"
-    sha256 cellar: :any,                 ventura:        "e7d2312437efb7de5c847dd1b305ad2fe39f30a8835280d7ce87e9047cf8c040"
-    sha256 cellar: :any,                 monterey:       "0e174bfeea47547d700c213cbc4b88cd03e2c24617a6bb9ef385dbf99624f56b"
-    sha256 cellar: :any,                 big_sur:        "8dd846e0e5f4c57e7c00d2f623524d36bc423e4b0a1e09ccf6e5de8c6b4d7ac7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f926b6e17e75c04d506bf3f9d299b8c251ab90d2be8055116ac40572658fabba"
+    sha256 cellar: :any,                 arm64_ventura:  "b4a0251977180e5bf8ae509e0780c59f81663fb8dfe591180b610025b6bb0112"
+    sha256 cellar: :any,                 arm64_monterey: "2d67b0501ec5e7793f035ac64e3dd6c4738b41675f393ac4108622afdb6764cf"
+    sha256 cellar: :any,                 arm64_big_sur:  "194ced3fd4a8af797c2f679f1168a4a9a8bf29ee9675f9d1fdb4206f85e059c1"
+    sha256 cellar: :any,                 ventura:        "4e89529ee88cb62f61b16824cb2c2bcbdfc53fb72ed22817f11643e9022b5a1c"
+    sha256 cellar: :any,                 monterey:       "bfbc7a70d79ae20765f285d62859b9918ddd32c3e5642932069ab23c3d9f538f"
+    sha256 cellar: :any,                 big_sur:        "c5a680e91ed71e8fe5975bea32a5b3a1f1eea8fef091b6006cecd03b73849ec5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da767e3280294cfd9566a1da6274c493dca52b603583ef511e98e723b1c46776"
   end
 
-  depends_on "rust" => :build # for cryptography
+  # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
+  depends_on "pkg-config" => :build
+  depends_on "rust" => :build
+  depends_on "openssl@1.1"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -51,13 +54,13 @@ class Dstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/c2/9b/8e9124c3d0306ab2ee865e6adffcfcb0127bf0c327386d62d2c9db19b6ae/boto3-1.26.96.tar.gz"
-    sha256 "7017102c58b9984749bef3b9f476940593c311504354b9ee9dd7bb0b4657a77d"
+    url "https://files.pythonhosted.org/packages/fb/ec/5858ac091814eb2e1b2465caed840aa51e9378be4f1cfe83d92d453d5e41/boto3-1.26.99.tar.gz"
+    sha256 "d9fd57d6e98fd919cdbd613428f685e05b48c71477fda1aa7fbf51867262c7d1"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/2d/b5/4a986aeb4e3d182f7ef116705962d3c98c0263beaf87c49836b7dfb91837/botocore-1.29.96.tar.gz"
-    sha256 "b9781108810e33f8406942c3e3aab748650c59d5cddb7c9d323f4e2682e7b0b6"
+    url "https://files.pythonhosted.org/packages/43/aa/8988b1e133fe703e5603b3bfd3d62e1e77f6aa969543d4ffce89b8e5838a/botocore-1.29.99.tar.gz"
+    sha256 "d1770b4fe5531870af7a81e9897b2092d2f89e4ba8cb7abbbaf3ab952f6b8a6f"
   end
 
   resource "cachetools" do
@@ -86,8 +89,8 @@ class Dstack < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/fa/f3/f4b8c175ea9a1de650b0085858059050b7953a93d66c97ed89b93b232996/cryptography-39.0.2.tar.gz"
-    sha256 "bc5b871e977c8ee5a1bbc42fa8d19bcc08baf0c51cbf1586b0e87a2694dde42f"
+    url "https://files.pythonhosted.org/packages/15/d9/c679e9eda76bfc0d60c9d7a4084ca52d0631d9f24ef04f818012f6d1282e/cryptography-40.0.1.tar.gz"
+    sha256 "2803f2f8b1e95f614419926c7e6f55d828afc614ca5ed61543877ae668cc3472"
   end
 
   resource "cursor" do
@@ -121,8 +124,8 @@ class Dstack < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/09/be/56d3c1db93d85e53ffa4eb26a2f41b0df9ba00317ee1f253121c63489d03/google-auth-2.16.2.tar.gz"
-    sha256 "07e14f34ec288e3f33e00e2e3cc40c8942aa5d4ceac06256a28cd8e786591420"
+    url "https://files.pythonhosted.org/packages/88/12/788458d2772746820dd8a6064a81e7c287f283c837e65b424b7f049c651d/google-auth-2.16.3.tar.gz"
+    sha256 "611779ce33a3aee265b94b74d4bb8c188f33010f5814761250a0ebbde94cc745"
   end
 
   resource "google-cloud-appengine-logging" do
@@ -136,8 +139,8 @@ class Dstack < Formula
   end
 
   resource "google-cloud-compute" do
-    url "https://files.pythonhosted.org/packages/f0/78/78a1e68275b07dd5474c2229f4517e3fc9c000253bb36bf18347f0c2616a/google-cloud-compute-1.10.1.tar.gz"
-    sha256 "fe25144ed07106688321ccc846ec1baff48b4ecda160a5d201bb9f9a316d3035"
+    url "https://files.pythonhosted.org/packages/6f/24/3f83ebbc47fa472e983bf4d78a16c3ea900953783e46a07134f711a4b42d/google-cloud-compute-1.11.0.tar.gz"
+    sha256 "d1d05a4b3ec6f830bbdcc779a740e963a80d324a4fd6ef41a7c248a07cf96489"
   end
 
   resource "google-cloud-core" do
@@ -151,8 +154,8 @@ class Dstack < Formula
   end
 
   resource "google-cloud-secret-manager" do
-    url "https://files.pythonhosted.org/packages/0d/db/9bea73b1f66962b3ce96e606f2e9a4233f079cc3c270fceddaefe2c05f84/google-cloud-secret-manager-2.16.0.tar.gz"
-    sha256 "3b52b9a9df36a3e3e7cd6678d060bed0f4a05b366fa79865ec8985c51831e56c"
+    url "https://files.pythonhosted.org/packages/48/6b/92b705f408c1d928526b65d1259be4254ef1f45e620f01f8665156b4d781/google-cloud-secret-manager-2.16.1.tar.gz"
+    sha256 "149d11ce9be7ea81d4ac3544d3fcd4c716a9edb2cb775d9c075231570b079fbb"
   end
 
   resource "google-cloud-storage" do
@@ -286,8 +289,8 @@ class Dstack < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/8b/87/200171b36005368bc4c114f01cb9e8ae2a3f3325a47da8c710cc58cfd00c/pydantic-1.10.6.tar.gz"
-    sha256 "cf95adb0d1671fc38d8c43dd921ad5814a735e7d9b4d9e437c088002863854fd"
+    url "https://files.pythonhosted.org/packages/43/5f/e53a850fd32dddefc998b6bfcbda843d4ff5b0dcac02a92e414ba6c97d46/pydantic-1.10.7.tar.gz"
+    sha256 "cfc83c0678b6ba51b0532bea66860617c4cd4251ecf76e9846fa5a9f3454e97e"
   end
 
   resource "Pygments" do
@@ -321,8 +324,8 @@ class Dstack < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/5e/0e/ef0a49be56dbc4052a086888cd2490e15fcc95b0eda79e9d0e737b1ab93d/rich-13.3.2.tar.gz"
-    sha256 "91954fe80cfb7985727a467ca98a7618e5dd15178cc2da10f553b36a93859001"
+    url "https://files.pythonhosted.org/packages/9a/50/672a8d347f92bc752b04c338bbf932fbd0104fbc416c82cc91aa5f7b4b0b/rich-13.3.3.tar.gz"
+    sha256 "dc84400a9d842b3a9c5ff74addd8eb798d155f36c1c91303888e0a66850d2a15"
   end
 
   resource "rich-argparse" do
@@ -386,6 +389,10 @@ class Dstack < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     virtualenv_install_with_resources
   end
 
