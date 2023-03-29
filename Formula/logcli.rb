@@ -1,8 +1,8 @@
 class Logcli < Formula
   desc "Run LogQL queries against a Loki server"
   homepage "https://grafana.com/loki"
-  url "https://ghproxy.com/https://github.com/grafana/loki/archive/v2.7.4.tar.gz"
-  sha256 "b5521c0d12699f59ddf48ff7eaacddaa56abe90da4579f35c18f0752fc8e95c0"
+  url "https://ghproxy.com/https://github.com/grafana/loki/archive/v2.7.5.tar.gz"
+  sha256 "8bfc01da348e875ff7a999af3842a14e2c698e06facdf486754127991d6b8f19"
   license "AGPL-3.0-only"
   head "https://github.com/grafana/loki.git", branch: "main"
 
@@ -11,13 +11,13 @@ class Logcli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f2c24a38d4b489fc346b365671089f0ac45581877d23d63798f1050fe09f5e1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a78a0115518a2b5f95a734a6a2c7ea1aba71c704eb3d8a90690b6e0df5a6e29f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "319b8f32bdc9fa3e02690b8274ac1c38c5f902edfa14b2665b031fd3f652f9e0"
-    sha256 cellar: :any_skip_relocation, ventura:        "f19f0da1078c259c40b245372d11346a1057827f9adbc933f7a14e6dde61c824"
-    sha256 cellar: :any_skip_relocation, monterey:       "7a7b084c24875f400696c16f952fc267b2d485b8335f00d6aa0c404634a9816e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "185ff24c0348b2fb8dd474325f70e878d2565786ffea011dde901d7717099ae1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdffa8ebea96ee1945d255816ee83aa0d96e064f487c36dfb8b241c0786bc150"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "34ec1cba26d3a045a646e2e153c1f755447511fa4c8c4e9d32a7c121b185b241"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ad77ba650cf40dd367186b996a450ee6248a787d2d59900bc1da2a27c78cb81e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d2b6dcc48e46bc21741aabba1806a165fc97faf6b2dec06bbc030b77c654e2fc"
+    sha256 cellar: :any_skip_relocation, ventura:        "f9f5f458251bd9362f73dbf8c7c584dbadf2c3ea212afe5c9cb6bc3c7bb7bd04"
+    sha256 cellar: :any_skip_relocation, monterey:       "ddae74e77e8bc208a2194be51cef99745d7951934224f37086f15909d3b3d193"
+    sha256 cellar: :any_skip_relocation, big_sur:        "34542f8b0426df19d7f0b3960f399464f90c2f326f044119f1ed08532ce8771f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b29ef8086b5341fba066ca4c53774922b3db310fb3e51ed6ef324a7e6fc9fdda"
   end
 
   # TODO: Try `go@1.20` or newer on the next release

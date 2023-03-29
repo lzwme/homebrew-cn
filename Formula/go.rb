@@ -32,22 +32,28 @@ class Go < Formula
       "linux-amd64"  => "4cdd2bc664724dc7db94ad51b503512c5ae7220951cac568120f64f8e94399fc",
     }
 
-    arch = "arm64"
-    platform = "darwin"
+    version "1.17.13"
 
+    on_arm do
+      on_macos do
+        url "https://storage.googleapis.com/golang/go#{version}.darwin-arm64.tar.gz"
+        sha256 checksums["darwin-arm64"]
+      end
+      on_linux do
+        url "https://storage.googleapis.com/golang/go#{version}.linux-arm64.tar.gz"
+        sha256 checksums["linux-arm64"]
+      end
+    end
     on_intel do
-      arch = "amd64"
+      on_macos do
+        url "https://storage.googleapis.com/golang/go#{version}.darwin-amd64.tar.gz"
+        sha256 checksums["darwin-amd64"]
+      end
+      on_linux do
+        url "https://storage.googleapis.com/golang/go#{version}.linux-amd64.tar.gz"
+        sha256 checksums["linux-amd64"]
+      end
     end
-
-    on_linux do
-      platform = "linux"
-    end
-
-    boot_version = "1.17.13"
-
-    url "https://storage.googleapis.com/golang/go#{boot_version}.#{platform}-#{arch}.tar.gz"
-    version boot_version
-    sha256 checksums["#{platform}-#{arch}"]
   end
 
   def install

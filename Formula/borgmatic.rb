@@ -3,18 +3,18 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/74/53/c7ec58aeff933602ea2eb2a779be5b11c1a7d3dc9aede5e9bdbae5ed1e90/borgmatic-1.7.9.tar.gz"
-  sha256 "bf7431c32ed5eaba97f741b8fd7a7a9954d492ba835e6b9d821ded8741828ee9"
+  url "https://files.pythonhosted.org/packages/c3/5e/d43bb63a72d684ac472f2adb139e184ae536b66a8dcbb1c0f2f2b4803da7/borgmatic-1.7.10.tar.gz"
+  sha256 "2478217aad68d1c3a52a9abb8ae19e075d4f47a8ed1dacbb360617abfd0ea914"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "deab789d9dc4b160e67cf38ca57a91621db1d568063f8c6eb5b0730fde393d72"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c08a28cb69a939cd134bf2f38182b7dce080643894256cad890ec4eec83f9b14"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "86a354be5003059b4eee7070d2b49eb08263853a58dc3bc331c6a7be3f9c405b"
-    sha256 cellar: :any_skip_relocation, ventura:        "7473debbfe445614a21188d0c9b91cec305a2b08e638b8f017a33691e2adc81c"
-    sha256 cellar: :any_skip_relocation, monterey:       "526569fc6360c9cac3839d839a59cbcff118b8786ba81f697ad68fdcabcd5e0f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9455661889bc5bc73dbfd0f58e62165529d8ff507700aeafb7ac8f0d23b1f363"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "844a53cabd53e34a60267ee1a75ddf600ee10d0f91a1c7d68917ff7ed01d0620"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7838218a16d5aa1405630b3ce04bc40a4d4da3da5ecbb84cc530da6ade9575b7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3a0346f6a52841656f74331b328f5247512da3603068a647e3a6bad60fbaaac9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cd07387d2f66e121cc3ce8c20f4c91ed38fb262c7423860516f3e140bdbb51d1"
+    sha256 cellar: :any_skip_relocation, ventura:        "2e861cbe15c8402e2918aa9f0649d6fbc5fff63196f1fd585bca5379c0e52e3e"
+    sha256 cellar: :any_skip_relocation, monterey:       "0790c07a47ed7bdab51808fe1df9e06a4eb09d341825cbefdfc1530818a89911"
+    sha256 cellar: :any_skip_relocation, big_sur:        "879bab5780bbbf650a06875a4e6082ae48f618cfee2eb4e5721ed7d160587148"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7cef7d36fe527f6cf15390d75943d62e3a3ab699feca1140f7729c26a3fe4352"
   end
 
   depends_on "python@3.11"
@@ -147,12 +147,11 @@ class Borgmatic < Formula
 
     # Replace defaults values
     inreplace config_path do |s|
-      s.gsub!(/# ?local_path: borg1/, "local_path: #{borg}")
-      s.gsub! "- ssh://user@backupserver/./sourcehostname.borg", "- #{repo_path}"
-      s.gsub! "- ssh://user@backupserver/./{fqdn}", ""
-      s.gsub! "- /var/local/backups/local.borg", ""
       s.gsub! "- /var/log/syslog*", ""
       s.gsub! "- /home/user/path with spaces", ""
+      s.gsub! "- path: ssh://user@backupserver/./sourcehostname.borg", "- path: #{repo_path}"
+      s.gsub! "- path: /mnt/backup", ""
+      s.gsub!(/# ?local_path: borg1/, "local_path: #{borg}")
     end
 
     # Initialize Repo

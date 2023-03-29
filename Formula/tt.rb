@@ -6,19 +6,21 @@ class Tt < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "68443da882962159e076cca1f774c1f39879175275b1444bd0b03e1622ac6276"
-    sha256 cellar: :any,                 arm64_monterey: "1a93634c292d269a4461cd4cf0921ac6676f873b457c198a86f4557fcda90027"
-    sha256 cellar: :any,                 arm64_big_sur:  "ce286cb1068543c4f990984ee533c9ecae8d372f10194190aa94d8ee2dcf450e"
-    sha256 cellar: :any,                 ventura:        "5414c4ed0979f8cfbe8a137ee0ddc824c1eaf22fd3b1aac8a26db9d04b2b1389"
-    sha256 cellar: :any,                 monterey:       "0865f458cd00bbba2154bf838e6b9ac5bcd08dcb56d6ef02e817cc6ebf48f29c"
-    sha256 cellar: :any,                 big_sur:        "2a371ea6f0c0682e1149a58f9ddcf16236912eba4b3c6c035e9bef9801cac128"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e75158fb6327da02e4289b1aee6d048cecc1cce17609dacc5f13f8b60fa50802"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "0d4e7c8ea9dd9bfccfe46ebe7388d960fc64dda9e152143d00445b646da9e5f7"
+    sha256 cellar: :any,                 arm64_monterey: "69a43816ae2551308c5c91a0fd89c3f7929e6174f4aa2e79d22755c99db5e3d5"
+    sha256 cellar: :any,                 arm64_big_sur:  "a7fff269e996ce411e34e2eb745bcc89d68ad435b2d41c538345fcba5ce3981d"
+    sha256                               ventura:        "2a1d6377bf43aeb1c05af858c59ab5111832418b8ea3673fa91737938fbc9766"
+    sha256                               monterey:       "a9cd3db8c3f9c6b4cf215a735ae2a4b81d73670056ceeae4415a6c73aaf87c2c"
+    sha256                               big_sur:        "fa9f3a172f23970a3d4f0f4e0c9924ce82489899f762fba3f5b02bccba802d9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b941d6a5674cdc7739299f3dcbf3780e74d5010f59c24436aff8201e58cde21"
   end
 
   depends_on "go" => :build
   depends_on "mage" => :build
   depends_on "pkg-config" => :build
   depends_on "openssl@3"
+
   uses_from_macos "curl"
   uses_from_macos "unzip"
   uses_from_macos "zip"
@@ -27,10 +29,11 @@ class Tt < Formula
     ENV["TT_CLI_BUILD_SSL"] = "shared"
     system "mage", "build"
     bin.install "tt"
+    (etc/"tarantool").install "tt.yaml.default" => "tt.yaml"
   end
 
   test do
-    system bin/"tt", "create", "cartridge", "--name", "cartridge_app", "-f", "--non-interactive", "-dst", testpath
-    assert_predicate testpath/"st/cartridge_app/init.lua", :exist?
+    system bin/"tt", "create", "cartridge", "--name", "cartridge_app", "-f", "--non-interactive", "-d", testpath
+    assert_path_exists testpath/"cartridge_app/init.lua"
   end
 end
