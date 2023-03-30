@@ -1,8 +1,8 @@
 class Macpine < Formula
   desc "Lightweight Linux VMs on MacOS"
   homepage "https://beringresearch.github.io/macpine/"
-  url "https://ghproxy.com/https://github.com/beringresearch/macpine/archive/refs/tags/v0.9.tar.gz"
-  sha256 "fbbed218de0037d0fc82bc675fbe89b44202f757f12a5ab53f32ff70345ee1c2"
+  url "https://ghproxy.com/https://github.com/beringresearch/macpine/archive/refs/tags/v0.10.tar.gz"
+  sha256 "bca9075958cb76a79cb66f848a44f6ff8f2c1493d6af0b79e871b4457f1fe4d1"
   license "Apache-2.0"
   head "https://github.com/beringresearch/macpine.git", branch: "main"
 
@@ -21,14 +21,13 @@ class Macpine < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "df84e98cc98f316b8fc2ac8850cfd05048bcce9decb5c6fbb15cbf97f04fe520"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8bb9051ac566113476a2e3386f9417bfa0b11f263332476b0f70a0116862baa9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b0d9dacd246f201cf51fe9033be7032d2485430ede7b41edb58923acbd2a03f8"
-    sha256 cellar: :any_skip_relocation, ventura:        "9662303141c80aeb07bc28821701c8a8d88121dd3a0771d531ce3991fcc656f2"
-    sha256 cellar: :any_skip_relocation, monterey:       "761d4a26cd28778a902f5687c50173490027b6d94c172d732e5d850eac32795d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c3d1ae59c1b3ddb9c7d69beaeea2fb5060cea9e8e6f87e3baa26d938a171838d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e8e56a36cb50a31021a405272ed01dff9aeb8cab3d16956291b80ee382673b5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f3b230879c573dffd93ad1bbef479f5d392503daa120778714a5c45dd6c07505"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "689441f80671c1c58706b1210310d3e7b870305c66a86ab824a570b32abc9a47"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4ec5561d896636b6cc45f05652ec744116c82b61fd0720499dc8f8bce0dab953"
+    sha256 cellar: :any_skip_relocation, ventura:        "3f08d3a9ab655d9a200be0bee68c6eb9d99161eaa72bf46a4bad727f517df225"
+    sha256 cellar: :any_skip_relocation, monterey:       "19f20689e113586bb3fa51af27c55e724688f701aa46c5232db02a42022a008d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b364ef8e8f862de2c3717da36bb864837609c7702bacfeda4285d79990ffd204"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed7b233348afcd4cc8c59414074fa0c2338c4658b7d39c87435fee7741655dce"
   end
 
   depends_on "go" => :build

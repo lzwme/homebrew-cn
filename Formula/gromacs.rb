@@ -11,13 +11,14 @@ class Gromacs < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "121ee4296691d422344e7295ad0606fa5cfcd3504534a142d6fc89308726fd0a"
-    sha256 arm64_monterey: "549c85b8dd66ff7d86147fa072ca6de0c56545a1c6a4b9c5cf47d511bd3c991e"
-    sha256 arm64_big_sur:  "fe588294099d3a2301f7a47aeda12966158e43904567cf2080aca2bdf81a4063"
-    sha256 ventura:        "c7fa552af63e395219c8cd24517f989dbe97e9df29e80ae68bb4a840d12110dd"
-    sha256 monterey:       "fcfd520513c4d0a9f79e19edac79c7752b0b0d52e135316e1dd8a29d50cebdaf"
-    sha256 big_sur:        "2f938fdeb2415927628d65b8cbd51c51cd18087930bdee7c67dd0629508e09b3"
-    sha256 x86_64_linux:   "78b8768a142696cb544b02356a8071e849193368b78f880e14e7ec3161ae3e31"
+    rebuild 1
+    sha256 arm64_ventura:  "5610ea14f509d07dd8a40c85effd62fe77ea56c2453beb5949a3c9c426986887"
+    sha256 arm64_monterey: "bda232518e1cbff5479f5368c1d836b8ca8fff3eafda291cb48e3e0e206d9d37"
+    sha256 arm64_big_sur:  "33d2718d8a2fa1bd9bc92eed6685191684fb594be5ce1322b2009725f4d39b52"
+    sha256 ventura:        "34e8b2cf4964d9c6e6b0bd778a64b8011429aadfa0e9a4485bc6cc4d40f261b5"
+    sha256 monterey:       "fcc9c73467fc316aa8d7e038d36f93a812b7066321aae37c852c2e9bdfbb218f"
+    sha256 big_sur:        "67f74c6c8fde47489f5b068296e82b0d1f988f82620a061dece12178493e91ec"
+    sha256 x86_64_linux:   "f2b6756ebd07aa2d147d4d764c88c8b5ae82b7610077d11c9ae0bb256f78c8c5"
   end
 
   depends_on "cmake" => :build
@@ -54,6 +55,7 @@ class Gromacs < Formula
     args = %W[
       -DGROMACS_CXX_COMPILER=#{cxx}
       -DGMX_VERSION_STRING_OF_FORK=#{tap.user}
+      -DGMX_INSTALL_LEGACY_API=ON
     ]
     # Force SSE2/SSE4.1 for compatibility when building Intel bottles
     args << "-DGMX_SIMD=#{MacOS.version.requires_sse41? ? "SSE4.1" : "SSE2"}" if Hardware::CPU.intel? && build.bottle?

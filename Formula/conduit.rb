@@ -6,6 +6,11 @@ class Conduit < Formula
   license "Apache-2.0"
   head "https://github.com/ConduitIO/conduit.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e50ad4836b15bb463a0e99b8522b0c2abdff07258311ce565f6fd1a9c9678239"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5767e644dfb899b43267344e5736acffa8a9f33e844468e68c25513d4fa690a8"

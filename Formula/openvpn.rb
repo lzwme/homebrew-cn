@@ -12,19 +12,20 @@ class Openvpn < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "6fd411a15eca391d29c4c15edfd7627b7a4db33da0901f8f1cbcd708932aab7b"
-    sha256 arm64_monterey: "dee93b1a35ee01512db5f7ebed26d04de12a90b468866e55e0e694cd4c698539"
-    sha256 arm64_big_sur:  "3232822d867d9d286a90070d4a604f504c91b882f0f4b5bf9f48bdcad5d16d5e"
-    sha256 ventura:        "53576ef44876980476eb2bd66a49974a610f063a98abfe303bb9ae6c808f0c55"
-    sha256 monterey:       "1e981dcc4d5e1f7617af17b34f31270b2db6b0cd47c95f47f39937723367eda7"
-    sha256 big_sur:        "f76799cd39755790a1c0b9c2be54be105776d407bf70335532832e6784c6180f"
-    sha256 x86_64_linux:   "459239c70690295cd498c59e41f5616cece0c5db8ca0c4de133735711e71bccb"
+    rebuild 1
+    sha256 arm64_ventura:  "743e0049294a1f1a5d87b31c17b35b139a6a53014f46f2cbccd5cf449f978b99"
+    sha256 arm64_monterey: "a131ed7bfa8143add9557368c0cff435ab80a82abec85e9a8ce523fdf0c0916b"
+    sha256 arm64_big_sur:  "5ea6d869e97b981176c8a35f4da68dfb2fc694e262d16ebe3a69fa9fe68a6c2f"
+    sha256 ventura:        "7f58b71d8e4b8ba2500154c22eb1d16c2aec1eb274df831b8990abf8eb07b820"
+    sha256 monterey:       "25a2dac5914c0d51d8321183b2a0dfd25e95513cbdf409de70b41b7936660c43"
+    sha256 big_sur:        "3f2fc836c71118bb425eabe55cfde6a92968a2ee7bb0ca0eeac28c6ba06eefff"
+    sha256 x86_64_linux:   "61b0ec8c0140c68319bf6aa61add14e62b014c36c3f598d3e18e1b4fcef6bba8"
   end
 
   depends_on "pkg-config" => :build
   depends_on "lz4"
   depends_on "lzo"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pkcs11-helper"
 
   on_linux do

@@ -4,19 +4,19 @@ class ContentfulCli < Formula
   desc "Contentful command-line tools"
   homepage "https://github.com/contentful/contentful-cli"
   # contentful-cli should only be updated every 5 releases on multiples of 5
-  url "https://registry.npmjs.org/contentful-cli/-/contentful-cli-2.2.15.tgz"
-  sha256 "347f21c47c14bf91c6370a9dde45c1be68c2bd2a4749b2adacde52cf9f7b37d0"
+  url "https://registry.npmjs.org/contentful-cli/-/contentful-cli-2.2.20.tgz"
+  sha256 "ea07f7c33ca907323d9bfd80f19afdcd5fb38e588d5d0b4857326f3175bffc91"
   license "MIT"
   head "https://github.com/contentful/contentful-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "faee36e94b6de7992b9da49d556eb28a95434d15e7ce7b7d41f1971a136ac5f8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "faee36e94b6de7992b9da49d556eb28a95434d15e7ce7b7d41f1971a136ac5f8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "faee36e94b6de7992b9da49d556eb28a95434d15e7ce7b7d41f1971a136ac5f8"
-    sha256 cellar: :any_skip_relocation, ventura:        "09f3cd3306335acb6c18cffac24d24767edadb54923444ff093b5112356b3ee5"
-    sha256 cellar: :any_skip_relocation, monterey:       "09f3cd3306335acb6c18cffac24d24767edadb54923444ff093b5112356b3ee5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "09f3cd3306335acb6c18cffac24d24767edadb54923444ff093b5112356b3ee5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "faee36e94b6de7992b9da49d556eb28a95434d15e7ce7b7d41f1971a136ac5f8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7427df190c2eeb0e9467819b63c459d6d4b298dd0f77f2f7317a28e71539e60"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f7427df190c2eeb0e9467819b63c459d6d4b298dd0f77f2f7317a28e71539e60"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f7427df190c2eeb0e9467819b63c459d6d4b298dd0f77f2f7317a28e71539e60"
+    sha256 cellar: :any_skip_relocation, ventura:        "aa0862ad83c4a63b7b5fc176bd4f214707085f9bc8ef88aa2239c1305636666e"
+    sha256 cellar: :any_skip_relocation, monterey:       "aa0862ad83c4a63b7b5fc176bd4f214707085f9bc8ef88aa2239c1305636666e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "aa0862ad83c4a63b7b5fc176bd4f214707085f9bc8ef88aa2239c1305636666e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7427df190c2eeb0e9467819b63c459d6d4b298dd0f77f2f7317a28e71539e60"
   end
 
   depends_on "node"

@@ -1,20 +1,20 @@
 class GitAnnex < Formula
   desc "Manage files with git without checking in file contents"
   homepage "https://git-annex.branchable.com/"
-  url "https://hackage.haskell.org/package/git-annex-10.20230227/git-annex-10.20230227.tar.gz"
-  sha256 "f1ddf6a2d7a6f4c05a79014124e159ec5cc110e6dba509b54eea67f686e9960d"
+  url "https://hackage.haskell.org/package/git-annex-10.20230329/git-annex-10.20230329.tar.gz"
+  sha256 "a19f7dec686f016772f115c74d5981e8a6f0bab0a9a534fea36299f499f002e6"
   license all_of: ["AGPL-3.0-or-later", "BSD-2-Clause", "BSD-3-Clause",
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
   head "git://git-annex.branchable.com/", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a7d3027a38bba076b64da7311bec966f43a74db73ce39987e98035377789ac0f"
-    sha256 cellar: :any,                 arm64_monterey: "6c55b7ba93b7202bbe4820debc96f5d56fd39a7ac3dd05fe171922a32e137277"
-    sha256 cellar: :any,                 arm64_big_sur:  "038afdeabf523ca229f9ac7c237bb230b5383d738c9a74bef924694ece5165bd"
-    sha256 cellar: :any,                 ventura:        "ee565b686b7f58cce753517fb05f9e240c83dc407f47e065d138bc2f67f3765e"
-    sha256 cellar: :any,                 monterey:       "a0b94c22835a0fb7514a74613e1b2ad1fe646b9c5bc437b188dd15c7c43769b2"
-    sha256 cellar: :any,                 big_sur:        "7f62fde3a17dfa025c1a2916e34ff80542714cadb87ec7a91647c101a9b3d1a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d89ee19ba34ae2735e14fb2f51f5c72fffc27aa0cba012f3cf97cb8db6b60226"
+    sha256 cellar: :any,                 arm64_ventura:  "d3f448ee5adc2252fd0bbc38e16df2b52ef86c9af4dcd03d61d0848093ce388b"
+    sha256 cellar: :any,                 arm64_monterey: "6bf7efbad707fcd1c773944c5575ea08ee73717a99883ae11e4ec00fc5d04c08"
+    sha256 cellar: :any,                 arm64_big_sur:  "c10cca3db35270b2233773ed9895f0f43136c25130ee1451970b5149a8a07fb1"
+    sha256 cellar: :any,                 ventura:        "debd7c91fb7b63edf2f3d2fbf188814b71fba2e67460bbf48b6b89b7c00fce4c"
+    sha256 cellar: :any,                 monterey:       "eec8f0221d9351fb8c546df8e19c859b81c6b7dfa66c1fb2368c69516c5c893d"
+    sha256 cellar: :any,                 big_sur:        "5e3812cb1f065e7ac6ca3c9705b00387ea1e28004f41c946f9bcb99466ef032f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f043d8f6fc85b6b07dacb3e6a955623971814a61632699cb0f486d61b7e4d481"
   end
 
   depends_on "cabal-install" => :build
@@ -41,6 +41,13 @@ class GitAnnex < Formula
       packages: ./*.cabal
                 homebrew/bloomfilter/
     EOS
+
+    # Fix "Could not find module ‘System.PosixCompat.User’".
+    # The module was removed in unix-compat-0.7; see:
+    #   https://hackage.haskell.org/package/unix-compat-0.7/changelog
+    # Reported upstream at
+    #   https://git-annex.branchable.com/bugs/System.PosixCompat.User_removed_in_unix-compat-0.7/
+    inreplace "git-annex.cabal", "unix-compat (>= 0.5)", "unix-compat (>= 0.5 && < 0.7)"
 
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args, "--flags=+S3"

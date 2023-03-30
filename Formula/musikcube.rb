@@ -6,6 +6,11 @@ class Musikcube < Formula
   license "BSD-3-Clause"
   head "https://github.com/clangen/musikcube.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 arm64_ventura:  "a132d430e8e2925c248b2b5c213a7c3091675f08b1967079632c4977072c2a1b"
     sha256 arm64_monterey: "78d9275f04cd807636e4be2acc0dcb6535d17d86007ad62689ae66a4852ab06e"
