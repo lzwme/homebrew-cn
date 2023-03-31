@@ -1,18 +1,18 @@
 class JfrogCli < Formula
   desc "Command-line interface for JFrog products"
   homepage "https://www.jfrog.com/confluence/display/CLI/JFrog+CLI"
-  url "https://ghproxy.com/https://github.com/jfrog/jfrog-cli/archive/refs/tags/v2.35.0.tar.gz"
-  sha256 "0b5a46c1d46384ac7d7b8443aa40678c6d8c349d8a858398d5349d363b38a069"
+  url "https://ghproxy.com/https://github.com/jfrog/jfrog-cli/archive/refs/tags/v2.36.0.tar.gz"
+  sha256 "031521c6667143d6f33cf26efcd7ee82dd0adf38534c7b5cb3d893a08220803f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb30257026b57af76befef850bc6631f4f93e4188734a035eafae6417d2824df"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cb30257026b57af76befef850bc6631f4f93e4188734a035eafae6417d2824df"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cb30257026b57af76befef850bc6631f4f93e4188734a035eafae6417d2824df"
-    sha256 cellar: :any_skip_relocation, ventura:        "b64a7b56134dae6a95771b72000039bc71f301f6b725cdf64283f1286be1301f"
-    sha256 cellar: :any_skip_relocation, monterey:       "b64a7b56134dae6a95771b72000039bc71f301f6b725cdf64283f1286be1301f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b64a7b56134dae6a95771b72000039bc71f301f6b725cdf64283f1286be1301f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59a549aaa03e75d217ca0130fc396debf6d1c9bba8aade6dcabf715cb4bcb2c3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2463da8051a89cd19befed840b89f314b53a6196a72d846e79e0b52d99e11bc7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2463da8051a89cd19befed840b89f314b53a6196a72d846e79e0b52d99e11bc7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2463da8051a89cd19befed840b89f314b53a6196a72d846e79e0b52d99e11bc7"
+    sha256 cellar: :any_skip_relocation, ventura:        "a04f046c35579accf35a64510a31b0bb7310a12e460016f9fbf6d77bd9021f37"
+    sha256 cellar: :any_skip_relocation, monterey:       "a04f046c35579accf35a64510a31b0bb7310a12e460016f9fbf6d77bd9021f37"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a04f046c35579accf35a64510a31b0bb7310a12e460016f9fbf6d77bd9021f37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d35a7b53084c9f5fca0b6a734dc39d4d5720728cbb8c01e3e3f0fa05644c2fb"
   end
 
   depends_on "go" => :build

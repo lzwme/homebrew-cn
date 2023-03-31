@@ -1,19 +1,30 @@
 class Zpaqfranz < Formula
   desc "Deduplicating command-line archiver and backup tool"
   homepage "https://github.com/fcorbelli/zpaqfranz"
-  url "https://ghproxy.com/https://github.com/fcorbelli/zpaqfranz/archive/refs/tags/57.4.tar.gz"
-  sha256 "eaf8a37af9eb9184b6c1e58ec237a8582b17096931b2c33eb13d02e1682952d9"
+  url "https://ghproxy.com/https://github.com/fcorbelli/zpaqfranz/archive/refs/tags/57.5.tar.gz"
+  sha256 "c0ba86c33cb061fea909cfaf629305a46ab712eb4715b0b8ef2e49438055f97e"
   license all_of: [:public_domain, "MIT", "Zlib", "Unlicense", "BSD-2-Clause", "Apache-2.0"]
   head "https://github.com/fcorbelli/zpaqfranz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "35547fcb098e2c9ba6a9b3a97c33c7b63251eca64c2f2255434bf4714bf1b99a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6ef8fce40757ad582d98dee8448d856fff55b9ea5c62845ac67a8522f5918b55"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "56a90011e9fe15f5802987bb4d8850d2d791b1b0f42fe5b3fe777fc78aa6b14f"
-    sha256 cellar: :any_skip_relocation, ventura:        "daf3742b6f070348f604739eec61e4ad94a532c912b3678c660350a7fbcc9398"
-    sha256 cellar: :any_skip_relocation, monterey:       "95cfef3ae6d6d5430d473f4b8ac6755d12ecb9559b4c3df4564df499591f1d24"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4bf77b13859510afc92ce1b7a9fdfa6a4b51492840486ca9f22a76ebea2e6f69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56b3da3986185c1486f366b06f47e8fb9b20ac2a32ad20812119e006e49b7a34"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0bef53ae17206bed5dce3ec443a1f611157133dd841c984fbcb23ffc3a8545d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7e308f03281301a4cb56a6c432c253521f776f61bd40194eafcf50ab06061816"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "73b7e69a62b70769cde9407431cf529cab09894c5a7cad7d0fb4fa7213c176a2"
+    sha256 cellar: :any_skip_relocation, ventura:        "296d7c6c32febf879490a5b854cfd266746100f38603ce91aada3e13dfa231b8"
+    sha256 cellar: :any_skip_relocation, monterey:       "5a7078257b14dae4d22d4d563bcb983c580a28718ba068cc485cfb2bd21f137b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "13ed30b4cf87c0f341c2c88d7b105c9610c9e60e9c6524d8413f5650eff4339b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ada8e2725825db710b34e3bd86bf4b9231071bfb61b774e5ea4bbcf504bfcf4c"
+  end
+
+  # Use a C++ compiler instead of a C compiler.
+  # Reported at: https://github.com/fcorbelli/zpaqfranz/pull/51
+  patch do
+    url "https://github.com/fcorbelli/zpaqfranz/commit/298e496647373570b54307f4d4130bbd915ba9f6.patch?full_index=1"
+    sha256 "ad02acdf3922946f09203bca4e0b926c3ea15953f04ae759e9ee8efc1cebf8d7"
+  end
+  patch do
+    url "https://github.com/fcorbelli/zpaqfranz/commit/4cc32b6ffa599e3b9528c4c97d52b6ebcc697efa.patch?full_index=1"
+    sha256 "a86ed4ff7f223e65a6720438aa6c2d2f3bc42d8959ee827e95d1798d9d8b10c0"
   end
 
   def install

@@ -6,6 +6,11 @@ class Iptables < Formula
   license "GPL-2.0-or-later"
   revision 1
 
+  livecheck do
+    url "https://www.netfilter.org/projects/iptables/downloads.html"
+    regex(/href=.*?iptables[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 x86_64_linux: "55ab232eefa2576a6a92bef15a4231515afc2b1f942acc96dcf11d4637caeeee"
   end

@@ -34,7 +34,7 @@ class Crystal < Formula
   head do
     url "https://github.com/crystal-lang/crystal.git", branch: "master"
 
-    depends_on "llvm"
+    depends_on "llvm@15"
     depends_on "pcre2"
 
     uses_from_macos "libffi"  # for the interpreter
