@@ -6,13 +6,14 @@ class TkeySshAgent < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7a0f69100ad2a590ba0c7bd419363a0b880af84d616e7e2abcf1d9e30edf6ff3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9004480a25bc99dd482306381cabab955ecb80c682c1682dadf1895af34851f0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "de6f9d6277af8d4d590f6657f310cb8eaf96c4911cbbc7dd40e8b5fb9a8c4e89"
-    sha256 cellar: :any_skip_relocation, ventura:        "0d63b8dcde16d4976f8fc028bfce9006da7571b0c41ed71b33ad9eac670c6696"
-    sha256 cellar: :any_skip_relocation, monterey:       "d7d7982a3e2f51293b85f458387bf7c32943587d9d10427c607c5f6ae47cf5f3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "09e8cbdc5c2f618c9c026dbadc32a5a738776199b8652798efe7ebe7c93724aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c1af49cacb494a956d3af76497634cd50b09e719999ea5a96f2a5902c95cdee3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ca5eea17cc5b9ce656512723fd0f3264618f2691c6c9f99a203e53c6d906fbf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "67a96eb8492872553954d9febb60f4288f098823089dad937eaf686ba8cf3431"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "88c4dff50fdc0d489dd4945877cb044b341040252cf79e43b1a6e42054930371"
+    sha256 cellar: :any_skip_relocation, ventura:        "ac79fd3952281c2aff071a0f0682c89cac75ea59f46909638036a3b869155e57"
+    sha256 cellar: :any_skip_relocation, monterey:       "5dc85f026d6e6cd72cb0983061438de571f5fc39bf070e8a332655f08faff2d6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3b6521eaebf5a417c218b1fe90b89b4d66330ebde5d19e50266c13c7758f9d3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0105a5d58f65721883759cbd6e75791d507c122f77a68ea878d6425a5644268a"
   end
 
   depends_on "go" => :build
@@ -32,7 +33,7 @@ class TkeySshAgent < Formula
 
   def install
     resource("signerapp").stage("./cmd/tkey-ssh-agent/app.bin")
-    ldflags = "-s -w -X main.Version=v#{version}"
+    ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/tkey-ssh-agent"
   end
 
@@ -56,6 +57,7 @@ class TkeySshAgent < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/tkey-ssh-agent --version")
     socket = testpath/"tkey-ssh-agent.sock"
     fork { exec bin/"tkey-ssh-agent", "--agent-socket", socket }
     sleep 1

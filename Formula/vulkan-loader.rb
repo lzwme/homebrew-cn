@@ -1,8 +1,8 @@
 class VulkanLoader < Formula
   desc "Vulkan ICD Loader"
   homepage "https://github.com/KhronosGroup/Vulkan-Loader"
-  url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/v1.3.245.tar.gz"
-  sha256 "93ee2885dc8ead7b654112c8c1ebfa8e10fa486e8c71c909846f855f43bdf046"
+  url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/v1.3.246.tar.gz"
+  sha256 "2531b6ef63b18040e5b0a3aa56df51e6e3cc42e7314c67a88a363be4c6975b2f"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-Loader.git", branch: "master"
 
@@ -12,13 +12,13 @@ class VulkanLoader < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "292a3d3410c05aa2c507bd2bedf4f1e1d662a37fcf076536588fe01fa33fa5cd"
-    sha256 arm64_monterey: "f112da957c32d435fe388a64ea39076be13d9561a15b6abeecde1e44de58d9b3"
-    sha256 arm64_big_sur:  "2ebfa4d5a1fb25821d9ec5ece469c6b3c5b4e458be0098a6ba63d91d584f8d69"
-    sha256 ventura:        "941069930fb8f281b3492b36aed4c428691d9e5ddac0c4a7a2fe49976f8276a0"
-    sha256 monterey:       "50e555cd35ac92a020716a39763fb94860f48794b1ddf14501e802132a711a81"
-    sha256 big_sur:        "d1f7734f9e0c852fd5aee10aafb00bd01636ef149ea98d9a3cc8ca5b2a338216"
-    sha256 x86_64_linux:   "a4bfd2a9bdb345710ffe6f9398e7d4435d6e5688b1d341a030381e10243e553d"
+    sha256 arm64_ventura:  "3934a7709e455dc7e3ad4ff3cdff78d9ee760f97be02e69a6150d6b4c2ed3b26"
+    sha256 arm64_monterey: "3eee6f368267921f8e2d124fc5a09bbe71c661594cef9d5249c3ada43a83a2e9"
+    sha256 arm64_big_sur:  "ea1045d2291a973583a6144497f6643e2fe870fd1f8ca55e8e1befef5626dcd2"
+    sha256 ventura:        "427345ed9ccf260eb5eae57ebcdb831d6337743c6d0b24e6e60a7c7b0658e0da"
+    sha256 monterey:       "d4258e4c77875f6fe7138933c984268e27547d06f862dafc17e8c66aeb796e78"
+    sha256 big_sur:        "4adcd80da4cbf4e1df5adcb3a5c40c2f03caba164398aa49b2d76a2e1c48d6eb"
+    sha256 x86_64_linux:   "a4fe31a6c62091f41221ce47c29fbb6dbcb820524dda157996e5966b46b51fd7"
   end
 
   depends_on "cmake" => :build

@@ -1,19 +1,24 @@
 class Steampipe < Formula
   desc "Use SQL to instantly query your cloud services"
   homepage "https://steampipe.io/"
-  url "https://ghproxy.com/https://github.com/turbot/steampipe/archive/refs/tags/v0.19.2.tar.gz"
-  sha256 "2adbbf7142f2e785c2671db577f9da49e549791cd9b6d15dad0e9d3bce5329cd"
+  url "https://ghproxy.com/https://github.com/turbot/steampipe/archive/refs/tags/v0.19.3.tar.gz"
+  sha256 "bf6e76fcbd1c26e0c47bf7ef212932ab39ea883a8eed30620289b5a0f7ded543"
   license "AGPL-3.0-only"
   head "https://github.com/turbot/steampipe.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ac45388b249241acbc1ad625ace1c2385f39fba3815b256251fa5ad95631a471"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "149d42482fef02ea9aee166bdd1d3aaa4e27396057208d2bbffddc396ed1570c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "146f7e75ae4e2ea1118fd601b0480bb6bd6b96ff5bdfe9a88f013458553abf7f"
-    sha256 cellar: :any_skip_relocation, ventura:        "3c1e1331874317a8b00a1a4b5df686081365fe463a34ba55d682732684b1969f"
-    sha256 cellar: :any_skip_relocation, monterey:       "f217188a193a9ae14e874fcc21e9f67e42f3a29f074727c76ef7b1fa569675f0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "633ae2db2b968fdddc008de823d976bd8c9c48348506f7fd57aa4a2aedc440cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1dffeb5fa59659e69424da67988f0ea64a8b2639208c9de78ed31c61566d11c4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e5cd745ff8fd4fa654b843d4f80e9c360d28cce6c86d835c5eab67bbc1a92ce"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9af1eab3c37464e50f1098da755fdc50b8af5b3d1df1c22961567556807b05c9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ac1acea4102b6cae4c5a98e3c74fbd1c8b33d60aa6fe8086738c387c930038a8"
+    sha256 cellar: :any_skip_relocation, ventura:        "06f192e4c519df5ca84ff5e427c0299ee58eab9aa8471eb91a7a0aba89dd6f5f"
+    sha256 cellar: :any_skip_relocation, monterey:       "572e772efb46b0948e498d14c1ed88efbcd959a08072137451830d828cc5c847"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7037f26226306ec56d546a0c6799f65b1e7f78da032b0cc2322a6fdf9f41907a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39ea0e980ed64dbc43bd139bb6a4984765a2088cc40aaa79d522a0bd6fce4069"
   end
 
   depends_on "go" => :build

@@ -1,20 +1,29 @@
 class GitAnnex < Formula
   desc "Manage files with git without checking in file contents"
   homepage "https://git-annex.branchable.com/"
-  url "https://hackage.haskell.org/package/git-annex-10.20230329/git-annex-10.20230329.tar.gz"
-  sha256 "a19f7dec686f016772f115c74d5981e8a6f0bab0a9a534fea36299f499f002e6"
   license all_of: ["AGPL-3.0-or-later", "BSD-2-Clause", "BSD-3-Clause",
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
   head "git://git-annex.branchable.com/", branch: "master"
 
+  stable do
+    url "https://hackage.haskell.org/package/git-annex-10.20230329/git-annex-10.20230329.tar.gz"
+    sha256 "a19f7dec686f016772f115c74d5981e8a6f0bab0a9a534fea36299f499f002e6"
+
+    # git-annex.cabal: Prevent building with unix-compat 0.7
+    # Remove with `stable` block on next release.
+    # http://source.git-annex.branchable.com/?p=source.git;a=commitdiff;h=2b40fa51d32a1103d3d56e422a60024cf9270b7b
+    patch :DATA
+  end
+
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d3f448ee5adc2252fd0bbc38e16df2b52ef86c9af4dcd03d61d0848093ce388b"
-    sha256 cellar: :any,                 arm64_monterey: "6bf7efbad707fcd1c773944c5575ea08ee73717a99883ae11e4ec00fc5d04c08"
-    sha256 cellar: :any,                 arm64_big_sur:  "c10cca3db35270b2233773ed9895f0f43136c25130ee1451970b5149a8a07fb1"
-    sha256 cellar: :any,                 ventura:        "debd7c91fb7b63edf2f3d2fbf188814b71fba2e67460bbf48b6b89b7c00fce4c"
-    sha256 cellar: :any,                 monterey:       "eec8f0221d9351fb8c546df8e19c859b81c6b7dfa66c1fb2368c69516c5c893d"
-    sha256 cellar: :any,                 big_sur:        "5e3812cb1f065e7ac6ca3c9705b00387ea1e28004f41c946f9bcb99466ef032f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f043d8f6fc85b6b07dacb3e6a955623971814a61632699cb0f486d61b7e4d481"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "1f6a79aad0b51380feaf71af121475a65eddab2aa6331ef277eea620502190f2"
+    sha256 cellar: :any,                 arm64_monterey: "08adb3c3fb47d97dab03c67c57ab6f28691eae0368d0bd774c5f6704e0eb12d3"
+    sha256 cellar: :any,                 arm64_big_sur:  "2e5f3b435a5a1660522d138ba8f33dbdd9ca0018eb34018fdce759c6bfb21755"
+    sha256 cellar: :any,                 ventura:        "fff6589f8cd80f3a04fafad8c13ca1092c0bbcac56600f37b3c99d7e04fc6585"
+    sha256 cellar: :any,                 monterey:       "f0a39acacc4fe865e7ef4c38acfe3ea37f41839b06a1e3a7dacfcbe331bf885f"
+    sha256 cellar: :any,                 big_sur:        "e7b10a2be6866ca559235be4b27454860ca248df8a2c72cca93fb8980680692e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "637acdbd3c040467e6be7c6d92123daf842d3c4eb92964d240750d18f79b08c5"
   end
 
   depends_on "cabal-install" => :build
@@ -41,13 +50,6 @@ class GitAnnex < Formula
       packages: ./*.cabal
                 homebrew/bloomfilter/
     EOS
-
-    # Fix "Could not find module ‘System.PosixCompat.User’".
-    # The module was removed in unix-compat-0.7; see:
-    #   https://hackage.haskell.org/package/unix-compat-0.7/changelog
-    # Reported upstream at
-    #   https://git-annex.branchable.com/bugs/System.PosixCompat.User_removed_in_unix-compat-0.7/
-    inreplace "git-annex.cabal", "unix-compat (>= 0.5)", "unix-compat (>= 0.5 && < 0.7)"
 
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args, "--flags=+S3"
@@ -87,3 +89,25 @@ class GitAnnex < Formula
     system "git", "annex", "uninit"
   end
 end
+
+__END__
+--- a/git-annex.cabal
++++ b/git-annex.cabal
+@@ -294,7 +294,7 @@ source-repository head
+   location: git://git-annex.branchable.com/
+ 
+ custom-setup
+-  Setup-Depends: base (>= 4.11.1.0 && < 5.0), split, unix-compat, 
++  Setup-Depends: base (>= 4.11.1.0 && < 5.0), split, unix-compat (< 0.7), 
+     filepath, exceptions, bytestring, IfElse, data-default,
+     filepath-bytestring (>= 1.4.2.1.4),
+     process (>= 1.6.3),
+@@ -318,7 +318,7 @@ Executable git-annex
+    case-insensitive,
+    random,
+    dlist,
+-   unix-compat (>= 0.5),
++   unix-compat (>= 0.5 && < 0.7),
+    SafeSemaphore,
+    async,
+    directory (>= 1.2.7.0),

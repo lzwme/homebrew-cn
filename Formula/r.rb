@@ -11,14 +11,14 @@ class R < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "8fddffaa4abdecb4b26f268bb5c8e8fe9143233c339875fdc3aab1e83f88f7ec"
-    sha256 arm64_monterey: "9ce3e455299d7b7f47346095048d5e52d2771518246705e3d40ec7ddaf6ceb01"
-    sha256 arm64_big_sur:  "1452f23a94bd96024b4562ce3d612f7bc995e9d62c8e26d9137f811fea13c358"
-    sha256 ventura:        "dcc35767b27f6f913964967a0c7d0f44f985444a490e68449b9840b335a14f9f"
-    sha256 monterey:       "8ebf1e9538cdc150027109b2ef696d493a6b8f872477e721c1ff68cb92af1326"
-    sha256 big_sur:        "1f0e25cbf70b64a30a274eb6a97b13d1f4e110b75fded05ba3fa3e22aa8335a9"
-    sha256 x86_64_linux:   "004ae103b311a569b9c541578ba3614089cf7873d2783d19a3115679c6ba9624"
+    rebuild 2
+    sha256 arm64_ventura:  "1aaac6bb43b269782761b3907dc933321bd6d75409ba8c3e2a83f447e34b3c8f"
+    sha256 arm64_monterey: "959da346785758951f801909e643af01c90457f19c3317aca31260a6182c4b8f"
+    sha256 arm64_big_sur:  "a5dab7bcf27e3786be0987b54526f0f6920427d5015dc3fc677f03ba8518a20e"
+    sha256 ventura:        "503142af4cd4cbf11e85e55ce2c3f38a8ceb57d0be3395851d8b9474c3a61049"
+    sha256 monterey:       "99775b7e6f83d77adab4bf9b58f11e0fa9e14584e948f5388b82870a5511a04c"
+    sha256 big_sur:        "960359af6bac95c9b18d58ded947b35f6b7c1dd67365df7147a4321b1217998b"
+    sha256 x86_64_linux:   "bd74ea85ecaeebc71abf1376492bdd1084ae37a43eb65e295d82f8b0dd1c8212"
   end
 
   depends_on "pkg-config" => :build
@@ -142,7 +142,9 @@ class R < Formula
     site_library = HOMEBREW_PREFIX/"lib/R"/short_version/"site-library"
     site_library.mkpath
     touch site_library/".keepme"
-    ln_s site_library, lib/"R/site-library"
+    site_library_cellar = lib/"R/site-library"
+    site_library_cellar.unlink if site_library_cellar.exist?
+    site_library_cellar.parent.install_symlink site_library
   end
 
   test do

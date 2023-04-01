@@ -15,13 +15,14 @@ class NewrelicInfraAgent < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "01cf96f1bc17d9f04aa74bffb0f41e440f721180aabf57a6440f77fd222cebdd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bbe48c0ccdd91995490e019c9d5e5b98beda9939920e26c897a707892a57b841"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6e568af32c012cd3aeaa171b36b998743796cc2e0f39ded6268ffd7974bb93f9"
-    sha256 cellar: :any_skip_relocation, ventura:        "d72ffe6fe5d9cc93fa5f1c286920aefe7b7833d2896223cd4a26f8c587a28767"
-    sha256 cellar: :any_skip_relocation, monterey:       "a57838e78c21278d92065a2b51f73ff036cf8c381e04515d1c8a700ba3460752"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cd50de82d27cb8ed25afaf201e94138df9f2d6a191dec1b1a27dc38510a20878"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3813e58ae7b531e2eb89e2fe483e21e35ff5b83e95c714d8cb08106f6851c20"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c57648dd2baf6e496f9e07fb8cb51ac87b227b91d23c0f2cf6db37a94fb7a7fc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f435c8fc093d36d77906abe20e1bfb02bd5a9f7493f09f0e7d8df358de3ffeda"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d910831d5da166f7bd9be7c73c508cb98732e0a21ad791661aac81614697d68e"
+    sha256 cellar: :any_skip_relocation, ventura:        "400d4c07a2566a5085128c9c312917e0a1f5842bdfeca40d6e5cd80bc9955a91"
+    sha256 cellar: :any_skip_relocation, monterey:       "6145e60d2bb4c974bafe1fe85296247ce37b11f68e3710a72a4a907dff4a7057"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c6c048ed99349dedfa76f2e6324c9b72696815be1da39abb9421e2e667a6aa45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6dca7fd1b53555b1029679a1ea63149b7a978159e7a90be2c44f97f1ebe64c13"
   end
 
   depends_on "go" => :build
@@ -47,7 +48,7 @@ class NewrelicInfraAgent < Formula
   end
 
   service do
-    run [bin/"newrelic-infra-service", "-config", etc/"newrelic-infra/newrelic-infra.yml"]
+    run [opt_bin/"newrelic-infra-service", "-config", etc/"newrelic-infra/newrelic-infra.yml"]
     log_path var/"log/newrelic-infra/newrelic-infra.log"
     error_log_path var/"log/newrelic-infra/newrelic-infra.stderr.log"
   end
