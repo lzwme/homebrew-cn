@@ -3,19 +3,19 @@ class Fava < Formula
 
   desc "Web interface for the double-entry bookkeeping software Beancount"
   homepage "https://beancount.github.io/fava/"
-  url "https://files.pythonhosted.org/packages/10/b0/90e1e3eecc839299cc84b91bbd0a646061bf160dfb5064727c9142f3547b/fava-1.24.1.tar.gz"
-  sha256 "63d4c3c46cba0e364e14d8d8feeb6e54eaf2e0222727a138406285f8a2b4228d"
+  url "https://files.pythonhosted.org/packages/82/79/2c5d6675fe08e1db77687b7bd799fc7f8d9f2f6a3266d1dfecf377b633f4/fava-1.24.3.tar.gz"
+  sha256 "78ad09330bbe58ddecea2b02b75db80aef5f8ed2fb2e2837fa689c7b8164c305"
   license "MIT"
   head "https://github.com/beancount/fava.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "406738149a2f34466ff1cd46bf8d922766e311bd42752218d900eafd1724efc4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8863b3525b9f19ad6484e62747d00779baaaf3057c4fb0299e50e0da51fb0b73"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "eaf215047520575c417ef6b25454fc96c151956457e21362c99f5c0d2bf1a8ee"
-    sha256 cellar: :any_skip_relocation, ventura:        "1fcd862bddfb3995330c20ab2c41ba62c9e752d7cbccac7797e317b29a0f33e3"
-    sha256 cellar: :any_skip_relocation, monterey:       "1c608cbba351daf92469a68f74cdf3639b46c0b180a65e41aa1736735ffbc68d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3039d6afdc33751a80c45b3bc9d82dcd83a973a3a51ef8fd983104cf6a6cf5e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3af06d6715c869e6178d8c584899708cee2c7b8455e0dd2fc9961ac66373f84"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ce99c5894c5d14bd2ba374cd9d582a7f9445d25fc6e59f62f85f710973ba950"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5acbd0f91bd2a38751eb04d1642b6e34eb83d677f30e782e26d92d1ce5ece56b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "525bc67f315b1358656f2c9f96e35af3e2c6931738d80061e49b5356adda6ad9"
+    sha256 cellar: :any_skip_relocation, ventura:        "5bbb482eea5b5579926704a82b55d7232b32fc448432c62241f4ed1494910223"
+    sha256 cellar: :any_skip_relocation, monterey:       "de8e6f0ed23df12ebfd8c7cff6eebdce726dcd16dc85d1459d58650fd2fe5f84"
+    sha256 cellar: :any_skip_relocation, big_sur:        "11ee5774b5e5c829ca94c972ab9e78252ff0788327ad93e6fad99dc417e2de44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be335c55a3cf42b53ced7a21935250cc170374bd9fb75a706b6fd46a0e419bbd"
   end
 
   depends_on "python@3.11"
@@ -94,13 +94,13 @@ class Fava < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/48/8b/4a1902d7522127b95e8afdf4270f5b22609d5c3644bc776661d6f0cec2e7/google-api-python-client-2.82.0.tar.gz"
-    sha256 "22933a821bd46055b29fdf82aab96b13a9e33ff082dec2fc51cfc2efad9b0eea"
+    url "https://files.pythonhosted.org/packages/cb/e9/a0e59f0bf6b41d9d38ab7b1bf24032a344e7a65abb67539498a9219dd6eb/google-api-python-client-2.83.0.tar.gz"
+    sha256 "d07509f1b2d2b2427363b454db996f7a15e1751a48cfcaf28427050560dd51cf"
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/88/12/788458d2772746820dd8a6064a81e7c287f283c837e65b424b7f049c651d/google-auth-2.16.3.tar.gz"
-    sha256 "611779ce33a3aee265b94b74d4bb8c188f33010f5814761250a0ebbde94cc745"
+    url "https://files.pythonhosted.org/packages/c8/ee/a028aa9ce069fe78d3cf8a86020d366fdb65b54fc33a9e317b4eafa1445e/google-auth-2.17.1.tar.gz"
+    sha256 "8f379b46bad381ad2a0b989dfb0c13ad28d3c2a79f27348213f8946a1d15d55a"
   end
 
   resource "google-auth-httplib2" do

@@ -3,12 +3,12 @@ require "language/node"
 class Aicommits < Formula
   desc "Writes your git commit messages for you with AI"
   homepage "https://github.com/Nutlope/aicommits"
-  url "https://registry.npmjs.org/aicommits/-/aicommits-1.6.0.tgz"
-  sha256 "b024d8a5bf9aa447e40c1beb7e3ad99c40c5c999b9d984c908850acf02fa6f5e"
+  url "https://registry.npmjs.org/aicommits/-/aicommits-1.8.0.tgz"
+  sha256 "d47d038f15963b32bf538f387c2b73c73cdb3ecf9fa08cc18496643c95e4ed62"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "bbd2e5028e73d3d249a100e680c6cad07b541f2ffdea87a6456441048315c13f"
+    sha256 cellar: :any_skip_relocation, all: "6bfea9df727ddaea14ab8713f099ee2fcd072d37884179ad2f80523ebbee9f24"
   end
 
   depends_on "node"
@@ -22,7 +22,7 @@ class Aicommits < Formula
     assert_match "The current directory must be a Git repository!", shell_output("#{bin}/aicommits", 1)
 
     system "git", "init"
-    assert_match "No staged changes found. Make sure to stage your changes with `git add`.",
+    assert_match "No staged changes found. Stage your changes manually, or automatically stage all changes with the",
       shell_output("#{bin}/aicommits", 1)
     touch "test.txt"
     system "git", "add", "test.txt"

@@ -3,7 +3,7 @@ class Shc < Formula
   homepage "https://neurobin.github.io/shc"
   url "https://ghproxy.com/https://github.com/neurobin/shc/archive/refs/tags/4.0.3.tar.gz"
   sha256 "7d7fa6a9f5f53d607ab851d739ae3d3b99ca86e2cb1425a6cab9299f673aee16"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
   head "https://github.com/neurobin/shc.git", branch: "master"
 
   bottle do

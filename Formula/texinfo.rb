@@ -7,13 +7,14 @@ class Texinfo < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "85b1f14167d0b7eaf65a5be395f5d3a75d27e3182243c775d9cd1929c96a36df"
-    sha256 arm64_monterey: "054152111b0a771c4da4b68c02515e0177e5b5e958392446fd35336088cf7378"
-    sha256 arm64_big_sur:  "b1dbf9951b12ad2dcd7d7737cfb1e4eb3415f0c8f2b2c9c3f7d347838cb69543"
-    sha256 ventura:        "236e5a03b4e41c71e08d3e7f8be76ff8ac2fdde19fcae03bae9b16e77d5ce432"
-    sha256 monterey:       "21884b42af2e3e3018242c3334c180dcb5642798833bda3b4168d7a59a5c2407"
-    sha256 big_sur:        "f6745b887f400b3031d9c5e051b7f1f946c3c3063f2ed3fd8f8d7ef72bd2f7ff"
-    sha256 x86_64_linux:   "93a9e18b2b736e5c78eb7f2b8708982e2ad8ca5861af07b2d179e8514115a0bc"
+    rebuild 1
+    sha256 arm64_ventura:  "c3c103a9c5913ccc168665018c361c029a2610ad14334134ccc5402535cb9d31"
+    sha256 arm64_monterey: "cc2adcdfb26c8ae4610e90d0ca8df1c7b95dd6c47b4602dde5c97979d16b8ca6"
+    sha256 arm64_big_sur:  "d090847ae2a75ae30277f51765807d6053b8ca04e2a071480d08cbc12ab0678b"
+    sha256 ventura:        "10697319f8e34f5b703561638883f8f19cd2715971d5ef61bdbcef328b3c57c7"
+    sha256 monterey:       "0e64682b8f0b350e96f378e273467aedce6ff1acda145d52b16f7deb4e9c42f0"
+    sha256 big_sur:        "60f5b22d7030b793db0a2ccb135359da3302e949b9c50ceb769d77de36a9a225"
+    sha256 x86_64_linux:   "934fbc5a432eef316efbfae33efe5235294e67e750950e98b0dc28d51b14c989"
   end
 
   uses_from_macos "ncurses"
@@ -34,6 +35,14 @@ class Texinfo < Formula
                           "--prefix=#{prefix}"
     system "make", "install"
     doc.install Dir["doc/refcard/txirefcard*"]
+  end
+
+  def post_install
+    info_dir = HOMEBREW_PREFIX/"share/info/dir"
+    info_dir.delete if info_dir.exist?
+    info_dir.dirname.glob("*.info") do |f|
+      quiet_system("#{bin}/install-info", "--quiet", f, info_dir)
+    end
   end
 
   test do
