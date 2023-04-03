@@ -1,20 +1,19 @@
 class Texinfo < Formula
   desc "Official documentation format of the GNU project"
   homepage "https://www.gnu.org/software/texinfo/"
-  url "https://ftp.gnu.org/gnu/texinfo/texinfo-7.0.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/texinfo/texinfo-7.0.2.tar.xz"
-  sha256 "f211ec3261383e1a89e4555a93b9d017fe807b9c3992fb2dff4871dae6da54ad"
+  url "https://ftp.gnu.org/gnu/texinfo/texinfo-7.0.3.tar.xz"
+  mirror "https://ftpmirror.gnu.org/texinfo/texinfo-7.0.3.tar.xz"
+  sha256 "74b420d09d7f528e84f97aa330f0dd69a98a6053e7a4e01767eed115038807bf"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "c3c103a9c5913ccc168665018c361c029a2610ad14334134ccc5402535cb9d31"
-    sha256 arm64_monterey: "cc2adcdfb26c8ae4610e90d0ca8df1c7b95dd6c47b4602dde5c97979d16b8ca6"
-    sha256 arm64_big_sur:  "d090847ae2a75ae30277f51765807d6053b8ca04e2a071480d08cbc12ab0678b"
-    sha256 ventura:        "10697319f8e34f5b703561638883f8f19cd2715971d5ef61bdbcef328b3c57c7"
-    sha256 monterey:       "0e64682b8f0b350e96f378e273467aedce6ff1acda145d52b16f7deb4e9c42f0"
-    sha256 big_sur:        "60f5b22d7030b793db0a2ccb135359da3302e949b9c50ceb769d77de36a9a225"
-    sha256 x86_64_linux:   "934fbc5a432eef316efbfae33efe5235294e67e750950e98b0dc28d51b14c989"
+    sha256 arm64_ventura:  "203015ceba1fbf1093a5c011e19fbabe6b1dca05ad045e19758e11c6a7e9877c"
+    sha256 arm64_monterey: "00989e546b03f7c1166d8fec31c138216d73ef736e30a89769dae381f8d05f45"
+    sha256 arm64_big_sur:  "484f330054be1bbc8ff6d06a497d48e765f95eec7937dfb3658b8b3d86ac21d7"
+    sha256 ventura:        "c94c964e9df885f6782b2d6e8abbc6ff6b2ec7a9106fb07c706294422226dbdf"
+    sha256 monterey:       "b31a476410d5171a4424e3423f788f9e1438b7c2d1d79761562221b44a449c14"
+    sha256 big_sur:        "1596b0ef4f2e713712d39c704688b5138ca68c4f8000be1866903f88859eb610"
+    sha256 x86_64_linux:   "fcf98f2adea8e5d4347516345023398105476a73a87ebd47015c9030f08d6ea9"
   end
 
   uses_from_macos "ncurses"

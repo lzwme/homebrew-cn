@@ -1,8 +1,8 @@
 class Prestd < Formula
   desc "Simplify and accelerate development on any Postgres application, existing or new"
   homepage "https://github.com/prest/prest"
-  url "https://ghproxy.com/https://github.com/prest/prest/archive/v1.2.2.tar.gz"
-  sha256 "203f764f945c10bb2cc18e115fa17f799f8d7ca9291fb64ed720df94bd52c1a0"
+  url "https://ghproxy.com/https://github.com/prest/prest/archive/v1.2.3.tar.gz"
+  sha256 "7d44aa11f1e6a617675a5361846f244261c7455c2f9bf4e739a9ca36be1316ac"
   license "MIT"
   head "https://github.com/prest/prest.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Prestd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa63745029f68c9ed407beb06f1a3c6f1f16cf8b00cf2b6e1d998587bdb55670"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f608e465a7ad71d459ab899d65aeac077832db09134cf956bc9f94d7e81cd75d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e881a69f652036e1275361f3e3fbe89b5f36a370af948ebfd0a09fa638ea726b"
-    sha256 cellar: :any_skip_relocation, ventura:        "d513f1ec3078e85ef335d7f9af09088adb292d0a196460c69f4f36d6b4d00bcd"
-    sha256 cellar: :any_skip_relocation, monterey:       "1eec6ca97946b7de2452ab29b8d124af2253fbfc48d83fb61e08dc202a0156bf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c3d82b941cc1e59e82564f625a29396ab7885011913fd4f38a67bfd9a6b16d9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab858855157c36cd1faa04eb83a7762c23cc41cc86954be501ee21bc8c6be3ec"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e458e3bc43e7df19126f3c45c77b466334fed6c1ac876c7d8b1c289e1adbcdef"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "39b5ef48b31068bdd8d71067e3bb4a56b53653d2ce4686a1008a69511a7e460a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b64c1417be897c67b116bb79e142fc85119efc137e51134942a7d1701dc2c055"
+    sha256 cellar: :any_skip_relocation, ventura:        "b115f8dda78bfb1d547a493a835528e7ad3f51b3846efe52ecc92348aaabc2dd"
+    sha256 cellar: :any_skip_relocation, monterey:       "513148459e12b66aa2bad897b8564fea3d36c293030cd7a9b7db22fc8d2f46e7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e40513d28ff92b6621361f97e312eb7a165d16f303c76bbc0c958c27bb4ef669"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1fb3d56658d598701d2e82a9e9094900943a649c2343eb5210250e796562af32"
   end
 
   depends_on "go" => :build

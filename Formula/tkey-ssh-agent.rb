@@ -5,6 +5,11 @@ class TkeySshAgent < Formula
   sha256 "d15fc7f556548951989abf6973374f71e039028202e8cad4b70f79539da00aff"
   license "GPL-2.0-only"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ca5eea17cc5b9ce656512723fd0f3264618f2691c6c9f99a203e53c6d906fbf"
