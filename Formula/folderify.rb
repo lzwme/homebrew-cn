@@ -1,63 +1,38 @@
 class Folderify < Formula
-  include Language::Python::Virtualenv
-
   desc "Generate pixel-perfect macOS folder icons in the native style"
   homepage "https://github.com/lgarron/folderify"
-  url "https://files.pythonhosted.org/packages/4c/18/a4d6491e4f64cbff4821cefa9fec1cfcb3048e19fc806d7e9af876654b94/folderify-2.4.0.tar.gz"
-  sha256 "daf1f5c64d59528d61d5a223d9ad2ba8f0e10ffd0d9cc2286ccd65b7fa516c24"
+  url "https://ghproxy.com/https://github.com/lgarron/folderify/archive/refs/tags/v3.0.7.tar.gz"
+  sha256 "ef35c574533b2cdf3a6427c2c3610614a59048f2936295d2323a8fecf5852e43"
   license "MIT"
   head "https://github.com/lgarron/folderify.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a2b1e1d23423c152acb05f34a26cd5e6c5480116bc63a2868cef9659f1a42837"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c42d0a7a535288bd8479f5071e8a973e8027bcaa259437667b20c50a2c4b9285"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5bb8a9116732629a9698c44f2f533560a325dcd7a1eadbfbc7473598e07889da"
-    sha256 cellar: :any_skip_relocation, ventura:        "d6e1ee0027d66edcb184e0f8653d7bcea684dd511881c5bab69876d053dff8a6"
-    sha256 cellar: :any_skip_relocation, monterey:       "d6e1ee0027d66edcb184e0f8653d7bcea684dd511881c5bab69876d053dff8a6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1a714d0ecddc788eae807a62b55dcd6f7d5d864a3b0da91ba3446dfb5d6b9337"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "56fcb79eb80e762364270f237bd43c80704f7a3c5334a96d8a55693e56cad5bb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4a712442c599ee275dc77fb1a9e852baacd358a5ea932304ef9da6b7ae8b8652"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a527edaf52ca1474e0490db9a3ba2c1aa5f896ad76e4b1d86dd061244f053b7c"
+    sha256 cellar: :any_skip_relocation, ventura:        "876498f71f8882ea64664cc337de821fe8ee81023bdb493f04eadec6bc137547"
+    sha256 cellar: :any_skip_relocation, monterey:       "a1ddcf8aaf2eeb3119b5e21ffb9a87f8ad76d7371cc24c401b47f2c8b531b65f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1bef42c8b34680436a2313eebfd84f03816c50eca3939baee7918efb0baaf0bf"
   end
 
+  depends_on "rust" => :build
   depends_on xcode: :build
   depends_on "imagemagick"
   depends_on :macos
-  depends_on "python@3.11"
-
-  resource "osxiconutils" do
-    url "https://github.com/sveinbjornt/osxiconutils.git",
-        revision: "d3b43f1dd5e1e8ff60d2dbb4df4e872388d2cd10"
-  end
-
-  def python3
-    "python3.11"
-  end
 
   def install
-    venv = virtualenv_create(libexec, python3, system_site_packages: false)
-    venv.pip_install_and_link buildpath
+    system "cargo", "install", *std_cargo_args
 
-    # Replace bundled pre-built `seticon` with one we built ourselves.
-    resource("osxiconutils").stage do
-      xcodebuild "-arch", Hardware::CPU.arch,
-                 "-parallelizeTargets",
-                 "-project", "osxiconutils.xcodeproj",
-                 "-target", "seticon",
-                 "-configuration", "Release",
-                 "CONFIGURATION_BUILD_DIR=build",
-                 "SYMROOT=."
-
-      (libexec/Language::Python.site_packages(python3)/"folderify/lib").install "build/seticon"
-    end
+    generate_completions_from_executable(bin/"folderify", "--completions")
   end
 
   test do
-    # Copies an example icon
-    site_packages = libexec/Language::Python.site_packages(python3)
-    cp(
-      "#{site_packages}/folderify/GenericFolderIcon.Yosemite.iconset/icon_16x16.png",
-      "icon.png",
-    )
+    # Write an example icon to a file.
+    File.write("test.svg", '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="40" fill="transparent" stroke="black" stroke-width="20" /></svg>')
+
     # folderify applies the test icon to a folder
-    system bin/"folderify", "icon.png", testpath.to_s
+    system bin/"folderify", "test.svg", testpath.to_s
     # Tests for the presence of the file icon
     assert_predicate testpath / "Icon\r", :exist?
   end
