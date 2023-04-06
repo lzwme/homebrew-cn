@@ -7,16 +7,17 @@ class ElanInit < Formula
   head "https://github.com/leanprover/elan.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, ventura:      "d075ba86ef1a1bf8030d50c10ec9e6963ba774d82ed0e0012f5377db76033727"
-    sha256 cellar: :any_skip_relocation, monterey:     "a68263b2e47ea890c3494fbab60501d547ca2d7921993828b67ed3fd8deacf37"
-    sha256 cellar: :any_skip_relocation, big_sur:      "83b6e3e898f5256f01a55a5b55928d5223c1ae48046526564e3cfc27deb12e70"
-    sha256 cellar: :any_skip_relocation, catalina:     "d10145a7f26ff7d328e613092670a59cbf28c1d172c365636c749eaff08238b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9d562c8d7257a8d6109c251c7b92f17dccb53fa55317b5c1d1a50d1d235431f1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b2432326f07e61667f39867c44eac824557379d262c6c140d1600ee0dd937f6d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e52f1a84a49c534d5ff41b9c24416879d66cb55b31fa7d2fd935ce6d566a31a6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7f778e3306dc0fcbe633acddb7c710808568686e85c41b0699b295f5e627ab0b"
+    sha256 cellar: :any_skip_relocation, ventura:        "65c94821a4ce233c8b19e3363f021eb085048db398cb91d41a20daa3991813d9"
+    sha256 cellar: :any_skip_relocation, monterey:       "36355bf225628abd9a8397e718a58f36b7b89f2b14b2ec590dd3b6a832575a7c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "aeb5d93076e2db77f6494a0eb64ce3b7e029f309ba26e2a53b7af68248daf2d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9dd9d9be003ac6a6f9c72ce9f0db18066ea68bcfd87185c01eed0cc5ad9189c"
   end
 
   depends_on "rust" => :build
-  # elan-init will run on arm64 Macs, but will fetch Leans that are x86_64.
-  depends_on arch: :x86_64
   depends_on "coreutils"
   depends_on "gmp"
 
@@ -37,20 +38,20 @@ class ElanInit < Formula
   end
 
   test do
-    system bin/"elan-init", "-y"
+    ENV["ELAN_HOME"] = testpath/".elan"
+
+    system bin/"elan-init", "-y", "--default-toolchain=leanprover/lean4:stable"
     (testpath/"hello.lean").write <<~EOS
       def id' {α : Type} (x : α) : α := x
 
-      inductive tree (α : Type) : Type
-      | node : α → list tree → tree
+      inductive tree {α : Type} : Type
+      | node : α → List tree → tree
 
-      example (a b : Prop) : a ∧ b -> b ∧ a :=
-      begin
-          intro h, cases h,
-          split, repeat { assumption }
-      end
+      example (a b : Prop) : a ∧ b -> b ∧ a := by
+          intro h; cases h with
+          | intro ha hb => constructor; exact hb; exact ha
     EOS
     system bin/"lean", testpath/"hello.lean"
-    system bin/"leanpkg", "help"
+    system bin/"lake", "help"
   end
 end

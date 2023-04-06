@@ -10,7 +10,7 @@ class Geckodriver < Formula
     # Get long hash via `https://hg.mozilla.org/mozilla-central/rev/<commit-short-hash>`
     hg_revision = "a80e5fd61076eda50fbf755f90bd30440ad12cc7"
     url "https://hg.mozilla.org/mozilla-central/archive/#{hg_revision}.zip/testing/geckodriver/"
-    version "0.32.2"
+    version "0.33.0"
     sha256 "0cc493ff77bb809e6925edd28baf6237b8e60950b7d3d2632847339bd1384b3e"
 
     resource "webdriver" do
@@ -35,14 +35,13 @@ class Geckodriver < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6d0c45744dd60f777fb02273ba1159f384193f9b9a106d954b08d000f02a661c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f88e4127fe60f9b42399087dc20fa2b62efd6461e24ec3c1b0868fca999446b8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "07044048ac6710f4bfb5acdc4bd352e4ec1661c83cba1bbcb3dfcb28aad66db2"
-    sha256 cellar: :any_skip_relocation, ventura:        "2b031372408a42a372fdacbabd913ecfe0f3a9de6eb2585e44c7d37c71b6792b"
-    sha256 cellar: :any_skip_relocation, monterey:       "77421d81b6d70aed1809c7634aae1b613fa246b4cc49b654a0de34d68713bc2b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "35927c34e0fd9201ec23c18a22e532afd62312bcf74a105d8ee4b8edf88d5007"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c76adde0bb554e6c3e08391d1edf8006ba271c6f65345b0f79d71bb4631da5d0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "58e395855e57f06d764c3def6d6d097258e02635a71ab3966192738cc5eecffa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4cf155d33ba2b30186ed870e1413e37b6074d28053439d9072170f109328fcb7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "68f157c4a44d2015c691e83162c2f99616b806787059f89efa576b95cff83301"
+    sha256 cellar: :any_skip_relocation, ventura:        "0f8893249096660b0a31c030e402fd19971a41445e0a6b2435c27672c604d510"
+    sha256 cellar: :any_skip_relocation, monterey:       "a38132365353a169d06c78d167aec5cd2d366e7300302f516aa3c1205eab1cf3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "520359529fe9f90c5fb182acf27421c39603bf7f43756ada27632e34c90538e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "193f488a95a9ac7ec532f3284a619173208fc26da0fe2bd5140a5bdf418c6aff"
   end
 
   depends_on "rust" => :build

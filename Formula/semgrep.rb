@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/returntocorp/semgrep.git",
-      tag:      "v1.16.0",
-      revision: "b9b85d91da32114f8356366204186b7e09f3fbac"
+      tag:      "v1.17.0",
+      revision: "913262ea7355337d259f871dfe09cdd12f29cf15"
   license "LGPL-2.1-only"
   head "https://github.com/returntocorp/semgrep.git", branch: "develop"
 
@@ -15,13 +15,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "02e8d9197ac862f66b1a618950071517861bfac437fffcf08503747c68473f1f"
-    sha256 cellar: :any, arm64_monterey: "4c686c4d0e6736a1128bfd9d18db8749d03764ff9cf735f0ed76cda67d08aca9"
-    sha256 cellar: :any, arm64_big_sur:  "83141c0be48695e5bd3efa3fb24c9dd3a98899d9a27ee135375490cde74526f9"
-    sha256 cellar: :any, ventura:        "52419ccb33b7ddff0484637936eb1a29485d03489fcb672e175268d619081734"
-    sha256 cellar: :any, monterey:       "c0c2fc587070808d15a488e4956b8e11d2ac5f54a6341797a9c07423aca4c609"
-    sha256 cellar: :any, big_sur:        "60e058fefb918e91c613f8e6d03ec4bdc7816a887f1fb8b438d391f272176801"
-    sha256               x86_64_linux:   "f13266b3798669c52ffd1b3c649075f6164edf82bdf6585257e5d2484f7b7f6b"
+    sha256 cellar: :any, arm64_ventura:  "78fe197757dd1872d5f4a8a2eb59788f5ece171f12ed245b35f0f86b0d7ab9a4"
+    sha256 cellar: :any, arm64_monterey: "bf239e52d4af3158e58a9243786b1438bf619900e76c97c530886b500e521b76"
+    sha256 cellar: :any, arm64_big_sur:  "777f1d94ec25b2e8c97578b22ccfd8c7e1910290e086db78b1ba85982441baa5"
+    sha256 cellar: :any, ventura:        "376f74c583a41499c1109a3eaefaad3d35528e76ddb2027eccf8ec759209aa46"
+    sha256 cellar: :any, monterey:       "d7a98081ea9f7794e8156720233ae3e7ed4e25904d7a512cefc4cd6b8d8fb646"
+    sha256 cellar: :any, big_sur:        "692377b91144820f56957cbdc4a33cb65a862644b3c5174d52094fe443852252"
+    sha256               x86_64_linux:   "312344ff9080f64e94af7a15c06c2ba052bbd743e87b7ed58ce42dbca4a77e4f"
   end
 
   depends_on "cmake" => :build
