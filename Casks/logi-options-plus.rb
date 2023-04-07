@@ -1,5 +1,5 @@
 cask "logi-options-plus" do
-  version "1.34.0.376143"
+  version "1.36.0.387585"
   sha256 :no_check
 
   url "https://download01.logi.com/web/ftp/pub/techsupport/optionsplus/logioptionsplus_installer.zip",
@@ -18,9 +18,19 @@ cask "logi-options-plus" do
   auto_updates true
   depends_on macos: ">= :catalina"
 
-  installer manual: "logioptionsplus_installer.app"
+  # see https://prosupport.logi.com/hc/en-us/articles/6046882446359
+  installer script: {
+    executable: "logioptionsplus_installer.app/Contents/MacOS/logioptionsplus_installer",
+    args:       ["--quiet"],
+    sudo:       true,
+  }
 
-  uninstall launchctl: [
+  uninstall script:    [
+              executable: "logioptionsplus_installer.app/Contents/MacOS/logioptionsplus_installer",
+              args:       ["--quiet", "--uninstall"],
+              sudo:       true,
+            ],
+            launchctl: [
               "com.logi.cp-dev-mgr",
               "com.logi.optionsplus",
               "com.logi.optionsplus.agent",

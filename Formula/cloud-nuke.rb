@@ -1,19 +1,19 @@
 class CloudNuke < Formula
   desc "CLI tool to nuke (delete) cloud resources"
   homepage "https://gruntwork.io/"
-  url "https://ghproxy.com/https://github.com/gruntwork-io/cloud-nuke/archive/v0.29.0.tar.gz"
-  sha256 "8441b0c81ffaa3355692f4249fd095a9478ab20fb542d838798525752f32552d"
+  url "https://ghproxy.com/https://github.com/gruntwork-io/cloud-nuke/archive/v0.29.1.tar.gz"
+  sha256 "8dc5b93003c627fa6ab06b151881cf8153c14d132b3494c4132edacde28bb932"
   license "MIT"
   head "https://github.com/gruntwork-io/cloud-nuke.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dbd246ea70d9ce74ef2ee8b7551ae0b19ff1d2c7c1258104da7081e8be7ae503"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "49d7b6403d22bfe1204e7e17c03f583017e622068823f43b55d318ca96228d51"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d7fa0cf660a96ded3f8d5a23ca94fa08c9d4490471d3d4ce05cb4fb3b2233609"
-    sha256 cellar: :any_skip_relocation, ventura:        "8019a46d6b4b8427dbca12c869155a3979f371b59724f41b4ef8b38a230b3ba6"
-    sha256 cellar: :any_skip_relocation, monterey:       "ea8c532baa52f1b8da74e62acc2999bf7f4fc1d2c9f7f2182842c26f8e94d754"
-    sha256 cellar: :any_skip_relocation, big_sur:        "14b2a79077de605c5d8d601e3d1088f3802248ba67eba01158dce112e390fe4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf1a22c1eebb321bc5e173e59fe9fc4ac079a12be44c317dce0d07f98306678f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "74692cdb80bd45ebcd678480859439b2a9bb5b53a53abf0ed237dcec3f2f2ccb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3cc7815ab19947cbf52b08fa6d41319cff1ed2259686570f71f5097f46d2a66c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "386994b1f27847f173fdfb5bb4ac7aedcd0028b11c884e276c8b127e24d0c319"
+    sha256 cellar: :any_skip_relocation, ventura:        "aab62846fbd6db0eb7ce9e6c9c3cfc0201fba0b311bde354a00e27dfdc18939f"
+    sha256 cellar: :any_skip_relocation, monterey:       "422122121fc6f0fab11e48e604c62252bf5e285be7ae3b2efb143f7db7e57d46"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f669852f9d6a063ab00fd23363e8f63b7d3b40cf63d02dcffb7a762860d18611"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f92262865894cc6305b29059ecc027d2a9768a1c0eb2d1156fc96df979259ab7"
   end
 
   depends_on "go" => :build

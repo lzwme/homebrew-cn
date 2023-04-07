@@ -8,13 +8,14 @@ class Dnstwist < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d46d210b536e7ec7677061b763f348f24718e23386ef6ab2cc3e5ecf6ab0a4bc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6424b50c4da3e725acf38d60143b578001537660c64178a8d1002ba2e6a56fd4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "988596be35b8886f3c8ad89b754a272b72542e82cec26a3d67b1f28af91c4837"
-    sha256 cellar: :any_skip_relocation, ventura:        "b2d7c151d5132e5c1e764f4abca507da2c1916151a8c58b712c76f195a645223"
-    sha256 cellar: :any_skip_relocation, monterey:       "16d3f88caab085745124df362abd9d74381c8eb8ca4674859980c6dfcb300870"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5cd7cbf5f2a38940f6878ea86b8cc10df32c39d5ba804b9df4b1cdacc8f62f0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26e51e902c65cd03b5d000dd759c15e8611ef11e812c2bd43abfe2018e5dedc7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d58ba6a4d6d134c0b97fdb9fc21b7d4b57c0aee60e6d54be852e28a9ad0ef880"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fce753a1421adfe83a4d63077588b118399c6d143b3550438b8303107b6bc001"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "52a0ef191abca153d13373f148ffc48eb386d1fecc753fe246fd9b0b5120800f"
+    sha256 cellar: :any_skip_relocation, ventura:        "8cf1d70900e13d15bb7fd83ae7094f843d2f7687363c7d15ec1bf898bedf658d"
+    sha256 cellar: :any_skip_relocation, monterey:       "af6e61024e79bfc0cda20382984092c0f160066986a5430ec409070bfd4f7aaa"
+    sha256 cellar: :any_skip_relocation, big_sur:        "04289558a62e98cd8a81596c4fd94ce54c6254f4c60d62bbba75a553b94f1144"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dedbbc4fb6dcc80b6140c6e65c480c4816aa2a59ea5e21a832fc25c624ecd01b"
   end
 
   depends_on "geoip"
@@ -133,7 +134,7 @@ class Dnstwist < Formula
   end
 
   test do
-    output = shell_output("#{bin}/dnstwist -rw --lsh ssdeep brew.sh 2>&1")
+    output = shell_output("#{bin}/dnstwist --registered --lsh ssdeep brew.sh 2>&1")
 
     assert_match "brew.sh", output
     assert_match "NS:ns1.dnsimple.com", output
