@@ -3,19 +3,19 @@ require "language/node"
 class Serverless < Formula
   desc "Build applications with serverless architectures"
   homepage "https://www.serverless.com/"
-  url "https://ghproxy.com/https://github.com/serverless/serverless/archive/v3.30.0.tar.gz"
-  sha256 "c143cf0f778bb4a8be2e9312348c87f498c21005454d4a6f9706ed7de4bc7641"
+  url "https://ghproxy.com/https://github.com/serverless/serverless/archive/v3.30.1.tar.gz"
+  sha256 "b75f16dd62faa348a0e082e62bd70ac8a9ef64179ff83c1f5bccc87b2a222a51"
   license "MIT"
   head "https://github.com/serverless/serverless.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2d31cfaf7bf47ae14969ae64ed5d507779c62258979cace7f6484389df32c4d8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2d31cfaf7bf47ae14969ae64ed5d507779c62258979cace7f6484389df32c4d8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2d31cfaf7bf47ae14969ae64ed5d507779c62258979cace7f6484389df32c4d8"
-    sha256 cellar: :any_skip_relocation, ventura:        "a1ea12dd84244cadf289938dc2dd36510fa6125bafecd29a3a64b33e7e4836fc"
-    sha256 cellar: :any_skip_relocation, monterey:       "a1ea12dd84244cadf289938dc2dd36510fa6125bafecd29a3a64b33e7e4836fc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a1ea12dd84244cadf289938dc2dd36510fa6125bafecd29a3a64b33e7e4836fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1ac4f4a3f2c14f749b63dc07eb3f9acf13ca8f3421a90041cb975d6dc0b44af"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ceff19e2338c86d8b4e998ed8238958b7d6d8fd8e0986ece3f60939319956ef3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ceff19e2338c86d8b4e998ed8238958b7d6d8fd8e0986ece3f60939319956ef3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ceff19e2338c86d8b4e998ed8238958b7d6d8fd8e0986ece3f60939319956ef3"
+    sha256 cellar: :any_skip_relocation, ventura:        "3ba8435c86a1a2292deeeddd1977cad47804357715babe47f09e8e1a15ddcd16"
+    sha256 cellar: :any_skip_relocation, monterey:       "3ba8435c86a1a2292deeeddd1977cad47804357715babe47f09e8e1a15ddcd16"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3ba8435c86a1a2292deeeddd1977cad47804357715babe47f09e8e1a15ddcd16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c3a97e50eda328ce07d65c6d993e22186c8a511ae6269e5424201b578cee1b7"
   end
 
   depends_on "node"
