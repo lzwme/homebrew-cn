@@ -1,18 +1,18 @@
 class Latexindent < Formula
   desc "Add indentation to LaTeX files"
   homepage "https://latexindentpl.readthedocs.io"
-  url "https://ghproxy.com/https://github.com/cmhughes/latexindent.pl/archive/V3.20.4.tar.gz"
-  sha256 "0635489cfcb680493abb879998d43438b30c3e7bf0799cb1fa2b6354e5dfb1b9"
+  url "https://ghproxy.com/https://github.com/cmhughes/latexindent.pl/archive/V3.20.5.tar.gz"
+  sha256 "0e635346c5b6e67e41617e2db3933964f31a51059dbfee3b77b60465b3784953"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e468df1e1da08f08380c4821573dac56d595fb2c59996bca61f4eca598c79c88"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "84fccdb828fa2eb008645672b6edec2f237b3b1213faa48a41a47d21ef7df30c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9a433b612228b0b32bada3509781b4e77d99b9cb479a6ce08559e0f6bfe7b6b1"
-    sha256 cellar: :any_skip_relocation, ventura:        "f27cdcdd0bb9a89b67f86b8f2d77de427942cd3a05c26f2b994b4f9c09f56deb"
-    sha256 cellar: :any_skip_relocation, monterey:       "dcc788588081c38b038af442a5d99aa6753879bcb4dbf1754e54ec67ac0b0572"
-    sha256 cellar: :any_skip_relocation, big_sur:        "78b3429cbd448780707f5764970151d4dd78079477fa6270aaf0619db395afb9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61959152a393b0dacb5fcb91d2172dd6a53fab944112fa263fc9e84169fd5ae1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a8eff4896de40b25c71c8ada807debb709610741773c5a75989d5be4ece9f42b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d726e7b0aef49dbff598cfef348950c42748586f4285e03886aeaacd317d0f54"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4b856f030d85dd934c4f5092b271837e62457208edd55b72e260498d94dd6cd2"
+    sha256 cellar: :any_skip_relocation, ventura:        "3b38215d47f124e2b4c1cea973ad5be1de3219c7c50e926f2cc2327b8a9c35ab"
+    sha256 cellar: :any_skip_relocation, monterey:       "c8cd1793d48490c356c634f2367c5c319dae8cb01010c9d58586e37688788623"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5eef6b9862d4b6b129662f9a6bcfc99851b74602a7ff5cea63e2952dcb98ab96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd62107d17f9056d7c609363f782135bcc8aa71fdb72ac028437077383de54ab"
   end
 
   depends_on "perl"
@@ -70,8 +70,8 @@ class Latexindent < Formula
   end
 
   resource "Log::Dispatch" do
-    url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Log-Dispatch-2.70.tar.gz"
-    sha256 "a3d91cc52467d3a3c6683103f3df4472d71e405a45f553289448713ac4293f21"
+    url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Log-Dispatch-2.71.tar.gz"
+    sha256 "9d60d9648c35ce2754731eb4deb7f05809ece1bd633b74d74795aed9ec732570"
   end
 
   resource "Log::Log4perl" do
@@ -170,8 +170,8 @@ class Latexindent < Formula
   end
 
   resource "YAML::Tiny" do
-    url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/YAML-Tiny-1.73.tar.gz"
-    sha256 "bc315fa12e8f1e3ee5e2f430d90b708a5dc7e47c867dba8dce3a6b8fbe257744"
+    url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/YAML-Tiny-1.74.tar.gz"
+    sha256 "7b38ca9f5d3ce24230a6b8bdc1f47f5b2db348e7f7f9666c26f5955636e33d6c"
   end
 
   resource "namespace::autoclean" do

@@ -3,12 +3,12 @@ require "language/node"
 class Aicommits < Formula
   desc "Writes your git commit messages for you with AI"
   homepage "https://github.com/Nutlope/aicommits"
-  url "https://registry.npmjs.org/aicommits/-/aicommits-1.8.1.tgz"
-  sha256 "a595b0451e358b4d140a62de49b9ff00fe7d607ccef3f2d9f866cf411c915ed0"
+  url "https://registry.npmjs.org/aicommits/-/aicommits-1.9.0.tgz"
+  sha256 "ef9dd617d931668db3e7d0fa7fe0ac260fd55e3cf6876315756ae874ac7cb389"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1bfae9925da54ad60154b08e60f0ef5251325470d0c0f11c01a027179f2f5264"
+    sha256 cellar: :any_skip_relocation, all: "9528bd1e20233155cf99389995e145c57099b0ac82525bc85125d3a9b349ea81"
   end
 
   depends_on "node"

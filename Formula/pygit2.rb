@@ -1,7 +1,6 @@
 class Pygit2 < Formula
   desc "Bindings to the libgit2 shared library"
   homepage "https://github.com/libgit2/pygit2"
-  # TODO: Check if we can use unversioned `libgit2` at version bump.
   url "https://files.pythonhosted.org/packages/7f/00/075f21ae474fcef679ba1f71b9ecd534493792b508b1919021fb2be67eba/pygit2-1.12.0.tar.gz"
   sha256 "e9440d08665e35278989939590a53f37a938eada4f9446844930aa2ee30d73be"
   license "GPL-2.0-only" => { with: "GCC-exception-2.0" }

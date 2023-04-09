@@ -1,29 +1,20 @@
 class GitAnnex < Formula
   desc "Manage files with git without checking in file contents"
   homepage "https://git-annex.branchable.com/"
+  url "https://hackage.haskell.org/package/git-annex-10.20230407/git-annex-10.20230407.tar.gz"
+  sha256 "a001e86eae10bd32f8a896a61fcb2f655e6a678db8d5095282ab57d64704a0a4"
   license all_of: ["AGPL-3.0-or-later", "BSD-2-Clause", "BSD-3-Clause",
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
   head "git://git-annex.branchable.com/", branch: "master"
 
-  stable do
-    url "https://hackage.haskell.org/package/git-annex-10.20230329/git-annex-10.20230329.tar.gz"
-    sha256 "a19f7dec686f016772f115c74d5981e8a6f0bab0a9a534fea36299f499f002e6"
-
-    # git-annex.cabal: Prevent building with unix-compat 0.7
-    # Remove with `stable` block on next release.
-    # http://source.git-annex.branchable.com/?p=source.git;a=commitdiff;h=2b40fa51d32a1103d3d56e422a60024cf9270b7b
-    patch :DATA
-  end
-
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "1f6a79aad0b51380feaf71af121475a65eddab2aa6331ef277eea620502190f2"
-    sha256 cellar: :any,                 arm64_monterey: "08adb3c3fb47d97dab03c67c57ab6f28691eae0368d0bd774c5f6704e0eb12d3"
-    sha256 cellar: :any,                 arm64_big_sur:  "2e5f3b435a5a1660522d138ba8f33dbdd9ca0018eb34018fdce759c6bfb21755"
-    sha256 cellar: :any,                 ventura:        "fff6589f8cd80f3a04fafad8c13ca1092c0bbcac56600f37b3c99d7e04fc6585"
-    sha256 cellar: :any,                 monterey:       "f0a39acacc4fe865e7ef4c38acfe3ea37f41839b06a1e3a7dacfcbe331bf885f"
-    sha256 cellar: :any,                 big_sur:        "e7b10a2be6866ca559235be4b27454860ca248df8a2c72cca93fb8980680692e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "637acdbd3c040467e6be7c6d92123daf842d3c4eb92964d240750d18f79b08c5"
+    sha256 cellar: :any,                 arm64_ventura:  "1650b737ba5c51c978f879fcec3d3eb9d86183d5ddf594c3afea06992b45939a"
+    sha256 cellar: :any,                 arm64_monterey: "735c91a0ec524bfe119ee4af6fd3b65967419ef429b5992e2e2de0ada0ecdaea"
+    sha256 cellar: :any,                 arm64_big_sur:  "f05f03dc4f4831dc0a8ce8cc211c716827e9ac5c5c1b71c00c2681a4cbb60526"
+    sha256 cellar: :any,                 ventura:        "5bbf6306795a79b27ea07c3e51ff7cdf05db746fcccee2a7a757ba8a640f8295"
+    sha256 cellar: :any,                 monterey:       "7324d59c95efe1b3988f26c9e7c5ed48ad468500f857ca278cda7d78eabcef25"
+    sha256 cellar: :any,                 big_sur:        "1891492be8121e1d5f1b5640a67fdc4647a674b871244ce5f3155671993c2823"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f201e35bb40ceb905f0439fc46f3657aed08645e9dcb8af389ccc658c4188326"
   end
 
   depends_on "cabal-install" => :build
@@ -89,25 +80,3 @@ class GitAnnex < Formula
     system "git", "annex", "uninit"
   end
 end
-
-__END__
---- a/git-annex.cabal
-+++ b/git-annex.cabal
-@@ -294,7 +294,7 @@ source-repository head
-   location: git://git-annex.branchable.com/
- 
- custom-setup
--  Setup-Depends: base (>= 4.11.1.0 && < 5.0), split, unix-compat, 
-+  Setup-Depends: base (>= 4.11.1.0 && < 5.0), split, unix-compat (< 0.7), 
-     filepath, exceptions, bytestring, IfElse, data-default,
-     filepath-bytestring (>= 1.4.2.1.4),
-     process (>= 1.6.3),
-@@ -318,7 +318,7 @@ Executable git-annex
-    case-insensitive,
-    random,
-    dlist,
--   unix-compat (>= 0.5),
-+   unix-compat (>= 0.5 && < 0.7),
-    SafeSemaphore,
-    async,
-    directory (>= 1.2.7.0),
