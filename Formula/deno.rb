@@ -1,19 +1,19 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.land/"
-  url "https://ghproxy.com/https://github.com/denoland/deno/releases/download/v1.32.2/deno_src.tar.gz"
-  sha256 "9ff0ee1451bf4b543f43ccde6a8d1a53ead8650c1331a92fffee60180900af09"
+  url "https://ghproxy.com/https://github.com/denoland/deno/releases/download/v1.32.3/deno_src.tar.gz"
+  sha256 "c0ccbf75108a3f1853bdac9956829fb4aa1eb090c3896f631a09c1c1d53b108c"
   license "MIT"
   head "https://github.com/denoland/deno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c63a4dfac040fdfe57871c11fdcc089701cf174c6654bdfdfc71611abe0cf441"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "001a8b18bee1170f0cec617ea09aa377456b4008d44aa3627cf1fb6b24e459f2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "42301d14ed3211081797b840f61352610c844247ea11255056932c8fcebc2033"
-    sha256 cellar: :any_skip_relocation, ventura:        "e439fdbee20c71c3705f1a1c46f9b21fc01e4d7a491f0808a8996102996cd208"
-    sha256 cellar: :any_skip_relocation, monterey:       "2ccf13ef269560e9f102e9badd4f03a5b704add441ef24fd69d51ed88c7427b2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7f53eba1bd0d36c93c986ca662686f8106e2e41a543fae6b13a6e7f57283b2a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "abf183dbd5e62479c4e827e6cd4bd149d9bd68a1b53cfd5f37c00edb3c7ef34c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bfe53a80045ef0fa8e33ec1331e46bb546b70a4984a3e21abd816d6240092e35"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bd9497840efd599d3a132e7de54a186a95250461cf622eb4e0e26c5af1f0b8c2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "60f79f8b927925c17260bf7ebd174d1d65e94c845a0d81f915ab2629118b8fc4"
+    sha256 cellar: :any_skip_relocation, ventura:        "0e5017bc68785d96d9b7012c876372d0d784135788336a535922e47c9df54b77"
+    sha256 cellar: :any_skip_relocation, monterey:       "d221548a6b7644592199a0d0cb049d76ffaf8986cf6c4825c5c2ebe9ad19e0f2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d792a8f40455364e84bf755f2953817eade0348199e425a1c4063903db3fc0eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "51b0c3005b1d02280d1d2c3d245734288212d3d961f68a85198ad5065b3009ad"
   end
 
   depends_on "llvm" => :build

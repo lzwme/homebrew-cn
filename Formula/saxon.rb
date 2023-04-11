@@ -9,7 +9,6 @@ class Saxon < Formula
   livecheck do
     url "https://ghproxy.com/https://raw.githubusercontent.com/Saxonica/Saxon-HE/main/README.md"
     regex(/latest\s+release\s+of\s+Saxon-HE\s+is\s+\[?(v?(\d+(?:\.\d+)*))\]?/im)
-    strategy :page_match
   end
 
   bottle do

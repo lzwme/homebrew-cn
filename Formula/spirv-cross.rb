@@ -12,9 +12,8 @@ class SpirvCross < Formula
   version_scheme 1
 
   livecheck do
-    url :homepage
-    strategy :git
-    regex(/^sdk-(\d+\.\d+\.\d+\.\d+)$/i)
+    url :stable
+    regex(/^sdk[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do

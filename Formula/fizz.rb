@@ -1,19 +1,19 @@
 class Fizz < Formula
   desc "C++14 implementation of the TLS-1.3 standard"
   homepage "https://github.com/facebookincubator/fizz"
-  url "https://ghproxy.com/https://github.com/facebookincubator/fizz/releases/download/v2023.04.03.00/fizz-v2023.04.03.00.tar.gz"
-  sha256 "ab0279796faaa2fae443efb2e8258d7a78944528240102f032ff471b3054e797"
+  url "https://ghproxy.com/https://github.com/facebookincubator/fizz/releases/download/v2023.04.10.00/fizz-v2023.04.10.00.tar.gz"
+  sha256 "04052742ed94e216704114cff90f92b36f181705ea2bdecb4c34e15eee230895"
   license "BSD-3-Clause"
   head "https://github.com/facebookincubator/fizz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ef871154975b163b0871d47d25b41fb5b1638f3949c045e0237d09d83e5b7a22"
-    sha256 cellar: :any,                 arm64_monterey: "65680ce69a2a455bd7efa434c3e0475c9fcba2f2630100f2a8653663a89e299c"
-    sha256 cellar: :any,                 arm64_big_sur:  "9ed16fbd02c9640c9dcae3e3ab54e916e0195c0923e7c145c7672c7b8876211d"
-    sha256 cellar: :any,                 ventura:        "005e43193c9fab73362b5a7bf62486e9d8e9fd22b5dfe8d502a62fbc24d3d470"
-    sha256 cellar: :any,                 monterey:       "653bfd7e018566704c2e6402683c0079080f0e2a8db11f748929ce8c3c799a30"
-    sha256 cellar: :any,                 big_sur:        "4a64dbd988e570362fbe404f7daefc260678e5a1c2492694e85a447a29eebb6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "815aee4e2803cd7cfb9015df24af60e21375c6c46cac840f5095b85bf80e821b"
+    sha256 cellar: :any,                 arm64_ventura:  "f3d1c7f4d032dabc1070d4c5bdbc5c44519a64439c576c4fb1a9d59c83850c89"
+    sha256 cellar: :any,                 arm64_monterey: "1a935d813048f011d1e281823898ce7090eaa5f62ed1a3fd301add2f47ca0644"
+    sha256 cellar: :any,                 arm64_big_sur:  "a44f7a7042e854741fdedc212706ae3d845775fa996616726c18b259e25a2ee5"
+    sha256 cellar: :any,                 ventura:        "24865ae56810ec096dc1d7d57ce1dd20f3a2c4f9f71f75d476e4ad4996f9492e"
+    sha256 cellar: :any,                 monterey:       "025fef26ee444f07e02ba90ea7c82668c29ac9027d9d94dc9f3615585156e8b4"
+    sha256 cellar: :any,                 big_sur:        "f47663107858fdc89cc31247c3b1ed4178a30aacf4623dd09d49daf897b95b29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3a415415c4f7d21685dc40db9b6b9a02fd32308243fc1f5187672bb11f8d4e6"
   end
 
   depends_on "cmake" => :build
