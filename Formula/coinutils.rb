@@ -1,8 +1,8 @@
 class Coinutils < Formula
   desc "COIN-OR utilities"
   homepage "https://github.com/coin-or/CoinUtils"
-  url "https://ghproxy.com/https://github.com/coin-or/CoinUtils/archive/releases/2.11.6.tar.gz"
-  sha256 "6ea31d5214f7eb27fa3ffb2bdad7ec96499dd2aaaeb4a7d0abd90ef852fc79ca"
+  url "https://ghproxy.com/https://github.com/coin-or/CoinUtils/archive/releases/2.11.8.tar.gz"
+  sha256 "202e347d1c1d2ccf5355e3c2874a4dc16500226c180b00d6677f464d80be337e"
   license "EPL-2.0"
   head "https://github.com/coin-or/CoinUtils.git", branch: "master"
 
@@ -12,14 +12,13 @@ class Coinutils < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4f0abffd41926e53bfa6800c137fe67258e719b44a81dec61936af141f903c15"
-    sha256 cellar: :any,                 arm64_monterey: "6944f390ccf74b973faa8dcbc13ff97f6cb8cbeffc3b1c9c415ae24bdeb8b6b5"
-    sha256 cellar: :any,                 arm64_big_sur:  "dd06dd58ad6291f329683d8f96a389c216a41331280a24a0efa61eea6c91f7b8"
-    sha256 cellar: :any,                 ventura:        "d83cb501b2a741332eae9ff42c0fe3d48625d1480c1d59b688ecbd9cae20418a"
-    sha256 cellar: :any,                 monterey:       "a03146ddb16bf6c58ccdbc1da737bd8e797ee1fdf5886dba42239f1c0102cfff"
-    sha256 cellar: :any,                 big_sur:        "d848773a9c4464d789d67fb24130d6fc2b810345f893fef3e59afa486b329559"
-    sha256 cellar: :any,                 catalina:       "194e7c44c08a3078b190887d13327d847062bb38fe89f65d3066b605b533bf1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81564519b5159afdda85183c450f6429e340955dff15fab2dbc7f92354ccf5ef"
+    sha256 cellar: :any,                 arm64_ventura:  "fa292a656cbf3cae85c2d212b27ae33f0f5b12cfa30e2f77ac57049a100b91e6"
+    sha256 cellar: :any,                 arm64_monterey: "0443c24aeb4925f014b58d540d45beea6c3ecf09a6bdba4f3b172422d786bb98"
+    sha256 cellar: :any,                 arm64_big_sur:  "ebb61ba658209aaa30e5752030952e2ee41e4ce7d836bdb76e1d8b3ef855ad0c"
+    sha256 cellar: :any,                 ventura:        "2b90c3c0523fc2ecd3195485f092625bad579d4e689ba661b67a190e13243419"
+    sha256 cellar: :any,                 monterey:       "c76b88eb171244ef9c0bc04585da9ef5f07ce3fdc18292d419051d2ce2abb6e2"
+    sha256 cellar: :any,                 big_sur:        "1fbac90ddbada711cc4833fcf00a2010f8914cdce4c30a1ad0fe5ebf1357e3c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc0bf098f772f94bb5b7b9e290d981bab049c9e432503b467d22c8a6d1dda3a0"
   end
 
   depends_on "pkg-config" => :build
@@ -44,11 +43,8 @@ class Coinutils < Formula
     ]
     system "./configure", *args
     system "make"
-
     # Deparallelize due to error 1: "mkdir: #{include}/coinutils/coin: File exists."
-    # https://github.com/coin-or/Clp/issues/109
-    ENV.deparallelize
-    system "make", "install"
+    ENV.deparallelize { system "make", "install" }
   end
 
   test do

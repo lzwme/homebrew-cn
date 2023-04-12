@@ -3,19 +3,19 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://conan.io"
-  url "https://files.pythonhosted.org/packages/a3/f9/72e76cce420505d3514a0601f6cbb01339bb304118aa01b61b1f9bc71714/conan-2.0.3.tar.gz"
-  sha256 "508f97b04c72fe15510ae6c109e084f3755938addef2b84e853a79b36a1b21e3"
+  url "https://files.pythonhosted.org/packages/20/f4/cf3035f9010390f5e4c524bf4bfba7001263c91f464e64bb7720f36e9fcc/conan-2.0.4.tar.gz"
+  sha256 "9100f92171669d310e945da669ec108f6e1794fbc3e06f6a50b4e6902682b522"
   license "MIT"
   head "https://github.com/conan-io/conan.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0a45989ea1fa1f90c7c09a79065a599095d9556f2067f6d0fff59699a91602a4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d0daaf74e082747fd68934be45eaa5473bc04847c09dead1254500eb2c8bb257"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1b007fa45ade3bde6ed783b419f734fbbf9d19dadb47204831f2b5e17f610d32"
-    sha256 cellar: :any_skip_relocation, ventura:        "13309f0ca0077972793dfa4f6aeaa1f4c44480469fbd994d8fd91776fc9b0543"
-    sha256 cellar: :any_skip_relocation, monterey:       "a9c7a69e1f2922dc34f4c89ae56a9a3e0da91727acf3890c57ded83d1d9c0b24"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d72036278f84ce4fbf1b62709bb63dc3bea7025f2d5845c24129deb28c6e7a83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c408a56e409a42ca7c2d65fd23f853cd71e6bd1868e1606b2d8d8f3a221a06d0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "80e25d8921784debeb791c7455c38c5e4c8c24d59e869a69371df0d9084a929a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b2ff9e6db0fe6ee90c209831eab8b219a4baafe598c8d876865fc0310e087e45"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "551951983f8cdc59dec9c66824fbbdbf599116b345dc560a53950fc4566708eb"
+    sha256 cellar: :any_skip_relocation, ventura:        "a45148b7008c2db8f006518344f15ad0147aed08163ca60e36af5709dccc08b2"
+    sha256 cellar: :any_skip_relocation, monterey:       "fcfafffad30e15175af20ff10f0e76c165a062d3a35fde36a6a8149bde3cc7f3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9a7a16f04ae9c56635fb101f4a20d7617280807f1e725d697f99f683aeffb241"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f31fba840487da8f163b4b88de8da7066f48afd32d9b441943cf4f89602c758"
   end
 
   depends_on "pkg-config" => :build

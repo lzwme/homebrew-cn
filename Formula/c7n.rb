@@ -3,8 +3,8 @@ class C7n < Formula
 
   desc "Rules engine for cloud security, cost optimization, and governance"
   homepage "https://github.com/cloud-custodian/cloud-custodian"
-  url "https://ghproxy.com/https://github.com/cloud-custodian/cloud-custodian/archive/0.9.24.0.tar.gz"
-  sha256 "ea8a0f834b6afc1eb1b55d09c0b534ccd754ea4870e14fdb03732041dcfa16b8"
+  url "https://ghproxy.com/https://github.com/cloud-custodian/cloud-custodian/archive/0.9.25.0.tar.gz"
+  sha256 "21ee74d62e116084b48aaad5442a81d1511c81b3d0c70e153a9827bb3bf40cbd"
   license "Apache-2.0"
 
   livecheck do
@@ -13,13 +13,13 @@ class C7n < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d7ca1bbcbd2df9acb00edaa16ca8107427c70f11667754bbb7f0e400fd40a933"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "89cc5ba9f0381c0d5fecfcc295d2d4bdd449ae664ca57cc328bc294b474c2d68"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "eafbec3c415a716fc5f4dd7d66f95b60645936c185ded4c6e2480f55d2815f01"
-    sha256 cellar: :any_skip_relocation, ventura:        "91392bbc48c455e299ed0bee39736ec1b61a79b443938818a66ce03c023e8524"
-    sha256 cellar: :any_skip_relocation, monterey:       "3f87372ca197cedcd54b5128106fb3614fa189de81c26167f91ff364b4f7d55f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "339951a8feb804ab25c8396c5f618b3f70d6a4bb108685424baf12985402c3dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ba3ae7288565fcf946f046085ea6a6276548d50e6085b5b19f5107c77ce7fb0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c058c82d012c7cfe73e2d393dbfb4f44161bece89fa20e37255415a4bdfad11f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "69fe6a7a91bfa39ee9faf07d259d7b2e87925e2ec939babfaf9ea74f276fd32c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cfd9395a38a7385538862440eefa1399c9707e863dc2d59bc2abaa508b0a53df"
+    sha256 cellar: :any_skip_relocation, ventura:        "bdb95241373a9bce2e925013d183abd6e91f2ab291661b9c08b1364ece6c10f5"
+    sha256 cellar: :any_skip_relocation, monterey:       "ba2b6b61dfc42df3069b0842e183bae024a0aa5b9a596f1624b1259ffbec18cc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a652f5d9226561ddfe53d5c92f3c07d7e95f4bbea84f27737cdda53b75dd3927"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ebd15e9cda3062773bf8830a626c6cfb6102c44c16c87dbe3128386a1c02a97"
   end
 
   depends_on "python-tabulate"

@@ -1,19 +1,19 @@
 class Cloudflared < Formula
   desc "Cloudflare Tunnel client (formerly Argo Tunnel)"
   homepage "https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/tunnel-guide"
-  url "https://ghproxy.com/https://github.com/cloudflare/cloudflared/archive/refs/tags/2023.3.1.tar.gz"
-  sha256 "cdd0f02fc4170842c8210db2b700bad88d8a7b5d00fb8f7336073737f11fc718"
+  url "https://ghproxy.com/https://github.com/cloudflare/cloudflared/archive/refs/tags/2023.4.0.tar.gz"
+  sha256 "bdb9dea9e5f9bb6b66878bbd1243d8a57fc565ca946c5f9790c2f120400ffa9e"
   license "Apache-2.0"
   head "https://github.com/cloudflare/cloudflared.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f03a1947b83bbca6dda8942061bc90eb90bea2bf8356a7e4e6b30b69bc14dc9a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5df49d126220c8fe7c1a5a4aed94cc93c38c9f64c38a45288b958f2d56938b8f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f87bb9cd0d15c254e7cc9174a4276f8e78eee6849af4264151ae7e92d41c64b6"
-    sha256 cellar: :any_skip_relocation, ventura:        "c61d0cb380888a1a4bdeaf2f77bba693a33be84e521b553c69a41f76e338c4aa"
-    sha256 cellar: :any_skip_relocation, monterey:       "a19993e254b5b1bd2606a2c6cd9c099b4fd13ba3202d4c3c78eb81fc5fe2f443"
-    sha256 cellar: :any_skip_relocation, big_sur:        "eb4597f6a504c1b842c40f9e89e4a966c7fa7c076883e8aeff4ed4f36900450f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dddc13a6a0e7496ce513d35c08e477ef2d14675b353b345d25b81bbb2d4e3085"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8297a985fe94f85898363a3e5ed2111d2d4caf5180737de8ef1846253bc96692"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5548009aae379b9ea8a3d12e5e7c645a7174fca78868ee669eaeed3b95aa8f10"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3b407b5e91d9fec6350dba4f04aae5c70a091f70eda1bf8564db5d9e6c04f65a"
+    sha256 cellar: :any_skip_relocation, ventura:        "0f11c883ecd0ddd06c39f432c60b1f83df10041ade915f7f4b7cbf973822dba0"
+    sha256 cellar: :any_skip_relocation, monterey:       "6536e0b9081ac610fc7ce14a24a2c83e2976e941504e47096481e30658af8eea"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c2264192ede80f2ad2f9c42bed53be9fee115a794e51a1c46dc50889718ab730"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15f1d360a59a061b34dc88b82e36b4242b4fc432cc1711a4f8b9be978779126c"
   end
 
   # https://github.com/cloudflare/cloudflared/issues/888

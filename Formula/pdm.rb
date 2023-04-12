@@ -3,19 +3,19 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/a7/1c/d3480a95f56654ba1eee80edc22dd626256fca2d34133e895d94f122f544/pdm-2.5.1.tar.gz"
-  sha256 "fed986670b05e89e49d114acefe47120f013807ae555c1e6aad1b27d4c11dee4"
+  url "https://files.pythonhosted.org/packages/ca/e8/364617f053827c897d0ce83fa516573b8df11594626bebcc3e56ba8c7e88/pdm-2.5.2.tar.gz"
+  sha256 "308cbb7667cf8eefb1f600771e091ee01002f5455a8304ec04baa5db51ccbcc7"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a1c59e3614f0c1208166d939fa47824457034ae25e1436be47a6c51da8b8f5d0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e04122238fc0004b01b3e52b55341bce1871d82a08376f1cd65fc27a3ca32358"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4454cb67628c4dffc31a5fdee47a6a03fdcbe391b08b8b6863ab1083da6fbe4f"
-    sha256 cellar: :any_skip_relocation, ventura:        "59d1709af77666f9e13463ebaa4c092eea826b23f11cd1538ef797e39e7b0424"
-    sha256 cellar: :any_skip_relocation, monterey:       "4d8a9ebb1db7fca173bb4f1323b8d6e5734b3dbd2c7331bb6c86ac6b56209664"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4d6094c36039acc52606d353e748a154921d3723cc618fa9efd7d45f4d443139"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f9399dd906c502a1c29b17fbd69c7325496f18bb213ed9961b9f92ce295c76d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d555b67110d4940813233362e6c1b6a439773e54ab5a5351cd595861ba25938b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d8c9c0d8763a992628332f073f4e519e384dd5a80affbdefd6939ed53759781d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "60e7e96f644b24fccf4cdc053a450e7f0acf5e7a2ad9bb8c79506cde4d54eecf"
+    sha256 cellar: :any_skip_relocation, ventura:        "826860b601fe0aee08e781dbb87232333795a61ce9c629b23873c3f293b4ba2f"
+    sha256 cellar: :any_skip_relocation, monterey:       "65bd440ee4afde350e14bda02ee505518a948469d458024d37e7fb57ae1cb6d1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7ec48e9dcc866fa722b617233b3a3b3364b4c64c2cf2b17fca9bd212d539ff46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3100a49094f7d5ae8048ada7331dba95ad047b990fe30ed5e2254e26ee1b105b"
   end
 
   depends_on "pygments"

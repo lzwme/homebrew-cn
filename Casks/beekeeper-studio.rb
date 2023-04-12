@@ -1,9 +1,9 @@
 cask "beekeeper-studio" do
   arch arm: "-arm64"
 
-  version "3.8.9"
-  sha256 arm:   "4cab297c8bc8c02d8b0d86a99375e7490a23258b1fbb3345a1677124c3cf15cc",
-         intel: "fdf268c03aec9e61e0f812190d4a56a71c85f16067e7ce68ed331545c296fa2d"
+  version "3.9.6"
+  sha256 arm:   "83422e4d12f8ec351349a99efe53d5e70e387f5e2463cd792cdc1ef06c4ccde4",
+         intel: "30de5512358c1c00e77f1c4255550b39ea93bff301cfd7d94aae91f4ffb8f817"
 
   url "https://ghproxy.com/https://github.com/beekeeper-studio/beekeeper-studio/releases/download/v#{version}/Beekeeper-Studio-#{version}#{arch}.dmg",
       verified: "github.com/beekeeper-studio/beekeeper-studio/"
