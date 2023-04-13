@@ -3,8 +3,8 @@ class C7n < Formula
 
   desc "Rules engine for cloud security, cost optimization, and governance"
   homepage "https://github.com/cloud-custodian/cloud-custodian"
-  url "https://ghproxy.com/https://github.com/cloud-custodian/cloud-custodian/archive/0.9.25.0.tar.gz"
-  sha256 "21ee74d62e116084b48aaad5442a81d1511c81b3d0c70e153a9827bb3bf40cbd"
+  url "https://ghproxy.com/https://github.com/cloud-custodian/cloud-custodian/archive/0.9.26.0.tar.gz"
+  sha256 "27e0db225b396252a1e47e72c5eefc94f291d9bd76a19676d52d2eb85297572b"
   license "Apache-2.0"
 
   livecheck do
@@ -13,13 +13,13 @@ class C7n < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c058c82d012c7cfe73e2d393dbfb4f44161bece89fa20e37255415a4bdfad11f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "69fe6a7a91bfa39ee9faf07d259d7b2e87925e2ec939babfaf9ea74f276fd32c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cfd9395a38a7385538862440eefa1399c9707e863dc2d59bc2abaa508b0a53df"
-    sha256 cellar: :any_skip_relocation, ventura:        "bdb95241373a9bce2e925013d183abd6e91f2ab291661b9c08b1364ece6c10f5"
-    sha256 cellar: :any_skip_relocation, monterey:       "ba2b6b61dfc42df3069b0842e183bae024a0aa5b9a596f1624b1259ffbec18cc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a652f5d9226561ddfe53d5c92f3c07d7e95f4bbea84f27737cdda53b75dd3927"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ebd15e9cda3062773bf8830a626c6cfb6102c44c16c87dbe3128386a1c02a97"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d187aeae9e03251aeb802ae2ec0db7832e770f9a7cee2b1205596fc848f8708d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "303c2c3b84c6801900e9cfb7c9dc8b2879fd11667e201bedc2b582419967bce3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8339dad0b7ef6d588a9fddb13bd041591c8169d3698902393f8283a6c98e2d7c"
+    sha256 cellar: :any_skip_relocation, ventura:        "8dbe7d5142412549628123369f5da613a9539aa765560f9590ee247096748c6a"
+    sha256 cellar: :any_skip_relocation, monterey:       "ef0de2c048700f8a2fff395d5756d3ffddba7eecba36de696a732801ad89896c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a4732c3f141ec07a78b9b0a06c885dad475f5709d936d1066e4a25e9b142f793"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef401ea0f184639947b5ea0b42deb3b26d285edc3f6b4ed28af006e76d0e36d3"
   end
 
   depends_on "python-tabulate"
@@ -28,8 +28,8 @@ class C7n < Formula
   depends_on "six"
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/ac/43/b4ac2e533f86b96414a471589948da660925b95b50b1296bd25cd50c0e3e/argcomplete-2.1.1.tar.gz"
-    sha256 "72e08340852d32544459c0c19aad1b48aa2c3a96de8c6e5742456b4f538ca52f"
+    url "https://files.pythonhosted.org/packages/9d/50/e5b3e9824a387920c4b92870359c9f7dbf21a6cd6d3dff5bf4fd3b50237a/argcomplete-3.0.5.tar.gz"
+    sha256 "fe3ce77125f434a0dd1bffe5f4643e64126d5731ce8d173d36f62fa43d6eb6f7"
   end
 
   resource "attrs" do
@@ -38,23 +38,23 @@ class C7n < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/37/10/f606c9db4777f5d7298b7cf696842433d1581732e3b39a2f104e2d2ca9d0/boto3-1.26.92.tar.gz"
-    sha256 "401088934097260597495ae3c1842a59a701712a2d0e89443f8ede9161cd3806"
+    url "https://files.pythonhosted.org/packages/4a/1e/d036a30baaf70b07233a8a0d664c40e583721f203fe04a73e0ce3da30674/boto3-1.26.111.tar.gz"
+    sha256 "db8733f0a723c4548b6565d8665b876e93f28837d8d6bae40cc03a6e597cd6a6"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/f2/ab/76eb0fe55dfa93a226440b34dd3545b84ba5d9da0086092bbbc37b57fe2d/botocore-1.29.92.tar.gz"
-    sha256 "0bb40ca410ad26c5e9821ab1ab52ea894759ed2188afd99152261c5e895d8c9c"
+    url "https://files.pythonhosted.org/packages/c8/ca/0ed2d8e1b2333d41d3757e906f6bc5ab8f2d5b62cb4edce7b4c2027c16cb/botocore-1.29.111.tar.gz"
+    sha256 "c3a51d80ceac0945969f94894651c4728525c7cf2df7d7838063c3516f5ee9e3"
   end
 
   resource "docutils" do
-    url "https://files.pythonhosted.org/packages/4c/17/559b4d020f4b46e0287a2eddf2d8ebf76318fd3bd495f1625414b052fdc9/docutils-0.17.1.tar.gz"
-    sha256 "686577d2e4c32380bb50cbb22f575ed742d58168cee37e99117a854bcd88f125"
+    url "https://files.pythonhosted.org/packages/57/b1/b880503681ea1b64df05106fc7e3c4e3801736cf63deffc6fa7fc5404cf5/docutils-0.18.1.tar.gz"
+    sha256 "679987caf361a7539d76e584cbeddc311e3aee937877c87346f31debc63e9d06"
   end
 
   resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/90/07/6397ad02d31bddf1841c9ad3ec30a693a3ff208e09c2ef45c9a8a5f85156/importlib_metadata-6.0.0.tar.gz"
-    sha256 "e354bedeb60efa6affdcc8ae121b73544a7aa74156d047311948f6d711cd378d"
+    url "https://files.pythonhosted.org/packages/a6/1d/7a01bc53a248ddb14eb0dca86f089ddf848d7b9485c31d7f840f27acbcfe/importlib_metadata-5.2.0.tar.gz"
+    sha256 "404d48d62bba0b7a77ff9d405efd91501bef2e67ff4ace0bed40a0cf28c3c7cd"
   end
 
   resource "jmespath" do

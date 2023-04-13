@@ -12,13 +12,14 @@ class Gdal < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "66f7da03f7b695e02e30ba1194e94d9ef4f825505623a796c5c2bb2ae0cf7cda"
-    sha256 arm64_monterey: "1937eede30ad6babeeb8c92724a491e513fc49b847ada7c6201677e2e5de39e5"
-    sha256 arm64_big_sur:  "1d1014aee8a316764845110b350e9061fd368c35cd39e4dafc9dd6d6bd1feab8"
-    sha256 ventura:        "8691b64c3f67c54fd73a0fa4d26a86347a397fbe21fecb694d3b333aa70b2eeb"
-    sha256 monterey:       "74ecb143641aa6b2d55774a63d55c1dc2eda41e498d608b680e39171435ed08e"
-    sha256 big_sur:        "08bc30b21c64828c11448cc4eec6b71b1fb0d764306e2fc2fac48c7539a16b2c"
-    sha256 x86_64_linux:   "f24c8b24a954507ef72fe9f7d89c0f94603e5f54b5800ba326a852561e1ae98f"
+    rebuild 1
+    sha256 arm64_ventura:  "e55b3dac5aa76f06226903b9811c63e0888129e4c52efabd0f4f1bef6caebb98"
+    sha256 arm64_monterey: "86f697dac7d634602d55032559dfcc86a740e8d7ea6764008f2e9bc91bda9651"
+    sha256 arm64_big_sur:  "d966462984f8d786896005630d62889cb76c803e097f424a7435005271e4917f"
+    sha256 ventura:        "4d66f68087868c8cb7568785f32ed82b5eea276653241c5128b18fc99f5e1bc1"
+    sha256 monterey:       "c24dfcccf801b9f0594cc8fa52db25b49bc56d40345c05ffdcce1900bb7e195d"
+    sha256 big_sur:        "382531c7461b499c0a06afce2551024444a5991a6564f6a37b67bd563d354243"
+    sha256 x86_64_linux:   "bf76b33de1d4b65c7c92e53c547fed21679b16fda85889e645c7e9d626c6990e"
   end
 
   head do
@@ -26,6 +27,7 @@ class Gdal < Formula
     depends_on "doxygen" => :build
   end
 
+  depends_on "boost" => :build  # for `libkml`
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "apache-arrow"
@@ -42,6 +44,7 @@ class Gdal < Formula
   depends_on "libdap"
   depends_on "libgeotiff"
   depends_on "libheif"
+  depends_on "libkml"
   depends_on "liblerc"
   depends_on "libpng"
   depends_on "libpq"

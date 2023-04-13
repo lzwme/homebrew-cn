@@ -1,8 +1,8 @@
 class Gradle < Formula
   desc "Open-source build automation tool based on the Groovy and Kotlin DSL"
   homepage "https://www.gradle.org/"
-  url "https://services.gradle.org/distributions/gradle-8.0.2-all.zip"
-  sha256 "47a5bfed9ef814f90f8debcbbb315e8e7c654109acd224595ea39fca95c5d4da"
+  url "https://services.gradle.org/distributions/gradle-8.1-all.zip"
+  sha256 "2cbafcd2c47a101cb2165f636b4677fac0b954949c9429c1c988da399defe6a9"
   license "Apache-2.0"
 
   livecheck do
@@ -11,8 +11,13 @@ class Gradle < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "66be180af20d99e9b1c87a052e4ad2ee50761ada5c5aa2240bf02b1bad68ef0e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4fd5709290e61b807c872dff001f33c397109eb5931b6398b5b22f7200fa708"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b4fd5709290e61b807c872dff001f33c397109eb5931b6398b5b22f7200fa708"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b4fd5709290e61b807c872dff001f33c397109eb5931b6398b5b22f7200fa708"
+    sha256 cellar: :any_skip_relocation, ventura:        "47b4f6b12ef507b767a73bb7494542c337fe56f44b61c79b3715022ff0ef9328"
+    sha256 cellar: :any_skip_relocation, monterey:       "47b4f6b12ef507b767a73bb7494542c337fe56f44b61c79b3715022ff0ef9328"
+    sha256 cellar: :any_skip_relocation, big_sur:        "47b4f6b12ef507b767a73bb7494542c337fe56f44b61c79b3715022ff0ef9328"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4fd5709290e61b807c872dff001f33c397109eb5931b6398b5b22f7200fa708"
   end
 
   # TODO: Switch to `openjdk` on 8.2 release. 8.0 and 8.1 series cannot be run

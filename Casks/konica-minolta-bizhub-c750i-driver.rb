@@ -17,8 +17,8 @@ cask "konica-minolta-bizhub-c750i-driver" do
 
     livecheck do
       url "https://dl.konicaminolta.eu/en?tx_kmdownloadcenter_dlajaxservice[action]=getDocuments&tx_kmdownloadcenter_dlajaxservice[controller]=AjaxService&tx_kmdownloadcenter_dlajaxservice[productId]=103745&tx_kmdownloadcenter_dlajaxservice[system]=KonicaMinolta&cHash=dd72618a38434b6cb3edfc20595d58c5&type=1527583889"
-      strategy :page_match do |page|
-        items = JSON.parse(page).select do |i|
+      strategy :json do |json|
+        items = json.select do |i|
           i["TypeOfApplicationName_textS"]&.match?(/driver/i) &&
             i["OperatingSystemsNames_textM"]&.grep(/macOS.*?#{Regexp.escape(MacOS.version.to_s)}/i)&.any?
         end

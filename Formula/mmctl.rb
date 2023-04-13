@@ -2,8 +2,8 @@ class Mmctl < Formula
   desc "Remote CLI tool for Mattermost server"
   homepage "https://github.com/mattermost/mmctl"
   url "https://github.com/mattermost/mmctl.git",
-      tag:      "v7.9.1",
-      revision: "b965da4f1a2e1d1ca4f1ae1c7396639d56172d1e"
+      tag:      "v7.9.2",
+      revision: "3f9c6210e7050c273906ffbf7c7bb1bf6a720738"
   license "Apache-2.0"
   head "https://github.com/mattermost/mmctl.git", branch: "master"
 
@@ -13,13 +13,13 @@ class Mmctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7e98998af59322d4e553221a3e273efcf9204954ff7c50f9949f0dd491dacb57"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7e98998af59322d4e553221a3e273efcf9204954ff7c50f9949f0dd491dacb57"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7e98998af59322d4e553221a3e273efcf9204954ff7c50f9949f0dd491dacb57"
-    sha256 cellar: :any_skip_relocation, ventura:        "e0193b718d6e877aed4fde17b9e7960a78c3fb15ab2b25af136d19040469e4a1"
-    sha256 cellar: :any_skip_relocation, monterey:       "e0193b718d6e877aed4fde17b9e7960a78c3fb15ab2b25af136d19040469e4a1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e0193b718d6e877aed4fde17b9e7960a78c3fb15ab2b25af136d19040469e4a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dccf23babd5178b334ca09fce6da6f44d89bf2cc739919688aabed35e111349c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a9b51139c2478337100c723dcb13d7a4a9100db447f20cdeaaa856ad1784340a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a9b51139c2478337100c723dcb13d7a4a9100db447f20cdeaaa856ad1784340a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a9b51139c2478337100c723dcb13d7a4a9100db447f20cdeaaa856ad1784340a"
+    sha256 cellar: :any_skip_relocation, ventura:        "a25c9eba00efce25c8b5d46b0332546921b29d3be18b92b23198cf67ca36cf08"
+    sha256 cellar: :any_skip_relocation, monterey:       "a25c9eba00efce25c8b5d46b0332546921b29d3be18b92b23198cf67ca36cf08"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a25c9eba00efce25c8b5d46b0332546921b29d3be18b92b23198cf67ca36cf08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5aad26ad6fe524bdc03992f55358207c5a4b3ab6a498e5fe64df040db581bb2d"
   end
 
   depends_on "go" => :build

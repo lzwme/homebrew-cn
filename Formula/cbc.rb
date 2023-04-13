@@ -1,8 +1,8 @@
 class Cbc < Formula
   desc "Mixed integer linear programming solver"
   homepage "https://github.com/coin-or/Cbc"
-  url "https://ghproxy.com/https://github.com/coin-or/Cbc/archive/releases/2.10.8.tar.gz"
-  sha256 "8525abb541ee1b8e6ff03b00411b66e98bbc58f95be1aefd49d2bca571be2eaf"
+  url "https://ghproxy.com/https://github.com/coin-or/Cbc/archive/releases/2.10.9.tar.gz"
+  sha256 "96d02593b01fd1460d421f002734384e4eb1e93ebe1fb3570dc2b7600f20a27e"
   license "EPL-2.0"
 
   livecheck do
@@ -11,14 +11,13 @@ class Cbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c8bff9b2f9b87861b8ed62c50ac11ddcadc2a45207df8061d763c142e736d826"
-    sha256 cellar: :any,                 arm64_monterey: "9c6816ac51c4f6dfce9211077647576e41c87484d80fe80f37b10b010357292c"
-    sha256 cellar: :any,                 arm64_big_sur:  "f6d4d0d73a51b53cb17920352f78c1d7aba923d53ecc4bd3a7a4fa9968e7bdb5"
-    sha256 cellar: :any,                 ventura:        "b58cd56a49903ea0ee63cf8f6b847f487b577d21d02e3b73ce60d63a0af536c4"
-    sha256 cellar: :any,                 monterey:       "58cd161d62e3c14010428dbe330a90858424f6fbb44b7da7337c2bbd21475dcb"
-    sha256 cellar: :any,                 big_sur:        "9dfd9b522f7488c4f8e09277d38f8a73fce9ee7e3febf2a7cec27005130e8659"
-    sha256 cellar: :any,                 catalina:       "255d298551bab042bd860bdd1a6fa005fb17ed61bf80bc4288a7862387dba4fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "72a1c63a9b265b697e1be4ae6abbb90d002467fa4699ca0123cbb4cb4bba3da9"
+    sha256 cellar: :any,                 arm64_ventura:  "5cad219c2d4a6371c2d9f56fb3e225b59d4e0dd0d8ec8ff81856841bfed4018a"
+    sha256 cellar: :any,                 arm64_monterey: "71ef863b217a28962072ece491da7ee1bd0b3608ad20d687f3cfd10b96b5daa4"
+    sha256 cellar: :any,                 arm64_big_sur:  "8df58beceb472403f05dbaf1a821c601249955eca2f4e12d352e1dbbf1af60f4"
+    sha256 cellar: :any,                 ventura:        "cb0951838409208ae6293d056a1ab80be2c36c89c76afcd1b00675d97fc0ac37"
+    sha256 cellar: :any,                 monterey:       "29cb89c2e874ba69f1243ada350f6b7b248a25c5f28c14c1785e349618899681"
+    sha256 cellar: :any,                 big_sur:        "e11266ac6e81462b06049703d83fdc370cd28f3d75d2f33663469f1ffa363daf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1af7e782db242fa4709e5ca8b013b247765340d8629d01e39c0ba03798d39036"
   end
 
   depends_on "pkg-config" => :build
@@ -28,7 +27,7 @@ class Cbc < Formula
   depends_on "osi"
 
   def install
-    # Work around - same as clp formula
+    # Work around for:
     # Error 1: "mkdir: #{include}/cbc/coin: File exists."
     mkdir include/"cbc/coin"
 
