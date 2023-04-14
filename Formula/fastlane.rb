@@ -4,6 +4,7 @@ class Fastlane < Formula
   url "https://ghproxy.com/https://github.com/fastlane/fastlane/archive/2.212.1.tar.gz"
   sha256 "ea1a726fca8f7b98f0c6703b474e98f5ff40123f23d15740a4ffe783817ed15b"
   license "MIT"
+  revision 1
   head "https://github.com/fastlane/fastlane.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Fastlane < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "2921963cac8ca922e893a9f7bf0526522fa06c22dcb495f788dd2856beb3ef28"
-    sha256 cellar: :any,                 arm64_monterey: "8121ca97b89a7fa774bece457979427e093006dfdd8235b2d8557a98d523fd85"
-    sha256 cellar: :any,                 arm64_big_sur:  "7497d172f96fba61d5c395d5ca66c9f0489dacf727761ad87976282b70f37d05"
-    sha256 cellar: :any,                 ventura:        "fc78dca37c9bda5977d4c9315c845e465962f97fabae67e4e68270eab8757e27"
-    sha256 cellar: :any,                 monterey:       "edf4d1a0fdd8103d79bfb2aa6ca5248e0bd3b9cbca4edeaf57e3f6b1e16278fc"
-    sha256 cellar: :any,                 big_sur:        "1be49f78ee1047b8256b3e3e272086297568120a1b238da7e3b80e3b5d9221f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d767cb027354f049d07829f86249ade8a7d268eb0a85f369bd3b7a8713f13aab"
+    sha256 cellar: :any,                 arm64_ventura:  "f1f1e3c958cfe896a73cfa60ab4f171c5803ceb46b63d5a06759763548581c09"
+    sha256 cellar: :any,                 arm64_monterey: "38a78f4b6a5dd5e22204928c7fa7e896607916db074453b1e032e9aa48e5f568"
+    sha256 cellar: :any,                 arm64_big_sur:  "b6990326f6f901860d019e0ef72b11efa17a938d69b8294a4cbc7d20fa176e7b"
+    sha256 cellar: :any,                 ventura:        "3acfdefd790e6805407d44ece1564032e9126d8d062f49de7b3a4d70780be673"
+    sha256 cellar: :any,                 monterey:       "ba534bc7d8307229dff07e3384e4a7c0aad0345b69fe53e60dc43aebe3dd9ee4"
+    sha256 cellar: :any,                 big_sur:        "701ea6aef9f4410fabc4a098c77e6811a65fad8133d380f38ec1b32af1296e7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a75f8400eca46e0e87704ccd04a33c62685d306a2752a192fbda471dd8f7cee"
   end
 
   depends_on "ruby@3.1"
@@ -35,7 +36,7 @@ class Fastlane < Formula
     system "gem", "install", "fastlane-#{version}.gem", "--no-document"
 
     (bin/"fastlane").write_env_script libexec/"bin/fastlane",
-      PATH:                            "#{Formula["ruby"].opt_bin}:#{libexec}/bin:$PATH",
+      PATH:                            "#{Formula["ruby@3.1"].opt_bin}:#{libexec}/bin:$PATH",
       FASTLANE_INSTALLED_VIA_HOMEBREW: "true",
       GEM_HOME:                        libexec.to_s,
       GEM_PATH:                        libexec.to_s

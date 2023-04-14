@@ -1,10 +1,10 @@
 class VulkanLoader < Formula
   desc "Vulkan ICD Loader"
   homepage "https://github.com/KhronosGroup/Vulkan-Loader"
-  url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/v1.3.246.tar.gz"
-  sha256 "2531b6ef63b18040e5b0a3aa56df51e6e3cc42e7314c67a88a363be4c6975b2f"
+  url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/v1.3.247.tar.gz"
+  sha256 "1d0062e8cd78cb25140a784b50eee3b44f0be346c1a8d0c645e41394c2e56290"
   license "Apache-2.0"
-  head "https://github.com/KhronosGroup/Vulkan-Loader.git", branch: "master"
+  head "https://github.com/KhronosGroup/Vulkan-Loader.git", branch: "main"
 
   livecheck do
     url :stable
@@ -12,13 +12,13 @@ class VulkanLoader < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "3934a7709e455dc7e3ad4ff3cdff78d9ee760f97be02e69a6150d6b4c2ed3b26"
-    sha256 arm64_monterey: "3eee6f368267921f8e2d124fc5a09bbe71c661594cef9d5249c3ada43a83a2e9"
-    sha256 arm64_big_sur:  "ea1045d2291a973583a6144497f6643e2fe870fd1f8ca55e8e1befef5626dcd2"
-    sha256 ventura:        "427345ed9ccf260eb5eae57ebcdb831d6337743c6d0b24e6e60a7c7b0658e0da"
-    sha256 monterey:       "d4258e4c77875f6fe7138933c984268e27547d06f862dafc17e8c66aeb796e78"
-    sha256 big_sur:        "4adcd80da4cbf4e1df5adcb3a5c40c2f03caba164398aa49b2d76a2e1c48d6eb"
-    sha256 x86_64_linux:   "a4fe31a6c62091f41221ce47c29fbb6dbcb820524dda157996e5966b46b51fd7"
+    sha256 arm64_ventura:  "ee1a2c3b5e75a692f97d6785d64471ee656497e00c5de65e153db2e0822dca24"
+    sha256 arm64_monterey: "ac2a00ad51f8cfbf36ecb86d701b94d3a5d1e8ffc34f4d925a003049c4dc5441"
+    sha256 arm64_big_sur:  "1cf0a5e98cf4a83e9d70fa2373ccbbd77f93e2afbec4b49890236f5509ce3122"
+    sha256 ventura:        "ab4a1ee5dbb8782ac83b41c290ce7f339f4185fca8d90cf3cac232fb40c74970"
+    sha256 monterey:       "0869cadc329b527be9179c25022850ace60cc953d2d5a6ffd57893a255b63d38"
+    sha256 big_sur:        "d4c6f08678f3a70bc977fcbe9b2d195084b89e18a792b925e315289e1e0b792e"
+    sha256 x86_64_linux:   "e0afa37dd46c120440791aaaa7ae72ab4b70c11944596a52f754e1e0e115a5ed"
   end
 
   depends_on "cmake" => :build

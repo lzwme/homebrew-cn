@@ -1,18 +1,18 @@
 class Qrcp < Formula
   desc "Transfer files to and from your computer by scanning a QR code"
   homepage "https://claudiodangelis.com/qrcp"
-  url "https://ghproxy.com/https://github.com/claudiodangelis/qrcp/archive/0.10.0.tar.gz"
-  sha256 "70f9930cb371fa9a0a98df12442486a7802ede1a797d26fbc3363605b6574db4"
+  url "https://ghproxy.com/https://github.com/claudiodangelis/qrcp/archive/0.10.1.tar.gz"
+  sha256 "866344c247fbc2bd4def91e2b7fe395b81bc954b89dad4f32ebd8033bd2e6c7d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89f97fa13a78fe66ca4dcc15b34f8a67ac330d31c5cc78199df3df84c967ac54"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "89f97fa13a78fe66ca4dcc15b34f8a67ac330d31c5cc78199df3df84c967ac54"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "89f97fa13a78fe66ca4dcc15b34f8a67ac330d31c5cc78199df3df84c967ac54"
-    sha256 cellar: :any_skip_relocation, ventura:        "6fa91caf6178bffa47d0692eafb56dbc954982694846bbcefa78b8a776d6c6fa"
-    sha256 cellar: :any_skip_relocation, monterey:       "6fa91caf6178bffa47d0692eafb56dbc954982694846bbcefa78b8a776d6c6fa"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6fa91caf6178bffa47d0692eafb56dbc954982694846bbcefa78b8a776d6c6fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e7adf15d55d924dadb9902eb6631e1b8457c935c360dc71d698c23052c64223"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb8411ed58cb46bf657126dd96cde64faef4fc2f659bfd83007e68b890ebee4f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cb8411ed58cb46bf657126dd96cde64faef4fc2f659bfd83007e68b890ebee4f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cb8411ed58cb46bf657126dd96cde64faef4fc2f659bfd83007e68b890ebee4f"
+    sha256 cellar: :any_skip_relocation, ventura:        "a124631223cd27aebd64b75466a4ff7d982c327003bb37088c0d1b310d4702ae"
+    sha256 cellar: :any_skip_relocation, monterey:       "a124631223cd27aebd64b75466a4ff7d982c327003bb37088c0d1b310d4702ae"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a124631223cd27aebd64b75466a4ff7d982c327003bb37088c0d1b310d4702ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d56dba0ceb4cf3b57647e788a777e3fec8bfc4141f68cd8f1ada06354f183cb3"
   end
 
   depends_on "go" => :build

@@ -3,19 +3,18 @@ class Dnstwist < Formula
 
   desc "Test domains for typo squatting, phishing and corporate espionage"
   homepage "https://github.com/elceef/dnstwist"
-  url "https://files.pythonhosted.org/packages/78/8f/7ccfe3119f6663be38abfa1e253efdbc74c6ff6a9dc53fed5ac158c601cd/dnstwist-20230402.tar.gz"
-  sha256 "bb6f385d553d4d87b7a5459c4cb20b11dd244bd2567e2cd3da30b3a0ee4f99d7"
+  url "https://files.pythonhosted.org/packages/d6/29/fd443d1730c3da3679bf1f6bf2d870688c1a2d55dec60b650309de744712/dnstwist-20230413.tar.gz"
+  sha256 "fb3b0f1d94c801c3b14af22db1f73984284c61ce659c334695b80cc9a1ed6eda"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d58ba6a4d6d134c0b97fdb9fc21b7d4b57c0aee60e6d54be852e28a9ad0ef880"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fce753a1421adfe83a4d63077588b118399c6d143b3550438b8303107b6bc001"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "52a0ef191abca153d13373f148ffc48eb386d1fecc753fe246fd9b0b5120800f"
-    sha256 cellar: :any_skip_relocation, ventura:        "8cf1d70900e13d15bb7fd83ae7094f843d2f7687363c7d15ec1bf898bedf658d"
-    sha256 cellar: :any_skip_relocation, monterey:       "af6e61024e79bfc0cda20382984092c0f160066986a5430ec409070bfd4f7aaa"
-    sha256 cellar: :any_skip_relocation, big_sur:        "04289558a62e98cd8a81596c4fd94ce54c6254f4c60d62bbba75a553b94f1144"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dedbbc4fb6dcc80b6140c6e65c480c4816aa2a59ea5e21a832fc25c624ecd01b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89312d513e20d3b5f838935d22c0f97c635c642acdd8256c2dccf11e8fcf4477"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "346c1ea67df6c0277c7620ce47e30a051c4217df71f3c98e5ff64bcce741a212"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bab2379d2f20e71dd414c0171740003e52026dda1a1dceb137b24bcbe663f501"
+    sha256 cellar: :any_skip_relocation, ventura:        "6a0862fe2a57aabe596aa554cdd0831ebabd8ef4afc7e82475b09374da498cb5"
+    sha256 cellar: :any_skip_relocation, monterey:       "2942d5945b1c0e1200cfd15b45dee39bc9cfc27f7fad237d65fa479ed0dbcb77"
+    sha256 cellar: :any_skip_relocation, big_sur:        "221a2a7650f11cc5ba2efff1a6f63e98683adb39e9e7eee5e9f67f6e5f2f9b00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "baf809e277b87515060e39d62026e03ee9f7b329bcde335015c5f2c63ebbb3f2"
   end
 
   depends_on "geoip"
