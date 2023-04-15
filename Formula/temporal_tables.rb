@@ -5,6 +5,11 @@ class TemporalTables < Formula
   sha256 "e3711797aa5def8f4974215bb5557204b2bc8e5e94201167eb95246a112b8138"
   license "BSD-2-Clause"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "25de5d67758c7f706666c46b444f41d90750c34154f37818996e7a8e587fed24"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0c598c7ce24e74d75192a0f288e6999f9469a39cdbd527200cd49f148ac6212c"

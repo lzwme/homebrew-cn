@@ -6,6 +6,11 @@ class RpkiClient < Formula
   sha256 "8c78f82ae959a900f47c7319cbf7688182cde39dcc4c4b9aa399a142be4dc143"
   license "ISC"
 
+  livecheck do
+    url "https://ftp.openbsd.org/pub/OpenBSD/rpki-client/"
+    regex(/href=.*?rpki-client[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 arm64_ventura:  "c0e289b603ba35475efe37a5e77898340f51053ee9552e4bcd3091b9c4bd48a1"
     sha256 arm64_monterey: "6fe2d161437b5ada9c7f434b7370bc9c3e520338d142931a4b00ca575c32349f"

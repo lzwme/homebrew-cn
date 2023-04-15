@@ -3,19 +3,19 @@ class Pyinstaller < Formula
 
   desc "Bundle a Python application and all its dependencies"
   homepage "https://pyinstaller.org/"
-  url "https://files.pythonhosted.org/packages/0f/22/80d551593c1429a7f56680eecffe9b1c7e2b47b0d3a82feaa35fa5efeb74/pyinstaller-5.10.0.tar.gz"
-  sha256 "4ae664b93b627b717c23b90e8deae64f23ffb2f62197abdb87def44512c7e759"
+  url "https://files.pythonhosted.org/packages/51/37/2e0195ef4e4dec35e3f116361c4c780e0c4cd2cd96079199b3218c08fabb/pyinstaller-5.10.1.tar.gz"
+  sha256 "6ecc464bf56919bf2d6bff275f38d85ff08ae747b8ead3a0c26cf85573b3c723"
   license "GPL-2.0-or-later"
   head "https://github.com/pyinstaller/pyinstaller.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "08c6dc8dc0d6f10123506f38da5db0c470dd7973c8aab27f28a67d25a4c447ae"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "96a6f63a0b618509aa6bc9cee9d123959f31fab80af95e50c29fce03249d26a2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "68bf94801b846e8d3768f31e9a71cffaf16061b89e64bb6b2628833bea50dd98"
-    sha256 cellar: :any_skip_relocation, ventura:        "39b90f2c95553d2cd7c2f42094cbfa317413dadad9e0e5d288b281999891b4a0"
-    sha256 cellar: :any_skip_relocation, monterey:       "46b9c601c18bf951fe9f2a90c4ade1fa654c153069c19e51c9ef6df406ff553f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4a7091cbca19f58926d26381e53bda1438bad7f8e6ef544e9b3ab0c9ba69fe54"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15ff4ff0a2fdd73d2079c5611320f48b829cd525137909de590498a32db02e3b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d6c9482629dbc9908f78fdc99330cd5f0fe6a13286924f4d605e898726fa5df4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "173d1ef4ee056bab253600cb09565696c3365abb49439a4e319a444a700068b7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "62a198839c9b71833ca3d808f08a28ec872c1e1852102c0fdd261dd4a3f8e6ae"
+    sha256 cellar: :any_skip_relocation, ventura:        "521eaa8392c79de73b4f9442d78fab249923ebe6ebb8eae113a5e64078cef524"
+    sha256 cellar: :any_skip_relocation, monterey:       "e0af1b56dfb13b6869f88835bc0b6f0493467c41e295dc58ad0dd6b402e83741"
+    sha256 cellar: :any_skip_relocation, big_sur:        "614ec98a16175c6180ca5e0697b15e0b3bf07e1aae674b8cc5d7ab5875c69cad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ab3da4a6b5c32622d08e8d81a3def013a76d89ff45582aa437df245229a1080"
   end
 
   depends_on "python@3.11"

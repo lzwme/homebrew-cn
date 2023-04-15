@@ -1,19 +1,19 @@
 class Tbls < Formula
   desc "CI-Friendly tool for document a database"
   homepage "https://github.com/k1LoW/tbls"
-  url "https://ghproxy.com/https://github.com/k1LoW/tbls/archive/refs/tags/v1.65.2.tar.gz"
-  sha256 "0c0bfc005830cacc0f09b730eaaad4abde75878c95be3d83573efd1d0411650d"
+  url "https://ghproxy.com/https://github.com/k1LoW/tbls/archive/refs/tags/v1.65.3.tar.gz"
+  sha256 "ceaaf51e583630047a8195137f48bdec4f99e30a78c56932eb7f482144140684"
   license "MIT"
   head "https://github.com/k1LoW/tbls.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fb06718de3bf61b9ccf8b330f64cf1387b6349d52eda80fa73a7c1a6cf4c212e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e079cf60dac0dc1409990412e63e2c85398f571849e583b0857274c408cb356b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fb6339f738a0d8c6a93cff89362225290a414c35027ec97b57669ca37157d32b"
-    sha256 cellar: :any_skip_relocation, ventura:        "54aa87bbd4f7b94a0c34fb9682db3f1032c3a30b649310f1c911d6d9d30c9bc2"
-    sha256 cellar: :any_skip_relocation, monterey:       "64e67cbb9417c167b7229dcee6e2ed8ac5a03c0fd4a506dffda21555f94d617f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ac13e078a75889a6e59b818775df533739421e3b1863ae0ada9dc7aaee869bfb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99cf1165d8a592e8b4d9048ebf2013ce482d6a6dc03a9f45cb75d7448ff035f6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "613ad052cba279149e288afb6f1dbfe0645909edab13451dc365614218bf321a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4de7eda653747d70e1f375a28d1acd9e23e1135459b21df7871abf5663ea7ca2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2bb22207b3988d365d8a10ebad32b467baae2a7ab70b97e43675bc02f896c5f4"
+    sha256 cellar: :any_skip_relocation, ventura:        "ac85cfdae51ba76547fe4710df363aa2639ccec46de2ba2ddaa39d6cf8b3add4"
+    sha256 cellar: :any_skip_relocation, monterey:       "16ec5388783de0c5b4dfea263fa4d88a449e51e3f0ae4aa5f8008c0e9423a8bf"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ec575cdcaa57dbc3a5d0f34d128e11dda36e56961afb1cc8c8cd1650bf9b5c3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23c8901ab032afe8db39e8b109778ef3e8f8444edc2c3790f62ff50d2e6efc7f"
   end
 
   depends_on "go" => :build

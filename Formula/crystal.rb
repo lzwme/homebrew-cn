@@ -4,16 +4,13 @@ class Crystal < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://ghproxy.com/https://github.com/crystal-lang/crystal/archive/1.7.3.tar.gz"
-    sha256 "3ad94dd2835a58af8dabf18d6cdf3791eb49cdfc6fdc6fd6a4e59abf0e860a6f"
+    url "https://ghproxy.com/https://github.com/crystal-lang/crystal/archive/1.8.0.tar.gz"
+    sha256 "6353c3b3ca5a1ed6c8b3ee80e5141d130856ebc736c30d1684661001279c2fe1"
 
     resource "shards" do
-      url "https://ghproxy.com/https://github.com/crystal-lang/shards/archive/v0.17.2.tar.gz"
-      sha256 "ca3963512db8316b3624c0fba57f803419d67502416fe44938a27aa616cf9d70"
+      url "https://ghproxy.com/https://github.com/crystal-lang/shards/archive/v0.17.3.tar.gz"
+      sha256 "6512ff51bd69057f4da4783eb6b14c29d9a88b97d35985356d1dc644a08424c7"
     end
-
-    depends_on "llvm@14"
-    depends_on "pcre"
   end
 
   livecheck do
@@ -22,20 +19,17 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "208f602967b52f210e7a6b77d590ea5f0c1a75a7f2ddd4adb28e13f110e7a0b0"
-    sha256 cellar: :any,                 arm64_monterey: "b3c460df2ed4da57a95eb75f44f358ed7d715cf58c26f1f3f5ca36ca0e7dd31f"
-    sha256 cellar: :any,                 arm64_big_sur:  "b199016644332e2d3a07ab683c0a43d0779017ed0f9ce53c0bbcfb212d0fa2e9"
-    sha256 cellar: :any,                 ventura:        "7fcb5188b52efd9bf47442ba6b0d09dd85b40c34614fc7e497507eac19370004"
-    sha256 cellar: :any,                 monterey:       "9cfbbc05fe4c345e06983e8e471e01a85e6256d0d7edaba7d2abaab5b29e2cc5"
-    sha256 cellar: :any,                 big_sur:        "53208361b8f7ea07ca642fb01f475d32cc18802712ad317e4f4ae6827c24f836"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68a37752e1a0a2eb423b18bb42b8f8aa4751bff15a92afc560a962d63f74ae02"
+    sha256 cellar: :any,                 arm64_ventura:  "7fcb68deaf726cc51807f9e37bbc9f68de9d5223d88c858aa4fd742898932656"
+    sha256 cellar: :any,                 arm64_monterey: "011c6d49af4710a885fbb6c507cedfd4005023e4657c8848d2004055879a0a3e"
+    sha256 cellar: :any,                 arm64_big_sur:  "0c71409d0e2e8faebe6a5bee1ea1b1e319b090c539853ededfc459240802d1c5"
+    sha256 cellar: :any,                 ventura:        "232e0ee032d319a480a509fc5d0e5f0a6df88f8d1dd7b82043ff4d1017429290"
+    sha256 cellar: :any,                 monterey:       "c734ac9453ad296a45cea93dc9492d199972225dcc4875568ffa7f5e4a6e786f"
+    sha256 cellar: :any,                 big_sur:        "b0f779368f0c739050e4b28c7c3aa2dd2122d30717760bde02e96ba2021b3521"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9b463668d7afa064a0b50a4242cd284c7ce5a52a016059be904e8576b0ce38f"
   end
 
   head do
     url "https://github.com/crystal-lang/crystal.git", branch: "master"
-
-    depends_on "llvm@15"
-    depends_on "pcre2"
 
     uses_from_macos "libffi"  # for the interpreter
 
@@ -48,7 +42,9 @@ class Crystal < Formula
   depends_on "gmp" # std uses it but it's not linked
   depends_on "libevent"
   depends_on "libyaml"
+  depends_on "llvm@15"
   depends_on "openssl@1.1" # std uses it but it's not linked
+  depends_on "pcre2"
   depends_on "pkg-config" # @[Link] will use pkg-config if available
 
   on_linux do
