@@ -1,21 +1,29 @@
 class Svgbob < Formula
   desc "Convert your ascii diagram scribbles into happy little SVG"
   homepage "https://ivanceras.github.io/svgbob-editor/"
-  url "https://ghproxy.com/https://github.com/ivanceras/svgbob/archive/0.6.7.tar.gz"
-  sha256 "6f7a61dca076d7e2295e8ed5876cd5aff375b3f435ed03559b875f86a49a4a52"
   license "Apache-2.0"
   head "https://github.com/ivanceras/svgbob.git", branch: "master"
 
+  stable do
+    url "https://ghproxy.com/https://github.com/ivanceras/svgbob/archive/0.7.0.tar.gz"
+    sha256 "1600155b968b74b22f83d3ac6fb8b3daf127e4794d0e6acc9ad8e9e548ac6a6b"
+
+    # patch version constraint issue for `svgbob_server/Cargo.toml`
+    # remove in next release
+    patch do
+      url "https://github.com/ivanceras/svgbob/commit/b575ef693c8e2b439f64be8b1e07bd40ac5b0ce2.patch?full_index=1"
+      sha256 "3a48278d2e1e51771d7995e8102c3f89a52fac51bcf95094df6408f95826de0f"
+    end
+  end
+
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7069ee90b4e75610f0cd521bcdfc257005eb265f63a376a00f6b8d904731abb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d58f6a2a324e58304062a9dab476ed881beffc249e1086526cc121c18c36f4d6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6b937566a070a3a45a1fb2f251d10b82b082b39c44e1691c43f04cad423fa240"
-    sha256 cellar: :any_skip_relocation, ventura:        "5f7861ab6d7cff59709b775b2e9ad43ca167cf61957db951c6e5727fa80c6c0b"
-    sha256 cellar: :any_skip_relocation, monterey:       "6efe06b3835e4a9e9d330a2cbbda2e994853231f81f2c906ba84dda64f2f235e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3b3540039e243c64cfb3c1ee67355fa93c31e89ef3673414720239fd7f258672"
-    sha256 cellar: :any_skip_relocation, catalina:       "3ab6faf174e991e452ead5bb511e2c9d3526c0079f23acf48378d9473033579a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "776c0ccc59be86ca69e05272775d2bd1fe59a13dc15a17e4628bff07557c4918"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5e6faaa806d4bbf92e80f2a6ab7901ec5fad15a960ddd59e28c1b9879a2b1d99"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "231b4d13b647e04d88f7a9ed43b21ee408c297d4f4700ea57b8d9408b42440e5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4c0959ddd2bf8e8851a3facbbff9104680be0337eb03afe2d59d153e988d3dee"
+    sha256 cellar: :any_skip_relocation, ventura:        "51417717ae672ef7e5a4aed49adec423293094d0ab00bc018394eb8bc1e1bb12"
+    sha256 cellar: :any_skip_relocation, monterey:       "67b3a3e0df84d4a1c678faabcd4fa02b1dac11c12d3cd26762b4432864fb36ab"
+    sha256 cellar: :any_skip_relocation, big_sur:        "79028f6777a324bb547705943016950ab877fb2e87c2a7395db07699fb3d346d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1842bcf3732971351ca6b86cb99da773446e4d36b6983ce1f777054b5494d5f1"
   end
 
   depends_on "rust" => :build

@@ -1,18 +1,18 @@
 class Nvc < Formula
   desc "VHDL compiler and simulator"
   homepage "https://github.com/nickg/nvc"
-  url "https://ghproxy.com/https://github.com/nickg/nvc/releases/download/r1.9.0/nvc-1.9.0.tar.gz"
-  sha256 "2fd35db474ca5c2d8620de19b1f4bdd5d83123695f8459f8249c4c840a5e95dd"
+  url "https://ghproxy.com/https://github.com/nickg/nvc/releases/download/r1.9.1/nvc-1.9.1.tar.gz"
+  sha256 "0767c845ed7f93d29bd9cd9c5e75c788787a3515112a6fb335ed82b6b3d3378c"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "311a7c255f0834937556f6935948aef55bc1b64d4bc4c6fdbe5d9be7dae8c52f"
-    sha256 arm64_monterey: "e25511728f1966c35711fba6ac6b9d001995a2e4410709e6a0f1d16ecc1b34d8"
-    sha256 arm64_big_sur:  "32661f3a4dd52aae7b56b255008f8fa508af42cf9f6febeeb44530ae855c70f7"
-    sha256 ventura:        "327b15158a3b0b89caefc682d8a9a2217adffcfe8c29d0c5ea847dc5e24c5aa4"
-    sha256 monterey:       "023b33efe4333d2a7a3eca4f6be892289f89e98fbbef560b560982c129ffb417"
-    sha256 big_sur:        "72add91009a37a50e0944de75210e39d74ec5497a66d297c16f69b4ff9056e01"
-    sha256 x86_64_linux:   "9c87901dbacc0bc6d2ed8d87d4955632ea30b0d0bd51fe2b84316fe99bb48795"
+    sha256 arm64_ventura:  "bca63ee6a5c0a1cf82822ae1cf7f8f551aab0b7fe2e6fc5a762bd43f445cbb07"
+    sha256 arm64_monterey: "93d603260b867a00dac496c6463cc30b722092f745d34bdcd1757a9ccad16da2"
+    sha256 arm64_big_sur:  "3ee9313f3c58074a068710f8bbfc0dd85aa57bc494b559895b000ca6a5cbef1f"
+    sha256 ventura:        "405cd98ce649b0bb3d5d5a43c46aea7cb7560bd8001b909c7538b821795e2254"
+    sha256 monterey:       "10c444fe690af8208d7b4c7e9297b09b7f8315bd54fddfe47ebcac8e6edb0a3b"
+    sha256 big_sur:        "a212c4205318c5bc4299fd9e5489f676f62042c1c39b08f54b22467f0cd4870a"
+    sha256 x86_64_linux:   "93e558e42d7fa14d19eb0147778d1620cbbc44ea5b683b05814cc4f36ce55023"
   end
 
   head do
@@ -33,13 +33,6 @@ class Nvc < Formula
   resource "homebrew-test" do
     url "https://ghproxy.com/https://raw.githubusercontent.com/suoto/vim-hdl-examples/fcb93c287c8e4af7cc30dc3e5758b12ee4f7ed9b/basic_library/very_common_pkg.vhd"
     sha256 "42560455663d9c42aaa077ca635e2fdc83fda33b7d1ff813da6faa790a7af41a"
-  end
-
-  # Fix build failure.
-  # https://github.com/nickg/nvc/issues/667
-  patch do
-    url "https://github.com/nickg/nvc/commit/c857e16c33851f8a5386b97bc0dada2836b5db83.patch?full_index=1"
-    sha256 "8be3f5a0621266dfba89b0efe4f3b48fb9a4f05642f6d0e32e2b63b9661368a0"
   end
 
   def install

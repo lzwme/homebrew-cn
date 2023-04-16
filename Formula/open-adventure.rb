@@ -1,8 +1,8 @@
 class OpenAdventure < Formula
   desc "Colossal Cave Adventure, the 1995 430-point version"
   homepage "http://www.catb.org/~esr/open-adventure/"
-  url "http://www.catb.org/~esr/open-adventure/advent-1.15.tar.gz"
-  sha256 "489a5079b45b11b7ac6bfea42d53c6c2c02680ee5df179e22fc046b1fd727d12"
+  url "http://www.catb.org/~esr/open-adventure/advent-1.16.tar.gz"
+  sha256 "1864945c085709c991fe905e9b1c9fd3d29e712fb1c46aa7ec4cdec4e88b6424"
   license "BSD-2-Clause"
   head "https://gitlab.com/esr/open-adventure.git", branch: "master"
 
@@ -12,13 +12,13 @@ class OpenAdventure < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "00d3f7904b7a946ae4ebedb6060c0566f415226469a803679fbdb6e1185e863e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ced5a068dad73d31d3f7bfe1c95177c6b93dac3fcbd37a5628a43d51f4bafaf0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "353baf874483d1c35a80cf6ca28c3b1665887dba1d8b0e44cd5485388194b49e"
-    sha256 cellar: :any_skip_relocation, ventura:        "668c40f3d213ef0b55c4840c4acc886aa299688adcac881bfc59ea11b1b45551"
-    sha256 cellar: :any_skip_relocation, monterey:       "d33f363cd634406c4343d7b0b85f12d13f7659dce3e3247f476df859a6257e59"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5c1c89e9142d4a6c6c650fae1cc178949e68cada9e3ffd3bd2cfa483bda1d465"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "07b83aca32e9c2090a63ab5da9270c2c27c8b21ff9ef3c0d903ca343988a83c5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e6f2d3f7a760d964064cee9c866733598248904d490c977f0d4a730dbfcd7ea"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "16eb8d8d02295df84ddc94176aed567869161c6cb61bb223d7223e17e1ec8cb3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "195f5a0edff650d5de1ce70899c466b0d29fe64f04bd6667bb8e8f4b357fcc7f"
+    sha256 cellar: :any_skip_relocation, ventura:        "4a3c131645f948efa59328b8820f21b67060c0fbf08fb0444d05d17858798580"
+    sha256 cellar: :any_skip_relocation, monterey:       "62e6659adad76fa8cad53f9dcab9692182d292cbd844e86700f58702a0fe7fdc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "dc2567ca7d9614aa10bc35dac478f3dc6665968262197dc64a399ae29daef50e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ecc81be4f42c271404e5e0a21113b3dad586845abda18af69166298c3b732e69"
   end
 
   depends_on "asciidoc" => :build

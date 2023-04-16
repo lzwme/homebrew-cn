@@ -3,18 +3,18 @@ require "language/node"
 class Rospo < Formula
   desc "🐸 Simple, reliable, persistent ssh tunnels with embedded ssh server"
   homepage "https://github.com/ferama/rospo"
-  url "https://ghproxy.com/https://github.com/ferama/rospo/archive/refs/tags/v0.10.4.tar.gz"
-  sha256 "eb5bad62d6856f9efee695d45f77dd31937a671232aa1b69e1f204f8afc36bd9"
+  url "https://ghproxy.com/https://github.com/ferama/rospo/archive/refs/tags/v0.10.5.tar.gz"
+  sha256 "63860eb269b6b9dba003c7e47b42f8afa945d4155e020abfb11f4c71f06e26f9"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a8d4e71dbe8dec585d79a38688f08ca6e03abd9d198886dc88e6e17072557073"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a8d4e71dbe8dec585d79a38688f08ca6e03abd9d198886dc88e6e17072557073"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a8d4e71dbe8dec585d79a38688f08ca6e03abd9d198886dc88e6e17072557073"
-    sha256 cellar: :any_skip_relocation, ventura:        "b3109a81e5a1c22594d188d5f8f6d13422f8c9b49ebada32f61068ea451f6c98"
-    sha256 cellar: :any_skip_relocation, monterey:       "b3109a81e5a1c22594d188d5f8f6d13422f8c9b49ebada32f61068ea451f6c98"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b3109a81e5a1c22594d188d5f8f6d13422f8c9b49ebada32f61068ea451f6c98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3b249190ce545b8b83f41b9e07ceecbb3121f2e344c38c54933a0c9eca9b043"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8569bfb865ea5fd1515f125e679f1e2684d532217e50ed5e7f05acbf2140fcf9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8569bfb865ea5fd1515f125e679f1e2684d532217e50ed5e7f05acbf2140fcf9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8569bfb865ea5fd1515f125e679f1e2684d532217e50ed5e7f05acbf2140fcf9"
+    sha256 cellar: :any_skip_relocation, ventura:        "c2076cb5b87a40aaacc32af680366b6b823295d10c27c6e4bdbf7d9a08a086d8"
+    sha256 cellar: :any_skip_relocation, monterey:       "c2076cb5b87a40aaacc32af680366b6b823295d10c27c6e4bdbf7d9a08a086d8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c2076cb5b87a40aaacc32af680366b6b823295d10c27c6e4bdbf7d9a08a086d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3cc39db6d0b260644d42a3bd98141be5e4ede2c7f5d76dac120e264490a3884"
   end
 
   depends_on "go" => :build

@@ -1,39 +1,39 @@
 class GitCinnabar < Formula
   desc "Git remote helper to interact with mercurial repositories"
   homepage "https://github.com/glandium/git-cinnabar"
-  url "https://ghproxy.com/https://github.com/glandium/git-cinnabar/archive/0.5.11.tar.gz"
-  sha256 "20f94f6a9b05fff2684e8c5619a1a5703e7d472fd2d0e87b020b20b4190a6338"
+  url "https://github.com/glandium/git-cinnabar.git",
+      tag:      "0.6.0",
+      revision: "c224e301ad05f4e337b0833a57fde97d41154d7d"
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/glandium/git-cinnabar.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "715bfee957b00c42ab1d691cd2a1525ddd70db2112cde19ebd9310ed83ec2035"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cb9cf222a1ece6ea3852224328a6cf7243fc606ceefb8150d2c557d45ca2c51d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "12acb5d61f08fa07b79883444fff480236385cbefa5aa6edf322bb2c3f0543bc"
-    sha256 cellar: :any_skip_relocation, ventura:        "617aea845f436a5b0deb44464e64a18122396656d193cd36d72f18bb4fedc63e"
-    sha256 cellar: :any_skip_relocation, monterey:       "7d4e71a53d9a5ecb803097786f574bcd55207f44887c74c829edd3a595b59fa4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c0c8ca6663fbf43e90a904ad3ca41f7174f78f023938029efde89ef312dceed6"
-    sha256 cellar: :any_skip_relocation, catalina:       "b6e9691219d9e23b3107e9fe78f1cd7e454212ba0999ce2236f222322367784d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e85cbe77244c8ece4095ca96cb76fcb8a54d322f20226c97339b298478feb3b4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6aa3fb806dbf78026d50e74c16e8db7d45dcf0035a1205f6c8c0b16ce392ac44"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "66d253c35ea1ccdc569264ec5edd562e80e7d22c3ade6406fac3009c91cb5a27"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "91c082acc967c3a0f93e3a7ee1e6613f3409068955357a1e3a0332462e71fb61"
+    sha256 cellar: :any_skip_relocation, ventura:        "63ac26030f9bfc3e6b23640b918f3e54d634c8cc7ece57ba7bba4814e83ff39d"
+    sha256 cellar: :any_skip_relocation, monterey:       "6b7bc3946a5c23d77849ab50b7c477444309f82962b6d3382c77cf8692658cf3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "aebf0ef6424001482b13d7f91f0a18a66cadcf815a8aa0e4b2cb8592bb180677"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c23b6ff99c0de26c8a9ab1d415fbbf1e48170ac3325a4a8d93579c695e4988c"
   end
 
+  depends_on "rust" => :build
+  depends_on "git"
   depends_on "mercurial"
-  depends_on "python@3.11"
 
   uses_from_macos "curl"
 
   conflicts_with "git-remote-hg", because: "both install `git-remote-hg` binaries"
 
   def install
-    system "make", "helper"
-    prefix.install "cinnabar"
-    bin.install "git-cinnabar", "git-cinnabar-helper", "git-remote-hg"
-    bin.env_script_all_files(libexec, PYTHONPATH:          prefix,
-                                      GIT_CINNABAR_PYTHON: which("python3.11"))
+    system "cargo", "install", *std_cargo_args
+    bin.install_symlink bin/"git-cinnabar" => "git-remote-hg"
   end
 
   test do
+    # Protocol \"https\" not supported or disabled in libcurl"
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     system "git", "clone", "hg::https://www.mercurial-scm.org/repo/hello"
     assert_predicate testpath/"hello/hello.c", :exist?,
                      "hello.c not found in cloned repo"

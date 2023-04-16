@@ -7,19 +7,21 @@ class Qemu < Formula
   head "https://git.qemu.org/git/qemu.git", branch: "master"
 
   bottle do
-    sha256 arm64_ventura:  "5ff2bb60b3bf96f6074a0aae8dd7a06427bd4eeee40c3e0d7bd075405a8c790e"
-    sha256 arm64_monterey: "cd70058fd6636a91cbb655795f3d1d63bc5f3582203e6729605370ab17d20a3f"
-    sha256 arm64_big_sur:  "e5705e3139c0c8cbb7d3d7e04e2986854d0453a8696b23c5a013759656858e0a"
-    sha256 ventura:        "f9d2090efd2a8b608b69307ba8e1996258245f3c9dc57d28da52c4b570f09745"
-    sha256 monterey:       "bd44cb1361bf1003eb818da812f73db578fe77f7bf6b792fba6183d43a0b4a5e"
-    sha256 big_sur:        "491e63d58d36017a7d06a6c80839515ccc2f48a7b6e2997d268edd4c67601a71"
-    sha256 x86_64_linux:   "c37df3d81c688a301ab7a0685609687402741dc6e0571c1673472c0e66fc65e1"
+    rebuild 1
+    sha256 arm64_ventura:  "4b94167d1f1a523bc47894e53487a246d711acf367ac44fd7f12b52d7ffbacb4"
+    sha256 arm64_monterey: "dd25339b3f672617b177f6a22adf561a6b358789f7897d9b2e6f097de15da8f5"
+    sha256 arm64_big_sur:  "6add1e047b0a46384464588bebbc65f7c57027f6273e35ebb0c2c257cbb616f6"
+    sha256 ventura:        "9608fcc23eeaf22178aef5c1398d8e7b27bcf55d654b28804fa7722483d2913c"
+    sha256 monterey:       "c0167291b50ecf7885b1fd57a7c77e3e1c7acf33d5e99aee96e0380776e9890c"
+    sha256 big_sur:        "6ae26383e990fd4190c046ff21ebda111b126e37504fd6e0905bba954932a12d"
+    sha256 x86_64_linux:   "1ac8502bb28d3f7208b9f387fd0216367806a78d9fb90ecaa0386b9bb89cb55b"
   end
 
   depends_on "libtool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+  depends_on "spice-protocol" => :build
 
   depends_on "capstone"
   depends_on "glib"
