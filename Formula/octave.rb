@@ -1,19 +1,19 @@
 class Octave < Formula
   desc "High-level interpreted language for numerical computing"
   homepage "https://www.gnu.org/software/octave/index.html"
-  url "https://ftp.gnu.org/gnu/octave/octave-8.1.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/octave/octave-8.1.0.tar.xz"
-  sha256 "9bbe1963e650dfc45da704ac0d9824c378b28f66e483bf6dda232cdd50d09102"
+  url "https://ftp.gnu.org/gnu/octave/octave-8.2.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/octave/octave-8.2.0.tar.xz"
+  sha256 "b7b9d6e5004ff039450cfedd2a59ddbe2a3c22296df927a8af994182eb2670de"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "b05627affc9afefe142fa69564d15c7004b4dd4a318493131ee33eeb856b4e0f"
-    sha256 arm64_monterey: "ce8812199f63c50aeba78cc8cce4a8c5a58f5b16b16ac84a57075b2d2e0deb1b"
-    sha256 arm64_big_sur:  "ba1f02854e4a13b8e2029d7ad2615469762d8b9e8346560cf1951f8178c7939f"
-    sha256 ventura:        "c3e9df6607768e43adc1e811eec46971024e400c3ff57ce9e8ad9dc93166ff46"
-    sha256 monterey:       "9a0977f77e1ba12c64624917c1f32db3e1b8265ad68277c801a79f844a73ae57"
-    sha256 big_sur:        "28fb61a497cba5c04aa85aa190108c5158d52b15e0b1743e3e5367729353fa03"
-    sha256 x86_64_linux:   "5e895fe63c31304ba61c8045457f40c37453cc43f0b13f42c791af4c14de0597"
+    sha256 arm64_ventura:  "94f76da6ebc5a5142e2948da10746bd68e590b867b16c22b748cf1d1540574c1"
+    sha256 arm64_monterey: "978ec7da12cecead8b0f815de6e9e4cac02dfa643be124ca85cf53d17f09c53f"
+    sha256 arm64_big_sur:  "3071bf7637ea50a1aca6e402179671aa80789b92e20cf9cac1a408af1e28e583"
+    sha256 ventura:        "518130db9e73de1ab117fd84821ddd969ed753d98bd4ac1278a34b52e68077c9"
+    sha256 monterey:       "9672ac6e80d7b06fffcfc93f36a7f97d0b06439cb7276ce4b67e186069bf54c7"
+    sha256 big_sur:        "aa9141bf1b6fd68035f94ac6d39b8f1a20a2bc752e1bed892156c8022f17e79b"
+    sha256 x86_64_linux:   "9e6d41ade9fe6964e3f19a48b412736036da3a718e33509364e1cda979daa4af"
   end
 
   head do

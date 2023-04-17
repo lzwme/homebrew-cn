@@ -6,6 +6,11 @@ class Hck < Formula
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/sstadick/hck.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "30f7c688301cd4aec0be0c3933fa31fbee2eb0294d6e9b4074e31ecc2e0808d3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "61af5723cbd318a8039590921123d00c8b15f340cd2051ddd41da032845afd76"

@@ -20,6 +20,7 @@ cask "prolific-pl2303" do
               "com.prolific.driver.PL2303",
               "com.prolific.pkg.PLVCDriver",
             ],
+            quit:    "com.prolific.PLVCDriver",
             delete:  [
               "/Library/Extensions/ProlificUsbSerial.kext",
               "/var/db/receipts/*PL2303*.*",

@@ -1,24 +1,24 @@
 class Atuin < Formula
   desc "Improved shell history for zsh and bash"
   homepage "https://github.com/ellie/atuin"
-  url "https://ghproxy.com/https://github.com/ellie/atuin/archive/refs/tags/v14.0.0.tar.gz"
-  sha256 "cccff6fcd27ab12038fc4be0f8418197813306d6210512850d21d2b749c6c797"
+  url "https://ghproxy.com/https://github.com/ellie/atuin/archive/refs/tags/v14.0.1.tar.gz"
+  sha256 "00ba6eea19f11b3f73652e71af69b3dc7eb221761519f3b9680047f5476915b4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "750301080a94140b1894751fd0f12b863ded638405fda30658399ffbb72cccff"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8a1aacbeba4f3862b651ba5e92f493ed65d672d2532b0099b40ae9baae69160a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "719a8bf0a2095f16c9112d68b507ba18ff8e82da3c3f49e89d44276b2e59425d"
-    sha256 cellar: :any_skip_relocation, ventura:        "379565ee8afda0e21703cb6ab8760b47336e1039137a463aeba4e1be89442205"
-    sha256 cellar: :any_skip_relocation, monterey:       "28d30ba6651da5d53810db904e62ae36e9d2e5fd2dbf5afe5c622c0315fa8027"
-    sha256 cellar: :any_skip_relocation, big_sur:        "26d2d24aaf02c2a27d4c8b3249951010ce1e79c43afa2c7151ad6467b3a4b75e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f2a2e896c5a485e8832f9e4e581e43fe276907ed99081a5987763efb81992ee"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b01fb73284901416cba24a774288353204e0f57a3303cf337053a9b49f491953"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "77976415980d1b5548e3949cd7d192872c9f3956b004d07a7a1a8834517d441b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5cf663591c9e377db48ae3f4408002c540d9443c722264ab154ece75a5f84e98"
+    sha256 cellar: :any_skip_relocation, ventura:        "7b96277544d456f33e4e198f1d3e7a5ed4efeb8f65891df568fa3e5d9fa7b0f8"
+    sha256 cellar: :any_skip_relocation, monterey:       "04e5acd4c73e0eaee2ca1f9557a6e7b0343ae99fa34f52a836316c682c387ab6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "aa5365dbbbca4f684391a248aebd937e54236b7d31448ad53eeacbfcaa83fd6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29ba2253707e0599a96a2e8d5d77b44a6d075a8948c9ee4a45dcf5837e2a463e"
   end
 
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "atuin")
 
     generate_completions_from_executable(bin/"atuin", "gen-completion", "--shell")
   end

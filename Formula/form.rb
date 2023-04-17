@@ -5,6 +5,11 @@ class Form < Formula
   sha256 "f1f512dc34fe9bbd6b19f2dfef05fcb9912dfb43c8368a75b796ec472ee8bbce"
   license "GPL-3.0-or-later"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "9db94c3342b5744b787f9950b3b5931f2b4a1d55daad02352d3daffde5d6b376"
     sha256 cellar: :any,                 arm64_monterey: "ddfd7b8d84cc991ca0ccaea83bab5135535d5a4d96f4daca1dce9b89b18f7992"
