@@ -6,13 +6,14 @@ class Tt < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7d34dddbe2fed31dbbc81e7f3194d23299d8ef70ca6599e017c368134c878681"
-    sha256 cellar: :any,                 arm64_monterey: "6de0d52548eaaee564e5b176f006e1e3d4fcc19527a94b7416c9d94df4fc6fbe"
-    sha256 cellar: :any,                 arm64_big_sur:  "66d3cd3aa82a73a8934bdb76ae7012e439ebde195961bd830b95f15130fe6155"
-    sha256                               ventura:        "2667fb8b061039ab478b75474824088c68e436beb0cdc108cce79a8dd5d0187f"
-    sha256                               monterey:       "67ccc1aec007a9cb6ff37c0503b56a52be94b04dc964bb5a64a7f37b8f2c5c3d"
-    sha256                               big_sur:        "f7e2518c36171cc8c46a9325facdbc9ae4b7f7a6a956e6ed9a5746d08e0a113e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45b651e4eed97470aeca4692e38ee5b6acb8f33822b33fe4f8ddc2031c9848fb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "90f36785bcedab0e5592ca6779929fe572ebeb7389075e79e4883727a2cac508"
+    sha256 cellar: :any,                 arm64_monterey: "80223d4b9b72cd82912cbf727968cb8adea845572070b2fd4f172d5f2f2c7737"
+    sha256 cellar: :any,                 arm64_big_sur:  "cbdd5b31e080d0b390daa028d23785ef02d3c38d8435b49e57591a9872eaacf5"
+    sha256                               ventura:        "a6d00341d1f8ff22a36c9b6715ff04d757082efe5c6a44ebb7ba4a1ef3332a6f"
+    sha256                               monterey:       "05cc188751c21b585097775c6abc0c825b2e5edb2bc9b51db0e11ebc13f9550a"
+    sha256                               big_sur:        "cceeab18a63bdba2ef136a46da2a840694c1763b7665ef3a1b7e3805099c6d7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ffec5fa2dcd925fe8126372445bfe81318c5ba83799ba2ed36e2a31d0bf4d1f7"
   end
 
   depends_on "go" => :build
@@ -29,6 +30,7 @@ class Tt < Formula
     system "mage", "build"
     bin.install "tt"
     (etc/"tarantool").install "tt.yaml.default" => "tt.yaml"
+    generate_completions_from_executable(bin/"tt", "completion", shells: [:bash, :zsh])
   end
 
   test do

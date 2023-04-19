@@ -1,28 +1,27 @@
 class Dexter < Formula
   desc "Automatic indexer for Postgres"
   homepage "https://github.com/ankane/dexter"
-  url "https://ghproxy.com/https://github.com/ankane/dexter/archive/v0.4.3.tar.gz"
-  sha256 "68d840020c87b5792ab9eb3e12939cf3b5944427c1e28cf8a34d5737223de2a0"
+  url "https://ghproxy.com/https://github.com/ankane/dexter/archive/v0.5.0.tar.gz"
+  sha256 "bc50758bd06c25b9042c48274b4bbda79bd8bf715b86c390e2bf077f54f12776"
   license "MIT"
 
   bottle do
-    sha256                               arm64_ventura:  "f5fbf96a1cc3b83156c12309a494bf209ca7cee48038a58d130984139040fe10"
-    sha256                               arm64_monterey: "1062799e459bf363ee8248ec0428601e0a2a0d36bf64bbaeb22ad3317b19c09d"
-    sha256                               arm64_big_sur:  "29b7858b15990bade00c2b4dfef64227ceebc39d076e94986e892a23557ae3c5"
-    sha256                               ventura:        "7b49affac916be707608a9cc5de40a83f22db0ad05333eb0c634acd6e1c5852c"
-    sha256                               monterey:       "9374f5d5a343a2f200df6ca84466cd0ccd7dba165f36cf84923b1f2000eba6a0"
-    sha256                               big_sur:        "720f746d14dd9624f058aad44293b95b91cece439c705fcd60fbdd9b1d2d11df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0f4ef3dfed58f27327afb4b700c45cdf93d57a27c3f21ac57780b23cdbc8037"
+    sha256 cellar: :any,                 arm64_ventura:  "c5a9245b1c686e1fcbfa1b39420de21ef91aa3d52d758fa3c7a7bebd877c8bd1"
+    sha256 cellar: :any,                 arm64_monterey: "deeb9ef39b6cd14b2d944ab3ce96576bf7ed46f899383b44b4dc4268a506499e"
+    sha256 cellar: :any,                 arm64_big_sur:  "da7670a561caf0b12daede67c212a107072ae14d739d435a8b305e835c5599c8"
+    sha256 cellar: :any,                 ventura:        "a709925d5ba131a7bc1b3081664fe9ccabdc9ee67b14ed46650557529c305235"
+    sha256 cellar: :any,                 monterey:       "6d466ebc3971b3ffcf312ae7499737b4294c50ff1c299f15aee39155d98b6d36"
+    sha256 cellar: :any,                 big_sur:        "08f56f87222a86645ff52af4bc041a1ff0152eff98b1403389e8ac19cfdf7e28"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f833dbfce77ac84caa418a10d61afc5c04e307d6c783bf42d160d79a2e5e6562"
   end
 
   depends_on "postgresql@15" => :test
   depends_on "libpq"
-
-  uses_from_macos "ruby"
+  depends_on "ruby"
 
   resource "google-protobuf" do
-    url "https://rubygems.org/gems/google-protobuf-3.22.2.gem"
-    sha256 "d516c13248500fb4e1af469c2d71e8b6ecffacb6f55e9be203f01b7d0ff01eff"
+    url "https://rubygems.org/gems/google-protobuf-3.22.3.gem"
+    sha256 "09db2a54fcdf2c8ec04d2c10b2818fd6ee0990578317b42e839811f2fd288ff5"
   end
 
   resource "pg" do
@@ -31,8 +30,8 @@ class Dexter < Formula
   end
 
   resource "pg_query" do
-    url "https://rubygems.org/gems/pg_query-2.2.1.gem"
-    sha256 "6086972bbf4eab86d8425b35f14ca8b6fe41e4341423582801c1ec86ff5f8cea"
+    url "https://rubygems.org/gems/pg_query-4.2.0.gem"
+    sha256 "ab3059025d9f0471004b12036ad272e0147f1d4ddbab011dd96075c0abce899f"
   end
 
   resource "slop" do
@@ -72,7 +71,7 @@ class Dexter < Formula
 
     begin
       output = shell_output("#{bin}/dexter -d postgres -p #{port} -s SELECT 1 2>&1", 1)
-      assert_match 'extension "hypopg" is not available', output
+      assert_match "Install HypoPG", output
     ensure
       system pg_ctl, "stop", "-D", testpath/"test"
     end

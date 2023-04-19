@@ -1,18 +1,18 @@
 class Vala < Formula
   desc "Compiler for the GObject type system"
   homepage "https://wiki.gnome.org/Projects/Vala"
-  url "https://download.gnome.org/sources/vala/0.56/vala-0.56.6.tar.xz"
-  sha256 "050e841cbfe2b8e7d0fb350c9506bd7557be1cd86a90c896765f1a09a1870013"
+  url "https://download.gnome.org/sources/vala/0.56/vala-0.56.7.tar.xz"
+  sha256 "3d39c7596d5fa9ae8bfeae476669f811f7057b7f7b9308478a27b68443d8b003"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "0b3cddf89815d19eacd667449ce874880fecd27621ea941e1b7bfca55b3ec231"
-    sha256 arm64_monterey: "ac7e718efbe67e873a96d98fd0783bf72f365a64603991be2630e104a155e9a8"
-    sha256 arm64_big_sur:  "a21b10db6753b9f36766c45ce50512908d787e2b6cab77fe122a5c698110c383"
-    sha256 ventura:        "72e7a8af9e4bb146bc2379d3a89273b289fd9522e1bf4fa38e839e20023a883a"
-    sha256 monterey:       "f2c051fb0552d9f8d61891cc9d579896e94330983957a2b48f5301363096aef7"
-    sha256 big_sur:        "cf83ae265412ce5779424e6911335bc3833c6140e9d3f4350dec6426f3f2c863"
-    sha256 x86_64_linux:   "17cc434a9311bfb60e4166ac17c3c9e978e5a59940049cd39eb885f3d658c5de"
+    sha256 arm64_ventura:  "ddf5f7b676c49d4cd1f964724d246b1ee9fc84d61f3d4ed2be9ba9854a12b4af"
+    sha256 arm64_monterey: "e516639d649deaac5bad0c8d722de66fe7dbd863e721068da9b2997e04ec74a1"
+    sha256 arm64_big_sur:  "7478b59974b9fd82f3d3dd008a3862d42947108cd1b07d2f9bc4572c274a0a8d"
+    sha256 ventura:        "acb3c28824b6c51520425cb3b66444ec802d9e7092872e9925368156a2595208"
+    sha256 monterey:       "ea7d690baeae7165ea48450c2dc8fc7500dbfd8bc213a17553990b1e88d4dfa2"
+    sha256 big_sur:        "2d980d2a6da24489ddebb73b71a22a04064053ad6153af9373a46887b4bfcf18"
+    sha256 x86_64_linux:   "895baa08135c3cb58aa930d22cc1ad448964b04c8f852afea61131253b826882"
   end
 
   depends_on "glib"

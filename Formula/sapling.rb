@@ -34,7 +34,15 @@ class Sapling < Formula
   # `setuptools` 66.0.0+ only supports PEP 440 conforming version strings.
   # Modify the version string to make `setuptools` happy.
   def modified_version
-    segments = version.to_s.split("-")
+    # If installing through `brew install sapling --HEAD`, version will be HEAD-<hash>, which
+    # still doesn't make `setuptools` happy. However, since installing through this method
+    # will get a git repo, we can use the ci/tag-name.sh script for determining the version no.
+    build_version = if version.to_s.start_with?("HEAD")
+      Utils.safe_popen_read("ci/tag-name.sh").chomp + ".dev"
+    else
+      version
+    end
+    segments = build_version.to_s.split(/[-+]/)
     "#{segments.take(2).join("-")}+#{segments.last}"
   end
 

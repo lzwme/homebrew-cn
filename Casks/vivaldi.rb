@@ -1,8 +1,8 @@
 cask "vivaldi" do
-  version "5.7.2921.68"
-  sha256 "61bb0a2d4c22695d8d79eaad25bb882bf804a8d54d2d6f1a1be4bfecc7e2fef9"
+  version "6.0.2979.11"
+  sha256 "0657d764faacfae6e7446ac43a4f205a47734cc85566f760df72e746371d6e80"
 
-  url "https://downloads.vivaldi.com/stable/Vivaldi.#{version}.universal.dmg"
+  url "https://downloads.vivaldi.com/stable-auto/Vivaldi.#{version}.universal.tar.xz"
   name "Vivaldi"
   desc "Web browser with built-in email client focusing on customization and control"
   homepage "https://vivaldi.com/"
@@ -17,11 +17,15 @@ cask "vivaldi" do
 
   app "Vivaldi.app"
 
+  uninstall quit: "com.vivaldi.Vivaldi"
+
   zap trash: [
     "~/Library/Application Support/Vivaldi",
     "~/Library/Caches/com.vivaldi.Vivaldi",
     "~/Library/Caches/Vivaldi",
+    "~/Library/HTTPStorages/com.vivaldi.Vivaldi",
     "~/Library/Preferences/com.vivaldi.Vivaldi.plist",
     "~/Library/Saved Application State/com.vivaldi.Vivaldi.savedState",
+    "~/Library/WebKit/com.vivaldi.Vivaldi",
   ]
 end

@@ -1,8 +1,8 @@
 class VespaCli < Formula
   desc "Command-line tool for Vespa.ai"
   homepage "https://vespa.ai"
-  url "https://ghproxy.com/https://github.com/vespa-engine/vespa/archive/v8.151.21.tar.gz"
-  sha256 "f9e5c3d4ed26c8267cdd37d9c417ce728ce610c63fa6b4931a197338fe8c7596"
+  url "https://ghproxy.com/https://github.com/vespa-engine/vespa/archive/v8.153.19.tar.gz"
+  sha256 "d2f055f877c91b5bd2a168b510acb24e32d282e0ae403a17f26ab97f125b5870"
   license "Apache-2.0"
 
   livecheck do
@@ -12,13 +12,13 @@ class VespaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c4512362150cfcd1396bc51b00b278532e4f3663ce67d04e8e9fa694a6d2d20f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a645ce79e1c1931c0a14caa53a3e94b4afda4f9afd755728cd428958c868ba88"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "37f1b1b8b63f51fd20da74a0844be9f73be450534209b1259000943d00decf24"
-    sha256 cellar: :any_skip_relocation, ventura:        "d4255b0dbb33af37b6ed623a09dd7a7e8b9de0263fa53b84263eff07525ef8d7"
-    sha256 cellar: :any_skip_relocation, monterey:       "9087c07d45dd77e14012621aad85992f0703747b314e18675511dea2f53d6539"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7ecec149f7ba5834f00757f1dd075f1a108e4a7b0f4919ffaf88c647ae7a6a59"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52186b0289003393d137b69761564d0ad868c594c005eb4c4dd79cc3622ca674"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "878dabcbc70c60f5e5fae41f72f89532760d6e0d9ab756341e64f3b90519e479"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "af57d43c39587bf221e325cdda5bf7ed79b21e8d58e2109ca244fa8c20a88c1f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4154b737b1ce1cbef0ce4fa4006e77e9d6f1789b098d0f8c064300f37e9fab05"
+    sha256 cellar: :any_skip_relocation, ventura:        "f5fbe9a414b58a7c96aa74283baf6aa96b4de306de041811d7b202b16d0ef30b"
+    sha256 cellar: :any_skip_relocation, monterey:       "391d69cbbc59822beb1a99decb5b114cea5d3e97bd52ed71061e3ccfce7788d1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "140a2b5b5d500e584ca6a59980a444a82a424d7d92273fd29e75647afc313adb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0c61a3083f8ed6a8a2d05c54c5c001a43233daa3da7a3149f24243485eb0f27"
   end
 
   depends_on "go" => :build
