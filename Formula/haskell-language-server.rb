@@ -46,7 +46,7 @@ class HaskellLanguageServer < Formula
       hls = "haskell-language-server"
       bin.install bin/hls => "#{hls}-#{ghc.version}"
       bin.install_symlink "#{hls}-#{ghc.version}" => "#{hls}-#{ghc.version.major_minor}"
-      (bin/"#{hls}-wrapper").unlink unless ghc == ghcs.last
+      (bin/"#{hls}-wrapper").unlink if ghc != ghcs.last
     end
   end
 

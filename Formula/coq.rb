@@ -4,6 +4,7 @@ class Coq < Formula
   url "https://ghproxy.com/https://github.com/coq/coq/archive/V8.17.0.tar.gz"
   sha256 "712890e4c071422b0c414f260a35c5cb504f621be8cd2a2f0edfe6ef7106a1af"
   license "LGPL-2.1-only"
+  revision 1
   head "https://github.com/coq/coq.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Coq < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "715af2296ba26df18e0df419ef4d2b7250fb7354a78c3214498f8af00a38ac78"
-    sha256 arm64_monterey: "bdca19f84975b8698d84260ee55f59f19eb34e1af4c1fee31ed75cc6e8a4b029"
-    sha256 arm64_big_sur:  "5643ee00cf11445ad8315d6b612abbd97585c64c0b390f4ab282e762c7c4d9b2"
-    sha256 ventura:        "6aa2e65eb798cf710a3d9520ff137000a9663efda3a7f7c3b0b2370f0d082b08"
-    sha256 monterey:       "a7e68f44e997a310037751a9779b16684fcf1d1d60a05ead493a8973ce1954a2"
-    sha256 big_sur:        "73671c9f3566797a625d6253f26afb3f58c58b657cca5865b02a3311daf0d938"
-    sha256 x86_64_linux:   "c9cf6b50527431e4a5651b78bfff793cde64a98895f51f422afd87efb378fc8d"
+    sha256 arm64_ventura:  "008699456159b5a2aaa2ada32ce99e76036e6274217874d5d3ac85e3b686fed6"
+    sha256 arm64_monterey: "63b89cf96a2210f6dc498a8af41910e765270f7de01b4e734a73c2fc562626b4"
+    sha256 arm64_big_sur:  "34a66210a42dee8c70b371a362028232f57ab78b8b1e41d9b05b61d45b9916cc"
+    sha256 ventura:        "409829c3d07dae2378e54e33efb175e8582b1e3c034cff0968ac9eca0dc829a3"
+    sha256 monterey:       "9d16f8ee02778a71241be1a897af50d5abaa9c5c05705387c92cb5954739a9ab"
+    sha256 big_sur:        "e6379d0240df1e9bda2f68ce60bab72fe63e49099cb2f1fbb4c772503949405f"
+    sha256 x86_64_linux:   "85202a5fb75b2942e13b1b5d3537e1bfa1e86169e00ef0b68f56c0070e78dfed"
   end
 
   depends_on "dune" => :build
@@ -37,8 +38,13 @@ class Coq < Formula
                           "-mandir", man,
                           "-docdir", pkgshare/"latex"
     system "make", "dunestrap"
-    system "dune", "build", "-p", "coq-core,coq-stdlib,coq"
-    system "dune", "install", "--prefix=#{prefix}", "--mandir=#{man}", "coq-core", "coq-stdlib", "coq"
+    system "dune", "build", "-p", "coq-core,coq-stdlib,coqide-server,coq"
+    system "dune", "install", "--prefix=#{prefix}",
+                              "--mandir=#{man}",
+                              "coq-core",
+                              "coq-stdlib",
+                              "coqide-server",
+                              "coq"
   end
 
   test do

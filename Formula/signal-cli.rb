@@ -59,7 +59,7 @@ class SignalCli < Formula
 
       libsignal_client_jar = libexec.glob("lib/libsignal-client-*.jar").first
       embedded_jar_version = Version.new(libsignal_client_jar.to_s[/libsignal-client-(.*)\.jar$/, 1])
-      odie "#{r.name} needs to be updated to #{embedded_jar_version}!" unless embedded_jar_version == r.version
+      odie "#{r.name} needs to be updated to #{embedded_jar_version}!" if embedded_jar_version != r.version
 
       # rm originally-embedded libsignal_jni lib
       system "zip", "-d", libsignal_client_jar, "libsignal_jni.so", "libsignal_jni.dylib", "signal_jni.dll"

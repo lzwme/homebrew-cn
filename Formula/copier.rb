@@ -3,18 +3,18 @@ class Copier < Formula
 
   desc "Utility for rendering projects templates"
   homepage "https://copier.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/62/67/8b141e7f028dc93e195986d82b9dd3dd6990e382bfb1fd4d5b89f2385e4f/copier-7.1.0.tar.gz"
-  sha256 "a15737bc6669cfc741622c9978c45314ff808412a727b4b3968ff982d923fe46"
+  url "https://files.pythonhosted.org/packages/11/df/d0fdf927d52f7b6d81737c0ff0265fdf90960883aca4c09ab307fc5f9df0/copier-7.2.0.tar.gz"
+  sha256 "b6b3933efc6325da184d3940dd57e9869641798cad95f52d5cc193c9b443b313"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "790035dd9863e6186933ac06f6ab5a95b1ee88d3641a9267576f5e6d0c1640fb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d17423e60f13c469866bdd2f1ab6bcc605724254fa46694e07f913dbde15562"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3f5dff2ba168b6b1445629facfb541839f19d951fafddd50ae362e293dd293aa"
-    sha256 cellar: :any_skip_relocation, ventura:        "eb89d43b03b64c47edf5dc20a431b58483ab2b7f687351274b35026dee196b84"
-    sha256 cellar: :any_skip_relocation, monterey:       "620be5393538a4d984266b029fb0ece8207ecf7d262766dd9a4ffd0264340be9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c43f57145e7a090ab88d7b34c0f5cd4c71a6d8af2e0674014e17919d0b57af5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "394a7747cc18be01c6c754eb4b7c04c29374b900fe4a98e8077de3bad6808a25"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "21a8586fbe93cab71e32d824d482c1a6ebf82e8faec77d45ace76c0341b030aa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d016011f5680d455c2a034113a05b187a9a05df0fdb6338c05a1fe463fe01300"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2dc6ca1df48adaa0d8c789ca28abcc0ae5abfe00fe66ca1bacc9689a21bc5c99"
+    sha256 cellar: :any_skip_relocation, ventura:        "1e6cd0efb43eb1623374cd90cd0d9341118b8ae0f2aad06a02c5611fb0401e60"
+    sha256 cellar: :any_skip_relocation, monterey:       "18375eec1a926db860ef61de84aefe29fe306d47a52900a4b61f58111188f993"
+    sha256 cellar: :any_skip_relocation, big_sur:        "fc866c964119a7951593863a231006652289552c5f829a93f7b86541402926e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a85f86d740334b267cc487fab721fdf581c7fb174a37a900a31f60c9d732747"
   end
 
   depends_on "pygments"
@@ -53,8 +53,8 @@ class Copier < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/47/d5/aca8ff6f49aa5565df1c826e7bf5e85a6df852ee063600c1efa5b932968c/packaging-23.0.tar.gz"
-    sha256 "b6ad297f8907de0fa2fe1ccbd26fdaf387f5f47c7275fedf8cce89f99446cf97"
+    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
+    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "pathspec" do

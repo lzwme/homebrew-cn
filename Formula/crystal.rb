@@ -129,7 +129,7 @@ class Crystal < Formula
       shard_lock = YAML.load_file("shard.lock")
       required_molinillo_version = shard_lock.dig("shards", "molinillo", "version")
       available_molinillo_version = resource("molinillo").version.to_s
-      odie "`molinillo` resource is outdated!" unless required_molinillo_version == available_molinillo_version
+      odie "`molinillo` resource is outdated!" if required_molinillo_version != available_molinillo_version
 
       resource("molinillo").stage "lib/molinillo"
 

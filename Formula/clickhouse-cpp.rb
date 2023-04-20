@@ -1,34 +1,46 @@
 class ClickhouseCpp < Formula
   desc "C++ client library for ClickHouse"
   homepage "https://github.com/ClickHouse/clickhouse-cpp#readme"
-  url "https://ghproxy.com/https://github.com/ClickHouse/clickhouse-cpp/archive/refs/tags/v2.3.0.tar.gz"
-  sha256 "8eb8b49044247ccc57db73fdf41807a187d8a376d3469f255bab5c0eb0a64359"
+  url "https://ghproxy.com/https://github.com/ClickHouse/clickhouse-cpp/archive/refs/tags/v2.4.0.tar.gz"
+  sha256 "336a1d0b4c4d6bd67bd272afab3bdac51695f8b0e93dd6c85d4d774d6c7df8ad"
   license "Apache-2.0"
   head "https://github.com/ClickHouse/clickhouse-cpp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d416b409e0b3ea994d1862f98423903676b157bcb394b17b3ebbbd955f720620"
-    sha256 cellar: :any,                 arm64_monterey: "ad860cfc340915f420ac3a0f9f43a4ededae2af88f1f9d82d325ee78b59b7a81"
-    sha256 cellar: :any,                 arm64_big_sur:  "c1c3be5c26eba1691038d78ae71872f9b05674bde112b59f8f829045a82808a4"
-    sha256 cellar: :any,                 ventura:        "b0546b51446c0e27351f1890de99746d2fbd3b85053b8d21f299861515d15294"
-    sha256 cellar: :any,                 monterey:       "1c76150b5684c38b6cafc40fdf26a4eec68f664fab64b5cf672d9bd3623e50b0"
-    sha256 cellar: :any,                 big_sur:        "55b7fde1c2ac15a34defc526a4ccb12107c757263f5202ac7fc72d81d91ef572"
-    sha256 cellar: :any,                 catalina:       "b1a57158ed078088f38ce5da4207b4c10544e9268c35a17dd867e5788807ae7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59b4a9754fd3934831f20c2efe2398c4a56b4e7fb0de43aff7a50642e80b4bf6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5d522cddfcb58177aa8838f06ca2676f6fb8f925db7df257b74375b2b0ae16c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "129076d2815b9e9db3706ef2fc2a6d58d6397749aea33373db4123c136b12398"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1d00957ebb77520a38a00b2adc585473b22bbc76d80513221ccee03267999b8f"
+    sha256 cellar: :any_skip_relocation, ventura:        "180b9823ab1a33dd3eee7adc2e483f5e85eb8efa78397e09f9b7a2e706c90ae5"
+    sha256 cellar: :any_skip_relocation, monterey:       "feaa3c3899460b7eefd811683febd8656369acafcfb6779a71c493ccbe81ceae"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f9a20f558db8842cf7df6047b8a718cf38e65c7e65308de7ba51355d8751e95b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d027b532abf0e8cb16ee988be58b30919feb22761bd3a5875de8ea8b26b5de4"
   end
 
-  depends_on "cmake" => [:build, :test]
+  depends_on "cmake" => :build
   depends_on "abseil"
+  depends_on "cityhash"
+  depends_on "lz4"
   depends_on "openssl@3"
 
   fails_with gcc: "5"
   fails_with gcc: "6"
 
   def install
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DWITH_OPENSSL=ON",
-                    "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
-                    *std_cmake_args
+    # `cityhash` does not provide a pkg-config or CMake config file.
+    # Help CMake find it.
+    # Remove when merged: https://github.com/ClickHouse/clickhouse-cpp/pull/301
+    inreplace "CMakeLists.txt", "FIND_PACKAGE(cityhash REQUIRED)",
+                                "FIND_LIBRARY(CITYHASH NAMES cityhash REQUIRED)"
+    inreplace "clickhouse/CMakeLists.txt", "cityhash::cityhash", "cityhash"
+
+    args = %W[
+      -DWITH_OPENSSL=ON
+      -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
+      -DWITH_SYSTEM_ABSEIL=ON
+      -DWITH_SYSTEM_CITYHASH=ON
+      -DWITH_SYSTEM_LZ4=ON
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -73,24 +85,19 @@ class ClickhouseCpp < Formula
       }
     EOS
 
-    (testpath/"CMakeLists.txt").write <<~EOS
-      project (clickhouse-cpp-test-client LANGUAGES CXX)
-
-      set (CMAKE_CXX_STANDARD 17)
-      set (CMAKE_CXX_STANDARD_REQUIRED ON)
-
-      set (CLICKHOUSE_CPP_INCLUDE "#{include}")
-      find_library (CLICKHOUSE_CPP_LIB NAMES clickhouse-cpp-lib PATHS "#{lib}" REQUIRED NO_DEFAULT_PATH)
-
-      add_executable (test-client main.cpp)
-      target_include_directories (test-client PRIVATE ${CLICKHOUSE_CPP_INCLUDE})
-      target_link_libraries (test-client PRIVATE ${CLICKHOUSE_CPP_LIB})
-      target_compile_definitions (test-client PUBLIC WITH_OPENSSL)
-    EOS
-
-    system "cmake", "-S", testpath, "-B", (testpath/"build"), *std_cmake_args
-    system "cmake", "--build", (testpath/"build")
-
-    assert_match "Exception: fail to connect: ", shell_output(testpath/"build"/"test-client", 1)
+    args = %W[
+      -std=c++17
+      -I#{include}
+      -L#{lib}
+      -lclickhouse-cpp-lib
+      -L#{Formula["openssl@3"].opt_lib}
+      -lcrypto -lssl
+      -L#{Formula["cityhash"].opt_lib}
+      -lcityhash
+      -L#{Formula["lz4"].opt_lib}
+      -llz4
+    ]
+    system ENV.cxx, "main.cpp", *args, "-o", "test-client"
+    assert_match "Exception: fail to connect: ", shell_output("./test-client", 1)
   end
 end

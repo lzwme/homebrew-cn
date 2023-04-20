@@ -22,13 +22,10 @@ class Grep < Formula
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "gettext" => :build
+    depends_on "texinfo" => :build
     depends_on "wget" => :build
 
     uses_from_macos "gperf" => :build
-
-    on_system :linux, macos: :ventura_or_newer do
-      depends_on "texinfo" => :build
-    end
   end
 
   depends_on "pkg-config" => :build

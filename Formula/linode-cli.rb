@@ -3,19 +3,19 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https://www.linode.com/products/cli/"
-  url "https://files.pythonhosted.org/packages/b5/23/d307b8cde73d2378eb35f668c04b86728e9ab2b36c8129a1744613859cda/linode-cli-5.35.0.tar.gz"
-  sha256 "4c135c0b47ae8cc141ab71f3117156cdb8001146e6e9885f6143954e5e0e0752"
+  url "https://files.pythonhosted.org/packages/b8/15/d9aaea64ea509cf17cb441b7dfe8c1df8c919eec1e42b5bc2e3b4e2ca201/linode-cli-5.36.0.tar.gz"
+  sha256 "ff93095d7e906c789af0a449ca04ab3ac7bd3a1a65f1c7e772e6d00e01f66b6d"
   license "BSD-3-Clause"
   head "https://github.com/linode/linode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4492e5cb69be9c680fffd0cf5089d986f4f4888edaba593044f20dc7a0970b83"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "88383290e256f7055c4f49051344c99b89d384453856ea3278e304fd397ba515"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "57e5c5c5a2cd8061caceda9592c9aa24eed38be4541f523e2a32b2cd37d8a8d7"
-    sha256 cellar: :any_skip_relocation, ventura:        "2c78ca84a2c6c2f950fc452f8858926984a4cea2567cd60659b603011cbc7e0b"
-    sha256 cellar: :any_skip_relocation, monterey:       "999fa82d46299c3cebd3431d79081a9042254316340c630868bd3ecb08151f71"
-    sha256 cellar: :any_skip_relocation, big_sur:        "35182e5e408270365074f2f554e299d9da58124bf559b34eee2cf033e74ec521"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d736b20ba8e3475e429461e58c6e18ca8714cfdb1689f4ae2d9ca33e6f2d978"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ee41f0472dea07f970a85fca1acce8b092123174457053c1811d1a40041a311"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e0eb445a57680df4488dd1fcbeab933936fc3560a1f52ad77b284dd0b6586bc0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "17f6c167339c6753fafb77c0934cf61f76e530fb75280beb7c9d019f24980d91"
+    sha256 cellar: :any_skip_relocation, ventura:        "8eac7e50eb0f01f86e03c1241bc8f08f7c85cee0ece947500863b99a4a07595d"
+    sha256 cellar: :any_skip_relocation, monterey:       "9062be3ba33cd213ba8b3f3f408d9654b1ef7a867e60f944ec77f5c0f51d640f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cc645c838f2a4d2c61c009a78c5d1b56ec2bc023a5723f998c28a3e689d3660d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5cac290e96db9ad68b9db14c7e46f40ad9e10bcdc4a1ebc9aca44cbb85605695"
   end
 
   depends_on "openssl@1.1"
@@ -23,8 +23,8 @@ class LinodeCli < Formula
   depends_on "pyyaml"
 
   resource "linode-api-spec" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/linode/linode-api-docs/refs/tags/v4.145.0/openapi.yaml"
-    sha256 "c4075487eab4a92c73f1a2e747628440555a1c00aff44c7bc1217fde83385e36"
+    url "https://ghproxy.com/https://raw.githubusercontent.com/linode/linode-api-docs/refs/tags/v4.151.1/openapi.yaml"
+    sha256 "3c5c8dd87fb2cb7c2b1b14593e3cdcacd6010a34d24d48f3008f8270a6d12bed"
   end
 
   resource "certifi" do
@@ -43,8 +43,8 @@ class LinodeCli < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/47/d5/aca8ff6f49aa5565df1c826e7bf5e85a6df852ee063600c1efa5b932968c/packaging-23.0.tar.gz"
-    sha256 "b6ad297f8907de0fa2fe1ccbd26fdaf387f5f47c7275fedf8cce89f99446cf97"
+    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
+    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "requests" do
@@ -62,16 +62,7 @@ class LinodeCli < Formula
     sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
   end
 
-  # Fix the missing requirements.txt issue in pypi source tarball
-  # https://github.com/linode/linode-cli/pull/435
-  resource "requirements" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/linode/linode-cli/v5.35.0/requirements.txt"
-    sha256 "03139d1844f142725fc9cf14080039c5c0ecee84e0d8e43b36eb824e2d13a8d0"
-  end
-
   def install
-    buildpath.install resource("requirements")
-
     venv = virtualenv_create(libexec, "python3.11", system_site_packages: false)
     non_pip_resources = %w[terminaltables linode-api-spec requirements]
     venv.pip_install resources.reject { |r| non_pip_resources.include? r.name }

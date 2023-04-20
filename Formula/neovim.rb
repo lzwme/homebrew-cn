@@ -130,7 +130,7 @@ class Neovim < Formula
     inreplace "src/nvim/os/stdpaths.c" do |s|
       s.gsub! "/etc/xdg/", "#{etc}/xdg/:\\0"
 
-      unless HOMEBREW_PREFIX.to_s == HOMEBREW_DEFAULT_PREFIX
+      if HOMEBREW_PREFIX.to_s != HOMEBREW_DEFAULT_PREFIX
         s.gsub! "/usr/local/share/:/usr/share/", "#{HOMEBREW_PREFIX}/share/:\\0"
       end
     end

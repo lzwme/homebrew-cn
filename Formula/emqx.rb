@@ -1,19 +1,19 @@
 class Emqx < Formula
   desc "MQTT broker for IoT"
   homepage "https://www.emqx.io/"
-  url "https://ghproxy.com/https://github.com/emqx/emqx/archive/refs/tags/v5.0.22.tar.gz"
-  sha256 "eea10576ddbc121228dfa6ffaf5818ad3ad619831dc68f2fe47eff5970f3e967"
+  url "https://ghproxy.com/https://github.com/emqx/emqx/archive/refs/tags/v5.0.23.tar.gz"
+  sha256 "4fdd6ca89640eb55217c9b1f576c7b6b59eb69412def8c9a8ac60d84b667e9fc"
   license "Apache-2.0"
   head "https://github.com/emqx/emqx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8fec039ff97a451ae939dc66cdfc9cd765663997b1c46b8b30b1b0bfa81e41c0"
-    sha256 cellar: :any,                 arm64_monterey: "f5970b52211e84d12a46ae82a731c8bda8456e79bb688a68819354c64513cd69"
-    sha256 cellar: :any,                 arm64_big_sur:  "e08e0d959ddb785feea3f5e487111f1ce6d49e5e5630da7aa8d9d22a49270435"
-    sha256 cellar: :any,                 ventura:        "1366853a8136591e2f9c9b53ced0a6f6b5a5ec6a19523051c753ca429ce967fb"
-    sha256 cellar: :any,                 monterey:       "23497c648161f93de92bb61cd2a7343d913d42b4d25e090b7893d74a2f6684b7"
-    sha256 cellar: :any,                 big_sur:        "65d0eb5d51dc5c264d6fe03940dfbc9ea2303a27f2a653ad89e452f8c3592d61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7efa340cccd1071431f43ed13ed8d76ba4728383e013ce5c91a97ae178c69805"
+    sha256 cellar: :any,                 arm64_ventura:  "00de03b25e6b2f2ca319742aed5b3bfe9a31015c419ef9e1b19d72c90eb777e0"
+    sha256 cellar: :any,                 arm64_monterey: "9eaffc6114106f6f289c55276e56e21919dfb13e9fbd5e123fdf085c4376f068"
+    sha256 cellar: :any,                 arm64_big_sur:  "88a089a70b985060902a57d7f30c39da41c6a6a0ae026bdfdc0a0f1cb8bf6162"
+    sha256 cellar: :any,                 ventura:        "03c3b49c93680f3a5b2c4b83896a85ff3afc011fd4fee2fdf426193653d25540"
+    sha256 cellar: :any,                 monterey:       "6414a12418592eb9438f1537bac197e7f3bcfdb27837391542ace30d51467eb4"
+    sha256 cellar: :any,                 big_sur:        "bf081f29df239308292c32b2abb3835cdee5c1758af6f8097e93161ac6f3c92b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "00b39fc29cbf63c30ed94538a6c1104acc415f160173b5245fcabe93c19f70a0"
   end
 
   depends_on "autoconf"  => :build

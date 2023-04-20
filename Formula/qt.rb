@@ -381,7 +381,7 @@ class Qt < Formula
     system "make"
     system "./test"
 
-    ENV.delete "CPATH" unless MacOS.version <= :mojave
+    ENV.delete "CPATH" if MacOS.version > :mojave
     system bin/"qmake", testpath/"test.pro"
     system "make"
     system "./test"
