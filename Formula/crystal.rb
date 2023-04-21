@@ -4,8 +4,8 @@ class Crystal < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://ghproxy.com/https://github.com/crystal-lang/crystal/archive/1.8.0.tar.gz"
-    sha256 "6353c3b3ca5a1ed6c8b3ee80e5141d130856ebc736c30d1684661001279c2fe1"
+    url "https://ghproxy.com/https://github.com/crystal-lang/crystal/archive/1.8.1.tar.gz"
+    sha256 "0c1b40487e2748ed5b273b4ac27966f4733120b0f1bbe0b011751aae329e5866"
 
     resource "shards" do
       url "https://ghproxy.com/https://github.com/crystal-lang/shards/archive/v0.17.3.tar.gz"
@@ -19,13 +19,10 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7fcb68deaf726cc51807f9e37bbc9f68de9d5223d88c858aa4fd742898932656"
-    sha256 cellar: :any,                 arm64_monterey: "011c6d49af4710a885fbb6c507cedfd4005023e4657c8848d2004055879a0a3e"
-    sha256 cellar: :any,                 arm64_big_sur:  "0c71409d0e2e8faebe6a5bee1ea1b1e319b090c539853ededfc459240802d1c5"
-    sha256 cellar: :any,                 ventura:        "232e0ee032d319a480a509fc5d0e5f0a6df88f8d1dd7b82043ff4d1017429290"
-    sha256 cellar: :any,                 monterey:       "c734ac9453ad296a45cea93dc9492d199972225dcc4875568ffa7f5e4a6e786f"
-    sha256 cellar: :any,                 big_sur:        "b0f779368f0c739050e4b28c7c3aa2dd2122d30717760bde02e96ba2021b3521"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9b463668d7afa064a0b50a4242cd284c7ce5a52a016059be904e8576b0ce38f"
+    sha256 cellar: :any,                 ventura:      "f27e821c6d420c78f774fecb32d10daf23d53038440b34cb34b871f513c2024a"
+    sha256 cellar: :any,                 monterey:     "69d031746bc73f4838d2dc4e5163a77244e1bce656421e843a4f14826dcf40da"
+    sha256 cellar: :any,                 big_sur:      "0b059a3b6ca273b75d2113ca670a58e9a904c77b38766733cacc10a3d6a75ea5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "523be59acf4a706a0da64c13c3432f9ec396aaacefd6d1eec30f96e85ba380bb"
   end
 
   head do
@@ -126,6 +123,8 @@ class Crystal < Formula
 
     # Build shards (with recently built crystal)
     resource("shards").stage do
+      require "yaml"
+
       shard_lock = YAML.load_file("shard.lock")
       required_molinillo_version = shard_lock.dig("shards", "molinillo", "version")
       available_molinillo_version = resource("molinillo").version.to_s

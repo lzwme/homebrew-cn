@@ -2,23 +2,15 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 2
 
   stable do
-    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.22.1/gstreamer-1.22.1.tar.gz"
-    sha256 "e8fc50d9f68c83bea3c7f04d78de2a9d54511c69b3449a7df8e4e2edf80f1e00"
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.22.2/gstreamer-1.22.2.tar.gz"
+    sha256 "04e799a42a01dde86ee95d13deaea4739bca182a63223c0f64c9b645ff449018"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.22.1/gst-plugins-rs-gstreamer-1.22.1.tar.gz"
-      sha256 "65a8d76fda5f8b4a4ce088c574d055a823e9955352e1c6415e644dca4a655bae"
-
-      # Fix build failure on macOS.
-      # https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/issues/332
-      patch do
-        url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/commit/825fe9a4e29a464f3110e7e4e18e21c21d865144.diff"
-        sha256 "45b97f9ca6fd12ac11eb939947d65e4736a4d6e093ecaa588bf4f22a5587eefd"
-      end
+      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.22.2/gst-plugins-rs-gstreamer-1.22.2.tar.gz"
+      sha256 "b3591b1ffdc7f1f201043ba6e8995c0df217ce5a598a262187963407eb0cf15e"
     end
   end
 
@@ -28,13 +20,13 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "cc0751e7fb145b572800f4d24875e348971e6236deb29fa24f7699f67f169e68"
-    sha256 arm64_monterey: "bc0d7f42accde8ae6e1e869841f54f675dd1373b687082a87255f3cac0871fd1"
-    sha256 arm64_big_sur:  "b5c9de0b094f97d786e4a890154583b634a8abfe0314acd5d2bb8f6553c15784"
-    sha256 ventura:        "8f6008ec1356f83553a9c2604731fe5900a1cd1f9d1299803a8e5d4ead7835de"
-    sha256 monterey:       "710cfa00266d956e56683aedfa4b0e0fe95d5b71ad2d469e07e6d88916bd7185"
-    sha256 big_sur:        "1ced4cc4b3aa465fb9bda711cc2452328f10adbafe895865aa327910e48cd076"
-    sha256 x86_64_linux:   "044be2f31a149d491dbf290e460226c86f7698ae168ad289b9400a72c96bb1ec"
+    sha256 arm64_ventura:  "1c092db80d65a41d53629362285002aa5acdecb677bb2592e0d2e4a4d8120847"
+    sha256 arm64_monterey: "f3d95fead78da3aa7ae7c8d4bf54667d3dda72afb94c8c58904de5e485f767f4"
+    sha256 arm64_big_sur:  "49646b35befbceaa57f825faf5398198874b3730d92f2719a2025cf9166ce156"
+    sha256 ventura:        "779a482eb82312bc5654d5bb8997c75911402aff3757081aef0dc0d8b424dd1d"
+    sha256 monterey:       "44595512b4d02281cfe11e2d6709e4fdf3cfdc9de2f02f6a7d5beede0bd01898"
+    sha256 big_sur:        "53286726947d0ce5bafc74a1b91f477309b154e667fb72b1acbe9102c48d9939"
+    sha256 x86_64_linux:   "90c0c051155175d7a5a9a81861738aa0f60ad44a2f71cd9681a33fbf24f3b73b"
   end
 
   head do

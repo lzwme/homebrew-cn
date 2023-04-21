@@ -1,18 +1,18 @@
 class Gitleaks < Formula
   desc "Audit git repos for secrets"
   homepage "https://github.com/zricethezav/gitleaks"
-  url "https://ghproxy.com/https://github.com/zricethezav/gitleaks/archive/v8.16.2.tar.gz"
-  sha256 "1636fcc82cc2a37c4e4965990080f779ddfeb69d7f49ef805d0d6e9a124a6dae"
+  url "https://ghproxy.com/https://github.com/zricethezav/gitleaks/archive/v8.16.3.tar.gz"
+  sha256 "a3cc323cba5f75641da090858aebfd050d36cc34f0cb27b19c1fd520543f0546"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "08106d1d5fc7ab1c4bca2986a459399afb2180097a3b973b540fd5232f66e9f4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "08106d1d5fc7ab1c4bca2986a459399afb2180097a3b973b540fd5232f66e9f4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "08106d1d5fc7ab1c4bca2986a459399afb2180097a3b973b540fd5232f66e9f4"
-    sha256 cellar: :any_skip_relocation, ventura:        "5d86a6b1e3685d2ac99b040a7f11faabfa3a2d1bad0a882cf289b4c3dd545d21"
-    sha256 cellar: :any_skip_relocation, monterey:       "5d86a6b1e3685d2ac99b040a7f11faabfa3a2d1bad0a882cf289b4c3dd545d21"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5d86a6b1e3685d2ac99b040a7f11faabfa3a2d1bad0a882cf289b4c3dd545d21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "60db4a0cb56628ece7d9ccefd2369f535ea03204e9c95dd7730cfd061acae594"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "385202eefa9f98ae840449039a3af0d56315d4b0ca50dd4fbf7370d9e216c6d7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "385202eefa9f98ae840449039a3af0d56315d4b0ca50dd4fbf7370d9e216c6d7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "385202eefa9f98ae840449039a3af0d56315d4b0ca50dd4fbf7370d9e216c6d7"
+    sha256 cellar: :any_skip_relocation, ventura:        "50f8a43e80115dcff622b3771ead78851a507824dd3fad9652c593944e62a62b"
+    sha256 cellar: :any_skip_relocation, monterey:       "50f8a43e80115dcff622b3771ead78851a507824dd3fad9652c593944e62a62b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "50f8a43e80115dcff622b3771ead78851a507824dd3fad9652c593944e62a62b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c2d16af2b1dc0e56ed8770242680f2eb2280f7f7791eb426dfcd416b1f2a620"
   end
 
   depends_on "go" => :build

@@ -1,20 +1,19 @@
 class Qemu < Formula
   desc "Emulator for x86 and PowerPC"
   homepage "https://www.qemu.org/"
-  url "https://download.qemu.org/qemu-7.2.1.tar.xz"
-  sha256 "8c85699acf9d7a43a5fe29a64cdd56370b0c2d1ad074baf7098a824d17aad73b"
+  url "https://download.qemu.org/qemu-8.0.0.tar.xz"
+  sha256 "bb60f0341531181d6cc3969dd19a013d0427a87f918193970d9adb91131e56d0"
   license "GPL-2.0-only"
   head "https://git.qemu.org/git/qemu.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "4b94167d1f1a523bc47894e53487a246d711acf367ac44fd7f12b52d7ffbacb4"
-    sha256 arm64_monterey: "dd25339b3f672617b177f6a22adf561a6b358789f7897d9b2e6f097de15da8f5"
-    sha256 arm64_big_sur:  "6add1e047b0a46384464588bebbc65f7c57027f6273e35ebb0c2c257cbb616f6"
-    sha256 ventura:        "9608fcc23eeaf22178aef5c1398d8e7b27bcf55d654b28804fa7722483d2913c"
-    sha256 monterey:       "c0167291b50ecf7885b1fd57a7c77e3e1c7acf33d5e99aee96e0380776e9890c"
-    sha256 big_sur:        "6ae26383e990fd4190c046ff21ebda111b126e37504fd6e0905bba954932a12d"
-    sha256 x86_64_linux:   "1ac8502bb28d3f7208b9f387fd0216367806a78d9fb90ecaa0386b9bb89cb55b"
+    sha256 arm64_ventura:  "96cbfa24487fdbc9209fc475004af99a63d620e4967c335691010e0dde751404"
+    sha256 arm64_monterey: "fd190819d9a85685f70d3a6ea8723b9d6a43c0ed4f1d1f5e1949815603ae5834"
+    sha256 arm64_big_sur:  "00f300eb8f11cc99a731b208032393bb08edca1a445c55cefa4cf5d410695986"
+    sha256 ventura:        "81c092e53e6702027e90d077ef2207b2fa2c2f5a5a0a86f0fb0c2d5846df5330"
+    sha256 monterey:       "f77c4a4739bc990ad5190c09bbab3e2c667530116e1f7761e1c8fda003e4f4c1"
+    sha256 big_sur:        "23d01ff7f83a2e403cc8d57e5cd9d3def2dee1ce245de4443dc78979f5a8ce8f"
+    sha256 x86_64_linux:   "3fd4fb068a4d69e9130a31d2f4ff0397f51c5461053a4e1f849cf07de7c60a05"
   end
 
   depends_on "libtool" => :build
@@ -38,6 +37,9 @@ class Qemu < Formula
   depends_on "snappy"
   depends_on "vde"
   depends_on "zstd"
+
+  uses_from_macos "bison" => :build
+  uses_from_macos "flex" => :build
 
   on_linux do
     depends_on "attr"

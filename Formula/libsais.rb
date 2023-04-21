@@ -1,26 +1,28 @@
 class Libsais < Formula
   desc "Fast linear time suffix array, lcp array and bwt construction"
   homepage "https://github.com/IlyaGrebnov/libsais"
-  url "https://ghproxy.com/https://github.com/IlyaGrebnov/libsais/archive/refs/tags/v2.7.1.tar.gz"
-  sha256 "5f459ad90cd007c30aaefb7d122bba2a4307ea02915c56381be4b331cca92545"
+  url "https://ghproxy.com/https://github.com/IlyaGrebnov/libsais/archive/refs/tags/v2.7.2.tar.gz"
+  sha256 "16863b9e593733df38ecb1e58675f66dd6f8e72d5dd2175ec4bc62efa8edc7a7"
   license "Apache-2.0"
   head "https://github.com/IlyaGrebnov/libsais.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9e75cb03d9d2dbe5092d94da6061ded5699fcd06963e775dfcc7b0360dcfc397"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bcd00897d5e9988eefc46902791fb8413bbe356e4fb73d4b602534e5c235ad0a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "75fd53da29331ef2cb290f6200e1c1c8aab5cd83073072729e4d0e5fedfb60db"
-    sha256 cellar: :any_skip_relocation, ventura:        "2e69104dbcf0826d1afa9304b81489ea48b847f0e8dc3bc2f0ba7d164bde4809"
-    sha256 cellar: :any_skip_relocation, monterey:       "ddd2a143aa85e9a4f45e55e87681ec41bb0ace228c26b987ec04ad021fc91ba3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8392cb1c94a427c0ee4c863353b7b490e77ea384a755da07c128692b3d96105c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3bb77bd69880572993056ff586102ad1b6c19248e400452c25e587a1271def1"
+    sha256 cellar: :any,                 arm64_ventura:  "53296eb3235533c4ead32229d94d13955dec931244c01bc7976375402f85bf51"
+    sha256 cellar: :any,                 arm64_monterey: "a3be3792e44111fffc1096d712b29bb86d92d1fcbfdd05811dde1cc67db37568"
+    sha256 cellar: :any,                 arm64_big_sur:  "5e9c8635cbf61a2ff479158134374c211353b69f046d2711776c81ebcda544fc"
+    sha256 cellar: :any,                 ventura:        "07d18eada33a1a025287e414264c0c74b5c1fffa235d24d881034dd9956e595e"
+    sha256 cellar: :any,                 monterey:       "5139fd24859c292aef27e7075298068ed0489236ea4d5a5868cb5a514b006f53"
+    sha256 cellar: :any,                 big_sur:        "1889c356b4f7060a353359dbe59737777199ce70fff96d40a156a574a1b53140"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57ef2fd00a0946441ec53636ae21ff16296106aede9d363ec3a9823d892b3b91"
   end
 
-  depends_on "gcc" => :build
-
   def install
-    system "make", "all", "PLIBS=libsais.a"
-    system "make", "install", "PREFIX=#{prefix}", "MANS=#{man}", "PLIBS=libsais.a"
+    system ENV.cc, "-c", *Dir.glob("*.c")
+    system ENV.cc, "-shared", "-o", shared_library("libsais"), *Dir.glob("*.o")
+    system "ar", "rcs", "libsais.a", *Dir.glob("*.o")
+
+    include.install Dir.glob("*.h")
+    lib.install shared_library("libsais"), "libsais.a"
   end
 
   test do
@@ -45,7 +47,7 @@ class Libsais < Formula
         return 1;
       }
     EOS
-    system ENV.cc, "-o", "test", "test.c", "-L#{lib}", "-lsais"
+    system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lsais", "-o", "test"
     system "./test"
   end
 end

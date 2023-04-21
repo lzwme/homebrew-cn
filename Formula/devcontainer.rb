@@ -3,18 +3,18 @@ require "language/node"
 class Devcontainer < Formula
   desc "Reference implementation for the Development Containers specification"
   homepage "https://containers.dev"
-  url "https://registry.npmjs.org/@devcontainers/cli/-/cli-0.38.0.tgz"
-  sha256 "72dcb3e51613a073106cc9c1b8b072430120127e496fc5740fa71d5418535a1b"
+  url "https://registry.npmjs.org/@devcontainers/cli/-/cli-0.39.0.tgz"
+  sha256 "d315e21f6da17a4d5ac2ba7a99b36f46f3bff1bde657f6bbc8aeca3217b61786"
   license "MIT"
 
   bottle do
-    sha256                               arm64_ventura:  "9f775dfe0a44c8961f07eaeb91b9dee8831e0e0fce3aced304141061e7db6e70"
-    sha256                               arm64_monterey: "2e8e3d032b1ecdacbae78bfa092804c762b312f180066be5e7f9d280ee42ba12"
-    sha256                               arm64_big_sur:  "19d8e87719e96ffe71c066d17e1cf1dde0e47c0d5bf0de0bb33cef0749a77285"
-    sha256                               ventura:        "8919bdb325d7c9a3223915f6737f04a5f4ca328c9a93b1b0cc41b2ead4f24d94"
-    sha256                               monterey:       "49023144afee03d33815a8d7dc215a40e7f6672fe36fd6a0ace74d83eca1d1f5"
-    sha256                               big_sur:        "998e000a775e3819de87759c9a325c7a36875e89fd8735dff83ce762c1b7387d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4562a9a07d4266ca999d7283a384877c32d9a2ccbbdea012403f353a8ab5cdb"
+    sha256                               arm64_ventura:  "cce48ca46c61eadf368c221455ac1fffe1edd0f99f22d50f929609e512899e2f"
+    sha256                               arm64_monterey: "4b33f3d6613f5c41e2f3fa2fd4b287f38a954e8cf731fa3eff8429209cb73044"
+    sha256                               arm64_big_sur:  "375c53ac99be3add373733ff6452ddee8695a0d27bb6abe10b66a4d463a8f029"
+    sha256                               ventura:        "e748a8d6eef5bda5f1463ddb19660e187e6e7f8b6a48a8ae0f21ab146b9b803e"
+    sha256                               monterey:       "2a1fef513ca0833424191ee2dba9fdfdf5d620364f1c126b119a305195d677bb"
+    sha256                               big_sur:        "7173a320d7b6910ed3cf146d646838f2c96894dc2c3e3cb0d837e4b04fb4eb3f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "753c9213721916182ff38d471d8454c59b05259bb6e110f570c96cb3282a3bb7"
   end
 
   depends_on "node"

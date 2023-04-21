@@ -4,16 +4,17 @@ class Minizinc < Formula
   url "https://ghproxy.com/https://github.com/MiniZinc/libminizinc/archive/2.7.2.tar.gz"
   sha256 "edba6eb389f9afd6ba84c35fc57970174c71bd48642599276ac0d3dd9a9b931a"
   license "MPL-2.0"
+  revision 1
   head "https://github.com/MiniZinc/libminizinc.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8f0080a5a3b6787ca01bae4c040bb50430c5821c8d701054b5e411fe81bd892d"
-    sha256 cellar: :any,                 arm64_monterey: "876d7c8e06f0ba9fba762b70ae3b9a94eaf04803926a7e4df21c2a3f3117838c"
-    sha256 cellar: :any,                 arm64_big_sur:  "6db3a106ef05f6d305f0cc83fce8c5baae3d193f5603ab8b6bfeed6b03d4b6b0"
-    sha256 cellar: :any,                 ventura:        "057bbc313fa7d986561b4496e08683f997528e1c976ae75c5a7cefbce140b3f7"
-    sha256 cellar: :any,                 monterey:       "8d4100f71e2116d8c43c4df99c4f4cf9753df1249238a4b3f1a7e57863be2f74"
-    sha256 cellar: :any,                 big_sur:        "3b97e8b9e93fe151f71fa469df013455bfc1423545251502333f71a1ed85c4e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8597e19e7fee168b1fa6684219eefaac121e5bf021f91953e38c606c6a3ff62b"
+    sha256 cellar: :any,                 arm64_ventura:  "ebe868f7f13a332df10006c65a8b8f1f12d7eb9451b3a1357af86297a284dfb5"
+    sha256 cellar: :any,                 arm64_monterey: "291019320cb539c0274151526be048280767a58fe6c02a0099ccab4fdb97103b"
+    sha256 cellar: :any,                 arm64_big_sur:  "ad7c5535a677e8f23c8052886f430eda9749643f6d10ab1a4f2faf3281e8af74"
+    sha256 cellar: :any,                 ventura:        "62625cc64a53039518d7c3d2735a41536ae0836acbcc9900f276284484434d85"
+    sha256 cellar: :any,                 monterey:       "c549d9cf804b1166a2083d7443c490ce252610d48b8d4074a0e2d5776ef9ec61"
+    sha256 cellar: :any,                 big_sur:        "222bb163e950c00ecdc842878ac3cc1ee3333525d0e6576012bc902d702769c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "60e8bdeea0ce7aaea2ef40d2894bce3ba78cc5357248f0ca366db402eee5abdc"
   end
 
   depends_on "cmake" => :build

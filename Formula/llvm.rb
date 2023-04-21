@@ -1,8 +1,8 @@
 class Llvm < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https://llvm.org/"
-  url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.1/llvm-project-16.0.1.src.tar.xz"
-  sha256 "ab7e3b95adb88fd5b669ca8c1d3c1e8d2a601c4478290d3ae31d8d70e96f2064"
+  url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.2/llvm-project-16.0.2.src.tar.xz"
+  sha256 "6d8acae041ccd34abe144cda6eaa76210e1491f286574815b7261b3f2e58734c"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/llvm/llvm-project.git", branch: "main"
@@ -13,13 +13,13 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "541eb85ef784cefb37f24398354caf2ec1218e12aeff7b6094370aca14ad1aa7"
-    sha256 cellar: :any,                 arm64_monterey: "118e73da46f1c71449964d1e5767cf5a694008e22cda47ac4a0f46dca7049ccc"
-    sha256 cellar: :any,                 arm64_big_sur:  "a0faa83f255545043c20076e9bfd77783a1ac44a4a9c4effa968c4f191b06ef5"
-    sha256 cellar: :any,                 ventura:        "fcc4cf0d2658f10e7e8751aa24ad2d83e58c84709e52d114bb2da842ab203f76"
-    sha256 cellar: :any,                 monterey:       "a84c6a4a2d5a05eaabaf1590d01dedf364741d4be068338272c58518793bbe56"
-    sha256 cellar: :any,                 big_sur:        "e9c3b103b8a42411c65ea213c2ffbaeffcbcd7e27e6978eccec86f26461dc1be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a69e435bddd0876c250eb1f682a2ee33f4487dfe1ab17881aa8422b1ec35908f"
+    sha256 cellar: :any,                 arm64_ventura:  "ac3f20e8b4534c82de29ec95535288f7b4d155d2414b8483816575be1cb8f757"
+    sha256 cellar: :any,                 arm64_monterey: "939aa411b4126b4c6599864eb3637132b94b2359fe842d1f5365c9962bb1172e"
+    sha256 cellar: :any,                 arm64_big_sur:  "4d653c69b748ef6e06b354dd3f7d979fb5415001c562b7b7b288ed799739c5b9"
+    sha256 cellar: :any,                 ventura:        "7fb3a51454ad3cb681680415645912e658437c78daa375625c8b9b4b04073a01"
+    sha256 cellar: :any,                 monterey:       "49d4e530c6b33423589b0982ded3200540859fec7b0125805c207d9af7aad1de"
+    sha256 cellar: :any,                 big_sur:        "d029652c49e7fd544c02bd5a2ce54c3711670d30d4bb440ce55f0a91e19bc87b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf3277683e0b241e9fee6b5faf1d9ebebcbccccba85036f1c638082b3d1959b1"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed

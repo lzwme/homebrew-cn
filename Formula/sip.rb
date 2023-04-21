@@ -3,26 +3,26 @@ class Sip < Formula
 
   desc "Tool to create Python bindings for C and C++ libraries"
   homepage "https://www.riverbankcomputing.com/software/sip/intro"
-  url "https://files.pythonhosted.org/packages/c7/09/68bfefcdc48875e66aabafc946620483d0cd93aba52dde37d2059e5bf927/sip-6.7.8.tar.gz"
-  sha256 "7e7186a36818c9d325c82e59ac5b049d9022c2d5783942c38d49497ac8a94c8f"
+  url "https://files.pythonhosted.org/packages/48/75/98987181e897ef378d6c239ee733328a7264a41f2d8263e61d7b7c4c0909/sip-6.7.9.tar.gz"
+  sha256 "35d51fc10f599d3696abb50f29d068ad04763df7b77808c76b74597660f99b17"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
   head "https://www.riverbankcomputing.com/hg/sip", using: :hg
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1c8342758f17b10361617472d7e3c99d5db4921cd1343fafe56ff6129d4507dc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "13b0b3b4ccbb7521483a4d8b482be13253151e4dd4b60ea4aa49ac26a349bc4f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "84445dc23b83a2b2bac6a9a82f9bf28a900ce6944b14df6dddfca8b873b4555a"
-    sha256 cellar: :any_skip_relocation, ventura:        "bd84100e14df079ab132e82e7c5ea6bef5c5db9325d2bb04d303603168a2a77c"
-    sha256 cellar: :any_skip_relocation, monterey:       "264883a813ca3436a606ece331a54d0103a744a57529eeb30dc51bce589deb3d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4d6c552b25c05d7c2987772d59d7b3b71d8ec338ef1a8a87b890195974e7bc4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6cd94f1435fc4aa35e3378040812dde4eef157766dca044027b507f18dc6807f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b07e5b650d400e9a097966aa33e682cc9e615e1be41c811a13207af34d147c04"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6eafb58e8e27af7e0d854217c23ebf828f8ee9baca763d967df9d08a9c927032"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6ad868f403fc2427904da6d8fab0f2af6cfd3e3aeb9e20f3cbc81a6e1a4231c1"
+    sha256 cellar: :any_skip_relocation, ventura:        "2e58cd885ac632d62792c6d4f423b4524f5a766d344536a71a0fe11e71337f70"
+    sha256 cellar: :any_skip_relocation, monterey:       "4361970df0241af1e8d864c05e57e180c45f4c5f5168234fece3c9c730187b80"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0cd6e3acd78447f5eedeb2e72f01654152471b23472d5a4896a0cf73242a250d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "554cac25ac96b244a210eb59b1dac24ef1d624cc3279a17aab87b8bb12c5dc08"
   end
 
   depends_on "python@3.11"
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/47/d5/aca8ff6f49aa5565df1c826e7bf5e85a6df852ee063600c1efa5b932968c/packaging-23.0.tar.gz"
-    sha256 "b6ad297f8907de0fa2fe1ccbd26fdaf387f5f47c7275fedf8cce89f99446cf97"
+    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
+    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "ply" do

@@ -1,8 +1,8 @@
 class Algol68g < Formula
   desc "Algol 68 compiler-interpreter"
   homepage "https://jmvdveer.home.xs4all.nl/algol.html"
-  url "https://jmvdveer.home.xs4all.nl/algol68g-3.1.8.tar.gz"
-  sha256 "0da918cbe652a1151895fc506a8747c753fb0b075453dcde5736ab27dc9f42bb"
+  url "https://jmvdveer.home.xs4all.nl/algol68g-3.1.9.tar.gz"
+  sha256 "6705656c29283ae2fc34276b1e628882e66ee0b982c30c19023427d0333f10fb"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Algol68g < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9ab021e56b84cc316893a04681a3344e4a94d05f11d78ded73d4372c536ea906"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac0e97c211193d21251564d5e95b028664dcca3fcf08bb752a148b0f1d2d156f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "17576bc5b4dc9ea077d44e9d397c50afd0f3302e1a3d3aaa72e60b45458f6d8a"
-    sha256                               ventura:        "8865fc1d9eebd54b20eaf9686ca9cd529588bba6685aaf21d3346a7ccf97290c"
-    sha256                               monterey:       "7da3f5da559547aaa2f1a1702c9b340f446b379f50e4db92d7b470b4a78afe1c"
-    sha256                               big_sur:        "27e26584c55495acc368dc0f01ef9a7682b4e1648edcec309247039354c17932"
-    sha256                               x86_64_linux:   "d8f43cb88f905f04e91322157fc3ef7158b96bd6e950f017dbb7c3288186fe84"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd7c88a33670574b1037655110476b2f5e84df039b5f95b385986d1b3f82df9d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ad8d3605623805841721590b578f54bc37f5dad2340c0461dd957bb51b2d9a7e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c10e338e9fc88fa84893605c3ecdec7f6dfd71559b130716e7900adea0811de8"
+    sha256 cellar: :any_skip_relocation, ventura:        "6dff2f48a323d8d85eda3fc1513efe94b469d28eced8ac9618dc4ec914b14ed9"
+    sha256 cellar: :any_skip_relocation, monterey:       "e6e31034dc790a2d03806e10300fabe67c5405176d6da447d665d002dd7570b8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7e33b5e52bac1290eac5ad02397c3391e6306c5c8fb7b4600b092b727ed41392"
+    sha256                               x86_64_linux:   "6a759343024e419a055d0dc73dea4b9dcc7874638a3207af2551449359c4813c"
   end
 
   on_linux do

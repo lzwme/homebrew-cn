@@ -3,18 +3,18 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/39/cd/279e223685ea8ad05dd7eb0fd99914f8071a22b37975e638575d4864a584/dxpy-0.345.0.tar.gz"
-  sha256 "cf5b47e83866a9c87a4fc59262eac500e860f6a890e6a897a577eff68e28cff2"
+  url "https://files.pythonhosted.org/packages/31/1b/c6709b85c7cd395d0ee4425c0d585e2b9d271094b52e1321365abe2c4916/dxpy-0.346.0.tar.gz"
+  sha256 "c682bb709b125b02d0222c650556a7e6cf1fee73c802538b6625afd92d8947ee"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3e3ffbe5a74014671abe128fe18235673b67bfe71e569f4ce1bc3fc7e797fec5"
-    sha256 cellar: :any,                 arm64_monterey: "8df68c595cb8ae6bc2fe6f6725ec072f235dc1d5a7b6508ac5966eb4188c72ed"
-    sha256 cellar: :any,                 arm64_big_sur:  "29d50ef8c9100145659ddd4a8e5422b7e22ae5df159fb9ef5cedf2094aa84bba"
-    sha256 cellar: :any,                 ventura:        "1684f90d6b9ec42ded850dd5e4c45cf48db015117492f897c0e9023d9002be2c"
-    sha256 cellar: :any,                 monterey:       "76a3976d11a1554e85158db5a21d15913761fdf6c1e87b4a3aac0872a997bf5b"
-    sha256 cellar: :any,                 big_sur:        "f5f4d687fa1e81ebd82dde62753b00750e7b1d13256dc0934a8a9814dc12393c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1c305551b8f22c2f8cc71a633fb61e5ad6f7a0c35e5c4bc690efa71578bbd49"
+    sha256 cellar: :any,                 arm64_ventura:  "8c7a0aef068d8ae6c0f243ceaa61fa829c5396afdde055ddb8d19b50b6f03844"
+    sha256 cellar: :any,                 arm64_monterey: "f36a1d3e27fb160364f6f9e5b9355ee7ed8eefc0746d6a6aedc6cdd10b4d83b2"
+    sha256 cellar: :any,                 arm64_big_sur:  "e6dd0ccff72dcfc18408aa6afa34dbe9d29c47941bcbe10beb30e3f2c2f6c3c6"
+    sha256 cellar: :any,                 ventura:        "43f1cfdf9ce8bacab37906ed4385c82bc4e8be3a796e703f6c6177267a49dab3"
+    sha256 cellar: :any,                 monterey:       "b6010ce9917305c52bf4e97b369650aa758a62eefac1cb21d68b93a882ff5003"
+    sha256 cellar: :any,                 big_sur:        "9eecb5ebee36d0745cf948ea88a8ef074851a5607d2a4c1221994c4ca03901b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c236f560738de7d3fb4867fbff920fdab4ba1ff234903126d2aa9035f18602b1"
   end
 
   depends_on "rust" => :build # for cryptography
@@ -52,8 +52,8 @@ class Dxpy < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/15/d9/c679e9eda76bfc0d60c9d7a4084ca52d0631d9f24ef04f818012f6d1282e/cryptography-40.0.1.tar.gz"
-    sha256 "2803f2f8b1e95f614419926c7e6f55d828afc614ca5ed61543877ae668cc3472"
+    url "https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz"
+    sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
   end
 
   resource "idna" do
@@ -62,8 +62,8 @@ class Dxpy < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/3d/7d/d05864a69e452f003c0d77e728e155a89a2a26b09e64860ddd70ad64fb26/psutil-5.9.4.tar.gz"
-    sha256 "3d7f9739eb435d4b1338944abe23f49584bde5395f27487d2ee25ad9a8774a62"
+    url "https://files.pythonhosted.org/packages/d6/0f/96b7309212a926c1448366e9ce69b081ea79d63265bde33f11cc9cfc2c07/psutil-5.9.5.tar.gz"
+    sha256 "5410638e4df39c54d957fc51ce03048acd8e6d60abc0f5107af51e5fb566eb3c"
   end
 
   resource "pycparser" do

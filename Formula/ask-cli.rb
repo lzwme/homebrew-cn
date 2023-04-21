@@ -3,18 +3,18 @@ require "language/node"
 class AskCli < Formula
   desc "CLI tool for Alexa Skill Kit"
   homepage "https://github.com/alexa/ask-cli"
-  url "https://registry.npmjs.org/ask-cli/-/ask-cli-2.29.1.tgz"
-  sha256 "08612ffc50e2dac8a8a5492bda36c7c82fa7f1f44d700f696a50e6d3e6b9f8ed"
+  url "https://registry.npmjs.org/ask-cli/-/ask-cli-2.29.2.tgz"
+  sha256 "4006b923bc5667936efee1cf45bd44df0a51f018be3eb8fe6ee0034cf61d6214"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d7adb3fe45ed6a52f1cdf6e61c53487f499d5409968f130110f3d1310c0bc0b4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0ec798427ecd4ef59f86b30cc99d181d06a0c077aa83c706f1ef4006f71fc979"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "36bcb5e3d391e02f96ca6e38ea1f97751683504354414b696c275dd94bdb48f6"
-    sha256 cellar: :any_skip_relocation, ventura:        "47a5eff1eb358b10dfa13d3572d1ac830357eccf5e4a42b6372eecd510961511"
-    sha256 cellar: :any_skip_relocation, monterey:       "9e9c7aa62ef8e73f5673457bb87098f58d2d37bc5f87c500fbe0c82071e6f5c1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1216f17149075ef07bab15e1412f71a1a91bc0c96992573390ad4a60dbcf68fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7dd8583829c1eedc039c0ec48edef8c57cdca94bf416832a5aedacf606adc46"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3e819b718a0a6a871f0358dd65f5495a564313dc185e684b9f94abead540213f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0cb256219d976214e22d5636e5db75fba94dc9e1dfa4685abbf0c7fbe0d6b7b8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dba3f1d99b4c5e7d74888839134f4f23d1528c3af0bb1f2f880303ab839f51af"
+    sha256 cellar: :any_skip_relocation, ventura:        "23818d2a8274f1402954cf0f98a8194f01619725e984c1f269d98912a8af694f"
+    sha256 cellar: :any_skip_relocation, monterey:       "c97d57d3fa12c17b08f944195bdd47c0c25a654183b8852ea5666c143fb550d6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "824178a338a29f87651e684bf98ea50c4ebb0addde9a026a1fbf8d55b5b5112f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "082a494dfc04b3f8992a2fffaa375bb3b5e36496610ddc9fdeb1016c2ae4a73f"
   end
 
   depends_on "node"

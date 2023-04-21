@@ -13,22 +13,24 @@ class WireguardTools < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "40c449672b0ea3d2282ecf089efc8d538c2a95780501c318daf78505395ca5a0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e0c9a14a47329f10d703a6610578d4d17c573e6e0129e79dfe4b18796f325ec8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "34b715070b443dc1e42bad4d534d3e6193aed78aae7138d8a6bbc5432412138f"
-    sha256 cellar: :any_skip_relocation, ventura:        "4b7c8c2272629b7d089a346a916533123c363f9d25353699c01977deda79b898"
-    sha256 cellar: :any_skip_relocation, monterey:       "a0871ff7ca2a9b46b2b1f2d78b2413673765ce32a8e3fdb79bf657cf4fb8b5af"
-    sha256 cellar: :any_skip_relocation, big_sur:        "495fd01f14466efe9afe8f6f939a3ae06a86378089a101c85b544e210a96355c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c791ab19ad38560d5f2748a870696a31b8b1aba3249f6fde51e0b26b02d04fb8"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "00c5b2ed459e7beae63c31d85c5be506b43dc2936439c5139bb92482a5df9b37"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "25c8ed67136dcaa8d5292aae40793fd68fe6b803d57fc698a9bc7712bfc1c37f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b73274d92eb5cc895635e2f8baf8f3483dc373e6b6591cd101e2a3bc6ddbae8e"
+    sha256 cellar: :any_skip_relocation, ventura:        "ccfe3d35f1cdcb6df435e96fed4cff835274a9a34530c270e71660b65c667ff7"
+    sha256 cellar: :any_skip_relocation, monterey:       "61ae65bc95ae1ff7497a7d3f6128054f21fc0daafc089553c3f44a8f7b5b34b0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7998a72195a995ee53e1360a42532bcb6fa42fda1002f16674c695ef5cea101e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b742a6fbc6894b5da2865387e48a7481d894ba90bc37eb5fd38081b2f3af1817"
   end
 
   depends_on "bash"
   depends_on "wireguard-go"
 
   def install
-    inreplace ["src/completion/wg-quick.bash-completion", "src/wg-quick/darwin.bash"],
-              " /usr/local/etc/wireguard", " #{etc}/wireguard"
+    if HOMEBREW_PREFIX.to_s != HOMEBREW_DEFAULT_PREFIX
+      inreplace ["src/completion/wg-quick.bash-completion", "src/wg-quick/darwin.bash"],
+                " /usr/local/etc/wireguard", "\\0 #{etc}/wireguard"
+    end
 
     system "make", "-C", "src",
                          "BASHCOMPDIR=#{bash_completion}",

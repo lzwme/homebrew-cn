@@ -1,19 +1,19 @@
 class Mdcat < Formula
   desc "Show markdown documents on text terminals"
   homepage "https://github.com/swsnr/mdcat"
-  url "https://ghproxy.com/https://github.com/swsnr/mdcat/archive/refs/tags/mdcat-2.0.1.tar.gz"
-  sha256 "d6da2edaeaeec646eebeda13de6ae8a5185f0257342b48740b3f40c7b20b5c96"
+  url "https://ghproxy.com/https://github.com/swsnr/mdcat/archive/refs/tags/mdcat-2.0.2.tar.gz"
+  sha256 "db22edd1a05938202f67f76a65c8d298ac0a1f8ce2d8538d7a25e2591c7d7590"
   license "MPL-2.0"
   head "https://github.com/swsnr/mdcat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8959c97f42169414f032b588abc3a052b13f026eec769a40be56094872f840e7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ee38c67c2c57a111a3a2a1792385262440990fb2caf8149db7aac3f51419660f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c43bdeaee8ead140c1a3263b1f5c6a37431395245d8b81a2d1eb007257be3444"
-    sha256 cellar: :any_skip_relocation, ventura:        "5e6b179d738854447a6316b890002f71d89a24710323ba810acc5669d2bd9e20"
-    sha256 cellar: :any_skip_relocation, monterey:       "44ded916e4343838ff5884ca512d35a55bcc8b0972125769470c49cb013ba91f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bbf348489099049bb4d9d4d7d4f9411b8a3318be445256994f5a74901503e472"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83acac87081bb0ab213191cbd9382af4dcf06c71c78f922c7b3b7cd4a67910d3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02e39d8691a794bd99bc6e980991a40af8e7420bc71ce75b21c48721dd6b3900"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4166cc5af32f6c6180746c1eebc62ecdd7be3a35c4c46d72a8824cb3fa25fa01"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1f94a0675c4455fad76b37cf1a1205cf18e89c0555d45e793bf647f74003014a"
+    sha256 cellar: :any_skip_relocation, ventura:        "4f48c85f02466625c9ccbe814c3cabbfcc44105d1584bab8e08194a7b958551e"
+    sha256 cellar: :any_skip_relocation, monterey:       "556004bc28d67cc0f2a5d3e873c60954496e7dc05e5e23106dbbb94c4c943ba3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "637462de6736dc6734ccbd146f2994484450f5e309cd89c933f528c9402faf2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7cc6e21640ffcdeaed04bfa1b57ba0ef5b45f684a23dbd99ea295413fd9e15e8"
   end
 
   depends_on "cmake" => :build

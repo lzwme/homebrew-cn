@@ -1,8 +1,8 @@
 class Cbc < Formula
   desc "Mixed integer linear programming solver"
   homepage "https://github.com/coin-or/Cbc"
-  url "https://ghproxy.com/https://github.com/coin-or/Cbc/archive/releases/2.10.9.tar.gz"
-  sha256 "96d02593b01fd1460d421f002734384e4eb1e93ebe1fb3570dc2b7600f20a27e"
+  url "https://ghproxy.com/https://github.com/coin-or/Cbc/archive/releases/2.10.10.tar.gz"
+  sha256 "f394efecccc40a51bf79fba2c2af0bc92561f3e6b8b6e4c6e36d5e70986f734f"
   license "EPL-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Cbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "5cad219c2d4a6371c2d9f56fb3e225b59d4e0dd0d8ec8ff81856841bfed4018a"
-    sha256 cellar: :any,                 arm64_monterey: "71ef863b217a28962072ece491da7ee1bd0b3608ad20d687f3cfd10b96b5daa4"
-    sha256 cellar: :any,                 arm64_big_sur:  "8df58beceb472403f05dbaf1a821c601249955eca2f4e12d352e1dbbf1af60f4"
-    sha256 cellar: :any,                 ventura:        "cb0951838409208ae6293d056a1ab80be2c36c89c76afcd1b00675d97fc0ac37"
-    sha256 cellar: :any,                 monterey:       "29cb89c2e874ba69f1243ada350f6b7b248a25c5f28c14c1785e349618899681"
-    sha256 cellar: :any,                 big_sur:        "e11266ac6e81462b06049703d83fdc370cd28f3d75d2f33663469f1ffa363daf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1af7e782db242fa4709e5ca8b013b247765340d8629d01e39c0ba03798d39036"
+    sha256 cellar: :any,                 arm64_ventura:  "41ca69a49c76c247a65ad2d1823f1945c74ebdf561b7af9b9cf0658c39fc12e8"
+    sha256 cellar: :any,                 arm64_monterey: "ad9fc6201e9b1cfff361027eeb5a45dc27fb2e2bf6094d9f66b41ec61cd8a62b"
+    sha256 cellar: :any,                 arm64_big_sur:  "3b97e65bfd793f595ba6ece818b75ab073f776b8220a684c35765689fa77cf37"
+    sha256 cellar: :any,                 ventura:        "1ec9f906b56d4e8d3eb4dbc04cadf06833bd04363b82c7320d854e2bea649b27"
+    sha256 cellar: :any,                 monterey:       "666ed0e592258401cf184987a2faade1c20d044e9bd50139765cfbc3209a5d36"
+    sha256 cellar: :any,                 big_sur:        "3e47d841e182ae9d5f7664edbfe29cb9bae86b005d9f5e4a4719f52456a0fea4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0e4df0a5d5832e1ab480aa16f86339b12206866ba0785e9b4da8258192ef55c"
   end
 
   depends_on "pkg-config" => :build
