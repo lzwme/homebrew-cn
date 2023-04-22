@@ -39,11 +39,13 @@ class Trino < Formula
   def install
     # Manually extract tarball to avoid losing hardlinks which increases bottle
     # size from MBs to GBs. Remove once Homebrew is able to preserve hardlinks.
+    # Ref: https://github.com/Homebrew/brew/pull/13154
     libexec.mkpath
     system "tar", "-C", libexec.to_s, "--strip-components", "1", "-xzf", "trino-server-#{version}.tar.gz"
 
     # Manually untar, since macOS-bundled tar produces the error:
     #   trino-363/plugin/trino-hive/src/test/resources/<truncated>.snappy.orc.crc: Failed to restore metadata
+    # Remove when https://github.com/trinodb/trino/issues/8877 is fixed
     resource("trino-src").stage do |r|
       ENV.prepend_path "PATH", Formula["gnu-tar"].opt_libexec/"gnubin"
       system "tar", "-xzf", "trino-#{r.version}.tar.gz"

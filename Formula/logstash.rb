@@ -93,6 +93,7 @@ class Logstash < Formula
   end
 
   test do
+    # workaround https://github.com/elastic/logstash/issues/6378
     (testpath/"config").mkpath
     ["jvm.options", "log4j2.properties", "startup.options"].each do |f|
       cp prefix/"libexec/config/#{f}", testpath/"config"

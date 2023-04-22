@@ -28,6 +28,7 @@ class CargoZigbuild < Formula
     # Ignore rust installation path check
     ENV["RUSTUP_INIT_SKIP_PATH_CHECK"] = "yes"
     # Remove errant CPATH environment variable for `cargo zigbuild` test
+    # https://github.com/ziglang/zig/issues/10377
     ENV.delete "CPATH"
 
     system "#{Formula["rustup-init"].bin}/rustup-init", "-y", "--no-modify-path"

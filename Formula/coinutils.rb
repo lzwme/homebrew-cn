@@ -44,6 +44,7 @@ class Coinutils < Formula
     system "./configure", *args
     system "make"
     # Deparallelize due to error 1: "mkdir: #{include}/coinutils/coin: File exists."
+    # https://github.com/coin-or/Clp/issues/109
     ENV.deparallelize { system "make", "install" }
   end
 

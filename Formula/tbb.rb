@@ -25,6 +25,7 @@ class Tbb < Formula
   end
 
   # Fix installation of Python components
+  # See See https://github.com/oneapi-src/oneTBB/issues/343
   patch :DATA
 
   def install

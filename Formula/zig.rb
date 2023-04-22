@@ -27,7 +27,7 @@ class Zig < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on macos: :big_sur # ziglang/zig#13313
+  depends_on macos: :big_sur # https://github.com/ziglang/zig/issues/13313
   depends_on "zstd"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
@@ -60,7 +60,7 @@ class Zig < Formula
     assert_equal "Hello, world!", shell_output("./hello")
 
     # error: 'TARGET_OS_IPHONE' is not defined, evaluates to 0
-    # ziglang/zig#10377
+    # https://github.com/ziglang/zig/issues/10377
     ENV.delete "CPATH"
     (testpath/"hello.c").write <<~EOS
       #include <stdio.h>

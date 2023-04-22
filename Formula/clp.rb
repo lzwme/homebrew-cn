@@ -31,7 +31,7 @@ class Clp < Formula
   end
 
   def install
-    # Work around for:
+    # Work around https://github.com/coin-or/Clp/issues/109:
     # Error 1: "mkdir: #{include}/clp/coin: File exists."
     mkdir include/"clp/coin"
 

@@ -55,6 +55,10 @@ class Mu < Formula
     end
   end
 
+  # Regression test for:
+  # https://github.com/djcb/mu/issues/397
+  # https://github.com/djcb/mu/issues/380
+  # https://github.com/djcb/mu/issues/332
   test do
     mkdir (testpath/"cur")
 
@@ -86,7 +90,7 @@ class Mu < Formula
 
     assert_equal 1, shell_output(find_message).lines.count
     assert_equal 2, shell_output(find_message_and_related).lines.count, <<~EOS
-      You tripped over djcb/mu#380
+      You tripped over https://github.com/djcb/mu/issues/380
         --related doesn't work. Everything else should
     EOS
   end

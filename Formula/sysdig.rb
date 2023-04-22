@@ -15,6 +15,7 @@ class Sysdig < Formula
       sha256 "2a4b37c08bec4ba81326314831f341385aff267062e8d4483437958689662936"
 
       # Fix 'file INSTALL cannot make directory "/sysdig/userspace/libscap"'.
+      # Reported upstream at https://github.com/falcosecurity/libs/issues/995.
       # Remove when `falcosecurity-libs` is upgraded to 0.11.0 or newer.
       patch do
         url "https://github.com/falcosecurity/libs/commit/73020ac4fdd1ba84b53f431e1c069049828480e9.patch?full_index=1"

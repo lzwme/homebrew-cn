@@ -58,6 +58,7 @@ class Passenger < Formula
 
     (libexec/"download_cache").mkpath
 
+    # Fixes https://github.com/phusion/passenger/issues/1288
     rm_rf "buildout/libev"
     rm_rf "buildout/libuv"
     rm_rf "buildout/cache"
