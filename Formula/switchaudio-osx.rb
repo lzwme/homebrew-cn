@@ -1,18 +1,18 @@
 class SwitchaudioOsx < Formula
   desc "Change macOS audio source from the command-line"
   homepage "https://github.com/deweller/switchaudio-osx/"
-  url "https://ghproxy.com/https://github.com/deweller/switchaudio-osx/archive/1.2.1.tar.gz"
-  sha256 "1be1f242cb6f720e26ac2db3949b5253e452c9e9a39a663bc2467310e259941e"
+  url "https://ghproxy.com/https://github.com/deweller/switchaudio-osx/archive/1.2.2.tar.gz"
+  sha256 "3d12b57cbd6063a643a12f12287af99c87894c33449c6bcac0a71fd15776b3ed"
   license "MIT"
   head "https://github.com/deweller/switchaudio-osx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "516267b9a8fd17d87adb97835bcb6b42f06ff257d21ff7b8525c816b0c87803b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "58397c8f25e09acd27fe9f5152554fee07badb7fb21689e99a72bc7a4b4c9106"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e02c29d3c5d249fb896d46cdb39fc62cbddf50f8b4c80e71253a10348b105059"
-    sha256 cellar: :any_skip_relocation, ventura:        "487c68f1759dff53fb400e6ab8082c220ecf242613e11f2684d975a47bbd8c36"
-    sha256 cellar: :any_skip_relocation, monterey:       "4e298e677f2fc7aeb5ae0693d212b2924ddde77ff0ce18b238b31722caf34ae6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "07a2b3014c13a4d87584ca1b21caa61597f35540f9a6ccf9c4ae94563c1d257d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bb34fa77825e8c7bbcceda397eea3155196039fcbafcd4e6ba419694d3f3d3b0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ca3cb57b3850bc4a520e1751d4e1e9ae224df74c8c74aff0f0faba4b3b6a444"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e91921e9b3d31fbf9ee65fabf606c946a234d80af6abd418f0c68152a066d974"
+    sha256 cellar: :any_skip_relocation, ventura:        "795efb36156fe00438b1843dfd5c3d3463e3c6294b8ea96f89052b03795bcefb"
+    sha256 cellar: :any_skip_relocation, monterey:       "17971fd5701812aa360ed120338fa4a9ddede0c8ec503144548614c2ebe930d0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a5c74d8fd8754d57165d121f02ffa338a6b721432d5694f82c555d877a946d5f"
   end
 
   depends_on xcode: :build

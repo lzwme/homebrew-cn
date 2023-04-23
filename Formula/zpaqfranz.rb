@@ -6,6 +6,13 @@ class Zpaqfranz < Formula
   license all_of: [:public_domain, "MIT", "Zlib", "Unlicense", "BSD-2-Clause", "Apache-2.0"]
   head "https://github.com/fcorbelli/zpaqfranz.git", branch: "main"
 
+  # Some versions using a stable tag format are marked as pre-release on GitHub,
+  # so it's necessary to check release versions instead of tags.
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0bef53ae17206bed5dce3ec443a1f611157133dd841c984fbcb23ffc3a8545d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7e308f03281301a4cb56a6c432c253521f776f61bd40194eafcf50ab06061816"

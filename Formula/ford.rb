@@ -9,16 +9,18 @@ class Ford < Formula
   head "https://github.com/Fortran-FOSS-Programmers/ford.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "deee667c1d1c8de5a3e333011e7b50843536d1900054721e459d41af2ca491d2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a3c2f647eaf917e53da725bea57a8589f9f72a6b500a82a2e64cdbc2a284cbf1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1369273b1dc553d36a924e2d16a05beebe213877e1ba5979921d75f869efb3bf"
-    sha256 cellar: :any_skip_relocation, ventura:        "73a2bce850cb3cd7bc0581f85e1ad55b8950977a8ae53e24c4cd9d2e8ae36108"
-    sha256 cellar: :any_skip_relocation, monterey:       "f90044f29d2514d5cbc75ee6a6ed3f938fc29c84ce1ecdbbadf77106ba75d988"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3d8aff35ef574e4f99551f0bde185e4024e77ad99d2d7093ce7c0ae997d9311f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9d4e39269f2a23319a081ec231eed8f9df11a74a816c3fb49b3703ecb793ef8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8403a3d059353e42d9ebd25235fdad9304bec91ffb3010e89fcb93a53a366e55"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "92effae9b8475cc40d744234e000d7cf22e29cb848027c46fbddf42ec8d25256"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ff94e36105f1f5c0777fb9aa85c5175459ff831c918b01f859a5564183b7696c"
+    sha256 cellar: :any_skip_relocation, ventura:        "7f24151560cb8884a7a4a546543a2c3a6490a2ea84ef01fd8c27cf1195dbf2d4"
+    sha256 cellar: :any_skip_relocation, monterey:       "baf2584bd811c6cafae8463384491af4cb36578822be02e8fecc10794e1a1850"
+    sha256 cellar: :any_skip_relocation, big_sur:        "18b9e00fbbf129db1fbacdcb6302ea6da5419546fb6a766f8cef0d156442f4a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "00221744d0016ccf68d18f1594c2efb4a56db1fe49cb7c6ef1cedb1a9863f051"
   end
 
   depends_on "graphviz"
+  depends_on "pygments"
   depends_on "python@3.11"
 
   uses_from_macos "libxml2"
@@ -52,11 +54,6 @@ class Ford < Formula
   resource "MarkupSafe" do
     url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
     sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
-  end
-
-  resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/59/0f/eb10576eb73b5857bc22610cdfc59e424ced4004fe7132c8f2af2cc168d3/Pygments-2.12.0.tar.gz"
-    sha256 "5eb116118f9612ff1ee89ac96437bb6b49e8f04d8a13b514ba26f620208e26eb"
   end
 
   resource "python-markdown-math" do

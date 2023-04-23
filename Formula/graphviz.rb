@@ -2,20 +2,20 @@ class Graphviz < Formula
   desc "Graph visualization software from AT&T and Bell Labs"
   homepage "https://graphviz.org/"
   url "https://gitlab.com/graphviz/graphviz.git",
-      tag:      "8.0.3",
-      revision: "fddf1625d04729758a81cc613126c7918e3f3dba"
+      tag:      "8.0.4",
+      revision: "a2a825846905f05e9b6be4dfaa87c9f96cb43b15"
   license "EPL-1.0"
   version_scheme 1
   head "https://gitlab.com/graphviz/graphviz.git", branch: "main"
 
   bottle do
-    sha256 arm64_ventura:  "c58d3f5ff6dfc39660bec1922edf55c8c68608591745bd0e3858ec81a4f4c822"
-    sha256 arm64_monterey: "14474eaccdbadea14e18b4933358153ca2e69a7a5f5fa2d36d4232dbad9c2622"
-    sha256 arm64_big_sur:  "886ce957a8d8934a9aa50f3acdb73bced276522ddabbffc8f263df416439e3da"
-    sha256 ventura:        "5c20711f2bd1d17946707eacd2a6f3ff07396dc18127b08a75480e57e87af010"
-    sha256 monterey:       "44c19f7b05600b0a964766803fa07ec80207b9750c31954903958161051e263c"
-    sha256 big_sur:        "f678d33776b5b60230b4121d17d58799fcfaafdeffd68f1fa45eaf54fb985abb"
-    sha256 x86_64_linux:   "1b21413ff1f71e0efcdf5996e4ae3b299b49e60ad3d4384e7b11c3f7234b9e8d"
+    sha256 arm64_ventura:  "94e817aec8e7b9c2236dc4efd15b30859061ddefd0e7b9ec851c612308da510c"
+    sha256 arm64_monterey: "2cb7f7d3faae05476ee6a6513ba6bd03150223728f81c4befc39ee9e3b7708ea"
+    sha256 arm64_big_sur:  "5abbd090650d5fe979b28058effec41c26dfc3b4ed868913388b8430faba4b2d"
+    sha256 ventura:        "4e619c97031b2c51c2a486173827b5ace9086800a922a67a8d99386a575eb03c"
+    sha256 monterey:       "109e60acbe344e8d5224c9582fd641cbf694355f0f6259f8d3faf89e21030b31"
+    sha256 big_sur:        "c26d986425cbfaf63083f2d1240f98f8fecd0ac8c2441efdd0e5eb37d344f3ab"
+    sha256 x86_64_linux:   "7feb8c0ec323db3cafb0c70d09f5999a7646e05126d853fbfda4dfc56bebb827"
   end
 
   depends_on "autoconf" => :build
@@ -46,13 +46,13 @@ class Graphviz < Formula
       --disable-swig
       --disable-tcl
       --with-quartz
-      --without-freetype2
       --without-gdk
-      --without-gdk-pixbuf
       --without-gtk
       --without-poppler
       --without-qt
       --without-x
+      --with-freetype2
+      --with-gdk-pixbuf
       --with-gts
     ]
 

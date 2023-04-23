@@ -4,6 +4,7 @@ class VulkanLoader < Formula
   url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/v1.3.248.tar.gz"
   sha256 "5a5e51c568ea4344fa93c562eca730359a9562c4656dad53d2cc3f4807ec2307"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/KhronosGroup/Vulkan-Loader.git", branch: "main"
 
   livecheck do
@@ -12,13 +13,13 @@ class VulkanLoader < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "85786b0b05cdf44ea0f362372d1c6a5754e2baf01a8bb57b2c3ec8d9e4be4987"
-    sha256 arm64_monterey: "211176945e04e4a0340d16169f30f26f9339bfaa3a86dc0a4084b34c652ff300"
-    sha256 arm64_big_sur:  "88f14e1301bd86a07eafe8e712fe3ade2905c31101414c6995b6aef0f6251962"
-    sha256 ventura:        "50bb8b12c506967d8d554e454bea6fec8855fae2f0167a57e813c2ec40d90b34"
-    sha256 monterey:       "2d991f492c3c4da0417fc1dc2948e2c81c9e464f422488c7730db76de0f62a9c"
-    sha256 big_sur:        "ce9116e09eb6c2170803c9dc0d7682133f353305e55097f1eca8e9c24d5eb365"
-    sha256 x86_64_linux:   "82da54fd99ed0358f9de305df231b3d8633eda9e0eb2b5b54cc839dc7220f4fa"
+    sha256 arm64_ventura:  "7bb6b60a902d82cd34d1f0413a47e0b27801aff464cef84e1e45dd86036247e5"
+    sha256 arm64_monterey: "a55038be45869f5ed7ec66e178ca1ad998aae6f3a225932c83cb938d3dfbd914"
+    sha256 arm64_big_sur:  "a36057b2e157b400b18398c19d98b2397cd79821f590fec84c489a153922e145"
+    sha256 ventura:        "2ce8145f14c07a9f4b4dfc0398d02e505e2af30ac3be5a15046b902d9ad7ae5b"
+    sha256 monterey:       "2b0bffd1c6e809644837ec7c0832cd4caf6d6bf767ff48869333b591e8cb8c0d"
+    sha256 big_sur:        "5c3fd3f2e28ee2c9ef934212cf4f74a3648ad4dc957dd79ab6b4025f424984e4"
+    sha256 x86_64_linux:   "426d6e235f7a94bab784b8a57c2791cc3c4840be06a8155d1f63527223e5d866"
   end
 
   depends_on "cmake" => :build
