@@ -21,13 +21,14 @@ class Macpine < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f3b230879c573dffd93ad1bbef479f5d392503daa120778714a5c45dd6c07505"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "689441f80671c1c58706b1210310d3e7b870305c66a86ab824a570b32abc9a47"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4ec5561d896636b6cc45f05652ec744116c82b61fd0720499dc8f8bce0dab953"
-    sha256 cellar: :any_skip_relocation, ventura:        "3f08d3a9ab655d9a200be0bee68c6eb9d99161eaa72bf46a4bad727f517df225"
-    sha256 cellar: :any_skip_relocation, monterey:       "19f20689e113586bb3fa51af27c55e724688f701aa46c5232db02a42022a008d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b364ef8e8f862de2c3717da36bb864837609c7702bacfeda4285d79990ffd204"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed7b233348afcd4cc8c59414074fa0c2338c4658b7d39c87435fee7741655dce"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "82062b8a62560a6f67e219470a71d9b8c691dacac142db8e311395568ff6fd26"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "18568343b55dcb447a407b243c273a3c164d51660dfa74f815087a760549b4ad"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a0cc0b5a8ecbf2e2838dd7973ff36920baed9c3ed9ad58b14bba1c679852bbe7"
+    sha256 cellar: :any_skip_relocation, ventura:        "f56f3e31394cd96580e1ce0958b57a353c840c7395bcb0e111db213a3ae74761"
+    sha256 cellar: :any_skip_relocation, monterey:       "7906166750c87a2b1374dbc0bc60bfb8e2e25ac090350beca43ebc70eefec21d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bcf0dc7bf0b3854f15270bb7b132287750ad8eb2b8e150369e78d19ff4fac48c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c92bbb2fe8da1bd5a071007fb4f897504aa5afe327c46fd870a4d32b5a91f43a"
   end
 
   depends_on "go" => :build
@@ -38,6 +39,11 @@ class Macpine < Formula
   def install
     system "make", "install", "PREFIX=#{prefix}"
     generate_completions_from_executable(bin/"alpine", "completion", base_name: "alpine")
+  end
+
+  service do
+    run macos: [opt_bin/"alpine", "start", "+launchctl-autostart"]
+    environment_variables PATH: std_service_path_env
   end
 
   test do

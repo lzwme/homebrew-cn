@@ -3,18 +3,18 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/40/54/90b3e88f0fe9e0dc69e0a4aa1d0f85fc4a70b354f518364b7f84990016b3/esphome-2023.4.0.tar.gz"
-  sha256 "13c017178fe0e21f72581d5d72ab22ba201b2cf08d0faa3eb8ff97008b24c573"
+  url "https://files.pythonhosted.org/packages/ac/c9/6539d2e988eb8aabc7714654ce02292c94d4f5d4f9aedc8a13cf9a2555a6/esphome-2023.4.1.tar.gz"
+  sha256 "f51961175324f01e89ad49878a8c2e3e51893becbd2909c3d0a2579596acf44f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4a807f609e276e614487493db4e9eacf0ccea7f8cbb5125d54f36b09db152f2a"
-    sha256 cellar: :any,                 arm64_monterey: "8429d4d32ad01045546933b78d7bb18bacf2f4820516ec28fbd6ff9d72d3a566"
-    sha256 cellar: :any,                 arm64_big_sur:  "1341a64d0b3c258db9344fe6de16edbefc5f57b239e6ed1d4603a8f76c990eb6"
-    sha256 cellar: :any,                 ventura:        "0c500f1dd8fb351ddc44d15f6cc9a1dcaf546584970c7e7514cc32df150e7558"
-    sha256 cellar: :any,                 monterey:       "1cb9752939aa427fae2024897d71f031c49b4f4227c8b29c076b93fb46f37433"
-    sha256 cellar: :any,                 big_sur:        "996b9a631068c97f7059664ae5e5178cfb8b3809456cadc780774492c9d1ce6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d32922dc8f001780cea3a1bc8060853969692a5cc795398374e1a8de24c6019"
+    sha256 cellar: :any,                 arm64_ventura:  "0c3d031b9261cf2b5ff96adffa60a935a554154b24d271ec357203334909bd43"
+    sha256 cellar: :any,                 arm64_monterey: "5ef6a4381e63774e66b7b58b4f9be4c5cffbdbdcd2b7a94fb642cc2bfd672ccc"
+    sha256 cellar: :any,                 arm64_big_sur:  "a700535281b4e749a25f17fc80eea93d5c72c5ca00a4f3255617cdf299ff63c4"
+    sha256 cellar: :any,                 ventura:        "f2d18614168acc7e5e87067d61b39cfdc8621821e8b3485f66fc43f4c1e19bcb"
+    sha256 cellar: :any,                 monterey:       "ef93376a15ace958b8c8ab2a558149fe7318869c1549c380a59a85b1231e07d8"
+    sha256 cellar: :any,                 big_sur:        "5475dc085fa0838d032bbc3f5d65ca2212fa503b1c5acbfb82907d8625c75dbf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eaef441bcf4a2ac92a272392260610758261b4f246b68aac999ca0212a6a1b77"
   end
 
   depends_on "pkg-config" => :build

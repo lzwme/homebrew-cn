@@ -2,19 +2,19 @@ class GitCinnabar < Formula
   desc "Git remote helper to interact with mercurial repositories"
   homepage "https://github.com/glandium/git-cinnabar"
   url "https://github.com/glandium/git-cinnabar.git",
-      tag:      "0.6.0",
-      revision: "c224e301ad05f4e337b0833a57fde97d41154d7d"
+      tag:      "0.6.1",
+      revision: "90581ff3c854e4ed8b9c8fa35e8216238992abad"
   license "GPL-2.0-only"
   head "https://github.com/glandium/git-cinnabar.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6aa3fb806dbf78026d50e74c16e8db7d45dcf0035a1205f6c8c0b16ce392ac44"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "66d253c35ea1ccdc569264ec5edd562e80e7d22c3ade6406fac3009c91cb5a27"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "91c082acc967c3a0f93e3a7ee1e6613f3409068955357a1e3a0332462e71fb61"
-    sha256 cellar: :any_skip_relocation, ventura:        "63ac26030f9bfc3e6b23640b918f3e54d634c8cc7ece57ba7bba4814e83ff39d"
-    sha256 cellar: :any_skip_relocation, monterey:       "6b7bc3946a5c23d77849ab50b7c477444309f82962b6d3382c77cf8692658cf3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "aebf0ef6424001482b13d7f91f0a18a66cadcf815a8aa0e4b2cb8592bb180677"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c23b6ff99c0de26c8a9ab1d415fbbf1e48170ac3325a4a8d93579c695e4988c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e38e5a24b9f8b45b463265a7c50e4d464ce6a06fa58d0ff77388cc605d63dc58"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e80085be6cd38aba562d66d069cf0104f9ab24b11dd5a385256106572a581f36"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f7ec7bbdba120dfdd440d372c70b9117217c0fb371b375f621c2e84f08315e9e"
+    sha256 cellar: :any_skip_relocation, ventura:        "3111cc0e1bd2cb774127de2371b9768ca95eda473d737cbe7526a61d03bf82c4"
+    sha256 cellar: :any_skip_relocation, monterey:       "d49e0b8e0e73db7d116e719da613b611564291c048bd230d6efbe8efd4c3324d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c953d52df24eb49badb9572a2e96227ecc7c030cab247f0a29cd22613b58cb0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "53904f661d4fc52218d8aa16a7e96c90d4dd4cff22d8a8a0bfd995e89bbe9490"
   end
 
   depends_on "rust" => :build

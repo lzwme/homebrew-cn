@@ -7,6 +7,11 @@ class Yorkie < Formula
   license "Apache-2.0"
   head "https://github.com/yorkie-team/yorkie.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6f6c2b9a2a71f175cd4df317ded3c5c68ec17ed018f8c6a1aca2a23eacb3bf44"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "41f8c321e590ca4784fb7c5e280397209c2db5fe300b9ae42c073e0e4a9291cd"
