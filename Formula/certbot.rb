@@ -31,10 +31,6 @@ class Certbot < Formula
 
   uses_from_macos "libffi"
 
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
-
   resource "acme" do
     url "https://files.pythonhosted.org/packages/22/90/4de0868b48415b757ccc8afd9a51092123050d121b70bbfa0a0dbdb626d9/acme-2.5.0.tar.gz"
     sha256 "9c760b115c54f55f692321abe5d09f5c70ce437e61f9f22340341621d9909a5a"

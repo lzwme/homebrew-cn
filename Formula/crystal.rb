@@ -19,10 +19,13 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 ventura:      "f27e821c6d420c78f774fecb32d10daf23d53038440b34cb34b871f513c2024a"
-    sha256 cellar: :any,                 monterey:     "69d031746bc73f4838d2dc4e5163a77244e1bce656421e843a4f14826dcf40da"
-    sha256 cellar: :any,                 big_sur:      "0b059a3b6ca273b75d2113ca670a58e9a904c77b38766733cacc10a3d6a75ea5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "523be59acf4a706a0da64c13c3432f9ec396aaacefd6d1eec30f96e85ba380bb"
+    sha256 cellar: :any,                 arm64_ventura:  "4287b075a971f4e958f8f5496e2e2f9344e908ec1d20e46b50f551fccee34d9e"
+    sha256 cellar: :any,                 arm64_monterey: "90212c2796e9f16d6c2745867a8077ab87a09d04f60a8dbbd7eca5e7df8b27e4"
+    sha256 cellar: :any,                 arm64_big_sur:  "90bc35890f9a0c66f887eeacc07e0bce71161bea316942139bc63772b2415776"
+    sha256 cellar: :any,                 ventura:        "f27e821c6d420c78f774fecb32d10daf23d53038440b34cb34b871f513c2024a"
+    sha256 cellar: :any,                 monterey:       "69d031746bc73f4838d2dc4e5163a77244e1bce656421e843a4f14826dcf40da"
+    sha256 cellar: :any,                 big_sur:        "0b059a3b6ca273b75d2113ca670a58e9a904c77b38766733cacc10a3d6a75ea5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "523be59acf4a706a0da64c13c3432f9ec396aaacefd6d1eec30f96e85ba380bb"
   end
 
   head do
@@ -43,10 +46,6 @@ class Crystal < Formula
   depends_on "openssl@1.1" # std uses it but it's not linked
   depends_on "pcre2"
   depends_on "pkg-config" # @[Link] will use pkg-config if available
-
-  on_linux do
-    depends_on arch: :x86_64
-  end
 
   fails_with gcc: "5"
 

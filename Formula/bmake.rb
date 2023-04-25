@@ -1,8 +1,8 @@
 class Bmake < Formula
   desc "Portable version of NetBSD make(1)"
   homepage "https://www.crufty.net/help/sjg/bmake.html"
-  url "https://www.crufty.net/ftp/pub/sjg/bmake-20230321.tar.gz"
-  sha256 "ed7d568c08748a2221e19ddc1aebed97dd430ab0c6942304698b1c2363fa8256"
+  url "https://www.crufty.net/ftp/pub/sjg/bmake-20230414.tar.gz"
+  sha256 "29cb1d26aae7de9def92bdaeb3aad4520e89951ce97b2e75f0b89bae1b95399f"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class Bmake < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae1af2246b36dc4d23df735b503958629fcc4573771d093f5b24c4a7690fd61b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "10c2daf51aa24c62badb511aa70c9fe481b944913ce850335c28ee0b9fd88797"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "58cbba47c78136a11b41f9d456d265b6aa7ce3b101d82a19c9c496c359ba9c18"
-    sha256                               ventura:        "48bc18ff770adae462dac5a2035bea913e7bc9da36ee51d6e8386bdd573e4627"
-    sha256                               monterey:       "e4f23bc065e809bbbf129d17566a07b0f8cd10d327cabf0d7e6628912b8f703e"
-    sha256                               big_sur:        "b64add26743d7ffec701f153d72086861bace3605214c986f8fac0016c596e87"
-    sha256                               x86_64_linux:   "5437a6f71a9397eb604de1bf2c1782a7774bfe149807f90192e603470b2926c5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2bb18a707f5ead310be24272b896cb60daf586406945db9a225096b9fe85c528"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7795ad41da9e56e75311fa190575a43a0fe60d8f695d87c5c45be768d7b848dd"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1a10e165e50e7df4b8dac02780fad57349ca76b9548a913e444b00a4ce2cc344"
+    sha256                               ventura:        "613e0613f03ec2d5545860bac802cbacdd13ea5d4738c9ed6d558de7957d9384"
+    sha256                               monterey:       "6f71be3dfd61457deac47dd77b2e603c982c6829b62b8b8c4be93355d9b83748"
+    sha256                               big_sur:        "f1667042407718b66c6b150b0ef9b13716a81b737ce8d677b09e3ecf578980af"
+    sha256                               x86_64_linux:   "9d1cd4452824e0fe7ae9b333f6ba682c39ebd5373f212c48ce37dbc3f3754452"
   end
 
   def install

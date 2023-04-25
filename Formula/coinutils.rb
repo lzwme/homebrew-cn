@@ -1,8 +1,8 @@
 class Coinutils < Formula
   desc "COIN-OR utilities"
   homepage "https://github.com/coin-or/CoinUtils"
-  url "https://ghproxy.com/https://github.com/coin-or/CoinUtils/archive/releases/2.11.8.tar.gz"
-  sha256 "202e347d1c1d2ccf5355e3c2874a4dc16500226c180b00d6677f464d80be337e"
+  url "https://ghproxy.com/https://github.com/coin-or/CoinUtils/archive/releases/2.11.9.tar.gz"
+  sha256 "15d572ace4cd3b7c8ce117081b65a2bd5b5a4ebaba54fadc99c7a244160f88b8"
   license "EPL-2.0"
   head "https://github.com/coin-or/CoinUtils.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Coinutils < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "fa292a656cbf3cae85c2d212b27ae33f0f5b12cfa30e2f77ac57049a100b91e6"
-    sha256 cellar: :any,                 arm64_monterey: "0443c24aeb4925f014b58d540d45beea6c3ecf09a6bdba4f3b172422d786bb98"
-    sha256 cellar: :any,                 arm64_big_sur:  "ebb61ba658209aaa30e5752030952e2ee41e4ce7d836bdb76e1d8b3ef855ad0c"
-    sha256 cellar: :any,                 ventura:        "2b90c3c0523fc2ecd3195485f092625bad579d4e689ba661b67a190e13243419"
-    sha256 cellar: :any,                 monterey:       "c76b88eb171244ef9c0bc04585da9ef5f07ce3fdc18292d419051d2ce2abb6e2"
-    sha256 cellar: :any,                 big_sur:        "1fbac90ddbada711cc4833fcf00a2010f8914cdce4c30a1ad0fe5ebf1357e3c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc0bf098f772f94bb5b7b9e290d981bab049c9e432503b467d22c8a6d1dda3a0"
+    sha256 cellar: :any,                 arm64_ventura:  "e128f68e7b7b57a947deeeafda81ed30c0fb83e49a4c8986508dc8b042140bcd"
+    sha256 cellar: :any,                 arm64_monterey: "83d0958d9de79ffdc75670607d4bc051fe9f390d5aedfb72e0974732005806b5"
+    sha256 cellar: :any,                 arm64_big_sur:  "94c51f335a7d7f7eb233bd2bcc7dd9e1523753bda3046a01a38553553ce60d26"
+    sha256 cellar: :any,                 ventura:        "07179b2940c27689e601d7f700d8a8e08a0d05cea46ec549ea1f2c693032390e"
+    sha256 cellar: :any,                 monterey:       "503c15755800c6317a1f807c8a1cf04ac4d43ed817240f0e1f68559d697cabc3"
+    sha256 cellar: :any,                 big_sur:        "748e0e405663940dec0aea8841d004c22ef0431432067d0e494d8339069022b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a905269ccb4b8b016e7356b06076ec2327d418b1d28190668f2fdff4d3ec05f6"
   end
 
   depends_on "pkg-config" => :build

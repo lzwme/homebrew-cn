@@ -7,18 +7,18 @@ class ClickhouseCpp < Formula
   head "https://github.com/ClickHouse/clickhouse-cpp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5d522cddfcb58177aa8838f06ca2676f6fb8f925db7df257b74375b2b0ae16c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "129076d2815b9e9db3706ef2fc2a6d58d6397749aea33373db4123c136b12398"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1d00957ebb77520a38a00b2adc585473b22bbc76d80513221ccee03267999b8f"
-    sha256 cellar: :any_skip_relocation, ventura:        "180b9823ab1a33dd3eee7adc2e483f5e85eb8efa78397e09f9b7a2e706c90ae5"
-    sha256 cellar: :any_skip_relocation, monterey:       "feaa3c3899460b7eefd811683febd8656369acafcfb6779a71c493ccbe81ceae"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f9a20f558db8842cf7df6047b8a718cf38e65c7e65308de7ba51355d8751e95b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d027b532abf0e8cb16ee988be58b30919feb22761bd3a5875de8ea8b26b5de4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cbef733518c0db6ed44b0cef6404e18931718cede114322f8286b3805f66eaac"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "832ab5b4293a1e679362b0372a7c2c1592ae0696a68e1a11c4bd830f02d4bce6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0b351441e8bc0618c90e285dd3d037f62846053cd9d64e7b1ce091e849a64bfc"
+    sha256 cellar: :any_skip_relocation, ventura:        "1b0b4016fbcdd6ca38d3daf8342c9ee0625909c2d8967778ddd5726e6bdfb492"
+    sha256 cellar: :any_skip_relocation, monterey:       "d94e36b761d07d1ca7fe412aca4eca341ecb7f0a07c9097630b8b188b543239c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "23c2a0dc054127550d5ab81af90c86e14cb96a9b4574285659cc68b5d1ee20a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be6a37caf5dc7c724af5b25efa434571eedc716e265513d6463ff3f1a5be3320"
   end
 
   depends_on "cmake" => :build
   depends_on "abseil"
-  depends_on "cityhash"
   depends_on "lz4"
   depends_on "openssl@3"
 
@@ -26,23 +26,22 @@ class ClickhouseCpp < Formula
   fails_with gcc: "6"
 
   def install
-    # `cityhash` does not provide a pkg-config or CMake config file.
-    # Help CMake find it.
-    # Remove when merged: https://github.com/ClickHouse/clickhouse-cpp/pull/301
-    inreplace "CMakeLists.txt", "FIND_PACKAGE(cityhash REQUIRED)",
-                                "FIND_LIBRARY(CITYHASH NAMES cityhash REQUIRED)"
-    inreplace "clickhouse/CMakeLists.txt", "cityhash::cityhash", "cityhash"
-
+    # We use the vendored version (1.0.2) of `cityhash` because newer versions
+    # break hash compatibility. See:
+    #   https://github.com/ClickHouse/clickhouse-cpp/pull/301#issuecomment-1520592157
     args = %W[
       -DWITH_OPENSSL=ON
       -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
       -DWITH_SYSTEM_ABSEIL=ON
-      -DWITH_SYSTEM_CITYHASH=ON
+      -DWITH_SYSTEM_CITYHASH=OFF
       -DWITH_SYSTEM_LZ4=ON
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
+    # Install vendored `cityhash`.
+    (libexec/"lib").install "build/contrib/cityhash/cityhash/libcityhash.a"
   end
 
   test do
@@ -90,10 +89,10 @@ class ClickhouseCpp < Formula
       -I#{include}
       -L#{lib}
       -lclickhouse-cpp-lib
+      -L#{libexec}/lib
+      -lcityhash
       -L#{Formula["openssl@3"].opt_lib}
       -lcrypto -lssl
-      -L#{Formula["cityhash"].opt_lib}
-      -lcityhash
       -L#{Formula["lz4"].opt_lib}
       -llz4
     ]

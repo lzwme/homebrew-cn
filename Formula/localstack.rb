@@ -30,10 +30,6 @@ class Localstack < Formula
   depends_on "pyyaml"
   depends_on "six"
 
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
-
   resource "apispec" do
     url "https://files.pythonhosted.org/packages/3f/1e/207c3e61c805eef214d7e5c58106312f9af4733b07f470224e4e309dc65e/apispec-6.3.0.tar.gz"
     sha256 "6cb08d92ce73ff0b3bf46cb2ea5c00d57289b0f279fb0256a3df468182ba5344"
