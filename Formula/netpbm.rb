@@ -6,6 +6,7 @@ class Netpbm < Formula
   url "https://svn.code.sf.net/p/netpbm/code/stable", revision: "4534"
   version "10.86.38"
   license "GPL-3.0-or-later"
+  revision 1
   version_scheme 1
   head "https://svn.code.sf.net/p/netpbm/code/trunk"
 
@@ -16,13 +17,11 @@ class Netpbm < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "054cfb909cb0fea808266665ac223c9a9ed36ee9251fc229861da599b9b7c120"
-    sha256 arm64_monterey: "21929c81ac82a2252c12542a365a2e768295d9bd70c04f0aa4cd6b01ba10a1db"
-    sha256 arm64_big_sur:  "0a632031ca0508e0948e4ce5cb0109ffab3b87d4c29cfefd603b0f3120d170ed"
-    sha256 ventura:        "da752b8a5e482ca4c7d3dde2e4849dfb9e949796c86fa9c57e92b4221ff8b432"
-    sha256 monterey:       "17f70522e011337410440abf0b9cfcb762567b6311a45fa17fc4209c18e7ad32"
-    sha256 big_sur:        "18f29aec18785031a0260641e6a81178c4bb79d50cfb02e97121ad3ea6f7cac2"
-    sha256 x86_64_linux:   "b9a1d7243bc1980ec25896704aafd44372f2bc920394d2588ef0d440879f7c3f"
+    sha256 arm64_monterey: "8a21e96450849df66282af7eca2737a71ce9f731b31ef54d9bce0a71db1e4c07"
+    sha256 arm64_big_sur:  "ec0467a6235f7429e596fc3c59356b88c9516f0e9561e94da84b9d6214c1d53c"
+    sha256 monterey:       "af7243f76657072c92348b8de607a3f7e6dd15d247615bfa014dd84d955dc51c"
+    sha256 big_sur:        "ea08b8aeaaa233de07bd3b105f88f7aba9a27c72aa4727a223750ab1e1f4a8ae"
+    sha256 x86_64_linux:   "1ed73615448d097cf5d0a574564b30f6172de0b0c1d63f0936006c10b04d2bce"
   end
 
   depends_on "jasper"
@@ -60,6 +59,7 @@ class Netpbm < Formula
     end
 
     ENV.deparallelize
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" # Workaround for Xcode 14.3.
     system "make"
     system "make", "package", "pkgdir=#{buildpath}/stage"
 

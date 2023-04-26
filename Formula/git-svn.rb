@@ -1,8 +1,8 @@
 class GitSvn < Formula
   desc "Bidirectional operation between a Subversion repository and Git"
   homepage "https://git-scm.com"
-  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.40.0.tar.xz"
-  sha256 "b17a598fbf58729ef13b577465eb93b2d484df1201518b708b5044ff623bf46d"
+  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.40.1.tar.xz"
+  sha256 "4893b8b98eefc9fdc4b0e7ca249e340004faa7804a433d17429e311e1fef21d2"
   license "GPL-2.0-only"
   head "https://github.com/git/git.git", branch: "master"
 
@@ -11,13 +11,13 @@ class GitSvn < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "49a314a2a628efaca6675f628f92985cddc77d3e6fbc463642b14a0624be8257"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "49a314a2a628efaca6675f628f92985cddc77d3e6fbc463642b14a0624be8257"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6aa76c25a03c25d7b922a3c4a9ccb52609905f90c1eb0b9779b8e2f49bc99f52"
-    sha256 cellar: :any_skip_relocation, ventura:        "49a314a2a628efaca6675f628f92985cddc77d3e6fbc463642b14a0624be8257"
-    sha256 cellar: :any_skip_relocation, monterey:       "49a314a2a628efaca6675f628f92985cddc77d3e6fbc463642b14a0624be8257"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6aa76c25a03c25d7b922a3c4a9ccb52609905f90c1eb0b9779b8e2f49bc99f52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e09e4851e449e09fd5143cc5bfea67f46b890bf33242916a01a1478115018a3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3cc33b5f4ed2c2ff1022d2c26da65ece1f9e4178a33d987ce2d408233ebc8563"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3cc33b5f4ed2c2ff1022d2c26da65ece1f9e4178a33d987ce2d408233ebc8563"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "70be452f904c77d7b27f1aef8959e50ece30db852732603b27eefd3c7c5b48f3"
+    sha256 cellar: :any_skip_relocation, ventura:        "3cc33b5f4ed2c2ff1022d2c26da65ece1f9e4178a33d987ce2d408233ebc8563"
+    sha256 cellar: :any_skip_relocation, monterey:       "3cc33b5f4ed2c2ff1022d2c26da65ece1f9e4178a33d987ce2d408233ebc8563"
+    sha256 cellar: :any_skip_relocation, big_sur:        "70be452f904c77d7b27f1aef8959e50ece30db852732603b27eefd3c7c5b48f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "88da56f8e42ad7a06b7dd7d38094f0a31d8adf81d0be80f38b49ca870f0a920b"
   end
 
   depends_on "git"

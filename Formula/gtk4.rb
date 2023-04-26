@@ -4,6 +4,7 @@ class Gtk4 < Formula
   url "https://download.gnome.org/sources/gtk/4.10/gtk-4.10.3.tar.xz"
   sha256 "4545441ad79e377eb6e0a705026dc7a46886e46a1b034db40912909da801cea9"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,13 +12,13 @@ class Gtk4 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "dc419193486163a852d01ae1aba82a789210c8b464776166add6ad87d938740b"
-    sha256 arm64_monterey: "2e45e9b9d3f601df2d335541cec562bef08accbe72d7f7fa0b5ffb0b6bca879b"
-    sha256 arm64_big_sur:  "1e21a7aaf6bb691a10f6ddd0bcacbb608888734483a5b887eeecc7b15217a5ff"
-    sha256 ventura:        "b30e1ff62eda1b6c935f03805f2510f446e076142d41956b62de90b5a08e67ac"
-    sha256 monterey:       "f4c8d216ea88b278af0730af15a76ec6e73603f09836bf7c8a94fc7a23a9df52"
-    sha256 big_sur:        "4983ef0505635a7b64ed82be79d19ba8a73469e4ca2de4fb034c18519d86ca03"
-    sha256 x86_64_linux:   "db43df95b4f02b3ffa0279a4d1485826ad6545fa2deea90b0683fb3d7a121d52"
+    sha256 arm64_ventura:  "2c9323d79435b72d546a851e5d08cc66bdaf073894507ebabb1b64241361b927"
+    sha256 arm64_monterey: "eff612ea8223f41deb80d7e5a287f97ac53a1c84938585f0fcc1e00a90ad635a"
+    sha256 arm64_big_sur:  "f971491ac01d156b4f1efea4056e333d7f63a84ce713882bab289f26a9e59822"
+    sha256 ventura:        "74d693a836f1531ba21bf1f84d000aca8285c93f029b17622619224af852c9b2"
+    sha256 monterey:       "d86f1ea6376f31b6c7e543d086950294555deaba4fb88af8988a08c31bc16886"
+    sha256 big_sur:        "6bad61626162fd127d32364ae9bd1a89e5064513ffc8a86c928b6591949eeaed"
+    sha256 x86_64_linux:   "1a5f658223722c2f83ff5d15f332965722858eafd030b6a9287731d5da924dfc"
   end
 
   depends_on "docbook" => :build

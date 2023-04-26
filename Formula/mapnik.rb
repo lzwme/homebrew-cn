@@ -2,7 +2,7 @@ class Mapnik < Formula
   desc "Toolkit for developing mapping applications"
   homepage "https://mapnik.org/"
   license "LGPL-2.1-or-later"
-  revision 17
+  revision 18
   head "https://github.com/mapnik/mapnik.git", branch: "master"
 
   stable do
@@ -22,13 +22,13 @@ class Mapnik < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "772b8917d290b0e48a79d4f8657e9a2a8421df35296e8f0820b3f7147805922e"
-    sha256 cellar: :any,                 arm64_monterey: "7a7f7863189378825cf3d9fff3a1f92db88d51c150a042377a465cfa7980054a"
-    sha256 cellar: :any,                 arm64_big_sur:  "9b862109f452ac4a348f6951c2e298fd5f16ef7e0d5e9d85c0389095c4016b27"
-    sha256 cellar: :any,                 ventura:        "2b707717510b0ec86caef8f764f46e9b977a51b7ba60ce6ab3da188d3e38c6b9"
-    sha256 cellar: :any,                 monterey:       "6bd44c2c18cc149413c9571e762a41115d88c1c5b7ca8a1f635ed408a003b9a2"
-    sha256 cellar: :any,                 big_sur:        "879fd855e4ddfc0a97846bc2e85fb79f383aaa3999ac7ec1ff136d761ef373b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9962a7e3f65fdf6c7319a42744738ca17c8f5386cde15c100e3b37f94a47887a"
+    sha256 cellar: :any,                 arm64_ventura:  "cd6a45c2381d28a92e083841b6a7fdf30cf7d97c380f6c336b30f27774b78fb3"
+    sha256 cellar: :any,                 arm64_monterey: "2fce2dbd5abda6b6c9cc4caf0fde8ce76e0990aa316c3e74dba3e37cecd464fb"
+    sha256 cellar: :any,                 arm64_big_sur:  "3a9e8dbe246d33311408242b2bc0dfb0bc0dc26df9c24dbc05f7f15ae2810b9c"
+    sha256 cellar: :any,                 ventura:        "88d5bc0dcad28ba174130a94b39246a4f1a43c64f250285bd57abea9c90640c1"
+    sha256 cellar: :any,                 monterey:       "e1c642f078382627510a18b20a1b4853ecc433079723fd2c428610c8ed7ba23d"
+    sha256 cellar: :any,                 big_sur:        "e1630d6000ae2550e4332ab50c8aeca175ce3fc5ae8172a4948e65859aa6b3e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "163dd94872593e06817a0476845438f6ebf460a6c7caca172695715eeac9ef15"
   end
 
   depends_on "pkg-config" => :build

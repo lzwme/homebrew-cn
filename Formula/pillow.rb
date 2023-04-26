@@ -4,16 +4,17 @@ class Pillow < Formula
   url "https://files.pythonhosted.org/packages/00/d5/4903f310765e0ff2b8e91ffe55031ac6af77d982f0156061e20a4d1a8b2d/Pillow-9.5.0.tar.gz"
   sha256 "bf548479d336726d7a0eceb6e767e179fbde37833ae42794602631a070d630f1"
   license "HPND"
+  revision 1
   head "https://github.com/python-pillow/Pillow.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "9a6111105f8050c03920b772944ea9e93e4aa23f5c67af94f53f1dc810a381ad"
-    sha256 cellar: :any, arm64_monterey: "7ef2c89f4e39b95f73c3dc99fa5657bf339601f83493040a10bf2df7aad2d89a"
-    sha256 cellar: :any, arm64_big_sur:  "ae364214858a1e1737bb24000dff4baac822827e4c96fe7b280d7676f3663dd6"
-    sha256 cellar: :any, ventura:        "423eb1342b2c739a0419ee5d85d7aae029e6def4af49af78703239a62e6f057a"
-    sha256 cellar: :any, monterey:       "502d73f568c4f32b5c7f8f9dcda05040c146692e5d72b610bd627994ae64b94b"
-    sha256 cellar: :any, big_sur:        "d9e4db3d23cefea35a83aed0748dac5d5cd345e9e24d1dd1c10f68338d797eb2"
-    sha256               x86_64_linux:   "d0398859771b22b2db06ab7c5ad014358234c89691301f8b501087ce9b4d7aa6"
+    sha256 cellar: :any, arm64_ventura:  "996a0e92f7957956425d372f0e7b896a487708449b29b3ab57e491535c2b0366"
+    sha256 cellar: :any, arm64_monterey: "f8e584f42f026a77d4399c7881cc7578ce99a38d19132206ff81e10db001d1fa"
+    sha256 cellar: :any, arm64_big_sur:  "d12d9ea98bbed38560d47fa547eb26f6405fead6fdcfa188be2837810fe204a4"
+    sha256 cellar: :any, ventura:        "0da40f898faaea2de3cba4a6f6dc845cf9019a77d0b3a2cfc723de813d6bf7a8"
+    sha256 cellar: :any, monterey:       "86053257f23602e70dc37b7335b59a1398a046f98a7a8ea39afa85ee29b3d796"
+    sha256 cellar: :any, big_sur:        "99b13bbc6e1ffecd572e469199a58a89c8273269d99c6d6f17e8b69e3b3d285f"
+    sha256               x86_64_linux:   "3df5a714b7a5df0347e6ab093ec7312b4ddb580cd68ab77d46f0b244f6a0ec5a"
   end
 
   depends_on "pkg-config" => :build

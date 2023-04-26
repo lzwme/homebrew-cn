@@ -4,7 +4,7 @@ class Exiftran < Formula
   url "https://www.kraxel.org/releases/fbida/fbida-2.14.tar.gz"
   sha256 "95b7c01556cb6ef9819f358b314ddfeb8a4cbe862b521a3ed62f03d163154438"
   license "GPL-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.kraxel.org/releases/fbida/"
@@ -12,14 +12,12 @@ class Exiftran < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "501742a3d0ffef91bd7551c924f5073b0c001c8c8b7618e2a7db7d9ffdfdfd82"
-    sha256 cellar: :any,                 arm64_monterey: "cdbebc6e9ea054a40e6c9d9ecd8265d62dfff2b9da689748ff8a87fb8defb9b1"
-    sha256 cellar: :any,                 arm64_big_sur:  "e16c172257b1786e0d0186336c8c35b16efab57c919598df0bc920999c2905f1"
-    sha256 cellar: :any,                 ventura:        "d425c26a0bcc36d4427e9612f963755421676559ea3b5519294bfeadc7ac6f6d"
-    sha256 cellar: :any,                 monterey:       "af336311bf9e98d1d5569496463b9b0a7c4efc2e5aedf3f6778e71cf34e45349"
-    sha256 cellar: :any,                 big_sur:        "b8b303e6e7ae7ef407882e37bf67865253cce06924c4efe18b1a817dd1178ec4"
-    sha256 cellar: :any,                 catalina:       "3585d1c19e27eb8510476b8c89b2a97546071c817ab6dc5e1ec77a0f36bb4e6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "068ea42ed133bda1659d3de1d61185616377568d8284bab223dcb0e023b2aba9"
+    sha256 cellar: :any, arm64_ventura:  "df30994dfbdb81576a7772461b04794ffbd8a909c22c448e30a3771df5e5e322"
+    sha256 cellar: :any, arm64_monterey: "71b5694eacdc87a7fa6e80fcd694ae97c7ee79307aacf1dd2c5f88b4489bbcee"
+    sha256 cellar: :any, arm64_big_sur:  "b58b8d6344072d85b1fe971beda49909924527a032df80494243bc1b469ecb74"
+    sha256 cellar: :any, ventura:        "af9811b1544ff47d4511e4051a0b80a35b13ec6a716102c57a8884b64230414c"
+    sha256 cellar: :any, monterey:       "408ca4d14477d0f8fb212091c8c69e5a8b0e37e03a0ee247439e29a85025521c"
+    sha256 cellar: :any, big_sur:        "335aa0d2a4b309ce62834ee41ba1b093e405d280a6e05d1d14e12343b50d558b"
   end
 
   depends_on "pkg-config" => :build

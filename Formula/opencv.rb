@@ -4,7 +4,7 @@ class Opencv < Formula
   url "https://ghproxy.com/https://github.com/opencv/opencv/archive/refs/tags/4.7.0.tar.gz"
   sha256 "8df0079cdbe179748a18d44731af62a245a45ebf5085223dc03133954c662973"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   livecheck do
     url :stable
@@ -12,13 +12,11 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "cd47afc97d438730ef14788f341b74056088bb766e4147cd380272a91cef0f7c"
-    sha256 arm64_monterey: "c2340d0eab1137431eb0d41277633b736a6ce897cc867787f6da0fa34a2877a6"
-    sha256 arm64_big_sur:  "c1ea8bfed28628d39f9f118dea3b8cc9effff52320332867681a549627cd9410"
-    sha256 ventura:        "e364eba247cd2d364ed95ef8bc517246df41c7ad3ce675aa10db3ca2aafdc46c"
-    sha256 monterey:       "4ca236d8e7922e348709518bb29e421c54e268d45ad5834a6e90e4949c5c2b99"
-    sha256 big_sur:        "53f0b3a41f9af7129d2fd67670aaca05d40ea5d01959c5ef1b90e506c2299b3f"
-    sha256 x86_64_linux:   "c0df7606112b3cb9667a893d666c194e47ba721e14bb2b16b849d92162ef408b"
+    sha256 arm64_monterey: "cdb96aec242b81bf2e30ab2c8617d5257b6cac6e9f14b7062d8987753e96e1c3"
+    sha256 arm64_big_sur:  "7997f935e9bb9c4da396da9525b4a49064ee61fc5bed4047e02a861cd1c86448"
+    sha256 monterey:       "760d86445e552c1cfc71e5a8aa9bcb9ff7a57da0e1e3506db10012d0542e5485"
+    sha256 big_sur:        "007ec12d18aa36dcae633756a51f3c6b2572404c89d4478e3352bf315ec2ffff"
+    sha256 x86_64_linux:   "4fd2242c95c330f71b4d1eea91ebe1057dc54149dd90b00319b73321c9b7e25b"
   end
 
   depends_on "cmake" => :build

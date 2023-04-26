@@ -5,6 +5,7 @@ class Freeswitch < Formula
       tag:      "v1.10.9",
       revision: "a615e85afcdc5f3ca438e86fefc7ca21ee6b3a06"
   license "MPL-1.1"
+  revision 1
   head "https://github.com/signalwire/freeswitch.git", branch: "master"
 
   livecheck do
@@ -13,13 +14,11 @@ class Freeswitch < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "532f5f623c2106e0ebb950566b620c318a48e49a52dee09a29b8145eb20ba3af"
-    sha256 arm64_monterey: "978a959b48f9e823a47dfeddc4e9fd17961024bf1c5008ef444b8918b007ab37"
-    sha256 arm64_big_sur:  "f53446a36df40b969f4924e3333237aee360fb403df549938741deb59f31c763"
-    sha256 ventura:        "45886bd9b05d5d2618294cb88625df5793e2a460b91a5ddf1445063c71b489d2"
-    sha256 monterey:       "2851823517c35721812bca2cdad4ade835760eff62f375284c4d944151d3a5ef"
-    sha256 big_sur:        "52348175e2bf205b95a9222a5e0d6d3a5aac03b83975a512dfd15213265e9a13"
-    sha256 x86_64_linux:   "728afa7c0d039a99eec7e9c9c3c669e996366e5cfdd58f8ee8316bffdc85c354"
+    sha256 arm64_monterey: "c696a14b9798a0f64acaab754c47b9e1f36c6f0dd164be6fc84e8444a86a66fb"
+    sha256 arm64_big_sur:  "6c37f1e1ee50345841e640661c1ab6bb25c5a900b78ab35dc348aa7c155de222"
+    sha256 monterey:       "34dd666d452f37faafbf9ccf26da11a15b9419a710082e111596dd8d57ed1844"
+    sha256 big_sur:        "32989ac42b613250dbfcf3ad00e2c9e465c99fd456f9046ddcf080076043a5f9"
+    sha256 x86_64_linux:   "c90d5190ce19e7352bdd858fa08b7094bdc3854792e27988ac1f397ea6d8087e"
   end
 
   depends_on "autoconf" => :build
@@ -176,6 +175,7 @@ class Freeswitch < Formula
     args << "--disable-libvpx" if Hardware::CPU.arm?
 
     ENV.append_to_cflags "-D_ANSI_SOURCE" if OS.linux?
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" # Workaround for Xcode 14.3.
     system "./configure", *std_configure_args, *args
     system "make", "all"
     system "make", "install"

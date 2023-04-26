@@ -3,6 +3,7 @@ class Dcmtk < Formula
   homepage "https://dicom.offis.de/dcmtk.php.en"
   url "https://dicom.offis.de/download/dcmtk/dcmtk367/dcmtk-3.6.7.tar.gz"
   sha256 "7c58298e3e8d60232ee6fc8408cfadd14463cc11a3c4ca4c59af5988c7e9710a"
+  revision 1
   head "https://git.dcmtk.org/dcmtk.git", branch: "master"
 
   livecheck do
@@ -11,14 +12,13 @@ class Dcmtk < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "805f52eeba91d0172e8ed683b3de11ad4e73beecb5c920fb11398865870c2b0b"
-    sha256 arm64_monterey: "565fbd4791b791742003351d4ecae98be11cc4f275a57878f091e6bb515919f9"
-    sha256 arm64_big_sur:  "5741131292a6166f82c63315df61f9c36e4f4ffbc65bebdea40596800606ff93"
-    sha256 ventura:        "a446481184f15e119a67f2c5b931bf19caf9c696d2ea9965fc0044ddde75f20f"
-    sha256 monterey:       "df14ac2121da42c2a3cf7a58772c95ceaf8fde5e891b822ccd34267060dab14e"
-    sha256 big_sur:        "f1f870f1cc726934826df5edbc3687cb3d4b4ed9c464bc0c3ddf5922ba5d5380"
-    sha256 x86_64_linux:   "e44445d8fb07d33bf0c979c44a8d17cd82cca337be63a01d58d438bf28dd34ea"
+    sha256 arm64_ventura:  "56304c047bdb463854f71556209410992b5f252fd0f0f33b1cefead035e27793"
+    sha256 arm64_monterey: "c966591af19a169366159a0627b43bcae6b5c90b8efcffa2259ffd093e8f405e"
+    sha256 arm64_big_sur:  "3f689f24e0cf1573b561e08373941648f65ecc8cffc4606b9a2777c2670e4006"
+    sha256 ventura:        "a0874415414b69e964b2edd63b07b0fad5220b96e2eaff5ad82ef72403989047"
+    sha256 monterey:       "f0cf38165223c381b0d88d273d354ca87d5f834b415ace05e5c9bc7264fe0ab8"
+    sha256 big_sur:        "44385222676a716e78524f80ce61b155d257bee41a8853b2cbdca52f843ba941"
+    sha256 x86_64_linux:   "6ae6be2c9ffcf1a438ace27a6d22e08fe953c82ef830b198eaf6f1c2f39a365c"
   end
 
   depends_on "cmake" => :build

@@ -4,14 +4,15 @@ class Libgr < Formula
   url "https://ghproxy.com/https://github.com/sciapp/gr/archive/refs/tags/v0.72.1.tar.gz"
   sha256 "1d03eda3761e212f150d64236c7bd8e29ae9f46843a7c210e84ec8ca1bb5176f"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 arm64_ventura:  "1a9a592020ac7df6b44fddaa7d018d0026f68939be219345b6a11026b8b28407"
-    sha256 arm64_monterey: "32d2739caefcdb97c620934685775e73e4b9ec53d7da433f67e5ac21755b5dc7"
-    sha256 arm64_big_sur:  "8762a2ea8786bdbbb50c8d5c38a694a237efe11bf9482ef4a4ad09556ec1b108"
-    sha256 ventura:        "7b8a7119b04f94fe79231b193d47a3213e8161c7dd300f71d6246a434915e5f9"
-    sha256 monterey:       "6524b99bfa153669ee5bd72efb5ce2f1268fc2a3c18f921677219469ba87b01c"
-    sha256 big_sur:        "0fcfef7d9411bc6d26a91e9afc55730c48cca9621abf846135baa9de3731c60e"
+    sha256 arm64_ventura:  "c66b7b597a7e0747fe593a85db1ada9cd17e5914bc141d051d4a1651a66977fe"
+    sha256 arm64_monterey: "5de8f137d8bd4b5d7834af26b679bd210f20260d4aaf102338f78790043132d6"
+    sha256 arm64_big_sur:  "f442a5eff3c538c478dc11551cbb863cba07272700ca159e64bc19b46df82420"
+    sha256 ventura:        "26be90067e8c1045b938d30bc50dd6eeaf873f31e8e29b5a66da9d50f5d7e323"
+    sha256 monterey:       "0c866ed18ef8c0afecab9b721ebed87d5605d37a66b8733d82d7823e5c41b8df"
+    sha256 big_sur:        "f619d4fb3721a0ec6d58f192613ab51d209760d3019a4e6f1cd18ddc99531c31"
   end
 
   depends_on "cmake" => :build

@@ -9,17 +9,19 @@ class Flintrock < Formula
   revision 5
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_ventura:  "af7b03cf4466a5dc871c9cdfcb5b4742695043aa830dfc7f723e7404adff26b7"
-    sha256 cellar: :any,                 arm64_monterey: "c1d8922635deb4237cfed541614f3d3dfb1ed249882f7f02cef3a316f75f5733"
-    sha256 cellar: :any,                 arm64_big_sur:  "1277c8fca9d74dffc5efafd87ee9f80edf51215b55d001c623bd8218454db3c9"
-    sha256 cellar: :any,                 ventura:        "3f50f2f7974ae7e265acf01d995fae388a899d77749ab4abac9dd3f90ab3cbfb"
-    sha256 cellar: :any,                 monterey:       "a04996f9fd2d1fb31895a88243c0a7a3a7719c5e343518c2fde9fd12c8c990de"
-    sha256 cellar: :any,                 big_sur:        "36ba8bafc43846970c4fa7149ede83f30dd31a2f0b6dee9758cd23b79e095e83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d612d02cba4d04b5d128e9e72a7a07ec100f1dc47299e32aa55dd576a2c34d9d"
+    rebuild 4
+    sha256 cellar: :any,                 arm64_ventura:  "180c42f461ff0ad1d77e7292197c7b1a1797706284703ea8e86b0bcda350c21d"
+    sha256 cellar: :any,                 arm64_monterey: "5c9d677d14eb989663331489f9490f9a645aa55db8d88f7fe4bad3da40633db5"
+    sha256 cellar: :any,                 arm64_big_sur:  "141b41994bde3dd255cbe898125cc1d0b6b6caa5ad0b8fa3d5bde13cc736877b"
+    sha256 cellar: :any,                 ventura:        "a73e56cbecfce6ed5ca9a01149b982510b7ab2fc54be9ab1757f5430d6fa495d"
+    sha256 cellar: :any,                 monterey:       "85634df74dfa193fd9968d2c281d1d381f4fb51dcc6ecf5e6b8600514afa698b"
+    sha256 cellar: :any,                 big_sur:        "813d918c079ec8e0333f45bfd61f9a76147c1be840e281f97a047311f56268f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b591be925b91781aa0aa06878db6d1ba802b2baad4713cadf5170a25654cf970"
   end
 
-  depends_on "rust" => :build
+  depends_on "pkg-config" => :build # for `cryptography`
+  depends_on "rust" => :build # for `cryptography`
+  depends_on "openssl@1.1" # for `cryptography`
   depends_on "python@3.11"
   depends_on "six"
 
@@ -49,8 +51,8 @@ class Flintrock < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/6a/f5/a729774d087e50fffd1438b3877a91e9281294f985bda0fd15bf99016c78/cryptography-39.0.1.tar.gz"
-    sha256 "d1f6198ee6d9148405e49887803907fe8962a23e6c6f83ea7d98f1c0de375695"
+    url "https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz"
+    sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
   end
 
   resource "jmespath" do
@@ -89,11 +91,13 @@ class Flintrock < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c5/52/fe421fb7364aa738b3506a2d99e4f3a56e079c0a798e9f4fa5e14c60922f/urllib3-1.26.14.tar.gz"
-    sha256 "076907bf8fd355cde77728471316625a4d2f7e713c125f51953bb5b3eecf4f72"
+    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
+    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
   end
 
   def install
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
     virtualenv_install_with_resources
   end
 

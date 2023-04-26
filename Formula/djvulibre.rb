@@ -3,7 +3,7 @@ class Djvulibre < Formula
   homepage "https://djvu.sourceforge.io/"
   url "https://downloads.sourceforge.net/djvu/djvulibre-3.5.28.tar.gz"
   sha256 "fcd009ea7654fde5a83600eb80757bd3a76998e47d13c66b54c8db849f8f2edc"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -11,14 +11,13 @@ class Djvulibre < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "256feac4187ce2c62a4a2a5b64cc6fbb6160c970b652b690fc1ed775efcf5adf"
-    sha256 arm64_monterey: "c6c7e2fecb0958688027ef38a23b6e0a4e2df6de8a28a03a472ffa1fbc14de01"
-    sha256 arm64_big_sur:  "c5d40805bec199c8c359f392b54ad3e1128f7debd0e6af393632e70721aa2a34"
-    sha256 ventura:        "35be3b8037445f26f84b9168020058837a09d41964332aa7100d5a6d82542a29"
-    sha256 monterey:       "113d7cb22d9b8b7ee7dbe524769068e12fcb6c5849211975b28b88a09644a366"
-    sha256 big_sur:        "9afc5c5f891494305f70857cd767f1beae1e70e1d7e82498496b05a2944b5535"
-    sha256 catalina:       "1ca7cb3fce3c2864bcc3411ba304fa953b39690082cb1d0cbd220a46f9ececee"
-    sha256 x86_64_linux:   "da3cce41bd557ff4bfc7e5d75a6af20bd3e8a9f009fdfe83d63c21157d88213e"
+    sha256 arm64_ventura:  "03c2b8a0fd889f5286436b3b2b1b8b10ceec29ed133756d8bb64ac20f867d0bf"
+    sha256 arm64_monterey: "f39559ac1a9d9e3351dcc2d77384875434a8aa7d84406d0f5214dd42e86759e5"
+    sha256 arm64_big_sur:  "b2c030948a6296ea93065ac207b7d71effd08a1126abc9a8365186cf4d04bf73"
+    sha256 ventura:        "437c4982f64bf9f3c17d3dc6e07a204770a8028ee924f23ddd0f09af9cd4fbc4"
+    sha256 monterey:       "5c208fecddc8a56aae519f38d52a06c2b6f261b094077e05b43cebc9d452f3cd"
+    sha256 big_sur:        "d325152b1930974548997efcf819595fefcddd23cebaee2e22718cc3296d1957"
+    sha256 x86_64_linux:   "16b50bba79b4dba1593db9633d8a396633e02dd015f5858f19eb8ad9aff3142f"
   end
 
   depends_on "autoconf" => :build

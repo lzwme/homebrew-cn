@@ -4,19 +4,17 @@ class Podofo < Formula
   url "https://downloads.sourceforge.net/project/podofo/podofo/0.9.8/podofo-0.9.8.tar.gz"
   sha256 "5de607e15f192b8ad90738300759d88dea0f5ccdce3bf00048a0c932bc645154"
   license all_of: ["LGPL-2.0-only", "GPL-2.0-only"]
-  revision 1
+  revision 2
   head "svn://svn.code.sf.net/p/podofo/code/podofo/trunk"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "85846bbe1ffd8c425174f29a50fe278d17ec7561f9c73afffcb7aa25035a40a8"
-    sha256 cellar: :any,                 arm64_monterey: "3f6f31c67de44012c99d67c8fd199a365f2482b4e6f5a2cf3ec835c3f16b148c"
-    sha256 cellar: :any,                 arm64_big_sur:  "c0173e0e2f363efe2f03aaef8677310f52f994966f3665814ca0dedaddd78d36"
-    sha256 cellar: :any,                 ventura:        "68ff0b120ed6e8cc5e493e0fb1fc07b7cbfb877b550b153036de612e9091782b"
-    sha256 cellar: :any,                 monterey:       "db9da10d40210749d99357f95176c5a1a5766c703262094af6b030f5e670de3f"
-    sha256 cellar: :any,                 big_sur:        "e16ce776142f7f2da35b549805c0a49e2a61f40b95b0a73357061440373ac0b5"
-    sha256 cellar: :any,                 catalina:       "0ff7fc07f1044393eb33ef3da8c0ac2f4eeda765e32172dfcf4def7818e08fe1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c27f3f2155a17424c12477cb8e084485f141a7d1b903b7a46a94e6e6253caa3d"
+    sha256 cellar: :any,                 arm64_ventura:  "258755f90e2bf304ecebf1d75222565b7f459bf54fff21257fce8f0e3d878145"
+    sha256 cellar: :any,                 arm64_monterey: "a3c4c1c2e3c56ef71d5fd0695c29af7285470d667e3e20c948724b134b0cfd28"
+    sha256 cellar: :any,                 arm64_big_sur:  "3ba91bad5414b285d6757c2996f46b46098144f39cea5a9c4909bc70c38730c8"
+    sha256 cellar: :any,                 ventura:        "9e505385c717a890b2e34d4ac461137d54e17edd0810ca15fc1a6767e6ed4659"
+    sha256 cellar: :any,                 monterey:       "0968e3f5ade3d5238dab169a7f17b072d9a34138cedbc58329c2026ffd075ce9"
+    sha256 cellar: :any,                 big_sur:        "c03fa0eecd1e6a19d5df5f6f93f3346b85366a7a69b719c09d96ba72c6c44e44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb7267c6e6b65e87c1de6dcd3abb986dae987dca57697117cd75f40a3c5e4597"
   end
 
   depends_on "cmake" => :build

@@ -22,6 +22,8 @@ class Gfold < Formula
 
   uses_from_macos "zlib"
 
+  conflicts_with "coreutils", because: "both install `gfold` binaries"
+
   def install
     ENV["LIBGIT2_SYS_USE_PKG_CONFIG"] = "1"
 

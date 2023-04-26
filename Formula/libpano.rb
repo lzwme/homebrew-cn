@@ -5,7 +5,7 @@ class Libpano < Formula
   version "13-2.9.21"
   sha256 "79e5a1452199305e2961462720ef5941152779c127c5b96fc340d2492e633590"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -13,14 +13,13 @@ class Libpano < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9831541fb99ba54ac769167cb49738d5ddc7a3d5aff5c213f35d6296caad7215"
-    sha256 cellar: :any,                 arm64_monterey: "70958ca67b42e1da36ad393b0243c7d182d5413f1c8e83e5d6c47b513b0f3ff6"
-    sha256 cellar: :any,                 arm64_big_sur:  "bcafb2c87069bcbc4072ad10e5d0e971761d55b66470f5020b9571b1fbd48c23"
-    sha256 cellar: :any,                 ventura:        "c5b9ce7c25bf31746f677554ae6d8efc7a6398f7b2809dc80b160a6bfaa73630"
-    sha256 cellar: :any,                 monterey:       "cc0ce40a573784a891039fa691945d6ccc357bfaf0cfee2ae030bd8f6fbf813f"
-    sha256 cellar: :any,                 big_sur:        "86d6ebc7e57157f40337083697758ad334cda89dd1b6f98eb470cae7bd8ffa01"
-    sha256 cellar: :any,                 catalina:       "23a591c1c9367006f7477e1dc8633f17452082d36197536bdf768e1e51692302"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "824c6d89f876646cf10dafe0db21c13fd7493495c923c1c0b9158cb5aa93d33a"
+    sha256 cellar: :any,                 arm64_ventura:  "38ab46b85193d465e96755ade2fd24f53b83aea91aafa58f7a95d232e815cc81"
+    sha256 cellar: :any,                 arm64_monterey: "dcbd9828f83595a4bf84446fb108dd5cc3833654db8c6b9f671a3222560d6205"
+    sha256 cellar: :any,                 arm64_big_sur:  "e0c24d68e47dd79a020e210d16ef60e0d366ab055ea5398a26ea503375b28892"
+    sha256 cellar: :any,                 ventura:        "2299a8a2a47375fcb10b9e25de60074b0febe061f74d3087faaabeff05b3194b"
+    sha256 cellar: :any,                 monterey:       "b616750f08a7f0a7b3998016bea3a61d5980004348b6cb48251aa4154fd29f63"
+    sha256 cellar: :any,                 big_sur:        "23abf35e187127bf5bca7fbaaa9fd99fffc6909a33965089c2ee36a174c8d046"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e33708e316d754864b4302b86031fc23b02e7b7e53a098880278b2aa864cbc5e"
   end
 
   depends_on "cmake" => :build

@@ -4,15 +4,16 @@ class Fontforge < Formula
   url "https://ghproxy.com/https://github.com/fontforge/fontforge/releases/download/20230101/fontforge-20230101.tar.xz"
   sha256 "ca82ec4c060c4dda70ace5478a41b5e7b95eb035fe1c4cf85c48f996d35c60f8"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_ventura:  "e4e49fa2cc9c3ea67878e771264b3fc98b23f3e2b5046ab28c644a7fead33143"
-    sha256 arm64_monterey: "daba676ad4d1ba5a160d883bffa73bfc189c68b571b1799275d8d65da4b34d24"
-    sha256 arm64_big_sur:  "24f77f4cea3d1d100c744e60abe044fd82a5e87846b206f1e4e34232ebc7a5d6"
-    sha256 ventura:        "e41f49422bd52bdaa48ef9d22f8e9c9de11ee1718b01929362da322ec0b82905"
-    sha256 monterey:       "c4681106deccb919618b65408cc0ca1f6cd5caf7a59cad0f136268e20979e254"
-    sha256 big_sur:        "e74714a52891d601fb1e053516a1ccd165c5146f52d8e84a658dc8cbe463ed77"
-    sha256 x86_64_linux:   "53ab801d9f1841f30771b4bddefd465733bb87ce3cbf67cefaf52efc9eaf0eab"
+    sha256 arm64_ventura:  "9046c0e8c9b22e734124680b0ada61d6205fffcdcc3e390e730bc7782508d227"
+    sha256 arm64_monterey: "8effca8a77d5c2622ca337c4432e935259b02f72cdb60aaefe00c232dcec728f"
+    sha256 arm64_big_sur:  "76ce570594897169977ae31c6b7365f04168eec804a743c807213e0844c755a2"
+    sha256 ventura:        "bd63ee28f83dec665137eb003994a9e39a159c14e3ae104fb8cb5b7878f3d858"
+    sha256 monterey:       "3861d0866438662ff819393a8a1f2ca896f621417fc5aaf8269f5db45ae309b1"
+    sha256 big_sur:        "4b7f3290b74c518c7e1dfb246a51208d61365ac79762934ce4b7261fa990ccdd"
+    sha256 x86_64_linux:   "68b6ce1b252505ed77ad7cf427c26aa892f68fb46115f7006e638d21c5a9aa26"
   end
 
   depends_on "cmake" => :build

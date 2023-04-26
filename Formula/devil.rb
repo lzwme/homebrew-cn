@@ -2,7 +2,7 @@ class Devil < Formula
   desc "Cross-platform image library"
   homepage "https://sourceforge.net/projects/openil/"
   license "LGPL-2.1-only"
-  revision 5
+  revision 6
   head "https://github.com/DentonW/DevIL.git", branch: "master"
 
   stable do
@@ -33,13 +33,13 @@ class Devil < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b9d1ac5aadc1c29523a0b8eebe8d84eed00078a46b4d3793e4c63727f6c1abfd"
-    sha256 cellar: :any,                 arm64_monterey: "6bc555c4ee3262b3ceb8bba2d0a598463e9ddcdbf59954ef87d3a66a3513006d"
-    sha256 cellar: :any,                 arm64_big_sur:  "625e8a26133ba0830dbbd014fb578f1c4a5cd53421cb84bf187f9778811af25b"
-    sha256 cellar: :any,                 ventura:        "51236fff5aed6438ec8852794faf97a2fdd1a418591cf89a2774a51ddf9f774f"
-    sha256 cellar: :any,                 monterey:       "21bce79dd7ba915985ae9357a7aa481847641ec67db54dd78dc27daa3f69f9f2"
-    sha256 cellar: :any,                 big_sur:        "4e293eab35dc5a76913c7aced1f8b957e691bf346b398ddb7c22ca9625239234"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b514833cebad2a1c751d4885c1213ac44c0269f780352f79540bba4058cba37"
+    sha256 cellar: :any,                 arm64_ventura:  "83917219939802394eed0c286c61eb01f54621d97fe434838286a2ec5f92e939"
+    sha256 cellar: :any,                 arm64_monterey: "f653e1ed04c2c3e1c4d00e9c9f9e237e2cd062ba1a9bd12417f4081c572b4ab5"
+    sha256 cellar: :any,                 arm64_big_sur:  "543768d33075adb7d3301fff8a8376a0ebf014401783f10ae68bf896e2996b36"
+    sha256 cellar: :any,                 ventura:        "41c4a55d025dbe6bb13fe38575289bca95014da52ecebb5d06091521eba82598"
+    sha256 cellar: :any,                 monterey:       "e981eb27631eb67d08126eee9daef0de6f30223bf69f4cc497e6d258d84d4714"
+    sha256 cellar: :any,                 big_sur:        "1bf545866859e8ed264015e2e0c9f88e8379f7ec175ef40ade2e1039ce933262"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39cfc26d4075c7e2be8b1fcc8ae762bd8897dca6460c632e1b63f3df69888a56"
   end
 
   depends_on "cmake" => :build

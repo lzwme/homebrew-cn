@@ -4,6 +4,7 @@ class PopplerQt5 < Formula
   url "https://poppler.freedesktop.org/poppler-23.04.0.tar.xz"
   sha256 "b6d893dc7dcd4138b9e9df59a13c59695e50e80dc5c2cacee0674670693951a1"
   license "GPL-2.0-only"
+  revision 1
   head "https://gitlab.freedesktop.org/poppler/poppler.git", branch: "master"
 
   livecheck do
@@ -11,13 +12,11 @@ class PopplerQt5 < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "76893c80ac9e1b3840913deb64e025df0bd3bea6a33c2f6579a6951e93499bf8"
-    sha256                               arm64_monterey: "524ad7bfb5d3d8c3d50832e7f32e7b6ba4b391b4d5e25d816f110990b5e0abca"
-    sha256                               arm64_big_sur:  "61c4f4c4653671f5577dbbfcf2ff1c9b8873b8f86d5f6f9363a65c53bfb49c9e"
-    sha256                               ventura:        "7177c7a431c174480759c1a65926836182897380fdcbb183657cf98139e6e4d5"
-    sha256                               monterey:       "d99b66362aeb491701141b4589b398981c77283204b397880880c1590b032def"
-    sha256                               big_sur:        "598869db64fec3087e0023aa5624946f817029eb213c1d8e157e26b15bb36bd9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c1ab78100f0a013ad8b614eca2d38f54c7bae289ba35177fa1dd35a348e0617e"
+    sha256                               arm64_monterey: "a502fbd2575dbb981c715b8770ad32b12272c90b0b5847a24978c5bd9acfc2ec"
+    sha256                               arm64_big_sur:  "76f756e030c3eb4416bf2ea3abe1aefb0ea752ebca3ccc0beda8a41a9d7c403a"
+    sha256                               monterey:       "14d088523abb3ea94473ab8f89b92aaa425b2ddb69953cfe333d611784711e83"
+    sha256                               big_sur:        "bef957d5ca16e203e82e20b386b4f5678ec4d172f2124e7131a3e983022b5530"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "826f5ccad61fcd5bdef1796f530b070bd5daea91af7fd15d46af3c824369b3f0"
   end
 
   keg_only "it conflicts with poppler"

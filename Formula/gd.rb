@@ -4,17 +4,16 @@ class Gd < Formula
   url "https://ghproxy.com/https://github.com/libgd/libgd/releases/download/gd-2.3.3/libgd-2.3.3.tar.xz"
   sha256 "3fe822ece20796060af63b7c60acb151e5844204d289da0ce08f8fdf131e5a61"
   license :cannot_represent
-  revision 4
+  revision 5
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "62e2d11e1a556084beab6320187c522647cb15308233f164d9fe1e177701d37f"
-    sha256 cellar: :any,                 arm64_monterey: "22dba9b654ae0a2907e77fdaff796412da28510243b75df5a2685b3e9339d7b3"
-    sha256 cellar: :any,                 arm64_big_sur:  "cfdb218c7e0327c118eb6b780ce42b0b833dce71f835990736d184207169b885"
-    sha256 cellar: :any,                 ventura:        "ec3bd984449c58ff41f82debb5b98e83d8fd275b345504fab99f65e780b10085"
-    sha256 cellar: :any,                 monterey:       "220d7e3cd2bef8d4b61f7bc6b636f4eb09e8b0959dc55faef033e6b3ceaddc04"
-    sha256 cellar: :any,                 big_sur:        "8e860ba44781f2456886c506d1f83806007a3962f12a6e5f5bdc85948be1b9b4"
-    sha256 cellar: :any,                 catalina:       "541e1b5312cbbcf65c62557da84771a78f689fde33e355233c44b637ef5b04ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "523b01e8bfe6bfdb5d405b9d9d44567d99bd2d98e51b82c1b936e1e85f8c0195"
+    sha256 cellar: :any,                 arm64_ventura:  "3e23180f273c11082a722aad683c929c3cb27acede6b5274c0ddcede895287a0"
+    sha256 cellar: :any,                 arm64_monterey: "1aea67a3b927c0955a10126c92ed167932098eb47c991e485fad3c3add358519"
+    sha256 cellar: :any,                 arm64_big_sur:  "4a65d1f0fed5462bd621cfde772689fc4ca18ce7ae610f4c0fe69860217c256c"
+    sha256 cellar: :any,                 ventura:        "86166efda1448a1dbc605d11751ed2194858db85ac14eaf2071d94ebbe11ecb1"
+    sha256 cellar: :any,                 monterey:       "08514ca3262da9bf44c5f332713fc20f2e14a7ea22ae6e853829b06da09480c7"
+    sha256 cellar: :any,                 big_sur:        "14ebdc0e93c087250ee130dc67de4082f26cd74428dddc047cfa834cc750230e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb25e79ae81750ac775514100a9f0d404438f8499cdc8b6b60b3d3f2b5411a4a"
   end
 
   head do

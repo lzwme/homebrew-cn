@@ -4,17 +4,16 @@ class ProjAT7 < Formula
   url "https://ghproxy.com/https://github.com/OSGeo/PROJ/releases/download/7.2.1/proj-7.2.1.tar.gz"
   sha256 "b384f42e5fb9c6d01fe5fa4d31da2e91329668863a684f97be5d4760dbbf0a14"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 arm64_ventura:  "ef50e257e02dadd349f715b576562fd1c3927e5ff52787bd3f8c7d85a41b8822"
-    sha256 arm64_monterey: "29f65a3b916e6b967c157713b7a00daf1b91c01092628c292451ff5ade277ecf"
-    sha256 arm64_big_sur:  "de4c07c82bb48aaacce06186daaa95e975ec13d9c63978ec74e46d00e29c9b4e"
-    sha256 ventura:        "2114192236f2f619801c99d24c870962dbb04bb09861ce384aacd64613f48314"
-    sha256 monterey:       "4315a9c41f5f97d1fbf80cf011b23e901009d28536897aeb0b640e8324a379af"
-    sha256 big_sur:        "85fe28900d71302e7a6a433cf97f6c2bbffd760578a731f502a3dbea2be02917"
-    sha256 catalina:       "34dc4a8dda8470ec24951126171ac370232d215a4623e8c8b67161b52a875706"
-    sha256 mojave:         "cfda390ef15a53e47786071d599ded6ecfb540c3c70ae0174135d50c481f058b"
-    sha256 x86_64_linux:   "00f08eda239998c9ecb8448a71320c8376ef03e0e02f27035b2628bcc61a74a6"
+    sha256 arm64_ventura:  "551208cffb3c201f9d239f0944eee3619e694c36aac19ff947938d1aa830478c"
+    sha256 arm64_monterey: "bb024222c2133f0f2b6fb5f2a36e23dd980c70eebcc7fe0d1d5ace49a3f589ec"
+    sha256 arm64_big_sur:  "31e013aeb4db0a02863ebba9a5915f7673457f4a5dd1453285f8ac396cf45d19"
+    sha256 ventura:        "95d424ccb442f96c677f7f6051d11adf9d66e8204f0d48a6459baee56be34d8c"
+    sha256 monterey:       "d280ab46201b056e8235673eae165dd2acc6fa7b8bcb6f03dba35a5fb35d6d43"
+    sha256 big_sur:        "d2a85db83fc71defb511bee6895bc58449a8853e9520d67f75092ec92d14f70e"
+    sha256 x86_64_linux:   "2ce63874493d0a44439219060fc33bf35963ee6347052b676c446a3e75a58511"
   end
 
   keg_only :versioned_formula

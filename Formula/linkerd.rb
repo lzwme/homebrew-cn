@@ -2,8 +2,8 @@ class Linkerd < Formula
   desc "Command-line utility to interact with linkerd"
   homepage "https://linkerd.io"
   url "https://github.com/linkerd/linkerd2.git",
-      tag:      "stable-2.13.1",
-      revision: "59a40f58c9914939aee49dba85c66592ffd14132"
+      tag:      "stable-2.13.2",
+      revision: "381b37568805399fca4cc041bd4915a98338c1cb"
   license "Apache-2.0"
 
   livecheck do
@@ -12,13 +12,13 @@ class Linkerd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "35b18c77c1b6a94eba4de7ee7c74c13a3d6b1b9f7b553809e8729301da846771"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7fdd16ff0449e657e881dfb7538f8beabea55d2a3bf1dbd520a241f02426feb1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "642ae51b14ebc09dd6e665f35928c5d68210f8dfeeebc63360ecf9b8c836b692"
-    sha256 cellar: :any_skip_relocation, ventura:        "d50a34355dbe60d48be6cb495b0925884172b2c0065df167529389e9a4ee525d"
-    sha256 cellar: :any_skip_relocation, monterey:       "a210569694ac4d0e6adef6a49ff5132a77505f8cf0c632b235c37ae69d2e666a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e9cc4b23619f9365a7caaf67cc3830c5bee9bfb5347918a230cd4a59e7b6436f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3c3993c72d74a6875b321002b742d814ce96eeabc025b841cbcc539a526d435"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "66dc47eb686d1942fc7e7b7be71c959efabfe56d1e827e7a9f6d4dffd412792c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3f1c867f7ed88e5d19df3434a7bcbd5fc1112a71d6b51e4ed118f365f809a590"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "487278c973eccd46cdff5b093aafb9b72cdfd074422f7b0dcadfffd6fb834551"
+    sha256 cellar: :any_skip_relocation, ventura:        "5998391823305881d8467d1a6a27576ef7b2d553a716b7634d074d0f452bd41c"
+    sha256 cellar: :any_skip_relocation, monterey:       "1f004ae8e4b4ecfcfb0d3e7aaa06842a5418b8bbc8204b0ea624a54fb7689e64"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ab1e817a1854d2d6e9003b9a5504fbc2fe852984564c36c59258068f3ab488b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac28829032f6479a80179f3c0617560dd3eb83680ce9b29e3253de8204cbb54d"
   end
 
   depends_on "go" => :build

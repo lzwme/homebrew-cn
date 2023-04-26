@@ -6,7 +6,7 @@ class Pike < Formula
   mirror "http://deb.debian.org/debian/pool/main/p/pike8.0/pike8.0_8.0.1738.orig.tar.gz"
   sha256 "1033bc90621896ef6145df448b48fdfa342dbdf01b48fd9ae8acf64f6a31b92a"
   license any_of: ["GPL-2.0-only", "LGPL-2.1-only", "MPL-1.1"]
-  revision 1
+  revision 2
 
   livecheck do
     url "https://pike.lysator.liu.se/download/pub/pike/latest-stable/"
@@ -14,14 +14,13 @@ class Pike < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_ventura:  "031ee62b11a955552b030373aa91497be82b7b7fee22ce3c60cc24b1918e88c1"
-    sha256 arm64_monterey: "2a53a923852149cd694ce6d7be8b45c0403d8d03a0766f4f322fadc7e8f71bf7"
-    sha256 arm64_big_sur:  "878b3ea7543e92619a780924ad4d658a4d02c130c574c6a663fa538b520ec0b5"
-    sha256 ventura:        "ecaac78aa7f662a1622d736cff67eeaca243a2bd21df149902c9b215c0ee76af"
-    sha256 monterey:       "ea888dfb5125f9bd5bbbc67d435072067cd37b965a083b0734e060945e409715"
-    sha256 big_sur:        "c58188256a4bb81c01c63da5dfa60ba65496d5a4e9b6b21b40d7614930bb916e"
-    sha256 x86_64_linux:   "45a3daec18716e556c84641e255863a690f4affa90134a535430d141c0fc865d"
+    sha256 arm64_ventura:  "32425d6e5b0c6416d7ab329ed601cee615050d8699ac11ddc2c44d925447ab3f"
+    sha256 arm64_monterey: "172117c0132e32a8f25f638dc4e6493ecd681578ff92b2ed2b4f484bfbd812c7"
+    sha256 arm64_big_sur:  "e75eea16b4779c1942467bd53e2b75366618607d8483c2e46c95e3f58c99fc62"
+    sha256 ventura:        "ff8e710e23b24d0b361a7a75c0b9dd0b8581d1282972ba28891db5207acc673e"
+    sha256 monterey:       "bb437a3b2067048810ae0b15bb51ed9b074f10d0df484918aa2e026f119643be"
+    sha256 big_sur:        "e87462cd26301aef297902f8145f2a79bbcf91ac3bd84cd422d2bf7f6d81e836"
+    sha256 x86_64_linux:   "313806086e8357bd20ecd3d6afebc93108087c2fcea40c527cdf5388c7970be1"
   end
 
   depends_on "gettext"

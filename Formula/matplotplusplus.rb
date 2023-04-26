@@ -4,18 +4,14 @@ class Matplotplusplus < Formula
   url "https://ghproxy.com/https://github.com/alandefreitas/matplotplusplus/archive/v1.1.0.tar.gz"
   sha256 "5c3a1bdfee12f5c11fd194361040fe4760f57e334523ac125ec22b2cb03f27bb"
   license "MIT"
-  revision 3
+  revision 4
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "09f1065112d8fab2b6b7a4505de70b8e8f72cf3f165bfb779b4e5aa0bd6b75cb"
-    sha256 cellar: :any,                 arm64_monterey: "bf944af3d150c4d06d0d5ba4c4005a36c263fa4ff63d0b6048612970bab99b39"
-    sha256 cellar: :any,                 arm64_big_sur:  "49ed10a408488bc95f3d3efddd435ef858b910b046f36615461db38efd3a04c4"
-    sha256 cellar: :any,                 ventura:        "a04c9052fd35660c346bcf9d122eac5378d63f97b4fcb8846921b36fdd46225f"
-    sha256 cellar: :any,                 monterey:       "3325d540aad16f1d48eddbe316a95f7bbe0948e36644dbd3839d25df5d647ef4"
-    sha256 cellar: :any,                 big_sur:        "b57950328175d4dbfd5c46c5f2e587227d11d5031f06eb3a31df781d425570d3"
-    sha256 cellar: :any,                 catalina:       "a0830f3c946d045384f6b91511688baafc0ea91b3e1e7f34f4c6c10173179efe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7231dfcdab4f21ff3fa9303b76a4b9b1a820a3d8debf54ac1607fc190071dd7"
+    sha256 cellar: :any,                 arm64_monterey: "09fefaa3f06a0139757348b66ced9a78e9cdd89b359eeb8bddd86c11ba328c76"
+    sha256 cellar: :any,                 arm64_big_sur:  "91e6a335dc67dc2f53f3b530fb8ff996552b8ce5df746bcd542214cf0fbaaba1"
+    sha256 cellar: :any,                 monterey:       "ae78e44903b2ac5d6172eae41cf93247a2d8b96056e2e7e3deff8df85241c9e3"
+    sha256 cellar: :any,                 big_sur:        "c20d6f3472a9f7ad51c37e28f9831775609536a45e98d9184a5612676c862293"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31d9fcfe3e375a750c536a1e93760be3e700c7c20ea2e2cc76d91577e2f4b420"
   end
 
   depends_on "cmake" => :build

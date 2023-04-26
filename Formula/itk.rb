@@ -4,6 +4,7 @@ class Itk < Formula
   url "https://ghproxy.com/https://github.com/InsightSoftwareConsortium/ITK/releases/download/v5.3.0/InsightToolkit-5.3.0.tar.gz"
   sha256 "57a4471133dc8f76bde3d6eb45285c440bd40d113428884a1487472b7b71e383"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/InsightSoftwareConsortium/ITK.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,11 @@ class Itk < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "6c5ae4caaa5db0b4c9c5d5947f7432e7933e2ec4b0047ad656318c7eaf291376"
-    sha256 arm64_monterey: "999621dcc8212ac650e40035de6c6d9558f7564e2868e09040372d391f8e54e5"
-    sha256 arm64_big_sur:  "9d72b5bf086019b8a7b88a24f8188de0f1121630168f54cc94d161d50b8993d8"
-    sha256 ventura:        "e18ca58d6e7ef0b136e3d5bac7b13b027c6f21e4d6200c28735828f7eac0c462"
-    sha256 monterey:       "05b28cb5148887ced4e7b9f14c8a89b7e0dcfddf812bcecf61ef525703f16f3a"
-    sha256 big_sur:        "9220db75ade46836b878577fd095f6998117cdf2a937dd9b68614646e2a2d504"
-    sha256 x86_64_linux:   "99ffd8c6b3faf1dcde531cd549571726a3445e5c60173aa6d3e3ceff18e16486"
+    sha256 arm64_monterey: "6c2786dbb58c8013e5f58f909953bcc7fa9e45f4a859f90f66b4c1bfd63c7c1d"
+    sha256 arm64_big_sur:  "45df350e168b33ca95b2338e57b50948c4f55366171c39df3aac1c4968860d68"
+    sha256 monterey:       "785bacdf50799ba54c45aa0eb895cc9a7d5e0a1abe22e9393e27afcbee176290"
+    sha256 big_sur:        "a912187fafbf455c69fe4decb3aa6e450248206079c54fbd6a1e53efa182658e"
+    sha256 x86_64_linux:   "118d8d8a0ceb6e9e6464f1a5fcf142f2e1925ab8136ab5c1ffef60600a25d53c"
   end
 
   depends_on "cmake" => :build

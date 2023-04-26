@@ -4,6 +4,7 @@ class ArgyllCms < Formula
   url "https://www.argyllcms.com/Argyll_V2.3.1_src.zip"
   sha256 "bd0bcf58cec284824b79ff55baa242903ed361e12b1b37e12228679f9754961c"
   license "AGPL-3.0-only"
+  revision 1
 
   livecheck do
     url "https://www.argyllcms.com/downloadsrc.html"
@@ -11,14 +12,13 @@ class ArgyllCms < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "30fcd5d782e74fffb37d639ae30449062cfb8e5b68f500302f53eea98e972e3d"
-    sha256 cellar: :any,                 arm64_monterey: "ab77de0d5218e45c5b9b2c6190f9c08ed53aac2aafb7c23bbcdbd05faf21a8d1"
-    sha256 cellar: :any,                 arm64_big_sur:  "d2de7810f54558d2e12d566274d1a25075c085d21f357d30dcd6be18ea94a36e"
-    sha256 cellar: :any,                 ventura:        "dc567e1d7c8ac4ccff0d021a1bfd835daa9024f0297b884535b7d25fe03e7ffe"
-    sha256 cellar: :any,                 monterey:       "f4baba7347d52020f7e68fd90fadca1337c049abe047315550353556054123b7"
-    sha256 cellar: :any,                 big_sur:        "b9a0b4117a777707a229636875d1d5785dc2a956f5748f4aaaded89855012ee8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "605fd5a5d79d3c5c1a33342a808a174bdd4add73c13036bb216c3e115a396b12"
+    sha256 cellar: :any,                 arm64_ventura:  "a5fcde403ff9fcd5066e618d9881746cd74497673cb45b5b70513dd7eed2e4e5"
+    sha256 cellar: :any,                 arm64_monterey: "b984e5dad0d132169e324c0ce6e2247a3215978ffab873389c076e3d4329dd0a"
+    sha256 cellar: :any,                 arm64_big_sur:  "7da00534b2a37d605ad48b5040f5c3963ab34e4e532aa8e141cb06bc8b95a3de"
+    sha256 cellar: :any,                 ventura:        "82a1932941c85b76d58c00161b08778a67adf2f79c17d62022b43f50e12f6f38"
+    sha256 cellar: :any,                 monterey:       "046626e1817bfb96c4c5bd57eca3e5fb431c468280ca2719826f761980211c80"
+    sha256 cellar: :any,                 big_sur:        "7b6bb889e77f4f01c17dd64e8c99170b5e7b00248d4701459d01c14f1fbf47e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85d4cb96a1cb7f85063ef58ba270e68c55e9dedd2d6ab5807acc0946d549ca6a"
   end
 
   depends_on "jam" => :build

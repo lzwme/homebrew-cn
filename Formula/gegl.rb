@@ -4,6 +4,7 @@ class Gegl < Formula
   url "https://download.gimp.org/pub/gegl/0.4/gegl-0.4.44.tar.xz"
   sha256 "0a4cdb41635e406a0849cd0d3f03caf7d97cab8aa13d28707d532d0089d56126"
   license all_of: ["LGPL-3.0-or-later", "GPL-3.0-or-later", "BSD-3-Clause", "MIT"]
+  revision 1
   head "https://gitlab.gnome.org/GNOME/gegl.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,12 @@ class Gegl < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "ae6a4691b74d50f3a4c8f6a97fadad4f980f7c3fbb3e913c477e28f267b78202"
-    sha256 arm64_monterey: "fda33b604ec4dbc468ce03aa0a7f22f6fa7d66da165bf0e86597748e35a579cb"
-    sha256 arm64_big_sur:  "15a9e4f7492538a4a225929a44d8b61d9131fab96983bdaf2a8d6d4cad9b1d5f"
-    sha256 ventura:        "dfd85d7971eb53572dc58927eaa9e057c248b164a72187717d9dc1181b145f9d"
-    sha256 monterey:       "b2a926f0f7cc401d879e86883a9a1985ec51385da45a00f655be1fe96a84f693"
-    sha256 big_sur:        "68f7b92e7dd1fc8f2a34bf0d44cf01e194f613050738811d72230034ca778c1d"
-    sha256 x86_64_linux:   "fe55cce91b060a8df923ccd6238c695471dc54f4cc3519e518e3ebba6313f814"
+    sha256 arm64_ventura:  "c3083b8599602d9d130ba43b497af36d14f223a0dd6b52b14bd0ae46cf4fedba"
+    sha256 arm64_monterey: "53bc2550ba65f022d386589d29a7ed8b37e07cd1616d8c041e3da3250bef2b81"
+    sha256 arm64_big_sur:  "b40b52dd843ace0cc29e5c4ad04331d1558edb04408e16cf39287df46897e882"
+    sha256 ventura:        "c4b71927a74f21c21944b5833c9f6972bfe083eec9ecb3d66ba5778c39999f8d"
+    sha256 monterey:       "3aeabd2ab6ea22d9b100160f9c1b9c0da81f6950cb845c8ee8debbf99571f80e"
+    sha256 big_sur:        "c7f91baa51527665d07e3a2d8a98d49d6533d9aac4f0ec4cb8767547ba725653"
   end
 
   depends_on "gobject-introspection" => :build

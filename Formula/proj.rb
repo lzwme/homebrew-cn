@@ -4,16 +4,17 @@ class Proj < Formula
   url "https://ghproxy.com/https://github.com/OSGeo/PROJ/releases/download/9.2.0/proj-9.2.0.tar.gz"
   sha256 "dea816f5aa732ae6b2ee3977b9bdb28b1d848cf56a1aad8faf6708b89f0ed50e"
   license "MIT"
+  revision 1
   head "https://github.com/OSGeo/proj.git", branch: "master"
 
   bottle do
-    sha256 arm64_ventura:  "b8bda6c6df144eab4b7f8240da2eab263368b736c79e2cac9412cb0021a17da5"
-    sha256 arm64_monterey: "10413961f58a8f1403c75eedc0866cae7038985df89ad8180b176e6a33e2cb1b"
-    sha256 arm64_big_sur:  "4e59238791d459604f4900722de97e138b4ca6b85f45a1f29c52f30a62261060"
-    sha256 ventura:        "679b24c831253da61787a251be04438e268916edbce18e91411845ee05b003f2"
-    sha256 monterey:       "cf4be54fadf8f7d807562cd3dcab8668104afa9c656fb77eaff2deec0b3dbffe"
-    sha256 big_sur:        "d6ba29403239a36dc10ea20737cff918e304cada1f893b7a3edc9819794c00f4"
-    sha256 x86_64_linux:   "448c7cacb51fa79ac7b3eed95b45a1541833b7963b9ae4ce45595e9d77e732aa"
+    sha256 arm64_ventura:  "5ca270dab6620ba02931ff138dcbdb4abca7bc20d697db326ad938b9196bcc48"
+    sha256 arm64_monterey: "a17d8684fdb83f30b15af8613e616a78aa606fcded326b180c357b090c8853e8"
+    sha256 arm64_big_sur:  "3e10291aa7dfbe56d2f461f9e3c39584148fbb5b6e1c969a3fc88e1b08077169"
+    sha256 ventura:        "6e6a57511fcef9272f5a3ae34a40ca16407f7b987ebfa9ad9162a29480cc3a13"
+    sha256 monterey:       "45300f1502a03c79da7469f1def7f401348fee0ff1af82d177846f0266569151"
+    sha256 big_sur:        "8283a4e41247e94d6b9492c852525f6938534e62b593673ce3a05bbc5a4d6b33"
+    sha256 x86_64_linux:   "6d303c7a90b09bf5e174e77ba45c6e3e970e015e7f00405961d54a282af82ece"
   end
 
   depends_on "cmake" => :build

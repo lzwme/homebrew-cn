@@ -2,7 +2,7 @@ class Libgeotiff < Formula
   desc "Library and tools for dealing with GeoTIFF"
   homepage "https://github.com/OSGeo/libgeotiff"
   license "MIT"
-  revision 2
+  revision 3
 
   stable do
     url "https://ghproxy.com/https://github.com/OSGeo/libgeotiff/releases/download/1.7.1/libgeotiff-1.7.1.tar.gz"
@@ -21,14 +21,13 @@ class Libgeotiff < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "1fbb6a3e85a67d141f78bfdb537abe6ccd615b84893e8ad3caedaa7c0f0cf944"
-    sha256 cellar: :any,                 arm64_monterey: "f7ba75c48d134bac69f1521df8ce1ee07b7f7bb5c383819d6864d444f9306503"
-    sha256 cellar: :any,                 arm64_big_sur:  "f66e3548fd5092b3b1cdd90ce0a9dbc9749b368a9d350dcf6e4b4435f6e81fad"
-    sha256 cellar: :any,                 ventura:        "628a49b7ae7f4f62b96b8078b302dc9fd0eb9925a3db8656f394bee2c458cf20"
-    sha256 cellar: :any,                 monterey:       "8a49a864a5bbc5b5a2f42e62ad8111b7ca9c1e8f00fd2c44f2dcd9a4468224b0"
-    sha256 cellar: :any,                 big_sur:        "f98f8f3d3b5286a238a30449b3ac2f6efed1830d78a346463e56c611a63f3747"
-    sha256 cellar: :any,                 catalina:       "eaae52303ca7865b5b0d69e6c243fb7d8a13663b0f07c290bd33648cf587f53a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af8b839b1cbc82e1ae8f800c04d603e75bf43ed40cf516b11abb9ff08155286a"
+    sha256 cellar: :any,                 arm64_ventura:  "8be2bc3923800b11fd54eadba98cc528d7938ed5595961784fa911b38b0e7d62"
+    sha256 cellar: :any,                 arm64_monterey: "a684b1bf1a96b49fc931f226ac796878462981dfc0f1e2382266b3e11b30a63e"
+    sha256 cellar: :any,                 arm64_big_sur:  "a917c710b51e42a7ee6a21a7c36da6fce310188638d44d168bf9cde2db7b66f0"
+    sha256 cellar: :any,                 ventura:        "84ad9fc666dea682be3fe19e0910a4ec6c494da0a25f1ccaff65c83bc9aeda21"
+    sha256 cellar: :any,                 monterey:       "5fc86bf32a1e9e9e228f8ef20dc82779d5923eb87b065cb7fd5ae772b805dfb0"
+    sha256 cellar: :any,                 big_sur:        "e9ba1dffdcf7833cc9f91a9ecba376ec31e25d2e52cea76d7fdcfe927c511a57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4c0df2152deddcbb8a8be8b107b7e88ad8c4ad76c2266cf7d137ca5e8e86a5f"
   end
 
   head do

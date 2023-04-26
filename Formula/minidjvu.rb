@@ -4,6 +4,7 @@ class Minidjvu < Formula
   url "https://downloads.sourceforge.net/project/minidjvu/minidjvu/0.8/minidjvu-0.8.tar.gz"
   sha256 "e9c892e0272ee4e560eaa2dbd16b40719b9797a1fa2749efeb6622f388dfb74a"
   license "GPL-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,19 +12,13 @@ class Minidjvu < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "985e67e5358157239fda57613e0b6384bb960b97f39a41664840593da23c75c7"
-    sha256 cellar: :any,                 arm64_monterey: "bb4837b0b0e44a2778ae1cb381f55a4f2eb5af6ae274502e9e7a0d28089c112f"
-    sha256 cellar: :any,                 arm64_big_sur:  "a0a735a5315eba83afe335cd152f428e292527df6a3d3c0ce06aecc29eb7efc4"
-    sha256 cellar: :any,                 ventura:        "d1cfde8c870c6d0e421fefcf1e7e2fe2e69495bbc5185c886e19eaeb3ac7a40d"
-    sha256 cellar: :any,                 monterey:       "8df5fe38e4981f6198634640163cd1da4abd52562e08973f1c1fded6b663277f"
-    sha256 cellar: :any,                 big_sur:        "fee2aaa060b89cd006949111164d953b1da44d3f4367409cff38880aa175cebb"
-    sha256 cellar: :any,                 catalina:       "ac5ddf434a115b421a2fd20645d09c690b559e7c135bfa71687d540f80e9dadb"
-    sha256 cellar: :any,                 mojave:         "6bb235aea08165b0a9d359f3813fa3e1760ff283697734761d9663fe1488a0fb"
-    sha256 cellar: :any,                 high_sierra:    "e86d9876389882d5cc6db29798566bc845584280a4fb4f5baf6226313a74dd6d"
-    sha256 cellar: :any,                 sierra:         "29966954c6c7ff78b48f41a31574369ed58fd9b52cea613891726e8cc444bffe"
-    sha256 cellar: :any,                 el_capitan:     "fd6b121a06139dc071c2f7fdcf4731d5becc93350ed92f760c0b11631a985d16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98d5e5eeb3d8e0c3cb1a327c12d0e633c590d683c6fd533a3fdd1758c54d3083"
+    sha256 cellar: :any,                 arm64_ventura:  "2d49c0d30645a4fced0469d6a8e01e0e2e01a2df825a294f8c1f2f96c2e1a88c"
+    sha256 cellar: :any,                 arm64_monterey: "99e77ef6ad2913838bb979ef9e675e1f1ca194713cf7e8faf5f1b807e84b927c"
+    sha256 cellar: :any,                 arm64_big_sur:  "8b120c1eda7fdb21104835b968eeebcd83f12d36d3bee874d6d42f10f4bbc5c1"
+    sha256 cellar: :any,                 ventura:        "4ebde838536ddeb8879a44fedea358296ede38ec2ca9d6d43ff10aeade2df579"
+    sha256 cellar: :any,                 monterey:       "af61231d4d560cd5476697ea6ef186adaa388569d5cb73d9c03dcec659746c92"
+    sha256 cellar: :any,                 big_sur:        "7cefcca081ea49ddddc9bd0731dc0eb2246921720cc7b9ed9a1d2e3e62086aa8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ec855a0237182522d9598ea0afa9e42bb1b008c5a5233d79bb5630e2cf86802"
   end
 
   depends_on "autoconf" => :build

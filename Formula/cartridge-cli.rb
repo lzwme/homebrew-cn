@@ -2,18 +2,18 @@ class CartridgeCli < Formula
   desc "Tarantool Cartridge command-line utility"
   homepage "https://tarantool.org/"
   url "https://github.com/tarantool/cartridge-cli.git",
-      tag:      "2.12.4",
-      revision: "cbf864a31cb58c2343c2af5d534ec0ee002b1bd9"
+      tag:      "2.12.5",
+      revision: "98ecccc288394427568b58bd4784f95ddc86d646"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef70017fe9e3a084f3c5f2af4b3b6eb102002dc93bffa45e3bae2da01c901a8f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1017a1c92fbacbf876cdf465cdf0aa5bda7b4b79131a941b03b3a5d033b9aebb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e55f08dcc9d6a98fd3f7f2b08ee600d445a183b1e834ff3b7628b77a9fbf3f5e"
-    sha256 cellar: :any_skip_relocation, ventura:        "17c1d0e920e5aa412914b0c13939443353cb72fc4ca75fc077fae159330dcdb0"
-    sha256 cellar: :any_skip_relocation, monterey:       "171e9d150fc555b1d66c6076e003777b017db0126022dd51c20aabb9dba94146"
-    sha256 cellar: :any_skip_relocation, big_sur:        "407a96da1aacadc05a4b0b859c19b38a3f92cb735d2d73d75fa05a05bcf22e1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4eb9a10454cd357d55e15ff914cf29ad82e14c5a6e0d4decf8d4a5a614c69785"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d876183704a5cc0f4e9eebbf97a52be2ffb8101688e929ed682f08b3628499d3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fdefa01d22ba6973cc64d8162b5547d2be96570dfd11d99d6786eb9fbc4db6a5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cb2583bb469c0b774b2d6848a3e463401b866f116267292df8563a08b7d28b91"
+    sha256 cellar: :any_skip_relocation, ventura:        "5a0533ada6cf2d876d110afab917a6ec9055191b796c88b73ae601d4df120cb5"
+    sha256 cellar: :any_skip_relocation, monterey:       "a0a1da7c93e22640a0641759bee7b117b390b4415d7b327ac238303a628080df"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4faefbe923c6f2e3d9b414c6f5eceb0007c0109940746a748fe79d16d166a132"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40b6c485ec13f8e2f799012ea03eba345e09ceb8df72df3f21d8ff6855ab93ef"
   end
 
   depends_on "go" => :build

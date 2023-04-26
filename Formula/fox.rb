@@ -4,7 +4,7 @@ class Fox < Formula
   url "http://fox-toolkit.org/ftp/fox-1.6.56.tar.gz"
   sha256 "c517e5fcac0e6b78ca003cc167db4f79d89e230e5085334253e1d3f544586cb2"
   license "LGPL-2.1-or-later"
-  revision 3
+  revision 4
 
   livecheck do
     url "http://fox-toolkit.org/news.html"
@@ -12,14 +12,13 @@ class Fox < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "bc5dd90eb1c5b974dba13c355be3720bc322fe9852c6863d619324f923bc0256"
-    sha256 cellar: :any,                 arm64_monterey: "41ad7e9c440defe145780c8ba2a3eabe8f48276013dbc88d743540c083bfca3c"
-    sha256 cellar: :any,                 arm64_big_sur:  "ba7b09dfb7926bb605af6793184b2acebb49450e70d8a5c9151a35a51754f4eb"
-    sha256 cellar: :any,                 ventura:        "8fd1fa22a1cbbabef9d01d3a87cde095706f9b5a86558543bd953dba55cb5fa0"
-    sha256 cellar: :any,                 monterey:       "c70d21e9cae3071d7c83df9b82b10a5ddfcbf292989eb6e436741ea7fcbf1d29"
-    sha256 cellar: :any,                 big_sur:        "13f597f1552171dc9cbb12ebe818234078d3d4b05e381366c7f2b59736c2deb3"
-    sha256 cellar: :any,                 catalina:       "78fae09af588993705203577e978c7846792d7f86215a8c3f63adccfc5b36d18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "230354829d1ed0956e2fda9cb8387632283298708c80ae53440f135480e0a187"
+    sha256 cellar: :any,                 arm64_ventura:  "e3a425ba8dc21f31f67bbf515030956f044f42af7e06a12ed5eea4c00b10feb0"
+    sha256 cellar: :any,                 arm64_monterey: "825cfc53620606c3366928e1e7da404bc11e31283b7de29497ba504652abe149"
+    sha256 cellar: :any,                 arm64_big_sur:  "8328ac03359070c9f20537a6277d15d8a815e35387bba1c5cdcd11af51d4baa6"
+    sha256 cellar: :any,                 ventura:        "74567e8739db08f0369e2d6177c0b6e38d5dc862342042b164682b0cddf7d64b"
+    sha256 cellar: :any,                 monterey:       "2396ca931860ca6523b7507a084ec9c5518493be593c5cf6a0a56735619e16c5"
+    sha256 cellar: :any,                 big_sur:        "bb8bdbecbd7b8c4c8f9c3caa90f17063579e1ecbdd9beea3276330fb8116d907"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8721a37c018aedef917055183eede83c8a1cab283371e2be629d85c9e006a0b"
   end
 
   depends_on "fontconfig"

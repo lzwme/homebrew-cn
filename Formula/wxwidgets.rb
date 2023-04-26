@@ -4,6 +4,7 @@ class Wxwidgets < Formula
   url "https://ghproxy.com/https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.2.1/wxWidgets-3.2.2.1.tar.bz2"
   sha256 "dffcb6be71296fff4b7f8840eb1b510178f57aa2eb236b20da41182009242c02"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
+  revision 1
   head "https://github.com/wxWidgets/wxWidgets.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Wxwidgets < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "57f4e7e5c477ceedcfc61e2c0cc1e9fb43dcbc5460e178651ea72fa082743cca"
-    sha256 cellar: :any,                 arm64_monterey: "eabe4d3be0802595b3690ea0a7e0ba928cd05323563fdc4c2c8eca0cc617fd5f"
-    sha256 cellar: :any,                 arm64_big_sur:  "4440d70361440822a00750c2363c2d6eef2412863d8308c9571fe2352143799c"
-    sha256 cellar: :any,                 ventura:        "5a7051517de061440de513389d20bc7e7a8cc1601571f836c553a1ba19c97702"
-    sha256 cellar: :any,                 monterey:       "5f3399ebf5080fd205c39fe7da594f216175ab451fea181e59d5bd7d7e94295d"
-    sha256 cellar: :any,                 big_sur:        "ed575bbb6e1cd8545facc7b14c83ca6d7b1c1ef64e2fdc93b7700217e6565612"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e144d7720804e4c5873ca76be1b7e70c571a3b9d927f0913c29599070a27dad"
+    sha256 cellar: :any,                 arm64_ventura:  "f51d1012d079c411bee043c2126527e85b7b2a0e5b0273f36d7d9ed7b606a18f"
+    sha256 cellar: :any,                 arm64_monterey: "875b133fa4aae0a1b0fa72c3f972c1a2f22004e1331f5553811eb3124a43ee25"
+    sha256 cellar: :any,                 arm64_big_sur:  "049d670fbf92b640e97382159a2763fd1f14948d62cd131977fe08443a7eed6b"
+    sha256 cellar: :any,                 ventura:        "6f415a469158fd5b3b6c1ce03d37c8bc04a79d5059902bf065b2d2efd8a1884e"
+    sha256 cellar: :any,                 monterey:       "5f8d9b117225aaa7006ec3b80713b1bb5931926294b1c3fa705bfc89d7e66db1"
+    sha256 cellar: :any,                 big_sur:        "82a319e267eeb62ebda44276cc856237aeebb57e83362eed35f33a487cfd1262"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca8b1059a400171a8fcee66ddc9f4b008064afd0c993ebd016890362c7aaaa88"
   end
 
   depends_on "pkg-config" => :build

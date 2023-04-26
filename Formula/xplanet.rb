@@ -4,17 +4,16 @@ class Xplanet < Formula
   url "https://downloads.sourceforge.net/project/xplanet/xplanet/1.3.1/xplanet-1.3.1.tar.gz"
   sha256 "4380d570a8bf27b81fb629c97a636c1673407f4ac4989ce931720078a90aece7"
   license "GPL-2.0-or-later"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 arm64_ventura:  "2bb0c0e4ea64c49788e5f0dae512f51d8574ee234bb5e4e60937a4b1be21166f"
-    sha256 arm64_monterey: "c51846493f9bf53180929d9804e7e8f0a594e67334785a2f3ea3bbc3bec23a22"
-    sha256 arm64_big_sur:  "7591ff1eca02603587c82b10f0713aab3aab0a4815416751f0ac4fa6ae8298ad"
-    sha256 ventura:        "2ab47c1f1e3d489f7c9ee6245c83450a15fa9a0da53ab6cc589d4fe0976e7b06"
-    sha256 monterey:       "6266d230063d3ca5436c8865b1908053f96b940020c6290e8d9ff567760568e9"
-    sha256 big_sur:        "d4a167f0b64440612f50fee22412c899fd33790722e21e4045ce283836c0183d"
-    sha256 catalina:       "ccc97cd8a1b948e97d9eecb3c614eeb13bef1c80e4c643b83002878a7adef964"
-    sha256 x86_64_linux:   "b8a2a5c72a02e65bb41b07cd4848d050fc6b5b8acf0d44db291891fe9306e1ff"
+    sha256                               arm64_ventura:  "aa69c74fc48645353401ccfeb35f7bf0527b696f34523754e2c81077459bbc64"
+    sha256                               arm64_monterey: "07924721350d8ca211611b26b4e78729062cb040cb1031f88d9fb621106cbf60"
+    sha256                               arm64_big_sur:  "a1c93cfbcb085731799a2e3d94c0f4f14b5ef962dbf3f001660c17790faa5a29"
+    sha256                               ventura:        "e567fd98fcd6d0f8903ee632f21b6658756eaff80d46de2730a91d0e600289dc"
+    sha256                               monterey:       "0d4fd995ed8518e11c0e7072dba0364b8d9db777625a114aab6696ab927fadf7"
+    sha256                               big_sur:        "227cbd44a9be2502a24f459725881e7705263af1a00ae53e38a8cc9b111b87b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff1ddc436b45234444d121e117b299ec702da829391200dfae26547114834d02"
   end
 
   depends_on "pkg-config" => :build

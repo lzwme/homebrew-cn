@@ -4,7 +4,7 @@ class Efl < Formula
   url "https://download.enlightenment.org/rel/libs/efl/efl-1.26.3.tar.xz"
   sha256 "d9f83aa0fd9334f44deeb4e4952dc0e5144683afac786feebce6030951617d15"
   license all_of: ["GPL-2.0-only", "LGPL-2.1-only", "BSD-2-Clause", "FTL", "zlib-acknowledgement"]
-  revision 3
+  revision 4
 
   livecheck do
     url "https://download.enlightenment.org/rel/libs/efl/"
@@ -12,13 +12,13 @@ class Efl < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "4d23735bd74fde88b0a6239ed79d6fbf8aa4f2181d7abf8d2dd0f68c34574db9"
-    sha256 arm64_monterey: "7e3ebe4d468f8d9f5dfebc0f6f153ed870abd35979a93085a292e75a7e480d80"
-    sha256 arm64_big_sur:  "88184df81156dce04b72680e09379289728be6fac24be90d38dd44c62967c387"
-    sha256 ventura:        "738b6d7d2b0921837b5874cc973b001336e6e1ae3e592ab7ce377b338d7cd2e7"
-    sha256 monterey:       "866e0851a98dc5fb0a05ab5af78c1fd2f3f5cafa4379320b3db2052a5c88d92c"
-    sha256 big_sur:        "521703fa948cd82d6e45e64dd4872ac14779a3eb921627992fb9217fb4920c6f"
-    sha256 x86_64_linux:   "a8b504933f098d3687819f46a8cbc01a183ff5bcfb897267ee721f3b50402b09"
+    sha256 arm64_ventura:  "17f54a75833716c678a21281f6258b205609f4e162d9a92ab252d0287b1eaa45"
+    sha256 arm64_monterey: "bc6fb96a4936171ff935ea2b31e914b5a71f5649c776238a74fd99a79ed0a8b5"
+    sha256 arm64_big_sur:  "e23c8364a8d1da20ff9dfe19e04590c9d520e46a499828858a7484486e215328"
+    sha256 ventura:        "5d841949786f27116f2a2c843ccb3dd0fac0119dbeb22545a36c193d66681608"
+    sha256 monterey:       "af1055d9596b6c0ee601a4366ef6f9ae2f5bab354920a85dc345cb41c1d280cd"
+    sha256 big_sur:        "8b7b90ef0754765e6378765c1fc7bb0aecc161770432999bc72fe7d7da2ef794"
+    sha256 x86_64_linux:   "8ca1e8ce8b88539ff5f1ed354462b8282fdc858a608a4043777079ba26ebb5b5"
   end
 
   depends_on "meson" => :build
