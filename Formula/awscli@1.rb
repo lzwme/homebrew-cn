@@ -4,8 +4,8 @@ class AwscliAT1 < Formula
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
   # awscli should only be updated every 10 releases on multiples of 10
-  url "https://files.pythonhosted.org/packages/89/f2/d86a3a45cc706bb7c8c4c03c10796acf938c3d7900dcb42a161c10f3e33f/awscli-1.27.110.tar.gz"
-  sha256 "faa2801f2c9a15b3171af9a726f7604f11c0b75e96830ab85add88e87a33106a"
+  url "https://files.pythonhosted.org/packages/d2/c2/6f69eae34e0beaea5db1dbfcdf3198b50ce9ccd7f25d980776f20c1b26c6/awscli-1.27.120.tar.gz"
+  sha256 "9d91193e85ab56f2f21b06da84223007d5dc6e2b81f907292473419e377e2200"
   license "Apache-2.0"
 
   livecheck do
@@ -14,13 +14,13 @@ class AwscliAT1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ac4d013a530a5040d4fe70b29c804c1b1a65c722172c8d75f28abdc8897c3232"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "49170baad7cadefcb138e0339e86a4976663cec7b7b7ce121d68807393e4d05f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d5a131a2802ab14ce48ce744c83706b33d91ecf1bcfd1d4f47423baa64cbb279"
-    sha256 cellar: :any_skip_relocation, ventura:        "65546f9244f470bfa1c3a15cd7cd2ae7de62c0bd6841babdf42d038942630d78"
-    sha256 cellar: :any_skip_relocation, monterey:       "79c8bd515f465ac74e1f016671451fb208294056a349f918e88555fd1ab223ce"
-    sha256 cellar: :any_skip_relocation, big_sur:        "042631c7ae5403d525a981657b5c9ef5adb2e39a99b26e95fde54b84d75acf30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d4cbc14c0c75d819d60db3ce8b365a80240b752a09d2e1e8de3ee900598028e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d46e88c0583c1d2444966cf0e79ab02cd76e62ded69af7c2d6b7e6db6e8a62d7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "66ae93e655c0cd791db3a4a25c379d65b53861aef1cc07e1a199991cfafc1c95"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0bb3ce8c8b4a8b20515b699912b54f290ffe1f34101ccd70b164f55721be56d2"
+    sha256 cellar: :any_skip_relocation, ventura:        "cf64b0de778078842bb7c2da4132fc6adaa1125867b553b43ce4754884b65fe0"
+    sha256 cellar: :any_skip_relocation, monterey:       "46f80d2e60e604c2e08bffc861de1ac7a9d6735be3bd991f28c4a4cff5c5fd96"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8404f5bccd678b22a052a2d1b480e4b35bb8dfaecb9959ef9531d8d631bf862c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa2de5ded203d326e10cef0d839c9c64f5e8f74f116fecd608b0ce3bf4c94be7"
   end
 
   keg_only :versioned_formula
@@ -33,8 +33,8 @@ class AwscliAT1 < Formula
   uses_from_macos "mandoc"
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/d1/39/120331cd4b1e1bb4ff615bd417a9063a183734fa0974014f57009de4a318/botocore-1.29.110.tar.gz"
-    sha256 "9d5054159782b19f27bff3e5a65bc494dc323255e889ea3abec002711a1fb0c0"
+    url "https://files.pythonhosted.org/packages/ba/d0/680c56d416eb3f6801a729f0ff26fb7776b2ad34cb34f3433c3cf9c612d5/botocore-1.29.120.tar.gz"
+    sha256 "82de714c06fcefbcf2f3854b81c51bf0c529ec902c6e927156ff47988aaeeb7a"
   end
 
   resource "colorama" do
@@ -48,8 +48,8 @@ class AwscliAT1 < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/a4/db/fffec68299e6d7bad3d504147f9094830b704527a7fc098b721d38cc7fa7/pyasn1-0.4.8.tar.gz"
-    sha256 "aef77c9fb94a3ac588e87841208bdec464471d9871bd5050a287cc9a475cd0ba"
+    url "https://files.pythonhosted.org/packages/61/ef/945a8bcda7895717c8ba4688c08a11ef6454f32b8e5cb6e352a9004ee89d/pyasn1-0.5.0.tar.gz"
+    sha256 "97b7290ca68e62a832558ec3976f15cbf911bf5d7c7039d8b861c2a0ece69fde"
   end
 
   resource "python-dateutil" do

@@ -17,6 +17,7 @@ class Rrdtool < Formula
   bottle do
     sha256 arm64_monterey: "86844a9bf1e4ef7777fb31f2fb99b093807d16c0fb998a9cf809c381aad45b71"
     sha256 arm64_big_sur:  "06f81e4c0eda98dee8c68d858b1fcc8bfa19c22d72f6aec9c31536b97f225da5"
+    sha256 ventura:        "4224f6d01a6b043d025b85f59226bdf369807334de28b63a56df2ea97c2def51"
     sha256 monterey:       "b78c7535a358b6c816ea45505ba8ff933c6b3304e682f33612f5c2a3461a44f2"
     sha256 big_sur:        "fb63e4b217d81a0394596c85858253cb2f38760e2ccc01c7db76a065c96f6034"
     sha256 catalina:       "e8881104bee0c2408b38adbe616b22cc128bb15c4154387156c20ee59316b759"

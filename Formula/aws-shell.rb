@@ -9,14 +9,14 @@ class AwsShell < Formula
   revision 2
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3361fc41a62782fc562fd072da1806b60609d4492cf2897a0f390fed91383220"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b1a379d61a90727e0f225cd330d8c8bd4aed02f1b32ee3ffcbd159813828e46"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a7257c4dff90a2561ef1ee56d3fe75d44bd2ebc8ba692c24dd601a97f6639a42"
-    sha256 cellar: :any_skip_relocation, ventura:        "5c0bf6d98c3de9c8a1e4779b658771edbda2fbb0a87062aa4cc8d4f0625cc888"
-    sha256 cellar: :any_skip_relocation, monterey:       "48fce13e9f934774bf2aa39467874541504b9f73f68fb433af84c74dd8009312"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d09f258f5e29652f55aab150dc37003d03746da250e1f8babe7b35253dccc1e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f75692ce0acde795353a66573b2158b5d5e8552501d0e495d844303ed57cd68"
+    rebuild 5
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a47bf639c985ed72434b5f185ff09dbe56ea9022845b8d762f9673bb051d967"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ee36e0e61c0c4ad30a96d5aa3ab3d2e10831642c955baa5e9142cd14c5740b78"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7ca859d0735d0ca2b8b4ccbc2c5f6324fc91adfa8c860bb736c44ea5e7a59f29"
+    sha256 cellar: :any_skip_relocation, ventura:        "8b7bd74a023bf46c10acda18c6fa466f6783787d1d1b3abb2849106559649ab0"
+    sha256 cellar: :any_skip_relocation, monterey:       "3755cb1b87cc4a13ea66fd89e1eafc16639bc92af46327570f3470b12f931689"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b50381b8fe3bcd3d8ea60677778bf579d28da65965ad693dae62e5f58646a8bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5eec8860d76bb71772d0add843e71e6cd916ad23bbe753198ee0ba4fa3aa6f81"
   end
 
   depends_on "docutils"
@@ -25,18 +25,18 @@ class AwsShell < Formula
   depends_on "six"
 
   resource "awscli" do
-    url "https://files.pythonhosted.org/packages/79/aa/fd62ca4bb506c69f3d059cbb51a86a7dc03adb513d9b010bb8b1227fa294/awscli-1.27.119.tar.gz"
-    sha256 "b5a8c0a842c1cf6fe8c1e3a4900c203e7fb9e12beedd82873e9744e4b541ecb6"
+    url "https://files.pythonhosted.org/packages/d2/c2/6f69eae34e0beaea5db1dbfcdf3198b50ce9ccd7f25d980776f20c1b26c6/awscli-1.27.120.tar.gz"
+    sha256 "9d91193e85ab56f2f21b06da84223007d5dc6e2b81f907292473419e377e2200"
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/0e/10/2c30f3ad343ccf14fdff24daf1859066a0f9f2f1df30e1d63791cf55a493/boto3-1.26.119.tar.gz"
-    sha256 "13a041885068d0bfc2104255f2bcb06a1e0c036bcd009ef018f9953b31c20dde"
+    url "https://files.pythonhosted.org/packages/1f/b3/0424b7c8d357e7724019a9b9ad2cd1dd37b1513634102fc975ce2e17a2f7/boto3-1.26.120.tar.gz"
+    sha256 "17b93fdff147577ef506adbcada0ac81dd4be3b8d8b3c7831f9ee9f7ac9615e5"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/e3/84/614b96cf57bf097b50e77f2bb06dbccd82b878f2d3aba9fdfbf630508eb6/botocore-1.29.119.tar.gz"
-    sha256 "cd79c7ecf1888dc982ed7e005515324c0e2d7f8aa9ab03a8ee8ece8a2dd3297c"
+    url "https://files.pythonhosted.org/packages/ba/d0/680c56d416eb3f6801a729f0ff26fb7776b2ad34cb34f3433c3cf9c612d5/botocore-1.29.120.tar.gz"
+    sha256 "82de714c06fcefbcf2f3854b81c51bf0c529ec902c6e927156ff47988aaeeb7a"
   end
 
   resource "colorama" do

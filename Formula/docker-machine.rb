@@ -2,20 +2,20 @@ class DockerMachine < Formula
   desc "Create Docker hosts locally and on cloud providers"
   homepage "https://docs.docker.com/machine"
   url "https://gitlab.com/gitlab-org/ci-cd/docker-machine.git",
-      tag:      "v0.16.2-gitlab.20",
-      revision: "9e9d6baf7eda8b6569f92e777ae7f496599fb297"
-  version "0.16.2-gitlab.20"
+      tag:      "v0.16.2-gitlab.21",
+      revision: "77bd8f5891e9808ae1cbda2e7cbfc7f661bfed77"
+  version "0.16.2-gitlab.21"
   license "Apache-2.0"
   head "https://gitlab.com/gitlab-org/ci-cd/docker-machine.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f1588f6f87758aa13b8cdb77a59e76dea0c6ad003bac898885274633424a37fa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b930b5b5ebafb59fc04043f970768274065108ec5df62f627aa7fbb6b7fb9491"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "518c5afa8035aa2f00eb005a367b1ca0045057f01704f49b4591515fead02ec5"
-    sha256 cellar: :any_skip_relocation, ventura:        "0cf116efe43960673f18a4e78af02659c6d560ea836cb94b8478cd768cc64f72"
-    sha256 cellar: :any_skip_relocation, monterey:       "66783b1ca84e4864268b34c1727009126dc9366015ec80768fbeb6a5d412e609"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0ddbc061da1456443d972e1248556d6ab5656c061524a361d254968fdcd0370e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e95f2fb1e8a7cbcebdc60b5959498aa32123dbc8287d03c84c36d7e0ca7d6f4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ab4a365a81c6d62f36a845275303001c4cd46a3399dc771aec48d9d42a88ded"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bf02b61e39fca0d55566c3bf256336bdfd1eb7a75a242ebcff9c7b1900525491"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b055697fe03a7756e31c7c85cdc102e8a2939497d991064b9f41c2bec8d3a8bb"
+    sha256 cellar: :any_skip_relocation, ventura:        "9c123239926ffaf547194617a53a7ee6dcb07d3224c2cc991659e216d08a9ab1"
+    sha256 cellar: :any_skip_relocation, monterey:       "8b85222137a669dcf3def6be8fd52693be915d441201dc7050f1cdc19c149470"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7f61fa7c797d4e65eac94618c15689084c415dc6e9abe9b0018c935dabb48f99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9522c86150d8741bdad3f9452975fecf4b4767108e85bd0416264e3b90a6fed7"
   end
 
   # Commented out while this formula still has dependents.

@@ -1,19 +1,19 @@
 class Flarectl < Formula
   desc "CLI application for interacting with a Cloudflare account"
   homepage "https://github.com/cloudflare/cloudflare-go/tree/master/cmd/flarectl"
-  url "https://ghproxy.com/https://github.com/cloudflare/cloudflare-go/archive/v0.65.0.tar.gz"
-  sha256 "4d350fc308d868d31468ad9c8ecfc31ecf2a97ad7f77c665a955595aa5654341"
+  url "https://ghproxy.com/https://github.com/cloudflare/cloudflare-go/archive/v0.66.0.tar.gz"
+  sha256 "1180866ec9c1589cc0fd5a72db22d7460793bbd7afd0f5f67ee22e3ce2df0412"
   license "BSD-3-Clause"
   head "https://github.com/cloudflare/cloudflare-go.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7c4cdefb1dd1e14d796ca83aab3597df2547d41434cf859ab6667da06d9e0d2e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ff4f59a7d068a9557c3f01b32ef887761686aaca488e613c626a273c3d18c81"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "72b636e9c2193837279e7f4404a4138464e8bf79a846e4ff56966c1976be0b8c"
-    sha256 cellar: :any_skip_relocation, ventura:        "c2c40e18189e37a6dedbf8c75796ed8181bf65a95798fce17b0d4f804f4d0732"
-    sha256 cellar: :any_skip_relocation, monterey:       "eb1525a416c4aa2e7bd5555fd5ee43fbf8b8d03ffb76a33d9a01b2ac76647076"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f3769cbb1349540480a8282bd34c6b96a7e6dea73786a65e18bc029ac5363b69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "614bd4abf0a9eb4667e99674c275f4af731b9130c53f1a76b9aa43fe2cb8e8cc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f602f146278cc069067d7be13d9f1baa384e32d6848e39c8b777d49561359f2f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fbb092da4a0802b96606bc6414b67384059f3e3073e2158e02b8d7ecfba4cfe7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "32a473b9f7624c97cae0d16174a81d2c868669ff8b74f5160b8d5cf28f53bb74"
+    sha256 cellar: :any_skip_relocation, ventura:        "ece5161d2ceff392f6d6405c0e22c04be93c9a9a3e14b0ed11ae2bc640d17f7d"
+    sha256 cellar: :any_skip_relocation, monterey:       "c5196909a20f94f66eb2190947445a4f0bda8402fdf052b2326caf787b05357a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9ac02eade3fccc9ed6324aa4cb3c2ae64523a204748e49d83d3de885f8bdd1aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94519b6448108f985bad0ed091e4a363d59eb58398c31f87fd5c6838c0fa35b4"
   end
 
   depends_on "go" => :build

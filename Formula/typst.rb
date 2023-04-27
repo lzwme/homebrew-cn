@@ -1,8 +1,8 @@
 class Typst < Formula
   desc "Markup-based typesetting system"
   homepage "https://github.com/typst/typst"
-  url "https://ghproxy.com/https://github.com/typst/typst/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "f52e1cab191034354b3adaa97c27cbf16ed99486dc302b014bf211a8b6a7e964"
+  url "https://ghproxy.com/https://github.com/typst/typst/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "e0bfff4749549ff519be6659b16958eb47f7f39957c0ffd2a74adb7a421d23c6"
   license "Apache-2.0"
   version_scheme 1
   head "https://github.com/typst/typst.git", branch: "main"
@@ -13,13 +13,13 @@ class Typst < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1817abc0d9990bcf03301a9ef25b02427b9bbe935bfa34cb00cf6ec560e70919"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c5dd6ddecc373b42bb19d08e1325ae9afc90936d41d98215f8af19af6916e714"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6fca083b602ea8bb148941a2df934447d13a87b61bcac825d382ae69be4efffc"
-    sha256 cellar: :any_skip_relocation, ventura:        "5b36644479916e0f0eb69c4a102cc3b1b40bbba7d03f628e7bafa352670a4c90"
-    sha256 cellar: :any_skip_relocation, monterey:       "6868dc6d6519386d411dbca5ed6561b52982c3155d1e0d09de05a12ddf2399ae"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9cb27ef79689871a17bc5507e761b5293f1fd06390e21746196ae882bfc233a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ef97a3460690458777f10b895c289b2ad21956c6c7f1599c39645fbc880c214"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a766ace358328cc1590a000e5b6458a4ff2c8dd9c5831f0ade1ae917d41c0b1f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "310a0dee41f4f0df63cab2e8d78d7b7d35257b1fb71cb99195a265c9f6af01ec"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d0f89ea63a21fc302a8cd8fe916e41deb7455889cde01427b9ca8c7d5538e622"
+    sha256 cellar: :any_skip_relocation, ventura:        "95a6b4f01e105a426e80e496c8dc875177d2310bd202c07cedfbaafab71f4bd4"
+    sha256 cellar: :any_skip_relocation, monterey:       "b8a91c1553a4620954400ca7dd78020e9da9645401609b5fe36698d06a8d4c31"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e27443db57fbceb6735a0c4da81115227e3af9fd8afad9b6459944385583ea73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3cad27b08626f199598f320741f2b024f0acabbc2c18ced504bcb0b11bd4099"
   end
 
   depends_on "rust" => :build

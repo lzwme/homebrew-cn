@@ -9,14 +9,14 @@ class Athenacli < Formula
   revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "35fc26b75389e6f9226d50142d00dff85ab7c193b1c7e2fcd1b4705a4d907b27"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4fb79de8624212b9c8e65f12ceba227ae8099c2356ba062e834d536537aea67d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e1877cdff0b94c7db9a2a5d9326ef68523c155d8e7c67032eea47f33a046a348"
-    sha256 cellar: :any_skip_relocation, ventura:        "6f24b6c4c3597f2eb6d8e9a5baf099baea9af6f6d263a899d2d54059137dbe9d"
-    sha256 cellar: :any_skip_relocation, monterey:       "4166dd3286d8386317db79ed82b1478f2b119afd9e8327366427a6551b6d64be"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3ef59aaac822439b960a7f9bcfa7d1db4979dfd2c29a802e86016472197d9c9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5392670155b3e9431e3db9274c4de09a8be4f2111c4c38dd102da032a1800e92"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0670e341e425f898ffc1db5346bb9d879063603084e197320ed505665c7d540a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "deac80a5e9e86981e556517681322b3f3ee8b527a2c5059a640f45307bfc265a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6a593054e50b2bc7e9e4ec77cd7d3ef8eb24e1238dc5427d68e6366abd789f65"
+    sha256 cellar: :any_skip_relocation, ventura:        "9dbd57b307b2bb78868854992e8e5bc4b9de32c994dd757598a0e1c796ec30db"
+    sha256 cellar: :any_skip_relocation, monterey:       "4617ebc9d92e17db2dd9520c90e9db6594758f3f1bbe034e7c278955194489ee"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6298b849aa044358a0b44c7275b0a1a5dd1089ec30ff6ccfc9b071cbb6fed01c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9bd52f95fe8a155567185a8d5d74fa1f4ff4a8fcc5ade67cf920334038cdb478"
   end
 
   depends_on "python-tabulate"
@@ -24,13 +24,13 @@ class Athenacli < Formula
   depends_on "six"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/0e/10/2c30f3ad343ccf14fdff24daf1859066a0f9f2f1df30e1d63791cf55a493/boto3-1.26.119.tar.gz"
-    sha256 "13a041885068d0bfc2104255f2bcb06a1e0c036bcd009ef018f9953b31c20dde"
+    url "https://files.pythonhosted.org/packages/1f/b3/0424b7c8d357e7724019a9b9ad2cd1dd37b1513634102fc975ce2e17a2f7/boto3-1.26.120.tar.gz"
+    sha256 "17b93fdff147577ef506adbcada0ac81dd4be3b8d8b3c7831f9ee9f7ac9615e5"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/e3/84/614b96cf57bf097b50e77f2bb06dbccd82b878f2d3aba9fdfbf630508eb6/botocore-1.29.119.tar.gz"
-    sha256 "cd79c7ecf1888dc982ed7e005515324c0e2d7f8aa9ab03a8ee8ece8a2dd3297c"
+    url "https://files.pythonhosted.org/packages/ba/d0/680c56d416eb3f6801a729f0ff26fb7776b2ad34cb34f3433c3cf9c612d5/botocore-1.29.120.tar.gz"
+    sha256 "82de714c06fcefbcf2f3854b81c51bf0c529ec902c6e927156ff47988aaeeb7a"
   end
 
   resource "cli-helpers" do

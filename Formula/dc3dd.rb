@@ -1,18 +1,18 @@
 class Dc3dd < Formula
   desc "Patched GNU dd that is intended for forensic acquisition of data"
   homepage "https://sourceforge.net/projects/dc3dd/"
-  url "https://downloads.sourceforge.net/project/dc3dd/dc3dd/7.3.0/dc3dd-7.3.0.zip"
-  sha256 "ec56b9551aec581322acaf3f557e0a6604d547de8a739374668e2f5af2053c3f"
+  url "https://downloads.sourceforge.net/project/dc3dd/dc3dd/7.3.1/dc3dd-7.3.1.zip"
+  sha256 "bd1b66d20a4020ab94b512e56d76cb5f86470d0216081586d596366927cb8d8b"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "9c79696dbf8e926a5183c46af958480fbb540aadef1cd2de77c633e7de416be0"
-    sha256 arm64_monterey: "f0e8d052797b5d7f6cceaff9333b667e5a097c431211c38fbeb503291b282944"
-    sha256 arm64_big_sur:  "76a28537261ac0d42152987b502bf33740912f8c2c4591d7dd4b718c812817ea"
-    sha256 ventura:        "87e8290407b91dc241e9fe3469997e18ce83c3b0200ec91e882ba3523e9ac720"
-    sha256 monterey:       "39000c17ca83c009a228e0c3e9e8c12f216b86d14edb9cd22600583c01f7eb9d"
-    sha256 big_sur:        "9edb4701637373330d394a78c9c7a1b2db92cf129040021e21f37c0cf201cd1f"
-    sha256 x86_64_linux:   "1b05f3886861e0ff5a15cb08f4697a6d56fca4242f5bfa271a305bcd7b6ae916"
+    sha256 arm64_ventura:  "e0f138b256f063d582d624d041ff18933e3cdec9921cbea06b4500f766a6a2cf"
+    sha256 arm64_monterey: "f77cd62b64d5ae2680254fd0568f82a5cc86afe8340d9cf523b54e88c9ad1f26"
+    sha256 arm64_big_sur:  "a4f247d8b8f6f68e697c325989fd79d1c019e7d8babcbd48d0327480a676c43b"
+    sha256 ventura:        "f65cccfafa99f62c687eb87c64cfdb3492f8050e86a268045d73f53f5c5dfe97"
+    sha256 monterey:       "b8270f518be57090a150e2d78048b8f2e6a81e16092007e48bef6e5e567a4cf3"
+    sha256 big_sur:        "f61a5f9196c0c30c9087d92b22522db1c344137406a3272381add30d49c9621f"
+    sha256 x86_64_linux:   "bdaae1ff1efcea3319dbf1e84f68c1d51a1b12e8a8eae4c13f2e2069084051c7"
   end
 
   depends_on "gettext"

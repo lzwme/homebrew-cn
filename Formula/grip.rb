@@ -9,18 +9,23 @@ class Grip < Formula
   revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "74e7de5e68651d60aaa23c3dcc56d318b08819a27fc7c219ae6cf5039646cfbf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e6325c556f0e1f166a85f09b9e9fd17394106dc106051c89383761ceae3a77d8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f7e4920cc4137ef15b11424bb6430a6ad307d3d0eef810970f04587cf5e9d64c"
-    sha256 cellar: :any_skip_relocation, ventura:        "78636bc002c323c7fa397e722925a6f414176b89c0d7a2668768b2f06e62f61b"
-    sha256 cellar: :any_skip_relocation, monterey:       "26f61644ccdf621c368aba27c024e6265daf02e5aa03c10606406123fb309069"
-    sha256 cellar: :any_skip_relocation, big_sur:        "69a18155f319a01d2eb0b074482660e2b41b6f5f34f239a09b69ae0b652415c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56236e4783a89bf3f68225fe16ca3b73fefa76152ec6340b88ce72e682b75aa3"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fb944df776944f4387c105ee3fa4f1cc73cac7bfedb696c80911001a23e8352f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2172079534e1de38aec5d0793508a52a30dcd40f35e1f4340ef35ac53b8dcfb9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d0104808135524e300270861100ac1f5dc198b5c0d0a19031b722bb9924f5bc6"
+    sha256 cellar: :any_skip_relocation, ventura:        "9f0d328433b85f8ce4d538e8faea6fe94acc791f52593d893e69687ea99482be"
+    sha256 cellar: :any_skip_relocation, monterey:       "6eb3e919f06ad4598b667c25d126e0b292aff4d51451d7c7f7b6812c843e679a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a72d7d3a2d6d30c2a695d332f0d21048b4d77b7afb2a2c016c8d550145168aca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "69b1585faf8bce37266c3c7bfd62338a9ff004b4d52e6364403472b473d023ac"
   end
 
   depends_on "pygments"
   depends_on "python@3.11"
+
+  resource "blinker" do
+    url "https://files.pythonhosted.org/packages/e8/f9/a05287f3d5c54d20f51a235ace01f50620984bc7ca5ceee781dc645211c5/blinker-1.6.2.tar.gz"
+    sha256 "4afd3de66ef3a9f8067559fb7a1cbe555c17dcbe15971b05d1b625c3e7abe213"
+  end
 
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
@@ -28,8 +33,8 @@ class Grip < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/96/d7/1675d9089a1f4677df5eb29c3f8b064aa1e70c1251a0a8a127803158942d/charset-normalizer-3.0.1.tar.gz"
-    sha256 "ebea339af930f8ca5d7a699b921106c6e29c617fe9606fa7baa043c1cdae326f"
+    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
+    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
   end
 
   resource "click" do
@@ -43,8 +48,8 @@ class Grip < Formula
   end
 
   resource "Flask" do
-    url "https://files.pythonhosted.org/packages/69/b6/53cfa30eed5aa7343daff36622843688ba8c6fe9829bb2b92e193ab1163f/Flask-2.2.2.tar.gz"
-    sha256 "642c450d19c4ad482f96729bd2a8f6d32554aa1e231f4f6b4e7e5264b16cca2b"
+    url "https://files.pythonhosted.org/packages/46/e7/3dc143f22a6aa997753aac1eb68b1b4ac8696819f10ff89d4ebb3de4c42d/Flask-2.3.1.tar.gz"
+    sha256 "a6059db4297106e5a64b3215fa16ae641822c1cb97ecb498573549b2478602cb"
   end
 
   resource "idna" do
@@ -63,8 +68,8 @@ class Grip < Formula
   end
 
   resource "Markdown" do
-    url "https://files.pythonhosted.org/packages/85/7e/133e943e97a943d2f1d8bae0c5060f8ac50e6691754eb9dbe036b047a9bb/Markdown-3.4.1.tar.gz"
-    sha256 "3b809086bb6efad416156e00a0da66fe47618a5d6918dd688f53f40c8e4cfeff"
+    url "https://files.pythonhosted.org/packages/9d/80/cc67bfb7deb973d5ae662ee6454d2dafaa8f7c106feafd0d1572666ebde5/Markdown-3.4.3.tar.gz"
+    sha256 "8bf101198e004dc93e84a12a7395e31aac6a9c9942848ae1d99b9d72cf9b3520"
   end
 
   resource "MarkupSafe" do
@@ -83,13 +88,13 @@ class Grip < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c5/52/fe421fb7364aa738b3506a2d99e4f3a56e079c0a798e9f4fa5e14c60922f/urllib3-1.26.14.tar.gz"
-    sha256 "076907bf8fd355cde77728471316625a4d2f7e713c125f51953bb5b3eecf4f72"
+    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
+    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
   end
 
   resource "Werkzeug" do
-    url "https://files.pythonhosted.org/packages/f8/c1/1c8e539f040acd80f844c69a5ef8e2fccdf8b442dabb969e497b55d544e1/Werkzeug-2.2.2.tar.gz"
-    sha256 "7ea2d48322cc7c0f8b3a215ed73eabd7b5d75d0b50e31ab006286ccff9e00b8f"
+    url "https://files.pythonhosted.org/packages/ae/66/1b437603a0300864b0fd1e49b732d45a8a5be615eba5121f7cdfb97668dd/Werkzeug-2.3.0.tar.gz"
+    sha256 "3b6b46926d052b8ebca97c4dc73c12e47bdd07d57ab0600c039c3155450227bc"
   end
 
   def install

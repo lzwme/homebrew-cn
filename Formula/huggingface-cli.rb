@@ -3,18 +3,18 @@ class HuggingfaceCli < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/index"
-  url "https://files.pythonhosted.org/packages/ec/c7/75abde5e0a8357da0ab6e8bbe8ed02a217a5f8da2d11accc9d91f41ef68d/huggingface_hub-0.14.0.tar.gz"
-  sha256 "42eeab833284e3fc1d39263cf9c3d1bb36b129acdd8195838694d165e8dd6cae"
+  url "https://files.pythonhosted.org/packages/23/27/5c9adfa51fc841cd1e2c4949b49bd8f05ba4e8254ef5bb60ba82b8bcdafc/huggingface_hub-0.14.1.tar.gz"
+  sha256 "9ab899af8e10922eac65e290d60ab956882ab0bf643e3d990b1394b6b47b7fbc"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "697e807a6082991cbac80e33ba0bb25dfef4efb836368d6644fc862e19afcde1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b4076dc28a0530c7be02fc632e4fb18cfac5a5bbdefb3ea604150671c098530f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "99f27556dc4e26f42fedbd2352a6db106f3165be86af4d7f0616396461262d87"
-    sha256 cellar: :any_skip_relocation, ventura:        "1c302259c47b6065546b3fdfa06915ae76cb8166f94d9e5f5a52e0acc006d10a"
-    sha256 cellar: :any_skip_relocation, monterey:       "7359d2c7e4e656a18567b42578e0f9a72ce370fbb8b853eca6e1cc7dc10fbd54"
-    sha256 cellar: :any_skip_relocation, big_sur:        "677bc4209c9432ead5c94d526f05a7057b567eb203e982ed74182b8b56be06fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd00d2921dd5cbbf2bd4b8492017fa6ff71698b249c3fadef4b6d3c380ac641b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aba2fb4f11abd05e7ab2f0e189f96f5f982705adf125a10f1b04d85f086b5f5a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1752c1349b30bfc90e6ff40ddec946949ee359bd2485cde4752efa0a793bb57e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ebef02c9c4ce5545d2dc6a52a47a7d9e40135bb0fd2540fd4cf94eb6479178ff"
+    sha256 cellar: :any_skip_relocation, ventura:        "4fd72ece6493561b0c7efc90ecc48ecfe2004c64f477aa3406970b55a0c3ba74"
+    sha256 cellar: :any_skip_relocation, monterey:       "cf591ac69f185851688ccb2f01a91017a7dd540835a5538a57ee9c67211af136"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ed9ddfccb0694f2e967cded8a0320f3450d04e35ee8c54dd3fffd8bc52ef4541"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a97207cf17d6c5023343e9ead3d3db923dab6a9fd067a86e236c9425b02222b5"
   end
 
   depends_on "git-lfs"

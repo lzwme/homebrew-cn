@@ -1,9 +1,9 @@
 class Aarch64ElfGcc < Formula
   desc "GNU compiler collection for aarch64-elf"
   homepage "https://gcc.gnu.org"
-  url "https://ftp.gnu.org/gnu/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz"
-  sha256 "e549cf9cf3594a00e27b6589d4322d70e0720cdd213f39beb4181e06926230ff"
+  url "https://ftp.gnu.org/gnu/gcc/gcc-13.1.0/gcc-13.1.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gcc/gcc-13.1.0/gcc-13.1.0.tar.xz"
+  sha256 "61d684f0aa5e76ac6585ad8898a2427aade8979ed5e7f85492286c4dfc13ee86"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   livecheck do
@@ -11,14 +11,13 @@ class Aarch64ElfGcc < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "8a5a2ca3d7e53db7899cf03e878f17413c7604e87c8fc80d639e04e79c19aa36"
-    sha256 arm64_monterey: "f5d9fd202404e69e3d69f59e4258896fa0b8e27f8f9cc6873b66c769ebfadaae"
-    sha256 arm64_big_sur:  "49c73ae5b7fd21768d3467465c2e0a7da1be3f414757a9a72fc6c582f91537ba"
-    sha256 ventura:        "09121e3fb58af2f29a841faa421b3865ec36848942b598ee83051f511e9cafb0"
-    sha256 monterey:       "28bd30c6e0beecd74e080bac0676916933479154e6e067409d1a45558a5e7cab"
-    sha256 big_sur:        "651f6c7cf15bd9e4751e4295b03fb2b3be7956a61593696c150bab57c8fdd64b"
-    sha256 catalina:       "89c4fde526913e9aa04fffa842f4a1e1f7a95b05a7dcc5427e44aa466cc6c4ac"
-    sha256 x86_64_linux:   "2c9a3e4a9165547f2364e15f5c642a99689c755139a8b93bdbe15344957320a1"
+    sha256 arm64_ventura:  "ad3c875bea1f7cbc40b7774a3d93a7c00c81cbad5fa480d589e634f14c795c8c"
+    sha256 arm64_monterey: "f13ee9cbde2459869640a33ab7b63f35556fb4debdc9b80ae6609a9d69b5483e"
+    sha256 arm64_big_sur:  "c3cf7306a688ce198eb77010f037c5f41f0f54122273556ef91e3143fa6db4d0"
+    sha256 ventura:        "214edfc4918da716282d650ca5a3dfbd19cc202d727852e3ecf9d28a1c8cd362"
+    sha256 monterey:       "047730755fc4980766e83b50f89ab10879d318a831dac18bbd6a3e649e392421"
+    sha256 big_sur:        "2680038ad36aa28cb6e6136bf737076726a71ccaac2bc69d99680c4c8bbd8b02"
+    sha256 x86_64_linux:   "f734e296fc9c68be83c662c9dc242eafcd6a1d35a9ad66d4c938cb03b201071d"
   end
 
   depends_on "aarch64-elf-binutils"

@@ -12,12 +12,14 @@ class Exiftran < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "df30994dfbdb81576a7772461b04794ffbd8a909c22c448e30a3771df5e5e322"
-    sha256 cellar: :any, arm64_monterey: "71b5694eacdc87a7fa6e80fcd694ae97c7ee79307aacf1dd2c5f88b4489bbcee"
-    sha256 cellar: :any, arm64_big_sur:  "b58b8d6344072d85b1fe971beda49909924527a032df80494243bc1b469ecb74"
-    sha256 cellar: :any, ventura:        "af9811b1544ff47d4511e4051a0b80a35b13ec6a716102c57a8884b64230414c"
-    sha256 cellar: :any, monterey:       "408ca4d14477d0f8fb212091c8c69e5a8b0e37e03a0ee247439e29a85025521c"
-    sha256 cellar: :any, big_sur:        "335aa0d2a4b309ce62834ee41ba1b093e405d280a6e05d1d14e12343b50d558b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "00bbfab43b25d8747630f7a724302fa81a0cf142872c015e5083b24773678cf2"
+    sha256 cellar: :any,                 arm64_monterey: "102fc92b15a47eaa70d675d6ab35dc54376dafa8f094acebc48178307f969064"
+    sha256 cellar: :any,                 arm64_big_sur:  "6d4edb4e74112bc2835d5a096a689e7cb556d9ef58f1169de616151aee9e69f3"
+    sha256 cellar: :any,                 ventura:        "5b325ba44ebed23f36442ac9379a33d4d71ca3a8f392997bfec59edd3b47660e"
+    sha256 cellar: :any,                 monterey:       "4f5803bd4cca5cca2fdaa1a60acd163e46bfc16eb311c562ed05d2c5d949197c"
+    sha256 cellar: :any,                 big_sur:        "64c65cb5b823a3b5b6d341a32bffee78a90d17dfbd1e07a9edef9df828025c63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d32a9b73cd9ea5dca9d5a34ce6e9b6c9684ae38617045fd87b172d5d9ac6a75"
   end
 
   depends_on "pkg-config" => :build
@@ -48,6 +50,10 @@ class Exiftran < Formula
   end
 
   def install
+    # Work around failure from GCC 10+ using default of `-fno-common`
+    # multiple definition of `...'; ....o:(.bss+0x0): first defined here
+    ENV.append_to_cflags "-fcommon" if OS.linux?
+
     system "make"
     system "make", "prefix=#{prefix}", "RESDIR=#{share}", "install"
   end

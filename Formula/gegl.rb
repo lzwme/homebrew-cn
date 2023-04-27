@@ -13,12 +13,14 @@ class Gegl < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "c3083b8599602d9d130ba43b497af36d14f223a0dd6b52b14bd0ae46cf4fedba"
-    sha256 arm64_monterey: "53bc2550ba65f022d386589d29a7ed8b37e07cd1616d8c041e3da3250bef2b81"
-    sha256 arm64_big_sur:  "b40b52dd843ace0cc29e5c4ad04331d1558edb04408e16cf39287df46897e882"
-    sha256 ventura:        "c4b71927a74f21c21944b5833c9f6972bfe083eec9ecb3d66ba5778c39999f8d"
-    sha256 monterey:       "3aeabd2ab6ea22d9b100160f9c1b9c0da81f6950cb845c8ee8debbf99571f80e"
-    sha256 big_sur:        "c7f91baa51527665d07e3a2d8a98d49d6533d9aac4f0ec4cb8767547ba725653"
+    rebuild 1
+    sha256 arm64_ventura:  "6798a639e63b3e609631ef1d252f7a275d3eb99c9f2a024c6e584170ebd08127"
+    sha256 arm64_monterey: "62603414a7f4763475dc6fda87437e062271bf46e285c7f74e88a078386e6c4e"
+    sha256 arm64_big_sur:  "08f3c21fa28b0fd57adc795c56a0ff1383ac57bf495e08a3ad813ddd41d3d04b"
+    sha256 ventura:        "41352847b91a36d1e1bf2bc3a249c102173ca098a782e450893616f9f5bb3282"
+    sha256 monterey:       "92c2b18e7bc6fa8abaa4203a70d8ab5041683f71b1b0ecd999861128767392c7"
+    sha256 big_sur:        "6b73bac09505dc9790a5667ab2cda5980048c7695c6a09110c10b9b2b0dcedbf"
+    sha256 x86_64_linux:   "430ca21b53a615a2c053f24194155b03654773b1df8dd7b272616baa99024faf"
   end
 
   depends_on "gobject-introspection" => :build
@@ -35,6 +37,7 @@ class Gegl < Formula
 
   on_linux do
     depends_on "cairo"
+    depends_on "poppler"
   end
 
   def install

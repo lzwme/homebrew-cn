@@ -1,20 +1,18 @@
 class Kubespy < Formula
   desc "Tools for observing Kubernetes resources in realtime"
   homepage "https://github.com/pulumi/kubespy"
-  url "https://ghproxy.com/https://github.com/pulumi/kubespy/archive/v0.6.1.tar.gz"
-  sha256 "431f4b54ac3cc890cd3ddd0c83d4e8ae8a36cf036dfb6950b76577a68b6d2157"
+  url "https://ghproxy.com/https://github.com/pulumi/kubespy/archive/v0.6.2.tar.gz"
+  sha256 "17a1c75357557f2caa9a6f781bcf628323b4cae42a05b123cd2d73f0bf9bd73c"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0c4db20d09bcef468465226823d2b14af1e4a55206b16140248dfb306a69321f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "faff7e7c8eb84998d059df5dcc5e22d3da3be8cc5e524871c77f3acda36b7be6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "04129547313f403451674f831e6212aebeeae70479c5fe21cef03f06f4119c6c"
-    sha256 cellar: :any_skip_relocation, ventura:        "eaa13f07ebf4369623a82014d55e1f92467f2651507334de7ea3d3c62b046d95"
-    sha256 cellar: :any_skip_relocation, monterey:       "d8da458edd137ab26cfb3bc36d6c3ab7cf0404a11ca9a1b2c77f99fe08eb48d1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bfc0e5e1537dc57fcdfa30af9526b395c148fde757078a3bf1ad0e0906dc239b"
-    sha256 cellar: :any_skip_relocation, catalina:       "b103e94c9e8e673d5b5d731932dd7cfd7ce55d52a6fd937fe7c5e9de0cc71774"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f146884c3653f8be122d17740272b52c6377313df1054497f84fe4252f284df"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5d2185d63e9cd41c6d28aa2a1433d43ea08b334d326ffebe29ea7b63baaeb056"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "06167bc087e73dcd0e5a49f6e71b6a73fcba89989a9fee7c37ddb9cc68d5c076"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e4d63724253e368ba65d670a373a7581ed55abb56ae4a28deb053f4276434cf0"
+    sha256 cellar: :any_skip_relocation, ventura:        "383354122647beb2a09d537c82255f6fedddc606db8f40d55e036156ad7f600c"
+    sha256 cellar: :any_skip_relocation, monterey:       "db91d1f2fe51df06c3abf142758420bd969ca20a0fd5e575abf7afe2689cbc12"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9ea4bfb1eb75049dfe3a2a5dcf21166c7c060a47fa04dd75452eb8dff9976620"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ad332e5eb24531a527b253931487b8f2935cb190ccd72ecb98b2141b91f8d68"
   end
 
   depends_on "go" => :build
