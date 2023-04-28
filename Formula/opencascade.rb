@@ -30,7 +30,7 @@ class Opencascade < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "83f337ba6677432b4380ea30745a7b3eb5d343c24cf1fcb82c7387ee04b8d357"
   end
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "rapidjson" => :build
   depends_on "fontconfig"
@@ -89,5 +89,33 @@ class Opencascade < Formula
 
     # Discard the first line ("DRAW is running in batch mode"), and check that the second line is "1"
     assert_equal "1", output.split(/\n/, 2)[1].chomp
+
+    # Make sure hardcoded library name references in our CMake config files are valid.
+    # https://github.com/Homebrew/homebrew-core/issues/129111
+    # https://dev.opencascade.org/content/cmake-files-macos-link-non-existent-libtbb128dylib
+    (testpath/"CMakeLists.txt").write <<~CMAKE
+      cmake_minimum_required(VERSION 3.5)
+      project(test LANGUAGES CXX)
+      find_package(OpenCASCADE REQUIRED)
+      add_executable(test main.cpp)
+      target_include_directories(test SYSTEM PRIVATE "${OpenCASCADE_INCLUDE_DIR}")
+      target_link_libraries(test PRIVATE TKernel)
+    CMAKE
+
+    (testpath/"main.cpp").write <<~CPP
+      #include <Quantity_Color.hxx>
+      #include <Standard_Version.hxx>
+      #include <iostream>
+      int main() {
+        Quantity_Color c;
+        std::cout << "OCCT Version: " << OCC_VERSION_COMPLETE << std::endl;
+        return 0;
+      }
+    CPP
+
+    system "cmake", "-S", ".", "-B", "build"
+    system "cmake", "--build", "build"
+    ENV.append_path "LD_LIBRARY_PATH", lib if OS.linux?
+    assert_equal "OCCT Version: #{version}", shell_output("./build/test").chomp
   end
 end

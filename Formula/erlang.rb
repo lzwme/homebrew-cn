@@ -3,8 +3,8 @@ class Erlang < Formula
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
   # Don't forget to update the documentation resource along with the url!
-  url "https://ghproxy.com/https://github.com/erlang/otp/releases/download/OTP-25.3/otp_src_25.3.tar.gz"
-  sha256 "85c447efc1746740df4089d75bc0e47b88d5161d7c44e9fc4c20fa33ea5d19d7"
+  url "https://ghproxy.com/https://github.com/erlang/otp/releases/download/OTP-25.3.1/otp_src_25.3.1.tar.gz"
+  sha256 "1d5e4b97a7cfa0afa8787ae60a66426806f55897085dde1fd553ac2db39a6082"
   license "Apache-2.0"
 
   livecheck do
@@ -13,13 +13,13 @@ class Erlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ba18898b9c24853c2347ddedb22308b568f181ba2ab945f11822c7b5cb25a680"
-    sha256 cellar: :any,                 arm64_monterey: "d67264dfb9610a66fe16dc376f46c5fc35eea86a96f17f3c9f35495513ab1b38"
-    sha256 cellar: :any,                 arm64_big_sur:  "999e22efcaa3b39505ed48d55a4c30f0594153a48128e863607a0c4ce7583347"
-    sha256 cellar: :any,                 ventura:        "7b20e30e9077bd14a31b323efe4e9f83272b6eeb37ca723e5ee5c4696dc27f0f"
-    sha256 cellar: :any,                 monterey:       "9ced30f79622b6419f995218ea92766f87beaf1bf8fd6fbafdb64ff06f84aea9"
-    sha256 cellar: :any,                 big_sur:        "b9423756d742d5bbc59622676e980eb53698c13a2e478b4f3f2a46dd9a2da956"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2b2c8531b5743c36eeec156e07c0ea967e89eeb4a1f97ef0f8b78260898e1e6"
+    sha256 cellar: :any,                 arm64_ventura:  "b15ee12be4bf6cc045cecc2f880589165a1ce32196cf5716abfa6ce3765a02a5"
+    sha256 cellar: :any,                 arm64_monterey: "28683ee87242548e508587c8e207ec50857dba62e01dc2e956e56230624fa7f2"
+    sha256 cellar: :any,                 arm64_big_sur:  "59a2b019a811250118ccd7439c231639d113fbc7db0790445520942bb2b56a9e"
+    sha256 cellar: :any,                 ventura:        "5ec22277c664b20201b9cac1242cacdedbb2dcdebe04b608f6f183dfdbb12d3a"
+    sha256 cellar: :any,                 monterey:       "6db001c1872213c9ebced7a9d7abf029f7eea58d1a8821ed113dc15d533e7786"
+    sha256 cellar: :any,                 big_sur:        "d245e6c61f8fb1ee409f793749f7a3af69a8b82747452ff09ae779194e63389c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20aa43d8e64754a6a5a2b484e977caba3941dc7de2f85587876b532a63d0ca6e"
   end
 
   head do
@@ -37,9 +37,9 @@ class Erlang < Formula
   uses_from_macos "libxslt" => :build
 
   resource "html" do
-    url "https://ghproxy.com/https://github.com/erlang/otp/releases/download/OTP-25.3/otp_doc_html_25.3.tar.gz"
-    mirror "https://fossies.org/linux/misc/otp_doc_html_25.3.tar.gz"
-    sha256 "bc5f24a115e436dd73e617c7cc90d6e7d6e20fd43c0bae3f929333887d96317b"
+    url "https://ghproxy.com/https://github.com/erlang/otp/releases/download/OTP-25.3.1/otp_doc_html_25.3.1.tar.gz"
+    mirror "https://fossies.org/linux/misc/otp_doc_html_25.3.1.tar.gz"
+    sha256 "006e6ea150e012b4b054325ac94bf55c75b7301aa606c8c923b82ea5c6fd0020"
   end
 
   def install

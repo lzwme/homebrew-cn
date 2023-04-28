@@ -1,19 +1,19 @@
 class Sqlcipher < Formula
   desc "SQLite extension providing 256-bit AES encryption"
   homepage "https://www.zetetic.net/sqlcipher/"
-  url "https://ghproxy.com/https://github.com/sqlcipher/sqlcipher/archive/v4.5.3.tar.gz"
-  sha256 "5c9d672eba6be4d05a9a8170f70170e537ae735a09c3de444a8ad629b595d5e2"
+  url "https://ghproxy.com/https://github.com/sqlcipher/sqlcipher/archive/v4.5.4.tar.gz"
+  sha256 "ea052fe634d729f9dd6b624016104de796faf87e487a9e868a07faee35957771"
   license "BSD-3-Clause"
   head "https://github.com/sqlcipher/sqlcipher.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "0b2668a28a983e347db6939d5b07a870455a6d0873cc546cc698d7a8d35f0bf0"
-    sha256 cellar: :any,                 arm64_monterey: "483793504db8ae6a47e51cdbe0f670b6c5af72aeacfc8e868a382f3348f8ea58"
-    sha256 cellar: :any,                 arm64_big_sur:  "0534d8aef329ca3e58a2b02f881529dcadc669fc9dabc22f17de609edd67e883"
-    sha256 cellar: :any,                 ventura:        "748f7e34c361dd48f209fc3bf6c1d1c81111d5dcf94efde230e790aa278b34af"
-    sha256 cellar: :any,                 monterey:       "f3499d7164f0366d45b369e5937b6e5715a4830458a853abcd41fa72d81ea252"
-    sha256 cellar: :any,                 big_sur:        "fb3a3e66007caab833719d543ff4dc6e19db0c84df0a156a78fe36fc65efdac8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25a788e90948b13c89a754bd5d6b075bab0039dc7186c6d77cf2391ff23481fb"
+    sha256 cellar: :any,                 arm64_ventura:  "259c8f9cada08af155319d4463e2443314029f55f8fdabe0878f88b63a9e1cfd"
+    sha256 cellar: :any,                 arm64_monterey: "379c1ee7dd9090e28a1dded4fba8af1c1b0bcae9ea340d7f2deedd7020590b7d"
+    sha256 cellar: :any,                 arm64_big_sur:  "5c48c0efb5d404262feb9e933c518319feb799e003aef338ec04f4849b6f32c4"
+    sha256 cellar: :any,                 ventura:        "b9e7fd7bc5714ba6e48998f5db62b1e0c1563d07bb5de719aee9326fbcafa406"
+    sha256 cellar: :any,                 monterey:       "6291b0bc6a307fc54c3ec4d2c02fe78a4d7aa6e075c898a0b3e0f12d1c696ec9"
+    sha256 cellar: :any,                 big_sur:        "df8d6bed2516e5386b2ab4f6ba6ccb166ffd7a3389020ea21e46468a610f2641"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d66070f2dfa53334f44e1ff96f7bd46a3e2ff4f560d4f01fc7d8a2f51e8ec9b"
   end
 
   depends_on "openssl@3"

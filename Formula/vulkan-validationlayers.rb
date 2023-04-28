@@ -71,9 +71,9 @@ class VulkanValidationlayers < Formula
     expected = <<~EOS
       Instance Layers: count = 1
       --------------------------
-      VK_LAYER_KHRONOS_validation Khronos Validation Layer #{version}  version 1
+      VK_LAYER_KHRONOS_validation Khronos Validation Layer \\d\\.\\d\\.\\d+  version 1
     EOS
     actual = shell_output("vulkaninfo --summary")
-    assert_match expected, actual
+    assert_match Regexp.new(expected), actual
   end
 end

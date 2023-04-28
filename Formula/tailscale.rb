@@ -2,18 +2,18 @@ class Tailscale < Formula
   desc "Easiest, most secure way to use WireGuard and 2FA"
   homepage "https://tailscale.com"
   url "https://github.com/tailscale/tailscale.git",
-      tag:      "v1.38.4",
-      revision: "043a34500dd2bb07c34e3b28a56cdbc8b5434454"
+      tag:      "v1.40.0",
+      revision: "9bdaece3d7c3c83aae01e0736ba54e833f4aea51"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2c4dd3394bddd0805e7d4002e94e09c8ab613feb296a5c4d39be182f16ba9f4d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c4dd3394bddd0805e7d4002e94e09c8ab613feb296a5c4d39be182f16ba9f4d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2c4dd3394bddd0805e7d4002e94e09c8ab613feb296a5c4d39be182f16ba9f4d"
-    sha256 cellar: :any_skip_relocation, ventura:        "06af1907dc0d0c15781f4853f01712c0436a871b1010e4a3506d8ae507f202e3"
-    sha256 cellar: :any_skip_relocation, monterey:       "06af1907dc0d0c15781f4853f01712c0436a871b1010e4a3506d8ae507f202e3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "06af1907dc0d0c15781f4853f01712c0436a871b1010e4a3506d8ae507f202e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c952507513880f0d5e0c2c67e556465e8d754c1198f01276bcd73f5113e122a4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "324d4f2365c1d6edd870538d7b31ef9f4ea078bf4a177404b11471104ac2ee41"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "324d4f2365c1d6edd870538d7b31ef9f4ea078bf4a177404b11471104ac2ee41"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "324d4f2365c1d6edd870538d7b31ef9f4ea078bf4a177404b11471104ac2ee41"
+    sha256 cellar: :any_skip_relocation, ventura:        "06d2500472cf6777924a23275a8f1076d7ae47eeb510bc07cf834d62a6d3e9d6"
+    sha256 cellar: :any_skip_relocation, monterey:       "06d2500472cf6777924a23275a8f1076d7ae47eeb510bc07cf834d62a6d3e9d6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "06d2500472cf6777924a23275a8f1076d7ae47eeb510bc07cf834d62a6d3e9d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "967844e2a08685dedcf86b56e8fe07d1a38060a749787a75d4f9d7881678b42b"
   end
 
   depends_on "go" => :build

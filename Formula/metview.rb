@@ -6,6 +6,11 @@ class Metview < Formula
   sha256 "13db916c98514d4ff236b24933dc86c6217c25dc6d493bbbe338f196c9ed817d"
   license "Apache-2.0"
 
+  livecheck do
+    url "https://confluence.ecmwf.int/display/METV/The+Metview+Source+Bundle"
+    regex(%r{>\s*Metview\s*<.+?<td[^>]*?>\s*v?(\d+(?:\.\d+)+)\s*</td}im)
+  end
+
   bottle do
     sha256 arm64_ventura:  "3697663e7d8e354263211814e500d34cafabb8ba9043c9fa4be4de853884f3dd"
     sha256 arm64_monterey: "86fbe6211a90c6b124adefbfb5aa487bb3ff46621e3dfa82b77c33376ec09c1e"

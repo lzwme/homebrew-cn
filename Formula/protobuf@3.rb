@@ -6,14 +6,14 @@ class ProtobufAT3 < Formula
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "31354876218ef77ac671b13c34212a9c84145614a593c47b4848584dfdab636a"
-    sha256 cellar: :any,                 arm64_monterey: "d91abb041229617f22ca3a362be9ba593607ada03e04ac75107b060a249192c4"
-    sha256 cellar: :any,                 arm64_big_sur:  "548504e5e2e2650e0437c24e1809732bf133a1a4c98e0765fe2e9837ce58dca6"
-    sha256 cellar: :any,                 ventura:        "6d8651656a282962b2462aef305ee404cc644db13f5ad94b0406a3d008d796f9"
-    sha256 cellar: :any,                 monterey:       "793cff3a2716595ed350cc6b2d08dfdb3b5d07165db501dc57639e844648580c"
-    sha256 cellar: :any,                 big_sur:        "ed53fe4986cd482e77684dda40b19f7b2712a9fb22fc0e2228cf5522a0631a60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6017720f616f2844f85dd48ededb05896e41f5f2e87c32693a22b72b9168f4d1"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "4518b3647024046c1eb5edf36926d38db8fbc7a70f938717b0e9e65d3d272c33"
+    sha256 cellar: :any,                 arm64_monterey: "142d9bc74234f930a6c2ed06ac1bef4d0aa55f8edfa8440b26c087c75796050a"
+    sha256 cellar: :any,                 arm64_big_sur:  "07a27ece3eb3274cafab5f8cb325a2934945595e0dd766b90921b3860252cc4e"
+    sha256 cellar: :any,                 ventura:        "067e3b9caec56ae7a1f2a7d161656ae25f9dbffff618fb7c79fa4f3fa0ab694a"
+    sha256 cellar: :any,                 monterey:       "1e46152ab22fccdaa11f553dd9f19447789c59059c5823fc1ac5197081dd62a5"
+    sha256 cellar: :any,                 big_sur:        "15b0be2f0afdbed151c1df25ffd28c32fb5c762c15b5b13ca4a42ded0f8bf5ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea79553ddaa109699ce023c377bfe819ffed3c1fbf29d139a26bd01acdb1e74e"
   end
 
   keg_only :versioned_formula
@@ -43,7 +43,7 @@ class ProtobufAT3 < Formula
     ENV.cxx11
 
     system "./autogen.sh" if build.head?
-    system "./configure", *std_configure_args, "--with-zlib"
+    system "./configure", *std_configure_args, "--with-zlib", "--with-pic"
     system "make"
     system "make", "install"
 

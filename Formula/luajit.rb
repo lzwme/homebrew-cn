@@ -40,13 +40,14 @@ class Luajit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "1b7b6380695bfce25979eadbcb12eea59e77e27d90f7ab2ee3a23d15da9995d7"
-    sha256 cellar: :any,                 arm64_monterey: "0f15b183102f2cd6c04a47fa8d11c9a99df0b00e0e399299af5fe1ab1107a6ac"
-    sha256 cellar: :any,                 arm64_big_sur:  "5955aed6d87a0afc112f3f20d2e5c2506a4e2e44fa3f6542b049f623be5b024f"
-    sha256 cellar: :any,                 ventura:        "796bdefc34e3e4050b62835220ae6fd0ce7e356ca95a7b719766bc87db4acbe7"
-    sha256 cellar: :any,                 monterey:       "0f1e47d7b56ae9588c1b9c74ff185cd6ef7e7d1e1ca6c369da7e039e6b35ad2b"
-    sha256 cellar: :any,                 big_sur:        "be8e63145b903df339c657b242fd9669bd504108581c5ce940f99a04e26cf5d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fbd8cf7c6b5031a0a5075a0c93bdf59507a081338a8538f763ba84828b88d41d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "7558e2c030b59319306b79182fa60230cd2f6f810beca4df7780987aa88de45d"
+    sha256 cellar: :any,                 arm64_monterey: "0980f2f920eb3bab6cabf6ae3779b9f75841a5d4e53017974367cc9682621cd5"
+    sha256 cellar: :any,                 arm64_big_sur:  "2e093d7643c894cf84c74b2908db00ab330a2299d527dcc5537cfe27be41977b"
+    sha256 cellar: :any,                 ventura:        "90d4e4af88e70d671fc07e6b5eeff08357221db48644c204781da6430a1aed1e"
+    sha256 cellar: :any,                 monterey:       "44aa71f15410a53072b5eef8459f71ede77b605c249a8b89182a26bae5a46ca2"
+    sha256 cellar: :any,                 big_sur:        "bb1f3b5c9fe72c20113a06daf9b3e1e43ea246abfb17589abd8427a341ef42d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b0812f4fd7f3bf967a0f25f702be4bbcfacf761e4097e08b96f28887d373ed4"
   end
 
   def install
@@ -61,6 +62,9 @@ class Luajit < Formula
     # Per https://luajit.org/install.html: If MACOSX_DEPLOYMENT_TARGET
     # is not set then it's forced to 10.4, which breaks compile on Mojave.
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
+
+    # Help the FFI module find Homebrew-installed libraries.
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(target: HOMEBREW_PREFIX/"lib")}" if HOMEBREW_PREFIX.to_s != "/usr/local"
 
     # Pass `Q= E=@:` to build verbosely.
     verbose_args = %w[Q= E=@:]

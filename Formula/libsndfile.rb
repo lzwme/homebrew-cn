@@ -29,7 +29,7 @@ class Libsndfile < Formula
   depends_on "mpg123"
   depends_on "opus"
 
-  uses_from_macos "python" => :build
+  uses_from_macos "python" => :build, since: :catalina
 
   def install
     system "cmake", "-S", ".", "-B", "build",

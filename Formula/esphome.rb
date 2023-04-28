@@ -3,18 +3,18 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/ac/c9/6539d2e988eb8aabc7714654ce02292c94d4f5d4f9aedc8a13cf9a2555a6/esphome-2023.4.1.tar.gz"
-  sha256 "f51961175324f01e89ad49878a8c2e3e51893becbd2909c3d0a2579596acf44f"
+  url "https://files.pythonhosted.org/packages/6d/56/6b63a6d0d45a17d4f8fc5ce5c0314b8cc71a711ad296f7b6c17c192965bd/esphome-2023.4.2.tar.gz"
+  sha256 "f1e840fe732b8057520c7fe7afe72f6ea891dfdeb7f144b8efa0c2e25bce78eb"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "0c3d031b9261cf2b5ff96adffa60a935a554154b24d271ec357203334909bd43"
-    sha256 cellar: :any,                 arm64_monterey: "5ef6a4381e63774e66b7b58b4f9be4c5cffbdbdcd2b7a94fb642cc2bfd672ccc"
-    sha256 cellar: :any,                 arm64_big_sur:  "a700535281b4e749a25f17fc80eea93d5c72c5ca00a4f3255617cdf299ff63c4"
-    sha256 cellar: :any,                 ventura:        "f2d18614168acc7e5e87067d61b39cfdc8621821e8b3485f66fc43f4c1e19bcb"
-    sha256 cellar: :any,                 monterey:       "ef93376a15ace958b8c8ab2a558149fe7318869c1549c380a59a85b1231e07d8"
-    sha256 cellar: :any,                 big_sur:        "5475dc085fa0838d032bbc3f5d65ca2212fa503b1c5acbfb82907d8625c75dbf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eaef441bcf4a2ac92a272392260610758261b4f246b68aac999ca0212a6a1b77"
+    sha256 cellar: :any,                 arm64_ventura:  "3f934568ee1f526d5a7e6fcc805668644afe0abf9cdc930aa0376e9f8838865e"
+    sha256 cellar: :any,                 arm64_monterey: "22eebdb75d5200812884571bf337951c671662830480aa7c9f73a3e01b6e17ba"
+    sha256 cellar: :any,                 arm64_big_sur:  "172d446f86d2ed8bf8088068d746dd616f7045a4bae161379b9508e335078a8c"
+    sha256 cellar: :any,                 ventura:        "97c08721cc5f5611c0636cdfae37aee7d8c2667ed9fc506b08a0607063cc1b4b"
+    sha256 cellar: :any,                 monterey:       "edae8fa6156879260ebe44a3cdaa04741544cfc2ca780464607950a471884378"
+    sha256 cellar: :any,                 big_sur:        "9dee838181be526ad6daf70ee6b1cd6728ef04032d8f7f5c8e7ef9e8e0c73f70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d6a7f55eaae2866017ad1c389cdfc553c2ddfa2ad6e2a0ea6fe84e78b61a86c"
   end
 
   depends_on "pkg-config" => :build
@@ -176,8 +176,8 @@ class Esphome < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/ee/391076f5937f0a8cdf5e53b701ffc91753e87b07d66bae4a09aa671897bf/requests-2.28.2.tar.gz"
-    sha256 "98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"
+    url "https://files.pythonhosted.org/packages/4c/d2/70fc708727b62d55bc24e43cc85f073039023212d482553d853c44e57bdb/requests-2.29.0.tar.gz"
+    sha256 "f2e34a75f4749019bb0e3effb66683630e4ffeaf75819fb51bebef1bf5aef059"
   end
 
   resource "semantic-version" do

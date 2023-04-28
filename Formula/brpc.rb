@@ -1,19 +1,19 @@
 class Brpc < Formula
   desc "Better RPC framework"
   homepage "https://brpc.apache.org/"
-  url "https://dlcdn.apache.org/brpc/1.4.0/apache-brpc-1.4.0-src.tar.gz"
-  sha256 "6bdfe4fae5103edd4216a5893bc75d97707697bd559bc7a48513b3474e702009"
+  url "https://dlcdn.apache.org/brpc/1.5.0/apache-brpc-1.5.0-src.tar.gz"
+  sha256 "8afa1367d0c0ddb471decc8660ab7bdbfd45a027f7dfb6d18303990954f70105"
   license "Apache-2.0"
   head "https://github.com/apache/brpc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e264a100aed4c80986028a2d97179dd97c852b9c6e36b99d59baaca4a5e8d0e0"
-    sha256 cellar: :any,                 arm64_monterey: "475d34c1b280151d195d7c3473bf20ca9986f42046a9bc1344b1b00970e562dd"
-    sha256 cellar: :any,                 arm64_big_sur:  "bce0061b7496584cb07b299879e4c212e4a244f6f55864dcc00efc795982bc20"
-    sha256 cellar: :any,                 ventura:        "34953c707f9e6b532478a87063ee875b31b433a06b945b60c4152bc82e55a1a9"
-    sha256 cellar: :any,                 monterey:       "510f88fc936cc9c452afe03f5c5f6428171a3cdd267417f40a8d2221db302438"
-    sha256 cellar: :any,                 big_sur:        "6be898d218bfe45cde43d01a1c06e88558711b006fcf6da6708bac160f6f1ca6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "135bf4550a5698ee60bdc63fc23adb56ad57184e6a94e3f95be14a8385953abf"
+    sha256 cellar: :any,                 arm64_ventura:  "00fe5c27d0397666f3d0138a0fad86edb9208a5581180b267a446c084fccf01f"
+    sha256 cellar: :any,                 arm64_monterey: "5575f56fe530af83fd95ede301598bb876c3e1e5902ccb091f61d0f8ae7b2f71"
+    sha256 cellar: :any,                 arm64_big_sur:  "47938b0cb1fa818fe8c50148c0098379d5c5becc5e833cf1a5738a36c3642b63"
+    sha256 cellar: :any,                 ventura:        "c9e41524b326940f8033de8b3945713b43cb20ac56f12d6934e7d1fc231e16ec"
+    sha256 cellar: :any,                 monterey:       "73c668678e7a6d1779edec5ab0806a1b3e6fe82c0929225c2243091a139df0bc"
+    sha256 cellar: :any,                 big_sur:        "fa99288bacf30a725ff3289cc53959b3a9e56e325f2bb5171e82858810c60d23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7cd87ea0fea8043f1b8d792e03cbb10f17b46d055155570c77e7d3edfe35ee1"
   end
 
   depends_on "cmake" => :build

@@ -9,13 +9,14 @@ class Iredis < Formula
   head "https://github.com/laixintao/iredis.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e376d00887b8cb8e38ef216916f257e4bf18581d9597992fd692379bcd03a1a2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7e1dc66c8fe90942fbe2ed172eb61c82d441de4de6c0e5b3232678dc2e6264d3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2b2af779c30fbf425d3ebd3c3828fa2db0218a5060552a59e91e4dc6c1742dfc"
-    sha256 cellar: :any_skip_relocation, ventura:        "5d3e0892bd0edd90f6ba630cd129f288708628ac29da109efa25c6c37b933a28"
-    sha256 cellar: :any_skip_relocation, monterey:       "678e464ba06d3e4e7bccace1d99172e08982c8e41d7c93363b2b4e3472bdb50a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "dfb7eefce52d8bdb38ba9c255e6209dd653b1119cbd14c6be6ee243e6fb98cab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06cf10b414296d9626e18b70c5277dc22f87dca95ec3ca0ff1af75620f1e3aa9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "08b14d7b3697d8ccadaa394398a41bbf45cc3a846db3b042582abf6f96476c25"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0d3797cbfd969ba259032bb00798871d5d347f5b50552c2e4a24752b66c37339"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0908cbc29191d9286b8ef1343d812612bbede1d7bd119430bd05e64f94c67365"
+    sha256 cellar: :any_skip_relocation, ventura:        "9132e42b5402b89545ca88510cb0f297eb8ea6fcd45a17c63a2ab7ac3da294a1"
+    sha256 cellar: :any_skip_relocation, monterey:       "08171aa56b87c91090bfd98e0c12daba91a6a3a3c6d95fae7f4bb0e12992f309"
+    sha256 cellar: :any_skip_relocation, big_sur:        "618edcd02fa937f4a584efb0816af2b9debb82f60eaa9d84f4a603064770f658"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4bd527e82ced83c56299206e4ded3d6399c938bc3d0f544ae331f86d9a16af82"
   end
 
   depends_on "pygments"
@@ -33,18 +34,18 @@ class Iredis < Formula
   end
 
   resource "configobj" do
-    url "https://files.pythonhosted.org/packages/64/61/079eb60459c44929e684fa7d9e2fdca403f67d64dd9dbac27296be2e0fab/configobj-5.0.6.tar.gz"
-    sha256 "a2f5650770e1c87fb335af19a9b7eb73fc05ccf22144eb68db7d00cd2bcb0902"
+    url "https://files.pythonhosted.org/packages/cb/87/17d4c6d634c044ab08b11c0cd2a8a136d103713d438f8792d7be2c5148fb/configobj-5.0.8.tar.gz"
+    sha256 "6f704434a07dc4f4dc7c9a745172c1cad449feb548febd9f7fe362629c627a97"
   end
 
   resource "importlib-resources" do
-    url "https://files.pythonhosted.org/packages/2e/f8/be5c59ff2545362397cbc989f5cd3835326fc4092433d50dfaf21616bc71/importlib_resources-5.10.2.tar.gz"
-    sha256 "e4a96c8cc0339647ff9a5e0550d9f276fc5a01ffa276012b58ec108cfd7b8484"
+    url "https://files.pythonhosted.org/packages/4e/a2/3cab1de83f95dd15297c15bdc04d50902391d707247cada1f021bbfe2149/importlib_resources-5.12.0.tar.gz"
+    sha256 "4be82589bf5c1d7999aedf2a45159d10cb3ca4f19b2271f8792bc8e6da7b22f6"
   end
 
   resource "mistune" do
-    url "https://files.pythonhosted.org/packages/cd/9b/0f98334812f548a5ee4399b76e33752a74fc7bb976f5efb34d962f03d585/mistune-2.0.4.tar.gz"
-    sha256 "9ee0a66053e2267aba772c71e06891fa8f1af6d4b01d5e84e267b4570d4d9808"
+    url "https://files.pythonhosted.org/packages/fb/6b/d8013058fcdb0088b4130164fc961e15c50d30302f60a349c16bdfda9770/mistune-2.0.5.tar.gz"
+    sha256 "0246113cb2492db875c6be56974a7c893333bf26cd92891c85f63151cee09d34"
   end
 
   resource "packaging" do
@@ -58,8 +59,8 @@ class Iredis < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/fb/93/180be2342f89f16543ec4eb3f25083b5b84eba5378f68efff05409fb39a9/prompt_toolkit-3.0.36.tar.gz"
-    sha256 "3e163f254bef5a03b146397d7c1963bd3e2812f0964bb9a24e6ec761fd28db63"
+    url "https://files.pythonhosted.org/packages/4b/bb/75cdcd356f57d17b295aba121494c2333d26bfff1a837e6199b8b83c415a/prompt_toolkit-3.0.38.tar.gz"
+    sha256 "23ac5d50538a9a38c8bde05fecb47d0b403ecd0662857a86f886f798563d5b9b"
   end
 
   resource "pyparsing" do
@@ -78,8 +79,8 @@ class Iredis < Formula
   end
 
   resource "redis" do
-    url "https://files.pythonhosted.org/packages/7a/05/671367bb466b3301bc4543fdad6ac107214ca327c8d97165b30246d87e88/redis-4.4.0.tar.gz"
-    sha256 "7b8c87d19c45d3f1271b124858d2a5c13160c4e74d4835e28273400fa34d5228"
+    url "https://files.pythonhosted.org/packages/15/00/141ee6abca8d32448b23539e8f0e74091842c30ef357b636b372e2606aa9/redis-4.5.4.tar.gz"
+    sha256 "73ec35da4da267d6847e47f68730fdd5f62e2ca69e3ef5885c6a78a9374c3893"
   end
 
   resource "wcwidth" do

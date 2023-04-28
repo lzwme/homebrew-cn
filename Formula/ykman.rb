@@ -3,19 +3,19 @@ class Ykman < Formula
 
   desc "Tool for managing your YubiKey configuration"
   homepage "https://developers.yubico.com/yubikey-manager/"
-  url "https://files.pythonhosted.org/packages/e9/2a/b2c6217d94aea5024614be2e6b13ce426596c8cb26c67206085f0f000ec2/yubikey_manager-5.1.0.tar.gz"
-  sha256 "d33efc9f82e511fd4d7c9397f6c40b37c7260221ca06fac93daeb4a46b1eb173"
+  url "https://files.pythonhosted.org/packages/8e/70/d4c632df03f0c1f45ce26981a356fd10fe3ae49fccc1856769448efe396a/yubikey_manager-5.1.1.tar.gz"
+  sha256 "684102affd4a0d29611756da263c22f8e67226e80f65c5460c8c5608f9c0d58d"
   license "BSD-2-Clause"
   head "https://github.com/Yubico/yubikey-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "85a28fdf28cf3a3f6db55f6ed508a5425052526ccb211a47fa53aeba2fe27f91"
-    sha256 cellar: :any,                 arm64_monterey: "c41044eac91b8ebd5255f80208516059bb1fa4a19c26dc2c03b76f14eeae4874"
-    sha256 cellar: :any,                 arm64_big_sur:  "d58baa331aea92922e02d7bee489d06bf3b33114f3892acfc38e366d5d285462"
-    sha256 cellar: :any,                 ventura:        "2041984764a0c6749181310aca5cd64bcb8652509e295ef7ca8fb54c89f1eb57"
-    sha256 cellar: :any,                 monterey:       "4d52aa92a7b540e01d1aa6cd0ef013a27ef73341caf61f0bfec2498315991801"
-    sha256 cellar: :any,                 big_sur:        "fa2733c85675d3ba91816a4ba60f0721ab4c427ae4a073ed81111dd61bec483a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26471b0ee7704ee830fccbd47271c4316fb3242dd888e9d5af4d15a9816ae59b"
+    sha256 cellar: :any,                 arm64_ventura:  "309cc7561921cdaece4c4056ddd00ae9f04bd94655e8abe77c3c836679a2ffa6"
+    sha256 cellar: :any,                 arm64_monterey: "50b04a423fb1498a9934d38f2252deee1b9232b6a4b6228db23559be3269f0b3"
+    sha256 cellar: :any,                 arm64_big_sur:  "2308c49fb574738170d3af8fd2de53b166c628c6811e8c42b86984fe38b3f327"
+    sha256 cellar: :any,                 ventura:        "968aa6e82cbbb48942727b22cfad9c304e366d3f66d849f0125a5eb2ad9ebd8c"
+    sha256 cellar: :any,                 monterey:       "6480c6ec9a766c5b7face63735c95af85fed8b42da2e129c4dc769aa3c6f8bb9"
+    sha256 cellar: :any,                 big_sur:        "9d2c6e21a5c41aaaba60536705a50219bf513d245dd8c0958352dc066dd094e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6718f8114b2e0332f11dc816f990071a0fd50da5981dab9bf8376c62fa7d668d"
   end
 
   # `pkg-config` and `rust` are for cryptography.
@@ -52,13 +52,18 @@ class Ykman < Formula
   end
 
   resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/20/fc/a0e728307f38609ef849d813c95dc974d344a3d395f62013ddcd8fbe0bfe/importlib_metadata-6.4.1.tar.gz"
-    sha256 "eb1a7933041f0f85c94cd130258df3fb0dec060ad8c1c9318892ef4192c47ce1"
+    url "https://files.pythonhosted.org/packages/0b/1f/9de392c2b939384e08812ef93adf37684ec170b5b6e7ea302d9f163c2ea0/importlib_metadata-6.6.0.tar.gz"
+    sha256 "92501cdf9cc66ebd3e612f1b4f0c0765dfa42f0fa38ffb319b6bd84dd675d705"
   end
 
   resource "jaraco.classes" do
     url "https://files.pythonhosted.org/packages/bf/02/a956c9bfd2dfe60b30c065ed8e28df7fcf72b292b861dca97e951c145ef6/jaraco.classes-3.2.3.tar.gz"
     sha256 "89559fa5c1d3c34eff6f631ad80bb21f378dbcbb35dd161fd2c6b93f5be2f98a"
+  end
+
+  resource "jeepney" do
+    url "https://files.pythonhosted.org/packages/d6/f4/154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdf/jeepney-0.8.0.tar.gz"
+    sha256 "5efe48d255973902f6badc3ce55e2aa6c5c3b3bc642059ef3a91247bcfcc5806"
   end
 
   resource "keyring" do
@@ -79,6 +84,11 @@ class Ykman < Formula
   resource "pyscard" do
     url "https://files.pythonhosted.org/packages/cc/33/b7d115ccf1b594af18db7ca61a7b07192356be35c65dfcd1d5ef9b28dc0a/pyscard-2.0.7.tar.gz"
     sha256 "278054525fa75fbe8b10460d87edcd03a70ad94d688b11345e4739987f85c1bf"
+  end
+
+  resource "SecretStorage" do
+    url "https://files.pythonhosted.org/packages/53/a4/f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691/SecretStorage-3.3.3.tar.gz"
+    sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
   end
 
   resource "zipp" do

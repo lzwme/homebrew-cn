@@ -8,14 +8,14 @@ class CyralGimmeDbToken < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 6
-    sha256 cellar: :any,                 arm64_ventura:  "536ae89f33c9df246cc4ab1d29682df03e4acfab2472f9a3b9a93a5f5039f634"
-    sha256 cellar: :any,                 arm64_monterey: "31a5cf2b99344379ce6eb69d57b70ac4935172ed975831783326ccfd4f799e49"
-    sha256 cellar: :any,                 arm64_big_sur:  "3e8deabdd1a24e834e9430606360e7c99ae37447fb29ae12ec61c5dced50aa08"
-    sha256 cellar: :any,                 ventura:        "ba41e6a2e31fd9764e827afca30f59486dfa3600554d25297134e09ebddd1fb0"
-    sha256 cellar: :any,                 monterey:       "788801d2dc92121b5029bebee69bfce892e3e726b36c637cd0c628df1475e94b"
-    sha256 cellar: :any,                 big_sur:        "241b2c66e8be80bf630e0f159e5aceaadca1407a4722afeaf6e4b0c350639676"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3f422a672af9bfad3c054d8f8886d844ad4842e682fc1aa5a5400c146bfcf3d"
+    rebuild 8
+    sha256 cellar: :any,                 arm64_ventura:  "36fb4dea738ea933b82c39ec0f4b5a251857d7c40f3ce2414f4774dc651c9574"
+    sha256 cellar: :any,                 arm64_monterey: "67556eb641fd2b0a2ea1c650361a05df85a7d44e1e94a6ae36b075dd38fdec85"
+    sha256 cellar: :any,                 arm64_big_sur:  "0cc3497c4e926abe461d09c2d4943055ac17bbb8ce6f551694eb42fafecd7e4c"
+    sha256 cellar: :any,                 ventura:        "a5c5c83c2150da2fcb11f572de9b4a911bcf3945c44fe64228dde9eb605135fa"
+    sha256 cellar: :any,                 monterey:       "1c5434195a774ff7ff7da3a422095a550212c9d7621b85d04b2da0dd3ec7f1b9"
+    sha256 cellar: :any,                 big_sur:        "3fe82aaa3ba1abbf2ea5e7a629739a3c8e2e2d7ef4fea6232b6c3e3d83ebcb65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4fd62e5c5de4e8234c453acf61d861bf040b9f488ba6183f7f9ecf8126d2038"
   end
 
   depends_on "rust" => :build # for cryptography
@@ -30,13 +30,13 @@ class CyralGimmeDbToken < Formula
   end
 
   resource "awscli" do
-    url "https://files.pythonhosted.org/packages/d2/c2/6f69eae34e0beaea5db1dbfcdf3198b50ce9ccd7f25d980776f20c1b26c6/awscli-1.27.120.tar.gz"
-    sha256 "9d91193e85ab56f2f21b06da84223007d5dc6e2b81f907292473419e377e2200"
+    url "https://files.pythonhosted.org/packages/35/25/47bbbc251b85a765f5370409369991028719f380345f389304fc0e137cc3/awscli-1.27.121.tar.gz"
+    sha256 "f2c7c759095167874b9084a9a1b921801d57d16baba1357dd208c9533606b899"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/ba/d0/680c56d416eb3f6801a729f0ff26fb7776b2ad34cb34f3433c3cf9c612d5/botocore-1.29.120.tar.gz"
-    sha256 "82de714c06fcefbcf2f3854b81c51bf0c529ec902c6e927156ff47988aaeeb7a"
+    url "https://files.pythonhosted.org/packages/8c/d3/cac011be3a89b877d6c9cbf1ed4c36da0cc948877132fc0ec7a343b6a4dc/botocore-1.29.121.tar.gz"
+    sha256 "955c1dd244b6286d9e17dc525d1459a2a74a1c4e519f35006c72f184fbce0760"
   end
 
   resource "certifi" do
@@ -99,14 +99,14 @@ class CyralGimmeDbToken < Formula
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
-  resource "PyYAML" do
+  resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
     sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/ee/391076f5937f0a8cdf5e53b701ffc91753e87b07d66bae4a09aa671897bf/requests-2.28.2.tar.gz"
-    sha256 "98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"
+    url "https://files.pythonhosted.org/packages/4c/d2/70fc708727b62d55bc24e43cc85f073039023212d482553d853c44e57bdb/requests-2.29.0.tar.gz"
+    sha256 "f2e34a75f4749019bb0e3effb66683630e4ffeaf75819fb51bebef1bf5aef059"
   end
 
   resource "rsa" do

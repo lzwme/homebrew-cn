@@ -5,6 +5,11 @@ class Ares < Formula
   sha256 "433d50f06480547c9f6d1351a116675245a624e99eddecfe4f083442168993ca"
   license "MIT"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4056a2c9a7470faba848339a362f598ceafbbbb43537c788854c0f40ba437d88"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c1f19c2e6091c08588ee99c39206adec69b40598c6110396498efea96d2b160d"

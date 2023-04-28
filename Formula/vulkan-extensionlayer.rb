@@ -56,15 +56,14 @@ class VulkanExtensionlayer < Formula
     ENV.prepend_path "VK_LAYER_PATH", share/"vulkan/explicit_layer.d"
     ENV["VK_ICD_FILENAMES"] = Formula["vulkan-tools"].lib/"mock_icd/VkICD_mock_icd.json"
 
-    ver = Formula["vulkan-headers"].version
     expected = <<~EOS
       Instance Layers: count = 3
       --------------------------
-      VK_LAYER_KHRONOS_shader_object      Shader object layer              #{ver}  version 1
-      VK_LAYER_KHRONOS_synchronization2   Khronos Synchronization2 layer   #{ver}  version 1
-      VK_LAYER_KHRONOS_timeline_semaphore Khronos timeline Semaphore layer #{ver}  version 1
+      VK_LAYER_KHRONOS_shader_object      Shader object layer              \\d\\.\\d\\.\\d+  version 1
+      VK_LAYER_KHRONOS_synchronization2   Khronos Synchronization2 layer   \\d\\.\\d\\.\\d+  version 1
+      VK_LAYER_KHRONOS_timeline_semaphore Khronos timeline Semaphore layer \\d\\.\\d\\.\\d+  version 1
     EOS
     actual = shell_output("vulkaninfo --summary")
-    assert_match expected, actual
+    assert_match Regexp.new(expected), actual
   end
 end

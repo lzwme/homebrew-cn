@@ -1,20 +1,19 @@
 class Mlpack < Formula
   desc "Scalable C++ machine learning library"
   homepage "https://www.mlpack.org"
-  url "https://mlpack.org/files/mlpack-4.0.1.tar.gz"
-  sha256 "4c746936ed9da9f16744240ed7b9f2815d3abb90c904071a1d1a628a9bbfb3a5"
+  url "https://mlpack.org/files/mlpack-4.1.0.tar.gz"
+  sha256 "e0c760baf15fd0af5601010b7cbc536e469115e9dd45f96712caa3b651b1852a"
   license all_of: ["BSD-3-Clause", "MPL-2.0", "BSL-1.0", "MIT"]
-  revision 1
   head "https://github.com/mlpack/mlpack.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "dcb754e45a2335db6665131e49b02bde377a3c057e5036888fa8bdd9c373caed"
-    sha256 cellar: :any,                 arm64_monterey: "5fdb4ea81eb8729c3f496f66c6056e98eaf22744ba7d838609901a22625c3c28"
-    sha256 cellar: :any,                 arm64_big_sur:  "4b63e693eb879b561d8692513f58b6e8f18183bed6b30ce6f76c8bcf3029e7c5"
-    sha256 cellar: :any,                 ventura:        "0e6de9bd9142c13f38b13c85b2c00c4f4c449014a5ef78be3e52c56bc943bc2a"
-    sha256 cellar: :any,                 monterey:       "a5055fdda100071ceb71884062cc2726aaa534bf1c422d2737abe1cb5bc582a7"
-    sha256 cellar: :any,                 big_sur:        "986d610ceb522d05117b5ea07e920872ed4283cb3758886846ff5374222815a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfdbdbc9e6f431d4853e443204d0490b6d18ba9f2ba79aaebf0b919f743c3320"
+    sha256 cellar: :any,                 arm64_ventura:  "0c4a23609ba6ef874dcbda937f71ef97c4c48d7a001f504f39be09dde28e42f5"
+    sha256 cellar: :any,                 arm64_monterey: "f1eeacec19c1a01b7ba0e27c8aeba78019d0f0d0c19d450b6903becd8a408312"
+    sha256 cellar: :any,                 arm64_big_sur:  "964ad616cfe1fa3d4845e5588ef5f5b5908c563e3a18bd2549ef5f95fb19ee4c"
+    sha256 cellar: :any,                 ventura:        "c1591a839d37ba8fd5c53c02c92f11012d05a9743dac5f19216ac5e2f35af198"
+    sha256 cellar: :any,                 monterey:       "cb66cc43d903722b0615b0303a59f57b98694db3c22fe7655126a31ec8b492ed"
+    sha256 cellar: :any,                 big_sur:        "dd846f2505b8b2bb83ed5fe1d9de4f380507f55a02b0d23481d09516018c284b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15d8636c83c58455a3f0e8797fa361e10bb61c64485d27fe4a080d2fb413793d"
   end
 
   depends_on "cmake" => :build
@@ -28,15 +27,15 @@ class Mlpack < Formula
   depends_on "graphviz"
 
   resource "stb_image" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/nothings/stb/e140649c/stb_image.h"
-    version "2.26"
-    sha256 "8e5b0d717dfc8a834c97ef202d20e78d083d009586e1731c985817d0155d568c"
+    url "https://ghproxy.com/https://raw.githubusercontent.com/nothings/stb/3ecc60f/stb_image.h"
+    version "2.28"
+    sha256 "38e08c1c5ab8869ae8d605ddaefa85ad3fea24a2964fd63a099c0c0f79c70bcc"
   end
 
   resource "stb_image_write" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/nothings/stb/314d0a6f/stb_image_write.h"
-    version "1.15"
-    sha256 "51998500e9519a85be1aa3291c6ad57deb454da98a1693ab5230f91784577479"
+    url "https://ghproxy.com/https://raw.githubusercontent.com/nothings/stb/1ee679c/stb_image_write.h"
+    version "1.16"
+    sha256 "cbd5f0ad7a9cf4468affb36354a1d2338034f2c12473cf1a8e32053cb6914a05"
   end
 
   def install
