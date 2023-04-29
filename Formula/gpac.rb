@@ -9,19 +9,19 @@
 class Gpac < Formula
   desc "Multimedia framework for research and academic purposes"
   homepage "https://gpac.wp.mines-telecom.fr/"
-  url "https://ghproxy.com/https://github.com/gpac/gpac/archive/v2.2.0.tar.gz"
-  sha256 "c20c204b57da76e4726109993c1abcdb3231a9b2ee2c8e21126d000cda7fc00d"
+  url "https://ghproxy.com/https://github.com/gpac/gpac/archive/v2.2.1.tar.gz"
+  sha256 "8173ecc4143631d7f2c59f77e1144b429ccadb8de0d53a4e254389fb5948d8b8"
   license "LGPL-2.1-or-later"
   head "https://github.com/gpac/gpac.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d0558e09d42e44644581c62b64a8109d6968f07ea8e00a9f6e78453242c31f77"
-    sha256 cellar: :any,                 arm64_monterey: "e7bdaa0c5bfd09b4e29908df5ecace8c9c3f1ab7d04802357077c1ed1c31e4fa"
-    sha256 cellar: :any,                 arm64_big_sur:  "b8b0aca468db112cceea2ebbd9dca6ad2441095e8bcd85c99788a9bb6fdd5796"
-    sha256 cellar: :any,                 ventura:        "8e8ee917157aa2535ae182767e45eee02a77545d30535d3b2fa9b75ea437157e"
-    sha256 cellar: :any,                 monterey:       "79d93bb80dcc146cc18f2e5de8904060de7982a01061d0211c51639dfa18ecaf"
-    sha256 cellar: :any,                 big_sur:        "6e2b5266dda770fafe8159528424fb2e27cbd8ed3cac80accf6f2ab85506e8db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "279485e406963ddacebdf8a1aec5331bf262915164c567b4a0725a015d802104"
+    sha256 cellar: :any,                 arm64_ventura:  "84caaba4b33c8046f76ae2cf6ab1bd0369a2bc041c6463e6c86850d1a153fca9"
+    sha256 cellar: :any,                 arm64_monterey: "0252eb68072e6dd72b49ea34d9792b8f34d2b587ac65ee9aa9308dcd0b1b11d7"
+    sha256 cellar: :any,                 arm64_big_sur:  "3f9fc83da06d66afb107b43961830acbbb804b64877d294c6dd70418b0a02dff"
+    sha256 cellar: :any,                 ventura:        "3a63967e6126113d72426837783a78cdd58b0032cb1cf53d1c524d43988fdad3"
+    sha256 cellar: :any,                 monterey:       "c7d10218587a68a9fa3bcfcc59be3925eb37b44fc50c0fada4dc696033f70f6c"
+    sha256 cellar: :any,                 big_sur:        "b5c86134beff39a6899305c4afb3bc9ebe1b64ec4453fec75e0ab4753da3c331"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b39ea72001336daba7879374298eec1c9efefa6ca7ba1e7ee45b624b6464233"
   end
 
   depends_on "pkg-config" => :build

@@ -1,20 +1,18 @@
 class Bedtools < Formula
   desc "Tools for genome arithmetic (set theory on the genome)"
   homepage "https://github.com/arq5x/bedtools2"
-  url "https://ghproxy.com/https://github.com/arq5x/bedtools2/archive/v2.30.0.tar.gz"
-  sha256 "c575861ec746322961cd15d8c0b532bb2a19333f1cf167bbff73230a7d67302f"
+  url "https://ghproxy.com/https://github.com/arq5x/bedtools2/archive/v2.31.0.tar.gz"
+  sha256 "8a88e9433cad4cfc4269d45acbc820c41a333a965b59ce42d81d925422d1a026"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "2e8a782328689c862e6bda675fc80554974a9e4d31b87c2437ebd138146dc10e"
-    sha256 cellar: :any,                 arm64_monterey: "f49bc2e2da620dc8e11f972de610ba8c181e187f326b0e684c3886fa0b3724f6"
-    sha256 cellar: :any,                 arm64_big_sur:  "142bd16e4896e944960d472b3f0063b7e15785ecc6eea30da9a25d70455868b4"
-    sha256 cellar: :any,                 ventura:        "4e142190372423e97db273ee80646b926b9298a857d4e3bd15316286ee37de5f"
-    sha256 cellar: :any,                 monterey:       "6cb9009902dc477cdd5c22c8a5868f2a7ff60b0c5a5f09461aa9ddd6380385f9"
-    sha256 cellar: :any,                 big_sur:        "cf105e55c3da5874d9c351c13c341b0898fa48731aadf5dc1b08b02f1ef36733"
-    sha256 cellar: :any,                 catalina:       "775e107f0f6de74aaaf1f03a3d2441355a740e2198b7d3f9cc41bb0108338a5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8396c0906988ec6abf7324769e46a673ae7f960761c628dedd74ac9ea3b3aa82"
+    sha256 cellar: :any,                 arm64_ventura:  "4d3e127abd1e657e10f7ccf6272c33297dd2c6c7db41ea6530061de42797e072"
+    sha256 cellar: :any,                 arm64_monterey: "3aad51926581a91abd4d894ce98a800b3cbd584d3938f81484ffc297162de8e9"
+    sha256 cellar: :any,                 arm64_big_sur:  "d055a492f1ff9106e4180affe304f2d0f82cdb13d1a732f2c8e5c4e3f541a494"
+    sha256 cellar: :any,                 ventura:        "9d7eeaa7d94215ac91ca574a26b9aa7420ac4d3bcfa10c5733a9d3dcf58e6124"
+    sha256 cellar: :any,                 monterey:       "e21ccaac7d8b125f8b2b2a2660a2dd05e75064fe9834cd03eda9911bf7c006dd"
+    sha256 cellar: :any,                 big_sur:        "fdefdfe979c0f75b84e8425fd95b7ea3cb3e3f7bddb0a03c96489dd1a7b26971"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10e94997135138c50255614b0abc6cf79814ab861aa4114a3894212ab133e336"
   end
 
   depends_on "xz"

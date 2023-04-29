@@ -8,6 +8,15 @@ class Neovim < Formula
     url "https://ghproxy.com/https://github.com/neovim/neovim/archive/v0.9.0.tar.gz"
     sha256 "39d79107c54d2f3babcad2cd157c399241c04f6e75e98c18e8afaf2bb5e82937"
 
+    # Remove in 0.10.
+    resource "mpack" do
+      url "https://ghproxy.com/https://github.com/libmpack/libmpack-lua/releases/download/1.0.10/libmpack-lua-1.0.10.tar.gz"
+      sha256 "18e202473c9a255f1d2261b019874522a4f1c6b6f989f80da93d7335933e8119"
+    end
+
+    # Keep resources updated according to:
+    # https://github.com/neovim/neovim/blob/v#{version}/cmake.deps/CMakeLists.txt
+
     # TODO: Consider shipping these as separate formulae instead. See discussion at
     #       https://github.com/orgs/Homebrew/discussions/3611
     resource "tree-sitter-c" do
@@ -70,14 +79,7 @@ class Neovim < Formula
     depends_on "libnsl"
   end
 
-  # Keep resources updated according to:
-  # https://github.com/neovim/neovim/blob/v#{version}/third-party/CMakeLists.txt
-
-  resource "mpack" do
-    url "https://ghproxy.com/https://github.com/libmpack/libmpack-lua/releases/download/1.0.10/libmpack-lua-1.0.10.tar.gz"
-    sha256 "18e202473c9a255f1d2261b019874522a4f1c6b6f989f80da93d7335933e8119"
-  end
-
+  # TODO: Switch this to a tarball and drop `luarocks` for 0.10. Consider shipping as a formula.
   resource "lpeg" do
     url "https://luarocks.org/manifests/gvvaughan/lpeg-1.0.2-1.src.rock"
     sha256 "e0d0d687897f06588558168eeb1902ac41a11edd1b58f1aa61b99d0ea0abbfbc"
@@ -88,13 +90,18 @@ class Neovim < Formula
       r.stage(buildpath/"deps-build/build/src"/r.name)
     end
 
+    deps_build = buildpath/"deps-build"
+    luajit = Formula["luajit"]
+    ENV.append_path "CMAKE_PREFIX_PATH", deps_build
+    ENV.append_to_cflags "-I#{luajit.opt_include}/luajit-2.1"
+
     # The path separator for `LUA_PATH` and `LUA_CPATH` is `;`.
-    ENV.prepend "LUA_PATH", buildpath/"deps-build/share/lua/5.1/?.lua", ";"
-    ENV.prepend "LUA_CPATH", buildpath/"deps-build/lib/lua/5.1/?.so", ";"
+    ENV.prepend "LUA_PATH", deps_build/"share/lua/5.1/?.lua", ";"
+    ENV.prepend "LUA_CPATH", deps_build/"lib/lua/5.1/?.so", ";"
     # Don't clobber the default search path
     ENV.append "LUA_PATH", ";", ";"
     ENV.append "LUA_CPATH", ";", ";"
-    lua_path = "--lua-dir=#{Formula["luajit"].opt_prefix}"
+    lua_path = "--lua-dir=#{luajit.opt_prefix}"
 
     cd "deps-build/build/src" do
       %w[
@@ -102,11 +109,20 @@ class Neovim < Formula
         lpeg/lpeg-1.0.2-1.src.rock
       ].each do |rock|
         dir, rock = rock.split("/")
+        next if build.head? && dir == "mpack"
+
         cd dir do
           output = Utils.safe_popen_read("luarocks", "unpack", lua_path, rock, "--tree=#{buildpath}/deps-build")
           unpack_dir = output.split("\n")[-2]
           cd unpack_dir do
-            system "luarocks", "make", lua_path, "--tree=#{buildpath}/deps-build"
+            if build.stable?
+              system "luarocks", "make", lua_path, "--tree=#{buildpath}/deps-build"
+            else
+              cp buildpath/"cmake.deps/cmake/LpegCMakeLists.txt", "CMakeLists.txt"
+              system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: deps_build)
+              system "cmake", "--build", "build"
+              system "cmake", "--install", "build"
+            end
           end
         end
       end

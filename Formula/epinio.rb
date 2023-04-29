@@ -1,19 +1,25 @@
 class Epinio < Formula
   desc "CLI for Epinio, the Application Development Engine for Kubernetes"
   homepage "https://epinio.io/"
-  url "https://ghproxy.com/https://github.com/epinio/epinio/archive/refs/tags/v1.7.1.tar.gz"
-  sha256 "61721f2c6599358353eae6325c1ea4ba769cdaee29f1e5602bb0fc279dc65cb0"
+  url "https://ghproxy.com/https://github.com/epinio/epinio/archive/refs/tags/v1.8.0.tar.gz"
+  sha256 "3be1880e28274496421dcc63bb42fe61b654dd85b002d035fc435fec4b5a9a5f"
   license "Apache-2.0"
 
+  # Upstream creates a stable version tag ahead of release but a version isn't
+  # considered released until they create the GitHub release.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a03f3cddb27ff713c3275ff8f51f9a28eb3ee6cef10d05a3d87d989141f35de6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f84c430a10e92100b07cf02cfcdff8f7c5acf608e49ca97da9730f115c89b132"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d297d2ba42a746f0efd15be2525761bcedfada7954a759d9db9601e074838b9a"
-    sha256 cellar: :any_skip_relocation, ventura:        "a688b853670210fbff58b29667c86b21141a9308663d17a33d29772af468a35d"
-    sha256 cellar: :any_skip_relocation, monterey:       "e1b13fe45a24f64311336674aa944780ad8273c425a813b71e73755436ee5b5d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8c15844f6b95aea295f35a671af57cdb610fe0719db1549f0d4829fadd3c883b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f2145cf395903ba817b23fc42fc3c83c00b03c8b2236ca7d43c3671f26ab16a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d7a4081a329bf08a2c1e5476a8017dbcaae333ce408c2408a4989b4398bda58"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "97c7f67e743f2eeee37752e4fe6aa32ef4cf80a3c5145e94377a1086f4c42d92"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "93f6f737475e80a31bc83c6e23291f3a07477ba3d101d76c4bac2b0cc4957330"
+    sha256 cellar: :any_skip_relocation, ventura:        "c78c64a8caf75bd16806ff735b7361cdf8224c3d95c790102a0b15f2416dfc0c"
+    sha256 cellar: :any_skip_relocation, monterey:       "a60e1c1f4a5384386e9755da9f18603c7577d0f404d58d9ddc12b735128260d3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5fd561c3d0983b95313f8862a20e63befbbc60a37c6ef3b20c723d31afa4ee20"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "efbc1c29db52a6c8db9bbe021a463ea9bfd6020b40f602cefa67596610330cb0"
   end
 
   depends_on "go" => :build

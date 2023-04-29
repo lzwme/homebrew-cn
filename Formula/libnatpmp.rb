@@ -11,13 +11,20 @@ class Libnatpmp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "5cbc86e7961c27660615db095ed871533441d5fe6d25b603207175c055ae2f63"
-    sha256 cellar: :any,                 arm64_monterey: "ee662cfd4f0cd0c0b2e4e41d4b78dc6b869a2a9b879b99b2bbd2f9c95449817e"
-    sha256 cellar: :any,                 arm64_big_sur:  "e1dc94e564f2390fabcffb750cd4b0a8a3f25679dc8d960cce9387668b25f6ab"
-    sha256 cellar: :any,                 ventura:        "bd45f955745ed2788cd2515f882162846bdce682b95010b070e22335157c2819"
-    sha256 cellar: :any,                 monterey:       "a2d116b11fd0e979c2af60c047b962f272118a955057c223c6e26bbd861edea5"
-    sha256 cellar: :any,                 big_sur:        "df74dfd28a0c684d13de2dcd3d655c424210eb89b6c42f81c371ad0a356b27fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71a7aca17fef233ad343105dc86f13bf2d1ad39514cc7ea5c9890f5c7b52baa1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "e2b3149c35d8f3b95be8530a59185bff9d795599b7311d8cbb5acdd815737b83"
+    sha256 cellar: :any,                 arm64_monterey: "f859a0235c76bb63c350d94f053832a15fee55936a8e7a03a5b5dc04dd69c627"
+    sha256 cellar: :any,                 arm64_big_sur:  "0e39353eba562756a31d3937f87c68f5d6b66526bfabb3cb5db71b5c7cce1bd9"
+    sha256 cellar: :any,                 ventura:        "2997902f048650bd589d999bb508836f9275432f702041922d63577f526ae427"
+    sha256 cellar: :any,                 monterey:       "8d9857a3229541160545cd65308faede6b0a4a49b22491fa2726b9b391797dd1"
+    sha256 cellar: :any,                 big_sur:        "b3e8cff2d63434c2f2db23be4caf16799c420f9ef7308dca1173b5cf3ff6b9b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c61e68ce733b200615ecb9dbabe36a9336cf7d6404a4d869573a365acaebc08"
+  end
+
+  # Fix missing header. Remove when no longer applicable.
+  patch do
+    url "https://github.com/miniupnp/libnatpmp/commit/5f4a7c65837a56e62c133db33c28cd1ea71db662.patch?full_index=1"
+    sha256 "4643048d7e24f8aed4e11e572f3e22f79eae97bb289ae1bbf103b84e8e32f61a"
   end
 
   def install

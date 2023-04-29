@@ -17,6 +17,7 @@ class Dpp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "217a38e243f6b931307b1be30a278432b66674bf9061f5a534fb452a01de7cea"
   end
 
+  depends_on "dtools" => :build
   depends_on "dub" => :build
   depends_on "ldc" => [:build, :test]
 
@@ -43,14 +44,6 @@ class Dpp < Formula
       r.stage buildpath/"dub-packages"/r.name
       system "dub", "add-local", buildpath/"dub-packages"/r.name, r.version
     end
-
-    # Use actual rdmd once it is separated out of the dmd formula
-    (buildpath/"rdmd-bin/rdmd").write <<~EOS
-      #!/bin/sh
-      ldc2 -run $@
-    EOS
-    (buildpath/"rdmd-bin/rdmd").chmod 0755
-    ENV.prepend_path "PATH", buildpath/"rdmd-bin"
 
     if OS.mac?
       toolchain_paths = []

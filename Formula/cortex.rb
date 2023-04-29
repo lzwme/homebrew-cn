@@ -1,8 +1,8 @@
 class Cortex < Formula
   desc "Long term storage for Prometheus"
   homepage "https://cortexmetrics.io/"
-  url "https://ghproxy.com/https://github.com/cortexproject/cortex/archive/v1.15.0.tar.gz"
-  sha256 "096f688e110f3330d64a2909209d9938cdd8fa01f05d5ba945cbf6ec6cac3419"
+  url "https://ghproxy.com/https://github.com/cortexproject/cortex/archive/v1.15.1.tar.gz"
+  sha256 "003e8ffbfa6243c31a04f0d452a99dc912d0aadc8a34905f1a792bf1347f51c4"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Cortex < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e7c470c31ff5316a4f4835ee81e1fbaf26fe633eb7671a255f6c371142d1a13"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2e7c470c31ff5316a4f4835ee81e1fbaf26fe633eb7671a255f6c371142d1a13"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2e7c470c31ff5316a4f4835ee81e1fbaf26fe633eb7671a255f6c371142d1a13"
-    sha256 cellar: :any_skip_relocation, ventura:        "273973bf8a5ab83e5900661071d68e190ac02fe2340a6e9669107adba37ef323"
-    sha256 cellar: :any_skip_relocation, monterey:       "273973bf8a5ab83e5900661071d68e190ac02fe2340a6e9669107adba37ef323"
-    sha256 cellar: :any_skip_relocation, big_sur:        "273973bf8a5ab83e5900661071d68e190ac02fe2340a6e9669107adba37ef323"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ddf180fcf06cb092daf3d0f627fea0d18e4b012bb02bdce14f5dee2fcea176c4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a06e836504afe7da9a56c6dd9c4313ad5eea3ff65421697169f46ff78c8c2037"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a06e836504afe7da9a56c6dd9c4313ad5eea3ff65421697169f46ff78c8c2037"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a06e836504afe7da9a56c6dd9c4313ad5eea3ff65421697169f46ff78c8c2037"
+    sha256 cellar: :any_skip_relocation, ventura:        "fe9d447ee9e9ec5349b198741255771361e92689292268e893c4a4d968af578f"
+    sha256 cellar: :any_skip_relocation, monterey:       "fe9d447ee9e9ec5349b198741255771361e92689292268e893c4a4d968af578f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "fe9d447ee9e9ec5349b198741255771361e92689292268e893c4a4d968af578f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bbb7faeb11b466062871c988f9e20b91ef6e663d0313bbdae8d0f3105cabc059"
   end
 
   depends_on "go" => :build

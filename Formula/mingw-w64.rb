@@ -4,7 +4,7 @@ class MingwW64 < Formula
   url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v10.0.0.tar.bz2"
   sha256 "ba6b430aed72c63a3768531f6a3ffc2b0fde2c57a3b251450dcf489a894f0894"
   license "ZPL-2.1"
-  revision 5
+  revision 6
 
   livecheck do
     url :stable
@@ -12,13 +12,13 @@ class MingwW64 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "ee1d61e35831277e15210ea706229cc8cbe16b206717255a520f236b5012aa24"
-    sha256 arm64_monterey: "c926536c55942ed1ccbfc3ebbeb7d50d20639cdbfc4e81fa67e650d66fe45d7a"
-    sha256 arm64_big_sur:  "708388e37455b9234f7aa49bdcbe09cb3ef19f8cb5978d79e73e9da55f0360c3"
-    sha256 ventura:        "c7f1f733d4990046a37915f690b731db78d8721eec963782773af317f14e7f09"
-    sha256 monterey:       "ebb56a2250a5ed9b7f77ff13a444f3d7c86c6cc01bde8027b3c0b0b6b9c3dbe4"
-    sha256 big_sur:        "394186157ca868084bf0bdabbdd4ed57a8e659ef9b3ddb34ff02be228705c70e"
-    sha256 x86_64_linux:   "9a7375f3e26b052d84d35dab0ec35f76aa6634c0a7da4d0076a9188d6a26781e"
+    sha256 arm64_ventura:  "d37fe454fb3719975e1411f4e9dab5c89efb5d0dec7fd8c2fc0b1e69f3e3e409"
+    sha256 arm64_monterey: "4c8d394d274bca3a7feaa0806cbf5f7f6da2450b26a8f0f265b8a4fe83d85559"
+    sha256 arm64_big_sur:  "a636b469ade19549b084ca9c713123386988f01bb99ae13c4fbe4d492b48828e"
+    sha256 ventura:        "9627e0a6bf692b6b73983e6f0c10a7c0431b1e632d6f6e6da48d789db2365f68"
+    sha256 monterey:       "17034b0590cf355783ce47740bd8eee3259e90770dd8cfa2d6483fc4ef5881ee"
+    sha256 big_sur:        "ad78f1bdae02b35a813a9fb33f3aa6fcfc6226dbade7740bfae6ad03930a8518"
+    sha256 x86_64_linux:   "44a62d7f645fd79bcb4c84749871414df772d120a02e1e0f0fd358cbaf8baef9"
   end
 
   # Apple's makeinfo is old and has bugs
@@ -44,9 +44,9 @@ class MingwW64 < Formula
   end
 
   resource "gcc" do
-    url "https://ftp.gnu.org/gnu/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz"
-    mirror "https://ftpmirror.gnu.org/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz"
-    sha256 "e549cf9cf3594a00e27b6589d4322d70e0720cdd213f39beb4181e06926230ff"
+    url "https://ftp.gnu.org/gnu/gcc/gcc-13.1.0/gcc-13.1.0.tar.xz"
+    mirror "https://ftpmirror.gnu.org/gcc/gcc-13.1.0/gcc-13.1.0.tar.xz"
+    sha256 "61d684f0aa5e76ac6585ad8898a2427aade8979ed5e7f85492286c4dfc13ee86"
   end
 
   def target_archs

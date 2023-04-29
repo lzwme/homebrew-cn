@@ -1,19 +1,18 @@
 class Xdpyinfo < Formula
   desc "X.Org: Utility for displaying information about an X server"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/app/xdpyinfo-1.3.3.tar.xz"
-  sha256 "356d5fd62f3e98ee36d6becf1b32d4ab6112d618339fb4b592ccffbd9e0fc206"
+  url "https://www.x.org/archive/individual/app/xdpyinfo-1.3.4.tar.xz"
+  sha256 "a8ada581dbd7266440d7c3794fa89edf6b99b8857fc2e8c31042684f3af4822b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e16a49d773d8c80163a2965507811ce520f17892f097d5d8f2aacd25f49b4a49"
-    sha256 cellar: :any,                 arm64_monterey: "a3bf79d6694303ce41fb825dfdf0c3346c192055520a269172ca807fbd0ddd11"
-    sha256 cellar: :any,                 arm64_big_sur:  "9ab87e3026a19b8a1769586cb2cfdb2d82fe5b84b66b3ac25b11db5529c6d924"
-    sha256 cellar: :any,                 ventura:        "a304d4431fff5b506c0721ea6b2cc4717349eee1b93abafd95f80bc614451530"
-    sha256 cellar: :any,                 monterey:       "4a7bb6ee4b0168a8b8e6d5b638df938c1e3008f00451f415bde65fdb5acecfbf"
-    sha256 cellar: :any,                 big_sur:        "2139a548a2a741429b1544be0382a71d66c5bce943f51e699fdab20d72fe06a7"
-    sha256 cellar: :any,                 catalina:       "a980564366bb676ec30ae2948c15f0976760e0a63f266d84349306346c49b3ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "47fa8e46b0bf43f4063d5de687991fa34846d3f81f3bb505867350925a872dd9"
+    sha256 cellar: :any,                 arm64_ventura:  "e4f808deface10045a57d8b83baee19ec7737b239af0e3638f5bb4fe879197f2"
+    sha256 cellar: :any,                 arm64_monterey: "ca1b56d68034d1414cec3f638b17a81fcaa5434505ac0c1beb38003599e2a78a"
+    sha256 cellar: :any,                 arm64_big_sur:  "e2be6a8a5886c59f1e74311daf91b46a93f82a548c6db53e8bb9fd38562d9dd4"
+    sha256 cellar: :any,                 ventura:        "9df6c27f362d5ad88cb70ec4f81c77e63eda93f8be5f47e4882b15275c469be2"
+    sha256 cellar: :any,                 monterey:       "657234728dc1b95dd0a01297bb63c4c7a9dc8a0c9884a9ec4fe26f2f5e697571"
+    sha256 cellar: :any,                 big_sur:        "715024678add793ed4a3649bec8b5d57fc8f0f17bbd1bff780662160068b6719"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f37e0dbf3c6c0741151f53befb6a5bc82b2fab008b3d28ce4cedf63e6a8bbbf"
   end
 
   depends_on "pkg-config" => :build

@@ -1,8 +1,8 @@
 class Inspircd < Formula
   desc "Modular C++ Internet Relay Chat daemon"
   homepage "https://www.inspircd.org/"
-  url "https://ghproxy.com/https://github.com/inspircd/inspircd/archive/v3.15.0.tar.gz"
-  sha256 "c3d201dd3577917bc94257ed8aa373c24bc03c456e55886497eb87e8520f2d4d"
+  url "https://ghproxy.com/https://github.com/inspircd/inspircd/archive/refs/tags/v3.16.0.tar.gz"
+  sha256 "8d9e657e70f1252d9625d3d31623a56abbb3121cebf6be2f4f5791162919c657"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,13 +11,13 @@ class Inspircd < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "3bbfd22996bd7f07eae83de4b7d29517a63e475d1f09b98061bf10c91584479d"
-    sha256 arm64_monterey: "49b4a77d9e2ac076ba57ccb0fce1755b9846ed9c1392fac4631298d9bcf1a4f5"
-    sha256 arm64_big_sur:  "a202c5b6ad4b8a15ddb013e82ebd885601553e769947a93910f88ec8b08f13c1"
-    sha256 ventura:        "684c6ce03bd164177e47dbd5599911058fb4fba420f387b33e7982e6be6a7e90"
-    sha256 monterey:       "af356f343dcb01f0a3ecd5e8369c99898ad1567d79ff2accb690a52e86bfacfb"
-    sha256 big_sur:        "680ce7f1af2d49cf63ee17174cbe39b95b31f446f9e0466e044e7dcfc4aeeb38"
-    sha256 x86_64_linux:   "fd613dd9fd665d3c7de6d9bc1995810ec26940f295b346809518bf2726af63ba"
+    sha256 arm64_ventura:  "944b3368251d6454e4c17d5d87825d679d072e5b382be1ec33d924f231d6ee9b"
+    sha256 arm64_monterey: "a3370879ae9f1159524faccf1f2029816d559a0595bb96a5f051ca65deed3031"
+    sha256 arm64_big_sur:  "cb30dffa92d439f86774afe6a345edd77cd244cdc8aafe70302437070fe52091"
+    sha256 ventura:        "0f4d2bbf59e8407778340569a83cfc262e6fd104597df1e1e9b0c70b4f21aa6d"
+    sha256 monterey:       "fc7137827497c0141562dc5895a5834756852cf3747211864c3cf855723e654e"
+    sha256 big_sur:        "111547a9dc368a8616baa2657a475ba6991c40bb9691e58e82648b5489e2408a"
+    sha256 x86_64_linux:   "f72f89ba0acd500ed6018298a85714a49554be2fd77166f37b6603113160c54f"
   end
 
   depends_on "pkg-config" => :build
@@ -32,6 +32,7 @@ class Inspircd < Formula
   skip_clean "logs"
 
   def install
+    ENV.cxx11
     system "./configure", "--enable-extras",
                           "argon2 ldap mysql pgsql regex_posix regex_stdlib ssl_gnutls sslrehashsignal"
     system "./configure", "--disable-auto-extras",

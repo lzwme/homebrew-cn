@@ -1,20 +1,19 @@
 class BoreCli < Formula
   desc "Modern, simple TCP tunnel in Rust that exposes local ports to a remote server"
   homepage "https://github.com/ekzhang/bore"
-  url "https://ghproxy.com/https://github.com/ekzhang/bore/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "707459f6fde45139741d039910a1ec5095739ac31ed9b447c46624d71b1274b3"
+  url "https://ghproxy.com/https://github.com/ekzhang/bore/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "d084024cfa14b3b1df065fdf760fced511c228ff2441eda7874e3608f7563783"
   license "MIT"
   head "https://github.com/ekzhang/bore.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c6edbfb09b9e6e21689d08cceecf988fe00dac7f4647a658578cb65dd603c85d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "304093791d0143ed8dd62c78de29a43578a0a0e9d378b2b93523351b7c674327"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "32cc03ab79420e849a1997bb55b3d8f951bcb70ebb1840c92a83ff4446137642"
-    sha256 cellar: :any_skip_relocation, ventura:        "1473a1140befada8a22394096192d623e538bfb0326c07695ab3e5cd256eed9a"
-    sha256 cellar: :any_skip_relocation, monterey:       "b528f1f77d6afbc20803c94378b8f25e5dfa6b305fe3de677abec629cfbf2032"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2027a1f499b7b624e38f1d89a076fa5a1a893e8f7c47941b9bf01a3d690b6f87"
-    sha256 cellar: :any_skip_relocation, catalina:       "c8369c6b80646f4cb337414689f46149a8a1bdf9e2837e77a9d3bfb40ec55c69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9957b6c7068a47e0af6cec938ee33058edc3154e751687646165e56d7bdea6e4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb47ecce95ccc9be42a41eda84b836c24d51e3f0f03d7bc2f9f58930d44f1926"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0df2603bf726d38c1bb460314d7aab187fde1c27da34317cbff46747ec84089e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a3141c449ac083c080e231209c7bafb116e976dfec7e928be33fc8c2fb2e4218"
+    sha256 cellar: :any_skip_relocation, ventura:        "d3f94ffbd3c2d3f8aa5759ca3067bf0720de74e30245f919713e3d11a9359076"
+    sha256 cellar: :any_skip_relocation, monterey:       "a5b791059a772c80e99672c0b74cec175ca92e6d491dde57b4706e9725bf7d58"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f0d502b5d29f2ac526f860d30df22672a3e4da6ad95a528e9fa57227914ff3b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2e09d9b492e58b1953a5c04e5bc6e4b62d396fba96c92ecb6612b0c26fe5df1"
   end
 
   depends_on "rust" => :build
