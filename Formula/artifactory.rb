@@ -51,7 +51,7 @@ class Artifactory < Formula
   service do
     run opt_bin/"artifactory.sh"
     keep_alive true
-    working_dir libexec
+    working_dir opt_libexec
   end
 
   test do

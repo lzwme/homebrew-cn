@@ -47,7 +47,7 @@ class Asuka < Formula
     input.putc "q"
     input.puts "exit"
 
-    screenlog = (testpath/"screenlog.txt").read
+    screenlog = File.open(testpath/"screenlog.txt", "r:ASCII-8BIT", &:read)
     assert_match "# Project Gemini", screenlog
   ensure
     Process.kill("TERM", wait_thr.pid)

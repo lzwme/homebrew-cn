@@ -14,6 +14,7 @@ class Ntopng < Formula
   bottle do
     sha256 arm64_monterey: "3e1f0641e68312b9df99d6352a30463b9c7e3ae77af87d7108d7f53ef1a1e915"
     sha256 arm64_big_sur:  "f15ee478e6890c6ff3c223b3687712e95715957273c81f00012e42166c56f3ab"
+    sha256 ventura:        "8748ce82261996a840abf5c05dd2c4adfca95242ce6c3a85e50175055190bba2"
     sha256 monterey:       "f23a75bc3a049ffe88a63eac33c69679676f21a5794cf981b48727ea657d3b83"
     sha256 big_sur:        "f113c35addc3839fd3fe1fd20c2b3a94be4082e9969638d86cdf4c945ddcea1b"
     sha256 x86_64_linux:   "a8aaa3edac2b6c93e95bc660b850f1cda8ce0033112128823b086f3ac289b378"

@@ -1,8 +1,8 @@
 class Kics < Formula
   desc "Detect vulnerabilities, compliance issues, and misconfigurations"
   homepage "https://kics.io/"
-  url "https://ghproxy.com/https://github.com/Checkmarx/kics/archive/refs/tags/v1.6.14.tar.gz"
-  sha256 "fc7cc5f13ca55f42e60bca9718b3bdf86a14c60827eb181cda865d5871207173"
+  url "https://ghproxy.com/https://github.com/Checkmarx/kics/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "d4d0f3349d9099f396fffbf22459cc7bc4bcd153e11fa9ce0ca0bf945edecd97"
   license "Apache-2.0"
   head "https://github.com/Checkmarx/kics.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Kics < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "32acab2ee5d9d4f2bb84659afc2f75daa4dfa91e18769b1c61dce6ab92b4a7dc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e2658fb08b4dd5691d7d28ced135eb09a08af026ed696946d06ffb174a34be5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "75e0dbc5efe9b6be0f00fab83e4e300b633c4e02846472206f6921e0af9d1405"
-    sha256 cellar: :any_skip_relocation, ventura:        "b19dfd76eb62787841b3fb75547e5c597485946bfbfba53a97804d606042d385"
-    sha256 cellar: :any_skip_relocation, monterey:       "6f4bed92738e5993f9ffb19f14dacd5493de78f98ee301bcf693a65eb895e641"
-    sha256 cellar: :any_skip_relocation, big_sur:        "69643d370eb06b9cae56fc3e62cc0ab43b7bc909029faf779db9823acf905fe6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a979eb763b42de5302ed06f62b7da8bad7bc82468ab966040cbbd9e0ba19249"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1729d27f4c84f3c3be21fb619e6917812130eebf591410d4d9214f61d8519f2c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0d88ee11886f9a1d0205e87304b7e538d7e5a37f65c47ffb56eff0037c0a8d1b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a927b75dc38b6a1ab146029ba2f41bad224ffd9b7e843ce2fa59f0abffff129c"
+    sha256 cellar: :any_skip_relocation, ventura:        "c58e2014ce2d2f2e1ac9ea81d805bf32eca75bdfb758cc8ac7860298e000cc8e"
+    sha256 cellar: :any_skip_relocation, monterey:       "cc717e9cfa91c25f8b0bedd5e33b70ec7730e0b2d75482abbd292486b5373598"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9368730a22f442c143737e5a8ac5fbce761effef505af42500d7c20e69cd1d5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c74ae115b6728134a678c82befa67f0e6d0e4d87d8e020424e5a98917207fa05"
   end
 
   depends_on "go" => :build

@@ -1,19 +1,19 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.land/"
-  url "https://ghproxy.com/https://github.com/denoland/deno/releases/download/v1.32.5/deno_src.tar.gz"
-  sha256 "a386b9cd660a0d1339352868201eb47f1fac1632514c66cfb3d55051911c5fbb"
+  url "https://ghproxy.com/https://github.com/denoland/deno/releases/download/v1.33.1/deno_src.tar.gz"
+  sha256 "e48cdaa3438f810479f82f46f9fa27f16b4364e33c4aebd48f8b58ee95187227"
   license "MIT"
   head "https://github.com/denoland/deno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a90d989bfa121c81e24c09868c0dbb2cd1da98b4b43d36c0a5d1a91cd0a41ad"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e3db9266270cba9fd312d720b0f034d52ee9d8c1aa1d5faa9f55fbcba41317ed"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9ff2bfa13bcae1608e75f16591500ac553819afddf821a678fc2041f6c3cf4bd"
-    sha256 cellar: :any_skip_relocation, ventura:        "a394eb021c21b8f4a9b3c2b20de5533a39f1aaf123b10efee2ba6c191f2469e6"
-    sha256 cellar: :any_skip_relocation, monterey:       "291ecc11b1d3f34cf0e51a139ce9bf5a933d554b3a2c792984561be623dcb2ec"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b0c89047f41224370b694d80ee94b8394d481d448219c22961b11d3587616201"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09938aa762e524c59b78de6695a909cfcc2e22bf318252202276a28f33a8da0a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6094735176df959db2176926281eb771c5d0791b8da8e2900626f5a58032dce3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c84dde226a736eb25dff08ff6cf8f7a3fc0fc2865b5206e42d048aeaa6438eda"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "135d5c2c595af16788dbdb05d7f60f33fbeca80e62ea748e79c486aa4bb88b19"
+    sha256 cellar: :any_skip_relocation, ventura:        "4b02bdbcd3b33c79d724e34be83b1619b661f19ae922980591bb7503529ba97d"
+    sha256 cellar: :any_skip_relocation, monterey:       "474ccce6f7b5f262a0d03a19b49647d39c9d7e8e0e73dd444d743b844166e424"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8e9ff3ec0d2cb27b6df59eab2a9fd98d3dc2f6ae6e8cd2fe6810889b9de97363"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad72084df68b642ed2716172f9412ab1cc79bacb4a48419f577caea9ab2be1ab"
   end
 
   depends_on "llvm" => :build
@@ -38,18 +38,20 @@ class Deno < Formula
   # We use the crate as GitHub tarball lacks submodules and this allows us to avoid git overhead.
   # TODO: Remove this and `v8` resource when https://github.com/denoland/rusty_v8/issues/1065 is resolved
   resource "rusty-v8" do
-    url "https://static.crates.io/crates/v8/v8-0.68.0.crate"
-    sha256 "81c69410b7435f1b74e82e243ba906d71e8b9bb350828291418b9311dbd77222"
+    url "https://static.crates.io/crates/v8/v8-0.71.0.crate"
+    sha256 "51a173a437bebab13d587a4aaf0a1e7a49433226538c9a78ca3b4ce3b8c6aeb6"
   end
 
+  # Use the latest tagged revision in https://github.com/denoland/v8/tags.
   resource "v8" do
-    url "https://ghproxy.com/https://github.com/denoland/v8/archive/bc8470cdd2383c1dca3fb3f648752fdea8a80091.tar.gz"
-    sha256 "db7a2a95ef718be7d7ea49ee15d19531564e33aa560f09e26c16a004927a5ca1"
+    url "https://ghproxy.com/https://github.com/denoland/v8/archive/09b1430e7090eb1d3f1397276221c4e92403de57.tar.gz"
+    sha256 "991cc00f37d037d69ca38716f04522f0bb261e67bbc7adf9b224266a93b62df2"
   end
 
   # To find the version of gn used:
   # 1. Find v8 version: https://github.com/denoland/deno/blob/v#{version}/Cargo.toml#L44
-  # 2. Find ninja_gn_binaries tag: https://github.com/denoland/rusty_v8/tree/v#{v8_version}/tools/ninja_gn_binaries.py#L21
+  #    1.1. Update `rusty-v8` resource to use this version.
+  # 2. Find ninja_gn_binaries tag: https://github.com/denoland/rusty_v8/blob/v#{v8_version}/tools/ninja_gn_binaries.py#L21
   # 3. Find short gn commit hash from commit message: https://github.com/denoland/ninja_gn_binaries/tree/#{ninja_gn_binaries_tag}
   # 4. Find full gn commit hash: https://gn.googlesource.com/gn.git/+/#{gn_commit}
   resource "gn" do

@@ -66,6 +66,9 @@ class Newsboat < Formula
         inreplace "Makefile", "$(LDLIBS) $^", "$^ $(LDLIBS)"
       end
 
+      # Fix "call to undeclared function 'wget_wch'".
+      ENV.append_to_cflags "-D_XOPEN_SOURCE_EXTENDED=1"
+
       # Fails race condition of test:
       #   ImportError: dynamic module does not define init function (init_stfl)
       #   make: *** [python/_stfl.so] Error 1

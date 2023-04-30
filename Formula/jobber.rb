@@ -28,7 +28,7 @@ class Jobber < Formula
   end
 
   service do
-    run libexec/"jobbermaster"
+    run opt_libexec/"jobbermaster"
     keep_alive true
     require_root true
     log_path var/"log/jobber.log"

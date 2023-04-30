@@ -3,6 +3,7 @@
 class QtAT5 < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
+  # NOTE: Use *.diff for GitLab/KDE patches to avoid their checksums changing.
   url "https://download.qt.io/official_releases/qt/5.15/5.15.8/single/qt-everywhere-opensource-src-5.15.8.tar.xz"
   mirror "https://mirrors.dotsrc.org/qtproject/archive/qt/5.15/5.15.8/single/qt-everywhere-opensource-src-5.15.8.tar.xz"
   mirror "https://mirrors.ocf.berkeley.edu/qt/archive/qt/5.15/5.15.8/single/qt-everywhere-opensource-src-5.15.8.tar.xz"
@@ -11,11 +12,14 @@ class QtAT5 < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "9efb77253a6cddd8863ef9ab65ed4aab9ec3fbdc93c5c42fabaa4cc503ca7372"
-    sha256 cellar: :any,                 arm64_big_sur:  "7c5a40921d64dec50fbb10dd87ed50d2ebac426772a0e3cc7a2d3223c0542b92"
-    sha256 cellar: :any,                 monterey:       "0e6cdd62ad5d6ce58e06aee30694c2e8a4d711b5d616f44a7a1e2c5782a304c2"
-    sha256 cellar: :any,                 big_sur:        "55bc61ea9b8aeedec136d46ed1e6a01d7b7c6269bfc7274fbba4357427087fca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4455a4ca588fd551c852996f873d206a360ed64811f39a6d787709a147839a44"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "51c1a85183da0a893df5be45cc36e9c13822c6f0f0135ff9f84d7649356a8e4d"
+    sha256 cellar: :any,                 arm64_monterey: "99e62401706b90148209fd0c7284b5d638310e8734f36506c0ac3f0ea43c7580"
+    sha256 cellar: :any,                 arm64_big_sur:  "b9f989aa0599f3e7c6636f5315ee0dd719ad819fa20c0825f441ff6fe8d5278f"
+    sha256 cellar: :any,                 ventura:        "ccf3df1316af6067293a15dacfb1ee4626fabb8895073187c5bdbb56f0212815"
+    sha256 cellar: :any,                 monterey:       "a68fcdf5cf44aec33b43fd27598a9087ed79ba6e6994687e5332b93fa7b7c702"
+    sha256 cellar: :any,                 big_sur:        "cf7596ecc8a7284e06d335df6656161c70c083f74fc9a31606b7752a9950d027"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3390ad5f10b5cd0ae988fa2fb693e5a59d0324ca36488b0358fccf18c727c698"
   end
 
   keg_only :versioned_formula
@@ -120,8 +124,8 @@ class QtAT5 < Formula
 
   # Fix build for GCC 11
   patch do
-    url "https://invent.kde.org/qt/qt/qtbase/commit/ee7aed5e1020fa88f86777701948c8a236db4fc5.patch"
-    sha256 "70b87c38dee827b36ea853e602edeb2df1eec5d098646e3dc1a3d3f2ab2e6459"
+    url "https://invent.kde.org/qt/qt/qtbase/commit/ee7aed5e1020fa88f86777701948c8a236db4fc5.diff"
+    sha256 "41df4232666363f63d87a0165ec05e835f4c730c270a52137fbc53bdaf4e5f20"
     directory "qtbase"
   end
 
@@ -130,6 +134,13 @@ class QtAT5 < Formula
     url "https://invent.kde.org/qt/qt/qtbase/commit/12df089a0095645daae4f932c495258751d881fc.patch"
     sha256 "325178702d0cf30c96ab83f279c3f4db666d8fdc2be193ef944311e144caba0d"
     directory "qtbase"
+  end
+
+  # Fix build with Xcode 14.3.
+  patch do
+    url "https://invent.kde.org/qt/qt/qtlocation-mapboxgl/-/commit/5a07e1967dcc925d9def47accadae991436b9686.diff"
+    sha256 "4f433bb009087d3fe51e3eec3eee6e33a51fde5c37712935b9ab96a7d7571e7d"
+    directory "qtlocation/src/3rdparty/mapbox-gl-native"
   end
 
   def install

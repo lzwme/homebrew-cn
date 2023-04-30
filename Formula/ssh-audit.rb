@@ -3,22 +3,19 @@ class SshAudit < Formula
 
   desc "SSH server & client auditing"
   homepage "https://github.com/jtesta/ssh-audit"
-  url "https://files.pythonhosted.org/packages/ae/72/44b29342575dee57470a11b92b12430b3afb63a963aa356c356b0b747522/ssh-audit-2.5.0.tar.gz"
-  sha256 "3397f751bc7b9997e4236aece2d41973c766f1e44b15bc6d51a1420a14bf05b6"
+  url "https://files.pythonhosted.org/packages/09/71/aa82438fa0660fc0bc63fd84bcc4be8c3f7456752ce31d4fd1221bd63b4c/ssh-audit-2.9.0.tar.gz"
+  sha256 "7e68baaaa1fa42b68bcf5eefc81eb02805631e421bd84b6ae639d0cb86eb893d"
   license "MIT"
-  revision 1
   head "https://github.com/jtesta/ssh-audit.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "88da564fe01d5d804574d2942814cb310731f827cc9183ff3c9266543c83b33d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "88da564fe01d5d804574d2942814cb310731f827cc9183ff3c9266543c83b33d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "88da564fe01d5d804574d2942814cb310731f827cc9183ff3c9266543c83b33d"
-    sha256 cellar: :any_skip_relocation, ventura:        "9294b5cdcc5f45014d5d4f8289c7976037adfa7a6f4f82d713026df126c1dabf"
-    sha256 cellar: :any_skip_relocation, monterey:       "9294b5cdcc5f45014d5d4f8289c7976037adfa7a6f4f82d713026df126c1dabf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9294b5cdcc5f45014d5d4f8289c7976037adfa7a6f4f82d713026df126c1dabf"
-    sha256 cellar: :any_skip_relocation, catalina:       "9294b5cdcc5f45014d5d4f8289c7976037adfa7a6f4f82d713026df126c1dabf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49de8dbf2d2f30886de11f3398c04ea45dccd76285b7c8b4f9afafd778ed1490"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "52cdbe85ff2ae19e72029ac6751cd5553f96ea158f1fee1f9f1f76659aef3e91"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "52cdbe85ff2ae19e72029ac6751cd5553f96ea158f1fee1f9f1f76659aef3e91"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "52cdbe85ff2ae19e72029ac6751cd5553f96ea158f1fee1f9f1f76659aef3e91"
+    sha256 cellar: :any_skip_relocation, ventura:        "0a10628210e4b2003ae24c7ecac43bbfbedcbc9f99ec51d5ce23fa54a140da27"
+    sha256 cellar: :any_skip_relocation, monterey:       "0a10628210e4b2003ae24c7ecac43bbfbedcbc9f99ec51d5ce23fa54a140da27"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0a10628210e4b2003ae24c7ecac43bbfbedcbc9f99ec51d5ce23fa54a140da27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "62e991c6ee5e1bf92d4e687acaf9d27b941386bc4cb9466db881fc44b45eca4e"
   end
 
   depends_on "python@3.11"

@@ -1,10 +1,9 @@
 class MingwW64 < Formula
   desc "Minimalist GNU for Windows and GCC cross-compilers"
   homepage "https://sourceforge.net/projects/mingw-w64/"
-  url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v10.0.0.tar.bz2"
-  sha256 "ba6b430aed72c63a3768531f6a3ffc2b0fde2c57a3b251450dcf489a894f0894"
+  url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v11.0.0.tar.bz2"
+  sha256 "bd0ea1633bd830204cc23a696889335e9d4a32b8619439ee17f22188695fcc5f"
   license "ZPL-2.1"
-  revision 6
 
   livecheck do
     url :stable
@@ -12,13 +11,13 @@ class MingwW64 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "d37fe454fb3719975e1411f4e9dab5c89efb5d0dec7fd8c2fc0b1e69f3e3e409"
-    sha256 arm64_monterey: "4c8d394d274bca3a7feaa0806cbf5f7f6da2450b26a8f0f265b8a4fe83d85559"
-    sha256 arm64_big_sur:  "a636b469ade19549b084ca9c713123386988f01bb99ae13c4fbe4d492b48828e"
-    sha256 ventura:        "9627e0a6bf692b6b73983e6f0c10a7c0431b1e632d6f6e6da48d789db2365f68"
-    sha256 monterey:       "17034b0590cf355783ce47740bd8eee3259e90770dd8cfa2d6483fc4ef5881ee"
-    sha256 big_sur:        "ad78f1bdae02b35a813a9fb33f3aa6fcfc6226dbade7740bfae6ad03930a8518"
-    sha256 x86_64_linux:   "44a62d7f645fd79bcb4c84749871414df772d120a02e1e0f0fd358cbaf8baef9"
+    sha256 arm64_ventura:  "8dbb584293d0a96282c1f061b746817c857aeadbfd21e8e9925a87397a993b74"
+    sha256 arm64_monterey: "f8cd3096f2944bac0ff2c1e1f2d8761811b3167dfda449f12798f35ce555c557"
+    sha256 arm64_big_sur:  "1c28c4f22f13d037ba6c450ffbe778c75f7e2e7a3415178d06a00865b0c3d2a6"
+    sha256 ventura:        "bc21617fdc0a06a58d3e9bf7b7477e41d45d22084acf14d55d560e3a096acf9e"
+    sha256 monterey:       "ad5683e6294f4987a6449060119975d44fc3552db646d4299cb73aa5880b8116"
+    sha256 big_sur:        "3b116e27e63fceac65715c861676bd7bff76fe650afcbf1537ab03b6a2ed2bd0"
+    sha256 x86_64_linux:   "7c09f410c628293c420d818814c33e9c5a265982c3dbe1ccedae4f9232ec5aa2"
   end
 
   # Apple's makeinfo is old and has bugs

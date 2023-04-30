@@ -3,18 +3,18 @@ class SphinxDoc < Formula
 
   desc "Tool to create intelligent and beautiful documentation"
   homepage "https://www.sphinx-doc.org/"
-  url "https://files.pythonhosted.org/packages/0f/6d/392defcc95ca48daf62aecb89550143e97a4651275e62a3d7755efe35a3a/Sphinx-6.2.1.tar.gz"
-  sha256 "6d56a34697bb749ffa0152feafc4b19836c755d90a7c59b72bc7dfd371b9cc6b"
+  url "https://files.pythonhosted.org/packages/0a/41/0c3785bce311f85a6e47b151563fec269676f4abdf1171d310d79e8098bb/Sphinx-7.0.0.tar.gz"
+  sha256 "283c44aa28922bb4223777b44ac0d59af50a279ac7690dfe945bb2b9575dc41b"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "08105c709af12d2f34dbace33399fb8dbd0659f98585cf66253f3e64ea0e946e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b49b5ef1d70f8b3830847ecb47e819116784cadcfbf3f6fbd04625a72e2f934c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b0080d797f2e496827d6c6423d24ec8d524f09d663266482d79558e760da0454"
-    sha256 cellar: :any_skip_relocation, ventura:        "4e2c3be15dd1567c8fa2cdf7ef912b2e7580ca45f1b65caf50c25442898a25a2"
-    sha256 cellar: :any_skip_relocation, monterey:       "e26dc5d74104fe3ad9538f8d7ad6007b8f657935c8681df24f9ceca4cb9d4068"
-    sha256 cellar: :any_skip_relocation, big_sur:        "96e6796571e34e1e00bd615f9dde73814ed41ba649d09796a93de98d95a0ec86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e62db6f70574d42d0de3c9782b4defc6c544832a00ec9adfcf693cff98f60ce6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dea60caf19dd1b9e9926c70301363079175fe4e3a915cd26533d456a6febbb85"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "38dc453df69e567a256b7200f57687d6405b4d511a4969d3264f4e0297f2dd82"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2b81244f7ed7e71bff72504c80c4d15aa548fdd4406637f9d9dc6cd7cc2b2575"
+    sha256 cellar: :any_skip_relocation, ventura:        "0a5a6466c8dc04da17dc0eac2f318da0c81a5a264b56cf0b6197cafc700b78a7"
+    sha256 cellar: :any_skip_relocation, monterey:       "dbf62fb7c7559a2fce848278e4a1cf6f6c02889b8c3fc3fd9be7ccdd4782ba63"
+    sha256 cellar: :any_skip_relocation, big_sur:        "97b175d0f4f7ecc3d6caa16a5c17c73a635596ffdc098fe7e4dfb03a6e45892a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "558088c22cf2336bb7d2c6c644ef6e4f45a925fdef0ccff04700492ad46ca7e0"
   end
 
   keg_only <<~EOS
@@ -31,7 +31,7 @@ class SphinxDoc < Formula
     sha256 "a27a4a084d5e690e16e01e03ad2b2e552c61a65469419b907243193de1a84ae2"
   end
 
-  resource "Babel" do
+  resource "babel" do
     url "https://files.pythonhosted.org/packages/ba/42/54426ba5d7aeebde9f4aaba9884596eb2fe02b413ad77d62ef0b0422e205/Babel-2.12.1.tar.gz"
     sha256 "cc2d99999cd01d44420ae725a21c9e3711b3aadc7976d6147f622d8581963455"
   end
@@ -56,12 +56,12 @@ class SphinxDoc < Formula
     sha256 "69150444affb9cb0d5cc5a92b3676f0b2fb7cd9ae39e947a5e11a36b4497cd4a"
   end
 
-  resource "Jinja2" do
+  resource "jinja2" do
     url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
   end
 
-  resource "MarkupSafe" do
+  resource "markupsafe" do
     url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
     sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
   end
@@ -77,8 +77,8 @@ class SphinxDoc < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/ee/391076f5937f0a8cdf5e53b701ffc91753e87b07d66bae4a09aa671897bf/requests-2.28.2.tar.gz"
-    sha256 "98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"
+    url "https://files.pythonhosted.org/packages/4c/d2/70fc708727b62d55bc24e43cc85f073039023212d482553d853c44e57bdb/requests-2.29.0.tar.gz"
+    sha256 "f2e34a75f4749019bb0e3effb66683630e4ffeaf75819fb51bebef1bf5aef059"
   end
 
   resource "snowballstemmer" do

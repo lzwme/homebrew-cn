@@ -1,8 +1,8 @@
 class InfluxdbAT1 < Formula
   desc "Time series, events, and metrics database"
   homepage "https://influxdata.com/time-series-platform/influxdb/"
-  url "https://ghproxy.com/https://github.com/influxdata/influxdb/archive/v1.11.0.tar.gz"
-  sha256 "51bdde988fca05c1d54de82cd1ec096f790db15d00eda1f74d9375f16c22500b"
+  url "https://ghproxy.com/https://github.com/influxdata/influxdb/archive/v1.11.1.tar.gz"
+  sha256 "a2da74178246350d6155704e72ae6b22cbbc735c361e40715bd2eda88caf0e82"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class InfluxdbAT1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "147eedd437e4203306b325c1fd39c73b438dc384cb9ed3b286d50500da31bb3a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "36c0f99e67112313b0cde43ac8f59184557414425b8eb61b99b433dd3f1f8741"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5a55487ef139a65a14a07dacd554c857268029fed6816da06c8034c186ea0f4b"
-    sha256 cellar: :any_skip_relocation, ventura:        "0f35f24db9ebec2a03e3f5e0fcb50b7b63cbd42da2c26da85c302049c54fceac"
-    sha256 cellar: :any_skip_relocation, monterey:       "516c3660519327bc13b7fb92a1aa3587b7afcb60b5b25645f33aef05802a0402"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ce57d336ba99c3fd4cf578c9e76b64b897bc7b26da1232d24255bd37bcb85dbc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57b35a4c3668c6f930cb0b6cb1d25e2c57a8cae0afaa366b897da7acb19c56d3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "50e049b32884696b9fb9132b48768c898bc6408acd46bb3ed5a512a1de269237"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b9f8dc68c1bb3764a4312978b0b5e844694b79fddb16e0a90455b36a0a3a285"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a03db3bc1a314b6fad002e754bffdd6c9c82341d419e072c32b6462b8bda6454"
+    sha256 cellar: :any_skip_relocation, ventura:        "53598b6b5b89528e82dec5301b4c0cadcb3c3377f652faaa97da0377aac9e851"
+    sha256 cellar: :any_skip_relocation, monterey:       "f0d3a114acc66421bef6ee1e76ca8c3a51985a4a679b6f8b458a63428224de02"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1a86835719b344cce7dd2ba54adfd3963c199a71109d5301531fd9621d13bf8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cfe3cd9385316a6fb83d135cb3123d42f377d9bdb96348dc12a7e01ada90aff7"
   end
 
   keg_only :versioned_formula

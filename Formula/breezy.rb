@@ -8,14 +8,14 @@ class Breezy < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "224651cd7faea114a055d3cc35a7913f158768bcf4ac20c4fed2d75a70148318"
-    sha256 cellar: :any,                 arm64_monterey: "d61c300c34b887daa26ac68c94f328bcd9e5a467aadc878b5fe92ba99d43a641"
-    sha256 cellar: :any,                 arm64_big_sur:  "97d4bcd9dec6c1470f3df15dfea2a935d992682e9d7592f49b6ecdd1f33383bd"
-    sha256 cellar: :any,                 ventura:        "0ae0b19cd1f1dc9be42da4fb80d4f75166dcb988a265ea95b121596bbcca847b"
-    sha256 cellar: :any,                 monterey:       "3f3b04785489b87270f4c391d97df33c1adb76de9a53b4da8efa93824d5e681b"
-    sha256 cellar: :any,                 big_sur:        "524b7e7e2318c8263b55ca9c786294c6cbc10c61fadb1ce54ee8660fcab6cd1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05e9add50ad42837fb5c5be5f598c4051b922ebc5a1167422f9e5c47522b3b21"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "e02f1814e6122fffd291014e049f1e94c9deab83a46c29a8076735b85e30ba7b"
+    sha256 cellar: :any,                 arm64_monterey: "d4c32887afb4a0c0904fed6fd21684c91abf2bf7dd91322d2e9c13824df809d2"
+    sha256 cellar: :any,                 arm64_big_sur:  "1a70c993590f13ba5b62e827e2287a42da859b830a631a08a067137c862e3a31"
+    sha256 cellar: :any,                 ventura:        "df6a725ebf2a071f364314f05af40a91c498fdd3a80a1d49be36b30ddaaaec80"
+    sha256 cellar: :any,                 monterey:       "a2c2496e3e57868f2a203e71732b63675c7e379feee38f488407b1541dac9e3c"
+    sha256 cellar: :any,                 big_sur:        "b219ca1581f43a31d8b756299987e9a111b5cc414810663ff0c4f1c3566a2450"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4016dff3d9ac02791773dddbb88f586d712ffd336ecc23c76bec2c1c10e40cee"
   end
 
   depends_on "gettext" => :build
@@ -53,8 +53,8 @@ class Breezy < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
-    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
+    url "https://files.pythonhosted.org/packages/aa/52/078c46565a4b4983e15d862cb7461e5c63a2e7b3c8436e8622a601120ea0/urllib3-2.0.0.tar.gz"
+    sha256 "da21131828d290d6331d0d93a18f062ead1ec4fe0cfebbcefc95ee5368f7188a"
   end
 
   def install
