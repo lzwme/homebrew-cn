@@ -13,8 +13,10 @@ class Itk < Formula
   end
 
   bottle do
+    sha256 arm64_ventura:  "6e54a534f79457e46149f035dc53a266695ab3411134441a680999f151b89516"
     sha256 arm64_monterey: "6c2786dbb58c8013e5f58f909953bcc7fa9e45f4a859f90f66b4c1bfd63c7c1d"
     sha256 arm64_big_sur:  "45df350e168b33ca95b2338e57b50948c4f55366171c39df3aac1c4968860d68"
+    sha256 ventura:        "2ffa449128fe66ba2f11ae80190954526a7187cb217f980ecde38584f6f15755"
     sha256 monterey:       "785bacdf50799ba54c45aa0eb895cc9a7d5e0a1abe22e9393e27afcbee176290"
     sha256 big_sur:        "a912187fafbf455c69fe4decb3aa6e450248206079c54fbd6a1e53efa182658e"
     sha256 x86_64_linux:   "118d8d8a0ceb6e9e6464f1a5fcf142f2e1925ab8136ab5c1ffef60600a25d53c"

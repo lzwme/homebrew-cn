@@ -1,13 +1,13 @@
 class TCompletion < Formula
   desc "Completion for CLI power tool for Twitter"
   homepage "https://sferik.github.io/t/"
-  url "https://ghproxy.com/https://github.com/sferik/t/archive/v3.1.0.tar.gz"
-  sha256 "900ef6e3d6180b70bf2434503774ea5e1bf985b9110d4f051c44a191b08f6062"
+  url "https://ghproxy.com/https://github.com/sferik/t/archive/v4.0.0.tar.gz"
+  sha256 "82e4afa54015c2297854854490be8dd3a09d7c99ed5af3f64de6866bb484ddde"
   license "MIT"
   head "https://github.com/sferik/t.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6735212e9fee5e04fce9adaa96e09c20cc7508b8d26e1d85658825b0c50e85c7"
+    sha256 cellar: :any_skip_relocation, all: "b4000f3501fea5f4c7b817a5f83f35b6d7a2a864a8b665e0850b2e9da45cd389"
   end
 
   def install

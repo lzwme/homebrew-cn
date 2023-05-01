@@ -5,15 +5,15 @@ class Libgccjit < Formula
   head "https://gcc.gnu.org/git/gcc.git", branch: "master"
 
   stable do
-    url "https://ftp.gnu.org/gnu/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz"
-    mirror "https://ftpmirror.gnu.org/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz"
-    sha256 "e549cf9cf3594a00e27b6589d4322d70e0720cdd213f39beb4181e06926230ff"
+    url "https://ftp.gnu.org/gnu/gcc/gcc-13.1.0/gcc-13.1.0.tar.xz"
+    mirror "https://ftpmirror.gnu.org/gcc/gcc-13.1.0/gcc-13.1.0.tar.xz"
+    sha256 "61d684f0aa5e76ac6585ad8898a2427aade8979ed5e7f85492286c4dfc13ee86"
 
     # Branch from the Darwin maintainer of GCC, with a few generic fixes and
-    # Apple Silicon support, located at https://github.com/iains/gcc-12-branch
+    # Apple Silicon support, located at https://github.com/iains/gcc-13-branch
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/1d184289/gcc/gcc-12.2.0-arm.diff"
-      sha256 "a7843b5c6bf1401e40c20c72af69c8f6fc9754ae980bb4a5f0540220b3dcb62d"
+      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/5c206c47/gcc/gcc-13.1.0.diff"
+      sha256 "cb4e8a89387f748a744da0273025d0dc2e3c76780cc390b18ada704676afea11"
     end
   end
 
@@ -22,14 +22,13 @@ class Libgccjit < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "96e4b528984f59182ee7aed7861a740233140d032502841ebb66c4b94410796a"
-    sha256 arm64_monterey: "b9dfa10c1e056616bc9d637c03617e13b4620b613678e0abc45af4d3869328d5"
-    sha256 arm64_big_sur:  "40984147835921a54fc6474ccb118b8c8ecf0886d8df0b9237cebc636abe4fdb"
-    sha256 ventura:        "c61ebdda50c654fec1fbf5661fbdd90f17b2ead5df10255b6a150370c6b25fbd"
-    sha256 monterey:       "f60548bf308d057615d804c8c57fe76bf9368e8ca73cf94f0c8cdf98d017340a"
-    sha256 big_sur:        "43289b749acef40ffc8a3e23d4dedc8573be1203f62dd4f481bb1ce01c271ecf"
-    sha256 catalina:       "dc1090d2da6c7c4ae491b361107103451314233e472d5bc868c05c4feb842076"
-    sha256 x86_64_linux:   "adefc39946df2174d113c47455430067180d639d88a2b97457f79c921791d827"
+    sha256 arm64_ventura:  "4c8a17f9ae4b4ff788f5dd7c84317574ddad8365b3437d970e197ad73afc9e24"
+    sha256 arm64_monterey: "4afc97e6ca3280b9321c666177db9cb781991732751117ac4093145c0915cc0f"
+    sha256 arm64_big_sur:  "ce2ddf85c1c7bb0a71e89ebef6b3eda8e6a0eba4d517a10d156b8f5c9d7d7770"
+    sha256 ventura:        "6c517f555ae8ad2ab3494f6d1cb87dda83fa387c81721fac2048a8c09798c828"
+    sha256 monterey:       "fdfe66b8ffcbfc4b6073600ef750a16bbeccdb48b236ccf422e6ee5873776a27"
+    sha256 big_sur:        "35b3fac5ac1c7323d8e8673f035ae6b81d8c75241b3f4cda021342dbb1dd96c0"
+    sha256 x86_64_linux:   "363ac65cf00eb26c0dff8b780bdc54e8277d64d20eb511d475c71f67dcf289af"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work

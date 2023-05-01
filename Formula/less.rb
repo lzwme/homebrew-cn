@@ -1,8 +1,8 @@
 class Less < Formula
   desc "Pager program similar to more"
   homepage "https://www.greenwoodsoftware.com/less/index.html"
-  url "https://www.greenwoodsoftware.com/less/less-608.tar.gz"
-  sha256 "a69abe2e0a126777e021d3b73aa3222e1b261f10e64624d41ec079685a6ac209"
+  url "https://www.greenwoodsoftware.com/less/less-632.tar.gz"
+  sha256 "6f71b2a9178ddad8a238259032f3c9d21929846ce453af2a77fc906ccc31d4d9"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,14 +11,13 @@ class Less < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "390f1b4652817cd10840047fced9f4accc4854ac1b4c8eaf70edcf7a63f291e5"
-    sha256 cellar: :any,                 arm64_monterey: "0c111d7d5f231c4b409d4e6441ebb1cfc40bdf440c1bd7d6fff11b1e16adfc31"
-    sha256 cellar: :any,                 arm64_big_sur:  "ecc9669f294fd8d3826f3c513590387a2dd37a248d4bd827c8301d857bf6cfa4"
-    sha256 cellar: :any,                 ventura:        "031ad93faffc4dad178a2708c638f6bf1c22609669006b06705221c75a152022"
-    sha256 cellar: :any,                 monterey:       "b5cf2d6c6e1a6c23d9086323c4363a022e1e2264dd4f0e1a287396beb88edced"
-    sha256 cellar: :any,                 big_sur:        "2d40fdc792b4aee7bc4016cb1daf3c14708c7f90f464fb49a5dd6f6f659809e8"
-    sha256 cellar: :any,                 catalina:       "5a785fbf1ac017df8814d9b86cd0fcdbacfdc4159e80da7ea738b1944cd1e9d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98769ef6e7ed3f87c9d90bf73666693fea66ebd91434a7e5b2982f7b8ef55244"
+    sha256 cellar: :any,                 arm64_ventura:  "ec148a98b3bbf400586712fb454a9fe00e0def2807277615056245c2fdf5f85e"
+    sha256 cellar: :any,                 arm64_monterey: "ee29efa71f72fe4521b5b6138b1a8893667a977d79e35215325b0b9323526eae"
+    sha256 cellar: :any,                 arm64_big_sur:  "2a583a15e8db2ea00ed0913dc0e6eb48f34e0fc0d741d60765a8c3529bb081b9"
+    sha256 cellar: :any,                 ventura:        "cb68ae94fab35996fb22ce3f5ddfb32b1cfd6186e82f42ed8d81f22bd611ddbb"
+    sha256 cellar: :any,                 monterey:       "984f1190303f16964fbc926d48035695acb02122a31030bd07a6bf9a5dc61407"
+    sha256 cellar: :any,                 big_sur:        "8bf48e3ec0cb0175ac65dd84ba268266b901784b1461570ab95d86855db9e9b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e1f29c37af072642b039f56642f8b86c728cd2ea47b175c4e170add3aeb5362"
   end
 
   head do

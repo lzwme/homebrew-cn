@@ -2,19 +2,19 @@ class Purescript < Formula
   desc "Strongly typed programming language that compiles to JavaScript"
   homepage "https://www.purescript.org/"
   # TODO: Try to switch `ghc@9.2` to `ghc` when purescript.cabal allows base>=4.17
-  url "https://hackage.haskell.org/package/purescript-0.15.8/purescript-0.15.8.tar.gz"
-  sha256 "a01c082333087acdd0a16e2c4141bed7d080d5c7c2388ac29934c3c4242cadc0"
+  url "https://hackage.haskell.org/package/purescript-0.15.9/purescript-0.15.9.tar.gz"
+  sha256 "952bf9478720df1830922d6bad4080d121d6912fc04542110598f359f4d73cc5"
   license "BSD-3-Clause"
   head "https://github.com/purescript/purescript.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "af316cc41048b5e9226d527c563b4760d1737301363dcc3436140627b1c5ded9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c4aed0aff428e3f616024b346ca336f72a48f1f0e8615ed6ab534f6f1936dcf8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ceec21c85985aac46ab4a67eba28d635f202fc9c9991ef92c935be27c4da356d"
-    sha256 cellar: :any_skip_relocation, ventura:        "ded3866996ba71efa15fca57681e2613c7366f695472d1ba1ffb66bb6fafe562"
-    sha256 cellar: :any_skip_relocation, monterey:       "5aed04eb3cef69d0f7a39460511f63d4e8b654fbfa00d321bfea3616611ac925"
-    sha256 cellar: :any_skip_relocation, big_sur:        "451d87044048aab4dce34b4d8df3ba1d5be8447bdf1c6a12c3e2ff3796e5af06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b3d325dfee9971fff223e7e9682ad7817661cf9d2bcc7538a2d71bad8a0d3ce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dd72e7c0c64ecb4ac252805ea28684a37ff142adabcf20fb9bc09727e6b004cf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "71991d423702456cdc46684650f8c78d543def0546ed6f957dc30f8b05971390"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b347de3220dda6d941c03240a6639269cf891b3b6e0d08d047b589b9ef939ede"
+    sha256 cellar: :any_skip_relocation, ventura:        "3b5e11beb16f9314982baa74332e016a64e96490f652ce3c53fa7140fae0a6bf"
+    sha256 cellar: :any_skip_relocation, monterey:       "4b9db4c4d8301357c061d7622c330aa573e20e23d1b767831e0f6152f3275c69"
+    sha256 cellar: :any_skip_relocation, big_sur:        "51bc84c2a6df972b20bc21680f5109d5dd130aba3da3dbc8dee40d5ed090048a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d75771ba9b18fbdd1c29b2a371ed851cd89b4021e139186930b1da6e8be1c24"
   end
 
   depends_on "ghc@9.2" => :build

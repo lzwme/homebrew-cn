@@ -4,6 +4,7 @@ class R < Formula
   url "https://cran.r-project.org/src/base/R-4/R-4.3.0.tar.gz"
   sha256 "45dcc48b6cf27d361020f77fde1a39209e997b81402b3663ca1c010056a6a609"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://cran.rstudio.com/banner.shtml"
@@ -11,13 +12,13 @@ class R < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "628d0b70c00823e47613aa5e28faa62fcc1452f9480ce727780592b63d562a93"
-    sha256 arm64_monterey: "39cf1714a684aa8c63479e10b84e2abebfa9cebce9827c6bf523b59c3552352e"
-    sha256 arm64_big_sur:  "97c8fe2ecf6fed72ae7c1c556c57595d6eb12f6fafbcf12614197e6e8470f927"
-    sha256 ventura:        "2ecb93040f887c673e18b70509a47b31efd61693c9f0c3c2b7bb01f85f02ced0"
-    sha256 monterey:       "deb22a63a2dcac1349c2d6c70f07da730338d0781cf8b75e148cd0ba14b8b311"
-    sha256 big_sur:        "c5922d37de4cf08dc98df794ffafbaaa565397b8da4ceb4ef560023b2e8b555b"
-    sha256 x86_64_linux:   "8c64e9569d4a1aad2183bf89f5575f12cf351468c3858719ec072d89bb695490"
+    sha256 arm64_ventura:  "25f69a425aabb9d197bbe5dffc478d3dcd5159d3f0eb6893e8dc5e38909536df"
+    sha256 arm64_monterey: "cf434a697bba943f45b4b913141fccc0ab963d04eb6ccbc8042578c8b3fe23fb"
+    sha256 arm64_big_sur:  "d4031ffca1d15cf720172a151b18ce61250e669555fc2d57b862ebb1ec9571a5"
+    sha256 ventura:        "23f4da10d105d8c4132ecdc1c68a2898c95c1178f6479e28fcdfcb701443ff45"
+    sha256 monterey:       "88412b42a48403a77ab054ce5345b80202873fd77a1abb634885c0464fab991d"
+    sha256 big_sur:        "8413cdeb7716daf3df7a9ddaa118c137685a2b0898e74b5454f05d45a1597f75"
+    sha256 x86_64_linux:   "2c9fe0ec00927c830ff2ff1e65f64c5443354b5d5befe388bcaf0a74fcc126ad"
   end
 
   depends_on "pkg-config" => :build

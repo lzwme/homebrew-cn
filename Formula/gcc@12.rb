@@ -1,35 +1,24 @@
-class Gcc < Formula
+class GccAT12 < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
+  url "https://ftp.gnu.org/gnu/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz"
+  sha256 "e549cf9cf3594a00e27b6589d4322d70e0720cdd213f39beb4181e06926230ff"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
-  head "https://gcc.gnu.org/git/gcc.git", branch: "master"
-
-  stable do
-    url "https://ftp.gnu.org/gnu/gcc/gcc-13.1.0/gcc-13.1.0.tar.xz"
-    mirror "https://ftpmirror.gnu.org/gcc/gcc-13.1.0/gcc-13.1.0.tar.xz"
-    sha256 "61d684f0aa5e76ac6585ad8898a2427aade8979ed5e7f85492286c4dfc13ee86"
-
-    # Branch from the Darwin maintainer of GCC, with a few generic fixes and
-    # Apple Silicon support, located at https://github.com/iains/gcc-13-branch
-    patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/5c206c47/gcc/gcc-13.1.0.diff"
-      sha256 "cb4e8a89387f748a744da0273025d0dc2e3c76780cc390b18ada704676afea11"
-    end
-  end
 
   livecheck do
     url :stable
-    regex(%r{href=["']?gcc[._-]v?(\d+(?:\.\d+)+)(?:/?["' >]|\.t)}i)
+    regex(%r{href=["']?gcc[._-]v?(12(?:\.\d+)+)(?:/?["' >]|\.t)}i)
   end
 
   bottle do
-    sha256                               arm64_ventura:  "d2b21a257c73e9b8f9c6bc03e6330ea8ba9fb3e7cdb9eb945d7ff7d96ba9708c"
-    sha256                               arm64_monterey: "5405f3b1ecdabb68e161308f35d72af907af21694a0e2b67f10edb25b2dd8f90"
-    sha256                               arm64_big_sur:  "cc92fced3516bc72b69e31b0495fe416f206b540be02f1c817db96afbcc38f28"
-    sha256                               ventura:        "3abd8c2c88a8e74b5df5c44f9c151ff7e760cf705307ecf3c95762492e777f1e"
-    sha256                               monterey:       "f9cbc7eb14781df9228518a2d02590941206947e7dc419c0b232d523f39b1475"
-    sha256                               big_sur:        "2eb458ed309ea4fa9451ab547fa3d797bd523ba4f50f01d5c997212109b74e5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cca77a5d6625d3bb711ce40551751974d4cb5c74306329fc2fc8cdcade2ef564"
+    sha256                               arm64_ventura:  "ed01035d5aa67d529bc9f59bd4d0a58760528b3703ac92c99866a3eaab04b939"
+    sha256                               arm64_monterey: "366e9722a4bd8d360b4d5b77da2ea853b1bd6a35f175c4e70084f29b063cd1f1"
+    sha256                               arm64_big_sur:  "9766ca1d303b098cd467f3b2d5d29d25991b2482747b83c943c171212d77a814"
+    sha256                               ventura:        "43167f0316a784e78233088b3f0af0856a984dc8290f32fada328e64f3dcd569"
+    sha256                               monterey:       "e9b857887f1dfb38910a372bb12501e89e16e067ad64eea46443371e5f38997d"
+    sha256                               big_sur:        "1480bd23d3d8d182c04fa6b5552ed70192180335d3b44a5ef5e4c7ca950cb3a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "86dbbcae4bdf63128bc269b0b2542f315254c9545fb2d32c16936788718e986b"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -51,12 +40,11 @@ class Gcc < Formula
   # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib
   cxxstdlib_check :skip
 
-  def version_suffix
-    if build.head?
-      "HEAD"
-    else
-      version.major.to_s
-    end
+  # Branch from the Darwin maintainer of GCC, with a few generic fixes and
+  # Apple Silicon support, located at https://github.com/iains/gcc-12-branch
+  patch do
+    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/1d184289/gcc/gcc-12.2.0-arm.diff"
+    sha256 "a7843b5c6bf1401e40c20c72af69c8f6fc9754ae980bb4a5f0540220b3dcb62d"
   end
 
   def install
@@ -71,15 +59,14 @@ class Gcc < Formula
 
     pkgversion = "Homebrew GCC #{pkg_version} #{build.used_options*" "}".strip
 
-    # Use `lib/gcc/current` to provide a path that doesn't change with GCC's version.
     args = %W[
       --prefix=#{opt_prefix}
-      --libdir=#{opt_lib}/gcc/current
+      --libdir=#{opt_lib}/gcc/#{version.major}
       --disable-nls
       --enable-checking=release
       --with-gcc-major-version-only
       --enable-languages=#{languages.join(",")}
-      --program-suffix=-#{version_suffix}
+      --program-suffix=-#{version.major}
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-mpfr=#{Formula["mpfr"].opt_prefix}
       --with-mpc=#{Formula["libmpc"].opt_prefix}
@@ -127,19 +114,10 @@ class Gcc < Formula
       mv Dir[Pathname.pwd/"../instdir/#{opt_prefix}/*"], prefix
     end
 
-    bin.install_symlink bin/"gfortran-#{version_suffix}" => "gfortran"
-
-    # Provide a `lib/gcc/xy` directory to align with the versioned GCC formulae.
-    # We need to create `lib/gcc/xy` as a directory and not a symlink to avoid `brew link` conflicts.
-    (lib/"gcc"/version_suffix).install_symlink (lib/"gcc/current").children
-
-    # Only the newest brewed gcc should install gfortan libs as we can only have one.
-    lib.install_symlink lib.glob("gcc/current/libgfortran.*") if OS.linux?
-
     # Handle conflicts between GCC formulae and avoid interfering
     # with system compilers.
     # Rename man7.
-    man7.glob("*.7") { |file| add_suffix file, version_suffix }
+    man7.glob("*.7") { |file| add_suffix file, version.major }
     # Even when we disable building info pages some are still installed.
     info.rmtree
 
@@ -157,7 +135,7 @@ class Gcc < Formula
 
   def post_install
     if OS.linux?
-      gcc = bin/"gcc-#{version_suffix}"
+      gcc = bin/"gcc-#{version.major}"
       libgcc = Pathname.new(Utils.safe_popen_read(gcc, "-print-libgcc-file-name")).parent
       raise "command failed: #{gcc} -print-libgcc-file-name" if $CHILD_STATUS.exitstatus.nonzero?
 
@@ -216,7 +194,7 @@ class Gcc < Formula
       #   * `-L#{HOMEBREW_PREFIX}/lib` instructs gcc to find the rest
       #     brew libraries.
       # Note: *link will silently add #{libdir} first to the RPATH
-      libdir = HOMEBREW_PREFIX/"lib/gcc/current"
+      libdir = HOMEBREW_PREFIX/"lib/gcc/#{version.major}"
       specs.write specs_string + <<~EOS
         *cpp_unique_options:
         + -isysroot #{HOMEBREW_PREFIX}/nonexistent #{system_header_dirs.map { |p| "-idirafter #{p}" }.join(" ")}
@@ -244,7 +222,7 @@ class Gcc < Formula
         return 0;
       }
     EOS
-    system "#{bin}/gcc-#{version_suffix}", "-o", "hello-c", "hello-c.c"
+    system "#{bin}/gcc-#{version.major}", "-o", "hello-c", "hello-c.c"
     assert_equal "Hello, world!\n", shell_output("./hello-c")
 
     (testpath/"hello-cc.cc").write <<~EOS
@@ -259,7 +237,7 @@ class Gcc < Formula
         return 0;
       }
     EOS
-    system "#{bin}/g++-#{version_suffix}", "-o", "hello-cc", "hello-cc.cc"
+    system "#{bin}/g++-#{version.major}", "-o", "hello-cc", "hello-cc.cc"
     assert_equal "Hello, world!\n", shell_output("./hello-cc")
 
     (testpath/"test.f90").write <<~EOS
@@ -273,7 +251,7 @@ class Gcc < Formula
       write(*,"(A)") "Done"
       end
     EOS
-    system "#{bin}/gfortran", "-o", "test", "test.f90"
+    system "#{bin}/gfortran-#{version.major}", "-o", "test", "test.f90"
     assert_equal "Done\n", shell_output("./test")
   end
 end

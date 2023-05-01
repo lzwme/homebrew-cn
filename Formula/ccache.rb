@@ -7,13 +7,14 @@ class Ccache < Formula
   head "https://github.com/ccache/ccache.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "1256f221c0db2dce9111077378a386c31aae88e030882ea4890da8bb9a15aa76"
-    sha256 cellar: :any,                 arm64_monterey: "18f910678dd3c957307423cf70fd637364be509138c386b2aee817efbd933a82"
-    sha256 cellar: :any,                 arm64_big_sur:  "5ad50d725a25c3438dda4d9f29e0338eb45402d0f02578fe96a0b8b30f2db65e"
-    sha256 cellar: :any,                 ventura:        "36c1d3385e5b5fd734f5b75e7224bdd8171e86a333b7b69c76bdbe7a7f795883"
-    sha256 cellar: :any,                 monterey:       "50e5c9744229a7bc4da0467f7b4348d3b671b4deded2ff9cfd801ca48ebe5aa1"
-    sha256 cellar: :any,                 big_sur:        "85f2346f9e95a3befa6f58a9b4085b2aa3049a1894529947a1f19eb4000ebcfb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfb0da0d60457bd690022fa805d1af86ac69b8bcf1061f3f5ae9f031f161250f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "169a113a800c572fd6327ddf7e0ba798ea7a252a947d93730bf877fc688fbb3c"
+    sha256 cellar: :any,                 arm64_monterey: "37400b77101662769aad765faf54d6fc1c1b5321f352b441e7dbea9f3d85cfc5"
+    sha256 cellar: :any,                 arm64_big_sur:  "7f220e58ed1b08de3a2a25d102e2a89ff15daa26340de7e100f0948709384fe7"
+    sha256 cellar: :any,                 ventura:        "6f120f091a57612134034a357e783d9900c8e546d111de9f2f042f9155c2e78c"
+    sha256 cellar: :any,                 monterey:       "e3522c670936b8ffb22dbdaca4a47395adebfb0b00c7850603c0bf84abca642f"
+    sha256 cellar: :any,                 big_sur:        "dcdabe40cc762841537ee35aaf2da139b1e5519818f61011f8266403f1405194"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8240dae4efc4aaaf8bdee47b1ada215a61acfd05bc7a6e5b91f11a0004a76043"
   end
 
   depends_on "asciidoctor" => :build
@@ -48,13 +49,13 @@ class Ccache < Formula
       cc
       gcc gcc2 gcc3 gcc-3.3 gcc-4.0
       gcc-4.2 gcc-4.3 gcc-4.4 gcc-4.5 gcc-4.6 gcc-4.7 gcc-4.8 gcc-4.9
-      gcc-5 gcc-6 gcc-7 gcc-8 gcc-9 gcc-10 gcc-11 gcc-12
+      gcc-5 gcc-6 gcc-7 gcc-8 gcc-9 gcc-10 gcc-11 gcc-12 gcc-13
       c++ c++3 c++-3.3 c++-4.0
       c++-4.2 c++-4.3 c++-4.4 c++-4.5 c++-4.6 c++-4.7 c++-4.8 c++-4.9
-      c++-5 c++-6 c++-7 c++-8 c++-9 c++-10 c++-11 c++-12
+      c++-5 c++-6 c++-7 c++-8 c++-9 c++-10 c++-11 c++-12 c++-13
       g++ g++2 g++3 g++-3.3 g++-4.0
       g++-4.2 g++-4.3 g++-4.4 g++-4.5 g++-4.6 g++-4.7 g++-4.8 g++-4.9
-      g++-5 g++-6 g++-7 g++-8 g++-9 g++-10 g++-11 g++-12
+      g++-5 g++-6 g++-7 g++-8 g++-9 g++-10 g++-11 g++-12 g++-13
       i686-w64-mingw32-gcc i686-w64-mingw32-g++
       x86_64-w64-mingw32-gcc x86_64-w64-mingw32-g++
     ].each do |prog|

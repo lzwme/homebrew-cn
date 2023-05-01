@@ -6,6 +6,7 @@ class AstrometryNet < Formula
   url "https://ghproxy.com/https://github.com/dstndstn/astrometry.net/releases/download/0.93/astrometry.net-0.93.tar.gz"
   sha256 "9a4854c87210422e113b8f6855912a38f0b187526171364ee2a889d36c674d70"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,13 +14,13 @@ class AstrometryNet < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "fcb9b79443432232792b10a4c5a47bdb50d1475fd1f1ec29f35428ae1f3ddf9b"
-    sha256 cellar: :any,                 arm64_monterey: "e100c8672e261886fa944a5e07ae664c6cc125b88abc0e408b314135cd0a0644"
-    sha256 cellar: :any,                 arm64_big_sur:  "1bc3fe27cbe434b0e36940984df1cc57ef664fc5b7a50932e974a19d18ac11be"
-    sha256 cellar: :any,                 ventura:        "3250164d38bdca155ab140cbed0d3e1c3af9adb01d92e4c0df132c74a22ba14f"
-    sha256 cellar: :any,                 monterey:       "0251706bcea94e97119486b8249b34e8ff3ec27992732919208b67730955f395"
-    sha256 cellar: :any,                 big_sur:        "75654199ace88853110e1d06daa41c46f933c4798c7d8c4275fdbff9a60cb81a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80d70c566fcc127038285f15d9ae1602fd1321aa39e4c169a433628c1b96ab4a"
+    sha256 cellar: :any,                 arm64_ventura:  "12fc7d54b0c9425a70c226bc9b729a03b2451f0cd7005d32f9e9be56af2927af"
+    sha256 cellar: :any,                 arm64_monterey: "3dfc93849a54328dea1fe62653a198921b2fd892467d28ffb50ef6efd0fa3698"
+    sha256 cellar: :any,                 arm64_big_sur:  "23b1e06344912a5d848c5c9e0ebe20ead0d8639a992ef314c0ae8bd869749a6d"
+    sha256 cellar: :any,                 ventura:        "bad87fd252b1b308072b2712e0ec99f4a869205b08395a35b8a967188354502f"
+    sha256 cellar: :any,                 monterey:       "8c74b5aeb9dc91712fab3b9640da6e4a8688515520e556775bd278c5cce5dd33"
+    sha256 cellar: :any,                 big_sur:        "d3a9cb78bcc8cde1b4f7c2f76989e707c76b6d4e89c172d30cb86df7d3f0a782"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8c12d0a3b25a7c9adee49bbaff25a3703cc082bd9d6914b20ca485204855353"
   end
 
   depends_on "pkg-config" => :build

@@ -16,7 +16,7 @@ class Rfcmarkup < Formula
 
   # Requires Python2.
   # https://github.com/Homebrew/homebrew-core/issues/93940
-  deprecate! date: "2022-04-23", because: :unsupported
+  disable! date: "2023-04-30", because: :unsupported
 
   depends_on :macos # Due to Python 2
 

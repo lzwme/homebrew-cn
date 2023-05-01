@@ -5,6 +5,7 @@ class Mpich < Formula
   mirror "https://fossies.org/linux/misc/mpich-4.1.1.tar.gz"
   sha256 "ee30471b35ef87f4c88f871a5e2ad3811cd9c4df32fd4f138443072ff4284ca2"
   license "mpich2"
+  revision 1
 
   livecheck do
     url "https://www.mpich.org/static/downloads/"
@@ -12,13 +13,13 @@ class Mpich < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e04effdf4808868b13d7266342f8cf5d623bbf25a75131d9136c5d92161767b9"
-    sha256 cellar: :any,                 arm64_monterey: "0405a53cbd8a5f88d3bba1c3c9b8345a5a6917c275b6d0e8f6bb05ebb7a2b745"
-    sha256 cellar: :any,                 arm64_big_sur:  "2e1a1bb67ee2fabaa2f52016991c20e8f53460827975ba5c1b78b1b63faa1d4c"
-    sha256 cellar: :any,                 ventura:        "56244601d7e600b770c9ddb6f708d28eada16b86d2be6d8221a753cd85a5296c"
-    sha256 cellar: :any,                 monterey:       "b32aed7219b25627e96bf5ef5424f67670fef14faf5e3c6696636347d18d883e"
-    sha256 cellar: :any,                 big_sur:        "2664fedfb37f20ee7d2e678f40cfebb617197bbcf4cc44530380f878c0ced1dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b87a6065195986091a7ac0b55fc52db1cee70a6af76d48293a791a5f048065b7"
+    sha256 cellar: :any,                 arm64_ventura:  "4674c83c041fcd9633eb9c66cd72389eaf5f6e1d4df2b789e2570286cf1b2ef8"
+    sha256 cellar: :any,                 arm64_monterey: "47f78ab4052d2fe02d7dd85b08ef534679b6f4ae746629fe5af271238332a960"
+    sha256 cellar: :any,                 arm64_big_sur:  "8696cbe53e021c9ec6512328122c2755a677613b6da5063c571e924a370a52f5"
+    sha256 cellar: :any,                 ventura:        "279543de4f0b951cf9881a63f06f6e3327b0b09281398269e85e4111b07c04e7"
+    sha256 cellar: :any,                 monterey:       "8d5a49a73c048891674bd88d0300e8e89699472e1e97fd973a7b836f9392b1a6"
+    sha256 cellar: :any,                 big_sur:        "17d53a8f4a42767e5c052c04ab6ba4b79eb739a254f05575aa617d9586c272f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab5ed66f299946027ea89c01d715dcc1c2b3a4a757093276a70676ae25061614"
   end
 
   head do
@@ -60,9 +61,9 @@ class Mpich < Formula
       --enable-romio
       --enable-shared
       --with-pm=hydra
-      FC=gfortran-#{Formula["gcc"].any_installed_version.major}
+      F77=gfortran
+      FC=gfortran
       FCFLAGS=-fallow-argument-mismatch
-      F77=gfortran-#{Formula["gcc"].any_installed_version.major}
       --disable-silent-rules
       --prefix=#{prefix}
       --mandir=#{man}

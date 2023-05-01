@@ -1,18 +1,18 @@
 class Libsoup < Formula
   desc "HTTP client/server library for GNOME"
   homepage "https://wiki.gnome.org/Projects/libsoup"
-  url "https://download.gnome.org/sources/libsoup/3.4/libsoup-3.4.1.tar.xz"
-  sha256 "530b867b1b166cb9bca2750f1d15e5187318b5d948efb81d5899af3d75614504"
+  url "https://download.gnome.org/sources/libsoup/3.4/libsoup-3.4.2.tar.xz"
+  sha256 "78c8fa37cb152d40ec8c4a148d6155e2f6947f3f1602a7cda3a31ad40f5ee2f3"
   license "LGPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "bff3499b52d37e8157bad9cfa7a3adc99304efe1a4d8ae8f338c222c99e991ed"
-    sha256 arm64_monterey: "dc4f4dbf5ccbcc6fe1090f5f00610fae055f4b0c923a2204c47f3ddca61cc480"
-    sha256 arm64_big_sur:  "126947de5d4c6c5eb8ed86aaaed544bd5c1ae1c6bdbf75c79ce57de92b07cde8"
-    sha256 ventura:        "89d5cd114db49e39fb0e093154ae6b86f32e2ec4643125bbcc5c28faf036e965"
-    sha256 monterey:       "64045efd4319fe83a4c5e671a4d0288cefbd2b5a5848fdd11848843ca5c1012c"
-    sha256 big_sur:        "38f649ac745aead0589526a2caa4242052f2853ac314a599893372693382969b"
-    sha256 x86_64_linux:   "4b40d10f34fbabb0a3a67d8f12820b5a0e313a5fc6876fcc2ebc0066b2f42619"
+    sha256 arm64_ventura:  "7364c4e47eea24b6ea67db78d83815ae4c9e2f8bdea0e8d4a0dea40350e0245c"
+    sha256 arm64_monterey: "bdb31462cdf23d34daeada8ccc6e1edbd5c4836ac7daab0e93b8a060643e6a45"
+    sha256 arm64_big_sur:  "67ec4c878265ca35fa502455625450b25a19a862993de656ad156b6c7ba1192f"
+    sha256 ventura:        "1f3458517efe283f12cb59cc30ade2aa3c9d725774c53354c61f273f57d3cd33"
+    sha256 monterey:       "518ca7b67460550fd71f19c1f0cf52e3524c4dc4d6b14830ab0127c7db665bfd"
+    sha256 big_sur:        "8592dfba0eea66d9c36bea2e73f0cdf3ee53b909fa8e1681db8c18b3dd9eab42"
+    sha256 x86_64_linux:   "d4475a310a89f648f50a4eaee7fcd451115fcbb97c41cf95f20d262bc6cf97fb"
   end
 
   depends_on "gobject-introspection" => :build
@@ -30,11 +30,9 @@ class Libsoup < Formula
   uses_from_macos "sqlite"
 
   def install
-    mkdir "build" do
-      system "meson", *std_meson_args, ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do

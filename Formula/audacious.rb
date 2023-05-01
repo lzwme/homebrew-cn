@@ -2,15 +2,14 @@ class Audacious < Formula
   desc "Lightweight and versatile audio player"
   homepage "https://audacious-media-player.org/"
   license "BSD-2-Clause"
-  revision 1
 
   stable do
-    url "https://distfiles.audacious-media-player.org/audacious-4.3.tar.bz2"
-    sha256 "27584dc845c7e70db8c9267990945f17322a1ecc80ff8b452e9ca916a0ce9091"
+    url "https://distfiles.audacious-media-player.org/audacious-4.3.1.tar.bz2"
+    sha256 "85e9e26841505b51e342ee72a2d05f19bef894f567a029ebb3f3e0c1adb42042"
 
     resource "plugins" do
-      url "https://distfiles.audacious-media-player.org/audacious-plugins-4.3.tar.bz2"
-      sha256 "662ef6c8c4bd70d0f35fd1c5f08b91549b9436638b65f8a1a33956b09df89fc6"
+      url "https://distfiles.audacious-media-player.org/audacious-plugins-4.3.1.tar.bz2"
+      sha256 "2dea26e3af583a2d684df240b27b2b2932bcd653df4db500a85f4fe5d5fdc8a6"
     end
   end
 
@@ -20,13 +19,13 @@ class Audacious < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "e4929eefb82d8314c37c828c9984bf93bc466794037428ea00ef1d3628a39789"
-    sha256 arm64_monterey: "cd47f0af9709cefb718e215c78246db9bc5373bd1bab8c3c3ecec6d57b527eb4"
-    sha256 arm64_big_sur:  "7831956e30eed00b872abb7fa2d2cd601cf5cf9b95c64ab6778adbb37b7fa879"
-    sha256 ventura:        "6fe668042ac57eb2be0354f6d1d25030178c515d52adaa6ea099ad5af9d4fa66"
-    sha256 monterey:       "0cf73a457021285efbb1e280a37bba970a88b194b8c3b9102f168e7773812d28"
-    sha256 big_sur:        "5eeb05a9095f43865dcf5edb43f0f195fb3b6883ba7946286df9380db1d0a857"
-    sha256 x86_64_linux:   "de76769390b18483bcd56119fe63b53f696b6121115f891193f06468465e1125"
+    sha256 arm64_ventura:  "25f3142a4ca788ca2b4d57853ac8d98c4ee1d8229b728462af226323720339b8"
+    sha256 arm64_monterey: "1f5a9d58989dbcdf06ae5732091ee93ebc6b29398d8cea949cf30dd7c90ddae3"
+    sha256 arm64_big_sur:  "c1e294e3fbe48409e07f1b924003f764bb70943ff1added3bb4d0dafe75b113d"
+    sha256 ventura:        "0f3c9cacff3ff240a13e88f08055f3a3bfc0cfda6ba46200286f355f5f421fca"
+    sha256 monterey:       "23828385f46ff08c4149b36923b564d6a2696e74ebc48d86a4ddbd3da5b1639e"
+    sha256 big_sur:        "ab1f11e873c42f1f75645724dffaa80c828c6d26532383c5c69fc96f13036a8c"
+    sha256 x86_64_linux:   "d51a93f3d472cf7bd0814dda1f99ab25b4bbdf7fd01c886150aadbeda1b3dad7"
   end
 
   head do

@@ -14,6 +14,7 @@ class Wv < Formula
     sha256 arm64_ventura:  "af7ed2ef919eb856fd37e52bce5d7d5ff8ed39785969aeb565b07c62160807c9"
     sha256 arm64_monterey: "a96f5e5c182887f42939ab725f79d4a9f31801d3f92a19da1e08da6477edcfe7"
     sha256 arm64_big_sur:  "36bac1865cab3a50dafdf0477bb914d6c9df08c386b5586951f6681e5d5f73ad"
+    sha256 ventura:        "96dd06b5837281f09cbb87bc62ba805285c1ca2c960420f6903962618755d92e"
     sha256 monterey:       "376a60947357ebe4662e6f197745da5c76e75c0a5559456711f95b138519eba6"
     sha256 big_sur:        "6e6499eca2f6ab68a58a4a0548ac4954eec052d20558dc1bd834cc4bb030e0cc"
     sha256 catalina:       "c617efb5a72bf2dbca4a3c85fdb59460ce6aaaf21b1f1db1e89f53ac3fc07224"

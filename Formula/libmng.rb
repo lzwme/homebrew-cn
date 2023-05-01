@@ -1,23 +1,20 @@
 class Libmng < Formula
   desc "MNG/JNG reference library"
-  # Use Homebrew curl to work around audit failure from TLS 1.3-only homepage.
-  # TODO: The `using: :homebrew_curl` can be removed once default curl on all
-  # CI runners support TLS 1.3 or if there is a way to skip homepage audit in CI.
-  homepage "https://libmng.com/"
-  url "https://downloads.sourceforge.net/project/libmng/libmng-devel/2.0.3/libmng-2.0.3.tar.gz", using: :homebrew_curl
+  homepage "https://sourceforge.net/projects/libmng/"
+  url "https://downloads.sourceforge.net/project/libmng/libmng-devel/2.0.3/libmng-2.0.3.tar.gz"
   sha256 "cf112a1fb02f5b1c0fce5cab11ea8243852c139e669c44014125874b14b7dfaa"
   license "Zlib"
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "5f011ac978c211c58be07ecb0a9cf4f5a563ebde089a40deff5116e0ad7ee86b"
-    sha256 cellar: :any,                 arm64_monterey: "661f94a4d7c4f68ff415bb5c184c8310d7af1eaf139159ba4163e19a20a5d6f0"
-    sha256 cellar: :any,                 arm64_big_sur:  "bae9b452e72bafc0a8385457cc0d5f914b34905415f26b24b2e4da510658e7ce"
-    sha256 cellar: :any,                 ventura:        "840ae5524a52327b13e088239491e115688e6de3b543cef073ae3b7f2d0b0015"
-    sha256 cellar: :any,                 monterey:       "d6900fc7456b8bdb003af4da81629691f4a0c566140ec3f8a5215dbc686a6e6d"
-    sha256 cellar: :any,                 big_sur:        "89eaf6e78bd174288fab321b22481950f650be157d487fd7127c7e24a2c533c1"
-    sha256 cellar: :any,                 catalina:       "47e0d9e9d758d67a26716d436884fb7273298c202b7172610e1ceb0d394a6146"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "735633ed1aa16ea88666586c80c7578bc9a6b052b83d4ce7fa81086156bd5d47"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "746b8bbf3aa5373c6545ce90fca5e84af114ecfce0f2b0e35fd7ec4c9853b15a"
+    sha256 cellar: :any,                 arm64_monterey: "554dd35c3a73f040a23f212cbc64c0b9214b4cc4bfb9031341a71b695d64a4ec"
+    sha256 cellar: :any,                 arm64_big_sur:  "f48583469a9c65f5f9733d43e2bbea2d004228d45ff0b7cdd101b4c44f05dfc5"
+    sha256 cellar: :any,                 ventura:        "68e6c1de7f5abe3668f229a99bde8ec9425d9f9136275c8218bf58b6839dff63"
+    sha256 cellar: :any,                 monterey:       "6646b4ceca926b35750ef1abcfb15744ca286698f86b3c7407f8b5b9dfafa06a"
+    sha256 cellar: :any,                 big_sur:        "a0cf8d4fb509d251ea7a559c1a5814466bd20fef027646c8cf1715ca85d5beea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10b82f077fcb7b44e8183c31aa73a5b6df139bcbba9becfd44222f8d29e0ceeb"
   end
 
   depends_on "jpeg-turbo"

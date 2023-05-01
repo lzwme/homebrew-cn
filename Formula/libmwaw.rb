@@ -1,20 +1,18 @@
 class Libmwaw < Formula
   desc "Library for converting legacy Mac document formats"
   homepage "https://sourceforge.net/p/libmwaw/wiki/Home/"
-  url "https://downloads.sourceforge.net/project/libmwaw/libmwaw/libmwaw-0.3.21/libmwaw-0.3.21.tar.xz"
-  sha256 "e8750123a78d61b943cef78b7736c8a7f20bb0a649aa112402124fba794fc21c"
+  url "https://downloads.sourceforge.net/project/libmwaw/libmwaw/libmwaw-0.3.22/libmwaw-0.3.22.tar.xz"
+  sha256 "a1a39ffcea3ff2a7a7aae0c23877ddf4918b554bf82b0de5d7ce8e7f61ea8e32"
   license any_of: ["LGPL-2.1-or-later", "MPL-2.0"]
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "e65d2c7d972499befc8ffddd4640604a0205ab0a87ce0184e3407269a133347b"
-    sha256 cellar: :any,                 arm64_monterey: "6ffaa69023d1fb57fea42045e747e6df08336b1f00277fd1697c4480523533df"
-    sha256 cellar: :any,                 arm64_big_sur:  "a4c331f83eb77f6bd74a828f984c376be9a916e7671946e299f7aeb347562d02"
-    sha256 cellar: :any,                 ventura:        "fac6e29537af45eb097a6d18a263a0f4285661383cc8a82101d01c6b7ab287ae"
-    sha256 cellar: :any,                 monterey:       "d20dccf2c767fceea530bc66a1c0c1631a8961245d627ef806b060781bc7f4b4"
-    sha256 cellar: :any,                 big_sur:        "75d8edfd8ec17fdb6ca028ef30d183200539d8a47165fe0debfe27827eb4d081"
-    sha256 cellar: :any,                 catalina:       "4966ab87822fed4a14a231116d3c4f84e17b40b1e632e353d0161976e4b151cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "646ae7bc535dc1b1ee19ce42ee1a438ea4adde05af0fb873048f41af857e108b"
+    sha256 cellar: :any,                 arm64_ventura:  "14c3ef9b89eabb6d8f579cd6b4fc6b10aff80157395e25f5f4032c365e35814c"
+    sha256 cellar: :any,                 arm64_monterey: "22010af06baf85faaa647b36eab334caa1f097cbe8f66d60c77bb745ce70bcd9"
+    sha256 cellar: :any,                 arm64_big_sur:  "02d9d169c112c585d2c8cfaaf1406a66bb6bb5a5bd909a2e842e9e5f5b6c6aee"
+    sha256 cellar: :any,                 ventura:        "b62fd5d2f18f6f8248baef2454e48bedeb6a595b4e9eeed40f90fcf6c22722a0"
+    sha256 cellar: :any,                 monterey:       "79ed34d639601c2afd3bcf9c573635f5f43826623a82fc931d64ada62fd632fd"
+    sha256 cellar: :any,                 big_sur:        "9830e2b0688157862cc7c2345fce55ae60955c3cca0c143fef2ab582a5d6d348"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f6f70031a248697ceaaaf2b4626511400904de27cac8f6c441196a6bf05ef1c"
   end
 
   depends_on "pkg-config" => :build
