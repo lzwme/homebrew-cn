@@ -2,20 +2,20 @@ class Graphviz < Formula
   desc "Graph visualization software from AT&T and Bell Labs"
   homepage "https://graphviz.org/"
   url "https://gitlab.com/graphviz/graphviz.git",
-      tag:      "8.0.4",
-      revision: "a2a825846905f05e9b6be4dfaa87c9f96cb43b15"
+      tag:      "8.0.5",
+      revision: "7bdda21f9e7877c2af653f82246bc4f62151b6a2"
   license "EPL-1.0"
   version_scheme 1
   head "https://gitlab.com/graphviz/graphviz.git", branch: "main"
 
   bottle do
-    sha256 arm64_ventura:  "94e817aec8e7b9c2236dc4efd15b30859061ddefd0e7b9ec851c612308da510c"
-    sha256 arm64_monterey: "2cb7f7d3faae05476ee6a6513ba6bd03150223728f81c4befc39ee9e3b7708ea"
-    sha256 arm64_big_sur:  "5abbd090650d5fe979b28058effec41c26dfc3b4ed868913388b8430faba4b2d"
-    sha256 ventura:        "4e619c97031b2c51c2a486173827b5ace9086800a922a67a8d99386a575eb03c"
-    sha256 monterey:       "109e60acbe344e8d5224c9582fd641cbf694355f0f6259f8d3faf89e21030b31"
-    sha256 big_sur:        "c26d986425cbfaf63083f2d1240f98f8fecd0ac8c2441efdd0e5eb37d344f3ab"
-    sha256 x86_64_linux:   "7feb8c0ec323db3cafb0c70d09f5999a7646e05126d853fbfda4dfc56bebb827"
+    sha256 arm64_ventura:  "d9351344fe61bdb7f13f7feb1c945e24aae266391d73589560e191602f87557f"
+    sha256 arm64_monterey: "7d46d02c8d06b5b95289d3a9f7a85c06b5b65e354c54d36d043155778280c2c3"
+    sha256 arm64_big_sur:  "88c22a66b8affffe80721b4e245d5411e10ef48dff1ec5031910cf4a4f70c7e0"
+    sha256 ventura:        "48a715d0a65907dbc07ce82d92da156d569476dff15b3b9301232e99430fbeba"
+    sha256 monterey:       "21dedd997a0fc0a32b8e41ba64627668d144622775421e475ce0e9dda468d853"
+    sha256 big_sur:        "4cada6d6a7344b0a77ef9948861df661f0c7c13de9264eaa2c7cb6e3a26016d1"
+    sha256 x86_64_linux:   "7e44572dcffd7f2538725ad2efb4743777d17e4eb44a58110d5fb9cf6af41da1"
   end
 
   depends_on "autoconf" => :build

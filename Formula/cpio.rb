@@ -1,30 +1,22 @@
 class Cpio < Formula
   desc "Copies files into or out of a cpio or tar archive"
   homepage "https://www.gnu.org/software/cpio/"
-  url "https://ftp.gnu.org/gnu/cpio/cpio-2.13.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/cpio/cpio-2.13.tar.bz2"
-  sha256 "eab5bdc5ae1df285c59f2a4f140a98fc33678a0bf61bdba67d9436ae26b46f6d"
+  url "https://ftp.gnu.org/gnu/cpio/cpio-2.14.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/cpio/cpio-2.14.tar.bz2"
+  sha256 "fcdc15d60f7267a6fc7efcd6b9db7b6c8966c4f2fbbb964c24d41336fd3f2c12"
   license "GPL-3.0-or-later"
-  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a52647dfa0fc91821508e340b67e09ddb7827b66644ef4006df040502dc5f249"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f22c470e6b85be477298907f64e9d6c0c8261d81f244ee9f7977b37f64bc2d53"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5f0f5625adf815f5dcbce9016b20df0ea0f41475343954e057422f9bd006ab87"
-    sha256 cellar: :any_skip_relocation, ventura:        "cc465355f48db5e8ebc6f67682cfaaa8db999bdd59980999808a3dfeba5ba92d"
-    sha256 cellar: :any_skip_relocation, monterey:       "1b04d03bdfdb091451d3c6602e7dfbefe18c3a719c5382c6636245b9d5403c91"
-    sha256 cellar: :any_skip_relocation, big_sur:        "dc6d56c513f95660d835533ad45717ac448767692216f22f39971e28da045bb0"
-    sha256 cellar: :any_skip_relocation, catalina:       "63775ad863bde22691bf678e67982fbb21488c2e86843133bd34461aa5a61586"
-    sha256                               x86_64_linux:   "42071ea523978d2b2ea5a5129cb29084fef728f270577709fc1595d5a8cfbef2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "71ccaa3f3733ddd2a6ccd886120e7cdca68b775ac2615d46cf99902df6f65417"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1b6dc737f78221ccbcbef7ddf0f6c5fb345b8db86cfa32f6f64be37b9556dd50"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1b4544de5d652bff8b6cc48a0e5396e271cfca0e089e7d3a1029e277cdfc7ddd"
+    sha256 cellar: :any_skip_relocation, ventura:        "b4d80de07725c95bd4454c578ad37ca73c506443ef200c10690da2799ca25ade"
+    sha256 cellar: :any_skip_relocation, monterey:       "88d4ee2cbdc7eefcd0c81d466cdbb433ba75fd6d0f1cad603d3691cb1126911c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "06004c76848994f1f3d1f3b69050f63956818ea618d52196d1ab5ef7998965df"
+    sha256                               x86_64_linux:   "a9bddcdf8ece9ce9ba43ff2cc1ca8ff985e8d8c2269e9c716b74ad470e766159"
   end
 
   keg_only :shadowed_by_macos, "macOS provides cpio"
-
-  # Fix build with GCC 10 or later (-fno-common). Remove in the next release.
-  patch do
-    url "https://git.savannah.gnu.org/cgit/cpio.git/patch/?id=641d3f489cf6238bb916368d4ba0d9325a235afb"
-    sha256 "cdc04006fee03b60ab42bccae9a9bf146e3a4655d0e76a7a0a24689176a79ed0"
-  end
 
   def install
     system "./configure", *std_configure_args, "--disable-silent-rules"

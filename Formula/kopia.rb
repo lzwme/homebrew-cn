@@ -2,19 +2,18 @@ class Kopia < Formula
   desc "Fast and secure open-source backup"
   homepage "https://kopia.io"
   url "https://github.com/kopia/kopia.git",
-      tag:      "v0.12.1",
-      revision: "5227d74996b6520f9f96e4203cfe00b832a60d5f"
+      tag:      "v0.13.0",
+      revision: "7f69502bddd6650e7cb7a132291bc54920e58988"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8180adf19ab951183cf48ad9b51e86d7b14624aeb3b971a95592640c02143d7f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "23651e093d8c666791046edd4003f085b09368f95f23b966d6bbe7ce7378bb1e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d20c96560acc71c22cf424f9582c201d79ddc9325975516cc6cb1dcc44fc1133"
-    sha256 cellar: :any_skip_relocation, ventura:        "aec082f3f92a8420589c8af73ec74dce5545a1e587d1d2ca8e2da512e8b06363"
-    sha256 cellar: :any_skip_relocation, monterey:       "4e87bff9bf7cfdb1b05ea31184d5e92aeddc3ce93c5706753f00c485d5dde4f6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "19097e5b27489e987ad3c2808e49b755ca7a3036c015fb24dbccb914082a9b80"
-    sha256 cellar: :any_skip_relocation, catalina:       "7133b0f20f9879ff36468603b3ced1e1c6d324a459f62c24b318d54e2a08b560"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b7cd14a977ba5cc1fb7fa98e5284afd1b0b439052fdef99acf86722c43602a0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a4937cc83090c1da42d3536522175285ed5d5628a14f1f4509aea94b77d1004"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dfbbc42746f2393ca62fdb0c7e5b8545c01a5987d5de61599289cba0fda94c18"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c1242a67ef3aeeeccc3cfbbc1580960cb62a7fdb158c33c8286a60d5d6e2841d"
+    sha256 cellar: :any_skip_relocation, ventura:        "8c048442387c3568435eb7301a916a352d0eb93289b0273ab7762741e1ad0d5d"
+    sha256 cellar: :any_skip_relocation, monterey:       "cf58141d72eb59edfedb2a98a3290c8a0dd61cf5a3364a37913d9bc31efc044f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0328539b841e86c27ff00739a6865dd4ee0d84d0e5aa6795672e390cd01d558b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4bd69cebba9c1a9e53a42f029cdb08e3b4efe6e0abb6ed13ca00bc5fe6a1a75f"
   end
 
   depends_on "go" => :build

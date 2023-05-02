@@ -13,6 +13,16 @@ class UtilLinux < Formula
     :public_domain,
   ]
 
+  # The directory listing where the `stable` archive is found uses major/minor
+  # version directories, where it's necessary to check inside a directory to
+  # find the full version. The newest directory can contain unstable versions,
+  # so it could require more than two requests to identify the newest stable
+  # version. With this in mind, we simply check the Git tags as a best effort.
+  livecheck do
+    url :homepage
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     rebuild 2
     sha256 arm64_ventura:  "bae699a799d47cd4eefebfe710026caddb884c0c1b12946cf97178d69bc3e87b"

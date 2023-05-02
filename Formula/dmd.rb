@@ -2,16 +2,15 @@ class Dmd < Formula
   desc "Digital Mars D compiler"
   homepage "https://dlang.org/"
   license "BSL-1.0"
-  revision 1
 
   stable do
     # make sure resources also use the same version
-    url "https://ghproxy.com/https://github.com/dlang/dmd/archive/refs/tags/v2.103.0.tar.gz"
-    sha256 "98d02ae197dc3ec7959343f6a61ec18294d4e57d61f7749287c6d56270c3891f"
+    url "https://ghproxy.com/https://github.com/dlang/dmd/archive/refs/tags/v2.103.1.tar.gz"
+    sha256 "25570505289e0c402095ac168fc62e33f6b34b5e6d06f781d32954cc3d45e803"
 
     resource "phobos" do
-      url "https://ghproxy.com/https://github.com/dlang/phobos/archive/refs/tags/v2.103.0.tar.gz"
-      sha256 "65d0d5ff4bce2ea881fc5db5140ec14f7567e87d4dfcdb16f400e1e4457e9221"
+      url "https://ghproxy.com/https://github.com/dlang/phobos/archive/refs/tags/v2.103.1.tar.gz"
+      sha256 "d6956b70d582311ffbf0c3464dcd7531eb0bda3dc27a2051ca78fa6b045a0c9f"
     end
 
     # Fix build on Ventura when newer Xcode is used
@@ -23,10 +22,10 @@ class Dmd < Formula
   end
 
   bottle do
-    sha256 ventura:      "43e0df0f5bccfd8098e2d9a5c824034373f7a8c3b377a9042547c01d79685c59"
-    sha256 monterey:     "7190d5b87d93c66d08251bf92f1826e6b1005634b8155bf89ee77941b4a34718"
-    sha256 big_sur:      "5a7eb0929b5bd41cd0a1a5e1b1a2b0f0ba44003000c2d24f3c69392b2f50c43d"
-    sha256 x86_64_linux: "fcc6137d25baf01eb398b48d835d698e0234a91d5653ec49d54a6a7cecb6269a"
+    sha256 ventura:      "2c0f4ef63d746054f52d50f7b1b7d7704fde017676521fc9bfdaf4b7764de359"
+    sha256 monterey:     "32665bb76aabe97c94c0cf90f8dc7f22b6e1b717ccc9cc1dc00d39b723c57c82"
+    sha256 big_sur:      "3384609eb4981d5e75d4e313d2d60d177be2256b6c4122c5d91bbd247ad53bff"
+    sha256 x86_64_linux: "bcde5e16ee044846dde8e48bee336820e0604909580ade6a0773d91e09275d40"
   end
 
   head do

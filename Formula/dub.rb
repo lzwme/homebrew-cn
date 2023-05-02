@@ -1,8 +1,8 @@
 class Dub < Formula
   desc "Build tool for D projects"
   homepage "https://code.dlang.org/getting_started"
-  url "https://ghproxy.com/https://github.com/dlang/dub/archive/v1.32.0.tar.gz"
-  sha256 "a0ceaee069834388fec41d13f4df479d38f4e81b0de965adbff6e07e51c792e9"
+  url "https://ghproxy.com/https://github.com/dlang/dub/archive/v1.32.1.tar.gz"
+  sha256 "cad53d96230d7bccd886c827d8b89ba136479ffa1a504ecd17f960c2ea50ee45"
   license "MIT"
   version_scheme 1
   head "https://github.com/dlang/dub.git", branch: "master"
@@ -13,13 +13,13 @@ class Dub < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e43e7499cf60f96f5571c9dbb9e16e5379d3273e2959c743aa49d29efabe3bf1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "159ac881d54dad222146c1d95bbaa908da20f96b43d9cab7ad72b5c6fdfd9b1f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9012bd28c6a189fa374697e55d6b521b785514a462621b62dca29717c0b755e8"
-    sha256 cellar: :any_skip_relocation, ventura:        "ea50b79439b3136ad8170197af15f9c2e1aa2b73cda110c1621a857b84eca098"
-    sha256 cellar: :any_skip_relocation, monterey:       "8901f6ec878edfd41dcf3a949b73ddc7aa340e38f1881b9ac0722a089871ac47"
-    sha256 cellar: :any_skip_relocation, big_sur:        "88855f5ad9e6a62bdcc2ed6e97e0a032b18006794d3e8dc4a45b8956437e377a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4a0a2fde4f2649b63732d9b1c0425feebb941364ccd16a544391c86dd8d267a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "672641f2d3fcdafc06c00db117a9ea3c87eb5a29163c2b76c98adeb4f1a43ad9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f681eb1fad923782b8092e2fc9cb733d60a18a84d722b5377c2f48a18b577e28"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d4f3cc6cb4635fac45c4b4b9d04d4c2b60918d48174c7a2b8c0646b9d37737db"
+    sha256 cellar: :any_skip_relocation, ventura:        "eac4bd8f6a5b3527327c59d8e2caff28c63f1a4c6debc29698bf3070c081e84b"
+    sha256 cellar: :any_skip_relocation, monterey:       "d72c6c55213676ca9bc6f3342d8202aca5dde6d01c41c0a481d515e9bfb273d7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0e95b3ea622cba0d50822971b5b15965b1d90b9e98a7e9243af577e4a9be08c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c47e79d72612c9b2914484a0cb34438bb9d4b64be73c2a01b49b68327a80620"
   end
 
   depends_on "ldc" => [:build, :test]

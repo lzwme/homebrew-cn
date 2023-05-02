@@ -3,19 +3,19 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/14/2a/abe8f3e779220f115c8b94100167ab2c3b8e4f6d4a557a61a6e9296f298e/commitizen-3.1.1.tar.gz"
-  sha256 "337d721555b66f803d60a0b0bafe0d3cf68a584b1f85ef0c43c45d279dc6737b"
+  url "https://files.pythonhosted.org/packages/0d/9c/46deca09905c4af72eeafc14ec91cf95e0ccfafa706160edaa387a797382/commitizen-3.2.0.tar.gz"
+  sha256 "2c2b9b72b66bfa82cf8041ca2577443cbc96e964c3ef676b11d837e2aa8ea487"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a39a319b115a57ee3fa0d5da0cac75dc1cff37e480688475880cf46582c14f63"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b82739ffe7cb77351d69b7c0da6c912774faf6fa907273708b6937948bdad269"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a7d9652f87141690ec2ee505ba5419cab5fa31bd5342f2fbf7d6e91c6f314bc6"
-    sha256 cellar: :any_skip_relocation, ventura:        "024f6a23502ba25b4182050514a4a43444c0957872b660a034d7a5df090fca62"
-    sha256 cellar: :any_skip_relocation, monterey:       "d12a0f1e9a45478cc4e5572476885fad31481ec33902f0b8475a308a959bba93"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3246b83208f9c18a8c9bcebefcd37de11836ae9251796b2cec3fe5729db529d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81d63b0b3bb1acf12740e83eaec3878a793c8527c79f3aa5ae515b7cfc236d35"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4fb4982607177f6536de795b46d5d408999cf0a8fe00324617eb3e2900bf66eb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fbf72cedf6702343a6269d32c5a568664cf280c3e16b1d02b4ef92d2674db032"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "58d5bd5038f2fc226324af48a6533ad635af16db94b49bbf3832e69c8acca60a"
+    sha256 cellar: :any_skip_relocation, ventura:        "abc6e46a3ddfeac7ff7d76b62505e0db35f905e5fa4f0e23b6588c5d3e1c53e3"
+    sha256 cellar: :any_skip_relocation, monterey:       "7aa9ad64857a5b69d940b7ad3815b175fcb133260f610b2a985e85100e64cc91"
+    sha256 cellar: :any_skip_relocation, big_sur:        "aa5eb1c03ef44a59408f413f9c560e54b462717668ad2b91eec0cb2ebbbef772"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23006a1a695077e974b1269be2e13e88e32fe8ef6c21ee232099ccf7073d4d36"
   end
 
   depends_on "python-typing-extensions"
@@ -38,8 +38,8 @@ class Commitizen < Formula
   end
 
   resource "decli" do
-    url "https://files.pythonhosted.org/packages/9f/30/064f53ca7b75c33a892dcc4230f78a1e01bee4b5b9b49c0be1a61601c9bd/decli-0.5.2.tar.gz"
-    sha256 "f2cde55034a75c819c630c7655a844c612f2598c42c21299160465df6ad463ad"
+    url "https://files.pythonhosted.org/packages/56/2f/3fc5689255b35918179fee6319fab19e68f8394bb570b963c6afad6265be/decli-0.6.0.tar.gz"
+    sha256 "2915a55525ef2b1a0ce88b8ccba62ac22df5b6ff3ed2094448e0f951f08e7ba5"
   end
 
   resource "importlib-metadata" do

@@ -1,9 +1,9 @@
 class Clamav < Formula
   desc "Anti-virus software"
   homepage "https://www.clamav.net/"
-  url "https://www.clamav.net/downloads/production/clamav-1.0.1.tar.gz"
-  mirror "https://fossies.org/linux/misc/clamav-1.0.1.tar.gz"
-  sha256 "0872dc1b82ff4cd7e8e4323faf5ee41a1f66ae80865d05429085b946355d86ee"
+  url "https://www.clamav.net/downloads/production/clamav-1.1.0.tar.gz"
+  mirror "https://fossies.org/linux/misc/clamav-1.1.0.tar.gz"
+  sha256 "a30020d99cd467fa5ea0efbd6f4f182efebf62a9fc62fc4a3a7b2cc3f55e6b74"
   license "GPL-2.0-or-later"
   head "https://github.com/Cisco-Talos/clamav-devel.git", branch: "main"
 
@@ -13,13 +13,13 @@ class Clamav < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "85f823c7b499aa384518d0b6334f3467986122fa54c54b7229c81dd29760dee4"
-    sha256 arm64_monterey: "70a895a3984c863774fead0ab8303eef02ded24f8093e7254060c8b168462569"
-    sha256 arm64_big_sur:  "39f11c71b2cb81ac5d399355d269ded246010ebc441ac612e168da170836b20c"
-    sha256 ventura:        "63187f773ae19370c6156fc3dc95977affa416a008808e5a1e3f62a6a242eabe"
-    sha256 monterey:       "a0d875182ed930635b340bbc4676c93a03fec4423168a94710b0f31ad7b9c27f"
-    sha256 big_sur:        "20a730b23d1f68be2d6533cdb29fde3816db76a503651b0685fc0905a9384fd6"
-    sha256 x86_64_linux:   "e29f8408cee6ea3d2c0aab1a2795086cdac4a2713f0baccb865654f4fa95cca7"
+    sha256 arm64_ventura:  "8927fbb21915aec3cd3eac32a43af1d6192811e27ecc1b5bbbb04256917fd13f"
+    sha256 arm64_monterey: "5030360c38eeaa22c37b4eb18b4de60469f152208d608230281a9d13b07abd8e"
+    sha256 arm64_big_sur:  "9db7eb15021e5cebda5cfe6c96011030ee254c0a1171e54c8896dbc03b7edb96"
+    sha256 ventura:        "03a3f6297a60233b5e094472e33e0532d27048742bc8a006dbbbc371eed80993"
+    sha256 monterey:       "04edd920c0a672a4c8f15b8265dcf25a4e2d05a8fff01dbba40465dfdece9669"
+    sha256 big_sur:        "00630322cf6bd096f280dfbf629f8888e60453113b8f50d0c380afbad5e5e626"
+    sha256 x86_64_linux:   "25e55ff251c13ad5cac8f8eadc4e6190920af91606697f7ed46083d50e8fa9b0"
   end
 
   depends_on "cmake" => :build

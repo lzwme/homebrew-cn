@@ -1,18 +1,18 @@
 class Felinks < Formula
   desc "Text mode browser and Gemini, NNTP, FTP, Gopher, Finger, and BitTorrent client"
   homepage "https://github.com/rkd77/elinks#readme"
-  url "https://ghproxy.com/https://github.com/rkd77/elinks/releases/download/v0.16.1/elinks-0.16.1.tar.xz"
-  sha256 "825f65819d39c4890f81b5bb6f3a4197542e58908d40a5c52ff8d5ecf5bf8fae"
+  url "https://ghproxy.com/https://github.com/rkd77/elinks/releases/download/v0.16.1.1/elinks-0.16.1.1.tar.xz"
+  sha256 "303c6f830b98658dcb813b68432ecde27d3857ccf1e765109fb6b0edb89f5095"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b2e1dd238b70becd3976f3a79f2397e9c9fc8f7e9c4ceede41c7e0cd76640d53"
-    sha256 cellar: :any,                 arm64_monterey: "30aa20c58c1745c000b45d14a6405292398fbd216684eb99bb173c4fd7fa6368"
-    sha256 cellar: :any,                 arm64_big_sur:  "9762cc8cd5b6bc4b2a4f186c8ce37cfa6e70f909d7ff33e820815597965c5e8c"
-    sha256 cellar: :any,                 ventura:        "83e88e06d52a3b1a38fbceaf80c48d9d0e81ab386966368141f2ef31461aefdc"
-    sha256 cellar: :any,                 monterey:       "1f3457b85aa91f3d07708b3f15a3824392dd1556a0153b332abd691c47e3c288"
-    sha256 cellar: :any,                 big_sur:        "dccc132f4c45426fb9913d6c6103cc0ff56321ca4593d33cdc5620148efb956f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b970e83b510aa123da7200fbb9d5860fc02513fdf5c9d33b03fe3cea6b9fda1"
+    sha256 cellar: :any,                 arm64_ventura:  "a6115add8e76c8dacc68deb68ca62f97a491d42eec37c325555e4b928cf9f571"
+    sha256 cellar: :any,                 arm64_monterey: "7022a233634adae1b93d4e6d8796dff37666ae11a6cd01d1e2fca859090822aa"
+    sha256 cellar: :any,                 arm64_big_sur:  "a7d6126a3fb6fa700cefc46ba323b94bcc93ad479a59e7dc41deedbad3c35130"
+    sha256 cellar: :any,                 ventura:        "0834b3a35b8f5a8c1760f0d63cc2bf3bd2ae49c9c8da68320df8486e0c34a34e"
+    sha256 cellar: :any,                 monterey:       "830cc73a8e8dfad7aaae3271636f1646d60292b0e42ee398d59944d20e61add2"
+    sha256 cellar: :any,                 big_sur:        "2e48a8a05c023118d94094dfa8e3c0065fe51746e54fa16cb182a88be269ff90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3f9f998591f4be38178e2fc160a43192e5b369c16628269f281a2e66bf76a59"
   end
 
   head do

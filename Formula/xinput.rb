@@ -1,20 +1,18 @@
 class Xinput < Formula
   desc "Utility to configure and test X input devices"
   homepage "https://gitlab.freedesktop.org/xorg/app/xinput"
-  url "https://www.x.org/pub/individual/app/xinput-1.6.3.tar.bz2"
-  sha256 "35a281dd3b9b22ea85e39869bb7670ba78955d5fec17c6ef7165d61e5aeb66ed"
+  url "https://www.x.org/pub/individual/app/xinput-1.6.4.tar.xz"
+  sha256 "ad04d00d656884d133110eeddc34e9c69e626ebebbbab04dc95791c2907057c8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "948e1a8b83cbd27f49cdf7af0b732b3e527807d47316f3435d6289c953f7a0d7"
-    sha256 cellar: :any,                 arm64_monterey: "cd6d4d1d3a69ffab976906f828f9cbbd78de75d212dda7b9225f18f54925f5fc"
-    sha256 cellar: :any,                 arm64_big_sur:  "db714eb643b851dec6aa996c3673b932af70e191d404c8a187b408a9578f7fef"
-    sha256 cellar: :any,                 ventura:        "d324d3e6c4f8c06adb212d6e648e75fa171f6e00a9df8638a912f934fc42c9e1"
-    sha256 cellar: :any,                 monterey:       "42e694f3867eab495cb54de454879d7477e952c089b8ecf08bc327c77e5ab256"
-    sha256 cellar: :any,                 big_sur:        "dab36aa6df662605e220ffce42106ed9eb6668088c425773335b04a59ba29575"
-    sha256 cellar: :any,                 catalina:       "5bda55eccff0b10605378a85932776af6105fff7ae85593e2f10d13e9adca128"
-    sha256 cellar: :any,                 mojave:         "afad4cf5c8b632f1e8873eee07a2bfd694efb1466dcafc0d4c8c233e370c4195"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41d3a585aefaa9032b34865cced5bdff19339574ca7d4753ec9c64fb03b7b804"
+    sha256 cellar: :any,                 arm64_ventura:  "751c32f1673020bda208c9885345be27da828cc2028e90e76e6ccc26f7d30d39"
+    sha256 cellar: :any,                 arm64_monterey: "44bad70ccc176511f7a5d965d028b3ff27b66b820fec7d46c40bf8f72d0d14cd"
+    sha256 cellar: :any,                 arm64_big_sur:  "0cc93fd8d5b16c85a027871ddaeb81d25e72eea433f4bd16ea60d30ea75ecac6"
+    sha256 cellar: :any,                 ventura:        "fc941b892085cf448f2fb8f560d0f7bf4b1ae9d50bd3fde91c09618cfb38ddbc"
+    sha256 cellar: :any,                 monterey:       "dfc3f16159f75487037348ee85a29d539376fd3e168417174403b4a3c0942a13"
+    sha256 cellar: :any,                 big_sur:        "e21d1963e880afe1acc8001912fc0d091797e664a5dce9d8e9738700139aea3f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48811518afc1be944c7f11606493feeffa4acd7653ad98f80e2dd583e6144bf0"
   end
 
   depends_on "pkg-config" => :build

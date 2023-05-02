@@ -1,10 +1,9 @@
 class Qca < Formula
   desc "Qt Cryptographic Architecture (QCA)"
   homepage "https://userbase.kde.org/QCA"
-  url "https://download.kde.org/stable/qca/2.3.5/qca-2.3.5.tar.xz"
-  sha256 "91f7d916ab3692bf5991f0a553bf8153161bfdda14bd005d480a2b4e384362e8"
+  url "https://download.kde.org/stable/qca/2.3.6/qca-2.3.6.tar.xz"
+  sha256 "ee59d531d4b82fb1685f4d8d74c2caa0777f501800f7426eaa372109a4305249"
   license "LGPL-2.1-or-later"
-  revision 1
   head "https://invent.kde.org/libraries/qca.git", branch: "master"
 
   livecheck do
@@ -13,13 +12,13 @@ class Qca < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6eb73810b19991343b6b15c23d8b4807c55693b5721ad15322ad1f6bc6504cd7"
-    sha256 cellar: :any,                 arm64_monterey: "8f411490dcd475a5b5b57c5e5ee6e2e812bcdc340ba84bb1426e0038d6184439"
-    sha256 cellar: :any,                 arm64_big_sur:  "f734c8a40e7a988c64a6f165320c2441ff563bc938da1219f23f638c60a27841"
-    sha256 cellar: :any,                 ventura:        "b2af87ec7486bd69a1f9baf6c4e20c26959c768c249179835dfa933b9e38ad13"
-    sha256 cellar: :any,                 monterey:       "8c8576efae870b57bd4557486ba06c60808dffff71d7cc0e31be0b605367172a"
-    sha256 cellar: :any,                 big_sur:        "d2050d894f533a2829894f2d6f164e59cce9865284c446ebf78760d07caf5eaf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c202fc6a6afbd099fbcfe6ceaf8e0999ca6a2682e7cdabee597716a7862452bf"
+    sha256 cellar: :any,                 arm64_ventura:  "1ff65b5d3d3f160e001f1627be59bd075f53decddb467ab3f15ba434c71bbf87"
+    sha256 cellar: :any,                 arm64_monterey: "1a6052b3caef256e2263278d89a915f716c6c8f04668e0080013d74112995722"
+    sha256 cellar: :any,                 arm64_big_sur:  "2b2a7f272d61f10d263af3e33ac6b2f1c7ee4dba521d21ada0355d3f1416c4c2"
+    sha256 cellar: :any,                 ventura:        "f34d1eb8064200969a6e65a4fe91b941b6c856204fdd2df114ae2c5b3abf6609"
+    sha256 cellar: :any,                 monterey:       "42840a223240c8319029eb28554ce7b79caa442e76de760b099f777cf978f7f8"
+    sha256 cellar: :any,                 big_sur:        "2cba7631886149287044b14e2c38b24a229577c4888d8b1db1fb035e4a363c20"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "35887790df6b8b5f6550dab9a212f5a0395dd04da45187179cd9e7065cc0dc27"
   end
 
   depends_on "cmake" => :build
@@ -33,12 +32,6 @@ class Qca < Formula
   depends_on "qt@5"
 
   fails_with gcc: "5"
-
-  # upstream PR ref, https://invent.kde.org/libraries/qca/-/merge_requests/96
-  patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/f59e193/qca/botan3.patch"
-    sha256 "c18347df70834668fe049203d33ea68dd63471989acf923e39ec5eaddc42cc36"
-  end
 
   def install
     # Make sure we link with OpenSSL 3 and not OpenSSL 1.1.

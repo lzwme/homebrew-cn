@@ -40,12 +40,13 @@ class CeresSolver < Formula
   end
 
   def install
-    system "cmake", ".", *std_cmake_args,
+    system "cmake", "-S", ".", "-B", "homebrew-build",
                     "-DBUILD_SHARED_LIBS=ON",
                     "-DBUILD_EXAMPLES=OFF",
-                    "-DLIB_SUFFIX=''"
-    system "make"
-    system "make", "install"
+                    "-DLIB_SUFFIX=''",
+                    *std_cmake_args
+    system "cmake", "--build", "homebrew-build"
+    system "cmake", "--install", "homebrew-build"
     pkgshare.install "examples", "data"
   end
 
@@ -59,7 +60,7 @@ class CeresSolver < Formula
       target_link_libraries(helloworld Ceres::ceres)
     EOS
 
-    system "cmake", "-DCeres_DIR=#{share}/Ceres", "."
+    system "cmake", "."
     system "make"
     assert_match "CONVERGENCE", shell_output("./helloworld")
   end

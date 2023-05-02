@@ -7,13 +7,14 @@ class Tenyr < Formula
   head "https://github.com/kulp/tenyr.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "7423a06a07cb6618597fb303682fcd78cd017265f221c41002bc334f180bc7c1"
-    sha256 cellar: :any,                 arm64_big_sur:  "7b8b35a252d9db09b9ab058ffde1bef392c747b7e2940e9f35c436bf8329e1e4"
-    sha256 cellar: :any,                 monterey:       "d7835b60738972c5deb0bac9cd4a2cf0b7a6cec663aeec0260a2024b25b5e476"
-    sha256 cellar: :any,                 big_sur:        "ba35781ed62b538a435c64602786456562d489eb4e9b70c6393e512cb2e86815"
-    sha256 cellar: :any,                 catalina:       "f98eebfa349c23b2ed1ee5cdd0bb7882fb7469e93ce5fd253fbdadb0cb96c4d8"
-    sha256 cellar: :any,                 mojave:         "725a4444c154dcbe5c2c835a82c246e044ab71d1769c240a0fc376af0c36a71c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "386367651c0bfc95ebe005843ccd093350a508b0c6e8a0f848c5c9e79dea68cf"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "655a2c3c2841cca8dc2a9a12251050701c738425dc78687f2062357ded8bf4a2"
+    sha256 cellar: :any,                 arm64_monterey: "9254f0926869364cd952129f192c9fc230ef6a6343e373c1640872bbe9c51345"
+    sha256 cellar: :any,                 arm64_big_sur:  "d5b29d7fe175e9d5fa9a37fa80f390b7c0a302b5d8d8d55cf591a394878cfb1c"
+    sha256 cellar: :any,                 ventura:        "7174b9cc9538058923d3e8cb74867679cddb2f8d932c644b31af6a1948a3d701"
+    sha256 cellar: :any,                 monterey:       "6fd5d63030858e3d238e668643502a954424d6cebc82a15a6a0e19eb13505ac6"
+    sha256 cellar: :any,                 big_sur:        "1d65d8a309019393a6db1f4d16d09f6fea293fc23dbb572ffab044cdabd952ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5c12c61e48eeb39a813598a9d1723095d0d0aaa5d6b30118457df84ac4f57de"
   end
 
   depends_on "bison" => :build # tenyr requires bison >= 2.5
@@ -22,6 +23,13 @@ class Tenyr < Formula
   uses_from_macos "flex" => :build
 
   def install
+    inreplace "src/devices/sdlvga.c", "SDL_image.h", "SDL2/SDL_image.h"
+    inreplace "src/devices/sdlled.c", "SDL_image.h", "SDL2/SDL_image.h"
+
+    # Work around failure from GCC 10+ using default of `-fno-common`
+    # multiple definition of `...'; ....o:(.bss+0x0): first defined here
+    ENV.append_to_cflags "-fcommon" if OS.linux?
+
     system "make", "BISON=#{Formula["bison"].opt_bin}/bison",
                    "JIT=0", "BUILDDIR=build/homebrew"
 

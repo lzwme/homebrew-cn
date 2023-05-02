@@ -1,26 +1,24 @@
 class Liblcf < Formula
   desc "Library for RPG Maker 2000/2003 games data"
   homepage "https://easyrpg.org/"
-  url "https://easyrpg.org/downloads/player/0.7.0/liblcf-0.7.0.tar.xz"
-  sha256 "ed76501bf973bf2f5bd7240ab32a8ae3824dce387ef7bb3db8f6c073f0bc7a6a"
+  url "https://easyrpg.org/downloads/player/0.8/liblcf-0.8.tar.xz"
+  sha256 "6b0d8c7fefe3d66865336406f69ddf03fe59e52b5601687265a4d1e47a25c386"
   license "MIT"
-  revision 3
   head "https://github.com/EasyRPG/liblcf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "420ae4d8fd864017912ebd7863f6bead1aded6604f72f56a5a674a7cffb071c8"
-    sha256 cellar: :any,                 arm64_monterey: "09dd2d9ba9b6d1a7b004051586a6a1abe6929a036a5556479840477c4e8b0b5a"
-    sha256 cellar: :any,                 arm64_big_sur:  "6130ad6bf07fda73da7ba0f6b2ff98cc37122f0e3b6cd4a32c011f65db9a2499"
-    sha256 cellar: :any,                 ventura:        "72a859a84917356fad5415a44dcf89274ead353c25866696c1156597edc90256"
-    sha256 cellar: :any,                 monterey:       "c97668249d45a99d5da6355d8ec127db44dad2a133ca3dddf1e046035ab8d1fd"
-    sha256 cellar: :any,                 big_sur:        "3e01df65a875158b6d06780db5f60286a7291201dca42c99960179b66eb25014"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "66e456b887b1a3e490fedd8ead94a0f6cd95fbdcfad4df086042ec6078d7eb90"
+    sha256 cellar: :any,                 arm64_ventura:  "e521ad93ddf261a38533b4bed1e2bad8e9cb81901d79054ab07953e96e9b5447"
+    sha256 cellar: :any,                 arm64_monterey: "f1c4c363417c14e1554a4b6b1cee154cb58dc4bde97970c21e5fb84435fdd577"
+    sha256 cellar: :any,                 arm64_big_sur:  "2ee9a94e62a483d861d4b724bc42323403cfcf36ecab078e5bf245ed9f86337d"
+    sha256 cellar: :any,                 ventura:        "9329e5fe08579d41c3acfcde45761e6b42b9e10e5db60b016bc77ce02dccf746"
+    sha256 cellar: :any,                 monterey:       "285c0cd9f3d83f9eef3ddfca176af79ce517fe3eed66ff4962fd60cfa604a217"
+    sha256 cellar: :any,                 big_sur:        "d0e61d083c4519da85176d14e50cf2cf3c84d43b58a5e64532e87215bf7805ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0c748d14ddccfc739480e00ac57c3940f95e34b9bd5645b4cfc3e9eb011f8c3"
   end
 
   depends_on "cmake" => :build
+  depends_on "expat" # Building against `liblcf` fails with `uses_from_macos`
   depends_on "icu4c"
-
-  uses_from_macos "expat"
 
   def install
     system "cmake", "-S", ".", "-B", "build",

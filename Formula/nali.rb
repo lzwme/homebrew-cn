@@ -1,19 +1,19 @@
 class Nali < Formula
   desc "Tool for querying IP geographic information and CDN provider"
   homepage "https://github.com/zu1k/nali"
-  url "https://ghproxy.com/https://github.com/zu1k/nali/archive/refs/tags/v0.7.2.tar.gz"
-  sha256 "58d53926ed17690b7654831ee7cbbdf15769caa2344b53febbc15b6ea52b889f"
+  url "https://ghproxy.com/https://github.com/zu1k/nali/archive/refs/tags/v0.7.3.tar.gz"
+  sha256 "732ef60373605491099574d875e032f864fd075d6de2d93c82cf74fad603ed45"
   license "MIT"
   head "https://github.com/zu1k/nali.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf7b92b8834fa0946662410e85449bde8eea81e4156b3ce517f9e07652a9b16c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cf7b92b8834fa0946662410e85449bde8eea81e4156b3ce517f9e07652a9b16c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cf7b92b8834fa0946662410e85449bde8eea81e4156b3ce517f9e07652a9b16c"
-    sha256 cellar: :any_skip_relocation, ventura:        "5ef728d0f6eddccf5413c322b75d779727ee988d835d5b3d6804b8e87f2d604c"
-    sha256 cellar: :any_skip_relocation, monterey:       "5ef728d0f6eddccf5413c322b75d779727ee988d835d5b3d6804b8e87f2d604c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5ef728d0f6eddccf5413c322b75d779727ee988d835d5b3d6804b8e87f2d604c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "86af91f23bef8250b4c759563aac6f520208bc352fdce3bf796bbcfe253f002b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7fe418f9bc06ea40fde09eba380059926131febb9cfffe7a1ec412f693b2666b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7fe418f9bc06ea40fde09eba380059926131febb9cfffe7a1ec412f693b2666b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7fe418f9bc06ea40fde09eba380059926131febb9cfffe7a1ec412f693b2666b"
+    sha256 cellar: :any_skip_relocation, ventura:        "d8223e754e41d2a95999d2f78ffd1894b0a3308b247a30fae0a2d5342c61c373"
+    sha256 cellar: :any_skip_relocation, monterey:       "d8223e754e41d2a95999d2f78ffd1894b0a3308b247a30fae0a2d5342c61c373"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d8223e754e41d2a95999d2f78ffd1894b0a3308b247a30fae0a2d5342c61c373"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e9e94d8b6f686d87c1cac3824a21b29c4298341b7b7a64a61ce9086aa6836f8"
   end
 
   depends_on "go" => :build

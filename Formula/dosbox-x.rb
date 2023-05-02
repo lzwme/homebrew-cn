@@ -1,8 +1,8 @@
 class DosboxX < Formula
   desc "DOSBox with accurate emulation and wide testing"
   homepage "https://dosbox-x.com/"
-  url "https://ghproxy.com/https://github.com/joncampbell123/dosbox-x/archive/refs/tags/dosbox-x-v2023.03.31.tar.gz"
-  sha256 "233f487a90654b03f32b290579f24d5b188a65361b8a7787154f5c4cd8f5f144"
+  url "https://ghproxy.com/https://github.com/joncampbell123/dosbox-x/archive/refs/tags/dosbox-x-v2023.05.01.tar.gz"
+  sha256 "0aa75b873978aec41ecfee62bb103d8a17fe3566a3ebf5415245cee0dd032ebb"
   license "GPL-2.0-or-later"
   version_scheme 1
   head "https://github.com/joncampbell123/dosbox-x.git", branch: "master"
@@ -14,13 +14,13 @@ class DosboxX < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "00c26ae6b3e97d06df10b334ad193abc75466b91c6d527c6aff5aab92b58a4e1"
-    sha256 arm64_monterey: "a169031430a88bad5312283238b080e0ee2dfbcf284941058ea0bdce31fe8813"
-    sha256 arm64_big_sur:  "b303d6e812501804ba5caf6d1fd364a1fb2a62a963cacf09ee2f9aafeb13c839"
-    sha256 ventura:        "458904df51fc377a6a278811c234103e0e496e9ff75e58a89a7a5d74f28b4a34"
-    sha256 monterey:       "ca8d44dd42b5fac944fc1abad07869f22525d99693320af4e9c50e30a4c804ce"
-    sha256 big_sur:        "7bd26791e1fda10eca74df923d73e13e84330b38293abe1a744d546ac1f149d1"
-    sha256 x86_64_linux:   "8cec915aab35a629cc7e32388f36a86feae9d12dcfda6ce75184536bf24b29a1"
+    sha256 arm64_ventura:  "89dae5ac74ff447c36d42c31853f4e508ba2b29fc298922731b3a323eae4cf2d"
+    sha256 arm64_monterey: "28fe74aaed1dc8e5e6821dbb0824fb9169cd8a3988f5eae3f964af96d09ea1ce"
+    sha256 arm64_big_sur:  "d47e4223e48dcb353844fe1248c9f8fd87fed18effdf9a503ac6f90c165104c6"
+    sha256 ventura:        "9fee80e8182e9bf33964199007aa18e9350a7641b72f738448f5f2dffad3c72d"
+    sha256 monterey:       "bd64240e9131f534bf6c9cbf9773d644036870b5ea0a34898eec7dbec2918b28"
+    sha256 big_sur:        "a351f7daf2be8a72c1976cd050c38519c0227c7807d6282622e552b06bc6aceb"
+    sha256 x86_64_linux:   "271467270b225ed90b3883c583b7e2d2e5e68aa86ae6c5173e00e5d16f567f9d"
   end
 
   depends_on "autoconf" => :build
@@ -39,17 +39,6 @@ class DosboxX < Formula
   end
 
   fails_with gcc: "5"
-
-  # upstream PR ref, https://github.com/joncampbell123/dosbox-x/pull/3907
-  # remove in next release
-  patch do
-    url "https://github.com/joncampbell123/dosbox-x/commit/b9ba6fba0dd0dc7fbeaa083de9d338564e8a6407.patch?full_index=1"
-    sha256 "f8173ce0560d6a5d36f00c3c1fbef03c22b6006c76d70fb311f3af54edc3de85"
-  end
-  patch do
-    url "https://github.com/joncampbell123/dosbox-x/commit/2dbbfff7407cb87d618ac341567e3c0ab1c03c6e.patch?full_index=1"
-    sha256 "573b6cfc9fe2f9a297c11c6c272b1b2296bab183ff3037455c76bcba077d589a"
-  end
 
   def install
     ENV.cxx11
