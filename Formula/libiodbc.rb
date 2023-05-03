@@ -1,20 +1,18 @@
 class Libiodbc < Formula
   desc "Database connectivity layer based on ODBC. (alternative to unixodbc)"
   homepage "https://www.iodbc.org/"
-  url "https://ghproxy.com/https://github.com/openlink/iODBC/archive/v3.52.15.tar.gz"
-  sha256 "f6b376b6dffb4807343d6d612ed527089f99869ed91bab0bbbb47fdea5ed6ace"
+  url "https://ghproxy.com/https://github.com/openlink/iODBC/archive/v3.52.16.tar.gz"
+  sha256 "a0cf0375b462f98c0081c2ceae5ef78276003e57cdf1eb86bd04508fb62a0660"
   license any_of: ["BSD-3-Clause", "LGPL-2.0-only"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7c7b33d3b2e0c688e10968d2c4a68267751f44d32b19de39afcb597462102772"
-    sha256 cellar: :any,                 arm64_monterey: "b282396d02085ccf612c0625706f962d7010f05e5e02c325337fadd7de514e7a"
-    sha256 cellar: :any,                 arm64_big_sur:  "5147321e5b94a093ccb0e3ecf942cc69022c37a79ddac432185be9053353a797"
-    sha256 cellar: :any,                 ventura:        "642e1984978ebe3dd1ea69c8196becad77f08f07a3d86d69c65c90ec4a31859b"
-    sha256 cellar: :any,                 monterey:       "e4af763bc358e57ce1815acd219c6a269a68bac9e98dad8b6a44ee86013d24aa"
-    sha256 cellar: :any,                 big_sur:        "ee25a27296ec772e888b1631f4f937ddba2e848c550f3ae0af70abb3c5089cf9"
-    sha256 cellar: :any,                 catalina:       "1ef55cd149e392eca7c0708cc24a928d5b762e672e2651902b8fea24f2d76f20"
-    sha256 cellar: :any,                 mojave:         "e8afda31c8d863560d0b45da2e0b09f452daca6bbe6b37762366743843f0f3b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2d26a3f634393d8351e612de1646ea705b61c9c758a10d7efd384a27055514b"
+    sha256 cellar: :any,                 arm64_ventura:  "c2b3670c3da394419feff4b38ee185e150615479dd3cce7bf02cc2824e461365"
+    sha256 cellar: :any,                 arm64_monterey: "10ca3676025de4d242130feb71200c95a131fa4f28d8201089f0471c2092c0a0"
+    sha256 cellar: :any,                 arm64_big_sur:  "5b497dcb9a7aea40f94c0b20cd3c8616d5c3774153286e66bc5ba59e2510131a"
+    sha256 cellar: :any,                 ventura:        "6f63d37fe5d6269eff73a52643932f5cc3c31e10ad9d6fefc90e51244f4ab689"
+    sha256 cellar: :any,                 monterey:       "34627b18050d2acbef4503c41e52ac8c3f70443c46fbf18aa9d2947e0f43664f"
+    sha256 cellar: :any,                 big_sur:        "90d98eb9831742490c631612df419d83d7c0e2495dab9bc5ddec36ba4e67d8c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a55f7da0eb9e5afb600e861bb089d7f7a74d393b4c29c9d7d9383c75a717883"
   end
 
   keg_only "it conflicts with `unixodbc`"

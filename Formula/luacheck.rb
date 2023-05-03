@@ -1,5 +1,5 @@
 class Luacheck < Formula
-  desc "Package manager for the Lua programming language"
+  desc "Tool for linting and static analysis of Lua code"
   homepage "https://luacheck.readthedocs.io/"
   url "https://ghproxy.com/https://github.com/lunarmodules/luacheck/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "cd2fb0f54d7b597a64526c052108c7f3fd9ee894bd71afec9851c3253a247864"

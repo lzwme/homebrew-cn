@@ -1,8 +1,9 @@
 class Libwpg < Formula
   desc "Library for reading and parsing Word Perfect Graphics format"
   homepage "https://libwpg.sourceforge.io/"
-  url "https://dev-www.libreoffice.org/src/libwpg-0.3.3.tar.xz"
-  sha256 "99b3f7f8832385748582ab8130fbb9e5607bd5179bebf9751ac1d51a53099d1c"
+  url "https://dev-www.libreoffice.org/src/libwpg-0.3.4.tar.xz"
+  sha256 "b55fda9440d1e070630eb2487d8b8697cf412c214a27caee9df69cec7c004de3"
+  license all_of: ["LGPL-2.1-only", "MPL-2.0"]
 
   livecheck do
     url "https://dev-www.libreoffice.org/src/"
@@ -10,17 +11,13 @@ class Libwpg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c3af8552a541c1a4469c0ef1a0bf146f2edafd3ffad7ad1ac85ac4316681ef72"
-    sha256 cellar: :any,                 arm64_monterey: "8971569270bc1f9c9c66466218f9731cd8d97cbf871e5e56ce056409a578e230"
-    sha256 cellar: :any,                 arm64_big_sur:  "ca515f644385d91d4edc74382409d82c802b13c098ef1b353aa44440eca1a8ad"
-    sha256 cellar: :any,                 ventura:        "714c3f40bf6035b8ce29533b2f06becf3e008dd49fdaadfdf3939eed5149f4d0"
-    sha256 cellar: :any,                 monterey:       "44a1c05814cf24e80fddec9e750ec59c57b822189847a6ef8bcebeb4bb840a89"
-    sha256 cellar: :any,                 big_sur:        "d550bf02dfa09143d6b6578a541327b2cd59334c46765652162ed98b63e63e83"
-    sha256 cellar: :any,                 catalina:       "d12ae12e729a2d2e327f07fe927e02dd15151a987b7cab0a19ca94ee15f8cfde"
-    sha256 cellar: :any,                 mojave:         "162171b22e6df4f4f4169634fc6872d40bea9a17a9c49e01dd737e9d74b1d445"
-    sha256 cellar: :any,                 high_sierra:    "dd0c4dc2a9369d7d6b97f930dd63e6f4ddd9d12d0372c12e13d2a22cf6a0cd06"
-    sha256 cellar: :any,                 sierra:         "cf9ab0d990b3fccb101312999f6d0ea5980990edd279ae994cf3c7f9c33a7d55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "345a763b72ab642cacae4e4ad5baf4d8f428b066b0dcc34c88da249d8d3426c7"
+    sha256 cellar: :any,                 arm64_ventura:  "c31dc532929561dc728f03ac0ff1ab2aeef0c0428df51cc8be13a7ea05a0e16e"
+    sha256 cellar: :any,                 arm64_monterey: "387b98747ca1ef188c562bc3ab88283920a9ec220666b4a49ce27de7fbcd5f5c"
+    sha256 cellar: :any,                 arm64_big_sur:  "6849a8efcf3f1a1440cb7b929d5cd1053d5b7944f7bc5adcfa835a95951b0eb3"
+    sha256 cellar: :any,                 ventura:        "58f2f9eca5ef6a1c769dd67aa64f8b4d90740d1c0493791c6f06b3c2ab06a1d5"
+    sha256 cellar: :any,                 monterey:       "24d4e25ee9c2468c18d9a578ef7a46499f4e46f1d85316ef57ce128adee16f63"
+    sha256 cellar: :any,                 big_sur:        "c97eced8c226e67a62e503b0edf54f4114c0b3ef6213765eacdef6ae719938d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c079bc2c2fc9c98e967d13ffa15b47ab25efc59ba66f731ce3758d1265017368"
   end
 
   depends_on "pkg-config" => :build

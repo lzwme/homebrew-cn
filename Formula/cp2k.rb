@@ -6,13 +6,14 @@ class Cp2k < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "518c383d46fee2cd8e1ae6bc13c01df2b708e7606d1c189fb1a5bebe5b268543"
-    sha256 cellar: :any, arm64_monterey: "ffe51ba4d7d5716176f762cadfcf410ea1497bc5f4ff916eae3e49d8ca9ac451"
-    sha256 cellar: :any, arm64_big_sur:  "2645e06859bd331c7bd077bb6c32719f734a87152c3baa931f9baf965111f1e1"
-    sha256 cellar: :any, ventura:        "952914b796cdf6dc00a9d094987ca4d39e5d4252113ffbca73f13e5a10457752"
-    sha256 cellar: :any, monterey:       "9a042bb29e150aaf33b180e4c7e7a74accf32fcd85f25393782a860b92e58b41"
-    sha256 cellar: :any, big_sur:        "c4f3319a3aff80930f26e9e22f82720afcabf96cee2d57c6c2c09a775bc26e63"
-    sha256               x86_64_linux:   "661c1a15d867f097c8d5a2cd869aca368087830dafca5d3cfa918de41face117"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura:  "7cb2ff0601ec794fa7fe2b4f1638883e603d923822054fae3ee54ca97bf0fa94"
+    sha256 cellar: :any, arm64_monterey: "e66d5e5ee6a010c5f21442736f6dbeb0b5d25133d58cc6b6c638ce2cc5ea2b0d"
+    sha256 cellar: :any, arm64_big_sur:  "29d16acb0942e7ceb572b899bc43c0f228d2cc8ce5355e3afbafb1e090ec26b3"
+    sha256 cellar: :any, ventura:        "fac9295d0bd37e1945d0c3ced2f6f1366610c6ab3c173eb753a7bda974c9997d"
+    sha256 cellar: :any, monterey:       "2e8898638d1324fd9554b447122c36e301b47d1d4d4c8dc11cb9bad20ad0ad95"
+    sha256 cellar: :any, big_sur:        "7257ec9b90345e1d2150e149c40ca86315bff5dd1aeffffe34f61ef68e94512e"
+    sha256               x86_64_linux:   "775c9fde68c9eaeb47f29dfae76625884b0cbb0e66ee2f5b2983b72d509a461d"
   end
 
   depends_on "python@3.11" => :build
@@ -125,11 +126,11 @@ class Cp2k < Formula
       bin.install "exe/#{arch}/cp2k_shell.#{exe}"
     end
 
-    (pkgshare/"tests").install "tests/Fist/water512.inp"
+    (pkgshare/"tests").install "tests/Fist/water.inp"
   end
 
   test do
-    system bin/"cp2k.ssmp", pkgshare/"tests/water512.inp"
-    system "mpirun", bin/"cp2k.psmp", pkgshare/"tests/water512.inp"
+    system bin/"cp2k.ssmp", pkgshare/"tests/water.inp"
+    system "mpirun", bin/"cp2k.psmp", pkgshare/"tests/water.inp"
   end
 end

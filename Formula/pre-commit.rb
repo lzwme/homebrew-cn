@@ -3,19 +3,19 @@ class PreCommit < Formula
 
   desc "Framework for managing multi-language pre-commit hooks"
   homepage "https://pre-commit.com/"
-  url "https://files.pythonhosted.org/packages/20/39/b661d2bf936fb24f5bac50f1717d59ef4fe04813f84cac109e9edc0a04c2/pre_commit-3.3.0.tar.gz"
-  sha256 "06acda43a7b6b63fdcc29aa90bf1228cf4d4029a4e4d70971347a9d2593c94d4"
+  url "https://files.pythonhosted.org/packages/f6/f9/fd40593d83357bb03733c0e77e71a08f2f5f523595d0a10401d7e5c22f16/pre_commit-3.3.1.tar.gz"
+  sha256 "733f78c9a056cdd169baa6cd4272d51ecfda95346ef8a89bf93712706021b907"
   license "MIT"
   head "https://github.com/pre-commit/pre-commit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "219728ed4d5937a1c6ffb1764813eac64ef131006f18b4b6051b593366733293"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b877169d224459ebc8db84a5aeb694d50d0541f5099717b960c5474cae2d6404"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2d9fa1a892abb64f9c43818e1827cca12beb96f6679de7ea5c271c29283cd6f6"
-    sha256 cellar: :any_skip_relocation, ventura:        "834027de2487db27dd0947c43513fcfc7f313652c8b52cc970bc901854f12b58"
-    sha256 cellar: :any_skip_relocation, monterey:       "761df06e35423b9c36fe397633b1637d47f0ddfdfcb8c0b29ec94efb7eceb112"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6170156a289b7a83aa4b59051d9c47c1b23191393eefaaecb4ae96384be968b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "edd8c34fca504aa2ded44450fad24cfd5cf15e3c8ecd6ee20b88a2437d5655dd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9e5ba57c361b0dd4d544a4f639ad2a2826082d3b3f836c5708904314de42c95c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b43495313e09b6967859171034fdeec61d43b6fdbb4d52e486f0e31dd4d293fb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a3f343e4ec00148f61ac1e42448f4640d39e4f31283a4ef511c0fe1822c6d41d"
+    sha256 cellar: :any_skip_relocation, ventura:        "a6f4025ecc713ea4c97c280a1670867e99fe210ff21ebe8bd25be758ec5f4b64"
+    sha256 cellar: :any_skip_relocation, monterey:       "4d01790aad767deaf242cb836751873221f1e490f3cf3ce0c107cf0dd37058fd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a905df6c676909529f532f1d768f0a0cb4caf6a4b68779c8dafae55b16cf2ba9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da9488dbf6e68af0189bb2776da4deb83b7ee59f3f2192ea664a49460c0f6a83"
   end
 
   depends_on "python@3.11"

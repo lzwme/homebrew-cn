@@ -3,20 +3,19 @@ class Pythran < Formula
 
   desc "Ahead of Time compiler for numeric kernels"
   homepage "https://pythran.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/4a/1b/059a68158bf65c857cfd6b80aed06a8fd35f2582cf548fb96f0b519b0d2b/pythran-0.12.1.tar.gz"
-  sha256 "702c2701187cfb38f66c0c20cc85d04d0e156d260a8d92892da65947faa5360e"
+  url "https://files.pythonhosted.org/packages/6b/ab/fa91b9a43381d966b96b88883eb819ae26cef446a0e0be8288d2845212b3/pythran-0.13.0.tar.gz"
+  sha256 "1eb7ca772e96e21204f92483c982ad9ba6a950863075df62ea97cd06b2d11786"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/serge-sans-paille/pythran.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "31fdccab26406b05bb291403238b642734810e18f535128223cff5a4a29e21f7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "31fdccab26406b05bb291403238b642734810e18f535128223cff5a4a29e21f7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "31fdccab26406b05bb291403238b642734810e18f535128223cff5a4a29e21f7"
-    sha256 cellar: :any_skip_relocation, ventura:        "dbc7b77a162ede43ecfd2cbc875607fa7d05f4a2c17bbfb7561967dfd0e4f640"
-    sha256 cellar: :any_skip_relocation, monterey:       "dbc7b77a162ede43ecfd2cbc875607fa7d05f4a2c17bbfb7561967dfd0e4f640"
-    sha256 cellar: :any_skip_relocation, big_sur:        "dbc7b77a162ede43ecfd2cbc875607fa7d05f4a2c17bbfb7561967dfd0e4f640"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c595a2856e692a9c95e1d6c12067272fc9a35ffc7143f81380dcedaf2ca3635"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1750418d4edf600eba11d5fceb53be21525f000f5bc7d29abedf9d75d3ac16c4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1750418d4edf600eba11d5fceb53be21525f000f5bc7d29abedf9d75d3ac16c4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1750418d4edf600eba11d5fceb53be21525f000f5bc7d29abedf9d75d3ac16c4"
+    sha256 cellar: :any_skip_relocation, ventura:        "c87eba63a1d81c79eaaffaa51aaa93c1496075f1354c7ddd291df90ad0feae2b"
+    sha256 cellar: :any_skip_relocation, monterey:       "c87eba63a1d81c79eaaffaa51aaa93c1496075f1354c7ddd291df90ad0feae2b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c87eba63a1d81c79eaaffaa51aaa93c1496075f1354c7ddd291df90ad0feae2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b88a32680746f16a19e47dd9a5d3af9e46f0e355b600e180b60bfc84115e3c1e"
   end
 
   depends_on "gcc" # for OpenMP
@@ -31,8 +30,8 @@ class Pythran < Formula
   end
 
   resource "gast" do
-    url "https://files.pythonhosted.org/packages/48/a3/0bd844c54ae8141642088b7ae09dd38fec2ec7faa9b7d25bb6a23c1f266f/gast-0.5.3.tar.gz"
-    sha256 "cfbea25820e653af9c7d1807f659ce0a0a9c64f2439421a7bba4f0983f532dea"
+    url "https://files.pythonhosted.org/packages/e4/41/f26f62ebef1a80148e20951a6e9ef4d0ebbe2090124bc143da26e12a934c/gast-0.5.4.tar.gz"
+    sha256 "9c270fe5f4b130969b54174de7db4e764b09b4f7f67ccfc32480e29f78348d97"
   end
 
   resource "ply" do

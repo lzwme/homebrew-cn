@@ -2,8 +2,8 @@ class Joern < Formula
   desc "Open-source code analysis platform based on code property graphs"
   homepage "https://joern.io/"
   # joern should only be updated every 10 releases on multiples of 10
-  url "https://ghproxy.com/https://github.com/joernio/joern/archive/refs/tags/v1.1.1570.tar.gz"
-  sha256 "2210cff96be19edec93e8cc2c4ca2948b7a2902490cf7e55ab9d56a653a9a00f"
+  url "https://ghproxy.com/https://github.com/joernio/joern/archive/refs/tags/v1.1.1650.tar.gz"
+  sha256 "22a8606129c04f08e65436b751c2db06c85d78b7c1ffaa1b8e7ba85bbd366b9c"
   license "Apache-2.0"
 
   livecheck do
@@ -12,13 +12,13 @@ class Joern < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf02f9ae2543ef1f2e9f52b3a4ddc34173dc73562da42d58143a1c8f0d6afbb0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "097b7fc0e1bda5d7c109f6a46fd01e15fa1d37942c2f34f6af16c085daa3920b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f1e2fcb49259aeebb7370414d72fa3f6714a4f6fd1702f6c4ed961a7733ba7e8"
-    sha256 cellar: :any_skip_relocation, ventura:        "abff8a4c95ab1e9aeef47f9febc2297e44008f9f18b30fd9206e1b268fc98944"
-    sha256 cellar: :any_skip_relocation, monterey:       "6d2fec1b7fd31bebaa9d9ce29d0e1edc311ab9ac9d7fd592bec49e3e147e757c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c08ee413ae35b3019377d57709196b64797589ddd42d0c673faa24710da0a3de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f983f56c4a90b6b1ee2ea3bacfe2836672896d145d745f4f686fb3a4035892f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e0c3d8ccbc13afcd0863a589d921dfa065d1604509a354b5db9007b8ac7d868d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cdf60b77f50cb1880451aefc8f06c0c0519952050ae57f55cf49086d6547df3d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "23cf101b12850710ca70b83eb212601c0e3fec3d37d12bf6577aceb80e96c8c6"
+    sha256 cellar: :any_skip_relocation, ventura:        "a6aacfbc9b77acf65ff9a5bef20a0b4ff3b4f11b5629bfccc914187750be47ae"
+    sha256 cellar: :any_skip_relocation, monterey:       "40eb79bf817d3bfba177b9dea1deccec707b7bbabe36a4be9831759cc9c22d26"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6649f11442dc0b6c1390e7891a76c180b9c71000ae9fc41de26723c2151996ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "12be6e8752069d76138821e80dc449269be214f7c7c4f00190ecd858ae313708"
   end
 
   depends_on "sbt" => :build
