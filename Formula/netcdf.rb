@@ -4,6 +4,7 @@ class Netcdf < Formula
   url "https://ghproxy.com/https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.9.2.tar.gz"
   sha256 "bc104d101278c68b303359b3dc4192f81592ae8640f1aee486921138f7f88cb7"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/Unidata/netcdf-c.git", branch: "main"
 
   livecheck do
@@ -12,13 +13,13 @@ class Netcdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "090ddac55a52b784b45a323d29b5fed38fa929c9a528879f6bf688a458b9243f"
-    sha256 cellar: :any,                 arm64_monterey: "8489eb2c9fc95960b8808f7263ecd33676ab1990e643833aa61b119f47f93d8c"
-    sha256 cellar: :any,                 arm64_big_sur:  "30001d4f89d80879128bca7aad40d5f7e1bc9bbd31034a8a0f1589164ea5cf60"
-    sha256 cellar: :any,                 ventura:        "adbfce83fb83578e8e65c32db8f2554ef042d97bf78ff3aec044a449f5838084"
-    sha256 cellar: :any,                 monterey:       "6b544e3117be98e108d98fecbec3d7ef3bf131702642fa4db7dde741de345a29"
-    sha256 cellar: :any,                 big_sur:        "041e42e1e7a4d6ef7b9d7954f0aea1da500f9ba2c8cb2e8ecdca282313a33dc2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8fe6202c2857ad4d5c0dc9a6c176d85dec2793835f7debb1ba9604fb48dd60ed"
+    sha256 cellar: :any,                 arm64_ventura:  "cbb92b7e255f0e91be5a329c3dc512841003d4246b4d390850ce24ecd782aab3"
+    sha256 cellar: :any,                 arm64_monterey: "785772ae3a29c723c9c574794dd33eff744ce91e22ea212183b299a5083e442c"
+    sha256 cellar: :any,                 arm64_big_sur:  "bf70180d4cc7b917c969d6616d946dd4e8c3ba7d657599ae528efa6023ff1858"
+    sha256 cellar: :any,                 ventura:        "731dc8e39faaa4f0a9a0f04c351361850f6881a51ff90d31bc6f238677ff2e2e"
+    sha256 cellar: :any,                 monterey:       "74818d4e93793cfcbc11bc9abbe6dd6db6477f826fa4b588dedebf25dbdde6c5"
+    sha256 cellar: :any,                 big_sur:        "17e88d132cb7705347a2a43921893de7ca1c1020734fdf66886f35e2eb751e13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56154fb4f179e5c3fa2db54a2949f3842e629e2aaa293f9e2a20176bc5de7583"
   end
 
   depends_on "cmake" => :build

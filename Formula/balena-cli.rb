@@ -3,8 +3,8 @@ require "language/node"
 class BalenaCli < Formula
   desc "Command-line tool for interacting with the balenaCloud and balena API"
   homepage "https://www.balena.io/docs/reference/cli/"
-  url "https://registry.npmjs.org/balena-cli/-/balena-cli-15.2.2.tgz"
-  sha256 "1090cc8a6faf58d08c906bc7d79c5842c73f1f9261614da86b2eaa8c036b3d81"
+  url "https://registry.npmjs.org/balena-cli/-/balena-cli-15.2.3.tgz"
+  sha256 "689e4936f012aad2b914213ab17d8b8e22c2e4212e00f277af2426329b6fbebf"
   license "Apache-2.0"
 
   livecheck do
@@ -13,13 +13,13 @@ class BalenaCli < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "b75d9d87c3e332084ed1053afb065a8c3e6ae5f383832689f62a08c66d33e2d1"
-    sha256                               arm64_monterey: "317e669fdde29632a9d542a72ac17107e99dc340aecfbb05b030045dfdf5b130"
-    sha256                               arm64_big_sur:  "17bfdef71a23745b33ba037eea2ea3911cc7f3611dfd09b39e70985a8111d041"
-    sha256                               ventura:        "3d7682825f258189b94ab26cb25f23446b229e2ee0020e592b70353a29345bb5"
-    sha256                               monterey:       "660abd2c54881b0ba6cb0c64d5c6c4247d963ac5ac507dcdd904d3ec0b8414c6"
-    sha256                               big_sur:        "096c0e860948990a22fecd703d1caa046dbcd19a81d0821bc03ceedb6c561f2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1358539b670a960453e129e710ef2bbd30b8e0e20c700c21576746b10131c4ce"
+    sha256                               arm64_ventura:  "84de4c72f6b0d5fe9dc39d8cbdfaad698108c442081ce4acfadcaeae7c6d0ff5"
+    sha256                               arm64_monterey: "7bf88699a3f2c2c2780fae4db5ecaf3796dee309a00bf0a1af8336bc5e652a78"
+    sha256                               arm64_big_sur:  "07ed9383c21a655e7e112287b6223be03467319518c33cb5dfdf6d05610ec197"
+    sha256                               ventura:        "58d53a0d64656e54c2ee6bffe4d424038f0c5de089ea5ea18e5a9338d07ccaaf"
+    sha256                               monterey:       "98d64cfce991bfc1ce570af38782ae294e61e021169bb873992d1a780a0eaba9"
+    sha256                               big_sur:        "172640b021e6fddad7e68e193a5ecf89f69259ec86d9e91424e1b29d793eeca1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb9e7c3ffc78f7d06993e24a5c7952b54702796965a14c0a0f2bb89de013f6a5"
   end
 
   # Match deprecation date of `node@14`.

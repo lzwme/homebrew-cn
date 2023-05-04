@@ -1,8 +1,8 @@
 class Rdkit < Formula
   desc "Open-source chemoinformatics library"
   homepage "https://rdkit.org/"
-  url "https://ghproxy.com/https://github.com/rdkit/rdkit/archive/Release_2022_09_5.tar.gz"
-  sha256 "2efe7ce3b527df529ed3e355e2aaaf14623e51876be460fa4ad2b7f7ad54c9b1"
+  url "https://ghproxy.com/https://github.com/rdkit/rdkit/archive/refs/tags/Release_2023_03_1.tar.gz"
+  sha256 "db346afbd0ba52c843926a2a62f8a38c7b774ffab37eaf382d789a824f21996c"
   license "BSD-3-Clause"
   head "https://github.com/rdkit/rdkit.git", branch: "master"
 
@@ -15,13 +15,13 @@ class Rdkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f750836a68116ff4659653197c08f8ce6835e58150c8b1a8edf113ff4b0d0df6"
-    sha256 cellar: :any,                 arm64_monterey: "900a39ace739f2d1b73554fba90d778e08488ea6eeec9d6ceccdcafba660a08e"
-    sha256 cellar: :any,                 arm64_big_sur:  "8a7ec32c15f2e1cb6e5bfb69234e3c296042e60a2765184b56e9e028e6f6227f"
-    sha256 cellar: :any,                 ventura:        "9b9fccc44b80b88718522172dc13c32df925fdf3736eacd2f13cdd0ecd288e1a"
-    sha256 cellar: :any,                 monterey:       "70db267fe12bb0823ef14635d8547b056f94a1a75cf97ae5fff0df40377c2a9d"
-    sha256 cellar: :any,                 big_sur:        "48a73b6097eb21261daee03cca7c7918bfd798a8b6d857465c633bcdb375d55d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd845d7e7e2a794fa45ed306175f72f18ab92ba1de8d52836b34e5fe31f058b1"
+    sha256 cellar: :any,                 arm64_ventura:  "c80b611887f75ce2d065c5c9e9a1b24beca2d90d8e5c4fafb465ff244f19629f"
+    sha256 cellar: :any,                 arm64_monterey: "2f287b59609a5d608f6de8885e217a37f3bdd84041ed68cc3aef5d1c7cf233cc"
+    sha256 cellar: :any,                 arm64_big_sur:  "f128b5eb71680bf11fc20f42155bcaa2b792d028fc6268f0e9a84ff0521eb370"
+    sha256 cellar: :any,                 ventura:        "0c1e5c0e8966f498d9f13932bddd022c25aa44005424f77e9bec9200b45da70f"
+    sha256 cellar: :any,                 monterey:       "277e6a95188201d1d45bad737583aa33624ebc94f5378208a02e04e0c0cff2cf"
+    sha256 cellar: :any,                 big_sur:        "d283960533b78804af3bda64b21881b535d01ba94864f9aa308b31b0b3e4c871"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e49e3d564c7c0a2c6dc66c270d850ca64e8db2fde1b5745ea8a1f6d4a5722434"
   end
 
   depends_on "cmake" => :build
@@ -34,6 +34,13 @@ class Rdkit < Formula
   depends_on "postgresql@14"
   depends_on "py3cairo"
   depends_on "python@3.11"
+
+  # Fixes `error: call to undeclared function` in YAeHMOP
+  # Remove in next release
+  patch do
+    url "https://github.com/rdkit/rdkit/commit/181a29c2953a679fc8a6a22722fe667e2823ebad.patch?full_index=1"
+    sha256 "01e3560824931e19420caf21690e0066f553a7ba4fd59b4263db8e2ad8bc1e0c"
+  end
 
   def python
     deps.map(&:to_formula)

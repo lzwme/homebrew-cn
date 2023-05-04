@@ -4,6 +4,7 @@ class Cdo < Formula
   url "https://code.mpimet.mpg.de/attachments/download/28013/cdo-2.2.0.tar.gz"
   sha256 "679c8d105706caffcba0960ec5ddc4a1332c1b40c52f82c3937356999d8fadf2"
   license "GPL-2.0-only"
+  revision 1
 
   livecheck do
     url "https://code.mpimet.mpg.de/projects/cdo/files"
@@ -11,13 +12,13 @@ class Cdo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "20162b0625ba6ec314f64511586b5ac4502eebe20af65d3746a783af3a8e3f87"
-    sha256 cellar: :any,                 arm64_monterey: "3238106233ae18f4761af3bc0d97df1204dd67a14995cc51e6fa28a66bc37163"
-    sha256 cellar: :any,                 arm64_big_sur:  "399f9cf09c579851a78c1f9c3f66d6faf631e64c6ea10eb961393603b880b2e7"
-    sha256 cellar: :any,                 ventura:        "dc8ac8f975678860ef3c04f28b438e0e7a94229ebecc8eac164037b3c92c9985"
-    sha256 cellar: :any,                 monterey:       "e0617e37277bc7d52393a58bf8fc53b1875cc12079c1face98ed3ef7a178f341"
-    sha256 cellar: :any,                 big_sur:        "fac96f4a690114fc3b7f622be7ed7e594baf0aae6b34110b19b3fdccf2a3413f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2ce2ecf4cfc566ab116a592ca46168ab602e27fc0c10d215b7577ab1d69dd20"
+    sha256 cellar: :any,                 arm64_ventura:  "0de35cbbd9cc30a737e632c3b1df1a62e7257e76e917398f2234a7e25be33353"
+    sha256 cellar: :any,                 arm64_monterey: "d4ac2ec9d27889ab2db20703c57dbe5bc28fe27aa2f6874035bb799517480121"
+    sha256 cellar: :any,                 arm64_big_sur:  "e6607d07b1744a80aaa8baa5721bb45109e5d1b1aa3248530ef80fcaff3ca7f3"
+    sha256 cellar: :any,                 ventura:        "2b449e47b61cc9979306e124ec4e53b02e951f5af52e0cf1240b2deb13d4250f"
+    sha256 cellar: :any,                 monterey:       "8a9c979c266895c54bb864ea80d3cd02e664ad226af103e32e4050b3fedb90c8"
+    sha256 cellar: :any,                 big_sur:        "2cbfe00b843e47e32f92fc7404314e5808a2db86f05799718d09d33fc4c0b462"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d649658aebf8f46ec67b47a271294c4937010f684cdc07ac6cffb2c0522f7adc"
   end
 
   depends_on "eccodes"

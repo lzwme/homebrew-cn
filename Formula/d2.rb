@@ -1,19 +1,19 @@
 class D2 < Formula
   desc "Modern diagram scripting language that turns text to diagrams"
   homepage "https://d2lang.com/"
-  url "https://ghproxy.com/https://github.com/terrastruct/d2/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "abfc926a7dbb090c73012c8bf37558a8ae49d5c6045211b50a3386d8cd60b8dd"
+  url "https://ghproxy.com/https://github.com/terrastruct/d2/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "5a7fb24f2116ff63f7350c60933134a80d93f0e4f298f7d2b654e2e3ee58378a"
   license "MPL-2.0"
   head "https://github.com/terrastruct/d2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "73694adec77493fbfa475885204147c554adf728b450217721053f7b43bf9950"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "73694adec77493fbfa475885204147c554adf728b450217721053f7b43bf9950"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "73694adec77493fbfa475885204147c554adf728b450217721053f7b43bf9950"
-    sha256 cellar: :any_skip_relocation, ventura:        "cbbf20963e2d42aadd31ab4c4a42983eb351c59651aa90477cabbd85e43d4a21"
-    sha256 cellar: :any_skip_relocation, monterey:       "cbbf20963e2d42aadd31ab4c4a42983eb351c59651aa90477cabbd85e43d4a21"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cbbf20963e2d42aadd31ab4c4a42983eb351c59651aa90477cabbd85e43d4a21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "767b9dcebe9aba53a501f748189e22305c82de48cf058369bcf564b52432dd62"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "98839bed0f0b1cb604efacb61fe9fe2eed06fa8c21bf54e8c40b381c5122cad3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "98839bed0f0b1cb604efacb61fe9fe2eed06fa8c21bf54e8c40b381c5122cad3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "98839bed0f0b1cb604efacb61fe9fe2eed06fa8c21bf54e8c40b381c5122cad3"
+    sha256 cellar: :any_skip_relocation, ventura:        "7985f08bbfc255a9f6dddcfc3b6a66068433f68da0abdad54cdaf291b0cec536"
+    sha256 cellar: :any_skip_relocation, monterey:       "7985f08bbfc255a9f6dddcfc3b6a66068433f68da0abdad54cdaf291b0cec536"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7985f08bbfc255a9f6dddcfc3b6a66068433f68da0abdad54cdaf291b0cec536"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9aa843ac3c34cc1433b410ba782d027b889f9ddc8d134ad2d92cf15112cd7bc0"
   end
 
   depends_on "go" => :build

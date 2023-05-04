@@ -1,17 +1,13 @@
 class Viewvc < Formula
   desc "Browser interface for CVS and Subversion repositories"
   homepage "http://www.viewvc.org"
-  url "https://ghproxy.com/https://github.com/viewvc/viewvc/releases/download/1.2.1/viewvc-1.2.1.tar.gz"
-  sha256 "afbc2d35fc0469df90f5cc2e855a9e99865ae8c22bf21328cbafcb9578a23e49"
+  url "https://ghproxy.com/https://github.com/viewvc/viewvc/releases/download/1.2.3/viewvc-1.2.3.tar.gz"
+  sha256 "9960fc072201c581735da6eaf589f2129f8bfdf8ff41bef32cf7bbccce10ec60"
   license "BSD-2-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "e630533119aa32963ecdab57a94339c2a4bcf22ec299f970a1aa705352566b76"
-    sha256 cellar: :any_skip_relocation, big_sur:       "6e18a6a9766105bad19b6030401ef95c3d8f634c86df22134a2fae667ef7a6e7"
-    sha256 cellar: :any_skip_relocation, catalina:      "d56de2b10e8bd8f161071b9d39ae435ee1fc70e4be5056b39d48dec7e77f185e"
-    sha256 cellar: :any_skip_relocation, mojave:        "6cd2fbb98cdc1ff4f689aae5ebea8cf4bee6f078671f812c492758274f22a5d6"
-    sha256 cellar: :any_skip_relocation, high_sierra:   "19c07a79667814ccb1b14b6214a3d5fcca65ec31381e6e46a5db3ac3f72fc2d4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "064b7a31c1d2d2679a71c206fde995f01b28e6e38d0cfca699492f37cd130297"
+    sha256 cellar: :any_skip_relocation, big_sur:       "50ae5ca9505d4f6ee810972360c6538fdf6e1e028ee3bea7c7b40d7000867ad0"
   end
 
   deprecate! date: "2022-10-27", because: "has no python 3 support"

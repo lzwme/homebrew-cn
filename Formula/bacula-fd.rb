@@ -1,18 +1,18 @@
 class BaculaFd < Formula
   desc "Network backup solution"
   homepage "https://www.bacula.org/"
-  url "https://downloads.sourceforge.net/project/bacula/bacula/13.0.2/bacula-13.0.2.tar.gz"
-  sha256 "6e08bcbe6a4ab070e17e9e9c4e9bc4e944d2e5bd376521ca342c6fe96a20687d"
+  url "https://downloads.sourceforge.net/project/bacula/bacula/13.0.3/bacula-13.0.3.tar.gz"
+  sha256 "0949c32be1090585e88e4c01d828002e87603136d87c598a29dff42bb3ed2a40"
   license "AGPL-3.0-only" => { with: "openvpn-openssl-exception" }
 
   bottle do
-    sha256                               arm64_ventura:  "82da2a843d76f03bdbc456c10ac52403c4937240718a996193b17d8aeb688a10"
-    sha256                               arm64_monterey: "110317c55f1ad9cde6679e52ee6df9f5f0a915dc655c5dbabbbd6d18a0ef4053"
-    sha256                               arm64_big_sur:  "b13b510999446703b023699a01130d08f69160e2d26c7dc2a366f06432fc808d"
-    sha256                               ventura:        "b7d9faaedab0adc479c600f5e3d462eaaea3ec8111bcbc760a55019f4731b4cf"
-    sha256                               monterey:       "36dff1d741e4c9d9676729c808e9e02bc7cea01d2f57b511fa5da53814260984"
-    sha256                               big_sur:        "7aa33848a3d4c1d251c35790555bed9a8b6c9d39f3e2fdaea96a896968dfd5a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "696f80dacb43185c4bef853807cc61218dcfd2a7624789cb46634113235fd10e"
+    sha256                               arm64_ventura:  "093e3cd13f2eeff54913fff81ea84b986e4a110a4dc3119ec3ec881118741962"
+    sha256                               arm64_monterey: "4da12b7a80a085cfa3e3482e368d26d6fef56bcf4685628d337bc24eff0b7d04"
+    sha256                               arm64_big_sur:  "1599974c658fe5281094ea70ba72b7301f7c126a22030e03979bd663a7d3ae2b"
+    sha256                               ventura:        "d7c37368083463ab0fe57c87bb19d077d2accf43a52a7e1cf30653af0550c7b4"
+    sha256                               monterey:       "9cbd1a22e2baa7a9097989457b8cf6fe6523bb357381e141a925a093f6b2947c"
+    sha256                               big_sur:        "a7a941908b02a880f867a0b95990e4725ac7401a0b64aa171ce749ccb590a6bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aea0a0586542c2bee73db64ea57e4c8b2d347375f2d1bc5239001dd8f9dcfee0"
   end
 
   depends_on "openssl@3"

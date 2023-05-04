@@ -4,16 +4,16 @@ class Field3d < Formula
   url "https://ghproxy.com/https://github.com/imageworks/Field3D/archive/v1.7.3.tar.gz"
   sha256 "b6168bc27abe0f5e9b8d01af7794b3268ae301ac72b753712df93125d51a0fd4"
   license "BSD-3-Clause"
-  revision 9
+  revision 10
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "01f10aea2d4feb02cf770ef2beb67d2603d43df433d5e5b922045e9e2f92af38"
-    sha256 cellar: :any,                 arm64_monterey: "2f8a59f6d8f8eec9b1dd0946876bb4304c0acf2d6f0a59316badd554bcf22f5c"
-    sha256 cellar: :any,                 arm64_big_sur:  "e61de0782adecfc668e47fbec1158573dc0143b6a65f11dc837aa413902e5fd6"
-    sha256 cellar: :any,                 ventura:        "58eb110354954de1ba4b9f1c81114cf128e5d3e1609b681964d5765364098483"
-    sha256 cellar: :any,                 monterey:       "ec3eec933c2123f29d3aca93b5cf70cdd26187cb811f817d1ac2846a9fb6bfca"
-    sha256 cellar: :any,                 big_sur:        "2fa65c2a7f992a9d979ff347dcce2c3d4f7a2061eb4820fa3961ad363d99e515"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6b7c036967955a85f3b22c2f924c85b36688f1b4c1e608df07393095c86bedf"
+    sha256 cellar: :any,                 arm64_ventura:  "84775376ed6d1d9031455dc9a9130570e65e0c804e1b8543679258a2ed735859"
+    sha256 cellar: :any,                 arm64_monterey: "2a2c1c5b03675b4939e84e5f59e42e4b5ecec38961b8b187bb126c396b930aff"
+    sha256 cellar: :any,                 arm64_big_sur:  "115d9cf5592fb883058ec8a1e51105a709d02aa0e6529aa7d3777f912ac602aa"
+    sha256 cellar: :any,                 ventura:        "25fb0a2d50d3cc64d7a5ad7db60aab7b4a988a507b8206c812f25cf6c19e0310"
+    sha256 cellar: :any,                 monterey:       "0a3a952b86f24e779d0b0f2dca84574ab067b2c0bbbc83eba4ae1f1a223ba0fe"
+    sha256 cellar: :any,                 big_sur:        "3c11ab54417b1f865a1d72197ab611617f132aeaf97b549a3f9881b06f13415a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5a36a8480ac6abb6537e774aed52c40a5de25536109050163e29edecf9e7a4a"
   end
 
   # Depends on deprecated `ilmbase` and upstream has been discussing

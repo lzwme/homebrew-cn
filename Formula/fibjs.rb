@@ -1,17 +1,19 @@
 class Fibjs < Formula
   desc "JavaScript on Fiber"
   homepage "https://fibjs.org/"
-  url "https://ghproxy.com/https://github.com/fibjs/fibjs/releases/download/v0.35.0/fullsrc.zip"
-  sha256 "938e148064413c381d9e900e9160dc02a1d68376dfae681ba288fe2fbb8924de"
+  url "https://ghproxy.com/https://github.com/fibjs/fibjs/releases/download/v0.36.0/fullsrc.zip"
+  sha256 "50b77694c36bc3836be7494807f973e4abe902ea53d8ddd0689978c9be736df7"
   license "GPL-3.0-only"
   head "https://github.com/fibjs/fibjs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, ventura:      "cb3c4cd646f77e5ac95459b94bc0dde23233175697dabe800020c7167ff84662"
-    sha256 cellar: :any_skip_relocation, monterey:     "01ae2f16b8a0aade5cc4fe5bdf332f736dc246978901b5e921b31a8f801ee248"
-    sha256 cellar: :any_skip_relocation, big_sur:      "722369e2f61203eaec7d43d2788443381c3335e976bb78f2d1665526914056d9"
-    sha256 cellar: :any_skip_relocation, catalina:     "b72ea1b966a3749f4dca1bebfa6bcaaa10ecd64c33f19b50e3f27990e387094e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9899a7f2c1acf1b1cdfb4e744ddf5ea112e3016ca41e46e7b346bbdf9cb19664"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "957f1c2ea1c2fda1fae9e3d3dc2b8a7eb8e86461db1d80d971d6a29c17ab5f91"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5d0580537b11fe5b885cd42eddf0fe80ddfc4e64ea34a8dbc93d3ac5facc0810"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f13527748224a30f02df32b6c4d646fc8553adf6a102c37d6db27711862d46fc"
+    sha256 cellar: :any_skip_relocation, ventura:        "3f5a3097bb48103fdb11f3785e10a956047cd0e40b79eeb3aa2d38fc8c609067"
+    sha256 cellar: :any_skip_relocation, monterey:       "5e2b6f88afaa6ac05291b9d168da823e5cd9b2c3138558d1acc9f04a9ae1edc0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b14af84e2cd27204357367bd5219fdf4c6a18bd2ee9261b5fb8ccb5fc5c0f55f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40b91f919f5e2f780b851335ab09056019f043b3dc91c9f6338aefd8e59b2f1c"
   end
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class Oil < Formula
   desc "Bash-compatible Unix shell with more consistent syntax and semantics"
   homepage "https://www.oilshell.org/"
-  url "https://www.oilshell.org/download/oil-0.14.2.tar.gz"
-  sha256 "993fcae34b9804d567030a11f59e271cc64ae33f4bd178c4dd161c65b69a4e63"
+  url "https://www.oilshell.org/download/oil-0.15.0.tar.gz"
+  sha256 "cbfdc0405a2d02816ef659721356d791a46d11d8e46e6b97026bf2458728c4fb"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Oil < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "008d367d1aca567fde8a976624337d4e415383d4f93dbb6fceb4669869c9b42c"
-    sha256 arm64_monterey: "7ae8c386955d589bb89a97a0f3159eea567ac0fb0130c9725ff9380064f2f91b"
-    sha256 arm64_big_sur:  "21c16970a1147b1ea45c5ab49668969981072e20ad402c56b57af93e992df660"
-    sha256 ventura:        "b25011cfba4abd2cc0d5987e12d79a7b29e17ef8e8568f4d2a02275666bc1fb9"
-    sha256 monterey:       "920c3a7e9c5fe8995531cb909370cf57006d406e2979026bbf7820102d6d7392"
-    sha256 big_sur:        "6958ddfb8b42edcbfbe0e857585dd91267d59b26c44134c4a57cd2c0a7186379"
+    sha256 arm64_ventura:  "995babe3c24489edcdaaecf8a06810cf0aa3a8fb44cb86b6349e2200adbdb097"
+    sha256 arm64_monterey: "9aeadcde68df1c91e8628f8c1ca6442dc2d8d9145966a45ee3eb2e34f9fe63e6"
+    sha256 arm64_big_sur:  "8527a5d0507373ac76cb5e929f92d57457092effd631b937ecc9faadccae023c"
+    sha256 ventura:        "b12e99895cd1ae47259f7448abc4b77b55b3c8613ce48408ea06a89d8bfc2946"
+    sha256 monterey:       "0ec245779d062fe8a485e310d152bca36cd43d98405043c5d9acc431d84816a1"
+    sha256 big_sur:        "8ce37660bd15256b9b83a39c6b054e0d5524d4460d6af76d6a582ca1468b96e7"
   end
 
   depends_on "readline"

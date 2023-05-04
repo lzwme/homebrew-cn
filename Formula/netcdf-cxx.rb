@@ -4,16 +4,16 @@ class NetcdfCxx < Formula
   url "https://ghproxy.com/https://github.com/Unidata/netcdf-cxx4/archive/refs/tags/v4.3.1.tar.gz"
   sha256 "e3fe3d2ec06c1c2772555bf1208d220aab5fee186d04bd265219b0bc7a978edc"
   license "NetCDF"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b8249b9ab11997990d8ecba6a47b57b4a5df1e6aad825f17f0ad00ad23a85b7d"
-    sha256 cellar: :any,                 arm64_monterey: "14fb172c409bda5dc90e97e7696346cde6907b74a8e282579b0d7a96486d7c6f"
-    sha256 cellar: :any,                 arm64_big_sur:  "36523f3a017dfc37063d39b7b266258ed6fcc72cd1062a03ef6fa18ddbdb143d"
-    sha256 cellar: :any,                 ventura:        "2c35cbb28b3e6219414aafb7fe2fd8a3931eeeef1b224e41b49fcff8d9d27ca2"
-    sha256 cellar: :any,                 monterey:       "f37b15aab9c88cf7328e0670e7665c8cba49e0594910a21150ffb0291d270a16"
-    sha256 cellar: :any,                 big_sur:        "87b7034615ee31987178ac7021b2227fa28f5ef355ba32f16721840c0874de28"
-    sha256 cellar: :any,                 catalina:       "eb5fe6b9c98889404e70090f76f02521a54f35ab4602ba2fc2b25b49f421f24a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd5c4196c35299f7a25dd4c3016f6bb6a1735c2f3984afd8f6eb837c8a88f9c3"
+    sha256 cellar: :any,                 arm64_ventura:  "8d967dce894b455bc5647dc9416e5a4eceefbf9a710cce01d80491f5c67a6d1f"
+    sha256 cellar: :any,                 arm64_monterey: "055b3191f34e7f1d0c15bd63a50a65fd496a1dd402255d47189908abb8bb6514"
+    sha256 cellar: :any,                 arm64_big_sur:  "f95e7cca5e6398b0ac4484cf8b89df1dec5dc2602e57ee7454a80d4d2df9291f"
+    sha256 cellar: :any,                 ventura:        "4142616c7c72e986bd6ae0159c20e6702db7a8c5044c7540043a6ff57c7fe04b"
+    sha256 cellar: :any,                 monterey:       "8e67f665695d5e0131db1fdb2f11030ef8fe462270652c7b1ff05a0e14664bc1"
+    sha256 cellar: :any,                 big_sur:        "447ab5ac1c323952c6378b92e52c280f84c7fa7e5bd0c3cbc673b8c9146022b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7db97776cfe5cf54f458816719e1f031b2349004eca65460dc370bfc51cfe627"
   end
 
   depends_on "cmake" => :build

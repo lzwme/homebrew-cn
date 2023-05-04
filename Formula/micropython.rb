@@ -1,21 +1,18 @@
 class Micropython < Formula
   desc "Python implementation for microcontrollers and constrained systems"
   homepage "https://www.micropython.org/"
-  url "https://github.com/micropython/micropython.git",
-      tag:      "v1.19.1",
-      revision: "9b486340da22931cde82872f79e1c34db959548b"
+  url "https://ghproxy.com/https://github.com/micropython/micropython/releases/download/v1.20.0/micropython-1.20.0.zip"
+  sha256 "6a2ce86e372ee8c5b9310778fff7fca1daa580afa28ea755f1a303675a8612b7"
   license "MIT"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "23308959f468434e1173094c6e6ef2fa036dade24e45937bf3ee93097157e4c4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "986b86c0c414f814e56e3333a80c711b7b905c90f65fd4d01ef97e289385be31"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a7c9ddec80bb88b068fb1e175f4e73b2607b97a2ef136eb63b0ab291ef0d2327"
-    sha256 cellar: :any_skip_relocation, ventura:        "5ca98ed4bc48fcfd5b3d74bf3e84f4d11660912be33746a2961b3b20b3180588"
-    sha256 cellar: :any_skip_relocation, monterey:       "37d6eaf666ea01b0d01d2ae98315aab88211f4c615007dce3e9a2e9fb5abbd4a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "27cd7239415ae56c5e95e3309574a526644dbe4ba9dd4788f8c7423f51c663ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4f978c41832dbfdd9e81ab168e49c9ca7cd1d25b1939c7c20862856048b45ff"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0fe34aa684c31925b2408db17f07770e30553f8ee710974ca46bcd8d9c92de91"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0e00554ee1669f08562cf5e9ac399031f95a165e1b536f60635ddcb079b7f203"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6b6109e0fff249f845059b7e4d18ce7756151882d1237d115f4313e1a595553e"
+    sha256 cellar: :any_skip_relocation, ventura:        "b3c52db1a033a9fe6a4404298a0020e7694ea0a3380740e30a5ad00ee273b626"
+    sha256 cellar: :any_skip_relocation, monterey:       "7c7b22c8d84550cbf337cad903f3540c4994dada2cf18497ad09efe87e85895f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2cf2de3cde04394ae7db07cf2369f24a243037ace7bab2f9a9c29ce2da4a1759"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26b2b9c760b87ffcf3046256e40a6b566c25ab43ea2500218ff400777c5632b0"
   end
 
   depends_on "pkg-config" => :build
@@ -24,18 +21,8 @@ class Micropython < Formula
   uses_from_macos "libffi", since: :catalina # Requires libffi v3 closure API
 
   def install
-    # Build mpy-cross before building the rest of micropython. Build process expects executable at
-    # path buildpath/"mpy-cross/mpy-cross", so build it and leave it here for now, install later.
-    cd "mpy-cross" do
-      system "make"
-    end
-
-    cd "ports/unix" do
-      system "make", "axtls"
-      system "make", "install", "PREFIX=#{prefix}"
-    end
-
-    bin.install "mpy-cross/mpy-cross"
+    system "make", "-C", "ports/unix", "install", "PREFIX=#{prefix}"
+    bin.install "mpy-cross/build/mpy-cross"
   end
 
   test do

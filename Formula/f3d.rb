@@ -4,7 +4,7 @@ class F3d < Formula
   url "https://ghproxy.com/https://github.com/f3d-app/f3d/archive/refs/tags/v2.0.0.tar.gz"
   sha256 "5b335de78a9f68903d7023d947090d4b36fa15b9e165749906a82153e0f56d05"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -12,13 +12,13 @@ class F3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "375043e50e75bbf477f46bcd1aee256809d55b0760fb837e808586251ad6294c"
-    sha256 cellar: :any,                 arm64_monterey: "44edf8af2be7df7b2d68d59f264d5f8fb55c0fef28c9f478f4e32ba20f483e62"
-    sha256 cellar: :any,                 arm64_big_sur:  "c52af95dfa27753e917b62dd9c42083b2d354ac7c8c5c9fa981335041d82b348"
-    sha256 cellar: :any,                 ventura:        "3f80d0b7942c1a9dad126b5ad4920b51bb9542c0d8783f4544098dae37172e63"
-    sha256 cellar: :any,                 monterey:       "53a1b52a358e7c078d02ebc1ae4043ff6e0916897e0baf3075fbbd6784faee62"
-    sha256 cellar: :any,                 big_sur:        "4d160a73cb12efb0b77bc2f24fc74b85a529bc126b364020c4d4384ae3f3fae0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e43dce6a8e651c86a482d1b60eca81973d0728447ee07a9338834b5b460721e4"
+    sha256 cellar: :any,                 arm64_ventura:  "f7d0bfb9765ad1156b7996039407af69525bdd1fb73a309d77684bcd6754ed5c"
+    sha256 cellar: :any,                 arm64_monterey: "540d689c5486a0e9a7a7afd4acfcdece8eba55b4ba96ab829e2e7adb6025ccdc"
+    sha256 cellar: :any,                 arm64_big_sur:  "ac7a7db97e832ca67f6936f7f1a5539cf189d10e120054188ca03405c29a3a60"
+    sha256 cellar: :any,                 ventura:        "03d7eead2c76a35c4d469d21f2dbc85f7705b39e54b201ff452e0873fd761f56"
+    sha256 cellar: :any,                 monterey:       "7a3ecefbbb8c9a9ac43dceec33da82fe1f2ce421606485f01f6425927a4c8592"
+    sha256 cellar: :any,                 big_sur:        "a0d12b71c0b4dc5f389449aedfdefca19eb61082a085ce9d1ba599dc70742f9e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "509e5e220527dc1af091f5165226c31f20a17767cc1a2bef3a87ffad5762f559"
   end
 
   depends_on "cmake" => :build

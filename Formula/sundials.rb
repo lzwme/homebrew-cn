@@ -1,10 +1,9 @@
 class Sundials < Formula
   desc "Nonlinear and differential/algebraic equations solver"
   homepage "https://computing.llnl.gov/projects/sundials"
-  url "https://ghproxy.com/https://github.com/LLNL/sundials/releases/download/v6.5.0/sundials-6.5.0.tar.gz"
-  sha256 "4e0b998dff292a2617e179609b539b511eb80836f5faacf800e688a886288502"
+  url "https://ghproxy.com/https://github.com/LLNL/sundials/releases/download/v6.5.1/sundials-6.5.1.tar.gz"
+  sha256 "4252303805171e4dbdd19a01e52c1dcfe0dafc599c3cfedb0a5c2ffb045a8a75"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url "https://computing.llnl.gov/projects/sundials/sundials-software"
@@ -12,13 +11,13 @@ class Sundials < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a48dd4520c7151ce4795b842153ea4bdc77ef4b06fbdfdd0df25b609038d64ca"
-    sha256 cellar: :any,                 arm64_monterey: "cdac128562ccbb0cc63d232f70cbade11e33d89133ccc2ffb74649427c292350"
-    sha256 cellar: :any,                 arm64_big_sur:  "2f9b9624036c333f079570abbc9af03daa8c498a788a38cf3361d8d97152c81a"
-    sha256 cellar: :any,                 ventura:        "ee7aade8dba27f4e6281a785b79012f71b6701cc775dc9a0efdd82516b13d369"
-    sha256 cellar: :any,                 monterey:       "c89daddc370b11612578ab9c54a435a08440a2a635e9b248b23f9030d5cf2714"
-    sha256 cellar: :any,                 big_sur:        "330af17a201f90e88b6a6329cb92fc8c590f31cec53fdde68e558e9f6c31f41a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1dbb51411fa5ff52802ebf9bbc4a4df03513271f12a9641e64b96368301d487"
+    sha256 cellar: :any,                 arm64_ventura:  "40042b84ef8e936a8f3cd821140291cb06d0eaffdcc45f27b87c4ad1a564dad4"
+    sha256 cellar: :any,                 arm64_monterey: "00953e653d8249b5de5c57ff35c496e7e46477dd2bd04e28d5b06ef02b5dc6f8"
+    sha256 cellar: :any,                 arm64_big_sur:  "cfb4b311c6262eb23a81a11139f5ed4255d0d61935ccc82cab9ec08d1ddca14a"
+    sha256 cellar: :any,                 ventura:        "2ac2fa05aa35906349d9f14edb48f6109e88666cfdf5356f1d05e5c537150803"
+    sha256 cellar: :any,                 monterey:       "5b4ddd6fc123d2fed0626a96f4513b9c135a1239882c001914932c73e672414e"
+    sha256 cellar: :any,                 big_sur:        "f844df977868784d6344a6988d66612c31bece25772fd2986c63034828b3c593"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5307c756f103e39771f00892e6a8d682e89987e935cf425c8a13697716c771ac"
   end
 
   depends_on "cmake" => :build

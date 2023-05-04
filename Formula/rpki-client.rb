@@ -1,9 +1,8 @@
 class RpkiClient < Formula
   desc "OpenBSD portable rpki-client"
   homepage "https://www.rpki-client.org/"
-  # TODO: Remove `autoconf`, `automake` and `libtool` dependencies when the patch is removed.
-  url "https://ftp.openbsd.org/pub/OpenBSD/rpki-client/rpki-client-8.3.tar.gz"
-  sha256 "8c78f82ae959a900f47c7319cbf7688182cde39dcc4c4b9aa399a142be4dc143"
+  url "https://ftp.openbsd.org/pub/OpenBSD/rpki-client/rpki-client-8.4.tar.gz"
+  sha256 "cac9409566a98c7a89e4e08a1b0f377627d92b5e065f4066a2b4eb7fec7869c8"
   license "ISC"
 
   livecheck do
@@ -12,20 +11,15 @@ class RpkiClient < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "c0e289b603ba35475efe37a5e77898340f51053ee9552e4bcd3091b9c4bd48a1"
-    sha256 arm64_monterey: "6fe2d161437b5ada9c7f434b7370bc9c3e520338d142931a4b00ca575c32349f"
-    sha256 arm64_big_sur:  "9d9526100ccc7026d1c70489531b96b179c9a76fb6444eec4d70183d27086a57"
-    sha256 ventura:        "88ac4c2b8189592d68ce7b9329398ec640b1ecd90216f15033e29c8c5ff48a7e"
-    sha256 monterey:       "ea1324c9dc5f09b4cf64fdc421f14696dee0ad497a148c6f96c890c5d38e39c3"
-    sha256 big_sur:        "9a3d781d801fd922d1b633bf967258f8329ddb6490918780507e935a9820a23b"
-    sha256 x86_64_linux:   "ce7e879d64cb2909aa292f6478c8e04d73957dc70a7ffd42622fff4099a8bf79"
+    sha256 arm64_ventura:  "35f83f308eba81a6aba8d915a9b7ce3d9b74651a02bb0006d5a22d63a69e0bc3"
+    sha256 arm64_monterey: "6ab9c1154ead8d42931a61f5ed14ee7fb655b525d797c84f3e2414cb0eef2d10"
+    sha256 arm64_big_sur:  "bbac104a31b2e7f6985478969272df411248741134fe3e1c885e13154fde52a4"
+    sha256 ventura:        "c50c8f9cccb5670889df7d17987e6a5a6cf7103fa59e4ee5f130f84bbdf89ed4"
+    sha256 monterey:       "09aa7f1d0ee6be4e33712765b19283816fbe3e5d651ba83915de2fe018dc9c48"
+    sha256 big_sur:        "027447221a265cd417882b9d155edde9c092161ffd6d400575ffb81959e4587e"
+    sha256 x86_64_linux:   "4c71c6c63c2c74f9d6eed08d93933274ee7dacbe7d89806b69c94852d7669672"
   end
 
-  # We need `autoconf`, `automake` and `libtool` to apply the patch below.
-  # Remove when the patch is no longer needed.
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "libretls"
   depends_on "openssl@3"
@@ -33,16 +27,7 @@ class RpkiClient < Formula
 
   uses_from_macos "expat"
 
-  # Fix absence of `HOST_NAME_MAX` on macOS.
-  # Remove in next release.
-  patch do
-    url "https://github.com/rpki-client/rpki-client-portable/commit/65e5d4b99131b7cc8091ea222b70d24ec04fac60.patch?full_index=1"
-    sha256 "014b522efa2f656853b42673ac7bf592ed662468d911b251c918b0154bac0a3d"
-  end
-
   def install
-    # We call `autoreconf` because we apply a patch. Remove when the patch is no longer needed.
-    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *std_configure_args,
                           "--with-rsync=#{Formula["rsync"].opt_bin}/rsync",
                           "--disable-silent-rules",

@@ -1,19 +1,19 @@
 class Flavours < Formula
   desc "Easy to use base16 scheme manager that integrates with any workflow"
   homepage "https://github.com/Misterio77/flavours"
-  url "https://ghproxy.com/https://github.com/Misterio77/flavours/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "48c7659031d399ff125a07b71419935946e0da8d3ef1817a9f89dda32c2dcac1"
+  url "https://ghproxy.com/https://github.com/Misterio77/flavours/archive/refs/tags/v0.7.1.tar.gz"
+  sha256 "207002728cc270d92f4cd437384925e767c611d30520ec8a29816dfe600d7f61"
   license "MIT"
   head "https://github.com/Misterio77/flavours.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0c111b5a4b8d1202a90264539f524dac5bc9f3e870bb12730da491c1243d98c7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9200bdc6a14abb08d74d76719b8e22bdd6fcb61199f681d21448c4db714bc34c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1115555c25d56152083fa2e769f6b284425edd7164cae47559707ae043e075f1"
-    sha256 cellar: :any_skip_relocation, ventura:        "a43fd8c88dd0f6ca5969c2639403f92fbe366f5403654ac8d6a2d9bd216fb391"
-    sha256 cellar: :any_skip_relocation, monterey:       "390e9e7c8829fc1f87b6a1ba982f2643609478fbdb3b5657a29195b8dd23330a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c2690b1e9148bcdf1968668bede74d9aea501c22fd37252cbf00ccb564f740a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4862a79b1de2d1d7b9f4232bab8eb9671e339c21f172d19006a103d8ecd4d1c9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "76fb0fc700fb8ca4b0782a6fe3c5929e41885d8fcedd8733801b15201efd37eb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "95b55c5ca8366840c9f3aeed5d525b200fe2ecb8e590dbba957034c556a531f3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "31327342d9aa50edbfbb67c99ab56ccb2f04eb48f2cf25f1f75e32787b335dcc"
+    sha256 cellar: :any_skip_relocation, ventura:        "cf8bb2e1d3c20d057a79a8dca7c8249e93e63ed04178b910740b07767df38829"
+    sha256 cellar: :any_skip_relocation, monterey:       "963a8dbb9b4cfdfda2a65bdb5a16df394bab78f96bf2e707b1e5cbd11dd575e2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c976365af9c8ce579298e8232dda3605ad0a20116276dfda4084cd413e599b0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "35fe79bebc20bfc9453e7b313a5ffa5fc5040de4b7c896e98dcba4011425ade4"
   end
 
   depends_on "rust" => :build
@@ -30,24 +30,25 @@ class Flavours < Formula
   test do
     resource("homebrew-testdata").stage do
       cmd = "#{bin}/flavours generate --stdout dark razer-wallpapers-page-hero-mobile.jpg"
-      expected = /scheme:\s"Generated"\n
-        author:\s"Flavours"\n
+      expected = /---\n
+        scheme:\sGenerated\n
+        author:\sFlavours\n
         base00:\s"[0-9a-fA-F]{6}"\n
-        base01:\s"[0-9a-fA-F]{6}"\n
-        base02:\s"[0-9a-fA-F]{6}"\n
-        base03:\s"[0-9a-fA-F]{6}"\n
-        base04:\s"[0-9a-fA-F]{6}"\n
-        base05:\s"[0-9a-fA-F]{6}"\n
-        base06:\s"[0-9a-fA-F]{6}"\n
-        base07:\s"[0-9a-fA-F]{6}"\n
-        base08:\s"[0-9a-fA-F]{6}"\n
-        base09:\s"[0-9a-fA-F]{6}"\n
-        base0A:\s"[0-9a-fA-F]{6}"\n
-        base0B:\s"[0-9a-fA-F]{6}"\n
-        base0C:\s"[0-9a-fA-F]{6}"\n
-        base0D:\s"[0-9a-fA-F]{6}"\n
-        base0E:\s"[0-9a-fA-F]{6}"\n
-        base0F:\s"[0-9a-fA-F]{6}"\n
+        base01:\s[0-9a-fA-F]{6}\n
+        base02:\s[0-9a-fA-F]{6}\n
+        base03:\s[0-9a-fA-F]{6}\n
+        base04:\s[0-9a-fA-F]{6}\n
+        base05:\s[0-9a-fA-F]{6}\n
+        base06:\s[0-9a-fA-F]{6}\n
+        base07:\s[0-9a-fA-F]{6}\n
+        base08:\s[0-9a-fA-F]{6}\n
+        base09:\s[0-9a-fA-F]{6}\n
+        base0A:\s[0-9a-fA-F]{6}\n
+        base0B:\s[0-9a-fA-F]{6}\n
+        base0C:\s[0-9a-fA-F]{6}\n
+        base0D:\s[0-9a-fA-F]{6}\n
+        base0E:\s[0-9a-fA-F]{6}\n
+        base0F:\s[0-9a-fA-F]{6}\n
       /x
       assert_match(expected, shell_output(cmd))
     end

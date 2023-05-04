@@ -4,18 +4,17 @@ class Alpscore < Formula
   url "https://ghproxy.com/https://github.com/ALPSCore/ALPSCore/archive/v2.2.0.tar.gz"
   sha256 "f7bc9c8f806fb0ad4d38cb6604a10d56ab159ca63aed6530c1f84ecaf40adc61"
   license "GPL-2.0-only"
-  revision 2
+  revision 3
   head "https://github.com/ALPSCore/ALPSCore.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "391ce80c683398d28212dc92646e445cd2c4f5c855e87dc1b5139ab120d8d052"
-    sha256 cellar: :any,                 arm64_monterey: "7871e3e67a75c290db8e660f2bc1ec61429e9d2729a93dec35ff3dd388e8cde2"
-    sha256 cellar: :any,                 arm64_big_sur:  "cd40f73fe61378e84131abe4a98493a0e8eab7b92b4c8840344637e5b706a43c"
-    sha256 cellar: :any,                 ventura:        "e2a24a3dabff3231a2b8a7bbbb6c97a01fb75e5e5a2c5d992261e466cbecfdf9"
-    sha256 cellar: :any,                 monterey:       "f657811bc26f0813bdfa09d879ab4b28066f01f809703bcea01c99173ccb4090"
-    sha256 cellar: :any,                 big_sur:        "48dfc02950aee1ad3e491669f8594c240d6010be24e3ee2da18a769838fd84eb"
-    sha256 cellar: :any,                 catalina:       "fcc8af526ea82cb34aedc72462583e600cf1e7b1c5c8d48811b514de8556783e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4249c8eca7818304c1c460c69becdbe3a2f3b34446dd9fb93ada171169f189f"
+    sha256 cellar: :any,                 arm64_ventura:  "88c6e64b6e8ca7f7354ec0b65c281c82d9fd7f7efe35966411fc3151ec539b3c"
+    sha256 cellar: :any,                 arm64_monterey: "9e4266bcf31a8c7af05d8f582d23c773ab814ba033251bb221000b0de00c4b90"
+    sha256 cellar: :any,                 arm64_big_sur:  "d05d9821803c3f2db25b613b77ed4e271c25f7cd8696b39bf474ea477eff4aa1"
+    sha256 cellar: :any,                 ventura:        "f1645afda2a5b5d554c12f8156dd84ab32ef21a0aa112463a82a3694e2b0ca95"
+    sha256 cellar: :any,                 monterey:       "1b80a39cdcb57578928c6a4fc88218160236e947299b281acfc12f8678f3061d"
+    sha256 cellar: :any,                 big_sur:        "311a9f813a4e9f6147de06a0975c6c18eaec990ece62326de19e53ff40dbb435"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cad3a9b4d34851a8b32ccde1aff2ff675de151e5af7a06dc831284be0c3fe2f6"
   end
 
   depends_on "cmake" => :build

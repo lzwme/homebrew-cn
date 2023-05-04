@@ -2,7 +2,7 @@ class Dynare < Formula
   desc "Platform for economic models, particularly DSGE and OLG models"
   homepage "https://www.dynare.org/"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   # Remove when patch is no longer needed.
   stable do
@@ -32,13 +32,14 @@ class Dynare < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "e5a668c0ca79f0114dc78d3592033b9053aad21f1858400006a69560101fbbdd"
-    sha256 cellar: :any, arm64_monterey: "c0a93ae905af67f6437a1386deb8209906fd72e64dbb72e91af52bf5ec285248"
-    sha256 cellar: :any, arm64_big_sur:  "8020790eb749e5c1b419431eddfdf921b37a267a34d2d66d07736a59c867b4d3"
-    sha256 cellar: :any, ventura:        "36020b4f945f5584be91968c6897e69617a0569df3d0c86ceb52c6f54d4f1e5f"
-    sha256 cellar: :any, monterey:       "f1a43ac10b58051780a68feee1f496672e205e6679d8f8642572e7c4727e5277"
-    sha256 cellar: :any, big_sur:        "f2d0d6d146d3aa61e6df9c4ffc98471649d3b12b162a78cca79f290fa5ab2bd5"
-    sha256               x86_64_linux:   "fd14929ec0d7acc28a9c999633edaf4a902effbcdb90113b46e74f916d036f2b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "d2a7971809c3e2c2c504c60879f4a1dfff60fc935671aa1a0de8451b2dc17194"
+    sha256 cellar: :any,                 arm64_monterey: "7dddf275e3d2d9fa48a3e8a02e98c2f9124d901abd5075268e477ad5e7d02b85"
+    sha256 cellar: :any,                 arm64_big_sur:  "34a0749fac7f7cc2a2b093140678a20e2b9e6adeb06ea4298f4d4fea9b5de47e"
+    sha256 cellar: :any,                 ventura:        "97c0cab3c345887bbb7ff5cd8a2c79aeca822d16a10fbd7227ddbc50cfe009db"
+    sha256 cellar: :any,                 monterey:       "a59c743a74e5cc54b9acee6ebda38e0ea5f275a00e6f7c38bf95c1fe678319dd"
+    sha256 cellar: :any,                 big_sur:        "261c3a7a3e3797c6b40663c53587ed22f4887cb9ce7de267ab4471c40e8a1521"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d9ac0a044d461b5e9905d6788cfbacaf243675fb4b434301c74d098c125558f"
   end
 
   head do
@@ -78,8 +79,6 @@ class Dynare < Formula
   end
 
   def install
-    ENV.cxx11
-
     resource("slicot").stage do
       system "make", "lib", "OPTS=-fPIC", "SLICOTLIB=../libslicot_pic.a",
              "FORTRAN=gfortran", "LOADER=gfortran"
@@ -90,13 +89,13 @@ class Dynare < Formula
       (buildpath/"slicot/lib").install "libslicot_pic.a", "libslicot64_pic.a"
     end
 
+    gcc = Formula["gcc"]
+
     # GCC is the only compiler supported by upstream
     # https://git.dynare.org/Dynare/dynare/-/blob/master/README.md#general-instructions
-    gcc = Formula["gcc"]
-    gcc_major_ver = gcc.any_installed_version.major
-    ENV["CC"] = Formula["gcc"].opt_bin/"gcc-#{gcc_major_ver}"
-    ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{gcc_major_ver}"
-    ENV.append "LDFLAGS", "-static-libgcc"
+    ENV.public_send(:"gcc-#{gcc.any_installed_version.major}") if OS.mac?
+    # Prevent superenv from adding `-stdlib=libc++` to compiler invocations.
+    ENV.remove "HOMEBREW_CCCFG", "g"
 
     # Remove `Hardware::CPU.arm?` when the patch is no longer needed.
     system "autoreconf", "--force", "--install", "--verbose" if build.head? || Hardware::CPU.arm?
@@ -110,7 +109,7 @@ class Dynare < Formula
                           "--with-slicot=#{buildpath}/slicot"
 
     # Octave hardcodes its paths which causes problems on GCC minor version bumps
-    flibs = "-L#{gcc.lib}/gcc/#{gcc_major_ver} -lgfortran -lquadmath -lm"
+    flibs = "-L#{gcc.opt_lib}/gcc/current -lgfortran -lquadmath -lm"
     system "make", "install", "FLIBS=#{flibs}"
   end
 

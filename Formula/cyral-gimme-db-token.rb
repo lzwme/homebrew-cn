@@ -3,19 +3,18 @@ class CyralGimmeDbToken < Formula
 
   desc "Eases using Cyral for SSO login to databases"
   homepage "https://cyral.com/docs/connect/repo-connect/#cli-token-retriever-for-sso"
-  url "https://files.pythonhosted.org/packages/96/44/1810cb177f63217550a1cb0f38adf5652636167062e78dd6b1fb3207faf5/cyral-gimme-db-token-0.8.1.tar.gz"
-  sha256 "7f49ac2410870b895118f39051264ac047d9f6537d7cbdd8828a7627681c8857"
+  url "https://files.pythonhosted.org/packages/2d/a4/89c570d7939cf4560ee49017ba1dfe5e0174f15d18f60e532fbb2586d65d/cyral-gimme-db-token-0.8.2.tar.gz"
+  sha256 "ba2e8258e231324f76bdf34dabce41f75dbef67b7246cbe1db030ca75e65bed8"
   license "Apache-2.0"
 
   bottle do
-    rebuild 8
-    sha256 cellar: :any,                 arm64_ventura:  "36fb4dea738ea933b82c39ec0f4b5a251857d7c40f3ce2414f4774dc651c9574"
-    sha256 cellar: :any,                 arm64_monterey: "67556eb641fd2b0a2ea1c650361a05df85a7d44e1e94a6ae36b075dd38fdec85"
-    sha256 cellar: :any,                 arm64_big_sur:  "0cc3497c4e926abe461d09c2d4943055ac17bbb8ce6f551694eb42fafecd7e4c"
-    sha256 cellar: :any,                 ventura:        "a5c5c83c2150da2fcb11f572de9b4a911bcf3945c44fe64228dde9eb605135fa"
-    sha256 cellar: :any,                 monterey:       "1c5434195a774ff7ff7da3a422095a550212c9d7621b85d04b2da0dd3ec7f1b9"
-    sha256 cellar: :any,                 big_sur:        "3fe82aaa3ba1abbf2ea5e7a629739a3c8e2e2d7ef4fea6232b6c3e3d83ebcb65"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4fd62e5c5de4e8234c453acf61d861bf040b9f488ba6183f7f9ecf8126d2038"
+    sha256 cellar: :any,                 arm64_ventura:  "9e9021e5c05e9990270b4037be273de8a53102869e3c74cef11809a18d8cee53"
+    sha256 cellar: :any,                 arm64_monterey: "639872db8cb4b62482872ecc97a3090150ea7f02a912d0af816d2aa6512a4872"
+    sha256 cellar: :any,                 arm64_big_sur:  "53d9bcee3b002f984b9bd22c9198872b46427211aebb14495ff7b84dd8563b3e"
+    sha256 cellar: :any,                 ventura:        "2f86a2b049a321038b82ec7fc400c65d35c34aafdcf685e197c1c0fed474ab41"
+    sha256 cellar: :any,                 monterey:       "91f5229fc4195e193b6268c4e5537ed9a26f4e656da0b36d4a7a1725b5c67b6d"
+    sha256 cellar: :any,                 big_sur:        "c9f848e6b1be82a004bfb137fbfa192ced6ad99f8144a0a906f842232bb82469"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b7a1232edff2dc566c1f1a63a8ec1a5bb0bd8cb9de7e71b2822d22b26dcc685"
   end
 
   depends_on "rust" => :build # for cryptography
@@ -30,13 +29,13 @@ class CyralGimmeDbToken < Formula
   end
 
   resource "awscli" do
-    url "https://files.pythonhosted.org/packages/35/25/47bbbc251b85a765f5370409369991028719f380345f389304fc0e137cc3/awscli-1.27.121.tar.gz"
-    sha256 "f2c7c759095167874b9084a9a1b921801d57d16baba1357dd208c9533606b899"
+    url "https://files.pythonhosted.org/packages/ff/cc/a07ca67ea894ab556d4b705d584163aa3c046c96f4899762ac9d8ee80386/awscli-1.27.125.tar.gz"
+    sha256 "4ef04564a4f6d10e9f2c07bb485a482183b6a2aabb7f7797b61b64159b340672"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/8c/d3/cac011be3a89b877d6c9cbf1ed4c36da0cc948877132fc0ec7a343b6a4dc/botocore-1.29.121.tar.gz"
-    sha256 "955c1dd244b6286d9e17dc525d1459a2a74a1c4e519f35006c72f184fbce0760"
+    url "https://files.pythonhosted.org/packages/81/f9/31fd079836f54470e5aa7c53f8487653d0720304b592e168f51c516a08b9/botocore-1.29.125.tar.gz"
+    sha256 "3005a7ffee083315e69938acdf1bfeaf9e21fe1fe1643d6573ee817721f4ffcd"
   end
 
   resource "certifi" do
@@ -65,8 +64,8 @@ class CyralGimmeDbToken < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/10/a7/51953e73828deef2b58ba1604de9167843ee9cd4185d8aaffcb45dd1932d/cryptography-36.0.2.tar.gz"
-    sha256 "70f8f4f7bb2ac9f340655cbac89d68c527af5bb4387522a8413e841e3e6628c9"
+    url "https://files.pythonhosted.org/packages/fa/f3/f4b8c175ea9a1de650b0085858059050b7953a93d66c97ed89b93b232996/cryptography-39.0.2.tar.gz"
+    sha256 "bc5b871e977c8ee5a1bbc42fa8d19bcc08baf0c51cbf1586b0e87a2694dde42f"
   end
 
   resource "docutils" do

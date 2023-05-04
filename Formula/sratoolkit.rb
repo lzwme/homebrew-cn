@@ -2,6 +2,7 @@ class Sratoolkit < Formula
   desc "Data tools for INSDC Sequence Read Archive"
   homepage "https://github.com/ncbi/sra-tools"
   license all_of: [:public_domain, "GPL-3.0-or-later", "MIT"]
+  revision 1
 
   stable do
     url "https://ghproxy.com/https://github.com/ncbi/sra-tools/archive/refs/tags/3.0.3.tar.gz"
@@ -19,13 +20,13 @@ class Sratoolkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9fac24d57962e0b711e915e3603f1fe9e74035ee24ce8fb66a6019ba0cfc39d7"
-    sha256 cellar: :any,                 arm64_monterey: "f3b3de271cc0f04ff40c25d405ede0cafa9b045bcbb5cbf09f9a923b6bb0db95"
-    sha256 cellar: :any,                 arm64_big_sur:  "b10a2b505112c1770814aba5a346019cdef789ee4c17ba13e45de006f61c54da"
-    sha256 cellar: :any,                 ventura:        "5d643b579db1c5487c23f4091e6603f5d6b3b41b6f082dca9083215d69adc6f3"
-    sha256 cellar: :any,                 monterey:       "5ffe635f09dd6398aebfc5a5a1af23f3022b70892bd809ba4b94fc7f738a3de5"
-    sha256 cellar: :any,                 big_sur:        "431ccf7fabaeddaffb398447b7d54bf79300d879a6b6cd8e415b35f90f0af501"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f469089c23a834c41f7bd865a76651648f2c54688f9262da72a075b61fd247be"
+    sha256 cellar: :any,                 arm64_ventura:  "306a5aa250bdc3964d159c523a81e5c8889b2d5540b324c677203b1b99f510ba"
+    sha256 cellar: :any,                 arm64_monterey: "202ab27c9d14527965f8a57f37c03750de0ad35e68a32a4a5a101184d1794dfd"
+    sha256 cellar: :any,                 arm64_big_sur:  "a91e8171d1874951f60bd35d11eb51a1e761de3b2ae4653ad53529cb8c05f2c4"
+    sha256 cellar: :any,                 ventura:        "6dbdefb6628b9bc40345f93b458de414c7a943f4fda964a6f357a27531d74ea3"
+    sha256 cellar: :any,                 monterey:       "4802087d65391b3de4ccc2f9fc067a7ac640d817d6c22754f7faf231b3fa8bfd"
+    sha256 cellar: :any,                 big_sur:        "af18107726ebbbb23daa9d937176212e96d5911da3d9055855feb5f1ba0d8769"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2fe53f93b4663a16530128c410a8b2b65fd54ab1ddf049b3d2ef122530546906"
   end
 
   head do

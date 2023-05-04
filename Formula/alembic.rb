@@ -4,16 +4,17 @@ class Alembic < Formula
   url "https://ghproxy.com/https://github.com/alembic/alembic/archive/1.8.5.tar.gz"
   sha256 "180a12f08d391cd89f021f279dbe3b5423b1db751a9898540c8059a45825c2e9"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/alembic/alembic.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7bb000eb90474a22b53b828e2140d26adbb5ddbc78ee42b5a8c9dd0447ac493c"
-    sha256 cellar: :any,                 arm64_monterey: "e87eb223819f98ce0582e3ec932ef8fbb478c85ce93ad99fd9f90a0a56aae4b3"
-    sha256 cellar: :any,                 arm64_big_sur:  "ef2aa27c42f96f5a1ae9469e75d704bc24458e018462ed0196acfd37697b2ab0"
-    sha256 cellar: :any,                 ventura:        "c1fa0666f63a047c455fb9f00feca8ed82e2c84c2a1c6d1883ff41e507d3b715"
-    sha256 cellar: :any,                 monterey:       "edc9109326c4e97dedea1b7d07b5e6957f242f67eeb17eebcb6f1da1b6ae8047"
-    sha256 cellar: :any,                 big_sur:        "1fddf85cb8102d9c7f94b3595f65b7aad961d138797a0805df17f5b722cb3130"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d41d701580f8e183deb9c542ae98065402e9ee9f4fc631cc3b4ae304c2af1f1f"
+    sha256 cellar: :any,                 arm64_ventura:  "65c61ae643350f1650ec46f993bbdb2274aebc0244255ca61ab333988600477c"
+    sha256 cellar: :any,                 arm64_monterey: "4329cf18add1c25e5f644c3a320f1c1225351997849babee871e6d0e1b7d3ce0"
+    sha256 cellar: :any,                 arm64_big_sur:  "d2771244f164932b8f2179e5005ee66b70a8bd716983cf216a5f8ed19f219c28"
+    sha256 cellar: :any,                 ventura:        "877b5b92f82f91b2f24beb7e90df3a948c2b378d5b6f59832b1bed2705563bc7"
+    sha256 cellar: :any,                 monterey:       "31b3e429d4da1f9f368b446ecc7c1444b8fddd9ba7fa87a554146ef61993bcb1"
+    sha256 cellar: :any,                 big_sur:        "3512b654aa6eb2396c19796d903422458c7f86d8ee857afb76abb8cc83d8a4b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eed637a411ef960d275d05237c079889ebf0240b38d30f6488a0f9fce007a6a9"
   end
 
   depends_on "cmake" => :build
