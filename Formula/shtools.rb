@@ -1,19 +1,19 @@
 class Shtools < Formula
   desc "Spherical Harmonic Tools"
   homepage "https://shtools.github.io/SHTOOLS/"
-  url "https://ghproxy.com/https://github.com/SHTOOLS/SHTOOLS/releases/download/v4.10.1/SHTOOLS-4.10.1.tar.gz"
-  sha256 "f4fb5c86841fe80136b520d2040149eafd4bc2d49da6b914d8a843b812f20b61"
+  url "https://ghproxy.com/https://github.com/SHTOOLS/SHTOOLS/releases/download/v4.10.2/SHTOOLS-4.10.2.tar.gz"
+  sha256 "0caece67d65ddde19a79ec79bc6244f447f6fa878e5b2dc3f635cae2a3d1ee8c"
   license "BSD-3-Clause"
   head "https://github.com/SHTOOLS/SHTOOLS.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7227085a1a3038518cbd30a4b53dd0fea5d43078cbe9168c870c673aaf03856b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "038729713c3013c2c06e453ea99ff52eb83f01adcd3bfd6435e1101054d4698f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "063c1e3013bf6dfc56ae3c0dbafe3214d52c3446b84f084accc2214838cd8d46"
-    sha256 cellar: :any_skip_relocation, ventura:        "3b35f33e5756434a83142c56b5c0e6a2888c180d094ee3e9ad878665ee715be2"
-    sha256 cellar: :any_skip_relocation, monterey:       "8164fa3de31c5909455ec628c680e35c051b0858fd643e0694b10debbd85d134"
-    sha256 cellar: :any_skip_relocation, big_sur:        "170def5eead4a05b223b214bdff418edd84c62008687a246117362ea0e0f4cb3"
-    sha256 cellar: :any_skip_relocation, catalina:       "e1e43ac26408f5592cc0b2140d18dee20048d91efb55782fe93389229fceba3c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f16c09c4623a0d7deae19454be2e1b590f6ffb90a1fbbc11ef1514a35b02d092"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ef948bd0127544cfab21a58aabe0ce1c3a9020cba0b81248cb33bec82ae9fbf3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7d0b77c56bb480f3792325c51651ca6d62969cf8f1a9f7513ebf1eaa2816fbb4"
+    sha256 cellar: :any_skip_relocation, ventura:        "4cd13a8a799bb5bcda372396c4f57af88533c6f5cf249aeb29c0093e4c14d226"
+    sha256 cellar: :any_skip_relocation, monterey:       "e5210fa3aee34a84bf862bdf67b104ff34e84f9c889bd27557305054c67ffcbe"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5b3dadc0808b8b8d4259fd24b9c0f4fe903e6d51ff88911cc06958c4dfe468f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "594b5746350c8287196755ce620aebd246b373ba95cc92dd82750914e00d4c5f"
   end
 
   depends_on "fftw"

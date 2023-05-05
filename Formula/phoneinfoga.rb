@@ -1,19 +1,19 @@
 class Phoneinfoga < Formula
   desc "Information gathering framework for phone numbers"
   homepage "https://sundowndev.github.io/phoneinfoga/"
-  url "https://ghproxy.com/https://github.com/sundowndev/phoneinfoga/archive/v2.10.4.tar.gz"
-  sha256 "4ff3ee5960b966fda00b344a692553b7660f7bb16cd717940e875746fd1b9256"
+  url "https://ghproxy.com/https://github.com/sundowndev/phoneinfoga/archive/v2.10.5.tar.gz"
+  sha256 "b26b514a947088a4dcdfaf80d40650c857158698bbb186f79c07ffbf39717476"
   license "GPL-3.0-only"
   head "https://github.com/sundowndev/phoneinfoga.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "409a65925a78768ac77a9d933fc3d72787960486a5cc4bcdae9c44e97893e0cc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e77670d28b38c6ca9caa3fdcee6d0ab1e08b57ab28d6d6d57e1616fbba07d053"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9ade10305168ce327d695660d32c459b20dab13efe9f9ad5213976c3d33903a4"
-    sha256 cellar: :any_skip_relocation, ventura:        "586c5da58bf0087a8198aac44450c97a13db72dcbf485750cab33475a09cff47"
-    sha256 cellar: :any_skip_relocation, monterey:       "bed71b8eb9997ddef8402570fd2f76c04578c89fd81e4f9a120ee1b39a3e84ed"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5ca5592759cd8a163fd146c32e10071521215b99d734afdef0fa126a5761ec33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "549c8b4267f70906e3afc6ab77b5dc9fad32289d7bcc08381faf7a0bb4fd11df"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2ee2752bc0b93e1d38dfc435ad74d0c6bb721fc299f80f49a36413178b8f0cd2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "120e0da24bf2635d57fddcfb8d1db5fb4eed919368f5c6a504468130e257f214"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "884a8b5c95df874977b5918060c938b9420e81ab18ca76874191a1ded0b7d29b"
+    sha256 cellar: :any_skip_relocation, ventura:        "eb4d9594ec3cc0f6c23d0579f05c5f6810ee5fc6ea51bc8220649974ed248da3"
+    sha256 cellar: :any_skip_relocation, monterey:       "b8f489c703312c268aa78febd4bc2c923805b6d10116efa7cb5067661c561841"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f79b25515c22984439c36cc3022e53550976259df3908b800866d800812e7525"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e227b3dc433024b2a48d074427ec20e3762608f2bb4d2cd41e1274e5c53834a0"
   end
 
   depends_on "go" => :build

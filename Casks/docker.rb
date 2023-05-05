@@ -116,8 +116,15 @@ cask "docker" do
       ]
 
   caveats <<~EOS
-    If your CLI tools were symlinked to $HOME/.docker/bin your path should be modified to include:
+    CLI tools are installed after launching Docker. They will be symlinked to
+    one of the following based on your preference:
 
-      $HOME/.docker/bin
+        /usr/local/bin
+        $HOME/.docker/bin
+
+    If your CLI tools were symlinked to $HOME/.docker/bin your path should be
+    modified to include:
+
+        $HOME/.docker/bin
   EOS
 end

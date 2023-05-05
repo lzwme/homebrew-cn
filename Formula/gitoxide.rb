@@ -5,6 +5,11 @@ class Gitoxide < Formula
   sha256 "098bb18e1cae42ab7597b6b442538d3f51b57935a848ea121e20e2921d6a4693"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "50cc3507a201317ca4efcd66ec1ca950e7116327ab5c9db9679e8c67e5f692d6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "775e274a1b105542f6bc761fd1f8497b1e7414b0b6fd25ffdf7ea9d54530694c"

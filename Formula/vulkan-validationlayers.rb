@@ -1,19 +1,19 @@
 class VulkanValidationlayers < Formula
   desc "Vulkan layers that enable developers to verify correct use of the Vulkan API"
   homepage "https://github.com/KhronosGroup/Vulkan-ValidationLayers"
-  url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/refs/tags/v1.3.248.tar.gz"
-  sha256 "2b4d62fe0a4392b1a322e3d2c8a3541ee19074363c7464aef029890143ecf521"
+  url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/refs/tags/v1.3.249.tar.gz"
+  sha256 "631582fb19be0344a884758338e6e17cef8596e709c86bcd6a3ab5cd845af58b"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-ValidationLayers.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "17e804049455e310d29aef71542376e425fe26cc421ef47c33b97248c3958d04"
-    sha256 cellar: :any,                 arm64_monterey: "1dc80cc863e06698e4cdf60b20cc7bdf1e5e951774b0cd1a9bbd6fdd4c25e520"
-    sha256 cellar: :any,                 arm64_big_sur:  "0523325168764a438553037cca0791f7a307add39d8040b5c9f31740028d1bce"
-    sha256 cellar: :any,                 ventura:        "5bbd8fa8d568c0f07d6651c10e56ba571d09941a491773dbd4f92aa4da1833d2"
-    sha256 cellar: :any,                 monterey:       "811fb5a1b0f1e7859d089a1dcef3721d6415012c6fdf534d96e7285f331d4f96"
-    sha256 cellar: :any,                 big_sur:        "fce58f2a19936a0c5b08bd493ce727157d264140bac7a7c41d293da6c7bff83b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0773cb997c323e0e6d1791e2bc32091aad043e37b346206d53f9380933a8669"
+    sha256 cellar: :any,                 arm64_ventura:  "a0b7c4feb0803c33f7c3e993a7cbd2535922567ecdf640a77acf0461d26cf388"
+    sha256 cellar: :any,                 arm64_monterey: "ed70aee85d1cb98a93f1fb7e443d06351abcd3e157f250a6f43697e1f91ac91a"
+    sha256 cellar: :any,                 arm64_big_sur:  "71ab88ceb2441185c2d62a3001b02ee2eb5d2b30c2c0688e535c8054eae13888"
+    sha256 cellar: :any,                 ventura:        "37253937aae7cf18e604553466c1a5759c072036f1672b7e458b02082d339767"
+    sha256 cellar: :any,                 monterey:       "155f8f3fbcb9d59e312b87b9aae5dd83c5b4d7ff84b01b1153581ef561d38332"
+    sha256 cellar: :any,                 big_sur:        "cf67856781b21d793ca1d6e0718c257da40fe25bd2dfb6d2280c15fa94b3d949"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8dca669713a26968559cbbbc7f13886261901bce8efcdccf452151796fdea208"
   end
 
   depends_on "cmake" => :build

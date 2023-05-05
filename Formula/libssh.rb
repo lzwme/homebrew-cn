@@ -1,20 +1,19 @@
 class Libssh < Formula
   desc "C library SSHv1/SSHv2 client and server protocols"
   homepage "https://www.libssh.org/"
-  url "https://www.libssh.org/files/0.10/libssh-0.10.4.tar.xz"
-  sha256 "07392c54ab61476288d1c1f0a7c557b50211797ad00c34c3af2bbc4dbc4bd97d"
+  url "https://www.libssh.org/files/0.10/libssh-0.10.5.tar.xz"
+  sha256 "b60e2ff7f367b9eee2b5634d3a63303ddfede0e6a18dfca88c44a8770e7e4234"
   license "LGPL-2.1-or-later"
   head "https://git.libssh.org/projects/libssh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "070835503169e43125a6c78d21229e8b1489c0ec37d2899e3658784513434789"
-    sha256 cellar: :any,                 arm64_monterey: "3932e63ecd8236e305a43d1aa27c98957b8c513171873d21fd9858671c1b4a5d"
-    sha256 cellar: :any,                 arm64_big_sur:  "3b2886c28cb74cc6eec70cc7fe0225ec55567848df8cf5b97cd2226b56a91675"
-    sha256 cellar: :any,                 ventura:        "977c22fa0c47b658e37b719914f8896e7f32057ff10e2151ed25606d9af6149b"
-    sha256 cellar: :any,                 monterey:       "4c965d61eef0b2ce050e191f399f7f84d9300035d444af06b72b7401e0927e20"
-    sha256 cellar: :any,                 big_sur:        "8338dc10bac32e5c6c3a5e4004f6067c414ff179658271e7c886385efeb8ef43"
-    sha256 cellar: :any,                 catalina:       "4e02e90e4e3691c4ccfdd67ffc66041b15d60d8bf5b75373f84dcf49d28c93eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "000115cbf2dac1a926830428ff9685bfca24e7a745017e0e6f50dcc5c9f5a15a"
+    sha256 cellar: :any,                 arm64_ventura:  "90f69ef4b8bbece825066be8f7eb60ef912119f37b243aff6a7552e140a61227"
+    sha256 cellar: :any,                 arm64_monterey: "26a43b44df01e95acd715a58285b86f37d4e619beaad61b5b8e25ea2b8fc27f1"
+    sha256 cellar: :any,                 arm64_big_sur:  "93872a55892377fbb96747e16652b2eaf32bb23efce922c5857e5376e549534d"
+    sha256 cellar: :any,                 ventura:        "507c82edd04f248d2486ec9ceb906886fecdf1fa87dcaf678e0e0b5f00e14180"
+    sha256 cellar: :any,                 monterey:       "9b8d872b9e7d40ebafcf634ecb0071a99b9799603141f67777c4d248533a30c5"
+    sha256 cellar: :any,                 big_sur:        "85758a853bc5ab1fb7c5464bc361db49827d0741e7cc0b2966784cd2c63dfa66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c042612efdc39d06a44d5695761feabb3a3f2ff561c1252bd1bf0e7d2251725"
   end
 
   depends_on "cmake" => :build

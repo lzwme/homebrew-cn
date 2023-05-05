@@ -1,9 +1,8 @@
 class Openjdk < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.java.net/"
-  url "https://ghproxy.com/https://github.com/openjdk/jdk20u/archive/refs/tags/jdk-20+36.tar.gz"
-  version "20"
-  sha256 "215767be88a18af00440d5241960a3937237e77b938db4485bdb1c9bb414972e"
+  url "https://ghproxy.com/https://github.com/openjdk/jdk20u/archive/refs/tags/jdk-20.0.1-ga.tar.gz"
+  sha256 "ced1915490f6831cd53bbf84281e8bd6b0c5e3fe6ab7c04e3428df1f32343a1e"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
 
   livecheck do
@@ -12,13 +11,13 @@ class Openjdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "8231b18feb2a2e6262171fbb9dd0e474ad8583399237d753f5816cb7290bc72f"
-    sha256 cellar: :any, arm64_monterey: "9a01e8c42f9ead0cd3740fa3f148f1edb134352c13c1dd96ebd6bfd982b2a771"
-    sha256 cellar: :any, arm64_big_sur:  "be6d2886035b169756c3e60044c4d178ed1b10bb31b170bce4fd9c0ad2bec7a7"
-    sha256 cellar: :any, ventura:        "09913cb9615d007e4b4960769556ce8a10245a86d962f2ee89cd1c873e93ba73"
-    sha256 cellar: :any, monterey:       "085356e91e88af6399e740abfeb7e8cd56abf4ac3a2a012ace5d08a36dac7bd9"
-    sha256 cellar: :any, big_sur:        "1ce686a25bdcb889cb83629fe7e68bb4bc2a89505bfccd1fdbc9c76df01c9409"
-    sha256               x86_64_linux:   "555dc1ccaa302680a47bdfa71da5c2c9a9a9f86221d31082a46e4b6847c55772"
+    sha256 cellar: :any, arm64_ventura:  "f1f57bfbc1a34a0262afaee9b46311631f801e5fde7881483e5fef3d3c50c39d"
+    sha256 cellar: :any, arm64_monterey: "cd7740408b565bc5cf65623212d9de741bde4ebda65bc8ce697af71d7d79dcd4"
+    sha256 cellar: :any, arm64_big_sur:  "575b22d9e6189d0cad3bc0c5aac99e22d3b542de9ef846a8b74521d96b800fba"
+    sha256 cellar: :any, ventura:        "c20be81e70ccea53ece81cd8e2fbf8829eecffcdfeb6ab4395f9808cc664ee95"
+    sha256 cellar: :any, monterey:       "12ab1b2e4022ee37f354ba0a0180e652a96b8bda45cb4212f71731e4c5f0a57a"
+    sha256 cellar: :any, big_sur:        "0c0f98e27bd0a59acbcd04097fdeb798327d99db24ee5b16e4928be7fa5e87ca"
+    sha256               x86_64_linux:   "ed436706aaa8c5d8221d7a0b386d24d0b004a5bcadadb9f8e040998450caf081"
   end
 
   keg_only :shadowed_by_macos

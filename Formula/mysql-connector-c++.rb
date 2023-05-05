@@ -1,8 +1,8 @@
 class MysqlConnectorCxx < Formula
   desc "MySQL database connector for C++ applications"
   homepage "https://dev.mysql.com/downloads/connector/cpp/"
-  url "https://dev.mysql.com/get/Downloads/Connector-C++/mysql-connector-c++-8.0.32-src.tar.gz"
-  sha256 "fbdb7f214427632f423e84ba7594be1f9205eac8128c6b1857203b2f5455cef3"
+  url "https://dev.mysql.com/get/Downloads/Connector-C++/mysql-connector-c++-8.0.33-src.tar.gz"
+  sha256 "160cf6881fbde9bd46cd11aaf12930b676bc6e27589ac5c7ba49c196b97e053b"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
@@ -11,13 +11,13 @@ class MysqlConnectorCxx < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9710648b67da44ee1d92dfa2ac023b66c7e193b1deb68bc618124a6afa23f97b"
-    sha256 cellar: :any,                 arm64_monterey: "678881af35d1147a5c0b630930f2994af40419420dd84ac1adeaa5ba12d7446f"
-    sha256 cellar: :any,                 arm64_big_sur:  "f8df7b38314468440fabc7661fc44df6ff6134617581da6c0351693d48052feb"
-    sha256 cellar: :any,                 ventura:        "4553fed15ffb695ee07243ffa9ea8a25ebfca275ce03d25039b6a20b8ded0700"
-    sha256 cellar: :any,                 monterey:       "ada40ba2c5a2c4abedfe348ac3a17d269c3b2bb25d91773a5a3117cb2767021b"
-    sha256 cellar: :any,                 big_sur:        "de8c2d95a26c4ee682d5198a9ca755f28ad697b85980404615ccca04a831329d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a085d1cfbe804db4c89f3a93c69acbd73f1ead03c44747ad7847d63582c1302"
+    sha256 cellar: :any,                 arm64_ventura:  "3a257bf5c7c73420ff596e1ffdfdcdefa93258c47a30868db9959615a3f25cbf"
+    sha256 cellar: :any,                 arm64_monterey: "5362e32cc2d03b920cbe4962a8062878f89b04c1d8bf8def155080158023ef9b"
+    sha256 cellar: :any,                 arm64_big_sur:  "4ed908defe763907f2480b250fdf8ac3fa55608681a21719e1ad81a1252704bb"
+    sha256 cellar: :any,                 ventura:        "5b56cc5526d3a7318d8e4585a909ebda9d31cd53c81c4071fc0dc4a1e734f5a5"
+    sha256 cellar: :any,                 monterey:       "ffc6a362bafca5f0a019fd342fdae3600356366ba04417b2ce74982ee6049b43"
+    sha256 cellar: :any,                 big_sur:        "a45e548dbab4734bfd6574e9b62e27bd2420830425441e46289d4a9335019d61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7eef34c090c4f3a312f11e8fecfabefb74d05db8e0ac9c781766274f91253c57"
   end
 
   depends_on "boost" => :build

@@ -6,6 +6,11 @@ class Aftman < Formula
   license "MIT"
   head "https://github.com/LPGhatguy/aftman.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "50e5f064dab32bcb3fdd8cfa1609bcb00a5b16ca3282a135fc58fd6b8288e3fd"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7ecfb8ea7921a343d05bf4ef74f58b885824894092a0a734df9330af10c7eccf"

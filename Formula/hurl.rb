@@ -1,19 +1,19 @@
 class Hurl < Formula
   desc "Run and Test HTTP Requests with plain text and curl"
   homepage "https://hurl.dev"
-  url "https://ghproxy.com/https://github.com/Orange-OpenSource/hurl/archive/refs/tags/2.0.1.tar.gz"
-  sha256 "6fa3524be56027748aa13afc72487fc07f5b1ef3bf4ccdeb9c641436b3dcd4d3"
+  url "https://ghproxy.com/https://github.com/Orange-OpenSource/hurl/archive/refs/tags/3.0.0.tar.gz"
+  sha256 "7ad9a1043129edb4850727c085a83010b916b3515c2af5afddd0809c1e2bd85c"
   license "Apache-2.0"
   head "https://github.com/Orange-OpenSource/hurl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ec06767e3c13ce75cbc38d4a58a9a666bcdde27cebdeca334f9e8938b3132bcf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4f6d0d17661b13880620f78eedd1a2645a1ba2f730221eb26caa7ae72a02864c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c1fbcbd68edfe5292957ec1b7c3cd4897f53632acc62c18367bc74be39104f49"
-    sha256 cellar: :any_skip_relocation, ventura:        "ace14dc57f016b28abc0e35332b7d369216decb7f113babc95381afeb93db992"
-    sha256 cellar: :any_skip_relocation, monterey:       "fb1fb9e4956f4c2da9d35a85843443895272a73f46028e9650c8b8ea97c1aec9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cb418a569526fb28b0503543c1b5b6c5cc7b51d94ba15e03393589586b40446c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8da8fefe3b5d1f603cf93b5a9ee8716e889d881b54d9ccf8b1c4fee1c2f0816e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "72c9ebcdefeeff9d4efd3ebb25c53ae6902b414f3f0ae5ec5f03644dbc7821c9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "46471d466711b420b1743e84827806e97d78aff9af78d0134630b0c27793a4ee"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bec4b1154d2a0141a93c450cce141dc88928c066e53a172daf07ee2405928a36"
+    sha256 cellar: :any_skip_relocation, ventura:        "1d398aca1c2bb1fe791eb266fc9ba5c184502439e25393e9dbe0271fa4a3f1df"
+    sha256 cellar: :any_skip_relocation, monterey:       "35122c3acd208c6d250e6f1e19b7411c6dded41841cf318be5d4c58f5275da01"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6051d2698709f1e3a12f6f0f2fc299777966176303cbca266707b38c5ec3c0f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "273781afd4ff73f60578a575f9fdcd5e4123fe55a889e265d8ec7bd87a954c51"
   end
 
   depends_on "rust" => :build

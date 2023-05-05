@@ -1,11 +1,10 @@
 class Openconnect < Formula
   desc "Open client for Cisco AnyConnect VPN"
   homepage "https://www.infradead.org/openconnect/"
-  url "ftp://ftp.infradead.org/pub/openconnect/openconnect-9.01.tar.gz"
-  mirror "https://fossies.org/linux/privat/openconnect-9.01.tar.gz"
-  sha256 "b3d7faf830e9793299d6a41e81d84cd4a3e2789c148c9e598e4585010090e4c7"
+  url "ftp://ftp.infradead.org/pub/openconnect/openconnect-9.10.tar.gz"
+  mirror "https://fossies.org/linux/privat/openconnect-9.10.tar.gz"
+  sha256 "f1e0c4eed0ba79b87d6a0406a1500775c145c7b8392fa82094fc3e37dfab6547"
   license "LGPL-2.1-only"
-  revision 2
 
   livecheck do
     url "https://www.infradead.org/openconnect/download.html"
@@ -13,14 +12,13 @@ class Openconnect < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "70d5dbff16b4067987673fd62efd1de85d179d6e48f373a6b71337f573b2f9af"
-    sha256 arm64_monterey: "6dc4bcb064f2682ec83df05e98ebdc4c01bb393311ecc4d60f70574ac5dc6091"
-    sha256 arm64_big_sur:  "2eeb96ab48ce2e23288d738575415a9cca7356d2ef82f6dbe5c076ba85242422"
-    sha256 ventura:        "0328516a53763233b245c69ca72f0b393c7855efaffd51e70c08631d282120ca"
-    sha256 monterey:       "a5cada9bca9cc64b03ee450d06d4064edc2a55896c4b5518b558aaa68ea86b04"
-    sha256 big_sur:        "cdcbb4640fee08eb17685920cc0af6d5c74989296d222c6f21c6b51a49f319bf"
-    sha256 catalina:       "4653dc9700dc255351900b68baa48c3da01eabe5b83a42384744f825bd4a13a3"
-    sha256 x86_64_linux:   "2f6ef9a3246f5bb6e134c50e68d45c9515b7d5529be624dcfb9b4b261b6a5e4b"
+    sha256 arm64_ventura:  "3df4b53a0b6d916b5cdca928b0d70a8f9d8d2b0704126aa0eea2a475e4261514"
+    sha256 arm64_monterey: "93fae97cd8a542a3ef6efc22f448fde68dff891d280c2210f1da47aa16645adc"
+    sha256 arm64_big_sur:  "c3d8358a28d9c25c3e79e9d9463ea0f8093029f5ae2431c2a2cf42329a698e6f"
+    sha256 ventura:        "21ff1ee3c34373ddea492d1ae2d1fc3ac0c69eeffcb794fb2e8ba9009619a15a"
+    sha256 monterey:       "db61b015f86a0d30c11279c5379c90db64844ae117a26aaa75e7c46d94426e36"
+    sha256 big_sur:        "a6abb0db9058e11c23d7e3969b32ffc5613956a9183b0197b1c98b908ef38669"
+    sha256 x86_64_linux:   "60bf232d6bfe8ad31bfa597fcf526037443ad8ee73c32b3e6647918e9d269d48"
   end
 
   head do
@@ -37,8 +35,8 @@ class Openconnect < Formula
   depends_on "stoken"
 
   resource "vpnc-script" do
-    url "https://gitlab.com/openconnect/vpnc-scripts/raw/e52f8e66391c4c55ee818841d236ebbb6ae284ed/vpnc-script"
-    sha256 "6d95e3625cceb51e77628196055adb58c3e8325b9f66fcc8e97269caf42b8575"
+    url "https://gitlab.com/openconnect/vpnc-scripts/raw/22756827315bc875303190abb3756b5b1dd147ce/vpnc-script"
+    sha256 "46c0413e26f1d918d95755d323cf833bf1b7540400a3b75ebbb2ac4c906f7f7f"
   end
 
   def install

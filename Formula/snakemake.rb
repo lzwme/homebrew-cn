@@ -3,19 +3,19 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/67/f7/49b66193c5c9e7e5863b236bc6c33985bf458c602d2a81ba9c78af10f9fa/snakemake-7.25.2.tar.gz"
-  sha256 "616652da63f200b37a62dc08bef74efeb165fa2d38191625db981244b01e3ae8"
+  url "https://files.pythonhosted.org/packages/b3/1e/fde49381c0c59a3c98eaba1a51d361a1282172d794ecb87f869f06880ed9/snakemake-7.25.3.tar.gz"
+  sha256 "993a304d6a9bf12b6b55b45e77dd3b98897394b205a5bcefb7e180dec2095ee4"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2894cc111396477640f8d989729332c355cd91d518ca4c64ff4cad09f4f015a0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "126e0e761ba9b911b7192a7a458508e023da8dabbac19a42450b94d81f364fea"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e390e81f8b18853e2af1abbd2799c21be0f1812457349a0e86e15f06cc1d6f20"
-    sha256 cellar: :any_skip_relocation, ventura:        "fc64324fb6e7e9c8a0d59d834323dea8b821d8f6c07a98a0a1b7e11d25357bdd"
-    sha256 cellar: :any_skip_relocation, monterey:       "f97eb9423bde13d043507d7c2d5196b21fda46d10326e74c2153518c7c070668"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5abfff1d2bb50c7e57cba75cfc00c12e3566831d441d7908d3ddd4bd46382fa4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8a5baec813a472ba64aa274168e525399faa6524d68f58d7cfc5e096d5043fe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c3205c58f6035913e272a6e0c631ebeb3d97b6ef4ca0a537b343f0143e46ea73"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b727317d89b1d00b5935aeb36c2f7b3be97cf44009a660e5b56d5366c338b073"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dd1afa71a6634fdeaeae54610d6c2dad2d3c2d36cd6fd21aef40530d8cd76554"
+    sha256 cellar: :any_skip_relocation, ventura:        "609d10cf685a4b4e51c74ba5d745e7efe37ec9a5489e36635eeaf415ff119011"
+    sha256 cellar: :any_skip_relocation, monterey:       "e11409232d49f8b7743b13edeb7f67d680e1c6596eced5739389013bf8d728c2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "acdc6eb3e082e97f38d6f95be747dfbc33f5d3b32f11f0c164bb1b204868c4a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38c2e2a99cd0fe9da955f62d2d2799a93d9e083e0f45be24523de66d8c5e516e"
   end
 
   depends_on "cbc"
@@ -140,8 +140,8 @@ class Snakemake < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/4c/d2/70fc708727b62d55bc24e43cc85f073039023212d482553d853c44e57bdb/requests-2.29.0.tar.gz"
-    sha256 "f2e34a75f4749019bb0e3effb66683630e4ffeaf75819fb51bebef1bf5aef059"
+    url "https://files.pythonhosted.org/packages/e0/69/122171604bcef06825fa1c05bd9e9b1d43bc9feb8c6c0717c42c92cc6f3c/requests-2.30.0.tar.gz"
+    sha256 "239d7d4458afcb28a692cdd298d87542235f4ca8d36d03a15bfc128a6559a2f4"
   end
 
   resource "reretry" do
@@ -180,8 +180,8 @@ class Snakemake < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
-    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
+    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
+    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
   end
 
   resource "wrapt" do
