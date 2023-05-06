@@ -1,8 +1,8 @@
 class Spago < Formula
   desc "PureScript package manager and build tool"
   homepage "https://github.com/purescript/spago"
-  url "https://ghproxy.com/https://github.com/purescript/spago/archive/refs/tags/0.20.9.tar.gz"
-  sha256 "4e0ac70ce37a9bb7679ef280e62b61b21c9ff66e0ba335d9dae540dcde364c39"
+  url "https://ghproxy.com/https://github.com/purescript/spago/archive/refs/tags/0.21.0.tar.gz"
+  sha256 "0ae1b042010c4d1ffb3865ba0cf67beea741a40c724065dc4056367964b6f4ab"
   license "BSD-3-Clause"
   head "https://github.com/purescript/spago.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Spago < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e6447a607985494aed97909b0583f6d82d280adb3e739e0c0cb3c427fe1c1c86"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ea6c1ae274ae86a19b1b5e476a01cf3cff396dcca7bf0a004b931767bb29d5b4"
-    sha256 cellar: :any_skip_relocation, ventura:        "c97e12c317c389b7279a4b4f173b8c521ece15da4c1fca3ca6cba63bbd6768f5"
-    sha256 cellar: :any_skip_relocation, monterey:       "e8974b1ff24ce317a5c94a225b669d0d7c7e35dbf2df1a27c9b29ff1d60854be"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e5fa3a596084f77f2c4504afab744fe8ab18eef868353196c512af1991d9366a"
-    sha256 cellar: :any_skip_relocation, catalina:       "316fc107f6b9ced5eed8f3fd8cf08bd73f9f03818bad293fed3568516d76b63f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ae695f9eb22eef6a1b98a56c87400cd52fda8d91b00da354e59c4f1b47b3e16"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ff1f1056aefbd2ea4e1ebc0a4415aefab0a21f09e0c90e6ddc0b5e732d75c79"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f0765e9b2ba05a82406efa85966071307b4021c95f6c5ad824a73f2911063856"
+    sha256 cellar: :any_skip_relocation, ventura:        "68fa6a6d91f5feee9201731301dbc041654266314ec842dfc4a8998db2d7f38e"
+    sha256 cellar: :any_skip_relocation, monterey:       "cc9358258247e523961b0ebe1647c5559249ef65693ebff3c23fb0bf176f5edc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1f29c49a689127cf34f05f415d5c980eeea7e6b3c6e7b9df2214b5430f913f03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa71b6e0cbd41ac5c0bb966030f1fe4ca2d1dbc11c19162a9407cd0d0d5d82ab"
   end
 
   depends_on "ghc@8.10" => :build

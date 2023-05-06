@@ -1,8 +1,14 @@
 class Gif2png < Formula
   desc "Convert GIFs to PNGs"
   homepage "http://www.catb.org/~esr/gif2png/"
-  url "http://www.catb.org/~esr/gif2png/gif2png-2.5.13.tar.gz"
-  sha256 "997275b20338e6cfe3bd4adb084f82627c34c856bc1d67c915c397cf55146924"
+
+  # Use canonical URL http://www.catb.org/~esr/gif2png/gif2png-<version>.tar.gz instead
+  # once it starts to include go.mod/go.sum
+  # See https://gitlab.com/esr/gif2png/-/issues/14#note_1373069233.
+  url "https://gitlab.com/esr/gif2png/-/archive/3.0.2/gif2png-3.0.2.tar.bz2"
+  sha256 "4f3a77c481d040be6e249e788291f19345668ce867bda12043e30409726b67de"
+  license "BSD-2-Clause"
+  head "https://gitlab.com/esr/gif2png.git", branch: "master"
 
   livecheck do
     url :homepage
@@ -10,22 +16,23 @@ class Gif2png < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f0feffa02d1d8db0cf5e4f13a209c173fa870557faae6fe0d37a5d96614c9cc5"
-    sha256 cellar: :any,                 arm64_monterey: "7376913b012f5b2fe0972244be5bbbefc665ed0f13c9d3a8ac2b0fe6d23dd375"
-    sha256 cellar: :any,                 arm64_big_sur:  "a8b1dd6b1f3b029b7ca53f99f18caea098810634aea1a745630028e66ecc4203"
-    sha256 cellar: :any,                 ventura:        "4e5fbf6fd1a25c14963a42660ef29c0463d4cf9f7966690d3ac8ec3d2abd4552"
-    sha256 cellar: :any,                 monterey:       "6f5ad22f5b61cb14009aa71dc7c892093117a1a7d920e9f7712bb27e98e56b4d"
-    sha256 cellar: :any,                 big_sur:        "2c3b07aba9f301e689fbc6268894e3ab3a56044741b8b4adabd6afb1d4962af1"
-    sha256 cellar: :any,                 catalina:       "cfbf0572aec85f33c51bc58064e20a44de374a319bb369e46c0aab8581756253"
-    sha256 cellar: :any,                 mojave:         "95c85cb74a70b1f217c3db5f4f6f6bab2b9871755435a25301bc4215015f1341"
-    sha256 cellar: :any,                 high_sierra:    "fd15459a5000f08952b7609ef743d80c84749710e30b7bfbe02d68e7ccc27ed7"
-    sha256 cellar: :any,                 sierra:         "25aa7ef95b5ca8e7a79bf884fa8e9c8eafb21f2887caabc3ffb40de5fda2ab26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a7b0bd58ff5306f1624a6854cf51d42411f489a5223f5c70ae44fb42bd3c7537"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "66e6fb0ca0d1377fd4d29df7516d43cf2fbdaf9d3430b7ed0e1f5abba9c79acf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "174c333d52577ee0cebce92bd5eab8997fde812b8095628affe326240388722b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "27460a003c495b757d85413418a1a43685723c2fbf7ec5d98d2e13ad8108ea53"
+    sha256 cellar: :any_skip_relocation, ventura:        "0a7fe6a1ced046933db99574d9d3755dcb433e4360f1b197ef52268dded6675b"
+    sha256 cellar: :any_skip_relocation, monterey:       "0ce587536912edf98baf20a107bb6c1e1ab9233b11a61a3509f17594dc5d293b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e1a01df4abf53b34579e414b1aa1bfef5a6606276632976e71bb527f7573ca50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "afca6f1261a57f5ce4516ff95a9c252fdd1a051fcfe4da520b1f2d9cbf19f733"
   end
 
-  depends_on "libpng"
+  depends_on "go" => :build
+  depends_on "xmlto" => :build
+
+  uses_from_macos "python" # for web2png
 
   def install
+    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
+
     system "make", "install", "prefix=#{prefix}"
   end
 

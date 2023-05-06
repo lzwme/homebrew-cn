@@ -1,22 +1,27 @@
 class Nuclei < Formula
   desc "HTTP/DNS scanner configurable via YAML templates"
   homepage "https://nuclei.projectdiscovery.io/"
-  url "https://ghproxy.com/https://github.com/projectdiscovery/nuclei/archive/v2.9.1.tar.gz"
-  sha256 "422ffe03aeff7bb96941420341c8d85d455cd35c9f4beb35c89dee5ee8c575fe"
+  url "https://ghproxy.com/https://github.com/projectdiscovery/nuclei/archive/v2.9.3.tar.gz"
+  sha256 "afb9d7d79327512691d44c5436a42cedba3ef8873fb38e8fdb425c0f9a0cc514"
   license "MIT"
   head "https://github.com/projectdiscovery/nuclei.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "280f76df5e62cc6fab4b8fb3925c398c480c60f28937d168ea0312c2d2c25566"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "72b01e3165c376b072009e04b62d849e140afcfdd0f29e80a8d3798ba44e82bb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "161953d5cec07350cd0967a6249484242e071cc05e44514371a4e42ac86156de"
-    sha256 cellar: :any_skip_relocation, ventura:        "3cd48b8fe3372d64d9782aa33406051109a722aed970c27b6e7a852868d4dc15"
-    sha256 cellar: :any_skip_relocation, monterey:       "d788a751f4416af1e92d2e1f8fd382b05b0e5b86ca43baa86a1b8feccddc5962"
-    sha256 cellar: :any_skip_relocation, big_sur:        "71b37afbadf6756c567e8998df84d3a479801472c05bce2f956a17d6bec95104"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ce59e81f9149270c1e1004fc6673bc434b7d65ac945e41a9c06876cca3435d0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fab5011ab8aefda9ac4ffe36842ea8a89c0c95d759a2bbff9ceeafe96ae954ac"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0d3ca9b05be35483b2141a1ee6e4c653e19469080bb53c933036843ef036bb6a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2f479b590fe6b47c29f30fa3b5a36ec6e8f2e7f888b26a0bf7f46f85fbdf5b9d"
+    sha256 cellar: :any_skip_relocation, ventura:        "457e2ac23e2169fd9374170d7f6f3116b970bc4308e8b6a7e6538e515a5e14bf"
+    sha256 cellar: :any_skip_relocation, monterey:       "964f325eb43a3be6f36a5567f1868b43300a9c24a66bd133f26577f61a76cc70"
+    sha256 cellar: :any_skip_relocation, big_sur:        "67dcfa20c7ad387c75568c72f9ec82eae8ec6f27f91e728ec38a656b3ecd7af2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b070d0f33b304052478a138a8f64ca93c1d46c679486a09456156017d68d4cdb"
   end
 
   depends_on "go" => :build
+
+  # Fix kIOMasterPortDefault symbol rename.
+  # Remove when github.com/shoenig/go-m1cpu is bumped to v0.1.5 or newer.
+  # Check: https://github.com/projectdiscovery/nuclei/blob/v#{version}/v2/go.mod
+  patch :DATA
 
   def install
     cd "v2/cmd/nuclei" do
@@ -45,6 +50,36 @@ class Nuclei < Formula
               words:
                 - "IN\tA"
     EOS
-    system bin/"nuclei", "-target", "google.com", "-t", "test.yaml"
+    system bin/"nuclei", "-target", "google.com", "-t", "test.yaml", "-config-directory", testpath
   end
 end
+
+__END__
+diff --git a/v2/go.mod b/v2/go.mod
+index ae37aaa..fe3048f 100644
+--- a/v2/go.mod
++++ b/v2/go.mod
+@@ -126,7 +126,7 @@ require (
+ 	github.com/projectdiscovery/cdncheck v1.0.1 // indirect
+ 	github.com/projectdiscovery/freeport v0.0.4 // indirect
+ 	github.com/sashabaranov/go-openai v1.8.0 // indirect
+-	github.com/shoenig/go-m1cpu v0.1.4 // indirect
++	github.com/shoenig/go-m1cpu v0.1.5 // indirect
+ 	github.com/skeema/knownhosts v1.1.0 // indirect
+ 	github.com/smartystreets/assertions v1.0.0 // indirect
+ 	github.com/tidwall/btree v1.6.0 // indirect
+diff --git a/v2/go.sum b/v2/go.sum
+index fa2367e..c470cd3 100644
+--- a/v2/go.sum
++++ b/v2/go.sum
+@@ -473,8 +473,9 @@ github.com/sergi/go-diff v1.2.0 h1:XU+rvMAioB0UC3q1MFrIQy4Vo5/4VsRDQQXHsEya6xQ=
+ github.com/sergi/go-diff v1.2.0/go.mod h1:STckp+ISIX8hZLjrqAeVduY0gWCT9IjLuqbuNXdaHfM=
+ github.com/shirou/gopsutil/v3 v3.23.3 h1:Syt5vVZXUDXPEXpIBt5ziWsJ4LdSAAxF4l/xZeQgSEE=
+ github.com/shirou/gopsutil/v3 v3.23.3/go.mod h1:lSBNN6t3+D6W5e5nXTxc8KIMMVxAcS+6IJlffjRRlMU=
+-github.com/shoenig/go-m1cpu v0.1.4 h1:SZPIgRM2sEF9NJy50mRHu9PKGwxyyTTJIWvCtgVbozs=
+ github.com/shoenig/go-m1cpu v0.1.4/go.mod h1:Wwvst4LR89UxjeFtLRMrpgRiyY4xPsejnVZym39dbAQ=
++github.com/shoenig/go-m1cpu v0.1.5 h1:LF57Z/Fpb/WdGLjt2HZilNnmZOxg/q2bSKTQhgbrLrQ=
++github.com/shoenig/go-m1cpu v0.1.5/go.mod h1:Wwvst4LR89UxjeFtLRMrpgRiyY4xPsejnVZym39dbAQ=
+ github.com/shoenig/test v0.6.3 h1:GVXWJFk9PiOjN0KoJ7VrJGH6uLPnqxR7/fe3HUPfE0c=
+ github.com/shoenig/test v0.6.3/go.mod h1:byHiCGXqrVaflBLAMq/srcZIHynQPQgeyvkvXnjqq0k=
+ github.com/sirupsen/logrus v1.3.0/go.mod h1:LxeOpSwHxABJmUn/MG1IvRgCAasNZTLOkJPxbbu5VWo=

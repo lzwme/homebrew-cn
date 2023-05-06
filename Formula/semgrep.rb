@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/returntocorp/semgrep.git",
-      tag:      "v1.20.0",
-      revision: "94811b207fbb3b42455b59d854bf31a00ba32e45"
+      tag:      "v1.21.0",
+      revision: "5c1aca4412e5f5aea91c081d4af3492ae95dc93c"
   license "LGPL-2.1-only"
   head "https://github.com/returntocorp/semgrep.git", branch: "develop"
 
@@ -15,13 +15,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "bdf32829b9c332a202a84319c3b5e83ebf24cba04b5251e7a8000b17b9deecff"
-    sha256 cellar: :any, arm64_monterey: "dd1519d8a53852fff2d9c3f318e6d0d6ba9e0b60506468ece2046963c1f616b9"
-    sha256 cellar: :any, arm64_big_sur:  "03966477cfea6359df8a92d9688acd96791d966b7d35ced2e5caa59da667c044"
-    sha256 cellar: :any, ventura:        "b0c59bf032285b5694fef44a59c7f961725075d4437e3ed628a6f576272138ff"
-    sha256 cellar: :any, monterey:       "a3e8714884dcdfd92a38f65e451432a59d01ab828bf2e0d2cdfea1d71b2c11ed"
-    sha256 cellar: :any, big_sur:        "10000b3d107f7741e8ef2935747a9d3890b50685320f08391925f06094b8a611"
-    sha256               x86_64_linux:   "ae6cce4cb01455bff40fe24aaeed68c40dc716db547ce62ab545996f622f134a"
+    sha256 cellar: :any, arm64_ventura:  "f1cd9bf14f249645c7fbf716f5e744c9dff7db4876acbf8853b9071eb6f66afe"
+    sha256 cellar: :any, arm64_monterey: "19c5f8c5468aacfd52305828982ba6eeb7b33548b82188667d4f93fa367581de"
+    sha256 cellar: :any, arm64_big_sur:  "5714b5529138fce047e90b00588b19b99794180641a64d7c1fc2a4780e2b24d4"
+    sha256 cellar: :any, ventura:        "31744f055eeafc1d597b2bc897f028e176137dc28f5f5c7fb03caf70c248f070"
+    sha256 cellar: :any, monterey:       "57e13fb1ce10620be48266209af76e53e370fde4e130d6e47d6d1cc09b398ebe"
+    sha256 cellar: :any, big_sur:        "11194423c8b05c547f7053b5cec444a7459e112b24e1f497ea3c99e3def12c06"
+    sha256               x86_64_linux:   "b259b71cae6ba9ecd1145a39d69fe902070deb5c67f6f2ce202cd80d2932e472"
   end
 
   depends_on "cmake" => :build
@@ -126,7 +126,7 @@ class Semgrep < Formula
     sha256 "10769981198c7311f84a0ca8db892fa213303a8eb1305deb795a71e7bd606a91"
   end
 
-  resource "Pygments" do
+  resource "pygments" do
     url "https://files.pythonhosted.org/packages/89/6b/2114e54b290824197006e41be3f9bbe1a26e9c39d1f5fa20a6d62945a0b3/Pygments-2.15.1.tar.gz"
     sha256 "8ace4d3c1dd481894b2005f560ead0f9f19ee64fe983366be1a21e171d12775c"
   end
@@ -142,8 +142,8 @@ class Semgrep < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/4c/d2/70fc708727b62d55bc24e43cc85f073039023212d482553d853c44e57bdb/requests-2.29.0.tar.gz"
-    sha256 "f2e34a75f4749019bb0e3effb66683630e4ffeaf75819fb51bebef1bf5aef059"
+    url "https://files.pythonhosted.org/packages/e0/69/122171604bcef06825fa1c05bd9e9b1d43bc9feb8c6c0717c42c92cc6f3c/requests-2.30.0.tar.gz"
+    sha256 "239d7d4458afcb28a692cdd298d87542235f4ca8d36d03a15bfc128a6559a2f4"
   end
 
   resource "rich" do
@@ -151,9 +151,9 @@ class Semgrep < Formula
     sha256 "2d11b9b8dd03868f09b4fffadc84a6a8cda574e40dc90821bd845720ebb8e89c"
   end
 
-  resource "ruamel.yaml" do
-    url "https://files.pythonhosted.org/packages/46/a9/6ed24832095b692a8cecc323230ce2ec3480015fbfa4b79941bd41b23a3c/ruamel.yaml-0.17.21.tar.gz"
-    sha256 "8b7ce697a2f212752a35c1ac414471dc16c424c9573be4926b56ff3f5d23b7af"
+  resource "ruamel-yaml" do
+    url "https://files.pythonhosted.org/packages/eb/a4/e056a6f778bfc01d653dd777e5ff57c1f1b48fcaa889d75bac0ef9650768/ruamel.yaml-0.17.22.tar.gz"
+    sha256 "c22ec58aaca5105f771cb8f7ac45ad631b5e8b00454ebe1822d442fb696e9e62"
   end
 
   resource "tomli" do

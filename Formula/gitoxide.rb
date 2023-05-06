@@ -1,9 +1,11 @@
 class Gitoxide < Formula
   desc "Idiomatic, lean, fast & safe pure Rust implementation of Git"
   homepage "https://github.com/Byron/gitoxide"
+  # TODO: Update `features` array in install at version bump.
   url "https://ghproxy.com/https://github.com/Byron/gitoxide/archive/refs/tags/v0.25.0.tar.gz"
   sha256 "098bb18e1cae42ab7597b6b442538d3f51b57935a848ea121e20e2921d6a4693"
   license "Apache-2.0"
+  head "https://github.com/Byron/gitoxide.git", branch: "main"
 
   livecheck do
     url :stable
@@ -27,10 +29,17 @@ class Gitoxide < Formula
 
   def install
     # Avoid requiring CMake or building a vendored zlib-ng.
-    # `max` feature is the default.
-    inreplace "gix/Cargo.toml", "zlib-ng", "zlib-stock"
-    features = %w[max gix-features/zlib-stock]
-    system "cargo", "install", "--features=#{features.join(",")}", *std_cargo_args
+    # See: https://github.com/Byron/gitoxide/blob/b8db2072bb6a5625f37debe9e58d08461ece67dd/Cargo.toml#L88-L89
+    features = if build.head?
+      # Use these features unconditionally at version bump.
+      %w[max-control gix-features/zlib-stock gitoxide-core-blocking-client http-client-curl]
+    else
+      odie "`install` method needs updating!" if version > "0.25.0"
+
+      inreplace "gix/Cargo.toml", "zlib-ng", "zlib-stock"
+      %w[max gix-features/zlib-stock]
+    end
+    system "cargo", "install", "--no-default-features", "--features=#{features.join(",")}", *std_cargo_args
   end
 
   test do
