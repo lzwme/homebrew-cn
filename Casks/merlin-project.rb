@@ -1,5 +1,5 @@
 cask "merlin-project" do
-  version "8.1.8,71105"
+  version "8.1.8"
   sha256 :no_check
 
   url "https://www.projectwizards.net/downloads/MerlinProject.zip"
@@ -9,10 +9,16 @@ cask "merlin-project" do
 
   livecheck do
     url "https://www.projectwizards.net/en/support/release-notes/merlin-project-pwstore/xml"
-    strategy :sparkle
+    strategy :sparkle, &:short_version
   end
 
   depends_on macos: ">= :sierra"
 
   app "Merlin Project.app"
+
+  zap trash: [
+    "~/Library/Application Scripts/net.projectwizards.merlinproject",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/net.projectwizards.merlinproject.sfl2",
+    "~/Library/Containers/net.projectwizards.merlinproject",
+  ]
 end
