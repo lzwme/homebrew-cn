@@ -23,6 +23,8 @@ class LlvmAT11 < Formula
 
   keg_only :versioned_formula
 
+  deprecate! date: "2023-05-11", because: :versioned_formula
+
   # https://llvm.org/docs/GettingStarted.html#requirement
   # We intentionally use Make instead of Ninja.
   # See: Homebrew/homebrew-core/issues/35513

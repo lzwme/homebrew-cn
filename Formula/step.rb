@@ -1,25 +1,25 @@
 class Step < Formula
   desc "Crypto and x509 Swiss-Army-Knife"
   homepage "https://smallstep.com"
-  url "https://ghproxy.com/https://github.com/smallstep/cli/releases/download/v0.24.3/step_0.24.3.tar.gz"
-  sha256 "69576b56ced76e2bd18ddb8f2c6c7e9bbbbcbb1d82cbd29a678e3fd6f3c92338"
+  url "https://ghproxy.com/https://github.com/smallstep/cli/releases/download/v0.24.4/step_0.24.4.tar.gz"
+  sha256 "0dcbbd7cbdfe8a4284171a1cea9e5b4a5f476949b472039159cb4583f3e31e88"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "186c1a1942725d85018abbc8042096466683eea562659c0031c0615f535799b8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e4c340ea3fd379e7df67fa552c0be9651015cffc9d93bf4eeba5a1640d3eec94"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "069b4c0bd0018929c2eef9bbe2c492f757dd58526df21a1cd15d3c3d5bc0df6e"
-    sha256 cellar: :any_skip_relocation, ventura:        "766973abb9c84ae8dd99d35b707a503e46ed4c6d8dcf245f1226b0bebfc4c5de"
-    sha256 cellar: :any_skip_relocation, monterey:       "20455b4b11d30661b51840f4c6e994d46b514d81bffd587d79a2c2e1dd70b8e6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f295a8b79b339e6e1568eba0aaa8bc5a80711d879e68e0c0a88aead0d6e4eacf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa5a4a2a993789315ef7576ca221c95cd2a25988570946326e4c56bf3f8b14f8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0a853e53440a45f76b3bb8b10c653db524b087585837726557116c3373550e39"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f0516c8375978cd0605555358eddfee28219bea73306995161385702b3126091"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "94f12cccbb58366b8d53541632d74450fbc996f03a5586a26a095e5be7b37c9d"
+    sha256 cellar: :any_skip_relocation, ventura:        "73ae05755cf1f430f28a0f4deee0df734ba814e8ca3ad8b414e208041c91c9a7"
+    sha256 cellar: :any_skip_relocation, monterey:       "c98e0ab63cbc2164f593fed6da5d4ff56510bd4060ddb57cbca71a48a63544bf"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cfa23eb0af13bbc3fb9bc079b0312505e7a6a1cdee083915e17e51a82522d737"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d353ade2fbfc195fe7920efae5658153440a960be62430d12506d12429503b15"
   end
 
   depends_on "go" => :build
 
   resource "certificates" do
-    url "https://ghproxy.com/https://github.com/smallstep/certificates/releases/download/v0.24.1/step-ca_0.24.1.tar.gz"
-    sha256 "45ddd8c9e8a3ccd2627afe4b9590c2aa6da0e4e0dff326d1375269377b53abf9"
+    url "https://ghproxy.com/https://github.com/smallstep/certificates/releases/download/v0.24.2/step-ca_0.24.2.tar.gz"
+    sha256 "896715f958aa61c1075d39d5ae957198305ba7d94a49d2c737b21155d5edb631"
   end
 
   def install

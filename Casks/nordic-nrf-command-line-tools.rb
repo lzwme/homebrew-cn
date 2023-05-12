@@ -21,4 +21,6 @@ cask "nordic-nrf-command-line-tools" do
   pkg ".nRF-Command-Line-Tools-#{version}-Darwin.pkg"
 
   uninstall pkgutil: "com.Nordic Semiconductor.nRF-Command-Line-Tools.*"
+
+  # No zap stanza required
 end

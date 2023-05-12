@@ -1,18 +1,18 @@
 class Pymupdf < Formula
   desc "Python bindings for the PDF toolkit and renderer MuPDF"
   homepage "https://github.com/pymupdf/PyMuPDF"
-  url "https://files.pythonhosted.org/packages/d3/bb/643ea6171d681bf3b2cefa89db9ef8917d5f50497a4bb4ed4e8515855b8d/PyMuPDF-1.22.2.tar.gz"
-  sha256 "179fb3cb69de9727f73b5ff1745c91819da73ba2304791d198cde11495beb712"
+  url "https://files.pythonhosted.org/packages/3e/06/bd008c25b210a13b8f7684d880fb7ae098d8bbbecabd6547932650a61fa0/PyMuPDF-1.22.3.tar.gz"
+  sha256 "5ecd928e96e63092571020973aa145b57b75707f3a3df97c742e563112615891"
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a2cd7daf01a6300b08f67918173ec0f34e2fb94f97ac69ec30cb7db2d41f212a"
-    sha256 cellar: :any,                 arm64_monterey: "562b328e760185a632d00c0d0d8a4cf26a6f1d80ccf285e79d92fca506052d03"
-    sha256 cellar: :any,                 arm64_big_sur:  "1a1db7c33d70248cfa3b6374000d2fdbed22a8aa7bf63e91addc09fe65c9a416"
-    sha256 cellar: :any,                 ventura:        "452646c94ea804ddbf9e0ad30d4d613940a5d83601bc4d77caad604f3b0ebba3"
-    sha256 cellar: :any,                 monterey:       "cfc9b3da10fb695d90d519f4da263a43a69842cc3f142175fca38fbdfb498740"
-    sha256 cellar: :any,                 big_sur:        "c25c41efb545f69f6cd1789105e5ec491699ed707ef9a13f0ad2d26416518420"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "43224782dc88424f1d444374583e10b990579fd27e4a1a08fcca63c7fce91218"
+    sha256 cellar: :any,                 arm64_ventura:  "ac1e5d7f12c831d1752c3a58e4023c85cd1fb5d449ad15cd9810b2ebcde25094"
+    sha256 cellar: :any,                 arm64_monterey: "fa3d23e63405eee17ba5995887d52623dcb15397abb2c35d24626ddd4c0ebd25"
+    sha256 cellar: :any,                 arm64_big_sur:  "6adfc071b471044cc11530cf2eea462af19edfcacd6d34750a330f16c07c3da3"
+    sha256 cellar: :any,                 ventura:        "06d68bad5c9a9ad6f626ef2cdc730029034b08f20119203b4af8d7427b7528ec"
+    sha256 cellar: :any,                 monterey:       "debae0c78ab56593ee5d0b1f1fab15a43429e0a1f32eb0004c9232a80b526a12"
+    sha256 cellar: :any,                 big_sur:        "43efd9d6c5b4f8a1b43a2574ce70524631dcf8929952bb3206fe91641add3c4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "900495ca0124336a90fe459ccc9dcdbf3bbf0493ff1b263614c08a37d704a7c9"
   end
 
   depends_on "freetype" => :build

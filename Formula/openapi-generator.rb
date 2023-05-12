@@ -1,8 +1,8 @@
 class OpenapiGenerator < Formula
   desc "Generate clients, server & docs from an OpenAPI spec (v2, v3)"
   homepage "https://openapi-generator.tech/"
-  url "https://search.maven.org/remotecontent?filepath=org/openapitools/openapi-generator-cli/6.5.0/openapi-generator-cli-6.5.0.jar"
-  sha256 "f18d771e98f2c5bb169d1d1961de4f94866d2901abc1e16177dd7e9299834721"
+  url "https://search.maven.org/remotecontent?filepath=org/openapitools/openapi-generator-cli/6.6.0/openapi-generator-cli-6.6.0.jar"
+  sha256 "9718ff7844e89462c75dcd9b20a35136f6db257bfe1b874db1e3002e99de4609"
   license "Apache-2.0"
 
   livecheck do
@@ -11,14 +11,13 @@ class OpenapiGenerator < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6989f8677b4459488d2070c54b714f750443fa15f7c6936075c4a9d93a77e875"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6989f8677b4459488d2070c54b714f750443fa15f7c6936075c4a9d93a77e875"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6989f8677b4459488d2070c54b714f750443fa15f7c6936075c4a9d93a77e875"
-    sha256 cellar: :any_skip_relocation, ventura:        "6989f8677b4459488d2070c54b714f750443fa15f7c6936075c4a9d93a77e875"
-    sha256 cellar: :any_skip_relocation, monterey:       "6989f8677b4459488d2070c54b714f750443fa15f7c6936075c4a9d93a77e875"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6989f8677b4459488d2070c54b714f750443fa15f7c6936075c4a9d93a77e875"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "889ab72bd7dd515482d8db5438720eec9e5ae463051185f2d81ee885fb074ca3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "171e95f84c7fd159326a2c152e4d6683265e4c0925d7ed696c2a2ceb0485d18c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "171e95f84c7fd159326a2c152e4d6683265e4c0925d7ed696c2a2ceb0485d18c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "171e95f84c7fd159326a2c152e4d6683265e4c0925d7ed696c2a2ceb0485d18c"
+    sha256 cellar: :any_skip_relocation, ventura:        "171e95f84c7fd159326a2c152e4d6683265e4c0925d7ed696c2a2ceb0485d18c"
+    sha256 cellar: :any_skip_relocation, monterey:       "171e95f84c7fd159326a2c152e4d6683265e4c0925d7ed696c2a2ceb0485d18c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "171e95f84c7fd159326a2c152e4d6683265e4c0925d7ed696c2a2ceb0485d18c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5cf22e1c4d71e523e2cbc43ce6fd724cbb1a431c122de1e5204ef3b78501999"
   end
 
   head do

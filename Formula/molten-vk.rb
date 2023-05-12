@@ -53,6 +53,11 @@ class MoltenVk < Formula
     end
   end
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any, arm64_ventura:  "2282ecb3f31679d235f9f9c4634728f59ab67bad2dfee11b5e8727bd5aaa2231"
     sha256 cellar: :any, arm64_monterey: "436ca449b89bfa327b57d45c6995ab04b78f695a85cc49e6acd8ac254e779ad1"

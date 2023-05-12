@@ -16,6 +16,10 @@ class Pokerstove < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "533085f2aa512489b7e94729f5b8f46c476d7da591b55f768dd29f3c2ff93728"
   end
 
+  # failing to build in https://github.com/Homebrew/homebrew-core/pull/128510,
+  # no response upstream since ~2021
+  deprecate! date: "2023-05-10", because: :does_not_build
+
   depends_on "cmake" => :build
   depends_on "googletest" => :build
   depends_on "boost"

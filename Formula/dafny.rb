@@ -1,8 +1,8 @@
 class Dafny < Formula
   desc "Verification-aware programming language"
   homepage "https://github.com/dafny-lang/dafny/blob/master/README.md"
-  url "https://ghproxy.com/https://github.com/dafny-lang/dafny/archive/refs/tags/v4.0.0.tar.gz"
-  sha256 "f1d7fd7f438bc9f7772b4035aa0065d518e62a55711a38822ecadcad4d65e446"
+  url "https://ghproxy.com/https://github.com/dafny-lang/dafny/archive/refs/tags/v4.1.0.tar.gz"
+  sha256 "63f9cf593efb1c1c75d3083d9b207f572839efba381af21cdab958ab127366c4"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class Dafny < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2de46d77301715659320ec274aac3671c8928f0f2824a951f31dc418e97c5e34"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "75f863b4a43115317619842091f9e7116faa7630fea34e6a6cd13a201051f212"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d4e362ed36030cbddac3a806d1d535b1d7e0952425e4eea1b33e12da945c3e5e"
-    sha256 cellar: :any_skip_relocation, ventura:        "42446815acf78d6cc88546a90bef29a323adb7f3617a7c1d4548db9367dd6132"
-    sha256 cellar: :any_skip_relocation, monterey:       "78ee7cc7c13f89cdd86ef6b8991b794d5834ce13ada79e1be7cce2833b3f751e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "dff060e112f2c71f27f81e5475259fa7654091ee527d1b93cc79f64dced4bddc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2bebceea164d81e2b4669ede2bad7447c63aae2f771cd1b8f502353254f871a6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "644c887223e4a194e4f4b41ee3635b77abd57f0506e7d916b54cd268eae2b185"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bfa05d4dbb73223f4b50524eb9e86104a384f5fe1e6aa46ae7f3443903d7a12f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "53df70ee58e7bce7e592ffcb561b75851a9a60876ae9b79950f246b387e6f35d"
+    sha256 cellar: :any_skip_relocation, ventura:        "c60e9640f0abdb93ff8129c6d0a5fe476737f11bb321b6740cd7de2a901746e1"
+    sha256 cellar: :any_skip_relocation, monterey:       "995a1ab1f4e59cc601b24ff8338f92235a37f1dd4d810302d1c2420983f1b699"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ccf24904424c7834c9b04605facfb927c9e732da22a593b34bcdc6d2713eca67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "91d52605ebe3500df22f22964ac2cf1bbc76fd3fac9c4403c25ce89b1ff757f1"
   end
 
   depends_on "dotnet@6"
@@ -40,14 +40,14 @@ class Dafny < Formula
   test do
     (testpath/"test.dfy").write <<~EOS
       method Main() {
-        var i: nat;
+        var i: nat :| true;
         assert i as int >= -1;
         print "hello, Dafny\\n";
       }
     EOS
     assert_equal "\nDafny program verifier finished with 1 verified, 0 errors\n",
-                  shell_output("#{bin}/dafny /compile:0 #{testpath}/test.dfy")
-    assert_equal "\nDafny program verifier finished with 1 verified, 0 errors\nRunning...\n\nhello, Dafny\n",
-                  shell_output("#{bin}/dafny /compile:3 #{testpath}/test.dfy")
+                  shell_output("#{bin}/dafny verify #{testpath}/test.dfy")
+    assert_equal "\nDafny program verifier finished with 1 verified, 0 errors\nhello, Dafny\n",
+                  shell_output("#{bin}/dafny run #{testpath}/test.dfy")
   end
 end

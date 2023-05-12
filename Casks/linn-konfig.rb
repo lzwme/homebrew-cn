@@ -15,4 +15,14 @@ cask "linn-konfig" do
   pkg "konfig_latest_osx.pkg"
 
   uninstall pkgutil: "uk.co.linn.Konfig"
+
+  zap trash: [
+    "~/Library/Application Support/Linn",
+    "~/Library/Caches/uk.co.linn.Konfig",
+    "~/Library/HTTPStorages/uk.co.linn.Konfig",
+  ]
+
+  caveats do
+    discontinued
+  end
 end

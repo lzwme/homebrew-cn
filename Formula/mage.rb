@@ -2,20 +2,19 @@ class Mage < Formula
   desc "Make/rake-like build tool using Go"
   homepage "https://magefile.org"
   url "https://github.com/magefile/mage.git",
-      tag:      "v1.14.0",
-      revision: "300bbc868ba8f2c15b35e09df7e8804753cac00d"
+      tag:      "v1.15.0",
+      revision: "9e91a03eaa438d0d077aca5654c7757141536a60"
   license "Apache-2.0"
   head "https://github.com/magefile/mage.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "08dd84f470df1010345ea9ec2ddede00589363ddb7a607db1541c75cbf98d61a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "139570603e519b01b9591ac7e71b46ee310fb34a8430fae248938232b70d747e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "139570603e519b01b9591ac7e71b46ee310fb34a8430fae248938232b70d747e"
-    sha256 cellar: :any_skip_relocation, ventura:        "b21fa8f11d85d2541dc18c42fa1515592313c73bb074ac61df4501aa297f18a3"
-    sha256 cellar: :any_skip_relocation, monterey:       "c96d1ce7372a0cc6df4904089c12e7850013bb2f704da4d01ae3f35dc61b03e2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c96d1ce7372a0cc6df4904089c12e7850013bb2f704da4d01ae3f35dc61b03e2"
-    sha256 cellar: :any_skip_relocation, catalina:       "c96d1ce7372a0cc6df4904089c12e7850013bb2f704da4d01ae3f35dc61b03e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d61f0354d32fd0ea74f416150d26eb2df2c0f715d59f19c695e069ad4e7d3752"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5edee3b01ecc1dc26cf07372e9cbcfd7bc0c6c98ad8f5d89ab6255efe1af28c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d5edee3b01ecc1dc26cf07372e9cbcfd7bc0c6c98ad8f5d89ab6255efe1af28c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d5edee3b01ecc1dc26cf07372e9cbcfd7bc0c6c98ad8f5d89ab6255efe1af28c"
+    sha256 cellar: :any_skip_relocation, ventura:        "0fe71622f956586e54e08ec69f49dd719c16bca43fe62370720f32e8cb015a71"
+    sha256 cellar: :any_skip_relocation, monterey:       "0fe71622f956586e54e08ec69f49dd719c16bca43fe62370720f32e8cb015a71"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0fe71622f956586e54e08ec69f49dd719c16bca43fe62370720f32e8cb015a71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4c08f1a7d6d80eeda6054fcdaea66ef2d344a952d9e249561781f8fabe54fff"
   end
 
   depends_on "go"

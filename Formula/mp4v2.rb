@@ -1,18 +1,18 @@
 class Mp4v2 < Formula
   desc "Read, create, and modify MP4 files"
   homepage "https://mp4v2.org"
-  url "https://ghproxy.com/https://github.com/enzo1982/mp4v2/releases/download/v2.1.2/mp4v2-2.1.2.tar.bz2"
-  sha256 "0b943133673cffd4625247783e34080797de7386142061a6613e0c26285953ef"
+  url "https://ghproxy.com/https://github.com/enzo1982/mp4v2/releases/download/v2.1.3/mp4v2-2.1.3.tar.bz2"
+  sha256 "033185c17bf3c5fdd94020c95f8325be2e5356558e3913c3d6547a85dd61f7f1"
   license "MPL-1.1"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f282c0ff88150b4957700442ef8edeb841460771a32b34aa248f4a68fdd73b08"
-    sha256 cellar: :any,                 arm64_monterey: "a5afb539310516fa2d8ad5363d0874e8b34134459f3b1468464a78dae4fc50d6"
-    sha256 cellar: :any,                 arm64_big_sur:  "6912df38e972c5e015f0e22b8e820b01242f0d17fc16d24727f1bfd86613fb5b"
-    sha256 cellar: :any,                 ventura:        "f42442bbfa89f14ad5b213c6b6b264547eb8c6794299d1b94f28307e9df67799"
-    sha256 cellar: :any,                 monterey:       "e6d12e43861a2e04281bcbb975ccfdb15ca55df3b83e6f3166872c104da078e2"
-    sha256 cellar: :any,                 big_sur:        "e7df1993f4be61c91f42439bda77dd9845d66e5b32a399f02576737c12295ef2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "961bdcc5e88c1ec8670460b70cbf12bf484a3a068054729900286abca099e48d"
+    sha256 cellar: :any,                 arm64_ventura:  "1eeebb5c4beeda316aec2ab260c37b2eb7375330af16ff7f80a5e63f61ca7042"
+    sha256 cellar: :any,                 arm64_monterey: "ab285946431ba3b30e0541a5391ff4ae0af7fa6ec6d84bd3213ac34400bf4682"
+    sha256 cellar: :any,                 arm64_big_sur:  "48b40608f388870c825a0655c317293927d37899fc412c73c998cb3db60b1670"
+    sha256 cellar: :any,                 ventura:        "5f584150ea02e3b5d3049a117b60dbe88d412c380442fef8246267bf6f66ed36"
+    sha256 cellar: :any,                 monterey:       "62619da0d20b36b5854c08f531687dfe55d9fbd87dabaaf985ced7fe1b24b3aa"
+    sha256 cellar: :any,                 big_sur:        "c7c93618a03cfb59e95a6d39e9e6e9d1f355b72ea199b9c6e3d881f606323c88"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "529cebb9ec595d2834e29ff7be7a29150453be53b55a1269284992cd8c35de06"
   end
 
   conflicts_with "bento4",

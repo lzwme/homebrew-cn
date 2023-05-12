@@ -2,12 +2,11 @@ class SpirvHeaders < Formula
   desc "Headers for SPIR-V"
   homepage "https://github.com/KhronosGroup/SPIRV-Headers"
   license "MIT"
-  revision 1
   head "https://github.com/KhronosGroup/SPIRV-Headers.git", branch: "main"
 
   stable do
-    url "https://ghproxy.com/https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/sdk-1.3.243.0.tar.gz"
-    sha256 "16927b1868e7891377d059cd549484e4158912439cf77451ae7e01e2a3bcd28b"
+    url "https://ghproxy.com/https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/sdk-1.3.246.1.tar.gz"
+    sha256 "71668e18ef7b318b06f8c466f46abad965b2646eaa322594cd015c2ac87133e6"
 
     # remove upon next release; adds SPV_EXT_shader_tile_image
     patch do
@@ -28,7 +27,7 @@ class SpirvHeaders < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "23edca916bea4003a659427ac0e6da1f1ee238663c44fde7205b8f7ddd24bb3f"
+    sha256 cellar: :any_skip_relocation, all: "0a33a84db0a8b233c391490ab62f9d4fbc3908d66f7a7871681a549075e64243"
   end
 
   depends_on "cmake" => [:build, :test]

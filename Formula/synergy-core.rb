@@ -1,8 +1,8 @@
 class SynergyCore < Formula
   desc "Synergy, the keyboard and mouse sharing tool"
   homepage "https://symless.com/synergy"
-  url "https://ghproxy.com/https://github.com/symless/synergy-core/archive/refs/tags/1.14.6.18-stable.tar.gz"
-  sha256 "7f1bbf457f7134ff6110269e63740fb6346660a229adaf1e1bf2f1ee735271c1"
+  url "https://ghproxy.com/https://github.com/symless/synergy-core/archive/refs/tags/1.14.6.19-stable.tar.gz"
+  sha256 "01854ec932845975cd81363bed8276b95c07a607050683fc1b74b7126199de79"
 
   # The synergy-core/LICENSE file contains the following preamble:
   #   This program is released under the GPL with the additional exemption
@@ -31,13 +31,13 @@ class SynergyCore < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "3ec5b29ab967ddba356f47ba10d19bd67b3782ea7d7a2930a5865cace48a273e"
-    sha256                               arm64_monterey: "c2c1f0cab39a26359b21dd4d0634e14ff87ea84860acb2c065222b7a1dd3e419"
-    sha256                               arm64_big_sur:  "1248f8e053a13f764325db5edab37a9c50a6747495b2708a56c62dee6c702b02"
-    sha256                               ventura:        "9fddff02c34fc1b21a245d60ac513b6cda88d904e65aaf44d14fbe38f26339f1"
-    sha256                               monterey:       "8d2d76f8808c5f38cc55c2fb1142a9fbc2447daf8f9f7497849cfba9d25c7884"
-    sha256                               big_sur:        "6ad5793b1e2077ea952fb1163c9f406a7bb2497a4cb4ecec9af656b6b7f16d87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d38c91e320559dc5f6d5cf789cb045afa53e6685001335efdc921d97adb1ee1"
+    sha256                               arm64_ventura:  "334248b42a57a1e655f2f4aab7772ea3b7b77ae438cfe42623e84f7583b9174d"
+    sha256                               arm64_monterey: "b55b45badf37a0c6ff570dc9bc84c684b42bd4966eea299602c6308c0d3c568b"
+    sha256                               arm64_big_sur:  "c8870bbda127a4b699803c45a3de12f823937c5d553219b77fc5a738bb1ec942"
+    sha256                               ventura:        "a379d665374e700ec3447de68d9f51adc413d2df2b853ebb89d65ea4a83846ba"
+    sha256                               monterey:       "f0711f93ccc9180ed973f6c7168b95bc55aa91e2d45116c91e5cf97733802018"
+    sha256                               big_sur:        "05274d4b236f2d4e4e0037f3a9738ce1f297e88c5af4983db3efc098e46f0893"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8f9f6c071c90a720430c7a827ccc6f8bea9c244bf9a71e2f94ad746b6b49892"
   end
 
   depends_on "cmake" => :build
