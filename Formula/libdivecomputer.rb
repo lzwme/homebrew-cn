@@ -1,8 +1,8 @@
 class Libdivecomputer < Formula
   desc "Library for communication with various dive computers"
   homepage "https://www.libdivecomputer.org/"
-  url "https://www.libdivecomputer.org/releases/libdivecomputer-0.7.0.tar.gz"
-  sha256 "80d9f194ea24502039df98598482e0afc6b0e333de79db34c29b2d68934d25b9"
+  url "https://www.libdivecomputer.org/releases/libdivecomputer-0.8.0.tar.gz"
+  sha256 "275ecce7923644ed581faab9dcb4f1a69ad251bceb0721c4e5f85fb631617a0e"
   license "LGPL-2.1-or-later"
   head "https://github.com/libdivecomputer/libdivecomputer.git", branch: "master"
 
@@ -12,15 +12,13 @@ class Libdivecomputer < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "00cafca196e5b09177dca8eaa98c677973c2d860f76d9465f078e9e5b7f36ffa"
-    sha256 cellar: :any,                 arm64_monterey: "2a7bd7af77fe467bda4a336616f3e1e8a054b8481b97bd5f5b9507f265318e83"
-    sha256 cellar: :any,                 arm64_big_sur:  "c5f918bf0cf0716949639440453e31eb929a918d5328fb1d4dd50ad6f6a497a5"
-    sha256 cellar: :any,                 ventura:        "731dbf939d3483a23b7bbd0c82d2ca7b4d33bec268e1ec23bdb611384324f5e6"
-    sha256 cellar: :any,                 monterey:       "e60b9733a86f7f911241780c4b12619c33850e152c816adbf9893f48e17d82cb"
-    sha256 cellar: :any,                 big_sur:        "80a648490411d90cee0ae9bbafbc91e48e6ee1d4b449bfad5795cd375b5337d0"
-    sha256 cellar: :any,                 catalina:       "b0e1c5af39a3a474f72a89b669acfd82628f91aabe21c719e2eee78dc0099950"
-    sha256 cellar: :any,                 mojave:         "79ea433c1787070be036fa259b1cb7bd673d5c787ac937291361711d967708d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3a241ae2fd6589976993f2ac0fea3114a1131514f6bafcace961a53c28658da"
+    sha256 cellar: :any,                 arm64_ventura:  "94af44c0b407fae8f45e0d5f5fb86fe92f5464efe57d316eb71526aa68eac264"
+    sha256 cellar: :any,                 arm64_monterey: "84b1aab56409e9842deab38dab5dc8a9f7ddd1c7f0ea5ad68b9bcd31733645fb"
+    sha256 cellar: :any,                 arm64_big_sur:  "dadcbc9e4225a70a0a508f68d69dd033cd4c146eed0a8b35c9ab4f6883111683"
+    sha256 cellar: :any,                 ventura:        "5a831d39e6851ac0f0aa879321f2da7734f40b6f0b66f9824c59766547ed4857"
+    sha256 cellar: :any,                 monterey:       "03dd6bece702dbd9128822bc7e58bffaa7ddbab2e1c154416c8843068ddc9512"
+    sha256 cellar: :any,                 big_sur:        "0daa371bb5f9f96bd3c2c02f02181f77004e5326d4975e04fd441d01593c6f20"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a564c1072cacd56aacdeddb41032cce203e2d59cf375448e160007c619204245"
   end
 
   depends_on "autoconf" => :build

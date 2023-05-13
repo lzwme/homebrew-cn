@@ -1,9 +1,9 @@
 class Sbt < Formula
   desc "Build tool for Scala projects"
   homepage "https://www.scala-sbt.org/"
-  url "https://ghproxy.com/https://github.com/sbt/sbt/releases/download/v1.8.2/sbt-1.8.2.tgz"
-  mirror "https://sbt-downloads.cdnedge.bluemix.net/releases/v1.8.2/sbt-1.8.2.tgz"
-  sha256 "1f65344da074dbd66dfefa93c0eff8d319d772e5cad47fcbeb6ae178bbdf4686"
+  url "https://ghproxy.com/https://github.com/sbt/sbt/releases/download/v1.8.3/sbt-1.8.3.tgz"
+  mirror "https://sbt-downloads.cdnedge.bluemix.net/releases/v1.8.3/sbt-1.8.3.tgz"
+  sha256 "21f4210786fd68fd15dca3f4c8ee9cae0db249c54e1b0ef6e829e9fa4936423a"
   license "Apache-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Sbt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "83df3f430a2249b127057b0ee45c11f9b12c0f8f345c596fd90864e6968604ad"
+    sha256 cellar: :any_skip_relocation, all: "0cd5e18a01fd2934032ad257af435141d8dee669cf9b2082d5e50a0bf1662871"
   end
 
   depends_on "openjdk"

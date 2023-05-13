@@ -2,43 +2,29 @@ class Eksctl < Formula
   desc "Simple command-line tool for creating clusters on Amazon EKS"
   homepage "https://eksctl.io"
   url "https://github.com/weaveworks/eksctl.git",
-      tag:      "0.140.0",
-      revision: "94e5eaaba20ca38fc4dbea7f736a892eef48c4cd"
+      tag:      "0.141.0",
+      revision: "5c8318ed582031aaf4aab19caa388472245ab30f"
   license "Apache-2.0"
   head "https://github.com/weaveworks/eksctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "803f21a568087a9a13a095d274678dd5eba9ceb6033e3e40eb18943be16e7c08"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4c6ca1961eed22194357065425660190192278c65d6bdf82bd22894f0184cab4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bf61c71a7aed512438088df4ba9276766d5078045cf27f989ed8437d2f797610"
-    sha256 cellar: :any_skip_relocation, ventura:        "8e4fca5e279a6bd681527f7e48079489316bda795c046df2d1e7a07b06b24b03"
-    sha256 cellar: :any_skip_relocation, monterey:       "c2b864a221436c9844a5c6537b8456998ffe437bb96619289d98e2e888b1dd8d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "caaf4417eec05f9c05c54867c1251e8db14df4f7c33eb90f2620d770f77420ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "72866b964a814a8b9afd612c281399a773988dc336700896c3ac18225abab7d0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e650a8fbc9f4ff7b063ba10994c21bbaeefce7fe09369f7bcf223182c818617"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0d887eb05dfecc6cebc46ff3795a50ecf159e81e3d0c03c751eec96ae25997c1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dedad7476e5f3bd80ccd40d04ff9368717977c3294fca96c964286a35539e463"
+    sha256 cellar: :any_skip_relocation, ventura:        "34ede92d0960777f9c98cbbf499ecf519e98d30b5856f9ad172d982fee2c2765"
+    sha256 cellar: :any_skip_relocation, monterey:       "0208c106df4b342920937d08a6d03015aa2c4d79a506e114576fdb4eb2be1ce2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d9dcacc392da53c60daac368dd2ddf53b99a432300c14d08971069761c2510be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d7e21c59b37f3e048bc3bc3062721af658edaa3f71fcc7c37b449401bcfe228f"
   end
 
   depends_on "counterfeiter" => :build
   depends_on "go" => :build
   depends_on "go-bindata" => :build
+  depends_on "ifacemaker" => :build
   depends_on "mockery" => :build
   depends_on "aws-iam-authenticator"
 
-  # Eksctl requires newer version of ifacemaker
-  #
-  # Replace with `depends_on "ifacemaker" => :build` when ifacemaker > 1.2.0
-  # Until then get the resource version from go.mod
-  resource "ifacemaker" do
-    url "https://ghproxy.com/https://github.com/vburenin/ifacemaker/archive/b2018d8549dc4d51ce7e2254d6b0a743643613be.tar.gz"
-    sha256 "41888bf97133b4e7e190f2040378661b5bcab290d009e1098efbcb9db0f1d82f"
-  end
-
   def install
-    resource("ifacemaker").stage do
-      system "go", "build", *std_go_args(ldflags: "-s -w", output: buildpath/"ifacemaker")
-    end
-    inreplace "build/scripts/generate-aws-interfaces.sh", "${GOBIN}/ifacemaker",
-                                                          buildpath/"ifacemaker"
-
     ENV["GOBIN"] = HOMEBREW_PREFIX/"bin"
     ENV.deparallelize # Makefile prerequisites need to be run in order
     system "make", "build"

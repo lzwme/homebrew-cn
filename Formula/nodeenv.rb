@@ -3,13 +3,12 @@ class Nodeenv < Formula
 
   desc "Node.js virtual environment builder"
   homepage "https://github.com/ekalinin/nodeenv"
-  url "https://github.com/ekalinin/nodeenv/archive/1.7.0.tar.gz"
-  sha256 "a9e9e36e1be6439e877c53e7f27ce068f75b82cc08201f2c68471687199cfd7b"
+  url "https://github.com/ekalinin/nodeenv/archive/1.8.0.tar.gz"
+  sha256 "2a8931e93a9aeae1fffa0bd76e077168e5c0ce4b32f9bc85dee2e8d8eb35a2f9"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "dfbd40ce1e67ad9d87f4f4fbcee25019bf49957456d5fa6b41e2e9493a6c43a0"
+    sha256 cellar: :any_skip_relocation, all: "a10ab650965b6f6e7d349917cc5f5e4d4af273c2386576b82129a79fcdae8547"
   end
 
   uses_from_macos "python"

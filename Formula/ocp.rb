@@ -1,8 +1,8 @@
 class Ocp < Formula
   desc "UNIX port of the Open Cubic Player"
   homepage "https://stian.cubic.org/project-ocp.php"
-  url "https://stian.cubic.org/ocp/ocp-0.2.103.tar.xz"
-  sha256 "b526d27e983e292453d2ccc36946ee3efd3ba33ee0489507a9815f2f05a23b5e"
+  url "https://stian.cubic.org/ocp/ocp-0.2.105.tar.xz"
+  sha256 "1a87b3c572679fb681a25bf158bdc1cc078018d0507965e1557610c17fcccfc5"
   license "GPL-2.0-or-later"
   head "https://github.com/mywave82/opencubicplayer.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Ocp < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "375697a232e9e7af0d591cb2500f0db57eeee8beff8d5c3b46866eb11170fd11"
-    sha256 arm64_monterey: "84a32d1a58c50e85ac574e76d347a24a236f5b9b3db87b0634571d6a6820abbb"
-    sha256 arm64_big_sur:  "8033ad3b730d5515d54ffcecbb9afd16b865f9974a2ed5606b6d198f6a6d45cf"
-    sha256 ventura:        "df97a3b327f85bb490d4cdcec936ee8df0af81235747772dee0946c8c69661e0"
-    sha256 monterey:       "06e97a71d4c7912e05563149d1c8cde0439d82ca66a8bbc179c547608978e0f1"
-    sha256 big_sur:        "37f36cee885d4047e6104adef547cec8b4700d4be43a9e1865aa8a9aa302cc20"
-    sha256 x86_64_linux:   "b5041caf3e320060cc032589c11cb63641c400defc05318b18e732d07fea5e30"
+    sha256 arm64_ventura:  "3690f47824577f3df596994371ce56932d68a875a6d2d4e0d9e19e442d9624d4"
+    sha256 arm64_monterey: "1ba0669652567aecd14feb6c517ec77b5b0ee5964de54e4e69ad78030efb9296"
+    sha256 arm64_big_sur:  "bbcbda1ecb8bad6dad0db51abfc171e82b558223a20ec67cf9b948259c8d0973"
+    sha256 ventura:        "02825ed5010ac2760131fe2bb0737c6e14d11a9066039b36ccf9687e2e1da77a"
+    sha256 monterey:       "eb34a21ed728ffe4598edc3664094045fe4ad11ce29beb797e17776b9857fdc1"
+    sha256 big_sur:        "614c28d5a6ab0df1385e37168354df743aeb68b1fad5c8672129be20ec277056"
+    sha256 x86_64_linux:   "8d9e1a49c80862bf0940bdddf2302b6646cd5d936a02d1683f293a9143683c2d"
   end
 
   depends_on "pkg-config" => :build

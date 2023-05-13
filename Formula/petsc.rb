@@ -11,13 +11,14 @@ class Petsc < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "92aac1b02bda8e287d43627f42c4911872b2cce36d48afa8dd820b4f32cfcbe4"
-    sha256 arm64_monterey: "4a4eded36dade090779a373a8299ebb99847128e7d337372f6b632286d252c0a"
-    sha256 arm64_big_sur:  "98ada0a3c468e705da778146219a566191610ff6889bdb17234c28a8f3c68bdf"
-    sha256 ventura:        "98b392b0bb29293b1b148a1218ff13ece96ac7c737f7d0ab2830cb66c3409079"
-    sha256 monterey:       "443eb5008e141b23fa10be2e7927ebbfa16b15001042f5ef462ca51b9a0b476a"
-    sha256 big_sur:        "7e1d2b9e20549f0014c8d4e0110fd71e8c719f3d266eef221ccfc3ef54cc5a9f"
-    sha256 x86_64_linux:   "1d56cf4d77d767dc3ff9c8954d83d093aa4ce05988bcbc8fa556160d832c18c9"
+    rebuild 1
+    sha256 arm64_ventura:  "169536985c5918584dc8dd5302a580942a95a0088b25eae6ed3a41f66ce6a67e"
+    sha256 arm64_monterey: "e319a63c32ddca99317d03d80a61ce186b24f33e31cc461f7c4d7093624262aa"
+    sha256 arm64_big_sur:  "6785c756e6202b3982d1c481430653b074191c1a09840cb9432d52180cdec5b2"
+    sha256 ventura:        "d90bf79268283f097a7f9fe8ee57842fdf1ae121e6cbc8d4f997c8b037c4e940"
+    sha256 monterey:       "a11f610c7d2205e82dbac3ae024f33bf360fd071cf397ebd5306c98b7ac6ecfb"
+    sha256 big_sur:        "75e92a3a4c0dde60098b5d5c647fbab9923d3d826a07c5ade1694009e8496a0d"
+    sha256 x86_64_linux:   "dbcbd6e1d6926bcbda1d45d4ca7fa180bf398d2d170d01c111729322049a08bb"
   end
 
   depends_on "hdf5"
@@ -56,6 +57,15 @@ class Petsc < Formula
 
     if OS.mac? || File.foreach("#{lib}/petsc/conf/petscvariables").any? { |l| l[Superenv.shims_path.to_s] }
       inreplace lib/"petsc/conf/petscvariables", "#{Superenv.shims_path}/", ""
+    end
+
+    # Avoid references to cellar paths.
+    gcc = Formula["gcc"]
+    open_mpi = Formula["open-mpi"]
+    inreplace (lib/"pkgconfig").glob("*.pc") do |s|
+      s.gsub! prefix, opt_prefix
+      s.gsub! gcc.prefix.realpath, gcc.opt_prefix
+      s.gsub! open_mpi.prefix.realpath, open_mpi.opt_prefix
     end
   end
 

@@ -1,8 +1,8 @@
 class ImapBackup < Formula
   desc "Backup GMail (or other IMAP) accounts to disk"
   homepage "https://github.com/joeyates/imap-backup"
-  url "https://ghproxy.com/https://github.com/joeyates/imap-backup/archive/refs/tags/v9.3.0.tar.gz"
-  sha256 "09ebc6e829137a506e3be5547a9963ebf1716f55bce5fc1750cbf940c1de890e"
+  url "https://ghproxy.com/https://github.com/joeyates/imap-backup/archive/refs/tags/v9.3.1.tar.gz"
+  sha256 "64785003142d6a52be15c6cbc9ed93c89a27435821f3352b8ffc0cbb96c63f09"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class ImapBackup < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "24528d9de41731417194bcca019d57f9e5cade299eefbf64949a5e9ffaedd7dd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "24528d9de41731417194bcca019d57f9e5cade299eefbf64949a5e9ffaedd7dd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "24528d9de41731417194bcca019d57f9e5cade299eefbf64949a5e9ffaedd7dd"
-    sha256 cellar: :any_skip_relocation, ventura:        "24528d9de41731417194bcca019d57f9e5cade299eefbf64949a5e9ffaedd7dd"
-    sha256 cellar: :any_skip_relocation, monterey:       "24528d9de41731417194bcca019d57f9e5cade299eefbf64949a5e9ffaedd7dd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "24528d9de41731417194bcca019d57f9e5cade299eefbf64949a5e9ffaedd7dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d25e5c32951604c015d025ae76dd4f2d6009028d3ee2f64b25c7fb888bfbb18"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "585b6f09adc5c5576e18b6910e84c8c761c7b74d96ea7ca3cb0be7067fac1541"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "585b6f09adc5c5576e18b6910e84c8c761c7b74d96ea7ca3cb0be7067fac1541"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e29730772025aa851baeeb11bcfa997a2aa43b8d5cfa074c95756952277e1daa"
+    sha256 cellar: :any_skip_relocation, ventura:        "585b6f09adc5c5576e18b6910e84c8c761c7b74d96ea7ca3cb0be7067fac1541"
+    sha256 cellar: :any_skip_relocation, monterey:       "585b6f09adc5c5576e18b6910e84c8c761c7b74d96ea7ca3cb0be7067fac1541"
+    sha256 cellar: :any_skip_relocation, big_sur:        "585b6f09adc5c5576e18b6910e84c8c761c7b74d96ea7ca3cb0be7067fac1541"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "239640d0db38c7a86d161ae1cfe0783d84a34c07fdfde79f0548c50d0c1a9ace"
   end
 
   uses_from_macos "ruby", since: :catalina

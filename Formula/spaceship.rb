@@ -1,19 +1,19 @@
 class Spaceship < Formula
   desc "Zsh prompt for Astronauts"
   homepage "https://spaceship-prompt.sh"
-  url "https://ghproxy.com/https://github.com/spaceship-prompt/spaceship-prompt/archive/v4.13.4.tar.gz"
-  sha256 "cbc396e2d1f9b09b2e16f55d04da1a3573e10caa833d170b3a1e7f534f268dcb"
+  url "https://ghproxy.com/https://github.com/spaceship-prompt/spaceship-prompt/archive/v4.13.5.tar.gz"
+  sha256 "2820efc17a6df0346b1b8e5fafe04c9c4efe5971f30bbe7bf1298a50e5606b07"
   license "MIT"
   head "https://github.com/spaceship-prompt/spaceship-prompt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "084c866a927dbf89003b026c33eadb79c93245cdbc5d6f36a368613937628b9a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a3e5fbde7a50e26de8841f6180b8065c0d2142310315dfe45398d1a78c08346d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "36a66f1666731ebe828e31e5b80f8f8b43f879199dc08ccd59e6a6e32e6765b8"
-    sha256 cellar: :any_skip_relocation, ventura:        "4b58f4a8edd8c0553ac71bdaf7db9a0d1c71ad8de966fe0c689001c65eacbe52"
-    sha256 cellar: :any_skip_relocation, monterey:       "713a2882e951ae1674a25cac97d4dfac8bdf58047a3c4c2c200be045ef84ceca"
-    sha256 cellar: :any_skip_relocation, big_sur:        "343a60ab6e17842a189f25d47452bbb0769372c3040a3951a7b841832ed44256"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f0ea5c428fbcc1c7301469bbc397a2bf9f485e48f9e8237829d994215922772"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "929572d25ce60407b634904ac85e31b99e7eacdfc0bcbc5ddd548c979614580c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "948acf093d34defdf6bc95fcfe913b2497280163a0e3fdbc9e64d2e70587769b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "285dcc50fca078a82bd0dbbf1022786352bc313025482a952a4b88d36234cf9e"
+    sha256 cellar: :any_skip_relocation, ventura:        "47725874f4f0aa5bf785767110ac65d41a5b96e4b099004d47cd832a4010c42c"
+    sha256 cellar: :any_skip_relocation, monterey:       "b09940a2f083385288666e57fb2ccd11610ac5458afc97084105b2118914ddc0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7ea9fda618ad416d97c022ad2cc635bd2fbde82239ea6c3cea9a1d701d115300"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f96322120d24e7e7c00531c2720b7f21ce05710aa539d0b2b9208417a015bb34"
   end
 
   depends_on "zsh-async"

@@ -1,19 +1,19 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.land/"
-  url "https://ghproxy.com/https://github.com/denoland/deno/releases/download/v1.33.2/deno_src.tar.gz"
-  sha256 "fdb13159aaf8915610ece90d024ccd0af4c36f23fabcefe8dd86f4b1fb3e2aa5"
+  url "https://ghproxy.com/https://github.com/denoland/deno/releases/download/v1.33.3/deno_src.tar.gz"
+  sha256 "e730375c9ebb85feefda16bff184c44785854ac636343db8f43e00567044765d"
   license "MIT"
   head "https://github.com/denoland/deno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29099ebbcec92f0755a4e1aff00037ec689b92f955b3efd3f485f42cf28dcf38"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "131f6de125642e450091495527bac482c6c4c376e36b8d767945fcfc48c5a353"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3a80983956fbf0327a62e2dc1d045ea3b2f09cfcc7cd72bec7a84d576e7fcf8d"
-    sha256 cellar: :any_skip_relocation, ventura:        "79f225ad974f48eb35bd0222fb590bca90b0c9be43f7983ce61f8f6cdb0145b2"
-    sha256 cellar: :any_skip_relocation, monterey:       "4c1efb375fda9a352e590ba53cff41a0e9cef82599d132ae4172744a747b838a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0bbed0ebef9f92ecf478810fa6a37f35136dcedee0d1a12aba5f336d214d8a73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9478df82176a31a0d13cc41c10be0568e9c5d3147566452de8758afdcc31883d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6d02bcde5286c5f8cb1726c36150c6a05bfb66e5ef5d0233fa56df85da20e2c1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6a5de701608cdbfb250481c14399975549f306b6fa7593fab5031e964b3641db"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a2fd2f3a7a057b15cb654ab92f3d9f524415b39ce329290bd492e248c053dd4c"
+    sha256 cellar: :any_skip_relocation, ventura:        "490ad66aeecebbf8e9a89b1bfb4640037ba63a68af9c728a3f3e8930f78db099"
+    sha256 cellar: :any_skip_relocation, monterey:       "344bd860fee44d3b5bccd11e03ed26df36fe2f3fd3e13dd4c6564f13be6eadfb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "45feef7f22eeced7ea8c941cb2e776496b83ec225b913301a2e65d3b7e9553e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e3f2e601757adba49336388e70436be2e367f82b6058e999e613b769ef2829e"
   end
 
   depends_on "llvm" => :build
@@ -38,14 +38,14 @@ class Deno < Formula
   # We use the crate as GitHub tarball lacks submodules and this allows us to avoid git overhead.
   # TODO: Remove this and `v8` resource when https://github.com/denoland/rusty_v8/issues/1065 is resolved
   resource "rusty-v8" do
-    url "https://static.crates.io/crates/v8/v8-0.71.0.crate"
-    sha256 "51a173a437bebab13d587a4aaf0a1e7a49433226538c9a78ca3b4ce3b8c6aeb6"
+    url "https://static.crates.io/crates/v8/v8-0.71.1.crate"
+    sha256 "32a2ece81e9f3d573376d5301b0d1c1c0ffcb63d57e6164ddf1bc844b4c8a23b"
   end
 
-  # Use the latest tagged revision in https://github.com/denoland/v8/tags.
+  # Use the latest tag in https://github.com/denoland/v8/tags.
   resource "v8" do
-    url "https://ghproxy.com/https://github.com/denoland/v8/archive/refs/tags/11.4.183.6-denoland-768874361e5884e9eab3.tar.gz"
-    sha256 "5d8b8276da6ef4c64c57383b33ada66d9df40a7244bdcb2eff8ec9e0174ebacc"
+    url "https://ghproxy.com/https://github.com/denoland/v8/archive/refs/tags/11.4.183.7-denoland-f6e93aa3037f217ad536.tar.gz"
+    sha256 "3792bd6203ea3987c518ea995ce2b3da0ea88973ddae5550b8bf6f2b47b0bf05"
   end
 
   # To find the version of gn used:

@@ -1,21 +1,16 @@
 class Ddd < Formula
   desc "Graphical front-end for command-line debuggers"
   homepage "https://www.gnu.org/s/ddd/"
-  url "https://ftp.gnu.org/gnu/ddd/ddd-3.3.12.tar.gz"
-  mirror "https://ftpmirror.gnu.org/ddd/ddd-3.3.12.tar.gz"
-  sha256 "3ad6cd67d7f4b1d6b2d38537261564a0d26aaed077bf25c51efc1474d0e8b65c"
+  url "https://ftp.gnu.org/gnu/ddd/ddd-3.4.0.tar.gz"
+  mirror "https://ftpmirror.gnu.org/ddd/ddd-3.4.0.tar.gz"
+  sha256 "5d4cbc8a0bb0458543866d679308c53a3ef066e402fe5a1918e19698a3d3580f"
   license all_of: ["GPL-3.0-only", "GFDL-1.1-or-later"]
-  revision 1
 
   bottle do
-    rebuild 2
-    sha256 ventura:      "1125f5ef41d7edc523a57c7d5682d6aa8570db7bc99925627b4d7a55c54d64aa"
-    sha256 monterey:     "93fa51898f3e60c09d6baf1696799a89fac8fed798a4c6dac0321b1b8518dd6b"
-    sha256 big_sur:      "498ceb2dc933d2c85e7407f077d187c6cd799ba2f539694087134d038bb211d9"
-    sha256 catalina:     "df163eb838675a73c69913af1e1526a5c20e5cbeafa58836112ce4ae642a705a"
-    sha256 mojave:       "ef4ae2c46be3ad1aee12c52ca34d7606c3aa056250792a61c03af4581fe8e568"
-    sha256 high_sierra:  "9fc9c568178424aeb25d6721c4faffb99a8bd7ef967ea0ae4e3464b65651d0b8"
-    sha256 x86_64_linux: "b77e99734dc952ce417d949ba92e03e138f8f4b1a8224a4e3a98bc2822cea7b8"
+    sha256 ventura:      "e83d30cbbf7149a044e20f8a874f590d942dc5a377b4ea8cac7f92b9b2c11473"
+    sha256 monterey:     "4473c8af5c52c43e08ed9c4f0982ae086d6a4224830575b8b0dde893a16b47bf"
+    sha256 big_sur:      "6f2d07fb46a5580cef95fe26a9babee60eb4378930e68f389f07e5897fd1a473"
+    sha256 x86_64_linux: "deba8dc6677abab583705dbdbbf259c7c77bf5bd9491a3ae006a372f3696dda2"
   end
 
   depends_on "gdb" => :test
@@ -31,33 +26,10 @@ class Ddd < Formula
   depends_on "libxt"
   depends_on "openmotif"
 
-  # https://savannah.gnu.org/bugs/?41997
-  patch do
-    url "https://savannah.gnu.org/patch/download.php?file_id=31132"
-    sha256 "f3683f23c4b4ff89ba701660031d4b5ef27594076f6ef68814903ff3141f6714"
-  end
-
-  # Patch to fix compilation with Xcode 9
-  # https://savannah.gnu.org/bugs/?52175
-  patch :p0 do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/macports/macports-ports/a71fa9f4/devel/ddd/files/patch-unknown-type-name-a_class.diff"
-    sha256 "c187a024825144f186f0cf9cd175f3e972bb84590e62079793d0182cb15ca183"
-  end
-
-  # Patch to fix compilation with Xt 1.2.0
-  # https://savannah.gnu.org/patch/?9992
-  patch do
-    url "https://savannah.gnu.org/patch/download.php?file_id=50229"
-    sha256 "140a1493ab640710738abf67838e63fbb8328590d1d3ab0212e7ca1f378a9ee7"
-  end
-
   def install
-    if OS.linux?
-      # Patch to fix compilation error
-      # https://savannah.gnu.org/bugs/?33960
-      # Remove with next release
-      inreplace "ddd/strclass.C", "#include <stdlib.h>", "#include <stdlib.h>\n#include <cstdio>"
-    end
+    # ioctl is not found without this flag
+    # Upstream issue ref: https://savannah.gnu.org/bugs/index.php?64188
+    ENV.append_to_cflags "-DHAVE_SYS_IOCTL_H" if OS.mac?
 
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",

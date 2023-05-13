@@ -1,19 +1,19 @@
 class Embree < Formula
   desc "High-performance ray tracing kernels"
   homepage "https://embree.github.io/"
-  url "https://ghproxy.com/https://github.com/embree/embree/archive/v4.0.1.tar.gz"
-  sha256 "1fa3982fa3531f1b6e81f19e6028ae8a62b466597f150b853440fe35ef7c6c06"
+  url "https://ghproxy.com/https://github.com/embree/embree/archive/v4.1.0.tar.gz"
+  sha256 "117efd87d6dddbf7b164edd94b0bc057da69d6422a25366283cded57ed94738b"
   license "Apache-2.0"
   head "https://github.com/embree/embree.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9d286384529b74c5f76c315370a958d9b620a1988d5792eaa42a25afa04b62bb"
-    sha256 cellar: :any,                 arm64_monterey: "a9a933e23a99f06a9801606fe590a885fc4a8f3b94bcaee39bddfb8f642b1f43"
-    sha256 cellar: :any,                 arm64_big_sur:  "c34012a71735e3c74a471a7b663fbc48a89975c002b3611606c403adbff6c715"
-    sha256 cellar: :any,                 ventura:        "e914825520760206a839a4dffac63512602d5885d652d50f5810512d790c7db6"
-    sha256 cellar: :any,                 monterey:       "604d5050a0fa7f47b1b8149c0f80212a1bb36621abf56e491729ea36623f60f2"
-    sha256 cellar: :any,                 big_sur:        "66f75b4f486c4d8afe91ee87ced611e373b01f7652e51aacba11903b44fec5a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bbbde01042832114be21228702964d9976fcd363065cf355f64bc4858e1b40a0"
+    sha256 cellar: :any,                 arm64_ventura:  "2261fe69114ce6a0956c40606781a566063486c28f9f5a2553c6cdbd96d69f33"
+    sha256 cellar: :any,                 arm64_monterey: "44dbb124c76006ca031901d771cc3ef486f5b9a5a28c9c184f188f24977483ec"
+    sha256 cellar: :any,                 arm64_big_sur:  "b3272667d14223536df68132129e28b4fa6eadc1e8d1029f3c690f1687200548"
+    sha256 cellar: :any,                 ventura:        "d71a66af2cf6fbad76a0d23d87d74608daa146d00b119e469ab97a168c3006f0"
+    sha256 cellar: :any,                 monterey:       "ebcc7f2a4b73e3aeffd23aa0dd9d161de07fcf449272e42ab1268e4d14fbb713"
+    sha256 cellar: :any,                 big_sur:        "e2e1ea492dbaf6710a82953d792a8b5f7721cbb74faf07e014aea9a234a89606"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e2c4848faffce311d57a3e2b2423ed3221c3a5b145f02881fa795c63171fd38"
   end
 
   depends_on "cmake" => :build

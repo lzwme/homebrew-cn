@@ -6,15 +6,16 @@ class Enex2notion < Formula
   url "https://files.pythonhosted.org/packages/b0/65/301a9406734eff3185d1724e86bdb62c697973771086f457910e550037d5/enex2notion-0.2.26.tar.gz"
   sha256 "cd9a5a2ccb9a320d5f1cb81bbdbe8e464582f317aa6401135ddc9242ae6ccc73"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0eb24a7281032576c9fc58ac9b22b2e81087e9d13de4809ee31740bf5caeb5d5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "978e08434a6a5d4ce8fe7f129afe4e48d2a5eaaa87e07eb1283608744c4c40ef"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a24cc2bb5604583a45218440f11b32e2fc47a59be4587ea48c7b81495d6a05d6"
-    sha256 cellar: :any_skip_relocation, ventura:        "17ca7ebf679f9a7ab3183c6ead078a125691ad6a05311d8efeaa050d93d4f10c"
-    sha256 cellar: :any_skip_relocation, monterey:       "844d86e357c6d3757678fa1997ccd8b16a2b43b4a30c293624fbbbd468f9984a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "adfa972a4c9f91df74ee919704a71a984184baac73236b71af898e9e91ab6ab9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f70d15aff65febed11ab84a935dc1ead2bbbc516fc26600c26429ce7c07a2ed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "98f9eeaa461c7ae28bf6872bdf6d663b9260f96bd12c23f064d9ebc383b5f640"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "38eecbe057c1f85c40cc65ad54d66240d1f3682cccee3ee10665886f72731607"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "68b9147470e634305f0f8eb56859e10d64a55ab386fb5cc859f0e90926b03ae9"
+    sha256 cellar: :any_skip_relocation, ventura:        "1f6c504d11a4c90cb00fcc9daac206ea5aefb2bec9bfb12ac90e6888edfae484"
+    sha256 cellar: :any_skip_relocation, monterey:       "c88326430c66bb3e8757610e6cd4ea249c41d50104c8735028d99c00cf6bd5cb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "31e74a418bda6b700968bacc315c990e4ac4d1bf7be4c41cc4afd3bb889d63a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6646e7ec0e69e0970dd45f18c54bcc89662f683c0795b278767ff855c745ec18"
   end
 
   depends_on "pymupdf"
