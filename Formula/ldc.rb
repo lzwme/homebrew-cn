@@ -1,8 +1,8 @@
 class Ldc < Formula
   desc "Portable D programming language compiler"
   homepage "https://wiki.dlang.org/LDC"
-  url "https://ghproxy.com/https://github.com/ldc-developers/ldc/releases/download/v1.32.1/ldc-1.32.1-src.tar.gz"
-  sha256 "b3553bfaa89524317ecd21eb2c63c6ea0f9a7080a16275e46fda7e3ab357ea0f"
+  url "https://ghproxy.com/https://github.com/ldc-developers/ldc/releases/download/v1.32.2/ldc-1.32.2-src.tar.gz"
+  sha256 "bfa4aaee74320a1268843c88e229f339b2df0953a4bcb4fced52ebe0dda1cd95"
   license "BSD-3-Clause"
   head "https://github.com/ldc-developers/ldc.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Ldc < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "884908eb524e1534d052f9b3ba27e2ff4e83a3c9438ae7ad1881b37c23d51d1d"
-    sha256                               arm64_monterey: "ae960c4056c9961c181642fc5ca91d0827c6bb832f96eccfdcba40ab6a106212"
-    sha256                               arm64_big_sur:  "0340604e18d4844af7505abeb7af95fb6b82f8ab2b1a907dce4ae72a73a4503c"
-    sha256                               ventura:        "549887c31dd69502f6986f13d7e3fe1b70afdbd1f81c97699559db0cb04e3cb9"
-    sha256                               monterey:       "0220d5ee25de7ad87fe05dec8a4adbe0c867bdfda1ff1b7f7f36595f1409f99b"
-    sha256                               big_sur:        "3d09f7d504d54ef85657862b0e72b2a035112b2af8e5a3ca2c3366c2f329ddbd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "afbc4ea70ed42df80401245c9105ccc5c4e16e16232c2d3f5837c54d4f3e0a8c"
+    sha256                               arm64_ventura:  "b4754390cafb9ba16f9900927ae092d09aeb75ce513f42535b251973a1252631"
+    sha256                               arm64_monterey: "e584e20c1da9d3e2870a8cf6b760a7fac9ca38901ae4f0c89e5ba7051fa88599"
+    sha256                               arm64_big_sur:  "bb98e3cb7661ceeded8912b26863500f981227584f1c4d159c59f405da163a61"
+    sha256                               ventura:        "ba70f1e62ebdfd43b374efaa8d49ad1320a0f7e9e44886f442faf8fc38edd6bc"
+    sha256                               monterey:       "ec1067b7603cae69d7f3a4e78441094701d50b5e25263571076ea3ed7048dedf"
+    sha256                               big_sur:        "b1042b03ba4a1f11e11e69b5571db1895a9694daf29876d68e05c000c5bb9163"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a458a3599eb1250f891433a8788bba86f4b8baca7e38dc9a5a0435e736f03c4c"
   end
 
   depends_on "cmake" => :build

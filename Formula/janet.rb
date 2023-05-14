@@ -1,19 +1,19 @@
 class Janet < Formula
   desc "Dynamic language and bytecode vm"
   homepage "https://janet-lang.org"
-  url "https://ghproxy.com/https://github.com/janet-lang/janet/archive/v1.27.0.tar.gz"
-  sha256 "a81c8750844323eb73aea064db9c467aa3361a03fc6f251d3e19a473b147082d"
+  url "https://ghproxy.com/https://github.com/janet-lang/janet/archive/v1.28.0.tar.gz"
+  sha256 "d78a4c367f1b2c9f95897fa13fc788b36ce49cfcc18083b0810e86b2dd1285bb"
   license "MIT"
   head "https://github.com/janet-lang/janet.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6051ac5748ae7cb8ac3d726d78078dd688099f2146f35cd3871e82d57e9b30da"
-    sha256 cellar: :any,                 arm64_monterey: "329a4a3a4319fc5572eb4d7bb26775b478eef7be968df9d74bd963d2c9554edc"
-    sha256 cellar: :any,                 arm64_big_sur:  "8cee310e2cfb83c03673dc33a8e7810caeb62491bb076aede2362b4378a4ccd4"
-    sha256 cellar: :any,                 ventura:        "a399e413ec85dbf86f8e5dfd7a93743a53093353ffd5873db63e083975c9bba0"
-    sha256 cellar: :any,                 monterey:       "55208cdfa086af3cb91fbed30334008de3e975657ca94723bd9584adf5c517fc"
-    sha256 cellar: :any,                 big_sur:        "95e33b6c8107652ad2e2b28d15ac48646fc8ab9bda2a0280efc3752e78695eb2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a092b0e7fadd4031b2716118d84940d6d0621449aea0e8d91f777be411af8a2"
+    sha256 cellar: :any,                 arm64_ventura:  "0f35915d5eb7725572b2620a82e6bed64ce46adc9313580cfa40aac85705432b"
+    sha256 cellar: :any,                 arm64_monterey: "34069ccaacaa9269b619cdf7a28d772fc45e2094fdc0594fc0a3484f02cec320"
+    sha256 cellar: :any,                 arm64_big_sur:  "95e3de956a2faa0def45d11e2b20bef42d8d9daa0aa3bacf765ee80cb6a630e2"
+    sha256 cellar: :any,                 ventura:        "e4c212e67a9c606e64c98dfacf8605b25caa10c526ba03e8349cd78e123eb3ac"
+    sha256 cellar: :any,                 monterey:       "a4beb1a9caab3380f7eca07432c52136c860c6826a1d3db7d778bf8f489bf727"
+    sha256 cellar: :any,                 big_sur:        "64ac1bb0845b0415304cb6b7a9d1bd2b192b682e7cdb5b02a782b3f27d7836ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3a91618b0db044d864a6819f7a44a34d2e013a9b0d2137384dc26bf78cf5128"
   end
 
   depends_on "meson" => :build

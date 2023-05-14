@@ -9,16 +9,18 @@ class Cruft < Formula
   head "https://github.com/cruft/cruft.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "69279363b749bcff11ac463e414e0894249f1418bb159557b1291def153c6cdf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "06ab0f7d5e917c01d6a7b296a77c839a09122fc6068ebb0ba0eb198161dac2f2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0807446c9aae650efbfb202437ef0cac6dca8b1da4208b998a3b2951e6fda8d4"
-    sha256 cellar: :any_skip_relocation, ventura:        "cf4e0cb4357bac11ca5e7aabaca29e2d21c457fcab81ec0cbd49eed33fba7a2a"
-    sha256 cellar: :any_skip_relocation, monterey:       "2b0857213cc62212b38582f7c2934140a21b3c82195d38fbe9c39e1d4990c5df"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9fdff4d95c76f40dc7af6542136f0634872a693aaf139043d1b848e7b9990b3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6195a8e10d1d79275285e82b15b34eba3776713a8430d02798d316ae62e3dc1f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0551ec5eb8070036ce70f5502369e60e619cb8d3f9188dae0d61e4ee1b301e45"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "255c27f38029d06f40356438207ef1220793d0f820b51c3ad2eb807bb47b5ba6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e87b5aaa7ed138f24970beb4711cea3836110aeac57eb9a7e63246851d50a042"
+    sha256 cellar: :any_skip_relocation, ventura:        "38a8d0650c6275eccaeb759dcd39e5a662e0cedccbfba44f7cf3d66f37423632"
+    sha256 cellar: :any_skip_relocation, monterey:       "220db383245d56d214ad916644e5ebe14a36993f8713dcfb1fb9d84588a58d83"
+    sha256 cellar: :any_skip_relocation, big_sur:        "497f61d41fa8e5f7f9df3deb6000c012ed48cab943bf1d7679cda5843d253794"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c1a3add76476d49152e65169acb29c907dc60b6e029ed54e113709d99bfb2f09"
   end
 
   depends_on "cookiecutter"
+  depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -40,11 +42,6 @@ class Cruft < Formula
   resource "typer" do
     url "https://files.pythonhosted.org/packages/5b/49/39f10d0f75886439ab3dac889f14f8ad511982a754e382c9b6ca895b29e9/typer-0.9.0.tar.gz"
     sha256 "50922fd79aea2f4751a8e0408ff10d2662bd0c8bbfa84755a699f3bada2978b2"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/d3/20/06270dac7316220643c32ae61694e451c98f8caf4c8eab3aa80a2bedf0df/typing_extensions-4.5.0.tar.gz"
-    sha256 "5cb5f4a79139d699607b3ef622a1dedafa84e115ab0024e0d9c044a9479ca7cb"
   end
 
   def install

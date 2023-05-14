@@ -8,18 +8,20 @@ class Nbdime < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b91ce1c75bf9499459239e97a5522b76bf01a8efe8fb31963ff4a3b0091e5b51"
-    sha256 cellar: :any,                 arm64_monterey: "077bb9b63d137e36d463b086b157dac335fc5c98707656ff589ee79ab8ff2757"
-    sha256 cellar: :any,                 arm64_big_sur:  "e624000b099aa57a29a2fc655497c0a913cf2398de0c449e42a6eed3be9cbd7d"
-    sha256 cellar: :any,                 ventura:        "bc0318d1f3bc71eb532901cbd16ae9c1b972b15ad4baf93ebbdce3cc6e989e43"
-    sha256 cellar: :any,                 monterey:       "a857817dd7a0b75da64cf2724e4b3bb010fb9102b06816fc743a7f0595c62935"
-    sha256 cellar: :any,                 big_sur:        "84bfc86b57c5e4f04e842c6f4b3acb57573d2949e67effb1499b8634375bc4d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32436235a1dea105c7cf846c4b97d19fde89ca4136366c1daad0231914aa9536"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "326aad98cbdff195ac7c80855fe91c8f879f9cde74040387b789223ba1188ea3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "22f440d8cdca3a9d94596883e51fc557317c1e4e56d424078862a01c4ee16c49"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0622bcddb69759e2c125f877c79c3fa40f133e0487396c33666e40da3e9ac4e4"
+    sha256 cellar: :any_skip_relocation, ventura:        "249a82bab3ae907a6f770f6128a7c8d8d9db1287b73a52d100cce6c84ebf3e39"
+    sha256 cellar: :any_skip_relocation, monterey:       "ca5a45d2157090d835828d376963817da97f4e4cd551127c0b549fa0b1af8ba5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f98f2dc50828cea6c3a85de01c096873f6293e022f5c8428d7b9eaca1c66d762"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a8cad8528e1b44b9a8852df9b28e1f58ad6e03f1fc353deda4fc78e5f398872"
   end
 
   depends_on "ipython"
   depends_on "jupyterlab"
   depends_on "python@3.11"
+  depends_on "pyyaml"
   depends_on "six"
 
   resource "argon2-cffi-bindings" do
@@ -110,11 +112,6 @@ class Nbdime < Formula
   resource "python-json-logger" do
     url "https://files.pythonhosted.org/packages/4f/da/95963cebfc578dabd323d7263958dfb68898617912bb09327dd30e9c8d13/python-json-logger-2.0.7.tar.gz"
     sha256 "23e7ec02d34237c5aa1e29a070193a4ea87583bb4e7f8fd06d3de8264c4b2e1c"
-  end
-
-  resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/36/2b/61d51a2c4f25ef062ae3f74576b01638bebad5e045f747ff12643df63844/PyYAML-6.0.tar.gz"
-    sha256 "68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2"
   end
 
   resource "rfc3339-validator" do

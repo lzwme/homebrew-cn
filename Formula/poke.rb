@@ -1,18 +1,18 @@
 class Poke < Formula
   desc "Extensible editor for structured binary data"
   homepage "https://jemarch.net/poke"
-  url "https://ftp.gnu.org/gnu/poke/poke-3.1.tar.gz"
-  sha256 "f405a6ba810916ec717000b6fe98ef10cbe549bf0a366b3f81e1f176ff8ff13f"
+  url "https://ftp.gnu.org/gnu/poke/poke-3.2.tar.gz"
+  sha256 "758e551dd53a6cce54ec94d8fc21fa4d6b52a27d1c2667206d599ecdc74f0d97"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "8dbf2f764a89f9a48e71c4b0a67c445528b01361e2e35d8ed66e96c8d19d55e1"
-    sha256 arm64_monterey: "f1687364a8488028309f5cba4cdc337f235ccd9d1109365ae31fb6c3f25e2543"
-    sha256 arm64_big_sur:  "b2fdb09b7f04f33de743432bbc281f45de5dc114efbb89c4a4d1b215acad2b29"
-    sha256 ventura:        "4a642521007388ae32ae44d830ace4b77d912045d84444ca0acce079c341449e"
-    sha256 monterey:       "c95fcce2c2703c92a6e7b6d282ba4ea6694f95699e49b9328b7087f7a866d9ca"
-    sha256 big_sur:        "a1680572316ffdab024790db422b52ad851afc1196ea8306af0cba4ad00536f3"
-    sha256 x86_64_linux:   "6237fca4157fec752f2c945ba2b5237f8a45f7509dc672ba4c8b1a925351db5b"
+    sha256 arm64_ventura:  "ad466d08cfc1f8a111ecd1e6d4a9b33e5a475eb4103a476dc130c69c466cdde8"
+    sha256 arm64_monterey: "1b29c27f78cf3203d519ecacb589337de8f97d3d9b75918d25e7fb52bfd2f05a"
+    sha256 arm64_big_sur:  "8290b00377d7e2927695a4646d616a50221eee5d74b7b0a494c137d67eca88f7"
+    sha256 ventura:        "759a3b1dac86cb114e24fa154669efc7a4a0bf2e94ca1b8ea4cdd2dbf15c54bb"
+    sha256 monterey:       "da4b2d5229771856cd3f8d24e9433c742378d7345d8c35faa42a33dc49d081a7"
+    sha256 big_sur:        "29954a5423bab91819d44e509f802ebd36b57998d692e0fd663f382d1ebefc8d"
+    sha256 x86_64_linux:   "bf4d9b327b73728305921795fce1e405314f9e7042a08e002ab03d5516cd6721"
   end
 
   depends_on "pkg-config" => :build

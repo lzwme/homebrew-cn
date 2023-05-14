@@ -1,19 +1,19 @@
 class Uncrustify < Formula
   desc "Source code beautifier"
   homepage "https://uncrustify.sourceforge.io/"
-  url "https://ghproxy.com/https://github.com/uncrustify/uncrustify/archive/uncrustify-0.77.0.tar.gz"
-  sha256 "d48828e7a2bbf6de0813807ad679c256680299102915f2943e60bb2152120d8f"
+  url "https://ghproxy.com/https://github.com/uncrustify/uncrustify/archive/uncrustify-0.77.1.tar.gz"
+  sha256 "414bbc9f7860eb18a53074f9af14ed04638a633b2216a73f2629291300d37c1b"
   license "GPL-2.0-or-later"
   head "https://github.com/uncrustify/uncrustify.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0231d055d8285a3cf0f689b7cf77b4ab94fd158bbb86e9c504cd474b2277f028"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2a5369ffa73c5d657af401e92a19aeff25fbb56bdc352049d24c1f8d78580b96"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2b5a4f56f1bedf2c8e8ce746a0b2f057b8e99b3ecdbb9f3abcf2e975be00a652"
-    sha256 cellar: :any_skip_relocation, ventura:        "3a66c6b26572065740b9c835b3cb01a494c9a35e1246f9e9814168eaa8414f2c"
-    sha256 cellar: :any_skip_relocation, monterey:       "5940e99e05c07bac672821da0bae4c7f6bffcaba70562e87e74103d1504f09b8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6aaff5a37aabdb14bde0cf9068f8287a4653f5665179b57bf7447edc79e59190"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f22f91f917748972b2596a8b4f1d754c4871b977e850ed9d3dee94f9fc5ae2f8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a6a60728012c42571964e51a3cc4cb04a887e89368fcb8cf7e910cac81a3cfe6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "27a67f8a91b6281144ea19ba3da33d02c17d4ff901b0a20ec95f86a2d5076cdf"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "afd522877248c5ce7c20718aa662a45da10d1efce0c1c276e904cf83957216b0"
+    sha256 cellar: :any_skip_relocation, ventura:        "dd3bb8e3ac1e6b9dccc027c92ba497896b28b1bbbe066bfbddc97aaed32bb307"
+    sha256 cellar: :any_skip_relocation, monterey:       "90581bb3e2dce969a539afc186f4130e104b892a902972eccbb2330e8f3d2d3d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f73c1607cc1c4cf15e28339dc36d9ed59338dfd34e1c910e9ebbd556de578eb9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13707a10791840a3cf9b43c650caaf7265b3409dbc4bd56bbd8433f7c22fd4b0"
   end
 
   depends_on "cmake" => :build

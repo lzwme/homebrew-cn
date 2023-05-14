@@ -1,18 +1,18 @@
 class Secp256k1 < Formula
   desc "Optimized C library for EC operations on curve secp256k1"
   homepage "https://github.com/bitcoin-core/secp256k1"
-  url "https://ghproxy.com/https://github.com/bitcoin-core/secp256k1/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "0e7bb22c29ed6add5e3631e6a9ed0526f3020a20f3b99e6151918fba6cf6affa"
+  url "https://ghproxy.com/https://github.com/bitcoin-core/secp256k1/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "ef2e1061951b8cf94a7597b4e60fd7810613e327e25305e8d73dfdff67d12190"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "bbbf2edffb2371af96bd8c595306b8bc49c9496735648fe6f6f8e7c349f8f6a9"
-    sha256 cellar: :any,                 arm64_monterey: "511ea10f1ce0465b014ea8eda4efa1d56d964a8cbbf8c1c93d59dd4d355a7f2e"
-    sha256 cellar: :any,                 arm64_big_sur:  "2baa3ef9d257894e11ccbed8c00d51028bf0a213da31ffdd8f62be1c6e7effe8"
-    sha256 cellar: :any,                 ventura:        "a7bebb8953d6f4875311d6a7d5631634ba936b2a73e7c0b862f026fa0042a0d0"
-    sha256 cellar: :any,                 monterey:       "4bacdb868a069a37e735a21368ebc5fa312103114de3a8bb836c40f30387bfd3"
-    sha256 cellar: :any,                 big_sur:        "389eeb9c37b9b70dd7af5dd91bac1e470fc7dd077fd540c63d4722e223d664e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff58608bd62932a166e89bcabff6514513bb91d66c0bf51503e338cfa720cead"
+    sha256 cellar: :any,                 arm64_ventura:  "0c7aadfa2c4e16008976d0392d303d853ca303761a33edefbc91bd65349033d1"
+    sha256 cellar: :any,                 arm64_monterey: "b151935b712ede931579c527659980601eb91daa75914bce6a2aa18f8acc598a"
+    sha256 cellar: :any,                 arm64_big_sur:  "4cd10f47fcd3830ad58ccaea156aa804d74af61adbbbd886e7db1a8503259089"
+    sha256 cellar: :any,                 ventura:        "97b55ceb0fd8419d8374ea420cb3517a90a88252469d590074aacd3b2a20c7f5"
+    sha256 cellar: :any,                 monterey:       "4bdeb1e333d34144fe0c1b461461cd0772ac64a45acb38fc26ed81c75ce13614"
+    sha256 cellar: :any,                 big_sur:        "72c9a488df7b3885b8cbeb636e00dab0fcf0efd9ad015156869083b23e0b5e3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b59e49adc20fcfff78ad76299b8e4f314d43f59a3f35fa33fcbc315ad52aad5c"
   end
 
   depends_on "autoconf" => [:build]
