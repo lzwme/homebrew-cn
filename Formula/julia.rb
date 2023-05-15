@@ -5,20 +5,18 @@ class Julia < Formula
   #
   # TODO: Use system `suite-sparse` when `julia` supports v7.
   # Issue ref: https://github.com/JuliaLang/julia/issues/47884
-  url "https://ghproxy.com/https://github.com/JuliaLang/julia/releases/download/v1.8.5/julia-1.8.5-full.tar.gz"
-  sha256 "35554080a4b4d3ce52ef220254306bd42ac0d88eff9eb85592a57d0663db5df2"
+  url "https://ghproxy.com/https://github.com/JuliaLang/julia/releases/download/v1.9.0/julia-1.9.0-full.tar.gz"
+  sha256 "222eb533c9dc54734949eb3a4169f54aefa1bc20be385fc1cf798c8219fe6400"
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
   head "https://github.com/JuliaLang/julia.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "c1037240e426c9fc671d5789cac61d0b3d549c1030575531f1521ddb1c86874f"
-    sha256 cellar: :any,                 arm64_monterey: "0167c6cf98e943213b5e0008f606b451a2af33d7e096225734c7511d06031420"
-    sha256 cellar: :any,                 arm64_big_sur:  "7917478a969d2c77943e06b838870598667c9ffba66d1e0ab7a8cf10a6779d8e"
-    sha256 cellar: :any,                 ventura:        "9df6a752cddfcf40c2557142dda80affe16a65cba15ae38804e7db56b72e5117"
-    sha256 cellar: :any,                 monterey:       "838b1e930dd3c706a09760e15c16297522744ea6c34858dcfdbc4eb7ce404f67"
-    sha256 cellar: :any,                 big_sur:        "04d835e6a1f86cbdeed2008abbee5f67875d2d4530f38dec8c7ea32ad298200b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f654ce16ae86789190edc823dcaeadffd175311897e58dc55ae14135a61c09a7"
+    sha256 cellar: :any, arm64_ventura:  "fc3c149750185023cad024493bf0609bdd9a2acb84c597a887ad93162aa077e2"
+    sha256 cellar: :any, arm64_monterey: "e7787a50ba5964b984ac48c49a2848ff079166cf514ce852f1361b5d793c3dba"
+    sha256 cellar: :any, arm64_big_sur:  "0a68d1e6b2598883d7112eae65d74f9972d8822d76ed028c6ed6c48b613c3c9c"
+    sha256 cellar: :any, ventura:        "e0859fb491c4f53c25adef34a094cd52119455181501bcb4c6e6bb26406fc9c0"
+    sha256 cellar: :any, monterey:       "e9fc7c44a41ded063d039f194333bb45153f41e3890d1f4e42b753c7d0d88429"
+    sha256 cellar: :any, big_sur:        "3330096bd8a08282f56f3d60e683c63aa9fad6cbe0c6563cb916091f32d8e5cb"
   end
 
   depends_on "cmake" => :build # Needed to build LLVM
@@ -57,46 +55,39 @@ class Julia < Formula
     sha256 "1eea77d8024ad8bc9c733a0e0770661bc08228d335b20c4696350ed5dfdab29a"
   end
 
-  # Fix Linux build, listdc++ issue. Remove in next version.
-  # https://github.com/JuliaLang/julia/issues/47987
-  patch do
-    url "https://github.com/JuliaLang/julia/commit/0b211609.patch?full_index=1"
-    sha256 "f8b802ef2004320dd8039b3c4896e99f5460c9bcada29bc699eaca7f843f2737"
-  end
-
   def install
     # Build documentation available at
     # https://github.com/JuliaLang/julia/blob/v#{version}/doc/build/build.md
     args = %W[
-      VERBOSE=1
-      USE_BINARYBUILDER=0
       prefix=#{prefix}
       sysconfdir=#{etc}
-      USE_SYSTEM_CSL=1
-      USE_SYSTEM_PCRE=1
-      USE_SYSTEM_OPENLIBM=1
+      LOCALBASE=#{HOMEBREW_PREFIX}
+      MACOSX_VERSION_MIN=#{MacOS.version}
+      PYTHON=python3
+      USE_BINARYBUILDER=0
       USE_SYSTEM_BLAS=1
-      USE_SYSTEM_LAPACK=1
-      USE_SYSTEM_GMP=1
-      USE_SYSTEM_MPFR=1
-      USE_SYSTEM_LIBSUITESPARSE=0
-      USE_SYSTEM_UTF8PROC=1
-      USE_SYSTEM_MBEDTLS=1
-      USE_SYSTEM_LIBSSH2=1
-      USE_SYSTEM_NGHTTP2=1
+      USE_SYSTEM_CSL=1
       USE_SYSTEM_CURL=1
+      USE_SYSTEM_GMP=1
+      USE_SYSTEM_LAPACK=1
       USE_SYSTEM_LIBGIT2=1
-      USE_SYSTEM_PATCHELF=1
-      USE_SYSTEM_ZLIB=1
+      USE_SYSTEM_LIBSSH2=1
+      USE_SYSTEM_LIBSUITESPARSE=0
+      USE_SYSTEM_MBEDTLS=1
+      USE_SYSTEM_MPFR=1
+      USE_SYSTEM_NGHTTP2=1
+      USE_SYSTEM_OPENLIBM=1
       USE_SYSTEM_P7ZIP=1
+      USE_SYSTEM_PATCHELF=1
+      USE_SYSTEM_PCRE=1
+      USE_SYSTEM_UTF8PROC=1
+      USE_SYSTEM_ZLIB=1
+      VERBOSE=1
       LIBBLAS=-lopenblas
       LIBBLASNAME=libopenblas
       LIBLAPACK=-lopenblas
       LIBLAPACKNAME=libopenblas
       USE_BLAS64=0
-      PYTHON=python3
-      LOCALBASE=#{HOMEBREW_PREFIX}
-      MACOSX_VERSION_MIN=#{MacOS.version}
     ]
 
     # Set MARCH and JULIA_CPU_TARGET to ensure Julia works on machines we distribute to.

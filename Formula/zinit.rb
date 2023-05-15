@@ -7,20 +7,21 @@ class Zinit < Formula
   head "https://github.com/zdharma-continuum/zinit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "089b7e3f89a494031391647bfed6fb44b3b34c5a3e86d7f3d1c7a1545cc0aac9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "089b7e3f89a494031391647bfed6fb44b3b34c5a3e86d7f3d1c7a1545cc0aac9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "089b7e3f89a494031391647bfed6fb44b3b34c5a3e86d7f3d1c7a1545cc0aac9"
-    sha256 cellar: :any_skip_relocation, ventura:        "d3bea09b4e34937f7a725ffaf70a85e895f6cc3a09114a8155c9a8afb6e97065"
-    sha256 cellar: :any_skip_relocation, monterey:       "d3bea09b4e34937f7a725ffaf70a85e895f6cc3a09114a8155c9a8afb6e97065"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d3bea09b4e34937f7a725ffaf70a85e895f6cc3a09114a8155c9a8afb6e97065"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "089b7e3f89a494031391647bfed6fb44b3b34c5a3e86d7f3d1c7a1545cc0aac9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b2cce9233bb88996630f5f70908312fd63cb099bbf203c937cb0edbc35a5486b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b2cce9233bb88996630f5f70908312fd63cb099bbf203c937cb0edbc35a5486b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b2cce9233bb88996630f5f70908312fd63cb099bbf203c937cb0edbc35a5486b"
+    sha256 cellar: :any_skip_relocation, ventura:        "c295baab06101206bb58abcb958adfa70fc70c063ed9a3c5ae35569558bc800f"
+    sha256 cellar: :any_skip_relocation, monterey:       "c295baab06101206bb58abcb958adfa70fc70c063ed9a3c5ae35569558bc800f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c295baab06101206bb58abcb958adfa70fc70c063ed9a3c5ae35569558bc800f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2cce9233bb88996630f5f70908312fd63cb099bbf203c937cb0edbc35a5486b"
   end
 
   uses_from_macos "zsh"
 
   def install
-    man1.install "doc/zinit.1"
     prefix.install Dir["*"]
+    man1.install_symlink prefix/"doc/zinit.1"
   end
 
   def caveats

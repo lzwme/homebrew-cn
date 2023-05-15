@@ -1,18 +1,18 @@
 class Pgvector < Formula
   desc "Open-source vector similarity search for Postgres"
   homepage "https://github.com/pgvector/pgvector"
-  url "https://ghproxy.com/https://github.com/pgvector/pgvector/archive/v0.4.1.tar.gz"
-  sha256 "12dc08c33165a2f14d97d1c153d6ec3dc0c8d1b8c53ac3ba8b44517e8795444c"
+  url "https://ghproxy.com/https://github.com/pgvector/pgvector/archive/v0.4.2.tar.gz"
+  sha256 "6ffdd35d2882d18e1d6e68d042105f2c9b8b1e559f1ef8424db1e05aead7cc99"
   license "PostgreSQL"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "57b81bfc6d79372eba894ea7c70b9b05a91f533aeb5c2abfcf3fec3e2b6e4bed"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bd0832ad1017b5fe068d6ff714fb6ec944f475f75c8dee59a94a3cda09eb379e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c8aa577a8255c96195151a8cb2f137dc4ff5d7712392926a3c78c8ed06a9343a"
-    sha256 cellar: :any_skip_relocation, ventura:        "c73d91ea5f8c8edbea6dc98dcfbd90308ce07502e62420c478c459a56c82bd20"
-    sha256 cellar: :any_skip_relocation, monterey:       "cb28a65a3066fb5d69aa2d20f0e2ee65b245232d6b949621072050c26ad204c7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e24195087f6f99ac507bf24323ed02f957353f6fcb26d5c6c5dd96d9b7330274"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "227d2b857e782195bfe5bf8ce90e27ac78e17e2ddff20f829f56cbdae12e02e8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25f26043bfac8c8b169d88a5a82d34327b0b8d7f8d6338413dacbe8340377d03"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2a97cc7c90e748087db8f2784fc912bf275b211de346a1f309d294b6aa9a7ab8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "50dcc8053ad77b59e06b40c3d03fa7bc76fa06005047470dbc7b922c7332eb1f"
+    sha256 cellar: :any_skip_relocation, ventura:        "1794b25bca9a3da1057497f0a335b6c335ecf245b0b7990811b5c8906aff783c"
+    sha256 cellar: :any_skip_relocation, monterey:       "56ea53e04b4d568400e25a89c5e18fecf637013a0ed36cb0b67a3998e1701ee2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9cb30af9b1d3a5fbef9dcb1e52bfbe5f2a3ab1116e923275c3f91f86ef54dd62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f995f6831f700468cf7722109985af770b45062c7d5bf8861cba0edeec4fce5"
   end
 
   depends_on "postgresql@14"

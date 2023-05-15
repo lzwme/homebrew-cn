@@ -11,13 +11,14 @@ class Cherrytree < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "293e735fc95337ead4c3cd16180ff7c2ab25ae1ae902653f87c2abbffce9060d"
-    sha256 arm64_monterey: "18532c16d0c2307b358446a5ec18f9fed6f04bbcdbbfae7ef29ed8dec9679156"
-    sha256 arm64_big_sur:  "eddd058e8fe1c6f64b8cf62b0429ef3a17aa3fbe48c64e71d0533094e7896d1d"
-    sha256 ventura:        "8c33b6c06ba254d62bebef0204e663cf01463b1f165c00f768b47c1ae46d46cf"
-    sha256 monterey:       "49f7d3a9e0075846ac0d4764a0a238fd258db83bb7d3e77d3b53ed5ad8a18513"
-    sha256 big_sur:        "5576d0d1bed929d7926d061f3ffa5badc3b70c76815e2d66197e40b3e96604c5"
-    sha256 x86_64_linux:   "28dba85727ed316f2c832294c63af42f8423d321d8208049dfb8b5982359e3de"
+    rebuild 1
+    sha256 arm64_ventura:  "5cb9b17295f1101f8096502bdd5b32e9feacbd4a6938adf693d0af07e9ab8670"
+    sha256 arm64_monterey: "32ee77ffa74515fa9aa53c00481c2b12b09c157b1f8e51dea5d254588f6cc033"
+    sha256 arm64_big_sur:  "a4e478fafe97193ceb89d9d8f2e7ff9fb084ec60a807a2391348438ee9ef2e50"
+    sha256 ventura:        "578172723e671ad891b948dd4ebe27d83a8576dc5534f3301db1e7ff575ced98"
+    sha256 monterey:       "df65b0afa7a7c58c60b645803388ac726fa5d3e4771133b9d0c3dcc456aa3683"
+    sha256 big_sur:        "9fa3b1ba51975ae6835d52b77557a37a178c9ab13a79be76100cf36878b26ed1"
+    sha256 x86_64_linux:   "8baea92b98888b794ecb23fa5f18fe5621a23c1ef850da2ffd5fba0bc82b6a54"
   end
 
   depends_on "cmake" => :build
@@ -37,6 +38,11 @@ class Cherrytree < Formula
   uses_from_macos "curl"
 
   fails_with gcc: "5" # Needs std::optional
+
+  patch do
+    url "https://github.com/giuspen/cherrytree/commit/dacf5ba650b4495705184e63d495ac730c4e00b0.patch?full_index=1"
+    sha256 "e427653dbe91e00cab0243fa996afae1bcd7fd0f97cc433e5d0a08a7941d1974"
+  end
 
   def install
     system "cmake", ".", "-DBUILD_TESTING=''", "-GNinja", *std_cmake_args

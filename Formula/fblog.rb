@@ -1,19 +1,19 @@
 class Fblog < Formula
   desc "Small command-line JSON log viewer"
   homepage "https://github.com/brocode/fblog"
-  url "https://ghproxy.com/https://github.com/brocode/fblog/archive/v4.3.0.tar.gz"
-  sha256 "8c7c74a91fcb53c4d71abc78a3bba9a9fb496481be531a96e526b1bd54ddd41e"
+  url "https://ghproxy.com/https://github.com/brocode/fblog/archive/v4.4.0.tar.gz"
+  sha256 "5ac8beb5885359744f84fccd6d941d682842ed32ee0e229dc8edd2b183ce0667"
   license "WTFPL"
   head "https://github.com/brocode/fblog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "17ab6960bc7602b6173bf0078a51ec426573de55de4bccfa1e29b54c145ba31a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cc7563b871037da57ce1ae8842c11727bedca27217ec1b89c3ddaa5889c57985"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e65861ac9804a3a753edd6b2ab58363d7b06bcca53fa7a9267ff65cc832e6230"
-    sha256 cellar: :any_skip_relocation, ventura:        "b24f61161ce28af8ea9caad09e36955c26c08530fdc1dcd57f044ddb5bd3c5e0"
-    sha256 cellar: :any_skip_relocation, monterey:       "d7e82f373dd9abe5ba520fcb065311ca6592fb5f73c65c16e2318601d14aa911"
-    sha256 cellar: :any_skip_relocation, big_sur:        "00b95a8100b27a036db958bd80d014520a6631d6256e6487d284d6cbb39dc309"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b76b38f34e9346c99782bf3d55f66e5a440ce213f5632b36fb42ddc756433ee1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f61f90023c951da8586b551853a48bfb36aaaadd3b170a22c4953913e79636d7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "37ad4c7f2c2ca8bf8d144a1cbc3b2d6f5b55be34d5edfa4ebcc30489adad0efc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ffa80dff8fa7ff7ec7689bdd7e4d8269438f934e242ae54faecbd11642454904"
+    sha256 cellar: :any_skip_relocation, ventura:        "6e935e2a976816e7db40f7040b8bfe69ff11e10540e2a64bc4bbf225f3182adf"
+    sha256 cellar: :any_skip_relocation, monterey:       "5b27a82fa1d7189721da20d1bc4ea03e96d0f2b2cc25da60321df29ade6b9f5a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e80faa02b5aae39af9c933b981b329bfe2174e9505b2586100b2c0ad74d6b694"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2348344868c1773fa34bd6164b8a62f18a541a940176524a4f54662f705dbb78"
   end
 
   depends_on "rust" => :build

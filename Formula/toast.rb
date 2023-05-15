@@ -1,19 +1,19 @@
 class Toast < Formula
   desc "Tool for running tasks in containers"
   homepage "https://github.com/stepchowfun/toast"
-  url "https://ghproxy.com/https://github.com/stepchowfun/toast/archive/v0.47.1.tar.gz"
-  sha256 "3c3c3abc3185c83cf44c4c97423f3130bc739f6c080115107bfa2ab52772eca7"
+  url "https://ghproxy.com/https://github.com/stepchowfun/toast/archive/v0.47.2.tar.gz"
+  sha256 "38c4ac9e5b3c25513ca40b6e0788ea350850cc0eed7785ab7a930964352b67a6"
   license "MIT"
   head "https://github.com/stepchowfun/toast.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e34e671e913bd31eaf5afc21e9aa1fe2bbc92f279626731265f72ba21fa26a01"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "919368bc7229ff725bee82fe6b6679453441d68f5d22b9c13eeb303bbbdb81f2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "697b0b155473278bbfca2f83d129e15378c5abd6efb71641d636b305450c10ac"
-    sha256 cellar: :any_skip_relocation, ventura:        "2559b05cfec0831f8354a74beb86030b092327563b4d4acc33eae52bae00f47b"
-    sha256 cellar: :any_skip_relocation, monterey:       "4a1ce4af07143e8d18ffb40218948e384aade0a0ec8f464c34ca7756f6535250"
-    sha256 cellar: :any_skip_relocation, big_sur:        "95bcf63a0dbcbe475afa23d7098ed0019d41953ce8848ddd330548616019dc56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c600fd0b3bb6b8bd8f2f9fb5d509aeb3711738f2c7088d9cc365156e90ff75d4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8533bf31802ad71191ef4c105d8dd515257852f6fbc987f5794c745e5d59bb2d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "78e1bbf08336823e07130b3f9646828e1d35fa233bb2244f906f26abdf9f0e09"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "203d21ba2ad9852c03422a3abfe0f5aa88da0483103880ffdba1284ebadbcf4a"
+    sha256 cellar: :any_skip_relocation, ventura:        "8a131c601881373ec587a93a11ba2033396fcbaf26b29e8e30405aa2e48b4826"
+    sha256 cellar: :any_skip_relocation, monterey:       "a154744a22cb00c59c8225ae67ba5c1a59847069a3c7a12be3416ce08aec1823"
+    sha256 cellar: :any_skip_relocation, big_sur:        "21bf97da465f0875c3ccba3a11dde4bbba20c76c5d45d555e55f666276f4fbf8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c99a4935d6bb74ef8ad6ecc0b70d7315f16185a6c94dadfd48cde578fbd2b38"
   end
 
   depends_on "rust" => :build

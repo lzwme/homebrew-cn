@@ -2,18 +2,28 @@ class Tepl < Formula
   desc "GNOME Text Editor Product Line"
   homepage "https://gitlab.gnome.org/swilmet/tepl"
   url "https://gitlab.gnome.org/swilmet/tepl.git",
-      tag:      "6.5.1",
-      revision: "606de78acb7a2b3268d59eb8e975bcac0ecf1691"
+      tag:      "6.4.0",
+      revision: "d1e9cc2e4a0738f68d9002f13724b7239f075844"
   license "LGPL-2.1-or-later"
+  revision 2
+  version_scheme 1
+
+  # https://gitlab.gnome.org/swilmet/tepl/-/blob/main/docs/more-information.md
+  # Tepl follows the even/odd minor version scheme. Odd minor versions are
+  # development snapshots; even minor versions are stable.
+  livecheck do
+    url :stable
+    regex(/^v?(\d+\.\d*[02468](?:\.\d+)*)$/i)
+  end
 
   bottle do
-    sha256 arm64_ventura:  "5788791a08385b22360a0f69acb250e05f5ca3de8c738384c9c15725345aa71e"
-    sha256 arm64_monterey: "255947b5ee0aabd2758071408d7012426a8ac37d39598bda7ded12125caa1180"
-    sha256 arm64_big_sur:  "649a341a700c3b1a616fb39d5ce81c04d8ac800b343fa233a944cbb0b7c7ba64"
-    sha256 ventura:        "f7f5f82c475f7eca28f73dfe3725ad742e4aac2293b76d35d92c2bd9d8dd24fa"
-    sha256 monterey:       "375a7dd294784611cc602993d9c46c502a6691f87ef4164fe89f31baaf74bb14"
-    sha256 big_sur:        "0abf48af71006cde55fd103a5a0d626bea02174b2dc9e523e8ae4fd6f67bf73e"
-    sha256 x86_64_linux:   "23f9885cea72b38468f5d5df6a4adfc5e8620ddb29573d16b4e66f79272df6ef"
+    sha256 arm64_ventura:  "367e5253125896f13c40afdc94a71b990de9743f19b0912b4049abecb11a9532"
+    sha256 arm64_monterey: "12cf90cf07aea8aab681fb3c5b87bd8ee9646585b54b4897e8c36d5b0c2b2092"
+    sha256 arm64_big_sur:  "c12be58c7929b1f3544862f51a652343bb1a19f67c1206e8c02ebb61ea228038"
+    sha256 ventura:        "7e09f6e437b0962e74411b8f5f05e4157941bec7bd6472a5dcbff25103363c50"
+    sha256 monterey:       "140bc30076dffb594077253cbb02e7960f4df5e6fdb0a030fb8c85669b0701a3"
+    sha256 big_sur:        "10adeee6ba95c667db511230249a3da81b9c8eb444cdaf5ea029aaee14a2a90a"
+    sha256 x86_64_linux:   "f6f478393265158cb1bc2cb6bf17b800565b79645af1d397e783145fd997a36d"
   end
 
   depends_on "gobject-introspection" => :build
@@ -21,8 +31,8 @@ class Tepl < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "amtk"
+  depends_on "gtksourceview4"
   depends_on "icu4c"
-  depends_on "libgedit-gtksourceview"
   depends_on "uchardet"
 
   def install
@@ -50,7 +60,7 @@ class Tepl < Formula
     gettext = Formula["gettext"]
     glib = Formula["glib"]
     gtkx3 = Formula["gtk+3"]
-    gtksourceview = Formula["libgedit-gtksourceview"]
+    gtksourceview4 = Formula["gtksourceview4"]
     harfbuzz = Formula["harfbuzz"]
     libepoxy = Formula["libepoxy"]
     libpng = Formula["libpng"]
@@ -70,7 +80,7 @@ class Tepl < Formula
       -I#{glib.opt_include}/gio-unix-2.0/
       -I#{glib.opt_include}/glib-2.0
       -I#{glib.opt_lib}/glib-2.0/include
-      -I#{gtksourceview.opt_include}/libgedit-gtksourceview-300
+      -I#{gtksourceview4.opt_include}/gtksourceview-4
       -I#{gtkx3.opt_include}/gtk-3.0
       -I#{harfbuzz.opt_include}/harfbuzz
       -I#{include}/tepl-#{version.major}
@@ -87,7 +97,7 @@ class Tepl < Formula
       -L#{gdk_pixbuf.opt_lib}
       -L#{gettext.opt_lib}
       -L#{glib.opt_lib}
-      -L#{gtksourceview.opt_lib}
+      -L#{gtksourceview4.opt_lib}
       -L#{gtkx3.opt_lib}
       -L#{lib}
       -L#{pango.opt_lib}
@@ -102,7 +112,7 @@ class Tepl < Formula
       -lgobject-2.0
       -ltepl-6
       -lgtk-3
-      -lgedit-gtksourceview-300
+      -lgtksourceview-4
       -lpango-1.0
       -lpangocairo-1.0
     ]
