@@ -3,19 +3,19 @@ class PythonLspServer < Formula
 
   desc "Python Language Server for the Language Server Protocol"
   homepage "https://github.com/python-lsp/python-lsp-server"
-  url "https://files.pythonhosted.org/packages/f9/1a/4c8a34472a18df991c75004586625ac1cd145a164dd8e69c1c1a625e09c2/python-lsp-server-1.7.2.tar.gz"
-  sha256 "b2433467d0fcb8fd45828463ff1cc805837c08731fcea5d7d953d9be776881e1"
+  url "https://files.pythonhosted.org/packages/73/82/34eea2e9f8b93f2cb97425140e06cae21a1e43a93ee3da70c975856c9281/python-lsp-server-1.7.3.tar.gz"
+  sha256 "a31b0525be6ec831c7d2b476b744e5aa5074633e1d1b77ee97f332cde15983ea"
   license "MIT"
   head "https://github.com/python-lsp/python-lsp-server.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d5a952976ada23914e8af96d2f4686e2d987fa048cfa6dcde6ffb8191c109d2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5f198f4dfcdd7f683d329bb82cf1391595fc8d0c8b4ef0765df200084ad91e9d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c8ef26143302507619ddc4203c5945924fcda63031537ef1dc23092c563db8f6"
-    sha256 cellar: :any_skip_relocation, ventura:        "55ae3463491a366616fdfb3b4485a288b2f656123df82c4d6146ce21102fe4e5"
-    sha256 cellar: :any_skip_relocation, monterey:       "b4f46b9ff1f9e0fb6b1446055734ee7caea08d19c85b452f55e327c9579a67cf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "daa8c335b33b28e17ac368026017f309768100ceea4d22fc549a2c7bc42169e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1acd99dbef53162bd063162208ef0d2af8119818198f6d4913ed2d9b3ff710d5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "47e80469a08de2808310820ccbaaf46918c719ddb381a4460c09f4e941559b6b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9b8f30603c0449a32d1eb02f0a34f17e7f8fcf4d78e4837b063e5b78b502ecb8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "158999e728ab69a8bbf0be3ea9c48d6ad4172f4b1297ea2d1ac041aa248514e1"
+    sha256 cellar: :any_skip_relocation, ventura:        "884bfd971d9c4b016ca05b375b8ca9b86ea929bbd8a850e58669f63cfdd3a0b5"
+    sha256 cellar: :any_skip_relocation, monterey:       "27dcec30cb549f3f3855f428578bd779a49b1c849dbc2a30c5b071c8f3bf87ed"
+    sha256 cellar: :any_skip_relocation, big_sur:        "35664fb796ec8998c93f8590b2b54eb326c89cf01fad81e177d72bd6af03b3e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a70ef0de7ee3edd03a8d8ca0e1ca3000fa3e6ec9597b0e514c2c09b8a19069f4"
   end
 
   depends_on "python@3.11"

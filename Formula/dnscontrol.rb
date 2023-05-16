@@ -6,9 +6,12 @@ class Dnscontrol < Formula
   license "MIT"
   version_scheme 1
 
+  # Upstream appears to use GitHub releases to indicate that a version is
+  # released and they sometimes re-tag versions before that point, so it's
+  # necessary to check release versions instead of tags.
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do

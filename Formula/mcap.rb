@@ -1,8 +1,8 @@
 class Mcap < Formula
   desc "Serialization-agnostic container file format for pub/sub messages"
   homepage "https://mcap.dev"
-  url "https://ghproxy.com/https://github.com/foxglove/mcap/archive/releases/mcap-cli/v0.0.30.tar.gz"
-  sha256 "37df20fd5f85f5f57266de7b36e5ef9b1ad7f9e648b0eb3bca2bfa4f0ff59a40"
+  url "https://ghproxy.com/https://github.com/foxglove/mcap/archive/releases/mcap-cli/v0.0.31.tar.gz"
+  sha256 "01b1efaec6f433e65193e43e92bf12ca4641e8729432c3766087c395b4a2a601"
   license "MIT"
   head "https://github.com/foxglove/mcap.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Mcap < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "70eb9c47ee7ff257ee2b6901d3cefe7f685d72fea8858bd26ca6f529d3237484"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a58116125031829fd23c8c6cd0dc525c860bc513b563cb1201bfd6ce1d1ed866"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d7bd64f620488f0d8b9638eb1e83810e930ee14666f81d4563c38c8ce205e413"
-    sha256 cellar: :any_skip_relocation, ventura:        "b5a079a476a31570f09fa306bd7d3a16bdade0c34f025fc86fd736013ef6dd47"
-    sha256 cellar: :any_skip_relocation, monterey:       "35fdfe6ab5f202e26434ff6cd52f070a8da051cccfc5f00ad6b02793ae1a9f87"
-    sha256 cellar: :any_skip_relocation, big_sur:        "834490d97593fa110549eb2cce8c3f9727d53d11ef16a7108fee65cf8529dade"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3a455186d7f26651cb5e0eff6b0080f1ab4c2beb8bddad1e12482433e07a5a5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cec4558c06f936a7bf4ebf306db7ff07f242c29d589d4c45ff57c5ff201b74bd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a90112958d8ec1da4ce6079f31aaa32e6201f7103d03ce9c8e06950ffdadac1e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4656b0b0030195ce569a84bf510876d23ad8a1b7f705eb95c28c07ec47a9f3ca"
+    sha256 cellar: :any_skip_relocation, ventura:        "12d96c479974690ff43cd2ecc1948c0c3f394b2ed467a25bd2ad396461d84262"
+    sha256 cellar: :any_skip_relocation, monterey:       "94fd58999ec2a36480a1f95a67f2b715b0799d41a004795cb71b74ddfafc1841"
+    sha256 cellar: :any_skip_relocation, big_sur:        "68da206d3c996198769ea975b1baa44239d4234556c9c1b34adc91e8ce63a804"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "527a88a4bd9c416746b47b10eb6d805e5080c5f3d9b8b1a5363fb2760e4ff6dc"
   end
 
   depends_on "go" => :build

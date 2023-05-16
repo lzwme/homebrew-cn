@@ -1,7 +1,7 @@
 class Libwandevent < Formula
   desc "API for developing event-driven programs"
-  homepage "https://research.wand.net.nz/software/libwandevent.php"
-  url "https://research.wand.net.nz/software/libwandevent/libwandevent-3.0.2.tar.gz"
+  homepage "https://web.archive.org/web/20220615162419/https://research.wand.net.nz/software/libwandevent.php"
+  url "https://web.archive.org/web/20220126151045/https://research.wand.net.nz/software/libwandevent/libwandevent-3.0.2.tar.gz"
   sha256 "48fa09918ff94f6249519118af735352e2119dc4f9b736c861ef35d59466644a"
   license "GPL-2.0"
 
@@ -22,6 +22,8 @@ class Libwandevent < Formula
     sha256 cellar: :any,                 el_capitan:     "f1459d39284b520c17443c6bef5ccb641dfe1e20266a4f34071f6a87cd9669e4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa30ff4a09850d6c0611845c6a36c981a8648d1fb47afe428d09f28fa7dfa36f"
   end
+
+  deprecate! date: "2023-05-09", because: :repo_removed
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do

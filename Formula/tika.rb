@@ -1,27 +1,27 @@
 class Tika < Formula
   desc "Content analysis toolkit"
   homepage "https://tika.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=tika/2.7.0/tika-app-2.7.0.jar"
-  mirror "https://archive.apache.org/dist/tika/2.7.0/tika-app-2.7.0.jar"
-  sha256 "d901ed1dfbfbd151e0d208b3906434394922fc134747c88d462022c9c94257a5"
+  url "https://www.apache.org/dyn/closer.lua?path=tika/2.8.0/tika-app-2.8.0.jar"
+  mirror "https://archive.apache.org/dist/tika/2.8.0/tika-app-2.8.0.jar"
+  sha256 "634af0e18ab3d0f222eb40ed2f766c917fd925936bd4171bb827c65c847abe44"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d86136672a2ab4e05aec55c8e0c3f48b1e7c87e783bb19d38d2f64f40e467f0c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d86136672a2ab4e05aec55c8e0c3f48b1e7c87e783bb19d38d2f64f40e467f0c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d86136672a2ab4e05aec55c8e0c3f48b1e7c87e783bb19d38d2f64f40e467f0c"
-    sha256 cellar: :any_skip_relocation, ventura:        "d86136672a2ab4e05aec55c8e0c3f48b1e7c87e783bb19d38d2f64f40e467f0c"
-    sha256 cellar: :any_skip_relocation, monterey:       "d86136672a2ab4e05aec55c8e0c3f48b1e7c87e783bb19d38d2f64f40e467f0c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d86136672a2ab4e05aec55c8e0c3f48b1e7c87e783bb19d38d2f64f40e467f0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e11bbd53a562a16f00e2703f75273b000abe4717d5954488ceaf8c9184e4d91a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc95e707d8595028782ebbeefed63b2de9a047aca71d018d1e407e47385d9cee"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc95e707d8595028782ebbeefed63b2de9a047aca71d018d1e407e47385d9cee"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bc95e707d8595028782ebbeefed63b2de9a047aca71d018d1e407e47385d9cee"
+    sha256 cellar: :any_skip_relocation, ventura:        "bc95e707d8595028782ebbeefed63b2de9a047aca71d018d1e407e47385d9cee"
+    sha256 cellar: :any_skip_relocation, monterey:       "bc95e707d8595028782ebbeefed63b2de9a047aca71d018d1e407e47385d9cee"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bc95e707d8595028782ebbeefed63b2de9a047aca71d018d1e407e47385d9cee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "022a467234ccdceaaa41e7053cad45cf1e97945476d292d759957222f46cf527"
   end
 
   depends_on "openjdk"
 
   resource "server" do
-    url "https://www.apache.org/dyn/closer.lua?path=tika/2.7.0/tika-server-standard-2.7.0.jar"
-    mirror "https://archive.apache.org/dist/tika/2.7.0/tika-server-standard-2.7.0.jar"
-    sha256 "ce60c414184084ed0b0defe6673645453a2078c889e05195d56d9468a8e12011"
+    url "https://www.apache.org/dyn/closer.lua?path=tika/2.8.0/tika-server-standard-2.8.0.jar"
+    mirror "https://archive.apache.org/dist/tika/2.8.0/tika-server-standard-2.8.0.jar"
+    sha256 "6cd277d742bcdf85395c418e2cfc09a88d741a43de9a316ee1ca42d4e5a86972"
   end
 
   def install

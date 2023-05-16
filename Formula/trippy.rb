@@ -1,19 +1,19 @@
 class Trippy < Formula
   desc "Network diagnostic tool, inspired by mtr"
   homepage "https://trippy.cli.rs/"
-  url "https://ghproxy.com/https://github.com/fujiapple852/trippy/archive/refs/tags/0.7.0.tar.gz"
-  sha256 "a3fa2902fd062516011d733def61941f867da3f9d6b84743ba4eff631bf8db18"
+  url "https://ghproxy.com/https://github.com/fujiapple852/trippy/archive/refs/tags/0.8.0.tar.gz"
+  sha256 "4b2155ca20d53ee1d29c9459a6efc4ee094658e93033a90085e39c841d02666b"
   license "Apache-2.0"
   head "https://github.com/fujiapple852/trippy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "15179c047513335a4695a77896ae34584f67916e8e576d5015b4a41cf766f8db"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aeb0090edc2f0e713bc96f12e35ff3ced5b169becf66ad6400483315b1a0250f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "19b7889aabee0b0c8ac0de285a3b8c7e0b57d5ca3b14f1736d7ae725a965db5b"
-    sha256 cellar: :any_skip_relocation, ventura:        "9510816930c84d961cb26234a5165da01dbfc053ea61fcd799315412eecaebb5"
-    sha256 cellar: :any_skip_relocation, monterey:       "2c855cca769f588c3b7d6f7cc44a04d2441a079f0b7872507d8fc1b602222ac6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "94f1a34fa28692b4490584dd9a33e875ef9ece5997d3ab7c2fb53fa904cf622e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f4d48269f2cd658aff81584de69674205cd59f7d1b4295d60cb2e25c72589ca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2ca7942839c96151fee0e2abcc7d5b551fd53c75f797a96b786e11316d04baaf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4f0ea6d43dfa05b6bdda735eb6dfac2f3e38b99f4a09694929742633fbc12f47"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7b083e2f4d9afd3c82e2d1b2e01f52e6804972e4205818c0049f6e39ea688608"
+    sha256 cellar: :any_skip_relocation, ventura:        "48e6cbda0b86865439925bd439e128b120e675ca97abf0798b9d3c4d83b9eefb"
+    sha256 cellar: :any_skip_relocation, monterey:       "cf4ce67bbe64a8cdda172993c16b9e74a08ef0ce094c9d8425b845108a1cb0e5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "452cbfe0a5557e9b8b2079bb61496d0e45f3bb0c9179873c709d0f472033be26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d134c0706c4f73e14a541865d16968e9c86ce81f2bb48a17ebf428316c08b281"
   end
 
   depends_on "rust" => :build
@@ -33,6 +33,6 @@ class Trippy < Formula
     output = shell_output("#{bin}/trip brew.sh 2>&1", 255)
     assert_match expected, output
 
-    assert_match "trippy #{version}", shell_output("#{bin}/trip --version")
+    assert_match "trip #{version}", shell_output("#{bin}/trip --version")
   end
 end

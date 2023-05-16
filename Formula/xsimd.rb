@@ -1,12 +1,12 @@
 class Xsimd < Formula
   desc "Modern, portable C++ wrappers for SIMD intrinsics"
   homepage "https://xsimd.readthedocs.io/en/latest/"
-  url "https://ghproxy.com/https://github.com/xtensor-stack/xsimd/archive/refs/tags/11.0.0.tar.gz"
-  sha256 "50c31c319c8b36c8946eb954c7cca2e2ece86bf8a66a7ebf321b24cd273e7c47"
+  url "https://ghproxy.com/https://github.com/xtensor-stack/xsimd/archive/refs/tags/11.1.0.tar.gz"
+  sha256 "aa54dba8daade472656eba0d27154f072fec06ee3831aefcac69a5f6c7dbbae7"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4903de87d8220db21659c8b99fbfbed9a18c9670266c3e7ca5cb8d6c6f4e332a"
+    sha256 cellar: :any_skip_relocation, all: "dc4048240f762b6da21aab8faccd18c3a6924f0a3842c04aedcf5b80c7a27e0e"
   end
 
   depends_on "cmake" => :build

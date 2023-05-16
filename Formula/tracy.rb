@@ -1,18 +1,18 @@
 class Tracy < Formula
   desc "Real-time, nanosecond resolution frame profiler"
   homepage "https://github.com/wolfpld/tracy"
-  url "https://ghproxy.com/https://github.com/wolfpld/tracy/archive/refs/tags/v0.9.tar.gz"
-  sha256 "93a91544e3d88f3bc4c405bad3dbc916ba951cdaadd5fcec1139af6fa56e6bfc"
+  url "https://ghproxy.com/https://github.com/wolfpld/tracy/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "c2de9f35ab2a516a9689ff18f5b62a55b73b93b66514bd09ba013d7957993cd7"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "137e3b97c5bdfffd8050052c3ebc6fc304f42b608fa4289dd5340f3a7e91430e"
-    sha256 cellar: :any,                 arm64_monterey: "10ca60db0a37242410c9cd17daede06565de4315d20e320e2066f900e002cf61"
-    sha256 cellar: :any,                 arm64_big_sur:  "b516cfd204375a68d77e649519411dd8787d1c56d7f07cdfb15bc0511dd9d15f"
-    sha256 cellar: :any,                 ventura:        "34b88ea2a92540c0c47338ab504b1c25635e827ac64de2409f89c457e51503d8"
-    sha256 cellar: :any,                 monterey:       "ba8954f3da81a5f916b2d5b687310924ca3f6c2ef604c66cb8f15192e32831a2"
-    sha256 cellar: :any,                 big_sur:        "ad532e41bb74806c03d9fe4b99e72c6e3f0d8dcf429d04cb72ca5d83a87a20b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5188472f4de4924f6c531ae43f5c5c03c8c8f4234eb897ab7b1f47f8a5156d33"
+    sha256 cellar: :any,                 arm64_ventura:  "83e94a2d3f9c29911844e48b55def7807b42f11ca0be6a96fa5ec31bfa7c56e9"
+    sha256 cellar: :any,                 arm64_monterey: "c1c03506306ce73ef85af7a40442eca87e4b4ce1b9aab09c64c2c38f23ecd992"
+    sha256 cellar: :any,                 arm64_big_sur:  "390bf6bb1f080b20285929679304758a04140e52ce86956f57694b7835bfec78"
+    sha256 cellar: :any,                 ventura:        "226dc07fc98a86cd44dc3e626257d238b8557fe7cc6b44f579a41ed59d91afce"
+    sha256 cellar: :any,                 monterey:       "34ebd84f9ddeb63b81e9aad5b5ae40fd144290967789ba47cb279523ef5fd077"
+    sha256 cellar: :any,                 big_sur:        "306585e77d83ad00b9160ffa2bd5b04fd83ca07d11a44080d113ad4bea82cc06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48d39610618ac1e3972d0db0afdacf0d305438358486f65b9c60b11e10bf763a"
   end
 
   depends_on "pkg-config" => :build
@@ -23,6 +23,7 @@ class Tracy < Formula
 
   on_linux do
     depends_on "dbus"
+    depends_on "libxkbcommon"
   end
 
   fails_with gcc: "5" # C++17

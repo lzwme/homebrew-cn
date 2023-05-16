@@ -1,25 +1,27 @@
 class Mmv < Formula
   desc "Move, copy, append, and link multiple files"
   homepage "https://github.com/rrthomas/mmv"
-  url "https://ghproxy.com/https://github.com/rrthomas/mmv/releases/download/v2.3/mmv-2.3.tar.gz"
-  sha256 "bb5bd39e4df944143acefb5bf1290929c0c0268154da3345994059e6f9ac503a"
+  url "https://ghproxy.com/https://github.com/rrthomas/mmv/releases/download/v2.4/mmv-2.4.tar.gz"
+  sha256 "5a328bea0259c9fb7eaaab6e5f4bb1b056daccd30879ff102dc00db482f2f6a1"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "5350723c8531b4e9bdde902a745df615dcefc87a522aff2d207bfea9e74316cb"
-    sha256 cellar: :any,                 arm64_monterey: "3a1bf74f003cdae6fc986c25a956c45be2bb28ca46ec508305204ab14ebcf1fb"
-    sha256 cellar: :any,                 arm64_big_sur:  "6f86d48ad49c5e7f3bb4e8e0487265aa0ec676a47fdd57f8894a80d8a2357aa8"
-    sha256 cellar: :any,                 ventura:        "5d2b1c1d6e18788d734f1909a9bfe98e4ec48b304ab290544aaa223ce7fc904d"
-    sha256 cellar: :any,                 monterey:       "a4e282c205dfa25aa2195d4535be737130e7ee3756321440c5bf70e555a4c00f"
-    sha256 cellar: :any,                 big_sur:        "60ad4a7c887f16254cf20ea00c55ffcd6447e17f58934e18cf449fdb4fe801dd"
-    sha256 cellar: :any,                 catalina:       "3a975dc6f5378ae7cf1f5fa50d7adfa964a54c0665286ea6de29f16e3f7701a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "406301dd22c9b3a3aff8509419420f70280a5be2b9c51c1e1a752fda643e87b1"
+    sha256 cellar: :any,                 arm64_ventura:  "d1262478caade185cead37dfbc6e0249f52c95501790752a73757c93e41566aa"
+    sha256 cellar: :any,                 arm64_monterey: "786e4d4823b62488cdce80b7d94c3dfd3c7d5e9db7efd690fc87205626e5e2c5"
+    sha256 cellar: :any,                 arm64_big_sur:  "91c68bcd462397cd181ed1ea7dec35552df88dbbe4d2d1e9fa57787b6e0ec3e0"
+    sha256 cellar: :any,                 ventura:        "2ade651d8f99d68aad0ec5618aee46758e7e1beda784def52ee6b584a64ca5ef"
+    sha256 cellar: :any,                 monterey:       "76655b3ddd9cdf85eb806365da884a031b489a9a7cdc904cd9c24fc270a58566"
+    sha256 cellar: :any,                 big_sur:        "33d64ab428b59598d484c1b1f920c0ed218755b308ab24bd4039f0af2cf3fb51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "875ed3e51126736dfa91b7f3b4e018f3118a844664fe9f84537a5d06edf12c30"
   end
 
   depends_on "pkg-config" => :build
   depends_on "bdw-gc"
 
   def install
+    # Workaround for Xcode 14.3.
+    ENV.append_to_cflags "-Wno-implicit-function-declaration"
+
     system "./configure", *std_configure_args
     system "make", "install"
   end

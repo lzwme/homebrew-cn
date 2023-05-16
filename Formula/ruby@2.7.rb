@@ -22,6 +22,10 @@ class RubyAT27 < Formula
 
   keg_only :versioned_formula
 
+  # EOL: 2023-03-31
+  # https://www.ruby-lang.org/en/downloads/branches/
+  deprecate! date: "2023-05-14", because: :unsupported
+
   depends_on "pkg-config" => :build
   depends_on "libyaml"
   depends_on "openssl@1.1"
