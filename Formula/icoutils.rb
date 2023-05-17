@@ -11,21 +11,30 @@ class Icoutils < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "5721ca4ce6fb6378b9ce79e9f193683e2c5b4aa94d6a015518429f78ca65d295"
-    sha256 cellar: :any, arm64_big_sur:  "f761caa78a9a27c9480f9e6e78e44f8fa38e48404c5ee7488eedeb4ea51eb224"
-    sha256 cellar: :any, monterey:       "7a359d1dce56f8b319ffd8c56e59edc508d5337885424afc4374eca8f1817e3a"
-    sha256 cellar: :any, big_sur:        "9c63325e7eb42817701d615003736bc2aa04656d5b6b56d475712056836dccce"
-    sha256 cellar: :any, catalina:       "67e11f8966ff949902c637dccea47ee5ee341128519050f31f6c87eb74264d99"
-    sha256 cellar: :any, mojave:         "c22bed7e3ad43221011658fb8acd08481dccd11b0cc5750e6a21502d7da51fb9"
-    sha256 cellar: :any, high_sierra:    "50b8adff5f3364626026d19fba9a0c9fef8cf93104b8d6907bcbe8a5f4a136c2"
-    sha256 cellar: :any, sierra:         "1a3656f2fcf778aa32eb734a60dfceccd5e1a702fa6558b11b33cc6f44aeba99"
-    sha256 cellar: :any, el_capitan:     "fb93eb5cfa6b222e77ec07569f501fcc03143e9decf306ebd21e9d1c6d304bce"
-    sha256               x86_64_linux:   "9a725092dcfb0f4eeda7085628686d67c98475bdb81e2b3cdc657f5837040982"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura:  "6d0b6015b32488d5eadeed7af574b0b07c8071dfaae487a41f5306585eb8510b"
+    sha256 cellar: :any, arm64_monterey: "cca2c49761f3c0c2c4d8261af392cb156b43d49e99d16af0962584717c1e2ad3"
+    sha256 cellar: :any, arm64_big_sur:  "561bdf394863bd566ebfd0f9f5c5cb084d9eeeeb21c4013dc67f49ca2f382d68"
+    sha256 cellar: :any, ventura:        "bc125498f4fb92c602479703be80ef4e1870dd4f74159e1ed0d2fd801179ba75"
+    sha256 cellar: :any, monterey:       "23f46510e0108a2342a83ba36aa2b11346d18a3f5ae29aa238cb249f3e4fa3e8"
+    sha256 cellar: :any, big_sur:        "2f71fa8b1131f534d2d7d674642091a80f61108a376240bd6e19c92d436aecfe"
+    sha256               x86_64_linux:   "4bcbbfe1270c90d060baf5fe79eea7cd07daaae074c110b57e8505eac348cdb8"
   end
 
   depends_on "libpng"
 
+  on_monterey :or_newer do
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
+
   def install
+    inreplace "common/Makefile.am", "libcommon_a_LIBADD", "libcommon_la_LIBADD"
+
+    # Workaround for Xcode 14 ld.
+    system "autoreconf", "--force", "--install" if MacOS.version >= :monterey
+
     system "./configure", "--disable-dependency-tracking",
                           "--disable-rpath",
                           "--prefix=#{prefix}"

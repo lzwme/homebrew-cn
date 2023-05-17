@@ -1,30 +1,13 @@
 class Simde < Formula
   desc "Implementations of SIMD intrinsics for systems which don't natively support them"
   homepage "https://github.com/simd-everywhere/simde"
+  url "https://ghproxy.com/https://github.com/simd-everywhere/simde/archive/v0.7.6.tar.gz"
+  sha256 "c63e6c61392e324728da1c7e5de308cb31410908993a769594f5e21ff8de962b"
   license "MIT"
   head "https://github.com/simd-everywhere/simde.git", branch: "master"
 
-  stable do
-    url "https://ghproxy.com/https://github.com/simd-everywhere/simde/archive/v0.7.4.tar.gz"
-    sha256 "d5ae61b045cc8fd0ae84cbc70289721b0c0a4c9c5d7fe296bcb7673b0ea595e8"
-
-    # build patch for https://github.com/simd-everywhere/simde/issues/1012
-    # remove in next release
-    patch do
-      url "https://github.com/simd-everywhere/simde/commit/27836b19abf03886750a878fdacb1fcb7bcd9d85.patch?full_index=1"
-      sha256 "fc09da2ffda17e79568bf582fdef085c08688550e2abe1536176bc6f7f84afb3"
-    end
-
-    # build patch for https://github.com/simd-everywhere/simde/issues/1012
-    # remove in next release
-    patch do
-      url "https://github.com/simd-everywhere/simde/commit/f9cf4675d101eef2dd70dabbb4d6806b405eac29.patch?full_index=1"
-      sha256 "a87475b391ebb48b0c19590eac60a1d65f327bb5d391591cafcdc57d9af0f0fa"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "173687e8a3088c99f7044df92c359fee930ab93f0d0708957c1ec359a29a348d"
+    sha256 cellar: :any_skip_relocation, all: "e236c17b7eb174dbefb648865412d7b59263447f4161fb92fe13fa383b42fbab"
   end
 
   depends_on "meson" => :build

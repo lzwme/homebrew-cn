@@ -1,21 +1,18 @@
 class Tlx < Formula
   desc "Collection of Sophisticated C++ Data Structures, Algorithms and Helpers"
   homepage "https://tlx.github.io"
-  url "https://ghproxy.com/https://github.com/tlx/tlx/archive/v0.5.20200222.tar.gz"
-  sha256 "99e63691af3ada066682243f3a65cd6eb32700071cdd6cfedb18777b5ff5ff4d"
+  url "https://ghproxy.com/https://github.com/tlx/tlx/archive/v0.5.20230516.tar.gz"
+  sha256 "528f08411174a0a98bf7c5c3b47cb383037904a59c5152554c3fcbf4df779871"
   license "BSL-1.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f4a3813275fd74097015538e989b512c2e9c7e1bb770402a80a8fb02f49e897c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ca6c8f813d2992803a39d3c707c0d56f9a0d4c5e9ea1afdf5c28bd24c456408"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d08dae9b28680ddbdb24ef98a60110e743d72d702bf8df24eb0568eac35bb536"
-    sha256 cellar: :any_skip_relocation, ventura:        "465d86f02ea70196195a307b1c15ed252912c4912f9a19dd1ef70f34e5f03a8a"
-    sha256 cellar: :any_skip_relocation, monterey:       "5f0fa9dcfbeeac87aacadbe122cdd0c77cd1c78145acd55751c68689b178f157"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bd7aca4d147c132cd31909e0e99f6eb6192d63ba98805d1ae5da6b7ea04826e1"
-    sha256 cellar: :any_skip_relocation, catalina:       "c27858a2595d4fe9444821160e85aa6924fcc7194e13baadd5fda0b79252b9a1"
-    sha256 cellar: :any_skip_relocation, mojave:         "5038cd9dff7968390f0e4208059c02a667fb9c3308ce88f444bd57ef60bd8895"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "9a81855db3041742ac4e6ae96c3bc8bc9f15e0dc30436afbcbbf36bace3ef633"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "317d28d9c3979d8bff510eebf3dfadd74c8d2e5239fb04f7c03fce41b45fc4bb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a69532658e43498520f22a3edb9a3042c9698e42d10b7f6cd18605207ac623b9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "045ff89aaaba445098d2107dc167ddff844528f52ef8b37c16bc4d5f9f61a785"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9b62cf60de877378226f6ca08c70a365c727b12d06670c188b5043a0a3ec2200"
+    sha256 cellar: :any_skip_relocation, ventura:        "750c04c27a2501a7dd8327ece132df14f159737e38abe6ccf98e6b4b157a9e8d"
+    sha256 cellar: :any_skip_relocation, monterey:       "fcfa9aa83f6e98d4192679aac5dd517e781c5ce37f33d30c7bee3ee6458f2770"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f9c3fd00dc1e6845a156592f4d0385cb0effab1606871c9cf89828fb95015750"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd7bcbe8dba3c739b80a4d866a4ca9ddf3b02d726bcdf1fb20a42bba246a79ae"
   end
 
   depends_on "cmake" => :build

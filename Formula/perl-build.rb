@@ -1,33 +1,31 @@
 class PerlBuild < Formula
   desc "Perl builder"
   homepage "https://github.com/tokuhirom/Perl-Build"
-  url "https://ghproxy.com/https://github.com/tokuhirom/Perl-Build/archive/1.33.tar.gz"
-  sha256 "79cfe7cdad693ab7b5a9544b81cff43c5ee7d09c057c86af524395313d53759b"
+  url "https://ghproxy.com/https://github.com/tokuhirom/Perl-Build/archive/1.34.tar.gz"
+  sha256 "50e90b18f2541aca857b8743bd3c187b7844c608076c4f2aa13eadc0689b1644"
   license any_of: ["Artistic-1.0", "GPL-1.0-or-later"]
-  revision 1
   head "https://github.com/tokuhirom/perl-build.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d9608da782685ddfb59db4495bec0eaaf9a2dd1626a83996c45c97bd12e2354"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d9608da782685ddfb59db4495bec0eaaf9a2dd1626a83996c45c97bd12e2354"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "558af15f28cb87935cda530e36419a86a843b15507c502e83de36ddf6549d75c"
-    sha256 cellar: :any_skip_relocation, ventura:        "2bfab1553d4dd92516f1047494f7cf5dc18929bf2d55db241d01cf4957c90059"
-    sha256 cellar: :any_skip_relocation, monterey:       "2bfab1553d4dd92516f1047494f7cf5dc18929bf2d55db241d01cf4957c90059"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c6cde594d2cc9c52a19a46e4dbd874ade410ef6972a52e39ca92cdbe32edd33c"
-    sha256 cellar: :any_skip_relocation, catalina:       "4edfe560c51cd7bbfc534d902f25073ea977e2fd145cb135872ef60020860b49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c7d90c53829a1270a2a5bcddc11a53aef64e130f6198cadbbe0046dc605ce87"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "88242c3173ebedeb662528ee8d076253fbe18c189cdef42768efc5e377bec466"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "88242c3173ebedeb662528ee8d076253fbe18c189cdef42768efc5e377bec466"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "18c043e60df07f020af0785e1f6dcad1ad1b3782e8f596efb8a5363c78669ccb"
+    sha256 cellar: :any_skip_relocation, ventura:        "9c09caf60e490235fc8366f3d47d32d8be9cf887d71cc3f80213700ef3443a65"
+    sha256 cellar: :any_skip_relocation, monterey:       "9c09caf60e490235fc8366f3d47d32d8be9cf887d71cc3f80213700ef3443a65"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8699ea1e8465d1906944894a63767c339312afe64a850620dea4f0e2f05f3017"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11ad390432ffb57a2afbb7884722b2539fdd4a9951074eb88c06488d943eb348"
   end
 
   uses_from_macos "perl"
 
   resource "Module::Build" do
-    url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-0.4231.tar.gz"
-    sha256 "7e0f4c692c1740c1ac84ea14d7ea3d8bc798b2fb26c09877229e04f430b2b717"
+    url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-0.4234.tar.gz"
+    sha256 "66aeac6127418be5e471ead3744648c766bd01482825c5b66652675f2bc86a8f"
   end
 
   resource "Module::Build::Tiny" do
-    url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-Tiny-0.039.tar.gz"
-    sha256 "7d580ff6ace0cbe555bf36b86dc8ea232581530cbeaaea09bccb57b55797f11c"
+    url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-Tiny-0.045.tar.gz"
+    sha256 "d20692eee246d0b329b7f7659f36286b14ae0696fe91078a64b7078f8876d300"
   end
 
   resource "ExtUtils::Config" do
@@ -46,13 +44,13 @@ class PerlBuild < Formula
   end
 
   resource "HTTP::Tinyish" do
-    url "https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA/HTTP-Tinyish-0.17.tar.gz"
-    sha256 "47bd111e474566d733c41870e2374c81689db5e0b5a43adc48adb665d89fb067"
+    url "https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA/HTTP-Tinyish-0.18.tar.gz"
+    sha256 "80380b8d33c6bfa96bb0104fa6a41c27dcc4e9c83a48df1fad39097f5fdcfde5"
   end
 
   resource "CPAN::Perl::Releases" do
-    url "https://cpan.metacpan.org/authors/id/B/BI/BINGOS/CPAN-Perl-Releases-5.20210220.tar.gz"
-    sha256 "c88ba6bba670bfc36bcb10adcceab83428ab3b3363ac9bb11f374a88f52466be"
+    url "https://cpan.metacpan.org/authors/id/B/BI/BINGOS/CPAN-Perl-Releases-5.20230423.tar.gz"
+    sha256 "c2eda421ed14ba0feffea6748f344b7ee3c364aefce4d15a1450e06861760fea"
   end
 
   resource "CPAN::Perl::Releases::MetaCPAN" do
@@ -66,11 +64,10 @@ class PerlBuild < Formula
   end
 
   resource "HTTP::Tiny" do
-    url "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/HTTP-Tiny-0.076.tar.gz"
-    sha256 "ddbdaa2fb511339fa621a80021bf1b9733fddafc4fe0245f26c8b92171ef9387"
+    url "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/HTTP-Tiny-0.082.tar.gz"
+    sha256 "54e9e4a559a92cbb90e3f19c8a88ff067ec2f68fbe39bbb694ee70828cd5f4b8"
   end
 
-  # Devel::PatchPerl dependency
   resource "Module::Pluggable" do
     url "https://cpan.metacpan.org/authors/id/S/SI/SIMONW/Module-Pluggable-5.2.tar.gz"
     sha256 "b3f2ad45e4fd10b3fb90d912d78d8b795ab295480db56dc64e86b9fa75c5a6df"
@@ -81,15 +78,14 @@ class PerlBuild < Formula
     sha256 "69c6e97016260f408e9d7e448f942b36a6d49df5af07340f1d65d7e230167419"
   end
 
-  # Pod::Usage dependency
   resource "Pod::Text" do
-    url "https://cpan.metacpan.org/authors/id/R/RR/RRA/podlators-4.12.tar.gz"
-    sha256 "948717da19630a5f003da4406da90fe1cbdec9ae493671c90dfb6d8b3d63b7eb"
+    url "https://cpan.metacpan.org/authors/id/R/RR/RRA/podlators-5.01.tar.gz"
+    sha256 "ccfd1df9f1a47f095bce6d718fad5af40f78ce2491f2c7239626e15b7020bc71"
   end
 
   resource "Pod::Usage" do
-    url "https://cpan.metacpan.org/authors/id/M/MA/MAREKR/Pod-Usage-1.69.tar.gz"
-    sha256 "1a920c067b3c905b72291a76efcdf1935ba5423ab0187b9a5a63cfc930965132"
+    url "https://cpan.metacpan.org/authors/id/M/MA/MAREKR/Pod-Usage-2.03.tar.gz"
+    sha256 "7d8fdc7dce60087b6cf9e493b8d6ae84a5ab4c0608a806a6d395cc6557460744"
   end
 
   def install

@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Open Source Security tool to perform Cloud Security best practices"
   homepage "https://prowler.pro/"
-  url "https://files.pythonhosted.org/packages/88/95/f75f7d8910277bf17355f633b6773b5544f89ef5669432ac50b76a1a34b2/prowler-3.5.0.tar.gz"
-  sha256 "7da30bd1a5d14129623858ebc2cd18256f7cb69783ebb453481cf73c107624aa"
+  url "https://files.pythonhosted.org/packages/d6/69/2c322196bb6f1e526dd628ab352a081def79f8b1af08cd61d84c00948660/prowler-3.5.1.tar.gz"
+  sha256 "7f8180f48391eb8f624b8ff920e368ca00fa0b74e5958630ee426f465fb6f7f0"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4d6d3162d3bd19d1ca93eda5130f98f46aab0432556aea709a02ba747739ccb1"
-    sha256 cellar: :any,                 arm64_monterey: "c039d8e18bdbc0ff4976b1ae468530ff98b760f7573ad3fb5de226ba5f8ffa13"
-    sha256 cellar: :any,                 arm64_big_sur:  "81d3416e7922c5a8f348b8c6d9a55b566185c8740976354b97ee04a9754b5a6d"
-    sha256 cellar: :any,                 ventura:        "ba1efa276603b715164c430f0e1e841d6dae902eed2b5063de74e3b725ca5928"
-    sha256 cellar: :any,                 monterey:       "045efcbc79648a622f3b1f475b7fcb43c5f93de29310496462f1283b2bf06654"
-    sha256 cellar: :any,                 big_sur:        "16bef7eb3affac366eba5c0082228f2dad8b55c8bef5762cfb25fa3e3372232f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8036cbd7e096f7e537313017b98283531517ea03be6e70f178f10463ba40edc"
+    sha256 cellar: :any,                 arm64_ventura:  "9fec3f2f39b9ae2cafea05aae842bce32a078d317ef1a8d822d9c50e195e6126"
+    sha256 cellar: :any,                 arm64_monterey: "a03e112462b64ef77b1a3c0627df457696ad04641708f4f26bdb098255b6aed0"
+    sha256 cellar: :any,                 arm64_big_sur:  "e60e6599aeb6ee562dd092efbddaaaa5e28cd5a87b669f561bb8b27ae3937f82"
+    sha256 cellar: :any,                 ventura:        "2a1d54b39aaaa14ed980dc162a43a9b041967254542aecf1f362680b70dc7afb"
+    sha256 cellar: :any,                 monterey:       "030127bf3cb06546d0ff98b9fecef83143ddb3870e57e5d5d9a98cd72cfaf2c1"
+    sha256 cellar: :any,                 big_sur:        "fe872ff1c3a739b947465942763ee609544b6fbd75244ed3f63a47765611a496"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae697d131a519c3ced07cf6c6d0a9d200d8d3f20b83281b54a0d07dfc234dfd5"
   end
 
   # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
@@ -95,8 +95,8 @@ class Prowler < Formula
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/81/f9/31fd079836f54470e5aa7c53f8487653d0720304b592e168f51c516a08b9/botocore-1.29.125.tar.gz"
-    sha256 "3005a7ffee083315e69938acdf1bfeaf9e21fe1fe1643d6573ee817721f4ffcd"
+    url "https://files.pythonhosted.org/packages/92/a4/8a215c0ab0f28019af2d39ad23768dd16c70dc5806ee559b5338e0faa833/botocore-1.29.134.tar.gz"
+    sha256 "0e907b0cab771ab7c9e25efd6b6bc0041ec1b17eb0bab316fd012ef2f8fd99ba"
   end
 
   resource "cachetools" do
@@ -285,8 +285,8 @@ class Prowler < Formula
   end
 
   resource "shodan" do
-    url "https://files.pythonhosted.org/packages/fd/e3/8a76f8cb021d712ba966f7385d3635165a70222e5ca1a92a8887470dd1a0/shodan-1.28.0.tar.gz"
-    sha256 "18bd2ae81114b70836e0e3315227325e14398275223998a8c235b099432f4b0b"
+    url "https://files.pythonhosted.org/packages/7c/0a/98fc79a7ca9f220234879f17ad6a847b5296ab2522b893f5a4e95942d009/shodan-1.29.0.tar.gz"
+    sha256 "ebea6dbc1944497e9139263423ea4d103dcd58c085c5ddbf4d6ab1db6eb1d142"
   end
 
   resource "slack-sdk" do

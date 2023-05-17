@@ -1,19 +1,19 @@
 class Cgrep < Formula
   desc "Context-aware grep for source code"
   homepage "https://github.com/awgn/cgrep"
-  url "https://ghproxy.com/https://github.com/awgn/cgrep/archive/v7.0.0.tar.gz"
-  sha256 "87c596447882b3acf0a754ac52ac1b5314961e652708a25ffc49ec5977b1f11a"
+  url "https://ghproxy.com/https://github.com/awgn/cgrep/archive/v7.1.0.tar.gz"
+  sha256 "4d590b00ff63fe2d9b3c57ec16f91d73b4f21ea012036b4e4d7ee2f40bdce417"
   license "GPL-2.0-or-later"
   head "https://github.com/awgn/cgrep.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e17cbf5d7586ca6412b44e1ff1a83a944fc445bddad20292a92592d981bc41ab"
-    sha256 cellar: :any,                 arm64_monterey: "2655867717a9a2bc1db99c238a0a0d20794266480058a8e559fa97c40931b9f5"
-    sha256 cellar: :any,                 arm64_big_sur:  "6f559f1d9f6200d473916385605b98df079ff0a73f20c72c88fa5da0daff2e32"
-    sha256 cellar: :any,                 ventura:        "029ac12193d1a6b4435af4fae22a11c36c160ddeb78ab7fb0d1813972fe7362b"
-    sha256 cellar: :any,                 monterey:       "a9b7915b8f024de06e3112954f71da9b833e4bce365985c323128ff5f7c5c3f9"
-    sha256 cellar: :any,                 big_sur:        "da78325ef5883b34580775cb8edbebcca3eb587631744e9d0edbd8381a9552a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f5f2576e078a73d016397fffc8f26a8c1aafc176286bf885e16cee0f37b6abe"
+    sha256 cellar: :any,                 arm64_ventura:  "4edce520ce4ee01216af5d14448cd7ba1275633c884c096d1fec589e840abd12"
+    sha256 cellar: :any,                 arm64_monterey: "f64aa814af7f0fe7f0fc2c9cadc88bd56b09010562c0433131919b68c22002e7"
+    sha256 cellar: :any,                 arm64_big_sur:  "13baf2feefe328717fe25dbd8cb2663eab455a1acdddc9dbebfeffb2fbf7ef80"
+    sha256 cellar: :any,                 ventura:        "671cf5a2ad4bebd234785b355d8314cc7736ade142659c0797cf9e6bae397a74"
+    sha256 cellar: :any,                 monterey:       "841a24cf2eadfef1521d92d3e72d4dd3cf73f1a0b1180774737591fa9c49a606"
+    sha256 cellar: :any,                 big_sur:        "ee626eb6aa687f9a4caa721b1d2fb1d259b32baaf81fec1004be8bb974c2cb16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "809f7ed16efaca9b535162bf4caed07abde47abf8465380b768acd08bc81c305"
   end
 
   depends_on "cabal-install" => :build

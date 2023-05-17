@@ -1,18 +1,18 @@
 class Crane < Formula
   desc "Tool for interacting with remote images and registries"
   homepage "https://github.com/google/go-containerregistry"
-  url "https://ghproxy.com/https://github.com/google/go-containerregistry/archive/v0.15.1.tar.gz"
-  sha256 "003f1ec639ed7347101ba95fc2b1aa36e51fb7a286488110cb7e1d8dd4a851a9"
+  url "https://ghproxy.com/https://github.com/google/go-containerregistry/archive/v0.15.2.tar.gz"
+  sha256 "9bebb3c42666bf082d7639cfe38295f2572f387b78bfaa1da8f8cd1e5bbb1060"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5d04068efe9fa6d57168b90c453b7e17888bae55f4c02f1dcf5c1d26bf74099"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d5d04068efe9fa6d57168b90c453b7e17888bae55f4c02f1dcf5c1d26bf74099"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d5d04068efe9fa6d57168b90c453b7e17888bae55f4c02f1dcf5c1d26bf74099"
-    sha256 cellar: :any_skip_relocation, ventura:        "1903eb3e684e2f378d353a92029c066ec27b3fe6a3949d000561148f3ff04193"
-    sha256 cellar: :any_skip_relocation, monterey:       "1903eb3e684e2f378d353a92029c066ec27b3fe6a3949d000561148f3ff04193"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1903eb3e684e2f378d353a92029c066ec27b3fe6a3949d000561148f3ff04193"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "abda678eec78f1dc5e351431e0f627ebf252ee3a91f2dca6ed31ef525eb1c836"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca0e5626f8f7299ae25515eb484fa3bc3b933dc59955607e8607d83e069a5376"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca0e5626f8f7299ae25515eb484fa3bc3b933dc59955607e8607d83e069a5376"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ca0e5626f8f7299ae25515eb484fa3bc3b933dc59955607e8607d83e069a5376"
+    sha256 cellar: :any_skip_relocation, ventura:        "b1d56c4a2311b2e65a3074be00dfce5184de2c9d2faa5985232fec9f5a539ac3"
+    sha256 cellar: :any_skip_relocation, monterey:       "b1d56c4a2311b2e65a3074be00dfce5184de2c9d2faa5985232fec9f5a539ac3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b1d56c4a2311b2e65a3074be00dfce5184de2c9d2faa5985232fec9f5a539ac3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b81e001fac4b7e116dc9e91eb0808b36b2c861ff28488da4653059fe84b779d3"
   end
 
   depends_on "go" => :build

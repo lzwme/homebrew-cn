@@ -2,19 +2,19 @@ class Access < Formula
   desc "Easiest way to request and grant access without leaving your terminal"
   homepage "https://indent.com"
   url "https://github.com/indentapis/access.git",
-      tag:      "v0.10.11",
-      revision: "dd71b8b3d12e86c3d87dd78f10873469d97dc66c"
+      tag:      "v0.10.12",
+      revision: "d7ef2a34f7041ff63732a986c7fe3a5940d85edc"
   license "Apache-2.0"
   head "https://github.com/indentapis/access.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae9a11f6e119aa508d2b526b6b539b871f45c852075bfe6c1e92d24374b5da70"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ae9a11f6e119aa508d2b526b6b539b871f45c852075bfe6c1e92d24374b5da70"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ae9a11f6e119aa508d2b526b6b539b871f45c852075bfe6c1e92d24374b5da70"
-    sha256 cellar: :any_skip_relocation, ventura:        "3b051721265cc9b779171af4620b1e74208cd95c62453407def25e3c79fc6c41"
-    sha256 cellar: :any_skip_relocation, monterey:       "3b051721265cc9b779171af4620b1e74208cd95c62453407def25e3c79fc6c41"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3b051721265cc9b779171af4620b1e74208cd95c62453407def25e3c79fc6c41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3cef331bbd2b8e9b6d2551926c041997ed12b0324c9495223c624190c4431aa2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "776dbaed1a9d9dff0f6dd41dfd9d2b323a8f26818e13f3bc1671d9df40a3f968"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "776dbaed1a9d9dff0f6dd41dfd9d2b323a8f26818e13f3bc1671d9df40a3f968"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "776dbaed1a9d9dff0f6dd41dfd9d2b323a8f26818e13f3bc1671d9df40a3f968"
+    sha256 cellar: :any_skip_relocation, ventura:        "897fb2971104a9f21263aceb17354f7a09a328951ea1ed4b10515d90b2bd38b0"
+    sha256 cellar: :any_skip_relocation, monterey:       "897fb2971104a9f21263aceb17354f7a09a328951ea1ed4b10515d90b2bd38b0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "897fb2971104a9f21263aceb17354f7a09a328951ea1ed4b10515d90b2bd38b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "495eafedc39465fa48d032ead4a8bc9167322ce36f93c54a12309dd103089b8c"
   end
 
   depends_on "go" => :build

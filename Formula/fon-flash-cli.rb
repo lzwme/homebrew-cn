@@ -1,20 +1,19 @@
 class FonFlashCli < Formula
   desc "Flash La Fonera and Atheros chipset compatible devices"
   homepage "https://www.gargoyle-router.com/wiki/doku.php?id=fon_flash"
-  url "https://ghproxy.com/https://github.com/ericpaulbishop/gargoyle/archive/1.13.0.tar.gz"
-  sha256 "8086c5c0725f520b659eecca5784a9f0f25eb8eac0deafc967f0264977b3fbe1"
+  url "https://ghproxy.com/https://github.com/ericpaulbishop/gargoyle/archive/1.14.0.tar.gz"
+  sha256 "bd3ba67ab9cd8c7474ce8f02a3a320b91aec72c6710e43c18dbe719b13f3820a"
   license "GPL-2.0-or-later"
   head "https://github.com/ericpaulbishop/gargoyle.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "43f564bda23e787f38c0d22905b5d9064c16f2d74fdda6803c9b0c5ba93a6016"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e4ec6770ca7eb9d3e255cdf59a3c841aa6d903b9fffc1ee046569093d07728a0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "143db70eebd874d6ade64f169af2009d644ea7efaefad070898a176d0de2d61d"
-    sha256 cellar: :any_skip_relocation, ventura:        "5d62629e2ba51a6e7c6445614825f7b9a0cb7898acf0b4dd6648fc5ee7713501"
-    sha256 cellar: :any_skip_relocation, monterey:       "7f937ecb116a3481b7d190c98f0e201b0c97b7d049e48218d0946f531b96fe63"
-    sha256 cellar: :any_skip_relocation, big_sur:        "363a717f092ff03f306c3325544e0fedc51120b3e5b02db83efbbc0b8c36f6a4"
-    sha256 cellar: :any_skip_relocation, catalina:       "c9ff936edefe6516cc80c50be0c4c067813e956025c394f654a0582a501795df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54cdacd60b20aeef73ab74ba77fe91170a2bdb62003416842c84822c5ab951e8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "086af945c76e6c4799d32edf90e501c888a39b70e38fc8624e2d4299f5d2cad6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ab5a378106425caea9f5dfc715e23d920bb7f20b9b906e7206ce25ab1c003c2a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e2a970314d5ee43f5257e48c4889cceca44be1f635ebb6074ac62b328752f1d8"
+    sha256 cellar: :any_skip_relocation, ventura:        "bea7e00d9364f56371c13a7f025d69322461ba39d2e9263c9b1a2ab0f78e8b00"
+    sha256 cellar: :any_skip_relocation, monterey:       "614d3d86a8a73ed487ddd5991858a6c2719feda3b730d887e8842f14fbe0ddc4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1ba579da3c78c940d52fd2811b976cc2f1908a5fda863adf0b9e78447eec6e25"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0f4ec92c15b63f45030ffff6df6400adf06eab3417e7c938c2eb1b84f2084cf"
   end
 
   uses_from_macos "libpcap"

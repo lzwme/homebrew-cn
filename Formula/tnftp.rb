@@ -1,9 +1,9 @@
 class Tnftp < Formula
   desc "NetBSD's FTP client"
   homepage "https://cdn.netbsd.org/pub/NetBSD/misc/tnftp/"
-  url "https://cdn.netbsd.org/pub/NetBSD/misc/tnftp/tnftp-20210827.tar.gz"
-  mirror "https://www.mirrorservice.org/sites/ftp.netbsd.org/pub/NetBSD/misc/tnftp/tnftp-20210827.tar.gz"
-  sha256 "101901e90b656c223ec8106370dd0d783fb63d26aa6f0b2a75f40e86a9f06ea2"
+  url "https://cdn.netbsd.org/pub/NetBSD/misc/tnftp/tnftp-20230507.tar.gz"
+  mirror "https://www.mirrorservice.org/sites/ftp.netbsd.org/pub/NetBSD/misc/tnftp/tnftp-20230507.tar.gz"
+  sha256 "be0134394bd7d418a3b34892b0709eeb848557e86474e1786f0d1a887d3a6580"
   license "BSD-4-Clause"
 
   livecheck do
@@ -12,15 +12,13 @@ class Tnftp < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9eb9316d780cd94e0165ec70a4d56c72a7529c50aa6d8b5127c7d08b86794c26"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ab84fe5ac9eff0c7362b22793c3678b427cded2cf30f27dd41799e96039a4b65"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "70ef6eb17e9644707e16b95e69d9515ed73b8d5e1b965d0d44b8c16e9d36bca4"
-    sha256 cellar: :any_skip_relocation, ventura:        "0a31ace8f8ed2b3d28370c53da52dcb3bcb26d3ddbcd1a4f704dfc437455d4ea"
-    sha256 cellar: :any_skip_relocation, monterey:       "1e30f66379f0a97e015bf3133cd3fa53b8f322919e9352e4d0ae25c28151b201"
-    sha256 cellar: :any_skip_relocation, big_sur:        "543c3b1220913421326418f4fb346cf76332bedc7d5f5e19d4e02e6653833387"
-    sha256 cellar: :any_skip_relocation, catalina:       "10fc0ee307e739bc3a0f617167fe6027cf37573efd47a555239599e226c7e8b7"
-    sha256 cellar: :any_skip_relocation, mojave:         "0bb7b548299599ad06fb746a00a4bc3df48bff90615280c3786d5a0ca04a4089"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9afa6b6d747eea6fa479010921972e5479c1238c5ccd209f75852d83775c6bc4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d9e3947ab41a6dd004ec70c6126d4ba9c7c34816e8a8c984f67f0d80617852ac"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e744b3ad973c717d4d41d5b81629d3ee5239a8ac72a4ff7dafd5269da4ee574b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6cfed88dfedf303ba5559466fe67a0308d2a6793e9641ace8ce28d3876970bd7"
+    sha256 cellar: :any_skip_relocation, ventura:        "d1870a97a281b50e44b59a8132f2876d938b9602151eba9b7930ffc03326e849"
+    sha256 cellar: :any_skip_relocation, monterey:       "f0df715364120f87c986db305942d7cc09f5088a7fd9ca3180348456818a3148"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5eff3aa4503a383db733447beddd456f2a53fe3fa7cb09c72805a55bd1a5ad8f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "270f4da016155138c1d305eedd0d82a600396cf39f011ba42ef0456b898ca198"
   end
 
   uses_from_macos "bison" => :build
@@ -38,6 +36,9 @@ class Tnftp < Formula
   end
 
   test do
+    # Errno::EIO: Input/output error @ io_fillbuf - fd:5 /dev/pts/0
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     require "pty"
     require "expect"
 
