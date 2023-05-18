@@ -7,13 +7,14 @@ class Watchman < Formula
   head "https://github.com/facebook/watchman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "cd62d515c1d31b0ace7205e65c02245105077a843565c31911590d736d3be871"
-    sha256 cellar: :any,                 arm64_monterey: "435e0fece5e66678085b1980f828d550117a22ca70f646dc20765ac0d359e5cd"
-    sha256 cellar: :any,                 arm64_big_sur:  "1b7ad8cef2fbd349c85743904f0c5b992f7ad5f22b0a523b85066d830290e8bf"
-    sha256 cellar: :any,                 ventura:        "274912640a5d26ba652dfb941171e54778b7dca22a346368ca11fb6803b0a08a"
-    sha256 cellar: :any,                 monterey:       "9e0b03125c2cf792d871eebe61445c6b84ed555b651e4bbef67892bb49997f1a"
-    sha256 cellar: :any,                 big_sur:        "718a25ad4fab03b29e1b89cafd7fad93ebf99f3d42c5ab70b37ff47a863f0a0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dbe04f94d512471ca5cfeaf70264eb9d1d4be0ef426fc6f1f6b72bf72b44de6f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "1278de20ba255d8c2ac227b74b321bfc0f18e9d8f6229e7876af2e9f007056b9"
+    sha256 cellar: :any,                 arm64_monterey: "b8061f023992cd614194ed910aa71520dbdb2b8c13deca4131c57714340165d0"
+    sha256 cellar: :any,                 arm64_big_sur:  "53881af3ad6c86ad40eb6516ec98e59e64d1d6c16920e4462ee78d63763d5e40"
+    sha256 cellar: :any,                 ventura:        "506b80151d1f2de38404449092d04081e175fb6782cecb56dea326ec3c6ca127"
+    sha256 cellar: :any,                 monterey:       "729d8af5b74b8b1fb055d44f04e565e2c333587be2cf946d3307c41ada9266cf"
+    sha256 cellar: :any,                 big_sur:        "9e08dc2bb5c946f02a18b68a08bc53243050f2cb6a76a3f2c791f4a505915721"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d58798209d9c3964ee3ca9e131633abf99b55449ac50ee69b51a036fa9be2ae7"
   end
 
   # https://github.com/facebook/watchman/issues/963
@@ -37,6 +38,13 @@ class Watchman < Formula
   depends_on "python@3.11"
 
   fails_with gcc: "5"
+
+  # Add support for fmt 10
+  # See https://github.com/facebook/watchman/pull/1141
+  patch do
+    url "https://github.com/facebook/watchman/commit/e9be5564fbff3b9efd21caed524cd72e33584773.patch?full_index=1"
+    sha256 "dc3ef949b0a4be7dd67267eb057fb855926b3708e0ce1df310f431fd157721ca"
+  end
 
   def install
     # Fix "Process terminated due to timeout" by allowing a longer timeout.

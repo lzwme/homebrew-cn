@@ -1,16 +1,17 @@
 class Chezscheme < Formula
   desc "Implementation of the Chez Scheme language"
   homepage "https://cisco.github.io/ChezScheme/"
-  url "https://ghproxy.com/https://github.com/cisco/ChezScheme/archive/v9.5.8a.tar.gz"
+  url "https://ghproxy.com/https://github.com/cisco/ChezScheme/releases/download/v9.5.8a/csv9.5.8a.tar.gz"
   version "9.5.8a"
-  sha256 "1071a75b9374a1331e7f18a3464308bb2ece2169ece324570a9cdfc017d9bf46"
+  sha256 "3e80ea08ae6fd336ffdda3fbbfa1ebcdda644670fa5bf6a5aa9100c82f381d52"
   license "Apache-2.0"
 
   bottle do
-    sha256                               ventura:      "ae89fa0863fd308e46b19e466086fa288db05c20fc6d2daca8583a5e55941f97"
-    sha256                               monterey:     "8d686736d4430ed5a8b7dc5e78fcc14e4e046d9d2aeb0595a083fe1a63a1abc3"
-    sha256                               big_sur:      "ab767da2684c603854013e9719e6038251400a7577a5112e9dd61b35770a6162"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3a8d1a9705e9ea91c931daae9eedd085efbe7f58a6f532adfb922086ecb4cc4e"
+    rebuild 1
+    sha256                               ventura:      "03e2531cac39490b88689ab4b887b8bfa68fbbe36b82b021ae3fc9f2ff07781b"
+    sha256                               monterey:     "1730b158fadf948716473ffe46fef88c2f1790edc5b75e3acfeb35d4549a6c2d"
+    sha256                               big_sur:      "c3a055f85922bd002eb6725a89c3e077bea3222111ca0140d875e72742e6a84b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6bc534bc7a88a469fd6ab1a5680f79876b94c5ef1d568d0bdc9ed720bbcb1fec"
   end
 
   depends_on "libx11" => :build

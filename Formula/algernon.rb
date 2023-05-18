@@ -1,8 +1,8 @@
 class Algernon < Formula
   desc "Pure Go web server with Lua, Markdown, HTTP/2 and template support"
   homepage "https://github.com/xyproto/algernon"
-  url "https://ghproxy.com/https://github.com/xyproto/algernon/archive/refs/tags/v1.14.0.tar.gz"
-  sha256 "2d30fe7a3f7c9b985f5fde7d6035888ad0c31ae4342fb38a96404de320ccd883"
+  url "https://ghproxy.com/https://github.com/xyproto/algernon/archive/refs/tags/v1.15.1.tar.gz"
+  sha256 "023779d8516da9ce5f3b1af9d0173652f2f1fab0d036b636e4185c3b8d5242c5"
   license "BSD-3-Clause"
   version_scheme 1
   head "https://github.com/xyproto/algernon.git", branch: "main"
@@ -13,14 +13,13 @@ class Algernon < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0847b46518e3a13df5fea6b9f2ce7041ac04783caeb63d0bbfa662cecab98c54"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3a10d9df74f1d8b83ca5d25baa94b835d8afb8d5aa48e131239a01bd2509ca0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d78426493c03ad68d59c8a8d8a0b404e09654cae38fbce211f68b0c0746ddfd9"
-    sha256 cellar: :any_skip_relocation, ventura:        "64f3fbe6f770b0148199a0a60d9dc8720a799c154addf42da4641c333fa1ac1a"
-    sha256 cellar: :any_skip_relocation, monterey:       "b4da942b8ad07b1887b4d2580f3773a7ac91dd014d8f9a9fde6052966162fda8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d0a3a8a255f39ea72c98c289f23230016e8ba5492fa6c44437792741d4cb1e24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a03f96f82ddf6c79892267dfa6cfb456fdb51d57876bf7f8e2d830540e97637"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3948e02695ff42de507067e3daee9a80f5b23f044ee5fd9b41e81ff0517b71e6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a892170a394119622284bb11619307b81cd7f2d14ab9db6af86f72ad190297d5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9b4d024ae802b8bc6fe208a7c24bb8b6ccbe13224bda822594515fbbe9b2ed96"
+    sha256 cellar: :any_skip_relocation, ventura:        "d672a6e8289bde0d4bbe85473910be0dd68a3e29f4936d27557853b6937bc579"
+    sha256 cellar: :any_skip_relocation, monterey:       "5e0fd44f1d67719b3e8ac9335d27a10ee77ea1b27fa45368a929c7eb8ef32149"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4b8fdfa3dcb0d42e6f6169e0b12f0dfdcc2e1f7cc9f907e26373b02d0591839c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d54da360b720e08a23181afb845b62bcea6d0a6624a0a1c7546a931b4d5841da"
   end
 
   # Support for go 1.20 is merged upstream but not yet landed in a tag:

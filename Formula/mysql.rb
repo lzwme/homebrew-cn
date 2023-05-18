@@ -11,13 +11,14 @@ class Mysql < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "162738bc3fd654490b6c66acb95729c5f583d63915a65235f91ab49e4d5e704f"
-    sha256 arm64_monterey: "3c828685f23c08a5b5247b2b2c1b53445e942148b6bfb984a437d0015e6f2716"
-    sha256 arm64_big_sur:  "e0522eb5d67966b999e1623cadd9e047d041eb2394d555f0ec72497734594119"
-    sha256 ventura:        "063304d285e9279e9dd1bb92d357d1c07b4b5b0d901f9e2a720771d569143a64"
-    sha256 monterey:       "2e8aa6f84049f870e3e411d8f8007b83b93ea1504c64567dded9e4bed7ebad63"
-    sha256 big_sur:        "7ccd48dcd9759c264572e92b205dfd18d16f5e40ba631756d3df9ba8b95274f5"
-    sha256 x86_64_linux:   "ac8e852decf93ace7313bb39142d27150e85556ffbc77e0a3c50e01683857d24"
+    rebuild 1
+    sha256 arm64_ventura:  "b9d6f2a868be5713ca576e63d358878ee19b4a91b4a6c26b1f99c865b766cc59"
+    sha256 arm64_monterey: "ade87b6d6130e02940c52c10a490b99449a4c9aaf9e10c89f32c63411f3a0283"
+    sha256 arm64_big_sur:  "2af33fc6f8908d4d78d9559a1e038ac8cdc12d0bd414dbb3dce9083e1c79ec0a"
+    sha256 ventura:        "092aceed2b25c147deef0f661b0768fb1bfd626b7861b304473e08f172026949"
+    sha256 monterey:       "b39c891a9ff6619ab7e0de2c72a6de303f34963ced4763bc1a574f7a35d75b85"
+    sha256 big_sur:        "687450c06de0e61f744f331eddd950836c2851714e3bf6a818bee8bcffa587d7"
+    sha256 x86_64_linux:   "3c548b7e0e6ad61fac3a35b8eb9a853226065557e7c462f079f6a17827d267a1"
   end
 
   depends_on "cmake" => :build
@@ -74,7 +75,6 @@ class Mysql < Formula
 
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
     args = %W[
-      -DFORCE_INSOURCE_BUILD=1
       -DCOMPILATION_COMMENT=Homebrew
       -DINSTALL_DOCDIR=share/doc/#{name}
       -DINSTALL_INCLUDEDIR=include/mysql
@@ -100,9 +100,13 @@ class Mysql < Formula
       -DWITH_INNODB_MEMCACHED=ON
     ]
 
-    system "cmake", ".", *std_cmake_args, *args
-    system "make"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
+    # Fix bad linker flags in `mysql_config`.
+    # https://bugs.mysql.com/bug.php?id=111011
+    inreplace bin/"mysql_config", "-lzlib", "-lz"
 
     (prefix/"mysql-test").cd do
       system "./mysql-test-run.pl", "status", "--vardir=#{Dir.mktmpdir}"

@@ -1,29 +1,29 @@
 class Resvg < Formula
   desc "SVG rendering tool and library"
   homepage "https://github.com/RazrFalcon/resvg"
-  url "https://ghproxy.com/https://github.com/RazrFalcon/resvg/archive/refs/tags/v0.32.0.tar.gz"
-  sha256 "5505810ae114c445730de878c214eacad3f3297428f1dade3b3e5c62128dc929"
+  url "https://ghproxy.com/https://github.com/RazrFalcon/resvg/archive/refs/tags/v0.33.0.tar.gz"
+  sha256 "134bf993de98566239ea9a0bd917e0e7f0c4041604cd28e7e91bf5a0d68018ca"
   license "MPL-2.0"
   head "https://github.com/RazrFalcon/resvg.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7a65499f44f556958abf8a3578002d3a8cda9e47752b816381df2580ae8d8307"
-    sha256 cellar: :any,                 arm64_monterey: "52cf7a3cdeb7e85e1bbc16883a1eb0e880dc1555a01cd6c6070e8c37d9bb7e49"
-    sha256 cellar: :any,                 arm64_big_sur:  "dfeeecc39ad08371d5704ec49a2a379963cb245f1c960cb3598af8bf870af3fa"
-    sha256 cellar: :any,                 ventura:        "e87c633d584e4ef7daee91fa472e06bc2887aa03e24593dee1fdb085e6f7fbd1"
-    sha256 cellar: :any,                 monterey:       "cae621ff8f30f3deb0469906598c8242f81aa44a53a1d5aaae299166f6ece1c1"
-    sha256 cellar: :any,                 big_sur:        "eb2653641bef75b2bf0bdea57468467a7669760fe93dfc0d8d8aafefc876aa48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d654b6fe5ab82e9da62e054b72ca7c97d9915e317223da61c116dc0c2fc7457c"
+    sha256 cellar: :any,                 arm64_ventura:  "c923f6a60c123bb6948a7883de9489ee7aa143cea763ce7e72bb7d6277053976"
+    sha256 cellar: :any,                 arm64_monterey: "7b20cf68c11e4cb91e4fa0795902e2575a239ec649e4784b3437f24b2cebe6d4"
+    sha256 cellar: :any,                 arm64_big_sur:  "8c283344dce76359120bf33e985e32a1fbac9690038b0c796a9c92ec9a141444"
+    sha256 cellar: :any,                 ventura:        "73e2d6a0f1450e10140ec1c36f47edb25097f6e3cbf0060677a212d2d83be671"
+    sha256 cellar: :any,                 monterey:       "81eadeb015dceef047d471fb297e1299aab2e55177200cd1923b1990a049e2ac"
+    sha256 cellar: :any,                 big_sur:        "f2afb8960fab2fdfd93bf1a035fef265b7eaf4ba73cd7786066113ea10cb14c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a1c7f0cc36c1e018a794af623bbd916f44876fc9a9cf663d11b2f874e543d69"
   end
 
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "usvg")
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "crates/usvg")
+    system "cargo", "install", *std_cargo_args(path: "crates/resvg")
 
-    system "cargo", "build", "--locked", "--lib", "--manifest-path", "c-api/Cargo.toml", "--release"
-    include.install "c-api/resvg.h", "c-api/ResvgQt.h"
+    system "cargo", "build", "--locked", "--lib", "--manifest-path", "crates/c-api/Cargo.toml", "--release"
+    include.install "crates/c-api/resvg.h", "crates/c-api/ResvgQt.h"
     lib.install "target/release/#{shared_library("libresvg")}", "target/release/libresvg.a"
   end
 

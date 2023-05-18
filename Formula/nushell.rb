@@ -1,10 +1,9 @@
 class Nushell < Formula
   desc "Modern shell for the GitHub era"
   homepage "https://www.nushell.sh"
-  url "https://ghproxy.com/https://github.com/nushell/nushell/archive/0.79.0.tar.gz"
-  sha256 "cbabc26ce509c672db943f3ac6d44d1e3efbafc3b5929411ac209afe14848ef7"
+  url "https://ghproxy.com/https://github.com/nushell/nushell/archive/0.80.0.tar.gz"
+  sha256 "6331fe7abeee87b7188639c0ed18ebdb288f188a6de1d12b9f4f046f595cf8ce"
   license "MIT"
-  revision 1
   head "https://github.com/nushell/nushell.git", branch: "main"
 
   livecheck do
@@ -14,13 +13,13 @@ class Nushell < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "50cf7a00c864da78104c244cb81b9588f8b1249cb2575db0f7319211430fa8ac"
-    sha256 cellar: :any,                 arm64_monterey: "48222d6bd0fcc62dc9d0bf707737d064a194de291e6e06560b27f2950424fa51"
-    sha256 cellar: :any,                 arm64_big_sur:  "3e029f99711609ab065ef5ec214b9df1223ed67fdc66b5f9220db36595c60856"
-    sha256 cellar: :any,                 ventura:        "18523d29cd9d6957fe37fe46731756d30bf1e1ac7ca95799450700a189ec7de3"
-    sha256 cellar: :any,                 monterey:       "50e22b31f55d491ebccefad8877841660f654ae51cfa1e0e4dd600ada737d28d"
-    sha256 cellar: :any,                 big_sur:        "ef5e2e7b9be92bd0bb5c84636451ce0c786f3cfb152b325211879724b20c2550"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06c33909fae91b4058a644f06aa2935abef2802eef11a2093fc60f5f31b22c6a"
+    sha256 cellar: :any,                 arm64_ventura:  "11ea1d5f36a9d9de2d1f6268f07b1f2371b0cf0cddbe549558e7245f6018ff7a"
+    sha256 cellar: :any,                 arm64_monterey: "46264be576ce674479d8d03025ee58866f9352c65b647d188b06d1e8cd67401d"
+    sha256 cellar: :any,                 arm64_big_sur:  "eba980c9a5f2c4d1770bdeba5484df0ef5caffc95bd0d58fdf64d1e03672e383"
+    sha256 cellar: :any,                 ventura:        "1f2f7cca70277aeb56e0da67e766808664f3289bf5de1b6873192cf5152ab1ba"
+    sha256 cellar: :any,                 monterey:       "54cd3f7212cf4897286a1f5629ad75fe0aeb4e39c0ce2fb246c109b8cf5b4ffd"
+    sha256 cellar: :any,                 big_sur:        "234b5dc66106af94fef8acc0ac81609a5779b21c59caf23614202ebf2c150219"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aceb2c4faeba6664a7f7bf092aaba156a52d9c69b6444e46956baa841eb4124b"
   end
 
   depends_on "rust" => :build

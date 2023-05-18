@@ -8,13 +8,14 @@ class Schemathesis < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d6c22448ddc8d80308f8c55ff61c6afb45e26458e9af17d4b8d80198561a3d82"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a83b44d6bfd98d146698da44f4826c166b62f02a644e7f753b16a807d9f9c2d3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1212b35ae85448fb018348c4fcf1498196d2b8fd63a93e7b29a2f9e2e2768223"
-    sha256 cellar: :any_skip_relocation, ventura:        "c2a5385af2e64f83c7ac539cdfce80bf65a6627b1357029796b96376261d5631"
-    sha256 cellar: :any_skip_relocation, monterey:       "569c623458b3c5d0a884d2bbbc4545ded433521b585397fac56b4a9c6b982312"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7ada135f91467a2a361fd8d217cc2f63d05480f3f2e71ab1a1137db3913598e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45d1b68b4b0e219348e65da2d939894b2b1936847fbc5da1db4c1caf230fd808"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce743f609c6001e5001f5ae791a905522b5244bc97f0461924161a75d452c3cb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b8a5f7de091ad0f4135bffba1bcab3fd8127b0d36291f5c02761566d9d43bad5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d15688016ba9efd95d6aa33aba43158bf3f15d092620de2d02f3714ce8231f12"
+    sha256 cellar: :any_skip_relocation, ventura:        "cfff2683ee7bb13fd7536339412a6e1f94eeec47bea27352e5f973c5800db411"
+    sha256 cellar: :any_skip_relocation, monterey:       "4bb8e96e7a1eff6f584b44865843b1f6855d57d340d6912a92fade9df01c2a6a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "20c7ff1a313627443e0fe241b7c146cb3a916716e51a55499d516820fd8316b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f6525972d9f0375c92b0abf36be5e75caf64da656c8508d079221de16398271"
   end
 
   depends_on "python-typing-extensions"
@@ -38,8 +39,8 @@ class Schemathesis < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
-    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
+    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
+    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "charset-normalizer" do
@@ -83,8 +84,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/4a/78/da0668f5cbf7422d5c77e1ec987193469cb0b511643474314f2bccff9891/hypothesis-6.74.0.tar.gz"
-    sha256 "b933baab6569c6639f6d8e1232ecc9f5388faa0cc5fba15cfc4d3447143b5965"
+    url "https://files.pythonhosted.org/packages/ca/bb/5e142069484aba2f1d34050b2b50518a19fb72fb25987da7bb4b8606084e/hypothesis-6.75.3.tar.gz"
+    sha256 "15cdadb80a7ac59087581624d266a4fb585b5cce9b7f88f506c481a9f0e583f6"
   end
 
   resource "hypothesis-graphql" do
@@ -117,7 +118,7 @@ class Schemathesis < Formula
     sha256 "de16a051990d4e25a3982b2dd9e89d671067548718866416faec14d9de56db9f"
   end
 
-  resource "MarkupSafe" do
+  resource "markupsafe" do
     url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
     sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
   end
@@ -173,8 +174,8 @@ class Schemathesis < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/52/55/98746af96f57a0ff4f108c5ac84c130af3c4e291272acf446afc67d5d5d8/starlette-0.26.1.tar.gz"
-    sha256 "41da799057ea8620e4667a3e69a5b1923ebd32b1819c8fa75634bbe8d8bea9bd"
+    url "https://files.pythonhosted.org/packages/06/68/559bed5484e746f1ab2ebbe22312f2c25ec62e4b534916d41a8c21147bf8/starlette-0.27.0.tar.gz"
+    sha256 "6a6b0d042acb8d469a01eba54e9cda6cbd24ac602c4cd016723117d6a7e73b75"
   end
 
   resource "starlette-testclient" do
@@ -197,9 +198,9 @@ class Schemathesis < Formula
     sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
   end
 
-  resource "Werkzeug" do
-    url "https://files.pythonhosted.org/packages/ae/66/1b437603a0300864b0fd1e49b732d45a8a5be615eba5121f7cdfb97668dd/Werkzeug-2.3.0.tar.gz"
-    sha256 "3b6b46926d052b8ebca97c4dc73c12e47bdd07d57ab0600c039c3155450227bc"
+  resource "werkzeug" do
+    url "https://files.pythonhosted.org/packages/2d/bf/5a00bb4a70028f7c6000bc9394492154fa9ae3f5226187e3ddcd0aa5eca1/Werkzeug-2.3.4.tar.gz"
+    sha256 "1d5a58e0377d1fe39d061a5de4469e414e78ccb1e1e59c0f5ad6fa1c36c52b76"
   end
 
   resource "yarl" do

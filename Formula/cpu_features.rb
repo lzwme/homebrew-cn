@@ -2,15 +2,16 @@ class CpuFeatures < Formula
   desc "Cross platform C99 library to get cpu features at runtime"
   homepage "https://github.com/google/cpu_features"
   url "https://ghproxy.com/https://github.com/google/cpu_features/archive/v0.8.0.tar.gz"
-  sha256 "a3fc6a08ebbf40c538456d6a20ab294658bcebc8d0918457f33cb86f868f16a2"
+  sha256 "7021729f2db97aa34f218d12727314f23e8b11eaa2d5a907e8426bcb41d7eaac"
   license "Apache-2.0"
   head "https://github.com/google/cpu_features.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 ventura:      "3d0b76dd735062c63f550d28658db54bac4b5700b38a7d432af4d06e643689d9"
-    sha256 cellar: :any,                 monterey:     "3bb8f83f19934b38463ae275d3a58757066c22aeccc169a4a90f89f62f183445"
-    sha256 cellar: :any,                 big_sur:      "c1bc7b3f3cd4801eb81bd8e7068745138955590f5e723497db0465cad2dae3d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "745b3609cd2162a24347cbee203145727b1bdcc7301b4243c7a4f6ecf037c2f6"
+    rebuild 1
+    sha256 cellar: :any,                 ventura:      "b6c3ae68da8ffc33249b6c5631e021be42ca1bc6e947f4093386c0c185528137"
+    sha256 cellar: :any,                 monterey:     "140e90dc4c7741d6b33f8bc038bbd68ed545312ee58e07697d8b57584e8762e0"
+    sha256 cellar: :any,                 big_sur:      "3a9206c537847ccd89d6569c8db3125ccd345fe4369355c667e87ecb829097e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "842480ec53a47fc61a3ec7c994315425c2a0539671d757473e0e667982018573"
   end
 
   depends_on "cmake" => :build

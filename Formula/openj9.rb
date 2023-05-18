@@ -2,8 +2,8 @@ class Openj9 < Formula
   desc "High performance, scalable, Java virtual machine"
   homepage "https://www.eclipse.org/openj9/"
   url "https://github.com/eclipse-openj9/openj9.git",
-      tag:      "openj9-0.37.0",
-      revision: "227d4781dd1bd2c39456c5618f7d84bb5231a923"
+      tag:      "openj9-0.38.0",
+      revision: "d57d05932008a14605bf6cd729bb22dd6f49162c"
   license any_of: [
     "EPL-2.0",
     "Apache-2.0",
@@ -17,11 +17,11 @@ class Openj9 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "0d5a103b0e1755906b2404bc977ef72226bef5cb4e47436bb99f2311a87f151b"
-    sha256 cellar: :any, arm64_big_sur:  "d0a337a40e17395f83730d2bc7af07828c05ec69140c637f9e62b4ad1541eb3a"
-    sha256 cellar: :any, ventura:        "474743e5276103f3577b76ab62c31ad18f4c9fff8035b0a3e12b61392e96a72c"
-    sha256 cellar: :any, monterey:       "bdd3be72e0d36ad32176632482e971c779c7539e6fc3e0bbafde14588c1f00e3"
-    sha256 cellar: :any, big_sur:        "d5a753dd36fe0f3969caa8e0141c591efe8050820ac22385676d78338c33eca9"
+    sha256 cellar: :any, arm64_monterey: "5a3862c2d52d0f0e8a62904255255557647f94db2ab5c73f758113d9dbdb33d2"
+    sha256 cellar: :any, arm64_big_sur:  "713c6b53761c66a26d6593da74800a6c6fe80abbfbbbc9c7ab04c6fb8296ec30"
+    sha256 cellar: :any, ventura:        "56034f6d0788d93b27f5e352eb6279cdfd4e865c8c2ae7bb6574cb7ad2e575a1"
+    sha256 cellar: :any, monterey:       "7982ef2d4b6e402f04311a3b52c1de29d579c024c80db2176adfc40728378e7e"
+    sha256 cellar: :any, big_sur:        "5d407ef5beddbad83092b468f7e7b74f12c436d7fcb1bf0d24f07f65698c2111"
   end
 
   keg_only :shadowed_by_macos
@@ -82,14 +82,14 @@ class Openj9 < Formula
 
   resource "omr" do
     url "https://github.com/eclipse-openj9/openj9-omr.git",
-        tag:      "openj9-0.37.0",
-        revision: "d0b42675f7b908d52647d7ebea42bb712c79f19d"
+        tag:      "openj9-0.38.0",
+        revision: "855813495c1a71ebc59eeebafc1a6cd4e791646e"
   end
 
   resource "openj9-openjdk-jdk" do
     url "https://github.com/ibmruntimes/openj9-openjdk-jdk17.git",
-        tag:      "openj9-0.36.0",
-        revision: "927b34f84c8c5ff380df16f2df8dd84a44b8c79e"
+        tag:      "openj9-0.38.0",
+        revision: "9d7a231edbc770d9fe46270635c9b5804f3c092f"
   end
 
   def install
