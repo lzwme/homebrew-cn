@@ -1,19 +1,19 @@
 class Base16384 < Formula
   desc "Encode binary files to printable utf16be"
   homepage "https://github.com/fumiama/base16384"
-  url "https://ghproxy.com/https://github.com/fumiama/base16384/archive/refs/tags/v2.2.2.tar.gz"
-  sha256 "948da6d9eca3af64123a7df1aa0f71a81e38ab02815ab2218e71a7aface0035e"
+  url "https://ghproxy.com/https://github.com/fumiama/base16384/archive/refs/tags/v2.2.3.tar.gz"
+  sha256 "2e8f293a141608e26488bdf02b06a9a9696989e2efe42065255f61df7a03a5c6"
   license "GPL-3.0-or-later"
   head "https://github.com/fumiama/base16384.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7fea8c0e03eb1969ba4ca63b0a0db3db9488b0aa9b2804ab88688a454457f060"
-    sha256 cellar: :any,                 arm64_monterey: "60ed6835a594b7846a88528ccf089d027a208c226598bfa80bbb494c17cfcfbf"
-    sha256 cellar: :any,                 arm64_big_sur:  "c67638aac008f6ae6177b05d4d148f72059ff3759243bc76678e7e4b76d4590f"
-    sha256 cellar: :any,                 ventura:        "88f7c8b07474876f0e3e20fcef604ed5183be08e90f694c7ee7dae21aec78753"
-    sha256 cellar: :any,                 monterey:       "8c62fa52e28dcdad82d4d27a97128a8ec17839cf0b1420057a8b5916bfdd7c4d"
-    sha256 cellar: :any,                 big_sur:        "88a9a07d80b4d80d984a89294e62e57793cc2d1b74f0675753ff893b91f562a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c728306f2bac2d06bcbe4705ed4206a92ed86f87341d08b0e8db4b60ad46985f"
+    sha256 cellar: :any,                 arm64_ventura:  "1c9fd79db200ecf85d677ff65136a0433e031389699b91b931b4769557da8928"
+    sha256 cellar: :any,                 arm64_monterey: "f2eb6e7a348ae27301f9365cb30e47de8dca0b8dac7bc455a1d86c4149945a39"
+    sha256 cellar: :any,                 arm64_big_sur:  "0fbd17a6875e417b3535c1b2d3c72799a6075f77ba2833fbe2f487993b27a3c8"
+    sha256 cellar: :any,                 ventura:        "d33589672b66a086e21f6d1e1d4bdc6cb3b7051a40081d649be54a0441129591"
+    sha256 cellar: :any,                 monterey:       "b6067a59fdaef262330f1a6f6b656aa1afd23b4dfc24e7fb5c3f34cad34b99b3"
+    sha256 cellar: :any,                 big_sur:        "8b3ce2196939ede2913b1792023f3c7042b92b0f3760838ee9c9d37406bf5267"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f16eeeada7eadd7073f84c34f4174a9751b1fd99004f6d0380bf7ee1c2f5c5d4"
   end
 
   depends_on "cmake" => :build

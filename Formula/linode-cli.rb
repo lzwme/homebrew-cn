@@ -3,19 +3,19 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https://www.linode.com/products/cli/"
-  url "https://files.pythonhosted.org/packages/e2/af/a254ec7040c44bb4bba74c5b5b727314711ea04b994ded037e023e4c3e2d/linode-cli-5.38.0.tar.gz"
-  sha256 "1c2876ff833b6d78fdc9cb25fbcdf61bbc2a925c11756cd46c07a4036a9eb1d1"
+  url "https://files.pythonhosted.org/packages/a2/df/6cbef1216e071e6f6d9dc283fe7bfd2369e2869b70efd630c1841c83d5a1/linode-cli-5.39.0.tar.gz"
+  sha256 "5d91d2bd79ce404e45e280722fa780eea7137a95064932de7d2b336020d47e9d"
   license "BSD-3-Clause"
   head "https://github.com/linode/linode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "953e4ebc29775815e54e9d4132fafc94fad881372e726bd956e6225fd9e633cf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd40c72f54a3f60c1610e9d347f2c7ad3f9dc952304f51d587d1c7721fb02dba"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3699452b54055bf00ea6692eb564e98ed2208367beb0c33859542cf167ad0924"
-    sha256 cellar: :any_skip_relocation, ventura:        "692e866e6ebe2927dd894c0627dc95b8013c694267be40a28f0b7221e09621c6"
-    sha256 cellar: :any_skip_relocation, monterey:       "0e67537bc982501f326e334adf1e0012322b5c059f53ee44c3c1484a220069a9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "36ce5a3ea1c8cc9a7cd04e22713c617d93d96a6b1797c33eae0e11bc49f60e6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "376afade05a34cc53a6ee664d056cfaa07dc7bd7aa40f693d50180591077e48c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "59a54053cdea4434187d569550ab03942f4ac45d4a69e253e06afe54d7f29d3a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "82b239d0c0eed99f71c1bf7117951791fa7f4b0362b6ea205c281ec06ac01f57"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6aecff7396b528b4b00b15c253702c3c0f0d7592cd73e534601942e06716865a"
+    sha256 cellar: :any_skip_relocation, ventura:        "bb2d92b10f377c7dfc1bb9a5561c5a23cd30f266f3b51ad14967a23906b70372"
+    sha256 cellar: :any_skip_relocation, monterey:       "a63f4f406b8bb94b32c187ab94d741b1705a7cc2e33335a9574aa2e9e09f2ff2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a59c5db6d03956255e4fba37bb0c11ea175c9f9750c513f0396872cad21c3583"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d640a2cef99b28f0a7e47e481809fb6f881d299575fe32e5bb351900fc158ca3"
   end
 
   depends_on "openssl@1.1"
@@ -23,8 +23,8 @@ class LinodeCli < Formula
   depends_on "pyyaml"
 
   resource "linode-api-spec" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/linode/linode-api-docs/refs/tags/v4.151.1/openapi.yaml"
-    sha256 "3c5c8dd87fb2cb7c2b1b14593e3cdcacd6010a34d24d48f3008f8270a6d12bed"
+    url "https://ghproxy.com/https://raw.githubusercontent.com/linode/linode-api-docs/refs/tags/v4.153.2/openapi.yaml"
+    sha256 "86dd8f7b9137cdb3030b9a6920a75f1a8b9a3318816a72e94f0e84741ad49ee7"
   end
 
   resource "certifi" do

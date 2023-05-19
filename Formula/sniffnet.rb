@@ -1,19 +1,19 @@
 class Sniffnet < Formula
   desc "Cross-platform application to monitor your network traffic"
   homepage "https://github.com/GyulyVGC/sniffnet"
-  url "https://ghproxy.com/https://github.com/GyulyVGC/sniffnet/archive/refs/tags/v1.1.4.tar.gz"
-  sha256 "ca236168b2ddee9e3fe056e0aa56fd961931e099919d2af250c23c73b8415f97"
+  url "https://ghproxy.com/https://github.com/GyulyVGC/sniffnet/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "4ed7375aec49c76ef4410f1adb93264f896a113c222d49bf1244985449b84ad3"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/GyulyVGC/sniffnet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ebb8ccd6710967a053627bc18e4a4102681b1e80c9e47e7528c50a4248abe6c4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "01663e12d09adb69e474e81c6db36fe159706fee1a9bf3c80db1b1611cea92ad"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3de12e68efff5222bd23bd7ad3fbb1435d5c088917dd55010c4b958e6e47a8e4"
-    sha256 cellar: :any_skip_relocation, ventura:        "883e85e7531d9e51564ddca542367a97f430173a072633cb68e903c20112f600"
-    sha256 cellar: :any_skip_relocation, monterey:       "47bc7b9ab69be1471861ab473b546ad26960c9dc4bf19a4d793cc8cf28dce867"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5cb828d74ac50d663112daa627c0c4e71576476e088a923d49b9f8616a82663f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c90cd39dc95219fcb61177a720c79ce3a769603372e9144eb846ac2e93d6629"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c7f12692339053c3aa2245705ed7350da64f5c93026ff947e16d23a179b2587"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f1d218462a898178b98a7b472e3d2854eec135630b82ef250d2ab11b519d70c6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2022027d5330c030cc49544c8167e19694447f4102a695573c47d3a4519e52e1"
+    sha256 cellar: :any_skip_relocation, ventura:        "9d10c028b7501c104959c2eb3e8fe1d0e2bb83288c41d7d0c3d681b41ca23ae4"
+    sha256 cellar: :any_skip_relocation, monterey:       "8e4354e6cc350cc373b0a51a13b9394f1f88e89304717cab0cad4190c1e75c24"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5752835a8695242b5d4138932863bb17fc848a3e7b9199014f55031d597d8d1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc1e1325d39ffc3fda7f162a4e3056480d689c8356001f0d09934c9a6212dc91"
   end
 
   depends_on "rust" => :build

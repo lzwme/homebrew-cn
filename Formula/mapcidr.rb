@@ -1,19 +1,19 @@
 class Mapcidr < Formula
   desc "Subnet/CIDR operation utility"
   homepage "https://projectdiscovery.io"
-  url "https://ghproxy.com/https://github.com/projectdiscovery/mapcidr/archive/v1.1.1.tar.gz"
-  sha256 "12a7dee0dd2c02eb339d308e7144bb12610e515e5ae8ae720bf2ce9ed7ed9b78"
+  url "https://ghproxy.com/https://github.com/projectdiscovery/mapcidr/archive/v1.1.2.tar.gz"
+  sha256 "52dcf9181d361c444823e64e1a89a9da0e4a3bd8fdf26e0d8a803589fa935289"
   license "MIT"
   head "https://github.com/projectdiscovery/mapcidr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3667b720dfd446b45e4c556444e81ecb141ec953383aae07e7e6491eac981cf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e3667b720dfd446b45e4c556444e81ecb141ec953383aae07e7e6491eac981cf"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e3667b720dfd446b45e4c556444e81ecb141ec953383aae07e7e6491eac981cf"
-    sha256 cellar: :any_skip_relocation, ventura:        "5ee6341e0850aa16f5df3fb9913ae47dbebe6c3c4903051b7253829cc5015c53"
-    sha256 cellar: :any_skip_relocation, monterey:       "5ee6341e0850aa16f5df3fb9913ae47dbebe6c3c4903051b7253829cc5015c53"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5ee6341e0850aa16f5df3fb9913ae47dbebe6c3c4903051b7253829cc5015c53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3234232749e19be02e13680689475f6a218788a1c47d209051b7130a64da36f2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9af6814440de27f54ab5bd2a0096db21d1fee0e464bff18a53132b1012eaf13a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9af6814440de27f54ab5bd2a0096db21d1fee0e464bff18a53132b1012eaf13a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9af6814440de27f54ab5bd2a0096db21d1fee0e464bff18a53132b1012eaf13a"
+    sha256 cellar: :any_skip_relocation, ventura:        "60bf35eb1d5d30bdf735b803cd5e4bce19f0210d35702f7e28f4cbbd210e1da8"
+    sha256 cellar: :any_skip_relocation, monterey:       "60bf35eb1d5d30bdf735b803cd5e4bce19f0210d35702f7e28f4cbbd210e1da8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "60bf35eb1d5d30bdf735b803cd5e4bce19f0210d35702f7e28f4cbbd210e1da8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2160cd85b023720848f0a09f34cb62736e166738e10aa0e8afa3aac683104e5"
   end
 
   depends_on "go" => :build

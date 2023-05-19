@@ -1,18 +1,18 @@
 class Mongoose < Formula
   desc "Web server build on top of Libmongoose embedded library"
   homepage "https://github.com/cesanta/mongoose"
-  url "https://ghproxy.com/https://github.com/cesanta/mongoose/archive/7.9.tar.gz"
-  sha256 "147d51637c5ea95a592487fc4bc64f9c2a719a8f519d379636f2a8b83cb8e672"
+  url "https://ghproxy.com/https://github.com/cesanta/mongoose/archive/7.10.tar.gz"
+  sha256 "7cab3d6984b67fb78fb7f32441468b13d256ea8ecd2f73021cab8295d82d5a63"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7029cc380ec28d2833b1f44027532fb8251bfb5dff8951888b8f9c30b297ecf5"
-    sha256 cellar: :any,                 arm64_monterey: "3b1d0e208e186dee9208a210f77526490de0e8a2abece1604241ef5b7517f3c2"
-    sha256 cellar: :any,                 arm64_big_sur:  "42ce689b33b6e803a9ac5087e76a21c190343f7332a8abd37cf7e6ff421fb4bb"
-    sha256 cellar: :any,                 ventura:        "7d6acd71843441cca6f7d17c43e63c2e28ccf88fc5e3d4bb6e0bb04b5f0c8342"
-    sha256 cellar: :any,                 monterey:       "71d1229fac95a44ad0427b83f19a4af96e5afe04bdb88512d46aa003a162329a"
-    sha256 cellar: :any,                 big_sur:        "67667f049ea0284e7f4353006db2953b0f5b49e95ec0673ff52bd5ea0b0b7008"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6146ba2bceb453dc7f21469501518a5f2b4ab505f7e64d834e8b2ba0d19a3c7"
+    sha256 cellar: :any,                 arm64_ventura:  "7503b5b31e66958cc73cae67358b03686e77fd5bacd3dba940e4d523a6ba4842"
+    sha256 cellar: :any,                 arm64_monterey: "379e4cbb87d908ec32fca4887c7d99c40afc5a57b24a04518649ec07757a4809"
+    sha256 cellar: :any,                 arm64_big_sur:  "284144b506b8b21495d6867dfac3bbbc64f6a69fb7c939ed122d9a9259f30268"
+    sha256 cellar: :any,                 ventura:        "3e189d4bbb2c5d74d0928e593a7924e9d937986cc38c87031a92794cbbe05975"
+    sha256 cellar: :any,                 monterey:       "867f2b2483c9fe76aac49f415e97e04540710d2027c223a55348b5a229c74b85"
+    sha256 cellar: :any,                 big_sur:        "9843ae80d5907aaec9d1d6bc29cc3af60ee22d9abfa485df15783cdebc6d9e51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "441dc85445e06958fdef6c2761674bc51d0a10a803fc0bfb90f542f8e93e2a6e"
   end
 
   depends_on "openssl@3"

@@ -1,8 +1,8 @@
 class Rmw < Formula
-  desc "Safe-remove utility for the command-line"
-  homepage "https://remove-to-waste.info/"
-  url "https://ghproxy.com/https://github.com/theimpossibleastronaut/rmw/releases/download/v0.9.0/rmw-0.9.0.tar.xz"
-  sha256 "cc9d20733c9f9945054041ee6aeac7f4a4b7a675f297ffe388e4863fb84ed4a1"
+  desc "Trashcan/recycle bin utility for the command-line"
+  homepage "https://theimpossibleastronaut.github.io/rmw-website/"
+  url "https://ghproxy.com/https://github.com/theimpossibleastronaut/rmw/releases/download/v0.9.1/rmw-0.9.1.tar.xz"
+  sha256 "9a7b93e8530a0ffcd49f1a880e0a717b3112d0ec1773db7349bac416ee1a42b3"
   license "GPL-3.0-or-later"
   head "https://github.com/theimpossibleastronaut/rmw.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Rmw < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "dfa9abe1e2f9a011a750b2c5d156f364fbf14276419b43d65eddaf6ba963104d"
-    sha256 arm64_monterey: "d4a7ec0a94e728d61c0edea0ef5e8e930fd3f036c03230e0843758cc5da7e633"
-    sha256 arm64_big_sur:  "7d42d38cd36038303191cf1666d4e4c9bf95a76dcf6d4f183597a7cd77d0093b"
-    sha256 ventura:        "25c787a75f8dead6995c96ce43a6035ed84a78d418f782d7fc39a0b457fc9098"
-    sha256 monterey:       "b9b8a5f843c5184971f4323487217f8471d3491f557b8e1a8f5f579d29a232eb"
-    sha256 big_sur:        "57d4b756b4d21bbd03851ed7afaa8c367ce0a57e39ff91bc478e2be1fe90781f"
-    sha256 x86_64_linux:   "49c7b0a3fd748ef20525b71c7171549213442eb8d0753b3e98dd2030bdd7c23f"
+    sha256 arm64_ventura:  "54b07240896ade22480fe64bbb2eda5327c518ffaef594f934609b55dc97fe79"
+    sha256 arm64_monterey: "5fead6bcc25069aac02b5227efeb3a01d1c53742e2d6427204a8b7991ba19613"
+    sha256 arm64_big_sur:  "d19a1d0c5634dd8ee234ffbfc680026ce7117a8cbe751aadb38e7ec0463f243e"
+    sha256 ventura:        "99514dcb65578f1cfbda839fb10319c1b9babdbbfccfbc742e426f6192ca8a05"
+    sha256 monterey:       "1cf338232502a0f45b172f5ba00836ad3f429a1aaa30d150fe187d7c12bb1ad0"
+    sha256 big_sur:        "856626a1bed49ede59542a94607b33ba8841bdcf710ef21c4181a51d8daf8e15"
+    sha256 x86_64_linux:   "6850a908c22cb35663452467d6ede9681e7fe478b009c91538b4a49c2f5cb788"
   end
 
   depends_on "meson" => :build

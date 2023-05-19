@@ -1,19 +1,19 @@
 class KubeLinter < Formula
   desc "Static analysis tool for Kubernetes YAML files and Helm charts"
   homepage "https://github.com/stackrox/kube-linter"
-  url "https://ghproxy.com/https://github.com/stackrox/kube-linter/archive/refs/tags/v0.6.3.tar.gz"
-  sha256 "a7a7bb9a94f0677b388375d96857b4a8b6db7be1ab7d6493c44274c0e7397637"
+  url "https://ghproxy.com/https://github.com/stackrox/kube-linter/archive/refs/tags/v0.6.4.tar.gz"
+  sha256 "d83bb858531afce887416f6f0da0132a38b06c28b5da4b989363061a9ad65ca8"
   license "Apache-2.0"
   head "https://github.com/stackrox/kube-linter.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b3a198e71a256fca273cc1804840d6dce1d62aec707eaca5e1b3a9fe565d7fa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3c0e62e345488c971a9803e2fb92a758ef02fbc7d600487a8cf05b42ee5662f9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7b3a198e71a256fca273cc1804840d6dce1d62aec707eaca5e1b3a9fe565d7fa"
-    sha256 cellar: :any_skip_relocation, ventura:        "6e6f1a6de2a589a88d9904b89748592d1394697ff03a79ff7b1991439d14158f"
-    sha256 cellar: :any_skip_relocation, monterey:       "0e646085aa3573a08143481d1f517d470e770eec8e0f1e686770711d5a4923bc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0e646085aa3573a08143481d1f517d470e770eec8e0f1e686770711d5a4923bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c8f028f6a4ca84bfa231c29777c066ffb2dcc289f6f46febfc5bc2b7896e040"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b7cca3d812f443f35bcafe33c357278fe3939a7a0d00a40e26d01c33a9e8299"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0b7cca3d812f443f35bcafe33c357278fe3939a7a0d00a40e26d01c33a9e8299"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0b7cca3d812f443f35bcafe33c357278fe3939a7a0d00a40e26d01c33a9e8299"
+    sha256 cellar: :any_skip_relocation, ventura:        "299bafe97d40e0b196dc2517a800bb1f9283473678a224d3767e34ded7a0b92a"
+    sha256 cellar: :any_skip_relocation, monterey:       "299bafe97d40e0b196dc2517a800bb1f9283473678a224d3767e34ded7a0b92a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "299bafe97d40e0b196dc2517a800bb1f9283473678a224d3767e34ded7a0b92a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1827dd57e21a00ee87db0c24a5505d8371f30326eea54c2d5e99f0cf7f882509"
   end
 
   depends_on "go" => :build

@@ -1,19 +1,19 @@
 class Jackett < Formula
   desc "API Support for your favorite torrent trackers"
   homepage "https://github.com/Jackett/Jackett"
-  url "https://ghproxy.com/https://github.com/Jackett/Jackett/archive/refs/tags/v0.20.4152.tar.gz"
-  sha256 "add5cfbe0c341e09e48e43be7de7eb2fd33e9c6765e75bccdffcff47e6b4a7ca"
+  url "https://ghproxy.com/https://github.com/Jackett/Jackett/archive/refs/tags/v0.20.4166.tar.gz"
+  sha256 "81c4600a25e4bde813529c1cdabf3a2c2860b3a5829d553adc0bbcfc4db6b6fe"
   license "GPL-2.0-only"
   head "https://github.com/Jackett/Jackett.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e9407bb4435008dc3782007d9204d82b4e760c0476c8d4ebce73c9534115bbdc"
-    sha256 cellar: :any,                 arm64_monterey: "cddbf9b8f8b19bb2fca20f380e7d809ac72e4356740b09f5c3e539468dc0ec0e"
-    sha256 cellar: :any,                 arm64_big_sur:  "cd682d728bcd85d4ade3368d5b2561c941a0e50236825de6b17d5d3534fc0979"
-    sha256 cellar: :any,                 ventura:        "e8a68b4d7edf37ed7d0349e5137dfd25def8f1ea4687a1773428adb3c5647796"
-    sha256 cellar: :any,                 monterey:       "ad0bf2b72f315b9ca4ce20b475da942f790216248ef0a00b60313755f850b2a0"
-    sha256 cellar: :any,                 big_sur:        "a387ac7dc9e692762ab6320c685bf22b6fb27b130ef94d3546033b4754a7ce4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdfde6ab8049df03c3f1ea1f3d3989fccfb5eba4b5fb1b0c9dd44762828891b6"
+    sha256 cellar: :any,                 arm64_ventura:  "5cdefcec2a032b9a90e4f541bd1a2fdb7f8d55b29ec43a3438c35fc2367695f2"
+    sha256 cellar: :any,                 arm64_monterey: "77d519a17266f3e61e39aa5150ac5e645fc020e308715a8b8bf252145fd28e7a"
+    sha256 cellar: :any,                 arm64_big_sur:  "095247c9f6e451105d6fdb4ee36d23a70da72501778547dd76a4c1aab6a627b8"
+    sha256 cellar: :any,                 ventura:        "a13182ffa0e9d0a906e85808383f35b4e2b0e0a67a971ffdfcd9b5ede3977cef"
+    sha256 cellar: :any,                 monterey:       "ca85030debe6a99aeab8d4829560f88ab86e86f326e3244569b9561bc274faa6"
+    sha256 cellar: :any,                 big_sur:        "5fdaf994aba492a4ab8e50638f8239b9015c7932b2cb6eb8e5f2a4fddf17dd2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a78425982191b88ec17ead875538230d432fbdf6837c4dfe26466c8bb680349"
   end
 
   depends_on "dotnet@6"

@@ -1,8 +1,8 @@
 class Qtads < Formula
   desc "TADS multimedia interpreter"
   homepage "https://realnc.github.io/qtads/"
-  url "https://ghproxy.com/https://github.com/realnc/qtads/releases/download/v3.3.0/qtads-3.3.0-source.tar.xz"
-  sha256 "02d62f004adbcf1faaa24928b3575a771d289df0fea9a97705d3bc528d9164a1"
+  url "https://ghproxy.com/https://github.com/realnc/qtads/releases/download/v3.4.0/qtads-3.4.0-source.tar.xz"
+  sha256 "3c8f1b47ee42d89753d68e7c804ca3677b0c89a5d765d1fd4f80f9cdc29d3473"
   license "GPL-3.0-or-later"
   head "https://github.com/realnc/qtads.git", branch: "master"
 
@@ -12,15 +12,13 @@ class Qtads < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "9299d3c5b8a51eaf92592724c056f07d0e5edfc8094464fef736f11d24113c11"
-    sha256 cellar: :any,                 arm64_monterey: "0e30ba9d9f377dcf72aba30d61c6afbe3c36d5c371776ef8c52115e48021ba7f"
-    sha256 cellar: :any,                 arm64_big_sur:  "7c323cae1a69574d5b699a5c5204b3b11878c26f86ce74bb61d0a84761555331"
-    sha256 cellar: :any,                 ventura:        "05dc178c3844cbc7a10e4977c948db84e803f52a9e23b07c25374caa32932f09"
-    sha256 cellar: :any,                 monterey:       "b2c94ccf083bbaf35d5e2417295996d4e3cfedca0ecc403feaff940646025ad0"
-    sha256 cellar: :any,                 big_sur:        "f18e08b6d576a0d634602217c7ae797e34d39d527351e1be7b51724c069493ce"
-    sha256 cellar: :any,                 catalina:       "ae983130a47c5061331a894e8f0ae509db915bb1a3fe80bdd1c6d6639389478a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce6ce65758aeb88826b2fc92fb98419e063cf3e5dbcc19613abab7f868faefb8"
+    sha256 cellar: :any,                 arm64_ventura:  "06f702f167f0b8579f382b626a612fb14a646221420d84b605ad46738751e4bd"
+    sha256 cellar: :any,                 arm64_monterey: "8bd68c471a53ce7d00aadc3fde4a51a3b86a6130a3312a326b5293b3223d253b"
+    sha256 cellar: :any,                 arm64_big_sur:  "fce9e5ba4f310c2d8d6fe7929bec2779aa7651645229d0f98cf344e76fb711c3"
+    sha256 cellar: :any,                 ventura:        "eefed02a2f64f4bb5da5f9eb9af4a47e268ef02c695d9c94ae01ae1213a1d254"
+    sha256 cellar: :any,                 monterey:       "463fd847281ae7edf08b71824d36d0a87a01bd7feaefa452d132c35ccd63d68c"
+    sha256 cellar: :any,                 big_sur:        "2cabcaf186de69de6790202587c6ffb6e9484106b13b0b6dea221ea46728010b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "251840532a70387d1007ab9a992bb9f6e8d6c543133fc19d5d41b0dd81c822a5"
   end
 
   depends_on "pkg-config" => :build

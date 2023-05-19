@@ -1,19 +1,19 @@
 class Terracognita < Formula
   desc "Reads from existing Cloud Providers and generates Terraform code"
   homepage "https://github.com/cycloidio/terracognita"
-  url "https://ghproxy.com/https://github.com/cycloidio/terracognita/archive/v0.8.3.tar.gz"
-  sha256 "7713e4b93528c294db86d008a2ab09ed841984ae2d1ea6f58c3703dab3a1b21e"
+  url "https://ghproxy.com/https://github.com/cycloidio/terracognita/archive/v0.8.4.tar.gz"
+  sha256 "7420694805c3ab666591b9686958eb49e61452065546f0eb315f215c8241da84"
   license "MIT"
   head "https://github.com/cycloidio/terracognita.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5dba3501e403d8c7315facde5e19fbb32a1e10cff34b97c0b86f2f21ee2afb52"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5dba3501e403d8c7315facde5e19fbb32a1e10cff34b97c0b86f2f21ee2afb52"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5dba3501e403d8c7315facde5e19fbb32a1e10cff34b97c0b86f2f21ee2afb52"
-    sha256 cellar: :any_skip_relocation, ventura:        "888ea75087b27f590bc0186699075746cabe055ff236674af0beb7321d501760"
-    sha256 cellar: :any_skip_relocation, monterey:       "888ea75087b27f590bc0186699075746cabe055ff236674af0beb7321d501760"
-    sha256 cellar: :any_skip_relocation, big_sur:        "888ea75087b27f590bc0186699075746cabe055ff236674af0beb7321d501760"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d7928b8f0fc7c7db4d99ea940f8aa83b42b66decfad624f45da2f8a52b143be"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fca8f74b9f5fa7410e7abe7d6f5388ed960ab552b3da92064c57f44396c49a56"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fca8f74b9f5fa7410e7abe7d6f5388ed960ab552b3da92064c57f44396c49a56"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fca8f74b9f5fa7410e7abe7d6f5388ed960ab552b3da92064c57f44396c49a56"
+    sha256 cellar: :any_skip_relocation, ventura:        "f01273cbda69dc4373fd896c787361f4f9b9da0ff70b5901fa96b551305cfbcd"
+    sha256 cellar: :any_skip_relocation, monterey:       "f01273cbda69dc4373fd896c787361f4f9b9da0ff70b5901fa96b551305cfbcd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f01273cbda69dc4373fd896c787361f4f9b9da0ff70b5901fa96b551305cfbcd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22ca7df6e40ef40b990867a5a81b2e2b883f0867d1be7c8179c178d997e847a1"
   end
 
   depends_on "go" => :build

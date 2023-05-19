@@ -1,18 +1,18 @@
 class Frugal < Formula
   desc "Cross language code generator for creating scalable microservices"
   homepage "https://github.com/Workiva/frugal"
-  url "https://ghproxy.com/https://github.com/Workiva/frugal/archive/v3.16.19.tar.gz"
-  sha256 "58da90281fae2aa3478e4baf1422ebab2c69d747f20b632e81fb12c7d8135c7e"
+  url "https://ghproxy.com/https://github.com/Workiva/frugal/archive/v3.16.20.tar.gz"
+  sha256 "dd1795373492b03d53a48d89526dd8ba11eac3a97bab2f6de920ecd5e5bcfeb4"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a1a2bcf90a916fec796a3b413dac4726dfd6ce6481e70305bb4d3b2a17402472"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "be4d2c4566535e7d22eb127099f7429d593ed381750b33a58893b98c94e00feb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b01082b445ed61312389244341df50e1bd7b855d08f037d33963c39d3d25449e"
-    sha256 cellar: :any_skip_relocation, ventura:        "b5fd59855eae8677bf94bfea4cfdaa1cf09296b82f5f41bf1eefedfdc79c7fb3"
-    sha256 cellar: :any_skip_relocation, monterey:       "5c00fe1786f0372fb87d69f14d239bb8a05f77ad3c783dc37ecd30095f714577"
-    sha256 cellar: :any_skip_relocation, big_sur:        "96bfac28350f76019e132b06afaab1bd530a1590df43c91c2a52d00848dcbc58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8be8a9967c426681f040abead40a8deff8a5102e717dd070e6b28710ee811d19"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "408271300d3e8d47c0ca78dc4022ebe91c4400eb95b5083b74190560c130be3f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f425930954c08c8af901c2f3c02d60b46521a08a12c82e99d60444b0af8a6c29"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "10b3e58d31960fd824e9b7e6a464abf0b9099ca7e3acb68294c18bf8e178e202"
+    sha256 cellar: :any_skip_relocation, ventura:        "4d7e484d9831c74514e3551865c219192a1de57b149b0c018051b5582b9df18a"
+    sha256 cellar: :any_skip_relocation, monterey:       "ba025fde813c53492e5b2a859f43c67898329788851418269464b3e8b7e35fad"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8d501fba1ac6cb0c35f36e7a7ef9e9ea8b313ecd902746b0c4d967cdb364fcae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4fa65d189a7d9800910cfc0be0cdf383d890892e451062a369c80a8d736ae631"
   end
 
   depends_on "go" => :build

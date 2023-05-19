@@ -1,20 +1,19 @@
 class DoubleConversion < Formula
   desc "Binary-decimal and decimal-binary routines for IEEE doubles"
   homepage "https://github.com/google/double-conversion"
-  url "https://ghproxy.com/https://github.com/google/double-conversion/archive/v3.2.1.tar.gz"
-  sha256 "e40d236343cad807e83d192265f139481c51fc83a1c49e406ac6ce0a0ba7cd35"
+  url "https://ghproxy.com/https://github.com/google/double-conversion/archive/v3.3.0.tar.gz"
+  sha256 "04ec44461850abbf33824da84978043b22554896b552c5fd11a9c5ae4b4d296e"
   license "BSD-3-Clause"
   head "https://github.com/google/double-conversion.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "208098fabee3e07ea7ef4fa6f95ba28d0dd461d17df90c33d23b95b280b642e3"
-    sha256 cellar: :any,                 arm64_monterey: "dcd8a50bf98490fae00d73325210c5f9f65f1b20a59a1979afdb28e9c91d3ba9"
-    sha256 cellar: :any,                 arm64_big_sur:  "7996dcb8fafcc3aee6fee04da51533a15f297cb34de699a7ec0cfede53f4447a"
-    sha256 cellar: :any,                 ventura:        "8c37957d1059538da20b3d562b59abef18239b662c57d33e4a5d1b1f115965f7"
-    sha256 cellar: :any,                 monterey:       "ab33e3194744d91e611c402d1f5ed5243ffa7bb9a776abec12b05d674b210880"
-    sha256 cellar: :any,                 big_sur:        "f20cd36d2cb176b5ea9e5bbc15241f7a2f57bbea16196adfaa0ee51918541992"
-    sha256 cellar: :any,                 catalina:       "2299213ea5c53ce8c80818d0256911227e7dd9f3c444eff84993d7b266180a36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad1dbba4e56ae238b08b842855f8ca8ca1c929644a09a9f91c24d4c7fafc2e9f"
+    sha256 cellar: :any,                 arm64_ventura:  "8945e3a31e2b8954f22e64dd6ebd1990bcf168151103264a8fcfd1eca21f9848"
+    sha256 cellar: :any,                 arm64_monterey: "8280c82873f4b691376a017938aa3d3a1f59eb7b9e55130754d4e45fe4e0a8c6"
+    sha256 cellar: :any,                 arm64_big_sur:  "4ab4afb8f5c68036a1122acadd11f610587ab139d1024be1713802da40867022"
+    sha256 cellar: :any,                 ventura:        "6841cb06c7313798c03cf02e2db00bc82f207a4a7e9c5449c39d25489b86f3a0"
+    sha256 cellar: :any,                 monterey:       "7e9022b96cdce599dcf671a7a5e75ded3fd5111174cd16b12c01382e36486d1f"
+    sha256 cellar: :any,                 big_sur:        "ed09e4f725aeb68de24babf7d76b340c024ae83dfda74b4cf588ea8bc27b5d97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "66164b85ecc6253cfbf62fe31224be35260f54fc452bae70a69b75f2ee96e0e0"
   end
 
   depends_on "cmake" => :build

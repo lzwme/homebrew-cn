@@ -5,6 +5,11 @@ class Hyx < Formula
   sha256 "8d4f14e58584d6cc8f04e43ca38042eed218882a389249c20b086730256da5eb"
   license "MIT"
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?hyx[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c5fbf9736e6dbca570698341b9461ef3e9ed520be32f1f665964bd7162b337e2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "876cce3d4991699d1a91ed15aa402cd0498e41b140d4bd371bc87763f71ece01"

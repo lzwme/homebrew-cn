@@ -3,19 +3,19 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://conan.io"
-  url "https://files.pythonhosted.org/packages/20/f4/cf3035f9010390f5e4c524bf4bfba7001263c91f464e64bb7720f36e9fcc/conan-2.0.4.tar.gz"
-  sha256 "9100f92171669d310e945da669ec108f6e1794fbc3e06f6a50b4e6902682b522"
+  url "https://files.pythonhosted.org/packages/e1/c3/636a509e781fd255e114f199108451efd4ec5f297d989b4724cdf40fab03/conan-2.0.5.tar.gz"
+  sha256 "ad1051db5ba0b2595063f337b2cb3eb1f15e2d3ec4b3cce6f7d1223ddc81da41"
   license "MIT"
   head "https://github.com/conan-io/conan.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "80e25d8921784debeb791c7455c38c5e4c8c24d59e869a69371df0d9084a929a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b2ff9e6db0fe6ee90c209831eab8b219a4baafe598c8d876865fc0310e087e45"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "551951983f8cdc59dec9c66824fbbdbf599116b345dc560a53950fc4566708eb"
-    sha256 cellar: :any_skip_relocation, ventura:        "a45148b7008c2db8f006518344f15ad0147aed08163ca60e36af5709dccc08b2"
-    sha256 cellar: :any_skip_relocation, monterey:       "fcfafffad30e15175af20ff10f0e76c165a062d3a35fde36a6a8149bde3cc7f3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9a7a16f04ae9c56635fb101f4a20d7617280807f1e725d697f99f683aeffb241"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f31fba840487da8f163b4b88de8da7066f48afd32d9b441943cf4f89602c758"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3bac54f5c1e8afe22cb3bd0b10936f96d28eb65b338291bb00ddf0c2c4cbfe59"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cf14c62154d55bf6afe240babf72c4f6ea69b9be9e1847bf3e8e31bb30b94008"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "82af3b6aa201f87883487d3066e2778dddc6a2e8a031ee5ad127f0b4599a3f1c"
+    sha256 cellar: :any_skip_relocation, ventura:        "447ed580e096a8ac9bb40bfd0ef908f88c55eb934e9eac01c025a277f7af1dc9"
+    sha256 cellar: :any_skip_relocation, monterey:       "502157125ea9407338a68ca3cc25bfec9e98f264fab386e38d1d4407f4428343"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5790beb744e7b2ec84029f3c3b05a5eb0b7d3c0771656a5815e5da9233bb4f4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46c04f0d2cb83291763c39fba958646f62c1f2a6dfa663041bd742c51e1130bb"
   end
 
   depends_on "pkg-config" => :build
@@ -27,8 +27,8 @@ class Conan < Formula
   depends_on "six"
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
-    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
+    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
+    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "charset-normalizer" do
@@ -56,12 +56,12 @@ class Conan < Formula
     sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
   end
 
-  resource "Jinja2" do
+  resource "jinja2" do
     url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
   end
 
-  resource "MarkupSafe" do
+  resource "markupsafe" do
     url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
     sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
   end
@@ -77,8 +77,8 @@ class Conan < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/ee/391076f5937f0a8cdf5e53b701ffc91753e87b07d66bae4a09aa671897bf/requests-2.28.2.tar.gz"
-    sha256 "98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"
+    url "https://files.pythonhosted.org/packages/e0/69/122171604bcef06825fa1c05bd9e9b1d43bc9feb8c6c0717c42c92cc6f3c/requests-2.30.0.tar.gz"
+    sha256 "239d7d4458afcb28a692cdd298d87542235f4ca8d36d03a15bfc128a6559a2f4"
   end
 
   resource "urllib3" do

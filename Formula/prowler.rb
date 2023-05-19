@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Open Source Security tool to perform Cloud Security best practices"
   homepage "https://prowler.pro/"
-  url "https://files.pythonhosted.org/packages/d6/69/2c322196bb6f1e526dd628ab352a081def79f8b1af08cd61d84c00948660/prowler-3.5.1.tar.gz"
-  sha256 "7f8180f48391eb8f624b8ff920e368ca00fa0b74e5958630ee426f465fb6f7f0"
+  url "https://files.pythonhosted.org/packages/8a/b0/03a9ef96bf28ba80fde862f541ac898c099d2601342440b5f63e11f54b04/prowler-3.5.2.tar.gz"
+  sha256 "1f9e5b9514c6147e21b1c8f392b56a1d0a500cc75fad0fa15c4f19e4ef15d1ac"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9fec3f2f39b9ae2cafea05aae842bce32a078d317ef1a8d822d9c50e195e6126"
-    sha256 cellar: :any,                 arm64_monterey: "a03e112462b64ef77b1a3c0627df457696ad04641708f4f26bdb098255b6aed0"
-    sha256 cellar: :any,                 arm64_big_sur:  "e60e6599aeb6ee562dd092efbddaaaa5e28cd5a87b669f561bb8b27ae3937f82"
-    sha256 cellar: :any,                 ventura:        "2a1d54b39aaaa14ed980dc162a43a9b041967254542aecf1f362680b70dc7afb"
-    sha256 cellar: :any,                 monterey:       "030127bf3cb06546d0ff98b9fecef83143ddb3870e57e5d5d9a98cd72cfaf2c1"
-    sha256 cellar: :any,                 big_sur:        "fe872ff1c3a739b947465942763ee609544b6fbd75244ed3f63a47765611a496"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae697d131a519c3ced07cf6c6d0a9d200d8d3f20b83281b54a0d07dfc234dfd5"
+    sha256 cellar: :any,                 arm64_ventura:  "17a4aa6516a47330fe4faa918005112ff610d8beaeba11b41d914727d807d92b"
+    sha256 cellar: :any,                 arm64_monterey: "e39ad42bbfdfb59d193e4b3599e64136b7727f12c2556ec70973aec4c2a182dd"
+    sha256 cellar: :any,                 arm64_big_sur:  "923248b59e4ad3af7458b4da4aaf4324a220ddcfe67c254456abf5cc0abea622"
+    sha256 cellar: :any,                 ventura:        "e5792b93e0a9d8b0739b7ccd8d26c11845c511f921e9f947d786d578dfd8f71f"
+    sha256 cellar: :any,                 monterey:       "1d27cf91b0faf80ce68be0626b3ec691fb2678b4ec7490f71d17573b3da92710"
+    sha256 cellar: :any,                 big_sur:        "a36849af01625c8cb72fdcd36808db713ac7840a40c914015c8bbda7b796228f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9935e0d8a5185b4cc43e5ac60fb5e8d9cb2a9ba7d0bd2a55bf7f8b7859e92cf"
   end
 
   # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
@@ -37,11 +37,6 @@ class Prowler < Formula
   resource "alive-progress" do
     url "https://files.pythonhosted.org/packages/db/ad/f67b278cc654d51872dc1ed437f383522f9b715043ff80a3401fcdebf98e/alive-progress-3.1.1.tar.gz"
     sha256 "6d9ad57add9c1341aa57d93e6370c76c9fc0c9fdc631e1c56b48e59daa32106e"
-  end
-
-  resource "arnparse" do
-    url "https://files.pythonhosted.org/packages/bd/42/949284e998282b167e273872fa9c39b06d41a6055163c30aa2daaeee76a0/arnparse-0.0.2.tar.gz"
-    sha256 "cb87f17200d07121108a9085d4a09cc69a55582647776b9a917b0b1f279db8f8"
   end
 
   resource "azure-common" do
@@ -155,8 +150,8 @@ class Prowler < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/dd/8b/0f8678165d3136ad7637784b076c851d65d223e2e8cec3b9503540bb3518/google-auth-2.18.0.tar.gz"
-    sha256 "c66b488a8b005b23ccb97b1198b6cece516c91869091ac5b7c267422db2733c7"
+    url "https://files.pythonhosted.org/packages/ab/ad/cf556edf0df277935e7fe443a3d5e2c0db2441a4d1e02b816b2487a47b9d/google-auth-2.18.1.tar.gz"
+    sha256 "d7a3249027e7f464fbbfd7ee8319a08ad09d2eea51578575c4bd360ffa049ccb"
   end
 
   resource "google-auth-httplib2" do
@@ -225,8 +220,8 @@ class Prowler < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/60/1a/79f077c5baf5a9262ed41cc0909c1230ecac5cb4f4960cd97942c88d1726/protobuf-4.23.0.tar.gz"
-    sha256 "5f1eba1da2a2f3f7df469fccddef3cc060b8a16cfe3cc65961ad36b4dbcf59c5"
+    url "https://files.pythonhosted.org/packages/d8/6c/a2a6fe10cdc9bc81e03be56139d5bc70427054eb0b3864b31ff9a2a4849d/protobuf-4.23.1.tar.gz"
+    sha256 "95789b569418a3e32a53f43d7763be3d490a831e9c08042539462b6d972c2d7e"
   end
 
   resource "pyasn1" do
@@ -321,7 +316,7 @@ class Prowler < Formula
     assert_match "ens_rd2022_aws", shell_output("#{bin}/prowler aws --list-compliance")
     assert_match "rds", shell_output("#{bin}/prowler aws --list-services")
 
-    assert_match "NoCredentialsError -- Unable to locate credentials",
+    assert_match "NoCredentialsError[26]: Unable to locate credentials",
       shell_output("#{bin}/prowler aws --quick-inventory 2>&1", 1)
 
     assert_match "Prowler #{version}", shell_output("#{bin}/prowler -v")

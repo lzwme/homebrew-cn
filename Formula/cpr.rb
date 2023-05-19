@@ -1,19 +1,19 @@
 class Cpr < Formula
   desc "C++ Requests, a spiritual port of Python Requests"
   homepage "https://docs.libcpr.org/"
-  url "https://ghproxy.com/https://github.com/libcpr/cpr/archive/1.10.3.tar.gz"
-  sha256 "7b9d3504ffdaf7ce3189f1b91d135888776b6a1b26ea1bf2c3c4986b8a5af06f"
+  url "https://ghproxy.com/https://github.com/libcpr/cpr/archive/1.10.4.tar.gz"
+  sha256 "88462d059cd3df22c4d39ae04483ed50dfd2c808b3effddb65ac3b9aa60b542d"
   license "MIT"
   head "https://github.com/libcpr/cpr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d4b86b8146b0519e591952c579afc6859e32fa8c3e54378bc30af19d7d7789b2"
-    sha256 cellar: :any,                 arm64_monterey: "2cbbd1950fbcdd181851b6cb5d1376800c129a222f5a1c971dd4922883150b06"
-    sha256 cellar: :any,                 arm64_big_sur:  "4fa3fe8c2a89d078e452b3ccae10f3dc9ef5e9b653051dffe208b492d4bedadb"
-    sha256 cellar: :any,                 ventura:        "4e99b818d15283ff83a9b5d28cfb33bc01d49ed0a73d38d1eb02c21bbc4a6621"
-    sha256 cellar: :any,                 monterey:       "7cc6b1262eeda456de28ac9da96980465429bf8ca125b5cd63f27e899319c9e5"
-    sha256 cellar: :any,                 big_sur:        "9493efcd95d7f8addf514b01f4a443f91741e2074d51c1c770a8ccf34ac4dbcb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "395435ea43e0b7b68fe835c1aa4aee965be193419cebc2e41d2021cf1c3fbf91"
+    sha256 cellar: :any,                 arm64_ventura:  "f52db0627a16d81f7a3c583403d8a483829380eb0fb43ba5aa02facd61197af9"
+    sha256 cellar: :any,                 arm64_monterey: "dba0fa6a2756d6f72eabd0a6c94d14f531b44160968806ef63d594ad3b0f8b52"
+    sha256 cellar: :any,                 arm64_big_sur:  "dbb3e0c82cb8e5c8b635281b4dd7ddc8ae43a05b9bfec945226c4e009940731a"
+    sha256 cellar: :any,                 ventura:        "1a4c07b4ebfef58ca98089dda3a3859afe1ccdfaecde0a9a80b5094f7643cea6"
+    sha256 cellar: :any,                 monterey:       "623ee04a2a672e1ff1cfd94ae1f5f791f3c790f6a322b05f363c0b3014b40d81"
+    sha256 cellar: :any,                 big_sur:        "b42dd113f236f40bb4bb7dadb86ce35b1831cf288ac732122f20c16bf570cb5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a40a748f7a33446daa2c780f1e69286830d6f2f3d7e2e1bf647eb7f158525880"
   end
 
   depends_on "cmake" => :build

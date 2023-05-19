@@ -1,8 +1,8 @@
 class PgpoolIi < Formula
   desc "PostgreSQL connection pool server"
   homepage "https://www.pgpool.net/mediawiki/index.php/Main_Page"
-  url "https://www.pgpool.net/mediawiki/images/pgpool-II-4.4.2.tar.gz"
-  sha256 "3e6c788e70f0672c7b38c88a6ca76f31f3786b125689980cc063ab752ca58234"
+  url "https://www.pgpool.net/mediawiki/images/pgpool-II-4.4.3.tar.gz"
+  sha256 "46745aa98f454e097cecb4dacf536f89c37ed3ec41f32f0a846934229d0eb733"
   # NTP license that excludes distributing "with fee"
   license :cannot_represent
 
@@ -12,13 +12,13 @@ class PgpoolIi < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "d2105b1d4311344b47ba7748280a58e01a1322af3430ddf1181ecf5f54210e37"
-    sha256 arm64_monterey: "86a877722546e1b6f26378ffdee7df6fde71be30b0e54e6f0ea483d94bc86ed0"
-    sha256 arm64_big_sur:  "6cd7a00c0012d02cf8a5e83000d860d26744bab524b3309401475347368c84b5"
-    sha256 ventura:        "89e24abbc05e6cd7b9c6d6fa453b4ccd1a5e7afe21190bb514ee11fb3ae5b006"
-    sha256 monterey:       "709d695fad63ddac0b5596be9cc34d1d23d5466c85b2f1905cba0c44a2496520"
-    sha256 big_sur:        "7730d86e148fa8b9dd065e6fecf19dbf8546dbb009794b82e77aaf84cbc3193f"
-    sha256 x86_64_linux:   "b9ec13c9137e6446ae5e2fcabdee042fd9c2e37e47126d6b7672040369255580"
+    sha256 arm64_ventura:  "235dc70c704b788d49206e4a1deadff5a0d58498237e2ce83b281728e6567600"
+    sha256 arm64_monterey: "acd26bdaf1c533c86ef58212eab3f56b421ef754d6c88687dab5b0eb9bf735ae"
+    sha256 arm64_big_sur:  "963be0b64f64f58288375b06151e469554ac2d08b412d2ea80feb4b86e5c9eb9"
+    sha256 ventura:        "c6d84c3bbf033dee5a4c0d90d4cbd08d7938e1de2053e3e8f988289bff7cf8a4"
+    sha256 monterey:       "3c2408df6ab19d06bd7c5b41d75e5413d2cad58d793df65bfb352666ecbd3668"
+    sha256 big_sur:        "830a2744c52714dcef82d2a74c8b4bc642c5e86d3d6f245013a650593ddd14a2"
+    sha256 x86_64_linux:   "917dc27d2774739b6ece0eed30b6a341af9ebf19e4e04067fa5820b23d34b3b1"
   end
 
   depends_on "libpq"

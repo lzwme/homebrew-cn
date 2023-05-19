@@ -3,23 +3,25 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/27/40/e050a9eaaa7e1b191959a808ad2014b81accc48aef0f410df8826c0afbb8/esphome-2023.5.0.tar.gz"
-  sha256 "c6831408c70cf61fbcb9bcd6c952dd0af39f607aff34e544f5a466c2dedf2a83"
+  url "https://files.pythonhosted.org/packages/97/0c/7083b5a6cd1e8e7b149f782d27e6e9db1b86e7314e125a8d22800ca5a5e7/esphome-2023.5.1.tar.gz"
+  sha256 "5c043b9481f8504a8ddcf8cabec666921582e1e2a26f5121ce8581a2c0b0beaa"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d454af69cdae070f3d5f07a28fda99ec80818b48553909116c512c4c74e161b0"
-    sha256 cellar: :any,                 arm64_monterey: "c8652977ec7c9be7eba5138350e132042160b333d2c5151ca94970b9a0ebe828"
-    sha256 cellar: :any,                 arm64_big_sur:  "5bf897bbd4993022d438711ea1ee8529ca061394e385b42ab83556be12451490"
-    sha256 cellar: :any,                 ventura:        "565959fb9dd6871d570a757dcdf408187181d06eb11a70f805defe8e3d051bb5"
-    sha256 cellar: :any,                 monterey:       "80fe968adbfe5929043938e66e42b6f63f358a5b21e4497e0684c7c23814e8c3"
-    sha256 cellar: :any,                 big_sur:        "5aef5d3507b2484b4e5d138c20877f9e03c90860beb3dfb25943aa53ac0a5275"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50e59996ebc22ab2cf42e71d6ec91c5c3cd5dc51ea57ef4835fe2a4b7fe56ef9"
+    sha256 cellar: :any,                 arm64_ventura:  "18b79434759887bab282e639c654f48997fb177ab861468bce5ffb227bab2f11"
+    sha256 cellar: :any,                 arm64_monterey: "097fcc83158065f886e2398314ab1f05836e876f4319e03b5a99a87559fbd07e"
+    sha256 cellar: :any,                 arm64_big_sur:  "32fb6080813f3f167d3d0415fd975b42b77d4e9d4acc982530301d8f882c132f"
+    sha256 cellar: :any,                 ventura:        "35f1319de9de3fb45c0c0969ce07a51412aa6a6b0191f306143f7091e69d0571"
+    sha256 cellar: :any,                 monterey:       "48de51aa66d77c18da6698ef3ecc038532d055195fd3442545457ef65ac20449"
+    sha256 cellar: :any,                 big_sur:        "cbe27213615a2218b9fa0f84c43120a7adfc58ea172999dee3a0cf4b0166fc61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2947d5933eb1003cd4c1d8a6eee1d43bad6ae1e9ac8f5a3900cf59171f2e8c46"
   end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build # for cryptography
+  depends_on "cffi"
   depends_on "protobuf"
+  depends_on "pycparser"
   depends_on "python-tabulate"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -63,11 +65,6 @@ class Esphome < Formula
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
     sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
-  end
-
-  resource "cffi" do
-    url "https://files.pythonhosted.org/packages/2b/a8/050ab4f0c3d4c1b8aaa805f70e26e84d0e27004907c5b8ecc1d31815f92a/cffi-1.15.1.tar.gz"
-    sha256 "d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"
   end
 
   resource "charset-normalizer" do
@@ -148,11 +145,6 @@ class Esphome < Formula
   resource "platformio" do
     url "https://files.pythonhosted.org/packages/0b/49/0af5d39d7940ba1e6595f451b0d04712dddc4500db553af73b201d5edd4f/platformio-6.1.6.tar.gz"
     sha256 "d0214c4da22454269220c0344214eb1fe1f65ca1c9dc19a3d160653a92343af4"
-  end
-
-  resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
-    sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
   end
 
   resource "pyelftools" do
