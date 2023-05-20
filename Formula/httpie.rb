@@ -3,28 +3,27 @@ class Httpie < Formula
 
   desc "User-friendly cURL replacement (command-line HTTP client)"
   homepage "https://httpie.io/"
-  url "https://ghproxy.com/https://github.com/httpie/httpie/archive/refs/tags/3.2.1.tar.gz"
-  sha256 "803e1624e005c2f7002802a77ebc687b05375aca76af42639f844405328633eb"
+  url "https://ghproxy.com/https://github.com/httpie/httpie/archive/refs/tags/3.2.2.tar.gz"
+  sha256 "797fe33afe3bf0a4364a869a7d73f5c728f67d4ac47039be41e08bd564f86bb0"
   license "BSD-3-Clause"
   head "https://github.com/httpie/httpie.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b25ec0104ca8f51617b2a05b2b30a43296b8c99a4091e665848ef45db034946"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4289d44032d4cae9d7e16c71248c4099409023a449ad765ef55e47bf3a0e3b72"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7ab6c17d9491ba595d5b1908cdca03c9c1285aa7980933cb808fb4a0423d98c2"
-    sha256 cellar: :any_skip_relocation, ventura:        "e9a4a4545962feadc7faf1ef0737b9ab547d09dff56e1c04ced8b6d8dfb6df48"
-    sha256 cellar: :any_skip_relocation, monterey:       "422e76aec454a175ca555b58dde8cf9c91398d939e98ba35d6663e4782cea475"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a0f69e18dab0b985a31b3338b2a3f16465d8acb4ec22133687c37bb258350af0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "514b4e77852434c5c070d452c604f81274481f5516fa3d2f0552f9048bf08f8a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "340d5ac928a168ba035f8fc8acca49f60694b9f232c091095c98ffedf80d888d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b22b2f91fec301b8fa6da85cded5b73efe7efd675e84c28d2d5b0cab8a624953"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c9c80efd505655b99d6c51c900fd6be73a856b08fe3af0e13422f9fa43bd9f00"
+    sha256 cellar: :any_skip_relocation, ventura:        "2782bcbe7bd7805bdd7c9d7e954c78371af9e52a4dc79389a2335f64fe0d6691"
+    sha256 cellar: :any_skip_relocation, monterey:       "410618a23947af7c2b308a54ba173e9a3aa8e39a74fe223ced118e800e8a7bc3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "03c5a725120748a9ee6a1345f9f29ffd60d42058937744447039c9ff7cc3c94d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5385c6a22178325a9f9efcca985c5ac23aee2403f6304b90108166e1ff11fba9"
   end
 
   depends_on "pygments"
   depends_on "python@3.11"
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
-    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
+    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
+    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "charset-normalizer" do
@@ -63,8 +62,8 @@ class Httpie < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/4c/d2/70fc708727b62d55bc24e43cc85f073039023212d482553d853c44e57bdb/requests-2.29.0.tar.gz"
-    sha256 "f2e34a75f4749019bb0e3effb66683630e4ffeaf75819fb51bebef1bf5aef059"
+    url "https://files.pythonhosted.org/packages/e0/69/122171604bcef06825fa1c05bd9e9b1d43bc9feb8c6c0717c42c92cc6f3c/requests-2.30.0.tar.gz"
+    sha256 "239d7d4458afcb28a692cdd298d87542235f4ca8d36d03a15bfc128a6559a2f4"
   end
 
   resource "requests-toolbelt" do
@@ -78,8 +77,8 @@ class Httpie < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
-    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
+    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
+    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
   end
 
   def install

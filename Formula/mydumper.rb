@@ -1,8 +1,8 @@
 class Mydumper < Formula
   desc "How MySQL DBA & support engineer would imagine 'mysqldump' ;-)"
   homepage "https://launchpad.net/mydumper"
-  url "https://ghproxy.com/https://github.com/mydumper/mydumper/archive/v0.14.3-1.tar.gz"
-  sha256 "aafb9c0914b720e175988a41d9c340271348e50e3a00556035a9c4afcf80c982"
+  url "https://ghproxy.com/https://github.com/mydumper/mydumper/archive/v0.14.5-1.tar.gz"
+  sha256 "d4ee18d60b7b3931009e906f927fd003437866e149baccf3063247b6d14a0894"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,13 +12,13 @@ class Mydumper < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "97841b65e98c86816317ade0b7948595b66bf3f3a3f02d63f7b581dc2f9b3a89"
-    sha256 cellar: :any,                 arm64_monterey: "445bc37997fc5bda3055f705a0b11fbe187c173bad4609c54b9de6bc5f0c6767"
-    sha256 cellar: :any,                 arm64_big_sur:  "c4448b208412ef840651f6f75c2483eb94166d850f1485dfc9b8e2710140629a"
-    sha256 cellar: :any,                 ventura:        "4c09d4a3f95ac4c12f7e8ea6c16c31650578df36b00523da4603ceb697e7ba40"
-    sha256 cellar: :any,                 monterey:       "e78b37d868026a1d93d6282e81beabb3cf9f3121dee93b8583aadfef37ae1c84"
-    sha256 cellar: :any,                 big_sur:        "b400c0e5d844da2dbff4d393ae5e03166bad97eb02f12344211326743f8038dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c135cb9985c0378dcf8ce2e614539124dbbcbbdfafd7db719c288b372a7574d"
+    sha256 cellar: :any,                 arm64_ventura:  "5abb9ebcedbe1840972d88741ad08840411f36e0677ae0145ea22d0adc49ad37"
+    sha256 cellar: :any,                 arm64_monterey: "7189d898976f59f71fb5d49518a74bc9626f488f85dd7dd47f84c1b54e0883a1"
+    sha256 cellar: :any,                 arm64_big_sur:  "73f51f80d35f1bb968077499354f3a5654bc6798d6276750270c04d350944173"
+    sha256 cellar: :any,                 ventura:        "356aa9830317a06f5d2f8590d7d91fc701a31130396ca51b971acf42340a8c27"
+    sha256 cellar: :any,                 monterey:       "c0dd81d72a349d8f19a95ea1851cdfa767ced282a9a90ae1dffa182fc909cad4"
+    sha256 cellar: :any,                 big_sur:        "bb9c543f7d3af80f87b85a754c3133b47788660d90d0f4ce1b4dde51b15c5551"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85675a008e2966fbd46836a5a00a0e7d644db12ec600aed955164dd366cf4e53"
   end
 
   depends_on "cmake" => :build
@@ -34,6 +34,9 @@ class Mydumper < Formula
   fails_with gcc: "5"
 
   def install
+    # Avoid installing config into /etc
+    inreplace "CMakeLists.txt", "/etc", etc
+
     # Override location of mysql-client
     args = std_cmake_args + %W[
       -DMYSQL_CONFIG_PREFER_PATH=#{Formula["mysql-client"].opt_bin}

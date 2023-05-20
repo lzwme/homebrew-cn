@@ -1,19 +1,18 @@
 class NetcdfFortran < Formula
   desc "Fortran libraries and utilities for NetCDF"
   homepage "https://www.unidata.ucar.edu/software/netcdf/"
-  url "https://ghproxy.com/https://github.com/Unidata/netcdf-fortran/archive/refs/tags/v4.6.0.tar.gz"
-  sha256 "8194aa70e400c0adfc456127c1d97af2c6489207171d13b10cd754a16da8b0ca"
+  url "https://ghproxy.com/https://github.com/Unidata/netcdf-fortran/archive/refs/tags/v4.6.1.tar.gz"
+  sha256 "40b534e0c81b853081c67ccde095367bd8a5eead2ee883431331674e7aa9509f"
   license "NetCDF"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "17546227dae175ccc6fae72d3868bb6a452150881840d15af9f105ad7076f4dd"
-    sha256 cellar: :any,                 arm64_monterey: "134a5c5ea3b5d0759fbadf7e089c6a68a15e5921ec808694c9832be5eefe9ca6"
-    sha256 cellar: :any,                 arm64_big_sur:  "7c2a2fcaf0b3d56b6b9d26b8ec06757762c856e141529ae18cdad55bf6f15956"
-    sha256 cellar: :any,                 ventura:        "0c499d512aef14ff2c295ef28efa5fed59f9a54499ab78b705d4dfa9e223c0b6"
-    sha256 cellar: :any,                 monterey:       "d38a0dfb6e6e37bafe1bac279c79647d1171bf64c15c47b8c604faaf20dca2b0"
-    sha256 cellar: :any,                 big_sur:        "44789814252155aa8e8a13211917fa96ba099431b267b6064dcc1ef7f17c43c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "84d1c029f741b96c5592a405fa362816b773d82cbb151f4d565192e0f8b68c8a"
+    sha256 cellar: :any,                 arm64_ventura:  "f69dec2020417b0e8199b02be5a47c4ca2da04c7877b71238017cec1eb7d0b14"
+    sha256 cellar: :any,                 arm64_monterey: "d37ff2c2dc92218abac1c96650ed04330748e4b2478b8af3a8191f1f09f82ce3"
+    sha256 cellar: :any,                 arm64_big_sur:  "656efd1986de89c62f46cc8cee403671e0b27f7a9c5c71462d46dd71bd5b7afc"
+    sha256 cellar: :any,                 ventura:        "9f472b30b1122d65ec0200e712cfbc9fbc568fe5093f7766a54084d63ab01f94"
+    sha256 cellar: :any,                 monterey:       "e987324d04bfe2505ba86583d2c2fd3011ab57f946e75ff82179a126c0901aff"
+    sha256 cellar: :any,                 big_sur:        "5d8adc17ed018ac5a4f9db5b62466fe5a43de072a2156bfc7d190fcd072ee483"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c6ed098da41febed8864e81d27d264cadca8d99e55bfad0281d98c99e025790"
   end
 
   depends_on "cmake" => :build

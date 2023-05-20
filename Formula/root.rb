@@ -22,7 +22,6 @@ class Root < Formula
     sha256 ventura:        "3339efad3893620bcea994f98118ac9ee38ef891471dc974df772a46e88c25af"
     sha256 monterey:       "04a4970b5c8343e92141c20a9bbb613e5925d4d9b6c67d764030aac2d958c610"
     sha256 big_sur:        "2e2fb3dc681cdae836443ec3eeeb671e03c3bec8cc17372339598a71e7a8f959"
-    sha256 x86_64_linux:   "4eeebd8873194ba310f5b388b767ec682e5369ef52a9e655abed65ba2747240b"
   end
 
   depends_on "cmake" => :build

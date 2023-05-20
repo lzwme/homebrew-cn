@@ -1,19 +1,19 @@
 class MinizipNg < Formula
   desc "Zip file manipulation library with minizip 1.x compatibility layer"
   homepage "https://github.com/zlib-ng/minizip-ng"
-  url "https://ghproxy.com/https://github.com/zlib-ng/minizip-ng/archive/3.0.10.tar.gz"
-  sha256 "d4a549731d8c7074e421dbab6d8b8ad0a93067752fe767c464f0f40fa5f0a80d"
+  url "https://ghproxy.com/https://github.com/zlib-ng/minizip-ng/archive/4.0.0.tar.gz"
+  sha256 "f9062e576de026fd5026d65597de3b05263cd4d91400cacdbbe36dfa8a642fff"
   license "Zlib"
   head "https://github.com/zlib-ng/minizip-ng.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "aa192bc4b4833b8a5890049d7578960fb2c9ab88f1ddf75aca113acc81245923"
-    sha256 cellar: :any,                 arm64_monterey: "80301a3df4912425d28ac0b7453f3463337dfc3f34f09e7d8a71806eb94104c4"
-    sha256 cellar: :any,                 arm64_big_sur:  "5e2a6efb97ec3e1066de8e289f8b51440aa32966fd4be30d183995dfad8f9786"
-    sha256 cellar: :any,                 ventura:        "777f0bdc187fe0a10be9f5e9fc0f4e158928ea1855d7e51d9e56c2aa461d29fc"
-    sha256 cellar: :any,                 monterey:       "c9e6ba5b3d45f787ea7c6c1e4b80bc59daeba899396746420c3ac9eb18217d77"
-    sha256 cellar: :any,                 big_sur:        "77904402c1db0662dd84aacf589e67986d5a05606de1439b2dd4bafb2f170ae2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90232fb5ce6119b6315b7bb1d4b39e1754a2ded4b54c1fbccc3225f0e8c4d204"
+    sha256 cellar: :any,                 arm64_ventura:  "caf71e19acbee5bab936b4c3069892f8706855eccd387f9a58e54cc4e23d5575"
+    sha256 cellar: :any,                 arm64_monterey: "73995a7ce9e1053e5e0eed917060a79062410889df9458d69fd64ba485294503"
+    sha256 cellar: :any,                 arm64_big_sur:  "bd4fcaba2580a27c590d8484de3ff4098c235504da791c2bc87df096e2361327"
+    sha256 cellar: :any,                 ventura:        "55e4a73f2f6244050c09bf1a2d471f7190a7e42f58a30c697fbf55787cf1aeda"
+    sha256 cellar: :any,                 monterey:       "f34025761a09743053c335b5d4dd8476d50a33ab12dfef88bba02b2f7e792cfa"
+    sha256 cellar: :any,                 big_sur:        "4df600e796d4c461266acffad28794a1621b77e4dade70323affc8f418f31c81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f1f4ecd9e3bbbd0a6739401cf35a138c5de1860325f88d66f25b5e2e6ce10e6c"
   end
 
   depends_on "cmake" => :build
@@ -60,7 +60,7 @@ class MinizipNg < Formula
       }
     EOS
 
-    system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lminizip", "-o", "test"
+    system ENV.cc, "test.c", "-I#{include}/minizip", "-L#{lib}", "-lminizip", "-o", "test"
     system "./test"
   end
 end

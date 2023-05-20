@@ -2,18 +2,18 @@ class Sipp < Formula
   desc "Traffic generator for the SIP protocol"
   homepage "https://sipp.sourceforge.io/"
   url "https://github.com/SIPp/sipp.git",
-      tag:      "v3.7.0",
-      revision: "f9a4ba6cbae7a71a05df653289109b6f7d6d5d53"
+      tag:      "v3.7.1",
+      revision: "1126a8b27af21850a74b1f17b9c9af5c6c8d4309"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "bda23aafba064a9e42a33161a63eba4234919354a7fbf5103a4475366ff530a0"
-    sha256 cellar: :any,                 arm64_monterey: "eb3c10cc445051067ef72a1ebb50002ce6dcafe26270ca9772a358b21f701842"
-    sha256 cellar: :any,                 arm64_big_sur:  "83a6642a5189f023e7933d0600df2484d50cd952365e7bef5e9ab579ec644447"
-    sha256 cellar: :any,                 ventura:        "ce0fec4c51d06ed4475d66431c96d83568673c5fc3d3a778bcdcd7910434bf19"
-    sha256 cellar: :any,                 monterey:       "675ac77fb5d93f0c2e7b478e7aeb77968f24319ac62e2279050f5f1909a07f58"
-    sha256 cellar: :any,                 big_sur:        "78147a91821b91d5e98a3a59ce93f261066e22fa7251c6a83b9bcec5665208d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7bbd41293dcdbb58df19b7226abb6c23ab949593bc89c4f0bb65ab6545ccda0d"
+    sha256 cellar: :any,                 arm64_ventura:  "a8786cc5adcbe5899275b7cc504decd96a0df83729b39f24da584c326b3fd3f2"
+    sha256 cellar: :any,                 arm64_monterey: "3ab4877a57f6b5260db98d4b912a864e934420f5c1d3ec29a3ee96cd2b028124"
+    sha256 cellar: :any,                 arm64_big_sur:  "051f4ddf73a816d0ec591d0122b2e8dda508118e2130eb2b8d16da5d4ed2a2aa"
+    sha256 cellar: :any,                 ventura:        "faa45e7690f37061b2c21bc1d43c81756eeeceeec6067bb0466fccc8a0e9be30"
+    sha256 cellar: :any,                 monterey:       "c5d4946eb77659974a47635e096c83eab1f09aed85929bf76da9d1ff75eaafce"
+    sha256 cellar: :any,                 big_sur:        "3d52c34248ff03fccd8099c47c6cb962f454142a126ab5dca063a7572c2c5a97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa40e901e3d6e0301beb526ae94849cc185b1d53eccfe6a3a532adb0d32ad3b9"
   end
 
   depends_on "cmake" => :build

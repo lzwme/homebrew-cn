@@ -1,8 +1,8 @@
 class Brev < Formula
   desc "CLI tool for managing workspaces provided by brev.dev"
   homepage "https://docs.brev.dev"
-  url "https://ghproxy.com/https://github.com/brevdev/brev-cli/archive/refs/tags/v0.6.227.tar.gz"
-  sha256 "ee2349cc0d880b8e7e7b57340da6b5f876aab972eecc783fe8a9a5d211c110af"
+  url "https://ghproxy.com/https://github.com/brevdev/brev-cli/archive/refs/tags/v0.6.228.tar.gz"
+  sha256 "b9c51e8d2d43b76f0599da9c37562b9393df67ac26bedacfc046258c00800a3c"
   license "MIT"
 
   # Upstream appears to use GitHub releases to indicate that a version is
@@ -14,13 +14,13 @@ class Brev < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "08b42e0c0cbb9b55b8442287aa927854ba6bdcdc8b31b188d19b163e21a9cc62"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "53a247e94c007b4456f8e5cc2eea07719abc1634f07dc05a0e87173ea0851eff"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "25b4f782663cd3513c5e01ef56b4917ed2ce754258616a1b214c2f8c4e5a731b"
-    sha256 cellar: :any_skip_relocation, ventura:        "b1ebc3c33558b0c3879c8a69cfdca5c9945e01bff2bdfc91f6afb63aa286ef37"
-    sha256 cellar: :any_skip_relocation, monterey:       "eb33ce643c98b1142268f0d8f0598f722923b41f08a21c4dafecf7d929e5267c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "60e700ed118c0de5d7cffbcfd79517b6c576b858966d55fd20413777f7ee801f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2fea85388899556c3bce41fbe5eb69b30176dd4b87330bed8a76831c6a95f8f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ab70def48c0906aacf433a9d971dd458f2be53d43ea1c80693aa906a7948a54a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e9d92060d735c8e3548ab56a73ff95067639ce767a56c0c85e60fa33cbf614d0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "21575941f4fa9b67699361f742030064ace198464be0337d31b300dab203976c"
+    sha256 cellar: :any_skip_relocation, ventura:        "382554d5e8c963a8535833b2be9edca670d1ef082a7785a8c55c00e9fed425fd"
+    sha256 cellar: :any_skip_relocation, monterey:       "789624321378b2bf50cfc07377c90f7e0ff849f80a0f5e4de9dfea7465ab5909"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1d43c2eeefe2f9f2b8cfc243de657d4b9dc971956866a578cdc42c10f79ba88c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9273f714821328689c4e116f262f674556bb277f03bf0b810a9a2bd4eececeb1"
   end
 
   depends_on "go" => :build

@@ -1,18 +1,18 @@
 class Observerward < Formula
   desc "Cross platform community web fingerprint identification tool"
   homepage "https://0x727.github.io/ObserverWard/"
-  url "https://ghproxy.com/https://github.com/0x727/ObserverWard/archive/refs/tags/v2023.5.5.tar.gz"
-  sha256 "a293ad2c2fe09e61419ab1d68be4a2fb45a6ce669138f2630d1efeba6de19587"
+  url "https://ghproxy.com/https://github.com/0x727/ObserverWard/archive/refs/tags/v2023.5.19.tar.gz"
+  sha256 "936573fd7be0ebb39b0986643846f3d271b267019aaceb418b4b9dbb694118a8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2a1cc174608912f9cd505023b88cefd39a471cb90396fa329b36f24028b813d2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7177a93544f6ac6b68a522023ec0c17c40cbb08e78ec316f23c119beaf80b095"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ddedaf688786edaa17a873cb6fe550cbe1892110f8e29f746d791ba8e7c17bd1"
-    sha256 cellar: :any_skip_relocation, ventura:        "dac58a2b38aefc0d94413d8ffdaa1f3ebedf5843eacd6a132c7179a663e024f8"
-    sha256 cellar: :any_skip_relocation, monterey:       "99ed6b60871782f291dbc8e17c528b5c02c1c33a817b517d01e4b3d3841abd31"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d3de3bf9a5630e769eb362b59b2882ef2aea895ec13c735d1e2f38acbca6d59a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6cbfcaa919c80057871880e57ccaeadd96ccd59dc5dc262bde86525d3b80c223"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "680dee189f26f0476cef0ffb6bade07430c2b5dccaa2bf710fb9b679f401cbdc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9cc0dac4710fd7c2b75efc07aa653fe08af0a7c51b25269dbd2ae55fe60497c3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f97910d68be773eb3738908105a75a45986838fe5cc982593a1cb63af23dbaaa"
+    sha256 cellar: :any_skip_relocation, ventura:        "f89fb0bcc8a8ee08a6b115db2c3e22907b7e4f9bc8bac2347d0100f893312835"
+    sha256 cellar: :any_skip_relocation, monterey:       "02a67e04904b17ec1d539d044e0bc2d5277807af67323849c9679391ec3ba2cb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9b5d89cc2411767c8bc3a31e077e58f561826073a0ac159b708e3d47a4930253"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff0380503ee743ec6be3ac3e59a07c83505935aaf69b7889e7389379569ac434"
   end
 
   depends_on "rust" => :build
@@ -23,6 +23,6 @@ class Observerward < Formula
 
   test do
     system bin/"observer_ward", "-u"
-    assert_match "swagger", shell_output("#{bin}/observer_ward -t https://httpbin.org")
+    assert_match "0example", shell_output("#{bin}/observer_ward -t https://www.example.com/")
   end
 end

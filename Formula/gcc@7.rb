@@ -23,6 +23,10 @@ class GccAT7 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "e653d70c78fb9bcd714a6904775dcd9c3b2e661efd633722519f347e190c7c8f"
   end
 
+  # Unsupported per https://gcc.gnu.org/gcc-7/
+  # Last release on 2019-11-14
+  deprecate! date: "2023-05-18", because: :deprecated_upstream
+
   # The bottles are built on systems with the CLT installed, and do not work
   # out of the box on Xcode-only systems due to an incorrect sysroot.
   pour_bottle? only_if: :clt_installed

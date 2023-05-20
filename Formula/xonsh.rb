@@ -3,19 +3,19 @@ class Xonsh < Formula
 
   desc "Python-powered, cross-platform, Unix-gazing shell language and command prompt"
   homepage "https://xon.sh/"
-  url "https://files.pythonhosted.org/packages/48/55/ba8fdbd56c33b0fc7e6e1487b861381a9527fc02b2782caa7317de5fadfc/xonsh-0.13.4.tar.gz"
-  sha256 "1075452e6eac9f58c3abf4ad9f38f9b05452e7460536bc993dba9989227a21a7"
+  url "https://files.pythonhosted.org/packages/ab/4f/e8ce49c5582ccf43d9b968ebc4cc8fe24c3ece2900afaed927db65453a70/xonsh-0.14.0.tar.gz"
+  sha256 "45a8aaabb17ce0d6d4eca9b709ecfd7ce1c8fb92162decd29a45bf88a60e9bf1"
   license "BSD-2-Clause-Views"
   head "https://github.com/xonsh/xonsh.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c7e711795380adc4ba87798b4673ad58e30d74298a90f4a5bfedbad80300b52c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c0d08e71602b9882ea6234eb34494dbb8c5654f0997ddc28dfcc6255a8bdd71"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5768185108e62abef7faae5e6ae9dc6a060b0c273dcca60e999d81316e1dbab2"
-    sha256 cellar: :any_skip_relocation, ventura:        "7db7aea549f1d6614c3da213f85adb2b14945c2edde0e6705a4b0ddc273b21b9"
-    sha256 cellar: :any_skip_relocation, monterey:       "13a1d03abeb1149dfa83e7ba4c59115ea69eeed61bb157b5cb9bfa98b59bd9a4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c3f7501c07c7f39d5e3d8e8511c6cc5926459a11180d0c37b543ef9b6960ecee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f554276c3ef15bd4eeb885545e2f6c27f5909e809852d908a9e0554c8a688059"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "32e7e8cc95646c36a0f59bc23e81c96e9127ccff274bc1adbbad90a4f7ff0353"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b5ba7bbe00c1322639718965d897b9a5da1adc7dd5342e600f04ca99b10f477a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6aaa2b0d94166e765753a608514e42680f8d90c8aedc4cf463301af7155c0f00"
+    sha256 cellar: :any_skip_relocation, ventura:        "51501f254c119ea97f769bd5fe5b5ffe4ff078a7c461d42320bb480d5c713ac2"
+    sha256 cellar: :any_skip_relocation, monterey:       "a8eff699c4f9372914c3a595276e05e72f31595e685c254b33f7ed5da1717af0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9125f57f4199a2b324b65a58fbf132cebd6788489cb140aaa9d538b594713b21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4ea7bc9a92a2e7f784f15126b60e5253d9874ac985dfebd06b09ae4703c05fa"
   end
 
   depends_on "pygments"
@@ -25,8 +25,8 @@ class Xonsh < Formula
   # See https://xon.sh/osx.html#dependencies
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/fb/93/180be2342f89f16543ec4eb3f25083b5b84eba5378f68efff05409fb39a9/prompt_toolkit-3.0.36.tar.gz"
-    sha256 "3e163f254bef5a03b146397d7c1963bd3e2812f0964bb9a24e6ec761fd28db63"
+    url "https://files.pythonhosted.org/packages/4b/bb/75cdcd356f57d17b295aba121494c2333d26bfff1a837e6199b8b83c415a/prompt_toolkit-3.0.38.tar.gz"
+    sha256 "23ac5d50538a9a38c8bde05fecb47d0b403ecd0662857a86f886f798563d5b9b"
   end
 
   resource "pyperclip" do
@@ -40,8 +40,8 @@ class Xonsh < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/89/38/459b727c381504f361832b9e5ace19966de1a235d73cdbdea91c771a1155/wcwidth-0.2.5.tar.gz"
-    sha256 "c4d647b99872929fdb7bdcaa4fbe7f01413ed3d98077df798530e5b04f116c83"
+    url "https://files.pythonhosted.org/packages/5e/5f/1e4bd82a9cc1f17b2c2361a2d876d4c38973a997003ba5eb400e8a932b6c/wcwidth-0.2.6.tar.gz"
+    sha256 "a5220780a404dbe3353789870978e472cfe477761f06ee55077256e509b156d0"
   end
 
   def install

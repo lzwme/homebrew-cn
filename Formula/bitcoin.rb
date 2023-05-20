@@ -1,8 +1,8 @@
 class Bitcoin < Formula
   desc "Decentralized, peer to peer payment network"
   homepage "https://bitcoincore.org/"
-  url "https://bitcoincore.org/bin/bitcoin-core-24.0.1/bitcoin-24.0.1.tar.gz"
-  sha256 "12d4ad6dfab4767d460d73307e56d13c72997e114fad4f274650f95560f5f2ff"
+  url "https://bitcoincore.org/bin/bitcoin-core-24.1/bitcoin-24.1.tar.gz"
+  sha256 "8a0a3db3b2d9cc024e897113f70a3a65d8de831c129eb6d1e26ffa65e7bfaf4e"
   license "MIT"
   head "https://github.com/bitcoin/bitcoin.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Bitcoin < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "45d947210f6f1bb4bbe1836ce6a3852218dc909925c12ee593f8aadf84d8c93a"
-    sha256 cellar: :any,                 arm64_monterey: "d07972bb774322c1d88fa4f834dfbfc36f9cf9494dd849f8fb94286f7d650c25"
-    sha256 cellar: :any,                 arm64_big_sur:  "07f9831b1766e2fddcfd6286b0e8e4c164e286e2241cbc2670f702227cc5a97a"
-    sha256 cellar: :any,                 ventura:        "ebd2453adcf200b10c5574216d76b17dd0f59951720a57622c615898fe9807a9"
-    sha256 cellar: :any,                 monterey:       "959d5f095bfd82de01bf34aa183a6be900f4659743d1ac50b44f100bf8ecc328"
-    sha256 cellar: :any,                 big_sur:        "be3ace44a1b4bcf4e8cb11c34e455afaa030570d4af409d7fb697021710fb7ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5eac48a633510ed9382e8cf0f5a184e142c057a31ff913f96b32c98d07716960"
+    sha256 cellar: :any,                 arm64_ventura:  "fe9597e08414649291bc9981933a9723ccc5f847ef2402e7bc87d5a0e05e317b"
+    sha256 cellar: :any,                 arm64_monterey: "9d8a78a5ea912fe38370e92ec03726afc69787f9e761a992510ddb6e90f9dad0"
+    sha256 cellar: :any,                 arm64_big_sur:  "6624bca94a23c2c628d1ac95962bb08779311816d1215c4830d9d966a96c008f"
+    sha256 cellar: :any,                 ventura:        "746922530c8f7077dfd409aa7a33fc6abd6512e1a1119b338f5aa993b6e09a6c"
+    sha256 cellar: :any,                 monterey:       "efb9f339d85705c27a44acbe7d88f52172da106eda15c2fc30a6c4bee07b0ed1"
+    sha256 cellar: :any,                 big_sur:        "0266dbea8c19ecb558b1d93dc5f3ac1d05e4039a018d23590b78f9f767e78c07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23a4327ac9d3bfc32ea6b68961c29bc1b1aa281084b8e657898cf5313aa4cd78"
   end
 
   depends_on "autoconf" => :build

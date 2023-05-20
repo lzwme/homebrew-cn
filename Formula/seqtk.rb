@@ -1,23 +1,18 @@
 class Seqtk < Formula
   desc "Toolkit for processing sequences in FASTA/Q formats"
   homepage "https://github.com/lh3/seqtk"
-  url "https://ghproxy.com/https://github.com/lh3/seqtk/archive/v1.3.tar.gz"
-  sha256 "5a1687d65690f2f7fa3f998d47c3c5037e792f17ce119dab52fff3cfdca1e563"
+  url "https://ghproxy.com/https://github.com/lh3/seqtk/archive/v1.4.tar.gz"
+  sha256 "d124604ec24f29ed14ce127426ab90e0f3a2c0280c80d1a3ff8b1c09feede19c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e6cf3d61b32d87a06c5f10459779e4d8694cdac21a315654c447bc56ed3f4e00"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f31a109971c3906efdec050e77ae151e16f3c54410d3b9ee4b229839b610eb0d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4e1d4c35dc64c5ea008ecb2e83bfc5d7a4047256e37923a981e5a6cd6038f368"
-    sha256 cellar: :any_skip_relocation, ventura:        "3afddde22ed6a5e2cb5c49389ea6894c758624f34ca09e64430a14385293085e"
-    sha256 cellar: :any_skip_relocation, monterey:       "b9b943a7ee965c28916f2db8dd49e734022e74a5fce1e78af2fef017649c9b72"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bdcc9b85644f98bbcdffbb84816e40714c254f8e9e8c8e5c042b4d25496e0010"
-    sha256 cellar: :any_skip_relocation, catalina:       "5abbf374f3dab69b198b98a3126f521b64baf01ac5ed69b99be91ffd97f891f8"
-    sha256 cellar: :any_skip_relocation, mojave:         "b695a43103700d7d0d4a07d50d8effec280f7d7a781ff518a42dec2bef44801e"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "4f377caf93e5d334e739375a5dcf06782f1d85516988a26df3f8f53d172b1e6f"
-    sha256 cellar: :any_skip_relocation, sierra:         "fd3ecced5ba8f5a9eab13f8f2184f6a69d08b58c1ef53ad6e74bb45cab9324f4"
-    sha256 cellar: :any_skip_relocation, el_capitan:     "55541e7e9249ef15bd4423ad9a45903918c2b4b54f632bc0472fb24aee683701"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9725834121170e1a61b42865512da270435a30ef49f95ff070179baabd655717"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "10eca0327229b13765451786c03c7def8fd277d014f5a74e709915fc50a8fdbd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fb2ec54def8fadafa1c673e851180f0883e651582a78397394706602786d3559"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "325cb00b4694492303da6d2b776bf7ecfc31f9ac6259a9d3d0a1b9ada86d29cc"
+    sha256 cellar: :any_skip_relocation, ventura:        "a22a8a2d9b1568d03efe732ccd3a4fa461f0b8adab78587a8b6fdbfbb8db292a"
+    sha256 cellar: :any_skip_relocation, monterey:       "fed18e5929988555d1623c2a023821de35cd3f200adb40bbb56ecd56b48b5646"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ac4bce32281d7b1c988285d0341691bacfaeba03a6d9d82113ff0ead8125accb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "afd0ca56a9c7ed70b7958688d5d38c85b48c18eba76a52f303abad25f7b41eb0"
   end
 
   uses_from_macos "zlib"

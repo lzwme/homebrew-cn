@@ -1,18 +1,10 @@
 class HaskellStack < Formula
   desc "Cross-platform program for developing Haskell projects"
   homepage "https://haskellstack.org/"
+  url "https://ghproxy.com/https://github.com/commercialhaskell/stack/archive/v2.11.1.tar.gz"
+  sha256 "7a3a7e4aca8aef9ab6c081ea553a681844e6dad901c6b36b5e4cacae2fef6d23"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/commercialhaskell/stack.git", branch: "master"
-
-  stable do
-    url "https://ghproxy.com/https://github.com/commercialhaskell/stack/archive/v2.9.3.tar.gz"
-    sha256 "52eff38bfc687b1a0ded7001e9cd83a03b9152a4d54347df7cf0b3dd92196248"
-
-    # Avoid unix-compat's System.PosixCompat.User.
-    # Remove with `stable` block on next release.
-    patch :DATA
-  end
 
   livecheck do
     url :stable
@@ -20,13 +12,13 @@ class HaskellStack < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "56d83f5bc97cbb3d3e64b964cbf597f429e4b9e17e00758e4e658d00a2b14ac0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "85151dd27dd85e1362aca06537ebebbd6554e4060fadb36eb7756fd7af254d05"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a584c251efb28bca574ca2156007da4b5b95825f3a6df1b7695f9c8320000fd4"
-    sha256 cellar: :any_skip_relocation, ventura:        "7c856ac06145ad589ac2520208edb0acb6d5f50db04006d74f1e020a1eb46032"
-    sha256 cellar: :any_skip_relocation, monterey:       "7a5daa9304d5bfe5b9f4d3e87a78f5aa15de509fe0883cbd06569b1340d4dceb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f5b4ae812cb3a1dbbc3bb32cc587b45d75dac02b482cc22cb37ce10db0921182"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b43b663d28a2559bb8b92d048b6e64a77f763bb0715083ac5f112ab172fc958"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b81fc81d3662235af6f1fed0d1f960fc728ffbd2eaa4e963ba7024227da4435d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b0d96a8ca7778d812662071c191dab3c588138a5327041842edfbd56378ca999"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d4fcc4cf54e777f2358c7c8437101efb72f2b84a0945f9e24bf813b4f4b233ba"
+    sha256 cellar: :any_skip_relocation, ventura:        "95f4fd991821862e3ea548a96a7cd93abeffbc22e0912de8bafec85d22f20d9d"
+    sha256 cellar: :any_skip_relocation, monterey:       "96e78b944ced64a81d399f3770ef55424b9664e541d90d2b07b8647c8862567c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "36bbb67964219186feacbc1860b4430962f2eb7bdae2295f7752e9f8b8fab99c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a7f98a6502cfd4dac42e044caa745b13a8d06b91f6b994255390ebce8cd50b9"
   end
 
   depends_on "cabal-install" => :build
@@ -62,27 +54,3 @@ class HaskellStack < Formula
     assert_match "# test", (testpath/"test/README.md").read
   end
 end
-
-__END__
---- a/src/Stack/Config.hs
-+++ b/src/Stack/Config.hs
-@@ -89,7 +89,7 @@ import           System.Console.ANSI
- import           System.Environment
- import           System.Info.ShortPathName ( getShortPathName )
- import           System.PosixCompat.Files ( fileOwner, getFileStatus )
--import           System.PosixCompat.User ( getEffectiveUserID )
-+import           System.Posix.User ( getEffectiveUserID )
- 
- -- | If deprecated path exists, use it and print a warning.
- -- Otherwise, return the new path.
---- a/src/Stack/Docker.hs
-+++ b/src/Stack/Docker.hs
-@@ -66,7 +66,7 @@ import           System.IO.Unsafe ( unsafePerformIO )
- import           System.Posix.Signals
- import qualified System.Posix.User as PosixUser
- #endif
--import qualified System.PosixCompat.User as User
-+import qualified System.Posix.User as User
- import qualified System.PosixCompat.Files as Files
- import           System.Terminal ( hIsTerminalDeviceOrMinTTY )
- import           Text.ParserCombinators.ReadP ( readP_to_S )
