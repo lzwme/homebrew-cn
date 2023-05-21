@@ -24,18 +24,6 @@ class MupdfTools < Formula
     because: "mupdf and mupdf-tools install the same binaries"
 
   def install
-    # Temp patch suggested by Robin Watts in bug report [1].  The same patch
-    # in both mupdf.rb and mupdf-tools.rb should be removed once mupdf releases
-    # a version containing the proposed changes in PR [2].
-    #
-    # [1] https://bugs.ghostscript.com/show_bug.cgi?id=706112#c1
-    # [2] https://github.com/ArtifexSoftware/mupdf/pull/32
-    if OS.mac?
-      inreplace "source/fitz/encode-basic.c", '#include "z-imp.h"',
-                "#include \"z-imp.h\"\n#include <limits.h>"
-      inreplace "source/fitz/output-ps.c", '#include "z-imp.h"',
-                "#include \"z-imp.h\"\n#include <limits.h>"
-    end
     system "make", "install",
            "build=release",
            "verbose=yes",

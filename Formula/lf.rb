@@ -1,18 +1,18 @@
 class Lf < Formula
   desc "Terminal file manager"
   homepage "https://godoc.org/github.com/gokcehan/lf"
-  url "https://ghproxy.com/https://github.com/gokcehan/lf/archive/r29.tar.gz"
-  sha256 "82ec6e926941e1819aecaace32ed9a57597b714b5bbc5ff98dd519f1fa2239fa"
+  url "https://ghproxy.com/https://github.com/gokcehan/lf/archive/r30.tar.gz"
+  sha256 "6f8bc88797710926867a74f3ef68e408e05758bb399266d2841bf0d341d4c146"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "04dcfcf8e53cbc5419af839397d3c5971b1a568218de7d441546bd853ddcc15e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "04dcfcf8e53cbc5419af839397d3c5971b1a568218de7d441546bd853ddcc15e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "04dcfcf8e53cbc5419af839397d3c5971b1a568218de7d441546bd853ddcc15e"
-    sha256 cellar: :any_skip_relocation, ventura:        "d6343878df5da2f4bc3954c45773debfdbfabe33876710e24b28999817085f84"
-    sha256 cellar: :any_skip_relocation, monterey:       "d6343878df5da2f4bc3954c45773debfdbfabe33876710e24b28999817085f84"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d6343878df5da2f4bc3954c45773debfdbfabe33876710e24b28999817085f84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "075df08dfc399ffad0e976647dc5e5b78db586c50b3887dc59f956187feb1d10"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f0b6538faae601fc2a199787ab0253b84948243564788416a25ff93cc27424a3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f0b6538faae601fc2a199787ab0253b84948243564788416a25ff93cc27424a3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f0b6538faae601fc2a199787ab0253b84948243564788416a25ff93cc27424a3"
+    sha256 cellar: :any_skip_relocation, ventura:        "4e11b1688cbe8a782bb120e799854405f3923d3a0d72b22f5a72fc04544941b1"
+    sha256 cellar: :any_skip_relocation, monterey:       "4e11b1688cbe8a782bb120e799854405f3923d3a0d72b22f5a72fc04544941b1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4e11b1688cbe8a782bb120e799854405f3923d3a0d72b22f5a72fc04544941b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c271148f4e81ca417f45174f79e05413882de5f60290d169d338c8243da56c83"
   end
 
   depends_on "go" => :build

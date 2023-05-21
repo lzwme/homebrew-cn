@@ -1,19 +1,19 @@
 class Lemmeknow < Formula
   desc "Fastest way to identify anything!"
   homepage "https://github.com/swanandx/lemmeknow"
-  url "https://ghproxy.com/https://github.com/swanandx/lemmeknow/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "c2edf419aed5d2f9428d094dad627a6205b18da84ac25bbc2879f0ebc39c3801"
+  url "https://ghproxy.com/https://github.com/swanandx/lemmeknow/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "46f42e80cf2c142641fc52826bcf73e00e26dbb93f20397a282e04b786a7cfe8"
   license "MIT"
   head "https://github.com/swanandx/lemmeknow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e9922fdf7430f284d8805a3b3a9e8f9750885ff3c02d5ac3a672cd03d9ba6df"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c4da2e6429ec4452909764e4d90109d9a4789ece911f0f6e4cac5429e6c9968"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c5550c7f941db6fafe0f814a1cec0c7704e96995d8a6090d471102fce30dbbf6"
-    sha256 cellar: :any_skip_relocation, ventura:        "1149c622e7fc3fa9bbfb3ae34eea4feef77958c60a778769ef2914c4a31f7474"
-    sha256 cellar: :any_skip_relocation, monterey:       "68a7037b81d6ba6a30b3cd4ab8bd629c933a61a82d49f290195c85fd0ad56cdc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "58e3c489fbaecdf25e795b747b2664713c0d2a6e9177cd3d7c4aaf7ce30befdc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dbd6a42c19f17d4e0699a2e6d84a9212612cf546d119f56e4af74dfad929fc32"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "90517e35b64697b70153db585ce845aa789762a3dd0aeec955a6ef4f516194f9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "67edad348c761e6fb74da22ecd3fcfa511eed0b3239a9eb5ed5ac4df71abdf4d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "293c3d179f7122f7eeefdde492a5c2a77024ca46c458d1f1186baa7078202062"
+    sha256 cellar: :any_skip_relocation, ventura:        "8b5b5766ec6bb2c0392759b960b21613a46cbecdd4a06b696197fd2b18b63e69"
+    sha256 cellar: :any_skip_relocation, monterey:       "d1999def59b9c186a9310cd18f6a55fd6ac565f4330b8c1800bdc6a1dc035aea"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9233947a40343e7512dbc090981151ef1e9fd009ca09fc60b9b510036b4e133a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8d597d9d5a7512e3c5ccb9bca3efc519f1e9d1445cbac41ea4a9faea38caf7e"
   end
 
   depends_on "rust" => :build

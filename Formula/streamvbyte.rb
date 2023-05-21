@@ -1,19 +1,19 @@
 class Streamvbyte < Formula
   desc "Fast integer compression in C"
   homepage "https://github.com/lemire/streamvbyte"
-  url "https://ghproxy.com/https://github.com/lemire/streamvbyte/archive/refs/tags/v0.5.3.tar.gz"
-  sha256 "4d102a119a537e6d5e097fe06371de6397a57d89677de7193f92d920bb639f94"
+  url "https://ghproxy.com/https://github.com/lemire/streamvbyte/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "6b1920e9865146ba444cc317aa61cd39cdf760236e354ef7956011a9fe577882"
   license "Apache-2.0"
   head "https://github.com/lemire/streamvbyte.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b921386d8c36986deeb4093152cb2d323ccb9e720d378cb377aea031a75d9034"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b33a02437b0cf9ce4e89233536c1da6a376e7cf583ba346d54253e4448700b55"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "781e9ebdd522b4f504e9df9a91f00ec61e461f6ac7eca40ed8df474f1e3c0fca"
-    sha256 cellar: :any_skip_relocation, ventura:        "96d4a567eb5a8dd22e71f8dd29102f6d278f14be471f1e15b77faf132f25a604"
-    sha256 cellar: :any_skip_relocation, monterey:       "69fc9e5a40b6fa7f064d8accc27574c1721981b21822d9be3fa077c38bc44d9e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d43f3102dd5cebad6c5b73d252fb54fb1945f51d86acb555606b1673e1ed4301"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7bf94e5d2d34022c91f6a355badb3fa205289356d22522eed6d368011c9e8e9a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "66f082548db8eb887d605e59486c213a1ed91359a11647774416c5f6cdce022f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "531ad325e65fb8183fa2743faa9131199fbed692b8f3965da713c84143f56e0d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c8f6f45ab02c05cfd3225d2abf6d16c3a196d16d19a7eda10fdff5f25314ba8a"
+    sha256 cellar: :any_skip_relocation, ventura:        "70102a6cd14a7b1f2062be3f2c92d178f453da8cb04eabcadf490aed767228f4"
+    sha256 cellar: :any_skip_relocation, monterey:       "82cf3201eb5bbb93c0ebb0c3abf65b62c2d96751bc94e2a78541e008f4141452"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bb9e50d4b5d0707015f35b05058bc46bd4e0fda2d203da1f682a714e1e303a20"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da1937bdc9548b59aa1d9493828ad1c252c5be113c805896f311de0964256173"
   end
 
   depends_on "cmake" => :build

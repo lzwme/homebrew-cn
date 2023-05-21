@@ -3,19 +3,18 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/3f/de/76fbef3c41c7700d42929e093e35829117c48c277cb09e2a849bfabc98ff/schemathesis-3.19.1.tar.gz"
-  sha256 "be9b87bfd92a856cbff9518d5f6f0ef9172240c6571ca272bdd8045a405c60c0"
+  url "https://files.pythonhosted.org/packages/f3/27/66e3cebf5272f196e1da14e33045eea0ad04e2745fe9182a95d77d718e28/schemathesis-3.19.2.tar.gz"
+  sha256 "d6a0347d0397e5f5ed729f37290f332f98be14e3af385e7c155df7e95453d75a"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce743f609c6001e5001f5ae791a905522b5244bc97f0461924161a75d452c3cb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b8a5f7de091ad0f4135bffba1bcab3fd8127b0d36291f5c02761566d9d43bad5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d15688016ba9efd95d6aa33aba43158bf3f15d092620de2d02f3714ce8231f12"
-    sha256 cellar: :any_skip_relocation, ventura:        "cfff2683ee7bb13fd7536339412a6e1f94eeec47bea27352e5f973c5800db411"
-    sha256 cellar: :any_skip_relocation, monterey:       "4bb8e96e7a1eff6f584b44865843b1f6855d57d340d6912a92fade9df01c2a6a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "20c7ff1a313627443e0fe241b7c146cb3a916716e51a55499d516820fd8316b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f6525972d9f0375c92b0abf36be5e75caf64da656c8508d079221de16398271"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb916b797234d377f7b6b7ce9262e82407d69f124d08742ae799b826264686c2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b97b0c789a4f082de32ec081133b383c9ce791d41707a1dd9f0d955a87e97cc3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "68fc471f43bd46775f570be2e309c8c17e11ff1f610b0e4557783ba92c522843"
+    sha256 cellar: :any_skip_relocation, ventura:        "c8739a274c0a40636e17b2caa5124f5978337c3bc67766a62b421a63c6870b0b"
+    sha256 cellar: :any_skip_relocation, monterey:       "7ce5045e1f964ed87a70f9306ce827cc8091bb6c344059ea79088ae2470eecb3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7be0674953e6a20ae86c07dc2fc6f680e25eaf2f084d2d49ff2dc46791c05ec6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "762235d0a06915665566232b73e2fccaac34b16f6b16223f66436450d029f177"
   end
 
   depends_on "python-typing-extensions"
@@ -74,13 +73,13 @@ class Schemathesis < Formula
   end
 
   resource "httpcore" do
-    url "https://files.pythonhosted.org/packages/41/16/c809655d32fd93e688b9e2a1aaba1008118369d1eda00818f6f65eb509f8/httpcore-0.17.0.tar.gz"
-    sha256 "cc045a3241afbf60ce056202301b4d8b6af08845e3294055eb26b09913ef903c"
+    url "https://files.pythonhosted.org/packages/a3/b8/5a0ebcb51cea6f86c4c2520e606018675dc1c9f4c3419356bfd8adc9fc76/httpcore-0.17.1.tar.gz"
+    sha256 "caf508597c525f9b8bfff187e270666309f63115af30f7d68b16143a403c8356"
   end
 
   resource "httpx" do
-    url "https://files.pythonhosted.org/packages/ae/23/f7beaf11a8b95fc173b8979c4bfd23ea7711c5ebd458d657d24a59df7e9f/httpx-0.24.0.tar.gz"
-    sha256 "507d676fc3e26110d41df7d35ebd8b3b8585052450f4097401c9be59d928c63e"
+    url "https://files.pythonhosted.org/packages/f8/2a/114d454cb77657dbf6a293e69390b96318930ace9cd96b51b99682493276/httpx-0.24.1.tar.gz"
+    sha256 "5853a43053df830c20f8110c5e69fe44d035d850b2dfe795e196f00fdb774bdd"
   end
 
   resource "hypothesis" do

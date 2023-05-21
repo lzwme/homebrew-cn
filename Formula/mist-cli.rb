@@ -1,14 +1,14 @@
 class MistCli < Formula
   desc "Mac command-line tool that automatically downloads macOS Firmwares / Installers"
   homepage "https://github.com/ninxsoft/mist-cli"
-  url "https://ghproxy.com/https://github.com/ninxsoft/mist-cli/archive/refs/tags/v1.11.tar.gz"
-  sha256 "f280e8ce2e40d78eec5525b2c1cbd8e399815d7f61ec5ce01dcd6baa642b9b8c"
+  url "https://ghproxy.com/https://github.com/ninxsoft/mist-cli/archive/refs/tags/v1.12.tar.gz"
+  sha256 "1001d2913062ec2ba6c55732b7bb4eeea53986ddeb23e94a07f44e5dc177accb"
   license "MIT"
   head "https://github.com/ninxsoft/mist-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f7b77f41870a6428e2d44a2c9226e3d1a7b74f562ed761b3730b9b310f976d48"
-    sha256 cellar: :any_skip_relocation, ventura:       "cd160e84a3164ca48acc56bb3359abba1c87f54e2948a83143f2e53268ff7f25"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bd38464c0250f0012903da27695ca5bd88d80ded74956e7dc9823b4a7f173752"
+    sha256 cellar: :any_skip_relocation, ventura:       "501a9c0552f2f5a5bba0b6274eb8e3f38169c932631db752abd46d7f46575af4"
   end
 
   # mist-cli requires Swift 5.8

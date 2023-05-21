@@ -1,19 +1,18 @@
 class Inadyn < Formula
   desc "Dynamic DNS client with IPv4, IPv6, and SSL/TLS support"
   homepage "https://troglobit.com/projects/inadyn/"
-  url "https://ghproxy.com/https://github.com/troglobit/inadyn/releases/download/v2.10.0/inadyn-2.10.0.tar.xz"
-  sha256 "58ca61afdc0554b63b3eba1265caa1049c783d0ccfdbabc98273266466d8f142"
+  url "https://ghproxy.com/https://github.com/troglobit/inadyn/releases/download/v2.11.0/inadyn-2.11.0.tar.xz"
+  sha256 "9c8b2a425acb9681564e9fc25a319f2109c7d2ebe1ffe99b06d4a722efb6ecba"
   license all_of: ["GPL-2.0-or-later", "ISC", "MIT"]
 
   bottle do
-    sha256 arm64_ventura:  "6b8253cd3c5d08cb1fae5aa4aa7bbc615ed9783cc48782b979fb951eb4b8b751"
-    sha256 arm64_monterey: "086a2de0488d7686306eca87b9d12343cba8be9ccf98368cb1c027444bab06ee"
-    sha256 arm64_big_sur:  "d6e580a78016e72d57f7c8ae6da22b32f95c06147d5242d05c976f6783f5da45"
-    sha256 ventura:        "16719ab1899b624cf9e9707d64e3e1a0e3ad67b30ed762649abf33efedd07f14"
-    sha256 monterey:       "be2051f96804540b7bfa6c4d8c83922331ec2348d290e817d1fe7ac268d534d5"
-    sha256 big_sur:        "1b37f802a5b200470c67b63f0634cffdec331216cf294bebfb77714f353c8c0b"
-    sha256 catalina:       "98bb14ca5540b81c0f6a9a7565ac1bbb974b3d26f2ed9d9b5abb366c9e4177ec"
-    sha256 x86_64_linux:   "273fe788b95edd871e53da319f67221b49dc2b88dffef9be9b5ce62b7f84ad83"
+    sha256 arm64_ventura:  "698ac07a4d325652848e18f45a209fd5ae07bcf02ffed533183d2ae466ef2150"
+    sha256 arm64_monterey: "5e45cd2280d8920b15fce3d5825fba0f705506fc430e8b65d0cdec466c1805a2"
+    sha256 arm64_big_sur:  "f9c7ff2d284b203e63793ee34fc56a171acdc99e7ccbb893e4fc7ce5c3624c33"
+    sha256 ventura:        "7853e374a5991661db97cc58e9e6c5d37b76308c0e99cd1f093c88ac980ef836"
+    sha256 monterey:       "b884d4ccafd28876a4bb6ff25aa6db00dc15dd7f87a77163a53393d8bf17d123"
+    sha256 big_sur:        "97e02510700ff61ca2b0932273d15e03159cf01a38df843350868ba4cda095cc"
+    sha256 x86_64_linux:   "dd28084bcb90b80a67470ae446b87acfb980ae49228abb6a5a422085684ddaff"
   end
 
   depends_on "autoconf" => :build
