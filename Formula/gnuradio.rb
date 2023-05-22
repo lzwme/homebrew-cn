@@ -6,6 +6,7 @@ class Gnuradio < Formula
   url "https://ghproxy.com/https://github.com/gnuradio/gnuradio/archive/refs/tags/v3.10.6.0.tar.gz"
   sha256 "c1a8c09f975d224b27dad9c8e2e7fed1f7cde9bc04d30b004afe8e28bb3f45c6"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/gnuradio/gnuradio.git", branch: "main"
 
   livecheck do
@@ -14,13 +15,13 @@ class Gnuradio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "21ec6d8ffb89878c176bd53f3c42e7735baf9fe0b04852bb55a8aae810571582"
-    sha256 cellar: :any,                 arm64_monterey: "b6d3dba0920c7bf9a6ff0edeb9efaa2410e330629fda6b0df030339aff19bba5"
-    sha256 cellar: :any,                 arm64_big_sur:  "0ba5721affa4f9a64d2f2a7e292be8adbe8161039f71f7ae5a2cf80c963d7c42"
-    sha256 cellar: :any,                 ventura:        "28341e62f1d653db07474e63b3ca10173df5c862978714bc4a37eebd0d320eb6"
-    sha256 cellar: :any,                 monterey:       "b65600181e916abcb9042893352bdf192beb7b5d42566f7361789e6d6074269b"
-    sha256 cellar: :any,                 big_sur:        "8e88e34a827c2edc81dbce43bedfcf32f19d441e74a8f0e78c64805f096e5170"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e7be880643cdad2de225305022ea3ba3d5d3cf9c195423aacba87603c2cfc9b"
+    sha256 cellar: :any,                 arm64_ventura:  "6e490951fcfad338d3b198a47025f026dc62bc1c47243acecda96b5d5d4272a9"
+    sha256 cellar: :any,                 arm64_monterey: "da19bf0ca3e76f19f62ea1d61adadf756d84fba0e222ad353b8f4a8661dbed5e"
+    sha256 cellar: :any,                 arm64_big_sur:  "74e258e2eff0145db04c8306130d40423d86e38a6179051b31698087a36a50af"
+    sha256 cellar: :any,                 ventura:        "06815d2b16d1a0c7a2bb9f9a967caed87b012d820ea3713c2410a84060bc6a1c"
+    sha256 cellar: :any,                 monterey:       "f8435123e72a0dffbe0cdc00aab8f14d0cd43355e507a98043e87e1fdf6b3a95"
+    sha256 cellar: :any,                 big_sur:        "76ae02084defae7c189e90f114b30dc32443f9d79ef5a4fb124b297d41bc420b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6d64533ba3b1674e267e63df9384853328073e6abf960abdd31d24771767c76"
   end
 
   depends_on "cmake" => :build

@@ -4,15 +4,16 @@ class Paps < Formula
   url "https://ghproxy.com/https://github.com/dov/paps/archive/v0.8.0.tar.gz"
   sha256 "8fd8db04e6f8c5c164806d2c1b5fea6096daf583f83f06d1e4813ea61edc291f"
   license "LGPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "e3326fb171dfcd3f5a36a90549d48eac049405952eede125f920996c007b7fdf"
-    sha256 cellar: :any, arm64_monterey: "6ed29020cb058bab185f934c04a3e4adc08f8e36ba4859c3db9aadf3a4bb3a32"
-    sha256 cellar: :any, arm64_big_sur:  "15d0131e38f17ba32c9778d03ef3323f86fe205082fb72fdb66ecaa7e4a2dd52"
-    sha256 cellar: :any, ventura:        "6458c23bcde24b31b736ef9b610b4adb824edc09438bd94e3ca14e00efa0b6c0"
-    sha256 cellar: :any, monterey:       "eb7e80f53f60756a9c1153ef1d52832c78c942f40d42b1c2c789e4a44fa4a57f"
-    sha256 cellar: :any, big_sur:        "3a00997c25f0fb731bf76583d47b5b2680c255949ed5f2e8981e0a54a64134dd"
-    sha256               x86_64_linux:   "08926b1df0c882015a3a40593dfefc5d8ac0cbace74afc832fb3399e465e12b2"
+    sha256 cellar: :any, arm64_ventura:  "c3879ff04dc0f1f00c27b53cf77ee50381c0385509a5cfaa790229b6aaf4411c"
+    sha256 cellar: :any, arm64_monterey: "1c9dec96fe4e4a5de3265ba1e861bfd2b4fc1fe75a48f035472a1c5354f257c4"
+    sha256 cellar: :any, arm64_big_sur:  "fb997c783473d62aa8d86159c90397f89017e93e0c7f9f855926f6ec6936e096"
+    sha256 cellar: :any, ventura:        "403b5bfafbda176686cffdf04975f7afa0863df2a41df04215f9e72c8ccd51ef"
+    sha256 cellar: :any, monterey:       "06b336d256bd4147beed5266c02aeb34233dc2fbd0aba4f2d666819e8da856f9"
+    sha256 cellar: :any, big_sur:        "d7a38d585b97d3a04b947f13b79129d756f14c8bf44185c29aa780d182f32842"
+    sha256               x86_64_linux:   "1aaa98e10292d47452e9bd79f0664b026d6fc49779bcd9c86fb0ca510b927cec"
   end
 
   depends_on "meson" => :build

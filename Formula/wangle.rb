@@ -4,16 +4,17 @@ class Wangle < Formula
   url "https://ghproxy.com/https://github.com/facebook/wangle/releases/download/v2023.05.15.00/wangle-v2023.05.15.00.tar.gz"
   sha256 "2b12abd6c17319ec6f648bdcb4f6516e08044282aa77aad455447b3a01c2b22f"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/facebook/wangle.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6d6627503a6bfb858f2a7963eb9bbb3a589783abfeab7db8059aab2caba12ff1"
-    sha256 cellar: :any,                 arm64_monterey: "c5161fd658983a3f32b844e5d6a64bd762d0c8e93a3f4202842a8941fe933a07"
-    sha256 cellar: :any,                 arm64_big_sur:  "16fb5c736d7718e7d4e5a652c211bea7454360e47df6fa17a2d1afa8cbd153dd"
-    sha256 cellar: :any,                 ventura:        "e72a0c31363125fd53eca25e4bb5139e46ecb6edf2b44c23102801bd550bbd8b"
-    sha256 cellar: :any,                 monterey:       "0104c8e2f303b03ac9a3a23d9beeafb8cdcabce5ed8f3c38c64fa01ecf9993d5"
-    sha256 cellar: :any,                 big_sur:        "27cbe6b8258020809666289e4fda3bfffbdb8b2c759cd5d1e11c94dbcfa6f070"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4a913c0503d23c81da94aff1bab0b60236eeb163e7c9cc1a9c7d668ad8167dd"
+    sha256 cellar: :any,                 arm64_ventura:  "d79a52046445b652d14517882048f434f0ad1417423a28b474f215b56dde00d1"
+    sha256 cellar: :any,                 arm64_monterey: "b88e652b69abd063ac9da02854932becfdacf5a0150c8e21028b44205ea29ed9"
+    sha256 cellar: :any,                 arm64_big_sur:  "1af83913e350dae908c180b737c1ff8431473a6987af77100e3efdb325204e9a"
+    sha256 cellar: :any,                 ventura:        "40578fa79984b98ba4297e90a4b50362c4ee8e76164ab23c18b1a0d506194a69"
+    sha256 cellar: :any,                 monterey:       "93a7f4a9abdb6857be92506fa53c528b910e1fe5151a1bcc5e9015c3508da58a"
+    sha256 cellar: :any,                 big_sur:        "e09d9fd5770e86cda277cbe96e2c3ff879332c1d1b70fb4c521270c01b55bad1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "233687c537616f28375dc7142fff10114a4619f6ce43f16340545d1eb7c8a515"
   end
 
   depends_on "cmake" => :build

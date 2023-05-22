@@ -1,8 +1,8 @@
 class Openconnect < Formula
   desc "Open client for Cisco AnyConnect VPN"
   homepage "https://www.infradead.org/openconnect/"
-  url "https://www.infradead.org/openconnect/download/openconnect-9.11.tar.gz"
-  sha256 "a3c63441395ebc073995a5f4713ab5599af63c04f7492b9b48df11a7fbcb06c7"
+  url "https://www.infradead.org/openconnect/download/openconnect-9.12.tar.gz"
+  sha256 "a2bedce3aa4dfe75e36e407e48e8e8bc91d46def5335ac9564fbf91bd4b2413e"
   license "LGPL-2.1-only"
 
   livecheck do
@@ -11,13 +11,13 @@ class Openconnect < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "4c6cbc54440c7c62a7816ab6a2751de284aedf3f7e0fdc5c5e2bb257eb5d30d6"
-    sha256 arm64_monterey: "632379312ace173ee8df4ab6a34b8790cda132fbb04c5e8699f66a750bb40338"
-    sha256 arm64_big_sur:  "116f5cf88b9018e4b5de451de7867a0472a3789792366527d145b4e333c8f86f"
-    sha256 ventura:        "b2df25b2d3fe41f6f692f11bd600f0612c8d416a0824871a74bce9eb44776017"
-    sha256 monterey:       "12bcdba25dcefcd693c93aaa5fc570fe9599e02cce5ccfdbff2d4f3cbc4c1dff"
-    sha256 big_sur:        "2d9860fd935442d985c608c044b00318bd5c43ed1e7226e3b4112c0a925c18f7"
-    sha256 x86_64_linux:   "e2d6425aa942d399b1cec3e39d4d35a447ecf4cbe46a2e22243fc305659f9d23"
+    sha256 arm64_ventura:  "5046fefc55cc7812e1ffce03f00ff5bd3e8c08f1a743a8af59f5ab9965950806"
+    sha256 arm64_monterey: "b177be2f871aedf5f464ce3ad013de36c8873cf896447619a43b62ae9a8e8fed"
+    sha256 arm64_big_sur:  "c35595ec111e4ca4decf99647017b9461531b3b8f70ab804bae311501ca6c39b"
+    sha256 ventura:        "f8c9b328f46d39e50839fa24f7997244da7deaf2925d1a5f1f3002a88ca57bb9"
+    sha256 monterey:       "984e1c2b131997ad2800fb5a2a184f2b6fe08ed40c939ada2ab70c3d880b49f2"
+    sha256 big_sur:        "1148d11c813378bb5b754c111564ccbf948e624a6925941e54626ea63852a0fd"
+    sha256 x86_64_linux:   "ba03e1ce32924cb034c77db27bb464661769072e31216b9d2224daf84270a394"
   end
 
   head do
@@ -55,10 +55,7 @@ class Openconnect < Formula
     ]
 
     system "./configure", *args
-
-    # We pass noinst_PROGRAMS to avoid a failure with os-tcp-mtu, which is optional
-    # Issue ref: https://gitlab.com/openconnect/openconnect/-/issues/612#note_1394913896
-    system "make", "install", "noinst_PROGRAMS="
+    system "make", "install"
   end
 
   def caveats

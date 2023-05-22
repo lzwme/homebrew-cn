@@ -1,23 +1,23 @@
 class Mpage < Formula
   desc "Many to one page printing utility"
   homepage "https://mesa.nl/pub/mpage/README"
-  url "https://mesa.nl/pub/mpage/mpage-2.5.7.tgz"
-  sha256 "51ab9c4e5fdd37e03c90df6756f30c0b61a34f066cb625f8924feedc4b3ec3fe"
+  url "https://mesa.nl/pub/mpage/mpage-2.5.8.tgz"
+  sha256 "2351e91d25794b358df6618f17a7013a28d350ec20408fe06f8123dc4673fe93"
   license "GPL-2.0-or-later"
 
+  livecheck do
+    url "https://mesa.nl/pub/mpage/"
+    regex(/href=.*?mpage[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
-    sha256 arm64_ventura:  "cd01e6be613230f334dc99b55c4dfa89a2007261233079513a91f762b6274604"
-    sha256 arm64_monterey: "6a83b49a225ea3e7c45f06bcb70fc7c822b07aa80a23f51667e74d1264f6ef03"
-    sha256 arm64_big_sur:  "35ecb743e454140d1a0651cf435d5658a295cf7c97940635c71c644fdbe59646"
-    sha256 ventura:        "31b73fe1d79c5ac5904a3a8248a9471da356b0552fd032f1f445768301283edc"
-    sha256 monterey:       "3df1930d88318f57b843ec99a1f7a7cfe111dd6a5d3f0042b044277fcfd54819"
-    sha256 big_sur:        "36572d6c594d5c257a136d19ce3c39be76dc7c81d5757817cd78992c81e0efbc"
-    sha256 catalina:       "4b21863fb89e5381c2d4c3ad496809014479b961c3885dbe09ee55434382db6f"
-    sha256 mojave:         "aba18c308b7607332d0e3d9ab0f02fd44b1bdf1f9a4dbd4baee828261172fc2e"
-    sha256 high_sierra:    "fb22af4c695ec3b6e27980a8b180bf4a7904b81ce5ff51f46f0d5ccdc5da8d07"
-    sha256 sierra:         "2d020c69ee688a3a2d82f5f2c531a9f7abaf3923f0024e3b5eb2f1466992d7c1"
-    sha256 el_capitan:     "4b899cd8a7280c7317513a51f6b3227f88c6324c39712530341b9d108d829ee5"
-    sha256 x86_64_linux:   "d5e29f0b48f8fc99ce3f047abeb39bc95d4b316257b328b092d04191fb8bcfcc"
+    sha256 arm64_ventura:  "73e7baeaab7049ad6283a84d4ded710eee5597bf08afaf91fe9d3e63fa254b28"
+    sha256 arm64_monterey: "0a67c5c240e36df17b8133621bc3a620a8bbd211a44f3971edff3d81a363d652"
+    sha256 arm64_big_sur:  "ab9465239a6f52df582be02ff654c4d5f64cf84b0674bb8326e104119dbc185a"
+    sha256 ventura:        "fe00986658cf5c208b1335724d6856090f9b957c1bc937c016270cbc132d506a"
+    sha256 monterey:       "a030ebbb33d31ab4620835a6d6fbdd335f5d9570198ed652c8cab55831a5b29b"
+    sha256 big_sur:        "77f4a54443d7d8f6ee681d061c1e30aabc9021ceb6a5ff6a26bc85d992824f11"
+    sha256 x86_64_linux:   "6a4e4a8c70d9b83690c2e0c3bd94574f8e3e6a0cadcf12cc80ba197d79186c56"
   end
 
   def install

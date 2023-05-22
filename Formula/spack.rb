@@ -1,8 +1,8 @@
 class Spack < Formula
   desc "Package manager that builds multiple versions and configurations of software"
   homepage "https://spack.io"
-  url "https://ghproxy.com/https://github.com/spack/spack/archive/v0.19.2.tar.gz"
-  sha256 "4978b37da50f5690f4e1aa0cfe3975a89ccef85d96c68d417ea0716a8ce3aa98"
+  url "https://ghproxy.com/https://github.com/spack/spack/archive/v0.20.0.tar.gz"
+  sha256 "a189b4e8173eefdf76617445125b329d912f730767048846c38c8a2637396a7d"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/spack/spack.git", branch: "develop"
 
@@ -12,13 +12,13 @@ class Spack < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "537c9b1165797769bec834018b8194cc27b4ae350f5b8e58f108a173b87b30c6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "537c9b1165797769bec834018b8194cc27b4ae350f5b8e58f108a173b87b30c6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "537c9b1165797769bec834018b8194cc27b4ae350f5b8e58f108a173b87b30c6"
-    sha256 cellar: :any_skip_relocation, ventura:        "f337781daace40e9c7a338df5be67747679c9a5d16ec185afcb1416ce9150bf8"
-    sha256 cellar: :any_skip_relocation, monterey:       "f337781daace40e9c7a338df5be67747679c9a5d16ec185afcb1416ce9150bf8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f337781daace40e9c7a338df5be67747679c9a5d16ec185afcb1416ce9150bf8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cac0fa099061422d1150fa175f0905fac81f721e79b92e0ad795548ef4321875"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "055156567773c2be5a98e28b5d161f199480fa60a0fedf6b04b60c2afd3dba92"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "055156567773c2be5a98e28b5d161f199480fa60a0fedf6b04b60c2afd3dba92"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "055156567773c2be5a98e28b5d161f199480fa60a0fedf6b04b60c2afd3dba92"
+    sha256 cellar: :any_skip_relocation, ventura:        "53c1d31ad25dae2a66c6fa9a9842d66659f19ffe4190679839e32cb0cbc653bc"
+    sha256 cellar: :any_skip_relocation, monterey:       "53c1d31ad25dae2a66c6fa9a9842d66659f19ffe4190679839e32cb0cbc653bc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "53c1d31ad25dae2a66c6fa9a9842d66659f19ffe4190679839e32cb0cbc653bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0314777e3c63212048d0e9354476fb7f8c576c83a07d77cb7f6af59a2862fb3"
   end
 
   uses_from_macos "python"

@@ -2,7 +2,7 @@ class Clip < Formula
   desc "Create high-quality charts from the command-line"
   homepage "https://github.com/asmuth/clip"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/asmuth/clip.git", branch: "master"
 
   stable do
@@ -13,14 +13,13 @@ class Clip < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_ventura:  "0362b6fffaa8fd7d58a8963733ab275ac653fcdc994929398f47f47ad6a5b66b"
-    sha256 cellar: :any,                 arm64_monterey: "f8d3454c89db228d08ea5517d3ca84f87c8e2241d34f9953918d66af7545aa93"
-    sha256 cellar: :any,                 arm64_big_sur:  "c1be9a72533df053f49ba01bafb915797ec3692a41a37cc7d19726f8b7c5a736"
-    sha256 cellar: :any,                 ventura:        "f67791a8561fc5fe1a9109bbf55db6a45c39f5e1111252d24236450f26e3f90a"
-    sha256 cellar: :any,                 monterey:       "e0a0bd6245602cdffe82b1ef1688d75c2e55950b70611017ab1dbf48aa9d9397"
-    sha256 cellar: :any,                 big_sur:        "13e6b81e9ac8bf07dafa80d45d6599ec5a502042a911749e9303ae17924610db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3d7cb6ca677afbb3cfb35e04b20909bda1f6d8b1416fec887c726f6c2c7d26a"
+    sha256 cellar: :any,                 arm64_ventura:  "7bf42be3c4e801e44703b3c8a962c57d8954d3e485ea543006fe2ea40de6d1f8"
+    sha256 cellar: :any,                 arm64_monterey: "19abd42b4275674b6dc23f3bd73ecc964c511f13f5005789ed1245d59a3eb1fe"
+    sha256 cellar: :any,                 arm64_big_sur:  "aee203a305119447f0b85edbd3a4402fac8eac9173a0140d61545fce9f5a82ee"
+    sha256 cellar: :any,                 ventura:        "31cac271bb4e5d72a86455c7761d70619afe06b25269c617ba29a98d4e96eba9"
+    sha256 cellar: :any,                 monterey:       "e56a30f599d2a0e117bffba8507bb4ee1f2be06c8b75784875312287138caf00"
+    sha256 cellar: :any,                 big_sur:        "89fba65ae4a95e419d4b3838360911954362a97d0d6613734d72c2a1f4b10567"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec01ad4f33c27fedc8ee857603096d8495623d2095baf7714a1a95a2665a1fac"
   end
 
   depends_on "cmake" => :build

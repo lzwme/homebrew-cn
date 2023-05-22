@@ -1,19 +1,19 @@
 class Rtx < Formula
   desc "Polyglot runtime manager (asdf rust clone)"
   homepage "https://github.com/jdxcode/rtx"
-  url "https://ghproxy.com/https://github.com/jdxcode/rtx/archive/refs/tags/v1.30.1.tar.gz"
-  sha256 "386ea54f2c2cf7dfa647b6ab0ad5dc51889b4602893c4c64beb20f38d943c507"
+  url "https://ghproxy.com/https://github.com/jdxcode/rtx/archive/refs/tags/v1.30.3.tar.gz"
+  sha256 "489689e79655a341a0cecf13b81eba471bd9497a4888a159a5eed0d90b3c9fa7"
   license "MIT"
   head "https://github.com/jdxcode/rtx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "68137ad35b89fbb8972b745ce7f032752b5d207925237f8d232a3bb836eff4d7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "66df770f1af0c1693a0fe1b5ce01d42220cc2cc6d277cb8c73edd22694f27b08"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2b83f8fee5d666e7469fd9734bc7c9411ed72251daf71805842d23e4f1d7f2f2"
-    sha256 cellar: :any_skip_relocation, ventura:        "346f78e71043d6e6bbc1f3c569a034ca065832036858422e0822c07bac4f3877"
-    sha256 cellar: :any_skip_relocation, monterey:       "f26ef8981c24929543a4d9327e5a3c839b137959be100e1768a8039542e854f8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "28ddc54d71d60f1c8660785d8c41b3c5402038176a029ea2a8c1e551ab0e5a10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf1e7cab0d64173b5db4b46839e17b320af43c576184e0be740b5d607d6b0e5d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8c2460712ff5ad8f65f5575c2081727b3617774eb08f8f6d96d89fcb46284235"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "12c67d048c6476e74acc57a47dfefc1a7d05674f2344d2c68219ff33f62dce5b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8fca738b2bf5cbf6aeb62ad205bd2ddabe8e67a66faecdfa6cab786a1ef0d325"
+    sha256 cellar: :any_skip_relocation, ventura:        "acc36fcf18216322daef8305df1acd8f2d518c2cf4d416e84868cfa7fd30e198"
+    sha256 cellar: :any_skip_relocation, monterey:       "7175735dd3629adde51edfce82ad3bf2d79cd4d32844e30cb4ad96b7cf0fcf93"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4fe2337ec2b26e49261c7a8a4cf3c8cf889f66d6efe4438df2338ce2dd16507a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4461d446b7f21c85b2307c60104dae3ee20be5a35f7679d14075c3f4895d2d6b"
   end
 
   depends_on "rust" => :build

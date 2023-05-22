@@ -1,18 +1,18 @@
 class AngleGrinder < Formula
   desc "Slice and dice log files on the command-line"
   homepage "https://github.com/rcoh/angle-grinder"
-  url "https://ghproxy.com/https://github.com/rcoh/angle-grinder/archive/v0.19.1.tar.gz"
-  sha256 "d2273df2b2eb9845aedaa5476d7c8a90e01c3a0d33f1b11cd33153c5d3ebf3aa"
+  url "https://ghproxy.com/https://github.com/rcoh/angle-grinder/archive/v0.19.2.tar.gz"
+  sha256 "3a5637bbd3ef3fc2f8164a1af90b8894f79c1b2adb89a874f1f3c5a56006e18b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c60e52690fb7648ebf798215d592d78dba78736df5dfc9e090634e83db268843"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "468ec6a9577069f2acf8f0f46af07189f50b72eedbb1e6e05a43ccff31edb564"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9c26325c93dcc4ddaf4ddcbbabd54e2b671b2ff0197b22be879e83b86d62abe4"
-    sha256 cellar: :any_skip_relocation, ventura:        "91a94e9ab13845937a2335d5596a62166c091c8350b267e4da1f558719f4eb3e"
-    sha256 cellar: :any_skip_relocation, monterey:       "947b4de057bc5f5693371fc4aeab357fb36460e9f0c37b6f262f473a2ceecaad"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0b5e5ab8fbdfbab7dedc24440fbc6f9fd3846455f5f5820966c2c0ff7810b76b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0bfef8b8578865bac1f26b52faf895b1153705c3cd4ccc90fc71a847e2a37215"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0898c435c13589304eb210f15f6ab3ca649f2f6487a9380dcc0f61f7117d5179"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "448311b0df68d2960d91bae38fe6a70ae43bdaee5b5f282a18793c1eaa2915e5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6197b3cb300eb4f0ee9f3c7d87cf89ea5f0812ab94297169980a2cc0a589c5d0"
+    sha256 cellar: :any_skip_relocation, ventura:        "13d49ccb3ec793eb72148bf9b9ef165c65198cfe912f5bfade27657e19c30e9c"
+    sha256 cellar: :any_skip_relocation, monterey:       "4e53031630575ee7cd4b17d4f9916c055c6f006c7da8965e7c53e0ec324e6c4d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c800568a011cd5eb5717df3640524b4248656adf4d9a7cc2575ce40ad744b940"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b8c8908f8402680262893d66c663a9c4d98b572e71f5df6a44fdec3ccd04be3"
   end
 
   depends_on "rust" => :build

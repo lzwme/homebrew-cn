@@ -1,31 +1,31 @@
 class Fmt < Formula
   desc "Open-source formatting library for C++"
   homepage "https://fmt.dev/"
-  url "https://ghproxy.com/https://github.com/fmtlib/fmt/archive/9.1.0.tar.gz"
-  sha256 "5dea48d1fcddc3ec571ce2058e13910a0d4a6bab4cc09a809d8b1dd1c88ae6f2"
+  url "https://ghproxy.com/https://github.com/fmtlib/fmt/archive/10.0.0.tar.gz"
+  sha256 "ede1b6b42188163a3f2e0f25ad5c0637eca564bd8df74d02e31a311dd6b37ad8"
   license "MIT"
   head "https://github.com/fmtlib/fmt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "366409825e592504a1a68e63c5c7415d1d90a08f4c4395bb856efb245b85cd3c"
-    sha256 cellar: :any,                 arm64_monterey: "dfd44ffca7165995a6cdca2191e4e5bb6563385a71375fcd22a002e5e63d3133"
-    sha256 cellar: :any,                 arm64_big_sur:  "20658415047bbd2856d1d4b5cd4886daeab829948a4f546e24bd176ba17d9e97"
-    sha256 cellar: :any,                 ventura:        "34b2d0bfe62a0114aff46c0ae2a78e5d6e789ab7f55bc8035dbde7ac22a10a6a"
-    sha256 cellar: :any,                 monterey:       "324344e5048ea4bf92352dcdfae63832d447c0d27cc01d45eecc6a2bebee6b5d"
-    sha256 cellar: :any,                 big_sur:        "3616cabdb7e41f47275dac7bd60bc3496f375550eb0462f96edb5736c31d6c90"
-    sha256 cellar: :any,                 catalina:       "d99a9571471d998a20f654f32499096037b4db5c33819d1c324cd29cea8f04bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "978a0685bf616cf383c4ffacf8210ad881f0f2d3ab94207005604648316dc32c"
+    sha256 cellar: :any,                 arm64_ventura:  "9afa87a18e3d433f93e2f73f745cbe2cf9a8c3727bb56e33d5f8520c4bf676df"
+    sha256 cellar: :any,                 arm64_monterey: "7707eadbcbeffaa4a8792a7bc32f8d55e2c534058f6f7d57df4dba8dceb0aa0f"
+    sha256 cellar: :any,                 arm64_big_sur:  "2c7442e8778aa6fcb2e5c9ca949929a15da54335f77de90ab6091456975be0a1"
+    sha256 cellar: :any,                 ventura:        "917617f5a1a915c7930f0ccddae8732223fa5e7a624389d2827dd323fc1ce336"
+    sha256 cellar: :any,                 monterey:       "b35edb2d90f70ae1cae402762ba28a9d07fb943cedcdf8f213945acf202b8c8a"
+    sha256 cellar: :any,                 big_sur:        "5417b3060fe63a4a5d9da427f30fcf5194160e8fa3e9f97e4743c80212d9d90d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f6477b43807b7741da0540a92098e07850b73f556adbc79504ef007ebec22798"
   end
 
   depends_on "cmake" => :build
 
   def install
-    system "cmake", ".", "-DBUILD_SHARED_LIBS=TRUE", *std_cmake_args
-    system "make", "install"
-    system "make", "clean"
-    system "cmake", ".", "-DBUILD_SHARED_LIBS=FALSE", *std_cmake_args
-    system "make"
-    lib.install "libfmt.a"
+    system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=TRUE", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
+    system "cmake", "-S", ".", "-B", "build-static", "-DBUILD_SHARED_LIBS=FALSE", *std_cmake_args
+    system "cmake", "--build", "build-static"
+    lib.install "build-static/libfmt.a"
   end
 
   test do

@@ -4,16 +4,16 @@ class Dartsim < Formula
   url "https://ghproxy.com/https://github.com/dartsim/dart/archive/v6.13.0.tar.gz"
   sha256 "4da3ff8cee056252a558b05625a5ff29b21e71f2995e6d7f789abbf6261895f7"
   license "BSD-2-Clause"
-  revision 2
+  revision 3
 
   bottle do
-    sha256                               arm64_ventura:  "55c146a0dd1ce842b59e1f7a054d349220f14444313257b24be156f3dedddc4e"
-    sha256                               arm64_monterey: "bc17ff9b3a90355537e826774d7edf5fe155f4d624377baec3cbe0fa867d10a9"
-    sha256                               arm64_big_sur:  "01b8afa4280a8583c4e2a07bd121494d249da65bdbf69d0bb18d5e81c69825df"
-    sha256                               ventura:        "70119711d6dd50cfdb88abd6601aeadeaa85b1d8f867ba46ff167748ec209276"
-    sha256                               monterey:       "88f4a74a68fafd990a61fd65d5b274c3212a220c35b98e5771b66cbe3af3f6c0"
-    sha256                               big_sur:        "a8f245344c5b81dc0f70be0333e8f7a97bb9759f59c150806fc34100630fc673"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e462d8e551b6ccdf90605c39d59a3d5fb2d941034abac46264a1b2328ba3b267"
+    sha256                               arm64_ventura:  "68675cf8db94036f1759ac9ad3019b6a0fe394c523c9260a7bd13d9b402aacf8"
+    sha256                               arm64_monterey: "b3e480184cb8fb5b46ffac522b873b6b422fa69656ef1a1ca55cdbec332227e3"
+    sha256                               arm64_big_sur:  "09b51aeae04c3893ed2e4c1b87df87a43db8c4549f47818eaa35ad59cc0dfd7f"
+    sha256                               ventura:        "7a790bf5d140b1b02cdd6e7992679fb44fdbe74c821f44cfc0d6aff958108460"
+    sha256                               monterey:       "aafcc389c3beae33d95c8dc13e6998036c3796fea8560ef7d4a0d7cfd4f7e845"
+    sha256                               big_sur:        "b4730cb15e677393a1305f5a60b1d170b7a26de1aeb55039cbbe348dcbac60da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9441cfaecbf9bcb2ed95c7d2f68d594cd81236fb07ac921c624a664cd58014a"
   end
 
   depends_on "cmake" => :build
