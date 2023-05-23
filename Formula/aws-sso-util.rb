@@ -9,21 +9,22 @@ class AwsSsoUtil < Formula
   head "https://github.com/benkehoe/aws-sso-util.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d131605e167741976919ce0c4d15e69b42187bf9924627baf9d66e8a6904a6e8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "efaf12490608b9f05f59eab392aa359c69052e795560d7935706260bc4083574"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bc2dc4db1569dc484c4420dba067086887c1e2098b90847f9fa053c14b5ae613"
-    sha256 cellar: :any_skip_relocation, ventura:        "fe60eb94d9c7c3079207850c458ea4648a99e4e4839c486b6580365472b137d3"
-    sha256 cellar: :any_skip_relocation, monterey:       "ed055da0ab72b72a64db947498e0542679d6900df4890cec32562972e382c4d2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3a381be7420b9e41caf2923333d4140f66f2e01ab874d0df9683b6ec771cc5dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a93e122ae8826c440b4ead91920be5df9a00e45b9d6efac49b3db1809bca90ec"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ceafcfe64e3e5125b4cd53c1e4639df842696197044142923ba9ffc6a5410b6d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "941298fbd9c1c958cfd3a1a3a6cc8f7d5eb1c60e55fc3464ed3acdf39a96b319"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "58f39198f7a7b367a3b47cf1e96a66081394b46599ead063596e18e82f216c2a"
+    sha256 cellar: :any_skip_relocation, ventura:        "4a3e546e73d24c383a512e4c9a2bde92f6d70ed4ae84d1c20a7ed1925eec8395"
+    sha256 cellar: :any_skip_relocation, monterey:       "96c162ba22f515a09afe150008dde8c9880a9975e0b1bd01d52d9b995856eca7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e573b3cfb58ed9db4433940eb2ede773a1d9b8c3e916dd2265a4dc954bd7a58e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e40291255adc273e98c71f467ab0e9a0087c0f144e1ca3ea7e64ec85b984415e"
   end
 
   depends_on "python@3.11"
   depends_on "six"
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/21/31/3f468da74c7de4fcf9b25591e682856389b3400b4b62f201e65f15ea3e07/attrs-22.2.0.tar.gz"
-    sha256 "c9227bfc2f01993c03f68db37d1d15c9690188323c067c641f1a35ca58185f99"
+    url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
+    sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
   end
 
   resource "aws-error-utils" do
@@ -37,23 +38,23 @@ class AwsSsoUtil < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/65/ba/4e39dff8f4c129e4c32d1655c0164d7d505e0da32f986240dc9b3d0ca4b2/boto3-1.26.58.tar.gz"
-    sha256 "89811efea5ac4eeba0a816a41e651fa06110926a7fdb7f20e5eb84e519902ee2"
+    url "https://files.pythonhosted.org/packages/6a/75/480b53782e0acde46db78bea73a55686514452f0ff4404d8ece4f391cd37/boto3-1.26.138.tar.gz"
+    sha256 "f0a78f94a7140b60960898fd86677e4e73cc96bd7f3e5c64fc5cc1818d04c7b8"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/37/06/31404b429e477c56a666e2badb17ce36a81efb2f6f4b9da9f1830a3bffb0/botocore-1.29.58.tar.gz"
-    sha256 "e4e0d05c1493bedc88bb78b24a08d79a60f3b9cea21a64edea3e8411823ecf82"
+    url "https://files.pythonhosted.org/packages/6d/f4/07a2ad9a3ba8e393616ad9401ca2f73d22a4144f893c2e6735a37a212fe1/botocore-1.29.138.tar.gz"
+    sha256 "31edc237088c104f7a05887646bbec31d7459dd2e108fd90cbffa315902817e2"
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
-    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
+    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
+    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/96/d7/1675d9089a1f4677df5eb29c3f8b064aa1e70c1251a0a8a127803158942d/charset-normalizer-3.0.1.tar.gz"
-    sha256 "ebea339af930f8ca5d7a699b921106c6e29c617fe9606fa7baa043c1cdae326f"
+    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
+    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
   end
 
   resource "click" do
@@ -86,24 +87,24 @@ class AwsSsoUtil < Formula
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
-  resource "PyYAML" do
+  resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
     sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/ee/391076f5937f0a8cdf5e53b701ffc91753e87b07d66bae4a09aa671897bf/requests-2.28.2.tar.gz"
-    sha256 "98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"
+    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
+    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/e1/eb/e57c93d5cd5edf8c1d124c831ef916601540db70acd96fa21fe60cef1365/s3transfer-0.6.0.tar.gz"
-    sha256 "2ed07d3866f523cc561bf4a00fc5535827981b117dd7876f036b0c1aca42c947"
+    url "https://files.pythonhosted.org/packages/49/bd/def2ab4c04063a5e114963aae90bcd3e3aca821a595124358b3b00244407/s3transfer-0.6.1.tar.gz"
+    sha256 "640bb492711f4c0c0905e1f62b6aaeb771881935ad27884852411f8e9cacbca9"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c5/52/fe421fb7364aa738b3506a2d99e4f3a56e079c0a798e9f4fa5e14c60922f/urllib3-1.26.14.tar.gz"
-    sha256 "076907bf8fd355cde77728471316625a4d2f7e713c125f51953bb5b3eecf4f72"
+    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
+    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
   end
 
   def install

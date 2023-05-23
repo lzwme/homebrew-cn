@@ -22,6 +22,11 @@ class SpacemanDiff < Formula
     assert_match "USAGE", output
 
     png = test_fixtures("test.png")
-    system "script", "-q", "/dev/null", "#{bin}/spaceman-diff", png, "a190ba", "100644", png, "000000", "100644"
+    cmd = if OS.linux?
+      ["script", "-q", "/dev/null", "-c", bin/"spaceman-diff"]
+    else
+      ["script", "-q", "/dev/null", bin/"spaceman-diff"]
+    end
+    system(*cmd, png, "a190ba", "100644", png, "000000", "100644")
   end
 end

@@ -1,8 +1,8 @@
 class Telegraf < Formula
   desc "Plugin-driven server agent for collecting & reporting metrics"
   homepage "https://www.influxdata.com/time-series-platform/telegraf/"
-  url "https://ghproxy.com/https://github.com/influxdata/telegraf/archive/refs/tags/v1.26.2.tar.gz"
-  sha256 "9759cd834a7ed96c81d67dd9859ae0db9fa3b762e8c8b8f873efd610f77ff76d"
+  url "https://ghproxy.com/https://github.com/influxdata/telegraf/archive/refs/tags/v1.26.3.tar.gz"
+  sha256 "42bb0437ffb4110381783f5066ab61fe78ea5c920241e8c3301afcbcdbccb0f9"
   license "MIT"
   head "https://github.com/influxdata/telegraf.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Telegraf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cfc578dad6232fbed8fa71ba18128bf08a99b73ca46204b2feb431f564b3a9a9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b9ca03add07a35b79b8f077c2969b6f3bac9642c1e634e92d73baa8d0ea5edbe"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4d084d0b24fe955c15c84fd6e7c41abb96e750f99886fad3761de5889928ae11"
-    sha256 cellar: :any_skip_relocation, ventura:        "516d7ccb3ab55510627aefcd1467cf39adf429f599cf042f91b7bc9c5c4c148b"
-    sha256 cellar: :any_skip_relocation, monterey:       "0a29f3604e18b11ab042f65451014049e8710000868bbd44753be292a6306b7b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6f363c8c36a3b2ac05c2db7301bbcf0771c528bc9790d7e23051d78cc936189f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b67d1d340acd3c367f16503ce1d10ec758edc6ec57ddae2eeb73b2908674498"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2a1f69244c06cde0ed69b83f867d5e005304f84c7296d9deb00f482e6efdcfb4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f2e5c040b0b321f8e3c19ab2e2f9a1c0973e04a7a2683a73b20dc155b07fc317"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3a1c73b055b2e273bfca919dfe4ff8b9089c136aa302adf64909dee74f1692c4"
+    sha256 cellar: :any_skip_relocation, ventura:        "72e603fd0f38a5adceb6ef204e9fef11cfd4cfe2b62927b50a09ca56df4d576d"
+    sha256 cellar: :any_skip_relocation, monterey:       "237590a2d810d44577b7e22285632750737a8253f30fef61a5b2b06c85816aba"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4abd622f03b6bf13e48eb79470283d445b557300a91488343c717b756369e72b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "77b2d071451aa32f827431439ff46103fbd36bd2447204cf2731749d1aa6d1da"
   end
 
   depends_on "go" => :build

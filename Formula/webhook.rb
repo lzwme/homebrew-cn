@@ -1,21 +1,19 @@
 class Webhook < Formula
   desc "Lightweight, configurable incoming webhook server"
   homepage "https://github.com/adnanh/webhook"
-  url "https://ghproxy.com/https://github.com/adnanh/webhook/archive/2.8.0.tar.gz"
-  sha256 "c521558083f96bcefef16575a6f3f98ac79c0160fd0073be5e76d6645e068398"
+  url "https://ghproxy.com/https://github.com/adnanh/webhook/archive/2.8.1.tar.gz"
+  sha256 "a1e3eb2231e5631ebb374b76a79c3bac9cbdc7010974395e2d5e4e2e62ffd187"
   license "MIT"
   head "https://github.com/adnanh/webhook.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d6d44cd57a6f9449c397152344acb7a83f90102488ea92e7b3a3e89e9c666dd2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2a243c7fe554c0380da0f68556ea1f1613b1847e94a4d21e89b5fe1a38e62b61"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9e77443d3500d2cd479cf3b326c66cc5c59a7009ddb63f2fb3492488e7b3412c"
-    sha256 cellar: :any_skip_relocation, ventura:        "2d37a39c5cdc90e47da0abd9aff2d4bcf3857eceb1c9f7453df6aa13aa097ba8"
-    sha256 cellar: :any_skip_relocation, monterey:       "135ca549d05cdf512acded9f75387cbe1a48969bcbcb75fd1dd3dfd247c0e61d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "836ee3a10e87e2208f0bc7f9e124b4cb51d0aa3bba16f76e835c4116836c2cf0"
-    sha256 cellar: :any_skip_relocation, catalina:       "b4a117234e85237fd2bf36fe7ec4176a773608b4d50044961f82874337c9cc6f"
-    sha256 cellar: :any_skip_relocation, mojave:         "9f1f89d07d6b764601887c316900072e4d599d254eb065840fca9b11562ce2cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b9d7fe8bda4f6a5f69d04d48230a8b17ad61d4544a07433a92ffa4abbc7c3a4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "17ab323f0bddf3df15751ab8e81bdb8dc9313d86f8885c641725e5bff5def2e3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "17ab323f0bddf3df15751ab8e81bdb8dc9313d86f8885c641725e5bff5def2e3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "17ab323f0bddf3df15751ab8e81bdb8dc9313d86f8885c641725e5bff5def2e3"
+    sha256 cellar: :any_skip_relocation, ventura:        "134b8aaaa2624e496cc11e0ff0f6b6b077d53a7a5fdf75521eac4c4f9d2a6e1f"
+    sha256 cellar: :any_skip_relocation, monterey:       "134b8aaaa2624e496cc11e0ff0f6b6b077d53a7a5fdf75521eac4c4f9d2a6e1f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "134b8aaaa2624e496cc11e0ff0f6b6b077d53a7a5fdf75521eac4c4f9d2a6e1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "234b20e6404e53867004ae3a96ea21e59cdf2c72c79a00175193560f61363eae"
   end
 
   depends_on "go" => :build

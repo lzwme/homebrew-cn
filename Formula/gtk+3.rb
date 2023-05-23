@@ -1,8 +1,8 @@
 class Gtkx3 < Formula
   desc "Toolkit for creating graphical user interfaces"
   homepage "https://gtk.org/"
-  url "https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.37.tar.xz"
-  sha256 "6745f0b4c053794151fd0f0e2474b077cccff5f83e9dd1bf3d39fe9fe5fb7f57"
+  url "https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.38.tar.xz"
+  sha256 "ce11decf018b25bdd8505544a4f87242854ec88be054d9ade5f3a20444dd8ee7"
   license "LGPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Gtkx3 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "e3d32e51f311c3b986198861fa0b2bda3426fba44c2f6d09c001af90fba24281"
-    sha256 arm64_monterey: "eaf4262525c6e79780c9558bf00717a6634abb3ab30b9156542d866b299df6d5"
-    sha256 arm64_big_sur:  "19a984eda5eafec3de927dcca21ce5d0b19896480b2d1dfdc8bd557a6dd4bef4"
-    sha256 ventura:        "8fa632e21375dd8f162ab10b0189180fb757eb47321c667c94bb52bd9443763b"
-    sha256 monterey:       "8f22c56c71572a2480da7773537219076c422fdc989fd6331ed165bf9547e8c0"
-    sha256 big_sur:        "6b7efa168de9389adaed3a748c2f24e326962af1492a3541233a12c6a15f31f1"
-    sha256 x86_64_linux:   "d73b18f997af5efe9001fd729500eb445c47d145a724a901acd351d6fff3bdf2"
+    sha256 arm64_ventura:  "12d42f5ba7caa43a83aba5babfee4cc745d8a12a58e108af642f366f2ca37d8f"
+    sha256 arm64_monterey: "9c57deb4a8e1360dfd057a58a24e6c7b4ce621ebd5916386cb8c4cd359691763"
+    sha256 arm64_big_sur:  "ce48bef582169d1f45bfa828b80214c9dd5204573699d2d97e631d29bdfcda27"
+    sha256 ventura:        "87f200d7945307fcb47cb2ea31da643d571c898b752e2e2ddecd62c1c4c64b51"
+    sha256 monterey:       "e0a18e7ae38a7ea9d5705e787fa01f3d4215c836e170f060662b85c1c0dd50cf"
+    sha256 big_sur:        "ad9c04a5ce0db0751cf1a485d60ec963aae7039c9332e0bcc972e06daacc8cc5"
+    sha256 x86_64_linux:   "84b8d60884ca0e11d3d86785415dd9d1d426c4900e9f3b62c71e0dc0ad0b2745"
   end
 
   depends_on "docbook" => :build

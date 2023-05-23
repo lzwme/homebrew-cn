@@ -1,19 +1,19 @@
 class Xplr < Formula
   desc "Hackable, minimal, fast TUI file explorer"
   homepage "https://github.com/sayanarijit/xplr"
-  url "https://ghproxy.com/https://github.com/sayanarijit/xplr/archive/v0.21.1.tar.gz"
-  sha256 "c4befb29d862bfaaaaae35da030785782a5d2aabb4b5859974d931ccf468069a"
+  url "https://ghproxy.com/https://github.com/sayanarijit/xplr/archive/v0.21.2.tar.gz"
+  sha256 "de433dfe87e903d3eaff4a8e55416609534cfe4a5ef86c0065d7bc405f353090"
   license "MIT"
   head "https://github.com/sayanarijit/xplr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e9e5e382e6581171e823d219db6c1204db8089d5f94ee7341c4f50821e38c5fe"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e8611cba347e000836c3fa7c79d84e5c51f7f9028098deb7d8d8b71c95ce3d2d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "27007841f69e199b785bf14f1ccdb87fea8afb00be348c311f3be6b0630e58af"
-    sha256 cellar: :any_skip_relocation, ventura:        "00a0d0ffec54298e124c620a6eb35b39ddfec2deb4fc0eae6739996ffd0e202c"
-    sha256 cellar: :any_skip_relocation, monterey:       "273bdbee27c92b6377c0b8a489cadb18d967a391bcafd01bb19b1ae7edfd8815"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5ba861c02ba0146d0367a3c787553b721896650515de04189a3816287ec97a55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "28f518f272f17fbe4bcf7929268398817e179c64b69e36210783e051c64b546d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fe612cc773c23626caab8555ddb7325e64813b12c12551ab5c1c4dd28c57deff"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7059857dc18a7003f8486ad88b2c6227ef7b0b87e88df421fcc1b7d89dbdc8b6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "be66c0f827359caf0127badc88dc929443e53c1955382ec982d3e298580b58d5"
+    sha256 cellar: :any_skip_relocation, ventura:        "da779a4a2da11f23dc67214e5c92c82804213b6dc15f8477c1096ee505fefc2b"
+    sha256 cellar: :any_skip_relocation, monterey:       "be1419a626d4f66be122b09eb679f09d13d2cd5476e799f92827679ae0df0afb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2b8b878c2f4eb2f20c98ae3b38c333e8645a7957ded47ef3206d4f41bf1f6a56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c3c0bc346680c2429382a13f2e868da3aae71858657d227ab5033653795740f"
   end
 
   depends_on "rust" => :build

@@ -1,18 +1,18 @@
 class PhpCsFixer < Formula
   desc "Tool to automatically fix PHP coding standards issues"
   homepage "https://cs.symfony.com/"
-  url "https://ghproxy.com/https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v3.16.0/php-cs-fixer.phar"
-  sha256 "0785737ec4b071f7d1fede1e44430b1fd8d15824ee9987a5e86338ae9ba65416"
+  url "https://ghproxy.com/https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v3.17.0/php-cs-fixer.phar"
+  sha256 "ae3a832028cc19498ef35953380dac8c8bd8a42ee45fcc86be727fefab7839f2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e205f5eb7fc4f155b5521e1d1ff5e41d5aebc1af9e86bb602a6fbeef1cc1910d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e205f5eb7fc4f155b5521e1d1ff5e41d5aebc1af9e86bb602a6fbeef1cc1910d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e205f5eb7fc4f155b5521e1d1ff5e41d5aebc1af9e86bb602a6fbeef1cc1910d"
-    sha256 cellar: :any_skip_relocation, ventura:        "e205f5eb7fc4f155b5521e1d1ff5e41d5aebc1af9e86bb602a6fbeef1cc1910d"
-    sha256 cellar: :any_skip_relocation, monterey:       "e205f5eb7fc4f155b5521e1d1ff5e41d5aebc1af9e86bb602a6fbeef1cc1910d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e205f5eb7fc4f155b5521e1d1ff5e41d5aebc1af9e86bb602a6fbeef1cc1910d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a445e663601751bd92b49e23045b4ccb2a6964b769c1141970cee5d4bb60edc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0fa935ac466a0cae488f5a6025dacf26b09c96c539b4ddddd24909ac24eb2194"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0fa935ac466a0cae488f5a6025dacf26b09c96c539b4ddddd24909ac24eb2194"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0fa935ac466a0cae488f5a6025dacf26b09c96c539b4ddddd24909ac24eb2194"
+    sha256 cellar: :any_skip_relocation, ventura:        "0fa935ac466a0cae488f5a6025dacf26b09c96c539b4ddddd24909ac24eb2194"
+    sha256 cellar: :any_skip_relocation, monterey:       "0fa935ac466a0cae488f5a6025dacf26b09c96c539b4ddddd24909ac24eb2194"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0fa935ac466a0cae488f5a6025dacf26b09c96c539b4ddddd24909ac24eb2194"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "088efc33496392564f15aaf486af77955c52816cc1e4e5245e321dff57dcfe51"
   end
 
   depends_on "php"

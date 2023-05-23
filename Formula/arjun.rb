@@ -8,20 +8,21 @@ class Arjun < Formula
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d6de4192a2bed46debf7428bbce37e30d8f22ae19f333b37df70c0b16f9898ef"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8b6849adebff0a65bd8b2d5d94226fa410090424711f031a34d1a1b12fc4c408"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1fe89651a6a6878618b528603415a5eda7bf0681788a42e02838f9e05a4ddc7b"
-    sha256 cellar: :any_skip_relocation, ventura:        "4f9189f11df646c580a5464eaa5918f8f983b457f604c6e37f6a7cc26c720ee5"
-    sha256 cellar: :any_skip_relocation, monterey:       "8bea002f1f521253bdb66ce0648cf89ee1260c24664314c352d456dbde497bde"
-    sha256 cellar: :any_skip_relocation, big_sur:        "18327ce9b574ed29f3f0436e3494ad1c8761f1d7216295bafc9fd49492c6b700"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7658ff17e225887775db2e9ba03d17e6853430751032181e73cfc73b01ee322e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eab0912e8df26af605a5d6079f291726da405e8472c66e752cb5480130f7df4f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b029ce875cfab6315d492531c977e10364cf656a7dd930cb351071557fa0f41f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d4a0d11e1ef26a43e7b6abc61e2c99a30015367b751f95df8932103111d1a706"
+    sha256 cellar: :any_skip_relocation, ventura:        "fc358d9f98519f15bda560a380e40584a5de6565e67d03ca1aa46f59f64d4d18"
+    sha256 cellar: :any_skip_relocation, monterey:       "60bcbde880f2ca15abe7ca6763db20431d23f6274e381401ba112a15f6f05ddc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "241f880c4d24eac04047c94a58943617ed66fc15128ca7f24d2c6320eacbfe45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c50942bb24762798a03c9099b7dbc7d5dbc93f2abc9e68c283d8e3447b67d0ca"
   end
 
   depends_on "python@3.11"
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
-    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
+    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
+    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "charset-normalizer" do
@@ -40,13 +41,13 @@ class Arjun < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/ee/391076f5937f0a8cdf5e53b701ffc91753e87b07d66bae4a09aa671897bf/requests-2.28.2.tar.gz"
-    sha256 "98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"
+    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
+    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
-    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
+    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
+    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
   end
 
   def install

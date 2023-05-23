@@ -2,8 +2,8 @@ class Yorkie < Formula
   desc "Document store for collaborative applications"
   homepage "https://yorkie.dev/"
   url "https://github.com/yorkie-team/yorkie.git",
-    tag:      "v0.3.4",
-    revision: "0b9f994459380e44deea211790bb8357acc97776"
+    tag:      "v0.3.5",
+    revision: "1a8531957aa35eba5a247666ef21d6c8ae57d8a2"
   license "Apache-2.0"
   head "https://github.com/yorkie-team/yorkie.git", branch: "main"
 
@@ -13,13 +13,13 @@ class Yorkie < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6f6c2b9a2a71f175cd4df317ded3c5c68ec17ed018f8c6a1aca2a23eacb3bf44"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "41f8c321e590ca4784fb7c5e280397209c2db5fe300b9ae42c073e0e4a9291cd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8a4188b91299d776e04c5b434d992aa9aaf19eb7c30f929fb1ffb6ae7fbcca5c"
-    sha256 cellar: :any_skip_relocation, ventura:        "79ca8ce890b3b2b3197ce404f626151ccb3fb9e34d896e2f2464564100cacc3c"
-    sha256 cellar: :any_skip_relocation, monterey:       "dcf548b05857e7590354411764a9f6fcbfc8902537c5d9e3d9aebe32d8abab8b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e6843ef8fed0242c2069a3e3e47a6003ef910e3ddeb4cf7d56ae721abc8f90d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0ef65e5452802fe95e5d869ed439e4de54f2de5bef3c60d78ea95c7e0dd03d7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9ba10d0caa19e703afe67dab4ea93dbbbc46e49dc6c5b299cccb92915b05bc6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e1a9f33ab9eb313504738be32ecc5b915c7b4f338ac64d3191aadd06ea3a2ee5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "806af7b4ef0297476dc8e8be6ee5b7f65401ae4372787ffc9358d9d7e31e1f14"
+    sha256 cellar: :any_skip_relocation, ventura:        "a505b780f33bb7e1a9b9680d7b226f609be4625c22b70d0d1ac5707f12962850"
+    sha256 cellar: :any_skip_relocation, monterey:       "428d788a6557120fc38d50a65f18f6287ccbe505afb71a5906782f190cf7b45a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "39ea4fc754ad9714b8a4c974467bac930d2c9281465772af9bba098a59e06e5b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ebdab5d0cf840ad7b9b905cad77a1839ef4ac853bfc7c455c1d7f6bfd971860"
   end
 
   depends_on "go" => :build

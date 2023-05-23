@@ -1,18 +1,18 @@
 class Rye < Formula
   desc "Experimental Package Management Solution for Python"
   homepage "https://rye-up.com/"
-  url "https://ghproxy.com/https://github.com/mitsuhiko/rye/archive/refs/tags/0.1.1.tar.gz"
-  sha256 "2951176225cbd8921880d34641cf94598658a835b90db813923c0bf58319f93f"
+  url "https://ghproxy.com/https://github.com/mitsuhiko/rye/archive/refs/tags/0.1.2.tar.gz"
+  sha256 "7ae00b1e377ee279eae74d4b4a6d63ec4fe89ec70d408926912faa11b42ace46"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5cf6d7f4334e16e10d75df1aa3d6a0b2a0ac154818c2eb2b5589ef38144014c6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b0e7bcb7e9e9f85a1bc3e76a465b6a8b8bfa469bd860bb9a40f85fdb36c76443"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a91b0b084021cdfffa5295693f64a5c7cd9ab97f5503e1e82eb59a917338930f"
-    sha256 cellar: :any_skip_relocation, ventura:        "aa87ccb554188df6e54ea1ca4fe57950cc53b1ca53cb14f30aeafafcf716aff3"
-    sha256 cellar: :any_skip_relocation, monterey:       "f060125d5ff01898038b97d63e7b5bc94e10fc41aaa4a90ee07a1e80654313e7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "28b296fde38519825158866330c2e76bde2e872b1c5c0d8719cf2c304935f3ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aaf36cd5182d4ca39c6aa3e80490dd3b7f714605255cb2edc98a45b187394078"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da27dc47aa609c06bc574f62677b14ae8c5d02ddf14ae9f719530d73c1069d2f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "18a1f0b8fa32d638be9f7d6acd831338cf923baee4ad33d9c87f1c372eadb6f6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "853d9ffa21b77a496a7b0fc8e843ccafb34f8aab3d7e95e3aa1ba7a069578dce"
+    sha256 cellar: :any_skip_relocation, ventura:        "a94f24f2b070ebc19b7dc6b0488ad2916c9b132e21590e88edd7d3d6b6ed4755"
+    sha256 cellar: :any_skip_relocation, monterey:       "777958dbf09cb4741175e49f2e2959cf592292ae42dd4fc315101edfbd5452e8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "147af3d64e97340b6cc0e070e7cc6f05784e6fd2924180ae555658ee724b0f90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2dd15889806903114df9505f2ee1b2b6e9bbae0c0675e27b55d24852697e8563"
   end
 
   depends_on "rust" => :build

@@ -1,8 +1,8 @@
 class Gcsfuse < Formula
   desc "User-space file system for interacting with Google Cloud"
   homepage "https://github.com/googlecloudplatform/gcsfuse"
-  url "https://ghproxy.com/https://github.com/GoogleCloudPlatform/gcsfuse/archive/v0.42.4.tar.gz"
-  sha256 "31bc5fc1539d6b30898c6b7278ea44b4cee7e8e0848ebc4d4e890364e67521f6"
+  url "https://ghproxy.com/https://github.com/GoogleCloudPlatform/gcsfuse/archive/v0.42.5.tar.gz"
+  sha256 "272ad522ebbbfe3da87ee00aeff5fe347d25a4a49499c254e482a59bbed5c692"
   license "Apache-2.0"
   head "https://github.com/GoogleCloudPlatform/gcsfuse.git", branch: "master"
 
@@ -12,13 +12,15 @@ class Gcsfuse < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7c18d2a2927b1ea646a130d09ff37f159a9fe66f070f13b6993acc0d0bb03004"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4fe88d2b32fb5ac75a0d279fdaf4f3992e58dbb8800dd041b235b70843afc2ba"
   end
 
   # gcc-11: The build tool has reset ENV; --env=std required.
   depends_on "go@1.19" => :build
   depends_on "libfuse"
   depends_on :linux # on macOS, requires closed-source macFUSE
+
+  patch :DATA
 
   def install
     # Build the build_gcsfuse tool. Ensure that it doesn't pick up any
@@ -36,3 +38,20 @@ class Gcsfuse < Formula
     system "#{sbin}/mount.gcsfuse", "--help"
   end
 end
+
+__END__
+diff --git a/tools/build_gcsfuse/main.go b/tools/build_gcsfuse/main.go
+index af26596..2454aab 100644
+--- a/tools/build_gcsfuse/main.go
++++ b/tools/build_gcsfuse/main.go
+@@ -136,9 +136,7 @@ func buildBinaries(dstDir, srcDir, version string, buildArgs []string) (err erro
+ 			"go",
+ 			"build",
+ 			"-o",
+-			path.Join(dstDir, bin.outputPath),
+-			"-C",
+-			srcDir)
++			path.Join(dstDir, bin.outputPath))
+
+ 		if path.Base(bin.outputPath) == "gcsfuse" {
+ 			cmd.Args = append(

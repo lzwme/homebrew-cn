@@ -1,19 +1,19 @@
 class Echidna < Formula
   desc "Ethereum smart contract fuzzer"
   homepage "https://github.com/crytic/echidna"
-  url "https://ghproxy.com/https://github.com/crytic/echidna/archive/refs/tags/v2.1.1.tar.gz"
-  sha256 "49236096e7b99c569cdb9d8a0976a32dbdfa910028af29391d7f5666da67977b"
+  url "https://ghproxy.com/https://github.com/crytic/echidna/archive/refs/tags/v2.2.0.tar.gz"
+  sha256 "919a46d5820acdc26c119d2dc36b2abadb2383217a801ba07b1335aac1d07ee1"
   license "AGPL-3.0-only"
   head "https://github.com/crytic/echidna.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "28f75549b1838d14214ec81f75c90e694cad0b087634d5da52d3abe4bb56b381"
-    sha256 cellar: :any,                 arm64_monterey: "c1ac3ee2372466e35501dd1471f9905518eb0137f65038b38ec915af8f2c89dc"
-    sha256 cellar: :any,                 arm64_big_sur:  "c2b884ab6dc70487b7e663fbc44611b0fb5212740684ae123e14e858d1f4021e"
-    sha256 cellar: :any,                 ventura:        "eafd1a179506c069bbf2a1a2e39bac218885f2f2d632075395b1cc8ba4d86180"
-    sha256 cellar: :any,                 monterey:       "c1bf97c0dabb58da077a6a952208da6f5906f7c8a6855f1481ee080461f0de62"
-    sha256 cellar: :any,                 big_sur:        "a43f323a93f21234bdd69b3c919e369a67e02cd9a462995a539d3b665aa2b55c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b671ae14db0385936f048b9be8f98aa7f2baabadf037bb3e15769667487df28"
+    sha256 cellar: :any,                 arm64_ventura:  "ff308506a12501cf3467b215f107cf548cafe72e7aaa8f28c672b6511b6473b9"
+    sha256 cellar: :any,                 arm64_monterey: "aba914ef3501bd026051ba3ea47873358d12ad730660367ae44da126c8cb552b"
+    sha256 cellar: :any,                 arm64_big_sur:  "2a9709a8b22dd2b83374d50486da0d46d63b9c0f3726d7f10ea6911bee851ce9"
+    sha256 cellar: :any,                 ventura:        "e17deb347c7cc690b7d22f47cec758c275f7bb3573e6c63b1e22f4b1ac18f21c"
+    sha256 cellar: :any,                 monterey:       "8b74d214ea5b17fbae7183085323447a5d27364ed9e2183bab0b24a8244b9409"
+    sha256 cellar: :any,                 big_sur:        "03295891e05bf372791aa18c915ab49920913fd2176c090d8519ef400ce9b6bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "069ba0435419a85b1105331b1e38458f25cc90b2b16c283c396699d6b7fa97b6"
   end
 
   depends_on "ghc@9.2" => :build
@@ -70,7 +70,7 @@ class Echidna < Formula
       }
     EOS
 
-    assert_match(/echidna_true:(\s+)passed!/,
+    assert_match("echidna_true: passing",
                  shell_output("#{bin}/echidna --format text --contract True #{testpath}"))
   end
 end

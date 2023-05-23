@@ -1,21 +1,19 @@
 class Kahip < Formula
   desc "Karlsruhe High Quality Partitioning"
   homepage "https://algo2.iti.kit.edu/documents/kahip/index.html"
-  url "https://ghproxy.com/https://github.com/KaHIP/KaHIP/archive/v3.14.tar.gz"
-  sha256 "9da04f3b0ea53b50eae670d6014ff54c0df2cb40f6679b2f6a96840c1217f242"
+  url "https://ghproxy.com/https://github.com/KaHIP/KaHIP/archive/v3.15.tar.gz"
+  sha256 "20760099370ddf7ecb2f92bfdb727def48f6428001165be6ce504264b9a99a0b"
   license "MIT"
-  revision 1
   head "https://github.com/KaHIP/KaHIP.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8b999a1be4898c4e40b9aff02b62146505db291dba06db771c238cb37490d1a5"
-    sha256 cellar: :any,                 arm64_monterey: "caefdd4a209465343d4b986895d17278c811acd876f7ecce50388ab0c4e7b250"
-    sha256 cellar: :any,                 arm64_big_sur:  "a393a6470d7569acf1c2e1e0b402d5901cea07c9880a7d6f01423acdaad7262a"
-    sha256 cellar: :any,                 ventura:        "ae1e1f542691906b9321faa0ab5ff338cc3e2b87524fdc4a4e3cedb73c44d120"
-    sha256 cellar: :any,                 monterey:       "8f147b571794bbc87b050e84edaca1eb90be0b7c3ed6f0976f3f22c7a6a6ed96"
-    sha256 cellar: :any,                 big_sur:        "d6ef09d6bde208d85c59ea4d5748a0289a6eddec3e75315766a05e692b857c6d"
-    sha256 cellar: :any,                 catalina:       "f3c5fee2f01f5d4dce03a9f5c43ec8bdb6ba2199aa199c0bb09eefcffe1cb425"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6780ba35f379f397d06db1b6b6f5d1b4a236993959821400d94f5058b1686b83"
+    sha256 cellar: :any,                 arm64_ventura:  "60fc78ed51f4d78d9442ce39603a5c6f55802fa4092aa3ecb232e2f7dea46861"
+    sha256 cellar: :any,                 arm64_monterey: "43f0235ffb5230b4069abc2b53a0c88a114bc3e79d317247fe7e86dbd5c7d4ff"
+    sha256 cellar: :any,                 arm64_big_sur:  "f0edebe4d4485a71c21845dd760b2e6a04deb13179a81935122ed2151313e2d3"
+    sha256 cellar: :any,                 ventura:        "39b3dfe20c92afaed1fb94a1acea77a09376494f394be4938a228ec0e5add8ad"
+    sha256 cellar: :any,                 monterey:       "6ba610be5b00f1114293d1d0eac272b36609728eda02ba3c6fd741847c68466d"
+    sha256 cellar: :any,                 big_sur:        "be0c6bb0acbfe826dca554e8c669d35720257c94bd0184644f4b456451b0c811"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8b0a6300a7a5448411828d565b3ab562384880999de7e2f89dc525642eefa9e"
   end
 
   depends_on "cmake" => :build
