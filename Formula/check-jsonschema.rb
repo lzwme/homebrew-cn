@@ -9,13 +9,14 @@ class CheckJsonschema < Formula
   head "https://github.com/python-jsonschema/check-jsonschema.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f0d02155b9093266480086fc30fd26e55dd100385d516e9b89d800c74750434c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ee47dc206fbd3b92141d5ba104c08f61aed8cb8dbc308eeef7d16a4f522d7556"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a9f86ff9b7ea4bfb1dcc1048a1efc2e9b05348e08a861fd7fb7769e2157ed4f0"
-    sha256 cellar: :any_skip_relocation, ventura:        "ff1b453485901ca937a1e6bdaf0f793cee350c680b7c3f8a4eb97c31bf595f6e"
-    sha256 cellar: :any_skip_relocation, monterey:       "ec0dc9c7527cf2667d90d93e44c53c5bc66c9ece53577b1924cf90806cf00ad6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "144f3d919567c615b82e5469e97101ff31b6891fd00fa666f2813a180cc87861"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20784473f2b543d3ed21034614d13fed82d93f9d642400789ba0a485240de04e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9039577e56b3cbb075a4a7f73614bdbd2627f3a4d0797837798ff9dbabb41b32"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "19f8bfff72c8b9b9d574c964c32c773dfcddca0e4d16e7bae343f06e7fb75022"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3e9a00f1ac635705d6f11fa90d94e2b23ff7d4a932f40e3359d3640bd820b01b"
+    sha256 cellar: :any_skip_relocation, ventura:        "86153176737ecdad95b61257161ee7b2b6cecbefb8ed42e2d435820f881d3708"
+    sha256 cellar: :any_skip_relocation, monterey:       "90b7eee773d599aacf1f1d0c9dd0a4d8e2a81e4f9342111e932cc68012268b30"
+    sha256 cellar: :any_skip_relocation, big_sur:        "20aabbf2687c9fee136a3ad436ca57e2d9dae34e6d0c9b0c8ab3ce97b1257c32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a5378a1940c853b0a2a981fc7b077bb8af5bf69a5a7b35aecafcf965b9e5d8c"
   end
 
   depends_on "python@3.11"
@@ -32,8 +33,8 @@ class CheckJsonschema < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
-    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
+    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
+    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "charset-normalizer" do
@@ -82,8 +83,8 @@ class CheckJsonschema < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e0/69/122171604bcef06825fa1c05bd9e9b1d43bc9feb8c6c0717c42c92cc6f3c/requests-2.30.0.tar.gz"
-    sha256 "239d7d4458afcb28a692cdd298d87542235f4ca8d36d03a15bfc128a6559a2f4"
+    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
+    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
   resource "rfc3339-validator" do

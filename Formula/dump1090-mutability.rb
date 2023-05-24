@@ -21,6 +21,10 @@ class Dump1090Mutability < Formula
   depends_on "librtlsdr"
 
   def install
+    # Work around failure from GCC 10+ using default of `-fno-common`
+    # multiple definition of `...'; ....o:(.bss+0x0): first defined here
+    ENV.append_to_cflags "-fcommon" if OS.linux?
+
     system "make"
     bin.install "dump1090"
     bin.install "view1090"
@@ -53,10 +57,10 @@ class Dump1090Mutability < Formula
       CRC: 000000\nRSSI: -14.3 dBFS
       Score: 750\nTime: 206.33us
       DF:11 AA:4D2023 IID:0 CA:5
-      All Call Reply
+       All Call Reply
         ICAO Address:  4D2023 (Mode S / ADS-B)
         Air/Ground:    airborne
     EOS
-    assert_equal result, shell_output("dump1090 --ifile input.bin 2>/dev/null").strip
+    assert_equal result.strip, shell_output("#{bin}/dump1090 --ifile input.bin 2>/dev/null").strip
   end
 end

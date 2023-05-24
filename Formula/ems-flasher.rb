@@ -5,6 +5,11 @@ class EmsFlasher < Formula
   sha256 "d77723a3956e00a9b8af9a3545ed2c55cd2653d65137e91b38523f7805316786"
   license "MIT"
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?ems-flasher[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "54d3c6be5cc7988fd0a6e5ef40f855704ee68e934ceb7fd26e6d7007152db088"
     sha256 cellar: :any,                 arm64_monterey: "c466c77b30d2f12a642f70ac295bd92f1c212a02f91902cbd3a538e1b4b43849"

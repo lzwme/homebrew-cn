@@ -8,13 +8,14 @@ class Borgmatic < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e88cb57c63b1db925d611da8d14a6fe2fbe8614b0483c40c38a22a44121a639f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a7203006edc3c0b93a4817b6d4087203de499e7b67444f6782a0c2228ee10609"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fcf41365cf07d8a8ce17314f883397d82d9a640c50a22fc3ef40925c185a1bdd"
-    sha256 cellar: :any_skip_relocation, ventura:        "09532780f5ab5c5bc98a588a4f6e8a47331c2a94d92fa792081970398ea0be71"
-    sha256 cellar: :any_skip_relocation, monterey:       "1f9cf8fde8d752bff7bd9613c10cc2ab350985f72ff99a6bf093b399872123d0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ae5c39352d247df69a3bda1c292340cfed3511da280414653a87068ec61f0c04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "137b1941c87df173d7b21e401223db41d4f37d132d74a42a631540be949ff7fe"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "88b2fae559770beef7685fed73c9cc32cd21b56af3e1b1f8d2f685dace1e169d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4d1fe510ea9cb6cfb570bd58e71a9ca514ebbdac3179fe3a08bf448fe87ad0d0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b994bd1ec93869a7170918294bae6a180ca8c4a596f6674ca8333916beb233e0"
+    sha256 cellar: :any_skip_relocation, ventura:        "00bc0607bc800c1d7a924be4592689be511f18a3894348986009ccd7984b68fe"
+    sha256 cellar: :any_skip_relocation, monterey:       "009f2c9c297374bbb4c1f69aa98253e8209e9abe7744df6810cab117ec754529"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e53e8872c5f6f83902532ee534eb5a1ea749d0560ac9d1d0167be444142de13b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1706f5510531072a7a396c40893f099dff556b16e790fcc0a4435e5f3b85e8cd"
   end
 
   depends_on "python@3.11"
@@ -60,8 +61,8 @@ class Borgmatic < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e0/69/122171604bcef06825fa1c05bd9e9b1d43bc9feb8c6c0717c42c92cc6f3c/requests-2.30.0.tar.gz"
-    sha256 "239d7d4458afcb28a692cdd298d87542235f4ca8d36d03a15bfc128a6559a2f4"
+    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
+    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
   resource "ruamel-yaml" do
