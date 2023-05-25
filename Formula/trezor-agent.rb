@@ -8,26 +8,28 @@ class TrezorAgent < Formula
   license "LGPL-3.0-only"
 
   bottle do
-    rebuild 6
-    sha256 cellar: :any,                 arm64_ventura:  "e58d4423ba5c45d196ead85d7c4b794cfe774dcf18f0b6472da0e10e8a38a233"
-    sha256 cellar: :any,                 arm64_monterey: "dda3b3b27bde93585a59f0867ee722007c6dec8d45d6c1fff1833e19eca125a4"
-    sha256 cellar: :any,                 arm64_big_sur:  "66ccedde776de8e6e3468a39af946b4288ceeae3fb1e490827c3dd83b4c0cf02"
-    sha256 cellar: :any,                 ventura:        "13cf6d0869795b27013055a5f6dd1c4c39350f4d73c23ef7ed0bb235d78f981c"
-    sha256 cellar: :any,                 monterey:       "ce11953d5fba34972e1310bb9c371660742c09b46113403fb5bff1b834fdefc1"
-    sha256 cellar: :any,                 big_sur:        "1247e929e6858ae044ee35bad1039735ee7f1188515f7bdddea07528bf75c1f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a07fbfdee59286162371bba9a9db15957df655fca5a2842eb20b06704e9a5b4"
+    rebuild 7
+    sha256 cellar: :any,                 arm64_ventura:  "78dc09f6c765752608daf3eb1a489b79c397d5f1405789477925548f235de6cd"
+    sha256 cellar: :any,                 arm64_monterey: "99a37b4417d179bf8d501421d938b5e83b3751741844bc59da24477b008e3603"
+    sha256 cellar: :any,                 arm64_big_sur:  "26555b080d945ca79198ec8992d0e03bc80895f399b727c3ed9c45f23311ce32"
+    sha256 cellar: :any,                 ventura:        "d94c3b3fa854afa316dbc82261cea781c393b3b6847cca777918172ea1ddbd1e"
+    sha256 cellar: :any,                 monterey:       "0b0145e597ce009d87bb67f03b9bda91f2855538807b8736696c0ec3295e2567"
+    sha256 cellar: :any,                 big_sur:        "94eb164e60c8755d9a2b9fe485a587467c5c946931bf626121a80c64b8bf7b87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70cdf75b04ffd533916261d2ebb9a19cabacec891d0611e93a2d3c6ec9fc7dee"
   end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build # python-daemon resource depends on cryptography
+  depends_on "cffi"
   depends_on "docutils"
   depends_on "libusb"
   depends_on "pillow"
+  depends_on "pycparser"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "six"
 
-  resource "backports.shutil_which" do
+  resource "backports-shutil-which" do
     url "https://files.pythonhosted.org/packages/a0/22/51b896a4539f1bff6a7ab8514eb031b9f43f12bff23f75a4c3f4e9a666e5/backports.shutil_which-3.5.2.tar.gz"
     sha256 "fe39f567cbe4fad89e8ac4dbeb23f87ef80f7fe8e829669d0221ecdb0437c133"
   end
@@ -43,13 +45,8 @@ class TrezorAgent < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
-    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
-  end
-
-  resource "cffi" do
-    url "https://files.pythonhosted.org/packages/2b/a8/050ab4f0c3d4c1b8aaa805f70e26e84d0e27004907c5b8ecc1d31815f92a/cffi-1.15.1.tar.gz"
-    sha256 "d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"
+    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
+    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "charset-normalizer" do
@@ -62,7 +59,7 @@ class TrezorAgent < Formula
     sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
   end
 
-  resource "ConfigArgParse" do
+  resource "configargparse" do
     url "https://files.pythonhosted.org/packages/16/05/385451bc8d20a3aa1d8934b32bd65847c100849ebba397dbf6c74566b237/ConfigArgParse-1.5.3.tar.gz"
     sha256 "1b0b3cbf664ab59dada57123c81eff3d9737e0d11d8cf79e3d6eb10823f1739f"
   end
@@ -82,17 +79,12 @@ class TrezorAgent < Formula
     sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
   end
 
-  resource "dbus-fast" do
-    url "https://files.pythonhosted.org/packages/85/6f/103ef06aaaca5eabef4f0e3143479457d92bf00572fefa0f798aaae14dd2/dbus_fast-1.85.0.tar.gz"
-    sha256 "af346e87e34fa52c7ae82d117303cbfe089cd5391b5a1cc0e51f67066ef426f5"
-  end
-
   resource "ecdsa" do
     url "https://files.pythonhosted.org/packages/ff/7b/ba6547a76c468a0d22de93e89ae60d9561ec911f59532907e72b0d8bc0f1/ecdsa-0.18.0.tar.gz"
     sha256 "190348041559e21b22a1d65cee485282ca11a6f81d503fddb84d5017e9ed1e49"
   end
 
-  resource "ECPy" do
+  resource "ecpy" do
     url "https://files.pythonhosted.org/packages/e0/48/3f8c1a252e3a46fd04e6fabc5e11c933b9c39cf84edd4e7c906e29c23750/ECPy-1.2.5.tar.gz"
     sha256 "9635cffb9b6ecf7fd7f72aea1665829ac74a1d272006d0057d45a621aae20228"
   end
@@ -117,12 +109,12 @@ class TrezorAgent < Formula
     sha256 "cef1e862e195ece3e42640a0f57d15a63086fd1dedc8b5ddfcbc9c2657f0bb1e"
   end
 
-  resource "keepkey_agent" do
+  resource "keepkey-agent" do
     url "https://files.pythonhosted.org/packages/65/72/4bf47a7bc8dc93d2ac21672a0db4bc58a78ec5cee3c4bcebd0b4092a9110/keepkey_agent-0.9.0.tar.gz"
     sha256 "47c85de0c2ffb53c5d7bd2f4d2230146a416e82511259fad05119c4ef74be70c"
   end
 
-  resource "ledger_agent" do
+  resource "ledger-agent" do
     url "https://files.pythonhosted.org/packages/a3/c9/ac7546d6168662af356493231ca8818bdf8ffd05238a68fe5085fd9e6358/ledger_agent-0.9.0.tar.gz"
     sha256 "2265ba9c6a4594ff798fe480856ea36bfe6d8ae7ba2190b74f9666510530f20f"
   end
@@ -163,21 +155,16 @@ class TrezorAgent < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/e2/86/44a1e4990a81cb4248a2091a182bb76a6417fddcaff560ceb6b44eb05c55/protobuf-4.22.3.tar.gz"
-    sha256 "23452f2fdea754a8251d0fc88c0317735ae47217e0d27bf330a30eec2848811a"
-  end
-
-  resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
-    sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
+    url "https://files.pythonhosted.org/packages/d8/6c/a2a6fe10cdc9bc81e03be56139d5bc70427054eb0b3864b31ff9a2a4849d/protobuf-4.23.1.tar.gz"
+    sha256 "95789b569418a3e32a53f43d7763be3d490a831e9c08042539462b6d972c2d7e"
   end
 
   resource "pycryptodomex" do
-    url "https://files.pythonhosted.org/packages/3d/07/cfd8f52b9068877801317d26dc7225e19421bc659e1395d2cd6933b1a351/pycryptodomex-3.17.tar.gz"
-    sha256 "0af93aad8d62e810247beedef0261c148790c52f3cd33643791cc6396dd217c1"
+    url "https://files.pythonhosted.org/packages/40/92/efd675dba957315d705f792b28d900bddc36f39252f6713961b4221ee9af/pycryptodomex-3.18.0.tar.gz"
+    sha256 "3e3ecb5fe979e7c1bb0027e518340acf7ee60415d79295e5251d13c68dde576e"
   end
 
-  resource "pyDes" do
+  resource "pydes" do
     url "https://files.pythonhosted.org/packages/92/5e/0075a35ea5d307a182b0963900298b209ea2f363ccdd5a27e8cb04c58410/pyDes-2.0.1.tar.gz"
     sha256 "e2ab8e21d2b83e90d90dbfdcb6fb8ac0000b813238b7ecaede04f8435c389012"
   end
@@ -187,12 +174,12 @@ class TrezorAgent < Formula
     sha256 "ec761596aafa16e282a31de188737e5485552469ac63b60cfcccf22263fd24ff"
   end
 
-  resource "PyMsgBox" do
+  resource "pymsgbox" do
     url "https://files.pythonhosted.org/packages/7d/ff/4c6f31a4f08979f12a663f2aeb6c8b765d3bd592e66eaaac445f547bb875/PyMsgBox-1.0.9.tar.gz"
     sha256 "2194227de8bff7a3d6da541848705a155dcbb2a06ee120d9f280a1d7f51263ff"
   end
 
-  resource "PyNaCl" do
+  resource "pynacl" do
     url "https://files.pythonhosted.org/packages/a7/22/27582568be639dfe22ddb3902225f91f2f17ceff88ce80e4db396c8986da/PyNaCl-1.5.0.tar.gz"
     sha256 "8ac7448f09ab85811607bdd21ec2464495ac8b7c66d146bf545b0f08fb9220ba"
   end
@@ -202,12 +189,12 @@ class TrezorAgent < Formula
     sha256 "4b6cb9053b5fcd3c0e76b8c8105a8110786b20f3403c5643a688c5ec51c55c6b"
   end
 
-  resource "pyobjc-framework-Cocoa" do
+  resource "pyobjc-framework-cocoa" do
     url "https://files.pythonhosted.org/packages/90/70/7ec76e482a49cdb4dd5c4371c52775d237fcbf4fc1932bd60889b8006f1a/pyobjc-framework-Cocoa-9.1.1.tar.gz"
     sha256 "345c32b6d1f3db45f635e400f2d0d6c0f0f7349d45ec823f76fc1df43d13caeb"
   end
 
-  resource "pyobjc-framework-CoreBluetooth" do
+  resource "pyobjc-framework-corebluetooth" do
     url "https://files.pythonhosted.org/packages/fc/e2/b2fa61a2f40278d5d1e9f3a2e825bdfc8d9c5d065152c0833e3b79936418/pyobjc-framework-CoreBluetooth-9.1.1.tar.gz"
     sha256 "4e5a256450bd9626311af64b6cf6752d0d9e7bc80242a915dea075180b350ca6"
   end
@@ -233,8 +220,8 @@ class TrezorAgent < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/ee/391076f5937f0a8cdf5e53b701ffc91753e87b07d66bae4a09aa671897bf/requests-2.28.2.tar.gz"
-    sha256 "98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"
+    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
+    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
   resource "semver" do
@@ -248,23 +235,23 @@ class TrezorAgent < Formula
   end
 
   resource "trezor" do
-    url "https://files.pythonhosted.org/packages/a5/ad/69fd247de94c9445a8e687155c49f2d23e3d2d265f05aeb90e43edc386e5/trezor-0.13.5.tar.gz"
-    sha256 "8e150171affeac381efdb14782929084d6414ec77cccdc871d6f0d644ff57bd8"
+    url "https://files.pythonhosted.org/packages/be/56/66b3f66d593e094d79a333ef858e2fee4f188761ed5a07d7e515ee37d928/trezor-0.13.6.tar.gz"
+    sha256 "fc359c07562ff158ae04fd23f6563ac15dc046586f3a6c379536ddef0f790b48"
   end
 
-  resource "Unidecode" do
+  resource "unidecode" do
     url "https://files.pythonhosted.org/packages/0b/25/37c77fc07821cd06592df3f18281f5e716bc891abd6822ddb9ff941f821e/Unidecode-1.3.6.tar.gz"
     sha256 "fed09cf0be8cf415b391642c2a5addfc72194407caee4f98719e40ec2a72b830"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
-    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
+    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
+    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
   end
 
   resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/8b/94/696484b0c13234c91b316bc3d82d432f9b589a9ef09d016875a31c670b76/websocket-client-1.5.1.tar.gz"
-    sha256 "3f09e6d8230892547132177f575a4e3e73cfdf06526e20cc02aa1c3b47184d40"
+    url "https://files.pythonhosted.org/packages/3f/f2/2624e12ef854ee667d92ac5dc7815932095e0852e5ff2b2bf57feda8a11b/websocket-client-1.5.2.tar.gz"
+    sha256 "c7d67c13b928645f259d9b847ab5b57fd2d127213ca41ebd880de1f553b7c23b"
   end
 
   resource "wheel" do

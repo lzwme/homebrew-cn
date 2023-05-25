@@ -3,20 +3,19 @@ class Bzt < Formula
 
   desc "BlazeMeter Taurus"
   homepage "https://gettaurus.org/"
-  url "https://files.pythonhosted.org/packages/8c/74/6454459d35b2e4a868ee173102f14e584c77a07b0a7078fb301e125204bc/bzt-1.16.22.tar.gz"
-  sha256 "874e5ae98d4a26243216b72563765a3be553056465d89fdb09319dfde38c07de"
+  url "https://files.pythonhosted.org/packages/7c/09/7d38d9327dcb279f8863985f3808c3da25543eda4bac0bb38681ea36c28f/bzt-1.16.23.tar.gz"
+  sha256 "2d90a58c0316697399e83f7cf96a7f99d2ee244f5dffb9ebf5cc4be21161efd8"
   license "Apache-2.0"
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ca69535287417361a26a1749b0f41ebf21c8102845cd025f9d4f689880c20e7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "74cb626e5412c6ea8d3260cbb933dfed95e4aa66cc0bc56e39d08162205ee895"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a3d685d0ad932777d530f45d3aa79529764f7b239025f227a84f63d6f336f232"
-    sha256 cellar: :any_skip_relocation, ventura:        "004214c509c4534c3967ededcab451549cdbb403a15c84408e96c129138dd7cd"
-    sha256 cellar: :any_skip_relocation, monterey:       "d8774ac39a431d0b121687134e19d114e15b5dd4a0217e4b7e376c8257f76bdb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cefa2ffefec60e2c78e398b3fc09d42b3711f9f26faa9dd972c43d4af2966d76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab96e46d3e96215114eddf08234afbe3a4e6b287e380d78f40109ac09acbdbf5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "15fe0a83af0ae90920400ccec664dd6d38a513e1e344d701a54b1090263c54c2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "664bdee9d75c3a7175250ca039f7a604ad2612de94c8e5acb8654e3dfebedfa5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4ec6e8b3634b895d11015f0941999e7a2ff1f350613f32a7dab3ca700a923e2c"
+    sha256 cellar: :any_skip_relocation, ventura:        "5b2d0d3b02aa288519483e4e26787658ebdd8bed30b35cd05041ea19adca12c6"
+    sha256 cellar: :any_skip_relocation, monterey:       "cffe5ae271f8dfa5dcaaf82f5e3e67046146d92cebee3a2e2d11ed39865181be"
+    sha256 cellar: :any_skip_relocation, big_sur:        "70ce07aba47640a4a8f9da839b52ccce65a860054bb80f509003079ea0bf155a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e245190947e024ecb15df4a89a23e3e04800c25779c32edb2c454243762031ea"
   end
 
   depends_on "cmake" => :build

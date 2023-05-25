@@ -1,20 +1,18 @@
 class OpenImageDenoise < Formula
   desc "High-performance denoising library for ray tracing"
   homepage "https://openimagedenoise.github.io"
-  url "https://ghproxy.com/https://github.com/OpenImageDenoise/oidn/releases/download/v1.4.3/oidn-1.4.3.src.tar.gz"
-  sha256 "3276e252297ebad67a999298d8f0c30cfb221e166b166ae5c955d88b94ad062a"
+  url "https://ghproxy.com/https://github.com/OpenImageDenoise/oidn/releases/download/v2.0.0/oidn-2.0.0.src.tar.gz"
+  sha256 "7860c79e3768c79f158c9ca05cea7d3d0f4be1241a0b11e254cb9372934c37ed"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "d0131bc6bd64a1c13e10af8a80e0008344a0f10030bef4899191e1ec9646946b"
-    sha256 cellar: :any,                 arm64_monterey: "ddb1741686eb6421fa5b2785128da5af3efc0a347e16b6d9c86015e5dee81031"
-    sha256 cellar: :any,                 arm64_big_sur:  "e75b39c2ab3bdeb3511f0b7083d1dbcc7f281bf0ca4efaaea2e1a66c531a3c01"
-    sha256 cellar: :any,                 ventura:        "5ba9cb7d13b7f585fd3281d4edb3786aaea7562fe02b0f7b787bc324e0d039f7"
-    sha256 cellar: :any,                 monterey:       "e0f79e47ac06fab83a2ce96fcc1b6ef2a53745d8282913dc3534d1d45b5075e3"
-    sha256 cellar: :any,                 big_sur:        "b59c85df5b1ab15a55c5ee191d34642cc9cba1d45786b6131198c81668c32d30"
-    sha256 cellar: :any,                 catalina:       "0a7596cd0a60f3032acf4ad6e289f4d0dd492dbedf0f16f911d72b51b1c4ba3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71e1c6caa0c6811d8aa321588f26f14fb6c5ea2fb72d7ff9c1ef820fd5aab166"
+    sha256 cellar: :any,                 arm64_ventura:  "9d0eba5add7290aefaf12c7e1413fd95fdebf5d58eb9122e6854ba95dd60b60e"
+    sha256 cellar: :any,                 arm64_monterey: "31f06fee0d1bdf5dc0b3e68758cd86590e717af28821ee893b26d077a8cd231f"
+    sha256 cellar: :any,                 arm64_big_sur:  "67d8b9d6275175ed6688842c0a5b9fd191743df77df296bc5609546c6848d061"
+    sha256 cellar: :any,                 ventura:        "0ae0862c72500054ba3e5cc32dadaed3f78361deca3fc05b3cdf191b28b4f2fc"
+    sha256 cellar: :any,                 monterey:       "c10a342699068d99ccf8a41fc883668dc91646477925056d4b747a6df27aaa97"
+    sha256 cellar: :any,                 big_sur:        "e30cb9e9071291f9cbb03872c1a6e60be4c8d7a7440990c60b8e38248760e2a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f646d5c303116234d8a01165bcfc3ddfcbb4e6327dc5a3026c4422a5a10d6abf"
   end
 
   depends_on "cmake" => :build

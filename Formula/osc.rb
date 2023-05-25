@@ -3,8 +3,8 @@ class Osc < Formula
 
   desc "Command-line interface to work with an Open Build Service"
   homepage "https://openbuildservice.org"
-  url "https://ghproxy.com/https://github.com/openSUSE/osc/archive/1.1.3.tar.gz"
-  sha256 "bf390a6b6e532ce02bc009368f21212748fa64313d9caee3d3d3f2cbdc55b3c8"
+  url "https://ghproxy.com/https://github.com/openSUSE/osc/archive/1.1.4.tar.gz"
+  sha256 "8407ccdcaa6089601e3b9f42c03c015d938ba756b1553f65e2eb122ff00b83e5"
   license "GPL-2.0-or-later"
   head "https://github.com/openSUSE/osc.git", branch: "master"
 
@@ -14,13 +14,13 @@ class Osc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "066b5a853cd3b17e2b8f694394c5c6b35aaf187b0e3c3707af6132314363e673"
-    sha256 cellar: :any,                 arm64_monterey: "e082ac2b0f22a2abee6bc09d2f7e193e0ce9e7d0bd8d325619b219349f77d330"
-    sha256 cellar: :any,                 arm64_big_sur:  "ecc684e6a61fe34c23c58c6daa399129d377728f3ba97189c4f6eed1da0cbc29"
-    sha256 cellar: :any,                 ventura:        "c527e26a186ca23714ad664142180e422a54922a210539458c77d872ef152d4e"
-    sha256 cellar: :any,                 monterey:       "7f7aeefc0ed5ad4bf146fbd82c9134fb8d00aa3e199d814d5e2b6a944241a58a"
-    sha256 cellar: :any,                 big_sur:        "1b98ca203cd8b518b962c101e8c55d2ddacffca5ca84b410d20c2b27a6695ee0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ee8fad5985a21d32c7be08c3e7f394de4075f949959ba56e495c0349ffc647d"
+    sha256 cellar: :any,                 arm64_ventura:  "a29dcae921021ebf9ca73382c82ab3e96d9bdb5ffac01c1aa22c791f7857871c"
+    sha256 cellar: :any,                 arm64_monterey: "034d31db53d2019a38bfff6731335e0fbab6faa37f0b1080d29dbda8a0e27ad8"
+    sha256 cellar: :any,                 arm64_big_sur:  "45ab47113b9a0f4a109ca20d2d98712eeb10baec2e16dfc460391df7e654b8ca"
+    sha256 cellar: :any,                 ventura:        "91129a29427f6369753195ea08c28ab1ff7a9c70e1482cf9794a81cb2511b054"
+    sha256 cellar: :any,                 monterey:       "07e5b8bb2faa604502cb536bfacbda1de79f34f978a6ba6e8d6a3c5616658c60"
+    sha256 cellar: :any,                 big_sur:        "81d59e925f84e1becb59fb220f21a62adf4d9c11dbb4cefc4d8cb77ac213216c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd06377a65518600dc3d97468c1405134d08adecfe68ce083b3011bc713609b9"
   end
 
   # `pkg-config` and `rust` are for cryptography.

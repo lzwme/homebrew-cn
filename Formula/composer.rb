@@ -1,8 +1,8 @@
 class Composer < Formula
   desc "Dependency Manager for PHP"
   homepage "https://getcomposer.org/"
-  url "https://getcomposer.org/download/2.5.5/composer.phar"
-  sha256 "566a6d1cf4be1cc3ac882d2a2a13817ffae54e60f5aa7c9137434810a5809ffc"
+  url "https://getcomposer.org/download/2.5.7/composer.phar"
+  sha256 "9256c4c1c803b9d0cb7a66a1ab6c737e48c43cc6df7b8ec9ec2497a724bf44de"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class Composer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f8f92a1131adfaea8335e760221d36ac78b62b3879d14937dbe9d79861f30dc2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f8f92a1131adfaea8335e760221d36ac78b62b3879d14937dbe9d79861f30dc2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f8f92a1131adfaea8335e760221d36ac78b62b3879d14937dbe9d79861f30dc2"
-    sha256 cellar: :any_skip_relocation, ventura:        "435130b44dba518eabcc2fc101ec9d5d41165e7ce7df01241ced8767742c5df9"
-    sha256 cellar: :any_skip_relocation, monterey:       "435130b44dba518eabcc2fc101ec9d5d41165e7ce7df01241ced8767742c5df9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "435130b44dba518eabcc2fc101ec9d5d41165e7ce7df01241ced8767742c5df9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8f92a1131adfaea8335e760221d36ac78b62b3879d14937dbe9d79861f30dc2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4eea7c60c1497e501f729787be47ac079edca56055329638ef5c621b64eaffe"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b4eea7c60c1497e501f729787be47ac079edca56055329638ef5c621b64eaffe"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b4eea7c60c1497e501f729787be47ac079edca56055329638ef5c621b64eaffe"
+    sha256 cellar: :any_skip_relocation, ventura:        "e324d5a23fe8b99a1130c51ef779b731051569afe37f7c16e7579cab81eb5d1f"
+    sha256 cellar: :any_skip_relocation, monterey:       "e324d5a23fe8b99a1130c51ef779b731051569afe37f7c16e7579cab81eb5d1f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e324d5a23fe8b99a1130c51ef779b731051569afe37f7c16e7579cab81eb5d1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4eea7c60c1497e501f729787be47ac079edca56055329638ef5c621b64eaffe"
   end
 
   depends_on "php"

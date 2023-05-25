@@ -4,6 +4,8 @@ class MediaInfo < Formula
   url "https://mediaarea.net/download/binary/mediainfo/23.04/MediaInfo_CLI_23.04_GNU_FromSource.tar.bz2"
   sha256 "bc7da8717ff74d89d1d69d886af812f5c47b1e502c1a4e05360e41c47450ff30"
   license "BSD-2-Clause"
+  revision 1
+  head "https://github.com/MediaArea/MediaInfo.git", branch: "master"
 
   livecheck do
     url "https://mediaarea.net/en/MediaInfo/Download/Source"
@@ -11,42 +13,22 @@ class MediaInfo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3cda0010ca68f8ee4e5e7e671897027ecb8118c8362f25d5bd5e3ef2dd5e4135"
-    sha256 cellar: :any,                 arm64_monterey: "ea8bb90ba43169f0cd833a64a8f8a645a08377dc55b942a37412379a1c739806"
-    sha256 cellar: :any,                 arm64_big_sur:  "6c4a763a1e646998fa0e70a284d2013ac81f496ff7ae4265075385aa1a4c5a78"
-    sha256 cellar: :any,                 ventura:        "1512a405e65e09586056aa13736a3ec96fdc5837e23455cde23a735ec8180dae"
-    sha256 cellar: :any,                 monterey:       "9a3fd29a9e87f89de0ad9715d84a098518427266ba9362978de3f20d8b871438"
-    sha256 cellar: :any,                 big_sur:        "4a8a02a4a5b915232da4d21436048fcee7ff1bce62e66a4c00528be79f719e75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d894f130fbf00c6c6f6526c5d7c46593a3ce19f2d3dc2e70a4bad1388917997f"
+    sha256 cellar: :any,                 arm64_ventura:  "309641906e49ed27588c8eb2d4492f7797c10d79cb220f920c9ae4acefc4f587"
+    sha256 cellar: :any,                 arm64_monterey: "1ccaa9936e22a61ad6f6cf7e0e9de7fa0476df71c0e067bb1da5b690aca8b55b"
+    sha256 cellar: :any,                 arm64_big_sur:  "0c517e3aeab7c53bfd774b6707f00ba6ed766cf9763eade1d16b685f68371303"
+    sha256 cellar: :any,                 ventura:        "784fbdd735982809214c040d10ad96549f2b7e02161a1477fc623b8a3e7c0de5"
+    sha256 cellar: :any,                 monterey:       "cc397b05a22255696810fd23017fcd4ed8905955125966635712b672e22a4c31"
+    sha256 cellar: :any,                 big_sur:        "d9a26fb40a72b4bbad8fc909a6a941d95227bb47950dd14ed697c66b7e005f3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "978aa70db065d20da7e6797ddae6ad440b60ffa42c76122d182a4a5dc9140469"
   end
 
   depends_on "pkg-config" => :build
+  depends_on "libmediainfo"
+  depends_on "libzen"
 
-  uses_from_macos "curl"
   uses_from_macos "zlib"
 
   def install
-    cd "ZenLib/Project/GNU/Library" do
-      args = ["--disable-debug",
-              "--disable-dependency-tracking",
-              "--enable-static",
-              "--enable-shared",
-              "--prefix=#{prefix}"]
-      system "./configure", *args
-      system "make", "install"
-    end
-
-    cd "MediaInfoLib/Project/GNU/Library" do
-      args = ["--disable-debug",
-              "--disable-dependency-tracking",
-              "--with-libcurl",
-              "--enable-static",
-              "--enable-shared",
-              "--prefix=#{prefix}"]
-      system "./configure", *args
-      system "make", "install"
-    end
-
     cd "MediaInfo/Project/GNU/CLI" do
       system "./configure", "--disable-debug", "--disable-dependency-tracking",
                             "--prefix=#{prefix}"

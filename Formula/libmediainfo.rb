@@ -4,22 +4,31 @@ class Libmediainfo < Formula
   url "https://mediaarea.net/download/source/libmediainfo/23.04/libmediainfo_23.04.tar.xz"
   sha256 "3650edea326fe54d3f634614764499508fbeec4ae984002f086adf1d0c071926"
   license "BSD-2-Clause"
+  revision 1
+  head "https://github.com/MediaArea/MediaInfoLib.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "786102667949622b0bae2d70c78f9035eaed9043693aa8889b14b5c0a6ba81fa"
-    sha256 cellar: :any,                 arm64_monterey: "285126c041840ab1953aa3e90b8957c3c23a4ac7d99d68ab4ff23b084101ac0a"
-    sha256 cellar: :any,                 arm64_big_sur:  "bf3d0764de6a94f08bbda4f1ec0e09272214ac9155ace6c67296d9a942142e2a"
-    sha256 cellar: :any,                 ventura:        "4581982f0e20f95eae3d0fd5ab40675f5444e2e5fe55dbd181475df880c45967"
-    sha256 cellar: :any,                 monterey:       "9e61bc04dcf6e0810213e6769f245eb63624a59f883679857a7ff6d2d998b815"
-    sha256 cellar: :any,                 big_sur:        "fafc81fcddc99c38163d26dbe0bd7843e04aea00a9a8f4d5cb05d2f1e9bcdc29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e7d57baaba15e8366d68246d16d52ff6fb4dda8c275b20f6350389849566757e"
+    sha256 cellar: :any,                 arm64_ventura:  "cc61a120c71cc0b839779165747970d92b88508960b97cf4d56ecfca62af870e"
+    sha256 cellar: :any,                 arm64_monterey: "e11570b29e921d6597c24217c28b9fcd18c1f5756bd7063d1badae3cc7cc7f78"
+    sha256 cellar: :any,                 arm64_big_sur:  "8423bfd9b9980c6de5d5770c3b60f8f294ffcc2584cba1d31a4ff59a02689669"
+    sha256 cellar: :any,                 ventura:        "0c96ea1123d8d724b9b7ed7333432da6dac16e47f3f5b6fa900499a9bd34606d"
+    sha256 cellar: :any,                 monterey:       "1c9fb0266e93d4ea7f660336881ad92479213dbf80e6efc6eb33cfe689a4155b"
+    sha256 cellar: :any,                 big_sur:        "d6159471e97d64fcb9a3864e6d8d0d50470604e35d51fd139388712bb40cb791"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "393b7e38219f28bbc24b7e4651fbda6f0460a875436ca148e0220ce42696258e"
   end
 
   depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
   depends_on "libmms"
   depends_on "libzen"
 
   uses_from_macos "curl"
+
+  # These files used to be distributed as part of the media-info formula
+  link_overwrite "include/MediaInfo/*"
+  link_overwrite "include/MediaInfoDLL/*"
+  link_overwrite "lib/pkgconfig/libmediainfo.pc"
+  link_overwrite "lib/libmediainfo.*"
 
   def install
     system "cmake", "-S", "Project/CMake", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
