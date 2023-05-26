@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/returntocorp/semgrep.git",
-      tag:      "v1.22.0",
-      revision: "9780088f5aa0de69644961d3a1ec07e4f3becc57"
+      tag:      "v1.23.0",
+      revision: "ccdd44e23d58de1cd7183173eaba7b07efb05555"
   license "LGPL-2.1-only"
   head "https://github.com/returntocorp/semgrep.git", branch: "develop"
 
@@ -15,14 +15,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_ventura:  "a635f139c923b110a01671a7b24ff7f01c9ca9beed31e45aeffa90fb7b39695f"
-    sha256 cellar: :any, arm64_monterey: "8737217702147fa1f060e1690e17fe72852baea0e317310a9af2c914680fcd38"
-    sha256 cellar: :any, arm64_big_sur:  "47c959d9a656889bd54ba0618906df65c89ce4f4af10ea565b8171a38a0aa444"
-    sha256 cellar: :any, ventura:        "bafaad6bdbc824df012b5614d4fa6a28420b0d42ac749161a3634c904765af1c"
-    sha256 cellar: :any, monterey:       "7700d19dc07efe2ef0f5cdf99979927a4bde3d5ce5cb66d931d26dd8f7526f68"
-    sha256 cellar: :any, big_sur:        "48001ed76f28f69ba0bc1673237ddb64238c180cb5e20a833659f49530fdb1a6"
-    sha256               x86_64_linux:   "d0c4316752d2639f3854076f9d90ce748bd0559b2d3deee425f9c1373671293d"
+    sha256 cellar: :any, arm64_ventura:  "278b5d72f34a0b15150114f2b81293bc5fdbe5ffc893767f9d028f71501b47bc"
+    sha256 cellar: :any, arm64_monterey: "fa3d3ce48437300e4a474b95bba8cfa4a3301b4e9fced2dcb56ce3e3dedb26d1"
+    sha256 cellar: :any, arm64_big_sur:  "7ae6aa1ea0fba6f03869515a9e735f2186263167d56b5677c8ac4dfefcdc3337"
+    sha256 cellar: :any, ventura:        "ac35c88f3fa9f9401d9e0ae55d60e805e94d9931680babd881d7207981837102"
+    sha256 cellar: :any, monterey:       "00fb0ed609ed0f6deea7d16df4b53782373a31031bf28130ff2cf1b1c08c5b04"
+    sha256 cellar: :any, big_sur:        "c8b73438c97068e7b8f40d8f931a62962fe0689c9276f7304dcac7cc9fbe9dd1"
+    sha256               x86_64_linux:   "a24f599392651caa87f06d1affc2784e4e587394d3614e2e80f7a6e5cafaee0f"
   end
 
   depends_on "cmake" => :build
@@ -210,7 +209,6 @@ class Semgrep < Formula
       system "opam", "exec", "--", "make", "core"
       system "opam", "exec", "--", "make", "core-install"
       bin.install "_build/install/default/bin/semgrep-core" => "semgrep-core"
-      bin.install "_build/install/default/bin/spacegrep" => "spacegrep"
     end
 
     ENV["SEMGREP_SKIP_BIN"] = "1"

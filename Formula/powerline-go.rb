@@ -1,18 +1,18 @@
 class PowerlineGo < Formula
   desc "Beautiful and useful low-latency prompt for your shell"
   homepage "https://github.com/justjanne/powerline-go"
-  url "https://ghproxy.com/https://github.com/justjanne/powerline-go/archive/v1.23.tar.gz"
-  sha256 "56c1e8818eb2695ed9bad94feab388f041cf857f5f8073aaa950c1a6925c5b54"
+  url "https://ghproxy.com/https://github.com/justjanne/powerline-go/archive/v1.24.tar.gz"
+  sha256 "08d958c49269e7025a998a617f3d6a0b6dcd7432437f950f0d0e3335bf7b59b3"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b10dab12e06f72d2d97aae4bba7586623f8dc3f911b02a7741f7ed335446a4d1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7de71985597d3efc824e77c23c7252f93e24306d7c26e1e76c5a23b6d892b192"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ccd067b48691d274ceeb01b219f4d3407e1fc930ba685d24aad8a205121516cf"
-    sha256 cellar: :any_skip_relocation, ventura:        "6e57a6a7363aa96092e6dba0ecce6dd0e9a3cdfb4cd42a16e3f1083941fcc548"
-    sha256 cellar: :any_skip_relocation, monterey:       "dddc5d27df55fa3f968b280042638995918948031d111d6715f4f1258bdd832c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "42becb974142b9702013e2d70efc117807c2341665ecf06d8b4782f26cb69260"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e20c60fe493eca666107c3a0f86d3c8c47d75969d2e80d88dd68ad03cf12b754"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b8f00ce64616d9a75c81e533783d118fd60d3e8ca412ae1af57701598efce67"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bb9acae2a52e836ada9ecccdf9d5d7b35bd590f43af48a2a5845780f785e430b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e23866ef1204163a43b7e78e23d192cda14182f1837c549e30075e8b0f3bdf3d"
+    sha256 cellar: :any_skip_relocation, ventura:        "a0851b68b27a6721b76f19ea6ae85f8ffc28c425d6e9e9c269a020431b239139"
+    sha256 cellar: :any_skip_relocation, monterey:       "debe8485884c401c707082ece657be86b4a5bbaa737959858dd7cb01936bdb54"
+    sha256 cellar: :any_skip_relocation, big_sur:        "af9fa9e620348645b7bc76c65b927c634aa97c78704d85b4c777d9ebe9a748d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da14d26cdab843a7100443af7e2f793a29329af1abb0ed663da8712330ddda5b"
   end
 
   depends_on "go" => :build

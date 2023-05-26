@@ -1,8 +1,8 @@
 class Lean < Formula
   desc "Theorem prover"
   homepage "https://leanprover-community.github.io/"
-  url "https://ghproxy.com/https://github.com/leanprover-community/lean/archive/v3.50.3.tar.gz"
-  sha256 "00316c946de2aa4f1b6655ea8bd92b21ff184afd305891e6803c7631753f5b87"
+  url "https://ghproxy.com/https://github.com/leanprover-community/lean/archive/v3.51.1.tar.gz"
+  sha256 "5a4734bf345d6c5ba6eacd2d33d86d9540eea7d008b4ebf8dde126e729fcbcaf"
   license "Apache-2.0"
   head "https://github.com/leanprover-community/lean.git", branch: "master"
 
@@ -20,13 +20,13 @@ class Lean < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8dbb51ed79cbfa8521ba6827fbcd3a19bc0b0c7a4caf1fc2084c769f0b07d682"
-    sha256 cellar: :any,                 arm64_monterey: "52f3fbb2af5e69d02ccccdef798dbc0300ce7a399afafd49ef9ccd4bc657cb4a"
-    sha256 cellar: :any,                 arm64_big_sur:  "bb0331dbdcd1de6b8f2d24938ef96658ebd10de90fcb6e084a297994473b8bbc"
-    sha256 cellar: :any,                 ventura:        "c085fa626d89dd857de35c19df59ea13d835bc3a595824b1b78bf364b950b24f"
-    sha256 cellar: :any,                 monterey:       "bcbceb47384c0e6903a61874d16485dc2a3d5a5a1c684e05a1baae01ed2356e1"
-    sha256 cellar: :any,                 big_sur:        "d1076aebc8c7f3c834578c542e4bc01b5e55e327b0363494a2bdf9027cfa17d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8be25df029dfc12cd9f95a2bde42fe0e37e88fd8294adb62a0533356764635c7"
+    sha256 cellar: :any,                 arm64_ventura:  "0797fdae3a180bbc24a6add28a8e877b5b9b7146bbcf20f26a4722de25ba89be"
+    sha256 cellar: :any,                 arm64_monterey: "0659bcfa8b37c2ca94ca3f82d816537f17ace87a7b3364b7b751d41df288ea25"
+    sha256 cellar: :any,                 arm64_big_sur:  "b37a618f61d1cd10bb4f109b8ac307317d08e9ac400acd22ea06eaad0068132b"
+    sha256 cellar: :any,                 ventura:        "42d0f2eb124c69b635767855a38494c89862ecb529db3c9d4f9988d248bd823a"
+    sha256 cellar: :any,                 monterey:       "b1c4beba495d421d1d193ab0545c0cc35161b1fec2ec306b11ffe464a7bd3c73"
+    sha256 cellar: :any,                 big_sur:        "76f5df6bc494f44c1cc90ff21a40a6cc4024221e2e4956177b29982cc4015f00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "47716dec0f9e482dd8a44694c4916cc86d104dcc65f50f4fc8d81e0f2d366ef6"
   end
 
   depends_on "cmake" => :build

@@ -3,18 +3,18 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/f3/27/66e3cebf5272f196e1da14e33045eea0ad04e2745fe9182a95d77d718e28/schemathesis-3.19.2.tar.gz"
-  sha256 "d6a0347d0397e5f5ed729f37290f332f98be14e3af385e7c155df7e95453d75a"
+  url "https://files.pythonhosted.org/packages/45/e8/57cc5fd57bcd364321aa5a3f78d5208a58286da37e217161b9e50856a58f/schemathesis-3.19.3.tar.gz"
+  sha256 "4c2ce9cd5cad61eee4d229a3c664ec59daa5c3621ff5aa72b317de8667486b78"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb916b797234d377f7b6b7ce9262e82407d69f124d08742ae799b826264686c2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b97b0c789a4f082de32ec081133b383c9ce791d41707a1dd9f0d955a87e97cc3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "68fc471f43bd46775f570be2e309c8c17e11ff1f610b0e4557783ba92c522843"
-    sha256 cellar: :any_skip_relocation, ventura:        "c8739a274c0a40636e17b2caa5124f5978337c3bc67766a62b421a63c6870b0b"
-    sha256 cellar: :any_skip_relocation, monterey:       "7ce5045e1f964ed87a70f9306ce827cc8091bb6c344059ea79088ae2470eecb3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7be0674953e6a20ae86c07dc2fc6f680e25eaf2f084d2d49ff2dc46791c05ec6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "762235d0a06915665566232b73e2fccaac34b16f6b16223f66436450d029f177"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "587f3a67db64cfba26967ebd84b0bd4a813d2bee1ff0bcdcd293fd43c00c5e05"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "45bca526fbe464a8886d319413d8089e809be48efaea6d2804b99ad8f3044142"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9dfbad6e553a3699f3e7c0e31439781934e067d24fa546a67d6adb6be1f73e3e"
+    sha256 cellar: :any_skip_relocation, ventura:        "72f54de9e28bfbee663bf1e3fb77cbf40293e2d7981ccc1ec36186f54bbce2b5"
+    sha256 cellar: :any_skip_relocation, monterey:       "c50efb7a803b4e57515229bfe743ca39f076f55997b23825e591f4024bdb1fb5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a7c006e56610084043f9c051b8f3b944ba93da4f889e780ddf40f49f03cbb2fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8bb572ed429dd95a850a1f418b8a36f2a76a9c70068da8fd87516f4a16b9ffb"
   end
 
   depends_on "python-typing-extensions"
@@ -73,8 +73,8 @@ class Schemathesis < Formula
   end
 
   resource "httpcore" do
-    url "https://files.pythonhosted.org/packages/a3/b8/5a0ebcb51cea6f86c4c2520e606018675dc1c9f4c3419356bfd8adc9fc76/httpcore-0.17.1.tar.gz"
-    sha256 "caf508597c525f9b8bfff187e270666309f63115af30f7d68b16143a403c8356"
+    url "https://files.pythonhosted.org/packages/b3/ad/7002a6f8e6ce0a246c991e00ba79b26ad06d307421a160214df24de5651f/httpcore-0.17.2.tar.gz"
+    sha256 "125f8375ab60036db632f34f4b627a9ad085048eef7cb7d2616fea0f739f98af"
   end
 
   resource "httpx" do
@@ -158,8 +158,8 @@ class Schemathesis < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/ee/391076f5937f0a8cdf5e53b701ffc91753e87b07d66bae4a09aa671897bf/requests-2.28.2.tar.gz"
-    sha256 "98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"
+    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
+    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
   resource "sniffio" do
@@ -193,8 +193,8 @@ class Schemathesis < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
-    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
+    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
+    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
   end
 
   resource "werkzeug" do

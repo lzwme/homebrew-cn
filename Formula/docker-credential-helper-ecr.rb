@@ -2,8 +2,8 @@ class DockerCredentialHelperEcr < Formula
   desc "Docker Credential Helper for Amazon ECR"
   homepage "https://github.com/awslabs/amazon-ecr-credential-helper"
   url "https://github.com/awslabs/amazon-ecr-credential-helper.git",
-      tag:      "v0.7.0",
-      revision: "9cabe9aafd12c95cd51e6fb0847aaa2eecd957d7"
+      tag:      "v0.7.1",
+      revision: "adf1bafd791ae7d4ff098108b1e91f36a4da5404"
   license "Apache-2.0"
 
   livecheck do
@@ -12,13 +12,13 @@ class DockerCredentialHelperEcr < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "888b13f73644f8fc95bd1f18e91c9e6c3af5b8f7d01b77b21d29bc97bf6ea0c1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "888b13f73644f8fc95bd1f18e91c9e6c3af5b8f7d01b77b21d29bc97bf6ea0c1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "888b13f73644f8fc95bd1f18e91c9e6c3af5b8f7d01b77b21d29bc97bf6ea0c1"
-    sha256 cellar: :any_skip_relocation, ventura:        "0a21bfb02fc096d40ad44e9bff735a44c260189fad24f4ecf43e575c2a46833a"
-    sha256 cellar: :any_skip_relocation, monterey:       "0a21bfb02fc096d40ad44e9bff735a44c260189fad24f4ecf43e575c2a46833a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0a21bfb02fc096d40ad44e9bff735a44c260189fad24f4ecf43e575c2a46833a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3db9fc074cbf96f373a82e1a41e24fd56441fb3ff71d0f52d140b56f66d77177"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ea097da1828cff0652a2004c52785da654c81ac65722eb52108a129bce51a67"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1ea097da1828cff0652a2004c52785da654c81ac65722eb52108a129bce51a67"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1ea097da1828cff0652a2004c52785da654c81ac65722eb52108a129bce51a67"
+    sha256 cellar: :any_skip_relocation, ventura:        "6e3203cb66dd05a916e756bc0e58e41f70124b57ed6878fd9537ae17f199ca7b"
+    sha256 cellar: :any_skip_relocation, monterey:       "6e3203cb66dd05a916e756bc0e58e41f70124b57ed6878fd9537ae17f199ca7b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6e3203cb66dd05a916e756bc0e58e41f70124b57ed6878fd9537ae17f199ca7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1ac67bd6087eba7840fc12e21e48644dd7f51862398eb7d070f4e5101bfe095"
   end
 
   depends_on "go" => :build

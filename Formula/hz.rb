@@ -1,19 +1,19 @@
 class Hz < Formula
   desc "Golang HTTP framework for microservices"
   homepage "https://github.com/cloudwego/hertz"
-  url "https://ghproxy.com/https://github.com/cloudwego/hertz/archive/refs/tags/v0.6.3.tar.gz"
-  sha256 "ce119b722b505d7bfbff70e35abdb96152e6c36c8e7944ae166d61158f739ef5"
+  url "https://ghproxy.com/https://github.com/cloudwego/hertz/archive/refs/tags/v0.6.4.tar.gz"
+  sha256 "c568fcafa94168ca10fc6a9bad192d724e3ec3f687200df2e26fc4f1917a28d3"
   license "Apache-2.0"
   head "https://github.com/cloudwego/hertz.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f629db14297998a117405aad3d5a4ebb0fa53f59d600e882b3a7ba3e2d559b65"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f629db14297998a117405aad3d5a4ebb0fa53f59d600e882b3a7ba3e2d559b65"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f629db14297998a117405aad3d5a4ebb0fa53f59d600e882b3a7ba3e2d559b65"
-    sha256 cellar: :any_skip_relocation, ventura:        "080e13eeebf85b869f8c8a6067a77322c17124621ac68431f1dea683adc57343"
-    sha256 cellar: :any_skip_relocation, monterey:       "080e13eeebf85b869f8c8a6067a77322c17124621ac68431f1dea683adc57343"
-    sha256 cellar: :any_skip_relocation, big_sur:        "080e13eeebf85b869f8c8a6067a77322c17124621ac68431f1dea683adc57343"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "556de483fa7ad43da49a6791b367bc76d590bf5b59572c0875914d8f85f3240c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e0058403c67716dfdcb330b31bb18a820725cb9049706c16d2f16251b02f9a5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1e0058403c67716dfdcb330b31bb18a820725cb9049706c16d2f16251b02f9a5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1e0058403c67716dfdcb330b31bb18a820725cb9049706c16d2f16251b02f9a5"
+    sha256 cellar: :any_skip_relocation, ventura:        "6806cffa7b8edbe8a9ab27f8d6f19de8fbecef78c9043d17aef48f71137faf67"
+    sha256 cellar: :any_skip_relocation, monterey:       "6806cffa7b8edbe8a9ab27f8d6f19de8fbecef78c9043d17aef48f71137faf67"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6806cffa7b8edbe8a9ab27f8d6f19de8fbecef78c9043d17aef48f71137faf67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9bb18224e38f00e37d57e7b296902190db09c6fdaa0ab4c13e9224049232a7a9"
   end
 
   depends_on "go" => :build

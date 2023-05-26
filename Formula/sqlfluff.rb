@@ -3,18 +3,18 @@ class Sqlfluff < Formula
 
   desc "SQL linter and auto-formatter for Humans"
   homepage "https://docs.sqlfluff.com/"
-  url "https://files.pythonhosted.org/packages/ef/01/51d18936e3340f73d587c51ead2936e77da6f04d6e8990181ad098710014/sqlfluff-2.1.0.tar.gz"
-  sha256 "66017f63987bebb24ec9fd28228a12b3d224cc40ad5a85976768a38591b7b4b2"
+  url "https://files.pythonhosted.org/packages/12/da/375610053ffff8674dc6689a8404cd3a07d18ef9cf864492e70e3a7f766c/sqlfluff-2.1.1.tar.gz"
+  sha256 "974a2eecb91ab3236b73097ea6c7532a96dd0dcafd4394fa2305b2845ef4d7d2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2831c1dcab25c8d3c80c2beef07dcc4fafef1f37f33eb218969a5ac9b107dd45"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4937f49633a5fdc854149fd3cfb86c1097dcf4c1d31bc243e6ee8c1d9043c19f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "effc60d6ba6d3731e0d8d775776361de0ad65310de5db085928335379bac3e4d"
-    sha256 cellar: :any_skip_relocation, ventura:        "05758882023d14715a31b17698deb32783f9187c2eb2f86fd43fbf2995ac356b"
-    sha256 cellar: :any_skip_relocation, monterey:       "d6d21cbb9a1952a5fa5d563a8610e65530cdac1c639eb20fdf93bac3fe08f9ab"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0b7833a0eb13b285b8cf25788b7b5f5fd7c9fc2fadd5fbcf90d39cb05ba2dad2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aceac16e52dd447742cedfd7233012846292868799249bf31636f5b873cf95e4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "be8d47152388c4d913cd1aee5c5ce0a6cee5fba9b46d1dafba9afc6a0bd59a3a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f9d30606df506521013df7efed0eda08c9adae6cc24ad38655a0c1ffb9cd330f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "25bfd04a4a344271709ee0decfeaff78525400095d479c76fc4d3b4320924642"
+    sha256 cellar: :any_skip_relocation, ventura:        "b6b6329abdb348efb4d3d2a6aa16dcdce960369d9049f2f660989acc593f2af0"
+    sha256 cellar: :any_skip_relocation, monterey:       "a2ddcc4f6fd1c1c92000bab7e2578100dce6015f71b97f07d59cc6fbd64a7195"
+    sha256 cellar: :any_skip_relocation, big_sur:        "840f443f5ea658a6aa666c9d9e9dc93155ba3035728e4dfe8357bb3a26517aab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e236dad98a9d8f3adb8f0961f33f8f83dac75c62f9a00704e40d48f9a2b9623"
   end
 
   depends_on "pygments"

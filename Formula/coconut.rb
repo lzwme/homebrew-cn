@@ -3,18 +3,18 @@ class Coconut < Formula
 
   desc "Simple, elegant, Pythonic functional programming"
   homepage "http://coconut-lang.org/"
-  url "https://files.pythonhosted.org/packages/24/f7/efd7ba4c501ee49295b55f2e95ba102dbe987a7811e79bce6d8c02a1ad03/coconut-3.0.0.tar.gz"
-  sha256 "a43e6b42f0bff1e4a868e2d1aa24e9a9dca9a106ab72047d03a1d73e9a4dc378"
+  url "https://files.pythonhosted.org/packages/af/92/a55e44eab3d943263f53396e3051fddb2e672b3ae260770a5d9eeca4f153/coconut-3.0.1.tar.gz"
+  sha256 "3760aaf7f0286282b18f47a663d62be91308aa543e2076a45dd3af3b67ed8dfe"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5aad1c8f9c0b3247883c878bdcb98f10d1726db698e07c06f832ebfc77b46995"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4e245ede276c54b15f1f15fc38d04aac1888c17f035136cc4a124fd2e643dfe9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2eb4ac67aa627dda1e52041428b05433d702d4aecd5d1ddf8bef076099e8aa87"
-    sha256 cellar: :any_skip_relocation, ventura:        "f107478d8ad9d4eb703e76f4e43dcf23d64579e2dc5a6a2d4a0a679e22b20cdc"
-    sha256 cellar: :any_skip_relocation, monterey:       "a8bf8f721ea166dee48d39683c5529aec53faede239ea535d51a9526cbd5e3af"
-    sha256 cellar: :any_skip_relocation, big_sur:        "af67cb6075307ba34b3c1720fc75be81d7f0c485fd339b3efb4763f2260826f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "de08a82f5dd00248b1aa8a7ddca7d45b3399f0d5724975814b20d8c9728dd07b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "09c8a4b0992cf3d6df2e3d8ed1b6299426480f0ebb7ba43420ad4323d535b879"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "938a843cbee131731bc3d9bcfc8bbed2ef23d35ff1bde9a1d386192402080e42"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f895edbf996d74ef0af9b16d3a0264079420849edd75ff05d368d05012918263"
+    sha256 cellar: :any_skip_relocation, ventura:        "c8c8cce1563d1490b0cc969aecc8010b815d475dde1f8c8b8b4ce3536f0990f0"
+    sha256 cellar: :any_skip_relocation, monterey:       "2a92c26fea8d3ade642bdd85881053841af81a74a925e2b8c0df3f8baf216042"
+    sha256 cellar: :any_skip_relocation, big_sur:        "61ad7f2f0f1b5761a219257369a32645d492f77cd4ff993de94757957aee3c42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "392de157c0fcf638d1443f0df9a38ec72d09f1957a045e5f0ebef06eb6a417f3"
   end
 
   depends_on "pygments"

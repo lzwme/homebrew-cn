@@ -8,11 +8,17 @@ class Gdbgui < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, ventura:      "7915addb6621ba98e5b8a0eadf4d8ad92f9325cc04eba623cead0170f47fdc37"
-    sha256 cellar: :any_skip_relocation, monterey:     "119f67831a4f28de8a5ff9b5fbba32600912386178b46b0f9e309cd7d651b4a9"
-    sha256 cellar: :any_skip_relocation, big_sur:      "4c4ca02744a6f4a82bed16ccb7c117bdadb2890b93e0b74db1e0b3c13952b146"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0f8e35829f3e228ddbc5c3965eb3b1f103d18e934e95700f51f80afb8d106235"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, ventura:      "93601eb1af66befa802f36eb45afc053f172cb6c19e5a6281c1b3f0f75d544f9"
+    sha256 cellar: :any_skip_relocation, monterey:     "6cac4a7fd50072c2108068772edf1ba7e78270946c428620b47ca81139e644e2"
+    sha256 cellar: :any_skip_relocation, big_sur:      "d1a4536b5eb571a9ca4fcffc86a0529712ac50340131a1681c32a38af7e1a218"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "36eb1049e48848080019c1533e14b63a43041667389e5ba0f8353adab5b3db17"
   end
+
+  # No activity since June, 2022 (https://github.com/cs01/gdbgui).
+  # Dependencies declared in the repo are no longer compatible with recent
+  # Python versions.
+  deprecate! date: "2023-05-25", because: :unmaintained
 
   depends_on arch: :x86_64 # gdb is not supported on macOS ARM
   depends_on "gdb"

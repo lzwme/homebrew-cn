@@ -1,19 +1,19 @@
 class Stgit < Formula
   desc "Manage Git commits as a stack of patches"
   homepage "https://stacked-git.github.io"
-  url "https://ghproxy.com/https://github.com/stacked-git/stgit/releases/download/v2.2.4/stgit-2.2.4.tar.gz"
-  sha256 "858929098bbe156bc73b2518a870e51bc63f6ebef1ac7dc61f6cebc2d2553a43"
+  url "https://ghproxy.com/https://github.com/stacked-git/stgit/releases/download/v2.3.0/stgit-2.3.0.tar.gz"
+  sha256 "365aee4f6b301568e991901022fe0d908768840e7070efbb04512bd6fd9d5523"
   license "GPL-2.0-only"
   head "https://github.com/stacked-git/stgit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "59dbd96949129cbaf487e1b20b3e73c68b8d9666788209f36d9273c2452dcdfe"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "db7b9f647bfa0fa23bfc57e5a2e9906d94c9b2e38b997ecd247d7b7a4429e7cc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "43f6a12e549fe755de7fa7a9285180fc6a03210a70662a3d1ca93089ece8a41b"
-    sha256 cellar: :any_skip_relocation, ventura:        "6ee66939f31d71a4128178efed4a2caf3afc13e3f55b305e655cd90374c8b545"
-    sha256 cellar: :any_skip_relocation, monterey:       "674a65d1a5dc2aef96a40a056332c3447c0e5c6b2043ba35dd4c8653bf3d0fb3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1718120ae6f21839c412cdb456018399ca77769bbdb37ae8bb69317f55e0636e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2fa95ec36871ffaeb2200096a1557e915781b20a85feb7fd4dd434129ef0201"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d277f6bb134111bc6e77c32d19e1dda61399c4416735a20159348c05b792febf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "722d809ab81b5f2b29255ef8df3b1319f9f6adaf59334139e4971a849b60b2e9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1559460b7eca04d4af3b69d0f4cb23975777ca294b63c6f93386c5f038fa6cfa"
+    sha256 cellar: :any_skip_relocation, ventura:        "5a2a4a18ac7064b8c63b54f4765225f4e9f393d1cf08821f023e711328a7ab9b"
+    sha256 cellar: :any_skip_relocation, monterey:       "3caf1a213a5badf2fb544853c6d39708885808588aa24f405120ff014f629134"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0142ec92b2ea1d49351f40d6b48a5d18caba69222c627aa66d068fe2a0b849ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbda2af6b1e779b90537e47667b4fa13110fe113b70a9b715551e0ea7da41be6"
   end
 
   depends_on "pkg-config" => :build

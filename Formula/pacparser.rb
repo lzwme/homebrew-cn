@@ -1,19 +1,19 @@
 class Pacparser < Formula
   desc "Library to parse proxy auto-config (PAC) files"
   homepage "https://github.com/manugarg/pacparser"
-  url "https://ghproxy.com/https://github.com/manugarg/pacparser/archive/v1.4.1.tar.gz"
-  sha256 "97eb85832194bd4a98946fd92cebb9181fffb0763319086fc0541408b5d4415b"
+  url "https://ghproxy.com/https://github.com/manugarg/pacparser/archive/v1.4.2.tar.gz"
+  sha256 "99ddfdea3473fceef42a31dde59116ad79d04b2f1cd18d76556bbd50e2e80bbc"
   license "LGPL-3.0-or-later"
   head "https://github.com/manugarg/pacparser.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e4c3db484fe2bd33ae2c93d978c9367030a1d53446819f5fb2e17d11eba1bb69"
-    sha256 cellar: :any,                 arm64_monterey: "9684968dc0488a7fefc960b48b07c730f51518c9302d1a28414b3b39079e570f"
-    sha256 cellar: :any,                 arm64_big_sur:  "df9f100d605dbca0aa98b541e12821c0bfff9da126b2f6122122bd7cdf4b28a2"
-    sha256 cellar: :any,                 ventura:        "40f638eb66c02c9fcbbf26dcbd0f3be7f2f63b79db9308ef82101715c3affc1c"
-    sha256 cellar: :any,                 monterey:       "6e5c9c2959f9c21305bbaaa035422e0efffd87b7bac8345b4335759b3a850018"
-    sha256 cellar: :any,                 big_sur:        "c75e37d499241a15b2fdfe6da3a9d2b25638f7225ec8df7479f7ebb08e2d08f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ae67f9bb8f2343863f7c4c3a0b2cbc776424d3e9595af9d000ad66bef3ba02b"
+    sha256 cellar: :any,                 arm64_ventura:  "a31f761cf4a84788403a535adacf1069fe045b05d998560ea2136142917266de"
+    sha256 cellar: :any,                 arm64_monterey: "a2a6e44959694d4ce4c83b1b7b3c9ed11a8dd28e8733c7c55c2f7c11e69569e5"
+    sha256 cellar: :any,                 arm64_big_sur:  "1c4dadadb712f0238cfe4b585294f2fed4be69a8676ea8b7ac935c5efc5843e5"
+    sha256 cellar: :any,                 ventura:        "7a222cb2fd5ba79eab74198f92fcddffe23824744d121175c735e025e9084c20"
+    sha256 cellar: :any,                 monterey:       "231332325c62366976fa47ffbf5a20f05ca0261cb9bcbb88b1ed1f9ba136508e"
+    sha256 cellar: :any,                 big_sur:        "73682a62f9366030e2b61c4b163d47115e903f193b14a591283f7c2fe7124cab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae4c6650a73027303e188b1a9904774cbff06d8a89ff0f65274d00f5f244211a"
   end
 
   def install

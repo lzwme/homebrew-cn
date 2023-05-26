@@ -1,19 +1,19 @@
 class Envd < Formula
   desc "Reproducible development environment for AI/ML"
   homepage "https://envd.tensorchord.ai"
-  url "https://ghproxy.com/https://github.com/tensorchord/envd/archive/v0.3.22.tar.gz"
-  sha256 "d426fe2e81aa581fe91584c5a971129cf532e8a078f27cdfe71bcf1269601a01"
+  url "https://ghproxy.com/https://github.com/tensorchord/envd/archive/v0.3.23.tar.gz"
+  sha256 "aee63d2bf613b0db8d3509245885023d380cde56cb21da68d905dfdb672262f2"
   license "Apache-2.0"
   head "https://github.com/tensorchord/envd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "774b064ed235089038b727c0dee5049a0ef3239144748a2156405cab9735c08a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "774b064ed235089038b727c0dee5049a0ef3239144748a2156405cab9735c08a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "774b064ed235089038b727c0dee5049a0ef3239144748a2156405cab9735c08a"
-    sha256 cellar: :any_skip_relocation, ventura:        "33e9ed47963270db3ec7e69e0f4bff3c3e0ab307ab6e2e02bb7ea2c0b30566c1"
-    sha256 cellar: :any_skip_relocation, monterey:       "33e9ed47963270db3ec7e69e0f4bff3c3e0ab307ab6e2e02bb7ea2c0b30566c1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "33e9ed47963270db3ec7e69e0f4bff3c3e0ab307ab6e2e02bb7ea2c0b30566c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e876a7a8da643e458e5e7f9c7adbd3bd0620d312907be4a2a2409924c411e08"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "520e71941b3fc96fcbb566c4fa76b288275cafdbd98ebc668a57a1ab5331fec4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "520e71941b3fc96fcbb566c4fa76b288275cafdbd98ebc668a57a1ab5331fec4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "520e71941b3fc96fcbb566c4fa76b288275cafdbd98ebc668a57a1ab5331fec4"
+    sha256 cellar: :any_skip_relocation, ventura:        "c6cf58000e1222248c0507d5a9de8f34a790b654f38f60f5b818443cbd8f850c"
+    sha256 cellar: :any_skip_relocation, monterey:       "c6cf58000e1222248c0507d5a9de8f34a790b654f38f60f5b818443cbd8f850c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c6cf58000e1222248c0507d5a9de8f34a790b654f38f60f5b818443cbd8f850c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "53f52aa13940d92c212908b159c2c79468cc1598db8a9946ae48bc700c55273d"
   end
 
   depends_on "go" => :build

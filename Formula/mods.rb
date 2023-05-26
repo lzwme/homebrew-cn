@@ -1,18 +1,18 @@
 class Mods < Formula
   desc "GPT-4 on the command-line"
   homepage "https://github.com/charmbracelet/mods"
-  url "https://ghproxy.com/https://github.com/charmbracelet/mods/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "2e855a621406289b374068ebcca4a9613d1c64ce64754695c269322698ce73e9"
+  url "https://ghproxy.com/https://github.com/charmbracelet/mods/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "553a405cd496b85fbcaa29aa2ad0c1170b55063f63903050eb886eb976e2b55e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ac233a04962f8b085491501259dc66fed0338b915bc7a510b31df8d4a4d8087"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0ac233a04962f8b085491501259dc66fed0338b915bc7a510b31df8d4a4d8087"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0ac233a04962f8b085491501259dc66fed0338b915bc7a510b31df8d4a4d8087"
-    sha256 cellar: :any_skip_relocation, ventura:        "eced1ffb485fe032691269c2c46521a6eeed0ff86c5145a10e4eb4cb3ee63fd2"
-    sha256 cellar: :any_skip_relocation, monterey:       "eced1ffb485fe032691269c2c46521a6eeed0ff86c5145a10e4eb4cb3ee63fd2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "eced1ffb485fe032691269c2c46521a6eeed0ff86c5145a10e4eb4cb3ee63fd2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f1af3ffeb79b00f9dca2473ad770c9a27aebec0379f28026cb4805f9a78bc5a6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0639fdbd9d75225ef3b4879efab74d3c3dbd3fedfd07bedc2931efae61fbc27d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0639fdbd9d75225ef3b4879efab74d3c3dbd3fedfd07bedc2931efae61fbc27d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0639fdbd9d75225ef3b4879efab74d3c3dbd3fedfd07bedc2931efae61fbc27d"
+    sha256 cellar: :any_skip_relocation, ventura:        "4864ec2ea12f0cca35ccbc4d1b8080f9434e7ec9e4430e82def3629e5764baee"
+    sha256 cellar: :any_skip_relocation, monterey:       "4864ec2ea12f0cca35ccbc4d1b8080f9434e7ec9e4430e82def3629e5764baee"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4864ec2ea12f0cca35ccbc4d1b8080f9434e7ec9e4430e82def3629e5764baee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54b74bc0ad2e733504c28a12451e471462adf905d769dc5267993b8ca6389e53"
   end
 
   depends_on "go" => :build

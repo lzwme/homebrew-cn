@@ -3,10 +3,10 @@ class Qt < Formula
 
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.5/6.5.0/single/qt-everywhere-src-6.5.0.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.5/6.5.0/single/qt-everywhere-src-6.5.0.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.5/6.5.0/single/qt-everywhere-src-6.5.0.tar.xz"
-  sha256 "dba376e110e53895c7c827eea389dc12aa9c45862cd197d2f0d37ee472baf0b0"
+  url "https://download.qt.io/official_releases/qt/6.5/6.5.1/single/qt-everywhere-src-6.5.1.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.5/6.5.1/single/qt-everywhere-src-6.5.1.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.5/6.5.1/single/qt-everywhere-src-6.5.1.tar.xz"
+  sha256 "a2d88a6f8c3835dca52f3b7433149c3de606a96bbf024640c27657276cc7350a"
   license all_of: [
     "BSD-3-Clause",
     "GFDL-1.3-no-invariants-only",
@@ -24,13 +24,13 @@ class Qt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "681f393770afb634173d353904213db19617d25b8157adbf915f0d089a148319"
-    sha256 cellar: :any,                 arm64_monterey: "a6db6e10cc16d7e6041d14fd4d45abcb9496670beb033323d9e644276c640af2"
-    sha256 cellar: :any,                 arm64_big_sur:  "5da6186bb6858ab19c3bb6091b6e2e9344d751decd57b0df9beab8ffa7872156"
-    sha256 cellar: :any,                 ventura:        "a93813d6fd903072685f829f44f8c62f76944761ff0914c7cbec47244faeecf6"
-    sha256 cellar: :any,                 monterey:       "4b20339adcfe6a772f7b737dc9e9acaf7ccf795674a178c930fe395a08b1a8d2"
-    sha256 cellar: :any,                 big_sur:        "7442d856326e0526f41d67738b140fe08a857e16b3b1df9b52c3bd8231221419"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "723ab6d186d524969c87567256036dde3797dc285abbf3423741f1419766db5f"
+    sha256 cellar: :any,                 arm64_ventura:  "4e9d0be2bd045fb4045eb445ebb5df64ee8bfcc98217741740ef7b57005fde32"
+    sha256 cellar: :any,                 arm64_monterey: "57130bb785729ace6dbe8eb1e844b4b261a51bc2c606e145f43f0bafc997fd30"
+    sha256 cellar: :any,                 arm64_big_sur:  "0929d812b85fe99b06e39176e11d5fda0f899877165ee5379bef1226f52e062d"
+    sha256 cellar: :any,                 ventura:        "6916422b15dfce0917a7a88da8e1c9568292248c33f500e2f876bf5c00bc91c1"
+    sha256 cellar: :any,                 monterey:       "b8fdda4b008fef1cef8039105447f981bc6336683eb488022f36056fd1443fb1"
+    sha256 cellar: :any,                 big_sur:        "c4011b0fcfbae5255b4ea98403a7c5e8caf87aeee2c79b7d38b5563b96fe5494"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f893fbd39122207e15b6c8bdd0b10143acb156a550257404f38ae64ccc50f6b2"
   end
 
   depends_on "cmake"      => [:build, :test]
@@ -135,21 +135,6 @@ class Qt < Formula
     url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/c363f0edf9e90598d54bc3f4f1bacf95abbda282/qt/qt_internal_check_if_path_has_symlinks.patch"
     sha256 "1afd8bf3299949b2717265228ca953d8d9e4201ddb547f43ed84ac0d7da7a135"
     directory "qtbase"
-  end
-
-  # Upstream fix for "use of undeclared identifier 'CharacterClass'"
-  # Remove in next version
-  # https://bugreports.qt.io/browse/QTBUG-113390
-  patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/532d577449fc57c68fea00dd56b05862c5cd064e/qt/6.5.0-QTBUG-113390.diff"
-    sha256 "716d440bc5d31a9a58d5df4ec802449b75f8a6b616fe1ff6f150b95fe12e3d53"
-  end
-
-  # Upstream fix for symlinks in build path, remove in next version
-  # https://bugreports.qt.io/browse/QTBUG-113295
-  patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/b4f15465ea37278cb6bce2d8781bcce2f9caeebe/qt/6.5.0-QTBUG-113295.diff"
-    sha256 "272376e5b2da5a629774664aae81d8bf6e149452399a73abc21f0535d83e25a3"
   end
 
   def install

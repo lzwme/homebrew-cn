@@ -1,27 +1,25 @@
 class Osqp < Formula
   desc "Operator splitting QP solver"
   homepage "https://osqp.org/"
-  url "https://ghproxy.com/https://github.com/osqp/osqp/archive/v0.6.2.tar.gz"
-  sha256 "d973c33c3164caa381ed7387375347a46f7522523350a4e51989479b9d3b59c7"
+  url "https://ghproxy.com/https://github.com/osqp/osqp/archive/v0.6.3.tar.gz"
+  sha256 "a6b4148019001f87489c27232e2bdbac37c94f38fa37c1b4ee11eaa5654756d2"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4906d6a8a68542378bdd4a34bfa8c5e2cd021420ec63e3803a7ac17820f50bdb"
-    sha256 cellar: :any,                 arm64_monterey: "ec80a9667887ae925ed2951fc41bee5dc39e9c7ee5f37009ed902b3c4d67d63c"
-    sha256 cellar: :any,                 arm64_big_sur:  "e632fa361ed8e194da854c8caff4b015482015fda56af0bd6f0ca76bbadecc74"
-    sha256 cellar: :any,                 ventura:        "9521d270d95515beaf5d797cfe4a61482690f69a568ab721c989740a436c15ee"
-    sha256 cellar: :any,                 monterey:       "58ed571c455f3e77caca3db8b5862a04b29842ab98f5fa55ad415cf2784e6f45"
-    sha256 cellar: :any,                 big_sur:        "875d53798462ef836a86415604f94d903ef6b6974732292aaf6bed3d37f69e5f"
-    sha256 cellar: :any,                 catalina:       "2f78c81c56d6f153e55f6e6ce4524eec62cf806b7834ef48337d08aefb2643ec"
-    sha256 cellar: :any,                 mojave:         "2f15d564ee6028766215aa931f0ee0c65af87da9fe4697662354a6b9c53e1a30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b135456e8959fb3417d10dba3924fe6f78510b67eaea4a020a231f4f821c9bd0"
+    sha256 cellar: :any,                 arm64_ventura:  "ca78e8724eade029e62543fd5c71024400dcf7af5e34fcd9b520aa6030ed6a50"
+    sha256 cellar: :any,                 arm64_monterey: "037777df22a74ad68ede796d9004ac30939144e63507112f35011d552f6091fd"
+    sha256 cellar: :any,                 arm64_big_sur:  "dd0f9790866331141c39a30a19732e5571399d0f7668bc725f5353dcb89c8221"
+    sha256 cellar: :any,                 ventura:        "0a8cb981e6a52e00c2db369efd692e41b9bf11aa8644c3337d77bfba91d98761"
+    sha256 cellar: :any,                 monterey:       "19a616f01dd68f4f13f128301f3a3d38362482f97be1d10256fdd52f69e10e9f"
+    sha256 cellar: :any,                 big_sur:        "7bb862c89dda12256460a5ae9710053a99c413275093aaa2d18d71b676bc9ca7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1fd25cee27a7fb3d5f6ee8e9675f1b069bb4a22e5782f2753f5cd070cc6ba5a0"
   end
 
   depends_on "cmake" => [:build, :test]
 
   resource "qdldl" do
-    url "https://ghproxy.com/https://github.com/osqp/qdldl/archive/v0.1.5.tar.gz"
-    sha256 "2868b0e61b7424174e9adef3cb87478329f8ab2075211ef28fe477f29e0e5c99"
+    url "https://ghproxy.com/https://github.com/osqp/qdldl/archive/v0.1.7.tar.gz"
+    sha256 "631ae65f367859fa1efade1656e4ba22b7da789c06e010cceb8b29656bf65757"
   end
 
   def install
