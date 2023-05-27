@@ -5,8 +5,8 @@ class FreeradiusServer < Formula
   head "https://github.com/FreeRADIUS/freeradius-server.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/FreeRADIUS/freeradius-server/archive/refs/tags/release_3_2_2.tar.gz"
-    sha256 "c1526742249d584f069e1738541528847eb1f84ac580c52c9664f2a8463d4f36"
+    url "https://ghproxy.com/https://github.com/FreeRADIUS/freeradius-server/archive/refs/tags/release_3_2_3.tar.gz"
+    sha256 "65cdb744471895ea1da49069454a9a73cc0851fba97251f96b40673d3d54bd8f"
 
     # Fix -flat_namespace being used
     patch do
@@ -21,13 +21,13 @@ class FreeradiusServer < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "ef56cb0121c62d66cb75f4cbf62e756f0d6d2efa7f50211b6aeeabaf187a5e18"
-    sha256 arm64_monterey: "6c045b5f47a6d286fc86e0079916fc9a946804271ee549c1317bb0d0262f1db1"
-    sha256 arm64_big_sur:  "1dbe46f88a729488bee516162b3c410a739808f0fc766cb0c48ad7a6615e135f"
-    sha256 ventura:        "139810b9990dc6648df5aae923a7cbd5adb14d545c2d9caac1c4f61569380944"
-    sha256 monterey:       "9f3d64de4ee24fae77c582b6415025f52aec9dfc5d26c11f12baed57d9a587a0"
-    sha256 big_sur:        "641e935f66a99411a3d844da02a030e019ba1d64777608ea31f3838928e6b8f7"
-    sha256 x86_64_linux:   "f347a3d72b60f7065425343a18f04b7e1ee90a70684e4fcc72dbf08ac0254b15"
+    sha256 arm64_ventura:  "26c7e0343035fbaee6461e9559210e6a82a1072589fd64f814e744a3d2dc6126"
+    sha256 arm64_monterey: "7cdb8ed4cba08c375fae7d9e534b4c1bd31c71ce8fba637a25b08b1e8784ae95"
+    sha256 arm64_big_sur:  "3736781e5be515619cb0a9750f9c1100e6518d2b5fc54957defb1947e6fe9432"
+    sha256 ventura:        "1ca7631e75d7a7b94ba87c55ca47ff2f07482f9d6502a19c5a7e05d72b6b99f0"
+    sha256 monterey:       "86a65b62f8baa4b585a0384a2a0098474093167c84b9976c3a555f1a3c32d359"
+    sha256 big_sur:        "f41f5aae980d220134df44de2297cff8f2fa34410d5078ba84e6d15fbe8396db"
+    sha256 x86_64_linux:   "d743c39d817f8d30eef139c5aa0b7dd36f150e873ef8107abbb02e3e40bc6362"
   end
 
   depends_on "collectd"

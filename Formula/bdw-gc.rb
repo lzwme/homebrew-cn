@@ -1,8 +1,8 @@
 class BdwGc < Formula
   desc "Garbage collector for C and C++"
   homepage "https://www.hboehm.info/gc/"
-  url "https://ghproxy.com/https://github.com/ivmai/bdwgc/releases/download/v8.2.2/gc-8.2.2.tar.gz"
-  sha256 "f30107bcb062e0920a790ffffa56d9512348546859364c23a14be264b38836a0"
+  url "https://ghproxy.com/https://github.com/ivmai/bdwgc/releases/download/v8.2.4/gc-8.2.4.tar.gz"
+  sha256 "3d0d3cdbe077403d3106bb40f0cbb563413d6efdbb2a7e1cd6886595dec48fc2"
   license "MIT"
 
   livecheck do
@@ -11,14 +11,13 @@ class BdwGc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "0d49ed54da084483ddf742707bf206475f423dff3fa6e8d7b8c0c7d34a42bf70"
-    sha256 cellar: :any,                 arm64_monterey: "7977dd204f6ea7d0b8438db5fecb8ceed6807788ba8e9b7e20d4a8886b6dce6a"
-    sha256 cellar: :any,                 arm64_big_sur:  "162892760401052a1a6d6cb183bb6683c18905377489b9bf50151a80c816f967"
-    sha256 cellar: :any,                 ventura:        "4f108e3270a93578914a3e3ef03ff57b2cb37637b068b43cc69efa81f54d6979"
-    sha256 cellar: :any,                 monterey:       "4b2f9d80d7f7d5471c875c3254d933234f782f80b862ea69708a054ba33e5a52"
-    sha256 cellar: :any,                 big_sur:        "a55727cc7d7a7dbc8f7e61aca70a94dc07dcaccbfbffc5f92fcdc77dec64eaa7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e15d359d4a51607a8751eef4e7f213477f4d04fed463acbd0accc5d793e7178f"
+    sha256 cellar: :any,                 arm64_ventura:  "d72bbcd333cb094f8420140377f52d180215cb9da36e6ee2e7844131dd3893e6"
+    sha256 cellar: :any,                 arm64_monterey: "341fca69e636872e81ba36d11455fd0d0a0ab212118bf0c08650965ee4507df7"
+    sha256 cellar: :any,                 arm64_big_sur:  "3d80fe2490ea0f7a74c456c3d48096deb084a354f9be2efe600628307345cf9f"
+    sha256 cellar: :any,                 ventura:        "7eb544c73ee1bff67ec56f1a3f980b6baf92a19f1189b0d06b3ea90d69dd7554"
+    sha256 cellar: :any,                 monterey:       "c7767f6818d404d1dd7d15c14b6b7cd14fe51016c601c337b3a73b4ab12655c2"
+    sha256 cellar: :any,                 big_sur:        "82a7fec30efbcc9927471602771d96fa824d413764add2d8c9fb9e1487195ce0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f652d04db5c62c5bb5c6a974886b883ecddbd780ef960070ae1fcdfbab887acf"
   end
 
   head do

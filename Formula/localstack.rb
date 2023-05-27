@@ -187,6 +187,6 @@ class Localstack < Formula
 
     output = shell_output("#{bin}/localstack start --docker 2>&1", 1)
 
-    assert_match "Server message: Unable to verify API key", output
+    assert_match "API key activation failed", output
   end
 end

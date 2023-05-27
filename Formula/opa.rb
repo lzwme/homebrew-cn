@@ -1,19 +1,19 @@
 class Opa < Formula
   desc "Open source, general-purpose policy engine"
   homepage "https://www.openpolicyagent.org"
-  url "https://ghproxy.com/https://github.com/open-policy-agent/opa/archive/v0.52.0.tar.gz"
-  sha256 "ffdd7df0742385e46459f7c79149c9b4bacfa062f0cb58b174516c408e5c8024"
+  url "https://ghproxy.com/https://github.com/open-policy-agent/opa/archive/v0.53.0.tar.gz"
+  sha256 "e7a34a82dd37f85f076d767e0ed5c116ebdbaa7a9f8cac54b0a74f6aedbb85fa"
   license "Apache-2.0"
   head "https://github.com/open-policy-agent/opa.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e7d0c8f47bc6e40a1af433e412de70ef9108d541dd85a92ceaf32651194911f6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5bce2343d6a0cfbf520155e7473d9fd44019d18257e9138ac263abf526e6420d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "76661a03583fda31c637fdb80201cc94e438ce8cd542687d64d0e71039c7e733"
-    sha256 cellar: :any_skip_relocation, ventura:        "db91dd7c89fcea123e9d70da4459c1f8b5e0f85342b9a667d46b97a992248793"
-    sha256 cellar: :any_skip_relocation, monterey:       "f08a1226a255c3b016d013856165299354f33d7a4b3addec8ed875a74e77b259"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fa4199fb672144a7417d66babe1c2d0b5bdeef598f1280388ad831702ad73ea8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "165cfc67e8b6c988e648e75448a52c6ed297e36c3b2ba185d9cb16ebaedb18b8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "156bb10e7e21b362b6b485612eda08f76721cd5f7783fd4253d15e6c15bfa42b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "123d2738c95fa4378193f6b179d768987383af9115192b934bce9fc5d52050b7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7a7ade27f02702d55c009a7ea2041d52a55e3b2a22628e8f943cf32a131e2772"
+    sha256 cellar: :any_skip_relocation, ventura:        "7928a25ef557d36c5670c132d52efa50ba1b4a8005477a05182ecae5a12419a7"
+    sha256 cellar: :any_skip_relocation, monterey:       "1bb36ad8ea8e441b96e9723627607c53f200bfcbe87581183c4afd7a7be97811"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1f1f8f3ce2b4d4185c00a543b775e2ab4faaf56603a79d374c36476bdf6543ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6d68d21be5db59d187da5d67a43787240ae8eb9da504bb9b85660f61f9c637c"
   end
 
   depends_on "go" => :build

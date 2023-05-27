@@ -1,19 +1,18 @@
 class Libtcod < Formula
   desc "API for roguelike developers"
   homepage "https://github.com/libtcod/libtcod"
-  url "https://ghproxy.com/https://github.com/libtcod/libtcod/archive/1.23.1.tar.gz"
-  sha256 "dd00be7dde66aa7456bab8acf98b6a0ae73871bd5bee10a7838752fdd7007c6e"
+  url "https://ghproxy.com/https://github.com/libtcod/libtcod/archive/1.24.0.tar.gz"
+  sha256 "13e7ed49f91b897ac637e29295df8eeac24e284fbd9129bb09fd05dba0dcc1fb"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4d3d7be32377aa333d1e5352f28ace0d5985ebb0a2f95910e18553deb206463b"
-    sha256 cellar: :any,                 arm64_monterey: "d7777853052eee7141bdf456a8be5e96b2065d7f50c9b948a3f307c00f2c1f37"
-    sha256 cellar: :any,                 arm64_big_sur:  "1dd1c1908bc001d8d3fc6148b841bf64f774d49cecd84f99a59d5b5df8359abd"
-    sha256 cellar: :any,                 ventura:        "6e01727ebeac536f92ce375cc2a51aff1309e901ebe84b5d03558d61686bb3b6"
-    sha256 cellar: :any,                 monterey:       "375b0bd3b779a058256c33c65a84b94a035b038ce6e49a8030a27e6162e858e6"
-    sha256 cellar: :any,                 big_sur:        "ec1a87e97f42dabad818aa501b92a94df612eed7f7e20380a4a806a69ad25c82"
-    sha256 cellar: :any,                 catalina:       "8827b6154dbdf32f0806390d613321de3126dc89658cbc9a1fe0e3a45a5c5bf4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c481d057b749803c27882166d1e66c5877aef2f80cf5c38c18e6afed900287a7"
+    sha256 cellar: :any,                 arm64_ventura:  "11aa13a704fa606a3f6d35d0b98fdf0a129d074245a17bc5daf4f24ac076c6f4"
+    sha256 cellar: :any,                 arm64_monterey: "e1d65ee49d8e100b6fe47c86fcaeacf1a5d6dd38a946ac622381e4d91bd5fbbf"
+    sha256 cellar: :any,                 arm64_big_sur:  "34e498bbd75753bda91543a8a252f2866a93e443b72a345115cc5ac4c2bcc01d"
+    sha256 cellar: :any,                 ventura:        "24d540df6308f5b9257c8f5d4709baa942d07e734085c7bad5642a7728d2ef19"
+    sha256 cellar: :any,                 monterey:       "b7c1bee7957509545be34d6f81d911806cf8e345ca8312553a0c977ee11812fd"
+    sha256 cellar: :any,                 big_sur:        "57585379fc42bea09b2d9bf429892dc61705f8bb32629297e384e1168103bcb0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10da3d61a23ba6008918b74ad416c4ee85242c74819c75be8be09401d7903d07"
   end
 
   depends_on "autoconf" => :build

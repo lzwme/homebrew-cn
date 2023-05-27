@@ -1,8 +1,8 @@
 class Flatbuffers < Formula
   desc "Serialization library for C++, supporting Java, C#, and Go"
   homepage "https://google.github.io/flatbuffers"
-  url "https://ghproxy.com/https://github.com/google/flatbuffers/archive/v23.5.9.tar.gz"
-  sha256 "fa0036f4a2d082f7034fd90a53a02ce0e121548b39c07c8d2a77a821da02fb01"
+  url "https://ghproxy.com/https://github.com/google/flatbuffers/archive/v23.5.26.tar.gz"
+  sha256 "1cce06b17cddd896b6d73cc047e36a254fb8df4d7ea18a46acf16c4c0cd3f3f3"
   license "Apache-2.0"
   head "https://github.com/google/flatbuffers.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Flatbuffers < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a6d549bec6cbb5ebecda7fa38456a0292765dd6be9db1281599a27882eeebc18"
-    sha256 cellar: :any,                 arm64_monterey: "3ad531c80f4d40f0e0d57d451a4874ac8df16a0d079566d85cb45938c3644f2e"
-    sha256 cellar: :any,                 arm64_big_sur:  "4dadf75ff60700f2e53ed29711e904d9b1f4a394ff5262fde9e14ecbcbbc9b6f"
-    sha256 cellar: :any,                 ventura:        "fe6e360d212f1570de2f3f8c6ebe7be5d9b91c85880671240875fb2ca8dd33b4"
-    sha256 cellar: :any,                 monterey:       "bb65480a50d00a601e4e3f1c7a04df701494a768a431ed6b6f7c7c8664ba0223"
-    sha256 cellar: :any,                 big_sur:        "c3e82d48b6e3c2892e8f479a3a35120f8d21c4c4b78d2a9d95663e46c45ba81e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5457d2124ebe0c87c5ea91bc3f9fe3c28f557410c5d19238fb569890e7772d5"
+    sha256 cellar: :any,                 arm64_ventura:  "6adbf0e725adbd63a44ac1450e994fb3b6689a500bcc3903e41232c8725dcf81"
+    sha256 cellar: :any,                 arm64_monterey: "e27839664b582a68dca68091e19a6e915ea34b17d4ff843927044cd2c52c1346"
+    sha256 cellar: :any,                 arm64_big_sur:  "8356a0b003118a682c7a9ae3d3d9d03290b95733374bf68ac91d262c53c3f1fb"
+    sha256 cellar: :any,                 ventura:        "7f06b89cf995641c2907c69884f9f3d163eced0d1f495af6712115c9ec5d1e4e"
+    sha256 cellar: :any,                 monterey:       "003177dc250139c22c1c23244ff7fee6b2d07210b6432c3f2b5a735b100d35da"
+    sha256 cellar: :any,                 big_sur:        "aebfee6ed53f48a341e4be1d06f45f8dffdd4dbe359fe02770b34da4f84f7aec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "faa33843a2d4802ba3b57b72c9ca35cd0b5ff9ed7eaaace8fa8f1798db785339"
   end
 
   depends_on "cmake" => :build

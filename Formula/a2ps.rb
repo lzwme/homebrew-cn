@@ -7,13 +7,14 @@ class A2ps < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "0ea1d924e3cafdeec54cad07a7e6943a22c34adc2def0629577ef0dbe38b25f6"
-    sha256 arm64_monterey: "198ae0777464281b2c558eed465fd564b1bf5b58a95541eb4a61a816a1ddaa53"
-    sha256 arm64_big_sur:  "33f9faf14ebd9458592c74b51396e179deebb759f675d3f0db5a5bfb8e042c60"
-    sha256 ventura:        "160286dc93e7de40007efd710c045b1f5f512fdeb2920a2ac5f04d8e7095fe5d"
-    sha256 monterey:       "792a2655206a0a473ef14da7c45a22ecde0c3bafbdb1b79431ad427e4798aab0"
-    sha256 big_sur:        "48a9535dca94ea934d519890e00619e6e87803d1ae1912e0a8ead548db1253d7"
-    sha256 x86_64_linux:   "b90bd57ecf4541afdd19b09fdbf186d850dbcbc4d4a3037fb7e7784029623fec"
+    rebuild 1
+    sha256 arm64_ventura:  "c28ce183c0df4d35f1140e165de4c5593a18068af361442fede10817f10b81a8"
+    sha256 arm64_monterey: "597f5136d784db545c8bbd5d891489b06ab393ded136d33763e2446ba59e3fe9"
+    sha256 arm64_big_sur:  "5fb5f93131b431a2e3988f5d2eff563f7c182945510208864fd390b0eb0f0259"
+    sha256 ventura:        "d3d19336e88234fa24209b0b04ed5cb7cd9587b38e9dd2a0710df3de76054b71"
+    sha256 monterey:       "82d1439cf852341777756d040a7b92eef28e4573552ac0f132d646d604945d40"
+    sha256 big_sur:        "776ad3531fb2fc22ca8c6177703adf4deaaddc3d4fa445ecbde9266a93e406c0"
+    sha256 x86_64_linux:   "5c67b006ea1afd535cdb5f8c8edba4ed609fc7de3583f1108d4b3a83ff803f1e"
   end
 
   depends_on "pkg-config" => :build
@@ -29,6 +30,7 @@ class A2ps < Formula
                           "--with-packager-version=#{pkg_version}",
                           "--with-packager-bug-reports=#{tap.issues_url}"
     system "make", "install"
+    inreplace etc/"a2ps.cfg", prefix, opt_prefix
   end
 
   test do

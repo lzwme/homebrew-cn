@@ -3,18 +3,18 @@ class Johnnydep < Formula
 
   desc "Display dependency tree of Python distribution"
   homepage "https://github.com/wimglenn/johnnydep"
-  url "https://files.pythonhosted.org/packages/39/3c/cdf81f3aba3e0c35aab9ce45f9cf761e442279e1258a40c8d5f8f0181f03/johnnydep-1.20.0.tar.gz"
-  sha256 "f95ea0fa52b0dc93e68bd39b27011010f7a865cdef092e8e9472bc391f349409"
+  url "https://files.pythonhosted.org/packages/4f/5f/69b55f7ffaf6fac2fbf990b35c569d50163959aba0a807070fc14d321152/johnnydep-1.20.1.tar.gz"
+  sha256 "5827dd477401f95a3d2a9eed1940891e62eb0557761c389c7fcabd7706315cae"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c39d49cfd39559b89bde176002de951d5e4f0d231504cbd26fd205da09e25881"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6c014eb23a2c321e04f8cfa57b7cf9d419a026c6c8f466d6c46a4f5f431b1394"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9e25fd4d5a96d0093a28e5acf1c9addf37c437053b4b376101d709740c2d152c"
-    sha256 cellar: :any_skip_relocation, ventura:        "c05135eb4c57e530f37b5245a9c3a64c3e6a7b795561b6f4900a6888d4d88b3e"
-    sha256 cellar: :any_skip_relocation, monterey:       "66cd9f7532d36606d2ad00c05e6e23e622442def6ee40ebce0b7615b534382f1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "461ebbd75d6853f6e0cd586e9e33785381991850e1c51dddeb3003fcc7219ad4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "28e0d5898cdc16fbdac1b435b2427fbb132b2acaa3bb2fb7f432989ab6330744"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "30e16f42c41b905604e3f66331c0857a412c03d82873bf66532f85e8e5c81d53"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c09e27c218795331f4b56dd88d374256e5183c6c812f606a54d34af2df3a24ed"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6035787094f0312dff80d109f5f241c19be13aca0631b6167ec7d76257932993"
+    sha256 cellar: :any_skip_relocation, ventura:        "21d481cb340f671bfb5dadf030058b146fa77b02acf87203bf94c017c65d1ffb"
+    sha256 cellar: :any_skip_relocation, monterey:       "46781893321c4f86dc9f47eaa5750130654968a2a2ac3dfac1c63065475969bc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "78444869cf24749113923388d4290801389887b8a1e47aa53589c987af83cb14"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e39e77e331ab75105c9ded4d85c6e519cd59e80cd156eb22ca8d7636b107a9d0"
   end
 
   depends_on "python-tabulate"

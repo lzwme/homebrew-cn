@@ -4,19 +4,19 @@ require "json"
 class Webpack < Formula
   desc "Bundler for JavaScript and friends"
   homepage "https://webpack.js.org/"
-  url "https://registry.npmjs.org/webpack/-/webpack-5.84.0.tgz"
-  sha256 "28b68190ea2ee2dbefcdbb13fb792bdb9b17bd1a229afb56fcf9277a2b93e8a6"
+  url "https://registry.npmjs.org/webpack/-/webpack-5.84.1.tgz"
+  sha256 "b7a09ef36895b7f5fe7724092a13bd88377ff42dbd306d53b2ace2d37deb4dd3"
   license "MIT"
   head "https://github.com/webpack/webpack.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e70e0b8a46c60b13e0cdda91eb094b35f5fa28b72d20d10cd1d44d14fe65983"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1e70e0b8a46c60b13e0cdda91eb094b35f5fa28b72d20d10cd1d44d14fe65983"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1e70e0b8a46c60b13e0cdda91eb094b35f5fa28b72d20d10cd1d44d14fe65983"
-    sha256 cellar: :any_skip_relocation, ventura:        "648149ddfc5f0189b8d8ab3c1f695dcf352eaf9d13ad5b8a65f32a0751a5356a"
-    sha256 cellar: :any_skip_relocation, monterey:       "648149ddfc5f0189b8d8ab3c1f695dcf352eaf9d13ad5b8a65f32a0751a5356a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "648149ddfc5f0189b8d8ab3c1f695dcf352eaf9d13ad5b8a65f32a0751a5356a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e70e0b8a46c60b13e0cdda91eb094b35f5fa28b72d20d10cd1d44d14fe65983"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "84921af04c761f370e8aeca528c080ddb07b4b805a08c686bc5dc845edf07e29"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "84921af04c761f370e8aeca528c080ddb07b4b805a08c686bc5dc845edf07e29"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "84921af04c761f370e8aeca528c080ddb07b4b805a08c686bc5dc845edf07e29"
+    sha256 cellar: :any_skip_relocation, ventura:        "9636d8464936c6ba0c1fa62da7ebcdaf40b91e2d91b3d6dbdc8bf321e5d568ff"
+    sha256 cellar: :any_skip_relocation, monterey:       "9636d8464936c6ba0c1fa62da7ebcdaf40b91e2d91b3d6dbdc8bf321e5d568ff"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9636d8464936c6ba0c1fa62da7ebcdaf40b91e2d91b3d6dbdc8bf321e5d568ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "84921af04c761f370e8aeca528c080ddb07b4b805a08c686bc5dc845edf07e29"
   end
 
   depends_on "node"

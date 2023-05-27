@@ -1,19 +1,18 @@
 class Libxc < Formula
   desc "Library of exchange and correlation functionals for codes"
   homepage "https://tddft.org/programs/libxc/"
-  url "https://gitlab.com/libxc/libxc/-/archive/6.1.0/libxc-6.1.0.tar.bz2"
-  sha256 "04dcfbdb89ab0d9ae05d8534c46edf4f9ba60dd6b7633ce72f6cb3c9773bb344"
+  url "https://gitlab.com/libxc/libxc/-/archive/6.2.0/libxc-6.2.0.tar.bz2"
+  sha256 "ebc6b966357e7941ddfcec112fcd51bd9ab4300b87fc53753bde1b91fa6cab3f"
   license "MPL-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ada5e03bcd73422dca8fd176801f5dec75d892b02c70b9bd0dc64388036d4f86"
-    sha256 cellar: :any,                 arm64_monterey: "ad8cf4c12bbccad4ac2601ec1ed34f18bcaa34470f8cd0fb5d5543b8b13878c0"
-    sha256 cellar: :any,                 arm64_big_sur:  "86931b29ee7e9c1e17bd63a148f581186a7032e370125bed8539236930bfd63a"
-    sha256 cellar: :any,                 ventura:        "b4b0c05e12b1ac3082ea9ee7bf9d7c34ae0634e13d8afa13dc8efecdbe65be81"
-    sha256 cellar: :any,                 monterey:       "2df2ac59256d66177a9d45751f0740b39e3b33bda49789c3085ec758380a488b"
-    sha256 cellar: :any,                 big_sur:        "2f22964420dbdd122b50c39d24d7c2e48933c88c0572eb3aadd30f5d9e78ee43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a02aa7e2e8cbf80689337ead9b89c6342baeabb092445a02f62f2bb4a260ca37"
+    sha256 cellar: :any,                 arm64_ventura:  "0da695748729ac08cfe6d014e8d04beb3f7354d812db6cbe7b25296ab01bb501"
+    sha256 cellar: :any,                 arm64_monterey: "eb49c6a9a33ead8e9768e821b57cd054179a71d88f834e1ca763f688f7523509"
+    sha256 cellar: :any,                 arm64_big_sur:  "eda99cec67b89ab486bd714dad6bce1f870e8a34b7be21227c3ceac405a025a5"
+    sha256 cellar: :any,                 ventura:        "358a0fb02e8d82795c41dcba9193c2f2ffd913d4cda4d740e411bfe418387f8f"
+    sha256 cellar: :any,                 monterey:       "69916f988579ea7769ca93471f920609d8c1deb9e6758b381b9a6954f94503ba"
+    sha256 cellar: :any,                 big_sur:        "e30c9e0fae641a678abee80d0dfe5f83c7a8e62fe2bef9bc67483cafdcc7620e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89d7371a5e8a548ceb09c2323e7069e37e1affcedff8393b44218f1bb6f45699"
   end
 
   depends_on "cmake" => [:build, :test]

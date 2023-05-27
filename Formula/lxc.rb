@@ -1,8 +1,8 @@
 class Lxc < Formula
   desc "CLI client for interacting with LXD"
   homepage "https://linuxcontainers.org"
-  url "https://linuxcontainers.org/downloads/lxd/lxd-5.13.tar.gz"
-  sha256 "932b3ccdfaa192926aab820283a74eb28244a31276d3d1b0763191adfad9ee3d"
+  url "https://linuxcontainers.org/downloads/lxd/lxd-5.14.tar.gz"
+  sha256 "12d559d20f4b0fa75603bd3f13501dfd15898dbbeb033536845de7e827533011"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Lxc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "48cad8ee5b5b619bc602fef6feaa3710f4eedb2f9b220465eb4c2891e1997060"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "48cad8ee5b5b619bc602fef6feaa3710f4eedb2f9b220465eb4c2891e1997060"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "48cad8ee5b5b619bc602fef6feaa3710f4eedb2f9b220465eb4c2891e1997060"
-    sha256 cellar: :any_skip_relocation, ventura:        "6af27bf54af8a0554148d54e6568dbb952853f1c79256a9aec6b0887c57db9e3"
-    sha256 cellar: :any_skip_relocation, monterey:       "6af27bf54af8a0554148d54e6568dbb952853f1c79256a9aec6b0887c57db9e3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6af27bf54af8a0554148d54e6568dbb952853f1c79256a9aec6b0887c57db9e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ce2ae199c862db5cf525315844a7f904d1c4cd0d084e131e5aa5b7666f3514f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "88bd380161b47739cf88fc289b02573257b3da1591cec551747dcac25281b782"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "88bd380161b47739cf88fc289b02573257b3da1591cec551747dcac25281b782"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "88bd380161b47739cf88fc289b02573257b3da1591cec551747dcac25281b782"
+    sha256 cellar: :any_skip_relocation, ventura:        "ade9f6985affea2a4a41eb55e6d4342d22a668ad1b63413cc9999234ce5776df"
+    sha256 cellar: :any_skip_relocation, monterey:       "ade9f6985affea2a4a41eb55e6d4342d22a668ad1b63413cc9999234ce5776df"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ade9f6985affea2a4a41eb55e6d4342d22a668ad1b63413cc9999234ce5776df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6deaca29dfba2764741996d799704851fc134a4c7733ed5d489b50aa0ede34be"
   end
 
   depends_on "go" => :build
