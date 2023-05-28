@@ -1,18 +1,18 @@
 class PipeRename < Formula
   desc "Rename your files using your favorite text editor"
   homepage "https://github.com/marcusbuffett/pipe-rename"
-  url "https://crates.io/api/v1/crates/pipe-rename/1.6.3/download"
-  sha256 "7f69604f7a1f7fa9914aeef8491ee2281b8b1e3fab2eaf4f63c1e5d57e37d654"
+  url "https://crates.io/api/v1/crates/pipe-rename/1.6.4/download"
+  sha256 "02043732ad9b47b2c2485599ef7b6e3bb8d23b13ef7362ee4c16ef32e39815d1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "10c8e43b8b7d9ad71e4450de200eb02ae23ea9fcb6a0eea28ee939ad07e7dac7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b12b2d562a01f199bab5d515f7ee8535e47f8054020b9b5cc7b84edf17e4fe90"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bf587e6b163e2aefd5a744bd1b632b712e17c98b8756f6708a187850832e716b"
-    sha256 cellar: :any_skip_relocation, ventura:        "6a5f6da5275171b73fdff4e84c894c5b09b25c93fa43c16d68a2ccb6de3979cb"
-    sha256 cellar: :any_skip_relocation, monterey:       "a01d683ed501ef6f8f90b3519a2d514307f653ba7ce5bd715f5d45c66dc59bda"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7cfe832170c549b9127fd8cd0cf86951735e205c32d6691df60d07db2e1381a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "280d57691871f7bf4c42fd8d9abf6fb23aa58d0b459a3d051545a74edee2a971"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "729b0936daa03d43e53600d92a2dcc6e09e56c9df2b0c375f2ca9556fe8ba5e7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9933a66e3546b0540ab7b13024e2b50ca929a07a90026d37345533103aae8522"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "10e9a8bc5567dcf7cbae81a04e0e1b8456344bc33f7820b87af9c710e6dd70be"
+    sha256 cellar: :any_skip_relocation, ventura:        "5a73c2c48ac30277083a127920b84070a396dcc4585fc5ca473a2ecbb8a515ce"
+    sha256 cellar: :any_skip_relocation, monterey:       "6cf9943f37e1bc165c330c65bf63f31bbdabe5f43822cb71c5b8857b31705544"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b5771bd177d367df7d7b6ddb6a19aea870c21ffbcb8ca310885f41bd1b217fd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9deea1ef250974a8d4265f10c523e301476388861e23a3f2dc98747be70dd7a4"
   end
 
   depends_on "rust" => :build

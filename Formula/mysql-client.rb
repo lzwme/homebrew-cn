@@ -10,13 +10,14 @@ class MysqlClient < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "526dd086eb4c9b11107323e3118d6eeba048b9135c44c0ba793f46f3546c42e1"
-    sha256 arm64_monterey: "84fb181cec5c4efc81c3f0be627e21255ba7e4090b61564205d4208e647e97fb"
-    sha256 arm64_big_sur:  "44f2bd5437aa38066903069838811074046ace0ca03401230d4957a85a9f7694"
-    sha256 ventura:        "d9d8b0c6c0e0c28b46fd6af875f43f1935e05db27755a99e4cc62e3723e61059"
-    sha256 monterey:       "a21a825d53e81277e1e04cf981acb1b94e42b7d00ef80646d9fd7cbbd402c8e7"
-    sha256 big_sur:        "8ca519a1a536d064bf8d7fd4f33e453c7f1a735900c481b412a6d59d37a3f90f"
-    sha256 x86_64_linux:   "39450da886eb0fe6f6677cd6239bc7f99c939a1f9686da9cb7ab7dfb3277baae"
+    rebuild 1
+    sha256 arm64_ventura:  "27cd85ec0a5cf8d00a64c8dfceae894ff2ac138284d9967159b34efd6b91d15e"
+    sha256 arm64_monterey: "1895fb9f0a864e340a4f178f1f6162abdc1472c6666af28137f8a204cfd2a985"
+    sha256 arm64_big_sur:  "f2ea8be3f38265df6b813b8e224e2def5879ae443ae8c2c7a5d68dcf0d2a2aa2"
+    sha256 ventura:        "304080fdb9a01f41452df3282ebf968b3413f39b7778ae10ac760b9cb6974a86"
+    sha256 monterey:       "58b64053b989ecd5e39e3ba5e6b3b39bd63fdae22942867e2879ca850de3e58b"
+    sha256 big_sur:        "1a4f285a8ad20a74abb599c373ea055c0d1a1c3460c7ee356f94fde2b1a2fb31"
+    sha256 x86_64_linux:   "76782b3bedda025fff0b2d2a3216b8a28d37980695a7d90f3043bd9532242d5c"
   end
 
   keg_only "it conflicts with mysql (which contains client libraries)"
@@ -64,6 +65,10 @@ class MysqlClient < Formula
 
     system "cmake", ".", *std_cmake_args, *args
     system "make", "install"
+
+    # Fix bad linker flags in `mysql_config`.
+    # https://bugs.mysql.com/bug.php?id=111011
+    inreplace bin/"mysql_config", "-lzlib", "-lz"
   end
 
   test do

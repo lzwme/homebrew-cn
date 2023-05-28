@@ -1,9 +1,9 @@
 class Aarch64ElfGdb < Formula
   desc "GNU debugger for aarch64-elf cross development"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftp.gnu.org/gnu/gdb/gdb-13.1.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gdb/gdb-13.1.tar.xz"
-  sha256 "115ad5c18d69a6be2ab15882d365dda2a2211c14f480b3502c6eba576e2e95a0"
+  url "https://ftp.gnu.org/gnu/gdb/gdb-13.2.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-13.2.tar.xz"
+  sha256 "fd5bebb7be1833abdb6e023c2f498a354498281df9d05523d8915babeb893f0a"
   license "GPL-3.0-or-later"
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Aarch64ElfGdb < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "4c87c1677c2c04d7423f9caf06c9ce3edb259540bfb978df9a18a77354c2cba6"
-    sha256 arm64_monterey: "a4e588e7a35203d448bf14b0369c4337640b699ae7363d81d73ae469b38cbbc5"
-    sha256 arm64_big_sur:  "6c44025b0dd5016633b0848d91b2486957eca035b9f33252c6ffcdb0829f3a05"
-    sha256 ventura:        "37739d6f6aae10d4af684060c13765afc327228e50fed8eeae832bb86db3f0c3"
-    sha256 monterey:       "9a4c6368131cb5d8d6affd8205b9d79a7db4a2873aaf9ca6b4e7641debbe8f67"
-    sha256 big_sur:        "27a8be044f81f96a7c42f24c106b2df4d0e455406545a569c2e4691a8de5d092"
-    sha256 x86_64_linux:   "24b721fd59b732201a5d8cfd9b166af67f8220f5a3a564f1f7721e9663e185da"
+    sha256 arm64_ventura:  "b1efda07dd935af505f521904384bf36e34985037baad7190114026d1f5b7e75"
+    sha256 arm64_monterey: "c7eb740063212c35f576edb8da4872c71599494d5955298f0b6c5307e0b3fbca"
+    sha256 arm64_big_sur:  "a17cc6ab305fb77ad7764895eef888172bcd3dfd07c90e6bfa79aaf832958c06"
+    sha256 ventura:        "b4a73241baeaf7a6857c126578baa0eb2ce5d0f46fc3cac2a3981ba6ab50b193"
+    sha256 monterey:       "c3b55ff017d18a3dd0a8f8876ec73958659daa8b28b6b77ff576077dda64d414"
+    sha256 big_sur:        "31ac4b41ec94970f6ccde66d73c7a293a1b735e940e361da630d1ec9170757f1"
+    sha256 x86_64_linux:   "4e32ff069f804c1ca8042dac7f2b6d3c8f5105a531ddf1fff6e0862c9e9bfdbc"
   end
 
   depends_on "aarch64-elf-gcc" => :test

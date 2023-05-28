@@ -1,18 +1,18 @@
 class Highs < Formula
   desc "Linear optimization software"
   homepage "https://www.maths.ed.ac.uk/hall/HiGHS/"
-  url "https://ghproxy.com/https://github.com/ERGO-Code/HiGHS/archive/refs/tags/v1.5.1.tar.gz"
-  sha256 "4b9441cb991e372b2d4fa4a85e89db199befa1b0017a3275b45ad5ef734efaca"
+  url "https://ghproxy.com/https://github.com/ERGO-Code/HiGHS/archive/refs/tags/v1.5.3.tar.gz"
+  sha256 "ce1a7d2f008e60cc69ab06f8b16831bd0fcd5f6002d3bbebae9d7a3513a1d01d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "90bb5d131f97816884aac1bc360ec9c6586ced31a0f694330313ad5f4d8a9db9"
-    sha256 cellar: :any,                 arm64_monterey: "12291ca9e3432902f7d52ac67f011d47e2b12d61097b89ea5d85b00e587a8482"
-    sha256 cellar: :any,                 arm64_big_sur:  "9ec55d6e6ca31b6bfdac3283efb928a743c5470bccffa05130822b63932f6b87"
-    sha256 cellar: :any,                 ventura:        "553d4cb17009884f166fb4bc9d330dd9a9a16f6bfb8f318f3f68ae5e8ba298f8"
-    sha256 cellar: :any,                 monterey:       "e6c4eb1a40199a371e21a8c834beec5b8f6b7f8a3886500652f13d3c737f9364"
-    sha256 cellar: :any,                 big_sur:        "11cdb98fffce84422abadeba6d00216acabc4a63377f24de7645b13a2c6aa1f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0b6a82164a5f77b4badec0a74eda55ee1b4d509faeda002fb7030852c7fbeb3"
+    sha256 cellar: :any,                 arm64_ventura:  "4ddc85476f23ff1dcc4b808c831288f0c0be4871879ccfb34fac4cffdf4042cf"
+    sha256 cellar: :any,                 arm64_monterey: "a746386ebaa3dcfc9f56883fbf3c2e846a2497d1fc938cec8f337a4636a8a63e"
+    sha256 cellar: :any,                 arm64_big_sur:  "ca083f7a81d5193360f2dd9ede6ccdcf7e7b33352c11086158a8cfebd640b500"
+    sha256 cellar: :any,                 ventura:        "74af44eee60e74784ade009cb5c28f457aa55642ab8a5d07a182c3fb69bfe518"
+    sha256 cellar: :any,                 monterey:       "ee5676a86c071444b513fbc2992923d24cb210814fe8115e6af57b00dced1a1f"
+    sha256 cellar: :any,                 big_sur:        "caa0400247e180d309b03841f8d8f3783a74d19b66a79271a8e2fbd7988c264a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ddcdcdfc7b341b01fb48cde55f2a4159609375d9a0b45c33cd4a6159c195e687"
   end
 
   depends_on "cmake" => :build
@@ -21,7 +21,9 @@ class Highs < Formula
   uses_from_macos "zlib"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build",
+                    *std_cmake_args,
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     pkgshare.install "check", "examples"

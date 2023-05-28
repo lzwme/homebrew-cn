@@ -16,9 +16,11 @@ class Rpm < Formula
     end
   end
 
+  # Upstream uses a 90+ patch to indicate prerelease versions (e.g., the
+  # tarball for "RPM 4.19 ALPHA" is `rpm-4.18.90.tar.bz2`).
   livecheck do
     url "https://rpm.org/download.html"
-    regex(/href=.*?rpm[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(/href=.*?rpm[._-]v?(\d+\.\d+(?:\.(?:\d|[1-8]\d+)(?:\.\d+)*))\.t/i)
   end
 
   bottle do

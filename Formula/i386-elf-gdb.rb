@@ -1,9 +1,9 @@
 class I386ElfGdb < Formula
   desc "GNU debugger for i386-elf cross development"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftp.gnu.org/gnu/gdb/gdb-13.1.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gdb/gdb-13.1.tar.xz"
-  sha256 "115ad5c18d69a6be2ab15882d365dda2a2211c14f480b3502c6eba576e2e95a0"
+  url "https://ftp.gnu.org/gnu/gdb/gdb-13.2.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-13.2.tar.xz"
+  sha256 "fd5bebb7be1833abdb6e023c2f498a354498281df9d05523d8915babeb893f0a"
   license "GPL-3.0-or-later"
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
@@ -12,13 +12,13 @@ class I386ElfGdb < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "4be9ac9fa46e1d773439c98eb9954a0f3936a4078b0730fd9027e78bd54ce5d4"
-    sha256 arm64_monterey: "7b61b62dd24a24a1cae2df2189a59c88cc69992deca68f31d96d04c62859b3be"
-    sha256 arm64_big_sur:  "2d9becacbafc6e1a0445e051436db5a0f705416bea2718fc1aa8c58723923cd6"
-    sha256 ventura:        "9ec0af5a616c593fe827a18fb3662b238f6f32804ace9238e52493bd1690b0b9"
-    sha256 monterey:       "179bf1ec5aa1b8b487409d37ceadd88916da0bd02c3e680fed54807594755569"
-    sha256 big_sur:        "85524bbb1ec85ebc9d6d35137c0982d2a36ad4f72c2541e2efc72125e344726a"
-    sha256 x86_64_linux:   "95dea0e6ed65f9d4891137b54214d1ef339bb39d25b305c2364cdb169188ae74"
+    sha256 arm64_ventura:  "4eb1c34b71bd7afca5f9cad406e537d7cc6fad33ad22af944e1ff4c043bd8ec4"
+    sha256 arm64_monterey: "33b51337a454bae2df770cd8ac469b7fbb02df990ad30ebe76ec889e69f5f807"
+    sha256 arm64_big_sur:  "20b224f9e4028261448a31a4d394148d3073c3c0a6b1807051702c02de476576"
+    sha256 ventura:        "697ce9a486f71e618c6b3f6ee54e6a867aaff39e477cf444c9fcc8d0e8cba6a4"
+    sha256 monterey:       "6f50fdfa82c77d6854fe20fa0fe85759bb2b0fd706e8489b6a4c99145da685ea"
+    sha256 big_sur:        "faa7dd7ec9ddfe4e6d4bd54ee110ea0bde4cdf251fbcf9c246869f50a296741d"
+    sha256 x86_64_linux:   "47271657a8539da8cb54edf83e90e312faedc73a7678c4762e9427a87395541e"
   end
 
   depends_on "i686-elf-gcc" => :test

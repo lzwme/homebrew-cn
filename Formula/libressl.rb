@@ -2,9 +2,9 @@ class Libressl < Formula
   desc "Version of the SSL/TLS protocol forked from OpenSSL"
   homepage "https://www.libressl.org/"
   # Please ensure when updating version the release is from stable branch.
-  url "https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.7.2.tar.gz"
-  mirror "https://mirrorservice.org/pub/OpenBSD/LibreSSL/libressl-3.7.2.tar.gz"
-  sha256 "b06aa538fefc9c6b33c4db4931a09a5f52d9d2357219afcbff7d93fe12ebf6f7"
+  url "https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.7.3.tar.gz"
+  mirror "https://mirrorservice.org/pub/OpenBSD/LibreSSL/libressl-3.7.3.tar.gz"
+  sha256 "7948c856a90c825bd7268b6f85674a8dcd254bae42e221781b24e3f8dc335db3"
   license "OpenSSL"
 
   livecheck do
@@ -13,13 +13,13 @@ class Libressl < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "cef0f70deeefe8cd1dd62d17f946f01e7c305935aa33b97b016023b8bf3b015b"
-    sha256 arm64_monterey: "b66002cbc7d9b5caf3766d11296b328bdfc97721b15079e4882381ff24014282"
-    sha256 arm64_big_sur:  "ed7802d8997110b973962c84b97364d2db19dd86182aab3675adb1e9cb5fe343"
-    sha256 ventura:        "03150465bd4a1639951e4195bbdc4509807833b05a6a9cbaa87d225004a6640e"
-    sha256 monterey:       "32e89ea438e71bee8a583209d4374ab71fb67b1abc2bcb45f692cd45c5415af0"
-    sha256 big_sur:        "95be86d699e5ca7e62cfcba6dd0626ad09e83e5352debe3fd0d9ef87d4303919"
-    sha256 x86_64_linux:   "11f3460b11c6a4e556638fe397d59fd14d742b80858ea7c8db43220a6bc716a7"
+    sha256 arm64_ventura:  "b2ff316ca7b257bb2f287ca7ac0c8ce3f6c3effb70d103b2694c62ced36b462a"
+    sha256 arm64_monterey: "838f076bdaf130a433a12f69173de58400eef5a656747adc976f62eed443e442"
+    sha256 arm64_big_sur:  "e22c45e88b1e4d18e0ed085df12d424a0816c1c63f83d88991551a91fc7ea91b"
+    sha256 ventura:        "f3b0dc706b4f80e594f54ffdbfd8198ed4502520620a315cd12554e102e7b2c4"
+    sha256 monterey:       "4a375d392abbb54b03eb3e85f45ae2a874152fa1730abf11ce4d3c0d5d2c3cdb"
+    sha256 big_sur:        "ce5b9e33b6e6865155e7eb4ba772c6818ecddcca102272e72af2b02d0811002d"
+    sha256 x86_64_linux:   "16a265c41391146ca6252b66c91a7bdde66b4340dbfd9d1bf61cc377af72fed6"
   end
 
   head do

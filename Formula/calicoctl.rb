@@ -2,8 +2,8 @@ class Calicoctl < Formula
   desc "Calico CLI tool"
   homepage "https://www.projectcalico.org"
   url "https://github.com/projectcalico/calico.git",
-      tag:      "v3.25.1",
-      revision: "82dadbce194ac671508c71574a0e59eb82c911f9"
+      tag:      "v3.26.0",
+      revision: "8b103f46fbdc989e59d81e08d215ab4a59fa6cec"
   license "Apache-2.0"
   head "https://github.com/projectcalico/calico.git", branch: "master"
 
@@ -13,13 +13,13 @@ class Calicoctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7c8d1b9e6630397ca017036cc9278b3360fd6b03fba9611d10f95664c7fd0c80"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7c8d1b9e6630397ca017036cc9278b3360fd6b03fba9611d10f95664c7fd0c80"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7c8d1b9e6630397ca017036cc9278b3360fd6b03fba9611d10f95664c7fd0c80"
-    sha256 cellar: :any_skip_relocation, ventura:        "22497533fe259645a9e2d0c496c3df69d4f9c67dac2f1c33eb118a8eeaa8d3f6"
-    sha256 cellar: :any_skip_relocation, monterey:       "22497533fe259645a9e2d0c496c3df69d4f9c67dac2f1c33eb118a8eeaa8d3f6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "22497533fe259645a9e2d0c496c3df69d4f9c67dac2f1c33eb118a8eeaa8d3f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b0366d93f72e112c4593150f3154beb7c6a468bb8d100e44c7cf35979855382"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4aa4cb5c5bc7305b6a5f0bf934fd9b25204e704619a852bdd4dfc8f5df10c125"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4aa4cb5c5bc7305b6a5f0bf934fd9b25204e704619a852bdd4dfc8f5df10c125"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4aa4cb5c5bc7305b6a5f0bf934fd9b25204e704619a852bdd4dfc8f5df10c125"
+    sha256 cellar: :any_skip_relocation, ventura:        "67e656fe743618426c69dc24149c8cb50e7a5cf65d03d498a28774bb7bbe9241"
+    sha256 cellar: :any_skip_relocation, monterey:       "67e656fe743618426c69dc24149c8cb50e7a5cf65d03d498a28774bb7bbe9241"
+    sha256 cellar: :any_skip_relocation, big_sur:        "67e656fe743618426c69dc24149c8cb50e7a5cf65d03d498a28774bb7bbe9241"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "802f17470bcef0c280ce25da13950b8bc540093895e8a3c2eae8792e599f0c9b"
   end
 
   depends_on "go" => :build

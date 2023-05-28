@@ -30,25 +30,24 @@ class Docker < Formula
   def install
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"
-    dir = buildpath/"src/github.com/docker/cli"
-    dir.install (buildpath/"").children
-    cd dir do
-      ldflags = ["-X \"github.com/docker/cli/cli/version.BuildTime=#{time.iso8601}\"",
-                 "-X github.com/docker/cli/cli/version.GitCommit=#{Utils.git_short_head}",
-                 "-X github.com/docker/cli/cli/version.Version=#{version}",
-                 "-X \"github.com/docker/cli/cli/version.PlatformName=Docker Engine - Community\""]
-      system "go", "build", *std_go_args(ldflags: ldflags), "github.com/docker/cli/cmd/docker"
 
-      Pathname.glob("man/*.[1-8].md") do |md|
-        section = md.to_s[/\.(\d+)\.md\Z/, 1]
-        (man/"man#{section}").mkpath
-        system "go-md2man", "-in=#{md}", "-out=#{man/"man#{section}"/md.stem}"
-      end
+    (buildpath/"src/github.com/docker").install_symlink buildpath => "cli"
+    ldflags = ["-X \"github.com/docker/cli/cli/version.BuildTime=#{time.iso8601}\"",
+               "-X github.com/docker/cli/cli/version.GitCommit=#{Utils.git_short_head}",
+               "-X github.com/docker/cli/cli/version.Version=#{version}",
+               "-X \"github.com/docker/cli/cli/version.PlatformName=Docker Engine - Community\""]
 
-      bash_completion.install "contrib/completion/bash/docker"
-      fish_completion.install "contrib/completion/fish/docker.fish"
-      zsh_completion.install "contrib/completion/zsh/_docker"
+    system "go", "build", *std_go_args(ldflags: ldflags), "github.com/docker/cli/cmd/docker"
+
+    Pathname.glob("man/*.[1-8].md") do |md|
+      section = md.to_s[/\.(\d+)\.md\Z/, 1]
+      (man/"man#{section}").mkpath
+      system "go-md2man", "-in=#{md}", "-out=#{man}/man#{section}/#{md.stem}"
     end
+
+    bash_completion.install "contrib/completion/bash/docker"
+    fish_completion.install "contrib/completion/fish/docker.fish"
+    zsh_completion.install "contrib/completion/zsh/_docker"
   end
 
   test do

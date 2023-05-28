@@ -1,9 +1,9 @@
 class X8664ElfGdb < Formula
   desc "GNU debugger for x86_64-elf cross development"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftp.gnu.org/gnu/gdb/gdb-13.1.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gdb/gdb-13.1.tar.xz"
-  sha256 "115ad5c18d69a6be2ab15882d365dda2a2211c14f480b3502c6eba576e2e95a0"
+  url "https://ftp.gnu.org/gnu/gdb/gdb-13.2.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-13.2.tar.xz"
+  sha256 "fd5bebb7be1833abdb6e023c2f498a354498281df9d05523d8915babeb893f0a"
   license "GPL-3.0-or-later"
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
@@ -12,13 +12,13 @@ class X8664ElfGdb < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "199da403970bc0baf0bed60df15a49cb0d64a7eea85766f0760416a1ed2c2f85"
-    sha256 arm64_monterey: "ce87fbda3e4af46e528f0ff95c3d01c808071feeb7292339d031f9f3b03ca1df"
-    sha256 arm64_big_sur:  "54cee2a6c6de575a10034f0899fdbf0b45baa9ffc29dbb9093bb234ba222e3c0"
-    sha256 ventura:        "ca8dd58e837408a295202e214efdaa5d4d16debeaab70981d8a00e04ff3588a9"
-    sha256 monterey:       "5b6bfec110bb9ca1d9dda2b62e641c0c3bb68d6f246732ca12e3a1773a9012a4"
-    sha256 big_sur:        "12f9a5e92158320dd6328c0405d1a4d8ae15e0b249d6b120d23a6047deeb6605"
-    sha256 x86_64_linux:   "3f6c92261890700f213ad3e687102d6c61c25ac0814bc0b64b2d25ed898c7991"
+    sha256 arm64_ventura:  "74783daea09fab45ae35fc8ed84bd420f5ab4df32e5c62735cfee6aba6ab1a03"
+    sha256 arm64_monterey: "a42b96e60233f1888d4119495302b61902980be6eed65c34ecc37a0758fb3237"
+    sha256 arm64_big_sur:  "84a030000431eca152bbc60293d1fbb798414320c4413aa5f02b13ed15eda066"
+    sha256 ventura:        "8195f23e309b24fca0cd37e1a29898f61e091974d0b4d227fe801b95dc6e80e3"
+    sha256 monterey:       "6ce8a320bf2f0dab75b416ed7e20122011ad325a9e5bfe8b6c3148f4b8b6c544"
+    sha256 big_sur:        "899e00bc69021647678f209791472971ae51fcadf09ffa093838a552a6eadc36"
+    sha256 x86_64_linux:   "dcd787b5cb4da93114c81413acb6d6c50d92d10a844de1d314c856e85abe0980"
   end
 
   depends_on "x86_64-elf-gcc" => :test

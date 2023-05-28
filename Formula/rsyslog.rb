@@ -11,39 +11,26 @@ class Rsyslog < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "0a4fcad36d21b12b9cbfa594a847a0e06edf54472edaffd23f6ac3f433953ccd"
-    sha256 arm64_monterey: "80c02825e6a0af2cbd25c43c69b56fad0376e0a847429878e0044ecef8c2a51c"
-    sha256 arm64_big_sur:  "96f9efab15f6f918fae94b6bbb9d606054aec4daf05c4de1f021fec011a58cc5"
-    sha256 ventura:        "950cbc5384ed9cb58ff35ca03212b91b59383138549af632c0e20f11b101049e"
-    sha256 monterey:       "37570aee68bdc7b2cb7686550ee2d57eccbb79bdb2bd17de30168b0aaaa673ff"
-    sha256 big_sur:        "42ea1e3c316466a6520bfcc246be05b5f4daa92a53e5c68d76b390bbd26b42f3"
-    sha256 x86_64_linux:   "3aff4c470389cdf5b5669780422a6c00d28eefeb7cd929a694c3b80c671c0ce5"
+    rebuild 1
+    sha256 arm64_ventura:  "7c28d7ac286961945d9d94d2602314a1f836d51317f782c13792ef5c7ce8a63c"
+    sha256 arm64_monterey: "8e1d1478dbe04792e3fcdaabb11039d7fb6ee011716fe53d45afe8cf17f618b3"
+    sha256 arm64_big_sur:  "84d48f4d060fe89ddb784f880d0666e22586d65b1978db7719736f34ef4b23d1"
+    sha256 ventura:        "93bb527c222a85449573cbbe22137dc39277f8676f37c02e2de61b4b37a45be5"
+    sha256 monterey:       "29052d55ae75a2cf960252b1ad7366908b8c284f56458d92e08d2d70c557b19f"
+    sha256 big_sur:        "219d5a2608ff6df605e36ed4c144a5b4ae04abd896a395e2b56949e8f385a5b5"
+    sha256 x86_64_linux:   "f3306a02691e7b4b48c009a9191b1c9d2a21e09eb98603099cddf59cb6cfafb5"
   end
 
   depends_on "pkg-config" => :build
   depends_on "gnutls"
   depends_on "libestr"
+  depends_on "libfastjson"
 
   uses_from_macos "curl"
   uses_from_macos "zlib"
 
-  resource "libfastjson" do
-    url "https://download.rsyslog.com/libfastjson/libfastjson-1.2304.0.tar.gz"
-    sha256 "ef30d1e57a18ec770f90056aaac77300270c6203bbe476f4181cc83a2d5dc80c"
-  end
-
   def install
-    resource("libfastjson").stage do
-      system "./configure", "--disable-dependency-tracking",
-                            "--disable-silent-rules",
-                            "--prefix=#{libexec}"
-      system "make", "install"
-    end
-
-    ENV.prepend_path "PKG_CONFIG_PATH", libexec/"lib/pkgconfig"
-
-    system "./configure", "--prefix=#{prefix}",
-                          "--disable-dependency-tracking",
+    system "./configure", *std_configure_args,
                           "--enable-imfile",
                           "--enable-usertools",
                           "--enable-diagtools",

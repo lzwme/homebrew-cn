@@ -1,20 +1,18 @@
 class Dockerize < Formula
   desc "Utility to simplify running applications in docker containers"
   homepage "https://github.com/jwilder/dockerize"
-  url "https://ghproxy.com/https://github.com/jwilder/dockerize/archive/v0.6.1.tar.gz"
-  sha256 "c21cea3e6bb33a2e280c28d3521b8f177c78e875b475763fcb9bd7a545e21688"
+  url "https://ghproxy.com/https://github.com/jwilder/dockerize/archive/v0.7.0.tar.gz"
+  sha256 "c39e756cd2d43341dd01645f2a100437dcc7c91cf5bfed5751e71a4804575a7d"
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "90919065afbfa7770272c035c3a8bc93d98a6838df78cd42a893fce5fa5fb81d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8228e79369f2d20e2635792723af7c66e1a9c63c0f5c20e87ec507c9d705337c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3d280e3d9e80e0a78e577fbb3d2695b2019c29ab3b21329f199fd87946c0debc"
-    sha256 cellar: :any_skip_relocation, ventura:        "0cc225437300bf23ec05f5b13bb795c99627c813e4de79e50ee455a5e8c61737"
-    sha256 cellar: :any_skip_relocation, monterey:       "ee74a57cfcd91e053e24decaa70d0ebb8e2e732fab238876b94921fe5898d72b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "64f691e93e6c7413cc6ade249cf76c7daaa7225e3f347c1ee6897990025ab172"
-    sha256 cellar: :any_skip_relocation, catalina:       "31eafaba901153d80f1cf5e9fafb07834595413720c288cfd926f3c376a460a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1008e402b919a326216cb934aae95c45094717812c800a7e1dd5e09aeb5151b9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c2c5ba6437590435bf77b6b5b90819acddf8ab499944ace62258c3fee7f69070"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c2c5ba6437590435bf77b6b5b90819acddf8ab499944ace62258c3fee7f69070"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c2c5ba6437590435bf77b6b5b90819acddf8ab499944ace62258c3fee7f69070"
+    sha256 cellar: :any_skip_relocation, ventura:        "e04719aac68f9656ec01acd5add5e521ea013f03f9fce382d7d5c42f20459b7a"
+    sha256 cellar: :any_skip_relocation, monterey:       "e04719aac68f9656ec01acd5add5e521ea013f03f9fce382d7d5c42f20459b7a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e04719aac68f9656ec01acd5add5e521ea013f03f9fce382d7d5c42f20459b7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2b4bc44d532320f78149b4e7e0c2b223d17a562865b6d777144e698e4ff6071"
   end
 
   depends_on "go" => :build
