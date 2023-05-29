@@ -14,13 +14,14 @@ class Ffmpeg < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "2bc7a6242f47c344e31233260416421f643a7da50131305eecc8e1c6cf79f2f7"
-    sha256 arm64_monterey: "846a6c6e7def029977275bf80c194a64c25d21f3dbe85caf9e2d9485c7eadab1"
-    sha256 arm64_big_sur:  "27d5700ec5c3565dc5bba6daee726d3992478f5a5a992bbd69c3d5049bc66fee"
-    sha256 ventura:        "5000a047d8b104df680ba42f567b6a283aabfd4ea4d59b5242ea6436ce263b31"
-    sha256 monterey:       "cbe440ecab83b5737e589422ef3c29999f2827ab52a24a1a2bd5967d48bbf754"
-    sha256 big_sur:        "32184c461d5ed6aa4b15603a21db93484d86d09f0e77805aa9470731668ff5b2"
-    sha256 x86_64_linux:   "d8bd2578043eee0785dfb5eb8c7fd7cf77236d86a36e13d5ee7a5a8bb0316d5b"
+    rebuild 1
+    sha256 arm64_ventura:  "cd3d6af30b9dd5adc545ef6ded53987665e88ad0f498cfef3ed154099b7e24c0"
+    sha256 arm64_monterey: "a0c02bd23396b2cdfd5fa22fea2f25962fe140b3b3513ee9a5841b5d0a9170e3"
+    sha256 arm64_big_sur:  "d21fa5146f66ba1c92be64f9bb340b6ce1cee593b5847eef200e3520b184dab8"
+    sha256 ventura:        "498b4e1f10f898845f00cfcd14199ee3a51b67fe54370625e99799cf3003b616"
+    sha256 monterey:       "6b1dc5718ec8496ae851d7171e0abfb611d05ced2735c18fb2df793c6ffe7a61"
+    sha256 big_sur:        "5dcdfca2a21b890c606803739674b6b78e1b3a18280024848e6ce0fa4a8ea555"
+    sha256 x86_64_linux:   "0c2060da94b748abc4644fd0a38e6d535e7ab4b94456ee0a503d87b287a575fb"
   end
 
   depends_on "pkg-config" => :build
@@ -127,7 +128,7 @@ class Ffmpeg < Formula
     ]
 
     # Needs corefoundation, coremedia, corevideo
-    args << "--enable-videotoolbox" if OS.mac?
+    args += %w[--enable-videotoolbox --enable-audiotoolbox] if OS.mac?
     args << "--enable-neon" if Hardware::CPU.arm?
 
     system "./configure", *args

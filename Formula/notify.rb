@@ -1,19 +1,19 @@
 class Notify < Formula
   desc "Stream the output of any CLI and publish it to a variety of supported platforms"
   homepage "https://github.com/projectdiscovery/notify"
-  url "https://ghproxy.com/https://github.com/projectdiscovery/notify/archive/refs/tags/v1.0.4.tar.gz"
-  sha256 "9fa8428b4e88da754c265b50a4ea61ee534857ad722c6d6c562362bb238ba1ed"
+  url "https://ghproxy.com/https://github.com/projectdiscovery/notify/archive/refs/tags/v1.0.5.tar.gz"
+  sha256 "15824bee28cb9f3e74aa34559619fdceb865182fe12961d6c5cfc26db642b38c"
   license "MIT"
   head "https://github.com/projectdiscovery/notify.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02b142fb57ed54d71f187613c85ad84cbf1f10469135ef22fdbf4b180f3dd50d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "02b142fb57ed54d71f187613c85ad84cbf1f10469135ef22fdbf4b180f3dd50d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "02b142fb57ed54d71f187613c85ad84cbf1f10469135ef22fdbf4b180f3dd50d"
-    sha256 cellar: :any_skip_relocation, ventura:        "31938d58bcffd12a2ce69e0c4b81664c18d82101e58c4d455f773046315b12e3"
-    sha256 cellar: :any_skip_relocation, monterey:       "31938d58bcffd12a2ce69e0c4b81664c18d82101e58c4d455f773046315b12e3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "31938d58bcffd12a2ce69e0c4b81664c18d82101e58c4d455f773046315b12e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0298dea5d5b239adafda958b128ec7f78f4cd23d56c41b4dad2082f1f5a7b226"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a98b613b397408f9064059db3cb9d395d00c34f60e5b47195f2a3d3442be76f0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a98b613b397408f9064059db3cb9d395d00c34f60e5b47195f2a3d3442be76f0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a98b613b397408f9064059db3cb9d395d00c34f60e5b47195f2a3d3442be76f0"
+    sha256 cellar: :any_skip_relocation, ventura:        "4ab287f6289bd0e830b3e599c7b886d6399c95639712edf5e6e972b37cf8cdb8"
+    sha256 cellar: :any_skip_relocation, monterey:       "4ab287f6289bd0e830b3e599c7b886d6399c95639712edf5e6e972b37cf8cdb8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4ab287f6289bd0e830b3e599c7b886d6399c95639712edf5e6e972b37cf8cdb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "62de427da765f4b2b26e38f055a5adf2fdf2c01410e7c2115786618b4cc7c6ec"
   end
 
   depends_on "go" => :build

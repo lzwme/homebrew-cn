@@ -1,8 +1,8 @@
 class NagaCli < Formula
   desc "Shader translation command-line tool"
   homepage "https://github.com/gfx-rs/naga"
-  url "https://ghproxy.com/https://github.com/gfx-rs/naga/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "b59cfa8e11895fa5badf053dede122185afa9f4e48779ec0b4b163daff4427b2"
+  url "https://ghproxy.com/https://github.com/gfx-rs/naga/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "d4ac5e0e7aae58e812ed8b81b1946d430308594249963753705a8da7c56ae8f2"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/gfx-rs/naga.git", branch: "master"
 
@@ -12,13 +12,13 @@ class NagaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8497b9e8eece37260803af251cf971af7db8013e0e90797eeefd2b42903b82d6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "731127ca77e1ed213722f382ef922107b6ca64dce92cb194c7da83564b90e1e3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "777f7ccf16c0d2680733d24a7d681fcdca17967bff864ead4ec9c6206f375902"
-    sha256 cellar: :any_skip_relocation, ventura:        "8b47945e575a8b6ce0d03bcf47b26cbc182aa5af2d14eb6d85d61b18ae5705ff"
-    sha256 cellar: :any_skip_relocation, monterey:       "af7c77686594dfbcfa939c3d78da57582b72b4526197376a5ed8ae86d300791a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5e7584b05151b295faa755d98204b626d1fc2d4ebf49587e22ba4df84236a1dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a90b5c43194d3b2f62a78916a3b068cd3bb66091f6a918d90304189f4c9e162"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "16f51c69d89470489ebda4c561a4422abe8c1a50cf63c0ead577648e67d02a40"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "766d362436602a66b9c6d6fa96fde0ed03e4bee0d3df313016084cf9996e976d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "665dce01529a1260fdd449dadd54a15ac31da4a024d42a30708e53b78cf5e152"
+    sha256 cellar: :any_skip_relocation, ventura:        "8b7d85995fe8f22114361f11ae2bc8c081ef32fe818c8a13d3c632f4ee932433"
+    sha256 cellar: :any_skip_relocation, monterey:       "26d7b1c867b5ab672ecfe380ac14b061ab247d1b37d5631e731a0381b1077248"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0cec09fb6d77a176c306db98950f783c8a6f1e4d4ddb7df627a145598350eb52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "626c3369097c3b86002020fd07674783534163af8ae0e36c9e6eef34bde949a2"
   end
 
   depends_on "rust" => :build
@@ -122,11 +122,11 @@ class NagaCli < Formula
       		label="Fragment/'derivatives'"
       		node [ style=filled ]
       		ep0_e0 [ color="#8dd3c7" label="[1] Argument[0]" ]
-      		ep0_e1 [ color="#fccde5" label="[2] dX" ]
+      		ep0_e1 [ color="#fccde5" label="[2] dXNone" ]
       		ep0_e0 -> ep0_e1 [ label="" ]
-      		ep0_e2 [ color="#fccde5" label="[3] dY" ]
+      		ep0_e2 [ color="#fccde5" label="[3] dYNone" ]
       		ep0_e0 -> ep0_e2 [ label="" ]
-      		ep0_e3 [ color="#fccde5" label="[4] dWidth" ]
+      		ep0_e3 [ color="#fccde5" label="[4] dWidthNone" ]
       		ep0_e0 -> ep0_e3 [ label="" ]
       		ep0_e4 [ color="#fdb462" label="[5] Add" ]
       		ep0_e2 -> ep0_e4 [ label="right" ]

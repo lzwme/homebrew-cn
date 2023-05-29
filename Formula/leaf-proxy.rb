@@ -1,19 +1,19 @@
 class LeafProxy < Formula
   desc "Lightweight and fast proxy utility"
   homepage "https://github.com/eycorsican/leaf"
-  url "https://ghproxy.com/https://github.com/eycorsican/leaf/archive/v0.9.0.tar.gz"
-  sha256 "443ece8879de7da9dcd10b2fb35be178f00069e9867ca925024a17749a9e1fd8"
+  url "https://ghproxy.com/https://github.com/eycorsican/leaf/archive/v0.9.1.tar.gz"
+  sha256 "bcf12e7a99f7345e73c11011b4b92301e7b32081cb07cb469c6c610a0d186746"
   license "Apache-2.0"
   head "https://github.com/eycorsican/leaf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c94d9323ea88ad56d9cd873a7b5ce7f7a6476aef5b80ac174e4e6cd5a73d1bed"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c3fc155165f5214ec2a9887192325904b531b57b29190a1b43a201bd84b62a54"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "545513adc3df5212ccab593b91b02ac5a7d5f69241add15b1b744a58544c5015"
-    sha256 cellar: :any_skip_relocation, ventura:        "f575b58f2c547de8f1d1dbc5c4c177afa1da4092eedd5b2b11cf90976af261ac"
-    sha256 cellar: :any_skip_relocation, monterey:       "6870a44a0c8054908a73dac13957f46127dbabfbee037dd96a78d3edb324c51c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "829df4fc3e2f9275ba035671596d7849927a08ff9f7644a4c535ea38f4c2eab4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e368a232f57f3ae8752c7f2d13928bcef501b1d81f803cdff24ff361f319ec6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ea8b7e387ce7958dcfcaf68006e21621cf31b253e22097c82d4a47594359e067"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "305ba56e1815cca7df6c9131577b8714b195e536bb143040eaf106c6b3855691"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "aadac253148b41d84e6bf5c9e174bc6c698175f60f437178ad358f35a76d6ac2"
+    sha256 cellar: :any_skip_relocation, ventura:        "59b729d57f717f34af8bed48864d96c8893ea47686843e4f4e62656f547973d4"
+    sha256 cellar: :any_skip_relocation, monterey:       "c2350cb67edd2393db703ad275d4f401720197ff6fdadf186d2340ec96be2461"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3c63e153b5ecf2b4243b978d03543cdf0cd65daeb49cad1c43a2f92b9671e51c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6da1f808bf09bbc1eb48d107b823a9c7cac2b2da6fe325578280ad85f340f67"
   end
 
   depends_on "rust" => :build

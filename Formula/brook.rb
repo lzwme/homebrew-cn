@@ -1,18 +1,18 @@
 class Brook < Formula
   desc "Cross-platform strong encryption and not detectable proxy. Zero-Configuration"
   homepage "https://txthinking.github.io/brook/"
-  url "https://ghproxy.com/https://github.com/txthinking/brook/archive/refs/tags/v20230601.tar.gz"
-  sha256 "0a80773ecad13cf10ae4de9e33ac1cec751f269d09d6e8991dc8e5dd01a1b101"
+  url "https://ghproxy.com/https://github.com/txthinking/brook/archive/refs/tags/v20230606.tar.gz"
+  sha256 "4490f203973b59e5bbaa4cbfb8835232f9671dac1b82ab4de882d32a2ad6b612"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "52253e16780abee25d90520ba03f3d38b1654b0ca2eda5c905e53d62a4e1db19"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "52253e16780abee25d90520ba03f3d38b1654b0ca2eda5c905e53d62a4e1db19"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "52253e16780abee25d90520ba03f3d38b1654b0ca2eda5c905e53d62a4e1db19"
-    sha256 cellar: :any_skip_relocation, ventura:        "0abfdbf2450fc2d775bcb8428402331cab37bccca4c14bcf39f342b9b51609f5"
-    sha256 cellar: :any_skip_relocation, monterey:       "0abfdbf2450fc2d775bcb8428402331cab37bccca4c14bcf39f342b9b51609f5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0abfdbf2450fc2d775bcb8428402331cab37bccca4c14bcf39f342b9b51609f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a795ef627b04c894a20cdcb3249eb685f083935357a0d7361a8e221554dd6f72"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ec9f423c75799d77ff6232c636195a4f6aeaffd022f578af101df67f79b8e227"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ec9f423c75799d77ff6232c636195a4f6aeaffd022f578af101df67f79b8e227"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ec9f423c75799d77ff6232c636195a4f6aeaffd022f578af101df67f79b8e227"
+    sha256 cellar: :any_skip_relocation, ventura:        "759abb842e4c46a4c86ec776666098a4270d3f6cc635dec0a70915e91c451397"
+    sha256 cellar: :any_skip_relocation, monterey:       "759abb842e4c46a4c86ec776666098a4270d3f6cc635dec0a70915e91c451397"
+    sha256 cellar: :any_skip_relocation, big_sur:        "759abb842e4c46a4c86ec776666098a4270d3f6cc635dec0a70915e91c451397"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a5854caf4874c75ae5a761c4cb5a7aabecfd89f1775b8f18f4fbe48ea8c3620"
   end
 
   depends_on "go" => :build

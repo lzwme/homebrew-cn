@@ -1,8 +1,8 @@
 class UtilLinux < Formula
   desc "Collection of Linux utilities"
   homepage "https://github.com/util-linux/util-linux"
-  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.38/util-linux-2.38.1.tar.xz"
-  sha256 "60492a19b44e6cf9a3ddff68325b333b8b52b6c59ce3ebd6a0ecaa4c5117e84f"
+  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.39/util-linux-2.39.tar.xz"
+  sha256 "32b30a336cda903182ed61feb3e9b908b762a5e66fe14e43efb88d37162075cb"
   license all_of: [
     "BSD-3-Clause",
     "BSD-4-Clause-UC",
@@ -24,14 +24,13 @@ class UtilLinux < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_ventura:  "bae699a799d47cd4eefebfe710026caddb884c0c1b12946cf97178d69bc3e87b"
-    sha256 arm64_monterey: "d9968a649c0c89be84375cc3ec5f83173a522a6a8afa66e377bc61af7e8be83f"
-    sha256 arm64_big_sur:  "5254f2f95a81467864c46d96abaae044bfa98c13f6c386a1fd25facd67a32df8"
-    sha256 ventura:        "00275051b0a85c337ce82a7b410580b8a12947034d93b7536a5a56a4a62d18f2"
-    sha256 monterey:       "63fa7a684e7b4d4b652b54f9ba5dfe6ff1f20b974bf0509f76aaea26a97ef31d"
-    sha256 big_sur:        "f4091ecbc585f0cf9a244b5be177a5ac7bd49bf1650a0a5d79bbe28dfb7b9744"
-    sha256 x86_64_linux:   "aa2192315d8696997a44fac1681386ff0978d354a326477090cc0e940dbfa4b6"
+    sha256 arm64_ventura:  "a4373e2e2ae7bbac3cb1a438fd6e1060c8946546bd9e29a2895ac58eb649e47a"
+    sha256 arm64_monterey: "f4e0cea186b075296b029cfc79db6eb1ccf7212b0c14d8b3343870dce97cdc4f"
+    sha256 arm64_big_sur:  "f85e6dbb933044802b756ef0aa2840ec22a3d061df97ce45dd20ea1c43f71e9e"
+    sha256 ventura:        "36546268d5754a3fba6eb82e5fedcb2eb72ee8dee68605ae165717f577c6dcac"
+    sha256 monterey:       "6e1ad1639e256a73c96d79b6d91660744693d5d9a12600aa60ca10f498856d82"
+    sha256 big_sur:        "6c99d5affbfd0dc4850eb6b302624b2183aaa016138ed7a5aeef05f5b2d4f508"
+    sha256 x86_64_linux:   "74f536ca720c942aa944c4bca645e6446b19bec1f65e41b2cf78b9fb1eec5655"
   end
 
   keg_only :shadowed_by_macos, "macOS provides the uuid.h header"
@@ -40,21 +39,8 @@ class UtilLinux < Formula
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
-  # Everything in following macOS block is for temporary patches other than `gettext`.
-  # TODO: Remove in the next release.
   on_macos do
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "gtk-doc" => :build
-    depends_on "libtool" => :build
-    depends_on "pkg-config" => :build
     depends_on "gettext" # for libintl
-
-    # Fix lib/procfs.c:9:10: fatal error: 'sys/vfs.h' file not found
-    patch do
-      url "https://github.com/util-linux/util-linux/commit/3671d4a878fb58aa953810ecf9af41809317294f.patch?full_index=1"
-      sha256 "d38c9ae06c387da151492dd5862c58551559dd6d2b1877c74cc1e11754221fe4"
-    end
   end
 
   on_linux do
@@ -66,9 +52,6 @@ class UtilLinux < Formula
   end
 
   def install
-    # Temporary work around for patches. Remove in the next release.
-    system "autoreconf", "--force", "--install", "--verbose" if OS.mac?
-
     args = %w[--disable-silent-rules --disable-asciidoc]
 
     if OS.mac?

@@ -1,30 +1,32 @@
 class Inko < Formula
   desc "Safe and concurrent object-oriented programming language"
   homepage "https://inko-lang.org/"
-  url "https://releases.inko-lang.org/0.10.0.tar.gz"
-  sha256 "d38e13532a71290386164246ac8cf7efb884131716dba6553b66a170dd3a2796"
+  url "https://releases.inko-lang.org/0.11.0.tar.gz"
+  sha256 "fd1b492d0fc4d0e4930e3b3a547957ccb01898306797b1a1afbc4512eb045566"
   license "MPL-2.0"
-  head "https://gitlab.com/inko-lang/inko.git", branch: "master"
+  head "https://github.com/inko-lang/inko.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "07d8357f8d0d21e359588df7b846f5959c08aa193121bfc7b5f8b905c60acf73"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b4d8f51a76b0c7260dfcf311141cb52921f6b899ec962b521fb75a5b56b94b00"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e4a2a7c699d3ebffe9f92dc7dff1f839e369028404ce0997f945622a0603115e"
-    sha256 cellar: :any_skip_relocation, ventura:        "9fc8e211538f6f0eb4106524307d1007cebb5e4d4530d0f1d0368faa8b8bf138"
-    sha256 cellar: :any_skip_relocation, monterey:       "aa1567b9a80ecf61d33dcc09637b76ea2c32be5a1558bbaf5259d0cd085a8f1d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e0e4889fef0fcf3d9eabc466c7290f38d4fd7b23bb1b422c71b301fcabe19a03"
-    sha256 cellar: :any_skip_relocation, catalina:       "4dab624dbe2acb233d0e0f1b92238988de99507e47400df9974b8b4c8c0e5293"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "793f34b23c6045b3e56bd64f6be059b4cb0cbc1f24a85cc688e6c41c99cabee1"
+    sha256 cellar: :any,                 arm64_ventura:  "135a9bc1794ee3afc088ca7f7e5e2647d8c9ba8b32112ca61d10c0277b0432f2"
+    sha256 cellar: :any,                 arm64_monterey: "83bdfe0f42745642c79f3584f11119505bddd8b5b743de5f7fa94b40a6914ef1"
+    sha256 cellar: :any,                 arm64_big_sur:  "f1062bdae4583a55deda9d80ff8fd850665901ecabf0db248a6487fd5313b7d4"
+    sha256 cellar: :any,                 ventura:        "255bf406f901878da903abefc27bed856e4910fc5164a6757a20c3b2fa62e27f"
+    sha256 cellar: :any,                 monterey:       "7a5434ead93e9205cb066ae95c61007f0e2024293a09a89701ed7fdf5e3f4a6f"
+    sha256 cellar: :any,                 big_sur:        "438c34b8ede0b33edfd552ba4fda45214babdfa78d699bd0ce29565390fd4d24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20293924c09ba14723b63f4b7392c7231e57f5a0449e101bef8103ffcbceea8e"
   end
 
   depends_on "coreutils" => :build
+  depends_on "llvm@15" => :build
   depends_on "rust" => :build
+  depends_on "zstd"
 
   uses_from_macos "libffi", since: :catalina
   uses_from_macos "ruby", since: :sierra
 
   def install
-    system "make", "build", "PREFIX=#{prefix}", "FEATURES=libffi/system"
+    ENV.prepend_path "PATH", Formula["coreutils"].opt_libexec/"gnubin"
+    system "make", "build", "PREFIX=#{prefix}"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
@@ -38,6 +40,6 @@ class Inko < Formula
         }
       }
     EOS
-    assert_equal "Hello, world!\n", shell_output("#{bin}/inko hello.inko")
+    assert_equal "Hello, world!\n", shell_output("#{bin}/inko run hello.inko")
   end
 end

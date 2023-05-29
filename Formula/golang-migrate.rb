@@ -1,19 +1,18 @@
 class GolangMigrate < Formula
   desc "Database migrations CLI tool"
   homepage "https://github.com/golang-migrate/migrate"
-  url "https://ghproxy.com/https://github.com/golang-migrate/migrate/archive/v4.15.2.tar.gz"
-  sha256 "070b8c370fe45a2c2f6aa445feb65a1d63d749ce8b2dc5c7d1dffe45418b567a"
+  url "https://ghproxy.com/https://github.com/golang-migrate/migrate/archive/v4.16.0.tar.gz"
+  sha256 "b5e7fad075a03b4017a4f620d711fc7c061b95fe68ac24e2ce795cd2158fc54a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ab03e86f6da0ff578e58b73282753aaeb86d2b100be34f54683a351069a4ea0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "de335a1e58758ce0006b6c4b492699c409274b24a291ecb03612e104781093c2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "41595beeb24c80f73f2a3d1722ad29a03524dcf0d3cf3a40a1905a2d391188ba"
-    sha256 cellar: :any_skip_relocation, ventura:        "ad606e8a29595bc3f0d20fa3e53ae15946144a991cf202ba5cfce0104fc7eafe"
-    sha256 cellar: :any_skip_relocation, monterey:       "7d080cb0d06b0198228f7d0f74c626efefd9a6445155df5dce666745428c4bc1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "10b7e0b3396058331b4efd8ebfb0fdb44cc1cda885ab499c89963ce3ca752188"
-    sha256 cellar: :any_skip_relocation, catalina:       "f63879e90fea7b531081285580b10c5bc57d0585f35c3d6a3e178403a40f56cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd8eda55a6ba9adcf3bb093cd0a142cdea1cd0669fdc151ed14a790e8aa5a575"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fc855d0af223192ea40bcaede934aeb6eac0ce1bb367ff1095799ded0b884f5f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "553c5607b50d026500dcaa45b5cfcc428bc3eaf511225e238d350e485ce4a535"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e7b89e2378bbab1ef1de0d2fe367c4254c4c0d6660d33f7401440c8160fe0f1e"
+    sha256 cellar: :any_skip_relocation, ventura:        "7ed8f29334a407a89cb87e5996d0bf768c60d72500a506a44d647335ba31ff58"
+    sha256 cellar: :any_skip_relocation, monterey:       "a6acd301416b2384ee48f32403e738bac668afacdf86ff4db50bfbd2f1f6a7bc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7385183ed9f7b5798eb1819bf120034aec1b34ed972d5b14926e8df054dd8504"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "00126493e2eccb31dd1c1f2cac61000d44f9b80f47ca69415bec2e676dc2396b"
   end
 
   depends_on "go" => :build

@@ -27,13 +27,14 @@ class Shaderc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "76832d4712b0a87be3f343714ec14671002786332b1f6914eddcac4fe468fdc5"
-    sha256 cellar: :any,                 arm64_monterey: "e9efa57fc039094e45c951cf38f9398dafe9632614dc8cde26722fe94a9682d2"
-    sha256 cellar: :any,                 arm64_big_sur:  "481c23536a6b4ca4d52fb58e004272def86c1217c692d275ebe50ef4d8b65d98"
-    sha256 cellar: :any,                 ventura:        "3968397c70aa6170c13a1a37bd1ee512a4b846fe67814867304c1d68a71c3e05"
-    sha256 cellar: :any,                 monterey:       "9503c82078b4fd2de835861aaac146f3d37acdbc4b8778b9784c8e4abbd7e542"
-    sha256 cellar: :any,                 big_sur:        "b99a82eddfead51b41e0be06c1d57f6b6e70e9f2b5f63ab2498a764b13487a5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a552d6fa80ad64d2689c320df7b9de63e8dde242a57c9b0cdc84fa8520e47470"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "dd038613145773ff320ebe3a79cf61272376281bbe06f5d7b422397fa8e649e7"
+    sha256 cellar: :any,                 arm64_monterey: "a73b22ed66db948c0c4f1ba3f9e04135aa3b87e5dbe3a569fb279ed9a468c229"
+    sha256 cellar: :any,                 arm64_big_sur:  "cfe7d7622353d8b805a07ca1c34e9aa7a7e5a0397d9773f8aa39f1db011cc736"
+    sha256 cellar: :any,                 ventura:        "2ac1180ed8fc32957e854ab7948af61e174f5f0ad7e5075f14906458c5fff3c3"
+    sha256 cellar: :any,                 monterey:       "8f03525f71176ba744eb98931831e01a7c8f53a1e78d4ea594b258df677c2ff3"
+    sha256 cellar: :any,                 big_sur:        "1196194aff020b3a96f1d379c1c225efe35ec7c027be4ec53aa9bcfd48d7328d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c62c00f66b1e611964b4ca495bbe623d701c7f9845b65763f9a76536c1ab032"
   end
 
   head do
@@ -65,12 +66,14 @@ class Shaderc < Formula
       res.stage(buildpath/"third_party"/res.name)
     end
 
+    # Avoid installing packages that conflict with other formulae.
+    inreplace "third_party/CMakeLists.txt", "${SHADERC_SKIP_INSTALL}", "ON"
     system "cmake", "-S", ".", "-B", "build",
-           "-DSHADERC_SKIP_TESTS=ON",
-           "-DSKIP_GLSLANG_INSTALL=ON",
-           "-DSKIP_SPIRV_TOOLS_INSTALL=OFF",
-           "-DSKIP_GOOGLETEST_INSTALL=ON",
-           *std_cmake_args
+                    "-DSHADERC_SKIP_TESTS=ON",
+                    "-DSKIP_GLSLANG_INSTALL=ON",
+                    "-DSKIP_SPIRV_TOOLS_INSTALL=ON",
+                    "-DSKIP_GOOGLETEST_INSTALL=ON",
+                    *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

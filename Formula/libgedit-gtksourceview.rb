@@ -1,19 +1,19 @@
 class LibgeditGtksourceview < Formula
   desc "Text editor widget for code editing"
   homepage "https://gedit-technology.net"
-  url "https://gedit-technology.net/tarballs/libgedit-gtksourceview/libgedit-gtksourceview-299.0.1.tar.xz"
-  sha256 "74f8521b70a357708b08e2fdab28fb7796e0b67f6f8a7926a753b61cf3e9960b"
+  url "https://gedit-technology.net/tarballs/libgedit-gtksourceview/libgedit-gtksourceview-299.0.2.tar.xz"
+  sha256 "467fde5fec7fab80638bc10d75739565bf88b9c6f82544b6a6432f1f694a9811"
   license "LGPL-2.1-only"
   head "https://github.com/gedit-technology/libgedit-gtksourceview.git", branch: "main"
 
   bottle do
-    sha256 arm64_ventura:  "f05db7f2b4032c88cbb33a98599acb5fadc049cdbbacd1c1acce423205dfda25"
-    sha256 arm64_monterey: "9e11e41ebcc100c6f335e10dd456abf1267eace560dbda3aa7fdd5923e20732f"
-    sha256 arm64_big_sur:  "e93b9e6518016a2d9fb40e15ae42103ca2fcdff0f89e795ba53f747b0f146149"
-    sha256 ventura:        "1c24a3aef344f51aa73bcdd51110fa159dd30cd7075c11611153141ce7fa530f"
-    sha256 monterey:       "e9988e7a293d67aac67da86bac5637620961ed3507cf4661b589e59902d0b93e"
-    sha256 big_sur:        "60d7d6f05c9e1771628abbbc53dae5c6c1063c98a769577cfe6c03306be71cb4"
-    sha256 x86_64_linux:   "e718b1e0b9e2bf33f93f5e06c617c63385db9cf78879382d8fa79f9093707ca7"
+    sha256 arm64_ventura:  "b70eeb24da35f08ef2155efc7ca5b26e3c9a17c9e268f21d1b9bcba75693a001"
+    sha256 arm64_monterey: "082187ddc156805492b0995e18912932d6414556f9a809d842a2ece0837fb199"
+    sha256 arm64_big_sur:  "2fe3e642fea66b7c6244210818179e18c06ae7787bea12cd14076ec78581d693"
+    sha256 ventura:        "058e2e1a7a6c595243a6b22c1ee0ba5072b88be4dae99d154537666502ad0c9b"
+    sha256 monterey:       "9f51aca690cccc65fce7c123d7d146d2ddc0b124e763b77232f4990c9ff9f5be"
+    sha256 big_sur:        "6c4073bb651e3a9a7a71bcb5fb199568e432a4104d30b2709816afd3ab208afe"
+    sha256 x86_64_linux:   "c66565b0f9162c83b4fa7d7e8c2232ec4863e87ed00d758d633b3a55267c2fc0"
   end
 
   depends_on "gobject-introspection" => :build
