@@ -1,6 +1,6 @@
 class Dnscontrol < Formula
-  desc "It is system for maintaining DNS zones"
-  homepage "https://github.com/StackExchange/dnscontrol"
+  desc "Synchronize your DNS to multiple providers from a simple DSL"
+  homepage "https://dnscontrol.org/"
   url "https://ghproxy.com/https://github.com/StackExchange/dnscontrol/archive/v4.1.0.tar.gz"
   sha256 "1280cf82b952afc5090f4e17008fd3eea417c417f1099470d4550b3eea8f8167"
   license "MIT"

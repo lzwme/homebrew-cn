@@ -1,19 +1,18 @@
 class Matplotplusplus < Formula
   desc "C++ Graphics Library for Data Visualization"
   homepage "https://github.com/alandefreitas/matplotplusplus"
-  url "https://ghproxy.com/https://github.com/alandefreitas/matplotplusplus/archive/v1.1.0.tar.gz"
-  sha256 "5c3a1bdfee12f5c11fd194361040fe4760f57e334523ac125ec22b2cb03f27bb"
+  url "https://ghproxy.com/https://github.com/alandefreitas/matplotplusplus/archive/v1.2.0.tar.gz"
+  sha256 "42e24edf717741fcc721242aaa1fdb44e510fbdce4032cdb101c2258761b2554"
   license "MIT"
-  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "63df998410641e7a87ef3f803656ba9a5e4db197e2a2f67b457b61ab042c4c2e"
-    sha256 cellar: :any,                 arm64_monterey: "09fefaa3f06a0139757348b66ced9a78e9cdd89b359eeb8bddd86c11ba328c76"
-    sha256 cellar: :any,                 arm64_big_sur:  "91e6a335dc67dc2f53f3b530fb8ff996552b8ce5df746bcd542214cf0fbaaba1"
-    sha256 cellar: :any,                 ventura:        "aeb9853045a5e8498f48b4095c6f144fbb66c8bd88b8a0d88a8da1bd2af6d793"
-    sha256 cellar: :any,                 monterey:       "ae78e44903b2ac5d6172eae41cf93247a2d8b96056e2e7e3deff8df85241c9e3"
-    sha256 cellar: :any,                 big_sur:        "c20d6f3472a9f7ad51c37e28f9831775609536a45e98d9184a5612676c862293"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31d9fcfe3e375a750c536a1e93760be3e700c7c20ea2e2cc76d91577e2f4b420"
+    sha256 cellar: :any,                 arm64_ventura:  "9303a47d6e17b4718fe5536549035dc343c5d62a1545736b9828f221ee0c6a96"
+    sha256 cellar: :any,                 arm64_monterey: "bb569ce1db39420566b77fb8ff0cd62808ee3213d9634dce7fbcd58afb77acc6"
+    sha256 cellar: :any,                 arm64_big_sur:  "be4bfef96282be1c1e1f527237d15917ff10437edbf98f8bed0a105c58f572d2"
+    sha256 cellar: :any,                 ventura:        "89a762d1e032a41a5f5cc8ffb18752c5d00baa0c2a0ea3f0273cb74f5971daff"
+    sha256 cellar: :any,                 monterey:       "c06d3057a3b371ea6887c008d55afb848b48f0df2f8cf4206b8e7a77b8bfc77e"
+    sha256 cellar: :any,                 big_sur:        "4b229eaec3f93b4b872f7f65785c8b717beb31c83c07498798a64f4b1bd9a90d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f24a36084507d7323bcebfde558746baa92f4508ecd5d5729046a04e079b9e2"
   end
 
   depends_on "cmake" => :build

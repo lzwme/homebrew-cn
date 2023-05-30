@@ -3,18 +3,18 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/ce/9d/255dac476b405924ffe7a43b93908864660d8bfedbc6d95fb6c2ac3b0eb8/esphome-2023.5.4.tar.gz"
-  sha256 "919c06c0948b54a51c67b2fb6231408373a98ee8ee8ec183d25adf42d0a31946"
+  url "https://files.pythonhosted.org/packages/ba/99/e3de03c370f1d42ddf8aef3c7f34680b185c74ec86ea48d828a322c361ac/esphome-2023.5.5.tar.gz"
+  sha256 "e2686bd203a36228bd5166c7ed925953c178181d47acae0d77417a722979672e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c3956b890c488d4a36f1e1605bea7c88469738e87d8d2a5f9e45ca9b0d852277"
-    sha256 cellar: :any,                 arm64_monterey: "49309052070039a977cc7a7fea06abef4548c957eda073b577532f9eecf18b44"
-    sha256 cellar: :any,                 arm64_big_sur:  "5960c96fe50a377d195a554fe6c597bf49523811fbc669af509826649fcceb4f"
-    sha256 cellar: :any,                 ventura:        "497c1bc2bfaea318d91baae6c1c1bc98a556d32e863d30bcc89a2abe8c5c8ca3"
-    sha256 cellar: :any,                 monterey:       "0e58cffbac53cb150d47a326891e62872830ae122a41a6fde24097e3410b2957"
-    sha256 cellar: :any,                 big_sur:        "547b2ba55ccacd2d4cece0616e32dcadd4e57e255f5e232a774118fde4d90128"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7a4a70976abcf9b0ab4061a9027b9df109ba01b6292eec61d2faf31158860f5"
+    sha256 cellar: :any,                 arm64_ventura:  "d34fed3c12a33cd9f48bb22b1817991420ad1218f48a751b30e56cb732326644"
+    sha256 cellar: :any,                 arm64_monterey: "5ed612c423678b9958ac189c40a9272c963dff54a42b5b20854c8e18f08a045b"
+    sha256 cellar: :any,                 arm64_big_sur:  "34088c21f9f86036a7c761d5a716513b9fb5229441c577d4ce71ea51e34c94b7"
+    sha256 cellar: :any,                 ventura:        "55860e4695473078fc3c6ec72311b99ba0c060d748591cf2d9e975f7eda7d5a3"
+    sha256 cellar: :any,                 monterey:       "c64b71c4be1e70f7f77d42bbf01595a7d2a9428111ba73634b6681409095b9ae"
+    sha256 cellar: :any,                 big_sur:        "64d6061d11b3161d629a2671de66f97edb2ba0751214a6aaacc058cf674a5660"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9d63355936092c96d8eeb7dc64ebae52333d5c21b0e2552aae29e27b64d08f8"
   end
 
   depends_on "pkg-config" => :build
@@ -43,8 +43,8 @@ class Esphome < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/8b/94/6928d4345f2bc1beecbff03325cad43d320717f51ab74ab5a571324f4f5a/anyio-3.6.2.tar.gz"
-    sha256 "25ea0d673ae30af41a0c442f81cf3b38c7e79fdc7b60335a4c14e05eb0947421"
+    url "https://files.pythonhosted.org/packages/c6/b3/fefbf7e78ab3b805dec67d698dc18dd505af7a18a8dd08868c9b4fa736b5/anyio-3.7.0.tar.gz"
+    sha256 "275d9973793619a5374e1c89a4f4ad3f4b0a5510a2b5b939444bee8f4c4d37ce"
   end
 
   resource "async-timeout" do

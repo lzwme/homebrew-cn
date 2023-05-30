@@ -1,19 +1,18 @@
 class Cbindgen < Formula
   desc "Project for generating C bindings from Rust code"
-  homepage "https://github.com/eqrion/cbindgen"
-  url "https://ghproxy.com/https://github.com/eqrion/cbindgen/archive/refs/tags/v0.24.3.tar.gz"
-  sha256 "5d693ab54acc085b9f2dbafbcf0a1f089737f7e0cb1686fa338c2aaa05dc7705"
+  homepage "https://github.com/mozilla/cbindgen"
+  url "https://ghproxy.com/https://github.com/mozilla/cbindgen/archive/refs/tags/v0.24.5.tar.gz"
+  sha256 "0ae34b7b4fb7186407ad3eed9783a48135a7ca3f8f9e3c2966483df44815e0ac"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d7138c40d52a94efd75576d132c6575c869c6ac0dec342e637e75c52a1d4b76d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b0c1a36521b5e49fcaf8a6926a17495273312e28ba8dd5e9595bf8f02884ae5b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "aaefb1afec80860483ed1561f2da6f6f76c2a9b7f76064ff7c63632d433bb294"
-    sha256 cellar: :any_skip_relocation, ventura:        "7a1088dcd007b9a951598ee3935bff600d769043ebde5d46bcc1544636d80980"
-    sha256 cellar: :any_skip_relocation, monterey:       "a25cc4ddd2e539f7fed0c848494c4139c77519cb6b9e72958312b25fb27fc5bd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8e2be90e9b02046436ff3bc7934966b44a35145f61bea72c5f9441fe52072306"
-    sha256 cellar: :any_skip_relocation, catalina:       "b0b28803e7fcc5cb41fb207196fbc40790d6553d5c7834769e1ddf769e8b7e9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d7487e947535b4a520343029d23d4878504e8570b8f23d00b25882c15fd5d26"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dfb36ae83126a7f665df0ef9937b50af7e192f55fa5ef0c3d299e772177f6220"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc79e6a057cbd90fc56f9898ea678a15f8769dd3bd12d063f36b495103b6946f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0c5d4d66e352912d60f00bfba39205981a0bf97e74fec50597b6d9e938b3623a"
+    sha256 cellar: :any_skip_relocation, ventura:        "d0eae7379abd5e9147d4f3319e9c6bfa8ed47cd71db5456d3cce2b6b9e6d94a1"
+    sha256 cellar: :any_skip_relocation, monterey:       "e104b0d29d737e3e39a9585a91fcdca423eb300e592538e39beed43c53858d6f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2f7c7fdabc2ada18d88e813633340db35de3eb6953662d340edef4fdf34467ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1878296f17995643b0741031f65197fe657c212b5aa842d6e3d92e2202e4c1c3"
   end
 
   depends_on "rust" => :build

@@ -6,6 +6,17 @@ class GnustepBase < Formula
   license "GPL-2.0-or-later"
   revision 2
 
+  livecheck do
+    url :stable
+    regex(/^\D*?(\d+(?:[._]\d+)+)$/i)
+    strategy :github_latest do |json, regex|
+      match = json["tag_name"]&.match(regex)
+      next if match.blank?
+
+      match[1].tr("_", ".")
+    end
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "8321c4f4c88e7084055ffdd4a47d5f792379d49e662aa6b3d8f586e28ffd1432"
     sha256 cellar: :any,                 arm64_monterey: "2be5d01c301c2ddd08517954ddabd6c848ef2d2068ac3a368c2ceef6a373434b"

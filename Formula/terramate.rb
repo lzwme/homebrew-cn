@@ -1,10 +1,10 @@
 class Terramate < Formula
   desc "Managing Terraform stacks with change detections and code generations"
   homepage "https://terramate.io/docs/cli/"
-  url "https://ghproxy.com/https://github.com/mineiros-io/terramate/archive/refs/tags/v0.3.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/terramate-io/terramate/archive/refs/tags/v0.3.0.tar.gz"
   sha256 "b6cf28228cfc509a021a88fd5aac35ba784bbe7c8119a4501773d7e5cb5c4a7f"
   license "MPL-2.0"
-  head "https://github.com/mineiros-io/terramate.git", branch: "main"
+  head "https://github.com/terramate-io/terramate.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "510a79d6acd58e93fd12978cb9d6f05e42b34d702e6b19db1f5675a368469883"

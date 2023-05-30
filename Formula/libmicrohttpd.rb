@@ -1,19 +1,19 @@
 class Libmicrohttpd < Formula
   desc "Light HTTP/1.1 server library"
   homepage "https://www.gnu.org/software/libmicrohttpd/"
-  url "https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-0.9.76.tar.gz"
-  mirror "https://ftpmirror.gnu.org/libmicrohttpd/libmicrohttpd-0.9.76.tar.gz"
-  sha256 "f0b1547b5a42a6c0f724e8e1c1cb5ce9c4c35fb495e7d780b9930d35011ceb4c"
+  url "https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-0.9.77.tar.gz"
+  mirror "https://ftpmirror.gnu.org/libmicrohttpd/libmicrohttpd-0.9.77.tar.gz"
+  sha256 "9e7023a151120060d2806a6ea4c13ca9933ece4eacfc5c9464d20edddb76b0a0"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4f03463c98e01db7f4b03ab50d8b9a3c5356f94d65b51a2af0f1027bab40003e"
-    sha256 cellar: :any,                 arm64_monterey: "7f5930a6188d53f81ca79ede1ce73cd4b9ef6af1b332e82ada9aface1b1f0996"
-    sha256 cellar: :any,                 arm64_big_sur:  "7f7a4a1e5563ff18adaaeb607606c79e5b28ce1ffda59a99b408ac99ababece3"
-    sha256 cellar: :any,                 ventura:        "c382c04a59ec0b24cd29f8666a9c6a4fa0dd271bd825ec31eba4a3a0393fcc57"
-    sha256 cellar: :any,                 monterey:       "9d5255e5f3ca2faee06c464465fa4665c7c079050537d08b5733c38c3491cda6"
-    sha256 cellar: :any,                 big_sur:        "6af15aef5cfe18d9fec669a28cded546209ecdb62eaef37040b77cf7f78e18c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c868e51274f6e5ca2d4fbbd3745ab40043538bdfa3c85914fb89688b8c4449fe"
+    sha256 cellar: :any,                 arm64_ventura:  "db5805160eb11ac4c60b5de2e9b29ac0a9f2a35db53cc0fc9b9a5c8d9dc6ba9c"
+    sha256 cellar: :any,                 arm64_monterey: "d9038f31539af0dd9d376bfa304f30c755c9c61ca4f751048a4e02c81fb406f0"
+    sha256 cellar: :any,                 arm64_big_sur:  "a1ab5dd724062a0931c3c8b2545c6a282114b662a653b48dbf50b16ec26bb95d"
+    sha256 cellar: :any,                 ventura:        "1dbaac9c6d165536ff5a7834227305e6aad50dd8c6583e1575e1b6eac3ca346d"
+    sha256 cellar: :any,                 monterey:       "117479b8d61630e7eefa071e1eb586af7af8d9db1dd4c78a34343a37c1d76d32"
+    sha256 cellar: :any,                 big_sur:        "c5a7c2d00dff286ff8c70c757b609a4c8f085019955885ca99da0f8537763409"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9d77426c489b76f16982e5d2e12ac46d96011d65022e82e03e8e220aa9332c0"
   end
 
   depends_on "gnutls"

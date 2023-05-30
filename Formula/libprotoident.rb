@@ -1,38 +1,28 @@
 class Libprotoident < Formula
   desc "Performs application layer protocol identification for flows"
-  homepage "https://research.wand.net.nz/software/libprotoident.php"
-  url "https://research.wand.net.nz/software/libprotoident/libprotoident-2.0.13.tar.gz"
-  sha256 "8ca7ccd95b3f23457c3f9eff480364565b553bbcab9b39969f964910738e5672"
-  revision 2
-
-  livecheck do
-    url :homepage
-    regex(/href=.*?libprotoident[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
+  homepage "https://github.com/wanduow/libprotoident"
+  url "https://ghproxy.com/https://github.com/LibtraceTeam/libprotoident/archive/refs/tags/2.0.15-2.tar.gz"
+  sha256 "2b43a492fe1d7ada2e7b7b164c8e35220b35bf816bd971c7f77decc74b69801e"
+  license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "d93974ec737d62f1b54f6aafeec74cccf2632954e81daa60043632e5446292f2"
-    sha256 cellar: :any,                 arm64_big_sur:  "d0686f33c93e2853ca605f256486c9d8569b56b1538d0881b32fa4f0d7a49dfa"
-    sha256 cellar: :any,                 monterey:       "94f6535531ea76727db897dd49009a111652cb1c47fa3a592515c71a97b1aebf"
-    sha256 cellar: :any,                 big_sur:        "1928a4cc164177352292b8872fa6ed498247af16b1c25ffbf6cc80983e6ac43a"
-    sha256 cellar: :any,                 catalina:       "7ea19cf1a0ae1423dcadebe59d08cd2c65433e4210a9e434e9d1e8dfce65abb0"
-    sha256 cellar: :any,                 mojave:         "06f18aa299bc9b53991ac448d20d318625a3f1d55fe6bb093c45045b4accbb5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24938f68759726bc0549a5388e71184d56795bfbaff25f9d341b5cd0f79bc9a0"
+    sha256 cellar: :any,                 arm64_monterey: "8ace9b58b751f6fdb761ff949f271c239143232e72e259619ce7053f2de430d7"
+    sha256 cellar: :any,                 arm64_big_sur:  "2fc5f6991116f9d63e327f05905affc40219b75a60eee637f2d6f5dc4f59d6e1"
+    sha256 cellar: :any,                 monterey:       "3ad6e71b4d5a2857eabee4604eae32bd5f8888afb9532f6b984d5379548f3bb1"
+    sha256 cellar: :any,                 big_sur:        "56c72764357f942f42eb087698db4dfa1ca54ec8e2d80a30a66298c73ce49a57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "538f5938a6c533c1102a3c8d0b49d3e298e67b085fbca1fe8b8a71d92ae4f242"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "libflowmanager"
   depends_on "libtrace"
 
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
-    sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
-  end
-
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", *std_configure_args,
+                          "--disable-silent-rules"
     system "make", "install"
   end
 

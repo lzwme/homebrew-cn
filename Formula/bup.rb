@@ -1,21 +1,19 @@
 class Bup < Formula
   desc "Backup tool"
   homepage "https://bup.github.io/"
-  url "https://ghproxy.com/https://github.com/bup/bup/archive/0.33.tar.gz"
-  sha256 "2c21b25ab0ab845e1490cf20781bdb46e93b9c06f0c6df4ace760afc07a63fe9"
+  url "https://ghproxy.com/https://github.com/bup/bup/archive/0.33.1.tar.gz"
+  sha256 "b459f517949ba7cb7c9810f06d0ed50cde0f4070a9d2e4d78ac318e21a29c690"
   license all_of: ["BSD-2-Clause", "LGPL-2.0-only"]
   head "https://github.com/bup/bup.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "488f320ae0dea994a83ff4610b4a52b9c2ea4275ad197edb55ace13c5e0899f4"
-    sha256 cellar: :any,                 arm64_monterey: "fa27d1e7d41e432cd8e92a4bef4a0f40baec7aa017409bca0afbaea7600ae837"
-    sha256 cellar: :any,                 arm64_big_sur:  "c4ecfafadc9a7a307b0e0b1d3affadd69a96307ba577abd257d7819d19780916"
-    sha256 cellar: :any,                 ventura:        "5a22f269e8ab196be9724bfa63adfac2596178a50cc65bcb06a4f916f35c87de"
-    sha256 cellar: :any,                 monterey:       "8f3aafa9e04c8ae9948e636212512b21b9ef56ed7a98d7ac7fa2a81de9c57ec8"
-    sha256 cellar: :any,                 big_sur:        "949abf70c0e25dfc73f42ee8cf3d8a5fde1451f1ee1a3c0751857cd63bbd5e10"
-    sha256 cellar: :any,                 catalina:       "f3a2efd0a2b4c434677b736a0f59e5dc2be8fbd9352c90e7a818ff78af60d9ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76efebc4d38d833aaf7b0d9052ea73191b2d6deff579fe64bb5b25e9d246d27a"
+    sha256 cellar: :any,                 arm64_ventura:  "86ba4e56f6b6a997177a42f9fe996709d0e9cce75bc690e7d7cbb7cf44ab82fc"
+    sha256 cellar: :any,                 arm64_monterey: "9a6e835ab7a892188c7c0d421a32d7ba49bf173ae35ac5c06be8039e751620e1"
+    sha256 cellar: :any,                 arm64_big_sur:  "64386aa60a621da49862aec6e88829ec5c5ee7b96dc35b4b16ad323ad22df69d"
+    sha256 cellar: :any,                 ventura:        "7727ad7ad49b2e1d33d335490e6727e3ba5dc19203239fc3e0d503b7826b3c88"
+    sha256 cellar: :any,                 monterey:       "425107d25c4825a710d88f8db57655c4600161e8253dda8ccd859c341f08d870"
+    sha256 cellar: :any,                 big_sur:        "d7d59ac2746bd000bd1fd1ff59501946f659079e859ccdf2a02d2ebc2c74bafc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6fbc7b8c30955111048b9b8e32af5b1608d0790bf47bf187e90152f9fac62d83"
   end
 
   depends_on "pandoc" => :build

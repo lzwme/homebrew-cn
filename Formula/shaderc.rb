@@ -59,8 +59,6 @@ class Shaderc < Formula
   depends_on "cmake" => :build
   depends_on "python@3.11" => :build
 
-  conflicts_with "spirv-tools", because: "both install `spirv-*` binaries"
-
   def install
     resources.each do |res|
       res.stage(buildpath/"third_party"/res.name)

@@ -3,20 +3,19 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/85/5a/2002159c9b871b32619d6ba1ab8738ac6f212a26ce3e1e53d2515eb35173/pdm-2.6.1.tar.gz"
-  sha256 "105958849a2f8d9aa9ef2183a2c50eae9eb4ac47fc81272cd504fdd9c90edea2"
+  url "https://files.pythonhosted.org/packages/66/c2/fdbf899e84cfdf8068d022296426ce9e02d58e280e93902c6e2027aeb4a4/pdm-2.7.0.tar.gz"
+  sha256 "e1dcaefe778c157fd4d51b88d19101cdd6ce3481ef756cafa72d46bb988c01c8"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "79696616798b573bfff1cd0d6343419094fb2acb5c7d6bc91b2c438895ef3fb2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aa5a13f3684ee1abcedb090491912ca21289171f9abb9652b905298c171c326b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "581df1da7262a5dc30a95b4be13bcb52072c61bcbe4dc1cf83bfb361e41b2337"
-    sha256 cellar: :any_skip_relocation, ventura:        "7e049866b1f4c952c15e76bfa0d4e8489ee6a62f0e205e52d24a061dc05edfbe"
-    sha256 cellar: :any_skip_relocation, monterey:       "b62d0a88ea1aed7082b04b3f6bb14bc3d6a4c852018c675d089230d9f834b098"
-    sha256 cellar: :any_skip_relocation, big_sur:        "509c8db803a58483826b1724e93f1194623693035ea188ed9c2c34b8ba864ecc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95d26a87e1326a647ce8c6515153ffae6bf4dad78cac6445f24b757458330cca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca6df71c1a600636f7108d5fd74cde7d908329b665d7aec363beb07bada4400d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2dad1a34c15862e9b8694fbe32a03b9925789e03f653a8ebef90036ae2e8a44f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3252717027f9b00f999d6f8cdfa8637b280ea4688dc634cec4ba58cba456ef4d"
+    sha256 cellar: :any_skip_relocation, ventura:        "a15330efab0c0e22ae471ce9d168866d5d8cc1d42f36e45afa00281de73fcced"
+    sha256 cellar: :any_skip_relocation, monterey:       "57f4d23445467b3f43e07861a128713a9354a3cad9a4050420d04684387fcd6b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e1ce5d109bef88fee01d7d5e1f689356851a6e0da8eff2f3dd6e03fb6b8ae824"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe0c9c5ce3ab2d1515bb5a90bd4aa533f27f1f2cd141484643f120d537225424"
   end
 
   depends_on "pygments"
@@ -27,9 +26,9 @@ class Pdm < Formula
     sha256 "4afd3de66ef3a9f8067559fb7a1cbe555c17dcbe15971b05d1b625c3e7abe213"
   end
 
-  resource "cachecontrol" do
-    url "https://files.pythonhosted.org/packages/46/9b/34215200b0c2b2229d7be45c1436ca0e8cad3b10de42cfea96983bd70248/CacheControl-0.12.11.tar.gz"
-    sha256 "a5b9fcc986b184db101aa280b42ecdcdfc524892596f606858e0b7a8b4d9e144"
+  resource "cacheyou" do
+    url "https://files.pythonhosted.org/packages/8e/6e/8a9d13f938789b29e89b78cfeb9d0a9e002c67272ead73060c8306b74fc8/cacheyou-23.3.tar.gz"
+    sha256 "7e408f15f4978fea2247734b308621f75f7fe169b461679519c72e8a85d61d5d"
   end
 
   resource "certifi" do
@@ -65,11 +64,6 @@ class Pdm < Formula
   resource "installer" do
     url "https://files.pythonhosted.org/packages/05/18/ceeb4e3ab3aa54495775775b38ae42b10a92f42ce42dfa44da684289b8c8/installer-0.7.0.tar.gz"
     sha256 "a26d3e3116289bb08216e0d0f7d925fcef0b0194eedfa0c944bcaaa106c4b631"
-  end
-
-  resource "lockfile" do
-    url "https://files.pythonhosted.org/packages/17/47/72cb04a58a35ec495f96984dddb48232b551aafb95bde614605b754fe6f7/lockfile-0.12.2.tar.gz"
-    sha256 "6aed02de03cba24efabcd600b30540140634fc06cfa603822d508d5361e9f799"
   end
 
   resource "markdown-it-py" do

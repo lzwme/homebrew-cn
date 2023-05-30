@@ -1,8 +1,8 @@
 class Pdal < Formula
   desc "Point data abstraction library"
   homepage "https://www.pdal.io/"
-  url "https://ghproxy.com/https://github.com/PDAL/PDAL/releases/download/2.5.3/PDAL-2.5.3-src.tar.bz2"
-  sha256 "1d193e9cf11766a394722e1899d6a7d1fb81387af113250beff58e6325851b13"
+  url "https://ghproxy.com/https://github.com/PDAL/PDAL/releases/download/2.5.4/PDAL-2.5.4-src.tar.bz2"
+  sha256 "db9231cfe3d5199075aca6e479a3b9fced1d090a300bddc938717398d3e58c4b"
   license "BSD-3-Clause"
   head "https://github.com/PDAL/PDAL.git", branch: "master"
 
@@ -17,13 +17,13 @@ class Pdal < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "5fd2d55cb0b811be8e4bf38e9659caac8ac203c2b1c9b52bd7d49b7745433131"
-    sha256                               arm64_monterey: "52a31e04c96984b218bd5e8dfcf1a5ebc71c197b5c7a26387435fd9a86bc2d85"
-    sha256                               arm64_big_sur:  "51fbd3620688b88b6512c5f96bf8f6e9a9e807c6f3e1e7226f3e6278d53e2e42"
-    sha256                               ventura:        "69da38e2e9dddbf4d7a0ab76d218180b508ffaf52f38e7800d50d0baa7bfb163"
-    sha256                               monterey:       "ce97064bdb6e8bcecb98ad48cbfb93f9609692b7a314a10e100fd9b1d24200f9"
-    sha256                               big_sur:        "3a50b50f67c7a60771b75f7465c51a581c741f06f907f2830356a74bfc524d79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "958eee5fa9d78c3b3253834968c12257f1d11f7a1bd430ae00f6367ce6033d4e"
+    sha256                               arm64_ventura:  "d3d23e30886504c10586abcc4c9e15211a6f62b4a38f76231a3435c8e49b451d"
+    sha256                               arm64_monterey: "ac705dcadcdc57641afbb38184f587e18ea160a5da3ef7f7c39139dfcdb6b0d1"
+    sha256                               arm64_big_sur:  "8db64da44073ca9c59bf8e3f4a6ef9451da2e43fc91764edcc02b1f864d54fc3"
+    sha256                               ventura:        "f31e5b71c57ce8b08dfcc1652065d535605fd738cbfb2e93c1eaf652d941abee"
+    sha256                               monterey:       "7ce7d8a42978dfa8759a59f94e4d68007e0aebbcbb64985e29b74dbf0ad37962"
+    sha256                               big_sur:        "6ba8e735533d4cd026cc12f51c765d6cdf5628c2a77bc3ce5aa20bd94e3b3f0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bcee17ab98c8fc7837149cc2eb181a06029a86f1a55c964ca89b54b2205eee00"
   end
 
   depends_on "cmake" => :build
