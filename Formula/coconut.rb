@@ -3,18 +3,18 @@ class Coconut < Formula
 
   desc "Simple, elegant, Pythonic functional programming"
   homepage "http://coconut-lang.org/"
-  url "https://files.pythonhosted.org/packages/af/92/a55e44eab3d943263f53396e3051fddb2e672b3ae260770a5d9eeca4f153/coconut-3.0.1.tar.gz"
-  sha256 "3760aaf7f0286282b18f47a663d62be91308aa543e2076a45dd3af3b67ed8dfe"
+  url "https://files.pythonhosted.org/packages/8d/e5/4097e94b7c45536499e03f319a30fd88173e9ec9da79fee2234559d29be8/coconut-3.0.2.tar.gz"
+  sha256 "51934e6f6a70a0346827075c914a2904ef1e2f07f6d9d48f22132319fec442bc"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "09c8a4b0992cf3d6df2e3d8ed1b6299426480f0ebb7ba43420ad4323d535b879"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "938a843cbee131731bc3d9bcfc8bbed2ef23d35ff1bde9a1d386192402080e42"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f895edbf996d74ef0af9b16d3a0264079420849edd75ff05d368d05012918263"
-    sha256 cellar: :any_skip_relocation, ventura:        "c8c8cce1563d1490b0cc969aecc8010b815d475dde1f8c8b8b4ce3536f0990f0"
-    sha256 cellar: :any_skip_relocation, monterey:       "2a92c26fea8d3ade642bdd85881053841af81a74a925e2b8c0df3f8baf216042"
-    sha256 cellar: :any_skip_relocation, big_sur:        "61ad7f2f0f1b5761a219257369a32645d492f77cd4ff993de94757957aee3c42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "392de157c0fcf638d1443f0df9a38ec72d09f1957a045e5f0ebef06eb6a417f3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bef8e02b3b249ec15d61e993785227b15c901fdc8b7a3596a7b099012dccf2d8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8f8737fb4b260193a71712c46821fb3e82925b3c2c24f7d8e51e470b01ee60ff"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "94efa7b9e8c8a676bb82c1d05182079b0e8b108ff29d547a6302e6d35e1a7a1d"
+    sha256 cellar: :any_skip_relocation, ventura:        "b3e763c9fef5cdf13c8501d1977ba1a4ad0d538d35f230fcb3f4b6a27d335e2c"
+    sha256 cellar: :any_skip_relocation, monterey:       "fa2f82fc28a34771fa46219672e261224856e44a547d8739e4aad3c7b5459e1d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1c13cae16b3249b5485a869aeca0985b457a501825d50264275a9751b0e54790"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b5cde0a080c0d6cf63a8c7b2f67d4b209542e83ce5818519d25efecea6b93a3"
   end
 
   depends_on "pygments"
@@ -33,6 +33,11 @@ class Coconut < Formula
   resource "psutil" do
     url "https://files.pythonhosted.org/packages/d6/0f/96b7309212a926c1448366e9ce69b081ea79d63265bde33f11cc9cfc2c07/psutil-5.9.5.tar.gz"
     sha256 "5410638e4df39c54d957fc51ce03048acd8e6d60abc0f5107af51e5fb566eb3c"
+  end
+
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/be/fc/3d12393d634fcb31d5f4231c28feaf4ead225124ba08021046317d5f450d/typing_extensions-4.6.2.tar.gz"
+    sha256 "06006244c70ac8ee83fa8282cb188f697b8db25bc8b4df07be1873c43897060c"
   end
 
   resource "wcwidth" do

@@ -1,8 +1,8 @@
 class Duck < Formula
   desc "Command-line interface for Cyberduck (a multi-protocol file transfer tool)"
   homepage "https://duck.sh/"
-  url "https://dist.duck.sh/duck-src-8.5.9.39636.tar.gz"
-  sha256 "c05f42ee791a1e8f774d2fedf03f955c3d100dda6c973f12ae00fc5c39a7a2f7"
+  url "https://dist.duck.sh/duck-src-8.6.0.39818.tar.gz"
+  sha256 "2c61b56ff076f0c99822d720f8d4b5f6615cbb5fca1949442a019c0116a9a08d"
   license "GPL-3.0-only"
   head "https://github.com/iterate-ch/cyberduck.git", branch: "master"
 
@@ -12,14 +12,13 @@ class Duck < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_ventura:  "30261cff783729f9a7222c652d62ffa87f912d5aa2d1150b1b73d024b0f78a75"
-    sha256 cellar: :any, arm64_monterey: "1c3b8831f0e4aa56b46a59ee1119c51a20c1dedcd60c5ab94166eca0df99bf58"
-    sha256 cellar: :any, arm64_big_sur:  "0565afbb1ad94cc536b23184cd8c6ae941c084496296cdefc68b3f230e7da052"
-    sha256 cellar: :any, ventura:        "d42cf56c9ae7a518d5f816e3bfdd2585370dfb64305d6bfd6df490c2420856ee"
-    sha256 cellar: :any, monterey:       "436646794c44c52a5620aeffbfc8b38f57b06eda0e89b39936a246d7525d3fea"
-    sha256 cellar: :any, big_sur:        "c59a5026f0e1d43deaf80e4c32f4a7ce0b062bfdd012931f4e12ea7938cf011b"
-    sha256               x86_64_linux:   "9b730338600af1e75c7777fa6ba10828d780d84d86c60a767097ea1a4c64e420"
+    sha256 cellar: :any, arm64_ventura:  "11074899873ce51533839720a556438efae7cc6c3a89387e9ee446ac7b48fc11"
+    sha256 cellar: :any, arm64_monterey: "33695f088369881f75fe101d404b2c1b03097840afa1e1673682be312cc89069"
+    sha256 cellar: :any, arm64_big_sur:  "fef8a4d373fee31472552fbdfaeeadaef467fc93364587e32457a7ef270cb24e"
+    sha256 cellar: :any, ventura:        "a5853e0216a47a7d24e9fe87cbf1f840b020a909f0bfee7ada72949b97908c48"
+    sha256 cellar: :any, monterey:       "f41b298b82b271c5c9f4d43cbb23b04e3535d51b778caf65010027a71e4e467b"
+    sha256 cellar: :any, big_sur:        "379788fda9cb45021204e0f84c5c6ca5c5b85235e515c6b2160314628b031244"
+    sha256               x86_64_linux:   "2b94608495c243347c26ceda7d2c4f7c5327f94814a70a35308c085a89a3b0c5"
   end
 
   depends_on "ant" => :build

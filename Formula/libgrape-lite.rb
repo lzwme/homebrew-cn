@@ -1,18 +1,18 @@
 class LibgrapeLite < Formula
   desc "C++ library for parallel graph processing"
   homepage "https://github.com/alibaba/libgrape-lite"
-  url "https://ghproxy.com/https://github.com/alibaba/libgrape-lite/archive/refs/tags/v0.2.4.tar.gz"
-  sha256 "e6379a9494302b78d13b75cd05fe05aaa1643f00e52b6bf86018d650dda2ac53"
+  url "https://ghproxy.com/https://github.com/alibaba/libgrape-lite/archive/refs/tags/v0.2.5.tar.gz"
+  sha256 "b251f7c0614d74d4c311b9821015dd722e2eb8c7b2d80bf0cf17183a60e4dd85"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "15692f02ef6b4f9d947d533b7190e65a0629244a3366eb865c56e2e5084695ed"
-    sha256 cellar: :any, arm64_monterey: "a40e0d0d2145e1648f10e6b69cbb24d82c93169cf07a927fceec49930284f0b2"
-    sha256 cellar: :any, arm64_big_sur:  "e05730024b75d1addebc6227cee24a3a20da8caf15e2da16691fe6f89e238b07"
-    sha256 cellar: :any, ventura:        "6df90d62fdf1afe57f433dff9527630a9452d3dff2ebb8077f8dd7915e9beda4"
-    sha256 cellar: :any, monterey:       "0ad46174d453b09a16601c9640985b93d1553d4912a225f49f34781e94aefcaa"
-    sha256 cellar: :any, big_sur:        "39830ab02f0346fff66a785fa7d615aa1cb85d573e5d135bca5e809336285f21"
-    sha256               x86_64_linux:   "ff81af0158ac48538b8e9bd9546bae26d32470990a67ca4c537dfe14ee041cff"
+    sha256 cellar: :any, arm64_ventura:  "f635e967f309c70c230dbc048b4bb667fafe6715b86a0803be3469c082e92089"
+    sha256 cellar: :any, arm64_monterey: "fe8474892fec74e5f4ceb1161805ec1a4363cfb5b1775b086f6be478e4f727ea"
+    sha256 cellar: :any, arm64_big_sur:  "1d732141e7f7b42515da6a88df00843a7679981067280a8eefd158596b33200e"
+    sha256 cellar: :any, ventura:        "488fa95b36d456f88bbc9df870c25c41b89b6c27f72b96fcef7d12468007566e"
+    sha256 cellar: :any, monterey:       "06a908aa0baeec78620dd62f08acaba18d7efa92d06d961f25ea4727a1c4f480"
+    sha256 cellar: :any, big_sur:        "ec5ddd15b19eab02c17c5e0336022b6bd2481e071e22eeab58552b70bee82f5e"
+    sha256               x86_64_linux:   "a85ff55fb72584cf51a7f7982008e23ed96d0328093740360056c577650d2d92"
   end
 
   depends_on "cmake" => :build

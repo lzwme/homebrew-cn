@@ -1,10 +1,9 @@
 class PerconaServer < Formula
   desc "Drop-in MySQL replacement"
   homepage "https://www.percona.com"
-  url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.29-21/source/tarball/percona-server-8.0.29-21.tar.gz"
-  sha256 "a54c45b23719d4f6ba1e409bb2916c59dc0c9aaae98e24299ff26f150ad4f735"
+  url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.32-24/source/tarball/percona-server-8.0.32-24.tar.gz"
+  sha256 "2867706e914597cb3a5161751573c5463caf8343684ed7eeafcad1eb8f2d081e"
   license "BSD-3-Clause"
-  revision 3
 
   livecheck do
     url "https://www.percona.com/downloads/Percona-Server-LATEST/"
@@ -12,13 +11,13 @@ class PerconaServer < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "c2d03d8e4dd0ae1ae636ff1b7683d8e8a1494399fb778eedd204834564f4b938"
-    sha256 arm64_monterey: "1166d85bdd80dcd9b437880f4d32d7ddf69cdbcf9f8fa43afb1ea393586724f2"
-    sha256 arm64_big_sur:  "6d69eb5755ca3c7d0a008017babdf92223bfbc5ba615a81f25c3dc3cf4bfb079"
-    sha256 ventura:        "7dce6314814400498a8bf479b3a44c2e4b7a43ad75e4a71757f5b2e5ae82e401"
-    sha256 monterey:       "09665b01e35b7d8a29febc571d8c69f4e27d5f79ede6861c4c3c245a2d5cfc82"
-    sha256 big_sur:        "e6a9b2b55edb32cd05d6a89270f8bf1f5fb418044722f9b1fd47fb27976f68d2"
-    sha256 x86_64_linux:   "af7cc153112107813c463d05a46a619e6ae8fcc94e9e226e77e0a15010c742cb"
+    sha256 arm64_ventura:  "0fa7b89ba29abcc92aa45e3a6316803474031f64b8dec1589741ab2381726736"
+    sha256 arm64_monterey: "f5166caa3dc0d43d05890f6c14c728ea043ef16a7a1cd3dcc335f0101c90ed38"
+    sha256 arm64_big_sur:  "7d5ef676fc7d5fca3b01afd54a53354d423b8f129dbc6ba1850b2a8241de0a6e"
+    sha256 ventura:        "f209115a52851008f5351d8924594e63e89f5249ac14e3ad845a5dd729397158"
+    sha256 monterey:       "44e586b8a541ba5bd90c624d703c1d0bc68e95bcc45b0d3fb3225c68652ab5bd"
+    sha256 big_sur:        "14198a25437f94849b286605cb332ed9094cfef05a28d3e612a2e4625cad47fe"
+    sha256 x86_64_linux:   "6cc85893376bd28e65251ff6f079236ead3e3a36c5037fed15131e29789ccd27"
   end
 
   depends_on "cmake" => :build
@@ -27,23 +26,20 @@ class PerconaServer < Formula
   depends_on "libevent"
   depends_on "libfido2"
   depends_on "lz4"
+  depends_on "openldap" # Needs `ldap_set_urllist_proc`, not provided by LDAP.framework
   depends_on "openssl@1.1"
   depends_on "protobuf"
+  depends_on "zlib" # Zlib 1.2.13+
   depends_on "zstd"
 
   uses_from_macos "curl"
   uses_from_macos "cyrus-sasl"
   uses_from_macos "libedit"
-  uses_from_macos "openldap"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "patchelf" => :build
     depends_on "libtirpc"
     depends_on "readline"
-
-    # Fix build with OpenLDAP 2.5+, which merged libldap_r into libldap
-    patch :DATA
   end
 
   conflicts_with "mariadb", "mysql", because: "percona, mariadb, and mysql install the same binaries"
@@ -71,11 +67,14 @@ class PerconaServer < Formula
   # This should not be necessary when building inside `brew`.
   # https://github.com/Homebrew/homebrew-test-bot/pull/820
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/030f7433e89376ffcff836bb68b3903ab90f9cdc/percona-server/boost-check.patch"
-    sha256 "3223f7eebd04b471de1c21104c46b2cdec3fe7b26e13535bdcd0d7b8fd341bde"
+    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/030f7433e89376ffcff836bb68b3903ab90f9cdc/mysql/boost-check.patch"
+    sha256 "af27e4b82c84f958f91404a9661e999ccd1742f57853978d8baec2f993b51153"
   end
 
   def install
+    # Find Homebrew OpenLDAP instead of the macOS framework
+    inreplace "cmake/ldap.cmake", "NAMES ldap_r ldap", "NAMES ldap"
+
     # Fix mysqlrouter_passwd RPATH to link to metadata_cache.so
     inreplace "router/src/http/src/CMakeLists.txt",
               "ADD_INSTALL_RPATH(mysqlrouter_passwd \"${ROUTER_INSTALL_RPATH}\")",
@@ -86,7 +85,6 @@ class PerconaServer < Formula
 
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
     args = %W[
-      -DFORCE_INSOURCE_BUILD=1
       -DCOMPILATION_COMMENT=Homebrew
       -DDEFAULT_CHARSET=utf8mb4
       -DDEFAULT_COLLATION=utf8mb4_0900_ai_ci
@@ -129,9 +127,9 @@ class PerconaServer < Formula
     # https://bugs.launchpad.net/percona-server/+bug/1531446
     args << "-DWITHOUT_TOKUDB=1"
 
-    system "cmake", ".", *std_cmake_args, *args
-    system "make"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     (prefix/"mysql-test").cd do
       test_args = ["--vardir=#{Dir.mktmpdir}"]
@@ -217,16 +215,3 @@ class PerconaServer < Formula
     system "#{bin}/mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
   end
 end
-
-__END__
---- a/plugin/auth_ldap/CMakeLists.txt
-+++ b/plugin/auth_ldap/CMakeLists.txt
-@@ -36,7 +36,7 @@ IF(WITH_LDAP)
-
-   # libler?
-   MYSQL_ADD_PLUGIN(authentication_ldap_simple ${ALP_SOURCES_SIMPLE}
--    LINK_LIBRARIES ldap_r MODULE_ONLY MODULE_OUTPUT_NAME "authentication_ldap_simple")
-+    LINK_LIBRARIES ldap MODULE_ONLY MODULE_OUTPUT_NAME "authentication_ldap_simple")
-
-   IF(UNIX)
-     IF(INSTALL_MYSQLTESTDIR)

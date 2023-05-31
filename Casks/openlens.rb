@@ -1,16 +1,17 @@
 cask "openlens" do
-  arch arm: "-arm64"
+  arch arm: "arm64", intel: "x64"
 
-  version "6.5.1"
-  sha256 arm:   "595c2d76f19c98f3d109e6cb89816d3f6510a7abc905c8c7128378483c06854f",
-         intel: "4c2132cb4ee50c145dc4e090ada2e01f57187a879dcbdbd9483d9563413ada41"
+  version "6.5.2.286"
+  sha256 arm:   "470668badba23334be2f41297f95f2bab4ecc2457354f4e6a89fd02da0714923",
+         intel: "998df487b059fb2930a53de94a3e170e5e031cf3fb1185adfa67b9f989783265"
 
-  url "https://ghproxy.com/https://github.com/MuhammedKalkan/OpenLens/releases/download/v#{version}/OpenLens-#{version}#{arch}.dmg"
+  url "https://ghproxy.com/https://github.com/MuhammedKalkan/OpenLens/releases/download/v#{version}/OpenLens-#{version}-#{arch}-mac.dmg"
   name "OpenLens"
   desc "Open source build of Lens Kubernetes IDE"
   homepage "https://github.com/MuhammedKalkan/OpenLens/"
 
   auto_updates true
+  depends_on macos: ">= :high_sierra"
 
   app "OpenLens.app"
 

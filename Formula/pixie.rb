@@ -2,8 +2,8 @@ class Pixie < Formula
   desc "Observability tool for Kubernetes applications"
   homepage "https://px.dev/"
   url "https://github.com/pixie-io/pixie.git",
-      tag:      "release/cli/v0.8.1",
-      revision: "12308c6ac140554eb63dc02f3f44aa7c308ac1ab"
+      tag:      "release/cli/v0.8.2",
+      revision: "401c92c1ed086eaa35dbe17b4fbcfd96e7b1ca4f"
   license "Apache-2.0"
   head "https://github.com/pixie-io/pixie.git", branch: "main"
 
@@ -13,13 +13,13 @@ class Pixie < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "217df9012232c64f6e900f2a7c1862b883d6646fe9f65bcf40ca94d153b9697b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ddc1dcf3496841f22159f1ed5e7076c46fa56092ac55ff233da5ecdf4aec16e8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "49d7c29355ccdd345ed0a3ea353606f1677dac8050eec30513e969e3c3b34716"
-    sha256 cellar: :any_skip_relocation, ventura:        "a25e208cc2f721297231ac5ab9c4a5e6e0febca008b6eef70834eb2ea5369981"
-    sha256 cellar: :any_skip_relocation, monterey:       "b3a348d9b6667bb22059c1a3d4b263fb9cf04a3926db25017e6be20e60883cd4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4a9dd04322b3d7ce89888e21eeb6167922cb47da7e29261139407f911b402d31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3fc3d1453b0bf6232778f66edc7ec0d36a48a5b0fdf53a2655d4ec5d3e171560"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae39dedd709f92a8add505011b2f5939eeba7f18e5a8372bf9b41767d1d4f94a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "693e5840758901a9cafde136280a33628328119b0fe836d15aa1d1ea791180e3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f4d9c0810f8e2bfd7374d70c33427cd293adb2fde6eeb7afaa61174b54bfa94b"
+    sha256 cellar: :any_skip_relocation, ventura:        "ca5612497f9bc097b7deaca8973674661db74d5cea9db12c147d7f90d78da29f"
+    sha256 cellar: :any_skip_relocation, monterey:       "151c8631c02e8a3fda66937ff3e6a0a7c27bcc2a5a8faa774c9e1aa8a380ddab"
+    sha256 cellar: :any_skip_relocation, big_sur:        "08a65cf20796c23ee6bce718fdbf33555b643a20bb64779d7f903d14747c8e3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f25e44683314c716e558324dd012a8953def0f917f15b8c7968867c9aa32b1f5"
   end
 
   depends_on "go" => :build

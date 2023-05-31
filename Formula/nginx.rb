@@ -14,13 +14,14 @@ class Nginx < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "0c6f6db59869d0173a625770979daa73d0058ef1b9a80cf785c759433d04fe55"
-    sha256 arm64_monterey: "e7f445b0e7efd2d890c332caef0a43713bec234369518659da3c5e66a26752ba"
-    sha256 arm64_big_sur:  "f3442e5a2286570d96895ac0eb7b4aa1193a24ce014268d728cf62920fbb2bde"
-    sha256 ventura:        "7b23e24fa0a01170948fe2a2a13ee191be1ee5feab2bd523f81a3da59bbf726d"
-    sha256 monterey:       "0fb7bf484c736c7b4dfc2b25f4aefa33b00001654e4d38c8c3b9c22eb34e9f41"
-    sha256 big_sur:        "3692acf8e92f260192c767071b2ad76fe29f6bf80295ae54e506dde60d40ef02"
-    sha256 x86_64_linux:   "10cf2ef53b03511035be5cf39b8dfe5a3ce0b5b5b2d7147210b760c3464a46f3"
+    rebuild 1
+    sha256 arm64_ventura:  "ebb2f76b4c2ed45d03acf4acd3851a3b7130533dcd9bd45f658180c8cfe4ffc1"
+    sha256 arm64_monterey: "4d9de04387c69695766b93cf6d4d915e86bbf61aa2f47a55630fde28922efa28"
+    sha256 arm64_big_sur:  "6ade92320c23223697a4a880b41d24adbe0aecc9238e1619b32b37073e0bb281"
+    sha256 ventura:        "66257c67b29ae699bba11adb08473eff95c4e978c676bd6e575ec744b61f445e"
+    sha256 monterey:       "cec57297ccd2180ffc8755d0b1952d5b5794bd7e4ebf3db56cbff68bef27d40e"
+    sha256 big_sur:        "356d2973d4e0a851248f15ee0db859f574124fb8a2d3188202be336268913c8f"
+    sha256 x86_64_linux:   "726b9214e54cef4c3858edb5367101c98b1304242cc9ede8469b9f45da6a077f"
   end
 
   depends_on "openssl@1.1"
@@ -79,6 +80,7 @@ class Nginx < Formula
       --with-http_stub_status_module
       --with-http_sub_module
       --with-http_v2_module
+      --with-http_v3_module
       --with-ipv6
       --with-mail
       --with-mail_ssl_module

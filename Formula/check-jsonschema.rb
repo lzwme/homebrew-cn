@@ -3,20 +3,19 @@ class CheckJsonschema < Formula
 
   desc "JSON Schema CLI"
   homepage "https://github.com/python-jsonschema/check-jsonschema"
-  url "https://files.pythonhosted.org/packages/83/fd/5dd3df297bf0335188be8d91e25d68da8fa412764014d47026615b44c36d/check-jsonschema-0.23.0.tar.gz"
-  sha256 "b779902a37f009e6abd0fe7371cd8d97a3b0b0ac2a22e5bbb4ddd033bc594369"
+  url "https://files.pythonhosted.org/packages/ca/7c/c1332d40b2744edc7aa70a120902896331c8549d4e63a92629d98d91d6e2/check-jsonschema-0.23.1.tar.gz"
+  sha256 "45266a6c5fcbbc981ee6f0755b5675f9d6b8e761b2e48a652c782e19a5459545"
   license "Apache-2.0"
   head "https://github.com/python-jsonschema/check-jsonschema.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9039577e56b3cbb075a4a7f73614bdbd2627f3a4d0797837798ff9dbabb41b32"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "19f8bfff72c8b9b9d574c964c32c773dfcddca0e4d16e7bae343f06e7fb75022"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3e9a00f1ac635705d6f11fa90d94e2b23ff7d4a932f40e3359d3640bd820b01b"
-    sha256 cellar: :any_skip_relocation, ventura:        "86153176737ecdad95b61257161ee7b2b6cecbefb8ed42e2d435820f881d3708"
-    sha256 cellar: :any_skip_relocation, monterey:       "90b7eee773d599aacf1f1d0c9dd0a4d8e2a81e4f9342111e932cc68012268b30"
-    sha256 cellar: :any_skip_relocation, big_sur:        "20aabbf2687c9fee136a3ad436ca57e2d9dae34e6d0c9b0c8ab3ce97b1257c32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a5378a1940c853b0a2a981fc7b077bb8af5bf69a5a7b35aecafcf965b9e5d8c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "574630fc0201e613e988e1d3ef0d5341f7bd93024c21e617ddde5ca8756ca128"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "25b5a8872aaa4bb3fbb3a06eb2477fe64deb4da7fafbfa24b0845cf07365c9a6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4c3e556eb4725ac27aa3526f5e62af881bed2a1e8abbaba197abe58b617d8489"
+    sha256 cellar: :any_skip_relocation, ventura:        "eb7bd22d9211cf957ccac029604eb49848a1fb27d2352b025565de2f5ae7b59e"
+    sha256 cellar: :any_skip_relocation, monterey:       "e48d1e7256a5dd411505a3f9717c9c89e719b441452b257cd3669cee1afdd432"
+    sha256 cellar: :any_skip_relocation, big_sur:        "67b7f85ac04557c7f37585ad7e3905b8c19b06b4b097bc6b9d408c3d09ca832b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6964a5f420373c2748c8cc89bcfbd204cd3699340b4ee1f1191c5506709d46e8"
   end
 
   depends_on "python@3.11"
