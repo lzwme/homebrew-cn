@@ -22,6 +22,9 @@ class Libowfat < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed6b06c82988da9cee1f3d4fc9f9e7b180fcf656cb1e508237b3cfe225257770"
   end
 
+  # https://github.com/Homebrew/homebrew-core/pull/125418
+  deprecate! date: "2023-05-31", because: :does_not_build
+
   patch do
     url "https://github.com/mistydemeo/libowfat/commit/278a675a6984e5c202eee9f7e36cda2ae5da658d.patch?full_index=1"
     sha256 "32eab2348f495f483f7cd34ffd7543bd619f312b7094a4b55be9436af89dd341"

@@ -57,7 +57,7 @@ class Exa < Formula
     assert_match testfile, shell_output(bin/"exa")
 
     # Test git integration
-    flags = "--long --git --no-permissions --no-filesize --no-user --no-time"
+    flags = "--long --git --no-permissions --no-filesize --no-user --no-time --color=never"
     exa_output = proc { shell_output("#{bin}/exa #{flags}").lines.grep(/#{testfile}/).first.split.first }
     system "git", "init"
     assert_equal "-N", exa_output.call

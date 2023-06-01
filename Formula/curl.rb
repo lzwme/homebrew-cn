@@ -1,8 +1,9 @@
 class Curl < Formula
   desc "Get a file from an HTTP, HTTPS or FTP server"
   homepage "https://curl.se"
+  # Don't forget to update both instances of the version in the GitHub mirror URL.
   url "https://curl.se/download/curl-8.1.2.tar.bz2"
-  mirror "https://ghproxy.com/https://github.com/curl/curl/releases/download/curl-8_1_1/curl-8.1.2.tar.bz2"
+  mirror "https://ghproxy.com/https://github.com/curl/curl/releases/download/curl-8_1_2/curl-8.1.2.tar.bz2"
   mirror "http://fresh-center.net/linux/www/curl-8.1.2.tar.bz2"
   mirror "http://fresh-center.net/linux/www/legacy/curl-8.1.2.tar.bz2"
   sha256 "b54974d32fd610acace92e3df1f643144015ac65847f0a041fdc17db6f43f243"
@@ -79,6 +80,11 @@ class Curl < Formula
   end
 
   test do
+    tag_name = "curl-#{version.to_s.tr(".", "_")}"
+    assert_match tag_name, stable.mirrors.grep(/github\.com/).first,
+                 "Tag name #{tag_name} is not found in the GitHub mirror " \
+                 "URL! Please make sure the URL is correct"
+
     # Fetch the curl tarball and see that the checksum matches.
     # This requires a network connection, but so does Homebrew in general.
     filename = (testpath/"test.tar.gz")

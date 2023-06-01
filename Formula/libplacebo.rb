@@ -42,7 +42,6 @@ class Libplacebo < Formula
   depends_on "python@3.11" => :build
   depends_on "vulkan-headers" => :build
 
-  depends_on "ffmpeg"
   depends_on "glslang"
   depends_on "little-cms2"
   depends_on "sdl2"

@@ -15,6 +15,8 @@ class Bluetoothconnector < Formula
     sha256 cellar: :any_skip_relocation, mojave:         "1a0c1e83b5640a35c48ba982f1b7cf5b1bebdda6fd4957368262c3e001c740e3"
   end
 
+  deprecate! date: "2023-05-31", because: :unmaintained
+
   depends_on xcode: ["11.0", :build]
   depends_on :macos
 

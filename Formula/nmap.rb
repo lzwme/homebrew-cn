@@ -1,10 +1,20 @@
 class Nmap < Formula
   desc "Port scanning utility for large networks"
   homepage "https://nmap.org/"
-  url "https://nmap.org/dist/nmap-7.94.tar.bz2"
-  sha256 "d71be189eec43d7e099bac8571509d316c4577ca79491832ac3e1217bc8f92cc"
   license :cannot_represent
   head "https://svn.nmap.org/nmap/"
+
+  # TODO: Remove stable block in next release.
+  stable do
+    url "https://nmap.org/dist/nmap-7.94.tar.bz2"
+    sha256 "d71be189eec43d7e099bac8571509d316c4577ca79491832ac3e1217bc8f92cc"
+
+    # Fix build with Lua 5.4. Remove in next release.
+    patch do
+      url "https://github.com/nmap/nmap/commit/b9263f056ab3acd666d25af84d399410560d48ac.patch?full_index=1"
+      sha256 "088d426dc168b78ee4e0450d6b357deef13e0e896b8988164ba2bb8fd8b8767c"
+    end
+  end
 
   livecheck do
     url "https://nmap.org/dist/"
@@ -47,9 +57,6 @@ class Nmap < Formula
       --without-zenmap
     ]
 
-    # Workaround for "./nse_main.h:25:26: error: unknown type name 'lua_State'"
-    # TODO: Report this upstream.
-    ENV.append_to_cflags "-DHAVE_LUA5_4_LUA_H"
     system "./configure", *args
     system "make" # separate steps required otherwise the build fails
     system "make", "install"

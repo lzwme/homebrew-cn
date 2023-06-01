@@ -1,19 +1,19 @@
 class Dasel < Formula
   desc "JSON, YAML, TOML, XML, and CSV query and modification tool"
   homepage "https://github.com/TomWright/dasel"
-  url "https://ghproxy.com/https://github.com/TomWright/dasel/archive/v2.3.1.tar.gz"
-  sha256 "e242359621b30e56c1af6feb0a99ef4ef7f5aade324f923360095d5bf811e848"
+  url "https://ghproxy.com/https://github.com/TomWright/dasel/archive/v2.3.3.tar.gz"
+  sha256 "1c94d38862308d0610cd9fa251ea70ab9800f35bf5e81d59fb924cd42e23d990"
   license "MIT"
   head "https://github.com/TomWright/dasel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "be18ecee6a29756d81f2cf10f05c5d06f1124a5a3707bffc6e54c3950e81f50f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "be18ecee6a29756d81f2cf10f05c5d06f1124a5a3707bffc6e54c3950e81f50f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "be18ecee6a29756d81f2cf10f05c5d06f1124a5a3707bffc6e54c3950e81f50f"
-    sha256 cellar: :any_skip_relocation, ventura:        "b08b6be0be54b53d0aa44da13303e8434815c54ea9e7573160ba9df5932e517d"
-    sha256 cellar: :any_skip_relocation, monterey:       "b08b6be0be54b53d0aa44da13303e8434815c54ea9e7573160ba9df5932e517d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b08b6be0be54b53d0aa44da13303e8434815c54ea9e7573160ba9df5932e517d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "859a08421bd6af9b1bad49581c12364458b0e3445a9ddbc83540d63e279ae5f0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e36b55b928c22496917853992623837682f1e31e65972d83e3b2672ec45da12"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e36b55b928c22496917853992623837682f1e31e65972d83e3b2672ec45da12"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6e36b55b928c22496917853992623837682f1e31e65972d83e3b2672ec45da12"
+    sha256 cellar: :any_skip_relocation, ventura:        "54b3c4bb06b43953c9ed0330e5d5265dcc24f924533124a0aaa6698cc95c7919"
+    sha256 cellar: :any_skip_relocation, monterey:       "54b3c4bb06b43953c9ed0330e5d5265dcc24f924533124a0aaa6698cc95c7919"
+    sha256 cellar: :any_skip_relocation, big_sur:        "54b3c4bb06b43953c9ed0330e5d5265dcc24f924533124a0aaa6698cc95c7919"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d716af922d532d9f8b479f5a89f9c8c0188d55a6a2dab69877f6a4273dd06ca"
   end
 
   depends_on "go" => :build

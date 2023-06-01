@@ -1,34 +1,38 @@
 class Osslsigncode < Formula
   desc "OpenSSL based Authenticode signing for PE/MSI/Java CAB files"
   homepage "https://github.com/mtrojnar/osslsigncode"
-  url "https://ghproxy.com/https://github.com/mtrojnar/osslsigncode/archive/2.3.tar.gz"
-  sha256 "b842d6d49d423f7e234674678e9a107aa7b77e95b480677b020ee61dd160b2e3"
+  url "https://ghproxy.com/https://github.com/mtrojnar/osslsigncode/archive/refs/tags/2.6.tar.gz"
+  sha256 "7f84bce7a6e9373e8c4df4fa90e723ca1d380cf303c80bbb3e02191179d0efc4"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "04a2c9abec9af3b2aeb89cc603c74454db963ae4f4159829afa411fc7cf79162"
-    sha256 cellar: :any,                 arm64_monterey: "4cc44545f4ccfcc7dcad11baa315223e255c25c7799c6f17a3c3f367fd985fd7"
-    sha256 cellar: :any,                 arm64_big_sur:  "8e87dd88e7f9822d00f8778893b33785dd41c592a7342c0674b62ebc6e180aa4"
-    sha256 cellar: :any,                 ventura:        "4b120f3fccca6e32f8ea2a624efafc8ddc2be1adced699978368701af18846b2"
-    sha256 cellar: :any,                 monterey:       "445b6f58e10e78d1ebd8807b5d28d8c974add34745d860c91383a501982ce4af"
-    sha256 cellar: :any,                 big_sur:        "3eb048df6eaee844a76b9bc5d010b9c758f445f151d57f607169c18d740b2543"
-    sha256 cellar: :any,                 catalina:       "53e53a72b451b4dda993527c67f66e6524ae7d73f58b406e695239718cda13c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5fb951865556495e94c381859b33bef7fe74c02f4bf4867f4419cd5cf3f1e4cb"
+    sha256 cellar: :any,                 arm64_ventura:  "99237bd56e472b9c4ad4649a824b9b05372d4b32176c71ec9b276d33d67d6811"
+    sha256 cellar: :any,                 arm64_monterey: "c4481087980ccc305862173445383bc74f9b4b3099754ffc25a2a3fc2e45af86"
+    sha256 cellar: :any,                 arm64_big_sur:  "696c5b1e362edf6842fd4b9f4c55c527d08d8289e2673da982fe047afb848f1a"
+    sha256 cellar: :any,                 ventura:        "a99e32840e4c7ce2413820d256bd7aae955ba5c5c65179bece3eb25815f2541a"
+    sha256 cellar: :any,                 monterey:       "35789d3db3666991be42784f12c225f9826721d34c85bef2f346667d910e4565"
+    sha256 cellar: :any,                 big_sur:        "b42275673763123bc3b77a92ec1bb744779bf694465b96dafcda95c41a1662ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2662456df8f22132f3c5be69ab300612b2b040518b15def9dea95599addf59f2"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "cmake" => :build
   depends_on "openssl@3"
 
   uses_from_macos "curl"
 
+  on_linux do
+    depends_on "python@3.11"
+  end
+
+  # Fix permission issue when installing bash completionn
+  patch :DATA
+
   def install
-    system "./bootstrap"
-    system "./configure", *std_configure_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
+    bash_completion.install "osslsigncode.bash" => "osslsigncode"
   end
 
   test do
@@ -36,3 +40,17 @@ class Osslsigncode < Formula
     assert_match "osslsigncode", shell_output("#{bin}/osslsigncode --version")
   end
 end
+
+__END__
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 2ffeb4e..7e2bc01 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -33,7 +33,6 @@ include(FindCURL)
+
+ # load CMake project modules
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake")
+-include(SetBashCompletion)
+ include(FindHeaders)
+
+ # define the target

@@ -6,17 +6,19 @@ class Partio < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3ec005cfbaab7733356f7cc6f6682ee9f1cfb44b03a242e6a63c0678c7498345"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b5c63a7b137952e0e8e30941a6e493a30c08cacfe7a464573fe37b7f67a319cf"
-    sha256 cellar: :any_skip_relocation, monterey:       "60c0b26a8c07ab1471d4fcd871432d8dfff1c74e96fb812046319aca23f02e15"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c5edd20c87a7b31af0632e12bb7c69ebe51e08530d33a292892cb5757b503b5e"
-    sha256 cellar: :any_skip_relocation, catalina:       "513c77edf0748cfdd80dd8806add9b0166e2fc947de7fc89dc0a86e68505aece"
-    sha256 cellar: :any_skip_relocation, mojave:         "8450fd8658881dbf6b9459bfa272339c99ed0b54d7e165b8f0ee6b85a68b95eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf85e64f726c22497d6129abf4030ed7b75b490f4e826103f87f085db51e1aac"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f23723988ee0c4fd13e2ef3999cd48cdc0713e2e68b08f1e1e8fb64bfb72735e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e8779e2d241646c96f0b6fa412219f0556b69ff03d9dd98d6a9ecb1172baccf9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "40c077714c5b73b2d1eca4b57054262ca3e4bef68ec9827ab39f205a3d7d170b"
+    sha256 cellar: :any_skip_relocation, ventura:        "39707a6cc21e84edc6cae4c82637600e049b521e92fe239dcc545b9c8bbc79dd"
+    sha256 cellar: :any_skip_relocation, monterey:       "247dad3b9b36c9a485ad9142e3840e0dd503547c8faf0b6a3ec6f92195278b01"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4fa3eb20d12124955b39eb260a96586bedd4f254d5bbae6f52a0cdf186d380ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff7788987e0e5e2dcfc950be3b9f229f7061c2b6f0a6f6decda35bdf909497d1"
   end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
+  depends_on "python@3.11"
 
   on_linux do
     depends_on "freeglut"

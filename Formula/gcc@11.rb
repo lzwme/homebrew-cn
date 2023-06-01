@@ -1,9 +1,9 @@
 class GccAT11 < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
-  url "https://ftp.gnu.org/gnu/gcc/gcc-11.3.0/gcc-11.3.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-11.3.0/gcc-11.3.0.tar.xz"
-  sha256 "b47cf2818691f5b1e21df2bb38c795fac2cfbd640ede2d0a5e1c89e338a3ac39"
+  url "https://ftp.gnu.org/gnu/gcc/gcc-11.4.0/gcc-11.4.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gcc/gcc-11.4.0/gcc-11.4.0.tar.xz"
+  sha256 "3f2db222b007e8a4a23cd5ba56726ef08e8b1f1eb2055ee72c1402cea73a8dd9"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   livecheck do
@@ -12,14 +12,13 @@ class GccAT11 < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256                               arm64_ventura:  "2f18fea4420dccdc335906de63d33867f8f9488456cb9cb0426a7f65b7d4097b"
-    sha256                               arm64_monterey: "dce488703476feb1503515f148a968023709fec49f5b41145d28183c9ea9748f"
-    sha256                               arm64_big_sur:  "7c4e1607828da2cd0ebcb00c21ebbf5412dd07601db97317d565b41ae40d4184"
-    sha256                               ventura:        "903c7816c85617a0e676964c7b0e9af7226564efd3418b29760299f11ace27e5"
-    sha256                               monterey:       "172639c1d7f9a833b965e9038cf106664aaf8d09f02fc5012a342b17b910566c"
-    sha256                               big_sur:        "0256112a77174201596837633e196b2a2a44c6cfe2b8e83f8fb261c766fecfa7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fff7421a7aaffd0d1b7b2e2a34f66a2a5117c18bee0fd2c338b35cb56be59e91"
+    sha256                               arm64_ventura:  "3ce21c85558296a85d1d812068b7f025490677fdd5147f5f1278b59637541b22"
+    sha256                               arm64_monterey: "b24f95edca8b2f73c7d75f83d2acbf5b03b27fc5f575de84183002f093a7c77b"
+    sha256                               arm64_big_sur:  "5b069149e7d61489428816cad9143bf5ed1db6122d13026bf57c2fed22cadda0"
+    sha256                               ventura:        "c9de346027021d6d3cf858b0baf79173900930556d57b68e84a9c43acb817bc8"
+    sha256                               monterey:       "a7d2b4a88d82f6f18eea6a5f845e97a38faee6f0322156bbcedeb13cd2a591f3"
+    sha256                               big_sur:        "2256527e6fbef29473cc43c8220ac0d1274000949f64f71d7fb5e6832d251d8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d9a19ebac8d51fd1c9169b11ae64647fedcd041ba1e6ef3a9fa6436ec2cfa2c"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -44,15 +43,8 @@ class GccAT11 < Formula
   # Branch from the Darwin maintainer of GCC, with a few generic fixes and
   # Apple Silicon support, located at https://github.com/iains/gcc-11-branch
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/07e71538/gcc/gcc-11.3.0-arm.diff"
-    sha256 "857390a7f32dbfc4c7e6163a3b3b9d5e1d392e5d9c74c3ebb98701c1d0629565"
-  end
-
-  # Fix build on macOS Ventura
-  # https://github.com/iains/gcc-11-branch/issues/5
-  patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/86fa3c4b/gcc/gcc-11.3-ventura.diff"
-    sha256 "70499af2e5745c91ef4e886c0083cd70d7e94b7b45ba7b1276449bbb102df93b"
+    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/c233b1a8d81b9c9f5827510d8d285080ee11de2e/gcc/gcc-11.4.0.diff"
+    sha256 "440f6e965966c86a7925506e63eb06f7f54c00b1d146db8d0c567bdb8820072f"
   end
 
   def install

@@ -1,13 +1,13 @@
 class WpCliCompletion < Formula
   desc "Bash completion for Wpcli"
   homepage "https://github.com/wp-cli/wp-cli"
-  url "https://ghproxy.com/https://github.com/wp-cli/wp-cli/archive/v2.7.1.tar.gz"
-  sha256 "0062dcbc62658dd2e4361e97d1ec12602f4a6661e771b730158e615aff3ea695"
+  url "https://ghproxy.com/https://github.com/wp-cli/wp-cli/archive/refs/tags/v2.8.0.tar.gz"
+  sha256 "d7ec18a684ac6e3f45324abb36610fd60469e268c4b29a391abb38c8f920784e"
   license "MIT"
   head "https://github.com/wp-cli/wp-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "69e4f608a405f861788445d6c22e9975f2fbdf0b5659001d5ca96ea112036e91"
+    sha256 cellar: :any_skip_relocation, all: "d0832bc22a2fd5b786440e414173ab8ece0bd087c356e2111fa1e1b157c6ca9d"
   end
 
   def install

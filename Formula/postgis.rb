@@ -1,10 +1,9 @@
 class Postgis < Formula
   desc "Adds support for geographic objects to PostgreSQL"
   homepage "https://postgis.net/"
-  url "https://download.osgeo.org/postgis/source/postgis-3.3.2.tar.gz"
-  sha256 "9a2a219da005a1730a39d1959a1c7cec619b1efb009b65be80ffc25bad299068"
+  url "https://download.osgeo.org/postgis/source/postgis-3.3.3.tar.gz"
+  sha256 "74eb356e3f85f14233791013360881b6748f78081cc688ff9d6f0f673a762d13"
   license "GPL-2.0-or-later"
-  revision 2
 
   livecheck do
     url "https://download.osgeo.org/postgis/source/"
@@ -12,13 +11,13 @@ class Postgis < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3cde54b37a9a7c3c7d9aab6f259111465c6388e2cbccc062063e967d3cef9412"
-    sha256 cellar: :any,                 arm64_monterey: "aec65ddab5eaacc23dda2ce0907fc3948acf850b4a0dad038ed95cb7d64f2726"
-    sha256 cellar: :any,                 arm64_big_sur:  "38af4aaa34598c8ec54e61bef27dda8c669276e3e123535bfc269488f54b40a9"
-    sha256 cellar: :any,                 ventura:        "8cdcaa0e88d765ccc73f589d845dbe80e43f5bf04a47d48b705539c414d83b3b"
-    sha256 cellar: :any,                 monterey:       "4885236a19f3ce94d92f9f5479d00c5d2dd3b30e356abe15a499ad812674cccf"
-    sha256 cellar: :any,                 big_sur:        "869fcfdc0e6b24ccd18712cc6a8f34eafc4d74b7d1bf479258c872c7c0d1bd3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2fa798268a282ddd7dec8b2dfe090a2e19877c4cfcde31206ee1ac2fa159ba1f"
+    sha256 cellar: :any,                 arm64_ventura:  "13543625f4bac3990bd3bf64db15e2d6f1108041c4fb83cddd2c4c1f232d4fab"
+    sha256 cellar: :any,                 arm64_monterey: "4ec1b45082f5c2f84419e082cc6df5942b8a426ad0265e79e58f9034d6d12485"
+    sha256 cellar: :any,                 arm64_big_sur:  "8fa5e5e66f4e67df913bad4990197609f6193dee28aae5804734d1224d093deb"
+    sha256 cellar: :any,                 ventura:        "a2a874e10af70aa171bc3043745894069a8ffb67a28faadca611dfaa516c2dd6"
+    sha256 cellar: :any,                 monterey:       "006009051abca9807f765625836b37bea8f1f6c78dfca855aa09d5c392d27163"
+    sha256 cellar: :any,                 big_sur:        "d70d955e0f86b67f1e911a78bd013073fe0413977c718a7c89f87058edb72d00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d9aa3198c0a946bc3206276b030f07cd542c0d1196ce53efe4344f45778c152"
   end
 
   head do
@@ -40,7 +39,7 @@ class Postgis < Formula
   depends_on "protobuf-c" # for MVT (map vector tiles) support
   depends_on "sfcgal" # for advanced 2D/3D functions
 
-  fails_with gcc: "5"
+  fails_with gcc: "5" # C++17
 
   def postgresql
     Formula["postgresql@14"]
@@ -48,6 +47,9 @@ class Postgis < Formula
 
   def install
     ENV.deparallelize
+
+    # C++17 is required.
+    ENV.append "CXXFLAGS", "-std=c++17"
 
     ENV["PG_CONFIG"] = postgresql.opt_bin/"pg_config"
 

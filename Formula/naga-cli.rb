@@ -1,8 +1,8 @@
 class NagaCli < Formula
   desc "Shader translation command-line tool"
   homepage "https://github.com/gfx-rs/naga"
-  url "https://ghproxy.com/https://github.com/gfx-rs/naga/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "d4ac5e0e7aae58e812ed8b81b1946d430308594249963753705a8da7c56ae8f2"
+  url "https://ghproxy.com/https://github.com/gfx-rs/naga/archive/refs/tags/v0.12.2.tar.gz"
+  sha256 "4e1373e92b8e4dd3ff70ace98c2f06e9b312dc21f416ddec0f91956ef978ff71"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/gfx-rs/naga.git", branch: "master"
 
@@ -12,13 +12,13 @@ class NagaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "16f51c69d89470489ebda4c561a4422abe8c1a50cf63c0ead577648e67d02a40"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "766d362436602a66b9c6d6fa96fde0ed03e4bee0d3df313016084cf9996e976d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "665dce01529a1260fdd449dadd54a15ac31da4a024d42a30708e53b78cf5e152"
-    sha256 cellar: :any_skip_relocation, ventura:        "8b7d85995fe8f22114361f11ae2bc8c081ef32fe818c8a13d3c632f4ee932433"
-    sha256 cellar: :any_skip_relocation, monterey:       "26d7b1c867b5ab672ecfe380ac14b061ab247d1b37d5631e731a0381b1077248"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0cec09fb6d77a176c306db98950f783c8a6f1e4d4ddb7df627a145598350eb52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "626c3369097c3b86002020fd07674783534163af8ae0e36c9e6eef34bde949a2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5cc0aedbb5a1c86af69bfcfc7084008984e0c3d51f6b5d855bf0171854d341e8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2ac95194f3254a798e68bd198432343d84015b8e793040bebba2e10d8e081a35"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f6fc81c5bef995d4cbf386920afe608ae493faa4fe9055187a1116704203a892"
+    sha256 cellar: :any_skip_relocation, ventura:        "a8140304b90d1fab0a5039712da129f30a6716c2a3c814eb77c9d3aac63e08bd"
+    sha256 cellar: :any_skip_relocation, monterey:       "61326122cda9eabffb395916f5661d7244ae9292228f842e8cf512d1de192fc7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8c7ffb69500087c4fbf5654c15582925bae1cffaef7a30ff99ce866b2b295cab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8315f195935b14b1d6cfd49e19910731e9ddc5f6d4269a8e475105f477e0fc0a"
   end
 
   depends_on "rust" => :build

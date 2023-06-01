@@ -1,8 +1,8 @@
 class V2ray < Formula
   desc "Platform for building proxies to bypass network restrictions"
   homepage "https://v2fly.org/"
-  url "https://ghproxy.com/https://github.com/v2fly/v2ray-core/archive/v5.5.0.tar.gz"
-  sha256 "b9110ff10d87b245efd42b5a93beb4a3e5138fcfe92d09cadfb6a72cc4e1c91c"
+  url "https://ghproxy.com/https://github.com/v2fly/v2ray-core/archive/v5.6.0.tar.gz"
+  sha256 "6a4a6112c0eca66d6e78b97840baadbc5d44ce4307f7506ccf59a39b45573592"
   license all_of: ["MIT", "CC-BY-SA-4.0"]
   head "https://github.com/v2fly/v2ray-core.git", branch: "master"
 
@@ -12,13 +12,13 @@ class V2ray < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a4fb9508d38d6c811cdd82df89061359eeb122137c42e248ab67ef188e820b43"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a4fb9508d38d6c811cdd82df89061359eeb122137c42e248ab67ef188e820b43"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a4fb9508d38d6c811cdd82df89061359eeb122137c42e248ab67ef188e820b43"
-    sha256 cellar: :any_skip_relocation, ventura:        "cdbe77da0fcde31047aeb73c230ff08ba4eed3740c870d165a6fbf516195212e"
-    sha256 cellar: :any_skip_relocation, monterey:       "cdbe77da0fcde31047aeb73c230ff08ba4eed3740c870d165a6fbf516195212e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cdbe77da0fcde31047aeb73c230ff08ba4eed3740c870d165a6fbf516195212e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "949e3b50f0b9d1ed1b944d9a19e814392da5a204a4236ca58baf966718764d74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e0b78394cb7d43981afa964bbb320788a98323e7fc5ba07d1cd859ffed1580a7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e0b78394cb7d43981afa964bbb320788a98323e7fc5ba07d1cd859ffed1580a7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e0b78394cb7d43981afa964bbb320788a98323e7fc5ba07d1cd859ffed1580a7"
+    sha256 cellar: :any_skip_relocation, ventura:        "00932a6b62ee02099be5009e97d3d1f1e97de78935023c83bdd749b179884854"
+    sha256 cellar: :any_skip_relocation, monterey:       "00932a6b62ee02099be5009e97d3d1f1e97de78935023c83bdd749b179884854"
+    sha256 cellar: :any_skip_relocation, big_sur:        "00932a6b62ee02099be5009e97d3d1f1e97de78935023c83bdd749b179884854"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4234ad1e6a9c9eb46f14e4b7b7b323014fcc11343665a73be6f3e4e2a9fc1f83"
   end
 
   depends_on "go" => :build
@@ -34,8 +34,8 @@ class V2ray < Formula
   end
 
   resource "geosite" do
-    url "https://ghproxy.com/https://github.com/v2fly/domain-list-community/releases/download/20230525170625/dlc.dat"
-    sha256 "c65889ccabaccbea21fa8c9bed6e896be53be321e7a3a841f33c170821b7f1af"
+    url "https://ghproxy.com/https://github.com/v2fly/domain-list-community/releases/download/20230529115309/dlc.dat"
+    sha256 "d20bcd23c185dd3102a2106ad5370bc615cfb33d9a818daaadefe7a2068fb9ef"
   end
 
   def install

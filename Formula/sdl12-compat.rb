@@ -1,20 +1,19 @@
 class Sdl12Compat < Formula
   desc "SDL 1.2 compatibility layer that uses SDL 2.0 behind the scenes"
   homepage "https://github.com/libsdl-org/sdl12-compat"
-  url "https://ghproxy.com/https://github.com/libsdl-org/sdl12-compat/archive/refs/tags/release-1.2.60.tar.gz"
-  sha256 "029fa24fe9e0d6a15b94f4737a2d3ed3144c5ef920eb82b4c6b30248eb94518b"
+  url "https://ghproxy.com/https://github.com/libsdl-org/sdl12-compat/archive/refs/tags/release-1.2.64.tar.gz"
+  sha256 "3e308e817c7f0c6383225485e9a67bf1119ad684b8cc519038671cc1b5d29861"
   license all_of: ["Zlib", "MIT-0"]
   head "https://github.com/libsdl-org/sdl12-compat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "292eaaa1f35a83cafc39a798a34ecdb76b56b501ac2a31ca2cb3c52e161ef7e5"
-    sha256 cellar: :any,                 arm64_monterey: "7bdc7c58142535f506465101e86b38b1727384fe81f7ad1c25fa6074c4bfb1ed"
-    sha256 cellar: :any,                 arm64_big_sur:  "d9f5c0261ff4fc5d30477efd302f7409bdee96dbaa253ab48c0402d37bc1e987"
-    sha256 cellar: :any,                 ventura:        "5bb9c526395b1324b66fe77ca34ef51805449f6fd36f8bf9b52f7dc51a5a419e"
-    sha256 cellar: :any,                 monterey:       "4f7fad9a3c8d217a3bba342ff71c8cde5ef86f54ed82a592bda60a7e66088f4c"
-    sha256 cellar: :any,                 big_sur:        "b943cf89e1851b7b86a243592a69bf7f918ea293ff4f199daab57a631d4a457b"
-    sha256 cellar: :any,                 catalina:       "22c99c0480288cc108a294a19674a33e2758919a1055932e3aa4b8881140b091"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b523c9bc9c45a2fe742b8b1705c7984efa0920ca1f54f32ca72e6bec61c675ac"
+    sha256 cellar: :any,                 arm64_ventura:  "ebad05b905bb7c02a03774c61739a80c873452c71005bd530f2a8631b90d18c7"
+    sha256 cellar: :any,                 arm64_monterey: "575e6be5525e92350ec8dd7bd2d4c5bc20e448f0f5f010633b5267eb5d9175df"
+    sha256 cellar: :any,                 arm64_big_sur:  "f3e027271fb43a3f7143116a44e76517f8e43fad149d44ef9689811f7ebf3f8a"
+    sha256 cellar: :any,                 ventura:        "118f7c1daf22008b15b5853a93409f4cadbb73a6f43e25ddb7eb2d313d92ed37"
+    sha256 cellar: :any,                 monterey:       "ed617022ec1e5e89c89fa4e34c607da0ddf27fb069b0fe5c7a72beb5a58b76a1"
+    sha256 cellar: :any,                 big_sur:        "1636d3ca1c576aa88eb2cd946927467ec2627f2ec55d0b395c3a43141416c862"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94fa84a28db17c9590035b1788a3935803d5eafded2c01560f6e1d14dd0f28ef"
   end
 
   depends_on "cmake" => :build
@@ -47,7 +46,7 @@ class Sdl12Compat < Formula
     (testpath/"test.c").write <<~EOS
       #include <SDL.h>
 
-      int main() {
+      int main(int argc, char* argv[]) {
         SDL_Init(SDL_INIT_EVERYTHING);
         SDL_Quit();
         return 0;

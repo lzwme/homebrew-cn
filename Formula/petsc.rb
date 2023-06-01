@@ -1,8 +1,8 @@
 class Petsc < Formula
   desc "Portable, Extensible Toolkit for Scientific Computation (real)"
   homepage "https://petsc.org/"
-  url "https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.19.1.tar.gz"
-  sha256 "74db60c53c80b48d5c39e07bc39a883ecced88b9f24a5de17cf6f485a903e120"
+  url "https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.19.2.tar.gz"
+  sha256 "114f363f779bb16839b25c0e70f8b0ae0d947d50e72f7c6cddcb11b001079b16"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,14 +11,13 @@ class Petsc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "169536985c5918584dc8dd5302a580942a95a0088b25eae6ed3a41f66ce6a67e"
-    sha256 arm64_monterey: "e319a63c32ddca99317d03d80a61ce186b24f33e31cc461f7c4d7093624262aa"
-    sha256 arm64_big_sur:  "6785c756e6202b3982d1c481430653b074191c1a09840cb9432d52180cdec5b2"
-    sha256 ventura:        "d90bf79268283f097a7f9fe8ee57842fdf1ae121e6cbc8d4f997c8b037c4e940"
-    sha256 monterey:       "a11f610c7d2205e82dbac3ae024f33bf360fd071cf397ebd5306c98b7ac6ecfb"
-    sha256 big_sur:        "75e92a3a4c0dde60098b5d5c647fbab9923d3d826a07c5ade1694009e8496a0d"
-    sha256 x86_64_linux:   "dbcbd6e1d6926bcbda1d45d4ca7fa180bf398d2d170d01c111729322049a08bb"
+    sha256 arm64_ventura:  "7fd80710e8e622080088d4a50603a3129ca81c9c1788e035bab505a462164920"
+    sha256 arm64_monterey: "ce77ddcb91f0dc523189941bfa46f040fc9447a7fa516bd6c8b5047aa7487430"
+    sha256 arm64_big_sur:  "5f036202200c4b64db3dc2add3d9c91750976700e769d1148598e0f24881600f"
+    sha256 ventura:        "c9b6baa6c48e8869ba68b6712939bbea366ace942ce0804272bf3d1982655492"
+    sha256 monterey:       "e15e777a88993434586b7f36ea9805c7ddcb582bce26bb9b7338ace978c09814"
+    sha256 big_sur:        "fda6f68a464467ef0f5410e97a36951677ff8889db2331f3224acbb07fee513d"
+    sha256 x86_64_linux:   "014143539af27fecf5bf9ef2182f36a9170cd40762accb6edc20895549cba4c9"
   end
 
   depends_on "hdf5"
