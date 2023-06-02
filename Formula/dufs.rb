@@ -1,18 +1,18 @@
 class Dufs < Formula
   desc "Static file server"
   homepage "https://github.com/sigoden/dufs"
-  url "https://ghproxy.com/https://github.com/sigoden/dufs/archive/refs/tags/v0.33.0.tar.gz"
-  sha256 "81c28eba10305a998e5bbe3d8e5b0644dc253a47b702c85be521193970b1e057"
+  url "https://ghproxy.com/https://github.com/sigoden/dufs/archive/refs/tags/v0.34.0.tar.gz"
+  sha256 "996898f6f85add5d3378e3a54bb8ddb2f51cebc6b3f169d5d174ebdbcd2c6732"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "35769a6425b81eb13c8726d62eed2cc5821999a1decc72f49731a50de0a41211"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4df3534c5e9c261dcd0c941d17eeeb6a9d45bbeda8b19deaaf5c3113937c2b8a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "aebaa30b38c3ee65bbb737cab44a080ef856ae3dd0d5fbea4748e8a30a4dbebb"
-    sha256 cellar: :any_skip_relocation, ventura:        "e576e61b86c91bd1d9e2a255ce6868cd5d830e58ebe12eff1d97a11f4ee7fe3c"
-    sha256 cellar: :any_skip_relocation, monterey:       "bfa8f18b4eb9cbd4b3642dac7549c103f6aef13672aa9e83639423d9014a0132"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b35103f05a7e45aaef1f8fb7a3a9cc3c7f696cfb08e86449a6d6a345f97644f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b6c3fcb9f24dad1e106acc913d175fd44a8a9cccc3d3bcedf266b92f8b01264"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f5718bddeb99fcb91778775cce73ddf0ebc614be32f70a1a8a8d08c02b6767f4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "373b91e69b023b79e181dd6988060b3b298115335bfedf64504cecc7585cc761"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "34a2a713123932cf15f2ef44fc04db988122ebb04e64c5e537d1bd89827fbee5"
+    sha256 cellar: :any_skip_relocation, ventura:        "ca1d6dcd4885359e0ddceab6d3b0f3f73f6d39ed9dc5ed339aeb1f011863ce5a"
+    sha256 cellar: :any_skip_relocation, monterey:       "bd6ac4a8b59f1c37d566e511dc0c948b9cf742926a86115eb52c3eae015f21fe"
+    sha256 cellar: :any_skip_relocation, big_sur:        "84aef3bdbec19d2daad76e95992147250dbf06588a906b822d70ad7b0c7cd1e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f180126d2a8074a60889571d7166175cfeb5caa8e03ff7a77b050457a299b20d"
   end
 
   depends_on "rust" => :build

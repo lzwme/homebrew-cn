@@ -1,19 +1,19 @@
 class TrustDns < Formula
   desc "Rust based DNS client, server, and resolver"
   homepage "https://github.com/bluejekyll/trust-dns"
-  url "https://ghproxy.com/https://github.com/bluejekyll/trust-dns/archive/refs/tags/v0.22.0.tar.gz"
-  sha256 "0756101c4ecd20ba5cfb3d0d1b86fe19bd28daae988004c153fe1c0a052bfb85"
+  url "https://ghproxy.com/https://github.com/bluejekyll/trust-dns/archive/refs/tags/v0.22.1.tar.gz"
+  sha256 "48debc51079b43a942f05f51dfd6d7ea900ed21f6db72e3136f100cb35263a15"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/bluejekyll/trust-dns.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e9a08d010802fff7fa6a94847f816669a92265596c8506fbd810e0b2248d7c75"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aa0fdb12c49171ce77337e73fb2ec8b06a48e6a0cf78d7b2f77cef6395adfe59"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "713bfc37472d6d9fcfab685f164fd3a313f3c75f0431d75276d5a05996660250"
-    sha256 cellar: :any_skip_relocation, ventura:        "f2861da740e151a590f6e6042973302b9eb33830c0e0221496cfbe9582a5202d"
-    sha256 cellar: :any_skip_relocation, monterey:       "e2028776dc3f0710aa7f37e40b5ae9d77f61dd63adfb4e076d96870d8d563453"
-    sha256 cellar: :any_skip_relocation, big_sur:        "27cadb40add7948af20d07e7f89ffd34d72fd2fbd2584469e9558f3a94565fcf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b521af6e9575530584db481b3cf0a225b1d5844b710eaed2652f3202519e73f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fabca7db9c4e9ebf00c2e0cc49ada98a3592f2fa9f2c75228ac975c50ae8c53e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c965b32e370d998e7afeae07785fc37d3fc26e58a0a4063c436602ac950e1987"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5280c4cdddcdab6e7d658ddf21af8e52c4328f3d7e3639aa58c11315368b7feb"
+    sha256 cellar: :any_skip_relocation, ventura:        "37162e844630ce06bb23edf76e0d8b292052c0e06c1cee69826d68012aec0e38"
+    sha256 cellar: :any_skip_relocation, monterey:       "e4459b5c8d61f086d22f1f87529d274720d29d006e6004af4fba42a26ee27b16"
+    sha256 cellar: :any_skip_relocation, big_sur:        "61fc5a09b2cc325d50a6755d548d770a862f4217e73f1a8456e67e4bd5f6e4b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7607f9f4e4a599259107c7a974a8515ed30e75c8fe0b4017b76435dd0db51a32"
   end
 
   depends_on "rust" => :build

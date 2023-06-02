@@ -7,11 +7,6 @@ class Libowfat < Formula
   revision 1
   head ":pserver:cvs:@cvs.fefe.de:/cvs", using: :cvs
 
-  livecheck do
-    url :homepage
-    regex(/href=.*?libowfat[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "65db99117a336254a90e1da30635af40c430bbedb569ff6bc1d4f0fb85714d4f"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1f136abc75d88d46768041ce1e32344905a3cc66179734785011ed001acda8db"

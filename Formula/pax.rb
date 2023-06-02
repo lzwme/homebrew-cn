@@ -5,6 +5,11 @@ class Pax < Formula
   sha256 "1cc892c9c8ce265d28457bab4225eda71490d93def0a1d2271430c2863b728dc"
   license "MirOS"
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?paxmirabilis[._-]v?(\d+(?:\.\d+)*)\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d53b2b5ce68a30ac206d6692afd3340abbb4b017922fee78db2f9fb1455c55a3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4439e9d997f1e26eb76c01c5bded88103475e8867855e2b0928eae5175e974b5"

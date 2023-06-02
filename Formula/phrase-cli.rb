@@ -1,18 +1,18 @@
 class PhraseCli < Formula
   desc "Tool to interact with the Phrase API"
   homepage "https://phrase.com/"
-  url "https://ghproxy.com/https://github.com/phrase/phrase-cli/archive/refs/tags/2.8.0.tar.gz"
-  sha256 "d4b87434bdb63153473b29cdac821d622fb29d9f0d9f3ab51e1f72fb3bb7cc0d"
+  url "https://ghproxy.com/https://github.com/phrase/phrase-cli/archive/refs/tags/2.8.2.tar.gz"
+  sha256 "e1b479ba88a08595630904de5e9bbed9154b61fa449359d61f41e50f5c512a43"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "424dd9851a367ed4e1336d62e80e76942d91f49ab1baf087d9bdbcbc8cda1de2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "424dd9851a367ed4e1336d62e80e76942d91f49ab1baf087d9bdbcbc8cda1de2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "424dd9851a367ed4e1336d62e80e76942d91f49ab1baf087d9bdbcbc8cda1de2"
-    sha256 cellar: :any_skip_relocation, ventura:        "a58f12799316a3881708e501ac336fe8b0ea657eef10d137ae5e814ed058e9d1"
-    sha256 cellar: :any_skip_relocation, monterey:       "a58f12799316a3881708e501ac336fe8b0ea657eef10d137ae5e814ed058e9d1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a58f12799316a3881708e501ac336fe8b0ea657eef10d137ae5e814ed058e9d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a92ae7b9254e1e7109a586ac2a1cf8e699457897a8f58e0cd36bead4f382ed85"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "83614f053374f5ff98458012fe927a79399de5383111d005e619d659dedee411"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "83614f053374f5ff98458012fe927a79399de5383111d005e619d659dedee411"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "83614f053374f5ff98458012fe927a79399de5383111d005e619d659dedee411"
+    sha256 cellar: :any_skip_relocation, ventura:        "0c0170fbff8cf9a940c036fcecff796c166a73b3531cf51ed787349fb8510fe4"
+    sha256 cellar: :any_skip_relocation, monterey:       "0c0170fbff8cf9a940c036fcecff796c166a73b3531cf51ed787349fb8510fe4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0c0170fbff8cf9a940c036fcecff796c166a73b3531cf51ed787349fb8510fe4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af0fd8eef4538e7d4226e120c017ef457ca916bde42ec7476fe2cd19995675e8"
   end
 
   depends_on "go" => :build

@@ -3,18 +3,18 @@ class Rpl < Formula
 
   desc "Text replacement utility"
   homepage "https://github.com/rrthomas/rpl"
-  url "https://files.pythonhosted.org/packages/0b/ff/d3c4712469b296e16d6704ec4a5c5ca02479d824db0de83caee10455cb9d/rpl-1.15.4.tar.gz"
-  sha256 "d89c20c3b02079db9e9a6738a0e9c0237b15623a368b6f53fa95cd866ed2630f"
+  url "https://files.pythonhosted.org/packages/2c/73/13f76208c9e6312e27bd6d5f62ff867746b7c075b9451448803dc13b2834/rpl-1.15.5.tar.gz"
+  sha256 "ae13d2fa1c1b8eaab75ff5756cbea9cc6836b55c4191e332521682be69de1b83"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f66eb46da9d1169ff8fb2a7a538500339c344bace54fd4b693a8aee56c0246e2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6a9d72ce02a425ec063172d48f9046483dc4aa27d8bdec98b41ee0ef91938ad3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a87fd1adc9375184f416ed2b0beab816c9cdba57375fbb84d8123e31c3df72ca"
-    sha256 cellar: :any_skip_relocation, ventura:        "75f27fd3e45a0ffba6e96419d9ea186d95adec7d39356bc019f88d2a04e97487"
-    sha256 cellar: :any_skip_relocation, monterey:       "1fe07b67017bf4278e9ba43885bdfc5499a13a783612150b636d40e275282d00"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f55773fb14b2ca077228d39d69eeefc09d42be0bcf04b35bcee581e16b04379b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34e5d531df3648e8c0b9f4a70f396a9a251dc0dbe39915ec520260d01b734eb0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "33bdfb7ac03b2f0bc8fa9744ce91ff3bcab8e95f729b219f2c52796ed3039b5c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8260d9b4929478ebb46333397ceaa14b54908f1ad54237eeff07398e76c4c06d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b45f7e45719d16c8181411f29f330251bf20a0e4af946c76653f386307ffefa9"
+    sha256 cellar: :any_skip_relocation, ventura:        "bc7e9093f065ce21c4453a4672dbbfe711552cd8307ad3996f7926e68d030c0f"
+    sha256 cellar: :any_skip_relocation, monterey:       "87d755ad01e755e32f8d67bfe5a4a005ecfcf8c2117e813e195d4c624ca7732f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "416a16df6f81200d1ece3520963a6d77cc82330d91f760566436c76b6a4bf5a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10b3e52f32e8819483105ea0e5b94674e7019b92b02ae8207f4387296fcd7af9"
   end
 
   depends_on "python@3.11"

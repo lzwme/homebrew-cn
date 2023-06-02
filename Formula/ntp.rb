@@ -1,29 +1,22 @@
 class Ntp < Formula
   desc "Network Time Protocol (NTP) Distribution"
   homepage "https://www.eecis.udel.edu/~mills/ntp/html/"
-  url "https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p15.tar.gz"
-  version "4.2.8p15"
-  sha256 "f65840deab68614d5d7ceb2d0bb9304ff70dcdedd09abb79754a87536b849c19"
+  url "https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p16.tar.gz"
+  version "4.2.8p16"
+  sha256 "5225858bfd843b080fb9daa5b7370519130e5e49ac3eb0371e334bdc06c52dd7"
   license all_of: ["BSD-2-Clause", "NTP"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "cc4137b25ab98f7945a4be36050f894c37bcbb75b9464936a69f35e019978684"
-    sha256 cellar: :any,                 arm64_monterey: "56e2b28056f17d7650a305bfae1725adcff788bdfe53abde908c163fcc02ddd4"
-    sha256 cellar: :any,                 arm64_big_sur:  "5aaceeca360143de4591c0294ed75755f50c14cfcdb908b7c1622fa5caa22cf4"
-    sha256 cellar: :any,                 ventura:        "d33b166b24774cbed162d08af63e04d854837c96f79c16e6069857afe18caa08"
-    sha256 cellar: :any,                 monterey:       "dc79526c62d10033e35cc0d16bb2f138c05577dd8f5de7289836a6e31f75d6a3"
-    sha256 cellar: :any,                 big_sur:        "cee6250b029cdb17a3e7c8f68ec6bf16a3a3751bea52a758bca885932e5a0de4"
-    sha256 cellar: :any,                 catalina:       "3c6a8893b0e76b8af1a4fd19ab664279b5409c1129062bf1feee4643318236b3"
-    sha256 cellar: :any,                 mojave:         "b69ded37b2c8304157c3f46e4484af9099b4fd1e077929c35bb630903d059856"
-    sha256 cellar: :any,                 high_sierra:    "9f7ce9c3ff545ff738fcf4049445923c968ec807cf1ecde451be76412442e6f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16137579ea8978ef71a1222071cd9e44a42eeeaa8d83ed83bdbf0fd048e6178c"
+    sha256 cellar: :any,                 arm64_ventura:  "7223754b29694eb7fe6014eb532b3de73998bd65fb1a15849f3df71f4bd0302f"
+    sha256 cellar: :any,                 arm64_monterey: "e4fbc3d8d55e81f7d2f98dd3fce10e447cd3b417504141b02b0ef5756a76e5f8"
+    sha256 cellar: :any,                 arm64_big_sur:  "a356674bddd12589f1c2f26648dc0ab3d5fa295b7c3f6c82240eb0f12c36e79e"
+    sha256 cellar: :any,                 ventura:        "27d33afd21ceac4f1ae9a1dfbdedf3c87e02e6955046fdfda51adde897eb6a27"
+    sha256 cellar: :any,                 monterey:       "b32043c4e0699e526f2ece7f4c8a93663c0bb87cfa160494dc93a53db3b30f1d"
+    sha256 cellar: :any,                 big_sur:        "a28fc40847abff65ea9975ed8c439741bf0b1c03e31a1974dbde0f4c4b84ee85"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5e575b783e49d4992ab994fcd02121f840e491759375a44686b0d582e3296d8"
   end
 
-  # Does not build with `openssl@3`
-  # Last release on 2020-06-23
-  deprecate! date: "2022-12-26", because: :unmaintained
-
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     args = %W[
@@ -31,8 +24,8 @@ class Ntp < Formula
       --disable-dependency-tracking
       --disable-silent-rules
       --prefix=#{prefix}
-      --with-openssl-libdir=#{Formula["openssl@1.1"].lib}
-      --with-openssl-incdir=#{Formula["openssl@1.1"].include}
+      --with-openssl-libdir=#{Formula["openssl@3"].lib}
+      --with-openssl-incdir=#{Formula["openssl@3"].include}
       --with-net-snmp-config=no
     ]
 

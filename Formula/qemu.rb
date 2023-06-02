@@ -1,19 +1,19 @@
 class Qemu < Formula
   desc "Emulator for x86 and PowerPC"
   homepage "https://www.qemu.org/"
-  url "https://download.qemu.org/qemu-8.0.0.tar.xz"
-  sha256 "bb60f0341531181d6cc3969dd19a013d0427a87f918193970d9adb91131e56d0"
+  url "https://download.qemu.org/qemu-8.0.2.tar.xz"
+  sha256 "f060abd435fbe6794125e2c398568ffc3cfa540042596907a8b18edca34cf6a5"
   license "GPL-2.0-only"
   head "https://git.qemu.org/git/qemu.git", branch: "master"
 
   bottle do
-    sha256 arm64_ventura:  "96cbfa24487fdbc9209fc475004af99a63d620e4967c335691010e0dde751404"
-    sha256 arm64_monterey: "fd190819d9a85685f70d3a6ea8723b9d6a43c0ed4f1d1f5e1949815603ae5834"
-    sha256 arm64_big_sur:  "00f300eb8f11cc99a731b208032393bb08edca1a445c55cefa4cf5d410695986"
-    sha256 ventura:        "81c092e53e6702027e90d077ef2207b2fa2c2f5a5a0a86f0fb0c2d5846df5330"
-    sha256 monterey:       "f77c4a4739bc990ad5190c09bbab3e2c667530116e1f7761e1c8fda003e4f4c1"
-    sha256 big_sur:        "23d01ff7f83a2e403cc8d57e5cd9d3def2dee1ce245de4443dc78979f5a8ce8f"
-    sha256 x86_64_linux:   "3fd4fb068a4d69e9130a31d2f4ff0397f51c5461053a4e1f849cf07de7c60a05"
+    sha256 arm64_ventura:  "359cdf4548d7145592f70af5c431142f33e812e11d5a4183ec27691021a394ee"
+    sha256 arm64_monterey: "38f2b8cf135b72d985cf54749fa2c8616da36a086a69e8233098b7904f305c41"
+    sha256 arm64_big_sur:  "71b24aee340ca2661ae7a3fae476478a1a019e0928d2509ab9fb9fabf44702c2"
+    sha256 ventura:        "3ad8760e829f5cf0cfca3113aa488cc0683a1ee6bf9ca76fc2769d9adb38452b"
+    sha256 monterey:       "9caf13bc0bc2a52e61ebacaffcd67ffb4d1a7318bdf2ddab235dfe0c1b2d5c06"
+    sha256 big_sur:        "d92fda3fa6da4a95e73a8f1bd1ddcd5d24ef2b26f5041c021a37e5583c50c137"
+    sha256 x86_64_linux:   "d7945e0cf256b82a4293c90a55bb0b56e872a33dd2bfa9dade6d70bd36158850"
   end
 
   depends_on "libtool" => :build

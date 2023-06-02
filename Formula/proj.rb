@@ -1,20 +1,19 @@
 class Proj < Formula
   desc "Cartographic Projections Library"
   homepage "https://proj.org/"
-  url "https://ghproxy.com/https://github.com/OSGeo/PROJ/releases/download/9.2.0/proj-9.2.0.tar.gz"
-  sha256 "dea816f5aa732ae6b2ee3977b9bdb28b1d848cf56a1aad8faf6708b89f0ed50e"
+  url "https://ghproxy.com/https://github.com/OSGeo/PROJ/releases/download/9.2.1/proj-9.2.1.tar.gz"
+  sha256 "15ebf4afa8744b9e6fccb5d571fc9f338dc3adcf99907d9e62d1af815d4971a1"
   license "MIT"
-  revision 1
   head "https://github.com/OSGeo/proj.git", branch: "master"
 
   bottle do
-    sha256 arm64_ventura:  "5ca270dab6620ba02931ff138dcbdb4abca7bc20d697db326ad938b9196bcc48"
-    sha256 arm64_monterey: "a17d8684fdb83f30b15af8613e616a78aa606fcded326b180c357b090c8853e8"
-    sha256 arm64_big_sur:  "3e10291aa7dfbe56d2f461f9e3c39584148fbb5b6e1c969a3fc88e1b08077169"
-    sha256 ventura:        "6e6a57511fcef9272f5a3ae34a40ca16407f7b987ebfa9ad9162a29480cc3a13"
-    sha256 monterey:       "45300f1502a03c79da7469f1def7f401348fee0ff1af82d177846f0266569151"
-    sha256 big_sur:        "8283a4e41247e94d6b9492c852525f6938534e62b593673ce3a05bbc5a4d6b33"
-    sha256 x86_64_linux:   "6d303c7a90b09bf5e174e77ba45c6e3e970e015e7f00405961d54a282af82ece"
+    sha256 arm64_ventura:  "4e765cd5770510556e04ee05b7ec732507f9eb70e382735c23f4cf0f3a094162"
+    sha256 arm64_monterey: "5dfad81b135fa02836e2f29a864217f5052799009b3c9fbc28de6de8212d1a2c"
+    sha256 arm64_big_sur:  "3cb6336ec473572c590855bb1c42c0fac97e838a7300b3212f9adea8d67781ab"
+    sha256 ventura:        "7f40a7b0043ef6490a3c7c0133b71e424fe6f4e8a576d42c9425f08a5df96c69"
+    sha256 monterey:       "19a4eca16421c5bb7ba52610de5603e1a05b8dbd598e6876a3e67433d02cf9b4"
+    sha256 big_sur:        "3a6cc8421523c7b513b083c0fd9793aa101108ef91575992a7e147bae2d6a0d1"
+    sha256 x86_64_linux:   "b0a93d2c51070b22bc9e256955b296d47f2bb10fe690238f88480611f7f5e078"
   end
 
   depends_on "cmake" => :build
@@ -31,8 +30,8 @@ class Proj < Formula
 
   # The datum grid files are required to support datum shifting
   resource "proj-data" do
-    url "https://download.osgeo.org/proj/proj-data-1.13.tar.gz"
-    sha256 "f1e5e42ba15426d01d1970be727af77ac9b88c472215497a5a433d0a16dd105b"
+    url "https://download.osgeo.org/proj/proj-data-1.14.tar.gz"
+    sha256 "b5fecececed91f4ba59ec5fc5f5834ee491ee9ab8b67bd7bbad4aed5f542b414"
   end
 
   def install

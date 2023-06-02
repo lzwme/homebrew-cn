@@ -17,24 +17,48 @@ class VorbisTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "0bbda8f387e434f645cfab25de99e28e8331d38eaba4a88ca124994ec2c5f6fd"
-    sha256 cellar: :any,                 arm64_big_sur:  "5396b9e517cbb7fb7384e272affcce8b5a9ef263346611dfb068ed34be4988d8"
-    sha256 cellar: :any,                 monterey:       "32880efc56baaebc010f2e2b465852c9bad030cf8c4ddfceddb5961c4703872b"
-    sha256 cellar: :any,                 big_sur:        "ad1acc242f7976a700261ef8c914cf912a4bcd9970eca8009d949598648a16f6"
-    sha256 cellar: :any,                 catalina:       "04f820f7dfc6d2fe964b1e18e564728cbc4feb127b562bd788b80f7d40a23eab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b137af1a327bf93e3922244bf03ab2eef1151838483b2e71e1e35c5254d32cc4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "fe8d1f90aa3e1c38f87be9e4593dbe8131282b4ed77effccd4c5e075c8af1330"
+    sha256 cellar: :any,                 arm64_monterey: "81cc875b622067697081eaa3a72c2b36882d8fd3bef460563a124ae1fc6e3b99"
+    sha256 cellar: :any,                 arm64_big_sur:  "02ea853ec06df9531f696865b196fc91fbca1360d7ab563859dfe37289cb7f9c"
+    sha256 cellar: :any,                 ventura:        "eb58d309267de842f0c2cef39c535143038d262f8bad12c0c0a8a3a62c81d941"
+    sha256 cellar: :any,                 monterey:       "b342fad37a61d9c407199ea27e78b10f9335a340488d6afdf3e76a70ab46981d"
+    sha256 cellar: :any,                 big_sur:        "5557f52038523ac9030787fc23c2597bccdc56e64fecbca062a2cb6e0ff7597c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5bf7cdf6990819e485ad13b82e4206b9b9d53864533b2015361893e1611c494"
   end
 
   depends_on "pkg-config" => :build
-  # FIXME: This should be `uses_from_macos "curl"`, but linkage with Homebrew curl
-  #        is unavoidable because this does `using: :homebrew_curl` above.
-  depends_on "curl"
   depends_on "flac"
   depends_on "libao"
   depends_on "libogg"
   depends_on "libvorbis"
 
+  uses_from_macos "curl"
+
+  on_monterey :or_newer do
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+
+    # Fix mistaken recursive `.a` files.
+    patch :DATA
+  end
+
   def install
+    # Prevent linkage with Homebrew Curl on macOS because of `using: :homebrew_curl` above.
+    if OS.mac?
+      ENV.remove "HOMEBREW_DEPENDENCIES", "curl"
+      ENV.remove "HOMEBREW_INCLUDE_PATHS", Formula["curl"].opt_include
+      ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["curl"].opt_lib
+    end
+
+    # Workaround for Xcode 14 ld.
+    system "autoreconf", "--force", "--install", "--verbose" if MacOS.version >= :monterey
+
+    # Work around "-Werror,-Wimplicit-function-declaration" issues with
+    # configure scripts on Xcode 14:
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
     system "./configure", *std_configure_args, "--disable-nls"
     system "make", "install"
   end
@@ -46,3 +70,17 @@ class VorbisTools < Formula
     assert_match "20.625000 kb/s", output
   end
 end
+
+__END__
+diff --git a/share/Makefile.am b/share/Makefile.am
+index 1011f1d..bd69a67 100644
+--- a/share/Makefile.am
++++ b/share/Makefile.am
+@@ -11,7 +11,7 @@ libgetopt_a_SOURCES = getopt.c getopt1.c
+ libbase64_a_SOURCES = base64.c
+ 
+ libpicture_a_SOURCES = picture.c
+-libpicture_a_LIBADD = libbase64.a
++libpicture_a_LIBADD = base64.o
+ 
+ EXTRA_DIST = charmaps.h makemap.c charset_test.c charsetmap.h

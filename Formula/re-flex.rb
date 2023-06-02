@@ -1,18 +1,18 @@
 class ReFlex < Formula
   desc "Regex-centric, fast and flexible scanner generator for C++"
   homepage "https://www.genivia.com/doc/reflex/html"
-  url "https://ghproxy.com/https://github.com/Genivia/RE-flex/archive/v3.3.3.tar.gz"
-  sha256 "a91f39c938accbd8a349b8ec627542b6f1516b1d7e999b4af9529a84cf53dfcc"
+  url "https://ghproxy.com/https://github.com/Genivia/RE-flex/archive/v3.3.4.tar.gz"
+  sha256 "faad674769291812b0a9949fbf95f1ad22a273121b48aefc30c20ea0d4c2585b"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dbdda5cc7c459498d4589e579c093352aa4f32949c17fb355f323712a2a5bfbb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e525d5274dc003dba495c96b9442650f86a9ddde754ca15c7c76fbc87d6b8073"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a8b1675cbd694405ac3f544c612a993b244af88a86a1bdfe847ddf8543dfbe60"
-    sha256 cellar: :any_skip_relocation, ventura:        "7f84698c90af2d2f88783164faf232491b3637a582009f84990ee86fac093e1e"
-    sha256 cellar: :any_skip_relocation, monterey:       "2885ea7a168f4e3a1a68752245034c544c37c1d71a2e49f0e5873de1804a5727"
-    sha256 cellar: :any_skip_relocation, big_sur:        "69d9380a326154a3ea1aa9f7a0b6baf7b4a8eb8dfcf85afc34b50d45f34d7232"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1cfa818059ff5d1618420bc6bb95d28ed653346cc7d71c753e60a00afe88c71"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "62d25e4835fdf20b20f6bdca577d38bb25f8d5a00387e09253d4aecc1498cf76"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "883f68f10e5427bcc7103e40acc580f56acbb888a65caaae341e68a41a30ba33"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d541135929dccdb8ee6e919aba91427298f32a55812246c97faeff1a998c8ba5"
+    sha256 cellar: :any_skip_relocation, ventura:        "71415b23b257f273b12f59404e6188ebc0ee104a33ba8c1d30c7b196d9ea4b39"
+    sha256 cellar: :any_skip_relocation, monterey:       "9087017b64f6ec2a23fd46f8a15a3581060b3912d3ee78cd0d682dee628c7eba"
+    sha256 cellar: :any_skip_relocation, big_sur:        "afd4849ecc4c9790e6862201c8387f4538e3d882a96f5eb2ee23239a4529b94a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b68262f0b00e4f81e7c772f50c868cd1428b57ffcb44008e753a546031c4101e"
   end
 
   depends_on "pcre2"

@@ -1,10 +1,9 @@
 class Maxima < Formula
   desc "Computer algebra system"
   homepage "https://maxima.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/maxima/Maxima-source/5.46.0-source/maxima-5.46.0.tar.gz"
-  sha256 "7390f06b48da65c9033e8b2f629b978b90056454a54022db7de70e2225aa8b07"
+  url "https://downloads.sourceforge.net/project/maxima/Maxima-source/5.47.0-source/maxima-5.47.0.tar.gz"
+  sha256 "9104021b24fd53e8c03a983509cb42e937a925e8c0c85c335d7709a14fd40f7a"
   license "GPL-2.0-only"
-  revision 12
 
   livecheck do
     url :stable
@@ -12,13 +11,13 @@ class Maxima < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b376d88ed1f5e3fe2f87827c21fba1cf23c108ec6968122fcc2d309a991c233f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ec58473d552390c75eb9eac58926b285147765a8aedbec65a224448b2b216697"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "16b6179be861c3bf7aa2c6e1b60a59ce37cf47700dbeaf5acb1151883d1f87c6"
-    sha256 cellar: :any_skip_relocation, ventura:        "87c214ad963dd69e1afe5f9d7f8aee7d37d1da705e54ccc3dc6a340767c696e8"
-    sha256 cellar: :any_skip_relocation, monterey:       "324554fb74615bb16b64285974f2f70b63f8e91170b1a5d5dce91c9e07ccc518"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8909585aec55bb66b8958b8c6558ba2ca7a8133c54e683bee3e11b18bc00db9c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a25500a9df9047ac3150f5113809f029c94b6af528a1e568836f878034cd56d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3045314d149a76e354734f3868324bbc1fa980c78e57d10d50566551a04fedc4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "872f4cbe46544f5b716d0f46f96c0853c95c8118f34802d421911e23477ead1e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "63b53fe678011ec143a685a3df4a35be9cbfbae4137a0feef7568fc565b723fb"
+    sha256 cellar: :any_skip_relocation, ventura:        "48113d4928a0db831c31c9d625b19824439853f47c5482f3f864b3d6d4face2d"
+    sha256 cellar: :any_skip_relocation, monterey:       "c2c1630649d716f1c5a68a6427e1313a5c790ac9a2221a380ac16f3c365a9759"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f8eec5a0ac03b1d4f144d61a6bf6a634f572da0cd4eeb21bfef2ee6e393ba787"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "997ac64a7df682f2d3817cb39762175f4ae9f83f6e43e343923af3282588b5fb"
   end
 
   depends_on "gawk" => :build

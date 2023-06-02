@@ -15,6 +15,7 @@ class Abcde < Formula
   bottle do
     sha256 cellar: :any,                 arm64_monterey: "41d225802703a6ae7adeb3044e41e36402e2e98517aebe4567852e3bd3e4f12e"
     sha256 cellar: :any,                 arm64_big_sur:  "4240ff000419b4ca9c0d275d70fccb10255ea17718906768892ba3a2d7ecb444"
+    sha256 cellar: :any,                 ventura:        "a0b33bf4a03961de5a66dcd612634e6098fca485bdec229ec5853787e1951d1f"
     sha256 cellar: :any,                 monterey:       "1108a67a9a2046cf987daa49ef63a8ce8b1dd8b011463cd7594fb13e0aee190b"
     sha256 cellar: :any,                 big_sur:        "c9668232e677e92b51210a0563c2156f030837b1fb221de60d16c83c466620b2"
     sha256 cellar: :any,                 catalina:       "fa00c7fc4b6b4ab794439f619ba00961358a4e5684a0ae2412fbd78ba2497df1"

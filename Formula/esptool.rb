@@ -3,18 +3,18 @@ class Esptool < Formula
 
   desc "ESP8266 and ESP32 serial bootloader utility"
   homepage "https://docs.espressif.com/projects/esptool/en/latest/esp32/"
-  url "https://files.pythonhosted.org/packages/ec/b1/83b39e12696f49c594e2a70d6868424e816594c7e68abe49c72fb71d3ff6/esptool-4.6.tar.gz"
-  sha256 "df52b38f6c28970c1a1c0e3e2145125bc3b86762fa7cfc519952b663937cdb0e"
+  url "https://files.pythonhosted.org/packages/01/0f/d0ff6cf55c1932d239c4c0dd743fd10cc3f664818791542173d96f6e4810/esptool-4.6.1.tar.gz"
+  sha256 "026169edbfc0180e87b8b9b178da8844fd0f39bbc1c3ee8e8f7611a2c30c8f59"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "27cc783c5bc7c50cb9eceee1ae8384475cae91d9e6c9374df2d247a36456d023"
-    sha256 cellar: :any,                 arm64_monterey: "742ad38d7737c49a59cbe3d7a864b5595ef03281130ffc981755daf21e58e7ea"
-    sha256 cellar: :any,                 arm64_big_sur:  "0d000264c353858a57e7a2ff1a7e488014027135eb6f7c49ac93611209f7d35a"
-    sha256 cellar: :any,                 ventura:        "e7f56e0bbd4ac7ad6f2feb07ee9b39fa92c805b709cd5e7a1b96fd44779053a3"
-    sha256 cellar: :any,                 monterey:       "10aeaadaec1335c6b83758065aea4274fd7e4576c7e4ba743b8945a7b8ed4084"
-    sha256 cellar: :any,                 big_sur:        "daca9b8d4d915af3be6c8004a48a6dd932e08fd2b89ccb0f5b160c5f8c95be51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f64f25054224d284d7970e362c971f445449a4d3e1397ff16496705920701871"
+    sha256 cellar: :any,                 arm64_ventura:  "0e4f8864cf2daff16199dc68ee8005589b1ffb1b41de09dd71a34c4ea74007aa"
+    sha256 cellar: :any,                 arm64_monterey: "e903d296439ea163aa5f70adddef59577b49cd65b16d29be70574cdf266d741a"
+    sha256 cellar: :any,                 arm64_big_sur:  "de83011f80d8344da1e88dcc314acdfbb1ed8eba9af989c3f958c763402ba725"
+    sha256 cellar: :any,                 ventura:        "6222919683937dd4d009aa48772f7a3337ed5d2e6d2eb46375e34a1a8fc123d0"
+    sha256 cellar: :any,                 monterey:       "b1323abce9b28736c495e9505b3d7dc7d775e44c787ca4a304941bfa99fd5c9c"
+    sha256 cellar: :any,                 big_sur:        "b828d279422043b737beb23d2d297342403bd6af18abe8b36a2797ca0ee7025d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5d0b42f969aeb984b18a590c7d8b2e43e9c26605173041600c7e57dff354c93"
   end
 
   # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
@@ -32,8 +32,8 @@ class Esptool < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz"
-    sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
+    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
+    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
   end
 
   resource "ecdsa" do
