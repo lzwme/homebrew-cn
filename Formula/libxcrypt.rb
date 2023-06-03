@@ -1,18 +1,18 @@
 class Libxcrypt < Formula
   desc "Extended crypt library for descrypt, md5crypt, bcrypt, and others"
   homepage "https://github.com/besser82/libxcrypt"
-  url "https://ghproxy.com/https://github.com/besser82/libxcrypt/releases/download/v4.4.33/libxcrypt-4.4.33.tar.xz"
-  sha256 "e87acf9c652c573a4713d5582159f98f305d56ed5f754ce64f57d4194d6b3a6f"
+  url "https://ghproxy.com/https://github.com/besser82/libxcrypt/releases/download/v4.4.34/libxcrypt-4.4.34.tar.xz"
+  sha256 "bb3f467af21c48046ce662186eb2ddf078ca775c441fdf1c3628448a3833a230"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4ee3bf38db315e567b4bab44ac9c00c4426a639fbf927504c41e71696c35909a"
-    sha256 cellar: :any,                 arm64_monterey: "5b05ce5f75fecd782e3ba5f79e6374366e387aafc2bcd3a3be2f62f8f5630ebd"
-    sha256 cellar: :any,                 arm64_big_sur:  "e2ab1dd4cf1eb83ae294eea6573a5cea05b2256369be2ca4648c53e72fa1be60"
-    sha256 cellar: :any,                 ventura:        "11fe5967447401b73f5ed9e4354b728b71fb9c7b80cacedce61cb78aea76d117"
-    sha256 cellar: :any,                 monterey:       "51cdca6f5314291e1567693e36e79a8f520bb5286b9dcc0a9ac8263679c792ba"
-    sha256 cellar: :any,                 big_sur:        "d5fcb26fdfc1c8fe8971593a370795b065845792d9339327c7b79b186a7f7c54"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "809ff345c8f0d705ea1d84f086fe5b19f590b540db3902784db6f6c3c8ecf0b1"
+    sha256 cellar: :any,                 arm64_ventura:  "d76cdfeeea22f3b5406a736ff80dd45c5347272c44f9b75414d2cd084235a171"
+    sha256 cellar: :any,                 arm64_monterey: "8d32334811e28a2e7f8147d461b2b2162fbe80cbb6bd394aca37d2d02b562269"
+    sha256 cellar: :any,                 arm64_big_sur:  "7407467f9246850f90576c3929d16066c3a3a0c5e3ee608ffb81b66c958ba188"
+    sha256 cellar: :any,                 ventura:        "fba4389558f745eff736da05440bdeead8d7ec5b0e5d4f60ac4972636e63863f"
+    sha256 cellar: :any,                 monterey:       "ab63de6d916e35f6df299a8e4b9e8cba489e2542f969459fc64373a005bf5a88"
+    sha256 cellar: :any,                 big_sur:        "8bfe6b78bb0c628fdad32b892215791117d12c1d63dd8f6cc6b5da98111d093a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a9a4c9593de081eaffde57136f3116140f11994174ee0f48b9cbb2a81ad59cf"
   end
 
   keg_only :provided_by_macos

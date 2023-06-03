@@ -11,13 +11,14 @@ class Libclc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3acb4609096d7bb2c64fa3b211e0e12463bb63902c2887d0f73a2b167d425d13"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3acb4609096d7bb2c64fa3b211e0e12463bb63902c2887d0f73a2b167d425d13"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3acb4609096d7bb2c64fa3b211e0e12463bb63902c2887d0f73a2b167d425d13"
-    sha256 cellar: :any_skip_relocation, ventura:        "3acb4609096d7bb2c64fa3b211e0e12463bb63902c2887d0f73a2b167d425d13"
-    sha256 cellar: :any_skip_relocation, monterey:       "3acb4609096d7bb2c64fa3b211e0e12463bb63902c2887d0f73a2b167d425d13"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3acb4609096d7bb2c64fa3b211e0e12463bb63902c2887d0f73a2b167d425d13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f9029d415ad9154d96b1778e2858ed042f1ba22782792a08825e933764be2dd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5e0a44b0ee7e6d2b5c0dc6ff422681c075d519bf54cac370e77b6e371e453e93"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5e0a44b0ee7e6d2b5c0dc6ff422681c075d519bf54cac370e77b6e371e453e93"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5e0a44b0ee7e6d2b5c0dc6ff422681c075d519bf54cac370e77b6e371e453e93"
+    sha256 cellar: :any_skip_relocation, ventura:        "5e0a44b0ee7e6d2b5c0dc6ff422681c075d519bf54cac370e77b6e371e453e93"
+    sha256 cellar: :any_skip_relocation, monterey:       "5e0a44b0ee7e6d2b5c0dc6ff422681c075d519bf54cac370e77b6e371e453e93"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5e0a44b0ee7e6d2b5c0dc6ff422681c075d519bf54cac370e77b6e371e453e93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c839fd229150b8c5d638c4926aa8b118a5ad4a987948d7a495f147d1457f8338"
   end
 
   depends_on "cmake" => :build
@@ -31,6 +32,8 @@ class Libclc < Formula
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
+    inreplace share/"pkgconfig/libclc.pc", prefix, opt_prefix
   end
 
   test do

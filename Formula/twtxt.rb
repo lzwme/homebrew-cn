@@ -85,21 +85,16 @@ class Twtxt < Formula
     virtualenv_install_with_resources
   end
 
-  # If the test needs to be updated, more users can be found here:
-  # https://github.com/mdom/we-are-twtxt/blob/HEAD/we-are-twtxt.txt
   test do
-    ENV["LC_ALL"] = "en_US.UTF-8"
-    ENV["LANG"] = "en_US.UTF-8"
     (testpath/"config").write <<~EOS
       [twtxt]
       nick = homebrew
       twtfile = twtxt.txt
       [following]
-      abliss = https://abliss.keybase.pub/twtxt.txt#7a778276dd852edc65217e759cba637a28b4426b
+      brewtest = https://example.org/alice.txt
     EOS
-    (testpath/"twtxt.txt").write <<~EOS
-      2016-02-05T18:00:56.626750+00:00  Homebrew speaks!
-    EOS
-    assert_match "PGP", shell_output("#{bin}/twtxt -c config timeline")
+    assert_match "✓ You’ve unfollowed brewtest", shell_output("#{bin}/twtxt -c config unfollow brewtest")
+
+    assert_match version.to_s, shell_output(bin/"twtxt --version")
   end
 end

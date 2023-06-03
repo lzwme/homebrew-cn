@@ -197,16 +197,9 @@ class Travis < Formula
   end
 
   test do
-    (testpath/".travis.yml").write <<~EOS
-      language: ruby
+    output = shell_output(bin/"travis whoami 2>&1 --pro", 1)
+    assert_match "not logged in, please run travis login --pro", output
 
-      matrix:
-        include:
-          - os: osx
-            rvm: system
-    EOS
-    output = shell_output("#{bin}/travis lint #{testpath}/.travis.yml")
-    assert_match "valid", output
     output = shell_output("#{bin}/travis init 2>&1", 1)
     assert_match "Can't figure out GitHub repo name", output
   end

@@ -3,18 +3,18 @@ class SvtplayDl < Formula
 
   desc "Download videos from https://www.svtplay.se/"
   homepage "https://svtplay-dl.se/"
-  url "https://files.pythonhosted.org/packages/65/ac/42dce2ecbc55e38c1fcae5086ea883b4d71fae8c3789141d4fd46a13ddb3/svtplay-dl-4.21.tar.gz"
-  sha256 "3015536ed03ab023a56f908a6b5153ae97fe279ae3c67584348d4ed6b5d8ac84"
+  url "https://files.pythonhosted.org/packages/cf/c0/da6cecbf6c7d3cbd57b94d6bc9c473093aa0e7049d24fdfb685532201ab9/svtplay-dl-4.22.tar.gz"
+  sha256 "2f4336fad32a65fe8b93704acebd751c8ec1bcd2fcccf2ec4bc6e57acbb3e7c1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "59317a77b272efd06e1e30f9bae71bb091dde6cf3ddc2ec5049dbd0839e50c49"
-    sha256 cellar: :any,                 arm64_monterey: "47987326851572c2533872b743dbf486f7a31c89a5fa5994d10eeb7ae986ba5a"
-    sha256 cellar: :any,                 arm64_big_sur:  "ce8f4941205eabf132eed8e8fe6e31e9ce8928c5ddcda699dcb18657e6a69267"
-    sha256 cellar: :any,                 ventura:        "0d0ed08a8cfa9c83b64b9c6f236d85b4b82b19af3e93d46134955981c2d2c710"
-    sha256 cellar: :any,                 monterey:       "92300bfa2eff797eb1122ecad3b508a97f37cb3afb172efbb1ea9526a5cd8769"
-    sha256 cellar: :any,                 big_sur:        "98b9424ea800abf54d607a7fc40573bae25039ef92db466b98eeeb45b46eeae9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f768e2b723c829c442309c222d5f2fb37922714067bdf57949e5c4da5da65ee9"
+    sha256 cellar: :any,                 arm64_ventura:  "dbd6116d4de9515ee864494efe72f032ea1d1d549a22b6519aaa6decc62c0d1f"
+    sha256 cellar: :any,                 arm64_monterey: "06eff6f736f51fc7dacc4d21dbc2b5a816dc6e00ce5701cfe408306199b616f6"
+    sha256 cellar: :any,                 arm64_big_sur:  "b8ac0111117228ff9394aec63ebbcf1e3de26f486267e4df79bd665e573a3b49"
+    sha256 cellar: :any,                 ventura:        "a9b7ae5efc3760e6f98f89b9229dc319882f33ba9e01475105ebe8a097e82dae"
+    sha256 cellar: :any,                 monterey:       "eafca76c08b11156f31ad3114ecae7111da92ebcf5c9c0a5aa61bc5bbe800ba3"
+    sha256 cellar: :any,                 big_sur:        "fc43032ca026af3654406f9bfba3e853dbd9119ae5f83ad8272fbd7b9bff02eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ccbebb2481d70934e4ecc9770629030e75adfc25c0005bb173e4abaddece2cae"
   end
 
   depends_on "rust" => :build

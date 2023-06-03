@@ -3,18 +3,18 @@ class Psutils < Formula
 
   desc "Utilities for manipulating PostScript documents"
   homepage "https://github.com/rrthomas/psutils"
-  url "https://ghproxy.com/https://github.com/rrthomas/psutils/releases/download/v3.0/psutils-3.0.tar.gz"
-  sha256 "0d223fa15661d4ea76ec3e22e28d2126ed71e5e4a53e8ef246aaa21cf8f76aa5"
+  url "https://files.pythonhosted.org/packages/aa/5b/3aa9bc7815ca52e1fbe00c43196a3efc0d354cacca9bdf9d96f23aaf1d5e/pspdfutils-3.0.3.tar.gz"
+  sha256 "f4f3b509d9c49d7febfcd92a49d3caa91961f4eba7558d405c0be389e71afecc"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b60ae45d300b673f90ac1592902c85cbf113317cf6c470ef62ce294b44f2a5fc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a3c7cbea27a4ac5d12eff53fd44978bc085d68b8a656da7ea7ecf26e6a4ef320"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "864b86aab51497a8178dc66209459761f0ca091997bb609837f11dc3d5847a3c"
-    sha256 cellar: :any_skip_relocation, ventura:        "5a3ff35eaf23c5bcb6990ef24596529d0b34b0d91bd49723a7c4608d37289cb3"
-    sha256 cellar: :any_skip_relocation, monterey:       "7f180e8e2de4bb9f16b29e06abeb6cb58eb6ad3ca1d175dcf038d5b4106ebaf5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0e977d3e49051c261e33012ef6482db073a5796ff3ded4d80d6ca0a71950748e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e9320c59bcaefb83f2275ce880f648fc776cc64d6ebc4aa3d1f297daf02c671"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8831a0973b1914fb78308ed2a278aadd8a62132ffd04dd9e3e626baf56511459"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "94c8710f6399b4271261f79d3105b033abe538baf00646718d8fd1e9ee74db00"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "568bc8d0bf2bf828c5974571592d524828f4018ea35a4deffe692dffbd88aba4"
+    sha256 cellar: :any_skip_relocation, ventura:        "bef036cfed1d1e339891325a4d97f6cc9a0c610f6ff66061a115de615fae0895"
+    sha256 cellar: :any_skip_relocation, monterey:       "6ede47ada8feff822480aafad739e04a0da10ab7f1f9e79636083d1fd941d272"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0d5cd50502f83e2be7c674abcb2d0e9e7230f17f002b72332bba0bbc557ea7a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea826a977df9d4a277b452bb5a2bce7542ad15e8708d7b4305ce354f6af1407a"
   end
 
   depends_on "libpaper"

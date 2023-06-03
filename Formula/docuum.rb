@@ -1,18 +1,18 @@
 class Docuum < Formula
   desc "Perform least recently used (LRU) eviction of Docker images"
   homepage "https://github.com/stepchowfun/docuum"
-  url "https://ghproxy.com/https://github.com/stepchowfun/docuum/archive/v0.22.2.tar.gz"
-  sha256 "34b4b945711a745d2cef9b82febc31b01ddd35182e4223f953b9e5947efc8a62"
+  url "https://ghproxy.com/https://github.com/stepchowfun/docuum/archive/v0.22.3.tar.gz"
+  sha256 "9b42849a8e3fbb76c17f1b50ddf4d49899af82ed332682d8384979f3039735d1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1c712fc4e7aaf499c0b0f5ebf6dfa39268d37a3f705093492d788daad5be8fa6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7dd546c9f75279497a656c41af0d1ef006852264d618532d112ef84992c6bcbf"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5332ff2e64224c473bd2cfc29a85cb63d00473e07ec02384360ab36c63480547"
-    sha256 cellar: :any_skip_relocation, ventura:        "7568615f3ed3c05446d872443e4e30efb8dcbf185b8499e36e72427864203dd5"
-    sha256 cellar: :any_skip_relocation, monterey:       "6633c191cd6fedcd4c6844f2f67a1bf2a98c5c5634b07f5fe8b22d0e05498fc5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6c2ec074b82a69e3ae46eb2cbdaccdb2ae0ad406c9d42d66c7edc54db21df28a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9e0efdbd6368e4b67acde1abd288d80e726c59d283f326a21573f40151888c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "75260b40d0615bb45e1c64724034a897bbbdf51ca12aeb727591567f7e546e68"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7f866449c642e2e5d3382620e4efaf120e3c06a04d43ff4fc57e4fe6bb34ef16"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cef52cda72f7a5f7c89d8a3186e722d97abb27eee77b13e1dc613508d93f0987"
+    sha256 cellar: :any_skip_relocation, ventura:        "2ab2e823d7a04fe5e6783cb7ec2052947a07eec519737a929110866d8ec4ad40"
+    sha256 cellar: :any_skip_relocation, monterey:       "3c5fd20e40e526ddd4c8633f4b137f5cf36cca9120a78f5c9e43531c90730fa5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "65e46f449fcbe46af192ff1929e8e2c66f4a0c717e48311b0c4aa3d24d2ac3fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9a89238020b92029798469a8469201543f6a80afedb037c315b9196ef57b4ff"
   end
 
   depends_on "rust" => :build

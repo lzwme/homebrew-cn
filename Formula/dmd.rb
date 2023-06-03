@@ -5,27 +5,20 @@ class Dmd < Formula
 
   stable do
     # make sure resources also use the same version
-    url "https://ghproxy.com/https://github.com/dlang/dmd/archive/refs/tags/v2.103.1.tar.gz"
-    sha256 "25570505289e0c402095ac168fc62e33f6b34b5e6d06f781d32954cc3d45e803"
+    url "https://ghproxy.com/https://github.com/dlang/dmd/archive/refs/tags/v2.104.0.tar.gz"
+    sha256 "de9f8bb78b3980051b7b410fb348e57121204a47194170ef3c810a64c9c9c37c"
 
     resource "phobos" do
-      url "https://ghproxy.com/https://github.com/dlang/phobos/archive/refs/tags/v2.103.1.tar.gz"
-      sha256 "d6956b70d582311ffbf0c3464dcd7531eb0bda3dc27a2051ca78fa6b045a0c9f"
-    end
-
-    # Fix build on Ventura when newer Xcode is used
-    # Patch merged upstream (https://github.com/dlang/dmd/pull/15139), remove on next version bump
-    patch do
-      url "https://github.com/dlang/dmd/commit/deaf1b81986c57d31a1b1163301ca4d157505220.patch?full_index=1"
-      sha256 "e16eb257c861a612b7fa3a8486e292b7f7faa0bd38a71e0c45d4afada790b7c3"
+      url "https://ghproxy.com/https://github.com/dlang/phobos/archive/refs/tags/v2.104.0.tar.gz"
+      sha256 "cc0f9b8429a526356ae4c6fbc007a6406cb3da4be8ed92d8d10c6d84ee1088a6"
     end
   end
 
   bottle do
-    sha256 ventura:      "2c0f4ef63d746054f52d50f7b1b7d7704fde017676521fc9bfdaf4b7764de359"
-    sha256 monterey:     "32665bb76aabe97c94c0cf90f8dc7f22b6e1b717ccc9cc1dc00d39b723c57c82"
-    sha256 big_sur:      "3384609eb4981d5e75d4e313d2d60d177be2256b6c4122c5d91bbd247ad53bff"
-    sha256 x86_64_linux: "bcde5e16ee044846dde8e48bee336820e0604909580ade6a0773d91e09275d40"
+    sha256 ventura:      "54a9f47f936490a881e84e738faa9f9906ca9f3d2317dcdb2ffa9b2e8acc77fa"
+    sha256 monterey:     "e84a79b8005a9e0bcc68cdf415cc2ac1dc92e13f854b19cd19a9a6ade5cb687b"
+    sha256 big_sur:      "117bc5d831565507d7c60ba12df59d901c6da530ed05783064f0a38f1484d62d"
+    sha256 x86_64_linux: "0a29379a78998309cf9d96b9b1ef377db9dba22a533f7e0a580a0914eec73ae5"
   end
 
   head do

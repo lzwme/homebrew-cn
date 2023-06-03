@@ -1,18 +1,18 @@
 class Cobalt < Formula
   desc "Static site generator written in Rust"
   homepage "https://cobalt-org.github.io/"
-  url "https://ghproxy.com/https://github.com/cobalt-org/cobalt.rs/archive/v0.18.4.tar.gz"
-  sha256 "82e87aaf0664fb1447b84b9f1a6b55f33f54c5a64d25dc6d8e64fc28bde66223"
+  url "https://ghproxy.com/https://github.com/cobalt-org/cobalt.rs/archive/v0.18.5.tar.gz"
+  sha256 "03d70ff4e16f337dc2c0299fc69f3cf3d2c44a747b912f28e6b2c34d0cb27e21"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d80fb9752976dbb7269b2fdbcf927431ffddda6784c418bf1b6366c4c145894"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "af5057524986872dd201e5e8ace2702a3e12dfbaf5370b2ca482b4fb9ef950a6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2dc0157631e4a0e5127b0c473a3348af074927bb8bab9ad136c419afb31482c9"
-    sha256 cellar: :any_skip_relocation, ventura:        "68035dd86e1f64b12b7cc0884e8ea83a80f24d1629a52ff5711ba37ce8f72701"
-    sha256 cellar: :any_skip_relocation, monterey:       "acd07821f8c42ec3bce292585368ee8ff7182afa55ee5b8d2f160f119c4c0bbc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "27ed41da4fc0c6c8585553cbb5ac85ed4278ca2f7c3112b656a5e9cd8ac8ac41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "045fc0e33774d21929ab127e97aa3b5b84b001a292aa4d5dfb0b5cff1d347a1f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a7f504485f5c8190ffb209951b4560f3ed47be6073f3044eec0fbd83183600a6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "201836392f27810d029409c5e24ffd3dd147d7f58e675ba234f016ca794509a0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f35416f0d0d12e657653ce06cc92a2e7bf39cb64c7916db6f701067f07ede3d5"
+    sha256 cellar: :any_skip_relocation, ventura:        "e3a1ea4fbf9b60987ab2756f2c4fab299daf7b79b0fb98c7ff4191a2c55d7119"
+    sha256 cellar: :any_skip_relocation, monterey:       "0b82d5db56d064f3bbd2380589b08c70476d9fac87ee39f20646e646bc13bd1e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ca5b06ae0dbed7f78fc7215fee98b5da16334a1a72eeacad718377971f9bac0b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "429e80d70b064667ca0a643ab6bd7723adc5f5528fcada7bd0d7289c4629d1ba"
   end
 
   depends_on "rust" => :build

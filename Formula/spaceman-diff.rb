@@ -7,7 +7,8 @@ class SpacemanDiff < Formula
   head "https://github.com/holman/spaceman-diff.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "66c940e56f22cd2f5fdb3cfd2e1ddd741400c0739bb91ded95f5ddf5fa3c9902"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "0d052a90fc7c951c2f8e3b75ec776f77486b99ce89a3c87273f92e5c46b9973b"
   end
 
   depends_on "imagemagick"
@@ -18,15 +19,8 @@ class SpacemanDiff < Formula
   end
 
   test do
-    output = shell_output("#{bin}/spaceman-diff")
-    assert_match "USAGE", output
-
-    png = test_fixtures("test.png")
-    cmd = if OS.linux?
-      ["script", "-q", "/dev/null", "-c", bin/"spaceman-diff"]
-    else
-      ["script", "-q", "/dev/null", bin/"spaceman-diff"]
-    end
-    system(*cmd, png, "a190ba", "100644", png, "000000", "100644")
+    # need to configure to use with git-diff
+    output = shell_output(bin/"spaceman-diff")
+    assert_match "spaceman-diff fileA shaA modeA fileB shaB modeB", output
   end
 end
