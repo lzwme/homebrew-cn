@@ -8,13 +8,14 @@ class Molecule < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b9041cb2d64ee2bdbd9ccbd4539ef5fed8bb54e9d05b7d13ef79caa5b1a2329b"
-    sha256 cellar: :any,                 arm64_monterey: "b560b833d56aedc8299efb859acd9932bc29b56e5df25d95204fe92b623036b5"
-    sha256 cellar: :any,                 arm64_big_sur:  "14d97f7b7d5dd0dadb02922fb108403a4e8666666527f8e40b4cfd4395c65dc0"
-    sha256 cellar: :any,                 ventura:        "0059fdf5ab12b6fcf9816f49efa8ae39324e2d6a238801019bf1df3c0d4a2087"
-    sha256 cellar: :any,                 monterey:       "78f5a33404fb05ae91ac6d4c0e8154efe430161cdb927e3a1393ff1c760ad35a"
-    sha256 cellar: :any,                 big_sur:        "6e1c0356220ac1281056e1010323c149253cf5c5af850d1538637e8f5c4a59ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a048e0e65913ff272cd5f4c18a80fb12defa115f2d2d76b0b4245c2b7c13c53f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "2a7ad12ab8d2a2b39480a48fb44b412c19fdaa99ca004b7836e662c377aee500"
+    sha256 cellar: :any,                 arm64_monterey: "337313693ac80d9430aec3f11ed779c5fd121ac47bdc67cedba86f7b9975ae2f"
+    sha256 cellar: :any,                 arm64_big_sur:  "78294b5e6597e0b8b1545be4793f12be71034bec6e427ec9a93a4ca654f3da91"
+    sha256 cellar: :any,                 ventura:        "b49d120c8af481824bd60b659840d9b26acefc7a626f76fc946c379f4239d64a"
+    sha256 cellar: :any,                 monterey:       "3731c5b5e1a2817d75543836f3172cff6856b217a5a25fe4a0ebad16285bb1c8"
+    sha256 cellar: :any,                 big_sur:        "dd5583d30fc473c4f068a7d478211b26677f195c75c16358b0893f409db354e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c0077d68c7026ef4518698d475332684c8b796373bf2d95817464f823929871"
   end
 
   depends_on "rust" => :build
@@ -39,8 +40,8 @@ class Molecule < Formula
   end
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/9d/f1/9c5e9361c90cf838810433e4c685cf5f585bf74cb44031d6e8c0e779f567/ansible-core-2.14.5.tar.gz"
-    sha256 "8c4eed76ce458b4a37334a0802df29488ecf9f8af38c3111069c96b17b205530"
+    url "https://files.pythonhosted.org/packages/12/10/9f3bed762e4f867c7fd32f125cf4d11a9dfb8e60e6565e14a1b4f2bf3396/ansible-core-2.15.0.tar.gz"
+    sha256 "cf690fd4ebb40590e00c5acdc0624758ca4c58d1e4b2b02ec026a034070ebf4d"
   end
 
   resource "attrs" do
@@ -59,8 +60,8 @@ class Molecule < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz"
-    sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
+    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
+    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
   end
 
   resource "distro" do
@@ -129,13 +130,13 @@ class Molecule < Formula
   end
 
   resource "resolvelib" do
-    url "https://files.pythonhosted.org/packages/ac/20/9541749d77aebf66dd92e2b803f38a50e3a5c76e7876f45eb2b37e758d82/resolvelib-0.8.1.tar.gz"
-    sha256 "c6ea56732e9fb6fca1b2acc2ccc68a0b6b8c566d8f3e78e0443310ede61dbd37"
+    url "https://files.pythonhosted.org/packages/ce/10/f699366ce577423cbc3df3280063099054c23df70856465080798c6ebad6/resolvelib-1.0.1.tar.gz"
+    sha256 "04ce76cbd63fded2078ce224785da6ecd42b9564b1390793f64ddecbe997b309"
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/3d/0b/8dd34d20929c4b5e474db2e64426175469c2b7fea5ba71c6d4b3397a9729/rich-13.3.5.tar.gz"
-    sha256 "2d11b9b8dd03868f09b4fffadc84a6a8cda574e40dc90821bd845720ebb8e89c"
+    url "https://files.pythonhosted.org/packages/02/97/0046b5e3c6a5057b5817e5e6c51a776d410b953e6a9c67ae249dafdd2999/rich-13.4.1.tar.gz"
+    sha256 "76f6b65ea7e5c5d924ba80e322231d7cb5b5981aa60bfc1e694f1bc097fe6fe1"
   end
 
   resource "selinux" do
@@ -149,8 +150,8 @@ class Molecule < Formula
   end
 
   resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/8b/94/696484b0c13234c91b316bc3d82d432f9b589a9ef09d016875a31c670b76/websocket-client-1.5.1.tar.gz"
-    sha256 "3f09e6d8230892547132177f575a4e3e73cfdf06526e20cc02aa1c3b47184d40"
+    url "https://files.pythonhosted.org/packages/3f/f2/2624e12ef854ee667d92ac5dc7815932095e0852e5ff2b2bf57feda8a11b/websocket-client-1.5.2.tar.gz"
+    sha256 "c7d67c13b928645f259d9b847ab5b57fd2d127213ca41ebd880de1f553b7c23b"
   end
 
   def install

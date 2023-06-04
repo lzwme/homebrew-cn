@@ -7,6 +7,11 @@ class Jupp < Formula
   license "GPL-1.0-or-later"
   # Upstream HEAD in CVS: http://www.mirbsd.org/cvs.cgi/contrib/code/jupp/
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?joe[._-]v?(\d+(?:\.\d+)+jupp\d+)\.t/i)
+  end
+
   bottle do
     sha256 arm64_ventura:  "821daf3c2f840c5a9942de15a4b0c226928e35808079db3f0d48e686a474f08d"
     sha256 arm64_monterey: "b5732141fc6bfe41e312ee4492c2680a3dcfba4a3951c8f6ab590b2e6c887a01"

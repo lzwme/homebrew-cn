@@ -8,14 +8,14 @@ class Mathlibtools < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_ventura:  "543dafe2984cfd84da964f4d1bab2b6e9888bfc8763bb8bb1bf4ef9d83fafa02"
-    sha256 cellar: :any,                 arm64_monterey: "c7c6150c7bdd014f39775db901049c233c6abfce783b5439f997568f2c1ceb84"
-    sha256 cellar: :any,                 arm64_big_sur:  "a2b5a8a9b216b26c0c74fa7a32d50efd80e0a5e7febe21c65c220f61344a3a58"
-    sha256 cellar: :any,                 ventura:        "6c85aa2c2f295cc0bf085cf626796067f7487f4392e12fc201e94b5c628fc5cd"
-    sha256 cellar: :any,                 monterey:       "06efa2a3feb78d39dfea90eb6f031550753ac7de35f73037c85765e5f9b31101"
-    sha256 cellar: :any,                 big_sur:        "6ad40bd0e939899d42a3f97210c02dc5379869e33de1ecd953ff2ee3dfc4bb7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aedee17074163eb74e390b7246467646be1672b1809eb27c2da399738b54c2c8"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_ventura:  "a4bd3c63885268a1bc2c399a2d0e6150356444b2860640b1fc36987679b4b01e"
+    sha256 cellar: :any,                 arm64_monterey: "931851fd9ffede580ea44ebdb35cbf67921885851654050a552fe4e6140d389d"
+    sha256 cellar: :any,                 arm64_big_sur:  "83f4479a24f0a2373fcdfdd9b5959778ad270353b11fbdf6fe66653f45fdbd66"
+    sha256 cellar: :any,                 ventura:        "b61c6b20f959e0d0402ece75251179c57ea3a5bd8c4dc94af165cef15f331084"
+    sha256 cellar: :any,                 monterey:       "25696fe95f9445a914387a62da9a2d5ac99db2fb366930e15be96c0b6ed27796"
+    sha256 cellar: :any,                 big_sur:        "fef63b4c99d265eb5e920e12a5fa8b5988d017cb4056dd3161b8865890279e5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e8d66ec042a4f93640872eec0cc6657588b3382bef80c79492ecbb9ae54a985"
   end
 
   depends_on "rust" => :build
@@ -51,13 +51,13 @@ class Mathlibtools < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz"
-    sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
+    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
+    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
   end
 
   resource "deprecated" do
-    url "https://files.pythonhosted.org/packages/c8/d1/e412abc2a358a6b9334250629565fe12697ca1cdee4826239eddf944ddd0/Deprecated-1.2.13.tar.gz"
-    sha256 "43ac5335da90c31c24ba028af536a91d41d53f9e6901ddb021bcc572ce44e38d"
+    url "https://files.pythonhosted.org/packages/92/14/1e41f504a246fc224d2ac264c227975427a85caf37c3979979edb9b1b232/Deprecated-1.2.14.tar.gz"
+    sha256 "e5323eb936458dccc2582dc6f9c322c852a775a27065ff2b0c4970b9d53d01b3"
   end
 
   resource "gitdb" do

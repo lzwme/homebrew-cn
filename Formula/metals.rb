@@ -1,8 +1,8 @@
 class Metals < Formula
   desc "Scala language server"
   homepage "https://github.com/scalameta/metals"
-  url "https://ghproxy.com/https://github.com/scalameta/metals/archive/refs/tags/v0.11.11.tar.gz"
-  sha256 "99c03bd5f6f6d3aa68d684f016ab6bb09175fa67953ddaa362f8a936bb3da72f"
+  url "https://ghproxy.com/https://github.com/scalameta/metals/archive/refs/tags/v0.11.12.tar.gz"
+  sha256 "9e50e557980891b9d24ac8ccb9922886b974d99247d1c0592e2e4385a789f338"
   license "Apache-2.0"
 
   # Some version tags don't become a release, so it's necessary to check the
@@ -13,13 +13,13 @@ class Metals < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9e0c3616186a0ff1cc299acda01a311d1e06518b2cb100665c7ed5359c5744fa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "97a5e3e083acaedb1d8b3c971e684232d9d4fc9ca81617bed820f2bed3f28332"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2d3e4a92a34c8abf89bcc4e44e366ea2b4a86e4e8140495e3336602cd3bded2a"
-    sha256 cellar: :any_skip_relocation, ventura:        "826789d9fd5f6afe75185d56fe8e7d00653489abfecd95f8eb00428225dab732"
-    sha256 cellar: :any_skip_relocation, monterey:       "36b99f076cea687011a4d6821ae1d7a1646d469c8c39e00dd6179f630646fdb8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a8a8e5bba8dcb2813ca2994468d3e5b38212f033c196004ecd5340218839f327"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "14a4192df56f7015786392bdd07aa5d6068c79b557ae3c74c6dd36926ea37c40"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "81d7a33ba04fd043655710cb69481c18a050ab7470cbdb353645e51aafb7c0b7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2b9c6c083a893f146b0e4581636290c18156116b56682fe85e8a4110b8d0934d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "00d225d1e77804acc03140d03a05e278f5930dc36c25b82e217f69afc9dcc907"
+    sha256 cellar: :any_skip_relocation, ventura:        "af113fa57bccd2656f76daae923bd8e65201c9450293110ccf2ab7f354c3e159"
+    sha256 cellar: :any_skip_relocation, monterey:       "3cc3aa493fe3c42cc3f76773cc0a5f4d4a9dc28fbeb466a3af4421680c9d2851"
+    sha256 cellar: :any_skip_relocation, big_sur:        "fda5fbffc5b146483318de303a11dc97fb9871367391d4c259e8bb2631b9bc51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d42a4dfe2cf807f58f2cb9ef45a063034d45c989848e55450484355d7e94b414"
   end
 
   depends_on "sbt" => :build
@@ -41,6 +41,7 @@ class Metals < Formula
 
     (libexec/"lib").install buildpath.glob("metals/target/scala-*/metals_*-#{version}.jar")
     (libexec/"lib").install buildpath.glob("mtags/target/scala-*/mtags_*-#{version}.jar")
+    (libexec/"lib").install buildpath.glob("mtags-shared/target/scala-*/mtags-shared_*-#{version}.jar")
     (libexec/"lib").install "mtags-interfaces/target/mtags-interfaces-#{version}.jar"
 
     (bin/"metals").write <<~EOS

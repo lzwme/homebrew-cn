@@ -8,14 +8,14 @@ class Howdoi < Formula
   license "MIT"
 
   bottle do
-    rebuild 5
-    sha256 cellar: :any,                 arm64_ventura:  "c4252290a1a8d1941e29c92dfd0ce8e5018e4a7f4e45ecec011b5c0bdd12d5d6"
-    sha256 cellar: :any,                 arm64_monterey: "c381137d751a13748e01f5ed87568413ad092aa9cf51a6907019147a28ee0b63"
-    sha256 cellar: :any,                 arm64_big_sur:  "b7b2a8410e5cb7205a655bbc0df87a8e7ddfaa9d967d14c8e00f0b8b910cae03"
-    sha256 cellar: :any,                 ventura:        "26f099385af489a9ae4b9b23aae9524be4a19ab173ce4ad939fc8ce0335c9021"
-    sha256 cellar: :any,                 monterey:       "dda3660b7308dacdbba0ee4d25080407659ccef038499bc3e22e90fa9c6912a6"
-    sha256 cellar: :any,                 big_sur:        "c95eac197c2f42ade12bf3b2fbadb5159a389097c9503bbe5ee1cab932e41f61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e629b53565c0640825f3617986ffe00e3f2c894587c68a4ff55970d17312be48"
+    rebuild 6
+    sha256 cellar: :any,                 arm64_ventura:  "730a9cea3b2e9f1ce24a9187335f58c19b99f8a3c2a3c2f9ba036d248dc9c026"
+    sha256 cellar: :any,                 arm64_monterey: "ff19e41ef8dcc6507e7162a7c2e16b9b4db6d8d1af47731c081652d881e14b4c"
+    sha256 cellar: :any,                 arm64_big_sur:  "ac24f856105472a20c73ac9f9013b2699eb29afd5d42102df5cd3fc6b09ac4ea"
+    sha256 cellar: :any,                 ventura:        "cbf775288a3b94bc460269c5751b460e3df584286b8777812bb17ba578a78cb5"
+    sha256 cellar: :any,                 monterey:       "9b1b7ba1b4b4ea8847d378dbefeedbe86db7830deaac342e366c72ec6be31bfe"
+    sha256 cellar: :any,                 big_sur:        "24afc69bec9c00a1561ea435ed22821dcfc1adbd01e56763021e88241fd87702"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b9f83b8b32c169345db785e7e40b384d44260992a1aca3236165a65d24eccb8"
   end
 
   # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
@@ -70,8 +70,8 @@ class Howdoi < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz"
-    sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
+    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
+    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
   end
 
   resource "cssselect" do
@@ -80,8 +80,8 @@ class Howdoi < Formula
   end
 
   resource "deprecated" do
-    url "https://files.pythonhosted.org/packages/c8/d1/e412abc2a358a6b9334250629565fe12697ca1cdee4826239eddf944ddd0/Deprecated-1.2.13.tar.gz"
-    sha256 "43ac5335da90c31c24ba028af536a91d41d53f9e6901ddb021bcc572ce44e38d"
+    url "https://files.pythonhosted.org/packages/92/14/1e41f504a246fc224d2ac264c227975427a85caf37c3979979edb9b1b232/Deprecated-1.2.14.tar.gz"
+    sha256 "e5323eb936458dccc2582dc6f9c322c852a775a27065ff2b0c4970b9d53d01b3"
   end
 
   resource "idna" do
@@ -140,8 +140,8 @@ class Howdoi < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/3d/0b/8dd34d20929c4b5e474db2e64426175469c2b7fea5ba71c6d4b3397a9729/rich-13.3.5.tar.gz"
-    sha256 "2d11b9b8dd03868f09b4fffadc84a6a8cda574e40dc90821bd845720ebb8e89c"
+    url "https://files.pythonhosted.org/packages/02/97/0046b5e3c6a5057b5817e5e6c51a776d410b953e6a9c67ae249dafdd2999/rich-13.4.1.tar.gz"
+    sha256 "76f6b65ea7e5c5d924ba80e322231d7cb5b5981aa60bfc1e694f1bc097fe6fe1"
   end
 
   resource "terminaltables" do

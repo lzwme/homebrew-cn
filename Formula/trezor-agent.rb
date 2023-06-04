@@ -8,14 +8,14 @@ class TrezorAgent < Formula
   license "LGPL-3.0-only"
 
   bottle do
-    rebuild 7
-    sha256 cellar: :any,                 arm64_ventura:  "78dc09f6c765752608daf3eb1a489b79c397d5f1405789477925548f235de6cd"
-    sha256 cellar: :any,                 arm64_monterey: "99a37b4417d179bf8d501421d938b5e83b3751741844bc59da24477b008e3603"
-    sha256 cellar: :any,                 arm64_big_sur:  "26555b080d945ca79198ec8992d0e03bc80895f399b727c3ed9c45f23311ce32"
-    sha256 cellar: :any,                 ventura:        "d94c3b3fa854afa316dbc82261cea781c393b3b6847cca777918172ea1ddbd1e"
-    sha256 cellar: :any,                 monterey:       "0b0145e597ce009d87bb67f03b9bda91f2855538807b8736696c0ec3295e2567"
-    sha256 cellar: :any,                 big_sur:        "94eb164e60c8755d9a2b9fe485a587467c5c946931bf626121a80c64b8bf7b87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70cdf75b04ffd533916261d2ebb9a19cabacec891d0611e93a2d3c6ec9fc7dee"
+    rebuild 8
+    sha256 cellar: :any,                 arm64_ventura:  "1476d77e52fc254cd7baec8b4deea572be5646bc789424704c1fdc3aa64eeee6"
+    sha256 cellar: :any,                 arm64_monterey: "beb83bbf882de49a78489fba25c75ed1081405dd3f4255276c5cf52daf4af980"
+    sha256 cellar: :any,                 arm64_big_sur:  "1da9b57a4a27fcbe5d8c509473f2a3170e80172a700b8fe939a10152cbe7b61f"
+    sha256 cellar: :any,                 ventura:        "fc1d76a9ce6266db69f587a63fc7adbcc842b8377bd20bfd8a8df9b2b696d3c2"
+    sha256 cellar: :any,                 monterey:       "f5737f9a9a7023148816be7050600c5f941cd0a0c81b1b95cb4699204e2cdf16"
+    sha256 cellar: :any,                 big_sur:        "077a6564186c2d9d65cafe4f65f9ba75565fa22c4241489c10c6403cea89f9a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "766b406d12dbafaf5520205bde5fb149dceccec3cc79ed3b0676ba9539f11dc5"
   end
 
   depends_on "pkg-config" => :build
@@ -75,8 +75,8 @@ class TrezorAgent < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz"
-    sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
+    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
+    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
   end
 
   resource "ecdsa" do
@@ -95,8 +95,8 @@ class TrezorAgent < Formula
   end
 
   resource "hidapi" do
-    url "https://files.pythonhosted.org/packages/78/0a/d71f35a8dcbe88dab21cd668a62b688ea6dd45872feba45a97efd0452c19/hidapi-0.13.1.tar.gz"
-    sha256 "99b18b28ec414ef9b604ddaed08182e486a400486f31ca56f61d537eed1d17cf"
+    url "https://files.pythonhosted.org/packages/95/0e/c106800c94219ec3e6b483210e91623117bfafcf1decaff3c422e18af349/hidapi-0.14.0.tar.gz"
+    sha256 "a7cb029286ced5426a381286526d9501846409701a29c2538615c3d1a612b8be"
   end
 
   resource "idna" do
@@ -155,8 +155,8 @@ class TrezorAgent < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/d8/6c/a2a6fe10cdc9bc81e03be56139d5bc70427054eb0b3864b31ff9a2a4849d/protobuf-4.23.1.tar.gz"
-    sha256 "95789b569418a3e32a53f43d7763be3d490a831e9c08042539462b6d972c2d7e"
+    url "https://files.pythonhosted.org/packages/7f/2e/49d5a453d68febffbb602ad985b7432377e36bdf47198c6ab05021b33016/protobuf-4.23.2.tar.gz"
+    sha256 "20874e7ca4436f683b64ebdbee2129a5a2c301579a67d1a7dda2cdf62fb7f5f7"
   end
 
   resource "pycryptodomex" do
@@ -235,8 +235,8 @@ class TrezorAgent < Formula
   end
 
   resource "trezor" do
-    url "https://files.pythonhosted.org/packages/be/56/66b3f66d593e094d79a333ef858e2fee4f188761ed5a07d7e515ee37d928/trezor-0.13.6.tar.gz"
-    sha256 "fc359c07562ff158ae04fd23f6563ac15dc046586f3a6c379536ddef0f790b48"
+    url "https://files.pythonhosted.org/packages/36/d5/e9bca47144ab56148b3c699f52f2576d00f65a359b0c21e6870b0f527f56/trezor-0.13.7.tar.gz"
+    sha256 "76875e5886017dc94f51bbb411f927f103bd9e3ecbf0754d5e44a353898149e0"
   end
 
   resource "unidecode" do

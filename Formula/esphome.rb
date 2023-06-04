@@ -8,13 +8,14 @@ class Esphome < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d34fed3c12a33cd9f48bb22b1817991420ad1218f48a751b30e56cb732326644"
-    sha256 cellar: :any,                 arm64_monterey: "5ed612c423678b9958ac189c40a9272c963dff54a42b5b20854c8e18f08a045b"
-    sha256 cellar: :any,                 arm64_big_sur:  "34088c21f9f86036a7c761d5a716513b9fb5229441c577d4ce71ea51e34c94b7"
-    sha256 cellar: :any,                 ventura:        "55860e4695473078fc3c6ec72311b99ba0c060d748591cf2d9e975f7eda7d5a3"
-    sha256 cellar: :any,                 monterey:       "c64b71c4be1e70f7f77d42bbf01595a7d2a9428111ba73634b6681409095b9ae"
-    sha256 cellar: :any,                 big_sur:        "64d6061d11b3161d629a2671de66f97edb2ba0751214a6aaacc058cf674a5660"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9d63355936092c96d8eeb7dc64ebae52333d5c21b0e2552aae29e27b64d08f8"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "c8dd97558f722d38f31a8b332ac4f273d9de745c120af6453d714f91e46d226d"
+    sha256 cellar: :any,                 arm64_monterey: "8cafc30ad3200b1076de40d21b69071809db3aaff1b3e80929d7ffea99ab9f5c"
+    sha256 cellar: :any,                 arm64_big_sur:  "2029968da7562f6e01845432a8cda684aa597c4a7df316e5467a655548e6100f"
+    sha256 cellar: :any,                 ventura:        "c4c392da98a0a20027e4e76775efeb4a6f8ca6f3ca7098f919830df0aabb7802"
+    sha256 cellar: :any,                 monterey:       "1007642b85758675f88104243ae4ba007bd921678d61fec70639761aed736982"
+    sha256 cellar: :any,                 big_sur:        "219011db27d4fdf5b154989b5af021e31cd899dee5df17f4e195b70dcbe9b853"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbad747e60606d51364ed7fae88ab655aff364272df35b382ab916c3d077f2a2"
   end
 
   depends_on "pkg-config" => :build
@@ -83,8 +84,8 @@ class Esphome < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz"
-    sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
+    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
+    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
   end
 
   resource "ecdsa" do

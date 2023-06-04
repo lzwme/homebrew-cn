@@ -1,19 +1,19 @@
 class AdaUrl < Formula
   desc "WHATWG-compliant and fast URL parser written in modern C++"
   homepage "https://github.com/ada-url/ada"
-  url "https://ghproxy.com/https://github.com/ada-url/ada/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "bf11c9d0cc1ee9e377080bdd8a3b8a8bf736ac7acaedcae882587e21b3e5625c"
+  url "https://ghproxy.com/https://github.com/ada-url/ada/archive/refs/tags/v2.5.1.tar.gz"
+  sha256 "a7591d771822c3f16e6665311b0c6b4de7dd7615333183f35d89c7573be7f7fa"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/ada-url/ada.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2fce107a195c375eb7c945c6a2967461c6b8b493476478036ddc429bbb407fbc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1dc218080aa81affaf68bc781f2f57cabcd5312f9f4466d331c7ac3ca8736646"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "630f37728b7b0edaa12f56c1ed5843b1ec492e5a8611fd94696dc6bc6176bd7e"
-    sha256 cellar: :any_skip_relocation, ventura:        "f741fbea5aa355a6ef05d0262748c837b21333d060f4a1a7a7f1cdf91d752334"
-    sha256 cellar: :any_skip_relocation, monterey:       "32be630da7a0567f2b3a194a194523dd1ddfd90809b7aa706f794436541764cf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2fe77ba0a44c69926ba230e9f9b7cf17ae7f796244b291279bfe53e0c087869d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a0c46cb4f8e83e518481237a5b13cdfdf12c2868ffc4163169bb265e74e8333"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e2ba55322080e0e6cf9232c84367c7e0c12930e1a51f2a046b7588020ead2ab"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c3c33f147f80c555c71f1cc9b17a21536f4e52ab34fe10a5fc5138e94eb2e91"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4ff760f970718322d29c48ef89d055581502b13203f1afac0ced0151772f25be"
+    sha256 cellar: :any_skip_relocation, ventura:        "3e1c849103cda3647577ecea043dc285ed3ac0ba7c14c01f4e573106ee191cc4"
+    sha256 cellar: :any_skip_relocation, monterey:       "ed26335809f8c0ed0f78abaec63bb98c106d2767b737d060f5e6f36e4a8f556a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "148db0d832a9a81fc4ce2914ffdcf183c69beb19f0ffaaea9983c7014796fe50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b6d71a641971fa2dbd410db4c90f6929f8dbdd5cd0b96b17d99b64ebc201903c"
   end
 
   depends_on "cmake" => :build

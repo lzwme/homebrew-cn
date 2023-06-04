@@ -8,13 +8,14 @@ class AwsElasticbeanstalk < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b93fd039d9414b3e1270e6e81eadcf6f22762388641c54a9a6387853640d4c92"
-    sha256 cellar: :any,                 arm64_monterey: "35522ae97f8858160c5d1d8570996191bd66b8bad204c66984a387673e1c849e"
-    sha256 cellar: :any,                 arm64_big_sur:  "185f84fa9f901f768a3f1c871b2e6e0afe7bdbc10acd27b6529d2731ec9c02a4"
-    sha256 cellar: :any,                 ventura:        "0888cf81d1320a37805c61dc013f2eda1b823bc46df0777ee3482a124bb913d2"
-    sha256 cellar: :any,                 monterey:       "f17a196c3412adad4d33f5d6c68836476db1cdc648381dcad5a649e4fa4454e8"
-    sha256 cellar: :any,                 big_sur:        "b9aa5f8c21607cb0f120896a028cb4b2208dc67e155462547c0239dbcef80ba7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee3ad3713a163e3e51a6e9de2f39453598165d91f729e2615546267e4d9f4eae"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "f4525260b61ba715a9c988dcee0750867cf65cfe1a9e1eac81e11ac18581c9f9"
+    sha256 cellar: :any,                 arm64_monterey: "b7bcf4b486fd25374eb5ffa5131527c67ce2275bc106e982ec3782207ee9ad99"
+    sha256 cellar: :any,                 arm64_big_sur:  "166515cd87e5142bbeae12b158ed4d36f23f179578630775e824237bf8d7f865"
+    sha256 cellar: :any,                 ventura:        "33bf20935929ab98f0d26eb426eeb14c23f3b706dffdaa584af5978bf1970a9f"
+    sha256 cellar: :any,                 monterey:       "1e3b314a04e70a4fec69e69812cb6f8ae68473640613f1c2ce2ec34f42d17343"
+    sha256 cellar: :any,                 big_sur:        "fb14c8fba96a14eeaf7fcec68d6b19003722b123e395545b82518cf75b9d2c3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6dfc02d68750a2c4a89c9b2669a4cb179a4ffad8906477eea61b672217639b4c"
   end
 
   # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
@@ -56,8 +57,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
-    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
+    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
+    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "cffi" do
@@ -76,8 +77,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz"
-    sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
+    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
+    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
   end
 
   resource "docker" do
@@ -116,8 +117,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "paramiko" do
-    url "https://files.pythonhosted.org/packages/e8/53/e614a5b7bcc658d20e6eff6ae068863becb06bf362c2f135f5c290d8e6a2/paramiko-3.1.0.tar.gz"
-    sha256 "6950faca6819acd3219d4ae694a23c7a87ee38d084f70c1724b0c0dbb8b75769"
+    url "https://files.pythonhosted.org/packages/87/62/cee9551811c846e9735f749dbdf05d4f9f0dbcecd66eae35b5daacf9a117/paramiko-3.2.0.tar.gz"
+    sha256 "93cdce625a8a1dc12204439d45033f3261bdb2c201648cfcdc06f9fd0f94ec29"
   end
 
   resource "pathspec" do
@@ -130,7 +131,7 @@ class AwsElasticbeanstalk < Formula
     sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
   end
 
-  resource "PyNaCl" do
+  resource "pynacl" do
     url "https://files.pythonhosted.org/packages/a7/22/27582568be639dfe22ddb3902225f91f2f17ceff88ce80e4db396c8986da/PyNaCl-1.5.0.tar.gz"
     sha256 "8ac7448f09ab85811607bdd21ec2464495ac8b7c66d146bf545b0f08fb9220ba"
   end
@@ -145,7 +146,7 @@ class AwsElasticbeanstalk < Formula
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
-  resource "PyYAML" do
+  resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
     sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
   end
@@ -176,8 +177,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
-    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
+    url "https://files.pythonhosted.org/packages/e2/7d/539e6f0cf9f0b95b71dd701a56dae89f768cd39fd8ce0096af3546aeb5a3/urllib3-1.26.16.tar.gz"
+    sha256 "8f135f6502756bde6b2a9b28989df5fbe87c9970cecaa69041edcce7f0589b14"
   end
 
   resource "wcwidth" do

@@ -3,18 +3,18 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/45/e8/57cc5fd57bcd364321aa5a3f78d5208a58286da37e217161b9e50856a58f/schemathesis-3.19.3.tar.gz"
-  sha256 "4c2ce9cd5cad61eee4d229a3c664ec59daa5c3621ff5aa72b317de8667486b78"
+  url "https://files.pythonhosted.org/packages/d6/0b/f71302789035165c317944c150fd0f4f805d6b177b38f7d16156d74501f9/schemathesis-3.19.5.tar.gz"
+  sha256 "0570a2d6f0672e360acd5334e428eb20bb5f77565e60d02280fab558afef43cc"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "587f3a67db64cfba26967ebd84b0bd4a813d2bee1ff0bcdcd293fd43c00c5e05"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "45bca526fbe464a8886d319413d8089e809be48efaea6d2804b99ad8f3044142"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9dfbad6e553a3699f3e7c0e31439781934e067d24fa546a67d6adb6be1f73e3e"
-    sha256 cellar: :any_skip_relocation, ventura:        "72f54de9e28bfbee663bf1e3fb77cbf40293e2d7981ccc1ec36186f54bbce2b5"
-    sha256 cellar: :any_skip_relocation, monterey:       "c50efb7a803b4e57515229bfe743ca39f076f55997b23825e591f4024bdb1fb5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a7c006e56610084043f9c051b8f3b944ba93da4f889e780ddf40f49f03cbb2fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8bb572ed429dd95a850a1f418b8a36f2a76a9c70068da8fd87516f4a16b9ffb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "17234cda1986266bb94db94f937bd7ffd19237fdb3b09eefd8400653d97b4fa9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f0a74589d3d381308f40bbd68f97b16089390ebc71fdc06657389684afc43008"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b438714982e2b26922c7de2799b844c3b6da5c8e0502d62f67a6bb26c7a737a4"
+    sha256 cellar: :any_skip_relocation, ventura:        "af7addb5a0bd6017d822160ee8537ff9a090ee8c3296221cdca0db3653f54f53"
+    sha256 cellar: :any_skip_relocation, monterey:       "4f3fd772170a1bfc95fbf5a276b27fe994334bb10ddeaa8706995def90a06f70"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9a2fadf974b33a90f05e72d55b0d6880e443a29fc367a211b076363468db75e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2907dc7950803f6489df4e7ee8240ad441700d0478472c18d71941d259f5ec0e"
   end
 
   depends_on "python-typing-extensions"
@@ -23,8 +23,8 @@ class Schemathesis < Formula
   depends_on "six"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/8b/94/6928d4345f2bc1beecbff03325cad43d320717f51ab74ab5a571324f4f5a/anyio-3.6.2.tar.gz"
-    sha256 "25ea0d673ae30af41a0c442f81cf3b38c7e79fdc7b60335a4c14e05eb0947421"
+    url "https://files.pythonhosted.org/packages/c6/b3/fefbf7e78ab3b805dec67d698dc18dd505af7a18a8dd08868c9b4fa736b5/anyio-3.7.0.tar.gz"
+    sha256 "275d9973793619a5374e1c89a4f4ad3f4b0a5510a2b5b939444bee8f4c4d37ce"
   end
 
   resource "attrs" do
@@ -83,8 +83,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/ca/bb/5e142069484aba2f1d34050b2b50518a19fb72fb25987da7bb4b8606084e/hypothesis-6.75.3.tar.gz"
-    sha256 "15cdadb80a7ac59087581624d266a4fb585b5cce9b7f88f506c481a9f0e583f6"
+    url "https://files.pythonhosted.org/packages/9d/71/dfbabcf58e8c6abb04543a1db9f779d65efb15f04db06e875efc56573ee8/hypothesis-6.75.9.tar.gz"
+    sha256 "d006279cbfaef990ac60273fc598a5052a10ae40ea30b7860ade0a767a2e6fc2"
   end
 
   resource "hypothesis-graphql" do
@@ -118,8 +118,8 @@ class Schemathesis < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
-    sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
+    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
+    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
   end
 
   resource "multidict" do

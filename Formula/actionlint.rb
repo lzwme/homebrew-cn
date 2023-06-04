@@ -6,17 +6,25 @@ class Actionlint < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f5658fd0db5c992ad3240708cdb96773665896c83b10be9fd719d1caea07e428"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f5658fd0db5c992ad3240708cdb96773665896c83b10be9fd719d1caea07e428"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f5658fd0db5c992ad3240708cdb96773665896c83b10be9fd719d1caea07e428"
-    sha256 cellar: :any_skip_relocation, ventura:        "0bed00383fb6d62acf89694b979708c7474ffcd943f7449cea90998ab04da948"
-    sha256 cellar: :any_skip_relocation, monterey:       "0bed00383fb6d62acf89694b979708c7474ffcd943f7449cea90998ab04da948"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0bed00383fb6d62acf89694b979708c7474ffcd943f7449cea90998ab04da948"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3212d105058cdcbd0beb8b5ccdfb5361fcc53b6c12c226b94c867b09821c5473"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3889ec9044a69b18fa9d61fa371cbff4438ec7c095db01ba476b73261e5f7fb9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3889ec9044a69b18fa9d61fa371cbff4438ec7c095db01ba476b73261e5f7fb9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3889ec9044a69b18fa9d61fa371cbff4438ec7c095db01ba476b73261e5f7fb9"
+    sha256 cellar: :any_skip_relocation, ventura:        "0ce064aabda0438f12fd4b8dbc54b287286f70a09abed2d5067aad3a06feda58"
+    sha256 cellar: :any_skip_relocation, monterey:       "0ce064aabda0438f12fd4b8dbc54b287286f70a09abed2d5067aad3a06feda58"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0ce064aabda0438f12fd4b8dbc54b287286f70a09abed2d5067aad3a06feda58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9d2dbe78ce86aa3896945ed42f5db165fbcb4a29a13bf72db4e1b9fd300c9da"
   end
 
   depends_on "go" => :build
   depends_on "ronn" => :build
+
+  # Support macos-13 GitHub-hosted runners.
+  # Remove at next release.
+  patch do
+    url "https://github.com/rhysd/actionlint/commit/7aab63e3872d169984ad86d10db293355f24fb7b.patch?full_index=1"
+    sha256 "b54f30a848db091915008abd435fa36c1b73e087a85b9a90ba358243afa6ad6f"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/rhysd/actionlint.version=#{version}"), "./cmd/actionlint"

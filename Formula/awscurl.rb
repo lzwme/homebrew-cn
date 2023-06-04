@@ -9,14 +9,14 @@ class Awscurl < Formula
   head "https://github.com/okigan/awscurl.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "7c9d865ea1e7fc3b671e64581deb5111800d6f17f9f20b6c51480875f1ff38ef"
-    sha256 cellar: :any,                 arm64_monterey: "f75f8a9b1cdd4c08a8f92a9f530b76f5407be755968515d375583d06a5342166"
-    sha256 cellar: :any,                 arm64_big_sur:  "86a40217612fece76e9b6c2e6383a2b604bed24c2d639f5569470a7d1317cb03"
-    sha256 cellar: :any,                 ventura:        "8b08442793d6c285d48a7cc2eb1c57250d084ef8a2e2974048023174e1204271"
-    sha256 cellar: :any,                 monterey:       "51242f8224ef70227af6e424ac4b6f7addeddd2c6e19e5b73521cd335e3277c7"
-    sha256 cellar: :any,                 big_sur:        "957c65b5ad09ef921f4df9dc6cc20d8f0335df4255a58483e70f2aac1035a0dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c22c9b3846d8a2f3963510e84c7953eb218b5f87bd91ae1ea01258315328c1e0"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "dc5381b076c01ede8d018ec711ea6f1abbcf4d12cacb333883c6abf59bb7b2bb"
+    sha256 cellar: :any,                 arm64_monterey: "f6b7c0184301018dd769a28ac76e096c20a0960847b6debe9ced8d846005c0b8"
+    sha256 cellar: :any,                 arm64_big_sur:  "bdf3cf6f8e7230d3ed5fa7c307e800d7d65aba4294af8e01f40d2c555d8e9b80"
+    sha256 cellar: :any,                 ventura:        "a6dd0224c8f180309205e03fa5c15c389e83235e2f51e4f97643f48b553b7cbd"
+    sha256 cellar: :any,                 monterey:       "422a68123255f559f86e47c24b4337d9cee695e3d4f8d42cbd00c19840f5d87c"
+    sha256 cellar: :any,                 big_sur:        "d72b3f5805e85a19c209f592c68a564f128f6e15cbb2871c6006dcf341e7a4a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0cb13826b28199aafff8566f289b035f4c69e5e739328ae508b33d5652ae2ad"
   end
 
   depends_on "rust" => :build
@@ -51,8 +51,8 @@ class Awscurl < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz"
-    sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
+    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
+    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
   end
 
   resource "idna" do
@@ -61,8 +61,8 @@ class Awscurl < Formula
   end
 
   resource "pyopenssl" do
-    url "https://files.pythonhosted.org/packages/8f/72/f1d9e92f5d3a58aba3b71ad512de19eb9f82e7b98795662bf7b796be71e5/pyOpenSSL-23.1.1.tar.gz"
-    sha256 "841498b9bec61623b1b6c47ebbc02367c07d60e0e195f19790817f10cc8db0b7"
+    url "https://files.pythonhosted.org/packages/be/df/75a6525d8988a89aed2393347e9db27a56cb38a3e864314fac223e905aef/pyOpenSSL-23.2.0.tar.gz"
+    sha256 "276f931f55a452e7dea69c7173e984eb2a4407ce413c918aa34b55f82f9b8bac"
   end
 
   resource "requests" do

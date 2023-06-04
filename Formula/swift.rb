@@ -4,8 +4,8 @@ class Swift < Formula
   desc "High-performance system programming language"
   homepage "https://www.swift.org"
   # NOTE: Keep version in sync with resources below
-  url "https://ghproxy.com/https://github.com/apple/swift/archive/refs/tags/swift-5.8-RELEASE.tar.gz"
-  sha256 "16c68b4c4872651d4fc7e361df7731b7cc2592b293473d41bd331cd1a1fc3887"
+  url "https://ghproxy.com/https://github.com/apple/swift/archive/refs/tags/swift-5.8.1-RELEASE.tar.gz"
+  sha256 "f65381a9dfea4579323e5aff04d4224f2d8f505fcc6e3e83022e734d4f54575f"
   license "Apache-2.0"
 
   # This uses the `GithubLatest` strategy because a `-RELEASE` tag is often
@@ -17,13 +17,13 @@ class Swift < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f410b93f46e8ad6284f6fa0d77e9c10e175612ffcf6a9db5b3e991f3bddb80ba"
-    sha256 cellar: :any,                 arm64_monterey: "a44517686d9775dd46f1b876b81d0686b32302ac769260413df37113bf85d203"
-    sha256 cellar: :any,                 arm64_big_sur:  "3033df7b3a912e0997b82c3f7fd8713412488a9a594de53d891c77d02e5d1773"
-    sha256 cellar: :any,                 ventura:        "f4bb582bf95e1f0030f3892135be126bef54926227751e99c610db69491d8858"
-    sha256 cellar: :any,                 monterey:       "a023277080bae71623cd81b0a4bde429d8aa60a8bb6f9f07d3920a87bd3049fe"
-    sha256 cellar: :any,                 big_sur:        "98120da805e03a9d459ed6e666243e51cc1fbbc1625e321429e8b811a37b1cce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52820df701452a42ffae7c3b7c8ab3a568ec2bfc3a34ec698bfd53743b21d3b0"
+    sha256 cellar: :any,                 arm64_ventura:  "3ab1ede793351d42da9292f793ca9265a0c485a30eec47c75bdde31d99b23716"
+    sha256 cellar: :any,                 arm64_monterey: "495ac1e380f9fe7a9bf2d0b40dca16fa0142588d63832982d46375f72fa25371"
+    sha256 cellar: :any,                 arm64_big_sur:  "2d10c6756efd0e3264643cf388e09c9158159442dcdb71bcf035e246d45b13f8"
+    sha256 cellar: :any,                 ventura:        "224644f2f41851ee586fd89a1cad1cb6f638f1f48001443175fd1d15dcefc0cb"
+    sha256 cellar: :any,                 monterey:       "81cdac6a0a14c549cc3c5225977cb6233aaedd7af8222ff7c443af042c8b1f5b"
+    sha256 cellar: :any,                 big_sur:        "c408aee527af3418c7ae256114c246776fbd806fa56e02cde3e4356039b774a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16f0cedfeaa6a4d9f1d8213cdc96735565fb011a12edcb12a04f7aa9a7b425a0"
   end
 
   keg_only :provided_by_macos
@@ -52,18 +52,18 @@ class Swift < Formula
     depends_on "icu4c" # Used in swift-corelibs-foundation
 
     resource "swift-corelibs-foundation" do
-      url "https://ghproxy.com/https://github.com/apple/swift-corelibs-foundation/archive/refs/tags/swift-5.8-RELEASE.tar.gz"
-      sha256 "ff7e5903c80364a1531ab4af7e6fe861998a069e425d6a842fa6ca0236504a9c"
+      url "https://ghproxy.com/https://github.com/apple/swift-corelibs-foundation/archive/refs/tags/swift-5.8.1-RELEASE.tar.gz"
+      sha256 "b71505ae557a15481c05bbfaaeee83047e109c285ce4c4c7e06ba79b1aea3f2c"
     end
 
     resource "swift-corelibs-libdispatch" do
-      url "https://ghproxy.com/https://github.com/apple/swift-corelibs-libdispatch/archive/refs/tags/swift-5.8-RELEASE.tar.gz"
-      sha256 "391d2bcaea22c4aa980400c3a29b3d9991641aa62253b693c0b79c302eafd5a0"
+      url "https://ghproxy.com/https://github.com/apple/swift-corelibs-libdispatch/archive/refs/tags/swift-5.8.1-RELEASE.tar.gz"
+      sha256 "ec27aabf9b0500ad2abcc53b8902a7673d9871106097851ce226e2aa817d1b0e"
     end
 
     resource "swift-corelibs-xctest" do
-      url "https://ghproxy.com/https://github.com/apple/swift-corelibs-xctest/archive/refs/tags/swift-5.8-RELEASE.tar.gz"
-      sha256 "b5a007afd43d702d31a1bfc165e3ded0142b0526a56b1a532351b8d751b2499f"
+      url "https://ghproxy.com/https://github.com/apple/swift-corelibs-xctest/archive/refs/tags/swift-5.8.1-RELEASE.tar.gz"
+      sha256 "194180362ba8a18f60f4cc371ada705be2a51d317364055b17024bf9ae405e26"
     end
   end
 
@@ -71,8 +71,8 @@ class Swift < Formula
   fails_with :gcc
 
   resource "llvm-project" do
-    url "https://ghproxy.com/https://github.com/apple/llvm-project/archive/refs/tags/swift-5.8-RELEASE.tar.gz"
-    sha256 "8435ea5e39d34c74b1a2600376eff4b217f9933830e23d6cf67521513fce7706"
+    url "https://ghproxy.com/https://github.com/apple/llvm-project/archive/refs/tags/swift-5.8.1-RELEASE.tar.gz"
+    sha256 "f4b6a4b1589d48fa2295d2709b99d1bfbbc6bfb2778dc72a4d72da3c25ff5d92"
 
     # Fix finding Homebrew Python executable on Linux.
     # Remove with Swift 5.10+.
@@ -83,73 +83,73 @@ class Swift < Formula
   end
 
   resource "cmark" do
-    url "https://ghproxy.com/https://github.com/apple/swift-cmark/archive/refs/tags/swift-5.8-RELEASE.tar.gz"
-    sha256 "e3de63c4a6672e13e7b7aa80dcbe2361fbac507851440a0ac61e20f1cb470119"
+    url "https://ghproxy.com/https://github.com/apple/swift-cmark/archive/refs/tags/swift-5.8.1-RELEASE.tar.gz"
+    sha256 "89ad876b686192b806c61b390b076cf3cbb6459af6acdd3e93cd1e3d8a74c7f6"
   end
 
   resource "llbuild" do
-    url "https://ghproxy.com/https://github.com/apple/swift-llbuild/archive/refs/tags/swift-5.8-RELEASE.tar.gz"
-    sha256 "6345ae69ac9b8bb61b61f14871b322f83b1d08f70c261bd9a2f86a998c394c0c"
+    url "https://ghproxy.com/https://github.com/apple/swift-llbuild/archive/refs/tags/swift-5.8.1-RELEASE.tar.gz"
+    sha256 "2df6fa3d92a351df97f228148405462e3aebcd4f0077b17e0ee5f5514575aa68"
   end
 
   resource "swiftpm" do
-    url "https://ghproxy.com/https://github.com/apple/swift-package-manager/archive/refs/tags/swift-5.8-RELEASE.tar.gz"
-    sha256 "2cc1b39452e5b615170d5d9ba4fdef81e8e644124af11e3affb8e385c2219f32"
+    url "https://ghproxy.com/https://github.com/apple/swift-package-manager/archive/refs/tags/swift-5.8.1-RELEASE.tar.gz"
+    sha256 "51967163d971aac66f9667d2a9387da3c25b70118bc1e82cef309759f7b1d272"
   end
 
   resource "indexstore-db" do
-    url "https://ghproxy.com/https://github.com/apple/indexstore-db/archive/refs/tags/swift-5.8-RELEASE.tar.gz"
-    sha256 "f02a8646ce03cd89cc3db18ee460a1395c1f2285ee656e15c8c24c21f14eca31"
+    url "https://ghproxy.com/https://github.com/apple/indexstore-db/archive/refs/tags/swift-5.8.1-RELEASE.tar.gz"
+    sha256 "d9ff209be9a43109a80f1b2948fd34f203e1d55a944b1a2ea34439a75e218dc1"
   end
 
   resource "sourcekit-lsp" do
-    url "https://ghproxy.com/https://github.com/apple/sourcekit-lsp/archive/refs/tags/swift-5.8-RELEASE.tar.gz"
-    sha256 "cb74c4212e2387a5e8d8fba0ba96dad79191294275366e6c8b2cce9c07d9ea61"
+    url "https://ghproxy.com/https://github.com/apple/sourcekit-lsp/archive/refs/tags/swift-5.8.1-RELEASE.tar.gz"
+    sha256 "abc341ac3e05c01fe93949cdd72ee9aefc3b785a9f91ead32169764a1af6625e"
   end
 
   resource "swift-driver" do
-    url "https://ghproxy.com/https://github.com/apple/swift-driver/archive/refs/tags/swift-5.8-RELEASE.tar.gz"
-    sha256 "1ae19fe5c953df382d174ef4f99b3c7511d32a0037cb043ebd5f681c3d2504dd"
+    url "https://ghproxy.com/https://github.com/apple/swift-driver/archive/refs/tags/swift-5.8.1-RELEASE.tar.gz"
+    sha256 "576ba0b330f2dc1fde6979dcecfccbb13c43d76b118bc8b43ecef9e62332df84"
   end
 
   resource "swift-tools-support-core" do
-    url "https://ghproxy.com/https://github.com/apple/swift-tools-support-core/archive/refs/tags/swift-5.8-RELEASE.tar.gz"
-    sha256 "6651c7f798f291386ac2d9e4be35cf25b26db4669d2ef3ad215ff3631f8850d6"
+    url "https://ghproxy.com/https://github.com/apple/swift-tools-support-core/archive/refs/tags/swift-5.8.1-RELEASE.tar.gz"
+    sha256 "914c697ded28be930f5afc844bc5712d2f47c14c83fae945ecca0f49af200f70"
   end
 
   resource "swift-docc" do
-    url "https://ghproxy.com/https://github.com/apple/swift-docc/archive/refs/tags/swift-5.8-RELEASE.tar.gz"
-    sha256 "0c312f6bb76c8d1d6aaadce96fc18611d59325caab919172ac03703369fc23c6"
+    url "https://ghproxy.com/https://github.com/apple/swift-docc/archive/refs/tags/swift-5.8.1-RELEASE.tar.gz"
+    sha256 "95ba75c40eaa3571250f7f0769b6784a50a3a45796be9c71362635f88a5d09b7"
   end
 
   resource "swift-lmdb" do
-    url "https://ghproxy.com/https://github.com/apple/swift-lmdb/archive/refs/tags/swift-5.8-RELEASE.tar.gz"
-    sha256 "cab9f65050ea72f3a0346371e741df3b3d26873a15ed2d5c46472566234f5a81"
+    url "https://ghproxy.com/https://github.com/apple/swift-lmdb/archive/refs/tags/swift-5.8.1-RELEASE.tar.gz"
+    sha256 "75d7760749e9d7a263aa428ef5867026a07f6baf290e190f440115a4faf55e56"
   end
 
   resource "swift-docc-render-artifact" do
-    url "https://ghproxy.com/https://github.com/apple/swift-docc-render-artifact/archive/refs/tags/swift-5.8-RELEASE.tar.gz"
-    sha256 "69f44786f97f117389265171783e57bdc341ec7499ba1f71675b6e6fa597eff8"
+    url "https://ghproxy.com/https://github.com/apple/swift-docc-render-artifact/archive/refs/tags/swift-5.8.1-RELEASE.tar.gz"
+    sha256 "024bb04690a49654b9bf901c42eb406d1ff255add45cc2655e31819eea841b4a"
   end
 
   resource "swift-docc-symbolkit" do
-    url "https://ghproxy.com/https://github.com/apple/swift-docc-symbolkit/archive/refs/tags/swift-5.8-RELEASE.tar.gz"
-    sha256 "4930a4fc94a45dd6ef76133c0c59fd458431f9496e9e70c54931e47aec0df9f6"
+    url "https://ghproxy.com/https://github.com/apple/swift-docc-symbolkit/archive/refs/tags/swift-5.8.1-RELEASE.tar.gz"
+    sha256 "0d478cd7ba78e28175e93d1cf195c876fd97ae816f99d6981a398577be723a41"
   end
 
   resource "swift-markdown" do
-    url "https://ghproxy.com/https://github.com/apple/swift-markdown/archive/refs/tags/swift-5.8-RELEASE.tar.gz"
-    sha256 "24ce24201152e598c2471976a2e132ea5b3fef7b7b515feeb37fd510720610a5"
+    url "https://ghproxy.com/https://github.com/apple/swift-markdown/archive/refs/tags/swift-5.8.1-RELEASE.tar.gz"
+    sha256 "49aee3b5f2a90cda656191de41752d21b62e170ed5abbabd8078a82c67554e71"
   end
 
   resource "swift-experimental-string-processing" do
-    url "https://ghproxy.com/https://github.com/apple/swift-experimental-string-processing/archive/refs/tags/swift-5.8-RELEASE.tar.gz"
-    sha256 "ff4507448e31a011d51b3143ef1ba9e8694886dab4cd89ca202f42b79d1c9e0c"
+    url "https://ghproxy.com/https://github.com/apple/swift-experimental-string-processing/archive/refs/tags/swift-5.8.1-RELEASE.tar.gz"
+    sha256 "83714d2178d2a02de35e75dbe11ff2443695a65aaf1136e5a7b9f152716e75a6"
   end
 
   resource "swift-syntax" do
-    url "https://ghproxy.com/https://github.com/apple/swift-syntax/archive/refs/tags/swift-5.8-RELEASE.tar.gz"
-    sha256 "24ed18b53c4339caff746be184c16d75bd394ed10c9cebddfa776c83a47b5d9b"
+    url "https://ghproxy.com/https://github.com/apple/swift-syntax/archive/refs/tags/swift-5.8.1-RELEASE.tar.gz"
+    sha256 "5885ad4e0ac448c6d4be85b17c5dd28e825aedf3664cf1b928017fb81938f52a"
   end
 
   # To find the version to use, check the release/#{version.major_minor} entry of:

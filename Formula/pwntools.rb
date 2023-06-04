@@ -9,14 +9,14 @@ class Pwntools < Formula
   head "https://github.com/Gallopsled/pwntools.git", branch: "dev"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "78877c2faedf3d8b52a0cdfc44b3b31f6cb0e8627e739bdd314474e44a518f68"
-    sha256 cellar: :any,                 arm64_monterey: "ca344ac62a6bee0138aede9c6344430bf1ed8a5b74e49772d3aeca95d94a7e85"
-    sha256 cellar: :any,                 arm64_big_sur:  "38b2b01b336e4539772637a90884f7a6fb0d49fcf24cd9578cc29bad0d8c2122"
-    sha256 cellar: :any,                 ventura:        "4483deb485956a6c8b51bd1aa11589a499539d50fc7ba66af9ceb0a976abbadf"
-    sha256 cellar: :any,                 monterey:       "599040d53abe961a13076aa3ac7632a24fff260bb4739417d96594bdeb0ab505"
-    sha256 cellar: :any,                 big_sur:        "a856e58523684e2be5047f7aa07851f668bfd751f6dd0f726c22dc8d788bd51e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65bb063987a6cc7464fcf1b5e8101a162e31145265b886b7a134e57dc524843c"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "2fa35a1654653dbe4a3386781e9f8743a27f222a1eefeb4ed8b7c1be01a80811"
+    sha256 cellar: :any,                 arm64_monterey: "e5294ef4357f126b06dd4042fb4cee00f97a2a3933aa4ac2895d1a5422c16b30"
+    sha256 cellar: :any,                 arm64_big_sur:  "df71c952f1777a28257af8bf6b20f4e4b65f1dcd3d7fb7517bfeb3d60933adc2"
+    sha256 cellar: :any,                 ventura:        "9d3c9b01e7fdadf851edb33e2b052738cc4f14781dd4c9d464b8b899b5c298f7"
+    sha256 cellar: :any,                 monterey:       "6c9d45e783d203e67b2c36b1740657efef19ed12274967e43f27624199ca4927"
+    sha256 cellar: :any,                 big_sur:        "40f9162031e3d05377aabb2b2417d45d27d98f4d2cccb49e3c3827cded67002a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c077d29c8db5bd4a2665536e6b0460043f0dea6c25554083536cf1c8f7e8bc6"
   end
 
   depends_on "rust" => :build
@@ -62,8 +62,8 @@ class Pwntools < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz"
-    sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
+    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
+    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
   end
 
   resource "idna" do
@@ -82,8 +82,8 @@ class Pwntools < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
-    sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
+    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
+    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
   end
 
   resource "packaging" do
@@ -92,13 +92,13 @@ class Pwntools < Formula
   end
 
   resource "paramiko" do
-    url "https://files.pythonhosted.org/packages/e8/53/e614a5b7bcc658d20e6eff6ae068863becb06bf362c2f135f5c290d8e6a2/paramiko-3.1.0.tar.gz"
-    sha256 "6950faca6819acd3219d4ae694a23c7a87ee38d084f70c1724b0c0dbb8b75769"
+    url "https://files.pythonhosted.org/packages/87/62/cee9551811c846e9735f749dbdf05d4f9f0dbcecd66eae35b5daacf9a117/paramiko-3.2.0.tar.gz"
+    sha256 "93cdce625a8a1dc12204439d45033f3261bdb2c201648cfcdc06f9fd0f94ec29"
   end
 
   resource "plumbum" do
-    url "https://files.pythonhosted.org/packages/56/e0/bcff74e68f8b71f4b9ce9e79b533df6d1ecff33c856fb93aab7e8a7c8d82/plumbum-1.8.1.tar.gz"
-    sha256 "88a40fc69247d0cd585e21ca169b3820f46c484535102e16455d2202727bb37b"
+    url "https://files.pythonhosted.org/packages/8e/3d/6bbc1b93fd394f6cc9fbe098d8e2740063d58c36dd8da876f790458ded46/plumbum-1.8.2.tar.gz"
+    sha256 "9e6dc032f4af952665f32f3206567bc23b7858b1413611afe603a3f8ad9bfd75"
   end
 
   resource "psutil" do

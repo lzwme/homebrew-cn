@@ -10,14 +10,14 @@ class Credstash < Formula
   head "https://github.com/fugue/credstash.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_ventura:  "1cffee038b336f6e9df970b9d44e84b7450243bb198e88b98ee3b389c5c2d87b"
-    sha256 cellar: :any,                 arm64_monterey: "357c449f4b8d69267518766e9987c990ae81191c085ae04eb9c9a1badd30748b"
-    sha256 cellar: :any,                 arm64_big_sur:  "8d37bc25623a567bf438a79c8454028b9098c974e328d112a1c43d25453da2dd"
-    sha256 cellar: :any,                 ventura:        "7030205fb14bc22af538fa845510fbd1c9ed194bf89975129174ad51be8b06f1"
-    sha256 cellar: :any,                 monterey:       "4027f1207181e09013ade7d97529211c287c27a1c0bec3954e4d2dad25e1c4db"
-    sha256 cellar: :any,                 big_sur:        "04d1a325bb4025d10fb59b2b4dfbc10a8ba6241c3b20c7b30e0f182e6f4102ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d78f3ed6e3d277a0dd581595c92479c34a0d7546fcdd415c4ed257cf17f377b"
+    rebuild 4
+    sha256 cellar: :any,                 arm64_ventura:  "7bf135b807cf50879b0cf4703401e3f27a6ff18bc8737087f866dd14a8ed4166"
+    sha256 cellar: :any,                 arm64_monterey: "32acfb14763d393e0b1a2c86f872c0503c44753de9fceed6eea0035a365882ae"
+    sha256 cellar: :any,                 arm64_big_sur:  "d0a5a7024af1ac706ea0d0acb3421c3253d6f15040a9b97487019e067ff1d2fe"
+    sha256 cellar: :any,                 ventura:        "f31486fcc4ae1218aac30fbb3455d9fcbbcf69a0140ac6e79551e1c19c245c8d"
+    sha256 cellar: :any,                 monterey:       "9bd745d1b80eee75ffbd8ae8c8cddffac9922e6718cb547d59ad95e25b0fd976"
+    sha256 cellar: :any,                 big_sur:        "ba056328484e51fc1d3aef15f7f4ea2e74a2cf3f1d78fb292e67897b9d159222"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e4dc410c481a12b8a420ab90b48317984c0c462380dacce92539997af4a3183"
   end
 
   depends_on "rust" => :build
@@ -34,18 +34,18 @@ class Credstash < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/f7/d4/0448f83fa6fb5de4bafaf5490d105683ad82bb97d95ce82ec26c48180a8a/boto3-1.26.142.tar.gz"
-    sha256 "8f4b5c93a7f0c8e40ae1983cfbefd017bd625e554426544c78dceb4045648911"
+    url "https://files.pythonhosted.org/packages/6f/d9/7fffa68720d8d1a255fc8a8635d9d5a7673ffc7ab6fabdc4f7f023f78c10/boto3-1.26.146.tar.gz"
+    sha256 "3d7f1b43d2e5a10ee29d4940e714d72a2f6f1a6f6ba856c82ba9328d83062605"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/fd/40/df47658153a2458cf92c45bbcb878b96e860dfc30ac935117ff7905d3d21/botocore-1.29.142.tar.gz"
-    sha256 "512d2f48fc1471f169bc210eede662f8da66be3cebc1515dfb5411a18b2aeabf"
+    url "https://files.pythonhosted.org/packages/61/6f/f124fbf71d9a327bf1abbca92b7809010224a381fb740226477bac7d6c88/botocore-1.29.146.tar.gz"
+    sha256 "77f7793cb36074eb84d606a23ad6e1d57c20f7a2eeab7d9136d3e63c584e0504"
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz"
-    sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
+    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
+    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
   end
 
   resource "jmespath" do

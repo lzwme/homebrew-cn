@@ -1,8 +1,8 @@
 class CargoC < Formula
   desc "Helper program to build and install c-like libraries"
   homepage "https://github.com/lu-zero/cargo-c"
-  url "https://ghproxy.com/https://github.com/lu-zero/cargo-c/archive/refs/tags/v0.9.19.tar.gz"
-  sha256 "c2633ff22e52da9985394f30c8ef5e9abbac4d14c9b79e3690c8e95cf500ab97"
+  url "https://ghproxy.com/https://github.com/lu-zero/cargo-c/archive/refs/tags/v0.9.20.tar.gz"
+  sha256 "6a89125c4b59279e73f977ef8a7aa5d83240bdf5d1d7ef1a53b8d1f2201a5f41"
   license "MIT"
 
   livecheck do
@@ -11,17 +11,17 @@ class CargoC < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "097654c19e3a973d98a21bb91a2740b7881e070dc889cd182ddb7a12906d156a"
-    sha256 cellar: :any,                 arm64_monterey: "04dad0f34ebfd5abe31466762ea6e6b8c812f2cd3ca236a3c37dbd5526314ee3"
-    sha256 cellar: :any,                 arm64_big_sur:  "4f244e8b64ce2123b8163f8e5754548220353672b6af03b0d32b886c80f20340"
-    sha256 cellar: :any,                 ventura:        "9179fbefd530ca990ea0d91ad600c0454b95cb7fe62bd92116394cfb3a2cf739"
-    sha256 cellar: :any,                 monterey:       "ffd444f86152608d3083fea18bdda1c9e06b63419ff5e22ae073163129f26aa8"
-    sha256 cellar: :any,                 big_sur:        "2484eec666c65c8f1f03120266c6dd18d2e4f8518805432181db17e8d2586451"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49590a93060b83dd6e882325889cc38d7f23527aeb0a3251818da4514052a849"
+    sha256 cellar: :any,                 arm64_ventura:  "0ef918f4ac14aed41aad62420152533545a7c30df1aaa7decbf5f24a24cbfe0f"
+    sha256 cellar: :any,                 arm64_monterey: "a88e7657da288b4e0accdde40c90412b32bed613cfd07e08bba528e3b2798bd8"
+    sha256 cellar: :any,                 arm64_big_sur:  "c6019ed5669a30050e930238f1ee1a1b55abd982452bc4675ad5ab451a0a9598"
+    sha256 cellar: :any,                 ventura:        "5071bf3109f1dd47da21aa963eb7b8f22e11e284c5fc48d91e4a58b3bd38da13"
+    sha256 cellar: :any,                 monterey:       "66f340f5e65ee81878656583c171e896c17f150d76d66c9b465c1a990592c395"
+    sha256 cellar: :any,                 big_sur:        "40eb74a8f25c69a5d1de47ee88cb82da19f6ae16ddff1c1d0c2bec7fddca2c48"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54e4efeb971184e3b265a2c36b7e911a3f043d872f05fe6d09d03033f117621e"
   end
 
   depends_on "rust" => :build
-  depends_on "libgit2@1.5"
+  depends_on "libgit2"
   depends_on "libssh2"
   depends_on "openssl@1.1"
 
@@ -55,7 +55,7 @@ class CargoC < Formula
     assert_match cargo_error, shell_output("#{bin}/cargo-cbuild cbuild 2>&1", 1)
 
     [
-      Formula["libgit2@1.5"].opt_lib/shared_library("libgit2"),
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
       Formula["libssh2"].opt_lib/shared_library("libssh2"),
       Formula["openssl@1.1"].opt_lib/shared_library("libssl"),
       Formula["openssl@1.1"].opt_lib/shared_library("libcrypto"),

@@ -1,18 +1,18 @@
 class Himalaya < Formula
   desc "CLI email client written in Rust"
-  homepage "https://github.com/soywod/himalaya"
-  url "https://ghproxy.com/https://github.com/soywod/himalaya/archive/v0.7.3.tar.gz"
-  sha256 "5bfadca9d6141834c3a97d53a43bdd317e59ee4f893bcc00e6fcbf9fc0f5b55a"
+  homepage "https://pimalaya.org/himalaya/"
+  url "https://ghproxy.com/https://github.com/soywod/himalaya/archive/v0.8.0.tar.gz"
+  sha256 "c9bf62c802b05d3c98e105513042eafbbcbed4c5ed61aec7addae185accc5b40"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "41b7191b1cd36ee358aed11f570cfa842b98214fba02ae4d354eaf63efb26fb1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2b57900dc669ef2c6b4ca090ea44f1fa2c38cdb21b941e16b9c032834835d4c5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d6634f91efb185c79b7c050efa85ab9e777595c2ef9d973fc73606f753a4132c"
-    sha256 cellar: :any_skip_relocation, ventura:        "71ffb9bef4aa418b6a86f00e7e20b70dcf826847533c9cec1e2a9b572a3f97f9"
-    sha256 cellar: :any_skip_relocation, monterey:       "35a90c035e0a20f3ad6668fa8ccbb94b3199c7d959e42b7aa2a6c10783e098ab"
-    sha256 cellar: :any_skip_relocation, big_sur:        "deca93000325093d8c4c3e5e60cc7e8ab823e6fdf20d193c0cfe693967bf6067"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18479b8e7d9451a0aca3d99cd7e4d7aa4deb4a80f861eff0b001979b956166b3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4a106821ad8ac1a398f2f06a1b694874a12143330c319e49f8b7fd14c2878fff"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4332673b3e739f709f691f484c0650f2f53191c7da05830295ac8bf70a150313"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3b72caab5bbcff703bc746a92ca7af8c9b6ac858e73623ae25ffef512627fa80"
+    sha256 cellar: :any_skip_relocation, ventura:        "336d88072ee281dc06862a5d1763c986e62bbfdb4995834d25f4e36b3c8ddc46"
+    sha256 cellar: :any_skip_relocation, monterey:       "7ab02e1d0b86dbd4ed7d6773335d234028864df4e669787e5f1fd0c646ad2a51"
+    sha256 cellar: :any_skip_relocation, big_sur:        "27d7f2bc3b56ef69081052e6bf177c5b5ac035d784f5cc93abc6fa5fe100c4a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81585e75f83cadb692e56cae5475d7574107e215f6c3e47105da9c0a906f744b"
   end
 
   depends_on "rust" => :build
@@ -45,15 +45,17 @@ class Himalaya < Formula
       imap-host = "imap.gmail.com"
       imap-port = 993
       imap-login = "your.email@gmail.com"
-      imap-passwd-cmd = "pass show gmail"
+      imap-auth  = "passwd"
+      imap-passwd = { cmd = "echo password" }
 
       sender = "smtp"
       smtp-host = "smtp.gmail.com"
       smtp-port = 465
       smtp-login = "your.email@gmail.com"
-      smtp-passwd-cmd = "security find-internet-password -gs gmail -w"
+      smtp-auth  = "passwd"
+      smtp-passwd = { cmd = "echo password" }
     EOS
 
-    assert_match "Error: cannot get imap password: password is empty", shell_output("#{bin}/himalaya 2>&1", 1)
+    assert_match "Error: cannot login to imap server", shell_output(bin/"himalaya 2>&1", 1)
   end
 end

@@ -1,21 +1,12 @@
 class Xtrans < Formula
   desc "X.Org: X Network Transport layer shared code"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/lib/xtrans-1.4.0.tar.bz2"
-  sha256 "377c4491593c417946efcd2c7600d1e62639f7a8bbca391887e2c4679807d773"
+  url "https://www.x.org/archive/individual/lib/xtrans-1.5.0.tar.xz"
+  sha256 "1ba4b703696bfddbf40bacf25bce4e3efb2a0088878f017a50e9884b0c8fb1bd"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "24285595cf66a05c9399cb7e9b3d1899ff2c494e0dbce260a2c6e4f748f76f0a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "24285595cf66a05c9399cb7e9b3d1899ff2c494e0dbce260a2c6e4f748f76f0a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1738fd7b80c0ebfe717716a192b00400e804df83d42edf172d42acba1cf09fee"
-    sha256 cellar: :any_skip_relocation, ventura:        "24285595cf66a05c9399cb7e9b3d1899ff2c494e0dbce260a2c6e4f748f76f0a"
-    sha256 cellar: :any_skip_relocation, monterey:       "24285595cf66a05c9399cb7e9b3d1899ff2c494e0dbce260a2c6e4f748f76f0a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "784cdda022187276b0428069a1c57b7f598d4748d2bb824bd483a809fb94ae06"
-    sha256 cellar: :any_skip_relocation, catalina:       "74e4e5cf12976f0b9ef865052f6b40b6d3bb17fad1f6298f7cb54792aec3cb8e"
-    sha256 cellar: :any_skip_relocation, mojave:         "a84a48c11a607fa66fa70119c46b6a590ee0b744ff600c22c2887a6bdedf73bf"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "7bd1e64df9191e69567a8fe7f82e97e6c2aac7a39f3f3ad96661b3369978c861"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24285595cf66a05c9399cb7e9b3d1899ff2c494e0dbce260a2c6e4f748f76f0a"
+    sha256 cellar: :any_skip_relocation, all: "9b83139171ea1c0b61f5d053e824f1be8715c28e7fe190a8784a1a6ea9234047"
   end
 
   depends_on "pkg-config" => :build
@@ -31,9 +22,6 @@ class Xtrans < Formula
       --disable-silent-rules
       --enable-docs=no
     ]
-
-    # Fedora systems do not provide sys/stropts.h
-    inreplace "Xtranslcl.c", "# include <sys/stropts.h>", "# include <sys/ioctl.h>"
 
     system "./configure", *args
     system "make", "install"
