@@ -3,19 +3,18 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/1f/14/fbd3778371894fffa8b2c0453a3386c8e7c045c2033de757aa8df7bf6398/borgmatic-1.7.13.tar.gz"
-  sha256 "af7a6a2f0ae1d9866761bc02aaecc34168d3f059046671f2e157f0ee2985e4b8"
+  url "https://files.pythonhosted.org/packages/13/48/a5537cb049211322eba829fac600cedc7564cbb692911fdeeeec5bfc7626/borgmatic-1.7.14.tar.gz"
+  sha256 "ac00497ddad5f83dafeb21e901bce3ff431219cf5ba38f69c17102e393269a59"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "88b2fae559770beef7685fed73c9cc32cd21b56af3e1b1f8d2f685dace1e169d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4d1fe510ea9cb6cfb570bd58e71a9ca514ebbdac3179fe3a08bf448fe87ad0d0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b994bd1ec93869a7170918294bae6a180ca8c4a596f6674ca8333916beb233e0"
-    sha256 cellar: :any_skip_relocation, ventura:        "00bc0607bc800c1d7a924be4592689be511f18a3894348986009ccd7984b68fe"
-    sha256 cellar: :any_skip_relocation, monterey:       "009f2c9c297374bbb4c1f69aa98253e8209e9abe7744df6810cab117ec754529"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e53e8872c5f6f83902532ee534eb5a1ea749d0560ac9d1d0167be444142de13b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1706f5510531072a7a396c40893f099dff556b16e790fcc0a4435e5f3b85e8cd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c4c80a224c4d2c6763e5b045d6feaff7048d3c27f4be1e427088e08793aa1fc4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a7b561370ca2ccfc1ca79c95b9b80615c1e6a0853297ab9bc9b33ac349ae62df"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e67a4f557231c4c0443d7e0b0cd23c6e456445edcce0d5e1e1655c63278fb0fa"
+    sha256 cellar: :any_skip_relocation, ventura:        "e07b889b81c1bfebd8c5e350bf4b84d5e159be734886e2e9cc2c1ceb1f4dc25e"
+    sha256 cellar: :any_skip_relocation, monterey:       "08d0c289138e71ca6e9494d7d4fe20011aaf74fd370635d06e69946189345e6c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f1f038fcff2c3a05a66f66c9337c9bf9c3652b960915b510102b487e4666fea2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79102a134c9f71eacf5e02bbd818e6fa4e1abea8e7d262403aeb5982693458e9"
   end
 
   depends_on "python@3.11"
@@ -66,8 +65,8 @@ class Borgmatic < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/8c/0d/32f86bfad2755763b926f988252f57f4edbba32f876cb5e6d6f5c57b5f05/ruamel.yaml-0.17.26.tar.gz"
-    sha256 "baa2d0a5aad2034826c439ce61c142c07082b76f4791d54145e131206e998059"
+    url "https://files.pythonhosted.org/packages/39/97/03674459c459b9b69ef71eba039205a72867e5c6c409df3136858f6836f3/ruamel.yaml-0.17.31.tar.gz"
+    sha256 "098ed1eb6d338a684891a72380277c1e6fc4d4ae0e120de9a447275056dda335"
   end
 
   resource "ruamel-yaml-clib" do

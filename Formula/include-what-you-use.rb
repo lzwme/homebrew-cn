@@ -2,6 +2,7 @@ class IncludeWhatYouUse < Formula
   desc "Tool to analyze #includes in C and C++ source files"
   homepage "https://include-what-you-use.org/"
   license "NCSA"
+  revision 1
 
   stable do
     url "https://include-what-you-use.org/downloads/include-what-you-use-0.20.src.tar.gz"
@@ -19,13 +20,13 @@ class IncludeWhatYouUse < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8918358c35d6ed83fd69341673082bd01e4ab9acfd7cb1122419cfc5f67508f6"
-    sha256 cellar: :any,                 arm64_monterey: "4cb45fa8a071aeadca70a16f73d47a932a4ce724610f82ece15085bc6c690b1d"
-    sha256 cellar: :any,                 arm64_big_sur:  "51b47c1d0b805af1b7b662f5a84e0c1e03a451d3cd1e2a27eee6c65e59d3bace"
-    sha256 cellar: :any,                 ventura:        "259f6b1fe808104d1b3f34864cb4cc9087ff5a22be0cfdc883d042fc2b289fbf"
-    sha256 cellar: :any,                 monterey:       "09db32abec4f0ff8ae1be3c49a46a7211b172d41b241b1e1f9bef88b38e97395"
-    sha256 cellar: :any,                 big_sur:        "c59a3a2e24917baa8c964ff26dba554806ada6f837bacdfb1184045889acf0e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c640f19b35c91e79733fae1ef63235eb6caf16a3fb30f58ad8f198b04b1f1171"
+    sha256 cellar: :any,                 arm64_ventura:  "a46b37c52edceed1e29ee97fe41498ff7064b5deb2a720f853487392656840e0"
+    sha256 cellar: :any,                 arm64_monterey: "1758e544df7d750bff4f960a1ccd69a5daaa7934e05c19fdf654f419463ba7b9"
+    sha256 cellar: :any,                 arm64_big_sur:  "af06164bdbd60c21f5223661dc41e2655e56f3a12da856ec264b136b117fa426"
+    sha256 cellar: :any,                 ventura:        "c5ebbdf1f0a808609493482b1bfc06f801c59a860749f0ba094b642014e9ddb3"
+    sha256 cellar: :any,                 monterey:       "369b7f5f71a8cf386ee16daa5904da807e863de88477fac97f696f3d412d1aa5"
+    sha256 cellar: :any,                 big_sur:        "3399dcc5e5ab6e18d594daa37c990bd301b36035b8603f3b41bc105671f1b8f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed6945b3893c94832916329f8b287ae223f4726ab6b39cb80c3bee4b5d5b5e08"
   end
 
   head do

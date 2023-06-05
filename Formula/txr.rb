@@ -1,8 +1,8 @@
 class Txr < Formula
   desc "Lisp-like programming language for convenient data munging"
   homepage "https://www.nongnu.org/txr/"
-  url "http://www.kylheku.com/cgit/txr/snapshot/txr-286.tar.bz2"
-  sha256 "4aa64ef67ca17e00bd16d2fded275ae619a4771ef13b35148191e5ae97c4e47e"
+  url "http://www.kylheku.com/cgit/txr/snapshot/txr-287.tar.bz2"
+  sha256 "2f4f87d4d0dd1242b33b85e3eae3eed3e0889db17e27c7b5b5adab0b6b830f53"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Txr < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1aee5d40695669eb363fa7951b49bd1a56292a42647eae77b02786cb9bd6b9eb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5df97568e87dd134c57aa3bf00ff2dd762fc340e12ad70b7ef70e35f27e81288"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8343296e7d68dfe02ae5ecd5d971e0f1bea82dc9d6b51c80a75c680cacb487fe"
-    sha256 cellar: :any_skip_relocation, ventura:        "45f13e3c271d48de5f02069821781ae48e5e181a1f3ba41c69f27e000af17016"
-    sha256 cellar: :any_skip_relocation, monterey:       "db8063707149f15671cc1e67c29d1714d49de1276b28aa0dc25de1351e46c827"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c0c4ee550980e3a69c9e79526674520a02da21217dc3834ab960a940f32fd766"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89bc69bd36aa5b977f539a2d39699fd9b962cb1183f0b6c61e05af6f46731ccc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a9c1288de80adcc0d507179159a3a8a5d6eaef08c1bf23657b469731e5c5a147"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "15a1d16c168b6102d9e187e7f50f4acd8e4d37f2ba5b5a49c18c26cdbe0497e5"
+    sha256 cellar: :any_skip_relocation, ventura:        "503bb5adb1fd7485d396eff2c0787da2804f579903d476760a7633bfb2e31091"
+    sha256 cellar: :any_skip_relocation, monterey:       "d5ef748d00212d096fe10df33c8e2a7ca993b4c35e9597bd225a69b6d5dedc20"
+    sha256 cellar: :any_skip_relocation, big_sur:        "24396d1583278c5ea089eb5dd6a917d2e525a1eb85fa5d0d604807cfb9ea1859"
   end
 
   depends_on "pkg-config" => :build

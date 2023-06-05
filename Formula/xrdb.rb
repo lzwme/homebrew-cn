@@ -1,18 +1,18 @@
 class Xrdb < Formula
   desc "X resource database utility"
   homepage "https://gitlab.freedesktop.org/xorg/app/xrdb"
-  url "https://www.x.org/releases/individual/app/xrdb-1.2.1.tar.bz2"
-  sha256 "4f5d031c214ffb88a42ae7528492abde1178f5146351ceb3c05f3b8d5abee8b4"
+  url "https://www.x.org/releases/individual/app/xrdb-1.2.2.tar.xz"
+  sha256 "31f5fcab231b38f255b00b066cf7ea3b496df712c9eb2d0d50c670b63e5033f4"
   license "MIT-open-group"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "20eaddd4a2cc97a18ab11bbb4a9a3bdbdcd9bdba4774132711e3e39ccd74165d"
-    sha256 cellar: :any,                 arm64_monterey: "aaf2d43dc2e4568168801a497e542b25cb03f616c651c2206a494397d04873db"
-    sha256 cellar: :any,                 arm64_big_sur:  "4b92f7c647bc44300dab5b8691022244dc0c2941aff0eba4e6ab3b71f9341163"
-    sha256 cellar: :any,                 ventura:        "4d8d4f700b8a23d692f15c156479cb5a132921637a10250f709b8a9efe27a1b6"
-    sha256 cellar: :any,                 monterey:       "d446c1ad4b7d5a7e016a3b85b87b7a8c65756e357d0ed00309e3b02214ed1442"
-    sha256 cellar: :any,                 big_sur:        "b239c7c840e735dc60beb481e535dd96bc645d598ce9e893f1937274ce987cdf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6472dfe4e759cf9a10e24687ea7061da7d78a6a8e1c5bcbadebaa926aef7c05c"
+    sha256 cellar: :any,                 arm64_ventura:  "1b32536870feb4f744ec01f9b09dcc2b5a612b742ab527563ba5661f1f1777ee"
+    sha256 cellar: :any,                 arm64_monterey: "dcb8e3ddd3e7c5fb5d362c5b761477029956d6ab1f2a7952e7a3e6e1112dc70b"
+    sha256 cellar: :any,                 arm64_big_sur:  "c7aeb1ca86ab70fd43c32152c2200677446f7e7b0f376c118c7642cf5aa218bf"
+    sha256 cellar: :any,                 ventura:        "7ef65e0a0e3951b600d7587ef5015ca44606cd5f225ca2c33735979633176fc3"
+    sha256 cellar: :any,                 monterey:       "0681e2deb75be4bcf436002d036f7dafbdabc2401f571255c0c8f225e2cf7728"
+    sha256 cellar: :any,                 big_sur:        "ea5920dfb84ff9ff1d35090dfcd39aa4995163a0bbb515f0396be1137c2d20be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b387dbe59b86aad4b9e297ed43cb2bfc07b7a5c893fa22cf36e8e8712cb722fa"
   end
 
   depends_on "pkg-config"  => :build

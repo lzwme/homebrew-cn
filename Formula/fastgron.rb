@@ -1,18 +1,18 @@
 class Fastgron < Formula
   desc "High-performance JSON to GRON converter"
   homepage "https://github.com/adamritter/fastgron"
-  url "https://ghproxy.com/https://github.com/adamritter/fastgron/archive/v0.4.14.tar.gz"
-  sha256 "e4476eb8a523751ed9a11c0926081a07296b0a27c11c782813c444ec1e8c81fc"
+  url "https://ghproxy.com/https://github.com/adamritter/fastgron/archive/v0.5.0.tar.gz"
+  sha256 "6a53c65fe39e6e2b01b282a77f9c149b9ef3e89e300021b8d1529f39448a45ae"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "940a9e2c4f2354d6baaa93408ecea890c8108dcf834fd01df50007b616d20c79"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8b8eb70fc9dfa6182fdb4f0d8b6f0e85ba767b16a48d131d8f497bacfd756ea2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "68fd50340c824b6fb47040cc610cc8de9476f31bf591cdff8153e7dc86b631d8"
-    sha256 cellar: :any_skip_relocation, ventura:        "cda0eed2c1f33d4d35a670873df4efdc0613871afb8a2039226175eaa05dceff"
-    sha256 cellar: :any_skip_relocation, monterey:       "cf91fc8e7235cb7b047a898cdaecfe9c188df9797fe753c990d89be7fe9d07c3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c9c7d7479cd05d82ea0c1fd501d20dc7758496f0f683e921ca695257e145f1b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7bfac39a4ad52eb84e9cf1c0ec8cfffa98605eb23d6bd0d170347a1c676f63ea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9edd89753030db9b454d61c567de27f8c88ef99abf8f29100143d5b481b7b2ea"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "72b08071be32b71b39ddc7a8163cdaac9d6e74a2fd5dec9255deebde882248d8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c94264785987c6b838fdc30cef8683e0036e5eca37035ca870ec04fcce2e6bab"
+    sha256 cellar: :any_skip_relocation, ventura:        "0fad7152b67f20634ffb024f301b18e0194a9dc9b06cf2c4198bf513be174b7d"
+    sha256 cellar: :any_skip_relocation, monterey:       "0f6d6f7bc7ac930173b6144ddde84a5a1115896624ba63583a306bcd939e8c47"
+    sha256 cellar: :any_skip_relocation, big_sur:        "801ae53c5803713731a5c7830ca91bbca6c3a3e4ee583c67c1ebead4c1278f7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03b35eef83326e847418f827b3487f30e76346ae0f84ca9ab8e3ac34332bb34f"
   end
 
   depends_on "cmake" => :build

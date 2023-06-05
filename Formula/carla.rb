@@ -1,8 +1,8 @@
 class Carla < Formula
   desc "Audio plugin host supporting LADSPA, LV2, VST2/3, SF2 and more"
   homepage "https://kxstudio.linuxaudio.org/Applications:Carla"
-  url "https://ghproxy.com/https://github.com/falkTX/Carla/archive/v2.5.4.tar.gz"
-  sha256 "251b5334bb86c84c85eddb541bfc68767d0fe422266e77df0c000b5b71fabb7e"
+  url "https://ghproxy.com/https://github.com/falkTX/Carla/archive/v2.5.5.tar.gz"
+  sha256 "e5958982b6f73d946db2334d275377a06e979e607bce7ae91738dd939cd0ee55"
   license "GPL-2.0-or-later"
   head "https://github.com/falkTX/Carla.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Carla < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6f04dc45e52855db5606394976e2f4eee1fff533658ee522e02dbe4bf517693b"
-    sha256 cellar: :any,                 arm64_monterey: "3f5d78274bc3a3d710dc612735d8954401e514f6b221df5b798bbf34f0dc8c7e"
-    sha256 cellar: :any,                 arm64_big_sur:  "e16eb0d6c7217dd2ca0158ae6dcbb59d68eb053f849f8074f6b8cca4e4ecf78d"
-    sha256 cellar: :any,                 ventura:        "fdd2c31cf6e32b543439e553a6d99a6363225c827b62eaf42a020cfbb5fce317"
-    sha256 cellar: :any,                 monterey:       "792ed455acbe919003d175556c58189dfb8caa99431ed7dfa4fcb2e97b43319f"
-    sha256 cellar: :any,                 big_sur:        "6c723187538457cc11b67933b21487cd0eb4e7505516b163b062592b7542944c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52ef476e317692d51c3549bcfc9bf9a2f8ecbbe8e96a09d20d1d4bfdd2d81316"
+    sha256 cellar: :any,                 arm64_ventura:  "3f74173b7813d51fec7aaf81dd94fb100e9b73e25b0accdfcb96640d5e943438"
+    sha256 cellar: :any,                 arm64_monterey: "c91e7c711ce4eea2cdd6a057a05fca227d868b0d3941663c7b156e28667da9a5"
+    sha256 cellar: :any,                 arm64_big_sur:  "d0a631f48032017169293e6bc452f012c48398e36a987f418f766dc3644f27bd"
+    sha256 cellar: :any,                 ventura:        "e15817c0707d00c4ac4c9b9ccbb310b0a8abb76496d76fe2ccc06aa6b8537628"
+    sha256 cellar: :any,                 monterey:       "f1f3d0d01e2daab52209918b9f7845d3f490e33489bde5214b2275ca3b461f29"
+    sha256 cellar: :any,                 big_sur:        "856780a2e3db366485fd44aed439329038ac0b3fe4abc7df73f2c79d6f010e09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "159912db28e49cadc5c2158f5e48003a80f6310d3cfa21747699808e12a2c8a7"
   end
 
   depends_on "pkg-config" => :build
