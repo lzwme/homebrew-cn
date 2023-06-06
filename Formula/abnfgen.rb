@@ -1,8 +1,9 @@
 class Abnfgen < Formula
   desc "Quickly generate random documents that match an ABFN grammar"
   homepage "https://www.quut.com/abnfgen/"
-  url "https://www.quut.com/abnfgen/abnfgen-0.20.tar.gz"
-  sha256 "73ce23ab8f95d649ab9402632af977e11666c825b3020eb8c7d03fa4ca3e7514"
+  url "https://www.quut.com/abnfgen/abnfgen-0.21.tar.gz"
+  sha256 "5bf784e6010b4b67e38fa18632b7e2b221c1a7a43a0907be0379a4909f5e536e"
+  license :cannot_represent
 
   livecheck do
     url :homepage
@@ -10,18 +11,13 @@ class Abnfgen < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "04ac724e984219dd01fc9766bf24c9ed5b768d4d52cf600d1c358e0a5155f89c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c1ebec3242ff2bd1ad767c152536f7c33ec454dafbf902dd1b0bbf4ce026b856"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e3c6fe963835658791592b3846bcab8bfeafbee2c63f3fb804405ce72ed2e64a"
-    sha256 cellar: :any_skip_relocation, ventura:        "1f43fe85052ed7b06e560b1dd76958b47153625433eb7ce1b742f86c46b1ebd9"
-    sha256 cellar: :any_skip_relocation, monterey:       "f80717b29159352a309473e370a1ed615aed0cb2b9f822daf556b9f691bc1a35"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bddcdbc3e7993d70dc27f99fd18b439ecb25cd338c8c88762d7d3842439fd2f2"
-    sha256 cellar: :any_skip_relocation, catalina:       "c1531bab58a352221fca0cc5b73db2d9f206e1b98272ff06a90d72aa9e991925"
-    sha256 cellar: :any_skip_relocation, mojave:         "b553651b5500f66d10a369f4d8862ed9c6d2b39d395c43e372b346b4c7bfead0"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "3a62e72bec09b9bfff637710db366f713abc95de45437aeadbfa87a87dfc040c"
-    sha256 cellar: :any_skip_relocation, sierra:         "0d69f39473838a8e46fb02009329e05be6eeaed579ff5533a09cbbecd8d46a2d"
-    sha256 cellar: :any_skip_relocation, el_capitan:     "fd51cb760ed8afb8a9e3dd5d05c8efa832361b238ad95410fb2864c91c081825"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1f2bb09e4f700df87e071039bceb2c0ea8d6082487163fd3e5ed271712e3e3e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "77649fae7599272e9602a0b31d1c821f4f09b364d9e782a146a27bc961066194"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dbb853413b291a12a931c32fe4698d1e97f263c70ea9635875afcdf2bf3a63d8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "907493c609cdd60994448826e9adf685fd8048bb24e3dbea2db7440871d3dd2a"
+    sha256 cellar: :any_skip_relocation, ventura:        "575c3555e7ba9555741886bd51dec912ba229d99f00461f0fa8e5bfcb1953e62"
+    sha256 cellar: :any_skip_relocation, monterey:       "aabd22f0c8be1bfdb787b8ca17c303350ac9d726df2cb6ee2b760972c8fa6b1d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d26f4e4456ba543aa9b54b8950d26cdd91b7f64e1f40e5b67d4266463f3f9aeb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76f35d17e3a1bad80de9ef0c2fb654882619b43a70f00cc23293b7d63c3fc513"
   end
 
   def install

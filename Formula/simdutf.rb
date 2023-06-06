@@ -1,18 +1,18 @@
 class Simdutf < Formula
   desc "Unicode conversion routines, fast"
   homepage "https://github.com/simdutf/simdutf"
-  url "https://ghproxy.com/https://github.com/simdutf/simdutf/archive/refs/tags/v3.2.13.tar.gz"
-  sha256 "978ce70918cd70a33fa5ec9f6d362b4ff29fc470e6efe5d80511af736e9f28dc"
+  url "https://ghproxy.com/https://github.com/simdutf/simdutf/archive/refs/tags/v3.2.14.tar.gz"
+  sha256 "6bd6cd41e0e588312c3ae24adb297454bd9bd9622ed7443f41300d7201f233a1"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/simdutf/simdutf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "a22f7b7e682614b69660db9aacc3aa75749b5f53fff40dd553d0a6ef337cfab3"
-    sha256 cellar: :any, arm64_monterey: "fb37ba05a20efad08d3056a4aaa863c3f4b42355478f519cdd9d1888ef66c068"
-    sha256 cellar: :any, arm64_big_sur:  "d20b8e6754ff4ebd81d1a726df90f185f78bbbd5264b454d90431bf36688f00c"
-    sha256 cellar: :any, ventura:        "5415d557f3d9995aff142fead5d07c74327c50ee77555cefd1818a701f21ac4c"
-    sha256 cellar: :any, monterey:       "cb5f245e487e02c02590175197d880f9310abd3122a2eed7265dc280f3aa3077"
-    sha256 cellar: :any, big_sur:        "bc0ec18c6c89ee8bc51882fc15e381614b9a22c3482b7eedc4caa6ea10cdb2cb"
+    sha256 cellar: :any, arm64_ventura:  "110a58fd28919ccb3cde035e3b674c7f29ec4fb61a27d4ca2588b771576977fa"
+    sha256 cellar: :any, arm64_monterey: "ce2d9e9f4e0ff2e8d1e29e39689ec8e86565fde9bd7cb60ffd67e60817b923f9"
+    sha256 cellar: :any, arm64_big_sur:  "897b1eecbfd7d7eaccb909750866f80099032ae2b94b10230b0a235f01163ccc"
+    sha256 cellar: :any, ventura:        "5b4a92f0e41281dae025317446130b5d864d2bcc598ea0599dd83ba9613eba86"
+    sha256 cellar: :any, monterey:       "3c830d5dbefb052048fa6c843948716cdb67724dbd4cdd6175c1ef45d73a5e3e"
+    sha256 cellar: :any, big_sur:        "f55326749bf5753bf829d24354673b7e1bb035baae78408646e008ad83c63e13"
   end
 
   depends_on "cmake" => :build

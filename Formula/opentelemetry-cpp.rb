@@ -22,17 +22,16 @@ class OpentelemetryCpp < Formula
   depends_on "nlohmann-json"
   depends_on "prometheus-cpp"
   depends_on "protobuf"
-  depends_on "thrift"
-
   uses_from_macos "curl"
 
   def install
     system "cmake", "-S", ".", "-B", "build",
+                    "-DCMAKE_CXX_STANDARD=17", # Keep in sync with C++ standard in abseil.rb
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     "-DBUILD_TESTING=OFF",
                     "-DWITH_ELASTICSEARCH=ON",
                     "-DWITH_EXAMPLES=OFF",
-                    "-DWITH_JAEGER=ON",
+                    "-DWITH_JAEGER=OFF", # deprecated, needs older `thrift`
                     "-DWITH_LOGS_PREVIEW=ON",
                     "-DWITH_METRICS_PREVIEW=ON",
                     "-DWITH_OTLP=ON",
@@ -73,12 +72,12 @@ class OpentelemetryCpp < Formula
       }
     EOS
     system ENV.cxx, "test.cc", "-std=c++11", "-I#{include}", "-L#{lib}",
-           "-lopentelemetry_resources",
-           "-lopentelemetry_trace",
-           "-lopentelemetry_exporter_ostream_span",
-           "-lopentelemetry_common",
-           "-pthread",
-           "-o", "simple-example"
+                    "-lopentelemetry_resources",
+                    "-lopentelemetry_trace",
+                    "-lopentelemetry_exporter_ostream_span",
+                    "-lopentelemetry_common",
+                    "-pthread",
+                    "-o", "simple-example"
     system "./simple-example"
   end
 end

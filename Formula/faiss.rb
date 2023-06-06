@@ -11,13 +11,14 @@ class Faiss < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "5167f0a3570add5d6225a09f8c18fd52d05758ad30bb7514abad3eb9beda998c"
-    sha256 cellar: :any,                 arm64_monterey: "eb84bea51a9e7499ad00e35c598d91746de585867bc9eae4378d6cd7847ac037"
-    sha256 cellar: :any,                 arm64_big_sur:  "72c4017de3970dcfc67bfd717d778073bb54ccebf3fbfc5ab012303243496ce8"
-    sha256 cellar: :any,                 ventura:        "76cebd5782d9a687b9adc47b33c7b16b4aeb6ebcbf1f402f01ab48c12381fd7a"
-    sha256 cellar: :any,                 monterey:       "af08ccd368572b567a065c796ff7c5dbe20cb44756897e3ed687f32c3d9ab205"
-    sha256 cellar: :any,                 big_sur:        "e9a66b1a60606c2be470a304361cbd6bc557835d59e8ddffe0805b0e1e32b6f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "608f92f215332ddf3e6bee2a1476f261ed81f6ac1a78b7d1df53b33059ddbd2e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "fce50696b90d0357b420807c89f13b20851a187759c01a20cec3cd281c34fbd6"
+    sha256 cellar: :any,                 arm64_monterey: "d8e5da0af54d584559f730e823abfe76334638e86a6f58ffa8416efae1b58f8b"
+    sha256 cellar: :any,                 arm64_big_sur:  "3bad3d3ecc1fa8fd4d8e6421f4bd2d031143490785ac3f276a432df9dfbd0ac1"
+    sha256 cellar: :any,                 ventura:        "b6d728b6141c74eae30ae89c2ed3faa44a198afd890da6482b407209c79325c5"
+    sha256 cellar: :any,                 monterey:       "8b88769ab126f91fd0269306e3bcc5102baaab9e61730095a24d71c5b3b79546"
+    sha256 cellar: :any,                 big_sur:        "efc062d04573dd6d5b1911cc7cb333f125ae67aae11a8964490852297d8cf941"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7fa475e6a354bfa4456b3f53537a649c68e3b672f4abf87e879d9a25a4215452"
   end
 
   depends_on "cmake" => :build
@@ -31,6 +32,7 @@ class Faiss < Formula
     args = *std_cmake_args + %w[
       -DFAISS_ENABLE_GPU=OFF
       -DFAISS_ENABLE_PYTHON=OFF
+      -DFAISS_ENABLE_C_API=ON
       -DBUILD_SHARED_LIBS=ON
     ]
     system "cmake", "-B", "build", ".", *args

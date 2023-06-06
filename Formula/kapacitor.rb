@@ -1,20 +1,19 @@
 class Kapacitor < Formula
   desc "Open source time series data processor"
   homepage "https://github.com/influxdata/kapacitor"
-
   license "MIT"
   head "https://github.com/influxdata/kapacitor.git", branch: "master"
 
   stable do
     url "https://github.com/influxdata/kapacitor.git",
-        tag:      "v1.6.5",
-        revision: "c6c917f3097573544574ae94b5ef955a15256772"
+        tag:      "v1.6.6",
+        revision: "79897085a4802304bb2fb052035bac4d16913302"
 
     # build patch to upgrade flux so that it can be built with rust 1.66.0
-    # upstream PR, https://github.com/influxdata/kapacitor/pull/2738
+    # upstream bug report, https://github.com/influxdata/kapacitor/issues/2769
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/58a8918/kapacitor/1.6.5-flux.patch"
-      sha256 "6b03f69d4139ecfff128e7eac088b73b6b11ef395451e44ee33c2e7556661fa1"
+      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/38549b7/kapacitor/1.6.6.patch"
+      sha256 "32bba2e397d25afb7fed8128f5f924e0fd3368371b959b7ef2a68260f32110e4"
     end
   end
 
@@ -24,14 +23,13 @@ class Kapacitor < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "62c05530b155bd534dcd90307e6b9a97fcd1362676445bc0be20742c9c84b6e5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c2d49decdd41316be57ddc4799601326dd6095e528166710f7bd2421481d524b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2d6d31bb54ed021f254369a6049979320c140433c158e89d1f9bccd192b444e2"
-    sha256 cellar: :any_skip_relocation, ventura:        "246319fc10189a78c5be006bb495bea5e7d12e0d9b38fd4d59d70fc630cfdd5a"
-    sha256 cellar: :any_skip_relocation, monterey:       "20165171837847b780947b538d4c57b36ef5a666cd7d0ec8a1e7e402a189ad5a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d410845651584e1963bf4d21fc273bc7af38a3c21eac2cb00cc06cbd9047697e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f15abe375947d818bb16a295faecdb42ee084dabc3b84b0d80af61935d602ab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "82a7eae9df12d924844d669cd098e4d2c627b6ddbe88b46a4fbb4a95f773ca05"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "753eb96876f6b4ee37822cf96328b4bd52dd97300230384f145947ce92317b96"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "51d79f3c8df3812c2a2afa242d9b5d5e58463bd13845e4c6dca8bc1b8dc77213"
+    sha256 cellar: :any_skip_relocation, ventura:        "62acbd5f2cd1f6178338868d5d1a2ff93c7a2a46f9bc569f4b5d3b9380f74426"
+    sha256 cellar: :any_skip_relocation, monterey:       "8abe8b6727275b75d12fc5a014847ac2e882d2b2730f8fea6989197a68f46edd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7778f76687401b5b649c3cd490b9b19aa97dbb6a72fe714084acec78680b38b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9c728517d5c4fd80f8e9dbe70813fa657ecc4314334cc452890967cfecb3efd"
   end
 
   depends_on "go" => :build
@@ -55,8 +53,7 @@ class Kapacitor < Formula
     ENV.prepend_path "PATH", buildpath/"bootstrap"
 
     ldflags = %W[
-      -s
-      -w
+      -s -w
       -X main.version=#{version}
       -X main.commit=#{Utils.git_head}
     ]

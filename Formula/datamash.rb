@@ -9,6 +9,7 @@ class Datamash < Formula
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "89b84e0e7e30808894613161483b8bb6005561d652522cdc399f1e6d1d00e34a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "16e17344961038b0a719392d53f7968053df3680674554c862b0b4f36f4f86c8"
+    sha256 cellar: :any_skip_relocation, ventura:        "fc4d5134556554c64c14314007087e52810d1ec1c9b1761536da9115333e170a"
     sha256 cellar: :any_skip_relocation, monterey:       "efb5a8e92a90b49d4784875aff3d2bbeaddf708633a1f7533730979d81354bf8"
     sha256 cellar: :any_skip_relocation, big_sur:        "6bf80adfcba648b010674056c1abd3cca17a71bd717f81aed0c0d15fbf11abea"
     sha256 cellar: :any_skip_relocation, catalina:       "ffadf24c7def1e77a197952a3e31edbfbb4fc246d373b78c3c0671839d86b422"
