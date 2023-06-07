@@ -1,18 +1,18 @@
 class Goawk < Formula
   desc "POSIX-compliant AWK interpreter written in Go"
   homepage "https://benhoyt.com/writings/goawk/"
-  url "https://ghproxy.com/https://github.com/benhoyt/goawk/archive/refs/tags/v1.23.1.tar.gz"
-  sha256 "f6060f11d25942bd28e49e08aee09025be442788604cb645a9e161ed394b2509"
+  url "https://ghproxy.com/https://github.com/benhoyt/goawk/archive/refs/tags/v1.23.2.tar.gz"
+  sha256 "f4613343fa6d43866da5e34d5bd8fc72275907a4c45f64ed63fcc800b4f358c3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "252a7821dabf4d4275d073a4b8b034dd18e9ee30d2efba825c29207120a523a1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "252a7821dabf4d4275d073a4b8b034dd18e9ee30d2efba825c29207120a523a1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "252a7821dabf4d4275d073a4b8b034dd18e9ee30d2efba825c29207120a523a1"
-    sha256 cellar: :any_skip_relocation, ventura:        "655857e88f7869cfb643424b76acdd2816246f220325c8137e3ffefdc1e378a1"
-    sha256 cellar: :any_skip_relocation, monterey:       "655857e88f7869cfb643424b76acdd2816246f220325c8137e3ffefdc1e378a1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "655857e88f7869cfb643424b76acdd2816246f220325c8137e3ffefdc1e378a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cfedb425c31122d1b5b07d178098818e5bc780afc42436647328290b5beb8c96"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b9350a46ab1abc8ccacc5dad61660f4f2347c38f002c97d96f7c5c5699744c4c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b9350a46ab1abc8ccacc5dad61660f4f2347c38f002c97d96f7c5c5699744c4c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b9350a46ab1abc8ccacc5dad61660f4f2347c38f002c97d96f7c5c5699744c4c"
+    sha256 cellar: :any_skip_relocation, ventura:        "0d1405a680b840f2b530fd933009f7a1726173b39b02fb7f0e740c8d279993d4"
+    sha256 cellar: :any_skip_relocation, monterey:       "0d1405a680b840f2b530fd933009f7a1726173b39b02fb7f0e740c8d279993d4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0d1405a680b840f2b530fd933009f7a1726173b39b02fb7f0e740c8d279993d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a27da916c44f89069f00243b64362fc761d18df4649656cdfb81759c7551bb50"
   end
 
   depends_on "go" => :build

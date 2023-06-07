@@ -6,6 +6,7 @@ class Torchvision < Formula
   url "https://ghproxy.com/https://github.com/pytorch/vision/archive/refs/tags/v0.15.1.tar.gz"
   sha256 "689d23d4ebb0c7e54e8651c89b17155b64341c14ae4444a04ca7dc6f2b6a0a43"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,11 +14,10 @@ class Torchvision < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "735349685ae524165144dd5a09a95f18b6a52d3b5a13a7fa125c39ca641c8d6b"
-    sha256 cellar: :any,                 arm64_monterey: "8e73afd6cb21a3e3f150019692f0d15f73ed6cdfdb761c9db991a253f550ee35"
-    sha256 cellar: :any,                 ventura:        "c10438faefe4981f7e0e6f810912dd50a377edb079a98b2e9c00780a00d7942c"
-    sha256 cellar: :any,                 monterey:       "b940f3823c61c90bc43973c2bcb715e7b340774d636292415e4169abfc756b8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9dbae25770408ecd4d8049423dec2d1a5c4d4bfbe07f74b568c6305487cd5c80"
+    sha256 cellar: :any,                 arm64_ventura:  "7a548e74f474b3e0abf348d4310e5378d7c94dd9d619ed0e29d1cfdd75b18069"
+    sha256 cellar: :any,                 arm64_monterey: "55abcc4df58d879e5c37e1d93c4477a85f6374146d4f8172bd59c0f252b9dc20"
+    sha256 cellar: :any,                 monterey:       "b008fcf1d9e255b7262731c596caa6de6a0d0101db1592daa7658204c21616d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "761810f80255cee80f2f99e23349104f3b96bf4f6a8ccd936cac024ef6c301da"
   end
 
   depends_on "cmake" => :build

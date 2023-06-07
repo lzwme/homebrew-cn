@@ -1,8 +1,8 @@
 class CfnFormat < Formula
   desc "Command-line tool for formatting AWS CloudFormation templates"
   homepage "https://github.com/aws-cloudformation/rain"
-  url "https://ghproxy.com/https://github.com/aws-cloudformation/rain/archive/v1.4.0.tar.gz"
-  sha256 "3dd05a6bb4c08193fe9ffad2d99c4d06cf205e7a0e31d64655a76ebdbbbc29e6"
+  url "https://ghproxy.com/https://github.com/aws-cloudformation/rain/archive/v1.4.1.tar.gz"
+  sha256 "9dd2062fc9c3bfc75759c116b6aabfd13694176f07bf9616c4c5acc5ff253eb4"
   license "Apache-2.0"
 
   livecheck do
@@ -10,13 +10,13 @@ class CfnFormat < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "317e5401532d5dd9b1ec577d5f763692e6496825d4fde7c067d7ffc9b7892137"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "317e5401532d5dd9b1ec577d5f763692e6496825d4fde7c067d7ffc9b7892137"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "317e5401532d5dd9b1ec577d5f763692e6496825d4fde7c067d7ffc9b7892137"
-    sha256 cellar: :any_skip_relocation, ventura:        "b8e2ea3df2b5e5373b3ca253926cb189d7b9232d1c39bcbd45690b6851f5fd07"
-    sha256 cellar: :any_skip_relocation, monterey:       "b8e2ea3df2b5e5373b3ca253926cb189d7b9232d1c39bcbd45690b6851f5fd07"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b8e2ea3df2b5e5373b3ca253926cb189d7b9232d1c39bcbd45690b6851f5fd07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2fca7cf63b3528c2166f5caa0c4a7a688a3107117c89853019faed406d7bfa94"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5568c8221924546b0f72ee8bb84102d71760c2da84b100dc12701bee36f2ab8d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5568c8221924546b0f72ee8bb84102d71760c2da84b100dc12701bee36f2ab8d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5568c8221924546b0f72ee8bb84102d71760c2da84b100dc12701bee36f2ab8d"
+    sha256 cellar: :any_skip_relocation, ventura:        "84451cc8ab2dc329ef0737159e328633270fd0965f79709a283e7a1cfa506848"
+    sha256 cellar: :any_skip_relocation, monterey:       "84451cc8ab2dc329ef0737159e328633270fd0965f79709a283e7a1cfa506848"
+    sha256 cellar: :any_skip_relocation, big_sur:        "84451cc8ab2dc329ef0737159e328633270fd0965f79709a283e7a1cfa506848"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "644f601b67bb9657bc68e8266a694515fec497701858bcf88f60aa05a8fb3a35"
   end
 
   depends_on "go" => :build

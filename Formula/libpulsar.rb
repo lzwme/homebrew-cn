@@ -1,26 +1,28 @@
 class Libpulsar < Formula
   desc "Apache Pulsar C++ library"
   homepage "https://pulsar.apache.org/"
+  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://dlcdn.apache.org/pulsar/pulsar-client-cpp-3.2.0/apache-pulsar-client-cpp-3.2.0.tar.gz"
   mirror "https://archive.apache.org/dist/pulsar/pulsar-client-cpp-3.2.0/apache-pulsar-client-cpp-3.2.0.tar.gz"
   sha256 "e1d007d140906e4e7fc2b47414d551f3c7024bd9d35c8be1bbde3078dc2bddbc"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "08ede2fa1b7e6995c97083b329757c147144b3d46534e174f191a89010048f52"
-    sha256 cellar: :any,                 arm64_monterey: "9d2db5a1e841da4ae5556eeca15d813423774970371b23c0430d5b77cb7a55c1"
-    sha256 cellar: :any,                 arm64_big_sur:  "1bb7b9ec67b7e26d425f8da1a09eb74efd3054b95a282b375d879d79e3777fdb"
-    sha256 cellar: :any,                 ventura:        "6887a1bbc19062cd165ac280ac7347eef293700921a43402b89c36b1dd85b95a"
-    sha256 cellar: :any,                 monterey:       "becdc27e25e162aba19399ed54bc335c1a8a54bedd468b4873117d217ffe52d0"
-    sha256 cellar: :any,                 big_sur:        "d70e5b0be002d89bce8dedb66669df7a96968dd310a26ea921a0cfcf19326b3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9dca420007636ef7bf1d9696c1c8ae1ecc994552d52d02b1068f2b9a88402cd5"
+    sha256 cellar: :any,                 arm64_ventura:  "169f1433c214fdfa10e8808e43ed32386757d96548bf924c258b308e7c74c393"
+    sha256 cellar: :any,                 arm64_monterey: "0fdbffe2f65165b26c76185a88a51fbd84e6950bf0b3a7332286ff88f0ef27ed"
+    sha256 cellar: :any,                 arm64_big_sur:  "5442a5dcaae7047accf6f9b8f908acc69e80803c49388e5f20c3e6f49144d6ee"
+    sha256 cellar: :any,                 ventura:        "7e155912bcc95a35ce33acff4d972ea6e59bd782adc8007dcf1d9b39a6d73bcc"
+    sha256 cellar: :any,                 monterey:       "0e4e702f0f3d5ec80dad5424533beae9c74d8bcae8367a8b343e787af46a7341"
+    sha256 cellar: :any,                 big_sur:        "16cd7366e60750cac6d1db34d0d3c0a20bdcf1e252108520470cdcca006c0162"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e205197114ec20279a3aca87796a81b06a28bd949a44e630be5a8cff0f011c34"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"
   depends_on "openssl@1.1"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "snappy"
   depends_on "zstd"
 
@@ -30,8 +32,8 @@ class Libpulsar < Formula
     system "cmake", ".", *std_cmake_args,
                     "-DBUILD_TESTS=OFF",
                     "-DBoost_INCLUDE_DIRS=#{Formula["boost"].include}",
-                    "-DProtobuf_INCLUDE_DIR=#{Formula["protobuf"].include}",
-                    "-DProtobuf_LIBRARIES=#{Formula["protobuf"].lib/shared_library("libprotobuf")}"
+                    "-DProtobuf_INCLUDE_DIR=#{Formula["protobuf@21"].include}",
+                    "-DProtobuf_LIBRARIES=#{Formula["protobuf@21"].lib/shared_library("libprotobuf")}"
     system "make", "pulsarShared", "pulsarStatic"
     system "make", "install"
   end
@@ -46,7 +48,9 @@ class Libpulsar < Formula
       }
     EOS
 
-    system ENV.cxx, "-std=gnu++11", "test.cc", "-L#{lib}", "-lpulsar", "-o", "test"
+    # Protobuf include can be removed when this depends on unversioned protobuf.
+    system ENV.cxx, "-std=gnu++11", "-I#{Formula["protobuf@21"].opt_include}",
+                    "test.cc", "-L#{lib}", "-lpulsar", "-o", "test"
     system "./test"
   end
 end

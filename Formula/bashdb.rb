@@ -16,8 +16,10 @@ class Bashdb < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2706d30e58de057c15e572fb267c1fb4a96d47635cc5be190aa895a208c623cb"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f53afdb7dc83b30c3347c729b38ee0da913198c9c5afc6e67727e36960602f1e"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f53afdb7dc83b30c3347c729b38ee0da913198c9c5afc6e67727e36960602f1e"
+    sha256 cellar: :any_skip_relocation, ventura:        "c612daaca5bebdc050bf47317b91069423b6bbf3a5b21c1391372ff7f5acb33d"
     sha256 cellar: :any_skip_relocation, monterey:       "d48fff200662804b52e9688a80e8931f56a5033235903b9ce35cb8908f8ba61a"
     sha256 cellar: :any_skip_relocation, big_sur:        "e49b34af9e621c91f6a101bfe327182f956f7b25b48d9fc7804e5d8ea0277263"
     sha256 cellar: :any_skip_relocation, catalina:       "0ab6de48ce871bc7b6abc582154b425350a70b7f2ecadd3b303c7a91dafc3c41"
@@ -57,7 +59,7 @@ __END__
  bash_5_or_greater=no
  case "${bash_major}.${bash_minor}" in
 -  'OK_BASH_VERS' | '5.0')
-+  'OK_BASH_VERS' | '5.0' | '5.1')
++  'OK_BASH_VERS' | '5.0' | '5.1' | '5.2')
      bash_5_or_greater=yes
      ;;
    *)

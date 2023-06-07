@@ -6,27 +6,22 @@ class Iredis < Formula
   url "https://files.pythonhosted.org/packages/33/ee/758d256fdcc53566f8bc852d48402b7f197a78c29684113180d8d7ce95f6/iredis-1.13.0.tar.gz"
   sha256 "d1e4e7936d0be456f70a39abeb1c97d931f66ccd60e891f4fd796ffb06dfeaf9"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/laixintao/iredis.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "08b14d7b3697d8ccadaa394398a41bbf45cc3a846db3b042582abf6f96476c25"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0d3797cbfd969ba259032bb00798871d5d347f5b50552c2e4a24752b66c37339"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0908cbc29191d9286b8ef1343d812612bbede1d7bd119430bd05e64f94c67365"
-    sha256 cellar: :any_skip_relocation, ventura:        "9132e42b5402b89545ca88510cb0f297eb8ea6fcd45a17c63a2ab7ac3da294a1"
-    sha256 cellar: :any_skip_relocation, monterey:       "08171aa56b87c91090bfd98e0c12daba91a6a3a3c6d95fae7f4bb0e12992f309"
-    sha256 cellar: :any_skip_relocation, big_sur:        "618edcd02fa937f4a584efb0816af2b9debb82f60eaa9d84f4a603064770f658"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4bd527e82ced83c56299206e4ded3d6399c938bc3d0f544ae331f86d9a16af82"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "361aba6cf307062ef8d530b9702e49e264337b4c67251f7ac4ed97fcd686f287"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "61b2e41c3e6ffaa4b394b621cbbae7df6ec3f633215e154719f2563373a6e6a5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3021922c1f6c88a3997b87060822802da5a880b9e3d80fe36f88353327f1e970"
+    sha256 cellar: :any_skip_relocation, ventura:        "00ab3cf67918c0e688c25723fa4a1e1a960dd90b91ee8f563c117da86d580feb"
+    sha256 cellar: :any_skip_relocation, monterey:       "71a40038670cb86cb6962235dd88d232626732a0cb026a54530abfcab1df3e7b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cc924745baa12ee39b800ead31018213a224ea3dcde19e500ab06bc92d1c96e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e3a8c1d2e387bf6729bc4c87120da4156e0446e9b8ce82103743883cc26560b"
   end
 
   depends_on "pygments"
   depends_on "python@3.11"
   depends_on "six"
-
-  resource "async-timeout" do
-    url "https://files.pythonhosted.org/packages/54/6e/9678f7b2993537452710ffb1750c62d2c26df438aa621ad5fa9d1507a43a/async-timeout-4.0.2.tar.gz"
-    sha256 "2163e1640ddb52b7a8c80d0a67a08587e5d245cc9c553a74a847056bc2976b15"
-  end
 
   resource "click" do
     url "https://files.pythonhosted.org/packages/27/6f/be940c8b1f1d69daceeb0032fee6c34d7bd70e3e649ccac0951500b4720e/click-7.1.2.tar.gz"
@@ -79,8 +74,8 @@ class Iredis < Formula
   end
 
   resource "redis" do
-    url "https://files.pythonhosted.org/packages/15/00/141ee6abca8d32448b23539e8f0e74091842c30ef357b636b372e2606aa9/redis-4.5.4.tar.gz"
-    sha256 "73ec35da4da267d6847e47f68730fdd5f62e2ca69e3ef5885c6a78a9374c3893"
+    url "https://files.pythonhosted.org/packages/53/30/128c5599bc3fa61488866be0228326b3e486be34480126f70e572043adf8/redis-4.5.5.tar.gz"
+    sha256 "dc87a0bdef6c8bfe1ef1e1c40be7034390c2ae02d92dcd0c7ca1729443899880"
   end
 
   resource "wcwidth" do

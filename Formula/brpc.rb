@@ -1,26 +1,28 @@
 class Brpc < Formula
   desc "Better RPC framework"
   homepage "https://brpc.apache.org/"
+  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://dlcdn.apache.org/brpc/1.5.0/apache-brpc-1.5.0-src.tar.gz"
   sha256 "8afa1367d0c0ddb471decc8660ab7bdbfd45a027f7dfb6d18303990954f70105"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/apache/brpc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "00fe5c27d0397666f3d0138a0fad86edb9208a5581180b267a446c084fccf01f"
-    sha256 cellar: :any,                 arm64_monterey: "5575f56fe530af83fd95ede301598bb876c3e1e5902ccb091f61d0f8ae7b2f71"
-    sha256 cellar: :any,                 arm64_big_sur:  "47938b0cb1fa818fe8c50148c0098379d5c5becc5e833cf1a5738a36c3642b63"
-    sha256 cellar: :any,                 ventura:        "c9e41524b326940f8033de8b3945713b43cb20ac56f12d6934e7d1fc231e16ec"
-    sha256 cellar: :any,                 monterey:       "73c668678e7a6d1779edec5ab0806a1b3e6fe82c0929225c2243091a139df0bc"
-    sha256 cellar: :any,                 big_sur:        "fa99288bacf30a725ff3289cc53959b3a9e56e325f2bb5171e82858810c60d23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7cd87ea0fea8043f1b8d792e03cbb10f17b46d055155570c77e7d3edfe35ee1"
+    sha256 cellar: :any,                 arm64_ventura:  "1c075c56a2de92f802881875fea1734d63719f491f925ca9623e3d75b99293b2"
+    sha256 cellar: :any,                 arm64_monterey: "2e72aa583dc38d463318c54318800ab334e4d8880720c9f8835461e96a9bcced"
+    sha256 cellar: :any,                 arm64_big_sur:  "77d272b5f9f6601bbd9ef7489fc374dec749345beae026ca9216a850d99f1a85"
+    sha256 cellar: :any,                 ventura:        "7dcc503d9307030e9c1c2bc57b4a361fc018b22a13fbb1d002a935dab6e66f96"
+    sha256 cellar: :any,                 monterey:       "f3dffdcfb518f908ab18d95921bec72fcc4897d569d315c273b3e5fef4777b26"
+    sha256 cellar: :any,                 big_sur:        "20f3c293101cc84726a8cd7770e8bf8138207e10d68675af63377aef62b62d32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5c6a6661ec461a171a2590a98d7062f0b029a5a91dac68672c36884a3234674"
   end
 
   depends_on "cmake" => :build
   depends_on "gflags"
   depends_on "leveldb"
   depends_on "openssl@3"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
 
   def install
     args = %w[
@@ -62,10 +64,12 @@ class Brpc < Formula
         return 0;
       }
     EOS
+    protobuf = Formula["protobuf@21"]
     flags = %W[
       -I#{include}
+      -I#{protobuf.opt_include}
       -L#{lib}
-      -L#{Formula["protobuf"].opt_lib}
+      -L#{protobuf.opt_lib}
       -lbrpc
       -lprotobuf
     ]

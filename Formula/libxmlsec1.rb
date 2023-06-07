@@ -1,8 +1,8 @@
 class Libxmlsec1 < Formula
   desc "XML security library"
   homepage "https://www.aleksey.com/xmlsec/"
-  url "https://www.aleksey.com/xmlsec/download/xmlsec1-1.3.0.tar.gz"
-  sha256 "df3ad2548288411fc3d44c20879e4c4e90684a1a4fb76a06ae444f957171c9a6"
+  url "https://www.aleksey.com/xmlsec/download/xmlsec1-1.3.1.tar.gz"
+  sha256 "10f48384d4fd1afc05fea545b74fbf7c152582f0a895c189f164d55270400c63"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class Libxmlsec1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "899b14359bba10cb924d80d8d21fa68ccf5c54dd2a87a8bf64a6e030c2136bd1"
-    sha256 cellar: :any,                 arm64_monterey: "48914d710bcdf4c5b2223a8a1350b40c149739ab1d736dabdbf351b3ab5f3011"
-    sha256 cellar: :any,                 arm64_big_sur:  "3f0791efbb7487f113d04704829ffc678a6211b8b42f59e2f5631154432b905c"
-    sha256 cellar: :any,                 ventura:        "5ff39681bcdfb5fbd866fcef08032fa5c01be8627a503caccdb2b7de26f66c17"
-    sha256 cellar: :any,                 monterey:       "ce5f5e74aee8fe4e23a3bf446335640fd98b84227fb3ec8ffbd9beb5d609025d"
-    sha256 cellar: :any,                 big_sur:        "5dda6666a22cf4bed103d0bd100d73cd061d7fe67348c64d665e22bccd34683b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d139084e4b1f193910e144da1bf8d40ec3c2c815faed705b0b96d76efee6b5a4"
+    sha256 cellar: :any,                 arm64_ventura:  "9af6a43ca5ff567b4b7f0dce7bdb8612d3dac9de8d77c3d33b480b7d32684c61"
+    sha256 cellar: :any,                 arm64_monterey: "823fd3c54e2eb29ae5462c7b60bba93f9825b5a2d35f39ca50a4828a69902325"
+    sha256 cellar: :any,                 arm64_big_sur:  "6290e5004f0d9b28cd60c840f1d023b2d142e55fa158e9cd9c716cdd93f3737e"
+    sha256 cellar: :any,                 ventura:        "3f6a404f4531bdb59a570fcde1a4131ac9a846db0c263610d43c7ab12ac73f78"
+    sha256 cellar: :any,                 monterey:       "73782af36219a7d463d868b78c7981e5a1ab4a0dc69892f2c037b7772a7b43ae"
+    sha256 cellar: :any,                 big_sur:        "449f2276cb3d4a582cfb9f330903e7d7fa166a7cd17907cbbc5571cdde236ec0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ccf53ccd427848e24ebf6b2df7d57e9efcc9d3f2f715de9e9926c3bb728405b3"
   end
 
   depends_on "pkg-config" => :build

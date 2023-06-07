@@ -1,19 +1,23 @@
 class Ola < Formula
+  include Language::Python::Shebang
+
   desc "Open Lighting Architecture for lighting control information"
   homepage "https://www.openlighting.org/ola/"
+  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://ghproxy.com/https://github.com/OpenLightingProject/ola/releases/download/0.10.9/ola-0.10.9.tar.gz"
   sha256 "44073698c147fe641507398253c2e52ff8dc7eac8606cbf286c29f37939a4ebf"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
+  revision 1
   head "https://github.com/OpenLightingProject/ola.git", branch: "master"
 
   bottle do
-    sha256 arm64_ventura:  "088b059188475214389d952efb6c53c52ecbf09765e7bb9a861bd45bd60c4a33"
-    sha256 arm64_monterey: "dfac4651c419b77a336a1c54703d273556ce977942bd78fdc4a51e4c1d354a07"
-    sha256 arm64_big_sur:  "094361072bfbc2edaf6180c1d4bc679096bfefd38562a02a301176510f6f329d"
-    sha256 ventura:        "ffed4857b650f63697aae34fe23bbb11d9334b5787d1d2dbad430eae0abd639f"
-    sha256 monterey:       "872aa05d050ab475bffe9f4e3f5188cc7bab102804149bc8f4edde254ca99dd3"
-    sha256 big_sur:        "4a5fef50aaf6ff9ae879e748c7adc4281c5df248dabc3f9aef925286570b909f"
-    sha256 x86_64_linux:   "1bfba400da5d6a62cab3685d8f99aec29794a616fb413c26a1eb4d95547db195"
+    sha256 arm64_ventura:  "70bc041b7b093dad97457e7384ab334b35d2cfebe15f6f51616493a93f83a246"
+    sha256 arm64_monterey: "e98135ba113896d907f982ceec5c7d5329f7daa5e095ca488dbd951c5b0334a6"
+    sha256 arm64_big_sur:  "6436e1d0108fee7e8771adbfc66a3780c3b02cd087f09c4631a43c2e8492ab12"
+    sha256 ventura:        "48c24b257ef8381f901a81817e4a757aea056371b48f92ca4af5edf037a6ca29"
+    sha256 monterey:       "9199cced2f2c365923d088d367d47828bf3abb839825b42c5f1bc17651b1a1e4"
+    sha256 big_sur:        "133412d65cfe02c454d4a7c172af8c7dd5a0f31c1b62d26705c8063a8c4acc7c"
+    sha256 x86_64_linux:   "339101088570b59af916d7586451a29b82bc443f42ea694249558b38a135f3ba"
   end
 
   depends_on "autoconf" => :build
@@ -24,7 +28,7 @@ class Ola < Formula
   depends_on "libmicrohttpd"
   depends_on "libusb"
   depends_on "numpy"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "python@3.11"
 
   uses_from_macos "bison" => :build
@@ -34,10 +38,19 @@ class Ola < Formula
     "python3.11"
   end
 
+  # Remove when we use unversioned protobuf
+  def extra_python_path
+    Formula["protobuf@21"].opt_prefix/Language::Python.site_packages(python3)
+  end
+
   def install
     # https://github.com/Homebrew/homebrew-core/pull/123791
     # remove when the above PR is merged
     ENV.append_to_cflags "-DNDEBUG"
+
+    # protobuf@21 is keg-only.
+    # Remove when we use unversioned protobuf
+    ENV.prepend_path "PYTHONPATH", extra_python_path
 
     args = %W[
       --disable-fatal-warnings
@@ -53,9 +66,22 @@ class Ola < Formula
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *std_configure_args, *args
     system "make", "install"
+
+    rewrite_shebang detected_python_shebang, *bin.children
+  end
+
+  # Remove when we use unversioned protobuf
+  def caveats
+    <<~EOS
+      To use the bundled Python libraries:
+        export PYTHONPATH=#{extra_python_path}
+    EOS
   end
 
   test do
+    # `protobuf@21` is keg-only.
+    # Remove when we use unversioned protobuf
+    ENV.prepend_path "PYTHONPATH", extra_python_path
     system bin/"ola_plugin_state", "-h"
     system python3, "-c", "from ola.ClientWrapper import ClientWrapper"
   end

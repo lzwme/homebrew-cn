@@ -1,20 +1,19 @@
 class Tfupdate < Formula
   desc "Update version constraints in your Terraform configurations"
   homepage "https://github.com/minamijoyo/tfupdate"
-  url "https://ghproxy.com/https://github.com/minamijoyo/tfupdate/archive/v0.6.7.tar.gz"
-  sha256 "f62a8748ffef97c1a7697d76bb2e76b79a9254d957f799b1e15413b946b4ee33"
+  url "https://ghproxy.com/https://github.com/minamijoyo/tfupdate/archive/v0.6.8.tar.gz"
+  sha256 "851068a49540ab8c45fb66aa1107932bd7d9aebfb7dc2e8a8e3ab2dde845624a"
   license "MIT"
   head "https://github.com/minamijoyo/tfupdate.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4fff4e93c611eab2c0d26df8ddeb5f242c81e0104560f020f51817feba050353"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "19156a71dec1f2d6c17fae3a9b6c45671070f855e71e53e75a74a6e376229a35"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "41ec805691e10a283cfb578414ab135264633afa0cce319708d8501f9bc5f6b2"
-    sha256 cellar: :any_skip_relocation, ventura:        "f80b7286c4b38ff1b9c257a4c70d51ba935b3e1e60acaaa9448bbe687f2c3618"
-    sha256 cellar: :any_skip_relocation, monterey:       "0acb42223d76867e3a64145bbe9b824b95bdefc09bf9703581d73b060d109d57"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d6715e6cdc7737354e444cfc1bdae78a5f54017979744ef7a18e79ed807e056f"
-    sha256 cellar: :any_skip_relocation, catalina:       "c6f9987eeb7eac917a496a02c10bbee9c087481b8a94d936cf18febe287165f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16f7d129f24e6b4ed306b5e045678f090afddf61d12c13ccddfdd2c283ca25d7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7955306361195a2c069b0968a9cd37e43e0db38dc61a70a6794ca37ee0f7f0ad"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7955306361195a2c069b0968a9cd37e43e0db38dc61a70a6794ca37ee0f7f0ad"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7955306361195a2c069b0968a9cd37e43e0db38dc61a70a6794ca37ee0f7f0ad"
+    sha256 cellar: :any_skip_relocation, ventura:        "9efde569a58f1e8a35eaab9f4e3b53acbf8b6e8bc44add63c8e518d973ddfc75"
+    sha256 cellar: :any_skip_relocation, monterey:       "9efde569a58f1e8a35eaab9f4e3b53acbf8b6e8bc44add63c8e518d973ddfc75"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9efde569a58f1e8a35eaab9f4e3b53acbf8b6e8bc44add63c8e518d973ddfc75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8048e1c6279a55200224db0a3a55a07a75fc0710d6f0ce7adcee41c64438a7b5"
   end
 
   depends_on "go" => :build

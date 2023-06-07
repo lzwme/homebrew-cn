@@ -1,9 +1,11 @@
 class PerconaXtrabackup < Formula
   desc "Open source hot backup tool for InnoDB and XtraDB databases"
   homepage "https://www.percona.com/software/mysql-database/percona-xtrabackup"
+  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://downloads.percona.com/downloads/Percona-XtraBackup-LATEST/Percona-XtraBackup-8.0.32-26/source/tarball/percona-xtrabackup-8.0.32-26.tar.gz"
   sha256 "2a1c23497ffd5905d6dc20bdb5a801d1b8baeb3245ec11ed115dee0d78b7a5e2"
   license "GPL-2.0-only"
+  revision 1
 
   livecheck do
     url "https://www.percona.com/downloads/Percona-XtraBackup-LATEST/"
@@ -11,13 +13,13 @@ class PerconaXtrabackup < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "213057e7ab263f7402e043de19f842bf2f3d853c3c00c4dc056329a8f7a29934"
-    sha256 arm64_monterey: "790e4db0ac54d1200fd238fce5b946ace4438909be6b5e8845cc2207ebe1265f"
-    sha256 arm64_big_sur:  "18102135559be1f0fa2a32c93eff9ffbf460d97bb73096d718b58328227368a3"
-    sha256 ventura:        "d1b8bfd0e0766772df60dfb7c6a0e89733d868275886ecc446a6be6471aa4be4"
-    sha256 monterey:       "fe19f49104c57642c34354cb5c3b392c115d02dfca3cf3a01102788b2e21dd0f"
-    sha256 big_sur:        "4e85279de1c8a5658a3448d3c4a12a50e829b0421307454ad1659e061a68f14a"
-    sha256 x86_64_linux:   "b583a9d1f88a0fd85a876a19e8058960e2bed4639c6478a148c27f0e23a0ec8a"
+    sha256 arm64_ventura:  "773fe388c6889bd73c9bc9e4f1d7412ecc5275e8be206784e8516fa840852d8a"
+    sha256 arm64_monterey: "a08039d4a3e0c5ea1ae17b23769f8e2ead1798669fd8fff1b91e4356f11297bb"
+    sha256 arm64_big_sur:  "3638453f0c6cedec4953ab325480f15805b215c2bfddf3a3c7d0ca5facb90a60"
+    sha256 ventura:        "4a12748dbff1f7766d5ab717384961b35a1580307dda71ac1853187a349a299c"
+    sha256 monterey:       "0466a6a332683d146a316a174dd21dbcde2c657eefe8bc30e3c5ef03d9b4d3a0"
+    sha256 big_sur:        "826b289bdc606752354383079e7664f97134928693d35d9f2919a039c621d466"
+    sha256 x86_64_linux:   "29af2876a9ec091f4e03fb045b12cfb23647a5d50d8546c56cb4dbd1fa7f43af"
   end
 
   depends_on "cmake" => :build
@@ -31,7 +33,7 @@ class PerconaXtrabackup < Formula
   depends_on "lz4"
   depends_on "mysql"
   depends_on "openssl@1.1"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "zstd"
 
   uses_from_macos "vim" => :build # needed for xxd
@@ -114,16 +116,12 @@ class PerconaXtrabackup < Formula
     (buildpath/"boost").install resource("boost")
     cmake_args << "-DWITH_BOOST=#{buildpath}/boost"
 
-    cmake_args.concat std_cmake_args
-
     # Remove conflicting manpages
     rm (Dir["man/*"] - ["man/CMakeLists.txt"])
 
-    mkdir "build" do
-      system "cmake", "..", *cmake_args
-      system "make"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     # remove conflicting library that is already installed by mysql
     rm lib/"libmysqlservices.a"

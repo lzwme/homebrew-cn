@@ -3,21 +3,23 @@ class Trzsz < Formula
 
   desc "Simple file transfer tools, similar to lrzsz (rz/sz), and compatible with tmux"
   homepage "https://trzsz.github.io"
+  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://files.pythonhosted.org/packages/0c/e5/00c95527d18445cbd3b3b2c5c28a383c94c9ac5291e886796004727b25aa/trzsz-1.1.2.tar.gz"
   sha256 "dfc9606fb7ae76490c8559ec297b307a788688351ab57108f6a733105b206052"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dfdc64f012d48589793eb056c5954466c3f6e5f985a7f7bff2457635aa662349"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "68ef45a8aaff53589d071386578eaf07d50e9987b6f8409441f9233ac1463d7f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3a81db10a9ddd489f4442fd5149ba633e94b8345260b09d3e71fd7f943203404"
-    sha256 cellar: :any_skip_relocation, ventura:        "97e7c7fade42b12f7556d135f2d2e3a20bed81e3b968d819a4df6b16b9fc9426"
-    sha256 cellar: :any_skip_relocation, monterey:       "265059568e4003ec1e189751fe3ba196066b4c048d024d96b2c03fc44a09bbae"
-    sha256 cellar: :any_skip_relocation, big_sur:        "28ed2c288e251407f7850123c623d874815d8607c7c84fd3bb8ca66a558bff2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7183da3e45ab5a3bcd18085b5286493adb00260829ebaddec0c791545250527e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "76660eb076b8dfcfdd44b0d75c890df839c6d16f2ceaad329fdc95cec35b1e78"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2121245d8531a88d2217c27dc57167d2cd742a7d8c35c210401149fde31d956e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d5426432b5c1d5908e35aea907d84fee26f6751b02873664526a018e904aa882"
+    sha256 cellar: :any_skip_relocation, ventura:        "9ba16263135208082786ad514b610c3885ed1e182fcd00cea92a2b9a5217e0bf"
+    sha256 cellar: :any_skip_relocation, monterey:       "c356460dba20cd46ab39c3f84badb3f2ec20ee7a9351b8d75257b73e879cebdb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1d70c0ddddb92fb0865667724f020213cc3e98f2533acd5faedfe1b101b359ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2577c4d9b51bed22a190a2d1a3682791f2fe7baf04ebfc71b78b1c77c142722c"
   end
 
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "python@3.11"
 
   resource "iterm2" do
@@ -50,6 +52,13 @@ class Trzsz < Formula
     bin.install_symlink libexec/"bin/trz"
     bin.install_symlink libexec/"bin/tsz"
     bin.install_symlink libexec/"bin/trzsz-iterm2"
+
+    # Remove the lines below when we depend on unversioned protobuf.
+    # This is needed because protobuf@21 is keg-only.
+    odie "`.pth` file writing can be removed!" if deps.none? { |d| d.name.start_with?("protobuf@") }
+    site_packages = Language::Python.site_packages("python3")
+    protobuf = Formula["protobuf@21"].opt_prefix
+    (libexec/site_packages/"homebrew-protobuf.pth").write protobuf/site_packages
   end
 
   test do

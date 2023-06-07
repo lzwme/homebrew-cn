@@ -1,9 +1,11 @@
 class Rethinkdb < Formula
   desc "Open-source database for the realtime web"
   homepage "https://rethinkdb.com/"
+  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://download.rethinkdb.com/repository/raw/dist/rethinkdb-2.4.3.tgz"
   sha256 "c3788c7a270fbb49e3da45787b6be500763c190fb059e39b7def9454f9a4674f"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/rethinkdb/rethinkdb.git", branch: "next"
 
   livecheck do
@@ -12,18 +14,18 @@ class Rethinkdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ae30957e7551311117601bde58ab4ebca32462d2d954c1e080d14caacee958bc"
-    sha256 cellar: :any,                 arm64_monterey: "59858581f1766561f3ab4981d3cc9ddab96e9ff04309a5de27c9a4a2b4e7ffc5"
-    sha256 cellar: :any,                 arm64_big_sur:  "896cd6b4cc6cacf34ca3cee6506b601f277c14f6aebd94893ef7a01cb7f27707"
-    sha256 cellar: :any,                 ventura:        "ae34d8f985b6653bce595c4bf9ff78b9efbe6b66b3457faa853fac44def55ef8"
-    sha256 cellar: :any,                 monterey:       "15280636e59a10ea79b5eed7216b98233b92843041075c6034033a3de89571f4"
-    sha256 cellar: :any,                 big_sur:        "8c37c99dc3bf4ea3151fc0019e202e79645952955a9a537eed894ae9de7a92b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b283e13c64f5da913686092cb2d0de922170d13104d37a6e953e192324dc6e6"
+    sha256 cellar: :any,                 arm64_ventura:  "72b8273491916ba72470b87d1c720ba14ecf911217d611bd178c33acec60da6e"
+    sha256 cellar: :any,                 arm64_monterey: "c5c84f69aa7d97dd781577b3cb1b4485380ef78fe38b2706dfb8009b8903af1f"
+    sha256 cellar: :any,                 arm64_big_sur:  "0a2b28e9debc607035bb95f0560d89566eea2e802da8332910a23daef0565cca"
+    sha256 cellar: :any,                 ventura:        "48e426908edc78f998b71065b928795dcba3139df4dfd50bc7a7ab13e703c07e"
+    sha256 cellar: :any,                 monterey:       "f214cf1e1218a07ee4a2656cddfd1e51648a876c1f152ecd1b27943a880cc31b"
+    sha256 cellar: :any,                 big_sur:        "0bf444d7ad09a8625effecb7ebe807def916f4a55f82eeff34221cdf71f14e5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "759fd09fa49fc269b4ee299c9bdd1e446c669e5f8d12a7be4a7217cb4cccf4c6"
   end
 
   depends_on "boost" => :build
   depends_on "openssl@1.1"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
 
   uses_from_macos "python" => :build
   uses_from_macos "curl"

@@ -4,16 +4,16 @@ class Mosh < Formula
   url "https://ghproxy.com/https://github.com/mobile-shell/mosh/releases/download/mosh-1.4.0/mosh-1.4.0.tar.gz"
   sha256 "872e4b134e5df29c8933dff12350785054d2fd2839b5ae6b5587b14db1465ddd"
   license "GPL-3.0-or-later"
+  revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_ventura:  "1e37122ddf9eec43006108b5ebda33cbaacdf1806cb9e36f55a51e9d63127ab9"
-    sha256 cellar: :any,                 arm64_monterey: "d1ee93489325ff25e04fb13721dbb9e1b6c00fee6bcd60d29bccf03175222e4b"
-    sha256 cellar: :any,                 arm64_big_sur:  "570b3ac2282ed39584f61c70029d7613360e3b91f985282ccb3fc75b4a0af61b"
-    sha256 cellar: :any,                 ventura:        "ab239b2556be43b941fd4e78db5fabf44531df964c0cb079351bb0e85a0a5f3e"
-    sha256 cellar: :any,                 monterey:       "3cb8d2d82216e9e9c5c2f41586ccaa7d8c576031741b443213dbce184db65f79"
-    sha256 cellar: :any,                 big_sur:        "ef136ae9e3ee88e154e4907753d5f3ad6d5cf2ec6102f5a13e195d4445b089e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dbae285ac8d5c5a52d2e3ef4be2ed7277e64bff69b48d37778e7401c6e930c7c"
+    sha256 cellar: :any,                 arm64_ventura:  "0890a49f252b4b73cec2044ae2a053f7b2d7cd6119ab13f4d2abecfee13404e0"
+    sha256 cellar: :any,                 arm64_monterey: "8f2b7e5b857122ccc2b1b46a1bbbf22ab4b7817f5960bde93b1681d471cf139d"
+    sha256 cellar: :any,                 arm64_big_sur:  "a978b9ad4d682dd0c549af9bc031cdd4f402d64b9f22c2d327bad70d66053df8"
+    sha256 cellar: :any,                 ventura:        "b679b2e9a18c82913fca23c0842c2b9e5a4bb891a372a48df5ca962fabb586e0"
+    sha256 cellar: :any,                 monterey:       "df7f74721af40168ef17a55635fb345992196372f029663bedbc7dca419fa892"
+    sha256 cellar: :any,                 big_sur:        "c3aa80b4edbbc1b077c78cb019d8750b2b522e9f6c3492e1b98d2b3619a364f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "58ffb22ffa582825415e33954a2375473086862b69a91e55627aaf89a019c513"
   end
 
   head do
@@ -38,12 +38,19 @@ class Mosh < Formula
 
     # https://github.com/protocolbuffers/protobuf/issues/9947
     ENV.append_to_cflags "-DNDEBUG"
+    # Keep C++ standard in sync with abseil.rb
+    ENV.append "CXXFLAGS", "-std=c++17"
 
     # teach mosh to locate mosh-client without referring
     # PATH to support launching outside shell e.g. via launcher
     inreplace "scripts/mosh.pl", "'mosh-client", "'#{bin}/mosh-client"
 
-    system "./autogen.sh" if build.head?
+    if build.head?
+      # Prevent mosh from reporting `-dirty` in the version string.
+      inreplace "Makefile.am", "--dirty", "--dirty=-Homebrew"
+      system "./autogen.sh"
+    end
+
     system "./configure", "--prefix=#{prefix}", "--enable-completion"
     system "make", "install"
   end

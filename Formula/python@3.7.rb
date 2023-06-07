@@ -1,8 +1,8 @@
 class PythonAT37 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.7.16/Python-3.7.16.tar.xz"
-  sha256 "8338f0c2222d847e904c955369155dc1beeeed806e8d5ef04b00ef4787238bfd"
+  url "https://www.python.org/ftp/python/3.7.17/Python-3.7.17.tar.xz"
+  sha256 "7911051ed0422fd54b8f59ffc030f7cf2ae30e0f61bda191800bb040dce4f9d2"
   license "Python-2.0"
 
   livecheck do
@@ -11,10 +11,10 @@ class PythonAT37 < Formula
   end
 
   bottle do
-    sha256 ventura:      "36df3753c31cd484baf76d0a5fd86fbf6a535f9471eea7da75ce9710213ddc84"
-    sha256 monterey:     "6f5d5dbcb09c6a747c511fea853d971e91abe9b84892c2b435e4e113cfd1aacf"
-    sha256 big_sur:      "53723ea42f0f296159b9af4b5f409f4a51cf13922fb05ec5f54ce0d105c41ab4"
-    sha256 x86_64_linux: "86492ae50222d0908a2b27e07a9d06f01d58888cac2577366e62bb3f41c5c81e"
+    sha256 ventura:      "c9d94658425309c0782eab93feec0c9e23d2816b99e9a4b1b4e5643686137221"
+    sha256 monterey:     "1b7b4f086a7fd1ecdb440be1bf85718f6c1409f71ec443545218cf4e52f73762"
+    sha256 big_sur:      "02118436c3c726ec36189193fe689272885987010e969f2603e35224f8141a5c"
+    sha256 x86_64_linux: "d83548a6f033a128a27ab5cc14e61c289908fbd53c068a16bd88b24c6b143521"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -49,18 +49,18 @@ class PythonAT37 < Formula
              "bin/easy_install-3.6", "bin/easy_install-3.7"
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/b6/21/cb9a8d0b2c8597c83fce8e9c02884bce3d4951e41e807fc35791c6b23d9a/setuptools-65.6.3.tar.gz"
-    sha256 "a7620757bf984b58deaf32fc8a4577a9bbc0850cf92c20e1ce41c38c19e5fb75"
+    url "https://files.pythonhosted.org/packages/03/20/630783571e76e5fa5f3e9f29398ca3ace377207b8196b54e0ffdf09f12c1/setuptools-67.8.0.tar.gz"
+    sha256 "62642358adc77ffa87233bc4d2354c4b2682d214048f500964dbe760ccedf102"
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/a3/50/c4d2727b99052780aad92c7297465af5fe6eec2dbae490aa9763273ffdc1/pip-22.3.1.tar.gz"
-    sha256 "65fd48317359f3af8e593943e6ae1506b66325085ea64b706a998c6e83eeaf38"
+    url "https://files.pythonhosted.org/packages/fa/ee/74ff76da0ab649eec7581233daeb43d8aa35383d8f75317b2ab3b80c922f/pip-23.1.2.tar.gz"
+    sha256 "0e7c86f486935893c708287b30bd050a36ac827ec7fe5e43fe7cb198dd835fba"
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/a2/b8/6a06ff0f13a00fc3c3e7d222a995526cbca26c1ad107691b6b1badbbabf1/wheel-0.38.4.tar.gz"
-    sha256 "965f5259b566725405b05e7cf774052044b1ed30119b5d586b2703aafe8719ac"
+    url "https://files.pythonhosted.org/packages/fc/ef/0335f7217dd1e8096a9e8383e1d472aa14717878ffe07c4772e68b6e8735/wheel-0.40.0.tar.gz"
+    sha256 "cd1196f3faee2b31968d626e1731c94f99cbdb67cf5a46e4f5656cbee7738873"
   end
 
   # Patch for MACOSX_DEPLOYMENT_TARGET on Big Sur. Upstream currently does
@@ -257,7 +257,6 @@ class PythonAT37 < Formula
 
     # Remove wheel test data.
     # It's for people editing wheel and contains binaries which fail `brew linkage`.
-    rm libexec/"wheel/tox.ini"
     rm_r libexec/"wheel/tests"
 
     # Install unversioned and major-versioned symlinks in libexec/bin.

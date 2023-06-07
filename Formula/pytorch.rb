@@ -3,10 +3,12 @@ class Pytorch < Formula
 
   desc "Tensors and dynamic neural networks"
   homepage "https://pytorch.org/"
+  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://github.com/pytorch/pytorch.git",
       tag:      "v2.0.0",
       revision: "c263bd43e8e8502d4726643bc6fd046f0130ac0e"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -14,11 +16,10 @@ class Pytorch < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "84c92920a975f10018036fe317f6e5f769c1808cb3830f8b6703466d1de36b16"
-    sha256 cellar: :any,                 arm64_monterey: "865be2629122148a2255efe8a91509aa08077538671af6f5ad0414c9ec0d510d"
-    sha256 cellar: :any,                 ventura:        "6f18ba97503ae41b3fe200edd20676d0dff3c31a0687c15cd2982f41b157a978"
-    sha256 cellar: :any,                 monterey:       "5d44adc32a12d071ac534ecf2d69e7b7b55e68f580160c80faf69d1886646991"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "efba91ed3399ef15b48808adfa00a95b76b15ffb8e2094e175748d1dab95a258"
+    sha256 cellar: :any,                 arm64_ventura:  "5d7f8b5a6b68b843e4d378f06edcf04fc4eb3e6a67bd31a30aaff0d22cbbc2a4"
+    sha256 cellar: :any,                 arm64_monterey: "4dcc2fe35ee17d0332467402b41f7e141c4685c6e44adb69923b5d12fac2cb42"
+    sha256 cellar: :any,                 monterey:       "3a6099a1d604fca547bd5c1e83022699d871b878f0c8da55afb56289b8ecff08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ef4ba460cda2220b94ff2a5e327da87cba35c92cb6788353c0ddb42d26cb45c"
   end
 
   depends_on "cmake" => :build
@@ -27,11 +28,11 @@ class Pytorch < Formula
   depends_on xcode: :build
   depends_on "eigen"
   depends_on "libuv"
-  depends_on macos: :monterey  # MPS backend only supports 12.3 and above
+  depends_on macos: :monterey # MPS backend only supports 12.3 and above
   depends_on "numpy"
   depends_on "openblas"
   depends_on "openssl@1.1"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "pybind11"
   depends_on "python-typing-extensions"
   depends_on "pyyaml"

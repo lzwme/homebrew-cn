@@ -1,19 +1,19 @@
 class Inko < Formula
   desc "Safe and concurrent object-oriented programming language"
   homepage "https://inko-lang.org/"
-  url "https://releases.inko-lang.org/0.11.0.tar.gz"
-  sha256 "fd1b492d0fc4d0e4930e3b3a547957ccb01898306797b1a1afbc4512eb045566"
+  url "https://releases.inko-lang.org/0.12.0.tar.gz"
+  sha256 "56584ece9d1522401d0855d3d103ee7e53fee74f12441a5e26b32f8d5eb934b8"
   license "MPL-2.0"
   head "https://github.com/inko-lang/inko.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "135a9bc1794ee3afc088ca7f7e5e2647d8c9ba8b32112ca61d10c0277b0432f2"
-    sha256 cellar: :any,                 arm64_monterey: "83bdfe0f42745642c79f3584f11119505bddd8b5b743de5f7fa94b40a6914ef1"
-    sha256 cellar: :any,                 arm64_big_sur:  "f1062bdae4583a55deda9d80ff8fd850665901ecabf0db248a6487fd5313b7d4"
-    sha256 cellar: :any,                 ventura:        "255bf406f901878da903abefc27bed856e4910fc5164a6757a20c3b2fa62e27f"
-    sha256 cellar: :any,                 monterey:       "7a5434ead93e9205cb066ae95c61007f0e2024293a09a89701ed7fdf5e3f4a6f"
-    sha256 cellar: :any,                 big_sur:        "438c34b8ede0b33edfd552ba4fda45214babdfa78d699bd0ce29565390fd4d24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20293924c09ba14723b63f4b7392c7231e57f5a0449e101bef8103ffcbceea8e"
+    sha256 cellar: :any,                 arm64_ventura:  "e4dfd8dfcabe4bd91017d969517af9a78a615aa12ba4701358bab0324ae6b26d"
+    sha256 cellar: :any,                 arm64_monterey: "858877702a14e0023d3689ac9d06dc5552cca998aad329e5d5a43d32b54a22f2"
+    sha256 cellar: :any,                 arm64_big_sur:  "9879147562ae214c4e76c94a32426fb8710ee0475e60b843af4b9b931881adb2"
+    sha256 cellar: :any,                 ventura:        "ffed66f5e2fc27db2f93eec8a9f821e20ad58fec79934eac28591fb36fa8fb79"
+    sha256 cellar: :any,                 monterey:       "3f421d39d79e0c0fa39e0878776cf116baacf618e89bdeaec89545fe3098c074"
+    sha256 cellar: :any,                 big_sur:        "24d398103166917fdf3813e1796957b4bd59d5d8c8ba580a62e2696bb0872030"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd48e9a3878a214c379efe9470ed433c0402a67c0948946b511442dd33fdc097"
   end
 
   depends_on "coreutils" => :build

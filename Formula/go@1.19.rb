@@ -1,9 +1,9 @@
 class GoAT119 < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.19.9.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.19.9.src.tar.gz"
-  sha256 "131190a4697a70c5b1d232df5d3f55a3f9ec0e78e40516196ffb3f09ae6a5744"
+  url "https://go.dev/dl/go1.19.10.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.19.10.src.tar.gz"
+  sha256 "13755bcce529747d5f2930dee034730c86d02bd3e521ab3e2bbede548d3b953f"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,13 +12,13 @@ class GoAT119 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7fc9b08acd36abd58aedac821c8efe2b591553e5207833a9157444e143b0dc5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fbf4ed14ae0d95fc3063a2b5cf1c65a25ae8b7ce8354ab66e51ac7a55065c892"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7e60e991ae8fca847eb64561ca27b491b60f3de152c8071c0fd72f8f82ce5073"
-    sha256 cellar: :any_skip_relocation, ventura:        "1512f5ecf9acad94c66c5d76d8af694761861774c268f3f0fbb1908f9d923ac1"
-    sha256 cellar: :any_skip_relocation, monterey:       "2918bb5fc27e290eb03e7f633351e8a03974bff6bfdf8de795a0c626e863fb66"
-    sha256 cellar: :any_skip_relocation, big_sur:        "45110d1f92b708dd9b78152ed2614db1b6db277ba015a9689d87532d9ecd441d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "53e86eaad398f1af2ecae6f8c2218905962a4911af795fe35968cbd26b37d54d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89550534e0da6b164f081424a5cf5d2a2a795886fb6eef94bcb6f627571bb551"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ba044582e0d8c3caa3ed66de27d77ef41b5f055a5c381b1b1ba0ef67fddc41f9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "617333656d4b6cf4e3569faf257d38172aed67d1b43022be3ec2e20ec8012cc7"
+    sha256 cellar: :any_skip_relocation, ventura:        "2c25de867609bc1569d173403601197623b035c963c8bb6eac2bd2e7aa36d397"
+    sha256 cellar: :any_skip_relocation, monterey:       "51850b0f9e05d0adc0a3b2e93357a641ff7f362767f769771f5f8d80a4f36af2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ad707b09b7c39228f710dd4499610d066d007088e534b98ea6cbb3b97613fb29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c667083d40d6815e75d840b72398167f452160bfc0b9e7567ccad2048ad864ef"
   end
 
   keg_only :versioned_formula

@@ -1,9 +1,11 @@
 class Mysql < Formula
   desc "Open source relational database management system"
   homepage "https://dev.mysql.com/doc/refman/8.0/en/"
+  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.33.tar.gz"
   sha256 "ae31e6368617776b43c82436c3736900067fada1289032f3ac3392f7380bcb58"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
+  revision 1
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src"
@@ -11,14 +13,13 @@ class Mysql < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "b9d6f2a868be5713ca576e63d358878ee19b4a91b4a6c26b1f99c865b766cc59"
-    sha256 arm64_monterey: "ade87b6d6130e02940c52c10a490b99449a4c9aaf9e10c89f32c63411f3a0283"
-    sha256 arm64_big_sur:  "2af33fc6f8908d4d78d9559a1e038ac8cdc12d0bd414dbb3dce9083e1c79ec0a"
-    sha256 ventura:        "092aceed2b25c147deef0f661b0768fb1bfd626b7861b304473e08f172026949"
-    sha256 monterey:       "b39c891a9ff6619ab7e0de2c72a6de303f34963ced4763bc1a574f7a35d75b85"
-    sha256 big_sur:        "687450c06de0e61f744f331eddd950836c2851714e3bf6a818bee8bcffa587d7"
-    sha256 x86_64_linux:   "3c548b7e0e6ad61fac3a35b8eb9a853226065557e7c462f079f6a17827d267a1"
+    sha256 arm64_ventura:  "f7a6d1f41c3f9da796ed974929455fac311e53baffb10588e7ac9a728f66d780"
+    sha256 arm64_monterey: "e56237aaf6493250711b258801426999d89a6c6d084599200e118e1d09cb90e5"
+    sha256 arm64_big_sur:  "506cda6ea66d32ce95c9ec89cd9d8cecdad66bf4db23c8a27ab57809f2d51af6"
+    sha256 ventura:        "a0bf848998c389fd819578a220f2d2175c62f4f6d8219d86ca8830a4caf363a8"
+    sha256 monterey:       "c036e82326b69740b9f95ba10c3f2d28d85628114716c9d4451891e41f34e27b"
+    sha256 big_sur:        "d8a3991c09e3dfdb7045fd95a5fe0d85fdb5832661709ea3ab9655de35f3e539"
+    sha256 x86_64_linux:   "0670d39b9a7430ed582062701fed1906de8d91836254c16e01a327ed8864ad0e"
   end
 
   depends_on "cmake" => :build
@@ -28,7 +29,7 @@ class Mysql < Formula
   depends_on "libfido2"
   depends_on "lz4"
   depends_on "openssl@1.1"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "zlib" # Zlib 1.2.12+
   depends_on "zstd"
 

@@ -3,20 +3,19 @@ class Pympress < Formula
 
   desc "Simple and powerful dual-screen PDF reader designed for presentations"
   homepage "https://github.com/Cimbali/pympress/"
-  url "https://files.pythonhosted.org/packages/08/3f/9fd254a40155c8f51b52b045f5df16a794d21d4c3dfeb8c5d379671e72f1/pympress-1.8.2.tar.gz"
-  sha256 "d9587112ab08b1c97d8f9baccde2f666b4b6291bd22fcb376d27574301b2c179"
+  url "https://files.pythonhosted.org/packages/0c/83/fb7ee0393a6b200b2344ffa0c6e6c2dbf8444fa4169207bd87d805ed3f12/pympress-1.8.3.tar.gz"
+  sha256 "4e3699f4318416f480f930be0c0fb18d4d2a36d11becf964aa80182382984ddd"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/Cimbali/pympress.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d8d24fedbc9224464fc9d917d689c2bb19385ab000a09b09f5ea786dfd994e4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d20d02e3bef56547087422569b32199435a92b750232d8ab4edc8fdad7839ace"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "92c82f00fea337c371715f3b5fe6a15a5884300a96e9ea34081e57d6e3d34dca"
-    sha256 cellar: :any_skip_relocation, ventura:        "010b35a5b0020f1d6779339687acb956b108a02c5191554d91ab2264c5ee2899"
-    sha256 cellar: :any_skip_relocation, monterey:       "63d3825e4e609f26ceab417db71b1a13dc740045f1acaad47f0a73f7f4ce535e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9771e2fe41d256339abe9e1dbf7569ab932cb2aecd1bd34007879779117803a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2bb664da1b976473e9f1e48769b40f0244b266d3be605d962be979c71e99e169"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "271f2deb743361d30104a8bd212b89a003396d29c0a62f9c87f7162061cee5a4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc68c5f47c42a0615da03a20e189f27db0a36c189e328947d8b3b1f0de8dd432"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "20a8f86bd1eebbb5b0f819c06106200ed98a15adb1523fa101edc9f9a83c0eca"
+    sha256 cellar: :any_skip_relocation, ventura:        "497de69911b227fa982c1ca762819364c805770332811bd14a094c8126d1c916"
+    sha256 cellar: :any_skip_relocation, monterey:       "e37c1a1d8f97207618d24469d7001e4b59e1bf8f423ffe79ad062d129e51742d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ca76312ef16c5ef9bb6a89bcb8859bda35c81e08b63163162367c35b35db8a5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "821ab3272ad9db45fb1da5a775f7d0512a22df8e777804d678e144ad3ebe18d5"
   end
 
   depends_on "gobject-introspection"

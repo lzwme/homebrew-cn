@@ -1,25 +1,27 @@
 class Fastnetmon < Formula
   desc "DDoS detection tool with sFlow, Netflow, IPFIX and port mirror support"
   homepage "https://github.com/pavel-odintsov/fastnetmon/"
+  # TODO: Check if we can use unversioned `grpc` at version bump
   url "https://ghproxy.com/https://github.com/pavel-odintsov/fastnetmon/archive/refs/tags/v1.2.5.tar.gz"
   sha256 "d92a1f16e60b6ab6f5c5e023a215570e9352ce9d0c9a9d7209416f8cd0227ae6"
   license "GPL-2.0-only"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "43e1dcf0484a87c3db4a424bac3e2965b22290b7a3178532f803584e479fb20a"
-    sha256 cellar: :any,                 arm64_monterey: "6deebc385d74a2ba2859e99990542a97b4444af96fd46bf993d11e82ad2d7f2e"
-    sha256 cellar: :any,                 arm64_big_sur:  "82518226cbafbdeae623d4da79167ae1640333019118e77978b3e611b342fd96"
-    sha256 cellar: :any,                 ventura:        "641731f22269ae6b6fddc9d9ffe3f5206b5a2ad731b7129ad79912c19b7454d5"
-    sha256 cellar: :any,                 monterey:       "ab08938beedc3e5009295df1ab54ad0b55819fcda7174c2ed71b3eae75e833d3"
-    sha256 cellar: :any,                 big_sur:        "00743ebd3a2956810999f4c6c80e364703ff462497af91d7fdcb16632211d109"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6c73f1cff009733f76e39e5861cc8f0aa510b29e1cc24a53d38dbd36500ddb5"
+    sha256 cellar: :any,                 arm64_ventura:  "766d36f3912a3cee0e95d22b5e97fc813f3484fc145c180cfc7eaa150ab30cf5"
+    sha256 cellar: :any,                 arm64_monterey: "f399e55f4f1dfbee466c82f27128cbc37aa2df1164491afc34af2e87d6908116"
+    sha256 cellar: :any,                 arm64_big_sur:  "1bf91512a6addb3b71d57879bb0439baa15d8a6c704e60fb5070d238b003224a"
+    sha256 cellar: :any,                 ventura:        "10a9772b6dba1cd001609150c112c469da2859258b34b6922887b5309782bdac"
+    sha256 cellar: :any,                 monterey:       "5631cf00a21e09c5d6f82e51597cd64e82fb16073cfe9f46d4573b2e95668511"
+    sha256 cellar: :any,                 big_sur:        "ed20ea53d33be8086144019a0aca53493eb97a49b90b9a1100eec8ca1bd8f419"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f16861d43e05722b63ff4acc2257893bdd584cd5ca0cadbca684abf72ae934e2"
   end
 
   depends_on "cmake" => :build
   depends_on "abseil"
   depends_on "boost"
   depends_on "capnp"
-  depends_on "grpc"
+  depends_on "grpc@1.54"
   depends_on "hiredis"
   depends_on "log4cpp"
   depends_on macos: :big_sur # We need C++ 20 available for build which is available from Big Sur

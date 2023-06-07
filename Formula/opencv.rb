@@ -1,10 +1,11 @@
 class Opencv < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
+  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://ghproxy.com/https://github.com/opencv/opencv/archive/refs/tags/4.7.0.tar.gz"
   sha256 "8df0079cdbe179748a18d44731af62a245a45ebf5085223dc03133954c662973"
   license "Apache-2.0"
-  revision 4
+  revision 5
 
   livecheck do
     url :stable
@@ -12,13 +13,13 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "1e871ece3dc430e549bbcc447d8d1328b23d795490cd84d0a2eebd91d2f8fd1f"
-    sha256 arm64_monterey: "cdb96aec242b81bf2e30ab2c8617d5257b6cac6e9f14b7062d8987753e96e1c3"
-    sha256 arm64_big_sur:  "7997f935e9bb9c4da396da9525b4a49064ee61fc5bed4047e02a861cd1c86448"
-    sha256 ventura:        "3f23d35114213313f1a50bfd7a9a2fb9fcbfb77389da9f26a9be04c52b7aabdb"
-    sha256 monterey:       "760d86445e552c1cfc71e5a8aa9bcb9ff7a57da0e1e3506db10012d0542e5485"
-    sha256 big_sur:        "007ec12d18aa36dcae633756a51f3c6b2572404c89d4478e3352bf315ec2ffff"
-    sha256 x86_64_linux:   "4fd2242c95c330f71b4d1eea91ebe1057dc54149dd90b00319b73321c9b7e25b"
+    sha256 arm64_ventura:  "9825122dcdf6de79220259b509cf501fc745f7c88e45a5177155e85e7abf8a10"
+    sha256 arm64_monterey: "7221fa3d925e294aac6c88f92cfc0c56442c254325fcac9ec18eaa5270e48696"
+    sha256 arm64_big_sur:  "ae1a6e7c0f2ac71f4fa2fea05e4a4398afb40d0b86b753a7caad17c1a05a72c4"
+    sha256 ventura:        "e979c2ef984c3d4c274cf47adf0fc48a6ffb4ad9878cf2b5a40e349a16bc167e"
+    sha256 monterey:       "36700a9b1f13ba3c0d2228e35a6f8f4b128b132d7b4a5594f21ef9a2fb46f116"
+    sha256 big_sur:        "82dfe3779ef489ffd00d6019641ec65b300fc9ef471246e7628fac20ef175756"
+    sha256 x86_64_linux:   "840ad633897dc1de63adc4add071097fd2de966274d8788c7a57650fe0d4fdb2"
   end
 
   depends_on "cmake" => :build
@@ -35,7 +36,7 @@ class Opencv < Formula
   depends_on "openblas"
   depends_on "openexr"
   depends_on "openjpeg"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "python@3.11"
   depends_on "tbb"
   depends_on "vtk"
@@ -115,7 +116,7 @@ class Opencv < Formula
         -DOPENEXR_ILMIMF_LIBRARY=#{Formula["openexr"].opt_lib}/libIlmImf.so
         -DOPENEXR_ILMTHREAD_LIBRARY=#{Formula["openexr"].opt_lib}/libIlmThread.so
         -DPNG_LIBRARY=#{Formula["libpng"].opt_lib}/libpng.so
-        -DPROTOBUF_LIBRARY=#{Formula["protobuf"].opt_lib}/libprotobuf.so
+        -DPROTOBUF_LIBRARY=#{Formula["protobuf@21"].opt_lib}/libprotobuf.so
         -DTIFF_LIBRARY=#{Formula["libtiff"].opt_lib}/libtiff.so
         -DWITH_V4L=OFF
         -DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.so

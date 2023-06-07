@@ -32,6 +32,9 @@ class Ganglia < Formula
     depends_on "libtool" => :build
   end
 
+  # https://www.mail-archive.com/ganglia-developers@lists.sourceforge.net/msg06873.html
+  deprecate! date: "2023-06-05", because: :unmaintained
+
   depends_on "pkg-config" => :build
   depends_on "apr"
   depends_on "confuse"

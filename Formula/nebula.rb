@@ -4,6 +4,7 @@ class Nebula < Formula
   url "https://ghproxy.com/https://github.com/slackhq/nebula/archive/v1.7.2.tar.gz"
   sha256 "c4771ce6eb3e142f88f5f4c12443cfca140bf96b2746c74f9536bd1a362f3f88"
   license "MIT"
+  head "https://github.com/slackhq/nebula.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e30c0cf05dbcb16a4a5820126dd105067974e3a82d786a07fd0e5b2f36fb8085"

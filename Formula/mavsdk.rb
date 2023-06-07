@@ -3,10 +3,12 @@ class Mavsdk < Formula
 
   desc "API and library for MAVLink compatible systems written in C++17"
   homepage "https://mavsdk.mavlink.io"
+  # TODO: Check if we can use unversioned `grpc` and `protobuf` at version bump
   url "https://github.com/mavlink/MAVSDK.git",
       tag:      "v1.4.15",
       revision: "8b9b5b810c08ecf582ba0a4bffdb76b35d0a8007"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -14,13 +16,13 @@ class Mavsdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8926a197f17b16bd649d3567d124a3db1c52d58cc295414d0b55512cd604b248"
-    sha256 cellar: :any,                 arm64_monterey: "b98242e6457b71093987cb09081adf57267bf9a85d1f83fdc680afa5d610538b"
-    sha256 cellar: :any,                 arm64_big_sur:  "1304c06a519d1b894cf42e599cdde1f5e1b108b24ef055fd147419d32fd3199f"
-    sha256 cellar: :any,                 ventura:        "e4535f34547b03aef7b36e70bd26b3e66a4837c83bfb5f1ea6902a720a7082c0"
-    sha256 cellar: :any,                 monterey:       "2343d24865618770c6fbe023f6f177d3e4a606c019c563640c721a4476242241"
-    sha256 cellar: :any,                 big_sur:        "7f70be2c2776667148eb5b95fb5deea196d1a14bee5875a2fa0a31407d452546"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08d5d1d23046754fe8f0fb705cf67531f545c077026d858b92d903acacf242ab"
+    sha256 cellar: :any,                 arm64_ventura:  "be9f699efc5201875525ffcbc4b4f4fda3d944e28ce7f9a8f0819cba3a2696e6"
+    sha256 cellar: :any,                 arm64_monterey: "4346e6eaa56444916d389b3b9a12fa887e0238a4b0c163c5dafc57fa1c649d97"
+    sha256 cellar: :any,                 arm64_big_sur:  "6c3028c9d496064aa88adb3a33ded28ba49aa9ce13ea53d8ecf01e346c83d1de"
+    sha256 cellar: :any,                 ventura:        "1103c71dbe6317c4e07c03dcf8d01481a23747ca02acb12e86e00112fa6fbbfc"
+    sha256 cellar: :any,                 monterey:       "dee23eba423cf88387aac08c381f30a7b78b34a39356e7e6e1b3632a877f3a57"
+    sha256 cellar: :any,                 big_sur:        "340ca228711f3cd9059127c9855e25fad1ee2fec9af4a1fdf0d93d82749522dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6bddc4e94dd52ba46706bbfec28f9b694cbbbc7ca564ba1045fd6389ed0c101b"
   end
 
   depends_on "cmake" => :build
@@ -29,10 +31,10 @@ class Mavsdk < Formula
   depends_on "abseil"
   depends_on "c-ares"
   depends_on "curl"
-  depends_on "grpc"
+  depends_on "grpc@1.54"
   depends_on "jsoncpp"
   depends_on "openssl@1.1"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "re2"
   depends_on "tinyxml2"
 

@@ -20,13 +20,14 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "985574ef452faacdeb5b6641529752251a57c427eee309905a9d4f8aff2f9b75"
-    sha256 arm64_monterey: "16c060e982488aea66acf43a6e6731553c6d0ad356e907d61803b18be6876f90"
-    sha256 arm64_big_sur:  "1835a539635fa37304a600e67808f68d0a95c4c2f7e9d50cca3d7e11e569bae5"
-    sha256 ventura:        "de7fbc9e364834f26aac8bc3a3309f996bcf33cde704c60183fc58b655fd045f"
-    sha256 monterey:       "57020c43a55d5bd2ecfb95005fa288b8c7d7a259f8a071a6a1313032a2060a44"
-    sha256 big_sur:        "4d277270ec510b20cd8b34de6a7ebd40fb7a4365a8f0bc575080feda53656549"
-    sha256 x86_64_linux:   "78ddf1a663d0e15b2cc2bc8222740bd40f5b534083f7c5a10d29e1bdf48c4ce3"
+    rebuild 1
+    sha256 arm64_ventura:  "447ed8ece34d551f6f5c4492bb05951776cdaa20193d2b4177314161d98aa947"
+    sha256 arm64_monterey: "6bcaf7689d90f70c54c914278e744bc922cd326824d894e0ab9d8e4be3e857b3"
+    sha256 arm64_big_sur:  "f8cfe1b02dc112e33b6b6471fe55c997b196df960cf79aa95a25f24872c7f404"
+    sha256 ventura:        "1b1b49362998ada9556f1be2fcdcd69d618c18a2ad40c3e5ec237fd1037a7e16"
+    sha256 monterey:       "49ba626e3b008325f066a21a72caa4ee757cebf05966249ee5b2d9fbc6eb5a87"
+    sha256 big_sur:        "432ba1fd0401905fa7b92500b2de4570e0dfb6a68a12549c1558b50fe8ab6e00"
+    sha256 x86_64_linux:   "1636854d00244a5c97b10a49b40af6c8232b617bcc5f6f196d11e639cb5af125"
   end
 
   head do
@@ -168,13 +169,17 @@ class Gstreamer < Formula
     args << "-Dgstreamer:ptp-helper-permissions=none"
 
     # Prevent the build from downloading an x86-64 version of bison.
+    args << "-Dbuild-tools-source=system" if build.head? # make unconditional in 1.24+
     inreplace "meson.build", "subproject('macos-bison-binary')", ""
+    odie "`macos-bison-binary` workaround should be removed!" if build.stable? && version >= "1.24"
 
     # Set `RPATH` since `cargo-c` doesn't seem to.
     # https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/issues/279
     plugin_dir = lib/"gstreamer-1.0"
     rpath_args = [loader_path, rpath(source: plugin_dir)].map { |path| "-rpath,#{path}" }
-    ENV["RUSTFLAGS"] = "--codegen link-args=-Wl,#{rpath_args.join(",")}"
+    inreplace "subprojects/gst-plugins-rs/meson.build",
+              "rust_flags = []",
+              "rust_flags = ['--codegen', 'link-args=-Wl,#{rpath_args.join(",")}']"
 
     # Make sure the `openssl-sys` crate uses our OpenSSL.
     ENV["OPENSSL_NO_VENDOR"] = "1"

@@ -1,10 +1,12 @@
 class Wownero < Formula
   desc "Official wallet and node software for the Wownero cryptocurrency"
   homepage "https://wownero.org"
+  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://git.wownero.com/wownero/wownero.git",
       tag:      "v0.11.0.3",
       revision: "e921c3b8a35bc497ef92c4735e778e918b4c4f99"
   license "BSD-3-Clause"
+  revision 1
 
   # The `strategy` code below can be removed if/when this software exceeds
   # version 10.0.0. Until then, it's used to omit a malformed tag that would
@@ -23,13 +25,13 @@ class Wownero < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f8f3c23fb5186a037c01c9f4d82742b4d3098d7dd9349949d9f001fab182746d"
-    sha256 cellar: :any,                 arm64_monterey: "bbb5a81c9ab36cc09cf1c0cad43110da66a6c0cd9ade96647041172e7285829d"
-    sha256 cellar: :any,                 arm64_big_sur:  "6e9eba687f435c197c4c0bd7d2c045091ef80e1eba8c29866e357bd83e7befdd"
-    sha256 cellar: :any,                 ventura:        "9dfd70c7f9af50e125581d3f5bda6247b20966c05ec91b587a3e8db3b70c5b55"
-    sha256 cellar: :any,                 monterey:       "894e203b6cfe46ae4cd8d3755311da1fe871939152960b997e77a573fd5ad8be"
-    sha256 cellar: :any,                 big_sur:        "212b37c687062e20c8e6cf6058b82faf0958b89b322763f30d32fb5ec3c02d39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "47eedd4c62b8c3c0f0a18f3080a82691d9becab292588658d76fcacd1b2ef65d"
+    sha256 cellar: :any,                 arm64_ventura:  "2bf3e20f48c0b92b2bfc74feaee831b3849c56239a0d9e1da6a54f49e36da19b"
+    sha256 cellar: :any,                 arm64_monterey: "deb50ecc4a6e3bc42672a7ebd5ed49fef415d2590735fc9cef2e883627f3a669"
+    sha256 cellar: :any,                 arm64_big_sur:  "face536fbc52d85877bd7a680e37b45488e79b8f5be491a89846ca78157eb88d"
+    sha256 cellar: :any,                 ventura:        "7952e31288138949ede6b78adce699ccee81cf289ac0e4854da9f6eab8fefd4e"
+    sha256 cellar: :any,                 monterey:       "8d9ae5c1457454103f82e0c25f8748dd18e3b1cfc4200cb8e286104690696b41"
+    sha256 cellar: :any,                 big_sur:        "88f65079dab113125350e18dff96884cf3d00502cad966debd73e1a002520975"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "414dc04013fed7567286ef00d8c066dca39c37404c06d7d7863cfb798dddf8a4"
   end
 
   depends_on "cmake" => :build
@@ -40,7 +42,7 @@ class Wownero < Formula
   depends_on "libsodium"
   depends_on "libusb"
   depends_on "openssl@1.1"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "readline"
   depends_on "unbound"
   depends_on "zeromq"
@@ -48,15 +50,13 @@ class Wownero < Formula
   conflicts_with "monero", because: "both install a wallet2_api.h header"
 
   def install
-    args = std_cmake_args
-
     # Need to help CMake find `readline` when not using /usr/local prefix
-    args << "-DReadline_ROOT_DIR=#{Formula["readline"].opt_prefix}"
+    args = %W[-DReadline_ROOT_DIR=#{Formula["readline"].opt_prefix}]
 
     # Build a portable binary (don't set -march=native)
-    args << "-DARCH=default"
+    args << "-DARCH=default" if build.bottle?
 
-    system "cmake", "-S", ".", "-B", "build", *args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

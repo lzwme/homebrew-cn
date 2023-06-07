@@ -2,7 +2,7 @@ class Sysdig < Formula
   desc "System-level exploration and troubleshooting tool"
   homepage "https://sysdig.com/"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   stable do
     url "https://ghproxy.com/https://github.com/draios/sysdig/archive/refs/tags/0.31.5.tar.gz"
@@ -30,13 +30,13 @@ class Sysdig < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "a7dbbaaa73d3e72c849a0d1c600db4af64c32efd50e72a92be91f1dc841d5541"
-    sha256                               arm64_monterey: "c4e71ab34ad98f927b5b2adddce3b607758fecb63a6a8d2b8e6eab740bd2f00f"
-    sha256                               arm64_big_sur:  "039d010b447f0a330f84a041fb5c5293c42d12a9933d0ffacce1f209c0d63ddd"
-    sha256                               ventura:        "3b7cf7c8297294d080205ffa4a23311ea7110acd592a3451eb33a1e91a94d203"
-    sha256                               monterey:       "a7eecbb515fe22f8cdabf452195a5bc49dd7bab1302335c992d74aa863c413d0"
-    sha256                               big_sur:        "f0fb5a56fcc9cb39f965b7ff17f9aa9b84b84cbbcfb274420b7260c5f3d23a34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "60a0b84ad26f9af2cffccd12bc5800f657ce27b699ccfc9c8c18d641cb7a0262"
+    sha256                               arm64_ventura:  "39c7c73704c6d452d3f55c0a75730f9bb619d056f16346e9be6fdfa861bd2e37"
+    sha256                               arm64_monterey: "6719522a45637ccc9f60eb0183c1b82cca8d79d29a0cb47fc05e6d9e2040f159"
+    sha256                               arm64_big_sur:  "cfc8b30beb8502a8b720ae63fbe875ed569ec6cb715f5831fcda9dd1ccf0e744"
+    sha256                               ventura:        "0663e7e4084b17a60c8abfc1a665f4af07c454bc75067a863c178d6656e1b20f"
+    sha256                               monterey:       "1438c18dbe55cdb740eb280783de76cf142c2bdfdaec098da3e05d74396eb287"
+    sha256                               big_sur:        "ac5d7f78144bdaf37bbd0a75f91be56b23cc1a9f039b710ad19ab288fecd73e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ad96be3ba961f9db78e50790eb0d7228fad94937dd43cca87722715b35f15da"
   end
 
   head do
@@ -65,9 +65,9 @@ class Sysdig < Formula
   on_linux do
     depends_on "libb64" => :build
     depends_on "elfutils"
-    depends_on "grpc"
+    depends_on "grpc@1.54"
     depends_on "jq"
-    depends_on "protobuf"
+    depends_on "protobuf@21"
   end
 
   fails_with gcc: "5" # C++17
