@@ -1,8 +1,8 @@
 class MariadbAT104 < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https://mariadb.org/"
-  url "https://downloads.mariadb.com/MariaDB/mariadb-10.4.29/source/mariadb-10.4.29.tar.gz"
-  sha256 "5b2d338792e79e68d6a545e2b15603bbbf7618c739e5f820f57b1d6b22092130"
+  url "https://downloads.mariadb.com/MariaDB/mariadb-10.4.30/source/mariadb-10.4.30.tar.gz"
+  sha256 "fcbbda671c6c784c03150262623f0d81894c911533e7c3c276f256f2fa12100c"
   license "GPL-2.0-only"
 
   # This uses a placeholder regex to satisfy the `PageMatch` strategy
@@ -23,13 +23,13 @@ class MariadbAT104 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "f144a4e7ba8d03118422eaf79cf0c67e51cd50b69f0e55e1ba803adecbd2ed11"
-    sha256 arm64_monterey: "f0104e44484c73e3e55fa762341a1d9dbe271aa5afedb4cc05e1c43c71aaf673"
-    sha256 arm64_big_sur:  "7470ecdf96fa05cba86a14b84b5de48826d13c760a31be817c153762ce7a59fe"
-    sha256 ventura:        "3e113097e5cf90c4237d3e1001af9f7ea06099b8c2e2cfa50680170c16724192"
-    sha256 monterey:       "62760dff5a53a625d131b375a6572b2fa2a79339172ba9abc292d9822efa5f1c"
-    sha256 big_sur:        "010e29f906c27fda289e17a7071ebf02d1a5288655f5e21ad19d24400cd96331"
-    sha256 x86_64_linux:   "83bc965fff89e121968b2bd30d81cede277e7e8645ab01a4802186f219bdb29c"
+    sha256 arm64_ventura:  "b3347aee26446dc909e7d584658b925806da3c2ba79c1538371c06456361f18b"
+    sha256 arm64_monterey: "857ba4db68dcd40b38155d0319570317319146364a0424b4c294ee2043c9d28e"
+    sha256 arm64_big_sur:  "f51637aaaa7d099c8d2e0ed225a4d1d106208444e5e236ed778fa483065849e9"
+    sha256 ventura:        "e7fdcfde6adb64461646173d1ac2ce5e791ff6289cd546e1cd4547fe6ad8db1e"
+    sha256 monterey:       "cc9e9f9317c3d9b90935194ba0bf74b5f2687e3ab9c5f47e571c74f6920b2cc0"
+    sha256 big_sur:        "105fc2b4ba72153a0865b41cca6d6b26824e1b297646f7e6f5ad31aee8f1d6fa"
+    sha256 x86_64_linux:   "b85e31c213315cd86cc69c015d072398402000eb9268afae527674a19a1b3955"
   end
 
   keg_only :versioned_formula

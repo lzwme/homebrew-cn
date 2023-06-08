@@ -17,13 +17,14 @@ class Subversion < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "3bcbf68fa0d9ac280ccb8e4f99f3adfae51e03159375f9a423f1f85e2d1b2a7e"
-    sha256 arm64_monterey: "92228d98c4bb2dcbbe0330c18ec1fbf92489b55eb2656e1508405cc61b14f1c5"
-    sha256 arm64_big_sur:  "09a3d7a535e71aeddf74165fbda423616e398ce4802122f89ff0ff76a0768592"
-    sha256 ventura:        "275c55dd67ea3fdf79bb617c5e4a2f8d491208e16d4780a0b8cef4153c8ae8ad"
-    sha256 monterey:       "cb013b4827080de7a0c52f6419f1bef1b6e2e1e9e90e42965e18a60f8cd0ef47"
-    sha256 big_sur:        "5620a6783cbd9082a83a9ef2ccea7f53bdf7eb40e96a45b2f2dbaca0bde5dbb9"
-    sha256 x86_64_linux:   "e49be8ddb0ec7fab245f94c33aae7a8289613ab3e61dd9905f5cef53a959a9e8"
+    rebuild 1
+    sha256 arm64_ventura:  "7205394ef4f7ab0bd925f8976f2ca099211505c1d1480973374aca9aae089be5"
+    sha256 arm64_monterey: "795da21bb95f6737f89c33de2cad4c4a1ca6bf74707b38e7956c27c6723f53a6"
+    sha256 arm64_big_sur:  "75a3712a82a7f4283045710d9f9142bda611e65f0671fefd3be1d780792b2c64"
+    sha256 ventura:        "b83a333d9bd503f20ced6ba2d40677c57fa5a4193f785dfe6dfb982eed9479f6"
+    sha256 monterey:       "8772dba3615530d6e9e9302320c9481469ae7984eb224fbffc23071a5ecd06f5"
+    sha256 big_sur:        "af2a3daad4f43f5728a5e8330f9db7e7e1802735c477d91d6cae71b9a58cfe24"
+    sha256 x86_64_linux:   "c30a3ca4396953256f5a60e60943d671657526dbc61298330c7e3b93400ff302"
   end
 
   head do
@@ -70,9 +71,9 @@ class Subversion < Formula
   end
 
   resource "serf" do
-    url "https://www.apache.org/dyn/closer.lua?path=serf/serf-1.3.9.tar.bz2"
-    mirror "https://archive.apache.org/dist/serf/serf-1.3.9.tar.bz2"
-    sha256 "549c2d21c577a8a9c0450facb5cca809f26591f048e466552240947bdf7a87cc"
+    url "https://www.apache.org/dyn/closer.lua?path=serf/serf-1.3.10.tar.bz2"
+    mirror "https://archive.apache.org/dist/serf/serf-1.3.10.tar.bz2"
+    sha256 "be81ef08baa2516ecda76a77adf7def7bc3227eeb578b9a33b45f7b41dc064e6"
   end
 
   def python3
@@ -93,14 +94,6 @@ class Subversion < Formula
       end
 
       inreplace "SConstruct" do |s|
-        s.gsub! "print 'Warning: Used unknown variables:', ', '.join(unknown.keys())",
-        "print('Warning: Used unknown variables:', ', '.join(unknown.keys()))"
-        s.gsub! "match = re.search('SERF_MAJOR_VERSION ([0-9]+).*'",
-        "match = re.search(b'SERF_MAJOR_VERSION ([0-9]+).*'"
-        s.gsub! "'SERF_MINOR_VERSION ([0-9]+).*'",
-        "b'SERF_MINOR_VERSION ([0-9]+).*'"
-        s.gsub! "'SERF_PATCH_VERSION ([0-9]+)'",
-        "b'SERF_PATCH_VERSION ([0-9]+)'"
         s.gsub! "variables=opts,",
         "variables=opts, RPATHPREFIX = '-Wl,-rpath,',"
       end

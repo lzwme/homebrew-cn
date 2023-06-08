@@ -3,8 +3,8 @@ class Cups < Formula
   homepage "https://github.com/OpenPrinting/cups"
   # This is the author's fork of CUPS. Debian have switched to this fork:
   # https://lists.debian.org/debian-printing/2020/12/msg00006.html
-  url "https://ghproxy.com/https://github.com/OpenPrinting/cups/releases/download/v2.4.2/cups-2.4.2-source.tar.gz"
-  sha256 "f03ccb40b087d1e30940a40e0141dcbba263f39974c20eb9f2521066c9c6c908"
+  url "https://ghproxy.com/https://github.com/OpenPrinting/cups/releases/download/v2.4.4/cups-2.4.4-source.tar.gz"
+  sha256 "209259e8fe8df9112af49f4e5765f50dad6da1f869296de41d6eaab1b98003cb"
   license "Apache-2.0"
   head "https://github.com/OpenPrinting/cups.git", branch: "master"
 
@@ -14,18 +14,18 @@ class Cups < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "5d0ea4e86f40eb3650034723cbe4786a0accca7f5904e710840ac52ec463239d"
-    sha256 arm64_monterey: "a360d94c115ce0cac86323656ff6f2d616677c896714b45ee8a2c649c9656ddb"
-    sha256 arm64_big_sur:  "225203fd3c07bfc63c8f62e1b96b0280f8c46ae2a89e5b71e6601f7ac52c0d23"
-    sha256 ventura:        "0a97f59205a79c3a6d7b7c9c24d7785771a47006fa163b24a425d889a66c3973"
-    sha256 monterey:       "89fa9e072be7515c437434a26730ec894667e1b119f05a98fbe7886199813ee6"
-    sha256 big_sur:        "11581b74fed3b8d938fd5f2e68525f6d49243f2f33ed4f9db63e0db606b80bd4"
-    sha256 catalina:       "7d19825e56b4c035d4faddf4b63d9c5b5ae437b277026a2bb3fb9cc664f221b9"
-    sha256 x86_64_linux:   "867dfd79e4892f864af88677c5ca2ba33b6623ec648d8139bcb5d55e004275b1"
+    sha256 arm64_ventura:  "085269454cc716e101433dd921ebbff219f13c24f916167cd164066e6c645d2f"
+    sha256 arm64_monterey: "93593280aa814ae1a9ca3f6af3d3ebd8ecfc20ca40b2ab5dd1c959af83c40bc0"
+    sha256 ventura:        "869e318ca1e31c0d15689c1ca4cb0eb2caf044cdd9f8b7cc6e6954868bf03076"
+    sha256 monterey:       "603084e6b1496e3a9d07ebe308590dc83c58bb278e985906d2e064acc3fd51f8"
+    sha256 x86_64_linux:   "abf0049599c119a74e639e7bbeb2a8297fb7b24509cb2aa30630aa6269e2f159"
   end
 
   keg_only :provided_by_macos
+
+  # https://developer.apple.com/documentation/security/3747134-sectrustcopycertificatechain
+  # `SecTrustCopyCertificateChain` is on available in monterey or newer
+  depends_on macos: :monterey
 
   uses_from_macos "krb5"
   uses_from_macos "zlib"
@@ -35,11 +35,9 @@ class Cups < Formula
   end
 
   def install
-    system "./configure", "--disable-debug",
+    system "./configure", *std_configure_args,
                           "--with-components=core",
-                          "--without-bundledir",
-                          "--prefix=#{prefix}",
-                          "--libdir=#{lib}"
+                          "--without-bundledir"
     system "make", "install"
   end
 

@@ -1,8 +1,8 @@
 class Librealsense < Formula
   desc "Intel RealSense D400 series and SR300 capture"
   homepage "https://github.com/IntelRealSense/librealsense"
-  url "https://ghproxy.com/https://github.com/IntelRealSense/librealsense/archive/v2.53.1.tar.gz"
-  sha256 "e09d0cca0316fa02427ce749c4e9cc8d34e3a86c127b32a8dca3ef483e71e908"
+  url "https://ghproxy.com/https://github.com/IntelRealSense/librealsense/archive/v2.54.1.tar.gz"
+  sha256 "0aac1c8ebaf87a989507ba1dd374ab7cdecedb792a692b5c3aadb1b7e61b585e"
   license "Apache-2.0"
   head "https://github.com/IntelRealSense/librealsense.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Librealsense < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "63acb7654c7db630c266278643994b0c52e1875ea5bf19c5f070c034771adb82"
-    sha256 cellar: :any,                 arm64_monterey: "1ccd5104fd3002c39e5e77f7705a1c0d5d79d2c62b9f41abc3dc9ee3f1138d8a"
-    sha256 cellar: :any,                 arm64_big_sur:  "ce9813788b2d4951aea45f0a36c4b4e05b38b8aacd4490d7084810e3422ad58b"
-    sha256 cellar: :any,                 ventura:        "99d687e21915dc577d6a9c4738e7bcbd242202dfeaf5de9a17552a11e7c1321d"
-    sha256 cellar: :any,                 monterey:       "109c4c5fec1b2f67faf9ae852602f02601213bb99a70c21e7c36913f02f3fc69"
-    sha256 cellar: :any,                 big_sur:        "c0a48855fc7ed376a0bfb471a89bf05164acfcd22db193c250c7d0778ede1b17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f1046ae2d7f16707ab59ecd204401c01e05ccbbf1301028cd115c245123d9a4a"
+    sha256 cellar: :any,                 arm64_ventura:  "3da026909a9e5342bd220bcc821e7a27de5532d1a7b00273477432127ac71034"
+    sha256 cellar: :any,                 arm64_monterey: "8746d3998a4630961c787631f6edb9c9a253f70c2f77c8a6516d3b0f8cfbacd1"
+    sha256 cellar: :any,                 arm64_big_sur:  "e35ed2d31500e525e282243ce831a5d6aa0f791c950d2d4b8a6843246222ba7e"
+    sha256 cellar: :any,                 ventura:        "6a6c09ca98f61e319fb9bc9e872beda72950b419402615908084d6136cbf9857"
+    sha256 cellar: :any,                 monterey:       "6fda7bbf1f0d1ddd3676f212a2edc0752e8d69cfb6acf0ab1285d629c7cd1de5"
+    sha256 cellar: :any,                 big_sur:        "c14da9dd55dc8a09e19195570bce2e487516fc9c5302740ce68c2f55d0641e23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5823c24b3474daee78ad3039c881102da9d549f3de096c3efedec458f75c5d15"
   end
 
   depends_on "cmake" => :build

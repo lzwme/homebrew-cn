@@ -3,12 +3,10 @@ class Mavsdk < Formula
 
   desc "API and library for MAVLink compatible systems written in C++17"
   homepage "https://mavsdk.mavlink.io"
-  # TODO: Check if we can use unversioned `grpc` and `protobuf` at version bump
   url "https://github.com/mavlink/MAVSDK.git",
-      tag:      "v1.4.15",
-      revision: "8b9b5b810c08ecf582ba0a4bffdb76b35d0a8007"
+      tag:      "v1.4.16",
+      revision: "a14d604c2baa950dab1510448bce7c0b490a4f1a"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url :stable
@@ -16,13 +14,13 @@ class Mavsdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "be9f699efc5201875525ffcbc4b4f4fda3d944e28ce7f9a8f0819cba3a2696e6"
-    sha256 cellar: :any,                 arm64_monterey: "4346e6eaa56444916d389b3b9a12fa887e0238a4b0c163c5dafc57fa1c649d97"
-    sha256 cellar: :any,                 arm64_big_sur:  "6c3028c9d496064aa88adb3a33ded28ba49aa9ce13ea53d8ecf01e346c83d1de"
-    sha256 cellar: :any,                 ventura:        "1103c71dbe6317c4e07c03dcf8d01481a23747ca02acb12e86e00112fa6fbbfc"
-    sha256 cellar: :any,                 monterey:       "dee23eba423cf88387aac08c381f30a7b78b34a39356e7e6e1b3632a877f3a57"
-    sha256 cellar: :any,                 big_sur:        "340ca228711f3cd9059127c9855e25fad1ee2fec9af4a1fdf0d93d82749522dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6bddc4e94dd52ba46706bbfec28f9b694cbbbc7ca564ba1045fd6389ed0c101b"
+    sha256 cellar: :any,                 arm64_ventura:  "2ac6d7e2bf71c52e0a59eabcd34c0fc34654b392b2e29c92ba980403f4e31337"
+    sha256 cellar: :any,                 arm64_monterey: "49bb6934d40af7b7f7f89f6b9e0a28a9eaf50cc2a60fafff9c9b623d29fac9c0"
+    sha256 cellar: :any,                 arm64_big_sur:  "455ba57928dc6b89656557d239135b9284dc06b8ab687915a12b28cf6d16cc47"
+    sha256 cellar: :any,                 ventura:        "7139ee78dd3109aaa659f2c28f53398c5d2f8bb5dc7dec23b52530abc5bc6f0f"
+    sha256 cellar: :any,                 monterey:       "7cee91c0775be6e7f69bd9b1376e40cf3f74b0151289bd9e734301a73371503a"
+    sha256 cellar: :any,                 big_sur:        "2193c0db1ec9a3af6ad7dd8b0023e5448ce738c1e64388f4620b7827db49ac13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a130d1ccbaac791eacf4d21590e40f919ce72120cbb94106e3458e1af4fb8d9"
   end
 
   depends_on "cmake" => :build
@@ -31,10 +29,10 @@ class Mavsdk < Formula
   depends_on "abseil"
   depends_on "c-ares"
   depends_on "curl"
-  depends_on "grpc@1.54"
+  depends_on "grpc"
   depends_on "jsoncpp"
   depends_on "openssl@1.1"
-  depends_on "protobuf@21"
+  depends_on "protobuf"
   depends_on "re2"
   depends_on "tinyxml2"
 
@@ -68,8 +66,8 @@ class Mavsdk < Formula
   end
 
   resource "MarkupSafe" do
-    url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
-    sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
+    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
+    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
   end
 
   def install

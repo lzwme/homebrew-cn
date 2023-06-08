@@ -3,18 +3,18 @@ class AwsSamCli < Formula
 
   desc "CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM"
   homepage "https://aws.amazon.com/serverless/sam/"
-  url "https://files.pythonhosted.org/packages/c7/37/416bb0a6aed5f1e0bf9a11b31ce352e84f64e525dfd23ddd11fa98e20cfc/aws-sam-cli-1.86.0.tar.gz"
-  sha256 "c66ff1aa23942eca09a24796ecd6c7389286396ca50337c707df2adfd967f6d6"
+  url "https://files.pythonhosted.org/packages/46/10/1f8470a12a1ccbb1ccd1568215a9e6a108d77b406b76faa756d5b64fa3ec/aws-sam-cli-1.86.1.tar.gz"
+  sha256 "8cfa06f3b0ce03793d2a30956abb0cb5151b772ce7529de25c888a50fba7b7d8"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "56933d6511837a74cf10f66b3f2f1f2d3e226e4f2f6fe1f792eca3a79fd10241"
-    sha256 cellar: :any,                 arm64_monterey: "6461d1c800223234543c66f42e6cc31c8995323b78f7e2654771ff9e8b44643e"
-    sha256 cellar: :any,                 arm64_big_sur:  "5b221650abc0fe224219386894ff419c3423a02e513dd07c65e369a460adb253"
-    sha256 cellar: :any,                 ventura:        "8d916c9311f077759dd6a3f9e97d2b7bc1539cedbd99363cc99496b63e85a0b6"
-    sha256 cellar: :any,                 monterey:       "58c5a4e71a244b47732cebd856eb55ba02e0f807913d864d6245dff741fe66df"
-    sha256 cellar: :any,                 big_sur:        "f796ff95bbece71b793cbce0e42f242ae2da55832bf2ebf7e4bbf7b470e8b254"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70287a349a9c8df556e9d070759a795fb4991e8279155da304f665a46c0bfc21"
+    sha256 cellar: :any,                 arm64_ventura:  "d3ded4b15478524591f99a5c810f1c4b4f7226b3d8fa11d4fdfe57d78013af20"
+    sha256 cellar: :any,                 arm64_monterey: "fd98d1bf988ed143c3e53dd4190ec2e235ddee052691305520ea39167a05d441"
+    sha256 cellar: :any,                 arm64_big_sur:  "f1d553a3c918f7d9ce4e939bee63c3464bf9934b300e05f18cb95a8de05015a6"
+    sha256 cellar: :any,                 ventura:        "7d81a7d7f0e1cefbb93570543f9f6da050fc4c6109467e4ef71886a163436f01"
+    sha256 cellar: :any,                 monterey:       "7a443965704f8a10dd6a981614e69ba418d1b5cab9ad487414ddc55b13eca755"
+    sha256 cellar: :any,                 big_sur:        "aaf0fc7c480dbb32d8e3db4a391b80fa5cb1b88189e98a0101ca667373746a32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fab72b5995d7be85ac503c08af77b701858a3072c8daa028fbf4e6dbff09b578"
   end
 
   depends_on "rust" => :build # for cryptography
@@ -108,8 +108,8 @@ class AwsSamCli < Formula
   end
 
   resource "docker" do
-    url "https://files.pythonhosted.org/packages/f0/73/f7c9a14e88e769f38cb7fb45aa88dfd795faa8e18aea11bababf6e068d5e/docker-6.1.3.tar.gz"
-    sha256 "aa6d17830045ba5ef0168d5eaa34d37beeb113948c413affe1d5991fc11f9a20"
+    url "https://files.pythonhosted.org/packages/d8/19/25ddbe30edff87274afb2b364c653c7f7bbdd515337700377f1adf0834c5/docker-4.2.2.tar.gz"
+    sha256 "26eebadce7e298f55b76a88c4f8802476c5eaddbdbe38dbc6cce8781c47c9b54"
   end
 
   resource "flask" do
@@ -138,8 +138,8 @@ class AwsSamCli < Formula
   end
 
   resource "jmespath" do
-    url "https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz"
-    sha256 "90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
+    url "https://files.pythonhosted.org/packages/3c/56/3f325b1eef9791759784aa5046a8f6a1aff8f7c898a2e34506771d3b99d8/jmespath-0.10.0.tar.gz"
+    sha256 "b85d0567b8666149a93172712e68920734333c0ce7e89b78b3e987f71e5ed4f9"
   end
 
   resource "jschema-to-python" do
@@ -195,11 +195,6 @@ class AwsSamCli < Formula
   resource "networkx" do
     url "https://files.pythonhosted.org/packages/fd/a1/47b974da1a73f063c158a1f4cc33ed0abf7c04f98a19050e80c533c31f0c/networkx-3.1.tar.gz"
     sha256 "de346335408f84de0eada6ff9fafafff9bcda11f0a0dfaa931133debb146ab61"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "pbr" do
@@ -268,13 +263,8 @@ class AwsSamCli < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/39/97/03674459c459b9b69ef71eba039205a72867e5c6c409df3136858f6836f3/ruamel.yaml-0.17.31.tar.gz"
-    sha256 "098ed1eb6d338a684891a72380277c1e6fc4d4ae0e120de9a447275056dda335"
-  end
-
-  resource "ruamel-yaml-clib" do
-    url "https://files.pythonhosted.org/packages/d5/31/a3e6411947eb7a4f1c669f887e9e47d61a68f9d117f10c3c620296694a0b/ruamel.yaml.clib-0.2.7.tar.gz"
-    sha256 "1f08fd5a2bea9c4180db71678e850b995d2a5f4537be0e94557668cf0f5f9497"
+    url "https://files.pythonhosted.org/packages/46/a9/6ed24832095b692a8cecc323230ce2ec3480015fbfa4b79941bd41b23a3c/ruamel.yaml-0.17.21.tar.gz"
+    sha256 "8b7ce697a2f212752a35c1ac414471dc16c424c9573be4926b56ff3f5d23b7af"
   end
 
   resource "s3transfer" do

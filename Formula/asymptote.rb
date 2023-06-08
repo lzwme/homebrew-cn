@@ -2,8 +2,8 @@ class Asymptote < Formula
   desc "Powerful descriptive vector graphics language"
   homepage "https://asymptote.sourceforge.io"
   # Keep version in sync with manual below
-  url "https://downloads.sourceforge.net/project/asymptote/2.85/asymptote-2.85.src.tgz"
-  sha256 "4c0559b62c41f947b5fbf044b4d091bd3cf0abe599c85138087069809875ec87"
+  url "https://downloads.sourceforge.net/project/asymptote/2.86/asymptote-2.86.src.tgz"
+  sha256 "c4ebad1fc3c7b3ce52d89f5fd7e731830d2e6147de7e4c04f8f5cd36cff3c91f"
   license "LGPL-3.0-only"
 
   livecheck do
@@ -12,13 +12,13 @@ class Asymptote < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "4c6ed796d51ad30c269d64e62ba8154365420ad2e833eec0422a365d17946a39"
-    sha256 arm64_monterey: "907d5066c8bf3c9eff2cf6c18b9516387a611f22f78629072a44a448b9655c9b"
-    sha256 arm64_big_sur:  "c54e0cb0006e56aa4f9d061112cbcf3ca7da9b8eb2a86bfcd226abfae6592fca"
-    sha256 ventura:        "8660647d677ade7c8005a97413a2308cfae40644fc515a4cd7a2409ab5aecefb"
-    sha256 monterey:       "37852200460bf4eeba74782b831531a5857a9fa74442b34a97ef05b2a3675599"
-    sha256 big_sur:        "10381108e5b5f8d84243c9061d76044e179af9476d51d88458409ddda7b64746"
-    sha256 x86_64_linux:   "a442cc9eca515335e9376e7b51a87ba53a9ea25dda713e1676f0d877844c89fa"
+    sha256 arm64_ventura:  "c12ac4a610d83f3dcca34f349e85b7aa21c9d3d090a98bfc3f98541df182fd71"
+    sha256 arm64_monterey: "3db950622ff0f9af9e90f212bb5d432dc8cc436a5678a2ffc0558692c2077d97"
+    sha256 arm64_big_sur:  "b3ff44aa5d3df47a1066e98b704aac227f399a6539cd3ea8a2d6cb1eee1372ff"
+    sha256 ventura:        "dc5a647b7e543ef4eae17b0b7a819be71bf5e893fdf01571b1d2e9d1c6c4560d"
+    sha256 monterey:       "881a3aaa436253109c3321d7ec72182478c5dd2f7cdfcac3dd4fd15d416d7bef"
+    sha256 big_sur:        "f6206db672499eb6381f93fa308db358f6d157fb17f5c2e0662263eb570014d0"
+    sha256 x86_64_linux:   "cef3ad12215b498c2f88690861ac8cac4b8f31d82c0917ad743bc81365fcf690"
   end
 
   depends_on "glm" => :build
@@ -36,8 +36,8 @@ class Asymptote < Formula
   end
 
   resource "manual" do
-    url "https://downloads.sourceforge.net/project/asymptote/2.85/asymptote.pdf"
-    sha256 "fcc4fd1adbb73347bd731f0bcf8c206a55acc65cdeb8e2aee74611230778cfef"
+    url "https://downloads.sourceforge.net/project/asymptote/2.86/asymptote.pdf"
+    sha256 "ea28952b1f6d827a84526709d23b3d2d3003a11a008ff4713bd714ef5c8d1c56"
   end
 
   def install
@@ -55,6 +55,8 @@ class Asymptote < Formula
   end
 
   test do
+    assert_equal version, resource("manual").version, "`manual` resource needs updating!"
+
     (testpath/"line.asy").write <<~EOF
       settings.outformat = "pdf";
       size(200,0);

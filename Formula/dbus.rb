@@ -2,9 +2,9 @@ class Dbus < Formula
   # releases: even (1.12.x) = stable, odd (1.13.x) = development
   desc "Message bus system, providing inter-application communication"
   homepage "https://wiki.freedesktop.org/www/Software/dbus"
-  url "https://dbus.freedesktop.org/releases/dbus/dbus-1.14.6.tar.xz"
-  mirror "https://deb.debian.org/debian/pool/main/d/dbus/dbus_1.14.6.orig.tar.xz"
-  sha256 "fd2bdf1bb89dc365a46531bff631536f22b0d1c6d5ce2c5c5e59b55265b3d66b"
+  url "https://dbus.freedesktop.org/releases/dbus/dbus-1.14.8.tar.xz"
+  mirror "https://deb.debian.org/debian/pool/main/d/dbus/dbus_1.14.8.orig.tar.xz"
+  sha256 "a6bd5bac5cf19f0c3c594bdae2565a095696980a683a0ef37cb6212e093bde35"
   license any_of: ["AFL-2.1", "GPL-2.0-or-later"]
 
   livecheck do
@@ -13,13 +13,13 @@ class Dbus < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "ec0d9980cd5e80731bcf807a35719afb88b6178acbcd0c8ca04fc7bc430ca13b"
-    sha256 arm64_monterey: "aaadcaa68cbb6cc782692ef476562302da02318c80395b1aaf8207a0dc5ccafa"
-    sha256 arm64_big_sur:  "392325157689cb7e867e0eb1960207a1743bc8e07fafc53788abd85d6f3ca11c"
-    sha256 ventura:        "3b543b7dd34df33bcd4d1bf169663e2a44e5d564ae44aa301887257ad05c6faf"
-    sha256 monterey:       "33c126b61e16c4c26af8db9cf01e8e8e9a0f0b7d8abed530204f65192cfe1bbd"
-    sha256 big_sur:        "d17fb587941944b04a8ed8f1974bf2848f977ae2edef69b9f3ea76bfa4842259"
-    sha256 x86_64_linux:   "f63b8565981e3c11b67f8801daf0f56eec357bc7bafabd481e29042f9c3cae93"
+    sha256 arm64_ventura:  "2fd1191077516a815c1f3279f0eb827a6fe0ad4bfd9c560fa6e3b73fd532756e"
+    sha256 arm64_monterey: "73673573372117ad20ba011c2decd5f29e03cc4354e8857d8c3ee112a1e54adc"
+    sha256 arm64_big_sur:  "ae1b0422e7e732ab4ca5a5184dbf643758a02c28f571a55b11334d49a3bb35f4"
+    sha256 ventura:        "eda570ab373b38077ca171a3089e14ff7f43864a554ccb829f71b3e61c470d46"
+    sha256 monterey:       "b14a272413fb4c4c04c4980d0f848de4dba62d2aee2033cc1e3c2f6ca861f337"
+    sha256 big_sur:        "a1b3cc09397f94d69bd9fc425628ee15b01079c927ce2e480e6a6a13b2fe617b"
+    sha256 x86_64_linux:   "e317deee5c58aea9757d6a84537a5b54532e593a366901005786b9f4d00fb00f"
   end
 
   head do

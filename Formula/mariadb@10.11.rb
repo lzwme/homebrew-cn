@@ -1,8 +1,8 @@
-class MariadbAT106 < Formula
+class MariadbAT1011 < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https://mariadb.org/"
-  url "https://downloads.mariadb.com/MariaDB/mariadb-10.6.14/source/mariadb-10.6.14.tar.gz"
-  sha256 "450437c74a8e44c76b3c0b343b9347eb903201545851565d78d9a624676ab202"
+  url "https://downloads.mariadb.com/MariaDB/mariadb-10.11.4/source/mariadb-10.11.4.tar.gz"
+  sha256 "ce8dac125568cc5f40da74c17212767c92d8faed81066580b526a485a591127d"
   license "GPL-2.0-only"
 
   # This uses a placeholder regex to satisfy the `PageMatch` strategy
@@ -17,32 +17,35 @@ class MariadbAT106 < Formula
         next unless release["release_number"]&.start_with?(version.major_minor)
         next unless release["status"]&.include?("stable")
 
-        release["release_number"]
+        release["status"].include?("stable") ? release["release_number"] : nil
       end
     end
   end
 
   bottle do
-    sha256 arm64_ventura:  "0a5c38b3cee3830beb42714ee813d3b0b39d04027464fbc77f989506e52d371c"
-    sha256 arm64_monterey: "a3c60276ba79d890fe4329107a86df23e8d8d4b167c9f726e8982c2ceafcf832"
-    sha256 arm64_big_sur:  "c09d394843d4f2550b3f6f369f3a9eed875d5456c4feb3aa465f8595ed3d09c9"
-    sha256 ventura:        "0fd02a924491eff1b4d5d7e2861212fd9c11d8b7e4fca22c888c1b87e328c7bc"
-    sha256 monterey:       "b5d2ea13706094a6fda450f7bab20b764ca46f403d14620680dd286d011de616"
-    sha256 big_sur:        "4059783da668511209ce4e5ac0842f949402854d2d6ae70145223727a19b1d24"
-    sha256 x86_64_linux:   "36f54a05dc75b450a1e899fd6de960a5433b483a6c7f47d7b83ad8ae962ae7dc"
+    sha256 arm64_ventura:  "4ebc9ffc8c1592c82b3378f0875c84925e85e0dff3cbc4acaf3d1976db7aea6a"
+    sha256 arm64_monterey: "a3ed0962e223a41abb7baf8f09d3a25d91589e373abfc16bb01d648c39272956"
+    sha256 arm64_big_sur:  "e486ed16bafdaa78271cba6f1ad0bf76a387b7ac435d18e0b9476e76363c311f"
+    sha256 ventura:        "f1370daebc27c20ff1a759d05ce66128199de38adc7e0343917ebaf027fda1c6"
+    sha256 monterey:       "b65c32e48c993639ec7945d00d192cab14f4b623119888ff86c56163109dac30"
+    sha256 big_sur:        "42bb296a3e54e2261fc83111f58561b48d63cfb6178c4960ba347175573f60b0"
+    sha256 x86_64_linux:   "67a6e925090a30781adb88f7bfd38d75d970a13da4ccc6b0a2992b90870f53aa"
   end
 
   keg_only :versioned_formula
 
-  # See: https://mariadb.com/kb/en/changes-improvements-in-mariadb-106/
-  deprecate! date: "2026-06-01", because: :unsupported
+  # See: https://mariadb.com/kb/en/changes-improvements-in-mariadb-1011/
+  # End-of-life on 2028-02-16: https://mariadb.org/about/#maintenance-policy
+  deprecate! date: "2028-02-16", because: :unsupported
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
+  depends_on "fmt" => :build
   depends_on "pkg-config" => :build
   depends_on "groonga"
   depends_on "openssl@1.1"
   depends_on "pcre2"
+  depends_on "zstd"
 
   uses_from_macos "bzip2"
   uses_from_macos "libxcrypt"
@@ -58,6 +61,8 @@ class MariadbAT106 < Formula
   fails_with gcc: "5"
 
   def install
+    ENV.cxx11
+
     # Set basedir and ldata so that mysql_install_db can find the server
     # without needing an explicit path to be set. This can still
     # be overridden by calling --basedir= when calling.
@@ -77,7 +82,8 @@ class MariadbAT106 < Formula
       -DINSTALL_DOCDIR=share/doc/#{name}
       -DINSTALL_INFODIR=share/info
       -DINSTALL_MYSQLSHAREDIR=share/mysql
-      -DWITH_SSL=yes
+      -DWITH_LIBFMT=system
+      -DWITH_SSL=system
       -DWITH_UNIT_TESTS=OFF
       -DDEFAULT_CHARSET=utf8mb4
       -DDEFAULT_COLLATION=utf8mb4_general_ci
@@ -94,10 +100,9 @@ class MariadbAT106 < Formula
     # Disable RocksDB on Apple Silicon (currently not supported)
     args << "-DPLUGIN_ROCKSDB=NO" if Hardware::CPU.arm?
 
-    system "cmake", ".", *std_cmake_args, *args
-
-    system "make"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "_build", *std_cmake_args, *args
+    system "cmake", "--build", "_build"
+    system "cmake", "--install", "_build"
 
     # Fix my.cnf to point to #{etc} instead of /etc
     (etc/"my.cnf.d").mkpath

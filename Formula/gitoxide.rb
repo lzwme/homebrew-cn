@@ -1,9 +1,8 @@
 class Gitoxide < Formula
   desc "Idiomatic, lean, fast & safe pure Rust implementation of Git"
   homepage "https://github.com/Byron/gitoxide"
-  # TODO: Update `features` array in install at version bump.
-  url "https://ghproxy.com/https://github.com/Byron/gitoxide/archive/refs/tags/v0.25.0.tar.gz"
-  sha256 "098bb18e1cae42ab7597b6b442538d3f51b57935a848ea121e20e2921d6a4693"
+  url "https://ghproxy.com/https://github.com/Byron/gitoxide/archive/refs/tags/v0.26.0.tar.gz"
+  sha256 "2d26636cfa9f1b2cecde289cf79cafb216baff16221168015137b55dba2eafc3"
   license "Apache-2.0"
   head "https://github.com/Byron/gitoxide.git", branch: "main"
 
@@ -13,13 +12,13 @@ class Gitoxide < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "50cc3507a201317ca4efcd66ec1ca950e7116327ab5c9db9679e8c67e5f692d6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "775e274a1b105542f6bc761fd1f8497b1e7414b0b6fd25ffdf7ea9d54530694c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f5dad4fb5bfdb7dcc43ead6595a953729e8315a1482e038a32cad68d45e965e5"
-    sha256 cellar: :any_skip_relocation, ventura:        "499573e3931e0c8c1b19227ae324d121a236c789447d6ec2242009d604935c13"
-    sha256 cellar: :any_skip_relocation, monterey:       "9e93326fcd0a656d7a2aefde7ddbdfece5f9b99b00520f4e1adabd9c1c091e91"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ddc27d56225489774b1ef7f4e620fbda93870f49ca43288fcd129198f7152b8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "265373aa1df3eed94736023ce31f79f9670d37f242ee5abf1c5e51993998454e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc3d2038c3ac8f64107e324fbd499f9708c2563331b2d1fde37f2478309b8592"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a14c7edd567db0a0011144b8f046a8016ba141a972d4fe164bcfb6d7a70ff710"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c34fb1f605a8009d91c2deebdf9588c01f828f56626e5ec840a2f64629562b2f"
+    sha256 cellar: :any_skip_relocation, ventura:        "28be9f446c6993ead538ccbb15cc52b4262095aaf4941fedb1b70b440ba81d5e"
+    sha256 cellar: :any_skip_relocation, monterey:       "dc9a1d0367d53cae700ab81e189ac1d7a458682a855fae84d3cf060f888f1e2d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "915886c0556d2ee0c677f018c94922746d4eefd5f23cd7762ff870a71e3fdfeb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50e582eea06fbb3e911ecc4f4fbe051b57979e75e31813f042c0f0adbfae3765"
   end
 
   depends_on "pkg-config" => :build
@@ -29,16 +28,9 @@ class Gitoxide < Formula
 
   def install
     # Avoid requiring CMake or building a vendored zlib-ng.
+    # Feature array corresponds to the default config (max) sans vendored zlib-ng.
     # See: https://github.com/Byron/gitoxide/blob/b8db2072bb6a5625f37debe9e58d08461ece67dd/Cargo.toml#L88-L89
-    features = if build.head?
-      # Use these features unconditionally at version bump.
-      %w[max-control gix-features/zlib-stock gitoxide-core-blocking-client http-client-curl]
-    else
-      odie "`install` method needs updating!" if version > "0.25.0"
-
-      inreplace "gix/Cargo.toml", "zlib-ng", "zlib-stock"
-      %w[max gix-features/zlib-stock]
-    end
+    features = %w[max-control gix-features/zlib-stock gitoxide-core-blocking-client http-client-curl]
     system "cargo", "install", "--no-default-features", "--features=#{features.join(",")}", *std_cargo_args
   end
 

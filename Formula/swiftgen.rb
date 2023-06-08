@@ -11,6 +11,9 @@ class Swiftgen < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "3c158aecb7ced0c489ef11f6a4c15a9d1449a40ad554388a0310116f510ec316"
   end
 
+  # https://github.com/SwiftGen/SwiftGen/issues/1030
+  deprecate! date: "2023-06-07", because: :does_not_build
+
   depends_on xcode: ["13.3", :build]
   depends_on :macos
 

@@ -1,8 +1,8 @@
 class Mill < Formula
   desc "Scala build tool"
   homepage "https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html"
-  url "https://ghproxy.com/https://github.com/com-lihaoyi/mill/releases/download/0.10.12/0.10.12-assembly"
-  sha256 "3253e724cbb3df965df95430bec69d4513d42de6d1ec658dd6f195f9c27bb387"
+  url "https://ghproxy.com/https://github.com/com-lihaoyi/mill/releases/download/0.11.0/0.11.0-assembly"
+  sha256 "2c1ee7a7c2d37acf7b5d69ce1f1093617639051671c4927812932c1b8cd41cd4"
   license "MIT"
 
   livecheck do
@@ -11,18 +11,15 @@ class Mill < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "39845478ccbb762e1cbe8222bc5c16ac984bb460358c530960fb8845070dc192"
+    sha256 cellar: :any_skip_relocation, all: "911653890a550639aa5a73f3c9e079970b59eec154310f5aa976d85ee0ea8017"
   end
 
-  # TODO: switch back to `openjdk` when Scala 2.13.11 or newer is used. Check:
-  # https://github.com/com-lihaoyi/mill/blob/#{version}/build.sc#L81
-  depends_on "openjdk@17"
+  depends_on "openjdk"
 
   def install
     libexec.install Dir["*"].shift => "mill"
     chmod 0555, libexec/"mill"
-    (bin/"mill").write_env_script libexec/"mill", Language::Java.overridable_java_home_env("17")
+    (bin/"mill").write_env_script libexec/"mill", Language::Java.overridable_java_home_env
   end
 
   test do
@@ -30,7 +27,7 @@ class Mill < Formula
       import mill._
       import mill.scalalib._
       object foo extends ScalaModule {
-        def scalaVersion = "2.12.8"
+        def scalaVersion = "2.13.11"
       }
     EOS
     output = shell_output("#{bin}/mill resolve __.compile")

@@ -1,18 +1,18 @@
 class Virtuoso < Formula
   desc "High-performance object-relational SQL database"
   homepage "https://virtuoso.openlinksw.com/wiki/main/"
-  url "https://ghproxy.com/https://github.com/openlink/virtuoso-opensource/releases/download/v7.2.9/virtuoso-opensource-7.2.9.tar.gz"
-  sha256 "be838c623aa6f8a2e2ab90005e63f0ff1363d6fa8fa64b811caab71e3125ba90"
+  url "https://ghproxy.com/https://github.com/openlink/virtuoso-opensource/releases/download/v7.2.10/virtuoso-opensource-7.2.10.tar.gz"
+  sha256 "c02b0a966ff33f854a86f8f74caa8a5a957e22b510cc2f808e54ed34b4b27f0f"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3a75a905b4b13f3b24cfe575d0734a63c04647b03ba7e1688694f586ac3ea24a"
-    sha256 cellar: :any,                 arm64_monterey: "f89bee2260392c6ae90fae32eaa6766682e0a82736a3af4d9afd6a6c846f9090"
-    sha256 cellar: :any,                 arm64_big_sur:  "36f3e085d9425c3fb75d9472c8325abc0c127da0b370c61349caf966fef26137"
-    sha256 cellar: :any,                 ventura:        "ecdc405773408b67d4cbc8fe37db34980801648ac12fcf0915a95f3acf026c28"
-    sha256 cellar: :any,                 monterey:       "b18bc3c59f8b7af966fb7d59598e63c69dc7c650a2481b7d97e9ac38351751d5"
-    sha256 cellar: :any,                 big_sur:        "b419fda92e6c0a9c1c12ae76c19b89be56d3161c73a632cd1c902ad74f00d6ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e3934550d620fa88613ab3592891dfd4277f7dee120fa6f0bfaa6eee49e7a55"
+    sha256 cellar: :any,                 arm64_ventura:  "30a958c57c5828196fea11d6a7007372ab6b6ed87b4c88445dc1d34f0dd2122c"
+    sha256 cellar: :any,                 arm64_monterey: "7c91c948a901aa4964056ec9c4b4c02e183374b0585a279e458f93741fee2131"
+    sha256 cellar: :any,                 arm64_big_sur:  "320333e84c2aa9de2426911c9f64259d688af4303570e916c0a4f3b4df25d242"
+    sha256 cellar: :any,                 ventura:        "9e5ee8a3b207ee447c5067fe8b65db020d417411b67e071a7cfbbd99c120567f"
+    sha256 cellar: :any,                 monterey:       "97a6d7ce2aea3606ebc356e8924fdad8259e77670fc22572548dbfa55ad3663e"
+    sha256 cellar: :any,                 big_sur:        "6c836fb0d288edeb325ec0105b6c7f1ca8db9980d49e209f7787203227e4bb1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5cbaa8d9809b82ac0ceb798d023c37c7d58d87bf4e7c01e9653a17fdcc032095"
   end
 
   head do

@@ -1,8 +1,8 @@
 class PythonTkAT310 < Formula
   desc "Python interface to Tcl/Tk"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.10.11/Python-3.10.11.tgz"
-  sha256 "f3db31b668efa983508bd67b5712898aa4247899a346f2eb745734699ccd3859"
+  url "https://www.python.org/ftp/python/3.10.12/Python-3.10.12.tgz"
+  sha256 "a43cd383f3999a6f4a7db2062b2fc9594fefa73e175b3aedafa295a51a7bb65c"
   license "Python-2.0"
 
   livecheck do
@@ -10,13 +10,13 @@ class PythonTkAT310 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9a0a8ec94e95c50e6342759ad8131e05cfaafcc58375bfce7004b0ee00a4ebb0"
-    sha256 cellar: :any,                 arm64_monterey: "ee5f6b97d7c9744c883c6301c7a378b0fff3d626eb8ff4557b802844f30479a1"
-    sha256 cellar: :any,                 arm64_big_sur:  "52446c28e01104e2579b9eb02b68de842189de48dd15afc522eaf79dd6ce1eb0"
-    sha256 cellar: :any,                 ventura:        "fbfa94200e5faae888a080afa58578aba1c169e97c842651193fbcd46d86face"
-    sha256 cellar: :any,                 monterey:       "83ff7db648a67c4c99990452ad04eacea7219ec009f0a3f0231ba79389932b00"
-    sha256 cellar: :any,                 big_sur:        "301ea15e7625db0144fed03dacc59c16c1ce2ecac39fa473aec2e6416c04978c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec79ec9ac475f29de278876dd600ae4738a38797529a9bcb771a820191deb32c"
+    sha256 cellar: :any,                 arm64_ventura:  "12050efc6d9c9298b23bb976fd4a266b45dc0a9f4681d99d79d869cceb1e0a15"
+    sha256 cellar: :any,                 arm64_monterey: "f62bdd3499ded4bc014b7bd9af3d29a49047b9c2c7664b7d81963e768ec2adaa"
+    sha256 cellar: :any,                 arm64_big_sur:  "d92880cd78e20c2510f02de489bc5ee517b76b0eab4b80c0108505dac28b85da"
+    sha256 cellar: :any,                 ventura:        "4cb74f1480de294572abbab0a5ad00c27cc057019b56bdc5427f0eab313be888"
+    sha256 cellar: :any,                 monterey:       "4862c3bfc2cc2feea37ef36d3bbdda58f6135e590bf12c5f369f120746d96d02"
+    sha256 cellar: :any,                 big_sur:        "8e3168c438ef62039ff2f2aa69a76e74f46fb0ee9477bcf5e9ec50565f2656a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ce8a2177780709a364a5fb1ab9b0c71d648e1e407a73230f874fd3a1c2f8f6d"
   end
 
   keg_only :versioned_formula

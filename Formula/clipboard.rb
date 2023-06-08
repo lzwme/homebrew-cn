@@ -6,6 +6,11 @@ class Clipboard < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/Slackadays/Clipboard.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "361cf7679d9f2e870b563454ba7ab174252dedf276d680e4dac6f063a4772103"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fea3506e04d5d5d6d74417d302d47038605c9c3760fae137c1ed0ce53765e4c4"

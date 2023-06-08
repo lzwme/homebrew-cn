@@ -1,19 +1,19 @@
 class OsvScanner < Formula
   desc "Vulnerability scanner which uses the OSV database"
   homepage "https://github.com/google/osv-scanner"
-  url "https://ghproxy.com/https://github.com/google/osv-scanner/archive/refs/tags/v1.3.3.tar.gz"
-  sha256 "cc058ea2a51435c0289ca026219439f643e8ef984fe60e87628cdfe519973d46"
+  url "https://ghproxy.com/https://github.com/google/osv-scanner/archive/refs/tags/v1.3.4.tar.gz"
+  sha256 "19229149eca937a4da60ca29416fe1ea6997655fd10e273b833082ef5977a3de"
   license "Apache-2.0"
   head "https://github.com/google/osv-scanner.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5532b51f30af876459a4c9996bcb1d057e349f89131dec58fd45d02e89be77a7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5532b51f30af876459a4c9996bcb1d057e349f89131dec58fd45d02e89be77a7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5532b51f30af876459a4c9996bcb1d057e349f89131dec58fd45d02e89be77a7"
-    sha256 cellar: :any_skip_relocation, ventura:        "4c3c9f1046ab19d02ce7eb620f114b04685c226a5ad2603fe61a8a45c55db26d"
-    sha256 cellar: :any_skip_relocation, monterey:       "4c3c9f1046ab19d02ce7eb620f114b04685c226a5ad2603fe61a8a45c55db26d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4c3c9f1046ab19d02ce7eb620f114b04685c226a5ad2603fe61a8a45c55db26d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c29b3d0db0d5f0a661fca5c240d2359ee44017a72d91f65ed9e2488fab7c1462"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7f8bd609593d69baa061655bad2c6915f30287b147518c5d0320e3615c98d70b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7f8bd609593d69baa061655bad2c6915f30287b147518c5d0320e3615c98d70b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7f8bd609593d69baa061655bad2c6915f30287b147518c5d0320e3615c98d70b"
+    sha256 cellar: :any_skip_relocation, ventura:        "b37ea9fb7ce4c08e8c72cad1eea342c6eb85e0df94f644756b5ed91c5ba1f410"
+    sha256 cellar: :any_skip_relocation, monterey:       "b37ea9fb7ce4c08e8c72cad1eea342c6eb85e0df94f644756b5ed91c5ba1f410"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b37ea9fb7ce4c08e8c72cad1eea342c6eb85e0df94f644756b5ed91c5ba1f410"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "258487930cb5f24d7b4e40aec197d9f33ba216bd1857bfc4deb32e142550e2c8"
   end
 
   depends_on "go" => :build
