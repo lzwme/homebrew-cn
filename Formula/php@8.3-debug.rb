@@ -1,20 +1,20 @@
 class PhpAT83Debug < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghproxy.com/https://github.com/php/php-src/archive/ca1905116bb25ffda5509078563f673644a1656d.tar.gz?commit=ca1905116bb25ffda5509078563f673644a1656d"
+  url "https://ghproxy.com/https://github.com/php/php-src/archive/a38e3c999ffd1d965692898901a449d511c56381.tar.gz?commit=a38e3c999ffd1d965692898901a449d511c56381"
   version "8.3.0"
-  sha256 "4acfeda438eb527da8d5ce6716822dd099182bbb55c85c3760a664dca7a0b0f1"
+  sha256 "4c54bb96603036396de0edd9e8b0b56cdc491ab5292f1513ae8bb6a52a095854"
   license "PHP-3.01"
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 201
-    sha256 arm64_monterey: "2faaa301008866ced729dfdea0fda8f81ce6c164e67fac0c86241b5aad423bb9"
-    sha256 arm64_big_sur:  "b80693de1d1cd6f552926e4c34970b16c9ba41f1ed8044bd8d91b1049394db86"
-    sha256 ventura:        "a06af9c9dda462604d70648e36d733b79acf32a5ec4f5eee93eeb49da942dabd"
-    sha256 monterey:       "f55e0f4eaadf31712405278358d369517c4a6f14937fa6cf4dbf6f67e3bbdef1"
-    sha256 big_sur:        "8fb05ec6e60e1541750a7b97325526bd0c5b2125d1957000d8ae250a60f366b0"
-    sha256 x86_64_linux:   "760e8baf779923f126bd535edea7a3153091bb0df8ce04662d01fab92ae254cb"
+    rebuild 203
+    sha256 arm64_monterey: "ec4a406982ade6c995b10643837b0c984cb19784b638dcd74c2ab7d19603a90f"
+    sha256 arm64_big_sur:  "c08871db2179628486012473cd2ee9eb8128cd12e61602cd306443b98d8d0b2b"
+    sha256 ventura:        "31e3ff018848e5c069f383072e37724a5a36b32a86e782ad1663f2bc26c9efac"
+    sha256 monterey:       "e7894f03e395dc88a91418462aa46ed291908ffe925902e2e8a6d7e40d817a5a"
+    sha256 big_sur:        "40af976f516432e3abd72224e2e2d99d3280ca6c20483234258be49bf729489b"
+    sha256 x86_64_linux:   "003eaf80bc9d5ee8807f3a1a03352340981ca8bcc91b125beb6da013a1795bbe"
   end
 
   keg_only :versioned_formula

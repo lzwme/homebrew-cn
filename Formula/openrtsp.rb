@@ -1,10 +1,10 @@
 class Openrtsp < Formula
   desc "Command-line RTSP client"
   homepage "http://www.live555.com/openRTSP"
-  url "http://www.live555.com/liveMedia/public/live.2023.05.10.tar.gz"
-  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2023.05.10.tar.gz"
+  url "http://www.live555.com/liveMedia/public/live.2023.06.08.tar.gz"
+  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2023.06.08.tar.gz"
   # Keep a mirror as upstream tarballs are removed after each version
-  sha256 "ea987dc7851810b924255204f6bdb9c9c73934e61b3dc800cbd2d165e6ef1856"
+  sha256 "db0485b1c3f8d62771db56be43c58f90708b19df9f2e7c30a534e83ad8b0c5bf"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -13,13 +13,13 @@ class Openrtsp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8c51b57e3c45e430ebc91cf840cefa69893253fe3829902341154d3c9556d0af"
-    sha256 cellar: :any,                 arm64_monterey: "d527a40307c155c13b003ade474e720e7cecdeb42d52b0a5c9d7773799a65bbd"
-    sha256 cellar: :any,                 arm64_big_sur:  "d609fec1c8397749d8180a5e36f66f4fc5730697de61b2d1780c99308001c504"
-    sha256 cellar: :any,                 ventura:        "dca5d441cfd741c72f6dd1844312cead37c7e686ae0dc978c00820d5b76966e7"
-    sha256 cellar: :any,                 monterey:       "7773bc476e95ed0db91d473aa416d96ab852fd6b9735fd4274943a2564866369"
-    sha256 cellar: :any,                 big_sur:        "1ceaaa9f3760925f11d73e2182fd2c9acb969bd4deddbb268b6f9b41645b9de0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "132987b7182b9a85a31e00edcb5c6776f7b837d53c71e02feefded2c3d8204b1"
+    sha256 cellar: :any,                 arm64_ventura:  "b204dd2936ac4f0db85e2e10d5ed6f174aedf77157d377861f4df1c77e089905"
+    sha256 cellar: :any,                 arm64_monterey: "6d860fb40727be4359828adbb59950bf9bc53c46da768a477cc3cda21f613e26"
+    sha256 cellar: :any,                 arm64_big_sur:  "af66e9114276e22ae241aa79c0cc07fb1c2489cd641d472b15b7c35a977bf070"
+    sha256 cellar: :any,                 ventura:        "2fe7af00fa83f97cc2a10bdec33a95f67893de3f7caa7d9d04f3dc2ac84045c6"
+    sha256 cellar: :any,                 monterey:       "56a3ae3ce1b47468991c2c09315cb5ada7d6a67f230111ed8bdd0442f47db439"
+    sha256 cellar: :any,                 big_sur:        "3547ac548dd5f416c7f88f4fdc320c618fe6fb534659073cf554efe7238be781"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c399adab322dc5a796d2349bc7d86f4ee7097728e29384a3c41a19dca274abc"
   end
 
   depends_on "openssl@3"
@@ -32,6 +32,8 @@ class Openrtsp < Formula
   end
 
   def install
+    ENV.cxx11
+
     # Avoid linkage to system OpenSSL
     libs = [
       Formula["openssl@3"].opt_lib/shared_library("libcrypto"),

@@ -1,19 +1,11 @@
 cask "synology-ds-manager" do
-  version "1.4.2,12"
-  sha256 "70202cdd2410ce04f94b830b3a8ff1b89104e37a1ea4e071b9595bcc84b13019"
+  version "1.4.2"
+  sha256 "bf851adbca4f1864cd914a52d3323f96ba3d9065cba29a39224d707736e97510"
 
-  url "https://swiftapps.skavans.ru/synology-ds-manager-mac/versions/SynologyDSManager-#{version.csv.first}.zip"
+  url "https://ghproxy.com/https://github.com/nicerloop/SynologyDSManager/releases/download/#{version}/SynologyDSManager-#{version}.zip"
   name "Synology DS Manager"
   desc "Synology Download Station application and Safari Extension"
-  homepage "https://swiftapps.skavans.ru/synology-ds-manager-mac/"
-
-  livecheck do
-    url "https://swiftapps.skavans.ru/synology-ds-manager-mac/versions/appcast.xml"
-    regex(/sparkle:version="([^"]*)" sparkle:shortVersionString="([^"]*)"/i)
-    strategy :page_match do |page, regex|
-      page.scan(regex).map { |match| match[1] + "," + match[0] }
-    end
-  end
+  homepage "https://web.archive.org/web/20220812025146/https://swiftapps.skavans.ru/synology-ds-manager-mac/"
 
   app "SynologyDSManager.app"
 

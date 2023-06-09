@@ -3,42 +3,24 @@ class Klee < Formula
 
   desc "Symbolic Execution Engine"
   homepage "https://klee.github.io/"
+  url "https://ghproxy.com/https://github.com/klee/klee/archive/v3.0.tar.gz"
+  sha256 "204ebf0cb739886f574b1190b04fa9ed9088770c0634984782e9633d1aa4bdc9"
   license "NCSA"
-  revision 4
   head "https://github.com/klee/klee.git", branch: "master"
 
-  stable do
-    url "https://ghproxy.com/https://github.com/klee/klee/archive/v2.3.tar.gz"
-    sha256 "6155fcaa4e86e7af8a73e8e4b63102abaea3a62d17e4021beeec47b0a3a6eff9"
-
-    # Fix ARM build.
-    # https://github.com/klee/klee/pull/1530
-    patch do
-      url "https://github.com/klee/klee/commit/885997a9841ab666ccf1f1b573b980aa8c84a339.patch?full_index=1"
-      sha256 "6b070c676e002d455d7a4064c937b9b7c46eb576862cc85aba29dc7e6eecee91"
-    end
-
-    # Fix build with z3.
-    patch do
-      url "https://github.com/klee/klee/commit/39f8069db879e1f859c60c821092452748b4ba37.patch?full_index=1"
-      sha256 "f03ddac150c320af8cefae33c958870cc649f1908e54c3309f1ae4791c4e84e1"
-    end
-  end
-
   bottle do
-    sha256 arm64_ventura:  "a135fc9431d9e03c9cd0131c01360090986300754fffbe8baa7deb057afc124f"
-    sha256 arm64_monterey: "ed674c12a9e2414e6152c48a73f4ef8c6d933f253e6ef4864295f4e9558fd75f"
-    sha256 arm64_big_sur:  "2829efa164e390417595c73a70f8f3409f24a6bb181590091f46b6c3f115f760"
-    sha256 ventura:        "f5f3ddc1c5edf4985ffd88b4c2f36c7239f7bff2c6114601803c8b2dc096293e"
-    sha256 monterey:       "96bc452ac24d66be7a21ac8daca76cdbaefb2470ef6b4da354f0cfaeba44cdb6"
-    sha256 big_sur:        "f9d4fd03f224dcbf15fde6e7dc96f3e36e3e10cb1eb0c384faae412af7d20c06"
-    sha256 x86_64_linux:   "f1525a570a25ff4bb584c1bff4baaa83e11efc81da42901774ba958a5de68da0"
+    sha256 arm64_ventura:  "b5f061339b7061a9d44a038e09a9d71579af070590f216bd38a0d312bb34e00f"
+    sha256 arm64_monterey: "75864bddc2c44e63bb721c69c461a694e9614448861bfff69c2ca3de8196a58e"
+    sha256 arm64_big_sur:  "c2c7664241661c67dfadffe0eebb62bc1caea059215367f45c22e7fe20f3b95b"
+    sha256 ventura:        "fb9816be6391e114836380c3550fe7518600d3eff2b16bfc69d1e7053e8060d4"
+    sha256 monterey:       "8b578e55bb14346578ebfb852e4cf6dfdf3f717b941e16a0062a7204b46f91b5"
+    sha256 big_sur:        "407ae407ca05e578ec4e13c3134b1e88f0b99a89af75a803746a99a3af768f70"
+    sha256 x86_64_linux:   "06ceef2504cd321af3e2f428bd6e7098341608b53165d3d7ae2f0ab16c849e66"
   end
 
   depends_on "cmake" => :build
   depends_on "gperftools"
-  # LLVM 14 support in progress at https://github.com/klee/klee/pull/1477
-  depends_on "llvm@13"
+  depends_on "llvm@14"
   depends_on "python-tabulate"
   depends_on "python@3.11"
   depends_on "sqlite"
@@ -52,8 +34,8 @@ class Klee < Formula
 
   # klee needs a version of libc++ compiled with wllvm
   resource "libcxx" do
-    url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-13.0.1/llvm-project-13.0.1.src.tar.xz"
-    sha256 "326335a830f2e32d06d0a36393b5455d17dc73e0bd1211065227ee014f92cbf8"
+    url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.6/llvm-project-14.0.6.src.tar.xz"
+    sha256 "8b3cfd7bc695bd6cea0f37f53f0981f34f87496e79e2529874fd03a2f9dd3a8a"
   end
 
   def llvm
@@ -114,9 +96,12 @@ class Klee < Formula
     inreplace "runtime/CMakeLists.txt", "\"-I${CMAKE_SOURCE_DIR}/include\"",
       "\"-I${CMAKE_SOURCE_DIR}/include\"\n-I/usr/include/x86_64-linux-gnu"
 
+    # Avoid building 32-bit runtime
+    inreplace "CMakeLists.txt", "M32_SUPPORTED 1", "M32_SUPPORTED 0"
+
     # CMake options are documented at
     # https://github.com/klee/klee/blob/v#{version}/README-CMake.md
-    args = std_cmake_args + %W[
+    args = %W[
       -DKLEE_RUNTIME_BUILD_TYPE=Release
       -DKLEE_LIBCXX_DIR=#{libcxx_install_dir}
       -DKLEE_LIBCXX_INCLUDE_DIR=#{libcxx_install_dir}/include/c++/v1
@@ -138,12 +123,9 @@ class Klee < Formula
       -DENABLE_UNIT_TESTS=OFF
     ]
 
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make"
-      system "make", "install"
-    end
-
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
     rewrite_shebang detected_python_shebang, *bin.children
   end
 

@@ -1,18 +1,18 @@
 class Fclones < Formula
   desc "Efficient Duplicate File Finder"
   homepage "https://github.com/pkolaczk/fclones"
-  url "https://ghproxy.com/https://github.com/pkolaczk/fclones/archive/refs/tags/v0.31.0.tar.gz"
-  sha256 "4fca70bb3f660bffbf3f473bcd9d3cba52830892f2e62dafa315be7b32985340"
+  url "https://ghproxy.com/https://github.com/pkolaczk/fclones/archive/refs/tags/v0.31.1.tar.gz"
+  sha256 "9c006cfd23f09315fb2cfedf6c4204986d39560b30f02f782b531f13b3df82e5"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6498440023ca9a33bf289fc36eef7fee8bb7c12d3bb539619ec01169272b9fff"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "eedd4067f3c493e20490b4f841640c7a1d7c0ccc6fb15082ca51acf5e0f60dea"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0a132dcc9847fd6981c56d0649b96948594ff2ce7ca9c6f68f7a67fc4dbf39ee"
-    sha256 cellar: :any_skip_relocation, ventura:        "b52672b96f750e3646791bc753d06917da1f988bb563bce26a993583ece5148c"
-    sha256 cellar: :any_skip_relocation, monterey:       "0f3252a549b5b2b406c9bed718e0565f2957abfa126739ea18d51e7cd0198007"
-    sha256 cellar: :any_skip_relocation, big_sur:        "295af4ad7796a64db0f37432cb20a3d99f5c495616180d3d36ba134a5586d91c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5914fbdcda3ec68f9ae4d33611ac12ef98a9bdff7ca43a7731c59368f9faa0b3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "81cacc283200c92859bcb8d65de7be438ba5708b45b59920d7ec01bbac673584"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "00e1b28d03bdff1eb31630943ff0e0c06a1c8b1ea036e31096ee128a37298708"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e8fb695abc91c90337980188a42a2ca18f66da89cc65b8288d65a8faede0fd68"
+    sha256 cellar: :any_skip_relocation, ventura:        "cd9743f30e7c6adfaac65b8c71519d841a8de05807ec71a014577b7d11d18557"
+    sha256 cellar: :any_skip_relocation, monterey:       "2c9a77f431b962a7dc6b36511b4569ee70a5c9c369156b4d0863d4bbf1dff1a7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "29a3285ac8d7fb148871c657114532d8700c4c7099f7a6134e61bb1861a7119f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "75a9615691ed18b099d94820864c26c4e3aab57d096e02c249a01fc3cfdb8dd4"
   end
 
   depends_on "rust" => :build

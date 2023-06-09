@@ -1,8 +1,8 @@
 class Liboqs < Formula
   desc "Library for quantum-safe cryptography"
   homepage "https://openquantumsafe.org/"
-  url "https://ghproxy.com/https://github.com/open-quantum-safe/liboqs/archive/0.7.2.tar.gz"
-  sha256 "8432209a3dc7d96af03460fc161676c89e14fca5aaa588a272eb43992b53de76"
+  url "https://ghproxy.com/https://github.com/open-quantum-safe/liboqs/archive/0.8.0.tar.gz"
+  sha256 "542e2d6cd4d3013bc4f97843cb1e9521b1b8d8ea72a55c9f5f040857486b0157"
   license "MIT"
 
   livecheck do
@@ -11,15 +11,13 @@ class Liboqs < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_ventura:  "e9373498c8fcf173766124396b2e5e0bca60972a0750a2de17526e6207500bdb"
-    sha256 cellar: :any,                 arm64_monterey: "3b486df792e8af162ca9b13d5c8db6ae73134ab8fecb13bdd090bf65e02f9b87"
-    sha256 cellar: :any,                 arm64_big_sur:  "33e2c0270faca011e09ebb44c6ec19c56b3a970835f66cee6890a080cf49727f"
-    sha256 cellar: :any,                 ventura:        "d4f2d318538dc16bbcbd73f73c41925ae40242a1f28cc8011d369838010d0e7d"
-    sha256 cellar: :any,                 monterey:       "d44012d6f9c125137b234fb67dfa1e0b21edf628dfe46b5334f4dade8dbfbf65"
-    sha256 cellar: :any,                 big_sur:        "08a808a714ef2d3c7e0d57ee1c1f960b9f85128fd1acdebf06cefc251f37d7c2"
-    sha256 cellar: :any,                 catalina:       "9b42e22f7bf7cfb75edb682cff5022313eb0ff6ce4a509f9ec865ffa4cdb28b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d9e0b42e4c0bf7c60855f4eef44c33fa2efe16013fd9171487aa45b5ee73110"
+    sha256 cellar: :any,                 arm64_ventura:  "83b8334d61410e64ce621557f9afed0dbbd6c30c751f841e0b2f8d425b44d919"
+    sha256 cellar: :any,                 arm64_monterey: "7302b3051519249325f2bdd16a2bd2ed0cb92b05017993c7f462539ee2873151"
+    sha256 cellar: :any,                 arm64_big_sur:  "dc81be5e2aef31e378a8e868310962444dd6f542d1f7c05c378f52e64329999e"
+    sha256 cellar: :any,                 ventura:        "111c3669e72047862b642d799cce817e030b155de68e39351b60e68f61f0b7e1"
+    sha256 cellar: :any,                 monterey:       "144450ead2c1121981fa88b82a7d0314321e80c9a430eb72dab3562caf299ebe"
+    sha256 cellar: :any,                 big_sur:        "9ff10c1ca79d8f7337f7659bf2995af6e8fe6bb33884ad26a6a58ef8a5607989"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42d001baf8369d57f65bdeebcc5ce7d0425ecb7b01ab33ab6dadc37379fd5739"
   end
 
   depends_on "cmake" => :build

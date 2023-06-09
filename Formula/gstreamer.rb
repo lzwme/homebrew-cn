@@ -2,6 +2,7 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
+  revision 1
 
   stable do
     url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.22.3/gstreamer-1.22.3.tar.gz"
@@ -20,14 +21,13 @@ class Gstreamer < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "447ed8ece34d551f6f5c4492bb05951776cdaa20193d2b4177314161d98aa947"
-    sha256 arm64_monterey: "6bcaf7689d90f70c54c914278e744bc922cd326824d894e0ab9d8e4be3e857b3"
-    sha256 arm64_big_sur:  "f8cfe1b02dc112e33b6b6471fe55c997b196df960cf79aa95a25f24872c7f404"
-    sha256 ventura:        "1b1b49362998ada9556f1be2fcdcd69d618c18a2ad40c3e5ec237fd1037a7e16"
-    sha256 monterey:       "49ba626e3b008325f066a21a72caa4ee757cebf05966249ee5b2d9fbc6eb5a87"
-    sha256 big_sur:        "432ba1fd0401905fa7b92500b2de4570e0dfb6a68a12549c1558b50fe8ab6e00"
-    sha256 x86_64_linux:   "1636854d00244a5c97b10a49b40af6c8232b617bcc5f6f196d11e639cb5af125"
+    sha256 arm64_ventura:  "f2e895803f7fd87c5bf10ae9752070d9d35e66d9fa4e305b8ab69100eaaa4da3"
+    sha256 arm64_monterey: "727b89b24894322dc5a93e9063130e57358cfbfdef48d9663a51e64e68c78855"
+    sha256 arm64_big_sur:  "9965670923d4b2c85b6e07e798c8338210b5bf95942273a959c20c591ea9f799"
+    sha256 ventura:        "d824d858fec50149d56fca83477261db4a784fb4b6a35e6a3bf34d9881c12c86"
+    sha256 monterey:       "d4a750351dd347156f425effeba99969372a6e36ab8ad6b806a2f9006d15db9b"
+    sha256 big_sur:        "0f16250cdb10a0c7877a04bffb00e586a5add7285c3395bf57674eb3c290b9fb"
+    sha256 x86_64_linux:   "94937b12378640223d9d7720c4118b5a545fcf00bed51c033d1a57b1530ae5b5"
   end
 
   head do
@@ -71,6 +71,7 @@ class Gstreamer < Formula
   depends_on "libusrsctp"
   depends_on "libvorbis"
   depends_on "libvpx"
+  depends_on "openexr"
   depends_on "openssl@1.1"
   depends_on "opus"
   depends_on "orc"
@@ -150,6 +151,7 @@ class Gstreamer < Formula
       -Dgst-editing-services:pygi-overrides-dir=#{site_packages}/gi/overrides
       -Dgst-python:pygi-overrides-dir=#{site_packages}/gi/overrides
       -Dgst-python:python=#{python3}
+      -Dgst-plugins-bad:opencv=disabled
       -Dgst-plugins-bad:sctp=enabled
       -Dgst-plugins-bad:sctp-internal-usrsctp=disabled
       -Dgst-plugins-good:soup=enabled

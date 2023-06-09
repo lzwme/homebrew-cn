@@ -5,8 +5,8 @@ class Vault < Formula
   desc "Secures, stores, and tightly controls access to secrets"
   homepage "https://vaultproject.io/"
   url "https://github.com/hashicorp/vault.git",
-      tag:      "v1.13.2",
-      revision: "b9b773f1628260423e6cc9745531fd903cae853f"
+      tag:      "v1.13.3",
+      revision: "3bedf816cbf851656ae9e6bd65dd4a67a9ddff5e"
   license "MPL-2.0"
   head "https://github.com/hashicorp/vault.git", branch: "main"
 
@@ -16,13 +16,13 @@ class Vault < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "082ea563e2592e05f043eaa2d44127fec471990d6674fa2c69f1f840e48e1807"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4bc3e8d55c923f7f4dfece6e756a833da5c58520954b3b5e107f30e2141f2c0b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ddd6f1a3b8d6b0a4f486668c9fd5cabb414ce78b787ab6f772b4b9e0b41cc076"
-    sha256 cellar: :any_skip_relocation, ventura:        "30713759b1b2e1e8cd1ae69f1fb45aaee3faae7b32aa8de771b1f62d51ac9624"
-    sha256 cellar: :any_skip_relocation, monterey:       "0c1c633039a2d53e1c177d17e7adb0d425912233117519125236b14919890e30"
-    sha256 cellar: :any_skip_relocation, big_sur:        "47c0f3594012d4db86fc476b579aa47bc7bf8fd972cef0368919189dc3bd5d92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "638fd56258bb9cdc55c2080037c6db40dd8b4f48cc5faf7f42bf61d2e116a35d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6f11fc2af37db8f8514cd20662479ee8b98c8b7c6dc3adb91b5fa84e47615c70"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "86c31e986d6594c31fa14b3ec2b85daeff7711d3063ecc1655c339ffa831804b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "03e645337fccfc1011b456eb8bf7be45b96c10db3f44e37c76c76b915bfbc760"
+    sha256 cellar: :any_skip_relocation, ventura:        "b7e5d3496456bf80da4c7b4affeb28e1e43af49c1ca8458a82a459af328f630e"
+    sha256 cellar: :any_skip_relocation, monterey:       "7608e1b7730046ad75197c833d9cee437b5c8317df63345e7f582ab3fdeb44e4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0d46ee8dd1804559a455ec07404a5c3a39d5fcfc5300a1a29afa0f5d6adda549"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3fad270fc9e7fa2848b9b8e43856b768b8f35434137549a22616ff7404f7482d"
   end
 
   depends_on "go" => :build
