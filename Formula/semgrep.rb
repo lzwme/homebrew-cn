@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/returntocorp/semgrep.git",
-      tag:      "v1.25.0",
-      revision: "227c15c4dc758b62a48f80b4af1e363e882bf747"
+      tag:      "v1.26.0",
+      revision: "514a4022947b72f4615b4a7c72a00e92c6c683f8"
   license "LGPL-2.1-only"
   head "https://github.com/returntocorp/semgrep.git", branch: "develop"
 
@@ -15,13 +15,14 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "7ac3337356500c6c0972c5d518420923c5fa643b11d75fd2445e2832423e88b9"
-    sha256 cellar: :any, arm64_monterey: "269d36b131cb55add874a717a199dbd9f0916348c326e8dfb71e2d15e8329dba"
-    sha256 cellar: :any, arm64_big_sur:  "065b92facfbe7587396c122b7efd20a821dc327c698db591c1d920d52057b43f"
-    sha256 cellar: :any, ventura:        "1fcf8b4a3df12fdec380f85c790f4df8334aeb0d76bd882d8fbb4de06bd11682"
-    sha256 cellar: :any, monterey:       "a4ec3ca91dc72a9b0b3d27c8f1d8627703bbc8e787c3e52350fb64719c025495"
-    sha256 cellar: :any, big_sur:        "0699c32896c33a293607ab513e370fb6da34ccaa4792b1a82fe9b3148d833281"
-    sha256               x86_64_linux:   "1f7f236424897b3e715a4922934bb986627f3352900b47c6d84be0da40d8ed5c"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura:  "bae63815c9ec2db233e6c3f6a12c82bfce9b3ac84e31af2f1682210a2abf4609"
+    sha256 cellar: :any, arm64_monterey: "c7fbe7c109e935cd05e58ecafd600f3c9c299215f24015c58569149035b0218d"
+    sha256 cellar: :any, arm64_big_sur:  "ac2957a401cfdf6eedd8a8cfe299d3aeeec5d44a9545ef5ace011a4ddc633093"
+    sha256 cellar: :any, ventura:        "00c3d414b834265b8c04ffd6649af23e55ad1854a9b0e7631041e27257ae157f"
+    sha256 cellar: :any, monterey:       "74e0e50065180a8c4b84fd8caeb7b2fb38bfcb670266f8c93fe38632fe49d52e"
+    sha256 cellar: :any, big_sur:        "aec130854d575f0a35a437ec607b21b45546cbdd949af0dbcf32472ac80d713c"
+    sha256               x86_64_linux:   "cd6c08c1291df6d313f73e7440de6cc39b286cdb2c41359177e7e390f813a21b"
   end
 
   depends_on "cmake" => :build
@@ -33,6 +34,7 @@ class Semgrep < Formula
   depends_on "pkg-config" => :build
   depends_on "gmp"
   depends_on "pcre"
+  depends_on "pygments"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "tree-sitter"
@@ -124,11 +126,6 @@ class Semgrep < Formula
   resource "peewee" do
     url "https://files.pythonhosted.org/packages/a9/50/1dd5ea74c559df4afb8391f8d05f0fec685dbe8effba13bb9072901eb288/peewee-3.16.2.tar.gz"
     sha256 "10769981198c7311f84a0ca8db892fa213303a8eb1305deb795a71e7bd606a91"
-  end
-
-  resource "pygments" do
-    url "https://files.pythonhosted.org/packages/89/6b/2114e54b290824197006e41be3f9bbe1a26e9c39d1f5fa20a6d62945a0b3/Pygments-2.15.1.tar.gz"
-    sha256 "8ace4d3c1dd481894b2005f560ead0f9f19ee64fe983366be1a21e171d12775c"
   end
 
   resource "pyrsistent" do

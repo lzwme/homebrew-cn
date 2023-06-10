@@ -8,16 +8,18 @@ class AwsSamCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d3ded4b15478524591f99a5c810f1c4b4f7226b3d8fa11d4fdfe57d78013af20"
-    sha256 cellar: :any,                 arm64_monterey: "fd98d1bf988ed143c3e53dd4190ec2e235ddee052691305520ea39167a05d441"
-    sha256 cellar: :any,                 arm64_big_sur:  "f1d553a3c918f7d9ce4e939bee63c3464bf9934b300e05f18cb95a8de05015a6"
-    sha256 cellar: :any,                 ventura:        "7d81a7d7f0e1cefbb93570543f9f6da050fc4c6109467e4ef71886a163436f01"
-    sha256 cellar: :any,                 monterey:       "7a443965704f8a10dd6a981614e69ba418d1b5cab9ad487414ddc55b13eca755"
-    sha256 cellar: :any,                 big_sur:        "aaf0fc7c480dbb32d8e3db4a391b80fa5cb1b88189e98a0101ca667373746a32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fab72b5995d7be85ac503c08af77b701858a3072c8daa028fbf4e6dbff09b578"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "9849be387cd480ffeded2f664a7f3612b503bc0460d4eb1221ac63459c2a1975"
+    sha256 cellar: :any,                 arm64_monterey: "f085ac97da84296a72e7ce6083c5bdf311ea507a8d63c10b1f85e74d78e3ee96"
+    sha256 cellar: :any,                 arm64_big_sur:  "725980e1295ca869cb8e28277607d4f2e02c183d4aa9af0e6d1c5b9b1d8dece0"
+    sha256 cellar: :any,                 ventura:        "4f5e3f45305bf7a57111f538ab4337bf0b384f37475c765a011479d2d64dfdaf"
+    sha256 cellar: :any,                 monterey:       "4a1429e6304a172300959a40dfaf83ce1ec04c0aa0c9c1e4d2aa4f0c5e7fda36"
+    sha256 cellar: :any,                 big_sur:        "96f569811c4268c71627cbfe01ffbfe3e762c9004d2c46fbc9f2bbe1c05d741d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49999b5b403ad0c60e9b0526fd2d71a0c5f8d86b3411a97646b0f930046742e5"
   end
 
   depends_on "rust" => :build # for cryptography
+  depends_on "pygments"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "six"
@@ -210,11 +212,6 @@ class AwsSamCli < Formula
   resource "pydantic" do
     url "https://files.pythonhosted.org/packages/23/65/2aa13873e9e0084ecaec00fbe6c6096b65e1ab99ba66bdbf7e4e7c4cc915/pydantic-1.10.8.tar.gz"
     sha256 "1410275520dfa70effadf4c21811d755e7ef9bb1f1d077a21958153a92c8d9ca"
-  end
-
-  resource "pygments" do
-    url "https://files.pythonhosted.org/packages/89/6b/2114e54b290824197006e41be3f9bbe1a26e9c39d1f5fa20a6d62945a0b3/Pygments-2.15.1.tar.gz"
-    sha256 "8ace4d3c1dd481894b2005f560ead0f9f19ee64fe983366be1a21e171d12775c"
   end
 
   resource "pyopenssl" do
