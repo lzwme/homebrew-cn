@@ -1,8 +1,8 @@
 class Openttd < Formula
   desc "Simulation game based upon Transport Tycoon Deluxe"
   homepage "https://www.openttd.org/"
-  url "https://cdn.openttd.org/openttd-releases/13.2.1/openttd-13.2.1-source.tar.xz"
-  sha256 "baa4b39ad0158bd13f6aee472667a0fbf655c7576d4f8d18b1005c8ffa866576"
+  url "https://cdn.openttd.org/openttd-releases/13.3/openttd-13.3-source.tar.xz"
+  sha256 "aafa16d2fb67165134c73a888f79f7a5ed7da17a04cf6e9ecf672c9cb89e7192"
   license "GPL-2.0-only"
   head "https://github.com/OpenTTD/OpenTTD.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Openttd < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "549b3fd036d23c843837d020c65b824c82e4fc378a40d72a13e4e46a350c37ab"
-    sha256 cellar: :any, arm64_monterey: "01aee9d1820d21fbeb7603fb6d2af6116921716a2b5605bdc22141dd9145918b"
-    sha256 cellar: :any, arm64_big_sur:  "85e9c7fd428cee304ca596c7a5806630938f73be6d63b8c3226ebcd1287f62e7"
-    sha256 cellar: :any, ventura:        "16d1521b7b4ceedfbc8b4aefb3e3491194c657942a356cdb344e97fdc4ae4242"
-    sha256 cellar: :any, monterey:       "717887148160f502a92b20a4222aac36aa05a0732d95ef9a593895bdabf46616"
-    sha256 cellar: :any, big_sur:        "d87e92c04a83810f42166b5ade9f37d0ab08d68877e43da6226d24fa7984ea44"
-    sha256               x86_64_linux:   "855e9f842f186bf7bd33fc7a9add89b80787b258585be2b25fa9e815d1dd08c2"
+    sha256 cellar: :any, arm64_ventura:  "c3606459991059115f7da375b520b1797cc069799943e4e0049b14cf20f42209"
+    sha256 cellar: :any, arm64_monterey: "4c38cbcbfd3e614e2d6c90d33cacb3a8dc6c9ec0d2bd936f4f92f28df709f21f"
+    sha256 cellar: :any, arm64_big_sur:  "4624afa9e2dfc9358f8abb4f213936d522347e86735b0a501ee206809cf26613"
+    sha256 cellar: :any, ventura:        "cd555c11beca2d8bbeaa2c15a98196d1812dbe41a336ce8fa1c6bfd654fd1e42"
+    sha256 cellar: :any, monterey:       "706a3cbd4b0b8948a10da2388db501f7ddc6415e9b39e2c663f72074a959d5ad"
+    sha256 cellar: :any, big_sur:        "b50e182ee4f15aadd5cac0ad111ec9ca2bf51b97bd96a54f7b505bf6b6a4d1a9"
+    sha256               x86_64_linux:   "f55563705d003a19514f39ed17c5ed2e8bdb4abd1a908615ec94e342c8df3b15"
   end
 
   depends_on "cmake" => :build
@@ -97,7 +97,7 @@ class Openttd < Formula
       if OS.mac?
         (buildpath/"#{app}/Contents/Resources/baseset/#{r.name}").install r
       else
-        (share/"openttd/baseset"/r.name).install r
+        (pkgshare/"baseset"/r.name).install r
       end
     end
 

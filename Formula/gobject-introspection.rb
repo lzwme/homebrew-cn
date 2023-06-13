@@ -30,7 +30,7 @@ class GobjectIntrospection < Formula
   uses_from_macos "libffi", since: :catalina
 
   resource "homebrew-tutorial" do
-    url "https://gist.github.com/7a0023656ccfe309337a.git",
+    url "https://gist.github.com/tdsmith/7a0023656ccfe309337a.git",
         revision: "499ac89f8a9ad17d250e907f74912159ea216416"
   end
 
