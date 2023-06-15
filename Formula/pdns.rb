@@ -4,7 +4,7 @@ class Pdns < Formula
   url "https://downloads.powerdns.com/releases/pdns-4.8.0.tar.bz2"
   sha256 "61a96bbaf8b0ca49a9225a2254b9443c4ff8e050d337437d85af4de889e10127"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://downloads.powerdns.com/releases/"
@@ -12,13 +12,13 @@ class Pdns < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "716f375350d236a02a1843c53e06193def68e31a6994b633cf58b0987f0fe09d"
-    sha256 arm64_monterey: "0a8b29cec37da490052b6319cb630e97c54f9c5bfa385806f81b8fddfea70c25"
-    sha256 arm64_big_sur:  "87b567e4cf43bf6be38c0e6d643f494ebc1df866c9ccea9b92d9eb609cf8df1f"
-    sha256 ventura:        "97035664a1c7e11395fad582510fee37b40484aac02bff2ce53acc8597a72b17"
-    sha256 monterey:       "8048b76a268cdeb23b3c28d9d673f6e1d25b18406c07294fbd69f97d643c8ee4"
-    sha256 big_sur:        "ae6f680618b718cda06082961d7d9eb33e073f8bf27b5598b9030fd4b580da9c"
-    sha256 x86_64_linux:   "c3f768c882896f54df7adf1a9b7f396a12b9137a5ef51725074a796e75622b80"
+    sha256 arm64_ventura:  "f6da183223c39efaa69bcb18245d398539db09461d137f5411665359db510ff9"
+    sha256 arm64_monterey: "7f3e54863b7c474660731fcdcd3a551d3225656a883a086d08043613d2abeb3e"
+    sha256 arm64_big_sur:  "beefd178e9ec5fe86bebc77c05bcbaf82b2029c12438f49374465a7d7aa9a571"
+    sha256 ventura:        "9dcbcf33e111f1e735329865a7d76484523b81ff03c25d117ca2fda0b5d7d197"
+    sha256 monterey:       "a8df2aee3006d06a05fcfea3738341f10067d8b0a428d555a822ce730ae33f34"
+    sha256 big_sur:        "00f76eed66bfa3c1079015207a3bcd89b18502ca193a3fc48b7701adf27a466d"
+    sha256 x86_64_linux:   "41ab5d44e7bddc480fc02c8e15f215546457ac1f2869e76038ab0fbec907ae28"
   end
 
   head do
@@ -33,7 +33,7 @@ class Pdns < Formula
   depends_on "pkg-config" => :build
   depends_on "boost"
   depends_on "lua"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "sqlite"
 
   uses_from_macos "curl"
@@ -45,7 +45,7 @@ class Pdns < Formula
       --prefix=#{prefix}
       --sysconfdir=#{etc}/powerdns
       --with-lua
-      --with-libcrypto=#{Formula["openssl@1.1"].opt_prefix}
+      --with-libcrypto=#{Formula["openssl@3"].opt_prefix}
       --with-sqlite3
       --with-modules=gsqlite3
     ]

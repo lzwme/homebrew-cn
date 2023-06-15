@@ -8,16 +8,18 @@ class Dxpy < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6e721f7e49719c3453580f98220ad3735c33ebb27c801c413d0ad5195030569d"
-    sha256 cellar: :any,                 arm64_monterey: "5644ed94dcd2068b7856f19454318dbe13d1efb20f360b54ce78dfa96ef92674"
-    sha256 cellar: :any,                 arm64_big_sur:  "a2d748fafe1f0d27ff0e2ed47e291fafa6a9eb4e5ab71d9debf4ab99a565bb97"
-    sha256 cellar: :any,                 ventura:        "c2fa714102e74264a3a8cecd1cf9d27f060f73a534b5edb0495848fb22e7e144"
-    sha256 cellar: :any,                 monterey:       "b2cd166673870491b7d31f152326a8def01d86ef86877f767914370f52b49df1"
-    sha256 cellar: :any,                 big_sur:        "c675cb4568e1dc297f726278aa2a60d5a6091c75cda02d16705c2014338b0bab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b604f9a5f477522cafa17ef38c2cc02122d995cd4a4376df17ad0cc1b1639b62"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "458d2614c8910af29c698def4c5fbca2135b64d1771e8b529d189302a4b0e922"
+    sha256 cellar: :any,                 arm64_monterey: "c9cf98aa804d0fada9e88e98b442986906c1ee58d7a2e1a41b09beb0bf047ee2"
+    sha256 cellar: :any,                 arm64_big_sur:  "2a6a77e05e8aa1f2c3fe92a23ceabee3189c3937beaef3738ce73de1c11c5923"
+    sha256 cellar: :any,                 ventura:        "fc4ea92134c0b26b6840bdba42b323a7cb82c5bc7cc2bf5849e84ee25ab59286"
+    sha256 cellar: :any,                 monterey:       "f1e34bbec160111860c43f8cf8872be3cd126d86c68bed91e0dadd2f1648be3e"
+    sha256 cellar: :any,                 big_sur:        "8cc63840e82d616407cad4c64f8ce9a6fae7a6a021416c2424cfb830420eda71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18a744adb1503a341423c8bb667d1a3c2d60d108dc0d76a078f1597492526ab1"
   end
 
   depends_on "rust" => :build # for cryptography
+  depends_on "cffi"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -41,11 +43,6 @@ class Dxpy < Formula
     sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
-  resource "cffi" do
-    url "https://files.pythonhosted.org/packages/2b/a8/050ab4f0c3d4c1b8aaa805f70e26e84d0e27004907c5b8ecc1d31815f92a/cffi-1.15.1.tar.gz"
-    sha256 "d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"
-  end
-
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
     sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
@@ -64,11 +61,6 @@ class Dxpy < Formula
   resource "psutil" do
     url "https://files.pythonhosted.org/packages/d6/0f/96b7309212a926c1448366e9ce69b081ea79d63265bde33f11cc9cfc2c07/psutil-5.9.5.tar.gz"
     sha256 "5410638e4df39c54d957fc51ce03048acd8e6d60abc0f5107af51e5fb566eb3c"
-  end
-
-  resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
-    sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
   end
 
   resource "python-dateutil" do

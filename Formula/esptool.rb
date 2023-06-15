@@ -3,19 +3,18 @@ class Esptool < Formula
 
   desc "ESP8266 and ESP32 serial bootloader utility"
   homepage "https://docs.espressif.com/projects/esptool/en/latest/esp32/"
-  url "https://files.pythonhosted.org/packages/01/0f/d0ff6cf55c1932d239c4c0dd743fd10cc3f664818791542173d96f6e4810/esptool-4.6.1.tar.gz"
-  sha256 "026169edbfc0180e87b8b9b178da8844fd0f39bbc1c3ee8e8f7611a2c30c8f59"
+  url "https://files.pythonhosted.org/packages/a3/63/c757f50b606996a7e676f000b40626f65be63b3a10030563929c968e431c/esptool-4.6.2.tar.gz"
+  sha256 "549ef93eef42ee7e9462ce5a53c16df7a0c71d91b3f77e19ec15749804cdf300"
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "ffcd7484468e26386ee4053d840c5bffe8c6b38a640541229c41a6861ece4ffc"
-    sha256 cellar: :any,                 arm64_monterey: "da66071ab638f67b80d316553a330945d74b9b0fb89fbaca45b6a04c1d24826b"
-    sha256 cellar: :any,                 arm64_big_sur:  "3015ce38a13503d49a8d48c4d05e7df722f50dec69bd387b5c09d2962ec311a4"
-    sha256 cellar: :any,                 ventura:        "a1ece0124fcf1faee2368fb34e3c635076a93244e7cfe277210f567bae965d6c"
-    sha256 cellar: :any,                 monterey:       "d86e4966dfbcfe7ffe386931696f24fff5ecf71a6129f5a5560c47abdd998f23"
-    sha256 cellar: :any,                 big_sur:        "b84793f9464382f4c6e6c89e090c8734210364f7028727c6f1cf5789b91fd8ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "920ee688f4c0de970c652c06d0cd0132174279115e5582a8a237d6f3ff3bdde4"
+    sha256 cellar: :any,                 arm64_ventura:  "606d0770f602b74513df45145564a4a11b160ebcbb808ac777c06ff48968ca51"
+    sha256 cellar: :any,                 arm64_monterey: "b71910932946d4022829c315496cc29d5b96e87497bf2193eeafaa9d87bc8ab2"
+    sha256 cellar: :any,                 arm64_big_sur:  "f239f05cce0d5cd41f8ede8463119967ca1c5b86ec5795326e73a2829172947b"
+    sha256 cellar: :any,                 ventura:        "51b10c3eb51a2930ff942326f37d0489a0178368916656d3c5702738c088e32e"
+    sha256 cellar: :any,                 monterey:       "76535d397529434764370c583a8b52b454054ba1f92580fd2c3561507f11797c"
+    sha256 cellar: :any,                 big_sur:        "325df2bfe27b962305285d76e3ae8b70c764c95794f32e03970a302f4e0733a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cfae91de4f90b79264f29744fc5a144f660b3f45d124a345b62ba131aa15e0d1"
   end
 
   # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.

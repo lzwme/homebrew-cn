@@ -9,16 +9,18 @@ class Checkov < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f9fbd74740ff38b885c8b4185dfd4c01768002a1db535cf3acf0f73cb84ee520"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0aaec45502209c665767560868bbf42c76c029e0afc13e36968fd5106b3dff88"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d79116d356367d8a68bfda35b889c74e97d77f5aebba369fda3ef2d233b00adb"
-    sha256 cellar: :any_skip_relocation, ventura:        "0feb2f7640676e3f673f5fbe53c87e3113a5e5d3f49790b833ee6d3c529f886e"
-    sha256 cellar: :any_skip_relocation, monterey:       "c71001337877ee5e57987541f01d64e8660c59f41eb04aab1815748f54a14273"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d1616d4edde3d344b4c72595c7424c483c626c4cb1fc0fb5551d32d64be9972a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "12bbde6baa47c734838a7814237c854227b58f00f21e0a62eec573f9cf858fb5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9488e828edfdb968a297531015d9153624243860430a91a9830718dbcc63ec54"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "30c6d4ffd204f9b05089261d08c7e79ca43eab82d5df7519f833c43636bf748b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "69e55a37fd0313fa5da2b1fec3a99bf22585c44151c272f2d1a90cc6442a6059"
+    sha256 cellar: :any_skip_relocation, ventura:        "f893ba5326b14344bb214a226fe4cf4a8a31fc1f4ddba03e6363237e600800cf"
+    sha256 cellar: :any_skip_relocation, monterey:       "bbe668da84d609276f01d7edf8baa5194e1a04843e474c1089105ad79fb40eea"
+    sha256 cellar: :any_skip_relocation, big_sur:        "99b52db3c562a18fbac2815dae09742c776114a542a554ced1bf3a0063ad29ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd7fb68caf1dee3d4b78d4674231bf6a835c7e89299b82b87521377dc95848c0"
   end
 
   depends_on "cmake" => :build # for igraph
+  depends_on "cffi"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -108,11 +110,6 @@ class Checkov < Formula
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
     sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
-  end
-
-  resource "cffi" do
-    url "https://files.pythonhosted.org/packages/2b/a8/050ab4f0c3d4c1b8aaa805f70e26e84d0e27004907c5b8ecc1d31815f92a/cffi-1.15.1.tar.gz"
-    sha256 "d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"
   end
 
   resource "charset-normalizer" do
@@ -308,11 +305,6 @@ class Checkov < Formula
   resource "pycep-parser" do
     url "https://files.pythonhosted.org/packages/96/43/991d77d299ae73479a39ef1b3ac6739d130d35234935da86141af19f359b/pycep_parser-0.4.0.tar.gz"
     sha256 "f6cf51b32ee43fee27eb8d18e48b130e7618a17c48ab0b7dcab9740bbbb655e1"
-  end
-
-  resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
-    sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
   end
 
   resource "pyparsing" do
