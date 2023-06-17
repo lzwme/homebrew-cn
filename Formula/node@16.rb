@@ -4,6 +4,7 @@ class NodeAT16 < Formula
   url "https://registry.npmmirror.com/-/binary/node/v16.20.0/node-v16.20.0.tar.xz"
   sha256 "e0990f992234e40a51fe11f92c3816c93a77e1b081145d3dd762cd1026345349"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https://registry.npmmirror.com/-/binary/node/"
@@ -11,13 +12,13 @@ class NodeAT16 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9a935f6418abfa0087bdbbe0cce97f7e2b238918345cdd46b6d6bc77ef1ab5bd"
-    sha256 cellar: :any,                 arm64_monterey: "fd6acf86e43d8eb1b179921690400d3274d5790153002941210e4fbd60f74d51"
-    sha256 cellar: :any,                 arm64_big_sur:  "d3d4474f90828c287fd830977d996ffb3b47480e1a051651cebf5bf16351f7c1"
-    sha256 cellar: :any,                 ventura:        "4ed39f7d3d42dd323d975cd09ff90413318964360960bafc0914a50997347bf1"
-    sha256 cellar: :any,                 monterey:       "d4e31dbedd8ab1d42e9b98fa95a570a75fc40118b6bfa40c8c98d442e2e24bd4"
-    sha256 cellar: :any,                 big_sur:        "15cf55cecbfdfaf3f9070a9d7a829a5429e5c5b45eeab28bedf211f4543b92f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b7ae0fd85fa0741ad7cc38a5c64463db526f78002973141814aad62da14f6bd"
+    sha256 cellar: :any,                 arm64_ventura:  "58c128a68e8f7a2c933422ffaf81098ed84a7d57bfdcd1028dac13c19bba4316"
+    sha256 cellar: :any,                 arm64_monterey: "7937453572181e0fcd1cae0933cbec46bf5c3eef3b068ec3ef9b88bb600d7c75"
+    sha256 cellar: :any,                 arm64_big_sur:  "55c67fe96fe929e3654244afbcb9c32f6d25b3988ed1275307eba380037642c3"
+    sha256 cellar: :any,                 ventura:        "9415891f4a6f1522dd5dc2dc739e7fd828695d3a1ac174c3db2e7957d4b5aa4e"
+    sha256 cellar: :any,                 monterey:       "a5fe9859af3f28035181c5a942cb375d0bc643192ae45fffc906e690718ea866"
+    sha256 cellar: :any,                 big_sur:        "4211d66e6b700b03df280c944f6afc411f64aad747ff85f7f30434c5bd548920"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "defc4f279114830e213148c664eb7ba8603d9d42a35797a640da5a86f7f6bad0"
   end
 
   keg_only :versioned_formula

@@ -4,16 +4,16 @@ class Znc < Formula
   url "https://znc.in/releases/archive/znc-1.8.2.tar.gz"
   sha256 "ff238aae3f2ae0e44e683c4aee17dc8e4fdd261ca9379d83b48a7d422488de0d"
   license "Apache-2.0"
-  revision 7
+  revision 8
 
   bottle do
-    sha256 arm64_ventura:  "ed4a634c5c2c63205e7266a19c6d685d0aa68edddcb7ee337073d5ad3c028b73"
-    sha256 arm64_monterey: "ed52dfc980e89f83ce8d96038e9123e4bf4074d458b7205772406e2e03c2180b"
-    sha256 arm64_big_sur:  "272d6a5fcfd50861b6bdcde9b3100966bfc4ab4cdf2c5263c351d62f24cccaca"
-    sha256 ventura:        "c298279b0e0dd9a7db7c23bd73da4e5520b7ffb945085774b04ee7a2744a6632"
-    sha256 monterey:       "88007325bf3297291131273e6b504deb990e5fd2650163177d81cdf45c3b37fd"
-    sha256 big_sur:        "7964958863be063aa002f7998e4477a18c028ff61550c9501bb564293c89046b"
-    sha256 x86_64_linux:   "88497ca54899330c2add08f3ba87d4e4d75d508eb90da2afdb135bd523e17786"
+    sha256 arm64_ventura:  "16c2edd8071636add21601f3382154a373b3c7b7b50cdda1a91257da87630011"
+    sha256 arm64_monterey: "0c2589f787f5c2fd5e18bec2c1632c74dc0aae93addeebf6511dfea72a3cdd90"
+    sha256 arm64_big_sur:  "219691320c4bb76f4fb7ad672e80ff4617f7a5ce54c3b8958dc43c2c22e1b5a4"
+    sha256 ventura:        "fd1eca2b1aed01a8b8b7cdfb00f1ebc49144479443cfe67a7122adb587fa4e41"
+    sha256 monterey:       "68b8e8ee8550fba79e05d536dcd4108c9170b50fb811bf84d5e5e543ad0088a8"
+    sha256 big_sur:        "98f0e6041e53da494c149f59c0dee77a88d34964d27c7532d1b9e9166e437892"
+    sha256 x86_64_linux:   "56e2e24fcb719c52a63136cb9d41d7b13a70d3f2339ef4acbf90fe08ad173cdb"
   end
 
   head do

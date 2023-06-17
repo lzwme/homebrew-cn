@@ -6,6 +6,7 @@ class PhpAT81 < Formula
   mirror "https://fossies.org/linux/www/php-8.1.20.tar.xz"
   sha256 "4c9973f599e93ed5e8ce2b45ce1d41bb8fb54ce642824fd23e56b52fd75029a6"
   license "PHP-3.01"
+  revision 1
 
   livecheck do
     url "https://www.php.net/downloads"
@@ -13,13 +14,13 @@ class PhpAT81 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "918dfbacad0c309026a3512fe14fa3c410e4cdc9944592a612287308053fb01c"
-    sha256 arm64_monterey: "ed3b8de9a6a5c782153c80e99bae180a7a417714b1977e97cd9c03daafae4eb8"
-    sha256 arm64_big_sur:  "de7164fe23f6bf56366de94d72ee77ae424280467b685809f7c42dd11826ca46"
-    sha256 ventura:        "dbeace6cbe1e43fc823c1444c3e579590aedbe01d4c3fe6375a872c8236460e4"
-    sha256 monterey:       "c060b1919dd9340c044fae43b03843fb54de764da589276e0b051b7397e9af5e"
-    sha256 big_sur:        "4054cdf7a2c2fda71f094a009e78a34e5880dc8139062cc63bf71a63249cd6fa"
-    sha256 x86_64_linux:   "e39391993cff4ea4bb5be57e4b5f985d385f4edca190a980ec961cd774226e00"
+    sha256 arm64_ventura:  "1479e0fd4151215aab1dbac68546de4ef79ade173ab52afa16144b61da9df836"
+    sha256 arm64_monterey: "889ab93fb0aa8272656623e220e0b95bb3c1455e22972c7c2e6e41994ca383a9"
+    sha256 arm64_big_sur:  "93372f93ec15208267dec6fd6f8c1cc35788df09d35c52c77dfcf5afb87b44f5"
+    sha256 ventura:        "54ac81600527bbf78b5ab997c6e12f77443fe9ec65709ae0167313d02ae62b8b"
+    sha256 monterey:       "a033d3d10927297846704d29adde258131d3660400415a7188fb1827fb9c8acf"
+    sha256 big_sur:        "491d61f1f362444e46f871bfe311dc47dbd6858e1a360ea3999866cc536f48af"
+    sha256 x86_64_linux:   "261010d1b81c093ec8ea623060f4ac65a190cd1b746189eae0106076e93f37b0"
   end
 
   keg_only :versioned_formula

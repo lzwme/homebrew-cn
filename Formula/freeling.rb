@@ -4,16 +4,16 @@ class Freeling < Formula
   url "https://ghproxy.com/https://github.com/TALP-UPC/FreeLing/releases/download/4.2/FreeLing-src-4.2.tar.gz"
   sha256 "f96afbdb000d7375426644fb2f25baff9a63136dddce6551ea0fd20059bfce3b"
   license "AGPL-3.0-only"
-  revision 12
+  revision 13
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "09e1ce012c75f89cd0ecdb63b91cfac3c70c5864010a7c598e0e10a103f556f8"
-    sha256 cellar: :any,                 arm64_monterey: "e3065df94fa5f6ef3fe1a632def04ffd4a8eb01363a5018d6a57b95c51e75165"
-    sha256 cellar: :any,                 arm64_big_sur:  "23ae0d30358262ed5e15a3fc78f75e1a806fbfdd2cb07ebd755e756693f8340c"
-    sha256 cellar: :any,                 ventura:        "85e9143cc1c314135d751efe7ce70d819457260364ed5e5e7f58151efcfba62f"
-    sha256 cellar: :any,                 monterey:       "8240acb1285ed86519794a8733d2df3c0f6287b20229b6c5cb4bcd0167401de6"
-    sha256 cellar: :any,                 big_sur:        "d1166b27e2508744e65c23521428dd80b36d3e9df823bee185194fc76f344577"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9376b3776a0a92d16094769ed9d55960120f6b006f48a8a97a30b3edffe3614"
+    sha256 cellar: :any,                 arm64_ventura:  "d1375d1d4cc6303dc9b156988355553dc8d6ec59348e337a52f55843ec300482"
+    sha256 cellar: :any,                 arm64_monterey: "b4e0db7bbfb6ba92f46db0d2158b214b2c5be227d1b397996ffaf2575e42f723"
+    sha256 cellar: :any,                 arm64_big_sur:  "d06b85bef4251aa6563e5ab30dbf11ae5e9474811cac288006f9ea30c18e419e"
+    sha256 cellar: :any,                 ventura:        "b8f1a95c50bd350a81f094fde02de5efc6d2689b8308c0d9db975c8ceb321228"
+    sha256 cellar: :any,                 monterey:       "3c9f5f25a3593caa160ee0c2e2843ddd400a2c6769df5c94654a7ae98c0ce6db"
+    sha256 cellar: :any,                 big_sur:        "35f850be27e9b49d8f404c630632e782229db76072b08a3fd41e5fb85089a0d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f106e8ed2dfc18b30bc46e9bf416f5b3cc15c4e16045bf47aaeaabf36c7a7fd1"
   end
 
   depends_on "cmake" => :build

@@ -4,6 +4,7 @@ class Manticoresearch < Formula
   url "https://ghproxy.com/https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/6.0.4.tar.gz"
   sha256 "5081f4f60152d041f14fdaf993f4cc67b127e76c970b58db9bc9532cd1325d8a"
   license "GPL-2.0-only"
+  revision 1
   version_scheme 1
   head "https://github.com/manticoresoftware/manticoresearch.git", branch: "master"
 
@@ -14,13 +15,13 @@ class Manticoresearch < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "9d942bac332ab6731dc65f71a3697875c77bcbf3c33da5af797d7dab28b254b7"
-    sha256                               arm64_monterey: "f0d4f4ac7b07abbec462d16a77c139141a0d3583d6e46adad9b13a7e0e2e1fac"
-    sha256                               arm64_big_sur:  "697856677e5350d8f7a62befca38925ce654c2c843902e2a374cdfbb139bbee4"
-    sha256                               ventura:        "12884230a47a854da7b8453689d2b27e366b3605171cc165eeb5e7c303f860f5"
-    sha256                               monterey:       "21a4056a272818d77b6c6dbeaa68c9fc8e3a451eb960557e9f57df9aa3c5da7d"
-    sha256                               big_sur:        "e797d050985a35591d9964f84de1743c7203ef88efa309e2fb0653b547745d92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5797b9a3fd944385a79bcb3ccab860a34b189ca31bfdbb3221a99ece75f31e28"
+    sha256 arm64_ventura:  "420b934e75df2c536c6de9f55ea99d47aa9ccb1409e61fc409fdb9e63997db00"
+    sha256 arm64_monterey: "29b92066aa0a3f7b3dd1bc2c6b8bf368630435b98b0ebed4181c63382006152e"
+    sha256 arm64_big_sur:  "f97564ecc00b013f65e7553d8904fe1602a6c40100673b108f312aef5bed5d22"
+    sha256 ventura:        "efe7756b1290d1ef3a3a6f1b6e7b5e6bcca60c79c882cb5060110128669c6eef"
+    sha256 monterey:       "e74a51ab97c803eff41fedddb46758194e198913f9893714ca57384ee0819414"
+    sha256 big_sur:        "83d17d130e4a748978b1d4a34214e49db94b453cf4964c03b93430703117d50a"
+    sha256 x86_64_linux:   "7f162c59a73c8208848ca34172100bd662c981e35aed6195cb5330b88a311d7b"
   end
 
   depends_on "boost" => :build

@@ -1,11 +1,9 @@
 class Libphonenumber < Formula
   desc "C++ Phone Number library by Google"
   homepage "https://github.com/google/libphonenumber"
-  # TODO: Check if we can use unversioned `protobuf` at version bump
-  url "https://ghproxy.com/https://github.com/google/libphonenumber/archive/v8.13.13.tar.gz"
-  sha256 "5722d25b41ef621849f765121233dcedeb4bca7df87355a21053f893ba7a9a69"
+  url "https://ghproxy.com/https://github.com/google/libphonenumber/archive/v8.13.14.tar.gz"
+  sha256 "65aa0c7d6da4b070794fb1d7d34f7322e613708c3f10ddd90fe3725e049f1fb0"
   license "Apache-2.0"
-  revision 2
 
   livecheck do
     url :stable
@@ -13,13 +11,13 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "5263d5ee802979acf0ab84d3b20d7abe61b152184a19680cb0b4348bcc89d581"
-    sha256 cellar: :any,                 arm64_monterey: "6115779450d1e0e4556d0aecc340f65b2b1ee3d76621dc6073d3a3227753baa8"
-    sha256 cellar: :any,                 arm64_big_sur:  "d10b5d5437bcb7fc78fe5d5e2a001691a0ec606064f60771fd11c3c8e9def8c4"
-    sha256 cellar: :any,                 ventura:        "a333f9e060e6556c1cb66f3b11e4101f107de7a0706a96254a0c543f4fa78d09"
-    sha256 cellar: :any,                 monterey:       "f03a2ebb2e7ca2af1edafe296934da60f6056ffb7d43b768826b1824c6f423dd"
-    sha256 cellar: :any,                 big_sur:        "45f6a0030c73529a51ba282329a4c097060c34328174f4cff4c42bf5d27bce79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16e684355ef176f6a8dd922231754c0b6c5609e013467b346bedb5183e9f124e"
+    sha256 cellar: :any,                 arm64_ventura:  "d16f28eeb074c60355d40e2ae0463659d8420983043342bd3b450ee42581ae3f"
+    sha256 cellar: :any,                 arm64_monterey: "0a2252ec63d9ad0e2314410225e4abfdd7bdac35f20b7a2c7f7c7a58cebfdd75"
+    sha256 cellar: :any,                 arm64_big_sur:  "83d12a8cfee1a03b5e4da434c4a3ff8755e1c8b3b32c92a8a73632bdeba645b0"
+    sha256 cellar: :any,                 ventura:        "187acd72a710a4ebf74083bf9bf1ba6c87662276356e15e4c2c7ba4f5e67e841"
+    sha256 cellar: :any,                 monterey:       "c26da04dbe5f10139c5699757fa2701da751bfbdaf6c97375a71cff1719a47a4"
+    sha256 cellar: :any,                 big_sur:        "a03baf233e129ec3f05a8e9b1913c6f70811f8c01fff20a572690ac3dbd7e782"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c46572e82ab3ce4f1e513348c3818a4f05f8920af174faf4119ccb65e331a14"
   end
 
   depends_on "cmake" => :build
@@ -28,7 +26,7 @@ class Libphonenumber < Formula
   depends_on "abseil"
   depends_on "boost"
   depends_on "icu4c"
-  depends_on "protobuf@21"
+  depends_on "protobuf"
   depends_on "re2"
 
   fails_with gcc: "5" # For abseil and C++17
@@ -68,8 +66,7 @@ class Libphonenumber < Formula
         }
       }
     EOS
-    system ENV.cxx, "-std=c++17", "-I#{Formula["protobuf@21"].opt_include}", "test.cpp",
-                    "-L#{lib}", "-lphonenumber", "-o", "test"
+    system ENV.cxx, "-std=c++17", "test.cpp", "-L#{lib}", "-lphonenumber", "-o", "test"
     system "./test"
   end
 end

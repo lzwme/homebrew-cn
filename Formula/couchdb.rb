@@ -5,6 +5,7 @@ class Couchdb < Formula
   mirror "https://archive.apache.org/dist/couchdb/source/3.3.2/apache-couchdb-3.3.2.tar.gz"
   sha256 "3d6823d42d10cf0d4f86c9c4fe59c9932c89d68578fcb6c4b4278dc769308daa"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :homepage
@@ -12,13 +13,13 @@ class Couchdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7240d01a29421200bfc00098b15bd0a63b301c81debb0c12e8ecbeba3d9ebbd8"
-    sha256 cellar: :any,                 arm64_monterey: "d1144b4e5ef64034717d52c8ed6950fa08ab0e1ee3e12526506f3ee13ae40c8c"
-    sha256 cellar: :any,                 arm64_big_sur:  "cae204003d6da3ae5c15dc00c0e550aa0132d822c6bd55465750f69bb258e43b"
-    sha256 cellar: :any,                 ventura:        "dcbe1a4a7067a7fa8ae1d79d98c3808d7756e7adf450cc09b3b259b18e339a8e"
-    sha256 cellar: :any,                 monterey:       "7fb19cc25032cd14f0a4e029cc9fbf976e9513a8f354dfc09881e41b495ccc8f"
-    sha256 cellar: :any,                 big_sur:        "447f8389a931483b03fe00fbec4074f39233d15b7836178d67241d275afed9a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d4d0407c3a8be157cfa0d0cbb35835de99d309d29f33b2086a2113300b1a7f8"
+    sha256 cellar: :any,                 arm64_ventura:  "a53d70d17cc48e1c0a424c94bcc7fba4a83bf9e081fe2fba0f126d51565cd751"
+    sha256 cellar: :any,                 arm64_monterey: "83b8ed79d519e12245f9e1bce90b408833ef44245858a465bf4e8270afdaec6f"
+    sha256 cellar: :any,                 arm64_big_sur:  "d79f939a6726ee1bb0054226b577636da6a5dc8864c5b5bc76869dfa5876aa1c"
+    sha256 cellar: :any,                 ventura:        "8a5012f82bd962f6e742dca272b51e10213d6f863532a603a4f41b7a8b598026"
+    sha256 cellar: :any,                 monterey:       "40a3c05563c6dc41c0a6a23917db6223af28160bfe21c6fcf3035c0303fdc9f7"
+    sha256 cellar: :any,                 big_sur:        "48724721fe5dabb89921eda4461337c54b1095e60d4b7c3b3686ceab9bedcb9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3519312e4a5b2c4874343ca7811d3f18c2195643d0db0b755b1fb93e608e2452"
   end
 
   depends_on "autoconf" => :build

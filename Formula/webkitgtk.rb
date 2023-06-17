@@ -4,6 +4,7 @@ class Webkitgtk < Formula
   url "https://webkitgtk.org/releases/webkitgtk-2.40.2.tar.xz"
   sha256 "96898870d994da406ee7a632816dcde9a3bb395ee5f344fcb3f3b8cc8a77e000"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url "https://webkitgtk.org/releases/"
@@ -11,7 +12,7 @@ class Webkitgtk < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "9d7846456871d4df7c279b3fb997161345d575df9f413ba3da828843b7b3e592"
+    sha256 x86_64_linux: "99a1439b13abfe2bcac3e84a7580a6f763a8ce8e2b25491de53b460209ab319d"
   end
 
   depends_on "cmake" => :build

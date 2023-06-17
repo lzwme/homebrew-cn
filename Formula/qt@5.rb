@@ -4,20 +4,20 @@ class QtAT5 < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
   # NOTE: Use *.diff for GitLab/KDE patches to avoid their checksums changing.
-  url "https://download.qt.io/official_releases/qt/5.15/5.15.9/single/qt-everywhere-opensource-src-5.15.9.tar.xz"
-  mirror "https://mirrors.dotsrc.org/qtproject/archive/qt/5.15/5.15.9/single/qt-everywhere-opensource-src-5.15.9.tar.xz"
-  mirror "https://mirrors.ocf.berkeley.edu/qt/archive/qt/5.15/5.15.9/single/qt-everywhere-opensource-src-5.15.9.tar.xz"
-  sha256 "26d5f36134db03abe4a6db794c7570d729c92a3fc1b0bf9b1c8f86d0573cd02f"
+  url "https://download.qt.io/official_releases/qt/5.15/5.15.10/single/qt-everywhere-opensource-src-5.15.10.tar.xz"
+  mirror "https://mirrors.dotsrc.org/qtproject/archive/qt/5.15/5.15.10/single/qt-everywhere-opensource-src-5.15.10.tar.xz"
+  mirror "https://mirrors.ocf.berkeley.edu/qt/archive/qt/5.15/5.15.10/single/qt-everywhere-opensource-src-5.15.10.tar.xz"
+  sha256 "b545cb83c60934adc9a6bbd27e2af79e5013de77d46f5b9f5bb2a3c762bf55ca"
   license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-2.1-only", "LGPL-3.0-only"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "96f2ff9a6db2d2fefb7e0a2b21ef9471f6293270db4db2816976f271a6de50d7"
-    sha256 cellar: :any,                 arm64_monterey: "38744f3ec6c707da08724ddf0c8b728dfe999023d4012a44f0b6601b844d5c79"
-    sha256 cellar: :any,                 arm64_big_sur:  "3c8774198b053b6bdf76a9a55c0d588e3139c0b1128ce8d097b2d7982b9483ae"
-    sha256 cellar: :any,                 ventura:        "dacff23d86dc9c925ef12ee8ef991c2df5d1de677abdda026ca9669aedf3f784"
-    sha256 cellar: :any,                 monterey:       "69fcd6838d4daa83ce17a5345238fbbaecd2655a21f280a230af89a8d16acfcf"
-    sha256 cellar: :any,                 big_sur:        "fdd0ce12b7edc9d4156c6786e6219985a51a4141a64f781dfc1d01f27d8cdd1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1dfa3d3e03bf7e1736fecdd94ba0b16ec54fa0097c7e09d401794c78377a24cd"
+    sha256 cellar: :any,                 arm64_ventura:  "49861de4ac7615f45f4bbad0156ae1ee1d27c8adac53a24410a29457b04e9c47"
+    sha256 cellar: :any,                 arm64_monterey: "6b51be782af005e149136152da27360857bea4e73bd19be98eafe85a6be5e10e"
+    sha256 cellar: :any,                 arm64_big_sur:  "9513287059bb862dfff9e0baa4a27b4c5dcde58ff7fb3a3185fe69eb001c634e"
+    sha256 cellar: :any,                 ventura:        "d253e6509205cabb5c13ee228ec6fa0a405b46a4bdeca54001c2744dc4b3c710"
+    sha256 cellar: :any,                 monterey:       "164585376c85906780f5cfa11cabc91b6d23733c5c08790d97c57fec8995f0ba"
+    sha256 cellar: :any,                 big_sur:        "b231c7e83af13162da5b9e7eb8fd9196d3e2dd5ab8ab1a98f41861752075f7f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5331eeaedc37894e18057e8524a948bc92c7ea524d20784caaa510b7736b6538"
   end
 
   keg_only :versioned_formula
@@ -118,13 +118,6 @@ class QtAT5 < Formula
   resource "catapult" do
     url "https://chromium.googlesource.com/catapult.git",
     revision: "5eedfe23148a234211ba477f76fc2ea2e8529189"
-  end
-
-  # Fix build for GCC 11
-  patch do
-    url "https://invent.kde.org/qt/qt/qtbase/-/commit/ee7aed5e1020fa88f86777701948c8a236db4fc5.diff"
-    sha256 "41df4232666363f63d87a0165ec05e835f4c730c270a52137fbc53bdaf4e5f20"
-    directory "qtbase"
   end
 
   # Fix build with Xcode 14.3.

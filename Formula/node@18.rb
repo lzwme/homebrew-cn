@@ -4,6 +4,7 @@ class NodeAT18 < Formula
   url "https://registry.npmmirror.com/-/binary/node/v18.16.0/node-v18.16.0.tar.xz"
   sha256 "33d81a233e235a509adda4a4f2209008d04591979de6b3f0f67c1c906093f118"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https://registry.npmmirror.com/-/binary/node/"
@@ -11,13 +12,13 @@ class NodeAT18 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "de8b39f3a1337558a379beac1768be1194afa24b81bcfdc73747f14808afff5a"
-    sha256 arm64_monterey: "ba7f2a747e3dce218a24605952c6c0dbc26174eae7d5a9cfc2a28f95f9726839"
-    sha256 arm64_big_sur:  "1799093b447b8e1bb5e1d471d7a1de3b8e700dbe719a85a4363a49f9f7f12ba0"
-    sha256 ventura:        "ea4da1eead7a582c6e632f1bffbb91ca3e7a76fe260ebb2c387a0f9fcb2cd355"
-    sha256 monterey:       "8cc983557c07993ecf389ad1131d23b0f6ba5a54ad3adca01a83b3cf80119809"
-    sha256 big_sur:        "a1ad2c10f55c0ef0e1ed32f63635acd4555881bed95899a757b569ae48e6f184"
-    sha256 x86_64_linux:   "1c1e59fd3092eb69ebd5c6e14a3da6b33a16329f605aeda2abeaa98571e85ed4"
+    sha256 arm64_ventura:  "204b37b8241edfdeec731a344c941358de105259c970a24bcc4ff3f5aa75710c"
+    sha256 arm64_monterey: "f6001971a6df035ed758af73fb191ca4aecc989a708c8b714a22fe69406913ca"
+    sha256 arm64_big_sur:  "47fab302043fd4bcd3d131a03bebdba1d96f40362568d5d9b1ce533cdf263327"
+    sha256 ventura:        "ad83d7ecd90bac396f84de0909a9afaaaedd76df1ffe591ce736a6727314c8ad"
+    sha256 monterey:       "caca7ae36e54f07e59cd778210c2f9b75b2d98209147d45b50e8efe6e98cd708"
+    sha256 big_sur:        "57cb882f6e558801c9db999efae4446499369b078fe73f955cacd88c021630a0"
+    sha256 x86_64_linux:   "c9e2ac2f27c57a5b64f445c84e356ecee4d16964b435f2a513548f2963ad9b5d"
   end
 
   keg_only :versioned_formula

@@ -15,24 +15,33 @@ class Dnscontrol < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "480ed963bcd201fe04fff3bb87ccb605070f59bcadae10d9cd8e224fcffa4211"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "480ed963bcd201fe04fff3bb87ccb605070f59bcadae10d9cd8e224fcffa4211"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "480ed963bcd201fe04fff3bb87ccb605070f59bcadae10d9cd8e224fcffa4211"
-    sha256 cellar: :any_skip_relocation, ventura:        "a7575d6939f3857c49a4ac7fb89e7757f02d1f798e62627e4457ef47224f032e"
-    sha256 cellar: :any_skip_relocation, monterey:       "a7575d6939f3857c49a4ac7fb89e7757f02d1f798e62627e4457ef47224f032e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a7575d6939f3857c49a4ac7fb89e7757f02d1f798e62627e4457ef47224f032e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "489175ff34ac402f94a59c63c1f7e2521c4013e035f4c1b567f13508f9475097"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8fb7f73c114a46f590717e42862fd2b95e6e9a596bc1ab4369eaab71d1e84064"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8fb7f73c114a46f590717e42862fd2b95e6e9a596bc1ab4369eaab71d1e84064"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8fb7f73c114a46f590717e42862fd2b95e6e9a596bc1ab4369eaab71d1e84064"
+    sha256 cellar: :any_skip_relocation, ventura:        "341932b24e8da6f666f87665fc59db797215150ecc86ced5d66b74591c94cb34"
+    sha256 cellar: :any_skip_relocation, monterey:       "341932b24e8da6f666f87665fc59db797215150ecc86ced5d66b74591c94cb34"
+    sha256 cellar: :any_skip_relocation, big_sur:        "341932b24e8da6f666f87665fc59db797215150ecc86ced5d66b74591c94cb34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "787d6b8e7fadfb7ba432ebb945a035e95d676e0f7a79af932a10af87a83379e6"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.SHA=#{version}")
+    go_ldflags = %W[
+      -s -w
+      -X main.SHA=#{tap.user}
+      -X main.Version=#{version}
+      -X main.BuildTime=#{time.iso8601}
+    ]
+    system "go", "build", *std_go_args(ldflags: go_ldflags)
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/dnscontrol version")
+    version_output = shell_output("#{bin}/dnscontrol version")
+    assert_match version.to_s, version_output
+    assert_match tap.user, version_output
+
     (testpath/"dnsconfig.js").write <<~EOS
       var namecom = NewRegistrar("name.com", "NAMEDOTCOM");
       var r53 = NewDnsProvider("r53", "ROUTE53")

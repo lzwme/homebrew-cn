@@ -11,8 +11,8 @@ class PerconaToolkit < Formula
   head "lp:percona-toolkit", using: :bzr
 
   livecheck do
-    url "https://www.percona.com/downloads/percona-toolkit/LATEST/"
-    regex(%r{value=.*?percona-toolkit/v?(\d+(?:\.\d+)+)["' >]}i)
+    url "https://docs.percona.com/percona-toolkit/version.html"
+    regex(/Percona\s+Toolkit\s+v?(\d+(?:\.\d+)+)\s+released/im)
   end
 
   bottle do

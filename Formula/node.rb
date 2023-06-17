@@ -4,6 +4,7 @@ class Node < Formula
   url "https://registry.npmmirror.com/-/binary/node/v20.3.0/node-v20.3.0.tar.xz"
   sha256 "1ba8d49423ed3a75729066bb3ea26493ee9cb7d6568ef948597fc9ef454f7435"
   license "MIT"
+  revision 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
   livecheck do
@@ -12,13 +13,13 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "4b1e5c6f0d8cbaff43da81f1a37c2b4c0111950bd89a084f92bdc7c739df356f"
-    sha256 arm64_monterey: "6721a3c7a84e263a60a91d3c4022d81838b3decfcc53e569c937a4aac2fc78a8"
-    sha256 arm64_big_sur:  "348cbe40063da1f7d375943b10ca654965361d49c2113b13494dc5c8f0e69fff"
-    sha256 ventura:        "ce111aa997ff6f5f2d453aceaf521fca128e9db8e3b02e8150098070d90d05d5"
-    sha256 monterey:       "85a58cb2aedfff8f9777ee425331c4e750c944df2d2c8ae13b253f5603f87b02"
-    sha256 big_sur:        "75497e68032f4cef999fb967638853f46100bd9550ebc11664f1e7efdac87569"
-    sha256 x86_64_linux:   "471da81e6948370c4d9fd341f48d9bcf51003eb1777062ffb7d993619e0d9fd7"
+    sha256 arm64_ventura:  "b7c59f8ef4b9243bf9fdd801a0d179ada9a13715d7f3ae9065d4681d02cee44b"
+    sha256 arm64_monterey: "046b5b454620aab6b8efeaf2bbfa735767ba6fd20e95a6446d3a2d9db16a17bf"
+    sha256 arm64_big_sur:  "2eb100e0a49ff25bf26dfcd42b6e63aa7c1de07d9c42d43f462d360023426b91"
+    sha256 ventura:        "c58642bef2622182a04ca06b78c47b2a5caa2ad7971d10d088311cb121653869"
+    sha256 monterey:       "98f309f77770ad1be310f38a677cabfa52d294e1e5cbcd0a3432f96d8c1bfb42"
+    sha256 big_sur:        "8356a484aeabfbdfabcc8ea9a9ec7d93447b6bc5257ec763e8da29c5b59af36e"
+    sha256 x86_64_linux:   "b2b051f5382bf61d88a0e19ff9796edffa21be0e78f5f2c36f7a02d43aee2637"
   end
 
   depends_on "pkg-config" => :build

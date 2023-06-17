@@ -4,6 +4,7 @@ class PostgresqlAT15 < Formula
   url "https://ftp.postgresql.org/pub/source/v15.3/postgresql-15.3.tar.bz2"
   sha256 "ffc7d4891f00ffbf5c3f4eab7fbbced8460b8c0ee63c5a5167133b9e6599d932"
   license "PostgreSQL"
+  revision 1
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -11,13 +12,13 @@ class PostgresqlAT15 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "d33af6bc9aa297bdfb1f95bc82365cc158f1d208ee073ac24e390a0455f29fc3"
-    sha256 arm64_monterey: "781df37962e7ebea079b66dd0560537d946a25605c40bef723a08daf9e58c97b"
-    sha256 arm64_big_sur:  "b4aa1d925e3b711b1b15b716a6eac1cdf7f90691a1aebf1fe7519a047218e4ad"
-    sha256 ventura:        "0e100c9f018727d95d1188387b4b5456562c26466c8a9497f92244a67009653d"
-    sha256 monterey:       "7f8c17922d04ee85bcd038a91de418784e8c217bdd4e0f59c8d75432e0a9d803"
-    sha256 big_sur:        "13f296fb84e4d47de6760f95cf0a2226979c8b532ee97560757c0cecd36b6c97"
-    sha256 x86_64_linux:   "f6a0b3f94b3f4957c33c714b350f42a6f100b1f7ba88abf4381b77a6ad89a342"
+    sha256 arm64_ventura:  "a4ac536d7dabb2d022ea6775eec560d9db20385ac6e125e51a9af19d0f1211bc"
+    sha256 arm64_monterey: "8e05a9b105efdd343273ce005b144123db0dd775db06ef9c8c59d3a139c6e3aa"
+    sha256 arm64_big_sur:  "4f34f0ae610edd38d630de1ee17be4f04cd84f6b55d1d1524787e9436e22a951"
+    sha256 ventura:        "fc96344f03154cc647d2f0d3ee3858cfdce6456fe6e187dd60310736248038e4"
+    sha256 monterey:       "c66f1d2a800965ec578df64e3741eb7c4c9e3fa5f26b99e4a565eee9e8e7093c"
+    sha256 big_sur:        "7c3c34734671217a33e669ce15606ce5a36dca2ab96c5572382ffb29a70a0fe3"
+    sha256 x86_64_linux:   "7b0582363e0bcaec71dab409d78f213de4d1063e61090822a3b66e16716b4f13"
   end
 
   keg_only :versioned_formula

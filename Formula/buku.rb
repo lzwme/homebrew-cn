@@ -9,19 +9,20 @@ class Buku < Formula
   head "https://github.com/jarun/buku.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "5585794403918cad4d4b6c8b88370bc2ff6af831a0a4217ac325a24c7853f0c5"
-    sha256 cellar: :any,                 arm64_monterey: "d6fc80d832668f1a241bd0e157cb30f92731554b8de6fb225149bdb80bcb5cb8"
-    sha256 cellar: :any,                 arm64_big_sur:  "11bae78fd66e7933094f871646df352a9b14d2c05e0702ad06eaa329d1eb9efc"
-    sha256 cellar: :any,                 ventura:        "189db8d8c5bdd3866aa3d26d72ebda4ca3640ebd5ed7b25bc4d1b2367b3c72e1"
-    sha256 cellar: :any,                 monterey:       "ae608449c09a744a010f18c90a26fa51131a5bbe4655867300d23caaa8d81c51"
-    sha256 cellar: :any,                 big_sur:        "9a3d21f73231f7cb9bf2a3468f64f4668943409ac3f1c5bc3a334eaf961d7f0d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2fe56e6cdac0c26792456b213992259caa7bf625ccdf07a0b8094f80446d8945"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "8d7911ce9d131740835271da843f2d1276a44354a7ab60ba8f3bdd48773c9334"
+    sha256 cellar: :any,                 arm64_monterey: "f2798fe0b23e7cc2537de19a5294dfdd583c9a6a8ccf42444b40ecf80f849e78"
+    sha256 cellar: :any,                 arm64_big_sur:  "fc002b57b0388d2bdbf5cc8f856b9d4a9ba73a2c633058f709941ecce723bc3d"
+    sha256 cellar: :any,                 ventura:        "b9bc50fcf7ea2f1658e516131a43531b95d7a2bdf9c547532c5fe2e20741b235"
+    sha256 cellar: :any,                 monterey:       "4a21e21451747ce56bd65c225f2bcca2fda0991a47b9d3e93f1d8623707b0cb9"
+    sha256 cellar: :any,                 big_sur:        "e94cd865b1da85d35ba139234a427659ed385efbe6e27311ac14af24c3731890"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b10fa03b0e856f47c3382e3932b00e64ead3e239b562e7a7b7aa1655a8a8135b"
   end
 
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "openssl@1.1"
+  depends_on "pycparser"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -42,14 +43,9 @@ class Buku < Formula
     sha256 "492bbc69dca35d12daac71c4db1bfff0c876c00ef4a2ffacce226d4638eb72da"
   end
 
-  resource "blinker" do
-    url "https://files.pythonhosted.org/packages/e8/f9/a05287f3d5c54d20f51a235ace01f50620984bc7ca5ceee781dc645211c5/blinker-1.6.2.tar.gz"
-    sha256 "4afd3de66ef3a9f8067559fb7a1cbe555c17dcbe15971b05d1b625c3e7abe213"
-  end
-
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
-    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
+    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
+    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "click" do
@@ -58,18 +54,18 @@ class Buku < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz"
-    sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
+    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
+    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
   end
 
   resource "dominate" do
-    url "https://files.pythonhosted.org/packages/12/d7/5e5f50f5d5bdd4282d2a70b9479c1d91d6628bebd4829e455cdf7366a92e/dominate-2.7.0.tar.gz"
-    sha256 "520101360892ebf9d0553f67d37e359ff92403d8a1e33814030503088a05da49"
+    url "https://files.pythonhosted.org/packages/13/3d/8d22916c12184f0c4930b9cdfb136a130e8d8eacf5942fc9883f2a189f6a/dominate-2.8.0.tar.gz"
+    sha256 "4c90c3befaf88e612b71f4b39af7bcbef8977acfa855cec957225a8fbf504007"
   end
 
   resource "Flask" do
-    url "https://files.pythonhosted.org/packages/46/e7/3dc143f22a6aa997753aac1eb68b1b4ac8696819f10ff89d4ebb3de4c42d/Flask-2.3.1.tar.gz"
-    sha256 "a6059db4297106e5a64b3215fa16ae641822c1cb97ecb498573549b2478602cb"
+    url "https://files.pythonhosted.org/packages/5f/76/a4d2c4436dda4b0a12c71e075c508ea7988a1066b06a575f6afe4fecc023/Flask-2.2.5.tar.gz"
+    sha256 "edee9b0a7ff26621bd5a8c10ff484ae28737a2410d99b0bb9a6850c7fb977aa0"
   end
 
   resource "Flask-Admin" do
@@ -78,8 +74,8 @@ class Buku < Formula
   end
 
   resource "Flask-API" do
-    url "https://files.pythonhosted.org/packages/f8/09/fec2ae84e25ebc1065c28ea675487c26007859dcb223673beda75811863e/Flask-API-3.0.post1.tar.gz"
-    sha256 "331889500433b0a5e71ae7910a00ee577c8999baba03ca685b3558ee93031cce"
+    url "https://files.pythonhosted.org/packages/dd/4f/49bd943d2ceeb2e5872a182b1547f7eadc53121e1ceea0f8718f1a97c4cc/Flask-API-3.1.tar.gz"
+    sha256 "cb079845f5573eac55c6800a9a142bd7b54fd1227019a21cb2f75dfe5311d44f"
   end
 
   resource "Flask-Bootstrap" do
@@ -113,13 +109,8 @@ class Buku < Formula
   end
 
   resource "MarkupSafe" do
-    url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
-    sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
-  end
-
-  resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
-    sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
+    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
+    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
   end
 
   resource "python-dateutil" do
@@ -133,8 +124,8 @@ class Buku < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
-    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
+    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
+    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
   end
 
   resource "visitor" do
@@ -148,8 +139,8 @@ class Buku < Formula
   end
 
   resource "Werkzeug" do
-    url "https://files.pythonhosted.org/packages/ae/66/1b437603a0300864b0fd1e49b732d45a8a5be615eba5121f7cdfb97668dd/Werkzeug-2.3.0.tar.gz"
-    sha256 "3b6b46926d052b8ebca97c4dc73c12e47bdd07d57ab0600c039c3155450227bc"
+    url "https://files.pythonhosted.org/packages/d1/7e/c35cea5749237d40effc50ed1a1c7518d9f2e768fcf30b4e9ea119e74975/Werkzeug-2.3.6.tar.gz"
+    sha256 "98c774df2f91b05550078891dee5f0eb0cb797a522c757a2452b9cee5b202330"
   end
 
   resource "WTForms" do
