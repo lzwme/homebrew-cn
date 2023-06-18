@@ -4,16 +4,16 @@ class Pymupdf < Formula
   url "https://files.pythonhosted.org/packages/3e/06/bd008c25b210a13b8f7684d880fb7ae098d8bbbecabd6547932650a61fa0/PyMuPDF-1.22.3.tar.gz"
   sha256 "5ecd928e96e63092571020973aa145b57b75707f3a3df97c742e563112615891"
   license "AGPL-3.0-only"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8b684e1fd800dcd214d61be3be5a216f8714e0217ff956deaf8f0488ea65e4d7"
-    sha256 cellar: :any,                 arm64_monterey: "bd8fe1d4c332f26e9e0d5e9d075021663f0aa97313eb76731bb34018ef2cb532"
-    sha256 cellar: :any,                 arm64_big_sur:  "e2c82f53e6c5e07d9a916163fa522ac13c6b1e3bb12f6553c3369bb3ae38ce6e"
-    sha256 cellar: :any,                 ventura:        "84b5ece0dc4e50262daca3c964cf366f763779d10c66fc043ccc7be769f66999"
-    sha256 cellar: :any,                 monterey:       "a893ea3f32e30840005183f2ebbfda8250f656a2af7fdb102b4c36bf0d333807"
-    sha256 cellar: :any,                 big_sur:        "d2e0dfd0b9cd915957e2a054d6cd3a1f4de1f24105e326353658bb8645c471f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46b942a0e4f23cc2183ec03b5c176c80dc08d6c1671600cbc182e71405181265"
+    sha256 cellar: :any,                 arm64_ventura:  "8fef900b7c795aad102455e180d4355a6255621caf4dc77c60276d66d9458e48"
+    sha256 cellar: :any,                 arm64_monterey: "453761bbce3dde21dc77f19396695bca97f4524aa91a7d7a09dcb07c6a6a3ec4"
+    sha256 cellar: :any,                 arm64_big_sur:  "ea9af1a5b06f98cd0ed9f45b53cfdbec270362218a8605c6cff5bea390be10dd"
+    sha256 cellar: :any,                 ventura:        "8acd4b2a3d94e1a2df6e89a337dc7bf5fd675ddc94a98716a56fafa1e160ce67"
+    sha256 cellar: :any,                 monterey:       "fbe956c71a4216e787efa81cab92f54abb959da9e86416de070411f9067e5b47"
+    sha256 cellar: :any,                 big_sur:        "b52f335cfee766b0c29e96ab54beb992eb953325e8a5cabf0a4176be37301c14"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9c49867e82dcdd02ee44167d884e1e05eab15318aad5d87fa14563c203e8419"
   end
 
   depends_on "freetype" => :build

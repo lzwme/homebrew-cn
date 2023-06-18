@@ -14,13 +14,14 @@ class Osc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a29dcae921021ebf9ca73382c82ab3e96d9bdb5ffac01c1aa22c791f7857871c"
-    sha256 cellar: :any,                 arm64_monterey: "034d31db53d2019a38bfff6731335e0fbab6faa37f0b1080d29dbda8a0e27ad8"
-    sha256 cellar: :any,                 arm64_big_sur:  "45ab47113b9a0f4a109ca20d2d98712eeb10baec2e16dfc460391df7e654b8ca"
-    sha256 cellar: :any,                 ventura:        "91129a29427f6369753195ea08c28ab1ff7a9c70e1482cf9794a81cb2511b054"
-    sha256 cellar: :any,                 monterey:       "07e5b8bb2faa604502cb536bfacbda1de79f34f978a6ba6e8d6a3c5616658c60"
-    sha256 cellar: :any,                 big_sur:        "81d59e925f84e1becb59fb220f21a62adf4d9c11dbb4cefc4d8cb77ac213216c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd06377a65518600dc3d97468c1405134d08adecfe68ce083b3011bc713609b9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "5f95db9e0bacbba66365298534b3d9b8dca828951491e696dfc3cfe2e05c6b53"
+    sha256 cellar: :any,                 arm64_monterey: "5d74d13509751d2afa523a0b877640d3571ece3aa51548acfd747be04eee3b48"
+    sha256 cellar: :any,                 arm64_big_sur:  "abca1de1666f8666f015fe52f9d799858c46a097277b55e04fbbad02ac520624"
+    sha256 cellar: :any,                 ventura:        "1b032300e00b2f226b5f03b8c250021b5f5a8238bfca56fa2dbd89f381dcea20"
+    sha256 cellar: :any,                 monterey:       "5877638d219b074c0454dce3b53ceae50d6aa89ee82cb703ae298307cf34f96a"
+    sha256 cellar: :any,                 big_sur:        "0e55111666f1bb6c050bb6bf15de071804f13bcdffade38d6f60be9623907ed3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7b9cf189ea722f18048c130d6f054d6702d5afb552c909b161f6164461430b6"
   end
 
   # `pkg-config` and `rust` are for cryptography.
@@ -34,8 +35,8 @@ class Osc < Formula
   uses_from_macos "curl"
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz"
-    sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
+    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
+    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
   end
 
   resource "rpm" do
@@ -44,8 +45,8 @@ class Osc < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
-    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
+    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
+    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
   end
 
   def install

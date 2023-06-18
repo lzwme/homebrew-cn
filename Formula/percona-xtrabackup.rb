@@ -8,8 +8,15 @@ class PerconaXtrabackup < Formula
   revision 2
 
   livecheck do
-    url "https://www.percona.com/downloads/Percona-XtraBackup-LATEST/"
-    regex(/value=.*?Percona-XtraBackup[._-]v?(\d+(?:\.\d+)+-\d+)["' >]/i)
+    url "https://docs.percona.com/percona-xtrabackup/latest/"
+    regex(/href=.*?v?(\d+(?:[.-]\d+)+)\.html/i)
+    strategy :page_match do |page, regex|
+      page.scan(regex).map do |match|
+        # Convert a version like 1.2.3-4.0 to 1.2.3-4 (but leave a version like
+        # 1.2.3-4.5 as-is).
+        match[0].sub(/(-\d+)\.0$/, '\1')
+      end
+    end
   end
 
   bottle do

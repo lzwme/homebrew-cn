@@ -1,8 +1,8 @@
 class Mupdf < Formula
   desc "Lightweight PDF and XPS viewer"
   homepage "https://mupdf.com/"
-  url "https://mupdf.com/downloads/archive/mupdf-1.22.1-source.tar.lz"
-  sha256 "33b00317b93bc404cffb67c91a5e6bb1b62051536829171c5f75cbaf2c1ea7df"
+  url "https://mupdf.com/downloads/archive/mupdf-1.22.2-source.tar.gz"
+  sha256 "54c66af4e6ef8cea9867cc0320ef925d561b42919ea0d4f89db5c9ef485bbeb7"
   license "AGPL-3.0-or-later"
   head "https://git.ghostscript.com/mupdf.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Mupdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ed1c2231d4616bf3e6c6d3947b11a6b1dd8f2a8f0bca389e07628755ef6fc07f"
-    sha256 cellar: :any,                 arm64_monterey: "6cefe7bc54d9ebf2c1d2c40bd21310d62adcfc43da2779fe2f301580f7e2a860"
-    sha256 cellar: :any,                 arm64_big_sur:  "1d9d3ea021a4f85b68d02562e66d9816255d1074cfca89e773f8620eedcaf03f"
-    sha256 cellar: :any,                 ventura:        "e69eb0538e411795ac86618ac30027c69fd8b22d4d96747f12810ab3f3d82398"
-    sha256 cellar: :any,                 monterey:       "05798563d98e46772ef7bf465db66c1790ae675511fe6db74b11de4839926927"
-    sha256 cellar: :any,                 big_sur:        "c5d973f6d66ec10a25fc07e0e940a468d592d40ce01155148ba3b4e561649cf3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1d413092a8b4e51719761ff5bb0f7ad09a45a86218879ba0dc303a395171897"
+    sha256 cellar: :any,                 arm64_ventura:  "2c8967042d7b53493a94e853cd2bf1bc0732415e7455efffe3b4cda06e27dcf0"
+    sha256 cellar: :any,                 arm64_monterey: "8fb9229fa0b34bd527a8606fe30e5c9e04a45da46f40a0a55e1871607325f2e9"
+    sha256 cellar: :any,                 arm64_big_sur:  "0834491258f233866421246146127b5e5dc72d23b67527c96452eef9b09b88bd"
+    sha256 cellar: :any,                 ventura:        "f0c0f8697bd61c86f3a6626096c7ecd7342277a5d37e004d57f4859a073222ca"
+    sha256 cellar: :any,                 monterey:       "5adaa74b2dbf3a03cbeab3b868fc7b8d5eeb81fef7d7f7b821a8120577d94f40"
+    sha256 cellar: :any,                 big_sur:        "1feaf69bc227f87f692a916ced5c19a19203fd8b49a6f43c968b9c92d421b603"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e94e0fc357a64e0b7eb299f0922896234db92ee6f4902a1076026247fcb2d18"
   end
 
   depends_on "pkg-config" => :build
