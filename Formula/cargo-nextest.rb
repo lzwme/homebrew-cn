@@ -20,7 +20,7 @@ class CargoNextest < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0248a62303dc256dea497f006e60c30210e04be43febd850ea72f4ff1e4df0eb"
   end
 
-  depends_on "rust" # uses `cargo` at runtime
+  depends_on "rust" => [:build, :test]
 
   def install
     system "cargo", "install", "--no-default-features", "--features", "default-no-update",

@@ -9,17 +9,18 @@ class Mycli < Formula
   revision 1
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_ventura:  "e749be0d2f72c14d0ee6587100ba897450ff070f388d9d4d8d46503e550053e6"
-    sha256 cellar: :any,                 arm64_monterey: "01217ce9195173ffcd2bfc7787fe57ca72ea6c4c870d52b2e2d1ecf26f468c7b"
-    sha256 cellar: :any,                 arm64_big_sur:  "5b6ae4530094df409fd56246eab6991a8e4de99baa1b1923603e054271a40e6c"
-    sha256 cellar: :any,                 ventura:        "48c9c64905e2fbe572fb26af97808e25650cd7673ba8bd3600f3b03c550b284a"
-    sha256 cellar: :any,                 monterey:       "c3a0e82ac0cb61ca8ebb348e9ab1e8073d7182562ba82be7061b3083f2c98b9f"
-    sha256 cellar: :any,                 big_sur:        "5fec4b3826f08768c14249c323502871ba533c7052d7d06fa686d5cb9d838f89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4b325f9f70bebddad5da2c2189d5a8cb0f424511aff93b00f1644f8fed50443"
+    rebuild 5
+    sha256 cellar: :any,                 arm64_ventura:  "9310b7a9479c4f0add8aa8eec0b7ca2e9ae0adea9a71453e7dceff5e09a12496"
+    sha256 cellar: :any,                 arm64_monterey: "c1084c3c12cbd31cfb15e2b5f2aa4c756fcb3aea7bb11aa686fcd18635373444"
+    sha256 cellar: :any,                 arm64_big_sur:  "23df548c32be9ac9a51e96606dbce8ee47c50063ae4f3bce141be1b27bd1ee1a"
+    sha256 cellar: :any,                 ventura:        "446d4723faa73beef9f7ffb2b5e538ca7e85bea21dc3a1c9fd89e4462f0da85d"
+    sha256 cellar: :any,                 monterey:       "cbdb4cd22319b6518036e469a4ebceeb739794538981afc3e86b1a3d4444c209"
+    sha256 cellar: :any,                 big_sur:        "12f4fe455d2f274f9a61648649c4c026d3edd43da03188fcfb600fac2e0cf17b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0f8f52c55f6ae4107ae304be1369248021a39eaaccac857045f74ba72d2e176"
   end
 
   depends_on "rust" => :build
+  depends_on "cffi"
   depends_on "openssl@1.1"
   depends_on "pygments"
   depends_on "python-tabulate"
@@ -30,11 +31,6 @@ class Mycli < Formula
 
   on_linux do
     depends_on "pkg-config" => :build
-  end
-
-  resource "cffi" do
-    url "https://files.pythonhosted.org/packages/2b/a8/050ab4f0c3d4c1b8aaa805f70e26e84d0e27004907c5b8ecc1d31815f92a/cffi-1.15.1.tar.gz"
-    sha256 "d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"
   end
 
   resource "cli-helpers" do
@@ -70,11 +66,6 @@ class Mycli < Formula
   resource "pyaes" do
     url "https://files.pythonhosted.org/packages/44/66/2c17bae31c906613795711fc78045c285048168919ace2220daa372c7d72/pyaes-1.6.1.tar.gz"
     sha256 "02c1b1405c38d3c370b085fb952dd8bea3fadcee6411ad99f312cc129c536d8f"
-  end
-
-  resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
-    sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
   end
 
   resource "pymysql" do

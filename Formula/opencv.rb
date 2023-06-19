@@ -1,11 +1,10 @@
 class Opencv < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
-  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://ghproxy.com/https://github.com/opencv/opencv/archive/refs/tags/4.7.0.tar.gz"
   sha256 "8df0079cdbe179748a18d44731af62a245a45ebf5085223dc03133954c662973"
   license "Apache-2.0"
-  revision 6
+  revision 7
 
   livecheck do
     url :stable
@@ -13,13 +12,13 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "46b1b3a8991a645004ed3e99cf568569cd4252fe458e2e1713a3eee79d147ea5"
-    sha256 arm64_monterey: "afe10411afba8f18cba8dc3f3009ff94610f5deb1ee92afe96a6485ff1973462"
-    sha256 arm64_big_sur:  "b6088e19c38239efeff6758c9de7f06988c86ab5cdad987bf8593735d8557c1a"
-    sha256 ventura:        "a011e8b131f1740bec344ce04a44e02dcc42ac9c56278bee1ffe197865ab41de"
-    sha256 monterey:       "8839d11b3b42364fcf71d4f8e26c1870bbdb6121ac542ff3c71d877a717560c5"
-    sha256 big_sur:        "6ccdd45b49aa63f1c4314b81b403ba2ae0c94dc53b5e58860266d36c90f9ca19"
-    sha256 x86_64_linux:   "5cd9f8bbb161efe33b500fff3fe4a76f7ad02db087edae5dc88e69095528c0c0"
+    sha256 arm64_ventura:  "b3b4d11d4ab5e0b0f89ff0c57495b51abedb55093d1c3c34f913497215e774ad"
+    sha256 arm64_monterey: "3839f868463b61341bcd9cced7714900cc380772125b89f240bfff640bdd17cb"
+    sha256 arm64_big_sur:  "35bef4faf436bf4fb3a3d552055f5866b3152478b0713acb9fce31cf9df881f3"
+    sha256 ventura:        "0d72cd077048df1c6efd6ec13932a631eb80ec5f523e747edd72dbeae4a1711b"
+    sha256 monterey:       "a01ceebe326fde272eeb2cf6662eefc2c69fea03b7864d9ffdb2d69284379157"
+    sha256 big_sur:        "f18d2bcaf0c5700a63dd4eaaf5f0d2df1d3a409e877fb32e15e0aaf383de4ea4"
+    sha256 x86_64_linux:   "c532964da8bf92574e3dc81ce860c6a93b9e717f92d4790074c3ed5c83c1375f"
   end
 
   depends_on "cmake" => :build
@@ -36,7 +35,7 @@ class Opencv < Formula
   depends_on "openblas"
   depends_on "openexr"
   depends_on "openjpeg"
-  depends_on "protobuf@21"
+  depends_on "protobuf"
   depends_on "python@3.11"
   depends_on "tbb"
   depends_on "vtk"
@@ -68,7 +67,7 @@ class Opencv < Formula
     libdirs = %w[ffmpeg libjasper libjpeg libjpeg-turbo libpng libtiff libwebp openexr openjpeg protobuf tbb zlib]
     libdirs.each { |l| (buildpath/"3rdparty"/l).rmtree }
 
-    args = std_cmake_args + %W[
+    args = %W[
       -DCMAKE_CXX_STANDARD=11
       -DCMAKE_OSX_DEPLOYMENT_TARGET=
       -DBUILD_JASPER=OFF
@@ -107,6 +106,11 @@ class Opencv < Formula
       -DPYTHON3_EXECUTABLE=#{which(python3)}
     ]
 
+    args += [
+      "-DCMAKE_FIND_PACKAGE_PREFER_CONFIG=ON", # https://github.com/protocolbuffers/protobuf/issues/12292
+      "-Dprotobuf_MODULE_COMPATIBLE=ON", # https://github.com/protocolbuffers/protobuf/issues/1931
+    ]
+
     # Disable precompiled headers and force opencv to use brewed libraries on Linux
     if OS.linux?
       args += %W[
@@ -116,7 +120,7 @@ class Opencv < Formula
         -DOPENEXR_ILMIMF_LIBRARY=#{Formula["openexr"].opt_lib}/libIlmImf.so
         -DOPENEXR_ILMTHREAD_LIBRARY=#{Formula["openexr"].opt_lib}/libIlmThread.so
         -DPNG_LIBRARY=#{Formula["libpng"].opt_lib}/libpng.so
-        -DPROTOBUF_LIBRARY=#{Formula["protobuf@21"].opt_lib}/libprotobuf.so
+        -DPROTOBUF_LIBRARY=#{Formula["protobuf"].opt_lib}/libprotobuf.so
         -DTIFF_LIBRARY=#{Formula["libtiff"].opt_lib}/libtiff.so
         -DWITH_V4L=OFF
         -DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.so
@@ -130,12 +134,12 @@ class Opencv < Formula
       args += %W[-DCPU_BASELINE=#{cpu_baseline} -DCPU_BASELINE_REQUIRE=#{cpu_baseline}]
     end
 
-    system "cmake", "-S", ".", "-B", "build_shared", *args
+    system "cmake", "-S", ".", "-B", "build_shared", *args, *std_cmake_args
     inreplace "build_shared/modules/core/version_string.inc", "#{Superenv.shims_path}/", ""
     system "cmake", "--build", "build_shared"
     system "cmake", "--install", "build_shared"
 
-    system "cmake", "-S", ".", "-B", "build_static", *args, "-DBUILD_SHARED_LIBS=OFF"
+    system "cmake", "-S", ".", "-B", "build_static", *args, *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
     inreplace "build_static/modules/core/version_string.inc", "#{Superenv.shims_path}/", ""
     system "cmake", "--build", "build_static"
     lib.install buildpath.glob("build_static/{lib,3rdparty/**}/*.a")

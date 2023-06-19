@@ -16,15 +16,26 @@ class CargoOutdated < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "30bc7667a6e1bf3e04835e0db2426b25d2bbbc0290140d75ec7200b85f3e002e"
   end
 
+  depends_on "pkg-config" => :build
+  depends_on "rust" => :build
+  depends_on "rustup-init" => :test
   depends_on "libgit2"
   depends_on "openssl@1.1"
-  depends_on "rust"
 
   def install
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
     system "cargo", "install", *std_cargo_args
   end
 
   test do
+    # Show that we can use a different toolchain than the one provided by the `rust` formula.
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
+    ENV["RUSTUP_INIT_SKIP_PATH_CHECK"] = "yes"
+    system "#{Formula["rustup-init"].bin}/rustup-init", "-y", "--no-modify-path"
+    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
+    system "rustup", "default", "beta"
+
     crate = testpath/"demo-crate"
     mkdir crate do
       (crate/"Cargo.toml").write <<~EOS

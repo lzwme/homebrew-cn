@@ -16,8 +16,8 @@ class CargoZigbuild < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "32c3fa7b3fecc9f9e96c94f6116346868b523f4cadd1ee611abb4f07e702ddc3"
   end
 
+  depends_on "rust" => :build
   depends_on "rustup-init" => :test
-  depends_on "rust"
   depends_on "zig"
 
   def install
