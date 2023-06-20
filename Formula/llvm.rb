@@ -1,11 +1,23 @@
 class Llvm < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https://llvm.org/"
-  url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.6/llvm-project-16.0.6.src.tar.xz"
-  sha256 "ce5e71081d17ce9e86d7cbcfa28c4b04b9300f8fb7e78422b1feb6bc52c3028e"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/llvm/llvm-project.git", branch: "main"
+
+  # Remove stable block when patch is no longer needed.
+  stable do
+    # TODO: Remove `six` dependency and `LLDB_USE_SYSTEM_SIX` at next release.
+    url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.6/llvm-project-16.0.6.src.tar.xz"
+    sha256 "ce5e71081d17ce9e86d7cbcfa28c4b04b9300f8fb7e78422b1feb6bc52c3028e"
+
+    # Fixes https://github.com/mesonbuild/meson/issues/11642
+    # Remove at next release.
+    patch do
+      url "https://github.com/llvm/llvm-project/commit/ab8d4f5a122fde5740f8c084c8165f51a26c93c7.patch?full_index=1"
+      sha256 "9b01de9708e4eb5cef10c18f25dd42e126306ed8cbd9d9a26bb5fbb91ac7d7a3"
+    end
+  end
 
   livecheck do
     url :stable
@@ -33,7 +45,7 @@ class Llvm < Formula
   depends_on "cmake" => :build
   depends_on "swig" => :build
   depends_on "python@3.11"
-  depends_on "six"
+  depends_on "six" # TODO: Remove at next release.
   depends_on "z3"
   depends_on "zstd"
 
@@ -53,13 +65,6 @@ class Llvm < Formula
 
   def python3
     "python3.11"
-  end
-
-  # Fixes https://github.com/mesonbuild/meson/issues/11642
-  # Remove at next release.
-  patch do
-    url "https://github.com/llvm/llvm-project/commit/ab8d4f5a122fde5740f8c084c8165f51a26c93c7.patch?full_index=1"
-    sha256 "9b01de9708e4eb5cef10c18f25dd42e126306ed8cbd9d9a26bb5fbb91ac7d7a3"
   end
 
   def install

@@ -1,18 +1,18 @@
 class Typical < Formula
   desc "Data interchange with algebraic data types"
   homepage "https://github.com/stepchowfun/typical"
-  url "https://ghproxy.com/https://github.com/stepchowfun/typical/archive/v0.9.5.tar.gz"
-  sha256 "9f6895454d97c0c3b0e44e0bfe0e68a6558b8ac8c06a52ee6a04c37b4932173e"
+  url "https://ghproxy.com/https://github.com/stepchowfun/typical/archive/v0.9.6.tar.gz"
+  sha256 "32d8a6b8ad8b7601fabf81f1bf66b4ac05e3f6f08e80ee59997409a43baac62b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "04f006e87de37040a84b5fdd2a9ecb008cfeeabb5dc14b10ff3a0f8c63a2d962"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "887d809889aa4f52bac43f45a40463c7fae5e6b92475c628a98209e599763f43"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1f1ee0813fcd5d3c081c762069dbd435bb91981451fa6b55f2c010787eb59fd5"
-    sha256 cellar: :any_skip_relocation, ventura:        "c9a4977eb9924d3f8e27cbbcfad0f04713f23898f62f9690ba3f842c38e232da"
-    sha256 cellar: :any_skip_relocation, monterey:       "d05ed6d00876f6cea6459286a5d79ebc6f729cfeb6218c63c7ceeb61ccbcfab0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2d15a7bebb195cda07b3b3eddb52e2bd885946e501fecfabaf3d82360132762b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6ac806c8862454fd75a2a6ea2721b3c28801db80df5febaf38798c2265e45a5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9ff351c8d3357078bfb6d81f4057b346a029a1545d837116ab0e9c3cd7739485"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b941e2fa63ab05cb68c49ab29917903fd600cf0745652fcaa8e3a63835b1c6d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "744cb98acceaf26c9e98e549f783e953e4b7e53bf02c1c4350c8b7057380c7c6"
+    sha256 cellar: :any_skip_relocation, ventura:        "b6ca3b1cc3facb5309d7a8defc84d8c8851d5a133b472370623c50c853dae00e"
+    sha256 cellar: :any_skip_relocation, monterey:       "faec7d53ef73a7e62deaca35d88a9f43bb2d853c20a5e7a10e85b80f57916bb7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "76e4e837167097c3782bcd0cf892cca6f89774c2bb5bdbac14daa612acd0d1c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f5b1d123494afb5779bff3e05272e4ec155a86baad5abafa4689e69675dd32d"
   end
 
   depends_on "rust" => :build

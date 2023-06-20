@@ -1,19 +1,19 @@
 class Gf < Formula
   desc "App development framework of Golang"
   homepage "https://goframe.org"
-  url "https://ghproxy.com/https://github.com/gogf/gf/archive/refs/tags/v2.4.3.tar.gz"
-  sha256 "0adcce4f7e4910f10a52a74bfca283e0e3e15a6d5d762b7c6af7df32158f600c"
+  url "https://ghproxy.com/https://github.com/gogf/gf/archive/refs/tags/v2.4.4.tar.gz"
+  sha256 "48cfcb66fb04ae48c0169d0767f59503f7aa43b224724d04de96d43857c7ab2c"
   license "MIT"
   head "https://github.com/gogf/gf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6fda1666a120f04542597bc349b526d1067f5cfbd3c5a791beb5f2fdb62a3139"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "39e42009a2606c1f7597e2edc07141a11e5e85bb9e46cda97fe6bd6e2521cc1e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7698e53de12b760275bc803395240220a253a3b3230173b40e24f059b727e706"
-    sha256 cellar: :any_skip_relocation, ventura:        "246b4901ba023058b61b0c9d7f9cd4c78fc30c1e5c543c9422638ff2de0864d2"
-    sha256 cellar: :any_skip_relocation, monterey:       "0f889dc5c73b024a691834c2a674374cc5d6568c10a0d74b0960ad3fd58d7bc2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "712022b4c45f44ea28f109b3e845b9529bfb777205065fc86f2232fa86f6d8e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "186b5f0d986ca9d9c55352cf2fe226110ce97957a43f7fe202dd5039859586c7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a198ffe5bac5403e29a55cdf874b49dc7360b201ae21ae12559ed3cb62a49ace"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5e4f82ee65f093e868e31007a89f18d5cb4a6fbf1be65cfa6bed2e85cef3fde"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "00d4f406734cebef3882c1b7be41565787dd4927db188567b73dd6aa52b9fa3d"
+    sha256 cellar: :any_skip_relocation, ventura:        "edf99288dd3c0174df4b4552515e492a486da00da9095cfcd35c1ecbf646bfc9"
+    sha256 cellar: :any_skip_relocation, monterey:       "0b8d4c88f7bc2d87279f5326526c2f8950828de8321499a55b5999046f3edcc6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4719fb8be04064c0e6c2725e7eaa5b18c1fc9576d7959e842e9efe860fd742e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95d55cf893e4ab5c7c6f6316a7c194dea4b6b890f3911c15823ba2bcebed3511"
   end
 
   depends_on "go" => [:build, :test]

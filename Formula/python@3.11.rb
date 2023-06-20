@@ -11,13 +11,14 @@ class PythonAT311 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "7901ada4e383cb20a39728ce65f3c6642de4525f55f7a49a4e9bb7ab261f6cb9"
-    sha256 arm64_monterey: "39483f9f8b10710846863cec7da43987b21ee445b636ed5d6407f9771b8ad04c"
-    sha256 arm64_big_sur:  "fa7e6b8296f14a7d4c03787e83908ad9554a149ee0db1079df5c998b01c1459d"
-    sha256 ventura:        "b0df9e62dded2ce44e9362a2fa7b678f03748c47a4c76709c5213f4c2c1d4c38"
-    sha256 monterey:       "c81561af71f6a3200cd6b2dee2780ea4739a5464c162da2b763dc90fac694760"
-    sha256 big_sur:        "ed4aa0200f84405f037f6655ea3186b95cb948f5a5649ddf2b3c5542f3433a85"
-    sha256 x86_64_linux:   "eaaf141be701e2aaad732c1afaa33b623f11c8f479d50d03a9c4b4d0349f55be"
+    rebuild 1
+    sha256 arm64_ventura:  "ae4c32c3a4924c93133e31d3810b5a8e992514775c6e91627e304f82b9fa906b"
+    sha256 arm64_monterey: "6b43a8c74163708763efcf82b5ab8b0b861ca4516fae553844a3b33b882c8e98"
+    sha256 arm64_big_sur:  "384efe1b5f7ed58db69474b348acf9498a9fb98c7ffcd8b2dec35bb6f6844066"
+    sha256 ventura:        "27087690b1bdba89fc6964e2a92114d3686c7ebbd27f54d28658cffe4bb68bf1"
+    sha256 monterey:       "a53646ef5aa8abe465816c6fcd94bf69ab25244bfbbdd6ab9fdcdb5cb98dc56e"
+    sha256 big_sur:        "95ee1128b98323564dd0da10f8a1eca98b01658c97c36b4478bb8d146e6e2d6f"
+    sha256 x86_64_linux:   "31766d795cb6367043455f431e9975c3b4ababc86ac5026807d0e562533ad82a"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -445,7 +446,7 @@ class PythonAT311 < Formula
           if os.path.realpath(sys.base_exec_prefix).startswith('#{rack}'):
               new_exec_prefix = cellar_prefix.sub('#{opt_prefix}/', sys.base_exec_prefix)
               if sys.exec_prefix == sys.base_exec_prefix:
-                  site.PREFIXES[:] = [new_prefix if x == sys.exec_prefix else x for x in site.PREFIXES]
+                  site.PREFIXES[:] = [new_exec_prefix if x == sys.exec_prefix else x for x in site.PREFIXES]
                   sys.exec_prefix = new_exec_prefix
               sys.base_exec_prefix = new_exec_prefix
       # Check for and add the prefix of split Python formulae.

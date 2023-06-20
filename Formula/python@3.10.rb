@@ -11,13 +11,14 @@ class PythonAT310 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "def8497af3ae058eb9c30c2a5f99c878bdc21ef7ceb976c87ba9908f44135cde"
-    sha256 arm64_monterey: "6b582718aebc641554ebd11f0030e9f244d24f47ea3f202df130a21ed65fb129"
-    sha256 arm64_big_sur:  "d224a3c87c6a367eed7c024631118f792e542acc530b5421599b9424d4f06adc"
-    sha256 ventura:        "9ff1027548d103e245591d445f7479e69f9d232ecd06caf3f64fe16c440b3524"
-    sha256 monterey:       "ee98b018f44a71049c0101436b5c8899629b297fa8808b9ed31ac87d9c71f3ae"
-    sha256 big_sur:        "87ea84a89ebd5231c7c8bbeeb2f68a5d3cd354425baf55ababfdc51e036c0de9"
-    sha256 x86_64_linux:   "beb0dcad081536c180e4d9c85e4753a5d69a8b7e0dee8c9c8695d3359eb1e524"
+    rebuild 1
+    sha256 arm64_ventura:  "afc20ddbd89e093aee4b154b1c8e685de45a6e2d5cfe1be321b55a8f84a2d5c8"
+    sha256 arm64_monterey: "957dc3a563daf2e7df38e8789ae8d8d4024286dedf50fee483af74d8f19a6176"
+    sha256 arm64_big_sur:  "899db7af5a83181ab2478ade543a1cd79d2c513a268091ebc8867d7febc1c813"
+    sha256 ventura:        "a209c7993a4e87a9e2830f9ec012ba54f9cba32e120a0013875713d56ecff5f0"
+    sha256 monterey:       "5b81eb223b3d53afa7d8a003411b476ae5750e76f6ad13e6a7206c366243ceb9"
+    sha256 big_sur:        "6c960fc9c6a290edbf4b823ecf31af3e9bba439717ca7132fd4516f52fb10498"
+    sha256 x86_64_linux:   "fe5dcdfe7b0047dbf433714c52e46ca55ed7396fec80d5f1dae207e408f09111"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -441,7 +442,7 @@ class PythonAT310 < Formula
           if os.path.realpath(sys.base_exec_prefix).startswith('#{rack}'):
               new_exec_prefix = cellar_prefix.sub('#{opt_prefix}/', sys.base_exec_prefix)
               if sys.exec_prefix == sys.base_exec_prefix:
-                  site.PREFIXES[:] = [new_prefix if x == sys.exec_prefix else x for x in site.PREFIXES]
+                  site.PREFIXES[:] = [new_exec_prefix if x == sys.exec_prefix else x for x in site.PREFIXES]
                   sys.exec_prefix = new_exec_prefix
               sys.base_exec_prefix = new_exec_prefix
       # Check for and add the python-tk prefix.

@@ -21,19 +21,20 @@ class Shfmt < Formula
 
   def install
     ENV["CGO_ENABLED"] = "0"
-    (buildpath/"src/mvdan.cc").mkpath
-    ln_sf buildpath, buildpath/"src/mvdan.cc/sh"
-    system "go", "build", "-a", "-tags", "production brew", "-ldflags",
-                          "-w -s -extldflags '-static' -X main.version=#{version}",
-                          "-o", "#{bin}/shfmt", "./cmd/shfmt"
+    ldflags = %W[
+      -s -w
+      -extldflags=-static
+      -X main.version=#{version}
+    ]
+    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/shfmt"
     man1.mkpath
     system "scdoc < ./cmd/shfmt/shfmt.1.scd > #{man1}/shfmt.1"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/shfmt  --version")
+    assert_match version.to_s, shell_output("#{bin}/shfmt --version")
 
     (testpath/"test").write "\t\techo foo"
-    system "#{bin}/shfmt", testpath/"test"
+    system bin/"shfmt", testpath/"test"
   end
 end

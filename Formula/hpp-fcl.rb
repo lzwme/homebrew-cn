@@ -13,10 +13,13 @@ class HppFcl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 ventura:      "8fdd5346b7066cbed520ea472873383c93ba26a014971afaa08e1579ee8b710b"
-    sha256 cellar: :any,                 monterey:     "1df8c01b96fcec299bcd7383c92d77128ed52b20fdf4b177036ea7c082d64485"
-    sha256 cellar: :any,                 big_sur:      "632ee902587c81ce5519036311ab0a6bba5ba88b4201314abce5ad7f95501c6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "90938560fb8d280e8ab9b4d25599de34a5ae40c3d50710d16a54ca720eab9152"
+    sha256 cellar: :any,                 arm64_ventura:  "896a31d6f1fb9a7bcc708aed0ab432c517087e2bea20cad1f27a0e9e7d400aa7"
+    sha256 cellar: :any,                 arm64_monterey: "0c80b46964b6510a8032f8c8de79bab346d507598f029bc46e1b50b9a14e6d6f"
+    sha256 cellar: :any,                 arm64_big_sur:  "ec5397a77ae847c8941ff746bef69f1d9dcfe575e1b904d26ed22843de74cf1c"
+    sha256 cellar: :any,                 ventura:        "8fdd5346b7066cbed520ea472873383c93ba26a014971afaa08e1579ee8b710b"
+    sha256 cellar: :any,                 monterey:       "1df8c01b96fcec299bcd7383c92d77128ed52b20fdf4b177036ea7c082d64485"
+    sha256 cellar: :any,                 big_sur:        "632ee902587c81ce5519036311ab0a6bba5ba88b4201314abce5ad7f95501c6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90938560fb8d280e8ab9b4d25599de34a5ae40c3d50710d16a54ca720eab9152"
   end
 
   depends_on "cmake" => :build

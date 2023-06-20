@@ -1,18 +1,18 @@
 class Htmlcleaner < Formula
   desc "HTML parser written in Java"
   homepage "https://htmlcleaner.sourceforge.io"
-  url "https://downloads.sourceforge.net/project/htmlcleaner/htmlcleaner/htmlcleaner%20v2.28/htmlcleaner-2.28-src.zip"
-  sha256 "1493cefbd33278d604ddc1112b85324e7fbf1e301df238983cb8607e6134a05e"
+  url "https://downloads.sourceforge.net/project/htmlcleaner/htmlcleaner/htmlcleaner%20v2.29/htmlcleaner-src-2.29.zip"
+  sha256 "9fc68d7161be6f34f781e109bf63894d260428f186d88f315b1d2e3a33495350"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8800106897508685c78445505b5b1b54bc5c1843c0ed0e2ffed5c5116e10849b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dd3c8002c0fa6b401b06cb1a8a3dbba0d5af80b595961e0478edc51630d22e5b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4f69e0c0ef7a3a3513b14d44537aba8b4eb844aef50b6e3d601d78bd6fe4c268"
-    sha256 cellar: :any_skip_relocation, ventura:        "449b0dc96851b886b6a25745d12aac1db6b029cabadf844dc180a6efaab72ee4"
-    sha256 cellar: :any_skip_relocation, monterey:       "807765f837ea55432354bb5dc9a21581e984c1af71e9825a9151a61fbbf67364"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ce369d0824e23298c35313ba7c9e6e1bdd689229c0d78b51ac75770c4b064d32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b3b71a9096122f72681727e1af0d9b3fd0b1386dcf51454617455b9cdaaa7fa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c69fec74c6bdd85bc1e50f84ca5530753edd8f3138658ada3afbe5a3f5d6120d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d51522c4694c19381009f5f0566c3b99ce3db5375bbcb0378530ef73e100906d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f7d35a9ba43bece23688f19a0bad2066609dbae23c1f1413d170ebf66201e126"
+    sha256 cellar: :any_skip_relocation, ventura:        "f6c18a92a98adb2245192c0b300729d74968f6ce4a62308e27d0c70e7600ec8d"
+    sha256 cellar: :any_skip_relocation, monterey:       "da4541f544b599317e82d02ec9eb4a02e780946eca8f0d7a5f0a017e5737a841"
+    sha256 cellar: :any_skip_relocation, big_sur:        "42e661553a128f210c22e5c0a5c6a90ce52f2242708d61f7e8d325ee97e09352"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f795c5d9639319b32b2f4ae9a12e03272e52969b2d259f0f3916c9883b035ba"
   end
 
   depends_on "maven" => :build
