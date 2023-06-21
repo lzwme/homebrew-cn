@@ -3,19 +3,18 @@ class Keyring < Formula
 
   desc "Easy way to access the system keyring service from python"
   homepage "https://github.com/jaraco/keyring"
-  url "https://files.pythonhosted.org/packages/55/fe/282f4c205add8e8bb3a1635cbbac59d6def2e0891b145aa553a0e40dd2d0/keyring-23.13.1.tar.gz"
-  sha256 "ba2e15a9b35e21908d0aaf4e0a47acc52d6ae33444df0da2b49d41a46ef6d678"
+  url "https://files.pythonhosted.org/packages/31/42/f29907a72907df16326fa425cfd3a144f00d9a613063467f8b58d2ac58a5/keyring-24.0.0.tar.gz"
+  sha256 "4e87665a19c514c7edada8b15015cf89bd99b8d7edabc5c43cca77166fa8dfad"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "70840ea0d9f5be6b4337724908bde6f97906b9563d88fc72f43fc85db6030cfe"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "99782d971e145096f24d09ffb2d24672484f2fcbe4bf3811d4fcaf795ddea144"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ccbf753952259142f463401f5824b9af04aed1c18230508993d85ef540651a49"
-    sha256 cellar: :any_skip_relocation, ventura:        "0c72c6ce2f7ff3ef07e87e34214ac307bbc6e807293f5354cf5a3d6023417ed2"
-    sha256 cellar: :any_skip_relocation, monterey:       "3c2506a2884ab63641a80a09cf61c7632c39a94a9261f003efc7a780f8db085b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1734cea5cbe76569d2c45af0fa0efae4a948c388ffcfeb18f2e0492df259b759"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a46b477572fc8731f1f5bef3423c72bb338df5437fe959dd93a7ccc98f503979"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "31562117376109a9202a179c5834b680256d23ab01d7b3e72dae627355cc92c5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "31da4a42fe530289a1f751828d98a7fa1640be64817bd024a36876c994a9d7cf"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "088c25ef5fbc32368c38e0903554202d28114e069188ea60b39865a457274605"
+    sha256 cellar: :any_skip_relocation, ventura:        "4a3b5397f98a5e99d4802d23c1bb164cebe3ab630454e79ad9826b59ac59338b"
+    sha256 cellar: :any_skip_relocation, monterey:       "7761b35321926e07287967365af2385e8c5a9ddd1b40a6d07a1abc811a7e7813"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1a7722bb519d3eef5cd5b261eb702e9a9e915d422bfc2c8d3bddf1c9be7fd283"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fcb7994e07939f1a929b9cdd39c59a3ff1ac3a7fdaf2761291e88f208c331bdd"
   end
 
   depends_on "cffi"
@@ -44,8 +43,8 @@ class Keyring < Formula
   end
 
   resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/0b/1f/9de392c2b939384e08812ef93adf37684ec170b5b6e7ea302d9f163c2ea0/importlib_metadata-6.6.0.tar.gz"
-    sha256 "92501cdf9cc66ebd3e612f1b4f0c0765dfa42f0fa38ffb319b6bd84dd675d705"
+    url "https://files.pythonhosted.org/packages/a3/82/f6e29c8d5c098b6be61460371c2c5591f4a335923639edec43b3830650a4/importlib_metadata-6.7.0.tar.gz"
+    sha256 "1aaf550d4f73e5d6783e7acb77aec43d49da8017410afae93822cc9cca98c4d4"
   end
 
   resource "jaraco-classes" do

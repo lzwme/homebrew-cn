@@ -1,19 +1,19 @@
 class CargoOutdated < Formula
   desc "Cargo subcommand for displaying when Rust dependencies are out of date"
   homepage "https://github.com/kbknapp/cargo-outdated"
-  url "https://ghproxy.com/https://github.com/kbknapp/cargo-outdated/archive/v0.13.0.tar.gz"
-  sha256 "2a20592225cd389aeec4eec6e7a410c709d37761e68116c753f55c935b64b8b8"
+  url "https://ghproxy.com/https://github.com/kbknapp/cargo-outdated/archive/v0.13.1.tar.gz"
+  sha256 "571910b0c44f0bcf0b6e5c24184247e4603f474c7bde5f0eaa1203ce802b4a4a"
   license "MIT"
   head "https://github.com/kbknapp/cargo-outdated.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "0ad86ee2ab50b248f1b9de974d036b2afd44b7beee2fc1b3858832beb0537750"
-    sha256 cellar: :any,                 arm64_monterey: "0f689272a92f59491a000d398476f7f5749d290047f219de787248856840725c"
-    sha256 cellar: :any,                 arm64_big_sur:  "7a33a3fefff752b5aa4b0f8f65eeec80bcc15d2c30527781924915f6d5b2f393"
-    sha256 cellar: :any,                 ventura:        "de0b9bd89bb89b11aaf95855e3022e1d40be6a9dd61a5192843892703d1ba788"
-    sha256 cellar: :any,                 monterey:       "c800d30853a37aa26187ae741f657fd83fdd2a2f471de08209822bb755c95931"
-    sha256 cellar: :any,                 big_sur:        "c735b5b78db54d784d747d8ec6498718bba716d2c405641601026116c5327d28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45edbf0d68634e00ad25174af30253101262528a32ca1deec952a49e95d41b64"
+    sha256 cellar: :any,                 arm64_ventura:  "94549d70982775303f6c056336080a13432051ab9623a91cbcf66f9bea555987"
+    sha256 cellar: :any,                 arm64_monterey: "f4f3924b3e86d7681c76080875fca32157eb0bece4c539edb00ecb576bcada23"
+    sha256 cellar: :any,                 arm64_big_sur:  "ceb5304cdccc0446bfd5623c08898c8f2238f27aba17ef691afb15134bb16058"
+    sha256 cellar: :any,                 ventura:        "e498c2e69bc4c736925bf9fad65a7a374e957fe0e885c37df2766e500e07fb0e"
+    sha256 cellar: :any,                 monterey:       "907e1ba63c1f6f685a93b8281768725aeffc7fc5c5981662ff89fab82e415a78"
+    sha256 cellar: :any,                 big_sur:        "f0e1d11511b61334bdcc8426218ac7b21a106f10328f48baa50fe599368886e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "712a0937a31535b4c70b9b67f9f2f8e797f86ab6574c755cb17736a639c670eb"
   end
 
   depends_on "pkg-config" => :build

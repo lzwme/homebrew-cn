@@ -19,7 +19,7 @@ class Pev < Formula
     sha256 x86_64_linux:   "0bb7e6192930c868b08379aadd687ce5f28f46d576748cda2bc4e6247849a522"
   end
 
-  deprecate! date: "2022-02-28", because: :repo_archived
+  disable! date: "2023-06-19", because: :repo_archived
 
   depends_on "openssl@3"
 

@@ -31,7 +31,6 @@ class Minigraph < Formula
   test do
     cp_r pkgshare/"test/.", testpath
     output = shell_output("#{bin}/minigraph MT-human.fa MT-orangA.fa 2>&1")
-    puts output
     assert_match "mapped 1 sequences", output
   end
 end

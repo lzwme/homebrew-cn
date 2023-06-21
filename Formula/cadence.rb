@@ -1,8 +1,8 @@
 class Cadence < Formula
   desc "Resource-oriented smart contract programming language"
   homepage "https://github.com/onflow/cadence"
-  url "https://ghproxy.com/https://github.com/onflow/cadence/archive/v0.39.10.tar.gz"
-  sha256 "2e78e650bd968c74c746e1dfb7d2be0cb798a667c0ff8a6ded7ea278cc04d92d"
+  url "https://ghproxy.com/https://github.com/onflow/cadence/archive/v0.39.11.tar.gz"
+  sha256 "b0ce9de051903be42321b80ef8a15f644c33dc52734c33e9db1297d48a218483"
   license "Apache-2.0"
   head "https://github.com/onflow/cadence.git", branch: "master"
 
@@ -15,13 +15,13 @@ class Cadence < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0d74aceff05903cd4edfe1dbde8459018504f4e1299cf8ec974b7537d50cda27"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0d74aceff05903cd4edfe1dbde8459018504f4e1299cf8ec974b7537d50cda27"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0d74aceff05903cd4edfe1dbde8459018504f4e1299cf8ec974b7537d50cda27"
-    sha256 cellar: :any_skip_relocation, ventura:        "e65d963170858956a68dc32ee3fbd5336e10788222a24241a96b3bad8948c923"
-    sha256 cellar: :any_skip_relocation, monterey:       "e65d963170858956a68dc32ee3fbd5336e10788222a24241a96b3bad8948c923"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e65d963170858956a68dc32ee3fbd5336e10788222a24241a96b3bad8948c923"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d93e70ffe706849b004d217a8f4befc87783b1f4f9b8388abd330113f9dc1fcc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9f025045f29a5adf9d7c2cecd12d16de7e7b102cb2fc84a2b86c039227f283d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c9f025045f29a5adf9d7c2cecd12d16de7e7b102cb2fc84a2b86c039227f283d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c9f025045f29a5adf9d7c2cecd12d16de7e7b102cb2fc84a2b86c039227f283d"
+    sha256 cellar: :any_skip_relocation, ventura:        "623aa9d022d302a3d2180703c1929ccb3f275c7ee1bd7b80c9e828a85d783591"
+    sha256 cellar: :any_skip_relocation, monterey:       "623aa9d022d302a3d2180703c1929ccb3f275c7ee1bd7b80c9e828a85d783591"
+    sha256 cellar: :any_skip_relocation, big_sur:        "623aa9d022d302a3d2180703c1929ccb3f275c7ee1bd7b80c9e828a85d783591"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "035b6fbd7ce63dc86b381fea9dab1e53f905d75d452ac6a66f7490506bd91edd"
   end
 
   depends_on "go" => :build

@@ -17,7 +17,7 @@ class Qodem < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "19414f9b69d7423a5f2ab1ecb2690bf1bd285f96832d151835741867f22f2e6e"
   end
 
-  deprecate! date: "2022-05-07", because: :repo_removed
+  disable! date: "2023-06-19", because: :repo_removed
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
