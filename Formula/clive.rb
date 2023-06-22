@@ -1,5 +1,5 @@
 class Clive < Formula
-  desc "⚡ Automates terminal operations"
+  desc "Automates terminal operations"
   homepage "https://github.com/koki-develop/clive"
   url "https://ghproxy.com/https://github.com/koki-develop/clive/archive/refs/tags/v0.12.6.tar.gz"
   sha256 "5808a8f3e80446f5517d8d24b7a1190bdfe2274b1340d2a65ee825e87c09a211"

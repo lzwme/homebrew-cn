@@ -10,8 +10,6 @@ class Mvnvm < Formula
     sha256 cellar: :any_skip_relocation, all: "53a0e70d81fe15c525dd0532f31fa39887f27ca649946872d5d02fad928320f8"
   end
 
-  deprecate! date: "2023-06-19", because: :repo_removed
-
   depends_on "openjdk"
 
   conflicts_with "maven", because: "also installs a 'mvn' executable"

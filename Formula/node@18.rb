@@ -1,10 +1,9 @@
 class NodeAT18 < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v18.16.0/node-v18.16.0.tar.xz"
-  sha256 "33d81a233e235a509adda4a4f2209008d04591979de6b3f0f67c1c906093f118"
+  url "https://registry.npmmirror.com/-/binary/node/v18.16.1/node-v18.16.1.tar.xz"
+  sha256 "e8404f8c8d89fdfdf7e95bbbc6066bd0e571acba58f54492599b615fbeefe272"
   license "MIT"
-  revision 1
 
   livecheck do
     url "https://registry.npmmirror.com/-/binary/node/"
@@ -12,13 +11,13 @@ class NodeAT18 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "204b37b8241edfdeec731a344c941358de105259c970a24bcc4ff3f5aa75710c"
-    sha256 arm64_monterey: "f6001971a6df035ed758af73fb191ca4aecc989a708c8b714a22fe69406913ca"
-    sha256 arm64_big_sur:  "47fab302043fd4bcd3d131a03bebdba1d96f40362568d5d9b1ce533cdf263327"
-    sha256 ventura:        "ad83d7ecd90bac396f84de0909a9afaaaedd76df1ffe591ce736a6727314c8ad"
-    sha256 monterey:       "caca7ae36e54f07e59cd778210c2f9b75b2d98209147d45b50e8efe6e98cd708"
-    sha256 big_sur:        "57cb882f6e558801c9db999efae4446499369b078fe73f955cacd88c021630a0"
-    sha256 x86_64_linux:   "c9e2ac2f27c57a5b64f445c84e356ecee4d16964b435f2a513548f2963ad9b5d"
+    sha256 arm64_ventura:  "2d1dd84a9cb8e8a48994df242c6e83fececdc2897d5984e018435342c737b4ee"
+    sha256 arm64_monterey: "5344d7b3521761db3b25047534af721e8a9eeaa4cb8eea957e473ae833fdddf1"
+    sha256 arm64_big_sur:  "c3a147771219edf8e4dd3b28efe7f2ce05c23c48638ba3ca7dc820dac40eaaf0"
+    sha256 ventura:        "5a97a1b60332143d18ef46fe35916a56897dabb9e7141dc507a550dbb84048fc"
+    sha256 monterey:       "d614915f41ece7923d4bc3963b6c993d95299fedd223cf6ed0378047cfb7d788"
+    sha256 big_sur:        "038c5344baae390545b123b179837693ab24047114e7ddaa16a835a4b3c5de87"
+    sha256 x86_64_linux:   "62e2106a291b10b7c03ceebe840a4c0e1bc816143efa10d19fc872686e786da2"
   end
 
   keg_only :versioned_formula

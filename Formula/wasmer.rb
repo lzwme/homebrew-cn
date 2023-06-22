@@ -1,5 +1,5 @@
 class Wasmer < Formula
-  desc "🚀 The Universal WebAssembly Runtime"
+  desc "Universal WebAssembly Runtime"
   homepage "https://wasmer.io"
   url "https://ghproxy.com/https://github.com/wasmerio/wasmer/archive/refs/tags/v3.3.0.tar.gz"
   sha256 "141aacceb80007735b7f9ca9ce76b439febaacfc069bec7e8bdd1883b4ac0e85"

@@ -1,19 +1,19 @@
 class Rqlite < Formula
   desc "Lightweight, distributed relational database built on SQLite"
   homepage "https://www.rqlite.io/"
-  url "https://ghproxy.com/https://github.com/rqlite/rqlite/archive/v7.20.6.tar.gz"
-  sha256 "7af2b463bf36e67bb598ea63137c8210e0f5590aceda10fd6f6990eb8423e70f"
+  url "https://ghproxy.com/https://github.com/rqlite/rqlite/archive/v7.21.0.tar.gz"
+  sha256 "117609485c7160026134da425251f5188fe05f8dce80279e6fb3a13d938b7147"
   license "MIT"
   head "https://github.com/rqlite/rqlite.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3170338ad469bb2f99dd5a8aefc106098379b6693e4bb6e885026e17c7ea129d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3790b1d7c9b677c7a9b99c0e768e17cd7b72797b2bd7f2b06567da29973434e2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "df65e6aa92ecb2a456ad96662233f212d1ce6837053842df218905fbb176b0eb"
-    sha256 cellar: :any_skip_relocation, ventura:        "e3ccd6fd788f369f4c606b8da5661e4964f6abcc9e1cd926794be3fe3e30f6c1"
-    sha256 cellar: :any_skip_relocation, monterey:       "e70e268e5e862d98c1e191fc63ceefcf2e12d64eb7b39dc110b81c93ef91b78e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9d9130efc4ca1f80aecca3b9a6827cd5fe7f288b2ed8769265b2d3a0e6a23546"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7462142d5103463822406bfbb064f64b68db9ac0c67fd28c32df76fe930a08f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29dd820e0d6da2fda66cdfa309dab1b16347bff4fefd869ee9c830af2f5c9f34"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fea77321125561baa7f707af234a38479a98a7ec8904614c38ebfb0d46be7a9f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9f62f71c2a393c9db27ee7eb41c39c6cccb3f93acbbd229f44725fc2bfec6201"
+    sha256 cellar: :any_skip_relocation, ventura:        "2877c2828f0f88a24463e08d53a27b74d01dba3ae00167fedb2765f7a2e4b747"
+    sha256 cellar: :any_skip_relocation, monterey:       "557af138918011400d4755ac8cbf23a6db4dcbd1118abdb7412ba4fde08ce5fd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ca1639c2cfe94a1104cbe8bbd90331689e54d0ccc362c2d2584521fc21698bfa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4aa2caf714020b564bcd3ba54f856bda551694331b25e7120607aab50a7cc2c2"
   end
 
   depends_on "go" => :build

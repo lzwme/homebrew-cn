@@ -3,18 +3,18 @@ class YtDlp < Formula
 
   desc "Fork of youtube-dl with additional features and fixes"
   homepage "https://github.com/yt-dlp/yt-dlp"
-  url "https://files.pythonhosted.org/packages/e8/4a/1e01f24fcb49191626e2b17d00e13a093315d03a9da09fccb1c75913e420/yt-dlp-2023.3.4.tar.gz"
-  sha256 "265d5da97a76c15d7d9a4088a67b78acd5dcf6f8cfd8257c52f581ff996ff515"
+  url "https://files.pythonhosted.org/packages/36/9a/13eee74e6a621ab42d2b8c7fd7daf6e943af1a8269aa966718fae177a64b/yt-dlp-2023.6.21.tar.gz"
+  sha256 "56c35d1ad3ecfb828c3b89ffe07b235b354eddd82e1a31ddc3d16eb8c3e71e8e"
   license "Unlicense"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a0e990cd6d8e33ed7abcde743b0c121705656315f724b4b4e83ab9976da28bd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "25240328295fbb5bdb9bb086af1471b71faaabfea54ea403f1b576af9c17df7f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "92a2c79978a05d73831c240ec82b96a99b2a6480ca7276fcc2f7ceff45fa74a2"
-    sha256 cellar: :any_skip_relocation, ventura:        "fcdc5c7a4aa821cd8712eb3745e93b887741c56208b7f4a1ab4886d3a3c1bd19"
-    sha256 cellar: :any_skip_relocation, monterey:       "e4a404c9dfa604bd45d9cebf09819892d0fcaeb0629064ddf4ba56a5aac9184a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "16a7b619b2b0e0512ac7246a881479f092a9d70facefd42dd32bb65fa96aa585"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e60629a7a90a3c0cbb097b86c49d231ee8955efb24f1696a275e2ab4833034f3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ea8531b681b6b2bc12c1467b9f2a444582bebe48953918afa72ea18b80302f9d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b48ad85a76573a13c6c2946ffa6f23ceeaa3ed1b33b1fc95120476433ef161a5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "40bc5f4e0cde651c93246e8fdda69fe647347ceb651c2b672faf3d2b1111db65"
+    sha256 cellar: :any_skip_relocation, ventura:        "e185eaeb244000d6cb7bb3e58e675f9de8fdd13162ee7e9bdc1662d3f52e0e9c"
+    sha256 cellar: :any_skip_relocation, monterey:       "21342edf9ec8ec9aae3723a078f058e81fb62e8578f1bd3738613c6cdcb47726"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6a5e649be23be4f2231c475c87a680a86baafb90cd06b639a608969b545d6ffd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2408d8099b83249a78fb8f1fde59b2446eb27c64dfe93cf05e5e779456a59445"
   end
 
   head do
@@ -24,14 +24,14 @@ class YtDlp < Formula
 
   depends_on "python@3.11"
 
-  resource "Brotli" do
+  resource "brotli" do
     url "https://files.pythonhosted.org/packages/2a/18/70c32fe9357f3eea18598b23aa9ed29b1711c3001835f7cf99a9818985d0/Brotli-1.0.9.zip"
     sha256 "4d1b810aa0ed773f81dceda2cc7b403d01057458730e309856356d4ef4188438"
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
-    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
+    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
+    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "mutagen" do
@@ -40,13 +40,13 @@ class YtDlp < Formula
   end
 
   resource "pycryptodomex" do
-    url "https://files.pythonhosted.org/packages/3d/07/cfd8f52b9068877801317d26dc7225e19421bc659e1395d2cd6933b1a351/pycryptodomex-3.17.tar.gz"
-    sha256 "0af93aad8d62e810247beedef0261c148790c52f3cd33643791cc6396dd217c1"
+    url "https://files.pythonhosted.org/packages/40/92/efd675dba957315d705f792b28d900bddc36f39252f6713961b4221ee9af/pycryptodomex-3.18.0.tar.gz"
+    sha256 "3e3ecb5fe979e7c1bb0027e518340acf7ee60415d79295e5251d13c68dde576e"
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/85/dc/549a807a53c13fd4a8dac286f117a7a71260defea9ec0c05d6027f2ae273/websockets-10.4.tar.gz"
-    sha256 "eef610b23933c54d5d921c92578ae5f89813438fded840c2e9809d378dc765d3"
+    url "https://files.pythonhosted.org/packages/d8/3b/2ed38e52eed4cf277f9df5f0463a99199a04d9e29c9e227cfafa57bd3993/websockets-11.0.3.tar.gz"
+    sha256 "88fc51d9a26b10fc331be344f1781224a375b78488fc343620184e95a4b27016"
   end
 
   def install
