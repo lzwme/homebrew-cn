@@ -2,8 +2,8 @@ class LaceworkCli < Formula
   desc "CLI for managing Lacework"
   homepage "https://docs.lacework.com/cli"
   url "https://github.com/lacework/go-sdk.git",
-      tag:      "v1.22.0",
-      revision: "01ee7fef6b8b3429e3668fca61f6142e8c08dba1"
+      tag:      "v1.23.0",
+      revision: "58a1823a0d50dd2b7cfaab5f25bfba8db4dcd7a5"
   license "Apache-2.0"
   head "https://github.com/lacework/go-sdk.git", branch: "main"
 
@@ -16,13 +16,13 @@ class LaceworkCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6703975af83de27fd513e7d6e56a73487f852c82981fab3e087bda5b205ac6c7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b2d464b100361b8787218cac631edbbe2f4bbfca681bc2be4a03a51cb1b49212"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "09c832aa98d75057b71756cf1ecd9ad85b03967d6d2ff2cc2e1d4d0165625457"
-    sha256 cellar: :any_skip_relocation, ventura:        "8a11cac15451f52905d76a443476ac25d4dc3cadb75d83cccf5f41a499cf8488"
-    sha256 cellar: :any_skip_relocation, monterey:       "5c556f74630997fb653c77216d808486e3bcf354d37f30443475e7f5192bc84c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f1b563c08511a53d14aa29765d4414b524d512257d0413d44948ca42c6ea8ad8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b6ef4f05eda1730bb83aa22f8eed87551caa19c122aac655d591976b0dc7893"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bffb7346d411072ff3d34d4a38794241f77cf929b1d172073bbbaec9727235ea"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a960b5e56798deb97a902caef743cf1215c828aee74ca791606a6a4f1b089af7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5a255ad96dbd3ac8cbf64b7f06a2b0c4a65d6ff1e9875d920ea19aae99565305"
+    sha256 cellar: :any_skip_relocation, ventura:        "cf922af517e76a73fd3d29a622157f66b67fe7147849932d62f4cd0702dceb82"
+    sha256 cellar: :any_skip_relocation, monterey:       "d68d03360c296cfc4219172bd057d2054bcb1b64ab91586fa5e3eba9eb5834d4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "84a794a06412db477f5f13a18ad04fb5529d3c77479a2aadce5d28a3d4356176"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "368eef800b6027e329437f92aee117dc2d629633d6dcffd8fa759c88848452bc"
   end
 
   depends_on "go" => :build

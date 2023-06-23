@@ -1,6 +1,6 @@
 cask "replaywebpage" do
-  version "1.7.15"
-  sha256 "e00082646a1c39f04bc7407992871092a7aa9d94482d0623dcfd1d492950559a"
+  version "1.8.2"
+  sha256 "e5a1052281a6a0ed6cce89033ad85aef13c0c60a0b6476b4a4b66af99fa18a9c"
 
   url "https://ghproxy.com/https://github.com/webrecorder/replayweb.page/releases/download/v#{version}/ReplayWeb.page-#{version}.dmg",
       verified: "github.com/webrecorder/replayweb.page"
