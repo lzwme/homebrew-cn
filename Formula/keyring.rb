@@ -3,18 +3,18 @@ class Keyring < Formula
 
   desc "Easy way to access the system keyring service from python"
   homepage "https://github.com/jaraco/keyring"
-  url "https://files.pythonhosted.org/packages/e0/a8/31b814a0c99118ee4db6df013925a3236fa18a914bf69202277896bf4038/keyring-24.1.0.tar.gz"
-  sha256 "bd48a36612ef55505bf70e563528e3e66ba93267e344b6780cf6151f9c1eda6d"
+  url "https://files.pythonhosted.org/packages/14/c5/7a2a66489c66ee29562300ddc5be63636f70b4025a74df71466e62d929b1/keyring-24.2.0.tar.gz"
+  sha256 "ca0746a19ec421219f4d713f848fa297a661a8a8c1504867e55bfb5e09091509"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "93d6829c57d4b33f59fdd5e2e5643aa04ff66053c6c1e3a44f55af4b5e1f8213"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2b638f625df20cdba0b1ed301dc1430e9368088b083ffc2622ec2be54c2b403a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "90ead717ec792041723c2cccd78145bb4362e770e1d91d3938c64d733a3011cc"
-    sha256 cellar: :any_skip_relocation, ventura:        "c39172a66cf7f5dc41d0e3d011080dd7003fc27b6649c29387580f5e5f93bc87"
-    sha256 cellar: :any_skip_relocation, monterey:       "e427b121b69642b849f80e6954e5c0c4124267bf00f47dc3d323a4e3ff2b9a71"
-    sha256 cellar: :any_skip_relocation, big_sur:        "af6cecf24482820aa632316083489890ed41cf54d62f20c04a7def554ec96f72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3727d280bbb89754eafc9d44a674a09a2591217df1292f8b33cb1d7c3c4cf43f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e7f3e472c7a483e81bdddeae0baa54fe586181dd413060b916457225afc258cc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed32337a22d299de8266b59aa2dca4461f462efbb30ed66e418a74b1b65db135"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0fe56c2c40173066b259583197f1388316ac9d040b69eee0028678e87a2444ea"
+    sha256 cellar: :any_skip_relocation, ventura:        "1afbd3121037873450cf015cb7ddbfdc34e64dfedace1df1088fe49bb15ebf34"
+    sha256 cellar: :any_skip_relocation, monterey:       "cb657a348a40a4aa4f854ef53de0fe2a040c306995ea9ac206ab9384f4f691d3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "fd80b16c38ff3cd7f949ea1f0da9dfa6cb7d69aadd886edc4cf8c9a6b218171a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb846f300f84346de29a207313c433a7974727015157d35d0eef360a5a59077d"
   end
 
   depends_on "cffi"

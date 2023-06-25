@@ -3,18 +3,18 @@ class GitMachete < Formula
 
   desc "Git repository organizer & rebase workflow automation tool"
   homepage "https://github.com/VirtusLab/git-machete"
-  url "https://pypi.org/packages/source/g/git-machete/git-machete-3.17.4.tar.gz"
-  sha256 "d9837be828d4fdb123ae9c6723654cd0dc5a8ee70930089d6c9f1a57e1622253"
+  url "https://pypi.org/packages/source/g/git-machete/git-machete-3.17.5.tar.gz"
+  sha256 "eda6bc8f920b18ae1b2d77b249299efa09da33bff3dd550c5662ebff76604d9e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc21e23a54fac63862c50fc73e211760ea80ade0f0c35bf7858e13f6d972fd75"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc21e23a54fac63862c50fc73e211760ea80ade0f0c35bf7858e13f6d972fd75"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bc21e23a54fac63862c50fc73e211760ea80ade0f0c35bf7858e13f6d972fd75"
-    sha256 cellar: :any_skip_relocation, ventura:        "d6e3fecf6e12de77a084deee198ced8a95fc4ef11337acf509e2f4891f0a414e"
-    sha256 cellar: :any_skip_relocation, monterey:       "d6e3fecf6e12de77a084deee198ced8a95fc4ef11337acf509e2f4891f0a414e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d6e3fecf6e12de77a084deee198ced8a95fc4ef11337acf509e2f4891f0a414e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c113a26a444754d4dc3ce53b2f38421b832f32c32a1ba62910b5324f608de875"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f87c5c94c8a16122efa8961d56ebb398aafa49aef70ae61c444a96242ae98055"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f87c5c94c8a16122efa8961d56ebb398aafa49aef70ae61c444a96242ae98055"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f87c5c94c8a16122efa8961d56ebb398aafa49aef70ae61c444a96242ae98055"
+    sha256 cellar: :any_skip_relocation, ventura:        "b4feae9cad85f9b91030a321a0e908b8fea0521584f65e092b3cb6df5551cea4"
+    sha256 cellar: :any_skip_relocation, monterey:       "b4feae9cad85f9b91030a321a0e908b8fea0521584f65e092b3cb6df5551cea4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b4feae9cad85f9b91030a321a0e908b8fea0521584f65e092b3cb6df5551cea4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b15387fa37b0f94ed3240dd2c8030562043d9d90bdfebd55aa9daa9ff72c4b9f"
   end
 
   depends_on "python@3.11"
