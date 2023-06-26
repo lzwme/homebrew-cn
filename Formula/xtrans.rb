@@ -6,7 +6,8 @@ class Xtrans < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9b83139171ea1c0b61f5d053e824f1be8715c28e7fe190a8784a1a6ea9234047"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "2be2401621614877b9ee88a8e26eafe987217194e03eb5a34901ee905cd39760"
   end
 
   depends_on "pkg-config" => :build
@@ -14,16 +15,14 @@ class Xtrans < Formula
   depends_on "xorgproto" => :test
 
   def install
-    args = %W[
-      --prefix=#{prefix}
-      --sysconfdir=#{etc}
-      --localstatedir=#{var}
-      --disable-dependency-tracking
-      --disable-silent-rules
-      --enable-docs=no
-    ]
+    # macOS and Fedora systems do not provide stropts.h
+    inreplace "Xtranslcl.c", "# include <stropts.h>", "# include <sys/ioctl.h>"
 
-    system "./configure", *args
+    system "./configure", *std_configure_args,
+                          "--sysconfdir=#{etc}",
+                          "--localstatedir=#{var}",
+                          "--disable-silent-rules",
+                          "--enable-docs=no"
     system "make", "install"
   end
 
@@ -36,7 +35,7 @@ class Xtrans < Formula
         return 0;
       }
     EOS
-    system ENV.cc, "test.c"
-    assert_equal 0, $CHILD_STATUS.exitstatus
+    system ENV.cc, "./test.c", "-o", "test"
+    system "./test"
   end
 end
