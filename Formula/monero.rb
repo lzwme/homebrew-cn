@@ -6,7 +6,7 @@ class Monero < Formula
       tag:      "v0.18.2.2",
       revision: "e06129bb4d1076f4f2cebabddcee09f1e9e30dcc"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -14,13 +14,13 @@ class Monero < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "0e55e08ecdc625d4b0611d4aa173d55d8dd06072b8147602aa4b78a3c964b6c4"
-    sha256 cellar: :any,                 arm64_monterey: "2b3051bddacfb3727f32934b84e704a7143dece8e1d1940a4c25579082f406a4"
-    sha256 cellar: :any,                 arm64_big_sur:  "de31e8caa8d348e0a7cce6b0b6326f68245fe3873874ae03c57e453a8e0d2016"
-    sha256 cellar: :any,                 ventura:        "c632d362a62247ff18139d1a6adc31722367cf3a9d5e47f4855e8ac3ebe35bdb"
-    sha256 cellar: :any,                 monterey:       "a629082e1d88e274e42ac8352cf8dc64db00350bd36d6f005bd25d017bb80e83"
-    sha256 cellar: :any,                 big_sur:        "4c57f4f42351df3866ca7ce15a038be30da2589c1c6dcf2ab2adfb525d12e928"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57008bbd8e2ed5af2bedf79f35e4ff1fda5a806f59b85e035dbf252d86ed627d"
+    sha256 cellar: :any,                 arm64_ventura:  "248771c9bc50bc5a7b903cfbe149982ac361a003eb6919069b622854555c913e"
+    sha256 cellar: :any,                 arm64_monterey: "8ad2591d01eaca15eb20e69dcc5348ea2a0c96b0bdb4d9a13bf822d6b3a8e53d"
+    sha256 cellar: :any,                 arm64_big_sur:  "7781801fa13ea21a4233ebd16f46bdfdf0a16409f385ac9e7447b1f4f9cc5972"
+    sha256 cellar: :any,                 ventura:        "eb2bfd2acdc6e8f7c5ec3028a9a09fa34d5eb531dec1f74a5df5c886228bf526"
+    sha256 cellar: :any,                 monterey:       "366c4fcebfe64f5bb031c1efefda3d528b47f019fc1f46a09b8db81ea7c31edf"
+    sha256 cellar: :any,                 big_sur:        "ffc14524e35b93b2734fcbabc5e4fb15a2c27bf81befaccca42e8ec47e63ba56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae2653d859456a9f0088d54784ce7e2be713c5675c8fb6443e185fbf64d36a7b"
   end
 
   depends_on "cmake" => :build
@@ -29,7 +29,7 @@ class Monero < Formula
   depends_on "hidapi"
   depends_on "libsodium"
   depends_on "libusb"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "protobuf@21"
   depends_on "readline"
   depends_on "unbound"

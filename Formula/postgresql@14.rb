@@ -4,7 +4,7 @@ class PostgresqlAT14 < Formula
   url "https://ftp.postgresql.org/pub/source/v14.8/postgresql-14.8.tar.bz2"
   sha256 "39d38f0030737ed03835debeefee3b37d335462ce4995e2497bc38d621ebe45a"
   license "PostgreSQL"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -12,13 +12,13 @@ class PostgresqlAT14 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "2a6f292aaf1cd2bfab42a00a5bde5d85c929e915184674a2947b922219f05bed"
-    sha256 arm64_monterey: "7ecef3bd2115d9d3cb9bed6ca85b877dee3fa95f1199099ce4f59a4fd2f392f5"
-    sha256 arm64_big_sur:  "784af3c7e2f4e7d6b8bc51b0c00f1d6e1ff6abf4883dd2ed55edc7e059436c1b"
-    sha256 ventura:        "abe0a79f5bb863e6f1a8aba2be5511527d408df669d804f9ff5195719ba34123"
-    sha256 monterey:       "34a8475e8c86ef654ec25a43dbe9687bb0d09ae9de47ebf08197c65f917d90eb"
-    sha256 big_sur:        "3749b7d7d86267d39c049ee2b8326db757e2d360db837c0dd365497ec8c1a942"
-    sha256 x86_64_linux:   "8ca2cd7041fe218562b81778502a866839927a3dbcc60d1f8f9bb968c74110ce"
+    sha256 arm64_ventura:  "606bce40d417b332cf842a44018155ee10010c9b800eeefc41c80333b6d4cc62"
+    sha256 arm64_monterey: "9a4b7d983a09aacd6f2db8f1c218efc0858633ecad5fa3c01ececbd116517fd4"
+    sha256 arm64_big_sur:  "49af3959a8eb75b91d8e800dcd64c8563688cd39ddb9c5e9c0c3cfaa4e2e2768"
+    sha256 ventura:        "adb57c116645b96492390b52d14df49a38fb464d813b5474a30cf53805aaa124"
+    sha256 monterey:       "96ea928134e82f98daff5e2b88f1b36d5a8df8c469e30c5c25afeebbcc350e55"
+    sha256 big_sur:        "0dde415bc89f5f582a563cbdd9b5dd0a1546668e4e2d39211966bdee69a67cf7"
+    sha256 x86_64_linux:   "4d8ea166e66b82e39a6aeb419a1730d9bf4be38e2d9e29aff3593175c6f325ec"
   end
 
   # https://www.postgresql.org/support/versioning/
@@ -32,7 +32,7 @@ class PostgresqlAT14 < Formula
   depends_on "krb5"
 
   depends_on "lz4"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "readline"
 
   uses_from_macos "libxml2"
@@ -46,8 +46,8 @@ class PostgresqlAT14 < Formula
   end
 
   def install
-    ENV.prepend "LDFLAGS", "-L#{Formula["openssl@1.1"].opt_lib} -L#{Formula["readline"].opt_lib}"
-    ENV.prepend "CPPFLAGS", "-I#{Formula["openssl@1.1"].opt_include} -I#{Formula["readline"].opt_include}"
+    ENV.prepend "LDFLAGS", "-L#{Formula["openssl@3"].opt_lib} -L#{Formula["readline"].opt_lib}"
+    ENV.prepend "CPPFLAGS", "-I#{Formula["openssl@3"].opt_include} -I#{Formula["readline"].opt_include}"
 
     args = %W[
       --disable-debug

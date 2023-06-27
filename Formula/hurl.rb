@@ -16,18 +16,15 @@ class Hurl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3eb1ae2a9bb8d375810b665ae11aa4bf336bfa2ab25804ece21d82d4a00e109e"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
-
   uses_from_macos "curl"
   uses_from_macos "libxml2"
 
-  on_linux do
-    depends_on "pkg-config" => :build
-    depends_on "openssl@1.1"
-  end
-
   def install
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix if OS.linux?
+    # FIXME: This formula uses the `openssl-sys` crate on Linux but does not link with our OpenSSL.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
 
     system "cargo", "install", *std_cargo_args(path: "packages/hurl")
     system "cargo", "install", *std_cargo_args(path: "packages/hurlfmt")

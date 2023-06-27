@@ -6,22 +6,24 @@ class Buku < Formula
   url "https://ghproxy.com/https://github.com/jarun/buku/archive/v4.8.tar.gz"
   sha256 "a0b94210e80e9f9f359e5308323837d41781cf8dba497341099d5c59e27fa52c"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/jarun/buku.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_ventura:  "8d7911ce9d131740835271da843f2d1276a44354a7ab60ba8f3bdd48773c9334"
-    sha256 cellar: :any,                 arm64_monterey: "f2798fe0b23e7cc2537de19a5294dfdd583c9a6a8ccf42444b40ecf80f849e78"
-    sha256 cellar: :any,                 arm64_big_sur:  "fc002b57b0388d2bdbf5cc8f856b9d4a9ba73a2c633058f709941ecce723bc3d"
-    sha256 cellar: :any,                 ventura:        "b9bc50fcf7ea2f1658e516131a43531b95d7a2bdf9c547532c5fe2e20741b235"
-    sha256 cellar: :any,                 monterey:       "4a21e21451747ce56bd65c225f2bcca2fda0991a47b9d3e93f1d8623707b0cb9"
-    sha256 cellar: :any,                 big_sur:        "e94cd865b1da85d35ba139234a427659ed385efbe6e27311ac14af24c3731890"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b10fa03b0e856f47c3382e3932b00e64ead3e239b562e7a7b7aa1655a8a8135b"
+    sha256 cellar: :any,                 arm64_ventura:  "6a6a57ff8acf5e568050507b5982d0a11b2478d7aff105c5d168555d83300414"
+    sha256 cellar: :any,                 arm64_monterey: "f1c29839406d71c7670af0cde442be4ac15dd591297f305202c7248724be79e4"
+    sha256 cellar: :any,                 arm64_big_sur:  "e0109fe4d7b35a0923d546850632320725dbff72e090b27f593a44cad8693901"
+    sha256 cellar: :any,                 ventura:        "6f9523f566579f5259b3428a723a3299d0d9be38d96f31da35dc1211d97698d9"
+    sha256 cellar: :any,                 monterey:       "0492c191fd1dddc89e2af6d1e0e706ba742b7a5bfe72ac9c995d17ce05b33d9a"
+    sha256 cellar: :any,                 big_sur:        "41ae7bbd98fa34b63422eaf4c3a50eee5950ca276d1f7f94b746dbd5d47ea6d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10bb04e1db407d303e240aa08a3a5cbae732340973cec31d068e2955ab8a3521"
   end
 
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "python@3.11"
   depends_on "six"
@@ -149,6 +151,10 @@ class Buku < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     virtualenv_install_with_resources
     man1.install "buku.1"
     bash_completion.install "auto-completion/bash/buku-completion.bash" => "buku"

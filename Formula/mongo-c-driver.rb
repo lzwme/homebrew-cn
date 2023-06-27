@@ -4,6 +4,7 @@ class MongoCDriver < Formula
   url "https://ghproxy.com/https://github.com/mongodb/mongo-c-driver/releases/download/1.24.1/mongo-c-driver-1.24.1.tar.gz"
   sha256 "f9bdf71f24c6621c12535bad07f4654a218d84f16b85a68aca3abf6cd36d1859"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/mongodb/mongo-c-driver.git", branch: "master"
 
   livecheck do
@@ -12,19 +13,19 @@ class MongoCDriver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a257a894a75aca6242277f599457eb639023fc41305c52b989f244c79a3a43ae"
-    sha256 cellar: :any,                 arm64_monterey: "5cbbeb1f4d2be2810cf20250914fafdf2dd8322db33ad12fbdc6dd902cf2e2ab"
-    sha256 cellar: :any,                 arm64_big_sur:  "14b9cb083d0e68be897de2f4149b026f3de8a198fc01e324d75a318b3a1e58ee"
-    sha256 cellar: :any,                 ventura:        "ea25a551b22b38923e3457ecef6c981a5ccf888a6fa67f654a2eed01a9978c9f"
-    sha256 cellar: :any,                 monterey:       "f40ea6c34b7835397f7f3c35f3fc740148e793768aa9f09da8bd5ad5c173cd9e"
-    sha256 cellar: :any,                 big_sur:        "1c1152b90d5cd89136409263ebbea2abe30b6670b03dc26d65df283858148f95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "43482eea859016c9d460bc6b85aa33dba7682a3ecffbbd7d7803e8c8bb4aac46"
+    sha256 cellar: :any,                 arm64_ventura:  "6bf2cc3500de94725a7a64341f8e0950aa6324271bf51c4036ec6c763efea506"
+    sha256 cellar: :any,                 arm64_monterey: "205332b62f77f04d9a32b2a57fa19d5fdce4c6db3ba2ac6ad3d964c2ba3b8a5b"
+    sha256 cellar: :any,                 arm64_big_sur:  "f74b75e1bbb7bee0415e975f7aa7846d32d9a01b8f1b48f7c8538f0d61cd471b"
+    sha256 cellar: :any,                 ventura:        "730c4f89d68846eb63b2ac6fef3ff1798f8c51b43b4749fa995718e384cd92f0"
+    sha256 cellar: :any,                 monterey:       "7ec25a7b3ff54650ec8cd42de104d1afa0a0862c9180f47718fa271b6a50995b"
+    sha256 cellar: :any,                 big_sur:        "b87ad41a8b7462f83249792c8146f57d59dc11d49652a94810779e9fc91a8110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ccaca27af05b3c39620de63ca33285eba01bc66806c25a96663f7e026ce3b12"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "sphinx-doc" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "zlib"
 

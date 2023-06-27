@@ -6,7 +6,7 @@ class Mysql < Formula
   url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.33.tar.gz"
   sha256 "ae31e6368617776b43c82436c3736900067fada1289032f3ac3392f7380bcb58"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 2
+  revision 3
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src"
@@ -14,13 +14,13 @@ class Mysql < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "24f2f2b3c502c0d0aca5ce3037c73eeadd624894002f7c2d611e83838dec880a"
-    sha256 arm64_monterey: "c50a59345c76255a1a30ff39f4890029e172375b169371f4cc28971d79902452"
-    sha256 arm64_big_sur:  "0c87b349f8aa14cf09aff0f3db1118437ad21fe0ff290f4d0c03b5384591d357"
-    sha256 ventura:        "6a72900e7c8995a3dfbc5681d221398e9c4c45aa3470934a861d700636201b38"
-    sha256 monterey:       "0adb9e4b62e1a67ad82cd9e05e5675c8a806d905ece55b60f6f8005d0a12694a"
-    sha256 big_sur:        "c5e6619ef7d8c447e7818cd84de8b9f3cd8695bde2417f17969d223d582811ca"
-    sha256 x86_64_linux:   "afb0ba0057f91bfaf3df48ef769f2e8de08aaef47a02b69f46e00bedc2ba5dee"
+    sha256 arm64_ventura:  "11af549049440ae84f55b8458528d0221e82f48f684e3fc05986072ee0c3c64f"
+    sha256 arm64_monterey: "c073ff40137b526df4a10e35d2b6835305ab11643852e2142c8439df9cf8362f"
+    sha256 arm64_big_sur:  "b59c8e983eb22ce5490287c879a4e3b69279f7823789051b1394ee90b20debba"
+    sha256 ventura:        "eaac597b7acdec132c12f44d25937dafb4a048222e4852bb955c20e2318bb6e3"
+    sha256 monterey:       "310625a5f5469241bdf177ee2c224e20f8a51222644751acad06412333d1dc02"
+    sha256 big_sur:        "520c1346f168bea169e39f06e990e09f9afc6e5b4d4b425c48829963ac369991"
+    sha256 x86_64_linux:   "e81e56785691e7ea4d0af44e4ce5d73035bc09959b9b80ea2300d1df66ef2958"
   end
 
   depends_on "cmake" => :build
@@ -29,7 +29,7 @@ class Mysql < Formula
   depends_on "libevent"
   depends_on "libfido2"
   depends_on "lz4"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "protobuf@21" # https://bugs.mysql.com/bug.php?id=111469
   depends_on "zlib" # Zlib 1.2.12+
   depends_on "zstd"

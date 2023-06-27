@@ -6,22 +6,23 @@ class Esptool < Formula
   url "https://files.pythonhosted.org/packages/a3/63/c757f50b606996a7e676f000b40626f65be63b3a10030563929c968e431c/esptool-4.6.2.tar.gz"
   sha256 "549ef93eef42ee7e9462ce5a53c16df7a0c71d91b3f77e19ec15749804cdf300"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "606d0770f602b74513df45145564a4a11b160ebcbb808ac777c06ff48968ca51"
-    sha256 cellar: :any,                 arm64_monterey: "b71910932946d4022829c315496cc29d5b96e87497bf2193eeafaa9d87bc8ab2"
-    sha256 cellar: :any,                 arm64_big_sur:  "f239f05cce0d5cd41f8ede8463119967ca1c5b86ec5795326e73a2829172947b"
-    sha256 cellar: :any,                 ventura:        "51b10c3eb51a2930ff942326f37d0489a0178368916656d3c5702738c088e32e"
-    sha256 cellar: :any,                 monterey:       "76535d397529434764370c583a8b52b454054ba1f92580fd2c3561507f11797c"
-    sha256 cellar: :any,                 big_sur:        "325df2bfe27b962305285d76e3ae8b70c764c95794f32e03970a302f4e0733a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cfae91de4f90b79264f29744fc5a144f660b3f45d124a345b62ba131aa15e0d1"
+    sha256 cellar: :any,                 arm64_ventura:  "39d7fdf929e6b2218b05619b6dba6d96e5b9b38eb916fb0e11d79dab81c791a5"
+    sha256 cellar: :any,                 arm64_monterey: "7e34e52d6364f5fc39ac6ca99b3dd5b13153d5d7b60f818f9f8d8b0d48386f3f"
+    sha256 cellar: :any,                 arm64_big_sur:  "da421030b44866e9b90cec68eda53356ddff9561ca266c5877e312e7fc797790"
+    sha256 cellar: :any,                 ventura:        "a89031e984ec56fc3f972870106f5ba9e013850628ea3331673d6b7c9be3230a"
+    sha256 cellar: :any,                 monterey:       "3e4f42cd0dbb05a1f78551177dc503117fbacd416002f6830d9ebbdc0b99ad9f"
+    sha256 cellar: :any,                 big_sur:        "bd1242dbed0f911af99bbea8050b57e5eaf4e32f5b14fada5b916797e08e6954"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1feec83ceed6fab11ba11fa6bb5b3fa2160021567aebb535386bdee2eeebbb62"
   end
 
-  # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -53,6 +54,10 @@ class Esptool < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     virtualenv_install_with_resources
   end
 

@@ -6,23 +6,23 @@ class GimmeAwsCreds < Formula
   url "https://files.pythonhosted.org/packages/22/d3/a5454142db3bbb936591f2a13955cf589db8c4f6ea29142e80169eb8bb5b/gimme%20aws%20creds-2.6.1.tar.gz"
   sha256 "638eeeff1a8680be5dd33ffb9f0b5e06447002c034473a8b11e2c156272ddcd6"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_ventura:  "b8fbd0231aa7cce017f399faa9360bf55d0f28a6f7a65b2ec6aab7b74d3f3efc"
-    sha256 cellar: :any,                 arm64_monterey: "6cb08aa07da0e12582026c0a8e030a369ef95a8fd01c78b0ee82ba04affd96bf"
-    sha256 cellar: :any,                 arm64_big_sur:  "0d7d400bcbb6a83311fe848a4962d14df27c8c84738b3c862438b30be1a07dac"
-    sha256 cellar: :any,                 ventura:        "06253b087048a32f811a9fb4cc4a4525a79837c6595cbca5567c20ff6c47e712"
-    sha256 cellar: :any,                 monterey:       "a67a7ac2ea1c525290bcb76f8f4c9298ac6303ad36435d933a2b3b1a09a0871f"
-    sha256 cellar: :any,                 big_sur:        "c50787b8f1608b00c6286077beeec642fad1f5e5447cff4616a5ef099df97c03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ad26e6f8eb0b8eacdffd572fb828591ca370feafe99b25b777049b1ed1d5511"
+    sha256 cellar: :any,                 arm64_ventura:  "350c12f2ec600a5853b3bce670fba662346bd898e4adcd91c12228646ed2db13"
+    sha256 cellar: :any,                 arm64_monterey: "302b4cd33a5e938745920c725037b7eae03230d78d21c0d44c09c599e34169f8"
+    sha256 cellar: :any,                 arm64_big_sur:  "3303ab4f734b3df5402a28f90183888dd1af298b955e1c14670dc700593a423c"
+    sha256 cellar: :any,                 ventura:        "01f21bc054172d9d3261eadb017a952d7349af3f43b8647aa802addd80c8245e"
+    sha256 cellar: :any,                 monterey:       "3a293854a954a39047fa2bdf08cc8ee4a882236fc55e4080ba443d4ff5aad3bd"
+    sha256 cellar: :any,                 big_sur:        "15795c0e87a65ba80d684c1cf2fc7e8cb5821131e70b2aeb5527d586829ccf34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df1d3fca68faeab34a034e8e3a122fdaf08ab5403c876d4cd5697b7e24195d9e"
   end
 
-  # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -198,7 +198,7 @@ class GimmeAwsCreds < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     venv = virtualenv_create(libexec, "python3.11")

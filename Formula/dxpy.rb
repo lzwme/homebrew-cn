@@ -3,22 +3,24 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/a5/ee/aa50f3d5452a9c46da233c58b83f38def69828ce3296ad7f1c47df604b91/dxpy-0.349.1.tar.gz"
-  sha256 "96fbc8d0c99935a6327f9850e1352bf64d448faaa1036a13a3c00cab90b755cf"
+  url "https://files.pythonhosted.org/packages/25/9a/274a76dbf0a74fc65d5ade6607020969e2a180e15c44bd439185639fefd9/dxpy-0.350.1.tar.gz"
+  sha256 "3378a233454beaefb8d291ed4a4450a784917347e3056812e4fd709be09aace4"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ed2d1637b311ce2d1cec76c53ba2c1a439c411da9cf3be3308c7612a78651de2"
-    sha256 cellar: :any,                 arm64_monterey: "7d377021f374fdd5cdbc2fc5101a1771d0790d3f855ee2222d3da603b9e73266"
-    sha256 cellar: :any,                 arm64_big_sur:  "4dc1b1ab6bb150e35a109e44df9c016f1844c59ce33d7b7849f79f3b60d36a41"
-    sha256 cellar: :any,                 ventura:        "89f254b0e0e254ba12ac010254f3b4d7a72c9ea15f61efce5905ba2b285d24f7"
-    sha256 cellar: :any,                 monterey:       "ea86b38ef7bc3cb2bb74e98e5cfa04d7b336ea69b851ddd5a87c78866b867d07"
-    sha256 cellar: :any,                 big_sur:        "27ee83e5c187168075b9446bc7941bc11eb73ff04317243608bb4f7aa00d91ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e115c205ee95219aa18b04df1527935fd6213e1048861a384d8b7c4b91b8c85"
+    sha256 cellar: :any,                 arm64_ventura:  "9b34106e03fd6cc181e7a3cfacf167a7246f75c1f51f5ff6a4c8b6086b8234c6"
+    sha256 cellar: :any,                 arm64_monterey: "6660d519017ec509efbcb963d04bcdee37b6394ca5b0643e7f9abe092e5bcbad"
+    sha256 cellar: :any,                 arm64_big_sur:  "9738f340e140110af1867364939bdfe89a8345a896d2afd723735b3822394974"
+    sha256 cellar: :any,                 ventura:        "e0c6187b2512df2a033120a4d1a296116d4bc64f7eea4eb5dddaf8d10c1d2655"
+    sha256 cellar: :any,                 monterey:       "b5309cf09856c068044408bf5d5f7eb51402074f766d008e1de45c04060f0f17"
+    sha256 cellar: :any,                 big_sur:        "502c088dd5c6211a6899fc8a94e05b1837b05cbe5d3603b1545bbb235d14b83b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cffc33548ba088f0a599e0aa98edc72ace0dbea21959b40b66e4fa7fd3a5f6d2"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build # for cryptography
   depends_on "cffi"
+  depends_on "openssl@3"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -26,10 +28,6 @@ class Dxpy < Formula
 
   on_macos do
     depends_on "readline"
-  end
-
-  on_linux do
-    depends_on "pkg-config" => :build
   end
 
   resource "argcomplete" do
@@ -83,6 +81,10 @@ class Dxpy < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     virtualenv_install_with_resources
   end
 

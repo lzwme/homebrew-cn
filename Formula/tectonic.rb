@@ -4,7 +4,7 @@ class Tectonic < Formula
   url "https://ghproxy.com/https://github.com/tectonic-typesetting/tectonic/archive/tectonic@0.14.1.tar.gz"
   sha256 "3703a4fc768b3c7be6a4560857b17b2671f19023faee414aa7b6befd24ec9d25"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/tectonic-typesetting/tectonic.git", branch: "master"
 
   # As of writing, only the tags starting with `tectonic@` are release versions.
@@ -16,13 +16,13 @@ class Tectonic < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "2f3f2d11a4ce369f5c6b501b3504edcddc0f821c44bc52e2bb829ff2238d6be3"
-    sha256 cellar: :any,                 arm64_monterey: "8363c83668e45340ebaa2924a08c5cddda6dc7578b1f699c1194176bead1bf99"
-    sha256 cellar: :any,                 arm64_big_sur:  "95220f51c7530b2bf11a79c156a5aa5e0ba16e8b832d7e1cffff8de84d15d841"
-    sha256 cellar: :any,                 ventura:        "861d45e1adf751c77a6d3e5a85e5d86d4286d4cac099edf82c40188bc8a9cced"
-    sha256 cellar: :any,                 monterey:       "f8352b2bd8cc27ebeece409a3b9ca8fddd5cccf58ff4b70f5cc1756140c868c0"
-    sha256 cellar: :any,                 big_sur:        "942034cafee1729c67a38e9c94b6b2cff546c4c59fa305d2d255c809f9986d4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "efa398c246fba43bab1b9fcf46a975e43149b9c84674d9049a765b33c3257823"
+    sha256 cellar: :any,                 arm64_ventura:  "5dd3b7db96ffab491041e106fb6dcf24d4ad712fe88be9279087aee97d5ad276"
+    sha256 cellar: :any,                 arm64_monterey: "b0a9e5e898add71ffb50c91fd0279a5eabc9793bcd8afc4a2e26201953ee2d53"
+    sha256 cellar: :any,                 arm64_big_sur:  "3a7793364b85c664b5468db12e3f7935330f586412a02a8fa25382c013aa018f"
+    sha256 cellar: :any,                 ventura:        "c4b2e2e1cd05d771da209c2f413a2a88e7926f29ead6c41c8bbcc0aea98b96ba"
+    sha256 cellar: :any,                 monterey:       "a7fac0a78531be18364818ef1f85355194b76afd61200cab12dc6113323f501c"
+    sha256 cellar: :any,                 big_sur:        "73c54a7e44c9de3b426ed86ee5dec12926920ce04a03d832383606184b874c54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "795856c61ffe62b2ad8225252ecb5cac2eda7d14e395bf3d763370857acd1e0a"
   end
 
   depends_on "pkg-config" => :build
@@ -32,7 +32,7 @@ class Tectonic < Formula
   depends_on "harfbuzz"
   depends_on "icu4c"
   depends_on "libpng"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     ENV.cxx11
@@ -41,7 +41,7 @@ class Tectonic < Formula
 
     # Ensure that the `openssl` crate picks up the intended library.
     # https://crates.io/crates/openssl#manual-configuration
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
 
     system "cargo", "install", "--features", "external-harfbuzz", *std_cargo_args
   end

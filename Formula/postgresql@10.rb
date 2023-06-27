@@ -4,16 +4,16 @@ class PostgresqlAT10 < Formula
   url "https://ftp.postgresql.org/pub/source/v10.22/postgresql-10.22.tar.bz2"
   sha256 "955977555c69df1a64f44b81d4a1987eb74abbd1870579f5ad9d946133dd8e4d"
   license "PostgreSQL"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 arm64_ventura:  "688a5bc689b1440ae941a0c8b2eba8401941848cc9051703ff67bf0510c22e1c"
-    sha256 arm64_monterey: "a13e885eeb1dc0c4cc3c2d53e1e3dda01faf945471fee0947c60a8337e5e290b"
-    sha256 arm64_big_sur:  "1693f97d76c2474017b951448b15fca7363bcbb3a113e6b3662f8da01ab487ad"
-    sha256 ventura:        "831aafb6114659384a809f7dc4d6b7e8434263848be32dafe304951df2b6c163"
-    sha256 monterey:       "27fed63567fdd2e0221db39fe1b0fc5d0f58ac38cd628c8804fa88a038017045"
-    sha256 big_sur:        "3899704308c238429c23963b22b557d97e47718973868b1f35b71d277ce4eaa1"
-    sha256 x86_64_linux:   "b2b40ad4cfecc8d4beacbf5c864644c5ca4a0e82f7c742dd4440e3ca7c174965"
+    sha256 arm64_ventura:  "b5cd7343e508b967729659b1b7488154e572304b8eafff326c284c5845ea19ba"
+    sha256 arm64_monterey: "5cbcb62945062a5e4d82550e7d8956f453423210378e3ec011d8d596443f88dd"
+    sha256 arm64_big_sur:  "3e0359b98bb17a683a44a1918ca1b9fbf526d44bba43e1e174a41b0a282b82b2"
+    sha256 ventura:        "191c1a938818acc4338fbd8b7e0bae8bc25ba2f9c2382c056e06d773380e8c92"
+    sha256 monterey:       "674a6f1040aaba1baf23b64e29789e6434cb73ac1f8b6a0b064495fe24c16840"
+    sha256 big_sur:        "249b1fe11fc4768fb0a488fd9cb9e99d0684098cd8c8e8c06f071a5de289058a"
+    sha256 x86_64_linux:   "51e9dcd1d5b285df038b8c265dcb0edb57af15f264be1fe4359941712b2f3edc"
   end
 
   keg_only :versioned_formula
@@ -23,7 +23,7 @@ class PostgresqlAT10 < Formula
 
   depends_on "pkg-config" => :build
   depends_on "icu4c"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "readline"
 
   uses_from_macos "krb5"
@@ -37,8 +37,8 @@ class PostgresqlAT10 < Formula
   end
 
   def install
-    ENV.prepend "LDFLAGS", "-L#{Formula["openssl@1.1"].opt_lib} -L#{Formula["readline"].opt_lib}"
-    ENV.prepend "CPPFLAGS", "-I#{Formula["openssl@1.1"].opt_include} -I#{Formula["readline"].opt_include}"
+    ENV.prepend "LDFLAGS", "-L#{Formula["openssl@3"].opt_lib} -L#{Formula["readline"].opt_lib}"
+    ENV.prepend "CPPFLAGS", "-I#{Formula["openssl@3"].opt_include} -I#{Formula["readline"].opt_include}"
 
     args = %W[
       --disable-debug

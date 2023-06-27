@@ -5,7 +5,7 @@ class Couchdb < Formula
   mirror "https://archive.apache.org/dist/couchdb/source/3.3.2/apache-couchdb-3.3.2.tar.gz"
   sha256 "3d6823d42d10cf0d4f86c9c4fe59c9932c89d68578fcb6c4b4278dc769308daa"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url :homepage
@@ -13,13 +13,13 @@ class Couchdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a53d70d17cc48e1c0a424c94bcc7fba4a83bf9e081fe2fba0f126d51565cd751"
-    sha256 cellar: :any,                 arm64_monterey: "83b8ed79d519e12245f9e1bce90b408833ef44245858a465bf4e8270afdaec6f"
-    sha256 cellar: :any,                 arm64_big_sur:  "d79f939a6726ee1bb0054226b577636da6a5dc8864c5b5bc76869dfa5876aa1c"
-    sha256 cellar: :any,                 ventura:        "8a5012f82bd962f6e742dca272b51e10213d6f863532a603a4f41b7a8b598026"
-    sha256 cellar: :any,                 monterey:       "40a3c05563c6dc41c0a6a23917db6223af28160bfe21c6fcf3035c0303fdc9f7"
-    sha256 cellar: :any,                 big_sur:        "48724721fe5dabb89921eda4461337c54b1095e60d4b7c3b3686ceab9bedcb9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3519312e4a5b2c4874343ca7811d3f18c2195643d0db0b755b1fb93e608e2452"
+    sha256 cellar: :any,                 arm64_ventura:  "b44aacdf280a2f3c2f3af38a7f70085e235f054603da579defd71fc254fb2acc"
+    sha256 cellar: :any,                 arm64_monterey: "4410e98100842db4c70040e0fe36b024f4c2f84aa56a218e026f081ae85dcb21"
+    sha256 cellar: :any,                 arm64_big_sur:  "f9ec695c49e2b460bf6ce4f65202c2f55f420dcfb2123ba4f6ef8c6c84aa1130"
+    sha256 cellar: :any,                 ventura:        "ef789cc239ffcd25bb447f0292c7687b7edd391df336e8c0e3999a735cc8ca35"
+    sha256 cellar: :any,                 monterey:       "207ce0c943397c513a8b8a213a723278c32d07769879ce4efadc792dac4c0c5f"
+    sha256 cellar: :any,                 big_sur:        "c9c10e39919268530595ca4d5d6597527782319c7b50897b4422ce6dae0a2ef9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7aa15ebf83c32e0cdfdaf44aa9151cec5a170462f4a999f4bd00f2b131e959d"
   end
 
   depends_on "autoconf" => :build
@@ -34,7 +34,7 @@ class Couchdb < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "icu4c"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   # NOTE: Supported `spidermonkey` versions are hardcoded at
   # https://github.com/apache/couchdb/blob/#{version}/src/couch/rebar.config.script
   depends_on "spidermonkey"

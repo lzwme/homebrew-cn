@@ -6,15 +6,16 @@ class Ocrmypdf < Formula
   url "https://files.pythonhosted.org/packages/f7/1a/d8205c672ac5d3b855a2e7eba2f7780513a7d9ce75164116faac69b33be7/ocrmypdf-14.3.0.tar.gz"
   sha256 "faa221f53771a6679ad541307a0e66e11d298a33a2840cf1908a6a46f8315ede"
   license "MPL-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "0daf0a4ad8d4033e6ddb5f159715af9a15cdc01fbdc740d0603340c504e60b04"
-    sha256 cellar: :any,                 arm64_monterey: "70efdc29814c8cb1bf96c78af6e56fd31a378b4d044a55feb57cda42c2255f4f"
-    sha256 cellar: :any,                 arm64_big_sur:  "e4a9080e92bc16678ed7a18461cf520f53ae69afe8a627ed37bfe13d8e5308eb"
-    sha256 cellar: :any,                 ventura:        "82fdedbf4206e115dcd3f3b53607ede359eca4f032708f82cf8e2a4b49222551"
-    sha256 cellar: :any,                 monterey:       "60ee45b252f03de6818985089c1b4ff2cee5f84a3aa4d17b51a36c2052210260"
-    sha256 cellar: :any,                 big_sur:        "03f7a8da3f26458060e37e61c9fcfd41ba1999daeac1a0b05c6b275f27d00872"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "327017bc4355693e3a9b353f81c5727d11e476c20fb721a891366c4f222cf5b4"
+    sha256 cellar: :any,                 arm64_ventura:  "43046e710282c156f7bf6f9cad8eabd9cb5e6f17f7a2cd4d1b2d9396b2e297aa"
+    sha256 cellar: :any,                 arm64_monterey: "9996ab7c0c344d07a90423a647f16f77b8b22ab7a3b2bbe67364704208efd38a"
+    sha256 cellar: :any,                 arm64_big_sur:  "f50bd4f1d5cc947bbdc9bc5ef36248b604e8f0aaa1063aa0d128d33b17c01760"
+    sha256 cellar: :any,                 ventura:        "6cc32b54a96c50621209fe8fdbdb76d252a08419116522c4615ad2112e7dbc2c"
+    sha256 cellar: :any,                 monterey:       "9d781753a811f49c09db729307d2f9c47a4cf93dee05c87e19e648d2395a8195"
+    sha256 cellar: :any,                 big_sur:        "d82634333a6ce1e9a081fe0fef4e5bd3eaf737e3d4dfa0c7ed11114293490885"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a16b4aa834a66eb205ec98e5dfce58892a7ad6cbe54e74ffe82a3284154b9ad"
   end
 
   depends_on "pkg-config" => :build
@@ -24,6 +25,7 @@ class Ocrmypdf < Formula
   depends_on "ghostscript"
   depends_on "jbig2enc"
   depends_on "libpng"
+  depends_on "openssl@3"
   depends_on "pillow"
   depends_on "pngquant"
   depends_on "pybind11"

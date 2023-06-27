@@ -3,23 +3,25 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/53/70/19a33308db01284581e8c2d905e8bd46389b5bebaa6a255f9229b89f044b/esphome-2023.6.0.tar.gz"
-  sha256 "08205491b6e299c29139004173e21d1ea7ff82f41ed27895aeb230e257749ac3"
+  url "https://files.pythonhosted.org/packages/5f/ca/b98441c3e6871b96a2d1006674f91b31cbbfe3d072c9441131985b656863/esphome-2023.6.2.tar.gz"
+  sha256 "9cf986a0090ad5605bdd495bfb01637d4ce150f7ff6965b911aeca36e9147ab6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9b7c946d24a830c5a63f81db7aed4d74c88fd4c678cc213f2b07f87b12ae810c"
-    sha256 cellar: :any,                 arm64_monterey: "2f960e775b709002091c34f7fd5abefe0e1e44fb2102261eba8257c1f33b7ed5"
-    sha256 cellar: :any,                 arm64_big_sur:  "2d400ff1940454b0b24396aad0c6cbce2cca26d0c9e3bc97d4915c0574140f08"
-    sha256 cellar: :any,                 ventura:        "4cd8dfb9c0b4041753c5a6c9635dbd07b05c086c8ccf1671d1162eee590a2706"
-    sha256 cellar: :any,                 monterey:       "a8d22cd965469b32e36fec6f067850bb72ebe883abcaa474703fad7cc866f483"
-    sha256 cellar: :any,                 big_sur:        "82d837e94970ea034770e94c6a934986e9349baee2235bbdf4f7e24238c39fea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e06d1b8f028b79077f9975053bbb9237c8563f059963be8ebfc8595428c1d98f"
+    sha256 cellar: :any,                 arm64_ventura:  "7a85bb5a8ec4021b0dab2cffbafc9744bf195078b06ebd678ea5136fe27bd4b6"
+    sha256 cellar: :any,                 arm64_monterey: "04ee769dc86a1b048dea29079bcbcfac8417b06c90a89f38032f223cf84f1e33"
+    sha256 cellar: :any,                 arm64_big_sur:  "33d8159909ef1d58812643dab54c246127d169874cce1acaabaa766346e625b2"
+    sha256 cellar: :any,                 ventura:        "14a57ab5fd3aba1b21ddd31f9c29a8d3ba5d0478da49466745ca3476cef24fb1"
+    sha256 cellar: :any,                 monterey:       "5767c2511cfe43fef6e771c6d2685e8b5476789ffbbaf8e2c0a37da99273a262"
+    sha256 cellar: :any,                 big_sur:        "a04bb01370f07ac50ec346df5a0616455f3d567652905722b25a7cb1f807e582"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0eed10232bcc174921a65846417200a214f1fd51ad73f17a63b7c7cf1952099"
   end
 
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "pkg-config" => :build
-  depends_on "rust" => :build # for cryptography
+  depends_on "rust" => :build
   depends_on "cffi"
+  depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "pycparser"
   depends_on "python-tabulate"
@@ -228,6 +230,10 @@ class Esphome < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     virtualenv_install_with_resources
   end
 

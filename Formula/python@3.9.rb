@@ -4,6 +4,7 @@ class PythonAT39 < Formula
   url "https://www.python.org/ftp/python/3.9.17/Python-3.9.17.tar.xz"
   sha256 "30ce057c44f283f8ed93606ccbdb8d51dd526bdc4c62cce5e0dc217bfa3e8cee"
   license "Python-2.0"
+  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -11,14 +12,13 @@ class PythonAT39 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "645d2905c90bbada6850ce532018688e5cefea0c804e31ab4c80776508254af0"
-    sha256 arm64_monterey: "847fed352ee4d7ad1bc9f9e84b2815c6c49e4687cf9c5b8d6f33f594125d64ba"
-    sha256 arm64_big_sur:  "d3fe82f3a9d2ff59bd583d6299596cbf12d7ab68f63944ab95e624745cc9ea9f"
-    sha256 ventura:        "12df0c5e9d5f4ef6b588c14a89294b7dbfa2dfd967c43b7ab651ea34929e8625"
-    sha256 monterey:       "b4f1e41330af6829f6e57d4a4204734bb57fd27c6b6c5002b11160259a2a770a"
-    sha256 big_sur:        "1481e5824a1bd54e49fe631a7f8a9648d477fd4f869b13f286c97904694bb6ac"
-    sha256 x86_64_linux:   "7b1e03112406ec76753d4f899c3796c07478a3553faa0944f0fb87ff6020f973"
+    sha256 arm64_ventura:  "cde9ee24a80f10c8a1798776626916cebbb29c44a7ee15c747ef0f59a23afcd4"
+    sha256 arm64_monterey: "9811dc1844613b46ec891ce9e93ae4dbb7daa3fec4a2bd8e9e440e898d1fde75"
+    sha256 arm64_big_sur:  "d23b0f26a2de1ccd5f3b0dadd0b45d9fca295e16b3a4ed54a0d6b71935f0facc"
+    sha256 ventura:        "6b1f50029ca197a10fc838cce0d8c6ab4582288213fc1da2d3bc80370353d22a"
+    sha256 monterey:       "db100efbd01963a4bf4378dc49411bfd7bd0272fd7575caba33e7a912e1d38d1"
+    sha256 big_sur:        "6935a997cda8a3223c0099e8f4fe50ad3a539817c6c6f200b969c31938915707"
+    sha256 x86_64_linux:   "b60dc509cb0faa8219deefc9543dfe66c6f58501b0b2cc387c7557293f6f2430"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -28,7 +28,7 @@ class PythonAT39 < Formula
   depends_on "pkg-config" => :build
   depends_on "gdbm"
   depends_on "mpdecimal"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "readline"
   depends_on "sqlite"
   depends_on "xz"
@@ -116,7 +116,7 @@ class PythonAT39 < Formula
       --datadir=#{share}
       --without-ensurepip
       --enable-loadable-sqlite-extensions
-      --with-openssl=#{Formula["openssl@1.1"].opt_prefix}
+      --with-openssl=#{Formula["openssl@3"].opt_prefix}
       --with-dbmliborder=gdbm:ndbm
       --enable-optimizations
       --with-lto
@@ -181,7 +181,7 @@ class PythonAT39 < Formula
     # `brew install enchant && pip install pyenchant`
     inreplace "./Lib/ctypes/macholib/dyld.py" do |f|
       f.gsub! "DEFAULT_LIBRARY_FALLBACK = [",
-              "DEFAULT_LIBRARY_FALLBACK = [ '#{HOMEBREW_PREFIX}/lib', '#{Formula["openssl@1.1"].opt_lib}',"
+              "DEFAULT_LIBRARY_FALLBACK = [ '#{HOMEBREW_PREFIX}/lib', '#{Formula["openssl@3"].opt_lib}',"
       f.gsub! "DEFAULT_FRAMEWORK_FALLBACK = [", "DEFAULT_FRAMEWORK_FALLBACK = [ '#{HOMEBREW_PREFIX}/Frameworks',"
     end
 
@@ -373,9 +373,9 @@ class PythonAT39 < Formula
     end
 
     # Help distutils find brewed stuff when building extensions
-    include_dirs = [HOMEBREW_PREFIX/"include", Formula["openssl@1.1"].opt_include,
+    include_dirs = [HOMEBREW_PREFIX/"include", Formula["openssl@3"].opt_include,
                     Formula["sqlite"].opt_include]
-    library_dirs = [HOMEBREW_PREFIX/"lib", Formula["openssl@1.1"].opt_lib,
+    library_dirs = [HOMEBREW_PREFIX/"lib", Formula["openssl@3"].opt_lib,
                     Formula["sqlite"].opt_lib]
 
     cfg = lib_cellar/"distutils/distutils.cfg"

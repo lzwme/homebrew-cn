@@ -7,7 +7,7 @@ class Mavsdk < Formula
       tag:      "v1.4.16",
       revision: "a14d604c2baa950dab1510448bce7c0b490a4f1a"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
 
   livecheck do
     url :stable
@@ -15,13 +15,13 @@ class Mavsdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "94799b2a495f54619f3fea7725a56ef355abaf16efdb93cb631d1a05fe1d7af6"
-    sha256 cellar: :any,                 arm64_monterey: "3fc8cdb10265c8620e2998177437e6093fc29f2d3046c317a2636fabb88a38e2"
-    sha256 cellar: :any,                 arm64_big_sur:  "9e7329f2b85055d4fda1fd67d37ef841f802bcf4591663e5c96fe371ef2154f6"
-    sha256 cellar: :any,                 ventura:        "f5ed7a33a764d61c7f965bfbc04a06f868f409addf57ba96afd07ef523b0231b"
-    sha256 cellar: :any,                 monterey:       "47f52657e0afbd336f07c43620a3d4729fc5b5dc041edcbd66fbb346a12e8be5"
-    sha256 cellar: :any,                 big_sur:        "35f750d50b379339f68f24b730392940d99d76083920c712dc4accc63be44d22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "36d5b468d67b648d26317bf2ddcad205ba0624ee453b4e0fa87f35f1b5f5baa0"
+    sha256 cellar: :any,                 arm64_ventura:  "448a70655374d231acca76088f2ff99b5a9c93ba09836c100848a493d3b6408a"
+    sha256 cellar: :any,                 arm64_monterey: "4d27a85a78fa17076ed13475c1c26f58d339992838121ae3e50052996489467b"
+    sha256 cellar: :any,                 arm64_big_sur:  "ed8044b826001bf7414ce88a9f9bfb13b1ed0276070e08af4bb1533aa724212f"
+    sha256 cellar: :any,                 ventura:        "10e7c7a619d6d51d09c922d52c671b1430a3cfdc956959d29b8c2bf5f5b4a432"
+    sha256 cellar: :any,                 monterey:       "70989d823291b69eadd728ed48862f7143bfa07d176c82e2d8adb5bc5f327586"
+    sha256 cellar: :any,                 big_sur:        "861599e4c3ab10c2cecdbe88a5424f3684651f262cfd4de885b6b5d2c9b434f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b538df8f1468d150d66c633e36633c35d08405ccbbd36f4748e1a6acbb24d8ab"
   end
 
   depends_on "cmake" => :build
@@ -32,7 +32,7 @@ class Mavsdk < Formula
   depends_on "curl"
   depends_on "grpc"
   depends_on "jsoncpp"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "re2"
   depends_on "tinyxml2"

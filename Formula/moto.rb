@@ -6,24 +6,25 @@ class Moto < Formula
   url "https://files.pythonhosted.org/packages/2b/6b/85f00b5da885b6ca023868a420062c46fef0dc31e971f4bfe0cf9572e32a/moto-4.1.12.tar.gz"
   sha256 "25577e4cf55f05235f4efe78bcfeb5a7704fb75c16b426a5de2fc1e6b7b8545b"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7da896fbfa691ba4b03f0146d9d4d2f3efb0055eabd6d45f6f99e5ffca5c5e22"
-    sha256 cellar: :any,                 arm64_monterey: "f309b23f666522a5ec3199d7659e8c94a8ce818db495384e7c463d8b264596a5"
-    sha256 cellar: :any,                 arm64_big_sur:  "4e29298c4d61bc95fcb7d7804617eeb748e9eaa28b4c5ee0d3b77c6446446a9b"
-    sha256 cellar: :any,                 ventura:        "ab01bb9cd14f38e0a303e2de064574d2f059117d78ec97d96ba32ede0556bef2"
-    sha256 cellar: :any,                 monterey:       "6a3e0982ec532c4682b1b33e059b404f712503c423d8b211ccc174d0b6b60f41"
-    sha256 cellar: :any,                 big_sur:        "daaeb88c3fa2b00347571390d876cc671f9501882c86455eee1274544dbe944e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04e74711d2df18b37c1fa946fa3aa7aeea01bd28e779d7a7b63b93180e0bb920"
+    sha256 cellar: :any,                 arm64_ventura:  "be0047f86ddba9fc61a504063e260399bc9c369a2764a106d81a9e5207a1f294"
+    sha256 cellar: :any,                 arm64_monterey: "f8f477363b39275bba945d867e51b7bf52999a8c29828d20752f802aede86276"
+    sha256 cellar: :any,                 arm64_big_sur:  "d1c6415b898ed32b370b57b2befd5857184e10e6cb8c7ba779bb50ecd9adad75"
+    sha256 cellar: :any,                 ventura:        "a6324510a45765d2e2b28f11c977b17dbf6e70eacdc7ac8e4397a91680f8acb7"
+    sha256 cellar: :any,                 monterey:       "49715d4c34a5ccca6867d1e44311190c75a2be1bb4fa0535c54ed32d413bb89f"
+    sha256 cellar: :any,                 big_sur:        "9cb19077d1fb009afd03b4b42f1e1632c726db99faa323177709ea619b733f94"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "636c2cf49cacbefb2430c063a9e77e1f25c44e2d6bfe66af87899e1c3899203b"
   end
 
-  # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
 
   depends_on "cffi"
   depends_on "cfn-lint"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -322,7 +323,7 @@ class Moto < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     virtualenv_install_with_resources

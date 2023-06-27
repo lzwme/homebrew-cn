@@ -6,23 +6,22 @@ class MagicWormhole < Formula
   url "https://files.pythonhosted.org/packages/d4/62/5e4a86f7c4b111e016577f1b304063ebe604f430db15465ac58b13993608/magic-wormhole-0.12.0.tar.gz"
   sha256 "1b0fd8a334da978f3dd96b620fa9b9348cabedf26a87f74baac7a37052928160"
   license "MIT"
-  revision 7
+  revision 8
 
   bottle do
-    rebuild 5
-    sha256 cellar: :any,                 arm64_ventura:  "fd06d9d26ed10085f54b9baccbaaadd25e48f2af52c09e9676706d12d41d6856"
-    sha256 cellar: :any,                 arm64_monterey: "68d31947b71b0ad41a18133a074318729669cea86ed62c5dd43c2d7794ebd7ce"
-    sha256 cellar: :any,                 arm64_big_sur:  "1bf596cd00864d086b27fc4e80276826e70da4925868001a9cbf952647d88f0d"
-    sha256 cellar: :any,                 ventura:        "4a6710aeb7e68d408835e67fbb1005ec9845cbb79a41cac0841c887ef609a0cc"
-    sha256 cellar: :any,                 monterey:       "ed0dc6665e8793c56922b9ad51c53c7b73765e9e66108ee769c41a0fd95c5484"
-    sha256 cellar: :any,                 big_sur:        "880acc1f6f6e9eb5cc51d85c2a346c2e7022eba3c05bb2b979fc54d26ee3edf6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "919346a5ea77cb671565d8813a53827128b059d012f2df9f4c1db4153e995fa4"
+    sha256 cellar: :any,                 arm64_ventura:  "2e89c268ce56107f55228c5065e84145f4f8a01127195b206e6968d1e370d5d6"
+    sha256 cellar: :any,                 arm64_monterey: "960478726bc2e93206c54a9e167102337da2cab7940f6145c41930232c899ca4"
+    sha256 cellar: :any,                 arm64_big_sur:  "2569387a1adb9573769a4df422cea734a02cfbe7403fab52a8b17012c16acfff"
+    sha256 cellar: :any,                 ventura:        "3dea373e462c6ffe6f1a3069f902f9f08c3eab4ca154c2a448b96592e9dbbb4e"
+    sha256 cellar: :any,                 monterey:       "2f17d7b21c829b96440aa89471e6c704440d9ce45b9b53ea18aee83369782747"
+    sha256 cellar: :any,                 big_sur:        "27ccff72ca005205b2bb1faabe29f212091c339206fec69ddb6ef77766b00ea2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32b36f2dd57255eb5258b0c0be57ec2bea486aecf31f11118b907d43bd62a6f2"
   end
 
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "libsodium"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "six"

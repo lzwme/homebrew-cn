@@ -6,23 +6,24 @@ class RobotFramework < Formula
   url "https://files.pythonhosted.org/packages/b8/70/050b0a5bb51c754ad521d6f1b51c17c293efe65ec72ac955d3686e1afa1d/robotframework-6.1.zip"
   sha256 "a94e0b3c4f8ae08c0a4dc7bff6fa8a51730565103f8c682a2d8391da9a4697f5"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/robotframework/robotframework.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "6dad57510aa4f3922de511f5e38764cc13581f5eefe22570236c41a44e4628c8"
-    sha256 cellar: :any,                 arm64_monterey: "255466b304b98567bbc704559e5a8b3e667f4871af16709b16f512af28f9b74d"
-    sha256 cellar: :any,                 arm64_big_sur:  "01c3b0a7c6c1c2ee8ad068309cddba460a885c410e959d3e1db3a87231f5687c"
-    sha256 cellar: :any,                 ventura:        "ef01a3643cbe729875424cfcbfd5b2aa6e434e6438d935b25015b5949d7ad095"
-    sha256 cellar: :any,                 monterey:       "41014691fe52895c5299782c027af904235daae5a8ac599f1e776589edab6c84"
-    sha256 cellar: :any,                 big_sur:        "bd3062611092d04e57c12c243405236307e0c66b456396a8b5a9064d497fc8d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6792e19a7472c96e682fc95dd4f958a1e6424ca20a81aaa1eae95f2756844dcc"
+    sha256 cellar: :any,                 arm64_ventura:  "e860054a99f1bc656200f371b2bcafea6e6c97e5de5fd57c2faf66df40eaab0f"
+    sha256 cellar: :any,                 arm64_monterey: "18ad0e2e643888b53a68391213112672ecad9ef42604408d39d17eb6b665a6a7"
+    sha256 cellar: :any,                 arm64_big_sur:  "b6d105d527864470759215926afee8514b628b8cc58e2b21fe6176696d2db8ed"
+    sha256 cellar: :any,                 ventura:        "659c5ca552111a0611d649e8e197f29547e84eb55cce664b4cd39af99cfb997e"
+    sha256 cellar: :any,                 monterey:       "ec992c7f76f3e14b853f3a16f876312bb97a947cc1a92b4375ed1812d39b0d04"
+    sha256 cellar: :any,                 big_sur:        "0cc75b230d70b1e2727a2c90c558fa7149cdbad697f00ea37f6e987283a365a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "28f15cc4d61e177aecfa9e2264396c5f2e7cb46d337fea336a3cdad8c060bd6f"
   end
 
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -152,8 +153,10 @@ class RobotFramework < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+
     virtualenv_install_with_resources
   end
 

@@ -6,22 +6,23 @@ class AwsSamCli < Formula
   url "https://files.pythonhosted.org/packages/a1/c1/3c62636b685c57272c98d7e475f74d8096bbcefdc6aaf7545898afcdf86d/aws-sam-cli-1.88.0.tar.gz"
   sha256 "76ad4a90149d0e1aae1afd674fc04a4673266b2cfa312a18e29c68f812e17dd9"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9fad29345acf626625a0bd8a56c1de4ef7ab8c21749644b4296156120703fe44"
-    sha256 cellar: :any,                 arm64_monterey: "2024a861b328f5faff4076f9b81d3e2ef835f7a3d56e646a02de14ec228fa94e"
-    sha256 cellar: :any,                 arm64_big_sur:  "a0b7a1fd82e8b4de8666853f8e38881c48b8fde331947c2023663556ce426ca7"
-    sha256 cellar: :any,                 ventura:        "51acff87a1694b79e5b368b3ed426f9ddb5ca43deea37462805ae72edfa25545"
-    sha256 cellar: :any,                 monterey:       "95f93875b245fd66f8a9a1847ab3ff773c8b012735ede75694db874900270626"
-    sha256 cellar: :any,                 big_sur:        "43acb364b6dbce2d33d9f3eab312e8a8f3b2a7aab0a104d5cf8c1960342db27b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b33d5801a28ff02f22db2dd7a5ed87858afeee8e2edd29d80ab0599b88bcb190"
+    sha256 cellar: :any,                 arm64_ventura:  "899e8f19c71eaa200d67cc5f8e3cdd43327d73683d5c824b1625101ab9d6df77"
+    sha256 cellar: :any,                 arm64_monterey: "8ed759e5e4cc94bdbec4b1a88ac42e930a4f8e78d8fb0e5f7498b850329b5288"
+    sha256 cellar: :any,                 arm64_big_sur:  "d950fa442d85da891b6742cc4f785ede6fc7f8e6ea55d1fa8cd5647c1d3d0388"
+    sha256 cellar: :any,                 ventura:        "3333dad410fff95387eabd4bd3f9bfc45067f0f6461c12d149840109a887d49b"
+    sha256 cellar: :any,                 monterey:       "4b4644747a7818c2a5f3c6d4ac9462862cc4410fda02c7ec46ed177a4680db8a"
+    sha256 cellar: :any,                 big_sur:        "15c466db226e77f19ebfb9f146df487200367660f7821882787a6dfff2b2bc0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "459795ce366176cd5b5dd9250a5f0552779c56f643e5ca881cacb512dd8e27ad"
   end
 
-  # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "pygments"
   depends_on "python-typing-extensions"
@@ -334,7 +335,7 @@ class AwsSamCli < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     virtualenv_install_with_resources

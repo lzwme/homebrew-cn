@@ -4,6 +4,7 @@ class Mupdf < Formula
   url "https://mupdf.com/downloads/archive/mupdf-1.22.2-source.tar.gz"
   sha256 "54c66af4e6ef8cea9867cc0320ef925d561b42919ea0d4f89db5c9ef485bbeb7"
   license "AGPL-3.0-or-later"
+  revision 1
   head "https://git.ghostscript.com/mupdf.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Mupdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "2c8967042d7b53493a94e853cd2bf1bc0732415e7455efffe3b4cda06e27dcf0"
-    sha256 cellar: :any,                 arm64_monterey: "8fb9229fa0b34bd527a8606fe30e5c9e04a45da46f40a0a55e1871607325f2e9"
-    sha256 cellar: :any,                 arm64_big_sur:  "0834491258f233866421246146127b5e5dc72d23b67527c96452eef9b09b88bd"
-    sha256 cellar: :any,                 ventura:        "f0c0f8697bd61c86f3a6626096c7ecd7342277a5d37e004d57f4859a073222ca"
-    sha256 cellar: :any,                 monterey:       "5adaa74b2dbf3a03cbeab3b868fc7b8d5eeb81fef7d7f7b821a8120577d94f40"
-    sha256 cellar: :any,                 big_sur:        "1feaf69bc227f87f692a916ced5c19a19203fd8b49a6f43c968b9c92d421b603"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e94e0fc357a64e0b7eb299f0922896234db92ee6f4902a1076026247fcb2d18"
+    sha256 cellar: :any,                 arm64_ventura:  "b1e531e94ae8e2683c28f63e68c29042937ec4ee5eacfd4c37f11116aef23b72"
+    sha256 cellar: :any,                 arm64_monterey: "05e8ed2e9f956292484d58f3f57c3fb831b44ef5bb5c49b5caa7f1e146ff61b3"
+    sha256 cellar: :any,                 arm64_big_sur:  "4ecd0c99b1bc6fd9082e0868c3ae2925a21dbd7e2ccc876fbb4afb0ff82b0f77"
+    sha256 cellar: :any,                 ventura:        "7e08ba1465ae4de74c873aec7b9b02dd41c32898bb426e6da651c2258629ed85"
+    sha256 cellar: :any,                 monterey:       "d0e4eb64e2d44d20e152465e54f0e7cadae49eb570cb491bc2d23f800576f7bc"
+    sha256 cellar: :any,                 big_sur:        "2fe537a1eaec1782631c0dc705c9846ba2048b1bbc088c7489b2611183d15d1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c2c8d17955d7adf74148da9b29d2913547d5dc9393252210d3e4c090816b585"
   end
 
   depends_on "pkg-config" => :build
@@ -29,7 +30,7 @@ class Mupdf < Formula
   depends_on "jpeg-turbo"
   depends_on "mujs"
   depends_on "openjpeg"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "zlib"
 

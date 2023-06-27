@@ -6,22 +6,24 @@ class Mathlibtools < Formula
   url "https://files.pythonhosted.org/packages/ae/6a/815d7f65dc853973b13be082fefe797074e633407ef1262a62bc0be84203/mathlibtools-1.3.2.tar.gz"
   sha256 "9a49f4cb7355fda72792a5738bcc5df927b1e102efc719adfbe16db199a0ac6b"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_ventura:  "172f21ae73c10676d1e39e9f75d869bb31e1c849eb7ae74c753e8fc5773e32fb"
-    sha256 cellar: :any,                 arm64_monterey: "893b626bcb03f7cbf337bbea9f4213f5c63cd6f6b357423a5212889ffbef9cea"
-    sha256 cellar: :any,                 arm64_big_sur:  "c702697ac3586a2557e54202b6f0b037dd8460126382f2e1e07689e09c8c7de6"
-    sha256 cellar: :any,                 ventura:        "dd84cbe7a14aca8170e8381942fac030a5aa0de8ec2a8a668626d289d5fdaa23"
-    sha256 cellar: :any,                 monterey:       "239fd4d2d06b82c7ee352d6f76dcd2b850699e0399cd62c10a3bf38f14e24114"
-    sha256 cellar: :any,                 big_sur:        "5213c0558f812cee0760b4cfbb2cd0d216cc7ebcfc0f1a4d6704761246d43052"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4947e34be70a9de565daa0340272b893c4e84d0076ee73e3a221b9d0c6bc628c"
+    sha256 cellar: :any,                 arm64_ventura:  "12b5a2eb457ed3a563399c9cc04b3f28863c90b1cfb7ae89c32a5a7adc8f832a"
+    sha256 cellar: :any,                 arm64_monterey: "4b9c72525778ebe158f13fffd09abe37fd6b7445bc44ee0d096d19e1e7ac6e3c"
+    sha256 cellar: :any,                 arm64_big_sur:  "6d424707f7841d1509eb70564bef3fbb24ee727af53936e388e6880b28a1b316"
+    sha256 cellar: :any,                 ventura:        "1c3d2fcd0ecd73ec130b32c43208a815dd45d0511da8b7ac807f67ea11fdf9c0"
+    sha256 cellar: :any,                 monterey:       "1fcbec21ab0c572bfd397b5c5455def59db3291b2effe9af2d3a82af37cb01e7"
+    sha256 cellar: :any,                 big_sur:        "6014ce2a9837276d3838e9a3ed716ddbded8f82f789ca290d93ae20423bdc4df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5fb1a082f5ef50a7db747868d9aa938d31165b8e0f2d9fe351c5a62e5cd1446e"
   end
 
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "lean" => :test
   depends_on "cffi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -133,7 +135,7 @@ class Mathlibtools < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     virtualenv_install_with_resources

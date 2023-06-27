@@ -28,7 +28,6 @@ class Psqlodbc < Formula
   end
 
   depends_on "libpq"
-  depends_on "openssl@1.1"
   depends_on "unixodbc"
 
   def install

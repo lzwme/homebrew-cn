@@ -6,22 +6,21 @@ class Mycli < Formula
   url "https://files.pythonhosted.org/packages/d6/e9/e3555839dec9ddbb94e20e5f5b7b633efc603986cffe1113f99048306887/mycli-1.26.1.tar.gz"
   sha256 "8c03035c9b4526dbfa0b0859654e2974a0e77592a9e9b27f40f5a8daae83beb1"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 5
-    sha256 cellar: :any,                 arm64_ventura:  "9310b7a9479c4f0add8aa8eec0b7ca2e9ae0adea9a71453e7dceff5e09a12496"
-    sha256 cellar: :any,                 arm64_monterey: "c1084c3c12cbd31cfb15e2b5f2aa4c756fcb3aea7bb11aa686fcd18635373444"
-    sha256 cellar: :any,                 arm64_big_sur:  "23df548c32be9ac9a51e96606dbce8ee47c50063ae4f3bce141be1b27bd1ee1a"
-    sha256 cellar: :any,                 ventura:        "446d4723faa73beef9f7ffb2b5e538ca7e85bea21dc3a1c9fd89e4462f0da85d"
-    sha256 cellar: :any,                 monterey:       "cbdb4cd22319b6518036e469a4ebceeb739794538981afc3e86b1a3d4444c209"
-    sha256 cellar: :any,                 big_sur:        "12f4fe455d2f274f9a61648649c4c026d3edd43da03188fcfb600fac2e0cf17b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0f8f52c55f6ae4107ae304be1369248021a39eaaccac857045f74ba72d2e176"
+    sha256 cellar: :any,                 arm64_ventura:  "c031ffa4e018c407a1429bb5108f85349ed55f56af39691976110c3e6b76ab04"
+    sha256 cellar: :any,                 arm64_monterey: "bff78c58fecd6ed672a6e110d50d3c33ce6c73db6243a2b8bd2e3bbe301dd1eb"
+    sha256 cellar: :any,                 arm64_big_sur:  "75b6e900ed87f20bb1496e0d0ac5dbc56d387db5b8879dcb4c046ff0384a5b29"
+    sha256 cellar: :any,                 ventura:        "9a80c17ab0e008238756fe60cf9ad6fb4a85f40e2eb295626cbb897fb2cfb32c"
+    sha256 cellar: :any,                 monterey:       "10d66432c5d1cf484f50f62d23c9d51f0168f02c3814eb97eb29d9a6d16807e6"
+    sha256 cellar: :any,                 big_sur:        "219f4c9548be893988f2053a0c3967ceff88844eb67530d6e50e5ea251b46fcc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4610978f4a7510ec140008292a238166733a14d8c43cdd64d982961b3e9f72e"
   end
 
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pygments"
   depends_on "python-tabulate"
   depends_on "python@3.11"

@@ -18,7 +18,6 @@ class LinodeCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ef12721472a13a69d91fdd6e7768f53a1e6262a45d90ddcb24e113220a7fd84"
   end
 
-  depends_on "openssl@1.1"
   depends_on "pygments"
   depends_on "python@3.11"
   depends_on "pyyaml"

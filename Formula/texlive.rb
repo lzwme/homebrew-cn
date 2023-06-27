@@ -8,7 +8,7 @@ class Texlive < Formula
   mirror "https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2023/texlive-20230313-source.tar.xz"
   sha256 "3878aa0e1ed0301c053b0e2ee4e9ad999c441345f4882e79bdd1c8f4ce9e79b9"
   license :public_domain
-  revision 1
+  revision 2
   head "https://github.com/TeX-Live/texlive-source.git", branch: "trunk"
 
   livecheck do
@@ -34,13 +34,13 @@ class Texlive < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "c189b7c2dcb8128f66e050b9ba76c28ca13562b9c9ac9d33fe305d177f509be9"
-    sha256 arm64_monterey: "c9b0bcf20ce9354425c33efbe88d5d74d096510db38aa77db5400386f331542a"
-    sha256 arm64_big_sur:  "eec657e546d9d6a362c3aeab8c6ec10bfa7da0ea04f5c0fd9f945c206616d286"
-    sha256 ventura:        "83336075a47a38feb9dd0fd7cef1cc49a545641712e0ee6e9912ef7e523bd5bc"
-    sha256 monterey:       "016a3771a5335d9add02be968abf3aa5c8f0fb93351bae0d4b46fff671816c44"
-    sha256 big_sur:        "5f589189eb0e57903cb8108e14e5119a329eeb18a4363718bea564b7af4b6294"
-    sha256 x86_64_linux:   "3cd37ebe333d7a0b4bf1980ce2be6b9142401afe05bb12693ecb18724e3676ab"
+    sha256 arm64_ventura:  "7c4424d7dbda8aa023b5a4c4d07ddf604ccf872a2241967bae24c3b05e65e08c"
+    sha256 arm64_monterey: "42560a30b4731c8db5f74e6bbefb17075b68aba0c83899733c703997f62f6b33"
+    sha256 arm64_big_sur:  "091fa3f73856f3c2fdffb6402925de126c1773ec734c90700d27af6c791849ea"
+    sha256 ventura:        "3b82d7b12355a116decb003b11ab06f2e65c582ba83daa0d20c187c0320f91dc"
+    sha256 monterey:       "9e82bafde878de14292757dfe00038d03f500639ee873d22da31a5fc7bd81882"
+    sha256 big_sur:        "8618d95d4161d83e59e2ea99d35c5cb389789d48ba2227a5bcb578d963c98b20"
+    sha256 x86_64_linux:   "7c68fa0c6ba0f08acf5af865cecd5dd5f1f822438cd6e9bfb38e866163416d0b"
   end
 
   depends_on "pkg-config" => :build
@@ -59,7 +59,7 @@ class Texlive < Formula
   depends_on "luajit"
   depends_on "mpfr"
   depends_on "openjdk"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "perl"
   depends_on "pixman"
   depends_on "potrace"
@@ -339,7 +339,7 @@ class Texlive < Formula
     # Install Perl resources
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     ENV["PERL_MM_USE_DEFAULT"] = "1"
-    ENV["OPENSSL_PREFIX"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_PREFIX"] = Formula["openssl@3"].opt_prefix
 
     tex_resources = %w[texlive-extra install-tl texlive-texmf]
 

@@ -4,15 +4,16 @@ class SyslogNg < Formula
   url "https://ghproxy.com/https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.1.1/syslog-ng-4.1.1.tar.gz"
   sha256 "d7df3cfa32d1a750818d94b8ea582dea54c37226e7b55a88c3d2f3a543d8f20e"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
+  revision 1
 
   bottle do
-    sha256 arm64_ventura:  "16bf633f59ad036d6e650158fb59117c550343eb58d466b0d040f882265c8ba8"
-    sha256 arm64_monterey: "14ccb4f5c314f9ede695ebe9111a00a0586f78727238cd8ad73f0d5b68f07ec6"
-    sha256 arm64_big_sur:  "709b699daef970fd6ccb402bdc26cfec4ab9b7fb3788229aed020e2f472c0700"
-    sha256 ventura:        "a9f44d1b0c7b4aaa16afe94010adb12161b1f55a67b082fdf54f42fc57dbfd7c"
-    sha256 monterey:       "e3220609629c1fccf365c5fefc4ffb27d599752bafc0c07e5959009678569054"
-    sha256 big_sur:        "1ad45ff8d5203d8840c3ee6c89eea51c966ed66a79e7d2538d617a0e04054fcf"
-    sha256 x86_64_linux:   "d39f3a52b0231ecb5dcc63d4ae61f912bad59a19e430d594bbc481945bb5bac9"
+    sha256 arm64_ventura:  "da1f97b9a2f99cf642a9a0eac40d38c3c9d12caf97caa0ea954ce7067e73c2f8"
+    sha256 arm64_monterey: "8c24fc791e0893ddac030fd1fdfe0f0ed02fd3e823daba394d1e32a5246c079c"
+    sha256 arm64_big_sur:  "bfc09e51c35e93878d1168123a6fd60caf13a8b31d270c234d4a3fa4d1d8c10d"
+    sha256 ventura:        "4ca764760ff73f2a0bc166d42a1c23b4a31bd4d71048e7ecb3a1545f0344a0fc"
+    sha256 monterey:       "d3fbbdbc659d6fd18613dd1ca508a4179b02fb950217e8688e4b97cc9ea167e0"
+    sha256 big_sur:        "eed75c895e0a1c499e42243cb981c00394de2c92f5ace3a1e6fee4cfd242337a"
+    sha256 x86_64_linux:   "14d29820362bfcffd5a0a3d3ffd5e6fd04cdf2deade891861104536a9691492c"
   end
 
   depends_on "autoconf" => :build
@@ -30,7 +31,7 @@ class SyslogNg < Formula
   depends_on "libnet"
   depends_on "librdkafka"
   depends_on "mongo-c-driver"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pcre"
   depends_on "python@3.11"
   depends_on "riemann-client"

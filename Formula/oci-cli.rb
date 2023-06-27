@@ -6,20 +6,23 @@ class OciCli < Formula
   url "https://files.pythonhosted.org/packages/47/6b/48eca9a7b59588b3f6a93e3811e4042ec7f4ea908d473b3505a66ff01f99/oci-cli-3.29.1.tar.gz"
   sha256 "0e9044025b4ef85f28f5beef9472711a7fc03d1341f767ae4f7c1a4ff6a55f6e"
   license any_of: ["UPL-1.0", "Apache-2.0"]
+  revision 1
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f15756f33e2cec7d04e2e2a76db72965350ce4b852df98cbf14942b66e91838e"
-    sha256 cellar: :any,                 arm64_monterey: "8177b98de2480573998fe5e3e22a5cddac382d71d1bfc82ffa52486ba7c6aad1"
-    sha256 cellar: :any,                 arm64_big_sur:  "b464f83487b375e8af9aecfb5abc616711b41503dd16a8dafc2b69813d86e851"
-    sha256 cellar: :any,                 ventura:        "94fa54d7e12e2ca85c4efef09e5433c32049526b7c459aebf2adb5f31232e057"
-    sha256 cellar: :any,                 monterey:       "e3e9764b10a45f43f81511dc5cb3faec85651afdc7bf4b6ab176229ff24fa7ec"
-    sha256 cellar: :any,                 big_sur:        "74f10c752f01d6974c0c17cff0cb0b6ee6753cd44bac5f538d6421556b53dc17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74a77d681ec55729205a94f951d772de0a63ec0a0be3d1420ca3b5999ef235c1"
+    sha256 cellar: :any,                 arm64_ventura:  "40d1817208d9cdfa194c81eca694300491e819b0120594c718714cedcbe78774"
+    sha256 cellar: :any,                 arm64_monterey: "d68944df4b8bdf87f3e9a1f32e3002d7284c4d2ee29918791a23f3761c506d6c"
+    sha256 cellar: :any,                 arm64_big_sur:  "d8c7e27c07b22374a705560fd4ec37d1de5714bd7a2703127c2e33841800b8b6"
+    sha256 cellar: :any,                 ventura:        "d59e01e6c7d27d86c3873f384694ef13579448baa1336b9a2a901eabadc9cf51"
+    sha256 cellar: :any,                 monterey:       "29f4a18c02b84b7aae132df7ac6eba614fffb9a50882e87a817796efeb56d931"
+    sha256 cellar: :any,                 big_sur:        "9d409ce0e8e05e8d6bccfc79672c5735faa8c331e1e4b67ee4a03cbbff056588"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da30ac8c1587d14cf86ef8681c76059ccfd82a5c593061a9f75c66cbfae25222"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
+  depends_on "openssl@3"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -90,6 +93,10 @@ class OciCli < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     virtualenv_install_with_resources
   end
 

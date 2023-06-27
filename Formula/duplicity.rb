@@ -6,25 +6,26 @@ class Duplicity < Formula
   url "https://files.pythonhosted.org/packages/e1/b2/ced09654e4a85dbd9f365aa70eda0e5524cd2456701258b55546cf7c8d67/duplicity-1.2.3.tar.gz"
   sha256 "fcbcdea289128d9d0988ed66fa2408196ce940e8029ca5036254bfd2e3f4a568"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "1eeb507d9f9ea2295ac7b20187071d0fd5bcaa9ffddce38998f78765064e8256"
-    sha256 cellar: :any,                 arm64_monterey: "b4851922cf96853aac8a0cb7651490c12ba50f6de169a431472d82056da8fe02"
-    sha256 cellar: :any,                 arm64_big_sur:  "fdd1b176b53287b8c06f12b7af768e29e9d5b7700fbbae3e52e3b16125894295"
-    sha256 cellar: :any,                 ventura:        "fc68b8bfd21251dd5cd825ea62b89dbc301fdd7dc6de29cd0861f6ce90363ea9"
-    sha256 cellar: :any,                 monterey:       "cd62f80d6eaa41f7ef6f78b6d1a535eee3700c37564f0cda4db50e9a3cdd8bc5"
-    sha256 cellar: :any,                 big_sur:        "948a36f3da5cc06e18b5dc7dfe8a1e796871eb36f863489ed52be6624e8efa24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce33b83e1e3b90a42bb2f380d2b5de94d3cfe8928de5ddd3d80baf48f9154edf"
+    sha256 cellar: :any,                 arm64_ventura:  "d5e5b064001fac31f7393875623e62c9c0a6e2a44f176a0a7964260287e81317"
+    sha256 cellar: :any,                 arm64_monterey: "b174312d0f67fcb7032dc975df8ab1ce729bc21fadd072895734f59374913dff"
+    sha256 cellar: :any,                 arm64_big_sur:  "7e1568580ca4477ded07653d3415dc18247c62e134c2f2f5b74ae3f3aa796525"
+    sha256 cellar: :any,                 ventura:        "08a33b1731861c928a1bf5d0c29fd065973596b7d77c83d67e4c8cb031dc28f5"
+    sha256 cellar: :any,                 monterey:       "31c8f6119f286cb238bf831b454838304099ee45885d9948707eb11d651412a7"
+    sha256 cellar: :any,                 big_sur:        "2e9d6d51207597049e48adef8fd65ca8d8737c78158a1e1bb4d98a33b25c6a4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6044e80151a28e454f03a76150944f7b527bd2045b061c4be6cca1e24e2d4fd5"
   end
 
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "gettext" => :build # for msgfmt
   depends_on "pkg-config" => :build
-  depends_on "rust" => :build # for cryptography
+  depends_on "rust" => :build
   depends_on "cffi"
   depends_on "gnupg"
   depends_on "librsync"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "pycparser"
   depends_on "python-typing-extensions"

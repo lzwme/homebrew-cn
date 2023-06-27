@@ -6,6 +6,7 @@ class Nginx < Formula
   url "https://nginx.org/download/nginx-1.25.1.tar.gz"
   sha256 "f09071ac46e0ea3adc0008ef0baca229fc6b4be4533baef9bbbfba7de29a8602"
   license "BSD-2-Clause"
+  revision 1
   head "https://hg.nginx.org/nginx/", using: :hg
 
   livecheck do
@@ -14,16 +15,16 @@ class Nginx < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "8f799ba86a104689c5532cccdc27e69573b87b16496d223673ebb641424cab73"
-    sha256 arm64_monterey: "337f9cbdf7c84f52e4ed221df80f3388414b6b4dd235d7736880909fac9b5fe4"
-    sha256 arm64_big_sur:  "6ce36612a149cff6a0c02f27a336782daf85e5f08f58c337c991f44fbc12d008"
-    sha256 ventura:        "517255ab9502e744a0ee3174c12e1f4633de045a23a4dc653b0a948ffd39aabc"
-    sha256 monterey:       "4ac6af55f1fba14110aeedba5857f5eb994a2fa7dd4d7114b81df683398201b9"
-    sha256 big_sur:        "044c98af6252c65aa9278b5ba1c4baec52f2f1335ff38c920ac68c0d92441b07"
-    sha256 x86_64_linux:   "a41e73356d64eef3205f24c6550b813e5b3b5f5717a9d70b3225fd5aec9344d6"
+    sha256 arm64_ventura:  "29aa5568ae9d9f0e021c2624740b57fcd570f1225e1b86be6b108a217ec71357"
+    sha256 arm64_monterey: "f62d70584d2f83b1f29b7c94b12c7969e3ac13aa348e9352490e3d81d6652709"
+    sha256 arm64_big_sur:  "5024b4a8407d5f4cd231697ed7fa09f1ebf23c52e8a893f9ca6698a75620281f"
+    sha256 ventura:        "fdec83c8c5b3aaeefdeaddb9d320d6f4d6348976fb9e63f069d38a9f3bde6016"
+    sha256 monterey:       "453e9f63fd027084d7b61f78fedaac1b5db5a6735454fb99972fa105312e2cdb"
+    sha256 big_sur:        "275da3fa0f5948ae79fee364ed9f3b39a3640490cd88a26a3d89c8779d9fff67"
+    sha256 x86_64_linux:   "d787d092728485358fe2e969986aec2d9c05d790b570cbba1c5c27b911016ae0"
   end
 
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pcre2"
 
   uses_from_macos "xz" => :build
@@ -40,7 +41,7 @@ class Nginx < Formula
       s.gsub! "    #}\n\n}", "    #}\n    include servers/*;\n}"
     end
 
-    openssl = Formula["openssl@1.1"]
+    openssl = Formula["openssl@3"]
     pcre = Formula["pcre2"]
 
     cc_opt = "-I#{pcre.opt_include} -I#{openssl.opt_include}"

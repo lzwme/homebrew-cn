@@ -14,7 +14,7 @@ class Qt < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
     "LGPL-3.0-only",
   ]
-  revision 1
+  revision 2
   head "https://code.qt.io/qt/qt5.git", branch: "dev"
 
   # The first-party website doesn't make version information readily available,
@@ -25,13 +25,13 @@ class Qt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "def04d5e0b64e32494c29cbe5223b5b845c9dfa187191353fabe8dd8b30220c9"
-    sha256 cellar: :any,                 arm64_monterey: "f357970c0f5a787456bf841723621a80d8d21e894ec723a3a24748e929a70171"
-    sha256 cellar: :any,                 arm64_big_sur:  "5fa6f52f58127a3ec5aee2a4d204c93ee816615dca0f5607798df156a300c5b9"
-    sha256 cellar: :any,                 ventura:        "55807dcb8a0b164ead70699d5261aa79174a1f9ceadbeb9789221e2a4e43eb84"
-    sha256 cellar: :any,                 monterey:       "a47df959f7adef2d0cd4affc247674155c7f7fffca84e801d3bf2a2db9086571"
-    sha256 cellar: :any,                 big_sur:        "1f7106d1d994129ab62b594c1d32792a3c767a16a16d9788815ae317348d6979"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7be81c1d158cbfdf090343fb1696ca0ce57b69a1af870f3915fd346e948981f"
+    sha256 cellar: :any,                 arm64_ventura:  "c1fc723dbeb8b2b4df104fcf1a10653109419cfeee9f3016f9edd68ba6bedb07"
+    sha256 cellar: :any,                 arm64_monterey: "0109c8fb307b0768aa088b6d1163e25712806a8b2b8ab3695d0c8839973bbba7"
+    sha256 cellar: :any,                 arm64_big_sur:  "83298bf40b2605b6d911507ce861560039f709f6a845b47c8855af49f2e6065b"
+    sha256 cellar: :any,                 ventura:        "629cbb76ad5fca32d4d200da98bf0f8f1cd39dd570949b4ba9069ed74ccf4356"
+    sha256 cellar: :any,                 monterey:       "0c425e63eebfd5447dd200bf3225eb0ba6d005b14fccc8e295d9b2ff112d4d68"
+    sha256 cellar: :any,                 big_sur:        "18b8143094a304749f2b189f1a8d22a90254b2dae0652089dd4d1549cec73d26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "895270278802c816e92eae4c461ba095f7848e867bde074412f40d6103b632df"
   end
 
   depends_on "cmake"      => [:build, :test]
@@ -60,7 +60,7 @@ class Qt < Formula
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "md4c"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pcre2"
   depends_on "sqlite"
   depends_on "webp"

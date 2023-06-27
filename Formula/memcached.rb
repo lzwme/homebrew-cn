@@ -4,6 +4,7 @@ class Memcached < Formula
   url "https://www.memcached.org/files/memcached-1.6.21.tar.gz"
   sha256 "c788980efc417dd5d93c442b1c8b8769fb2018896c29de3887d22a2f143da2ee"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/memcached/memcached.git", branch: "master"
 
   livecheck do
@@ -12,16 +13,17 @@ class Memcached < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "196207321c5c4879c317b3a95fd7f68a5d626b1bd6f8936863c10a18760e1a95"
-    sha256 cellar: :any,                 arm64_monterey: "c53e839cafbcab3d9d556b47e98e4c2b3cfdc5d3955f20a1a96a2630044b9c7f"
-    sha256 cellar: :any,                 arm64_big_sur:  "968abfe812d12700ee240e0f60fa8a8781dc11ab27ad5163b579f1f7a247c335"
-    sha256 cellar: :any,                 ventura:        "4a9cd23657aa85481e73b6e1f205e5a7569fb8f8f5b8ced650433ebac261036d"
-    sha256 cellar: :any,                 monterey:       "4ec6052c3c06eeb1793719d4cddc0da8404ee8220ea505b643ddbb7bc514242f"
-    sha256 cellar: :any,                 big_sur:        "ac5212e3d74c4e0151c6ba1accacb022d03182781eae3da68c900f527ab16b31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f583c77fc1837abf3ae3576d236856f8464b4834285898829c6cb28bf0aff96"
+    sha256 cellar: :any,                 arm64_ventura:  "cc1ab78905c228a49f6564e517bbcb3be54000e76d783d8127e9b9779aa4be0f"
+    sha256 cellar: :any,                 arm64_monterey: "57119b41b85fe6a0186fb673378aecfccc10d2209ac14dc44387e3b58a1d7a9b"
+    sha256 cellar: :any,                 arm64_big_sur:  "44a0aa54ce84212a71eb9812f476d6c9747253e4bfef6952bcdcb45e0e340cd1"
+    sha256 cellar: :any,                 ventura:        "7693b1ab9d0a4ffe29e8c8459fcd018f08212a996d7d337fe31478d894c039f6"
+    sha256 cellar: :any,                 monterey:       "ebd2e253fa9bb28e846ef072e00c5b6ebb1ef191d800a675dafec791d94b9eb3"
+    sha256 cellar: :any,                 big_sur:        "8a3c748a9bd1b918b7b29a6759af7ba7c1e6e2aba499d6966e35adf5cc5c1d12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb6962039b1ac6b1ba933ab0be65a2dca3a993814c7c6732d01d96cb3ad5a837"
   end
 
   depends_on "libevent"
+  depends_on "openssl@3"
 
   def install
     system "./configure", "--prefix=#{prefix}", "--disable-coverage", "--enable-tls"

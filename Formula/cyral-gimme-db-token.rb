@@ -8,27 +8,25 @@ class CyralGimmeDbToken < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_ventura:  "c3c0fde3c78485f7b4ba707b1660253fd13eaf6b8a8ca2349f620922a68bbdca"
-    sha256 cellar: :any,                 arm64_monterey: "d4d3d1d8eb80e3a8e1d88f26758520a39892a8ea7ce67f1bbafef26d31c06387"
-    sha256 cellar: :any,                 arm64_big_sur:  "296b280ae89ff56c317128dc041397051202e5658ac30d660fd4426d0766ee60"
-    sha256 cellar: :any,                 ventura:        "e6f77c07e53da11b563c0ca2f6c32fdceaf773c13032c4854f9dd6272e8396a4"
-    sha256 cellar: :any,                 monterey:       "b4047999c71d0ab9a6a3fc97635a307bb27a89841732987662dc6c2bcad094ca"
-    sha256 cellar: :any,                 big_sur:        "e8e22bba84d1922903ef6dde7de0555693f4dc073197aa7bca186759a30f872e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2b2b9c4896e7d0fdafb0e02cc53aec821ccdc22605191af24266c318129cf0d"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_ventura:  "f66deb5f999bd39d5ad456ace89a0d8a6779fff99e9301097e540e8e7df0227d"
+    sha256 cellar: :any,                 arm64_monterey: "de7edcc483a1f1291f35ef5b1b22d69fe5e5741bd30c55d7f5575880ab8e6f17"
+    sha256 cellar: :any,                 arm64_big_sur:  "ddcf51d9f53a471b7b32b7fca47a444d5388c1996cc8944d2f984606f0a64243"
+    sha256 cellar: :any,                 ventura:        "8200b54b6b6437a87d3143fceb7947064ff2461b993a728114c598f434ea4b71"
+    sha256 cellar: :any,                 monterey:       "e34a3e84058724a726020806a7de83b5522ac926b63be7830e19eafabf0e063a"
+    sha256 cellar: :any,                 big_sur:        "f3837fefbaabeafa63a6981d4b454a02a421b3f1e1f3ebbe2d97a8b55313fa20"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cebf25df85a278f3064210efde773fa209f2dceceabb64765830e7b678fccda2"
   end
 
-  depends_on "rust" => :build # for cryptography
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
+  depends_on "pkg-config" => :build
+  depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "python@3.11"
   depends_on "six"
 
   uses_from_macos "libffi"
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   resource "awscli" do
     url "https://files.pythonhosted.org/packages/88/30/340f473dbdc4ce5e347eb5c5c5c4864cc7a9b14cfa69bafbaebf3917f6cd/awscli-1.27.138.tar.gz"
@@ -119,6 +117,10 @@ class CyralGimmeDbToken < Formula
   patch :DATA
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     virtualenv_install_with_resources
   end
 

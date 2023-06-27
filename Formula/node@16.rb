@@ -4,6 +4,7 @@ class NodeAT16 < Formula
   url "https://registry.npmmirror.com/-/binary/node/v16.20.1/node-v16.20.1.tar.xz"
   sha256 "83e03381e271f1a5619188e7aea9d85d9b7e12f5be2a28ceb78d7249ed22b7f1"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https://registry.npmmirror.com/-/binary/node/"
@@ -11,13 +12,13 @@ class NodeAT16 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "132e3987602300694ac7cd4481437dc8e3f573d2b255b1be7eaa76b505d4d919"
-    sha256 cellar: :any,                 arm64_monterey: "d38941095893e3ddc6a95b57ac2afdc0d8b4370f2a6f6e28e86d8475dd4dd72d"
-    sha256 cellar: :any,                 arm64_big_sur:  "841868d01f650baa52b76fc15e6cb58af5372c695a865cf65887df3af7d76f87"
-    sha256 cellar: :any,                 ventura:        "2f18e5a7c1d139372cc551f6097fe0343ed1b85cf0fe7757d13a716e39582f8e"
-    sha256 cellar: :any,                 monterey:       "cd4c21ce4bbbd02f840f49da5d604b43b70308e86f400a0f2956aca75d26434a"
-    sha256 cellar: :any,                 big_sur:        "64e82f51db8dae485684ca2158f8f0c0db393fb4494f8cee9559adeb76d1abb2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c935593186670f001cce94883beeac95ecfafa4bc37bc07bfec42a09183d2860"
+    sha256 cellar: :any,                 arm64_ventura:  "32c02eb8685bca80ae38c38ad87c7e53b2e2d0ea04d3905ef6d7b54227f9fadd"
+    sha256 cellar: :any,                 arm64_monterey: "892e19b59b0a54cdd13046092ec134616c39296d365b7cea2fa1da61ce1aa741"
+    sha256 cellar: :any,                 arm64_big_sur:  "b5cef587998788334def771a486ff287ed1a4d70ad78d148ed2ff69e7c825293"
+    sha256 cellar: :any,                 ventura:        "ac9b85404fe342e77b3e2e9a4b35d82ed57e67ff4d8635b35a3de7cc86ea4b43"
+    sha256 cellar: :any,                 monterey:       "e8b90416a921f883f91abec3809fde918c3ac9537b9be67082b0648e1b81fa91"
+    sha256 cellar: :any,                 big_sur:        "d485bbb9f9aee386690d95168412a5da37663ca695b0aa86b761273073c88d1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cbcfa355dd001fa4a7b0bf1fd825367e05eedabaf71f4d4bcb3e78c16246328"
   end
 
   keg_only :versioned_formula
@@ -32,7 +33,7 @@ class NodeAT16 < Formula
   depends_on "icu4c"
   depends_on "libnghttp2"
   depends_on "libuv"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "python", since: :catalina
   uses_from_macos "zlib"
@@ -62,8 +63,8 @@ class NodeAT16 < Formula
       --shared-libuv-libpath=#{Formula["libuv"].lib}
       --shared-nghttp2-includes=#{Formula["libnghttp2"].include}
       --shared-nghttp2-libpath=#{Formula["libnghttp2"].lib}
-      --shared-openssl-includes=#{Formula["openssl@1.1"].include}
-      --shared-openssl-libpath=#{Formula["openssl@1.1"].lib}
+      --shared-openssl-includes=#{Formula["openssl@3"].include}
+      --shared-openssl-libpath=#{Formula["openssl@3"].lib}
       --shared-brotli-includes=#{Formula["brotli"].include}
       --shared-brotli-libpath=#{Formula["brotli"].lib}
       --shared-cares-includes=#{Formula["c-ares"].include}

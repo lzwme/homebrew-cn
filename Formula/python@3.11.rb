@@ -4,6 +4,7 @@ class PythonAT311 < Formula
   url "https://www.python.org/ftp/python/3.11.4/Python-3.11.4.tgz"
   sha256 "85c37a265e5c9dd9f75b35f954e31fbfc10383162417285e30ad25cc073a0d63"
   license "Python-2.0"
+  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -11,14 +12,13 @@ class PythonAT311 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "ae4c32c3a4924c93133e31d3810b5a8e992514775c6e91627e304f82b9fa906b"
-    sha256 arm64_monterey: "6b43a8c74163708763efcf82b5ab8b0b861ca4516fae553844a3b33b882c8e98"
-    sha256 arm64_big_sur:  "384efe1b5f7ed58db69474b348acf9498a9fb98c7ffcd8b2dec35bb6f6844066"
-    sha256 ventura:        "27087690b1bdba89fc6964e2a92114d3686c7ebbd27f54d28658cffe4bb68bf1"
-    sha256 monterey:       "a53646ef5aa8abe465816c6fcd94bf69ab25244bfbbdd6ab9fdcdb5cb98dc56e"
-    sha256 big_sur:        "95ee1128b98323564dd0da10f8a1eca98b01658c97c36b4478bb8d146e6e2d6f"
-    sha256 x86_64_linux:   "31766d795cb6367043455f431e9975c3b4ababc86ac5026807d0e562533ad82a"
+    sha256 arm64_ventura:  "014abdd7f97a02a42a6fdfe8ee527d359b24901903480628212489a5f570b09f"
+    sha256 arm64_monterey: "5458959e262a06738bee89023d404a35a03fbde1c682255e33d4e32f8eb6a570"
+    sha256 arm64_big_sur:  "eb3fbd888d2a2683cb07eb5d5176812d9e26370a0e422584fa663b4eec98dacf"
+    sha256 ventura:        "c97986e611c3c5e092be2ad70876fe99c7c7c23c8e7e63caaac6274512fbf657"
+    sha256 monterey:       "fa258abf25b4f4bd6dcb7586a04faee606e07e6e480ff3dd2f04afc3db4c7a9f"
+    sha256 big_sur:        "aeaf5d77ce1aad2cd39e7acebb78076bd0417459ff4825e1377a3bcee1f4b098"
+    sha256 x86_64_linux:   "7e8892393a9df0437e1ada50c011df549867348fe12e998d8d659da77379aa07"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -27,7 +27,7 @@ class PythonAT311 < Formula
 
   depends_on "pkg-config" => :build
   depends_on "mpdecimal"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "sqlite"
   depends_on "xz"
 
@@ -149,7 +149,7 @@ class PythonAT311 < Formula
       --datadir=#{share}
       --without-ensurepip
       --enable-loadable-sqlite-extensions
-      --with-openssl=#{Formula["openssl@1.1"].opt_prefix}
+      --with-openssl=#{Formula["openssl@3"].opt_prefix}
       --enable-optimizations
       --with-system-expat
       --with-system-libmpdec
@@ -215,7 +215,7 @@ class PythonAT311 < Formula
     # `brew install enchant && pip install pyenchant`
     inreplace "./Lib/ctypes/macholib/dyld.py" do |f|
       f.gsub! "DEFAULT_LIBRARY_FALLBACK = [",
-              "DEFAULT_LIBRARY_FALLBACK = [ '#{HOMEBREW_PREFIX}/lib', '#{Formula["openssl@1.1"].opt_lib}',"
+              "DEFAULT_LIBRARY_FALLBACK = [ '#{HOMEBREW_PREFIX}/lib', '#{Formula["openssl@3"].opt_lib}',"
       f.gsub! "DEFAULT_FRAMEWORK_FALLBACK = [", "DEFAULT_FRAMEWORK_FALLBACK = [ '#{HOMEBREW_PREFIX}/Frameworks',"
     end
 

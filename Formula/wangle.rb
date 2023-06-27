@@ -4,16 +4,17 @@ class Wangle < Formula
   url "https://ghproxy.com/https://github.com/facebook/wangle/releases/download/v2023.06.12.00/wangle-v2023.06.12.00.tar.gz"
   sha256 "ad9225e810967f023af93376cc8484f66c0a7a0a9687f47e07a1ea7bef2662a1"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/facebook/wangle.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "5b476bc5208a738c8b2d4722aa9832a0b311adbdd49f2cf1fa0cc140dc89af0f"
-    sha256 cellar: :any,                 arm64_monterey: "e0c28b45d6abdc035e8da8c1ec91664ca41c2f9eb341fdf0de95ee3066c08c2a"
-    sha256 cellar: :any,                 arm64_big_sur:  "78216a6fdf4e124472bdbf5b349a62b295751e38cb8ff3e7dbb0169def97b47f"
-    sha256 cellar: :any,                 ventura:        "3817583d9dfdc5dc9bc5ac525e5382003ffc2c548deab7c46469e179ea6ee4cc"
-    sha256 cellar: :any,                 monterey:       "7d2b65948f0ef00d751301ed49699d8201227fccc8d2c1292e5be4db8154c751"
-    sha256 cellar: :any,                 big_sur:        "a61e79eec923aac3cc64a3a02ee22f83ed947712d9c6311fe7da0d3fd6c1112d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4bd1624f3486bf268542fae8745e3ad3aff68213f16795732c7bcaed7e8a1d0f"
+    sha256 cellar: :any,                 arm64_ventura:  "f94387de717450135dd64190147dcfbaecd54ca6f9e090b361f022c7c21a78fd"
+    sha256 cellar: :any,                 arm64_monterey: "b544a5374a81aa769f65c067ae389629439b86dfcbf7c3584510daf935e4ca19"
+    sha256 cellar: :any,                 arm64_big_sur:  "bd90cb94117dc21a6978ee1f6a475bf64f63bf48e2bd0af038d5e55194894f51"
+    sha256 cellar: :any,                 ventura:        "bc6626d73c7993421de567ce7343b0e900a34f680041a4725dbf00bcc831ae99"
+    sha256 cellar: :any,                 monterey:       "78e6dd27ce66c8a574407f47cc2bf55ff4b3179af1328978eab6b7cb88fba090"
+    sha256 cellar: :any,                 big_sur:        "02f976c651403c55fd290ac623869f2e9b22463ff0d38c6c73cba45b11aa8054"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af4d2f93e6ead3b2256187a3231c7ca14dbc3b0e72b9c59de33caf5864fe0b50"
   end
 
   depends_on "cmake" => :build
@@ -27,7 +28,7 @@ class Wangle < Formula
   depends_on "libevent"
   depends_on "libsodium"
   depends_on "lz4"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "snappy"
   depends_on "zstd"
 
@@ -53,7 +54,7 @@ class Wangle < Formula
     cxx_flags = %W[
       -std=c++17
       -I#{include}
-      -I#{Formula["openssl@1.1"].opt_include}
+      -I#{Formula["openssl@3"].opt_include}
       -L#{Formula["gflags"].opt_lib}
       -L#{Formula["glog"].opt_lib}
       -L#{Formula["folly"].opt_lib}

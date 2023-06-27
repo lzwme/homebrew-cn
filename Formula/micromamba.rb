@@ -4,7 +4,7 @@ class Micromamba < Formula
   url "https://ghproxy.com/https://github.com/mamba-org/mamba/archive/refs/tags/micromamba-1.4.4.tar.gz"
   sha256 "035696ac379b7c6cbf87e912f7fa28c5f16ceaadf8f663d616cf0146e72390bb"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/mamba-org/mamba.git", branch: "main"
 
   livecheck do
@@ -13,13 +13,13 @@ class Micromamba < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "76e5bc6ef462a562926d55f6f65c72744728e79a66f9a550fbc3836a5885c565"
-    sha256 cellar: :any,                 arm64_monterey: "be2b43eebb1a3d1b8308075a6d53e9d00f14ae0c329b3eabca68d78f0dd2e2b2"
-    sha256 cellar: :any,                 arm64_big_sur:  "02f9d3824f2c1824a570106bb720ec927abd3ee998ea5de1528cbe1d7cf1612f"
-    sha256 cellar: :any,                 ventura:        "072d20430454c6012c2c251953fd3c0923bfab60e16837d7d360458695bf75f7"
-    sha256 cellar: :any,                 monterey:       "1544f7255f7cdea7a73d54d7be21f8a9f475f4b28b78d26b3c92f71a0a4cfd49"
-    sha256 cellar: :any,                 big_sur:        "3d77985e5001a6fbf0eb46759d1b073a1387f2ffb0f538d847007b2f62f78b0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "30663edabcb6b637b13e6926e0d64a8e737de5b52bb85f56461511325b176ae8"
+    sha256 cellar: :any,                 arm64_ventura:  "d6bf4b4d8c5e76bfc79e555c8c31d328997a0c260410357b0d0bb2ee9d9ae96f"
+    sha256 cellar: :any,                 arm64_monterey: "0dbeb12eedebcb491bedb53a3365d2242a40d4feec9222822501241e135f767a"
+    sha256 cellar: :any,                 arm64_big_sur:  "9ee9adf6d484d6fce52cb8fc6dec067e96878a0f011858030f9cb6883ad47314"
+    sha256 cellar: :any,                 ventura:        "286cd6d8e18b78607811caec7af453bb7e3944b8d3dc620ab35d32511f07361c"
+    sha256 cellar: :any,                 monterey:       "c57d9bbc0efa4d48462b703d0bcf6eb6822761ad3668cae4065d67ff3b06a2fb"
+    sha256 cellar: :any,                 big_sur:        "f8c794a87c17fa5f32bc8480559cf6c2834ebdc575f4dbf6af58200631a1eb12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d117c46c501e3d48cbb15a9b103d90eb47ab41baa6f8b773f6885899ab30e2c"
   end
 
   depends_on "cli11" => :build
@@ -30,7 +30,7 @@ class Micromamba < Formula
   depends_on "fmt"
   depends_on "libsolv"
   depends_on "lz4"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "reproc"
   depends_on "xz"
   depends_on "yaml-cpp"

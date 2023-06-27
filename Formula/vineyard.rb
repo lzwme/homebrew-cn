@@ -6,16 +6,16 @@ class Vineyard < Formula
   url "https://ghproxy.com/https://github.com/v6d-io/v6d/releases/download/v0.15.0/v6d-0.15.0.tar.gz"
   sha256 "3281afac3f348c4409676adf8328c6de8b73ed35e71539e6dd779d4af5bc16dd"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
-    sha256                               arm64_ventura:  "77d8b07481a05e924c05c190c9f018a8ac3b10143fccd25405552b7dad680658"
-    sha256                               arm64_monterey: "04a6e07739985062efdf12abc7cf93c173bc971e724e8be15e6e2632d5f0680d"
-    sha256                               arm64_big_sur:  "38d38fb5097e4f6af8de3ca047ba9d5664afffa7c882498fe7fd9b5db9c37a40"
-    sha256                               ventura:        "f1bd920dc1033c8425506bb964e31b40e53e91d45f2e9b608b66241f5f65e963"
-    sha256                               monterey:       "a32ebbf165ceba2465510f5b854db33a12fe1ec91574be1d7b9fbbf7f1501210"
-    sha256                               big_sur:        "ea48ba1fe6bb4c76fa9fc8f59293e4ef4556ead35a3c2c34070626acce26ce88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ae70d3d5ba9178e795b66fa3c4fe96caa17a6d72d7f875c58b0a0390f06a3e7"
+    sha256                               arm64_ventura:  "5b016c34b8ede5bf497b15022c5bf99a331d60fecf8b83b1f3675ecd68b7d7d8"
+    sha256                               arm64_monterey: "6561b0abc016db0db313f7ccec59d0aa2faf60117f5a8295ff332c184e505bba"
+    sha256                               arm64_big_sur:  "a5be6e153c8594b647e614dbf8c5c4a5291e36dee908ebbf1ed9073ff73a7352"
+    sha256                               ventura:        "c32ae4bd88602b22b8fc48242fa6b9269fbb71c4aa764552135dd44942be732d"
+    sha256                               monterey:       "539797a767e3af6887b163c5c678d5da41e704d5542ace8bf2daf9cc9fed29be"
+    sha256                               big_sur:        "c46dc740eefa9d7c42fec2b84eb7c44c4088999106f19dfd63b7e2b0bf31bdc9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99d63268c9a82a9b17b16ce0827403d9b02469e7c5741d891c2ca9180af1af5b"
   end
 
   depends_on "cmake" => :build
@@ -30,7 +30,7 @@ class Vineyard < Formula
   depends_on "hiredis"
   depends_on "libgrape-lite"
   depends_on "open-mpi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "redis"
 
   fails_with gcc: "5"
@@ -50,7 +50,7 @@ class Vineyard < Formula
                     "-DBUILD_VINEYARD_TESTS=OFF",
                     "-DUSE_LIBUNWIND=OFF",
                     "-DLIBGRAPELITE_INCLUDE_DIRS=#{Formula["libgrape-lite"].opt_include}",
-                    "-DOPENSSL_ROOT_DIR=#{Formula["openssl@1.1"].opt_prefix}",
+                    "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

@@ -2,7 +2,7 @@ class Upscaledb < Formula
   desc "Database for embedded devices"
   homepage "https://upscaledb.com/"
   license "Apache-2.0"
-  revision 4
+  revision 5
   head "https://github.com/cruppstahl/upscaledb.git", branch: "master"
 
   stable do
@@ -34,13 +34,13 @@ class Upscaledb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4facbf55c8d3b3219086d4b55cb9cd73232a357661a774dbfbbe8efd8ef45701"
-    sha256 cellar: :any,                 arm64_monterey: "34e184c0d5af342ba3e4d5a0624b0f38e1461dc5d620bac46725fe8e5f0cd92a"
-    sha256 cellar: :any,                 arm64_big_sur:  "e580660670e526bc6d893614cb5eaf4afe4968b2951e8fcc13960c454e8e2854"
-    sha256 cellar: :any,                 ventura:        "abf2fa403bacb77cf03041cc6d317342291e8a5b141efc264e6da602ce081f6f"
-    sha256 cellar: :any,                 monterey:       "fae9bd3cd94fed44b2610f78c1071a112610dc130dd75da78eccc89bb798a1b5"
-    sha256 cellar: :any,                 big_sur:        "8f39751ea366f4aa0adb741e4c6fa3017af5921701888b37231d7294215b3968"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d3bfbdf22530a65027115e771a013f348cbc990f6a679877f0cceb4abdf5839"
+    sha256 cellar: :any,                 arm64_ventura:  "31263250b809be124c24d249704e8a84de26c46c12b1f9e4a7abea51dbd79c4f"
+    sha256 cellar: :any,                 arm64_monterey: "c6cbe6b8adad2e84227bc980e6c68c4ed4334a4bdfa95a19b2a396adb01b87a8"
+    sha256 cellar: :any,                 arm64_big_sur:  "60ead2f03c0516d85867b3bf1d5070fcde864c30826e5143bc73bc82dceefe52"
+    sha256 cellar: :any,                 ventura:        "6310bae4f6d2a68eada0d688b15ccef4aaba1a1552549bc111dd47bd01ecdbec"
+    sha256 cellar: :any,                 monterey:       "5972bc432022b76c16388c7accd2290506193e9d375a505f4a4bff3796982425"
+    sha256 cellar: :any,                 big_sur:        "aaec25a0ebacba42a481712faf1051440c3c457d1a67d1672f495cda961ed93c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98b54b8cb472d3c1810899301aecbe116c1c0dd5120d476ace114f12ee725d84"
   end
 
   depends_on "autoconf" => :build
@@ -49,7 +49,7 @@ class Upscaledb < Formula
   depends_on "boost"
   depends_on "gnutls"
   depends_on "openjdk"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     ENV.cxx11

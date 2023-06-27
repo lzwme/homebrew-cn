@@ -5,17 +5,17 @@ class Openrct2 < Formula
       tag:      "v0.4.5",
       revision: "76ca8400cade0c6de5b47a7e44d405d56f278a83"
   license "GPL-3.0-only"
-  revision 1
+  revision 2
   head "https://github.com/OpenRCT2/OpenRCT2.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "5e6e9c1e1f9a4a4acfc6e2387c13cc05b6ddbc0a03f3ba913380b0ccaf671c44"
-    sha256 cellar: :any, arm64_monterey: "d5c1d2cbbfc2298ddf7a0e7ec220de5dd56754a2a5b8bbbe9d4248d2831c249d"
-    sha256 cellar: :any, arm64_big_sur:  "983d716c2387fc3e880ec538c3692ac2e8ef620e23a94e0a6e08200eb05e85d2"
-    sha256 cellar: :any, ventura:        "ded071b51b5f1d348bc54811ceb3e52c4119e8d10af91eb8f2d98feb247213e1"
-    sha256 cellar: :any, monterey:       "1184d72083b432273a1971c920e26de61afe4dbb298815c2bcd33281da62e049"
-    sha256 cellar: :any, big_sur:        "0b9497bb1ef582f6fe6482d83e604dc2a2f1a5f67e91715d0d2586869ff4dee5"
-    sha256               x86_64_linux:   "f74ccde2fa7d945fe06511674c46588f05608b41fddf0173a5b5db57910e929a"
+    sha256 cellar: :any, arm64_ventura:  "72637787ddf5c8721bfab362617a3288648d999859768933f068c2b7156c09da"
+    sha256 cellar: :any, arm64_monterey: "557e40ac89ba94bda1fbd6042f93af02e318122ab5569ec81ad10e6e8c3299b5"
+    sha256 cellar: :any, arm64_big_sur:  "e3afce28e6afc31a8492422a11d0c8ac398be3822e43646830456f1aa230e302"
+    sha256 cellar: :any, ventura:        "7b86442ea907babb8b9cb4aca9c9c7d87b49da956e636a8f26978da2f0524d1a"
+    sha256 cellar: :any, monterey:       "9f0a3a7b60b1a5b2db0babef47c99dcef65e39a84507d72b6771fb34389caf65"
+    sha256 cellar: :any, big_sur:        "227baa4bd735425c65b9ee0ca312562f4cedd78ae61e560a8261e1b23470d0af"
+    sha256               x86_64_linux:   "441e0c42fa6325fbbcfa38d17eb20747f9a0d6dc31e2453202358f14f02889b0"
   end
 
   depends_on "cmake" => :build
@@ -30,7 +30,7 @@ class Openrct2 < Formula
   depends_on "libvorbis"
   depends_on "libzip"
   depends_on macos: :mojave # `error: call to unavailable member function 'value': introduced in macOS 10.14`
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "sdl2"
   depends_on "speexdsp"
 

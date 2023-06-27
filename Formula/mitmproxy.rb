@@ -6,22 +6,22 @@ class Mitmproxy < Formula
   url "https://ghproxy.com/https://github.com/mitmproxy/mitmproxy/archive/refs/tags/9.0.1.tar.gz"
   sha256 "2acd2c16e5bc02cd1dab8c58003254a71a2ee0ec0366001f624f85c980a2b43a"
   license "MIT"
+  revision 1
   head "https://github.com/mitmproxy/mitmproxy.git", branch: "main"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_ventura:  "80a773b2f454a7922be6b37f6d4be9025db3cd9b81ae3c72c5d0367dac268444"
-    sha256 cellar: :any,                 arm64_monterey: "fc24e15b5e076c5d48238dd6300519a9458f4437006fee0edb9fcf587f7c444d"
-    sha256 cellar: :any,                 arm64_big_sur:  "1ee8600a7522b82556456d6a33173beaf5b9d849ca96c287bf78d9a9b8385a54"
-    sha256 cellar: :any,                 ventura:        "50755661070adbd55fe91a97db3966a601f2a3ff5937b77416b1fac6caffbc85"
-    sha256 cellar: :any,                 monterey:       "6db43d9e95522f2e8499a8285ac9230870fa69362daf10040b70c072d021c91d"
-    sha256 cellar: :any,                 big_sur:        "08575f6949383d4ed39cc4731c2e24adc9817b2596b79782f6fe20e54e28eb19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ad5e7018ec848ae8f94d7f4ea3a6114a38899be63dbd53da6f3da926c84f139"
+    sha256 cellar: :any,                 arm64_ventura:  "06d83b5db540302881288fce7fa2ef77566928b9383cce25495ca43da51ed1e1"
+    sha256 cellar: :any,                 arm64_monterey: "0474cabfbdca6e6384032b2fbf55d0d5e88414a9a413e2c9a8576b3383721e20"
+    sha256 cellar: :any,                 arm64_big_sur:  "1153943b5925a5d0654d35b8415256b456d5f3860ca915070e454d78955a2a76"
+    sha256 cellar: :any,                 ventura:        "235ecdee882e630ef894caed694dc0871d6d31d2d673588050ecb3785c7e1774"
+    sha256 cellar: :any,                 monterey:       "2230f9c15f334bb226ee4fb893feebaafd1b4450acb6f4865bb9dec7dbd9b38a"
+    sha256 cellar: :any,                 big_sur:        "a4c7351f76365fd04129f2098e2eebb17610a58968e7916de719aebbc8226227"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c56e1e951b79a2f2baf1aee6c11b6ee93af7630e1bdc06df239109d9d34b1dc6"
   end
 
   depends_on "rust" => :build # for cryptography
   depends_on "cffi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "python@3.11"
   depends_on "six"

@@ -6,22 +6,23 @@ class Prowler < Formula
   url "https://files.pythonhosted.org/packages/70/31/2765ed128a01511753179ed0f0c3619dd39b6221c0cb654343b95571af42/prowler-3.6.1.tar.gz"
   sha256 "03f0985e1546536a3b54683d009a85642c31c8b08bcf0fa93f638fef91cd05ab"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3b73f278338b49aba21f2f5e73fb79d31ea2527db84c021e24d104084688921e"
-    sha256 cellar: :any,                 arm64_monterey: "64234bd4b46caaba5321ac08ecfd1449a739ef7e80240218f3a160a4f3056f7b"
-    sha256 cellar: :any,                 arm64_big_sur:  "2cde5f7a82e816e7f0783952b43e21f91a26b4dadd4cd6ab05b3152872fed368"
-    sha256 cellar: :any,                 ventura:        "96026f713c52803d8f3fff1e9c569361dcbf4a1bc73352e3af1f8790b2c96e55"
-    sha256 cellar: :any,                 monterey:       "8f5b8080c2b387b204992be77108fa1b932441c5da45d73d72de47ffbb7542e2"
-    sha256 cellar: :any,                 big_sur:        "577f9264f43ad63ba7a6055feb8094a9b68fb7f27a2d43ced22b2e9db6bdfa8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "53603467b716d35e2eba07daf4fda25f4d8b9318e2337cda40be90dc63ca77b6"
+    sha256 cellar: :any,                 arm64_ventura:  "dee7fa9acbccfd7f7ed0a411ac04b218f04a289a5582060fc88268f580de2cda"
+    sha256 cellar: :any,                 arm64_monterey: "de5f43e3b42ca400f8ea8b1d4d5e6005d03caba85bc3f820b2b9f11465047d64"
+    sha256 cellar: :any,                 arm64_big_sur:  "35e6a470d4f82ceee39418236937fc818cba29a08c00579a871d77f62aa3820c"
+    sha256 cellar: :any,                 ventura:        "46c69a9481fa1ff4f963c7f8701b80ef9040e05c11205dafc5fa73dc8b548c34"
+    sha256 cellar: :any,                 monterey:       "dee3bef5017f36bdfb8c7897509fab5d833ef93c37577ad9edc2804a79cbff1c"
+    sha256 cellar: :any,                 big_sur:        "d12b14adedd4c5a70aaa4a7090321063d559501f58f64ebc6c53b7ca29a47051"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65a83c141f616e08bf6589781ca7378daf6a09526d7a10a3c4f24753e7827803"
   end
 
-  # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
@@ -311,7 +312,7 @@ class Prowler < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     virtualenv_install_with_resources

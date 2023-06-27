@@ -4,23 +4,28 @@ class Teleport < Formula
   url "https://ghproxy.com/https://github.com/gravitational/teleport/archive/v13.1.2.tar.gz"
   sha256 "d3fb8502ad82c06ed4605cbfca57cc1cf3da2ede0ac9c6d39b95147bd6e15f58"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/gravitational/teleport.git", branch: "master"
 
   # As of writing, two major versions of `teleport` are being maintained
-  # side by side and the "latest" release can point to an older major version.
+  # side by side and the "latest" release can point to an older major version,
+  # so we can't use the `GithubLatest` strategy. We use the `GithubReleases`
+  # strategy instead of `Git` because there is often a notable gap (days)
+  # between when a version is tagged and released.
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_releases
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "84c9d80020182158714fcce5c08df6d8136b4c70cdbe2da925b2b9205fbb2e69"
-    sha256 cellar: :any,                 arm64_monterey: "e4b598524e91869526f0d3cc5131ad3180ee64175944e955902730a5b716565e"
-    sha256 cellar: :any,                 arm64_big_sur:  "b191c1563aa5ed39602258e7db97545e5ec150a808527fcff11bdbce7704e294"
-    sha256 cellar: :any,                 ventura:        "ff906e83440c780b0ae05a21c99c960976e40175d5df3975193edec06266babf"
-    sha256 cellar: :any,                 monterey:       "ab277935cffae9364d14656d59818e1b89eec1082ced25691eceb4492577baad"
-    sha256 cellar: :any,                 big_sur:        "f474aca4c258aa2bcd7dee3a0a68c60f862a53db6bcf0ec786b453e1264f7ab9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4e756db8d7b8d66bdfc9b15f79e930f587872d42e392f2d27481963110b95f7"
+    sha256 cellar: :any,                 arm64_ventura:  "900119f2bd93013d46521bffc9919f054c9ddbb199119b385fb2d7bd65e77456"
+    sha256 cellar: :any,                 arm64_monterey: "04568717b19aab9eb40439c871f2facdfc0bdc62d6af8e4b90311324c7b15505"
+    sha256 cellar: :any,                 arm64_big_sur:  "b82ee55fc11b9a424f790d23c06d24a9596af45793cf3331e3050cb36459903f"
+    sha256 cellar: :any,                 ventura:        "d1b23789b4ad89f2d629167502ad9db441d65d5ceefb40df0dd882ea89e6b90a"
+    sha256 cellar: :any,                 monterey:       "599646b788ddca776a996685604cbc33cf0730e51fe9bf60dbbe37e47fedd7f8"
+    sha256 cellar: :any,                 big_sur:        "70ab1bed95bcec6d8a9748dddc9f6558e50f8598fcf6f0236d20ccefdf48a6be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1622b23f779063e027fda818a5f5c2f252f425640f3712c6ca305bc1a133acd"
   end
 
   depends_on "go" => :build
@@ -28,6 +33,7 @@ class Teleport < Formula
   depends_on "yarn" => :build
   depends_on "libfido2"
   depends_on "node"
+  depends_on "openssl@3"
 
   uses_from_macos "curl" => :test
   uses_from_macos "netcat" => :test

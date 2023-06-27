@@ -5,6 +5,7 @@ class PerconaXtrabackup < Formula
   url "https://downloads.percona.com/downloads/Percona-XtraBackup-LATEST/Percona-XtraBackup-8.0.33-27/source/tarball/percona-xtrabackup-8.0.33-27.tar.gz"
   sha256 "64b3b0ecaab5a5ee50af02ec40f12664bfe4c94f929ff0c189705ae886da0b12"
   license "GPL-2.0-only"
+  revision 1
 
   livecheck do
     url "https://docs.percona.com/percona-xtrabackup/latest/"
@@ -19,13 +20,13 @@ class PerconaXtrabackup < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "a9ab6bb9546c58c1183507c1fbf72c92d467bdfb8f92de3b71572ef65b3690ef"
-    sha256 arm64_monterey: "e16e58439c285b6ab010bfbcaedc21758050b4387379d846d8895ef74768efa1"
-    sha256 arm64_big_sur:  "df4f8b720f7c19fd65b82aa18d07f03cb32ce34ec3f07f17e5175c5a1c1d6efe"
-    sha256 ventura:        "8162482dc5e6429febbc902933eb9317af576ff6d618fdb28c16f2b7f46d4f18"
-    sha256 monterey:       "c9970fccd57427a12f8fdf540574ce2f7ee3584754c818e81a0343ebf2f6761a"
-    sha256 big_sur:        "9a3a49b67e5ad6809e8c8d127892f8e750529bb0369e5576b91ec450e726f242"
-    sha256 x86_64_linux:   "c18f432456cf0da03d67a63cea959fe267e1b6c64a468b1d6d3dc40047c74508"
+    sha256 arm64_ventura:  "937b353dad9a7cbb1893c15b01bb411662c11a69f1520ed5b33fc51b90090bc6"
+    sha256 arm64_monterey: "8cca0a8263716a5fd9f1502aca39c0f83ff58e36b8e0306e6ef3c764e4d8f0ae"
+    sha256 arm64_big_sur:  "6e6bffe23a6f800997c1e32713dbe10dbaab51d5a618b889932476b408b35653"
+    sha256 ventura:        "1a5fa290c4a6fe1d2e990733a0874cb281b654cd9850dea2d5cb927a3895347d"
+    sha256 monterey:       "6143bb6eac718724597c360520643acfb9c550649b8f71b9d0ae73be93ad7eef"
+    sha256 big_sur:        "4539220cae43a98599d8b3fb5d8f1c83ede9029fa34a2f7457214fe6fef477cd"
+    sha256 x86_64_linux:   "f50ba6d78343cb94d3ac956454024bae7c49e0432858d12fd10bed3d8ed7af82"
   end
 
   depends_on "cmake" => :build
@@ -38,7 +39,7 @@ class PerconaXtrabackup < Formula
   depends_on "libgcrypt"
   depends_on "lz4"
   depends_on "mysql"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "protobuf@21"
   depends_on "zstd"
 
@@ -122,7 +123,7 @@ class PerconaXtrabackup < Formula
       -DWITH_LZ4=system
       -DWITH_PROTOBUF=system
       -DWITH_SSL=system
-      -DOPENSSL_ROOT_DIR=#{Formula["openssl@1.1"].opt_prefix}
+      -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
       -DWITH_ZLIB=system
       -DWITH_ZSTD=system
     ]

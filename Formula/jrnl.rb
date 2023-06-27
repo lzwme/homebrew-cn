@@ -6,28 +6,27 @@ class Jrnl < Formula
   url "https://files.pythonhosted.org/packages/04/59/c15befa8f1a6ff159af29d86c1abc50135e4f8768afe5a1621930e21a0d8/jrnl-4.0.1.tar.gz"
   sha256 "f3b17c4b040af44fde053ae501832eb313f2373d1b3b1a82564a8214d223ede8"
   license "GPL-3.0-only"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3df3921f83fd7621a332223423804723623f8a65395b5c857f4e1ceabf88cae4"
-    sha256 cellar: :any,                 arm64_monterey: "9ceb7f1a2740bfa7201bb48bc0e75e6e2f23c43f0d11d2cf5153599615eac2cc"
-    sha256 cellar: :any,                 arm64_big_sur:  "f0f5517ddc4b278823c140d96715b30bc29e57fc1cf93db8f8c64061263a2b9b"
-    sha256 cellar: :any,                 ventura:        "ed8a5ca99cb2bbfff0b62ca58d9e91b97b903e6803f38f338205df9ed045b028"
-    sha256 cellar: :any,                 monterey:       "dcf42ca14956160b83d5daff26d48385158780939dfdd17e72776eceb345b248"
-    sha256 cellar: :any,                 big_sur:        "a385c050ca9121868b33f0f950678f88c38d21e1066f2766cf1ee3358480a7c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ed123ed498a80e11c862f548b4dade916be3bdb0ed38925e61cf5ad3f52e1b6"
+    sha256 cellar: :any,                 arm64_ventura:  "b31feee9a940d3f8f41f2d09ef623bd4f8ca252d25e46d485d6c0992c269b09c"
+    sha256 cellar: :any,                 arm64_monterey: "48a5fe39641bbaa91236dc6e8e9f52a0a37f447e5810dd07378ed72ee71b529d"
+    sha256 cellar: :any,                 arm64_big_sur:  "d732ebcf4d7919b97697f5601bb68ef2d5e97727e2c26a7c6983cac934cc8286"
+    sha256 cellar: :any,                 ventura:        "84de8f70f4408a43b7aa19d60730c14914f6301183cd31eb280f41f6651d5c93"
+    sha256 cellar: :any,                 monterey:       "d040fe846541a8d536d763dcb397186f8ce18d05df0d070c8d3ae2cc9f4aaaa3"
+    sha256 cellar: :any,                 big_sur:        "79d05628707fd48c57776045c05faa420c82cde28312b7ce46bbec8794299be0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e34bcdf9cde47e0d62c1050ddf229460b9bf4a8de34b0708d428b6cb24e38861"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
+  depends_on "openssl@3"
   depends_on "pygments"
   depends_on "python@3.11"
   depends_on "six"
 
   uses_from_macos "expect" => :test
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   resource "ansiwrap" do
     url "https://files.pythonhosted.org/packages/7c/45/2616341cfcace37d4619d5106a85fcc24f2170d1a161bc5f7fdb81772fbc/ansiwrap-0.8.4.zip"
@@ -134,6 +133,10 @@ class Jrnl < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     virtualenv_install_with_resources
   end
 

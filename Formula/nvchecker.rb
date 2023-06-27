@@ -6,21 +6,26 @@ class Nvchecker < Formula
   url "https://files.pythonhosted.org/packages/22/25/e42c9be788883c94ed3a2bbaf37c2351cfe0d82cdb96676a629ed3adedec/nvchecker-2.12.tar.gz"
   sha256 "4200ddf733448c52309f110c6fa916727a7400f444855afa8ffe7ff1e5b0b6c8"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0fa3a0add363b1a7491e722482424dbd96b133d42466a71f0afc021b2eef8551"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7d0fe36aab3a200ccdde47a6296cee0634787447c3ed1eb38c340760a3a7f1c0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3d383fbb043ed1496fe153e3e2228c0fe40fd6037b2c65460f485360eb1434fb"
-    sha256 cellar: :any_skip_relocation, ventura:        "a3c7a63a1c42c2132d432439649008188d43284c8fec3ca80bb08fe391e582c8"
-    sha256 cellar: :any_skip_relocation, monterey:       "e8b181828282012e3563126a61fe34ca02086adf6f7b5c082af1e5a443911d22"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b9ad0b007650497ef3ff860b5184e4702742c4163d1e831979f85116b4e1ae5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3dcd42039d8f12ec471b99f77914aca95b4854da57961033a9bd731175155629"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "032f85663c8dc8edd0dc3808e570e53f8002dac929a6c46e897988bdca4cc93b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f2f31a6ec4887267eef12a2d32e13c72bc213f8fe46fcaf37eca6a049e77b865"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b12a5c47df011037d4c11a08e0cce96c9ff4d537a19b37faa91dea1ae9a4f76f"
+    sha256 cellar: :any_skip_relocation, ventura:        "3c1a9c37a798380b9022880e0a07c464c290fe391d24fca91d13e0a67aab9a6e"
+    sha256 cellar: :any_skip_relocation, monterey:       "198e8966be7816da1eb7ce3b3dc79ae10cb8df67c7699f5f90e1ed5b95fac591"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e0e776bd3afa1bf05782377eb18183b53308413a61170520fea3e90943cd55c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4ec3b2cc4fd127b86abe31e28ce727cb28af55f6ea628a1267b142d45baafd6"
   end
 
   depends_on "jq" => :test
   depends_on "python@3.11"
 
   uses_from_macos "curl"
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"

@@ -6,23 +6,24 @@ class KeepkeyAgent < Formula
   url "https://files.pythonhosted.org/packages/65/72/4bf47a7bc8dc93d2ac21672a0db4bc58a78ec5cee3c4bcebd0b4092a9110/keepkey_agent-0.9.0.tar.gz"
   sha256 "47c85de0c2ffb53c5d7bd2f4d2230146a416e82511259fad05119c4ef74be70c"
   license "LGPL-3.0-only"
-  revision 6
+  revision 7
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_ventura:  "1cda61e10e3d0dd65b358d0bd1bd5c647747ffcdd4fd25ac2e0740eb03f03e26"
-    sha256 cellar: :any,                 arm64_monterey: "0e20fab5b3e29e5af967a877452b85657207293e306c6d3e0c8065693a736457"
-    sha256 cellar: :any,                 arm64_big_sur:  "016757dc0089cac5a3224c82768bab1814651bc8661d1fa469067a05e301b654"
-    sha256 cellar: :any,                 ventura:        "3915f6317e939ab6348e3fcce4a220a72f666d9653badbd73dba31af1e84b664"
-    sha256 cellar: :any,                 monterey:       "2d0bb161ba37b1f674495c8d6069502530e18d5d3a732b18919ddef8d7717707"
-    sha256 cellar: :any,                 big_sur:        "5a64a75089fe060dde17bdfa8c9950578b8024db999959fa4760bdade9a28d82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6218ae8d8e92b49e620e4ebd58e63a825515c2b7157646654cb7c5c4ce580a2c"
+    sha256 cellar: :any,                 arm64_ventura:  "b24e0b0adc47e73232b625dfb0fcada42b3f4075b784b640d999b4b7190ebc46"
+    sha256 cellar: :any,                 arm64_monterey: "e15107caac75189dd84abb0fb947ada153c385f54ca3e677726f99ef7b49132e"
+    sha256 cellar: :any,                 arm64_big_sur:  "450aef2ddb82eba5eede13723d8716dd3a3b65c9d8305c8a5aa7c748da608a53"
+    sha256 cellar: :any,                 ventura:        "c31059abd3d74075d524733d6bbac585dfa0c40575ebffbd45fdd1c28e567b5d"
+    sha256 cellar: :any,                 monterey:       "96a0afd351289ba37315fde718220740da93081a0fd67e729d5ebd9248c5610d"
+    sha256 cellar: :any,                 big_sur:        "18dd8e8f929e1d4b2d1054f0593317e8e14091126badcf6efcb471c7376144c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "398a5139373cea7805b82802e54eacf5460e001b82956d96a375566b31f63581"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "docutils"
   depends_on "libusb"
+  depends_on "openssl@3"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -117,6 +118,10 @@ class KeepkeyAgent < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     # Help gcc to find libusb headers on Linux.
     ENV.append "CFLAGS", "-I#{Formula["libusb"].opt_include}/libusb-1.0" unless OS.mac?
     virtualenv_install_with_resources

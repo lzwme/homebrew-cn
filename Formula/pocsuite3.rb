@@ -6,21 +6,23 @@ class Pocsuite3 < Formula
   url "https://files.pythonhosted.org/packages/98/9c/ea5c93f0cff8ffbe776ae138569219c2f0c7e43d94c002fe21e607d186e6/pocsuite3-2.0.4.tar.gz"
   sha256 "57dd1e565595bd705667a4e0df72e288321640f938e1fefcc83b02a70dda099d"
   license "GPL-2.0-only"
+  revision 1
   head "https://github.com/knownsec/pocsuite3.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "c01cdc083d66406ea3ae0553f14cb78058118f620d1b46fd0b6968adefc4cdcb"
-    sha256 cellar: :any,                 arm64_monterey: "16a073fdf3c67848333a1ab7d02508643b6a6f9cf2d71bb790a82a36ef913f9f"
-    sha256 cellar: :any,                 arm64_big_sur:  "59cc2ea51c74defcc100a38d7a92ee8efff9c363a8097357eaedc6ed0545edda"
-    sha256 cellar: :any,                 ventura:        "2ee7f1d69f06dbb0c4c0a6f4c4c91dea22a13719d9f564e6f515e00baddade60"
-    sha256 cellar: :any,                 monterey:       "c7486c2cf0c0809977f5ad0858ba3f697a1715cd4d15d98ac57a9b63a6e875d6"
-    sha256 cellar: :any,                 big_sur:        "9c9dfd7ecd4fab651a854e526ca44857994a736aec2ce65162df6cbbd3aae0b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ddd60f5b9824aabc2030aca2a343087b3685f2d82b69d77fe57428a41fdef295"
+    sha256 cellar: :any,                 arm64_ventura:  "520878c4da7317db9d0a7698b8debf5d06026dd7970d9deef354cad598123d46"
+    sha256 cellar: :any,                 arm64_monterey: "a771c89568e999130e87de2b23865fa818b925459dd64797228fb26246174c51"
+    sha256 cellar: :any,                 arm64_big_sur:  "6cc6f48519d3d53780821dd240e42fdad1d3f85e3e7ec7006d73ce16f6a98e30"
+    sha256 cellar: :any,                 ventura:        "1e5ee34380daa06a6af9852e4b8cb7fc9ba824256ffec2faa9a954d622dff015"
+    sha256 cellar: :any,                 monterey:       "d861d372254895eefcfd2deb5aa7f8c62a792771a2b3a3979d3a1bd63ff18ad8"
+    sha256 cellar: :any,                 big_sur:        "76f728721c7d8a2211f7994174ae34f061420f5c26f50c094f5753d25478b2a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "083b30108ec388eff6978928cedbf1ce739bf3600dd8042b198a41a657eaeca6"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build # for cryptography
   depends_on "cffi"
+  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -150,6 +152,10 @@ class Pocsuite3 < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     virtualenv_install_with_resources
   end
 

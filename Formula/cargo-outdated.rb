@@ -4,27 +4,28 @@ class CargoOutdated < Formula
   url "https://ghproxy.com/https://github.com/kbknapp/cargo-outdated/archive/v0.13.1.tar.gz"
   sha256 "571910b0c44f0bcf0b6e5c24184247e4603f474c7bde5f0eaa1203ce802b4a4a"
   license "MIT"
+  revision 1
   head "https://github.com/kbknapp/cargo-outdated.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "94549d70982775303f6c056336080a13432051ab9623a91cbcf66f9bea555987"
-    sha256 cellar: :any,                 arm64_monterey: "f4f3924b3e86d7681c76080875fca32157eb0bece4c539edb00ecb576bcada23"
-    sha256 cellar: :any,                 arm64_big_sur:  "ceb5304cdccc0446bfd5623c08898c8f2238f27aba17ef691afb15134bb16058"
-    sha256 cellar: :any,                 ventura:        "e498c2e69bc4c736925bf9fad65a7a374e957fe0e885c37df2766e500e07fb0e"
-    sha256 cellar: :any,                 monterey:       "907e1ba63c1f6f685a93b8281768725aeffc7fc5c5981662ff89fab82e415a78"
-    sha256 cellar: :any,                 big_sur:        "f0e1d11511b61334bdcc8426218ac7b21a106f10328f48baa50fe599368886e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "712a0937a31535b4c70b9b67f9f2f8e797f86ab6574c755cb17736a639c670eb"
+    sha256 cellar: :any,                 arm64_ventura:  "a091b1d33b8993cccaadd3226b18e47123387abf7926d0077c457942e70b7dfe"
+    sha256 cellar: :any,                 arm64_monterey: "20e674b341efba24dd8c4d8e5b35e138d348f5f62d0a0883ef348f44f540ef54"
+    sha256 cellar: :any,                 arm64_big_sur:  "2b811bb18b558bbe8290c62f9b3c8de03305a8ef80f4361f7f98aa8ba6f27546"
+    sha256 cellar: :any,                 ventura:        "488b9c21900f86bce7ec670eb513bd1a567e3d5fec37cfa2532a8bf6912f2c5e"
+    sha256 cellar: :any,                 monterey:       "6682da0e97842b793ec175289492b8e53c9943d0fc5cc34a8de99f29d2db3e47"
+    sha256 cellar: :any,                 big_sur:        "3c990f4910559e35b00487de1ed368f14f047c6ce9d18597fe2bedcd224da740"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f869e828ca53e03d6b976af8bd71cba0c5b558713b80b8bf5703f2b0049048d2"
   end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "rustup-init" => :test
   depends_on "libgit2"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     ENV["OPENSSL_NO_VENDOR"] = "1"
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     system "cargo", "install", *std_cargo_args
   end
 
@@ -67,8 +68,8 @@ class CargoOutdated < Formula
 
     [
       Formula["libgit2"].opt_lib/shared_library("libgit2"),
-      Formula["openssl@1.1"].opt_lib/shared_library("libssl"),
-      Formula["openssl@1.1"].opt_lib/shared_library("libcrypto"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
     ].each do |library|
       assert check_binary_linkage(bin/"cargo-outdated", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."

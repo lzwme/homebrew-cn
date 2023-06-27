@@ -6,25 +6,26 @@ class Fdroidserver < Formula
   url "https://files.pythonhosted.org/packages/75/72/ea1e1e9d7d0ade051279b8676e6025f8c14dd64a5edeb76f2208e23c7720/fdroidserver-2.2.1.tar.gz"
   sha256 "6dcba0b747bfc9ebe4d441c56cf0c8aeab70a58cd0d1248462892e933a382302"
   license "AGPL-3.0-or-later"
+  revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_ventura:  "41c7c7e59e09dd45fb2c8d82ebf5e98996dd0500c9805cef7cec7987e4a080e2"
-    sha256 cellar: :any,                 arm64_monterey: "4fa6cdf4321b59c4bf22176d3a475052c85ab6959adaa1f03664d067c8783e23"
-    sha256 cellar: :any,                 arm64_big_sur:  "6e110c0ab777ac2d946f6c09a0deab27c2c8a18c97cebe5750714ee6bf65ce6a"
-    sha256 cellar: :any,                 ventura:        "024c7d34c2c60c7732540e4091b3e10dfb010f56d5f527808fc385bf93ce94a8"
-    sha256 cellar: :any,                 monterey:       "8b7a70880b49128c44d93e56ad811fe7539c48a98bf95a206186c23bd2e1780f"
-    sha256 cellar: :any,                 big_sur:        "c423213e871f8d7d133958ba546956a8ec9749521a6d2d5190c2d806f94cb9b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "122c29f601b78e206d32c82aa79d68daf494e6f404f2a03b92e1d2965491566b"
+    sha256 cellar: :any,                 arm64_ventura:  "b7ae662f536d6d34fd3d85d986804a2ee932e77b1a40926a71858ab376d6717c"
+    sha256 cellar: :any,                 arm64_monterey: "6d63de8c2d7c1ba9500e9aa7beddb59d496a48b46971cbe160a002154b21ba58"
+    sha256 cellar: :any,                 arm64_big_sur:  "68b1371b854ab4564cf36ed2a972f442f0c4540f1ba6eaa3d40d1ba84ad67a0b"
+    sha256 cellar: :any,                 ventura:        "f6c328f7ae52a2761c8e4fa14f66e11879e22e83cfaf517634c2417340bcbf59"
+    sha256 cellar: :any,                 monterey:       "dd6f0fbf252fd0650bf392b26306d829e57095ad9fef62123094e395b377c05f"
+    sha256 cellar: :any,                 big_sur:        "1e3bc0b5ae41f9b8ec522c1e20f26999704e3205c722ecef8fe0f7ad8b143b5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "de1d6a50105513dda36ec42b3961d29984749694087cfc15aed93c52c95a0f26"
   end
 
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "fonttools"
   depends_on "ipython"
   depends_on "numpy"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pillow"
   depends_on "pygments"
   depends_on "python-typing-extensions"
@@ -224,6 +225,10 @@ class Fdroidserver < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     venv = virtualenv_create(libexec, "python3.11")
 
     venv.pip_install resource("lxml")

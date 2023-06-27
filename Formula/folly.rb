@@ -4,16 +4,17 @@ class Folly < Formula
   url "https://ghproxy.com/https://github.com/facebook/folly/archive/refs/tags/v2023.06.12.00.tar.gz"
   sha256 "cb7d075f5610dcc50084d727ee675daad51733b049f0b07cc112b160e468599d"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/facebook/folly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "491facfb27c8194c013a02d1aba9f5570d7a635fe6c4be4c6cd21254efbebf6e"
-    sha256 cellar: :any,                 arm64_monterey: "d2f6dd7271d5a12e80338bc83231c6d336303e377236e85ddc3dc08c304d3181"
-    sha256 cellar: :any,                 arm64_big_sur:  "15d3246c3c19af923136371eb253e3b68b48f23d5d062ca681a73d0b24e7210f"
-    sha256 cellar: :any,                 ventura:        "35e8860cb576ac737113d4e2cf6f8c365271ef1d4bb61e1336ba844b9e04ce0d"
-    sha256 cellar: :any,                 monterey:       "a50c5330e90ef6e9a3cc5bd6427a0ce7760345f04aed2190294d35e39e2f7706"
-    sha256 cellar: :any,                 big_sur:        "185393cf0222d6310d06ca6aaa47437bc0d21c65de7b27a54c1e72a88f7c1c05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "224d720a2e24d66810a4b34c8146e5b2fbfd39a9d492be8d8ea22b2ca339a2bc"
+    sha256 cellar: :any,                 arm64_ventura:  "0e6c4bb3f37845bbce18c03a23455c97a43e61fd5df8f7c484662cfc45ca6ba4"
+    sha256 cellar: :any,                 arm64_monterey: "0f837f9bcd77b67d3a9fcb4151563d215c33acd5dd4cb62b70efcfe08636bfa9"
+    sha256 cellar: :any,                 arm64_big_sur:  "d65598c0261a2abf7747cb4275929e458ab4ca3dd43ca5acf9a1349f967d1e05"
+    sha256 cellar: :any,                 ventura:        "47ffcfa230e3f502d9190dba4c2e988fced665fa2efd4524bf6db0e50a22a280"
+    sha256 cellar: :any,                 monterey:       "1e0eee17c0590322ad1543c9eaad1fd3f2299d277774181aeca2d799d8e704d8"
+    sha256 cellar: :any,                 big_sur:        "5bd93b31407b09d02ebde1df72901d479508d5ae80c24c01abd7f1f4e6f9845a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0719d36b10019080cdaba4022bdefa954c058a5ac1008f09561641cc950749a1"
   end
 
   depends_on "cmake" => :build
@@ -25,7 +26,7 @@ class Folly < Formula
   depends_on "glog"
   depends_on "libevent"
   depends_on "lz4"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "snappy"
   depends_on "xz"
   depends_on "zstd"

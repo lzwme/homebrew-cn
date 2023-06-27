@@ -4,6 +4,7 @@ class Node < Formula
   url "https://registry.npmmirror.com/-/binary/node/v20.3.1/node-v20.3.1.tar.xz"
   sha256 "12a82db306697959b4389b351a5f97848986b1313f9901b0e0b3d8cf4f3f9991"
   license "MIT"
+  revision 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
   livecheck do
@@ -12,13 +13,13 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "10f4c102282c14fe86816b3d07aca744504e647602551bbdd7c1c0d97ad603e8"
-    sha256 arm64_monterey: "af807b5232330a55767df7a636d9c77e82620f401200918cca41d10c30bb73e1"
-    sha256 arm64_big_sur:  "919cf0bf77ffe97c121306213008d5b389c2ec4f61a1c849e1917ad1e4690299"
-    sha256 ventura:        "e011cdb9d4d27d2b9b6303af28350562fbafd3482930106c01dcfc979ad42771"
-    sha256 monterey:       "e3c62fa2dba1f2014ddf8cebd4c6b416f1e67ba159d2f1ce30aeb896d1cd8964"
-    sha256 big_sur:        "aadedaf32b4c80353976c520277397ec99411cd882e429683966c3d18a515c1a"
-    sha256 x86_64_linux:   "c434d949df78c71968717e8de34c620bd36d9bfe0c046840c6bcb5aaae7a62ae"
+    sha256 arm64_ventura:  "20acc6346df0116e05a5e5819afedae9d561c400877d8152d1856f318463b9f3"
+    sha256 arm64_monterey: "dc8415a1995ce032ec9b8401e5c49a5d55b1257ec51be10fa9885287c7824030"
+    sha256 arm64_big_sur:  "7e1212f74ae346c27ce148c587a39c57de7d3157ffb17b9aa4d9108b2bfb4fc7"
+    sha256 ventura:        "892b814eb21292605200313633dc480895a5859a77438f32b951278d809746a9"
+    sha256 monterey:       "54085d1d8dd9b676d89b90e5191890c88471e6f30e5e04a79948c16049b8fe0c"
+    sha256 big_sur:        "7df5483657c7e065b33ebcfb86e7d84f605a191b54952fc929ec12d8b6361d1f"
+    sha256 x86_64_linux:   "0191bf052df5bf3c16578dc458a41a8225d652eb0e309f4a7e14e57cb0bb8cdf"
   end
 
   depends_on "pkg-config" => :build
@@ -28,7 +29,7 @@ class Node < Formula
   depends_on "icu4c"
   depends_on "libnghttp2"
   depends_on "libuv"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "python", since: :catalina
   uses_from_macos "zlib"
@@ -76,8 +77,8 @@ class Node < Formula
       --shared-libuv-libpath=#{Formula["libuv"].lib}
       --shared-nghttp2-includes=#{Formula["libnghttp2"].include}
       --shared-nghttp2-libpath=#{Formula["libnghttp2"].lib}
-      --shared-openssl-includes=#{Formula["openssl@1.1"].include}
-      --shared-openssl-libpath=#{Formula["openssl@1.1"].lib}
+      --shared-openssl-includes=#{Formula["openssl@3"].include}
+      --shared-openssl-libpath=#{Formula["openssl@3"].lib}
       --shared-brotli-includes=#{Formula["brotli"].include}
       --shared-brotli-libpath=#{Formula["brotli"].lib}
       --shared-cares-includes=#{Formula["c-ares"].include}
