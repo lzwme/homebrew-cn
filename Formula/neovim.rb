@@ -121,8 +121,7 @@ class Neovim < Formula
             parser_name = ts_dir[/^tree-sitter-(\w+)$/, 1]
             system "cmake", "-S", ".", "-B", "build", "-DPARSERLANG=#{parser_name}", *std_cmake_args
             system "cmake", "--build", "build"
-
-            (lib/"nvim/parser").install "build/#{parser_name}.so"
+            system "cmake", "--install", "build"
           end
         end
       end

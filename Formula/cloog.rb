@@ -1,18 +1,18 @@
 class Cloog < Formula
   desc "Generate code for scanning Z-polyhedra"
   homepage "https://github.com/periscop/cloog"
-  url "https://ghproxy.com/https://github.com/periscop/cloog/releases/download/cloog-0.21.0/cloog-0.21.0.tar.gz"
-  sha256 "7bdd1bcfca1f9157186ea837e9b111bae7a595b24435e63099bac7c6763b376d"
+  url "https://ghproxy.com/https://github.com/periscop/cloog/releases/download/cloog-0.21.1/cloog-0.21.1.tar.gz"
+  sha256 "d370cf9990d2be24bfb24750e355bac26110051248cabf2add61f9b3867fb1d7"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "595b6549ffe14d8846d10e3bf9962ebef7dbe3f1f5745b3444d4c3b7e05f76fb"
-    sha256 cellar: :any,                 arm64_monterey: "f884aa1f8578a533508676ee3a1bc0db7c59e2a4376d6503e140a9ab87136850"
-    sha256 cellar: :any,                 arm64_big_sur:  "2ed6822fd8111355d87859bca2297fd3ad6f0714672a8e419c470f273ef8c05e"
-    sha256 cellar: :any,                 ventura:        "5357619a36d333934b8ddce16bad3785b886d9835a9a5524a1ec49e26216a7ed"
-    sha256 cellar: :any,                 monterey:       "58a114afff3716a7918da518e4082f8cb8c11a9c988506f20629141e7ecb6d3f"
-    sha256 cellar: :any,                 big_sur:        "19c1a6cbd9aa0149cf1e443a99e4cf41f83f6a37f85cda0b737c9203a1a70c32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "640f2b803875a4b71a3a390b8a852dcbe938016af60e873440a62f986dbaa930"
+    sha256 cellar: :any,                 arm64_ventura:  "cead91fed1a94c7121eb28dbd53060c3bf70a83c62a0546e50d2ec486e1e1e63"
+    sha256 cellar: :any,                 arm64_monterey: "9d8c88f5f09bcc01984b15f0ba5d2fe143ee4e129f7dafce268cb36831f33480"
+    sha256 cellar: :any,                 arm64_big_sur:  "c0c6fe61fc3cab274494d0afc7c1d3391b58890544efd5f43e4ab13c3c7fccfe"
+    sha256 cellar: :any,                 ventura:        "d46074ebafa3ac16eedd35381930c80446da0db12109746fc39ad316dc9f98a2"
+    sha256 cellar: :any,                 monterey:       "3a6c23a37dcb685ec5ecdd08921dcad09c121d3e0763c0df609e6a9c85fcd964"
+    sha256 cellar: :any,                 big_sur:        "9e572d9cca3d5da40666ea38027e38e4189f8c8471d4fe12376828f234b12721"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0f9fc5de0ae2ddc6bc734ae97b67cf0173ba90da90db87f5402d36c3bcc0ef6"
   end
 
   depends_on "pkg-config" => :build

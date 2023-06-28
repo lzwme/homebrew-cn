@@ -8,12 +8,13 @@ class CodeServer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "68151a4380f7c006cd27f35cfd9f57dba859f05ee7eb4c93bdcb36e77abd108f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3dc72604b2233f1f38886d67cc35fd25fd021147f2dd46d5baf642c8ebc1e7b7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a1f44f495e838a462dffb37d850b5061a63d33df61c23e81bb59fa08c2cc7454"
-    sha256 cellar: :any_skip_relocation, ventura:        "4c2befea86daaf14d4532d589fa46fe9e7ca23f81becfbaaddb86a1cf5b01b4f"
-    sha256 cellar: :any_skip_relocation, monterey:       "864b4ee94b00f7c212f8e393de996b2c45f3ab1437b6e0db14f2bd5044ba84b9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d6e071833a33ac798af59e0124fa5531022b69645a779db471f18a465140c890"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "749c12e93f5e825d22128739ced4cf458528e03455e330e0c60dc74f734fabd6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "eea7b3179664dd0b7d38d8f01b862d25522a252e8a841ebc6c670d1475955777"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2e2a26eb2232e200d9c4e6bed5b1f05ee8253462a5657b94d7e138f018bc8cc4"
+    sha256 cellar: :any_skip_relocation, ventura:        "a074d018da36ef3f92bf332e14fae2e5de4a1e40ce55b840ed004a0f8d355020"
+    sha256 cellar: :any_skip_relocation, monterey:       "ec5ae4ee570b60cd9104ba812d35b436f111b761c94c06ce9e9ab52198eb3a31"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8492813a615330082dca9b87eea89143773d140b12f24868ff15f9acc0eebd41"
   end
 
   depends_on "bash" => :build
@@ -31,11 +32,15 @@ class CodeServer < Formula
   def install
     node = Formula["node@16"]
     system "npm", "install", *Language::Node.local_npm_install_args, "--unsafe-perm", "--omit", "dev"
+
     # @parcel/watcher bundles all binaries for other platforms & architectures
     # This deletes the non-matching architecture otherwise brew audit will complain.
+    arch_string = (Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s)
     prebuilds = buildpath/"lib/vscode/node_modules/@parcel/watcher/prebuilds"
-    (prebuilds/"darwin-x64").rmtree if Hardware::CPU.arm?
-    (prebuilds/"darwin-arm64").rmtree if Hardware::CPU.intel?
+    current_prebuild = prebuilds/"#{OS.kernel_name.downcase}-#{arch_string}"
+    unneeded_prebuilds = prebuilds.glob("*") - [current_prebuild]
+    unneeded_prebuilds.map(&:rmtree)
+
     libexec.install Dir["*"]
     env = { PATH: "#{node.opt_bin}:$PATH" }
     (bin/"code-server").write_env_script "#{libexec}/out/node/entry.js", env

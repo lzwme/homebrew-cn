@@ -2,19 +2,19 @@ class Skaffold < Formula
   desc "Easy and Repeatable Kubernetes Development"
   homepage "https://skaffold.dev/"
   url "https://github.com/GoogleContainerTools/skaffold.git",
-      tag:      "v2.5.1",
-      revision: "1c990f27087e8f18a7586ba4f1c2a524dde47db6"
+      tag:      "v2.6.0",
+      revision: "23c5c16b9fc777b87602aa27dcbe3136291959f3"
   license "Apache-2.0"
   head "https://github.com/GoogleContainerTools/skaffold.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6c006b4970f32c2b77c6e8b0da5f430e79af943bb93b8df2501e10c65fed9268"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "65b82365cfc0ac27e2b873bbd165bc19e092391aa3ebb7c5653ae1f5cf469bd7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4b1971ed591f34c0395e87db4513de61bcb1bc4b06741b8e66a980e2612f69d0"
-    sha256 cellar: :any_skip_relocation, ventura:        "6a535ac0cd6463692b07fd88a1de84e46cab31a37737707555d87513ad606ad0"
-    sha256 cellar: :any_skip_relocation, monterey:       "babe9d3cc52ce4501872939d034f533cff5398cff6381d5a4218fe6d31d138d0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4a159ba7b5fbefbc8bd7764fdd941bed4201c4d8ec258771014fd8cc60e137c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f989ebc348b4ea443508d4d0b524fecaf8b1d605067439c706d78b505a7658fc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba413aa92acdfe42705a56abed90dd84031063972e7d1f32329ac75e8b9deaea"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b40aa39b070f4ee7c704b7a4f3476f6de7bd30eff22365ee015d2762de9317cc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "26e949c3467208a6816c59c5f9d3f1a7c9409efc32164223b221c6961791700e"
+    sha256 cellar: :any_skip_relocation, ventura:        "9ec3f2ed472ca8a2cd8a53a07fd09fe8e42494162a82ea7360dea4928f44f04e"
+    sha256 cellar: :any_skip_relocation, monterey:       "4931a0b0d337b404bfbfddc0e7d39e51028bb5e1d32e22c6957bcfc23621202f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ce5db2df27a28cd5559a65ad48a27025f573128389d019bb694c01d143712e93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebd555ce474d36a575b4bfa774412b60d1c769ac2d573bf530bc6c132d3adb04"
   end
 
   depends_on "go" => :build

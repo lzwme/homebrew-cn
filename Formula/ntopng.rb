@@ -12,6 +12,7 @@ class Ntopng < Formula
   end
 
   bottle do
+    sha256 arm64_ventura:  "b9d9c200f7fd53afb6a4b1aceb0d7bead7acc4cfc2f0f124490c2d710ca7b1bd"
     sha256 arm64_monterey: "f80fe91d1bf208b29756939d80273318035dde0c9529fbc3e933d81b58f7dfe8"
     sha256 arm64_big_sur:  "eabf1734108899d494af15d59a30aa8415b6ad097e14310601bd8ce6dbeffb56"
     sha256 ventura:        "9a6815c5ecf1ec997d950b0a9c5ea1b7fa1d6870156a9dccc688a72d72231549"

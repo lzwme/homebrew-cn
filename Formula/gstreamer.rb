@@ -2,16 +2,15 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 3
 
   stable do
-    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.22.3/gstreamer-1.22.3.tar.gz"
-    sha256 "8f0db72a22a11527c01895b0aec50174f094c7c772369522350e03f24e87455a"
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.22.4/gstreamer-1.22.4.tar.gz"
+    sha256 "2badeeaf3fb75f11e7701a3083d412b9775db1f83aa869c779a1af0e0396400a"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.22.3/gst-plugins-rs-gstreamer-1.22.3.tar.gz"
-      sha256 "208f0350471b5e73f1054012732d3609f680ab9d9173dc15b6277560cb224acc"
+      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.22.4/gst-plugins-rs-gstreamer-1.22.4.tar.gz"
+      sha256 "1a06069ee536665447e0ba12e70e6761f3ce8d6198e81ac36fc2407f1c042a92"
     end
   end
 
@@ -21,13 +20,13 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "f64dffc75a1c31b04ee305f401cfd8cd5ac1778639b925b8ae904dbb57a5a503"
-    sha256 arm64_monterey: "12ef11b2ccad9d083c1246937cd6c6752ec961def11b7fd50bd35ab9549cee87"
-    sha256 arm64_big_sur:  "931baca0141259192107e3aa71fe951edee9d58017bc1abd38464efc974c8fdc"
-    sha256 ventura:        "8958f23725cb2ddffd6c55c857b959572f790c61ce7f8e3de02ab96853db2f3b"
-    sha256 monterey:       "86ebf00143876f2923376c03865f97433850ddfd81022373aed9afb9844f19a4"
-    sha256 big_sur:        "ca13e9624ea2f181348296c84c834483f336264bfaec2604a5febeb744c40ced"
-    sha256 x86_64_linux:   "762b06aa4bd8ba4368fbce342f912cb65e2f64704e91d3eedc3f6e6075ee835f"
+    sha256 arm64_ventura:  "428fceaf0bc5cd3b24f281a71f13cdbd25dc8fbadc0235c6277350859b87ec1f"
+    sha256 arm64_monterey: "cfaebd175cccf33300c89f76307cd57c3c57ce5e692f9e36af705729cff03044"
+    sha256 arm64_big_sur:  "414e5a6927504a99513b73bf32be7650643aeeeacbb0c220482d23c8c474f05e"
+    sha256 ventura:        "4e13d9a7403295e877f4c8541ea63fbae0a3ff7546455c93aafc516bdad8cfbb"
+    sha256 monterey:       "fe7a6af7eac4f14f2ba69359d4fb63da8ace54ba26c3564333502ecb8762bf2f"
+    sha256 big_sur:        "80e197df755ec2d54a2be2fd7c5f0fe56496fae3aaf631175af9f9b8c68f4ec4"
+    sha256 x86_64_linux:   "4530275b887886b2c3df7e346471bec4728608bb7d07b8b3b6fea3b462712513"
   end
 
   head do
@@ -240,7 +239,7 @@ index 5977ee3..1b399af 100644
 @@ -3,13 +3,20 @@ install_data(pysources,
      install_dir: pygi_override_dir,
      install_tag: 'python-runtime')
- 
+
 +# avoid overlinking
 +if host_machine.system() == 'windows'
 +    python_ext_dep = python_dep
@@ -256,6 +255,6 @@ index 5977ee3..1b399af 100644
      include_directories : [configinc],
 -    dependencies : [gst_dep, python_dep, pygobject_dep])
 +    dependencies : [gst_dep, python_ext_dep, pygobject_dep])
- 
+
  env = environment()
  env.prepend('_GI_OVERRIDES_PATH', [

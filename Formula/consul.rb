@@ -1,8 +1,8 @@
 class Consul < Formula
   desc "Tool for service discovery, monitoring and configuration"
   homepage "https://www.consul.io"
-  url "https://ghproxy.com/https://github.com/hashicorp/consul/archive/refs/tags/v1.15.4.tar.gz"
-  sha256 "b922ff834b41e119d293e856a8c2cd745842476a90baa6c9f0681bfa32b46133"
+  url "https://ghproxy.com/https://github.com/hashicorp/consul/archive/refs/tags/v1.16.0.tar.gz"
+  sha256 "dc071c3332908476ff1f0fce7b18af9767e19d1b8e499f62e1d2118f983138ae"
   license "MPL-2.0"
   head "https://github.com/hashicorp/consul.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Consul < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0efd3d4408496753956a48d6527427238c3580e1573ea385475f64241a27e582"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5d59fee5a7515294116eb18089e2ea989be5dd5d35e397e072a5bed051434369"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f4fa389ef7a6daf142159c4dc8e34be6a73c5d2727071b3e41df5b44b7dc2d41"
-    sha256 cellar: :any_skip_relocation, ventura:        "bb3add990d2a4b07b7eaba2094865813a493c97f66022ab9a65e4df705c81bf8"
-    sha256 cellar: :any_skip_relocation, monterey:       "ebf6147327a95e2fe9af0e216848b3b256ea5ba74a3f70457a2fe856a8442e21"
-    sha256 cellar: :any_skip_relocation, big_sur:        "db68faa3bc71723fb5ad81c4372672caf37e1a6abc824f8f72745942b0f3aca4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74b5101d4100101a3b7a0cc9bd8e42a122ed34fdf56099c15b9383bd827436c5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29569a893feb32ea6d2312e78ff0650d14d84c28d2bc7a4f34ca96708059300a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c88074b4bb7e1219f0352084f79f0cb3562ec4d05c088a6a277952767e2ad8a5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "659e832d19547d69b20f3f5c97023d5564c6397255ea3b6fff36c9da04f51eeb"
+    sha256 cellar: :any_skip_relocation, ventura:        "330760d709abed2e220be0f10ccde96c8050f9586a7ce5a31d0fa196d482facb"
+    sha256 cellar: :any_skip_relocation, monterey:       "f8ec5484f2fbf8064556cfa9cd81f732565756384804612df38be03f92805cf4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c83d20bf568c2315697019b6a8aca5a097e5f4d16ee4696fb1efe4bea67f546f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e64ac95ff9412e5032411667e8201f4e69ab0a70c9ede74a4ccd78c6d67d410"
   end
 
   depends_on "go" => :build

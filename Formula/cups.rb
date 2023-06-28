@@ -14,18 +14,17 @@ class Cups < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "27c15b2889d1a7b1e6f569548cb9156a435250ce44c69c0471f953694d0d4a45"
-    sha256 arm64_monterey: "0a891d9041b7f49fe6eb7028d5dd29c7cd6c55d717f1c8270429b84586156fd4"
-    sha256 ventura:        "8a1741f23e079a90ad3faf5738550e580a73eaf71fd6756a5091399cd8862fae"
-    sha256 monterey:       "3a11e2081dfbb4a4aa699cfd62e78c96792b4ab345dd5e2c114c86f700cfff8e"
-    sha256 x86_64_linux:   "d432c8383bdd7f42860f3703535b254c33635524057bb5b432913a8d7a47ccb1"
+    rebuild 1
+    sha256 arm64_ventura:  "5097ac6de3fcd9c2da3bd4f09c01714d73761c0399c8695592d6534cdf23c6e8"
+    sha256 arm64_monterey: "65d0e5f4ba75438cca64d341adca30d9d1bfc4867358421cb74fa375b94a7e69"
+    sha256 arm64_big_sur:  "f0b6128fddf54ec1069c32a9b83788457f377a0b09dc256b6464f4f2161560ae"
+    sha256 ventura:        "1bd88a31dd6fc3292cf4df626b6531c05b1a35fb35c4e219950710df939da85f"
+    sha256 monterey:       "9f9324ad8a39f8d3d4863a044107290e8933b9e8b091dbe5d32bc5d490db5c35"
+    sha256 big_sur:        "f52e62e443641e19a167ced1e76969c45486a513b4fed8bdc33cc80f1203dc36"
+    sha256 x86_64_linux:   "841f335903bfdd8a6e2e4fc4db73a0f261f581d59bbd3f3a98acb5e83507f699"
   end
 
   keg_only :provided_by_macos
-
-  # https://developer.apple.com/documentation/security/3747134-sectrustcopycertificatechain
-  # `SecTrustCopyCertificateChain` is on available in monterey or newer
-  depends_on macos: :monterey
 
   uses_from_macos "krb5"
   uses_from_macos "zlib"

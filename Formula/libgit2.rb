@@ -25,6 +25,7 @@ class Libgit2 < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "libssh2"
+  depends_on "openssl@3"
 
   def install
     args = %w[-DBUILD_EXAMPLES=OFF -DBUILD_TESTS=OFF -DUSE_SSH=ON]
