@@ -1,29 +1,23 @@
 class WasmPack < Formula
   desc "Your favorite rust -> wasm workflow tool!"
   homepage "https://rustwasm.github.io/wasm-pack/"
-  url "https://ghproxy.com/https://github.com/rustwasm/wasm-pack/archive/v0.12.0.tar.gz"
-  sha256 "684a2fb39691c8231b05e5c9fb0cacf6155f0617e0458cae0cd1b5ec2d8f9600"
+  url "https://ghproxy.com/https://github.com/rustwasm/wasm-pack/archive/v0.12.1.tar.gz"
+  sha256 "afa164fec0b119e2c47e38aad9e83351cb414e8ca3c062de292ec8008a45ac09"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/rustwasm/wasm-pack.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a49ac293759477f0a875c3fcb0d418ea6961435ee5845abca0351497acd59a99"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1c70d994f95515eb6591199245b791074cc7e2cf00983106641cb6c6d49621a0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1df17a8fef666ad905dc65e7965388327ecec1e84db93df3fb9cfafcff350ad6"
-    sha256 cellar: :any_skip_relocation, ventura:        "6a17136e39a7a6cb438bda049fe6aee026aea3646df521fb5901c9e5a30bc9b0"
-    sha256 cellar: :any_skip_relocation, monterey:       "bbeaa29e32da6a91061278190334601c6ef3e92b6409cad3326fffbe72ee0092"
-    sha256 cellar: :any_skip_relocation, big_sur:        "96e461e590bdc0ace284a05e10f36fb32cf28c320be258698caea8bd8659c7db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a61fffe16bc2051496ff35de6656532a8d8a79c2b95f5ead5e164a34a1e67cef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4e205a97851b7166c70355e63b166541b44e6b419db5483ace1fc0ed2d1b87ba"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d1f73a1e067a8bc27645fdbe009a5b2bb3aa289ee88ba541cc0c6964f64add76"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "13dac57eb2b6b269013ddf52a2dc0adf890a75ac511d1a347c9d0753c926c149"
+    sha256 cellar: :any_skip_relocation, ventura:        "6c884e28455fec249ae4fd0d64ce9c653699a1f42e4d9df2cb21b3b4a283c077"
+    sha256 cellar: :any_skip_relocation, monterey:       "bd3838f43dd5f2d1fece3ea22d597a019f127ea757625f946193463418c361d4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7540592385c24534fbc9223f65a2361f26082a52f3f717dc40debfe7ae2d250d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0a69f2bb774de2289f5f3bf2fb151d168f1ad07c7e17c2891b4cc85f53948c2"
   end
 
   depends_on "rust" => :build
   depends_on "rustup-init"
-
-  # Restore `--version` command, remove in next release
-  patch do
-    url "https://github.com/rustwasm/wasm-pack/commit/91870e497d7212db40fc4ff5453233fc3fa5546d.patch?full_index=1"
-    sha256 "148006151e4fe202287b278d1269bef8ebcf30bdc7c946027cdf25e26c72bfe1"
-  end
 
   def install
     system "cargo", "install", *std_cargo_args

@@ -8,13 +8,14 @@ class CodeServer < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "749c12e93f5e825d22128739ced4cf458528e03455e330e0c60dc74f734fabd6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "eea7b3179664dd0b7d38d8f01b862d25522a252e8a841ebc6c670d1475955777"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2e2a26eb2232e200d9c4e6bed5b1f05ee8253462a5657b94d7e138f018bc8cc4"
-    sha256 cellar: :any_skip_relocation, ventura:        "a074d018da36ef3f92bf332e14fae2e5de4a1e40ce55b840ed004a0f8d355020"
-    sha256 cellar: :any_skip_relocation, monterey:       "ec5ae4ee570b60cd9104ba812d35b436f111b761c94c06ce9e9ab52198eb3a31"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8492813a615330082dca9b87eea89143773d140b12f24868ff15f9acc0eebd41"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0a0ad235d539c1a50d250588e8f31916e074752a788a07f90d238c424cdeec6a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0c0d6f7c745ee64f37bd866e6e63d9bd16d82f7ac53ee8b4114a11346638e5de"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e7fad60beeebe732a9c79f0e1efeb415e66a3a07a73770cb4026275aec201ea9"
+    sha256 cellar: :any_skip_relocation, ventura:        "cb8b2785ca655b0c91ab2d4913eff9fde2b0f564d6bcc94b005a879431cabf3a"
+    sha256 cellar: :any_skip_relocation, monterey:       "fb077ee01c90448af61acc4fbf924b5ce7b543d9e1e371eca9322d50e5b2a7f7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "eba4f83966247391f40cd65e762720df45dd7db1700baec87eb757068c225822"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "764494f95af4d351336e80eb11963016d610706df1ef8bd1b9693e6d31eec080"
   end
 
   depends_on "bash" => :build
@@ -37,6 +38,8 @@ class CodeServer < Formula
     # This deletes the non-matching architecture otherwise brew audit will complain.
     arch_string = (Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s)
     prebuilds = buildpath/"lib/vscode/node_modules/@parcel/watcher/prebuilds"
+    # Homebrew only supports glibc-based Linuxes, avoid missing linkage to musl libc
+    (prebuilds/"linux-x64/node.napi.musl.node").unlink
     current_prebuild = prebuilds/"#{OS.kernel_name.downcase}-#{arch_string}"
     unneeded_prebuilds = prebuilds.glob("*") - [current_prebuild]
     unneeded_prebuilds.map(&:rmtree)

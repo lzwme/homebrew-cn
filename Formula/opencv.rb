@@ -1,10 +1,9 @@
 class Opencv < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
-  url "https://ghproxy.com/https://github.com/opencv/opencv/archive/refs/tags/4.7.0.tar.gz"
-  sha256 "8df0079cdbe179748a18d44731af62a245a45ebf5085223dc03133954c662973"
+  url "https://ghproxy.com/https://github.com/opencv/opencv/archive/refs/tags/4.8.0.tar.gz"
+  sha256 "cbf47ecc336d2bff36b0dcd7d6c179a9bb59e805136af6b9670ca944aef889bd"
   license "Apache-2.0"
-  revision 7
 
   livecheck do
     url :stable
@@ -12,13 +11,13 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "b3b4d11d4ab5e0b0f89ff0c57495b51abedb55093d1c3c34f913497215e774ad"
-    sha256 arm64_monterey: "3839f868463b61341bcd9cced7714900cc380772125b89f240bfff640bdd17cb"
-    sha256 arm64_big_sur:  "35bef4faf436bf4fb3a3d552055f5866b3152478b0713acb9fce31cf9df881f3"
-    sha256 ventura:        "0d72cd077048df1c6efd6ec13932a631eb80ec5f523e747edd72dbeae4a1711b"
-    sha256 monterey:       "a01ceebe326fde272eeb2cf6662eefc2c69fea03b7864d9ffdb2d69284379157"
-    sha256 big_sur:        "f18d2bcaf0c5700a63dd4eaaf5f0d2df1d3a409e877fb32e15e0aaf383de4ea4"
-    sha256 x86_64_linux:   "c532964da8bf92574e3dc81ce860c6a93b9e717f92d4790074c3ed5c83c1375f"
+    sha256 arm64_ventura:  "c866186a249cf729b1938c9705121ed841059493ec4c51076a9f1a6a40840cee"
+    sha256 arm64_monterey: "c1be6c733ec5b206760822e0fa536a6351a629483492e4d6f28b91f337d155eb"
+    sha256 arm64_big_sur:  "ef6881355dd2971e8e3dd2ccda26ef419fc25515ff63be98ca1e53fc4e818ef6"
+    sha256 ventura:        "29f0ffb2b94b302b9ef48bb6ea75fbe3cc3eb51f47e65002b88d91c03230c842"
+    sha256 monterey:       "55c6aa357d832b512454764c7374f1dd4365da7a7206ce5299952cb84d5a0998"
+    sha256 big_sur:        "694dc025a5ac2cfa5ee2e09c95122567b2aaf49f6d20dde7001b8449208d3e4b"
+    sha256 x86_64_linux:   "918364097dd0c9dcf418766431a8c658e9f8c8ba646bdb296fa2d084bb658363"
   end
 
   depends_on "cmake" => :build
@@ -46,8 +45,8 @@ class Opencv < Formula
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   resource "contrib" do
-    url "https://ghproxy.com/https://github.com/opencv/opencv_contrib/archive/refs/tags/4.7.0.tar.gz"
-    sha256 "42df840cf9055e59d0e22c249cfb19f04743e1bdad113d31b1573d3934d62584"
+    url "https://ghproxy.com/https://github.com/opencv/opencv_contrib/archive/refs/tags/4.8.0.tar.gz"
+    sha256 "b4aef0f25a22edcd7305df830fa926ca304ea9db65de6ccd02f6cfa5f3357dbb"
   end
 
   def python3

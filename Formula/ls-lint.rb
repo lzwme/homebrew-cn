@@ -1,19 +1,19 @@
 class LsLint < Formula
   desc "Extremely fast file and directory name linter"
   homepage "https://ls-lint.org/"
-  url "https://ghproxy.com/https://github.com/loeffel-io/ls-lint/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "eab9825d11be7662488ac834ca2fac2adeedd868904c5724c05f13780ec744ce"
+  url "https://ghproxy.com/https://github.com/loeffel-io/ls-lint/archive/refs/tags/v2.0.1.tar.gz"
+  sha256 "7486a9aca84a8a6877a3c61d735f32cec3d5c89bb29ced67933996560c49c1e8"
   license "MIT"
   head "https://github.com/loeffel-io/ls-lint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "01e7397d278be5b9d956b5e93a58a279ddc1c41c496afd759b3b8f0c6e336613"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "01e7397d278be5b9d956b5e93a58a279ddc1c41c496afd759b3b8f0c6e336613"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "01e7397d278be5b9d956b5e93a58a279ddc1c41c496afd759b3b8f0c6e336613"
-    sha256 cellar: :any_skip_relocation, ventura:        "b827045da76c16c11dc99fad2b7ad5f3c3b6caf33a88708dd80f52edc16371c3"
-    sha256 cellar: :any_skip_relocation, monterey:       "b827045da76c16c11dc99fad2b7ad5f3c3b6caf33a88708dd80f52edc16371c3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b827045da76c16c11dc99fad2b7ad5f3c3b6caf33a88708dd80f52edc16371c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65fe7d5d01f198e714f91e8b743c40b39587c0d9850333380ac888b3afcabc54"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "99e258c8ff09bfe279103e10220233f759aced4b1b7d99d0a9a10f933a902735"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "99e258c8ff09bfe279103e10220233f759aced4b1b7d99d0a9a10f933a902735"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "99e258c8ff09bfe279103e10220233f759aced4b1b7d99d0a9a10f933a902735"
+    sha256 cellar: :any_skip_relocation, ventura:        "61561f0dda830a67d2eea4e0d26affbcf2064dc18677e6c6439d465fa37a433c"
+    sha256 cellar: :any_skip_relocation, monterey:       "61561f0dda830a67d2eea4e0d26affbcf2064dc18677e6c6439d465fa37a433c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "61561f0dda830a67d2eea4e0d26affbcf2064dc18677e6c6439d465fa37a433c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46fbb47e717c592556c70a6adcdcc81d62eab7ae7a2fa2ace78a62066549a457"
   end
 
   depends_on "go" => :build

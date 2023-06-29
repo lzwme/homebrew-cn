@@ -1,19 +1,19 @@
 class Scipy < Formula
   desc "Software for mathematics, science, and engineering"
   homepage "https://www.scipy.org"
-  url "https://files.pythonhosted.org/packages/fa/d0/724c8204f87b6f807e3e67de32b8b4922d579154a448ce94e89129064bf1/scipy-1.11.0.tar.gz"
-  sha256 "f9b0248cb9d08eead44cde47cbf6339f1e9aa0dfde28f5fb27950743e317bd5d"
+  url "https://files.pythonhosted.org/packages/a6/98/fceb84466a74b8fe74ce2dcc3a0a89cb7b4a689d4775e0fb4c95f335ef6a/scipy-1.11.1.tar.gz"
+  sha256 "fb5b492fa035334fd249f0973cc79ecad8b09c604b42a127a677b45a9a3d4289"
   license "BSD-3-Clause"
   head "https://github.com/scipy/scipy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "607028416cf34beb6d199f491e22c558742bbc68c79cdadf32a43a34bcb3a88c"
-    sha256 cellar: :any,                 arm64_monterey: "a9593372acb527f748bc6ab6ba5bd49e0d00deb75fe79e44f55d16db155d9979"
-    sha256 cellar: :any,                 arm64_big_sur:  "926d74b880e82cabaced4b5e9f3d4e1542b796d9f26907e120b2a3d40c9d3026"
-    sha256 cellar: :any,                 ventura:        "5093ce2259b25a22589923eb43759872ff2b7a055c040b3b9017a418832df6b7"
-    sha256 cellar: :any,                 monterey:       "7fd9ce95790b991bb46e26f5a3f868dc8c3843f6a7c318a7fa6623f31d462546"
-    sha256 cellar: :any,                 big_sur:        "c3602aabcc9ea294442b51bee50ea3b02beeb5cef7984ef73fecafd35b6ba57e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61067e69fc825196afe769bc28620a81ae5d0a4c9ef86165894fde77848d7631"
+    sha256 cellar: :any,                 arm64_ventura:  "cb737edb4cc8aaa4fcab6e9459aaf63822894930b79d01b11dfaf4574f02dfd6"
+    sha256 cellar: :any,                 arm64_monterey: "f7aee1ea0d70dfe3143c5dbb9bebc451f5453c8cf03ff32c10c1023f779b3513"
+    sha256 cellar: :any,                 arm64_big_sur:  "3cd8b3c1480d3811d581291bb155b4af5ad3ec59ee85d133f8aea5714c1cbdb1"
+    sha256 cellar: :any,                 ventura:        "c3463b9ee0484ebcd82244e537fd099530216d8768fa6f69741138a2887bc166"
+    sha256 cellar: :any,                 monterey:       "c0dd5208d9b5d8fd63baa3731ee3e92e2997b978afa33e20f357de9e05071be8"
+    sha256 cellar: :any,                 big_sur:        "df93a51573e035179aaaa2d3a06a124720b7a962a9c297e9d29f1ff96077fd6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e352dcf10b39445b802b5243fd96f4eb201d9918ccf673d809bfa0ba2fb53719"
   end
 
   depends_on "libcython" => :build
