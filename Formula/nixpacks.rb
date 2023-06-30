@@ -1,19 +1,19 @@
 class Nixpacks < Formula
   desc "App source + Nix packages + Docker = Image"
   homepage "https://nixpacks.com/"
-  url "https://ghproxy.com/https://github.com/railwayapp/nixpacks/archive/refs/tags/v1.9.1.tar.gz"
-  sha256 "aade941bbe17ab25c4d2e767f2e4a50faa0e0ede5d4165fd79023b5578c6b7cc"
+  url "https://ghproxy.com/https://github.com/railwayapp/nixpacks/archive/refs/tags/v1.9.2.tar.gz"
+  sha256 "8d9a93f3254d87f2f066adabc78272b8186f3088fd8fb35b67dd57d8c1d19bf4"
   license "MIT"
   head "https://github.com/railwayapp/nixpacks.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f126c1d0a3c9d0d0f202ae0246e840288aaa9334aa0d7674d5c12e3ee483fb17"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "86fe51f07f701427ab97d3d25d894c58d025e56aff1f7876ba61604c25d23ef6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7ef5c9f427caa73b86f02a9ff1cbb2505f682bed726ff17cfeac5b5ba117d82a"
-    sha256 cellar: :any_skip_relocation, ventura:        "5a83fa4184d0661e2ab596cc893001dd3587170cc4cc7ded6efcc5bcf642970e"
-    sha256 cellar: :any_skip_relocation, monterey:       "ed1137ed2c52ccd6b67a1ffbbe2512e5c85f6af6e0b3f236e764b98e9978cd22"
-    sha256 cellar: :any_skip_relocation, big_sur:        "52b221c78ddfb4e599f54bc91cc227f1dcf92134067072ec78929b23c0285d7f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e739bc03e701ceade70b6ad8f143a917a82653e01466aec03b049d1446368aa2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "80289734036830c05a71c3c0aad4b021e229b7dcba8738a42bb313f21ae843ea"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "55d0d71c0867d58e9723aae2a4d1d70c92925fa7d4cb1f01c7b262c496583de3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "468cdcd5292fce7af4e1920d0082d8703ecc55ba5e08c9e8582156634f92966e"
+    sha256 cellar: :any_skip_relocation, ventura:        "9ab6a666ed27e7a56fb598b8a80ec34b8be11b1c04415446dc3b3d028165fd90"
+    sha256 cellar: :any_skip_relocation, monterey:       "9ca081966809d1439394c6a517d9d7286a712675acc74148634778db69fa501a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "dbbc0820b2932b307a08fa51a476df07ee68525227a2c80b633dfcaaabe62e23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e80fb859c53e1c13083f34a9c965aea8a82a614c56f14ae782a33d3a0199af99"
   end
 
   depends_on "rust" => :build

@@ -1,18 +1,18 @@
 class Igraph < Formula
   desc "Network analysis package"
   homepage "https://igraph.org/"
-  url "https://ghproxy.com/https://github.com/igraph/igraph/releases/download/0.10.4/igraph-0.10.4.tar.gz"
-  sha256 "aa5700b58c5f1e1de1f4637ab14df15c6b20e25e51d0f5a260921818e8f02afc"
+  url "https://ghproxy.com/https://github.com/igraph/igraph/releases/download/0.10.5/igraph-0.10.5.tar.gz"
+  sha256 "1c2725122fda9b72065095794bc7748939d90d942d312cb63c6160cd98d50f1e"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "924cf6d732723f7c624e306aca84ca49b47b7a91a56edfcf7c4e1155490d9ec6"
-    sha256 cellar: :any,                 arm64_monterey: "d9860b5fa36ff4c63d91223535b2c1a86580dfc9683d81fbd6633adf93ac5c4b"
-    sha256 cellar: :any,                 arm64_big_sur:  "8f692932c28ac91985b3150ec7ed735c9b0748eba3796deeee83293a983b6a62"
-    sha256 cellar: :any,                 ventura:        "4c7aeea854bdd88082de24dd37f1ffb591f36f1cbe50bec0ca46d85635a8bf40"
-    sha256 cellar: :any,                 monterey:       "dee010f3c9cfbd3fe9f3ea53267be71c57e25bbf96213903e408d0c6c4a75058"
-    sha256 cellar: :any,                 big_sur:        "f373c0447546203bccf316ec435e111ecad273c4e4b9574c84db242ddb778800"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0812cf1e53956d61f4070917ad509096a2ab61e3e0f5a355edef47203547229c"
+    sha256 cellar: :any,                 arm64_ventura:  "cb9b57e7a003e4b1a5828f6bf253e55824f66dc1fc651d3121de6f8fcf94a9ee"
+    sha256 cellar: :any,                 arm64_monterey: "fef6cb2de8fa8c258f8ab8240ec7c98987d01b3edc13c7370671b56fbc55dbd1"
+    sha256 cellar: :any,                 arm64_big_sur:  "7ac98ef8cada979601ea087b6cdf0fd1d40981db5c705e5bc3d386569d4ba9bf"
+    sha256 cellar: :any,                 ventura:        "c0a3976cd359eaee239a340d71a9d3f7d41884efdca4addaa9bc00bdc531ad0f"
+    sha256 cellar: :any,                 monterey:       "87ad6908ab20d87b1d979eb1aa4803c1afde91f6f4586f754c29c7e8af22a8dc"
+    sha256 cellar: :any,                 big_sur:        "5398c6f148c8debb283311dbba0310d51450c88c3a886b44cac937955f5fc87b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4cb7ccc3759969e226a8abf416faabe26610387c1fd845b73cbbbb956209c2a"
   end
 
   depends_on "cmake" => :build

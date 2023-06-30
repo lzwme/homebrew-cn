@@ -1,18 +1,18 @@
 class PythonTypingExtensions < Formula
   desc "Backported and experimental type hints for Python"
   homepage "https://github.com/python/typing_extensions"
-  url "https://files.pythonhosted.org/packages/42/56/cfaa7a5281734dadc842f3a22e50447c675a1c5a5b9f6ad8a07b467bffe7/typing_extensions-4.6.3.tar.gz"
-  sha256 "d91d5919357fe7f681a9f2b5b4cb2a5f1ef0a1e9f59c4d8ff0d3491e05c0ffd5"
+  url "https://files.pythonhosted.org/packages/57/e3/b37a6b1ce6c1b2b75d05997ec24f73c794bc05a587e0f30a532d0ab13cb2/typing_extensions-4.7.0.tar.gz"
+  sha256 "935ccf31549830cda708b42289d44b6f74084d616a00be651601a4f968e77c82"
   license "Python-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "547aab2906086468fabb280d9deb64692a2242c2d5356182d7d555aecf9304ce"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "beeb6a8be25cdbec9491db1f73b0b43b9d0abb604fefb0c7286a745c6e313b7a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f62c9b9050f23ff88cbbd3dc1987cfe83cd3f847f5132a43bd0ea1caab912112"
-    sha256 cellar: :any_skip_relocation, ventura:        "9d765f1c724e20e70c89472d7faecb6f20ba213f63b73f1af316eac8f0b033b0"
-    sha256 cellar: :any_skip_relocation, monterey:       "1f95ac07e650ffc376a57f53da24df0a3f7ccafaa2ef2a90efbd9c4b190a89ef"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bc620a3084d695ba7c002603e7cf9b0b19a820a26312333de6b7fdb2dd4485dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd3a3059f1668a590e32130a985dd5d67b5f84c449967e1012726f5509e46506"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e66c7b50230e8720b396849a4774f09f58ef615335189ce306362c84436450e4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3c475a71df87f72a366f3111a09f5f61829a7d80745fc81a9774b86868fe313"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "23289d9e2d527bd5bf57759c72f9e60a1945b4ab385583fbc6cdade422b57b85"
+    sha256 cellar: :any_skip_relocation, ventura:        "4f01cdbcb054165520da3a218fd1c6c1d45acee2400502a4895f238454c2f3c3"
+    sha256 cellar: :any_skip_relocation, monterey:       "057f8e9e083522bd0f077fbd0a1471723335e514774d85dd6cf11e4e92b396de"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5679b2de76d9ccd645aaaf0fe636d01df2567b3a19462009774f135f00721998"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aeddbedc96c1d3f50852a5d194fc719507a8e266cfd18311809b0b39f76c8f44"
   end
 
   depends_on "flit" => :build

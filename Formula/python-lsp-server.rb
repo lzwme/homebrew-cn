@@ -3,19 +3,19 @@ class PythonLspServer < Formula
 
   desc "Python Language Server for the Language Server Protocol"
   homepage "https://github.com/python-lsp/python-lsp-server"
-  url "https://files.pythonhosted.org/packages/73/82/34eea2e9f8b93f2cb97425140e06cae21a1e43a93ee3da70c975856c9281/python-lsp-server-1.7.3.tar.gz"
-  sha256 "a31b0525be6ec831c7d2b476b744e5aa5074633e1d1b77ee97f332cde15983ea"
+  url "https://files.pythonhosted.org/packages/7e/56/b7c8569ab17ed75a858487d26fa5e8f489e72e8d5842107329490c6a6323/python-lsp-server-1.7.4.tar.gz"
+  sha256 "c84254485a4d9431b24ecefd59741d21c00165611bcf6037bd7d54d0ed06a197"
   license "MIT"
   head "https://github.com/python-lsp/python-lsp-server.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "47e80469a08de2808310820ccbaaf46918c719ddb381a4460c09f4e941559b6b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9b8f30603c0449a32d1eb02f0a34f17e7f8fcf4d78e4837b063e5b78b502ecb8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "158999e728ab69a8bbf0be3ea9c48d6ad4172f4b1297ea2d1ac041aa248514e1"
-    sha256 cellar: :any_skip_relocation, ventura:        "884bfd971d9c4b016ca05b375b8ca9b86ea929bbd8a850e58669f63cfdd3a0b5"
-    sha256 cellar: :any_skip_relocation, monterey:       "27dcec30cb549f3f3855f428578bd779a49b1c849dbc2a30c5b071c8f3bf87ed"
-    sha256 cellar: :any_skip_relocation, big_sur:        "35664fb796ec8998c93f8590b2b54eb326c89cf01fad81e177d72bd6af03b3e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a70ef0de7ee3edd03a8d8ca0e1ca3000fa3e6ec9597b0e514c2c09b8a19069f4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "57d34e162fcf7aef1306819128666e8074b403c286079eebd8dbb103a06ca2ac"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2a55c509df735ed9d7b7012429638e3d23bdc188c69f3743e43471ba5b84825a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cc0867d011ced05959711f954de6e648b52a9baf7bc26684a2544f8c388589d0"
+    sha256 cellar: :any_skip_relocation, ventura:        "1ee8b82feb43df17440a7a1e8bc4753ea9eed0fddc3f88fff17e21333665b721"
+    sha256 cellar: :any_skip_relocation, monterey:       "2cdb423a3dd9a313147fc6c8f9f869b374f4cb1412a58479f573f21755b6052d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0295940e60167375957319f45cd49ccc085c27696e8fc6bc10d2fa4a6ff12ea9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc751949b75695e98248f3414340deae6249e2d07eb9465cfaf40316cf8b9d80"
   end
 
   depends_on "python@3.11"
@@ -36,8 +36,8 @@ class PythonLspServer < Formula
   end
 
   resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/a1/16/db2d7de3474b6e37cbb9c008965ee63835bba517e22cdb8c35b5116b5ce1/pluggy-1.0.0.tar.gz"
-    sha256 "4224373bacce55f955a878bf9cfa763c1e360858e330072059e10bad68531159"
+    url "https://files.pythonhosted.org/packages/8a/42/8f2833655a29c4e9cb52ee8a2be04ceac61bcff4a680fb338cbd3d1e322d/pluggy-1.2.0.tar.gz"
+    sha256 "d12f0c4b579b15f5e054301bb226ee85eeeba08ffec228092f8defbaa3a4c4b3"
   end
 
   resource "python-lsp-jsonrpc" do
@@ -46,8 +46,8 @@ class PythonLspServer < Formula
   end
 
   resource "ujson" do
-    url "https://files.pythonhosted.org/packages/43/1a/b0a027144aa5c8f4ea654f4afdd634578b450807bb70b9f8bad00d6f6d3c/ujson-5.7.0.tar.gz"
-    sha256 "e788e5d5dcae8f6118ac9b45d0b891a0d55f7ac480eddcb7f07263f2bcf37b23"
+    url "https://files.pythonhosted.org/packages/15/16/ff0a051f9a6e122f07630ed1e9cbe0e0b769273e123673f0d2aa17fe3a36/ujson-5.8.0.tar.gz"
+    sha256 "78e318def4ade898a461b3d92a79f9441e7e0e4d2ad5419abed4336d702c7425"
   end
 
   def install

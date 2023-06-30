@@ -1,19 +1,19 @@
 class Cppcheck < Formula
   desc "Static analysis of C and C++ code"
   homepage "https://sourceforge.net/projects/cppcheck/"
-  url "https://ghproxy.com/https://github.com/danmar/cppcheck/archive/2.10.3.tar.gz"
-  sha256 "8aae5e116daeaaf5d19f3efa61b91c06f161cb97412a1d1af6e1e20686e48967"
+  url "https://ghproxy.com/https://github.com/danmar/cppcheck/archive/2.11.1.tar.gz"
+  sha256 "fef6ef868d562d49136f158e1d0f7a38237e7e1c0a91d9189bdd465f1fe54316"
   license "GPL-3.0-or-later"
   head "https://github.com/danmar/cppcheck.git", branch: "main"
 
   bottle do
-    sha256 arm64_ventura:  "a938844ffa0e18ce01a484cbf8337b9bd5beb53a6caf5e3216f14d6af52ae7ba"
-    sha256 arm64_monterey: "2fd0c4431d164540040a7d1a01757c4784761d16bb99edba2e08fb549f9b474c"
-    sha256 arm64_big_sur:  "02b820d800d4ccb42bdc5d3ac103eab8927fdf25c77302c1631579dd82a67842"
-    sha256 ventura:        "87690f458a9de8af8ca2889338ad0fb386444615923bee37ef02fccaf111e8bc"
-    sha256 monterey:       "3f15255e707c6248b120f586cd41f40d64f898fc35faa6ab1ace7626d803bf6c"
-    sha256 big_sur:        "87420cca7618715fd6aa608cb75f0b8041f12ac78129d3955f1b976a3b357ab0"
-    sha256 x86_64_linux:   "9782c7fdd9257bc8f4efdc8863db1890b0b15805648143abb423acd8549a63a7"
+    sha256 arm64_ventura:  "48933b2187e98a0b70003d594042e311a354c1e782d64a7f49781374af71b635"
+    sha256 arm64_monterey: "ec42be87bd74f2d27ac56a8720115f179a23c863027d8fdac992e987b7034f50"
+    sha256 arm64_big_sur:  "32fe3a51ddccf0ac5cdc76dba7002ab00417be3b70043892e9277b42e106ea6c"
+    sha256 ventura:        "c8a4389214138d7f729759f7fd43a8ab60ccbdf60a3431596f3d02daf5881fcb"
+    sha256 monterey:       "49d88ab7633210b3c5f8731ecc4fda8375801b5b9b2dedc445241efa4a7cd864"
+    sha256 big_sur:        "54566b98f2fb96d9d8aacc8a0a21bb46857f331bbd52f08ffd3ec3d5c25d89d7"
+    sha256 x86_64_linux:   "d81099bf2338bcd416ee94ad75a9a462162a6f514048e6585fa2bf271292846e"
   end
 
   depends_on "cmake" => :build
@@ -90,7 +90,7 @@ class Cppcheck < Formula
     # check the correct number of detected tokens and function names.
     addons_dir = pkgshare/"addons"
     cppcheck_module = "#{name}data"
-    expect_token_count = 55
+    expect_token_count = 51
     expect_function_names = "main,GetNumber,Example"
     assert_parse_message = "Error: sampleaddon.py: failed: can't parse the #{name} dump."
 

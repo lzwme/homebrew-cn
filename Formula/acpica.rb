@@ -1,8 +1,8 @@
 class Acpica < Formula
   desc "OS-independent implementation of the ACPI specification"
   homepage "https://www.acpica.org/"
-  url "https://acpica.org/sites/acpica/files/acpica-unix-20230331.tar.gz"
-  sha256 "0c5d695d605aaa61709f3c63f57a1a99b8902291723998446b0813b57ac310e2"
+  url "https://acpica.org/sites/acpica/files/acpica-unix-20230628.tar.gz"
+  sha256 "86876a745e3d224dcfd222ed3de465b47559e85811df2db9820ef09a9dff5cce"
   license any_of: ["Intel-ACPI", "GPL-2.0-only", "BSD-3-Clause"]
   head "https://github.com/acpica/acpica.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Acpica < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "d5bc81ae6d21be9bb492c4cedf64201bc80eb3b7cecb6f91010dcb4bb8aaeb28"
-    sha256 cellar: :any_skip_relocation, ventura:       "f40092e1689e86fe1fd20e28f5741d17bbad91cc1ad8a03b96d9ef9b5d58c51f"
-    sha256 cellar: :any_skip_relocation, monterey:      "2044755952b25d661d7dc0a64aafd4a20dab29898634a6e74a0b406bea1764e0"
-    sha256 cellar: :any_skip_relocation, big_sur:       "b67a340c0036a142b176feb0c1010a20e561913b60c5030b3dc4ea90d4783c94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fdbe69af80a2c8b1289ecc7cbd868cc35511ff64836333bd7b30f680367cca6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "2ddd72091b044be0051b3af6fa48c80e41203670c385960f7b500fc4b14b6eb9"
+    sha256 cellar: :any_skip_relocation, ventura:       "c2811142ad47f32e3595a02897667e8dbee50df06ecf5c252dc584e08fef0947"
+    sha256 cellar: :any_skip_relocation, monterey:      "717e438aa297171b45e25d52f2436957df19c164c9b6496bd43307483a5dc839"
+    sha256 cellar: :any_skip_relocation, big_sur:       "30bc6c4eb2da2abc6f981eac5d93dc07dcb3c9f1932501b7aa6aa1595ed0b1d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e001787a56236df6a2513bde3bb5444378da2df357d08f9aa1fdcc83161c0f0"
   end
 
   uses_from_macos "bison" => :build

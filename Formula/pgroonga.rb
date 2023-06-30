@@ -6,8 +6,8 @@ class Pgroonga < Formula
   license "PostgreSQL"
 
   livecheck do
-    url :stable
-    strategy :github_latest
+    url "https://pgroonga.github.io/install/source.html"
+    regex(/pgroonga[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do

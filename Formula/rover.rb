@@ -1,19 +1,19 @@
 class Rover < Formula
   desc "CLI for managing and maintaining data graphs with Apollo Studio"
   homepage "https://www.apollographql.com/docs/rover/"
-  url "https://ghproxy.com/https://github.com/apollographql/rover/archive/refs/tags/v0.16.1.tar.gz"
-  sha256 "1789ae56cecb2913800d372aaf5d7abce13cd78f368e86c80dbf20ca87a3bdd0"
+  url "https://ghproxy.com/https://github.com/apollographql/rover/archive/refs/tags/v0.16.2.tar.gz"
+  sha256 "e46f18e6274a6a769a2bebffa24f9a9d7fd9b7228c9008b1afa2ddc1055f76f6"
   license "MIT"
   head "https://github.com/apollographql/rover.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "562017a2d10b311d4c329e9581d39b3622a5a349ab067f900bc948a00cbfef1e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e72433c0c684c3ccdd7ab18a1eb3dd4ba2cb06a24188e44f035585f60b66c6ab"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7c084fc203fb9a2b8d40daf208e433184f9da795d7ecdee6a51274fd30e3d3d8"
-    sha256 cellar: :any_skip_relocation, ventura:        "f01c4d068534a2c54e92a8c07c01c2e8cc58fa84fd6d20cc7fa72d1f95059140"
-    sha256 cellar: :any_skip_relocation, monterey:       "4a35f8c5e77504c378fb1f3d79be2bf2f0695870a6ea118b42e627b07d2ba948"
-    sha256 cellar: :any_skip_relocation, big_sur:        "165c04fe503b6075ce44e6e3ee9604e93ba6c556f8d78351d6556fb07ed0a3a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d00fdc7dde5593c22bc148c1d2c19c66f0f7bc894e18043f7e0acaaaa6c800e6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a466a9b9bad89deb4502e37448bf7891c6231acb1fc1ea1c406443aaa0a494d4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6feee304f8237b3dfbbfcff61dbb32b5e4576eefa4953fb64122cbdf7a280088"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "158f79be671594b09081e2a1406ce17f8cd4aa13b8d6eac66469ef3e26c3f8c1"
+    sha256 cellar: :any_skip_relocation, ventura:        "dcdebc691b8f233a4d346dd16b668490a68c3e69a4ddc32a91ea00d12c1742ab"
+    sha256 cellar: :any_skip_relocation, monterey:       "dbd86ccd3b61e5dfa74d5e3653bd5ae966b82916b37d30cbbb821f9fd64ee954"
+    sha256 cellar: :any_skip_relocation, big_sur:        "80564a317fc7b9450c421beb3b9f75117dbcce15f25ef6b9aa669f5a1973c929"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80a9a73b074c512d79a492713d79bdc04066b4c25af356d9b24cd544dc47dfc1"
   end
 
   depends_on "rust" => :build
@@ -22,6 +22,10 @@ class Rover < Formula
   uses_from_macos "zlib"
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     system "cargo", "install", *std_cargo_args
   end
 

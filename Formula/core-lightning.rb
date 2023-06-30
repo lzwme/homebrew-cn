@@ -2,10 +2,9 @@ class CoreLightning < Formula
   desc "Lightning Network implementation focusing on spec compliance and performance"
   homepage "https://github.com/ElementsProject/lightning"
   url "https://github.com/ElementsProject/lightning.git",
-      tag:      "v23.05.1",
-      revision: "484d4476256815056e5d82991d677553c74315c1"
+      tag:      "v23.05.2",
+      revision: "e512f918fcaef276163b185cd712b89335424afd"
   license "MIT"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,13 +12,13 @@ class CoreLightning < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "502288a3ef4ea4669d2dcbe2d19b54949ade9aaaa8b8ec666b9b708031bc8bdf"
-    sha256 cellar: :any,                 arm64_monterey: "642635c85400182952970544b4009bde2bd767f0196b270ce7eda2453b097dc3"
-    sha256 cellar: :any,                 arm64_big_sur:  "abdf160f41f1d3f06963e9e1966a607658750ec33598a48865c71ef14afe9092"
-    sha256 cellar: :any,                 ventura:        "9a5172d787b85b480f26319dd1385720090aad65286f42ccaf47341af71c8abb"
-    sha256 cellar: :any,                 monterey:       "4a400e53d1a886e116d7879b87675406df10b256d931693a13ba920ad797081c"
-    sha256 cellar: :any,                 big_sur:        "6b64c4ad74bb16e9f92360c786b2bbd2bb3b33ee9d646b81e04ffb2ce0f99cb0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "152b4bbade729494ea37a3d82e080c6521574b928ff9beb23bd06517abbed4c1"
+    sha256 cellar: :any,                 arm64_ventura:  "203aab4287153fd4aa021ad4366c2221c0018dd772e35eb43f7cb56fd21bfae8"
+    sha256 cellar: :any,                 arm64_monterey: "906a85870a5254de4cc8a50d1bc53388b96c17725bb9556d65a3d2c2380e4d1d"
+    sha256 cellar: :any,                 arm64_big_sur:  "0b0d5f5af0efb7a469d8c19c24cc47bfbb0127c3bf366b3638d01a21a9056d1d"
+    sha256 cellar: :any,                 ventura:        "dff08af76e20e2d86545a2095de683551657fb1299d8bb024fa01ebacef17683"
+    sha256 cellar: :any,                 monterey:       "095fc6ca690c2b308f1296d71b59fab7f12d2f950c9a22e39c794fff003e9bcb"
+    sha256 cellar: :any,                 big_sur:        "48fd90e65d7cdf4cb35902d757c74461f73be54d35d79bcbdfa4497e2cda76ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eafdcf1cbe25ee45c72e373bee9d153ed5fee684d4b9437d22db239145bc4779"
   end
 
   depends_on "autoconf" => :build
