@@ -4,16 +4,16 @@ class Oq < Formula
   url "https://ghproxy.com/https://github.com/Blacksmoke16/oq/archive/v1.3.4.tar.gz"
   sha256 "9e99c9ba292c466ca39fb7f6d0053f9fe13c2768a7493d1ef88ea2ca2e0d0ca0"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6f881c126af64b040e201046d551b1271b033004874fd6a245622d9fc360072d"
-    sha256 cellar: :any,                 arm64_monterey: "0ae85bcb68114e264bce9def780201dab80edaebc91a15811799976c42fc5682"
-    sha256 cellar: :any,                 arm64_big_sur:  "a24d7e3301c02d8878d6b91371d48d40f9f659d678e8702785d59130d6374fee"
-    sha256 cellar: :any,                 ventura:        "09c18e63d77bdaad60afe431d07905ed214e93dd05b211c0c4925aee9528b1c3"
-    sha256 cellar: :any,                 monterey:       "54a718d39d431feed30e2930557a6b97076d387194e9fd2534036cbcb415f1e0"
-    sha256 cellar: :any,                 big_sur:        "6a560c164ee5ffb25c9449f3956d8e454b74ffa4681c2845e66c4df31f21cfab"
-    sha256 cellar: :any,                 catalina:       "130986726eb1f832c75c22742d59674368b27f7c26685f0ca239067bdcc4be7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a9602d92baeaf93b02ff375f669b1dc3b07f39926b1db40362601cb5b70e315"
+    sha256 cellar: :any,                 arm64_ventura:  "75a8cc4cfa2586b342b64c65e4a6aac0d03a4fcaf9aeb3e3f5455d07282788e0"
+    sha256 cellar: :any,                 arm64_monterey: "8e50955137a1196431e6323923a223bca628e6e25bc15de29a40f714e117fc9e"
+    sha256 cellar: :any,                 arm64_big_sur:  "6593873b7bf1f52b6ef49efcf24a82116f67ec418180407c146cac2a7fdc3732"
+    sha256 cellar: :any,                 ventura:        "74bf344804ef1017576514cabde8ca1dc51c73535cd3fca0e0c3820b0adca9f6"
+    sha256 cellar: :any,                 monterey:       "fcb33b4ec3d23973937252c430bdf01c9047020d374c31e9f15f9f63e04a82c1"
+    sha256 cellar: :any,                 big_sur:        "ed634cea33ba5fd7418eb32f24fd551c46bcd1b45dc1c8d3495b1136f2e7f57f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01c0353f5948a11b8f17fb28ab4fa33f9b164435916b80675e15270e811d8821"
   end
 
   depends_on "crystal" => :build
@@ -22,7 +22,7 @@ class Oq < Formula
   depends_on "jq"
   depends_on "libevent"
   depends_on "libyaml"
-  depends_on "pcre"
+  depends_on "pcre2"
 
   uses_from_macos "libxml2"
 

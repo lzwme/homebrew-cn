@@ -2,19 +2,19 @@ class Mesheryctl < Formula
   desc "Command-line utility for Meshery, the cloud native management plane"
   homepage "https://meshery.io"
   url "https://github.com/meshery/meshery.git",
-      tag:      "v0.6.99",
-      revision: "33ece5d95216d8a3ee1d7162c96ae76ea25052f3"
+      tag:      "v0.6.103",
+      revision: "40368c484fa39b437852980e6f169bb3aee47d8f"
   license "Apache-2.0"
   head "https://github.com/meshery/meshery.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ae279904409516c14c8df76766d412e7c80a509a02bacd23b3c16d4f5a67fd0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0ae279904409516c14c8df76766d412e7c80a509a02bacd23b3c16d4f5a67fd0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0ae279904409516c14c8df76766d412e7c80a509a02bacd23b3c16d4f5a67fd0"
-    sha256 cellar: :any_skip_relocation, ventura:        "79962c0c517c821eddadcfe0fb67242d171015585e0db126ae1551e0db6b884e"
-    sha256 cellar: :any_skip_relocation, monterey:       "79962c0c517c821eddadcfe0fb67242d171015585e0db126ae1551e0db6b884e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "79962c0c517c821eddadcfe0fb67242d171015585e0db126ae1551e0db6b884e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a62573ed06c829f93b1dd7224ccacfaa5d747e9ed5b2cabbde308f4b224a8e9f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ddff0949691a5914db33a5f9f0aa222b03235b8efe9d3e7e10b8df9384e973c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0ddff0949691a5914db33a5f9f0aa222b03235b8efe9d3e7e10b8df9384e973c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0ddff0949691a5914db33a5f9f0aa222b03235b8efe9d3e7e10b8df9384e973c"
+    sha256 cellar: :any_skip_relocation, ventura:        "a2144afd1fd8e69fa1244ffe7715758ed0ae6d251e4641bb8059ba7a05660f5d"
+    sha256 cellar: :any_skip_relocation, monterey:       "a2144afd1fd8e69fa1244ffe7715758ed0ae6d251e4641bb8059ba7a05660f5d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a2144afd1fd8e69fa1244ffe7715758ed0ae6d251e4641bb8059ba7a05660f5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "490e65510e4f5fed58894305a5a68ccf2e288d81b8d876d19b43e03ddca38f2d"
   end
 
   depends_on "go" => :build

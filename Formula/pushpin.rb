@@ -1,17 +1,16 @@
 class Pushpin < Formula
   desc "Reverse proxy for realtime web services"
   homepage "https://pushpin.org/"
-  url "https://ghproxy.com/https://github.com/fanout/pushpin/releases/download/v1.36.0/pushpin-1.36.0.tar.bz2"
-  sha256 "9f8243e9b4052a4ddc26fed5e46a74fefc39f0497e5f363d9f097985e8250f8e"
-  license "AGPL-3.0-or-later"
-  head "https://github.com/fanout/pushpin.git", branch: "master"
+  url "https://ghproxy.com/https://github.com/fastly/pushpin/releases/download/v1.37.0/pushpin-1.37.0.tar.bz2"
+  sha256 "5fe5042f34a7955113cea3946c5127e3e182df446d8704d6a26d13cde74e960f"
+  license "Apache-2.0"
+  head "https://github.com/fastly/pushpin.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 ventura:      "812691f678a11153b1c81bc116a5ffb3e16f71d8c55ebefb1684e2215c7d91c6"
-    sha256 monterey:     "ce250ecc703f631f4a613ac6e2fe8a63e8eef24e49af5dfa0cf1c4683fbd68f1"
-    sha256 big_sur:      "f553c2932f6650caa39126bc0fab6bda2c2a2394ade2fd292196bc683b461198"
-    sha256 x86_64_linux: "512449c5c34beb705907ff40485f8d0a7ca80c6a6dcc24c174b50af2f63ea0f9"
+    sha256 ventura:      "a14bd996772ffd8d662690864e7412135fd3fa50df4d953694969d02280971ea"
+    sha256 monterey:     "9b7ffe6547bb8bf7790b64d0ca0fb81a85d069dbc5bf8782606fd670afa730e6"
+    sha256 big_sur:      "c382905cb6068f69fb4af65a0f5fcefd441519d1fb186d4ffbe048126e701b82"
+    sha256 x86_64_linux: "2e3da86aaf8b0bd905cac0ec5291e6ea2e111c287cc44b68a9b05333287a8bce"
   end
 
   depends_on "pkg-config" => :build

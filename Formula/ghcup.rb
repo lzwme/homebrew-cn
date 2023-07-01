@@ -2,10 +2,9 @@ class Ghcup < Formula
   desc "Installer for the general purpose language Haskell"
   homepage "https://www.haskell.org/ghcup/"
   # There is a tarball at Hackage, but that doesn't include the shell completions.
-  url "https://ghproxy.com/https://github.com/haskell/ghcup-hs/archive/refs/tags/v0.1.19.2.tar.gz"
-  sha256 "ceb9f0c244d8dc83e27379df8fda9b8753e18c67c0a8cce3b94b4e28f2d2b329"
+  url "https://ghproxy.com/https://github.com/haskell/ghcup-hs/archive/refs/tags/v0.1.19.3.tar.gz"
+  sha256 "4c74875665975e3a2cdf0c11cc7cc4cd2558308ef7a3f7f3689c57450b9172d0"
   license "LGPL-3.0-only"
-  revision 1
   head "https://github.com/haskell/ghcup-hs.git", branch: "master"
 
   # Upstream has retagged a version before, so we check releases instead.
@@ -15,13 +14,13 @@ class Ghcup < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "13a7a02e53e4b1ce803efa68574d3c26c06e3bbc28a2118b706aba0f3bea3bc5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f577e9464d37bb18dbb57cdb1e59383196d3caad2dfc94f9facbe9cb875caaa7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8d7b3dc3d40bbcc40381275e2d2abea35f2c57514ec2f8e3f98c99da8284a792"
-    sha256 cellar: :any_skip_relocation, ventura:        "c48ee5fe5ccce4b9f26f602c5852bec4887dbba848ce9482fc2f25303489c8c0"
-    sha256 cellar: :any_skip_relocation, monterey:       "1ff70a0cf57fddfea58ef213b73ba6fa72f4721775afb6114d22e1de2ab4ffaa"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2efd9b013e2eaf52d4b68ad7163ceb5019611a69090f715295f846946d4df7ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93a3a4f1572d7cc33bbda385306bc4f70c9b91ff485c6f39c1980c62ef510532"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "94f49d28ce442e0a685a278e2617b9443d57a4dc3b592d92af45733b38481165"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "60081ee15d3a8bf2c977c06e6b74bbe083214cf41e1f388427e9d6230fab976c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1810cee7ed24cca73de00eb806fae98cb05320d1ccf4120b614b399052d264da"
+    sha256 cellar: :any_skip_relocation, ventura:        "3c9686bd1d29f8357b8eac44345a99e4e138c0892cdf8f08ca67f7382e6ae6bb"
+    sha256 cellar: :any_skip_relocation, monterey:       "93b08f470550f0516bac16e343868bea0e228b99a0278e09d2a0298306a91bc9"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ee6192061d78b37033cdafcb5c598e36c2533321fd1d78bbf38eb0f67f826d5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f811f0a079480809be9386eb690eb33a889ebca6ec4dc34139813c7eda4aa8f9"
   end
 
   depends_on "cabal-install" => :build

@@ -1,19 +1,19 @@
 class Cascadia < Formula
   desc "Go cascadia package command-line CSS selector"
   homepage "https://github.com/suntong/cascadia"
-  url "https://ghproxy.com/https://github.com/suntong/cascadia/archive/refs/tags/v1.2.7.tar.gz"
-  sha256 "ff314144fdab70a7347b0c1a27b5e6628abe72827947e3cb571cebd385fd61df"
+  url "https://ghproxy.com/https://github.com/suntong/cascadia/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "1ee285d683aa3956dbeb28cd9ee2c60f0ab3a5da8e66a98ca3fb718d3214b775"
   license "MIT"
   head "https://github.com/suntong/cascadia.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "65b90030a149ed44e56fc8399fceaa7d3307dce4951018d203fec522722b5c8a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "915e11269b0658517c806deb79646119a53124136ff45954504a3ea8b93fa5e8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "75868779193019bef18dfc7659c8df745178ca4719305f5a009cd289c28e2e35"
-    sha256 cellar: :any_skip_relocation, ventura:        "cdc7271290c034162eeac51ac56bc5b7482b6d3c4cb027008278c7ebbedde79e"
-    sha256 cellar: :any_skip_relocation, monterey:       "9f9f51c6bf2fe1c811d60e3cd1471bf640bd6d80cea974c5ffde79fe0533effc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f26cf2962f52d9c4d298cb50d1f2031fa13aa803636d68266a5c605b646e2026"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50c45d03b556eda022221bf2d139f8a0bae38cc7805a9f5ded46f196d1641b95"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "506f6721049179118bea0514854909832198d552c52bb122f1648c17b91ab7dc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "506f6721049179118bea0514854909832198d552c52bb122f1648c17b91ab7dc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "506f6721049179118bea0514854909832198d552c52bb122f1648c17b91ab7dc"
+    sha256 cellar: :any_skip_relocation, ventura:        "bd7802721fdc17cfa6a5c99688899786c5d850679c83a3fa9cbbdb91a490ae53"
+    sha256 cellar: :any_skip_relocation, monterey:       "bd7802721fdc17cfa6a5c99688899786c5d850679c83a3fa9cbbdb91a490ae53"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bd7802721fdc17cfa6a5c99688899786c5d850679c83a3fa9cbbdb91a490ae53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "526b3788f4ac0884adfd8b6603bb0e8fe5719d77cca281ad5846b45f3c729106"
   end
 
   depends_on "go" => :build

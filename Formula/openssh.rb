@@ -6,7 +6,7 @@ class Openssh < Formula
   version "9.3p1"
   sha256 "e9baba7701a76a51f3d85a62c383a3c9dcd97fa900b859bc7db114c1868af8a8"
   license "SSH-OpenSSH"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/"
@@ -14,13 +14,13 @@ class Openssh < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "25275db5e437a463381adc4fb510ccf38ee1884f3aeef25bd11f243b70a190e9"
-    sha256 arm64_monterey: "a33d7a73c9bae2b71277a3f4b71a926214f28b945e1deb31018eee171eaf18b8"
-    sha256 arm64_big_sur:  "5be316b90b1cb3bca34b04880823521fbc2550e5fad13b2393053621f6778c52"
-    sha256 ventura:        "74631071090c319cc973394af9ea2f92e23b6cda54912e0548d83a165894fe66"
-    sha256 monterey:       "b190854db1a47f11be8670e7175050577bd58cbcde7db92d76b5198930d184cf"
-    sha256 big_sur:        "025ba8bcdfd679fe0ce5ae67db8969f804aa1fcfe953aed3f825fd5b33c11228"
-    sha256 x86_64_linux:   "6cfa57236e4b0702e51906179fb96b71548820ced3fd50c85558bcc4d9e64be1"
+    sha256 arm64_ventura:  "024145ed2da80719ff33da770eb2e55b8a35b8155bbcd043443bc8339b878948"
+    sha256 arm64_monterey: "a4cf111f96468ef4271e073049cb5e7f87f1a9cd3d548ccf4e8f7a1c0e5a747d"
+    sha256 arm64_big_sur:  "edd06421a1129e3aa258b624de9dcde8b23e3b27a757e603f0468e4dfecdc29c"
+    sha256 ventura:        "6c01a7f2af0b301dc186230cdec1bc3a53ec8b8f4eedc66fd126a2c0d5e94978"
+    sha256 monterey:       "0a2454e565659035f8c0d43ba90d57caf7be07a46565272c1717cb24e1269b87"
+    sha256 big_sur:        "b31525f67964a26b321c9f027fc4a4d8a4f0e247bf93fd2ac664283bbd3a78f9"
+    sha256 x86_64_linux:   "ef4bc0a5f6b91f2fac4e50c2ca6b39f8aec8752bd9b31bb3896004d3eb2d726d"
   end
 
   # Please don't resubmit the keychain patch option. It will never be accepted.
@@ -71,7 +71,10 @@ class Openssh < Formula
 
       # FIXME: `ssh-keygen` errors out when this is built with optimisation.
       # Reported upstream at https://bugzilla.mindrot.org/show_bug.cgi?id=3584
-      ENV.O0 if Hardware::CPU.intel? && MacOS.version == :ventura && version == Version.new("9.3p1")
+      # Also can segfault at runtime: https://github.com/Homebrew/homebrew-core/issues/135200
+      if Hardware::CPU.intel? && DevelopmentTools.clang_build_version == 1403
+        inreplace "configure", "-fzero-call-used-regs=all", "-fzero-call-used-regs=used"
+      end
     end
 
     args = *std_configure_args + %W[

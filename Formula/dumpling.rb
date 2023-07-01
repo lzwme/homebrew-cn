@@ -1,8 +1,8 @@
 class Dumpling < Formula
   desc "Creating SQL dump from a MySQL-compatible database"
   homepage "https://github.com/pingcap/tidb"
-  url "https://ghproxy.com/https://github.com/pingcap/tidb/archive/refs/tags/v7.1.0.tar.gz"
-  sha256 "6f865ef2d25b1bfe250936d45f65cf64e1b638b3d718fc0595e64f2da35daf56"
+  url "https://ghproxy.com/https://github.com/pingcap/tidb/archive/refs/tags/v7.2.0.tar.gz"
+  sha256 "857483386da87a9a92e17a70249f91d08367f7d2bae6c973d7727d8ce7b4a082"
   license "Apache-2.0"
   head "https://github.com/pingcap/tidb.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Dumpling < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aea812b0a9e30b8f6874ab2dffc90e977d08b74434447a8767d8e876f45c0590"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "16d258f1821389bc9981d133b21f6d62eda30e8b6fa760e7f0169b33d7c2e005"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d3408543a833ec5b87f492b6d008876bc8e82b1a70ae62fc2e32bda17e98b32d"
-    sha256 cellar: :any_skip_relocation, ventura:        "9455bd4e50d140b5789c2286573353c5c9872d8356bae6915f84f99213052ee4"
-    sha256 cellar: :any_skip_relocation, monterey:       "97c2eccc66cdb8aa3633e252816dc3891ca46ce0c046510c6138e40840041452"
-    sha256 cellar: :any_skip_relocation, big_sur:        "418cc5b4680eed400d6dc66975b35c4af4cc4b93676890cfe5d829fb35f8cb9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af83945c1cd90c528fcacbe80375e046ccb6c198e5f077113771825377480454"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ad2f2ed3ce5abdb69485bdcbeaaa1d02ac879faf478b6f9f3a9d67db2eeae49a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0a64176500411ab0435c0ade28b15ad768f5db4c40d687dcd8b982fad7f64f2b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9f801dac0ee1a620eca1d18652d72a77491be1045367cc37482f14ab872b1ada"
+    sha256 cellar: :any_skip_relocation, ventura:        "e8f3f78e66ebec5379675b715444812698e905e44fd9612acf7efff5fd118aba"
+    sha256 cellar: :any_skip_relocation, monterey:       "c410e9ebb31d966f44ab514265c356c1f30663452e0eefb0ab94f3c064832c33"
+    sha256 cellar: :any_skip_relocation, big_sur:        "82ce59680b9c02ab254e9be5671f2a237329bbd58caa2696d297ec346286fe2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e76e21443a8c155c1d160bb2f6b92586b7fb9fd0965b66e8678ae5e703e32fd5"
   end
 
   depends_on "go" => :build

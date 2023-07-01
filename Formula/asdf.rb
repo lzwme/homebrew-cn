@@ -34,6 +34,8 @@ class Asdf < Formula
       To use asdf, add the following line (or equivalent) to your shell profile
       e.g. ~/.profile or ~/.zshrc:
         . #{opt_libexec}/asdf.sh
+      e.g. ~/.config/fish/config.fish
+        source #{opt_libexec}/asdf.fish
       Restart your terminal for the settings to take effect.
     EOS
   end

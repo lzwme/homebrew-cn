@@ -1,20 +1,19 @@
 class Srt < Formula
   desc "Secure Reliable Transport"
   homepage "https://www.srtalliance.org/"
-  url "https://ghproxy.com/https://github.com/Haivision/srt/archive/v1.5.1.tar.gz"
-  sha256 "af891e7a7ffab61aa76b296982038b3159da690f69ade7c119f445d924b3cf53"
+  url "https://ghproxy.com/https://github.com/Haivision/srt/archive/v1.5.2.tar.gz"
+  sha256 "463970a3f575446b3f55abb6f323d5476c963c77b3c975cd902e9c87cdd9a92c"
   license "MPL-2.0"
-  revision 1
   head "https://github.com/Haivision/srt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9367c165b0403c682e2114dbf9b69fdf73e9d0d45061fb38d9c60d6a7ad96259"
-    sha256 cellar: :any,                 arm64_monterey: "5b0b6aaf8789bb3e186b44f5aa2c5f2b5dc21d81b3acabd736d7e8118f6c8698"
-    sha256 cellar: :any,                 arm64_big_sur:  "9066cf26efb2a4fcbae35e469ba4a789409cc5cd82f380199ebc6bd8223abc63"
-    sha256 cellar: :any,                 ventura:        "f97789806dce21536acc23a343a9ccb39153f2d5eb361b4f3dd14a3e00815af0"
-    sha256 cellar: :any,                 monterey:       "b3cf9a1aef82edad275d1a4a86cf92e96cfc4015a43bb6cb0d11100935ea03fe"
-    sha256 cellar: :any,                 big_sur:        "a553462e28ffb0869605ad62b07bab10d678d8b2e9d9ac7a5eda12eb47979ce8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5015b64dbcb9637df8ed9b000d44a65875b0b306e64f8743d46a5392f2525104"
+    sha256 cellar: :any,                 arm64_ventura:  "cd2e45f7be1158e4f9480bea9f425d1ce269457c2f6a2f18c3119c2c72b3af50"
+    sha256 cellar: :any,                 arm64_monterey: "2bd6dc0760694c380b66b4a17347075c420ba4a37d6f2475810c675ddd56208d"
+    sha256 cellar: :any,                 arm64_big_sur:  "066aea3c2f61de131cbe57665022da530ee9cfd58616f8edc2ad75136c249e9d"
+    sha256 cellar: :any,                 ventura:        "7072e6258e20ec27495062f8d78298e8d113f5f0ff559893075ad5192841f32a"
+    sha256 cellar: :any,                 monterey:       "83f683b9c11af2daa82111ca680c923e619f04b8f834a737ddfeccd1fd866e5b"
+    sha256 cellar: :any,                 big_sur:        "8a902633ce1c2ceb558ebdb06d49ef4c8da7eb2836b6a801a62c6658be5441ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9071902464e529bf91432967b71b5c83fec628714726856e447ddf7c0d2b663d"
   end
 
   depends_on "cmake" => :build

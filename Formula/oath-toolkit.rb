@@ -5,6 +5,7 @@ class OathToolkit < Formula
   mirror "https://fossies.org/linux/privat/oath-toolkit-2.6.7.tar.gz"
   sha256 "36eddfce8f2f36347fb257dbf878ba0303a2eaafe24eaa071d5cd302261046a9"
   license all_of: ["GPL-3.0-or-later", "LGPL-2.1-or-later"]
+  revision 1
   head "https://gitlab.com/oath-toolkit/oath-toolkit.git", branch: "master"
 
   livecheck do
@@ -13,13 +14,13 @@ class OathToolkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "78cfac4a520dd81fe758a5d55d0f05e49cfff2f91abd9ed4376922f54d8641bd"
-    sha256 cellar: :any, arm64_monterey: "916966e662d84e352bd54c21a32c0c3ba5986fe1a9711a1292f34c3acee1ff56"
-    sha256               arm64_big_sur:  "bde1ebd951548431e0a8a1a654a980a0e0d1cf189a65debc9156e0b55033fde1"
-    sha256               ventura:        "5bde0b71a6ba32c4aa622adc290cd3abf0144d1780c0985bc5cde00c5f2f5fbd"
-    sha256               monterey:       "141152f0e04f2805bc79b207c2572d42e725e459343e7353a6d0da115b5b6916"
-    sha256 cellar: :any, big_sur:        "44766968c6215e02f4456375f9f1574cf72aa813ae08eb2bbac60888d24c1c60"
-    sha256               x86_64_linux:   "dd6bb67e9c5a9f4f46dafd67a84e58f0a36cf1be54a98fc266317b5b317fbb78"
+    sha256 cellar: :any, arm64_ventura:  "c4904f8d230ac972b49388687ff2113055435f64d82d7cfa53594c907e9a55fb"
+    sha256 cellar: :any, arm64_monterey: "12e499fbe35d8d0af00dd4b481f3551571e0df4ebe061a730a1c91e3fc17e680"
+    sha256               arm64_big_sur:  "70e47d792b5442204e46a4d6afd2a99fbf185494e0924d969bdd209a30179cdc"
+    sha256               ventura:        "4eb03fed85048f55ba0f3726ccc0b2abc7d7f2c9a69b7199ced771f70d85a04e"
+    sha256               monterey:       "802b854c2c2a063610fd10d00e15548030794766f704865a7c81eec513dca4ad"
+    sha256 cellar: :any, big_sur:        "991861b4c252151ebee48befa21f53ab2c50eff47832f0b5dd4b29b74d9d5c01"
+    sha256               x86_64_linux:   "246895b0bcf47660f9dd3c663dd39bfe893bc98fa7a20787df1737d86652a1a2"
   end
 
   # Restrict autoconf, automake, gtk-doc, and libtool to head builds on next release.
@@ -29,6 +30,7 @@ class OathToolkit < Formula
   depends_on "libtool"  => :build
   depends_on "pkg-config" => :build
   depends_on "libxmlsec1"
+  depends_on "openssl@3"
 
   # pam_oath: Provide fallback pam_modutil_getpwnam implementation.
   # Remove on next release.

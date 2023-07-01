@@ -3,19 +3,18 @@ class OscCli < Formula
 
   desc "Official Outscale CLI providing connectors to Outscale API"
   homepage "https://github.com/outscale/osc-cli"
-  url "https://files.pythonhosted.org/packages/b0/60/cd6582d56188c841bd58ce004b67c0a64b8ad855175ea574f01b0158271d/osc-sdk-1.9.0.tar.gz"
-  sha256 "b6cc9b06500493ec445c073458c32b18709c6a5dd842410c3bd141efd81c7ff7"
+  url "https://files.pythonhosted.org/packages/02/cd/f1b796f5e7a301f6a3c0b910be07188cbfd329d2758e036d24ef26b4ee96/osc-sdk-1.11.0.tar.gz"
+  sha256 "d3b71b326b0698da1b9a503cd511a992fe578375fd01b30bdec0d63d8328af66"
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c4fbf4141200eb086e43820ebb1f33fc8d80471f084d64137c6965ad9f946721"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cc8053d641f5dd650ec598a197d7094945c4282fdf104689fc742db4183bf4e1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "70a22ebd659b01a1cc8ad08b1ce8c66c012e86b46fdb1dc8a29b0f5b68074ecf"
-    sha256 cellar: :any_skip_relocation, ventura:        "6b327c152baf7df98a570937d5ea8268d0a7e5167e7ca1172a6ffca5cb558f3e"
-    sha256 cellar: :any_skip_relocation, monterey:       "a73661803788450f99739566686b11b2593f22b326c9ce1a076cd388f4329ab1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0571b584182c23e849662c290dcdbe5d9289cadf35a7f5278421e78c34779a41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9264fcfdb36cd51e7b7e150a6f4ef0bedd8a6457e5bb32df38d44e30174c4bc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "15aff098f26a9371892c19d1f943154bdf58dfcad2ed793c89b3ba5ee2bd2d44"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a54431abd7d8b76cf841a6442187119deae46ef0ddea16fd268bb24b656d0b5a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "966cad5bb7d39af2f302f78e04ed6e3405a16c992d8edbda1426d018597e885e"
+    sha256 cellar: :any_skip_relocation, ventura:        "c9480133a2bdc7957342acc3ed7616f864a05d8995afebc95003867b2d312775"
+    sha256 cellar: :any_skip_relocation, monterey:       "af7b1b0c55f4d2518054f13c05da67252330b87be38c474abc11808140aa9fb6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9c5ce7edb589536f5234f9ed278d52766e265fc36380c00f4a31bce894bbf73a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db09b46692f3d46e81da9e7502c778faa22d1da08b76210a68a48cea6d0ab987"
   end
 
   depends_on "python-typing-extensions"
@@ -58,8 +57,8 @@ class OscCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
-    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
+    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
+    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
   end
 
   resource "xmltodict" do

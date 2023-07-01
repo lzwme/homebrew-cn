@@ -1,45 +1,37 @@
-class Erlang < Formula
+class ErlangAT25 < Formula
   desc "Programming language for highly scalable real-time systems"
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
-  # Don't forget to update the documentation resource along with the url!
-  url "https://ghproxy.com/https://github.com/erlang/otp/releases/download/OTP-26.0.2/otp_src_26.0.2.tar.gz"
-  sha256 "47853ea9230643a0a31004433f07a71c1b92d6e0094534f629e3b75dbc62f193"
+  url "https://ghproxy.com/https://github.com/erlang/otp/releases/download/OTP-25.3.2.2/otp_src_25.3.2.2.tar.gz"
+  sha256 "83a36f3d90deef36adb615bbfb46cd327f0b76b7668e1f7f253fd66b4ae24518"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(/^OTP[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(/^OTP[._-]v?(25(?:\.\d+)+)$/i)
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7d2356aa4fc680bdc92e59c07ac12cb5b8755561a62ca9f3842997cc92af0eb9"
-    sha256 cellar: :any,                 arm64_monterey: "311a26c77e74404551764f71e50cc4c81f476d6f519f1ed11045b26fa5efbd83"
-    sha256 cellar: :any,                 arm64_big_sur:  "eca8d2f0062845449f74c8570e12fd512c25eb41d521e80a6759eef9bbc35b90"
-    sha256 cellar: :any,                 ventura:        "10369e72c47c8732d799968b39bb9f4fb172d7a81b728d0940158dbaccb00026"
-    sha256 cellar: :any,                 monterey:       "3d8001af6fe8a4e966b05260324b6596dcc1ebd4d0655050faf9af429afe6706"
-    sha256 cellar: :any,                 big_sur:        "9f95193544d0ba84a614634605e24f6810b04a717cf387482ffc3a55bb56af67"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b30fadde080ea2e476b7e5428e80c0cd4c41a6773f1e62c9f9e80e7f97efeaf7"
+    sha256 cellar: :any,                 arm64_ventura:  "73ed0663012d8f60f290e24b57217aca3f69494f1748f51b9b1408cd4b1533ff"
+    sha256 cellar: :any,                 arm64_monterey: "85a1bb4d254e383cba643c383120e7b4b323e10df3c6491424190517da40fef8"
+    sha256 cellar: :any,                 arm64_big_sur:  "b1ba80c82f2502245a485a1ade0b337a54be726ab9233ab99cf55c6d0a0eb32a"
+    sha256 cellar: :any,                 ventura:        "a4ac143b8f6f8033fda5a41a94fa793caee7ac5e53ebad2a09cfa20e7b0318d3"
+    sha256 cellar: :any,                 monterey:       "68e409b7f8b9337cee6fb993f53e30d6dc6f58766ac431ef2c9c50c021d4e9d7"
+    sha256 cellar: :any,                 big_sur:        "1221902d898182748e3d15383f0d3510a6af6a69b1f51f570d353e27afdbd587"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0ce5150277e375d501c9bf2af1c28006f990bd803beb1a64593788c0f8f2ffb"
   end
 
-  head do
-    url "https://github.com/erlang/otp.git", branch: "master"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
+  keg_only :versioned_formula
 
   depends_on "openssl@3"
   depends_on "unixodbc"
   depends_on "wxwidgets" # for GUI apps like observer
 
-  uses_from_macos "libxslt" => :build
+  uses_from_macos "libxslt" => :build # for xsltproc
 
   resource "html" do
-    url "https://ghproxy.com/https://github.com/erlang/otp/releases/download/OTP-26.0.2/otp_doc_html_26.0.2.tar.gz"
-    mirror "https://fossies.org/linux/misc/otp_doc_html_26.0.2.tar.gz"
-    sha256 "f071d8af459a5294fdafc379f36e40f37d05fbea06a676a4913549a25f799f64"
+    url "https://ghproxy.com/https://github.com/erlang/otp/releases/download/OTP-25.3.2.2/otp_doc_html_25.3.2.2.tar.gz"
+    sha256 "29412cd7d490aeee51a5386faceee357fe134ba10fdeed44c224242a2e0a66d4"
   end
 
   def install
@@ -51,6 +43,9 @@ class Erlang < Formula
     system "./otp_build", "autoconf" unless File.exist? "configure"
 
     args = %W[
+      --disable-debug
+      --disable-silent-rules
+      --prefix=#{prefix}
       --enable-dynamic-ssl-lib
       --enable-hipe
       --enable-shared-zlib
@@ -68,7 +63,7 @@ class Erlang < Formula
       args << "--with-dynamic-trace=dtrace" if MacOS::CLT.installed?
     end
 
-    system "./configure", *std_configure_args, *args
+    system "./configure", *args
     system "make"
     system "make", "install"
 

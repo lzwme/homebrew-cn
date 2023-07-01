@@ -1,9 +1,9 @@
 class Chkrootkit < Formula
   desc "Rootkit detector"
   homepage "https://www.chkrootkit.org/"
-  url "ftp://ftp.chkrootkit.org/pub/seg/pac/chkrootkit-0.57.tar.gz"
-  mirror "https://fossies.org/linux/misc/chkrootkit-0.57.tar.gz"
-  sha256 "06d1faee151aa3e3c0f91ac807ca92e60b75ed1c18268ccef2c45117156d253c"
+  url "ftp://ftp.chkrootkit.org/pub/seg/pac/chkrootkit-0.58.tar.gz"
+  mirror "https://fossies.org/linux/misc/chkrootkit-0.58.tar.gz"
+  sha256 "0325cd19ace8928ca036aa956ec8cd9a3d9fe02965e30a4720e9baf34ed56a42"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,16 +12,21 @@ class Chkrootkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fada858d477924038a03199cbac79cd7afc04fbb31b42b9aecac628b39cd51d5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0b86a8b17ffd5a0265a6125aaa91074ac28498afdbdc38cbe78a200bae2e99dc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "197c2bb6a5f4743cea04329b0da6ed3335cb85583c5378f9660ae4d6efdb092c"
-    sha256 cellar: :any_skip_relocation, ventura:        "bbb4b52d54410d6c35faff05d0aa539165c658f96a3ce4350636a45e415a45c9"
-    sha256 cellar: :any_skip_relocation, monterey:       "3e29dda433d905bba6d48e19c80ec8e7576a6920f31cf598859a52445973f7e7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d3084546c6acaf0bb69c35fef3d6489876e1ff3d277181dea8822aac0c6cc051"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4252ccf9c41f02c23e5387848b799dd0089d47365ab1b9ad55bf6fa66bce6747"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bbd2dd4ac20e747293eedd01d9ccc8c9bfbd56d75b4cc269f33c9e3cd793ceda"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d7d9ddf16ed810c46ebc3aa73063bb35887722d115a317b5c4ab9d099c12bb82"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7cc2ca082dcb083a06732f58d51ce7ed9f3a4ee3eccd2aea4e3b7d8fd14861c7"
+    sha256 cellar: :any_skip_relocation, ventura:        "d4fb446dedba887717246dabc02a955b435fddb76d3d24f227e3048b02cc5d03"
+    sha256 cellar: :any_skip_relocation, monterey:       "792f77c1f50ff0cd9c93974d1729e65cccceb9c89acb102ad3d86d8a6ffe8241"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7c891dc0f3d653c9e072cef412a9ffe697dccc170a2c28fbc5710a6b61249072"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "69c27f598f7f53881f961c3b9db7b9f637cbe05c83f0264b678dee6911d01e0b"
   end
 
   def install
+    ENV.deparallelize
+
+    # Workaround for Xcode 14.3
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     system "make", "CC=#{ENV.cc}", "CFLAGS=#{ENV.cflags}",
                    "STATIC=", "sense", "all"
 

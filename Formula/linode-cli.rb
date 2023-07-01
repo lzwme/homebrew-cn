@@ -3,19 +3,19 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https://www.linode.com/products/cli/"
-  url "https://files.pythonhosted.org/packages/af/b5/56a0505518126d37a36b168092445b7ef69f79f5d79728e031eb80e01833/linode-cli-5.41.1.tar.gz"
-  sha256 "fd9d70fd205cd3386bf7934b4936e0571fc9464119ed2d561cacbec2a5435031"
+  url "https://files.pythonhosted.org/packages/4b/a1/74f7787a5e34119aa267569d0b38b28a7ab5d0d331a914b9b9191b4a0b92/linode-cli-5.41.2.tar.gz"
+  sha256 "222ae31237c899d5599aec144cf0e862e1b485df7d99b12d572447273681a6c1"
   license "BSD-3-Clause"
   head "https://github.com/linode/linode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a2b656ca09522d89886790af058bfc94ddcb3dc9d077f2cc56e28bb30666c368"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "000a451a5930e42f72220d01d04f98446ce722b9965d95e52164f2b20e40c7c7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "087ac4fd16b2f172312cd0c46a02a03e4f73fc91bf62d6c3faa7fe88ca00b9b0"
-    sha256 cellar: :any_skip_relocation, ventura:        "0ea9002e98d06671d7c2095c9c4e7077cadd4c3f6d32edb5594170e6e20943ba"
-    sha256 cellar: :any_skip_relocation, monterey:       "9482d95fda935915ccd27e766369e7cd076652ac8c608f5032ba3556a9c6f8de"
-    sha256 cellar: :any_skip_relocation, big_sur:        "22e2889d7a5cbfc8419001470b172cf06d47bb5152c3ce23ddc3d1c3d7e1ea6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ef12721472a13a69d91fdd6e7768f53a1e6262a45d90ddcb24e113220a7fd84"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "de06dd568a55ce50bcc286ee2600ed006b4d71aca04d32c9957ddf213cc6e5cb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a4a0875357804d0a998891793ce1a5d431bafe982502c0c2303b58f44022c33f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e771247c7bcd0a5f709608320867fb8c56eea291f127a3b1c622a37d4e4f32b3"
+    sha256 cellar: :any_skip_relocation, ventura:        "07405f523d3d8f7253e773ff785041cb8cc2173f18b999e8f03d59a7a8e35adf"
+    sha256 cellar: :any_skip_relocation, monterey:       "3d1e309ccf0c4ecc8ac0598c5b56e7165857c64041df0a90cdab0f008631402b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "751df1d49ed48330160b14e38abe0017db3a45c3bbd8e31ea39870a72517ea31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "836b02b05cd346d08b3066178e174d281608cdf077bc7b46e0cf780f4d41513e"
   end
 
   depends_on "pygments"
