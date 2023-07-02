@@ -19,8 +19,9 @@ class Bcoin < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "43047da636f3b6b7fc3f230f4f55c4805723429531e8c1887ea896b51fcd9a38"
   end
 
-  depends_on "python@3.11" => :build
   depends_on "node"
+
+  uses_from_macos "python" => :build
 
   def node
     deps.reject(&:build?)

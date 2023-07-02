@@ -17,7 +17,7 @@ class Norm < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0749ed0f0382f434ebec2f77953464af8d80db63e8a36760013a32dffea3c501"
   end
 
-  depends_on "python@3.11" => :build
+  uses_from_macos "python" => :build
 
   # Fix warning: 'visibility' attribute ignored [-Wignored-attributes]
   # Remove in the next release
@@ -29,9 +29,8 @@ class Norm < Formula
   end
 
   def install
-    python3 = "python3.11"
-    system python3, "./waf", "configure", "--prefix=#{prefix}"
-    system python3, "./waf", "install"
+    system "python3", "./waf", "configure", "--prefix=#{prefix}"
+    system "python3", "./waf", "install"
 
     include.install "include/normApi.h"
   end

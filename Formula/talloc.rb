@@ -20,7 +20,7 @@ class Talloc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "064f0103e484260a1a6b625ebe907079d61c508a61dea97ef65e7de02bc79982"
   end
 
-  depends_on "python@3.11" => :build
+  uses_from_macos "python" => :build
 
   def install
     system "./configure", "--prefix=#{prefix}",

@@ -1,20 +1,18 @@
 class EtcdCppApiv3 < Formula
   desc "C++ implementation for etcd's v3 client API, i.e., ETCDCTL_API=3"
   homepage "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3"
-  url "https://ghproxy.com/https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/archive/refs/tags/v0.14.3.tar.gz"
-  sha256 "5faf1ca697f9889c269a2a0cb2237d8121959f72bf6eca4f61dffdcb9c6d9d46"
+  url "https://ghproxy.com/https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "28412a3b64345b55bce4c4fe29444e4ffde3d1d0ec0ecfa78d86343d7fc61b6a"
   license "BSD-3-Clause"
-  revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "5cf078fefcc5372db9d25a3b27457748c1b29ee0e3ce639b6977faecca0b7781"
-    sha256 cellar: :any,                 arm64_monterey: "aee14db1412e29412a117de333b7df3fafd8fa4ffa2f72545b12db638cec7566"
-    sha256 cellar: :any,                 arm64_big_sur:  "fe38918f029365251f8d3594d58620d44566cb12718a5bc5bdc4fa5dd91e5353"
-    sha256 cellar: :any,                 ventura:        "6703fa197796ad645a3352cf03d43671cda0fd28543b2c610359d642c91d546a"
-    sha256 cellar: :any,                 monterey:       "624b521111132df7bdb84517f3c1f1e2d919d38aabf2910e3012d873721c2748"
-    sha256 cellar: :any,                 big_sur:        "f59f946e74dd27e45a593b4d95c0a1fb6826b46186bac3360eab14b93138726c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "12cca665cc6c9d55163d7fba233b17f308c28bfa621826bc274b9d4edee6a80c"
+    sha256 cellar: :any,                 arm64_ventura:  "644c746f5e35920361d6d2f6ef02e78b2d327757d4c85b35f146d6cac9a59f06"
+    sha256 cellar: :any,                 arm64_monterey: "271b253de9e89ab002b89c96fc091e0fa75b9b5c99047f82e7ea4ae24aecaa19"
+    sha256 cellar: :any,                 arm64_big_sur:  "d8b0fee61abadd6003c659c6f9080c1402244f23c50477b7a12f82fe84bb89a1"
+    sha256 cellar: :any,                 ventura:        "11de1b8a06f91ca2a6c34d3af685d0831c529b2a9b00868e30244f7da82f49f8"
+    sha256 cellar: :any,                 monterey:       "ace40ad52cdb6266b414d372ee29ef957f7f8bc94428a9f8ae7bdc6d8968e084"
+    sha256 cellar: :any,                 big_sur:        "af008d0c762341cfa08b4571f2ea8afa217da3150e3e5f03265e0b8f3064a08c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b36cfccde45803c1b51f9b991376596c6af2d4fd2d82ed3214fcada273405ad2"
   end
 
   depends_on "cmake" => :build

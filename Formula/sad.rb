@@ -18,9 +18,7 @@ class Sad < Formula
 
   depends_on "rust" => :build
 
-  on_linux do
-    depends_on "python@3.11" => :build
-  end
+  uses_from_macos "python" => :build
 
   def install
     system "cargo", "install", *std_cargo_args

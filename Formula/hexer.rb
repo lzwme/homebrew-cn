@@ -5,6 +5,11 @@ class Hexer < Formula
   sha256 "fff00fbb0eb0eee959c08455861916ea672462d9bcc5580207eb41123e188129"
   license "BSD-3-Clause"
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?hexer[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "78608e7de426f8d081f22e85878d8d0a42388246d79ad773431164f65b05e867"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "71e185121e08ddab73b7f5071eee7420fbb87b159a0a0cfb8d99202e86a407cf"

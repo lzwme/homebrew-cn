@@ -27,11 +27,8 @@ class Wiredtiger < Formula
   depends_on "snappy"
   depends_on "zstd"
 
+  uses_from_macos "python" => :build
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "python@3.11" => :build
-  end
 
   # Adds include for std::optional. Remove in version 11.2.0.
   patch do

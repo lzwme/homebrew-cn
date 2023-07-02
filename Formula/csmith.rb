@@ -1,14 +1,14 @@
 class Csmith < Formula
   desc "Generates random C programs conforming to the C99 standard"
-  homepage "https://embed.cs.utah.edu/csmith/"
-  url "https://embed.cs.utah.edu/csmith/csmith-2.3.0.tar.gz"
-  sha256 "f247cc0aede5f8a0746271b40a5092b5b5a2d034e5e8f7a836c879dde3fb65d5"
+  homepage "https://github.com/csmith-project/csmith"
+  url "https://ghproxy.com/https://github.com/csmith-project/csmith/archive/refs/tags/csmith-2.3.0.tar.gz"
+  sha256 "9d024a6b202f6a1b9e01351218a85888c06b67b837fe4c6f8ef5bd522fae098c"
   license "BSD-2-Clause"
   head "https://github.com/csmith-project/csmith.git", branch: "master"
 
   livecheck do
-    url :homepage
-    regex(/href=.*?csmith[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :stable
+    regex(/^(?:csmith[._-])?v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do

@@ -8,22 +8,22 @@ class Cdktf < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e30629e7ea16a86eedbdec8c19c5a701f27b8de4e2efb7719368a97c02fce98"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0e30629e7ea16a86eedbdec8c19c5a701f27b8de4e2efb7719368a97c02fce98"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0e30629e7ea16a86eedbdec8c19c5a701f27b8de4e2efb7719368a97c02fce98"
-    sha256 cellar: :any_skip_relocation, ventura:        "a31e509e72df32b186275337739b3140ee4be4866a23a8bd74936bded6cf3d98"
-    sha256 cellar: :any_skip_relocation, monterey:       "a31e509e72df32b186275337739b3140ee4be4866a23a8bd74936bded6cf3d98"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a31e509e72df32b186275337739b3140ee4be4866a23a8bd74936bded6cf3d98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd75d95e3f98e05f154fe0f0429f8bcf228b0edd20fae50ff0ac5f282f03a39b"
+    rebuild 1
+    sha256                               arm64_ventura:  "42428d858621cf17430e33fc89372fd24224ab71ba920284bc3f5a2214839e35"
+    sha256                               arm64_monterey: "5ffbae837b60b33ddbd0e86c8b318c017603da418e3316f7b4d4dcfec3858ae8"
+    sha256                               arm64_big_sur:  "d4e200913991919f3680b7299d1d0b5cedf2b3037caa8449958d47d520fe27dd"
+    sha256                               ventura:        "b0588e4c753a4a78f8b21fbfb814f9b24df5fcf63f65751d0e3bcbb8346897f0"
+    sha256                               monterey:       "d14228a26bd5417088fa2c6537bd9f19b552290bcfc89c110d272f167a37009e"
+    sha256                               big_sur:        "6ef7251b906d127079dd70986a6bcbc6d328de2e1ff2e493e33db6b8f75915fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b4dc4f3d81cf46647a8687e1ac44b5f61730b013fcebced681149fb95fe1aed"
   end
 
-  depends_on "node@18"
+  depends_on "node"
   depends_on "terraform"
 
   def install
-    node = Formula["node@18"]
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    (bin/"cdktf").write_env_script "#{libexec}/bin/cdktf", { PATH: "#{node.opt_bin}:$PATH" }
+    bin.install_symlink Dir["#{libexec}/bin/*"]
 
     # remove non-native architecture pre-built binaries
     os = OS.kernel_name.downcase

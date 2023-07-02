@@ -1,6 +1,6 @@
 class Creduce < Formula
   desc "Reduce a C/C++ program while keeping a property of interest"
-  homepage "https://embed.cs.utah.edu/creduce/"
+  homepage "https://github.com/csmith-project/creduce"
   license "BSD-3-Clause"
   revision 4
   head "https://github.com/csmith-project/creduce.git", branch: "master"
@@ -8,8 +8,8 @@ class Creduce < Formula
   # Remove when patches are no longer needed.
   stable do
     # TODO: Check if we can use unversioned `llvm` at version bump.
-    url "https://embed.cs.utah.edu/creduce/creduce-2.10.0.tar.gz"
-    sha256 "db1c0f123967f24d620b040cebd53001bf3dcf03e400f78556a2ff2e11fea063"
+    url "https://ghproxy.com/https://github.com/csmith-project/creduce/archive/refs/tags/creduce-2.10.0.tar.gz"
+    sha256 "de320cd83bd77ec1a591f36dd6a4d0d1c47a0a28d850a6ebd348540feeab2297"
 
     # Use shared libraries.
     # Remove with the next release.
@@ -31,8 +31,8 @@ class Creduce < Formula
   end
 
   livecheck do
-    url :homepage
-    regex(/href=.*?creduce[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :stable
+    regex(/^(?:creduce[._-])?v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -48,6 +48,7 @@ class Creduce < Formula
   depends_on "astyle"
   depends_on "llvm@15"
 
+  uses_from_macos "flex" => :build
   uses_from_macos "perl"
 
   resource "Exporter::Lite" do

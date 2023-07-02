@@ -4,6 +4,7 @@ class Binkd < Formula
   url "https://happy.kiev.ua/pub/fidosoft/mailer/binkd/binkd-1.0.4.tar.gz"
   sha256 "917e45c379bbd1a140d1fe43179a591f1b2ec4004b236d6e0c4680be8f1a0dc0"
   license "GPL-2.0-or-later"
+  head "https://github.com/pgul/binkd.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -25,7 +26,7 @@ class Binkd < Formula
 
   def install
     cp Dir["mkfls/unix/*"].select { |f| File.file? f }, "."
-    inreplace "binkd.conf", "/var/", "#{var}/"
+    inreplace "binkd.conf", "/var/", "#{var}/" if build.stable?
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",

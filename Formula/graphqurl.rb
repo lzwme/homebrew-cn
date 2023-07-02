@@ -27,7 +27,9 @@ class Graphqurl < Formula
   end
 
   test do
-    output = Utils.safe_popen_read(bin/"gq", "https://graphqlzero.almansi.me/api", "--introspect")
-    assert_match "directive @cacheControl(maxAge: Int, scope: CacheControlScope)", output
+    output = Utils.safe_popen_read(bin/"gq", "https://graphqlzero.almansi.me/api",
+                                              "--header", "Content-Type: application/json",
+                                              "--introspect")
+    assert_match "type Query {", output
   end
 end

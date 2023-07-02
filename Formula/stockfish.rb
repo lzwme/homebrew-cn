@@ -1,8 +1,8 @@
 class Stockfish < Formula
   desc "Strong open-source chess engine"
   homepage "https://stockfishchess.org/"
-  url "https://ghproxy.com/https://github.com/official-stockfish/Stockfish/archive/sf_15.1.tar.gz"
-  sha256 "d4272657905319328294355973faee40a8c28e3eecb0e7b266ed34ff33383b76"
+  url "https://ghproxy.com/https://github.com/official-stockfish/Stockfish/archive/sf_16.tar.gz"
+  sha256 "a1600ebdaf4e324ba3e10cec2e0c9a810dc64c6f0db5cc955b2fd5e1eefa1cc6"
   license "GPL-3.0-only"
   head "https://github.com/official-stockfish/Stockfish.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Stockfish < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "53fa3f44104117cbf23416b030a53a63fb546470f41db2d3f5e8555cd2c94fe4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e941443af58f837b53dfe7c48759754c02dfe37a7a61ac1639548efee41e8cb1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4737e766bab91fd04b9bb488f957143697287f4d21bfcdc92669109acaf0856b"
-    sha256 cellar: :any_skip_relocation, ventura:        "d3f123462496fac8824d12c3bdfbf0b8144063ff1884a7626b03e52d59484f9d"
-    sha256 cellar: :any_skip_relocation, monterey:       "e6190eb317bc6406b693e5c3f1a0536956f3616a6c65d99d8274005e8478b17a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f2481ea1063c7d058c998b291897eab347c7bc59e14532664031836d94068653"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3eaf9bdabb2d9a7965ed16db5c39984f6a301a728600066042b937b86e764465"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c85682af4f040f57555116ac1762f6d6d4749fcf419e21e94fd91c46a50fd9ee"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "50a5998dbabe422fe64e49fbc259bedfc2cb1e9657a6375f1ef467ece03b8cae"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "de69084dc86ff7a30c4b0561d2a5091d88a43c96dd5f13842d50327a8663283d"
+    sha256 cellar: :any_skip_relocation, ventura:        "196f7d090cbfde5aa3aff32748f3081b4d7ea4f29588e9a5551df4e392048b64"
+    sha256 cellar: :any_skip_relocation, monterey:       "5f90ccc4d589b06bcff87f70856c754074656cec63fe5252f252f13fb699fff6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5a2430875eee53cf4855a1a897220115df48f5d8463c1b10d57f4db22286a3e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5affbe2bf93f2b96edc4ccd453563fd961f44dd13ef96a0dd460d45e5d642344"
   end
 
   fails_with gcc: "5" # For C++17

@@ -3,18 +3,18 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/33/c7/0574c78423b1ce670a79032c1c3de2d579af7362662be2ba1e3b98231aee/dvc-3.2.3.tar.gz"
-  sha256 "e7b2e1250655104f095d4b0f00ea652224582b9cd3af5a94d19a111dd2d6f081"
+  url "https://files.pythonhosted.org/packages/13/2f/337301e0b6b84e44e497e26de70185d450e3969d47b7f9477f7164965253/dvc-3.2.4.tar.gz"
+  sha256 "1f2d6a679423e8dd453ff0ae733ac1cd04da45cca3572e8fa8dc084bdc544648"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c9fef68838c05224bfdea5f43df8280c4591d414f5aa50dc6a9ce4b91dc0e31e"
-    sha256 cellar: :any,                 arm64_monterey: "e8176ebf9893943f37ae8aba6c10b603f57c084c4bd91ed6a765d0ff0b018d6a"
-    sha256 cellar: :any,                 arm64_big_sur:  "b6529c51a7e23c612c565797ef2b2b38fb67d174d8a201b462250f6dfd39ec2c"
-    sha256 cellar: :any,                 ventura:        "c57f6d3b01919d6cac530263a2295042974f5d6c9217b1f9ca444c0265fe5b72"
-    sha256 cellar: :any,                 monterey:       "6808b05e212ee6d0fe8466d7a63b88566e11bd90ef6b4bb6f3a0faa1fff5bbaa"
-    sha256 cellar: :any,                 big_sur:        "1878369e468437ff5cb4bfc3f5a56dc9811b2d0ba14304044e6f48f4aefeaa09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "274bacfd508d051987f86c10b06ef012157f35e1e45c46eceff1664efb720506"
+    sha256 cellar: :any,                 arm64_ventura:  "f7b80a67ea1f528da9a026cf1434072b507610962fdea4a4214d60f0e5643cb4"
+    sha256 cellar: :any,                 arm64_monterey: "fba602c74401cab5f773541f3b87f636eae0b769156ceede6526dd792d5a68d5"
+    sha256 cellar: :any,                 arm64_big_sur:  "9b56b8ba334edd52f500b7287db938a55b0eb8e10aed4ec622d06e098c2fb6f6"
+    sha256 cellar: :any,                 ventura:        "ab569b2efb36af1dedcd05e075bd1f8d914751650d175708f57998ac6a084de5"
+    sha256 cellar: :any,                 monterey:       "af38508610d2bd51a02051e87522f577757127f9863490de80e49026a703eca2"
+    sha256 cellar: :any,                 big_sur:        "1dbfe5227f8d3bcd5bf97fbc6cd5b978c9cb2867197fe4e24f3caa09b3181277"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0b8fa6242ba352e89cb04dde352ca65ca855fed4323e25d60af444376fdc17b"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.

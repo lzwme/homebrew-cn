@@ -1,20 +1,10 @@
 class Micromamba < Formula
   desc "Fast Cross-Platform Package Manager"
   homepage "https://github.com/mamba-org/mamba"
+  url "https://ghproxy.com/https://github.com/mamba-org/mamba/archive/refs/tags/micromamba-1.4.6.tar.gz"
+  sha256 "ed4cde2cfc026c4e673ac65bd734d408d000fdbcf2ca2d9c0dbfbe0995507467"
   license "BSD-3-Clause"
   head "https://github.com/mamba-org/mamba.git", branch: "main"
-
-  stable do
-    url "https://ghproxy.com/https://github.com/mamba-org/mamba/archive/refs/tags/micromamba-1.4.5.tar.gz"
-    sha256 "1aedf2ae4fb896af199d3af2acd6c7592957af15297bfcb619b7d13e09ce121a"
-
-    # Fix "error: chosen constructor is explicit in copy-initialization".
-    # Remove with `stable` block on next release.
-    patch do
-      url "https://github.com/mamba-org/mamba/commit/1547431efd48da79ce53cc486be00ca75c02ce01.patch?full_index=1"
-      sha256 "1081cd4f431449979b6f89d2d930679ab371a4186b21b02d8834545867166c09"
-    end
-  end
 
   livecheck do
     url :stable
@@ -22,13 +12,13 @@ class Micromamba < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "af12b9220a8b3b8c5bfe39b4ddb83c3cab630004f1af1da66566ea4d39f86097"
-    sha256 cellar: :any,                 arm64_monterey: "fb0dbf1b74423633ba6401e9f5314eada89dcffa242af41e99d2907fac4ce1c9"
-    sha256 cellar: :any,                 arm64_big_sur:  "f165c53b700b2be579cd7e20a329261db16c65bdc5539b1cbd126d14f8d6d960"
-    sha256 cellar: :any,                 ventura:        "86b4cbdc8e0b8adf4fc6677cda90b03d99d9df1df9c687f9cb756ac08c7a9453"
-    sha256 cellar: :any,                 monterey:       "846ba50072c4fc2d5134e8cbc4ec89a1d727e7a366f2540e89620ba2aef87bc9"
-    sha256 cellar: :any,                 big_sur:        "89faba4d798577215568e3fe01b1f3753f44789cd565585962248434bde59a6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cfc2f9611af7e631edd83a19197387e4aa193246d39cdbd74f79256b9a8d28d4"
+    sha256 cellar: :any,                 arm64_ventura:  "0dd8d3a26f534b7709e3529009b8cf39150511ecc71800b55da136cf15649504"
+    sha256 cellar: :any,                 arm64_monterey: "890a8ee7ed068f54fbaeb3950dc53c735351b90d8901e51a11a238eb0698c706"
+    sha256 cellar: :any,                 arm64_big_sur:  "334c8f58f68778da4e3b0803f3f0fc722306f5131b17d1c8303d0d2e7a5f9967"
+    sha256 cellar: :any,                 ventura:        "1b5b6fc2b73ca803fd8cfae3c64161dddad25a1c45efa26363e0c952fad111d0"
+    sha256 cellar: :any,                 monterey:       "d66a8a90f4e383b0d8eade4b8c3dedec922e6f1cc8397dce8a5448ccd863681f"
+    sha256 cellar: :any,                 big_sur:        "a18062a5afba02922af9d20919ac5ceb0d0b3994b283785e6bce8fccf4955e4c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "787f3c47f4a9898be789d9f977e5c905b121de0da3bfbd3435c74da40bd0ada6"
   end
 
   depends_on "cli11" => :build
@@ -53,8 +43,8 @@ class Micromamba < Formula
 
   resource "libarchive-headers" do
     on_monterey :or_newer do
-      url "https://ghproxy.com/https://github.com/apple-oss-distributions/libarchive/archive/refs/tags/libarchive-113.tar.gz"
-      sha256 "b422c37cc5f9ec876d927768745423ac3aae2d2a85686bc627b97e22d686930f"
+      url "https://ghproxy.com/https://github.com/apple-oss-distributions/libarchive/archive/refs/tags/libarchive-113.100.2.tar.gz"
+      sha256 "db960cf112aaff48e2675148312b7e92c669fedc031205e88ec56af9a3ae2047"
     end
   end
 

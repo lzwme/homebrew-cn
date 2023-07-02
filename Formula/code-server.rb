@@ -18,10 +18,10 @@ class CodeServer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "764494f95af4d351336e80eb11963016d610706df1ef8bd1b9693e6d31eec080"
   end
 
-  depends_on "bash" => :build
-  depends_on "python@3.11" => :build
   depends_on "yarn" => :build
-  depends_on "node@16"
+  depends_on "node@16" # Use `node@18` after https://github.com/coder/code-server/issues/6230
+
+  uses_from_macos "python" => :build
 
   on_linux do
     depends_on "pkg-config" => :build

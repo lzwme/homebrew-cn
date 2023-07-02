@@ -13,16 +13,17 @@ class BalenaCli < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "82eba0cd3ec71a92ae3d3c8d501569c74eb8ba83662585e7107f3ffdbfa7e4a2"
-    sha256                               arm64_monterey: "27d0caa8e530c56f1fe485d31fda3ec6df613a75a5a09911387edcff990ff009"
-    sha256                               arm64_big_sur:  "c08e043e14b8ead9accfa5d2118c235576ac8841c49eb62057a55f8801e2da62"
-    sha256                               ventura:        "7b76a18a8dcf4117f7cd055ab4864ad3ffe1c091201df9958b5703478cb2748b"
-    sha256                               monterey:       "3939d18e262f2720924d9892d612ff3a7a12ffea7d757999e5500bfa538bda3f"
-    sha256                               big_sur:        "b2cec1146cfc384fece26b4cd60aa4e980c7d4ca496f591bb62333c319841226"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "60a943af33bafd19f7713aed0f000a2fb5850242b09cc51536d9ea909ce02238"
+    rebuild 1
+    sha256                               arm64_ventura:  "88015b2ac0a94b93b66703b17e72f5cb22fa587a0df085a1223c7c46032f5afb"
+    sha256                               arm64_monterey: "7e302b855ebc3c318eefdab78ca049727a5021e711db4c3dd6cc2dd30c5afbaa"
+    sha256                               arm64_big_sur:  "7acece2b75e2eed8bacf10b6019f56a0807ec9793396fcd912afe0520e2ddde1"
+    sha256                               ventura:        "6958b591dc87cdf4d5fb624be3cbcaaa2bb195267177a31e3926187526175d92"
+    sha256                               monterey:       "b25b8083afa34f70fc1741a08f9e10aee227b3bbb6a7ba3c22b839c953e533b9"
+    sha256                               big_sur:        "0fcd8badcc18f829091583aaf0162d16a25a8c5e349b657866f80911682165e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c59c0f2aa64296f4df5a76542bf044958e419c3d77368662d5bc51d8da87de9c"
   end
 
-  depends_on "node@16"
+  depends_on "node"
 
   on_macos do
     depends_on "macos-term-size"
@@ -36,8 +37,8 @@ class BalenaCli < Formula
 
   def install
     ENV.deparallelize
-    system Formula["node@16"].opt_bin/"npm", "install", *Language::Node.std_npm_install_args(libexec)
-    (bin/"balena").write_env_script libexec/"bin/balena", PATH: "#{Formula["node@16"].opt_bin}:${PATH}"
+    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    bin.install_symlink Dir["#{libexec}/bin/*"]
 
     # Remove incompatible pre-built binaries
     os = OS.kernel_name.downcase

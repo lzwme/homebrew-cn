@@ -1,19 +1,19 @@
 class Openfga < Formula
   desc "High performance and flexible authorization/permission engine"
   homepage "https://openfga.dev/"
-  url "https://ghproxy.com/https://github.com/openfga/openfga/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "553598652c5588ad416b1b0715bfaef23e26bf0c506fdf8d4e3502d55d469a9e"
+  url "https://ghproxy.com/https://github.com/openfga/openfga/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "b51efcc636f54445eb77089ddb0d2b9f22c434c008b09181cae65354e897070e"
   license "Apache-2.0"
   head "https://github.com/openfga/openfga.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef2dcefa37b8af0fbd4987345f2374fc013fac2f88f1e7e7d68d99a5f4beffe8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ef2dcefa37b8af0fbd4987345f2374fc013fac2f88f1e7e7d68d99a5f4beffe8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ef2dcefa37b8af0fbd4987345f2374fc013fac2f88f1e7e7d68d99a5f4beffe8"
-    sha256 cellar: :any_skip_relocation, ventura:        "8d16dda013c8fbebc7db74309c575a55698816251af800a39d2fc36858a4a8db"
-    sha256 cellar: :any_skip_relocation, monterey:       "8d16dda013c8fbebc7db74309c575a55698816251af800a39d2fc36858a4a8db"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8d16dda013c8fbebc7db74309c575a55698816251af800a39d2fc36858a4a8db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e3b3afdf8686b4a5c76419692275e93a29aeb71c0f2dbd4370dc42b55e3488d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c5055ff5bb1b11060659f731625a7d5cffa2accce8157a669515a9b6756f5fbb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c5055ff5bb1b11060659f731625a7d5cffa2accce8157a669515a9b6756f5fbb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c5055ff5bb1b11060659f731625a7d5cffa2accce8157a669515a9b6756f5fbb"
+    sha256 cellar: :any_skip_relocation, ventura:        "ff6cde8a80437e3c6c3673dcd45b6a581a8639d8f7d3b4478e15636a8d00283f"
+    sha256 cellar: :any_skip_relocation, monterey:       "ff6cde8a80437e3c6c3673dcd45b6a581a8639d8f7d3b4478e15636a8d00283f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ff6cde8a80437e3c6c3673dcd45b6a581a8639d8f7d3b4478e15636a8d00283f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5eb02deb871e6c698977ce82da52a15e5304c46c531699c1b52d27f19c27e57"
   end
 
   depends_on "go" => :build
