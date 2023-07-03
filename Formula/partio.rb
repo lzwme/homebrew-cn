@@ -1,19 +1,18 @@
 class Partio < Formula
   desc "Particle library for 3D graphics"
   homepage "https://github.com/wdas/partio"
-  url "https://ghproxy.com/https://github.com/wdas/partio/archive/v1.14.6.tar.gz"
-  sha256 "53a5754d6b2fc3e184953d985c233118ef0ab87169f34e3aec4a7e6d20cd9bd4"
+  url "https://ghproxy.com/https://github.com/wdas/partio/archive/v1.17.0.tar.gz"
+  sha256 "8f72db005e7ddf1bab54ee504692c0cdfc62080f31e4f3689c99ad7531531239"
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f23723988ee0c4fd13e2ef3999cd48cdc0713e2e68b08f1e1e8fb64bfb72735e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e8779e2d241646c96f0b6fa412219f0556b69ff03d9dd98d6a9ecb1172baccf9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "40c077714c5b73b2d1eca4b57054262ca3e4bef68ec9827ab39f205a3d7d170b"
-    sha256 cellar: :any_skip_relocation, ventura:        "39707a6cc21e84edc6cae4c82637600e049b521e92fe239dcc545b9c8bbc79dd"
-    sha256 cellar: :any_skip_relocation, monterey:       "247dad3b9b36c9a485ad9142e3840e0dd503547c8faf0b6a3ec6f92195278b01"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4fa3eb20d12124955b39eb260a96586bedd4f254d5bbae6f52a0cdf186d380ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff7788987e0e5e2dcfc950be3b9f229f7061c2b6f0a6f6decda35bdf909497d1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "691816970f33043030e0cec360b8e04c1eb109ef085540fec663f7fda12a988f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ed02c6ac94672aec9217278003d5a0e86796882682d0d99a850e68a0b4060a8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e1ee5c7f3a9d5a27962f890e1803aa5f2afb5197d9e4893c829bec1801e052a7"
+    sha256 cellar: :any_skip_relocation, ventura:        "566de7d88cd3780b143087a067203f2b9f24bb4db45fb4dcba83548a482d0b72"
+    sha256 cellar: :any_skip_relocation, monterey:       "9ef17e9087c2ada7ed17abd5ab74cb7be8311465d7b3be8402a0cea6a173d97b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c57b9b1f56e15393b33b2130bdf21199e7b2e86839c7d08254cc551ea0c70723"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9840c0630ae7d576cd6f1a897f80bf1ad3e74609172d42019cb40144d90d3056"
   end
 
   depends_on "cmake" => :build

@@ -3,19 +3,18 @@ class Vineyard < Formula
 
   desc "In-memory immutable data manager. (Project under CNCF)"
   homepage "https://v6d.io"
-  url "https://ghproxy.com/https://github.com/v6d-io/v6d/releases/download/v0.15.0/v6d-0.15.0.tar.gz"
-  sha256 "3281afac3f348c4409676adf8328c6de8b73ed35e71539e6dd779d4af5bc16dd"
+  url "https://ghproxy.com/https://github.com/v6d-io/v6d/releases/download/v0.15.2/v6d-0.15.2.tar.gz"
+  sha256 "08e7868cde64a3966510b627c9a37c806eb6438a6fe42f0d7816e6ccf868599f"
   license "Apache-2.0"
-  revision 4
 
   bottle do
-    sha256                               arm64_ventura:  "19124f2a095b059101cef3a5150bbe8ba8db764c262a87e3c367b230b0291807"
-    sha256                               arm64_monterey: "196e3fe03b1f2b7946681e79d69cce342c86ff60e6418994f9923ee93749ab94"
-    sha256                               arm64_big_sur:  "90c2b4ba9089d6bf4aa6f7f3640e5b62131c336743ed7380a5e62c16de289141"
-    sha256                               ventura:        "d30a16ce31b0b4efb6ad9421aee679be75984d761bb52974f931500e7d6cb579"
-    sha256                               monterey:       "e819a0508d150f797f31e9b1a7247695218b89371561d7410eef340ccf3ec53c"
-    sha256                               big_sur:        "a17eca930e2b8484e4f39539f5aa7bc134aee00d24b61290fca00ddeff4bc439"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0df79b4ae5a3a94de933be2e76582fba462d78db8daef19c728190a8822d876"
+    sha256                               arm64_ventura:  "f3ae32fed8a7ee8f849d7ab09c735dc5e23cae2d5563d0157172de11703278ed"
+    sha256                               arm64_monterey: "69261bcbb543a5768213003c0bfbe3835a9557ffd30d62a92cc9af8effbc153f"
+    sha256                               arm64_big_sur:  "c0bc3a3b135e4cbe60d4a901f1f59e8df955bc2c5b162362e0991a3402077f90"
+    sha256                               ventura:        "527277f17405722c9b2d271d7c7f125955caa5799bcbe6fc3bfa2f03eccd6062"
+    sha256                               monterey:       "40d54121a2c7bc54f1f3797e9a53a40cee4b8cf88826c0494a2aaefe90581e6c"
+    sha256                               big_sur:        "8932c267d15405a297d6056349c2520d6034d13ae8d3c22893a785c2545f92da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b290fe827c2f0d3bdf8e2b852cde8d21e0842464a02ddf65f5a9c3e0364fc3c"
   end
 
   depends_on "cmake" => :build
@@ -37,13 +36,19 @@ class Vineyard < Formula
 
   fails_with gcc: "5"
 
+  # Fix build on macOS. Remove in the next release
+  patch do
+    url "https://github.com/v6d-io/v6d/commit/6b6f46c5c288c0bd6b65166afb13a66b3b9efb40.patch?full_index=1"
+    sha256 "deea245016bf1e016bbefb5d0ce6ee7bb5427b57d6f4f0343795dba1630dde61"
+  end
+
   def install
     python = "python3.11"
     # LLVM is keg-only.
     ENV.prepend_path "PYTHONPATH", Formula["llvm"].opt_prefix/Language::Python.site_packages(python)
 
     system "cmake", "-S", ".", "-B", "build",
-                    "-DCMAKE_CXX_STANDARD=14",
+                    "-DCMAKE_CXX_STANDARD=17",
                     "-DCMAKE_CXX_STANDARD_REQUIRED=TRUE",
                     "-DPYTHON_EXECUTABLE=#{which(python)}",
                     "-DUSE_EXTERNAL_ETCD_LIBS=ON",
