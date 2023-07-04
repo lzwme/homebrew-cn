@@ -1,6 +1,6 @@
 cask "archivewebpage" do
-  version "0.10.0"
-  sha256 "f85d76daa3f8ab591e079459dee98f946c34e2b7f2fcccfbf7d07aea124618cd"
+  version "0.10.1"
+  sha256 "50f03646cedd6aa73bfaee8b9be040c2603d24aa782f5322b75920b0bc738c9b"
 
   url "https://ghproxy.com/https://github.com/webrecorder/archiveweb.page/releases/download/v#{version}/ArchiveWeb.page-#{version}.dmg",
       verified: "github.com/webrecorder/archiveweb.page"

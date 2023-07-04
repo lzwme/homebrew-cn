@@ -5,6 +5,13 @@ class Libf2c < Formula
   version "20140711"
   sha256 "348c21e93752fd93d80ac5cc75f2e34e09bd7de3ae1aa3539eb8005c5a7e61d6"
 
+  livecheck do
+    url "https://salsa.debian.org/debian/libf2c2.git"
+    strategy :git do |tags|
+      tags.map { |tag| tag.split("/", 2)[1].split("-", 2)[0] }.compact
+    end
+  end
+
   def install
     # f2c header and libf2c.a
     system "make", "-f", "makefile.u", "f2c.h"

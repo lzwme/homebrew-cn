@@ -5,6 +5,13 @@ class F2c < Formula
   version "20200916"
   sha256 "84673d587268506b159d1322b18a510eb2d00af3f764d180d895300dac7f31a0"
 
+  livecheck do
+    url "https://salsa.debian.org/debian/f2c.git"
+    strategy :git do |tags|
+      tags.map { |tag| tag.split("/", 2)[1].split("-", 2)[0] }.compact
+    end
+  end
+
   depends_on "libf2c"
 
   def install
@@ -24,15 +31,16 @@ class F2c < Formula
 
     # hello world test
     (testpath/"test.f").write <<~EOS
-    C comment line
-          program hello
-          print*, 'hello world'
-          stop
-          end
+      C comment line
+            program hello
+            print*, 'hello world'
+            stop
+            end
     EOS
     system "#{bin}/f2c", "test.f"
     assert_predicate (testpath/"test.c"), :exist?
-    system ENV.cc.to_s, "-O", "-o", "test", "test.c", "-I#{Formula["libf2c"].opt_include}", "-L#{Formula["libf2c"].opt_lib}", "-lf2c"
+    system ENV.cc.to_s, "-O", "-o", "test", "test.c", "-I#{Formula["libf2c"].opt_include}",
+"-L#{Formula["libf2c"].opt_lib}", "-lf2c"
     assert_equal " hello world\n", `#{testpath}/test`
   end
 end

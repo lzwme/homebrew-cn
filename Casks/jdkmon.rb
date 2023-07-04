@@ -1,14 +1,14 @@
 cask "jdkmon" do
-  version "17.0.67"
+  version "17.0.69"
 
   on_intel do
     url "https://ghproxy.com/https://github.com/HanSolo/JDKMon/releases/download/#{version}/JDKMon-#{version}.pkg"
-    sha256 "353e69d1cdd22ea5b5b5572d6c049ffb7b4a283d18c9b109141db99474580dd9"
+    sha256 "8ee7621291135f1188c7801178b1e2fd58a6fc647edb5530a01c4c4f66e4a5c9"
     pkg "JDKMon-#{version}.pkg"
   end
   on_arm do
     url "https://ghproxy.com/https://github.com/HanSolo/JDKMon/releases/download/#{version}/JDKMon-#{version}-aarch64.pkg"
-    sha256 "7135544fc336d98ea8e99020407ecf411aba86811f9aacac233e5a2d2c46d24c"
+    sha256 "e5afcbc994b4e1f622fa8f48725fe76afb7055183d09e9483a79e545a547060a"
     pkg "JDKMon-#{version}-aarch64.pkg"
   end
 
