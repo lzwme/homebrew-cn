@@ -5,6 +5,11 @@ class Taktuk < Formula
   sha256 "56a62cca92670674c194e4b59903e379ad0b1367cec78244641aa194e9fe893e"
   license "GPL-2.0-or-later"
 
+  livecheck do
+    url "https://deb.debian.org/debian/pool/main/t/taktuk/"
+    regex(/href=.*?taktuk[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "f2ee8a7c0e82af568fa8106af14fe3b9e0247cd7a6f87b4e76c3fa21880577e2"
     sha256 cellar: :any,                 arm64_monterey: "ea5b8b832ba022f7545be2eea7ca316cd2d079263b87b0f93d669e26b06d6f3c"

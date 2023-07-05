@@ -5,6 +5,11 @@ class Liblockfile < Formula
   sha256 "6e937f3650afab4aac198f348b89b1ca42edceb17fb6bb0918f642143ccfd15e"
   license "LGPL-2.0-or-later"
 
+  livecheck do
+    url "https://deb.debian.org/debian/pool/main/libl/liblockfile/"
+    regex(/href=.*?liblockfile[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
+  end
+
   bottle do
     sha256                               arm64_ventura:  "d6425a72a9e1a04fd11c8793c31b1a4308ff974979b368439d62515ca7bd0c53"
     sha256                               arm64_monterey: "69933a745062ff9b8a41b7b3b7fec871efa9a99896b1ace2ccbf4cbafb2437f8"

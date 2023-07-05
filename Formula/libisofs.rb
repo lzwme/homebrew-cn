@@ -1,18 +1,24 @@
 class Libisofs < Formula
   desc "Library to create an ISO-9660 filesystem with various extensions"
   homepage "https://dev.lovelyhq.com/libburnia/libisofs"
-  url "http://files.libburnia-project.org/releases/libisofs-1.5.4.tar.gz"
-  sha256 "aaa0ed80a7501979316f505b0b017f29cba0ea5463b751143bad2c360215a88e"
+  url "https://files.libburnia-project.org/releases/libisofs-1.5.6.pl01.tar.gz"
+  version "1.5.6"
+  sha256 "ac1fd338d641744ca1fb1567917188b79bc8c2506832dd56885fec98656b9f25"
   license "GPL-2.0-or-later"
 
+  livecheck do
+    url "https://files.libburnia-project.org/releases/"
+    regex(/href=.*?libisofs[._-]v?(\d+(?:\.\d+)+)(?:[._-]pl\d+)?\.t/i)
+  end
+
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "860314162c48e96a989ba3fb787d2049ca42cfbfbf0b5300efe1dc0fd78868a9"
-    sha256 cellar: :any,                 arm64_monterey: "a0ef9a6c528dc64cb52cf715e32bf3eea4163a87c622896380a545cbf3a15a9a"
-    sha256 cellar: :any,                 arm64_big_sur:  "a5aa2cc2315f882bc5845478bc6e804058fe91552b7bf0dcad61f94b41e762bf"
-    sha256 cellar: :any,                 ventura:        "25ea2064b42c23129e06205029b7d7d05f8db51f8c17ee901166ceb49c15d6e2"
-    sha256 cellar: :any,                 monterey:       "24d410d388e6a034b5a2e065347287aa961fbe85ca3b7d5a1ffa9c1a50d2cbdf"
-    sha256 cellar: :any,                 big_sur:        "129cda4e83bf47b6d03a9fd742c2dea43d38b21a716ffc289fead5b2d081ae05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aaa4498b356521663380cbd57be5e28574a18854a35f7da734a3d96469df5cf8"
+    sha256 cellar: :any,                 arm64_ventura:  "3ecb31fd37dae4b455187e9fafc86b965d76d998a011b9559bd3bf4b6a422e77"
+    sha256 cellar: :any,                 arm64_monterey: "3c9c7c449618b5c4325821877d77d30797b2f972c7247918efeb60456cb99c47"
+    sha256 cellar: :any,                 arm64_big_sur:  "bd20a575b9908265074276c6e008a7885dda3d5818da99e4714141da1461d205"
+    sha256 cellar: :any,                 ventura:        "c04b4a231f71dccffcca4e4fade48e05c898e22860dc73630c8326dcc5688d23"
+    sha256 cellar: :any,                 monterey:       "fee8ce45cc44667d25010c2fcb268e4c9e3c3a0200330618513ca3eaad19cb58"
+    sha256 cellar: :any,                 big_sur:        "30b05cc10a096c6c8ba9a04b4884a83690abe966cb9604b85fb2cd139e572b46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3d23202a09bdce26182a94e00cc3c412373f30a7396dbe73d6abf2dcd21d5ec"
   end
 
   depends_on "autoconf" => :build

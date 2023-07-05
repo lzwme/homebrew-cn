@@ -6,6 +6,11 @@ class CargoBinstall < Formula
   license "GPL-3.0-only"
   head "https://github.com/cargo-bins/cargo-binstall.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a2587ed30c833b1381ddb611ac545ef0ed6b3584e7b014dee9a975086d3ce5d6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a691e7210ff7e3d85f740b3cdac8f3e4c9c853a2ab83450171f02c1bb58e3200"

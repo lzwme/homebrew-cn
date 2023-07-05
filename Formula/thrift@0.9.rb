@@ -20,6 +20,8 @@ class ThriftAT09 < Formula
 
   keg_only :versioned_formula
 
+  disable! date: "2024-01-01", because: :versioned_formula
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "bison" => :build

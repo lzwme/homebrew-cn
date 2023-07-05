@@ -6,6 +6,11 @@ class Xmount < Formula
   license "GPL-3.0-or-later"
   revision 3
 
+  livecheck do
+    url "https://deb.debian.org/debian/pool/main/x/xmount/"
+    regex(/href=.*?xmount[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
+  end
+
   bottle do
     sha256 x86_64_linux: "c61ddafea43cbd071198031f80f4893a2fc90266a9daf1999e78a1b6211d748a"
   end

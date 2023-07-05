@@ -1,8 +1,8 @@
 class Tlsx < Formula
   desc "Fast and configurable TLS grabber focused on TLS based data collection"
   homepage "https://github.com/projectdiscovery/tlsx"
-  url "https://ghproxy.com/https://github.com/projectdiscovery/tlsx/archive/v1.1.0.tar.gz"
-  sha256 "229a66579c469e896890f45fcd3e9f5f9990c480cf4718a48dc978fde9878091"
+  url "https://ghproxy.com/https://github.com/projectdiscovery/tlsx/archive/v1.1.1.tar.gz"
+  sha256 "3d24d7e135784d3da98d2e54f724087dc54990706b69baa40f0423b29797f409"
   license "MIT"
   head "https://github.com/projectdiscovery/tlsx.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Tlsx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "71c678689eb07e20e16ce470c078d8c92a1f4caf020e75648984f7ebe8d7f1ee"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "71c678689eb07e20e16ce470c078d8c92a1f4caf020e75648984f7ebe8d7f1ee"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "71c678689eb07e20e16ce470c078d8c92a1f4caf020e75648984f7ebe8d7f1ee"
-    sha256 cellar: :any_skip_relocation, ventura:        "d1b71fb9d14cd52f02da35c0be1a1e317ac9016f62c884c3c66e3ba5250b870d"
-    sha256 cellar: :any_skip_relocation, monterey:       "15c6c3533e62bed1339132e94e20605478b37eef141f86d6a29a9f1759e21f6b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4362cce0bcc64e37f1d1c9c193670238adf7caec36716b636cb4f479e687d3b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dad37ae0f8eeba7ce4a216ea87397f7c588decec47485a34ff0820354083cc67"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "34362af7f11c94f3944d991a9d0f40569f4ae23923bf0da5557c51c8ffa99b4e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "34362af7f11c94f3944d991a9d0f40569f4ae23923bf0da5557c51c8ffa99b4e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "34362af7f11c94f3944d991a9d0f40569f4ae23923bf0da5557c51c8ffa99b4e"
+    sha256 cellar: :any_skip_relocation, ventura:        "6ffa9bc80a1a0aadfc2d61306574fb9005dac8fc2e57ff82ef58182222b0dc18"
+    sha256 cellar: :any_skip_relocation, monterey:       "fe784fbdd3fd6f776a3201fa9322637102b37e692ec71176405bca9ac8c12fb5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c62ad0ca53b47e92218f51688571d738d1b8e0d7ca868e8d414d54917c363cf8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1868163228ea482e99f41db13de3967f04a1d129236b6bab19005c8dd8676320"
   end
 
   depends_on "go" => :build

@@ -4,23 +4,23 @@ class Picotool < Formula
   license "BSD-3-Clause"
 
   stable do
-    url "https://ghproxy.com/https://github.com/raspberrypi/picotool/archive/refs/tags/1.1.1.tar.gz"
-    sha256 "2d824dbe48969ab9ae4c5311b15bca3449f5758c43602575c2dc3af13fcba195"
+    url "https://ghproxy.com/https://github.com/raspberrypi/picotool/archive/refs/tags/1.1.2.tar.gz"
+    sha256 "f1746ead7815c13be1152f0645db8ea3b277628eb0110d42a0a186db37d40a91"
 
     resource "pico-sdk" do
-      url "https://ghproxy.com/https://github.com/raspberrypi/pico-sdk/releases/download/1.5.0/sdk1.5.0-with-submodules.zip"
-      sha256 "59a09e619cab67b614d5f4e928a82f6bd055ce6083eb84f1b6caa269f1e3a559"
+      url "https://ghproxy.com/https://github.com/raspberrypi/pico-sdk/archive/refs/tags/1.5.1.tar.gz"
+      sha256 "95f5e522be3919e36a47975ffd3b208c38880c14468bd489ac672cfe3cec803c"
     end
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d56b7760c3d5a77669d1e69ebf3dbdac4b0d6680d01d438bb447bf0c09aa549e"
-    sha256 cellar: :any,                 arm64_monterey: "6cf9bc19040bbcdfb70a6ea547c22a6480f53168f68fcd8474f45f8701cf03c3"
-    sha256 cellar: :any,                 arm64_big_sur:  "573308465e29e22d7ea592aa0a835f861695921194432feb9a69fc99b93aab62"
-    sha256 cellar: :any,                 ventura:        "4d5d2046ad99ada6f69ca50ad8bc8f08c2b33ec6082c9395d3ec8de4735c4da9"
-    sha256 cellar: :any,                 monterey:       "62f2fc8a6f196cbf98f6fbc1d5807c933cf695511e8a9258cc46cb727426a58f"
-    sha256 cellar: :any,                 big_sur:        "18791cd0bf1b69a5215d232f56425a02b4d44a890f3af087931b8e287f32c0f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a50cabfece6ec443857dc7290ea69bdf5ca889cccc610c8043f954cf061c8e0b"
+    sha256 cellar: :any,                 arm64_ventura:  "ade5c431f3d8bc38a8344f568560e66ed9db419456135562911a2fa4857a6a91"
+    sha256 cellar: :any,                 arm64_monterey: "f5215b286c3c79327faa53ae0cbea79a0127417eca52c9ff7888293932ffc5c2"
+    sha256 cellar: :any,                 arm64_big_sur:  "a58c6248be802d53a62ed94e174895d96e8d785c06eaee7c8d868cb323f6367c"
+    sha256 cellar: :any,                 ventura:        "7c0768d43b4ada8fd89e1749bab90b19e94a1ca5e1ceca09059323fbbb2d64cf"
+    sha256 cellar: :any,                 monterey:       "94434284d05dd6e0a5ac3b484274805a7f848740ebec0e292b6a9f8b02c98f08"
+    sha256 cellar: :any,                 big_sur:        "ea42adeb280960f973b906bacfdd065d70ff08611a0c9f6e08cd350105c8a8e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26eb789f62304297bfbc00afe1eb8616c0e04dd381a2b95ae7d72869e81108e4"
   end
 
   head do

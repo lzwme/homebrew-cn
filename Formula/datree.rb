@@ -1,8 +1,8 @@
 class Datree < Formula
   desc "CLI tool to run policies against Kubernetes manifests YAML files or Helm charts"
   homepage "https://datree.io/"
-  url "https://ghproxy.com/https://github.com/datreeio/datree/archive/1.9.9.tar.gz"
-  sha256 "1de56cb9f74a549089ce610a945b103805d220a11545ba3c4d82f899ee8ca350"
+  url "https://ghproxy.com/https://github.com/datreeio/datree/archive/1.9.10.tar.gz"
+  sha256 "482b82e32165d63b59da274cad456848dace2efc3e9a0648446831f3c1624c4a"
   license "Apache-2.0"
   head "https://github.com/datreeio/datree.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Datree < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7f9a945b24f6c39e8fdd3819b5848bf9af67c28e2c70134aa16723e809a88d15"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "28d28960e79e5bdac6c42491bf3ccbb4dfadb6a0f35557f4b4d10799b6c95ded"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "338e5398b68d5c6aed1bf9ea4be3fe64d2b10893d2e2e70ce762e5a64426c74c"
-    sha256 cellar: :any_skip_relocation, ventura:        "c6248bb94356831b331398db807d7777c776677db1739e1a70956fe5c31bfcd0"
-    sha256 cellar: :any_skip_relocation, monterey:       "6a1b19bf41be14aa7abb1cf5dab516b4ad20cf75f322fa3c47b008c5f13a0f80"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a37b450e4b5d6bccecb0307279e88561496716fc60638029e77e77e633f1be2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "313ae645443f80cbb9507979f9ce8ae3b449805a991a89206940793ca39225d5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7521afecfbe22a4d5ebc35bd66aecdad3c3b2a3de9a62412635e8f2c0ff12438"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ae7377fecfab910f6b8699cb1f3f28ec2919d7bd17b4160abbc288104f4c1418"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "03cd25f9692df206435ae6da743dc2a6b04fdf3f12a7a0d73ad18577f29f36dd"
+    sha256 cellar: :any_skip_relocation, ventura:        "b9f1871432fac855d55a86969cc6f83c84fb82bd8f46b2b9b17952ba8922a6cf"
+    sha256 cellar: :any_skip_relocation, monterey:       "24ed228f2605dea2c198cd6aafbb697850e3937a62c2562ba8528cf2135ebee4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e5fa4e2730c128139854b8863f8c3aa59e3fc25dfc4119f020eb1e383665dd24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "181fd872baaebe7d47f975931a8df223d38ff091561137f40cbaa8f771b7ddec"
   end
 
   depends_on "go" => :build

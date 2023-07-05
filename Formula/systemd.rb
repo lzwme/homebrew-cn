@@ -53,6 +53,7 @@ class Systemd < Formula
       -Dhwdb=false
       -Dlz4=true
       -Dgcrypt=false
+      -Dp11kit=false
     ]
 
     system "meson", "setup", "build", *args, *std_meson_args

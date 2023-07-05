@@ -1,20 +1,19 @@
 class AvroCpp < Formula
   desc "Data serialization system"
   homepage "https://avro.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=avro/avro-1.11.0/cpp/avro-cpp-1.11.0.tar.gz"
-  mirror "https://archive.apache.org/dist/avro/avro-1.11.0/cpp/avro-cpp-1.11.0.tar.gz"
-  sha256 "ef70ca8a1cfeed7017dcb2c0ed591374deab161b86be6ca4b312bc24cada9c56"
+  url "https://www.apache.org/dyn/closer.lua?path=avro/avro-1.11.2/cpp/avro-cpp-1.11.2.tar.gz"
+  mirror "https://archive.apache.org/dist/avro/avro-1.11.2/cpp/avro-cpp-1.11.2.tar.gz"
+  sha256 "4abf733b886e9469aace111573904b0d7d15b38b245adce29d5dfc4666a3c90c"
   license "Apache-2.0"
-  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d28e6e8ad94ce88d639e2bf47c8380ca870bafb12765c8c8864574ad7327f3f6"
-    sha256 cellar: :any,                 arm64_monterey: "ddaa7f7c209a439f8f7b62d8abcbd16b90f11d31f3e61e63804665b405efd4fb"
-    sha256 cellar: :any,                 arm64_big_sur:  "4976ca9f300014464f37566598860ec3e045422102d7bd25d572cfcc366b3ce0"
-    sha256 cellar: :any,                 ventura:        "0b5163bb5e6084a52a5d904c8ec73273cae339257cb708f01ce172a18e21769f"
-    sha256 cellar: :any,                 monterey:       "cb85f45a2e61112b1e8402c1729b0d394367f419ca0b7c54ab7716a7e83ea3a6"
-    sha256 cellar: :any,                 big_sur:        "ff16bcf7ee8aee89bf6112f37a8dc46b6c3290618471a0c3cc6c8f285ab20250"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a19f4faf655588028005cc3fe90b56e92505a2d170e2c1d4029d44a623adc1a"
+    sha256 cellar: :any,                 arm64_ventura:  "b3f08fe9f4adb2c7d738375b67bf7e8714e0545f6f06aea7e3dcd71e5a063056"
+    sha256 cellar: :any,                 arm64_monterey: "59974b029bc5ddeb8bfda48c65654a4234eb93da7a906550bfec01bc0f0ca17f"
+    sha256 cellar: :any,                 arm64_big_sur:  "ff389dcf51bea64a046460954b87aafd3c8aae34a91f0aa6abe5195fe7497b9f"
+    sha256 cellar: :any,                 ventura:        "4b716a1ad09b16035c828d56009ba448f5900b8f5d45b1a1203cb187f4915d73"
+    sha256 cellar: :any,                 monterey:       "7cfdaa40cb85377a7381c36156c9170b0e9d73c74f2e9e21b6907a10d71ba4c8"
+    sha256 cellar: :any,                 big_sur:        "6d8c3060dc59bf18609c4460083ce0e249667841c167729fbbc78cdf849248fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "424e21b1c2105bd4cb1856dda9dc4ed7f94a16e666b1b58ea887345bed28dafb"
   end
 
   depends_on "cmake" => :build
@@ -22,8 +21,9 @@ class AvroCpp < Formula
   depends_on "boost"
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

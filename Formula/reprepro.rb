@@ -6,6 +6,11 @@ class Reprepro < Formula
   license "GPL-2.0-only"
   revision 5
 
+  livecheck do
+    url "https://deb.debian.org/debian/pool/main/r/reprepro/"
+    regex(/href=.*?reprepro[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "58280d22109eadb3d07036d81afe3a9d0a1eb5b0cc6433993ea072bec7bb597a"
     sha256 cellar: :any,                 arm64_monterey: "e915fdd76e80343ba05cad6f9a914f9b60f4542f3e7960c670356b7fd0d98b5d"
