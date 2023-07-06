@@ -15,26 +15,28 @@ class Inadyn < Formula
     sha256 x86_64_linux:   "dd28084bcb90b80a67470ae446b87acfb980ae49228abb6a5a422085684ddaff"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "cmake"    => :build
-  depends_on "libtool"  => :build
+  head do
+    url "https://github.com/troglobit/inadyn.git", branch: "master"
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool"  => :build
+  end
+
+  depends_on "pkg-config" => :build
   depends_on "confuse"
   depends_on "gnutls"
-  depends_on "pkg-config"
 
   def install
     mkdir_p buildpath/"inadyn/m4"
-    system "autoreconf", "-vif"
-    system "./configure", "--disable-dependency-tracking",
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system "./configure", *std_configure_args,
                           "--disable-silent-rules",
-                          "--prefix=#{prefix}",
                           "--sysconfdir=#{etc}",
                           "--localstatedir=#{var}"
     system "make", "install"
   end
 
   test do
-    system "#{sbin}/inadyn", "--check-config", "--config=#{HOMEBREW_PREFIX}/share/doc/inadyn/examples/inadyn.conf"
+    system sbin/"inadyn", "--check-config", "--config=#{doc}/examples/inadyn.conf"
   end
 end

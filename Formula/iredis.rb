@@ -3,20 +3,19 @@ class Iredis < Formula
 
   desc "Terminal Client for Redis with AutoCompletion and Syntax Highlighting"
   homepage "https://iredis.io"
-  url "https://files.pythonhosted.org/packages/33/ee/758d256fdcc53566f8bc852d48402b7f197a78c29684113180d8d7ce95f6/iredis-1.13.0.tar.gz"
-  sha256 "d1e4e7936d0be456f70a39abeb1c97d931f66ccd60e891f4fd796ffb06dfeaf9"
+  url "https://files.pythonhosted.org/packages/26/61/165066a5f1e75203ff13516ee6fd14b67da085c203bd33ff669076afe4b0/iredis-1.13.1.tar.gz"
+  sha256 "316cdb9aec542a1d320606abd6093c406250c1b1ed20db1b0ac6d333e44b990a"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/laixintao/iredis.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "361aba6cf307062ef8d530b9702e49e264337b4c67251f7ac4ed97fcd686f287"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "61b2e41c3e6ffaa4b394b621cbbae7df6ec3f633215e154719f2563373a6e6a5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3021922c1f6c88a3997b87060822802da5a880b9e3d80fe36f88353327f1e970"
-    sha256 cellar: :any_skip_relocation, ventura:        "00ab3cf67918c0e688c25723fa4a1e1a960dd90b91ee8f563c117da86d580feb"
-    sha256 cellar: :any_skip_relocation, monterey:       "71a40038670cb86cb6962235dd88d232626732a0cb026a54530abfcab1df3e7b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cc924745baa12ee39b800ead31018213a224ea3dcde19e500ab06bc92d1c96e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e3a8c1d2e387bf6729bc4c87120da4156e0446e9b8ce82103743883cc26560b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6141d1b7f8beb87a0540b8dab2da2434c1929cd7f98277e38bf53246b8906bac"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "83e3f1a43cf5a7bb3c82288b36a1438897b9e29f3672f7e8ae1d4591b22fdbc9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7bed9184bbc1f5228b76c5f636df41f2ebc2632ec34e9004bf32245fb5012f91"
+    sha256 cellar: :any_skip_relocation, ventura:        "a51ca95cf032e43bce04881a11145f5b9ca45cd9258685afef44ef1e6e4e8346"
+    sha256 cellar: :any_skip_relocation, monterey:       "728c58b2563a3f529f9075890c2a862d1abe557e58bfdc464cbbcec0b965c544"
+    sha256 cellar: :any_skip_relocation, big_sur:        "07b0b93399c43ee4808b0ba96665590f3bb1223ed22b5aa3f0d09ea44d451607"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5fa23c2b94cf34914269a16c8a30cd0d6588a11feb092a05c8b634ea623d0a6e"
   end
 
   depends_on "pygments"
@@ -54,13 +53,13 @@ class Iredis < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/4b/bb/75cdcd356f57d17b295aba121494c2333d26bfff1a837e6199b8b83c415a/prompt_toolkit-3.0.38.tar.gz"
-    sha256 "23ac5d50538a9a38c8bde05fecb47d0b403ecd0662857a86f886f798563d5b9b"
+    url "https://files.pythonhosted.org/packages/9a/02/76cadde6135986dc1e82e2928f35ebeb5a1af805e2527fe466285593a2ba/prompt_toolkit-3.0.39.tar.gz"
+    sha256 "04505ade687dc26dc4284b1ad19a83be2f2afe83e7a828ace0c72f3a1df72aac"
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz"
-    sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
+    url "https://files.pythonhosted.org/packages/4f/13/28e88033cab976721512e7741000fb0635fa078045e530a91abb25aea0c0/pyparsing-3.1.0.tar.gz"
+    sha256 "edb662d6fe322d6e990b1594b5feaeadf806803359e3d4d42f11e295e588f0ea"
   end
 
   resource "python-dateutil" do
@@ -74,8 +73,8 @@ class Iredis < Formula
   end
 
   resource "redis" do
-    url "https://files.pythonhosted.org/packages/53/30/128c5599bc3fa61488866be0228326b3e486be34480126f70e572043adf8/redis-4.5.5.tar.gz"
-    sha256 "dc87a0bdef6c8bfe1ef1e1c40be7034390c2ae02d92dcd0c7ca1729443899880"
+    url "https://files.pythonhosted.org/packages/73/88/63d802c2b18dd9eaa5b846cbf18917c6b2882f20efda398cc16a7500b02c/redis-4.6.0.tar.gz"
+    sha256 "585dc516b9eb042a619ef0a39c3d7d55fe81bdb4df09a52c9cdde0d07bf1aa7d"
   end
 
   resource "wcwidth" do

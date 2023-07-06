@@ -56,10 +56,10 @@
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 1
-, Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 1
+, Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 0
@@ -475,6 +475,7 @@
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 0
+, Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 0
@@ -823,7 +824,7 @@
 , Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 1
-, Homebrew/homebrew-core, 0
+, Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 1
@@ -1034,6 +1035,7 @@
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 0
+, Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 1
@@ -1803,9 +1805,9 @@
 , Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 1
-, Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 1
+, Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 0
@@ -2435,6 +2437,7 @@
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 0
+, Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 0
@@ -2891,7 +2894,7 @@
 , Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 1
-, Homebrew/homebrew-core, 1
+, Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 1
@@ -3462,6 +3465,7 @@
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 1
+, Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 0
@@ -4247,6 +4251,7 @@
 , Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 1
+, Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 0
@@ -4765,8 +4770,8 @@
 , Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 1
-, Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 1
+, Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 0
 , Homebrew/homebrew-core, 1
 , Homebrew/homebrew-core, 0
@@ -7912,6 +7917,7 @@
 , Homebrew/homebrew-cask, 1
 , Homebrew/homebrew-cask, 1
 , Homebrew/homebrew-cask, 1
+, Homebrew/homebrew-cask, 0
 , Homebrew/homebrew-cask, 0
 , Homebrew/homebrew-cask, 0
 , Homebrew/homebrew-cask, 0
@@ -13275,6 +13281,7 @@
 , nicerloop/homebrew-nicerloop, 1
 , nicerloop/homebrew-nicerloop, 1
 , nicerloop/homebrew-nicerloop, 0
+, nicerloop/homebrew-nicerloop, 1
 , nicerloop/homebrew-nicerloop, 1
 , nicerloop/homebrew-nicerloop, 1
 , nicerloop/homebrew-nicerloop, 1

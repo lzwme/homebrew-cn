@@ -2,18 +2,18 @@ class Frpc < Formula
   desc "Client app of fast reverse proxy to expose a local server to the internet"
   homepage "https://github.com/fatedier/frp"
   url "https://github.com/fatedier/frp.git",
-      tag:      "v0.50.0",
-      revision: "4fd800bc48708843e32962c9ce23df6f971fdc99"
+      tag:      "v0.51.0",
+      revision: "53626b370ce2be290e844e58a1384af5059ea489"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c47572f9bee74f80ba5b1cba9b177d5329f6edf1d446057fa7636060e77b0468"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c47572f9bee74f80ba5b1cba9b177d5329f6edf1d446057fa7636060e77b0468"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c47572f9bee74f80ba5b1cba9b177d5329f6edf1d446057fa7636060e77b0468"
-    sha256 cellar: :any_skip_relocation, ventura:        "3de046fadf03ea397177d937697fed756b42e01402c08fa181fed2a5f8d83162"
-    sha256 cellar: :any_skip_relocation, monterey:       "3de046fadf03ea397177d937697fed756b42e01402c08fa181fed2a5f8d83162"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3de046fadf03ea397177d937697fed756b42e01402c08fa181fed2a5f8d83162"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "092c8701ba72118631b5079b87d3bc514cc6f70acf39dc0a0cfdb191662c2d77"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5750ceb4ba9331c08670a7b7cf142d3eaa9eeb938b9eef35f8c8b62b292c894"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5750ceb4ba9331c08670a7b7cf142d3eaa9eeb938b9eef35f8c8b62b292c894"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a5750ceb4ba9331c08670a7b7cf142d3eaa9eeb938b9eef35f8c8b62b292c894"
+    sha256 cellar: :any_skip_relocation, ventura:        "d0079601e68ecd94f238afc21c0b4434ea8a64f4b75341304fd44b475657e469"
+    sha256 cellar: :any_skip_relocation, monterey:       "d0079601e68ecd94f238afc21c0b4434ea8a64f4b75341304fd44b475657e469"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d0079601e68ecd94f238afc21c0b4434ea8a64f4b75341304fd44b475657e469"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13d511a9749c4c41ac5dd6fe34eda2a9454367906a43728961d33a07145e92ab"
   end
 
   depends_on "go" => :build

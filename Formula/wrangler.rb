@@ -1,6 +1,7 @@
 class Wrangler < Formula
   desc "Refactoring tool for Erlang with emacs and Eclipse integration"
-  homepage "https://www.cs.kent.ac.uk/projects/wrangler/Wrangler/"
+  homepage "https://refactoringtools.github.io/docs/wrangler/"
+  license all_of: ["BSD-3-Clause", "ErlPL-1.1", "GPL-2.0-or-later", "GPL-3.0-or-later"]
   revision 4
   head "https://github.com/RefactoringTools/wrangler.git", branch: "master"
 

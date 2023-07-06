@@ -1,8 +1,8 @@
 class Pjproject < Formula
   desc "C library for multimedia protocols such as SIP, SDP, RTP and more"
   homepage "https://www.pjsip.org/"
-  url "https://ghproxy.com/https://github.com/pjsip/pjproject/archive/2.13.tar.gz"
-  sha256 "4178bb9f586299111463fc16ea04e461adca4a73e646f8ddef61ea53dafa92d9"
+  url "https://ghproxy.com/https://github.com/pjsip/pjproject/archive/refs/tags/2.13.1.tar.gz"
+  sha256 "32a5ab5bfbb9752cb6a46627e4c410e61939c8dbbd833ac858473cfbd9fb9d7d"
   license "GPL-2.0-or-later"
   head "https://github.com/pjsip/pjproject.git", branch: "master"
 
@@ -12,14 +12,13 @@ class Pjproject < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ccee5a9791d7286f541e9f59931f5c2193af1e0ca0ad189cb5dbe56826036ff5"
-    sha256 cellar: :any,                 arm64_monterey: "71ba504dd2255cfba6d1867d27add23f415a841c0dea2a96cced2f5868c0645a"
-    sha256 cellar: :any,                 arm64_big_sur:  "89e39245774453366e922ccca427a5ef2d70809a7fc952e89b095ba884830998"
-    sha256 cellar: :any,                 ventura:        "e5f65e36cef12259e4d690959b31a3a1345635b65d4a34b212873e8ed1272a5a"
-    sha256 cellar: :any,                 monterey:       "66b92f14f4d14a45e55bdf306311cb2bbd0fca3573e2aa03900d4c4b1d427e6d"
-    sha256 cellar: :any,                 big_sur:        "29ea64bce5012253aacc4ccf1cd43c8ec701ccf625739341817c6d452a9cc44e"
-    sha256 cellar: :any,                 catalina:       "7265ffaa44bdc67e47721c12d80cf7e7d213f47a393d8923ceadeaee9968e68e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "026e78e19b27cdba146d7e90399a0e696dde30c8854bebe031cfecf622126104"
+    sha256 cellar: :any,                 arm64_ventura:  "f726f77dd38e734ea7f87fa9c1b98a1ecbc1ef1c69e94868242c866f2c74e087"
+    sha256 cellar: :any,                 arm64_monterey: "056ddd3d616ef3cec8a08d83256c057589ecdbda9e517ebb8aeca446dfd0a2f5"
+    sha256 cellar: :any,                 arm64_big_sur:  "99685833f0e06c4daa44831d8b04d11100a435eda000e788efcd0bd6e1030f51"
+    sha256 cellar: :any,                 ventura:        "7762d02b800fc958741659fac1cf44be6fd398bca506c0862d7d82e50276a876"
+    sha256 cellar: :any,                 monterey:       "721afc38bbdd1f5aeadaa7dae3931be0973ee72c5e90596d7a50172bbf36edf9"
+    sha256 cellar: :any,                 big_sur:        "21f80abae30db9f098f5385cd7c36f037639d7d2826c490ad74a5a50b8f556f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2d9ff66e28752db7570bf2a9e35235839a5b1c33c73ba06249880e2e3c62f4b"
   end
 
   depends_on macos: :high_sierra # Uses Security framework API enum cases introduced in 10.13.4

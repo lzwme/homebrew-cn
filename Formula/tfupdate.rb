@@ -1,19 +1,19 @@
 class Tfupdate < Formula
   desc "Update version constraints in your Terraform configurations"
   homepage "https://github.com/minamijoyo/tfupdate"
-  url "https://ghproxy.com/https://github.com/minamijoyo/tfupdate/archive/v0.6.8.tar.gz"
-  sha256 "851068a49540ab8c45fb66aa1107932bd7d9aebfb7dc2e8a8e3ab2dde845624a"
+  url "https://ghproxy.com/https://github.com/minamijoyo/tfupdate/archive/v0.7.1.tar.gz"
+  sha256 "8f7952175e96b226c19ef615fe1a49c725585c4265c4e8121434e84d2a1f1f51"
   license "MIT"
   head "https://github.com/minamijoyo/tfupdate.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7955306361195a2c069b0968a9cd37e43e0db38dc61a70a6794ca37ee0f7f0ad"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7955306361195a2c069b0968a9cd37e43e0db38dc61a70a6794ca37ee0f7f0ad"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7955306361195a2c069b0968a9cd37e43e0db38dc61a70a6794ca37ee0f7f0ad"
-    sha256 cellar: :any_skip_relocation, ventura:        "9efde569a58f1e8a35eaab9f4e3b53acbf8b6e8bc44add63c8e518d973ddfc75"
-    sha256 cellar: :any_skip_relocation, monterey:       "9efde569a58f1e8a35eaab9f4e3b53acbf8b6e8bc44add63c8e518d973ddfc75"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9efde569a58f1e8a35eaab9f4e3b53acbf8b6e8bc44add63c8e518d973ddfc75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8048e1c6279a55200224db0a3a55a07a75fc0710d6f0ce7adcee41c64438a7b5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0135b5ecbc12cf0bebf6061e0ef5d68067b9d0a401ad4689f9982542d095074d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0135b5ecbc12cf0bebf6061e0ef5d68067b9d0a401ad4689f9982542d095074d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0135b5ecbc12cf0bebf6061e0ef5d68067b9d0a401ad4689f9982542d095074d"
+    sha256 cellar: :any_skip_relocation, ventura:        "f1ce4df587f96559ab8237270b591ea4ee95e87899ac757604304f67a3302f4e"
+    sha256 cellar: :any_skip_relocation, monterey:       "f1ce4df587f96559ab8237270b591ea4ee95e87899ac757604304f67a3302f4e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f1ce4df587f96559ab8237270b591ea4ee95e87899ac757604304f67a3302f4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01b2fc533f51ec23b798a190936f9d544b8fae9d850ca48ab6de66b6a22bb0db"
   end
 
   depends_on "go" => :build

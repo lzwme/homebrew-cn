@@ -3,23 +3,24 @@ require "language/node"
 class Appium < Formula
   desc "Automation for Apps"
   homepage "https://appium.io/"
-  url "https://registry.npmjs.org/appium/-/appium-1.22.3.tgz"
-  sha256 "74d9fbac66e08d9c3b0fde7f4deaa42e1f070167f0508e2891fad28558147fd6"
+  url "https://registry.npmjs.org/appium/-/appium-2.0.0.tgz"
+  sha256 "15147867e18d47ed61e605ec4f62bd937bc9d6a43608fc67f0953cd02fb6cd61"
   license "Apache-2.0"
   head "https://github.com/appium/appium.git", branch: "master"
 
   bottle do
-    sha256                               arm64_ventura:  "d58c9925235b962cf33f38d3d4511ece2914bc73f957f2f1f959b5012c0eb68c"
-    sha256                               arm64_monterey: "5b71cfdfa29c2bc98785b485fc0b279753125d9af2e9bf9bbc5e4d7f8d9ce4f8"
-    sha256                               arm64_big_sur:  "e2f7fdf6d4c72380fd43936143660911c408b98542d0e033b3a2cbb20d6e1fab"
-    sha256                               ventura:        "2a74b09965bbd8d1d52a23e6879d6f66e1841ef44570122c6518c323eb17e501"
-    sha256                               monterey:       "854d9cf2275384e65781c8201af16f3a6ce0ddea25fb0f12d2999fc09438c018"
-    sha256                               big_sur:        "698fe344433d98af374558688ea665921fb7d74f09c51ac61d5739fb0fcc467a"
-    sha256                               catalina:       "9fd553fc9f5957b5cd8bc1c1892fcb9dfcff89571dfe8af04a70c752a0641a1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b231d0004b0f8d6bb85da28e0d5181c496ee38b015a1bcbff992c49d24c851f"
+    sha256                               arm64_ventura:  "3d82cfa9363ae2908d711663076d1ad3652f14387c10a539c7f185eb86dd026f"
+    sha256                               arm64_monterey: "95423263b2198b70435f80fe27f2e53968cdb616d83542c0783a447cd0b469c8"
+    sha256                               arm64_big_sur:  "270e27355c762b8e501d59c8bec4ae793645842233dad51844c505c5205f8bbd"
+    sha256                               ventura:        "db7625b436ba92de5cba30a3972b88d9c5daeb5b050ba1ac8e8e6fccc3b522f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a7fa6983cd145d3d37c67a21f853972372bb760364f5b01747180aebbb1163f"
   end
 
   depends_on "node"
+
+  on_linux do
+    depends_on "vips"
+  end
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec), "--chromedriver-skip-install"
@@ -42,8 +43,7 @@ class Appium < Formula
   end
 
   test do
-    output = shell_output("#{bin}/appium --show-config 2>&1")
-    assert_match version.to_str, output
+    assert_match version.to_s, shell_output("#{bin}/appium --version")
 
     port = free_port
     begin

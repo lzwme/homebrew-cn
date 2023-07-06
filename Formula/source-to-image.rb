@@ -2,19 +2,19 @@ class SourceToImage < Formula
   desc "Tool for building source and injecting into docker images"
   homepage "https://github.com/openshift/source-to-image"
   url "https://github.com/openshift/source-to-image.git",
-      tag:      "v1.3.6",
-      revision: "cd7d7ce9fd7532fc1e273152e9f2a1b5b76cdfca"
+      tag:      "v1.3.7",
+      revision: "c879f900c4e91cff51d7bd9b8529c6302659ba68"
   license "Apache-2.0"
   head "https://github.com/openshift/source-to-image.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "47f1a541749cb2fbd129febf1e8b61069970287473dc9e3aa8aa8cfbc249dede"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6b3078161cefd110d7c57a3fed78a13f77c72feccdf7a9c6f2c5da49006596d9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "446734cab9cbf313cef235cf2af745f33c2ad1f55f77ae3fd7b5c9d31d5299bc"
-    sha256 cellar: :any_skip_relocation, ventura:        "eb84466248c83b1ba2a0b2925b971928b7633c376514d8ca2998360c44e2d168"
-    sha256 cellar: :any_skip_relocation, monterey:       "362ef120cab856462a322169a1033462c5215c9a87d840d44d85f86fb47eea0d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "617c08c174f94b5b3e96397602cdee3ff4bf31ffc2dabebd0258faa8cbbeae2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6041df3b76ba024c18e485d73dec6f1df68e4651c5951cfbcd609ca48468920a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b15c04207a042748e5c07099694d0b5895af133cb81e2797e4d3433424330b5d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a84e7d9288e7903601077bde8a92654320c5bc6bffbb6ecb2c8faa06acb863bb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a0f60b6e2bcda8fac7d7b95c07de710ec40a8f1fd89a0e1fed9b67aead9ee723"
+    sha256 cellar: :any_skip_relocation, ventura:        "79003b73b5b0ab4dfb6c6e6626cdafe59ad3e0c14662e556c6b68f31ea4a7a61"
+    sha256 cellar: :any_skip_relocation, monterey:       "200d74cc2e4f14829f44245bc46eb6a78147f506553126b3908237653811b91b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "fdf90aaa8cc5ef9a140246b4b11b30f8d1799e98f259cf079c51f34ef6037121"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56d7cbaf0ab5b674460ce652fe029818517fd25000e96856306b28dc2d7f28c3"
   end
 
   depends_on "go" => :build

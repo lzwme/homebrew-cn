@@ -1,22 +1,19 @@
 class Sshguard < Formula
   desc "Protect from brute force attacks against SSH"
   homepage "https://www.sshguard.net/"
-  url "https://downloads.sourceforge.net/project/sshguard/sshguard/2.4.2/sshguard-2.4.2.tar.gz"
-  sha256 "2770b776e5ea70a9bedfec4fd84d57400afa927f0f7522870d2dcbbe1ace37e8"
+  url "https://downloads.sourceforge.net/project/sshguard/sshguard/2.4.3/sshguard-2.4.3.tar.gz"
+  sha256 "64029deff6de90fdeefb1f497d414f0e4045076693a91da1a70eb7595e97efeb"
   license "ISC"
   version_scheme 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89678a0c0443f86ccdc5674e288f51afc18ff2c7659af3c2e2a21602dbbf89e9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "432b5c348a85223ac41b4ff38a1416847227c74e3372ddb1aeb1575612421dbb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9d878d2defd31509f5248eb407a15b358e1b5e78e317cb4ecb58ea971eb0e21f"
-    sha256 cellar: :any_skip_relocation, ventura:        "b389fedf2144e6ccd91a51b07d5d433aa942a92da15cde4511b2bfcb379ea778"
-    sha256 cellar: :any_skip_relocation, monterey:       "223206d74a0c9637ef21524dd7031262fad932ec9edd60996cf88272eff27e19"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fbd36be947e48cf8617b3889334ac8c0941b51e03b4c5193027791a727588999"
-    sha256 cellar: :any_skip_relocation, catalina:       "02f3958ed46f151af475f82d9056fd4ba2d7cc6992f95d5ee35351ec0091256e"
-    sha256 cellar: :any_skip_relocation, mojave:         "ceeba24a2d30a5832d77dcdac07234d693294053198efefc220125b14082c0ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "97303dd520d97f9dc3f9e66462093c982663df097e0665c9cba4bbdb9e3eefc6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d1f7f154a01ba3ba3e1ef3862f0ea18c2460184686dce1129b1ccc0b6dd6231e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0ad5eef11b004af2258151a03ee2b9802267be357da3c14e0c4cf104294d1085"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d3662f3a27292d8a40abb8645eed33d17ee718c877d419c61e3f44020a49a712"
+    sha256 cellar: :any_skip_relocation, ventura:        "65fce1b8916c1e589e329fd991de5d55abf25dabcd87ae6cd444a458bb4ac3f0"
+    sha256 cellar: :any_skip_relocation, monterey:       "cb3e4ad746aa9eb9d840fd332a98fe60fd71632fdf28f90e21f643dd3d92bb03"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8fe1ac17002be39b5b190d1d98822ce397740e032cdaee6994ded17af59c954a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "293288f8ed572eadf951168a526824663f6a4193d1a04d6b487fd41478b0ace5"
   end
 
   head do

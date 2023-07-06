@@ -2,19 +2,19 @@ class Dscanner < Formula
   desc "Analyses e.g. the style and syntax of D code"
   homepage "https://github.com/dlang-community/D-Scanner"
   url "https://github.com/dlang-community/D-Scanner.git",
-      tag:      "v0.14.0",
-      revision: "d5d6920502bf1bfdb29474007a59fd606df0aadc"
+      tag:      "v0.15.2",
+      revision: "1201a68f662a300eacae4f908a87d4cd57f2032e"
   license "BSL-1.0"
   head "https://github.com/dlang-community/D-Scanner.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b103273d63236f1b0248e4ae49cc8222d20aaa0a1caea7868b9fc534c6ebb88d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6aa9de194ec0c6fc7eeaebc1b248246d2b6a277a90a90a750d15286b304696dc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e29961bc77ba4286bf0639b6d5820c1e6f2eaceed7acb8d33c1d745281ac20b7"
-    sha256 cellar: :any_skip_relocation, ventura:        "42ef416a861cc5c3417280a2e9a174443f1e6d7f8b3643b10239d86417f33289"
-    sha256 cellar: :any_skip_relocation, monterey:       "f536efe9c19e9487d576cd25a2c6327c5aacf2fb88e003941e5487b130b48448"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1cdfbe7edce737e08e428c5cb8617c44b5a8ec433a51406654f0c4865a1f9a56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f621b9b86043c107ff01833bc027bfa6e1a5f160fd987696dc85de4ca80441ce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "135c33db9a535d0c6b1c4ad21899663d2cf20d15279421273d7ba81b548babcb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f7df8505b212231cd76276d1e11b9f9bd9794527cefb81ef077ac4d6e870b504"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "11e1b62ebf7c2955101c1d7d0aa933d594709eaada2dc9de080238f617a3cb73"
+    sha256 cellar: :any_skip_relocation, ventura:        "5f9e5546dcccee737c540b09ddc4920c59a52f04f99a35d949ed1a42ec9475f0"
+    sha256 cellar: :any_skip_relocation, monterey:       "64a56095f35e980d12527e2b42224755fc15f23f771995c5368db7b0012a694c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ee3d570973017105d7f4803bd22677ed0b16f2e512545c13fec63c5f22581639"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1216ef19a42105de9617742024eca673eb221d711526bf6dd2204537a70afd34"
   end
 
   on_arm do

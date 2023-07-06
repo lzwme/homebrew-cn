@@ -1,8 +1,9 @@
 class Koka < Formula
   desc "Compiler for the Koka language"
   homepage "http://koka-lang.org"
-  url "https://ghproxy.com/https://github.com/koka-lang/koka/releases/download/v2.4.0/koka-v2.4.0-source.tar.gz"
-  sha256 "3433ffe6b78d0bac9b25be2a1b3230610fb6e8b4a6a059d592278184f074ebb1"
+  url "https://github.com/koka-lang/koka.git",
+    tag:      "v2.4.2",
+    revision: "0649baaa2a4509c0a5adb743b6f2b5f1ef32a5a9"
   license "Apache-2.0"
   head "https://github.com/koka-lang/koka.git", branch: "master"
 
@@ -13,14 +14,13 @@ class Koka < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "00c395e0e93cdacbedd016a34e1a102674637845ea6297634914341a72cf2af2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e0b38553baeacde3c35f9f15a0e8b965a2339bb869005246a4fadc43f4f439fc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "28fdf434b85e0a870a4c95df37c01ceef08acfd24c3f46cc8b8d951302a979a3"
-    sha256 cellar: :any_skip_relocation, ventura:        "29b6d51eb8ae1c4a898f36183818d036b708d317e6446bcbc5c56b489ba03129"
-    sha256 cellar: :any_skip_relocation, monterey:       "68958c63842282b7563f6a63dbbae438f874b879df615e2d6d1d99af73e73eb6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7db9cac9b21d7bed7ba1a53fcebe9d2bf7af40a7c1bb2976ba46cb6baa38d4a5"
-    sha256 cellar: :any_skip_relocation, catalina:       "12926a0395ecf51ae86aca8a8eb385969a84403481e0186c60e19c5b7d75d240"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "521c4355490fe35a17bc0892edb5045b13dc1c532533aa57bf391899bf248b34"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1c7bb3e634d9f70707fb4aebdebbff608eb3513fef7d0bdc8a35c401ab4fe998"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0a2ae24999dbb1f786121955d30e09cb00ea6db02b8622fb7de05f373e2220b1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "48d6175b97469e402e45f3918cc2d05affabe9e153447e26f56f0ec53c2d69d8"
+    sha256 cellar: :any_skip_relocation, ventura:        "c69c09e84deb27f8b32163131918714535c6810f1d873d6793fa7b86178986cb"
+    sha256 cellar: :any_skip_relocation, monterey:       "0670c1d6a4f5fbdddc5341288d4cd1cfc10fea15c4f28f6268b0d08c597e4cc0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3ef28648db9b810680a493a7e881f062008c6c6293c75d370c0c77b593daaf26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac7544dd6e98024c7e4f2dba7a293c81be0ce090bba732bba6b4cc198de71cf6"
   end
 
   depends_on "cabal-install" => :build

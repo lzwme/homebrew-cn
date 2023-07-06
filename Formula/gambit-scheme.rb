@@ -1,10 +1,9 @@
 class GambitScheme < Formula
   desc "Implementation of the Scheme Language"
   homepage "https://github.com/gambit/gambit"
-  url "https://ghproxy.com/https://github.com/gambit/gambit/archive/v4.9.3.tar.gz"
-  sha256 "a5e4e5c66a99b6039fa7ee3741ac80f3f6c4cff47dc9e0ff1692ae73e13751ca"
+  url "https://ghproxy.com/https://github.com/gambit/gambit/archive/v4.9.4.tar.gz"
+  sha256 "19fb44a65b669234f6c0467cdc3dbe2e2c95a442f38e4638e7d89c90e247bd08"
   license "Apache-2.0"
-  revision 3
 
   livecheck do
     url :stable
@@ -12,13 +11,13 @@ class GambitScheme < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "0ce5b0842ac7f4a8ea7d152dbc3e4653f09e32f3a2c1a55120da16503d14dca9"
-    sha256 arm64_monterey: "a3bcb614a53bdb5781297367986eb25e5b1b9fe335c8533176402afbf9840100"
-    sha256 arm64_big_sur:  "86eaeb9637880c5bf3af4b787bbfd549ab266df66a64305078c3f44727335bed"
-    sha256 ventura:        "cf1336b9082b23553b74ca6c341bbb27c2f102895ddf9fce92dd3a4e2d6281ff"
-    sha256 monterey:       "8f8aa4a28c7f3af091ffa04e0a8777340de264558ccbeba2bd7a5e0fb72facd8"
-    sha256 big_sur:        "7b742a1069e01c08c48f3fadf0b17b0aa905d5d34ef6273d6efc981d1b2d8a89"
-    sha256 x86_64_linux:   "4b2e1e446240b775ce6bd32b59a265298757a137c627f9680a67dea3ef535819"
+    sha256 arm64_ventura:  "e33b55e30f8b151e9cd7465623310eadf07ba2ed1ba262bd1f70efd9613be5ed"
+    sha256 arm64_monterey: "feceed5aa4a6f4d486722e23211017a8c9c040e2c0b6f28865458f543371c853"
+    sha256 arm64_big_sur:  "56c42f91b17aae8bd28b9781fb7547a25b46d5d11893bde1346e32f0c5a73d22"
+    sha256 ventura:        "5960f1a7442cc56055a5313bd7dea62978037702cb8934043f1ceaff989f971c"
+    sha256 monterey:       "d1b794fc1a0c13ad38f672f63ee0af0702a390689ff183b9135d8e58207e7acd"
+    sha256 big_sur:        "e0475ff6051b44a26930709b37cdc038f3aaea4b00c6622ccb24e64a668758a5"
+    sha256 x86_64_linux:   "11b22d20fb8d65c1d36e2afec4fd8e69233072273740e3087435ebc643453d36"
   end
 
   depends_on "openssl@3"
@@ -45,7 +44,6 @@ class GambitScheme < Formula
 
     # Fixed in gambit HEAD, but they haven't cut a release
     inreplace "config.status" do |s|
-      s.gsub! %r{/usr/local/opt/openssl(?!@1\.1)}, "/usr/local/opt/openssl@3"
       s.gsub! %r{/usr/local/opt/openssl(@\d(\.\d)?)?}, Formula["openssl@3"].opt_prefix
     end
     system "./config.status"
@@ -53,6 +51,8 @@ class GambitScheme < Formula
     system "make"
     ENV.deparallelize
     system "make", "install"
+
+    # fix lisp file install location
     elisp.install share/"emacs/site-lisp/gambit.el"
   end
 

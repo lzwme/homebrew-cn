@@ -11,13 +11,14 @@ class AwsVault < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "70a9e14c2729ea8df8ae032cad82a5acabc672b794d8f5ec0c19826e1e2907d2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a8b045a26df28dca2b1d22d441a8cd88d394ad61d33013eb1f2fc797dd269e8f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "860dc779d047035a558dcee215b8e3e83fa7b5fafaf67e711a883292064de76a"
-    sha256 cellar: :any_skip_relocation, ventura:        "374a74b03844cf23e2b61e196866b20e0332a34cd23f33fc411172318493b0fa"
-    sha256 cellar: :any_skip_relocation, monterey:       "76a5c33efb98c742439d8f10b31477237ae95bc53c4fed0e6ccbf89e08d04120"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fa255764ed36d6d7243e8bd72c7a9cc47aeeb2622793c119aec5d00487da0a9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0d333ee69e8ad3828016b40fef129eb49fbe289a158ef3ede9ab08c6bcc149c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7d4edf5be0c041f46ebac1c5cc20abb955d39b7da6a995f9b12dcf3cd3b3c0b7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "da422ad42ec1da2e988d334eed3f5c10e82a7eb74a6896ffcdb324925ee9d43c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ab8b714b99158dba0a3fdbe10a5c5c0abfac2ccb879f5f276b1859b4817487a3"
+    sha256 cellar: :any_skip_relocation, ventura:        "093f64e9b044016512882a0c9c54676abea5e3a9cdc997c2731a8549b2296e20"
+    sha256 cellar: :any_skip_relocation, monterey:       "25c992b608cc4446f0776d145e155c434d9e4c13abf4f76fab5a87ab62eb5911"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0377d6550111f02593a073362568c0aa9af51ad7b586bb8e86f7a3756bb4e26f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c43aafd7b0b3408d286e2f043e9007e261d1ea6df5a2c0fbceaaf909fab18b45"
   end
 
   depends_on "go" => :build
@@ -32,7 +33,7 @@ class AwsVault < Formula
     system "make", "aws-vault-#{os}-#{arch}", "VERSION=#{version}-#{tap.user}"
     system "make", "install", "INSTALL_DIR=#{bin}", "VERSION=#{version}-#{tap.user}"
 
-    zsh_completion.install "contrib/completions/zsh/aws-vault.zsh"
+    zsh_completion.install "contrib/completions/zsh/aws-vault.zsh" => "_aws-vault"
     bash_completion.install "contrib/completions/bash/aws-vault.bash"
     fish_completion.install "contrib/completions/fish/aws-vault.fish"
   end

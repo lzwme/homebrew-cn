@@ -4,10 +4,9 @@ class Samba < Formula
   # option. The shared folder appears in the guest as "\\10.0.2.4\qemu".
   desc "SMB/CIFS file, print, and login server for UNIX"
   homepage "https://www.samba.org/"
-  url "https://download.samba.org/pub/samba/stable/samba-4.18.3.tar.gz"
-  sha256 "c67e1453165a3918ffffad600236ca3966b47bde4798e89ae600ae3903ccc32c"
+  url "https://download.samba.org/pub/samba/stable/samba-4.18.4.tar.gz"
+  sha256 "6ba7b3503cc59c9ff4f6fcb1b510c2c855fff93e0b366ab891a32a4732e88e53"
   license "GPL-3.0-or-later"
-  revision 2
 
   livecheck do
     url "https://www.samba.org/samba/download/"
@@ -15,13 +14,13 @@ class Samba < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "b54f7602964a7febe7c258c42c72db30007a7573360c9ff2f6fb6f735098a685"
-    sha256 arm64_monterey: "4fed90bef962ea9055a08fbeb97f95fa4f038a48bdc9ca4c8b6e9f1bbe0571c6"
-    sha256 arm64_big_sur:  "62f1960321dc99592e7d2555d3f1a1c6ab7e957e822c8641c2c8a6a7ebc90b56"
-    sha256 ventura:        "791fd770778ab729c342f968d4a6665e073f9e74c7b383669dc5c27ecb6406e5"
-    sha256 monterey:       "18ebb70d954ff70a9dc1c75a0de59e027e34a22d03e3e4637e92445796c2ae1e"
-    sha256 big_sur:        "b967f13d17df35092feca31dbddfdef71708f64c8926ba7c0f272898b494abdb"
-    sha256 x86_64_linux:   "317fb8faee7182d1664963658ce49902bbe171a27b84c54c87d5f1182f1bce46"
+    sha256 arm64_ventura:  "49c04cabe7b510f008d93dbf3e59eb71c7fa2741612f26bfdc8d4223fbde903c"
+    sha256 arm64_monterey: "bec4ee81a28caf8ec467043109c42b7091b5d4dcff3102639b3b76fd9dd9419b"
+    sha256 arm64_big_sur:  "8b403d6cb58b1046def1935b984ae736e3f4d44a4f6cbbc10abb3267c2cf7578"
+    sha256 ventura:        "8332dfd7c7e0dbedf3b548a6318638e3a4512afdbc4a34d1e4c6865af8ec4276"
+    sha256 monterey:       "115fd979ff122adc233a5c2e8d1233ae32ef93c2d1a7a4e7d6a1278a027c8c46"
+    sha256 big_sur:        "9a43b0ec5465a7d6bdceb99dd6d6e1ae80c398b1013eadf8eb6b0b5a3ed8e88f"
+    sha256 x86_64_linux:   "523f8d35cedcf163171af8f072488607d2301c9361c231ed8af2816436a43fa9"
   end
 
   depends_on "cmocka" => :build
