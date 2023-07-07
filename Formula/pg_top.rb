@@ -6,7 +6,7 @@ class PgTop < Formula
   sha256 "c48d726e8cd778712e712373a428086d95e2b29932e545ff2a948d043de5a6a2"
   revision 4
 
-  # 4.0.0 is out, but unfortunatley no longer supports OS/X.  Therefore
+  # 4.0.0 is out, but unfortunately no longer supports OS/X.  Therefore
   # we only look for the latest 3.x release until upstream adds OS/X support back.
   livecheck do
     url "https://gitlab.com/pg_top/pg_top.git"

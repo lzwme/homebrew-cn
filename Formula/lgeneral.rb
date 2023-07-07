@@ -40,7 +40,7 @@ class Lgeneral < Formula
       Requires pg-data.tar.gz or the original DOS version of Panzer General. Can be downloaded from
       https://sourceforge.net/projects/lgeneral/files/lgeneral-data/pg-data.tar.gz/download
       To install use:
-        lgc-pg -s <pg-data-unziped-dir> -d #{opt_pkgshare}
+        lgc-pg -s <pg-data-unzipped-dir> -d #{opt_pkgshare}
     EOS
   end
 

@@ -5,6 +5,10 @@ class Chrpath < Formula
   sha256 "bb0d4c54bac2990e1bdf8132f2c9477ae752859d523e141e72b3b11a12c26e7b"
   license "GPL-2.0-or-later"
 
+  livecheck do
+    skip "Not actively developed or maintained"
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, x86_64_linux: "00a03fa6ee632a4c0dbba7e0b581501b3e6118fd1cc6cfe1c0e6f53b900dca68"
   end

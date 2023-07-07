@@ -6,11 +6,6 @@ class Arangodb < Formula
   license "Apache-2.0"
   head "https://github.com/arangodb/arangodb.git", branch: "devel"
 
-  livecheck do
-    url "https://www.arangodb.com/download-major/source/"
-    regex(/href=.*?ArangoDB[._-]v?(\d+(?:\.\d+)+)(-\d+)?\.t/i)
-  end
-
   bottle do
     sha256 arm64_ventura:  "53afa49b9a2e4848ca33ea0933a521b50a43b36849d2c5fea08443034dd8d778"
     sha256 arm64_monterey: "7cd65f1950e1f3a469a0978fec85f76ff2de404b17abca40d55945806e7de59d"
@@ -20,6 +15,10 @@ class Arangodb < Formula
     sha256 big_sur:        "1e869c623de4995794d0da8c759300cb6df35d5f12160d4aece1bbe31dfcf56d"
     sha256 x86_64_linux:   "7c80cd9f061e99a34be19691bb039015a10c231892c3e13e6af7e0d2377c0fa6"
   end
+
+  # Vendors deps, has a low download count, build always breaks
+  # https://github.com/Homebrew/homebrew-core/pull/135487#issuecomment-1616018628
+  deprecate! date: "2023-07-05", because: :does_not_build
 
   depends_on "cmake" => :build
   depends_on "go" => :build

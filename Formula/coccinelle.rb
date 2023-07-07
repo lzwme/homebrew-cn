@@ -35,7 +35,7 @@ class Coccinelle < Formula
 
   uses_from_macos "unzip" => :build
 
-  # Bootstap resource for Ocaml 4.12 compatibility.
+  # Bootstrap resource for Ocaml 4.12 compatibility.
   # Remove when Coccinelle supports Ocaml 4.12 natively
   resource "stdcompat" do
     url "https://ghproxy.com/https://github.com/thierry-martinez/stdcompat/releases/download/v15/stdcompat-15.tar.gz"

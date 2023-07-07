@@ -11,7 +11,7 @@ class Artifactory < Formula
     sha256 cellar: :any_skip_relocation, all: "39f95a12d5e609016171cb09106bdfd211f9ac910a9c1b1ac4241fb64e0fbc8c"
   end
 
-  deprecate! date: "2022-04-20", because: :deprecated_upstream
+  disable! date: "2023-07-06", because: :deprecated_upstream
 
   depends_on "openjdk"
 

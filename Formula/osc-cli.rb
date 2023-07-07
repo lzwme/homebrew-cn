@@ -71,7 +71,7 @@ class OscCli < Formula
   end
 
   test do
-    # we test the help wich is printed in stderr :(
+    # we test the help which is printed in stderr
     str = shell_output("#{bin}/osc-cli -- --help 2>&1 >/dev/null")
     assert_match "osc-cli SERVICE CALL <flags>", str
     str = shell_output("#{bin}/osc-cli api ReadVms 2>&1 >/dev/null", 1)

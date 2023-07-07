@@ -3,18 +3,18 @@ class Hy < Formula
 
   desc "Dialect of Lisp that's embedded in Python"
   homepage "https://github.com/hylang/hy"
-  url "https://files.pythonhosted.org/packages/c5/6d/f23bcf595dc806f43af43853aa89614e5f30b046365c0639e84777606879/hy-0.26.0.tar.gz"
-  sha256 "07d2cd59f2b6ee6207fa94048a27ed45c5db0bae5a3893335cfa7dc74efc97a9"
+  url "https://files.pythonhosted.org/packages/93/5a/47276218f7419e134c659061150aeae2bdd80d7cfbb814447b466b59d546/hy-0.27.0.tar.gz"
+  sha256 "5d646e32b01fea740057b856639c672489d27ec7f9cc882363951c748d2b5ceb"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "358f2a4bcd2af450a9c31c03b7c3b7b1f6db6f418a986e0e369b104a4cded045"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "991786bb1d03492a126cf05ee8c117a0799048e9bcf95d1b3f9923176ed3fea7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d2d9fa5bded872112d217cabff691a9f24cdf5deab5aecb9a64ace08d0f82e93"
-    sha256 cellar: :any_skip_relocation, ventura:        "2fae5d8f74ff09e7546c245d1f831e2fca91ba0a86734a8f783d9c82485f38a1"
-    sha256 cellar: :any_skip_relocation, monterey:       "d66e6e631ad4d79873d47f66d153bf7bc7dfd6030b0e7836981370320af16d2e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b67bd5a34d9366292c77f3354befff4c2cb8853b99d8572e71807ab643235a23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41870e64b014870af2ddc4f4a1e2262e152ce33034944b2824a72d9850f990c7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "99df8063944e29bbed30139a63e51dfa53fb57b4c3b3d7dd0e1b45e8f6e28a1f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "49b43ece3869b0c1d72b07520d78f90ca30d596adebe9671d226e1cca55f9c60"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "60d685cb144ef2c1bffbb0be0e51cbc46890eedcada3370142cfbfd4e1a3bcae"
+    sha256 cellar: :any_skip_relocation, ventura:        "a130249a9cefc514995672692d37a26a0f8acf1484f0fdf800f5ae276c2c8136"
+    sha256 cellar: :any_skip_relocation, monterey:       "7d68a3d749219788fba9bf2c8606bbf078bcb7000cb83ed0a41c6ea1616733e3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2fb6e62c38f6b1ccab054d67eee72bb2fdd92a2b6da3be2d728d4bb70c6757fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "173fa3e81b16d33395011549ee1d90c0ced357e83008975715a37f01f8541fa8"
   end
 
   depends_on "python@3.11"

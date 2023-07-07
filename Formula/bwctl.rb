@@ -24,7 +24,7 @@ class Bwctl < Formula
   depends_on "i2util" => :build
 
   def install
-    # configure mis-sets CFLAGS for I2util
+    # configure misset CFLAGS for I2util
     # https://lists.internet2.edu/sympa/arc/perfsonar-user/2015-04/msg00016.html
     # https://github.com/Homebrew/homebrew/pull/38212
     inreplace "configure", 'CFLAGS="-I$I2util_dir/include $CFLAGS"', 'CFLAGS="-I$with_I2util/include $CFLAGS"'

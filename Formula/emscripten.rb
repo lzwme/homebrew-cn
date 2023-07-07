@@ -79,7 +79,7 @@ class Emscripten < Formula
     # repository.
     libexec.install buildpath.children
 
-    # Remove unneded files. See `tools/install.py`.
+    # Remove unneeded files. See `tools/install.py`.
     (libexec/"test/third_party").rmtree
 
     # emscripten needs an llvm build with the following executables:
@@ -203,7 +203,7 @@ class Emscripten < Formula
   end
 
   test do
-    # We're targetting WASM, so we don't want to use the macOS SDK here.
+    # We're targeting WASM, so we don't want to use the macOS SDK here.
     ENV.remove_macosxsdk if OS.mac?
     # Avoid errors on Linux when other formulae like `sdl12-compat` are installed
     ENV.delete "CPATH"

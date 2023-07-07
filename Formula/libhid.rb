@@ -21,7 +21,7 @@ class Libhid < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb334329832a5847225997b9b7bb0f54a0e26c69636f34cd3b1af77475eef922"
   end
 
-  deprecate! date: "2022-06-22", because: :unmaintained
+  disable! date: "2023-07-05", because: :unmaintained
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build

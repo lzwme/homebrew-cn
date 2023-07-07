@@ -36,7 +36,7 @@ class Lib3ds < Formula
   end
 
   test do
-    # create a raw emtpy 3ds file.
+    # create a raw empty 3ds file.
     (testpath/"test.3ds").write("\x4d\x4d\x06\x00\x00\x00")
     system bin/"3dsdump", "test.3ds"
   end

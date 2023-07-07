@@ -10,7 +10,7 @@ class ImgurScreenshot < Formula
     sha256 cellar: :any_skip_relocation, all: "938fd215acee5d33c41263cd86d05eec350574c671df2eb16adf724f522e30c4"
   end
 
-  deprecate! date: "2022-06-23", because: :repo_archived
+  disable! date: "2023-07-05", because: :repo_archived
 
   depends_on "bash"
   depends_on "jq"

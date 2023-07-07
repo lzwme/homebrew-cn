@@ -37,9 +37,9 @@ class SshPermitA38 < Formula
   end
 
   test do
-    system bin/"ssh-permit-a38 host 1.exmaple.com add"
+    system bin/"ssh-permit-a38 host 1.example.com add"
 
-    assert File.readlines("ssh-permit.json").grep(/1.exmaple.com/).size == 1,
+    assert File.readlines("ssh-permit.json").grep(/1.example.com/).size == 1,
       "Test host not found in ssh-permit.json"
   end
 end

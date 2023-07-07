@@ -3,18 +3,18 @@ class YtDlp < Formula
 
   desc "Fork of youtube-dl with additional features and fixes"
   homepage "https://github.com/yt-dlp/yt-dlp"
-  url "https://files.pythonhosted.org/packages/57/86/b5fb11442d96a7a438ec6ad27d04c546f4f7e64c3d551259f886adeddb8e/yt-dlp-2023.6.22.tar.gz"
-  sha256 "ed6a8b8e0ad08a4540d4afa0fd08a7f980022c79b9081bd9e63ddc00aeeee5a8"
+  url "https://files.pythonhosted.org/packages/db/c5/e08a7aa42c962d34201151fa6b825fed7fbb998a1b612f37c7eb93a7e764/yt-dlp-2023.7.6.tar.gz"
+  sha256 "cb58373869c8ccb5034746f91cfccd6d25ea697090dfd6f93e9034d51eb4aed2"
   license "Unlicense"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c401bdf6e43897e96b79126ca3398ce4aa0465d20ff1afaee4331fe5604ecdee"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "35694104825ac09ad02ac159bb123a2912fd3291750203f972d6a8f8b0001478"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d1f5d83069269f1a57b37b4c70ea3a7ae26e54a1be044f2c44364e0bf238f45c"
-    sha256 cellar: :any_skip_relocation, ventura:        "bce83af3532484ed1313b39721625c436750b4c087224865f8328ac58592b87a"
-    sha256 cellar: :any_skip_relocation, monterey:       "e55d093fcbbad6a7cfe9f83d4df26c1aef5dd68be35d857ed18924a18b21d8ac"
-    sha256 cellar: :any_skip_relocation, big_sur:        "018cc0dd8e6cb1921668b9bf95981d246a13b42476e49c7a7dc64e0657a70767"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76d234fba8410c0f91a23ccf0b6caaf2fad38ce13a88e6161409938cdf0d82a9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a4b1904e22341c6815ebdb3f6695ef9f9e4b8296dd5fa8a33d9445fb14c0f01"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f284b787cf70e5c7612afc50bcf354e09ed473fc6e079cdbbf1eeaf83e6317da"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "db8ad08ab3b538c3d530852145b3f1d3f7871ee0335e1c867708c1bd1d2a4aff"
+    sha256 cellar: :any_skip_relocation, ventura:        "7d84c87b3b0533d73019999cd16dc274e920f0e4208be8bd2bf3070048502d5f"
+    sha256 cellar: :any_skip_relocation, monterey:       "643ba9a7b6596c82648fee83906db9857cff79656a98ecfd66f309d14be67fcd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7eee79882470bb22235760cbb3e261a6ac88d383d074ca0825a7a0610958542d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b38754036d86c3e43077bdf8dc2c34b3fe11ffa7ad860dcfc2e72dd0f3dcd0e5"
   end
 
   head do

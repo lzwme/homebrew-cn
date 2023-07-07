@@ -52,7 +52,7 @@ class Crystal < Formula
 
   # It used to be the case that every new crystal release was built from a
   # previous release, except patches. Crystal is updating its policy to
-  # allow 4 minor releases of compatibility unless otherwise explicited.
+  # allow 4 minor releases of compatibility unless otherwise specified.
   # Therefore, the boot version should have the MINOR component be
   # between the current minor - 4 and current minor - 1.
   #

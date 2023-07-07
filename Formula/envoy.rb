@@ -70,7 +70,7 @@ class Envoy < Formula
       args << "--cxxopt=-Wno-range-loop-analysis"
       args << "--host_cxxopt=-Wno-range-loop-analysis"
 
-      # To supress warning on deprecated declaration on v8 code. For example:
+      # To suppress warning on deprecated declaration on v8 code. For example:
       # external/v8/src/base/platform/platform-darwin.cc:56:22: 'getsectdatafromheader_64'
       # is deprecated: first deprecated in macOS 13.0.
       # https://bugs.chromium.org/p/v8/issues/detail?id=13428.

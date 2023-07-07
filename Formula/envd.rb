@@ -1,37 +1,36 @@
 class Envd < Formula
   desc "Reproducible development environment for AI/ML"
   homepage "https://envd.tensorchord.ai"
-  url "https://ghproxy.com/https://github.com/tensorchord/envd/archive/v0.3.31.tar.gz"
-  sha256 "057a48ef6e478cdfa7c8644acaa660c5b6bb5db7d5883f4d3f70fbc3459c7a5f"
+  url "https://ghproxy.com/https://github.com/tensorchord/envd/archive/v0.3.33.tar.gz"
+  sha256 "d1b0cdf03c1bf79c96da909e05a982792d7be670b4799a27a9281abcd774860d"
   license "Apache-2.0"
   head "https://github.com/tensorchord/envd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b47aa266486641721e6cb16ef405a9c826304a6068c3feadb4ded6a4bfeff25"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b47aa266486641721e6cb16ef405a9c826304a6068c3feadb4ded6a4bfeff25"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7b47aa266486641721e6cb16ef405a9c826304a6068c3feadb4ded6a4bfeff25"
-    sha256 cellar: :any_skip_relocation, ventura:        "f5e548f64c12f39fe09a497e4cf99f383e45c7db65e32abea0d4068d1bee6ade"
-    sha256 cellar: :any_skip_relocation, monterey:       "f5e548f64c12f39fe09a497e4cf99f383e45c7db65e32abea0d4068d1bee6ade"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f5e548f64c12f39fe09a497e4cf99f383e45c7db65e32abea0d4068d1bee6ade"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32f88343daf9e00df3551d3298812a8d1cab2ced24c87e25b1a872b6f92009e7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c37cb582bcffcf9c11ce95f46ca49a2e648b2c6114adc6bc07f460b20ccdfec6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1903fd62e3455e2aae85482c43e46ae5d183d424b30562512481247bcb7c211e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d2484987632b3e32d050a535cb0d783d098c6ed9c52c85bcfa085d63c41df4e1"
+    sha256 cellar: :any_skip_relocation, ventura:        "358f9d6159954ad0e24765f74ca8e9c33d6d7fa86641109788c3ba0bf52d6440"
+    sha256 cellar: :any_skip_relocation, monterey:       "b2b878ed0945d685a28dc71fb93f1e4abe178d624652c7c0597eca7e01a17a3d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a1b5856b2cd923cfa2059b488b7fbd4e0aa31e82ca2c5f67bfd4fc5292f7a62d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6929932ee3894104b73de3af625d01549a3aa4d0e881f9d02687b5a153d8f85"
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "0"
     ldflags = %W[
       -s -w
       -X github.com/tensorchord/envd/pkg/version.buildDate=#{time.iso8601}
       -X github.com/tensorchord/envd/pkg/version.version=#{version}
       -X github.com/tensorchord/envd/pkg/version.gitTag=v#{version}
-      -X github.com/tensorchord/envd/pkg/version.gitCommit=#{version}-#{tap.user}
+      -X github.com/tensorchord/envd/pkg/version.gitCommit=#{tap.user}
       -X github.com/tensorchord/envd/pkg/version.gitTreeState=clean
     ]
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/envd"
     generate_completions_from_executable(bin/"envd", "completion", "--no-install",
                                          shell_parameter_format: "--shell=",
-                                         shells:                 [:bash, :zsh])
+                                         shells:                 [:bash, :zsh, :fish])
   end
 
   test do

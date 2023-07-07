@@ -35,7 +35,7 @@ class Twty < Formula
       assert_match "Open this URL and enter PIN.", r.gets
       assert_match "https://api.twitter.com/oauth/authenticate?oauth_token=", r.gets
       w.puts
-      sleep 1 # Wait for twty exitting
+      sleep 1 # Wait for twty exiting
     end
   end
 end

@@ -6,7 +6,7 @@ class AstrometryNet < Formula
   url "https://ghproxy.com/https://github.com/dstndstn/astrometry.net/releases/download/0.94/astrometry.net-0.94.tar.gz"
   sha256 "38c0d04171ecae42033ce5c9cd0757d8c5fc1418f2004d85e858f29aee383c5f"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -14,13 +14,13 @@ class AstrometryNet < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "1e1dd4ca98634847a4cca6c0898e1e0785be7a460b8a91a1ba923eb8e4f54193"
-    sha256 cellar: :any,                 arm64_monterey: "f1fe0247102eca1ceee3d7a6ea1ac3c54e500946ebfe52254f7e1a51477002f3"
-    sha256 cellar: :any,                 arm64_big_sur:  "74130a63e3eb338b5b77ef505b216f4bcd7a7d421cf3e40c96b038e3c7ffcd65"
-    sha256 cellar: :any,                 ventura:        "42b242fc7dc1c5c9a60b4ca1ce5368db5b92700f8d233cf848a2aa34d09098f6"
-    sha256 cellar: :any,                 monterey:       "eafeaf9929cbce8b0a6fb8cd3efe312e3c203285466ed747dd669c3fd7d8c2e1"
-    sha256 cellar: :any,                 big_sur:        "14847578626078f3c588cf231977d34f4ccebd195e4424a8c5516d374b2b4de0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd984b5e0e8aaa946a22648142f75f8b61c1c511d044946c00bd8867d8178e7f"
+    sha256 cellar: :any,                 arm64_ventura:  "6a574a5c845ac38bec69c43c1797c70f54dd7f25bf148514c39dbaef29bea5f5"
+    sha256 cellar: :any,                 arm64_monterey: "5050cdcb8005677bd98eafcda71396d4d3c55570e4e51be713e93766143d4a35"
+    sha256 cellar: :any,                 arm64_big_sur:  "37cf4b463f85a3227e5c62f01ed9b2dcda9d3d1102ccd918788b1d14efc4e04a"
+    sha256 cellar: :any,                 ventura:        "be5b9d25645f905f63ce3f48ccb6e2ba385a307b99b726b07ac9ada3af2258ef"
+    sha256 cellar: :any,                 monterey:       "f00daa91016797ed2b7fb514552710203ba96052de0622d0d471c9bbbb1fa8fb"
+    sha256 cellar: :any,                 big_sur:        "3fb6f1b21bfb89385ccb5119ff181c83e06ebd5cdf379de9112c0e0159d45a86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "60b1fdd3386bafa3552310c8ed87288d667b89b0afaf3db77a76ffdac75cbcf7"
   end
 
   depends_on "pkg-config" => :build

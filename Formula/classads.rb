@@ -30,7 +30,7 @@ class Classads < Formula
     depends_on "libtool" => :build
   end
 
-  # Allow compilation on ARM, where finite() is not availalbe.
+  # Allow compilation on ARM, where finite() is not available.
   # Reported by email on 2022-11-10
   patch :DATA
 

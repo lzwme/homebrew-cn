@@ -17,7 +17,7 @@ class Gofish < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "917decf5660f645a7ec7feaac8959f8d1cf3ca6a28cf085fdc6c74544274f83a"
   end
 
-  deprecate! date: "2022-06-21", because: :repo_archived
+  disable! date: "2023-07-05", because: :repo_archived
 
   depends_on "go" => :build
 

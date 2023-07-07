@@ -2,11 +2,10 @@ class Php < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.2.7.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.2.7.tar.xz"
-  sha256 "4b9fb3dcd7184fe7582d7e44544ec7c5153852a2528de3b6754791258ffbdfa0"
+  url "https://www.php.net/distributions/php-8.2.8.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.2.8.tar.xz"
+  sha256 "cfe1055fbcd486de7d3312da6146949aae577365808790af6018205567609801"
   license "PHP-3.01"
-  revision 2
 
   livecheck do
     url "https://www.php.net/downloads"
@@ -14,13 +13,13 @@ class Php < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "e20d8d88cf40dee639fb5068d8add9d6abca9e8205c952c5c0b92f0ed3818f71"
-    sha256 arm64_monterey: "5ee84f90e12d24437ed29b3d9b4522c82e1eb73bd7ba8461f7a509f13cc5eed9"
-    sha256 arm64_big_sur:  "1ddb210121d2d8539d2dfe33fb4d2281ef42171a129e21ccf7345b0aa67a5796"
-    sha256 ventura:        "23793016aca7314c3977017898fb6a9b6c894353d7582c0c3d4b5a708678de00"
-    sha256 monterey:       "b18b974b9d176ef27927bc3beab51c46320c092d46db01ea5b86dba011f5693c"
-    sha256 big_sur:        "584c1602fd928008dbdf5d99351b4fff8aac8c24169761712e9927fc4ce2a896"
-    sha256 x86_64_linux:   "cb3c7dec8605ba28967e7d019633ba5fd032964332f75ff35fd43fb26d85ac14"
+    sha256 arm64_ventura:  "cf4ed8e8303a71f58e86ac4579a05f8795a4ea244ed8075359fd6cd30197100a"
+    sha256 arm64_monterey: "157787c62289dbe695e67f10c0501961161b6489db49fa1b0e652b6cc05d820c"
+    sha256 arm64_big_sur:  "260cdfadd930a214df1418e5711acb2d6d85e148bd9dd5f26d0bbe2eef812472"
+    sha256 ventura:        "361f34eddaad8dd22b282b7ce7e927af0525a9fab2cfb04b81d58a3769b192f6"
+    sha256 monterey:       "f15cdb07e75d00fa906fa1f8a7b8407c34bf8a7ace3bdbad0a038aa0ffca5d0f"
+    sha256 big_sur:        "4aba8baa472a8a0986d1b545e6455fc9da886a8a0b85b70dbcaa4f4f8c1f6fb4"
+    sha256 x86_64_linux:   "6477da1344889e9b98a7617946ca513d16ef63fd4b567d922f8a0ac82314013e"
   end
 
   head do

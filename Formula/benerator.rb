@@ -89,11 +89,11 @@ class Benerator < Formula
       <evaluate assert="result == 10" target="schema1">select count(*) from "schema1"."db_Category"</evaluate>
       <evaluate assert="result == 100" target="schema1">select count(*) from "schema1"."db_product"</evaluate>
       <evaluate assert="result == 100" target="schema3">select count(*) from "schema3"."db_manufacturer"</evaluate>
-      <echo>No Error Occurs. Data Generated Correcly</echo>
+      <echo>No Error Occurs. Data Generated Correctly</echo>
       </setup>
     XML
 
-    assert_match "No Error Occurs. Data Generated Correcly",
+    assert_match "No Error Occurs. Data Generated Correctly",
       shell_output("#{bin}/benerator myscript.xml")
   end
 end

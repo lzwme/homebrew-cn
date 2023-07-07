@@ -53,7 +53,7 @@ class Gator < Formula
                     port:
                       number: 80
     EOS
-    # Create a test constraint tempalte
+    # Create a test constraint template
     (testpath/"template-and-constraints/gator-constraint-template.yaml").write <<~EOS
       apiVersion: templates.gatekeeper.sh/v1
       kind: ConstraintTemplate

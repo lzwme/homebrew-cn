@@ -38,7 +38,7 @@ class Tflint < Formula
       }
     EOS
 
-    # tflint returns exitstatus: 0 (no issues), 2 (errors occured), 3 (no errors but issues found)
+    # tflint returns exitstatus: 0 (no issues), 2 (errors occurred), 3 (no errors but issues found)
     assert_empty shell_output("#{bin}/tflint --filter=test.tf")
     assert_match version.to_s, shell_output("#{bin}/tflint --version")
   end

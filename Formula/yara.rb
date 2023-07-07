@@ -45,7 +45,7 @@ class Yara < Formula
     rules.write <<~EOS
       rule chrout {
         meta:
-          description = "Calls CBM KERNAL routine CHROUT"
+          description = "Calls CBM KERNEL routine CHROUT"
         strings:
           $jsr_chrout = {20 D2 FF}
           $jmp_chrout = {4C D2 FF}

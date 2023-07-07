@@ -37,7 +37,7 @@ class Abcmidi < Formula
       K:Cm
       Q:1/4=180
       %%MIDI bassprog 32 % 32 Acoustic Bass
-      %%MIDI program 23 % 23 Tango Accordian
+      %%MIDI program 23 % 23 Tango Accordion
       %%MIDI bassvol 69
       %%MIDI gchord fzfz
       |:"G"FDEC|D2C=B,|C2=B,2 |C2D2   |\

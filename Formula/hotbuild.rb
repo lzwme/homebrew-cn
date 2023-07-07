@@ -1,5 +1,5 @@
 class Hotbuild < Formula
-  desc "Cross platfrom hot compilation tool for go"
+  desc "Cross platform hot compilation tool for go"
   homepage "https://hotbuild.ffactory.org"
   url "https://ghproxy.com/https://github.com/wandercn/hotbuild/archive/refs/tags/v1.0.8.tar.gz"
   sha256 "662fdc31ca85f5d00ba509edcb177b617d8d6d8894086197347cfdbd17dc7c2f"

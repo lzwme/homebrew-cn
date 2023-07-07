@@ -19,7 +19,7 @@ class CstoreFdw < Formula
   end
 
   # https://www.citusdata.com/blog/2021/03/06/citus-10-columnar-compression-for-postgres/
-  deprecate! date: "2021-03-06", because: "cstore_fdw has been integrated into Citus"
+  disable! date: "2023-07-06", because: "cstore_fdw has been integrated into Citus"
 
   depends_on "postgresql@13"
   depends_on "protobuf-c"

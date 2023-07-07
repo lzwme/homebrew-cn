@@ -39,7 +39,7 @@ class Crfsuite < Formula
 
     # Use spawn instead of {shell,pipe}_output to directly read and write
     # from files. The data is too big to read into memory and then pass to
-    # the command for this test to complete within the alloted timeout.
+    # the command for this test to complete within the allotted timeout.
     command = ["python3", pkgshare/"example/chunking.py"]
     pid = spawn(*command, in: "train.txt", out: "train.crfsuite.txt")
     Process.wait(pid)

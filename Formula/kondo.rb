@@ -1,18 +1,18 @@
 class Kondo < Formula
   desc "Save disk space by cleaning non-essential files from software projects"
   homepage "https://github.com/tbillington/kondo"
-  url "https://ghproxy.com/https://github.com/tbillington/kondo/archive/v0.6.tar.gz"
-  sha256 "fce3082e294353e5a82ad1481796ea8130234eb581c31a279c9e7a73ca72d632"
+  url "https://ghproxy.com/https://github.com/tbillington/kondo/archive/v0.7.tar.gz"
+  sha256 "b7535807ba98bde86adfb920ec439e98b7c652361feb6a224e55c88cda569ff2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f8c2e9d4185083bdc761519d119c9a1d3d8d02fccdea0e417444699dbe028d65"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c8b12a287900b7a1fadb3072dd60796b5984795e346874ffe135090e2a35aa2a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4ce4e549ff1ce937ed56ca80ce6bef9a3d41602c94dd9f315fbe3c6034d6ad3a"
-    sha256 cellar: :any_skip_relocation, ventura:        "b94a919725ee181014c822f681c4f389599fdc0585b4a921b6ea667340cf19ee"
-    sha256 cellar: :any_skip_relocation, monterey:       "6dd70ff25fe27730675679c364fd094d3fa977701c9aa14488d10acbb7dd0f2f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0fa49fb3c41856bb09ec165932c770e0d040540c06ae556deeaf2a39c67c95bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2771396585ad4789c7daf2ed392ee8ac542bced3b23836ffb4a7865361d2f2f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9439938c1cb77f935fc6a3b5d7d3051b82ec38fc2737704ccf47e51000af7686"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "78352c3fb16ad778bdb068de56e8b387ae257f10c0bfe6358b0dc6ec34e60698"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3db02b272e0f8b3ba8f751b78ac1285436f0d7d522f376fb2e72c2935ad1b5e8"
+    sha256 cellar: :any_skip_relocation, ventura:        "47db94484a736b9152cebcb4e1e1da160e0870e5bc74ab1527ff5017ee7d75b0"
+    sha256 cellar: :any_skip_relocation, monterey:       "87a591bd0f7fe7bba6892bbb61d02062ebff165a4a95e43ae7a16c790a2c8870"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e225f24a1593efa6ce3b705511e110f2bd0f603b44032d3d082490657ec7dc6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea1ef61bcedfd85543049016f4a582923b91c7c192a27efe55029f78c660dd45"
   end
 
   depends_on "rust" => :build

@@ -5,7 +5,7 @@ class Restview < Formula
   homepage "https://mg.pov.lt/restview/"
   url "https://files.pythonhosted.org/packages/10/93/20516dada3c64de14305fd8137251cd4accaa7eba15b44deb1f2419aa9ff/restview-3.0.1.tar.gz"
   sha256 "8c1a171c159d46d15d5569f77021828883a121d6f9baf758d641fc1e54b05ae5"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7144d1e54ac3ed388b6af07e9d5d4d5c3ab69a7d8335827d436e5d95cd90700"

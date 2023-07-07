@@ -1,10 +1,9 @@
 class Wcslib < Formula
   desc "Library and utilities for the FITS World Coordinate System"
   homepage "https://www.atnf.csiro.au/people/mcalabre/WCS/"
-  url "https://www.atnf.csiro.au/pub/software/wcslib/wcslib-7.12.tar.bz2"
-  sha256 "9cf8de50e109a97fa04511d4111e8d14bd0a44077132acf73e6cf0029fe96bd4"
+  url "https://www.atnf.csiro.au/pub/software/wcslib/wcslib-8.1.tar.bz2"
+  sha256 "2bf23e6fabd10b8aecffa54431bf25aa224ff019c60a9e676aa56561f9b4129e"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url :homepage
@@ -12,13 +11,13 @@ class Wcslib < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "cf56e8f00d910a9504e52dcd663a679a304fcfffb3476229fc4fae47b3ee58ad"
-    sha256 cellar: :any,                 arm64_monterey: "5a0e1c9316e9c87d0d138cb95548d3533de9b565ff898528209808834279a639"
-    sha256 cellar: :any,                 arm64_big_sur:  "4a9043503641f0ea77dbfd50e0ca2281313302d0e0ad8a382bf44eb7e5fb8dd4"
-    sha256 cellar: :any,                 ventura:        "50f4ece595a1fb84b2de9a3f50cfc79aba7022ebe61bdbe2f1da78db6b4f25a5"
-    sha256 cellar: :any,                 monterey:       "fa7daa0fe9e470fd6e018cd5693e75c1027a1101968e248f82d4ea78ac90a41d"
-    sha256 cellar: :any,                 big_sur:        "48ea25010a8e8f6f5463066b6b7853de13b956c807a0e02ab5f95cb9549ec547"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "306df7e5bcde3578745801d8b4bcf7b9c6028b6c978dd8702501df0716957a13"
+    sha256 cellar: :any,                 arm64_ventura:  "a10bdeef5a7a5707d0081de192bbb04ed185e14fa42004df792de7fe0fdc6e60"
+    sha256 cellar: :any,                 arm64_monterey: "09f007e42a1ffb66b20af6878c7599a0e316a9eb708057d228173da2db076a10"
+    sha256 cellar: :any,                 arm64_big_sur:  "7077b55049ed6e5f1e872a8feec72237f00c722fce347c8ff8e47cb82b916926"
+    sha256 cellar: :any,                 ventura:        "23ed804a33bcb7cb354d4c46eae0cf522a003fe7ea132c22b619566dd4c99735"
+    sha256 cellar: :any,                 monterey:       "688c5f712f7826711e1dbc83d7b21bf095822031afa90f291722c013652e5ad2"
+    sha256 cellar: :any,                 big_sur:        "2bd1c58921f2cc3a3dc54057d6877e32c1780de2ec5c1edf214d2d640486dc3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ebbc048e32766835b474675cba45664aa4c827f0c09dab9690d8933a3b5af4d"
   end
 
   depends_on "cfitsio"

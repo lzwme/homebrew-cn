@@ -1,19 +1,19 @@
 class Fn < Formula
   desc "Command-line tool for the fn project"
   homepage "https://fnproject.io"
-  url "https://ghproxy.com/https://github.com/fnproject/cli/archive/0.6.25.tar.gz"
-  sha256 "b9901163b3346dc985e24de08df65c9e70acdb128c359dd479df4e900aae3bfd"
+  url "https://ghproxy.com/https://github.com/fnproject/cli/archive/0.6.26.tar.gz"
+  sha256 "dc57f9f93c1a4c7c8f9c88b7089b8e066cfb4ca79f48f9aa1dd972ceabb980bb"
   license "Apache-2.0"
   head "https://github.com/fnproject/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c2e9c993e9171346ab387523d81177d092c0142c27272fba23d4daa0761559e1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c2e9c993e9171346ab387523d81177d092c0142c27272fba23d4daa0761559e1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c2e9c993e9171346ab387523d81177d092c0142c27272fba23d4daa0761559e1"
-    sha256 cellar: :any_skip_relocation, ventura:        "139fb4bcdd278ef2bc91b4b605a18f96549ce60b621b5d99139982fd9962e845"
-    sha256 cellar: :any_skip_relocation, monterey:       "139fb4bcdd278ef2bc91b4b605a18f96549ce60b621b5d99139982fd9962e845"
-    sha256 cellar: :any_skip_relocation, big_sur:        "139fb4bcdd278ef2bc91b4b605a18f96549ce60b621b5d99139982fd9962e845"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d84528807591a1244af860cb3ef3161e312bfed4eba8b74ccd82d2cecd3894f6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b803c5a7f1f72b3369f0200c42db5075429886c5df54a1b362dc12c37af74a3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0b803c5a7f1f72b3369f0200c42db5075429886c5df54a1b362dc12c37af74a3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0b803c5a7f1f72b3369f0200c42db5075429886c5df54a1b362dc12c37af74a3"
+    sha256 cellar: :any_skip_relocation, ventura:        "52efc1bc9787ce872dab71ad180777e55ebc0d9ebdf11238b469e0f93793d73a"
+    sha256 cellar: :any_skip_relocation, monterey:       "52efc1bc9787ce872dab71ad180777e55ebc0d9ebdf11238b469e0f93793d73a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "52efc1bc9787ce872dab71ad180777e55ebc0d9ebdf11238b469e0f93793d73a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d804cb9db019c4ff38e2cc3531259bd07f29f1f8256bf7f6252837dc61b8b204"
   end
 
   depends_on "go" => :build

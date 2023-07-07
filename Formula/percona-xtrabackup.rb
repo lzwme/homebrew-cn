@@ -53,7 +53,7 @@ class PerconaXtrabackup < Formula
   on_linux do
     depends_on "patchelf" => :build
     depends_on "libaio"
-    # Incompatable with procps-4 https://jira.percona.com/browse/PXB-2993
+    # Incompatible with procps-4 https://jira.percona.com/browse/PXB-2993
     depends_on "procps@3"
   end
 

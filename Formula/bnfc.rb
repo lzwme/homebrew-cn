@@ -7,13 +7,14 @@ class Bnfc < Formula
   head "https://github.com/BNFC/bnfc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1054fbb77a60d18b873ed550326d71d28381572b56290f95c03d019bcb52ccab"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "372abfa97d0722ec608da50c58ef8a49c723917953dd75e21dc17f4e66841bef"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c8719bdda3eea79d8bcd7434edc0bbc6cb5e5ea469bc46200fed2dbb9345e383"
-    sha256 cellar: :any_skip_relocation, ventura:        "cb3bfc448c50c6d93cbe5faac28a1b68947a40d7b3e6f3b78e9f5c26d10d169c"
-    sha256 cellar: :any_skip_relocation, monterey:       "997244d3eb196c2d0529c460deb53dd8a2eeb808a2d0f5a70bc2b66adae311c6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "801ad739e6a65250ab5f71efa96a21a9265fe1d8e69e17b596be3bfdd17ffd4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b455a7692f8f169ff8cf142f467ce3f51fe1259bb2171f5840b804c454a54199"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02dd838e55e80032735ad079b0b698dfc2cfc27847589cd4475fed982a5aa325"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "35d33f766e0069b6809a0af8787378974278824f54a11b8d898971ffa6589c2d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "afe8ac12cb9fd69615fe2a1c03b645293d864e5aa7d7492c69338d856530da43"
+    sha256 cellar: :any_skip_relocation, ventura:        "e7243b584f8966d37edf6e9f4bea688d0008079227162e4f86834d814e468228"
+    sha256 cellar: :any_skip_relocation, monterey:       "f5f6ea64908a9e737216437245f8214db0d3002b9b0fe004ae4851d39ec1cfb3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "778d506a5b438d32aebf65a8746480a8da4573e377a65e18005544f639ccf2ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "114e007a3c2506f434edb5cdc5df9f8ef6702f84403593a038af6931fd932d95"
   end
 
   depends_on "cabal-install" => [:build, :test]
@@ -24,6 +25,13 @@ class Bnfc < Formula
   depends_on "bison" => :test
   depends_on "flex" => :test
   depends_on "openjdk" => :test
+
+  # Fixes typos in upstream's code. Remove once merged and released.
+  # PR ref: https://github.com/BNFC/bnfc/pull/448
+  patch do
+    url "https://github.com/BNFC/bnfc/commit/5940164bdffe59924e253318c346865c94b46453.patch?full_index=1"
+    sha256 "5c828e85a704d02450c11adbf13dd6855a8bfc4ad25f8ec288203528bd0abc73"
+  end
 
   def install
     cd "source" do
@@ -95,7 +103,7 @@ class Bnfc < Formula
     EOS
     check_out_java = <<~EOS
 
-      Parse Succesful!
+      Parse Successful!
 
       [Abstract Syntax]
 

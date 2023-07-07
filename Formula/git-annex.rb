@@ -1,20 +1,20 @@
 class GitAnnex < Formula
   desc "Manage files with git without checking in file contents"
   homepage "https://git-annex.branchable.com/"
-  url "https://hackage.haskell.org/package/git-annex-10.20230407/git-annex-10.20230407.tar.gz"
-  sha256 "a001e86eae10bd32f8a896a61fcb2f655e6a678db8d5095282ab57d64704a0a4"
+  url "https://hackage.haskell.org/package/git-annex-10.20230626/git-annex-10.20230626.tar.gz"
+  sha256 "29fdc05dc072794ccbb6ed45ae1fb5d4d81c7a670be00c4e257ea450165526fc"
   license all_of: ["AGPL-3.0-or-later", "BSD-2-Clause", "BSD-3-Clause",
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
   head "git://git-annex.branchable.com/", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "1650b737ba5c51c978f879fcec3d3eb9d86183d5ddf594c3afea06992b45939a"
-    sha256 cellar: :any,                 arm64_monterey: "735c91a0ec524bfe119ee4af6fd3b65967419ef429b5992e2e2de0ada0ecdaea"
-    sha256 cellar: :any,                 arm64_big_sur:  "f05f03dc4f4831dc0a8ce8cc211c716827e9ac5c5c1b71c00c2681a4cbb60526"
-    sha256 cellar: :any,                 ventura:        "5bbf6306795a79b27ea07c3e51ff7cdf05db746fcccee2a7a757ba8a640f8295"
-    sha256 cellar: :any,                 monterey:       "7324d59c95efe1b3988f26c9e7c5ed48ad468500f857ca278cda7d78eabcef25"
-    sha256 cellar: :any,                 big_sur:        "1891492be8121e1d5f1b5640a67fdc4647a674b871244ce5f3155671993c2823"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f201e35bb40ceb905f0439fc46f3657aed08645e9dcb8af389ccc658c4188326"
+    sha256 cellar: :any,                 arm64_ventura:  "abad0a4b95e28735eb1806914513253753ab49b746fde0014b43300f7ab7584c"
+    sha256 cellar: :any,                 arm64_monterey: "8a1fbd87fe8374586567b861352117f0c8f11decf1000ece6329449e8bbb572e"
+    sha256 cellar: :any,                 arm64_big_sur:  "253c3f5f40ff6612ffb5d3f983933b11b1334c2dda777c4e5ba97703e881a3e6"
+    sha256 cellar: :any,                 ventura:        "3a0daa08181377bb8eda7ae13c950d11bf3dd226134edf1500a787b9ea9db146"
+    sha256 cellar: :any,                 monterey:       "ac1d41eab96ffbf749295467013fc7deae1580ab6055486185d9639a6d01c58c"
+    sha256 cellar: :any,                 big_sur:        "7e24cbf91c185e806051edbaea2d901cabba0a0f277b12a887534ca3d0768989"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5cb736ce99eef312298bf0f70e70a6f948e9aa23997e09b02514bdc9e62fbd1"
   end
 
   depends_on "cabal-install" => :build
@@ -43,7 +43,11 @@ class GitAnnex < Formula
     EOS
 
     system "cabal", "v2-update"
-    system "cabal", "v2-install", *std_cabal_v2_args, "--flags=+S3"
+    # `warp` 3.3.26 switched `cryptonite` dependency to `cryton` which caused
+    # build issues. `git-annex` dependency tree also has `cryptonite` which may
+    # be mixing APIs. We add a temporary workaround to avoid newer `warp` versions.
+    # TODO: Remove constraint when handled in Cabal file or fixed in new release
+    system "cabal", "v2-install", *std_cabal_v2_args, "--flags=+S3", "--constraint=warp<3.3.26"
     bin.install_symlink "git-annex" => "git-annex-shell"
   end
 

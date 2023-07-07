@@ -24,7 +24,7 @@ class Tctl < Formula
   end
 
   test do
-    # Given tctl is pointless without a server, not much intersting to test here.
+    # Given tctl is pointless without a server, not much interesting to test here.
     run_output = shell_output("#{bin}/tctl --version 2>&1")
     assert_match "tctl version", run_output
 

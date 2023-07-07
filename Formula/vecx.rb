@@ -28,7 +28,7 @@ class Vecx < Formula
   depends_on "sdl_image"
 
   def install
-    # Fix missing symobls for inline functions
+    # Fix missing symbols for inline functions
     # https://github.com/jhawthorn/vecx/pull/3
     if OS.mac?
       inreplace ["e6809.c", "vecx.c"], /__inline/, 'static \1'

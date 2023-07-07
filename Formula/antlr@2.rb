@@ -20,7 +20,7 @@ class AntlrAT2 < Formula
   keg_only :versioned_formula
 
   # ANTLR4 is the actively maintained successor provided by the `antlr` formula.
-  deprecate! date: "2022-06-20", because: :deprecated_upstream
+  disable! date: "2023-07-05", because: :deprecated_upstream
 
   depends_on "openjdk"
 

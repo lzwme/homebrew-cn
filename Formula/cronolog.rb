@@ -22,6 +22,9 @@ class Cronolog < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b7e0546314cd92d44b009de1894f4739f75865da5f95d425e305cf6ffeac10d"
   end
 
+  # no new release since 2003
+  deprecate! date: "2023-07-05", because: :unmaintained
+
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",

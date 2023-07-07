@@ -168,7 +168,7 @@ class Mono < Formula
 
     # Finally build and install fsharp as well
     resource("fsharp").stage do
-      # Temporary fix for use propper .NET SDK remove in next release
+      # Temporary fix for use proper .NET SDK remove in next release
       inreplace "./global.json", "3.1.302", "3.1.405"
 
       # Help .NET SDK run by providing path to libraries or disabling features

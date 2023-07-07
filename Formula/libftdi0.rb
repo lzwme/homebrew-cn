@@ -21,7 +21,7 @@ class Libftdi0 < Formula
   end
 
   # The `libftdi` formula tracks the current release
-  deprecate! date: "2022-06-22", because: :unmaintained
+  disable! date: "2023-07-05", because: :unmaintained
 
   depends_on "libusb-compat"
 

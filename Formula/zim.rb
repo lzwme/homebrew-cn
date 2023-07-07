@@ -1,14 +1,13 @@
 class Zim < Formula
   desc "Graphical text editor used to maintain a collection of wiki pages"
   homepage "https://zim-wiki.org/"
-  url "https://ghproxy.com/https://github.com/zim-desktop-wiki/zim-desktop-wiki/archive/0.75.1.tar.gz"
-  sha256 "ce9d6108566668fe0acdfdce9e899e20a8645ec976d960f2d280b9cfaffdd513"
+  url "https://ghproxy.com/https://github.com/zim-desktop-wiki/zim-desktop-wiki/archive/0.75.2.tar.gz"
+  sha256 "7f7a21a37c3f81c4c52f3712573b2a67279f16cf81870155532c3d33678657f0"
   license "GPL-2.0-or-later"
   head "https://github.com/zim-desktop-wiki/zim-desktop-wiki.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "38a0b61a4123f51f06fde82e42e67fcabc332be300ad3cc3c53fcfcfc5834b49"
+    sha256 cellar: :any_skip_relocation, all: "05e3421ed1bd3fa9d8c285e6fa8c1d5fb06c70ccf83429dec8ce3fc411028c82"
   end
 
   depends_on "pkg-config" => :build

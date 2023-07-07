@@ -1,5 +1,5 @@
 class Rbw < Formula
-  desc "Unoffical Bitwarden CLI client"
+  desc "Unofficial Bitwarden CLI client"
   homepage "https://github.com/doy/rbw"
   url "https://ghproxy.com/https://github.com/doy/rbw/archive/refs/tags/1.7.1.tar.gz"
   sha256 "8c8dc95dc0846c0c51f0b13c9e60a4b4e722c8befb932e8d06c462d70deaf096"

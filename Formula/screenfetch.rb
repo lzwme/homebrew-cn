@@ -19,7 +19,7 @@ class Screenfetch < Formula
   end
 
   # `screenfetch` contains references to `/usr/local` that
-  # are erronously relocated in non-default prefixes.
+  # are erroneously relocated in non-default prefixes.
   pour_bottle? only_if: :default_prefix
 
   def install

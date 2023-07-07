@@ -6,16 +6,14 @@ class GoogleAuthenticatorLibpam < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "521a4e777e947db5535752430caee3bab7a95db3fc2897eb5d1487c269e97d09"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ceb57c28fa8ac36471c762ab3d2dd67c5026a0568100e82b756cef2196b5747e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8adf8be0fbea5003e02b748ef71a099635eb8dff716c62d6935581d493fcda78"
-    sha256 cellar: :any_skip_relocation, ventura:        "dc592e42daa5e9d661de8c515b4e7e5f3ce0eb92d6287811f2bbf547edf0cf48"
-    sha256 cellar: :any_skip_relocation, monterey:       "3b72851db1049b3e11e374e7afd80799b5724c76a31ad637a0853ce047d8fc4b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "edd70a2050f2b57337558bd372f5bfa78f45df8ce678e3a6c400310edaa830a9"
-    sha256 cellar: :any_skip_relocation, catalina:       "4ed85644559250923d4b21f5b99643cad08eb8bbb63afc3827d7ac225b4581d7"
-    sha256 cellar: :any_skip_relocation, mojave:         "d62c1f21ec88406788b314bd7a06c0e37e7ab9dad4237f6832441f235723d3cb"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "33fa28d290cb0068a67c288d4889967180de64aa895f0ac1a3aedcc38d6a7d7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "efb380cc5558a60396d25cabc8599511129b3ca44d4f232d7c9fd3e0e7b3a1ba"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "e481b47a941b3e2035b16ff10190b28de5aaeeb9d7f76ba03bbb778d31352cd6"
+    sha256 cellar: :any,                 arm64_monterey: "c813753b6fa666210c3e03746dc85ba8f96b4f086b32e565eab286919c9bcdb2"
+    sha256 cellar: :any,                 arm64_big_sur:  "5fcc93296963e8ddabb631618dabdb3a09ca296a49c6f86165dbb76199007759"
+    sha256 cellar: :any,                 ventura:        "d2a5423387b0cf36704fa1428a07e7e2be88ae542ff80e3c12e391fff0da05e7"
+    sha256 cellar: :any,                 monterey:       "a8da4f8e9aa2b2126e3248f103b95734ea640d9c398d23b2ece251cac88c8eef"
+    sha256 cellar: :any,                 big_sur:        "8ce2c19632d8f25e92f0b161fc5f07527f1e6fca35cb1ec97516903d8b254887"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08220804780bdf668e9753dae17442d1c344d6d4f7637e441a9b38f913426f95"
   end
 
   depends_on "autoconf" => :build
@@ -28,10 +26,10 @@ class GoogleAuthenticatorLibpam < Formula
   end
 
   def install
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["qrencode"].lib}"
     system "./bootstrap.sh"
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args,
+                          "--disable-silent-rules"
     system "make", "install"
   end
 
@@ -50,7 +48,7 @@ class GoogleAuthenticatorLibpam < Formula
   end
 
   test do
-    system "#{bin}/google-authenticator", "--force", "--time-based",
+    system bin/"google-authenticator", "--force", "--time-based",
            "--disallow-reuse", "--rate-limit=3", "--rate-time=30",
            "--window-size=3", "--no-confirm"
   end

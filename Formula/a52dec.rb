@@ -1,26 +1,23 @@
 class A52dec < Formula
   desc "Library for decoding ATSC A/52 streams (AKA 'AC-3')"
-  homepage "https://liba52.sourceforge.io/"
-  url "https://liba52.sourceforge.io/files/a52dec-0.7.4.tar.gz"
-  sha256 "a21d724ab3b3933330194353687df82c475b5dfb997513eef4c25de6c865ec33"
+  homepage "https://git.adelielinux.org/community/a52dec/"
+  url "https://distfiles.adelielinux.org/source/a52dec/a52dec-0.8.0.tar.gz"
+  sha256 "03c181ce9c3fe0d2f5130de18dab9bd8bc63c354071515aa56983c74a9cffcc9"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https://liba52.sourceforge.io/downloads.html"
-    regex(/href=.*?a52dec[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https://pkg.adelielinux.org/current/a52dec"
+    regex(/version\sv?(\d+(?:\.\d+)+)/i)
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b2764776e9f2cb2bd180b736a3c533835db280a8a51a34b72501e8eb0ccc3715"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8f17299eecdcf8d9a94bff90a2f48e9c2a2cffdee3b64d2633865d983171be17"
-    sha256 cellar: :any,                 arm64_big_sur:  "a9a4752a7b6d4872abf06a725a44b94d1701e4621c0e4226002e371df53ff366"
-    sha256 cellar: :any_skip_relocation, ventura:        "38db9ed335233c2c9f2231dec7022a3c7f5e2f145d3d21238cb934c4d8bd8b19"
-    sha256 cellar: :any_skip_relocation, monterey:       "5861dcdb362d4993facf91724306204fc4775c62ab91dd340144b73897a14043"
-    sha256 cellar: :any,                 big_sur:        "f5b95a6c1f7758e29cc04160d3635fce074c6c527cb3ac209877d8e4d1b4935c"
-    sha256 cellar: :any,                 catalina:       "949600b627a44697bc12713538c5aed594fc8201694f5c453c8ca5f9f8cd335a"
-    sha256 cellar: :any,                 mojave:         "a47f3248a481d224edcbec3e266793ff73f2e94bb607732df2166a0c6f442596"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ba162f41f0366039355b26d363506794d39f75cbb48d8ba5879337f6c5394eb"
+    sha256 cellar: :any,                 arm64_ventura:  "1f40eee1f2254ecbeee873473dba633d2cc52f295aedb0ae3ae82db198d0c5b9"
+    sha256 cellar: :any,                 arm64_monterey: "61a272a68f11e79ba690068f532728eda218a9d86f330d070826bf003aedacfa"
+    sha256 cellar: :any,                 arm64_big_sur:  "24dae57187519f6ef5449df29562fa9d752d1844d00f2590bf5bb2b38213fd84"
+    sha256 cellar: :any,                 ventura:        "d365954f1957b92868f9a3335509eff98e4d52437b75a868165742c6849555d6"
+    sha256 cellar: :any,                 monterey:       "36ff9fa73cae7a8d1850cafa0f75d27df33d5f8bf5d57bf10a064de09e234194"
+    sha256 cellar: :any,                 big_sur:        "cf1809cf8444fb50bbbe685e0f8ac697b84969cc0662d5079fa817c8eadd1ec3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a3d786826405966046c6962db674c563b89e86bf9ff5a53aecb9cea18f4df3d"
   end
 
   def install
@@ -33,9 +30,7 @@ class A52dec < Formula
       ENV.append_to_cflags "-std=gnu89"
     end
 
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
+    system "./configure", *std_configure_args,
                           "--enable-shared",
                           "--mandir=#{man}"
     system "make", "install"

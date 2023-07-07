@@ -39,7 +39,7 @@ class CrispyDoom < Formula
 
   test do
     testdata = <<~EOS
-      Inavlid IWAD file
+      Invalid IWAD file
     EOS
     (testpath/"test_invalid.wad").write testdata
 

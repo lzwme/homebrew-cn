@@ -2,8 +2,8 @@ class DockerCompletion < Formula
   desc "Bash, Zsh and Fish completion for Docker"
   homepage "https://www.docker.com/"
   url "https://github.com/docker/cli.git",
-      tag:      "v24.0.2",
-      revision: "cb74dfcd853482dd43cb553106b1e0cd237acb3e"
+      tag:      "v24.0.3",
+      revision: "3713ee1eea0447bcfe27378ad247c7e245406f04"
   license "Apache-2.0"
   head "https://github.com/docker/cli.git", branch: "master"
 
@@ -12,13 +12,13 @@ class DockerCompletion < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e2ad36e5e1e235663d52874d336daf5486532c696ab1505648591c2c1a4babac"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e2ad36e5e1e235663d52874d336daf5486532c696ab1505648591c2c1a4babac"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e2ad36e5e1e235663d52874d336daf5486532c696ab1505648591c2c1a4babac"
-    sha256 cellar: :any_skip_relocation, ventura:        "e2ad36e5e1e235663d52874d336daf5486532c696ab1505648591c2c1a4babac"
-    sha256 cellar: :any_skip_relocation, monterey:       "e2ad36e5e1e235663d52874d336daf5486532c696ab1505648591c2c1a4babac"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e2ad36e5e1e235663d52874d336daf5486532c696ab1505648591c2c1a4babac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf20b7a7a4d849791fe37e41c14cb6f56cec267b3bb0b28d9c2c1f7a5b4c8de8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "38b331d82049b4967ce76df3eec063eb4d4e37d279ed850ed3cc2dc4934b930f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "38b331d82049b4967ce76df3eec063eb4d4e37d279ed850ed3cc2dc4934b930f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "38b331d82049b4967ce76df3eec063eb4d4e37d279ed850ed3cc2dc4934b930f"
+    sha256 cellar: :any_skip_relocation, ventura:        "38b331d82049b4967ce76df3eec063eb4d4e37d279ed850ed3cc2dc4934b930f"
+    sha256 cellar: :any_skip_relocation, monterey:       "38b331d82049b4967ce76df3eec063eb4d4e37d279ed850ed3cc2dc4934b930f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "38b331d82049b4967ce76df3eec063eb4d4e37d279ed850ed3cc2dc4934b930f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "502f3761c5f06a537784ab260b519e9e92eb9f97f5243760dd250d4295b231b2"
   end
 
   conflicts_with "docker",

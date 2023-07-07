@@ -19,7 +19,7 @@ class Localtunnel < Formula
   end
 
   test do
-    # supress node warning during runtime
+    # Suppress node warning during runtime
     ENV["NODE_NO_WARNINGS"] = "1"
 
     require "pty"
