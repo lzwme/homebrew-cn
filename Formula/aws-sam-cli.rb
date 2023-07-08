@@ -3,18 +3,18 @@ class AwsSamCli < Formula
 
   desc "CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM"
   homepage "https://aws.amazon.com/serverless/sam/"
-  url "https://files.pythonhosted.org/packages/1c/ac/335535ca658a06a6d7cad51b7bf6b643c71da4f2ce7c22751a25c3e06bbe/aws-sam-cli-1.89.0.tar.gz"
-  sha256 "19c5a3d0611293b0734a2f5c514a227568eaaf9cbeb570571b6ea5ea093aca2e"
+  url "https://files.pythonhosted.org/packages/d7/9b/0da095d741c41080ce8858e0756963b17e3a6bf71269a3ed4a01e940b0f9/aws-sam-cli-1.90.0.tar.gz"
+  sha256 "25751f737ecee9c4d33824d3b56134e66f86478883c81b2644fc97a13471166a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c11e2dede20fb4b84462bbfbad94151421172779540c8ef409d41e85ad33ae39"
-    sha256 cellar: :any,                 arm64_monterey: "8afbb5c0038a7a8128e1bd6d699cb83948a7b63669e1141802fb3855726fbdc0"
-    sha256 cellar: :any,                 arm64_big_sur:  "7abb9b8f3db81ac902b92193d0e0aa44e4ab6a7b4b8d8229c626ef955b04e555"
-    sha256 cellar: :any,                 ventura:        "2fa2b42bc52126e523b3bc3cd0c8018bbb2ca84818f9e35a2d26d5ea7df75ab5"
-    sha256 cellar: :any,                 monterey:       "53d9c850f2b5d4428d4a3a7373f9dd9c140d85b38f09ed979605dd589dcdb145"
-    sha256 cellar: :any,                 big_sur:        "1e4e0aa232274c17f3b18b6bacc19b2e40bd168ccad73a58bb5b4031fed5f72a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d2b039ec4b25ea5d59dc673ba00e3affd8b85a2303a6a81887e55898609b1c4"
+    sha256 cellar: :any,                 arm64_ventura:  "e8f2583bc9ad9b70fa2789d16845523e30a0f63874efa132f201b3358e5d119c"
+    sha256 cellar: :any,                 arm64_monterey: "5d798d58752d4e9e5d7c8d686a1666a040dd4f200bbc69e6d6ca4ce8908f7be0"
+    sha256 cellar: :any,                 arm64_big_sur:  "8eb4f74c5f4f401acd53e9d7e86a881a8270313b7d37f2e84838dc63b6667470"
+    sha256 cellar: :any,                 ventura:        "09d998afce0874933924ebcf6829109fb2bf0d6554ca3a6b4523657f6930b794"
+    sha256 cellar: :any,                 monterey:       "276f39c7d552a30919a9388914b9124f3163e6a351afa029da4ed0fe60341e42"
+    sha256 cellar: :any,                 big_sur:        "7dd37756d543e8a636a1af1970ac4c337198544d9c9c63d1285971f9ec97d711"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "28ff1d3953bbddcbd891549f5820cd5be1f449aa53e25b576166be53cc151e9a"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -54,13 +54,13 @@ class AwsSamCli < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/1b/07/94eda63bf996c1f9d860b48f48448aa30ae67791035ac3bab18ec1f0525b/boto3-1.26.161.tar.gz"
-    sha256 "662731e464d14af1035f44fc6a46b0e3112ee011ac0a5ed416d205daa3e15f25"
+    url "https://files.pythonhosted.org/packages/fc/26/81d4ff9eb8fd067be37e4044f8f4ddd6f62abf0cd2479605e7d97fa31e36/boto3-1.28.0.tar.gz"
+    sha256 "8d43863e4769a5652efc32fd63430df58488cdb3fb85e614461b511358e47ec7"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/db/f7/f327f6308f1893fa099135196348940c4b5cbe1f7653766a6d2472c93c2e/botocore-1.29.161.tar.gz"
-    sha256 "a50edd715eb510343e27849f36483804aae4b871590db4d4996aa53368dcac40"
+    url "https://files.pythonhosted.org/packages/2b/02/06efcac837cb1a2dd10763ea26e77ef715c5dd28764ebf0dcdb4b171b303/botocore-1.31.0.tar.gz"
+    sha256 "db22eea779de7f61621a612c6a36f3ee069a37d4572a9541aa374503447622aa"
   end
 
   resource "certifi" do
@@ -89,8 +89,8 @@ class AwsSamCli < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+    url "https://files.pythonhosted.org/packages/77/88/b0cc5fe95c31c301e9823ea9b028f669c0dcfa205ff71111037a5ed4892c/click-8.1.4.tar.gz"
+    sha256 "b97d0c74955da062a7d4ef92fadb583806a585b2ea81958a81bd72726cbb8e37"
   end
 
   resource "cookiecutter" do
@@ -164,8 +164,13 @@ class AwsSamCli < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/36/3d/ca032d5ac064dff543aa13c984737795ac81abc9fb130cd2fcff17cfabc7/jsonschema-4.17.3.tar.gz"
-    sha256 "0f864437ab8b6076ba6707453ef8f98a6a0d512a80e93f8abdb676f737ecb60d"
+    url "https://files.pythonhosted.org/packages/79/01/ce65847f79de9594d436b7ef295e374dfcc0ff3ee884bf61cf896f970ddb/jsonschema-4.18.0.tar.gz"
+    sha256 "8caf5b57a990a98e9b39832ef3cb35c176fe331414252b6e1b26fd5866f891a4"
+  end
+
+  resource "jsonschema-specifications" do
+    url "https://files.pythonhosted.org/packages/9a/8c/3d028449ac15cba52db3e1c95ca53b9240b4707fbe17f43e01cc73dd9336/jsonschema_specifications-2023.6.1.tar.gz"
+    sha256 "ca1c4dd059a9e7b34101cf5b3ab7ff1d18b139f35950d598d629837ef66e8f28"
   end
 
   resource "junit-xml" do
@@ -209,18 +214,13 @@ class AwsSamCli < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/ec/0a/cf955f8bb3b9498d554522cfe7cb9b019ba9f8b86e2879009f604207b72c/pydantic-1.10.9.tar.gz"
-    sha256 "95c70da2cd3b6ddf3b9645ecaa8d98f3d80c606624b6d245558d202cd23ea3be"
+    url "https://files.pythonhosted.org/packages/cf/01/e8a380dc6e92a76113f034c58c9ffdbd115753e9b944ddf5d2dbe862f248/pydantic-1.10.11.tar.gz"
+    sha256 "f66d479cf7eb331372c470614be6511eae96f1f120344c25f3f9bb59fb1b5528"
   end
 
   resource "pyopenssl" do
     url "https://files.pythonhosted.org/packages/be/df/75a6525d8988a89aed2393347e9db27a56cb38a3e864314fac223e905aef/pyOpenSSL-23.2.0.tar.gz"
     sha256 "276f931f55a452e7dea69c7173e984eb2a4407ce413c918aa34b55f82f9b8bac"
-  end
-
-  resource "pyrsistent" do
-    url "https://files.pythonhosted.org/packages/bf/90/445a7dbd275c654c268f47fa9452152709134f61f09605cf776407055a89/pyrsistent-0.19.3.tar.gz"
-    sha256 "1a2994773706bbb4995c31a97bc94f1418314923bd1048c6d964837040376440"
   end
 
   resource "python-dateutil" do
@@ -243,6 +243,11 @@ class AwsSamCli < Formula
     sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
   end
 
+  resource "referencing" do
+    url "https://files.pythonhosted.org/packages/20/93/45213b5b6e3eeab03e3f6eb82cc516a81fbf257586a25f9eb1d21af96e1b/referencing-0.29.1.tar.gz"
+    sha256 "90cb53782d550ba28d2166ef3f55731f38397def8832baac5d45235f1995e35e"
+  end
+
   resource "regex" do
     url "https://files.pythonhosted.org/packages/18/df/401fd39ffd50062ff1e0344f95f8e2c141de4fd1eca1677d2f29609e5389/regex-2023.6.3.tar.gz"
     sha256 "72d1a25bf36d2050ceb35b517afe13864865268dfb45910e2e17a84be6cbfeb0"
@@ -256,6 +261,11 @@ class AwsSamCli < Formula
   resource "rich" do
     url "https://files.pythonhosted.org/packages/3d/0b/8dd34d20929c4b5e474db2e64426175469c2b7fea5ba71c6d4b3397a9729/rich-13.3.5.tar.gz"
     sha256 "2d11b9b8dd03868f09b4fffadc84a6a8cda574e40dc90821bd845720ebb8e89c"
+  end
+
+  resource "rpds-py" do
+    url "https://files.pythonhosted.org/packages/75/80/7f76ff5d290a11a8d43653da186def13f293f00baf4927eae1ad128bf9de/rpds_py-0.8.8.tar.gz"
+    sha256 "300b8579740b06e246238b730e636f314a7d8dc475be1868650f5d3ddc29a0d8"
   end
 
   resource "ruamel-yaml" do

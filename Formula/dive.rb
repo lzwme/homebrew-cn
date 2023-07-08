@@ -2,20 +2,18 @@ class Dive < Formula
   desc "Tool for exploring each layer in a docker image"
   homepage "https://github.com/wagoodman/dive"
   url "https://github.com/wagoodman/dive.git",
-      tag:      "v0.10.0",
-      revision: "64880972b0726ec2ff2b005b0cc97801067c1bb5"
+      tag:      "v0.11.0",
+      revision: "800398060434ce8dfda6b4d182b72e2a9724e9f6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b5dcf63508fabfc661ceb34a7de40b69d202588f103f92e7befd58ee5dc5d519"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "301a650dbfacbef1d53f94a76918bccab8de782b2e45fb747b1dceffadb4ee19"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "734a6756d2f43b3d0e91d71b9e6ef024e6a031e5d7c3ab6a44c49c3bbb8c8655"
-    sha256 cellar: :any_skip_relocation, ventura:        "74a502bf2ee9f7a8c7ae9d89ec30038493c466877cf7c7702f698a2f67ee985e"
-    sha256 cellar: :any_skip_relocation, monterey:       "f533a63cbe72e587cf2e81d0ecf4df06b553a3b4458e6898407aa559b93b45d9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4fdeb80d1d57527ef5887c98a5db2235e73edb7b3d0fe32d42f0cfcf0ea49780"
-    sha256 cellar: :any_skip_relocation, catalina:       "8c17b54b9370b6bc8d36dde60d42b71a7ef0fc3d700bd67893fe04c8ec1f69f9"
-    sha256 cellar: :any_skip_relocation, mojave:         "3e67c19a68dc97ba2b66e57886923b5abee437c74e83a76e289a1fc491c0416f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "795372731d4e6cd97f76b98f84c9c03878f18277be95f3f94033990f05abc6ba"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "85cfb19756bf9778eeef156546ee099f9a44eaccb636df66f14a749129b9f2f5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "85cfb19756bf9778eeef156546ee099f9a44eaccb636df66f14a749129b9f2f5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "85cfb19756bf9778eeef156546ee099f9a44eaccb636df66f14a749129b9f2f5"
+    sha256 cellar: :any_skip_relocation, ventura:        "1358457c221bed48eaec5ed4030474fde991b91584aadc2348bc0d0a9f35d563"
+    sha256 cellar: :any_skip_relocation, monterey:       "1358457c221bed48eaec5ed4030474fde991b91584aadc2348bc0d0a9f35d563"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1358457c221bed48eaec5ed4030474fde991b91584aadc2348bc0d0a9f35d563"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f4815d9cb249505fe010e10ae33913ed63a12fcb8de7c8dfcef9507e06e0627"
   end
 
   depends_on "go" => :build

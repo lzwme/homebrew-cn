@@ -6,6 +6,11 @@ class Mockery < Formula
   license "BSD-3-Clause"
   head "https://github.com/vektra/mockery.git", branch: "master"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b68af07ef8b6052780a2eb32bacc236b46379ee8bff296953bd8a7c52566778a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "73743a1599b4339f012a25da1137ac6bb361753649d58bfb135932da3b991cc0"

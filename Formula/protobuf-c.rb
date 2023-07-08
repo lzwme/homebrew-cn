@@ -4,16 +4,16 @@ class ProtobufC < Formula
   url "https://ghproxy.com/https://github.com/protobuf-c/protobuf-c/releases/download/v1.4.1/protobuf-c-1.4.1.tar.gz"
   sha256 "4cc4facd508172f3e0a4d3a8736225d472418aee35b4ad053384b137b220339f"
   license "BSD-2-Clause"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "82563e1d7f8587b0fdd459e26ec2acd3f793c8d126ba35d34767b2a4f810c97d"
-    sha256 cellar: :any,                 arm64_monterey: "a5ab5bbf11253c4ee20c196ed13411dff9aa60e3f8bff7748b25d4fb52129ce3"
-    sha256 cellar: :any,                 arm64_big_sur:  "41cfec2f4c77c609459bae17cec6ce9911d9fe625f81421f86e57d6ddf286e2a"
-    sha256 cellar: :any,                 ventura:        "fa46afc39a500a07b620579512c01e55652349c8263663ff592ab579a0f86a0a"
-    sha256 cellar: :any,                 monterey:       "4001f21429c8c39bd4157dcece7fd463912fd45f5fdc2facfdcf51eeaa032e72"
-    sha256 cellar: :any,                 big_sur:        "cbffa2432b6f3f6034490020b83139ceb1a957c9ec4286cfee6609676404a129"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6372d245cfdd8fe3e467ce3416c2c3264042e70ca0a341a14d09809dd95c7c64"
+    sha256 cellar: :any,                 arm64_ventura:  "3f497cd808da85745d28571053411b9926b092a6386a9d9e88bf92f629e678ee"
+    sha256 cellar: :any,                 arm64_monterey: "680e85451c0bdaeb33ddbfe651049d719968fe8675b2a602b9b0e7fc254c6903"
+    sha256 cellar: :any,                 arm64_big_sur:  "9707c4025da0fdc09e55c5765beddf5aad3dafe0dd6b12ca63b9c22aa861606e"
+    sha256 cellar: :any,                 ventura:        "f13dbd5b881ba7d6902c24a2a561fcab47d294a2f536d490c24970a3c6b980f9"
+    sha256 cellar: :any,                 monterey:       "f9e2e5112fb1ac0236a038a12930e8e39576c47e3a0ab9e17bad3cb89454910b"
+    sha256 cellar: :any,                 big_sur:        "c7ed2c94925d8e7a1f706758119fcee573e686d569f965c27fd5372ffa7688a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "028a01c11de0522f35704619c9c01e09ed088ee55ea792651649ee5afaa3967b"
   end
 
   head do

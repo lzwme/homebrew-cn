@@ -4,16 +4,16 @@ class Mosh < Formula
   url "https://ghproxy.com/https://github.com/mobile-shell/mosh/releases/download/mosh-1.4.0/mosh-1.4.0.tar.gz"
   sha256 "872e4b134e5df29c8933dff12350785054d2fd2839b5ae6b5587b14db1465ddd"
   license "GPL-3.0-or-later"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e2f247157c264d0f83534894b1266c7acaf6736a7f3f2132726dc9c4384ea8ed"
-    sha256 cellar: :any,                 arm64_monterey: "3abf9032ce37afffff482cedf00daa359db14708d68d1d33af16d3e817201179"
-    sha256 cellar: :any,                 arm64_big_sur:  "eb7680f907c88a20d9d760203c77134c1dcbb4b40e54513e8b0e8c792c8ce868"
-    sha256 cellar: :any,                 ventura:        "a730744c533263ba92f9a1c1688c97d7d3dba46dad0df81c46172ce7442b3cdd"
-    sha256 cellar: :any,                 monterey:       "41f23e2f63ee93aee7eb98c468fa6862f4bab016ae77314a376fcdaf4fc58790"
-    sha256 cellar: :any,                 big_sur:        "f8f59a70726b0866d24a4f4375c4cfb853fd0cf94863809adbe9cdd94a93d94e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb1ffef653ea318dce42179411cb913097b7ab3a59e4f87ff84642ac87ab38b2"
+    sha256 cellar: :any,                 arm64_ventura:  "cdd2d7e3bbfe43525ebe6066f1748c1c33969e442ded18547ac767a9ae14eb17"
+    sha256 cellar: :any,                 arm64_monterey: "749b88a7f9c420d0fbdca8f04149d2b4133c5e37b4b9be2e6d3efc1658867dc8"
+    sha256 cellar: :any,                 arm64_big_sur:  "bd94ec171b2ff3cb6c8f64ceecdf9894ffa49dd62059cd39c31788d80f67605b"
+    sha256 cellar: :any,                 ventura:        "f76c8c24a42a2ec22d4077fa5ab64ccc6587872d01f2ba5759083beb81ae84b1"
+    sha256 cellar: :any,                 monterey:       "f1613e143631ecd0f20c27f0e0439117076bf3a8dc40728bc04e16f4748ddc49"
+    sha256 cellar: :any,                 big_sur:        "20b801a44a511b7daba60c7f8804bfcb89b61adea449ff10081c60646ed1fb3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cffb2c704a0df44613cb6f0db5fe9f6fafaf3459b14f07b1e700a73af156846"
   end
 
   head do

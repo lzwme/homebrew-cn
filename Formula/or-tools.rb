@@ -4,7 +4,7 @@ class OrTools < Formula
   url "https://ghproxy.com/https://github.com/google/or-tools/archive/v9.6.tar.gz"
   sha256 "bc4b07dc9c23f0cca43b1f5c889f08a59c8f2515836b03d4cc7e0f8f2c879234"
   license "Apache-2.0"
-  revision 3
+  revision 4
   head "https://github.com/google/or-tools.git", branch: "stable"
 
   livecheck do
@@ -13,13 +13,13 @@ class OrTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ae508279c87f054125c885872d627e13a7b6083c269d131dec0def391eff4686"
-    sha256 cellar: :any,                 arm64_monterey: "6e215c0a6d9cb81d4d339ea5c57fd27d4a39f790de2e0ffe341eb6e2d69ee891"
-    sha256 cellar: :any,                 arm64_big_sur:  "62b004454894a463eaeeef80eb98d84fe4666436603a93aa861db0ea6a2a0560"
-    sha256 cellar: :any,                 ventura:        "75d89fc6a54d5bc9630a3d1fc233339bdac651821e61ff26d593fc00f3dc6f47"
-    sha256 cellar: :any,                 monterey:       "01fb909c89e532424ccf58da97527158378aa336b861cc98a202cc4473424b6d"
-    sha256 cellar: :any,                 big_sur:        "a3461a940aa7e96b8d8426c08f5492bef461a9b950061202468d4ddad31b11c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7df2bc2c0bba929262d933c093a7fa0cf12b624505dcd41efae42339d08d59a4"
+    sha256 cellar: :any,                 arm64_ventura:  "377884e4b2394b19dc13f748e4aa39a4c4d67f77ffd20ca45296f3a033bb10f8"
+    sha256 cellar: :any,                 arm64_monterey: "2f10817c4343154e98e1e8462408c19030bbdeb2c8c7a3e657bc50f7e943fc22"
+    sha256 cellar: :any,                 arm64_big_sur:  "6cba750eed1316bdd235742c5db675341088b8232bafe87741b4ccb2dc96ebfa"
+    sha256 cellar: :any,                 ventura:        "06a2aa2fdb949a0a36b9eee76afeddaebd09a109cacb70ca0ff4d1a60b70b255"
+    sha256 cellar: :any,                 monterey:       "be3ea00e6a151026e9626c6239271a12501f516b8b6724c88fdfbdf37e0c749d"
+    sha256 cellar: :any,                 big_sur:        "fa9ebd2c1d8f0e6e321c7c8c47ff62204028131a962b01e31d3da6625c4404cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4cd46165f682741913d2d47be369a3a7b5c60890800fe19a4580c6551b741c7"
   end
 
   depends_on "cmake" => :build
@@ -96,7 +96,7 @@ index 7f570f9..183b3a4 100644
 @@ -52,6 +52,7 @@ enum LogSeverity {
  };
  }  // namespace google
- 
+
 +#if GOOGLE_PROTOBUF_VERSION <= 3021012
  // Implementation of the `AbslStringify` interface. This adds `DebugString()`
  // to the sink. Do not rely on exact format.
@@ -106,5 +106,5 @@ index 7f570f9..183b3a4 100644
  }  // namespace protobuf
  }  // namespace google
 +#endif
- 
+
  #endif  // OR_TOOLS_BASE_LOGGING_H_

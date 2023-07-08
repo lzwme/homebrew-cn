@@ -60,6 +60,8 @@ class Cntlm < Formula
       exec "#{bin}/cntlm -c #{testpath}/cntlm.conf -v"
     end
     sleep 2
+    # "unreacheable" is a typo in upstreams code. There haven't been
+    # any updates to `cntlm` in over a decade, so this can't be fixed.
     assert_match "502 Parent proxy unreacheable", shell_output("curl -s localhost:#{bind_port}")
   end
 end

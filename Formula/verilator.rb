@@ -7,13 +7,14 @@ class Verilator < Formula
   head "https://github.com/verilator/verilator.git", branch: "master"
 
   bottle do
-    sha256 arm64_ventura:  "723416820e193fab7b74b6155b5b3d20adb67ba4c0fb7bdeec703a8a7164ecfa"
-    sha256 arm64_monterey: "d6ed9db4e932076ec7edb374eda63191218d9881445a2723f53ccbff80ccd9b5"
-    sha256 arm64_big_sur:  "ccc95f5e6ad07a077752dc2721ff0a1b83ade2f18104e7f39fb6cca46837864e"
-    sha256 ventura:        "1f58ca9f455ae488d9e02b8439fc4679bf17382cfd14f03d65c3412c2adb3984"
-    sha256 monterey:       "68d360b9b73fff9c5565e122543e3c3cfe6d2e3ddded0640329d438359eade39"
-    sha256 big_sur:        "414a8f3d3f88dadee0db7751b1a15eca5aa56051713061838dfcee06cb7d2b53"
-    sha256 x86_64_linux:   "60b18b8a552dc240cde3f1ffaeafdbbff864b8ec3cf67af319ff88eb7d2d0971"
+    rebuild 1
+    sha256 arm64_ventura:  "2f496ab92229af3b09566a1b898e673db247a5083a5ba53cec01d1a6af292b90"
+    sha256 arm64_monterey: "0531a914f65009075a4bc2031180207002d4a037ec49787956104b6e7b8224bd"
+    sha256 arm64_big_sur:  "1b3299485b2d421bc63347c14df16e64ae7f4131ce3fda68f523cf8e606209a4"
+    sha256 ventura:        "8a8227fe81a012fbc753cbb56545542695bfe4496cd29be288106cfaeae514df"
+    sha256 monterey:       "a5c7d0400be43694ed30963349bd38205f194defe7d6f43bb324999627b82d04"
+    sha256 big_sur:        "452185cbbe92594b1ea5d1d53a660184e8d7c1dc78e80d50744f0f44fd9ac32f"
+    sha256 x86_64_linux:   "d8e53c8300132547b8d241df51ae64af6146281f54971287f799b41274ddb4b5"
   end
 
   depends_on "autoconf" => :build
@@ -25,37 +26,23 @@ class Verilator < Formula
   uses_from_macos "perl"
   uses_from_macos "python", since: :catalina
 
-  on_macos do
-    depends_on "gcc"
-  end
-
   skip_clean "bin" # Allows perl scripts to keep their executable flag
 
   # error: specialization of 'template<class _Tp> struct std::hash' in different namespace
   fails_with gcc: "5"
 
-  # Build hangs when using Clang
-  # https://github.com/Homebrew/homebrew-core/pull/124827
-  # https://github.com/Homebrew/homebrew-core/pull/130893
-  # https://github.com/Homebrew/homebrew-core/pull/133912
-  fails_with :clang
-
   def install
-    # V3Lexer_pregen.yy.cpp:369:10: fatal error: FlexLexer.h: No such file or directory
-    ENV.append_to_cflags "-isystem /Library/Developer/CommandLineTools/usr/include" if OS.mac?
-
     system "autoconf"
     system "./configure", "--prefix=#{prefix}"
+    ENV.deparallelize if OS.mac?
     # `make` and `make install` need to be separate for parallel builds
     system "make"
     system "make", "install"
 
     # Avoid hardcoding build-time references that may not be valid at runtime.
-    gcc = Formula["gcc"]
-    cxx = OS.mac? ? gcc.opt_bin/"g++-#{gcc.any_installed_version.major}" : "c++"
     inreplace pkgshare/"include/verilated.mk" do |s|
-      s.change_make_var! "CXX", cxx
-      s.change_make_var! "LINK", cxx
+      s.change_make_var! "CXX", "c++"
+      s.change_make_var! "LINK", "c++"
       s.change_make_var! "PERL", "perl"
       s.change_make_var! "PYTHON3", "python3"
     end

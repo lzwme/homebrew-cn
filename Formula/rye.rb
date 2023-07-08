@@ -1,23 +1,28 @@
 class Rye < Formula
   desc "Experimental Package Management Solution for Python"
   homepage "https://rye-up.com/"
-  url "https://ghproxy.com/https://github.com/mitsuhiko/rye/archive/refs/tags/0.9.0.tar.gz"
-  sha256 "1c10ed82fa4c0ecc4df40bedc45c7d3de790caadcdb1907b6e17742ae0c68175"
+  url "https://ghproxy.com/https://github.com/mitsuhiko/rye/archive/refs/tags/0.10.0.tar.gz"
+  sha256 "bcc7abbdacd4e7cf98f396fe5e199e3305be8e564ad50fe2592bd320fda70c8c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4cf0a54c27c22ac9813024186e9538dd75bd10e0f7f29f3b5eabf6c3f8f5482"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "baac672864846909eb9c7065b4e53a859f5d693e2274fc76aabc6198a06efb2a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "01ce119bec6a0fd775dea62a954d969fd0cbfcc91ee5bb2c0fcf42736731383f"
-    sha256 cellar: :any_skip_relocation, ventura:        "bea04c13de54bfc3e4f33abbac0d0a6ac55b8b30dea534da61b5f5d0913ade43"
-    sha256 cellar: :any_skip_relocation, monterey:       "1fd099b466990020645e6e116373fa2f09e94d80d7921e5c09b9b5e1c4438ffe"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ddbbcc139dc1212094fd6ddf538eccc83c7fd98a08d6134a104fdc25796b7491"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d3e8d213943c0799d12a66a105d5d75a9db98c1c682e5c1882089d1c839acfb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9be0a6dcce2f06c16908f154d4b87ae1933a7f67a83b6efbde4f81a8598bf49"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "016a0f2ce374d7694c1371e3bd3a33f981800ce26ee57e0fc9218a995a0118b4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "98265ccca60ce5f8c4236904f6374011e612f086d568309d55e14cc0e2faa507"
+    sha256 cellar: :any_skip_relocation, ventura:        "e2330d2a5c9871490ad3a12190eeabc2c8d1112c364a8ca8d79dcbae8e162164"
+    sha256 cellar: :any_skip_relocation, monterey:       "59b93ce7dc5dca1d5f2848c6a1ce0e710f7e1a74c6fdf0827cf62f78890a24be"
+    sha256 cellar: :any_skip_relocation, big_sur:        "65348dd31d56d2a1b615194cf7a39c65911b70d2d1ef24d262cd59fb465838ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "967d6bbeffbeac696977c560403e67784ea8ab146d972f025e929018964ccc43"
   end
 
   depends_on "rust" => :build
 
   uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "pkg-config" => :build
+    depends_on "openssl@3"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "rye")

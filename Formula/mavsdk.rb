@@ -7,7 +7,7 @@ class Mavsdk < Formula
       tag:      "v1.4.16",
       revision: "a14d604c2baa950dab1510448bce7c0b490a4f1a"
   license "BSD-3-Clause"
-  revision 5
+  revision 6
 
   livecheck do
     url :stable
@@ -15,13 +15,13 @@ class Mavsdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "fff9e9400a581b060cda8e924594c2c48b14bb76f672f18ef7cdcb7ea084e717"
-    sha256 cellar: :any,                 arm64_monterey: "db65547f49217186c08f3b49f9b8637123f595aa90c1f94f4c7de704c1374fb2"
-    sha256 cellar: :any,                 arm64_big_sur:  "2e014c1157bd6be14c0c9720eb362000ae85f9b3a93a03de3e8089b605e5ffcb"
-    sha256 cellar: :any,                 ventura:        "8a1c1f0d3ca95e0a784db10772f0af1f57db00915a4e25bcc39cc8a8e7330dfb"
-    sha256 cellar: :any,                 monterey:       "b38d240823f4f8d73c5f8dbc16dcf1ae7771bce9073b765986abe6fe4e53c75b"
-    sha256 cellar: :any,                 big_sur:        "2db303ec50236bd596e19170dc362c31e8ed8c8f9b1be7e17338ffc97ce28aef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3844124ac415c9e05da46ee026ba55502b3dfc14e8a01272303c9c216d11192a"
+    sha256 cellar: :any,                 arm64_ventura:  "99e2d408c7b1378063785628521a9b7e22b56595f5ab6a1db47331b50fd86a7b"
+    sha256 cellar: :any,                 arm64_monterey: "c63aafa768aa59ed3dc54dd07632053e5f831af5930a58c807b50bb2c2939a6f"
+    sha256 cellar: :any,                 arm64_big_sur:  "d9b98af31ed90991185b120545bf0449dc6b5620ef842736cc70fa1110320c6f"
+    sha256 cellar: :any,                 ventura:        "7a5ad4b142dfb7d24e44e6cd962413a22e6c588482c07993a3e795ad1e12d82b"
+    sha256 cellar: :any,                 monterey:       "87b7ec7699fe56da47514ecd6b874dcf08992e5647e27e457c020c2a77714cbd"
+    sha256 cellar: :any,                 big_sur:        "089e160f28ee643efcccc91a446caef2e26d17b6b820fcb9c01498a5c577e75c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0be92002437d65ad28663c4dde065321a2bd7d9730e7926bce28464889b8d82b"
   end
 
   depends_on "cmake" => :build

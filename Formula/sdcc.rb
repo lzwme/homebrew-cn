@@ -1,8 +1,8 @@
 class Sdcc < Formula
   desc "ANSI C compiler for Intel 8051, Maxim 80DS390, and Zilog Z80"
   homepage "https://sdcc.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/sdcc/sdcc/4.2.0/sdcc-src-4.2.0.tar.bz2"
-  sha256 "b49bae1d23bcd6057a82c4ffe5613f9cd0cbcfd1e940e9d84c4bfe9df0a8c053"
+  url "https://downloads.sourceforge.net/project/sdcc/sdcc/4.3.0/sdcc-src-4.3.0.tar.bz2"
+  sha256 "2a6fc0f021080103daf393ac0efea8ce0f5e9fe2140dce30b999282c81c893cd"
   license all_of: ["GPL-2.0-only", "GPL-3.0-only", :public_domain, "Zlib"]
   head "https://svn.code.sf.net/p/sdcc/code/trunk/sdcc"
 
@@ -12,14 +12,13 @@ class Sdcc < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "bf1ec6779b509722f4883af22035993610834c25e315db0d06840107d561a132"
-    sha256 arm64_monterey: "88f61b9b2848b0c6e21af0f3e107ecbfd806ef1a4c4d734a2066a76f375d51f4"
-    sha256 arm64_big_sur:  "098d09285da054f19228ec62cbb47fbabb0a2ec64c74aa42ce1785af8671c13d"
-    sha256 ventura:        "edcb230b0f738677f94754317c1ef2e5eb692855784ce941ce1af9896e00f7fb"
-    sha256 monterey:       "5278115376a14cbe879ec0bc8145ab276d11891b8230664d3180d84f5cc75d6d"
-    sha256 big_sur:        "45ca54b6bff16c5282f935a0bda39e6164adfc790e3f073d860a2caab554f7d8"
-    sha256 catalina:       "078203da744fc5169e80022e7cd541938fb64a993606c1fc0a16076da70436a6"
-    sha256 x86_64_linux:   "3bfa7da54ce11de99acdb5782963b3e7b9dfbeb2fa8ab55a9155fada408f2691"
+    sha256 arm64_ventura:  "952ba3d58978fe2df751a1689baa98996f17974b44dcef75c55b536290fe25eb"
+    sha256 arm64_monterey: "051d43d9d6fa0b087f3c12add6234ac539e320a26c96f262fe091d999a2bb35f"
+    sha256 arm64_big_sur:  "3a30b3643849d2509ec7ee0ba3f4b9d65020cf60f2881a6347a0a1bcd378db54"
+    sha256 ventura:        "03964a8f18c071fe70922e7b9d9e9109c99ef0dbbef0f73dd6a261ba716e3293"
+    sha256 monterey:       "cd7f93d2ffda42a6676b79bdcb71d81354da6924f6e540cd524ae0d53f9f5bc4"
+    sha256 big_sur:        "3cdab5e848de0fde645e2afb85f0c1fc79a83798c2bb632d6903f2972ae00e1d"
+    sha256 x86_64_linux:   "cd11da769aff6397da965da3fb438704e4c4c7c140ab78cb035154b564f2a2b5"
   end
 
   depends_on "autoconf" => :build

@@ -11,13 +11,14 @@ class EcflowUi < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "353b32f0a4123aa6bc18f5f2cd1d5db8454560ea855f0363b78a987a354f0442"
-    sha256                               arm64_monterey: "9149d674a1ab84bf597683873d3831f6eadb0ef544fafd8a407843747ed37675"
-    sha256                               arm64_big_sur:  "cb3c6062bda1d122b752c7b1a2152c7a1307d321ad8ed85b91370c74a0ded3a2"
-    sha256                               ventura:        "c8942df0ea1181b02f824872ee62393272e7311e9cde4b4ff41295fd8db6a06e"
-    sha256                               monterey:       "320866e9b3d0773123deb3f0ffefe2a2d367d09388f2b9cb60a6def5c26626c2"
-    sha256                               big_sur:        "08f8b866c2312fddf75b848ec30a6f7e426bd0095a8464126efee8e63b988715"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "870d17542833092b5364c6d3303eb1e685fce800e26efb5a1c7adfc432af60ba"
+    rebuild 1
+    sha256                               arm64_ventura:  "87941fe0d6bae6d2e15edba889114301c30f03f5d0df5986d072a17f4385c487"
+    sha256                               arm64_monterey: "c4c9ff8806038b34c08b304daab4a6ba20fde2f7538d805711defc74eab524fc"
+    sha256                               arm64_big_sur:  "09c4249f97616899e31b90c127b0e9886eb7a324e56e9fe6c792d56c552ed5e8"
+    sha256                               ventura:        "cb254f690ed41f15c6092826b3a94d964d09acc6040ec088880342a7f4c68c43"
+    sha256                               monterey:       "d4583471e2d8f2eaa320b8cf1f588e916afb78e35a9881106c4b5247a8a844f7"
+    sha256                               big_sur:        "e4ece7ea68b52f2f3aa1544a9a3b0435efd8ac3daf0177073d892775b582dc61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fcabd58826dfcf34852ec542bf7e8a9765bc86b9806f02d6ee6b5d5dfd0ff5af"
   end
 
   depends_on "boost" => :build
@@ -27,6 +28,13 @@ class EcflowUi < Formula
 
   # requires C++17 compiler to build with Qt
   fails_with gcc: "5"
+
+  # Fixes a typo in upstream's code. Remove once merged and released.
+  # PR ref: https://github.com/ecmwf/ecflow/pull/35
+  patch do
+    url "https://github.com/ecmwf/ecflow/commit/5bf5f8490f3ba0a39c9119ba03f8a9b349f6c3ec.patch?full_index=1"
+    sha256 "747e7d8bfb84e3e60c7775a58607bdbf666d83b9c3cc544dc79bbf9ff3e2922b"
+  end
 
   def install
     mkdir "build" do
@@ -54,6 +62,6 @@ class EcflowUi < Formula
     help_out = shell_output("#{bin}/ecflow_ui -h")
     assert_match "ecFlowUI", help_out
     assert_match "fontsize", help_out
-    assert_match "start with the specified configuraton directory", help_out
+    assert_match "start with the specified configuration directory", help_out
   end
 end

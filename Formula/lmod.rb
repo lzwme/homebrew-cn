@@ -1,18 +1,18 @@
 class Lmod < Formula
   desc "Lua-based environment modules system to modify PATH variable"
   homepage "https://lmod.readthedocs.io"
-  url "https://ghproxy.com/https://github.com/TACC/Lmod/archive/8.7.27.tar.gz"
-  sha256 "8ad238f363be6a8c0947ccace6d1c58e35cb1c3f51f7e39c3d4ec2b644b22ec1"
+  url "https://ghproxy.com/https://github.com/TACC/Lmod/archive/8.7.28.tar.gz"
+  sha256 "e489b71990010ee072ccbace610a899033412f6e11e261440240ff9732f478f1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "891e537435c073e7f127f7b3ac7ef8b22f8586614a847b9ad18195ab06ab2244"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b2e8db28a2afcbeb51b23c1a162eb57c0ba64a78e9b47c098c365434a2b60124"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "68631f12c9c454b3f125451750d0e7425532a3a69112d4176867c3bf84844958"
-    sha256 cellar: :any_skip_relocation, ventura:        "652478703a8e6733ee76b75384038b41da07b6e98d85753cffb37a57396b14f3"
-    sha256 cellar: :any_skip_relocation, monterey:       "1ab5eb10c7b9dc65b60ad48a1614d62b4d09a5ac4c404e2a434cbf0149b0e612"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7ffeeeadf551b552669417bcbb2dca42dca8ea94a5179f146909e5cd2f575816"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "91c3fab607aadb8f94eae9c2b8e26b449616bf0155e904026f77fb5cbfae43ea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b87a28c3f0e81d902df0e6ede5535246d201a7eb4fe2ee20f66d856bfbd1b57e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f06e0136157487be0c818918f93d322889f34420e0834c78a2cc8d390ba1d5b7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b5d417ec683c921a9f252d416b96d36457dbb961f12f4d043d53aca4c887f767"
+    sha256 cellar: :any_skip_relocation, ventura:        "c86e61fef6606219c8338343ccab8cc1bb5fff4b25a0dbe4cb972ee49076c5ca"
+    sha256 cellar: :any_skip_relocation, monterey:       "1b16cf4f4bb4b84556734057b1f693b09db9bb25754790b5a0369e68b2b963d5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cfb9183e3206b69dcaf5d0d1375d6475156cd370933ac5c65fe3c42040643faf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4319ace226838e6dc471af2d2766c6971e3358a2671c2a45b406e3e1bca2e12"
   end
 
   depends_on "luarocks" => :build
@@ -29,8 +29,8 @@ class Lmod < Formula
   end
 
   resource "luaposix" do
-    url "https://ghproxy.com/https://github.com/luaposix/luaposix/archive/refs/tags/v36.1.tar.gz"
-    sha256 "e680ba9b9c7ae28c0598942cb00df7c7fbc70b82863bb55f028ea7dc101e39ac"
+    url "https://ghproxy.com/https://github.com/luaposix/luaposix/archive/refs/tags/v36.2.1.tar.gz"
+    sha256 "44e5087cd3c47058f9934b90c0017e4cf870b71619f99707dd433074622debb1"
   end
 
   def install
@@ -38,8 +38,8 @@ class Lmod < Formula
     luapath = libexec/"vendor"
     ENV["LUA_PATH"] = "?.lua;" \
                       "#{luapath}/share/lua/#{luaversion}/?.lua;" \
-                      "#{luapath}/share/lua/#{luaversion}/?/init.lua"
-    ENV["LUA_CPATH"] = "#{luapath}/lib/lua/#{luaversion}/?.so"
+                      "#{luapath}/share/lua/#{luaversion}/?/init.lua;;"
+    ENV["LUA_CPATH"] = "#{luapath}/lib/lua/#{luaversion}/?.so;;"
 
     resources.each do |r|
       r.stage do

@@ -3,19 +3,19 @@ require "language/node"
 class FirebaseCli < Formula
   desc "Firebase command-line tools"
   homepage "https://firebase.google.com/docs/cli/"
-  url "https://registry.npmjs.org/firebase-tools/-/firebase-tools-12.4.2.tgz"
-  sha256 "d5c4f146f723a6025c7a61ea0954301958504e0321c190bb38dd9164357e869b"
+  url "https://registry.npmjs.org/firebase-tools/-/firebase-tools-12.4.3.tgz"
+  sha256 "3adc0b516f016619675ff1b0f6345bbfa8a10dc00818222ac8b52787646b3804"
   license "MIT"
   head "https://github.com/firebase/firebase-tools.git", branch: "master"
 
   bottle do
-    sha256                               arm64_ventura:  "0246eb577dad5e6117a713370fe0a96af731770fc4148504bfdfef117c46e397"
-    sha256                               arm64_monterey: "4de6cd92015a70183f1ff7094226e727dafe5dc872f7a40a7fbf8864ef405115"
-    sha256                               arm64_big_sur:  "0bb12c5f69753ddcc5ef2f402eeed57406c02458b69d8f834735eef68dec150f"
-    sha256 cellar: :any_skip_relocation, ventura:        "f07aeb63df3ac4e3e133e5657ba46f03589e9f3d14645be31dab8dcd9da33463"
-    sha256 cellar: :any_skip_relocation, monterey:       "f07aeb63df3ac4e3e133e5657ba46f03589e9f3d14645be31dab8dcd9da33463"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f07aeb63df3ac4e3e133e5657ba46f03589e9f3d14645be31dab8dcd9da33463"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e8299fe8b139de2dc4644344e18c39bf9c0c28ccc9448332ce7c65cb94c84e2"
+    sha256                               arm64_ventura:  "d44a45f5a29ef25457b4b795d13b8dc54d366489b5fd9066d2ce63503ae0233e"
+    sha256                               arm64_monterey: "636f23d90c0189670228fa1fa518e3195c796e9a996bcd4cc7316ffeca5c1fa2"
+    sha256                               arm64_big_sur:  "b69b2d04b1549021a5bcc23974bcfd12ac239daa14be67c8827b86eec3deed9c"
+    sha256 cellar: :any_skip_relocation, ventura:        "fad920cb5e1c451b6f7cb83e4b6db14fc81cfa428c6d49f5bfe311e6f7abca8b"
+    sha256 cellar: :any_skip_relocation, monterey:       "fad920cb5e1c451b6f7cb83e4b6db14fc81cfa428c6d49f5bfe311e6f7abca8b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "fad920cb5e1c451b6f7cb83e4b6db14fc81cfa428c6d49f5bfe311e6f7abca8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45cc46bdd53f87b6cbea12cc206df7682953c359c5cf3a5b437a085ccaf9f2dd"
   end
 
   depends_on "node"

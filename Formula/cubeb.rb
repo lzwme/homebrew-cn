@@ -64,16 +64,16 @@ class Cubeb < Formula
 
         /* Verify that the library initialises itself successfully */
         ret = cubeb_init(&ctx, "test_context");
-        TEST(ret == CUBEB_OK, "initialse cubeb context");
+        TEST(ret == CUBEB_OK, "initialise cubeb context");
 
         /* Verify backend id can be retrieved */
         backend_id = cubeb_get_backend_id(ctx);
         TEST(backend_id != NULL, "retrieve backend id");
 
         /* Verify that an audio stream gets opened successfully */
-        params.format = CUBEB_SAMPLE_S16LE; /* use commonly supported      */
-        params.rate = 48000;                /* parametrs, so that the test */
-        params.channels = 1;                /* doesn't give a false fail   */
+        params.format = CUBEB_SAMPLE_S16LE; /* use commonly supported       */
+        params.rate = 48000;                /* parameters, so that the test */
+        params.channels = 1;                /* doesn't give a false fail    */
         ret = cubeb_stream_init(ctx, &stream, "test_stream", params, 100,
           data_callback, state_callback, NULL);
         TEST(ret == CUBEB_OK, "initialise stream");

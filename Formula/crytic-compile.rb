@@ -3,19 +3,19 @@ class CryticCompile < Formula
 
   desc "Abstraction layer for smart contract build systems"
   homepage "https://github.com/crytic/crytic-compile"
-  url "https://files.pythonhosted.org/packages/be/46/f39df1262c9a465c740373314572002650358661c568aaaefa6d81adf1ef/crytic-compile-0.3.2.tar.gz"
-  sha256 "adb580d1c79eb6241723a6f1d0f2c6b0d2714b65f07771116b727bed95b48065"
+  url "https://files.pythonhosted.org/packages/9f/45/dd3278e1f16bd9ff110b9ecb061ce073b51143ca2bfa891cad71aa567da9/crytic-compile-0.3.3.tar.gz"
+  sha256 "b0461ecff11e4be40013e4267a8e20221ebe25c3226e446e60e7c103baf7efaf"
   license "AGPL-3.0-only"
   head "https://github.com/crytic/crytic-compile.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "664ecb8f84308e6411fdce66d6205319177cdf08c0904d0b02f0a6faa2bd514d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c7226a156d3f3b0c5411b69c62608ca2c4fbb51bcd69825327434c64a08cc08c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f45dcb9ac6472b8e889f9eac335cc8119bc14015d381bb3293df0ac53e97657c"
-    sha256 cellar: :any_skip_relocation, ventura:        "8fa50086b4860c26aa7678627ffb79816ae9f7bbb6fabb6c26babf327ceffd5d"
-    sha256 cellar: :any_skip_relocation, monterey:       "f0bd65c42ff573cbefd393fd36935306e008b03fd4a20b7ca3005e347f8449dd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d27724e8b94cdba22f4678ef5aa98dca4b3143cd92ca2c858795091ef9c7600f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac98771cb84963c28b86f44a469b9275f84e787ff712eeed315560faaf99b07a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7c6784c1a513e80306e6d6b99a0960096374d405798e8e51391dca6007e66dbc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5c67b4dc656180d88100f1a76d3a0e9c297e26836238dc3d859881614d486a83"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dfc0c055bc820f28bec0c0b7b2b65283a7d4cbbcd25d74bccc82611ff009e274"
+    sha256 cellar: :any_skip_relocation, ventura:        "e1dce635a2a4c2a94ccd4d626d4616e109f00266a5d7dffa65df5c785e6cbe4c"
+    sha256 cellar: :any_skip_relocation, monterey:       "230f955f0adff4c5b9fe37b3160e711458ff7cf9e799102ccca920f19847fd24"
+    sha256 cellar: :any_skip_relocation, big_sur:        "111efc29cb98c7249bc831d76d820e28f31f19abd3eadaea2b4fb2f5888040cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "954e444b3d6568508e602f892a3803805f5a689e7b7d8c2ef42628750d767cbe"
   end
 
   depends_on "python@3.11"

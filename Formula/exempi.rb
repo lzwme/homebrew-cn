@@ -1,8 +1,8 @@
 class Exempi < Formula
   desc "Library to parse XMP metadata"
   homepage "https://wiki.freedesktop.org/libopenraw/Exempi/"
-  url "https://libopenraw.freedesktop.org/download/exempi-2.6.3.tar.bz2"
-  sha256 "b0749db18a9e78cf771737954a838cdcdb1d5415888bac1ba9caf8cba77c656c"
+  url "https://libopenraw.freedesktop.org/download/exempi-2.6.4.tar.bz2"
+  sha256 "a75149c96b61e39cdcb046fd5e56d88cfeeab6e08f894e15ebffd9944092bfd0"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class Exempi < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "97651c0a4eb2423fcded41f3209d949c03fd716a6a0d42bfb159b60f7545da60"
-    sha256 cellar: :any,                 arm64_monterey: "81083b7540ea99869871d809f8695acc3dcdaf7f42b721df9e6aa5533a7be27a"
-    sha256 cellar: :any,                 arm64_big_sur:  "ce707b14326edfbb5253733a2037cc64710ed23d00dfd4a6c9fb202173c46855"
-    sha256 cellar: :any,                 ventura:        "389ab1690ff9bd6686ab24f8366665ceb75532aeb58de0abcc680b4815b128de"
-    sha256 cellar: :any,                 monterey:       "e6cdd5b60032ce94ecf1ae11877274cf846a446bdb5d23a772683bd642165786"
-    sha256 cellar: :any,                 big_sur:        "a73e171a6e04877fb8ff2cb0de150b6413fed73eb77fb6bc3dd358bb2a6b7938"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a1afa2bdce46b3f665eacb8d4a91e3dcf92e9aed8e74a7a46f8c038acb4539d"
+    sha256 cellar: :any,                 arm64_ventura:  "6733c5085687e257be06829bcfa4d0d44124f4ae56a124ad57a33147814fe10e"
+    sha256 cellar: :any,                 arm64_monterey: "5d367e84c1459c0c9a9067b7878cb9ff17b5e2aae5594c66001b08f9dead3195"
+    sha256 cellar: :any,                 arm64_big_sur:  "8b03a1019a97026290da6863505b5052beb576e67c73ddf20b85ef92fcc40743"
+    sha256 cellar: :any,                 ventura:        "708f780b95cb40c5a7610612d139b3a9177d98476f29bd6f589f4ab738f13c53"
+    sha256 cellar: :any,                 monterey:       "bf0216d43fb1e48802e79fdd0e932feda6a1cb937b49e5a464de2a777413a4d6"
+    sha256 cellar: :any,                 big_sur:        "12b82191940f7701e505e8a1c594e4c0ce3f1c87bee41da649c8ff6256ce1fb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f77b16ed1ae219804b9d65ad3318107bbfa54fafe646b38d838c9c34e4a40506"
   end
 
   depends_on "boost"

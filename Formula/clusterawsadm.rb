@@ -7,6 +7,11 @@ class Clusterawsadm < Formula
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cluster-api-provider-aws.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8b521078f9aeb584ed22b651e1cd273ca4368b13cd38b1b907f41e6e9cd711e7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c0fae77fe3628067da6db279235f21e021d4c9bd822528a4c87ea4007e5dfa03"

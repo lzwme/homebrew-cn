@@ -1,11 +1,10 @@
 class MariadbConnectorOdbc < Formula
   desc "Database driver using the industry standard ODBC API"
   homepage "https://mariadb.org/download/?tab=connector&prod=connector-odbc"
-  url "https://downloads.mariadb.com/Connectors/odbc/connector-odbc-3.1.18/mariadb-connector-odbc-3.1.18-src.tar.gz"
-  mirror "https://fossies.org/linux/misc/mariadb-connector-odbc-3.1.18-src.tar.gz/"
-  sha256 "a06c11b40cf1edcfe69c206eec32caf58e25fadcf53da63d65fae26437bbad7e"
+  url "https://downloads.mariadb.com/Connectors/odbc/connector-odbc-3.1.19/mariadb-connector-odbc-3.1.19-src.tar.gz"
+  mirror "https://fossies.org/linux/misc/mariadb-connector-odbc-3.1.19-src.tar.gz/"
+  sha256 "26420dac7d6d630fc34fb2fe77fdc9fc2a7e8e896d274d3c052db9ecd06bd48f"
   license "LGPL-2.1-or-later"
-  revision 1
 
   # https://mariadb.org/download/ sometimes lists an older version as newest,
   # so we check the JSON data used to populate the mariadb.com downloads page
@@ -16,13 +15,13 @@ class MariadbConnectorOdbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e1a335fbec0b838a2c367aa492ea737cc74821d115dec421aa880c983366dd97"
-    sha256 cellar: :any,                 arm64_monterey: "31b055622f6590924da20bb79343778f91fa64f813cb7c26e4b63b5986a23034"
-    sha256 cellar: :any,                 arm64_big_sur:  "eeab98e0fdb458bf0d89e1a6eee6c12624f7636f79cbecb98146ea892dc91bc1"
-    sha256 cellar: :any,                 ventura:        "132d4a20a5d33990f63eac81603d0b4802fe7d98e75f5424dd075ad18b092e82"
-    sha256 cellar: :any,                 monterey:       "d5c0e36c8e084eefd289c9bf0f74d98b9af176ecf38deacb71eb4a5139eeb170"
-    sha256 cellar: :any,                 big_sur:        "3fbaa5c55258ebe0dcd2a15e3f8163a16b5f06f3d5a0e66f7d040c8304625f77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad93cc1ce064a3d6674051901c4f76b70df6917094b6fd972871e360eab1ba10"
+    sha256 cellar: :any,                 arm64_ventura:  "584f054978da3cfb641a9504c4eb4ca19463f9a23c16b81714b210900dead39d"
+    sha256 cellar: :any,                 arm64_monterey: "21ef52b7656d91d41439996035a56aaaeb6650453bcbfd5a6e97c8020e8f03d3"
+    sha256 cellar: :any,                 arm64_big_sur:  "1476558de12837abd0307c1b55e920c421330d2a6b546260d00c86837ee1a3c6"
+    sha256 cellar: :any,                 ventura:        "8bed3cbed522f3c18755aba7ea46a872f73643c4f88d43fcc8f5992a0751f13c"
+    sha256 cellar: :any,                 monterey:       "1f7b12bf36787f8335ea55a5f3a10bd0dce9bb402adb23be9a6db164ba4cd977"
+    sha256 cellar: :any,                 big_sur:        "44a4dc52e2610f658964f73e69c3093dde7b39fdc51086ce2a4799741044142b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "011b218c61c1b204fb17be5277ea294257b93d729e0fead1d84059dbc0f95b1f"
   end
 
   depends_on "cmake" => :build

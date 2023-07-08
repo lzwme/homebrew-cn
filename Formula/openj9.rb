@@ -2,8 +2,8 @@ class Openj9 < Formula
   desc "High performance, scalable, Java virtual machine"
   homepage "https://www.eclipse.org/openj9/"
   url "https://github.com/eclipse-openj9/openj9.git",
-      tag:      "openj9-0.38.0",
-      revision: "d57d05932008a14605bf6cd729bb22dd6f49162c"
+      tag:      "openj9-0.39.0",
+      revision: "088b83604033f2e4f0edb2d267b1f8b2a2450e91"
   license any_of: [
     "EPL-2.0",
     "Apache-2.0",
@@ -17,11 +17,11 @@ class Openj9 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "5a3862c2d52d0f0e8a62904255255557647f94db2ab5c73f758113d9dbdb33d2"
-    sha256 cellar: :any, arm64_big_sur:  "713c6b53761c66a26d6593da74800a6c6fe80abbfbbbc9c7ab04c6fb8296ec30"
-    sha256 cellar: :any, ventura:        "56034f6d0788d93b27f5e352eb6279cdfd4e865c8c2ae7bb6574cb7ad2e575a1"
-    sha256 cellar: :any, monterey:       "7982ef2d4b6e402f04311a3b52c1de29d579c024c80db2176adfc40728378e7e"
-    sha256 cellar: :any, big_sur:        "5d407ef5beddbad83092b468f7e7b74f12c436d7fcb1bf0d24f07f65698c2111"
+    sha256 cellar: :any, arm64_monterey: "634d1ba21afd7593f7a9dd0738d8ef2ef3eca2232634f49123b2a669479d3d66"
+    sha256 cellar: :any, arm64_big_sur:  "a15b058b69186f82f80380d89a0a484f02b491ecf246b1533c53b070c0393f93"
+    sha256 cellar: :any, ventura:        "e2d8252a2d1d60cb63266302e4a56a40131add600df4406ab1ca7a3475a5c6cd"
+    sha256 cellar: :any, monterey:       "a21b5c578663507ab630ac148e131ff65a3b39fe014612281b3227c354f96bc6"
+    sha256 cellar: :any, big_sur:        "90b4d6d01fc3a6f17d2478d60fd93fd6c9254c582b564a5ab1c5ec78d5bb042c"
   end
 
   keg_only :shadowed_by_macos
@@ -38,6 +38,7 @@ class Openj9 < Formula
   depends_on "libpng"
   depends_on "little-cms2"
 
+  uses_from_macos "m4" => :build
   uses_from_macos "cups"
   uses_from_macos "libffi"
   uses_from_macos "unzip"
@@ -62,34 +63,34 @@ class Openj9 < Formula
   end
 
   # From https://github.com/eclipse-openj9/openj9/blob/openj9-#{version}/doc/build-instructions/
-  # We use JDK 17 to bootstrap.
+  # We use JDK 20 to bootstrap.
   resource "boot-jdk" do
     on_macos do
       on_arm do
-        url "https://ghproxy.com/https://github.com/AdoptOpenJDK/semeru17-binaries/releases/download/jdk-17.0.4.1%2B1_openj9-0.33.1/ibm-semeru-open-jdk_aarch64_mac_17.0.4.1_1_openj9-0.33.1.tar.gz"
-        sha256 "50e4c324e7ffcf18c2e3ea7b1bfa870672203dab3fe61520c09fb2bdbe81f2c0"
+        url "https://ghproxy.com/https://github.com/AdoptOpenJDK/semeru20-binaries/releases/download/jdk-20.0.1%2B9_openj9-0.39.0/ibm-semeru-open-jdk_aarch64_mac_20.0.1_9_openj9-0.39.0.tar.gz"
+        sha256 "2d65da1e167ce21d325e546799aecd45e5a1d3e5314a5bda09f1d5bcae0a2d8f"
       end
       on_intel do
-        url "https://ghproxy.com/https://github.com/AdoptOpenJDK/semeru17-binaries/releases/download/jdk-17.0.5%2B8_openj9-0.35.0/ibm-semeru-open-jdk_x64_mac_17.0.5_8_openj9-0.35.0.tar.gz"
-        sha256 "a8b5aefd73cfee2f46ece159728b3d22af10e841e4a7bb55aaef6dba3aa09e2c"
+        url "https://ghproxy.com/https://github.com/AdoptOpenJDK/semeru20-binaries/releases/download/jdk-20.0.1%2B9_openj9-0.39.0/ibm-semeru-open-jdk_x64_mac_20.0.1_9_openj9-0.39.0.tar.gz"
+        sha256 "7ec6980c124a322954b701887869a10986639c27df5add60300bdf62cf07d9e4"
       end
     end
     on_linux do
-      url "https://ghproxy.com/https://github.com/AdoptOpenJDK/semeru17-binaries/releases/download/jdk-17.0.5%2B8_openj9-0.35.0/ibm-semeru-open-jdk_x64_linux_17.0.5_8_openj9-0.35.0.tar.gz"
-      sha256 "b46de9cd00af8a0223f4b50deb2627ab91fe515a69383a96fd2c12757cef24fe"
+      url "https://ghproxy.com/https://github.com/AdoptOpenJDK/semeru20-binaries/releases/download/jdk-20.0.1%2B9_openj9-0.39.0/ibm-semeru-open-jdk_x64_linux_20.0.1_9_openj9-0.39.0.tar.gz"
+      sha256 "aef46e2a06b8671369783c85a473aefd586fffb720abf654f45e4940b2c81df2"
     end
   end
 
   resource "omr" do
     url "https://github.com/eclipse-openj9/openj9-omr.git",
-        tag:      "openj9-0.38.0",
-        revision: "855813495c1a71ebc59eeebafc1a6cd4e791646e"
+        tag:      "openj9-0.39.0",
+        revision: "e4f52d2e479f7e64e092dcec573f1fae864395cb"
   end
 
   resource "openj9-openjdk-jdk" do
-    url "https://github.com/ibmruntimes/openj9-openjdk-jdk17.git",
-        tag:      "openj9-0.38.0",
-        revision: "9d7a231edbc770d9fe46270635c9b5804f3c092f"
+    url "https://github.com/ibmruntimes/openj9-openjdk-jdk20.git",
+        tag:      "openj9-0.39.0",
+        revision: "6cb177ca6cae7e0a63fccb800236019062c2690a"
   end
 
   def install

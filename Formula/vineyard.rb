@@ -6,15 +6,16 @@ class Vineyard < Formula
   url "https://ghproxy.com/https://github.com/v6d-io/v6d/releases/download/v0.15.3/v6d-0.15.3.tar.gz"
   sha256 "1e4de9b9840b5b3955c27f7126b75a049312ffb6f377381dcba787d5eb257456"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256                               arm64_ventura:  "e8ed230b6320986cf8323ba9b33003af953ae6eb2193e5d01327074c34233458"
-    sha256                               arm64_monterey: "d7fc98c93801d38bd8ce83fb9d493efc5466471d2aad1a3a4bf388483537e327"
-    sha256                               arm64_big_sur:  "d095d5fb5edfc80fa0f2a034f0e720d9d261cbc68852f9f415e1783fadab3f25"
-    sha256                               ventura:        "86a6e1bbd11cf27e0fd5ba1d25cd1fad7773bd15eb35ca63834f5230e73becad"
-    sha256                               monterey:       "9d47de9adcd1adb065c50b5ed7e685622685cec480746950c1a2c1a3fbdad6ed"
-    sha256                               big_sur:        "19625162f5bd7ded3efde6397a770673538e211c76e7501640b459f923d01fa1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "51103db9544a7bacbc7fd672c9e9a7a27f74ed21727a7009a9f1fc9a599929db"
+    sha256                               arm64_ventura:  "15048a6f429fdd2a513bcf8251784f8fcd76035e12f63b26a1c71c75f4393791"
+    sha256                               arm64_monterey: "85be269d9fc21b976d40a8036bd740393ab56eae38978671a64dd42c8f4acdd8"
+    sha256                               arm64_big_sur:  "fc2f31cd61df6c54163c7a5cbe691ca23ab02614babbc3171cb4cfa641e622ac"
+    sha256                               ventura:        "d18f9f16de9b2d87ed0b6c8202eb1fdba70a7bd49cec2e6003932474befc8131"
+    sha256                               monterey:       "c9511690ff024a5b83d002a7f71eabe9f9a5765dcd2eac6ef1616c13fa25b1c1"
+    sha256                               big_sur:        "87e346b2ef1a1896a16bd941c360d9da70421d254ca4608326d40e0aefc6c78e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8acc1536d09c6aa9145e54c11bb3ec0ef411c962c7a034d1491f3bc5e6aa6ea5"
   end
 
   depends_on "cmake" => :build
