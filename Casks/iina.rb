@@ -1,6 +1,6 @@
 cask "iina" do
-  version "1.3.1"
-  sha256 "c646642a2884cb0516922170e0f6d4990b12b41d6244b08d53f318dbb9518c2f"
+  version "1.3.2"
+  sha256 "ac5e72bf6407595514b327ffbbbf235919f80badbd18126007f8bc62768a1c19"
 
   url "https://ghproxy.com/https://github.com/iina/iina/releases/download/v#{version}/IINA.v#{version}.dmg",
       verified: "github.com/iina/iina/"

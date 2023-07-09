@@ -1,8 +1,8 @@
 class Iperf3 < Formula
   desc "Update of iperf: measures TCP, UDP, and SCTP bandwidth"
   homepage "https://github.com/esnet/iperf"
-  url "https://downloads.es.net/pub/iperf/iperf-3.13.tar.gz"
-  sha256 "bee427aeb13d6a2ee22073f23261f63712d82befaa83ac8cb4db5da4c2bdc865"
+  url "https://downloads.es.net/pub/iperf/iperf-3.14.tar.gz"
+  sha256 "723fcc430a027bc6952628fa2a3ac77584a1d0bd328275e573fc9b206c155004"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class Iperf3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "1854ac074c5197baded5ee4264abeea79b925b5ca5a814c8d06a4f6419ca5b6f"
-    sha256 cellar: :any,                 arm64_monterey: "69ce7edd9c141540e3de9bb8ddcd244f21c5cec1df2a83bdc62a5caa9cbdd3b8"
-    sha256 cellar: :any,                 arm64_big_sur:  "4f2fe4de61bb54ab37a103c2268cf5b391e2ed6853e49be36db752b3f01a05a9"
-    sha256 cellar: :any,                 ventura:        "c74fe2977234cce9d735254893918328c25726594a8c1a4a7f1396881055c91b"
-    sha256 cellar: :any,                 monterey:       "b38e25aa1116f8f8b7ac917c96d3489db2f85066f975e98f3b81a3051c133e0f"
-    sha256 cellar: :any,                 big_sur:        "e45b6b3c9a42681d382f4fd4a273a02d8a49f93dfc0c3ac94299cd92d883d366"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da08f6777e50e8b30f2a07d5626debddffc26ee4da90632a86ea2bf5012d782d"
+    sha256 cellar: :any,                 arm64_ventura:  "ab0fc5615e81c6df60ef9b38870e6a7089e8335a3e6c932f14ea686832b93e37"
+    sha256 cellar: :any,                 arm64_monterey: "dea7d322cc59a723e275bf7f9f96931a938ddb0acdd659ee6d3f43f653609b1f"
+    sha256 cellar: :any,                 arm64_big_sur:  "88227e2a989b1383774c39f28524d55b73dfb45c92c2566d0c3ac1a926a1b63d"
+    sha256 cellar: :any,                 ventura:        "f48399115677cc04b11f9522c6c877492b3c35eab15318f42cc69a5a1b6939ec"
+    sha256 cellar: :any,                 monterey:       "498d1ecdc91abe7802a7fb6ff224741c02daf51f5e8d3397e67c8681f80de152"
+    sha256 cellar: :any,                 big_sur:        "3710c98bb3c71b2d14eee936a93904f94642b6ddd2d6cf8aba5bfb1ccc294530"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29c4c3df48b332a540bfab3107e420714912f9784bdc751b32a36d1185cde999"
   end
 
   head do

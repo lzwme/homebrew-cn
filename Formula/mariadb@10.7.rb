@@ -5,11 +5,6 @@ class MariadbAT107 < Formula
   sha256 "f8c69d9080d85eafb3e3a84837bfa566a7f5527a8af6f9a081429d4de0de4778"
   license "GPL-2.0-only"
 
-  # https://mariadb.com/kb/en/mariadb-10-7-8-release-notes/#notable-items
-  livecheck do
-    skip "10.7.8 is the final release of MariaDB 10.7"
-  end
-
   bottle do
     sha256 arm64_ventura:  "8f0a0e4d4638e3cd70b84e61349b1602d81826e5a57ae6d8143727302a9531af"
     sha256 arm64_monterey: "89fc9092f426431a756b9e7922a856611d32c287cb0c8d6ca9eb09255a933486"

@@ -1,18 +1,18 @@
 class Goose < Formula
   desc "Go Language's command-line interface for database migrations"
   homepage "https://pressly.github.io/goose/"
-  url "https://ghproxy.com/https://github.com/pressly/goose/archive/v3.13.1.tar.gz"
-  sha256 "ca4dfb67810db9f72ac772743a000a0b65eb5951f849741a161b739b2e7600a1"
+  url "https://ghproxy.com/https://github.com/pressly/goose/archive/v3.13.4.tar.gz"
+  sha256 "b2f19eb4026b1a8a20f57c27ea22715b7721efb4c6a93e2d6a89e4393705d1a9"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "633f1280eba47dc5ea7fe0427696eb80bf417319823100c3d478b775133942c8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c84788e41abc64bd390b3ce4a1827f7f2eabe4372a55f75e79d932978f8fa381"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c6c55528a731d0c73dc2fd696ec11993e4f8d87ac77635fdd094aac529fab76c"
-    sha256 cellar: :any_skip_relocation, ventura:        "2420732b10487e6f83fb1c45eaa190ecd1e4ec234f38318413247795eea0fc61"
-    sha256 cellar: :any_skip_relocation, monterey:       "1008dde7910cd7707fd5aef5dd5a908bd3992d34e2960206c14ccd37bd2df2b9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "db97805ab56040bdbbb1e42dfdcb4dea74b7bc4fee2175b1297b5853c93f3b86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25d1b4e0c640bccecdd70492f8b67d0d07fac49da6ce600da76b655b8141d0db"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf1a58b3c6441189064a8f47d7c22b1a11076a6c5e6d3c5beaa620ce792833f2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d00ecda4459e64d4e7c90b262a4fa5f5d3cda5c2ad483ccdaed972d6d858085f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1101c1b98b64c84dd91d8622f9967afe536fa4053290a335e40c9e13495579cf"
+    sha256 cellar: :any_skip_relocation, ventura:        "abb9590cdffa5f2f35d268c5689d36d8f408d14ac08a910683a5989382b7c606"
+    sha256 cellar: :any_skip_relocation, monterey:       "bb818f60c420f6058608d41b6b7faac2fef3c4954f736cd5d1b606e9202e8c24"
+    sha256 cellar: :any_skip_relocation, big_sur:        "61a2c2280afb94206223de626bac65137a43205e86800c4245602448f89f0631"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4db9a836e66d49be328937c4decb8da8a2a31dc8cc09b9239a76d4d71046fbe4"
   end
 
   depends_on "go" => :build

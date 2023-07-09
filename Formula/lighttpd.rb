@@ -7,7 +7,7 @@ class Lighttpd < Formula
   revision 1
 
   livecheck do
-    url "https://www.lighttpd.net/download/"
+    url :homepage
     regex(/href=.*?lighttpd[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
