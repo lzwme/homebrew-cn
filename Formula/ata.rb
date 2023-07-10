@@ -1,18 +1,18 @@
 class Ata < Formula
   desc "ChatGPT in the terminal"
   homepage "https://github.com/rikhuijzer/ata"
-  url "https://ghproxy.com/https://github.com/rikhuijzer/ata/archive/refs/tags/v2.0.1.tar.gz"
-  sha256 "6e4a54193f9d875701535f7eaf36225d9b4ec47caf6234827291e6fa6a72951f"
+  url "https://ghproxy.com/https://github.com/rikhuijzer/ata/archive/refs/tags/v2.0.2.tar.gz"
+  sha256 "f3fa2d3d8b3098a6b765feb5cda341ef88b8749036230a5ff31b6287321009c3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "82f2ef3c11c86571cb4e08a895b795bb9d19f1cf3cdbb2fef84b067dbfd43722"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7e119f0978880f7fb3dcc8e63d1ffe6bce3436c4a765c83514c00b8cbf5543b9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "43d57f47e36462c7d72941ba8e99773e7be1162476cd5f6faf3850610a21d76e"
-    sha256 cellar: :any_skip_relocation, ventura:        "5ab137326fe947e49363db90c9e3b94d8d225fb26f513c8b05d6410b9a99b4af"
-    sha256 cellar: :any_skip_relocation, monterey:       "cbe8f7a29c0a362b5409b18ddddda93c954b0ca516cdc32b5dfa12903b0c30bc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "85722074ae1fe19d6fa94c622d84e655374d81d24abddb039576161e69adf3ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "973861ce14bb918ad580d1a0f833c6864bdb0c75e0a61a46d75bde41168c243c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b4786a053d334dcd765a3e17230417797e1b5115bbd363d1ff4f9524481ffb8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e714105c5a2ec7a527de714d4293c7651f2079b9748f11008f4668a9b11c784f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "63a5d9625d26933f4a55c55dea6d63ed62ad5677637f06024e7a84ff09663dba"
+    sha256 cellar: :any_skip_relocation, ventura:        "376411fff331be6554e83c3c033ddb5015a37cafa25e5cb2562553338c543811"
+    sha256 cellar: :any_skip_relocation, monterey:       "87f3a58a275e3dd6a7323dbb082c697b13bcb7de9cae932b3eed072857dd4885"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bb61f5f197eebbaad4518ee4f7a68d3e93b89e486460092008ba52f862a45a2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89afa6c333f06af26f722b06e14bce766a39a463c9b1d7888989913da18c3c90"
   end
 
   depends_on "rust" => :build

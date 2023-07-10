@@ -4,17 +4,17 @@ class Poac < Formula
   url "https://ghproxy.com/https://github.com/poac-dev/poac/archive/refs/tags/0.6.0.tar.gz"
   sha256 "40f55553f7cca3bdad39599ce8c9049aeecf8f6140cfebac28c51d7d9abbbb78"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/poac-dev/poac.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8abf849fc0be2706971419c582d1f6fe2ab17ec706cc672a1ec2d587b89e7452"
-    sha256 cellar: :any,                 arm64_monterey: "9ca391a863ec65ff50d06cce7f82f884ffc8626a5e85584628800a79ca5f484a"
-    sha256 cellar: :any,                 arm64_big_sur:  "3954502fecf09e7778d64c662422fadc2460d7b3e0d11e24b05467325a02c8a9"
-    sha256 cellar: :any,                 ventura:        "44ed05fd38b73073e30f90a48f8ff39e107075f1b9d76e17ac1cc3adc326033e"
-    sha256 cellar: :any,                 monterey:       "b9cdc6b2fe6fee492cefc64e1ceef84219674bd65ae7298c2fe618da4d21f713"
-    sha256 cellar: :any,                 big_sur:        "3ccc08272b158ef81194795ebd7dccdbc734b3bc07f6de4ec9bf9f1ff54fe4f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d8177b5fd13dcec22369931eb0256a1a35f7932a15fa66dfcde2fa9e82cbe4d"
+    sha256 cellar: :any,                 arm64_ventura:  "a2d1bbd692d862ed69a18aea000a2f3c3f9cb242a477c63536c21db759cb1a04"
+    sha256 cellar: :any,                 arm64_monterey: "75266575278a200e0cdbb398b71ae0af259e6d707ed82f7d267285e206462b45"
+    sha256 cellar: :any,                 arm64_big_sur:  "70968a60b071fb721aa96c9ca6574c65084ffd8d1114da4d1bde0be6972b0ba0"
+    sha256 cellar: :any,                 ventura:        "f006371b2f7fbd03ab4d33035a7dad2f201242e4cd694103866669e5ce6626b3"
+    sha256 cellar: :any,                 monterey:       "b86f19b504b00fad55955e52a67d69c5a035a3d7773f445480e7a3423c943380"
+    sha256 cellar: :any,                 big_sur:        "f4ce26e6cd14546d3d7df1ff451d80cd84aa14644ef50c35f76dccccd9c48f28"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c78e46360c37b849eddaf9ca395c6384c178e70d9a26b568a7d0b7521066771"
   end
 
   depends_on "cmake" => :build

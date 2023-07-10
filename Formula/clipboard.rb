@@ -1,8 +1,8 @@
 class Clipboard < Formula
   desc "Cut, copy, and paste anything, anywhere, all from the terminal"
   homepage "https://getclipboard.app"
-  url "https://ghproxy.com/https://github.com/Slackadays/Clipboard/archive/refs/tags/0.8.0.tar.gz"
-  sha256 "d3fa16ee7fab364f9755d2a5991aaf06f7b6d703df7994486e7c424bfe1d97d2"
+  url "https://ghproxy.com/https://github.com/Slackadays/Clipboard/archive/refs/tags/0.8.1.tar.gz"
+  sha256 "f7ceb2dbb76bc094ac8afbef97bdef0f1a9451ca7dd1a4a181f3b2a859a2f094"
   license "GPL-3.0-or-later"
   head "https://github.com/Slackadays/Clipboard.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Clipboard < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "361cf7679d9f2e870b563454ba7ab174252dedf276d680e4dac6f063a4772103"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fea3506e04d5d5d6d74417d302d47038605c9c3760fae137c1ed0ce53765e4c4"
-    sha256 cellar: :any_skip_relocation, ventura:        "4f6048004108c0052184a0f151ae7f1285324a528e886510992e5f714699befb"
-    sha256 cellar: :any_skip_relocation, monterey:       "e3241512d5b1b3a139b5d0ef952c321eb09ba2bf851e5a9cca56295b38843eb5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "92579fd2efdfbf38dce96218ad88c8497c96984d4eb2d29c53901c41c1ae4f99"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "905b56d8cb61547a48b81c6d20c4c6bf86c87a4b9cbaecbb9b921cad64824045"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "59c1528a5bca57fd3193687e2afd434ea72200f2548e49714456893f9db29637"
+    sha256 cellar: :any_skip_relocation, ventura:        "4cedf3b788c9152db3090b085358358de4ca83694a992e74df9831ae698b5ab1"
+    sha256 cellar: :any_skip_relocation, monterey:       "accf49f04c232386d8c07287e0cc6c91c2676ea3ac50d04c57d25fa558f6ea6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "089ef1b75f66379f325a6177cb5228752f449c85d5b22cc297a08c5e843ccc26"
   end
 
   depends_on "cmake" => :build
@@ -25,6 +25,7 @@ class Clipboard < Formula
   on_linux do
     depends_on "pkg-config" => :build
     depends_on "wayland-protocols" => :build
+    depends_on "alsa-lib"
     depends_on "libx11"
     depends_on "wayland"
   end

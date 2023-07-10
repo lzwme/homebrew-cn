@@ -1,12 +1,10 @@
 class OathToolkit < Formula
   desc "Tools for one-time password authentication systems"
   homepage "https://www.nongnu.org/oath-toolkit/"
-  url "https://download.savannah.gnu.org/releases/oath-toolkit/oath-toolkit-2.6.7.tar.gz"
-  mirror "https://fossies.org/linux/privat/oath-toolkit-2.6.7.tar.gz"
-  sha256 "36eddfce8f2f36347fb257dbf878ba0303a2eaafe24eaa071d5cd302261046a9"
+  url "https://download-mirror.savannah.gnu.org/releases/oath-toolkit/oath-toolkit-2.6.8.tar.gz"
+  mirror "https://fossies.org/linux/privat/oath-toolkit-2.6.8.tar.gz"
+  sha256 "0a501663a59c3d24a03683d2a1fba4c05b4f07a2917152c58a685d82adc0a720"
   license all_of: ["GPL-3.0-or-later", "LGPL-2.1-or-later"]
-  revision 1
-  head "https://gitlab.com/oath-toolkit/oath-toolkit.git", branch: "master"
 
   livecheck do
     url "https://download.savannah.gnu.org/releases/oath-toolkit/"
@@ -14,34 +12,30 @@ class OathToolkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "c4904f8d230ac972b49388687ff2113055435f64d82d7cfa53594c907e9a55fb"
-    sha256 cellar: :any, arm64_monterey: "12e499fbe35d8d0af00dd4b481f3551571e0df4ebe061a730a1c91e3fc17e680"
-    sha256               arm64_big_sur:  "70e47d792b5442204e46a4d6afd2a99fbf185494e0924d969bdd209a30179cdc"
-    sha256               ventura:        "4eb03fed85048f55ba0f3726ccc0b2abc7d7f2c9a69b7199ced771f70d85a04e"
-    sha256               monterey:       "802b854c2c2a063610fd10d00e15548030794766f704865a7c81eec513dca4ad"
-    sha256 cellar: :any, big_sur:        "991861b4c252151ebee48befa21f53ab2c50eff47832f0b5dd4b29b74d9d5c01"
-    sha256               x86_64_linux:   "246895b0bcf47660f9dd3c663dd39bfe893bc98fa7a20787df1737d86652a1a2"
+    sha256 cellar: :any, arm64_ventura:  "c57900aa1173ecd0690de9191a25001b97d7725a08c350f95e9abbd3579d2890"
+    sha256 cellar: :any, arm64_monterey: "32fecea80a82cc7414b35b9a242b074f3092b3e40e756d87747e8074469ccb98"
+    sha256               arm64_big_sur:  "28d9d4fb6912a756800e52832cf50e4feb20cd6146399a510acfc441db813d5c"
+    sha256               ventura:        "336876de14bf9fb91138abf9e6183ec026d18b03df7be30957c4ecec888d1059"
+    sha256               monterey:       "b6e0e2c83ba68a86e1ddd88c8f87de83d09ccc04a0236f92adbae498946dd63c"
+    sha256 cellar: :any, big_sur:        "23d90cd5e3e1792a6ccafbf0fbf01488151ecdef323c1dcb1c517e1dde0f0118"
+    sha256               x86_64_linux:   "3511438560a06128bc44a9fd32a8aeed30cdce6659f4f77001f489efc1087481"
   end
 
-  # Restrict autoconf, automake, gtk-doc, and libtool to head builds on next release.
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "gtk-doc"  => :build
-  depends_on "libtool"  => :build
+  head do
+    url "https://gitlab.com/oath-toolkit/oath-toolkit.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "gtk-doc"  => :build
+    depends_on "libtool"  => :build
+  end
+
   depends_on "pkg-config" => :build
   depends_on "libxmlsec1"
   depends_on "openssl@3"
 
-  # pam_oath: Provide fallback pam_modutil_getpwnam implementation.
-  # Remove on next release.
-  patch do
-    url "https://gitlab.com/oath-toolkit/oath-toolkit/-/commit/ff7f814c5f4fce00917cf60bafea0e9591fab3ed.diff"
-    sha256 "50a9c1d3ab15548a9fb58e603082b148c9d3fa3c0d4ca3e13281284c43ed1824"
-  end
-
   def install
-    # Needed for patch. Add `if build.head?` on next release.
-    system "autoreconf", "-fiv"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
 
     system "./configure", *std_configure_args
     system "make"

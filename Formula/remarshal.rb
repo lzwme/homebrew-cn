@@ -3,22 +3,19 @@ class Remarshal < Formula
 
   desc "Convert between TOML, YAML and JSON"
   homepage "https://github.com/dbohdan/remarshal"
-  url "https://files.pythonhosted.org/packages/24/37/1f167687b2d9f3bac3e7e73508f86c7e6c1bf26a37ca5443182c8f596625/remarshal-0.14.0.tar.gz"
-  sha256 "16425aa1575a271dd3705d812b06276eeedc3ac557e7fd28e06822ad14cd0667"
+  url "https://files.pythonhosted.org/packages/a8/9e/0efb80bed30d43c88499c7a5d53178f74664df055d6091cb4501beef5f90/remarshal-0.15.0.tar.gz"
+  sha256 "466b7f5044b35fe9ff52e9b9609b20f8a3530ed75fbf25d860bbaa72ac46a90e"
   license "MIT"
-  revision 3
   head "https://github.com/dbohdan/remarshal.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c36beb1cd7fb1ef865ec2aa9b3fcf7e9616b9b541acb2190c359e809c373963f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "281c90e07cdb5699d117daeb35bb2610d32d8f9acfd92e751a3e5555f22c0f4e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d169ea5d55078749f1234d20327e8e9784840edc4f7d42e9791c95af0b03430d"
-    sha256 cellar: :any_skip_relocation, ventura:        "0111dc0cf3723ae11d2209a840dc3392af776008b8fddf7755726b6d018e2143"
-    sha256 cellar: :any_skip_relocation, monterey:       "b991e129653532f96e7f2a91322bd21ded8941181fb4a4e1e09d64dcbd9e87d4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2715ea7cf3d0e83b5a418b7faae7e2b2074f56c30f0251302f8a98f8bf22fb68"
-    sha256 cellar: :any_skip_relocation, catalina:       "eb5b30cc63466ed94f6ecb486e4bbfc09876b69d26c2e37456363b3f81131db4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42e99b958e0e3af16a50b7387a5d2abea0c5a412f6cafe2d71138ff1dc2e5e95"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c7a42a620818ea11310bf99fa8d944a8165178277a6e9303e3d807fe8484a178"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4c5e3688aef5c25d1682306bf5cb5f1572dd72aa0ba4f69728a4e19d658bef6b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4268d0d3f8bd385868123b230b1586c3cdc9e8519576d25a05f0ed92e8f8846a"
+    sha256 cellar: :any_skip_relocation, ventura:        "5a69ffca4d945487ad63ca0ed8ba0fb522b8e5ba0ff10b9c156dce824ea12e91"
+    sha256 cellar: :any_skip_relocation, monterey:       "67e252cdba802d8717c7c0930528422cf4702fb030112b4d60c887eb9c81bf3e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "881a88775131a7e866bf66a2cec35e13ae9099fb40ed43f6098f0c4f0b6786c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21d5ac16f5d767ad77b9f7172a66bee6056a129ff24b872e78ef4be93d87b4b9"
   end
 
   depends_on "python@3.11"
@@ -28,8 +25,28 @@ class Remarshal < Formula
   conflicts_with "msgpack-tools", because: "both install 'json2msgpack' binary"
 
   resource "cbor2" do
-    url "https://files.pythonhosted.org/packages/9d/c9/cfa5c35a62642a19c14bf9a12dfbf0ee134466be1f062df2258a2ec2f2f7/cbor2-5.4.3.tar.gz"
-    sha256 "62b863c5ee6ced4032afe948f3c1484f375550995d3b8498145237fe28e546c2"
+    url "https://files.pythonhosted.org/packages/d9/69/de486293f5211d2e8fe1a19854e69f2811a18448162c52b48c67f8fbcac3/cbor2-5.4.6.tar.gz"
+    sha256 "b893500db0fe033e570c3adc956af6eefc57e280026bd2d86fd53da9f1e594d7"
+  end
+
+  resource "iniconfig" do
+    url "https://files.pythonhosted.org/packages/d7/4b/cbd8e699e64a6f16ca3a8220661b5f83792b3017d0f79807cb8708d33913/iniconfig-2.0.0.tar.gz"
+    sha256 "2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
+    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
+  end
+
+  resource "pluggy" do
+    url "https://files.pythonhosted.org/packages/8a/42/8f2833655a29c4e9cb52ee8a2be04ceac61bcff4a680fb338cbd3d1e322d/pluggy-1.2.0.tar.gz"
+    sha256 "d12f0c4b579b15f5e054301bb226ee85eeeba08ffec228092f8defbaa3a4c4b3"
+  end
+
+  resource "pytest" do
+    url "https://files.pythonhosted.org/packages/a7/f3/dadfbdbf6b6c8b5bd02adb1e08bc9fbb45ba51c68b0893fa536378cdf485/pytest-7.4.0.tar.gz"
+    sha256 "b4bf8c45bd59934ed84001ad51e11b4ee40d40a1229d2c79f9c592b0a3f6bd8a"
   end
 
   resource "python-dateutil" do
@@ -38,20 +55,13 @@ class Remarshal < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/65/ed/7b7216101bc48627b630693b03392f33827901b81d4e1360a76515e3abc4/tomlkit-0.7.2.tar.gz"
-    sha256 "d7a454f319a7e9bd2e249f239168729327e4dd2d27b17dc68be264ad1ce36754"
+    url "https://files.pythonhosted.org/packages/10/37/dd53019ccb72ef7d73fff0bee9e20b16faff9658b47913a35d79e89978af/tomlkit-0.11.8.tar.gz"
+    sha256 "9330fc7faa1db67b541b28e62018c17d20be733177d290a13b24c62d1614e0c3"
   end
 
   resource "u-msgpack-python" do
-    url "https://files.pythonhosted.org/packages/44/a7/1cb4f059bbf72ea24364f9ba3ef682725af09969e29df988aa5437f0044e/u-msgpack-python-2.7.2.tar.gz"
-    sha256 "e86f7ac6aa0ef4c6c49f004b4fd435bce99c23e2dd5d73003f3f9816024c2bd8"
-  end
-
-  # Switch build-system to poetry-core to avoid rust dependency on Linux.
-  # Remove when merged/released: https://github.com/dbohdan/remarshal/pull/36
-  patch do
-    url "https://github.com/dbohdan/remarshal/commit/4500520defe25433ad1300b46d1d6c944230f73d.patch?full_index=1"
-    sha256 "32cba193c07a108b06c3b01a5e5b656d026d4aecc8f5b7b55e6a692a559233f0"
+    url "https://files.pythonhosted.org/packages/36/9d/a40411a475e7d4838994b7f6bcc6bfca9acc5b119ce3a7503608c4428b49/u-msgpack-python-2.8.0.tar.gz"
+    sha256 "b801a83d6ed75e6df41e44518b4f2a9c221dc2da4bcd5380e3a0feda520bc61a"
   end
 
   def install

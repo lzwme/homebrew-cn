@@ -1,19 +1,18 @@
 class Cmusfm < Formula
   desc "Last.fm standalone scrobbler for the cmus music player"
   homepage "https://github.com/Arkq/cmusfm"
-  url "https://ghproxy.com/https://github.com/Arkq/cmusfm/archive/v0.4.1.tar.gz"
-  sha256 "ff5338d4b473a3e295f3ae4273fb097c0f79c42e3d803eefdf372b51dba606f2"
+  url "https://ghproxy.com/https://github.com/Arkq/cmusfm/archive/v0.5.0.tar.gz"
+  sha256 "17aae8fc805e79b367053ad170854edceee5f4c51a9880200d193db9862d8363"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5126da2f4356c0ae63e4018e226b1cb692dfccf4d7725558d4bfde4495baebf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1072e84a3a3a6a6725497b05a02ac840884b827a0efbb3b23c8a970d5adc9dc9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bff70fe49abd28ed98aec28589ca6bba252329c01afe8910235e143013db5fe4"
-    sha256 cellar: :any_skip_relocation, ventura:        "52bd3124f7ecae85ff74729a7d2570d3087f92f0490b5379ba55048b8d2a69fe"
-    sha256 cellar: :any_skip_relocation, monterey:       "171f836e62399e78fbdf01ed12c42755ed02154a2e05edeeb09bdb97a01df082"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0c24879095022d283b1fdf5b8563781cf5c46da121f9d23efade97655fedad9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c22db499e4c604f11c9b8732a5a7297171c6394c423565bb3fc7eafd1ae98b0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "edb2e0a7092079e3ad015e27ea37ff940d6ef9a6fed73ff2355d6d7b23d04c0d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7580167d4bd0c71cdafc4dff2ede95d0081dab49e0f0b555fffa1e29eba03381"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "25de6ec5f582426deea7f1bae8f97e9adf9074f598d2a1a28c14c5d5ecc64602"
+    sha256 cellar: :any_skip_relocation, ventura:        "f1346608b765ed2219f6b963d80b8b72a90b430a10894fe924d64d2d67c535a4"
+    sha256 cellar: :any_skip_relocation, monterey:       "b2e90bb7f3dbb25e7149d8e6c47a54725095b5dca2ecbdd2ad91d0d383824a28"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6ef7f13482b03d75ce2eb9c4ce72123f997f68c246477445b9aeb1d4e0d49e61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85080d3911b11f136d5baf6e3304d50c7bc8918aee103308068cd817162e993f"
   end
 
   depends_on "autoconf" => :build

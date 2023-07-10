@@ -3,21 +3,22 @@ class SlitherAnalyzer < Formula
 
   desc "Solidity static analysis framework written in Python 3"
   homepage "https://github.com/crytic/slither"
-  url "https://files.pythonhosted.org/packages/d9/6d/42920046529b56cfb8bae1e221dd44bde25901c8c4240949cfd642d870d3/slither-analyzer-0.9.5.tar.gz"
-  sha256 "04beb3e55656a97f11195d2ff17d7d7ae161bc86b1a7ff4f17e2460c7b970d4a"
+  url "https://files.pythonhosted.org/packages/d9/18/4af93281e1e7ae22fb2bdc3a3da36397781b8b99611fa54379f5a6d1631d/slither-analyzer-0.9.6.tar.gz"
+  sha256 "3ee724a3bbd29d631d9c4ed766a63bcd18ed39775b39796b19f02edf4de3fe80"
   license "AGPL-3.0-only"
   head "https://github.com/crytic/slither.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4acc8ce36bf9b9b833bdd7342a51174a67c81bbee98b4b19a077231c8461a871"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1debc6534923ca5115ba4cd5aba15aa48cbed34e91324e6bdcfed21afdb11748"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c634b0c4c0bf511b21144c31fa6b54e89f8541e8193fdd80bd3e120f88b4a2f3"
-    sha256 cellar: :any_skip_relocation, ventura:        "07b1befd3ef7caa163491c715154a6076ab43256044d066b457259a79d524e2d"
-    sha256 cellar: :any_skip_relocation, monterey:       "a3f0c773e26201d06650b6736065ea446767bafb20de5b564ea39244b7c7cd14"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cf0174d23dbce5e0b4b33aac5637b09c908987fd60a83fa31f81308f7caf488a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "69f216dc4d3be6e0d32bddfe510d61683a99030729a595fa17c6002739856e78"
+    sha256 cellar: :any,                 arm64_ventura:  "acef45416c4ab8e356f9443008a75819ad65fb445802a3a62efe8d1d538bc1d1"
+    sha256 cellar: :any,                 arm64_monterey: "75b63edaa2fd21cb7f82ad9e8be169bb5183d13ac046dfa7ccc82387e594369a"
+    sha256 cellar: :any,                 arm64_big_sur:  "8813271829922beefe838d81cd8f2b0ec53168dae01a85a862bb3e2f3ef5430d"
+    sha256 cellar: :any,                 ventura:        "5e11df98aafe01bc3f78d8106d25820831c8f5c94c28e217cb8ee304be315b03"
+    sha256 cellar: :any,                 monterey:       "aeead7bb1ae9b3ed1594a21e2b317a94daec3645e78629a2d0018d9968dfe6ac"
+    sha256 cellar: :any,                 big_sur:        "3f5acddb1f87bf7557eaf66e5b0685167d66679af76c3f20c0466c441e255ba1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4dadc105b3abcee843ea24502fb832ec3bab0d1e4b66c54826f28f01e2f4b197"
   end
 
+  depends_on "rust" => :build # for rpds-py
   depends_on "crytic-compile"
   depends_on "python@3.11"
   depends_on "solc-select"
@@ -118,8 +119,13 @@ class SlitherAnalyzer < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/36/3d/ca032d5ac064dff543aa13c984737795ac81abc9fb130cd2fcff17cfabc7/jsonschema-4.17.3.tar.gz"
-    sha256 "0f864437ab8b6076ba6707453ef8f98a6a0d512a80e93f8abdb676f737ecb60d"
+    url "https://files.pythonhosted.org/packages/79/01/ce65847f79de9594d436b7ef295e374dfcc0ff3ee884bf61cf896f970ddb/jsonschema-4.18.0.tar.gz"
+    sha256 "8caf5b57a990a98e9b39832ef3cb35c176fe331414252b6e1b26fd5866f891a4"
+  end
+
+  resource "jsonschema-specifications" do
+    url "https://files.pythonhosted.org/packages/9a/8c/3d028449ac15cba52db3e1c95ca53b9240b4707fbe17f43e01cc73dd9336/jsonschema_specifications-2023.6.1.tar.gz"
+    sha256 "ca1c4dd059a9e7b34101cf5b3ab7ff1d18b139f35950d598d629837ef66e8f28"
   end
 
   resource "lru-dict" do
@@ -148,18 +154,19 @@ class SlitherAnalyzer < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/e5/9d/20e9bf4067e85c3074f1f5bac820a3cfb9ce885cddd8a649fe3570659c77/protobuf-4.23.3.tar.gz"
-    sha256 "7a92beb30600332a52cdadbedb40d33fd7c8a0d7f549c440347bc606fb3fe34b"
+    url "https://files.pythonhosted.org/packages/d3/1c/de86d82a5fc780feca36ef52c1231823bb3140266af8a04ed6286957aa6e/protobuf-4.23.4.tar.gz"
+    sha256 "ccd9430c0719dce806b93f89c91de7977304729e55377f872a92465d548329a9"
   end
 
+  # pypandoc's convert was removed in 1.8, thus pin to use 1.7.5
   resource "pypandoc" do
     url "https://files.pythonhosted.org/packages/cd/10/7042e44e0b5020d075cd61c93dc6c26d618e5a1f4f1d2cd493fe54ab124d/pypandoc-1.7.5.tar.gz"
     sha256 "802c26aae17b64136c6d006949d8ce183a7d4d9fbd4f2d051e66f4fb9f45ca50"
   end
 
-  resource "pyrsistent" do
-    url "https://files.pythonhosted.org/packages/bf/90/445a7dbd275c654c268f47fa9452152709134f61f09605cf776407055a89/pyrsistent-0.19.3.tar.gz"
-    sha256 "1a2994773706bbb4995c31a97bc94f1418314923bd1048c6d964837040376440"
+  resource "referencing" do
+    url "https://files.pythonhosted.org/packages/20/93/45213b5b6e3eeab03e3f6eb82cc516a81fbf257586a25f9eb1d21af96e1b/referencing-0.29.1.tar.gz"
+    sha256 "90cb53782d550ba28d2166ef3f55731f38397def8832baac5d45235f1995e35e"
   end
 
   resource "regex" do
@@ -175,6 +182,11 @@ class SlitherAnalyzer < Formula
   resource "rlp" do
     url "https://files.pythonhosted.org/packages/20/63/8b5205a7f9e2792137676c2d29bd6bc9cbecca95015a55ed54d6dd02f3f6/rlp-3.0.0.tar.gz"
     sha256 "63b0465d2948cd9f01de449d7adfb92d207c1aef3982f20310f8009be4a507e8"
+  end
+
+  resource "rpds-py" do
+    url "https://files.pythonhosted.org/packages/75/80/7f76ff5d290a11a8d43653da186def13f293f00baf4927eae1ad128bf9de/rpds_py-0.8.8.tar.gz"
+    sha256 "300b8579740b06e246238b730e636f314a7d8dc475be1868650f5d3ddc29a0d8"
   end
 
   resource "toolz" do

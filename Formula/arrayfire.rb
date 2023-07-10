@@ -4,16 +4,16 @@ class Arrayfire < Formula
   url "https://ghproxy.com/https://github.com/arrayfire/arrayfire/releases/download/v3.8.3/arrayfire-full-3.8.3.tar.bz2"
   sha256 "331e28f133d39bc4bdbc531db400ba5d9834ed2d41578a0b8e68b73ee4ee423c"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "09c3e828667c6c77ee1bc5748d74f7e26d232f4349c7057366bb759d10164d63"
-    sha256 cellar: :any,                 arm64_monterey: "0ff7909804cbe64288d0a478a3e475692ea1f4ee00983723ad388340f9391585"
-    sha256 cellar: :any,                 arm64_big_sur:  "679a191a56b7efd653a8c101cc2ea8c991fd4b0eee2cf9b717dd5166750506b1"
-    sha256 cellar: :any,                 ventura:        "5fb30d5630b12a8e027b109b31ac604c59b8ecae516dd2004eb83576262da634"
-    sha256 cellar: :any,                 monterey:       "578e06b99afa0250508644cd512812c58f616accc5b5463c992941cd01a7b4ba"
-    sha256 cellar: :any,                 big_sur:        "359e69062d6d0935a27fec1e5d4e8897477b1c4196563950a7c65094a9f0b327"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85ca89a8bcf93aec2384ac0b52c96732eea96a96c878388a0b11d04eb39fa32d"
+    sha256 cellar: :any,                 arm64_ventura:  "e916ffb9494f4ae60b3175ab5f0fbdbb28692e1c089717231c92b889a36a8ae8"
+    sha256 cellar: :any,                 arm64_monterey: "34f2ce47650347432d1450987136ea6cb1422ecd38d37ae069cbc2740083f757"
+    sha256 cellar: :any,                 arm64_big_sur:  "b6608aeabf74e797ea20f252c0d628ddd5ceaba521007e334fe6a48c0d64a36b"
+    sha256 cellar: :any,                 ventura:        "e5403a4ce6bc13591df9f4ce264a1d371ef07f55f4f8e8010c16d239b2781f68"
+    sha256 cellar: :any,                 monterey:       "9d7acf295cf98c0a83b5bcd20f52b751061e190a493c14395953d1fe581d7681"
+    sha256 cellar: :any,                 big_sur:        "f915f6c9b0bfd74bfc4439540da386a4ecb2c7689d365bbf400b4baf33b4bf4c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21ee45b0496f607d95fed9d002eb4b8a5a0e544bf1a7fa661dd8434c42829920"
   end
 
   depends_on "boost" => :build

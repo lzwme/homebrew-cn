@@ -1,20 +1,19 @@
 class Spdlog < Formula
   desc "Super fast C++ logging library"
   homepage "https://github.com/gabime/spdlog"
-  url "https://ghproxy.com/https://github.com/gabime/spdlog/archive/v1.11.0.tar.gz"
-  sha256 "ca5cae8d6cac15dae0ec63b21d6ad3530070650f68076f3a4a862ca293a858bb"
+  url "https://ghproxy.com/https://github.com/gabime/spdlog/archive/v1.12.0.tar.gz"
+  sha256 "4dccf2d10f410c1e2feaff89966bfc49a1abb29ef6f08246335b110e001e09a9"
   license "MIT"
-  revision 1
   head "https://github.com/gabime/spdlog.git", branch: "v1.x"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a0c30483a7ad84c88b8923895eb8ea0b947a4f881f1832cee19ac40178efa256"
-    sha256 cellar: :any,                 arm64_monterey: "4e6a3c5bd5ee30ee8675229ab4cb5a6259b9a6af9d4acc3f150b704924f95a20"
-    sha256 cellar: :any,                 arm64_big_sur:  "33eb5e16ef220226228bcce2f3acaa1afe6004daa1a8853ad07a5096baf07e45"
-    sha256 cellar: :any,                 ventura:        "016ebd2d21eff64a974f77db37486a78b57a2beed40c0cf7e5dee99e3afe74e8"
-    sha256 cellar: :any,                 monterey:       "ca2f31535ea857bb4bdc3cbe8419c7b04d3f8798ce5041fee8fe20d05eb50d2a"
-    sha256 cellar: :any,                 big_sur:        "72d83c7b857e96ad42ab8d233ef1f13c2a5f3317fa1db8eb95bd3e9cb72c5d43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c8cd3a6cff86119e2a9ded0c739c76bcccc731de9cc990320d43423c4116f02"
+    sha256 cellar: :any,                 arm64_ventura:  "79c8ea7065e0350056c24504ffb9a3cee0591e931b51f88f051ef7c4661a491a"
+    sha256 cellar: :any,                 arm64_monterey: "4e7c54a1932489df9f033c6ff38265c9561c749ae70ea8cc5c34b5a58d6d7ba7"
+    sha256 cellar: :any,                 arm64_big_sur:  "a9be7e4e477200f9991fdf83fb40da314dd4fbedbd7dc4b6305f8951d9d49e57"
+    sha256 cellar: :any,                 ventura:        "ef21f4e8f5977e10cca1ee2b747a40810fcaac67695e72f564df8bb6b1455938"
+    sha256 cellar: :any,                 monterey:       "9d58adf3aabf5788f74938cd445d0129e458dbe7a238c88741e634f31debff0c"
+    sha256 cellar: :any,                 big_sur:        "585a56f831fe23ca1f8137e6344a8469fe2f5e411c6a994615ff585be4574ee6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa1ba7fb7b814469c81c5eae8a607da65a4e6725a90b610a658e24d26ca037e8"
   end
 
   depends_on "cmake" => :build
@@ -22,12 +21,6 @@ class Spdlog < Formula
 
   # error: specialization of 'template<class T, ...> struct fmt::v8::formatter' in different namespace
   fails_with gcc: "5"
-
-  # Add support for fmt 10.0.0
-  patch do
-    url "https://github.com/gabime/spdlog/commit/0ca574ae168820da0268b3ec7607ca7b33024d05.patch?full_index=1"
-    sha256 "31b22a9bfa6790fdabff186c0a9b0fd588439485f05cbef5e661231d15fec49b"
-  end
 
   def install
     ENV.cxx11

@@ -1,18 +1,18 @@
 class Nift < Formula
   desc "Cross-platform open source framework for managing and generating websites"
   homepage "https://nift.dev/"
-  url "https://ghproxy.com/https://github.com/nifty-site-manager/nsm/archive/v3.0.1.tar.gz"
-  sha256 "c7dcac1cb56fbc5ff4ddca2eea3fa91bfa5c37a14627bac6fe638b5fde52850a"
+  url "https://ghproxy.com/https://github.com/nifty-site-manager/nsm/archive/v3.0.2.tar.gz"
+  sha256 "5f2e60aa113ba0227175bfdcc35a75bfaffe315a8c9966a7bfe4208f9bae8e46"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "bc48fe41d74e53cce7dcf79559e23f80fb8a56e1fc87655f6f17cd0acdfaba36"
-    sha256 cellar: :any,                 arm64_monterey: "166f4770d67984385d7daa9df13ec02d5a6d0fe8bb9d497b0ae219875fda86e2"
-    sha256 cellar: :any,                 arm64_big_sur:  "9a842dfd3876f5f6920823cdfe985606e6c66c0488104ff7d7815106bdca6f4c"
-    sha256 cellar: :any,                 ventura:        "cd80d6f99954fb2a21e37f12a27edda0967c7e190fc5e2dac3ea5a01166929e8"
-    sha256 cellar: :any,                 monterey:       "8d31e774deaa806c99b4d50df531652d3b658c2f4c74aec6f054590f271f9a52"
-    sha256 cellar: :any,                 big_sur:        "43ccefc3b626745ec54436451c4f99a04d4c8726a529c89480183944e29adfaa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "860fd9e6c0275437b9376c2d8a9a9ecbad18c84b56cb23f57cd86927e87746f9"
+    sha256 cellar: :any,                 arm64_ventura:  "d1b70f0c8408fdd4989de5ab087f6352985d4c623bd96ad09d13779616a7ff80"
+    sha256 cellar: :any,                 arm64_monterey: "7dcd8dc27176f7d428e6335ffc00e0f009495fbc375eb9981598a443390d80f6"
+    sha256 cellar: :any,                 arm64_big_sur:  "cbc8c0ee3c71696a7d5cd901548fe0bdbff0f5847e880ef00f506ec1a2a2223b"
+    sha256 cellar: :any,                 ventura:        "714bd5ce882aba69388a0eef41e445b69066f747da8202a13f10ebf9bf89788a"
+    sha256 cellar: :any,                 monterey:       "831d084f21c27d6aeb6128959ffee655d83d6077fa69faba662606a880f5445b"
+    sha256 cellar: :any,                 big_sur:        "096b99ab5e0f03b26e2605c2d2b4b335aa0d3924b332c91c64661298363560a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1735a12a20065f134cf0358547005cecfd6485d3446e5b3262c23d462f379260"
   end
 
   depends_on "luajit"

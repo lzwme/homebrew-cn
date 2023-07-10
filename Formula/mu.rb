@@ -4,8 +4,8 @@
 class Mu < Formula
   desc "Tool for searching e-mail messages stored in the maildir-format"
   homepage "https://www.djcbsoftware.nl/code/mu/"
-  url "https://ghproxy.com/https://github.com/djcb/mu/releases/download/v1.10.4/mu-1.10.4.tar.xz"
-  sha256 "8eba7864aad442212b2bc62aac6491708084ba5d84416a22b8a8ddf2ee7240ec"
+  url "https://ghproxy.com/https://github.com/djcb/mu/releases/download/v1.10.5/mu-1.10.5.tar.xz"
+  sha256 "1af693dc19d6980f743b98494ab6db97656b6954e7edff343ceb62e65ca5cc2d"
   license "GPL-3.0-or-later"
   head "https://github.com/djcb/mu.git", branch: "master"
 
@@ -18,13 +18,13 @@ class Mu < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "f93b99e71412fa04add5915c1fdc09e2f97ae0b839899389fbe0d0c4b8ceaade"
-    sha256 arm64_monterey: "024f03c48d498406fb16b76c7801ace8df0e353a0858af9abcecc43b53e99395"
-    sha256 arm64_big_sur:  "62dcb65b0972bd06c5d0a677517f852b79b20e6ca7bbdc0a0cf942c64b56892d"
-    sha256 ventura:        "f15493185ce1e635f1c30f128adfbcc78d1c764c14f807a5ef2fa81009bc83b9"
-    sha256 monterey:       "a39b085cbc58a4146ca635a9d49213881ab96bc7f8e3fb854f60a49c8bc636d4"
-    sha256 big_sur:        "dc68e8116a1f9921037c1be4f7ef66cbcd913469cfbfe2bd22261b434f923cf5"
-    sha256 x86_64_linux:   "99772e96c31c84226d7b18eb3f64ec065f86e302fe44dd8ea8bee0a1ac848242"
+    sha256 arm64_ventura:  "5ba2f9f51203e325aed48a325b1b9ffa2372bdf0716f8285a7c02b397ee7a2db"
+    sha256 arm64_monterey: "32c5cd4a2f9e983cee90da8b3daaf3f2b6b0402fd0580c346301efb31f70aa56"
+    sha256 arm64_big_sur:  "3b61ebe92f252689294157d4b6d794363615fb2f40c791a37a189bc345b48a51"
+    sha256 ventura:        "44b769f1c72b9c37e24b6c542f421006557c650fef20ff9ce7a67a3b7c376502"
+    sha256 monterey:       "82fe85bef764a5f7942272ff8f5246b1fd266aae8ce17483f5f7d52249e3a492"
+    sha256 big_sur:        "289d83eb41aef614c41986ba78955e891e8344de7e3d6fcad7050c25eb530a37"
+    sha256 x86_64_linux:   "3f789810494c974f242f75d91a8e5554415b0240a3e4646e294f5eef928b31eb"
   end
 
   depends_on "emacs" => :build

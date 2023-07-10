@@ -6,6 +6,11 @@ class Rio < Formula
   license "MIT"
   head "https://github.com/raphamorim/rio.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7095df9f64a6974baf8b9b53bec9b718b49d53fb8b3e547bc4d827e7f1cbea4c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "84d122a77db619ff9e3b8feb4c548c05da8bdf4c8604fd159728e0266e6140e5"

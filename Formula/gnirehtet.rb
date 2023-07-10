@@ -1,39 +1,27 @@
 class Gnirehtet < Formula
   desc "Reverse tethering tool for Android"
   homepage "https://github.com/Genymobile/gnirehtet"
+  url "https://ghproxy.com/https://github.com/Genymobile/gnirehtet/archive/v2.5.1.tar.gz"
+  sha256 "0d41361b9ac8b3b7fa4f4a0aff933472a72886556bd3fc4659be299b546274e6"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/Genymobile/gnirehtet.git", branch: "master"
 
-  stable do
-    url "https://ghproxy.com/https://github.com/Genymobile/gnirehtet/archive/v2.5.tar.gz"
-    sha256 "2b55b56e1b21d1b609a0899fe85d1f311120bb12b04761ec586187338daf6ec5"
-
-    # Fix compilation issue with rust 1.64.0+
-    # upstream PR reference, https://github.com/Genymobile/gnirehtet/pull/478
-    patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/d62149f/gnirehtet/2.5-rust-1.64.0.patch"
-      sha256 "bdda0abc50344b14227d880d8257189f49eb586722b6e5fa07f3cb70b442b7a0"
-    end
-  end
-
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f898c125e921c9964c5e99e15d71c161acf11303f0aeacc3cf02688a8fe3dc45"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5b749da90ce130575ede02eb8b67bf16da7cc7c8f3abbecbf8538d5bb3671bc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e513959ed8e72cae40ebbb1b83dd0b7d5637f9ff0010ce56382a26eed0a0538d"
-    sha256 cellar: :any_skip_relocation, ventura:        "d4edb6c22347cf1c9040d246b43af1a614824c699e75fbe30865c8e0dd1b3b28"
-    sha256 cellar: :any_skip_relocation, monterey:       "4b006bbe28c843a99b4bb11f20bbcbdc05e4186b2578bc8f01afbddf750469e0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ad3bcc48b5baf59b30a8a2afc4d649faa24fb2089bfb43eb5c8ea9da44b203d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57f8f3ad93ec32d18934e9af5a0c81b872f5b9a9c8388a3b6aec065c1dec81bd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f5b5df70aa9d156188c4a83b6817064309e53eccaca64d4c21fc6e3dd17b026c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cc70af0b7c95793dc71b60f38a8ac0eff9c24956f3b9424468117c2cc8d9c8b5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "011242189fda65be5d4be17acd3bcd470e3a4376fc180292c504ff5c54f939b5"
+    sha256 cellar: :any_skip_relocation, ventura:        "16e2b20622495234ad41bd99233c72288221e721b071d37984355c1f291e9377"
+    sha256 cellar: :any_skip_relocation, monterey:       "984d3dfb57b8b4e76c9df974349af5f82d5e1b208ca4fdb87d1fc8f695ee6804"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2724057e42986f088b033462ab4c8bc058a1b16bc0deb6209904e0eb04a6c4e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c3ffedc36f982c44315b5970a26ccd45fe13db36d3daf8c16510157f87d565d"
   end
 
   depends_on "rust" => :build
   depends_on "socat" => :test
 
   resource "java_bundle" do
-    url "https://ghproxy.com/https://github.com/Genymobile/gnirehtet/releases/download/v2.5/gnirehtet-java-v2.5.zip"
-    sha256 "c65fc1a35e6b169ab6aa45e695c043e933f6fd650363aea7c2add0ecb0db27ca"
+    url "https://ghproxy.com/https://github.com/Genymobile/gnirehtet/releases/download/v2.5.1/gnirehtet-java-v2.5.1.zip"
+    sha256 "816748078fa6a304600a294a13338a06ac778bcc0e57b62d88328c7968ad2d3a"
   end
 
   def install

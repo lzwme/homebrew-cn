@@ -2,18 +2,18 @@ class Xq < Formula
   desc "Command-line XML and HTML beautifier and content extractor"
   homepage "https://github.com/sibprogrammer/xq"
   url "https://github.com/sibprogrammer/xq.git",
-      tag:      "v1.1.4",
-      revision: "8aed2a2eaf2816d81bbd0b3a29d11de67d6b26ef"
+      tag:      "v1.2.1",
+      revision: "8ed07bdd6390e64f126abb832bcab0da317f7f34"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9dc34c89f0eae9fc5e99e74cc5371068ee4e387a8bd48ea7501ed8ad7c329087"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9dc34c89f0eae9fc5e99e74cc5371068ee4e387a8bd48ea7501ed8ad7c329087"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9dc34c89f0eae9fc5e99e74cc5371068ee4e387a8bd48ea7501ed8ad7c329087"
-    sha256 cellar: :any_skip_relocation, ventura:        "fa593c161af1f7bf8956707e10e48352a65b4d0138330ae33ad6003ce4603d6f"
-    sha256 cellar: :any_skip_relocation, monterey:       "fa593c161af1f7bf8956707e10e48352a65b4d0138330ae33ad6003ce4603d6f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fa593c161af1f7bf8956707e10e48352a65b4d0138330ae33ad6003ce4603d6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9c16a8587bea8ef9f031609af55a7be9f7397cb71d907284c4d945603ec7c2f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2cbb07af6bd4a55df5a4c4ed1db217b81c75f5f07cd7c7968c43192c0e9baec8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2cbb07af6bd4a55df5a4c4ed1db217b81c75f5f07cd7c7968c43192c0e9baec8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2cbb07af6bd4a55df5a4c4ed1db217b81c75f5f07cd7c7968c43192c0e9baec8"
+    sha256 cellar: :any_skip_relocation, ventura:        "b60dfc79a740dfc4acbed5b2cb931061bee6d9c1286f9967f640a2ee0a1cb78f"
+    sha256 cellar: :any_skip_relocation, monterey:       "b60dfc79a740dfc4acbed5b2cb931061bee6d9c1286f9967f640a2ee0a1cb78f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b60dfc79a740dfc4acbed5b2cb931061bee6d9c1286f9967f640a2ee0a1cb78f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "848e2e0e923439c1c1b8fb7fe527467aa1d492c062529ed3c52b1e7f4a45ee72"
   end
 
   depends_on "go" => :build
