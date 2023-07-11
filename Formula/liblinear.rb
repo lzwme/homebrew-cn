@@ -1,8 +1,8 @@
 class Liblinear < Formula
   desc "Library for large linear classification"
   homepage "https://www.csie.ntu.edu.tw/~cjlin/liblinear/"
-  url "https://www.csie.ntu.edu.tw/~cjlin/liblinear/oldfiles/liblinear-2.46.tar.gz"
-  sha256 "616dd3a9b5596894de427f141a4902fa99dafc51ff9d18e8d723852fdc0cb53b"
+  url "https://www.csie.ntu.edu.tw/~cjlin/liblinear/oldfiles/liblinear-2.47.tar.gz"
+  sha256 "99ce98ca3ce7cfb31f2544c42f23ba5bc6c226e536f95d6cd21fe012f94c65e0"
   license "BSD-3-Clause"
   head "https://github.com/cjlin1/liblinear.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Liblinear < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7e7cab0aae3e2aa39079c8b62c74a515b738a15b5ba0c6f5090346c9224fd7ef"
-    sha256 cellar: :any,                 arm64_monterey: "6dcd9d27db4bf48c077b27ed7f1c5efa575e3e0fef9ff792f6c297d656d8d7b1"
-    sha256 cellar: :any,                 arm64_big_sur:  "3c38a1dd2728cb81095949356e80bbe83841481a98edd82e8f022af7a4453bbd"
-    sha256 cellar: :any,                 ventura:        "073bc33c6fd64e2197935c997ae97975465a4bbc5735d122a6db7ba4c0c8fd2a"
-    sha256 cellar: :any,                 monterey:       "0b9b05f1c1e6fdec4ff041da4c41cc7825e11d5196195de54ba56a4a71928fcc"
-    sha256 cellar: :any,                 big_sur:        "f4e750007ca329df9d194d2dd398e0a9d6ef0557feb5c60de6969a9be6801cc5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8000191b904633c5b0cc17de5a9737be048a3cb6764a08aa4270300eb8369fc3"
+    sha256 cellar: :any,                 arm64_ventura:  "2f7f959e3a537760a29d4f4f4ff949bf5ef8f7206dbbb7f48492e8b733978f78"
+    sha256 cellar: :any,                 arm64_monterey: "3c2ee17592c9ff78f3b58baf9bdae899be678d7c073b471896314896c854c540"
+    sha256 cellar: :any,                 arm64_big_sur:  "c0f811408e6e5d5a29d7c8d94b89d92980d1b149b1c909413bae383a0df0cf31"
+    sha256 cellar: :any,                 ventura:        "785f3d2ae8640b9689caa8982f13119ad27b88868a432c9ccaaec6a345e2ac68"
+    sha256 cellar: :any,                 monterey:       "2b5c4306ba3b88b67d803d0b5ff4562889f1516d5e2a9b479c3c2ee3eb573a53"
+    sha256 cellar: :any,                 big_sur:        "26e5cca0e853ce2014ccf29cf38513e5a852e4c4a65b4fe1f39220f4a176d6f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed4f81487889a1f54491aed3e6ce5b492c60a16c8e59d782c94c552fc46311dd"
   end
 
   # Fix sonames

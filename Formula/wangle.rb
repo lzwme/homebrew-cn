@@ -1,19 +1,19 @@
 class Wangle < Formula
   desc "Modular, composable client/server abstractions framework"
   homepage "https://github.com/facebook/wangle"
-  url "https://ghproxy.com/https://github.com/facebook/wangle/releases/download/v2023.07.03.00/wangle-v2023.07.03.00.tar.gz"
-  sha256 "cdc2783f6d17f5e757c19373ee4839de5c4c9e9ad820e17a2cf9deff3543f028"
+  url "https://ghproxy.com/https://github.com/facebook/wangle/releases/download/v2023.07.10.00/wangle-v2023.07.10.00.tar.gz"
+  sha256 "44009745712347639ea037819c546f07946c9e6346e3f13bf922688daa276456"
   license "Apache-2.0"
   head "https://github.com/facebook/wangle.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3965a4c1b5120dde53dff57b4c7b675c95145d7dc50bcc81a7aea111cf186e5c"
-    sha256 cellar: :any,                 arm64_monterey: "bfb16abe4dc15a8afec0fe85e08193a6b037dd72efc694795ab56b8f433f0a9e"
-    sha256 cellar: :any,                 arm64_big_sur:  "bc608fa09638d32d12840435ff345ff2799b54ea23845477232a03a4fb8ba887"
-    sha256 cellar: :any,                 ventura:        "5d3668b5f038d45ff583522df818cd2fd384e9c6d332120dbc17dfbd3b56c8c9"
-    sha256 cellar: :any,                 monterey:       "4c16ed23d29e407a1f2271afd5ced18e72fd9d91f060620f0725e6576947d371"
-    sha256 cellar: :any,                 big_sur:        "2768f185cd7c78b17095b2daf02bd35db245e87dfcd9b6fb37497e5e8d01e2a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "223faa6f020b8fb6792a5c3f7ea654934a55b5fb50007938752a7895a8b73efb"
+    sha256 cellar: :any,                 arm64_ventura:  "d21066b5d4c533e3ff1ea7da10c78a5c422ffb5fb03ad969995ae83737c76c35"
+    sha256 cellar: :any,                 arm64_monterey: "299bfd5a3b06da80540b8503eb38a6b8f4ab0474f924e2fee3879ce2eaa9ad9d"
+    sha256 cellar: :any,                 arm64_big_sur:  "0c499016c6dead7636b2c68950a94bca2d2cfa3b005f3706f45487eb29092c33"
+    sha256 cellar: :any,                 ventura:        "00a7e88c865f6cd62b5984f81aad366136778868135f1f63992c767ac2d7471a"
+    sha256 cellar: :any,                 monterey:       "209af50e2fb172a53e677f61e3b1cfc6a1392689c40800b35127d17db80a201c"
+    sha256 cellar: :any,                 big_sur:        "ed8eeb6a7d22073db041c67f63ac9fe56ca324fa795a9ad66c96664b1b015d70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b0b6133f17cdfdcd30ed072e24116a9e48ed59f10392e2d8ee757af8f08d900"
   end
 
   depends_on "cmake" => :build

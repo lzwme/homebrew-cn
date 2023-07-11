@@ -2,19 +2,19 @@ class ChartTesting < Formula
   desc "Testing and linting Helm charts"
   homepage "https://github.com/helm/chart-testing"
   url "https://github.com/helm/chart-testing.git",
-      tag:      "v3.8.0",
-      revision: "7f3a83ddc506713b7f7f1534f224dff78fead215"
+      tag:      "v3.9.0",
+      revision: "88cc7026481da7468e34a614b8ca4f0da42c063c"
   license "Apache-2.0"
   head "https://github.com/helm/chart-testing.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7147fd85177ad3ceb8e5325a5d5616a87b2ba1782e27ff691cc636aa397c1481"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7147fd85177ad3ceb8e5325a5d5616a87b2ba1782e27ff691cc636aa397c1481"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7147fd85177ad3ceb8e5325a5d5616a87b2ba1782e27ff691cc636aa397c1481"
-    sha256 cellar: :any_skip_relocation, ventura:        "64ce0a3c3308596396ea4334f0301f251b4d786f9b54fa47ec34e8faafd41d2e"
-    sha256 cellar: :any_skip_relocation, monterey:       "64ce0a3c3308596396ea4334f0301f251b4d786f9b54fa47ec34e8faafd41d2e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "64ce0a3c3308596396ea4334f0301f251b4d786f9b54fa47ec34e8faafd41d2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6397f3c0e5961d657a9c0f7f9d9dd05851725482874aca3ceedd04240255e2c5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0cdcc408a6a87349a6e42f4e0c81967274a34569b9ed00f0b7064320463fa42c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0cdcc408a6a87349a6e42f4e0c81967274a34569b9ed00f0b7064320463fa42c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0cdcc408a6a87349a6e42f4e0c81967274a34569b9ed00f0b7064320463fa42c"
+    sha256 cellar: :any_skip_relocation, ventura:        "5908cc67c2a3664c1ec17f437537703c67779852bb00a5fe27131d2daef434a5"
+    sha256 cellar: :any_skip_relocation, monterey:       "5908cc67c2a3664c1ec17f437537703c67779852bb00a5fe27131d2daef434a5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5908cc67c2a3664c1ec17f437537703c67779852bb00a5fe27131d2daef434a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5317a23611aed11ccb204e575df76e5e2f3742624f75f1065af45c08e9df6c4c"
   end
 
   depends_on "go" => :build

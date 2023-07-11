@@ -6,6 +6,14 @@ class Ipmitool < Formula
   license "BSD-3-Clause"
   revision 2
 
+  livecheck do
+    url :stable
+    regex(/^IPMITOOL[._-]v?(\d+(?:[._]\d+)+)$/i)
+    strategy :git do |tags, regex|
+      tags.map { |tag| tag[regex, 1]&.tr("_", ".") }
+    end
+  end
+
   bottle do
     sha256 arm64_ventura:  "9c793c56cdb44aab31470708ab208e9525d4a5782b313f3cf7dd12fad2759275"
     sha256 arm64_monterey: "c19e86e32583bceb9c38f2232c90726b2a529857d24638e62e355ad47eb8bfdb"

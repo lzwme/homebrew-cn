@@ -3,18 +3,18 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/97/e4/5571fef37faa70ea89815c57b0ef3a5a17a860265fbfcc818ae81ca2de26/esphome-2023.6.4.tar.gz"
-  sha256 "4251bf0cee988a49a9a9cc91b3edbca76bb5f967559fe4147493fe232687fa61"
+  url "https://files.pythonhosted.org/packages/48/cd/dc2b0591dee0ebb32d26d95b969d28a63955eeef3b8c2abbeadfeec017c8/esphome-2023.6.5.tar.gz"
+  sha256 "0055ec580f6ec044db7c1abbc04a823e889baa212a22b6eb1ecab165fc840d96"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9d1855f63b22df8a45532585effa86ea0d0ff8e20dca7368940f81db92f52e55"
-    sha256 cellar: :any,                 arm64_monterey: "3219068a6e8b9ef707b8c61e581ee61626367f26a22849be96f927dce0d0c215"
-    sha256 cellar: :any,                 arm64_big_sur:  "915c3722a7468bde1ecdd69ab89530e0e61f86e4a0345c214272cfb72cf92ccc"
-    sha256 cellar: :any,                 ventura:        "3f3fb07d3d22d42bb4466f20f8564c02b94d1f523d5a08b4ca07aadcdd9c6915"
-    sha256 cellar: :any,                 monterey:       "c9175e20f0f0892cddb537823c66aedfc735fa9873cd81b176757ca35ef7fd30"
-    sha256 cellar: :any,                 big_sur:        "83147ace371f2805682f71e4216cac8c6c1f1e13046fb77c3ed616c2c63d6f4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9fb0b209d4fa35d757e98ed744c97e9e3921ac7c2fe657343de62e273c3d8602"
+    sha256 cellar: :any,                 arm64_ventura:  "d8b2524f916f3ea4e1048aaca4a0d07f9456c19a899d1128c70c8ee9177311d7"
+    sha256 cellar: :any,                 arm64_monterey: "bc4b7aeaa77dc9952a975210209223d5d7a6f85859f1c5894b022d1ee8b7983d"
+    sha256 cellar: :any,                 arm64_big_sur:  "490de93569b301392285b7a3c260afd69ccaa250589cb4eeacf996fe617ed2f7"
+    sha256 cellar: :any,                 ventura:        "3d37e135a5efb5b5a2d305d440b121a6cee2d846ba7bcf01e875cfe9eca01825"
+    sha256 cellar: :any,                 monterey:       "c646c4ae9e88b66640a2b501bcd28e7043bef471b50fae95bb187d4afeae2928"
+    sha256 cellar: :any,                 big_sur:        "eede9de6bc2908822318995cb88c85325a2bdd8d51f35e60a7416574dbea96eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6cff6801fc6e93ccae458ec53298c2325179c3968318465baf22e41183fb833e"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -45,8 +45,8 @@ class Esphome < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/b3/fefbf7e78ab3b805dec67d698dc18dd505af7a18a8dd08868c9b4fa736b5/anyio-3.7.0.tar.gz"
-    sha256 "275d9973793619a5374e1c89a4f4ad3f4b0a5510a2b5b939444bee8f4c4d37ce"
+    url "https://files.pythonhosted.org/packages/28/99/2dfd53fd55ce9838e6ff2d4dac20ce58263798bd1a0dbe18b3a9af3fcfce/anyio-3.7.1.tar.gz"
+    sha256 "44a3c9aba0f5defa43261a8b3efb97891f2bd7d804e0e1f56419befa1adfc780"
   end
 
   resource "async-timeout" do
@@ -70,8 +70,8 @@ class Esphome < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "click" do

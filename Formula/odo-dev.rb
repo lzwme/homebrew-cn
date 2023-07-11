@@ -2,8 +2,8 @@ class OdoDev < Formula
   desc "Developer-focused CLI for Kubernetes and OpenShift"
   homepage "https://odo.dev"
   url "https://github.com/redhat-developer/odo.git",
-      tag:      "v3.11.0",
-      revision: "b481d4c4106f5abbca50d2608415d0c8c5485dac"
+      tag:      "v3.12.0",
+      revision: "c0127ce2011fa4506816c1516adf3845044daf67"
   license "Apache-2.0"
   head "https://github.com/redhat-developer/odo.git", branch: "main"
 
@@ -16,13 +16,13 @@ class OdoDev < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0cc92ff03d4626e9f83597aac895f7e7704856bdfcd2cf902680d91a6b642b79"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6d6a82db943e065fd0a137e379ce4c7a7644fbdf56e85ada61e3fba2de845209"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "20238da7f1999cb56eece1b985caafc68cd082225588ce422cb15ecff2647c64"
-    sha256 cellar: :any_skip_relocation, ventura:        "b0b743b3c0fed79e40b2d94528c38874def82f136167287d4d30c48b5cb96850"
-    sha256 cellar: :any_skip_relocation, monterey:       "5c66ec252126b4a33a9c4a8de2fb1b913179697c18197ebdb8be86d1913f749a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "faa0fa822121c780096769ea95d084f1820c8f5f0018c6c9cbf5714647f40f25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29b84001eb68e2e598cbb436f35904e7853b899dbea7c9455c76d60f11241033"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "36b0a9092b49d4ba07fe3a849475f0b753521bfb6fd24a2c334b3a8e4854bf6f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "21a6d68a4648ebd522f9d4c7f93e0628db68b0c063a6fe8a4e8cf6d8fbc61ae7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6ea2d66be2903fc52c32e386081fc8e9b69839016a6ea2623cc3d9dfde015455"
+    sha256 cellar: :any_skip_relocation, ventura:        "3eda52349080ae05f2dfe93507a496ae93be5db00073dc88992423d3a095035e"
+    sha256 cellar: :any_skip_relocation, monterey:       "b308a4902a85176ea82acc4f7bd8f0f4c4f8f03a91896fb98212c7d2234c0955"
+    sha256 cellar: :any_skip_relocation, big_sur:        "28820f66c54df85328b47705523020594abf109715a1361f98a0aaadac036cdc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa5b4b0e18889820b3c10cfd5c5e077959b04ff234e2be00fbebacc8a2b54ebc"
   end
 
   depends_on "go" => :build

@@ -1,25 +1,25 @@
 class Nickel < Formula
   desc "Better configuration for less"
   homepage "https://github.com/tweag/nickel"
-  url "https://ghproxy.com/https://github.com/tweag/nickel/archive/refs/tags/1.0.0.tar.gz"
-  sha256 "d844aa7168534cf328dc553cd9fbfe58bd19dee920f630240ff1545d7c20b4e9"
+  url "https://ghproxy.com/https://github.com/tweag/nickel/archive/refs/tags/1.1.1.tar.gz"
+  sha256 "48f709d5c21c9961bfaaf7a1abc766fc62909afd249e8cd104f72d2a68df601e"
   license "MIT"
   head "https://github.com/tweag/nickel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef6e3f92084442eecbb9ea40f7ee918bfe72e1dc10a8290736a159133b86682f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0e9398506f9ea09a2ca5d46f4312040a237f88479d7a03d0a557e074073e2c54"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cbec234f79db7f8e913a30314bb67bab5f58374a9111e18885a1b87d9b842803"
-    sha256 cellar: :any_skip_relocation, ventura:        "70ceb1e2bbd14ac9728263c75ac83a5e7645cebccf50f9800d389621338318ae"
-    sha256 cellar: :any_skip_relocation, monterey:       "1e484e8919f2ca8bb4e384931442400f02a282b00a4a6168bf5be855eac92515"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fce01397e3ff4d5629438d771c89d9686808f08ae08d37af11886099756f38fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0665aa0dad78972ef0514e45dd98128846cad22cf96b6d15429ff42658e84cd1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "276e04824cb230e1be7d64ac60d7f3a0732735b3ba5fc42a8beaded9a618cbc2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "66c084ddaad46bfc65878b0bd644ca65ba24ddaad661dd812cf252ec8978b72c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "589a92efc3fc2eba9644e6636654b3f8d2c51d6889736ec123a49b22ac5fd6d5"
+    sha256 cellar: :any_skip_relocation, ventura:        "ed7ad80678db0458906fbdf386c8b33b80439769a74d0ce340943930715abab3"
+    sha256 cellar: :any_skip_relocation, monterey:       "67bfe9f283b334d266fc1ef7eaa2df92c3206247998a212f811acd0c350202e7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "53298e2707cc986e6e443aec7b3ddda0d338270764de287b2745dff29eb17f79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4fe88a0b96556b6441986344140f9b9038cc25e0ffa8db26f8c6f3e7742cbe8"
   end
 
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "cli")
   end
 
   test do

@@ -22,11 +22,7 @@ class Hugo < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w"), "-tags", "extended"
 
     generate_completions_from_executable(bin/"hugo", "completion")
-
-    # Build man pages; target dir man/ is hardcoded :(
-    (Pathname.pwd/"man").mkpath
-    system bin/"hugo", "gen", "man"
-    man1.install Dir["man/*.1"]
+    system bin/"hugo", "gen", "man", "--dir", man1
   end
 
   test do

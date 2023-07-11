@@ -3,18 +3,18 @@ class Dunamai < Formula
 
   desc "Dynamic version generation"
   homepage "https://github.com/mtkennerly/dunamai"
-  url "https://files.pythonhosted.org/packages/a9/9b/44944afb93fd0e1cec69023d5c0a670ee015237de6146eaac926592aa142/dunamai-1.17.0.tar.gz"
-  sha256 "459381b585a1e78e4070f0d38a6afb4d67de2ee95064bf6b0438ec620dde0820"
+  url "https://files.pythonhosted.org/packages/77/c8/845bdb9167570937cada51b586393dded1e77c56db458f350a671c4f1ab9/dunamai-1.18.0.tar.gz"
+  sha256 "5200598561ea5ba956a6174c36e402e92206c6a6aa4a93a6c5cb8003ee1e0997"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d0595c31e068e0730d2a9f801765d5e290d2c4b4c022e1178c47783a34515c80"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d8da92c2fc7904f9f906e81150579c603dfbffcc2e449085bedf556e4d368d9f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d45a7d6becf3b93a3e7760ed6aa7e3db373d712522c0c15871ec22f29cb01e40"
-    sha256 cellar: :any_skip_relocation, ventura:        "6e21b8187869d0a34768b455a67490d0a6bbb49e9db36031b23b0c2c0b7d57f3"
-    sha256 cellar: :any_skip_relocation, monterey:       "284e6f262a330248329bbba8b5b5990294b7c37993817b16ef24aa247492c580"
-    sha256 cellar: :any_skip_relocation, big_sur:        "20d46fee4e3d82ef8c426efa7a435fc2a024613ea865636662fde8190e9a71ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "885255b747d37cd9f64d2c21ab8df4a65cbb8cffb78d6ca47bbd73a339c0f7a0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6945b4438559c6b638924175abf2a2ea82e9e26287680c69e96a9ee38e9a93fa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6dd8af031e7a9a11059b7fbb3a35deb3b6ab361968a056d118ed07fd8cd9b693"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ebb3b6232125c18a83e656204244f0523734366bc25c30962a9eb49447fe7399"
+    sha256 cellar: :any_skip_relocation, ventura:        "9cf8ab1ccada6c06e052804d4ec9007bac080710a97b622c65b6c5ac351f6e62"
+    sha256 cellar: :any_skip_relocation, monterey:       "a4de1854607b52304e0ba638ee2f056285ba61c45f609436f3e6816bedfea73b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8e745307de017055f29c996470a9929176589ecad846158dc193fee59e104888"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fcd88fccf7512658a531acd4c1c21c7183a74a50ebcb59bc1699c6fa5f8f674e"
   end
 
   depends_on "python@3.11"

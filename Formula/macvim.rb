@@ -2,9 +2,9 @@
 class Macvim < Formula
   desc "GUI for vim, made for macOS"
   homepage "https://github.com/macvim-dev/macvim"
-  url "https://ghproxy.com/https://github.com/macvim-dev/macvim/archive/refs/tags/release-176.tar.gz"
-  version "9.0.1276"
-  sha256 "e729964b4979f42fd2701236adb9bea35c6cf3981aa02ae7790a240fb92cf39e"
+  url "https://ghproxy.com/https://github.com/macvim-dev/macvim/archive/refs/tags/release-177.tar.gz"
+  version "9.0.1677"
+  sha256 "f0c7ce7bc81b1cecb9e9c3c39c35b9a02a3ea1f08f9131a6032f9c8bff6aa8d7"
   license "Vim"
   head "https://github.com/macvim-dev/macvim.git", branch: "master"
 
@@ -15,13 +15,12 @@ class Macvim < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_ventura:  "6bb6a8a82b9bb7ace5eb9f34f1571d7b36d4bf553f50941ce147ca41cd8f85d8"
-    sha256 cellar: :any, arm64_monterey: "e889d6c32cffdcc33f2bfe6ca04146c5d96ba9553cb2b50db8837007960494c1"
-    sha256 cellar: :any, arm64_big_sur:  "b2849fff6142ba20264b21ac9fad8f55487cbae05b64fe750d14f223f454594a"
-    sha256 cellar: :any, ventura:        "82f5456d5dce39f23dcd1cf317e9f652eb19bdd0989f9aaee088df7d49364aca"
-    sha256 cellar: :any, monterey:       "3ffeaf80f4fa63c0589526538fae88986550113e356f820868c65416ed9d060e"
-    sha256 cellar: :any, big_sur:        "1fedbf1fb207c159c977f331b6be5aad689fd7551287840a066fe94bda73efea"
+    sha256 cellar: :any, arm64_ventura:  "21f73599154f9ef9735e61a97d62615b0a45e206af858226c771314c4d7c2a9a"
+    sha256 cellar: :any, arm64_monterey: "4fae5d2ba975d10f3151b011cedfe629c536ce8193b8d5e4ebe47454483293f1"
+    sha256 cellar: :any, arm64_big_sur:  "82f035e74844bf119294c853d9887dec92d5a878758e81d889f6217a89b73bfe"
+    sha256 cellar: :any, ventura:        "ad71a9cd875e50ea1f41bc0fad8448a1a63feea77ea22bc64adb27f07097f81d"
+    sha256 cellar: :any, monterey:       "911ca9a54aa9f50db6f186bf18133626c90e98f2e644241d4b4995af25bc1440"
+    sha256 cellar: :any, big_sur:        "816541af345e5ed66dfc641b36a0e4f4de2a324645fb80389f62dc9ac5a1692c"
   end
 
   depends_on "gettext" => :build
@@ -68,8 +67,6 @@ class Macvim < Formula
     system "make"
 
     prefix.install "src/MacVim/build/Release/MacVim.app"
-    # Remove autoupdating universal binaries
-    (prefix/"MacVim.app/Contents/Frameworks/Sparkle.framework").rmtree
     bin.install_symlink prefix/"MacVim.app/Contents/bin/mvim"
 
     # Create MacVim vimdiff, view, ex equivalents

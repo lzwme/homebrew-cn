@@ -1,9 +1,9 @@
 class OathToolkit < Formula
   desc "Tools for one-time password authentication systems"
   homepage "https://www.nongnu.org/oath-toolkit/"
-  url "https://download-mirror.savannah.gnu.org/releases/oath-toolkit/oath-toolkit-2.6.8.tar.gz"
-  mirror "https://fossies.org/linux/privat/oath-toolkit-2.6.8.tar.gz"
-  sha256 "0a501663a59c3d24a03683d2a1fba4c05b4f07a2917152c58a685d82adc0a720"
+  url "https://download-mirror.savannah.gnu.org/releases/oath-toolkit/oath-toolkit-2.6.9.tar.gz"
+  mirror "https://fossies.org/linux/privat/oath-toolkit-2.6.9.tar.gz"
+  sha256 "333ac831c8f1a6dbd7feb897339bba453ff34d3b0f4cfaa6b5a20dba55c8e985"
   license all_of: ["GPL-3.0-or-later", "LGPL-2.1-or-later"]
 
   livecheck do
@@ -12,13 +12,13 @@ class OathToolkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "c57900aa1173ecd0690de9191a25001b97d7725a08c350f95e9abbd3579d2890"
-    sha256 cellar: :any, arm64_monterey: "32fecea80a82cc7414b35b9a242b074f3092b3e40e756d87747e8074469ccb98"
-    sha256               arm64_big_sur:  "28d9d4fb6912a756800e52832cf50e4feb20cd6146399a510acfc441db813d5c"
-    sha256               ventura:        "336876de14bf9fb91138abf9e6183ec026d18b03df7be30957c4ecec888d1059"
-    sha256               monterey:       "b6e0e2c83ba68a86e1ddd88c8f87de83d09ccc04a0236f92adbae498946dd63c"
-    sha256 cellar: :any, big_sur:        "23d90cd5e3e1792a6ccafbf0fbf01488151ecdef323c1dcb1c517e1dde0f0118"
-    sha256               x86_64_linux:   "3511438560a06128bc44a9fd32a8aeed30cdce6659f4f77001f489efc1087481"
+    sha256 cellar: :any, arm64_ventura:  "4ba53487d4db148b93cdec180246724677658839c24f270cb743bc1254319c3c"
+    sha256 cellar: :any, arm64_monterey: "0ad47728dacdabbffd46306cf1f40f61dc54f43f568c39683e82a71e45c9f5f8"
+    sha256               arm64_big_sur:  "57f00f50aade24072074445fb8b33f9600b71d5cc3ac286db066fce8f47f12de"
+    sha256               ventura:        "b7796f8492f196b003ad73656fd7dd1597da02b5d433d24ded8e70a5d223f632"
+    sha256               monterey:       "e4ca111ca23d31e861e3cd4fb76a8f2542dd7a4cf69cd1cad36299828a0a6d48"
+    sha256 cellar: :any, big_sur:        "21f1e0df5c03224470ce39346501241f45e0195f486fbc36cfedbe3aa50871c5"
+    sha256               x86_64_linux:   "627a86bc837b0d8fa0acddfb917cc9420d2435a3ef0e5516f2a2c0d05e54b748"
   end
 
   head do

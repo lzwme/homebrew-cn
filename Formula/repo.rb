@@ -4,19 +4,19 @@ class Repo < Formula
   desc "Repository tool for Android development"
   homepage "https://source.android.com/source/developing.html"
   url "https://gerrit.googlesource.com/git-repo.git",
-      tag:      "v2.34.1",
-      revision: "945c006f406550add8a3cad32ada0791f5a15c53"
+      tag:      "v2.35",
+      revision: "c657844efe40b97700c3654989bdbe3a33e409d7"
   license "Apache-2.0"
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b7694c86ac2c864dbd73e5a3db1fcbbf65d3ad5acdcba822dfcf1f449ab60af"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b7694c86ac2c864dbd73e5a3db1fcbbf65d3ad5acdcba822dfcf1f449ab60af"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7b7694c86ac2c864dbd73e5a3db1fcbbf65d3ad5acdcba822dfcf1f449ab60af"
-    sha256 cellar: :any_skip_relocation, ventura:        "7b7694c86ac2c864dbd73e5a3db1fcbbf65d3ad5acdcba822dfcf1f449ab60af"
-    sha256 cellar: :any_skip_relocation, monterey:       "7b7694c86ac2c864dbd73e5a3db1fcbbf65d3ad5acdcba822dfcf1f449ab60af"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7b7694c86ac2c864dbd73e5a3db1fcbbf65d3ad5acdcba822dfcf1f449ab60af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b00ff93b84d2f6df4d365644ab4e519f74fabf2f28cd1c3ab171f417fae9b30"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "84087c9cc784bb062898df83c1417d65e6e819882003fa940f3f7dac95f4b39d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "84087c9cc784bb062898df83c1417d65e6e819882003fa940f3f7dac95f4b39d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "84087c9cc784bb062898df83c1417d65e6e819882003fa940f3f7dac95f4b39d"
+    sha256 cellar: :any_skip_relocation, ventura:        "84087c9cc784bb062898df83c1417d65e6e819882003fa940f3f7dac95f4b39d"
+    sha256 cellar: :any_skip_relocation, monterey:       "84087c9cc784bb062898df83c1417d65e6e819882003fa940f3f7dac95f4b39d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "84087c9cc784bb062898df83c1417d65e6e819882003fa940f3f7dac95f4b39d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e7ccc493548b15f02af19e8c0c907f0262e41e3104b8df8479d54bbb2f8a1e3f"
   end
 
   uses_from_macos "python"
