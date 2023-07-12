@@ -7,7 +7,7 @@ class Ntp < Formula
   license all_of: ["BSD-2-Clause", "NTP"]
 
   livecheck do
-    url "https://www.ntp.org/downloads.html"
+    url "https://www.ntp.org/downloads/"
     regex(/href=.*?ntp[._-]v?(\d+(?:\.\d+)+(?:p\d+)?)\.t/i)
   end
 

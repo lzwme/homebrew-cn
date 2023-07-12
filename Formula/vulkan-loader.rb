@@ -1,8 +1,8 @@
 class VulkanLoader < Formula
   desc "Vulkan ICD Loader"
   homepage "https://github.com/KhronosGroup/Vulkan-Loader"
-  url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/v1.3.256.tar.gz"
-  sha256 "71fc0b7ec947eb2d9403238930ba7e53622fa0787aed0ea5f5dc21eec2818eae"
+  url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/v1.3.257.tar.gz"
+  sha256 "9d6d1b19ab040a95f70f75db573080d567e41dd35a018ed9dfdffef3230003cc"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-Loader.git", branch: "main"
 
@@ -12,13 +12,13 @@ class VulkanLoader < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "2e31eee2eed4c1f0fc387330d01320597fe635104dee579be7a9332ece6132c5"
-    sha256 arm64_monterey: "a66c5d9b095f3f8261099e16c6c7bbb71732384a0e8059a1991000114abe5dd7"
-    sha256 arm64_big_sur:  "0071b075a3ca1886aa9b3f3ab9dae288230fac5eda05be6bdaf02099644579ae"
-    sha256 ventura:        "bba7dcee4697498667ee52ba6e752f4dd13e5b87d8d92d64ecea27f099930652"
-    sha256 monterey:       "61db0d777dbaddb2a433c8db8c9ad0800d95fa097bf4a0943f8dabb799c10508"
-    sha256 big_sur:        "b0ce9ffdd098ad722941972ee411aad3412d538d46fcb40a625ae1485155c7c5"
-    sha256 x86_64_linux:   "fba7799a44b73efb48a00787c6d16ae53a9a626237cb114bc03905b7d07954db"
+    sha256 arm64_ventura:  "7fcf12fc48f153ec90f5a278a77c3a6681a8c259b2fd550a564468f844274989"
+    sha256 arm64_monterey: "cdf9101871b2743aaac6d017a9d99640455feeaaf783a06394cdfa79246d3789"
+    sha256 arm64_big_sur:  "e72446b5d0002d22ca1709df123b59681c9b129f6e171661dc3d6edd3c8c8078"
+    sha256 ventura:        "9b134bf4aa81fbae12dfe5dbf495cf8760514135df18484a1032deddac4a99f6"
+    sha256 monterey:       "bed90622714330c8107c70add4977dc347c1401efaa098335fcd70d83c85f2a7"
+    sha256 big_sur:        "58a999f937d2fdd97ae2eee656f1ad0aca0cfa56c88e5db84607aef9a68cfc1e"
+    sha256 x86_64_linux:   "2561b22b3da2f977d70c06ff62dec9dd7c3e3bf4f9f894302d33fed266fc6764"
   end
 
   depends_on "cmake" => :build

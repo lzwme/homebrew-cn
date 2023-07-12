@@ -4,16 +4,17 @@ class Fizz < Formula
   url "https://ghproxy.com/https://github.com/facebookincubator/fizz/releases/download/v2023.07.10.00/fizz-v2023.07.10.00.tar.gz"
   sha256 "00e54d68ed1589507bc511cae29b706740cb2c201819186e62399208b58c0dd1"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/facebookincubator/fizz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "dfe7e7b76695aa88466db729e7d9cc78dddc373bc2723f286fc88020cadbc2ee"
-    sha256 cellar: :any,                 arm64_monterey: "8a71eb99786b5c71af0374c5075508e6e4262d550655281ffe4c433e4c4ee11c"
-    sha256 cellar: :any,                 arm64_big_sur:  "e4869701b84b14e7bee3b9f2fb9fcda9d10e93d34ef16fce7ef9ed7bccdda237"
-    sha256 cellar: :any,                 ventura:        "65790cf24cd371f9bbf60cadf613ef6e4ad2fcfd2c4b71b78796cb33b645ae9f"
-    sha256 cellar: :any,                 monterey:       "ee95562ae28d6403739e7346708e61dc1a28971fa8a0b2a701c467c37af233ae"
-    sha256 cellar: :any,                 big_sur:        "0be272337a660982ae5db6bceb9c7db4df26c582c561273d2c6040a813575221"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39854faf6af36a148629ad85c1e5b3f2cbeda2c015900f892730d446e679aea0"
+    sha256 cellar: :any,                 arm64_ventura:  "50c75417e4c283330702b0dfcc17027a2168626cec9f6da293b91563e8c0d8a3"
+    sha256 cellar: :any,                 arm64_monterey: "c3e50a0760ac513253700018cf63bbb6892f761968258d3ba0ab89dd3933b55c"
+    sha256 cellar: :any,                 arm64_big_sur:  "41cabd5a302cc788cac2f8765290d3a1313cf180cf33200290077378b56e40e3"
+    sha256 cellar: :any,                 ventura:        "268e488642ed6495ba163d51328e495f386dbbde85435bf4f2ec9f9575849004"
+    sha256 cellar: :any,                 monterey:       "81f8efe9cc027aa3407132e7dd08413b12667baa2abf8f00876b605a8d450991"
+    sha256 cellar: :any,                 big_sur:        "ae8f28d9fcdc6b4193f997e5c9136905d4d7e498ac4c1c36405dc3bb62737396"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4fba017ae14f8b5339e4f0ecef680f5acfc3457d4b2df2f9884c1d592b698e84"
   end
 
   depends_on "cmake" => :build

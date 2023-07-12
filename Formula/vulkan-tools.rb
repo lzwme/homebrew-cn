@@ -1,19 +1,19 @@
 class VulkanTools < Formula
   desc "Vulkan utilities and tools"
   homepage "https://github.com/KhronosGroup/Vulkan-Tools"
-  url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-Tools/archive/refs/tags/v1.3.250.tar.gz"
-  sha256 "a1cd4f7d8d58bec26efb1e5ea73f82dcf36a9662d55401b81a783071b211a35a"
+  url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-Tools/archive/refs/tags/v1.3.257.tar.gz"
+  sha256 "ed73525c2dd1041a6b680caa5ce1b8936b7f6a200b5715b88fc4b030b110a056"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-Tools.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "35640ca7a274e095c7ba6619010b416755709b0b6ca898fac734018d664cafd3"
-    sha256 cellar: :any,                 arm64_monterey: "55ba17c63cb698844c4c578fff44c5a1270aba177a86b34e8b962dd201fb71a1"
-    sha256 cellar: :any,                 arm64_big_sur:  "1d193b892373f39237cd8d8532e83114de1f7c616418934e8168e1eedc478fb9"
-    sha256 cellar: :any,                 ventura:        "86b90ae78d2ee4fdac851385389e57c3c09c95980473d3d54bea514390d96f04"
-    sha256 cellar: :any,                 monterey:       "bd529be54e7e4f0789b1004ae2dfbd5a18540438ca241bf94f2e8ea05cede9c7"
-    sha256 cellar: :any,                 big_sur:        "e74eff0f4bf7e15e5dee2bf5aa47a58272a79664bcd576d7c13f06454c663b1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54d9e8cb757c28c660399da31e0bd789346b01c8c0d9d29b2ffc67b8b36f5e70"
+    sha256 cellar: :any,                 arm64_ventura:  "779eed13b5dcfbcd97a2a24731bdf7f50559c3e13314020622d36b555e6bab9d"
+    sha256 cellar: :any,                 arm64_monterey: "d2c5aa488bd61736db513452a63ecfd2b33baefb55898007437e4d263efa06e9"
+    sha256 cellar: :any,                 arm64_big_sur:  "1d6b1b1accce7226235f8bb2523eeb05b720754f8a4678201d69f424a4324c78"
+    sha256 cellar: :any,                 ventura:        "cbf283b12bcd083f5b38dedaa5ffc22ca98ccc63fd07b24759c1cf63ff16c22b"
+    sha256 cellar: :any,                 monterey:       "a55cef6650173950ad0eb369600abe209569826a9a510b23c7f4636d53285211"
+    sha256 cellar: :any,                 big_sur:        "d314de759bdff53712cf52f6c1c5bc9f0dd1fccf578e9c8adc6c5c4a3e5c9f85"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0a7eeda60b17a239af1b08a01a1452bb508e793a8270a98b4678d1597b0ed21"
   end
 
   depends_on "cmake" => :build
@@ -54,6 +54,7 @@ class VulkanTools < Formula
       "-DBUILD_ICD=ON",
       "-DBUILD_CUBE=ON",
       "-DBUILD_VULKANINFO=ON",
+      "-DTOOLS_CODEGEN=ON", # custom codegen
       "-DINSTALL_ICD=OFF", # we will manually place it in a nonconflicting location
       "-DGLSLANG_INSTALL_DIR=#{Formula["glslang"].opt_prefix}",
       "-DVULKAN_HEADERS_INSTALL_DIR=#{Formula["vulkan-headers"].opt_prefix}",
@@ -70,7 +71,6 @@ class VulkanTools < Formula
       ]
     end
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
-    system "cmake", "--build", "build", "--target", "VulkanTools_generated_source"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 

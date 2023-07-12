@@ -4,18 +4,17 @@ class Nu < Formula
   url "https://ghproxy.com/https://github.com/programming-nu/nu/archive/v2.3.0.tar.gz"
   sha256 "1a6839c1f45aff10797dd4ce5498edaf2f04c415b3c28cd06a7e0697d6133342"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/programming-nu/nu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "605e950266e241d7249d72c010dbbe2854793d09fe6dda8afc75a73388c0b041"
-    sha256 cellar: :any,                 arm64_monterey: "73458d60272c9b5b96ec050db803e86e6f5886bc900f43fce9a99166f5829bc1"
-    sha256 cellar: :any,                 arm64_big_sur:  "d5d3537f601e6de7a089a83156751a904875f311c8df33a296d76ab82869864d"
-    sha256 cellar: :any,                 ventura:        "22c825818fc61b9d1fb74b991d6883d2104742631fdaad5660e14516cd737548"
-    sha256 cellar: :any,                 monterey:       "a2a1bdb6473b6afd30cde5def27158415fb38f92851b8a252498631f7e2f350d"
-    sha256 cellar: :any,                 big_sur:        "bde3090df08b5cf2a6038aab4b80daf3981fcf2d7cb19653a8bb507eb5a2349a"
-    sha256 cellar: :any,                 catalina:       "4cace319187e0c057a0437dd17f83022e9e5ac20f478cc317fd2be8b2ca8c2ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1413e8674c855798fc973e5f9a00af4575e6fece5427e1f16b8814e40c338cf2"
+    sha256 cellar: :any,                 arm64_ventura:  "cf815c1ba5847de45160a706e76db23dbf584b3003987b7528d20bcc1720d301"
+    sha256 cellar: :any,                 arm64_monterey: "e9f3df2bf0960507463ed9d582f91e5648ee2a9daaf252d611f3379815e8ed16"
+    sha256 cellar: :any,                 arm64_big_sur:  "c05960897782cccd7d69453c37777d2386caa611773eb814dc86386937493e71"
+    sha256 cellar: :any,                 ventura:        "a5d20cf97b4a435a75795683df685277784f8b948775ce0b4e226945c219fa8d"
+    sha256 cellar: :any,                 monterey:       "82cf8151e4119b9fda70823e0da50ba939e9b7a05d2b7754a8debffcaa1b3191"
+    sha256 cellar: :any,                 big_sur:        "8be1c8c433bd41abe5b4224722854478ec6c2663191b2333d440844124ca55ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a3e8170ce08251778835d7f10b6143e523cee66e00679e89ab8912dbc8987a9"
   end
 
   depends_on "pcre"
@@ -47,6 +46,15 @@ class Nu < Formula
   patch do
     url "https://github.com/programming-nu/nu/commit/0a837a407f9e9b8f7861b0dd2736f54c04729642.patch?full_index=1"
     sha256 "6c8567f0c2681f652dc087f6ef4b713bcc598e99729099a910984f9134f6a72c"
+  end
+
+  # Fix missing <readline/history.h> include in objc/NuParser.m
+  # Build failure details: https://github.com/Homebrew/homebrew-core/pull/126905#issuecomment-1487877021
+  # PR ref: https://github.com/programming-nu/nu/pull/103
+  # TODO: Remove if upstream PR is merged and in a release.
+  patch do
+    url "https://github.com/programming-nu/nu/commit/fdd7cfb3eaf4c456a2d8c1406526f02861c3f877.patch?full_index=1"
+    sha256 "d00afd41b68b9f67fd698f0651f38dd9da56517724753f8b4dc6c85d048ff88b"
   end
 
   def install

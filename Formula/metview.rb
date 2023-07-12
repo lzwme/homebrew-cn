@@ -1,11 +1,10 @@
 class Metview < Formula
   desc "Meteorological workstation software"
   homepage "https://metview.readthedocs.io/en/latest/"
-  url "https://confluence.ecmwf.int/download/attachments/51731119/MetviewBundle-2023.4.1-Source.tar.gz"
-  version "5.19.1"
-  sha256 "2cdeeda7579f1465fb6d1f2c3e7424777e34a19f3f72c445874f99b292d49146"
+  url "https://confluence.ecmwf.int/download/attachments/51731119/MetviewBundle-2023.7.0-Source.tar.gz"
+  version "5.19.2"
+  sha256 "93e1721f08baaf280eab30557dbb936433bc02be268a69ef1794f8af11a3d3a5"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url "https://confluence.ecmwf.int/display/METV/The+Metview+Source+Bundle"
@@ -13,13 +12,13 @@ class Metview < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "4ba1eb25cbca847ab62feceab826c0ca7b9f9433c61f949355dc225dfb6aa1c6"
-    sha256 arm64_monterey: "9e76643dbd7d0199b8c4e2568e7ce94b12cbfa9a3704a1a011d3638cbe82710b"
-    sha256 arm64_big_sur:  "afc0f412117beab71d9177a04e31386621ed2a131373df1cd7386ad2152c1670"
-    sha256 ventura:        "f0b8f79b3edc9d046877abe27a9be43250f4f7dbed9f86c1da4508ede0cc8d29"
-    sha256 monterey:       "c8d0cc71b8c7ad96e1e49f2f248e34a093256974fea1473ce83287aface56b7c"
-    sha256 big_sur:        "0cb71fb9770740140c2457876bba26b149bf9c04a31763ff0776f2f64eac74ba"
-    sha256 x86_64_linux:   "f6384b130df24d980f8f80b52970b1159ca2efd4aaae3458d6733ad2130a307b"
+    sha256 arm64_ventura:  "e2a758c49c3c0ce6ae5a190098981c85cc6a1a26261c8888325027085df15216"
+    sha256 arm64_monterey: "c0b364d7d735c408b3433eae844844130ab537d8db7b9f8f0d8388e905043bb7"
+    sha256 arm64_big_sur:  "53801782e96471f5a5802b78e445c5f5596c49f53f47fa92da759a864531d4dd"
+    sha256 ventura:        "dd54825096d772a00a0bfb2af2f4c31d6f6af8c56f895326c92a3f143486e467"
+    sha256 monterey:       "d9f9730bf566946f898039143db134356c0e10d3897bfa548b2d82528338c1d6"
+    sha256 big_sur:        "e2958db4b5dfec4387f360d0c4efb4125777a2b8cb52a8f2eb3829a4b1ac7a0e"
+    sha256 x86_64_linux:   "3e0f4b0233f991448acb5aefcc86110cf2fbad5a3cbab0e8dc5c0c4a624e3119"
   end
 
   depends_on "cmake" => :build

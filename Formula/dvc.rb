@@ -3,18 +3,18 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/18/a2/06fd2bc059e9112e5f0a410b04cfef4606d464fa14acdf88a9ddc046f897/dvc-3.5.0.tar.gz"
-  sha256 "06a73b529235f1bd9fc0d7d268496259d57f4a852d3df44b4cec4c443b2ca6fe"
+  url "https://files.pythonhosted.org/packages/28/8b/bf0f5949f8aeb01e8274972e0c7796ca899cdaec66efafb92ace80698599/dvc-3.5.1.tar.gz"
+  sha256 "5e2298ed8c4f4943ba25aced5cfa0aa0405847c8316ab954ca627b8be1739a00"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "17402b5caac2477f4e8418a129aed4a973abf3f0301a63769af640aba3b9a81f"
-    sha256 cellar: :any,                 arm64_monterey: "2e4f596c1043a33e4481f00bb2d92e9a3256c2679017b282a6c697f169294a8a"
-    sha256 cellar: :any,                 arm64_big_sur:  "ed4c697b186c3d195203d1e40e6b9cc145b1bc46fea8bd04547e1a931395fcdc"
-    sha256 cellar: :any,                 ventura:        "c18be84a4d51a2291eca288658e496b001c8c11224fa8afa5a4bb253892b7e87"
-    sha256 cellar: :any,                 monterey:       "c3cf480f0780985f9f0f31880fef3e812fe72b363cfd61f109d06c2482f1da30"
-    sha256 cellar: :any,                 big_sur:        "273c7a0e12e3ddc8db3e79a2cf3b12d56898c3af9c20b015edc89bc77dc961f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b1ff0aba86abb832f47a913fd7d0c346012b51103a588a00a94c8590461f0dc"
+    sha256 cellar: :any,                 arm64_ventura:  "e5e8d78eb58d88b8304bd02f492fd802c1d3ac4208a9c6b906fe140352d82098"
+    sha256 cellar: :any,                 arm64_monterey: "2b0cc671ddff7f5616e70c0652662f1c2f4dc87ada3d3545688a8c48db33774c"
+    sha256 cellar: :any,                 arm64_big_sur:  "c8bb9aefc745f597651f5e858a1d4135b53e5c8215fd6fb715107c485c269973"
+    sha256 cellar: :any,                 ventura:        "bfa269a2dcbc5bdd5744ef07a35061a12b0f84ea69ba11dfe0bfa362b99aac58"
+    sha256 cellar: :any,                 monterey:       "a80edbc9eae352bef30e1cf57c37cb75df3f7948b7aeb273288e894f29692b9d"
+    sha256 cellar: :any,                 big_sur:        "ef234a7e1f572596effc6da5bcdaa65158ed6b492441a1ec7b6c428b0f26a882"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e833d0395e5ab9260986ca70e0f8eb31556c977f36f5ef850d55325be78fac46"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -124,8 +124,8 @@ class Dvc < Formula
   end
 
   resource "azure-core" do
-    url "https://files.pythonhosted.org/packages/31/5c/9da79ae1d12571a0e268f0b813d9d19e9419339f7fbe2232b556937b4358/azure-core-1.27.1.zip"
-    sha256 "5975c20808fa388243f01a8b79021bfbe114f503a27c543f002c5fc8bbdd73dd"
+    url "https://files.pythonhosted.org/packages/fd/51/0ee0a2844712f54117b3ee4853c3d209ba37641f0c587be22a993990989e/azure-core-1.28.0.zip"
+    sha256 "e9eefc66fc1fde56dab6f04d4e5d12c60754d5a9fa49bdcfd8534fc96ed936bd"
   end
 
   resource "azure-datalake-store" do
@@ -369,8 +369,8 @@ class Dvc < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/5f/11/2b0f60686dbda49028cec8c66bd18a5e82c96d92eef4bc34961e35bb3762/GitPython-3.1.31.tar.gz"
-    sha256 "8ce3bcf69adfdf7c7d503e78fd3b1c492af782d58893b650adb2ac8912ddd573"
+    url "https://files.pythonhosted.org/packages/87/56/6dcdfde2f3a747988d1693100224fb88fc1d3bbcb3f18377b2a3ef53a70a/GitPython-3.1.32.tar.gz"
+    sha256 "8d9b8cb1e80b9735e8717c9362079d3ce4c6e5ddeebedd0361b228c3a67a62f6"
   end
 
   resource "google-api-core" do

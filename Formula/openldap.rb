@@ -1,12 +1,11 @@
 class Openldap < Formula
   desc "Open source suite of directory software"
   homepage "https://www.openldap.org/software/"
-  url "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.4.tgz"
-  mirror "http://fresh-center.net/linux/misc/openldap-2.6.4.tgz"
-  mirror "http://fresh-center.net/linux/misc/legacy/openldap-2.6.4.tgz"
-  sha256 "d51704e50178430c06cf3d8aa174da66badf559747a47d920bb54b2d4aa40991"
+  url "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.5.tgz"
+  mirror "http://fresh-center.net/linux/misc/openldap-2.6.5.tgz"
+  mirror "http://fresh-center.net/linux/misc/legacy/openldap-2.6.5.tgz"
+  sha256 "2e27a8d4f4c2af8fe840b573271c20aa163e24987f9765214644290f5beb38d9"
   license "OLDAP-2.8"
-  revision 1
 
   livecheck do
     url "https://www.openldap.org/software/download/OpenLDAP/openldap-release/"
@@ -14,13 +13,13 @@ class Openldap < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "c3f63569a2f1b69f309900e1121203bb8d9dcd4ce74c919fe866bcbe501b03c4"
-    sha256 arm64_monterey: "379aad8019a12a749d42b373a58dec45aec5f1dfb7263ef741f10ab4f9e20d38"
-    sha256 arm64_big_sur:  "1d348d5dd41704b97454d209792841f9734345bce7c4e3c0c3a9c07cd7216071"
-    sha256 ventura:        "7e93a3f5357cf20fd71d98611a68a1225303705f61882be3ab04386deae30495"
-    sha256 monterey:       "b5eddf6a15187aa0a289e50f75b3448fabd37790d7b02b75bde690ad0a314114"
-    sha256 big_sur:        "e05a924272d44ac5a23b47188a8082f0622e0baa9819756e4dc9f750ac84e6d4"
-    sha256 x86_64_linux:   "2ddc12af9582a9c13100d43e4de58dda1fa462ac333f85261952f218ed07cae7"
+    sha256 arm64_ventura:  "2e42d33c7c181f771c0107c47072dc798ccc9ebc05d1959d39c84da734034d1a"
+    sha256 arm64_monterey: "7e76d58caeacc55e79d58a9daded5f6262832011fbb96b0c37e0c8cf9f4a2b28"
+    sha256 arm64_big_sur:  "8367df08c12c6599732eadf90005caa0811b3f302267600ff991fc58075080f5"
+    sha256 ventura:        "2ee42119fb5232f867ac2472f7054afda31b1bbc5d72909a43fd3e3935908839"
+    sha256 monterey:       "05be2243b1dc4d19ecd8fd342b2585d200d13419fd3ecdf9d311ab8098c96d7a"
+    sha256 big_sur:        "bf6ab39a45e0d9392f927c8fd935f94968edbf7be1385afb1ab44d4cac3bc5d9"
+    sha256 x86_64_linux:   "acc12b445557a8b4c5872e7fae4653e36ccc74b618c9bd82eb40f28c7618e0b6"
   end
 
   keg_only :provided_by_macos

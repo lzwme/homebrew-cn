@@ -3,19 +3,19 @@ class Cookiecutter < Formula
 
   desc "Utility that creates projects from templates"
   homepage "https://github.com/cookiecutter/cookiecutter"
-  url "https://files.pythonhosted.org/packages/4f/19/6a371bbc955dc12dad03f79108c8fe8c6ae90c2bc1fe772124aad25b160c/cookiecutter-2.2.2.tar.gz"
-  sha256 "3b475d17573a7785b4a22fab693be249840e235a92c93c0fa088b39e9193f194"
+  url "https://files.pythonhosted.org/packages/9d/84/b97f68b925cab6af93302af4e4536e211fd7f9c931382fc776f08e853158/cookiecutter-2.2.3.tar.gz"
+  sha256 "d56f18c0c01c09804450b501ac43e8f6104cfa7cdd93610359c68b1ba9fd84d2"
   license "BSD-3-Clause"
   head "https://github.com/cookiecutter/cookiecutter.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9feeb3a3feb6690479d76f4a4bfd96081ceb01056ed2948f57670806bf29bf4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6412b2b050ee044d2d4495d7f82eabbd540b2bb4e55227d0f1be93d655fad276"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "00bc6f1326d60f8a13ca509303af48238201b7aa5fc5a6b2555506fb24c45c71"
-    sha256 cellar: :any_skip_relocation, ventura:        "90fbdd31a4835af98c6b8e67b2c4eb6e5eaaca7b845cf5e99fe5be6e55d996ae"
-    sha256 cellar: :any_skip_relocation, monterey:       "0799478a0d55cfafe359026bf16b7a47b8f32f15269f5f5513f297fc07f45180"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bcdf28913bd0f80bcfe9e4e9404db5ed00679b014ce556047543cc87bc9c597d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "142196830d71265b8bdc49689e913450d6d3f38fd900e32a7a3c185f537065e0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b9f9c74a8cdc960f18fd984a2975f690d3c2fef897c309c0bef1466b7ef2533a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "da90035fce3f81f22a5ed6c30b20303727270c87e8bf45c097329ebab704f8b3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9e7ef2637966e1a45bdfb3395376ead350a46012d00838ab586ecc4ded56f179"
+    sha256 cellar: :any_skip_relocation, ventura:        "2646dd6918b1920d61a2d7c290398867b78fed592697b89f7821f3d580d7a5c0"
+    sha256 cellar: :any_skip_relocation, monterey:       "d7e512c2c52840054c90e48226997cb32fe2c6e37aeb3e59b2647b3446cf24d4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "90108e4d7a904b953a210921f7b933c613dd6e11e8c3d9fc82c001d945e2e284"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "feea462db40cb93ac9fba74274fdfa6c143fed8c8501a34b67e068e19ec92b97"
   end
 
   depends_on "python@3.11"

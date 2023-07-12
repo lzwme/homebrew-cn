@@ -3,18 +3,18 @@ require "language/node"
 class Mailsy < Formula
   desc "Quickly generate a temporary email address"
   homepage "https://github.com/BalliAsghar/Mailsy"
-  url "https://registry.npmjs.org/mailsy/-/mailsy-4.0.0.tgz"
-  sha256 "55b55e5e631005b451c320cb2a689e5b1c2347422b8696ea847f691cdef0a500"
+  url "https://registry.npmjs.org/mailsy/-/mailsy-4.0.1.tgz"
+  sha256 "de0f20fa8ea5594300a9edc07126d375105f270e3572d185ed30e063a2d1adac"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2514b6b84c2c0d5a632b316c98af3111c96731f92fb6aadf8e10fbebc085f899"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2514b6b84c2c0d5a632b316c98af3111c96731f92fb6aadf8e10fbebc085f899"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2514b6b84c2c0d5a632b316c98af3111c96731f92fb6aadf8e10fbebc085f899"
-    sha256 cellar: :any_skip_relocation, ventura:        "e7eaa1cbb7ee39d0bcd8fcfb4c7ace25c7cc4b12c3eebaa4716b44f6054991fd"
-    sha256 cellar: :any_skip_relocation, monterey:       "e7eaa1cbb7ee39d0bcd8fcfb4c7ace25c7cc4b12c3eebaa4716b44f6054991fd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e7eaa1cbb7ee39d0bcd8fcfb4c7ace25c7cc4b12c3eebaa4716b44f6054991fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2514b6b84c2c0d5a632b316c98af3111c96731f92fb6aadf8e10fbebc085f899"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c801001ede7a7404a699e81888f6ecde9dd5dc0ffbbc3bdb3fc7024adc88228"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5c801001ede7a7404a699e81888f6ecde9dd5dc0ffbbc3bdb3fc7024adc88228"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5c801001ede7a7404a699e81888f6ecde9dd5dc0ffbbc3bdb3fc7024adc88228"
+    sha256 cellar: :any_skip_relocation, ventura:        "d35b5c9608016e132808129f3944b6a21bd4ee669eec2145ccbf68bfeab12cd4"
+    sha256 cellar: :any_skip_relocation, monterey:       "d35b5c9608016e132808129f3944b6a21bd4ee669eec2145ccbf68bfeab12cd4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d35b5c9608016e132808129f3944b6a21bd4ee669eec2145ccbf68bfeab12cd4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c801001ede7a7404a699e81888f6ecde9dd5dc0ffbbc3bdb3fc7024adc88228"
   end
 
   depends_on "node"

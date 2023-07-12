@@ -5,7 +5,7 @@ class Git < Formula
   url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.41.0.tar.xz"
   sha256 "e748bafd424cfe80b212cbc6f1bbccc3a47d4862fb1eb7988877750478568040"
   license "GPL-2.0-only"
-  revision 1
+  revision 2
   head "https://github.com/git/git.git", branch: "master"
 
   livecheck do
@@ -14,13 +14,13 @@ class Git < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "96443562c1f0d820f159fbe897d4e1b8a83a26585a73e74e742c0f9270ff3cb6"
-    sha256 arm64_monterey: "147ebdd97e787a2335a5978a8bcda6a85b64d2fae67aec9446b997cdcae85949"
-    sha256 arm64_big_sur:  "389bf22054ba2eec09b2f8acd705f67f24343cfdee8ad7e8a75be5be647e37fd"
-    sha256 ventura:        "6b23e127ff57cb08b6e610bf9805cc5ba8169a3ff55c8cc79bb00e3aa0507856"
-    sha256 monterey:       "508c29a6ad703a30c60fd79f077ca67d5e358d10b6c575da65cd31bf3dab47ec"
-    sha256 big_sur:        "6b821e82625bc1402818a707cd4813af3e9264875c3bc828f096b67fcd800a82"
-    sha256 x86_64_linux:   "a259c7996de4fc4d18a5842a2b40728f8a8911fe39b9a9fb425ef7b2b1d6d73e"
+    sha256 arm64_ventura:  "da6d23d518ee5148c4c1308406b4eabba0b2c5ba1f653d63e9fe8f56de59bc29"
+    sha256 arm64_monterey: "7682a7436bd8e9889170b09b30b999a7cb082e83235c124f32bd5ae7e59273f6"
+    sha256 arm64_big_sur:  "4b278fea7ff2d4cc450f62b5d1f6de05dfbb4892ed8ecc226e547e45390c0aed"
+    sha256 ventura:        "623bea9a6c510f6c36d718f656957c93a65a2a8b81b77cfc02c622bc41f596f7"
+    sha256 monterey:       "ecbadeb2cbd9e2752d656327fc69f2f3144add145c24f4edb6bea9f96aac0376"
+    sha256 big_sur:        "016ea10f78c7a5d90c230beea4df74116280f4dddae9ebdf311cca5121ab563a"
+    sha256 x86_64_linux:   "59a972b97c2396da07630256954731319b7faeb28ac7de5b791af5213a7a48d8"
   end
 
   depends_on "gettext"
@@ -54,7 +54,7 @@ class Git < Formula
     # If these things are installed, tell Git build system not to use them
     ENV["NO_FINK"] = "1"
     ENV["NO_DARWIN_PORTS"] = "1"
-    ENV["PYTHON_PATH"] = which("python")
+    ENV["PYTHON_PATH"] = which("python3")
     ENV["PERL_PATH"] = which("perl")
     ENV["USE_LIBPCRE2"] = "1"
     ENV["INSTALL_SYMLINKS"] = "1"

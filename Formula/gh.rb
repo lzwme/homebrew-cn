@@ -1,8 +1,8 @@
 class Gh < Formula
   desc "GitHub command-line tool"
   homepage "https://github.com/cli/cli"
-  url "https://ghproxy.com/https://github.com/cli/cli/archive/v2.31.0.tar.gz"
-  sha256 "9a9896fa80ecfec640cf5d93da830713150f4b44e0db142c958bfa36d09d2c03"
+  url "https://ghproxy.com/https://github.com/cli/cli/archive/v2.32.0.tar.gz"
+  sha256 "d6c332518d38f4b73fef37f3970ef91f05769f4a2ccf84e660a39d2138073cba"
   license "MIT"
 
   head "https://github.com/cli/cli.git", branch: "trunk"
@@ -13,13 +13,13 @@ class Gh < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0873700f81cdc1f5291df177bbf8517197d0eadc348f63e5f095f09746e9b4a5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0873700f81cdc1f5291df177bbf8517197d0eadc348f63e5f095f09746e9b4a5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0873700f81cdc1f5291df177bbf8517197d0eadc348f63e5f095f09746e9b4a5"
-    sha256 cellar: :any_skip_relocation, ventura:        "ce0a677fcb78e368cdb856178538e4cb3ac91d2a68e0702e806d2cb11f9d3350"
-    sha256 cellar: :any_skip_relocation, monterey:       "ce0a677fcb78e368cdb856178538e4cb3ac91d2a68e0702e806d2cb11f9d3350"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ce0a677fcb78e368cdb856178538e4cb3ac91d2a68e0702e806d2cb11f9d3350"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4b9deabd779d1aaf5519e93030c4ab50feb713f3333a1fef9ee82ffe9192642"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "024f6bb8677ee250a3e8c3c3f3e9b8d7c10ac30c23ea4a85e73c0a4c705a0d95"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "024f6bb8677ee250a3e8c3c3f3e9b8d7c10ac30c23ea4a85e73c0a4c705a0d95"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "024f6bb8677ee250a3e8c3c3f3e9b8d7c10ac30c23ea4a85e73c0a4c705a0d95"
+    sha256 cellar: :any_skip_relocation, ventura:        "6f42c4c66d68ca1bf3c0fad542ff092ee9cdf3a9e43d743125eeec63d1afc01f"
+    sha256 cellar: :any_skip_relocation, monterey:       "6f42c4c66d68ca1bf3c0fad542ff092ee9cdf3a9e43d743125eeec63d1afc01f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6f42c4c66d68ca1bf3c0fad542ff092ee9cdf3a9e43d743125eeec63d1afc01f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29e28fa5e58200be7ec206ded0b7a4f3b0296fb0a14da2c41c8b3e2216366617"
   end
 
   depends_on "go" => :build

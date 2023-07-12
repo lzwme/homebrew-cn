@@ -1,19 +1,19 @@
 class UutilsFindutils < Formula
   desc "Cross-platform Rust rewrite of the GNU findutils"
   homepage "https://github.com/uutils/findutils"
-  url "https://ghproxy.com/https://github.com/uutils/findutils/archive/refs/tags/0.4.0.tar.gz"
-  sha256 "080d01a7cd27f7afc342c3d6355ea1eb39ec2558c135744201f2064cffe4225d"
+  url "https://ghproxy.com/https://github.com/uutils/findutils/archive/refs/tags/0.4.1.tar.gz"
+  sha256 "575cbd0be440c25ba5d8a65020d5076a07c57ecc07265f33d41d95050a3e999e"
   license "MIT"
   head "https://github.com/uutils/findutils.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "35bd72e9f6b8b093d202e93087952392888ee0deb214fb3baa128f5e144e4ed9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3929e14c3bc2f705b57b3d1b8373520d03fec4716a6f866bdb492aa92093ee4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "64b653ea337a20d495af2d73c814580f62e36d37c2f254c97bb69d05f9498f73"
-    sha256 cellar: :any_skip_relocation, ventura:        "6bc17ee18be1de4f46fadc17a35b2bf75df068a03b7b7ab3cf719bcfdaf4be3a"
-    sha256 cellar: :any_skip_relocation, monterey:       "c911271402ebc0148bac30e332325e1d3a50379fc5afee3364262a3aff275c99"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3a0cc1f20bfc100ad910a3eb5a7470bae90ede38d6ee1222e2622341df9166fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a093eeb22012bc45e4dda4d04bed07c559f4cdb60bad70502f65e9ac65d32090"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e86de65d5339c76c3780f5be28ad620588e23c76bd27a36833568492262c5954"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1eed0fd36598023b1dfaa39fd486304a57b7fedfa886d57babd8ab93c629a239"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a8cf9ceb3b93e17da5782b55e461bff061207e95f7878d4ed0a8aa4cfd4e3a48"
+    sha256 cellar: :any_skip_relocation, ventura:        "3e1cc8d6abdc9c4fa35413b60259e95bd7acad5b89399288e9adbee84f93a4d9"
+    sha256 cellar: :any_skip_relocation, monterey:       "d02af318757bdd30955a969130a676f7313bb1f68b84639f9e62cb20e84623e0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bd344393bf336bbd6b6c48d595570e2904a83d8ca9d1bee853be3d68f8340bd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31432f27d81bb1ce83901e3ee13cfae2d02c8e25639d708756df19c114093f7d"
   end
 
   depends_on "rust" => :build

@@ -12,17 +12,20 @@ class DockerCompletion < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5c3045a8ba9f07268bf28f723e2612a34acfefcb6a2d24cb2be4769f832895e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5c3045a8ba9f07268bf28f723e2612a34acfefcb6a2d24cb2be4769f832895e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a5c3045a8ba9f07268bf28f723e2612a34acfefcb6a2d24cb2be4769f832895e"
-    sha256 cellar: :any_skip_relocation, ventura:        "a5c3045a8ba9f07268bf28f723e2612a34acfefcb6a2d24cb2be4769f832895e"
-    sha256 cellar: :any_skip_relocation, monterey:       "a5c3045a8ba9f07268bf28f723e2612a34acfefcb6a2d24cb2be4769f832895e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a5c3045a8ba9f07268bf28f723e2612a34acfefcb6a2d24cb2be4769f832895e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c0bbb6a169fb6c51779930dd7fa725609155da8dd427ea1c0e7008fd2c132a2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "632bdfc758fb664784f80ae5e63037220352d5316b9b4bf9c041ef745b01add8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "632bdfc758fb664784f80ae5e63037220352d5316b9b4bf9c041ef745b01add8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "632bdfc758fb664784f80ae5e63037220352d5316b9b4bf9c041ef745b01add8"
+    sha256 cellar: :any_skip_relocation, ventura:        "632bdfc758fb664784f80ae5e63037220352d5316b9b4bf9c041ef745b01add8"
+    sha256 cellar: :any_skip_relocation, monterey:       "632bdfc758fb664784f80ae5e63037220352d5316b9b4bf9c041ef745b01add8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "632bdfc758fb664784f80ae5e63037220352d5316b9b4bf9c041ef745b01add8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d4c8296f2862aca633c37108dbc73f8143b35a225b75ab0935ef5f882f9cc33"
   end
 
-  conflicts_with "docker",
-    because: "docker already includes these completion scripts"
+  # These used to also be provided by the `docker` formula.
+  link_overwrite "etc/bash_completion.d/docker"
+  link_overwrite "share/fish/vendor_completions.d/docker.fish"
+  link_overwrite "share/zsh/site-functions/_docker"
 
   def install
     bash_completion.install "contrib/completion/bash/docker"

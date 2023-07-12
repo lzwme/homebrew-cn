@@ -4,12 +4,12 @@ class Sratoolkit < Formula
   license all_of: [:public_domain, "GPL-3.0-or-later", "MIT"]
 
   stable do
-    url "https://ghproxy.com/https://github.com/ncbi/sra-tools/archive/refs/tags/3.0.5.tar.gz"
-    sha256 "6dca9889ca9cfa83e9ce1c39bf7ae5654576fc79c4f608e902272a49573a05e0"
+    url "https://ghproxy.com/https://github.com/ncbi/sra-tools/archive/refs/tags/3.0.6.tar.gz"
+    sha256 "9fecfd819ee9beaf8a1d3e4b76a5d49e747bc064525b40416e0730a168986348"
 
     resource "ncbi-vdb" do
-      url "https://ghproxy.com/https://github.com/ncbi/ncbi-vdb/archive/refs/tags/3.0.5.tar.gz"
-      sha256 "a32672d7f76507a77ceb29f023855eaf5bf4d150ddd21b55c013b499f3b83735"
+      url "https://ghproxy.com/https://github.com/ncbi/ncbi-vdb/archive/refs/tags/3.0.6.tar.gz"
+      sha256 "4b6f93336bf8664fdcc151d41ea0793f0b0f88cfcb7c2aa049f162a72f905223"
     end
   end
 
@@ -19,13 +19,13 @@ class Sratoolkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e39ce821d99c17565a552de1404ed7873b8a02598e8f1695aaa7c82a805400b2"
-    sha256 cellar: :any,                 arm64_monterey: "7825264f83e3e5a6f67cf30b12407b817bf45e87f663a2d9d07df8e6c3767266"
-    sha256 cellar: :any,                 arm64_big_sur:  "c85b2d9c44e5ddd29a89337dac54c3cf56de6acf0de1d090f09335bb5f759bf6"
-    sha256 cellar: :any,                 ventura:        "9da5e99482d0124bbe7c0224292eadcba35ac50c4706878d1dd8e23cf701d232"
-    sha256 cellar: :any,                 monterey:       "31c110af27ab2205771a2655a80cd683e2f031c4cb24e8d9b5316270fa53cd2c"
-    sha256 cellar: :any,                 big_sur:        "7be4aa943eb98121a7d74db06a32814913fe24967f03e91b99ac126fa95bc119"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9bd79275259261f89478164f78849d996a086ae39c075d2a0dce05032f8fb5c"
+    sha256 cellar: :any,                 arm64_ventura:  "b92a302781a442d304744e73a3dfcc430b28cd98345cdf7804a8826cd57958cf"
+    sha256 cellar: :any,                 arm64_monterey: "d588b8270bb3ffbca8384800815e3e0f8b160f234a2f0b0a0d4948f1fd496ed9"
+    sha256 cellar: :any,                 arm64_big_sur:  "c57ea65e2950af90ad91049d7ef129fb969e08024b8a5267550f77e8db17c48e"
+    sha256 cellar: :any,                 ventura:        "163f0676075d90dfb25ab1a540174a720f0528127d0a7c6709d033f71ad01c16"
+    sha256 cellar: :any,                 monterey:       "1d318aa1a7673d0e72d2b1f7655128f09cd7122dc52c6f46f06b874d723e97d2"
+    sha256 cellar: :any,                 big_sur:        "daaf2761b2728f623968bae056e352c8d0e7eab533ae67f57a56806c0d47d965"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fbe372d7886b54cb39c0376c50b9018aa3b936fd074d88280ea0fb4c68af8f7c"
   end
 
   head do

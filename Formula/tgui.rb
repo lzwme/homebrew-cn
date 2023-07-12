@@ -4,23 +4,23 @@ class Tgui < Formula
   url "https://ghproxy.com/https://github.com/texus/TGUI/archive/v0.9.5.tar.gz"
   sha256 "819865bf13661050161bce1e1ad68530a1f234becd3358c96d8701ea4e76bcc1"
   license "Zlib"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "58265fe49f8d2e4aeb31469b53775f020c2d335ccb0499ac423a612b57312328"
-    sha256 cellar: :any,                 arm64_monterey: "b9df36b637acb021e6a48820d3bfc8fd8921ce2bc6e1098cbfe0020481bafdb3"
-    sha256 cellar: :any,                 arm64_big_sur:  "fc9b9d68d0eb79c88f04a936c4e2bb28c76ecf70aeadb8eb4d0397f15bf03337"
-    sha256 cellar: :any,                 ventura:        "b3563f9ab78cf4b330bc0e3a2c9b3484c9acdcceb44b18864a91325f90e8e4e2"
-    sha256 cellar: :any,                 monterey:       "ae814b6976689b902356e4aad9ded09431ca45ba37ab33283a4c2156591e61d9"
-    sha256 cellar: :any,                 big_sur:        "4295dbcf07ac7e2b2c3253823ea1743252db212ee81f5feddbf8ff1c14183ff1"
-    sha256 cellar: :any,                 catalina:       "bf8e0820e7909e78a7c758ba3fc745dd2b3dd1e226451a855d90b642fdf26b5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4bce36f7002bb1e2c81842cd7c683d3a5678b22f18ab8ab6636e97836ae4270d"
+    sha256 cellar: :any,                 arm64_ventura:  "b760089e9901e780346faeda6d680ebc3d752f54a6a46d4c782872f08ce5c9fb"
+    sha256 cellar: :any,                 arm64_monterey: "8a2456389f6a9a9ca380736525d059ac91aa46eb2d4fc15484a25347a9df6c6f"
+    sha256 cellar: :any,                 arm64_big_sur:  "895ca27d73fbefeb0a8aa3549544a5ffd37bf12b3e644614674621201b40f321"
+    sha256 cellar: :any,                 ventura:        "2c405311a5faf7e09c44220a4d597f51814fd94473a19eacb686d8a45fc55afb"
+    sha256 cellar: :any,                 monterey:       "d283a951bca2b60726ea2b3eaf6e4ee7be0454f577402c1db8b86d6624a0bd8d"
+    sha256 cellar: :any,                 big_sur:        "a0576cdb65a60167ae19063c933983e7fae19bb1f98307f5e790fe885dfbe429"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f36bca7449191ceb14c4ff91f34e34712ed8d9128eb0fe40abaa0d3bea69e944"
   end
 
   depends_on "cmake" => :build
   depends_on "sfml"
 
   def install
-    args = std_cmake_args + %W[
+    args = %W[
       -DTGUI_MISC_INSTALL_PREFIX=#{pkgshare}
       -DTGUI_BUILD_FRAMEWORK=FALSE
       -DTGUI_BUILD_EXAMPLES=TRUE
@@ -29,8 +29,9 @@ class Tgui < Formula
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
 
-    system "cmake", ".", *args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -43,7 +44,7 @@ class Tgui < Formula
         return 0;
       }
     EOS
-    system ENV.cxx, "test.cpp", "-std=c++1y", "-I#{include}",
+    system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}",
       "-L#{lib}", "-L#{Formula["sfml"].opt_lib}",
       "-ltgui", "-lsfml-graphics", "-lsfml-system", "-lsfml-window",
       "-o", "test"

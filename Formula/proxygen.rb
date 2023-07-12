@@ -4,16 +4,17 @@ class Proxygen < Formula
   url "https://ghproxy.com/https://github.com/facebook/proxygen/releases/download/v2023.07.10.00/proxygen-v2023.07.10.00.tar.gz"
   sha256 "1adabe4b04a3d13d21cf1f4ef999a8926eea9ddbbd6d32e0dd5273d3d5064ad1"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/facebook/proxygen.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d98f9c74a43410f047b7111e09a7a796655582c874ebb469add62d1b3f29086b"
-    sha256 cellar: :any,                 arm64_monterey: "a6a84306f9225942066f12e1a2a446859615a5ef34a005de38ef323be06c89ed"
-    sha256 cellar: :any,                 arm64_big_sur:  "4f74ee8603495e221cb99d194248556562d9bd8c4c389f46a75e95ee6b209738"
-    sha256 cellar: :any,                 ventura:        "887f8d3f9e8b0875cb4c9683e9d7af3edf47c74cc8b2e5e294d49f789f4445ac"
-    sha256 cellar: :any,                 monterey:       "8658f3a552302a0cb05ddfe014364b2db9353bc49a6daa95fd7cc5885aac37dd"
-    sha256 cellar: :any,                 big_sur:        "e2146aa3f88344ce248491cc73f995b87f659ba6c565a50a9405fd1705ac6e22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d58fc28bd48d9a5ba2d0bb4c1fdfaca9d0ecd212a4280189091ddcd8e38ecdee"
+    sha256 cellar: :any,                 arm64_ventura:  "311ee29c9d0709670285f5f589a7da6deaacc8e98da93cb76981c348b0b0e755"
+    sha256 cellar: :any,                 arm64_monterey: "2c2d6c2deeb29c3569757ba456bf4bcf2a2112d2ab85954078203898c3c9e3c3"
+    sha256 cellar: :any,                 arm64_big_sur:  "c01bc64db3a486c503d5a67378ec471a2b0e22211b7dee595a18ed8a44a161da"
+    sha256 cellar: :any,                 ventura:        "3476e5c22aeb687c39f19e56f1d1d7e32d28bcd5bc6c931ee011b968d332ec47"
+    sha256 cellar: :any,                 monterey:       "7548667a47f3efb9cab6fab8d81cbe62d2f961590e748c5bc01113b9958d8091"
+    sha256 cellar: :any,                 big_sur:        "6026466b43493e497b0c6383e5e8a82b7cc986bd7dbf562d16fc47fd1eaf2ead"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f3658ea2316376b4be6222f45a072eaa46cf1e5232aa65fb74cceeb0eb4f8bd"
   end
 
   depends_on "cmake" => :build
