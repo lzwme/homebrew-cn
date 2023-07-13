@@ -21,10 +21,7 @@ class Coursier < Formula
     chmod 0755, libexec/"bin/coursier.jar"
     (bin/"coursier").write_env_script libexec/"bin/coursier.jar", Language::Java.overridable_java_home_env
 
-    generate_completions_from_executable("bash", "#{bin}/coursier", "completions", "bash",
-                                         shell_parameter_format: :none, shells: [:bash])
-    generate_completions_from_executable("bash", "#{bin}/coursier", "completions", "zsh",
-                                         shell_parameter_format: :none, shells: [:zsh])
+    generate_completions_from_executable("bash", bin/"coursier", "completions", shells: [:bash, :zsh])
   end
 
   test do

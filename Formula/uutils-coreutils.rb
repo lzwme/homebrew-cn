@@ -7,13 +7,14 @@ class UutilsCoreutils < Formula
   head "https://github.com/uutils/coreutils.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "efe6fd0d663fb0f96d211a2fdd2a8c4ed2e3198e70004e10757d347206d8970c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b1008605d10b3941f62ad431c0fc0f964417f02246c8413b92688b2b8a01b7d5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ad1d0cdaf961b46e226bbec997c10ce0d6381598992ad1ac728f70964a5e23e0"
-    sha256 cellar: :any_skip_relocation, ventura:        "42e645f78246eb81929ca8a50c3afe32042edfc8f22665cbcefecf3e0ce9fccc"
-    sha256 cellar: :any_skip_relocation, monterey:       "3fcb517b80adc3343fd0eb24216932aa6cb786dd2752f2926ba35a183d143c66"
-    sha256 cellar: :any_skip_relocation, big_sur:        "77f266b576808d9c88b77bf588d5a706edb376f28b2ec69b1f779f5e6eedfeba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17d4d1edd7449e5219d18284e755158b99d860ac14b4c840b1ed5b6add7dbac7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bf3b88600562638f4a11016b1e504664238b62958b37c528b9948ea5359b1d0a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "52bc0e887bd9e0c5e5959de85ba29cd4068861bc6e00cd1b986c81412e0d8d7a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "43c14a34f7d862a4f3cba0abbaaa112eced5bed0a87540eaee3f6ec69d361320"
+    sha256 cellar: :any_skip_relocation, ventura:        "fa587a65789ab3d13fd7cd86d174e013240224066abbd264eae9b977e27e5754"
+    sha256 cellar: :any_skip_relocation, monterey:       "4e56ee311116f8fa35244adb5c6b34677c0d10f84196e8b00785464e07036e9c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "15f62abb16eeb8d718c7557c2f5f9256703b68eb8087d4dde59b755b85145cbe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e24b78cd9f796869b0a4108d00985de7c07faf53cef04be4efa7d034ecdf3d1b"
   end
 
   depends_on "make" => :build
@@ -29,9 +30,8 @@ class UutilsCoreutils < Formula
   def install
     man1.mkpath
 
-    ENV.prepend_path "PATH", Formula["make"].opt_libexec/"gnubin"
-
-    system "make", "install",
+    # Call `make` as `gmake` to use Homebrew `make`.
+    system "gmake", "install",
            "PROG_PREFIX=u",
            "PREFIX=#{prefix}",
            "SPHINXBUILD=#{Formula["sphinx-doc"].opt_bin}/sphinx-build"

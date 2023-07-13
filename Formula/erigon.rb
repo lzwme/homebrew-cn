@@ -23,7 +23,6 @@ class Erigon < Formula
 
   depends_on "gcc" => :build
   depends_on "go" => :build
-  depends_on "make" => :build
 
   conflicts_with "ethereum", because: "both install `evm` binaries"
 

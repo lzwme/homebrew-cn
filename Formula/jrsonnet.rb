@@ -26,16 +26,8 @@ class Jrsonnet < Formula
   depends_on "rust" => :build
 
   def install
-    cd "cmds/jrsonnet" do
-      system "cargo", "install", *std_cargo_args
-    end
-
-    generate_completions_from_executable(bin/"jrsonnet", "--generate", "bash", "-",
-                                         shells: [:bash], shell_parameter_format: :none)
-    generate_completions_from_executable(bin/"jrsonnet", "--generate", "zsh", "-",
-                                         shells: [:zsh], shell_parameter_format: :none)
-    generate_completions_from_executable(bin/"jrsonnet", "--generate", "fish", "-",
-                                         shells: [:fish], shell_parameter_format: :none)
+    system "cargo", "install", *std_cargo_args(path: "cmds/jrsonnet")
+    generate_completions_from_executable(bin/"jrsonnet", "-", "--generate")
   end
 
   test do

@@ -7,6 +7,11 @@ class Openiked < Formula
   license "ISC"
   revision 1
 
+  livecheck do
+    url "https://cdn.openbsd.org/pub/OpenBSD/OpenIKED/"
+    regex(/href=.*?openiked[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256                               arm64_ventura:  "1506a1268e445795d9391cbb4076543537f58ea6283e9b984e7208a0d757a123"
     sha256                               arm64_monterey: "febbe8eb3444ad1b3f87022fab852b9e8d3c258b7f7a1dc7d8318061090d1979"

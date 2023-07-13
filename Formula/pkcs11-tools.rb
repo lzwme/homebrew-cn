@@ -1,18 +1,18 @@
 class Pkcs11Tools < Formula
   desc "Tools to manage objects on PKCS#11 crypotographic tokens"
   homepage "https://github.com/Mastercard/pkcs11-tools"
-  url "https://ghproxy.com/https://github.com/Mastercard/pkcs11-tools/releases/download/v2.5.1/pkcs11-tools-2.5.1.tar.gz"
-  sha256 "d7d30438cbdaeae208040b3f04c8f984cfb6af43b69b53206c6c23a2b6c0d29f"
+  url "https://ghproxy.com/https://github.com/Mastercard/pkcs11-tools/releases/download/v2.6.0/pkcs11-tools-2.6.0.tar.gz"
+  sha256 "5fcda842ed009dacef5d935f5d46bda81bdc26795737af525aa904655a640ba0"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b71254c54ea4890b0c691b05be545227350a59ee679a115bfbe0859c4295782c"
-    sha256 cellar: :any,                 arm64_monterey: "65105e177195b12190544277d9b4e1ed7e19abde77f3168b7df8926184809eda"
-    sha256 cellar: :any,                 arm64_big_sur:  "64b9fdd8ef72d54bbfb856eed8444a3b590f7e7a350aa326ab7e962eccbd916c"
-    sha256 cellar: :any,                 ventura:        "5d70386c6097b1ff5ef952a03b351957a5978c63b28635ff48ce55091049f743"
-    sha256 cellar: :any,                 monterey:       "37e702aaa2e30c62f1a3c9f3e2ad40a555b47f63032418824fab51e21ff3f817"
-    sha256 cellar: :any,                 big_sur:        "a9a7df48c8a96c6e270f2e4598a0a454b9a592a2f97cd109597639028d3dda00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70ea2cf8efd46b5673a204aabc8aa5f2780082df120f2b78289fd7127e48c251"
+    sha256 cellar: :any,                 arm64_ventura:  "c1babe9a656e43094e4c1e824ae76eaf60111376d57a77e31c6e3c9186fed553"
+    sha256 cellar: :any,                 arm64_monterey: "861b3b73c9e30599ddbb2fed03b89a6a648f74106d834551500971cdacbae820"
+    sha256 cellar: :any,                 arm64_big_sur:  "a2f9db1cff53bf73aaaadd1117dd72f8aac42d38e7ef40b59b56be535e4067c1"
+    sha256 cellar: :any,                 ventura:        "f98f64e004a340203e91c268d37751fec2426b8a1b6a3a4d910f7834176b8b3f"
+    sha256 cellar: :any,                 monterey:       "d54d48ba1f3f92918c56441059b1da04a2231779e9f3a6ed67c036303d68499a"
+    sha256 cellar: :any,                 big_sur:        "27d568c817878042985a01e7cdb1ee74da2904c8bd42c87f9eaf72496c0e7c68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "204de485eee7fdc9c63d60924bf2a2559bcddb2b13badbd60f97c8fcbd6ab4c3"
   end
 
   depends_on "pkg-config" => :build

@@ -1,19 +1,19 @@
 class Jmeter < Formula
   desc "Load testing and performance measurement application"
   homepage "https://jmeter.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=jmeter/binaries/apache-jmeter-5.6.1.tgz"
-  mirror "https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.6.1.tgz"
-  sha256 "3f1dbe7a35afb96e2ba4e3672be1ffef713f002118450709c33b806575d6a07d"
+  url "https://www.apache.org/dyn/closer.lua?path=jmeter/binaries/apache-jmeter-5.6.2.tgz"
+  mirror "https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.6.2.tgz"
+  sha256 "08696d3b6278d272342d18609e2167ef28d2d1d5f71b592809c00bbd57cc8ef0"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c7a125cc9075662e6486ef1b50944a0af1bbbeb4acb735a52e3b545ad09c69a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c7a125cc9075662e6486ef1b50944a0af1bbbeb4acb735a52e3b545ad09c69a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9c7a125cc9075662e6486ef1b50944a0af1bbbeb4acb735a52e3b545ad09c69a"
-    sha256 cellar: :any_skip_relocation, ventura:        "9c7a125cc9075662e6486ef1b50944a0af1bbbeb4acb735a52e3b545ad09c69a"
-    sha256 cellar: :any_skip_relocation, monterey:       "9c7a125cc9075662e6486ef1b50944a0af1bbbeb4acb735a52e3b545ad09c69a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9c7a125cc9075662e6486ef1b50944a0af1bbbeb4acb735a52e3b545ad09c69a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7314e30b9c3d52d13cd10ae3cd108bd72ad630c1078ba49759032fb383238334"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f63ab326b37c6c29d7ccdc0d115e2a3a7db0fb959f25af01067eb13c4b10d1d0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f63ab326b37c6c29d7ccdc0d115e2a3a7db0fb959f25af01067eb13c4b10d1d0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f63ab326b37c6c29d7ccdc0d115e2a3a7db0fb959f25af01067eb13c4b10d1d0"
+    sha256 cellar: :any_skip_relocation, ventura:        "f63ab326b37c6c29d7ccdc0d115e2a3a7db0fb959f25af01067eb13c4b10d1d0"
+    sha256 cellar: :any_skip_relocation, monterey:       "f63ab326b37c6c29d7ccdc0d115e2a3a7db0fb959f25af01067eb13c4b10d1d0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f63ab326b37c6c29d7ccdc0d115e2a3a7db0fb959f25af01067eb13c4b10d1d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "30e671f75a56f645115bb3f5c91968afcfbb89643565737a1c18d79928c9bf83"
   end
 
   depends_on "openjdk@17"

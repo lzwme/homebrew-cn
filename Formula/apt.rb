@@ -1,8 +1,8 @@
 class Apt < Formula
   desc "Advanced Package Tool"
   homepage "https://wiki.debian.org/Apt"
-  url "https://deb.debian.org/debian/pool/main/a/apt/apt_2.7.1.tar.xz"
-  sha256 "403c014a7063b6b34c87bea77ac4b0215298ba9bc3f4dcc87086379287e9d5fd"
+  url "https://deb.debian.org/debian/pool/main/a/apt/apt_2.7.2.tar.xz"
+  sha256 "095c92c82fceff4cc02ddadc2477859b8263c88d3015d6799aa72e3301359b2f"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,7 +11,7 @@ class Apt < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "2a54067eeceac5ce90441f36e60e07b9dda8aa35dbf9a1eaacc2c9f25a68c401"
+    sha256 x86_64_linux: "242f6780d5d0a3fc5650d14e0ca801fb767f64a68e9014e69b28cd33fb334a13"
   end
 
   depends_on "cmake" => :build
@@ -63,7 +63,7 @@ class Apt < Formula
   end
 
   resource "Locale::gettext" do
-    url "https://cpan.metacpan.org/authors/id/P/PV/PVANDRY/gettext-1.07.tar.gz"
+    url "https://cpan.metacpan.org/authors/id/P/PV/PVANDRY/Locale-gettext-1.07.tar.gz"
     sha256 "909d47954697e7c04218f972915b787bd1244d75e3bd01620bc167d5bbc49c15"
   end
 
@@ -93,8 +93,8 @@ class Apt < Formula
   end
 
   resource "XS::Parse::Keyword::Builder" do
-    url "https://cpan.metacpan.org/authors/id/P/PE/PEVANS/XS-Parse-Keyword-0.33.tar.gz"
-    sha256 "551b82d2884ab3b37bc9be5d1c85b1c1986d083904b7817a0fafc78260dcfc57"
+    url "https://cpan.metacpan.org/authors/id/P/PE/PEVANS/XS-Parse-Keyword-0.34.tar.gz"
+    sha256 "1033ddb409924d9d42b38304a1d79745a0434abc6b0491eb12b6c8bb96f1d6c1"
   end
 
   resource "Syntax::Keyword::Try" do

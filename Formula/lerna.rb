@@ -3,18 +3,18 @@ require "language/node"
 class Lerna < Formula
   desc "Tool for managing JavaScript projects with multiple packages"
   homepage "https://lerna.js.org"
-  url "https://registry.npmjs.org/lerna/-/lerna-7.1.1.tgz"
-  sha256 "deda327b7608d9d518ae89d32fca556015055bcf6fe67efa1a64ad2e63a3c827"
+  url "https://registry.npmjs.org/lerna/-/lerna-7.1.3.tgz"
+  sha256 "298020ec4f51d8c77218465f25b90791b987c28272dee09e17b973caf84b313a"
   license "MIT"
 
   bottle do
-    sha256                               arm64_ventura:  "0deeb3e7ba032a1cd4e7b87bd7b48c7b9ed2e40b39bcd34643ae1392948c0623"
-    sha256                               arm64_monterey: "ee4182a9bb49d4ae65e3f156e7765d5d9d2f37a49d7412267af9ffcddb034e38"
-    sha256                               arm64_big_sur:  "a6ecc488e0f379eecb6d1d2a195059e6525b35c5dd05f7a63a04fe354f35c8cd"
-    sha256                               ventura:        "19bf2fa2c2c867ec3d7cda95c4b629fe5e94a37316bb8843b2df8c1a8efc1e8d"
-    sha256                               monterey:       "cfb7f70d97c7197b7e4edc455f2a9314a543816c18dedccd66469fe4ef7b7a92"
-    sha256                               big_sur:        "8d5558e3c2367833d42f9dcf1446355513d7bcfd5f67fce92f0d5bbb740274b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e48cbc7c6e915cb96aea72740f20e70f7a808c8eb1d3b268a1fe8b8f45ac84f4"
+    sha256                               arm64_ventura:  "60a9cfce0d38df053ba8ada5d6bef40a901752ec61834c479f0d916604dde068"
+    sha256                               arm64_monterey: "71d5d3418ab5bf6cee7d53b6edff50eb3948799894648f491b5017274a4d203f"
+    sha256                               arm64_big_sur:  "81dfbe3ffc0cf5cb5ab47258c6b0b1e6880eba232b0c0de02836403c7c75a22f"
+    sha256                               ventura:        "24a89f59c23af78c0285d9371db7a32ec60fe1716eda1ba35b84e5b66983d3ae"
+    sha256                               monterey:       "8a51056d58abd7fb104367b08756ceb045a15f34da159d99b3dcbe5225bbace9"
+    sha256                               big_sur:        "68a7577498880a523cc0c35aa358822bb82a31c89c4a1b0cbf251deb914002ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15d6448f6a3539b8225f01890437667b4c6da1e3dbd464089d8b73f6fa1b6c58"
   end
 
   depends_on "node"

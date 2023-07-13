@@ -8,13 +8,14 @@ class Podman < Formula
   head "https://github.com/containers/podman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "28c8ad9b1ff51b2d032e297e245b779087e07a28423c4b562af7a10292442347"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "88d9a4aa7eabf12403ed568e634ba7777a73ae75d3969999e11e77e6557bf189"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ee80406c911aafc69ba95f6fbbb7fc04b349005d3a9fb306b9262aa59afc52ad"
-    sha256 cellar: :any_skip_relocation, ventura:        "c6de0dd344241f7b3492fd20e2af81531b18cc1eeebb21d07cd257eca609f11c"
-    sha256 cellar: :any_skip_relocation, monterey:       "9c6c5740bd5fcd012adc31116bbed9b0ab876191041fc1443f2bea3a461cdac9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "85631d293ef19ba2851bfc72c1c0b36b406ca90e71330eb5d2a47407223409ce"
-    sha256                               x86_64_linux:   "c6651b300676f0e355aa0623443e2b06451f4899448b7727588f4daca6ef1ff9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cd452518a8b55947be3d76681ddcea405011dd0da1d9b901e4295fdec18760f0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d1069714b29d77b865c5b6ed28f09b5666d89cf361f2174e3bdea5f2d131a123"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "025afd5183078c71306c7db04a8ca2f9e9dd4762ff66e35641fffea2b71a502d"
+    sha256 cellar: :any_skip_relocation, ventura:        "ef47f2fcf5db79af7cffc9217161bf33de9c3292c14132036511cc1f2d44d3df"
+    sha256 cellar: :any_skip_relocation, monterey:       "a185dd803ad26fc75437c0d30210b639448afadcac2a1dc43da118898974dad0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ae2d9a1a92c4843cc959909fffe7cded4985d84d818489b202673fc63d056fa6"
+    sha256                               x86_64_linux:   "6417112697200d0322c053bc8708630ccf9fd61fde7e49b0332920ce35e901cf"
   end
 
   depends_on "go" => :build
@@ -78,21 +79,20 @@ class Podman < Formula
   def install
     if OS.mac?
       ENV["CGO_ENABLED"] = "1"
-      ENV.prepend_path "PATH", Formula["make"].opt_libexec/"gnubin"
 
-      system "make", "podman-remote"
+      system "gmake", "podman-remote"
       bin.install "bin/darwin/podman" => "podman-remote"
       bin.install_symlink bin/"podman-remote" => "podman"
 
-      system "make", "podman-mac-helper"
+      system "gmake", "podman-mac-helper"
       bin.install "bin/darwin/podman-mac-helper" => "podman-mac-helper"
 
       resource("gvproxy").stage do
-        system "make", "gvproxy"
+        system "gmake", "gvproxy"
         (libexec/"podman").install "bin/gvproxy"
       end
 
-      system "make", "podman-remote-darwin-docs"
+      system "gmake", "podman-remote-darwin-docs"
       man1.install Dir["docs/build/remote/darwin/*.1"]
 
       bash_completion.install "completions/bash/podman"

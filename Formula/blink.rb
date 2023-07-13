@@ -7,13 +7,14 @@ class Blink < Formula
   head "https://github.com/jart/blink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9737aa7c6ba831fb0adc1aa14b8f796f4893b0b0ff6efdb59372970500e8c01"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "474607eb69f3bf7e81b075b39bba5aa20894d9ec857ed31feb3b2296ab799061"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6e10861418820b3f06a7f53a28af96b8439687cab196dece4a5e563fb3724d9f"
-    sha256 cellar: :any_skip_relocation, ventura:        "37aeb4a69f8b0918ab7caec0b93602bf40b06b26df4a1005e9450208b50028fa"
-    sha256 cellar: :any_skip_relocation, monterey:       "721816b4dbdf787da513122296049001b1668f63f81085e0feff79ac97d7c4ec"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bae386414550cf4546e76681e5d30bdbeb82cfc2079643ae2832d16391dc8e0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8e0eab26c1ea0087bcf0e25addd8833323d0fd249db08a808e4b5e363e7dff8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c8ac41a29518e1e18a74a68199a12bf7588ff95fc32287bcd3c1cab90ca59906"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4b5731d5aa4969fd91a8bc74aee2f8eaf575a904ed22a6d6ab379ad7ff50d457"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d173eb506408f249117adb658e7ac23b50fd049933474d2a472144bbd8839e27"
+    sha256 cellar: :any_skip_relocation, ventura:        "8f7870d0b8433b83425a676928fafc1b1d66512f67365b2a8f6ce351329be1fe"
+    sha256 cellar: :any_skip_relocation, monterey:       "b277da929dcca474fa44027f775b0a4cec037d2be844329a2c3807f4b25bb6b4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "216715141888fb68111e473514172ce0f4a32c9b3db5c971c8ed73c4b8060ec9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7be6034bfabd74f897c36a63e77c41769f86e01566661d124abaa4593f409e3e"
   end
 
   depends_on "make" => :build # Needs Make 4.0+
@@ -21,10 +22,10 @@ class Blink < Formula
   uses_from_macos "zlib"
 
   def install
-    ENV.prepend_path "PATH", Formula["make"].opt_libexec/"gnubin"
     system "./configure", "--prefix=#{prefix}", "--enable-vfs"
-    system "make"
-    system "make", "install"
+    # Call `make` as `gmake` to use Homebrew `make`.
+    system "gmake" # must be separate steps.
+    system "gmake", "install"
   end
 
   test do

@@ -7,13 +7,14 @@ class Newsboat < Formula
   head "https://github.com/newsboat/newsboat.git", branch: "master"
 
   bottle do
-    sha256 arm64_ventura:  "377a8e46452b97df7e0e6e6e5d4817eab845bb702f3bd740ca17f25690ab35a6"
-    sha256 arm64_monterey: "7a47d8faef0894f67e7e03e72b900f9539985f627e4438def9b793934d838e18"
-    sha256 arm64_big_sur:  "ff89b7dcf9d429c7d23a7a896e77c47f0dc65f0b036d98b336a2a50ab0856c95"
-    sha256 ventura:        "28245b1867f8ed3a18fab83d7edc9e94967ae982d37ae59a13d2b1f42c3cb683"
-    sha256 monterey:       "261e97def3e7ae9ed09d20eb698839675f8039effd8e693d9446884bae84958f"
-    sha256 big_sur:        "41f4aefa23cbdab57037934c2d132211b364dd461c315ac4a43ba1f576ae27d1"
-    sha256 x86_64_linux:   "10daa3e30a41847e098f668534689b368d677b309d0fd7c27c0f19b19236e9b3"
+    rebuild 1
+    sha256 arm64_ventura:  "0ec32791522c13328d2cf935379a61f988b1aa5c7808793cefcdb146be8bd0cc"
+    sha256 arm64_monterey: "32ddb0320262c1ae7cef35fed576ee73cd60b9c66107455d5ae31fe52f1d38bb"
+    sha256 arm64_big_sur:  "c13b6980a07c3b22a28541f76c03dbbfdfb7d96ea6c21a0789c415863541be6b"
+    sha256 ventura:        "ed2a9e2498a09a02ce8a4d73f3b66a9b639177d2b755fd17512fe42e0025f00a"
+    sha256 monterey:       "af5f3f77b02d8420866efc31d6c5d64f2daddb05b6c6baf5e3e1f1538dd26c99"
+    sha256 big_sur:        "66a7d9783b16b06ec00796977b6578cc70da85e9606e0b3fab78461bd7a29e50"
+    sha256 x86_64_linux:   "8c6420dfe0b0d4114d83ecc33bb192dfb4a09893f26a58faf633050e543ea15b"
   end
 
   depends_on "asciidoctor" => :build
@@ -91,11 +92,8 @@ class Newsboat < Formula
     ENV.prepend_path "PKG_CONFIG_PATH", libexec/"lib/pkgconfig"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{libexec}/lib"
 
-    if OS.mac?
-      system Formula["make"].opt_bin/"gmake", "install", "prefix=#{prefix}"
-    else
-      system "make", "install", "prefix=#{prefix}"
-    end
+    # Call `make` as `gmake` to use Homebrew `make`.
+    system "gmake", "install", "prefix=#{prefix}"
   end
 
   test do

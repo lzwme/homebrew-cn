@@ -9,15 +9,14 @@ class Doitlive < Formula
   head "https://github.com/sloria/doitlive.git", branch: "dev"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d31aad0b83d8280f4b1f6c10817673cd51a0639ca85cc0198816be672e5bac93"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f2e6d437381c9a10e6c4aeebe42b2d6c96ab9c620a10bf0c29f0f92d0aef6fe2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b6652d74f01868cafb8e0f4faa77156a945f002548865fdbf8b7b0daa16e80e8"
-    sha256 cellar: :any_skip_relocation, ventura:        "7fe78af3fed37f26992dfcdb6f1efd158d77a67b358f0b82bdeb8b32379ef9d2"
-    sha256 cellar: :any_skip_relocation, monterey:       "ea27be8ba7ad56eaf391ff746ae8a137bcb5a2caadb4d02822ab14c7409efd49"
-    sha256 cellar: :any_skip_relocation, big_sur:        "68ea581db0c9699196e1a062a575d6fb1da95cdd73d838e7eac973a97157eb50"
-    sha256 cellar: :any_skip_relocation, catalina:       "3749631070070d4301391a6d813a71cb5bf3607871805bed026d5e0f34e7b453"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "108bf4e293620543a8b051d47c33b1cc710449644162a4ccf528548e32b435b0"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e30831be33b71279f10e2a9b6dc2916d43a8d3d07f61fb3beba92226aff1c18c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0ceb7c56bc7a0e3948dc6fd3106b42e3dd96bcd3b074b2166f331c87e54184bb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e812f0e00f8a97226f89afeb3a28b663bff66b4199d0243a60cde4aec752c732"
+    sha256 cellar: :any_skip_relocation, ventura:        "503295bb5da1d97bb1a26ca940efc4c6763cd3a37beccf8b35cb48084c3a8cf5"
+    sha256 cellar: :any_skip_relocation, monterey:       "9b2beb9d7173db0c2f68e199a611492612132b7b309396e3f9be90e3c27e5e9e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bfa025332c5a6eaa1c8dd821722a6a457afa2577c4583741fcd021ac831d8543"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb7433cf1708e3ed401318149c637a3e13fde41fae0360b2be50959e5138a4af"
   end
 
   depends_on "python@3.11"
@@ -66,11 +65,10 @@ class Doitlive < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(libexec/"bin/doitlive", "completion",
-                                         shells: [:bash, :zsh], shell_parameter_format: :none)
+    generate_completions_from_executable(bin/"doitlive", "completion", shell_parameter_format: :none)
   end
 
   test do
-    system "#{bin}/doitlive", "themes", "--preview"
+    system bin/"doitlive", "themes", "--preview"
   end
 end

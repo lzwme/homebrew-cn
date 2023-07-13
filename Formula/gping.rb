@@ -16,32 +16,36 @@ class Gping < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d010fed26cdd4c51bf8f3f250ae1bd81f3aa6ecaa7a3e1b10c0d2ea3625310ee"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "044f5d16a680a3d099eb62b44594307b6c1d9712fd01ebf15378fcc81dc8d393"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "10c126748f4094e5d9c82aaf917de097aa6accdc862d9f91498877a3475250dd"
-    sha256 cellar: :any_skip_relocation, ventura:        "338447725adbf6e8dd74c16392b5660b4cdd34065e14b4c2875588549b5847fd"
-    sha256 cellar: :any_skip_relocation, monterey:       "8ce1856b595daac0d669fe89c8730991d7e70c70c7a57aa9e96e19247601710d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a4bb14b786ab5122293198f0f6c3c568b2f110597963097aa974d8a0f3a64dd3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b33ac75760676ed00898c30b790a6005dcacbf32259cc801d0ea7e29e758433d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "3fb7e618a967b02b3f9b0e3c3616e406ebf1c8f8877bdd91b35b05268fb4ec8e"
+    sha256 cellar: :any,                 arm64_monterey: "8f16188502058600b54d34dc08d4fdbee1622785c9775ddfcdd2f856d0332f85"
+    sha256 cellar: :any,                 arm64_big_sur:  "b0a9d6fe07c3c2473b9f2cbefc8eb9cb7c250aac86468e037f4821ab94101f04"
+    sha256 cellar: :any,                 ventura:        "33218fcff023df205023a43beec4f3cab6d33a0a5c57ade62c6848586d013a23"
+    sha256 cellar: :any,                 monterey:       "945739c62259fc26eac2ac165c21b5414a63bcf3faf9080cf2770fcd7c837cc3"
+    sha256 cellar: :any,                 big_sur:        "1105136b774d96c1ada2475ffd1e14dceabc4304fd149d4107af3a3c0c82c53b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "350754d2a44ef5f1a5915b97da7db19c40b20729925af82d45f75d0c453be136"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
+
+  on_macos do
+    depends_on "libgit2"
+  end
 
   on_linux do
     depends_on "iputils"
   end
 
   def install
-    cd "gping" do
-      system "cargo", "install", *std_cargo_args
-    end
+    system "cargo", "install", *std_cargo_args(path: "gping")
   end
 
   test do
     require "pty"
     require "io/console"
 
-    r, w, pid = PTY.spawn("#{bin}/gping google.com")
+    r, w, = PTY.spawn("#{bin}/gping google.com")
     r.winsize = [80, 130]
     sleep 1
     w.write "q"
@@ -59,7 +63,14 @@ class Gping < Formula
     rescue Errno::EIO
       # GNU/Linux raises EIO when read is done on closed pty
     end
-  ensure
-    Process.kill("TERM", pid)
+
+    return unless OS.mac?
+
+    linkage_with_libgit2 = (bin/"gping").dynamically_linked_libraries.any? do |dll|
+      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
+
+      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
+    end
+    assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."
   end
 end

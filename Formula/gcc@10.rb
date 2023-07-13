@@ -1,9 +1,9 @@
 class GccAT10 < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
-  url "https://ftp.gnu.org/gnu/gcc/gcc-10.4.0/gcc-10.4.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-10.4.0/gcc-10.4.0.tar.xz"
-  sha256 "c9297d5bcd7cb43f3dfc2fed5389e948c9312fd962ef6a4ce455cff963ebe4f1"
+  url "https://ftp.gnu.org/gnu/gcc/gcc-10.5.0/gcc-10.5.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gcc/gcc-10.5.0/gcc-10.5.0.tar.xz"
+  sha256 "25109543fdf46f397c347b5d8b7a2c7e5694a5a51cce4b9c6e1ea8a71ca307c1"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   livecheck do
@@ -12,11 +12,10 @@ class GccAT10 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               ventura:      "41fdc0ba7755243c1c489d265907b57f927c0f27d1a8708539f8d1fbf98b26ce"
-    sha256                               monterey:     "506382e56e8ba8adf3edf00b519d07e0b953985ba25e7974a5a7ccc6cb08c10a"
-    sha256                               big_sur:      "275d560e460a9045dbc19551eeef72b707eb02244f61a91cb4a53aa40e799a15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b828f739ed72d459927d3c0c6397faaa74d5bbe6c2c28acee4e7d1f9f1af60aa"
+    sha256                               ventura:      "1155f38da440c96a9df1442152c3149755dfd369815cf8b967e9bbf2a4874489"
+    sha256                               monterey:     "be699cd4f9c26c0023a28eb56e534058cac1ab1b2d06e57b531905cfde49b48e"
+    sha256                               big_sur:      "5f40c454e3e3b96578411e28d6ba27679c6d3c182a978c60c3ea8f57f8235033"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "517a097236a0de677b0718462a752068ce32f5b6b86e044bdfc2fd7c2097207e"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -40,13 +39,6 @@ class GccAT10 < Formula
 
   # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib
   cxxstdlib_check :skip
-
-  # Fix for build against macOS 13 SDK
-  # https://github.com/iains/gcc-10-branch/issues/8
-  patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/d52cefd45a18ea9df3e3cd8cac5dcf6755f94edd/gcc/gcc-10.3-ventura.diff"
-    sha256 "26f45ae2ad69d9ba16f3ac2e9384a5a2e56f2a18722c91759f871d53fba43cce"
-  end
 
   def version_suffix
     version.major.to_s
