@@ -2,7 +2,7 @@ class Jrnl < Formula
   include Language::Python::Virtualenv
 
   desc "Command-line note taker"
-  homepage "http://jrnl.sh/en/stable/"
+  homepage "https://jrnl.sh/en/stable/"
   url "https://files.pythonhosted.org/packages/04/59/c15befa8f1a6ff159af29d86c1abc50135e4f8768afe5a1621930e21a0d8/jrnl-4.0.1.tar.gz"
   sha256 "f3b17c4b040af44fde053ae501832eb313f2373d1b3b1a82564a8214d223ede8"
   license "GPL-3.0-only"

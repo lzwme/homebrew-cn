@@ -1,6 +1,6 @@
 class Freeimage < Formula
   desc "Library for FreeImage, a dependency-free graphics library"
-  homepage "https://sourceforge.net/projects/freeimage"
+  homepage "https://sourceforge.net/projects/freeimage/"
   url "https://downloads.sourceforge.net/project/freeimage/Source%20Distribution/3.18.0/FreeImage3180.zip"
   version "3.18.0"
   sha256 "f41379682f9ada94ea7b34fe86bf9ee00935a3147be41b6569c9605a53e438fd"

@@ -1,6 +1,6 @@
 class Viewvc < Formula
   desc "Browser interface for CVS and Subversion repositories"
-  homepage "http://www.viewvc.org"
+  homepage "https://www.viewvc.org"
   url "https://ghproxy.com/https://github.com/viewvc/viewvc/releases/download/1.2.3/viewvc-1.2.3.tar.gz"
   sha256 "9960fc072201c581735da6eaf589f2129f8bfdf8ff41bef32cf7bbccce10ec60"
   license "BSD-2-Clause"

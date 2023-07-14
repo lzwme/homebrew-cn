@@ -6,7 +6,7 @@ class PhpAT80Debug < Formula
   mirror "https://fossies.org/linux/www/php-8.0.29.tar.xz"
   sha256 "14db2fbf26c07d0eb2c9fab25dbde7e27726a3e88452cca671f0896bbb683ca9"
   license "PHP-3.01"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.php.net/downloads"
@@ -15,12 +15,12 @@ class PhpAT80Debug < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_monterey: "9a39c55010e4149a01fd4c78e2f98bb3a4b85fe17aaa867203c62c3c9eaecbec"
-    sha256 arm64_big_sur:  "be89d2470644ab3b46b03e7f514b1307fafdef78e011e8857b8f05ec1e43544a"
-    sha256 ventura:        "22d8b7516d93040e1f304432857d2cfbf2ea1d70fc45103ee00d3aaf6bf4592e"
-    sha256 monterey:       "767c8e57e37fc01a3bd89ee545c8c0dea46493f2b1069f27ec73610853789271"
-    sha256 big_sur:        "b70e3158aad4a40ac1246aa9d3bb9d4eb479793b4cb7d2554bae887587b474f9"
-    sha256 x86_64_linux:   "f745352e96bb0503f6901dd659e01e5f80089460ec1c822a3c07cc106f792633"
+    sha256 arm64_monterey: "a5a7fb1016bb1bae8423e36901ca55dd3ab8b836c4c77b530aed4d0721f54630"
+    sha256 arm64_big_sur:  "2e6be0801bf7141e31837587ba52987d246a51b30df9510f30a0c105be7b9cfa"
+    sha256 ventura:        "4c2f2185d7109a950ebe610cd5b833f8a2dd5fbebbed6ca52104515d83d9d294"
+    sha256 monterey:       "3e9c0ba4c6f8ebd77a981a3066ac762363245e48da284a68e2832825780a345e"
+    sha256 big_sur:        "a7897b5b6e518e0f3d0415274a9874a45f005622b65569800b713e28021b599b"
+    sha256 x86_64_linux:   "2daea5142e069f2cbebef1df7293f90320e9c54b93f6f9e1627a5b0282b07318"
   end
 
   keg_only :versioned_formula
@@ -46,7 +46,7 @@ class PhpAT80Debug < Formula
   depends_on "libzip"
   depends_on "oniguruma"
   depends_on "openldap"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pcre2"
   depends_on "sqlite"
   depends_on "tidy-html5"
@@ -63,6 +63,16 @@ class PhpAT80Debug < Formula
   on_macos do
     # PHP build system incorrectly links system libraries
     patch :DATA
+  end
+
+  patch do
+    url "https://ghproxy.com/https://raw.githubusercontent.com/shivammathur/php-src-backports/2bcb0b/patches/0002-Add-minimal-OpenSSL-3.0-patch-PHP8.0.patch"
+    sha256 "8c359c0b0cc63dc6779a4fb1b2ba5ca555eb60e962013123dcb1239aef5cee9a"
+  end
+
+  patch do
+    url "https://ghproxy.com/https://raw.githubusercontent.com/shivammathur/php-src-backports/2bcb0b/patches/0003-Fix-bug-79589-ssl3_read_n-unexpected-eof-while-reading-PHP8.0.patch"
+    sha256 "3383d1881379827e02b42842367666725f4f54f4364d937c6acb0ee67bce84a2"
   end
 
   def install
@@ -213,7 +223,7 @@ class PhpAT80Debug < Formula
     end
 
     # Use OpenSSL cert bundle
-    openssl = Formula["openssl@1.1"]
+    openssl = Formula["openssl@3"]
     %w[development production].each do |mode|
       inreplace "php.ini-#{mode}", /; ?openssl\.cafile=/,
         "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\""

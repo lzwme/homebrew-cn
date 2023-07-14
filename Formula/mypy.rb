@@ -2,7 +2,7 @@ class Mypy < Formula
   include Language::Python::Virtualenv
 
   desc "Experimental optional static type checker for Python"
-  homepage "http://www.mypy-lang.org/"
+  homepage "https://www.mypy-lang.org/"
   url "https://files.pythonhosted.org/packages/b3/28/d8a8233ff167d06108e53b7aefb4a8d7350adbbf9d7abd980f17fdb7a3a6/mypy-1.4.1.tar.gz"
   sha256 "9bbcd9ab8ea1f2e1c8031c21445b511442cc45c89951e49bbf852cbb70755b1b"
   license "MIT"

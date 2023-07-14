@@ -1,6 +1,6 @@
 class Fann < Formula
   desc "Fast artificial neural network library"
-  homepage "https://sourceforge.net/projects/fann"
+  homepage "https://sourceforge.net/projects/fann/"
   url "https://downloads.sourceforge.net/project/fann/fann/2.2.0/FANN-2.2.0-Source.tar.gz"
   sha256 "3d6ee056dab91f3b34a3f233de6a15331737848a4cbdb4e0552123d95eed4485"
   license "LGPL-2.1-or-later"

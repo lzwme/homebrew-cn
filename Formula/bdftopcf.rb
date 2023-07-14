@@ -1,19 +1,18 @@
 class Bdftopcf < Formula
   desc "Convert X font from Bitmap Distribution Format to Portable Compiled Format"
   homepage "https://gitlab.freedesktop.org/xorg/util/bdftopcf"
-  url "https://www.x.org/archive/individual/app/bdftopcf-1.1.tar.bz2"
-  sha256 "4b4df05fc53f1e98993638d6f7e178d95b31745c4568cee407e167491fd311a2"
+  url "https://www.x.org/releases/individual/util/bdftopcf-1.1.1.tar.xz"
+  sha256 "11c953d53c0f3ed349d0198dfb0a40000b5121df7eef09f2615a262892fed908"
   license "MIT-open-group"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8c383fdd1ab5a895939a59cbbc84c5269cc4237030ce62f51fd8cb56884bf78e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "96b1cad7bbf70e54ecf15c419f721b4844af29f8dfa346167dd4fd765402d411"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "402d436d944450817e8e8f86491c544739cea6377e994fd69a8d25eb05fea076"
-    sha256 cellar: :any_skip_relocation, ventura:        "fbd303098b55994e4d01063d13c0245bc0c4246ba8d5db235e759509fcf870bf"
-    sha256 cellar: :any_skip_relocation, monterey:       "58dec51b6b84908ca02b8f62939079bacc1a2fdba84e1d15c41afcbe51a12b0f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3a3f6991ea766faf9a04c289b4be77eb41ed3821819328375184738f5629afa0"
-    sha256 cellar: :any_skip_relocation, catalina:       "d48cfa639a005786a4bed6f517729c932d80fa53d8a12b3e5c4301f7fa3506a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5808e28509b2ec50be770771e154baa70566113d961428403cbbe0392b4adc9f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b26742fa879001426b039393e683b586cae8ef449215e736816b7c036ee80f2b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8ef52728cea826773128a733b91368ca316f638c0f5762cc46e7564bc4464b09"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "61fc99226d4aeaa186d4f715e960c4c8610332c3d77492b03be4cdfaa555afdf"
+    sha256 cellar: :any_skip_relocation, ventura:        "1349d3903b391dab646542ae8b42b58f4219377d434a8286521765b108d8ab96"
+    sha256 cellar: :any_skip_relocation, monterey:       "1dd18fa43ed7c155cd4915befed4370976cc8f09c9c61982eb161037fda82a86"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c3b2cad1bd14de2a14ea5fb8b0a340a7d9bc0397a603ea347cd9e891a2045d08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "edc465111a6a38d1baf15911312fea996076ec454dde0c62b41728aa032f121b"
   end
 
   depends_on "pkg-config" => :build

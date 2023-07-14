@@ -3,20 +3,19 @@ class Vdirsyncer < Formula
 
   desc "Synchronize calendars and contacts"
   homepage "https://github.com/pimutils/vdirsyncer"
-  url "https://files.pythonhosted.org/packages/51/b6/92dcd91a6b9c6581edf14357f24ea11de7f402cde6b27f483d491313c51f/vdirsyncer-0.19.1.tar.gz"
-  sha256 "aa76c7725aa5a711f6374bc5cd83be78aae68c74829635a9ed073cd4c09f03ae"
+  url "https://files.pythonhosted.org/packages/81/fb/6fbb7f1d102a59db275811a0de756d6f5bb55c624ba4bdf918b3fbd2ddc0/vdirsyncer-0.19.2.tar.gz"
+  sha256 "fd058ceeab8293459a0466cd9b0e4ab3b39462c6e089a0f0ac37c307420d82ba"
   license "BSD-3-Clause"
   head "https://github.com/pimutils/vdirsyncer.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "46def01b2149763f3c106413301eddcc24c16e72aa56cbd7f1ddf9fa4e7c6bcf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d47018a7dc8c5de3e894759c355ccb4519e7f237ed2061ebd02d85156b589905"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "597357b150b083332cdc4ea473435d49a5b01647beab0c99ede82a42a441d6a8"
-    sha256 cellar: :any_skip_relocation, ventura:        "d2703a3927551c0ebde265b7f658a303117a6aae5c48f99a680e71ab2851c82c"
-    sha256 cellar: :any_skip_relocation, monterey:       "d76790259a955c2f55430e89d1b4db5f810e0c69e9cb7c0f4ab0dbcba87d01b8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "68d939460b8db5bbe033eb301f069b060c1bf2d6f87513cbde143312b418a65e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ee4f71fb053d03a55874d822a3941b883a9422669ceed738ebbca12c7ab2b72"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "36549607ccc75a16aecbd2ee50d919b3d00871a9cbe23b3fbfa5dbef6fb1335d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "08e7158e736e68583d9dc372cdfed074091dedb8d0bd3cf5386be97637ff8afd"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "85f860f8998323fe6a752b0c181babbd702a94263d75b9279f5965258c95b6cc"
+    sha256 cellar: :any_skip_relocation, ventura:        "4208a09a9054c8becb0c38c40679851eb209ca8db7e088b6fbc151dc910f93c1"
+    sha256 cellar: :any_skip_relocation, monterey:       "766b95fad262caa69efd966efd867cabf35e3cc48c3892ff1330b67c410faa4e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e99ce6295e5f70595f6525cf7785f3ad70f9420ab6aeda747f330a634d8b0033"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "55b73f07d9eaa1a6fcb64e652dc3309fabaf120d402012895fed8783e190800a"
   end
 
   depends_on "python@3.11"
@@ -62,13 +61,13 @@ class Vdirsyncer < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+    url "https://files.pythonhosted.org/packages/7e/ad/7a6a96fab480fb2fbf52f782b2deb3abe1d2c81eca3ef68a575b5a6a4f2e/click-8.1.5.tar.gz"
+    sha256 "4be4b1af8d665c6d942909916d31a213a106800c47d0eeba73d34da3cbc11367"
   end
 
   resource "click-log" do
@@ -77,8 +76,8 @@ class Vdirsyncer < Formula
   end
 
   resource "frozenlist" do
-    url "https://files.pythonhosted.org/packages/e9/10/d629476346112b85c912527b9080944fd2c39a816c2225413dbc0bb6fcc0/frozenlist-1.3.3.tar.gz"
-    sha256 "58bcc55721e8a90b88332d6cd441261ebb22342e238296bb330968952fbb3a6a"
+    url "https://files.pythonhosted.org/packages/8c/1f/49c96ccc87127682ba900b092863ef7c20302a2144b3185412a08480ca22/frozenlist-1.4.0.tar.gz"
+    sha256 "09163bdf0b2907454042edb19f887c6d33806adc71fbd54afc14908bfdc22251"
   end
 
   resource "idna" do
@@ -107,8 +106,8 @@ class Vdirsyncer < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
-    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
+    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
+    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
   end
 
   resource "yarl" do

@@ -1,20 +1,20 @@
 class PhpAT70 < Formula
   desc "General-purpose scripting language"
   homepage "https://secure.php.net/"
-  url "https://ghproxy.com/https://github.com/shivammathur/php-src-backports/archive/0513eaaeb6c03e282cf8c13352ca590428bfe127.tar.gz"
+  url "https://ghproxy.com/https://github.com/shivammathur/php-src-backports/archive/01620e1ea421be6f10360fefc1127e96a9c80467.tar.gz"
   version "7.0.33"
-  sha256 "2289f0d30a7be5e556f9ad7804f9f4102abdc40df1d454ecce2fa2cfd0924b71"
+  sha256 "6f801b4bea2dc7025bb09144eb2c63493ab3013c7010d069d8464e88528d29a3"
   license "PHP-3.01"
-  revision 9
+  revision 10
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_monterey: "078b9b00c63d6eff2169c6b1badc884bb6e20be90d6a3291fdd67a8197330b7a"
-    sha256 arm64_big_sur:  "3d2f52fec3f2ca42ccc914caf0a1ccd62f9ff97de970f3961e5d333e0188fe2f"
-    sha256 ventura:        "096716cc42568321ff959fb3d72c1fc9d9736305489b17f00f5b62814a2f3442"
-    sha256 monterey:       "7e4792773cbb61a5dc45ab063db75142d5a770ca24ae3a3f246b59f989a0b83b"
-    sha256 big_sur:        "c183b3c552bf3098162f2f4895d2240c21361b1943a2490729b2e500fc8ae348"
-    sha256 x86_64_linux:   "5b87d0ce5473a9e4230d4adece3635c4d532695f6395b91768ed4c2d6517c189"
+    sha256 arm64_monterey: "e36a359429b604bde1f873e4fdd753074ded516e592de8bb8a0c2a53490b155b"
+    sha256 arm64_big_sur:  "566be0fdb1073f32ea90bd8558053924a71636eaedc5867976aa342fc4214274"
+    sha256 ventura:        "fb121adfe92ef80a615a96d5cf36309821738002166e624e6db4331947cb34a9"
+    sha256 monterey:       "62c3ca556cca4c006ddab34de856b266e3c8e53934bc2709d85751287a0c80f4"
+    sha256 big_sur:        "b05a159425e3c646ed8cc889b8fca13f09f20144d55592218b7a86c3b6b9036a"
+    sha256 x86_64_linux:   "7fbece13b4fbeec88057730b747be11d190f0d825b4129adaf5883a0e7628873"
   end
 
   keg_only :versioned_formula
@@ -45,7 +45,7 @@ class PhpAT70 < Formula
   depends_on "libtool"
   depends_on "libzip"
   depends_on "openldap"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pcre"
   depends_on "sqlite"
   depends_on "tidy-html5"
@@ -169,7 +169,7 @@ class PhpAT70 < Formula
       --with-mhash#{headers_path}
       --with-mysql-sock=/tmp/mysql.sock
       --with-mysqli=mysqlnd
-      --with-openssl=#{Formula["openssl@1.1"].opt_prefix}
+      --with-openssl=#{Formula["openssl@3"].opt_prefix}
       --with-pdo-dblib=#{Formula["freetds"].opt_prefix}
       --with-pdo-mysql=mysqlnd
       --with-pdo-odbc=unixODBC,#{Formula["unixodbc"].opt_prefix}
@@ -222,7 +222,7 @@ class PhpAT70 < Formula
     end
 
     # Use OpenSSL cert bundle
-    openssl = Formula["openssl@1.1"]
+    openssl = Formula["openssl@3"]
     %w[development production].each do |mode|
       inreplace "php.ini-#{mode}", /; ?openssl\.cafile=/,
         "openssl.cafile = \"#{openssl.pkgetc}/cert.pem\""

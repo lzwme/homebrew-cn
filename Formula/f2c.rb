@@ -23,6 +23,9 @@ class F2c < Formula
 
     # man pages
     man1.install "f2c.1t"
+
+    # PDF doc
+    doc.install "f2c.pdf"
   end
 
   test do

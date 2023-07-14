@@ -96,6 +96,10 @@ class Trino < Formula
     assert_match "\"active\"", output
   ensure
     Process.kill("TERM", server)
-    Process.wait server
+    begin
+      Process.wait(server)
+    rescue Errno::ECHILD
+      quiet_system "pkill", "-9", "-P", server.to_s
+    end
   end
 end
