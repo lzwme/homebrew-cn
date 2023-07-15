@@ -1,11 +1,19 @@
 class Rubyfmt < Formula
   desc "Ruby autoformatter"
-  homepage "https://github.com/penelopezone/rubyfmt"
-  url "https://github.com/penelopezone/rubyfmt.git",
+  homepage "https://github.com/fables-tales/rubyfmt"
+  url "https://github.com/fables-tales/rubyfmt.git",
     tag:      "v0.8.1",
     revision: "266b47b4666106e579626b1823100ccedf5cbbc3"
   license "MIT"
-  head "https://github.com/penelopezone/rubyfmt.git", branch: "trunk"
+  head "https://github.com/fables-tales/rubyfmt.git", branch: "trunk"
+
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ffe2557b460a78c161959cc03999ad288d33ade3e4f73f412fd24b2f465b7601"

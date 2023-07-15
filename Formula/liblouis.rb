@@ -37,9 +37,7 @@ class Liblouis < Formula
     system "make"
     system "make", "check"
     system "make", "install"
-    cd "python" do
-      system python3, *Language::Python.setup_install_args(prefix, python3)
-    end
+    system python3, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "./python"
     (prefix/"tools").install bin/"lou_maketable", bin/"lou_maketable.d"
   end
 

@@ -2,18 +2,18 @@ class Lightgbm < Formula
   desc "Fast, distributed, high performance gradient boosting framework"
   homepage "https://github.com/microsoft/LightGBM"
   url "https://github.com/microsoft/LightGBM.git",
-      tag:      "v3.3.5",
-      revision: "ca035b2ee0c2be85832435917b1e0c8301d2e0e0"
+      tag:      "v4.0.0",
+      revision: "d73c6b530b39a18a3cacaafc4e42550be853c036"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7d94dc1085f6834d2d38ae1d6155333d56c0862bb45a9bb51cb6fedee8d26d2d"
-    sha256 cellar: :any,                 arm64_monterey: "ae03ad63f5ae164e1cd92eda00b6af59edd4a3cbb6d1e32dafd3b4a8e7c38ace"
-    sha256 cellar: :any,                 arm64_big_sur:  "0b9a840386e5ae60ec7b0a5b727ef4bf4bc889e7fcd4d2842727d1cc2288ce4c"
-    sha256 cellar: :any,                 ventura:        "515f6e0358450ecf2b8d1980c9f95879f79a6ed4bb17f87fdc6d4603a86234fd"
-    sha256 cellar: :any,                 monterey:       "fcaab8c7cc809659bcbb7cd706fd7ce736fed68e50da11e43c4a11e53e11cd19"
-    sha256 cellar: :any,                 big_sur:        "d48012904a9b82656108d8f40101864bfe4df0fe7f05ec3695287fe4b812450f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "780b9b26acd666842f6f031ca321a67ba9979751f19daa2c39725950e87b1f97"
+    sha256 cellar: :any,                 arm64_ventura:  "afbbbea1379862cdefaf71f2aab1135ae9bb4f9af502e0de9556ef8648c013b7"
+    sha256 cellar: :any,                 arm64_monterey: "1c6ef8ed953b7272d93b5e73536cf31d4a2155f1c75d38bb237d600b946a0fde"
+    sha256 cellar: :any,                 arm64_big_sur:  "d38658829bf657a634e7727ee432b37a993b8eb41109ca95dbfaab7e9b386fa5"
+    sha256 cellar: :any,                 ventura:        "55ecb60dd24dec2681394999f727ac01bb8781130eb28e2a412aee9bcc5feb6c"
+    sha256 cellar: :any,                 monterey:       "f2f56d570faec0e97b2a023da7e039d1ce9ac47549434a8a00cb93ac65cf3ecb"
+    sha256 cellar: :any,                 big_sur:        "176d8873f4f2f70bc97bb3c99f5a268b0e3d62b7045e6599e7b65319f338a0b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "400e5d31f49a50c8e14d2722549c50f9a358b71299001f1d97940d8ee9d4d059"
   end
 
   depends_on "cmake" => :build

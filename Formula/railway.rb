@@ -1,19 +1,19 @@
 class Railway < Formula
   desc "Develop and deploy code with zero configuration"
   homepage "https://railway.app/"
-  url "https://ghproxy.com/https://github.com/railwayapp/cli/archive/refs/tags/v3.3.1.tar.gz"
-  sha256 "68083661599e2f4b7fada400071b9f311fc56c7d4625407f7ca011bfa285694f"
+  url "https://ghproxy.com/https://github.com/railwayapp/cli/archive/refs/tags/v3.4.0.tar.gz"
+  sha256 "7411b02c2353af459d9bbbd809cbdf13df333c84e60d383301e8ff2415bac0b0"
   license "MIT"
   head "https://github.com/railwayapp/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7427b29752120ffb2901741c1a1379a3fd067a3709bb79f538ee2ea849553e57"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed3a54463f8a0114485e89f90e744173936731a5abfdac0df9924257aa913dc0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bdc19c54b34c80914856c1290b0e821a2564e7099142722976351c62c7340409"
-    sha256 cellar: :any_skip_relocation, ventura:        "7e070b048e960504774edfd4c8b0760eeeeea97f2e33b9e362b8c6b584036ff7"
-    sha256 cellar: :any_skip_relocation, monterey:       "431db27f524678173195cf5b478ebc5b28ce3c0791dbc29b5d59447b6c6e0590"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0a95eaa043508972e0c1a94a1ee8a4729793a1396c8ba6bb56b81b6c9e2692ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0236cd87057e09d949768afbfaadec40dbc5c53357c3d1b22bb44c8e0eb321eb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ad4b9dfb47c983b27735a09f29f20bce118901cefab3a0402b59e7275cacf28"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6c8e60f6f335d525bfb0a833138b70cbc1658677e37550d92c4abe72b92326d4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c988b30313d1883df2dc72a257c8a60d75c74ce36f649b2c8350d5224f171c2c"
+    sha256 cellar: :any_skip_relocation, ventura:        "569f78bb00f096556c4c11577faced802f9baad387a1e5b87bfdc014e8eb06dc"
+    sha256 cellar: :any_skip_relocation, monterey:       "6d6326443a2b23be759358ed3713af0f5576a308b49c792c3754d1f9f62375d6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "959f1f52fb4a2b59586acc706255225051907cdccc81ee85cc51cae0518dabd4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "261716596235f9ca89b2edaedbfcd0ec2fce186cdff95ebd83bf487c78d47913"
   end
 
   depends_on "rust" => :build

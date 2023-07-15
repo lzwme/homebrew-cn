@@ -45,7 +45,7 @@ class Hashpump < Formula
                    "CXX=#{ENV.cxx}",
                    "install"
 
-    system python3, *Language::Python.setup_install_args(prefix, python3)
+    system python3, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "."
   end
 
   test do

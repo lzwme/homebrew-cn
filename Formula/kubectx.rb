@@ -1,13 +1,13 @@
 class Kubectx < Formula
   desc "Tool that can switch between kubectl contexts easily and create aliases"
   homepage "https://github.com/ahmetb/kubectx"
-  url "https://ghproxy.com/https://github.com/ahmetb/kubectx/archive/v0.9.4.tar.gz"
-  sha256 "91e6b2e0501bc581f006322d621adad928ea3bd3d8df6612334804b93efd258c"
+  url "https://ghproxy.com/https://github.com/ahmetb/kubectx/archive/v0.9.5.tar.gz"
+  sha256 "c94392fba8dfc5c8075161246749ef71c18f45da82759084664eb96027970004"
   license "Apache-2.0"
   head "https://github.com/ahmetb/kubectx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "56fca18baee3ff65f4e6ca1491b515f46bcb61c3d184bc68c77c1b06e2e32cfb"
+    sha256 cellar: :any_skip_relocation, all: "41069e2e7ae9d4d36a5a4ec659641239d02d60ad8102c140126a2bae0c46c29e"
   end
 
   depends_on "kubernetes-cli"
@@ -15,12 +15,11 @@ class Kubectx < Formula
   def install
     bin.install "kubectx", "kubens"
 
-    bash_completion.install "completion/kubectx.bash" => "kubectx"
-    bash_completion.install "completion/kubens.bash" => "kubens"
-    zsh_completion.install "completion/kubectx.zsh" => "_kubectx"
-    zsh_completion.install "completion/kubens.zsh" => "_kubens"
-    fish_completion.install "completion/kubectx.fish"
-    fish_completion.install "completion/kubens.fish"
+    %w[kubectx kubens].each do |cmd|
+      bash_completion.install "completion/#{cmd}.bash" => cmd.to_s
+      zsh_completion.install "completion/_#{cmd}.zsh" => "_#{cmd}"
+      fish_completion.install "completion/#{cmd}.fish"
+    end
   end
 
   test do

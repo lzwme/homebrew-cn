@@ -1,20 +1,19 @@
 class Nghttp2 < Formula
   desc "HTTP/2 C Library"
   homepage "https://nghttp2.org/"
-  url "https://ghproxy.com/https://github.com/nghttp2/nghttp2/releases/download/v1.54.0/nghttp2-1.54.0.tar.gz"
-  mirror "http://fresh-center.net/linux/www/nghttp2-1.54.0.tar.gz"
-  sha256 "890cb0761d2fac570f0aa7bce085cd7d3c77bcfd56510456b6ea0278cde812f0"
+  url "https://ghproxy.com/https://github.com/nghttp2/nghttp2/releases/download/v1.55.0/nghttp2-1.55.0.tar.gz"
+  mirror "http://fresh-center.net/linux/www/nghttp2-1.55.0.tar.gz"
+  sha256 "1e2d802c19041bc16c1bcc48d13858beb39f4ea64c0dfe3f04bfac6de970329d"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 arm64_ventura:  "890634f1d69a36e62202197a07eddf858e9f391403a6ba993a245f73b321f714"
-    sha256 arm64_monterey: "da60a4c84f1701c825d1db9b3760ed2b1c31511d54fdce8976f7cf86912a3c9c"
-    sha256 arm64_big_sur:  "13d12d740d2a824f627ea3a76293d038394793ce19661f7ad41a5d9ab98b4e7e"
-    sha256 ventura:        "dfffb690be35c18a17d33ae3a22fdf6cdecf07210384a1bd6cd6ae6fb604f3aa"
-    sha256 monterey:       "e27b6ed67cc86a82908c2ffe52ec7061f956932f0a181325440d62f7df352ebb"
-    sha256 big_sur:        "342b1aa84a0c7446c4c64d844d3df8f97937fac780a5181baab149c7f97f57bb"
-    sha256 x86_64_linux:   "50a8b54e04e58404b71f5672f447375011c26b00796ab533ab590ba45e99bb9b"
+    sha256 arm64_ventura:  "7fffdc36c2a5d0fe319a1daa5dd06f5403e11b881fa73ecab2f08484cf2af8b9"
+    sha256 arm64_monterey: "5d11908c87eb7383355e0b1e707ee5b40b11b009f74fd7bb4bae0d3e90dfb7ce"
+    sha256 arm64_big_sur:  "d2c9ae7b65441e872b07fcb8347e7cef21112302ea92c897425d1549f479f305"
+    sha256 ventura:        "45e18943d991206715dcd479d8a161cc7b4a7a4a765fe1a5f0be83ba70009309"
+    sha256 monterey:       "f55b2f7ff8d9482ae4b7824e01207cd14cf17f5af3c97e47752b17b8a91093c8"
+    sha256 big_sur:        "17a594a199d3fc687dc80efc2d14bda5e614adb5064bab2c735e3768e2446c21"
+    sha256 x86_64_linux:   "40763a1a0e71e28b26f22c0bf1123c769b384393ca62aade9a777bd50061bce0"
   end
 
   head do

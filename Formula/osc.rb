@@ -3,10 +3,9 @@ class Osc < Formula
 
   desc "Command-line interface to work with an Open Build Service"
   homepage "https://openbuildservice.org"
-  url "https://ghproxy.com/https://github.com/openSUSE/osc/archive/1.1.4.tar.gz"
-  sha256 "8407ccdcaa6089601e3b9f42c03c015d938ba756b1553f65e2eb122ff00b83e5"
+  url "https://ghproxy.com/https://github.com/openSUSE/osc/archive/1.2.0.tar.gz"
+  sha256 "0b2b094a515b340f859b417016def33f9b33a47abe4c3fad66c5dbc8b8447a7d"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/openSUSE/osc.git", branch: "master"
 
   livecheck do
@@ -15,13 +14,13 @@ class Osc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "17972241c9dbd00b619bbc0e0e595525b30b170f653a4b8dc43d4ff5e38672cb"
-    sha256 cellar: :any,                 arm64_monterey: "b4f05310448c2be7183062ee6d174924ca3fd8ebf0bafbef8dd04ce9488a3cb9"
-    sha256 cellar: :any,                 arm64_big_sur:  "8f8c7cb826990dbb63ec67ea4243243928618e7f0cb43605163ead667131dcf6"
-    sha256 cellar: :any,                 ventura:        "f9d5ac6c9d0f8f76a00c292d170b8b3c3a8e2489fed95263630a9950d5d044f2"
-    sha256 cellar: :any,                 monterey:       "ef31f868a24ae2c9b20879693782af599d81bcbf461949f2d9e3fb44332c2895"
-    sha256 cellar: :any,                 big_sur:        "76c7326b5cec95c1b94349a997a350c45bc503afa1d68c25330bb46d3aee91b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ea82dec671ead769b0f867cab239a6ace5d0b5fde31ffb0f1ef17a785b8ca90"
+    sha256 cellar: :any,                 arm64_ventura:  "10d0ce7696abcdacbfbfd919b35a7059abfd466a7888ebbed38c8c87000c4bb2"
+    sha256 cellar: :any,                 arm64_monterey: "aa8ad3a6771c1c7c9be369a85ab829f99d491488ba0ecd41092ef2f87604d96e"
+    sha256 cellar: :any,                 arm64_big_sur:  "8a4fdb8654924ccae7880d7ae964cc7999ba13ab0e4fe5bf669672b97b8821a0"
+    sha256 cellar: :any,                 ventura:        "46747c55b1f890c600569565578f3d820406c44a9c3476e60f450ff0d94c7bfe"
+    sha256 cellar: :any,                 monterey:       "917ffac54a32426495e65ec40306fdb8963c15a3cf8aba2d80d62a4ae8727201"
+    sha256 cellar: :any,                 big_sur:        "51954e0fc0405ec1dc1fdfe7d57f002424e32b90fe5ff015a4f44be8eac8dfa1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a42f7f2b4c0dd68992f0f7f9b1ac9ff93092b5d61e8ecd64d5596c73f97ce5f"
   end
 
   # `pkg-config` and `rust` are for cryptography.
@@ -35,8 +34,8 @@ class Osc < Formula
   uses_from_macos "curl"
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
-    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
+    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
+    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "rpm" do

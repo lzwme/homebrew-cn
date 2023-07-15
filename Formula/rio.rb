@@ -1,8 +1,8 @@
 class Rio < Formula
   desc "Hardware-accelerated GPU terminal emulator powered by WebGPU"
   homepage "https://raphamorim.io/rio/"
-  url "https://ghproxy.com/https://github.com/raphamorim/rio/archive/refs/tags/v0.0.8.tar.gz"
-  sha256 "995ad62ba79e1190d15a6e7e353e04750808ccf3d504b5c7d8790cf0e2d999c9"
+  url "https://ghproxy.com/https://github.com/raphamorim/rio/archive/refs/tags/v0.0.9.tar.gz"
+  sha256 "ff9388460fbaea1f63fc47b478ccdd1a09941e7a96cea6c70ffa24b8d88f1e8d"
   license "MIT"
   head "https://github.com/raphamorim/rio.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Rio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7095df9f64a6974baf8b9b53bec9b718b49d53fb8b3e547bc4d827e7f1cbea4c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "84d122a77db619ff9e3b8feb4c548c05da8bdf4c8604fd159728e0266e6140e5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3eeae47a50f131598682198c9013ac89df288118bfee6dc7a7d4273ed0e53ef5"
-    sha256 cellar: :any_skip_relocation, ventura:        "e0d2eefc81bb4aef17b8edf503f6eb34fdafae270a667fe4ec9ef616bdee4142"
-    sha256 cellar: :any_skip_relocation, monterey:       "1e33182c958c81aa1c9c9dd5071c196a865da3181b852839e7160bf737c03a82"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e36fea45ecb6df2fdf963fda129f3d92639cbe8aac6b89d650641e0a488b941c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "95c165f99f3827f0a06c623dd1d677b7736140e260bb97287f3000bdb789684f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e514862b4425436f9a99f57c78524fca512d5438acac643529667659ac189330"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "46415b8cfde957e954b8e45f65cbd678eb33849df78f743331c14b847b997217"
+    sha256 cellar: :any_skip_relocation, ventura:        "ccf7474282f05a5bc15cad18f5e47acebd5013ea979ecbc3a65cec1650e67387"
+    sha256 cellar: :any_skip_relocation, monterey:       "7598be17a155389567687525d45e4fe71c7ae642e5d97e0cbafe542c66fc959e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8ce47c5fe46cabf378d41ba737925abb075b63b07b9266d2f8d6b9ab9d38221b"
   end
 
   depends_on "rust" => :build
@@ -35,6 +35,8 @@ class Rio < Formula
 
     # This test does pass locally for x86 but it fails for containers
     # which is the case of x86 in the CI
-    system bin/"rio", "-e", "echo 1; exit"
+
+    system bin/"rio", "-e", "touch", testpath/"testfile"
+    assert_predicate testpath/"testfile", :exist?
   end
 end

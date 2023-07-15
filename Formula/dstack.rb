@@ -3,18 +3,18 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https://docs.dstack.ai/"
-  url "https://files.pythonhosted.org/packages/46/ff/da849fa5f92e53116d78b314233096bb9ddeba10f3a9493281616fb16b93/dstack-0.10.4.tar.gz"
-  sha256 "92427db778ad09c8093e7c2326743d570b723afb0491c863e48b3e31ebfd9041"
+  url "https://files.pythonhosted.org/packages/bd/2d/77da49f053c09ebd9407f071e57ad0c436f55306f0e35ce5d583854a659d/dstack-0.10.5.tar.gz"
+  sha256 "c6aea4ea9214e26852ecd8406db8683f55aaf6d557e4404a3856f8eea615c919"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3845460ab8b55ba76af7a2bf6f6f37199b15366146b70cf84f12a4982a36a700"
-    sha256 cellar: :any,                 arm64_monterey: "a2c5b73210132bd89288cfb83e9bdd09836574ad2596baa2b2ef5b8eacb78a7a"
-    sha256 cellar: :any,                 arm64_big_sur:  "f4c270f44040275dbb0faee084ee5a06e9ebecb2a40ff6f06c2663473b419d27"
-    sha256 cellar: :any,                 ventura:        "475198e4336cddec2cd3ba6a04b700b7faed5de2bf2c609ede2565108cb9559e"
-    sha256 cellar: :any,                 monterey:       "d095a10c010b9c02773d0ac2cdee200568e510bc2d05cee36ddca05ce2987121"
-    sha256 cellar: :any,                 big_sur:        "d9520066275551c3a7435b7f325d4b7fbb0d84d9643efc25dbbc0d2710128667"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a40cf4f78c198f40812d895c2bb2be5fd638d426c2f4387607c87a1b3f92db8e"
+    sha256 cellar: :any,                 arm64_ventura:  "a017db742821131dcc1ec6b0d0ca39088c244f4600e97bf40957a86f1b63f8cf"
+    sha256 cellar: :any,                 arm64_monterey: "b1210be5d717c32ef346868c4dd4736627aeaffc5cb1b4be42d270789d21e182"
+    sha256 cellar: :any,                 arm64_big_sur:  "f9bc90ade8843daa519cdae753d3ad06a015fb4208d4c719bd19b9398c825781"
+    sha256 cellar: :any,                 ventura:        "587cb3cd8641d97e11f9547c566cca4c88391099091c28dc86978a0794719f80"
+    sha256 cellar: :any,                 monterey:       "ac66230522516849e8aa0b8e136e681f4a457e2e8ea93ac5f807d68d38eb975a"
+    sha256 cellar: :any,                 big_sur:        "df840a5f203763ad95a80b6af9f23a4e522144c744c66a3fe5b673f089d3647e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf9a0961809258a37b23e2d63f04f08e0a52cb9c3b52ffb51b4f7bbb97b6899d"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -73,8 +73,8 @@ class Dstack < Formula
   end
 
   resource "azure-core" do
-    url "https://files.pythonhosted.org/packages/31/5c/9da79ae1d12571a0e268f0b813d9d19e9419339f7fbe2232b556937b4358/azure-core-1.27.1.zip"
-    sha256 "5975c20808fa388243f01a8b79021bfbe114f503a27c543f002c5fc8bbdd73dd"
+    url "https://files.pythonhosted.org/packages/fd/51/0ee0a2844712f54117b3ee4853c3d209ba37641f0c587be22a993990989e/azure-core-1.28.0.zip"
+    sha256 "e9eefc66fc1fde56dab6f04d4e5d12c60754d5a9fa49bdcfd8534fc96ed936bd"
   end
 
   resource "azure-graphrbac" do
@@ -153,8 +153,8 @@ class Dstack < Formula
   end
 
   resource "azure-storage-blob" do
-    url "https://files.pythonhosted.org/packages/fb/b1/5f043703c58cb67f113dded485ef3d7610e215b3921c65e52030791b7c76/azure-storage-blob-12.16.0.zip"
-    sha256 "43b45f19a518a5c6895632f263b3825ebc23574f25cc84b66e1630a6160e466f"
+    url "https://files.pythonhosted.org/packages/bd/5f/64a471e09f064b3b3a53529ecd9ed8facfebfafff3dad7ee9350f3a00a30/azure-storage-blob-12.17.0.zip"
+    sha256 "c14b785a17050b30fc326a315bdae6bc4a078855f4f94a4c303ad74a48dc8c63"
   end
 
   resource "bcrypt" do
@@ -163,13 +163,13 @@ class Dstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/fc/26/81d4ff9eb8fd067be37e4044f8f4ddd6f62abf0cd2479605e7d97fa31e36/boto3-1.28.0.tar.gz"
-    sha256 "8d43863e4769a5652efc32fd63430df58488cdb3fb85e614461b511358e47ec7"
+    url "https://files.pythonhosted.org/packages/b5/3e/585a02252bcedbaed06d8f01c25aadcb75e5569804c3eee729315d64a4f7/boto3-1.28.3.tar.gz"
+    sha256 "610369a7f984b58973c097ea649ec81976c04565d39a2d6d3edc280d23b0cb87"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/2b/02/06efcac837cb1a2dd10763ea26e77ef715c5dd28764ebf0dcdb4b171b303/botocore-1.31.0.tar.gz"
-    sha256 "db22eea779de7f61621a612c6a36f3ee069a37d4572a9541aa374503447622aa"
+    url "https://files.pythonhosted.org/packages/bd/26/62d5fdbf4d03e46e0ed5a280bd81eab4c600abe14e50ac5c9a823fd2ca1e/botocore-1.31.3.tar.gz"
+    sha256 "744ce853cadc7ae87ba42ef6828194ddec97d606dd4d08b4dfe3d96d5001eb0c"
   end
 
   resource "cachetools" do
@@ -183,18 +183,18 @@ class Dstack < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/77/88/b0cc5fe95c31c301e9823ea9b028f669c0dcfa205ff71111037a5ed4892c/click-8.1.4.tar.gz"
-    sha256 "b97d0c74955da062a7d4ef92fadb583806a585b2ea81958a81bd72726cbb8e37"
+    url "https://files.pythonhosted.org/packages/7e/ad/7a6a96fab480fb2fbf52f782b2deb3abe1d2c81eca3ef68a575b5a6a4f2e/click-8.1.5.tar.gz"
+    sha256 "4be4b1af8d665c6d942909916d31a213a106800c47d0eeba73d34da3cbc11367"
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
-    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
+    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
+    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "cursor" do
@@ -228,8 +228,8 @@ class Dstack < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/5f/11/2b0f60686dbda49028cec8c66bd18a5e82c96d92eef4bc34961e35bb3762/GitPython-3.1.31.tar.gz"
-    sha256 "8ce3bcf69adfdf7c7d503e78fd3b1c492af782d58893b650adb2ac8912ddd573"
+    url "https://files.pythonhosted.org/packages/87/56/6dcdfde2f3a747988d1693100224fb88fc1d3bbcb3f18377b2a3ef53a70a/GitPython-3.1.32.tar.gz"
+    sha256 "8d9b8cb1e80b9735e8717c9362079d3ce4c6e5ddeebedd0361b228c3a67a62f6"
   end
 
   resource "google-api-core" do
@@ -238,13 +238,13 @@ class Dstack < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/38/12/9fd32d6a04818e1d3d6ad5c8c2db8e7ad0087d6a251a5a9e78920b3f7079/google-api-python-client-2.92.0.tar.gz"
-    sha256 "f38a6e106a7417719715506d36f0a233ec253335e422bda311352866a86c4187"
+    url "https://files.pythonhosted.org/packages/57/dd/3b0de4b9633d7a2410b5b19c42c6c41410d4a87907fff5e077e2117ffb01/google-api-python-client-2.93.0.tar.gz"
+    sha256 "62ee28e96031a10a1c341f226a75ac6a4f16bdb1d888dc8222b2cdca133d0031"
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/e6/76/2217d47be6a03dfd5f6bfe7432f87a5aa5ab6d85525a4dc546df9895f053/google-auth-2.21.0.tar.gz"
-    sha256 "b28e8048e57727e7cf0e5bd8e7276b212aef476654a09511354aa82753b45c66"
+    url "https://files.pythonhosted.org/packages/a4/3a/b6ab1073d2ac98c1b4f9036a4d37d5720f783bd4dc6e2c0ae516d3b13326/google-auth-2.22.0.tar.gz"
+    sha256 "164cba9af4e6e4e40c3a4f90a1a6c12ee56f14c0b4868d1ca91b32826ab334ce"
   end
 
   resource "google-auth-httplib2" do
@@ -263,8 +263,8 @@ class Dstack < Formula
   end
 
   resource "google-cloud-compute" do
-    url "https://files.pythonhosted.org/packages/e0/b3/97b5bda9589b5fba41f748a43b76cb061e52f2b7345ab4b6b8af78c446b7/google-cloud-compute-1.12.1.tar.gz"
-    sha256 "e8ff230c0498a05b8dec9e81543e745b0da3676d6ca3259437a429c8d2acaa25"
+    url "https://files.pythonhosted.org/packages/c4/53/d228bfaec639a1ecc805292b28656355c3915599fcfee8ccb2ea9f7eecd4/google-cloud-compute-1.13.0.tar.gz"
+    sha256 "93b72129c6443c898da5a060d2021bc2d11c2a57ef2fbb9306afbb5126a376b9"
   end
 
   resource "google-cloud-core" do
@@ -348,8 +348,8 @@ class Dstack < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/79/01/ce65847f79de9594d436b7ef295e374dfcc0ff3ee884bf61cf896f970ddb/jsonschema-4.18.0.tar.gz"
-    sha256 "8caf5b57a990a98e9b39832ef3cb35c176fe331414252b6e1b26fd5866f891a4"
+    url "https://files.pythonhosted.org/packages/7e/6b/38c38d113b5f215029cbe8133e7f907540fefa918d872fa3256416e477bf/jsonschema-4.18.3.tar.gz"
+    sha256 "64b7104d72efe856bea49ca4af37a14a9eba31b40bb7238179f3803130fd34d9"
   end
 
   resource "jsonschema-specifications" do
@@ -448,8 +448,8 @@ class Dstack < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/cf/01/e8a380dc6e92a76113f034c58c9ffdbd115753e9b944ddf5d2dbe862f248/pydantic-1.10.11.tar.gz"
-    sha256 "f66d479cf7eb331372c470614be6511eae96f1f120344c25f3f9bb59fb1b5528"
+    url "https://files.pythonhosted.org/packages/eb/84/9b0a0e2d931fc9bdb32e6905076714f9592f9b20de03c90fd0f65b3ab063/pydantic-1.10.10.tar.gz"
+    sha256 "3b8d5bd97886f9eb59260594207c9f57dce14a6f869c6ceea90188715d29921a"
   end
 
   resource "pygtail" do
@@ -508,8 +508,8 @@ class Dstack < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/75/80/7f76ff5d290a11a8d43653da186def13f293f00baf4927eae1ad128bf9de/rpds_py-0.8.8.tar.gz"
-    sha256 "300b8579740b06e246238b730e636f314a7d8dc475be1868650f5d3ddc29a0d8"
+    url "https://files.pythonhosted.org/packages/e6/fe/7d07bc08cce2ccae2c7e5c96d9b3976c4e1fa5e248989dca0a58bc7628f8/rpds_py-0.8.10.tar.gz"
+    sha256 "13e643ce8ad502a0263397362fb887594b49cf84bf518d6038c16f235f2bcea4"
   end
 
   resource "rsa" do

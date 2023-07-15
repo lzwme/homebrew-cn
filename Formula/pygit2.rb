@@ -7,13 +7,14 @@ class Pygit2 < Formula
   head "https://github.com/libgit2/pygit2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6e93a3ac65163d5f26f54ce25f69756b1964b2bbac8092162e226d3519bc03db"
-    sha256 cellar: :any,                 arm64_monterey: "d8adb47b0086f2bf667da0af8c2d5caeead297c26c0355fdb70bfd98aaaec7fb"
-    sha256 cellar: :any,                 arm64_big_sur:  "701a508ac8c5ce63f7d67759ab02b2df3f94c171e764419f165fffb4d071ba89"
-    sha256 cellar: :any,                 ventura:        "d6ed893ebee2daa24489c6ebafa165c13a6823791f9e30df80c6c7fe82784072"
-    sha256 cellar: :any,                 monterey:       "fac238723a87e9ef1535cd086fce595fe89c1927c2df1be44c7ff009e268f48f"
-    sha256 cellar: :any,                 big_sur:        "ba4f02bd2985e905843137cb1d36da922e1a65c339ab9c678b65137b73f27f34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe2b9fe2c45e64d373d67bd80a8f5a3e0e09d3764f992a67e7509f3d39792f10"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "50d0698bb194f8e19ee8b26eca8c3a1362cf468dc0286f8f1e7b5fd08338109b"
+    sha256 cellar: :any,                 arm64_monterey: "ec798b4c494eeaab104671f73e907eeaa14301dd106db94696b3d8851cde6d5e"
+    sha256 cellar: :any,                 arm64_big_sur:  "7e4da4c4d21d93344b34d6db2a37cfeb2e1fefe8b2944580d9454797602e775e"
+    sha256 cellar: :any,                 ventura:        "733df708e7b6c8016704ac3f8ec8392bfaaf36bf0c5005c49045f029d39fae25"
+    sha256 cellar: :any,                 monterey:       "c47fc76186c79f21f38e89d6da8bd31e86138ad687b17bf01306780ce109dcd0"
+    sha256 cellar: :any,                 big_sur:        "743091d3ac0384f3f0aef487da81ea95404a5aaf5f866442e4a101c5c0ef3b02"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd4e7397d8d8cbe316a2548302deb636c12071bb777c32dd13fadc8a3aa24e99"
   end
 
   depends_on "cffi"
@@ -25,7 +26,7 @@ class Pygit2 < Formula
   end
 
   def install
-    system python3, *Language::Python.setup_install_args(prefix, python3)
+    system python3, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "."
   end
 
   test do

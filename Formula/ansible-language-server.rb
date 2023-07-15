@@ -3,12 +3,12 @@ require "language/node"
 class AnsibleLanguageServer < Formula
   desc "Language Server for Ansible Files"
   homepage "https://github.com/ansible/ansible-language-server"
-  url "https://registry.npmjs.org/@ansible/ansible-language-server/-/ansible-language-server-1.1.0.tgz"
-  sha256 "79649ce78b8c1636321f6dfee79a8b1e8d69dd4f7dfb8ad4ced50d31bf8352f4"
+  url "https://registry.npmjs.org/@ansible/ansible-language-server/-/ansible-language-server-1.2.0.tgz"
+  sha256 "29154d4c16fdf2859901eebe8e6715c8c47f1023dc4e1c94a4d8d5ec028668f6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "cc33ab5156bada15a41421dc0a46ba7d206320ee09cee63038f42ff4fa0eb013"
+    sha256 cellar: :any_skip_relocation, all: "5e782aa437295f8acbc28ef654726a0b53a7b7196519bdd9946fd75373b1a00c"
   end
 
   depends_on "node"
