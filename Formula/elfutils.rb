@@ -11,7 +11,8 @@ class Elfutils < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "19fc802ff82228928519269ac4fd6668fa4942d9665a419651a4760b2557c2b7"
+    rebuild 1
+    sha256 x86_64_linux: "e1116a1bf56bc021c9dd68cbe11bd2142c529d25202ec6bc5a1aaf88d10aab13"
   end
 
   depends_on "m4" => :build
@@ -19,16 +20,19 @@ class Elfutils < Formula
   depends_on :linux
   depends_on "xz"
   depends_on "zlib"
+  depends_on "zstd"
 
   def install
     system "./configure",
-           "--disable-debug",
-           "--disable-dependency-tracking",
+           *std_configure_args,
            "--disable-silent-rules",
            "--disable-libdebuginfod",
            "--disable-debuginfod",
            "--program-prefix=elfutils-",
-           "--prefix=#{prefix}"
+           "--with-bzlib",
+           "--with-lzma",
+           "--with-zlib",
+           "--with-zstd"
     system "make"
     system "make", "install"
   end

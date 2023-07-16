@@ -6,17 +6,17 @@ class Pwntools < Formula
   url "https://files.pythonhosted.org/packages/fa/76/aed9a42988214d6af85aa650a90be6225cfc689ad5f5c3c3b61059668f4b/pwntools-4.10.0.tar.gz"
   sha256 "588e89ea678527c0b5b6caeeee7e76e31352e78e2f1cf3dda7bc9acf526e446d"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/Gallopsled/pwntools.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "85bf16e2d2909290011876c1bfc49c7f69231548efa6289ff2d59fd80a693d49"
-    sha256 cellar: :any,                 arm64_monterey: "ec4ffe264cc1807bb973afe3b969b1765f28043d3b37c741f5f960b1c6b02dca"
-    sha256 cellar: :any,                 arm64_big_sur:  "fd633ed31dd31f7314707dcd35a5c7808d7af6633a5645e56bde20eb5651a29f"
-    sha256 cellar: :any,                 ventura:        "ad4930c00deb1495064c9b6b745c5ede14eda6f4bea7e72c4b2e1058af32e90c"
-    sha256 cellar: :any,                 monterey:       "316b8771156953f82340ac2c3be372d28ac7137947ad9515cdf2afccf4dcffb6"
-    sha256 cellar: :any,                 big_sur:        "0355aa938029f86e5f4c07ee2e9e5421d304427c7c08a68519da7a6aa6ded953"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a229b5303223fc4d2cac8d0249012fd8a3842c3613828ff302c13a1105e066a"
+    sha256 cellar: :any,                 arm64_ventura:  "0a387fbe6e515674e12aca87ebbf73d7c2acc3b8031da0ba38e3800a2d8f3aa1"
+    sha256 cellar: :any,                 arm64_monterey: "5ac88f18820858cb79888bc63ad64bfb07c4db54c097b78005d7227c64f5babe"
+    sha256 cellar: :any,                 arm64_big_sur:  "0ffbd02c2f790c644a93547370f3c1ae8c4a52bebaf512e4ba5696430116139c"
+    sha256 cellar: :any,                 ventura:        "40cd03c09875068484d355f55884f4974fe19473eb8f08868ea99db360238ed8"
+    sha256 cellar: :any,                 monterey:       "f5cb160c9b4e44cbf72e94127680253ba9a2b8c58c219b1d0808d5bf68872496"
+    sha256 cellar: :any,                 big_sur:        "d3b5e5908d4eaf95f5229225977909ceeb1a71eb1da3ba296aa53852bd5058ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b77374031def27a023be0f6cd54448516966d737fbdb578d4cdf715bc47be1f"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -40,8 +40,8 @@ class Pwntools < Formula
   end
 
   resource "capstone" do
-    url "https://files.pythonhosted.org/packages/a6/6f/6d98f636aba7f064e235b345667e50219b7a53b7ef8871ed7ac6bc50d3fd/capstone-5.0.0rc2.tar.gz"
-    sha256 "48f22d674d84f01c2aa7c7dcfe8ba5e4269708ba7463aac9f8df6e9f2bc60740"
+    url "https://files.pythonhosted.org/packages/de/04/4c2ae5ef70dadd773b39d39d30f1cab54d4a27aa0af69ac1414e2338434e/capstone-5.0.0.post1.tar.gz"
+    sha256 "fe0affca395c09ce76a21c5f0fac026e74396839a220798ca5e57c54305bcf65"
   end
 
   resource "certifi" do
@@ -50,8 +50,8 @@ class Pwntools < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "colored-traceback" do
@@ -60,8 +60,8 @@ class Pwntools < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
-    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
+    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
+    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "idna" do
@@ -155,8 +155,8 @@ class Pwntools < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
-    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
+    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
+    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
   end
 
   def install

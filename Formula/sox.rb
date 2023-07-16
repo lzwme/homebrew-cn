@@ -3,17 +3,18 @@ class Sox < Formula
   homepage "https://sox.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/sox/sox/14.4.2/sox-14.4.2.tar.gz"
   sha256 "b45f598643ffbd8e363ff24d61166ccec4836fea6d3888881b8df53e3bb55f6c"
+  license all_of: ["LGPL-2.0-only", "GPL-2.0-only"]
   revision 5
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d5679ccdaa83932444058e30d202a04d59608628bd205a912ebdfaf68c334ff8"
-    sha256 cellar: :any,                 arm64_monterey: "10012939e3d82a101d7d100e74885234426fffa599c6b22787b7232428f8a6f5"
-    sha256 cellar: :any,                 arm64_big_sur:  "ac3d90255b09e71f6c6d3f48a8f744ad5b5ad38b8494c07a6d8d4db91cb64d3f"
-    sha256 cellar: :any,                 ventura:        "56e05c43dbd0c01b828ed9be01ca8b4b9a51efabd5315f2bcb8467d6ed620688"
-    sha256 cellar: :any,                 monterey:       "0325437ffb26d7b3d8c5c735eed402b2a95a471f4a8e72eeb9e5fa2416960f8f"
-    sha256 cellar: :any,                 big_sur:        "76b3510fa79c9580b3005792945479fda775c6f93ff69236192c97411b50d715"
-    sha256 cellar: :any,                 catalina:       "4caec734b381cd22924f520609bcef9ec6c8a7d65fa8c0178a57b65e00d0f633"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65355303a0a12e941de780677215639938e6d5909af3b956f96192d927f77824"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "1669b614365ee6f54c3b974aa2e25c6e88353caeb73a2763f31c5f71d7032705"
+    sha256 cellar: :any,                 arm64_monterey: "170cf704ff002b6d97b5c5f081e3dda5d87a9860860a13b1e8a7efbb4b4dba53"
+    sha256 cellar: :any,                 arm64_big_sur:  "ac3d7cf23b479a1bf067f82636cd5345d2e43de29e57d687206922c8d260ee9f"
+    sha256 cellar: :any,                 ventura:        "54d7c86a22ce014e0924791450e8c8a2630fc2609f5086d1620bfd1fa901544a"
+    sha256 cellar: :any,                 monterey:       "dec8603f276fe6a1928a320ff498267785b75fcfa9523647de2f623367d2e896"
+    sha256 cellar: :any,                 big_sur:        "bf59b93291ad51588e8e4183165ee8d945cde82f0ea22ae61e1c5076a5be10f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7bb06054835fa3a2be758935d05d245b9edb5330b484b6f1e57d77ab60f772ad"
   end
 
   depends_on "pkg-config" => :build
@@ -24,6 +25,9 @@ class Sox < Formula
   depends_on "libvorbis"
   depends_on "mad"
   depends_on "opusfile"
+  on_linux do
+    depends_on "alsa-lib"
+  end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
@@ -41,9 +45,11 @@ class Sox < Formula
   end
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    args = std_configure_args
+
+    args << "--with-alsa" if OS.linux?
+
+    system "./configure", *args
     system "make", "install"
   end
 

@@ -6,15 +6,16 @@ class Esphome < Formula
   url "https://files.pythonhosted.org/packages/48/cd/dc2b0591dee0ebb32d26d95b969d28a63955eeef3b8c2abbeadfeec017c8/esphome-2023.6.5.tar.gz"
   sha256 "0055ec580f6ec044db7c1abbc04a823e889baa212a22b6eb1ecab165fc840d96"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d8b2524f916f3ea4e1048aaca4a0d07f9456c19a899d1128c70c8ee9177311d7"
-    sha256 cellar: :any,                 arm64_monterey: "bc4b7aeaa77dc9952a975210209223d5d7a6f85859f1c5894b022d1ee8b7983d"
-    sha256 cellar: :any,                 arm64_big_sur:  "490de93569b301392285b7a3c260afd69ccaa250589cb4eeacf996fe617ed2f7"
-    sha256 cellar: :any,                 ventura:        "3d37e135a5efb5b5a2d305d440b121a6cee2d846ba7bcf01e875cfe9eca01825"
-    sha256 cellar: :any,                 monterey:       "c646c4ae9e88b66640a2b501bcd28e7043bef471b50fae95bb187d4afeae2928"
-    sha256 cellar: :any,                 big_sur:        "eede9de6bc2908822318995cb88c85325a2bdd8d51f35e60a7416574dbea96eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6cff6801fc6e93ccae458ec53298c2325179c3968318465baf22e41183fb833e"
+    sha256 cellar: :any,                 arm64_ventura:  "a9cfaffcb6379a79aadcbbe9e40670d9611615074278f5392e51c4bc67a0b167"
+    sha256 cellar: :any,                 arm64_monterey: "0a877f183e6decd382d9d8693baf7a07aeba6c0c703f73add132248e64b0f75e"
+    sha256 cellar: :any,                 arm64_big_sur:  "02bf030deae6da5dd70e72e29d0e8148dbf9a9e092a3a9a7cfa68e965a165f1a"
+    sha256 cellar: :any,                 ventura:        "2b3f13c130622c0115e675db02096f363f07caee3a53d998cc45317cbf8f14ad"
+    sha256 cellar: :any,                 monterey:       "69a7f66f29d911929d003f5874797efdc4b6e0e55b5e080eb7c49afe605fa760"
+    sha256 cellar: :any,                 big_sur:        "ca171e560ff89bcdad1f1893dfeeee21981575da4d7df246480d6844db4605d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83ec623d2199cd22e657047c850dfc9a9fc5efebc92bb5b489a48b1a44d5a70d"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -85,8 +86,8 @@ class Esphome < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
-    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
+    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
+    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "ecdsa" do

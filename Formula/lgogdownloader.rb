@@ -4,7 +4,7 @@ class Lgogdownloader < Formula
   url "https://ghproxy.com/https://github.com/Sude-/lgogdownloader/releases/download/v3.11/lgogdownloader-3.11.tar.gz"
   sha256 "d8d015cce6e002876305517367dc006c332e4d492263173b58bfe5a94b057b09"
   license "WTFPL"
-  revision 1
+  revision 2
   head "https://github.com/Sude-/lgogdownloader.git", branch: "master"
 
   livecheck do
@@ -13,13 +13,13 @@ class Lgogdownloader < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7830072d3e824e1d733839fbb424246a7861a68f5ae7d5fcca7fab0c90b84d88"
-    sha256 cellar: :any,                 arm64_monterey: "cf8a26d2793403c3a3ef1f4c015fe234426696c28625277a13ab1fa7481f0e04"
-    sha256 cellar: :any,                 arm64_big_sur:  "31c3b37be44e4820d45ca341afe929c73dd20eb6905fbdea5f613f4a77702675"
-    sha256 cellar: :any,                 ventura:        "467604c9eaf7719e91168f6a33f294bb08cc88e6f52520a81b6c2b5b064b788c"
-    sha256 cellar: :any,                 monterey:       "360a96ae58a8a9e836ec4e81aa1e55576cf3af7dfc7fd13a20e852d33aff1862"
-    sha256 cellar: :any,                 big_sur:        "72a0eb486ec0cd15dc92fa15a2d43e2bee6a33ed15aff2f42ff3ba55e3020282"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02e6035b19bc00326cce05cbfcf19d7d067cb596f6234781901285a2240337c6"
+    sha256 cellar: :any,                 arm64_ventura:  "1b9940bd11ba791f39d4836423124bc3d817c8711102fcdeebde9fe19d4bd39e"
+    sha256 cellar: :any,                 arm64_monterey: "cdd02f78418f68f0538c18a2f5e88cd341db4976ff37e81ba0e68e8beb28fcc7"
+    sha256 cellar: :any,                 arm64_big_sur:  "13d37c9e5b87f06a9c1fc59732adf3143d14af10915735e44bf446720d48ef0c"
+    sha256 cellar: :any,                 ventura:        "64e2d38ace1a2b368f57e878d29c0d6f3070c63cdd88976214987bcc9def3409"
+    sha256 cellar: :any,                 monterey:       "ef717cffced5d634ad7a1f898efc203ed5113c14f6746665a657f533126ced7f"
+    sha256 cellar: :any,                 big_sur:        "5af4bd2a87633d351340e80bb07374b5a5f7d662a327b71123c2ba77c8f297e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "62c4c04f52e8cefa79bf839834aa3d0f7cd4b21b0d2eecc76d7fb1a079c40b89"
   end
 
   depends_on "cmake" => :build

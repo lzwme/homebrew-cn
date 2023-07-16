@@ -6,17 +6,17 @@ class RobotFramework < Formula
   url "https://files.pythonhosted.org/packages/b8/70/050b0a5bb51c754ad521d6f1b51c17c293efe65ec72ac955d3686e1afa1d/robotframework-6.1.zip"
   sha256 "a94e0b3c4f8ae08c0a4dc7bff6fa8a51730565103f8c682a2d8391da9a4697f5"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/robotframework/robotframework.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e860054a99f1bc656200f371b2bcafea6e6c97e5de5fd57c2faf66df40eaab0f"
-    sha256 cellar: :any,                 arm64_monterey: "18ad0e2e643888b53a68391213112672ecad9ef42604408d39d17eb6b665a6a7"
-    sha256 cellar: :any,                 arm64_big_sur:  "b6d105d527864470759215926afee8514b628b8cc58e2b21fe6176696d2db8ed"
-    sha256 cellar: :any,                 ventura:        "659c5ca552111a0611d649e8e197f29547e84eb55cce664b4cd39af99cfb997e"
-    sha256 cellar: :any,                 monterey:       "ec992c7f76f3e14b853f3a16f876312bb97a947cc1a92b4375ed1812d39b0d04"
-    sha256 cellar: :any,                 big_sur:        "0cc75b230d70b1e2727a2c90c558fa7149cdbad697f00ea37f6e987283a365a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "28f15cc4d61e177aecfa9e2264396c5f2e7cb46d337fea336a3cdad8c060bd6f"
+    sha256 cellar: :any,                 arm64_ventura:  "087f085eb999a11eca252edac8881b2f5261b0f9dfcd9f3d5eb420ab97d13662"
+    sha256 cellar: :any,                 arm64_monterey: "13c993da78301a3bbecb14d6384d3332ddde28b31fc7cef9de2c3a9ccba9c8bc"
+    sha256 cellar: :any,                 arm64_big_sur:  "fc0a74608b88183bc2cab1c7fd7ca8785f97bb63d92ea2c68ccb3475b578a960"
+    sha256 cellar: :any,                 ventura:        "7d4826cd5d5e17ac6d3d3104028fd98fa92022db77f5947aa9c7eb9f571af6b4"
+    sha256 cellar: :any,                 monterey:       "95987accc96f2ac082a62e3baed5a826575d90da7f63d689ef2ddbef257683cc"
+    sha256 cellar: :any,                 big_sur:        "b1f7d075573de2b5ac5d97838f2429f04da607869f65dd764013b862692e6160"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02880b12a66244445bb0cd4aa7d2207c2313b4fa9adb180172c5fc3f6897109f"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -26,11 +26,6 @@ class RobotFramework < Formula
   depends_on "openssl@3"
   depends_on "python@3.11"
   depends_on "six"
-
-  resource "async-generator" do
-    url "https://files.pythonhosted.org/packages/ce/b6/6fa6b3b598a03cba5e80f829e0dadbb49d7645f523d209b2fb7ea0bbb02a/async_generator-1.10.tar.gz"
-    sha256 "6ebb3d106c12920aaae42ccb6f787ef5eefdcdd166ea3d628fa8476abe712144"
-  end
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
@@ -48,13 +43,13 @@ class RobotFramework < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
-    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
+    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
+    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "exceptiongroup" do
-    url "https://files.pythonhosted.org/packages/cc/38/57f14ddc8e8baeddd8993a36fe57ce7b4ba174c35048b9a6d270bb01e833/exceptiongroup-1.1.1.tar.gz"
-    sha256 "d484c3090ba2889ae2928419117447a14daf3c1231d5e30d0aae34f354f01785"
+    url "https://files.pythonhosted.org/packages/55/09/5d2079ecab0ca483e527a1707a483562bdc17abf829d3e73f0c1a73b61c7/exceptiongroup-1.1.2.tar.gz"
+    sha256 "12c3e887d6485d16943a309616de20ae5582633e0a2eda17f4e10fd61c1e8af5"
   end
 
   resource "h11" do
@@ -93,8 +88,8 @@ class RobotFramework < Formula
   end
 
   resource "robotframework-pythonlibcore" do
-    url "https://files.pythonhosted.org/packages/a2/f2/a25d9dd39982dff049c95bee52b8fb0be7ef4f3542f4e398127f25a9e4a1/robotframework-pythonlibcore-4.1.2.tar.gz"
-    sha256 "308c0f4afeed51d913f4883cd9eb2b002f4459a20d76b9c942a42cae0296ea26"
+    url "https://files.pythonhosted.org/packages/11/95/1f2cb678b7dc17f7eef1fe7ac42f55ba8e16be2cb897d04ae744c765977a/robotframework-pythonlibcore-4.2.0.tar.gz"
+    sha256 "f46d8a4b21ffa15f907148173a340bff70fdbfdbd160979b8f90d686e40fb1ae"
   end
 
   resource "robotframework-selenium2library" do
@@ -133,8 +128,8 @@ class RobotFramework < Formula
   end
 
   resource "trio" do
-    url "https://files.pythonhosted.org/packages/0b/b8/1b81d2149c3e2c25900d40b8e6c8d3ca502a3cc844b90c962b0854aaf3f3/trio-0.22.0.tar.gz"
-    sha256 "ce68f1c5400a47b137c5a4de72c7c901bd4e7a24fbdebfe9b41de8c6c04eaacf"
+    url "https://files.pythonhosted.org/packages/04/b0/5ec370ef69832f3d6d79069af7097dcec0a8c68fa898822e49ad621c4af0/trio-0.22.2.tar.gz"
+    sha256 "3887cf18c8bcc894433420305468388dac76932e9668afa1c49aa3806b6accb3"
   end
 
   resource "trio-websocket" do

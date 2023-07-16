@@ -6,15 +6,16 @@ class Dvc < Formula
   url "https://files.pythonhosted.org/packages/28/8b/bf0f5949f8aeb01e8274972e0c7796ca899cdaec66efafb92ace80698599/dvc-3.5.1.tar.gz"
   sha256 "5e2298ed8c4f4943ba25aced5cfa0aa0405847c8316ab954ca627b8be1739a00"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e5e8d78eb58d88b8304bd02f492fd802c1d3ac4208a9c6b906fe140352d82098"
-    sha256 cellar: :any,                 arm64_monterey: "2b0cc671ddff7f5616e70c0652662f1c2f4dc87ada3d3545688a8c48db33774c"
-    sha256 cellar: :any,                 arm64_big_sur:  "c8bb9aefc745f597651f5e858a1d4135b53e5c8215fd6fb715107c485c269973"
-    sha256 cellar: :any,                 ventura:        "bfa269a2dcbc5bdd5744ef07a35061a12b0f84ea69ba11dfe0bfa362b99aac58"
-    sha256 cellar: :any,                 monterey:       "a80edbc9eae352bef30e1cf57c37cb75df3f7948b7aeb273288e894f29692b9d"
-    sha256 cellar: :any,                 big_sur:        "ef234a7e1f572596effc6da5bcdaa65158ed6b492441a1ec7b6c428b0f26a882"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e833d0395e5ab9260986ca70e0f8eb31556c977f36f5ef850d55325be78fac46"
+    sha256 cellar: :any,                 arm64_ventura:  "16592986e625ce8a74526d3cda68717c017f1b04f16997a3c5677f6fbbde18a7"
+    sha256 cellar: :any,                 arm64_monterey: "38521df1d2125a9967079c01630c28b2f32f927eb73db3f5e692dff6bee8a757"
+    sha256 cellar: :any,                 arm64_big_sur:  "42dab70c66576c93582f3dd1c0d930719199c8b9a7b470873bd50c0cfd36da54"
+    sha256 cellar: :any,                 ventura:        "e94828359477158c1035de207c3565b9276b561bf8a111ff981c1d6af62e0cb3"
+    sha256 cellar: :any,                 monterey:       "2941805bf1a32a4a49d37512e5e1de4c070ca988c364125e31ea9a4d2b5b2a87"
+    sha256 cellar: :any,                 big_sur:        "f8c3d3135c5bb7106d74c9e453cd3e1ed54590415c1faedd363a40cb1c5b9b7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e01bbc0a4a49cff66c320d3129a568147bbfb446be9be334f8b8f771d3aa26a2"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -139,8 +140,8 @@ class Dvc < Formula
   end
 
   resource "azure-storage-blob" do
-    url "https://files.pythonhosted.org/packages/fb/b1/5f043703c58cb67f113dded485ef3d7610e215b3921c65e52030791b7c76/azure-storage-blob-12.16.0.zip"
-    sha256 "43b45f19a518a5c6895632f263b3825ebc23574f25cc84b66e1630a6160e466f"
+    url "https://files.pythonhosted.org/packages/bd/5f/64a471e09f064b3b3a53529ecd9ed8facfebfafff3dad7ee9350f3a00a30/azure-storage-blob-12.17.0.zip"
+    sha256 "c14b785a17050b30fc326a315bdae6bc4a078855f4f94a4c303ad74a48dc8c63"
   end
 
   resource "bcrypt" do
@@ -184,8 +185,8 @@ class Dvc < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/77/88/b0cc5fe95c31c301e9823ea9b028f669c0dcfa205ff71111037a5ed4892c/click-8.1.4.tar.gz"
-    sha256 "b97d0c74955da062a7d4ef92fadb583806a585b2ea81958a81bd72726cbb8e37"
+    url "https://files.pythonhosted.org/packages/7e/ad/7a6a96fab480fb2fbf52f782b2deb3abe1d2c81eca3ef68a575b5a6a4f2e/click-8.1.5.tar.gz"
+    sha256 "4be4b1af8d665c6d942909916d31a213a106800c47d0eeba73d34da3cbc11367"
   end
 
   resource "click-didyoumean" do
@@ -219,8 +220,8 @@ class Dvc < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
-    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
+    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
+    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "decorator" do
@@ -344,8 +345,8 @@ class Dvc < Formula
   end
 
   resource "frozenlist" do
-    url "https://files.pythonhosted.org/packages/e9/10/d629476346112b85c912527b9080944fd2c39a816c2225413dbc0bb6fcc0/frozenlist-1.3.3.tar.gz"
-    sha256 "58bcc55721e8a90b88332d6cd441261ebb22342e238296bb330968952fbb3a6a"
+    url "https://files.pythonhosted.org/packages/8c/1f/49c96ccc87127682ba900b092863ef7c20302a2144b3185412a08480ca22/frozenlist-1.4.0.tar.gz"
+    sha256 "09163bdf0b2907454042edb19f887c6d33806adc71fbd54afc14908bfdc22251"
   end
 
   resource "fsspec" do
@@ -379,13 +380,13 @@ class Dvc < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/38/12/9fd32d6a04818e1d3d6ad5c8c2db8e7ad0087d6a251a5a9e78920b3f7079/google-api-python-client-2.92.0.tar.gz"
-    sha256 "f38a6e106a7417719715506d36f0a233ec253335e422bda311352866a86c4187"
+    url "https://files.pythonhosted.org/packages/57/dd/3b0de4b9633d7a2410b5b19c42c6c41410d4a87907fff5e077e2117ffb01/google-api-python-client-2.93.0.tar.gz"
+    sha256 "62ee28e96031a10a1c341f226a75ac6a4f16bdb1d888dc8222b2cdca133d0031"
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/e6/76/2217d47be6a03dfd5f6bfe7432f87a5aa5ab6d85525a4dc546df9895f053/google-auth-2.21.0.tar.gz"
-    sha256 "b28e8048e57727e7cf0e5bd8e7276b212aef476654a09511354aa82753b45c66"
+    url "https://files.pythonhosted.org/packages/a4/3a/b6ab1073d2ac98c1b4f9036a4d37d5720f783bd4dc6e2c0ae516d3b13326/google-auth-2.22.0.tar.gz"
+    sha256 "164cba9af4e6e4e40c3a4f90a1a6c12ee56f14c0b4868d1ca91b32826ab334ce"
   end
 
   resource "google-auth-httplib2" do
@@ -699,8 +700,8 @@ class Dvc < Formula
   end
 
   resource "sshfs" do
-    url "https://files.pythonhosted.org/packages/01/a1/20f5ed702a87b3c2b501698613e8b4d8ce3fa61722c937937658dfd78249/sshfs-2023.4.1.tar.gz"
-    sha256 "d4aba679144e5bc47491395b929c48450daa13738986b41959e1d3673addff7c"
+    url "https://files.pythonhosted.org/packages/71/18/fa440e1b4cb83c9179b07ffb6ce78a6ed751945350601a3342c2b842d60d/sshfs-2023.7.0.tar.gz"
+    sha256 "5bc28cd04df12aad73b5eef85e33e4eb54d9c9249193bb14236de9e75912b710"
   end
 
   resource "tomlkit" do

@@ -6,16 +6,16 @@ class Flintrock < Formula
   url "https://files.pythonhosted.org/packages/dc/ad/6e3871a510f0d053aa49caee2140a2f64f2d3fa584d3b70408043295fa57/Flintrock-2.0.0.tar.gz"
   sha256 "ccbbc912823772ea733802ca3f9751c98dacda8c67518683a3dc4ec8b1de38dd"
   license "Apache-2.0"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d7c5d2eb99d1e9b4640eaa2f9ebe9b375a388f0ed3b8b02cbc5cc3f3e980c720"
-    sha256 cellar: :any,                 arm64_monterey: "b86dea485f1fbec309437a2869793f4a4b422c5b88fc5f580d005f07e9f39d01"
-    sha256 cellar: :any,                 arm64_big_sur:  "3552dcf13179969cb828c9813537277eeffbabb57cbf1ebc3c703e5aa3860fec"
-    sha256 cellar: :any,                 ventura:        "f3d733660f29be0b777c371541839cebdf9b1435e7be5fada2c13da3f8e06e46"
-    sha256 cellar: :any,                 monterey:       "3c18d648b233b40cfe518c7919ed155ffa9a3aea1806f88170a231d9ece0b5d3"
-    sha256 cellar: :any,                 big_sur:        "e9de626dfe7c839dee58c8c9c545ed831258f2ed34fe7aaf73390f1be0f89eb7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "177198a01a28b27ab6de657158a0f9ce56e77787d45387b8b26ae6257b66a1a1"
+    sha256 cellar: :any,                 arm64_ventura:  "c5c6d50b0bedbddcb24e48e4ca8b796c2ca4474de1c6b59508d16e59d681505d"
+    sha256 cellar: :any,                 arm64_monterey: "046825bd8111f25045d9c688a67b32175e0985876f98cc972914d9576ac7a3c2"
+    sha256 cellar: :any,                 arm64_big_sur:  "05fdf7b601ac3569dbed0f45cd6f3eeeae92347e74ca0a1fd5c3ebe539abc5de"
+    sha256 cellar: :any,                 ventura:        "32239131614366ac744ddd5a0afde672c806e3c9645904bc857ca3df7df6a1ea"
+    sha256 cellar: :any,                 monterey:       "20180446da949b541bec4a03a5907be18a022134d716d8b9a65368a6f0a75866"
+    sha256 cellar: :any,                 big_sur:        "3a5e288a561d1daad0f8d40484a383e0b72d5f133f738239cb830083e28c95dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "123a93b08b0ac6c89dc4d4693c5c8d5a0ba045e667db3fba85e0e81cb163c798"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -47,8 +47,8 @@ class Flintrock < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
-    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
+    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
+    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "jmespath" do

@@ -6,15 +6,16 @@ class GimmeAwsCreds < Formula
   url "https://files.pythonhosted.org/packages/fe/01/cdf8901f4c2a3f17974811e1e6669e655f7401111fa033bf07e5192086bd/gimme%20aws%20creds-2.7.0.tar.gz"
   sha256 "a290e0de76c231a923c59fd2d7422331a94f64920aa972971d2c8ece7c461a23"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "568466d9b8cb8d443cc21f8f8ae50bd6e1b1f2548ada5b48d7d722ab24509699"
-    sha256 cellar: :any,                 arm64_monterey: "51f9d4dafa0de636d2610bf308bcb4e36afac4dd2dacdb0957662865c9498c58"
-    sha256 cellar: :any,                 arm64_big_sur:  "ddecb34fe32ca077d97db41a80689b53d92a6c40007c39a153eae4145f8a4bd3"
-    sha256 cellar: :any,                 ventura:        "3e6d45e30c98f720242f7f27bbe48af2c6344ab9ab28823a0afa4c95411e9ec9"
-    sha256 cellar: :any,                 monterey:       "784e6cd8a485c3f8422b4231c25a55f06a79c1424615096c04178113b3428917"
-    sha256 cellar: :any,                 big_sur:        "bc4590677e12d44ed7be7d8fc689d8c127fed25777dc238fe5371a71d7802a03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68f7f026192a318298f06cc56591e2c1f9a1cb61ffdf3c0d470365385e1aa0d6"
+    sha256 cellar: :any,                 arm64_ventura:  "5188223e535d24b58eb65a77353181b273382040dfad35b2fe7ea893175c5941"
+    sha256 cellar: :any,                 arm64_monterey: "5dc8f5c6a42d93780b6e759f100514b344d0ec150db7fd38af620ef6ea0340e4"
+    sha256 cellar: :any,                 arm64_big_sur:  "ea11be9d79b4f9169e6ca8e3e11ee8364a1ac434db9d6a175123eb328d6bbd40"
+    sha256 cellar: :any,                 ventura:        "477e189aeeb390fafd8d4c28bafc6ab0fcd216ffc63133780759e8ffaf3f6edf"
+    sha256 cellar: :any,                 monterey:       "c314f0963e403b8c378f52ae7405602779e6c5bbe45eb5af9a4086dc14925ebf"
+    sha256 cellar: :any,                 big_sur:        "2a4c30b1b0b8a350b4285b8f50097573fede5891fda492028eec0a45e57f85a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1be05addd969d582ff5349ee83387eab1dedf0c35dbfb051def74c486f62e3b4"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -56,13 +57,13 @@ class GimmeAwsCreds < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/1b/07/94eda63bf996c1f9d860b48f48448aa30ae67791035ac3bab18ec1f0525b/boto3-1.26.161.tar.gz"
-    sha256 "662731e464d14af1035f44fc6a46b0e3112ee011ac0a5ed416d205daa3e15f25"
+    url "https://files.pythonhosted.org/packages/b5/3e/585a02252bcedbaed06d8f01c25aadcb75e5569804c3eee729315d64a4f7/boto3-1.28.3.tar.gz"
+    sha256 "610369a7f984b58973c097ea649ec81976c04565d39a2d6d3edc280d23b0cb87"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/db/f7/f327f6308f1893fa099135196348940c4b5cbe1f7653766a6d2472c93c2e/botocore-1.29.161.tar.gz"
-    sha256 "a50edd715eb510343e27849f36483804aae4b871590db4d4996aa53368dcac40"
+    url "https://files.pythonhosted.org/packages/bd/26/62d5fdbf4d03e46e0ed5a280bd81eab4c600abe14e50ac5c9a823fd2ca1e/botocore-1.31.3.tar.gz"
+    sha256 "744ce853cadc7ae87ba42ef6828194ddec97d606dd4d08b4dfe3d96d5001eb0c"
   end
 
   resource "certifi" do
@@ -71,13 +72,13 @@ class GimmeAwsCreds < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
-    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
+    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
+    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "ctap-keyring-device" do
@@ -96,13 +97,13 @@ class GimmeAwsCreds < Formula
   end
 
   resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/a3/82/f6e29c8d5c098b6be61460371c2c5591f4a335923639edec43b3830650a4/importlib_metadata-6.7.0.tar.gz"
-    sha256 "1aaf550d4f73e5d6783e7acb77aec43d49da8017410afae93822cc9cca98c4d4"
+    url "https://files.pythonhosted.org/packages/33/44/ae06b446b8d8263d712a211e959212083a5eda2bf36d57ca7415e03f6f36/importlib_metadata-6.8.0.tar.gz"
+    sha256 "dbace7892d8c0c4ac1ad096662232f831d4e64f4c4545bd53016a3e9d4654743"
   end
 
   resource "jaraco-classes" do
-    url "https://files.pythonhosted.org/packages/bf/02/a956c9bfd2dfe60b30c065ed8e28df7fcf72b292b861dca97e951c145ef6/jaraco.classes-3.2.3.tar.gz"
-    sha256 "89559fa5c1d3c34eff6f631ad80bb21f378dbcbb35dd161fd2c6b93f5be2f98a"
+    url "https://files.pythonhosted.org/packages/8b/de/d0a466824ce8b53c474bb29344e6d6113023eb2c3793d1c58c0908588bfa/jaraco.classes-3.3.0.tar.gz"
+    sha256 "c063dd08e89217cee02c8d5e5ec560f2c8ce6cdc2fcdc2e68f7b2e5547ed3621"
   end
 
   resource "jeepney" do
@@ -186,8 +187,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/00/27/f0ac6b846684cecce1ee93d32450c45ab607f65c2e0255f0092032d91f07/zipp-3.15.0.tar.gz"
-    sha256 "112929ad649da941c23de50f356a2b5570c954b65150642bccdd66bf194d224b"
+    url "https://files.pythonhosted.org/packages/e2/45/f3b987ad5bf9e08095c1ebe6352238be36f25dd106fde424a160061dce6d/zipp-3.16.2.tar.gz"
+    sha256 "ebc15946aa78bd63458992fc81ec3b6f7b1e92d51c35e6de1c3804e73b799147"
   end
 
   def install

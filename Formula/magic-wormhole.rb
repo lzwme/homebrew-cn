@@ -6,16 +6,16 @@ class MagicWormhole < Formula
   url "https://files.pythonhosted.org/packages/d4/62/5e4a86f7c4b111e016577f1b304063ebe604f430db15465ac58b13993608/magic-wormhole-0.12.0.tar.gz"
   sha256 "1b0fd8a334da978f3dd96b620fa9b9348cabedf26a87f74baac7a37052928160"
   license "MIT"
-  revision 8
+  revision 9
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "2e89c268ce56107f55228c5065e84145f4f8a01127195b206e6968d1e370d5d6"
-    sha256 cellar: :any,                 arm64_monterey: "960478726bc2e93206c54a9e167102337da2cab7940f6145c41930232c899ca4"
-    sha256 cellar: :any,                 arm64_big_sur:  "2569387a1adb9573769a4df422cea734a02cfbe7403fab52a8b17012c16acfff"
-    sha256 cellar: :any,                 ventura:        "3dea373e462c6ffe6f1a3069f902f9f08c3eab4ca154c2a448b96592e9dbbb4e"
-    sha256 cellar: :any,                 monterey:       "2f17d7b21c829b96440aa89471e6c704440d9ce45b9b53ea18aee83369782747"
-    sha256 cellar: :any,                 big_sur:        "27ccff72ca005205b2bb1faabe29f212091c339206fec69ddb6ef77766b00ea2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32b36f2dd57255eb5258b0c0be57ec2bea486aecf31f11118b907d43bd62a6f2"
+    sha256 cellar: :any,                 arm64_ventura:  "ec48352c5773a9b4cc23b2ce51abd006aab371cc2dc8f4660f355c59b0b34e8e"
+    sha256 cellar: :any,                 arm64_monterey: "d378db5442b0002922de93731091e3ab40ef8ad7afba81ce131cb3a2ee50400f"
+    sha256 cellar: :any,                 arm64_big_sur:  "76f7efd85c7cecc24ad00f39f8ba40c923e01662880c2bcc496b911ed48fc84a"
+    sha256 cellar: :any,                 ventura:        "8145257656bae433139e05981e989fe703f13721702aa3fdce9c061d45bf8f9a"
+    sha256 cellar: :any,                 monterey:       "c29d651f08576798d9e0fbe75e82a77513ca104f8748a0adaf485f97804ead27"
+    sha256 cellar: :any,                 big_sur:        "9aa02519d6bef8900bd5e61373442df967cb877e716a6ade316c4de5bc53c0d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3515ab00b58c2ea892548f7f793a703f1d1d91ee6e9fe4aee53b7ae99d56a27b"
   end
 
   depends_on "rust" => :build
@@ -38,8 +38,8 @@ class MagicWormhole < Formula
   end
 
   resource "autobahn" do
-    url "https://files.pythonhosted.org/packages/53/99/b6e0ffa0e8bafe9dfae1c9ab46d44d07317cbf297fbf8f07aff8a80e5bd8/autobahn-23.1.2.tar.gz"
-    sha256 "c5ef8ca7422015a1af774a883b8aef73d4954c9fcd182c9b5244e08e973f7c3a"
+    url "https://files.pythonhosted.org/packages/92/ee/c3320c326919394ff597592549ff5d29d2f7bf12be9ddaa9017caff1a170/autobahn-23.6.2.tar.gz"
+    sha256 "ec9421c52a2103364d1ef0468036e6019ee84f71721e86b36fe19ad6966c1181"
   end
 
   resource "automat" do
@@ -48,8 +48,8 @@ class MagicWormhole < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+    url "https://files.pythonhosted.org/packages/7e/ad/7a6a96fab480fb2fbf52f782b2deb3abe1d2c81eca3ef68a575b5a6a4f2e/click-8.1.5.tar.gz"
+    sha256 "4be4b1af8d665c6d942909916d31a213a106800c47d0eeba73d34da3cbc11367"
   end
 
   resource "constantly" do
@@ -58,8 +58,8 @@ class MagicWormhole < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
-    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
+    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
+    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "hkdf" do
@@ -68,8 +68,8 @@ class MagicWormhole < Formula
   end
 
   resource "humanize" do
-    url "https://files.pythonhosted.org/packages/06/b1/9e491df2ee1c919d67ee328d8bc9f17b7a9af68e4077f3f5fac83a4488c9/humanize-4.6.0.tar.gz"
-    sha256 "5f1f22bc65911eb1a6ffe7659bd6598e33dcfeeb904eb16ee1e705a09bf75916"
+    url "https://files.pythonhosted.org/packages/69/86/34d04afc5c33a31f4e9939f857e28fc9d039440f29b99a34f2190f0ab0ac/humanize-4.7.0.tar.gz"
+    sha256 "7ca0e43e870981fa684acb5b062deb307218193bca1a01f2b2676479df849b3a"
   end
 
   resource "hyperlink" do
@@ -108,8 +108,8 @@ class MagicWormhole < Formula
   end
 
   resource "service-identity" do
-    url "https://files.pythonhosted.org/packages/09/2e/26ade69944773df4748c19d3053e025b282f48de02aad84906d34a29d28b/service-identity-21.1.0.tar.gz"
-    sha256 "6e6c6086ca271dc11b033d17c3a8bea9f24ebff920c587da090afc9519419d34"
+    url "https://files.pythonhosted.org/packages/3b/98/2a46c7414ffc1d06ba67d2c2dd62a207a70cb351028a8cd8c85b3dbd1cf7/service_identity-23.1.0.tar.gz"
+    sha256 "ecb33cd96307755041e978ab14f8b14e13b40f1fbd525a4dc78f46d2b986431d"
   end
 
   resource "spake2" do

@@ -6,17 +6,17 @@ class Awscurl < Formula
   url "https://files.pythonhosted.org/packages/80/f4/95935ad7041ba008221ce81b698963c8be0c5c97e6fcfd86e0e2009ebacd/awscurl-0.29.tar.gz"
   sha256 "5e1ecd0ab7b014de697a1e161fa483c2263d16c3e156a81bdc8b9a9c2d0ba3f3"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/okigan/awscurl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c1f57460088a2b68ab130148253816352249ce5a95cf582a17dbc95aec58e0be"
-    sha256 cellar: :any,                 arm64_monterey: "ae3c3e1853c8614945d5524279595c4a1e115b595aa659cd800c14bf709dc8fe"
-    sha256 cellar: :any,                 arm64_big_sur:  "ff925bc5dee6ce74b364124dc41d8acbc8c74cfc18da02f6b14e02d10120b0e2"
-    sha256 cellar: :any,                 ventura:        "c2210b2a6dee7bd1e7dc02a47578774ad5ef69f0f00b337c410db5360ab06b10"
-    sha256 cellar: :any,                 monterey:       "42b9447e0348f6e220e27906e272d9cd5b5f65700d77419c6e7b87d86a20f44c"
-    sha256 cellar: :any,                 big_sur:        "ac01fc5702ec2231de6f86f1eb382d521bcd19e0754d2f7baa0d30944cd2abbf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38f102b41fbe5dc337f5c6b1788ca347e58bcd76379ee222c1c2cc818623e156"
+    sha256 cellar: :any,                 arm64_ventura:  "7173434aba1678598d4500d2b1048fedfcd2d203ae8d5da1e1d6ce3355649b03"
+    sha256 cellar: :any,                 arm64_monterey: "f93a8da97b8153781766430a61ea880065bcdf00d15d318e63a3fc9afbdee68e"
+    sha256 cellar: :any,                 arm64_big_sur:  "2ce5d2e183e493824371c2bc4e45f3276d798b7630eda8a295607cd6aa92ea20"
+    sha256 cellar: :any,                 ventura:        "0c4d683e2a3a5a242e95fd5fb6e3f731114050a9386a7afb370c523ef2fd5a6e"
+    sha256 cellar: :any,                 monterey:       "5a9543d3700299749c127db522a85f21da00d9efdee9635326133f54f29722ec"
+    sha256 cellar: :any,                 big_sur:        "04b1f4401cb5b53dcc910cbd4db284c165e9810664ff8f76a25969c7551c50ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3df2940ce8e911e6fac070c6170bfaec5e8950d838f22b11bbb5662c7131033"
   end
 
   # `pkg-config`, `rust` and `openssl@3` are for cryptography.
@@ -35,23 +35,23 @@ class Awscurl < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "configargparse" do
-    url "https://files.pythonhosted.org/packages/16/05/385451bc8d20a3aa1d8934b32bd65847c100849ebba397dbf6c74566b237/ConfigArgParse-1.5.3.tar.gz"
-    sha256 "1b0b3cbf664ab59dada57123c81eff3d9737e0d11d8cf79e3d6eb10823f1739f"
+    url "https://files.pythonhosted.org/packages/3c/fb/bf200c55a1e7014577c37fa9cbfa0148f629762bb3acff56299d8c58cbc3/ConfigArgParse-1.5.5.tar.gz"
+    sha256 "363d80a6d35614bd446e2f2b1b216f3b33741d03ac6d0a92803306f40e555b58"
   end
 
   resource "configparser" do
-    url "https://files.pythonhosted.org/packages/4b/c0/3a47084aca7a940ed1334f89ed2e67bcb42168c4f40c486e267fe71e7aa0/configparser-5.3.0.tar.gz"
-    sha256 "8be267824b541c09b08db124917f48ab525a6c3e837011f3130781a224c57090"
+    url "https://files.pythonhosted.org/packages/0b/65/bad3eb64f30657ee9fa2e00e80b3ad42037db5eb534fadd15a94a11fe979/configparser-6.0.0.tar.gz"
+    sha256 "ec914ab1e56c672de1f5c3483964e68f71b34e457904b7b76e06b922aec067a8"
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
-    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
+    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
+    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "idna" do
@@ -70,8 +70,8 @@ class Awscurl < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
-    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
+    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
+    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
   end
 
   resource "urllib3-secure-extra" do

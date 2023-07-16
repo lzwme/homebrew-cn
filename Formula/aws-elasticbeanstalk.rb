@@ -6,15 +6,16 @@ class AwsElasticbeanstalk < Formula
   url "https://files.pythonhosted.org/packages/d2/1a/564eab628edbe1815d2bfde14a1cfb9a3e0e14a7a217731792ec60e1e80f/awsebcli-3.20.7.tar.gz"
   sha256 "8672d6a9ce14cd49efcf8c26299f0970459430f9a1d817504b5200cb10bec9be"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "2705cbb48eb27181c80d2f98433d77dc142fe174e00bcd8b069d58cfbf990eef"
-    sha256 cellar: :any,                 arm64_monterey: "ae2ca704bb735b06ce70958011bea266a6b7d5857de570787ed25ef9f5d97263"
-    sha256 cellar: :any,                 arm64_big_sur:  "5373866382713be5da34f7929b5e9feea7dc260e5afcdf5dcca24a420cdcbc11"
-    sha256 cellar: :any,                 ventura:        "dee0ff2d7454dfbf5fb91a22f3500317c4f93f0ea36e612cfb3528c9261c34a3"
-    sha256 cellar: :any,                 monterey:       "b1a6a90d5e4a049db0b16905f63a7fac294c93fc4d5be7d779581f31369001eb"
-    sha256 cellar: :any,                 big_sur:        "61d70905c464f4021211c18b4e60eaf7ce2cc35339d0073fd4103d0c0a7d6e16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a315878ec9bc808c75c30377d27bfde5b8ca065ff9df742e52e26452d8e80952"
+    sha256 cellar: :any,                 arm64_ventura:  "b7f9268f5318ac08308b28d10aa63bf7f4248b86dcf954bcdd5fbcbfba6231ae"
+    sha256 cellar: :any,                 arm64_monterey: "29ccc4d2828beef6ddb79a92d8ec85b192be5b945d47c3abc11f725ee63dcebb"
+    sha256 cellar: :any,                 arm64_big_sur:  "f6f47986c8cd4f29c2ae30a74876f05c4f8203fd99de4e4b77830d92e778f5bf"
+    sha256 cellar: :any,                 ventura:        "f259e4939b03705b8c388301693f8141d4a2c966aa1d5b2de3ad0b10db8b85a7"
+    sha256 cellar: :any,                 monterey:       "fd1403f9ecaa7f431cf3a778e28cf225d0bf093730cd636072abc941f44bbd4f"
+    sha256 cellar: :any,                 big_sur:        "06a45d5a6af3f9f5df3eabdcfad9f4edc3200739b3e3a7cf8ff6d977c146018c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "957da7e46087edfe2516722dceaf08d6bf47e18fd4e687f3e3281b93063ddf5c"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -62,8 +63,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "colorama" do
@@ -72,8 +73,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
-    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
+    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
+    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "docker" do

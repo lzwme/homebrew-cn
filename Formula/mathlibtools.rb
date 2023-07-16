@@ -6,16 +6,16 @@ class Mathlibtools < Formula
   url "https://files.pythonhosted.org/packages/ae/6a/815d7f65dc853973b13be082fefe797074e633407ef1262a62bc0be84203/mathlibtools-1.3.2.tar.gz"
   sha256 "9a49f4cb7355fda72792a5738bcc5df927b1e102efc719adfbe16db199a0ac6b"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "12b5a2eb457ed3a563399c9cc04b3f28863c90b1cfb7ae89c32a5a7adc8f832a"
-    sha256 cellar: :any,                 arm64_monterey: "4b9c72525778ebe158f13fffd09abe37fd6b7445bc44ee0d096d19e1e7ac6e3c"
-    sha256 cellar: :any,                 arm64_big_sur:  "6d424707f7841d1509eb70564bef3fbb24ee727af53936e388e6880b28a1b316"
-    sha256 cellar: :any,                 ventura:        "1c3d2fcd0ecd73ec130b32c43208a815dd45d0511da8b7ac807f67ea11fdf9c0"
-    sha256 cellar: :any,                 monterey:       "1fcbec21ab0c572bfd397b5c5455def59db3291b2effe9af2d3a82af37cb01e7"
-    sha256 cellar: :any,                 big_sur:        "6014ce2a9837276d3838e9a3ed716ddbded8f82f789ca290d93ae20423bdc4df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5fb1a082f5ef50a7db747868d9aa938d31165b8e0f2d9fe351c5a62e5cd1446e"
+    sha256 cellar: :any,                 arm64_ventura:  "27315e08d5f676736608ee2ddb26ed85a9c5af6c1a7e674fcacbea0b49fb1db9"
+    sha256 cellar: :any,                 arm64_monterey: "3d00815766fc2c5e54e0bd475320e6b2621f7abdf2fd654b0c2a753294baec22"
+    sha256 cellar: :any,                 arm64_big_sur:  "68221e99bb56065953b8ba51d9baf9fc5f14c7f41ec6c9e4fc03316c64d651a0"
+    sha256 cellar: :any,                 ventura:        "b7ce3b980f4c8c8585d2e4f0f0491edca6ef62b1a40c8c92c98d72dc3ba30c71"
+    sha256 cellar: :any,                 monterey:       "e6d85ce803f09425f0a791a32fe2bb49ebb1cf71f94a69f4ca4fb227a6200234"
+    sha256 cellar: :any,                 big_sur:        "1c5b197d78632b4368aa6fdeaca72b132ae74216c11ed2c4e27545dc5d1be712"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d727f097b72e531058142cebc0f925ddd947a1697f898ef3521846da4481a45"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -39,18 +39,18 @@ class Mathlibtools < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+    url "https://files.pythonhosted.org/packages/7e/ad/7a6a96fab480fb2fbf52f782b2deb3abe1d2c81eca3ef68a575b5a6a4f2e/click-8.1.5.tar.gz"
+    sha256 "4be4b1af8d665c6d942909916d31a213a106800c47d0eeba73d34da3cbc11367"
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
-    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
+    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
+    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "deprecated" do
@@ -64,8 +64,8 @@ class Mathlibtools < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/5f/11/2b0f60686dbda49028cec8c66bd18a5e82c96d92eef4bc34961e35bb3762/GitPython-3.1.31.tar.gz"
-    sha256 "8ce3bcf69adfdf7c7d503e78fd3b1c492af782d58893b650adb2ac8912ddd573"
+    url "https://files.pythonhosted.org/packages/87/56/6dcdfde2f3a747988d1693100224fb88fc1d3bbcb3f18377b2a3ef53a70a/GitPython-3.1.32.tar.gz"
+    sha256 "8d9b8cb1e80b9735e8717c9362079d3ce4c6e5ddeebedd0361b228c3a67a62f6"
   end
 
   resource "idna" do
@@ -84,8 +84,8 @@ class Mathlibtools < Formula
   end
 
   resource "pygithub" do
-    url "https://files.pythonhosted.org/packages/ba/9e/7dcb97cb7c4e4656b704ae78ea9c0846d2d8f471a66a495214da586bb593/PyGithub-1.58.2.tar.gz"
-    sha256 "1e6b1b7afe31f75151fb81f7ab6b984a7188a852bdb123dbb9ae90023c3ce60f"
+    url "https://files.pythonhosted.org/packages/92/90/11de38774314242ddfb5637a7cf9c80937c7e898699b8e63b407c212513e/PyGithub-1.59.0.tar.gz"
+    sha256 "6e05ff49bac3caa7d1d6177a10c6e55a3e20c85b92424cc198571fd0cf786690"
   end
 
   resource "pyjwt" do
@@ -99,8 +99,8 @@ class Mathlibtools < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz"
-    sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
+    url "https://files.pythonhosted.org/packages/4f/13/28e88033cab976721512e7741000fb0635fa078045e530a91abb25aea0c0/pyparsing-3.1.0.tar.gz"
+    sha256 "edb662d6fe322d6e990b1594b5feaeadf806803359e3d4d42f11e295e588f0ea"
   end
 
   resource "requests" do
@@ -124,8 +124,8 @@ class Mathlibtools < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
-    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
+    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
+    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
   end
 
   resource "wrapt" do
