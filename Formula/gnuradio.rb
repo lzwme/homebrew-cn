@@ -3,10 +3,9 @@ class Gnuradio < Formula
 
   desc "SDK for signal processing blocks to implement software radios"
   homepage "https://gnuradio.org/"
-  url "https://ghproxy.com/https://github.com/gnuradio/gnuradio/archive/refs/tags/v3.10.6.0.tar.gz"
-  sha256 "c1a8c09f975d224b27dad9c8e2e7fed1f7cde9bc04d30b004afe8e28bb3f45c6"
+  url "https://ghproxy.com/https://github.com/gnuradio/gnuradio/archive/refs/tags/v3.10.7.0.tar.gz"
+  sha256 "55156650ada130600c70bc2ab38eee718fc1d23011be548471e888399f207ddc"
   license "GPL-3.0-or-later"
-  revision 3
   head "https://github.com/gnuradio/gnuradio.git", branch: "main"
 
   livecheck do
@@ -15,13 +14,13 @@ class Gnuradio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "fe49f7028c6352bef93b1f43895cff2c611b80badfa2651d0d39c2c06c54df7d"
-    sha256 cellar: :any,                 arm64_monterey: "fa346d9cec84f17f257c8b76c6acfab918efbe615b692c82bc7a281cbc605101"
-    sha256 cellar: :any,                 arm64_big_sur:  "30f0ce0bcbb0be73bcf7c41bc689b91f99a9f64af212c9aba4118228235d1503"
-    sha256 cellar: :any,                 ventura:        "32a96e3b5fe9b8849b7017021f9037f1517a2df3ce2d7e8c06bd14bbfe692b5b"
-    sha256 cellar: :any,                 monterey:       "4b0157c52a281ab216b0e0319297aab4fb65feea42293f7d59e72b57db6b5a0f"
-    sha256 cellar: :any,                 big_sur:        "3b46ad9e9c9c08f66539c9ec4341c70c5f1ee2eedfbe2b7217b4d86c0fff97c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a64b658aea3d059603a4613204b44b90849c284fd74f2472060a93122ae8878"
+    sha256 cellar: :any,                 arm64_ventura:  "d7734684f5bf563e1a10f2a43e30b74b221ba579f356a1d02b01a99f51e7359f"
+    sha256 cellar: :any,                 arm64_monterey: "d6a9b293a076348f0910b60a33ce49175b57304928c89f71695c544762326f77"
+    sha256 cellar: :any,                 arm64_big_sur:  "685a385c70cf2a312824e4099d1d029d5d77b74e9cd1226afa2254dc31c67ecf"
+    sha256 cellar: :any,                 ventura:        "76fe4dded41372648a7d4d0842ef30374b4d90a4656fd6924a898c9187a7d24f"
+    sha256 cellar: :any,                 monterey:       "a190f43c683ee03f684127cb721dadb4ed1d35a9c31188f6a20918f896b17c7a"
+    sha256 cellar: :any,                 big_sur:        "e010c745cd908ee1c9dfb2a9a09c7463103913b990c2576d1ac39b01178ed7da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e8aae6eab4f9025b4e21cca5181f7b97c4bdafd3c74760987a00a8814d8a796"
   end
 
   depends_on "cmake" => :build
@@ -57,14 +56,14 @@ class Gnuradio < Formula
 
   fails_with gcc: "5"
 
-  resource "Cheetah3" do
+  resource "cheetah3" do
     url "https://files.pythonhosted.org/packages/ee/6f/29c6d74d8536dede06815eeaebfad53699e3f3df0fb22b7a9801a893b426/Cheetah3-3.2.6.tar.gz"
     sha256 "f1c2b693cdcac2ded2823d363f8459ae785261e61c128d68464c8781dba0466b"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+    url "https://files.pythonhosted.org/packages/7e/ad/7a6a96fab480fb2fbf52f782b2deb3abe1d2c81eca3ef68a575b5a6a4f2e/click-8.1.5.tar.gz"
+    sha256 "4be4b1af8d665c6d942909916d31a213a106800c47d0eeba73d34da3cbc11367"
   end
 
   resource "click-plugins" do
@@ -72,19 +71,19 @@ class Gnuradio < Formula
     sha256 "46ab999744a9d831159c3411bb0c79346d94a444df9a3a3742e9ed63645f264b"
   end
 
-  resource "Mako" do
+  resource "mako" do
     url "https://files.pythonhosted.org/packages/05/5f/2ba6e026d33a0e6ddc1dddf9958677f76f5f80c236bd65309d280b166d3e/Mako-1.2.4.tar.gz"
     sha256 "d60a3903dc3bb01a18ad6a89cdbe2e4eadc69c0bc8ef1e3773ba53d44c3f7a34"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/47/d5/aca8ff6f49aa5565df1c826e7bf5e85a6df852ee063600c1efa5b932968c/packaging-23.0.tar.gz"
-    sha256 "b6ad297f8907de0fa2fe1ccbd26fdaf387f5f47c7275fedf8cce89f99446cf97"
+    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
+    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
-    sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
+    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
+    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
   end
 
   # pygccxml only published a .whl file on PyPi

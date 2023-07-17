@@ -1,13 +1,13 @@
 class Acpica < Formula
   desc "OS-independent implementation of the ACPI specification"
-  homepage "https://www.acpica.org/"
-  url "https://acpica.org/sites/acpica/files/acpica-unix-20230628.tar.gz"
+  homepage "https://www.intel.com/content/www/us/en/developer/topic-technology/open/acpica/overview.html"
+  url "https://downloadmirror.intel.com/783534/acpica-unix-20230628.tar.gz"
   sha256 "86876a745e3d224dcfd222ed3de465b47559e85811df2db9820ef09a9dff5cce"
   license any_of: ["Intel-ACPI", "GPL-2.0-only", "BSD-3-Clause"]
   head "https://github.com/acpica/acpica.git", branch: "master"
 
   livecheck do
-    url "https://acpica.org/downloads"
+    url "https://www.intel.com/content/www/us/en/download/776303/acpi-component-architecture-downloads-unix-format-source-code-and-build-environment-with-an-intel-license.html"
     regex(/href=.*?acpica-unix[._-]v?(\d+(?:\.\d+)*)\.t/i)
   end
 

@@ -26,7 +26,7 @@ class Pygit2 < Formula
   end
 
   def install
-    system python3, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "."
+    system python3, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "--no-build-isolation", "."
   end
 
   test do

@@ -1,19 +1,19 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.land/"
-  url "https://ghproxy.com/https://github.com/denoland/deno/releases/download/v1.35.0/deno_src.tar.gz"
-  sha256 "8e3f2a31e05156be4ad57559ad1de1feb4c6261fb7f7e3510ba3adb50925c987"
+  url "https://ghproxy.com/https://github.com/denoland/deno/releases/download/v1.35.1/deno_src.tar.gz"
+  sha256 "2bb20669b45d19102f023b4e63de143d5b552d8bfc03b4c247ca877870949496"
   license "MIT"
   head "https://github.com/denoland/deno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "82c00162a18b169a5850133b88990fb3f9897673f57ad59f66f40f94832f16bc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a1c79f181ae9e80fae46a99cf75d8eeb1f0649b0ff1eef38be3e05d9ef58c16e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "14e8b38fdbb90ceba7bcdc55b8ed1b37824c51d479601042d67b905774e2d6cb"
-    sha256 cellar: :any_skip_relocation, ventura:        "02d24775cd81b17f55c33a496bfb95367f48b861870562048a17b3d83dbaf52e"
-    sha256 cellar: :any_skip_relocation, monterey:       "42ebb6a00bd799f80b1e9fef1b3c53195ff360a3cf97207de3103011365698d1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "be22efcc88f3a6628517196131b7976d3e9df1028fd7a08431aa8cbba1c41921"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d315088d7decb94a271689b6f86badc77e014fe57d21fc8eeb695c4421478f6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9202b74b15a33e5ac3b788b8cf65d57cc89903105a920d8b488011067e6b2b01"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "744404af6c6b415516ae3c2f5ad4f4253795bbd934fc81c293c84be47f3b0b9b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "507606ce5c1a8a04cac76b2cd7e88962dd1438fddd4e205c294a62e955af6a89"
+    sha256 cellar: :any_skip_relocation, ventura:        "8db5880ceec2f4fcaec4ed7bbc5552a0ea527def157c1453f3fcfd517b1f63b9"
+    sha256 cellar: :any_skip_relocation, monterey:       "da62ce35edc43064700d54daa57f6b108480f76fc0bc76be66b791f8df83fb31"
+    sha256 cellar: :any_skip_relocation, big_sur:        "55f6bbc640734a0b992e14538bc28287b4648638593bd9b521f6d560aaae58c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "de3f3497ccfa40fcab1aa1d2c525c45c057cf8bea788e528c4305ab0f5060484"
   end
 
   depends_on "llvm" => :build
@@ -44,8 +44,8 @@ class Deno < Formula
 
   # Use the latest tag in https://github.com/denoland/v8/tags.
   resource "v8" do
-    url "https://ghproxy.com/https://github.com/denoland/v8/archive/refs/tags/11.6.189.8-denoland-3be3301cbe4b641b6d66.tar.gz"
-    sha256 "1407490371b4cef4c8d0c21c888c5cbc617e9e61593398b70ac975c9bba0fc3a"
+    url "https://ghproxy.com/https://github.com/denoland/v8/archive/refs/tags/11.6.189.11-denoland-b7a4d3fddc1abd216301.tar.gz"
+    sha256 "59dda91b01c2a413eb51aa57afb58879d3e834d161cd3dbd22bdf26b394e27eb"
   end
 
   # To find the version of gn used:

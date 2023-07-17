@@ -1,19 +1,19 @@
 class Broot < Formula
   desc "New way to see and navigate directory trees"
   homepage "https://dystroy.org/broot/"
-  url "https://ghproxy.com/https://github.com/Canop/broot/archive/v1.23.0.tar.gz"
-  sha256 "4dc855cb67eecb203759b88fb819fe4e725ea646dfdfb7af548805d2f98162b5"
+  url "https://ghproxy.com/https://github.com/Canop/broot/archive/v1.24.1.tar.gz"
+  sha256 "24196f010ef2dc33e0dd419d66e5e1afc52ae508b5ee6d933aed0cc5334d15df"
   license "MIT"
   head "https://github.com/Canop/broot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b5770e4e37c3f5a0134e28d3d4888437abcafb8b30b7072cd371bf1a6768876a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "395286f5d3e74d1491cf7e5a448231135c3fc803284ac702d3906c33b5afbf4c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e4f99f6dd5cbaf6708ffce0258c6f995988c2170b57e7bb5fdf256e88769e172"
-    sha256 cellar: :any_skip_relocation, ventura:        "aafb1efb621c672d3073d9a86eb81648c4c5038156bfb77495f2f536bb934a43"
-    sha256 cellar: :any_skip_relocation, monterey:       "c778e4e413d6a752e9944508aeb569da923d9c646554e6b731353aaf519d9756"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3dd86c6d8eb82f4d98388e8372039cc404ceee60f147448e10d4291031d93b45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c01358e26ea94f7a4e68046f3905206eab7102bc5825c62320f4d47a7d36115c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25eccd20096d2e6aee29e7e1bb711c8dc28c3c1a342116940fff093a4091324b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6ae3be6ec02165cbf940de7b6839ff5a3c2aa57417a4e1771de19ad79ece6ba5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "92154379ae856ddccf5d039b51782d8529be48fafcce68568aff0c7ba7b49399"
+    sha256 cellar: :any_skip_relocation, ventura:        "0735faba0a2fa2a30cd5562aed7ca9c9e590352c883a85f76592738bf5d55d5f"
+    sha256 cellar: :any_skip_relocation, monterey:       "3a54c6d4a3e174f2b4f7b7a88b3cc06529b1f15f7cc489f5a57837b9a1330805"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b3df5f241e5f823750ea23ff86d51aa6c38b66c7d57172d6c32334c01af6721c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0b04ff2a3ac80b4837428482aa542edd0b3101a2fe0dee0b5c1013bdb6872aa"
   end
 
   depends_on "rust" => :build
@@ -46,7 +46,10 @@ class Broot < Formula
   test do
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    assert_match "A tree explorer and a customizable launcher", shell_output("#{bin}/broot --help 2>&1")
+    output = shell_output("#{bin}/broot --help")
+    assert_match "lets you explore file hierarchies with a tree-like view", output
+
+    assert_match version.to_s, shell_output("#{bin}/broot --version")
 
     require "pty"
     require "io/console"
