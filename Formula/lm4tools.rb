@@ -22,8 +22,17 @@ class Lm4tools < Formula
   depends_on "libusb"
 
   def install
-    # Fix a hardcoded `/usr/local` reference that breaks the ARM build
-    inreplace "lmicdiusb/Makefile", "/usr/local", HOMEBREW_PREFIX
+    # Fix for https://github.com/utzig/lm4tools/issues/32
+    libusb = Formula["libusb"]
+    inreplace "lmicdiusb/Makefile",
+              "LIBUSB_CFLAGS := -I/usr/local/include/libusb-1.0",
+              "LIBUSB_CFLAGS := -I#{libusb.opt_include}/libusb-#{libusb.version.major_minor}"
+    inreplace "lmicdiusb/Makefile",
+              "LIBUSB_LIBDIR := /usr/local/lib",
+              "LIBUSB_LIBDIR := #{libusb.opt_lib}"
+    inreplace "lmicdiusb/Makefile",
+              "lmicdi: lmicdi.o socket.o gdb.o $(LIBUSB_LIBS)",
+              "lmicdi: lmicdi.o socket.o gdb.o #{libusb.opt_lib}/#{shared_library("libusb-1.0")}"
     system "make", "install", "PREFIX=#{prefix}"
   end
 

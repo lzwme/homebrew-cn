@@ -1,19 +1,19 @@
 class Nuclei < Formula
   desc "HTTP/DNS scanner configurable via YAML templates"
   homepage "https://nuclei.projectdiscovery.io/"
-  url "https://ghproxy.com/https://github.com/projectdiscovery/nuclei/archive/v2.9.8.tar.gz"
-  sha256 "e0eb661936106cb5163222a99926bbc932a40635f9c5aa9d990d0e64636bf42a"
+  url "https://ghproxy.com/https://github.com/projectdiscovery/nuclei/archive/v2.9.9.tar.gz"
+  sha256 "069a1682fe1202891555de5c18e59ba2450d6d4d669d6d51442d1d9695e23c49"
   license "MIT"
   head "https://github.com/projectdiscovery/nuclei.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c53f228cdacb51e1a67e1097db1f57c07a7ad9a4a3b69afc847075818e58d80d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2f3798778a8ff15f747c8d95a8650a310abac487e4e9397a7aac9627bdde7a5a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c66dd4b1e18196f1e30dbb09993c86ff7def499d0a06fc300f2f85e08590e4a7"
-    sha256 cellar: :any_skip_relocation, ventura:        "e1ae78796e37207ba701c10fe56cec2e0845717300438685840120312c6c5a53"
-    sha256 cellar: :any_skip_relocation, monterey:       "b87b280f7b3fd2647bbd5dbc45e72f0afb13db9cb08f62830e47cd7aaf01f14c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f17d53f32e3eebd1ee55b4f463426430720f69345eebe2747972b032a9f79f1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e1be54bda7ddc6c9c64470b06f7c1aa6de6eddc404460a85ca5e00176216f4f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "645d2e601750049f0640a599a82d01cb7104d7fff0774efdf20633cd61c26b96"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5ee32b265147ba96160f4ee4355fafe05d67f45f5800f44304c728de7578943f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "54c4413cfaa4b84c3058bfeda9352388280a7650b6f59d1a4ef95ffa703f47c8"
+    sha256 cellar: :any_skip_relocation, ventura:        "8ad488dab5f53f563d7feea1e9ea060fcb42da27cd64cab3dcd553cdb924b6dc"
+    sha256 cellar: :any_skip_relocation, monterey:       "e0a5066f794c64455e53652e7df0772e7abc79cfa5ba168840934adcb3469dba"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f373b12d9aa89da7b382533832b65e9930430d8f52c55fe441473c83416242d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2841e8e6dde1d743c38e89050593b118bee56e5030ea067e769eeebe419c8996"
   end
 
   depends_on "go" => :build

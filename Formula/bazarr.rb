@@ -8,16 +8,17 @@ class Bazarr < Formula
   url "https://ghproxy.com/https://github.com/morpheus65535/bazarr/releases/download/v1.2.3/bazarr.zip"
   sha256 "eb22d7b1dc37c1dc6b0aa36c36b6dc8ea7ea81147536ecb2c70ea8b18425f2e6"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/morpheus65535/bazarr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bdfb8e57229ea3116872059e8ce6a785032016afbb113bd5e311d321889255fc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc286042ffa5b4d97bd1570f89eb56bd22f0ed951f26429cf89f3ff959f70305"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "485f10bab6e3835d8a7422c9d48c820c18a8ad5acc97904f5057b2ee992fe2da"
-    sha256 cellar: :any_skip_relocation, ventura:        "14caa9283dc63ce09240e5fed7faa981dc44bf52c1abf07c3d304a1fcae8bbd2"
-    sha256 cellar: :any_skip_relocation, monterey:       "0ac509ec5c51f3f80ae5954f8bb4dfd0f85979f5f277fd898f4b9824e6a16987"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1b5609211da1a2ce7f8951de056608155d9c6d67466726adbf503c6946064847"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63849edf6fd6fb9b03da60ec33174495c34a80c93434aa4bd5a132b8c5ec063d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6714512a53a99dba10689efd3fe182034d53737148b4c451b40f3877cf3566f1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "86265696b3783755c377339a8549418400e83e178d1a1430a3f283c093a5a96b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "16cc6834839a6817f4e3d7c526a11b477c622a54c1e0512d80b2e2718244e058"
+    sha256 cellar: :any_skip_relocation, ventura:        "50698b389dc6f4a6e6e59d1ef4d5f766794903cdfc566c7ed858909d05937858"
+    sha256 cellar: :any_skip_relocation, monterey:       "b303a44844ae8e34d2a06c362029c73a5924eb6955ef53b6f2f38242ba07a5fb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a2523e40426d09fac14e9ba03df98e2c447c0a079a25ca04b72aa950888d4b1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e20365eb427fe5fb406270b51dd3709b6f00d34d1c7b5d5b780ec24a1598d9a6"
   end
 
   depends_on "node" => :build
@@ -67,17 +68,25 @@ class Bazarr < Formula
       PATH:       "#{Formula["ffmpeg"].opt_bin}:#{HOMEBREW_PREFIX/"bin"}:$PATH",
       PYTHONPATH: ENV["PYTHONPATH"]
 
-    (libexec/"data").install_symlink pkgetc => "config"
+    pkgvar = var/"bazarr"
+
+    pkgvar.mkpath
+    pkgvar.install_symlink pkgetc => "config"
+
+    pkgetc.mkpath
+    cp Dir[libexec/"data/config/*"], pkgetc
+
+    libexec.install_symlink pkgvar => "data"
   end
 
   def post_install
-    pkgetc.mkpath
+    pkgvar = var/"bazarr"
 
     config_file = pkgetc/"config.ini"
     unless config_file.exist?
       config_file.write <<~EOS
         [backup]
-        folder = #{opt_libexec}/data/backup
+        folder = #{pkgvar}/backup
       EOS
     end
   end

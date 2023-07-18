@@ -21,7 +21,7 @@ class RdiffBackup < Formula
 
   def install
     python3 = "python3.11"
-    system python3, *Language::Python.setup_install_args(prefix, python3), "--install-data=#{prefix}"
+    system python3, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "--no-build-isolation", "."
   end
 
   test do

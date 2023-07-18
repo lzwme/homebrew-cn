@@ -4,11 +4,6 @@ class Visitors < Formula
   url "http://www.hping.org/visitors/visitors-0.7.tar.gz"
   sha256 "d2149e33ffe96b1f52b0587cff65973b0bc0b24ec43cdf072a782c1bd52148ab"
 
-  livecheck do
-    url :homepage
-    regex(/href=.*?visitors[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4f5992ea6583760c5b87589f1fda08a9ffdb56cd7c55d554f4d4ccbdafc90714"

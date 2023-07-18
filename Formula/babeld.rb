@@ -1,8 +1,8 @@
 class Babeld < Formula
   desc "Loop-avoiding distance-vector routing protocol"
   homepage "https://www.irif.fr/~jch/software/babel/"
-  url "https://www.irif.fr/~jch/software/files/babeld-1.12.2.tar.gz"
-  sha256 "1db22b6193070ea2450a1ab51196fd72f58a1329f780cb0388e2e4b2e7768cbb"
+  url "https://www.irif.fr/~jch/software/files/babeld-1.13.tar.gz"
+  sha256 "d085ccccfb06a11d7fa5b54c51d9c410f5f3b0a9389f584951336ff178f293b8"
   license "MIT"
   head "https://github.com/jech/babeld.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Babeld < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e68584ae72520a7d61fe856321ca107919fbd282a6d769b8ea30902cfea75ffd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8a0ee55f54d543d757d8ae2d51918bf91b06adadf20bf6e07cf2f3ba37ee25a8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2440f56ff2b32e9a92797e38e8bebe1286054c9bb6b1a130dddbc71964056f81"
-    sha256 cellar: :any_skip_relocation, ventura:        "3264ab5bbd4676d4e672747ced0f7a6cb2096f279b0ba66c100a3d8c17276543"
-    sha256 cellar: :any_skip_relocation, monterey:       "e83652d57f1caf5167a855643d938d65f40408f2b6da1a0c05dc33eac213edc5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "39d1dec915ef36e583c975cfbec75cbeec0b0ee00e56f08330eee960f60b7b2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "91e8791ee9a601b6d8ee202a6b4e21baedcdbbb8c95fd5cf007ad0895a39c68d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a74bca71e3fcad84ddac8533ea2e859d6bb1967e2ee87b95c6f6f42f5000b2ff"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b6679756ce6d24d8a229428df321b8bbc2d1d1166b3d9283029ce7e3228e3628"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a4a59e08675bf27b83ef104aadcbb6ef6e35ea6783e18bb069a88ee9b7cabe11"
+    sha256 cellar: :any_skip_relocation, ventura:        "3df22116dfdd68570929b1a50cd30b4b5ad56299c52ceec08aca2569f87c1b7d"
+    sha256 cellar: :any_skip_relocation, monterey:       "68f8e15ff26fbab3d7fbc45282ab295f899eb09e1d2d68d6c24126d83e70087a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c1e162145263761b59ae5b2972a70edb30f0f17f63654383ad83ed799f20b4e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4cfccb10033746d3de7e06a3146b37e6345575b182f25056590733388e6ac034"
   end
 
   def install

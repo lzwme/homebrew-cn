@@ -7,17 +7,20 @@ class Hiredis < Formula
   head "https://github.com/redis/hiredis.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c61f133fb6de34228913494475637f1976b8d7311578268538213cce28694bc5"
-    sha256 cellar: :any,                 arm64_monterey: "0ed597b4ade01cbd784219fcbbee73d81c3e19903576603632a08560611137cb"
-    sha256 cellar: :any,                 arm64_big_sur:  "adf8907914fb1814873f22bc9dc8ebe27b7211d419cd99fdb6c3dba8dfb18438"
-    sha256 cellar: :any,                 ventura:        "aba6e4ade87e762d170ba08d9d00c34b87c3edbf3a568d22a4f4ae66dccadba4"
-    sha256 cellar: :any,                 monterey:       "bc8e03de800b74a5ab871a8eb7c5224d70815fa6d9a67cc4588b8e1310d6e48a"
-    sha256 cellar: :any,                 big_sur:        "fedd1d479a255e40912c5000fa3c39885735b54da5baaed5f63b18daf907682a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab8246b1ea0825094a91de9209dc554a9a735c3fb3cb5c63b5475826ec941078"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "9970a5ff45d25be488b5f3e843fb777624b4824510d8434b23565fc9b703a59a"
+    sha256 cellar: :any,                 arm64_monterey: "bf180f8a975c907210d5c130be249f21a9cc050710c83acc9dd6b699c398ae24"
+    sha256 cellar: :any,                 arm64_big_sur:  "f1d1112d4969beb75a30b43faa1fb953f0b869ffe5d9dc02af2f16780abe34ad"
+    sha256 cellar: :any,                 ventura:        "ca336f556d8c10e7cfae516c8e6d5333f5e55533d0971e68f8ed2a730bb765fd"
+    sha256 cellar: :any,                 monterey:       "33a1ced3df2be2279bb716e924f948d1be77f3dc3f831880900655f71daf2e95"
+    sha256 cellar: :any,                 big_sur:        "de9df908dc8e52a552d1f6faed0bc839750f44aad97666d835dd0f7634e3e051"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8c2054cf967b075da6153fea843f3b48e285213aa5944aab4d4b6e14e650bb1"
   end
 
+  depends_on "openssl@3"
+
   def install
-    system "make", "install", "PREFIX=#{prefix}"
+    system "make", "install", "PREFIX=#{prefix}", "USE_SSL=1"
     pkgshare.install "examples"
   end
 

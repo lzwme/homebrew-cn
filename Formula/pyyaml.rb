@@ -33,7 +33,7 @@ class Pyyaml < Formula
     system cythonize, "yaml/_yaml.pyx"
     pythons.each do |python|
       python_exe = python.opt_libexec/"bin/python"
-      system python_exe, *Language::Python.setup_install_args(prefix, python_exe)
+      system python_exe, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "--no-build-isolation", "."
     end
   end
 

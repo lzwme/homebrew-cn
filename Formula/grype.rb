@@ -1,19 +1,19 @@
 class Grype < Formula
   desc "Vulnerability scanner for container images and filesystems"
   homepage "https://github.com/anchore/grype"
-  url "https://ghproxy.com/https://github.com/anchore/grype/archive/refs/tags/v0.64.0.tar.gz"
-  sha256 "5faca9e5f51c5a580af6d73d1dbe4acf31e6804a1b194bc3f25b4be34e660717"
+  url "https://ghproxy.com/https://github.com/anchore/grype/archive/refs/tags/v0.64.1.tar.gz"
+  sha256 "3b7a7ddf893cc02787248801f9f857141264372e38fb51dfbb5e397732063517"
   license "Apache-2.0"
   head "https://github.com/anchore/grype.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "524c7abb637f0ab0166d1fef2b2d07b4733c85998d3fa998048ec4ad99bd3a3d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0e85a6a6d4a3ff5e3205a04bf9393088cea467f5b9f8e2f14b3b4b3cdf03271f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "91ceb42043d8798316cfc6f62f3854b35d6800e6ce6cf21c1dc2310ab1ab09c5"
-    sha256 cellar: :any_skip_relocation, ventura:        "baa49550ffc63ba3ab977f29acdbb392c90e280235cfde353e09729fcd39b180"
-    sha256 cellar: :any_skip_relocation, monterey:       "c715c6b3fe3c07eac91d518b6b481da9d38f90da03158a617f474fb8bda86476"
-    sha256 cellar: :any_skip_relocation, big_sur:        "07186acbcc1fdb72e59a6d4c72bc5fb484d1a4fc7f47f4e5a0d2f0babe5ac727"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "00024708b3059413cb37dd872bdf90abf0a5fd0e363e35fafbeaa61ec41392ca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "95b308ed1aa6c9a01e5fce70b6c1e138228c87778bf54b2e58988a93011cfdd3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d3c2af4435ff8e65ce5b71699bf7a78c7f442649e58cc627d7584aca29a941c9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "57cd198a5136bc96a225528426426c5c2ce761f502ed504ca84067222f95f4a5"
+    sha256 cellar: :any_skip_relocation, ventura:        "e44258f1ccf26a998ed8ae808769070fb037e651edc7927e098bd882207b9305"
+    sha256 cellar: :any_skip_relocation, monterey:       "40cd6258e2e66156960de3c9b5b17f2657ac8144dce1a376e5d430c7f699c4b9"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f0245f5363f03abed106eb57e55915ba6b1353b7c64f4df4c4e69fc5017c6107"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed587a1b4b1b23d8752b45393ec6e5d7494e2cb35d94563a997c656d3748ef3b"
   end
 
   depends_on "go" => :build
@@ -26,7 +26,7 @@ class Grype < Formula
       -X github.com/anchore/grype/internal/version.buildDate=#{time.iso8601}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/grype"
 
     generate_completions_from_executable(bin/"grype", "completion")
   end

@@ -12,13 +12,14 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "3237e8ad88aa8d96b0a8a46430dc4e0a0b2540817ee23a2c2e71f9e105895e23"
-    sha256 arm64_monterey: "b302e227dee1ce5e4cdbf36debf29be9383623d71c0fd55bfec8acd44bc2bea9"
-    sha256 arm64_big_sur:  "51058522588ab01e5f252dca1669c165e0701c921a59ee1bb473656728ae3218"
-    sha256 ventura:        "05d4f3e1cdf9a2147aeea87d6c20cbebb3c124c189d277881a74f218d1c36a9a"
-    sha256 monterey:       "bfc174bf69aed4fe6780d2481cbf5aba02e136e19935e27ce9bbd55054422736"
-    sha256 big_sur:        "8c96f8e85d2c2558db4f9a1e7ced99b7f2b47f1d24f277bc1d078c12cb8880ef"
-    sha256 x86_64_linux:   "a2fb888226f1041595b19bad9dd39291e44ead0bc04339001c39c93a1f05549c"
+    rebuild 1
+    sha256 arm64_ventura:  "1063bfb99f501d17c61cb4405b74e5dac225dd241b70959c1714643fa2c67e99"
+    sha256 arm64_monterey: "d56ffc2df1f236d95acd33a29006b7cca76a782992d7a5cd853a88130cd74fab"
+    sha256 arm64_big_sur:  "c7ab32590a279c6111663bf1385db1697ed38f8dfcabe17bfc0fab51fd6d4fe1"
+    sha256 ventura:        "67da519a616db8e2e736d10b36c747e9315a71a2f61cebcbe724364da3d99522"
+    sha256 monterey:       "818adc426c528ce967886bc8c16d24c1e4b7da64d73795f59d44dc43bf084af9"
+    sha256 big_sur:        "edd092af4ec386c130b24542d2032a1f54b2ebd1c77b0742ae68ad8834cbb065"
+    sha256 x86_64_linux:   "4702a242e34e4fe33075975926e5af45f8b35d5a3db6105be37baf0de833c29b"
   end
 
   depends_on "cmake" => :build
@@ -35,6 +36,7 @@ class Opencv < Formula
   depends_on "openblas"
   depends_on "openexr"
   depends_on "openjpeg"
+  depends_on "openvino"
   depends_on "protobuf"
   depends_on "python@3.11"
   depends_on "tbb"
@@ -48,6 +50,13 @@ class Opencv < Formula
   resource "contrib" do
     url "https://ghproxy.com/https://github.com/opencv/opencv_contrib/archive/refs/tags/4.8.0.tar.gz"
     sha256 "b4aef0f25a22edcd7305df830fa926ca304ea9db65de6ccd02f6cfa5f3357dbb"
+  end
+
+  # Fix static build with OpenVINO (https://github.com/opencv/opencv/pull/23963)
+  # Remove patch when available in release.
+  patch do
+    url "https://github.com/opencv/opencv/commit/ef9d14f181ad8cca71443beaf3874de3197d4e47.patch?full_index=1"
+    sha256 "efdf5534479af2e246c162215d5cbc2ae49e962ca58ccd9fef610fa40ee4a4ed"
   end
 
   def python3
@@ -98,6 +107,7 @@ class Opencv < Formula
       -DWITH_JASPER=OFF
       -DWITH_OPENEXR=ON
       -DWITH_OPENGL=OFF
+      -DWITH_OPENVINO=ON
       -DWITH_QT=OFF
       -DWITH_TBB=ON
       -DWITH_VTK=ON

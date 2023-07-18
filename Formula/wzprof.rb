@@ -1,19 +1,19 @@
 class Wzprof < Formula
   desc "Profiling for Wazero"
   homepage "https://github.com/stealthrocket/wzprof"
-  url "https://ghproxy.com/https://github.com/stealthrocket/wzprof/archive/refs/tags/v0.1.5.tar.gz"
-  sha256 "a5ebae104121737243ba2e90cd21d468133e7e0683b5ac880ebf3abecce90089"
+  url "https://ghproxy.com/https://github.com/stealthrocket/wzprof/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "20223095b6b0bcb7ee655e755d2979f743a1bd03bf4fb09928856356caa9d463"
   license "Apache-2.0"
   head "https://github.com/stealthrocket/wzprof.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2f8d9399ca250920f073e0c6f2d821a8e8681e81c5029071ee8f8943412ce77d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2f8d9399ca250920f073e0c6f2d821a8e8681e81c5029071ee8f8943412ce77d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2f8d9399ca250920f073e0c6f2d821a8e8681e81c5029071ee8f8943412ce77d"
-    sha256 cellar: :any_skip_relocation, ventura:        "8b4e097e071ae5e9900bcfb3f8cbd7574c70acfbd6baf26e5eadce385fbe67a0"
-    sha256 cellar: :any_skip_relocation, monterey:       "8b4e097e071ae5e9900bcfb3f8cbd7574c70acfbd6baf26e5eadce385fbe67a0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8b4e097e071ae5e9900bcfb3f8cbd7574c70acfbd6baf26e5eadce385fbe67a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "00a4b0daa0c7d11abb4dbdd683cff224c544a5e9602ae2d187a56f1637736399"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e5cd9073cd439d27d735796f4f88ca53e320d00767202195df23a151cd207f7e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e5cd9073cd439d27d735796f4f88ca53e320d00767202195df23a151cd207f7e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e5cd9073cd439d27d735796f4f88ca53e320d00767202195df23a151cd207f7e"
+    sha256 cellar: :any_skip_relocation, ventura:        "38d8f01a22a239c240d6e00db065fc8036f5ae039501925ec0df0a0366983bba"
+    sha256 cellar: :any_skip_relocation, monterey:       "38d8f01a22a239c240d6e00db065fc8036f5ae039501925ec0df0a0366983bba"
+    sha256 cellar: :any_skip_relocation, big_sur:        "38d8f01a22a239c240d6e00db065fc8036f5ae039501925ec0df0a0366983bba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a163de238c1aa3233c725104f4a523cc26d6fd30c5c132d4e408415bdce3ac1d"
   end
 
   depends_on "go" => :build

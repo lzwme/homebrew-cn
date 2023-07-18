@@ -1,20 +1,30 @@
 class Seaweedfs < Formula
   desc "Fast distributed storage system"
   homepage "https://github.com/seaweedfs/seaweedfs"
-  url "https://github.com/seaweedfs/seaweedfs.git",
-      tag:      "3.53",
-      revision: "2c4c2f0994604510631920f4d0d9ee817ec29224"
   license "Apache-2.0"
   head "https://github.com/seaweedfs/seaweedfs.git", branch: "master"
 
+  # Remove stable block with patch in next release
+  stable do
+    url "https://github.com/seaweedfs/seaweedfs.git",
+    tag:      "3.54",
+    revision: "358b3a489475333e503886513080b815ce45a4a5"
+
+    # patch go-m1cpu dependency for macos < 12 builds
+    patch do
+      url "https://github.com/seaweedfs/seaweedfs/commit/1bfc9581e0bc04f394187a0d39f319ad65df5aca.patch?full_index=1"
+      sha256 "21bcae5be8943209c73e5cee5e51e098b58048c2a873c6fe9e58743f835e6851"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "13e48e8c7d876b108ddbcffe412705c872480c8c93057dde9aa002dc81542349"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e67f4cc80bbc4cc3439a6af1b153cd6c7e968d293848baccf2d74272d039dde2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "55c2aead244dd10f557bf87feb000be3670bbd6d5885f94cee5575c9dd3b249e"
-    sha256 cellar: :any_skip_relocation, ventura:        "411c45e5e5cfc89f62ca962e66d1dd61dfe79e502e29dd8d8d172cdfc52f2529"
-    sha256 cellar: :any_skip_relocation, monterey:       "76014cc8be10b641e31e0af2347d89d9a804e85df21fa059d4c94f519aaef986"
-    sha256 cellar: :any_skip_relocation, big_sur:        "66762e2bb2252c613251f8dfd030505fb00478d870f1437b8d996d10a662b1d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f06a43f567a979b8bc72adc852769970c78605fe8f400eee15f20b8b4de0f40"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cc8522990d95add5cf71ea9fcdf05715efcecf5890332552c42476a48cf6452e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0a2d9e24a3dce480dc9f734290fe8c3f55e7da24b30324951601a7b3e508c1d3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dc100783b15d77c81cc6f29bd4af625a10a312005473fbc93055349359508415"
+    sha256 cellar: :any_skip_relocation, ventura:        "c6a450804ae08bb1190407e6b2743d53a3c1dcfcff611591df1f33ed915b0edc"
+    sha256 cellar: :any_skip_relocation, monterey:       "fd1d78c939f2073223ed2ac3ac54902ff2889a841309ad83937a5bc038b235be"
+    sha256 cellar: :any_skip_relocation, big_sur:        "14e1cd2989c9478d9dcf47a6789233aa4693aaf7f279ab6a6eda3e0154ae00f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6bd50b94739eb518418b9388ebed8c65830fc89cda0dd1d0b872a07756195fd8"
   end
 
   depends_on "go" => :build

@@ -1,18 +1,18 @@
 class LibgrapeLite < Formula
   desc "C++ library for parallel graph processing"
   homepage "https://github.com/alibaba/libgrape-lite"
-  url "https://ghproxy.com/https://github.com/alibaba/libgrape-lite/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "072c8e2815f1f6c2dce31df5ee32926bc7c287e305a1c371be16b3a9cd7ee776"
+  url "https://ghproxy.com/https://github.com/alibaba/libgrape-lite/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "e0701a389f615eb169faf0272ad4aa0679b8e7b06f94a4732c8232d2f40fc0ae"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "fa68d928ae57e36e1ad11f32ceb947da047ff4f25028c299f8cde64da2eeeafc"
-    sha256 cellar: :any,                 arm64_monterey: "5f060a4a642af2b293ef35fc2712df5752b9f73cb69006759c19a84aa795aeca"
-    sha256 cellar: :any,                 arm64_big_sur:  "95c722e157a579cb2c463c5078f52c93865fad6234de79324b00225cc8ea5b4f"
-    sha256 cellar: :any,                 ventura:        "5695acb3d894214ef271d4894d39374c20e14070759092dda8a3d37c3eea6477"
-    sha256 cellar: :any,                 monterey:       "1a419a8c83c0119cc8b29a30007b946df5dbc7bb4ced8c5725de481243dd8100"
-    sha256 cellar: :any,                 big_sur:        "70023bb2232333378cd635192bde6814e1cac5ed880740de77f3c6a482712199"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee2074a31f14ab902b08f3f824cc892a56e9a047f1cdf70d471e0379ac4b833b"
+    sha256 cellar: :any,                 arm64_ventura:  "5437b82e7cbc55ec1394e21b8cecb11c7d5149b9205afdaee7765bded95e0d5c"
+    sha256 cellar: :any,                 arm64_monterey: "9ca019ceb41ef6b447df677376bf396c8fcb49b1bd75a4c69994492c1487e0fa"
+    sha256 cellar: :any,                 arm64_big_sur:  "7eead4cc06b4f89b45cd365e98577e6f13985569f7781484d3b3a759969df6d5"
+    sha256 cellar: :any,                 ventura:        "73510a5810bf7c2c54af3f8b1188051e4651739d584a0b03136d4e80ee84a869"
+    sha256 cellar: :any,                 monterey:       "078f61025dd058c4e0fcd83449142abfa1c624459878bd15c6a8c2f8cec08313"
+    sha256 cellar: :any,                 big_sur:        "a83c2f7d28fd6efc4846641070514f0fe13e1e6af4320dcc247c343323e304a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6a99920810c692f8420e82009a38c7ec32b316e38bb1a38e42a85f033a27a3a"
   end
 
   depends_on "cmake" => :build

@@ -56,7 +56,7 @@ class Aubio < Formula
     system python3, "./waf", "build"
     system python3, "./waf", "install"
 
-    system python3, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "."
+    system python3, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "--no-build-isolation", "."
   end
 
   test do

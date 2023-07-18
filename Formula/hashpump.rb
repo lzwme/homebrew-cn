@@ -45,7 +45,7 @@ class Hashpump < Formula
                    "CXX=#{ENV.cxx}",
                    "install"
 
-    system python3, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "."
+    system python3, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "--no-build-isolation", "."
   end
 
   test do

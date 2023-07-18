@@ -5,24 +5,20 @@ class Texinfo < Formula
   mirror "https://ftpmirror.gnu.org/texinfo/texinfo-7.0.3.tar.xz"
   sha256 "74b420d09d7f528e84f97aa330f0dd69a98a6053e7a4e01767eed115038807bf"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_ventura:  "203015ceba1fbf1093a5c011e19fbabe6b1dca05ad045e19758e11c6a7e9877c"
-    sha256 arm64_monterey: "00989e546b03f7c1166d8fec31c138216d73ef736e30a89769dae381f8d05f45"
-    sha256 arm64_big_sur:  "484f330054be1bbc8ff6d06a497d48e765f95eec7937dfb3658b8b3d86ac21d7"
-    sha256 ventura:        "c94c964e9df885f6782b2d6e8abbc6ff6b2ec7a9106fb07c706294422226dbdf"
-    sha256 monterey:       "b31a476410d5171a4424e3423f788f9e1438b7c2d1d79761562221b44a449c14"
-    sha256 big_sur:        "1596b0ef4f2e713712d39c704688b5138ca68c4f8000be1866903f88859eb610"
-    sha256 x86_64_linux:   "fcf98f2adea8e5d4347516345023398105476a73a87ebd47015c9030f08d6ea9"
+    sha256 arm64_ventura:  "1da60ed030da20fe03388dc0a40271783c5bcc2dfb3d50710ca431f943ef48b1"
+    sha256 arm64_monterey: "d36424fb6c196b55f5acc459c393c8950b26cc71d05f15b7d5c7879ac438685b"
+    sha256 arm64_big_sur:  "f5af81647753a8f2e1f5882a7ced2d5c6a6c3b55d16a7b21d35f91951bb99eec"
+    sha256 ventura:        "023fb6a619944667e4c1601c260f4b5d12602af3e4a0acdab615426b3856ef66"
+    sha256 monterey:       "b6b367a26527726756c1addb017425929b6fc5f344171366c607c842fa53e205"
+    sha256 big_sur:        "37d2829b2d1127a25cc761de8d1ae8595720c889e24ba94695dd1786abaef626"
+    sha256 x86_64_linux:   "ec964dfd6398ab50dd10181d0fe2df909d6475942f1e1b47b35cffada2aa3236"
   end
 
   uses_from_macos "ncurses"
   uses_from_macos "perl"
-
-  # texinfo has been removed from macOS Ventura.
-  on_monterey :or_older do
-    keg_only :provided_by_macos
-  end
 
   on_system :linux, macos: :high_sierra_or_older do
     depends_on "gettext"
