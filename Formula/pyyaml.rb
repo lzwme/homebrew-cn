@@ -1,20 +1,18 @@
 class Pyyaml < Formula
   desc "YAML framework for Python"
   homepage "https://pyyaml.org"
-  url "https://files.pythonhosted.org/packages/36/2b/61d51a2c4f25ef062ae3f74576b01638bebad5e045f747ff12643df63844/PyYAML-6.0.tar.gz"
-  sha256 "68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2"
+  url "https://files.pythonhosted.org/packages/cd/e5/af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0/PyYAML-6.0.1.tar.gz"
+  sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9cdc9ef202bb642be23ec38c05c0ab6ce9b08d09ba5d954fb6440c946aa31e56"
-    sha256 cellar: :any,                 arm64_monterey: "736cb99df3ba9c591dcc0087a6d1a2f1ade2f95a74366856098650212dfd5bb2"
-    sha256 cellar: :any,                 arm64_big_sur:  "32d5689f7f30157f3b02369286001e1ad5b13a8b201981da4fd25cc8d15c16a3"
-    sha256 cellar: :any,                 ventura:        "c7e2a65e145408bbbc3dd0aa680f76ed41339369278da1a0870299788f9d227b"
-    sha256 cellar: :any,                 monterey:       "d71dd3186399ebca596677c148b23a0c90fdc09baeba4d617612b7dcf1788224"
-    sha256 cellar: :any,                 big_sur:        "6002306dfd47f87b6fa817abb9b04bed296ce262cc0fe3ec516344c375ce7172"
-    sha256 cellar: :any,                 catalina:       "41de8095ac8fe4230f3e3ad622b63d88def72ae332f52e823803c76de6541d5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f133abf84efeac83882a530cbedfd20181c1e6d0fbfe5a1ba380fd59211e72cd"
+    sha256 cellar: :any,                 arm64_ventura:  "7e52df0812b2d3714c1d1504cbd07597aea578b1646e35ce2275fc484dd50957"
+    sha256 cellar: :any,                 arm64_monterey: "c587e1c3c419d096678d0870087d1bb97f3b12f3bf264dde670c9d42c257bcd0"
+    sha256 cellar: :any,                 arm64_big_sur:  "0834240857ef7d9f218257b66407fcf35ec9b213c4bb47cbf1760340991a9d70"
+    sha256 cellar: :any,                 ventura:        "3b77e8fcf1b747a263090daaa112390f47645bbfc16e56acac7de176ba874419"
+    sha256 cellar: :any,                 monterey:       "e0b2451c2879083e566e96a20ca62ab210572789b02fe9f5c3157d818b7b91c5"
+    sha256 cellar: :any,                 big_sur:        "28519daaaae05ab448355b3ee342b36c2493a3e90eb1d1d76ec5f49161259aca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d040e378298ea7ec94cfd92d3f41fb6dbeb4a07de2613a043db984a5624032c"
   end
 
   depends_on "cython" => :build

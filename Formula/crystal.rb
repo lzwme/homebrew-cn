@@ -4,8 +4,8 @@ class Crystal < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://ghproxy.com/https://github.com/crystal-lang/crystal/archive/1.9.0.tar.gz"
-    sha256 "dd5ec1cb1d665968a3fce2617dd79df5759281037d954dae93aad79b1328fb30"
+    url "https://ghproxy.com/https://github.com/crystal-lang/crystal/archive/1.9.1.tar.gz"
+    sha256 "89853c1f87cc89640636b72fd1095ea9a1d260418baddf8b802a0d65942508dd"
 
     resource "shards" do
       url "https://ghproxy.com/https://github.com/crystal-lang/shards/archive/v0.17.3.tar.gz"
@@ -19,13 +19,13 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "96c7f505f02854d393f7ef6640ecae4493569bdad5a58d48430d79c6df1e632d"
-    sha256 cellar: :any,                 arm64_monterey: "3fc3808211395a4ae81c9e2fda84dddbf058ee8dab6723722a4de14ee5d6b10d"
-    sha256 cellar: :any,                 arm64_big_sur:  "ec65245c61476e5f95695d58510547094e3b23123baaaa8b70a650000db9eaaa"
-    sha256 cellar: :any,                 ventura:        "01bdb7bca467e9071e6dabcfafbb859ad70505e646920b317022d8a36ba35e1c"
-    sha256 cellar: :any,                 monterey:       "b986c2fc91bae0923486e919bbc5594a69386929c75b7772da9241345257eb3e"
-    sha256 cellar: :any,                 big_sur:        "506046ca40584f08f31c70091b201b34f8f2d536fab0b2aa288b7b25037ee3b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29589d4fe6f63eacf7325e20fe50b1b5cfd27525513252fcdebc21b956530316"
+    sha256 cellar: :any,                 arm64_ventura:  "ae2fb23db5f78846e098a3ef1d50d74275681d2e7baf9c650e5590024d6022c1"
+    sha256 cellar: :any,                 arm64_monterey: "1e7abd14b6911823c7573f2122d439529ba9564d8b3eff105b7b22b6efdebfb2"
+    sha256 cellar: :any,                 arm64_big_sur:  "c032ee443889cf9754a63b027463d2090fda73c842024ccfa0df02971e29fbbf"
+    sha256 cellar: :any,                 ventura:        "9e692a1fd82d02a3161028082a38aace422d10d68c055800904ec477eb6c45e5"
+    sha256 cellar: :any,                 monterey:       "7f9c47ecdc56df1c328a05d5c49420840dd99ef6e211847c089a7423b681b00d"
+    sha256 cellar: :any,                 big_sur:        "a0d18173ffca3c9825467b021764ca38798a5036bb660047e5e528aa3e8d5035"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "231458ade2b7740a6fec9d1f5a574704d843c978dcb9def6ba1c87904aaa1515"
   end
 
   head do

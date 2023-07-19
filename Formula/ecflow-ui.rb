@@ -1,8 +1,8 @@
 class EcflowUi < Formula
   desc "User interface for client/server workflow package"
   homepage "https://confluence.ecmwf.int/display/ECFLOW"
-  url "https://confluence.ecmwf.int/download/attachments/8650755/ecFlow-5.11.1-Source.tar.gz"
-  sha256 "c9d4273a5723bc9baec2b4cd4a3dc4daeced7d7b14c2ea899876861ad8708e28"
+  url "https://confluence.ecmwf.int/download/attachments/8650755/ecFlow-5.11.3-Source.tar.gz"
+  sha256 "66f4959e88b94dfecb7901a9370916bb57fa8b2cdaa2889099a907a706b655ec"
   license "Apache-2.0"
 
   livecheck do
@@ -11,14 +11,13 @@ class EcflowUi < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_ventura:  "87941fe0d6bae6d2e15edba889114301c30f03f5d0df5986d072a17f4385c487"
-    sha256                               arm64_monterey: "c4c9ff8806038b34c08b304daab4a6ba20fde2f7538d805711defc74eab524fc"
-    sha256                               arm64_big_sur:  "09c4249f97616899e31b90c127b0e9886eb7a324e56e9fe6c792d56c552ed5e8"
-    sha256                               ventura:        "cb254f690ed41f15c6092826b3a94d964d09acc6040ec088880342a7f4c68c43"
-    sha256                               monterey:       "d4583471e2d8f2eaa320b8cf1f588e916afb78e35a9881106c4b5247a8a844f7"
-    sha256                               big_sur:        "e4ece7ea68b52f2f3aa1544a9a3b0435efd8ac3daf0177073d892775b582dc61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fcabd58826dfcf34852ec542bf7e8a9765bc86b9806f02d6ee6b5d5dfd0ff5af"
+    sha256                               arm64_ventura:  "47fdb3e2ea890d16dc84008f169461e25bab2067ddc59751db04191dc98bcfb1"
+    sha256                               arm64_monterey: "3cf0b39c84a2e81a6f4b0cb940e0b6021cd4a519b3780c1b39772ca3f8305cc1"
+    sha256                               arm64_big_sur:  "bfff4f201ed80d7ea06a59659e3129ee913b37c26d52f97d1c802ba12c364def"
+    sha256                               ventura:        "7eccdbe7ae6a4d63554297a2eecb441be77bc16753a4a39d2e518a9a03c5feed"
+    sha256                               monterey:       "1dc5e6bc1ba0752ac47fca7eaf3bb9e2cc3dbba7c1b3e55a748dfb9f9a904bc1"
+    sha256                               big_sur:        "7e07b9f55a5ca7bdc7bd997d5bbc7e0a8406c04874af4b0c7786f50df4acf3ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8641681fdeb893419c7cc01315995c515720757588a288d10a2150f43eda1ea8"
   end
 
   depends_on "boost" => :build

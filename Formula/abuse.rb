@@ -7,11 +7,6 @@ class Abuse < Formula
   revision 1
   head "svn://svn.zoy.org/abuse/abuse/trunk"
 
-  livecheck do
-    url "http://abuse.zoy.org/wiki/download"
-    regex(/href=.*?abuse[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
     sha256 cellar: :any, arm64_ventura:  "4439cf6dd233b641848c36576ca622700de8c1efeb0a966e862c0e4dfc925b90"
     sha256 cellar: :any, arm64_monterey: "f9c0ad01bf244402da95d81a483a46d8bcc45fdaa50dde524711db05f5051438"

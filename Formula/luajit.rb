@@ -9,12 +9,12 @@ class Luajit < Formula
   # Update this to the tip of the `v2.1` branch at the start of every month.
   # Get the latest commit with:
   #   `git ls-remote --heads https://github.com/LuaJIT/LuaJIT.git v2.1`
-  url "https://ghproxy.com/https://github.com/LuaJIT/LuaJIT/archive/8fbd576fb9414a5fa70dfa6069733d3416a78269.tar.gz"
+  url "https://ghproxy.com/https://github.com/LuaJIT/LuaJIT/archive/8635cbabf3094c4d8bd00578c7d812bea87bb2d3.tar.gz"
   # Use the version scheme `2.1.0-beta3-yyyymmdd.x` where `yyyymmdd` is the date of the
   # latest commit at the time of updating, and `x` is the number of commits on that date.
   # `brew livecheck luajit` will generate the correct version for you automatically.
-  version "2.1.0-beta3-20230709.3"
-  sha256 "a1bb0c22aa58c5fcaf4f8397723fada43a8ef5ec81d703bf3afa56b564507e16"
+  version "2.1.0-beta3-20230712.2"
+  sha256 "835035b244c3dc3d3d19bdd5ac623af90b84207e6330fb78f9fa51d6e200d760"
   license "MIT"
   head "https://luajit.org/git/luajit-2.0.git", branch: "v2.1"
 
@@ -40,13 +40,13 @@ class Luajit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "462d5bdd10151a37207044c7f0ceb627d5a30bf727fcf612b4e0ae7a0f93ec0c"
-    sha256 cellar: :any,                 arm64_monterey: "0cd08df0f9da84866708e21944a284596cc61865ad572f1485a86f5160b2f5be"
-    sha256 cellar: :any,                 arm64_big_sur:  "33f6c13243ffbc3696221c2ba618f0cfb6d7e557c3da3bc8b1f25034a093ca92"
-    sha256 cellar: :any,                 ventura:        "1a29c75417ec9885b8bf99a8e09ee9e1ccd8dceb709d762bfdf37084fa5c8b80"
-    sha256 cellar: :any,                 monterey:       "c399eebc6f474711da1ba29a88a314ac487d23e565787d7d4472dc21b064c81f"
-    sha256 cellar: :any,                 big_sur:        "ef6210f01267cbf61e51b44f1cbc02fd4732e4d14283ed65dc45b3d3b77b99dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "929b7b53a1c638b66330154508645bd8d703c88fffab75225b41d7834068a9eb"
+    sha256 cellar: :any,                 arm64_ventura:  "d254ee8085315f23f596b786821d3132855ce55bf8ba0aa4518c6b7ce40adbe9"
+    sha256 cellar: :any,                 arm64_monterey: "41f07225ae344b53deaf851a9810a12bcb57a911400ce4ac2a7435406464d96b"
+    sha256 cellar: :any,                 arm64_big_sur:  "07b9f4e3fcd87bdbdfaea359113912f9b5820393104856ad4a9b32b45ea32ae5"
+    sha256 cellar: :any,                 ventura:        "eb0c455530d388d00c46ce74209f06ebac945cc92bd0a700135a2fc4bff11e30"
+    sha256 cellar: :any,                 monterey:       "a24fe60a6ca00bc85c22915c431e9137a87994505de51d0c62faab658e2db3bc"
+    sha256 cellar: :any,                 big_sur:        "2a5c58a798744622467918083e5a947cd32964302508b759601837f6e3f13f31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d88d7da1e1990863a70e66069730e2d71801d704f257f2da2941079fb6e577a"
   end
 
   def install

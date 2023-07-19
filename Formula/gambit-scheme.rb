@@ -26,6 +26,8 @@ class GambitScheme < Formula
     depends_on "gcc"
   end
 
+  conflicts_with "ghostscript", because: "both install `gsc` binary"
+
   # Clang is slower both for compiling and for running output binaries
   fails_with :clang
 

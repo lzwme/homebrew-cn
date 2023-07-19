@@ -2,19 +2,19 @@ class Aztfexport < Formula
   desc "Bring your existing Azure resources under the management of Terraform"
   homepage "https://azure.github.io/aztfexport/"
   url "https://github.com/Azure/aztfexport.git",
-      tag:      "v0.13.0",
-      revision: "a590751bd2c35d276fabc97c54e4cfee54482362"
+      tag:      "v0.13.1",
+      revision: "c690456672104b905d7ccdf703d056d6785a9bc9"
   license "MPL-2.0"
   head "https://github.com/Azure/aztfexport.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1c20a2ba2faba5762f693d9dff6fc9671c91150d69635e9412ef80e93cb21248"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1c20a2ba2faba5762f693d9dff6fc9671c91150d69635e9412ef80e93cb21248"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1c20a2ba2faba5762f693d9dff6fc9671c91150d69635e9412ef80e93cb21248"
-    sha256 cellar: :any_skip_relocation, ventura:        "68c303ee6f53834716265c8719c337565c13989cb93c18ce43f6716f4534c6ae"
-    sha256 cellar: :any_skip_relocation, monterey:       "68c303ee6f53834716265c8719c337565c13989cb93c18ce43f6716f4534c6ae"
-    sha256 cellar: :any_skip_relocation, big_sur:        "68c303ee6f53834716265c8719c337565c13989cb93c18ce43f6716f4534c6ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a83d2d2ee07bd666ea2a140eaeee7552d118b076c0114a1db55052c3ff9ada1a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5516289353798b0e5d7693e60921eaa646bc1ad94134ef3784ea9a027c0dc8b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5516289353798b0e5d7693e60921eaa646bc1ad94134ef3784ea9a027c0dc8b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a5516289353798b0e5d7693e60921eaa646bc1ad94134ef3784ea9a027c0dc8b"
+    sha256 cellar: :any_skip_relocation, ventura:        "07cc454845dd6f24e68a9d446cf02369d14b451c4e5c799f965edb38b9cab970"
+    sha256 cellar: :any_skip_relocation, monterey:       "07cc454845dd6f24e68a9d446cf02369d14b451c4e5c799f965edb38b9cab970"
+    sha256 cellar: :any_skip_relocation, big_sur:        "07cc454845dd6f24e68a9d446cf02369d14b451c4e5c799f965edb38b9cab970"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9056b7aa993abb3ce43d89abebeecd26a049e28da7489429488a62521b881fd7"
   end
 
   depends_on "go" => :build

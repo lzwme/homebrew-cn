@@ -5,17 +5,17 @@ class ApacheArrow < Formula
   mirror "https://archive.apache.org/dist/arrow/arrow-12.0.1/apache-arrow-12.0.1.tar.gz"
   sha256 "3481c411393aa15c75e88d93cf8315faf7f43e180fe0790128d3840d417de858"
   license "Apache-2.0"
-  revision 3
+  revision 4
   head "https://github.com/apache/arrow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "0e4255b8cf645d008e003b19a4c7dd54784d2140c04deab963a8d7e324ceffc4"
-    sha256 cellar: :any, arm64_monterey: "12dd824c0cf719e567951885e5308452d3a86e44a330ba82282ce2dc7bb460e4"
-    sha256 cellar: :any, arm64_big_sur:  "e7c880f279a203e965d41e5257eb8ad083bb6a8ab5c5c33ca83be42f845d7c61"
-    sha256 cellar: :any, ventura:        "0b833b8807d0fe83b684d333398627e389115a512e9ba49150ef5241e7624021"
-    sha256 cellar: :any, monterey:       "7c554a419d30c56a5f5b42e2db9f48187b0c4f88f85290612355e2a5a48694b6"
-    sha256 cellar: :any, big_sur:        "cac9d80c257f6983ea74f2607e67686ead172bf4f84f80ef79824cbcc3f9f9a8"
-    sha256               x86_64_linux:   "cd0e254cd30343e81336d814cd9fb2fe110f52a5ed55ed3f4c450ea16fffe618"
+    sha256 cellar: :any, arm64_ventura:  "ca657c77b7033631e3c9db74c7597fc7452e4c6fca589444becfdd5963d4c1a5"
+    sha256 cellar: :any, arm64_monterey: "5f283251fd1967b9cdae1892ff7598383b67ae3ce4051588ee42fe7558949486"
+    sha256 cellar: :any, arm64_big_sur:  "f42ebad4baf371d3f7674690aa1bcfcfa575acd9f26c9170c4a82179c684e72a"
+    sha256 cellar: :any, ventura:        "0f9774784cfa73cdb8a31b0313b0e2f0735726775258851e771391f245f6c542"
+    sha256 cellar: :any, monterey:       "292f873ce0f78687bd2d9123cd45125386836294a8debf4b310e3fdcdea3e609"
+    sha256 cellar: :any, big_sur:        "7cbbff3babc645a7ef227d22a68d4e5ee76f6dc88250a99c4dccb52fa9e1ba6c"
+    sha256               x86_64_linux:   "c16e37e338917cfe2b62ea5785ef1900d7583f398a5090d09dbd93248342128f"
   end
 
   depends_on "boost" => :build
@@ -67,6 +67,7 @@ class ApacheArrow < Formula
       -DARROW_WITH_BROTLI=ON
       -DARROW_WITH_UTF8PROC=ON
       -DARROW_INSTALL_NAME_RPATH=OFF
+      -DPARQUET_BUILD_EXECUTABLES=ON
     ]
 
     args << "-DARROW_MIMALLOC=ON" unless Hardware::CPU.arm?

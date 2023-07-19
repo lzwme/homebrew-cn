@@ -39,7 +39,7 @@ class Blast < Formula
         --prefix=#{prefix}
         --with-bin-release
         --with-mt
-        --with-strip
+        --without-strip
         --with-experimental=Int8GI
         --without-debug
         --without-boost

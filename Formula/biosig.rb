@@ -1,10 +1,9 @@
 class Biosig < Formula
   desc "Tools for biomedical signal processing and data conversion"
   homepage "https://biosig.sourceforge.io"
-  url "https://downloads.sourceforge.net/project/biosig/BioSig%20for%20C_C%2B%2B/src/biosig-2.5.0.src.tar.xz"
-  sha256 "25ffaf0ee906904e6af784f33ed1ad8ad55280e40bc9dac07a487833ebd124d0"
+  url "https://downloads.sourceforge.net/project/biosig/BioSig%20for%20C_C%2B%2B/src/biosig-2.5.2.src.tar.xz"
+  sha256 "3c87fa4ae6d69e1a75477f85451b6f16480418a0018d59e1586a2e3e8954ec47"
   license "GPL-3.0-or-later"
-  revision 2
 
   livecheck do
     url :stable
@@ -12,13 +11,13 @@ class Biosig < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "311b81b9f06fe3bbea5ffb68a3550d9df70b168abd20f1a2feae8503b6981990"
-    sha256 cellar: :any,                 arm64_monterey: "d2cb80a0cc58947c622fb9110ffcd7f64bc6d5c34d8ba82c6608a97f34d9a88e"
-    sha256 cellar: :any,                 arm64_big_sur:  "ae0a7658053ae969f8243b6106815f4fc69cca10e0d2afbf6884277b738a031b"
-    sha256 cellar: :any,                 ventura:        "ed672f0ce7655c560a46705de6e13cb6e2450f488ee1da73babd079149ffa0a1"
-    sha256 cellar: :any,                 monterey:       "09257b93ca1026ddca29643825ee454a64cb2f092f93b77daf0f77f1ba22227d"
-    sha256 cellar: :any,                 big_sur:        "5f2488d41a8be9788c1029626116d5f3f531e9fc7bf02b2706a757269185568c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4aeffb768702e6a0c92bd7e51cd95fe190cda6060c78967b66f95874b1db6a7e"
+    sha256 cellar: :any,                 arm64_ventura:  "83d191f0a0ac811bcf64c0c5112eed21d6a259f05d0b34be1e796e76a758d7f4"
+    sha256 cellar: :any,                 arm64_monterey: "a4f03b4dd7ed99343a9c38635a032b18062d7987994a0771f366b365a3198665"
+    sha256 cellar: :any,                 arm64_big_sur:  "08a1fd1b2ed45e852c449dec1fa31acfba84647102b686aa7dd80b2fc011dfd3"
+    sha256 cellar: :any,                 ventura:        "2f62a6de7d6d95332d5786db95bd128a4f1e622588eb2484059ec11016cae52d"
+    sha256 cellar: :any,                 monterey:       "16b28c2c2d7a6c51a5d36f2213cfb64fcbbfe0255aedfa98ff77c260dad8e107"
+    sha256 cellar: :any,                 big_sur:        "ad212b7f5f76da51d0ef8b33c8b9d8a2e47e015f0cc218056d753e023fe0d267"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a39f2773b2ddf64ffa46b897c77cb09e2ba38ba93b274c2b4e49ba9d5ed4c20"
   end
 
   depends_on "gawk" => :build
@@ -30,6 +29,9 @@ class Biosig < Formula
   depends_on "tinyxml"
 
   def install
+    # Workaround for Xcode 14.3
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make"
     system "make", "install"

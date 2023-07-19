@@ -1,19 +1,19 @@
 class Broot < Formula
   desc "New way to see and navigate directory trees"
   homepage "https://dystroy.org/broot/"
-  url "https://ghproxy.com/https://github.com/Canop/broot/archive/v1.24.1.tar.gz"
-  sha256 "24196f010ef2dc33e0dd419d66e5e1afc52ae508b5ee6d933aed0cc5334d15df"
+  url "https://ghproxy.com/https://github.com/Canop/broot/archive/v1.24.2.tar.gz"
+  sha256 "cf223710bd75362d37312ef50b4966d57a79b36e3e645f940fd34569075f3974"
   license "MIT"
   head "https://github.com/Canop/broot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25eccd20096d2e6aee29e7e1bb711c8dc28c3c1a342116940fff093a4091324b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6ae3be6ec02165cbf940de7b6839ff5a3c2aa57417a4e1771de19ad79ece6ba5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "92154379ae856ddccf5d039b51782d8529be48fafcce68568aff0c7ba7b49399"
-    sha256 cellar: :any_skip_relocation, ventura:        "0735faba0a2fa2a30cd5562aed7ca9c9e590352c883a85f76592738bf5d55d5f"
-    sha256 cellar: :any_skip_relocation, monterey:       "3a54c6d4a3e174f2b4f7b7a88b3cc06529b1f15f7cc489f5a57837b9a1330805"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b3df5f241e5f823750ea23ff86d51aa6c38b66c7d57172d6c32334c01af6721c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0b04ff2a3ac80b4837428482aa542edd0b3101a2fe0dee0b5c1013bdb6872aa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dfc73f730b12fa0ede62bc2fc8cf0a6430e37b1383f6169b264e9eb5f884d589"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2791b66ddfbd10dad4ca1eb83ae7ab2f423964311ce329a832129c087f0293ca"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bfef35eed802ac73ea98c84d936abf71b3012f837af7359e97283f1f061594ac"
+    sha256 cellar: :any_skip_relocation, ventura:        "026067bd98825cf0e2f4ded96e868e5f19621de0893875456146705d9fb02a8b"
+    sha256 cellar: :any_skip_relocation, monterey:       "283ebaa802e050746633c9994d62a68f06ff89683c3ce5e9a87c9a7bbb864064"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0519b72ec5895438107be4ebd7fdb171de9a42acac6da315c00c3bc5c2c32ded"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a059a28f5b2ffd3c368e022872183ab4d4a8463a7825082d9af39cd0b989d53"
   end
 
   depends_on "rust" => :build

@@ -3,20 +3,19 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https://docs.cloud.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm"
-  url "https://files.pythonhosted.org/packages/a0/2c/09c57cfe035aabbf656763428f0d61b1e2d1ab6f6bf95af82bdc22485062/oci-cli-3.29.3.tar.gz"
-  sha256 "6cace99cdf96c27c3bc06f5a1724cf0fffdc08e35298043ebd586e7d4b143dd7"
+  url "https://files.pythonhosted.org/packages/d4/e5/06cad8fccecb37d90a4a06b489c98f8f6d752c35967efb5aafe9e8d7ec27/oci-cli-3.29.4.tar.gz"
+  sha256 "e21016606947d4e8e4d2aca2766d21f7b9147eadf4610ff319070adbf056faaf"
   license any_of: ["UPL-1.0", "Apache-2.0"]
-  revision 1
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b073217a1a7609fe00879cb24a41852390a9450c43e84e1824442d4700c595c5"
-    sha256 cellar: :any,                 arm64_monterey: "f3b1ec4b9bdca9a8ad9a63179164fdb706956fce3a68ac64b120b9b90330be60"
-    sha256 cellar: :any,                 arm64_big_sur:  "f3a2f4aacc32bdd1d18d93d517fc66ef7f2ccf16c05da70d09f3f526243be244"
-    sha256 cellar: :any,                 ventura:        "8d66e33bb456b41ba11ca879f245b91069b4b84c17a8508b6240155eae2d8096"
-    sha256 cellar: :any,                 monterey:       "35cfe5f62c7667f79a17154aaff08dfd9fd8a819aae357c9fe87c30c711f93ca"
-    sha256 cellar: :any,                 big_sur:        "16ea78800a9a7062e46b075b85cb007550a8d5eaf1f15b428a635bd0dbde8b6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "341d5c9f9d9e1a0ec294572429eb33a50287c4f9e0909d27163682a2b996a50d"
+    sha256 cellar: :any,                 arm64_ventura:  "f7d05717bbd361eb07388f17f7d6b22f322ab1cb04fa21ec9eb91e4d4647848a"
+    sha256 cellar: :any,                 arm64_monterey: "0d5636441408746b9c391a1c6d8f7b7457845fe3afe0e8f1d67371832f2f1681"
+    sha256 cellar: :any,                 arm64_big_sur:  "45b0d76a2e9cbc1905d30fb4845212f32b2702916126ca605c00597d23327a98"
+    sha256 cellar: :any,                 ventura:        "9010b1e39a6a642b943adef95b7f8c170fdd7be13627e8dcdba1f9d8502b1b47"
+    sha256 cellar: :any,                 monterey:       "2a79d434b9140dc39cb3fdab8c3bb074573a31199003460639e195455762fd94"
+    sha256 cellar: :any,                 big_sur:        "84c810623c0706cf5d79f66effc0fddeb3a576449ca306603082b208c8c4ed59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8040ae9278a7d8cb8bbe97981429edf96b6ff6dc15c1f64d9dc7e363baa14b60"
   end
 
   depends_on "pkg-config" => :build
