@@ -5,6 +5,14 @@ class Govc < Formula
   sha256 "642ec3d091f48542e2f9537a9d51c355bb230fe26f113a3aeaac39e0ec5d93a6"
   license "Apache-2.0"
 
+  # Upstream appears to use GitHub releases to indicate that a version is
+  # released (and some tagged versions don't end up as a release), so it's
+  # necessary to check release versions instead of tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d9cc385a8d32e24ca325a9ca0a7cef1dd377db32eed84fbf91179aeff8a6b8cd"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f4fd62b1f42c311351cf1f64f85048c9c9a2dd98be47329df0fcbdfb54849eee"

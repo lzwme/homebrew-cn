@@ -6,23 +6,20 @@ class Dotbot < Formula
   url "https://files.pythonhosted.org/packages/17/dd/e63106d944dfac3d2092ec5935c69f73ac806138586df719b3ce72027066/dotbot-1.19.2.tar.gz"
   sha256 "ae4e232fd47085a647826589d1c5bf2bf426c04f777365dc7e1e0626cdac2f01"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "79006ccdd696063ce2cbee6ec1dd4a91d842409cadc108d28092321e75dee875"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8bdffd6a5bca42d174eeb3e7841022197c97afa037409c27983a97f30f9e7282"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c25024e47dbd3e1d884f404610ebf53c084e2185c7f07c88797458809b2ebcb2"
-    sha256 cellar: :any_skip_relocation, ventura:        "b2407dc6cd7f2c311447a8b103493268e02b5e42150332deb65151d2a9994224"
-    sha256 cellar: :any_skip_relocation, monterey:       "27406050db0bf0d3066eca4467c981b2a7cc452cfa0d2af50d43295c29e8a16d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7c2d3062329b363a839f6a5dd923a58c08f8867271ab622d425b20fb01881d99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23cf6f11a376a3a0e37e9a906d76e90469fd974d9c3def1f3a3a4532db79709a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b23059c3f02ae977edb8d441e2bbced81bdab79a95536513da66f1abdff484c6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f9351a6eefac2cede6abaf020565377a7422e7c6c25aa7867c70854dd5fde974"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4ba3d93f89a9d18f2aae1b2912fdc2e2403a8e6c7081615b7c9b383309f5e2b0"
+    sha256 cellar: :any_skip_relocation, ventura:        "5a457fdcc35c27362a5665483e06caf6f4f9639534e163de5512eede90f7c72b"
+    sha256 cellar: :any_skip_relocation, monterey:       "ac07981f760438071cd6a18b78d376aef09760e770e5e45eb86fdc32b80f5204"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6d9d0546d8f640f8e701ed59cfef810485715c4b41885f99d1a47de5e8f74c32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "955cf9550e00bfc1b9388ba68349d9d2d926f495a656a1bb48fb1b0e38a9ec00"
   end
 
   depends_on "python@3.11"
-
-  resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
-    sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
-  end
+  depends_on "pyyaml"
 
   def install
     virtualenv_install_with_resources

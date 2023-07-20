@@ -1,8 +1,8 @@
 class Solidity < Formula
   desc "Contract-oriented programming language"
   homepage "https://soliditylang.org"
-  url "https://ghproxy.com/https://github.com/ethereum/solidity/releases/download/v0.8.20/solidity_0.8.20.tar.gz"
-  sha256 "8a54043ebbd436b8b38d625d90ceb69dce07c150822fb6d796e440ccc2c17981"
+  url "https://ghproxy.com/https://github.com/ethereum/solidity/releases/download/v0.8.21/solidity_0.8.21.tar.gz"
+  sha256 "6d1bb8e72850320e72d788575f6bd25dd4930cb6dd9edd35a59266a46f610d13"
   license all_of: ["GPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0", "CC0-1.0"]
 
   livecheck do
@@ -11,13 +11,13 @@ class Solidity < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "06f93dae25f695b04128c4f18a41aeca30117b3d7e82dc3b3fb66a4008527faa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8ed30c4f8cea1ea33cab347e6eeefe526cafe8dc58a478628ca4b97435641988"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "03437550f65560247f5112a7d58b88f2ed51787865e4f7c603899c876805083b"
-    sha256 cellar: :any_skip_relocation, ventura:        "4a05de06bb38045acd0fae3940c8fdf874f98d21a4c41e3badb7c5ec4d836393"
-    sha256 cellar: :any_skip_relocation, monterey:       "24fd859b0c31a186adfa9fac1d492d833d83996e8569c8ed31c388b01c4a0afc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f4103203e113ccb9db72d2a9bb20610a04c9be7961ac3fa5f360104c3606a4c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "623cbfb66be219f306d3bb3c57d377b60e7d1b72374041c6da9cd44d9a2b161f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3ce41bb65420d367fc36871cb8eeeaa401b9fcb53996c72a8bb221003f84743"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3c38b29827806be9182ba1b44843551f7eb36854a074b51af56b0b7e1bdb8738"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1918981bca20dc6d478b38a7fd103032d1637b1535b9e773a30b8706f9196e1f"
+    sha256 cellar: :any_skip_relocation, ventura:        "289d29d6236ce84a00857b44edf2480754474e49dac5365848057a763d6b1005"
+    sha256 cellar: :any_skip_relocation, monterey:       "82bc0cdc0afee2ed50c9e7c08f96c2a2b367c0df6e84233c15f34fdbaaa7bf7b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ffc4f49ef46582e5c0304b653ea8433c7daf0930f3429a259024c42ff23843c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46be35bc547de75f39379b21201c969fb332bbe658b08c5fbecdaceb24f9486d"
   end
 
   depends_on "cmake" => :build

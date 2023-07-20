@@ -6,6 +6,11 @@ class Lazygit < Formula
   license "MIT"
   head "https://github.com/jesseduffield/lazygit.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "40dafb9962149161d30f6bbcd8dbdc4e4e893354416c0711e978dbc636011963"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "40dafb9962149161d30f6bbcd8dbdc4e4e893354416c0711e978dbc636011963"

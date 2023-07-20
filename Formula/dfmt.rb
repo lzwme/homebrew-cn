@@ -2,19 +2,19 @@ class Dfmt < Formula
   desc "Formatter for D source code"
   homepage "https://github.com/dlang-community/dfmt"
   url "https://github.com/dlang-community/dfmt.git",
-      tag:      "v0.15.0",
-      revision: "49b9fe4051579bdcc7fc155bee6a43f3ab7174df"
+      tag:      "v0.15.1",
+      revision: "470e65f7cc19441c4d50932520aefb7d93f242d5"
   license "BSL-1.0"
   head "https://github.com/dlang-community/dfmt.git", branch: "v0.x.x"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dd055cfbce99c8b142b145b6891e1934954e0474cb48788a59e267c47a22ea5f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "531018a5c33d27c24e1f1748ab4348d3ff5ebd1273ba0190e191d72855ac75c8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4fbd4f35552d83ce0576ff2593dfd8c47eb4db0890876ce2915fedf2b4c597a5"
-    sha256 cellar: :any_skip_relocation, ventura:        "c6d928757ccc23f1ac3332198fe639a6eebd968182ad0ef7bf0dd5d58552b09f"
-    sha256 cellar: :any_skip_relocation, monterey:       "91ce9ed7424595d0fac0de667b067119a5e75454cc0902cbb8f2fd665f6351ce"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8e47c0481d8a5850eb4377902df9c6ce79efe785701ab22f077fd6e1e96aa5a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b66253ada544ae0dda30aaebbb07158a6d364d1d34c9556eb5613e7390c4259e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0fdcf8d6abe92da0779370868eb8cd46437bc88705ba963361b5deeb0466e4ed"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "42099cdc494464ad1b203c242a7144f0d0147f4f948644986f6437f05248d4bb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a284a73ce3996487787a8aeb084b951e6e4523342bc87e484f84de61d66cd040"
+    sha256 cellar: :any_skip_relocation, ventura:        "5ba1872f353a3ffec3c558edc7c89b82ddb8701a8d5d599b6520633bedb916a0"
+    sha256 cellar: :any_skip_relocation, monterey:       "2e3b7afee0e3a199b364181e973a79991c82df1dbea3bd827ea7ef1442760dbb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c0f852a6e158291f6203fdc20eb2c1b8053518ee8028b04f6da330f37e1ae2e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "92db6ca03196895c6c144303402a38ffa5e0455489d600ed715f8442c77fa602"
   end
 
   on_arm do

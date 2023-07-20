@@ -12,7 +12,9 @@ class Blast < Formula
   end
 
   bottle do
+    sha256 arm64_ventura: "ef7f64b650ddd5bd5a1dfb7607866653506dc4ea4b1002e17ec1ac0b0b2e6753"
     sha256 arm64_big_sur: "0239f0d621e069cfaff7c7efd2e340986fa7dc81a19a1d5ff06afc651339d9ac"
+    sha256 ventura:       "d44e031c5bb344160bfcd823e31d4e01416930e5d304edcc0a5cc4b9d668fa3b"
     sha256 monterey:      "ccb2bf7d47607eb7a2bda69666bfa26d592132bef1b65f2b8ffec0ef35f97713"
     sha256 big_sur:       "8b56e231976a2fc415ed0e8a95c311c098a602241bd535b777c783d5e33959df"
     sha256 x86_64_linux:  "feb66ab235cf31ad8ea401aa3923e2066988f85580b3aa44c0acc028dee49e0d"

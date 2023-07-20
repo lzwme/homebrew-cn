@@ -5,6 +5,14 @@ class Kubergrunt < Formula
   sha256 "71dfcaf98c933ae8c343fa7dc8095b9c9e216cf4e64d15e1d6c1a087814576ba"
   license "Apache-2.0"
 
+  # Upstream appears to use GitHub releases to indicate that a version is
+  # released (and some tagged versions don't end up as a release), so it's
+  # necessary to check release versions instead of tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a4a473c485b9764ee800e4f846c5f49a8b3d39b1eef8677a363b205f1739c93"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6a4a473c485b9764ee800e4f846c5f49a8b3d39b1eef8677a363b205f1739c93"

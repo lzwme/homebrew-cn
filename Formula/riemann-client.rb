@@ -1,20 +1,19 @@
 class RiemannClient < Formula
   desc "C client library for the Riemann monitoring system"
   homepage "https://git.madhouse-project.org/algernon/riemann-c-client"
-  url "https://git.madhouse-project.org/algernon/riemann-c-client/archive/riemann-c-client-2.1.0.tar.gz"
-  sha256 "e1a4439ee23f4557d7563a88c67044d50c384641cf160d95114480404c547085"
+  url "https://git.madhouse-project.org/algernon/riemann-c-client/archive/riemann-c-client-2.1.1.tar.gz"
+  sha256 "097e710096dc2e901ae95108277eff1acb6d0383f04137cdea4ce55257c08e10"
   license "LGPL-3.0-or-later"
   head "https://git.madhouse-project.org/algernon/riemann-c-client.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c06ddd5fb3a97f373bf5a62a87410fe28e94082aa71c9cf5501da932faf94f73"
-    sha256 cellar: :any,                 arm64_monterey: "304cf14a65977bdf52fd553dc7c9b9ecdad0e34dcf7ba3d26d4d415154439001"
-    sha256 cellar: :any,                 arm64_big_sur:  "6bb8a167fd979ed2d95b77d2fa5802454c42fce025070bd262925425f41fc6fa"
-    sha256 cellar: :any,                 ventura:        "812b26637fd328e6ddffc2449e32f23b568f571cad88c44bbe2df1308ebe1ddc"
-    sha256 cellar: :any,                 monterey:       "86f04b64fd3ef3984698c0587bb8944907856d876fb9b2855b4564dc3efd84d2"
-    sha256 cellar: :any,                 big_sur:        "f724a20b8eb444be7c01ecf3467eb0b57d8896b9dcebb3a09926e98bbfb4fdd7"
-    sha256 cellar: :any,                 catalina:       "0a92ea87867b322edda329832975bd269f4baf18319b4a256f36bf24f09ed19c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb6ad40b5c2ec40cc9d3894ef3de12fa8cd3a612e22a6e58b58178e5792187fd"
+    sha256 cellar: :any,                 arm64_ventura:  "802b77fa2f9fc2d22a488497d8909d3f5993fc4ae7fdcf5d14c3eba19a413ed8"
+    sha256 cellar: :any,                 arm64_monterey: "fe70ede98148a187c44e099b3bb9f27b3f2d123c7ad73c6af9613f82cfd9a1f9"
+    sha256 cellar: :any,                 arm64_big_sur:  "57bb213aa15fb45dccb60a1d1e7fad0bd976296110ab13453f4d8b29b465e0cf"
+    sha256 cellar: :any,                 ventura:        "6fac261afb6031324d4bd36cd24b6492f53d83774523a0fb15bbc37d72662c59"
+    sha256 cellar: :any,                 monterey:       "cb26c23b696f4d6f5c8e8acde091e3cb979f380d20600ad996748b9ed8aca756"
+    sha256 cellar: :any,                 big_sur:        "6f847dd81950e70bfcb857bbcedb74011c333b43e76a406cc3f865ee4c201c2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5b81ce54007693a8fd2068d8b4a9388697e3c409af20fa70e038c4ebc71b8ec"
   end
 
   depends_on "autoconf" => :build
@@ -23,11 +22,12 @@ class RiemannClient < Formula
   depends_on "pkg-config" => :build
 
   depends_on "json-c"
+  depends_on "openssl@3"
   depends_on "protobuf-c"
 
   def install
-    system "autoreconf", "-i"
-    system "./configure", "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", "--prefix=#{prefix}", "--with-tls=openssl"
     system "make"
     system "make", "check"
     system "make", "install"

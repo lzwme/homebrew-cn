@@ -3,20 +3,21 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/be/95/2a68f7e43eb001c9abea71bdbaa8c982876521e0e7f6ddb6236023f97364/borgmatic-1.7.15.tar.gz"
-  sha256 "7ac4ef7326c23d36b203d2c24ae90d73d6daf1e1824f28c1f3cdde658cbdd482"
+  url "https://files.pythonhosted.org/packages/bd/47/70038b678e12181a28959d3ca3a7f3dcacb0b01da217550ab710a453e34d/borgmatic-1.8.0.tar.gz"
+  sha256 "b561c69f241d9e87af585720079e9ef7b43bdee8d4c39c8775476e068ec71a5a"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f3ce601df8c121fbc1cb2ecb446d9921b7ae0e67d6ec8b2bcb026f85dfdbd306"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "105529fee7f8a2e35f0db0a8bacbd01ad9dd4294ceae178d871b3f6738d91418"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "03addad53da52dbe5ba90a157af225d5fbcf8e3d253ca18b06db4d7983b175cb"
-    sha256 cellar: :any_skip_relocation, ventura:        "effd69a53eee2e0da56bf203292c93ec6219cc8a79427f92203ba970bae91cc3"
-    sha256 cellar: :any_skip_relocation, monterey:       "6d0bc54c287758543eecf62c4f2715d2efb11286a2ace64c19961eef8a3ee2d7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5b12e890dcdaa7d9c5304b87068caf488a92826d1f7a4afc6bcc6563b86e3583"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc3392e7f1b7f6511232da77e74c9d15b1b7241b5575d61a6fa76c3c0cf3f279"
+    sha256 cellar: :any,                 arm64_ventura:  "c9014499fce59fdb2791f932317c95a463a0955ab0d37e3d23b59fed06ce2fa4"
+    sha256 cellar: :any,                 arm64_monterey: "cd4f76b284f57986dcbd63e045707c74f09afbcc93581bc3f6283a1e6424b083"
+    sha256 cellar: :any,                 arm64_big_sur:  "e508594ff2a8ccd4421e1f2d1b131eb6b9a4b2c114cc8c5e8afd5b583107e13d"
+    sha256 cellar: :any,                 ventura:        "343bcb8f33d7b4a5b2d3a6739f4d2f87d1f168961439f62d4ba66c9021a06f13"
+    sha256 cellar: :any,                 monterey:       "5e4dd9bf244cd3f76c5919e2a2bab8e1ebf1e29bdfcbad8bcd277a718b9e34c4"
+    sha256 cellar: :any,                 big_sur:        "9cf72395564f2b77b7c6f24d234b418bace0f3988915ab6755fbbb9e7436a148"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7caedef81c324875a1bd06315cb1747d2c6a8aa3389bd908b1d2b58b6501ebb0"
   end
 
+  depends_on "rust" => :build # for rpds-py
   depends_on "python@3.11"
 
   resource "attrs" do
@@ -30,8 +31,8 @@ class Borgmatic < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "colorama" do
@@ -45,8 +46,13 @@ class Borgmatic < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/36/3d/ca032d5ac064dff543aa13c984737795ac81abc9fb130cd2fcff17cfabc7/jsonschema-4.17.3.tar.gz"
-    sha256 "0f864437ab8b6076ba6707453ef8f98a6a0d512a80e93f8abdb676f737ecb60d"
+    url "https://files.pythonhosted.org/packages/e5/a2/3e03efdd25f93e1296d0454a7680456fda2925f2ff624bf43855d785b3bd/jsonschema-4.18.4.tar.gz"
+    sha256 "fb3642735399fa958c0d2aad7057901554596c63349f4f6b283c493cf692a25d"
+  end
+
+  resource "jsonschema-specifications" do
+    url "https://files.pythonhosted.org/packages/12/ce/eb5396b34c28cbac19a6a8632f0e03d309135d77285536258b82120198d8/jsonschema_specifications-2023.7.1.tar.gz"
+    sha256 "c91a50404e88a1f6ba40636778e2ee08f6e24c5613fe4c53ac24578a5a7f72bb"
   end
 
   resource "packaging" do
@@ -54,14 +60,19 @@ class Borgmatic < Formula
     sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
-  resource "pyrsistent" do
-    url "https://files.pythonhosted.org/packages/bf/90/445a7dbd275c654c268f47fa9452152709134f61f09605cf776407055a89/pyrsistent-0.19.3.tar.gz"
-    sha256 "1a2994773706bbb4995c31a97bc94f1418314923bd1048c6d964837040376440"
+  resource "referencing" do
+    url "https://files.pythonhosted.org/packages/ae/0e/5a4c22e046dc8c94fec2046255ddd7068b7aaff66b3d0d0dd2cfbf8a7b20/referencing-0.30.0.tar.gz"
+    sha256 "47237742e990457f7512c7d27486394a9aadaf876cbfaa4be65b27b4f4d47c6b"
   end
 
   resource "requests" do
     url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+  end
+
+  resource "rpds-py" do
+    url "https://files.pythonhosted.org/packages/da/3c/fa2701bfc5d67f4a23f1f0f4347284c51801e9dbc24f916231c2446647df/rpds_py-0.9.2.tar.gz"
+    sha256 "8d70e8f14900f2657c249ea4def963bed86a29b81f81f5b76b5a9215680de945"
   end
 
   resource "ruamel-yaml" do

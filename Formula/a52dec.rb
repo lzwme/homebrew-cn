@@ -6,8 +6,8 @@ class A52dec < Formula
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https://pkg.adelielinux.org/current/a52dec"
-    regex(/version\sv?(\d+(?:\.\d+)+)/i)
+    url "https://distfiles.adelielinux.org/source/a52dec/"
+    regex(/href=.*?a52dec[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do

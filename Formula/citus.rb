@@ -1,20 +1,19 @@
 class Citus < Formula
   desc "PostgreSQL-based distributed RDBMS"
   homepage "https://www.citusdata.com"
-  url "https://ghproxy.com/https://github.com/citusdata/citus/archive/v11.3.0.tar.gz"
-  sha256 "e377981eda41a0c3defaafc3e7471e9f102482df70eda25dac912fcf7c24df16"
+  url "https://ghproxy.com/https://github.com/citusdata/citus/archive/v12.0.0.tar.gz"
+  sha256 "9a6adaecc28e80e03a0523d07ee14c4b848f86f48ed37f84aa8cb98f3489f632"
   license "AGPL-3.0-only"
-  revision 1
   head "https://github.com/citusdata/citus.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "cb2768b85bbc74fd8e5d4c5613301946efb283899aa5e5e4cee712dcd737e0b0"
-    sha256 cellar: :any,                 arm64_monterey: "99b57fb7539a450df57cff81185473b752ba380848249b5fd74c18824dfe9bb1"
-    sha256 cellar: :any,                 arm64_big_sur:  "f88a18a40b331102780016712ab85454993522a13f86dcd5505ac87e5e2a4824"
-    sha256 cellar: :any,                 ventura:        "dfc1c08a9f84a7d7eb98e7822fd2b8c3c70c917377324779ea4bce5b3debbfb3"
-    sha256 cellar: :any,                 monterey:       "af27fecd06f6d8a26d544059cf6f99ab97d648f1cf107b98e49d4fec25ef4cb5"
-    sha256 cellar: :any,                 big_sur:        "91ac1faa65d40b7627782b8e26de26d718fe8534c8ce9d5a2346379c10fe2808"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16ed248f6656850119e3b500d06ff0f487cf2dc563ff8114c7df151bbb8e5c34"
+    sha256 cellar: :any,                 arm64_ventura:  "f4bf486699a5729f4d0c2006001f4449f60d343256550be6017d9ba2c34ff374"
+    sha256 cellar: :any,                 arm64_monterey: "eeb9601a50b0eef99e8bf5b5e7e8e8ad5dd9a2ff205e6e39a7d7a056cf9f7f89"
+    sha256 cellar: :any,                 arm64_big_sur:  "e1d3d86a47cbdb1d3899f78cdfa58b11932ebdeecf77e7243ce5f87c8073b99f"
+    sha256 cellar: :any,                 ventura:        "47b61e4cc15726dac930df244271c94c96c000b8855ac360e51cbf3df0d00938"
+    sha256 cellar: :any,                 monterey:       "55aedab8c64a790da451bba0e878aa04de3213b89a2399ddef69bb94cfe3e824"
+    sha256 cellar: :any,                 big_sur:        "2f117d6aa7e6daaa46239f2654c3f477fa64cae2e2be6fabba91e4741210eb21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a80582e490c8d146843864627ac75b85f2fa917e671da46bd2aef9ae1676f84"
   end
 
   depends_on "lz4"

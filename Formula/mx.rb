@@ -1,8 +1,8 @@
 class Mx < Formula
   desc "Command-line tool used for the development of Graal projects"
   homepage "https://github.com/graalvm/mx"
-  url "https://ghproxy.com/https://github.com/graalvm/mx/archive/refs/tags/6.30.0.tar.gz"
-  sha256 "764bf57305eafc16374164aed54e459a813324addfd884ee56e0f2f14333fade"
+  url "https://ghproxy.com/https://github.com/graalvm/mx/archive/refs/tags/6.31.0.tar.gz"
+  sha256 "078a07ec325082c5d10e5a76dbb6b1e00ba872845065adcbd404c3d99cb398c5"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,13 +11,13 @@ class Mx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bac13adf25792a391568dd1fb361f44ace096ee70256b4c395d3a8ea6aacfc06"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bac13adf25792a391568dd1fb361f44ace096ee70256b4c395d3a8ea6aacfc06"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bac13adf25792a391568dd1fb361f44ace096ee70256b4c395d3a8ea6aacfc06"
-    sha256 cellar: :any_skip_relocation, ventura:        "bac13adf25792a391568dd1fb361f44ace096ee70256b4c395d3a8ea6aacfc06"
-    sha256 cellar: :any_skip_relocation, monterey:       "bac13adf25792a391568dd1fb361f44ace096ee70256b4c395d3a8ea6aacfc06"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bac13adf25792a391568dd1fb361f44ace096ee70256b4c395d3a8ea6aacfc06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a739d3064c260795644e612abdd26235fc1022573e97f3061ffa3ed58ecdb39"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bbe6a51ea113b3a8face68eaa7eec076335b1c11a6bdf605bf86a81b6f11beee"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bbe6a51ea113b3a8face68eaa7eec076335b1c11a6bdf605bf86a81b6f11beee"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bbe6a51ea113b3a8face68eaa7eec076335b1c11a6bdf605bf86a81b6f11beee"
+    sha256 cellar: :any_skip_relocation, ventura:        "bbe6a51ea113b3a8face68eaa7eec076335b1c11a6bdf605bf86a81b6f11beee"
+    sha256 cellar: :any_skip_relocation, monterey:       "bbe6a51ea113b3a8face68eaa7eec076335b1c11a6bdf605bf86a81b6f11beee"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bbe6a51ea113b3a8face68eaa7eec076335b1c11a6bdf605bf86a81b6f11beee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6a51235a5469027b4be4e93d1df018e3ac6797df5be8f85e85ebdf45c1b572f"
   end
 
   depends_on "openjdk" => :test

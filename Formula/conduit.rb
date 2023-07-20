@@ -1,8 +1,8 @@
 class Conduit < Formula
   desc "Streams data between data stores. Kafka Connect replacement. No JVM required"
   homepage "https://conduit.io/"
-  url "https://ghproxy.com/https://github.com/ConduitIO/conduit/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "5471e260bbc012dff371507638967e74cafe0855a9120e4fca00bceaf4ae6964"
+  url "https://ghproxy.com/https://github.com/ConduitIO/conduit/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "a7652015d93034569215061ca963a82faa806a3cbac08540db78562642c874a3"
   license "Apache-2.0"
   head "https://github.com/ConduitIO/conduit.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Conduit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7cc059740936b2ffba25aa117ad492faf946fdc0cc73f82776af32106d639e2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c2e43e59c48089d251bfc510e7f97b5b15fb5119b37e90f27c2f9da5c9de3cc0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bb856127aa558df7a9cadcc44c1bb78140825f91071101fa19c711ff39dcf06a"
-    sha256 cellar: :any_skip_relocation, ventura:        "1e48305c3adea6efb2d23b54bdd0453cb5c0ff9cc089fa17bf9d6b669da62d67"
-    sha256 cellar: :any_skip_relocation, monterey:       "53489ade69049bd3def93e11d7e7a1d1908bad6609df91eecd13e27de21e2529"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0657a92732ca32a34c524fe558060bdf1dd53acd15834d29c2e1e8c893433697"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d04c164c63e55e7056c38041e6591fb7c843e58e481cf33f32318b67cc19429d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3e5a58fe7b14d129aaf7f13b1062e0047c56aa9780d5d6d4483bc9ea6f7c3db0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4a833c6405d91520c5b55c198192ccbb1dc9d0e52b0b801a10ab4aa022f29162"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1f09e52aacf8254c2deeeeaf7078f60e41b52b3fa6b9984df11f4c6553e89f29"
+    sha256 cellar: :any_skip_relocation, ventura:        "43bf3553a1779d0704e8eede29834c78bc2dc85c8ebe9f6f0b17645b789ce47a"
+    sha256 cellar: :any_skip_relocation, monterey:       "e23ba93ab8e458f7c63709106390be79d4f7dd33d624c4b0488d7892d6a15262"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7cae8d6336239b5c0ec18514a8752594c259fc4d05215401d204313426a4b0fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18ce3858bf0f83e6c1133760d926aa3b75b378c4546cb916efb7304485bd9bc8"
   end
 
   depends_on "go" => :build
