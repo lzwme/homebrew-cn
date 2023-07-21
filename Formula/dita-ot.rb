@@ -1,8 +1,8 @@
 class DitaOt < Formula
   desc "DITA Open Toolkit is an implementation of the OASIS DITA specification"
   homepage "https://www.dita-ot.org/"
-  url "https://ghproxy.com/https://github.com/dita-ot/dita-ot/releases/download/4.1/dita-ot-4.1.zip"
-  sha256 "7bd0c7471c5fda530f88f32c54f3f8ea9083ba0b64526f5c17c1a2202b398c46"
+  url "https://ghproxy.com/https://github.com/dita-ot/dita-ot/releases/download/4.1.1/dita-ot-4.1.1.zip"
+  sha256 "a86ae9499ddba7f9703e1ae3eeaa6ea9f83b8a128ec6c4b01adaf803cf9d1cfb"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class DitaOt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c96d0aac084db3da8b6136568bdb8f5f0b14b2a9f1cece1546e5f81d220adfe2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c96d0aac084db3da8b6136568bdb8f5f0b14b2a9f1cece1546e5f81d220adfe2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c96d0aac084db3da8b6136568bdb8f5f0b14b2a9f1cece1546e5f81d220adfe2"
-    sha256 cellar: :any_skip_relocation, ventura:        "15c7197f58c88352e089134fff76cf53d30dd4036c983cbeab7b4637845ab81a"
-    sha256 cellar: :any_skip_relocation, monterey:       "15c7197f58c88352e089134fff76cf53d30dd4036c983cbeab7b4637845ab81a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "15c7197f58c88352e089134fff76cf53d30dd4036c983cbeab7b4637845ab81a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "683cb9bb6ef9ea4db91bdc18a9c4cd9ee37292e44862f0aa419e50e0831b0cee"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2aeefbf349a91e9c1507505e55571ce25643b1f17f585461534aaee33d4ec867"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2aeefbf349a91e9c1507505e55571ce25643b1f17f585461534aaee33d4ec867"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2aeefbf349a91e9c1507505e55571ce25643b1f17f585461534aaee33d4ec867"
+    sha256 cellar: :any_skip_relocation, ventura:        "a30970174eb19921756e13b48ca1bca143c78633ad31f93b51757b502b23d42e"
+    sha256 cellar: :any_skip_relocation, monterey:       "a30970174eb19921756e13b48ca1bca143c78633ad31f93b51757b502b23d42e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a30970174eb19921756e13b48ca1bca143c78633ad31f93b51757b502b23d42e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03fe56d9b44a8dc175884dfc0f525cb0edc6e7d98a0176c0bc045dbe5a7dc0a5"
   end
 
   depends_on "openjdk"

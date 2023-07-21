@@ -1,19 +1,19 @@
 class Vhs < Formula
   desc "Your CLI home video recorder"
   homepage "https://github.com/charmbracelet/vhs"
-  url "https://ghproxy.com/https://github.com/charmbracelet/vhs/archive/v0.5.0.tar.gz"
-  sha256 "3d9c54b53366504441ad64150af771b39676130cbc22bf14281b026152ab7bc6"
+  url "https://ghproxy.com/https://github.com/charmbracelet/vhs/archive/v0.6.0.tar.gz"
+  sha256 "bf41f264730f18b5146c2269d82b5b69757470799a2cce6099e420b5f3ec7fa3"
   license "MIT"
   head "https://github.com/charmbracelet/vhs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8b68bae735c1aa7650697753d47528ac46a6d004d12f5939b3e3a008d6e09004"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8b68bae735c1aa7650697753d47528ac46a6d004d12f5939b3e3a008d6e09004"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8b68bae735c1aa7650697753d47528ac46a6d004d12f5939b3e3a008d6e09004"
-    sha256 cellar: :any_skip_relocation, ventura:        "3a9c984fec0685c46bb9dca563a75e4285e3099e6beb7ffb05c3cb1c3cd9f501"
-    sha256 cellar: :any_skip_relocation, monterey:       "3a9c984fec0685c46bb9dca563a75e4285e3099e6beb7ffb05c3cb1c3cd9f501"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3a9c984fec0685c46bb9dca563a75e4285e3099e6beb7ffb05c3cb1c3cd9f501"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0195e5a301fb1fa9d09b41ea8023dc63065d625d9801f32aa1c958c6ce04c8d6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "87adc926741c2cede54d4b6a453862407cd3cde38d93648832090a8a11a963c2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "87adc926741c2cede54d4b6a453862407cd3cde38d93648832090a8a11a963c2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "87adc926741c2cede54d4b6a453862407cd3cde38d93648832090a8a11a963c2"
+    sha256 cellar: :any_skip_relocation, ventura:        "191b7b279c041b06d8367b16da08aba9640080dbf6b2c0f0cf0a8838bb179b8e"
+    sha256 cellar: :any_skip_relocation, monterey:       "191b7b279c041b06d8367b16da08aba9640080dbf6b2c0f0cf0a8838bb179b8e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "191b7b279c041b06d8367b16da08aba9640080dbf6b2c0f0cf0a8838bb179b8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c032bb97af62d82f7103e8aee68e6d5cc9e7a9f0c13b89dd7021498342fdf52b"
   end
 
   depends_on "go" => :build

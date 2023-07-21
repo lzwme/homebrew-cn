@@ -3,20 +3,19 @@ class AwsSsoUtil < Formula
 
   desc "Smooth out the rough edges of AWS SSO (temporarily, until AWS makes it better)"
   homepage "https://github.com/benkehoe/aws-sso-util"
-  url "https://files.pythonhosted.org/packages/7d/59/d7717183d187a700298e65f7b416b693af56ca9e70229529c648601bc303/aws_sso_util-4.31.0.tar.gz"
-  sha256 "a816ca64f4adb3fd9262963fb1c3a8f3741848e85689626af42d55686a66aa4a"
+  url "https://files.pythonhosted.org/packages/6e/93/90d3753ac7ea3148c41c43929cace11d8fc1331c629497ab24a91a6c3724/aws_sso_util-4.32.0.tar.gz"
+  sha256 "2649dcf3c594851a0c55ed6ebf2df70205d1debd6e58e263738430d4703890ec"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/benkehoe/aws-sso-util.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "656dd8e47bfe2826a73466a491abcb0f8a9cae1f81dd6fb2c84580fd4aa6486e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "24cadd05bbcd86cdead31d04205ff17a08f21887c167129071c328aa04faf7b9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "07855000a0dd42f85a7b8d8c867490e71c781998267af784ff4c090cdee15653"
-    sha256 cellar: :any_skip_relocation, ventura:        "b5027e228ca6a2d9793d674de156612cff793f757c0ea401d48e1724edfc013f"
-    sha256 cellar: :any_skip_relocation, monterey:       "5cd2e8646890f4bfdb137dab312115918405b2e6493293d85d5043a180bf72fb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5810b51b1ed68a70dd08c95f83716f09c511b52d1358a8149db0531fc1cafe56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8790aa2fc475c2031dc95d3733e83f1014ea0f28770933db6f914bd79b3e65f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7f95fec595ddccf3f0fcdc04f5fb18e9e1406a3dc145a03c9c9d0e8a8396d1d0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b2317f04d9a83b9ccdeb49f3a79d6fc5da86fec077b6c899be36fecdae9876b5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cbc31431f51b357e2dcd31ad2e5d50396fb6b89a42170057656e23ae0802f6e9"
+    sha256 cellar: :any_skip_relocation, ventura:        "56c48a56ea881e5a8b762ff355cb65a3b884d6cd90b3445bbbd542d139ec829d"
+    sha256 cellar: :any_skip_relocation, monterey:       "acf242d80c3fdbf58a13d4199c690aa7b1bd4b163c899fd60a8fa404c7e8a75c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "46df5af32175913b14b17690b3fa6d2b960e0f2c1bd52985a29cd0884bde087e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f70d8cb721e1d093b776cad6b8945872b93435a985dd4bab882b2f4a3034cc5"
   end
 
   depends_on "python@3.11"
@@ -39,13 +38,13 @@ class AwsSsoUtil < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/6d/af/0e13f06db6effbbe197a05a406992126fe62e5d04af089babf6c20e4b917/boto3-1.28.5.tar.gz"
-    sha256 "2c76db4a1208b8d09814261fc5e530fc36b3b952ef807312495e6869fa6eaad5"
+    url "https://files.pythonhosted.org/packages/83/55/46669bec24ee173e9b2dae3b9e556f12f8f441e959fb6d0b3683576ebc1a/boto3-1.28.6.tar.gz"
+    sha256 "a1711097e80e10c0c33f62695c663a8a303d61289791b8d874ba9a30f78f1de1"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/4d/f4/f1a76f0212cfa34ab8a172ef5d69d9ad0b433e0d62d695d6f0e6f59c7ee3/botocore-1.31.5.tar.gz"
-    sha256 "b35114dae9c451895a11fef13d76881e2bb5428e5de8a702cc8589a28fb34c7a"
+    url "https://files.pythonhosted.org/packages/bd/93/0701c27690c16558d0ee0fa361b33f928129be28d0206e82740417cb1ebe/botocore-1.31.6.tar.gz"
+    sha256 "1d724d542c9031195dd24e66b09b24ee654266e4cf0c2bc24679036f786158a3"
   end
 
   resource "certifi" do

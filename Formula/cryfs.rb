@@ -3,13 +3,12 @@ class Cryfs < Formula
 
   desc "Encrypts your files so you can safely store them in Dropbox, iCloud, etc."
   homepage "https://www.cryfs.org"
-  url "https://ghproxy.com/https://github.com/cryfs/cryfs/releases/download/0.11.3/cryfs-0.11.3.tar.gz"
-  sha256 "cffef7669b8cbec3e7420088faac492390b9e1f3d3d0dc2a245b87f8df05f190"
+  url "https://ghproxy.com/https://github.com/cryfs/cryfs/releases/download/0.11.4/cryfs-0.11.4.tar.gz"
+  sha256 "6caca6276ce5aec40bf321fd0911b0af7bcffc44c3cb82ff5c5af944d6f75a45"
   license "LGPL-3.0"
-  revision 5
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5d9a718de861fd9737a09356e4e9184824e107de3a5b720ff48b7afcaa331475"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b4dcdb310929123fa966efa07d4206e24b36293e63bbc8f947f2d63cf0fb8ee0"
   end
 
   head do
@@ -30,8 +29,8 @@ class Cryfs < Formula
   fails_with gcc: "5"
 
   resource "versioneer" do
-    url "https://files.pythonhosted.org/packages/15/86/bed1c929495d8ca30512c8fcc6e9c2555ecffcdd32f0c04f11e492eba9e0/versioneer-0.28.tar.gz"
-    sha256 "7175ca8e7bb4dd0e3c9779dd2745e5b4a6036304af3f5e50bd896f10196586d6"
+    url "https://files.pythonhosted.org/packages/32/d7/854e45d2b03e1a8ee2aa6429dd396d002ce71e5d88b77551b2fb249cb382/versioneer-0.29.tar.gz"
+    sha256 "5ab283b9857211d61b53318b7c792cf68e798e765ee17c27ade9f6c924235731"
   end
 
   def install

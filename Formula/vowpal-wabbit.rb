@@ -1,20 +1,19 @@
 class VowpalWabbit < Formula
   desc "Online learning algorithm"
   homepage "https://github.com/VowpalWabbit/vowpal_wabbit"
-  url "https://ghproxy.com/https://github.com/VowpalWabbit/vowpal_wabbit/archive/9.8.0.tar.gz"
-  sha256 "cfc7d43fc590dffebf0adb385560dd72735f23b9086c918e95475b341c620a9d"
+  url "https://ghproxy.com/https://github.com/VowpalWabbit/vowpal_wabbit/archive/9.9.0.tar.gz"
+  sha256 "46d206c5b2336ed0c9dc228d34457db4acd9e3ade8b509f8fb426183651984c1"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/VowpalWabbit/vowpal_wabbit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d878250e3dd56a0c0acb51deaf8a21da266f7c646fd1d851357e98552b6ee633"
-    sha256 cellar: :any,                 arm64_monterey: "b256e201dbc884a53b9da9e2af2102ebf9247e3d099911ec30d0b479ea30840d"
-    sha256 cellar: :any,                 arm64_big_sur:  "0a84ef0841ea7300f656358ab1b578fd8d9a9ea6de60c3b74f674fa470465fa8"
-    sha256 cellar: :any,                 ventura:        "15d38dcc515698491b679950da644c9990e905b3a4004d0b4b71c43f19f8f3c5"
-    sha256 cellar: :any,                 monterey:       "3d5458357f9724ef0d04e546cd351caaf64f89058e401d693f2d52c359bd5667"
-    sha256 cellar: :any,                 big_sur:        "f932b8b01a0aaa52f67fe88fa72b4d2e62c72c472488b269467e53c7c72ea5e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d4e4e49d3d2267c30a9ae6cb702131e11ecc1558ff4c99e286d6f3cec0e653c"
+    sha256 cellar: :any,                 arm64_ventura:  "7b0cc6d8db2b758f523b9a02cc19ebc08c5abdb8711d0198c5251bc30f3e104a"
+    sha256 cellar: :any,                 arm64_monterey: "354cddee123069ab7820a7d541bfec007f3380f74c454c064de26cda440791c7"
+    sha256 cellar: :any,                 arm64_big_sur:  "aa00db12d1b5f5e2cb45a121ba3f20ab1ca8f8a132d39bca2d8ab1589797b30d"
+    sha256 cellar: :any,                 ventura:        "7bfa04120272786febff9ebfb0bd86fac11b77e91e60f87a23ad172903cfe7e0"
+    sha256 cellar: :any,                 monterey:       "ff7eb7ce81122256387c721e6cf72d2582790dc299f2fd4187ec59bcbe06db8d"
+    sha256 cellar: :any,                 big_sur:        "66a90c64ba25a347ee84771bd35b399d56e2ad308e0a04c8ad0792f4b042885b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59b68b611949125c2cc36e769ab01616d69547f286e5f5e60baf4726d98e2d07"
   end
 
   depends_on "cmake" => :build

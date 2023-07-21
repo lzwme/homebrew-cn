@@ -1,13 +1,13 @@
 class S3fs < Formula
   desc "FUSE-based file system backed by Amazon S3"
   homepage "https://github.com/s3fs-fuse/s3fs-fuse/wiki"
-  url "https://ghproxy.com/https://github.com/s3fs-fuse/s3fs-fuse/archive/refs/tags/v1.92.tar.gz"
-  sha256 "76ebea3c0784c5c0f6b84e009d555806aff86258886ced39eee316bf02ae8750"
+  url "https://ghproxy.com/https://github.com/s3fs-fuse/s3fs-fuse/archive/refs/tags/v1.93.tar.gz"
+  sha256 "24818315329bcd96073dd103e410643e75401d3f36dd6650223de3667a5762dd"
   license "GPL-2.0-or-later"
   head "https://github.com/s3fs-fuse/s3fs-fuse.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7992802b006d1f7a41a852c2be4aaebc2a1718460934b0910571ffd582f04efe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b2cf6b210a43bcd124b0266806f4a0ed4ab805e42e32f58db0fe1aa621e2c93d"
   end
 
   depends_on "autoconf" => :build

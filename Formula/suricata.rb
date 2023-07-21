@@ -11,13 +11,14 @@ class Suricata < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "cee8bd640646582c9c1a5ede55986e58846fcdadfae410e1ccbdf4486550121f"
-    sha256 arm64_monterey: "9feebfaafd683ac97337c49f4bbf8b199458615796f1b07ca81819368fef1904"
-    sha256 arm64_big_sur:  "1fa74b6a60717ba11214bdfceafca461c2c8b2a9f3fd4dac2d8c94df5f6ad6cd"
-    sha256 ventura:        "fe98fc423833295e401dacfc1f227c1c309b60eda34855f1e504172f1cc3942e"
-    sha256 monterey:       "b225af0c99ba8da5681bcb07c32d484094def58fd22cadb375a13943ab5d1e8f"
-    sha256 big_sur:        "e4fb78007e80ee31f3353d801f102f4c74ccfae38bb3856f3f313273910f9d9f"
-    sha256 x86_64_linux:   "4b462af9ba4cd5cb9bf97d4d47de0501fe8cddcd85920253e4d97d3c949ff421"
+    rebuild 1
+    sha256 arm64_ventura:  "d58069d6aabe6fdaf36f5f23bad35b48d9e288f61e4913e7591e8f4447706d46"
+    sha256 arm64_monterey: "b23b1457fb6c4fdbf1383d2774c07d2d83ff15bb104397f0a8475c743d8ee4b7"
+    sha256 arm64_big_sur:  "3c1987e4fee155ccb835a2a5e0ca0003a9d4f3591b0766735f844849999cc42b"
+    sha256 ventura:        "d5603e316135025853b112f3200aecb3d78f5a8f4e2115b4edbfaf711e153e36"
+    sha256 monterey:       "7c1e14f47f9456a263a37636a1a98c3a878e5f129163ebc7c7040563e1cceaeb"
+    sha256 big_sur:        "cf3cc309c09683104ab7ee04c562861423305d8f36715ab62747be28b721dab4"
+    sha256 x86_64_linux:   "1145649e95a1b9b22b2d180b77b3ef4850ab120394b1eb9c2957d553b0ebd3c6"
   end
 
   depends_on "pkg-config" => :build
@@ -26,8 +27,6 @@ class Suricata < Formula
   depends_on "libmagic"
   depends_on "libnet"
   depends_on "lz4"
-  depends_on "nspr"
-  depends_on "nss"
   depends_on "pcre2"
   depends_on "python@3.11"
   depends_on "pyyaml"

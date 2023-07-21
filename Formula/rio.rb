@@ -1,8 +1,8 @@
 class Rio < Formula
   desc "Hardware-accelerated GPU terminal emulator powered by WebGPU"
   homepage "https://raphamorim.io/rio/"
-  url "https://ghproxy.com/https://github.com/raphamorim/rio/archive/refs/tags/v0.0.10.tar.gz"
-  sha256 "a0f7bfa118cb35cb5ea5b7a9f0b16ab379d9ef2d3f58ea6f83e77c02341084f3"
+  url "https://ghproxy.com/https://github.com/raphamorim/rio/archive/refs/tags/v0.0.12.tar.gz"
+  sha256 "59f429027d60177bbaf1b6190413f2423d48d9a76e8f4ad906733cb83fb6fa07"
   license "MIT"
   head "https://github.com/raphamorim/rio.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Rio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3461c8cdd916acfd870e8073d485525532796ba259afc35dd3c99812472b4197"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "894e570f34ab70eaffa182512dd9724d3bdfe3b53d441079332d8b79992d7359"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9a01813df298e457e13abc770b25b821d5351364348b4c2ca723b546d530a888"
-    sha256 cellar: :any_skip_relocation, ventura:        "8d9fe49b027b621da60769321023e404843f80adb9a9fcadea77ee5bce9f7d90"
-    sha256 cellar: :any_skip_relocation, monterey:       "16ebc24e764c6b88cbe123edada3cc3b4110bd9ea80284e832d98e5eff350637"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4f8984958b8d7f237768e7769210f5e61d8796990f60850e8499f6bf0254d497"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9796f9aa22fb6bb16e9edd958531d1766b87086735fa200d87f3ef0a064c3894"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "716fa7daaaff76ecb35dde62a56da99550ceefd338c8087c3fdb0a5a890b5116"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "aaeac6736a5af3d6032cbf77154172b77a95c399679f60f03d2133de7fe650e5"
+    sha256 cellar: :any_skip_relocation, ventura:        "3bc3293fa15f3e198eaea791429d7c1d68b120e9e2f101efa87b362db2a2d507"
+    sha256 cellar: :any_skip_relocation, monterey:       "253fa06b0a1725096e5163b12423069a860b757d9ce5c927d4c62c9860ea6f36"
+    sha256 cellar: :any_skip_relocation, big_sur:        "26166a1347cd2b8090a561c6f8863acd4bfa5cbf60ab0902bd88770769afb546"
   end
 
   depends_on "rust" => :build

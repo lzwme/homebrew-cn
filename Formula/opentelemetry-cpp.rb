@@ -2,19 +2,19 @@ class OpentelemetryCpp < Formula
   desc "OpenTelemetry C++ Client"
   homepage "https://opentelemetry.io/"
   # TODO: Check if we can use unversioned `grpc` and `protobuf` at version bump.
-  url "https://ghproxy.com/https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.9.1.tar.gz"
-  sha256 "668de24f81c8d36d75092ad9dcb02a97cd41473adbe72485ece05e336db48249"
+  url "https://ghproxy.com/https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.10.0.tar.gz"
+  sha256 "19e8ade04a674c8cf7f0dc6da1f7b0583a27d2cf4dbc03df87894a16a4547834"
   license "Apache-2.0"
   head "https://github.com/open-telemetry/opentelemetry-cpp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c017afd677a9a7ffeaca95802501acca8e9bb2f39198f3eb8e50369cb37ff4e8"
-    sha256 cellar: :any,                 arm64_monterey: "ff83b5b54d1c1d4426d178099fda960355002b58a1b2e9f4339a0298f34e8ae4"
-    sha256 cellar: :any,                 arm64_big_sur:  "1019ce81ac7c511dd70628d23c5327ee48db252876086d32765dcf6c233ca5a1"
-    sha256 cellar: :any,                 ventura:        "b6be466f4f4fde9e44d26ca7c4793046c905ed5eeea4f7f41c49d974989b8e87"
-    sha256 cellar: :any,                 monterey:       "948cd713fa9367d563efb6bf29074fbc3a82d7a67eba219aedb858542df8fccf"
-    sha256 cellar: :any,                 big_sur:        "2a23c4ea823a4bb909f7eaf3adfc946a60c57e69d3c44c3af465e30faf650a28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d8d7433417685b7a23d0b89f874e59c3cb6f224b0f9f01f3b6a9c6f41be6e53"
+    sha256 cellar: :any,                 arm64_ventura:  "de744b63cdd56736dc5009b45226b95d1b92777746c1694e2074ef3d296be357"
+    sha256 cellar: :any,                 arm64_monterey: "ce39b15daeaa4d969237e6cebc8a08e7db522132b2a37f845253b407363910eb"
+    sha256 cellar: :any,                 arm64_big_sur:  "01e3bbe7ddb28bb37c8eb63c062e7e4e14511cffeb6e7eacc03a574389d91b19"
+    sha256 cellar: :any,                 ventura:        "c774edb06f689c87c3234ec83fd207d04c3ba548604c0ecdda07ec94d1d99189"
+    sha256 cellar: :any,                 monterey:       "8b348e4c0f7b23200c1e95609152c91f5abcff35dcff53f4575026ddb24d3793"
+    sha256 cellar: :any,                 big_sur:        "0abfc2f525e2494e29389b6d497a830388334d41803df822c5c1515631c6a26d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71b52bdb1602500dd947ce4d6361cf6805e9f3d691bd4f8b2214ece5d1b2b053"
   end
 
   depends_on "cmake" => :build
@@ -36,7 +36,6 @@ class OpentelemetryCpp < Formula
                     "-DWITH_JAEGER=OFF", # deprecated, needs older `thrift`
                     "-DWITH_LOGS_PREVIEW=ON",
                     "-DWITH_METRICS_PREVIEW=ON",
-                    "-DWITH_OTLP=ON",
                     "-DWITH_OTLP_GRPC=ON",
                     "-DWITH_OTLP_HTTP=ON",
                     "-DWITH_PROMETHEUS=ON",
@@ -69,7 +68,7 @@ class OpentelemetryCpp < Formula
         // Set the global trace provider
         trace_api::Provider::SetTracerProvider(provider);
 
-        auto tracer = provider->GetTracer("library", OPENTELEMETRY_SDK_VERSION);
+        auto tracer = provider->GetTracer("foo_library", "1.0.0");
         auto scoped_span = trace_api::Scope(tracer->StartSpan("test"));
       }
     EOS

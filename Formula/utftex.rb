@@ -1,18 +1,18 @@
 class Utftex < Formula
   desc "Pretty print math in monospace fonts, using a TeX-like syntax"
   homepage "https://github.com/bartp5/libtexprintf"
-  url "https://ghproxy.com/https://github.com/bartp5/libtexprintf/archive/refs/tags/v1.24.tar.gz"
-  sha256 "736dfce1c7f521af3c4268c20a00b1cc2fd73a075ac08772aa8ae7810d36ae75"
+  url "https://ghproxy.com/https://github.com/bartp5/libtexprintf/archive/refs/tags/v1.25.tar.gz"
+  sha256 "c50a44e33eba551526ff553c0af0bdd3f3a219d8ed60f11fcd9d7b30cd028af1"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "83cc98d85a79486c40ffdf0ac192c43eddafedefd7f4635944a105d2900af419"
-    sha256 cellar: :any,                 arm64_monterey: "8a9655601f5f8068663a939223a09a8d0470e6ae1c6ac73c63aad8539b950ee2"
-    sha256 cellar: :any,                 arm64_big_sur:  "2c4080f8729cd011524be6f1a98b831a4edbcdb01b7abc803c589ec513bd60fb"
-    sha256 cellar: :any,                 ventura:        "4ad131a30c37157baa27f1fbc7e316331b911b1707c45adab21c282ecb3fcd88"
-    sha256 cellar: :any,                 monterey:       "2ed95e40a522601d37a26df3461e8e57171ec893a22dc21bf7d8a0d57eaee9e9"
-    sha256 cellar: :any,                 big_sur:        "9d3b2b66e4f039e1d0511dc618a4b344ef0f3a90ce56b009cb502cf0d5bd474c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "44241d943759c7ed42b593025134a6100b32909365940e2b12add6c0b15994cb"
+    sha256 cellar: :any,                 arm64_ventura:  "73dc2f438c0c50b6a443aa39a102520bd3f524bb2710729ecc8f2f908c7d497b"
+    sha256 cellar: :any,                 arm64_monterey: "0810afd3a4807c93ecaaf60b948ebc54d669b5b199c7e34ef06e3962abdb5b05"
+    sha256 cellar: :any,                 arm64_big_sur:  "2d42b33bf2be0776e1927f78d85e2a264b4a99cceaee85678c2f77d000863304"
+    sha256 cellar: :any,                 ventura:        "48ad8ca0fca773183943258a5000b80ac87a92fbcf643b5d5ae6308549f4679f"
+    sha256 cellar: :any,                 monterey:       "4612a84d1625b774f4eea4e64c764dad77ca3b85e3fb80eadba71cb7febcc31e"
+    sha256 cellar: :any,                 big_sur:        "972ff7102230d15986fd1cfe3b0275d47ca7c8fe99483e1009250cebcc96295a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "765d49e6c14eb18ed03f6898866b5f1ef95cf3e7e3355e1881e2a5c966b33719"
   end
 
   depends_on "autoconf" => :build

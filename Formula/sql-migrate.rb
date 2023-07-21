@@ -1,19 +1,19 @@
 class SqlMigrate < Formula
   desc "SQL schema migration tool for Go"
   homepage "https://github.com/rubenv/sql-migrate"
-  url "https://ghproxy.com/https://github.com/rubenv/sql-migrate/archive/refs/tags/v1.5.1.tar.gz"
-  sha256 "ab82def96923d9a7593229a47b285beb71d516d74620c47bef1dbf19d1ed9812"
+  url "https://ghproxy.com/https://github.com/rubenv/sql-migrate/archive/refs/tags/v1.5.2.tar.gz"
+  sha256 "5171e69fbb8cfd276afc3b8ac1be965cffcaa8fdc86d886d0a990b4b28bd50ad"
   license "MIT"
   head "https://github.com/rubenv/sql-migrate.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "35d3cce7d65e65626e690341320dc0f97a592c06e4388df620991cca96d4fd9c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c959487fb99c413b9250048dd754d845c24dc6baa202a0c300bb9a8ea3d9330"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e7e2a47610c633ccc17062d189c95844c1ff04b942bccdbfc41a13d41a41b264"
-    sha256 cellar: :any_skip_relocation, ventura:        "d5dc5e8ed9537aeaf5f7c6aff68a7d2037e856c67be6f4c0b531d6ab85668f50"
-    sha256 cellar: :any_skip_relocation, monterey:       "c1d1d92cfacdf9095d065794504bb7b0e854477484a5b2dedde042ed993d120b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0975d652429c54d9f1f7433a722c23f272e903c681bcfafbbb3f2f928f873893"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "00a2f8989f3f765ba28b680a5e16a1d0e4a1eb7a3b87384d47226d97bc7e9666"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "923aa3b54e55c95e68e4ff691541377b41dfa1a008cecb9eebe589e8677bcb37"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a66dd7a7fb6162e8a649ef631d19fd95eb6bac65e575b62656d5fb18cbbdc845"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a3acd534137ee20e0108d79f8e5da34986b55ca27f737120fa9a6952839a0d1c"
+    sha256 cellar: :any_skip_relocation, ventura:        "56f56743d5603f13a92780181d2146619543d102e0949a70a78ff02394ccf3f8"
+    sha256 cellar: :any_skip_relocation, monterey:       "bf214b55a09571a24af0f991c092339051b136e913f4db00bedb78d450d57ab4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9c07ec32217769ba854ec576646371de2ec5e4468152c6f3e4cd88cea33a151f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce78a4d019dd8661e74abbd7b4e433360458c954db80e595e6ec8909f83104ea"
   end
 
   depends_on "go" => :build

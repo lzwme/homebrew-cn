@@ -8,13 +8,14 @@ class Mailpit < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bd22199d09e109f6f0340f57a2380bd34a2aedb0f76d6a910dca2f6895957cf3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6ea373acdb24c8db063b293187af6aae9c80e85315828b735714dd9ac156c138"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a7f3d56e4a6b3d6e1bb3e78b6e1a99031c3ea919ad44058dd2db4ab4013a2ff3"
-    sha256 cellar: :any_skip_relocation, ventura:        "61f2e10990d755c93eb5f78e9c42534d3b915e8ccb928019ad4e09888c8d5985"
-    sha256 cellar: :any_skip_relocation, monterey:       "df8823b74196c2a45c0c4eac199c067fb065866c0eec944855dfa596478e2e4a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4910315fcf6a0384db5fce694c331ac255392f9176744799a677ecb577212aff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0cc00cf78c293490018d0cb2eb15ae5a9e4b9c3a38c060bc2bef935559923181"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef7e6e8063652503e959a4ab8974ec5689fd33a5fa93031d303420e43529af71"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a2c0dbd4db45c46f4aeaa4fe6005136d355b6478680232eb2ee353eb57551211"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c712d3ae2c51e62470062ff3f8cda0afbe10148351fb6a130bca751911a6bcb3"
+    sha256 cellar: :any_skip_relocation, ventura:        "4e9bf9d1e3aeac1d613eb3bf026ecd1afc92d1e07e30c2fc852776f3f986df07"
+    sha256 cellar: :any_skip_relocation, monterey:       "6baa82c8983202602241368f18e8a0f252ff96474ff4c99fd1864d9ed12b3d18"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c36cbed7bf6c7a6f5cd76644a484681f702f39420feda171a7db4342096b515a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48ea0302b02e56fa33aadb233d178d1b3b3a4f0d2ebddb3f1fb1065e3984d379"
   end
 
   depends_on "go" => :build
@@ -25,6 +26,13 @@ class Mailpit < Formula
     system "npm", "run", "build"
     ldflags = "-s -w -X github.com/axllent/mailpit/config.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
+  end
+
+  service do
+    run opt_bin/"mailpit"
+    keep_alive true
+    log_path var/"log/mailpit.log"
+    error_log_path var/"log/mailpit.log"
   end
 
   test do

@@ -11,13 +11,14 @@ class Kumactl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "70599342640579a5203157aca352ba27e21634a99aa28a0fb493c88ea9fb8bee"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "70599342640579a5203157aca352ba27e21634a99aa28a0fb493c88ea9fb8bee"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "70599342640579a5203157aca352ba27e21634a99aa28a0fb493c88ea9fb8bee"
-    sha256 cellar: :any_skip_relocation, ventura:        "4a61f97e57d6b05b94172a82ae004f2159c66d8b7553ccac22dbaeae81ae2064"
-    sha256 cellar: :any_skip_relocation, monterey:       "4a61f97e57d6b05b94172a82ae004f2159c66d8b7553ccac22dbaeae81ae2064"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4a61f97e57d6b05b94172a82ae004f2159c66d8b7553ccac22dbaeae81ae2064"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4ceff757c623cdf05b118d3256bbe83529a47ba412555b990dd3311facb04ff"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b9f4c0d7a1099831abd5de52343b1d993fa8043b223b0425f86517f7e59f41e7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b9f4c0d7a1099831abd5de52343b1d993fa8043b223b0425f86517f7e59f41e7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b9f4c0d7a1099831abd5de52343b1d993fa8043b223b0425f86517f7e59f41e7"
+    sha256 cellar: :any_skip_relocation, ventura:        "10e0e973764d24652aeb7fc7b628ea54f3c80e07fffb8d28428c437ec609a403"
+    sha256 cellar: :any_skip_relocation, monterey:       "10e0e973764d24652aeb7fc7b628ea54f3c80e07fffb8d28428c437ec609a403"
+    sha256 cellar: :any_skip_relocation, big_sur:        "10e0e973764d24652aeb7fc7b628ea54f3c80e07fffb8d28428c437ec609a403"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9923316672b35e18e6eea5771f61160c2c7409a933fdecb91d4987aaae7c2a3b"
   end
 
   depends_on "go" => :build
@@ -33,6 +34,11 @@ class Kumactl < Formula
     system "go", "build", *std_go_args(ldflags: ldflags), "./app/kumactl"
 
     generate_completions_from_executable(bin/"kumactl", "completion")
+
+    ENV["DESTDIR"] = buildpath
+    ENV["FORMAT"] = "man"
+    system "go", "run", "tools/docs/generate.go"
+    man1.install Dir["kumactl/*.1"]
   end
 
   test do

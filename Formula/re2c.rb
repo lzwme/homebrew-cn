@@ -1,20 +1,21 @@
 class Re2c < Formula
   desc "Generate C-based recognizers from regular expressions"
   homepage "https://re2c.org"
-  url "https://ghproxy.com/https://github.com/skvadrik/re2c/releases/download/3.0/re2c-3.0.tar.xz"
-  sha256 "b3babbbb1461e13fe22c630a40c43885efcfbbbb585830c6f4c0d791cf82ba0b"
+  url "https://ghproxy.com/https://github.com/skvadrik/re2c/releases/download/3.1/re2c-3.1.tar.xz"
+  sha256 "0ac299ad359e3f512b06a99397d025cfff81d3be34464ded0656f8a96676c029"
   license :public_domain
 
   bottle do
-    sha256 arm64_ventura:  "2a256f437d69f1ccf09e970303f1386ac46986ccd92f8876ab342bc5b56b0f57"
-    sha256 arm64_monterey: "ca5d1ca897627eecd7b5b6870eef54f2d86081131d25b14e05e3425f521df860"
-    sha256 arm64_big_sur:  "f776b0b800fa7915f5fe4868cb33d4eab2adcbd42c2840d4c0ba3f6e1a006e86"
-    sha256 ventura:        "223364842afd8c24a2bd2210483f01a15ee75f70aba1dec87fe04a9849924a7c"
-    sha256 monterey:       "51916b41839d4154a21b1f3895c21c87486eb119316c7f302f1384251dbc7d77"
-    sha256 big_sur:        "d64db8c358174100db90153d2e9a2554d3aaabd5a9107e84bf7a9538932900b1"
-    sha256 catalina:       "6b25dc91a91de111fe0b033770d8ddc095cf5fc6c81a4c67ad4e43cf57fe8758"
-    sha256 x86_64_linux:   "096ce665489902beba1c057fb899494c21915e28b5309069123cdd7ee426caa5"
+    sha256 arm64_ventura:  "c213025ac8f67d67c7de7b42b18f02423b9b969f95d01217b0eb082e18e42d02"
+    sha256 arm64_monterey: "1132b82eada9b28d6ae914619f6471603986c51490c8bd5c75f64e4a17af7393"
+    sha256 arm64_big_sur:  "95c681abedf2a1fa92e68003a76eeb31ecde2d3816a6bb3d01372194a3a86346"
+    sha256 ventura:        "9d8ed384c1173e7ee72aae6ebc11b2556a501932c33c7c0558f534c1854ce5ac"
+    sha256 monterey:       "b6ad0a47af09087b366226d20e9538260e56a80b70bb118bdaf472e82bad1af4"
+    sha256 big_sur:        "343c4174f501aaeea7c339fef350d36bd26faffd130d1f07fd778239375fc826"
+    sha256 x86_64_linux:   "a30c3862ed53d4e5465ae66cc177253f717a4f611fe5a7533391bd6ca4d0cd72"
   end
+
+  uses_from_macos "python" => :build
 
   def install
     system "./configure", "--disable-dependency-tracking",
