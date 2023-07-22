@@ -7,15 +7,16 @@ class Checkov < Formula
   url "https://files.pythonhosted.org/packages/2e/2e/962f5ba09ffd009bd0501d16d15d78394128e763a726de9de357d754f4fe/checkov-2.3.330.tar.gz"
   sha256 "36485cc4da2a23eb0df248bd48a9c9ef541e1e43ea4bb0bde2f8a6b35efd27d4"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e69956ebd3be5dd84f56b14e038e9a7f00c3210b8764caa6f4f00fe3f4f2be79"
-    sha256 cellar: :any,                 arm64_monterey: "bdc9a354c25a3169fbb578e22989e355ff7df6e6d4b4cd10737e340441c9fe05"
-    sha256 cellar: :any,                 arm64_big_sur:  "102e9e1e01ef063e8b07f8bf4d18a76e3a163e5868e749003da9db4f5e3f3606"
-    sha256 cellar: :any,                 ventura:        "1592057b56df41f6dc84c6dc34df669e6c96fffdd5aa9c359c615275fe0860f6"
-    sha256 cellar: :any,                 monterey:       "1b0b23807bb29512d015af0d694dd9df5b7fc35ce92c216e52a62fab94b0539e"
-    sha256 cellar: :any,                 big_sur:        "9746e58dd75a3cf0fc2552d34ddd80d253b5d675316b618579e7d590c23536ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ff7e14749658980c8117262885ed43427a5a828c186a420fabc30c39f49a0e9"
+    sha256 cellar: :any,                 arm64_ventura:  "0115d88331cf6b21734f73abf0708e08f5cf137614938d5e3c98a56cf7be3215"
+    sha256 cellar: :any,                 arm64_monterey: "d6d2f0f8fd09d25855b686fec4f31890ac79bc8380f43cd1c08d5e702f3f007d"
+    sha256 cellar: :any,                 arm64_big_sur:  "d64d96d97665802aa55e8991495439dbf60238e0016ce5ff6bd912d0ed647e48"
+    sha256 cellar: :any,                 ventura:        "ad58378cfae4971c1ce40f5fd669473aa440a16d5aff93f14704bd8fe4f35734"
+    sha256 cellar: :any,                 monterey:       "664b2c620538c8d3e23e68901d5d44fedd724efc6cf18eb2e131e2954f064352"
+    sha256 cellar: :any,                 big_sur:        "a027b8a5825a5693455bc4bef7ddec33587a68fd177e089c20c038b50e771308"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c78e0c397be46b6103eecdc06fae2a8c76b1f7fff380d19de85bd0d0877b047"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -33,8 +34,8 @@ class Checkov < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/c2/fd/1ff4da09ca29d8933fda3f3514980357e25419ce5e0f689041edb8f17dab/aiohttp-3.8.4.tar.gz"
-    sha256 "bf2e1a9162c1e441bf805a1fd166e249d574ca04e03b34f97e2928769e91ab5c"
+    url "https://files.pythonhosted.org/packages/d6/12/6fc7c7dcc84e263940e87cbafca17c1ef28f39dae6c0b10f51e4ccc764ee/aiohttp-3.8.5.tar.gz"
+    sha256 "b9552ec52cc147dbf1944ac7ac98af7602e51ea2dcd076ed194ca3c0d1c7d0bc"
   end
 
   resource "aiomultiprocess" do
@@ -88,13 +89,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/b6/90/d7a89b2f3528336a802c8fc496ebfda6ee444e20d5f149b50afefd708a9f/boto3-1.28.4.tar.gz"
-    sha256 "92c0631ab91b4c5aa0e18a90b4d12df361723c6df1ef7e346db71f2ad0803ab3"
+    url "https://files.pythonhosted.org/packages/7f/c4/a1c823a0c7425b4a352601156e8be7998d966c84c6b7aeb5de4d6415a6db/boto3-1.28.8.tar.gz"
+    sha256 "cf88309d9b8cd9a2fb0c8049cb4b217b4e9dcb55bf670d6054b0bbe2eef25e57"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/bf/95/7c0a8bd20ac28092a0ecee8771bfaf9df5d31e309c55cde221436f9f0aad/botocore-1.31.4.tar.gz"
-    sha256 "f9738a23b03c55c2958ebdee65273afeda80deaeefebe595887fc3251e48293a"
+    url "https://files.pythonhosted.org/packages/51/cb/fdbc87199900625dc7c9a15312f72fa5fdfe216d149492702d95a0d14113/botocore-1.31.8.tar.gz"
+    sha256 "092baa2168ae78080b0c28011527bfc11d8debd3767aa1e9a4ce8a91fd9943a2"
   end
 
   resource "cached-property" do
@@ -118,8 +119,8 @@ class Checkov < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/7e/ad/7a6a96fab480fb2fbf52f782b2deb3abe1d2c81eca3ef68a575b5a6a4f2e/click-8.1.5.tar.gz"
-    sha256 "4be4b1af8d665c6d942909916d31a213a106800c47d0eeba73d34da3cbc11367"
+    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
+    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
   end
 
   resource "click-option-group" do
@@ -168,8 +169,8 @@ class Checkov < Formula
   end
 
   resource "dockerfile-parse" do
-    url "https://files.pythonhosted.org/packages/0f/c4/8c4fc1da93a67878b15eaac0d47f467c87be7a12406544b1b33e261a0454/dockerfile-parse-2.0.0.tar.gz"
-    sha256 "21fe7d510642f2b61a999d45c3d9745f950e11fe6ba2497555b8f63782b78e45"
+    url "https://files.pythonhosted.org/packages/92/df/929ee0b5d2c8bd8d713c45e71b94ab57c7e11e322130724d54f469b2cd48/dockerfile-parse-2.0.1.tar.gz"
+    sha256 "3184ccdc513221983e503ac00e1aa504a2aa8f84e5de673c46b0b6eee99ec7bc"
   end
 
   resource "dpath" do
@@ -198,8 +199,8 @@ class Checkov < Formula
   end
 
   resource "igraph" do
-    url "https://files.pythonhosted.org/packages/75/a9/3351da0a498502707f548ca48b2c4abc9e2f6e1901ad143c8559a95b0985/igraph-0.10.6.tar.gz"
-    sha256 "76f7aad294514412f835366a7d9a9c1e7a34c3e6ef0a6c3a1a835234323228e8"
+    url "https://files.pythonhosted.org/packages/0e/71/73b402613cab3a06684f4e58c6ba32e5daaf71afd2612427dfc29a413874/igraph-0.10.5.tar.gz"
+    sha256 "d9c5f8972c544dfd8c315e1b4b9093f1994fa4f72745ae14c8850834d47557f9"
   end
 
   resource "importlib-metadata" do
@@ -228,8 +229,8 @@ class Checkov < Formula
   end
 
   resource "jsonschema-specifications" do
-    url "https://files.pythonhosted.org/packages/9a/8c/3d028449ac15cba52db3e1c95ca53b9240b4707fbe17f43e01cc73dd9336/jsonschema_specifications-2023.6.1.tar.gz"
-    sha256 "ca1c4dd059a9e7b34101cf5b3ab7ff1d18b139f35950d598d629837ef66e8f28"
+    url "https://files.pythonhosted.org/packages/12/ce/eb5396b34c28cbac19a6a8632f0e03d309135d77285536258b82120198d8/jsonschema_specifications-2023.7.1.tar.gz"
+    sha256 "c91a50404e88a1f6ba40636778e2ee08f6e24c5613fe4c53ac24578a5a7f72bb"
   end
 
   resource "junit-xml" do
@@ -238,8 +239,8 @@ class Checkov < Formula
   end
 
   resource "lark" do
-    url "https://files.pythonhosted.org/packages/57/33/6de1d7903d5ee2a9b68a28be25b7828cf467559be8125a939a06149b4cfd/lark-1.1.6.tar.gz"
-    sha256 "46edcd5024bec2b2fe4526373d14c5e92da5190ba41566e1c387d9b7abb3b229"
+    url "https://files.pythonhosted.org/packages/85/70/4465b0b7dc6ea72cc2c4ea25a2c6ad62cca7918eda030db36a4c11f6f5d9/lark-1.1.7.tar.gz"
+    sha256 "be7437bf1f37ab08b355f29ff2571d77d777113d0a8c4352b0c513dced6c5a1e"
   end
 
   resource "license-expression" do
@@ -328,8 +329,8 @@ class Checkov < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/c5/80/2eca7f9d777a8f96b3dc4427fae494b211d542f295cd87413015cf6fe758/referencing-0.29.3.tar.gz"
-    sha256 "ebd2f5fe533001edaca3eae6caf09de0d70b6a3c78ebe34c98d26526e6fad3aa"
+    url "https://files.pythonhosted.org/packages/ae/0e/5a4c22e046dc8c94fec2046255ddd7068b7aaff66b3d0d0dd2cfbf8a7b20/referencing-0.30.0.tar.gz"
+    sha256 "47237742e990457f7512c7d27486394a9aadaf876cbfaa4be65b27b4f4d47c6b"
   end
 
   resource "regex" do
@@ -343,8 +344,8 @@ class Checkov < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/94/23/d8bea781368626ce8d395d0e4654b085c5a546f857635ab6d3fd655473b9/rpds_py-0.8.11.tar.gz"
-    sha256 "ef29fa64514a17bbc104693acf094e3fef5e98c2ddf58e9777f673fc6b0c5e97"
+    url "https://files.pythonhosted.org/packages/da/3c/fa2701bfc5d67f4a23f1f0f4347284c51801e9dbc24f916231c2446647df/rpds_py-0.9.2.tar.gz"
+    sha256 "8d70e8f14900f2657c249ea4def963bed86a29b81f81f5b76b5a9215680de945"
   end
 
   resource "s3transfer" do

@@ -7,11 +7,17 @@ class Liquidprompt < Formula
   head "https://github.com/nojhan/liquidprompt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "407ac67632d4c74525162eedfbc1033ca4ea69ca70a8ce225531d09c35d195eb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f0fedfbfa90aeb2eb693a83409f6b3a4bf4b51052143b61a90fd37f543baeeb5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f0fedfbfa90aeb2eb693a83409f6b3a4bf4b51052143b61a90fd37f543baeeb5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f0fedfbfa90aeb2eb693a83409f6b3a4bf4b51052143b61a90fd37f543baeeb5"
+    sha256 cellar: :any_skip_relocation, ventura:        "f0fedfbfa90aeb2eb693a83409f6b3a4bf4b51052143b61a90fd37f543baeeb5"
+    sha256 cellar: :any_skip_relocation, monterey:       "f0fedfbfa90aeb2eb693a83409f6b3a4bf4b51052143b61a90fd37f543baeeb5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f0fedfbfa90aeb2eb693a83409f6b3a4bf4b51052143b61a90fd37f543baeeb5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b8c4b3ad9ab0683c644d021b66cfaea74661cede9fcbb188d555bb65825903e"
   end
 
   def install
-    share.install "liquidpromptrc-dist"
     share.install "liquidprompt"
   end
 
@@ -23,8 +29,6 @@ class Liquidprompt < Formula
         fi
 
       If you'd like to reconfigure options, you may do so in ~/.liquidpromptrc.
-      A sample file you may copy and modify has been installed to
-        #{HOMEBREW_PREFIX}/share/liquidpromptrc-dist
     EOS
   end
 

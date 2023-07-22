@@ -1,12 +1,18 @@
 class VulkanHeaders < Formula
   desc "Vulkan Header files and API registry"
   homepage "https://github.com/KhronosGroup/Vulkan-Headers"
-  url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.257.tar.gz"
-  sha256 "e3ee02eff07ebcdb0ddfd06366d986c889f3392b6c4d79615bb06aefc1fda900"
+  url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.258.tar.gz"
+  sha256 "00a1f1859bd1ee8337f75d3c94c8f2d0065b9681f29d7255abaaadfe0c9bb349"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8a1b36db52e18e0c51889f91c8d715a385bb3536cc7016e1036b1c35cf675947"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d0bb937f338d8159cb262f1dfc104ccababebc68b67439d50d1f84000b3ff36"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3d0bb937f338d8159cb262f1dfc104ccababebc68b67439d50d1f84000b3ff36"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3d0bb937f338d8159cb262f1dfc104ccababebc68b67439d50d1f84000b3ff36"
+    sha256 cellar: :any_skip_relocation, ventura:        "3d0bb937f338d8159cb262f1dfc104ccababebc68b67439d50d1f84000b3ff36"
+    sha256 cellar: :any_skip_relocation, monterey:       "3d0bb937f338d8159cb262f1dfc104ccababebc68b67439d50d1f84000b3ff36"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3d0bb937f338d8159cb262f1dfc104ccababebc68b67439d50d1f84000b3ff36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a97b5494663951c2c59a048205adda96465ec91bfb5dd809ddd46a6447ee43a"
   end
 
   depends_on "cmake" => :build

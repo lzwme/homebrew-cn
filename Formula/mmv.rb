@@ -1,18 +1,18 @@
 class Mmv < Formula
   desc "Move, copy, append, and link multiple files"
   homepage "https://github.com/rrthomas/mmv"
-  url "https://ghproxy.com/https://github.com/rrthomas/mmv/releases/download/v2.4/mmv-2.4.tar.gz"
-  sha256 "5a328bea0259c9fb7eaaab6e5f4bb1b056daccd30879ff102dc00db482f2f6a1"
+  url "https://ghproxy.com/https://github.com/rrthomas/mmv/releases/download/v2.5/mmv-2.5.tar.gz"
+  sha256 "866d98cc87851c514a2459362cea233cf751e173136bcff61c15b39ca8a2f464"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d1262478caade185cead37dfbc6e0249f52c95501790752a73757c93e41566aa"
-    sha256 cellar: :any,                 arm64_monterey: "786e4d4823b62488cdce80b7d94c3dfd3c7d5e9db7efd690fc87205626e5e2c5"
-    sha256 cellar: :any,                 arm64_big_sur:  "91c68bcd462397cd181ed1ea7dec35552df88dbbe4d2d1e9fa57787b6e0ec3e0"
-    sha256 cellar: :any,                 ventura:        "2ade651d8f99d68aad0ec5618aee46758e7e1beda784def52ee6b584a64ca5ef"
-    sha256 cellar: :any,                 monterey:       "76655b3ddd9cdf85eb806365da884a031b489a9a7cdc904cd9c24fc270a58566"
-    sha256 cellar: :any,                 big_sur:        "33d64ab428b59598d484c1b1f920c0ed218755b308ab24bd4039f0af2cf3fb51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "875ed3e51126736dfa91b7f3b4e018f3118a844664fe9f84537a5d06edf12c30"
+    sha256 cellar: :any,                 arm64_ventura:  "5e535c7ebeb5991cb66783caaf4170a2dbc3878b81cfc9b990e5c19b830b52ad"
+    sha256 cellar: :any,                 arm64_monterey: "b7e081ea1e5eacc29e224204ee9f7600b17263a9356856d744f8aa12089ecaa7"
+    sha256 cellar: :any,                 arm64_big_sur:  "b5fd1da65bb1a4ddb55a64ea5c0d11f47a6efe5f3091025ff2bc550aea61e802"
+    sha256 cellar: :any,                 ventura:        "10ef5bfc086bd7238ae351a5b1ab99921bf42330c8f38fe6fe1af8d8d76d5c33"
+    sha256 cellar: :any,                 monterey:       "080db670b4b1375dbead8fab0adc7e8b26f8add64bc6e80132259320e5cb90b9"
+    sha256 cellar: :any,                 big_sur:        "f961a58d82b516cff45f255665dc8368bf6eb6d4ca27b418b86c270bb133b1ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af43bc6ce832cd2d8934f6f85ae5cc909704a1e445bff01431d7995836dcd19c"
   end
 
   depends_on "pkg-config" => :build

@@ -8,21 +8,25 @@ class DockerMachineParallels < Formula
   head "https://github.com/Parallels/docker-machine-parallels.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1fb87aa45712af27c6bc92af37b696d61f9d0e120f8df21cdecb04d06be0f60e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bf73fbfd0498623e7bae13c5edc3b7dd83faa8b62cc5fe81fcb23accd70fab76"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1bb048b170f5ca273b7e2e3be17459a9049e29982e2a3c6c866d088772b6744f"
-    sha256 cellar: :any_skip_relocation, ventura:        "cffb8f3f078241ce9d24ac48b8acfc931bffb49e477d22b1c189a92eed5ac0a4"
-    sha256 cellar: :any_skip_relocation, monterey:       "dec5f7c88747688ab7395211692ced01dc6157284aed8251214ffc5147efe703"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4613d3ea83c5afdcd717d5027d254b5d01d4b715ed859f98b183e070bd51c9f6"
-    sha256 cellar: :any_skip_relocation, catalina:       "b419812f98208b1fccbbc24f198af6a1235110203b0377d642f80886c5c5fd36"
-    sha256 cellar: :any_skip_relocation, mojave:         "cce66a6fcdea79b33095c2ae7c49c93a9f730353d92738534fdbe03b3488ee43"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aa5a4b3ed1af696dddb33878a013f92e5b3e72635231f0a3a59eacf483c67c2a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "07f4935abdf9bd29eac8ad226a63410530ad37324f23d1865cb78585a9d077b2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "184912b76e50116c3144467e4da6e35fb8b68b217779cdb006aaf1543d94642e"
+    sha256 cellar: :any_skip_relocation, ventura:        "755f1a2c1f2491e122cff8f7d23ba3092a218bd7890e64334eb27a85d18fc446"
+    sha256 cellar: :any_skip_relocation, monterey:       "9481f67357cfe0d5b608d32c7570a4d3ba418984d09adbfe6676d51abaadbb5e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "29b70e96c49252d2d127098796fa366aec2d66347450144af0b50afd413f8ef8"
   end
 
-  # Bump to 1.20 on the next release, if possible.
-  depends_on "go@1.19" => :build
+  depends_on "go" => :build
   depends_on "docker-machine"
   depends_on :macos
+
+  # Fix build on Go >= 1.20 by removing obsolete build flag:
+  # https://github.com/Parallels/docker-machine-parallels/pull/113
+  patch do
+    url "https://github.com/Parallels/docker-machine-parallels/commit/154f1906924900c948ea8759c711ba43cd236656.patch?full_index=1"
+    sha256 "ea6eb1a1f713f6e30bafbae19995915327c8400901e3350c60e40b50d43dd2a8"
+  end
 
   def install
     system "make", "build"

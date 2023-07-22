@@ -28,7 +28,7 @@ class TrzszGo < Formula
     assert_match "trz (trzsz) go #{version}", shell_output("#{bin}/trz --version 2>&1")
     assert_match "tsz (trzsz) go #{version}", shell_output("#{bin}/tsz --version 2>&1")
 
-    assert_match "spawn pty failed: &exec.Error", shell_output("#{bin}/trzsz cmd_not_exists 2>&1", 255)
+    assert_match "Wrapping command line to support trzsz", shell_output("#{bin}/trzsz 2>&1")
     touch "tmpfile"
     assert_match "Not a directory", shell_output("#{bin}/trz tmpfile 2>&1", 254)
     rm "tmpfile"

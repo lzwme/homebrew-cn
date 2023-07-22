@@ -6,23 +6,24 @@ class Vdirsyncer < Formula
   url "https://files.pythonhosted.org/packages/81/fb/6fbb7f1d102a59db275811a0de756d6f5bb55c624ba4bdf918b3fbd2ddc0/vdirsyncer-0.19.2.tar.gz"
   sha256 "fd058ceeab8293459a0466cd9b0e4ab3b39462c6e089a0f0ac37c307420d82ba"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/pimutils/vdirsyncer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "36549607ccc75a16aecbd2ee50d919b3d00871a9cbe23b3fbfa5dbef6fb1335d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "08e7158e736e68583d9dc372cdfed074091dedb8d0bd3cf5386be97637ff8afd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "85f860f8998323fe6a752b0c181babbd702a94263d75b9279f5965258c95b6cc"
-    sha256 cellar: :any_skip_relocation, ventura:        "4208a09a9054c8becb0c38c40679851eb209ca8db7e088b6fbc151dc910f93c1"
-    sha256 cellar: :any_skip_relocation, monterey:       "766b95fad262caa69efd966efd867cabf35e3cc48c3892ff1330b67c410faa4e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e99ce6295e5f70595f6525cf7785f3ad70f9420ab6aeda747f330a634d8b0033"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "55b73f07d9eaa1a6fcb64e652dc3309fabaf120d402012895fed8783e190800a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c8d7a7d6493a6870fea1718b527bb860fe3906d6256790f899f2c65e6846f392"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "78b13bed467d77cd5dceaeb974ce196e7d3c9f1689b4df229187689d82cb20a7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4f8746cf93e6f4318141334cd421db109539ef91b02fa80ad0edc8242cf68a3e"
+    sha256 cellar: :any_skip_relocation, ventura:        "0955ba82666dc9517372c4aba268843d59035dd40268aa58effe406c0df1d86a"
+    sha256 cellar: :any_skip_relocation, monterey:       "2fe56e4c6bb8218883a80a1770cec2d892943146510eb524640c22f9b8d13192"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bf35722597e05ca0f4885a0e8c3c7a59332387d58b0feed0770c638e3afdaca5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48ed568097306f2f4696f53d772f7379adef8b89c9dba041aeb1eece8c17f559"
   end
 
   depends_on "python@3.11"
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/c2/fd/1ff4da09ca29d8933fda3f3514980357e25419ce5e0f689041edb8f17dab/aiohttp-3.8.4.tar.gz"
-    sha256 "bf2e1a9162c1e441bf805a1fd166e249d574ca04e03b34f97e2928769e91ab5c"
+    url "https://files.pythonhosted.org/packages/d6/12/6fc7c7dcc84e263940e87cbafca17c1ef28f39dae6c0b10f51e4ccc764ee/aiohttp-3.8.5.tar.gz"
+    sha256 "b9552ec52cc147dbf1944ac7ac98af7602e51ea2dcd076ed194ca3c0d1c7d0bc"
   end
 
   resource "aiohttp-oauthlib" do
@@ -66,8 +67,8 @@ class Vdirsyncer < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/7e/ad/7a6a96fab480fb2fbf52f782b2deb3abe1d2c81eca3ef68a575b5a6a4f2e/click-8.1.5.tar.gz"
-    sha256 "4be4b1af8d665c6d942909916d31a213a106800c47d0eeba73d34da3cbc11367"
+    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
+    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
   end
 
   resource "click-log" do
@@ -106,8 +107,8 @@ class Vdirsyncer < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
-    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   resource "yarl" do

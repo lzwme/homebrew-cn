@@ -18,6 +18,7 @@ class Llnode < Formula
 
   depends_on "llvm" => :build
   depends_on "node" => [:build, :test]
+  depends_on "llvm" => :test if DevelopmentTools.clang_build_version == 1403
   uses_from_macos "llvm"
 
   def llnode_so(root = lib)
@@ -53,6 +54,7 @@ class Llnode < Formula
   end
 
   test do
+    ENV.prepend_path "PATH", Formula["llvm"].opt_bin if DevelopmentTools.clang_build_version == 1403
     lldb_out = pipe_output "lldb", <<~EOS
       plugin load #{llnode_so}
       help v8

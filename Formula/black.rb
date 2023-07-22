@@ -6,6 +6,7 @@ class Black < Formula
   url "https://files.pythonhosted.org/packages/e9/20/29d7a6614606785923edf9e8ec3ff630231992cc2fabc02eacb0d475372e/black-23.7.0.tar.gz"
   sha256 "022a582720b0d9480ed82576c920a8c1dde97cc38ff11d8d8859b3bd6ca9eedb"
   license "MIT"
+  revision 1
   head "https://github.com/psf/black.git", branch: "main"
 
   livecheck do
@@ -14,20 +15,20 @@ class Black < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "811a06fd82418755b75882b79eb4eb0397151bee9f7902a73659c8f7b976c2eb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "588d4fe586e511cac87a25a64beae131f93319870e02512fe5678870c12ae609"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3a4c30bf748fadcaaa76836105000cb78c9bd24fd9311f487d401936a215670f"
-    sha256 cellar: :any_skip_relocation, ventura:        "b22a6ce2300b23f97f25a00f79c88b6920e62dfc084caabe373ef71ddfcd6299"
-    sha256 cellar: :any_skip_relocation, monterey:       "a31deac1b7a6af2931d3224534c8cf00ce774e93cdda24d83b0c38ba6ed14c7c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "76a1d575a9f73d423cc652355543a1f29db636b77a275c98b05f5b55efaf99be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e355e3410cc268bb4200a234da0c60cc956bb2fe5adb48d008a72d27d015a6a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6f8e64b5a7a9c49aec2df24641d24cef896420a549246032b83236018e074616"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "794e66410875662e10740df89d57babf4dfe6e68bae5817ecc2bd05c9185a99e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fd9fb9e3efe2fa0306fb4c8c487cfaa65cd4a06c017d3b448c2423f10aab3405"
+    sha256 cellar: :any_skip_relocation, ventura:        "9c12dd7000d8fa10b5cb31bedba009e2d16ec1cc923a296f0168861a5db30687"
+    sha256 cellar: :any_skip_relocation, monterey:       "0de3102d5af78206e3e0bb9175138f7bf713998cec6fd6c8c31d50b3a0441c0a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "521b407a21c4c2966931e78149c0aac9bd5329b539c627c7ee04403f9315f994"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9260ffc5dc625bef41ff6467c8dd6eaa4e54323dfc91b623096fd8d70bdad868"
   end
 
   depends_on "python@3.11"
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/c2/fd/1ff4da09ca29d8933fda3f3514980357e25419ce5e0f689041edb8f17dab/aiohttp-3.8.4.tar.gz"
-    sha256 "bf2e1a9162c1e441bf805a1fd166e249d574ca04e03b34f97e2928769e91ab5c"
+    url "https://files.pythonhosted.org/packages/d6/12/6fc7c7dcc84e263940e87cbafca17c1ef28f39dae6c0b10f51e4ccc764ee/aiohttp-3.8.5.tar.gz"
+    sha256 "b9552ec52cc147dbf1944ac7ac98af7602e51ea2dcd076ed194ca3c0d1c7d0bc"
   end
 
   resource "aiosignal" do
@@ -51,13 +52,13 @@ class Black < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/77/88/b0cc5fe95c31c301e9823ea9b028f669c0dcfa205ff71111037a5ed4892c/click-8.1.4.tar.gz"
-    sha256 "b97d0c74955da062a7d4ef92fadb583806a585b2ea81958a81bd72726cbb8e37"
+    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
+    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
   end
 
   resource "frozenlist" do
-    url "https://files.pythonhosted.org/packages/e9/10/d629476346112b85c912527b9080944fd2c39a816c2225413dbc0bb6fcc0/frozenlist-1.3.3.tar.gz"
-    sha256 "58bcc55721e8a90b88332d6cd441261ebb22342e238296bb330968952fbb3a6a"
+    url "https://files.pythonhosted.org/packages/8c/1f/49c96ccc87127682ba900b092863ef7c20302a2144b3185412a08480ca22/frozenlist-1.4.0.tar.gz"
+    sha256 "09163bdf0b2907454042edb19f887c6d33806adc71fbd54afc14908bfdc22251"
   end
 
   resource "idna" do
@@ -86,8 +87,8 @@ class Black < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/92/38/3dd18a282991c004851ea1f0953105a186cfc691eee2792778ac2ca060f8/platformdirs-3.8.1.tar.gz"
-    sha256 "f87ca4fcff7d2b0f81c6a748a77973d7af0f4d526f98f308477c3c436c74d528"
+    url "https://files.pythonhosted.org/packages/a1/70/c1d14c0c58d975f06a449a403fac69d3c9c6e8ae2a529f387d77c29c2e56/platformdirs-3.9.1.tar.gz"
+    sha256 "1b42b450ad933e981d56e59f1b97495428c9bd60698baab9f3eb3d00d5822421"
   end
 
   resource "yarl" do

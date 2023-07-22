@@ -1,8 +1,8 @@
 class NagaCli < Formula
   desc "Shader translation command-line tool"
   homepage "https://github.com/gfx-rs/naga"
-  url "https://ghproxy.com/https://github.com/gfx-rs/naga/archive/refs/tags/v0.12.2.tar.gz"
-  sha256 "4e1373e92b8e4dd3ff70ace98c2f06e9b312dc21f416ddec0f91956ef978ff71"
+  url "https://ghproxy.com/https://github.com/gfx-rs/naga/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "126393320084c6bb5aa3916f9edc8de80824e9eb169db805432226eef4a56b15"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/gfx-rs/naga.git", branch: "master"
 
@@ -12,13 +12,13 @@ class NagaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5cc0aedbb5a1c86af69bfcfc7084008984e0c3d51f6b5d855bf0171854d341e8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2ac95194f3254a798e68bd198432343d84015b8e793040bebba2e10d8e081a35"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f6fc81c5bef995d4cbf386920afe608ae493faa4fe9055187a1116704203a892"
-    sha256 cellar: :any_skip_relocation, ventura:        "a8140304b90d1fab0a5039712da129f30a6716c2a3c814eb77c9d3aac63e08bd"
-    sha256 cellar: :any_skip_relocation, monterey:       "61326122cda9eabffb395916f5661d7244ae9292228f842e8cf512d1de192fc7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8c7ffb69500087c4fbf5654c15582925bae1cffaef7a30ff99ce866b2b295cab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8315f195935b14b1d6cfd49e19910731e9ddc5f6d4269a8e475105f477e0fc0a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c543c9fdd14ecad2e76a70bf0f68e00d3250c0feb16c349cc41f874120aa7418"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "de5e76261c1506daac39a7e8a011e9d58032cceb476d965756d6f9bd9ae9c42d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8eba7c210d9e603094835c4260f7bf8c283feca150d31bb22c5299411f214a93"
+    sha256 cellar: :any_skip_relocation, ventura:        "b503d864cdcd12579cb770f37d680e5993ae8eb2f94a09bcea7f532cfa36a109"
+    sha256 cellar: :any_skip_relocation, monterey:       "ff9c1f73090bb5c15b22ebf24d1599ffb2fc2cd4446995c2d38f073102c8325c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "adf516821a40526a2dd8eefb680c202f50ccccf1c23423cdc7500edd1fd6bd5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "734bb3da70b49386352ad5161f8bfc402738c84aff4c7454d15ee1be414715b7"
   end
 
   depends_on "rust" => :build
@@ -99,7 +99,6 @@ class NagaCli < Formula
       }
     EOF
     assert_equal test_out_hlsl.read, <<~EOF
-
       struct FragmentInput_derivatives {
           float4 foo_1 : SV_Position;
       };
