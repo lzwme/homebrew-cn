@@ -3,19 +3,19 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://ghproxy.com/https://github.com/aws/aws-cli/archive/2.13.2.tar.gz"
-  sha256 "27add36f52619ffe7b73651a7d469bcc7074fea6a85f797b68c37d5e108d43d1"
+  url "https://ghproxy.com/https://github.com/aws/aws-cli/archive/2.13.3.tar.gz"
+  sha256 "c3940fdf8d4ca20aa8b1736e075dd68cef2c2581f6dbac93d1c41d149490a13b"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9e8bcc8e5a4eecee92d123df95b6553d856a7bd876be68c7687d2b932b1e0d9f"
-    sha256 cellar: :any,                 arm64_monterey: "830eae2388846912ce02b1998b824d9b75e0b5de628e3c277b0606a006e914c7"
-    sha256 cellar: :any,                 arm64_big_sur:  "48fac5880501089ea0c99d7f6f17c579e6f709003aa0db3d5973d701ab92404f"
-    sha256 cellar: :any,                 ventura:        "80540e0d073cef2ac59c3c8bf072193861c39c0e407a8dd670306b4532308137"
-    sha256 cellar: :any,                 monterey:       "c7cbd74d5c14712e4817f82dd2b3903a875ab1190a53864a9895706bed1b1e68"
-    sha256 cellar: :any,                 big_sur:        "eaf7ae5547a7243923635d93d403d99edfc7f9e86233093302a58beb0c8cc7e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf6b5f323e0fe0adf506348a1d3a08fa4b4e9a43e75e8ad9faf0500d31409e88"
+    sha256 cellar: :any,                 arm64_ventura:  "134da1c4cab3b12cdf33e8bc680713fefed0cf5279b45b5906f1f57d1ccdc840"
+    sha256 cellar: :any,                 arm64_monterey: "4d83ca2baedde40a97a6cdc3c244f175e27cc860d941b5dcf639071438998761"
+    sha256 cellar: :any,                 arm64_big_sur:  "8d667395561b2bdce4d0a3fbea5cd3194209adcabb4f6f070587e074222fd9b1"
+    sha256 cellar: :any,                 ventura:        "4671cbdcf6056c7924127e18734c2db87fa7daaec0f11a67458b925f42af79c1"
+    sha256 cellar: :any,                 monterey:       "9cf6c8875bc43019680f0bed4af3cd92e1959b30bba0e6738b5efca5c7745d1e"
+    sha256 cellar: :any,                 big_sur:        "c57ab29cb2d1b483f50bea108b780a93a69626f0ad1e0f8fe59d1ad6f28e1285"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e9575ba6f6f744a43788cc2f9efb9126bcc9ae0d4955e8cb1fde9ef1b129b74"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.

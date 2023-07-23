@@ -1,29 +1,19 @@
 class Doggo < Formula
   desc "Command-line DNS Client for Humans"
   homepage "https://doggo.mrkaran.dev/"
+  url "https://ghproxy.com/https://github.com/mr-karan/doggo/archive/refs/tags/v0.5.6.tar.gz"
+  sha256 "1965f4c909991bc38b65784ccbc03f4760214bca34f1bb984999f1fc8714ff96"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/mr-karan/doggo.git", branch: "main"
 
-  stable do
-    url "https://ghproxy.com/https://github.com/mr-karan/doggo/archive/refs/tags/v0.5.5.tar.gz"
-    sha256 "7ba1340ce46566ca8fa1565ef261519dee5b1c7007aea97eb1f9329f8a3f0403"
-
-    # patch for quic-go, remove when it is available
-    patch do
-      url "https://github.com/mr-karan/doggo/commit/7db5c2144fa4a3f18afe1c724b9367b03f84aed7.patch?full_index=1"
-      sha256 "e34f71e6618817edfd0d7b01657a407e9573e74a7ea89d048abc95bac46bb21e"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9ed48319e2b05a4af4ca5db6cf53db7c50937a2fcafacfaf0c4fe27864e10f81"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ed48319e2b05a4af4ca5db6cf53db7c50937a2fcafacfaf0c4fe27864e10f81"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9ed48319e2b05a4af4ca5db6cf53db7c50937a2fcafacfaf0c4fe27864e10f81"
-    sha256 cellar: :any_skip_relocation, ventura:        "bce53f03da69b5135c981d6f70e6b6ca483e286b7a6bfc225553bd8ae6f11fee"
-    sha256 cellar: :any_skip_relocation, monterey:       "bce53f03da69b5135c981d6f70e6b6ca483e286b7a6bfc225553bd8ae6f11fee"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bce53f03da69b5135c981d6f70e6b6ca483e286b7a6bfc225553bd8ae6f11fee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac0c6551b944673b293cc5cceb253a1f9e6663efa4b5ac73fe71f0348cfdbfd3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fceb196ab22d9a9f9172f2f9fccfcd84ae6022ceb8b3b65ad794aa58e7485cd7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fceb196ab22d9a9f9172f2f9fccfcd84ae6022ceb8b3b65ad794aa58e7485cd7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fceb196ab22d9a9f9172f2f9fccfcd84ae6022ceb8b3b65ad794aa58e7485cd7"
+    sha256 cellar: :any_skip_relocation, ventura:        "a548503cd8dd80fba7103fce86e2a429d24f50df2fa75d92e2323380f8071fb9"
+    sha256 cellar: :any_skip_relocation, monterey:       "a548503cd8dd80fba7103fce86e2a429d24f50df2fa75d92e2323380f8071fb9"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a548503cd8dd80fba7103fce86e2a429d24f50df2fa75d92e2323380f8071fb9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "778ab912f7339cb843103c0aed18fc38b506bc44298552d9c69651032eb919a1"
   end
 
   depends_on "go" => :build

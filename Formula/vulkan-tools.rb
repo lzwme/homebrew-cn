@@ -1,19 +1,19 @@
 class VulkanTools < Formula
   desc "Vulkan utilities and tools"
   homepage "https://github.com/KhronosGroup/Vulkan-Tools"
-  url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-Tools/archive/refs/tags/v1.3.257.tar.gz"
-  sha256 "ed73525c2dd1041a6b680caa5ce1b8936b7f6a200b5715b88fc4b030b110a056"
+  url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-Tools/archive/refs/tags/v1.3.258.tar.gz"
+  sha256 "6be802a3d933ba60b145c6c0d95062fec206db592206ec092c059951125251b1"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-Tools.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "779eed13b5dcfbcd97a2a24731bdf7f50559c3e13314020622d36b555e6bab9d"
-    sha256 cellar: :any,                 arm64_monterey: "d2c5aa488bd61736db513452a63ecfd2b33baefb55898007437e4d263efa06e9"
-    sha256 cellar: :any,                 arm64_big_sur:  "1d6b1b1accce7226235f8bb2523eeb05b720754f8a4678201d69f424a4324c78"
-    sha256 cellar: :any,                 ventura:        "cbf283b12bcd083f5b38dedaa5ffc22ca98ccc63fd07b24759c1cf63ff16c22b"
-    sha256 cellar: :any,                 monterey:       "a55cef6650173950ad0eb369600abe209569826a9a510b23c7f4636d53285211"
-    sha256 cellar: :any,                 big_sur:        "d314de759bdff53712cf52f6c1c5bc9f0dd1fccf578e9c8adc6c5c4a3e5c9f85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0a7eeda60b17a239af1b08a01a1452bb508e793a8270a98b4678d1597b0ed21"
+    sha256 cellar: :any,                 arm64_ventura:  "c4bf596fb941f1e1972bada5c9a690241c0691fe156a6e684a990d02553aa49c"
+    sha256 cellar: :any,                 arm64_monterey: "36fc2fca17e883382d9b339baf751ec72bb1b6092098d4a3f2da712e9f7dd371"
+    sha256 cellar: :any,                 arm64_big_sur:  "b8a4d0ab8402f41ce15c5b8da18dff55e6d049a58cb789f0753624575d4ed47d"
+    sha256 cellar: :any,                 ventura:        "1143f7a3f914e1ed111f44cc35647b8359bafffa03551f533a8302555d710948"
+    sha256 cellar: :any,                 monterey:       "a05e1abef216c2fd851917c6e3135e7eff5b137761cce8643673238fa7073980"
+    sha256 cellar: :any,                 big_sur:        "a7373b708b7beb8328fc18ac728b911a00e2d882311b8c4b112a002dc1905b17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "426aa2a1861d0ad64594d40bc46b3e8fbc8c17982e4a4b83f0e67512827dc171"
   end
 
   depends_on "cmake" => :build
@@ -81,7 +81,7 @@ class VulkanTools < Formula
 
     targets = [
       Formula["molten-vk"].opt_lib/shared_library("libMoltenVK"),
-      Formula["vulkan-loader"].opt_lib/shared_library("libvulkan", Formula["vulkan-loader"].version),
+      Formula["vulkan-loader"].opt_lib/shared_library("libvulkan", Formula["vulkan-loader"].version.to_s),
     ]
     prefix.glob("cube/*.app/Contents/Frameworks").each do |framework_dir|
       ln_sf targets, framework_dir, verbose: true

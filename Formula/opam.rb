@@ -2,18 +2,19 @@ class Opam < Formula
   desc "OCaml package manager"
   homepage "https://opam.ocaml.org"
   url "https://ghproxy.com/https://github.com/ocaml/opam/releases/download/2.1.5/opam-full-2.1.5.tar.gz"
-  sha256 "15e40a75f6fa419164fb20bedd27c851146c2d576a63937cd13b317f3bc2ab93"
+  sha256 "09f8d9e410b2f5723c2bfedbf7970e3b305f5017895fcd91759f05e753ddcea5"
   license "LGPL-2.1-only"
   head "https://github.com/ocaml/opam.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ad32ed8cec817253713108f1b98637ccc3502d7e4b26a84106dd8c596f89b2e7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9dad7f0a00dd2eaae5641bc8bed58c3b55345eda2a52cfece9c8d9f5d32cacfa"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c1513d3610c7ee1aac381f211fc97e058344e9916ec2feef23407212bf3b99f1"
-    sha256 cellar: :any_skip_relocation, ventura:        "ed5bad85e04ab442b162d45c826f5acb8a227a98483530c84dff338d0f65e455"
-    sha256 cellar: :any_skip_relocation, monterey:       "6221d625de9576693822ae21bedb1fa8e20f698b28696fb515416597264c1fef"
-    sha256 cellar: :any_skip_relocation, big_sur:        "35a66840754e0fc5446e1a549b84e7ad2c4e36ffceba6d35004cf717e21983d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d2125ff03e05a69b470db61e840f62b45bc34cfbeedb12c4628187fb5e25e8d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "293d7ed182ded705c19b2d2b87810d81354f8701a5791dcce544c518cd1ca9c8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4bd4718ce250e478c62c714876ffb16128967d86500c4c6c48e6819fc07a91f7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "16d8c6268d2b4474b90e03212ee19b3c9e1da708ab9aa6b4b162c6d6856e394a"
+    sha256 cellar: :any_skip_relocation, ventura:        "89e37cbf2695af2f9e33ec8b3386f77e7cfebc671e8112c03faea2a87a4c89a8"
+    sha256 cellar: :any_skip_relocation, monterey:       "ad2ce1268bd0383603a0d197ea19238b6c042112e3f71c65b32a41ebc7b86ae0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ab77225e549e373c6f3a565ca93992a5e01c0388c80ea067a5bfb9f9ba2f4768"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4e7a70b75af7a924fc19af6ed8575697d519eb0e86250d294e190d432ee6d93"
   end
 
   depends_on "ocaml" => [:build, :test]

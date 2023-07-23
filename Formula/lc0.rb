@@ -2,19 +2,18 @@ class Lc0 < Formula
   desc "Open source neural network based chess engine"
   homepage "https://lczero.org/"
   url "https://github.com/LeelaChessZero/lc0.git",
-      tag:      "v0.29.0",
-      revision: "afdd67c2186f1f29893d495750661a871f7aa9ac"
+      tag:      "v0.30.0",
+      revision: "ee6866911663485d94c1e7ff99e607c15f2110be"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89b183e7deea7ff39d8463e70fc1b5da7e3fc547f90e91bf43baf1c8a3d49f99"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fdd6bfd76c58c7213d23bf1946340030701c6a57dbb171026c9213be6cd6be8d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9d8bd4640d5eeca48ddf2c88cc5f606504f59d66d17aec6dabcb7333863ed07d"
-    sha256 cellar: :any_skip_relocation, ventura:        "576652ad17704ee01de8a1637d56e58fa0d0a52ae00fbe512bb10a90d3386e0d"
-    sha256 cellar: :any_skip_relocation, monterey:       "87f1af61af279b1e06d96659d6b28f6eb6ef1accea4875e5fdb066ce2383219f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d353339a78402996038ae6938477da3f0f4e29c1edcd74bbe9617374d90ff062"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7aae4b4e1fd9587f3dc01724c83c364af205428342507617e20f3f7a6de7f774"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e010af9bbc8615097befd17d72551f6271399e0ba6bf17d09b3f8a81e681b1c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "67f388251920e35eca0d28e175cf902e1add3d37ec46fa563a6959ed02bf26ec"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e062c34cde10264f2bcad3bb22e38e5dd102d838d58b6e36d5acb9b158006003"
+    sha256 cellar: :any_skip_relocation, ventura:        "6725b604ba0003035986bc7be6399fb6731341d8f3b96f087ab0a68432e87093"
+    sha256 cellar: :any_skip_relocation, monterey:       "1015c4823f4055a8c9b9b1824795e7a269c009991f4cdfa02d1bbc309118edba"
+    sha256 cellar: :any_skip_relocation, big_sur:        "07ef8d0e683d2f9ba8276461554e5950333809739e016b3bad6a8d7b449b52b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df45f8885b351219f6f7e47b284a39d42690e3efc71049ffaeec8cf58935528f"
   end
 
   depends_on "cmake" => :build

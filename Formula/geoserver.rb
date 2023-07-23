@@ -1,8 +1,8 @@
 class Geoserver < Formula
   desc "Java server to share and edit geospatial data"
   homepage "https://geoserver.org/"
-  url "https://downloads.sourceforge.net/project/geoserver/GeoServer/2.23.1/geoserver-2.23.1-bin.zip"
-  sha256 "d197079c3570e5ab7075ea987905df4538a8d3fa6544b4c396348c6fcd54f9fe"
+  url "https://downloads.sourceforge.net/project/geoserver/GeoServer/2.23.2/geoserver-2.23.2-bin.zip"
+  sha256 "e333ad71459e6ffcee6c4637c0d09805e4ad45281ad9b9b506705afaa732782c"
   license "GPL-2.0-or-later"
 
   # GeoServer releases contain a large number of files for each version, so the
@@ -16,7 +16,13 @@ class Geoserver < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d2d28fa20b54c57f70369fcce0399f32ac6af8858adc4f45e08afc2f66be2c30"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef77db1edcb761685bcebe4e91c82eb5244bf78e1115a7c129529de2a78d25ea"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ef77db1edcb761685bcebe4e91c82eb5244bf78e1115a7c129529de2a78d25ea"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ef77db1edcb761685bcebe4e91c82eb5244bf78e1115a7c129529de2a78d25ea"
+    sha256 cellar: :any_skip_relocation, ventura:        "ef77db1edcb761685bcebe4e91c82eb5244bf78e1115a7c129529de2a78d25ea"
+    sha256 cellar: :any_skip_relocation, monterey:       "ef77db1edcb761685bcebe4e91c82eb5244bf78e1115a7c129529de2a78d25ea"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ef77db1edcb761685bcebe4e91c82eb5244bf78e1115a7c129529de2a78d25ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0e2b2f455ce008eb494844c5b46e97d86906ef753ac3130bc83f69760404a7d"
   end
 
   def install

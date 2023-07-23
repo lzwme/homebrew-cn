@@ -1,8 +1,8 @@
 class Echidna < Formula
   desc "Ethereum smart contract fuzzer"
   homepage "https://github.com/crytic/echidna"
-  url "https://ghproxy.com/https://github.com/crytic/echidna/archive/refs/tags/v2.2.0.tar.gz"
-  sha256 "919a46d5820acdc26c119d2dc36b2abadb2383217a801ba07b1335aac1d07ee1"
+  url "https://ghproxy.com/https://github.com/crytic/echidna/archive/refs/tags/v2.2.1.tar.gz"
+  sha256 "cd98ba4c42df459e9ea438deac0d157cbc0edead9cc76dad3c9424f470c5a5b5"
   license "AGPL-3.0-only"
   head "https://github.com/crytic/echidna.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Echidna < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ff308506a12501cf3467b215f107cf548cafe72e7aaa8f28c672b6511b6473b9"
-    sha256 cellar: :any,                 arm64_monterey: "aba914ef3501bd026051ba3ea47873358d12ad730660367ae44da126c8cb552b"
-    sha256 cellar: :any,                 arm64_big_sur:  "2a9709a8b22dd2b83374d50486da0d46d63b9c0f3726d7f10ea6911bee851ce9"
-    sha256 cellar: :any,                 ventura:        "e17deb347c7cc690b7d22f47cec758c275f7bb3573e6c63b1e22f4b1ac18f21c"
-    sha256 cellar: :any,                 monterey:       "8b74d214ea5b17fbae7183085323447a5d27364ed9e2183bab0b24a8244b9409"
-    sha256 cellar: :any,                 big_sur:        "03295891e05bf372791aa18c915ab49920913fd2176c090d8519ef400ce9b6bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "069ba0435419a85b1105331b1e38458f25cc90b2b16c283c396699d6b7fa97b6"
+    sha256 cellar: :any,                 arm64_ventura:  "295efec9e6e2124567a266e3ec8a69f4518daf87f9adc65735357e65c49eb4bd"
+    sha256 cellar: :any,                 arm64_monterey: "5c30bf46addf6649edb963472f81282136ff6e28ef5f00530981ee442b1ec75f"
+    sha256 cellar: :any,                 arm64_big_sur:  "d04f6539ef0896e5def97ccf243ef27b19ba8ca9dd13afaf5125e4d41028c0c4"
+    sha256 cellar: :any,                 ventura:        "71413a88143d3adb927c7722ae98648147cbbe10b8d3e753809ebe5e2bc016a2"
+    sha256 cellar: :any,                 monterey:       "9abe5b39bdb786c7f43f7efe559f20fa1b8e8481e5856e272c86acb986d9e8ac"
+    sha256 cellar: :any,                 big_sur:        "ae3d0c14f7428debcc424025731798aae09e06cf790124a9f39e2a3679b3a620"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21d7cb1f1f1d0db89252b33cfa19963af73448f77048d0f0323265236ed078a6"
   end
 
   depends_on "ghc@9.2" => :build
