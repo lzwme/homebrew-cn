@@ -1,19 +1,19 @@
 class Whois < Formula
   desc "Lookup tool for domain names and other internet resources"
-  homepage "https://packages.debian.org/sid/whois"
-  url "https://deb.debian.org/debian/pool/main/w/whois/whois_5.5.17.tar.xz"
-  sha256 "effe86e6d75101c2f33a0b3d2d948ab54aa57893fedc3b9983ffd55e881e2521"
+  homepage "https://github.com/rfc1036/whois"
+  url "https://ghproxy.com/https://github.com/rfc1036/whois/archive/refs/tags/v5.5.18.tar.gz"
+  sha256 "f0ecc280b5c7130dd8fe4bd7be6acefe32481a2c29aacb1f5262800b6c79a01b"
   license "GPL-2.0-or-later"
   head "https://github.com/rfc1036/whois.git", branch: "next"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4e3b40e0b5cc42f36f838cc5ef9f2f1cdeec73ac3417dc81033c5db68d862ee2"
-    sha256 cellar: :any,                 arm64_monterey: "2aaf4c12b823586cc38642b0a3ab634ff73156672871f991a9bc3bc4d5e84249"
-    sha256 cellar: :any,                 arm64_big_sur:  "cb1f38c11cc9fd42545edf4ad581969d7a7abcc0b6b7c18ba2b284fc180bfd67"
-    sha256 cellar: :any,                 ventura:        "cae279d61093a3fae164aff4f46f346d6466e2c61dacc46a1fa5b53221aa8136"
-    sha256 cellar: :any,                 monterey:       "0b2e937976bfca5f7cc5e290b3b3dc3cbbf1794b44e78c942dc0fb87e8364321"
-    sha256 cellar: :any,                 big_sur:        "c90c71d5ffd7e8df91a3b00f9da1e62748b09becac9a121f8e7572c402583289"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "027db16b9e4236dcecbb350331f89c1948fca81c8f5f14986f7d8837904001be"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6586a1ca6d990a859625b0f44f150e9e254082ec63f170a96e6cdff08e3153a2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6a9ee8f6ff33a493dab0b30986ff5e3785de99b4efff9b81ec4eafe94534901a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fb898b0100de920f5a29c52a89c022e2ab025723836644a9dacb35accfbe46f3"
+    sha256 cellar: :any_skip_relocation, ventura:        "45cdf1d62cba3433025990db30e0e67f2d6f30e20007ff3f2c6d07cbb58f55f0"
+    sha256 cellar: :any_skip_relocation, monterey:       "783a8fbff7c667eeacbfd42a0f536632e91a1f1dffa11815dcc679c39ee9d07f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1aadc25f43fa50cc49f13061b9da06f56bcc0df4c90e04ddc4f3c6893ed1a818"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a59f698211639070f7c3b248285828de60cf46d46c5157da0990f130a63c713b"
   end
 
   keg_only :provided_by_macos

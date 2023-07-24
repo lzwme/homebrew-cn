@@ -3,19 +3,19 @@ class Mvt < Formula
 
   desc "Mobile device forensic toolkit"
   homepage "https://docs.mvt.re/en/latest/"
-  url "https://files.pythonhosted.org/packages/4e/d0/df44528d859e8ad7153e9fe358b8394ec13c421a0a70425ebfc591700728/mvt-2.3.0.tar.gz"
-  sha256 "07ca4fc94fb15939cd3fe3930cea874eb2347d1ebc38d539aa205979deb43fc9"
+  url "https://files.pythonhosted.org/packages/af/dd/2340f05c3cfd46a99433c06b85aab3578d17ff3cb957d90f64240857ae5d/mvt-2.4.0.tar.gz"
+  sha256 "61f1a72f9d2b3f8e303df22bd8c7a96ba56a816df46bdda9fa6510c6b90ee0d4"
   license :cannot_represent # Adaptation of MPL-2.0
   head "https://github.com/mvt-project/mvt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f2d27d0b241f3214d1fdcf5f69aeeae777eb613af030fccf0272a7960de7055e"
-    sha256 cellar: :any,                 arm64_monterey: "5a6a0cd206a5d98aef26a14430288ec05378c8ef5d59561457bbc97a43ffdf68"
-    sha256 cellar: :any,                 arm64_big_sur:  "5742731ded291389999d02505cf3f7d95ef7ca75562781a34641fb00d487e213"
-    sha256 cellar: :any,                 ventura:        "6fe0b8a8f51c51795ab08db9b8c20cb627f2d30a98a286f1b439101147944a5d"
-    sha256 cellar: :any,                 monterey:       "7f3a821171af3fa860d81cd2f82bc87b4a50dfba933bd0d663df06921d1f7ecc"
-    sha256 cellar: :any,                 big_sur:        "b6fc7ae406ca2dec6c24ba1409a1c513196e248ef1bacba815766efb8bf488b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c39f886e609117cbe85c73caa1f998d00476c677cb8b40e3d8a7f0ea5ce7ed4"
+    sha256 cellar: :any,                 arm64_ventura:  "6bcf505fcf7bdfe13eab27f27bd498cfeebf880c49959805936f4e270f0cd13a"
+    sha256 cellar: :any,                 arm64_monterey: "355c069ee64a36c91ba6f00c936f47d506fe7e72bcf2a4f6d54ded8bff1e5532"
+    sha256 cellar: :any,                 arm64_big_sur:  "c876007688a6818863caae2826601306f46e07d760567423a541aabdf72a73e3"
+    sha256 cellar: :any,                 ventura:        "9e7c9bbf1535ab0dc765cca2bf906e6c4a32089c5a83cd564b50dc136eb5807b"
+    sha256 cellar: :any,                 monterey:       "fe0a42265ab6c85bf055dd7e96e6f7f7807b7e6e3e947523fec4aeee27481f5d"
+    sha256 cellar: :any,                 big_sur:        "9771e1599658a9eaef5092531b3049a4eff356ac949ba53f7c3e86e3d4a35a05"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d60e18750f135fe9a88d5cfcc5df06f6b40bd155fc1ca0c923e9f66574b7d2d4"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -39,8 +39,8 @@ class Mvt < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
@@ -49,8 +49,8 @@ class Mvt < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/7e/ad/7a6a96fab480fb2fbf52f782b2deb3abe1d2c81eca3ef68a575b5a6a4f2e/click-8.1.5.tar.gz"
-    sha256 "4be4b1af8d665c6d942909916d31a213a106800c47d0eeba73d34da3cbc11367"
+    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
+    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
   end
 
   resource "cryptography" do
@@ -129,11 +129,11 @@ class Mvt < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
-    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
-  # This resource depends on others above, so we place it last
+  # This resource depends on `nskeyedunarchiver`, so we place it last
   resource "iosbackup" do
     url "https://files.pythonhosted.org/packages/db/b8/4cd52322deceb942b9e18b127d45d112c2f7a3ec7821ab528659d4f04275/iOSbackup-0.9.925.tar.gz"
     sha256 "33545a9249e5b3faaadf1ee782fe6bdfcdb70fae0defba1acee336a65f93d1ca"

@@ -3,19 +3,19 @@ class Remarshal < Formula
 
   desc "Convert between TOML, YAML and JSON"
   homepage "https://github.com/dbohdan/remarshal"
-  url "https://files.pythonhosted.org/packages/00/98/7a96aa68e5130eaa2ac4080935ffed801d73a012eb33c6f6cfead5409818/remarshal-0.16.0.tar.gz"
-  sha256 "2e49816e752b8739424593bb21b175ccec69beaaa15500ceea35988730c2eda5"
+  url "https://files.pythonhosted.org/packages/27/5e/656891ef4e7cb007ec69a648986d5e22e89ff82267e3afb414b8ddec613a/remarshal-0.16.1.tar.gz"
+  sha256 "1cb2d4de31763bbac175f0e493e195568f956318caa70ac3359ff794932628cf"
   license "MIT"
   head "https://github.com/dbohdan/remarshal.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "720b5901c5c9f7c74d13e3ec604ba224c59811bf407e8dc91f7856ab6d956572"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "649a80d177a79d6a76efdfa8b58be7de6ac709bb1161d4c01e801abe0a855de5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4ed733d33c8c1ce642263a432d36311a5e6c847947d03eae41c0272435e9b783"
-    sha256 cellar: :any_skip_relocation, ventura:        "7f8081a941fecc115afc57f686791e362b901bda570cae1435e60dc224246def"
-    sha256 cellar: :any_skip_relocation, monterey:       "06face629ae082e2d82caddd170f6d5a6a1981229fcaa588b749e4e6c9ccce86"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ed707bae8bc76bc64927394456ab41c7600c0bcabde11e97b2e564c045f5fe99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4c67de2e1a2318986479cdb1a92f24a41ba171de38e6a3ad5f751879b840531"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b9db56cb8a13ccdcdd726c5bc234d61f8728b3db3fadc4f5e0dede159944bd4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "483aa4297cee934b1ac604b38c50eae91c5d471d975615c1df18ddfba4bf57d0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0a121422a85c2afb9c98f8e6d387dba108efaebe3357760ff1e89651ee2f1a69"
+    sha256 cellar: :any_skip_relocation, ventura:        "65596783d3ff9a34ac0468bd3e139dbff5ce798254180f489ecc44dbb9b84c25"
+    sha256 cellar: :any_skip_relocation, monterey:       "3c1867917eb349ad4bd50f95f762b9bca7c0326bbc278dfaf20c4653d6693c1f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e55b54fa36d671c988b0f679d4388bae544f878ec0b2fe6babc49d83e2fea109"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1938105f928e8ea308ce1bc7767abbbc930f48a35bf08b0234bd06897344372"
   end
 
   depends_on "python@3.11"
@@ -69,12 +69,7 @@ class Remarshal < Formula
   end
 
   test do
-    json = <<~EOS.chomp
-      {
-      "foo.bar":"baz",
-      "qux":1
-      }
-    EOS
+    json = "{\"foo.bar\":\"baz\",\"qux\":1}"
     yaml = <<~EOS.chomp
       foo.bar: baz
       qux: 1

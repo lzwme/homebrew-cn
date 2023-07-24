@@ -8,15 +8,18 @@ class Bilix < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "69ec9cf31d6db0e52e9b6bbb288717b7c39f377b69863640a10d80c223825dcd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "17ca24ddb7935329967112c7cac5ff7fb318a714e3ab1f0045e67c83354dc537"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "30d20a144b87e499b0f29c919bd3f9fa20213ba5582391cdbe3bf608be21b9af"
-    sha256 cellar: :any_skip_relocation, ventura:        "b89a0f18fa9b46b06a67b987bbdb988336d05629b97e1e5478f2a90d00d19a6b"
-    sha256 cellar: :any_skip_relocation, monterey:       "3805347d591acf41495f7fe9d0b2a7ca9e89f6053fe7e49590d27d6871134d69"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d412d109be3913fa8ba7c47df0d6d8c87ab52787fc3a166403f5891b8efb9120"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f14bf537a4adae64b7089476c64a38ed4cccc7694146111be07b266cd03b017"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "049fb550e4de31a8174eb1b5dcff2ffe50ad42feb8cb3deb73bd836c31cc2616"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8a91dccb39902a2e3901a5c044a662f0892210c1dcc1b965659ffd87ec3130b4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b3641752837567ec705173616d5cdb640338bc5ca8fb21691577edec28b1c41c"
+    sha256 cellar: :any_skip_relocation, ventura:        "356d40c8509a56c81399a889f5818fa700dccdfbd10e942fddb95cb9c654fd6d"
+    sha256 cellar: :any_skip_relocation, monterey:       "1a7f93bb005f613d9f2beda52f9dfd43cb899e17554ca9aa7c224f2b716b0981"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d4b63ad3b484f3d5b05f672cc60d3e0edf16bb3e8511c53f2bb56e4bbf627b7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74f659f45c745d3b0b4d2d9a606020f8a26be89b0fd83f617c7d119d48f09220"
   end
 
+  depends_on "pygments"
+  depends_on "python-typing-extensions"
   depends_on "python@3.11"
 
   resource "aiofiles" do
@@ -149,11 +152,6 @@ class Bilix < Formula
     sha256 "95c70da2cd3b6ddf3b9645ecaa8d98f3d80c606624b6d245558d202cd23ea3be"
   end
 
-  resource "pygments" do
-    url "https://files.pythonhosted.org/packages/89/6b/2114e54b290824197006e41be3f9bbe1a26e9c39d1f5fa20a6d62945a0b3/Pygments-2.15.1.tar.gz"
-    sha256 "8ace4d3c1dd481894b2005f560ead0f9f19ee64fe983366be1a21e171d12775c"
-  end
-
   resource "pymp4" do
     url "https://files.pythonhosted.org/packages/a5/46/dfb3f5363fc71adaf419147fdcb93341029ca638634a5cc6f7e7446416b2/pymp4-1.4.0.tar.gz"
     sha256 "bc9e77732a8a143d34c38aa862a54180716246938e4bf3e07585d19252b77bb5"
@@ -172,11 +170,6 @@ class Bilix < Formula
   resource "soupsieve" do
     url "https://files.pythonhosted.org/packages/47/9e/780779233a615777fbdf75a4dee2af7a345f4bf74b42d4a5f836800b9d91/soupsieve-2.4.1.tar.gz"
     sha256 "89d12b2d5dfcd2c9e8c22326da9d9aa9cb3dfab0a83a024f05704076ee8d35ea"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/57/e3/b37a6b1ce6c1b2b75d05997ec24f73c794bc05a587e0f30a532d0ab13cb2/typing_extensions-4.7.0.tar.gz"
-    sha256 "935ccf31549830cda708b42289d44b6f74084d616a00be651601a4f968e77c82"
   end
 
   def install

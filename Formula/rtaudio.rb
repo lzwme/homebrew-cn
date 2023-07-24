@@ -1,8 +1,8 @@
 class Rtaudio < Formula
   desc "API for realtime audio input/output"
   homepage "https://www.music.mcgill.ca/~gary/rtaudio/"
-  url "https://www.music.mcgill.ca/~gary/rtaudio/release/rtaudio-5.2.0.tar.gz"
-  sha256 "d6089c214e5dbff136ab21f3f5efc284e93475ebd198c54d4b9b6c44419ef4e6"
+  url "https://www.music.mcgill.ca/~gary/rtaudio/release/rtaudio-6.0.0.tar.gz"
+  sha256 "b4a2531bdcfe3368c78182a151885cc61cb1fc49fcdeaac520c55bd230ea5bfa"
   license "MIT"
 
   livecheck do
@@ -11,14 +11,13 @@ class Rtaudio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "47821e8d59de91cc4b0207b4167985586fee5018216279dc91d072ef26596f6e"
-    sha256 cellar: :any,                 arm64_monterey: "ecedd19fd1867f51b7c8bfd6f408d6b33619f544a536d8145bee666c1940e75d"
-    sha256 cellar: :any,                 arm64_big_sur:  "820e94dc0c131b738c77bd0f06658ccecfd284197fbb9051859751cfee6d7090"
-    sha256 cellar: :any,                 ventura:        "775eea8548612570a4d328678eb7d5430cf833fdb91f4e9e9e34c12526e260bb"
-    sha256 cellar: :any,                 monterey:       "f52d926c30030e41676af3009afd40bbac63810cc0ae741e0adfc47df750e8fe"
-    sha256 cellar: :any,                 big_sur:        "6451351bb885f61f5e6b9cc46da7fd4a64a59d67177d6dd033c93279c53726e9"
-    sha256 cellar: :any,                 catalina:       "16a170ac4384a2b83dd5dda834a8bfe0edb7f6d81d123150b287a11bf3b915e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3452c83b3b53442744ba984f908c42e9d0b4e7b17f10167a1e6b55589890cdd6"
+    sha256 cellar: :any,                 arm64_ventura:  "96e8e23767a6ce3216bffdde04055a7fb8aae08abe6be933f4ab8accea6994e5"
+    sha256 cellar: :any,                 arm64_monterey: "3eb3baba3092c0b0cd9c4b4e0bf929bef0e4ab24c0bedd44e8e08bdb0f7a69ad"
+    sha256 cellar: :any,                 arm64_big_sur:  "f2a0e46948b488ca1d3c948c3015574b622be8bbf30fb29d120eaf78ea25925b"
+    sha256 cellar: :any,                 ventura:        "a3ef1c423dab691ab424f182c6c49d303bc34c667720ead5032d45ed35f06232"
+    sha256 cellar: :any,                 monterey:       "2cab984562823fc65a20c77cba8df66f99d51e9a8a8b22fef4eb1bb9e0b5ebf0"
+    sha256 cellar: :any,                 big_sur:        "5b44577c3c58a1bed8a6de5199f302ff3c52c0e49a7f5964dee719e963e3f9e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ee1b3af4b8b386f2f0c31ca8b07fdb7c03ed55834c646def3ddd200387b740f"
   end
 
   head do

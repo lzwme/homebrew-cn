@@ -8,13 +8,14 @@ class Sickchill < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a2fd1c6ff2bab51e823acb7c40a6796b098bc1d151d3b6f06bf922eded7d80a3"
-    sha256 cellar: :any,                 arm64_monterey: "52cf053295796b4fb9ba6d77dc01b7d4e48e0d1bbd5e3ba9e12e669b4f00d2f6"
-    sha256 cellar: :any,                 arm64_big_sur:  "90fc81f2da3e53117636c69efb982d96b63d414aa0ec563fcf34c63e656b7850"
-    sha256 cellar: :any,                 ventura:        "02b638e081a10def1382ac1919b7aa3c9f4e7833ec6f442f6aaf55f2911b7e28"
-    sha256 cellar: :any,                 monterey:       "39c1c3d28e1306add1c6a95ec75c016b784d273f3394207e5c5151f2f0f578a9"
-    sha256 cellar: :any,                 big_sur:        "3e5f4fee0821aa54c7c22f444ef74701711a9aa78735505d48f0b3a73392c16a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8c3000c16300cc5ece4b06885869b9b05189c12d7d2ec14a6c6a3aec1d1f84b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "6b0dbff0a43e4276fbd24a124661bf2b0cfab24538360bfc9e4dc6228d8f711f"
+    sha256 cellar: :any,                 arm64_monterey: "72403807e178209fc308d16f6e1217d00087ad37c60dbe33d1e526c5e53311d4"
+    sha256 cellar: :any,                 arm64_big_sur:  "7fd432a2ab04ca2c055a77f3fb5d6dc4a7f7957053cb43f53ef9f6d39cc7e6d5"
+    sha256 cellar: :any,                 ventura:        "bd80158bc1899914bc413063c0d9e1ab5293030a7b16b891351a3edb12e528f4"
+    sha256 cellar: :any,                 monterey:       "ac7e713c1b03bbd934deab3bae17c00ad03cf97f7db8c3f4953808dd70ebcb8f"
+    sha256 cellar: :any,                 big_sur:        "ead2c53214c08b58374fe0fa40e7474b2c7497a8bfa7ed82010bb3edd7e50aaf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c5a6545db8442d6442a40783daba38931eb491b3f9bbf065c0f20f9c41842c4"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -23,6 +24,7 @@ class Sickchill < Formula
   depends_on "cffi"
   depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -364,11 +366,6 @@ class Sickchill < Formula
   resource "tvdbsimple" do
     url "https://files.pythonhosted.org/packages/73/7d/b8e4d5c5473d6f9a492bf30916fdbf96f06034e6d23fde31ccb86704e41c/tvdbsimple-1.0.6.tar.gz"
     sha256 "a8665525fa8b7aaf1e15fc3eec18b6f181582e25468830f300ab3809dbe948fe"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/3c/8b/0111dd7d6c1478bf83baa1cab85c686426c7a6274119aceb2bd9d35395ad/typing_extensions-4.7.1.tar.gz"
-    sha256 "b75ddc264f0ba5615db7ba217daeb99701ad295353c45f9e95963337ceeeffb2"
   end
 
   resource "Unidecode" do

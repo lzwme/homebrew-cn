@@ -92,7 +92,7 @@ class Corsixth < Formula
       lua = Formula["lua"]
 
       app = prefix/"CorsixTH.app/Contents/MacOS/CorsixTH"
-      assert_includes MachO::Tools.dylibs(app), "#{lua.opt_lib}/liblua.dylib"
+      assert_includes app.dynamically_linked_libraries, "#{lua.opt_lib}/liblua.dylib"
     end
 
     PTY.spawn(bin/"CorsixTH") do |r, _w, pid|
