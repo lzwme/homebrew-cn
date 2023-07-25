@@ -3,19 +3,19 @@ class Sip < Formula
 
   desc "Tool to create Python bindings for C and C++ libraries"
   homepage "https://www.riverbankcomputing.com/software/sip/intro"
-  url "https://files.pythonhosted.org/packages/48/75/98987181e897ef378d6c239ee733328a7264a41f2d8263e61d7b7c4c0909/sip-6.7.9.tar.gz"
-  sha256 "35d51fc10f599d3696abb50f29d068ad04763df7b77808c76b74597660f99b17"
+  url "https://files.pythonhosted.org/packages/50/3a/ae9b9e36c7f1db92675b25f722ff7a8c3f6efd50817d5c946a7637dacd88/sip-6.7.10.tar.gz"
+  sha256 "398aeb84ee03f3a953947cac70e60d3b02dceba3c4f4dd46c5383e9dbe3936bb"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
   head "https://www.riverbankcomputing.com/hg/sip", using: :hg
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b07e5b650d400e9a097966aa33e682cc9e615e1be41c811a13207af34d147c04"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6eafb58e8e27af7e0d854217c23ebf828f8ee9baca763d967df9d08a9c927032"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6ad868f403fc2427904da6d8fab0f2af6cfd3e3aeb9e20f3cbc81a6e1a4231c1"
-    sha256 cellar: :any_skip_relocation, ventura:        "2e58cd885ac632d62792c6d4f423b4524f5a766d344536a71a0fe11e71337f70"
-    sha256 cellar: :any_skip_relocation, monterey:       "4361970df0241af1e8d864c05e57e180c45f4c5f5168234fece3c9c730187b80"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0cd6e3acd78447f5eedeb2e72f01654152471b23472d5a4896a0cf73242a250d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "554cac25ac96b244a210eb59b1dac24ef1d624cc3279a17aab87b8bb12c5dc08"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "127bf4229369ddb1b9a6cc641739c6bad37b868dfbb274c64000672500f34ffc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8f72a9d4ba398556bc8ecdf12d6802decdb0e87403929c2b667b5e2a1464e59c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9d9352ac90bf804afc09a0933ab4a243569160d26809ced8cd19812817c67ef3"
+    sha256 cellar: :any_skip_relocation, ventura:        "c5f3b4aa08612a340f03a80146d8b0fd065c837ff3346cb8253c9d8dcae9ee1b"
+    sha256 cellar: :any_skip_relocation, monterey:       "21f8ccfa0a185aaf888beb7a21f5587270bcb910c4634f8133a6f8d2dad02787"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5d04de7805781ed5f505ed13502e6ede2fb2de33f6d349074682200c2ec4b035"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2a1ee1f1f8818a760ca6523a4b29dbf5f30d973f572501d6f9a2bd3998e6fc1"
   end
 
   depends_on "python@3.11"

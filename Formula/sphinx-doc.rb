@@ -3,19 +3,18 @@ class SphinxDoc < Formula
 
   desc "Tool to create intelligent and beautiful documentation"
   homepage "https://www.sphinx-doc.org/"
-  url "https://files.pythonhosted.org/packages/61/b6/b2ca621fba7f1d938d75891fe175ba8054b47e803d11727d3e9f4433d86c/Sphinx-7.0.1.tar.gz"
-  sha256 "61e025f788c5977d9412587e733733a289e2b9fdc2fef8868ddfbfc4ccfe881d"
+  url "https://files.pythonhosted.org/packages/05/39/f3ea984a5f4dd9a38f5db5cb49da8125da4edcbc2a840358388e2d00fcc8/sphinx-7.1.0.tar.gz"
+  sha256 "8f336d0221c3beb23006b3164ed1d46db9cebcce9cb41cdb9c5ecd4bcc509be0"
   license "BSD-2-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d188b5bd724a435849475bc904388b427bb674b2eda679010c5605c639a6753f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5fcc4390e78268f5475fe0352e5bbf50d4f9170afd5f5e1224c8b3c2b981016a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2aa23455fd8fe634bff86a20d54c5cc6f17317989229e72b4ffd49f5792b4c1b"
-    sha256 cellar: :any_skip_relocation, ventura:        "05d401f76cd402e6524cc3941c972dd88f3ab17c22ea27f4e2ee27416b854112"
-    sha256 cellar: :any_skip_relocation, monterey:       "956ff93383d8f2da3103a32eec6d8b7177f698137e7108d13bb922e148f3e7da"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a8a14ff80394220b248f426aaf6d5df5ad43e3c81d7575ce05d67d8e8ca38a17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fdc6dffdb1d961db5f5baaaf998a146fb5c91bf707a87a282bd53f6de9780b23"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa7d602970dce70711a03e753e41984518d15a7bb237d8af2730d1e7b0ecf7db"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "413128049bc8971cb704882fe8eb681cefbcee0d4753f9cfabb1296c551c29c9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b6cf5d6e82cdab75fcf5bc56f2a6419d61f91f9cfece5b473ea3d82c6467749a"
+    sha256 cellar: :any_skip_relocation, ventura:        "136684379917b08b50fee71ee494e3be0306fce97998112cfb75632ecadefa79"
+    sha256 cellar: :any_skip_relocation, monterey:       "0d45c737b29398289257fa8daab402a2f0a796ae5afc448f3586ccd1e7db9b34"
+    sha256 cellar: :any_skip_relocation, big_sur:        "203800c40dad320deea8141575277725c64c7d1a3577217a378faa7f1f0539c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bec6315ee6d557f2663c458ee2385e24c0e00fac0160e084225c0f067de0c2a0"
   end
 
   keg_only <<~EOS
@@ -38,13 +37,13 @@ class SphinxDoc < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "idna" do
@@ -63,8 +62,8 @@ class SphinxDoc < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
-    sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
+    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
+    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
   end
 
   resource "numpydoc" do
@@ -118,8 +117,8 @@ class SphinxDoc < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
-    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   def install

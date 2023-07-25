@@ -1,8 +1,8 @@
 class Bazel < Formula
   desc "Google's own build tool"
   homepage "https://bazel.build/"
-  url "https://ghproxy.com/https://github.com/bazelbuild/bazel/releases/download/6.2.1/bazel-6.2.1-dist.zip"
-  sha256 "4cf4d264bff388ee0012735728630d23832d3c9d021383b2fadceadb0775dd6b"
+  url "https://ghproxy.com/https://github.com/bazelbuild/bazel/releases/download/6.3.0/bazel-6.3.0-dist.zip"
+  sha256 "902198981b1d26112fc05913e79f1b3e9772c3f95594caf85619d041ba06ede0"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Bazel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f40fc457b6ee1f0fa82fc4b316052edf730489b77c5fad9ab510540b24506204"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8eb1f4a62271974fa556f02eab528ef8f0ce9335a4183ef1529c3c1e46f2d4e2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b2de4928cad6c042317b761a1b82e91a09ed6e0d340a0265e6c9c664573ae266"
-    sha256 cellar: :any_skip_relocation, ventura:        "dcb24bdfdbff10f39ce17ff9fbea3902d658d220cfc7c82cd9b5bbe3c01f79b4"
-    sha256 cellar: :any_skip_relocation, monterey:       "a7444ecaccfaa28582cf9d00921313985ba8ddc568d73c06a42de84ff83bbee5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "85be5a1d8362515a20a887a14cf9a89538a6c33bf7a20c733a001512bda70f3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "92cfe90346cf080b2bc1c6122eeb109a0914e5ef74dd1826ad53a1ee15d2e981"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ebce89209ccfd88d370705da2a2d13e32e7e28fa452cbce08f77019bb0c3a87b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "48e0457b1c850a96d63903019d2813a2b097322c6c7f10c638546350cb5f4a83"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "325758f5301369b8f72181eb976e7a81716ae87fb44fec403bc6bb398a4605a5"
+    sha256 cellar: :any_skip_relocation, ventura:        "23ed294e1bcd3a35b08091b5fd15b2888bb25f698bd59fdf94d7c537b2f3b6a6"
+    sha256 cellar: :any_skip_relocation, monterey:       "976cf3211c12521b167b905ef2f9a9884e6d26a0a81ef2fd8d5d3479e7e142bd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "dbc69665367070e60fd9ca1dd1dc17aa647bfdc7ec5d4b38c97ef6bdd0349cd4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0a94e8b9a678ac3c5984cf72b2eccfeb74cb7aa8b931e61b3f5f58ac55a8f4b"
   end
 
   depends_on "python@3.11" => :build

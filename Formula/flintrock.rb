@@ -9,13 +9,14 @@ class Flintrock < Formula
   revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c5c6d50b0bedbddcb24e48e4ca8b796c2ca4474de1c6b59508d16e59d681505d"
-    sha256 cellar: :any,                 arm64_monterey: "046825bd8111f25045d9c688a67b32175e0985876f98cc972914d9576ac7a3c2"
-    sha256 cellar: :any,                 arm64_big_sur:  "05fdf7b601ac3569dbed0f45cd6f3eeeae92347e74ca0a1fd5c3ebe539abc5de"
-    sha256 cellar: :any,                 ventura:        "32239131614366ac744ddd5a0afde672c806e3c9645904bc857ca3df7df6a1ea"
-    sha256 cellar: :any,                 monterey:       "20180446da949b541bec4a03a5907be18a022134d716d8b9a65368a6f0a75866"
-    sha256 cellar: :any,                 big_sur:        "3a5e288a561d1daad0f8d40484a383e0b72d5f133f738239cb830083e28c95dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "123a93b08b0ac6c89dc4d4693c5c8d5a0ba045e667db3fba85e0e81cb163c798"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "0c2d522b1becc863b240e99d7ba91d6626d8ed4751335cc9ebe424ef1b5448d5"
+    sha256 cellar: :any,                 arm64_monterey: "a5d24923abf368f9c037a5436493876f530cfdca0e4fecc854c2379ae94bb6ba"
+    sha256 cellar: :any,                 arm64_big_sur:  "15ffee328b09834248e4de1d94fa19ba19893fdb957ea387aed15e9cccd977fa"
+    sha256 cellar: :any,                 ventura:        "f365b7e7f38705983ebc1773fc542f776b57c3e5f4ca6c93a685d4e18e5eea34"
+    sha256 cellar: :any,                 monterey:       "e9504410250ea935be9436e1962fea2a49e50403e9b91bf064dfde87600b6c40"
+    sha256 cellar: :any,                 big_sur:        "922c9839f430725233659f2a293077f6fbb7e29ce874951cd338e4761b07936c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "338d299508ddc9a1e80d194a21539376ea29c37d542d138ad42d4c0322ba60c3"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -24,6 +25,7 @@ class Flintrock < Formula
   depends_on "cffi"
   depends_on "openssl@3"
   depends_on "python@3.11"
+  depends_on "pyyaml"
   depends_on "six"
 
   resource "bcrypt" do
@@ -69,11 +71,6 @@ class Flintrock < Formula
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
-  end
-
-  resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
-    sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
   end
 
   resource "s3transfer" do

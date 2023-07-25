@@ -1,26 +1,28 @@
 class Alp < Formula
   desc "Access Log Profiler"
   homepage "https://github.com/tkuchiki/alp"
-  url "https://ghproxy.com/https://github.com/tkuchiki/alp/archive/v1.0.12.tar.gz"
-  sha256 "68a0066381673c8857adbf55b18fc472f861e39f33571ad130bde59698f2d043"
+  url "https://ghproxy.com/https://github.com/tkuchiki/alp/archive/v1.0.14.tar.gz"
+  sha256 "67f34c71f8cb10e3491bd0b9467cd7ff6673ddf4e26341b59d7dbe03fe44af24"
   license "MIT"
   head "https://github.com/tkuchiki/alp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d79a6e1374f64c0cdd5eaad9153c9149a23f01d4821b0c1706cc3d3743fd4977"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "33275215bbb389a501355137dad8f4ec4ad2a6eae61e019fae7c5aa5f3909d82"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6690ae8f1da8ddfa6f63d08ded015fcdee942fd4f03dd6f75985293394830603"
-    sha256 cellar: :any_skip_relocation, ventura:        "9a22777557141203c21a40ab2b78310620e6438697160f9bf62dae9ee85df8d2"
-    sha256 cellar: :any_skip_relocation, monterey:       "a62c5786804ab1159618834453570f07b221e2988470adadd7c221bfc7163c38"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c290641a54c5eff3f5b46374bd2bcd779c15a4c39a013b04fd3ff563d9f616fb"
-    sha256 cellar: :any_skip_relocation, catalina:       "ba7a5d3564a69a7f82df753d4728df98e83d00223ec3556de7867a4bcf3e0525"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d72452d6a5d15c2a91186957f3d1febb2236303d7536eb2586c6153deb8d412f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8abecb19eff90b8cdd0fb0604b11c113cd17c4b03ae20d1d70fc5473c7748684"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8abecb19eff90b8cdd0fb0604b11c113cd17c4b03ae20d1d70fc5473c7748684"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8abecb19eff90b8cdd0fb0604b11c113cd17c4b03ae20d1d70fc5473c7748684"
+    sha256 cellar: :any_skip_relocation, ventura:        "2d33e4f63c11310f3b541453d0e59d4573a9118a3a19f1c16a2b134e08b5c4cc"
+    sha256 cellar: :any_skip_relocation, monterey:       "2d33e4f63c11310f3b541453d0e59d4573a9118a3a19f1c16a2b134e08b5c4cc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2d33e4f63c11310f3b541453d0e59d4573a9118a3a19f1c16a2b134e08b5c4cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04f572c0df80252f32a36f34f4f613da7adee4c4898249bde78fbc96577e04ae"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cli/alp"
+    ldflags = "-s -w -X main.version=#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/alp"
+
+    generate_completions_from_executable(bin/"alp", "completion")
   end
 
   test do

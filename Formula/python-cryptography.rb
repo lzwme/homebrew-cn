@@ -7,25 +7,22 @@ class PythonCryptography < Formula
   head "https://github.com/pyca/cryptography.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f7f4997ab8e77bb21394a8bc86fcf6e29bf48f01146555c4f383604d7920e8fe"
-    sha256 cellar: :any,                 arm64_monterey: "d9c6a23812f25ece20735ebcdbafb0640ccebfa6cbc4c0b9a1d7d123d9a72923"
-    sha256 cellar: :any,                 arm64_big_sur:  "775947d20b660d3d0eec72b25d2de9bbcb28207c265bff9340bcab6266c44c72"
-    sha256 cellar: :any,                 ventura:        "5c11f6db7ef7d8f7742ef58e7ad2049b0c847068d586c0c17654d0a78f910b82"
-    sha256 cellar: :any,                 monterey:       "4e9b08d79f8e5c197a3daf40679789166a21351d6cf45c607df94332ed283f5b"
-    sha256 cellar: :any,                 big_sur:        "a1ee306291c54fdf2cf716d8372daafb8d3e5387d24d969f22f3792973aafc20"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5da02e83e60b94faa3a157e510ec4603c30eaf46cfde3552b8d4ad6d6f33fa35"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "e10491715de269a316612143a447dde876bcc4def6b08859b0b83fbccf98bb7b"
+    sha256 cellar: :any,                 arm64_monterey: "6074d551769b3301fba93d84e63fec3ae7f7f00e1c5457a1c9bffbe2163b9a08"
+    sha256 cellar: :any,                 arm64_big_sur:  "9aa8c93a11dd3a166ef58ffb5cb6b9b408925cf34a55a7c2b073d1a78761ff20"
+    sha256 cellar: :any,                 ventura:        "5eb1be30c37eb1c8b436163462bd3fd18cd9f27aad01b55f29fa784920a4b3d8"
+    sha256 cellar: :any,                 monterey:       "28a8046fc4b304291431ec7fb715c89aaebeae7fe714a38c3dc4ed3d60f7fba4"
+    sha256 cellar: :any,                 big_sur:        "8f91a408ea522b4af5260fb9227a849c9890497f608e4c4548c7b4f2a417490c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d0a609f56e54077bbb44dd5949fa6c959d177a1f967bc9cf4f508c1428e2357"
   end
 
+  depends_on "pkg-config" => :build
+  depends_on "python-typing-extensions" => :build
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "openssl@3"
-  depends_on "pycparser"
-  depends_on "python-typing-extensions"
   depends_on "python@3.11"
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   resource "semantic-version" do
     url "https://files.pythonhosted.org/packages/7d/31/f2289ce78b9b473d582568c234e104d2a342fd658cc288a7553d83bb8595/semantic_version-2.10.0.tar.gz"
@@ -42,12 +39,12 @@ class PythonCryptography < Formula
   end
 
   def install
-    site_packages = prefix/Language::Python.site_packages(python3)
+    site_packages = buildpath/Language::Python.site_packages(python3)
     ENV.append_path "PYTHONPATH", site_packages
 
     resources.each do |r|
       r.stage do
-        system python3, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "--no-build-isolation", "."
+        system python3, "-m", "pip", "install", "--prefix=#{buildpath}", "--no-deps", "--no-build-isolation", "."
       end
     end
 

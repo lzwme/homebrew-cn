@@ -2,19 +2,19 @@ class Runme < Formula
   desc "Execute commands inside your runbooks, docs, and READMEs"
   homepage "https://runme.dev/"
   url "https://github.com/stateful/runme.git",
-      tag:      "v1.5.2",
-      revision: "dfe6bdf5f83595ecd3754d8a3178223451108c1f"
+      tag:      "v1.6.0",
+      revision: "3cca8a6e7d34f401c1bdd99828a7fac5b1d8fac9"
   license "Apache-2.0"
   head "https://github.com/stateful/runme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6c1e19fd90b824b2137bc41578368abe16d82d709c69fad0bd1e81997ccd52ae"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "54dc56deacc25618cb92e68d5a0658896f4fb2b726e2f3d1950089b9730f1703"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "51aaf635c93ebeb3477608217ba01bdf26a6f9eb8fad788e774b235d41ec6c07"
-    sha256 cellar: :any_skip_relocation, ventura:        "a42d2844a16e035687228872cfe4f4579e40db934109220c250df21ab9ac7059"
-    sha256 cellar: :any_skip_relocation, monterey:       "e537d135b9642a8bb75c2560b01038f5cc4558ea0cb5254497bfaae2ec686b90"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2fa35a60f59eff5acff5d2f17e0ea1a0b505fba45c61dfb10ae8ef32fcdc5824"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0e0b32f5ded981323316956b09d66fb3b1bcdb202a1f5c975503e8beb6c22ae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c5e34625912cc60ce423727a7711c192094276a9eed59b4bdc6ab276898c64fc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8709005b1298b7eda2f4789d6cf68b4e6de35a8276b94e93b31045f9d09d3dcd"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "172aafbce56573f3efc6c9076b3fe647b176e10a274eb7ddff9df9be906dbdaa"
+    sha256 cellar: :any_skip_relocation, ventura:        "ca05fb5c3beb7e34693da31d41e54c45c0ea644949148e0fe4dd91dcb4b08fca"
+    sha256 cellar: :any_skip_relocation, monterey:       "094c55c782956c519087ca6ab7dcec98a37bccf4ee93f4f20f8b86146e6fc32b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "fb03b090baf388748d725a0123792d0bad93c33aee1c1ace09567007295998d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2048d1361388fc8ccd84ce076fd759934902d90f73ab354a321b95d1b0c7cbb"
   end
 
   depends_on "go" => :build

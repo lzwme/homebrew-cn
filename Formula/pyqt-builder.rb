@@ -1,13 +1,19 @@
 class PyqtBuilder < Formula
   desc "Tool to build PyQt"
   homepage "https://www.riverbankcomputing.com/software/pyqt-builder/intro"
-  url "https://files.pythonhosted.org/packages/31/d7/dbcb710a205014ca8f1c651ed77e6f1b1d0c67ab43c664afb079d6efb658/PyQt-builder-1.15.1.tar.gz"
-  sha256 "a2bd3cfbf952e959141dfe55b44b451aa945ca8916d1b773850bb2f9c0fa2985"
+  url "https://files.pythonhosted.org/packages/cb/f0/dc998da4a3358249a0e53927c831a52bfc2aa070a96e8164fffcf3dce349/PyQt-builder-1.15.2.tar.gz"
+  sha256 "746cfe83c03ebff4458d478a1c06714790ef93e458ecd5a28bc2837bac88eb74"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
   head "https://www.riverbankcomputing.com/hg/PyQt-builder", using: :hg
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7eaab02f463e5c18d8cd01f1fb9192b6077ca823d35cef3158138c25af2b512a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ab7230d3b7df9b43b8f3a12716db58f0cb3b5a550548617bb3b403c416b37be3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ab7230d3b7df9b43b8f3a12716db58f0cb3b5a550548617bb3b403c416b37be3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ab7230d3b7df9b43b8f3a12716db58f0cb3b5a550548617bb3b403c416b37be3"
+    sha256 cellar: :any_skip_relocation, ventura:        "ab7230d3b7df9b43b8f3a12716db58f0cb3b5a550548617bb3b403c416b37be3"
+    sha256 cellar: :any_skip_relocation, monterey:       "ab7230d3b7df9b43b8f3a12716db58f0cb3b5a550548617bb3b403c416b37be3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ab7230d3b7df9b43b8f3a12716db58f0cb3b5a550548617bb3b403c416b37be3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fbef68c7e68dbefe9ae0fad92ecd31488ceb64077e7aee1a67426a5afc91a83e"
   end
 
   depends_on "python@3.11"

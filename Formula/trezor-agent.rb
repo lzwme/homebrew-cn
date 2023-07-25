@@ -9,13 +9,14 @@ class TrezorAgent < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9122ca62bd909fd6023ebf998649370f49f8538783ef691ee9ee429cd6ac4d49"
-    sha256 cellar: :any,                 arm64_monterey: "ec6c484999436b3e71bb2a6c62da2dd459dfd87002f0ed75517d1b9a1b47f225"
-    sha256 cellar: :any,                 arm64_big_sur:  "776f50007bd2b0f25b2fb4fe15e525df57dc8563b9fcf483f3fb2f53b34b09e1"
-    sha256 cellar: :any,                 ventura:        "5ced3bd5dc80efd7ec1d6d6a06089c3b38edf4243b2b4f4c90fed55de4c7a1f9"
-    sha256 cellar: :any,                 monterey:       "8a07ceb478a0e5267590b1c45df75a76a53595b48a226f5b68055d11b332533a"
-    sha256 cellar: :any,                 big_sur:        "938819677997cd72c204d0b7c62aac19c2d1571a6146f61ae76ca6f91f752534"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3c9f361cca5c946fcfeb239f9150b2639ca97721a7fc57f895980574d000c0f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "760a0accff4ecdfce44be35287cc4aa37bbe61882e0c532999b11cd69ed61e64"
+    sha256 cellar: :any,                 arm64_monterey: "c6078860eccc9acb7e2aca57b3e881b7e18cf58f27998d3f84ca99fd67d0037a"
+    sha256 cellar: :any,                 arm64_big_sur:  "a656b64016ab6d989fed1c4f843f4cc30f508e1d39f71ac0b5f3384f7c57d5d8"
+    sha256 cellar: :any,                 ventura:        "77efd49b0a33e66797bd2b12680eb9748ded2f01bc3b2b078ead3f6a63cc7fb0"
+    sha256 cellar: :any,                 monterey:       "f0b3db7e0bc9d456eb3cca746553ac79274e7875937d5c76d168c650db982ebb"
+    sha256 cellar: :any,                 big_sur:        "a0b4246d1d81594f729521a7910063983739af75823aa2caef2f59c85a2b2b3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a50ab3c55ee7a8b153cbf992321e043fa36e4f8246b5acd437282df02b221c99"
   end
 
   depends_on "pkg-config" => :build
@@ -98,6 +99,12 @@ class TrezorAgent < Formula
   resource "hidapi" do
     url "https://files.pythonhosted.org/packages/95/0e/c106800c94219ec3e6b483210e91623117bfafcf1decaff3c422e18af349/hidapi-0.14.0.tar.gz"
     sha256 "a7cb029286ced5426a381286526d9501846409701a29c2538615c3d1a612b8be"
+
+    # patch to build with Cython 3+, remove in next release
+    patch do
+      url "https://github.com/trezor/cython-hidapi/commit/749da6931f57c4c30596de678125648ccfd6e1cd.patch?full_index=1"
+      sha256 "e3d70eb9850c7be0fdb0c31bf575b33be5c5848def904760a6ca9f4c3824f000"
+    end
   end
 
   resource "idna" do

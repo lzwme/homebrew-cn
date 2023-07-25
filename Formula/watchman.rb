@@ -1,19 +1,19 @@
 class Watchman < Formula
   desc "Watch files and take action when they change"
   homepage "https://github.com/facebook/watchman"
-  url "https://ghproxy.com/https://github.com/facebook/watchman/archive/refs/tags/v2023.07.17.00.tar.gz"
-  sha256 "877fc1c88028134c6c1541f797a8c25a0d333088b292c914ce7f589339ddf0fd"
+  url "https://ghproxy.com/https://github.com/facebook/watchman/archive/refs/tags/v2023.07.24.00.tar.gz"
+  sha256 "abef7859e6412a30f92941d811a0ef7e595a0ef8bfebb674f909743fdc3f5a46"
   license "MIT"
   head "https://github.com/facebook/watchman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "49e13cf018f863471871a7b07c5aeeddd66eb20708d80c41610594c2ddfb611d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6f38164694cf18695b561842e694d232208b938dc4ddc667dda065186c26aaaf"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "621fd828495a984af22ebbcece914de0ebc9d51e9445a9030a9a266095566a6c"
-    sha256 cellar: :any_skip_relocation, ventura:        "a9dc62eccc725bf6e5a6e0e67a8fd2806bd45c85192851ebaa58fa6f5763baf0"
-    sha256 cellar: :any_skip_relocation, monterey:       "82646d057fbdac17bc2938e760cbc41951f74a79cae58d447d05385b0b1317ce"
-    sha256 cellar: :any_skip_relocation, big_sur:        "46f3a504b4957267f8aec225ba9340a69c4299a692e9a62535f1522b8091c680"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8cebee4afc63cdad19fd12bab78ad1ae921afd7c3eb493e90a8a3537def45311"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e6e5848bfd3d3d51ff979aaa7dc9f83bfc71eb4bc9519603c99d97e7edfe9c10"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "15925e861f1785554018aafed9a15f0ab2aae44f9dbe58e1c8b87cf4caac422e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "049d2ba6f024c32d94ab0faf19a843bf889357b1a2da21adbb9b4f193dba9d44"
+    sha256 cellar: :any_skip_relocation, ventura:        "bb40ed9bf286944d4a6386f03b58316d82b700bf79a218a8da5f0bfd968f23e8"
+    sha256 cellar: :any_skip_relocation, monterey:       "0e3d0fab12eab2abee6a51a4902fc880661050fe519f6746d27c5f931a9f16aa"
+    sha256 cellar: :any_skip_relocation, big_sur:        "233f9baf964df837c94ffd379ef8dc38532453be6b6c9b21343fb4e1d7924a18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f0517286e57719fd9d4b4995c33d95f19a84ae028d3b065620c6bafb323ecfa"
   end
 
   # https://github.com/facebook/watchman/issues/963
@@ -50,7 +50,7 @@ class Watchman < Formula
     # Fix "Process terminated due to timeout" by allowing a longer timeout.
     inreplace "CMakeLists.txt",
               /gtest_discover_tests\((.*)\)/,
-              "gtest_discover_tests(\\1 DISCOVERY_TIMEOUT 30)"
+              "gtest_discover_tests(\\1 DISCOVERY_TIMEOUT 60)"
 
     # NOTE: Setting `BUILD_SHARED_LIBS=ON` will generate DSOs for Eden libraries.
     #       These libraries are not part of any install targets and have the wrong

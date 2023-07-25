@@ -5,6 +5,11 @@ class Cp2k < Formula
   sha256 "dff343b4a80c3a79363b805429bdb3320d3e1db48e0ff7d20a3dfd1c946a51ce"
   license "GPL-2.0-or-later"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any, arm64_ventura:  "7cb2ff0601ec794fa7fe2b4f1638883e603d923822054fae3ee54ca97bf0fa94"

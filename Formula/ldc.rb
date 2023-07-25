@@ -1,8 +1,8 @@
 class Ldc < Formula
   desc "Portable D programming language compiler"
   homepage "https://wiki.dlang.org/LDC"
-  url "https://ghproxy.com/https://github.com/ldc-developers/ldc/releases/download/v1.32.2/ldc-1.32.2-src.tar.gz"
-  sha256 "bfa4aaee74320a1268843c88e229f339b2df0953a4bcb4fced52ebe0dda1cd95"
+  url "https://ghproxy.com/https://github.com/ldc-developers/ldc/releases/download/v1.33.0/ldc-1.33.0-src.tar.gz"
+  sha256 "834c1b08c5f5b3a98f9efbaf8632f0d377d17dac1c1710e483c9ee684658c3a8"
   license "BSD-3-Clause"
   head "https://github.com/ldc-developers/ldc.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Ldc < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "b4754390cafb9ba16f9900927ae092d09aeb75ce513f42535b251973a1252631"
-    sha256                               arm64_monterey: "e584e20c1da9d3e2870a8cf6b760a7fac9ca38901ae4f0c89e5ba7051fa88599"
-    sha256                               arm64_big_sur:  "bb98e3cb7661ceeded8912b26863500f981227584f1c4d159c59f405da163a61"
-    sha256                               ventura:        "ba70f1e62ebdfd43b374efaa8d49ad1320a0f7e9e44886f442faf8fc38edd6bc"
-    sha256                               monterey:       "ec1067b7603cae69d7f3a4e78441094701d50b5e25263571076ea3ed7048dedf"
-    sha256                               big_sur:        "b1042b03ba4a1f11e11e69b5571db1895a9694daf29876d68e05c000c5bb9163"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a458a3599eb1250f891433a8788bba86f4b8baca7e38dc9a5a0435e736f03c4c"
+    sha256                               arm64_ventura:  "c89abebd18910da363ea18e32e2e690978d41526bc9bb876b0d0c540ee89653b"
+    sha256                               arm64_monterey: "1f57e82c7358bf8bf063dd6d2d7b889b3adde0febd63e62bf9098629cd2619e8"
+    sha256                               arm64_big_sur:  "ecf2139c8c8aa887d69bb2ae5ee6acccadbc52fd3c8c89d6df8b85d94e0f49c3"
+    sha256                               ventura:        "a79b2cda7452b384aec12e282532532c5c380553ee2370486194f87d324055c3"
+    sha256                               monterey:       "ac6333035c2e2487148aced8971ecb9d6421d7c9c3716f6258403bfca260bcdf"
+    sha256                               big_sur:        "4d341c808881e983dd17fb7b40bd801d3dad31db1ea9a1a7fd9816778320765e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df04315a552a2290e20a5f1dc8bd5eefe7e89aa7e82791a8caa347217ed74ed1"
   end
 
   depends_on "cmake" => :build
@@ -61,20 +61,17 @@ class Ldc < Formula
 
   def install
     ENV.cxx11
+    # Fix ldc-bootstrap/bin/ldmd2: error while loading shared libraries: libxml2.so.2
+    ENV.prepend_path "LD_LIBRARY_PATH", Formula["libxml2"].opt_lib if OS.linux?
+
     (buildpath/"ldc-bootstrap").install resource("ldc-bootstrap")
 
     args = %W[
       -DLLVM_ROOT_DIR=#{llvm.opt_prefix}
       -DINCLUDE_INSTALL_DIR=#{include}/dlang/ldc
       -DD_COMPILER=#{buildpath}/ldc-bootstrap/bin/ldmd2
+      -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
-
-    args += if OS.mac?
-      ["-DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: lib, target: llvm.opt_lib)}"]
-    else
-      # Fix ldc-bootstrap/bin/ldmd2: error while loading shared libraries: libxml2.so.2
-      ENV.prepend_path "LD_LIBRARY_PATH", Formula["libxml2"].opt_lib
-    end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

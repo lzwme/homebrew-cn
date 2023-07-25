@@ -1,9 +1,8 @@
 class Kamel < Formula
   desc "Apache Camel K CLI"
   homepage "https://camel.apache.org/"
-  url "https://github.com/apache/camel-k.git",
-      tag:      "v1.12.1",
-      revision: "f2543a9f6269aad3cc24de3061b130c0e7590c09"
+  url "https://ghproxy.com/https://github.com/apache/camel-k/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "74ae95ef3e21d0241ffd54024780b913aad08b10c41a2af94f017c38a5c68220"
   license "Apache-2.0"
   head "https://github.com/apache/camel-k.git", branch: "main"
 
@@ -13,23 +12,20 @@ class Kamel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d6184b11a8019b5da49e8f4df5c3b2e3cbf4c8eaeffce8566f6b57d29900448"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d6184b11a8019b5da49e8f4df5c3b2e3cbf4c8eaeffce8566f6b57d29900448"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8d6184b11a8019b5da49e8f4df5c3b2e3cbf4c8eaeffce8566f6b57d29900448"
-    sha256 cellar: :any_skip_relocation, ventura:        "3d0ad96f867b26eb34d61ef7e6dafabb9a5bcf43427161809865dc458a1a14db"
-    sha256 cellar: :any_skip_relocation, monterey:       "3d0ad96f867b26eb34d61ef7e6dafabb9a5bcf43427161809865dc458a1a14db"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3d0ad96f867b26eb34d61ef7e6dafabb9a5bcf43427161809865dc458a1a14db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ab411a3f71c48d2a7cdb1468c259f26a60335bc188e682a2828a96b2dc46856"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ea26b459df7510c41a7bd6ac1a4156db3bd65f8fe865892189d91e597bbb4090"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ea26b459df7510c41a7bd6ac1a4156db3bd65f8fe865892189d91e597bbb4090"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ea26b459df7510c41a7bd6ac1a4156db3bd65f8fe865892189d91e597bbb4090"
+    sha256 cellar: :any_skip_relocation, ventura:        "77f94e969a0a5b5a50df9cb468636f1fa37fc4e664b3d6f66d42f7378b2d2c03"
+    sha256 cellar: :any_skip_relocation, monterey:       "77f94e969a0a5b5a50df9cb468636f1fa37fc4e664b3d6f66d42f7378b2d2c03"
+    sha256 cellar: :any_skip_relocation, big_sur:        "77f94e969a0a5b5a50df9cb468636f1fa37fc4e664b3d6f66d42f7378b2d2c03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d06ff06c79216ea04423f85d9861e41904676e01ac75b5c642745ec1674038b"
   end
 
   depends_on "go" => :build
-  depends_on "openjdk@11" => :build
-  depends_on "kubernetes-cli"
 
   def install
-    ENV["JAVA_HOME"] = Language::Java.java_home("11")
-    system "make", "build-kamel"
-    bin.install "kamel"
+    ldflags = "-s -w -X github.com/apache/camel-k/v2/pkg/util/defaults.GitCommit=#{tap.user}-#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/kamel"
 
     generate_completions_from_executable(bin/"kamel", "completion", shells: [:bash, :zsh])
   end

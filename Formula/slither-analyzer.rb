@@ -9,13 +9,14 @@ class SlitherAnalyzer < Formula
   head "https://github.com/crytic/slither.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "acef45416c4ab8e356f9443008a75819ad65fb445802a3a62efe8d1d538bc1d1"
-    sha256 cellar: :any,                 arm64_monterey: "75b63edaa2fd21cb7f82ad9e8be169bb5183d13ac046dfa7ccc82387e594369a"
-    sha256 cellar: :any,                 arm64_big_sur:  "8813271829922beefe838d81cd8f2b0ec53168dae01a85a862bb3e2f3ef5430d"
-    sha256 cellar: :any,                 ventura:        "5e11df98aafe01bc3f78d8106d25820831c8f5c94c28e217cb8ee304be315b03"
-    sha256 cellar: :any,                 monterey:       "aeead7bb1ae9b3ed1594a21e2b317a94daec3645e78629a2d0018d9968dfe6ac"
-    sha256 cellar: :any,                 big_sur:        "3f5acddb1f87bf7557eaf66e5b0685167d66679af76c3f20c0466c441e255ba1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4dadc105b3abcee843ea24502fb832ec3bab0d1e4b66c54826f28f01e2f4b197"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "ad763e94244c125dfcbab2793cfd84221f45f278bdfaec22f0c1cc240efa3a29"
+    sha256 cellar: :any,                 arm64_monterey: "4c79a98ef788fb3229a7c4403dae687323b52bc161804d99d394dcd10ef82a0d"
+    sha256 cellar: :any,                 arm64_big_sur:  "0ac95f19c15c101cb7d1f1eb97aa9d232ea7bca4f3099cd0229797a7a2f1fca2"
+    sha256 cellar: :any,                 ventura:        "3497cdad941e5b4231b48e8d5fa37e0d8bd708f60595d78c7247e48d3e1d763c"
+    sha256 cellar: :any,                 monterey:       "129276c8cddbb4b607ac6a8085bb8bbe1442f7249bb7e51d9204a0c897d51c20"
+    sha256 cellar: :any,                 big_sur:        "c17cd6bf59876b458de421974e91ef9768fb72ebb3832c78fab08c0f47da836f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d08d465cb2f8d805ac3065574546fdb79a89efb65b3c6047dfc6941a5dc83e10"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -59,8 +60,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "cytoolz" do
-    url "https://files.pythonhosted.org/packages/da/89/66bac516a236af8375dd7af2b3032a210e222395670758da4b2439b37e40/cytoolz-0.12.1.tar.gz"
-    sha256 "fc33909397481c90de3cec831bfb88d97e220dc91939d996920202f184b4648e"
+    url "https://files.pythonhosted.org/packages/a0/61/c27e1e7007e3cc6989053956dfe078db84e164f22c7000b2ad1efc5b93b7/cytoolz-0.12.2.tar.gz"
+    sha256 "31d4b0455d72d914645f803d917daf4f314d115c70de0578d3820deb8b101f66"
   end
 
   resource "eth-abi" do

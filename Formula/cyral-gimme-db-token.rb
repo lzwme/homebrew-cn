@@ -8,14 +8,14 @@ class CyralGimmeDbToken < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_ventura:  "f66deb5f999bd39d5ad456ace89a0d8a6779fff99e9301097e540e8e7df0227d"
-    sha256 cellar: :any,                 arm64_monterey: "de7edcc483a1f1291f35ef5b1b22d69fe5e5741bd30c55d7f5575880ab8e6f17"
-    sha256 cellar: :any,                 arm64_big_sur:  "ddcf51d9f53a471b7b32b7fca47a444d5388c1996cc8944d2f984606f0a64243"
-    sha256 cellar: :any,                 ventura:        "8200b54b6b6437a87d3143fceb7947064ff2461b993a728114c598f434ea4b71"
-    sha256 cellar: :any,                 monterey:       "e34a3e84058724a726020806a7de83b5522ac926b63be7830e19eafabf0e063a"
-    sha256 cellar: :any,                 big_sur:        "f3837fefbaabeafa63a6981d4b454a02a421b3f1e1f3ebbe2d97a8b55313fa20"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cebf25df85a278f3064210efde773fa209f2dceceabb64765830e7b678fccda2"
+    rebuild 4
+    sha256 cellar: :any,                 arm64_ventura:  "2958881d0eae2fe341c88891bc48f6c0432cc9682ec9a6683f5771c38955edc8"
+    sha256 cellar: :any,                 arm64_monterey: "dd1c0aa5f748ac3126e3842452afd09242d290cdef2fb676777ddb50215238d7"
+    sha256 cellar: :any,                 arm64_big_sur:  "8ed7d78fdf9716a4295090877c1c46b5c861abe88bf78c227931807a0977475e"
+    sha256 cellar: :any,                 ventura:        "8093cd3f3cfae059d378bc2a7e5b3ae38875681ae2fb7d4137fabb0416a26b29"
+    sha256 cellar: :any,                 monterey:       "dde88f83ac9bd3e705e73d09ad0d6fa38076ed6c4947648d95ce1cb9baec95f0"
+    sha256 cellar: :any,                 big_sur:        "7c64dfeec5ba53b6517af3e5f4d03e7fe138a5938444343e78c8a9134859e949"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6471fb08275ca1248df3f7694b580ad0e3d431e97dd97f558e11cdb95f58163d"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -24,6 +24,7 @@ class CyralGimmeDbToken < Formula
   depends_on "cffi"
   depends_on "openssl@3"
   depends_on "python@3.11"
+  depends_on "pyyaml"
   depends_on "six"
 
   uses_from_macos "libffi"
@@ -86,11 +87,6 @@ class CyralGimmeDbToken < Formula
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
-  end
-
-  resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
-    sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
   end
 
   resource "requests" do

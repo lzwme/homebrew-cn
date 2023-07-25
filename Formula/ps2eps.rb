@@ -1,13 +1,9 @@
 class Ps2eps < Formula
   desc "Convert PostScript to EPS files"
-  homepage "https://www.tm.uka.de/~bless/ps2eps"
-  url "https://www.tm.uka.de/~bless/ps2eps-1.70.tar.gz"
-  sha256 "3a6681c3177af9ae326459c57e84fe90829d529d247fc32ae7f66e8839e81b11"
-
-  livecheck do
-    url :homepage
-    regex(/href=.*?ps2eps[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
+  homepage "https://github.com/roland-bless/ps2eps"
+  url "https://ghproxy.com/https://github.com/roland-bless/ps2eps/archive/refs/tags/v1.70.tar.gz"
+  sha256 "cd7064e3787ddb79246d78dc8f76104007a21c2f97280b1bed3e7d273af97945"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0993f1da048518572c4388a4eab1e7c37151c97859eec0802b639ef803d71eca"
@@ -26,13 +22,13 @@ class Ps2eps < Formula
   def install
     system ENV.cc, "src/C/bbox.c", "-o", "bbox"
     bin.install "bbox"
-    (libexec/"bin").install "bin/ps2eps"
+    (libexec/"bin").install "src/perl/ps2eps"
     (bin/"ps2eps").write <<~EOS
       #!/bin/sh
       perl -S #{libexec}/bin/ps2eps "$@"
     EOS
-    share.install "doc/man"
-    doc.install "doc/pdf", "doc/html"
+    man1.install Dir["doc/*.1"]
+    doc.install Dir["doc/*.pdf", "doc/*.html"]
   end
 
   test do
