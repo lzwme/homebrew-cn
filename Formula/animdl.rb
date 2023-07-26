@@ -3,19 +3,19 @@ class Animdl < Formula
 
   desc "Anime downloader and streamer"
   homepage "https://github.com/justfoolingaround/animdl"
-  url "https://files.pythonhosted.org/packages/11/91/2acade77cef7c1cf06dcf23abca3b15810d11742e6538ed5c1c390489fc5/animdl-1.7.18.tar.gz"
-  sha256 "8e0376dc88910b14e73f2e3f648024702ce9342b8262b6c51ae70a99a97d9d0b"
+  url "https://files.pythonhosted.org/packages/a8/ba/462b26ba7a7a5960b1c72e61847953d4cbf45f62e7ecdac3c5bc9e19cab0/animdl-1.7.20.tar.gz"
+  sha256 "4233681b2e6cfe08b108e13d11be2bf9d9dd2803f0111288ddd059cc50c019b3"
   license "GPL-3.0-only"
   head "https://github.com/justfoolingaround/animdl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "36f12efcdb83c94769cd0edc1bddc6809e12234568bb88004470104398b791f3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6a45fbb1cc5927d412ba962eb3263b75b23f6967f0a683b99bf5a89daa1d85d9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "09439949f233afe46ec0f8ab64b06e147e924917b8dcf0b299d7fa4b8b767f6c"
-    sha256 cellar: :any_skip_relocation, ventura:        "3c45fa4af2fbc04587363c1b49df37badb139c76cae77215507e057c76f849de"
-    sha256 cellar: :any_skip_relocation, monterey:       "4eb9869fc2cd83143a43841b963812d6bd1481d0d149f7827b1b95da420ed8d6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8d6ffc5efba604524560ef0c07d4e7d3c96cd432903fde7c4e6c8f6bc08e05a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e5763e0eacae2383db3b12287ff99029976f228d83d9b2ffb0a9ebb843a6c65"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6ed05983e9a2b9803a2266af9b1ae51b20f4184641118755966006c35741e13f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4f53d461ddd81721d3a2e363faea49d61b900499f59f9e66b94c890f1a7c18e0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4bdcdaca7ccca8105c67613d4f7a72d5af30a8b8ea9dd6ec149360271fc4c9f2"
+    sha256 cellar: :any_skip_relocation, ventura:        "372e32e3c0a1b35f13b2e91b4c90ec5fcfc105ec1b9b6a19bc41d9251a328e9c"
+    sha256 cellar: :any_skip_relocation, monterey:       "2659e03a2159bad490614e2815d1b55bd1234538a39840d26fb6ca6dcb8febe0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "50e5fb5e44c5e57e5f65cb515e961c296f28cf3652064190c1d5a6273e69fef3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dde56e8fc3c5b38cd18269822c7b22f47472368284dff3a451f7ca0a63bbf85e"
   end
 
   depends_on "pygments"
@@ -36,18 +36,18 @@ class Animdl < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/b3/fefbf7e78ab3b805dec67d698dc18dd505af7a18a8dd08868c9b4fa736b5/anyio-3.7.0.tar.gz"
-    sha256 "275d9973793619a5374e1c89a4f4ad3f4b0a5510a2b5b939444bee8f4c4d37ce"
+    url "https://files.pythonhosted.org/packages/28/99/2dfd53fd55ce9838e6ff2d4dac20ce58263798bd1a0dbe18b3a9af3fcfce/anyio-3.7.1.tar.gz"
+    sha256 "44a3c9aba0f5defa43261a8b3efb97891f2bd7d804e0e1f56419befa1adfc780"
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
+    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
   end
 
   resource "comtypes" do

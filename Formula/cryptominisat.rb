@@ -40,7 +40,7 @@ class Cryptominisat < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    system python3, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "--no-build-isolation", "."
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

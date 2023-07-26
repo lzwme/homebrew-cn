@@ -1,10 +1,10 @@
 class Openrtsp < Formula
   desc "Command-line RTSP client"
   homepage "http://www.live555.com/openRTSP"
-  url "http://www.live555.com/liveMedia/public/live.2023.06.20.tar.gz"
-  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2023.06.20.tar.gz"
+  url "http://www.live555.com/liveMedia/public/live.2023.07.24.tar.gz"
+  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2023.07.24.tar.gz"
   # Keep a mirror as upstream tarballs are removed after each version
-  sha256 "4d797e6a5f8cfd57051cd58072b9bc9f6657dea3f1ce26e901efb874d3391bba"
+  sha256 "2e2225678f6284ade93ba8558dc5a3e53c844408fc1944571175369e060551ce"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -13,13 +13,13 @@ class Openrtsp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "18055e572369ca42ccf4592bd3b524f43967f696a233812e20d2f5b0c9f66408"
-    sha256 cellar: :any,                 arm64_monterey: "0e9fa6cb13999055f2bc84c6360b2339b7b44cd75111600108a3005a586a10fe"
-    sha256 cellar: :any,                 arm64_big_sur:  "cad33fc168b28f49adcfcdaf47848a7ebf959d3ec10a8b0b9957ef4eb9c0afaa"
-    sha256 cellar: :any,                 ventura:        "886c7f1d38480d25d8f830c226e44291f8f912d8add511c03321499c3c2f5cda"
-    sha256 cellar: :any,                 monterey:       "d2450048bc5325ce4fa35666d6b5774828156a9dd867c84d8a55970c34142e10"
-    sha256 cellar: :any,                 big_sur:        "67042ea57bb50ade5a92f92c0f364ccd405bda6cd6876fe6194eee41ef46b8e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb94e9fc1187461062232f763bbf600e48aa9c6fb95b3431050764ae4df2d1ee"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "705eb8e93a13b5b74603ef326e48d935029e568d3d54ddc5f88734607b928995"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ccc61de8ab0ebf1991189e0756a378759fb3b23b67eb085636975cf55323e222"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "91bc26e0dae15b0ac097ab10faef3aba58df5b7bd037fcf85eea740469199834"
+    sha256 cellar: :any_skip_relocation, ventura:        "720784246e3ad127f0338809fbacef2ae31ab41bb34fa634c69cc9ff302908d2"
+    sha256 cellar: :any_skip_relocation, monterey:       "31bc17063c1d2cf7c213f7105df18197bf653d6a7cbfb2c4b7f1c7aaedc0aad7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "73d9d2dfc5c6a9a016e0818e932041893329f4ae814f634a1ae1b56a245b5d9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "068d83d49b4cdf79582475c2778d342041a8cd83ce8f658524bf602a670e705e"
   end
 
   depends_on "openssl@3"

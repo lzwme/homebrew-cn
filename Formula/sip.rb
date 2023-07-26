@@ -35,7 +35,7 @@ class Sip < Formula
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources
     # We don't install into venv as sip-install writes the sys.executable in scripts
-    system python3, *Language::Python.setup_install_args(prefix, python3)
+    system python3, "-m", "pip", "install", *std_pip_args, "."
 
     site_packages = Language::Python.site_packages(python3)
     pth_contents = "import site; site.addsitedir('#{libexec/site_packages}')\n"

@@ -6,15 +6,16 @@ class Cycode < Formula
   url "https://files.pythonhosted.org/packages/5b/89/96b386f3974430fcdb518ca63d351060c6ee643be2ee7cf6733bc4341a01/cycode-0.2.5.tar.gz"
   sha256 "d6e3978afe0494079a049c87523024b50aa8b06ea43e5faaae7b81fd4a3b1f78"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "094a89acbd54b2aa552c3ff598fb9c70ae6d020c05dfb1344ff1611ba6f1ad3b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6c5e18ae56452925a545329219f04fea5603c033f7a6131a1e8a12a2158fafa7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "80cf68c5ed63b387072fb0f7b82d944b8f4e42ac3889688275b0ae9b3ccbfdb7"
-    sha256 cellar: :any_skip_relocation, ventura:        "e25e1e4cdcf115cb6b69bf3a782b9e00a555f6ed4e7e43be27b639ce012a01ca"
-    sha256 cellar: :any_skip_relocation, monterey:       "1fbb040276061ac5a222a4c5324e21d09d3de291c85cb1b0b1a6929ceac34ba8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "36915cdfdf58d5459f1cf40c25a2182381e0ebaf3683d996779db5340f019b4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a16b7194cb855d219e8a41e161f5ccbee8e5baf62aacb372f44fceba62d22710"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4caa861d7fa4add47abd5afd5885a2e28ea021ebd6424171a6d7118441caf49a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f9f092bc893e671d7ebcdb4bf39aefcfe44b00b6dcb4056107f8be1c0e538b47"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1090598cc45476e3816c3a2adecf7964d4d9df371bee7a2dd162947f94df9e1c"
+    sha256 cellar: :any_skip_relocation, ventura:        "d4c8cf996c7578188d704e1d1cae79936fc348691ec88e6f79e992786c29672c"
+    sha256 cellar: :any_skip_relocation, monterey:       "f33a304ad66578c98a4d49eced60d008b7b526b7740fc28b95002ba4c853fb85"
+    sha256 cellar: :any_skip_relocation, big_sur:        "28405331b5c1576bed10ffe3f961f1e47b49e21f3889d9bc3a7678caa639fa45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63b79960b3499f7ab4b218b932d6cfef7b592c1060ad34400c2c034369705289"
   end
 
   depends_on "python@3.11"
@@ -32,8 +33,8 @@ class Cycode < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "chardet" do
@@ -42,13 +43,13 @@ class Cycode < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
+    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
   end
 
   resource "colorama" do
@@ -62,8 +63,8 @@ class Cycode < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/5f/11/2b0f60686dbda49028cec8c66bd18a5e82c96d92eef4bc34961e35bb3762/GitPython-3.1.31.tar.gz"
-    sha256 "8ce3bcf69adfdf7c7d503e78fd3b1c492af782d58893b650adb2ac8912ddd573"
+    url "https://files.pythonhosted.org/packages/87/56/6dcdfde2f3a747988d1693100224fb88fc1d3bbcb3f18377b2a3ef53a70a/GitPython-3.1.32.tar.gz"
+    sha256 "8d9b8cb1e80b9735e8717c9362079d3ce4c6e5ddeebedd0361b228c3a67a62f6"
   end
 
   resource "halo" do
@@ -122,8 +123,8 @@ class Cycode < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
-    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   def install

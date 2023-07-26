@@ -6,17 +6,17 @@ class Bpython < Formula
   url "https://files.pythonhosted.org/packages/cf/76/54e0964e2974becb673baca69417b6c6293e930d4ebcf2a2a68c1fe9704a/bpython-0.24.tar.gz"
   sha256 "98736ffd7a8c48fd2bfb53d898a475f4241bde0b672125706af04d9d08fd3dbd"
   license "MIT"
+  revision 1
   head "https://github.com/bpython/bpython.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "766a85def164a1f66d9aa72c38c1635f5070c3a124a1ce356f0bb249c3f304a5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8edea73c0ea8e083506fa8ffeb4e963693e2d54cb8a5f8be67b279f7c45e7ccf"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "62e9ef64868b43c508a3ca8cb5642c0b59f7ccd7da3688450ff2add1a90e31cc"
-    sha256 cellar: :any_skip_relocation, ventura:        "c1381d11f1a50c08f4e7dc7a1d6b2c2959a03acdf0ff6b2e3c9644c6cccfea90"
-    sha256 cellar: :any_skip_relocation, monterey:       "1bc8affee068301ecaf724ca7c5584a639ef892d1b00108c9935504b4d0913e2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "39e4c726ccc15183cd1c719b989b2218ead5b07a86f0d1824320d4d81abfba5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "696b43fdf524b7bc906cdbe72a873d383b8eae611d0d53dee532c27da70d7846"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cd5c5c19ada447d20da042dc4f47193e61c974622b42c1929ae8b80898393567"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1ed20df4af72a6ac636dd8a6e39b2de6089cd75982c989df62fb07d95811fb7e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0a44ce47a1f8f2127da333cca9d3538693b3046085deeb9ee1ef15ac42a5fcb6"
+    sha256 cellar: :any_skip_relocation, ventura:        "a319ae7ff5c84d37b7c73cfc644a2e5e0824e65838b23f28b3bd6a7168fdc5e7"
+    sha256 cellar: :any_skip_relocation, monterey:       "1ee8444ed309fb137baf6f17bfade0f07a763e0552ef261e18f2a73c462dfb73"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2168421be4127be211ce8cbcca7bec24df8ff2bf76228fd0a736bc1905084d67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "12ee3a84865eb60acd7685237122df35f8e24636684c5ffd31d8d33428ca9d2f"
   end
 
   depends_on "pygments"
@@ -29,13 +29,13 @@ class Bpython < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "curtsies" do
@@ -69,8 +69,8 @@ class Bpython < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
-    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   resource "wcwidth" do

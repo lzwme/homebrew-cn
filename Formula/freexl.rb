@@ -1,8 +1,8 @@
 class Freexl < Formula
   desc "Library to extract data from Excel .xls files"
   homepage "https://www.gaia-gis.it/fossil/freexl/index"
-  url "https://www.gaia-gis.it/gaia-sins/freexl-sources/freexl-1.0.6.tar.gz"
-  sha256 "3de8b57a3d130cb2881ea52d3aa9ce1feedb1b57b7daa4eb37f751404f90fc22"
+  url "https://www.gaia-gis.it/gaia-sins/freexl-sources/freexl-2.0.0.tar.gz"
+  sha256 "176705f1de58ab7c1eebbf5c6de46ab76fcd8b856508dbd28f5648f7c6e1a7f0"
 
   livecheck do
     url :homepage
@@ -10,19 +10,19 @@ class Freexl < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "d3b03b75eac2a439db87a56492103fe5eb0e619b1f5597cffc7f03bb11f4640c"
-    sha256 cellar: :any,                 arm64_monterey: "f2f26c1449a3f79a89ec85deb5cd22507ee4715827afdf31469fd605c8a31b7f"
-    sha256 cellar: :any,                 arm64_big_sur:  "57d5fc25946a587bfebb8724bff578688f605edcabba8cd80b9ebbf5840616d0"
-    sha256 cellar: :any,                 ventura:        "3baeaebe274fc3c9db2a59278fbd334f5a009dfbf03614d63b6803097a5da85b"
-    sha256 cellar: :any,                 monterey:       "0dc034f726d2ad3850742e7f9a1676d67c14c48fd9735470fd3691a3c080182c"
-    sha256 cellar: :any,                 big_sur:        "a20523355d18f1ed2259ae198b45c5aa93080fbd4926e0eb6969d2919b7a97ac"
-    sha256 cellar: :any,                 catalina:       "1bab8437de88ce5564702dcc3e30a9c2f9491aa9358e767aa3d8ec62ba76922d"
-    sha256 cellar: :any,                 mojave:         "003e9d848f354e7f12232f85240f4892f21e6136cd657022fbbc51b3bd286225"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2059ac999e20b72d31a6e586174327431066c01e10c25fca93c80ef5d10f5b4b"
+    sha256 cellar: :any,                 arm64_ventura:  "1fbeb7ff7273a9e9a26eccbbc4d9943167645de04654f5ada57b399262a66eb9"
+    sha256 cellar: :any,                 arm64_monterey: "d5b5f5091fde8145fb4854df71e5a0d4c85064983f0ff50e8649b66e72459436"
+    sha256 cellar: :any,                 arm64_big_sur:  "65496307a6328795f5a4eaeac73e715d3b10852538476a37b141c69500db205b"
+    sha256 cellar: :any,                 ventura:        "deffaa3f557b73b8bfe491a641ed7bb0727bd8b8f6d81cbb8795f530e7db2624"
+    sha256 cellar: :any,                 monterey:       "3578de5c3c6d52a04ee32fad357d1c4f25ee62a8d2a05dbf21fbe5e5e3595620"
+    sha256 cellar: :any,                 big_sur:        "915b680af0a7f34c12f86630fe22ac48b479fc14e24df6a4fb2c9274b0a971d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a23aa6cd549e49b7d3d3f5bf160d97d1125c26587074580b2926060003269e9"
   end
 
   depends_on "doxygen" => :build
+  depends_on "minizip"
+
+  uses_from_macos "expat"
 
   def install
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}",

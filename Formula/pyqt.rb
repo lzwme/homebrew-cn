@@ -1,17 +1,17 @@
 class Pyqt < Formula
   desc "Python bindings for v6 of Qt"
   homepage "https://www.riverbankcomputing.com/software/pyqt/intro"
-  url "https://files.pythonhosted.org/packages/1c/77/3b14889ac1e677bd5a284e0d003cac873689046e328401d92a927c9cc921/PyQt6-6.5.1.tar.gz"
-  sha256 "e166a0568c27bcc8db00271a5043936226690b6a4a74ce0a5caeb408040a97c3"
+  url "https://files.pythonhosted.org/packages/34/da/e03b7264b1e88cd553ff62a71c0c19f55690e08928130f4aae613723e535/PyQt6-6.5.2.tar.gz"
+  sha256 "1487ee7350f9ffb66d60ab4176519252c2b371762cbe8f8340fd951f63801280"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "94566b8f45b52301297ad339a025148912115007f936561f53ea07b47b214b5d"
-    sha256 cellar: :any, arm64_monterey: "b60bcb667ce4871c40f6ff4ebcbca68395c9cad83578010e82ffd83faac56b8a"
-    sha256 cellar: :any, arm64_big_sur:  "99047760264fac4d27c5addcf2c24a50997fe7f0dcaacea1f9109692921c389a"
-    sha256 cellar: :any, ventura:        "e2b19888948037dc7e07db03de6e0a87776e21b3d5a73dbb0a6175451e80d83d"
-    sha256 cellar: :any, monterey:       "c65b71dd6dd57ab952633cd56b8a4e21c470d6bd3a9445e6676899a2bfaf3fb5"
-    sha256 cellar: :any, big_sur:        "56bdf19643876023f840c2247c151e66175e926ce54224b241b7aa3513bd07c6"
+    sha256 cellar: :any, arm64_ventura:  "d6235340f5b8bed96fcf1fc329b8469420dbf603cb708f177dccf412686aecbb"
+    sha256 cellar: :any, arm64_monterey: "fb4b5563e49b887444c8d0c9d9ad7456e79956664dc81092245025075a10cadc"
+    sha256 cellar: :any, arm64_big_sur:  "5136004db0464984b6a2cc37b4668f8558743a6a9df6b93fd5397ff44c3774f1"
+    sha256 cellar: :any, ventura:        "399b7e53bcfd275b0ea3699197e57f47cc6e4a435070358316effccccc61533b"
+    sha256 cellar: :any, monterey:       "d761013b21ed972fdda44e2fc010801a6776bc7e25800bdaba96c8b92f368953"
+    sha256 cellar: :any, big_sur:        "47d34d958146dedb529f4ecca90f8b9a63dabafa16378ae6cd406bbe4503bb90"
   end
 
   depends_on "pyqt-builder" => :build
@@ -44,8 +44,8 @@ class Pyqt < Formula
   end
 
   resource "pyqt6-sip" do
-    url "https://files.pythonhosted.org/packages/2b/b4/87241bb21832cda1061805492ca2a5fd9d18969ea72277bb9fde94228962/PyQt6_sip-13.5.1.tar.gz"
-    sha256 "d1e9141752966669576d04b37ba0b122abbc41cc9c35493751028d7d91c4dd49"
+    url "https://files.pythonhosted.org/packages/c0/08/6bde4b067729a7e0dac6b55654357a2a84af04f1152661cd1602979642a1/PyQt6_sip-13.5.2.tar.gz"
+    sha256 "ebf6264b6feda01ba37d3b60a4bb87493bdb87be70f7b2a5384a7acd4902d88d"
   end
 
   resource "pyqt6-webengine" do

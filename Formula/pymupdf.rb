@@ -44,7 +44,7 @@ class Pymupdf < Formula
     # https://github.com/pymupdf/PyMuPDF/blob/1.20.0/setup.py#L447
     ENV["PYMUPDF_SETUP_MUPDF_BUILD"] = ""
 
-    system python3, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "--no-build-isolation", "."
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

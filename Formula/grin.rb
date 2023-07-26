@@ -26,6 +26,13 @@ class Grin < Formula
 
   uses_from_macos "ncurses"
 
+  # Patch to build with rust 1.71.0, remove in next release
+  # upstream PR ref, https://github.com/mimblewimble/grin/pull/3763
+  patch do
+    url "https://github.com/mimblewimble/grin/commit/399fb19c3014a4a5c3f0575dd222e7df6fda8c83.patch?full_index=1"
+    sha256 "0966dd64d8b91a3179207c38f0590ffbeb61ff911ddd3dc4be45045c9331eebf"
+  end
+
   def install
     # Fixes compile with newer Rust.
     # REMOVE ME in the next release.

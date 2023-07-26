@@ -1,19 +1,19 @@
 class Copa < Formula
   desc "Tool to directly patch container images given the vulnerability scanning results"
   homepage "https://github.com/project-copacetic/copacetic"
-  url "https://ghproxy.com/https://github.com/project-copacetic/copacetic/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "77a1900837a1632210f9710b669b9653e3356441e3c17722d96e8b8e17d77d9c"
+  url "https://ghproxy.com/https://github.com/project-copacetic/copacetic/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "f3cc0edd568fd50a45f353321f251c9b051e1f9506f150e3592572d6d734a558"
   license "MIT"
   head "https://github.com/project-copacetic/copacetic.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "82f4d9c47f194b0283020ad4ef786377bac60a6d367506aba9683bb8c804ac5a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "82f4d9c47f194b0283020ad4ef786377bac60a6d367506aba9683bb8c804ac5a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "82f4d9c47f194b0283020ad4ef786377bac60a6d367506aba9683bb8c804ac5a"
-    sha256 cellar: :any_skip_relocation, ventura:        "7bf8df6c14fb1a89d2c330048a493478818b3c0762e3de50cd68f3a870f039fd"
-    sha256 cellar: :any_skip_relocation, monterey:       "7bf8df6c14fb1a89d2c330048a493478818b3c0762e3de50cd68f3a870f039fd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7bf8df6c14fb1a89d2c330048a493478818b3c0762e3de50cd68f3a870f039fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "622dcbcdd1471ae4c99ccac3e909e0e7b897423d7cabbd8ccafb02b41e2a944f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd4917cf9b07ae01263def56e951ec550f8ad620ed8b8ab1e345919c0537f536"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd4917cf9b07ae01263def56e951ec550f8ad620ed8b8ab1e345919c0537f536"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fd4917cf9b07ae01263def56e951ec550f8ad620ed8b8ab1e345919c0537f536"
+    sha256 cellar: :any_skip_relocation, ventura:        "323e09911483fff8034cc02d16d79e1d1d7f2f3a7f1bdd432754c58b01532385"
+    sha256 cellar: :any_skip_relocation, monterey:       "323e09911483fff8034cc02d16d79e1d1d7f2f3a7f1bdd432754c58b01532385"
+    sha256 cellar: :any_skip_relocation, big_sur:        "323e09911483fff8034cc02d16d79e1d1d7f2f3a7f1bdd432754c58b01532385"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34e7f43d3b72213055adb523ec2b49e59468f659ad3f4b969bbafbf4b7b73ec1"
   end
 
   depends_on "go" => :build

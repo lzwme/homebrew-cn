@@ -6,16 +6,16 @@ class AwsElasticbeanstalk < Formula
   url "https://files.pythonhosted.org/packages/d2/1a/564eab628edbe1815d2bfde14a1cfb9a3e0e14a7a217731792ec60e1e80f/awsebcli-3.20.7.tar.gz"
   sha256 "8672d6a9ce14cd49efcf8c26299f0970459430f9a1d817504b5200cb10bec9be"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b7f9268f5318ac08308b28d10aa63bf7f4248b86dcf954bcdd5fbcbfba6231ae"
-    sha256 cellar: :any,                 arm64_monterey: "29ccc4d2828beef6ddb79a92d8ec85b192be5b945d47c3abc11f725ee63dcebb"
-    sha256 cellar: :any,                 arm64_big_sur:  "f6f47986c8cd4f29c2ae30a74876f05c4f8203fd99de4e4b77830d92e778f5bf"
-    sha256 cellar: :any,                 ventura:        "f259e4939b03705b8c388301693f8141d4a2c966aa1d5b2de3ad0b10db8b85a7"
-    sha256 cellar: :any,                 monterey:       "fd1403f9ecaa7f431cf3a778e28cf225d0bf093730cd636072abc941f44bbd4f"
-    sha256 cellar: :any,                 big_sur:        "06a45d5a6af3f9f5df3eabdcfad9f4edc3200739b3e3a7cf8ff6d977c146018c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "957da7e46087edfe2516722dceaf08d6bf47e18fd4e687f3e3281b93063ddf5c"
+    sha256 cellar: :any,                 arm64_ventura:  "f02743fdae224c62bd0fbac829d883533b72ab6b704bdaf9da856cfb9646dfd4"
+    sha256 cellar: :any,                 arm64_monterey: "e0dc66ae824179060cb91e5c9ce7510650814c9f4d0c1b8c38fa6e257a621335"
+    sha256 cellar: :any,                 arm64_big_sur:  "f69efeae043592519f71ab4e9f90f6772a2f976312c169f222eea17382bc1f22"
+    sha256 cellar: :any,                 ventura:        "9d23430365633218e9b6adddde9a4a1aad7c9d75a02619d22958a1cac27e53e3"
+    sha256 cellar: :any,                 monterey:       "d85ef5335c836a77685b55176b5ed4fb3639d2e19a96b4002576a5506c1ed395"
+    sha256 cellar: :any,                 big_sur:        "cf8405cbea0e06c270b13cd100b1f0bd09e43c1668278bdb1e1e046c5e317d89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae9c3f13a5e64c51e90251ba76c576591cffdc29794834618e015e318eecbdb5"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -23,7 +23,10 @@ class AwsElasticbeanstalk < Formula
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "openssl@3"
+  depends_on "pycparser"
   depends_on "python@3.11"
+  depends_on "pyyaml"
+  depends_on "six"
 
   uses_from_macos "libffi"
 
@@ -85,6 +88,12 @@ class AwsElasticbeanstalk < Formula
   resource "docker-compose" do
     url "https://files.pythonhosted.org/packages/0a/43/e71f087c308f7d7566449212ecaf3e02323e6dd0f5b9b6b0fb64cbfd4df6/docker-compose-1.25.5.tar.gz"
     sha256 "7a2eb6d8173fdf408e505e6f7d497ac0b777388719542be9e49a0efd477a50c6"
+
+    # Build patch for cython 3+
+    patch do
+      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/99732fa/aws-elasticbeanstalk/docker-compose-pyyaml6.patch"
+      sha256 "5382d20b105a20fc6a30a0ac2cedbff290afb0eb769ef4824c3ec6ee54fd8015"
+    end
   end
 
   resource "dockerpty" do
@@ -122,11 +131,6 @@ class AwsElasticbeanstalk < Formula
     sha256 "7ace6161b621d31e7902eb6b5ae148d12cfd23f4a249b9ffb6b9fee12084323d"
   end
 
-  resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
-    sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
-  end
-
   resource "pynacl" do
     url "https://files.pythonhosted.org/packages/a7/22/27582568be639dfe22ddb3902225f91f2f17ceff88ce80e4db396c8986da/PyNaCl-1.5.0.tar.gz"
     sha256 "8ac7448f09ab85811607bdd21ec2464495ac8b7c66d146bf545b0f08fb9220ba"
@@ -142,11 +146,6 @@ class AwsElasticbeanstalk < Formula
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
-  resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
-    sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
-  end
-
   resource "requests" do
     url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
@@ -155,11 +154,6 @@ class AwsElasticbeanstalk < Formula
   resource "semantic-version" do
     url "https://files.pythonhosted.org/packages/d4/52/3be868c7ed1f408cb822bc92ce17ffe4e97d11c42caafce0589f05844dd0/semantic_version-2.8.5.tar.gz"
     sha256 "d2cb2de0558762934679b9a104e82eca7af448c9f4974d1f3eeccff651df8a54"
-  end
-
-  resource "six" do
-    url "https://files.pythonhosted.org/packages/21/9f/b251f7f8a76dec1d6651be194dfba8fb8d7781d10ab3987190de8391d08e/six-1.14.0.tar.gz"
-    sha256 "236bdbdce46e6e6a3d61a337c0f8b763ca1e8717c03b369e87a7ec7ce1319c0a"
   end
 
   resource "termcolor" do
@@ -187,6 +181,11 @@ class AwsElasticbeanstalk < Formula
     sha256 "d376bd60eace9d437ab6d7ee16f4ab4e821c9dae591e1b783c58ebd8aaf80c5c"
   end
 
+  # patch to work with pyyaml6, remove when merged and released
+  # pyyaml6 patch PR, https://github.com/aws/aws-elastic-beanstalk-cli/pull/442
+  # also update six constraint, upstream PR ref, https://github.com/aws/aws-elastic-beanstalk-cli/pull/447
+  patch :DATA
+
   def install
     # Ensure that the `openssl` crate picks up the intended library.
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
@@ -200,3 +199,20 @@ class AwsElasticbeanstalk < Formula
     assert_match("ERROR: InvalidProfileError - The config profile (homebrew-test) could not be found", output)
   end
 end
+
+__END__
+diff --git a/requirements.txt b/requirements.txt
+index 421afcf..84b11de 100644
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -6,8 +6,8 @@ python-dateutil>=2.1,<3.0.0 # use the same range that 'botocore' uses
+ requests>=2.31
+ setuptools >= 20.0
+ semantic_version == 2.8.5
+-six>=1.11.0,<1.15.0
++six>=1.11.0,<1.17.0
+ termcolor == 1.1.0
+ wcwidth>=0.1.7,<0.2.0
+-PyYAML>=5.3.1,<5.5 # use the same range that 'aws-cli' uses. This is also compatible with 'docker-compose'
++PyYAML>=5.3.1,<6.1 # use the same range that 'aws-cli' uses. This is also compatible with 'docker-compose'
+ urllib3>=1.26.5 #1.26.5 fix CVE-2021-33503

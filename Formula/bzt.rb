@@ -6,17 +6,17 @@ class Bzt < Formula
   url "https://files.pythonhosted.org/packages/7c/09/7d38d9327dcb279f8863985f3808c3da25543eda4bac0bb38681ea36c28f/bzt-1.16.23.tar.gz"
   sha256 "2d90a58c0316697399e83f7cf96a7f99d2ee244f5dffb9ebf5cc4be21161efd8"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "87f2bcc2e8787f49c5cbee6b992f27d1ea331d19d73d9c646c9a6b3c508f1897"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e95356a99f6bac25f2c88bb14f2d991a804dcd376e3543ff19c2b88b38f899fd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8cf75082a18dab35d2ddefbcf8e16bec0e455ac4306eed208295572a31b94b2d"
-    sha256 cellar: :any_skip_relocation, ventura:        "92840ff8b152ed696e80c6e5b1f11014fa4345a1d367da891f505deade815a69"
-    sha256 cellar: :any_skip_relocation, monterey:       "5e6c3aa5a72ecf1ebe8fd693132cbf6c84608b768d9c8e9ad1348fc19fdebaab"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7f74fd5c589ee26507a78e39d50f4fba67cdf2d237df41641a1d15c4d828aa2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3bd0e3ad4dd767d8105dd94117415763d89db704a5f6d1ce4daf630db76da552"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ceed6f4e7482dcdc6ebfc303e066681fc986f128c77bf780b44740742827d9ac"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f15ec0ad262615c1c902be68f6bfa1e86e84968c00ac719e615875ab5c112e3d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1398b04bc6aac44cd70b1927b4b3167d88e3bee5cd5792ad5d604967a752a0f5"
+    sha256 cellar: :any_skip_relocation, ventura:        "acfdde4fa2a6afc629dde48b25e4bc9b20b280c23904ff2afffe153b1d9d1958"
+    sha256 cellar: :any_skip_relocation, monterey:       "a59b9119135d2c3ad3e9469639e94da5faca11d0fca7e64e91c17b3ec83a77cf"
+    sha256 cellar: :any_skip_relocation, big_sur:        "614c1bfc5fa87b64aca25ec83e32ab126ab0ad69f057d09761e5882a3efde84b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a172865b2f18b91cd68cd526cde86747efc2bd22bbe980c56f5aedbde3551b4d"
   end
 
   depends_on "cmake" => :build
@@ -68,8 +68,8 @@ class Bzt < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
@@ -88,8 +88,8 @@ class Bzt < Formula
   end
 
   resource "dill" do
-    url "https://files.pythonhosted.org/packages/7c/e7/364a09134e1062d4d5ff69b853a56cf61c223e0afcc6906b6832bcd51ea8/dill-0.3.6.tar.gz"
-    sha256 "e5db55f3687856d8fbdab002ed78544e1c4559a130302693d839dfe8f93f2373"
+    url "https://files.pythonhosted.org/packages/c4/31/54dd222e02311c2dbc9e680d37cbd50f4494ce1ee9b04c69980e4ec26f38/dill-0.3.7.tar.gz"
+    sha256 "cc1c8b182eb3013e24bd475ff2e9295af86c1a38eb1aff128dac8962a9ce3c03"
   end
 
   resource "frozenlist" do
@@ -143,8 +143,8 @@ class Bzt < Formula
   end
 
   resource "multiprocess" do
-    url "https://files.pythonhosted.org/packages/e3/ab/9aafc121c6a3d2470ccdf28f99897e88d324c948893b30e46cb359f595e3/multiprocess-0.70.14.tar.gz"
-    sha256 "3eddafc12f2260d27ae03fe6069b12570ab4764ab59a75e81624fac453fbf46a"
+    url "https://files.pythonhosted.org/packages/68/e0/a77ca96e772e13c828fa52f3ad370d413bef194aeaf78b7c6611870ad815/multiprocess-0.70.15.tar.gz"
+    sha256 "f20eed3036c0ef477b07a4177cf7c1ba520d9a2677870a4f47fe026f0cd6787e"
   end
 
   resource "progressbar33" do
@@ -223,8 +223,8 @@ class Bzt < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/fc/ef/0335f7217dd1e8096a9e8383e1d472aa14717878ffe07c4772e68b6e8735/wheel-0.40.0.tar.gz"
-    sha256 "cd1196f3faee2b31968d626e1731c94f99cbdb67cf5a46e4f5656cbee7738873"
+    url "https://files.pythonhosted.org/packages/ec/34/903929e15b2657335b2ce8723d92fc804d3569b7ac0f1f8877ed1a7b2024/wheel-0.41.0.tar.gz"
+    sha256 "55a0f0a5a84869bce5ba775abfd9c462e3a6b1b7b7ec69d72c0b83d673a5114d"
   end
 
   resource "yarl" do

@@ -11,13 +11,14 @@ class Cbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "41ca69a49c76c247a65ad2d1823f1945c74ebdf561b7af9b9cf0658c39fc12e8"
-    sha256 cellar: :any,                 arm64_monterey: "ad9fc6201e9b1cfff361027eeb5a45dc27fb2e2bf6094d9f66b41ec61cd8a62b"
-    sha256 cellar: :any,                 arm64_big_sur:  "3b97e65bfd793f595ba6ece818b75ab073f776b8220a684c35765689fa77cf37"
-    sha256 cellar: :any,                 ventura:        "1ec9f906b56d4e8d3eb4dbc04cadf06833bd04363b82c7320d854e2bea649b27"
-    sha256 cellar: :any,                 monterey:       "666ed0e592258401cf184987a2faade1c20d044e9bd50139765cfbc3209a5d36"
-    sha256 cellar: :any,                 big_sur:        "3e47d841e182ae9d5f7664edbfe29cb9bae86b005d9f5e4a4719f52456a0fea4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0e4df0a5d5832e1ab480aa16f86339b12206866ba0785e9b4da8258192ef55c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "32da450c124aa43693350de653d23fa411fabaed1ba97f8e94933573eb0e1357"
+    sha256 cellar: :any,                 arm64_monterey: "fd6a0b813968f05f2bad57997854b015544b05e1f85b311491e8a91ee740f52f"
+    sha256 cellar: :any,                 arm64_big_sur:  "196878c4018b81771965a8bda4708df33265570d1eaa8af8556188da729e8ecc"
+    sha256 cellar: :any,                 ventura:        "8aed7852512faccee24efcb137c5ca34dbb34a0623286ab197a85d5d45528686"
+    sha256 cellar: :any,                 monterey:       "f5e472945f58484d6ac18920aca10ed79e9dd64e41b98cfb5dec00e0e9def371"
+    sha256 cellar: :any,                 big_sur:        "a206dcdd7b939067d87e21689f2c55f97259ae2cff3941813de0ef7fa555d715"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bbfab36d64d93b418cf658d0f06a73eaff5a582124846b5740e9756a07f5a0d5"
   end
 
   depends_on "pkg-config" => :build
@@ -35,7 +36,8 @@ class Cbc < Formula
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
-                          "--includedir=#{include}/cbc"
+                          "--includedir=#{include}/cbc",
+                          "--enable-cbc-parallel"
     system "make"
     system "make", "install"
     pkgshare.install "Cbc/examples"

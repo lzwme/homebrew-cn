@@ -1,8 +1,8 @@
 class Topgrade < Formula
   desc "Upgrade all the things"
   homepage "https://github.com/topgrade-rs/topgrade"
-  url "https://ghproxy.com/https://github.com/topgrade-rs/topgrade/archive/refs/tags/v12.0.1.tar.gz"
-  sha256 "d8a9eeb9c6ae3aab8163b726e912fa7c39849c3ad9f1e39a07924885f639b7bf"
+  url "https://ghproxy.com/https://github.com/topgrade-rs/topgrade/archive/refs/tags/v12.0.2.tar.gz"
+  sha256 "3bd71c8ee3f38fdddc1f9475f1c46d4949ce2f016e26dda71ac3c723e7488c57"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Topgrade < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "26c03a2236a9a88987530a7f17315b970c8a68f051a59436acf3de64f725cf6b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bfe4d946a7952ad84b027d59b37b224f3a8cf260e36930ee9f919b1ee0ce9675"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bbecfd8adea5ce4e0a9d31aab9cccff37ebbf7c667ba279e88dd3c7223e6fefc"
-    sha256 cellar: :any_skip_relocation, ventura:        "4f0051ff5dd6dfeca80648210bed868dc12db4aa083e2854d46abe29c086db20"
-    sha256 cellar: :any_skip_relocation, monterey:       "8aaa200e67e9434d2c689316ec8fe93e61742904e2bb6a003976a3f12e8675cf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e93d8c1d0b0b444aaf6ce1138cf0ebf7229248a38078d2ff745f70c109c3c231"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c214f2e3c4a2ae4ab0ab0c9b85c0554ae2ef07bf254bfdb00672038822a9c9e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5268979191541ca0ab2702329466d50944861d680112bc170135e016991ba13a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "edcc7354b9b12b1759d9eb88936d39baa9b58bdb1a3fd1d213b2afe34563333a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9e2e8c10e31525b7836b84c7f0331620db87758bb20213c9af1e02a8f18872f0"
+    sha256 cellar: :any_skip_relocation, ventura:        "edfba733abd0f00eb22b1ed85a4ebe44b8d85bfd1b920abaaf11e4c3bfec9f67"
+    sha256 cellar: :any_skip_relocation, monterey:       "f1eb24a672d6ac987f66fc5763c477b5cdb4a96a535f1cb4bfba30f309f9ca57"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c827ed042fb781f1e53cdc89ae1c91e33a46375861c82bfa630e557fdeb4c117"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c39ade708fcc7b632ba8a99344f78f88661a4a09266d591960fd11cec288d9e7"
   end
 
   depends_on "rust" => :build

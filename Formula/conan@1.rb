@@ -6,6 +6,7 @@ class ConanAT1 < Formula
   url "https://files.pythonhosted.org/packages/a6/9f/14bc31c3db1d07093ef9b5a8b1e4f23bd9616fea07e5ec9291c6738b9874/conan-1.60.1.tar.gz"
   sha256 "d6a487cc82fa3d6b5101ba135a51409e2939541ebf1df48219f8b7f02544a54e"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https://github.com/conan-io/conan.git"
@@ -13,13 +14,13 @@ class ConanAT1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c7d754f26310bcbd176dfd0f77f61f6d143c6cf43cc13aabf75a3aaf35ca9288"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2ae7e6202f38e158c08843b45343a012d49e703da2d3c1ab95102643f600eec0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c54dce35745977a5207b013d9a9b133baf207ea597bba6e16267df5cf23c0ded"
-    sha256 cellar: :any_skip_relocation, ventura:        "98d9cab7d696c21c56ac953101310c23a25235e85b2947a992aa4d935d19afaf"
-    sha256 cellar: :any_skip_relocation, monterey:       "0584e591ad56676e0db433f4c97ee6c353bdba1149082f6de059a46e0b567104"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4d37b8e961060be7c10e3d213fc4111979ded3fe83b6e0105303a1dc4fa4f598"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0aca79b541ec113ca6f40880b7e305815a3e1cd4a541c5dfdb8ba237de1b6769"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "61a83b4e030a9489d9deddaa58e1c4e1315ded0fb7f7764c2565f2ee8e4039c9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "59b9a47dde58d21edf7c1643f078e7abbfe027d7e7e83561d5f68fd4849fde2c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4581f73aad8acea26be543a178249c502e48665df42c438d6777a76b2b458cda"
+    sha256 cellar: :any_skip_relocation, ventura:        "6ae43cb2aefe72fde7b1cc12cc0a291aa8a00123b38f392eb7aa2a3c91a63ce6"
+    sha256 cellar: :any_skip_relocation, monterey:       "cc5a40f2d289be984e83f6cae881830980093594e2a5a41182556dca0267aa11"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b03bfb88ec22dd35143e2dbe138e0a21d65e806b86c37641a926960b1c71c5f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61bc0bde3ec3da30ff5aca93cca9240cdb460d866ea59332bbac8a7fc3410047"
   end
 
   keg_only :versioned_formula
@@ -37,13 +38,13 @@ class ConanAT1 < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "colorama" do
@@ -72,8 +73,8 @@ class ConanAT1 < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
-    sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
+    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
+    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
   end
 
   resource "node-semver" do
@@ -92,8 +93,8 @@ class ConanAT1 < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/e0/f0/9804c72e9a314360c135f42c434eb42eaabb5e7ebad760cbd8fc7023be38/PyJWT-2.7.0.tar.gz"
-    sha256 "bd6ca4a3c4285c1a2d4349e5a035fdf8fb94e04ccd0fcbe6ba289dae9cc3e074"
+    url "https://files.pythonhosted.org/packages/30/72/8259b2bccfe4673330cea843ab23f86858a419d8f1493f66d413a76c7e3b/PyJWT-2.8.0.tar.gz"
+    sha256 "57e28d156e3d5c10088e0c68abb90bfac3df82b40a71bd0daa20c65ccd5c23de"
   end
 
   resource "python-dateutil" do

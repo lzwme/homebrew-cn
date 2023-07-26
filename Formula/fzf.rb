@@ -22,13 +22,17 @@ class Fzf < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version} -X main.revision=brew")
+    man1.install "man/man1/fzf.1", "man/man1/fzf-tmux.1"
+    bin.install "bin/fzf-tmux"
 
+    # Please don't install these into standard locations (e.g. `zsh_completion`, etc.)
+    # See: https://github.com/Homebrew/homebrew-core/pull/137432
+    #      https://github.com/Homebrew/legacy-homebrew/pull/27348
+    #      https://github.com/Homebrew/homebrew-core/pull/70543
     prefix.install "install", "uninstall"
     (prefix/"shell").install %w[bash zsh fish].map { |s| "shell/key-bindings.#{s}" }
     (prefix/"shell").install %w[bash zsh].map { |s| "shell/completion.#{s}" }
     (prefix/"plugin").install "plugin/fzf.vim"
-    man1.install "man/man1/fzf.1", "man/man1/fzf-tmux.1"
-    bin.install "bin/fzf-tmux"
   end
 
   def caveats

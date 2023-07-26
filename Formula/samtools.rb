@@ -1,18 +1,18 @@
 class Samtools < Formula
   desc "Tools for manipulating next-generation sequencing data"
   homepage "https://www.htslib.org/"
-  url "https://ghproxy.com/https://github.com/samtools/samtools/releases/download/1.17/samtools-1.17.tar.bz2"
-  sha256 "3adf390b628219fd6408f14602a4c4aa90e63e18b395dad722ab519438a2a729"
+  url "https://ghproxy.com/https://github.com/samtools/samtools/releases/download/1.18/samtools-1.18.tar.bz2"
+  sha256 "d686ffa621023ba61822a2a50b70e85d0b18e79371de5adb07828519d3fc06e1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "29e0b8356b5be6d8fa0f0ec746e9a69993532e74fab80d435cde1a4784e039c0"
-    sha256 cellar: :any,                 arm64_monterey: "6524696359aa7addc1c6ca9e01c5ae5488fc0aab389e48c7786640ede1063894"
-    sha256 cellar: :any,                 arm64_big_sur:  "287a78e9037cb489e57fce991d60ab186360606efa9a720eb44e636fe7433b0b"
-    sha256 cellar: :any,                 ventura:        "6d78aa0a7b86707f8711ac8a6114910d9a242325c914e064dee504f727adf89a"
-    sha256 cellar: :any,                 monterey:       "6f6679453b493a48e32d987f5bfdc27ff038d9e08acc7bd4c3683885d7e03d06"
-    sha256 cellar: :any,                 big_sur:        "eca66a7308c794074802b7910afe486180908f1af436b5680b2284baae07af77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8eeb98f5ffb9f15cebc8c62eb8222bf0ddda2153f73de28253e8c205a0394324"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e88fadc80bff54c12b710f151870cf66fa9cdd187ba435b3730e0525c2952a12"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c5731abfb7cb80c9fd7ef58cf6b804bbeb4c981f440f9f3356b934e2bf64c14"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "480ef4641f0829897b8a0ecb7644bcbe5bf782dbd8ad140bd714deaf85fe70f5"
+    sha256 cellar: :any_skip_relocation, ventura:        "9a0d2e9ace4b33dca76dc4e914107e982d54cf73bdcfa4f55254245fd4392a05"
+    sha256 cellar: :any_skip_relocation, monterey:       "ab1123980c1f03e0ccec054f7fdaa34d6bd97095e6ddf786b4f7dac484c11171"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ba3c701142728fc953c87a7cd7a7999146b962959b59ddaabdd0e75b3678afb0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7dd8892054693dd4006fd7fcc1d631507b85615964d50f36ab69d7febd4f457"
   end
 
   depends_on "htslib"

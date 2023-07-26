@@ -6,16 +6,17 @@ class Conan < Formula
   url "https://files.pythonhosted.org/packages/9a/ec/325a14043fb447e16122b6595df88e4af72681388ba11516fa20712c8e66/conan-2.0.9.tar.gz"
   sha256 "c54fde1f0629c2eb51de8636c5272fc919f9e70994c579df04620bca0a479bb4"
   license "MIT"
+  revision 1
   head "https://github.com/conan-io/conan.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f37bce9117329d2ed8441d72ce0e870ae7e7d99fb0fc3b48f81b13dc90bde020"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2b73ee89df5eac18bc12182234ebc787d6aa8b879eb0d92327562e96a0730ff1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2af5a7ff39a0bdce40a57ef83a947beb5d3dfbd67c9b06e11830de17d20e2d3f"
-    sha256 cellar: :any_skip_relocation, ventura:        "16a21de043381cac1dda3218abd486dfdd38f43583191e03282e24987870640f"
-    sha256 cellar: :any_skip_relocation, monterey:       "67708a362de28718a5a7120b4075d7cf0081b27588cb3d9b3527476acbe3e51b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9d8a4fce8122ca781ef3565ceeeae6ef46931c3880ed3b8d249321f77ff7362e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2c4e3c94fec28c2518d70f0930ac181af4728c515eae24c5cf61904176cec76"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d7823dc624b7226753f06d7a92e27366872c1a65577c80b6eaffcb3fada414e6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4a53e17c20111256a48deddb16ee5eeb3157e24f7859446e99fdbf1edd0f1b77"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "aca339a0987ef41079d1b8199f4998fce3cda202592d63569c73c274b3b6568f"
+    sha256 cellar: :any_skip_relocation, ventura:        "2d2bb3caed3322d9ae3989eb8d4c328827d4ab23d6c892334c2f9d613686f478"
+    sha256 cellar: :any_skip_relocation, monterey:       "a739d7f55cc95d2130941d69cdd33a66258466dd4f011525cbe7bb23a93fb10d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "46d1b91390e16eda1416a6eb51210ddf8776cfa3e82c37790306fafbcb208ae4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5bfc23028419314a92da5db35b86696e2d673d493f6a708985f7a1768b86bd40"
   end
 
   depends_on "pkg-config" => :build
@@ -26,8 +27,8 @@ class Conan < Formula
   depends_on "six"
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

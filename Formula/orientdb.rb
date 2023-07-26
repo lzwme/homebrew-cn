@@ -1,8 +1,8 @@
 class Orientdb < Formula
   desc "Graph database"
   homepage "https://orientdb.org/"
-  url "https://search.maven.org/remotecontent?filepath=com/orientechnologies/orientdb-community/3.2.20/orientdb-community-3.2.20.zip"
-  sha256 "06506d5d538a936ccbe950d0ec792a39a5f43ef28ab1dca1bba131a6bceab47d"
+  url "https://search.maven.org/remotecontent?filepath=com/orientechnologies/orientdb-community/3.2.21/orientdb-community-3.2.21.zip"
+  sha256 "c946f2f63c4e37626efc34be8baae8aa3bc65f918cc568c9fcb5f898dab0d697"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,13 @@ class Orientdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1465ad65154d7340bc94adfa9b3568b9e28ddffb762f675b7fea705dd7e7df73"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cbf4989eead03c1c072451df5c09a7b260d090d526a8391e63a960d7ef6ca113"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cbf4989eead03c1c072451df5c09a7b260d090d526a8391e63a960d7ef6ca113"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cbf4989eead03c1c072451df5c09a7b260d090d526a8391e63a960d7ef6ca113"
+    sha256 cellar: :any_skip_relocation, ventura:        "cbf4989eead03c1c072451df5c09a7b260d090d526a8391e63a960d7ef6ca113"
+    sha256 cellar: :any_skip_relocation, monterey:       "cbf4989eead03c1c072451df5c09a7b260d090d526a8391e63a960d7ef6ca113"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cbf4989eead03c1c072451df5c09a7b260d090d526a8391e63a960d7ef6ca113"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f55fddbd4b6e653e384a432b9c27e1ac26f8acffe24ad2b9ac4c0eb3c237453c"
   end
 
   depends_on "maven" => :build

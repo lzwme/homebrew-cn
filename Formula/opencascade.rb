@@ -1,9 +1,9 @@
 class Opencascade < Formula
   desc "3D modeling and numerical simulation software for CAD/CAM/CAE"
   homepage "https://dev.opencascade.org/"
-  url "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/V7_7_0;sf=tgz"
-  version "7.7.0"
-  sha256 "075ca1dddd9646fcf331a809904925055747a951a6afd07a463369b9b441b445"
+  url "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=snapshot;h=refs/tags/V7_7_2;sf=tgz"
+  version "7.7.2"
+  sha256 "2fb23c8d67a7b72061b4f7a6875861e17d412d524527b2a96151ead1d9cfa2c1"
   license "LGPL-2.1-only"
 
   # The first-party download page (https://dev.opencascade.org/release)
@@ -20,14 +20,13 @@ class Opencascade < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "0162e3ca23a6a457c27758d74d9d381977ce440db5b73691b9c64c9853ddeb9c"
-    sha256 cellar: :any,                 arm64_monterey: "ea1fb9ba90f1f21e154831a34753c1224eb2fce1d28c8c6cd6327d8b6542167e"
-    sha256 cellar: :any,                 arm64_big_sur:  "85e47fb1a77014a39be4883157c00a4c1396e15fc77fab2daacf9399885be447"
-    sha256 cellar: :any,                 ventura:        "dcf19a023624080c74694edd1e8c0004726789711a5965b809ad09afee215a33"
-    sha256 cellar: :any,                 monterey:       "8c4e6f43b96a47c0f150e2dc9f0a1d20f79036cff1ff84a2feebb054c15c040b"
-    sha256 cellar: :any,                 big_sur:        "75ab9f445fd48c02bf5b0f4318337bcbd3a51d9d87ee0dcf1d4094a5c9efdc14"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83f337ba6677432b4380ea30745a7b3eb5d343c24cf1fcb82c7387ee04b8d357"
+    sha256 cellar: :any,                 arm64_ventura:  "602157bedc8130c093b00c47bb8db88afcf78a25273a0322942108e4da2de4e5"
+    sha256 cellar: :any,                 arm64_monterey: "f45c5356ce557cdc9f955a5760d8cf879a00c204db6ca0af2dfe5c834831239f"
+    sha256 cellar: :any,                 arm64_big_sur:  "fe63f51e03760271860a2c1ff3e828dd17a51f827714b64930c13ccc988d42b8"
+    sha256 cellar: :any,                 ventura:        "7eacf84bd049a9fe55817a525755d0a333fa12ad744d0edcc9fc5d96f821c72d"
+    sha256 cellar: :any,                 monterey:       "d41ff813c2d6bb651f86395364e89eaee7b587569538de3dbd316b0d4397a10e"
+    sha256 cellar: :any,                 big_sur:        "906d13b24952d636f37a85ea461a6cfc224c67a751bbb6a40d2942f567db9b6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "adc4fff0c7a10f5d9de8fe630881f5fe97184bf69b0003e2f19c7f0eee9972f9"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -41,12 +40,6 @@ class Opencascade < Formula
 
   on_linux do
     depends_on "mesa" # For OpenGL
-  end
-
-  # Fix a missing <limits> header. Try removing on next release.
-  patch do
-    url "https://git.dev.opencascade.org/gitweb/?p=occt.git;a=patch;h=2a8c5ad46cfef8114b13c3a33dcd88a81e522c1e;hp=7ea3eff4f88640ca23e5b1a6dad82ab4fda4a8c6"
-    sha256 "3aff4835faf75d7d48aaa53db88e00df527b65b0a930746e1b8d1534c9b368b1"
   end
 
   def install

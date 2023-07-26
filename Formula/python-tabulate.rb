@@ -28,7 +28,7 @@ class PythonTabulate < Formula
 
   def install
     pythons.each do |python|
-      system python, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "."
+      system python, "-m", "pip", "install", *std_pip_args, "."
     end
   end
 

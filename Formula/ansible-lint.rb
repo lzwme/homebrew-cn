@@ -6,18 +6,20 @@ class AnsibleLint < Formula
   url "https://files.pythonhosted.org/packages/10/04/e71f1698a113d4bfdde5d71fe227fc85f70281cf193dc2621180d102448f/ansible-lint-6.17.2.tar.gz"
   sha256 "9df62535f4228c67947548d6498884d5fa7b22ee3e947372e64ed0e5fcaba038"
   license all_of: ["MIT", "GPL-3.0-or-later"]
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2dc3ea9c8af066cbb3727d948e3b13678328ad5a52368b7c9412f24e8b2952cf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6bb4313186196a878d63523bd1fba273b5146881d9a891c25fe72a6ba30be55c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9f96c60981840f1fe06b4a7588bb747707ebfdffbe89099b7d57559855c31be1"
-    sha256 cellar: :any_skip_relocation, ventura:        "483fd05eee0e43968668dfba29728b30b34472c9dac11eb959d189683e5a864a"
-    sha256 cellar: :any_skip_relocation, monterey:       "8e5641faee12582de57d1e1b59e5d2dccdd7e6bd732174a75ef0364da77be63d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7484b0d9b6d9a7fe32dec16f1a957562f1dfd6bec9cb7917d38f66f403145e91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94dc2cfe2fdff9fd2fc084422300d9cd57b69f4ded48e5892b3303d40e913763"
+    sha256 cellar: :any,                 arm64_ventura:  "4aa6070b07a2e16237ca72e1c53ec70c0ce368db817d47e6e366f7ed0a7dcca7"
+    sha256 cellar: :any,                 arm64_monterey: "3b26a25775dc7b0ea68dc89ad23ef92546135d4024b00c5e0b0bf5c8d20a3a0c"
+    sha256 cellar: :any,                 arm64_big_sur:  "18cd86127b332a1a2f070abb70de6b30ac5b64f7a3e479583255de1607569b7d"
+    sha256 cellar: :any,                 ventura:        "206be5bed4250c9f277dba72e547d2ec450e3121b20683c6215ead70f794a4a1"
+    sha256 cellar: :any,                 monterey:       "03110651b4aa415f2a0baf9c0b85f0b8c1420d6d4a208bafcb7262d5f7d7abed"
+    sha256 cellar: :any,                 big_sur:        "b696f5caea2c58fd5e4ebe1dbc1c0a6cb8a3702ff366be419099efed5d7aa722"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3cd7ff7521a5308ddf0046e4a670a69b39009e2f662836a2a05ed38d8f29af05"
   end
 
   depends_on "pkg-config" => :build
+  depends_on "rust" => :build # for rpds-py
   depends_on "ansible"
   depends_on "black"
   depends_on "pygments"
@@ -26,8 +28,8 @@ class AnsibleLint < Formula
   depends_on "yamllint"
 
   resource "ansible-compat" do
-    url "https://files.pythonhosted.org/packages/18/22/6e223b82ba3577788348168b366ab1418c08ce1cd80c3f999bac4196d614/ansible-compat-4.1.2.tar.gz"
-    sha256 "696162dbc1223c0b474136a61662b3fe44115d490de8da606b149cee572b01ed"
+    url "https://files.pythonhosted.org/packages/50/38/47e84d84b5b2a7b37a46f49e50c5a24bbdb23ccbca0bcca07702f804692d/ansible-compat-4.1.5.tar.gz"
+    sha256 "597c836a184c1131feeb6b0e23cda236c41fecdee64427375278fb6920fd2e74"
   end
 
   resource "attrs" do
@@ -41,13 +43,13 @@ class AnsibleLint < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "filelock" do
@@ -61,8 +63,13 @@ class AnsibleLint < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/36/3d/ca032d5ac064dff543aa13c984737795ac81abc9fb130cd2fcff17cfabc7/jsonschema-4.17.3.tar.gz"
-    sha256 "0f864437ab8b6076ba6707453ef8f98a6a0d512a80e93f8abdb676f737ecb60d"
+    url "https://files.pythonhosted.org/packages/e5/a2/3e03efdd25f93e1296d0454a7680456fda2925f2ff624bf43855d785b3bd/jsonschema-4.18.4.tar.gz"
+    sha256 "fb3642735399fa958c0d2aad7057901554596c63349f4f6b283c493cf692a25d"
+  end
+
+  resource "jsonschema-specifications" do
+    url "https://files.pythonhosted.org/packages/12/ce/eb5396b34c28cbac19a6a8632f0e03d309135d77285536258b82120198d8/jsonschema_specifications-2023.7.1.tar.gz"
+    sha256 "c91a50404e88a1f6ba40636778e2ee08f6e24c5613fe4c53ac24578a5a7f72bb"
   end
 
   resource "markdown-it-py" do
@@ -80,9 +87,9 @@ class AnsibleLint < Formula
     sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
-  resource "pyrsistent" do
-    url "https://files.pythonhosted.org/packages/bf/90/445a7dbd275c654c268f47fa9452152709134f61f09605cf776407055a89/pyrsistent-0.19.3.tar.gz"
-    sha256 "1a2994773706bbb4995c31a97bc94f1418314923bd1048c6d964837040376440"
+  resource "referencing" do
+    url "https://files.pythonhosted.org/packages/ae/0e/5a4c22e046dc8c94fec2046255ddd7068b7aaff66b3d0d0dd2cfbf8a7b20/referencing-0.30.0.tar.gz"
+    sha256 "47237742e990457f7512c7d27486394a9aadaf876cbfaa4be65b27b4f4d47c6b"
   end
 
   resource "requests" do
@@ -93,6 +100,11 @@ class AnsibleLint < Formula
   resource "rich" do
     url "https://files.pythonhosted.org/packages/e3/12/67d0098eb77005f5e068de639e6f4cfb8f24e6fcb0fd2037df0e1d538fee/rich-13.4.2.tar.gz"
     sha256 "d653d6bccede5844304c605d5aac802c7cf9621efd700b46c7ec2b51ea914898"
+  end
+
+  resource "rpds-py" do
+    url "https://files.pythonhosted.org/packages/da/3c/fa2701bfc5d67f4a23f1f0f4347284c51801e9dbc24f916231c2446647df/rpds_py-0.9.2.tar.gz"
+    sha256 "8d70e8f14900f2657c249ea4def963bed86a29b81f81f5b76b5a9215680de945"
   end
 
   resource "ruamel-yaml" do
@@ -111,8 +123,8 @@ class AnsibleLint < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
-    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   resource "wcmatch" do

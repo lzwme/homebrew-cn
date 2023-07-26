@@ -6,16 +6,16 @@ class Chatblade < Formula
   url "https://files.pythonhosted.org/packages/02/bc/c3dd9e46eaeae6218909b2a13b79a71b8b6ad30fe7ede8f9dc2dba530d5b/chatblade-0.3.1.tar.gz"
   sha256 "401511bcf7c305b845f80850d12b07627673af944ddfa0aa6b60eb010656d205"
   license "GPL-3.0-only"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8d4fcac9bacc02265caf3ba74e684b86640b245b82850efa6e89c05d9ca11a8f"
-    sha256 cellar: :any,                 arm64_monterey: "77b8b41c3ad4da165df05dc4da410825c31cfeecb1754fc6d843bbeaa7527c03"
-    sha256 cellar: :any,                 arm64_big_sur:  "9fcc8a0369d630f31a948df4916fa5bcf3849f26b3aca4db41eb3d6be5043c04"
-    sha256 cellar: :any,                 ventura:        "59dcab38e02cc8903a4ff937c650a415630ad642c7b786e96b9d870fc8fb9190"
-    sha256 cellar: :any,                 monterey:       "6106b9c3f94e5d6edbefedf5b03fc80cfa906f84b685b7daea819d67a84fdd1b"
-    sha256 cellar: :any,                 big_sur:        "929776d0921f8e2438969d6ca17abcf4f065874c56152893e9830a05d1b82252"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7cc1f46f758db6a79b6cced76728a71305bc1302a56cc4c156648b56f37d9e3d"
+    sha256 cellar: :any,                 arm64_ventura:  "b0ed3f981dd53db1c454a014886a40aae3771463bfd1dd63af1223270caa9aa6"
+    sha256 cellar: :any,                 arm64_monterey: "24f7e2a3b936434c51180ff02679bf25bb1b61bffbfc21e1a654160a04d4dcb9"
+    sha256 cellar: :any,                 arm64_big_sur:  "4fd53066ced3bebf833afdd383e9775996790e8d9c15f9b666ae104dcd6eecdd"
+    sha256 cellar: :any,                 ventura:        "65e2ec5693a6cd9eed600a37f2d0cc20281f6f322af82d02d4de3ef2d9acbbb2"
+    sha256 cellar: :any,                 monterey:       "c3f2730097f501179b39bb6ea6511bd93d22521a17dd266b54aa3dc6def11aba"
+    sha256 cellar: :any,                 big_sur:        "c4eb83160aaeda296e8b389e437e2298a132fac2702cc0c409b580a87773d516"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42a4a9078b7a98d8cba511135f206af4968d56305363bb9fe47c69301e677267"
   end
 
   depends_on "rust" => :build
@@ -44,8 +44,8 @@ class Chatblade < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

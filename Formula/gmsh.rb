@@ -4,7 +4,7 @@ class Gmsh < Formula
   url "https://gmsh.info/src/gmsh-4.11.1-source.tgz"
   sha256 "c5fe1b7cbd403888a814929f2fd0f5d69e27600222a18c786db5b76e8005b365"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://gitlab.onelab.info/gmsh/gmsh.git", branch: "master"
 
   livecheck do
@@ -13,13 +13,13 @@ class Gmsh < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a8328f219a8147ed59c2a914dba9bad2416f0103c8da2d4e392ae31206c0e1ef"
-    sha256 cellar: :any,                 arm64_monterey: "81a4f86a19b14711a4ffd3cc92c5f27f76ec624861e5e8484a0dd17151d0c0b7"
-    sha256 cellar: :any,                 arm64_big_sur:  "0939ec2c63ce60d4c20cd6ee27d061197136e2107f4ea100b0d0349ee3176d39"
-    sha256 cellar: :any,                 ventura:        "a5d273c8b3530f4ecf9825a785031a950f54074e143e271e569bead5d94ca424"
-    sha256 cellar: :any,                 monterey:       "d68df2536c01f6eec7a9289c41e9352af8892836705f5296f004d0adf3d2996e"
-    sha256 cellar: :any,                 big_sur:        "9b19a36a83a4196d644dc6a3831e7914b649af8e08c177326488a52d45066135"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74a034d2ed6390d1f814d966807f3123a7689b2d179fdf9e7882e87cd6b1b4b7"
+    sha256 cellar: :any,                 arm64_ventura:  "b52ab40cdc7dd587293a4a2a61ac27b3422003ef3cef628977e83e8e714986a7"
+    sha256 cellar: :any,                 arm64_monterey: "cebc34ca3c942f8e3d20c20f29a2c05bfe3f21dc4d1ff40d571ed113184b5599"
+    sha256 cellar: :any,                 arm64_big_sur:  "45d996cd1b5e511d088e68f14c80815219a9c13e52f4cf6db8aeef09aa18f296"
+    sha256 cellar: :any,                 ventura:        "85b538e6af48d69e9b3b22f4104e31f85aecd21d2ebb9b9c31f49ff27b019678"
+    sha256 cellar: :any,                 monterey:       "921ae55327547c4885b992c04ea84b5ecc26a7c6b8066fdf072b4d871aaece22"
+    sha256 cellar: :any,                 big_sur:        "2ff8a02f3d415212e67e5ee7d27045ee904bf6d56b8bece974922d5a11673310"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8a9a895160065b7791653f2a06086acdf74ef6d21995528aa40aa3ae094b7a1"
   end
 
   depends_on "cmake" => :build
@@ -30,6 +30,9 @@ class Gmsh < Formula
   depends_on "opencascade"
 
   def install
+    # Workaround for Xcode 14.3
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     ENV["CASROOT"] = Formula["opencascade"].opt_prefix
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,

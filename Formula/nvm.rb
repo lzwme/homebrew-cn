@@ -1,13 +1,19 @@
 class Nvm < Formula
   desc "Manage multiple Node.js versions"
   homepage "https://github.com/nvm-sh/nvm"
-  url "https://ghproxy.com/https://github.com/nvm-sh/nvm/archive/v0.39.3.tar.gz"
-  sha256 "2ab9ef6659ebce9686e82728f1eb857a3c2e91af2a631490ddb89eeb283aa540"
+  url "https://ghproxy.com/https://github.com/nvm-sh/nvm/archive/v0.39.4.tar.gz"
+  sha256 "d5929f9f96b6c1546867f4964bcb1799f3d0a61f5a35a7c8ccb87b36fd8f0eb1"
   license "MIT"
   head "https://github.com/nvm-sh/nvm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c866a2944863d309ea36c2ce9b2d8fbf8acea06d848654a1f5e9974d6f6c1d14"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca010bc660158fc3f27668146d1c32a9a5054a27823b6beb2dfe7af4a56a8d6a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca010bc660158fc3f27668146d1c32a9a5054a27823b6beb2dfe7af4a56a8d6a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ca010bc660158fc3f27668146d1c32a9a5054a27823b6beb2dfe7af4a56a8d6a"
+    sha256 cellar: :any_skip_relocation, ventura:        "ca010bc660158fc3f27668146d1c32a9a5054a27823b6beb2dfe7af4a56a8d6a"
+    sha256 cellar: :any_skip_relocation, monterey:       "ca010bc660158fc3f27668146d1c32a9a5054a27823b6beb2dfe7af4a56a8d6a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ca010bc660158fc3f27668146d1c32a9a5054a27823b6beb2dfe7af4a56a8d6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bce7a3f249619df50c1ab12a5a5d19487926380365ffe0571e659cd9389c3ff1"
   end
 
   def install
