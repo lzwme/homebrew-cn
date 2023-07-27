@@ -1,10 +1,9 @@
 class Htslib < Formula
   desc "C library for high-throughput sequencing data formats"
   homepage "https://www.htslib.org/"
-  url "https://ghproxy.com/https://github.com/samtools/htslib/releases/download/1.17/htslib-1.17.tar.bz2"
-  sha256 "763779288c40f07646ec7ad98b96c378c739171d162ad98398868783b721839f"
+  url "https://ghproxy.com/https://github.com/samtools/htslib/releases/download/1.18/htslib-1.18.tar.bz2"
+  sha256 "f1ab53a593a2320a1bfadf4ef915dae784006c5b5c922c8a8174d7530a9af18f"
   license "MIT"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,13 +11,13 @@ class Htslib < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d7848a7937ef7f417911e5b0c11a9317de1597aea317912a34a45f19319d2edc"
-    sha256 cellar: :any,                 arm64_monterey: "98a7488f931681e9df965d1e55ea72b834e40b460a64648d90bc3f5324cd7cbf"
-    sha256 cellar: :any,                 arm64_big_sur:  "e8bf594d1b9f6f3f26e2a80d13866a88d11eb66dbba01081ad6b9e9d90d17895"
-    sha256 cellar: :any,                 ventura:        "55ec940236a95fed446ee41f05e926e9e4af7626b85378a15b8631ecca091d62"
-    sha256 cellar: :any,                 monterey:       "9c6ab8c15fa6cf1ee526490ad3ab831c5a809f47db60e60f7f8d5e3a27bc9324"
-    sha256 cellar: :any,                 big_sur:        "396446a87d57877f76513c41678513d48629503050c6bebeda58b539d33712d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5eeb51a686f7eac767e4d49a4a1b175c602c7eb575f214553637517d25b5773c"
+    sha256 cellar: :any,                 arm64_ventura:  "91a1f7a53a4abbeb29c62182ee75ce6bb5fcbdc57f04a36831e482c82ffa8826"
+    sha256 cellar: :any,                 arm64_monterey: "b3b38e38ae0e95509243d7f12b68cfba0ebbfc27ecacabe8d0f80f941ecedcb6"
+    sha256 cellar: :any,                 arm64_big_sur:  "2c23c15552d3b1b6d283b9ed2c3985759cde5cd051fa06251859b0c46a305f78"
+    sha256 cellar: :any,                 ventura:        "c1ded4ddaa43bf6bf33346a02291e37a4658915733d7efcdc06cf7beb46794e3"
+    sha256 cellar: :any,                 monterey:       "c7b62fc25f7ba87ba05b03ed4e2956ec452d7d581de22fb7725bbee454aa750f"
+    sha256 cellar: :any,                 big_sur:        "b23cec30df6a656cd3f12afc92eb7aa11cce3d3c20f735482bced92a5e6a1eca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a500e3984c38cf9e2b48d5b4c7c8ef85e234ab2d384bdabd449acac501d4f1f7"
   end
 
   depends_on "xz"

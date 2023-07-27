@@ -3,19 +3,19 @@ class PythonMarkdown < Formula
 
   desc "Python implementation of Markdown"
   homepage "https://python-markdown.github.io"
-  url "https://files.pythonhosted.org/packages/9d/80/cc67bfb7deb973d5ae662ee6454d2dafaa8f7c106feafd0d1572666ebde5/Markdown-3.4.3.tar.gz"
-  sha256 "8bf101198e004dc93e84a12a7395e31aac6a9c9942848ae1d99b9d72cf9b3520"
+  url "https://files.pythonhosted.org/packages/87/2a/62841f4fb1fef5fa015ded48d02401cd95643ca03b6760b29437b62a04a4/Markdown-3.4.4.tar.gz"
+  sha256 "225c6123522495d4119a90b3a3ba31a1e87a70369e03f14799ea9c0d7183a3d6"
   license "BSD-3-Clause"
   head "https://github.com/Python-Markdown/markdown.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fbb7e84f3bc3f6bd8fae703ed60ff57daaf6ef82383907c872958a1cdfdf6db5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bd282bb3955a3e2d64d25ce08f1b22bdf45aeed5b6b47da65abf24ffdf140b41"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "673aae28dae095360cd72d5a15c11af1bbd8a3944b647ea35946e9f078c823d9"
-    sha256 cellar: :any_skip_relocation, ventura:        "8c1c56d94bb3e8cd156d813d826d2abd72df57836ba9a268f2ecfb13a338bb2d"
-    sha256 cellar: :any_skip_relocation, monterey:       "a0abb5fc97a4ae02aeb223a3c628dcb53d1c7cb6c0dc50a220597f357d38dfa9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d146410c188f27b4a286783feb03f1b0177ed191a4d6f9909465a5e46b229a8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a89ae63cb9d801ab57cbcc5be7d16ff62d1443e60da46497ae392b7e2d4352f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e47ce3cd5f32d01e63145054e502a7231901b74fd3163f97050192d70427457e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d2e789fd1839fc8747f4bfd3f09d82fb322b38de1818890767198f57977dc9aa"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c06919942f75f4a11144be345117bd9a8232769728425ecc4acec53e182e3c93"
+    sha256 cellar: :any_skip_relocation, ventura:        "09a71189f52aed377371795afc3f45071451a96a8553a66291e62b4097c7834e"
+    sha256 cellar: :any_skip_relocation, monterey:       "786b7b5b79deca23a668f5746f4c2aeb2ef04fb5944465f1149a10783cc7b6c7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "35a65f9f3da4fdcc06ddf07b0cbc0ecf9b6e84e3077f63e52844f94a781fc67d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59f716c12dd644e01512e9815ccd100070e28e4c8ccee5db92a6d309675e174c"
   end
 
   depends_on "python@3.11"

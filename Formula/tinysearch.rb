@@ -1,19 +1,19 @@
 class Tinysearch < Formula
   desc "Tiny, full-text search engine for static websites built with Rust and Wasm"
   homepage "https://github.com/tinysearch/tinysearch"
-  url "https://ghproxy.com/https://github.com/tinysearch/tinysearch/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "3330a8b91a83d9e452f71ba065778bc0eb2be0504f7707bd11b729bf501395e5"
+  url "https://ghproxy.com/https://github.com/tinysearch/tinysearch/archive/refs/tags/v0.8.2.tar.gz"
+  sha256 "103214d77f0624bbb7e396667136156fdb8c8c7abeb6860adb231bf2a00b256d"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/tinysearch/tinysearch.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "27b1c4d80f00537eac5cf8e0c06ee7c5ec3694b9f0c64bde1cf83fd7b9d02a15"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4bcb1e61a1b15295ef1825801509801a4c11357da93f8b81e23bfcc59757e159"
-    sha256 cellar: :any_skip_relocation, ventura:        "280dc34a0daf7c49230a27168d9c54adc9c1160023e52819fe4fc4ec8ce05512"
-    sha256 cellar: :any_skip_relocation, monterey:       "c26c581707c1a5d317194a05c694715a6b6773df1ff2ce90d597a439990b5166"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e590809eeb3920451cad5946a72ed29c8307e4eb99d5f01ca6d442f50e620406"
-    sha256 cellar: :any_skip_relocation, catalina:       "df5917867187c13145ea83ad38f9f285b2597073dbdb434d30c692b15b8d145e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb1db2583422d8eddef366f8f587ef875add2657552bfec8e467fc3798f3c32e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d3112dab46ff4f6ebfcd130e186cca018d7e72cf503a6a74b8e632dfe30ff147"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e6419da17e1e7c0f7bc74eeefd60d9fec429f9a351bfa6732336207da27ba62e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1a3f5895d2f977f0c32c7a80798922f56ea1f628bb6522de0243a74ef9ee6635"
+    sha256 cellar: :any_skip_relocation, ventura:        "149fcc1be09119c692b20381ed2646170c004909a1998ddab8b5e451d19e6c0c"
+    sha256 cellar: :any_skip_relocation, monterey:       "bb5e206aff6a7ffbf2bf1da5dbb9907e6e72873ad507059f53699984080e6fe6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0a256b304d49a871b20915721fde4aea47ef132afa5cd537c6bfba36b8ff24d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "741bdce133c7ac5a2fecddb639fa17b3d7b11c3a2adda9f7998bf69e5b2376ce"
   end
 
   depends_on "rust" => :build
@@ -22,7 +22,7 @@ class Tinysearch < Formula
   depends_on "wasm-pack"
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "bin")
+    system "cargo", "install", "--features", "bin", *std_cargo_args
     pkgshare.install "fixtures"
   end
 

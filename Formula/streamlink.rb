@@ -6,16 +6,17 @@ class Streamlink < Formula
   url "https://files.pythonhosted.org/packages/64/95/e9456f9936ba088b68f2ac1a5dbc207fdb277d7ee7caf6247838532e68d3/streamlink-6.0.0.tar.gz"
   sha256 "05e3fe60e06d4f3d43fff2c304c85afb4ef25577600477cce2fe1a54d1f3c00c"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3242fce520ffbe3ca14b03e2582f88f6afa07eb3e32e19bca7f69b4b6de75780"
-    sha256 cellar: :any,                 arm64_monterey: "85560a441fd9a56c777fa2c5169cb0ee8bac559e3d700ba0d7fce43a4d53bbdf"
-    sha256 cellar: :any,                 arm64_big_sur:  "82873b13786338389d2fc130733b1cbbbcca26c0bb595fa9de49f341de81ca8e"
-    sha256 cellar: :any,                 ventura:        "9961e8bea1dc96025937e8fc6fc2e0745db9a8ce50aed4f1602c3f5d4e17ed3f"
-    sha256 cellar: :any,                 monterey:       "2d0d32bff5aa437d85277a85d8ca2df57549ec2e2e31bb730a38f34a4e747240"
-    sha256 cellar: :any,                 big_sur:        "62bbfa4ef0883f9660dea164adeb9cefa829f4752a2845e9e72a60d8076da137"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8eb5d417e590937d5c6fa1543087d9f1c444af422878f22b66c072fdcd319b12"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c6c937e361797715930fdcaf55ca5e55a7c9528fa48b1aed9212ac35ccc85311"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b34cfc44bb1f1d440f78087f95be0aefcbd5fb05c8e5f0841c8321a5005a1260"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d2ccffd7ddb051aa7459e6897c5123e7648668e7e9d5fd5153985a7935256823"
+    sha256 cellar: :any_skip_relocation, ventura:        "0a7a29de5bd3f0c58a9c59072adb699e5781cf05505bca176134be63d9d64bda"
+    sha256 cellar: :any_skip_relocation, monterey:       "ecd04521687612dd3ca4357b823593bf1cdccd27f9bb1ccec4d71b532a59ce8f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "febdba84b2110011c9f7beddd467d0bc7983eea801a2fc5ab6b2dcdb285e5823"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0eadadbe142f4034d4803b93c4d614397065d8a1e5ddac33c289ef053ee390c1"
   end
 
   depends_on "libxml2" # https://github.com/Homebrew/homebrew-core/issues/98468
@@ -36,8 +37,8 @@ class Streamlink < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

@@ -6,15 +6,16 @@ class HuggingfaceCli < Formula
   url "https://files.pythonhosted.org/packages/38/a5/eac7345cff754bfe84933a99811d720e892671cccfcac5ac023f66efdc5f/huggingface_hub-0.16.4.tar.gz"
   sha256 "608c7d4f3d368b326d1747f91523dbd1f692871e8e2e7a4750314a2dd8b63e14"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f167074739787fd016d792b27d7ba73976fe97c9bc18d2fa3a8d2a749df9740"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "80ecba15fbef7afb1ea1f6c031bbc19bc4ecb190c4b4beee70324a8b86f7d438"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1096fe84de01e8e80e93f1e7c020d8eaa340a5456f199f6da3cc554e62df9900"
-    sha256 cellar: :any_skip_relocation, ventura:        "c86ee1639fc862a8f5bc03e47aa482ce90768b030d0a8add5870b0060c1d9008"
-    sha256 cellar: :any_skip_relocation, monterey:       "5624c23a1d7703326633c51044cdf6bd12ac62764861c389fa800015d7ea1735"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d1bccfe204dede900c74789320ce88ab0ee7ec28fe98ad3422793f6cfb31796a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34436d7ecba96b6d3596cf5428fc143ff82c9392318f095cf92dd2c5b232a557"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eec07b9196ccf36b6166292f51145f2987ee716a065f9148cd3d156333bb1a3c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a55325e197c9464ab3f9b820e21c7a4bd1f6bbf7d34fa6d1d73822456bdc4ab5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "85b7ab22808ae9466d9977af8839907cad78ac0b151f7ab6ba802f620711185f"
+    sha256 cellar: :any_skip_relocation, ventura:        "f3db41e3a10b4535bb92069b8d23e6391d0366dcce2ab891b9ae6b92335b57bf"
+    sha256 cellar: :any_skip_relocation, monterey:       "6f24225394678155b17bbfcbcbe997abbc4ab70f25378801b9f0e7e1ea449d01"
+    sha256 cellar: :any_skip_relocation, big_sur:        "58b9aa4b2ecfab65a83b676f64dfc797e192416a41f9a49a99dbf8933a1aa259"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5f5cbc2c8a08a28ba7d65f7a977ab3dd0f3e358d8c358c71936ef55091f5591"
   end
 
   depends_on "git-lfs"
@@ -23,13 +24,13 @@ class HuggingfaceCli < Formula
   depends_on "pyyaml"
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "filelock" do
@@ -63,8 +64,8 @@ class HuggingfaceCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
-    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   def install

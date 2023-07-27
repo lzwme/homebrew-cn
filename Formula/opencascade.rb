@@ -5,6 +5,7 @@ class Opencascade < Formula
   version "7.7.2"
   sha256 "2fb23c8d67a7b72061b4f7a6875861e17d412d524527b2a96151ead1d9cfa2c1"
   license "LGPL-2.1-only"
+  revision 1
 
   # The first-party download page (https://dev.opencascade.org/release)
   # references version 7.5.0 and hasn't been updated for later maintenance
@@ -20,13 +21,13 @@ class Opencascade < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "602157bedc8130c093b00c47bb8db88afcf78a25273a0322942108e4da2de4e5"
-    sha256 cellar: :any,                 arm64_monterey: "f45c5356ce557cdc9f955a5760d8cf879a00c204db6ca0af2dfe5c834831239f"
-    sha256 cellar: :any,                 arm64_big_sur:  "fe63f51e03760271860a2c1ff3e828dd17a51f827714b64930c13ccc988d42b8"
-    sha256 cellar: :any,                 ventura:        "7eacf84bd049a9fe55817a525755d0a333fa12ad744d0edcc9fc5d96f821c72d"
-    sha256 cellar: :any,                 monterey:       "d41ff813c2d6bb651f86395364e89eaee7b587569538de3dbd316b0d4397a10e"
-    sha256 cellar: :any,                 big_sur:        "906d13b24952d636f37a85ea461a6cfc224c67a751bbb6a40d2942f567db9b6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "adc4fff0c7a10f5d9de8fe630881f5fe97184bf69b0003e2f19c7f0eee9972f9"
+    sha256 cellar: :any,                 arm64_ventura:  "58ccfbc5b3cce2e4526201ae799b57b5b56baa105eaeb7df521407a803ff58ff"
+    sha256 cellar: :any,                 arm64_monterey: "4036d7412743ad4f9fad8a260b1c9d4d178a6181a85458251c2431be25b1df4e"
+    sha256 cellar: :any,                 arm64_big_sur:  "26f8f8d7bfde327d8ce6dfcca92027d65de3cdbf58c2a6ef1c8ef0bc014499ac"
+    sha256 cellar: :any,                 ventura:        "735838ed1b509a878a101690451c0348103292e2b0a89a6d721acc79c01358d1"
+    sha256 cellar: :any,                 monterey:       "4f31d63a97dc8ed4993cc94f1ce0052b0fff4e6c0b0632a592aadaca55ca741c"
+    sha256 cellar: :any,                 big_sur:        "dea2039879a80c1464ea88caedf93d5cfdc094f26b5695cf29b4c7a9985611b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8121480f2fc82a5806b43323a053dc39626ef8c3612c831633d0d7885819477f"
   end
 
   depends_on "cmake" => [:build, :test]

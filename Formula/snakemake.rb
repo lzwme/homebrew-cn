@@ -3,19 +3,19 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/77/a8/3d10d50d906fa36a11e0ade9043c639b2ecdb6386703c914a06da6f58b26/snakemake-7.30.2.tar.gz"
-  sha256 "0cb86cf9b43b9f2f45d5685cd932595131031c7087690f64c5bc7eaec88df029"
+  url "https://files.pythonhosted.org/packages/86/9e/58a88ff8a3cd59af4b39abada615d769aa73e122833ab43603e5a008ce37/snakemake-7.31.0.tar.gz"
+  sha256 "ee7b413559935d00326c78ead1004781cbb262eae1eab02fc4939e8f502cc3b4"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ddff8bd1734859e272db3bbb4fd2b9dc5fecd9745959c59b8bf5e6857ecef344"
-    sha256 cellar: :any,                 arm64_monterey: "f7e5da2c77109863c2cb1c4292500d87b8dbfb0d38c6bc13d59695e91e0c1543"
-    sha256 cellar: :any,                 arm64_big_sur:  "b772964cd678be0db3594ed331893d5d81af65aef0ed3f136c726d945837d4e6"
-    sha256 cellar: :any,                 ventura:        "c032e5897f639737387ad88f6ab651cf98edf9f5d818f51148d4799d39b39163"
-    sha256 cellar: :any,                 monterey:       "bcc04201990fb5cc246d5605dc83e8227ea497c623f86aeb0c9baf76084539d1"
-    sha256 cellar: :any,                 big_sur:        "86daabb9dd36859c0e58c52b81693bd6d54dbd56ee05e9ae535888842316ef22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a06068c6044225f508e9a7b5ef8b04a01d76d09a172f9ea18e7dcf62ca78ffa0"
+    sha256 cellar: :any,                 arm64_ventura:  "34c4b6cf64cfa22780223999df5379d624c310118bbd8f5be9299f9158f1a84d"
+    sha256 cellar: :any,                 arm64_monterey: "437fd540180d98e805f24013d0b1c7f789b333341310a5a8a65b53692d5a473a"
+    sha256 cellar: :any,                 arm64_big_sur:  "720662feff15f3c27e7d00bee6b2d142b9f73622ce07bb4107f7d0e57606ab33"
+    sha256 cellar: :any,                 ventura:        "fcafead5a076dccab331ce227cd14e976456f771196a37a5bf4fbed9700091ce"
+    sha256 cellar: :any,                 monterey:       "39dadecf46f601874bb85ba0e04c46c9128c23b2d5708c9a160de89a49fa5070"
+    sha256 cellar: :any,                 big_sur:        "f6b790ee2988f07bb8aa41f102122b2759ea1bcfa758b377a5e60ad37c994baf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd2c478686a53014996cddb722637cfe3494aa23beec7565061f3ffbc7f643cd"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -36,8 +36,8 @@ class Snakemake < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
@@ -46,8 +46,8 @@ class Snakemake < Formula
   end
 
   resource "configargparse" do
-    url "https://files.pythonhosted.org/packages/3c/fb/bf200c55a1e7014577c37fa9cbfa0148f629762bb3acff56299d8c58cbc3/ConfigArgParse-1.5.5.tar.gz"
-    sha256 "363d80a6d35614bd446e2f2b1b216f3b33741d03ac6d0a92803306f40e555b58"
+    url "https://files.pythonhosted.org/packages/70/8a/73f1008adfad01cb923255b924b1528727b8270e67cb4ef41eabdc7d783e/ConfigArgParse-1.7.tar.gz"
+    sha256 "e7067471884de5478c58a511e529f0f9bd1c66bfef1dea90935438d6c23306d1"
   end
 
   resource "connection-pool" do
@@ -66,8 +66,8 @@ class Snakemake < Formula
   end
 
   resource "fastjsonschema" do
-    url "https://files.pythonhosted.org/packages/a4/e1/cda97fa4447e138f1f0ccfdaf678fa247415f7e9f4942d856fd63c7d863c/fastjsonschema-2.17.1.tar.gz"
-    sha256 "f4eeb8a77cef54861dbf7424ac8ce71306f12cbb086c45131bcba2c6a4f726e3"
+    url "https://files.pythonhosted.org/packages/e5/23/cd3d068a28f030efa05169a9f3fcfb091532614ae9abd3f047d50373bed7/fastjsonschema-2.18.0.tar.gz"
+    sha256 "e820349dd16f806e4bd1467a138dced9def4bc7d6213a34295272a6cac95b5bd"
   end
 
   resource "gitdb" do

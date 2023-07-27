@@ -3,10 +3,9 @@ class ConanAT1 < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://conan.io"
-  url "https://files.pythonhosted.org/packages/a6/9f/14bc31c3db1d07093ef9b5a8b1e4f23bd9616fea07e5ec9291c6738b9874/conan-1.60.1.tar.gz"
-  sha256 "d6a487cc82fa3d6b5101ba135a51409e2939541ebf1df48219f8b7f02544a54e"
+  url "https://files.pythonhosted.org/packages/d3/36/fd43c8e0240aebdb11779bc3557097b054a0073fc5deca53619410988e37/conan-1.60.2.tar.gz"
+  sha256 "3706eb21c189712cd2da3030fc4c7dad0db436043a4fdf5b4f4951f9619c99df"
   license "MIT"
-  revision 1
 
   livecheck do
     url "https://github.com/conan-io/conan.git"
@@ -14,13 +13,13 @@ class ConanAT1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "61a83b4e030a9489d9deddaa58e1c4e1315ded0fb7f7764c2565f2ee8e4039c9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "59b9a47dde58d21edf7c1643f078e7abbfe027d7e7e83561d5f68fd4849fde2c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4581f73aad8acea26be543a178249c502e48665df42c438d6777a76b2b458cda"
-    sha256 cellar: :any_skip_relocation, ventura:        "6ae43cb2aefe72fde7b1cc12cc0a291aa8a00123b38f392eb7aa2a3c91a63ce6"
-    sha256 cellar: :any_skip_relocation, monterey:       "cc5a40f2d289be984e83f6cae881830980093594e2a5a41182556dca0267aa11"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b03bfb88ec22dd35143e2dbe138e0a21d65e806b86c37641a926960b1c71c5f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61bc0bde3ec3da30ff5aca93cca9240cdb460d866ea59332bbac8a7fc3410047"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "333f9817709f31c46dea7a440d532ffb20edaf5aefa7b776519aac4f327398be"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7c369ef24286810b3d03cfccc1b265c88093208043ecca87158de654474e8b4d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e9643d978b0797ab339936f4c353ee0e228cd55e9d55ae01b6c0195d6e7b01c9"
+    sha256 cellar: :any_skip_relocation, ventura:        "78697dc37ec0f5f8ce1d85bedbdfc89a6b7bc04ef38fd5eaf320c0ff7843a468"
+    sha256 cellar: :any_skip_relocation, monterey:       "52cccae6e6638bd9241db512d4edefa6e8cd635e751200ee9caaaf1335c0c6bf"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5276d24fea8117935354216543f1b6531d047f801520c590d9967033eae561a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6929ad32e6b8a2d61abd4013cbe01ef12b7929337c340eacc45d8839c5acaf5"
   end
 
   keg_only :versioned_formula

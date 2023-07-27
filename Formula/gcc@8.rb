@@ -9,11 +9,6 @@ class GccAT8 < Formula
     "GPL-3.0-or-later" => { with: "GCC-exception-3.1" },
   ]
 
-  livecheck do
-    url :stable
-    regex(%r{href=.*?gcc[._-]v?(8(?:\.\d+)+)(?:/?["' >]|\.t)}i)
-  end
-
   bottle do
     rebuild 1
     sha256                               monterey:     "438d5902e5f21a5e8acb5920f1f5684ecfe0c645247d46c8d44c2bbe435966b2"

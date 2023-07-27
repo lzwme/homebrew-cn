@@ -6,16 +6,16 @@ class RichCli < Formula
   url "https://files.pythonhosted.org/packages/ca/55/e35962573948a148a4f63416d95d25fe75feb06d9ae2f9bb35adc416f894/rich-cli-1.8.0.tar.gz"
   sha256 "7f99ed213fb18c25999b644335f74d2be621a3a68593359e7fc62e95fe7e9a8a"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 5
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da449cd53aab0ede01ab83280c635b0cc9329c1f5ee9735ae1b3c7a17f61d4d6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d6e4562b61ec8f46e9bb81183c71d05f5e0f1ba0e57b12062802737c9cab291d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e6e56be3d6df648da8a49ae688b9384b5fbed162fceafffb01080a16877170a2"
-    sha256 cellar: :any_skip_relocation, ventura:        "ae284b5254112f18f46eb39b5e3e1632a8a5852adc35c39dbe426142a75cbc40"
-    sha256 cellar: :any_skip_relocation, monterey:       "701917623ac75842c8b189353e833bbb8d92f2aaddaef1294b573145491611c2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ed290691570f053757cab15c5dc3f556e1a544d892859261a0bbe60677288812"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb9b67c1fc53924fd57def32d7383aa101d1faaf239e55d37f11387e5ababb62"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f961b13b045eba17f9f9689c57adae93064964e7932000704680d276ac4cb41f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "da1ddf72578a2b75b17a03cec5fe34edaecdd3cc3b7fb97a04d266147ae97cd0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d7e00cdbe208a1d53f8effbaf07b38d0304e17495f197c0a2cd7ef22df914013"
+    sha256 cellar: :any_skip_relocation, ventura:        "3e1bc58e40a09e9037b465bb3f7b6b6cc8eaedf5e2c6d04453eefc55bae24961"
+    sha256 cellar: :any_skip_relocation, monterey:       "874ec8d00b544a42297dd8e4db87f8fbcb585f9045780d083f0f81a522952663"
+    sha256 cellar: :any_skip_relocation, big_sur:        "91a5cc498de6e323c4da9a3fd1e20d904debd8c63eb62189bc87c731d0bdcb1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfee3cfdb240149d233d7b6484c0cc1c1b3259b056b93685e63c66de0d5a32c5"
   end
 
   depends_on "docutils"
@@ -23,18 +23,18 @@ class RichCli < Formula
   depends_on "python@3.11"
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
+    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
   end
 
   resource "commonmark" do
@@ -68,8 +68,8 @@ class RichCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
-    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   def install

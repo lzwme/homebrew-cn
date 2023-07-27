@@ -6,28 +6,28 @@ class Internetarchive < Formula
   url "https://files.pythonhosted.org/packages/7a/6a/ce5deecc9a65709e48367bf949874551fee5f4f595141b7fd0d4426b0d95/internetarchive-3.5.0.tar.gz"
   sha256 "2a9625e1dcbe431e5b898402273a4345bf5cb46012599cbe92e664ffdc36e881"
   license "AGPL-3.0-or-later"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6979a8df04c2b96c717645c1d91bb05474df7c29ddd58895728dd3285de215a8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "11035230c4642dab1260f9a0022afda655231254fbacfd20afd038ba3871471e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0b0148792c427b8a7a2f4a0f509c8ecc34f8ac20778e7a124054af66ca80bb75"
-    sha256 cellar: :any_skip_relocation, ventura:        "a1eb62ac62ddc76be53668850be62b2c4a51cfdf4a1cda7d7f6abe66bd832b20"
-    sha256 cellar: :any_skip_relocation, monterey:       "2b481ac7d22167236b8120fd7b1b8e656294aea7148e43b5d44f8fc6d15c7fe9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "061070cf622192c81f1944aee5fcd0509e6b7ecd5c9a68556a23b57816214c3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7504f713f18bae737c47a262eaf15f3ed4f9cd8847df676ad221b4a041afa0a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ff6490e3193adcc92ec02e792e7afbac568af328e0d5bbf4d234370ddc700de7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "37c988c54f139998c0ff58aadc280e7580bbda40ef0bf0a4a03f139dc9605435"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "819193bed034eeba98111bcdc930f3c407bd1c7c4e08c9888e0f1bdb1e9e1803"
+    sha256 cellar: :any_skip_relocation, ventura:        "272bc32532c8a4b0d5479300282d112a7cd4d34754a489f86e236173a483e9bc"
+    sha256 cellar: :any_skip_relocation, monterey:       "07c4c113ba50de73af346c9aaa832274930242b0c3cddc866848401eb9e3c32a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b47b250bb9a507a6384d9474d1fd9da02491c7db41a4606bd799e78775324d6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d93591e650c8c684f5beba8bfe7bf834d99666001420b66789313e727bc0965"
   end
 
   depends_on "python@3.11"
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "contextlib2" do
@@ -46,13 +46,13 @@ class Internetarchive < Formula
   end
 
   resource "jsonpatch" do
-    url "https://files.pythonhosted.org/packages/21/67/83452af2a6db7c4596d1e2ecaa841b9a900980103013b867f2865e5e1cf0/jsonpatch-1.32.tar.gz"
-    sha256 "b6ddfe6c3db30d81a96aaeceb6baf916094ffa23d7dd5fa2c13e13f8b6e600c2"
+    url "https://files.pythonhosted.org/packages/42/78/18813351fe5d63acad16aec57f94ec2b70a09e53ca98145589e185423873/jsonpatch-1.33.tar.gz"
+    sha256 "9fcd4009c41e6d12348b4a0ff2563ba56a2923a7dfee731d004e212e1ee5030c"
   end
 
   resource "jsonpointer" do
-    url "https://files.pythonhosted.org/packages/a0/6c/c52556b957a0f904e7c45585444feef206fe5cb1ff656303a1d6d922a53b/jsonpointer-2.3.tar.gz"
-    sha256 "97cba51526c829282218feb99dab1b1e6bdf8efd1c43dc9d57be093c0d69c99a"
+    url "https://files.pythonhosted.org/packages/8f/5e/67d3ab449818b629a0ffe554bb7eb5c030a71f7af5d80fbf670d7ebe62bc/jsonpointer-2.4.tar.gz"
+    sha256 "585cee82b70211fa9e6043b7bb89db6e1aa49524340dde8ad6b63206ea689d88"
   end
 
   resource "requests" do
@@ -71,8 +71,8 @@ class Internetarchive < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
-    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   def install

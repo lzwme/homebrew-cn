@@ -21,6 +21,8 @@ class Rustfmt < Formula
   depends_on "rustup-init" => :build
   depends_on "rust" => :test
 
+  conflicts_with "rust", because: "both install `cargo-fmt` and `rustfmt` binaries"
+
   def install
     system "#{Formula["rustup-init"].bin}/rustup-init", "-qy", "--no-modify-path"
     ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"

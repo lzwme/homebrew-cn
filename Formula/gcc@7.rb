@@ -10,11 +10,6 @@ class GccAT7 < Formula
   ]
   revision 4
 
-  livecheck do
-    url :stable
-    regex(%r{href=.*?gcc[._-]v?(7(?:\.\d+)+)(?:/?["' >]|\.t)}i)
-  end
-
   bottle do
     rebuild 1
     sha256                               monterey:     "485a30f3812ce487ea861c68e8e3f1ddb209fb223bb1ef8c078a03615469b805"

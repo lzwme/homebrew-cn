@@ -1,18 +1,18 @@
 class Killport < Formula
   desc "Command-line tool to kill processes listening on a specific port"
   homepage "https://github.com/jkfran/killport"
-  url "https://ghproxy.com/https://github.com/jkfran/killport/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "3ff4fd79006f42b2ed89ff26fc87a36d505880de6b208686a4699ab9434a0811"
+  url "https://ghproxy.com/https://github.com/jkfran/killport/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "f1efcce989196417dd71e12fcf72550d135d7dbf5cffb4a96278f603f0695b36"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "656ad2085a5900266711e18d63f45aa73543cc460d0ff3f76bcd2856a3b31cf7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "730b414e6709ed9c9cab171294506ac310130b284058c85b4380595845437f2d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "82d44180f9ede5c2ca01884ca884720eaa1be7238d88b05f6e6efb9e2c85074a"
-    sha256 cellar: :any_skip_relocation, ventura:        "9cc8160bcb39d47ac8a56b78b47813daf0f78efeac0f4284a702832635867985"
-    sha256 cellar: :any_skip_relocation, monterey:       "7ee212c19bc85fb25ba14ee46ea37b3b3d2dc2b61ac88405899ddb9de07ba05d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "de38c357764a51a51bae2c0e2f1275ffe0b5d1289a07e98a51135f84f8476891"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5a0b803ae3f17165ff5e0d4b0f88ffc3f83164926ff4fbd147e65668ed32912"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d801ff5969ea060ee5bb689073d831810e15103222fec5a9e0d418bd3c7de815"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "07758231607878325924de6a6ab137675ce22e5cfc5bcf956bd590af581d8eae"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "767fb8411a66b16b14fd07ce8bfac0566595ef4965f14333799f27d8c68e8756"
+    sha256 cellar: :any_skip_relocation, ventura:        "095f9c94e2a55766ef7141b6b3726189c597f5ac1a56434d8ba9efb4c66fdc69"
+    sha256 cellar: :any_skip_relocation, monterey:       "9362f857a7de53e73703254a1e5e435f7b58757985a49e3c97e34e37b4ab76a7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d11a3478da9d7f992bafb727c2d312864233c59ae58fb64d6d91822661e47348"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "edb7359ba32beb946cb51ede12dbdf27ccad2fcebcb0c0f84b6a9521e840a82c"
   end
 
   depends_on "rust" => :build

@@ -6,16 +6,16 @@ class Howdoi < Formula
   url "https://files.pythonhosted.org/packages/6d/43/0e8166583575bd500c0f8f1a4ab9429af9466feb6fcdc006e88de8fd23e9/howdoi-2.0.20.tar.gz"
   sha256 "51cd40c53e0c0f8f8da88f480eb7423183be2350ab4f0a4d9d4763ca6ac3e2a9"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "cfd58099b7a62978229917481b3a0fadef1ec98a61a5d97b6db997526da49d5c"
-    sha256 cellar: :any,                 arm64_monterey: "bdc1b7f28b7731ef22e53d333f502ea8b804ae0e34a1e5cf12e5ba1b8d402614"
-    sha256 cellar: :any,                 arm64_big_sur:  "f3512aec4dfd06bfebb48cc172b93cf1ba754d355b299bec08bacfae4c510529"
-    sha256 cellar: :any,                 ventura:        "b260ea5c974571c42d5e2677e57ccd47be2d3d182293cfd90d23d0703b164a7c"
-    sha256 cellar: :any,                 monterey:       "3b6ad9cc1a1873355cd20c163bcf04d67502401a1c59da45a3d2ee75d148698f"
-    sha256 cellar: :any,                 big_sur:        "ac68b4550d7e283667001848bf16e42b779e30e5f5449e92aaab4582f34d84e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b90fe4447f6a96d90d071f99859b7db8c323403b267c600d4f8ed7bf072ca9b6"
+    sha256 cellar: :any,                 arm64_ventura:  "acf6e1d11328156bcc9e1ff7b963d219476a871b3b3e03956136dbb7e0978afd"
+    sha256 cellar: :any,                 arm64_monterey: "885ac40f5d1d8536812af58d41ce539df180e306167dc844298c669356bf939a"
+    sha256 cellar: :any,                 arm64_big_sur:  "5f11cf45fc35a89db56a3a861e345fa07b975a04a787dbc14273c4f9fa9d3967"
+    sha256 cellar: :any,                 ventura:        "5dda158b2c85c9675ba9de564817cfa17e011b12e12ab97df2fb5c7af5d826f5"
+    sha256 cellar: :any,                 monterey:       "4f53b4d5cc926f6e27647043f22e0fb96af25e3c010fe0700ffda2969b0f6502"
+    sha256 cellar: :any,                 big_sur:        "82e4969ae3e652bcdfaaf4d9d2432ab927f655120b4b2c441a91e501c6c89550"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29d73a6c354d8ee56fa3aa23b17e08e55e18b7d3e71d61ce0ec526440869a598"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -46,8 +46,8 @@ class Howdoi < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
@@ -56,8 +56,8 @@ class Howdoi < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/7e/ad/7a6a96fab480fb2fbf52f782b2deb3abe1d2c81eca3ef68a575b5a6a4f2e/click-8.1.5.tar.gz"
-    sha256 "4be4b1af8d665c6d942909916d31a213a106800c47d0eeba73d34da3cbc11367"
+    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
+    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
   end
 
   resource "colorama" do
@@ -111,8 +111,8 @@ class Howdoi < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/e0/f0/9804c72e9a314360c135f42c434eb42eaabb5e7ebad760cbd8fc7023be38/PyJWT-2.7.0.tar.gz"
-    sha256 "bd6ca4a3c4285c1a2d4349e5a035fdf8fb94e04ccd0fcbe6ba289dae9cc3e074"
+    url "https://files.pythonhosted.org/packages/30/72/8259b2bccfe4673330cea843ab23f86858a419d8f1493f66d413a76c7e3b/PyJWT-2.8.0.tar.gz"
+    sha256 "57e28d156e3d5c10088e0c68abb90bfac3df82b40a71bd0daa20c65ccd5c23de"
   end
 
   resource "pynacl" do
@@ -141,8 +141,8 @@ class Howdoi < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
-    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   resource "wrapt" do

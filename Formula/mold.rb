@@ -1,19 +1,19 @@
 class Mold < Formula
   desc "Modern Linker"
   homepage "https://github.com/rui314/mold"
-  url "https://ghproxy.com/https://github.com/rui314/mold/archive/refs/tags/v1.11.0.tar.gz"
-  sha256 "99318eced81b09a77e4c657011076cc8ec3d4b6867bd324b8677974545bc4d6f"
-  license "AGPL-3.0-only"
+  url "https://ghproxy.com/https://github.com/rui314/mold/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "2ae8a22db09cbff626df74c945079fa29c1e5f60bbe02502dcf69191cf43527b"
+  license "MIT"
   head "https://github.com/rui314/mold.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d158233061e2e55a942da7de55a222ad6f6b9f701d2d055c8ff4e8cc41f6d4e0"
-    sha256 cellar: :any,                 arm64_monterey: "8433f206feb9ffccee86b6aa6dc19011be9d1f5d97329c91f237f7f1275862c6"
-    sha256 cellar: :any,                 arm64_big_sur:  "9ce1103104151bdfeea5d2adb3d7a560a2b5c8f4a9521e296c7896c303f1e6b0"
-    sha256 cellar: :any,                 ventura:        "eb20fc42a814f39fd52210db34db263c000b4ec054f5d7fda74add55ea702835"
-    sha256 cellar: :any,                 monterey:       "7e3efc407c8579eb0a41459d2c35dfbdff8995774c4d01801e477f8b8e81b0d6"
-    sha256 cellar: :any,                 big_sur:        "5bf0497aaabf1661560776939d84aec11c88ca40c6c7b7af9c3cabc9eb735095"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d3d99b7f4f39fcb17c4856ae5cf47241abd83a707e020748c376f6455751960"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8b5d5c32ac041c6d535d803477ae5859794808333d2147b0017126c04b41f5e7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f7159047337e6a1152241321ea9b7490597a852fced4200dac71ef30e48e0ff9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ef08b475f6507cd6cda8c0795a46271d7e71c24c4ce883f02a5505cde915a61e"
+    sha256 cellar: :any_skip_relocation, ventura:        "a32a6251a8f319d2c35f7b5ce784d9a5375af24646c60e8d6d7c5b8016ce805e"
+    sha256 cellar: :any_skip_relocation, monterey:       "3e08b8b4fe6c16538fa0cb083d722f2c89b321748407db5a55d778f902ab3b68"
+    sha256 cellar: :any_skip_relocation, big_sur:        "dd02ea90a0432a4ecb1762b63cf8ad094a0534898c2d74c886c17fe1419c0bcb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "520d831c82593d5e8359e75ffb7d3043f3d58ffcc903ea711e1ab62ad59ee0b5"
   end
 
   depends_on "cmake" => :build

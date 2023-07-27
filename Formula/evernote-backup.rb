@@ -6,39 +6,38 @@ class EvernoteBackup < Formula
   url "https://files.pythonhosted.org/packages/c6/2e/28f97f59b92edde07895d6c95596b99313bb1a2cd0296ac2fd36f8954cb4/evernote-backup-1.9.2.tar.gz"
   sha256 "ec21025d614ec68ed5dc8d2028f2f856630a36b3b84f135952660bec7bdf70ad"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "50a6b9e83cc7b4ecf75bba3c6ec3d506f58bec0d5728558b6c5edf73064af527"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "717fe9091b04b15aa642b283140b8467b9d8e7c34849c7f96c83ffe07655b8d4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8792dbe1894720dcc080268443baad43f28a42ea93efe3f85b47ca9876314846"
-    sha256 cellar: :any_skip_relocation, ventura:        "27ff6362793b450d355e02fcd87b7003de8abd268b51c835bfc81df5d6a1e55c"
-    sha256 cellar: :any_skip_relocation, monterey:       "80736187196f8b5253e0fb19de2b264908aedac045554e76c928e594612755e6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "432e839d4abf3f7fa90b7a2a3a61b8762c6006ac98c33ccc5de13a00ab1a782b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02a94b7f7c92141ceea5d1b56bc8759d17a4f98fba4b3cb6209565f420a16681"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7fce738106db0d2852181c29e333987bd685d6935d6aa93f8ac1ee3a4bb70016"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c83e6e7215652e26e4637911734163ae0da194993d3fd6028561b643958fa443"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "63aeba1d78d1a1e955266a93f069bdb9838a470431e0f4c4627dd37924e85ae5"
+    sha256 cellar: :any_skip_relocation, ventura:        "d9a4c8df46a126888134b0b4884084270e5d9d382546c13a45097c351c233ff0"
+    sha256 cellar: :any_skip_relocation, monterey:       "46ebe107813d91d17abc6585a6cd312cda8f13f720b3f09f63863ec391340002"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4aeec6a0decd6565e5f1d89acaeb1a6ec91906641f09f29cce3e3dc83aa8e136"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f460288bbc347d7a81c1b21de0f95e282150cdf15beb9d0e5a12669474014b8c"
   end
 
   depends_on "python@3.11"
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
+    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
   end
 
   resource "click-option-group" do
-    url "https://files.pythonhosted.org/packages/4c/29/ff7cd69825b5bfb48e39853b75d5dc2e98a581730f2b6c9c014188730755/click-option-group-0.5.5.tar.gz"
-    sha256 "78ee474f07a0ca0ef6c0317bb3ebe79387aafb0c4a1e03b1d8b2b0be1e42fc78"
+    url "https://files.pythonhosted.org/packages/e7/b8/91054601a2e05fd9060cb1baf56be5b24145817b059e078669e1099529c7/click-option-group-0.5.6.tar.gz"
+    sha256 "97d06703873518cc5038509443742b25069a3c7562d1ea72ff08bfadde1ce777"
   end
 
   resource "evernote3" do
@@ -67,8 +66,8 @@ class EvernoteBackup < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz"
-    sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
+    url "https://files.pythonhosted.org/packages/4f/13/28e88033cab976721512e7741000fb0635fa078045e530a91abb25aea0c0/pyparsing-3.1.0.tar.gz"
+    sha256 "edb662d6fe322d6e990b1594b5feaeadf806803359e3d4d42f11e295e588f0ea"
   end
 
   resource "requests" do
@@ -82,8 +81,8 @@ class EvernoteBackup < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
-    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   resource "xmltodict" do

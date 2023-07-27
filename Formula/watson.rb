@@ -6,17 +6,17 @@ class Watson < Formula
   url "https://files.pythonhosted.org/packages/a9/61/868892a19ad9f7e74f9821c259702c3630138ece45bab271e876b24bb381/td-watson-2.1.0.tar.gz"
   sha256 "204384dc04653e0dbe8f833243bb833beda3d79b387fe173bfd33faecdd087c8"
   license "MIT"
+  revision 1
   head "https://github.com/TailorDev/Watson.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb3c54f1697682c72663ca4eeee9c5f450f2c51e43d5c9af21d9b6a93b7094ce"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b4c21baf63301087ea884c9a01a6cf68d7d213fe8bf096cb4663b6f4b0bc08d9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "289b6ce8daf5c791ff70967f925b73ce9e1521881ae817b7494ca883970d2f4e"
-    sha256 cellar: :any_skip_relocation, ventura:        "047b1f8e67b517133b6039ceaef0da3d804306878d0a8ea8fcb1a3bc4b5a21f7"
-    sha256 cellar: :any_skip_relocation, monterey:       "0db4f5cbc82f21d0f723d5a2c3935a829efacdda16cf14c49e3be896afd07b90"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f7028a4ad5bf80236b5320ab8a14b1dcf98189675bcb2df81002c4f278187664"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7dafe03a9aef2ea5450abce544396966c93e9f993043a111ae6a41001c9e7dcc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "65539996c30dccb9e4a561b1a0fb0132712ec59635765fa944f3eb65b80be05f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "53528cbcca17c9cecccd6c1234ae3ad9fa169c881d6d5d040bba9c6ea98e8659"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bcd303809316f93e56e93a40b212bb4ce53777c8dcbde111a6e9d4d351ab0df4"
+    sha256 cellar: :any_skip_relocation, ventura:        "129fa2d54d07eaa078bf037cd89860d952dd29eb9eb3a136073ebda5155edae5"
+    sha256 cellar: :any_skip_relocation, monterey:       "6d29ad1313c07a529adb1ff5af3701e34810a555f7d769953740f4512fa070ee"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c687fddd7cf799bf9fcba0a519ad08e4c36f4ed95664059e1f9681304f146aff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17c19c4a760b8bd86c0888b6aae1ceaf72b5969c6ac5268441ce72c1bc626684"
   end
 
   depends_on "python@3.11"
@@ -28,18 +28,18 @@ class Watson < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
+    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
   end
 
   resource "click-didyoumean" do
@@ -63,8 +63,8 @@ class Watson < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
-    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   def install

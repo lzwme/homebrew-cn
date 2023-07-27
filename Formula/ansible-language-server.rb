@@ -3,12 +3,18 @@ require "language/node"
 class AnsibleLanguageServer < Formula
   desc "Language Server for Ansible Files"
   homepage "https://github.com/ansible/ansible-language-server"
-  url "https://registry.npmjs.org/@ansible/ansible-language-server/-/ansible-language-server-1.2.0.tgz"
-  sha256 "29154d4c16fdf2859901eebe8e6715c8c47f1023dc4e1c94a4d8d5ec028668f6"
+  url "https://registry.npmjs.org/@ansible/ansible-language-server/-/ansible-language-server-1.2.1.tgz"
+  sha256 "1614a212952e778e97a8dc1a4a84a2bf195764931cdc8e022eea4895e4b677ec"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5e782aa437295f8acbc28ef654726a0b53a7b7196519bdd9946fd75373b1a00c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "60fa43eca628baf765c7985e3e628660f3f61d8ae6666f9a80cda4e7fae65286"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "60fa43eca628baf765c7985e3e628660f3f61d8ae6666f9a80cda4e7fae65286"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "60fa43eca628baf765c7985e3e628660f3f61d8ae6666f9a80cda4e7fae65286"
+    sha256 cellar: :any_skip_relocation, ventura:        "60fa43eca628baf765c7985e3e628660f3f61d8ae6666f9a80cda4e7fae65286"
+    sha256 cellar: :any_skip_relocation, monterey:       "60fa43eca628baf765c7985e3e628660f3f61d8ae6666f9a80cda4e7fae65286"
+    sha256 cellar: :any_skip_relocation, big_sur:        "60fa43eca628baf765c7985e3e628660f3f61d8ae6666f9a80cda4e7fae65286"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6abc09d916281ceb0ee5ffed77be92564ba8c3dd992231af50027a9d29a12063"
   end
 
   depends_on "node"

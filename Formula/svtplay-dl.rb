@@ -6,15 +6,16 @@ class SvtplayDl < Formula
   url "https://files.pythonhosted.org/packages/6d/67/11d664a155856ca12c3db4782288ea44c2ccb18793a8a58ab4b855bd267e/svtplay-dl-4.25.tar.gz"
   sha256 "c6d0166ff059ee18017241bee5d7343be52cfc6e12939513ae26fdf5ad55508e"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "26311f3e36811db45dc1b7bd99ae1f3bd00e1301decead48d6c34ea8e56fc01e"
-    sha256 cellar: :any,                 arm64_monterey: "4d2085bd60c36cdd6cd2fd7e9b2865986478b4428dba5439036ca4b9b208ccb6"
-    sha256 cellar: :any,                 arm64_big_sur:  "def5bbb5557293a2095e6d869190746b60151fb27612929bfbff8905e9b0f0e0"
-    sha256 cellar: :any,                 ventura:        "e61b2fb087f98927f52b482bae3084842cbe1099de6044a85403168e5eb8eabe"
-    sha256 cellar: :any,                 monterey:       "7406d16ad0a5dfeaa592cbe4efeb38eac8e625d23df022d41b3416e364e83ba5"
-    sha256 cellar: :any,                 big_sur:        "840bbbe832c2252c2f02a1a90c55434455126c845cb53796fc7d7dfdb47607e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5cb00bd98e46cee183f55a4eb2c7aa9969c6e7d0e8218dc6715c6ce83b418961"
+    sha256 cellar: :any,                 arm64_ventura:  "c1294d8d43c17db0746e20a32e33833735e1e2cbb40bd7d93c81723f0e66a0d9"
+    sha256 cellar: :any,                 arm64_monterey: "42d7c11f95cc74da09be7d2075799de50f7efd144ff6135679f968f151764037"
+    sha256 cellar: :any,                 arm64_big_sur:  "88ec0eb8bf536eb020b423bb0303d1edf02c711f6b850ea7b3584d3a35e15099"
+    sha256 cellar: :any,                 ventura:        "ff28b1c25087a23dbc8f18a77b3886dd1b249a91019e471bcd7b8f9e023463f5"
+    sha256 cellar: :any,                 monterey:       "25b4b1c1e6a9a5ce105df691a6398eb8708e0461251dcd0ed2973cbbc8946dc2"
+    sha256 cellar: :any,                 big_sur:        "13e3beb7d731fddd91c95bf0720199f70f03a77df98157332114c7aa491bb19c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d71f0aa53c43780f0ae892f583a7c0cbe2050c6ce5b4f33a982aa526d4ee26d1"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -27,8 +28,8 @@ class SvtplayDl < Formula
   depends_on "pyyaml"
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
@@ -57,8 +58,8 @@ class SvtplayDl < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
-    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   def install

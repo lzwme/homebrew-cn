@@ -6,16 +6,16 @@ class Openstackclient < Formula
   url "https://files.pythonhosted.org/packages/58/04/77e6b898346584df8b1e7206cf9f9a0f7f7d0c773a4015ed16a12dd6b97e/python-openstackclient-6.2.0.tar.gz"
   sha256 "7c53abe1b73b453f59da7b73679c3b759b48e51b8b054864b5fdea2ea82727d6"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a6c3a6dbcb4e94d9daa97c3cfe37ab827ae449ed7463d1fd849dd3583980b83b"
-    sha256 cellar: :any,                 arm64_monterey: "f138c567ba996e272e0d32fe04b02a482cc3b9a6fc0cb77bd38ea312bb89361e"
-    sha256 cellar: :any,                 arm64_big_sur:  "e2bad320cfa461fcbcc19d9f6b7a8318f533fb2e37c4203d469ed58eebb6c758"
-    sha256 cellar: :any,                 ventura:        "c0a85a5e8e4916c989e62050a435f98b02f00c6629929333d199ad44640fac95"
-    sha256 cellar: :any,                 monterey:       "4cb6f93b657dd6b8ec784312724057847219fda6cd03de648ba53fbcdb4ef14c"
-    sha256 cellar: :any,                 big_sur:        "7c307ccab0bc2c8a1b00588d1ec75140a793df0c8417aedd9a322207d16e219b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49e3c6300c0ab49969491ab741c17060a3b084967d965491f038c0196d479e38"
+    sha256 cellar: :any,                 arm64_ventura:  "070cc44af547240b29a7c1caa04582edc65e9b8f81c6835486108aa8a3d890b3"
+    sha256 cellar: :any,                 arm64_monterey: "7abbb998daa93c69a657ba2ee1785b3479af79b9e4e592ee3131d69ab2f7f834"
+    sha256 cellar: :any,                 arm64_big_sur:  "3858659c50a00d73202a1f6587aac2f3b43a916f10f6e18977cc2d29872852f7"
+    sha256 cellar: :any,                 ventura:        "72b29fd4dcd8849bc5c5a044f69a75d69eba9ed59f6875291069d35bc46faf12"
+    sha256 cellar: :any,                 monterey:       "ec5501dfea2d26db42066499fb327d88eb55cad36a3a838c521140cf8c8a2907"
+    sha256 cellar: :any,                 big_sur:        "b230b4574bf20e8f89ed827f91881cfc671a5e99e17edc3e32669d6c9f0ab051"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50d74f7599dfe0465bdf3b8fe876d27d1ac42c2b92e5dafa534c7b0fff1c1148"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -50,8 +50,8 @@ class Openstackclient < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
@@ -290,8 +290,8 @@ class Openstackclient < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
-    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   resource "wcwidth" do

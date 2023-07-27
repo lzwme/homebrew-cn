@@ -3,19 +3,19 @@ class Theharvester < Formula
 
   desc "Gather materials from public sources (for pen testers)"
   homepage "http://www.edge-security.com/theharvester.php"
-  url "https://ghproxy.com/https://github.com/laramies/theHarvester/archive/4.4.0.tar.gz"
-  sha256 "9c545a47e44efc6fbec3f02458d894d8e333cf340ee3d8ae01aa4b5590a6c8a9"
+  url "https://ghproxy.com/https://github.com/laramies/theHarvester/archive/4.4.1.tar.gz"
+  sha256 "ac353067b25838a4c66c636dd82f4e563a744d22f30a5f9788a77bbef8c10524"
   license "GPL-2.0-only"
   head "https://github.com/laramies/theHarvester.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d525057f990d88afef7002cc1b2a867e30c8430552623716b75e2baee5676968"
-    sha256 cellar: :any,                 arm64_monterey: "34d20c6242547b4d6f5cc66a793b19992c8f1a267ca96808bfeedd9cd178cfd6"
-    sha256 cellar: :any,                 arm64_big_sur:  "8c3c8031bff5cbf547e28628f04b63fad9e15a87b0a6a0358f7ee77badf3aa5e"
-    sha256 cellar: :any,                 ventura:        "0a8d5261c54c7b6d53a303e67899ea4f8f7217ab8a5d28e370732cc49ba81e7d"
-    sha256 cellar: :any,                 monterey:       "49dd8a82d0ff3ef7ade21476451d0eaae5f4be186830e9d3e4489953bdd5ad41"
-    sha256 cellar: :any,                 big_sur:        "d4443a11eb14cf0aa5ad053896b530c1b8d441bb71d25efc63c50b24140b3ef8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39497f6b83803e58339dea8876d75c81abf6f56844d884046bf503a11919736c"
+    sha256 cellar: :any,                 arm64_ventura:  "5b876f9c65588532c0848da71c765a1661b1fa961751c513fbe56ab98f2dae13"
+    sha256 cellar: :any,                 arm64_monterey: "0cd2afd8e87b02946fdc9de79bf5830276598caee9be6d763a0eaa99126f0b77"
+    sha256 cellar: :any,                 arm64_big_sur:  "cf675db05c452dd8a625da4baaf95ec684ffa4bb9db92ab0105385cfbcb76cf9"
+    sha256 cellar: :any,                 ventura:        "07ceff6c6fdfbd05011f265585ae9f8f6ebec7bfd2694eb481007fd9cfc1d2bf"
+    sha256 cellar: :any,                 monterey:       "e902b75c6f75c17a41714aae722fe620f862787a480bfa22c99323f00dedcb91"
+    sha256 cellar: :any,                 big_sur:        "a3d65c57cf5ae7be19b244a6f90b508d798ef9d7659d5391af342643f14d1f56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9827f373df832ad1c47da92aea5b887c243395245f90eb5cfc9d905a3ba0fc7"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -112,8 +112,8 @@ class Theharvester < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
@@ -222,13 +222,13 @@ class Theharvester < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/11/07/106b00ae62297bb3c89b6fbeb571feaf7cbbf6b2ada0e513d756daafd4ce/pydantic-2.0.3.tar.gz"
-    sha256 "94f13e0dcf139a5125e88283fc999788d894e14ed90cf478bcc2ee50bd4fc630"
+    url "https://files.pythonhosted.org/packages/0f/46/12689d28731c709890361af3414a9d0d04328043beb7c9fc4e4caa580b5c/pydantic-2.1.1.tar.gz"
+    sha256 "22d63db5ce4831afd16e7c58b3192d3faf8f79154980d9397d9867254310ba4b"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/57/ea/edff47ad42857534f3abcc87472802b3181041f4e4fbeac988a5ecfcffae/pydantic_core-2.3.0.tar.gz"
-    sha256 "5cfb5ac4e82c47d5dc25b209dd4c3989e284b80109f9e08b33c895080c424b4f"
+    url "https://files.pythonhosted.org/packages/8a/6a/2609fb28f3c289eacb2a2ddaceb7ad0d327b4b4678146573295d98f012b8/pydantic_core-2.4.0.tar.gz"
+    sha256 "ec3473c9789cc00c7260d840c3db2c16dbfc816ca70ec87a00cddfa3e1a1cdd5"
   end
 
   resource "pyee" do

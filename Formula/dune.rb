@@ -1,19 +1,19 @@
 class Dune < Formula
   desc "Composable build system for OCaml"
   homepage "https://dune.build/"
-  url "https://ghproxy.com/https://github.com/ocaml/dune/releases/download/3.9.1/dune-3.9.1.tbz"
-  sha256 "f0c3ce49f36c733b8aee72611f107cf06de6bc423be7262aab1bb3f03c05a878"
+  url "https://ghproxy.com/https://github.com/ocaml/dune/releases/download/3.9.2/dune-3.9.2.tbz"
+  sha256 "4f3acbd45d3dcdbbbda891372f43f056942b6b96ed977ec5281ba9a875134adf"
   license "MIT"
   head "https://github.com/ocaml/dune.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d49fc9f90f049822054d9434f697f2d89d673c02c723d16a10d60b0be337473"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "40db1f37b511c7d60b865cbf6a45362e6e32060c0506d9f7529af34c14c7e999"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d4abcfcd0bdc9ad45c85a86a8c70891346beb6b7f5c730fa0e3ceaef584de576"
-    sha256 cellar: :any_skip_relocation, ventura:        "ae2ce6ff33faa198db7954fb46397422ae548914b9d0714fa888ff759e6625e3"
-    sha256 cellar: :any_skip_relocation, monterey:       "d3a78f95b037364ede9cd26709a19c37b6ccd11a617041efe401b303e5a21662"
-    sha256 cellar: :any_skip_relocation, big_sur:        "16968c8e39abc3080ceb7d8fac27c49b856c9f3027136283d696894f44998667"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09a6d861c5ba5aff3b006aa103aa9192a7246c43c0ee1a161c8297393dae9285"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02a3c08fe96671295644127ac2b27b9060084ed71d776be25377f61203c468cd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "87e0f68db840fc3ac58806ebe9555a48f8ae45239b9f7df7c316d8a169d66909"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d3f9089fa4e58b88d8cf1c8f44fe6cfe069ab1ea8d0418d5066d6146137b1eac"
+    sha256 cellar: :any_skip_relocation, ventura:        "e082b4567b393a651d9785e8c7824b7bedddda1144bc66ff2eb1ceb01cfa2c71"
+    sha256 cellar: :any_skip_relocation, monterey:       "eafbfbfcc93003e7ae0ffd93348a65731b6a8eba1aa7e6cd857ef6ca27d43a60"
+    sha256 cellar: :any_skip_relocation, big_sur:        "fdfd0e113e5edcf4b29e50acdc8c392bfdf72af5c7082322cdb14c5533d39bf0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0708c22baf3c6eed5a7686bbd8c5da7ef4692b3e664ce9a13a514175a579054"
   end
 
   depends_on "ocaml" => [:build, :test]

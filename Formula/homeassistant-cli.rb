@@ -7,7 +7,7 @@ class HomeassistantCli < Formula
   url "https://ghproxy.com/https://github.com/home-assistant-ecosystem/home-assistant-cli/archive/refs/tags/0.9.6.tar.gz"
   sha256 "f971ac78a74922f4555ee7f77e327d8008819a8a83db1ad8037c0601e74a40ba"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/home-assistant-ecosystem/home-assistant-cli.git", branch: "dev"
 
   livecheck do
@@ -16,13 +16,13 @@ class HomeassistantCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e44f3002c33af2fdb8086b0fdf6318f5b11ebbcc1cb90660c3c45980d2f3c397"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cf366659dc37653a9aae83078e50e5ca204be92167f67bed8b5d4edab9ae80ea"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "36ea29638e973d0f471ba005328e292c4f5798a9a170af057cb6ad7df561679f"
-    sha256 cellar: :any_skip_relocation, ventura:        "ba8af86a6e6b15d5c0d427526b6ec412b75da866ed3ac3fea5f410da7df487b8"
-    sha256 cellar: :any_skip_relocation, monterey:       "d6616e1d9e0aea66f542854f41e9ce0f4a8c56766efa5403198c24545ee3f055"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b2830a9f30f5ec2f7f837561e96c643165f02370a35c3107a23f42824682bbd1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ade7e4f00a42eec3ef357cd76a46214bf700989649ba655d9975e05b4a93060d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "69319c985b20ebf194daa3b28e5cf24c95b7ddfb61c08e6839765e4cbcd3c8e7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "88a45e79d4520f28cf08ebda6ae24d31b0d0a5df49b9bc561c1725ec2b756dbe"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "64b1671bb4183b2fb4292f70100dcde29d6c4c60173c753b0340bf431431f49a"
+    sha256 cellar: :any_skip_relocation, ventura:        "615ce1545b3580b574efc7bc0d0fc16766ffcb4a7ba9b4e8b4743deaff62609f"
+    sha256 cellar: :any_skip_relocation, monterey:       "a40d0db805471fbda4bf6742e4d3a3b0c7102e73c4047161a8a123ae9d56b999"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d5dd5dbe684f92460a434f5d6ba78cf7beeab0b8af997b83574004a809b29e36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3502eb0ab5127896525ca86271ce7834c0075d42357c1168527fafb9fc12744"
   end
 
   depends_on "python-tabulate"
@@ -50,8 +50,8 @@ class HomeassistantCli < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
@@ -170,8 +170,8 @@ class HomeassistantCli < Formula
   end
 
   resource "zeroconf" do
-    url "https://files.pythonhosted.org/packages/f8/72/85cf7d09881c1a83b69b430efb4446d770ee59fda0a5e09e18eced0143af/zeroconf-0.71.0.tar.gz"
-    sha256 "c3040b3ad60f77fd29ca90b013c99aa7a0266eab9e4953106fc6f5fc8ba5641a"
+    url "https://files.pythonhosted.org/packages/93/0c/e92bd4dde67aaa44e2c5180776978803f1c2cf20ba81707c38c9f0e63147/zeroconf-0.71.4.tar.gz"
+    sha256 "b988425f6bd0d4f11f05fa258a6c49d9f9956777e9af00ca98c4ed3f743bd677"
   end
 
   def install

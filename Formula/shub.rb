@@ -6,16 +6,17 @@ class Shub < Formula
   url "https://files.pythonhosted.org/packages/ff/1c/02b628a398b06d3f2c34c5e413d61f92300064da01bbf212fe056d9eea0d/shub-2.14.5.tar.gz"
   sha256 "241b31dc4c2a96aa0915cf40f0e8d371fe116cd8d785ce18c96ff5bc4c585a73"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/scrapinghub/shub.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "84969078d877da747ce02e80bff1bcd239e8393af526270c18e76344a094bb08"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d3d1b22abbe07eeec58cb2aada60f2380bf040277153756a4a770437978e42c9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a71c1cbbf1ed1ef0409b5181340fda7a84481906b78d6ea4db5d8e04b9846a53"
-    sha256 cellar: :any_skip_relocation, ventura:        "0fc494e16e430839f8d55e31e7d768cac98f1d0d47cdaea618c4695935ec6c5d"
-    sha256 cellar: :any_skip_relocation, monterey:       "a699b5b289b3cf5f33f9997bcd4fdca1f300644e10614a5e65b541b0e414da33"
-    sha256 cellar: :any_skip_relocation, big_sur:        "441cf03ec77aa1ff807d79edde8b3dfe17013e4e0647bfb3013220f5348ac8e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79789f67e038d086950e01050eb967df4b7753f4b4c92612522c0ef0c4eee438"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "342765b1e55b633a5272ad253b18be182a648769fb23ce16d2c0df6efa5ece30"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ef943fbdee9a9d7ffe670a4ef0d814c41c0afee82c2a9411932b9e683da26db"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d0da8c991e63b972ef68c35a3b9ed3ea3c2532e9fa753beacf27c2ad6afb2642"
+    sha256 cellar: :any_skip_relocation, ventura:        "8c3e607a4e00bc4412ae3e9afe47c8f97b095729f91a984be2ec468956b187b7"
+    sha256 cellar: :any_skip_relocation, monterey:       "ffd7164d68341881c0c373265485c188dd689d050efadda9f36fc349c64b5d68"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ee0a5c3e2fde341614c999781c524a6444e3d1d893a6da37000e00a375e40f82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "60c2376fc38ddc9d7d47c530c32e4f8721dad80c95377e4124178e2d74b9fee3"
   end
 
   depends_on "python@3.11"
@@ -23,18 +24,18 @@ class Shub < Formula
   depends_on "six"
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
+    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
   end
 
   resource "docker" do
@@ -50,11 +51,6 @@ class Shub < Formula
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
     sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
-  end
-
-  resource "pip" do
-    url "https://files.pythonhosted.org/packages/fa/ee/74ff76da0ab649eec7581233daeb43d8aa35383d8f75317b2ab3b80c922f/pip-23.1.2.tar.gz"
-    sha256 "0e7c86f486935893c708287b30bd050a36ac827ec7fe5e43fe7cb198dd835fba"
   end
 
   resource "requests" do
@@ -83,8 +79,8 @@ class Shub < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
-    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   resource "websocket-client" do

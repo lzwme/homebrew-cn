@@ -1,9 +1,9 @@
 class Parallel < Formula
   desc "Shell command parallelization utility"
   homepage "https://savannah.gnu.org/projects/parallel/"
-  url "https://ftp.gnu.org/gnu/parallel/parallel-20230622.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/parallel/parallel-20230622.tar.bz2"
-  sha256 "de3a24ad702198a642115ceb9b280625fd49c6dd8842b08685ff057c6b84238e"
+  url "https://ftp.gnu.org/gnu/parallel/parallel-20230722.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/parallel/parallel-20230722.tar.bz2"
+  sha256 "55f991ad195a72f0abfaf1ede8fc1d03dd255cac91bc5eb900f9aa2873d1ff87"
   license "GPL-3.0-or-later"
   version_scheme 1
   head "https://git.savannah.gnu.org/git/parallel.git", branch: "master"
@@ -14,7 +14,13 @@ class Parallel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8ece1e71fc0ce3fe80cb9a4ac4d28378708a324e8218e559254695a8d63cb04c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e0413bb8c11fd8ded232ee64b66ff193529931c8f13d32d8da3eccb4e276a2f6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e0413bb8c11fd8ded232ee64b66ff193529931c8f13d32d8da3eccb4e276a2f6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e0413bb8c11fd8ded232ee64b66ff193529931c8f13d32d8da3eccb4e276a2f6"
+    sha256 cellar: :any_skip_relocation, ventura:        "e0413bb8c11fd8ded232ee64b66ff193529931c8f13d32d8da3eccb4e276a2f6"
+    sha256 cellar: :any_skip_relocation, monterey:       "e0413bb8c11fd8ded232ee64b66ff193529931c8f13d32d8da3eccb4e276a2f6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e0413bb8c11fd8ded232ee64b66ff193529931c8f13d32d8da3eccb4e276a2f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "242a11ef1541e44e67258bc6b068a0259b68f03228b7bbb2a0604894cdac8526"
   end
 
   conflicts_with "moreutils", because: "both install a `parallel` executable"

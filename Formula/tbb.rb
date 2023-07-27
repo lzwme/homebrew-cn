@@ -1,18 +1,18 @@
 class Tbb < Formula
   desc "Rich and complete approach to parallelism in C++"
   homepage "https://github.com/oneapi-src/oneTBB"
-  url "https://ghproxy.com/https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2021.9.0.tar.gz"
-  sha256 "1ce48f34dada7837f510735ff1172f6e2c261b09460e3bf773b49791d247d24e"
+  url "https://ghproxy.com/https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2021.10.0.tar.gz"
+  sha256 "487023a955e5a3cc6d3a0d5f89179f9b6c0ae7222613a7185b0227ba0c83700b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8b0fb0da10b496d0671163b50e1782285cf59caf90f020745d714befacf16880"
-    sha256 cellar: :any,                 arm64_monterey: "97be69a42e06cc72927871a212dced7ee1a772fa6da4b817a779442b33c5b7cd"
-    sha256 cellar: :any,                 arm64_big_sur:  "e90bca15b4f94460841a2f9eb15c752082f103808dd2be8fa488bc42a357ea13"
-    sha256 cellar: :any,                 ventura:        "bda98398575da5a8184d49ac715abff5efeb1f82b3a5dfa6be23eb501cfc0e15"
-    sha256 cellar: :any,                 monterey:       "bf557c58fbc39ba23c3df0714bdf12bbe9e87ec0f5109d09dc0da357de5f19ba"
-    sha256 cellar: :any,                 big_sur:        "173769f4d52a341b0d77cfaad0e611038a5798fd3d32a44a8459ca7a26f141a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "14f6077f8872a9b6b560b2f93ec36fd1e2c26c45e7fa5d38285f11a943284a89"
+    sha256 cellar: :any,                 arm64_ventura:  "111d9a40d50f16615cfa8d543aba48d55482b4b234154a172309bf62c5a5d2d6"
+    sha256 cellar: :any,                 arm64_monterey: "beefab871bae0c31c9ced93653db9f3d4ee0e77c708252aae7a395560bd8e8ff"
+    sha256 cellar: :any,                 arm64_big_sur:  "e4d19bdf3991e80b81217bd45f770acab8841f1701a004ece15d2e581b34e2d3"
+    sha256 cellar: :any,                 ventura:        "54c8bbc3954d70aaa5c37ff01c64e4d5873c96f9f9c87442e13d11c00e5a6436"
+    sha256 cellar: :any,                 monterey:       "18759017f100a1a974c7126577d06ce8a18fcc0b4ae0d448c692b7d38ac6db93"
+    sha256 cellar: :any,                 big_sur:        "ea0fbb62658f0179c96b309eafe7068434c131bf89926f02f9e89c7daf5a0de5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6071625843f701c8a904882b90f647ab0e7307656bec78f4066430639b1b866a"
   end
 
   depends_on "cmake" => :build

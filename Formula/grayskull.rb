@@ -6,15 +6,16 @@ class Grayskull < Formula
   url "https://files.pythonhosted.org/packages/71/93/27ffbfcb57281a6051d738d9c8c35f9748a8b3c1f406249160006fa3aca2/grayskull-2.3.1.tar.gz"
   sha256 "41dd1cc94c8b8951571af7628ffa97146ae76e99295918a20d8db84b2f60b5e7"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aa4b15a7c076ba19ecb914ba7b17a3b76a0c7bc64c911ae9f80336110d9e7e95"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c95acad3d33106193b5b6b565af1886045085e13713d22898fdf36df629527d4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "39d4907fb61496e0a532f024521bacb1127415bbe47f77c3e6d0a8c7f101bc07"
-    sha256 cellar: :any_skip_relocation, ventura:        "a3dcef4fc5ae0ceade7d53acc51e330b9c03c71288b1db9df1961304b082ce5c"
-    sha256 cellar: :any_skip_relocation, monterey:       "40d326fcd6471551b4e6854a8f2531b3c384261d2055f6dc90133745bfc3f3b4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4cd195904cd6de2801bdc2466c2991ae441f210d0fea131c2e6f89cf7ef0d69e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c4afcead349e23979bd0a8dab93c5e5b47fa1e6d2ea0ceab915eaee14a34294"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "58aa1ddfdffdfa56b056d232ce8cdc6b894e9daa65e201d88875c88e14f7d564"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d6536f37bede5315f3b466c02093539c9aa2bd073a5776cf3176a23afecedeb4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "97d432c87c3a5fd9990c0edde57e6407c8ac5971d948a7b32c5bc3cee921d242"
+    sha256 cellar: :any_skip_relocation, ventura:        "328ed596ec3d2e4b4c7a96b09a5ae6ae1d59e2cb688ab3a39393bbd572eadb2d"
+    sha256 cellar: :any_skip_relocation, monterey:       "de073370cf91052fb2d3cc1d8c8b5611b442fe485759153771608ed87f6a0f93"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c4de219c2c73822ec5243e6d0749c62dffa323e462e80ea52ce8d952e96886a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "006c92cdf57f7abfa0e0e91105b2f14c5f2d6f9b2bea78e45dc405fddcb5b849"
   end
 
   depends_on "cmake" => :build
@@ -26,13 +27,13 @@ class Grayskull < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "colorama" do
@@ -66,13 +67,13 @@ class Grayskull < Formula
   end
 
   resource "python-utils" do
-    url "https://files.pythonhosted.org/packages/b5/58/6960ee22450cd006375c5f36f15acf7e82688d25c091efba05362d682b9e/python-utils-3.5.2.tar.gz"
-    sha256 "68198854fc276bc4b2403b261703c218e01ef564dcb072a7096ed9ea7aa5130c"
+    url "https://files.pythonhosted.org/packages/a7/5b/96bf5a5ce622b3894af79f3849d696389ab3a28a566a0df21cfa8e5a1903/python-utils-3.7.0.tar.gz"
+    sha256 "1970468fff1c0adbd60b9a751e6a786223a9f0373c954571912d9cf4be49b552"
   end
 
   resource "rapidfuzz" do
-    url "https://files.pythonhosted.org/packages/70/05/4030a8a7aa42d3e40ba7abf902de8e7e94ddcb61abda23f6a3ec5daf36df/rapidfuzz-3.0.0.tar.gz"
-    sha256 "4c1d895d16f62e9ac88d303eb918d90a390bd712055c849e01c558b7ae0fa908"
+    url "https://files.pythonhosted.org/packages/29/73/b41cac4dcb1c8fde87fe6f1ce6e4e08de688305d48b99e8bfbba2654a57b/rapidfuzz-3.1.2.tar.gz"
+    sha256 "1b1b2eab728efc239c8aab97b4821f8e10dcd5a1b066365d0e38023e3b2289e8"
   end
 
   resource "requests" do
@@ -81,8 +82,8 @@ class Grayskull < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/8c/4e/faa94211c1cc468cfa38990955181c52be9a249008f37751d8406ff4d9d9/ruamel.yaml-0.17.28.tar.gz"
-    sha256 "3bf6df1c481d2463a633be6ee86e8aece941bb3298a9a0cd6d0865f47b1ddce6"
+    url "https://files.pythonhosted.org/packages/63/dd/b4719a290e49015536bd0ab06ab13e3b468d8697bec6c2f668ac48b05661/ruamel.yaml-0.17.32.tar.gz"
+    sha256 "ec939063761914e14542972a5cba6d33c23b0859ab6342f61cf070cfc600efc2"
   end
 
   resource "ruamel-yaml-clib" do
@@ -96,8 +97,8 @@ class Grayskull < Formula
   end
 
   resource "semver" do
-    url "https://files.pythonhosted.org/packages/9f/93/b7389cdd7e573e70cfbeb4b0bbe101af1050a6681342f5d2bc6f1bf2d150/semver-3.0.0.tar.gz"
-    sha256 "94df43924c4521ec7d307fc86da1531db6c2c33d9d5cdc3e64cca0eb68569269"
+    url "https://files.pythonhosted.org/packages/46/30/a14b56e500e8eabf8c349edd0583d736b231e652b7dce776e85df11e9e0b/semver-3.0.1.tar.gz"
+    sha256 "9ec78c5447883c67b97f98c3b6212796708191d22e4ad30f4570f840171cbce1"
   end
 
   resource "soupsieve" do
@@ -106,8 +107,8 @@ class Grayskull < Formula
   end
 
   resource "stdlib-list" do
-    url "https://files.pythonhosted.org/packages/bb/01/237cea071fd305f162ebbe1db18a59b56b0b5fdff19533c9a1beea0bdee7/stdlib-list-0.8.0.tar.gz"
-    sha256 "a1e503719720d71e2ed70ed809b385c60cd3fb555ba7ec046b96360d30b16d9f"
+    url "https://files.pythonhosted.org/packages/1e/bb/47f17e319e28e13f7cacf50d397965e2429e5ba7e68424c605c74928d659/stdlib_list-0.9.0.tar.gz"
+    sha256 "98eb66135976c96b4ee3f4c0ef0552ebb5a9977ce3028433db79f4738b02af26"
   end
 
   resource "tomli" do
@@ -120,9 +121,14 @@ class Grayskull < Formula
     sha256 "f463434305e0336248cac9c2dc8076b707d8a12d019dd349f5c1e382dd1ae1b9"
   end
 
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/3c/8b/0111dd7d6c1478bf83baa1cab85c686426c7a6274119aceb2bd9d35395ad/typing_extensions-4.7.1.tar.gz"
+    sha256 "b75ddc264f0ba5615db7ba217daeb99701ad295353c45f9e95963337ceeeffb2"
+  end
+
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
-    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   def install

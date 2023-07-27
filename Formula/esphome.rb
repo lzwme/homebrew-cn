@@ -6,15 +6,16 @@ class Esphome < Formula
   url "https://files.pythonhosted.org/packages/67/b9/620eff2543f5266aef97e5addce015e4f0126aa7f6ac102eb027021ad0da/esphome-2023.7.0.tar.gz"
   sha256 "2fed4aedf6c3ca03c4d4a906a10edb64d9f624021483fd9c0679413ab525bf80"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "74f54d9fb0804b90a143d81e932f0f74c7b704fbb9928042f458466a39195f1f"
-    sha256 cellar: :any,                 arm64_monterey: "d7b422b276ce287193bbb9e15e8a198d5b9a0704045d5850ba6ef850386dcb93"
-    sha256 cellar: :any,                 arm64_big_sur:  "a2430c2dc6c1ac121ae864161017f0ab9b86ff8bf93761bce4e1883c7e9c414b"
-    sha256 cellar: :any,                 ventura:        "66212898b2a4c66f460a028888e9ffc308b18febdb3ee28dd950ad5144666aca"
-    sha256 cellar: :any,                 monterey:       "7a83ac60c0cb6b565ad9600f10122fb3cf2484d0a890da55217a2085c6514ebc"
-    sha256 cellar: :any,                 big_sur:        "0ed3f71a46d9b0b191ab9496c4b49d5220d1543be2c702ef5c1529c6ab3e56d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7cdd3e86836b9506acca4233ab195bcf9377954282904b85492b22611558144b"
+    sha256 cellar: :any,                 arm64_ventura:  "3fdd390727adf9399788393619c903325111b24a2735cd8d36c40668688fa1bd"
+    sha256 cellar: :any,                 arm64_monterey: "b98b0355b17e35807a0238fdef834d5ff253f64a0ceb63ffd587362c310e5123"
+    sha256 cellar: :any,                 arm64_big_sur:  "cb18fc46438e4868de1760d53d3828565bd892bd45bd99b973fb30b6fca033f9"
+    sha256 cellar: :any,                 ventura:        "d7c47856dbc58c7eb4fad5e3caed537a13808db1daffde4c6419b667b0a0a845"
+    sha256 cellar: :any,                 monterey:       "56076b48dd5f5e8a6bb3829cae5a0270f82238b149c74bbfbc42b26acf9e8279"
+    sha256 cellar: :any,                 big_sur:        "980c06a34ff33ecc6744639c06ba19468d366e56af6b2ff2ca128edfe0fafad5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b56c1caab07a2533c89f8a4155e86789f5a7acfc0c4683e005852996cb426a7"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -65,8 +66,8 @@ class Esphome < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
@@ -125,8 +126,8 @@ class Esphome < Formula
   end
 
   resource "marshmallow" do
-    url "https://files.pythonhosted.org/packages/5e/59/dd465e5ab0ccb879c410f88c75189a19fd437b12cd9a03b31579aef58709/marshmallow-3.19.0.tar.gz"
-    sha256 "90032c0fd650ce94b6ec6dc8dfeb0e3ff50c144586462c389b81a07205bedb78"
+    url "https://files.pythonhosted.org/packages/e4/e0/3e49c0f91f3e8954806c1076f4eae2c95a9d3ed2546f267c683b877d327b/marshmallow-3.20.1.tar.gz"
+    sha256 "5d2371bbe42000f2b3fb5eaa065224df7d8f8597bc19a1bbfa5bfe7fba8da889"
   end
 
   resource "noiseprotocol" do

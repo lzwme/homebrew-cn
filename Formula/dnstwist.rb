@@ -6,16 +6,16 @@ class Dnstwist < Formula
   url "https://files.pythonhosted.org/packages/dc/7e/e473c19e6a885cdebfd6c6d18fcdb4c1f00d9caf17d72112a366023628e9/dnstwist-20230509.tar.gz"
   sha256 "153f1f833d456dff8a70b622f13a5699af392782415d69fc38dd26f98eb4740c"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a6e0cefd7c48353747dc63d2e6177d3c56791cd944d1c1310e4a504e5b14c01d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "84c85e1e2f4f74cc6f67bf7f745f4054f7babd0c3082e297e7466d47dd8745c9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d95f9c51e668c13252539684d2897465a78faddaa6738717b01fabe70eaee0b4"
-    sha256 cellar: :any_skip_relocation, ventura:        "9a260b194d8c66fa5e36368bab66a3b885ce8187526df556828c88e93f8bd621"
-    sha256 cellar: :any_skip_relocation, monterey:       "cd59e39133e0b03872f9f3c78cfa29770338a2f58c10509a798ea2804d518a50"
-    sha256 cellar: :any_skip_relocation, big_sur:        "54efc728a5a0ea56a1b4ce7f6def458a83f3c0b17b40b30b11d18aa8826a60cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c1b69285fd7aced6431f505ad41ba25a1691b6cc49cc725de93ccfc5f658731"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02d60ac57f0ad6547ee6cbdb65db261779098450ed772495f963aeafe16506fd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b0c0bf7d74fae3d1c8237e60782533b4b24fae2abf9b8a4ce431cf552f72c671"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5f8cdcc2dbd73945c15001cbc4da0ccdd54bdf702b7ca833b147214b10ccefa8"
+    sha256 cellar: :any_skip_relocation, ventura:        "c8bd97cf6b54d50444452ebcc09178bfd079b9f086619bd5ed779ed034e0ca43"
+    sha256 cellar: :any_skip_relocation, monterey:       "9ac47adc1626c9a0ffb6dba22baa0203c1b69d3aad00967d9bc88c2259a8881b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "342d25379777e0b08bd426f521fe5381782a9cc0b27e0f542b41e8969764a6b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49ecc49010f864a3361ce15e0c2bdd7f84d08dc86f9e35475a8ddd4b69d65e5d"
   end
 
   depends_on "geoip"
@@ -54,8 +54,8 @@ class Dnstwist < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

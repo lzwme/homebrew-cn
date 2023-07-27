@@ -6,33 +6,33 @@ class Fred < Formula
   url "https://files.pythonhosted.org/packages/1e/7a/bb49f22f2ce33109ce5a5f8c7b85263cbc97bf9c9b44ba612c8380d3406f/fred-py-api-1.1.0.tar.gz"
   sha256 "f1eddf12fac2f26f656e317a11f61ec0129ba353187b659c20d05a600dba78c8"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b3f36d4c497653085a0f88e542f33a7d3ebabf99adfae8dc309c6d163ba7de0e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b8e1944a1bc922e64375abbeac2145779af2a8691ffa7167ebbcbbc9861f6d0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7a630bd6b53d0a546174a39692ee745f37f07fb162903289dc9afd64922d92a5"
-    sha256 cellar: :any_skip_relocation, ventura:        "c07764ba04eb212838e4a0de55defe2dbf9dee16547979f9e652394aa7c361a4"
-    sha256 cellar: :any_skip_relocation, monterey:       "e4e45c40bfe45aae3fb00137258e4cade406bbb2b382992c86bb5ec38a60f735"
-    sha256 cellar: :any_skip_relocation, big_sur:        "dd40f63b88752a31cae4fcefc1c268b320043e42d8fc616a8861652d2f9a96cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2315d1074ee72c9243bc216047c2d017334e7351099c27a150158403453ae50"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8089f9a6cdcd59750673d84ad88aa811639e88f036704f1107f3e48a40491eca"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f168772e0d637f443c555e0fa6445098706341e56e9d7c52f2771cbc5caef120"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ece532d86ad5fdd6bce5476c120970ef1c4e7f7fd477ee429125b980d2fd5fea"
+    sha256 cellar: :any_skip_relocation, ventura:        "d5cbe4a72d8e0ca0f81f580e111dc19aa3f43fa09ed3c93b4fcefb919c41a694"
+    sha256 cellar: :any_skip_relocation, monterey:       "f203b834fd464b8bc395cbc3a6d6890cbe9400ed42b6b6b50591872a9c128f2b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "01e13403a725b96211a3fd12b2bed0f25c875e933ca47ed4318c2e2505418dd8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dcc9466ca6f4685a141923f807395397b11593814b2ac01c0295bc76c99bcde6"
   end
 
   depends_on "python@3.11"
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
+    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
   end
 
   resource "idna" do
@@ -46,8 +46,8 @@ class Fred < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
-    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   def install

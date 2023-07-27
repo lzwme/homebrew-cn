@@ -6,16 +6,16 @@ class OktaAwscli < Formula
   url "https://files.pythonhosted.org/packages/aa/d3/1c954881dea1d1ceccbf54353fb26c4487a8c4702dd415ac44744e306c97/okta-awscli-0.5.4.tar.gz"
   sha256 "509921a38dedc6fa1424f06e5bb94a5bb359463912c45218abdf6095b3aac821"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25516d5b5d65bd1bba979b11ec324f02b9fb15d9ece07ddcc316e4ee093f3e3f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e9acb53e831e376f62c8beb0506ed4be7da288db83ae068cf4c9ee649344afa4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6000175b6b0ea35e8739edd1455afc1b088c90bb5fff2f9c9e474da53d7618d9"
-    sha256 cellar: :any_skip_relocation, ventura:        "3514597c084a2c790b7ac9b880d3cfd8e0235034640e7e150492aee49d8c5ab9"
-    sha256 cellar: :any_skip_relocation, monterey:       "1eb4044aad333a7997bad8fbe02cfdec7ccf72bd6d77bde100eb26abee0a45c7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4574145bbe6b765ac7fe4d471a17afc56e8f0efb6f624323c145a2ad109a1789"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10cd8efd42292bf90554bb5fc619744f15c9a760d4fc1b00ae451a8cad401f5a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a770baa1ce5fdfe0923dcd7fb7936d3247696e1768ff401093771e31a490a304"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d0b1ad669f4e904b1576999aee178489dc6e6f625b6aec10d4704063a6239fc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ef9e2025c7c9456ddfb29d9989ef4d9d9f52e7bd12b1f18a2296f06d585b58d7"
+    sha256 cellar: :any_skip_relocation, ventura:        "499357187764ea34b53be6255123b3a61fd1f3c9f469fca93632be593ca2b54c"
+    sha256 cellar: :any_skip_relocation, monterey:       "5c20823b0b3d58acf3f372618bf4fcb4c235a34bf630adcf4693d572da2608a0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "466a6a1461a7681fe91480681c376db5d839a981fc5dd45e01f326aae5b38023"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "014417c231aea1e240595c09d7a26ad93569780251e438a02eb49de18f6536e8"
   end
 
   depends_on "python@3.11"
@@ -27,13 +27,13 @@ class OktaAwscli < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/7f/17/595fa7f8a7782e5b76cee89b12cb44c767fc439a0a4a5177e45087e49f96/boto3-1.26.139.tar.gz"
-    sha256 "fe19d287bc8ede385e1b9136f135ee8f93eab81404ad1445b1a70cabfe3f7087"
+    url "https://files.pythonhosted.org/packages/be/d5/d22151869ac5a87a583f96b8de2414a8813094143e783d8494e4f359ba9b/boto3-1.28.11.tar.gz"
+    sha256 "0fe7a35cf0041145c8eefebd3ae2ddf41baed62d7c963e5042b8ed8c297f648f"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/85/e0/32053bd0dc53a495013fb76d1cdd9b03d9da8dde9bba14dae6c36785c7ac/botocore-1.29.139.tar.gz"
-    sha256 "acc62710bdf11e47f4f26fb290a9082ff00377d7e93a16e1f080f9c789898114"
+    url "https://files.pythonhosted.org/packages/d1/26/d503d445a8ae7efc737abc2349f2e97a17b1009e7e26d1257800b6982fd5/botocore-1.31.11.tar.gz"
+    sha256 "b17ff973bb70b02b227928c2abe4992f1cfc46d13aee0228516c8f32572b88c6"
   end
 
   resource "bs4" do
@@ -42,23 +42,23 @@ class OktaAwscli < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
+    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
   end
 
   resource "configparser" do
-    url "https://files.pythonhosted.org/packages/4b/c0/3a47084aca7a940ed1334f89ed2e67bcb42168c4f40c486e267fe71e7aa0/configparser-5.3.0.tar.gz"
-    sha256 "8be267824b541c09b08db124917f48ab525a6c3e837011f3130781a224c57090"
+    url "https://files.pythonhosted.org/packages/0b/65/bad3eb64f30657ee9fa2e00e80b3ad42037db5eb534fadd15a94a11fe979/configparser-6.0.0.tar.gz"
+    sha256 "ec914ab1e56c672de1f5c3483964e68f71b34e457904b7b76e06b922aec067a8"
   end
 
   resource "decorator" do

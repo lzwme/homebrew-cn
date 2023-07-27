@@ -6,16 +6,17 @@ class Platformio < Formula
   url "https://files.pythonhosted.org/packages/ed/bd/6c2e44afcb77eebd0f1edace2f67968bb0062f37d50d0e90c2667950a77a/platformio-6.1.9.tar.gz"
   sha256 "1994484dfb87b321cd0a1632f91d7018c94f3c305bbf377eb9d6df592c005635"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/platformio/platformio-core.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "43afc9cbe1d294ced8c2c1039bbb38accd88db63614909b34acbee11008e860b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4d378b7a5e0328623fb5b5c061c4d7eb829fd9774ecde98ec692261df6fd054f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bd585879c17bc707248aae3ee86621dee954da8a07cb8841d477a1be52ff6763"
-    sha256 cellar: :any_skip_relocation, ventura:        "bfb776124e99f44fbc24916df96050204de244a539e9eeaccaf11338b402b277"
-    sha256 cellar: :any_skip_relocation, monterey:       "15d98dd1efd9d9e3d574b623f78d269dd1db090cf8dfb6d007932bb1f255b1eb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e9e3276f12e970aabdf4ffac699ffd55bab164309745aa23f379259dbedae8d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f80a2612d7f703ced5a0285e70d93dcd37969dd97610ba94513d402715580c81"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "240739a2a5ed6d6dcddce587a43af257e245d392564da4ceb816336f8881f1aa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c932401075da96026116c601c84168f708c66cbc8150af45aab978d4e0268603"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a85d659ff37c314e608bdc03e42763ee1c4f22eb6650e8c50edb47b495d9801d"
+    sha256 cellar: :any_skip_relocation, ventura:        "dd0c79545f9497200fcf8943d51c797a309135e527e40aa3f14503159ded979e"
+    sha256 cellar: :any_skip_relocation, monterey:       "d524cd70a70af0263c2e0e32c1fabff8cbf6379a5e516ca5843764e86dcde098"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2de2214209f5351ba69870b7f6494c5b87c6024cd91489a86647076f399e4256"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "701b1d4d6864bdc78337c307d5ba05793c9d3d592b52b01bb46c4ec37d5302e8"
   end
 
   depends_on "python-tabulate"
@@ -42,18 +43,18 @@ class Platformio < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
+    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
   end
 
   resource "colorama" do
@@ -112,8 +113,8 @@ class Platformio < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
-    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   resource "uvicorn" do

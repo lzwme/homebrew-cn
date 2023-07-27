@@ -3,20 +3,19 @@ class Pocsuite3 < Formula
 
   desc "Open-sourced remote vulnerability testing framework"
   homepage "https://pocsuite.org/"
-  url "https://files.pythonhosted.org/packages/98/9c/ea5c93f0cff8ffbe776ae138569219c2f0c7e43d94c002fe21e607d186e6/pocsuite3-2.0.4.tar.gz"
-  sha256 "57dd1e565595bd705667a4e0df72e288321640f938e1fefcc83b02a70dda099d"
+  url "https://files.pythonhosted.org/packages/0c/a0/89e1eb8bd85cdf54b0c642d22ea8b39d7f47769b116a9181367383d5f2d2/pocsuite3-2.0.5.tar.gz"
+  sha256 "17ba73665e225225299570d97654eac3ded6cdf761ca42e57353dd6615bf496f"
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/knownsec/pocsuite3.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "520878c4da7317db9d0a7698b8debf5d06026dd7970d9deef354cad598123d46"
-    sha256 cellar: :any,                 arm64_monterey: "a771c89568e999130e87de2b23865fa818b925459dd64797228fb26246174c51"
-    sha256 cellar: :any,                 arm64_big_sur:  "6cc6f48519d3d53780821dd240e42fdad1d3f85e3e7ec7006d73ce16f6a98e30"
-    sha256 cellar: :any,                 ventura:        "1e5ee34380daa06a6af9852e4b8cb7fc9ba824256ffec2faa9a954d622dff015"
-    sha256 cellar: :any,                 monterey:       "d861d372254895eefcfd2deb5aa7f8c62a792771a2b3a3979d3a1bd63ff18ad8"
-    sha256 cellar: :any,                 big_sur:        "76f728721c7d8a2211f7994174ae34f061420f5c26f50c094f5753d25478b2a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "083b30108ec388eff6978928cedbf1ce739bf3600dd8042b198a41a657eaeca6"
+    sha256 cellar: :any,                 arm64_ventura:  "7ef1664b92f7c06a8ceedde28f207d394093dcfe7dc8f829874a5295271c96d4"
+    sha256 cellar: :any,                 arm64_monterey: "1d3ddfef1a099173bd702b8df9c894d8c532168ad9c1182e2596441504763423"
+    sha256 cellar: :any,                 arm64_big_sur:  "f8edc6bc4ce6c5a24a9b601ca6a1ed5783fa686138180d5bd7e350d983ea44a7"
+    sha256 cellar: :any,                 ventura:        "590e4c968d1dbd9176af200ee022e5dee0b5d843ea3fde956fce9736ce04c46b"
+    sha256 cellar: :any,                 monterey:       "4fd1edfdf85e13b4f98deedac7ff0c320283416991704c542a2b76ee342ddb64"
+    sha256 cellar: :any,                 big_sur:        "dd06b377dbaeb52c9a54d8194505cc778c032ac392177626ded94337a53c0c53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e799c0e077cc50974fcf19a2c24b6bc23b96c15b94ad22c37264b6552ceea3c"
   end
 
   depends_on "pkg-config" => :build
@@ -37,8 +36,8 @@ class Pocsuite3 < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "chardet" do
@@ -47,8 +46,8 @@ class Pocsuite3 < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "colorama" do
@@ -62,8 +61,8 @@ class Pocsuite3 < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
-    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
+    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
+    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "dacite" do
@@ -72,8 +71,8 @@ class Pocsuite3 < Formula
   end
 
   resource "faker" do
-    url "https://files.pythonhosted.org/packages/00/40/1b5fa558c4445b1e11361af1407b6ed78130893f65abdcb301bf913cf706/Faker-18.10.1.tar.gz"
-    sha256 "d9f363720c4a6cf9884c6c3e26e2ce26266ffe5d741a9bc7cb9256779bc62190"
+    url "https://files.pythonhosted.org/packages/b8/d6/4d9eefbe9152e90e6d91cb8a1e12ce86989178e18e7938910bfde9b4ceb2/Faker-19.2.0.tar.gz"
+    sha256 "78840b94843f3aa32a34a220b2b5e8b309e3ffff3a231b0c54e841bb68e0757d"
   end
 
   resource "idna" do
@@ -87,13 +86,13 @@ class Pocsuite3 < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/06/5a/e11cad7b79f2cf3dd2ff8f81fa8ca667e7591d3d8451768589996b65dec1/lxml-4.9.2.tar.gz"
-    sha256 "2455cfaeb7ac70338b3257f41e21f0724f4b5b0c0e7702da67ee6c3640835b67"
+    url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
+    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
   end
 
   resource "mmh3" do
-    url "https://files.pythonhosted.org/packages/76/d4/2aae33efebe5e40862e8346774bc2559b2967465d5ee58895d17b05589cf/mmh3-4.0.0.tar.gz"
-    sha256 "056b83d04e595547d0407cc8e5aa5d8ba8802a8afa417b64c1c30235b5389e30"
+    url "https://files.pythonhosted.org/packages/34/a0/403fa487930124e8b52e68857d773b9524592c65c8c37e7074b009c67d77/mmh3-4.0.1.tar.gz"
+    sha256 "ad8be695dc4e44a79631748ba5562d803f0ac42d36a6b97a53aca84a70809385"
   end
 
   resource "prettytable" do
@@ -142,8 +141,8 @@ class Pocsuite3 < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
-    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   resource "wcwidth" do

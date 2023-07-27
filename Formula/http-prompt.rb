@@ -6,18 +6,17 @@ class HttpPrompt < Formula
   url "https://files.pythonhosted.org/packages/bf/e2/bc5b0df107afcac65fde7015df48cbe9b4d877d1d0818203544ed1a41d4c/http-prompt-2.1.0.tar.gz"
   sha256 "eee71a00fed0b8a2a35bb338b269be7a20e8a1a6f6465a65561d76a21521e7f3"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/httpie/http-prompt.git", branch: "master"
 
   bottle do
-    rebuild 5
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ab4b3971ca605c9f52c5df60955ad604de236d74cb26a7db72cff81b28e5bc9e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a1065335966512e36471fdbcdcebbd6ae97dacc01fae2e05e6553e87eda35cba"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a0bfab97c88d284e7e6a6b9f4a7d8cc3c226949f2dfd8bdda427f4f46f98941e"
-    sha256 cellar: :any_skip_relocation, ventura:        "3a915cdea46f71f1a71383003c5326f8d901b168db1fa2688e1dc4a4c9604e78"
-    sha256 cellar: :any_skip_relocation, monterey:       "0fe64d6a6ee1761233f81c97a9821006ba06d689e94f719133eed9b5d68d6a3e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fb66b542c821c02ed271278f52149d93526ebc7f2683e618d552ba6a5cc31e62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "631b03d12e981ac5e90149ac858644e35513844859d129d6691c86a0103280a2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8288fd49092450114aa1d45a8ff746f64f60788aa897c37348ad4a4ed64a3432"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9194186c9058d0dd8c113e97ee8cf32b9607336ea8238125da535a875228fd69"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e3938b0d089acf78e7552c83f027b20c1d3803f0e0721738709b6240f4dfc57d"
+    sha256 cellar: :any_skip_relocation, ventura:        "f4099329d6f983de5f14f388d4c13d25b555031d1890e0de7f7405bc1d46ccdf"
+    sha256 cellar: :any_skip_relocation, monterey:       "ba4fe6b5b0f830569e0a9afb8cc5f5e2b0383be16a91a4de929f17566f550e9d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "86ff9fa3088108a7a54675a543882a9f0c029f4d55c3e85f130b726b1a9a6dcf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1cf6a0d93553c4de5cbefef81a6860b8a5ea727a4da30ee6993f32488e532064"
   end
 
   depends_on "pygments"
@@ -26,18 +25,18 @@ class HttpPrompt < Formula
   depends_on "six"
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
+    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
   end
 
   resource "defusedxml" do
@@ -56,8 +55,8 @@ class HttpPrompt < Formula
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/e4/c0/59bd6d0571986f72899288a95d9d6178d0eebd70b6650f1bb3f0da90f8f7/markdown-it-py-2.2.0.tar.gz"
-    sha256 "7c9a5e412688bc771c67432cbfebcdd686c93ce6484913dccf06cb5a0bea35a1"
+    url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
+    sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
   end
 
   resource "mdurl" do
@@ -86,8 +85,8 @@ class HttpPrompt < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/77/5d/98efc9cf46d60f3704cf00f8b3bd81319493639fd4367efb5d02fd29ffc1/regex-2023.5.5.tar.gz"
-    sha256 "7d76a8a1fc9da08296462a18f16620ba73bcbf5909e42383b253ef34d9d5141e"
+    url "https://files.pythonhosted.org/packages/18/df/401fd39ffd50062ff1e0344f95f8e2c141de4fd1eca1677d2f29609e5389/regex-2023.6.3.tar.gz"
+    sha256 "72d1a25bf36d2050ceb35b517afe13864865268dfb45910e2e17a84be6cbfeb0"
   end
 
   resource "requests" do
@@ -101,13 +100,13 @@ class HttpPrompt < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/3d/0b/8dd34d20929c4b5e474db2e64426175469c2b7fea5ba71c6d4b3397a9729/rich-13.3.5.tar.gz"
-    sha256 "2d11b9b8dd03868f09b4fffadc84a6a8cda574e40dc90821bd845720ebb8e89c"
+    url "https://files.pythonhosted.org/packages/e3/12/67d0098eb77005f5e068de639e6f4cfb8f24e6fcb0fd2037df0e1d538fee/rich-13.4.2.tar.gz"
+    sha256 "d653d6bccede5844304c605d5aac802c7cf9621efd700b46c7ec2b51ea914898"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
-    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   resource "wcwidth" do
