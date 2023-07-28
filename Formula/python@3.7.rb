@@ -5,11 +5,6 @@ class PythonAT37 < Formula
   sha256 "7911051ed0422fd54b8f59ffc030f7cf2ae30e0f61bda191800bb040dce4f9d2"
   license "Python-2.0"
 
-  livecheck do
-    url "https://www.python.org/ftp/python/"
-    regex(%r{href=.*?v?(3\.7(?:\.\d+)*)/?["' >]}i)
-  end
-
   bottle do
     sha256 ventura:      "c9d94658425309c0782eab93feec0c9e23d2816b99e9a4b1b4e5643686137221"
     sha256 monterey:     "1b7b4f086a7fd1ecdb440be1bf85718f6c1409f71ec443545218cf4e52f73762"

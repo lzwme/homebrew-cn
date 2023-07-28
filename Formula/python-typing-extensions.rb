@@ -29,17 +29,8 @@ class PythonTypingExtensions < Formula
   def install
     system Formula["flit"].opt_bin/"flit", "build", "--format", "wheel"
     wheel = Pathname.glob("dist/typing_extensions-*.whl").first
-    pip_flags = %W[
-      --verbose
-      --isolated
-      --no-deps
-      --no-binary=:all:
-      --ignore-installed
-      --prefix=#{prefix}
-    ]
     pythons.each do |python|
-      pip = python.opt_libexec/"bin/pip"
-      system pip, "install", *pip_flags, wheel
+      system python.opt_libexec/"bin/pip", "install", *std_pip_args, wheel
     end
   end
 
@@ -70,7 +61,6 @@ class PythonTypingExtensions < Formula
 
       m = Movie(title="Grease")
     EOS
-    mypy = Formula["mypy"].opt_bin/"mypy"
-    system mypy, testpath/"test.py"
+    system "mypy", testpath/"test.py"
   end
 end

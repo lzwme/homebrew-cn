@@ -1,8 +1,8 @@
 class Qca < Formula
   desc "Qt Cryptographic Architecture (QCA)"
   homepage "https://userbase.kde.org/QCA"
-  url "https://download.kde.org/stable/qca/2.3.6/qca-2.3.6.tar.xz"
-  sha256 "ee59d531d4b82fb1685f4d8d74c2caa0777f501800f7426eaa372109a4305249"
+  url "https://download.kde.org/stable/qca/2.3.7/qca-2.3.7.tar.xz"
+  sha256 "fee2343b54687d5be3e30fb33ce296ee50ac7ae5e23d7ab725f63ffdf7af3f43"
   license "LGPL-2.1-or-later"
   head "https://invent.kde.org/libraries/qca.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Qca < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "1ff65b5d3d3f160e001f1627be59bd075f53decddb467ab3f15ba434c71bbf87"
-    sha256 cellar: :any,                 arm64_monterey: "1a6052b3caef256e2263278d89a915f716c6c8f04668e0080013d74112995722"
-    sha256 cellar: :any,                 arm64_big_sur:  "2b2a7f272d61f10d263af3e33ac6b2f1c7ee4dba521d21ada0355d3f1416c4c2"
-    sha256 cellar: :any,                 ventura:        "f34d1eb8064200969a6e65a4fe91b941b6c856204fdd2df114ae2c5b3abf6609"
-    sha256 cellar: :any,                 monterey:       "42840a223240c8319029eb28554ce7b79caa442e76de760b099f777cf978f7f8"
-    sha256 cellar: :any,                 big_sur:        "2cba7631886149287044b14e2c38b24a229577c4888d8b1db1fb035e4a363c20"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "35887790df6b8b5f6550dab9a212f5a0395dd04da45187179cd9e7065cc0dc27"
+    sha256 cellar: :any,                 arm64_ventura:  "f7c386d6484854c37b199fbd2229bf09d7c0feb4292dba7f31be570ea7a17c6e"
+    sha256 cellar: :any,                 arm64_monterey: "a2c25cf1264e6bb33b1aaf8ec8525c58df60f0c003906469f77eda3c56e73518"
+    sha256 cellar: :any,                 arm64_big_sur:  "c7ff822233c00931c5da4c22689269edcc5244fa7bc1ade0d213be11266c10a8"
+    sha256 cellar: :any,                 ventura:        "1894df58bbbef4986d47d50edb3c49d189d9c1c0748b5cb80589e095222b2f26"
+    sha256 cellar: :any,                 monterey:       "dae78d2860c8d11a268ae4f9ebcc62d1fcf7501d5ace5e3a93294539188860bc"
+    sha256 cellar: :any,                 big_sur:        "2e63ba841df444e96470611e7adc7b8e4a88e23a735042780731fddeb5f78762"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cfdcd1c448ce4881ace28b56b9415a229cc597a73e778acabb7f4af061d95939"
   end
 
   depends_on "cmake" => :build

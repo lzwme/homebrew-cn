@@ -1,8 +1,8 @@
 class Juliaup < Formula
   desc "Julia installer and version multiplexer"
   homepage "https://github.com/JuliaLang/juliaup"
-  url "https://ghproxy.com/https://github.com/JuliaLang/juliaup/archive/v1.11.15.tar.gz"
-  sha256 "026f8712a20ab972607668f7f030fc86a15ee307f2fa7521f0edfaac0dcde1f2"
+  url "https://ghproxy.com/https://github.com/JuliaLang/juliaup/archive/v1.11.22.tar.gz"
+  sha256 "8a0b4540262a8bea9e61a4f287ced32ec4ad2ac4cb528a1b473eea6f139256df"
   license "MIT"
   head "https://github.com/JuliaLang/juliaup.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Juliaup < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "67def61ec4cd8a13b39c0d0cf27bbbf8471dd91df5ab270dd2114770fd246228"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "81018ead3f5360a1d6bac8f3b409166a585b296ab6e4c604a8b234bac6dfa576"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ae37eec46f61b09ebd5411a4ab2251a8f9efc049b605b2cba20f592ea68e155c"
-    sha256 cellar: :any_skip_relocation, ventura:        "ddf91c4825a0c452045e210a290098dc2e9b4638f19842f070a9b1791e82d7d6"
-    sha256 cellar: :any_skip_relocation, monterey:       "21aaef9acb505debb557d3dda203007e83a3ec97335afc724f6463a7de8c4193"
-    sha256 cellar: :any_skip_relocation, big_sur:        "02af2883c063cc7b4e3e9472f7a80d6502028b3a530e0806c31698e0da8fcf60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c57b4739876bd4a2b5dd0b7dc9ba6823b52466aa3d32c53955c25e11f5f4886d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "62612166c99ee481b315dbd7818b05c59dd0300aea5c383bbcb554ea56b5e1e3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ac9c072d4e8bdd390c87cd27c5518cbf7c7b62c23e75e8db726cb01d345176e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2a2796a4550575d76741de55203e9e6159206b67515eb054cd32a5e6d0e2bc3c"
+    sha256 cellar: :any_skip_relocation, ventura:        "49dcc9990817251b6850cc1201c61f1c07aadf5122a3b19e88d852dc639134dc"
+    sha256 cellar: :any_skip_relocation, monterey:       "658d83b029f3f7ea09642f4457024faf15c3edaaa71421ffa1871c7e1c177c46"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0d8a814414ce16253382f9b6723583c3bbfbb2e846ab9230583732df59d8488d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0edfd0e3b8e99c0796d47532ef161f01e63a4de76e92e499ae43caf8c9f71593"
   end
 
   depends_on "rust" => :build

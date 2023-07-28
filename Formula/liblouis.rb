@@ -37,7 +37,7 @@ class Liblouis < Formula
     system "make"
     system "make", "check"
     system "make", "install"
-    system python3, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "--no-build-isolation", "./python"
+    system python3, "-m", "pip", "install", *std_pip_args, "./python"
     (prefix/"tools").install bin/"lou_maketable", bin/"lou_maketable.d"
   end
 

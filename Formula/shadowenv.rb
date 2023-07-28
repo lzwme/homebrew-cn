@@ -1,19 +1,18 @@
 class Shadowenv < Formula
   desc "Reversible directory-local environment variable manipulations"
   homepage "https://shopify.github.io/shadowenv/"
-  url "https://ghproxy.com/https://github.com/Shopify/shadowenv/archive/2.1.0.tar.gz"
-  sha256 "6cfdecb4f9684d0c536ab88847da5f314145f19bd504a8f13b59adf2966bb05c"
+  url "https://ghproxy.com/https://github.com/Shopify/shadowenv/archive/2.1.1.tar.gz"
+  sha256 "d9bf043f376b18255d124a9b90eb67d80d2f971bcd49090e84703b61dee03910"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "76bbe8c6c92c0fbd63d3f4f801b869e8f836bff4bb6f82dba7dbe08972934f34"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "28aabdbb7ebfab527b9e4a1201172ac9cea7594cca8d41bd237797fa40f82246"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8862ba2e18219cfc43153b40535ffbeded2803651f20ebd7777d7eb4c2d9b1c6"
-    sha256 cellar: :any_skip_relocation, ventura:        "4d91d62c013d0429d7451e1d549587d1fdc953240a6aaa94c38a7a0dde3635f7"
-    sha256 cellar: :any_skip_relocation, monterey:       "0d78a4c4030d259278de1428c501629ed441c6079b5b4d41074f579b1119eb87"
-    sha256 cellar: :any_skip_relocation, big_sur:        "395d18e1a7e6cd780fa1f403394ccab654b8005185239bd66b69e6068503a136"
-    sha256 cellar: :any_skip_relocation, catalina:       "9dd1aef3e3c5c943ecf2e111d4f263b313792166b53671adb28f1d434eca3f23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74bcc44128a24dd9802235e5d67dbadcce51806f677fc0b4c2d48d1e247bd5f8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5b057830c9b7314bca810275833a19bf287f77c3fc36ce3dbb2f8f7cc9647e22"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "50d8d4dfcf9e64546e965c942f6a125bcfcb94a42253058b667238ff7c81899c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d8ed9566680168ecd23a35843069d9f50bf7cd0b9902effdd29a923deda9c792"
+    sha256 cellar: :any_skip_relocation, ventura:        "b96c4530ee1f23877cf87877218465d03bf9e52f69d5638b8bbd8ad0d66a2e22"
+    sha256 cellar: :any_skip_relocation, monterey:       "bc2b03d6af4c10ba31381997ffd327489ea47abf064256709ef916036dd04867"
+    sha256 cellar: :any_skip_relocation, big_sur:        "91ae639111876468b02121c8bf16300418c8aa2c87d8378045226dea145cc77a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "375fd1676c290cf6704b90657ab7cd11ecd56b4da72f2505354f8bbe486eedbf"
   end
 
   depends_on "rust" => :build

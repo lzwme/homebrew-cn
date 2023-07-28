@@ -1,20 +1,19 @@
 class Uwsgi < Formula
   desc "Full stack for building hosting services"
   homepage "https://uwsgi-docs.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/b3/8e/b4fb9f793745afd6afcc0d2443d5626132e5d3540de98f28a8b8f5c753f9/uwsgi-2.0.21.tar.gz"
-  sha256 "35a30d83791329429bc04fe44183ce4ab512fcf6968070a7bfba42fc5a0552a9"
+  url "https://files.pythonhosted.org/packages/a7/4e/c4d5559b3504bb65175a759392b03cac04b8771e9a9b14811adf1151f02f/uwsgi-2.0.22.tar.gz"
+  sha256 "4cc4727258671ac5fa17ab422155e9aaef8a2008ebb86e4404b66deaae965db2"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/unbit/uwsgi.git", branch: "master"
 
   bottle do
-    sha256 arm64_ventura:  "b28c9d037f4c185b1104deb950274bf10e2b2cd20da14e8e1a1ab98008a730f9"
-    sha256 arm64_monterey: "b0d8ceaef5da714dab88bb9b15669abe348a081e8d4cdf90d7f446c70f91e2fe"
-    sha256 arm64_big_sur:  "e5d9c4b40defd7690579f7e4229fdeed689e7f1d89fd20aa224eaee3bfd906ad"
-    sha256 ventura:        "c5689a1fac003060742263dff7f40985f7f62b0c724f6f42c0a61ab4c2e56642"
-    sha256 monterey:       "880a052cb9f304815db7ff085c957b07257036d3609908f466325833aac864cb"
-    sha256 big_sur:        "43d8fd1d5c42c128a9ac189ef7659f57df1da2703dea0c46ce486e55b35645b2"
-    sha256 x86_64_linux:   "1eea101f6821a7fa4a8c06164a7a6cff283f4b698ba9625b4cf7dfc2749a85df"
+    sha256 arm64_ventura:  "7fd65d5414dc3a93e9c07d77347902ab26b6ebf139190252242a37665cdef949"
+    sha256 arm64_monterey: "b652fab26ae8671e9ea0834ed41a9817101a5bafc44f5e38132327a0afe1d599"
+    sha256 arm64_big_sur:  "44b257a7cc2f749ecf4f5cedbe267986b9d1a3d9864adf9db3dce17d68052797"
+    sha256 ventura:        "544ba27e4967949369a68cef57aeb0d4d6191a85ec27098228e1434036002a04"
+    sha256 monterey:       "38998ee07c84dc9a44d766d2cc8e4531c6e393ca3b494a536bc99ad8c895e754"
+    sha256 big_sur:        "165bf9600690b687b3b529ad6976bcb03222fb9116041c26a9ec90ef72faccd2"
+    sha256 x86_64_linux:   "2ad95234ef39aae78d4d51b3522850b8661438b43ceabb0477a375d251e6f4f2"
   end
 
   depends_on "pkg-config" => :build

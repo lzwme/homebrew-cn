@@ -62,9 +62,7 @@ class Notmuch < Formula
     (prefix/"vim").install "vim/syntax"
 
     ["python", "python-cffi"].each do |subdir|
-      cd "bindings/#{subdir}" do
-        system python3, *Language::Python.setup_install_args(prefix, python3)
-      end
+      system python3, "-m", "pip", "install", *std_pip_args, "./bindings/#{subdir}"
     end
   end
 

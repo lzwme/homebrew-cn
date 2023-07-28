@@ -24,7 +24,7 @@ class Cffi < Formula
   end
 
   def install
-    system python3, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "--no-build-isolation", "."
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

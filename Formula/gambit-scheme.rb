@@ -1,8 +1,8 @@
 class GambitScheme < Formula
   desc "Implementation of the Scheme Language"
   homepage "https://github.com/gambit/gambit"
-  url "https://ghproxy.com/https://github.com/gambit/gambit/archive/v4.9.4.tar.gz"
-  sha256 "19fb44a65b669234f6c0467cdc3dbe2e2c95a442f38e4638e7d89c90e247bd08"
+  url "https://ghproxy.com/https://github.com/gambit/gambit/archive/v4.9.5.tar.gz"
+  sha256 "758da7b4afe6411e9c4fed14b0cc5ada39b5f1393c1edd4d3dd9c9a06127c310"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class GambitScheme < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "e33b55e30f8b151e9cd7465623310eadf07ba2ed1ba262bd1f70efd9613be5ed"
-    sha256 arm64_monterey: "feceed5aa4a6f4d486722e23211017a8c9c040e2c0b6f28865458f543371c853"
-    sha256 arm64_big_sur:  "56c42f91b17aae8bd28b9781fb7547a25b46d5d11893bde1346e32f0c5a73d22"
-    sha256 ventura:        "5960f1a7442cc56055a5313bd7dea62978037702cb8934043f1ceaff989f971c"
-    sha256 monterey:       "d1b794fc1a0c13ad38f672f63ee0af0702a390689ff183b9135d8e58207e7acd"
-    sha256 big_sur:        "e0475ff6051b44a26930709b37cdc038f3aaea4b00c6622ccb24e64a668758a5"
-    sha256 x86_64_linux:   "11b22d20fb8d65c1d36e2afec4fd8e69233072273740e3087435ebc643453d36"
+    sha256 arm64_ventura:  "958094368433dfd957d53e1cfbaa8af1235b879b70ace4eea23bbb1196f1aa5f"
+    sha256 arm64_monterey: "12263d69bdfd8b2a13901ec6967ba60946e36db1e0fff53190a1e27a7ae25221"
+    sha256 arm64_big_sur:  "4b8892cf54da88e4b8edd58e31d46a6c56fad15b3f5a2dc646e94958db044ae5"
+    sha256 ventura:        "7f26f3c29562f4dc3c8033a18e53d47bf55c093dcafd622e8fd78cf4d8d61f28"
+    sha256 monterey:       "3ead39c88a5246f0f8ecbb1afa4e4dc218375c35aea624afea101c7b803321dc"
+    sha256 big_sur:        "1e335b312ef44ae5d0b3475ab771da5390943a33435883570cb124d11c9c02e7"
+    sha256 x86_64_linux:   "5c4bb1bcc575d1079679114fec7776b3ac881ce67324a1a5b0bab2b6843f7ef6"
   end
 
   depends_on "openssl@3"
@@ -39,7 +39,6 @@ class GambitScheme < Formula
       --enable-single-host
       --enable-default-runtime-options=f8,-8,t8
       --enable-openssl
-      --enable-gcc-opts
     ]
 
     system "./configure", *args

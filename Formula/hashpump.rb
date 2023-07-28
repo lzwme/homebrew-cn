@@ -41,11 +41,8 @@ class Hashpump < Formula
 
   def install
     bin.mkpath
-    system "make", "INSTALLLOCATION=#{bin}",
-                   "CXX=#{ENV.cxx}",
-                   "install"
-
-    system python3, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "--no-build-isolation", "."
+    system "make", "INSTALLLOCATION=#{bin}", "install"
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

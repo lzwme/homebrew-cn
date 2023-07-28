@@ -6,17 +6,17 @@ class Vdirsyncer < Formula
   url "https://files.pythonhosted.org/packages/81/fb/6fbb7f1d102a59db275811a0de756d6f5bb55c624ba4bdf918b3fbd2ddc0/vdirsyncer-0.19.2.tar.gz"
   sha256 "fd058ceeab8293459a0466cd9b0e4ab3b39462c6e089a0f0ac37c307420d82ba"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/pimutils/vdirsyncer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c8d7a7d6493a6870fea1718b527bb860fe3906d6256790f899f2c65e6846f392"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "78b13bed467d77cd5dceaeb974ce196e7d3c9f1689b4df229187689d82cb20a7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4f8746cf93e6f4318141334cd421db109539ef91b02fa80ad0edc8242cf68a3e"
-    sha256 cellar: :any_skip_relocation, ventura:        "0955ba82666dc9517372c4aba268843d59035dd40268aa58effe406c0df1d86a"
-    sha256 cellar: :any_skip_relocation, monterey:       "2fe56e4c6bb8218883a80a1770cec2d892943146510eb524640c22f9b8d13192"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bf35722597e05ca0f4885a0e8c3c7a59332387d58b0feed0770c638e3afdaca5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48ed568097306f2f4696f53d772f7379adef8b89c9dba041aeb1eece8c17f559"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "12e2440724e47523cf07b4fa58bdecc0e02cb3badb70273261f95ba7373948d1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b707f5a702352149b423eeb1ffb3efcb96e3129dc5c3c3a205671f70f2a075f8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0a6461aa22d0060bb1f9995bc3a862052b8cedbc1fbce55960a5f4373e23757c"
+    sha256 cellar: :any_skip_relocation, ventura:        "6aee163edc96075dc66533dc4a9b6bfe3a2a90a5c3ed1414c4bf24b7f1d74d3e"
+    sha256 cellar: :any_skip_relocation, monterey:       "08432950c6df40c85e37d15833e916e2aef23daa901582403ad07e7d564c8385"
+    sha256 cellar: :any_skip_relocation, big_sur:        "72dc958fa5e8b42ce21c3c6e9499a789494e46a8961fac1981343ddc42f8b211"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ad788f33e747d48efe1d6e320ce198ea687cff4ba861e7b93507b4034807030"
   end
 
   depends_on "python@3.11"
@@ -57,8 +57,8 @@ class Vdirsyncer < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

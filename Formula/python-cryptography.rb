@@ -44,11 +44,11 @@ class PythonCryptography < Formula
 
     resources.each do |r|
       r.stage do
-        system python3, "-m", "pip", "install", "--prefix=#{buildpath}", "--no-deps", "--no-build-isolation", "."
+        system python3, "-m", "pip", "install", *std_pip_args(prefix: buildpath), "."
       end
     end
 
-    system python3, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "--no-build-isolation", "."
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

@@ -36,7 +36,7 @@ class Choose < Formula
     ENV.prepend_create_path "PYTHONPATH", libexec/Language::Python.site_packages(python3)
 
     resource("urwid").stage do
-      system python3, *Language::Python.setup_install_args(libexec, python3)
+      system python3, "-m", "pip", "install", *std_pip_args(prefix: libexec), "."
     end
 
     bin.install "choose"
@@ -50,6 +50,6 @@ class Choose < Formula
     # [Errno 6] No such device or address: '/dev/tty'
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    assert_equal "homebrew-test", pipe_output(bin/"choose", "homebrew-test\n").strip
+    assert_equal "homebrew-test", pipe_output("#{bin}/choose", "homebrew-test\n").strip
   end
 end

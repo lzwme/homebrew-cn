@@ -1,12 +1,12 @@
 class Pkgconf < Formula
   desc "Package compiler and linker metadata toolkit"
-  homepage "https://git.sr.ht/~kaniini/pkgconf"
-  url "https://distfiles.dereferenced.org/pkgconf/pkgconf-1.9.5.tar.xz"
+  homepage "https://github.com/pkgconf/pkgconf"
+  url "https://distfiles.ariadne.space/pkgconf/pkgconf-1.9.5.tar.xz"
   sha256 "1ac1656debb27497563036f7bffc281490f83f9b8457c0d60bcfb638fb6b6171"
   license "ISC"
 
   livecheck do
-    url "https://distfiles.dereferenced.org/pkgconf/"
+    url "https://distfiles.ariadne.space/pkgconf/"
     regex(/href=.*?pkgconf[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
@@ -20,7 +20,20 @@ class Pkgconf < Formula
     sha256 x86_64_linux:   "4484f0d7faca2e2e728e20ef0019f51867311a655f2f8673a33bda637cedf6b8"
   end
 
+  head do
+    url "https://github.com/pkgconf/pkgconf.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
+
   def install
+    if build.head?
+      ENV["LIBTOOLIZE"] = "glibtoolize"
+      system "./autogen.sh"
+    end
+
     pc_path = %W[
       #{HOMEBREW_PREFIX}/lib/pkgconfig
       #{HOMEBREW_PREFIX}/share/pkgconfig

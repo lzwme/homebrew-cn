@@ -4,19 +4,18 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 15 releases on multiples of 15
-  url "https://files.pythonhosted.org/packages/2e/2e/962f5ba09ffd009bd0501d16d15d78394128e763a726de9de357d754f4fe/checkov-2.3.330.tar.gz"
-  sha256 "36485cc4da2a23eb0df248bd48a9c9ef541e1e43ea4bb0bde2f8a6b35efd27d4"
+  url "https://files.pythonhosted.org/packages/b3/b4/f0f3a6a91b05a4db2d53f66e86065e18b3e4f4e00ce1e74ef0c002904e2a/checkov-2.3.345.tar.gz"
+  sha256 "016739c834b96dc0803c2d41f6b70a9d8b60a64660b7cc0539cdfce99737ce58"
   license "Apache-2.0"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4807d2b2c5d90ecb4ba47c27b2a64f8d12b7a035ff63d9217b13a96db903d8db"
-    sha256 cellar: :any,                 arm64_monterey: "15a4005a3606351d4ae1151092e74d7013835763efa2c8b083c56dab496c52fc"
-    sha256 cellar: :any,                 arm64_big_sur:  "dec922970787f878f5e22478ce27cc03e8cbc9a077b0c998f5d4e68f5f3dd600"
-    sha256 cellar: :any,                 ventura:        "6c8459b53cb107265f4252df3c2f0de389b195d26ad0c0483a9313fad4a645ab"
-    sha256 cellar: :any,                 monterey:       "d09ac765dd5117afec2e4517469a7d4cd05f2992beedf13918823fe34e8020d6"
-    sha256 cellar: :any,                 big_sur:        "51b735078f35cf0171a8d7303deea3c5940517d5dda4371e9d8abeff7eb09861"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "557cd953cbba0c47f87a3bbdd89cf6161832785950233152df08fffe86f4ebf5"
+    sha256 cellar: :any,                 arm64_ventura:  "182c9a717aa6380f2350a862cbddd4fb5c62cecca4b4eb099aa8847c2178e4b4"
+    sha256 cellar: :any,                 arm64_monterey: "a49149e5e890ae6351c4304ea37ffb85ee02fbb03e2a3152b509889a7dddee7a"
+    sha256 cellar: :any,                 arm64_big_sur:  "aae115569eafe4fc3262d9f537267bae4cf6a71ce62fecc33ee5cdf04c116db0"
+    sha256 cellar: :any,                 ventura:        "e05a4d1b7cabf9ee100c6e52fb19e1a9ca86c80951ea050ec529472b7db49589"
+    sha256 cellar: :any,                 monterey:       "70d7adc66918a5b4fba1e7fe65d931a76e49575eabefa54cf06c9403284cae2a"
+    sha256 cellar: :any,                 big_sur:        "65ba72beb94b057bc65c8d08fc4f744550e080bf86ea13faba8c333596e1a1aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18e44d3e86452ef56f99630e49d9a51bde290f325a97647bd271b8de54578ad3"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -91,13 +90,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/ea/e9/a0419a48465ace125bf55473416ba465aa26fba58b05f14b1122ce98737d/boto3-1.28.10.tar.gz"
-    sha256 "cb8af03f553f1c7db7137bc897785baeeaa97b8fde483eb1cdb1f1ef3cec9cb7"
+    url "https://files.pythonhosted.org/packages/54/1e/05da54a9c1935e9e26e8cfe0b45a5bed2cb6ab0f798ae9c38bad58766245/boto3-1.28.12.tar.gz"
+    sha256 "d5ac6599951fdd519ed26c6fe15c41a7aa4021cb9adce33167344f8ce5cdb07b"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/8f/6f/f0eb30793d6582d0ade2d98cc2de5cbf59eb9bc1c57e44d8a9741b3523e3/botocore-1.31.10.tar.gz"
-    sha256 "736a9412f405d6985570c4a87b533c2396dd8d4042d8c7a0ca14e73d4f1bcf9d"
+    url "https://files.pythonhosted.org/packages/a0/52/27fa7dd194cdf86f5412b623e03e81c249494efcf2d355b6fcc49ce144a5/botocore-1.31.12.tar.gz"
+    sha256 "7e5db466c762a071bb58c9a39d070f1333ce4f4ba6fdf9820ba21e87bd4c7e29"
   end
 
   resource "cached-property" do
@@ -201,8 +200,8 @@ class Checkov < Formula
   end
 
   resource "igraph" do
-    url "https://files.pythonhosted.org/packages/0e/71/73b402613cab3a06684f4e58c6ba32e5daaf71afd2612427dfc29a413874/igraph-0.10.5.tar.gz"
-    sha256 "d9c5f8972c544dfd8c315e1b4b9093f1994fa4f72745ae14c8850834d47557f9"
+    url "https://files.pythonhosted.org/packages/75/a9/3351da0a498502707f548ca48b2c4abc9e2f6e1901ad143c8559a95b0985/igraph-0.10.6.tar.gz"
+    sha256 "76f7aad294514412f835366a7d9a9c1e7a34c3e6ef0a6c3a1a835234323228e8"
   end
 
   resource "importlib-metadata" do
@@ -291,8 +290,8 @@ class Checkov < Formula
   end
 
   resource "policyuniverse" do
-    url "https://files.pythonhosted.org/packages/53/15/e12dadc99f67b9f4a4fe4ded61ffac84be34d41cf05dfe901ae8cf05a65c/policyuniverse-1.5.1.20230703.tar.gz"
-    sha256 "5a7fdcb67be7ed2c41efd26583e12ab24df2f1b1d828c8b8f8d13846bd04e0de"
+    url "https://files.pythonhosted.org/packages/e5/48/bc10bc2f304ab1d30ea6554948da67d645be467c30cdd4aaffc8aad9b5ee/policyuniverse-1.5.1.20230725.tar.gz"
+    sha256 "374c90495812631d83e70a62c4132bc4fabc75d29c1abfef7e7b069fe4a6ada7"
   end
 
   resource "prettytable" do

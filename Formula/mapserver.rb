@@ -69,9 +69,7 @@ class Mapserver < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    cd "build/mapscript/python" do
-      system python3, *Language::Python.setup_install_args(prefix, python3)
-    end
+    system python3, "-m", "pip", "install", *std_pip_args, "./build/mapscript/python"
   end
 
   test do

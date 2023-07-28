@@ -4,7 +4,7 @@ class GerbilScheme < Formula
   url "https://ghproxy.com/https://github.com/vyzo/gerbil/archive/v0.17.tar.gz"
   sha256 "1e81265aba7e9022432649eb26b2e5c85a2bb631a315e4fa840b14cf336b2483"
   license any_of: ["LGPL-2.1-or-later", "Apache-2.0"]
-  revision 2
+  revision 3
 
   livecheck do
     url "https://github.com/vyzo/gerbil.git"
@@ -12,13 +12,13 @@ class GerbilScheme < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "7195fee8e11141c834407a5dce444f7bfe3519c6e9efc3b160638578aaa45cc2"
-    sha256 arm64_monterey: "71498bf525476990e45974c5aee782147b8376363ee30f1646a5956ac40ec7f4"
-    sha256 arm64_big_sur:  "eeeec31a2970ca32a9c78d9723bfdf716b5a0b42728dc3d6a1a768533fabe77f"
-    sha256 ventura:        "fbe549f627d1357315932e801f9d5ea08cdf374d4693df91f5b49cbe65193b99"
-    sha256 monterey:       "fb7f5e626e9344f0ff145ccca8800928caa66634d9c16222d0b7e788473b7e5e"
-    sha256 big_sur:        "dc2cce1570095719ee451a8f0c11e7ebbd01e154f707b8ae30da9ec0cc7554ce"
-    sha256 x86_64_linux:   "042ca2f6bfea2af7665cf66a6fa647bcc9a8f9bac047151be75f4bf04e52a754"
+    sha256 arm64_ventura:  "5568e6b56fed556b8c0145de4d54d6dc256c0d75af3e43a88a34c4f3b4922a0f"
+    sha256 arm64_monterey: "eea0039afa114fcf1329ca303a4b1829141a8b94d95520409109b362ffe459f6"
+    sha256 arm64_big_sur:  "a95805093e7668f057a9bead359aed795887a461c6399fe7da08a2a365d0a176"
+    sha256 ventura:        "29e03e2cce80923ebace68b450dd7ac32c0fb8e9d5108ad1734c20b133e70306"
+    sha256 monterey:       "f3048903ad1fd2bd101cabb22d7587229d8e92712f6fb1724d5683664ad1e80b"
+    sha256 big_sur:        "f6e7338913c1e66538c1af4d177c63869dd33554f0aa5d14be7143eefa724330"
+    sha256 x86_64_linux:   "878b862448fe401b00980688c6c880ef4344cc88272bb29ed6c1ddb1ce14460f"
   end
 
   depends_on "gambit-scheme"

@@ -6,11 +6,6 @@ class NodeAT14 < Formula
   license "MIT"
   revision 1
 
-  livecheck do
-    url "https://registry.npmmirror.com/-/binary/node/"
-    regex(%r{href=["']?v?(14(?:\.\d+)+)/?["' >]}i)
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "375c56e159dae0a184d80538f902025b58f04264e9d95e461801383ab6b7b815"
     sha256 cellar: :any,                 arm64_monterey: "b795f035c842b8c1650606233931d489dbf9263cc9ddd42f2ef1bf462ec76ff8"
