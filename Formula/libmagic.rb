@@ -1,8 +1,8 @@
 class Libmagic < Formula
   desc "Implementation of the file(1) command"
   homepage "https://www.darwinsys.com/file/"
-  url "https://astron.com/pub/file/file-5.44.tar.gz"
-  sha256 "3751c7fba8dbc831cb8d7cc8aff21035459b8ce5155ef8b0880a27d028475f3b"
+  url "https://astron.com/pub/file/file-5.45.tar.gz"
+  sha256 "fc97f51029bb0e2c9f4e3bffefdaf678f0e039ee872b9de5c002a6d09c784d82"
   # libmagic has a BSD-2-Clause-like license
   license :cannot_represent
 
@@ -11,25 +11,17 @@ class Libmagic < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "f75b57b1eb21b7adae66433ab7fdc21ebc2d8140270f76be325d6fce3058c395"
-    sha256 arm64_monterey: "f5367d8a930f6ac8bb72fab66d0596490e1fc33a7f723701492426812dca87d8"
-    sha256 arm64_big_sur:  "a1a3b47eeeacdebbcf3a94f65ca27d995e60e867fae6bab8b2bd5b9774424f99"
-    sha256 ventura:        "b010a3c8c7df5041caaff99ce844a9939f7f2529e4fe51e9817aa442a6949498"
-    sha256 monterey:       "cf47bc2045224fc2c4dad701a80e7819883a447ee817d27a6197ff6fc751488d"
-    sha256 big_sur:        "96bdcf33b2fd96db377b5a8952f56e7433bf17634b3e9cefef9b68ac775ca385"
-    sha256 x86_64_linux:   "b0c07cbb8b16858ff3c762efe68dcb7be0f03139d40559e89766c104df06d6e4"
+    sha256 arm64_ventura:  "ec5c143e70bff4635e77a831ac3a03a059d11fdf0512d37e6ab7de977dca8ad9"
+    sha256 arm64_monterey: "a2e6411d29aaeff36e1e458fa9ac152d5f16a6093f8dd7c724c70da1afbd1f88"
+    sha256 arm64_big_sur:  "3bbb6a6b220df55a5fcb8df54a170003d1dc4c7a3fbd3bd26a56f17ada8d0025"
+    sha256 ventura:        "81ae0df797e6cf1af040f0a99f446ff1ad2f8a8ca2a70d6b34c847996754a585"
+    sha256 monterey:       "7d6b7e742b260e15df798b70e56f96a978aca56fe16777416bffec271bd077b6"
+    sha256 big_sur:        "81c93a0805ef1e1a519988bf0c561bbcff058f9a129bec9691c4177505052bff"
+    sha256 x86_64_linux:   "213f20f87112c4e7a6415baace66d49fdf165d96e8ca96c128e12745a1ea8862"
   end
 
   depends_on "pkg-config" => :test
   uses_from_macos "zlib"
-
-  # Upstream patch for missing pkg-config stanza (https://bugs.astron.com/view.php?id=419)
-  # Remove on next release
-  patch do
-    url "https://github.com/file/file/commit/8bc37a45bad67bc4604471c64f0c9f3372b55d2c.patch?full_index=1"
-    sha256 "104f1854c93924dd1590049bf653b0cb9b57b269e7bf54d6a219a44c09011961"
-  end
 
   def install
     system "./configure", "--disable-dependency-tracking",

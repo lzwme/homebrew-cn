@@ -36,7 +36,7 @@ class Libcython < Formula
 
   def install
     pythons.each do |python|
-      system python, *Language::Python.setup_install_args(libexec, python)
+      system python, "-m", "pip", "install", *std_pip_args(prefix: libexec), "."
     end
   end
 

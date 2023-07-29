@@ -31,7 +31,7 @@ class Pygments < Formula
 
     pythons.each do |python|
       python_exe = python.opt_libexec/"bin/python"
-      system python_exe, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "."
+      system python_exe, "-m", "pip", "install", *std_pip_args, "."
 
       pyversion = Language::Python.major_minor_version(python_exe)
       bin.install bin/"pygmentize" => "pygmentize-#{pyversion}"

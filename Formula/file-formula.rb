@@ -2,8 +2,8 @@
 class FileFormula < Formula
   desc "Utility to determine file types"
   homepage "https://darwinsys.com/file/"
-  url "https://astron.com/pub/file/file-5.44.tar.gz"
-  sha256 "3751c7fba8dbc831cb8d7cc8aff21035459b8ce5155ef8b0880a27d028475f3b"
+  url "https://astron.com/pub/file/file-5.45.tar.gz"
+  sha256 "fc97f51029bb0e2c9f4e3bffefdaf678f0e039ee872b9de5c002a6d09c784d82"
   # file-formula has a BSD-2-Clause-like license
   license :cannot_represent
   head "https://github.com/file/file.git", branch: "master"
@@ -14,13 +14,13 @@ class FileFormula < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b0bacf7fc3496f0522a26087a42d0bfd3f190b248b7cd42f490723b65df15a4b"
-    sha256 cellar: :any,                 arm64_monterey: "fa40f52045db7b1c89b8a1853c03edfd35af995d880d167301e93203c473c0a1"
-    sha256 cellar: :any,                 arm64_big_sur:  "c821076e5ea013a8356a594de19743600dc14ecbc701be392af8f404885f39e0"
-    sha256 cellar: :any,                 ventura:        "9994529f7a658129dec00bfa95f133b29690881a423871c6584b7d4716992dc8"
-    sha256 cellar: :any,                 monterey:       "a5b0105a244262d002c7bb25219cf4d76058c643de7eda6722cbb0bc5b7c2420"
-    sha256 cellar: :any,                 big_sur:        "1457e4b2031ef8bf6aa3f26df91934bf7f7985da6708765749c724b0a189c84c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "557b2b68cc936ee2f9cbe2fca7bcd80535b837c7c7538b464ee8672a05f08b18"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fe86a1022a44ac24fbd0f8b40a2ee4624335cdc6f1a865f5c5ca8df5fa07b454"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bdaf9f9b25fcf7ea6c7bdbe44ec3f3cc0d56be0dcec1bbb9c6d4a0fd8d639e9c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4058375a321cd37c7d6090f446a2da2781e199b58a9b33cf8c4af480d4381836"
+    sha256 cellar: :any_skip_relocation, ventura:        "e801499f30fee64e03dc573b510c5ddfc9eafd1e258d54e3d2b0c16fc1fb74fa"
+    sha256 cellar: :any_skip_relocation, monterey:       "83c75fa244fa2a9d65f2401516a4084805abf69896ff1ba76b1c50e516fd1f82"
+    sha256 cellar: :any_skip_relocation, big_sur:        "43280d24f741d9e770a41434fb8877d8004ad610fcec70b63cbc93be8d599efe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52bffb8f6675e1f95f197f1247b569ad5203fde6bbdc69fdddaaf7805de520c6"
   end
 
   keg_only :provided_by_macos

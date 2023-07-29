@@ -1,8 +1,8 @@
 class Clair < Formula
   desc "Vulnerability Static Analysis for Containers"
   homepage "https://github.com/quay/clair"
-  url "https://ghproxy.com/https://github.com/quay/clair/archive/v4.6.1.tar.gz"
-  sha256 "ffb539fb0d891018bb4886087797c3ca1fa17a4b04155ef259fa63f8b08e2150"
+  url "https://ghproxy.com/https://github.com/quay/clair/archive/v4.7.0.tar.gz"
+  sha256 "593b2bae3396f4593a6f8186d89a857a97536d57007ca87a1a6d30bbeed6e470"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Clair < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4496194a94a51c80fd347155c0904e58e68384ce6d46308572eb19fb375fa257"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4496194a94a51c80fd347155c0904e58e68384ce6d46308572eb19fb375fa257"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4496194a94a51c80fd347155c0904e58e68384ce6d46308572eb19fb375fa257"
-    sha256 cellar: :any_skip_relocation, ventura:        "418bd2fc7c0697ad0e166e139cb6887a2f570cf842c3cbee2526ab89765f642b"
-    sha256 cellar: :any_skip_relocation, monterey:       "418bd2fc7c0697ad0e166e139cb6887a2f570cf842c3cbee2526ab89765f642b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "418bd2fc7c0697ad0e166e139cb6887a2f570cf842c3cbee2526ab89765f642b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ed4a3cf6268876826955d4c7d9ecd1089702a678e55b72a7cb04cbdb21adeed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0a4f32c524c776f763eb19cc9f497bbbd02eb1e115f1568f600e3f34086effb2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0a4f32c524c776f763eb19cc9f497bbbd02eb1e115f1568f600e3f34086effb2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0a4f32c524c776f763eb19cc9f497bbbd02eb1e115f1568f600e3f34086effb2"
+    sha256 cellar: :any_skip_relocation, ventura:        "da568ab2d3eae13103273c078eaf42e63b700155f092f2c9921ff8ec084987bd"
+    sha256 cellar: :any_skip_relocation, monterey:       "da568ab2d3eae13103273c078eaf42e63b700155f092f2c9921ff8ec084987bd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "da568ab2d3eae13103273c078eaf42e63b700155f092f2c9921ff8ec084987bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf06dd532bef208a25e845c918ffdb599f0e6fa39b858c7e926ae466618f4d54"
   end
 
   depends_on "go" => :build

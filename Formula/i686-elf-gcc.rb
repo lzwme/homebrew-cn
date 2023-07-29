@@ -1,9 +1,9 @@
 class I686ElfGcc < Formula
   desc "GNU compiler collection for i686-elf"
   homepage "https://gcc.gnu.org"
-  url "https://ftp.gnu.org/gnu/gcc/gcc-13.1.0/gcc-13.1.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-13.1.0/gcc-13.1.0.tar.xz"
-  sha256 "61d684f0aa5e76ac6585ad8898a2427aade8979ed5e7f85492286c4dfc13ee86"
+  url "https://ftp.gnu.org/gnu/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz"
+  sha256 "e275e76442a6067341a27f04c5c6b83d8613144004c0413528863dc6b5c743da"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   livecheck do
@@ -11,13 +11,13 @@ class I686ElfGcc < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "55791f05a697919ba656f3ff91bebdb41d0e8a1069ec622daef1cd43c474b330"
-    sha256 arm64_monterey: "4d3044279634a7ab235f99fcfbc847ed97fd05d4e3e45e641b151ec98a61af9c"
-    sha256 arm64_big_sur:  "a308257af007b89d263451344280c5f98600bdeecc0b3f963b921c7324321b56"
-    sha256 ventura:        "7ae074f3ab262122ed094ebf2f0c5a33a2a5a74d8ec6d70102dd3b014f0e8be8"
-    sha256 monterey:       "2a7b3c9381c943d5c74f4868ec580b4de8e7ff1c6f85c189b38f7ab1e4bd28d4"
-    sha256 big_sur:        "df23e6b02c3cbb6e8343029bc894d40f8766bed56e240af84fcc2e802773252d"
-    sha256 x86_64_linux:   "6946dd54377ac2df075cb46814bca2a27337c1e9fc9a1829c83586ceb966b1c9"
+    sha256 arm64_ventura:  "4bbf916ac386c3450e185fe37f7a4f70edccc1a80d2d066523b1289c055a1d3f"
+    sha256 arm64_monterey: "11668469ed40d8e3693b8ec245e03fc4968bab9cc8fac2ebb6e233d637172a77"
+    sha256 arm64_big_sur:  "3850f90bef8fdfbe512cc7800cd3623042159a76d8488a5cf4f2e53a35a1c2ff"
+    sha256 ventura:        "36ca2b0651e911cf5bca160a29bbe1cec825e628d3b10a46e541f0d64a683881"
+    sha256 monterey:       "f0d01e3a663217ce9f6be197b7bc28d1f32cd272996df7c25f351532095e5386"
+    sha256 big_sur:        "1ed85802e51a2cd2cf776dc92022b720cc01215efab59885f78e67c952eebaef"
+    sha256 x86_64_linux:   "6b185249ca7ab5ca18d024d47de938a02fb81b2626a5d554bdfe9805edbde55a"
   end
 
   depends_on "gmp"

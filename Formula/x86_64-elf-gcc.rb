@@ -1,9 +1,9 @@
 class X8664ElfGcc < Formula
   desc "GNU compiler collection for x86_64-elf"
   homepage "https://gcc.gnu.org"
-  url "https://ftp.gnu.org/gnu/gcc/gcc-13.1.0/gcc-13.1.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-13.1.0/gcc-13.1.0.tar.xz"
-  sha256 "61d684f0aa5e76ac6585ad8898a2427aade8979ed5e7f85492286c4dfc13ee86"
+  url "https://ftp.gnu.org/gnu/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz"
+  sha256 "e275e76442a6067341a27f04c5c6b83d8613144004c0413528863dc6b5c743da"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   livecheck do
@@ -11,13 +11,13 @@ class X8664ElfGcc < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "355c21c82fbd32964f9cef8182adb2040c966468a3389520f4cf5f89c697b510"
-    sha256 arm64_monterey: "48ea5e83c8f2d6b590ca04f0c86c63ae5797e22b8f03b00ee89a576544614731"
-    sha256 arm64_big_sur:  "aa9ad5cb71fc49aac1fc0295af5d660bf0d2145314f6dc1983d92251d9756a51"
-    sha256 ventura:        "04022a0d837a842e7de40efcafa14d69ec287149e2964e2d0a28558640d9f094"
-    sha256 monterey:       "d5c94d285aefe5387119ca61b938cc3420eab9c524419ea0d2cdc66ef7b7e197"
-    sha256 big_sur:        "a9214ddbaa508e051426c58a21ff65b74d798234cbba8922c57f545c58952985"
-    sha256 x86_64_linux:   "31462b4a4bb033602935743840cb211e4944b21ed64d49a190e65ff15b38bfa0"
+    sha256 arm64_ventura:  "6d9bc1533a46fc1b5d3d1208332a00cabce0b047ac0245219bf08a28f9169937"
+    sha256 arm64_monterey: "31504aa8649a9222cc2a4d76a40d716b650c42265646749eec8ee41e05714989"
+    sha256 arm64_big_sur:  "aae5fafb28973f3a7dbc22ed06270db8fb3941e0719f14b8459308b6dec15137"
+    sha256 ventura:        "95b46844e430a5b06ac0b8d96aa6b0eedcc761f9295f21b6c6e4557eb181de83"
+    sha256 monterey:       "4b6e729c8333d369bfb722d2b08200f363341845dfa48ba544b8848e7096407f"
+    sha256 big_sur:        "2c5baa4ec478c1aadaa334e758c6c2fdb6c724b3c714844a5046b5f14450780d"
+    sha256 x86_64_linux:   "e934bb734ad257273cd08ab29728c385f09c456621d834b8b9122d3724e7b3fe"
   end
 
   depends_on "gmp"

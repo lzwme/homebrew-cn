@@ -6,16 +6,17 @@ class Ansible < Formula
   url "https://files.pythonhosted.org/packages/dd/8d/cb83551686b964377110e215740a75dca253100ef57d4b11f65613c83e13/ansible-8.2.0.tar.gz"
   sha256 "935a6921ffb034aa18e6507b49e401676cd15243d6faa5e05e221008bf725c97"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "20cb88e11676a4dcd8bb542611534e3c890ddf1c60cb4cf97d0fc6a898023be3"
-    sha256 cellar: :any,                 arm64_monterey: "b078ddb3b612bd8e5aaa5a576dbc037510355c60187cde190aa4ae978af0e4d0"
-    sha256 cellar: :any,                 arm64_big_sur:  "68c321b29e2662eebb5f084bb5e1ccedc9e6e93397580df4b6b1cf793ca01346"
-    sha256 cellar: :any,                 ventura:        "83e6d38109defbd29361e850d63b5546ba9b2117579cc68a297a6f8954ebe108"
-    sha256 cellar: :any,                 monterey:       "3e04dd13c3dcd449adf27487f2deee9c02340b2588c5a7e85ea93998fc4f2bb2"
-    sha256 cellar: :any,                 big_sur:        "d73149eea95864dcdeecbd85433b001cb18d7605c88be89b7098be3f9418dd25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a2512903fc8dc647176e739496cb9ed1d71312cd6bf1dfcaee28741380bb520"
+    sha256 cellar: :any,                 arm64_ventura:  "13877ad0a8b625773114fee487b6da897324957cc67048b28c3fa6d6ce43479c"
+    sha256 cellar: :any,                 arm64_monterey: "2e37cc0c917f3f347a6c3d7f2719c3ee3d120b826b6f9e652c23ea880dfe27a6"
+    sha256 cellar: :any,                 arm64_big_sur:  "5dae6301bb3bc957f8c2dfce78326825c321bcc4fe03527788d902389751f437"
+    sha256 cellar: :any,                 ventura:        "7340dbb7d21e9ed1f94a24e8bfdba4d03cb7b5ed21d85cc5e4ddf84fe90d74de"
+    sha256 cellar: :any,                 monterey:       "83b76fa102715e7793eaefa763bc69a19aa600b5e84e9d9ba7ec6a47ecebeeea"
+    sha256 cellar: :any,                 big_sur:        "4e86e8b7b9196b295841a93f07a5a62f5c667f4190af2f25ae720de3c6e54d1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc66bd29fc25c91fc22b466507e60ce1263f38c853c2966b8bb82bb751f3780b"
   end
 
   depends_on "pkg-config" => :build
@@ -90,13 +91,13 @@ class Ansible < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/b6/90/d7a89b2f3528336a802c8fc496ebfda6ee444e20d5f149b50afefd708a9f/boto3-1.28.4.tar.gz"
-    sha256 "92c0631ab91b4c5aa0e18a90b4d12df361723c6df1ef7e346db71f2ad0803ab3"
+    url "https://files.pythonhosted.org/packages/ea/e9/a0419a48465ace125bf55473416ba465aa26fba58b05f14b1122ce98737d/boto3-1.28.10.tar.gz"
+    sha256 "cb8af03f553f1c7db7137bc897785baeeaa97b8fde483eb1cdb1f1ef3cec9cb7"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/bf/95/7c0a8bd20ac28092a0ecee8771bfaf9df5d31e309c55cde221436f9f0aad/botocore-1.31.4.tar.gz"
-    sha256 "f9738a23b03c55c2958ebdee65273afeda80deaeefebe595887fc3251e48293a"
+    url "https://files.pythonhosted.org/packages/8f/6f/f0eb30793d6582d0ade2d98cc2de5cbf59eb9bc1c57e44d8a9741b3523e3/botocore-1.31.10.tar.gz"
+    sha256 "736a9412f405d6985570c4a87b533c2396dd8d4042d8c7a0ca14e73d4f1bcf9d"
   end
 
   resource "cachetools" do
@@ -105,8 +106,8 @@ class Ansible < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

@@ -1,19 +1,19 @@
 class Ortp < Formula
   desc "Real-time transport protocol (RTP, RFC3550) library"
   homepage "https://linphone.org/"
-  url "https://gitlab.linphone.org/BC/public/ortp/-/archive/5.2.93/ortp-5.2.93.tar.bz2"
-  sha256 "25c261935f247566c67dda6457e02a3f18f53113241a6160e21703ef4a09c9d3"
+  url "https://gitlab.linphone.org/BC/public/ortp/-/archive/5.2.94/ortp-5.2.94.tar.bz2"
+  sha256 "b210f5f38b89e958e0c540caac56565b5eb5ea0e8fb291a379ed7aa72667d4b4"
   license "GPL-3.0-or-later"
   head "https://gitlab.linphone.org/BC/public/ortp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e72d53d67e3f17faf691fb14d59d940fbc99112e99f376233542e3c0bcc0e345"
-    sha256 cellar: :any,                 arm64_monterey: "7d68f1f3852b4bb2e214e9178f0ab5ccec738248c2882a8fe08eb0eafc732991"
-    sha256 cellar: :any,                 arm64_big_sur:  "9ba7613a44e5a17e9d52af660c67c983f9faf349deb0d36afcc3f47c50419de2"
-    sha256 cellar: :any,                 ventura:        "2459bce452d82b6a4b3d6f53198cd8a55f9e57cb1ac73b3a2511d75650da7cfa"
-    sha256 cellar: :any,                 monterey:       "3a80bb75d036c3417f43c78557b809258fec2829f58a1ff2afa04b66eb970591"
-    sha256 cellar: :any,                 big_sur:        "feac736c82b44f89e48b1b8be8bae3a7d8ce2783bed245c42ba24fa3eb11965b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70595d42e563c6d8d7b1facadff5a5f31a793702ebfd4ddf923079ecf3b16d9b"
+    sha256 cellar: :any,                 arm64_ventura:  "36e2b738e0b037adb4b5a2ccb5469477db7e2c320810cdd595de5b55b7663e68"
+    sha256 cellar: :any,                 arm64_monterey: "d188a43fc51709526b69fd488200f8fcc45ac35b1e62b671c917db3ced9e44b8"
+    sha256 cellar: :any,                 arm64_big_sur:  "5bb9b542d2df3172a30638c473a4549ea814d365856aa525e880832b44e87f41"
+    sha256 cellar: :any,                 ventura:        "9b1ab22f8c405d4643d5516a2fe9cf1701eaae811d8336caf01c11b5b0b62076"
+    sha256 cellar: :any,                 monterey:       "4224bcd1beb32a0c4fbefc937b4375df4c76298d4d60b7dc881d3513871b19e1"
+    sha256 cellar: :any,                 big_sur:        "aad7921785fcb6b67297d2b58fd77a8b5a14d1ab2fc94af9eb988059f411dddc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0b8b46f6f9608132f7fd148977b856cb5a6e3cdcbbff05cbd2608f05862c4da"
   end
 
   depends_on "cmake" => :build
@@ -24,8 +24,8 @@ class Ortp < Formula
   # https://github.com/BelledonneCommunications/bctoolbox
   resource "bctoolbox" do
     # Don't forget to change both instances of the version in the URL.
-    url "https://gitlab.linphone.org/BC/public/bctoolbox/-/archive/5.2.93/bctoolbox-5.2.93.tar.bz2"
-    sha256 "e166ced129e32a470fbd73ee1bfe8d76aca109d9186397d9d9dd566428f2eca3"
+    url "https://gitlab.linphone.org/BC/public/bctoolbox/-/archive/5.2.94/bctoolbox-5.2.94.tar.bz2"
+    sha256 "d4e81d6e7aeb19e0d2bb4f7aa0645273469507cf1f3ab66ae742f39944cd2503"
   end
 
   def install

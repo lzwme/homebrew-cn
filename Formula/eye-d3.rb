@@ -61,19 +61,20 @@ class EyeD3 < Formula
     sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
   end
 
-  def install
-    python3 = "python3.11"
-    venv = virtualenv_create(libexec, python3)
-    venv.pip_install resources
+  # Switch build-system to poetry-core to avoid rust dependency on Linux.
+  # https://github.com/nicfit/eyeD3/pull/589
+  patch do
+    url "https://github.com/nicfit/eyeD3/commit/2632963eca6d84481d133fcac496434dad72e38f.patch?full_index=1"
+    sha256 "6b4e7bf8b6b282b1eeab65c80c499934677357e1fa3ce21d4009bfc719b07969"
+  end
 
-    bin_before = Dir[libexec/"bin/*"].to_set
-    system libexec/"bin"/python3, *Language::Python.setup_install_args(libexec, python3)
-    bin.install_symlink (Dir[libexec/"bin/*"].to_set - bin_before).to_a
+  def install
+    virtualenv_install_with_resources
     share.install Dir["docs/*"]
   end
 
   test do
     touch "temp.mp3"
-    system "#{bin}/eyeD3", "-a", "HomebrewYo", "-n", "37", "temp.mp3"
+    system bin/"eyeD3", "-a", "HomebrewYo", "-n", "37", "temp.mp3"
   end
 end

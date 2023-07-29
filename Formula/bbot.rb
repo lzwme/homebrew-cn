@@ -6,16 +6,16 @@ class Bbot < Formula
   url "https://files.pythonhosted.org/packages/0b/df/4afd9aeca87c7f7c1ad2a15368b9fa27c3892e3923f8c3ea4614e6cb8956/bbot-1.0.5.1665.tar.gz"
   sha256 "5ec660a711afbafb4a1626b1a28ecc1b05bad9e40c1c997e76cb511cd9da1fb7"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c25db032f464eedc286353d4045580243a503b532f972e2070cfc346fdeb7c79"
-    sha256 cellar: :any,                 arm64_monterey: "a2d73c930df146697db47a4d5fb19d1abe25adfc7ea6b89bc56f4f7b961c20fc"
-    sha256 cellar: :any,                 arm64_big_sur:  "1309d106568ab6d99454d4075e776f5c590b8eef85bd4622e28f6896d8da8a02"
-    sha256 cellar: :any,                 ventura:        "02a4269fd31d85e48a5a0fd5ba070ff234b5611523f180e27c70a7b827a6f3d1"
-    sha256 cellar: :any,                 monterey:       "1cc9c1bf2614d2ed41298cf0d840b09471dcdce41486689477ecd2837ada6e7e"
-    sha256 cellar: :any,                 big_sur:        "e5cd7b72537857cf62cfe9b132b9e19bc878eda1fe723e21ff9bfc322c9cfaad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae4785965febcf092fbfb075b9fdb5baf0ed42790cdd27ad13a99e454908c936"
+    sha256 cellar: :any,                 arm64_ventura:  "1289cfda2128547292dec52f91cb22a5ce2b1f2985d54725d1b59085b899858f"
+    sha256 cellar: :any,                 arm64_monterey: "7575bc78977c5d8900a6c6f9218f88176a2b29800a6127c2f8236075298cafdb"
+    sha256 cellar: :any,                 arm64_big_sur:  "f28d5a7e4773375d17b91ac5c62818a20794e218821a12cf0afa2f0cf83582c7"
+    sha256 cellar: :any,                 ventura:        "3f0b47df3ec20cbc6ce8b4b33c15453780402f855263e9c1b7c80cd10c62d24c"
+    sha256 cellar: :any,                 monterey:       "e4c1d0675bef9ed028d1a29a4173a8daf8ecf5bf204173f18a728184bf64592e"
+    sha256 cellar: :any,                 big_sur:        "e74608037042ecabcb8c49182ffe57510a6858135f76fb8dc8b1e33564bbc130"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76a2faf4096ccaf6321f26a591b0ac23f0eeb5d6842b1d0922be6bb89e132de6"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -38,8 +38,8 @@ class Bbot < Formula
   end
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/d6/27/06f4b8a082d9ecd055da28f37fca69ebd0f7b8427d5f6068b6125b1441a8/ansible-core-2.14.7.tar.gz"
-    sha256 "2be26d617483b2b1621ec93ca57f2e24faace90cb9f07d8dca3f68a8428d9cd6"
+    url "https://files.pythonhosted.org/packages/a6/fb/75c4c623c971c346b1f322677477b229d98412371464550ff53997134362/ansible-core-2.14.8.tar.gz"
+    sha256 "637f62c9547023fb4704cd5de1329dc7c02ef9e583cea1c3be2ce6c2fde7739c"
   end
 
   resource "ansible-runner" do
@@ -50,6 +50,11 @@ class Bbot < Formula
   resource "antlr4-python3-runtime" do
     url "https://files.pythonhosted.org/packages/3e/38/7859ff46355f76f8d19459005ca000b6e7012f2f1ca597746cbcd1fbfe5e/antlr4-python3-runtime-4.9.3.tar.gz"
     sha256 "f224469b4168294902bb1efa80a8bf7855f24c99aef99cbefc1bcd3cce77881b"
+  end
+
+  resource "anyio" do
+    url "https://files.pythonhosted.org/packages/28/99/2dfd53fd55ce9838e6ff2d4dac20ce58263798bd1a0dbe18b3a9af3fcfce/anyio-3.7.1.tar.gz"
+    sha256 "44a3c9aba0f5defa43261a8b3efb97891f2bd7d804e0e1f56419befa1adfc780"
   end
 
   resource "appdirs" do
@@ -68,8 +73,8 @@ class Bbot < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
@@ -93,13 +98,23 @@ class Bbot < Formula
   end
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/91/8b/522301c50ca1f78b09c2ca116ffb0fd797eadf6a76085d376c01f9dd3429/dnspython-2.3.0.tar.gz"
-    sha256 "224e32b03eb46be70e12ef6d64e0be123a64e621ab4c0822ff6d450d52a540b9"
+    url "https://files.pythonhosted.org/packages/bd/5f/45f60fd7b03a1bef883a0eb4f9b6465628c1977393be45802eef1962571d/dnspython-2.4.0.tar.gz"
+    sha256 "758e691dbb454d5ccf4e1b154a19e52847f79e21a42fef17b969144af29a4e6c"
   end
 
   resource "filelock" do
     url "https://files.pythonhosted.org/packages/00/0b/c506e9e44e4c4b6c89fcecda23dc115bf8e7ff7eb127e0cb9c114cbc9a15/filelock-3.12.2.tar.gz"
     sha256 "002740518d8aa59a26b0c76e10fb8c6e15eae825d34b6fdf670333fd7b938d81"
+  end
+
+  resource "h11" do
+    url "https://files.pythonhosted.org/packages/f5/38/3af3d3633a34a3316095b39c8e8fb4853a28a536e55d347bd8d8e9a14b03/h11-0.14.0.tar.gz"
+    sha256 "8f19fbbe99e72420ff35c00b27a34cb9937e902a8b810e2c88300c6f0a3b699d"
+  end
+
+  resource "httpcore" do
+    url "https://files.pythonhosted.org/packages/63/ad/c98ecdbfe04417e71e143bf2f2fb29128e4787d78d1cedba21bd250c7e7a/httpcore-0.17.3.tar.gz"
+    sha256 "a6f30213335e34c1ade7be6ec7c47f19f50c56db36abef1a9dfa3815b1cb3888"
   end
 
   resource "idna" do
@@ -158,8 +173,8 @@ class Bbot < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/cf/01/e8a380dc6e92a76113f034c58c9ffdbd115753e9b944ddf5d2dbe862f248/pydantic-1.10.11.tar.gz"
-    sha256 "f66d479cf7eb331372c470614be6511eae96f1f120344c25f3f9bb59fb1b5528"
+    url "https://files.pythonhosted.org/packages/3b/9b/a7631bf35e55326fd74654fe6bd896478f47d65e97ca69e60ddb1b3823ee/pydantic-1.10.12.tar.gz"
+    sha256 "0fe8a415cea8f340e7a9af9c54fc71a649b43e8ca3cc732986116b3cb135d303"
   end
 
   resource "python-daemon" do
@@ -187,6 +202,11 @@ class Bbot < Formula
     sha256 "c6ea56732e9fb6fca1b2acc2ccc68a0b6b8c566d8f3e78e0443310ede61dbd37"
   end
 
+  resource "sniffio" do
+    url "https://files.pythonhosted.org/packages/cd/50/d49c388cae4ec10e8109b1b833fd265511840706808576df3ada99ecb0ac/sniffio-1.3.0.tar.gz"
+    sha256 "e60305c5e5d314f5389259b7f22aaa33d8f7dee49763119234af3755c55b9101"
+  end
+
   resource "tabulate" do
     url "https://files.pythonhosted.org/packages/7a/53/afac341569b3fd558bf2b5428e925e2eb8753ad9627c1f9188104c6e0c4a/tabulate-0.8.10.tar.gz"
     sha256 "6c57f3f3dd7ac2782770155f3adb2db0b1a269637e42f27599925e64b114f519"
@@ -203,8 +223,8 @@ class Bbot < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
-    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   resource "websocket-client" do

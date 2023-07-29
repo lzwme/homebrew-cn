@@ -3,20 +3,19 @@ class RobotFramework < Formula
 
   desc "Open source test framework for acceptance testing"
   homepage "https://robotframework.org/"
-  url "https://files.pythonhosted.org/packages/b8/70/050b0a5bb51c754ad521d6f1b51c17c293efe65ec72ac955d3686e1afa1d/robotframework-6.1.zip"
-  sha256 "a94e0b3c4f8ae08c0a4dc7bff6fa8a51730565103f8c682a2d8391da9a4697f5"
+  url "https://files.pythonhosted.org/packages/c6/37/fc94979077241a09f31f347cbae401c9f62705eadd441a392285537e603c/robotframework-6.1.1.zip"
+  sha256 "3fa18f2596a4df2418c4b59abf43248327c15ed38ad8665f6a9a9c75c95d7789"
   license "Apache-2.0"
-  revision 3
   head "https://github.com/robotframework/robotframework.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "bae108855d4258991ee724e5353e2942e845f895e0907669b9aa5cee573a19b9"
-    sha256 cellar: :any,                 arm64_monterey: "62ef17ff992285a208575ba62bf866c555257db708e4f42ab0273a2da05438e5"
-    sha256 cellar: :any,                 arm64_big_sur:  "00bc52b13d9b5c20a9a7c371da59626a2d2a7c44fa692884ac71711ff4cc97bb"
-    sha256 cellar: :any,                 ventura:        "a4cea3046729e9ae30e41f43f7b20173b2030d2ca5022f09f3eadb86ca14394b"
-    sha256 cellar: :any,                 monterey:       "fd7f18ab514eb093c39655abc6d05404973d23026e30c583e7c5c0ed51eeb822"
-    sha256 cellar: :any,                 big_sur:        "e6b35792e4b16b7e89ad41ccf3879ceb3ab926d2be49afb6549891d321fda0d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8a51b7432fe9d5d64ed5067fc41c77a98e1b80928f6e14dc09b2b14d32884a1"
+    sha256 cellar: :any,                 arm64_ventura:  "1d9e65c0bd2df75c05d73d03b3e9a0887c4deaa3de0d1688a6dc06c4d9dce498"
+    sha256 cellar: :any,                 arm64_monterey: "87e38514752c24dab56d1b16b157e724ab0e67b95414ad204a228fe6546605c1"
+    sha256 cellar: :any,                 arm64_big_sur:  "409a2ce35f575ce21da4c9095c89b7899ea2d00dfd849c18d16efaf97d721151"
+    sha256 cellar: :any,                 ventura:        "d9ec8e634284299b8da2f96e1a05355f8cb891a071c5fdb3e9877ff4e297ac6c"
+    sha256 cellar: :any,                 monterey:       "2cc2ef282f7f11f29be09cd0c028c0d05f84d9a2f4b4e84d06ee7c5d533d3d6b"
+    sha256 cellar: :any,                 big_sur:        "c1c809fef43a5a4d0faee4046a2e2dc6d12abd993efc562db2c019d2aa32ae90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f9f3429fa9a0297020af0111214ef95404d731eec45dafa38fe2dcf0c0f67ef"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -68,8 +67,8 @@ class RobotFramework < Formula
   end
 
   resource "paramiko" do
-    url "https://files.pythonhosted.org/packages/87/62/cee9551811c846e9735f749dbdf05d4f9f0dbcecd66eae35b5daacf9a117/paramiko-3.2.0.tar.gz"
-    sha256 "93cdce625a8a1dc12204439d45033f3261bdb2c201648cfcdc06f9fd0f94ec29"
+    url "https://files.pythonhosted.org/packages/44/03/158ae1dcb950bd96f04038502238159e116fafb27addf5df1ba35068f2d6/paramiko-3.3.1.tar.gz"
+    sha256 "6a3777a961ac86dbef375c5f5b8d50014a1a96d0fd7f054a43bc880134b0ff77"
   end
 
   resource "pynacl" do

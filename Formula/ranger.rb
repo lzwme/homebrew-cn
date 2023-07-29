@@ -28,7 +28,7 @@ class Ranger < Formula
   end
 
   def install
-    system python, *Language::Python.setup_install_args(prefix, python), "--install-data=#{prefix}"
+    system python, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

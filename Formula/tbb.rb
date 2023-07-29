@@ -28,11 +28,14 @@ class Tbb < Formula
   # See See https://github.com/oneapi-src/oneTBB/issues/343
   patch :DATA
 
+  def python3
+    "python3.11"
+  end
+
   def install
     # Prevent `setup.py` from installing tbb4py directly into HOMEBREW_PREFIX.
     # We need this due to our `python@3.11` patch.
-    python = Formula["python@3.11"].opt_bin/"python3.11"
-    site_packages = Language::Python.site_packages(python)
+    site_packages = Language::Python.site_packages(python3)
     inreplace "python/CMakeLists.txt", "@@SITE_PACKAGES@@", site_packages
 
     tbb_site_packages = prefix/site_packages/"tbb"
@@ -60,7 +63,7 @@ class Tbb < Formula
       ENV.append_path "CMAKE_PREFIX_PATH", prefix.to_s
       ENV["TBBROOT"] = prefix
 
-      system python, *Language::Python.setup_install_args(prefix, python)
+      system python3, "-m", "pip", "install", *std_pip_args, "."
     end
 
     return unless OS.linux?
@@ -125,7 +128,7 @@ class Tbb < Formula
     system ENV.cxx, "sum1-100.cpp", "--std=c++14", "-L#{lib}", "-ltbb", "-o", "sum1-100"
     assert_equal "5050", shell_output("./sum1-100").chomp
 
-    system Formula["python@3.11"].opt_bin/"python3.11", "-c", "import tbb"
+    system python3, "-c", "import tbb"
   end
 end
 

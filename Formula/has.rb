@@ -1,13 +1,19 @@
 class Has < Formula
   desc "Checks presence of various command-line tools and their versions on the path"
   homepage "https://github.com/kdabir/has"
-  url "https://ghproxy.com/https://github.com/kdabir/has/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "0e73552dbf59e3da0d9254da87c94599595c9ea07c69a62a4853e69bbf3f0d7d"
+  url "https://ghproxy.com/https://github.com/kdabir/has/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "d45be15f234556cdbaffa46edae417b214858a4bd427a44a2a94aaa893da7d99"
   license "MIT"
   head "https://github.com/kdabir/has.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1b267d61b91d1ca227e2d207b891dad3025976b2615a5f49fb33a3971feb117b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7e9e38ec67613f798b702a0d489566adf51ca3f2e7486b0f6960ce0b5fa7f44f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7e9e38ec67613f798b702a0d489566adf51ca3f2e7486b0f6960ce0b5fa7f44f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7e9e38ec67613f798b702a0d489566adf51ca3f2e7486b0f6960ce0b5fa7f44f"
+    sha256 cellar: :any_skip_relocation, ventura:        "7e9e38ec67613f798b702a0d489566adf51ca3f2e7486b0f6960ce0b5fa7f44f"
+    sha256 cellar: :any_skip_relocation, monterey:       "7e9e38ec67613f798b702a0d489566adf51ca3f2e7486b0f6960ce0b5fa7f44f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7e9e38ec67613f798b702a0d489566adf51ca3f2e7486b0f6960ce0b5fa7f44f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1502866b1f3102cf0f8b94e0905dc649250ab1d6e5d1ac0154171a9d60a78a8c"
   end
 
   def install
@@ -15,6 +21,7 @@ class Has < Formula
   end
 
   test do
-    assert_match "has v1.4.0", shell_output("#{bin}/has")
+    assert_match "git", shell_output("#{bin}/has git")
+    assert_match version.to_s, shell_output("#{bin}/has --version")
   end
 end

@@ -3,18 +3,18 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/1c/6f/08b2d6254d39ea8c940c22ccfa8b2241214bf6193f04016e62b4527f63f8/dvc-3.8.1.tar.gz"
-  sha256 "1185c7fac30076b1f183bfcc60d9865c4203b78d8ab687d51165e2539c642ecb"
+  url "https://files.pythonhosted.org/packages/30/3c/4d47accc46da04fafb05c09836ec780d0c7ca2dcfe17bdd5f659a2e9c9a2/dvc-3.9.1.tar.gz"
+  sha256 "cb6edad631e2e88101217af020e0549b66fde34a3ce8b0c1971341fe2b7ff8d8"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3d70581100e464f3f7a02647e2669095be0fc2296577b119c13b23e33f9aeb24"
-    sha256 cellar: :any,                 arm64_monterey: "40d9c039a23f3b39507838d1b8bfc2c031e3a15794e0682d854e0f95b5af8d02"
-    sha256 cellar: :any,                 arm64_big_sur:  "f0fb19a812bfb6bfa443ad9ff00a833c339a5da830397660f4bb5555391fb562"
-    sha256 cellar: :any,                 ventura:        "db64ebfa14db7a8ee0bf690f6273bc4bda153cd03f2fb5a15cdec7cd7e7a2e66"
-    sha256 cellar: :any,                 monterey:       "8516c34d91a99849acb5dca1ceaa34c6f9ef237db54c138b92727375c76cb1ce"
-    sha256 cellar: :any,                 big_sur:        "623464acc03c58390f8c16281227ed8be81afea9424ebad2a274cfcd2507409f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a458c6646819a02da3e92c469134abafd23cbec2a0028204a820afca172805b"
+    sha256 cellar: :any,                 arm64_ventura:  "51e86dad1e73b18fb0cafe5f43dde4e2770c905c5fe7157ec4af5c6e1ed7b45d"
+    sha256 cellar: :any,                 arm64_monterey: "fae87a2a4486302cac466605da7a3bc754e43707caca655df3c604e142415fd3"
+    sha256 cellar: :any,                 arm64_big_sur:  "613298730819a3bdbeff929a7fd7ba475e26180d92257d1e6f22fcf3904e1e05"
+    sha256 cellar: :any,                 ventura:        "70b18388c7487d9279fb2fc3cab1e4aaa9a2a4f7fee4761f29fb946d2d804d94"
+    sha256 cellar: :any,                 monterey:       "28221cef6e4565eb77bc2b6c17ff2e08abd3bab4e58fe78f80b80b3932d81941"
+    sha256 cellar: :any,                 big_sur:        "f295f32ffc429892be6f5e0a7ed30d28027ae03be6ce72f7635fc7707c39416e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25f133bee55a80f5c594bc73ee55dd0fe8d4b587352fc55d4af4814aa9967645"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -259,8 +259,8 @@ class Dvc < Formula
   end
 
   resource "dvc-data" do
-    url "https://files.pythonhosted.org/packages/29/36/24d9836ca25a61b3575780e8e37ec48fb88b494a165b64bfd9b8f65a8851/dvc-data-2.6.0.tar.gz"
-    sha256 "d0c731a5ddbac576b13c91423dae84877680dd28a94aa0ab06c569b74dd17387"
+    url "https://files.pythonhosted.org/packages/bd/35/a509f400fc34b9d5de0cdb47c6e86b178314b1eca02cb731a933b931e178/dvc-data-2.8.0.tar.gz"
+    sha256 "6b5a509a9f378952723a5c2900a3849307e4a3ddfde3cfd98d1a6ad75c58b6fb"
   end
 
   resource "dvc-gdrive" do
@@ -284,8 +284,8 @@ class Dvc < Formula
   end
 
   resource "dvc-objects" do
-    url "https://files.pythonhosted.org/packages/2f/d7/fd8f6c017ebe242d6849de941784955d2b37b0d128a73fbfd8c6c1e7c453/dvc-objects-0.23.1.tar.gz"
-    sha256 "159ec9bede7443fbcbc64d33e53071ae51bea86fc82a764ab652655c35b58776"
+    url "https://files.pythonhosted.org/packages/7f/62/406c64cac386e1001a7470ee1c73ad17e814e7289beb48455051c5c7d7fe/dvc-objects-0.24.0.tar.gz"
+    sha256 "4c58153162b71d2290e13c47de4f4f009c6ed43f1b3e37cfe8a9a76065101e37"
   end
 
   resource "dvc-oss" do
@@ -474,8 +474,8 @@ class Dvc < Formula
   end
 
   resource "knack" do
-    url "https://files.pythonhosted.org/packages/2e/9c/b6fc4ca774d3730fd1c2c9fe516afc223562976a4bcf0cec6e9e4dbf38c5/knack-0.10.1.tar.gz"
-    sha256 "c5728128297e6d269791085cf96c2ffdfcef58cf83c634a5cb92eb03b2929838"
+    url "https://files.pythonhosted.org/packages/0c/5b/7cc69b2941a11bdace4faffef8f023543feefd14ab0222b6e62a318c53b9/knack-0.11.0.tar.gz"
+    sha256 "eb6568001e9110b1b320941431c51033d104cc98cda2254a5c2b09ba569fd494"
   end
 
   resource "kombu" do
@@ -704,8 +704,8 @@ class Dvc < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/10/37/dd53019ccb72ef7d73fff0bee9e20b16faff9658b47913a35d79e89978af/tomlkit-0.11.8.tar.gz"
-    sha256 "9330fc7faa1db67b541b28e62018c17d20be733177d290a13b24c62d1614e0c3"
+    url "https://files.pythonhosted.org/packages/0d/07/d34a911a98e64b07f862da4b10028de0c1ac2222ab848eaf5dd1877c4b1b/tomlkit-0.12.1.tar.gz"
+    sha256 "38e1ff8edb991273ec9f6181244a6a391ac30e9f5098e7535640ea6be97a7c86"
   end
 
   resource "tqdm" do

@@ -3,8 +3,8 @@ require "language/node"
 class Renovate < Formula
   desc "Automated dependency updates. Flexible so you don't need to be"
   homepage "https://github.com/renovatebot/renovate"
-  url "https://registry.npmjs.org/renovate/-/renovate-36.17.0.tgz"
-  sha256 "2bd9476d4da39dfb93ef734b6a8555e1c6dd283bdd02294913081e7956c99fe1"
+  url "https://registry.npmjs.org/renovate/-/renovate-36.25.0.tgz"
+  sha256 "9f07573a16d0916394a6d4ef6bc7a525701e67412abd5905da2ca586c9c473af"
   license "AGPL-3.0-only"
 
   # There are thousands of renovate releases on npm and page the `Npm` strategy
@@ -19,13 +19,13 @@ class Renovate < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "ddf6aff9b9ea35d53fca6d6b28176bee700cbfee5a12f410dbcc0fd4636dc4c6"
-    sha256                               arm64_monterey: "c408cad6eed75fd470cd4fec0c8c2d74e4223a9f258da06d532e3a6243fa2e4f"
-    sha256                               arm64_big_sur:  "8fb2976e457302e5b00cf236a10b62e2175d9cb5f00b2c05ad71981288d0a56e"
-    sha256 cellar: :any_skip_relocation, ventura:        "3b9227731e5ab7d0dcfe6efc68f1e223593260c7ccb29b642794326ff6e571d3"
-    sha256 cellar: :any_skip_relocation, monterey:       "1b22ba15277699ab914052a0b6459f9b2cf65fe51503134d9925a0cbc1ca5bc6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "feaae78061439c9d7c562bd4ae9df4156915be4a8c2490cb0149fa3e5d391625"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd1a132ab2dda69dc51082fdc84529315cdbf9b3ed616395508fdf4651079f19"
+    sha256                               arm64_ventura:  "ab47c2518348459732726d829b6feade078f919b4052bec841145f90b67cd476"
+    sha256                               arm64_monterey: "940893c2a260d3886f8c8271d5b736ee5b4a589fcf718e6a872ef4b1374b9ac1"
+    sha256                               arm64_big_sur:  "524310f862388c3836d5749ccf5837c3dfbefdbc0d0d757a093408d41169beaa"
+    sha256 cellar: :any_skip_relocation, ventura:        "2e884ad516651dec427a7a5cab1ee9cf31eda20a5d5dcf3d4c7e5d6bbb158abe"
+    sha256 cellar: :any_skip_relocation, monterey:       "efe212e02123fb6dff8d21704b8a5addd8f9808358fc804f88278cd822fbc38c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e9f0eb366fa0e8dc41532359df4d69353f2c7d75ff1a1d9691dfc80f13988bdd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b6587f4599e5bd2450b7fc64304c13673a76dea616eae787d70e5e615e13f24"
   end
 
   depends_on "node"

@@ -1,18 +1,18 @@
 class Atmos < Formula
   desc "Universal Tool for DevOps and Cloud Automation"
   homepage "https://github.com/cloudposse/atmos"
-  url "https://ghproxy.com/https://github.com/cloudposse/atmos/archive/v1.41.0.tar.gz"
-  sha256 "95ee19c62f10bf83ed2caefbddda44baabf54c659e799003fbaf400521b76a24"
+  url "https://ghproxy.com/https://github.com/cloudposse/atmos/archive/v1.42.0.tar.gz"
+  sha256 "54f1023702f344634dede897be1afb47589f02264295195dff59741dde128035"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1a3a1be5c7ae8b3f5a216a4a25713e2a4f810e1a9ec47ae2985b8377e3ee584f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1a3a1be5c7ae8b3f5a216a4a25713e2a4f810e1a9ec47ae2985b8377e3ee584f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1a3a1be5c7ae8b3f5a216a4a25713e2a4f810e1a9ec47ae2985b8377e3ee584f"
-    sha256 cellar: :any_skip_relocation, ventura:        "622098e8fc94fda5ee06803f8f4955426b9083147f1588eb2ebedd16ea7dd6d6"
-    sha256 cellar: :any_skip_relocation, monterey:       "622098e8fc94fda5ee06803f8f4955426b9083147f1588eb2ebedd16ea7dd6d6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "622098e8fc94fda5ee06803f8f4955426b9083147f1588eb2ebedd16ea7dd6d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "afa70c9dacbbfd1cd7fd53ccfd806479d2f7122f4ff01995fdf7a0058c26c842"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d2c4c66a2339aef356a03ff2f6decbfa3f893fd4c9d5dace54462a54747e7c5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1d2c4c66a2339aef356a03ff2f6decbfa3f893fd4c9d5dace54462a54747e7c5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1d2c4c66a2339aef356a03ff2f6decbfa3f893fd4c9d5dace54462a54747e7c5"
+    sha256 cellar: :any_skip_relocation, ventura:        "8ffd1566503a41a3307a37cb3f0039afe04aa0a3e9d5d584bf30e6c18b9f97b3"
+    sha256 cellar: :any_skip_relocation, monterey:       "8ffd1566503a41a3307a37cb3f0039afe04aa0a3e9d5d584bf30e6c18b9f97b3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8ffd1566503a41a3307a37cb3f0039afe04aa0a3e9d5d584bf30e6c18b9f97b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "598af102ec417caae23a9935ef591073abe9c18c7f9e735be78209de9bebf570"
   end
 
   depends_on "go" => :build

@@ -1,20 +1,19 @@
 class SimpleTiles < Formula
   desc "Image generation library for spatial data"
   homepage "https://github.com/propublica/simple-tiles"
-  url "https://ghproxy.com/https://github.com/propublica/simple-tiles/archive/v0.6.1.tar.gz"
-  sha256 "2391b2f727855de28adfea9fc95d8c7cbaca63c5b86c7286990d8cbbcd640d6f"
+  url "https://ghproxy.com/https://github.com/propublica/simple-tiles/archive/v0.6.2.tar.gz"
+  sha256 "343ae52a0b20ee091b14bc145b7c78fed13b7272acd827626283b70f178dfa34"
   license "MIT"
-  revision 18
   head "https://github.com/propublica/simple-tiles.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "5252e9ff36191861cf16c4b9812ebe7a102bbeebcb78885f8572f086e0aae563"
-    sha256 cellar: :any,                 arm64_monterey: "2b0e038282710117a9307cf7fee0ef4491a1c612331c2002b7a8cf8f3cdb540e"
-    sha256 cellar: :any,                 arm64_big_sur:  "827a05070f0eb7d02850aa47f58bb9fd98c801e46c998133e4202757b8e6dcb8"
-    sha256 cellar: :any,                 ventura:        "31162ff0e202da05f18fda98100983322b17e23d4b151b827f4e5a028148fae8"
-    sha256 cellar: :any,                 monterey:       "af5d85a6e8eca24129ae215ab6ffa2c3079172ae2c4dbfb1187ee4e73344745b"
-    sha256 cellar: :any,                 big_sur:        "f7393f4a5ec721669ae1125fddd5381b2e9b7da6915c7d7aa477e7aea5a1809f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33e064d743920e4e704fbaef907e24c2a43dcf52b82da8ea6d65392696f76349"
+    sha256 cellar: :any,                 arm64_ventura:  "b9c87c06fe966d1d5d23ef33a704ce840dd7eac9068d1eba236b77988ef17b27"
+    sha256 cellar: :any,                 arm64_monterey: "2634f8ae7e3bd268d7b893b45fd34be835a2e767a05c37d4351d98f3a7ab04f7"
+    sha256 cellar: :any,                 arm64_big_sur:  "dc30859d4007fed056da65adf29a4c6c460f24e949db41a84699e64d9373891e"
+    sha256 cellar: :any,                 ventura:        "46f180fb0311163650cc87e1311c8af40f11ae7c17f1e4465852ad224dc73e88"
+    sha256 cellar: :any,                 monterey:       "30776dce070adacb6eb2860b3507d1c396dd026f29ae3d53ab631bd1ba33a331"
+    sha256 cellar: :any,                 big_sur:        "d39cdd73323bfd7403c6dda42eec2958fb2d4c791ad66b10f53bc09c21cc0494"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "176d49ea6c093e741b3fa44b90d90b82573748678a4e38338960d8d43d9ac469"
   end
 
   depends_on "pkg-config" => :build
@@ -23,19 +22,7 @@ class SimpleTiles < Formula
   depends_on "gdal"
   depends_on "pango"
 
-  # Apply upstream commits for waf to work with Python 3.
-  patch do
-    url "https://github.com/propublica/simple-tiles/commit/556b25682afab595ad467761530a34a26bee225b.patch?full_index=1"
-    sha256 "410c9b82e54365ded6f06b5f72b0eb8b25ec0eb1e015f39b1b54ebfa6114aab2"
-  end
-
-  patch do
-    url "https://github.com/propublica/simple-tiles/commit/2dba11101d5de7be239e07b1f31c08e18cc055a7.patch?full_index=1"
-    sha256 "138365fa0c5efd3b8e92fa86bc1ce08c3802e59947dff82f003dfe8a82e5eda6"
-  end
-
   def install
-    ENV.prepend_path "PATH", Formula["python@3.11"].libexec/"bin"
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end

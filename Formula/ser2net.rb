@@ -1,8 +1,8 @@
 class Ser2net < Formula
   desc "Allow network connections to serial ports"
   homepage "https://ser2net.sourceforge.io"
-  url "https://downloads.sourceforge.net/project/ser2net/ser2net/ser2net-4.3.13.tar.gz"
-  sha256 "ed8b98448d535111d9a593b067601a8b53e2874814d706b2421a9490a660d265"
+  url "https://downloads.sourceforge.net/project/ser2net/ser2net/ser2net-4.4.0.tar.gz"
+  sha256 "2abef00ee6481b072bdc290422983b2374cee1ccb5a565e9b378ce7428b074dd"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,13 +11,13 @@ class Ser2net < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c961d27f7151bae65d09c73407af4fdaf4302bcb257c047dbda20666747b5658"
-    sha256 cellar: :any,                 arm64_monterey: "6960098e88ae28d254d41eeac9c64f00e5f8a8c4b9d3a4711cd9200afe3d7e42"
-    sha256 cellar: :any,                 arm64_big_sur:  "c7550df020599602d563c752cf919fc35be33bd2c993ef5928d319245422049f"
-    sha256 cellar: :any,                 ventura:        "707fb1164096869754cacf44ca18d8bfaee5db811fc734b9d1575f3b9f77abdb"
-    sha256 cellar: :any,                 monterey:       "b18a951df402a609ee0236f5ffc325d255f901fc32dc1da3dd8e273874ac322e"
-    sha256 cellar: :any,                 big_sur:        "dbfffdc465941f83e919f704bec1d0f906e789651f645486d23b02554d30d45b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "375f883af856d85b9bd43799628b8b663a26ed9ca2657d1c403c604c9b44a5ae"
+    sha256                               arm64_ventura:  "b77d561beaf06fc685c8d6a27efbfc5171d7b9292571fa062b0700021b1af215"
+    sha256                               arm64_monterey: "42b8b9db1deeb895d7c0463a17dc22cbcc3ba84a36d638e089fa8114c2f4e285"
+    sha256                               arm64_big_sur:  "7582b4bfebd5fe97ce7e44b7603385e4171b695e57fab40981c9af4fbdd641e4"
+    sha256                               ventura:        "3fe735656ff4c83aba4f273c84594a97845d80004dd103cb376c2a0a87258187"
+    sha256                               monterey:       "cb4401f9150a09f94271ef4d9ed19afeb7a98d000d957f9932afe3643aba84e5"
+    sha256                               big_sur:        "2e048121a8477cd717526d5f4f07160f24a0a21b479a26e56ece3433b22ba7cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "892751ba4244666c52876133f6a6bb0c74dc792d102aa9041ebd6331a3e8dc2b"
   end
 
   depends_on "libyaml"
@@ -75,6 +75,6 @@ class Ser2net < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{sbin}/ser2net -v")
+    assert_match version.to_s, shell_output("#{sbin}/ser2net -v", 1)
   end
 end

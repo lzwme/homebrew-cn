@@ -1,8 +1,8 @@
 class CodeCli < Formula
   desc "Command-line interface built-in Visual Studio Code"
   homepage "https://github.com/microsoft/vscode"
-  url "https://ghproxy.com/https://github.com/microsoft/vscode/archive/refs/tags/1.80.1.tar.gz"
-  sha256 "54f3a14fa31b73aac84ff3c80d8d4237a90bc2c26822e463a17c3762901d386f"
+  url "https://ghproxy.com/https://github.com/microsoft/vscode/archive/refs/tags/1.80.2.tar.gz"
+  sha256 "10019f2719ac22ffcf2cf2ee77ad4d44dba49563a867ce88f9041ab7a2335200"
   license "MIT"
   head "https://github.com/microsoft/vscode.git", branch: "main"
 
@@ -12,13 +12,13 @@ class CodeCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ac88ba1a41586937856393d75087994e8161623fb99f683c000b58bc2b74c3b0"
-    sha256 cellar: :any,                 arm64_monterey: "3dd7bd700d5e4617ff77eb22f8b3a340713289b7c52cbc0529e0fbb9060b02ee"
-    sha256 cellar: :any,                 arm64_big_sur:  "1c4485ea0a146b73b487b446a9dec6a0ef0f6137d58cf14228579ef7848fd9d4"
-    sha256 cellar: :any,                 ventura:        "09d95f7eec8a136cdfa66addd4bb03eeb3e866e527b23d5796b42b8f5a87273b"
-    sha256 cellar: :any,                 monterey:       "52fca97d2b8a8364c2f006984ce39871f05c45ec37171c25ca8d421614302313"
-    sha256 cellar: :any,                 big_sur:        "e81a414fb00ad8e848572ee049b60a12e790d7b74a9c2c824788ee601f7e9c16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8aeca941464f8d41a0b12a2d4a8fa518c07173e18bcbb9bd78248a7919397c61"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5a2f2ce8f341c90bf1db760c04be2fa22df1ba22832f0c6d00596b4251fcf998"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "af149b71cda10eeb37acc46d596681e0641d19c0f252bf1f07c3ad8feb6e5fe1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "124b5b9a595c9b0efb522eb240e146540fa841763d9d9700cd264d492e37e021"
+    sha256 cellar: :any_skip_relocation, ventura:        "025448ef4d1fd755db5020dd0c52ae51a6372aa90e9b18d8b07f64eb412a4b4a"
+    sha256 cellar: :any_skip_relocation, monterey:       "e2f070ada73b589129e8e05e70b9eb7548a1f40ca020dd3600c2c530e9439b02"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f1d8d40e544ac2aa6103788a9f43e3133e8cd81bad0d240e5f4e09707545fbf3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "35f2495a3c59acfe066bf9f2acc0466b3198cd998ac7df8cf39d10e7d94f759a"
   end
 
   depends_on "rust" => :build

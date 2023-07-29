@@ -24,6 +24,12 @@ class Dronedb < Formula
   depends_on "libzip"
   depends_on "pdal"
 
+  # Build patch for xcode 14.3
+  patch do
+    url "https://github.com/DroneDB/DroneDB/commit/28aa869dee5920c2d948e1b623f2f9d518bdcb1e.patch?full_index=1"
+    sha256 "50e581aad0fd3226fe5999cc91f9a61fdcbc42c5ba2394d9def89b70183f9c96"
+  end
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"

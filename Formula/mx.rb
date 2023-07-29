@@ -1,8 +1,8 @@
 class Mx < Formula
   desc "Command-line tool used for the development of Graal projects"
   homepage "https://github.com/graalvm/mx"
-  url "https://ghproxy.com/https://github.com/graalvm/mx/archive/refs/tags/6.34.0.tar.gz"
-  sha256 "7bf3e5fd3fef7e27f62bb1cbfea5922188fa615f1174e19abbbd9dfe044781ae"
+  url "https://ghproxy.com/https://github.com/graalvm/mx/archive/refs/tags/6.35.0.tar.gz"
+  sha256 "219018cda30b3660a20b1e9dd3c978b79f7d928695cfd1c94435f2925b8254db"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,13 +11,13 @@ class Mx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fb2c04fd4509e23ae77fdb80be49476c296093abddd46fabfb18e8ab956c784f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fb2c04fd4509e23ae77fdb80be49476c296093abddd46fabfb18e8ab956c784f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fb2c04fd4509e23ae77fdb80be49476c296093abddd46fabfb18e8ab956c784f"
-    sha256 cellar: :any_skip_relocation, ventura:        "fb2c04fd4509e23ae77fdb80be49476c296093abddd46fabfb18e8ab956c784f"
-    sha256 cellar: :any_skip_relocation, monterey:       "fb2c04fd4509e23ae77fdb80be49476c296093abddd46fabfb18e8ab956c784f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fb2c04fd4509e23ae77fdb80be49476c296093abddd46fabfb18e8ab956c784f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80401e7af92ac26d4a90d48d0930eb0219615a3afe8325efc60b7b566a0dd102"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da16d2b3bfe6abf192d4e53a9b06040bce410fe8a39f0d5252ba8b4ea5f4d859"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "da16d2b3bfe6abf192d4e53a9b06040bce410fe8a39f0d5252ba8b4ea5f4d859"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "da16d2b3bfe6abf192d4e53a9b06040bce410fe8a39f0d5252ba8b4ea5f4d859"
+    sha256 cellar: :any_skip_relocation, ventura:        "da16d2b3bfe6abf192d4e53a9b06040bce410fe8a39f0d5252ba8b4ea5f4d859"
+    sha256 cellar: :any_skip_relocation, monterey:       "da16d2b3bfe6abf192d4e53a9b06040bce410fe8a39f0d5252ba8b4ea5f4d859"
+    sha256 cellar: :any_skip_relocation, big_sur:        "da16d2b3bfe6abf192d4e53a9b06040bce410fe8a39f0d5252ba8b4ea5f4d859"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4a31866cafdac847d1704ee20ff323e2fb3cb983f2cd00d32ca0bd68b9fe00d"
   end
 
   depends_on "openjdk" => :test
