@@ -9,22 +9,8 @@ class Coin3d < Formula
     sha256 "b00d2a8e9d962397cf9bf0d9baa81bcecfbd16eef675a98c792f5cf49eb6e805"
 
     resource "pivy" do
-      url "https://ghproxy.com/https://github.com/coin3d/pivy/archive/0.6.6.tar.gz"
-      sha256 "27204574d894cc12aba5df5251770f731f326a3e7de4499e06b5f5809cc5659e"
-
-      # Support Python 3.10.
-      # Remove with the next version.
-      patch do
-        url "https://github.com/coin3d/pivy/commit/2f049c19200ab4a3a1e4740268450496c12359f9.patch?full_index=1"
-        sha256 "4fcbe10b28aff1e20c2fd42ca393df7cc1bde59839f37f62d2b938831157d27b"
-      end
-      patch do
-        url "https://github.com/coin3d/pivy/commit/4b919a3f6b9f477d0e95a2fd2b6a149a55eb9792.patch?full_index=1"
-        sha256 "41107612702d9eec17d225d52f4b8b26a84d95492e418b265dc4c40284d595a3"
-      end
-
-      # Fix segmentation fault on Apple Silicon
-      patch :DATA
+      url "https://ghproxy.com/https://github.com/coin3d/pivy/archive/0.6.8.tar.gz"
+      sha256 "c443dd7dd724b0bfa06427478b9d24d31e0c3b5138ac5741a2917a443b28f346"
     end
   end
 
@@ -77,22 +63,18 @@ class Coin3d < Formula
       touch "CMakeLists.txt"
     end
 
-    mkdir "cmakebuild" do
-      args = std_cmake_args + %w[
-        -GNinja
-        -DCOIN_BUILD_MAC_FRAMEWORK=OFF
-        -DCOIN_BUILD_DOCUMENTATION=ON
-        -DCOIN_BUILD_TESTS=OFF
-      ]
-
-      system "cmake", "..", *args
-      system "ninja", "install"
-    end
+    system "cmake", "-S", ".", "-B", "_build",
+                    "-DCOIN_BUILD_MAC_FRAMEWORK=OFF",
+                    "-DCOIN_BUILD_DOCUMENTATION=ON",
+                    "-DCOIN_BUILD_TESTS=OFF",
+                    *std_cmake_args
+    system "cmake", "--build", "_build"
+    system "cmake", "--install", "_build"
 
     resource("pivy").stage do
       ENV.append_path "CMAKE_PREFIX_PATH", prefix.to_s
       ENV["LDFLAGS"] = "-Wl,-rpath,#{opt_lib}"
-      system python3, *Language::Python.setup_install_args(prefix, python3)
+      system python3, "-m", "pip", "install", *std_pip_args, "."
     end
   end
 
@@ -126,18 +108,3 @@ class Coin3d < Formula
     EOS
   end
 end
-
-__END__
-diff --git a/interfaces/pivy_common_typemaps.i b/interfaces/pivy_common_typemaps.i
-index 27e26a6..73162c0 100644
---- a/interfaces/pivy_common_typemaps.i
-+++ b/interfaces/pivy_common_typemaps.i
-@@ -76,7 +76,7 @@ SWIGEXPORT PyObject *
- cast(PyObject * self, PyObject * args)
- {
-   char * type_name;
--  int type_len;
-+  Py_ssize_t type_len;
-   PyObject * obj = 0;
-
-   if (!PyArg_ParseTuple(args, "Os#:cast", &obj, &type_name, &type_len)) {

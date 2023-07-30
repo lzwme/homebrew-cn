@@ -6,6 +6,14 @@ class Kcptun < Formula
   license "MIT"
   head "https://github.com/xtaci/kcptun.git", branch: "master"
 
+  # Upstream appears to use GitHub releases to indicate that a version is
+  # released (and some tagged versions don't end up as a release), so it's
+  # necessary to check release versions instead of tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a3c69dd05d16457e7bf96a05281ceb6417c1298a6f5c54f068891501c24b0be"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "60f619bed1bd429479a2c87a48a9e72bb4420456a79951867af24faafcd235b1"

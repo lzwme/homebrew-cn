@@ -22,18 +22,20 @@ class Cython < Formula
 
   depends_on "python@3.11"
 
+  def python3
+    "python3.11"
+  end
+
   def install
-    python = "python3.11"
-    ENV.prepend_create_path "PYTHONPATH", libexec/Language::Python.site_packages(python)
-    system python, *Language::Python.setup_install_args(libexec, python)
+    ENV.prepend_create_path "PYTHONPATH", libexec/Language::Python.site_packages(python3)
+    system python3, "-m", "pip", "install", *std_pip_args(prefix: libexec), "."
 
     bin.install (libexec/"bin").children
     bin.env_script_all_files(libexec/"bin", PYTHONPATH: ENV["PYTHONPATH"])
   end
 
   test do
-    python = Formula["python@3.11"].opt_bin/"python3.11"
-    ENV.prepend_path "PYTHONPATH", libexec/Language::Python.site_packages(python)
+    ENV.prepend_path "PYTHONPATH", libexec/Language::Python.site_packages(python3)
 
     phrase = "You are using Homebrew"
     (testpath/"package_manager.pyx").write "print '#{phrase}'"
@@ -45,7 +47,7 @@ class Cython < Formula
         ext_modules = cythonize("package_manager.pyx")
       )
     EOS
-    system python, "setup.py", "build_ext", "--inplace"
-    assert_match phrase, shell_output("#{python} -c 'import package_manager'")
+    system python3, "setup.py", "build_ext", "--inplace"
+    assert_match phrase, shell_output("#{python3} -c 'import package_manager'")
   end
 end

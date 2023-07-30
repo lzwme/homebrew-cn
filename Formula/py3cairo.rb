@@ -28,7 +28,7 @@ class Py3cairo < Formula
 
   def install
     pythons.each do |python|
-      system python, *Language::Python.setup_install_args(prefix, python), "--install-data=#{prefix}"
+      system python, "-m", "pip", "install", *std_pip_args, "."
     end
   end
 

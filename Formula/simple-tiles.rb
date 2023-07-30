@@ -4,26 +4,28 @@ class SimpleTiles < Formula
   url "https://ghproxy.com/https://github.com/propublica/simple-tiles/archive/v0.6.2.tar.gz"
   sha256 "343ae52a0b20ee091b14bc145b7c78fed13b7272acd827626283b70f178dfa34"
   license "MIT"
+  revision 2
   head "https://github.com/propublica/simple-tiles.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b9c87c06fe966d1d5d23ef33a704ce840dd7eac9068d1eba236b77988ef17b27"
-    sha256 cellar: :any,                 arm64_monterey: "2634f8ae7e3bd268d7b893b45fd34be835a2e767a05c37d4351d98f3a7ab04f7"
-    sha256 cellar: :any,                 arm64_big_sur:  "dc30859d4007fed056da65adf29a4c6c460f24e949db41a84699e64d9373891e"
-    sha256 cellar: :any,                 ventura:        "46f180fb0311163650cc87e1311c8af40f11ae7c17f1e4465852ad224dc73e88"
-    sha256 cellar: :any,                 monterey:       "30776dce070adacb6eb2860b3507d1c396dd026f29ae3d53ab631bd1ba33a331"
-    sha256 cellar: :any,                 big_sur:        "d39cdd73323bfd7403c6dda42eec2958fb2d4c791ad66b10f53bc09c21cc0494"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "176d49ea6c093e741b3fa44b90d90b82573748678a4e38338960d8d43d9ac469"
+    sha256 cellar: :any,                 arm64_ventura:  "cc9b25089707786c77c954f339412e843776ebc992ed36372b838882336be711"
+    sha256 cellar: :any,                 arm64_monterey: "e2b588d5065161fd7db30ddcbb167fd02bbe15a42e36a624d2d2ab57fa5a719c"
+    sha256 cellar: :any,                 arm64_big_sur:  "a269fabb33d530d300f405e4363d195af41a83ff2801a08d38cf3b1cb6e365bc"
+    sha256 cellar: :any,                 ventura:        "a39df0a3650cf0b17f8292bbae7b27771f8016a0651ffc3359c6d87a9b2056a9"
+    sha256 cellar: :any,                 monterey:       "edbff9be05fb653675118d54d517094a508fc34c2e35d0306bd6261858cc53d0"
+    sha256 cellar: :any,                 big_sur:        "8cfe1ac09b2c94e3ecc194f606bda135202afc7b8877954ca835a15b712a6d59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17e7ce8eb9cf3eaff8118ee13604924e1cf320ab1176b175b746f2d2d26198d5"
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
+  depends_on "pkg-config" => [:build, :test]
   depends_on "cairo"
   depends_on "gdal"
   depends_on "pango"
 
+  uses_from_macos "python" => :build
+
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system "python3", "./waf", "configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
@@ -37,14 +39,8 @@ class SimpleTiles < Formula
         return 0;
       }
     EOS
-    system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lsimple-tiles",
-           "-I#{Formula["cairo"].opt_include}/cairo",
-           "-I#{Formula["gdal"].opt_include}",
-           "-I#{Formula["glib"].opt_include}/glib-2.0",
-           "-I#{Formula["glib"].opt_lib}/glib-2.0/include",
-           "-I#{Formula["harfbuzz"].opt_include}/harfbuzz",
-           "-I#{Formula["pango"].opt_include}/pango-1.0",
-           "-o", "test"
-    system testpath/"test"
+    cflags = shell_output("pkg-config --cflags simple-tiles").chomp.split
+    system ENV.cc, "test.c", *cflags, "-L#{lib}", "-lsimple-tiles", "-o", "test"
+    system "./test"
   end
 end

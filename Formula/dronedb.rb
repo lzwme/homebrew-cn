@@ -5,17 +5,17 @@ class Dronedb < Formula
        tag:      "v1.0.12",
        revision: "849e92fa94dc7cf65eb756ecf3824f0fe9dbb797"
   license "MPL-2.0"
-  revision 3
+  revision 5
   head "https://github.com/DroneDB/DroneDB.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "2fef614a4bdd8f9adfc3f7ac1187ce7a4ba37eec53f401468f7eb05d592e0c44"
-    sha256 cellar: :any,                 arm64_monterey: "edd22966d7a62c2b8b65a54876a597360003d83408dbbb8b76f9556d5cf7ff9c"
-    sha256 cellar: :any,                 arm64_big_sur:  "f65259fdd921171ad579f4da450f4e74600c1b1abe4b953fcc5871432cd894cc"
-    sha256 cellar: :any,                 ventura:        "1868a493701c0b4b30cfb517abc6408fb278c88c4e5019bf1141d725b8c3b13a"
-    sha256 cellar: :any,                 monterey:       "2afe4dd4f029621045cf7c5a7ae6952d2b10d895c3b605117f46fd227becdc79"
-    sha256 cellar: :any,                 big_sur:        "6229a39e1fa119aba0d529fcca44ddaae02e91fbbf9761e23a98773ad624373d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d112218dfb122e57372c11f3b32f976d1f436eda2e2531ae4e85303fe56d316"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fbca372fd5d4c886b635ec37fc9eadf411707a52127da818b67db2398ef6c46e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ebe8500b072b2d2db44f165126ee538fc66a006e8d8780ab7ac2e517302fb240"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e6223a8453c7b65e9a32133bf0dea927eef7af85105dfbf7c07c88387e01f163"
+    sha256 cellar: :any_skip_relocation, ventura:        "66972a3e940b43d550da78dc48ec513a0113d7d2349c63e4998a648df651fb35"
+    sha256 cellar: :any_skip_relocation, monterey:       "803a1af44b3235b1338ed5ecb5575c09dcf73723d3f28127617d05a5750af08e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "08855a4cb551c8b4df952d96923831cdfc0abe4692a87d388fc9d253645026eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09354fb3e97fab366d197e9dd0ef3daa0d07452a208d840cc70a21331589150f"
   end
 
   depends_on "cmake" => :build

@@ -16,7 +16,6 @@ class Bindgen < Formula
   end
 
   depends_on "rust" => :build
-  depends_on "rustfmt"
 
   uses_from_macos "llvm" # for libclang
 

@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/returntocorp/semgrep.git",
-      tag:      "v1.34.0",
-      revision: "a2747760f872cf7470b606dc585a67126356cc2e"
+      tag:      "v1.34.1",
+      revision: "8bb2770557395b25529abbb2f3f3a6c26aaee33f"
   license "LGPL-2.1-only"
   head "https://github.com/returntocorp/semgrep.git", branch: "develop"
 
@@ -15,13 +15,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "3f026df38facc102133a3e6d9cee9b59dbb14a9187a1e7b053543bbf0da2e013"
-    sha256 cellar: :any, arm64_monterey: "541be000d8823e212def36fab9d47023c87cb7cf9cd285c5a79f04c434bebb70"
-    sha256 cellar: :any, arm64_big_sur:  "0695c099f1423b35983fc7314518df96cd4ba4dffa0749e2b91865d719fde7b5"
-    sha256 cellar: :any, ventura:        "3961507571b5615597b9c7b682726beffa3776582a7f5e472a6e44b1591cea4a"
-    sha256 cellar: :any, monterey:       "97fb63a2541cad5f5fd9e4b7468fe6fe650758ef9bc4ccd2dda9f0f24dab7c04"
-    sha256 cellar: :any, big_sur:        "8eaa09cd46bd9d1f020fd871d9445f927aad30181f128ba1a78ed4fcdff24c3b"
-    sha256               x86_64_linux:   "9f242a9b5d29231bdbe9a12a007d90309aa391ea1892319125d28d7baf3e678e"
+    sha256 cellar: :any, arm64_ventura:  "932e6b08de66df307ed134445e47850736fc1e023fccfb53040819189eca3deb"
+    sha256 cellar: :any, arm64_monterey: "b41bb7641c8324dbcfb05a7e5e886b88bb7f16590f2c71a0ea3e0d8c067d566b"
+    sha256 cellar: :any, arm64_big_sur:  "e32b74510493f311b31a0dcf6a26246cdd6d509ee80451fed796efce3ead7349"
+    sha256 cellar: :any, ventura:        "ed2180e0a821652f5ddcd40075bfe2708e728734b84ce703c92a7d6e8c33b67c"
+    sha256 cellar: :any, monterey:       "f36414bd89e7fab9864d161f5fd745c7a681e1e4de88b9f544079679aabf40f6"
+    sha256 cellar: :any, big_sur:        "9391a4ba44f8aa1b52d7cc4fc6767af0045ce08fa7b09e5e637642267388cd1d"
+    sha256               x86_64_linux:   "014300a06d8c860c3c9a5c4be2adabe13a80f54f8f976805d4552a181bf207b1"
   end
 
   depends_on "autoconf" => :build

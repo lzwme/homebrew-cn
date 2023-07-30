@@ -1,17 +1,17 @@
 class SwiftOutdated < Formula
   desc "Check for outdated Swift package manager dependencies"
   homepage "https://github.com/kiliankoe/swift-outdated"
-  url "https://ghproxy.com/https://github.com/kiliankoe/swift-outdated/archive/refs/tags/0.5.1.tar.gz"
-  sha256 "4c8bb4a630b5c3c456ac24e3dfe92f812ac14b2cb0a5e5bd298a4d83abe630ec"
+  url "https://ghproxy.com/https://github.com/kiliankoe/swift-outdated/archive/refs/tags/0.6.0.tar.gz"
+  sha256 "25491869d5d1537bb4923e33ac7e9049a9b3683d7936b3c7969eef5d12b509a0"
   license "MIT"
   head "https://github.com/kiliankoe/swift-outdated.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f8e5dbbdca6cab1d848c5d9bde479587d0c35dc5c3776dcb9a4fc1874f31776"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "09b572ef7569888de46c94fe2fea2870d51eb0873ed6a9ca88b27e7303371f6c"
-    sha256 cellar: :any_skip_relocation, ventura:        "8eec0dc9907ea935f31ebca26c8ffc66245cde497358fb178fd665a19e3a74d6"
-    sha256 cellar: :any_skip_relocation, monterey:       "69dfa5ab1d820862a225aa5cc27cf5fa19c3310460f2c55bf1b2143e2dd7aeb8"
-    sha256                               x86_64_linux:   "c112f2cb35f4345a7b85cb4213005b0ed017d1e429de7799d2c56eef8bc67bfd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c05cd286b9a9b32b3f1bfa82c543f2be46b965d967a554835cf49d2176181253"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1e3a3229ddb0984afae4a2fe8047b8458cdd556c669e46638777b411bfba896d"
+    sha256 cellar: :any_skip_relocation, ventura:        "a349f57c27fa0e81b2e46f4694b95f6a990a05ca1f76468aca23f523b56886e5"
+    sha256 cellar: :any_skip_relocation, monterey:       "5d546e5adf358d4cc78cb50bdf96e27a675d76b671b22cd7120a80af72a2816d"
+    sha256                               x86_64_linux:   "a5f35e36caff72ca3c1620f058352f1e15241b7120bb6f1999df1615ecc39f6f"
   end
 
   depends_on xcode: ["13", :build]

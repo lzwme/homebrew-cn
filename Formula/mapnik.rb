@@ -2,7 +2,7 @@ class Mapnik < Formula
   desc "Toolkit for developing mapping applications"
   homepage "https://mapnik.org/"
   license "LGPL-2.1-or-later"
-  revision 20
+  revision 21
   head "https://github.com/mapnik/mapnik.git", branch: "master"
 
   # TODO: Try switching to CMake build on next release as it works better with
@@ -25,14 +25,13 @@ class Mapnik < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "9a257ccd034fa3ea008104d5d02c28b95c90f54beeb047d6acc0b84881e84e8a"
-    sha256 cellar: :any,                 arm64_monterey: "38e5bddf16ae61f0ff525d299a12ca054565ed34e95e5a3076f8a1de7d1a346b"
-    sha256 cellar: :any,                 arm64_big_sur:  "6c18db5681c42c287a910cc24b9d2382f249d07a9babcf8e58cb4f635198f4b5"
-    sha256 cellar: :any,                 ventura:        "23d86823c6a0e0441687c2ca4265f43d444ad48af3b6373b59a53ddf83dee226"
-    sha256 cellar: :any,                 monterey:       "b108c8adc831ae632ee536c7caf2a90f7728e450d0d9b7f5239c0e9def9ed15b"
-    sha256 cellar: :any,                 big_sur:        "d8957ebdbd163ae177f94ee01d7961df912e4e61939a0283ada3b9ac92f68617"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4a6d02cd3cbe3b78803032d2467d681b7261eac31cd7985862eb76a21634cdf"
+    sha256                               arm64_ventura:  "0dca5deae922d9f2b39fe75690dabfd20331a7449d1af97c16d16c39ece30759"
+    sha256                               arm64_monterey: "098cdc2b84b8bfdaba32c5320942bd0e636e63295446dfc9cf9b7e2cfdda6010"
+    sha256                               arm64_big_sur:  "477d220e0bb4096d27ee3821c1c0a99b3733c4e1b6970f27e6acc6881d5adc83"
+    sha256                               ventura:        "17f5fab836011f04c4ee4071ccf3d233dfc27b94172487d1a20d98395ec4220a"
+    sha256                               monterey:       "1d5322c0b334abf0e48f55e0a891947cfc62e0c880340878d390921b5595af3e"
+    sha256                               big_sur:        "0f5a5d5c01e90b51cbe47a14a1f5f86ae45d3970d9374de6ffb84cd42cf75c84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95a8d9c4faa4d700cdc75acfb01544dba0602316632ee1a8f29e18095b93bbe6"
   end
 
   depends_on "pkg-config" => :build

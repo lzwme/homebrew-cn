@@ -1,19 +1,19 @@
 class EfmLangserver < Formula
   desc "General purpose Language Server"
   homepage "https://github.com/mattn/efm-langserver"
-  url "https://ghproxy.com/https://github.com/mattn/efm-langserver/archive/v0.0.46.tar.gz"
-  sha256 "ef81abeadecdde755a80ad34ed089c5bd42bd84b82886666fc699dfb3ec03115"
+  url "https://ghproxy.com/https://github.com/mattn/efm-langserver/archive/v0.0.48.tar.gz"
+  sha256 "39d56178a11c39f865eb2e3677d51af7ac62c79e0b6daa9176dcd8f58a4c0b05"
   license "MIT"
   head "https://github.com/mattn/efm-langserver.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "69ec0537aa10ba6c3e77994a30f4c1bf7592ca3bf640a501f2a5bed73d1be481"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "69ec0537aa10ba6c3e77994a30f4c1bf7592ca3bf640a501f2a5bed73d1be481"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "69ec0537aa10ba6c3e77994a30f4c1bf7592ca3bf640a501f2a5bed73d1be481"
-    sha256 cellar: :any_skip_relocation, ventura:        "eb747e872de24e8f3fcaa40fe1c9c37d714016a389f60fa359c8b6cb4b98fd1e"
-    sha256 cellar: :any_skip_relocation, monterey:       "eb747e872de24e8f3fcaa40fe1c9c37d714016a389f60fa359c8b6cb4b98fd1e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "eb747e872de24e8f3fcaa40fe1c9c37d714016a389f60fa359c8b6cb4b98fd1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5449b4d114cef2b58fceefae5fc63f1ca3aeef73203ce145a977a9a856790fd3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "34e9c2849538000efb03912f10eafe86359b8991760508b4859b920385f6a374"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "34e9c2849538000efb03912f10eafe86359b8991760508b4859b920385f6a374"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "34e9c2849538000efb03912f10eafe86359b8991760508b4859b920385f6a374"
+    sha256 cellar: :any_skip_relocation, ventura:        "d60ab1b882a1d5057e4dfd4f139d781a40cb84e535af5c6fc9893b45104362dc"
+    sha256 cellar: :any_skip_relocation, monterey:       "d60ab1b882a1d5057e4dfd4f139d781a40cb84e535af5c6fc9893b45104362dc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d60ab1b882a1d5057e4dfd4f139d781a40cb84e535af5c6fc9893b45104362dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0297f619f11165dd6c4ca392549d609b1ecbb2be390bdad613dc33b2c25c77f"
   end
 
   depends_on "go" => :build

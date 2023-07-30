@@ -1,8 +1,8 @@
 class Rubberband < Formula
   desc "Audio time stretcher tool and library"
   homepage "https://breakfastquay.com/rubberband/"
-  url "https://breakfastquay.com/files/releases/rubberband-3.2.1.tar.bz2"
-  sha256 "82edacd0c50bfe56a6a85db1fcd4ca3346940ffe02843fc50f8b92f99a97d172"
+  url "https://breakfastquay.com/files/releases/rubberband-3.3.0.tar.bz2"
+  sha256 "d9ef89e2b8ef9f85b13ac3c2faec30e20acf2c9f3a9c8c45ce637f2bc95e576c"
   license "GPL-2.0-or-later"
   head "https://hg.sr.ht/~breakfastquay/rubberband", using: :hg
 
@@ -12,13 +12,13 @@ class Rubberband < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "d2ea5c9b03b60520fecbb523241fed202fa029a93099ba85d1ee6fb073757e25"
-    sha256 cellar: :any, arm64_monterey: "4fe8cc4990cbf3654d742e7841c1c8767a71df642f16d49e1f2717700940fad6"
-    sha256 cellar: :any, arm64_big_sur:  "7e7eaf72e4431ceb12da08f04b769c8a103b138590553d13260bc137551a4a39"
-    sha256 cellar: :any, ventura:        "ae6ae456480a2ce1ddfc195b52468932932e09b31838b723216c6281a5e876fc"
-    sha256 cellar: :any, monterey:       "7c20243ffd717a88b55f5e61bdc8e8690b19fbc775747485be088f31500b2e02"
-    sha256 cellar: :any, big_sur:        "ce3177feeb22218844ff84a4318dae673122f721e706954d56b884e5ac058632"
-    sha256               x86_64_linux:   "320d8399f3fa0ead92892cf4905207b2d1b0572c6cd654ea662198cf1c82c2d5"
+    sha256 cellar: :any, arm64_ventura:  "206c609c7172b67789074a7cf6d7f488754c36385c8fa192be5b7d79250baa9f"
+    sha256 cellar: :any, arm64_monterey: "b5f0bd10292d5ae466dbd52a08675add720790e38844439fae7539fd90ac8ab3"
+    sha256 cellar: :any, arm64_big_sur:  "bb6f008e5ae2b65ddc195607d321fd533fcf99a0a0e3e4438dc1f960fbf9a11f"
+    sha256 cellar: :any, ventura:        "b4650ed709c4c90115f039c4b0d7ad0261a68894a509607d09f1eea066f97884"
+    sha256 cellar: :any, monterey:       "97ea0bae9d8ff2f4b0fd8ca64f7f1a12497f1b4c24929b39f02d5e5081da3980"
+    sha256 cellar: :any, big_sur:        "7092e475181f31763ba9c7b86d00cde1913357543eb2ed3759b696e7add68650"
+    sha256               x86_64_linux:   "be989026114a7f007ae1d5dba0ba2f98bb47da7b3023ff60f4d873f1d45a1bc5"
   end
 
   depends_on "meson" => :build

@@ -1,18 +1,18 @@
 class Gat < Formula
   desc "Cat alternative written in Go"
   homepage "https://github.com/koki-develop/gat"
-  url "https://ghproxy.com/https://github.com/koki-develop/gat/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "d2002f2ce653213dcbb2db6f4fa0a95f83ef520aee7ff78ccf83c5f7c7aa1859"
+  url "https://ghproxy.com/https://github.com/koki-develop/gat/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "a97c362d54d3d2a05111fac780b6beb62db818ae1e92a33f53576c59267146e6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "839a78225f733108a82d6d347bf5ded39c916978dc781d5f791f252f040a1312"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "839a78225f733108a82d6d347bf5ded39c916978dc781d5f791f252f040a1312"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "839a78225f733108a82d6d347bf5ded39c916978dc781d5f791f252f040a1312"
-    sha256 cellar: :any_skip_relocation, ventura:        "d0e1445cdc6e8839ec43273f146fb82a97cc450d60af49a815ed9822bcadadf9"
-    sha256 cellar: :any_skip_relocation, monterey:       "d0e1445cdc6e8839ec43273f146fb82a97cc450d60af49a815ed9822bcadadf9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d0e1445cdc6e8839ec43273f146fb82a97cc450d60af49a815ed9822bcadadf9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e81ea62985bcebe7add09d652fb218f0d3dae64dccf706d1ae0a46d9ad4990bc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d82dd6ec2febde6778b102a41c5e35f169bb2bff02861e390a53ef999c61d2fc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d82dd6ec2febde6778b102a41c5e35f169bb2bff02861e390a53ef999c61d2fc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d82dd6ec2febde6778b102a41c5e35f169bb2bff02861e390a53ef999c61d2fc"
+    sha256 cellar: :any_skip_relocation, ventura:        "354af6e477139615bc48a0d67c146a787b52c36bf6cf7ecfd31bf7fabd789eb1"
+    sha256 cellar: :any_skip_relocation, monterey:       "354af6e477139615bc48a0d67c146a787b52c36bf6cf7ecfd31bf7fabd789eb1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "354af6e477139615bc48a0d67c146a787b52c36bf6cf7ecfd31bf7fabd789eb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b609395810b46bc353642ac06edbf54adcd52b75777b3a1d31f395a64ce596c"
   end
 
   depends_on "go" => :build
