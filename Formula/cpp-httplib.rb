@@ -1,12 +1,18 @@
 class CppHttplib < Formula
   desc "C++ header-only HTTP/HTTPS server and client library"
   homepage "https://github.com/yhirose/cpp-httplib"
-  url "https://ghproxy.com/https://github.com/yhirose/cpp-httplib/archive/refs/tags/v0.13.1.tar.gz"
-  sha256 "9b837d290b61e3f0c4239da0b23bbf14c382922e2bf2a9bac21c1e3feabe1ff9"
+  url "https://ghproxy.com/https://github.com/yhirose/cpp-httplib/archive/refs/tags/v0.13.2.tar.gz"
+  sha256 "b7f64402082af7c42c0d370543cb294d82959ca7cf25b3ee7eb1306732bb27d4"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1dd79f4f935a710457737889ca5e65ad1064e260f8665f664e54f0920f8cc3bd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3f2527cb43683c1b21c949f9f169c655c73714afc3b1e8c4333eb79068441302"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3f2527cb43683c1b21c949f9f169c655c73714afc3b1e8c4333eb79068441302"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3f2527cb43683c1b21c949f9f169c655c73714afc3b1e8c4333eb79068441302"
+    sha256 cellar: :any_skip_relocation, ventura:        "3f2527cb43683c1b21c949f9f169c655c73714afc3b1e8c4333eb79068441302"
+    sha256 cellar: :any_skip_relocation, monterey:       "3f2527cb43683c1b21c949f9f169c655c73714afc3b1e8c4333eb79068441302"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3f2527cb43683c1b21c949f9f169c655c73714afc3b1e8c4333eb79068441302"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e36dc140280611df253110acf657c7f3650481c31f6536b2615dfe8e5f57f62"
   end
 
   depends_on "meson" => :build

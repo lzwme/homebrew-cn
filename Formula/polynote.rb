@@ -28,7 +28,6 @@ class Polynote < Formula
 
   def install
     python3 = "python3.11"
-    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor"/Language::Python.site_packages(python3)
 
     with_env(JAVA_HOME: Language::Java.java_home) do
       resource("jep").stage do
@@ -38,7 +37,7 @@ class Polynote < Formula
           ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["openjdk"].libexec}/lib/server"
         end
 
-        system python3, *Language::Python.setup_install_args(libexec/"vendor", python3)
+        system python3, "-m", "pip", "install", *std_pip_args(prefix: libexec/"vendor"), "."
       end
     end
 
@@ -46,7 +45,7 @@ class Polynote < Formula
     rewrite_shebang detected_python_shebang, libexec/"polynote.py"
 
     env = Language::Java.overridable_java_home_env
-    env["PYTHONPATH"] = ENV["PYTHONPATH"]
+    env["PYTHONPATH"] = libexec/"vendor"/Language::Python.site_packages(python3)
     (bin/"polynote").write_env_script libexec/"polynote.py", env
   end
 

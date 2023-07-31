@@ -3,19 +3,18 @@ class Cycode < Formula
 
   desc "Boost software development security via secret scanning, SAST, SCA, and IaC"
   homepage "https://github.com/cycodehq-public/cycode-cli"
-  url "https://files.pythonhosted.org/packages/5b/89/96b386f3974430fcdb518ca63d351060c6ee643be2ee7cf6733bc4341a01/cycode-0.2.5.tar.gz"
-  sha256 "d6e3978afe0494079a049c87523024b50aa8b06ea43e5faaae7b81fd4a3b1f78"
+  url "https://files.pythonhosted.org/packages/f1/29/5225ef43f33e036a01f11a236c66f9247a6ec45c04177692a7ea6de42ee5/cycode-1.0.0.tar.gz"
+  sha256 "f5740497337504b167d6d8e976f300dbb67cc3de0d123ef64ff7778016902029"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4caa861d7fa4add47abd5afd5885a2e28ea021ebd6424171a6d7118441caf49a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f9f092bc893e671d7ebcdb4bf39aefcfe44b00b6dcb4056107f8be1c0e538b47"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1090598cc45476e3816c3a2adecf7964d4d9df371bee7a2dd162947f94df9e1c"
-    sha256 cellar: :any_skip_relocation, ventura:        "d4c8cf996c7578188d704e1d1cae79936fc348691ec88e6f79e992786c29672c"
-    sha256 cellar: :any_skip_relocation, monterey:       "f33a304ad66578c98a4d49eced60d008b7b526b7740fc28b95002ba4c853fb85"
-    sha256 cellar: :any_skip_relocation, big_sur:        "28405331b5c1576bed10ffe3f961f1e47b49e21f3889d9bc3a7678caa639fa45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63b79960b3499f7ab4b218b932d6cfef7b592c1060ad34400c2c034369705289"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3892a40cf178653cfa91c5226442209723654729c60df78d5d70a4748a168ee"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7a49ce30e81f65f21dc9c274aee5112dc7da34d83e83ad1d55a67b0a9ee4864c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4d374e59761af920faeda7e2e431f67e2e1f605e363501ef922575115c8d5c3c"
+    sha256 cellar: :any_skip_relocation, ventura:        "88d0682528d5bc01092de5f98581ec332e75669953ab3bb0d78bda4676bbdb9e"
+    sha256 cellar: :any_skip_relocation, monterey:       "09e97887dd131fbf4ef8dac2152e291f4265e624f283dc53182d183db7244aa8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "dca03f86ec879b6f908cd81b1acc6ca332b11438a52cb6eec4568dd8e72823eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98e4f3ccfab199ba941b974edad318d5fc6a24eb429a48f32c1c1a7c560ad5c8"
   end
 
   depends_on "python@3.11"
@@ -67,19 +66,9 @@ class Cycode < Formula
     sha256 "8d9b8cb1e80b9735e8717c9362079d3ce4c6e5ddeebedd0361b228c3a67a62f6"
   end
 
-  resource "halo" do
-    url "https://files.pythonhosted.org/packages/ee/48/d53580d30b1fabf25d0d1fcc3f5b26d08d2ac75a1890ff6d262f9f027436/halo-0.0.31.tar.gz"
-    sha256 "7b67a3521ee91d53b7152d4ee3452811e1d2a6321975137762eb3d70063cc9d6"
-  end
-
   resource "idna" do
     url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
     sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
-  end
-
-  resource "log-symbols" do
-    url "https://files.pythonhosted.org/packages/45/87/e86645d758a4401c8c81914b6a88470634d1785c9ad09823fa4a1bd89250/log_symbols-0.0.14.tar.gz"
-    sha256 "cf0bbc6fe1a8e53f0d174a716bc625c4f87043cc21eb55dd8a740cfe22680556"
   end
 
   resource "marshmallow" do
@@ -88,8 +77,8 @@ class Cycode < Formula
   end
 
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/b7/64/e097eea8dcd2b2f7df6e4425fc98e7494e37b1a6e149603c31d327080a05/pathspec-0.8.1.tar.gz"
-    sha256 "86379d6b86d75816baba717e64b1a3a3469deb93bb76d613c9ce79edc5cb68fd"
+    url "https://files.pythonhosted.org/packages/a0/2a/bd167cdf116d4f3539caaa4c332752aac0b3a0cc0174cdb302ee68933e81/pathspec-0.11.2.tar.gz"
+    sha256 "e0d8d0ac2f12da61956eb2306b69f9469b42f4deb0f3cb6ed47b9cce9996ced3"
   end
 
   resource "python-dateutil" do
@@ -107,24 +96,14 @@ class Cycode < Formula
     sha256 "c840e62059cd3be204b0c9c9f74be2c09d5648eddd4580d9314c3ecde0b30936"
   end
 
-  resource "spinners" do
-    url "https://files.pythonhosted.org/packages/d3/91/bb331f0a43e04d950a710f402a0986a54147a35818df0e1658551c8d12e1/spinners-0.0.24.tar.gz"
-    sha256 "1eb6aeb4781d72ab42ed8a01dcf20f3002bf50740d7154d12fb8c9769bf9e27f"
-  end
-
-  resource "termcolor" do
-    url "https://files.pythonhosted.org/packages/b8/85/147a0529b4e80b6b9d021ca8db3a820fcac53ec7374b87073d004aaf444c/termcolor-2.3.0.tar.gz"
-    sha256 "b5b08f68937f138fe92f6c089b99f1e2da0ae56c52b78bf7075fd95420fd9a5a"
-  end
-
   resource "texttable" do
     url "https://files.pythonhosted.org/packages/e4/84/4686ee611bb020038375c5f11fe7b6b3bb94ee78614a1faba45effe51591/texttable-1.6.7.tar.gz"
     sha256 "290348fb67f7746931bcdfd55ac7584ecd4e5b0846ab164333f0794b121760f2"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
-    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
+    url "https://files.pythonhosted.org/packages/e2/7d/539e6f0cf9f0b95b71dd701a56dae89f768cd39fd8ce0096af3546aeb5a3/urllib3-1.26.16.tar.gz"
+    sha256 "8f135f6502756bde6b2a9b28989df5fbe87c9970cecaa69041edcce7f0589b14"
   end
 
   def install
@@ -132,9 +111,11 @@ class Cycode < Formula
   end
 
   test do
-    shell_output("#{bin}/cycode ignore", 1)
-    shell_output("#{bin}/cycode scan path", 1)
-    shell_output("#{bin}/cycode scan -t test", 2)
-    assert_equal "You are not authorized", shell_output("#{bin}/cycode auth check").strip
+    assert_match "Error: ignore by type is missing", shell_output("#{bin}/cycode ignore 2>&1", 1)
+    assert_match "Error: Cycode client id needed.", shell_output("#{bin}/cycode scan path 2>&1", 1)
+    output = shell_output("#{bin}/cycode scan -t test 2>&1", 2)
+    assert_match "Error: Invalid value for '--scan-type' / '-t'", output
+    assert_equal "Cycode authentication failed", shell_output("#{bin}/cycode auth check").strip
+    assert_match version.to_s, shell_output("#{bin}/cycode version")
   end
 end

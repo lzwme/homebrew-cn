@@ -1,18 +1,18 @@
 class StructurizrCli < Formula
   desc "Command-line utility for Structurizr"
   homepage "https://structurizr.com"
-  url "https://ghproxy.com/https://github.com/structurizr/cli/releases/download/v1.32.1/structurizr-cli-1.32.1.zip"
-  sha256 "94532284f70d1ecf2b46a91123371f12fb4c8fd60535070f1e28843395b7a2be"
+  url "https://ghproxy.com/https://github.com/structurizr/cli/releases/download/v1.33.0/structurizr-cli-1.33.0.zip"
+  sha256 "d93cac99abae872bd398a786e97e328ac4491952091a4a8e1d20b2e5067253f0"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c3ff5dd57c5389ea71a91d7e1701b7f9c5e19ca7192ed1c80cae6908b4acd9a7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c3ff5dd57c5389ea71a91d7e1701b7f9c5e19ca7192ed1c80cae6908b4acd9a7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c3ff5dd57c5389ea71a91d7e1701b7f9c5e19ca7192ed1c80cae6908b4acd9a7"
-    sha256 cellar: :any_skip_relocation, ventura:        "c3ff5dd57c5389ea71a91d7e1701b7f9c5e19ca7192ed1c80cae6908b4acd9a7"
-    sha256 cellar: :any_skip_relocation, monterey:       "c3ff5dd57c5389ea71a91d7e1701b7f9c5e19ca7192ed1c80cae6908b4acd9a7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c3ff5dd57c5389ea71a91d7e1701b7f9c5e19ca7192ed1c80cae6908b4acd9a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99d1a07207001d20ed1e1671b0f51d20811fc1e0853b4546c3b560fb82f033b9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3bb827ea0c050176d9907067de5a9b4c9228ae83d8b2e77abbf4579ddf7b640"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e3bb827ea0c050176d9907067de5a9b4c9228ae83d8b2e77abbf4579ddf7b640"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e3bb827ea0c050176d9907067de5a9b4c9228ae83d8b2e77abbf4579ddf7b640"
+    sha256 cellar: :any_skip_relocation, ventura:        "e3bb827ea0c050176d9907067de5a9b4c9228ae83d8b2e77abbf4579ddf7b640"
+    sha256 cellar: :any_skip_relocation, monterey:       "e3bb827ea0c050176d9907067de5a9b4c9228ae83d8b2e77abbf4579ddf7b640"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e3bb827ea0c050176d9907067de5a9b4c9228ae83d8b2e77abbf4579ddf7b640"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52d5bb5037a6fc115090fbb7ceab208a2ac2c2200f2ef774dbcf5eb99bc51482"
   end
 
   depends_on "openjdk"

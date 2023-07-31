@@ -1,13 +1,13 @@
 class Jetty < Formula
   desc "Java servlet engine and webserver"
-  homepage "https://www.eclipse.org/jetty/"
+  homepage "https://eclipse.dev/jetty/"
   url "https://search.maven.org/remotecontent?filepath=org/eclipse/jetty/jetty-distribution/9.4.51.v20230217/jetty-distribution-9.4.51.v20230217.tar.gz"
   version "9.4.51.v20230217"
   sha256 "5c34101bfb56b90c546df9b04f7931822b8f9bed676e02dc8c7c91b02a7f38b7"
   license any_of: ["Apache-2.0", "EPL-1.0"]
 
   livecheck do
-    url "https://www.eclipse.org/jetty/download.php"
+    url "https://eclipse.dev/jetty/download.php"
     regex(/href=.*?jetty-distribution[._-]v?(\d+(?:\.\d+)+(?:\.v\d+)?)\.t/i)
   end
 

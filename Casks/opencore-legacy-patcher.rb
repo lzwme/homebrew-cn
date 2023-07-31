@@ -8,5 +8,5 @@ cask "opencore-legacy-patcher" do
   desc "Patcher to run Big Sur, Monterey and Ventura (11.x-13.x) on unsupported Macs"
   homepage "https://dortania.github.io/OpenCore-Legacy-Patcher/"
 
-  app "OpenCore-Patcher.app"
+  app "OpenCore-Patcher.app", target: "/Library/Application Support/Dortania/OpenCore-Patcher.app"
 end

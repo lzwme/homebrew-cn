@@ -1,8 +1,8 @@
 class Asio < Formula
   desc "Cross-platform C++ Library for asynchronous programming"
   homepage "https://think-async.com/Asio"
-  url "https://downloads.sourceforge.net/project/asio/asio/1.28.0%20%28Stable%29/asio-1.28.0.tar.bz2"
-  sha256 "d0ddc2361abd2f4c823e970aaf8e28b4b31ab21b1a68af16b114fc093661e232"
+  url "https://downloads.sourceforge.net/project/asio/asio/1.28.1%20%28Stable%29/asio-1.28.1.tar.bz2"
+  sha256 "3bcf0357e2e19a2ee5adc805e6cc209338a7461c406d3047d282ea1c4b566101"
   license "BSL-1.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Asio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e695f3e1f6a2c96b7521a95695c0c6a306866c7e1aa4ba1764ae5a5836ee5bef"
-    sha256 cellar: :any,                 arm64_monterey: "ee502f262978cef5ba9404c52ecf231840333f2afd108874f261ef1bf0522d09"
-    sha256 cellar: :any,                 arm64_big_sur:  "1f783641073765794406635f67fef02fb3fa15d53616993c9b835689cc5a29a0"
-    sha256 cellar: :any,                 ventura:        "4680b83b1ed3f45bf6178cbf183095cd73d51ab2576204d7a8a2d49ebc271169"
-    sha256 cellar: :any,                 monterey:       "01ea2071f5d410cf6f3500dd0985cc6e08590d68b18c8a175e7ba307ec2bc7eb"
-    sha256 cellar: :any,                 big_sur:        "84a0fea51a6b5324a47f5528aa54690693c49687378295ff4fe479a076c68aa1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d73243892c6ae33a993184305b5b45a1611a68719e7ef8d6b587a60cbf8df4d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "afee43084abe550b59253d8b05bfe2f4e9735bc8e8245067edae9ca5367e4d20"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "aadc88fbaac96e4886b9da1e2f5f3733c91d1c543430fdec047402c2a397665c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a729d67adbec19d0207de92fcbac2ab80264c6f50f3d57973bf585fdec5dff78"
+    sha256 cellar: :any_skip_relocation, ventura:        "5bd3675a77ec2ad624ae08cd459d0d2008f27b4a150a30feaaf6c2fbd9bf1ea2"
+    sha256 cellar: :any_skip_relocation, monterey:       "4beb25487b7e5548fc86d538b9a5e51de37540604a6ac71c6eecdff76d1bc1dc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1c26d0ed67f36c26a9204496b6b437917e470eba0a7c3132090b86c848de51c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef48e68516761c4d94b643b82cb54a9c018734aa4bca02449bef44a4cbcbae10"
   end
 
   head do

@@ -6,11 +6,6 @@ class RubyAT27 < Formula
   license "Ruby"
   revision 1
 
-  livecheck do
-    url "https://www.ruby-lang.org/en/downloads/"
-    regex(/href=.*?ruby[._-]v?(2\.7(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
     sha256 arm64_ventura:  "3b37017d8a6c722b6ce8b44361d7893a8458c8696e84f393df01be87e4d67faa"
     sha256 arm64_monterey: "732ed82a82fed5ceb49de4cd4be5c5c6f4151d02c157df689cbdb1eae668b0f5"

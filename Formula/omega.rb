@@ -1,8 +1,8 @@
 class Omega < Formula
   desc "Packaged search engine for websites, built on top of Xapian"
   homepage "https://xapian.org/"
-  url "https://oligarchy.co.uk/xapian/1.4.22/xapian-omega-1.4.22.tar.xz"
-  sha256 "674c979fb90f1f4990eb8a909edab88ca4a009417dfd5ab0cba19e02c7a95528"
+  url "https://oligarchy.co.uk/xapian/1.4.23/xapian-omega-1.4.23.tar.xz"
+  sha256 "7ba460eba70004d1f44299de4e62dcc84009927e6d52604ae67a3e30165e220f"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Omega < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "516d26bba52083f74e23411b2c759461fee0ef5549cb39a0ef867025d6df3c1c"
-    sha256 arm64_monterey: "9cba7602d734dbf4aa3fc00297ededb9c184f760eb1087d39352b1974a934ca7"
-    sha256 arm64_big_sur:  "7183270a464cd47c69278fb331f9f4824655fa51914c5c7a53ad8f194a546b9d"
-    sha256 ventura:        "04924bc02b36da9fd1999695973c19c0270b42e652ec7e98c61307374ba485cd"
-    sha256 monterey:       "25c210fe14c4b2ebb73c1ef71246c546f7d60556c0e853ab6d7a7507d162a29f"
-    sha256 big_sur:        "9e4bbce8b2b4c06d8da4dca18a228c510ad15f0bfaaaf75b72147a748096d709"
-    sha256 x86_64_linux:   "2b53955fc46a2cb0a811a32553a6a32c372cc63506f152bd880b072c7aaa2298"
+    sha256 arm64_ventura:  "0a13623db696c4db8d4c065c03e17f5823051efb2a856b77fb77bc8815dc669b"
+    sha256 arm64_monterey: "6d3beb88a06c75243dc6a93f792f9ca5b87692c7bcf5e4c788cb9257d107dff9"
+    sha256 arm64_big_sur:  "d0afcd8dd26c10291fb79d2d13b6fc0b5e9c0d5da1353a454178cb64284f46d9"
+    sha256 ventura:        "4e3cae57c971d47cd3db6ce26bd48bba790e0917de97aad48d9876cbdab17be6"
+    sha256 monterey:       "cac82638593943c7b633d261f5ff598a715cfcca6dd86a887e774c5985e92a43"
+    sha256 big_sur:        "f10ec494d78a3e0cae7ba7107ae4bd9016b08e7c647a1baa6d98b7693993a044"
+    sha256 x86_64_linux:   "cbe07c89f37a2045ec9ba8e15498e8f8b1a05e0f9b5d0249d01dc77b56fcf874"
   end
 
   depends_on "pkg-config" => :build
@@ -26,15 +26,12 @@ class Omega < Formula
   depends_on "xapian"
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/omindex", "--db", "./test", "--url", "/", "#{share}/doc/xapian-omega"
+    system bin/"omindex", "--db", "./test", "--url", "/", share/"doc/xapian-omega"
     assert_predicate testpath/"./test/flintlock", :exist?
   end
 end

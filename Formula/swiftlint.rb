@@ -8,11 +8,12 @@ class Swiftlint < Formula
   head "https://github.com/realm/SwiftLint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3059eec6d6d9f48b27ebcb4c7e72059782ecda880a71751f8f1efef19ea4a0c1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0661946538e0f54c7fc4a099bec95196f9bf8b0edb2fed6f9f791383f8e014d9"
-    sha256 cellar: :any_skip_relocation, ventura:        "0808765e7430b049dc0e4f1a494408c27a259aeec39ca01d375bb7fa8b170c0b"
-    sha256 cellar: :any_skip_relocation, monterey:       "9c247206cf1549cad93ce2a99d7d82efbeffbad15f84acafc02bebb3d95fee0d"
-    sha256                               x86_64_linux:   "456c2065f16e91ace42e75f2849b5ec40c2cc70252155a8b6a11b5daa18939db"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "718f5989e0909ea736848e0d6f32d07cfa20bb23cab5fb9989803872e88d1a29"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bcc2c13aa6c01634b382991df048bb331caa5eec230fff33ddbab19258a30c22"
+    sha256 cellar: :any_skip_relocation, ventura:        "5aec3b872abfead26c702334f0cffddb8ea653481720d7c1248ad836be37a975"
+    sha256 cellar: :any_skip_relocation, monterey:       "e3171413a8649150601f777176af1dae458cb4be35aa1185e31636db1bb7124a"
+    sha256                               x86_64_linux:   "e8ec45e149d2e33295ddcd87a142389492176b51d0c2216127ae00d3ade33a6b"
   end
 
   depends_on xcode: ["14.0", :build]
@@ -23,6 +24,7 @@ class Swiftlint < Formula
   def install
     system "swift", "build", "--disable-sandbox", "--configuration", "release", "--product", "swiftlint"
     bin.install ".build/release/swiftlint"
+    generate_completions_from_executable(bin/"swiftlint", "--generate-completion-script")
   end
 
   test do
