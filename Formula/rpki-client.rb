@@ -11,13 +11,14 @@ class RpkiClient < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "30bd0c44b7391facbc3bda4210829fdfa8ac0fdc85350336043edb67e1df78f5"
-    sha256 arm64_monterey: "da77d3509798769b31f1d41418627550f5899510150d1782b4522cc2d54ee210"
-    sha256 arm64_big_sur:  "f7f6e07d6683f93f54891fa66966ae17e39cda337698f4146920fd728154ca75"
-    sha256 ventura:        "b219fcb162556a70a265b9bff03d923845e0f7f7fd197935fe53cc9527106b62"
-    sha256 monterey:       "65614dad0b1c2f57c8bce906133ec938c67088079832d4ab26f25dc362cbc5fb"
-    sha256 big_sur:        "11c19bf952dbcf0a6e2ae9de8b3b4575ebc29c14a4193a2f63857806cac5e611"
-    sha256 x86_64_linux:   "58af801c06834f80c871b31d7dfea3e1416b1e2be335cfd2e19eb3fb6d9febc5"
+    rebuild 1
+    sha256 arm64_ventura:  "7331492460379fec1022f135c2f1323730870e292b5a0875cd6e2e77dae4b543"
+    sha256 arm64_monterey: "192904bd8f416f581149263942a88666f4d4634db355c6014e98504f08d4798a"
+    sha256 arm64_big_sur:  "fe358a4ff927933060ce39c6be5738f59b745da7a29568aa01aec10657088fe4"
+    sha256 ventura:        "140b08e18de719c09098cef83a018de78af2ee96ca8507e0a737b37ea1c7f55e"
+    sha256 monterey:       "f73ee1a63276e87d567f366f074b5fe7b8f63c14c6ba18ed3d089f299819c020"
+    sha256 big_sur:        "903cfca33c4b72ee83112aaeca2396f506f428bcd319205d5ec244456cbd322f"
+    sha256 x86_64_linux:   "3fb8dba52f440188524cfb470afe73769e0f8467bf812c3568d573cffb29046e"
   end
 
   depends_on "pkg-config" => :build
@@ -26,6 +27,7 @@ class RpkiClient < Formula
   depends_on "rsync"
 
   uses_from_macos "expat"
+  uses_from_macos "zlib"
 
   def install
     system "./configure", *std_configure_args,

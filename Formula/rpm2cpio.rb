@@ -27,11 +27,6 @@ class Rpm2cpio < Formula
 
   conflicts_with "rpm", because: "both install `rpm2cpio` binaries"
 
-  resource "homebrew-testdata" do
-    url "https://rpmfind.net/linux/fedora/linux/development/rawhide/Everything/x86_64/os/Packages/h/hello-2.10-9.fc38.x86_64.rpm"
-    sha256 "59a4cb33a7f59d00153a0d8c726d3e02b03d8bcb6f90e1a9348bc019258a26c8"
-  end
-
   def install
     tar = OS.mac? ? "tar" : "bsdtar"
     inreplace "rpm2cpio", "tar", Formula["libarchive"].bin/tar
@@ -39,8 +34,12 @@ class Rpm2cpio < Formula
   end
 
   test do
-    resource("homebrew-testdata").stage do
-      system "#{bin}/rpm2cpio", "hello-2.10-9.fc38.x86_64.rpm"
+    resource "homebrew-testdata" do
+      url "https://rpmfind.net/linux/fedora/linux/development/rawhide/Everything/x86_64/os/Packages/h/hello-2.12.1-2.fc39.x86_64.rpm"
+      sha256 "10f9944f95ca54f224133cffab1cfab0c40e3adb64e4190d3d9e8f9dbed680f9"
     end
+
+    testpath.install resource "homebrew-testdata"
+    system bin/"rpm2cpio", "hello-2.12.1-2.fc39.x86_64.rpm"
   end
 end

@@ -1,8 +1,8 @@
 class Mercury < Formula
   desc "Logic/functional programming language"
   homepage "https://mercurylang.org/"
-  url "https://dl.mercurylang.org/release/mercury-srcdist-22.01.6.tar.gz"
-  sha256 "769456f834462593c8bd4bfaff2d532c0163acf3a574a06da709fcee73a022df"
+  url "https://dl.mercurylang.org/release/mercury-srcdist-22.01.7.tar.gz"
+  sha256 "3dcb7254a955d9c9c7a014805e331348fbd663ba29f43ea420cca9603460bc6c"
   license all_of: ["GPL-2.0-only", "LGPL-2.0-only", "MIT"]
 
   livecheck do
@@ -11,13 +11,13 @@ class Mercury < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ccc6180723f3322a165922ff53c6aa0702fa904395d0f80c150e108ecf8ae965"
-    sha256 cellar: :any,                 arm64_monterey: "eef2b6ed90d1af0459761db3849274bd849446a0694804ccff1446751674411f"
-    sha256 cellar: :any,                 arm64_big_sur:  "61c3fcf3ec23b69e75505748edbe84b5af45deff3b5a9506b48ab324d4061953"
-    sha256 cellar: :any,                 ventura:        "63fc3adae874783b66da97ae9b106bc19cf408347852adcc6e9ef6e11356aa4d"
-    sha256 cellar: :any,                 monterey:       "d11eff6609ed3c59b4f3843994acb15823f74bd0a1d1e762b3ce028491555cfc"
-    sha256 cellar: :any,                 big_sur:        "01160431cdfa126230ecb8939d54dce7cc3baacbfcdf833cc365cfab4ac04fa6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82dc643fbabba12c93ddbe2f4826c66a07b0903219839541edfbe343c9415579"
+    sha256 cellar: :any,                 arm64_ventura:  "7afc26b366787171fdfe1bcc9763c6f71a715f0fe99df95bbe45456bad7d78d2"
+    sha256 cellar: :any,                 arm64_monterey: "18fd673a409296f38c56308835c86fb7e06c0e47341b2293198288ff99ef668a"
+    sha256 cellar: :any,                 arm64_big_sur:  "5d884a757ba42c66ce3e3f7e74357ee6cb1799597953e000f01287b00be49864"
+    sha256 cellar: :any,                 ventura:        "33eb0f99f3823850b2a2843614b198e9cc5734f51aeb70236d38b04ea3d90644"
+    sha256 cellar: :any,                 monterey:       "03498cfa66783219aae7f3cde47727cbaccff836378b3e8d5659e2c8e3e0f017"
+    sha256 cellar: :any,                 big_sur:        "adb39bc019dde16d722e763d6f128895059d36c5a7a284f1dfba6b6ff3a502d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fba815d09877283239035cf5861ce08416d3f4d4248afc0efd7dc57466ad9b40"
   end
 
   depends_on "openjdk"

@@ -1,18 +1,18 @@
 class Gibo < Formula
   desc "Access GitHub's .gitignore boilerplates"
   homepage "https://github.com/simonwhitaker/gibo"
-  url "https://ghproxy.com/https://github.com/simonwhitaker/gibo/archive/v3.0.3.tar.gz"
-  sha256 "d3d76b30d8c61d203304af1805ca3abf77e96c6528f468c4d14830656f982f5c"
+  url "https://ghproxy.com/https://github.com/simonwhitaker/gibo/archive/v3.0.5.tar.gz"
+  sha256 "31ee2e24054907e129b8e9329613461753a110eb9173565f164af4b797cbad20"
   license "Unlicense"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0cbd91c1329b75076e513e33b0203c873f679dac0786565a4dc419f1af8cb437"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0cbd91c1329b75076e513e33b0203c873f679dac0786565a4dc419f1af8cb437"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0cbd91c1329b75076e513e33b0203c873f679dac0786565a4dc419f1af8cb437"
-    sha256 cellar: :any_skip_relocation, ventura:        "354a0167a96366353a252adfbeb4e42a4961223117ce339fb42747a4749b93ab"
-    sha256 cellar: :any_skip_relocation, monterey:       "354a0167a96366353a252adfbeb4e42a4961223117ce339fb42747a4749b93ab"
-    sha256 cellar: :any_skip_relocation, big_sur:        "354a0167a96366353a252adfbeb4e42a4961223117ce339fb42747a4749b93ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aef06e61de7bb09531590e7ee1338500d547c8505bc7b3543b931e9a66371c7b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "20c8b3d7d3a1999b6528326ea59dcd3cb428a5395895a7ef042f636539c4758d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "20c8b3d7d3a1999b6528326ea59dcd3cb428a5395895a7ef042f636539c4758d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "20c8b3d7d3a1999b6528326ea59dcd3cb428a5395895a7ef042f636539c4758d"
+    sha256 cellar: :any_skip_relocation, ventura:        "46a89c1b7f91d5c03771df924d3ceab10c93d53b06cebe6c41299fac66d438f2"
+    sha256 cellar: :any_skip_relocation, monterey:       "46a89c1b7f91d5c03771df924d3ceab10c93d53b06cebe6c41299fac66d438f2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "46a89c1b7f91d5c03771df924d3ceab10c93d53b06cebe6c41299fac66d438f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f759205b098571f8ac2b8cbbab23f18bdb4fc338b93c8aac04874e5ee8276ca"
   end
 
   depends_on "go" => :build

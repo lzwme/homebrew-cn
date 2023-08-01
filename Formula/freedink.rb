@@ -9,6 +9,7 @@ class Freedink < Formula
     rebuild 1
     sha256 arm64_monterey: "3c0d3f2a3362647f774125622db2f836a1f209a5bccfe66a8a7901e357d9434f"
     sha256 arm64_big_sur:  "3d3c10351e92122890d83f912bafe794fa40a673783fa5d99b1bdfcdcd53f0cb"
+    sha256 ventura:        "cbfd6fd918bcb0af203b66b15c89233bccf573d32448b1fd22fe4b0165fc4fb8"
     sha256 monterey:       "da402e74ba8344d49ec9a0a2c93ab37aa1d3430cb33baf3d995ee3c55489710b"
     sha256 big_sur:        "fd45feffffd96dc600cda4e725619b326ec6a84e96c5844c156aca90fb2390b1"
     sha256 catalina:       "b971d9badc94cb0075963c341ed11c1872e3157b279def6d91fd088743b5e5e4"
@@ -43,6 +44,9 @@ class Freedink < Formula
   end
 
   def install
+    # cannot initialize a variable of type 'char *' with an rvalue of type 'const char *'
+    inreplace "src/gfx_fonts.cpp", "char *familyname", "const char *familyname"
+    inreplace "src/gfx_fonts.cpp", "char *stylename", "const char *stylename"
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",

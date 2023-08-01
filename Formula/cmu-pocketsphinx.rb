@@ -1,8 +1,8 @@
 class CmuPocketsphinx < Formula
   desc "Lightweight speech recognition engine for mobile devices"
   homepage "https://cmusphinx.github.io/"
-  url "https://ghproxy.com/https://github.com/cmusphinx/pocketsphinx/archive/v5.0.1.tar.gz"
-  sha256 "33fb553af4bf1efe2defbd20790d7438da9fcf3b9913a37ff64e94c2f7632780"
+  url "https://ghproxy.com/https://github.com/cmusphinx/pocketsphinx/archive/v5.0.2.tar.gz"
+  sha256 "c2c58aa702195c46c44575fb9ed5790e749ab647df648b4557cc963aeac638b2"
   license "BSD-2-Clause"
   head "https://github.com/cmusphinx/pocketsphinx.git", branch: "master"
 
@@ -12,13 +12,13 @@ class CmuPocketsphinx < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "3f5cb7da995669bac9facc95c04a53c532b0bd5ca80b6563717951bbd4aa76da"
-    sha256 arm64_monterey: "39b23431bc1fa1da7a5dd79ff3a07803153decfd73b3f7dd352f4b24947eb41d"
-    sha256 arm64_big_sur:  "e5a0031275fe907169e1bfbd833bb2b8187df71f34c7893623a24fea1ad1815b"
-    sha256 ventura:        "fd67814524107813af505f2afd143e35c3a2cdd6332dd5edea139b853d9ed83a"
-    sha256 monterey:       "e9f324ac4b195572b4d9be10893413dd525461d04f43d559b439282d1dfc07b6"
-    sha256 big_sur:        "c278a830adf6263390b3fc73c97e44d2b5afdf088f48a6555d92996791a39a5b"
-    sha256 x86_64_linux:   "9baac881839d7f4af8d1e3a0407bc3064a7d41e22a0040c8e03ffeeded2a4bfb"
+    sha256 arm64_ventura:  "61be1cc07ffdfa2cbc5550ab6eab19dd73517b6267537775dfa72465f52c3c86"
+    sha256 arm64_monterey: "6e00d4526d387045f24bc8c6f51e900a9273878c06aeb48b197c84fac7cc200c"
+    sha256 arm64_big_sur:  "ea8bf108ed849e4421a46ec31397e9764c7968f516fbf7c3a8f9d90b98734bbb"
+    sha256 ventura:        "39b2efe0096bd86dbd1013644bdc872fd7be1b3c334ea5d6336a341bdb8c2215"
+    sha256 monterey:       "06beccfe7a273878a75ebfb05a0a2d7d5d4341819da32b9aed4f4c22b5a00743"
+    sha256 big_sur:        "add199146488b1ee046bd176709c9d497ffe9cd17908dbf19f8c9978de6d0860"
+    sha256 x86_64_linux:   "b5e792e67553715c9c0372f30b94d17519990ea970e0dd64acf471ee702cef73"
   end
 
   depends_on "cmake" => :build

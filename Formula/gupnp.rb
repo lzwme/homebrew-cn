@@ -3,18 +3,18 @@ class Gupnp < Formula
 
   desc "Framework for creating UPnP devices and control points"
   homepage "https://wiki.gnome.org/Projects/GUPnP"
-  url "https://download.gnome.org/sources/gupnp/1.6/gupnp-1.6.4.tar.xz"
-  sha256 "d6c3d03583844fa52abe003043186007f0c84145fe3b00fab25995beda9be55a"
+  url "https://download.gnome.org/sources/gupnp/1.6/gupnp-1.6.5.tar.xz"
+  sha256 "437dff970142e8407087a89855f717e20d27c9d76e05b4cd517df621c7d888cd"
   license "LGPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "dad63e0d4c8c7e76e0ac7dc05823ab02f7aa1bfaa9636712b6c76da949340eee"
-    sha256 cellar: :any, arm64_monterey: "6c9bf0b9f82627ebb5b5462b53f93e3be2f873faaef74d36021406afdcecfae1"
-    sha256 cellar: :any, arm64_big_sur:  "9b0e71d05048d7242292ec3f01a37b4be918bb71f0788cb8d752afac49b57a31"
-    sha256 cellar: :any, ventura:        "750136d45ab30c17c4ce40922488aaafc1e92e70dba7ada59ca387215be043d5"
-    sha256 cellar: :any, monterey:       "603656ee673fd08f482669b363997c4d0fd5147fa3ad70af801c8602a5bdf884"
-    sha256 cellar: :any, big_sur:        "760f75566fe0add84c79fc7ff6f67738f675a13fd1cb64e99ec29b8c6a732f67"
-    sha256               x86_64_linux:   "c3902cc8320db2e78f87e5663cbdab588619b54dd4e7c3be713c130c6f9886c1"
+    sha256 cellar: :any, arm64_ventura:  "fef28e8b65542025e4758d4ff4ad85e50dfff492e1421ea2e612211174093cb7"
+    sha256 cellar: :any, arm64_monterey: "eec2372a8db3fb0d68d66e740db85b4589d63814d65eeda74870790825bdc7b2"
+    sha256 cellar: :any, arm64_big_sur:  "637c1f9909de8a9fdb6095ab7e114f973039803523389b218da1f4faee2482e4"
+    sha256 cellar: :any, ventura:        "f4ace8c0c53b34b582a37323df1b4b813e605031ac7a898d2f8ff6388021b4d8"
+    sha256 cellar: :any, monterey:       "adeba1418919f58162de30c1bb6b74ed06a48ecc53363e5254c4054ae608770f"
+    sha256 cellar: :any, big_sur:        "da88d6e7d2da07422fea4cdcc4b2f4475281018ee959bb969b08527644f89258"
+    sha256               x86_64_linux:   "1c9e8e93453993b8560273ba0e1903074ae2a354c37f687e441ad44e486e6113"
   end
 
   depends_on "docbook-xsl" => :build

@@ -3,19 +3,18 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/48/41/f0137020912087d579456ea14196c8f98a949651081e35cf0f4e0b021997/moto-4.1.13.tar.gz"
-  sha256 "dd3e2ad920ab8b058c4f62fa7c195b788bd1f018cc701a1868ff5d5c4de6ed47"
+  url "https://files.pythonhosted.org/packages/e5/8d/97399e274225c960fef41747e3b293c731e1723a71fe9e33806787b2ee64/moto-4.1.14.tar.gz"
+  sha256 "545afeb4df94dfa730e2d7e87366dc26b4a33c2891f462cbb049f040c80ed1ec"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ab4fb35c0add562995aa51786114b2cff8da35546fca8c251ecb8f3bab4c3895"
-    sha256 cellar: :any,                 arm64_monterey: "29ae230cb094530de14fda7765b1b3c487b7ffb8185cbf8438d0e32fb8da7e33"
-    sha256 cellar: :any,                 arm64_big_sur:  "67cffce9fccd4417767657c73c53385bb78181fec090305a0db5d2ca558edabe"
-    sha256 cellar: :any,                 ventura:        "3f45798d01f5ca2b4f3d8228c3dd3eb1fa7b3a12a740ef550a981f2a1da6fcdb"
-    sha256 cellar: :any,                 monterey:       "f60457d07af751969edca5dd3bb3807aa8e58b307dec3ba0fe458c257cb122a1"
-    sha256 cellar: :any,                 big_sur:        "2ec24b35d3216753e3f6df953821639cc6b07b43c3c3868fde9357e01f77212c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c091fd4a70f7149e2242971bed3261d8832a67d3c9e7ee859f99177438607a2"
+    sha256 cellar: :any,                 arm64_ventura:  "adc4736b2376b33cb16fe6b3785b9ffde807f2a394a65438daadd7675928b71d"
+    sha256 cellar: :any,                 arm64_monterey: "a1b8cc585cabeed4ca3a15b14a1dc48b94ca1bdf3d1c757a25cd93a8c5d16fbd"
+    sha256 cellar: :any,                 arm64_big_sur:  "30e0e19723629a6c80b83a665be2bf48c468334fda94f1aafeb2b840ebd82a4c"
+    sha256 cellar: :any,                 ventura:        "7b0d5721c73d0829fecfb29e1a3bf4b23736777f34d3471cdbea66311ec9893d"
+    sha256 cellar: :any,                 monterey:       "cd84096bdbc842da4d615b1d4cf30dca3a714aa0002639a00519c5d9919155b0"
+    sha256 cellar: :any,                 big_sur:        "80552f324bfa9723e9a37154a7ec496530b175979ccfee744c625c9ce8a7cb69"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "793bc2a9a8826143636b1868b18057ea0ee67d92968eca47fc7584f2fed3ccbc"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -37,8 +36,8 @@ class Moto < Formula
   end
 
   resource "aws-sam-translator" do
-    url "https://files.pythonhosted.org/packages/75/8c/ef4fa9ca2e395489c74c53cbc0084791e00b79940a8396622fcc00facc5f/aws-sam-translator-1.71.0.tar.gz"
-    sha256 "a3ea80aeb116d7978b26ac916d2a5a24d012b742bf28262b17769c4b886e8fba"
+    url "https://files.pythonhosted.org/packages/2e/d6/2991723b39a87bac80396e0a8669e09dcbfab5341c2d7999b4010cb8e5c9/aws-sam-translator-1.72.0.tar.gz"
+    sha256 "e688aac30943bfe0352147b792d8bbe7c1b5ed648747cd7ef6280875b249e2d8"
   end
 
   resource "aws-xray-sdk" do
@@ -52,13 +51,13 @@ class Moto < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/be/d5/d22151869ac5a87a583f96b8de2414a8813094143e783d8494e4f359ba9b/boto3-1.28.11.tar.gz"
-    sha256 "0fe7a35cf0041145c8eefebd3ae2ddf41baed62d7c963e5042b8ed8c297f648f"
+    url "https://files.pythonhosted.org/packages/88/e0/1b779c4ffd8637ccb9e5b6dde2da16b89c825c98aebad5f7dd818aeb90bf/boto3-1.28.15.tar.gz"
+    sha256 "a6e711e0b6960c3a5b789bd30c5a18eea7263f2a59fc07f85efa5e04804e49d2"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/d1/26/d503d445a8ae7efc737abc2349f2e97a17b1009e7e26d1257800b6982fd5/botocore-1.31.11.tar.gz"
-    sha256 "b17ff973bb70b02b227928c2abe4992f1cfc46d13aee0228516c8f32572b88c6"
+    url "https://files.pythonhosted.org/packages/81/f1/328009b97681416251cef7569d0343c140bbe13e5f2913ee051ec3af458f/botocore-1.31.15.tar.gz"
+    sha256 "b46d1ce4e0cf42d28fdf61ce0c999904645d38b51cb809817a361c0cec16d487"
   end
 
   resource "certifi" do
@@ -212,8 +211,8 @@ class Moto < Formula
   end
 
   resource "py-partiql-parser" do
-    url "https://files.pythonhosted.org/packages/93/e4/9a718409473643b22e12accd47ccdecbdb9a2c989581b94e2309d00cc986/py-partiql-parser-0.3.3.tar.gz"
-    sha256 "351672721dfaaa00bbd82c4a3340d5d2defb589d2dd5baaecf6e493910f1c033"
+    url "https://files.pythonhosted.org/packages/23/be/9bd4f1d1648e80f74dc69ba1fe0c5ec333d386b8a234d38070a05577df39/py-partiql-parser-0.3.6.tar.gz"
+    sha256 "c03568d15a5e04e802b43c6066a07a7409825d6b02da6c70f60e520ca32a4995"
   end
 
   resource "pyasn1" do
@@ -227,8 +226,8 @@ class Moto < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/4f/13/28e88033cab976721512e7741000fb0635fa078045e530a91abb25aea0c0/pyparsing-3.1.0.tar.gz"
-    sha256 "edb662d6fe322d6e990b1594b5feaeadf806803359e3d4d42f11e295e588f0ea"
+    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
+    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
   end
 
   resource "pyrsistent" do

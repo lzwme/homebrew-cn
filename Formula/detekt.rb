@@ -1,8 +1,8 @@
 class Detekt < Formula
   desc "Static code analysis for Kotlin"
   homepage "https://github.com/detekt/detekt"
-  url "https://ghproxy.com/https://github.com/detekt/detekt/releases/download/v1.23.0/detekt-cli-1.23.0-all.jar"
-  sha256 "5e699cc9fc1664013d3d06ba4cfd8766c9fb8800f031405dc4c69df236161fda"
+  url "https://ghproxy.com/https://github.com/detekt/detekt/releases/download/v1.23.1/detekt-cli-1.23.1-all.jar"
+  sha256 "089c15405ec5563adba285d09ceccff047ebc7888b8bbc3a386bbc6c6744d788"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Detekt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "42c506a148d0cf161d78f79b7389f85319e90b83b6900cc7cbeaea621b78e8bc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "42c506a148d0cf161d78f79b7389f85319e90b83b6900cc7cbeaea621b78e8bc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "42c506a148d0cf161d78f79b7389f85319e90b83b6900cc7cbeaea621b78e8bc"
-    sha256 cellar: :any_skip_relocation, ventura:        "42c506a148d0cf161d78f79b7389f85319e90b83b6900cc7cbeaea621b78e8bc"
-    sha256 cellar: :any_skip_relocation, monterey:       "42c506a148d0cf161d78f79b7389f85319e90b83b6900cc7cbeaea621b78e8bc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "42c506a148d0cf161d78f79b7389f85319e90b83b6900cc7cbeaea621b78e8bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0eb9d906989f2b1b7cb8d874ec9aff4e11e627a9b72b58f11ee8b07f3e34134b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1eeea827ea295112b149ed51f0a954d25f29c4b06696be6517db3cac1175134a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1eeea827ea295112b149ed51f0a954d25f29c4b06696be6517db3cac1175134a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1eeea827ea295112b149ed51f0a954d25f29c4b06696be6517db3cac1175134a"
+    sha256 cellar: :any_skip_relocation, ventura:        "1eeea827ea295112b149ed51f0a954d25f29c4b06696be6517db3cac1175134a"
+    sha256 cellar: :any_skip_relocation, monterey:       "1eeea827ea295112b149ed51f0a954d25f29c4b06696be6517db3cac1175134a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1eeea827ea295112b149ed51f0a954d25f29c4b06696be6517db3cac1175134a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d212935e52e998855e8093b00010af6fd223ac5be0b59c04f3e7420e77176259"
   end
 
   depends_on "openjdk@17"

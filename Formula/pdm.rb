@@ -3,19 +3,19 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/f6/f4/73324cdbaa4dc6b91c081844a26e68d21770abc5d2af9ceb27d25034ac52/pdm-2.8.1.tar.gz"
-  sha256 "90366bc6d3f8f0e7ba4271efa0f78dae04f1634aec5aa44784d93e2bd4edcad8"
+  url "https://files.pythonhosted.org/packages/e9/10/8d02f73be59e8a310265fab28dec2552882da77321a4f36ad9af3993a5da/pdm-2.8.2.tar.gz"
+  sha256 "b948d00bf620682b0ac4c80d228cb305a2b0150e497ee6931da30e3cc305bfdc"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4e9dba6e992c0957a77e701d31e42dd16d3a75990fdc8e9db6135e34520dbc62"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b76089c239080874ad7c4d2dc8d3c6f70acfae1103f5e55601b607f9a1517f01"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "442c5702e7931a3eae8a33e4249c9a5cc2b32c850e5df64041a3b76cd7cb9ea1"
-    sha256 cellar: :any_skip_relocation, ventura:        "4c6e5ee66cf5404fb3d7623dea89213610da9315077a3528e3fb98d1db45024f"
-    sha256 cellar: :any_skip_relocation, monterey:       "05499e8733880534b7a170255e21283dcf0573e220719bad72fc13e3d2b8b8a2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e9d1e7ad7fd9dadb6d8ae97611d1464bc65bb657b81855f4d714626f4c6022ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b2ed6688c5297ca965cb54a77abdb6bf102898ce9c23af6c7994ddbd94b1fca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9568f670346909a870883d22e35f453aabfed0e4cc8f986e5b105a18f4e8f4d4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2b0664c013e54864f8fe30ab56bfb7021be6428c0cd90eb1a208f3663b77d377"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9eb4ef25e56cd99bce0eb36347bbbf5508d81c342661c253f14081bb84ea9896"
+    sha256 cellar: :any_skip_relocation, ventura:        "c0eaed067084fd36c3123af84655712d1dc7d10a0bb66b74890991a1191de836"
+    sha256 cellar: :any_skip_relocation, monterey:       "6e1f257b7a0e12769ca48e6c1686ca20aaf9db98091956bd3fade542a420cb7e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a9d5772952764ebc73cbe2e6d8f77c4993ec3722acb0ef2a6dddac2a8136d1a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ffb13607e55030a06e10d93e10e3f555ee4c6c29aeedd6ff7a8359609c365113"
   end
 
   depends_on "pygments"
@@ -87,8 +87,8 @@ class Pdm < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/a1/70/c1d14c0c58d975f06a449a403fac69d3c9c6e8ae2a529f387d77c29c2e56/platformdirs-3.9.1.tar.gz"
-    sha256 "1b42b450ad933e981d56e59f1b97495428c9bd60698baab9f3eb3d00d5822421"
+    url "https://files.pythonhosted.org/packages/dc/99/c922839819f5d00d78b3a1057b5ceee3123c69b2216e776ddcb5a4c265ff/platformdirs-3.10.0.tar.gz"
+    sha256 "b45696dab2d7cc691a3226759c0d3b00c47c8b6e293d96f6436f733303f77f6d"
   end
 
   resource "pyproject-hooks" do
@@ -117,8 +117,8 @@ class Pdm < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/e3/12/67d0098eb77005f5e068de639e6f4cfb8f24e6fcb0fd2037df0e1d538fee/rich-13.4.2.tar.gz"
-    sha256 "d653d6bccede5844304c605d5aac802c7cf9621efd700b46c7ec2b51ea914898"
+    url "https://files.pythonhosted.org/packages/d0/50/74cc70b70662f0571c28733581a40097c0d626d70eefd17c606a195f36fc/rich-13.5.0.tar.gz"
+    sha256 "62c81e88dc078d2372858660e3d5566746870133e51321f852ccc20af5c7e7b2"
   end
 
   resource "shellingham" do
@@ -127,8 +127,8 @@ class Pdm < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/10/37/dd53019ccb72ef7d73fff0bee9e20b16faff9658b47913a35d79e89978af/tomlkit-0.11.8.tar.gz"
-    sha256 "9330fc7faa1db67b541b28e62018c17d20be733177d290a13b24c62d1614e0c3"
+    url "https://files.pythonhosted.org/packages/0d/07/d34a911a98e64b07f862da4b10028de0c1ac2222ab848eaf5dd1877c4b1b/tomlkit-0.12.1.tar.gz"
+    sha256 "38e1ff8edb991273ec9f6181244a6a391ac30e9f5098e7535640ea6be97a7c86"
   end
 
   resource "unearth" do

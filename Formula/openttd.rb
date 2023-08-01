@@ -1,8 +1,8 @@
 class Openttd < Formula
   desc "Simulation game based upon Transport Tycoon Deluxe"
   homepage "https://www.openttd.org/"
-  url "https://cdn.openttd.org/openttd-releases/13.3/openttd-13.3-source.tar.xz"
-  sha256 "aafa16d2fb67165134c73a888f79f7a5ed7da17a04cf6e9ecf672c9cb89e7192"
+  url "https://cdn.openttd.org/openttd-releases/13.4/openttd-13.4-source.tar.xz"
+  sha256 "2a1deba01bfe58e2188879f450c3fa4f3819271ab49bf348dd66545f040d146f"
   license "GPL-2.0-only"
   head "https://github.com/OpenTTD/OpenTTD.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Openttd < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "c3606459991059115f7da375b520b1797cc069799943e4e0049b14cf20f42209"
-    sha256 cellar: :any, arm64_monterey: "4c38cbcbfd3e614e2d6c90d33cacb3a8dc6c9ec0d2bd936f4f92f28df709f21f"
-    sha256 cellar: :any, arm64_big_sur:  "4624afa9e2dfc9358f8abb4f213936d522347e86735b0a501ee206809cf26613"
-    sha256 cellar: :any, ventura:        "cd555c11beca2d8bbeaa2c15a98196d1812dbe41a336ce8fa1c6bfd654fd1e42"
-    sha256 cellar: :any, monterey:       "706a3cbd4b0b8948a10da2388db501f7ddc6415e9b39e2c663f72074a959d5ad"
-    sha256 cellar: :any, big_sur:        "b50e182ee4f15aadd5cac0ad111ec9ca2bf51b97bd96a54f7b505bf6b6a4d1a9"
-    sha256               x86_64_linux:   "f55563705d003a19514f39ed17c5ed2e8bdb4abd1a908615ec94e342c8df3b15"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "32f2e7021a484af00d0d5884864d35d83d0f8a67831ca2ba02966b0970bf43c2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "48610f296bb2633b043e2a623e8503ed59b67867469c502a4a0c3d5b34561c79"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ea285a23cd2736976db458c96132be25391bef4c563285e5653371674c002e54"
+    sha256 cellar: :any_skip_relocation, ventura:        "35830f4068b0bd0b789162ca0c85c16d67b17605ed6a7d714f6b11a1a4deefe2"
+    sha256 cellar: :any_skip_relocation, monterey:       "4a45055d7982167909e1e97e1e1858330b16c06489a02b825e6a525227ed76e3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4f23a6a378b56e2c4116ffc0246ce322a5bbe45c254451a67566e5b8f034cac9"
+    sha256                               x86_64_linux:   "ebd05557f82edd927eb5820578036e1299c731dc8eadedbbe03e6d11a5a6cac3"
   end
 
   depends_on "cmake" => :build

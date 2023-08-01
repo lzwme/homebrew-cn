@@ -3,23 +3,27 @@ class CondaLock < Formula
 
   desc "Lightweight lockfile for conda environments"
   homepage "https://github.com/conda/conda-lock"
-  url "https://files.pythonhosted.org/packages/58/64/e9b4414cc3c694d1116df084faf08b4b46de6ac4c32cdedce5a570b82a7e/conda_lock-2.1.1.tar.gz"
-  sha256 "20dc776f38b68e952671cffd4b97e46e8592070d670906839601d10250c71c8d"
+  url "https://files.pythonhosted.org/packages/14/49/13a0e8979d748b187a67e0a0804c4763ca8877ae46b1c1b884a01f8c2cdc/conda_lock-2.1.2.tar.gz"
+  sha256 "4a51f04a962ec563e8b8d133fa214012ad0f284967abb49877d5b5340283165c"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "cfd883563559854e598c702d2ee0171532bd718b4f88590d30e4776f8f99a3f2"
-    sha256 cellar: :any,                 arm64_monterey: "e32589e80ba4544e5dc15ebd75af8d0e48bc4384c005c934eaac59a6088f7ecc"
-    sha256 cellar: :any,                 arm64_big_sur:  "2b2c770b6582dc41ccefed6a66fb23f9567c99514b494a47b361214933d415a0"
-    sha256 cellar: :any,                 ventura:        "5645c53e3d28d4331ad41ee92ff37274e8ee19fb357abeab17a7bf06f753e9ca"
-    sha256 cellar: :any,                 monterey:       "66de35afe5945124dad90f4b2a3c6150c0f5615242c43c56331d5225dc5d65d0"
-    sha256 cellar: :any,                 big_sur:        "ddbee08d6890e4e25c62243d6ed4a1308ed9b5a6bc950c0f883e93d5dfa62511"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ee976fdd578b772cfc4a18b40ebf5c1705fe7c2241ba47e1c1ac6e3eb231fc7"
+    sha256 cellar: :any,                 arm64_ventura:  "f0044c38f121e876232cdbb87d1e8bc31e6bd1f54f5741c48e06c3733acad030"
+    sha256 cellar: :any,                 arm64_monterey: "114f6dab3f2df55de7a225524a314bb257a88cd5578526d18f724be79a1a2c00"
+    sha256 cellar: :any,                 arm64_big_sur:  "773040fa420b1fe6da59cb4f7e4918a61e67c74b9f4610dd5fbc9f5064e3261c"
+    sha256 cellar: :any,                 ventura:        "a17276539c1e842de30c20ca9c3ea20cfcaa35c84a5d9bd61756ca3917b45ce6"
+    sha256 cellar: :any,                 monterey:       "f950b980d39d569d93423b8c4aada72d800f9764e71e5bbfa27a0048ea2295e1"
+    sha256 cellar: :any,                 big_sur:        "c63f191ca50e20272e57736d03b1a58d300e7db8d19c6c7db014c206e8bc04e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a98ef417c266c27fc0479a348a91dda2fbc6e69fbf5a6c8c47afd64dd06438fe"
   end
 
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
+  depends_on "cffi"
   depends_on "keyring"
+  depends_on "openssl@3"
+  depends_on "pycparser"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -76,6 +80,11 @@ class CondaLock < Formula
     sha256 "42ca7b6ce88b6c7433e2ce47ea884e91ec93104a4b754998be498a8e6c3d37dd"
   end
 
+  resource "cryptography" do
+    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
+    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
+  end
+
   resource "distlib" do
     url "https://files.pythonhosted.org/packages/29/34/63be59bdf57b3a8a8dcc252ef45c40f3c018777dc8843d45dd9b869868f0/distlib-0.3.7.tar.gz"
     sha256 "9dafe54b34a028eafd95039d5e5d4851a13734540f1331060d31c9916e7147a8"
@@ -121,6 +130,11 @@ class CondaLock < Formula
     sha256 "c063dd08e89217cee02c8d5e5ec560f2c8ce6cdc2fcdc2e68f7b2e5547ed3621"
   end
 
+  resource "jeepney" do
+    url "https://files.pythonhosted.org/packages/d6/f4/154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdf/jeepney-0.8.0.tar.gz"
+    sha256 "5efe48d255973902f6badc3ce55e2aa6c5c3b3bc642059ef3a91247bcfcc5806"
+  end
+
   resource "jinja2" do
     url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
@@ -157,18 +171,18 @@ class CondaLock < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/a1/70/c1d14c0c58d975f06a449a403fac69d3c9c6e8ae2a529f387d77c29c2e56/platformdirs-3.9.1.tar.gz"
-    sha256 "1b42b450ad933e981d56e59f1b97495428c9bd60698baab9f3eb3d00d5822421"
+    url "https://files.pythonhosted.org/packages/dc/99/c922839819f5d00d78b3a1057b5ceee3123c69b2216e776ddcb5a4c265ff/platformdirs-3.10.0.tar.gz"
+    sha256 "b45696dab2d7cc691a3226759c0d3b00c47c8b6e293d96f6436f733303f77f6d"
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/11/07/106b00ae62297bb3c89b6fbeb571feaf7cbbf6b2ada0e513d756daafd4ce/pydantic-2.0.3.tar.gz"
-    sha256 "94f13e0dcf139a5125e88283fc999788d894e14ed90cf478bcc2ee50bd4fc630"
+    url "https://files.pythonhosted.org/packages/0f/46/12689d28731c709890361af3414a9d0d04328043beb7c9fc4e4caa580b5c/pydantic-2.1.1.tar.gz"
+    sha256 "22d63db5ce4831afd16e7c58b3192d3faf8f79154980d9397d9867254310ba4b"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/57/ea/edff47ad42857534f3abcc87472802b3181041f4e4fbeac988a5ecfcffae/pydantic_core-2.3.0.tar.gz"
-    sha256 "5cfb5ac4e82c47d5dc25b209dd4c3989e284b80109f9e08b33c895080c424b4f"
+    url "https://files.pythonhosted.org/packages/8a/6a/2609fb28f3c289eacb2a2ddaceb7ad0d327b4b4678146573295d98f012b8/pydantic_core-2.4.0.tar.gz"
+    sha256 "ec3473c9789cc00c7260d840c3db2c16dbfc816ca70ec87a00cddfa3e1a1cdd5"
   end
 
   resource "pylev" do
@@ -191,14 +205,19 @@ class CondaLock < Formula
     sha256 "1f08fd5a2bea9c4180db71678e850b995d2a5f4537be0e94557668cf0f5f9497"
   end
 
+  resource "secretstorage" do
+    url "https://files.pythonhosted.org/packages/53/a4/f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691/SecretStorage-3.3.3.tar.gz"
+    sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
+  end
+
   resource "smmap" do
     url "https://files.pythonhosted.org/packages/21/2d/39c6c57032f786f1965022563eec60623bb3e1409ade6ad834ff703724f3/smmap-5.0.0.tar.gz"
     sha256 "c840e62059cd3be204b0c9c9f74be2c09d5648eddd4580d9314c3ecde0b30936"
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/10/37/dd53019ccb72ef7d73fff0bee9e20b16faff9658b47913a35d79e89978af/tomlkit-0.11.8.tar.gz"
-    sha256 "9330fc7faa1db67b541b28e62018c17d20be733177d290a13b24c62d1614e0c3"
+    url "https://files.pythonhosted.org/packages/0d/07/d34a911a98e64b07f862da4b10028de0c1ac2222ab848eaf5dd1877c4b1b/tomlkit-0.12.1.tar.gz"
+    sha256 "38e1ff8edb991273ec9f6181244a6a391ac30e9f5098e7535640ea6be97a7c86"
   end
 
   resource "toolz" do

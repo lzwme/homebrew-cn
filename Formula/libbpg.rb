@@ -25,6 +25,11 @@ class Libbpg < Formula
   depends_on "libpng"
 
   def install
+    # Work around "-Werror,-Wimplicit-function-declaration" on Xcode 14
+    # The Makefile does not allow modifying CFLAGS with an env variable, so we
+    # have to inject the flag manually
+    inreplace "Makefile", "CFLAGS+=-g", "CFLAGS+=-g -Wno-implicit-function-declaration"
+
     bin.mkpath
     extra_args = []
     extra_args << "CONFIG_APPLE=y" if OS.mac?

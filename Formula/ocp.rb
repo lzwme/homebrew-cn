@@ -1,8 +1,8 @@
 class Ocp < Formula
   desc "UNIX port of the Open Cubic Player"
   homepage "https://stian.cubic.org/project-ocp.php"
-  url "https://stian.cubic.org/ocp/ocp-0.2.105.tar.xz"
-  sha256 "1a87b3c572679fb681a25bf158bdc1cc078018d0507965e1557610c17fcccfc5"
+  url "https://stian.cubic.org/ocp/ocp-0.2.106.tar.xz"
+  sha256 "bf11d96d4a58bbf9c344eb53cf815fc2097c63a3c2c713f7ffb134073bd84721"
   license "GPL-2.0-or-later"
   head "https://github.com/mywave82/opencubicplayer.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Ocp < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "3690f47824577f3df596994371ce56932d68a875a6d2d4e0d9e19e442d9624d4"
-    sha256 arm64_monterey: "1ba0669652567aecd14feb6c517ec77b5b0ee5964de54e4e69ad78030efb9296"
-    sha256 arm64_big_sur:  "bbcbda1ecb8bad6dad0db51abfc171e82b558223a20ec67cf9b948259c8d0973"
-    sha256 ventura:        "02825ed5010ac2760131fe2bb0737c6e14d11a9066039b36ccf9687e2e1da77a"
-    sha256 monterey:       "eb34a21ed728ffe4598edc3664094045fe4ad11ce29beb797e17776b9857fdc1"
-    sha256 big_sur:        "614c28d5a6ab0df1385e37168354df743aeb68b1fad5c8672129be20ec277056"
-    sha256 x86_64_linux:   "8d9e1a49c80862bf0940bdddf2302b6646cd5d936a02d1683f293a9143683c2d"
+    sha256 arm64_ventura:  "6370f8dcd5be6d7e6bc439a0367da6545722c012035a645da7ec4e6e660fd4d0"
+    sha256 arm64_monterey: "47fb624efc62c195eef2cfefbc339e9488a4c68387176d2ace28077060546845"
+    sha256 arm64_big_sur:  "56fdb440186f94635e2bc6a83353967e27cc6563a47ea0ee6f82b47ed3bc2a13"
+    sha256 ventura:        "500b78981dea43442b0fa4c9c7ac006b1211cd1ea7bc2d1f7dc6de36d467ad48"
+    sha256 monterey:       "5dbc87f6a3610a4e5999a44322a73b2cd5135bbecca6e527c317f478ab3970e3"
+    sha256 big_sur:        "92223048921e594a0e05b1a1addf487df4ca6a962fc8642dc6687ff909184b1e"
+    sha256 x86_64_linux:   "4783cdb910e8ec9be952dc0f1a6d64a82411591b71ee2b70e52a2771c2b1aadf"
   end
 
   depends_on "pkg-config" => :build
@@ -42,8 +42,8 @@ class Ocp < Formula
   end
 
   resource "unifont" do
-    url "https://ftp.gnu.org/gnu/unifont/unifont-15.0.01/unifont-15.0.01.tar.gz"
-    sha256 "7d11a924bf3c63ea7fdf2da2b96d6d4986435bedfd1e6816c8ac2e6db47634d5"
+    url "https://ftp.gnu.org/gnu/unifont/unifont-15.0.06/unifont-15.0.06.tar.gz"
+    sha256 "36668eb1326d22e1466b94b3929beeafd10b9838bf3d41f4e5e3b52406ae69f1"
   end
 
   # patch for clockid_t redefinition issue

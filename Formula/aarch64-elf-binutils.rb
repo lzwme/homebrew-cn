@@ -1,9 +1,9 @@
 class Aarch64ElfBinutils < Formula
   desc "GNU Binutils for aarch64-elf cross development"
   homepage "https://www.gnu.org/software/binutils/"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.40.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.40.tar.bz2"
-  sha256 "f8298eb153a4b37d112e945aa5cb2850040bcf26a3ea65b5a715c83afe05e48a"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.41.tar.bz2"
+  sha256 "a4c4bec052f7b8370024e60389e194377f3f48b56618418ea51067f67aaab30b"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Aarch64ElfBinutils < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "5c49fbe8956d46572b14d30aac96dea362d9fe027afed084f152f43a4a278d49"
-    sha256 arm64_monterey: "3b064370a49cdc8e23ce9f46d9f806de6e974ceb6ea88cc487fa23348189dbd6"
-    sha256 arm64_big_sur:  "e31ec863273eb6a9d49ccc00c94e3f9b2ce97bfdf5ac9ff3bce88b1655fa20e4"
-    sha256 ventura:        "b6a33fe5905aa39cfb378459ae42e995e83749daff229d293c88811838527e96"
-    sha256 monterey:       "d14fe23ba928f82a86d1f42b1dd980986e742c191f7b83d09d7c04f91fd7d565"
-    sha256 big_sur:        "c14e10801e0a5be2f738b4073eee6dd2c7fff7448fde1556090f42295cae4bd0"
-    sha256 x86_64_linux:   "f5dddac8b6b0b641298ac06706a0b7db79f93c42e987a0a9508955ad8e8d9f29"
+    sha256 arm64_ventura:  "446d041fddffb999b73b38e49c9363c65a3fdc7ff708a0cc1ee4bb64298c9b31"
+    sha256 arm64_monterey: "089ee6620bedb633fe986c50d9e540c7bc6099519e6652e537d04bb10334750f"
+    sha256 arm64_big_sur:  "44e895834d33f67056570b7ca7de0ae6721d4bbf2dace5e27dccd20ae8afd820"
+    sha256 ventura:        "e24a5d453a925f1240e7e753a098328ccaa8670a392e2d4898a0b805d8a24310"
+    sha256 monterey:       "0339d54d096bd0cdd4c7592c5db57f2a6a39041225cfc9688bd7eb8581caa277"
+    sha256 big_sur:        "cecf0afa0f8176b0342444e9c8f6236d6d35093ab28769833eb92cacf0cbd942"
+    sha256 x86_64_linux:   "437e5bb688e90abf63efb2311b1685a77f701a2a3f17315d96e70e9c690df5fe"
   end
 
   on_system :linux, macos: :ventura_or_newer do
