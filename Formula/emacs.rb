@@ -5,15 +5,16 @@ class Emacs < Formula
   mirror "https://ftpmirror.gnu.org/emacs/emacs-29.1.tar.xz"
   sha256 "d2f881a5cc231e2f5a03e86f4584b0438f83edd7598a09d24a21bd8d003e2e01"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_ventura:  "43c2791523dc17eb04a2667bd810c255a150b102c6d6de5fb2791b8163c404cd"
-    sha256 arm64_monterey: "9e52f2e423712bcf2a898d3769e23081e604c9f49de29697fc1f3438f88a7966"
-    sha256 arm64_big_sur:  "9feabda998797b79721cfc083595ab5cc7651a652667930a829511cef129cb5c"
-    sha256 ventura:        "d94d3ab718f142a223f633864db9d2b0f351908ffeafb89f5db0a57ede797780"
-    sha256 monterey:       "901635f095aa23cb14fb3eed6b53c3730e9fa60172f9be8311c62d5ba2876258"
-    sha256 big_sur:        "bd35621de343972b9ae7cca744e428eac34ba5a3075ce4e4d3ec5bb12078b312"
-    sha256 x86_64_linux:   "8f3c35a37ba27bade073c54b9da2ec45cba99a7502ec1bb804bbddd2564b6fd6"
+    sha256 arm64_ventura:  "e91b90491464708d29959aa00caa826051d989f6699429d583988b7aca57df6f"
+    sha256 arm64_monterey: "ec888c0f9c57f7a2c8bff9d33d4fea03237bd53f6b78e0c50cc86a31b5281690"
+    sha256 arm64_big_sur:  "f69a760f4e1a71c234314cd99c8f0773bee2e716bca904894e2e0c6d9202ca82"
+    sha256 ventura:        "5b644a5ecf5531d55f884f1fa5f946bc7b21480dc38e2a2cae1e1d9211899c2d"
+    sha256 monterey:       "835b1767489be91a345f40c166ee40b189028a258ee44f5c695c9660123f17f2"
+    sha256 big_sur:        "76c45ba72d1ca34050ab4ffd5f53cc560836a37a0f0ba96b434232368b9fa382"
+    sha256 x86_64_linux:   "86ae488bbc7b6411aecb883e03774da5edc722e3fd0b07441e1b41ab3b6bd6d7"
   end
 
   head do
@@ -27,6 +28,7 @@ class Emacs < Formula
   depends_on "pkg-config" => :build
   depends_on "gnutls"
   depends_on "jansson"
+  depends_on "tree-sitter"
 
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
@@ -54,6 +56,7 @@ class Emacs < Formula
       --without-ns
       --without-imagemagick
       --without-selinux
+      --with-tree-sitter
     ]
 
     if build.head?

@@ -12,13 +12,14 @@ class PostgresqlAT14 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "606bce40d417b332cf842a44018155ee10010c9b800eeefc41c80333b6d4cc62"
-    sha256 arm64_monterey: "9a4b7d983a09aacd6f2db8f1c218efc0858633ecad5fa3c01ececbd116517fd4"
-    sha256 arm64_big_sur:  "49af3959a8eb75b91d8e800dcd64c8563688cd39ddb9c5e9c0c3cfaa4e2e2768"
-    sha256 ventura:        "adb57c116645b96492390b52d14df49a38fb464d813b5474a30cf53805aaa124"
-    sha256 monterey:       "96ea928134e82f98daff5e2b88f1b36d5a8df8c469e30c5c25afeebbcc350e55"
-    sha256 big_sur:        "0dde415bc89f5f582a563cbdd9b5dd0a1546668e4e2d39211966bdee69a67cf7"
-    sha256 x86_64_linux:   "4d8ea166e66b82e39a6aeb419a1730d9bf4be38e2d9e29aff3593175c6f325ec"
+    rebuild 1
+    sha256 arm64_ventura:  "42360158c2699ffbaec32476a79c92346f64334ea4fc67a4087a18e4f8e3adee"
+    sha256 arm64_monterey: "21c4116a68869097e8c052800dca7e3a1850568081c72fbd33d2202b4547c710"
+    sha256 arm64_big_sur:  "01dcd1c60a6d57029b8447019efd3f1803d50585bf723f1fcb94ebc7ea291b6c"
+    sha256 ventura:        "827098b4eb757f1fa49e0ddcf4a4dc21a3fbd69d9ee518f94a8e02d149f4f745"
+    sha256 monterey:       "ecda6461f26805dbb49ffc64d7a89665a97eb04077a2ae1e3dee5642a2f29e87"
+    sha256 big_sur:        "a647189b9589038d2394604f3b3fe0170478a0720a564b6100e03c57e4de2a42"
+    sha256 x86_64_linux:   "b648963bece176beacc84a432e8da6edc64f21c184dfb20b94076f4224238a25"
   end
 
   # https://www.postgresql.org/support/versioning/
@@ -100,6 +101,8 @@ class PostgresqlAT14 < Formula
     (var/"log").mkpath
     postgresql_datadir.mkpath
 
+    odeprecated old_postgres_data_dir, new_postgres_data_dir if old_postgres_data_dir.exist?
+
     # Don't initialize database, it clashes when testing other PostgreSQL versions.
     return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
@@ -110,7 +113,7 @@ class PostgresqlAT14 < Formula
     if old_postgres_data_dir.exist?
       old_postgres_data_dir
     else
-      var/name
+      new_postgres_data_dir
     end
   end
 
@@ -120,6 +123,10 @@ class PostgresqlAT14 < Formula
 
   def pg_version_exists?
     (postgresql_datadir/"PG_VERSION").exist?
+  end
+
+  def new_postgres_data_dir
+    var/name
   end
 
   def old_postgres_data_dir
@@ -145,7 +152,7 @@ class PostgresqlAT14 < Formula
         Previous versions of postgresql shared the same data directory.
 
         You can migrate to a versioned data directory by running:
-          mv -v "#{old_postgres_data_dir}" "#{var/name}"
+          mv -v "#{old_postgres_data_dir}" "#{new_postgres_data_dir}"
 
         (Make sure PostgreSQL is stopped before executing this command)
 

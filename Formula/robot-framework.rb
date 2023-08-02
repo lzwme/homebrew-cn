@@ -6,16 +6,17 @@ class RobotFramework < Formula
   url "https://files.pythonhosted.org/packages/c6/37/fc94979077241a09f31f347cbae401c9f62705eadd441a392285537e603c/robotframework-6.1.1.zip"
   sha256 "3fa18f2596a4df2418c4b59abf43248327c15ed38ad8665f6a9a9c75c95d7789"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/robotframework/robotframework.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "1d9e65c0bd2df75c05d73d03b3e9a0887c4deaa3de0d1688a6dc06c4d9dce498"
-    sha256 cellar: :any,                 arm64_monterey: "87e38514752c24dab56d1b16b157e724ab0e67b95414ad204a228fe6546605c1"
-    sha256 cellar: :any,                 arm64_big_sur:  "409a2ce35f575ce21da4c9095c89b7899ea2d00dfd849c18d16efaf97d721151"
-    sha256 cellar: :any,                 ventura:        "d9ec8e634284299b8da2f96e1a05355f8cb891a071c5fdb3e9877ff4e297ac6c"
-    sha256 cellar: :any,                 monterey:       "2cc2ef282f7f11f29be09cd0c028c0d05f84d9a2f4b4e84d06ee7c5d533d3d6b"
-    sha256 cellar: :any,                 big_sur:        "c1c809fef43a5a4d0faee4046a2e2dc6d12abd993efc562db2c019d2aa32ae90"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f9f3429fa9a0297020af0111214ef95404d731eec45dafa38fe2dcf0c0f67ef"
+    sha256 cellar: :any,                 arm64_ventura:  "1cd48e1be4ce0148c70b7b1ad6ee6bcf551eff65a45d15f30a6cb3e136f7b91f"
+    sha256 cellar: :any,                 arm64_monterey: "4db94919b375cafb5c694509e65268040e7632d18a70d214734bf9f7953024eb"
+    sha256 cellar: :any,                 arm64_big_sur:  "8acfa491802ef28de2c96d45ab253a46d491570359ca6c4260028d2fffbf8c35"
+    sha256 cellar: :any,                 ventura:        "74b93f4a0f5088fdc4b36a30af7256acb73e9e6a28d701e2b06fcceab46b8cac"
+    sha256 cellar: :any,                 monterey:       "9c0acd35ac82cd4889309c89e39bb96351a401325fd553cfdb01ee2b257b2146"
+    sha256 cellar: :any,                 big_sur:        "10d92737e1d639820a24ce2bc829ec445c68c42a0d01b5692c49be78f4597816"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a96e5893344175f66e2779ac796a1929cc94316209aa8037d041079f73370a9e"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -112,8 +113,8 @@ class RobotFramework < Formula
   end
 
   resource "selenium" do
-    url "https://files.pythonhosted.org/packages/86/d3/7fd6820e441550a4d0dae621c02f75339c6fafd98352f2727dd68e6e4cda/selenium-4.10.0.tar.gz"
-    sha256 "871bf800c4934f745b909c8dfc7d15c65cf45bd2e943abd54451c810ada395e3"
+    url "https://files.pythonhosted.org/packages/9b/21/dc6e78b967b62cb39748bfd1af10cc245c8bc81ad8568b1efe80e73fd8a7/selenium-4.11.2.tar.gz"
+    sha256 "9f9a5ed586280a3594f7461eb1d9dab3eac9d91e28572f365e9b98d9d03e02b5"
   end
 
   resource "sniffio" do

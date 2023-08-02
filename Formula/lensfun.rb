@@ -15,9 +15,11 @@ class Lensfun < Formula
   version_scheme 1
   head "https://github.com/lensfun/lensfun.git", branch: "master"
 
+  # Versions with a 90+ patch are unstable and this regex should only match the
+  # stable versions.
   livecheck do
     url :stable
-    strategy :github_latest
+    regex(/^v?(\d+\.\d+(?:\.(?:\d|[1-8]\d+)(?:\.\d+)*)?)$/i)
   end
 
   bottle do

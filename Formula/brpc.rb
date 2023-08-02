@@ -1,21 +1,19 @@
 class Brpc < Formula
   desc "Better RPC framework"
   homepage "https://brpc.apache.org/"
-  # TODO: Check if we can use unversioned `protobuf` at version bump
-  url "https://dlcdn.apache.org/brpc/1.5.0/apache-brpc-1.5.0-src.tar.gz"
-  sha256 "8afa1367d0c0ddb471decc8660ab7bdbfd45a027f7dfb6d18303990954f70105"
+  url "https://dlcdn.apache.org/brpc/1.6.0/apache-brpc-1.6.0-src.tar.gz"
+  sha256 "06ff4adebc720bf1529b03ade872cbd41c6ed69971e6e0d210d57d7b72856bd4"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/apache/brpc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "1c075c56a2de92f802881875fea1734d63719f491f925ca9623e3d75b99293b2"
-    sha256 cellar: :any,                 arm64_monterey: "2e72aa583dc38d463318c54318800ab334e4d8880720c9f8835461e96a9bcced"
-    sha256 cellar: :any,                 arm64_big_sur:  "77d272b5f9f6601bbd9ef7489fc374dec749345beae026ca9216a850d99f1a85"
-    sha256 cellar: :any,                 ventura:        "7dcc503d9307030e9c1c2bc57b4a361fc018b22a13fbb1d002a935dab6e66f96"
-    sha256 cellar: :any,                 monterey:       "f3dffdcfb518f908ab18d95921bec72fcc4897d569d315c273b3e5fef4777b26"
-    sha256 cellar: :any,                 big_sur:        "20f3c293101cc84726a8cd7770e8bf8138207e10d68675af63377aef62b62d32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5c6a6661ec461a171a2590a98d7062f0b029a5a91dac68672c36884a3234674"
+    sha256 cellar: :any,                 arm64_ventura:  "39fe097809985948cc09a95d7eb1d4129dae953e8bbfe2110505a0646d969a1b"
+    sha256 cellar: :any,                 arm64_monterey: "22a3e4d69677e808b8818bbb13b3802837ee5205da638bf5457d3029cd067dae"
+    sha256 cellar: :any,                 arm64_big_sur:  "2eed67dd7aae9ed66a49bb0edb543e33e1ce42f6d6834edc0d92079773b6514b"
+    sha256 cellar: :any,                 ventura:        "e545840858bf28dbf18ed87ee02d52134de197879dda5f8626b59034378eac8e"
+    sha256 cellar: :any,                 monterey:       "ca32482113f63bb3780ed60179a97338773b87a8d7b81313a9d5b89c0b146047"
+    sha256 cellar: :any,                 big_sur:        "b0804f2363d8569c3b5592b279cc8bec108e2123718d1167d7fb53c5e15d4394"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "586e212491d35c2f25f454ca07de3d61642303547d8f466c6f4da76d7a9a3536"
   end
 
   depends_on "cmake" => :build
@@ -25,6 +23,8 @@ class Brpc < Formula
   depends_on "protobuf@21"
 
   def install
+    inreplace "CMakeLists.txt", "/usr/local/opt/openssl",
+                                Formula["openssl@3"].opt_prefix
     args = %w[
       -DBUILD_SHARED_LIBS=ON
       -DBUILD_UNIT_TESTS=OFF

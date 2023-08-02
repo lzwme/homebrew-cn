@@ -1,19 +1,19 @@
 class Html2text < Formula
   desc "Advanced HTML-to-text converter"
   homepage "https://github.com/grobian/html2text"
-  url "https://ghproxy.com/https://github.com/grobian/html2text/releases/download/v2.2.2/html2text-2.2.2.tar.gz"
-  sha256 "7afb9c5cec4e27b69a50f082770eae09a0e5f081809b29975be2907176645a60"
+  url "https://ghproxy.com/https://github.com/grobian/html2text/releases/download/v2.2.3/html2text-2.2.3.tar.gz"
+  sha256 "859133528b3fd893562e41d84bc1ebc1f9166dd281d0fa8e17e7dd26337f5752"
   license "GPL-2.0-or-later"
   head "https://github.com/grobian/html2text.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "36b703470b326e0d431ef81c205ea56f8c6a8b47ad9ae9a0ef90222b616fec9a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7286f1f14e7ba929587bdda62d84adf5609d98f1fee6fdc5361676edaf3de3e8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "da5d0859a5bcb6b4fd9f8397052157dba9ef6e03c2611809177b08a6f51599fc"
-    sha256 cellar: :any_skip_relocation, ventura:        "2cba01d8b693cf02d57119afe4c9ee96e326b88967c503c6f45ad5c693bf2ff3"
-    sha256 cellar: :any_skip_relocation, monterey:       "4f18c6355f43538f7798f18bc1304c7352c1b1107eb43adf2782a5425e5a2350"
-    sha256 cellar: :any_skip_relocation, big_sur:        "381dfc664c6bf8be24282f6e41a09d7d8b4b101536b32fc7bd0e540b1855a147"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0971ff6db8edc0aaacaee9e305a4a5331a5d28130882589a9c220886e5fbec44"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "df6b508a10d46399eaf5f9040974e1b91b1a9efb51d8bf1be3bdb04ca114b567"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f9ee670f7db4188a57c3c7dd563ef3bf45cb36dc90688d9d1f67ee28efc09ccb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fc46b8e76c5aed13521d92cf83e521142115ad206e6e6b7cba03b153ace328ec"
+    sha256 cellar: :any_skip_relocation, ventura:        "d5aaf31694d77a7b58638596ed3d0aa9bac50b148b60e416dd9cd41306fb2b86"
+    sha256 cellar: :any_skip_relocation, monterey:       "f8a93138c8595992de8d0e9421147b1995d1f4344cf7f94b47f004c76ffe46e9"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b4d67a9b09786e6f9e1141dd88a614493b94c65d47e87e6cecb9a65bcf8b353b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8fa522f9b7031aff66bb0bdabef05c4def2d153a7c6ff5f4136341b06822c5f"
   end
 
   def install

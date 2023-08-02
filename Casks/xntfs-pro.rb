@@ -3,7 +3,7 @@ cask "xntfs-pro" do
   sha256 "d3c56f5f2f13f149ddf02f160840e10bb9f405a5838059f9a75134861a19139f"
 
   url "https://api.7littlemen.com/download/ntfsretail/NTFS%20Pro%20by%20Omi%20Installer.signed.#{version}.pkg",
-      verified: "api.7littlemen.com/download/ntfsretail"
+      verified: "api.7littlemen.com/download/ntfsretail/"
   name "NTFS Pro by Omi"
   name "xNTFS Pro"
   desc "Mount, write and repair NTFS disks"

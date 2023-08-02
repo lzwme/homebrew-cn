@@ -1,20 +1,18 @@
 class Smartmontools < Formula
   desc "SMART hard drive monitoring"
   homepage "https://www.smartmontools.org/"
-  url "https://downloads.sourceforge.net/project/smartmontools/smartmontools/7.3/smartmontools-7.3.tar.gz"
-  sha256 "a544f8808d0c58cfb0e7424ca1841cb858a974922b035d505d4e4c248be3a22b"
+  url "https://downloads.sourceforge.net/project/smartmontools/smartmontools/7.4/smartmontools-7.4.tar.gz"
+  sha256 "e9a61f641ff96ca95319edfb17948cd297d0cd3342736b2c49c99d4716fb993d"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
-    sha256 arm64_ventura:  "6190562fe7445bde716f75236a35951fb9215fa0712c7dee9aa92d9a89630007"
-    sha256 arm64_monterey: "de5a9816fe979e1f6e95727f2b23946e8d6594718b0b0fcb77da6b3b01bd47b3"
-    sha256 arm64_big_sur:  "3ae9274990e2845f9d833e267c3443da5d8ef6daedf0293233847710b2116c72"
-    sha256 ventura:        "c2fc2398c32def92729b97433cc68ac5e2cef1d81d1142d6e0cb18a43bcdf32c"
-    sha256 monterey:       "7df715580bf7adde46c4abac502ee920cd2384be22a279f8da5813db2f974253"
-    sha256 big_sur:        "b353b05f39600a28070f9aeb7c4cff62bf250deff02a03ee8aa4ecabb9639925"
-    sha256 catalina:       "c79a0e6dc93a4e0416b5724cecb1a36d6f0977ae0143698abad407eb013b15cb"
-    sha256 x86_64_linux:   "5702653e6385bc4388d919fcfebe0ee26860627ab3117b117d582fa79f13ae46"
+    sha256 arm64_ventura:  "eadf0136194babe18f8ba718079138758e6c01c2d46fbc2c0b8926e9acbb2bf8"
+    sha256 arm64_monterey: "7f22083ffb3f4e1a58c2ecaa898746d920f088eebb58861576b5a10b5c1ee59d"
+    sha256 arm64_big_sur:  "2fd3b5b51d884f57c8799a413dabd08d5efc2294ef25d2e0ecd45fcb9fbd8559"
+    sha256 ventura:        "28d25bdbce8bee1b4a7688616918bc736b9c77ffd2527c9bfec0753e5abed804"
+    sha256 monterey:       "873861115ecd80333df0d3f5971e15c7341a016b14a612feb0de789da4396aa9"
+    sha256 big_sur:        "a6a467130de3c574637ecf611f9b1747578c46537cdd8ed7b73d7d7faf3146c7"
+    sha256 x86_64_linux:   "0507b353613d5bb2f79dc75405840bf8b36e38551debf418680035e1aa89b775"
   end
 
   def install

@@ -1,20 +1,19 @@
 class Libpulsar < Formula
   desc "Apache Pulsar C++ library"
   homepage "https://pulsar.apache.org/"
-  url "https://dlcdn.apache.org/pulsar/pulsar-client-cpp-3.2.0/apache-pulsar-client-cpp-3.2.0.tar.gz"
-  mirror "https://archive.apache.org/dist/pulsar/pulsar-client-cpp-3.2.0/apache-pulsar-client-cpp-3.2.0.tar.gz"
-  sha256 "e1d007d140906e4e7fc2b47414d551f3c7024bd9d35c8be1bbde3078dc2bddbc"
+  url "https://dlcdn.apache.org/pulsar/pulsar-client-cpp-3.3.0/apache-pulsar-client-cpp-3.3.0.tar.gz"
+  mirror "https://archive.apache.org/dist/pulsar/pulsar-client-cpp-3.3.0/apache-pulsar-client-cpp-3.3.0.tar.gz"
+  sha256 "0e04c67d7b644a92081eb6993ebd1579e05080c1fff651728dfa04b054e637bf"
   license "Apache-2.0"
-  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "90526241d41eff910253ed0f240b05a7da8d60824ebbbd9a0988e3cd8583a33e"
-    sha256 cellar: :any,                 arm64_monterey: "c759b8c1ccd18ce4f800408d6ae2b421c22de79e435f38770ec1ab0987902331"
-    sha256 cellar: :any,                 arm64_big_sur:  "d5c782656fe87b6fe8d70616f757574f47e3a73f4f4071ca31187d41114b1ee2"
-    sha256 cellar: :any,                 ventura:        "103123de1c8aa504d301ccc6010ee6d631abddf59e0c0ef0e82701eae829e122"
-    sha256 cellar: :any,                 monterey:       "5dbd1f11db66d58bb2fcc283e84eef283cc2bf6b4db7c179e7f80cfc588db3e2"
-    sha256 cellar: :any,                 big_sur:        "bb0e5135f5ae7fa24e93268d30640a50eab1966276fa44f3db3e24c9db46faca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f28629d8cd9580b745623e4d6055a746c4e3eef55664e54c64bbfeb15846349"
+    sha256 cellar: :any,                 arm64_ventura:  "36a282a02bf966f980f160576ff4bceed163353cc1c4ff34e7c985a9ae4cd0f4"
+    sha256 cellar: :any,                 arm64_monterey: "154a8141358d17a3c2431c1ea05f9a245ab6930e30eaec71bca23bccfbcce5b5"
+    sha256 cellar: :any,                 arm64_big_sur:  "a77f24f932f8dc95f1adc0a4debed9f91a3e398558dbbf9dd078c5513b3d5ea8"
+    sha256 cellar: :any,                 ventura:        "55c6035150bc7901abe2b436b950a78192f9372fd6b74b96bf6c1807e0317e86"
+    sha256 cellar: :any,                 monterey:       "449e9b4326376a1fb556c0af84a85c7e5ffad8922f1be5de464b7f4af70416e4"
+    sha256 cellar: :any,                 big_sur:        "95265aefbda9f122c64c652666fb0d34ad4d7232ab3078cf44434efc25b41945"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a41c13fc8dd0756a4acae5c1b02d57163d69ef32140646f03d26985e0590d62f"
   end
 
   depends_on "cmake" => :build

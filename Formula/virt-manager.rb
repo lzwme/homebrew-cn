@@ -10,13 +10,13 @@ class VirtManager < Formula
   head "https://github.com/virt-manager/virt-manager.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_ventura:  "6b1adfd47084757a53e8fa0c49e4ea31e7eaccefe2233a10952b636d895f02b7"
-    sha256 cellar: :any, arm64_monterey: "253b99fd78fcf070dd078dbec71ad2e1b668efc0debc7445e707a013b9be7621"
-    sha256 cellar: :any, arm64_big_sur:  "22429b998c1d6fb131293ac77f0ce586b4d8e60188b3408ec73639d999573cb1"
-    sha256 cellar: :any, ventura:        "75ff284b2bf04231ca62e224df6540de526a18e6ec7af4343b21150635a348a3"
-    sha256 cellar: :any, monterey:       "d90709a81b42742c55cd339fe6f8faf21db57a0b03ba08acabd90d434ceb238f"
-    sha256 cellar: :any, big_sur:        "4d34679d93d770a5e824515066cf27d8e617683f904308514e2d9a53cd40a78d"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cef6368857ffffdadc21af8a4335d778957e22339bc1bedda5d7f458e1b4da8f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "57623396b2535f9b3e060dfaf28624481096a0ded8407201d62a655697fcdf15"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2aa6282bb424bef5603f0e7b835d38c96e0943355a53e819053b656f49339ed9"
+    sha256 cellar: :any_skip_relocation, ventura:        "92a72355aa39ca0dbce847e8f3e9bb8b6e3d65fad21667f224f07922040ba238"
+    sha256 cellar: :any_skip_relocation, monterey:       "e0cf216af799e38df27a388579913d22ac4b9555381b88a12c7559b39e3730e7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bb63f4e3dbd688f33a915b1dfd2fbfdbb112be8f9d99b4caac21eda189ec4b6f"
   end
 
   depends_on "docutils" => :build
@@ -41,13 +41,13 @@ class VirtManager < Formula
   # Resources are for Python `libvirt-python` and `requests` packages
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "idna" do
@@ -56,8 +56,8 @@ class VirtManager < Formula
   end
 
   resource "libvirt-python" do
-    url "https://files.pythonhosted.org/packages/b0/8d/8a0e86d6c2f4f93f33146fc076b26acbdb943b1fdc2abed9fb1f770ddbba/libvirt-python-9.5.0.tar.gz"
-    sha256 "8b6ace0810528ec020e121bf1a142c12f786b12c130c7899e9397f0f3a82c392"
+    url "https://files.pythonhosted.org/packages/bb/1a/d1cf7c8b988cfbbfcc3d6fb1e4e2216690ff64453d3488c9c9e1dfa1e8e2/libvirt-python-9.6.0.tar.gz"
+    sha256 "53422d8e3110139655c3d9c2ff2602b238f8a39b7bf61a92a620119b45550a99"
   end
 
   resource "requests" do

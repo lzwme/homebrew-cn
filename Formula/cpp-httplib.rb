@@ -1,18 +1,18 @@
 class CppHttplib < Formula
   desc "C++ header-only HTTP/HTTPS server and client library"
   homepage "https://github.com/yhirose/cpp-httplib"
-  url "https://ghproxy.com/https://github.com/yhirose/cpp-httplib/archive/refs/tags/v0.13.2.tar.gz"
-  sha256 "b7f64402082af7c42c0d370543cb294d82959ca7cf25b3ee7eb1306732bb27d4"
+  url "https://ghproxy.com/https://github.com/yhirose/cpp-httplib/archive/refs/tags/v0.13.3.tar.gz"
+  sha256 "2a4503f9f2015f6878baef54cd94b01849cc3ed19dfe95f2c9775655bea8b73f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3f2527cb43683c1b21c949f9f169c655c73714afc3b1e8c4333eb79068441302"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3f2527cb43683c1b21c949f9f169c655c73714afc3b1e8c4333eb79068441302"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3f2527cb43683c1b21c949f9f169c655c73714afc3b1e8c4333eb79068441302"
-    sha256 cellar: :any_skip_relocation, ventura:        "3f2527cb43683c1b21c949f9f169c655c73714afc3b1e8c4333eb79068441302"
-    sha256 cellar: :any_skip_relocation, monterey:       "3f2527cb43683c1b21c949f9f169c655c73714afc3b1e8c4333eb79068441302"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3f2527cb43683c1b21c949f9f169c655c73714afc3b1e8c4333eb79068441302"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e36dc140280611df253110acf657c7f3650481c31f6536b2615dfe8e5f57f62"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b0549277f78b65756524095ef00e0761b034cda719d79b930cebb8799c9cf5f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0b0549277f78b65756524095ef00e0761b034cda719d79b930cebb8799c9cf5f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0b0549277f78b65756524095ef00e0761b034cda719d79b930cebb8799c9cf5f"
+    sha256 cellar: :any_skip_relocation, ventura:        "0b0549277f78b65756524095ef00e0761b034cda719d79b930cebb8799c9cf5f"
+    sha256 cellar: :any_skip_relocation, monterey:       "0b0549277f78b65756524095ef00e0761b034cda719d79b930cebb8799c9cf5f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0b0549277f78b65756524095ef00e0761b034cda719d79b930cebb8799c9cf5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d88743dcd307b714a0aaa119879a49b2d1a7ec5d92b97fed3dbb1db1ccb46024"
   end
 
   depends_on "meson" => :build

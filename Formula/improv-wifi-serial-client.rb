@@ -1,8 +1,8 @@
 class ImprovWifiSerialClient < Formula
   desc "Configure an IoT device WiFi connection using improv-wifi serial protocol"
   homepage "https://github.com/nicerloop/improv-wifi-serial-client"
-  url "https://ghproxy.com/https://github.com/nicerloop/improv-wifi-serial-client/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "74c488df6c11154cd56e4feabaf0e887a9c109fa39d04fb1dbaddb616353099b"
+  url "https://ghproxy.com/https://github.com/nicerloop/improv-wifi-serial-client/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "faaf18712de47e31cd77d3f3ec4048b859b89ff359193eabfc3059961d7c80a0"
 
   depends_on "rust" => :build
 

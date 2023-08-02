@@ -13,13 +13,14 @@ class Clipboard < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb7cd95c14967d778fb8c6bf8fc41df9872df5d168302d4a9ba4009705ce81d5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9aa8b15aa9d96a00ebc14a7d9ad158dcfa8f20f9ee1b6ebf361e13438b29da86"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c49325785554c9ebb365c1a8ec2213c905a74831238f341e3494096339cd6b6e"
-    sha256 cellar: :any_skip_relocation, ventura:        "6e6d598fc672e75eea970319c52aa14827f617a09ec75ae71c11fbd76fd4c127"
-    sha256 cellar: :any_skip_relocation, monterey:       "6a184431252b3ed79a6b013494d31812b87fa1b0ddfac98e71f6374472dcfee9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fb880f65f93efd42a453bee516c21ff2125a11eef024cebf76bc6dc654ccf5a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "214673f6c32a86563805184515292afa2e5c0dee3ae570591ce1885d904dbba0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e8feed1743d3e55ee1e67c1b8085f3cf3a4412e695147426fd3a6339b12e9d8d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "231181f3c2a24bc0dd02798b450dd7833f3615ebcbfdd0c53ebc54465ab297cb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7f8ca9e02c1d1382b380ed7dc07543a383a4089fa21de7424e56a335af62a4fa"
+    sha256 cellar: :any_skip_relocation, ventura:        "db42eb5e14ceb1eec15a4a1d77d4c1f0a94f5ac5c28a125863f0899aabd9c403"
+    sha256 cellar: :any_skip_relocation, monterey:       "cd70f44184dea81283be87d4b90a0c7c2631dc6fe214e8bd73ca4258231dc7a5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d02ded9cabcd024303d12b648383e15183089e56a2bd22254b1d0f2a693abbb0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8341584cc82f252d3c52fa056d33b2219254265e46b81b0e25b41b8f70e94efb"
   end
 
   depends_on "cmake" => :build
@@ -44,10 +45,11 @@ class Clipboard < Formula
   def install
     ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1300
 
-    # Workaround for:
+    # `-Os` is slow and buggy.
     #   https://github.com/Homebrew/homebrew-core/issues/136551
     #   https://github.com/Slackadays/Clipboard/issues/147
-    ENV["HOMEBREW_OPTIMIZATION_LEVEL"] = "O2"
+    ENV.O3
+
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
