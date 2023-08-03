@@ -6,16 +6,16 @@ class Howdoi < Formula
   url "https://files.pythonhosted.org/packages/6d/43/0e8166583575bd500c0f8f1a4ab9429af9466feb6fcdc006e88de8fd23e9/howdoi-2.0.20.tar.gz"
   sha256 "51cd40c53e0c0f8f8da88f480eb7423183be2350ab4f0a4d9d4763ca6ac3e2a9"
   license "MIT"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "acf6e1d11328156bcc9e1ff7b963d219476a871b3b3e03956136dbb7e0978afd"
-    sha256 cellar: :any,                 arm64_monterey: "885ac40f5d1d8536812af58d41ce539df180e306167dc844298c669356bf939a"
-    sha256 cellar: :any,                 arm64_big_sur:  "5f11cf45fc35a89db56a3a861e345fa07b975a04a787dbc14273c4f9fa9d3967"
-    sha256 cellar: :any,                 ventura:        "5dda158b2c85c9675ba9de564817cfa17e011b12e12ab97df2fb5c7af5d826f5"
-    sha256 cellar: :any,                 monterey:       "4f53b4d5cc926f6e27647043f22e0fb96af25e3c010fe0700ffda2969b0f6502"
-    sha256 cellar: :any,                 big_sur:        "82e4969ae3e652bcdfaaf4d9d2432ab927f655120b4b2c441a91e501c6c89550"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29d73a6c354d8ee56fa3aa23b17e08e55e18b7d3e71d61ce0ec526440869a598"
+    sha256 cellar: :any,                 arm64_ventura:  "d99460aa9d5df944e26c8a57faeba296caa77068b29431097547758b5939ac8f"
+    sha256 cellar: :any,                 arm64_monterey: "3045598b0ab6db55c45dcd228bf1d64c30998d7140b42b5ca02e0fd71bf56dc9"
+    sha256 cellar: :any,                 arm64_big_sur:  "976c63e242f0546e5c69b5fcad3ac8667a380e42f4b95c853edd48c4842bf7d3"
+    sha256 cellar: :any,                 ventura:        "f9f9c8814845cb4a333d8c8e790f04f279f89807b025683f5a00b5c004bf0af6"
+    sha256 cellar: :any,                 monterey:       "1a86a4a0c37be3befeb205d1ff02585c7ae538ae42e98a8e42e8c161ce283e81"
+    sha256 cellar: :any,                 big_sur:        "e075c3ed86e66411465ea8d86db8eff32d02945a042d1ad0dfdedc3c4b6f3567"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5ccf7cd10d8be40212bc1af4338d16cc8b93e9c0c3ba81fb382841133a0c166"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -66,8 +66,8 @@ class Howdoi < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
+    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
+    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "cssselect" do
@@ -131,8 +131,8 @@ class Howdoi < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/e3/12/67d0098eb77005f5e068de639e6f4cfb8f24e6fcb0fd2037df0e1d538fee/rich-13.4.2.tar.gz"
-    sha256 "d653d6bccede5844304c605d5aac802c7cf9621efd700b46c7ec2b51ea914898"
+    url "https://files.pythonhosted.org/packages/ad/1a/94fe086875350afbd61795c3805e38ef085af466a695db605bcdd34b4c9c/rich-13.5.2.tar.gz"
+    sha256 "fb9d6c0a0f643c99eed3875b5377a184132ba9be4d61516a55273d3554d75a39"
   end
 
   resource "terminaltables" do

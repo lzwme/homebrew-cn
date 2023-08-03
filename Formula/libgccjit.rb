@@ -22,13 +22,14 @@ class Libgccjit < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "4c8a17f9ae4b4ff788f5dd7c84317574ddad8365b3437d970e197ad73afc9e24"
-    sha256 arm64_monterey: "4afc97e6ca3280b9321c666177db9cb781991732751117ac4093145c0915cc0f"
-    sha256 arm64_big_sur:  "ce2ddf85c1c7bb0a71e89ebef6b3eda8e6a0eba4d517a10d156b8f5c9d7d7770"
-    sha256 ventura:        "6c517f555ae8ad2ab3494f6d1cb87dda83fa387c81721fac2048a8c09798c828"
-    sha256 monterey:       "fdfe66b8ffcbfc4b6073600ef750a16bbeccdb48b236ccf422e6ee5873776a27"
-    sha256 big_sur:        "35b3fac5ac1c7323d8e8673f035ae6b81d8c75241b3f4cda021342dbb1dd96c0"
-    sha256 x86_64_linux:   "363ac65cf00eb26c0dff8b780bdc54e8277d64d20eb511d475c71f67dcf289af"
+    rebuild 1
+    sha256 arm64_ventura:  "16b221372ed02ec84f9d2436ae877014cb188e43f4b140c1354ef78bc0515032"
+    sha256 arm64_monterey: "49eb210b3f7148167f4d0b1afd6e21f5bb966b7461ea3c68053a26f45ed4293d"
+    sha256 arm64_big_sur:  "48e268e5b1544dd5ad84773544d66f52896777fb759dfecf9c71e6d6ee6d79c6"
+    sha256 ventura:        "f4046409a0fec5bd559d37026ad1430440e50b3a97638891050dafd4642cceaa"
+    sha256 monterey:       "896aff6cd2977b8739d6c208ea0f04affa1b32c8707f57f48037df15cfb25c62"
+    sha256 big_sur:        "3cdd7b0fd873acdaa52922f93f4fcf71c922c1bad30920befe77605f45899c4d"
+    sha256 x86_64_linux:   "f00f37852eb578381bdcfb8e0e3d6aba472cb2449dc3df0dfbfc8ce44a38f688"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -70,13 +71,15 @@ class Libgccjit < Formula
       --with-system-zlib
     ]
 
-    if OS.mac?
+    make_args = if OS.mac?
       cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
       args << "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}"
 
       # System headers may not be in /usr/include
       sdk = MacOS.sdk_path_if_needed
       args << "--with-sysroot=#{sdk}" if sdk
+
+      ["BOOT_LDFLAGS=-Wl,-headerpad_max_install_names"]
     else
       # Fix cc1: error while loading shared libraries: libisl.so.15
       args << "--with-boot-ldflags=-static-libstdc++ -static-libgcc #{ENV.ldflags}"
@@ -87,12 +90,14 @@ class Libgccjit < Formula
       # Change the default directory name for 64-bit libraries to `lib`
       # https://stackoverflow.com/a/54038769
       inreplace "gcc/config/i386/t-linux64", "m64=../lib64", "m64="
+
+      []
     end
 
     # Building jit needs --enable-host-shared, which slows down the compiler.
     mkdir "build-jit" do
       system "../configure", *args, "--enable-languages=jit", "--enable-host-shared"
-      system "make"
+      system "make", *make_args
       system "make", "install"
     end
 

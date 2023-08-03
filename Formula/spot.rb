@@ -1,8 +1,8 @@
 class Spot < Formula
   desc "Platform for LTL and ω-automata manipulation"
   homepage "https://spot.lre.epita.fr"
-  url "http://www.lrde.epita.fr/dload/spot/spot-2.11.5.tar.gz"
-  sha256 "3acfd5cd112d00576ac234baeb34e1c6adf8c03155d4cda973e6317ac8bd1774"
+  url "http://www.lrde.epita.fr/dload/spot/spot-2.11.6.tar.gz"
+  sha256 "a692794f89c0db3956ba5919bdd5313e372e0de34000a9022f29e1c6e91c538a"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Spot < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "5a4740e9874eca165e0c43d437e0080a2c299ab52a8f3f338bccf6ba1910607b"
-    sha256 cellar: :any,                 arm64_monterey: "73c7ddb42ccc2b9f3816cea8b401be6d8ac0b226a20471b5120c397dffa502a4"
-    sha256 cellar: :any,                 arm64_big_sur:  "364655234b5d2adec08643580e880cd63a23cd6571a7c9d205990fc2804f8a77"
-    sha256 cellar: :any,                 ventura:        "e2f4084728b28346d3e15632d5424baeddcd525afcb9220c50cf8c3e0272f8a2"
-    sha256 cellar: :any,                 monterey:       "c13895ef2cfb8ea3345cb8220411b06f22681ce92ff0bdd1d2131e4bef30c40a"
-    sha256 cellar: :any,                 big_sur:        "a930816a6fe4436f6b9d614cd63aec037c281678d9701299412842d3ae888fd7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e474ed22478d2a138557a25a1a813e9d9f99c9220b4c929c347db4ab6c3684f1"
+    sha256 cellar: :any,                 arm64_ventura:  "da6a0bf4b6504b15be13b47a9b45ad2fb1cd573b099081597f5ef49b6678a3b9"
+    sha256 cellar: :any,                 arm64_monterey: "be6f4d8f6bad04c2ce15fc353f17ef53b89567a31f2a0c93c83ac43b425191b8"
+    sha256 cellar: :any,                 arm64_big_sur:  "eebc434b54f36eef7ceee02079d267b73969ff3673c64604d6d7ae1ab7730255"
+    sha256 cellar: :any,                 ventura:        "c823bdf1d266af19b3b10ca6ab90136fe4c02eff446585dd797fd280a907b1f0"
+    sha256 cellar: :any,                 monterey:       "dad4012d3966c40b24151d3751d3b1552bd388bb673c367412080b27e0496af4"
+    sha256 cellar: :any,                 big_sur:        "0aa2bb9b33ff61844ac4c22b7785c9613db59e6b4da1ab13d83097ba75579141"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7087a187f5f60917e98f9cb6c2262c67ab02e926510ef024f7028615c49a8e2f"
   end
 
   uses_from_macos "python" => :build

@@ -19,7 +19,8 @@ class Actionlint < Formula
   depends_on "ronn" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/rhysd/actionlint.version=#{version}"), "./cmd/actionlint"
+    ldflags = "-s -w -X github.com/rhysd/actionlint.version=#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/actionlint"
     system "ronn", "man/actionlint.1.ronn"
     man1.install "man/actionlint.1"
   end
@@ -34,6 +35,6 @@ class Actionlint < Formula
             - run: actions/checkout@v2
     EOS
 
-    assert_match "\"runs-on\" section is missing in job", shell_output(bin/"actionlint #{testpath}/action.yaml", 1)
+    assert_match "\"runs-on\" section is missing in job", shell_output("#{bin}/actionlint #{testpath}/action.yaml", 1)
   end
 end

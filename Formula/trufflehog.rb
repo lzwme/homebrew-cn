@@ -1,20 +1,20 @@
 class Trufflehog < Formula
   desc "Find and verify credentials"
   homepage "https://trufflesecurity.com/"
-  url "https://ghproxy.com/https://github.com/trufflesecurity/trufflehog/archive/refs/tags/v3.46.1.tar.gz"
-  sha256 "d2022fb09bdb142cb35bc41eddcd9cd0de325ad7eba2f271f372112b0a6b4a9d"
+  url "https://ghproxy.com/https://github.com/trufflesecurity/trufflehog/archive/refs/tags/v3.46.3.tar.gz"
+  sha256 "803ec325f83756a36cd0f0449fb07b89e9d38904aa86f7375f347059e1fb3224"
   # upstream license ask, https://github.com/trufflesecurity/trufflehog/issues/1446
   license "AGPL-3.0-only"
   head "https://github.com/trufflesecurity/driftwood.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d95261840a806d796c708ef057a82c134fadaec60244942c65762ceae0bd77f2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d66e39431611d986f3e2cc59eaf0fcf5b4e2cb0076d36d1c223374d6f225894"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "21ec1306df3425d799b0736492405ec0c40c26713e8cf8848c88fab6ef48b648"
-    sha256 cellar: :any_skip_relocation, ventura:        "508bc4104c5cfde40d021a1e9c4a4a3ee8ddc3649676ef4d36bb6dce90b9c4d4"
-    sha256 cellar: :any_skip_relocation, monterey:       "2846a8409af6c80860b5631b0b1a4d7384bc1308510bb42ba3f2fd47fb511eba"
-    sha256 cellar: :any_skip_relocation, big_sur:        "836c20c316450da72ff1158ef19b47176fd079d0ed2807043c7640b4a5f09dca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae29bb31e1cdbd09e4e9592a3827e0924aa1492311e7b18b1df583954fc0d4bc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3b3d08837412c714fd164ecd079bf05e9c1aa06e9897b45a083bc85ad3199025"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e30a3883acb22e51c5b57ac1125f8b11adbe3209483f71a555ab3d4aa5a8eb8a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4b09c06169dfef04a841e864e0ed7c31fda536e125c0d5dfee51dc1af6069b48"
+    sha256 cellar: :any_skip_relocation, ventura:        "fb31c5835cbc27da62de750cacd7784e97290401a6eb303011f30133969ffb80"
+    sha256 cellar: :any_skip_relocation, monterey:       "1f15adb848fdbd54771967dbe2eafda90a96dbf40868527327e03c52159ba71f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "09c96676f87eb358aa125da49537b495712bf2951c134653270cc3fdc00b0624"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ff4723d0397e4f8565094ac2882595cddc08d7116c9cc5b20f615e3fa72056d"
   end
 
   depends_on "go" => :build

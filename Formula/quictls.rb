@@ -1,9 +1,9 @@
 class Quictls < Formula
   desc "TLS/SSL and crypto library with QUIC APIs"
   homepage "https://github.com/quictls/openssl"
-  url "https://ghproxy.com/https://github.com/quictls/openssl/archive/refs/tags/openssl-3.0.9-quic1.tar.gz"
-  version "3.0.9-quic1"
-  sha256 "7b76b0968642a3929fabc96acd28302f631d339a90a91fd434cde425a3ec6838"
+  url "https://ghproxy.com/https://github.com/quictls/openssl/archive/refs/tags/openssl-3.1.2-quic1.tar.gz"
+  version "3.1.2-quic1"
+  sha256 "1651412ec136a693fcc84c77df664ca0dc0495eab2785afa2c7ba064a00fb1b6"
   license "Apache-2.0"
 
   livecheck do
@@ -12,13 +12,13 @@ class Quictls < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "057574a2bf46e393ae38042b6af0dcfa2d37afca1d47bb8d3120ee6926bebed1"
-    sha256 arm64_monterey: "d908386843e4e08542de776a8bedc11089b8704457e9b79069c2fb628ab54f7b"
-    sha256 arm64_big_sur:  "dcb0c51ddd58428494f7b009590bd9bba1e076d5701714f2c7f48df24182fbe6"
-    sha256 ventura:        "f2a3a0f85201ebc53ca7bcd6f88bbfb501ce74c628555a2ef0af53d3b61ba191"
-    sha256 monterey:       "b55a237526dfad87ea53b50675ba644302210b59c1d5bb74079ad6a0ef8f5d79"
-    sha256 big_sur:        "6d7f1bcbb4a58042b62cf210b5b04ad30c23de7c82b11766933da8f062a831b9"
-    sha256 x86_64_linux:   "b34a6abdf6e0d96b2ed93d036ff241bcd1f9541b61262652d9581c8f565346a1"
+    sha256 arm64_ventura:  "4ffa722fb1756ea0c30d697a5dffc811e129062346e50e40ff976e31a0111745"
+    sha256 arm64_monterey: "1cd25250ea9d032dfd5dbc7f7118d9a287935541eadef9019fd3cbfec877bb33"
+    sha256 arm64_big_sur:  "b00e7991d2420650932db6f72d1d947ec9bffa1715df40ddd5107e90250b5166"
+    sha256 ventura:        "8eb411af2ce71bc976ba60aa1a8e35c450e6fbf3e2bdb7d30b2d4ac4a1d35baf"
+    sha256 monterey:       "5c3890ccf66c1177ea60ee444821a5592d5e6c372f85aa264ea69a508ea598ae"
+    sha256 big_sur:        "03714b1a508f5d85cc79239ce88566396a3a9e680a150aa4aa29b477aa7538bb"
+    sha256 x86_64_linux:   "7564b141c8b8ce127fda129677342c85c9ea0ba18b4768df2c24f5bdf8a1dc31"
   end
 
   keg_only "it conflicts with OpenSSL"

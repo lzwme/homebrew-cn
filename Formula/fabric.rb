@@ -6,17 +6,17 @@ class Fabric < Formula
   url "https://files.pythonhosted.org/packages/d8/b0/fc6880fd6e24b60ccb5e3e1b673cec847d56b8176311f77c63f542fe9fd4/fabric-3.1.0.tar.gz"
   sha256 "ea1c5ea3956d196b5990ba720cc8ee457fa1b9c6f265ab3b643ff63b05e8970a"
   license "BSD-2-Clause"
-  revision 2
+  revision 3
   head "https://github.com/fabric/fabric.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "86ea126a435790a9e070fedeec75cabcfb9b7047ee15c0f8c72275ec48c5c161"
-    sha256 cellar: :any,                 arm64_monterey: "c78340a8f94272360a3252856e0963cdfe6d1e66fc2cdd6d77b090ce6e10237e"
-    sha256 cellar: :any,                 arm64_big_sur:  "86d8c7b876e04e7327f3a9f16de271811fe075a2f60c84d464dc2f21d6e2cdb1"
-    sha256 cellar: :any,                 ventura:        "70dc9143e740b7e2916a2bdb063b11cc61c793073195449636352a6683aa4f39"
-    sha256 cellar: :any,                 monterey:       "d53bf5cea491fa0c531666bec234e159529d7efe535240c0c389a040a718d800"
-    sha256 cellar: :any,                 big_sur:        "2a4c7b649d2f0c9d3be4aa41f6db068894675db81b022657f282fc3283ab7d69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f6b1e81636327d79bf7a6ced387d1570367084dedfb38b826917bdc07ef22cae"
+    sha256 cellar: :any,                 arm64_ventura:  "2c7eb542f600277b160d133ee8574623f6f5db34b27337e8abc2ae33074e1bac"
+    sha256 cellar: :any,                 arm64_monterey: "20a6aa6f83f9cb440dbd2ffe34ff089b96d9f67d99baf1e5a1238c022beb4da3"
+    sha256 cellar: :any,                 arm64_big_sur:  "1975e0d01e9993b56cc3d94329e8aa8419b3a73de5d30479d91bea1eacbc922b"
+    sha256 cellar: :any,                 ventura:        "96f7f464e545acbaaf6505f6ed9e24a8f142a63afa3c8a17b543da51007e7d83"
+    sha256 cellar: :any,                 monterey:       "b266b404907aa8d4c35eed783288e35d6833e24a3113256cc798e08c607dc56e"
+    sha256 cellar: :any,                 big_sur:        "0f20943dccef5b9e5900df698441d2e8fff4b69146679004530fa8d10776d6b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a44298a41c3e71626aa6fdb084e82758d344d33460a4a7c99a0d4cfb8bfe55d"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -33,8 +33,8 @@ class Fabric < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
+    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
+    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "decorator" do
@@ -43,8 +43,8 @@ class Fabric < Formula
   end
 
   resource "paramiko" do
-    url "https://files.pythonhosted.org/packages/87/62/cee9551811c846e9735f749dbdf05d4f9f0dbcecd66eae35b5daacf9a117/paramiko-3.2.0.tar.gz"
-    sha256 "93cdce625a8a1dc12204439d45033f3261bdb2c201648cfcdc06f9fd0f94ec29"
+    url "https://files.pythonhosted.org/packages/44/03/158ae1dcb950bd96f04038502238159e116fafb27addf5df1ba35068f2d6/paramiko-3.3.1.tar.gz"
+    sha256 "6a3777a961ac86dbef375c5f5b8d50014a1a96d0fd7f054a43bc880134b0ff77"
   end
 
   resource "pynacl" do

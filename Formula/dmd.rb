@@ -5,20 +5,20 @@ class Dmd < Formula
 
   stable do
     # make sure resources also use the same version
-    url "https://ghproxy.com/https://github.com/dlang/dmd/archive/refs/tags/v2.104.2.tar.gz"
-    sha256 "166ab204994cb462c9e20a05c92033fc124926860e66944df9dee3784a3b4171"
+    url "https://ghproxy.com/https://github.com/dlang/dmd/archive/refs/tags/v2.105.0.tar.gz"
+    sha256 "fe04d52647e580b6936796e4d26dbfbb28e90a0d59a190fb2dd2f68d85253e22"
 
     resource "phobos" do
-      url "https://ghproxy.com/https://github.com/dlang/phobos/archive/refs/tags/v2.104.2.tar.gz"
-      sha256 "ca6f5217df21b243d830a80e3268fe4700ff74d41c94586d409fe4cde8ead3eb"
+      url "https://ghproxy.com/https://github.com/dlang/phobos/archive/refs/tags/v2.105.0.tar.gz"
+      sha256 "ccbcb1441c0a215a85785d6987b4ae7e1d00816168ecf1eaa45bb0ea0d25c508"
     end
   end
 
   bottle do
-    sha256 ventura:      "a41634de385a7dfe4ab491c3a89bdb4c90c08e2653a9aac509403b7f167d9993"
-    sha256 monterey:     "745f40142f86760a51cbe01506641d08bcbb72d6713fe1685f27d1c593e5da09"
-    sha256 big_sur:      "57fc9d656099a477657c0143e929e5b3dc14b91bc17204ba1a93ce4b94383d47"
-    sha256 x86_64_linux: "6e59698e77570806e5618ca3aad632a953efbf55f1b41e2e589001438811ebbf"
+    sha256 ventura:      "fabec280c3d97240c6a1fc9eaf897ef420728f5919b57f9b9e2538deff43e86e"
+    sha256 monterey:     "1567c64c63ffc7939a41d3e184b6a43377247b8233d2e45e611c28d38c294f68"
+    sha256 big_sur:      "593873ae63b7c6213350e99eaab3fc20483614e32d3ad3195ba903042f8895d7"
+    sha256 x86_64_linux: "8e28d632e2b964d06e2c58c609882ef9973c94b423f30143c24497a00e1fecf1"
   end
 
   head do

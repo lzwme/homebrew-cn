@@ -1,13 +1,13 @@
 class OpensslAT11 < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl.org/"
-  url "https://www.openssl.org/source/openssl-1.1.1u.tar.gz"
-  mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-1.1.1u.tar.gz"
-  mirror "http://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-1.1.1u.tar.gz"
-  mirror "https://www.openssl.org/source/old/1.1.1/openssl-1.1.1u.tar.gz"
-  mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/old/1.1.1/openssl-1.1.1u.tar.gz"
-  mirror "http://www.mirrorservice.org/sites/ftp.openssl.org/source/old/1.1.1/openssl-1.1.1u.tar.gz"
-  sha256 "e2f8d84b523eecd06c7be7626830370300fbcc15386bf5142d72758f6963ebc6"
+  url "https://www.openssl.org/source/openssl-1.1.1v.tar.gz"
+  mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-1.1.1v.tar.gz"
+  mirror "http://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-1.1.1v.tar.gz"
+  mirror "https://www.openssl.org/source/old/1.1.1/openssl-1.1.1v.tar.gz"
+  mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/old/1.1.1/openssl-1.1.1v.tar.gz"
+  mirror "http://www.mirrorservice.org/sites/ftp.openssl.org/source/old/1.1.1/openssl-1.1.1v.tar.gz"
+  sha256 "d6697e2871e77238460402e9362d47d18382b15ef9f246aba6c7bd780d38a6b0"
   license "OpenSSL"
   version_scheme 1
 
@@ -17,13 +17,13 @@ class OpensslAT11 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "0a4b0a3deefd8c470db72605e7a05cfaafe9fcdf4ee834de2b3ec031080b4dde"
-    sha256 arm64_monterey: "c1ad47b050b0e9459a70d567867435473a2a5cdb6810081a01afb9db6c82f7b0"
-    sha256 arm64_big_sur:  "75fa14dcd78953853ebc084c61ac26d8a7cbd761702f25060feb6c07125dc6cb"
-    sha256 ventura:        "f0a7ffd1772a1729d5f48d2e56b3a71af27d3f985598d3e2509359a8f60edee5"
-    sha256 monterey:       "6a29713c02c20b3a45b175622e3619a655358eee099d9f115a0b9429c208c269"
-    sha256 big_sur:        "3f9f4b541cfb3e46f26eeea67bf6af8dedb4f9df36c71ac28e597187d8793061"
-    sha256 x86_64_linux:   "7f3a1498bdb447b94deec9f9369ce186836c2de58cb1c4c421b1f5ecd901c2c5"
+    sha256 arm64_ventura:  "a031514d1cf28965fb7cee2028fcc270fbcf3d4743cd13195d3b0b8edf3d2d1d"
+    sha256 arm64_monterey: "5260ea8701a05639d63b860eeb290115e384d0c5ae2419f8a724eeeb33365427"
+    sha256 arm64_big_sur:  "ea8ef00ad867294cbf2f9c3a146ef0a037d858ccfca68f192bb31edfa0707a4c"
+    sha256 ventura:        "ae32fc2908db56f5737ce5d250e86494b525d22da8b186a54f8d102d1e6cbcb4"
+    sha256 monterey:       "eda849b5a4a3bf6b3a170b7f39f21bc68da34141d1ce976890d31d6ef5b73df7"
+    sha256 big_sur:        "2c4e50ae61849c5f50e87d92af0d4f5b8810fd3ab1f1da5d31aa138b97cc4643"
+    sha256 x86_64_linux:   "01723a5f0d1e3a98f6dd4ab4a1836e7fc2ed144ccd118626fcf08504a683eba9"
   end
 
   keg_only :versioned_formula
@@ -35,21 +35,21 @@ class OpensslAT11 < Formula
 
   on_linux do
     resource "Test::Harness" do
-      url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Test-Harness-3.42.tar.gz"
-      mirror "http://cpan.metacpan.org/authors/id/L/LE/LEONT/Test-Harness-3.42.tar.gz"
-      sha256 "0fd90d4efea82d6e262e6933759e85d27cbcfa4091b14bf4042ae20bab528e53"
+      url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Test-Harness-3.44.tar.gz"
+      mirror "http://cpan.metacpan.org/authors/id/L/LE/LEONT/Test-Harness-3.44.tar.gz"
+      sha256 "7eb591ea6b499ece6745ff3e80e60cee669f0037f9ccbc4e4511425f593e5297"
     end
 
     resource "Test::More" do
-      url "https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302175.tar.gz"
-      mirror "http://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302175.tar.gz"
-      sha256 "c8c8f5c51ad6d7a858c3b61b8b658d8e789d3da5d300065df0633875b0075e49"
+      url "https://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302195.tar.gz"
+      mirror "http://cpan.metacpan.org/authors/id/E/EX/EXODIST/Test-Simple-1.302195.tar.gz"
+      sha256 "b390bb23592e0b946c95adbb3c30b11bc634a286b2847be611ad929c57e39a6c"
     end
 
     resource "ExtUtils::MakeMaker" do
-      url "https://cpan.metacpan.org/authors/id/B/BI/BINGOS/ExtUtils-MakeMaker-7.48.tar.gz"
-      mirror "http://cpan.metacpan.org/authors/id/B/BI/BINGOS/ExtUtils-MakeMaker-7.48.tar.gz"
-      sha256 "94e64a630fc37e80c0ca02480dccfa5f2f4ca4b0dd4eeecc1d65acd321c68289"
+      url "https://cpan.metacpan.org/authors/id/B/BI/BINGOS/ExtUtils-MakeMaker-7.70.tar.gz"
+      mirror "http://cpan.metacpan.org/authors/id/B/BI/BINGOS/ExtUtils-MakeMaker-7.70.tar.gz"
+      sha256 "f108bd46420d2f00d242825f865b0f68851084924924f92261d684c49e3e7a74"
     end
   end
 
@@ -76,11 +76,12 @@ class OpensslAT11 < Formula
 
   def install
     if OS.linux?
-      ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
+      ENV.prepend_create_path "PERL5LIB", buildpath/"lib/perl5"
+      ENV.prepend_path "PATH", buildpath/"bin"
 
       %w[ExtUtils::MakeMaker Test::Harness Test::More].each do |r|
         resource(r).stage do
-          system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
+          system "perl", "Makefile.PL", "INSTALL_BASE=#{buildpath}"
           system "make", "PERL5LIB=#{ENV["PERL5LIB"]}", "CC=#{ENV.cc}"
           system "make", "install"
         end

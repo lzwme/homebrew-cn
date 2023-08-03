@@ -6,15 +6,16 @@ class Moto < Formula
   url "https://files.pythonhosted.org/packages/e5/8d/97399e274225c960fef41747e3b293c731e1723a71fe9e33806787b2ee64/moto-4.1.14.tar.gz"
   sha256 "545afeb4df94dfa730e2d7e87366dc26b4a33c2891f462cbb049f040c80ed1ec"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "adc4736b2376b33cb16fe6b3785b9ffde807f2a394a65438daadd7675928b71d"
-    sha256 cellar: :any,                 arm64_monterey: "a1b8cc585cabeed4ca3a15b14a1dc48b94ca1bdf3d1c757a25cd93a8c5d16fbd"
-    sha256 cellar: :any,                 arm64_big_sur:  "30e0e19723629a6c80b83a665be2bf48c468334fda94f1aafeb2b840ebd82a4c"
-    sha256 cellar: :any,                 ventura:        "7b0d5721c73d0829fecfb29e1a3bf4b23736777f34d3471cdbea66311ec9893d"
-    sha256 cellar: :any,                 monterey:       "cd84096bdbc842da4d615b1d4cf30dca3a714aa0002639a00519c5d9919155b0"
-    sha256 cellar: :any,                 big_sur:        "80552f324bfa9723e9a37154a7ec496530b175979ccfee744c625c9ce8a7cb69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "793bc2a9a8826143636b1868b18057ea0ee67d92968eca47fc7584f2fed3ccbc"
+    sha256 cellar: :any,                 arm64_ventura:  "103b29e8e9ad8759fa0d47bd5198f9eb126cbc7aa9a569e0225b3a09beab07d2"
+    sha256 cellar: :any,                 arm64_monterey: "fcab310a30ca797e430ccbac211179e9269d7e4277922afcda06c946e93d8619"
+    sha256 cellar: :any,                 arm64_big_sur:  "320c48b282f30ec372265d15adea67c560130a7a04b2d06f1bcb5f9f87b8ad83"
+    sha256 cellar: :any,                 ventura:        "111388077eab31afc52c614f8ebbb20ef01239537d328f24921693027ddea191"
+    sha256 cellar: :any,                 monterey:       "a07a82a95e99e280fb3d6203713de8b6c3dc5fc564791beafbca73916c80692e"
+    sha256 cellar: :any,                 big_sur:        "1187a72af84ab06582ef445b374dde8207ca9f9a4ea31a401b3146110bb2f27f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "592c243b71abbc12dc629576e650a92c2a03180f94e6c9d225fe0ae665b31dfa"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -51,13 +52,13 @@ class Moto < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/88/e0/1b779c4ffd8637ccb9e5b6dde2da16b89c825c98aebad5f7dd818aeb90bf/boto3-1.28.15.tar.gz"
-    sha256 "a6e711e0b6960c3a5b789bd30c5a18eea7263f2a59fc07f85efa5e04804e49d2"
+    url "https://files.pythonhosted.org/packages/1b/f9/889e0c7d07bc5616d193d63b9600145d2d83f21a09fca40be078ef9323eb/boto3-1.28.17.tar.gz"
+    sha256 "90f7cfb5e1821af95b1fc084bc50e6c47fa3edc99f32de1a2591faa0c546bea7"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/81/f1/328009b97681416251cef7569d0343c140bbe13e5f2913ee051ec3af458f/botocore-1.31.15.tar.gz"
-    sha256 "b46d1ce4e0cf42d28fdf61ce0c999904645d38b51cb809817a361c0cec16d487"
+    url "https://files.pythonhosted.org/packages/54/ce/3aced9653aa3b81aeda70574f342cd3014ecc36aff6a20e74c767f92864f/botocore-1.31.17.tar.gz"
+    sha256 "396459065dba4339eb4da4ec8b4e6599728eb89b7caaceea199e26f7d824a41c"
   end
 
   resource "certifi" do
@@ -76,8 +77,8 @@ class Moto < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
+    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
+    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "docker" do
@@ -256,8 +257,8 @@ class Moto < Formula
   end
 
   resource "responses" do
-    url "https://files.pythonhosted.org/packages/fa/4f/5033bf66528c832e7fcc48e76f540bf401302c55041c7fb488b4fbaaec4a/responses-0.23.1.tar.gz"
-    sha256 "c4d9aa9fc888188f0c673eff79a8dadbe2e75b7fe879dc80a221a06e0a68138f"
+    url "https://files.pythonhosted.org/packages/5a/00/f0c95461f33b3cf452339f5cd212f653dbaf5caadca6bc7f229531c212c6/responses-0.23.3.tar.gz"
+    sha256 "205029e1cb334c21cb4ec64fc7599be48b859a0fd381a42443cdd600bfe8b16a"
   end
 
   resource "rfc3339-validator" do

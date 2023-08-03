@@ -5,7 +5,12 @@ class Uni2ascii < Formula
   homepage "https://billposer.org/Software/uni2ascii.html"
   url "https://deb.debian.org/debian/pool/main/u/uni2ascii/uni2ascii_4.18.orig.tar.gz"
   sha256 "9e24bb6eb2ced0a2945e2dabed5e20c419229a8bf9281c3127fa5993bfa5930e"
-  license "GPL-3.0"
+  license "GPL-3.0-only"
+
+  livecheck do
+    url :homepage
+    regex(/href=.*?uni2ascii[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "49692068ab523b29ff30943843d3c017b9c6e70fc5082e05d404e8dd4b6e3aa5"

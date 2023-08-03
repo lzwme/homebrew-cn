@@ -6,15 +6,16 @@ class Dvc < Formula
   url "https://files.pythonhosted.org/packages/52/0f/13a0e857e6776f20ca003e476aae118a2525a82748dfa39fb9e41b15c7d9/dvc-3.10.1.tar.gz"
   sha256 "5897942aabe371fe1c826b302238936d827b354494ff1cbea0bce55ffe426a5d"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7a719a841d2f917a31fbddff0a744ebab0852ee449e57539d9be5e964aa0c6f2"
-    sha256 cellar: :any,                 arm64_monterey: "bb2b35a49d387698c89fcf666e6663ee50ba797ac15ac63bcc3e3b350a09f7e1"
-    sha256 cellar: :any,                 arm64_big_sur:  "fe436cef96ec7f26d67949e1cbbb4d58029a449e6f0cfdcfe6ae1c38d67b59d0"
-    sha256 cellar: :any,                 ventura:        "d54323da180c55144b94d99398787d4d38ae47802784bae31336cb33f154bf72"
-    sha256 cellar: :any,                 monterey:       "1d96bd626f9081d9386563ab537b75bc21dcc1b32255a6bb58141c16e1623a2f"
-    sha256 cellar: :any,                 big_sur:        "417cec54ccba1451b200a4388c86d775d7f18038c198dfdd1cbdd8a42800e29b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c0a90060bc4ce7e44e815f216bd8f92ca06869f313baf157fb3ba561abcd9e3"
+    sha256 cellar: :any,                 arm64_ventura:  "56807166349b9f8fd3a49d8149a4f23fd7ccc256671320e2fffb79a4cfd22425"
+    sha256 cellar: :any,                 arm64_monterey: "c670bee51abfca7ec3519144f0d5d018a95eb940f9056b1f925daadc10f26e09"
+    sha256 cellar: :any,                 arm64_big_sur:  "d6243f26b4ccdb2671b4e902009b098a9f4d0296c3ad01212659711c68c36f6d"
+    sha256 cellar: :any,                 ventura:        "805a2f0f7538e81f90ee23288ca41b8f1065ee3c3fa734501f903844834ba5e5"
+    sha256 cellar: :any,                 monterey:       "330473c6e72842ca9b88f42590f354279582195ae5294596d99b0b544fcafad4"
+    sha256 cellar: :any,                 big_sur:        "6aae284bac850b918d34ef12e2a2097aef1c4765a3b068518f18b157bb10d633"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4d26e74cd29788295a4cf0871205bf4989d6dc9075ab3e5a245e1d7f684a5a7"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -219,8 +220,8 @@ class Dvc < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
+    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
+    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "decorator" do
@@ -419,8 +420,8 @@ class Dvc < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/28/9b/ea531afe585da044686ab13351c99dfbb2ca02b96c396874946d52d0e127/googleapis-common-protos-1.59.1.tar.gz"
-    sha256 "b35d530fe825fb4227857bc47ad84c33c809ac96f312e13182bdeaa2abe1178a"
+    url "https://files.pythonhosted.org/packages/08/78/aedf7f323cc6d4f2116556bd42c9ffab6021cf3f2fd9925ed4e71213dd1b/googleapis-common-protos-1.60.0.tar.gz"
+    sha256 "e73ebb404098db405ba95d1e1ae0aa91c3e15a71da031a2eeb6b2e23e7bc3708"
   end
 
   resource "grandalf" do
@@ -619,8 +620,8 @@ class Dvc < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/4f/13/28e88033cab976721512e7741000fb0635fa078045e530a91abb25aea0c0/pyparsing-3.1.0.tar.gz"
-    sha256 "edb662d6fe322d6e990b1594b5feaeadf806803359e3d4d42f11e295e588f0ea"
+    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
+    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
   end
 
   resource "python-dateutil" do
@@ -639,8 +640,8 @@ class Dvc < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/d0/50/74cc70b70662f0571c28733581a40097c0d626d70eefd17c606a195f36fc/rich-13.5.0.tar.gz"
-    sha256 "62c81e88dc078d2372858660e3d5566746870133e51321f852ccc20af5c7e7b2"
+    url "https://files.pythonhosted.org/packages/ad/1a/94fe086875350afbd61795c3805e38ef085af466a695db605bcdd34b4c9c/rich-13.5.2.tar.gz"
+    sha256 "fb9d6c0a0f643c99eed3875b5377a184132ba9be4d61516a55273d3554d75a39"
   end
 
   resource "rsa" do

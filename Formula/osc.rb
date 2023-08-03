@@ -6,6 +6,7 @@ class Osc < Formula
   url "https://ghproxy.com/https://github.com/openSUSE/osc/archive/1.2.0.tar.gz"
   sha256 "0b2b094a515b340f859b417016def33f9b33a47abe4c3fad66c5dbc8b8447a7d"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/openSUSE/osc.git", branch: "master"
 
   livecheck do
@@ -14,13 +15,13 @@ class Osc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "10d0ce7696abcdacbfbfd919b35a7059abfd466a7888ebbed38c8c87000c4bb2"
-    sha256 cellar: :any,                 arm64_monterey: "aa8ad3a6771c1c7c9be369a85ab829f99d491488ba0ecd41092ef2f87604d96e"
-    sha256 cellar: :any,                 arm64_big_sur:  "8a4fdb8654924ccae7880d7ae964cc7999ba13ab0e4fe5bf669672b97b8821a0"
-    sha256 cellar: :any,                 ventura:        "46747c55b1f890c600569565578f3d820406c44a9c3476e60f450ff0d94c7bfe"
-    sha256 cellar: :any,                 monterey:       "917ffac54a32426495e65ec40306fdb8963c15a3cf8aba2d80d62a4ae8727201"
-    sha256 cellar: :any,                 big_sur:        "51954e0fc0405ec1dc1fdfe7d57f002424e32b90fe5ff015a4f44be8eac8dfa1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a42f7f2b4c0dd68992f0f7f9b1ac9ff93092b5d61e8ecd64d5596c73f97ce5f"
+    sha256 cellar: :any,                 arm64_ventura:  "d50b9be5945e3a8e009d7f0ee0b51924377342d2716d615e0ff02f92de47ce87"
+    sha256 cellar: :any,                 arm64_monterey: "aabbf7b7938f5afbf2ba9413601b28a9df9841b0f04e028006cf8f93c7d4db5b"
+    sha256 cellar: :any,                 arm64_big_sur:  "e2ffa401d1ec42f58b304072919af1123061853f3341a6cf764937ebf0923ac0"
+    sha256 cellar: :any,                 ventura:        "9a1d550ef60b470ede8d2c5c2624239c3344318548dd9e31eef9ff60f4d285a6"
+    sha256 cellar: :any,                 monterey:       "9f43299b7a4bc571667189db4add61da62d93ac09cdee54ed46d8de18ed22ad3"
+    sha256 cellar: :any,                 big_sur:        "ad67a1521f3e0bbfd12df2b296de48a996e2b5574f70373b5e7fcd4d676dc55b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05102ffa5f25f37a4046814012e00baea58b008c6734a3d106fbb5f9fcd743ec"
   end
 
   # `pkg-config` and `rust` are for cryptography.
@@ -33,9 +34,19 @@ class Osc < Formula
 
   uses_from_macos "curl"
 
+  resource "cffi" do
+    url "https://files.pythonhosted.org/packages/2b/a8/050ab4f0c3d4c1b8aaa805f70e26e84d0e27004907c5b8ecc1d31815f92a/cffi-1.15.1.tar.gz"
+    sha256 "d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"
+  end
+
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
+    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
+    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
+  end
+
+  resource "pycparser" do
+    url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
+    sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
   end
 
   resource "rpm" do
@@ -44,8 +55,8 @@ class Osc < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
-    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   def install

@@ -1,19 +1,19 @@
 class Openfpgaloader < Formula
   desc "Universal utility for programming FPGA"
   homepage "https://github.com/trabucayre/openFPGALoader"
-  url "https://ghproxy.com/https://github.com/trabucayre/openFPGALoader/archive/v0.10.0.tar.gz"
-  sha256 "966b4629df86b1d520ddd8a4e0a3fc00060b26b5ab4e172b596bd9d4659a196e"
+  url "https://ghproxy.com/https://github.com/trabucayre/openFPGALoader/archive/v0.11.0.tar.gz"
+  sha256 "a463690358d2510919472c2f460039a304d016a08a45970821e667eea1c48cc8"
   license "Apache-2.0"
   head "https://github.com/trabucayre/openFPGALoader.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d4b309035e824959bfc0a802e0d4f31501082e1508fbea0c622ec95576220a5c"
-    sha256 cellar: :any,                 arm64_monterey: "0a8a0865cee8216b22463607eef522eb9b5a0530f55e8cf2946890f8eaca49f4"
-    sha256 cellar: :any,                 arm64_big_sur:  "206a214c5ca198b8e105d3311426965b8467bee1bc5f4bd2dcd32e3927d40ae0"
-    sha256 cellar: :any,                 ventura:        "d32d70c3674b960046f995f1014bd299f7446c9b052f1b4d114eedb80bd80157"
-    sha256 cellar: :any,                 monterey:       "48bb9db99d81f75cae462f7097e6c9f76b8dba57ca4d2752353323111bac957b"
-    sha256 cellar: :any,                 big_sur:        "178b66c07d0c8241f131f87225369e674cc3a900b2e40edb41c475affccb17cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "666014c49ff365fcbd120ddbbf0569b4044c521133985e09acc44c35bbda6d6f"
+    sha256 arm64_ventura:  "666c9c4f7c003395fda0e142c59edcb600ea189decb7575f5f166b711192c019"
+    sha256 arm64_monterey: "4aef28949c50535a09557216b0f5849888cdb24f7774e0b4a0702f410880e6b8"
+    sha256 arm64_big_sur:  "17e1f7ac035a755119d64b779b53bf54ce6d6035eb2f6c4f405a9d41f3158bcb"
+    sha256 ventura:        "835de1449778a19b0673c12e4f1f1375e02b43223228cbfe89e86cef0500d043"
+    sha256 monterey:       "981717b4fdd06ff7a17b6425c9d03af29ecb003239e25c70646e15f4948843a6"
+    sha256 big_sur:        "178c65d1afa79644bfbea2effbc3f0d3570ada4b8ceb1aaae5a00605f651cf48"
+    sha256 x86_64_linux:   "3f010d95399d2a150706ee2176bcc1b651f229e556d1fac89f7f70246aa84944"
   end
 
   depends_on "cmake" => :build

@@ -6,16 +6,16 @@ class Jrnl < Formula
   url "https://files.pythonhosted.org/packages/04/59/c15befa8f1a6ff159af29d86c1abc50135e4f8768afe5a1621930e21a0d8/jrnl-4.0.1.tar.gz"
   sha256 "f3b17c4b040af44fde053ae501832eb313f2373d1b3b1a82564a8214d223ede8"
   license "GPL-3.0-only"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "23e6abf7c3b2d2f304c3144321d307d72cbcab3047a3e570f3c8cfcac7cf3511"
-    sha256 cellar: :any,                 arm64_monterey: "6e57e8c3ec1c03658c503cd5369ddfb0edc28ad799ba5eb8be17804a6331572c"
-    sha256 cellar: :any,                 arm64_big_sur:  "3deaa492d4029443ae1e81e718de3485d185594f64e0ff049dc1e778ec5a76cd"
-    sha256 cellar: :any,                 ventura:        "cfe686fc0678e12650e8b62ffb7247749ac4f8b3c67c3b087b9fc87e9c22fa76"
-    sha256 cellar: :any,                 monterey:       "3b0bc0bacc687e335fac15c7a21da2d20f3513246e947d3a073ae9aa97799b5e"
-    sha256 cellar: :any,                 big_sur:        "632331ecef874c40d161696eaa78e41acce428a471926104feabb28bd413a90f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd93ea8be6e0b2ae1794b90f01203c659157609fafd73392d60c9b32c0acacce"
+    sha256 cellar: :any,                 arm64_ventura:  "43849569ef302c422d789729e4b0ad3351b97a2aafa5e5dda6aa82ecb5c06697"
+    sha256 cellar: :any,                 arm64_monterey: "a9032dcb392bf26a72fa924dd87bab4c5166ffa7cd71cc7e390b0afcf83a62ee"
+    sha256 cellar: :any,                 arm64_big_sur:  "78d9f039f1f7d253ed334e957ae89be7b25f0579e310d23f749295256efa87e3"
+    sha256 cellar: :any,                 ventura:        "b7458aacb4ce497710191b001a257ca20ffa4f8b93f8a2849020fa43b5a77b0c"
+    sha256 cellar: :any,                 monterey:       "cf666c7e7be7d1807e8bf9f967c82816e902d7ba04a1fdaff0daf4fda97f2688"
+    sha256 cellar: :any,                 big_sur:        "b47a1cd95adb1937d92592613314769ee94918b90217d9173b4575ee5cad42af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "347b2c0c474914c1c28d979bdeaf02600d8037f382663784be3aeb36de726cb4"
   end
 
   depends_on "pkg-config" => :build
@@ -39,8 +39,8 @@ class Jrnl < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
+    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
+    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "importlib-metadata" do
@@ -69,8 +69,8 @@ class Jrnl < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/2e/d0/bea165535891bd1dcb5152263603e902c0ec1f4c9a2e152cc4adff6b3a38/more-itertools-9.1.0.tar.gz"
-    sha256 "cabaa341ad0389ea83c17a94566a53ae4c9d07349861ecb14dc6d0345cf9ac5d"
+    url "https://files.pythonhosted.org/packages/b7/56/7daf104a9cb6af39c00127aee6904b01040dbb12cf1ceedd6a087c097055/more-itertools-10.0.0.tar.gz"
+    sha256 "cd65437d7c4b615ab81c0640c0480bc29a550ea032891977681efd28344d51e1"
   end
 
   resource "parsedatetime" do
@@ -89,8 +89,8 @@ class Jrnl < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/e3/12/67d0098eb77005f5e068de639e6f4cfb8f24e6fcb0fd2037df0e1d538fee/rich-13.4.2.tar.gz"
-    sha256 "d653d6bccede5844304c605d5aac802c7cf9621efd700b46c7ec2b51ea914898"
+    url "https://files.pythonhosted.org/packages/ad/1a/94fe086875350afbd61795c3805e38ef085af466a695db605bcdd34b4c9c/rich-13.5.2.tar.gz"
+    sha256 "fb9d6c0a0f643c99eed3875b5377a184132ba9be4d61516a55273d3554d75a39"
   end
 
   resource "ruamel-yaml" do

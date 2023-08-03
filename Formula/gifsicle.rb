@@ -27,9 +27,6 @@ class Gifsicle < Formula
     depends_on "automake" => :build
   end
 
-  conflicts_with "giflossy",
-    because: "both install an `gifsicle` binary"
-
   def install
     args = %W[
       --disable-dependency-tracking

@@ -1,18 +1,18 @@
 class Fw < Formula
   desc "Workspace productivity booster"
   homepage "https://github.com/brocode/fw"
-  url "https://ghproxy.com/https://github.com/brocode/fw/archive/refs/tags/v2.17.0.tar.gz"
-  sha256 "0e08a8c02f013df033bad41b19ad772480bee76060b1030a9cec0b81aa7879db"
+  url "https://ghproxy.com/https://github.com/brocode/fw/archive/refs/tags/v2.17.1.tar.gz"
+  sha256 "9b87924c5384c65f7012ae545d40e550f830fdf1b3e75bbbde5f9b4bd64aab86"
   license "WTFPL"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "314a3d7a4e1225f96babcc3afd7872e2c5e42e83e81fea1d8abbdad2aa9026eb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d2c7f6e1cb132ec9290647036e1fdee7e2a55f9d052ff701995ac35fe4e74ed1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d4f436dd01757e5ade390e4e69ba0ce4ebb76b25577b3abdc11ce6e40635b01a"
-    sha256 cellar: :any_skip_relocation, ventura:        "37eae05b9104db501610875f8d9054b6dbeda96f2bcbc6084986a18a035a1660"
-    sha256 cellar: :any_skip_relocation, monterey:       "c575ba67ca71f53d7bb2f0f73074e9f3d3bcc8950b1bbfffa0908ed98d0f7b54"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d2fd6dcb47e50d4fe4b5118aaff5a705bbfd3e724d5aa46a36550af98372c5b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fde468170ff3fbbea281357d46f30067ba8d5d908dd3e1f345b1cef0cca81e74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "13c029efb1090dd4fcf1a15087e35ffddcfd53833066cf3024ac07a7fccf73da"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9b6f7ccf8695f125669af21a167f04682de8b06bc59ed0449f25f014747777d6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "682e2015dae56e1b1d8bd901d4b22797e8957fba1f43644b9a1c2d3dbaaaaa2f"
+    sha256 cellar: :any_skip_relocation, ventura:        "324e0456a01ae8991c19c03be19ac8522bd382583bc1d541c7a3e36710a3e127"
+    sha256 cellar: :any_skip_relocation, monterey:       "46cc3b2ed9cf8ba4ba031e2fddbe5692be73ef1033e1792987edbdc07644adf0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ea5da33052b73031a05f00e3e357f15824f5e2e39251b1cc65af4118f893f449"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bda9d01cd469e187a55c2dae61108572942305cd763ceeecdf97e4d09e3cd7ea"
   end
 
   depends_on "rust" => :build

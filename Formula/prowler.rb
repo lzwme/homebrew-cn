@@ -6,15 +6,16 @@ class Prowler < Formula
   url "https://files.pythonhosted.org/packages/f2/8a/f5412b66a49d5f331f1dfe12d9086f5c8cf26fe79546b32d1fb1aaff5ca1/prowler-3.7.2.tar.gz"
   sha256 "877b1f796f80f055bfb00ae7d1ba78ca13f15690e32b328aa130e76e31b785f7"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "946ff7e17585b354230ba2b07659bdc7711feeea6ed994303300bdc52f1d4f8a"
-    sha256 cellar: :any,                 arm64_monterey: "ee80c4abd2b547580ac9cecede16cdd78ed5792cb00648a349666a9ad0d26f65"
-    sha256 cellar: :any,                 arm64_big_sur:  "d7d4cf3eb24061bc1ab3152b5d4bc4628343da6978b57a2ce0b36437c9b6e8bb"
-    sha256 cellar: :any,                 ventura:        "484bc694fa21311394841db6b2c59fba55994aa9ea6dd1c7b3c3f31bcfcc82b2"
-    sha256 cellar: :any,                 monterey:       "c40cf11466c7cb880fff0c53b5c56a8bcd098a01476ca4862db386f34b336d02"
-    sha256 cellar: :any,                 big_sur:        "bb069996f0167e065a1028914c48d3d3ec6d089308b626323c40bd7b7e8addab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4c64102fd09c86f38b3f44b4ab1e5a4d3b6eb360992a2d85265781438ae155b"
+    sha256 cellar: :any,                 arm64_ventura:  "14102b3066c4d324ad2cbd2293232e6eeeecc9e8ee89bf64e709d4925e23b561"
+    sha256 cellar: :any,                 arm64_monterey: "93d6980996d5c0c412a38ac213919b88083c66fc0af5f9a90e4c6f4a073b253d"
+    sha256 cellar: :any,                 arm64_big_sur:  "64111592c83731a1077b12e2b664ee549532696fe876ee309374a3057932a1f3"
+    sha256 cellar: :any,                 ventura:        "115873bdd2f68d270802cf9b57284acc75f851e28ac7ffb168aa35c2d289ae4c"
+    sha256 cellar: :any,                 monterey:       "2c999687656eabac4f5faf74d8ea72f41b170a25c56d88dfc038aa2acf88d537"
+    sha256 cellar: :any,                 big_sur:        "e4ee245d424b5bb21cb956dec5e089fdeef004a8e25ccd7a3473b0e3b81e3c42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3b3d0374fefcabecf853d9911fd00995590e509ccc51c03ea931a6b08d703f3"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -135,8 +136,8 @@ class Prowler < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
+    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
+    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "detect-secrets" do
@@ -165,8 +166,8 @@ class Prowler < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/28/9b/ea531afe585da044686ab13351c99dfbb2ca02b96c396874946d52d0e127/googleapis-common-protos-1.59.1.tar.gz"
-    sha256 "b35d530fe825fb4227857bc47ad84c33c809ac96f312e13182bdeaa2abe1178a"
+    url "https://files.pythonhosted.org/packages/08/78/aedf7f323cc6d4f2116556bd42c9ffab6021cf3f2fd9925ed4e71213dd1b/googleapis-common-protos-1.60.0.tar.gz"
+    sha256 "e73ebb404098db405ba95d1e1ae0aa91c3e15a71da031a2eeb6b2e23e7bc3708"
   end
 
   resource "grapheme" do
@@ -250,8 +251,8 @@ class Prowler < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/4f/13/28e88033cab976721512e7741000fb0635fa078045e530a91abb25aea0c0/pyparsing-3.1.0.tar.gz"
-    sha256 "edb662d6fe322d6e990b1594b5feaeadf806803359e3d4d42f11e295e588f0ea"
+    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
+    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
   end
 
   resource "python-dateutil" do

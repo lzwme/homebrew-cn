@@ -6,15 +6,16 @@ class CondaLock < Formula
   url "https://files.pythonhosted.org/packages/14/49/13a0e8979d748b187a67e0a0804c4763ca8877ae46b1c1b884a01f8c2cdc/conda_lock-2.1.2.tar.gz"
   sha256 "4a51f04a962ec563e8b8d133fa214012ad0f284967abb49877d5b5340283165c"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f0044c38f121e876232cdbb87d1e8bc31e6bd1f54f5741c48e06c3733acad030"
-    sha256 cellar: :any,                 arm64_monterey: "114f6dab3f2df55de7a225524a314bb257a88cd5578526d18f724be79a1a2c00"
-    sha256 cellar: :any,                 arm64_big_sur:  "773040fa420b1fe6da59cb4f7e4918a61e67c74b9f4610dd5fbc9f5064e3261c"
-    sha256 cellar: :any,                 ventura:        "a17276539c1e842de30c20ca9c3ea20cfcaa35c84a5d9bd61756ca3917b45ce6"
-    sha256 cellar: :any,                 monterey:       "f950b980d39d569d93423b8c4aada72d800f9764e71e5bbfa27a0048ea2295e1"
-    sha256 cellar: :any,                 big_sur:        "c63f191ca50e20272e57736d03b1a58d300e7db8d19c6c7db014c206e8bc04e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a98ef417c266c27fc0479a348a91dda2fbc6e69fbf5a6c8c47afd64dd06438fe"
+    sha256 cellar: :any,                 arm64_ventura:  "3dd526ab8db9d864ae5c7977886e6c124ba8d91db2f8a963fe7f91a80d0b5ce4"
+    sha256 cellar: :any,                 arm64_monterey: "c047f9f7f4bd52642266f825f5e3ed4b7e06ade4c9d97fd3b358d911b7b472ff"
+    sha256 cellar: :any,                 arm64_big_sur:  "0c8477e35817f31a84e5f1fc19818191618e61dc4496628c6a352ec9b07cfff4"
+    sha256 cellar: :any,                 ventura:        "fa596807707f7b4e0e85d102b60b1237ca9f336d02c678864f2a47e0b68bd9e9"
+    sha256 cellar: :any,                 monterey:       "7cd6b8ddb4f24885e2f9c72a4fdaefc55dc213802c0e9a954177644e7c5e2bf2"
+    sha256 cellar: :any,                 big_sur:        "96a0e4b2dfe67e4efaf7cc62ebd565782682ccc22800382b0ca16cdbf3a06f85"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a94441f6bde66b9013c90cc9d251bd0e8350c3c8ff3fc1c7f0a00704248205c"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -80,11 +81,6 @@ class CondaLock < Formula
     sha256 "42ca7b6ce88b6c7433e2ce47ea884e91ec93104a4b754998be498a8e6c3d37dd"
   end
 
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
-  end
-
   resource "distlib" do
     url "https://files.pythonhosted.org/packages/29/34/63be59bdf57b3a8a8dcc252ef45c40f3c018777dc8843d45dd9b869868f0/distlib-0.3.7.tar.gz"
     sha256 "9dafe54b34a028eafd95039d5e5d4851a13734540f1331060d31c9916e7147a8"
@@ -128,11 +124,6 @@ class CondaLock < Formula
   resource "jaraco-classes" do
     url "https://files.pythonhosted.org/packages/8b/de/d0a466824ce8b53c474bb29344e6d6113023eb2c3793d1c58c0908588bfa/jaraco.classes-3.3.0.tar.gz"
     sha256 "c063dd08e89217cee02c8d5e5ec560f2c8ce6cdc2fcdc2e68f7b2e5547ed3621"
-  end
-
-  resource "jeepney" do
-    url "https://files.pythonhosted.org/packages/d6/f4/154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdf/jeepney-0.8.0.tar.gz"
-    sha256 "5efe48d255973902f6badc3ce55e2aa6c5c3b3bc642059ef3a91247bcfcc5806"
   end
 
   resource "jinja2" do
@@ -203,11 +194,6 @@ class CondaLock < Formula
   resource "ruamel-yaml-clib" do
     url "https://files.pythonhosted.org/packages/d5/31/a3e6411947eb7a4f1c669f887e9e47d61a68f9d117f10c3c620296694a0b/ruamel.yaml.clib-0.2.7.tar.gz"
     sha256 "1f08fd5a2bea9c4180db71678e850b995d2a5f4537be0e94557668cf0f5f9497"
-  end
-
-  resource "secretstorage" do
-    url "https://files.pythonhosted.org/packages/53/a4/f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691/SecretStorage-3.3.3.tar.gz"
-    sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
   end
 
   resource "smmap" do

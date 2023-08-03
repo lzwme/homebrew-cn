@@ -1,8 +1,8 @@
 class Libcerf < Formula
   desc "Numeric library for complex error functions"
   homepage "https://jugit.fz-juelich.de/mlz/libcerf"
-  url "https://jugit.fz-juelich.de/mlz/libcerf/-/archive/v2.3/libcerf-v2.3.tar.gz"
-  sha256 "cceefee46e84ce88d075103390b4f9d04c34e4bc3b96d733292c36836d4f7065"
+  url "https://jugit.fz-juelich.de/mlz/libcerf/-/archive/v2.4/libcerf-v2.4.tar.gz"
+  sha256 "080b30ae564c3dabe3b89264522adaf5647ec754021572bee54929697b276cdc"
   license "MIT"
   version_scheme 1
   head "https://jugit.fz-juelich.de/mlz/libcerf.git", branch: "master"
@@ -13,13 +13,13 @@ class Libcerf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a5af0663e797d2634835277e1316894d4b52c86ba2290045e386a75a32fb790f"
-    sha256 cellar: :any,                 arm64_monterey: "7c5953ca89e4a87846cb36b64bc6a47acb2b6c74c913cede5e5a29eb61463a10"
-    sha256 cellar: :any,                 arm64_big_sur:  "b8f41b3d364035d9440a1f9a6cb4dd4ef821df94487e3c9f11076ab4ac3e85cc"
-    sha256 cellar: :any,                 ventura:        "27cac98b6c028053369bc89e6fabab0768dc7aee9ade40b8073484afaa469d47"
-    sha256 cellar: :any,                 monterey:       "16f8d9973dab633e5e759547c9029f8384bde177b5fce1cdb79ac4ed796e5b1b"
-    sha256 cellar: :any,                 big_sur:        "eb5e99339b766382160475399db448f795a7c1c1cab2600dca982527cfc3c4e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c10a47d01e826e5c185efbeec58e1a9f3f4630547954c5781b5b8522f44afa18"
+    sha256 cellar: :any,                 arm64_ventura:  "b3b61822329b217da59ae7255dda43a504ac83256f6fa0ac8420317a2d73c339"
+    sha256 cellar: :any,                 arm64_monterey: "ded6d40e220e6e5258f589f36172ad6e0ddd110b1a38134dca1676b7db43f089"
+    sha256 cellar: :any,                 arm64_big_sur:  "939d2020151a7061a1615ff87b841121662d6be8d6441eb5e41beac6586b9625"
+    sha256 cellar: :any,                 ventura:        "24d10b02769be590e55fca864a080e13fd0def7f2b655a5e0f0861393d036f22"
+    sha256 cellar: :any,                 monterey:       "5338caa2b9422debd382f920fef79a1f0acaedd843ab3924905cf332df708144"
+    sha256 cellar: :any,                 big_sur:        "237d8d549c7bfc15d7d770eff70cfe3df04fe264b156f63bc156ac1a9ddf52a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24d01493cf36431018586ecbef6ad3d7a14837e257188d0f78d18f4c0f77113f"
   end
 
   depends_on "cmake" => :build

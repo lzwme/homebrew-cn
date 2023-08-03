@@ -1,19 +1,19 @@
 class Cloc < Formula
   desc "Statistics utility to count lines of code"
   homepage "https://github.com/AlDanial/cloc/"
-  url "https://ghproxy.com/https://github.com/AlDanial/cloc/archive/v1.96.tar.gz"
-  sha256 "9cab16a2d9b9e915d7f7299f718d13bb7a8e2082255d29747dc79498d5a4a3a4"
+  url "https://ghproxy.com/https://github.com/AlDanial/cloc/archive/v1.96.1.tar.gz"
+  sha256 "f0551d98dcce9ca2e78b984adf8e8cc7c6002037a1155e5294338c435e4a1af1"
   license "GPL-2.0-or-later"
   head "https://github.com/AlDanial/cloc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f2ca644c64871c455ca23dbf4bb2a7484a6ae2efc24499137db2ac4f80637410"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f2ca644c64871c455ca23dbf4bb2a7484a6ae2efc24499137db2ac4f80637410"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d0178f5ea1ba8f6af12d0f3d6922efcef4f36f3b183e0880aff0603f1c4ae047"
-    sha256 cellar: :any_skip_relocation, ventura:        "17612c45a4732801fe0a3611fd814126786546a23f9e5a11f19a60fe41f90dbc"
-    sha256 cellar: :any_skip_relocation, monterey:       "17612c45a4732801fe0a3611fd814126786546a23f9e5a11f19a60fe41f90dbc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6ea7874b57b82a041dca9f18e527007ce44a14836468f4b649e3893618c00928"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "480db584414f9730082099f836d29a80a7443fa14809d1d01e86c714b50a9cc2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5021c054da5fcb30b96538d201b50441b5603e129e7f11a218976b5f617f8359"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5021c054da5fcb30b96538d201b50441b5603e129e7f11a218976b5f617f8359"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0a0374186316bab0298f1d5d701e95e561474cff4c0b5b6970c4de01bbfad346"
+    sha256 cellar: :any_skip_relocation, ventura:        "1923e5435a94209e83684024288f63bb9637af61dd60abb379965be8beb2ecbe"
+    sha256 cellar: :any_skip_relocation, monterey:       "1923e5435a94209e83684024288f63bb9637af61dd60abb379965be8beb2ecbe"
+    sha256 cellar: :any_skip_relocation, big_sur:        "50c890155f3acff66dcdbbeed39626a6c85bf18c58f42f42b1c435c816dc87ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef657f603ad6b5e1d27a9e4ee8484d90426ca4739199cc72a36825911a377084"
   end
 
   uses_from_macos "perl"
@@ -34,13 +34,13 @@ class Cloc < Formula
   end
 
   resource "Sub::Quote" do
-    url "https://cpan.metacpan.org/authors/id/H/HA/HAARG/Sub-Quote-2.006006.tar.gz"
-    sha256 "6e4e2af42388fa6d2609e0e82417de7cc6be47223f576592c656c73c7524d89d"
+    url "https://cpan.metacpan.org/authors/id/H/HA/HAARG/Sub-Quote-2.006008.tar.gz"
+    sha256 "94bebd500af55762e83ea2f2bc594d87af828072370c7110c60c238a800d15b2"
   end
 
   resource "Moo::Role" do
-    url "https://cpan.metacpan.org/authors/id/H/HA/HAARG/Moo-2.005004.tar.gz"
-    sha256 "e3030b80bd554a66f6b3c27fd53b1b5909d12af05c4c11ece9a58f8d1e478928"
+    url "https://cpan.metacpan.org/authors/id/H/HA/HAARG/Moo-2.005005.tar.gz"
+    sha256 "fb5a2952649faed07373f220b78004a9c6aba387739133740c1770e9b1f4b108"
   end
 
   resource "Module::Runtime" do

@@ -12,17 +12,18 @@ class Aptos < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "435004648c2f93ef57b9ae0ffb5b1ee6b402f7e426c29c9b5d92eaca31c2d999"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "400d2f0ef6d1f8d4a37cba5de9e4e2d7e648ee88915b115c4a84643b3af95f3f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f151c62e4a17df36044735942553c73134b0108ca129f70328b6ae727a427259"
-    sha256 cellar: :any_skip_relocation, ventura:        "07fda9ea7c3175892ed4d5553ed100929e15c979bfa0804b1588ff8a87a268f3"
-    sha256 cellar: :any_skip_relocation, monterey:       "0e82772ca8ec148bb97ad25b3d2641b78e501e4ecb26b7295beaa46478ab2b2f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3d4a7582664823d95a6e92961e4c165f1fe19fec632f9b85c6cad6a14256bb15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5b00eaa9a75538041b1dc00fa66c259328d17d0a8b3b740268048c8e95a5a45"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "44e12bd609000d65a93460dec06901b72d8e5b98d461bd6d35e34e9596749479"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b6b4514db447eb5b06e0554582e9382e6e929ff702558cb5a78749e7a76b9178"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c898caeef5d011e6cfd73c602ede693d545941b4ad567e32209fa8fad167f6b0"
+    sha256 cellar: :any_skip_relocation, ventura:        "3e5e9906aedd3945383b713f417c8f29a7af8875341992d318d43982ac67543f"
+    sha256 cellar: :any_skip_relocation, monterey:       "be04f1cbb9ba5db62102674c17bfb3a7c203da1a7c72bfd53b46b56df45b6667"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1ef6743624200bc379d43177787911fdc07b5500a171cdb9d97cb845b852aab3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8bcf677fa1ece3d649e79d6aac6b6cea4b764544adb2bc28196f81596fa2f48f"
   end
 
   depends_on "cmake" => :build
-  depends_on "rustup-init" => :build
+  depends_on "rust" => :build
   uses_from_macos "llvm" => :build
 
   on_linux do
@@ -33,12 +34,9 @@ class Aptos < Formula
   end
 
   def install
-    system "#{Formula["rustup-init"].bin}/rustup-init",
-      "-qy", "--no-modify-path", "--default-toolchain", "1.70"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
-    system "RUSTFLAGS='--cfg tokio_unstable -C force-frame-pointers=yes -C force-unwind-tables=yes' \
-           cargo build -p aptos --profile cli"
-    bin.install "target/cli/aptos"
+    # FIXME: Figure out why cargo doesn't respect .cargo/config.toml's rustflags
+    ENV["RUSTFLAGS"] = "--cfg tokio_unstable -C force-frame-pointers=yes -C force-unwind-tables=yes"
+    system "cargo", "install", *std_cargo_args(path: "crates/aptos"), "--profile=cli"
   end
 
   test do

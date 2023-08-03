@@ -6,17 +6,17 @@ class Pwntools < Formula
   url "https://files.pythonhosted.org/packages/fa/76/aed9a42988214d6af85aa650a90be6225cfc689ad5f5c3c3b61059668f4b/pwntools-4.10.0.tar.gz"
   sha256 "588e89ea678527c0b5b6caeeee7e76e31352e78e2f1cf3dda7bc9acf526e446d"
   license "MIT"
-  revision 3
+  revision 4
   head "https://github.com/Gallopsled/pwntools.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d39bb07f8cee5983b1293965f11e18ed4977a4c56ca3f48bf6f07b751cf6bbd5"
-    sha256 cellar: :any,                 arm64_monterey: "13905dd881e1a210c932d3f83deff461201db46be22133add593eae4693a7b73"
-    sha256 cellar: :any,                 arm64_big_sur:  "eedb4f3519b1adca9eadbf2814c40b38707c11be680250c59e716bd6df572643"
-    sha256 cellar: :any,                 ventura:        "5335031d1e37d4b8d21c37fcb2cc553b3a31bf9146915c02e7979e30ad8085d5"
-    sha256 cellar: :any,                 monterey:       "8a42c68a82b85e67464ca83a8ea9e6a98ef4ce274e1f6b4b9405d1074590fba4"
-    sha256 cellar: :any,                 big_sur:        "8b30ade578c085e6b59329a335603c181375ea3c0d3b6f40a346774f2ccc0346"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "191a7f482f58e20ecd068583f63a937292dfedba2c813890baff2da1b161c521"
+    sha256 cellar: :any,                 arm64_ventura:  "2cb9bb7e0b37582968a3321ed7e5f6f34e270c07f01c7f155558534c9d9c7b19"
+    sha256 cellar: :any,                 arm64_monterey: "38d423827636aa9a1ec46d72723037da76cabd5c944eb6bb2809448b0e4f2ce3"
+    sha256 cellar: :any,                 arm64_big_sur:  "066e95b8b79e021faffcb30a38f66728d1d09721ec76e83fba4058a43cf762d0"
+    sha256 cellar: :any,                 ventura:        "65fd732f2e85524a218491019f1aa8ab575f4207a4009978ed47a7d781f619bb"
+    sha256 cellar: :any,                 monterey:       "03df986046d4c08d542dda2cac90cc7c583cf53f3b68ddd1a581e34b0e2c78f0"
+    sha256 cellar: :any,                 big_sur:        "052657313d53c6a2f22fc31af6c3cebc23545675b6cb4067b2c6c3c89d205bc5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d72d6fd40756e5cafcfb18d2c5ea9515c2c4702dfd42733136eadd98cfd23c81"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -60,8 +60,8 @@ class Pwntools < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
+    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
+    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "idna" do
@@ -90,8 +90,8 @@ class Pwntools < Formula
   end
 
   resource "paramiko" do
-    url "https://files.pythonhosted.org/packages/87/62/cee9551811c846e9735f749dbdf05d4f9f0dbcecd66eae35b5daacf9a117/paramiko-3.2.0.tar.gz"
-    sha256 "93cdce625a8a1dc12204439d45033f3261bdb2c201648cfcdc06f9fd0f94ec29"
+    url "https://files.pythonhosted.org/packages/44/03/158ae1dcb950bd96f04038502238159e116fafb27addf5df1ba35068f2d6/paramiko-3.3.1.tar.gz"
+    sha256 "6a3777a961ac86dbef375c5f5b8d50014a1a96d0fd7f054a43bc880134b0ff77"
   end
 
   resource "plumbum" do

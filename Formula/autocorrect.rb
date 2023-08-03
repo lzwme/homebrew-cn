@@ -1,19 +1,19 @@
 class Autocorrect < Formula
   desc "Linter and formatter to improve copywriting, correct spaces, words between CJK"
   homepage "https://github.com/huacnlee/autocorrect"
-  url "https://ghproxy.com/https://github.com/huacnlee/autocorrect/archive/v2.8.0.tar.gz"
-  sha256 "933cdceb4d7d21fcc05181ad0018fbcc4226c34af69605e25b21e39b7ddfd17c"
+  url "https://ghproxy.com/https://github.com/huacnlee/autocorrect/archive/v2.8.4.tar.gz"
+  sha256 "e176fe00e2890e499e48fec4412142f2f3f4f799ce6d348b5492d65759b1d2f8"
   license "MIT"
   head "https://github.com/huacnlee/autocorrect.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b5911c3006a7ae500c9223956cc7f05ba46b146a5e0f77257d2b6a4c9319ce23"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d8d4aeb5742ebb769815ae62b0458dc4ef3d10421f06adafc7de3de5663f9895"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1ccd1cad87bdde9d7d2ae72a002cd0c3c0b1c5612783cc21f85733ecfa529161"
-    sha256 cellar: :any_skip_relocation, ventura:        "f4c778d556a46d92e189c61c2ce589695bf5d6ec1d7a0e33ae3a05d17bad29ea"
-    sha256 cellar: :any_skip_relocation, monterey:       "7825261c38ce8f38d6f7fdaea27cbd89d5f6348a4a73904e45bbc15a3ff7da14"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ed165c3c0674e4998309307509bd2450ad09ba5d83cd52a130850f527ba43b08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29a665ada7227f97a84515d283602534b43738f77d8922d7259fefe8b3475200"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "94ffccd8e930262e010233ccf5b2d2ee10171e61cfd8fedfa5b572294283592e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1ecb551c917d3fa363c7af8819dc034f9886608e869ec86bbe1b58bbd7e080c8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "88789d8d03bba5e3b3f11c81a85a9e61b8d7d86ab5031d728e730b55da4b0c29"
+    sha256 cellar: :any_skip_relocation, ventura:        "a53ae80ce71ee7afced96ea08945857e455469978ff9460a9a61afd7bb1789ea"
+    sha256 cellar: :any_skip_relocation, monterey:       "257e2e27727c4d9b009ce2a603193aecc04b0689f9d7bb8f1112018ee924275f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "94d82168bae776874f0e2bcbf103389c536edb93c1baa323109ab4b0881fd4be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a828d198d2ca2ce1e9cc1ef4e66d477a969a7c04b8d33827eb0756477ce72083"
   end
 
   depends_on "rust" => :build

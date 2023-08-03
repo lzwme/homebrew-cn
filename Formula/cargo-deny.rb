@@ -1,19 +1,19 @@
 class CargoDeny < Formula
   desc "Cargo plugin for linting your dependencies"
   homepage "https://github.com/EmbarkStudios/cargo-deny"
-  url "https://ghproxy.com/https://github.com/EmbarkStudios/cargo-deny/archive/refs/tags/0.14.0.tar.gz"
-  sha256 "b100e36c5eb4405067ee2350aea7b5089e9e72f787603fdc3929f6586a69b0f4"
+  url "https://ghproxy.com/https://github.com/EmbarkStudios/cargo-deny/archive/refs/tags/0.14.1.tar.gz"
+  sha256 "0579a6469688360d0bfc1245c3455335b0c2f8ae6c40645fcf0e8e1a700eb7f6"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/EmbarkStudios/cargo-deny.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "382d09a62741a6e9a28136758009936a27533cc111ca2704a2e211f1fdd3cdc5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d618f66cc33822684f57930c7607aca0700999ef1fc3612925419ea8f9b550be"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a120bdbd19ad98e7ec92a4eee30979a184bddbcca7f8312f95498a3f44a53233"
-    sha256 cellar: :any_skip_relocation, ventura:        "80cc4b4498b33cc6936972a4d99c0d4f3e56aa72309b9bfae28d46ae636f8996"
-    sha256 cellar: :any_skip_relocation, monterey:       "8aaef73a624ab81baa858e2a2007e1afd003b18394fe7791da74835bb1779b9d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "26b8e0ca5d49a1d978427a880e509a0068d1834ea8f2b9b0cffceee216708522"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f575a73d00384d6c5ced0f6f8a3721d6366c6c9416a812ad00c1d173da86e85"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "81ac33b5903ce5dae20066ae5a4865ec5a8caba50492798ecfb3e6906f3d2337"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b731c610d73e73e974c57204422d23da817c0c9dcb2360f121ade26e96275447"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "819c34226b9524138c47f3938f572189ba4e839001b309f5bf01324f93751074"
+    sha256 cellar: :any_skip_relocation, ventura:        "d2cbfa46ef6b33567e646059c3ff6ba3411d9782ab8448ebe6859e4df90ec0bc"
+    sha256 cellar: :any_skip_relocation, monterey:       "cd27b1c607c4426c94970de6b970afe4046202d2ec62d44de15050b93448a362"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a7edc5b2810ce70d2b24321d1429630a8ab01a2b819e486e09f1378f078923f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d756524a9d4cee78382e0b9b3958e6e15316594f694604783bc04694d3117a86"
   end
 
   depends_on "pkg-config" => :build
@@ -49,7 +49,7 @@ class CargoDeny < Formula
         version = "0.1.0"
       EOS
 
-      output = shell_output("cargo deny check 2>&1", 1)
+      output = shell_output("cargo deny check 2>&1", 4)
       assert_match "advisories ok, bans ok, licenses FAILED, sources ok", output
     end
   end

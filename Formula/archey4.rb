@@ -19,8 +19,6 @@ class Archey4 < Formula
 
   depends_on "python@3.11"
 
-  conflicts_with "archey", because: "both install `archey` binaries"
-
   resource "distro" do
     url "https://files.pythonhosted.org/packages/4b/89/eaa3a3587ebf8bed93e45aa79be8c2af77d50790d15b53f6dfc85b57f398/distro-1.8.0.tar.gz"
     sha256 "02e111d1dc6a50abb8eed6bf31c3e48ed8b0830d1ea2a1b78c61765c2513fdd8"

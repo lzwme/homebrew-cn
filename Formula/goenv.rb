@@ -1,8 +1,8 @@
 class Goenv < Formula
   desc "Go version management"
   homepage "https://github.com/go-nv/goenv"
-  url "https://ghproxy.com/https://github.com/go-nv/goenv/archive/2.1.1.tar.gz"
-  sha256 "4879470b41ea1ca4dccb8f2889f5bd37355526a106db434650be70cb9f5c4517"
+  url "https://ghproxy.com/https://github.com/go-nv/goenv/archive/2.1.3.tar.gz"
+  sha256 "e35f5cd7fe1f5283c6888ea99888509110d1707ca390ceca484ba34712cd8eab"
   license "MIT"
   version_scheme 1
   head "https://github.com/go-nv/goenv.git", branch: "master"
@@ -13,13 +13,13 @@ class Goenv < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "700e255e5701fe87d6e1018c53f9bf08f2f7cf583596a411ad12cf58554a3e45"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "700e255e5701fe87d6e1018c53f9bf08f2f7cf583596a411ad12cf58554a3e45"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "700e255e5701fe87d6e1018c53f9bf08f2f7cf583596a411ad12cf58554a3e45"
-    sha256 cellar: :any_skip_relocation, ventura:        "7f7c8744bdb61f6da7fd67a3fa8746c9ae75fff164a8dc7f05d2734274a338b4"
-    sha256 cellar: :any_skip_relocation, monterey:       "7f7c8744bdb61f6da7fd67a3fa8746c9ae75fff164a8dc7f05d2734274a338b4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7f7c8744bdb61f6da7fd67a3fa8746c9ae75fff164a8dc7f05d2734274a338b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "304e0a90916d585deb8ec0d05829809dc797041d673244990a91b2207f8edd29"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e9196ee2b40a159e7c832351b64c07224a2c4aed8000cb8988cfa14b0305529"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0e9196ee2b40a159e7c832351b64c07224a2c4aed8000cb8988cfa14b0305529"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0e9196ee2b40a159e7c832351b64c07224a2c4aed8000cb8988cfa14b0305529"
+    sha256 cellar: :any_skip_relocation, ventura:        "44d27b2665526fac4b8f1d40d3479e6f5c929757ed875fc5cf002ad5c60cb131"
+    sha256 cellar: :any_skip_relocation, monterey:       "44d27b2665526fac4b8f1d40d3479e6f5c929757ed875fc5cf002ad5c60cb131"
+    sha256 cellar: :any_skip_relocation, big_sur:        "44d27b2665526fac4b8f1d40d3479e6f5c929757ed875fc5cf002ad5c60cb131"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad588feaeeadd16f8b105f3cc0af3ea1aef0dcb6a7c9cea5826d22cd370987e3"
   end
 
   def install

@@ -3,20 +3,19 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/64/95/e9456f9936ba088b68f2ac1a5dbc207fdb277d7ee7caf6247838532e68d3/streamlink-6.0.0.tar.gz"
-  sha256 "05e3fe60e06d4f3d43fff2c304c85afb4ef25577600477cce2fe1a54d1f3c00c"
+  url "https://files.pythonhosted.org/packages/41/71/1349b3230de702b65e792718b193102b065209c8332799743fd50d7a569f/streamlink-6.0.1.tar.gz"
+  sha256 "d10a6297f6e1d85f96686d33bf8cb1133c7a7b57efdedf7179dfa7853f8d0bb5"
   license "BSD-2-Clause"
-  revision 1
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c6c937e361797715930fdcaf55ca5e55a7c9528fa48b1aed9212ac35ccc85311"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b34cfc44bb1f1d440f78087f95be0aefcbd5fb05c8e5f0841c8321a5005a1260"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d2ccffd7ddb051aa7459e6897c5123e7648668e7e9d5fd5153985a7935256823"
-    sha256 cellar: :any_skip_relocation, ventura:        "0a7a29de5bd3f0c58a9c59072adb699e5781cf05505bca176134be63d9d64bda"
-    sha256 cellar: :any_skip_relocation, monterey:       "ecd04521687612dd3ca4357b823593bf1cdccd27f9bb1ccec4d71b532a59ce8f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "febdba84b2110011c9f7beddd467d0bc7983eea801a2fc5ab6b2dcdb285e5823"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0eadadbe142f4034d4803b93c4d614397065d8a1e5ddac33c289ef053ee390c1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d64cc91abb3929b57e053fc7e5c4fa4a6828a1c9b21cd0a46fddea5d00e71bc8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c92a8e3a16f9647e5a5ae50b2461d742be53c05c3c23f461a26bdb574e78b28"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "728edf0037be01d25b08ef54503df1dc2dcbf90326e961d64bf9144255690ebc"
+    sha256 cellar: :any_skip_relocation, ventura:        "a9389ae1de787a96a25b996f73310db522a0750d137c292cf1e0445c7d3e8640"
+    sha256 cellar: :any_skip_relocation, monterey:       "c78d4a49f64d07d6131d230763f2f55daa2451cf35b5f2a58f80eb6885a53302"
+    sha256 cellar: :any_skip_relocation, big_sur:        "624e00a7bab655e8e781db3d450d280ee908b0078046755cf489685294ad23c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25b04a4db697b363ef475403e2c5436b134fceb7d26bd199ceee6a26559b7354"
   end
 
   depends_on "libxml2" # https://github.com/Homebrew/homebrew-core/issues/98468

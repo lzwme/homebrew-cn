@@ -3,10 +3,9 @@ class GrpcAT154 < Formula
   homepage "https://grpc.io/"
   # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://github.com/grpc/grpc.git",
-      tag:      "v1.54.2",
-      revision: "8871dab19b4ab5389e28474d25cfeea61283265c"
+      tag:      "v1.54.3",
+      revision: "868412b573a0663c8db41558498caf44098f4390"
   license "Apache-2.0"
-  revision 2
 
   # The "latest" release on GitHub is sometimes for an older major/minor and
   # there's sometimes a notable gap between when a version is tagged and
@@ -18,13 +17,13 @@ class GrpcAT154 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "775fea94a0eeefad3d06cdae2755f1e90aa24587c822d817c5eaee5cd2ba2fa8"
-    sha256 cellar: :any,                 arm64_monterey: "2cb19003000ed1349a02f39d4da38f8f9d756067432be20b2cb11ad518723b19"
-    sha256 cellar: :any,                 arm64_big_sur:  "17a2506e7d24766720920f2d2c0d44135ad81fb9ea154f413540ccb1090c7841"
-    sha256 cellar: :any,                 ventura:        "f589f329facf71cfc71ea22420a86db3c19527cff706bf3d44c147d089afc7d4"
-    sha256 cellar: :any,                 monterey:       "7e44ee6f0a402c7f296d14874b6e1e0a3db99391db1f833217d00016c1f52c5d"
-    sha256 cellar: :any,                 big_sur:        "dd998b5ab6d30cf4feac44705a48cdadd12142f15c6103752e739964b42f3594"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab0c381e613c4bf4fb7acdf23cb8a6b19348bda1d107f0464ce27c85d31b0c9b"
+    sha256 cellar: :any,                 arm64_ventura:  "bfa00d3fae2fa2979f96586eb27b14bfd7b80c03d6063d096da4e66663dc333f"
+    sha256 cellar: :any,                 arm64_monterey: "3af3788a10d4f87457e49701295175e7d7ea56ff3130aa86dde7e5509d0133b2"
+    sha256 cellar: :any,                 arm64_big_sur:  "30ae9d7735656bbdcd1e93a1738d684ecb6d05d878217ad98279d3676cc9ab51"
+    sha256 cellar: :any,                 ventura:        "64f3093de3222d52d44df48bb181d70d977306e115adaa9ce81cfc8329d26479"
+    sha256 cellar: :any,                 monterey:       "9a40ad20338637b7b9a4faee58bef5b60c73cbe985482933e08dde0c1fb016e1"
+    sha256 cellar: :any,                 big_sur:        "1594c126ff699b67f58a15c670bd2da87f2d4cc07d2200acbb5d831d0969536f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "163546cd8b26a7784041581a12fc79bf01c2484b2805f988686ca7a059b15ecd"
   end
 
   keg_only :versioned_formula

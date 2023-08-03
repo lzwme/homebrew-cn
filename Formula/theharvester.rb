@@ -338,13 +338,7 @@ class Theharvester < Formula
 
   def install
     inreplace "setup.py", "/etc/theHarvester", etc/"theharvester"
-    venv = virtualenv_create(libexec, "python3.11")
-    venv.pip_install resources
-
-    bin_before = (libexec/"bin").children.to_set
-    system libexec/"bin/python", *Language::Python.setup_install_args(libexec, libexec/"bin/python")
-    bin_after = (libexec/"bin").children.to_set
-    bin.install_symlink (bin_after - bin_before).to_a
+    virtualenv_install_with_resources
     bin.install_symlink libexec/"bin/theHarvester" => "theharvester"
   end
 

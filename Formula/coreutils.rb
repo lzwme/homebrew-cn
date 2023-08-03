@@ -45,7 +45,6 @@ class Coreutils < Formula
   conflicts_with "gfold", because: "both install `gfold` binaries"
   conflicts_with "idutils", because: "both install `gid` and `gid.1`"
   conflicts_with "md5sha1sum", because: "both install `md5sum` and `sha1sum` binaries"
-  conflicts_with "truncate", because: "both install `truncate` binaries"
 
   # https://github.com/Homebrew/homebrew-core/pull/36494
   def breaks_macos_users

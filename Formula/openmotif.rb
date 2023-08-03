@@ -34,9 +34,6 @@ class Openmotif < Formula
 
   uses_from_macos "flex" => :build
 
-  conflicts_with "lesstif",
-    because: "both Lesstif and Openmotif are complete replacements for each other"
-
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
     url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
