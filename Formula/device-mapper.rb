@@ -2,8 +2,8 @@ class DeviceMapper < Formula
   desc "Userspace library and tools for logical volume management"
   homepage "https://sourceware.org/dm"
   url "https://sourceware.org/git/lvm2.git",
-      tag:      "v2_03_21",
-      revision: "54efdab230ec4f6d10ffdb9170b07c0664c157ea"
+      tag:      "v2_03_22",
+      revision: "016e469caf856f1eb8dde39df0d1aa2e74225aed"
   license "LGPL-2.1-only"
 
   livecheck do
@@ -13,7 +13,7 @@ class DeviceMapper < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "71a24cd1c4d310295199c9b510ad811bbfadcc15d7abbaadb97edcb67a366010"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e7ee0a1ebe03e55ba39f7202ecbf79c6a2b5fc76efccc83e8eec471cbd62b9ed"
   end
 
   depends_on "libaio"

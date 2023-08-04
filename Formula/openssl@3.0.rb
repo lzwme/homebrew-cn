@@ -12,13 +12,14 @@ class OpensslAT30 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "1e71dd602f0313b39c7b6fd860a7472db64a14f79fd89d6863f0b2f7564468ea"
-    sha256 arm64_monterey: "c0a0132bd50612aac103f218088c988759d87f92b2873836dc691d6aa5df11fc"
-    sha256 arm64_big_sur:  "7ca63f6587b4f2abe9c927581222518a3e1558f40ee0fb3e0dc790059dc9f421"
-    sha256 ventura:        "9e516b20c72d6f24a889c5e063cf69cb88867130df0ab7992b9e21ae50d1cd12"
-    sha256 monterey:       "25d7d410bf0de7fbd3288f00a2c03978619e065ba7991cd0c629237cc5972dfc"
-    sha256 big_sur:        "0367e9cea83ec987268689419dcbf15e4906c441361f7bb5a107d32d17e0ee40"
-    sha256 x86_64_linux:   "b1a8ec861365cd144e532fee983de0468111648c97802930ddea03c9aef0f785"
+    rebuild 1
+    sha256 arm64_ventura:  "9256e1d5a435207d263cc790357897437d3a66436e71ea5f71dc57afbc7dfaea"
+    sha256 arm64_monterey: "9c3e38fd016ec89c2153f7f1e13dd5ed3e9ab5697561fe3b2e1cb31e7d6d4cb3"
+    sha256 arm64_big_sur:  "9234fe3c799a8e00cb013e7b2f738189f50e33264233c4dccb44e9e01ee92b67"
+    sha256 ventura:        "ebc7ffbfec57a65cfd2cac53380ddc2de6c570ab8077a2243c8646c9791c4359"
+    sha256 monterey:       "316b4efd3e44f445154cde034e4f88fc657d7135f09b3b9a91865ab11f0423f1"
+    sha256 big_sur:        "5b061b324549d3463dd1649c3deab42895389fdf5e08575e0150b10313d83363"
+    sha256 x86_64_linux:   "e567e3aff9f1d9f3ec184af01f9617feb21beb77b4f7714276730871583297bb"
   end
 
   keg_only :shadowed_by_macos, "macOS provides LibreSSL"
@@ -70,11 +71,12 @@ class OpensslAT30 < Formula
 
   def install
     if OS.linux?
-      ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
+      ENV.prepend_create_path "PERL5LIB", buildpath/"lib/perl5"
+      ENV.prepend_path "PATH", buildpath/"bin"
 
       %w[ExtUtils::MakeMaker Test::Harness Test::More].each do |r|
         resource(r).stage do
-          system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
+          system "perl", "Makefile.PL", "INSTALL_BASE=#{buildpath}"
           system "make", "PERL5LIB=#{ENV["PERL5LIB"]}", "CC=#{ENV.cc}"
           system "make", "install"
         end

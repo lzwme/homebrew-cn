@@ -1,8 +1,8 @@
 class Apt < Formula
   desc "Advanced Package Tool"
   homepage "https://wiki.debian.org/Apt"
-  url "https://deb.debian.org/debian/pool/main/a/apt/apt_2.7.2.tar.xz"
-  sha256 "095c92c82fceff4cc02ddadc2477859b8263c88d3015d6799aa72e3301359b2f"
+  url "https://deb.debian.org/debian/pool/main/a/apt/apt_2.7.3.tar.xz"
+  sha256 "9ad2eb2c4f25ce3535d9a5d8056e1fe932d6dbb58c2647cd5fc8df8c9f8def53"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,7 +11,7 @@ class Apt < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "242f6780d5d0a3fc5650d14e0ca801fb767f64a68e9014e69b28cd33fb334a13"
+    sha256 x86_64_linux: "13103b246df7bed9e3b04b95d01bf0990645732e6698fe03c79832d8691efa4b"
   end
 
   depends_on "cmake" => :build
@@ -93,13 +93,13 @@ class Apt < Formula
   end
 
   resource "XS::Parse::Keyword::Builder" do
-    url "https://cpan.metacpan.org/authors/id/P/PE/PEVANS/XS-Parse-Keyword-0.34.tar.gz"
-    sha256 "1033ddb409924d9d42b38304a1d79745a0434abc6b0491eb12b6c8bb96f1d6c1"
+    url "https://cpan.metacpan.org/authors/id/P/PE/PEVANS/XS-Parse-Keyword-0.36.tar.gz"
+    sha256 "3a4eabeb561e8df50c49f0930a4330e6871df81406abc7a891fb086e364be744"
   end
 
   resource "Syntax::Keyword::Try" do
-    url "https://cpan.metacpan.org/authors/id/P/PE/PEVANS/Syntax-Keyword-Try-0.28.tar.gz"
-    sha256 "ccad5f9d82a0b016252ed52da0270c80d54dc4289e09e3543d47a50b78fa02c8"
+    url "https://cpan.metacpan.org/authors/id/P/PE/PEVANS/Syntax-Keyword-Try-0.29.tar.gz"
+    sha256 "cc320719d3608daa9514743a43dac2be99cb8ccd989b1fefa285290cb1d59d8f"
   end
 
   def install

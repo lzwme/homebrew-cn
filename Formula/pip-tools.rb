@@ -3,18 +3,18 @@ class PipTools < Formula
 
   desc "Locking and sync for Pip requirements files"
   homepage "https://pip-tools.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/4b/fe/127e9475a18b0c98005d474db3804a2408489d6a3cc60282b3949bf191e7/pip-tools-7.1.0.tar.gz"
-  sha256 "f6ead499e726c8cfee04b2dea6282a9faf29663c378d9a4aca2ea6b86c8ec715"
+  url "https://files.pythonhosted.org/packages/b9/c3/1aaa83575efca3cdd2a237d2371a7179af66a3e39f3922df4b657e607f03/pip-tools-7.2.0.tar.gz"
+  sha256 "616488b539e14b8aa85436ed597a33c291f4885c1d2e0bec97400abe5aff2c0d"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "09e492e1a0af5e344fe97d556fea8fb126d5788a691f629e61074424ea7d6c2f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a6997de408096a2481aabc898e48071e710c73503a768e792e682fad685548b1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b1c23efb4f52da77d17f60a0a6bc6eff2eb4f3aa08b18124a462b02b90b0fe88"
-    sha256 cellar: :any_skip_relocation, ventura:        "1fc1e70ff2f4befddc8e1e7f820a9126ee246aba1acecd27b1a2b3c1836cc1d1"
-    sha256 cellar: :any_skip_relocation, monterey:       "80d710a0f8dbbc478cb7c327622e5e3a94f3a2f119a5d003b2d35713e15b5ac7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1ff382e94d4b22755568f7083f01fdd6bdb827743849808f0888ec21424b0529"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c337491937d8385f23cf3bd2cafbe673093178d2ed342519f9bcbd28a3bf9a43"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "41259566438f84207a62653977fa681cf6cf376dbb5dea229ba44edd2de6f62e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5e692354f09e707f873870a69e4df3b3294719a0b8a9f51f59dd894ffce48926"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "88b8029c1b48036247193981518e4af27ed7e36000931dfb67b7592e05592619"
+    sha256 cellar: :any_skip_relocation, ventura:        "92055ed7178d42ecb649555a0f1944d1626d4f235ac0750c469ab0e9eae0758a"
+    sha256 cellar: :any_skip_relocation, monterey:       "e9ceb52373ded2380995f49e50dbe787299b35a4a0df740b1c4efe4caf0b74ba"
+    sha256 cellar: :any_skip_relocation, big_sur:        "31b92331a45daa172bfc73af23a4f701efb233248fa818e7a97a50f22e65ec03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e1a7aad2ebb79d79cd431672aa7fc8e8c58d84c04b20dd9745b4716a614e4d4"
   end
 
   depends_on "python@3.11"
@@ -40,8 +40,8 @@ class PipTools < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/fc/ef/0335f7217dd1e8096a9e8383e1d472aa14717878ffe07c4772e68b6e8735/wheel-0.40.0.tar.gz"
-    sha256 "cd1196f3faee2b31968d626e1731c94f99cbdb67cf5a46e4f5656cbee7738873"
+    url "https://files.pythonhosted.org/packages/ec/34/903929e15b2657335b2ce8723d92fc804d3569b7ac0f1f8877ed1a7b2024/wheel-0.41.0.tar.gz"
+    sha256 "55a0f0a5a84869bce5ba775abfd9c462e3a6b1b7b7ec69d72c0b83d673a5114d"
   end
 
   def install

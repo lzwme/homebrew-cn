@@ -6,16 +6,16 @@ class Esptool < Formula
   url "https://files.pythonhosted.org/packages/a3/63/c757f50b606996a7e676f000b40626f65be63b3a10030563929c968e431c/esptool-4.6.2.tar.gz"
   sha256 "549ef93eef42ee7e9462ce5a53c16df7a0c71d91b3f77e19ec15749804cdf300"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3d58bd53a3972dbddd8a3c9e7b90f85ab827f5ffa10b1c0c6de6ff5bffdc682a"
-    sha256 cellar: :any,                 arm64_monterey: "56b7c807266fc7a9e402add60cbfa491f4f1d682ed99f80c66ab527b1f9d6dfc"
-    sha256 cellar: :any,                 arm64_big_sur:  "38a82a94b2dfc2d669ceb829529be68b70e66a3d2c63591c60fd7ec63d009197"
-    sha256 cellar: :any,                 ventura:        "ecf35644361b06e360659960f0b265885a070c477e7117d6e6bc600f05334176"
-    sha256 cellar: :any,                 monterey:       "0b4fe9838fad14275de730630ad6f380639798bded59d1c22f5add980828fe8d"
-    sha256 cellar: :any,                 big_sur:        "85b6b564558502a6db9826005109778fd9d99e9303c4473706b7fb3dee9752b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "97845a3f3b518a0149ebc8de71dce7471fc793b6baf41fc80c80c64619ba9164"
+    sha256 cellar: :any,                 arm64_ventura:  "b8b8eaeb001101b229a5622b29bcff41307b801c94e27b483837d4fc454a1247"
+    sha256 cellar: :any,                 arm64_monterey: "c26633a5d6a340b8c8b79531a27692b63568e1f765c01ccb67e37a7699f7e02d"
+    sha256 cellar: :any,                 arm64_big_sur:  "ff4b44bd20e6673f4b84085f32d4224a8bf5829269ea2cb814b78e40fd5b8335"
+    sha256 cellar: :any,                 ventura:        "b5da164409982e5ae1c3d40eba88f00b332759a1e743069b719229e81a010eaa"
+    sha256 cellar: :any,                 monterey:       "cc6be4ae88f6188365e4a341da92d44976a687ba87edb43b8b67317936468f48"
+    sha256 cellar: :any,                 big_sur:        "54b8cc955077dc7757829f4cb025df18f8965b41413a00f4bdc2d261f2870af6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b62874bbbaf52a07f567773efb7d8dd20530d025b851e61acf218e51d65200b"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -34,8 +34,8 @@ class Esptool < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
+    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
+    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "ecdsa" do
@@ -54,6 +54,9 @@ class Esptool < Formula
   end
 
   def install
+    # Workaround to avoid creating libexec/bin/__pycache__ which gets linked to bin
+    ENV["PYTHONPYCACHEPREFIX"] = buildpath/"pycache"
+
     # Ensure that the `openssl` crate picks up the intended library.
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"

@@ -1,20 +1,18 @@
 class Kickstart < Formula
   desc "Scaffolding tool to get new projects up and running quickly"
   homepage "https://github.com/Keats/kickstart"
-  url "https://ghproxy.com/https://github.com/Keats/kickstart/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "98f25f870d6b1bff9bb22a485cf307d42a1d4243550080cf0d122c6d71c23ded"
+  url "https://ghproxy.com/https://github.com/Keats/kickstart/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "5aae308d7d6aa021ddf7f5dc882f8199a5d4f4db8cb8f7175c1c1ac831075a8c"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1b1dcc991129ca4a822b8b8ac5e8be164a7bf65b6ca56fce267300fe0770c6ea"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fdb5a1637f755d3d0c4f7db16d136c6a854f40fc5edfa19a351b200576f572ef"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dd5aa5cde9dbf7f7e00616648d0ca0aff07ba007e4d117fcee57b7c837dc19d8"
-    sha256 cellar: :any_skip_relocation, ventura:        "23355c3677b666b7079674e5c8604a0b26242dae04cd9b2448b70a8261009dc7"
-    sha256 cellar: :any_skip_relocation, monterey:       "2e0c6a85d535ee38876825adb4dd6eb9ea959534bc125e796ffe3625bee10940"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a339668d1c7d9ded0f1c061cea821dfe3090b734f400e162c7746d5ca6b5e013"
-    sha256 cellar: :any_skip_relocation, catalina:       "5beff86259f7c42160e4d9cb535b4edae33966cd5aa8468c4a420c614f5a9197"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "731d389d83ec12043779f96dbee9049d09a97768a2c2d6e1993a3ae10ee0a181"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "640c86a9964ef35f4462fee0a1a97f6be545528885b722045cfb8c35a5fd9cef"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f70613fe6a2dc6100db688df22ab854d808180832a573bcdf232e9d0585defb3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ad4c7fa8afdb4e95808d2aea6ec5d20e65515873dd7e03623a9b9df24834b874"
+    sha256 cellar: :any_skip_relocation, ventura:        "4dfc07fc0fab079bf8adca81c5c1effd578b383a8037830b6be304f0d92064c9"
+    sha256 cellar: :any_skip_relocation, monterey:       "ebf772cfc77e3df1386cc001df2db0f5c33f6561fc49cfadd9439d85748aaef7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1790f244bedb54c169a788648144ec0568a748f4e7f74baa066888280c46e26d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc36827caf4d0dac0558d7a5b609f43fd6ad064a399f3c79578eeb208f67b4bb"
   end
 
   depends_on "rust" => :build

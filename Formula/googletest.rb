@@ -1,18 +1,18 @@
 class Googletest < Formula
   desc "Google Testing and Mocking Framework"
   homepage "https://github.com/google/googletest"
-  url "https://ghproxy.com/https://github.com/google/googletest/archive/v1.13.0.tar.gz"
-  sha256 "ad7fdba11ea011c1d925b3289cf4af2c66a352e18d4c7264392fead75e919363"
+  url "https://ghproxy.com/https://github.com/google/googletest/archive/v1.14.0.tar.gz"
+  sha256 "8ad598c73ad796e0d8280b082cebd82a630d73e73cd3c70057938a6501bba5d7"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "78afe4f6baa4bd3bb904aa4113210e106c70281c10d7d809972b137e0f3b733d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3d0360de5b6aa737b19633fad06f8a2a7463211681c530056c58b620262bd093"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3bea1b0a8521f01edb4ff182f41438817132cff152956b45b724a40bad323972"
-    sha256 cellar: :any_skip_relocation, ventura:        "c94b1fd4180b91725513c61019b8f69d751ca935c7720e3e3d1894570f205c90"
-    sha256 cellar: :any_skip_relocation, monterey:       "c5102924eb2ae444391a464993750439bb266ba1ef1e7ee5265a2c706bfa0650"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6f7e93be6200609ff7150378e78135588f6266db247b50b301b432e7af21c5fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2da0c509c2d6a62843c4284b455d00a674162ace65661dd40dfad6f92fb55f48"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "15a5ec3a239e915d9ffa09883788291300a8b28c99c6a542f73b0aaae7f7594b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "43c6ca8b292fdaad1a8595d7feb628b81f1bd0dc75c13f87375ba870bde7bfad"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cb8c62a85c6cd68a5a08ff2a57c4ddc4311eebf3f02b749a8dbc92bc29f72c54"
+    sha256 cellar: :any_skip_relocation, ventura:        "125c69b7bc9513a2ba5d11734f8c02d4b0a4ac9afd36e6cdb34cfd02cf2c3750"
+    sha256 cellar: :any_skip_relocation, monterey:       "e7c803b5bbdced9795b38315652dc5fe0fef945e0cd14eadc9c96acb201c91f6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "82bc4dfc2b1148b9ba6ae010859521465bd61cfc90722536f7cdc16121425f7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed04c3d4046ec562ed7ff57fe6f58f1e359ac08959849e6656668e7f29a6bbde"
   end
 
   depends_on "cmake" => :build

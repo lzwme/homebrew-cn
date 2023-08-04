@@ -1,18 +1,18 @@
 class Gleam < Formula
   desc "Statically typed language for the Erlang VM"
   homepage "https://gleam.run"
-  url "https://ghproxy.com/https://github.com/gleam-lang/gleam/archive/v0.30.4.tar.gz"
-  sha256 "8c2d8155e4f4cf4d3ca3e85892b6e5bed0930c491a1384b1018a39afec7949e0"
+  url "https://ghproxy.com/https://github.com/gleam-lang/gleam/archive/v0.30.5.tar.gz"
+  sha256 "c698a9cbd2766f6df648a49edfb9c9e4f5cebb4b3d469ec7b0b8f5925fe83771"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1927fd55091f5fca5b4a11cd1cf558c21d057509b25d312ab04676a9403d2b27"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ff4cede4df7c41143a77f2d37a8df992c7c26430d9b4dc7a66d1b2d3403b86a5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2c0c5da0309f2b0248da149b928e60e2878896dca532ccdadffab864a0f80644"
-    sha256 cellar: :any_skip_relocation, ventura:        "34957daab322030948dfcd8a9d3d552025e2043cd09ca47f794ab2f7c37c12b9"
-    sha256 cellar: :any_skip_relocation, monterey:       "de0b0c018dc9c02420513d8f444ea19616903ca3f1469b072e2a68cb7276faee"
-    sha256 cellar: :any_skip_relocation, big_sur:        "51a3d78b082e499592ca8254a3a2bba9e51f6e3a1f2d9d479641102e52f32950"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13fa5ea7cbdad829a2f0be6c8467ebd61448352f6216c18068f7d88a985f9a3e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "30e75740a6f8530b55a9cb1c8f9e1faaaa9e9892794707d2778df94301eb3986"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "651a1cb020a7c5f6294d622d13f7d3f8eb80cf279019e7d73e7a57d97ba1fba1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "305a05bc555e229c34452799733ec4a0b2c0c6a43385e2e3fb2044c8951539bf"
+    sha256 cellar: :any_skip_relocation, ventura:        "0a796fc992ee7ed1e3ce0350815357a25aefd3e0f8b883075349eecf70cc3069"
+    sha256 cellar: :any_skip_relocation, monterey:       "130d1b34fb9915947594ff44e906ec4a60dd0d01624e99e30973599201db0b19"
+    sha256 cellar: :any_skip_relocation, big_sur:        "203b6fbf78fc6481840f1d2c96492ffe7418aca0e2f0241574b36af0d8fbe37f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2bc90ee1581e3c37830036dfa9e232a869b4e2a3597262bcce06e2a78d7bcefd"
   end
 
   depends_on "rust" => :build

@@ -3,20 +3,19 @@ class Fava < Formula
 
   desc "Web interface for the double-entry bookkeeping software Beancount"
   homepage "https://beancount.github.io/fava/"
-  url "https://files.pythonhosted.org/packages/99/23/0804b8cdc619c85da93e5e50c08462165c485540fd6688bf97961185cb7c/fava-1.25.tar.gz"
-  sha256 "dd2c45bef619ba960eb1053f9feceade16a6c9669a37d82ea2257c926f661e33"
+  url "https://files.pythonhosted.org/packages/fe/6c/bae516819ab5a693d6eef91caed99135ee55ce60bec1b90e616f23b42c3b/fava-1.25.1.tar.gz"
+  sha256 "4496cfaa3ea15ea7fc0f91bcceb83404061fc524437d4811346c17f8b6653cf6"
   license "MIT"
-  revision 1
   head "https://github.com/beancount/fava.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1806d5d29c2f40738c82d12c7b74901c9cbcf532f3bb9306f573cd1bb80cf610"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "32d13ab720a1822a3a6de4bb09895136dae1213cedeb30c6737a285f5518f5ef"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e1733cbbde1ee82b851a84572b5041876ec9aa64881ce4ca3215521c1f26062b"
-    sha256 cellar: :any_skip_relocation, ventura:        "2f0b423f2600224faf57eea3bbad09c68affa462cdd98cfba0c1265e484b460b"
-    sha256 cellar: :any_skip_relocation, monterey:       "5bdbaecf7cad802dfac12f65be6b2eea75ed30dfcce255cdf570b06f91e6efc1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ae589873db05ab9b3988da6a4a0031e43bbe822273f831d6dc7f611a18368158"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ab401d5f8f2f76ffcf9c3ca6667420f37e494cbebc293208bfd750982adc957"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ed24f0e577d91b01c841c2aee8fd0773d3eb1a98e8a623826e70232089a0fae"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "28cac2f3551d2765db797761473052f8e7c7471b5bc047d140f5e6833faa40ec"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "578857945a534ef9a46562541118b50938cb83128f8c975c295b51c0847266bb"
+    sha256 cellar: :any_skip_relocation, ventura:        "e92a25db4661b1ed04edbcf00038871189270dfdb6df68e501c0c9b5b51a8ce0"
+    sha256 cellar: :any_skip_relocation, monterey:       "2f2e6146d50a51def034164fa8f912371717ae487ac811f52e9c0e5d62b0b95b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "65562112a3d46765297f9bba10b79b8150bf1cee25c78b30469f43d46fb10f1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "381cab4525c9cf7083ef6cc8bc6532bd4239e1f83280511959dd8c6236c22001"
   end
 
   depends_on "python@3.11"
@@ -60,8 +59,8 @@ class Fava < Formula
   end
 
   resource "chardet" do
-    url "https://files.pythonhosted.org/packages/41/32/cdc91dcf83849c7385bf8e2a5693d87376536ed000807fa07f5eab33430d/chardet-5.1.0.tar.gz"
-    sha256 "0d62712b956bc154f85fb0a266e2a3c5913c2967e00348701b32411d6def31e5"
+    url "https://files.pythonhosted.org/packages/f3/0d/f7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079/chardet-5.2.0.tar.gz"
+    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
   end
 
   resource "charset-normalizer" do
@@ -110,8 +109,8 @@ class Fava < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/28/9b/ea531afe585da044686ab13351c99dfbb2ca02b96c396874946d52d0e127/googleapis-common-protos-1.59.1.tar.gz"
-    sha256 "b35d530fe825fb4227857bc47ad84c33c809ac96f312e13182bdeaa2abe1178a"
+    url "https://files.pythonhosted.org/packages/08/78/aedf7f323cc6d4f2116556bd42c9ffab6021cf3f2fd9925ed4e71213dd1b/googleapis-common-protos-1.60.0.tar.gz"
+    sha256 "e73ebb404098db405ba95d1e1ae0aa91c3e15a71da031a2eeb6b2e23e7bc3708"
   end
 
   resource "httplib2" do
@@ -195,8 +194,8 @@ class Fava < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/4f/13/28e88033cab976721512e7741000fb0635fa078045e530a91abb25aea0c0/pyparsing-3.1.0.tar.gz"
-    sha256 "edb662d6fe322d6e990b1594b5feaeadf806803359e3d4d42f11e295e588f0ea"
+    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
+    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
   end
 
   resource "pytest" do

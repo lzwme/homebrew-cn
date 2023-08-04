@@ -1,20 +1,19 @@
 class Libstrophe < Formula
   desc "XMPP library for C"
   homepage "https://strophe.im/libstrophe/"
-  url "https://ghproxy.com/https://github.com/strophe/libstrophe/archive/0.12.2.tar.gz"
-  sha256 "049232e3968ad65c65e08601cb3de171d3a25d154b6f14332c35a7bf961e2c9d"
+  url "https://ghproxy.com/https://github.com/strophe/libstrophe/archive/0.12.3.tar.gz"
+  sha256 "e93a77b78f228201ee0278dbdd29142a943263df7e62278e25eacfe814e0bb34"
   license all_of: ["GPL-3.0-only", "MIT"]
-  revision 1
   head "https://github.com/strophe/libstrophe.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a2e4f7481a6fee674b2cd5d74c6d2fb1848b222106d59b56ac78bc88564e1d86"
-    sha256 cellar: :any,                 arm64_monterey: "1091f61c3ad62fa4aebfb5658c5b9dcab1913d5c09514ecaef3477f4cd100d5a"
-    sha256 cellar: :any,                 arm64_big_sur:  "5d0f77a6228c90b8740956c2f203293b0c1fb102676b2ef38b4dbae02f7c9795"
-    sha256 cellar: :any,                 ventura:        "30c016a5fe015f25f60524d42ee6ef9630991f2baa1009d156ac2627b446d8fe"
-    sha256 cellar: :any,                 monterey:       "b1163cbab169374c58ad0ff39796911c85dcb5b666681401afde209e9c72dd5e"
-    sha256 cellar: :any,                 big_sur:        "d128f84cac8858210c28e52deef8eaf0f06a47e22617d2c521c573205269316e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ea4cff76b0c850862b56afc610d3721fbb3464e998652ac6689ec01148cc225"
+    sha256 cellar: :any,                 arm64_ventura:  "6242c2423d809c91e92af6740a0bc0c3a645b1d8f7b53c16ac80ad7ced5109f5"
+    sha256 cellar: :any,                 arm64_monterey: "abd1960e1a2c11376b193a2f05bcd2837c23353a55a93ea7a658c079a335e1fa"
+    sha256 cellar: :any,                 arm64_big_sur:  "3bbbc656139c356d7baabc785251f8228c3b2ce2bbe87198310aaf007ed1835d"
+    sha256 cellar: :any,                 ventura:        "9186c1d767ce39e292382f2834908d6ff100cd86ee3ea1814c66fe764b77f50b"
+    sha256 cellar: :any,                 monterey:       "1a52e120aa045efede48f79a89bc50206bc471932d2e4ef4e3ceafa28fee1f67"
+    sha256 cellar: :any,                 big_sur:        "1c8006b2714f09bc5048189116cb1c2bc858a28fce5020c490a3dea54ff8125f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc9d50b657e06f5dc3c251aa5fcad01fcdc8ab8b499e6df52ec0c043611ca5d3"
   end
 
   depends_on "autoconf" => :build

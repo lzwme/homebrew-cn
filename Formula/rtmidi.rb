@@ -1,8 +1,8 @@
 class Rtmidi < Formula
   desc "API for realtime MIDI input/output"
   homepage "https://www.music.mcgill.ca/~gary/rtmidi/"
-  url "https://www.music.mcgill.ca/~gary/rtmidi/release/rtmidi-5.0.0.tar.gz"
-  sha256 "48db0ed58c8c0e207b5d7327a0210b5bcaeb50e26387935d02829239b0f3c2b9"
+  url "https://www.music.mcgill.ca/~gary/rtmidi/release/rtmidi-6.0.0.tar.gz"
+  sha256 "3336248e8c1f054ea5e51a4449558490dca51edd324fcde0eea27df33b80a9ed"
   license "MIT"
 
   livecheck do
@@ -11,15 +11,13 @@ class Rtmidi < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "d98a3135277ca2176ba1cf2eb0ef854c9528e17d300dabe13e933972d684d002"
-    sha256 cellar: :any,                 arm64_monterey: "86041822edcaa7afac16ff5dee154e9a084f52875ed079e7be28855ab975a709"
-    sha256 cellar: :any,                 arm64_big_sur:  "bb77151087977965b9ccea0b258d329a92680480e7f4d14d1c18653f124c489e"
-    sha256 cellar: :any,                 ventura:        "f204795f8bee6d0b7113705da0b1d5f72cbca35b7b0f8ccebba77a0ac72f22a1"
-    sha256 cellar: :any,                 monterey:       "2830c3a78906afda1df6044c480ad2c1812c63ec8350050f67df4d58934d6808"
-    sha256 cellar: :any,                 big_sur:        "5b7111fe395363ab657108c3aa974a8fa8aa532f422b0f53b88eb8d8fddf6eb1"
-    sha256 cellar: :any,                 catalina:       "43371383eb4e84c1eaac5ac32e71c67ff2d42ec65086a8908929f894a8b18278"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d490d8cf367b9f46321551f833fcfa65fcd6d5e9f27ea0b75dd29fdf0b3e4091"
+    sha256 cellar: :any,                 arm64_ventura:  "8d30eda6f1220b96282f84c8a429e643a439055a775a0d3925fb34e92c6e385d"
+    sha256 cellar: :any,                 arm64_monterey: "2a4122c5766cd231a7ed1cf2363d42bd71f3043c52e5630666a981515821483a"
+    sha256 cellar: :any,                 arm64_big_sur:  "52ec604c94277d3cd78bd7b4b78a9c6cb0b311b18ee88e8e15047541e7559c22"
+    sha256 cellar: :any,                 ventura:        "788be037d24b43b34dd2114fdaeff34937a3b1ac1cec5546823125a02dbd5f48"
+    sha256 cellar: :any,                 monterey:       "4db2ae2f3a8f87036914e7ce93f5d735259b70081e017e50311cb147f12aca43"
+    sha256 cellar: :any,                 big_sur:        "fd599cea405f192bb57d43ae670db9a0137cef0700b58b5aa665763e716ee6de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a513de7f2e3040c80cf8e6578407758521282e946853860d9a9557508f98dc23"
   end
 
   head do

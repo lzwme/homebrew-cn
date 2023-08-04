@@ -7,8 +7,8 @@ class Libplacebo < Formula
   head "https://code.videolan.org/videolan/libplacebo.git", branch: "master"
 
   stable do
-    url "https://code.videolan.org/videolan/libplacebo/-/archive/v6.292.0/libplacebo-v6.292.0.tar.bz2"
-    sha256 "9182be99fc5e27f64e9193ba371380b10d5f78d09836c0afad1d3998f275e72b"
+    url "https://code.videolan.org/videolan/libplacebo/-/archive/v6.292.1/libplacebo-v6.292.1.tar.bz2"
+    sha256 "51f0b7b400b35ce5f131a763c0cebb8e46680c17bed58cc9296b20c603f7f65f"
 
     resource "glad" do
       url "https://files.pythonhosted.org/packages/8b/b3/191508033476b6a409c070c6166b1c41ebb547cc6136260e9157343e6a2b/glad2-2.0.4.tar.gz"
@@ -27,13 +27,13 @@ class Libplacebo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ef2cdb463d5cc6883c9aca3ad6f82553137dfb66a95a32f4abc6225590fc891f"
-    sha256 cellar: :any,                 arm64_monterey: "4dd86c5be068fa21dade9e0633f245825f8da0131d130dcf2316a88f935c63d7"
-    sha256 cellar: :any,                 arm64_big_sur:  "d694a3ea2c6e1ff63461fc6870436c03ca21d0ce6f9d870c1b3d57dac30f9ccf"
-    sha256 cellar: :any,                 ventura:        "9d0263916c5e0b94553ae8429b567eb62264cdc17eabfaa6195d1757ef265b41"
-    sha256 cellar: :any,                 monterey:       "deec8934c543463786e7b79e65fa9c436b63849bb7396dbea3c238db2f9db0c1"
-    sha256 cellar: :any,                 big_sur:        "a87b28f82b5c9a2de7295524649836dceea54c705be1f3cfd1bcdaa34d782278"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0045d06759773a7066e824330255ad8c6a64dc68d621194003e5eccd56c2fad"
+    sha256 cellar: :any,                 arm64_ventura:  "d39fd06d944a02a6a4524999e97002eb089ad206a5efea6d43d19667417e10e4"
+    sha256 cellar: :any,                 arm64_monterey: "fee86a840f4eb479d542ebf23cc2919cebaa038cc655e7bc03cf5a20dba6ee97"
+    sha256 cellar: :any,                 arm64_big_sur:  "f9970f6b25f49516e84f773c326533cd895c1a5cdb09870ffefe442df5cd682f"
+    sha256 cellar: :any,                 ventura:        "1ece32e31129e380dbb56346ae9498b1e26170b8c184f57f690bf7c0f18656f4"
+    sha256 cellar: :any,                 monterey:       "3de6a1292e3389365d91fa4bd1eebc64a3160d39c270ad59b28999f02a5a1357"
+    sha256 cellar: :any,                 big_sur:        "b269179f597f0c09a6b3b145b26067fd4301ebfc1233f2871e2ee98e296bf0be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa0d0c2daaffd9007311137995a02b2d1dc468ef847d51405aa3af865e5ecb09"
   end
 
   depends_on "meson" => :build
