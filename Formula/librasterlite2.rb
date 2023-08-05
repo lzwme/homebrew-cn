@@ -4,7 +4,7 @@ class Librasterlite2 < Formula
   url "https://www.gaia-gis.it/gaia-sins/librasterlite2-sources/librasterlite2-1.1.0-beta1.tar.gz"
   sha256 "f7284cdfc07ad343a314e4878df0300874b0145d9d331b063b096b482e7e44f4"
   license any_of: ["MPL-1.1", "GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 3
+  revision 4
 
   livecheck do
     url :homepage
@@ -12,13 +12,13 @@ class Librasterlite2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7e99874a3fd480e1879e69b7b30a35a930c0aa7bf56fbebe18493fc9345319ff"
-    sha256 cellar: :any,                 arm64_monterey: "140d773ef370dfc6a427fad725143915fb1baa787c94850f4eafd09b7612d0eb"
-    sha256 cellar: :any,                 arm64_big_sur:  "a294b3a8b8a5bfefac59140268d22fb4507c75df4ac530e5ea26fc502cc5914e"
-    sha256 cellar: :any,                 ventura:        "8db06ff20e9f31b6b4f7b0fad6dcd39b643102e0026f778025e126d1844f06b1"
-    sha256 cellar: :any,                 monterey:       "65c63d2813be055a078cdde6436c53a44d929c06c718edb4b6a97d0844c5f284"
-    sha256 cellar: :any,                 big_sur:        "8c1a798df76b0e71de55f7f150b60aad3495ae31109bc8b834502c1ef3d39d49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0e846448dadc8b438caace6df2e7d463dfbc2460218e88917381cbc32f63474"
+    sha256 cellar: :any,                 arm64_ventura:  "594f332c68d15b51bb405623131a630fa528693ee21f2f220d3220bc280fd2dc"
+    sha256 cellar: :any,                 arm64_monterey: "3733644a6d712a0be663b99b9b153cba11d05cfb34dc5c207fab8df8a4077a56"
+    sha256 cellar: :any,                 arm64_big_sur:  "6bbd6b88f06188a5009e8d451c6f3898e2df630131f5c68953528863a06e9ec2"
+    sha256 cellar: :any,                 ventura:        "385aeaee7f4a7e565b6368e2577a73ba58f75d7161bbbe480cc1a6eebc12552f"
+    sha256 cellar: :any,                 monterey:       "fcc1aba7b865bd46d2986e77c9d9bf3d8dca6641b9c9fb7ebbbeca409692153e"
+    sha256 cellar: :any,                 big_sur:        "642c88a5013468fbc96058720beadc6f6aacbb3a47b60530c434b9df4081aa86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e91e0eafa3ab9941d7e7b9610089e8398b3259e40951711bc9a70f34c76d0e9"
   end
 
   depends_on "pkg-config" => [:build, :test]

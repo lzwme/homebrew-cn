@@ -1,8 +1,8 @@
 class Phpunit < Formula
   desc "Programmer-oriented testing framework for PHP"
   homepage "https://phpunit.de"
-  url "https://phar.phpunit.de/phpunit-10.2.7.phar"
-  sha256 "5baa6719234548c9cdc22e8db99611aa13867e98a8d9894029f2e357bceba4c9"
+  url "https://phar.phpunit.de/phpunit-10.3.1.phar"
+  sha256 "745a668393c135572d9b431d191cd03b8c11c923570e983aeb95b4a59d117779"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,13 +12,13 @@ class Phpunit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8382712d4663077164f3e5b6aa5edbf7cc8f02759fa24a58e56c5a757552b98a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8382712d4663077164f3e5b6aa5edbf7cc8f02759fa24a58e56c5a757552b98a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8382712d4663077164f3e5b6aa5edbf7cc8f02759fa24a58e56c5a757552b98a"
-    sha256 cellar: :any_skip_relocation, ventura:        "8382712d4663077164f3e5b6aa5edbf7cc8f02759fa24a58e56c5a757552b98a"
-    sha256 cellar: :any_skip_relocation, monterey:       "8382712d4663077164f3e5b6aa5edbf7cc8f02759fa24a58e56c5a757552b98a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8382712d4663077164f3e5b6aa5edbf7cc8f02759fa24a58e56c5a757552b98a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3230df474e2a95a3ae771df34dccad3918727241913a400774c5a32fd0941fb7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4737ee19c2ddaccd2018650ec90aa92ccbcb5d8162c51c93f4db6015ad5231d0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4737ee19c2ddaccd2018650ec90aa92ccbcb5d8162c51c93f4db6015ad5231d0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4737ee19c2ddaccd2018650ec90aa92ccbcb5d8162c51c93f4db6015ad5231d0"
+    sha256 cellar: :any_skip_relocation, ventura:        "4737ee19c2ddaccd2018650ec90aa92ccbcb5d8162c51c93f4db6015ad5231d0"
+    sha256 cellar: :any_skip_relocation, monterey:       "4737ee19c2ddaccd2018650ec90aa92ccbcb5d8162c51c93f4db6015ad5231d0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4737ee19c2ddaccd2018650ec90aa92ccbcb5d8162c51c93f4db6015ad5231d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec7587308fcacf7813e82dd509a7af31fb2b7c015e7423e6dfe6d0884cd228ad"
   end
 
   depends_on "php" => :test

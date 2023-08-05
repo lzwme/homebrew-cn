@@ -1,19 +1,30 @@
 class Libgit2Glib < Formula
   desc "Glib wrapper library around libgit2 git access library"
-  homepage "https://github.com/GNOME/libgit2-glib"
-  url "https://gitlab.gnome.org/GNOME/libgit2-glib/-/archive/v1.1.0/libgit2-glib-v1.1.0.tar.bz2"
-  sha256 "6cbbf43eda241cc8602fc22ccd05bbc4355d9873634bc12576346e6b22321f03"
+  homepage "https://gitlab.gnome.org/GNOME/libgit2-glib"
   license "LGPL-2.1-only"
-  head "https://github.com/GNOME/libgit2-glib.git", branch: "master"
+  revision 1
+  head "https://gitlab.gnome.org/GNOME/libgit2-glib.git", branch: "master"
+
+  stable do
+    url "https://gitlab.gnome.org/GNOME/libgit2-glib/-/archive/v1.1.0/libgit2-glib-v1.1.0.tar.bz2"
+    sha256 "6cbbf43eda241cc8602fc22ccd05bbc4355d9873634bc12576346e6b22321f03"
+
+    # Add commit signing API. Needed for dependent `gitg`.
+    # Remove with `stable` block on next release.
+    patch do
+      url "https://gitlab.gnome.org/GNOME/libgit2-glib/-/commit/7f36e18f41e0b28b35c85fe8bf11d844a0001305.diff"
+      sha256 "e5a07c6bbd05b88f1d52107167d7db52f43abfd0b367645cc75b72acb623d9ff"
+    end
+  end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "cd5ce302746b146fbcae23c34a4962cadf2aa6167872281c60c2dbd0c933e596"
-    sha256 cellar: :any, arm64_monterey: "5869d595f0b03d283cb6f787c7af59d3327eedf6bf611ec406a490866080bbb5"
-    sha256 cellar: :any, arm64_big_sur:  "5c31a305f66afe9e3c458262bdc4f41c925c35e731291103dae3c22ebb0f09d2"
-    sha256 cellar: :any, ventura:        "aec5c85cf10c6dfedf37abeffe5e5a0a7302e399ef2a6d8171e8d1534cd7925d"
-    sha256 cellar: :any, monterey:       "f2df1953378a0ff1019120b487e4af95f11336ac73f83d3aed783f6f00c24fa9"
-    sha256 cellar: :any, big_sur:        "533f498e8be1e520fea8d11fbf035e827e8dab689d986b00469836f1cb0977ba"
-    sha256               x86_64_linux:   "ce8ce4014e3755d3d814a7893a46d456f9ad6ccb06a4bbda964a8250ef3b4fff"
+    sha256 cellar: :any, arm64_ventura:  "dc78ea81c37b8e8977ef2d6469166e37937c06238cee7b5e46c3856b459aed8a"
+    sha256 cellar: :any, arm64_monterey: "e3ff1e622801cc996caff77b2ca138e69764fceab2f4dfccb7a35f4dd622643f"
+    sha256 cellar: :any, arm64_big_sur:  "3a250cd16c5583e345b2eba049765b4b27c67207a2a0373c741710e7a139105a"
+    sha256 cellar: :any, ventura:        "d416576872b58f6b67fe70d94f2af9a0174da2f44c4cb95ddddc8f628de78fc1"
+    sha256 cellar: :any, monterey:       "731ae37b595af558aa4fe4a0d18cc43916405d73b6eecaa0045c42b414e6e735"
+    sha256 cellar: :any, big_sur:        "227b09aa6272fc3e4aba191c7d3144c09d0888a229291a717ba293251ca193c0"
+    sha256               x86_64_linux:   "ef2aaf12a607c505944c2d752f31b8c1120993a9c499bfc93b0f71353975e55a"
   end
 
   depends_on "gobject-introspection" => :build
@@ -27,16 +38,13 @@ class Libgit2Glib < Formula
   depends_on "libgit2"
 
   def install
-    mkdir "build" do
-      ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}"
-      system "meson", *std_meson_args,
-                      "-Dpython=false",
-                      "-Dvapi=true",
-                      ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-      libexec.install Dir["examples/*"]
-    end
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}"
+    system "meson", "setup", "build", *std_meson_args,
+                                      "-Dpython=false",
+                                      "-Dvapi=true"
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
+    libexec.install (buildpath/"build/examples").children
   end
 
   test do

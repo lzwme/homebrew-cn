@@ -3,18 +3,18 @@ require "language/node"
 class Nativefier < Formula
   desc "Wrap web apps natively"
   homepage "https://github.com/nativefier/nativefier"
-  url "https://registry.npmjs.org/nativefier/-/nativefier-51.0.0.tgz"
-  sha256 "68a60fc9c94115d8ee7b3c2114cd886f6c1f8b5e8350535349e41d822245c324"
+  url "https://registry.npmjs.org/nativefier/-/nativefier-51.0.1.tgz"
+  sha256 "1fbd3741789cb6d48a8c6e1849bc24b0bcfc465f2e8110da2bfdf74cc066c124"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dd27734c5a286677864c43c84d205313606b496f6f3c822d41222ca50095c5b3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dd27734c5a286677864c43c84d205313606b496f6f3c822d41222ca50095c5b3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dd27734c5a286677864c43c84d205313606b496f6f3c822d41222ca50095c5b3"
-    sha256 cellar: :any_skip_relocation, ventura:        "8544baf9690d08b718b70dcaf1fee5887f0a926971645b7d38476edf065656c3"
-    sha256 cellar: :any_skip_relocation, monterey:       "8544baf9690d08b718b70dcaf1fee5887f0a926971645b7d38476edf065656c3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8544baf9690d08b718b70dcaf1fee5887f0a926971645b7d38476edf065656c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1e07e8e8321413bb18e855c10d2fb81daa7d87e1aa2463fe969723201f1e939"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c5adbeb350644650e7b3347bdbbc30f8a568b08c67b507ebfe5575be25774d6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4c5adbeb350644650e7b3347bdbbc30f8a568b08c67b507ebfe5575be25774d6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4c5adbeb350644650e7b3347bdbbc30f8a568b08c67b507ebfe5575be25774d6"
+    sha256 cellar: :any_skip_relocation, ventura:        "06775f9777b106bd0dd205afa024e43987c64666afa396d49a2fcadbc0121878"
+    sha256 cellar: :any_skip_relocation, monterey:       "06775f9777b106bd0dd205afa024e43987c64666afa396d49a2fcadbc0121878"
+    sha256 cellar: :any_skip_relocation, big_sur:        "06775f9777b106bd0dd205afa024e43987c64666afa396d49a2fcadbc0121878"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c5adbeb350644650e7b3347bdbbc30f8a568b08c67b507ebfe5575be25774d6"
   end
 
   depends_on "node"

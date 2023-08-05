@@ -1,19 +1,18 @@
 class Lynis < Formula
   desc "Security and system auditing tool to harden systems"
   homepage "https://cisofy.com/lynis/"
-  url "https://ghproxy.com/https://github.com/CISOfy/lynis/archive/3.0.8.tar.gz"
-  sha256 "0315da29e382281daa1db24c8494ca12659c7387d9cd30222adcf1aa01383730"
+  url "https://ghproxy.com/https://github.com/CISOfy/lynis/archive/3.0.9.tar.gz"
+  sha256 "520eb76aee5d350c2a7265414bae302077cd70ed5a0aaf61dec9e43a968b1727"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "590b7e427e36b3613b725b7d2e32ea45f9dcee911c46be70347be5c3ebc1e3ba"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "590b7e427e36b3613b725b7d2e32ea45f9dcee911c46be70347be5c3ebc1e3ba"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "590b7e427e36b3613b725b7d2e32ea45f9dcee911c46be70347be5c3ebc1e3ba"
-    sha256 cellar: :any_skip_relocation, ventura:        "f43da37593963aba57890c739e944505c5ccc6ef78b2cf19255c8c9748c69894"
-    sha256 cellar: :any_skip_relocation, monterey:       "f43da37593963aba57890c739e944505c5ccc6ef78b2cf19255c8c9748c69894"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f43da37593963aba57890c739e944505c5ccc6ef78b2cf19255c8c9748c69894"
-    sha256 cellar: :any_skip_relocation, catalina:       "f43da37593963aba57890c739e944505c5ccc6ef78b2cf19255c8c9748c69894"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "590b7e427e36b3613b725b7d2e32ea45f9dcee911c46be70347be5c3ebc1e3ba"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f286611cd75569c254b277018a249a9826c71f276ea1ed2cb2dd53265f6f0e9c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f286611cd75569c254b277018a249a9826c71f276ea1ed2cb2dd53265f6f0e9c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f286611cd75569c254b277018a249a9826c71f276ea1ed2cb2dd53265f6f0e9c"
+    sha256 cellar: :any_skip_relocation, ventura:        "b611779c1dc232183529386a76a47492aa2a1424220d9e002317e1a79271cebd"
+    sha256 cellar: :any_skip_relocation, monterey:       "b611779c1dc232183529386a76a47492aa2a1424220d9e002317e1a79271cebd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b611779c1dc232183529386a76a47492aa2a1424220d9e002317e1a79271cebd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f42606a32b9515dd1dadcf130071dae101cc108dd758fe01ba0c95d447f3954c"
   end
 
   def install

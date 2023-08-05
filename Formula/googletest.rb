@@ -4,6 +4,7 @@ class Googletest < Formula
   url "https://ghproxy.com/https://github.com/google/googletest/archive/v1.14.0.tar.gz"
   sha256 "8ad598c73ad796e0d8280b082cebd82a630d73e73cd3c70057938a6501bba5d7"
   license "BSD-3-Clause"
+  head "https://github.com/google/googletest.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "15a5ec3a239e915d9ffa09883788291300a8b28c99c6a542f73b0aaae7f7594b"
@@ -18,8 +19,9 @@ class Googletest < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     # for use case like `#include "googletest/googletest/src/gtest-all.cc"`
     (include/"googlemock/googlemock/src").install Dir["googlemock/src/*"]

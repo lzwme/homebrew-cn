@@ -1,8 +1,8 @@
 class Govc < Formula
   desc "Command-line tool for VMware vSphere"
   homepage "https://github.com/vmware/govmomi/tree/master/govc"
-  url "https://ghproxy.com/https://github.com/vmware/govmomi/archive/v0.30.5.tar.gz"
-  sha256 "642ec3d091f48542e2f9537a9d51c355bb230fe26f113a3aeaac39e0ec5d93a6"
+  url "https://ghproxy.com/https://github.com/vmware/govmomi/archive/v0.30.7.tar.gz"
+  sha256 "ec5fbe10272ec30bb60ffb54803354f7d12c6f1062bd13615018f15eb2bdd8df"
   license "Apache-2.0"
 
   # Upstream appears to use GitHub releases to indicate that a version is
@@ -14,13 +14,13 @@ class Govc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d9cc385a8d32e24ca325a9ca0a7cef1dd377db32eed84fbf91179aeff8a6b8cd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f4fd62b1f42c311351cf1f64f85048c9c9a2dd98be47329df0fcbdfb54849eee"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4d58b26b7af603a8e926ad860bf78349d8c8164192053689c1b28c164c7185ce"
-    sha256 cellar: :any_skip_relocation, ventura:        "65c0b3fd10cbb4082eaedd3292907c23d2039bb40c72d8fe46960fe0797596ca"
-    sha256 cellar: :any_skip_relocation, monterey:       "2767a3241e4b65dc0bed247df39ef357659288bd5447a44d7e61ca20019a0482"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2ad87f48f11a77a2b326103c6612b0dba901565362ddd820c7b77e947afee63c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f44debd77c63e6cf201c592f9323349e15f3564c8387d25eb6a9039870aa048d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "207b62d9dcd9c8309df760e4e73104d3849112f4d91864c22f85df35891856ed"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c81b546673b4b7d0527eaa2e7046547ede22e010a717c366f54d90c45e78ecc0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "58be12cf923c6b555cd27bd7bb2de661a043302174902dff1c9c8ff399c77d98"
+    sha256 cellar: :any_skip_relocation, ventura:        "a67b7ec294f5a444166219d1b11176a5c248128e9349c1788acb08ccedecfa77"
+    sha256 cellar: :any_skip_relocation, monterey:       "228a70d7ad9e26299653a540d042ceb612fd0dd4006ce6d50eb3815e3001a811"
+    sha256 cellar: :any_skip_relocation, big_sur:        "40af296639f2b1b0794ed463686fa4e2f1d408bcef48aa6ee3a72073fe8621c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "88a7eb8b8261ae455d64166a62d151ea8cd66306f8d52059ffe2dbee03007c3c"
   end
 
   depends_on "go" => :build

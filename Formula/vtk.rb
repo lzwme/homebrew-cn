@@ -4,18 +4,16 @@ class Vtk < Formula
   url "https://www.vtk.org/files/release/9.2/VTK-9.2.6.tar.gz"
   sha256 "06fc8d49c4e56f498c40fcb38a563ed8d4ec31358d0101e8988f0bb4d539dd12"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
   head "https://gitlab.kitware.com/vtk/vtk.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "471c1632d34c8d2f8996ebc3ab3c6326f7c554960f726412a106960ef5238641"
-    sha256 cellar: :any,                 arm64_monterey: "be8f9e4a12de83939006fb757244dc26e670853ed7f4ae01e0f007a46df02393"
-    sha256 cellar: :any,                 arm64_big_sur:  "2815dba205701a45ebaabd8dc25a8b1095344e5887069537f2db7cd848625071"
-    sha256 cellar: :any,                 ventura:        "fbbf12912cbc6b3767d01553c95326f36b4188a3debd33e154a23658d8a00f88"
-    sha256 cellar: :any,                 monterey:       "7eb35ac835615152bea266e14c1f93933981c2332e0ae00d6a5bef60e18c868b"
-    sha256 cellar: :any,                 big_sur:        "9d8c221a8225e431c885191b66ce1ffe1e03eed4b44f9c3f82028c4f19f2f9fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "27bb6c9173637924f692e37746920f159703f6e87b94a315734ef9643f690dfb"
+    sha256 cellar: :any, arm64_ventura:  "11a861abdb6f6fca6e86b8f71493f7a1988872685c3bf23f33b56f2dace87d28"
+    sha256 cellar: :any, arm64_monterey: "33bc30a92f2c105848e13f012a7706100af5c452a19cbd0345d99009efa76897"
+    sha256 cellar: :any, arm64_big_sur:  "30c40c9e5a7f7d67555885e01fcf5d3e74d2c3df43b548b7ed7c4d813c83cfd1"
+    sha256 cellar: :any, ventura:        "4b1f731c2f8e8464cc06dce10172f2f281eedb983d545638aca4032ee9ee6155"
+    sha256 cellar: :any, monterey:       "a84d6af8181218bbd298483d029c1d47061b2c0271fe07ce29c7c461b7dce534"
+    sha256 cellar: :any, big_sur:        "4a2c47ed0ae9f79c1db84ffb19a4f62e63ad1863925aeafcf3f97d4da701b3c4"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -34,9 +32,9 @@ class Vtk < Formula
   depends_on "lz4"
   depends_on "netcdf"
   depends_on "pugixml"
-  depends_on "pyqt@5"
+  depends_on "pyqt"
   depends_on "python@3.11"
-  depends_on "qt@5"
+  depends_on "qt"
   depends_on "sqlite"
   depends_on "theora"
   depends_on "utf8cpp"
@@ -107,7 +105,7 @@ class Vtk < Formula
       -DVTK_MODULE_USE_EXTERNAL_VTK_zlib:BOOL=ON
       -DPython3_EXECUTABLE:FILEPATH=#{which(python)}
       -DVTK_GROUP_ENABLE_Qt:STRING=YES
-      -DVTK_QT_VERSION:STRING=5
+      -DVTK_QT_VERSION:STRING=6
     ]
 
     # https://github.com/Homebrew/linuxbrew-core/pull/21654#issuecomment-738549701

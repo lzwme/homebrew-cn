@@ -7,13 +7,13 @@ class Mlt < Formula
   head "https://github.com/mltframework/mlt.git", branch: "master"
 
   bottle do
-    sha256 arm64_ventura:  "394ba22390851d935d5280f17f4e75b87be445ddbd9be7a4db782ce5584e0420"
-    sha256 arm64_monterey: "006ac2abfcd63d0cea3111e2bc428ee02ecc80f4e3eb20cbf29d12a7bc2580ce"
-    sha256 arm64_big_sur:  "a571c58376630099edb76017990a6590715e48c24a0943e04fe0aaec9700afe1"
-    sha256 ventura:        "fddb9c34eab9067d1dcb92d6d9a8d96cbea2006c610138d4997f986ffda26b2b"
-    sha256 monterey:       "55bdc7443a18a6c988e74b634eb1ed301eff4485b19d66618f29b01fa44134fe"
-    sha256 big_sur:        "0710524da8223ccb4c97b460c1f3292e616aa30dcdd51c8aea1701cfe99b7552"
-    sha256 x86_64_linux:   "ec26ed38488fe349f8531043ae5123c2d584c7aa36cb06ac0bc245ca3e228d74"
+    rebuild 1
+    sha256 arm64_ventura:  "78feed922ef24c59e06468fe7f08bffe7dea562d7a6a09241c08a1b8e695fe6b"
+    sha256 arm64_monterey: "279e74b53e6bad52b9bfc7363abb8fc39e0b3b04dec03bcec2f1835ed8b13585"
+    sha256 arm64_big_sur:  "c539a434d819e5e55747d91c4064b512358779518c23fdbbf70bc2088af7827e"
+    sha256 ventura:        "581f9530663ded632181c214f65444be23f821add9f0b2e2486b947642eae7e2"
+    sha256 monterey:       "59e130bb66ca2b5542fb5230cd151af276f6e34538f6262ce919431ab742322f"
+    sha256 big_sur:        "9cb541e5964e58f4d881ae53a9ff4be4e4038b0284b862ce5090dbeb96873381"
   end
 
   depends_on "cmake" => :build
@@ -28,7 +28,7 @@ class Mlt < Formula
   depends_on "libvorbis"
   depends_on "opencv"
   depends_on "pango"
-  depends_on "qt@5"
+  depends_on "qt"
   depends_on "sdl2"
   depends_on "sox"
 
@@ -41,8 +41,10 @@ class Mlt < Formula
                     "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",
                     "-DGPL=ON",
                     "-DGPL3=ON",
-                    "-DMOD_OPENCV=ON",
                     "-DMOD_JACKRACK=OFF",
+                    "-DMOD_OPENCV=ON",
+                    "-DMOD_QT5=OFF",
+                    "-DMOD_QT6=ON",
                     "-DMOD_SDL1=OFF",
                     "-DRELOCATABLE=OFF",
                     *std_cmake_args

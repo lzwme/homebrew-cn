@@ -11,6 +11,7 @@ class Kcptun < Formula
   # necessary to check release versions instead of tags.
   livecheck do
     url :stable
+    regex(/^v?(\d+(?:\.\d+)*)$/i)
     strategy :github_latest
   end
 

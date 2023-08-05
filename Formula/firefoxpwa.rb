@@ -1,19 +1,19 @@
 class Firefoxpwa < Formula
   desc "Tool to install, manage and use Progressive Web Apps in Mozilla Firefox"
-  homepage "https://github.com/filips123/PWAsForFirefox"
-  url "https://ghproxy.com/https://github.com/filips123/PWAsForFirefox/archive/refs/tags/v2.7.2.tar.gz"
-  sha256 "f19bef914a48d936fc4aab01757108e3bd6bc93e10e54f60844df630fbfe7ef1"
+  homepage "https://pwasforfirefox.filips.si/"
+  url "https://ghproxy.com/https://github.com/filips123/PWAsForFirefox/archive/refs/tags/v2.7.3.tar.gz"
+  sha256 "b520cf5caeeca1d23043a032137f7eead7eb88270e5376c5d08b1234bb90376f"
   license "MPL-2.0"
   head "https://github.com/filips123/PWAsForFirefox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d3d85c3d96f053d009181de1962c5d5ee7b9d70ac26ab31f804d2e48dbfd8557"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aedc2159c4928471d33475521919ccc0082f2af898bc8770943e9b6fd32e4916"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "43c7466a9ee1b2f92b84804324e100e199423986044c8013acdacb650cf6ed06"
-    sha256 cellar: :any_skip_relocation, ventura:        "0b0b381c4da0d4a4a583553a178cca3282846b1585477dca2b2e33a1d72f9f6c"
-    sha256 cellar: :any_skip_relocation, monterey:       "67b4f3c6fd44a7960fcd943ffcf27b0c0a8bcbd73e891ff2e06e54396c607e17"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cfa684424be730f889e577a32fd5e075c446f094a0b284421bde08f8e252ac34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc39362bbe1cdd5e565bcabc35e1d152194e90648d40a2037bba8a5e4285ae2f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "565032eb2e83f1e081d48fdfc6ec9a31aea789e003c8d4e5c28c54c865b0d4cf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "287c295c659ca90fbcaba14c1656adaca7e88b0ff92a28b4e8e4bec9b26ff039"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6c55de909818bc287b31c376bb9469cef332603b76de7359a1a345f945e4b262"
+    sha256 cellar: :any_skip_relocation, ventura:        "17fdec85a7c8f358e57fe520c15c9e555b219c2d79251f5e76b88972d89d2436"
+    sha256 cellar: :any_skip_relocation, monterey:       "3e5e30e40040fbdd8b9742f4559fcaf684b2dcf271b5da00bbd4427ed27d391f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "251e878ee08b3e29712f2a93a38382dd8ae525509f7e0b2482591f9294548ec6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2eb04f3cd6538f24e4e7f4aab3b03a9fc55d8e3f346048379dc13d9327b85947"
   end
 
   depends_on "rust" => :build
@@ -30,7 +30,7 @@ class Firefoxpwa < Formula
     # Prepare the project to work with Homebrew
     ENV["FFPWA_EXECUTABLES"] = opt_bin
     ENV["FFPWA_SYSDATA"] = opt_share
-    system "bash", "./packages/brew/configure.sh", version, opt_bin, opt_libexec
+    system "bash", "./packages/brew/configure.sh", version.to_s, opt_bin, opt_libexec
 
     # Build and install the project
     system "cargo", "install", *std_cargo_args
@@ -62,7 +62,6 @@ class Firefoxpwa < Formula
   end
 
   test do
-    # Test version so we know if Homebrew configure script correctly sets it
     assert_match "firefoxpwa #{version}", shell_output("#{bin}/firefoxpwa --version")
 
     # Test launching non-existing site which should fail

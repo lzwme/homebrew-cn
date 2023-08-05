@@ -1,19 +1,13 @@
 class SonarScanner < Formula
   desc "Launcher to analyze a project with SonarQube"
   homepage "https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/"
-  url "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.0.2966.zip"
-  sha256 "1552987ca036d85b83ba68b815d641e26df04afff02570c6b72bec0fe4adea37"
+  url "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006.zip"
+  sha256 "817802ab3a476f739192d6c10504285e24e9224a0fbe2a518bb938ff88b7ea81"
   license "LGPL-3.0-or-later"
   head "https://github.com/SonarSource/sonar-scanner-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5710f7fd39d850b2a93e726a3b4f04bb98be8aa6cce882a06adca5c5c3ff37ff"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5710f7fd39d850b2a93e726a3b4f04bb98be8aa6cce882a06adca5c5c3ff37ff"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5710f7fd39d850b2a93e726a3b4f04bb98be8aa6cce882a06adca5c5c3ff37ff"
-    sha256 cellar: :any_skip_relocation, ventura:        "5710f7fd39d850b2a93e726a3b4f04bb98be8aa6cce882a06adca5c5c3ff37ff"
-    sha256 cellar: :any_skip_relocation, monterey:       "5710f7fd39d850b2a93e726a3b4f04bb98be8aa6cce882a06adca5c5c3ff37ff"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5710f7fd39d850b2a93e726a3b4f04bb98be8aa6cce882a06adca5c5c3ff37ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "28d18dfd58026db06df33087e46d7d0418b7e264bef2f12b3e75feb28119e201"
+    sha256 cellar: :any_skip_relocation, all: "13fadfccf23d8bffe46a1dfac508917900a967c558ba1e5970109967f404b7ae"
   end
 
   depends_on "openjdk"

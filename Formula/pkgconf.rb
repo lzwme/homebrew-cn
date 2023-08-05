@@ -1,8 +1,8 @@
 class Pkgconf < Formula
   desc "Package compiler and linker metadata toolkit"
   homepage "https://github.com/pkgconf/pkgconf"
-  url "https://distfiles.ariadne.space/pkgconf/pkgconf-1.9.5.tar.xz"
-  sha256 "1ac1656debb27497563036f7bffc281490f83f9b8457c0d60bcfb638fb6b6171"
+  url "https://distfiles.ariadne.space/pkgconf/pkgconf-2.0.0.tar.xz"
+  sha256 "c247eda6cdaa14b04da001785b5c3b07f9bdda2e37b72ea7248b7fb8be3168b3"
   license "ISC"
 
   livecheck do
@@ -11,13 +11,13 @@ class Pkgconf < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "dbb851846b6ff3b1df98a0467d53a06d5d920d23447dc9a82ac7ee736f4adfa8"
-    sha256 arm64_monterey: "e840286ebdaa867dc929785b03a1b34685786a1810c54f99cb3ee8ceb4ef2987"
-    sha256 arm64_big_sur:  "17f2d70fc2d75aba93d39ac6f18cc913138bc6e910a50d3433843373d2b2c207"
-    sha256 ventura:        "62ac9c12537479d9187d508964ffeda87d933d05f183f96b4959fbdccbc378b4"
-    sha256 monterey:       "ffc635090712aa70f4054641eaad47d6e0a6d0e3aea4e036f7b168351cec1dc4"
-    sha256 big_sur:        "9fd89c2aa1c176b0c14793e1d258dfbf5e564da105ef528ca803cf7b144ab171"
-    sha256 x86_64_linux:   "4484f0d7faca2e2e728e20ef0019f51867311a655f2f8673a33bda637cedf6b8"
+    sha256 arm64_ventura:  "f6b29074748d79cd4028b180c0e8fb91a76005dfd90e50bf1ab7f65526cf1a3d"
+    sha256 arm64_monterey: "231d6a30af14144f47db826e61ecb6ae8852917e977334367bd7fbd571d7564a"
+    sha256 arm64_big_sur:  "ddbe7ad720cb5ca2d9a410d31916deedc7e8444ee5c9a006e297345484cbd29a"
+    sha256 ventura:        "148af63de45f64f6d4faa0fd81fb112e8dc481dd663dc64212e233051c22ad17"
+    sha256 monterey:       "2c40125c5e7c7aae4b5cfa2ffdd9edf22df6bcde575651321c08c31ee689e9fc"
+    sha256 big_sur:        "546860d253f5b04c79f7b43bf818eb8809b57ed9bb243e899eb9cc5ca012da6b"
+    sha256 x86_64_linux:   "d6d46e9e56c3a103070603f3096bed76bd12994541cd33b7ae9bffd99a45d49c"
   end
 
   head do

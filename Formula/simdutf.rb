@@ -1,19 +1,18 @@
 class Simdutf < Formula
   desc "Unicode conversion routines, fast"
   homepage "https://github.com/simdutf/simdutf"
-  url "https://ghproxy.com/https://github.com/simdutf/simdutf/archive/refs/tags/v3.2.14.tar.gz"
-  sha256 "6bd6cd41e0e588312c3ae24adb297454bd9bd9622ed7443f41300d7201f233a1"
+  url "https://ghproxy.com/https://github.com/simdutf/simdutf/archive/refs/tags/v3.2.15.tar.gz"
+  sha256 "c26d2e2e9124e1c20335d3880d74c8b0d74a5e247ba82ef82d15df4ccc413bcd"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 1
   head "https://github.com/simdutf/simdutf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "64933933f84cdb4685f060b3950d8821d78a2c091ab8f1c3a8e2ea5036cc4881"
-    sha256 cellar: :any, arm64_monterey: "a126718094b9ec42eeb7eb4d38863fa1eb0e6d724f3eb3996c5bbb30daa8a9fe"
-    sha256 cellar: :any, arm64_big_sur:  "8c3c74eca19712b6917a54a8fa186df4e2c0befc70b0ec7b1831084c2ff1caa2"
-    sha256 cellar: :any, ventura:        "aaf181bc8a294cf41164422a1ff77c56530f3509a792be442a102bee15b38950"
-    sha256 cellar: :any, monterey:       "2b2d5e8584054943669f59d480cba4a5281f58288f42918fa5a811ef3251da82"
-    sha256 cellar: :any, big_sur:        "2807927d8f31266248795838f5efcfcb8ae4b91f485ceed6303625f0421580b1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "edb081c1a858389190e2e6197d60e5b9b712e937561b2a8f6c556e526a4fe0d9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "add0e970d340523b8b279c716b142c75be9cb3af46acf9ca93f43b926c0667f6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c327821db7dec5750936d59ba57f7bb08eff5ea90a793a4d72e9e799a8d0fcfd"
+    sha256 cellar: :any_skip_relocation, ventura:        "e73799511a19ba862b27313670eeff742027a6ae206f8a4eb907290a9cf06453"
+    sha256 cellar: :any_skip_relocation, monterey:       "2264442f75dd43a8f5d16f67db861abf6e3bc662d4ef64a0fc3d949f998049f9"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1e716ecdb2ae729d7cc9b6aa1be02b1ae2d787a80cdad67ce420d4c96aadd655"
   end
 
   depends_on "cmake" => :build

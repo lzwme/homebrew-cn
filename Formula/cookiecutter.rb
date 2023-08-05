@@ -3,22 +3,22 @@ class Cookiecutter < Formula
 
   desc "Utility that creates projects from templates"
   homepage "https://github.com/cookiecutter/cookiecutter"
-  url "https://files.pythonhosted.org/packages/9d/84/b97f68b925cab6af93302af4e4536e211fd7f9c931382fc776f08e853158/cookiecutter-2.2.3.tar.gz"
-  sha256 "d56f18c0c01c09804450b501ac43e8f6104cfa7cdd93610359c68b1ba9fd84d2"
+  url "https://files.pythonhosted.org/packages/a6/2f/ab8a86b3dbb35f4dff46bb536e4be2ee0bd82232b2a9c0a911b5cd86c90e/cookiecutter-2.3.0.tar.gz"
+  sha256 "942a794981747f6d7f439d6e49d39dc91a9a641283614160c93c474c72c29621"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/cookiecutter/cookiecutter.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "de33414ae31be03744a46a63ea8f1a0b053105e4915904deaea7039f760a00a4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5d38cf37a2d07ca416f8b6e995d89ca16ce4b5af6a79813d9d6f6174d593496c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "441bd6bb9d513094669a40a4f56fc2316be87f197650251f8d5a1112ceab253c"
-    sha256 cellar: :any_skip_relocation, ventura:        "b6d4b9283157e61f4afe0cf3b8fc768325c38eb4bf97531ee452784a49146a94"
-    sha256 cellar: :any_skip_relocation, monterey:       "347198e4b57fd2ba5390b4560330d7fd23075e586a0d57d01d55ae7cc11e61e4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3487b5e59bc8ca9ae33ffb20f82b8f00eb5899b9677a0017bf6e4424ef7a381a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e853c649d89c097799341dc03d119ecf27cd2f165b00b9cafcad2978e4c4f1b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8eccbe0869c8aa0c30aafeec1e81b15a74057776ac0c805a372b9f9cc92cee56"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6dc18acf4a71860ab519383bc6e7b125cbb9d87f4003a6a7ff042dbddaabfa24"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c494653c937a4468d56604496cf746c094d1f4d374f99db732bd42f5148c9b65"
+    sha256 cellar: :any_skip_relocation, ventura:        "e73e507dab3990000474f6c591aa11c68171491dc8bb5733cab20951a6315330"
+    sha256 cellar: :any_skip_relocation, monterey:       "8e24996a7b12325deefa60aebb28a6a2f807fe97998f583e865ca7cc24a906b3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ed88fcae39dad814c106ba19e899a4578af23e3b5a0286ae4f5ac1ec90a709e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9ce29ab670ba449f9e57f3151f0e6131054a805ed85b220e1648ba7338a1a61"
   end
 
+  depends_on "pygments"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -39,8 +39,8 @@ class Cookiecutter < Formula
   end
 
   resource "chardet" do
-    url "https://files.pythonhosted.org/packages/41/32/cdc91dcf83849c7385bf8e2a5693d87376536ed000807fa07f5eab33430d/chardet-5.1.0.tar.gz"
-    sha256 "0d62712b956bc154f85fb0a266e2a3c5913c2967e00348701b32411d6def31e5"
+    url "https://files.pythonhosted.org/packages/f3/0d/f7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079/chardet-5.2.0.tar.gz"
+    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
   end
 
   resource "charset-normalizer" do
@@ -63,9 +63,19 @@ class Cookiecutter < Formula
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
   end
 
+  resource "markdown-it-py" do
+    url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
+    sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
+  end
+
   resource "markupsafe" do
     url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
     sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
+  end
+
+  resource "mdurl" do
+    url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
+    sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
   end
 
   resource "python-dateutil" do
@@ -81,6 +91,11 @@ class Cookiecutter < Formula
   resource "requests" do
     url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+  end
+
+  resource "rich" do
+    url "https://files.pythonhosted.org/packages/ad/1a/94fe086875350afbd61795c3805e38ef085af466a695db605bcdd34b4c9c/rich-13.5.2.tar.gz"
+    sha256 "fb9d6c0a0f643c99eed3875b5377a184132ba9be4d61516a55273d3554d75a39"
   end
 
   resource "text-unidecode" do

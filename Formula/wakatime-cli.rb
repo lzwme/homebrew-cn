@@ -2,19 +2,19 @@ class WakatimeCli < Formula
   desc "Command-line interface to the WakaTime api"
   homepage "https://wakatime.com/"
   url "https://github.com/wakatime/wakatime-cli.git",
-    tag:      "v1.73.1",
-    revision: "c90f2ee34f691a69cf2aaca1e2aded8443617558"
+    tag:      "v1.73.2",
+    revision: "31016a9c06f2c610ed88074dff0f6d84938b1b98"
   license "BSD-3-Clause"
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "282af32087df2b97e037a6700a32a0ccf9d991207026208c5cfcc80e1d0dc54a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "282af32087df2b97e037a6700a32a0ccf9d991207026208c5cfcc80e1d0dc54a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "282af32087df2b97e037a6700a32a0ccf9d991207026208c5cfcc80e1d0dc54a"
-    sha256 cellar: :any_skip_relocation, ventura:        "73918ca59565db7b4ea421b85f0dbe5512d5b76acb414adc7019e730d5c98272"
-    sha256 cellar: :any_skip_relocation, monterey:       "73918ca59565db7b4ea421b85f0dbe5512d5b76acb414adc7019e730d5c98272"
-    sha256 cellar: :any_skip_relocation, big_sur:        "73918ca59565db7b4ea421b85f0dbe5512d5b76acb414adc7019e730d5c98272"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "445126f8764c0edf2ce8db81159b6daa7f0f37f0691d56bb5e65487d756b4128"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ddef2401282b70aca3e83226803f78e2b49621964ebee9f61947f1fe52efbda"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1ddef2401282b70aca3e83226803f78e2b49621964ebee9f61947f1fe52efbda"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1ddef2401282b70aca3e83226803f78e2b49621964ebee9f61947f1fe52efbda"
+    sha256 cellar: :any_skip_relocation, ventura:        "a14319daae71c93a2fc0fc02d54ba3e5823a52efb84db363860b2e9670195769"
+    sha256 cellar: :any_skip_relocation, monterey:       "a14319daae71c93a2fc0fc02d54ba3e5823a52efb84db363860b2e9670195769"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a14319daae71c93a2fc0fc02d54ba3e5823a52efb84db363860b2e9670195769"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "555e68dd5aff70f41b25b75a782e531139681482e55efd115027e76b95d4cad4"
   end
 
   depends_on "go" => :build

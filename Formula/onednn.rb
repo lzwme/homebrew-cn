@@ -1,8 +1,8 @@
 class Onednn < Formula
   desc "Basic building blocks for deep learning applications"
   homepage "https://01.org/oneDNN"
-  url "https://ghproxy.com/https://github.com/oneapi-src/oneDNN/archive/v3.2.tar.gz"
-  sha256 "8b1db9cc5799ae39c2a567eb836962de0346d79fbc3d8e6f7090a3d9f8729129"
+  url "https://ghproxy.com/https://github.com/oneapi-src/oneDNN/archive/v3.2.1.tar.gz"
+  sha256 "2f76b407ef8893cca71340f88cd800019a1f14f8ac1bbdbb89a84be1370b52e3"
   license "Apache-2.0"
   head "https://github.com/oneapi-src/onednn.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Onednn < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7587594a2ed6e0af2f222b0215eb7296054888c5905ad5fc49d6cb8645f2a763"
-    sha256 cellar: :any,                 arm64_monterey: "bdcc8636c8ee00829047ebfed6b9f99f295555590584e9f2352b2b01ac7301ff"
-    sha256 cellar: :any,                 arm64_big_sur:  "6695e3ffc894d08f1a94403d741525e698029cf7238776ce112ce3ea969fee24"
-    sha256 cellar: :any,                 ventura:        "a2822f32e6dfbfb2b43e559af60010e86d1bca594a2222ec0d4627a77b029aa2"
-    sha256 cellar: :any,                 monterey:       "2dcdc5e2ae13b21534094b5fcdb9d179bcbb8f3c6194f025a6ea6879b04a1298"
-    sha256 cellar: :any,                 big_sur:        "8d4125e5c102722a80b157166ba07f9c056cb1e85f02dcfa08b2a31b57d6c46d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a5e7eea97a45068f6fc8f856173c178af8b951d3d80c6ab40570409bfa6506a"
+    sha256 cellar: :any,                 arm64_ventura:  "ec53d5ea12651ed953092f729cc57a9261a0306b5e2a7a8bf5c794cd19b3354d"
+    sha256 cellar: :any,                 arm64_monterey: "a420934bfd06b53f50e8501c7727ced9ecd85882caabbaf38aae1708a5bede9a"
+    sha256 cellar: :any,                 arm64_big_sur:  "35063d9d401dfad170021f621647c97ac1ef9e1f0e59ba4d5102711fc1aee3ca"
+    sha256 cellar: :any,                 ventura:        "d4359decefdc6ee8b51fff8ab539dd80782c696b1cdd3bbb0f5a28a6cf87ad76"
+    sha256 cellar: :any,                 monterey:       "0da7de658ddfbc868ea9989629590c93c17b878497fd4a44a384dc08c73c56e6"
+    sha256 cellar: :any,                 big_sur:        "95199b5edecbec0b4116cccf2709ef9babbe78bcaa225ed76a9bdb486ae72384"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9c846d99036fa29e0e7b44fdb2914d855e3eed03a33f4e77efe9275e671bdf9"
   end
 
   depends_on "cmake" => :build

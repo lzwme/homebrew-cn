@@ -1,20 +1,21 @@
 class Gedit < Formula
   desc "GNOME text editor"
   homepage "https://wiki.gnome.org/Apps/Gedit"
-  url "https://download.gnome.org/sources/gedit/44/gedit-44.2.tar.xz"
-  sha256 "3bbb1b3775d4c277daf54aaab44b0eb83a4eb1f09f0391800041c9e56893ec11"
+  url "https://download.gnome.org/sources/gedit/46/gedit-46.0.tar.xz"
+  sha256 "2ca1be052902cf05b1f3d389d12e3cc8cb906740c10c9bde3cb8af6db58f655f"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "cc000ff6ce9a1a451fa8285e0f4bbf59fc268ad18beccce471aa86d674e2b5c5"
-    sha256 arm64_monterey: "b33cb89f188de3fe780f49976fe140265bdf1c376f196302af7d29eb8a1a7fa2"
-    sha256 arm64_big_sur:  "cc7b5b656925a805602feda814d96b12bd4f64d00072230e1c03eb55fa607137"
-    sha256 ventura:        "a7c193913c461fbb89a0a1f4e78a1cb7b726b38f6bb6d9410c6d61b98b10af80"
-    sha256 monterey:       "79f51aa19950f4c483f918ac2759fc69b58494d2f66617cfb737d894cf6a8ff9"
-    sha256 big_sur:        "b1957792f7fc3962fb40c0f23b56caf52db23fc9cc6c13de38c643dcc4c8712a"
-    sha256 x86_64_linux:   "a758efe0173d7ade8ad0576242917451221904efd1f64b85a1568208fd753e0d"
+    sha256 arm64_ventura:  "d49f8def6f60ae80e863c314f929740a7ade2f0044d02b59210cbf7e91b82d12"
+    sha256 arm64_monterey: "431cf737ae2c7190028c134424659df02561a9edb2209f14cb1467ceb1a66818"
+    sha256 arm64_big_sur:  "b9d339a2cda8c0b06e119a9b07738ddc8a2a180e2d614d03a0af7a42b3515239"
+    sha256 ventura:        "02cb9152f7888d9f41e415b3f79b3b508bf1e073307c12e15992846e3dce449c"
+    sha256 monterey:       "092f8a1ceea8e165f5ca81ec05ec3fe92d8721876938a15859af13b8965e2c09"
+    sha256 big_sur:        "afcf433c246f23d77a3945d749824c05563f4bf2611878ff788bc45b4a3f48bf"
+    sha256 x86_64_linux:   "f74b0d3d8e9b1efb0e22c5fa92c49a2adce96fd5bbbc22ac60a65a2211d0c9da"
   end
 
+  depends_on "desktop-file-utils" => :build # for update-desktop-database
   depends_on "docbook-xsl" => :build
   depends_on "gtk-doc" => :build
   depends_on "itstool" => :build
@@ -23,7 +24,6 @@ class Gedit < Formula
   depends_on "pkg-config" => [:build, :test]
   depends_on "vala" => :build
   depends_on "adwaita-icon-theme"
-  depends_on "amtk"
   depends_on "atk"
   depends_on "cairo"
   depends_on "gdk-pixbuf"
@@ -33,12 +33,20 @@ class Gedit < Formula
   depends_on "gsettings-desktop-schemas"
   depends_on "gspell"
   depends_on "gtk+3"
-  depends_on "gtksourceview4"
+  depends_on "libgedit-amtk"
+  depends_on "libgedit-gtksourceview"
   depends_on "libpeas"
   depends_on "libsoup"
   depends_on "libxml2"
   depends_on "pango"
   depends_on "tepl"
+
+  # Fixes `git submodule` failure.
+  # Remove on next release.
+  patch do
+    url "https://gitlab.gnome.org/GNOME/gedit/-/commit/02b0a3ab1486406c1fb300c1bdee7060946c3d66.diff"
+    sha256 "4cb4cb888964248cf9507ad58e4eaef99267b446f6f8d06cd2d82c8d32818bd3"
+  end
 
   def install
     ENV["DESTDIR"] = "/"

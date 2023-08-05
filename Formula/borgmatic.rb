@@ -3,19 +3,18 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/bd/47/70038b678e12181a28959d3ca3a7f3dcacb0b01da217550ab710a453e34d/borgmatic-1.8.0.tar.gz"
-  sha256 "b561c69f241d9e87af585720079e9ef7b43bdee8d4c39c8775476e068ec71a5a"
+  url "https://files.pythonhosted.org/packages/bd/6f/10307178af97bfa4473f07303b03b53002e6d37336cc5618253849894628/borgmatic-1.8.1.tar.gz"
+  sha256 "5db8a14d026da224517f08cc08ff9710f99bb7bfffcc53f1d5f2163af9fdd8d7"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "daaa0809a857c97fcfa9b9445deb7ac0fb731d76dee4fc8bf65d440953061766"
-    sha256 cellar: :any,                 arm64_monterey: "014cf84100c722234c9e3064d2a8f971dc3e1c0f54d5d0bc1b94dbc673d5babc"
-    sha256 cellar: :any,                 arm64_big_sur:  "5555f99296a928877eb5a246e634cd7da2ef8ab6e70c2cded907be50412cf090"
-    sha256 cellar: :any,                 ventura:        "16f8bbcb3adc1a2dad5892b0019373cc210321ae51367971b84f4b46c9a274b7"
-    sha256 cellar: :any,                 monterey:       "d1b2760bc99ef2fdd94b6f6cf9fa9b201c2e98a02c939e03e18de78a1dadd27a"
-    sha256 cellar: :any,                 big_sur:        "432d0f4a6a861682eaeea9c83df123f2d2f9c16c07ca8e9aa0fb980cb802e5f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6eb7c7cfa3b230b06ef77203a3635851ce8627f89edeb4accad987917f98c1d0"
+    sha256 cellar: :any,                 arm64_ventura:  "27e83268a6c52cff05d44396eea231aa470c13adb066fbc5984f822b52912491"
+    sha256 cellar: :any,                 arm64_monterey: "8efd001dc9816110d258fa4f2bb4b07eaa7cddaae532e78a4ee628ea112ace09"
+    sha256 cellar: :any,                 arm64_big_sur:  "0ee1e6e3182772e28f751783bad3ec2b9fc79448cfdf54db6d6d052258ee6ec2"
+    sha256 cellar: :any,                 ventura:        "fb75158d6e2e43dd148bdbf64c71a8e797f96d5f8c953a506eab8c97477e5dba"
+    sha256 cellar: :any,                 monterey:       "e5b213c5d1b4c31e16fb10c97f45c36137bee1b5b339f2ae5f3febf80746c97e"
+    sha256 cellar: :any,                 big_sur:        "5198a48668bb91e1103ac089ae94e7bfe8701f0b2986ea903830e2e17dc14f8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfd9975fe5f5f430f50a5af923423a2d7756a94f23f54d02860600b67aab20ad"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -47,8 +46,8 @@ class Borgmatic < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/e5/a2/3e03efdd25f93e1296d0454a7680456fda2925f2ff624bf43855d785b3bd/jsonschema-4.18.4.tar.gz"
-    sha256 "fb3642735399fa958c0d2aad7057901554596c63349f4f6b283c493cf692a25d"
+    url "https://files.pythonhosted.org/packages/ae/a9/30605c5fe91e5087dacd85809322021106920a866d114a14f042781ffa3e/jsonschema-4.18.6.tar.gz"
+    sha256 "ce71d2f8c7983ef75a756e568317bf54bc531dc3ad7e66a128eae0d51623d8a3"
   end
 
   resource "jsonschema-specifications" do

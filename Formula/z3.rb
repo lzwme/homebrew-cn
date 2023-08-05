@@ -29,6 +29,15 @@ class Z3 < Formula
 
   fails_with gcc: "5"
 
+  fails_with :clang do
+    build 1000
+    cause <<-EOS
+      z3-z3-4.12.2/src/ast/ast.h:183:53: error: call to unavailable function 'get': introduced in macOS 10.14
+          int get_int() const { SASSERT(is_int()); return std::get<int>(m_val); }
+                                                          ^~~~~~~~~~~~~
+    EOS
+  end
+
   def python3
     which("python3.11")
   end

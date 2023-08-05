@@ -1,8 +1,8 @@
 class Jigdo < Formula
   desc "Tool to distribute very large files over the internet"
   homepage "https://www.einval.com/~steve/software/jigdo/"
-  url "https://www.einval.com/~steve/software/jigdo/download/jigdo-0.8.1.tar.xz"
-  sha256 "b1f08c802dd7977d90ea809291eb0a63888b3984cc2bf4c920ecc2a1952683da"
+  url "https://www.einval.com/~steve/software/jigdo/download/jigdo-0.8.2.tar.xz"
+  sha256 "36f286d93fa6b6bf7885f4899c997894d21da3a62176592ac162d9c6a8644f9e"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
   head "https://git.einval.com/git/jigdo.git", branch: "upstream"
 
@@ -12,13 +12,13 @@ class Jigdo < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "7f40b31d3cbf93164a64189389a044f453c780696768bfc8003b8ab991dbcbce"
-    sha256 arm64_monterey: "6e9590cc36dc2f0f3d75d565a1c5f99582c25ee41297d8ef67b04480c56e4bf5"
-    sha256 arm64_big_sur:  "2a751d087e93881f023139a101fc21e7c9ee3d54fa24d0b210d64128271b3ad0"
-    sha256 ventura:        "0b5a19248f88195a2c8b260d2c6645b2b9036f70de0270079b596c640bc982f7"
-    sha256 monterey:       "500f02c729d51da1d7e1515111efc02adf900638c70980cfdadcd693f9c41726"
-    sha256 big_sur:        "f57af0993dfde16f88d148b15f22fae331798b82a518515d9b8f4e53f93aabe8"
-    sha256 x86_64_linux:   "132117193141114c71df0b3f4c0c193c754b9b70865190237b65424c79b30f50"
+    sha256 arm64_ventura:  "f650c19b6f867d73389a9c4454bd323cadc57d683962bae896aa6c8e37d56068"
+    sha256 arm64_monterey: "423d86a7a9b3825164c2d82cd04c21bb1014745c821cc0b27cdff29eca1d6c90"
+    sha256 arm64_big_sur:  "5dcea0cd87545e2112f787892e70ca69a2202044271ffe89f580a21b58ba5f0f"
+    sha256 ventura:        "5a247d726d179602b3249137efa25d13c025d3a9bc2bbb24d923b57f022cc6f4"
+    sha256 monterey:       "037de4d08cf85ffb4dd2a698a01f16ea31e1eada585544d8f803e6f266a757ae"
+    sha256 big_sur:        "be8f640734494f2a4daf4bac0407b80ddf8b56e8136456732d4c5693355b2ccf"
+    sha256 x86_64_linux:   "244d944cf955deef5bfb200e61e3fae6cfc49038883f2c542e534b0c498dc4c6"
   end
 
   depends_on "pkg-config" => :build
@@ -36,9 +36,6 @@ class Jigdo < Formula
     # Find our docbook catalog
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
     system "./configure", *std_configure_args, "--mandir=#{man}"
-
-    # replace non-existing function
-    inreplace "src/compat.hh", "return truncate64(path, length);", "return truncate(path, length);" if OS.mac?
 
     # disable documentation building
     (buildpath/"doc/Makefile").atomic_write "all:\n\techo hello"

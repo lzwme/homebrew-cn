@@ -1,8 +1,8 @@
 class Gitg < Formula
   desc "GNOME GUI client to view git repositories"
   homepage "https://wiki.gnome.org/Apps/Gitg"
-  url "https://download.gnome.org/sources/gitg/41/gitg-41.tar.xz"
-  sha256 "7fb61b9fb10fbaa548d23d7065babd72ad63e621de55840c065ce6e3986c4629"
+  url "https://download.gnome.org/sources/gitg/44/gitg-44.tar.xz"
+  sha256 "5b0e99ab3e7b94b0daa98ca8041d5ec9280ee0a2c28338a5506a968ac52e2354"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,14 +11,13 @@ class Gitg < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "f2ddb91d679e3cce264f52960a7e30e2a5267dbcd85e64b02c8706cfd3a5479c"
-    sha256 arm64_monterey: "f68e86061156ba405410156aa3e4066015cdb9227162d68f2581664a6a7b4ba9"
-    sha256 arm64_big_sur:  "a2bf23c4cb3fdfdcdb05f250b5bf62d33bc60d01072f182f1209a40b604674df"
-    sha256 ventura:        "5309cb3218437eb04e8f635a281f2e027cce2132fc172625da6647e2b95ab76d"
-    sha256 monterey:       "70d587c967403aafdff322736896ad013be0b1bc0a4a9fbe60329913a4f07fad"
-    sha256 big_sur:        "45de0fdc63fdd84c90e4ccfcbd99e7f2338b5d5510f7b8364fc32b49d6335528"
-    sha256 catalina:       "6243ae261e1994f5b72c79bb469c23270c67e25a1e0f1a4a1fa39f1f248fd3f4"
-    sha256 x86_64_linux:   "e25650fea8b7537a43e868afc3f0e1ac7aa1ed8153b655556bafe6fbdf883132"
+    sha256 arm64_ventura:  "a5d013b479cbb9b9a0f77448fa51f649654e629a5b48184a9e2aa571396354d1"
+    sha256 arm64_monterey: "1a46f7acc167edaac7e768a15aa09805e27f694c2f20fb21452db71bf832ef36"
+    sha256 arm64_big_sur:  "7e9c89e643ef04d97c5648f46965c43d24927a1206c9d07587fb54842b744c83"
+    sha256 ventura:        "6390aec004418998abbfbf5e1100e40dcd4fd852b53a6fdcd35791af2083e0e8"
+    sha256 monterey:       "e89020ed39c5a0476712b9b38872683132860cdde5a318b3cbca2b5dc4460054"
+    sha256 big_sur:        "b202491385fbc0b03d915cec9919c591f88768582fdfb8a67d8fbd2345de3670"
+    sha256 x86_64_linux:   "2788c52516db7b9904dfbd8de27b088a0a096bb79786ecdfe6c5b367d3855a0d"
   end
 
   depends_on "intltool" => :build
@@ -28,6 +27,7 @@ class Gitg < Formula
   depends_on "vala" => :build
   depends_on "adwaita-icon-theme"
   depends_on "gobject-introspection"
+  depends_on "gpgme"
   depends_on "gspell"
   depends_on "gtk+3"
   depends_on "gtksourceview4"
@@ -37,16 +37,14 @@ class Gitg < Formula
   depends_on "libgee"
   depends_on "libgit2"
   depends_on "libgit2-glib"
+  depends_on "libhandy"
   depends_on "libpeas"
   depends_on "libsecret"
 
-  # Apply upstream commit to fix build.  Remove with next release.
-  patch do
-    url "https://gitlab.gnome.org/GNOME/gitg/-/commit/1978973b12848741b08695ec2020bac98584d636.diff"
-    sha256 "1787335100ab78bc044cda29613a40f3f85c3ef287646914e56b2ce578e05fdf"
-  end
-
   def install
+    # Fix version output. Remove on next release.
+    inreplace "meson.build", "version: '45.alpha'", "version: '#{version}'"
+
     ENV["DESTDIR"] = "/"
     system "meson", *std_meson_args, "build", "-Dpython=false"
     system "meson", "compile", "-C", "build", "--verbose"
@@ -79,6 +77,7 @@ class Gitg < Formula
     gettext = Formula["gettext"]
     glib = Formula["glib"]
     gobject_introspection = Formula["gobject-introspection"]
+    gpgme = Formula["gpgme"]
     gtkx3 = Formula["gtk+3"]
     harfbuzz = Formula["harfbuzz"]
     libepoxy = Formula["libepoxy"]
@@ -86,6 +85,7 @@ class Gitg < Formula
     libgee = Formula["libgee"]
     libgit2 = Formula["libgit2"]
     libgit2_glib = Formula["libgit2-glib"]
+    libhandy = Formula["libhandy"]
     libpng = Formula["libpng"]
     pango = Formula["pango"]
     pixman = Formula["pixman"]
@@ -100,6 +100,7 @@ class Gitg < Formula
       -I#{glib.opt_include}/glib-2.0
       -I#{glib.opt_lib}/glib-2.0/include
       -I#{gobject_introspection.opt_include}/gobject-introspection-1.0
+      -I#{gpgme.opt_include}
       -I#{gtkx3.opt_include}/gtk-3.0
       -I#{harfbuzz.opt_include}/harfbuzz
       -I#{include}/libgitg-1.0
@@ -108,6 +109,7 @@ class Gitg < Formula
       -I#{libffi.opt_lib}/libffi-3.0.13/include
       -I#{libgit2}/include
       -I#{libgit2_glib.opt_include}/libgit2-glib-1.0
+      -I#{libhandy.opt_include}/libhandy-1
       -I#{libpng.opt_include}/libpng16
       -I#{pango.opt_include}/pango-1.0
       -I#{pixman.opt_include}/pixman-1
@@ -119,10 +121,12 @@ class Gitg < Formula
       -L#{gettext.opt_lib}
       -L#{glib.opt_lib}
       -L#{gobject_introspection.opt_lib}
+      -L#{gpgme.opt_lib}
       -L#{gtkx3.opt_lib}
       -L#{libgee.opt_lib}
       -L#{libgit2.opt_lib}
       -L#{libgit2_glib.opt_lib}
+      -L#{libhandy.opt_lib}
       -L#{lib}
       -L#{pango.opt_lib}
       -latk-1.0
@@ -138,8 +142,10 @@ class Gitg < Formula
       -lglib-2.0
       -lgmodule-2.0
       -lgobject-2.0
+      -lgpgme
       -lgthread-2.0
       -lgtk-3
+      -lhandy-1
       -lpango-1.0
       -lpangocairo-1.0
     ]
