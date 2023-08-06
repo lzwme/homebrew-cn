@@ -1,19 +1,19 @@
 class Cpm < Formula
   desc "Fast CPAN module installer"
   homepage "https://metacpan.org/pod/cpm"
-  url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/App-cpm-0.997012.tar.gz"
-  sha256 "7bfc1692946c621cb9f7604fd904d1329bba6c79857f4802012a785b64a45b6c"
+  url "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/App-cpm-0.997013.tar.gz"
+  sha256 "eeb58c9887f44dd64743356ca24c390a9336fd6bfdc30df23d15e82835a49926"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   head "https://github.com/skaji/cpm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4872714231fa732706500e00f8df2c7801d11e7505dbbdcf6aeb17b51f9ba800"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4872714231fa732706500e00f8df2c7801d11e7505dbbdcf6aeb17b51f9ba800"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4872714231fa732706500e00f8df2c7801d11e7505dbbdcf6aeb17b51f9ba800"
-    sha256 cellar: :any_skip_relocation, ventura:        "ff3662d7a999f44177a42ce20123a44e6a4da49ba4ce69e94d401fc66ec0a562"
-    sha256 cellar: :any_skip_relocation, monterey:       "ff3662d7a999f44177a42ce20123a44e6a4da49ba4ce69e94d401fc66ec0a562"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ff3662d7a999f44177a42ce20123a44e6a4da49ba4ce69e94d401fc66ec0a562"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f77b3f21ac679f15486860d35682a922ff1a5088545f407e45a521ffb6d3ead"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dc751a8d360f0dab00c72be32b981cf00d8e1e9241a8d6f19056fe7c470845a8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dc751a8d360f0dab00c72be32b981cf00d8e1e9241a8d6f19056fe7c470845a8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dc751a8d360f0dab00c72be32b981cf00d8e1e9241a8d6f19056fe7c470845a8"
+    sha256 cellar: :any_skip_relocation, ventura:        "bd0339a28a6cff6d99513eac40c1a1eddc61db34bfff881c3f501a74ce36a967"
+    sha256 cellar: :any_skip_relocation, monterey:       "bd0339a28a6cff6d99513eac40c1a1eddc61db34bfff881c3f501a74ce36a967"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bd0339a28a6cff6d99513eac40c1a1eddc61db34bfff881c3f501a74ce36a967"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5353764e2ed5ffed35b7057230a374d97002683297134ba74c8e43cdd2ceb2c0"
   end
 
   depends_on "perl"
@@ -34,8 +34,8 @@ class Cpm < Formula
   end
 
   resource "CPAN::Meta::Check" do
-    url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/CPAN-Meta-Check-0.017.tar.gz"
-    sha256 "0454ab93f12780b1d579df15b5f939e09702e954be82028fadd40e8bc9b0f091"
+    url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/CPAN-Meta-Check-0.018.tar.gz"
+    sha256 "f619d2df5ea0fd91c8cf83eb54acccb5e43d9e6ec1a3f727b3d0ac15d0cf378a"
   end
 
   resource "Capture::Tiny" do

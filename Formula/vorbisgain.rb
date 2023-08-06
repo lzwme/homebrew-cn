@@ -3,7 +3,12 @@ class Vorbisgain < Formula
   homepage "https://sjeng.org/vorbisgain.html"
   url "https://sjeng.org/ftp/vorbis/vorbisgain-0.37.tar.gz"
   sha256 "dd6db051cad972bcac25d47b4a9e40e217bb548a1f16328eddbb4e66613530ec"
-  license "LGPL-2.1"
+  license "LGPL-2.1-only"
+
+  livecheck do
+    url "https://sjeng.org/ftp/vorbis/"
+    regex(/href=.*?vorbisgain[._-]v?(\d+(?:\.\d+)+)\.(?:t|zip)/i)
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "5d6e594f8ec28faf2891f44a74881f69332db9a43a8e3058032a32d2d00612c1"

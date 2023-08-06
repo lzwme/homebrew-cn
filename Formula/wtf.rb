@@ -1,8 +1,8 @@
 class Wtf < Formula
   desc "Translate common Internet acronyms"
   homepage "https://sourceforge.net/projects/bsdwtf/"
-  url "https://downloads.sourceforge.net/project/bsdwtf/wtf-20230803.tar.gz"
-  sha256 "2983d1227c315ae8319660329d5c3301ded0740d504a8244d0cb7556495f66fc"
+  url "https://downloads.sourceforge.net/project/bsdwtf/wtf-20230804.tar.gz"
+  sha256 "855b93b2b9a5d69c50add2daf125968ba019a34eedeefc0a064fb07e27066e41"
   license :public_domain
 
   livecheck do
@@ -11,13 +11,7 @@ class Wtf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1cf16df1cfb1a5013590f3386721b6109b93d2c123949f613c5bd935698920f5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1cf16df1cfb1a5013590f3386721b6109b93d2c123949f613c5bd935698920f5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1cf16df1cfb1a5013590f3386721b6109b93d2c123949f613c5bd935698920f5"
-    sha256 cellar: :any_skip_relocation, ventura:        "1cf16df1cfb1a5013590f3386721b6109b93d2c123949f613c5bd935698920f5"
-    sha256 cellar: :any_skip_relocation, monterey:       "1cf16df1cfb1a5013590f3386721b6109b93d2c123949f613c5bd935698920f5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1cf16df1cfb1a5013590f3386721b6109b93d2c123949f613c5bd935698920f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f55958ea25be7538ee42bd7404f2242193594baf52b174ebbff169e7a4163ceb"
+    sha256 cellar: :any_skip_relocation, all: "59bf03ad4baa9687fef5a24f8fbe907c6b309f3a5c45d63a8e02b49cb8558f77"
   end
 
   def install

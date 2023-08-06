@@ -9,13 +9,14 @@ class AnsibleLint < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4aa6070b07a2e16237ca72e1c53ec70c0ce368db817d47e6e366f7ed0a7dcca7"
-    sha256 cellar: :any,                 arm64_monterey: "3b26a25775dc7b0ea68dc89ad23ef92546135d4024b00c5e0b0bf5c8d20a3a0c"
-    sha256 cellar: :any,                 arm64_big_sur:  "18cd86127b332a1a2f070abb70de6b30ac5b64f7a3e479583255de1607569b7d"
-    sha256 cellar: :any,                 ventura:        "206be5bed4250c9f277dba72e547d2ec450e3121b20683c6215ead70f794a4a1"
-    sha256 cellar: :any,                 monterey:       "03110651b4aa415f2a0baf9c0b85f0b8c1420d6d4a208bafcb7262d5f7d7abed"
-    sha256 cellar: :any,                 big_sur:        "b696f5caea2c58fd5e4ebe1dbc1c0a6cb8a3702ff366be419099efed5d7aa722"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3cd7ff7521a5308ddf0046e4a670a69b39009e2f662836a2a05ed38d8f29af05"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "e92d24e93a71e6ac2f042b92a31412fb5ab36e389078b8bdfd39c250b185b977"
+    sha256 cellar: :any,                 arm64_monterey: "ba544128510f1406bc6c3f096706b3aeeecacc7ac63f7e57ff40d3d6c9c0a7f6"
+    sha256 cellar: :any,                 arm64_big_sur:  "94d4be3254791ba885666ff15bcea0e475af67c7f8750951efa911dabc17f3b6"
+    sha256 cellar: :any,                 ventura:        "81c30f96a4f03ac3f6f7b9301f4e199ec1f5ed8a2a23ee245d1a8646a3af85c9"
+    sha256 cellar: :any,                 monterey:       "7784cdba7862c21de4b50e2c9fc01b56aa50f97b4a5b62c284e5b9ef1e087d67"
+    sha256 cellar: :any,                 big_sur:        "95dc3bd0f1ebf817751bb1a3c9badbbf539dc3e10796db2d375eafb91974a238"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8104ffc4cd7fa45e1b73e76097c7c59c239f05bbae4278084e735303d856361"
   end
 
   depends_on "pkg-config" => :build
@@ -23,6 +24,7 @@ class AnsibleLint < Formula
   depends_on "ansible"
   depends_on "black"
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "yamllint"
@@ -40,11 +42,6 @@ class AnsibleLint < Formula
   resource "bracex" do
     url "https://files.pythonhosted.org/packages/b3/96/d53e290ddf6215cfb24f93449a1835eff566f79a1f332cf046a978df0c9e/bracex-2.3.post1.tar.gz"
     sha256 "e7b23fc8b2cd06d3dec0692baabecb249dda94e06a617901ff03a6c56fd71693"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

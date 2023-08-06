@@ -4,6 +4,7 @@ class MingwW64 < Formula
   url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v11.0.0.tar.bz2"
   sha256 "bd0ea1633bd830204cc23a696889335e9d4a32b8619439ee17f22188695fcc5f"
   license "ZPL-2.1"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,13 +12,13 @@ class MingwW64 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "8dbb584293d0a96282c1f061b746817c857aeadbfd21e8e9925a87397a993b74"
-    sha256 arm64_monterey: "f8cd3096f2944bac0ff2c1e1f2d8761811b3167dfda449f12798f35ce555c557"
-    sha256 arm64_big_sur:  "1c28c4f22f13d037ba6c450ffbe778c75f7e2e7a3415178d06a00865b0c3d2a6"
-    sha256 ventura:        "bc21617fdc0a06a58d3e9bf7b7477e41d45d22084acf14d55d560e3a096acf9e"
-    sha256 monterey:       "ad5683e6294f4987a6449060119975d44fc3552db646d4299cb73aa5880b8116"
-    sha256 big_sur:        "3b116e27e63fceac65715c861676bd7bff76fe650afcbf1537ab03b6a2ed2bd0"
-    sha256 x86_64_linux:   "7c09f410c628293c420d818814c33e9c5a265982c3dbe1ccedae4f9232ec5aa2"
+    sha256 arm64_ventura:  "becfa5f11cbf651f6201ccad64f4c282774a8432be526ec0f29636b12569d217"
+    sha256 arm64_monterey: "4cb3ba9fef759cefc615bb1fc90cd0c597d66d740c733111ddf3cb95509a40a0"
+    sha256 arm64_big_sur:  "ddefdbf524cc2eeef8831bb9656f4f3eac35a24e31c64ebee2eebf89221adab3"
+    sha256 ventura:        "f5982a2946ea47905dbd8191f94a4062b5c6d6778e12c5bbe839402c3659d264"
+    sha256 monterey:       "b00e123e8d88dab11a466cdae247236645afff842bae3223d80fc5a697a56b89"
+    sha256 big_sur:        "3186dd3498aa7604ddf2ae62c70c6566e593835f9974550eac199263677788cb"
+    sha256 x86_64_linux:   "13bd5a4b01e3a581258fad2bc1704c84cb0b7a6a4fd663b8560cbbdf36a268af"
   end
 
   # Apple's makeinfo is old and has bugs
@@ -29,23 +30,15 @@ class MingwW64 < Formula
   depends_on "mpfr"
 
   resource "binutils" do
-    url "https://ftp.gnu.org/gnu/binutils/binutils-2.40.tar.xz"
-    mirror "https://ftpmirror.gnu.org/binutils/binutils-2.40.tar.xz"
-    sha256 "0f8a4c272d7f17f369ded10a4aca28b8e304828e95526da482b0ccc4dfc9d8e1"
-
-    # Fix linking failures in ld against import lib. Fixed upstream but still
-    # present in 2.40. Can remove this once 2.41 is released.
-    # https://sourceware.org/bugzilla/show_bug.cgi?id=30079
-    patch do
-      url "https://sourceware.org/git/?p=binutils-gdb.git;a=commitdiff_plain;h=b7eab2a9d4f4e92692daf14b09fc95ca11b72e30;hp=0d2f72332c7606fa3181b54dceef82d1af403624"
-      sha256 "99e943c9ea549c0a815493ea54f73e1af005224faa042bf2a4fa459325006c1b"
-    end
+    url "https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz"
+    mirror "https://ftpmirror.gnu.org/binutils/binutils-2.41.tar.xz"
+    sha256 "ae9a5789e23459e59606e6714723f2d3ffc31c03174191ef0d015bdf06007450"
   end
 
   resource "gcc" do
-    url "https://ftp.gnu.org/gnu/gcc/gcc-13.1.0/gcc-13.1.0.tar.xz"
-    mirror "https://ftpmirror.gnu.org/gcc/gcc-13.1.0/gcc-13.1.0.tar.xz"
-    sha256 "61d684f0aa5e76ac6585ad8898a2427aade8979ed5e7f85492286c4dfc13ee86"
+    url "https://ftp.gnu.org/gnu/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz"
+    mirror "https://ftpmirror.gnu.org/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz"
+    sha256 "e275e76442a6067341a27f04c5c6b83d8613144004c0413528863dc6b5c743da"
   end
 
   def target_archs
