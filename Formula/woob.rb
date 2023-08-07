@@ -9,18 +9,20 @@ class Woob < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "07dc03e52849ec5ea5ae11284e16e6eef4496cf67cd60bc3e75ed1f17db023cd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "886ef6bd17fe07f21e83efddf1d4671d2465f9ab4f3af2c4e2312770a93e4123"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "39c179277fd5de1f63f1ef76f635d714eb8c51c12877c9b274b3668e292a398d"
-    sha256 cellar: :any_skip_relocation, ventura:        "3dea1a4027708ed9fb6935d641f718f37becfd2a80bffa509bd7ccd7b4162d26"
-    sha256 cellar: :any_skip_relocation, monterey:       "98fe79d84091329a801446ee6fe865d2c04ca72eda4244f7668220b4d373baf5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2a14993a16305caf94df8bb72fa25aeaef8723f3d1079f310042b2cf6813cbc7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2322145dfe07cc0e50b4707c2ae4b11ef3b67ef929f2cefe69050b4964b99e45"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c97975ba764c1ed4bea18a81765f8df592eafad056a3adf27a77536e65ac6bd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e7cd596d44b9db8163f87e782a2295f1bcc1dc555e994adcb579ee3c3ef46b5d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9513ff24e3fba7b0de377f719a75cbe05758c48c3cc41cca4299c624d97b41e1"
+    sha256 cellar: :any_skip_relocation, ventura:        "948c26886f17bff9c235a8991d26573a6443605d619f1719e719ddce5ba34f7b"
+    sha256 cellar: :any_skip_relocation, monterey:       "dc26c1a50926cd5d41aee212aa2e2fa65fb45b29f7f4fbc68abab5edb68a1d35"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6829614e07810612a5f6b760ee4c005054c687d2729867077c43c344d44c75bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8ae239facfe2ff6f68b607486b5845d79ea19cdc61b50eebecb5fbccaccca91"
   end
 
   depends_on "gnupg"
   depends_on "pillow"
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -31,11 +33,6 @@ class Woob < Formula
   resource "babel" do
     url "https://files.pythonhosted.org/packages/ba/42/54426ba5d7aeebde9f4aaba9884596eb2fe02b413ad77d62ef0b0422e205/Babel-2.12.1.tar.gz"
     sha256 "cc2d99999cd01d44420ae725a21c9e3711b3aadc7976d6147f622d8581963455"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

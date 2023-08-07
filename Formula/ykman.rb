@@ -10,23 +10,21 @@ class Ykman < Formula
   head "https://github.com/Yubico/yubikey-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6c7b0effb13af4ca5caa91d9f186557a78fe51e718c01a766a76fccc7fe4842e"
-    sha256 cellar: :any,                 arm64_monterey: "471d7d83d44698b7333a73e2cd1ec675fb0f5487cea4bd10a76ba78c19103b1e"
-    sha256 cellar: :any,                 arm64_big_sur:  "ed476cfdd7ed5613022b92339e0352c6d2a751a803300413fb0e6f93e0c23958"
-    sha256 cellar: :any,                 ventura:        "228bcdddedc3ac45baca25c41d58c705005457a41240b3abddf1f3293d1e8a28"
-    sha256 cellar: :any,                 monterey:       "1d959eb3c1ee7c4ec24e98a6eee63103f3f8c70282bbd637803ef367720a6335"
-    sha256 cellar: :any,                 big_sur:        "fc3d97ee12d26cccc38d9ff1c9f773c563a308f4ac6c41253a910d13844becd4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "984df9910381982a650209c790e8b9d54e01c6d9b7c051cbefa95bcc995062b0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02472f99430c2acf79707fc6daf08b5fbba173f6e49272f9720be65a646b4277"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "932871713f6120ead63242e92bb5161c6970e9653e2474f1bb3ec727d9238a76"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "32aaf52b2f1eb2470ae08a03238fdbc81e5e74ff3fe183f30f3f5dca54153943"
+    sha256 cellar: :any_skip_relocation, ventura:        "6c415f4a15e876176bdf54c2dc58c6b304854f17ea478e4289f22820db0daf12"
+    sha256 cellar: :any_skip_relocation, monterey:       "1257daac542e2fdfda45584f9cc6052db16a53f34739a9996841134746ff201d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "25f7a78b74870c6b1160605179eebe193a82b769f902b864fb2880fe0f1433aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c675b26e1d23eefed38c3c7516029024028ef1aec832b0269c7ce3d9c8c0aa4"
   end
 
-  # `pkg-config` and `rust` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "swig" => :build
   depends_on "cffi"
   depends_on "keyring"
-  depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
 
   uses_from_macos "libffi"
@@ -35,11 +33,6 @@ class Ykman < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/7e/ad/7a6a96fab480fb2fbf52f782b2deb3abe1d2c81eca3ef68a575b5a6a4f2e/click-8.1.5.tar.gz"
     sha256 "4be4b1af8d665c6d942909916d31a213a106800c47d0eeba73d34da3cbc11367"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "fido2" do
@@ -73,10 +66,6 @@ class Ykman < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     # Fixes: smartcard/scard/helpers.c:28:22: fatal error: winscard.h: No such file or directory
     ENV.append "CFLAGS", "-I#{Formula["pcsc-lite"].opt_include}/PCSC" if OS.linux?
 

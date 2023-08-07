@@ -10,17 +10,19 @@ class AwsGoogleAuth < Formula
   head "https://github.com/cevoaustralia/aws-google-auth.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e39ef675d33f1476202a79eec7f21cd8d864a34546828f04e5a62f24bed9058e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "519222664990894e2fd8d02279975878f5c6d934207783ffb3feafb9a601256d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "65eb3032d4d6e8a522232ed8fa2314a3764bca51c4456b507c71d63a42000105"
-    sha256 cellar: :any_skip_relocation, ventura:        "5a2b26be71e8cfcf32f847a5a05237ee9e27eac0b8eaf4210e9267d0b6a863ad"
-    sha256 cellar: :any_skip_relocation, monterey:       "5e5a0b0d82165f6ea2dbb13fff29526fb53d0d7c183d3b2afd61cdb9442aa927"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d75348893fb9fa8bbe76d36fd32c17fce207c5d54f266a2e7394e404a048ecc7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "facb35e9f65e97994ae8ba4ceff61ca8ec80a2a4ef71108fc73f92395e79b5a3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "14d271694d8f2dc7927d5594b1871961a84a25bad96a2b388c6ee03efa8c920c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "aab95509c03687cca871b1f0205499cb15776a9882a6791904da4a7a23ca9cf1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fe0dd51caec29b6631b5a94cf7b71232a1c0ddac8e92db4f0e978a9ee8d4d911"
+    sha256 cellar: :any_skip_relocation, ventura:        "82ce705c570b47bd48eae5bc3488c21c1738e1d796e6669fd644eb12e6d7b9e4"
+    sha256 cellar: :any_skip_relocation, monterey:       "8449c1105f955fa8606a3c33c06d19130d6d018815448fe6a1b9d684aad6f86a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9c62e6b1dcc5c129503c4167bfa4ea15e34c6830336c6d211d8077debd704419"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f06b55d43cf5d6b25434e06354a1882219f2672ce67dee2aa59dd33dcc132650"
   end
 
   depends_on "keyring"
   depends_on "pillow"
+  depends_on "python-certifi"
   depends_on "python-tabulate"
   depends_on "python@3.11"
   depends_on "six"
@@ -49,11 +51,6 @@ class AwsGoogleAuth < Formula
   resource "botocore" do
     url "https://files.pythonhosted.org/packages/8f/6f/f0eb30793d6582d0ade2d98cc2de5cbf59eb9bc1c57e44d8a9741b3523e3/botocore-1.31.10.tar.gz"
     sha256 "736a9412f405d6985570c4a87b533c2396dd8d4042d8c7a0ca14e73d4f1bcf9d"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

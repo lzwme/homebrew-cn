@@ -10,21 +10,19 @@ class Credstash < Formula
   head "https://github.com/fugue/credstash.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b7fc86c4ae019c9128481991f49a110e2976fe8a7269c7866e1e80c9d49f91b5"
-    sha256 cellar: :any,                 arm64_monterey: "654e3512263aa1c466a011e3eaeddd5db7d9587c35df15ee70ecc795ef36373a"
-    sha256 cellar: :any,                 arm64_big_sur:  "3cb7ebdaa4ca6e1a5ab67cf58f08f1ee3a209430847c5a2cdcd1a92e237c3d3d"
-    sha256 cellar: :any,                 ventura:        "075e19ae95cc539286c6db05f0db8860e1b6e4c2baf76c62d404cf9de3ec1336"
-    sha256 cellar: :any,                 monterey:       "c728f090886658565c5d94f1feb61d8ffe69d74eaa94bbc392f2802b8fa0d697"
-    sha256 cellar: :any,                 big_sur:        "04217ea50519235ee427929270ecbb84fe37031c25630fbbc721a16577a6bc0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd291334b2878491a4cb1e4d5e36223e98540fd86f5c2e0d00b9f74155dac17f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b86ad1d335d4746f547947fc9b42ce6addc5f1c29463c8218c15fc334c8e1715"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f77105f741e79810e8dfba34cacd76a0f9966426815b62c408fec2bba5348fb3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e0391a96475de52009bc689bbaa4472a876a79d211873a89a4038d5e75087d75"
+    sha256 cellar: :any_skip_relocation, ventura:        "2986114fe1b33be3e0122e3810e14b4efa2486028b2cc99500aca94f448def5b"
+    sha256 cellar: :any_skip_relocation, monterey:       "126c705b846615953eae6057d205728c479236eeb8081c23203022aadd2ac273"
+    sha256 cellar: :any_skip_relocation, big_sur:        "386372a295a6b8a73f1f1f6824e70d5ceff72be362c442f82f79495894ccf177"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20e8270eec392ff8bb5d99862f81a9dd3d8831c22fcd2992d0175ede9b4ad3ad"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -38,11 +36,6 @@ class Credstash < Formula
   resource "botocore" do
     url "https://files.pythonhosted.org/packages/54/ce/3aced9653aa3b81aeda70574f342cd3014ecc36aff6a20e74c767f92864f/botocore-1.31.17.tar.gz"
     sha256 "396459065dba4339eb4da4ec8b4e6599728eb89b7caaceea199e26f7d824a41c"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "jmespath" do
@@ -66,10 +59,6 @@ class Credstash < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 

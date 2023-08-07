@@ -8,18 +8,15 @@ class OnlykeyAgent < Formula
   license "LGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "40cefa92f0d5c4731e68f3644ed709866812c183f918a38fca4942d4c94ad9b2"
-    sha256 cellar: :any,                 arm64_monterey: "01b73aa8e25376582594d4608f3df654a205c6a031e23f473983c50a0bf2ac91"
-    sha256 cellar: :any,                 arm64_big_sur:  "d24c00449096e9bcbd0697886351764cef17ebad83434c105b30275030ddb36d"
-    sha256 cellar: :any,                 ventura:        "a63443d6312052864fedd6442f0fe3d635cc717ac240e2b8ee9ceec9287eb46b"
-    sha256 cellar: :any,                 monterey:       "e33a66c8ddb49421e02750bd37aed93d4432b04d0207032fc0ec5ca3161d3059"
-    sha256 cellar: :any,                 big_sur:        "cad154b6b2d1f8535d61ad9f86e4e90e14a618b47ef031f7777a3f73851c9299"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4fa6463dc8d9ea868c623543a0b6d545bdc4ed2eb1d2621ed481ec1313a5175d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1133ee61bfd2d0f209c8e02b168c97db978ccdd96cefaa6ec57d67fd7730bc5a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4857723af86dfa00dff3a67ef91518c88e2d76c89769fca9c7ee151d61f649c3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0f92f72e7071213a2b6a6e1f0a606f1b7b83748769e98c29233b09c239d06b5c"
+    sha256 cellar: :any_skip_relocation, ventura:        "b1e82daaecbd965237b419e09e6995374a9791c583f9cb55b825bbd7023e34e6"
+    sha256 cellar: :any_skip_relocation, monterey:       "c5e95d33ff2c466fd952dda040c54645f667db02b9723a7372c624addf4dccd6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b969768f4604c21ee90174153c1e66dbd9c9e30a1932f971f5845a5e9664a1ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1960d347a71ef38fe775040b59286fcc4bbae94ce2225aff1a9e1ce86f143e8f"
   end
-
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
 
   depends_on "cffi"
   depends_on "docutils"
@@ -27,8 +24,9 @@ class OnlykeyAgent < Formula
   depends_on "hidapi"
   depends_on "libcython"
   depends_on "libusb"
-  depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -47,11 +45,6 @@ class OnlykeyAgent < Formula
     sha256 "7d6db8214603bd7871fcfa6c0826ef68b85b0abd90fa21c285a9c5e21d2bd899"
   end
 
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
-  end
-
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
     sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
@@ -65,11 +58,6 @@ class OnlykeyAgent < Formula
   resource "configargparse" do
     url "https://files.pythonhosted.org/packages/3c/fb/bf200c55a1e7014577c37fa9cbfa0148f629762bb3acff56299d8c58cbc3/ConfigArgParse-1.5.5.tar.gz"
     sha256 "363d80a6d35614bd446e2f2b1b216f3b33741d03ac6d0a92803306f40e555b58"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "ecdsa" do
@@ -198,10 +186,6 @@ class OnlykeyAgent < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     # prevent "fatal error: libusb.h: No such file or directory" when building hidapi on linux
     ENV.append_to_cflags "-I#{Formula["libusb"].include}/libusb-1.0"
     # replacement for virtualenv_install_with_resources per https://docs.brew.sh/Python-for-Formula-Authors

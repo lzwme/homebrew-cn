@@ -9,21 +9,18 @@ class Fred < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8089f9a6cdcd59750673d84ad88aa811639e88f036704f1107f3e48a40491eca"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f168772e0d637f443c555e0fa6445098706341e56e9d7c52f2771cbc5caef120"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ece532d86ad5fdd6bce5476c120970ef1c4e7f7fd477ee429125b980d2fd5fea"
-    sha256 cellar: :any_skip_relocation, ventura:        "d5cbe4a72d8e0ca0f81f580e111dc19aa3f43fa09ed3c93b4fcefb919c41a694"
-    sha256 cellar: :any_skip_relocation, monterey:       "f203b834fd464b8bc395cbc3a6d6890cbe9400ed42b6b6b50591872a9c128f2b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "01e13403a725b96211a3fd12b2bed0f25c875e933ca47ed4318c2e2505418dd8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dcc9466ca6f4685a141923f807395397b11593814b2ac01c0295bc76c99bcde6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "01c36997674d538777c886b26adc78ce1ed4cdd7d0169f442c227f17ba10480d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b34bb800a8ac7017c0282ee92d78716cc7d6409dcdb22b60499eb573859ff715"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c5c1b97f1f9a99aeb9f29160014f22bdea6513b0613b7f35fab6b02416d4a4ee"
+    sha256 cellar: :any_skip_relocation, ventura:        "775b68aa90cca49d4857bdf7bde6a1a8dd278110a29f543d8a86ec05f8db7941"
+    sha256 cellar: :any_skip_relocation, monterey:       "c1f1e2c62a367d8d1330e687311d3e214d0ac24ea08a94b02e6a0328c03165a6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6a483ce3cc2e3df1754717ba582754ea47f4dce765c0388a95b569a2d9d270db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ab5616fa5e63674aa9c3fb86489e2b3030139a9d2ec4034acde14eff3c9f38e"
   end
 
+  depends_on "python-certifi"
   depends_on "python@3.11"
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"

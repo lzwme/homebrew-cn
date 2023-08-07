@@ -8,17 +8,19 @@ class Llm < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "2dcb0deb7fbcae9c8918b74a0aadb046e9dc13c07753473a957e84a7dbe6707a"
-    sha256 cellar: :any,                 arm64_monterey: "d29bc9b6ad0fc95f9d26183c3326b113f7e994e7fd37e057e4b15f7ec3c3e50c"
-    sha256 cellar: :any,                 arm64_big_sur:  "0fab633749f23f76a326d58379cdee517c8e00cbc7b3c44a2ff477909868d542"
-    sha256 cellar: :any,                 ventura:        "2c9553253be6be57534839985666c8f75fbd8e784b37fe38a7cbadd105245136"
-    sha256 cellar: :any,                 monterey:       "bffd01c98f8fbc73870b63267a9a5699a56a7493a0f96d52b2a29907efe10899"
-    sha256 cellar: :any,                 big_sur:        "5f53153ab66114a0b00fd99c05b47d6e8fadfec66fb0f7d3a28ed9b2710dc98a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5143f3397139afa4ad17878276a51534e9e8ef070c2eccfe83dc072059688df"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "7a4b587bf8d9cc0a7e4291711289511a3808a1c759be9562ac45a486041a563f"
+    sha256 cellar: :any,                 arm64_monterey: "17735b0c648cad6ea55a541b53c57dbfbf124f19e594f4156eafe9f0153338bd"
+    sha256 cellar: :any,                 arm64_big_sur:  "8398f8d7faee7942faa25b8d0b04dfa5c6f56f34c02ed8dbcf38099faf34d47c"
+    sha256 cellar: :any,                 ventura:        "e871c1b0231128e8f307e434970de9d36931b079f749b3d9d9bdacf96ce431ca"
+    sha256 cellar: :any,                 monterey:       "bc8852d0660c672aafeef9ca5f0b6bf2b53c50aadd740984d324cced4778dedd"
+    sha256 cellar: :any,                 big_sur:        "1fbc929370fd14b0e01540bc4d83253dc75948d6180b8ef0342a4b63e2402130"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea7342d5c5d1d112108b0daaaa45546ee00c7bd308284f5cc129174c245750d8"
   end
 
   depends_on "rust" => :build
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -48,11 +50,6 @@ class Llm < Formula
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
     sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

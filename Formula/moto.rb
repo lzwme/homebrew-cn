@@ -9,13 +9,14 @@ class Moto < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "103b29e8e9ad8759fa0d47bd5198f9eb126cbc7aa9a569e0225b3a09beab07d2"
-    sha256 cellar: :any,                 arm64_monterey: "fcab310a30ca797e430ccbac211179e9269d7e4277922afcda06c946e93d8619"
-    sha256 cellar: :any,                 arm64_big_sur:  "320c48b282f30ec372265d15adea67c560130a7a04b2d06f1bcb5f9f87b8ad83"
-    sha256 cellar: :any,                 ventura:        "111388077eab31afc52c614f8ebbb20ef01239537d328f24921693027ddea191"
-    sha256 cellar: :any,                 monterey:       "a07a82a95e99e280fb3d6203713de8b6c3dc5fc564791beafbca73916c80692e"
-    sha256 cellar: :any,                 big_sur:        "1187a72af84ab06582ef445b374dde8207ca9f9a4ea31a401b3146110bb2f27f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "592c243b71abbc12dc629576e650a92c2a03180f94e6c9d225fe0ae665b31dfa"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "7bf21fb2fbf1b5fafb139395fbbc049c5ce92f0a40d2a25e6851eaaee071a10c"
+    sha256 cellar: :any,                 arm64_monterey: "8dd0d5ee93a285335ed327a3c7cbc8495ec3f748f6df85c005943b8afcc8fdfb"
+    sha256 cellar: :any,                 arm64_big_sur:  "5d13864a2ac25640c928286a49dbfa0d350478d876327b266daf70be9df1d762"
+    sha256 cellar: :any,                 ventura:        "029add5778fd39c145de0ba7c650b0d8b48cdf9e66740523bc5ed0af0a6e876f"
+    sha256 cellar: :any,                 monterey:       "1881983171399184b0b2a107d91ec5c6849019c541178aac0f59ec091d241d03"
+    sha256 cellar: :any,                 big_sur:        "dbb4a68525a436e662531cea594f8382e56ad92312df1735f5ca886c9b4193f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2da9b012307b3c5a136b996fcc1818b4bfef2ff23febf49811d2bbf054140d2"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -26,6 +27,7 @@ class Moto < Formula
   depends_on "cfn-lint"
   depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-certifi"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -59,11 +61,6 @@ class Moto < Formula
   resource "botocore" do
     url "https://files.pythonhosted.org/packages/54/ce/3aced9653aa3b81aeda70574f342cd3014ecc36aff6a20e74c767f92864f/botocore-1.31.17.tar.gz"
     sha256 "396459065dba4339eb4da4ec8b4e6599728eb89b7caaceea199e26f7d824a41c"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

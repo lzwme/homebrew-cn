@@ -8,19 +8,21 @@ class Dxpy < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8567c4c6f613db6d964193b55e3311e923f6e7958a6e2d9bd5ab9adced200ed0"
-    sha256 cellar: :any,                 arm64_monterey: "c983e478fbbda7fc11da236f0c25d606d990b4e62f7437a5c567fc3ad1993ee1"
-    sha256 cellar: :any,                 arm64_big_sur:  "ede6be4db159d6d349961cc8ba835536c39716e8448cd6217f781d68e065d384"
-    sha256 cellar: :any,                 ventura:        "56b3c26cc81899bfb951d0dfe9169cf4cf3b60c79300c6b402017e99ac88adbf"
-    sha256 cellar: :any,                 monterey:       "dd2dd8a61f705a0023b168d1ef997e51440538a53f616acf1a3762c69639e44e"
-    sha256 cellar: :any,                 big_sur:        "d9212492a25984104f254598bfb025fd67fcd9041bcf61f5ba4dabd437d7a840"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "354821a7014b5fd5ff1311195d6e4871e1c2c53d352a251177b75388725e1d59"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "0ddb4db33d67fabdc57894e2d246009fa5e642921f50e8ea2512bb553bcc8382"
+    sha256 cellar: :any,                 arm64_monterey: "f5dd558a78be6163da5cc8d33d12ed712556525bb2e68b382d7817f8d610ce34"
+    sha256 cellar: :any,                 arm64_big_sur:  "2a535e70bef5a4e1cb8bf1b74165f2e442bb2159f49f02c421d363e9a4d78a38"
+    sha256 cellar: :any,                 ventura:        "b05c43e87cafbb0a59fe828c679861e80db57c380c1cb42c8c13753ed5e76837"
+    sha256 cellar: :any,                 monterey:       "72465148eaea269c7461d9f6056d9c5e7cace8edd79ed653d804a95cd118932d"
+    sha256 cellar: :any,                 big_sur:        "7f3a6c97791d891310bd8f98ded8a06eadb7c204808bcf864e13af96f13b7b0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b14164a04d203a8d02feb2b76278c731bf59de261995cd91bb4ab49bbbfe2d4"
   end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build # for cryptography
   depends_on "cffi"
   depends_on "openssl@3"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -33,11 +35,6 @@ class Dxpy < Formula
   resource "argcomplete" do
     url "https://files.pythonhosted.org/packages/54/c9/41c4dfde7623e053cbc37ac8bc7ca03b28093748340871d4e7f1630780c4/argcomplete-3.1.1.tar.gz"
     sha256 "6c4c563f14f01440aaffa3eae13441c5db2357b5eec639abe7c0b15334627dff"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

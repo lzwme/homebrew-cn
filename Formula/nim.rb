@@ -4,6 +4,7 @@ class Nim < Formula
   url "https://nim-lang.org/download/nim-2.0.0.tar.xz"
   sha256 "bd6101d840036fb78e93a69df6cf3f9fd0c21cd754b695ff84a3b4add8ed0af7"
   license "MIT"
+  revision 1
   head "https://github.com/nim-lang/Nim.git", branch: "devel"
 
   livecheck do
@@ -12,13 +13,13 @@ class Nim < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "980c2256825cb7512d1e2dba7c42c89c6090d2971c62a827ff3d3b6493ce704d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ab4e6803bd3d5751c257d8836d375fb44f63605ae1d28379c609df2b9369d82c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "64511253a16d26d731bdfb073cf1f01de19e7baf211d5c8fa66e3d1172e1db97"
-    sha256 cellar: :any_skip_relocation, ventura:        "0d449e9b431ef8884007f28aabb7fd27d15b6ad918ef360fd058183218cdd1ba"
-    sha256 cellar: :any_skip_relocation, monterey:       "871af7316a5c434d67ad4503970d95e874ea583d2633a755971a7881307cbedb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8b73ca9bc5adc7aaf90f4fecd957b1960569d974da9132369cc5f5e66b3ec7b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad2ae9f691b1509ce3b68adabea4c49e7b975175530966402bc47c843c331a21"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0fa727208bc8516c1ceb20e97e22f1a50778c0d18a3af2e15ed3b02fdea802fc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d5ca3ffeed48e550e054b884725b944384886f33e2ff2306f313fdebe6675abe"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b6c6b719a85143914667bd94fa1668bf686eec8b9a7108d27ea0799c4a128ff7"
+    sha256 cellar: :any_skip_relocation, ventura:        "8d2ec4fadd66ca1e3759085601a13b8cef5d711352531ed8fbe7d9bcf5542564"
+    sha256 cellar: :any_skip_relocation, monterey:       "f414b4a3b42193367b565b90d039ea8e1c3676f25be558f0aef5d6efe4dfb9cc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "abf94332c36c652b8b5e78ef62f11033dec8b12f2c1025df8ca4384fd1ff7752"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "19a3b3e6b6e4379f21eb7ff18d8a49e9f601ceaaaa276dafbc4afb3fae715f8f"
   end
 
   depends_on "help2man" => :build
@@ -49,9 +50,14 @@ class Nim < Formula
 
     target = prefix/"nim/bin"
     bin.install_symlink target/"nim"
-    tools = %w[nimble nimgrep nimpretty nimsuggest]
+    tools = %w[nimble nimgrep nimpretty nimsuggest atlas testament]
     tools.each do |t|
-      system "help2man", buildpath/"bin"/t, "-o", "#{t}.1", "-N"
+      if t == "testament"
+        system "help2man", buildpath/"bin"/t, "-o", "#{t}.1", "-N", "--no-discard-stderr"
+      else
+        system "help2man", buildpath/"bin"/t, "-o", "#{t}.1", "-N"
+      end
+
       man1.install "#{t}.1"
       target.install buildpath/"bin"/t
       bin.install_symlink target/t

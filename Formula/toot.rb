@@ -9,25 +9,22 @@ class Toot < Formula
   head "https://github.com/ihabunek/toot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4041993e95b81a078e1fa4b02a90f9d08f1e7e63e0617a770c21a749235a8639"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0936531d8006b2339f188780f3aefae64bb336640b243b61ed3f9161af6e0ee7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cbb5acb91b3c9ae6d22a9fc2e63707c6d9ce15ba59be09ea5e9db4d4af4e0b3f"
-    sha256 cellar: :any_skip_relocation, ventura:        "66548c7f2badfb2c2fabcd1958b8feb2ba415f7f23274d19afce9950c3acd065"
-    sha256 cellar: :any_skip_relocation, monterey:       "680c1befbc590f4db432883ab933c9962b3a1e9941a0729108871f7b96a34e4a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "616a5375e5695be80d1ac3c2472c5c726606655a191b5fc1e5e34edf348acdd8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4cdd0e825e23f857cbb808ec0b44bba5141c405a00e62bb6c4a22cf6265d4735"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "17a7dbd166167a09a52e7c2d45e8288d8e06e16ae4b9fe86fd4ec666680ffc41"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e17338f76dbd549882bd9f3062abff662eeb0b5243e2c0cac8203dfdd7413f8c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "546603f95616c539116a91f1f7008a24f2b0ec4adcb9740ad141598ee717a515"
+    sha256 cellar: :any_skip_relocation, ventura:        "d11bff20289b2910be00e4868e7dd4b92062fea533d2225ded1e108ceda7130b"
+    sha256 cellar: :any_skip_relocation, monterey:       "67fc899488859cbc3e6f935ae7eb3df86d20bc711de07b4d765fdc34599045a2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "dd48c86a0793dabb210e3ca16e5e7bf9bb480cc205a7313679663d5e6b05cedf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "085ff020ab583f26042053be48ea8d26f67da45f2749fd38757f90d99114bc9f"
   end
 
+  depends_on "python-certifi"
   depends_on "python@3.11"
 
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/af/0b/44c39cf3b18a9280950ad63a579ce395dda4c32193ee9da7ff0aed547094/beautifulsoup4-4.12.2.tar.gz"
     sha256 "492bbc69dca35d12daac71c4db1bfff0c876c00ef4a2ffacce226d4638eb72da"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

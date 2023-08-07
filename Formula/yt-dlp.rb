@@ -9,13 +9,14 @@ class YtDlp < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "17eb5a5330d811c23586e08c22c492f915b80be0f298336c7628861d65b65d0e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6669c1316d809b5ae554e37f323b22bb567462a96e8cd7145cc03c1ffc018342"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e0cafc6a31685d55b9e7f021f99f8677562b85fe4bdb0001b916bafa8257f77f"
-    sha256 cellar: :any_skip_relocation, ventura:        "b48c2ecac58896b91993107202a1b523f7a4094cc7bdcb53a6993af159b5e2f3"
-    sha256 cellar: :any_skip_relocation, monterey:       "bdafe57d1879fa7eb303b7f1854bf4b164c499de42d7b4817b897e93ebda70ab"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1cd8ddc3984027818de62fd3391dd8f20c9f3db7d9007bd93dd1ae7144f92820"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf2020ae0a36334762ad869c5d5a7f8b5d07172b41e79a9dd96ecd1760a134f3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7af529d4305815e86d0d27431a59e6e64fdc7cda31cbc6b7c16f4c1f111aed28"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "62a89b18f3fe6452c24217fed43bec9abfb4d4ea1f9de4fa44ebcc8c28732fb3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0045eefa4f8b63308dcc9684da91b6effd60aa3528e56a28a8b5cb9e929baa94"
+    sha256 cellar: :any_skip_relocation, ventura:        "37f3696765f471d5325c780a9823d45177412c7ea2c5c3077fad7f38a7a09430"
+    sha256 cellar: :any_skip_relocation, monterey:       "4a246654ec69866a6fb04e05ab24d45543332cb1b71f3721504f67205c2c4202"
+    sha256 cellar: :any_skip_relocation, big_sur:        "94937c92c0ba7f1fec7c5bedc07880b4c1fc1dd98bca43aa1833f2b5b56a89a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6bc41d23380525ee80f42c29ab3cc56784b1d207daacd88ba11cdcaae9138dcb"
   end
 
   head do
@@ -23,16 +24,12 @@ class YtDlp < Formula
     depends_on "pandoc" => :build
   end
 
+  depends_on "python-certifi"
   depends_on "python@3.11"
 
   resource "brotli" do
     url "https://files.pythonhosted.org/packages/2a/18/70c32fe9357f3eea18598b23aa9ed29b1711c3001835f7cf99a9818985d0/Brotli-1.0.9.zip"
     sha256 "4d1b810aa0ed773f81dceda2cc7b403d01057458730e309856356d4ef4188438"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "mutagen" do

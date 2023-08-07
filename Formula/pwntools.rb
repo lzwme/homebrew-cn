@@ -10,22 +10,22 @@ class Pwntools < Formula
   head "https://github.com/Gallopsled/pwntools.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "2cb9bb7e0b37582968a3321ed7e5f6f34e270c07f01c7f155558534c9d9c7b19"
-    sha256 cellar: :any,                 arm64_monterey: "38d423827636aa9a1ec46d72723037da76cabd5c944eb6bb2809448b0e4f2ce3"
-    sha256 cellar: :any,                 arm64_big_sur:  "066e95b8b79e021faffcb30a38f66728d1d09721ec76e83fba4058a43cf762d0"
-    sha256 cellar: :any,                 ventura:        "65fd732f2e85524a218491019f1aa8ab575f4207a4009978ed47a7d781f619bb"
-    sha256 cellar: :any,                 monterey:       "03df986046d4c08d542dda2cac90cc7c583cf53f3b68ddd1a581e34b0e2c78f0"
-    sha256 cellar: :any,                 big_sur:        "052657313d53c6a2f22fc31af6c3cebc23545675b6cb4067b2c6c3c89d205bc5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d72d6fd40756e5cafcfb18d2c5ea9515c2c4702dfd42733136eadd98cfd23c81"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "679bdb07afd5b59add7c816fadf14466f5618e52537c4e59db00d197ead020a9"
+    sha256 cellar: :any,                 arm64_monterey: "a8a68211bb579eb5100f138b3dcfd1d4786541ef2882ba2aeef774c4e18c556e"
+    sha256 cellar: :any,                 arm64_big_sur:  "be3f296423e047f7893bafbb5df884bb05725cc321aff12036053bfd47dc3745"
+    sha256 cellar: :any,                 ventura:        "764807ec7932f1c6300bcae2a7684bf832362663fce282f9463a6632b4b41a1b"
+    sha256 cellar: :any,                 monterey:       "de5c96f1f0e4f6854d7e74cb74de04ce79cf33d3af187232a1e1ba89b3f2b874"
+    sha256 cellar: :any,                 big_sur:        "16c02f7b1bcbe29caa6c40784f90df112e0e7a03ab28e2f498f6785bd5092b85"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a29c54372bbd36514093946e9a212f7ad68f7a589205f443a38f9f2683f16735"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
+  depends_on "rust" => :build # for bcrypt
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "pygments"
+  depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "six"
   depends_on "unicorn"
@@ -44,11 +44,6 @@ class Pwntools < Formula
     sha256 "fe0affca395c09ce76a21c5f0fac026e74396839a220798ca5e57c54305bcf65"
   end
 
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
-
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
     sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
@@ -57,11 +52,6 @@ class Pwntools < Formula
   resource "colored-traceback" do
     url "https://files.pythonhosted.org/packages/9a/8b/0a4e2a8cdc14279b265532f11c9cb75396880e6295c99a0bed7281b6076a/colored-traceback-0.3.0.tar.gz"
     sha256 "6da7ce2b1da869f6bb54c927b415b95727c4bb6d9a84c4615ea77d9872911b05"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "idna" do
@@ -160,10 +150,6 @@ class Pwntools < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     ENV["LIBUNICORN_PATH"] = Formula["unicorn"].opt_lib
     virtualenv_install_with_resources
     bin.each_child do |f|

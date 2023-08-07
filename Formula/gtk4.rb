@@ -1,8 +1,8 @@
 class Gtk4 < Formula
   desc "Toolkit for creating graphical user interfaces"
   homepage "https://gtk.org/"
-  url "https://download.gnome.org/sources/gtk/4.10/gtk-4.10.4.tar.xz"
-  sha256 "7725400482e0685e28265e226c62847f4e73cfca9e9b416ac5838207f5377a24"
+  url "https://download.gnome.org/sources/gtk/4.12/gtk-4.12.0.tar.xz"
+  sha256 "a6d10829f405b1afc0b65e2a9642c04126a1d1b638d11c6d97426da4f84f1f6f"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Gtk4 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "010c867405a7fc912dcafc28761380ca60ff106af4a2ac8a0aba62351d7483d1"
-    sha256 arm64_monterey: "e3d5703352be1157cef9a24c5bf2726bf5181f898386d4609441d793aff58213"
-    sha256 arm64_big_sur:  "a826618fa3e47dbea367d6513fd6519ae5230ad3bfad402d693c9791aaa6d3da"
-    sha256 ventura:        "0dc18cd3f43cdb39a5ccfbd3882dcd15088bf9554f7b96eeddd20d398a4fa183"
-    sha256 monterey:       "b6ebfe48ceed27709f780b9afad494e5009732a303ca720b9ee552f39a9b1c9c"
-    sha256 big_sur:        "5552bf81bac8120d58168c304762aa350a5957f105e3ec58127b4c6c4d8581b9"
-    sha256 x86_64_linux:   "d742ca41776469e7604a7dd98f3a968e23d802dc78e6e19bb7cad2aa37d42aa5"
+    sha256 arm64_ventura:  "f055a26f4631095564acb750a6e72541bbdbfa525b380c48ce3c4bde1a357c90"
+    sha256 arm64_monterey: "754f951096a1087676ba9308726d93e330043bbadfeeb078480f53683efa81d5"
+    sha256 arm64_big_sur:  "e016513bb9cd26d44021a853d4d6979e4c89f102d5a133d8af568bf37751debd"
+    sha256 ventura:        "ce0358b2c72aaecb68b8f704c14071541f2c42a0d8ef2faeb85e349c966683a1"
+    sha256 monterey:       "6bc0ab366e76c7c8d337729a45a5bc17c12fbcf0942650ede8eef198fce186ba"
+    sha256 big_sur:        "4c59a813d13d84cf078d88f2a9c9b8be193f3a055d45bb6ac8556d3c01a3729a"
+    sha256 x86_64_linux:   "46e19204f9e38bec095c985d1a0639fb8f7e76bd4dca794d4edf1990985a6858"
   end
 
   depends_on "docbook" => :build
@@ -44,6 +44,13 @@ class Gtk4 < Formula
   on_linux do
     depends_on "libxcursor"
     depends_on "libxkbcommon"
+  end
+
+  # patch macOS build
+  # upstream PR ref, https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/6208
+  patch do
+    url "https://gitlab.gnome.org/GNOME/gtk/-/commit/aa888c0b3f775776fe3b71028396b7a8c6adb1d6.diff"
+    sha256 "07604078655c73b5db8b5fcdf2288677f0d19a791f336293d7f1c561819488e1"
   end
 
   def install

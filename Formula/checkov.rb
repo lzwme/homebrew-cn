@@ -9,19 +9,21 @@ class Checkov < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "182c9a717aa6380f2350a862cbddd4fb5c62cecca4b4eb099aa8847c2178e4b4"
-    sha256 cellar: :any,                 arm64_monterey: "a49149e5e890ae6351c4304ea37ffb85ee02fbb03e2a3152b509889a7dddee7a"
-    sha256 cellar: :any,                 arm64_big_sur:  "aae115569eafe4fc3262d9f537267bae4cf6a71ce62fecc33ee5cdf04c116db0"
-    sha256 cellar: :any,                 ventura:        "e05a4d1b7cabf9ee100c6e52fb19e1a9ca86c80951ea050ec529472b7db49589"
-    sha256 cellar: :any,                 monterey:       "70d7adc66918a5b4fba1e7fe65d931a76e49575eabefa54cf06c9403284cae2a"
-    sha256 cellar: :any,                 big_sur:        "65ba72beb94b057bc65c8d08fc4f744550e080bf86ea13faba8c333596e1a1aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18e44d3e86452ef56f99630e49d9a51bde290f325a97647bd271b8de54578ad3"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "4a6b49f9b6441802392f8286b6ed616f13e362c5ca7698716e73d225d05cab91"
+    sha256 cellar: :any,                 arm64_monterey: "cee60e246c00ec2f528cb25a3b97616c76e9271522fcbe1a884df89df20440d1"
+    sha256 cellar: :any,                 arm64_big_sur:  "66a9dfbd891686820249b23e82bed8f5a901498ff13ac285d96db2664ce0b4f1"
+    sha256 cellar: :any,                 ventura:        "16f14e6908de1e111462225858499728fa4d08bbfcfbb496b83813f090a6607b"
+    sha256 cellar: :any,                 monterey:       "32a18fe1e0282ea36a11020994deb470dfea1e866dff13c0532c9303a088b78a"
+    sha256 cellar: :any,                 big_sur:        "f2990b06eaeb752e51e8f45c03ffec37ccf99c24d017202f0d5fe4e93c68880d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3925c36dd2215aec3dbf2bd87b49707ff5feea37c2f1b67a0d7905dda0d995eb"
   end
 
   depends_on "cmake" => :build # for igraph
   depends_on "rust" => :build # for rpds-py
 
   depends_on "cffi"
+  depends_on "python-certifi"
   depends_on "python-markdown"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
@@ -107,11 +109,6 @@ class Checkov < Formula
   resource "cachetools" do
     url "https://files.pythonhosted.org/packages/9d/8b/8e2ebf5ee26c21504de5ea2fb29cc6ae612b35fd05f959cdb641feb94ec4/cachetools-5.3.1.tar.gz"
     sha256 "dce83f2d9b4e1f732a8cd44af8e8fab2dbe46201467fc98b3ef8f269092bf62b"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

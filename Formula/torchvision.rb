@@ -13,10 +13,11 @@ class Torchvision < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "75440708f8608b93654b6b1eddf6e6bd3ec6d0470a3aa74068c5c96c92df4b3e"
-    sha256 cellar: :any,                 arm64_monterey: "10a6de636adbe6f57091bfbe6718fa0cc674b135f413f5e38a97a4c70bb419c9"
-    sha256 cellar: :any,                 monterey:       "12e2137577e16fc6cf6d846833af321e6d37ba66eda44cbc4956bd4636716c2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7dcbbd35107bd23179d27706c716c8d0d3bf256b353aef9add91f92ad50f98ae"
+    rebuild 1
+    sha256                               arm64_ventura:  "1e940d1d0bf48766dca5cb234b0a02144dfac406c086034b6b6520be93c2a4b0"
+    sha256                               arm64_monterey: "a3515f767ca6a27bde2b59b2f56389f090ce93211b760191c0c1ea4e3f686e18"
+    sha256                               monterey:       "a20ded6ef80e2bac95c8af8937cd57d213f3c0f97043b0e863866341fbf27df4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9d42cdbf6e02aab4a170bb86d176c6d75627508d46c1af2e4bf6ae77e9e37dd"
   end
 
   depends_on "cmake" => :build
@@ -26,16 +27,12 @@ class Torchvision < Formula
   depends_on "libpng"
   depends_on "numpy"
   depends_on "pillow"
+  depends_on "python-certifi"
   depends_on "python-typing-extensions"
   depends_on "pytorch"
 
   on_macos do
     depends_on "libomp"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "charset-normalizer" do

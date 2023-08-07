@@ -9,21 +9,20 @@ class Scrapy < Formula
   head "https://github.com/scrapy/scrapy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b700cd8e4dae1739459daa4b47c0a6bba3f8fc9c7839707ea8dae689a6aa5c4b"
-    sha256 cellar: :any,                 arm64_monterey: "821dc548de631f715679f44ed5e025005b4048f8bef4d2bcec060d8f6ed9bf49"
-    sha256 cellar: :any,                 arm64_big_sur:  "b2814d280faf1d3d68663314b4781aed1f85149cd7824650c41d82283ee1b503"
-    sha256 cellar: :any,                 ventura:        "47a4bb4df8cf7d80b0e6d3759ae8c5dda009907722f5e29c05aa61805d08e5b6"
-    sha256 cellar: :any,                 monterey:       "c494454884b036f424e8988fad27a3351f3740891117eb2b45efc7c4b0acbbb0"
-    sha256 cellar: :any,                 big_sur:        "55a8497560e450fe988647e65efbecdeaa2b001624ffc8c64838bade0b2a9987"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e063f78d7549a51ce9b4f82291c5ce65de7ce75ca357a240b270f10b10d13af9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bdd2c410729f078a79dadbd2d9100d150b820f243c0a34ba47724a1950cbf88d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5651b0bd01915c16220b1ddd13f9d7588fcffa2fb4382ea51f5a6c2909387663"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dbf1dc109d79e8fb07a4bad108921530e6914a3f32fb03b5a2fe560f2fff79b3"
+    sha256 cellar: :any_skip_relocation, ventura:        "92e86b92d0cb27bebe2e16cf12342d91ec8ec2a2ab4a583cbca7889457f969f3"
+    sha256 cellar: :any_skip_relocation, monterey:       "d0be50fb695de67ece73af21072a04440742512bcc60886a8f299f60bafe5737"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cd35efbfebe93eaf50def8daa8145faab611d6796efaf87867eed3a916acdc00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6e41ef4548c98765ebd2a40eab2b20e8200af281564bad33eb3aba65a33aa62"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "six"
@@ -42,11 +41,6 @@ class Scrapy < Formula
     sha256 "e56beb84edad19dcc11d30e8d9b895f75deeb5ef5e96b84a467066b3b84bb04e"
   end
 
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
-
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
     sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
@@ -55,11 +49,6 @@ class Scrapy < Formula
   resource "constantly" do
     url "https://files.pythonhosted.org/packages/95/f1/207a0a478c4bb34b1b49d5915e2db574cadc415c9ac3a7ef17e29b2e8951/constantly-15.1.0.tar.gz"
     sha256 "586372eb92059873e29eba4f9dec8381541b4d3834660707faf8ba59146dfc35"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "cssselect" do
@@ -188,10 +177,6 @@ class Scrapy < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 

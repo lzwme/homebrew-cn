@@ -9,18 +9,19 @@ class SlitherAnalyzer < Formula
   head "https://github.com/crytic/slither.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "ad763e94244c125dfcbab2793cfd84221f45f278bdfaec22f0c1cc240efa3a29"
-    sha256 cellar: :any,                 arm64_monterey: "4c79a98ef788fb3229a7c4403dae687323b52bc161804d99d394dcd10ef82a0d"
-    sha256 cellar: :any,                 arm64_big_sur:  "0ac95f19c15c101cb7d1f1eb97aa9d232ea7bca4f3099cd0229797a7a2f1fca2"
-    sha256 cellar: :any,                 ventura:        "3497cdad941e5b4231b48e8d5fa37e0d8bd708f60595d78c7247e48d3e1d763c"
-    sha256 cellar: :any,                 monterey:       "129276c8cddbb4b607ac6a8085bb8bbe1442f7249bb7e51d9204a0c897d51c20"
-    sha256 cellar: :any,                 big_sur:        "c17cd6bf59876b458de421974e91ef9768fb72ebb3832c78fab08c0f47da836f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d08d465cb2f8d805ac3065574546fdb79a89efb65b3c6047dfc6941a5dc83e10"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "b53ef0455922d77e4c38c2d67d5793ff70106b24971fa73995c93fd39e3b5031"
+    sha256 cellar: :any,                 arm64_monterey: "12c372a27282f8ed49ad4e258b44d8ed9d3849da4d2e3a926479c698d26c687c"
+    sha256 cellar: :any,                 arm64_big_sur:  "606bd9a245b686d3f5dc45ad54f1868c065c2d89fbbec8bc65513c4786e06592"
+    sha256 cellar: :any,                 ventura:        "34323dc966edf62da5d3711f30b9b1a088c69f0a59b31910aec6045423b5b1af"
+    sha256 cellar: :any,                 monterey:       "d95e7fb35645feae7a387f0c2977c20aea6996c8753ec5da6dc9b575343e59ed"
+    sha256 cellar: :any,                 big_sur:        "ab8ad4f631a2eb33587f619ef1ee8e65c7eea8138405952ca00dbba337b26fae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e7c402cada0071fe194bc1abcce90b0f58d7d3abdf1d062aa83659e1c4055c3"
   end
 
   depends_on "rust" => :build # for rpds-py
   depends_on "crytic-compile"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "solc-select"
 
@@ -47,11 +48,6 @@ class SlitherAnalyzer < Formula
   resource "bitarray" do
     url "https://files.pythonhosted.org/packages/2d/08/e6b51b0456becc0db01e969d6e1c4542094bde0a7bbb197834f94b18332a/bitarray-2.7.6.tar.gz"
     sha256 "3807f9323c308bc3f9b58cbe5d04dc28f34ac32d852999334da96b42f64b5356"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "charset-normalizer" do

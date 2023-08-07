@@ -10,26 +10,23 @@ class Gcalcli < Formula
   head "https://github.com/insanum/gcalcli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7f246e95721ecb4a382f003980d24319162ff4da0f75d3b505c41e535ee81d8d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3ad0bf9cc0bb35e9bc57f99ddfb19aed07ae4b306ca3f2900f5f1d77f4717f73"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fd9b9875506d02339df421f5cf39dbf4a8a422d166123efd66e917da6c02185c"
-    sha256 cellar: :any_skip_relocation, ventura:        "65c6738544131dc9ce8ee5e4e8d539619d0d08e5aed6e5f5e5b6c058c2c19b4a"
-    sha256 cellar: :any_skip_relocation, monterey:       "71291260bed99af269e946dacf2cf4c37fbbdae194f704a2d532c7fb8362eec8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "88f5e347283d280a706f8d6e2f1442f9b44aa79c7cd45bb822b07ea801935295"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c647103aa7fb67e6d6c9fd97a86380d87042f64fc585222e3d0b26b48c4ddd9a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4e7ae215c9b4b0b6bf398e2ae53615898157083b0f15ef6a351139d771060167"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c609f00c7be05b920f09a8502393d9365e735730a89dfe3de7008e28621a4503"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b24b74e5187e22ba7c48858c30508ed1bce75b5dd8fcbcc0446b64c2d082762a"
+    sha256 cellar: :any_skip_relocation, ventura:        "46c3156be7d24ab384444030f1c79df3814a2885f961a806be8a66bbb446b30d"
+    sha256 cellar: :any_skip_relocation, monterey:       "e41cb12e77ed4c00d26d5a44b196f9346c24a07dda0acdaf848a625e7816b306"
+    sha256 cellar: :any_skip_relocation, big_sur:        "779c47ce1fcae48d80d26ec5dbc1e64074565255ff38648f5b05f8d42adaaa43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79faebd9a12ad1877c0f8272acbc92265380576137d010d4311c6d72810c5a44"
   end
 
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "six"
 
   resource "cachetools" do
     url "https://files.pythonhosted.org/packages/9d/8b/8e2ebf5ee26c21504de5ea2fb29cc6ae612b35fd05f959cdb641feb94ec4/cachetools-5.3.1.tar.gz"
     sha256 "dce83f2d9b4e1f732a8cd44af8e8fab2dbe46201467fc98b3ef8f269092bf62b"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

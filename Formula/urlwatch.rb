@@ -9,15 +9,17 @@ class Urlwatch < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f22a46e1a12c6370c959d70739a239fd8b972ee091e33a272f7d6dcbf8b2a7ff"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6a9a7c71400f56b11656a73ed78a56b6f441a63e0ba329aee43e168cc91b7ea2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3923500844fd36b33be00b397110de34589ad411f9c7a4faa1157ec921aacd81"
-    sha256 cellar: :any_skip_relocation, ventura:        "f474165a769dd6ab315a2a66e29259750b4927532d41d0f7e72713383638d66f"
-    sha256 cellar: :any_skip_relocation, monterey:       "4f4f67868de5814fcdcfb0d05c36c4e60e169dfd761969b62e219c12fdc76af7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a36a8dde4f2ab6f1b57497316de45e5e5223f42283b03b91503c2ab4d0635b8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c41c72f2719e90966f97ce677e5f71423951436f442323680a49fd8440114b7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "71dd07637cb16e9fdefe88a6b7c3b185e75e8273cf1df0b66ff9aed362173a35"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "346745e6576fd05d96567290492324e45a5c93bc8ca6116f72445b78d67eda21"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7ee392529d83ef5de6ca571a5848a2be41cb5a81b2f3808f6057d0e6d6fdf153"
+    sha256 cellar: :any_skip_relocation, ventura:        "438fc2c114c69e0b3db0c1682c57aaea47cbda8df582be9e9f2f29418a80275a"
+    sha256 cellar: :any_skip_relocation, monterey:       "1b52021d6a5c4e5a4bc769240816ab7339a993322dc62a482d83e3aac4d43f53"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4bc363086d04a2ecdcbaec79471ed87066e468dac74376d3e757def0eab76878"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c1876b0b2ab9d4e7e6e44c941422a7eaf451305b472dcc8c35f73986aa9401f9"
   end
 
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
 
@@ -27,11 +29,6 @@ class Urlwatch < Formula
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
     sha256 "7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

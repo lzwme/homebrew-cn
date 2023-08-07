@@ -9,13 +9,14 @@ class Esphome < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "1b1f593f5608a8fc8f7d298451238b235a3875558042d9cc4d7922e7a96b2919"
-    sha256 cellar: :any,                 arm64_monterey: "b501341234ef8d6169770d89399591ac67941b19684690b4d3eaf36e3317b2f4"
-    sha256 cellar: :any,                 arm64_big_sur:  "62e80b5144015779a3647e59839216171001612b0309fe718f2e2fd068d38500"
-    sha256 cellar: :any,                 ventura:        "1e8b7d257f7ee52d1b617e619b695ddb3c4ea9b9674f3624ab330b50336426d1"
-    sha256 cellar: :any,                 monterey:       "a8c476d194c8e32dfb661c9723fa3d22dbb082d90a75c0359eb5d584e8eae0d0"
-    sha256 cellar: :any,                 big_sur:        "1eb7bed918a0e4e1e3beb4f4f5a54f59a652116d1f8898b2a7bf8f3f9354f699"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95fb081c41b8100a41eb4052db1a95b29348f16ca0f4553a9cb20f875265e6d2"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "47840f197222f63306ff77311b2554c2c8cbd31e868a7555d0ec8510c27efdf1"
+    sha256 cellar: :any,                 arm64_monterey: "4fe8eedf5cc48b9119740e5db57fcb6fa23a3c4d579ae47e018d3ff807ebe0b8"
+    sha256 cellar: :any,                 arm64_big_sur:  "521e65016404da164875d431fe64a52a9bf4d01fa195679af25b3e7aa41a9f44"
+    sha256 cellar: :any,                 ventura:        "1294efd33e60f03ba7e82990e1876712ceefdd6b9e039cb3abaeca9be12347c2"
+    sha256 cellar: :any,                 monterey:       "14c1aadb93f824f9e29889b4fc7acc4e43d0b85e1a7dee5a86ce26941d7dc75b"
+    sha256 cellar: :any,                 big_sur:        "2c220261acb07d2e36af5a8b091b690778737ab6579acd94c5d1ef6660ab8b3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "568d0e996257e19c194448849bf64df2ff975ab31dd4050a635898f70273e4bf"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -25,6 +26,7 @@ class Esphome < Formula
   depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "pycparser"
+  depends_on "python-certifi"
   depends_on "python-tabulate"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -63,11 +65,6 @@ class Esphome < Formula
   resource "bottle" do
     url "https://files.pythonhosted.org/packages/fd/04/1c09ab851a52fe6bc063fd0df758504edede5cc741bd2e807bf434a09215/bottle-0.12.25.tar.gz"
     sha256 "e1a9c94970ae6d710b3fb4526294dfeb86f2cb4a81eff3a4b98dc40fb0e5e021"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

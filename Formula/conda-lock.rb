@@ -9,13 +9,14 @@ class CondaLock < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3dd526ab8db9d864ae5c7977886e6c124ba8d91db2f8a963fe7f91a80d0b5ce4"
-    sha256 cellar: :any,                 arm64_monterey: "c047f9f7f4bd52642266f825f5e3ed4b7e06ade4c9d97fd3b358d911b7b472ff"
-    sha256 cellar: :any,                 arm64_big_sur:  "0c8477e35817f31a84e5f1fc19818191618e61dc4496628c6a352ec9b07cfff4"
-    sha256 cellar: :any,                 ventura:        "fa596807707f7b4e0e85d102b60b1237ca9f336d02c678864f2a47e0b68bd9e9"
-    sha256 cellar: :any,                 monterey:       "7cd6b8ddb4f24885e2f9c72a4fdaefc55dc213802c0e9a954177644e7c5e2bf2"
-    sha256 cellar: :any,                 big_sur:        "96a0e4b2dfe67e4efaf7cc62ebd565782682ccc22800382b0ca16cdbf3a06f85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a94441f6bde66b9013c90cc9d251bd0e8350c3c8ff3fc1c7f0a00704248205c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "06b204c795536195662ccd9930c3629bf836dc1dabe28254c056e3403ea6f248"
+    sha256 cellar: :any,                 arm64_monterey: "596f3576eb095e5958d4ef5c18f4b8cc4a79906edb56547d512828ec8c7d7f8e"
+    sha256 cellar: :any,                 arm64_big_sur:  "80bfa96eee953e18b0113a8d0a086da7044a8b8c39a81c85a477c8ca1889c9e7"
+    sha256 cellar: :any,                 ventura:        "64d0f36863fa4f15be906d5238854c7aed8adf3a085fafee7b972529489b5f8d"
+    sha256 cellar: :any,                 monterey:       "a811f4cf02c93dc02a46d7434a317fbffa2b964e1fff4e302c57e1c7fd9183a9"
+    sha256 cellar: :any,                 big_sur:        "f971c8dc452b42ab0fb1356c935c19f163b98e0769aee558505042c0250ee19e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eaecccc7d8e4cf33fbfbc1ff1b0e971471761000fb398c2f0c44233b9ba45537"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -25,6 +26,7 @@ class CondaLock < Formula
   depends_on "keyring"
   depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-certifi"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -49,11 +51,6 @@ class CondaLock < Formula
   resource "cachy" do
     url "https://files.pythonhosted.org/packages/a0/0c/45b249b0efce50a430b8810ec34c5f338d853c31c24b0b297597fd28edda/cachy-0.3.0.tar.gz"
     sha256 "186581f4ceb42a0bbe040c407da73c14092379b1e4c0e327fdb72ae4a9b269b1"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

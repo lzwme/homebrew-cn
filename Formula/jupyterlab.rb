@@ -11,14 +11,14 @@ class Jupyterlab < Formula
   ]
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "95706353297c5d12c9e78e45c177c85356c5928f38ae0612821428a21e1bb806"
-    sha256 cellar: :any,                 arm64_monterey: "24286ef6c9b0a311a71a50a78b73e14d57201eb94ea366f91ec0203f08c4fb5d"
-    sha256 cellar: :any,                 arm64_big_sur:  "915e8cb95f3920bc686fbc4b6884822a18e1f173f43418315f35e0812bd7f827"
-    sha256 cellar: :any,                 ventura:        "923f0c5c5d3691788bf2c9704f242c52057ebd5ab567fa5bdde951578a8aa7f4"
-    sha256 cellar: :any,                 monterey:       "b9d9eb56b1568f062075c107209f30b74f1810a04b7dfc209fc751bae25171fb"
-    sha256 cellar: :any,                 big_sur:        "9bf250e5954c3def6cca89721090690dcf1341d59606d6bc2d848a21cba3480a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0e96518e1f516f81c039ae853e29969c63cec080fdd65dd5bdf158064939b4c"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "e985670934046c24a7709db2629881b62a36f3951e9e842b004e275e7d128bd1"
+    sha256 cellar: :any,                 arm64_monterey: "069cca67fb33d25d3e431c155a083357b1489bbdcdca622ef7f85bd4e7deea66"
+    sha256 cellar: :any,                 arm64_big_sur:  "05080afa0eddabc456d23d4f6de050a50ea1103fb44a3993636ff49b6916cc01"
+    sha256 cellar: :any,                 ventura:        "a823875d669fc68fd36cf9ef56771c8bf234615f239823b552ecbcd071f29555"
+    sha256 cellar: :any,                 monterey:       "490581d39dda3e7406ce91caf7f20f8a6fa94c14ea8ef77b190c9d2fa8844941"
+    sha256 cellar: :any,                 big_sur:        "9ab575b029654f8cbec6d160af48c995c6ca9bfe496ea1a52ad5d5b3e36d9de2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df5dac95445f7aafd3e57704c098b47bd2d86a4c4b43860beb19e9f21d0eac6b"
   end
 
   depends_on "hatch" => :build
@@ -30,6 +30,7 @@ class Jupyterlab < Formula
   depends_on "pandoc"
   depends_on "pycparser"
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -93,11 +94,6 @@ class Jupyterlab < Formula
   resource "bleach" do
     url "https://files.pythonhosted.org/packages/7e/e6/d5f220ca638f6a25557a611860482cb6e54b2d97f0332966b1b005742e1f/bleach-6.0.0.tar.gz"
     sha256 "1a1a85c1595e07d8db14c5f09f09e6433502c51c595970edc090551f0db99414"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

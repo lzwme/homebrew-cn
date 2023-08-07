@@ -9,22 +9,21 @@ class AwsSamCli < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "936a1a3802c48408f5bd6bfc8170719539a3fee47f55b0a41cfeefb45c70eece"
-    sha256 cellar: :any,                 arm64_monterey: "5e4eea2e473b3868b8342277d8ae5788d40e5f629c2ea70fd63290a73473c5b0"
-    sha256 cellar: :any,                 arm64_big_sur:  "1a1e43d023748da5090cac92ce5491b8a12afcdadc10a517575be3d4cf26d9d0"
-    sha256 cellar: :any,                 ventura:        "88e799c998d71f51e5e964e37675465818ef57beafb6e5fff8d0504fede1df12"
-    sha256 cellar: :any,                 monterey:       "a548de7377e88f9d0eb6aa524f7fe7acedee0835330052b5c15aefdf69ad1be6"
-    sha256 cellar: :any,                 big_sur:        "4b38c4db0cc80dc5f2ba0990b419bcd65822c8a45bac92d911c78765aa8c3653"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f22dde3efcbd83acb59645cd2260693160fef70c5807fbc98fe4d5d20e11c90"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d27734354fc03498b4b59531a2bb0fbbcbf81a29928912cd37c04fe27ba4f426"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1b0a69c2596dc47632027b4cbc171193b4f226fb9e90361817b708d42dfb8b9b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "43b1956e36feeb2bcc605699bdd5e703ae0d5cfe240d5a39a476ddddb412ec69"
+    sha256 cellar: :any_skip_relocation, ventura:        "e3256b8b42f6ead495dcb3ab4541226a85ffc2bd65563574de21a183e45c21c3"
+    sha256 cellar: :any_skip_relocation, monterey:       "32a9378fe39e673e1f20a76824255d9a9919de26cac30d80f065ace255b4ca58"
+    sha256 cellar: :any_skip_relocation, big_sur:        "fcfed7c127fac4e9d628afd19d618db45c5060678f0d8ea53f27e9909b1301b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0fbbf786a708e52d3e6fa5342b8724c95ed30372e9cef55d770a0f64535c9d5e"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "pygments"
+  depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -75,11 +74,6 @@ class AwsSamCli < Formula
     sha256 "0ccba9a9cee311e354c164fa8e8044a4b4150d7e536f0f09ae37637950391fbc"
   end
 
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
-
   resource "cfn-lint" do
     url "https://files.pythonhosted.org/packages/92/2c/e6ac940326e00872bd00f5ebb3c925ca1a9ab064917aa3bcf8e668e0ea83/cfn-lint-0.78.2.tar.gz"
     sha256 "363787653b71cd5dc4e2de30aaab835afd48b64e2257fe1b4b78efac01635e8c"
@@ -108,11 +102,6 @@ class AwsSamCli < Formula
   resource "cookiecutter" do
     url "https://files.pythonhosted.org/packages/96/43/65a3dad94dceaaaa12807ce4d4eff1064db6e91a8c6fb6945e3e61e63552/cookiecutter-2.1.1.tar.gz"
     sha256 "f3982be8d9c53dac1261864013fdec7f83afd2e42ede6f6dd069c5e149c540d5"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "dateparser" do
@@ -400,15 +389,7 @@ class AwsSamCli < Formula
     sha256 "55a0f0a5a84869bce5ba775abfd9c462e3a6b1b7b7ec69d72c0b83d673a5114d"
   end
 
-  def python3
-    "python3.11"
-  end
-
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 

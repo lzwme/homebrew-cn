@@ -10,18 +10,20 @@ class YleDl < Formula
   head "https://github.com/aajanki/yle-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4385b4afc6a4f639ffced4393c0bb5c40adab922ea504f4e1f0c7b5c33252a3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7570b64db622f650a833b4fbce894c5248fc37da61b752b424ea95b127ccbb06"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "21f82ce0f37f3ef1bef9d53b9d74849a459190c01a94b150057e751f1b553f29"
-    sha256 cellar: :any_skip_relocation, ventura:        "d9c41f07f0987d323f22199bb1788ce506e4a1b065fab7613451a186bce544a6"
-    sha256 cellar: :any_skip_relocation, monterey:       "94a647ca30f41b09de5c7d8790e95016bfb860b2ac88e4dabdb1c963abb42a32"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e0e30028e058a782e98afc978055896ac7ab51abdc4b81552db29d1dd129b83c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a40e79141424801f321272cd20f89b7b289530769caf0c6fb62a1741f4d383ae"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "91c9ffe658b53123216210b8c1e0e30368f75050a4e0544d2efe8658237d3e55"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e5c27cfb11d86938cee0045797890672d840cae80638b23f84da93d27255b3b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "364b5ed3c8d2fa576f612cd0e92eab132b490a3154a915921c19a3ebc8fa138d"
+    sha256 cellar: :any_skip_relocation, ventura:        "0a0214cd0b1ddda26462d7660f5d0b280d735f5133ad7126e1c25718bdaf4235"
+    sha256 cellar: :any_skip_relocation, monterey:       "f73650a9e2b715425d8646b6c2395e8de50103cbcea741d34bcde0e98a4ac109"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d636d0f53b2577056b209e261369537b664e087028ad8a2522f24c02707a60d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17daafb046a9dd968deeb40364e86b3772fd38d68f7ea51265c22e5f0d7d613d"
   end
 
   depends_on "cffi"
   depends_on "ffmpeg"
   depends_on "pycparser"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "rtmpdump"
 
@@ -30,11 +32,6 @@ class YleDl < Formula
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
     sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

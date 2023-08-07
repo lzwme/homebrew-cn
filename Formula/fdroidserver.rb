@@ -9,13 +9,14 @@ class Fdroidserver < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b7ae662f536d6d34fd3d85d986804a2ee932e77b1a40926a71858ab376d6717c"
-    sha256 cellar: :any,                 arm64_monterey: "6d63de8c2d7c1ba9500e9aa7beddb59d496a48b46971cbe160a002154b21ba58"
-    sha256 cellar: :any,                 arm64_big_sur:  "68b1371b854ab4564cf36ed2a972f442f0c4540f1ba6eaa3d40d1ba84ad67a0b"
-    sha256 cellar: :any,                 ventura:        "f6c328f7ae52a2761c8e4fa14f66e11879e22e83cfaf517634c2417340bcbf59"
-    sha256 cellar: :any,                 monterey:       "dd6f0fbf252fd0650bf392b26306d829e57095ad9fef62123094e395b377c05f"
-    sha256 cellar: :any,                 big_sur:        "1e3bc0b5ae41f9b8ec522c1e20f26999704e3205c722ecef8fe0f7ad8b143b5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "de1d6a50105513dda36ec42b3961d29984749694087cfc15aed93c52c95a0f26"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "c33f459ed73c8ff6848b4b23354488a19afd7d0319572d32c1371b4a462437b5"
+    sha256 cellar: :any,                 arm64_monterey: "caf2a8028f7b29b6752755f75f106b30a1fcaa8bf87c7b2de2f2bf5dcc9f168f"
+    sha256 cellar: :any,                 arm64_big_sur:  "84d32610708ea44deb250e01edfc0327b49b4ea13dd82a7f5aa2221bdaea18dc"
+    sha256 cellar: :any,                 ventura:        "723a9774d464a0cbdead5276ae93694885a39948d819f125bd71d1a11419fbe1"
+    sha256 cellar: :any,                 monterey:       "59f60bcbf85acdd2ba00a9c7201f2195ba7b285ddc4cb5fbc1d07a1c210c44dc"
+    sha256 cellar: :any,                 big_sur:        "556f293788a03c5fab3b154ca6eadb94b8bb7b2308fe613a5125863be6dcca47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a91611d5095fccd3478d5b6717d0c809f8e503386a21f31834d3ffb8b2790c6"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -28,6 +29,7 @@ class Fdroidserver < Formula
   depends_on "openssl@3"
   depends_on "pillow"
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -62,11 +64,6 @@ class Fdroidserver < Formula
   resource "bcrypt" do
     url "https://files.pythonhosted.org/packages/8c/ae/3af7d006aacf513975fd1948a6b4d6f8b4a307f8a244e1a3d3774b297aad/bcrypt-4.0.1.tar.gz"
     sha256 "27d375903ac8261cfe4047f6709d16f7d18d39b1ec92aaf72af989552a650ebd"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
-    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
   end
 
   resource "charset-normalizer" do

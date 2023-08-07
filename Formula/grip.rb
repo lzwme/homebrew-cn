@@ -9,26 +9,23 @@ class Grip < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cee9e3c44554c4cc622f1ec6dd55d1fe754a9c646fa630708f42bbdf4819666f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5d6d63c7e5257210fc5fdedede622c6dee82546bee46e3571251f966dfa47370"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "953ccfe996bfb3fc3d36cce1d7ed5cdc5a1cde26bcd1df50aad0b1101d799cfa"
-    sha256 cellar: :any_skip_relocation, ventura:        "051f98070a07673e515703473a23dbee93095494ebb6e092f2101ac10cc77f06"
-    sha256 cellar: :any_skip_relocation, monterey:       "8a58860c4b8827eb531db5cf3fe1ac412b2a71c8e6f945758afca5d266960b1f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b297a7eb3cad6f699931530bb610c38bf51d9b380642730fd98c5e73d8696135"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "303003b794b251dcc901b4dbb8c2c059ff5b3e89db9c11fee9500a32538fbfea"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d21cc3005461af05fb3066de25d04621de02c0df9dde5e065e584facc243ab36"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e9e444cacc4e1b7a2d97367e9fb227b499f89831a780c84ad5a27a23a0f7a28"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f034a537001bdf1b4ecce9f9bd5e8545f29a28649c0e4744774f062732757c9c"
+    sha256 cellar: :any_skip_relocation, ventura:        "d65953b1d02446617ffaf65217ace2a1d18d2839ff675e128696a2eacf9dd299"
+    sha256 cellar: :any_skip_relocation, monterey:       "bc5e3ebc10c36c3aebdd486447293b64869f6e19637ebd9227570ca9ada9d68f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e2263523ec145ebcacefb1463c509f31ea642e7ef997ad003ba5b7b9abeccbef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6e238c050103ba090ac1e09ef867c2e2e11ab3a9189b9a26e5adcaf9e6d5669"
   end
 
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python@3.11"
 
   resource "blinker" do
     url "https://files.pythonhosted.org/packages/e8/f9/a05287f3d5c54d20f51a235ace01f50620984bc7ca5ceee781dc645211c5/blinker-1.6.2.tar.gz"
     sha256 "4afd3de66ef3a9f8067559fb7a1cbe555c17dcbe15971b05d1b625c3e7abe213"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

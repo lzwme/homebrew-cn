@@ -8,26 +8,23 @@ class Borgmatic < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "27e83268a6c52cff05d44396eea231aa470c13adb066fbc5984f822b52912491"
-    sha256 cellar: :any,                 arm64_monterey: "8efd001dc9816110d258fa4f2bb4b07eaa7cddaae532e78a4ee628ea112ace09"
-    sha256 cellar: :any,                 arm64_big_sur:  "0ee1e6e3182772e28f751783bad3ec2b9fc79448cfdf54db6d6d052258ee6ec2"
-    sha256 cellar: :any,                 ventura:        "fb75158d6e2e43dd148bdbf64c71a8e797f96d5f8c953a506eab8c97477e5dba"
-    sha256 cellar: :any,                 monterey:       "e5b213c5d1b4c31e16fb10c97f45c36137bee1b5b339f2ae5f3febf80746c97e"
-    sha256 cellar: :any,                 big_sur:        "5198a48668bb91e1103ac089ae94e7bfe8701f0b2986ea903830e2e17dc14f8e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfd9975fe5f5f430f50a5af923423a2d7756a94f23f54d02860600b67aab20ad"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "267139fcdc507e5ff42cf6603ccc92942fd9c2a000e38b8802f9f715c2c2a617"
+    sha256 cellar: :any,                 arm64_monterey: "60df17e48523903ba521e423c1d2a62064f4403552f56e3752943d8c6c200a01"
+    sha256 cellar: :any,                 arm64_big_sur:  "535a08e70f2ff65c1d07fc5335d700383a2feeb3e5c8d6364cbea2ab37c66b90"
+    sha256 cellar: :any,                 ventura:        "cd61280af0ec43ec2473960b93329c4471d5e868573ea535b057a74240c48c7f"
+    sha256 cellar: :any,                 monterey:       "7f96926684060fe18287f97519025b3eb1f6342a336b3332f5e7b39fd47a4cdb"
+    sha256 cellar: :any,                 big_sur:        "4a74ed921ac6de0a672101641bf4a2c7c8a29c1b69ea37dd733319a74e9a5eb6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f2cafaa6c5f3ecc875505515f7ba5e48d141abcb645bceacd868c4cadf45f7d"
   end
 
   depends_on "rust" => :build # for rpds-py
+  depends_on "python-certifi"
   depends_on "python@3.11"
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
     sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

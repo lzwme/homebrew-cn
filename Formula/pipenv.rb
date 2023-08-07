@@ -8,21 +8,18 @@ class Pipenv < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a1c543e9be92cad8402e757ee97f04896bb83396b3f7ce99cfe11631ccf4352"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9d715fd87ab2a0215339bb38ad3b9cf22d73e92a36ca1033afee850536254cf1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d0282adfe9940080f93e5799117f1c139a5fe524b9a1958f67d437fc17c7d829"
-    sha256 cellar: :any_skip_relocation, ventura:        "401b4e55cfcb22f33e4771ea7ecb0bdd5ca9f15b9cd050529761dfa4158ed38b"
-    sha256 cellar: :any_skip_relocation, monterey:       "b06b21566ceaa3efa57308b528acae77d57e9abb2cd49b137ac18fea5d9587b7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4982294606a6dd74db20da018eac874b6b55a70d93f2515f2c6799daf94d293d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61ca8783c7868e256ac05da5eaa548f6744f1c9ca9b140b0acdc1d890e415dbc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "183cbf7ad20f479dc1df113e30a77c78feda1e9753a98ba87dab1f51ffbfde8a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "12a0f3fb752c97aa3820191e7242b236579727a2a49863a7b746876a61508924"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9038c479a691c8d60f39d49fc497913c08d26cf34ace1da108bf58d2f249cef3"
+    sha256 cellar: :any_skip_relocation, ventura:        "7fc3a19011b99542024e275521c7ae52c732b4b1fd56b45ce0b079a939361709"
+    sha256 cellar: :any_skip_relocation, monterey:       "3de68677f9a175e5dd66008c010a1cd4e09b0d5a684df0074d5fb7665c08a198"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1635d55e403f8e374e9df00319896f62d5cb5ae466a020d91a625be8ef59b72c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d118f584f911bb11d817e0e19a7eee5a2a18d925cc38fff67f2eeb7da15a3ffd"
   end
 
+  depends_on "python-certifi"
   depends_on "python@3.11"
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
 
   resource "distlib" do
     url "https://files.pythonhosted.org/packages/29/34/63be59bdf57b3a8a8dcc252ef45c40f3c018777dc8843d45dd9b869868f0/distlib-0.3.7.tar.gz"

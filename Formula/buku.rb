@@ -10,30 +10,25 @@ class Buku < Formula
   head "https://github.com/jarun/buku.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6a6a57ff8acf5e568050507b5982d0a11b2478d7aff105c5d168555d83300414"
-    sha256 cellar: :any,                 arm64_monterey: "f1c29839406d71c7670af0cde442be4ac15dd591297f305202c7248724be79e4"
-    sha256 cellar: :any,                 arm64_big_sur:  "e0109fe4d7b35a0923d546850632320725dbff72e090b27f593a44cad8693901"
-    sha256 cellar: :any,                 ventura:        "6f9523f566579f5259b3428a723a3299d0d9be38d96f31da35dc1211d97698d9"
-    sha256 cellar: :any,                 monterey:       "0492c191fd1dddc89e2af6d1e0e706ba742b7a5bfe72ac9c995d17ce05b33d9a"
-    sha256 cellar: :any,                 big_sur:        "41ae7bbd98fa34b63422eaf4c3a50eee5950ca276d1f7f94b746dbd5d47ea6d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10bb04e1db407d303e240aa08a3a5cbae732340973cec31d068e2955ab8a3521"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "59823a4c46029edc65736d6b1b5d73e87377a85bd1a7d1f06cf7aef84b151bf6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7eb2bf1d00f67dabc0f395ecbe9aa7fda008cd9ae99425c3ba44f706c87b74dc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5b513b0b2384c72872abd8308152ee8d8675a4eef675613ef2e1cadc2a253bea"
+    sha256 cellar: :any_skip_relocation, ventura:        "551f3ff697855fab3347c36b11c709ca898067b732abf019815b8e69ad2ad3eb"
+    sha256 cellar: :any_skip_relocation, monterey:       "a20e62b0fcf52e48adbe933f9a04924d032208d3602251e604398337c299bda3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "45dfbc86ceefe3c1b24feda345362dc219dc7a013d032072b35c3d380d190f1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a377d56a1028b226c03aa4ae21bf57aee9bba605a9ab8f866585367e1b9cb01"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "six"
 
   uses_from_macos "expect" => :test
   uses_from_macos "libffi"
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   resource "arrow" do
     url "https://files.pythonhosted.org/packages/7f/c0/c601ea7811f422700ef809f167683899cdfddec5aa3f83597edf97349962/arrow-1.2.3.tar.gz"
@@ -45,19 +40,9 @@ class Buku < Formula
     sha256 "492bbc69dca35d12daac71c4db1bfff0c876c00ef4a2ffacce226d4638eb72da"
   end
 
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
-  end
-
   resource "click" do
     url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
     sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
-    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
   end
 
   resource "dominate" do
@@ -151,10 +136,6 @@ class Buku < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
     man1.install "buku.1"
     bash_completion.install "auto-completion/bash/buku-completion.bash" => "buku"

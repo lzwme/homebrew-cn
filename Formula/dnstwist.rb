@@ -9,16 +9,18 @@ class Dnstwist < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02d60ac57f0ad6547ee6cbdb65db261779098450ed772495f963aeafe16506fd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b0c0bf7d74fae3d1c8237e60782533b4b24fae2abf9b8a4ce431cf552f72c671"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5f8cdcc2dbd73945c15001cbc4da0ccdd54bdf702b7ca833b147214b10ccefa8"
-    sha256 cellar: :any_skip_relocation, ventura:        "c8bd97cf6b54d50444452ebcc09178bfd079b9f086619bd5ed779ed034e0ca43"
-    sha256 cellar: :any_skip_relocation, monterey:       "9ac47adc1626c9a0ffb6dba22baa0203c1b69d3aad00967d9bc88c2259a8881b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "342d25379777e0b08bd426f521fe5381782a9cc0b27e0f542b41e8969764a6b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49ecc49010f864a3361ce15e0c2bdd7f84d08dc86f9e35475a8ddd4b69d65e5d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b20967d9766d0b3d17c45c70562964dc59393362e854a973b6231e33d77247b4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "74ef790d7aefdbb84b68dcf65f22ae14eb604879855524235e45da438a438038"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f35eba4f24d9468522e575d24e5f123e9ae0771aedc5b83eb13807e2f1b7a43c"
+    sha256 cellar: :any_skip_relocation, ventura:        "ca5e4b9680324e6fc277065010453a73969224d31be2dc8686284742bc506867"
+    sha256 cellar: :any_skip_relocation, monterey:       "0a066b2a324834f4ec384a39248fa61fe5b25e87c3a36c80f7f79e3097532873"
+    sha256 cellar: :any_skip_relocation, big_sur:        "731de21a425ff394f742eea3ec530f03f74f1843b3f785f39cf21f6004646ceb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a69cd418d0cc725a7fcbc50e554355c7d85d447a9ee93d12fbb167ff51a9d47"
   end
 
   depends_on "geoip"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "ssdeep"
 
@@ -51,11 +53,6 @@ class Dnstwist < Formula
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
     sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

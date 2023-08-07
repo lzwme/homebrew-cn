@@ -9,13 +9,14 @@ class Mvt < Formula
   head "https://github.com/mvt-project/mvt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4413c3de97eda72f782afa6798cdfcd385d89891fb34eac0dbf45c2a02f7ca11"
-    sha256 cellar: :any,                 arm64_monterey: "d26effca6b91885b27b57ed2445cc923397bc417583d40a359b5ca3471cda223"
-    sha256 cellar: :any,                 arm64_big_sur:  "0d51e2071bbc0a3ea7a4874b4451203ffc195982f7da1e100a6cb464ea51a856"
-    sha256 cellar: :any,                 ventura:        "af8918517a4761c248d92a8f524c1721d1a779e3d62c9219ae6a56c0779534e9"
-    sha256 cellar: :any,                 monterey:       "b93bbc539736e2fb8a01e7670f4cffe8b3ec0812108eb657a3576f6237fc1927"
-    sha256 cellar: :any,                 big_sur:        "4027262be7b15b6cd943caa6029d42014bcb964d84c03609115286f826737a32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea52299e0a964ee98fcd16cf2aed7cb19a7e32d6204406d40e23a4741a551385"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "70ce8f104a00dd31703a4e2a0c140543a267a04f336333c170db041ebeac66d5"
+    sha256 cellar: :any,                 arm64_monterey: "d1d74322a5244291e5edd2a25cd92f7b900189e6e773aada1e5a234d2db4e210"
+    sha256 cellar: :any,                 arm64_big_sur:  "c85234415906aff573fb43aa8cec8206252a0a0f1fff9a8e71ab81e5ca418bf1"
+    sha256 cellar: :any,                 ventura:        "98a8878d745448a74a38dd0f216bf576e808ce6679c86b2b8507648d7edde662"
+    sha256 cellar: :any,                 monterey:       "c78758b0f13e1124e594947a487dcd9fded4624b1f64a39e04ee52bb01f500fd"
+    sha256 cellar: :any,                 big_sur:        "fcab78bbc3b55dc10924ca88e986dd355f3a773b35c41716067d5fced55bed31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "606e588fa553d0c70a6188b2181044c7ba7c2cd918440820d51ea7218aafbae0"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -25,6 +26,7 @@ class Mvt < Formula
   depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
 
@@ -36,11 +38,6 @@ class Mvt < Formula
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
     sha256 "7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

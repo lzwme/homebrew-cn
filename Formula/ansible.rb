@@ -10,26 +10,30 @@ class Ansible < Formula
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c8652eb7e8bd0bc3fa337de11d14b9ee9e41577eab3dc0a2bb6161127bee2088"
-    sha256 cellar: :any,                 arm64_monterey: "72f5b559db9035e6855388c0c650e54bc25f785bdf1781e08b6bcec89873831f"
-    sha256 cellar: :any,                 arm64_big_sur:  "bc40faff0ae43eb1e2fcc040189436bfe8071f2c194d19874f67929bc8ed28b4"
-    sha256 cellar: :any,                 ventura:        "51dc83e60290fbab6e071dd675f964c09e9fe504c2fe2e6aebbafec78b5ae37e"
-    sha256 cellar: :any,                 monterey:       "7fd93165329f01d736df160c2d04f02fcc04d307e2595a79c3052646656d3bf9"
-    sha256 cellar: :any,                 big_sur:        "8bd28bd016df3639db66ab5b2e6752167c2a056c91594d9187a338e864033446"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "603d33e4b3cfbd23a015a5a0073ae54de3b819261182c4ca86fdfe4ac439f882"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "7e490367a1a30147fcd6216aa7a3155a8f08c0297b9478fe9dc423f3acb75118"
+    sha256 cellar: :any,                 arm64_monterey: "ac26ee8c9dad9c2758de5206b9fb060b1843c937940808625140082c28212600"
+    sha256 cellar: :any,                 arm64_big_sur:  "f18233191411cd234d8764e7f39bbf190ed899c98e3c04fc1419c6cf34c078ee"
+    sha256 cellar: :any,                 ventura:        "aa24c5e7f4a573d052448f03ccc5d59656e1d70117db050158c5bada1fb1bb82"
+    sha256 cellar: :any,                 monterey:       "ad2a73757011acc10bab485407b19de62cc77afbe68d4309dbdc261abace52bf"
+    sha256 cellar: :any,                 big_sur:        "1aeb9007ac87d96a86aa501ce9188c82cb8941d58d5fc6826c829c928eb0ca68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2ac2fc6365bc3cfb2abbfb178184d2f00951d3f35f8d94fd7c236ca5fd59faa"
   end
 
+  # `pkg-config` and `rust` are for bcrypt
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
 
   uses_from_macos "krb5"
-  uses_from_macos "libffi"
+  # For `lxml` resource.
+  uses_from_macos "libxml2"
   uses_from_macos "libxslt"
 
   # This will collect requirements from:
@@ -100,11 +104,6 @@ class Ansible < Formula
     sha256 "dce83f2d9b4e1f732a8cd44af8e8fab2dbe46201467fc98b3ef8f269092bf62b"
   end
 
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
-
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
     sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
@@ -118,11 +117,6 @@ class Ansible < Formula
   resource "cmd2" do
     url "https://files.pythonhosted.org/packages/13/04/b85213575a7bf31cbf1d699cc7d5500d8ca8e52cbd1f3569a753a5376d5c/cmd2-2.4.3.tar.gz"
     sha256 "71873c11f72bd19e2b1db578214716f0d4f7c8fa250093c601265a9a717dee52"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "debtcollector" do

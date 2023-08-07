@@ -9,16 +9,18 @@ class Pferd < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e89c3c66c820a95f02053ab77f01ec7ca4a9f1592cf608350d06a76fa27c5ea4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed60236a5ffa9028c97bc4f62c4004a68662f6efc1e3cd57c4aeffb7fbb8d7f3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2cf44ed2af6a16811d69756830ec45a3c365f2a3b1445e732f9be9b61d9e28c1"
-    sha256 cellar: :any_skip_relocation, ventura:        "638e94ecc347da96924ada8eee584e27921f42056bd246381da50d19b700c740"
-    sha256 cellar: :any_skip_relocation, monterey:       "d1bf4553ed3d3c124e38a3263744ae6576ba7cd06a03733b36facb9bcfd20c21"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6fd10d2c58ab23371b80748c0fc8eb77c582dc23197f600ddccf2581113ffec0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8647521e957217693d7e3983f99dc3a4100a3904b8513a25d68edc9a626e20ff"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89fee69fe97a13fa8b1edb9193d43d3dd3cef674aac4054896a9ed5112cbca96"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1390df8585335cec5108bfa691cb05206f3bfc0ce33053656365bd287f32e708"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "24fb1ae7c05afe2b4c344817bb40d54de2ba4c5153cbba901987b468616422d2"
+    sha256 cellar: :any_skip_relocation, ventura:        "61233ed888ff2a1f7c45ca7c8030bf5fd6899cb7fd45c4c798f62bf7a4327b57"
+    sha256 cellar: :any_skip_relocation, monterey:       "aa20f1cbff3b51f81b4f0225888cae08b85cb72be90acfdc8ec8cfdd31567275"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7e4723f765b11bf0ca63a2fd1aee339d855e2048a6f302ec0bf8f5afdb0bb6ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc559ef12bfc3feb2a18bf20624173d19596f69a551e7924d8c285f57b24f09c"
   end
 
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python@3.11"
 
   resource "aiohttp" do
@@ -44,11 +46,6 @@ class Pferd < Formula
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/af/0b/44c39cf3b18a9280950ad63a579ce395dda4c32193ee9da7ff0aed547094/beautifulsoup4-4.12.2.tar.gz"
     sha256 "492bbc69dca35d12daac71c4db1bfff0c876c00ef4a2ffacce226d4638eb72da"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

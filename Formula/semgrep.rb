@@ -15,13 +15,14 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "932e6b08de66df307ed134445e47850736fc1e023fccfb53040819189eca3deb"
-    sha256 cellar: :any, arm64_monterey: "b41bb7641c8324dbcfb05a7e5e886b88bb7f16590f2c71a0ea3e0d8c067d566b"
-    sha256 cellar: :any, arm64_big_sur:  "e32b74510493f311b31a0dcf6a26246cdd6d509ee80451fed796efce3ead7349"
-    sha256 cellar: :any, ventura:        "ed2180e0a821652f5ddcd40075bfe2708e728734b84ce703c92a7d6e8c33b67c"
-    sha256 cellar: :any, monterey:       "f36414bd89e7fab9864d161f5fd745c7a681e1e4de88b9f544079679aabf40f6"
-    sha256 cellar: :any, big_sur:        "9391a4ba44f8aa1b52d7cc4fc6767af0045ce08fa7b09e5e637642267388cd1d"
-    sha256               x86_64_linux:   "014300a06d8c860c3c9a5c4be2adabe13a80f54f8f976805d4552a181bf207b1"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura:  "ba3f400287c178b91a11199e45869a65f50c3b3da12e571f12e62a789381de19"
+    sha256 cellar: :any, arm64_monterey: "63b178366022e15091f5e125d6548fa259b312c00c8a44bfea58c74fb4624264"
+    sha256 cellar: :any, arm64_big_sur:  "0fbc08ba2b98685e40a6268a86967399d161bcfe421634a31a6f0303f9cc5e28"
+    sha256 cellar: :any, ventura:        "a3f016492fae19b0d0f698e61288697cd74d14860ae543653d5401ea7a5cbb5c"
+    sha256 cellar: :any, monterey:       "e51d68b8452bc31021ac2b4648a3fc1b9afbd388dc0af50463b3dea8a8ebff95"
+    sha256 cellar: :any, big_sur:        "86f5dbfa1a1ca4d4b153b7a3a7e1190e4a9806134b04010f22a5c0c505662a61"
+    sha256               x86_64_linux:   "47898a08b09dc30028162f00377b59aaa8738a1dfc43a8db5acb9a5c9149852f"
   end
 
   depends_on "autoconf" => :build
@@ -36,6 +37,7 @@ class Semgrep < Formula
   depends_on "gmp"
   depends_on "pcre"
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "tree-sitter"
@@ -57,11 +59,6 @@ class Semgrep < Formula
   resource "bracex" do
     url "https://files.pythonhosted.org/packages/b3/96/d53e290ddf6215cfb24f93449a1835eff566f79a1f332cf046a978df0c9e/bracex-2.3.post1.tar.gz"
     sha256 "e7b23fc8b2cd06d3dec0692baabecb249dda94e06a617901ff03a6c56fd71693"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

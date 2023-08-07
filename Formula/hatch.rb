@@ -9,16 +9,18 @@ class Hatch < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c647fdccde1ccab82702cf87cd64f0c4654190e6bf6f6f0c464fb4128cf25232"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "891e529853a7938f7e8be2a98a749ac99494862b56ab91da093c5be8df2fdfd7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5c9d8c6826794f2a42e9b8e540c443efc4637124dd1cb1a44c113bd066c430cc"
-    sha256 cellar: :any_skip_relocation, ventura:        "fc4172f0d600bdc77615b5ee8053dada579493dc0ce0cd99f050130362a16cb4"
-    sha256 cellar: :any_skip_relocation, monterey:       "376f6c674b18883af3cf10de93295d64f28ef9607512deaf6f96fc4e3e7645c0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "46de1cc35b210fb519d4de733ace85dc76deb79d692c1eadea8fe980434cdd9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "308ef7cbc74c8a648b9875db09b6f7b5b6b60b96c93be0766dbff27192834be8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c1b5f90a507f495ad221aebf081ca7b51c497cfea033620c0bebc585b8cc86e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6fc17cceec3c9069076a4d4903a4cc0d6c74312b7edf185610726c3bbc183e16"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0893056475aab9f0dab72d9b7ac7c4db7abdf34041220f312a34c6216aa479ae"
+    sha256 cellar: :any_skip_relocation, ventura:        "44e9c20191d9a36bdcae752f131376b66d08b9522c4e3281b419cec1a19d910d"
+    sha256 cellar: :any_skip_relocation, monterey:       "ab16b6201809049504f1907e70849d8d959c337c782704e25816b7f35659c462"
+    sha256 cellar: :any_skip_relocation, big_sur:        "248a3112cfc987084e01b4eb53009a9cc0c645c74299b327af460cff3a35d57a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa9cfd10a756f4e693853295de634e8fa49208b9250a1d01ea8d3b7e5897beb7"
   end
 
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "virtualenv"
 
@@ -49,11 +51,6 @@ class Hatch < Formula
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/8b/94/6928d4345f2bc1beecbff03325cad43d320717f51ab74ab5a571324f4f5a/anyio-3.6.2.tar.gz"
     sha256 "25ea0d673ae30af41a0c442f81cf3b38c7e79fdc7b60335a4c14e05eb0947421"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
-    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
   end
 
   resource "click" do

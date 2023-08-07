@@ -9,21 +9,20 @@ class Mathlibtools < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4be61163faa8d906a8865dab1c64305ab532f1c48b6e166ff0b23ae9586a2ba5"
-    sha256 cellar: :any,                 arm64_monterey: "7cd146ea7ab897cb16c15cb7b2e470bc88fefafc0795a82c9b538a3b6ea7953c"
-    sha256 cellar: :any,                 arm64_big_sur:  "e19880342911249a6a455465c38f5c682c85265f329cdc022b2ebc8157d445a2"
-    sha256 cellar: :any,                 ventura:        "adacc10f09d13362188bf69e8dd8b6cb2eabdb66001efb00bf68fb212ffd764c"
-    sha256 cellar: :any,                 monterey:       "84515239ae7261749aa4cdb9d306aee7aa108690126b3589e50e910e5ad05f82"
-    sha256 cellar: :any,                 big_sur:        "b7d1377253e12429c034a5cbd8696a42696ae3b6f5f840838ed3796c9715f6ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "376f733c91932034e6db8b65f26bd55c2935c98f0048987ec46dcfe10aba143b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a25f019e862b3e6e7641bb6f7fc9320ea2eef954cf881cc33e0d19e3827ff0ba"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0fd3dabb719b055ffaf59e3b53c9f28fa527314e71aaf72db63b2f947c7cacc5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "135c77099038ed709910b28f5be2f267da26a9fb9dab9d436998cd7096d1e50b"
+    sha256 cellar: :any_skip_relocation, ventura:        "f42e8288df761e0e1360397a7de2d17c417cfff4e64a6d583869cf4cccc9741b"
+    sha256 cellar: :any_skip_relocation, monterey:       "43defdec11705a24c6c29fa843ff6ab0b1b240594e241a7583addd21ac847e83"
+    sha256 cellar: :any_skip_relocation, big_sur:        "aab4f9cbeed580cadcf86f5e9cd046cebf9c5778a808855f73f080135b479622"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ac87d7fc4e285e0cd2ec7d5d0b5a2e1e15edc25e83833c197743ad79e1f8314"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "lean" => :test
   depends_on "cffi"
-  depends_on "openssl@3"
+  depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -31,11 +30,6 @@ class Mathlibtools < Formula
   resource "atomicwrites" do
     url "https://files.pythonhosted.org/packages/87/c6/53da25344e3e3a9c01095a89f16dbcda021c609ddb42dd6d7c0528236fb2/atomicwrites-1.4.1.tar.gz"
     sha256 "81b2c9071a49367a7f770170e5eec8cb66567cfbbc8c73d20ce5ca4a8d71cf11"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
@@ -46,11 +40,6 @@ class Mathlibtools < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
     sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "deprecated" do
@@ -134,10 +123,6 @@ class Mathlibtools < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 

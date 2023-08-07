@@ -10,15 +10,17 @@ class Platformio < Formula
   head "https://github.com/platformio/platformio-core.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "240739a2a5ed6d6dcddce587a43af257e245d392564da4ceb816336f8881f1aa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c932401075da96026116c601c84168f708c66cbc8150af45aab978d4e0268603"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a85d659ff37c314e608bdc03e42763ee1c4f22eb6650e8c50edb47b495d9801d"
-    sha256 cellar: :any_skip_relocation, ventura:        "dd0c79545f9497200fcf8943d51c797a309135e527e40aa3f14503159ded979e"
-    sha256 cellar: :any_skip_relocation, monterey:       "d524cd70a70af0263c2e0e32c1fabff8cbf6379a5e516ca5843764e86dcde098"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2de2214209f5351ba69870b7f6494c5b87c6024cd91489a86647076f399e4256"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "701b1d4d6864bdc78337c307d5ba05793c9d3d592b52b01bb46c4ec37d5302e8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bd754ceb6e288e7c85d1ff9cfd407ac05043e8431447d0bbff61a4c79e14595d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "285c51ca30a6d80a195cd18971dcbcf8f1dc37b7c58f00a25adc56712377c5fd"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1a237c21e4eaa988744ed3d384c2d37df1565d837b99785cfd858ce7b6d9a42f"
+    sha256 cellar: :any_skip_relocation, ventura:        "df0a0640a7f7825b8525637469ae3477518975a1ff684e4f98843eec39e71e5b"
+    sha256 cellar: :any_skip_relocation, monterey:       "17957c48cba3c8dbf7574c248adc8b5cc4ff27ffc44b343fe0c80009e30e484a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b22e6aeded2d23814e9b7366595fd038820bd3edffdf2b392d746da5b460acc3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be7cc7d1f4d6d043a043106422c74f4bc3eb2952fba5075dc268501b838fde17"
   end
 
+  depends_on "python-certifi"
   depends_on "python-tabulate"
   depends_on "python@3.11"
 
@@ -40,11 +42,6 @@ class Platformio < Formula
   resource "bottle" do
     url "https://files.pythonhosted.org/packages/fd/04/1c09ab851a52fe6bc063fd0df758504edede5cc741bd2e807bf434a09215/bottle-0.12.25.tar.gz"
     sha256 "e1a9c94970ae6d710b3fb4526294dfeb86f2cb4a81eff3a4b98dc40fb0e5e021"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

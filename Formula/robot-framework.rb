@@ -10,20 +10,20 @@ class RobotFramework < Formula
   head "https://github.com/robotframework/robotframework.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "1cd48e1be4ce0148c70b7b1ad6ee6bcf551eff65a45d15f30a6cb3e136f7b91f"
-    sha256 cellar: :any,                 arm64_monterey: "4db94919b375cafb5c694509e65268040e7632d18a70d214734bf9f7953024eb"
-    sha256 cellar: :any,                 arm64_big_sur:  "8acfa491802ef28de2c96d45ab253a46d491570359ca6c4260028d2fffbf8c35"
-    sha256 cellar: :any,                 ventura:        "74b93f4a0f5088fdc4b36a30af7256acb73e9e6a28d701e2b06fcceab46b8cac"
-    sha256 cellar: :any,                 monterey:       "9c0acd35ac82cd4889309c89e39bb96351a401325fd553cfdb01ee2b257b2146"
-    sha256 cellar: :any,                 big_sur:        "10d92737e1d639820a24ce2bc829ec445c68c42a0d01b5692c49be78f4597816"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a96e5893344175f66e2779ac796a1929cc94316209aa8037d041079f73370a9e"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "52537fc67d6dcba0e4ff96d48ac226c78e5429ccde37965d158f635b6cc513d5"
+    sha256 cellar: :any,                 arm64_monterey: "5d67f5327b8932627320fc1f8fcc272e27a6b6be3996acc627e4f799870aaadb"
+    sha256 cellar: :any,                 arm64_big_sur:  "c2f1b5e14aad71f8cd1fece802ef6379ac996151aea7698018badc058e03c3f0"
+    sha256 cellar: :any,                 ventura:        "7d97a6629178e30474df79e66b49febce64350d3140d85860c1b1eb4c6482c46"
+    sha256 cellar: :any,                 monterey:       "4deff0fde70efcd79785d7c39cc0393781a744c1d6922056afd786725555d51f"
+    sha256 cellar: :any,                 big_sur:        "af6d384e80ba3e15fead77f9250819b8c5dc94d4c1656b6757f6805f9bb77bc3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb748a863cfbd30217115b8c2ebb37fbc7bf8e04e6b468b2e9af3c436a498eab"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
+  depends_on "rust" => :build # for bcrypt
   depends_on "cffi"
-  depends_on "openssl@3"
+  depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -35,16 +35,6 @@ class RobotFramework < Formula
   resource "bcrypt" do
     url "https://files.pythonhosted.org/packages/8c/ae/3af7d006aacf513975fd1948a6b4d6f8b4a307f8a244e1a3d3774b297aad/bcrypt-4.0.1.tar.gz"
     sha256 "27d375903ac8261cfe4047f6709d16f7d18d39b1ec92aaf72af989552a650ebd"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "exceptiongroup" do
@@ -148,10 +138,6 @@ class RobotFramework < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 

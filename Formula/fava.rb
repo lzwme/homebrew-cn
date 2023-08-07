@@ -9,15 +9,17 @@ class Fava < Formula
   head "https://github.com/beancount/fava.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ed24f0e577d91b01c841c2aee8fd0773d3eb1a98e8a623826e70232089a0fae"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "28cac2f3551d2765db797761473052f8e7c7471b5bc047d140f5e6833faa40ec"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "578857945a534ef9a46562541118b50938cb83128f8c975c295b51c0847266bb"
-    sha256 cellar: :any_skip_relocation, ventura:        "e92a25db4661b1ed04edbcf00038871189270dfdb6df68e501c0c9b5b51a8ce0"
-    sha256 cellar: :any_skip_relocation, monterey:       "2f2e6146d50a51def034164fa8f912371717ae487ac811f52e9c0e5d62b0b95b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "65562112a3d46765297f9bba10b79b8150bf1cee25c78b30469f43d46fb10f1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "381cab4525c9cf7083ef6cc8bc6532bd4239e1f83280511959dd8c6236c22001"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "78e5255773ebc76b024c095e736b3a8b3dd127aa8e015dbbe911150574c4f4b3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f8a752d9c6ab04ade522bc6dbbce02d8aa4c3a35ea16ef9ac27f0823fc151d04"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "16122755b785cb650407c92f94abf6cf9752d16511d1cfd96dc9b4af857dbac7"
+    sha256 cellar: :any_skip_relocation, ventura:        "4bcc5251a069badbc4248aa5dede0b517d72f582244e8128dfc6130cd9be45cd"
+    sha256 cellar: :any_skip_relocation, monterey:       "66e8b7dfff92c2ee3c2b0a77e10a5ba959bb6fd2dce201765455fcdd5862e4e1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8dd46671d7059cccff2435aaf5d2b3a3e0a7db4f12e1e14d1d38e0794c1bd931"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8cddea2c0a831da165c48b4298a5de8fc686343695c218d93937404427c487a5"
   end
 
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -51,11 +53,6 @@ class Fava < Formula
   resource "cachetools" do
     url "https://files.pythonhosted.org/packages/9d/8b/8e2ebf5ee26c21504de5ea2fb29cc6ae612b35fd05f959cdb641feb94ec4/cachetools-5.3.1.tar.gz"
     sha256 "dce83f2d9b4e1f732a8cd44af8e8fab2dbe46201467fc98b3ef8f269092bf62b"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "chardet" do

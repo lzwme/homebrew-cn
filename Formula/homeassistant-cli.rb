@@ -16,15 +16,17 @@ class HomeassistantCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "69319c985b20ebf194daa3b28e5cf24c95b7ddfb61c08e6839765e4cbcd3c8e7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "88a45e79d4520f28cf08ebda6ae24d31b0d0a5df49b9bc561c1725ec2b756dbe"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "64b1671bb4183b2fb4292f70100dcde29d6c4c60173c753b0340bf431431f49a"
-    sha256 cellar: :any_skip_relocation, ventura:        "615ce1545b3580b574efc7bc0d0fc16766ffcb4a7ba9b4e8b4743deaff62609f"
-    sha256 cellar: :any_skip_relocation, monterey:       "a40d0db805471fbda4bf6742e4d3a3b0c7102e73c4047161a8a123ae9d56b999"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d5dd5dbe684f92460a434f5d6ba78cf7beeab0b8af997b83574004a809b29e36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3502eb0ab5127896525ca86271ce7834c0075d42357c1168527fafb9fc12744"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c34ceb4b17416eaa1bb7742339928a383332024c591ea14156b29e5d8604c46"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "845a3c366e987314aa34343948c18e46535264407016e054f7db5d558e4a9a5f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "42117719d98336a56af2cd5c65f78b92f01e9116b46e4731a0ef746927eb0893"
+    sha256 cellar: :any_skip_relocation, ventura:        "1fd19b518afcf632e281723ff866e92580928a5956b4943addc6d3a87d13e984"
+    sha256 cellar: :any_skip_relocation, monterey:       "1e8de6b6f101be63e0a4dbd14b6314343553078af81e2f164d15459781e7e08a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3437b64911e6c4b65822e353912d49971014ee73b8b99931c9a3dbc78279a034"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1892def570f9fb4174a9d19c81e928e50dac7259542def9e37bdb9fd5aee014f"
   end
 
+  depends_on "python-certifi"
   depends_on "python-tabulate"
   depends_on "python@3.11"
   depends_on "six"
@@ -47,11 +49,6 @@ class HomeassistantCli < Formula
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
     sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

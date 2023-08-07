@@ -15,21 +15,19 @@ class Osc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d50b9be5945e3a8e009d7f0ee0b51924377342d2716d615e0ff02f92de47ce87"
-    sha256 cellar: :any,                 arm64_monterey: "aabbf7b7938f5afbf2ba9413601b28a9df9841b0f04e028006cf8f93c7d4db5b"
-    sha256 cellar: :any,                 arm64_big_sur:  "e2ffa401d1ec42f58b304072919af1123061853f3341a6cf764937ebf0923ac0"
-    sha256 cellar: :any,                 ventura:        "9a1d550ef60b470ede8d2c5c2624239c3344318548dd9e31eef9ff60f4d285a6"
-    sha256 cellar: :any,                 monterey:       "9f43299b7a4bc571667189db4add61da62d93ac09cdee54ed46d8de18ed22ad3"
-    sha256 cellar: :any,                 big_sur:        "ad67a1521f3e0bbfd12df2b296de48a996e2b5574f70373b5e7fcd4d676dc55b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05102ffa5f25f37a4046814012e00baea58b008c6734a3d106fbb5f9fcd743ec"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "44bf0cc65646aec0ef635c261050b64ac912647613ea2b6d0fac83f84a4d10ad"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f5fc477223f19949e46bc2d8b5a38b6094688bb239cf40cdd61bb24c0dd5b21d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dc7d062c74a732c57eeec2247b84feb94398923293e4f8a5f351b9a8b115291c"
+    sha256 cellar: :any_skip_relocation, ventura:        "ff2b0562ca031b8c9794d73776e8744c7b397e3d0dfa54d37d1dbfb6cc06eff3"
+    sha256 cellar: :any_skip_relocation, monterey:       "df38102fc5468e4ab5f768cd0d30b2be82d9e60edd899e3cc3ac73e567b9e4b6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "37cfd8d6b2f40dc39549b7a7bedf96e309d72169d86342efa958d2f1bb8a13d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6887b4e39ea6190daec6e1677f0c35ff4264c54285fcf44ac123f51b779f3066"
   end
 
-  # `pkg-config` and `rust` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
 
   uses_from_macos "curl"
@@ -37,11 +35,6 @@ class Osc < Formula
   resource "cffi" do
     url "https://files.pythonhosted.org/packages/2b/a8/050ab4f0c3d4c1b8aaa805f70e26e84d0e27004907c5b8ecc1d31815f92a/cffi-1.15.1.tar.gz"
     sha256 "d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "pycparser" do
@@ -60,10 +53,6 @@ class Osc < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 

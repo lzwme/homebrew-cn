@@ -10,13 +10,14 @@ class Poetry < Formula
   head "https://github.com/python-poetry/poetry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "fa323d21a318ba7764a7cd36e9fb939ee15e26485549f4395c134d212edff88b"
-    sha256 cellar: :any,                 arm64_monterey: "e8e3ff4498ae74cb846bc84c19d256e92f83712aaa8d7233084e4784f4bd1034"
-    sha256 cellar: :any,                 arm64_big_sur:  "654c7f47660fe5aae26b30f0670d7504de2b2328fe548fb3855c017e20e37b70"
-    sha256 cellar: :any,                 ventura:        "e6351615e4d02e4fcda7fc4139341c896648bb47bff0c59037c993fca007d882"
-    sha256 cellar: :any,                 monterey:       "e82d153e8535910ba3dcb4636132442940e2d0b378756f96e8a2525cc15f8a69"
-    sha256 cellar: :any,                 big_sur:        "fdf87693131966a67ed422d0e2e9a5039923d1423fff0402ca777f5f36a35570"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "53ba84e91544962ada92996f018db73d50c0a6f0996b9dae5f9a1be3647ba676"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "b4ffd43b90daf6ac21e879fd7efffa0429b0543d4df76444a3c01c7cac3638f7"
+    sha256 cellar: :any,                 arm64_monterey: "fd3c93499f422779ab66e544c5b7b89c7a56789bbc69c8b0aa1a7631a79be775"
+    sha256 cellar: :any,                 arm64_big_sur:  "9e61802dac1d737c94e59430a4c922d2cfd580137ac4872b263646a7fe3f1b97"
+    sha256 cellar: :any,                 ventura:        "0a5fecc22bee270dba0f80ea20b9acbf5fe8f6b41d05e9ab57f33f9293505578"
+    sha256 cellar: :any,                 monterey:       "a21741b041c432b5fc7506f447f2e83b376dce195984dfa82a80edfc4221df2a"
+    sha256 cellar: :any,                 big_sur:        "34506c84ecf885e62a54092240b5b2eb85176be5c52f374687bfec73f7a16e9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04c7d1c8d326da95e187c66d705c47548f52fdcbec6eaa275c8dcb6f4e4aae96"
   end
 
   # `rapidfuzz` requires `cmake` to build
@@ -25,6 +26,7 @@ class Poetry < Formula
 
   depends_on "cffi"
   depends_on "pycparser"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   # `six` is still used by `html5lib`
   depends_on "six"
@@ -43,11 +45,6 @@ class Poetry < Formula
   resource "cachecontrol" do
     url "https://files.pythonhosted.org/packages/50/43/bfdc1888b1889bdb6eaadc179f6d18a0aa34d53eb89fb5954e09bc37b7e1/CacheControl-0.12.14.tar.gz"
     sha256 "d1087f45781c0e00616479bfd282c78504371ca71da017b49df9f5365a95feba"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

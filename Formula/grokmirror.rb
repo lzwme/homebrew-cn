@@ -10,21 +10,18 @@ class Grokmirror < Formula
   head "https://github.com/mricon/grokmirror.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "73ae89acb4c7def53559729f8f7a37c18140aa65e2d1836e97e2640510a5cc69"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "94f0c4f7ad10d5301396cfce4389cca18b7b208e2299ddcf81a943d1f723ff69"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "43045fb385768269c06856aae331a93cbe24ea9b769fb88739be724a7c7067f3"
-    sha256 cellar: :any_skip_relocation, ventura:        "5481325e57b39888152baa254d0f091c55f7d603050d5e61102b2b518b185b5e"
-    sha256 cellar: :any_skip_relocation, monterey:       "37446fc2f9ba8e008dced680ec6c08881c44c9d857537fcb57d5b87eb5bfd928"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f648228c496b4775915812f408d1fb583dec08e0eb228001684d53b005fb3115"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fef19a72c9865114e655c208d4040d12548165d2f0a3992c5b86cb715f932671"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b98b7d2ae38776e116471d4aa93752179dd6cf0178ca2c963dab1a5ce149af8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5cd1c6f82c4b6786747aadd7c66a184874290c6ebaf2140900b23c6fa4a62917"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9e71ad6585d8fdbe72e5dd132cf4d20482002c569f3fb9ce83e0be0efc8b7f75"
+    sha256 cellar: :any_skip_relocation, ventura:        "acae5a92fa6062106d7abe579db63da6e252a7c90173a2d76c9521aaa2ee46c3"
+    sha256 cellar: :any_skip_relocation, monterey:       "c8a222768f1fa3ded6b38fea8c5963d27e4ce80d496fbaaf8f26f1c8b2be18dd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "99ce644f6574c85120f619b503f80f729d82d1472d6e53d54edb15640bd0a94b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3749e3ddcf48a04513d603e2d533c998fde630c106117a11c506450b39c8af81"
   end
 
+  depends_on "python-certifi"
   depends_on "python@3.11"
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"

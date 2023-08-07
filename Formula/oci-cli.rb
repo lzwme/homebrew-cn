@@ -10,19 +10,21 @@ class OciCli < Formula
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a47d1c0f78e4db97b8d00990e96af3a43345bb40f0086f7b0fe3a9e64ae8ac16"
-    sha256 cellar: :any,                 arm64_monterey: "6455c35b47c0f7f61bdd22e3cef343f90e64b64d09306eed81d5cc2b403267e9"
-    sha256 cellar: :any,                 arm64_big_sur:  "bfbfa9c953ff90bf215e1498bc6eecdd92638d37362eda6a7d546a80bba22444"
-    sha256 cellar: :any,                 ventura:        "8b1b5b6087de08b592f3de4e7af9dc2d42acaaee104b5f664341cecbfabaacf8"
-    sha256 cellar: :any,                 monterey:       "d66d6bec80156c7a384276464adfd16e9e025d09f48426d8a3ef2f07273d9dcd"
-    sha256 cellar: :any,                 big_sur:        "01fcf72da4586fc091ffbcdc81da54227ea1f3ad662444ee6e25e13c3c2b9d25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "87e98e2b7ef710cb4f7bbf2aacf582076459541d685a623cb4f16fc8473752d8"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "2305f0a87f2e7a30e1bfd82ab1bf024e7b2c10bd93da7f159d213c31ab04cc7f"
+    sha256 cellar: :any,                 arm64_monterey: "1437f128c6b4dc320a255b7f26bd441de0c8526f999f4d6d1446c4b225837a24"
+    sha256 cellar: :any,                 arm64_big_sur:  "e4067e436ce4b9500a5cd3fe53d37d2166c795c3c907b3aaf601b639a61a32b6"
+    sha256 cellar: :any,                 ventura:        "14a00b57383da96e12f9500c13d4b4cd38950223d2c6082c958c209765489970"
+    sha256 cellar: :any,                 monterey:       "392521cb06fb72715daf204707dd49b1574bdf212ffd21b83fc83d0c445b95ad"
+    sha256 cellar: :any,                 big_sur:        "0114b92918b494e7fed6563d8a3bd2f6162b96935a6229acea0aa0988bcfa99d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "173c71806641394eb9bb06aa1bdbaef4bded1fec49f96694713c6b37cf1fe125"
   end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "openssl@3"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -30,11 +32,6 @@ class OciCli < Formula
   resource "arrow" do
     url "https://files.pythonhosted.org/packages/7f/c0/c601ea7811f422700ef809f167683899cdfddec5aa3f83597edf97349962/arrow-1.2.3.tar.gz"
     sha256 "3934b30ca1b9f292376d9db15b19446088d12ec58629bc3f0da28fd55fb633a1"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "circuitbreaker" do

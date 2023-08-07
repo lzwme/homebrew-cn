@@ -1,20 +1,19 @@
 class Pygments < Formula
   desc "Generic syntax highlighter"
   homepage "https://pygments.org/"
-  url "https://files.pythonhosted.org/packages/89/6b/2114e54b290824197006e41be3f9bbe1a26e9c39d1f5fa20a6d62945a0b3/Pygments-2.15.1.tar.gz"
-  sha256 "8ace4d3c1dd481894b2005f560ead0f9f19ee64fe983366be1a21e171d12775c"
+  url "https://files.pythonhosted.org/packages/d6/f7/4d461ddf9c2bcd6a4d7b2b139267ca32a69439387cc1f02a924ff8883825/Pygments-2.16.1.tar.gz"
+  sha256 "1daff0494820c69bc8941e407aa20f577374ee88364ee10a98fdbe0aece96e29"
   license "BSD-2-Clause"
-  revision 1
   head "https://github.com/pygments/pygments.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "22dd62a13b5fa28d0b13af36ac5c065d54671946c8a04e25c9da8c3f5dab0c1e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8cf29db56c6db4b94612f46c8c6901faeda2d6638e620eda8a54c42f83088701"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "35f8b8852d8ddde37570525f201edad241dbb0f35a323ef4761de0722a47942f"
-    sha256 cellar: :any_skip_relocation, ventura:        "f5f47a58e80f27048a3ad496eeace812d50b73fbe570059efab7e8b68feb81e9"
-    sha256 cellar: :any_skip_relocation, monterey:       "c60a1549d0f8ac1af0130f98982c987d13ba3ca499d90243f03cbe5011da8f6f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1eadfd8db2188556b8c8afcc580a8dd767bba6e44e6908c940e42f72798c514c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a0407703d117068c5fde3fb7bc7633e3cbb3b023fd662f5742c2939db97eaa7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "559c9e5f2e02ab5f1ba7d613a8b34db2f838e1858feede8c9fd56128006522e0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9d8285e8c7c2560f5243fff90ea564d5807017ae6c1f838a089050e663ddd31a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ae6cc81c275c2daa061d02a455f847441cdc697d0c6ec7b64ec93ac36458cbf4"
+    sha256 cellar: :any_skip_relocation, ventura:        "c8b4aad08fe4fdc54e10fef060779e40cb41a24a552fd99c3d23374fd6c517b6"
+    sha256 cellar: :any_skip_relocation, monterey:       "e17fb3c825ecd89faf79ae8f84f3e0224a6c5aab9daffe65475ba14e49aa4601"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a40200bae52d000af9c9b83c2fce97f9508e627cec7b3410227234ad8f8a1693"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f5931cbf1c8329172ba638a022190b042ae9eab47b141a43148c811928432ea"
   end
 
   depends_on "python@3.10" => [:build, :test]

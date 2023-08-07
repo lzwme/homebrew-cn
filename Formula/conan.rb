@@ -10,26 +10,23 @@ class Conan < Formula
   head "https://github.com/conan-io/conan.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d7823dc624b7226753f06d7a92e27366872c1a65577c80b6eaffcb3fada414e6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4a53e17c20111256a48deddb16ee5eeb3157e24f7859446e99fdbf1edd0f1b77"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "aca339a0987ef41079d1b8199f4998fce3cda202592d63569c73c274b3b6568f"
-    sha256 cellar: :any_skip_relocation, ventura:        "2d2bb3caed3322d9ae3989eb8d4c328827d4ab23d6c892334c2f9d613686f478"
-    sha256 cellar: :any_skip_relocation, monterey:       "a739d7f55cc95d2130941d69cdd33a66258466dd4f011525cbe7bb23a93fb10d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "46d1b91390e16eda1416a6eb51210ddf8776cfa3e82c37790306fafbcb208ae4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5bfc23028419314a92da5db35b86696e2d673d493f6a708985f7a1768b86bd40"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3ed3e59a6e352c12d0e75fb63a02e989fc260b4c1d72179ec7d00b00a7763898"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "930ab910b53f84e7a344f0454d9152a5ee8d9aac514004095517c83feddc70cb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1150ab204cf96dbcae1d021dca7df336d07a8269749f6d369a33764361fd0bed"
+    sha256 cellar: :any_skip_relocation, ventura:        "1b6f53824b618d5a7d3238852b80f42513d5d56e9a13f6b5a76b2d85469b7aa1"
+    sha256 cellar: :any_skip_relocation, monterey:       "359235a7306529284b3329c8e5cc8744b35d79ae1091a4d3c049acd8ab149f66"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3c9999c144254a54ec0b732cb97b74ab94effde865e07af74687fdd4e88f6072"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a1c552cd0c1d3690a4968a62330fc5c2c119ac60db22867a8134efaaccc3fb1"
   end
 
   depends_on "pkg-config" => :build
   depends_on "cmake" => :test
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"

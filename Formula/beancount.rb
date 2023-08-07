@@ -10,15 +10,17 @@ class Beancount < Formula
   head "https://github.com/beancount/beancount.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "03ef875d69799e284c01168cd019522ac6e77761a733db39580f83add49640ef"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d772180476f4d7e6d7ed726a4a0a89a74fde2763ba8a0720bb4ae1effc744062"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0be7baa9d36e0868c676ae8462b30eed4156d5b688815344ee765fe92f8e6bc0"
-    sha256 cellar: :any_skip_relocation, ventura:        "444f3f876ac225d5391cb581eaf06bb479c19feabbcad2c4020b5795838f33fd"
-    sha256 cellar: :any_skip_relocation, monterey:       "7bd2d6ca34fb22ebbdb1e5e684dd3b18e7bf2ab67bb1ef1be1d820be6a6e5c3a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0fda97e891f24a025051d94c9e2e035f91734d26925f788244c033217475c759"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df32a4654b8f9e6fe341bebb3e8295c812b13f491c80ea035be7337be52c085c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "62fe9067dd5a4a01d37191d1dba17eb173a6e06ecbd453ed0813e87feb252cdd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4e18cba43f2383327bc6108941401d609f835822e63323109221ea9bfdf92dc6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "db5d7668e9f154163507c3cfc890c5c1adf44bd897420f9df7d43952d8ad2215"
+    sha256 cellar: :any_skip_relocation, ventura:        "dbb0916e3c1bca63a7695420c602ca6d2733ef3494305c127f2fb592ae792570"
+    sha256 cellar: :any_skip_relocation, monterey:       "5e2e848df761c01a08d0467045725d02f666441556b3647e199a15421a2b603c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "151ccf65363676503c6aa174413330b6a24108fa3b144e4fe4dab4b9cbf899e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "851116014244818444e5c7ddebfdefdcb0b6adc4eb3297d189c09d397b77c287"
   end
 
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -38,11 +40,6 @@ class Beancount < Formula
   resource "cachetools" do
     url "https://files.pythonhosted.org/packages/9d/8b/8e2ebf5ee26c21504de5ea2fb29cc6ae612b35fd05f959cdb641feb94ec4/cachetools-5.3.1.tar.gz"
     sha256 "dce83f2d9b4e1f732a8cd44af8e8fab2dbe46201467fc98b3ef8f269092bf62b"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "chardet" do

@@ -9,16 +9,19 @@ class GiDocgen < Formula
   head "https://gitlab.gnome.org/GNOME/gi-docgen.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4457956c9dbdd582c2d8a86e23902226cb0f7de110cc28c2036d616677b588f2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "21b1f4b55bc59063bcfcfa500b3c89440b5b1f7f4a93d5168433fd73b2ec8207"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cf1cdf93e560faf4fbc3dcd6a6d1c00fdf29d9fcba56bba2bec135d58543f22e"
-    sha256 cellar: :any_skip_relocation, ventura:        "d76520359e7bd6d5fa63a0f36354c29676352da054e611966e93fa3c56323597"
-    sha256 cellar: :any_skip_relocation, monterey:       "3e432556d65b23faf4d78216c088dfc1435b6e5c9f7586d2f668b2a2af470743"
-    sha256 cellar: :any_skip_relocation, big_sur:        "77c659d7c8004212417531e491fbb18c40e3dea50740df5c1093f91f68543048"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90ba3994ae191ef527494dc53d54d92c183c18597f4193ec5cbf221e0ead848c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a07a6ee343dd01b6a02d9c434e370d8eba715b823f11127d753cfa73083f01a2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "20f7770a9f981349686f2c53251a3fcecbcaf2f7d03cb389b5585924485f1917"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "951f7b180d34b2f267a6c017cbbbc4f87506aa6a425943a63d676e631fcb70a6"
+    sha256 cellar: :any_skip_relocation, ventura:        "8d65cee7d820365bb9a33072e5eb87d96dec598d989d66abb2da4df724fbac3f"
+    sha256 cellar: :any_skip_relocation, monterey:       "058fe642dd88f7a68fcb7101c551767a14c4db932dae0def872507129f29f2e5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a6b55bc3deb6b107fa5c052e920669a5fa56a3ab5a3818626aa85fb234d4218a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "812246d1f6d362897f0e60e658416cd048c66dd9e67cb5d714628c89c1fd1429"
   end
 
   depends_on "pygments"
+  depends_on "python-markdown"
+  depends_on "python-toml"
   depends_on "python@3.11"
 
   # Source for latest version is not available on PyPI, so using GitHub tarball instead.
@@ -33,19 +36,9 @@ class GiDocgen < Formula
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
   end
 
-  resource "Markdown" do
-    url "https://files.pythonhosted.org/packages/85/7e/133e943e97a943d2f1d8bae0c5060f8ac50e6691754eb9dbe036b047a9bb/Markdown-3.4.1.tar.gz"
-    sha256 "3b809086bb6efad416156e00a0da66fe47618a5d6918dd688f53f40c8e4cfeff"
-  end
-
   resource "MarkupSafe" do
     url "https://files.pythonhosted.org/packages/1d/97/2288fe498044284f39ab8950703e88abbac2abbdf65524d576157af70556/MarkupSafe-2.1.1.tar.gz"
     sha256 "7f91197cc9e48f989d12e4e6fbc46495c446636dfc81b9ccf50bb0ec74b91d4b"
-  end
-
-  resource "toml" do
-    url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
-    sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
   end
 
   resource "typogrify" do
@@ -55,6 +48,11 @@ class GiDocgen < Formula
 
   def install
     virtualenv_install_with_resources
+
+    # we depend on python-markdown, but that's a separate formula, so install a `.pth` file to link them
+    site_packages = Language::Python.site_packages("python3.11")
+    python_markdown = Formula["python-markdown"].opt_libexec
+    (libexec/site_packages/"homebrew-python-markdown.pth").write python_markdown/site_packages
   end
 
   test do

@@ -9,25 +9,22 @@ class Mapproxy < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "33c8baf6fed9ddd4ccee9777ddc56ef4f25715761ad64e14d47d611149667346"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b0315d558265e6f2041458917ed5e450cb8ba0b8b52ff54d1f20fb889912b92"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e8e2bd10f1406677a0d79114f296a7356cf1850687e53d58aaba7fc9c90978f8"
-    sha256 cellar: :any_skip_relocation, ventura:        "7327c1a3f131cdb60e52d3603879d5879c2b1845985ce4cd8932f6ebe9bb175b"
-    sha256 cellar: :any_skip_relocation, monterey:       "6215b8d6c202441d569b1baedc04493bc39cf4dc9193d15180644fb4f93c262f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "856b84981891fa41918496e849c9ec472635b34a599f486364c929a48ed62795"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "060d147b19171d74d321781bf331a36a9a249df976ff13004b1808a239f56267"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a4d62d3b9582cbad75557c070576a7b3a41d7ba2eee3397072183083b7b21dbf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "82c7dd4bf09cba521f587db39964d50601381ea5d0edacdd14c92f9fa2ba2ab7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "53556be7146ab2c20b8510d5204883d1f1eef915d333f9fca0906ddc4e989f13"
+    sha256 cellar: :any_skip_relocation, ventura:        "dcc64e57343878981e73170c4b1c0c8800345dbe14f58a354e37f51c8e254380"
+    sha256 cellar: :any_skip_relocation, monterey:       "1b27b3755848f832b0ebb31e6b59c2b3a0a93ca57f3e9d276d549cea0cd6325a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ebf5d78a5d1fd156418889fe073fda2624bc559b702039a85ceb049321805067"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8775c1b03984cdbc6c2deb8ef7e034ebb5c69baa094ef6f145c086daebfcb44b"
   end
 
   depends_on "pillow"
   depends_on "proj"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
 
   resource "pyproj" do
     url "https://files.pythonhosted.org/packages/38/77/46fe6a107b934fd23b903cb7402b69c8b2480a6cab9481d9f98c6dc7726e/pyproj-3.6.0.tar.gz"

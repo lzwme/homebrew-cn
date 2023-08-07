@@ -9,19 +9,21 @@ class Sgr < Formula
   revision 5
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "1ceff08734fb5e30c56b75a0deeecc17d858c19fdddb78fc8ff550c6a6effa0d"
-    sha256 cellar: :any,                 arm64_monterey: "85ecb0074e824220a1625b7e3efc0b4d2c3a74d422a0247f87acf14487f4293e"
-    sha256 cellar: :any,                 arm64_big_sur:  "e58c341e8fb34b96eb6ef4184f684ad8a1d6e327955e58cf63162ff8110f98cf"
-    sha256 cellar: :any,                 ventura:        "7be4f044b91f625ccf0dec109e8029913a828e732bdcef2a7906e7a8522d7db1"
-    sha256 cellar: :any,                 monterey:       "e91b8379ea23a0929dcb850a8b59c66f40fccf5298950fa62a5cf33675e3d4c6"
-    sha256 cellar: :any,                 big_sur:        "8829029c353c96fded5a081528c1f06013363239e65a3d5e1b8828052023242b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0dd28bfbe7e3ec7945ca720349fcc90eea8ea309708f60a86308edae70e8b563"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "6ef9e96da67491044c03c716845c85930cee98a70bf40b9fe31a200ebf110775"
+    sha256 cellar: :any,                 arm64_monterey: "fe226f3149b937b85601a6a9312e6515a46417ae728b39f9b625277493f407eb"
+    sha256 cellar: :any,                 arm64_big_sur:  "1e46933cac186ecc78b6e57102dbc0495a9fa88df026c19856e1dc75ca7860fe"
+    sha256 cellar: :any,                 ventura:        "bf8d9641f4695df8524cf68f64f6889bbd4690aa79fb9e2cd55c0b757e60cb87"
+    sha256 cellar: :any,                 monterey:       "0dde148f630f266ca3645332b8db8b195dcf2363a5ab20b77e70b4ddd7e20153"
+    sha256 cellar: :any,                 big_sur:        "93a22ce6810837b40fcadcfb5be509f8fcb3f33d5b6e9fb030a6dfd67927cc26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23a5004769f5900ea8ddc97ab004885e4ce55d528fc23dec74363c93b377c175"
   end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build # for cryptography
   depends_on "libpq" # for psycopg2-binary
   depends_on "openssl@3"
+  depends_on "python-certifi"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -43,11 +45,6 @@ class Sgr < Formula
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
     sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "cffi" do

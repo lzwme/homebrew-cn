@@ -10,28 +10,25 @@ class SearchThatHash < Formula
   head "https://github.com/HashPals/Search-That-Hash.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8ea5896a06d70c1732cfdc431318671fcec6c65cbbb04cfa02d8f9336ce2232e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "378f0e16454fdcc10cd924ac37a5463c42ad1b3a6c7b8857908df3cbeeca9b88"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "04a4e3e96186302635e689bab44eb08dbf89367056e264a664cb32662eb0cde4"
-    sha256 cellar: :any_skip_relocation, ventura:        "615113d1e0495c23864586428ce92c927796b9d799cfbbf587214af345cf0fa2"
-    sha256 cellar: :any_skip_relocation, monterey:       "ea42f4db7b191ef2c9f6e92c58bf934357bc51c8cb9a1d9174eb36908edf7130"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c903a7ce8cb387ae7333c71bfaf8e6a5632b073601c2beb0c4b21c8e2eeb01b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03db95ba19b1ef9feb71d74cccc998da3b93789ff192b879ff62fa4243b6a410"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "87894a37b2473a840dc5451a3eee35981c758c47cc9fae0386161ddcc407ca50"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3c9f0d095962eb615b1c13ff30e713717dd6907df4d199c5754ace5cee6ec11b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ea45ebc25ba83cc6959d27420bb4bb85db8a7da9506b5e5a40959be7d297e3fc"
+    sha256 cellar: :any_skip_relocation, ventura:        "1f0521896b50b670be25e091162998f9e42f51a6d82d8a08de1c6668dffc31f1"
+    sha256 cellar: :any_skip_relocation, monterey:       "3fd17af241e42b84241de245b3cb33e9bc1d1d98568be0a8a8ef2b1bc9138aac"
+    sha256 cellar: :any_skip_relocation, big_sur:        "41f37b2d2b6cac9f93897862543bf30269b58933665044cd681510b32abedf4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7102357d78a185724e37f05057e63b4fe21600cf79b723f6f50e78f82c45381d"
   end
 
   depends_on "name-that-hash"
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
     sha256 "7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

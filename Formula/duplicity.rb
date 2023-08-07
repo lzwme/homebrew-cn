@@ -9,13 +9,14 @@ class Duplicity < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d5e5b064001fac31f7393875623e62c9c0a6e2a44f176a0a7964260287e81317"
-    sha256 cellar: :any,                 arm64_monterey: "b174312d0f67fcb7032dc975df8ab1ce729bc21fadd072895734f59374913dff"
-    sha256 cellar: :any,                 arm64_big_sur:  "7e1568580ca4477ded07653d3415dc18247c62e134c2f2f5b74ae3f3aa796525"
-    sha256 cellar: :any,                 ventura:        "08a33b1731861c928a1bf5d0c29fd065973596b7d77c83d67e4c8cb031dc28f5"
-    sha256 cellar: :any,                 monterey:       "31c8f6119f286cb238bf831b454838304099ee45885d9948707eb11d651412a7"
-    sha256 cellar: :any,                 big_sur:        "2e9d6d51207597049e48adef8fd65ca8d8737c78158a1e1bb4d98a33b25c6a4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6044e80151a28e454f03a76150944f7b527bd2045b061c4be6cca1e24e2d4fd5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "50fbe703230df28adc8de206791c7aaba072b369479db843b686e960226e2a68"
+    sha256 cellar: :any,                 arm64_monterey: "db8d4b3d89c4781c864d04b559d5bfc5d781af26a41274a505ee51ac150cdb2a"
+    sha256 cellar: :any,                 arm64_big_sur:  "c31d24d17059a2bf3a0d47b93e21c4f1aa405b6942387e54d7641f16586c4332"
+    sha256 cellar: :any,                 ventura:        "4d10d690a06d1fc20f7cb546ea68280c408990cff5da95cd92f795ee84685235"
+    sha256 cellar: :any,                 monterey:       "26146fc71838cfc31977b702585be2e1d4292c59c5565daf352da02accebe95c"
+    sha256 cellar: :any,                 big_sur:        "7194854ddce451efd8b0c6f10909330a45ee117b7b20d9d7b55d12e41d0964cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0341710599769daaa5a2fda373e8e6f5fe9fee00c970ca47ab8b301dfe7941c0"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -28,6 +29,7 @@ class Duplicity < Formula
   depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "pycparser"
+  depends_on "python-certifi"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -89,11 +91,6 @@ class Duplicity < Formula
   resource "cachetools" do
     url "https://files.pythonhosted.org/packages/9d/8b/8e2ebf5ee26c21504de5ea2fb29cc6ae612b35fd05f959cdb641feb94ec4/cachetools-5.3.1.tar.gz"
     sha256 "dce83f2d9b4e1f732a8cd44af8e8fab2dbe46201467fc98b3ef8f269092bf62b"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "chardet" do

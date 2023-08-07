@@ -10,13 +10,13 @@ class VirtManager < Formula
   head "https://github.com/virt-manager/virt-manager.git", branch: "main"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cef6368857ffffdadc21af8a4335d778957e22339bc1bedda5d7f458e1b4da8f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "57623396b2535f9b3e060dfaf28624481096a0ded8407201d62a655697fcdf15"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2aa6282bb424bef5603f0e7b835d38c96e0943355a53e819053b656f49339ed9"
-    sha256 cellar: :any_skip_relocation, ventura:        "92a72355aa39ca0dbce847e8f3e9bb8b6e3d65fad21667f224f07922040ba238"
-    sha256 cellar: :any_skip_relocation, monterey:       "e0cf216af799e38df27a388579913d22ac4b9555381b88a12c7559b39e3730e7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bb63f4e3dbd688f33a915b1dfd2fbfdbb112be8f9d99b4caac21eda189ec4b6f"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aaf4c46bc1c840f14004355b82f0b55105e443f6dd7fa04e853b911758c621f3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6197f8319ad569eb3b3e165a069c111e2e26f3b9a609470e5ed7819648c46870"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6f8013875f83f7f43c770b735c1fd63516d6f961ddf571fb178b156862005bf1"
+    sha256 cellar: :any_skip_relocation, ventura:        "5e043c848d97233b688f2bd71bbc39554803712f66afb2f73b573cf2c73c52da"
+    sha256 cellar: :any_skip_relocation, monterey:       "cb36e93827672834f252726220cd275e4a5f5bc07e57775b9743ac0cb298597a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1e74a69f4a3de1277655fe2e1902fc45db4882c6abd71a732a572b3ad68b9f62"
   end
 
   depends_on "docutils" => :build
@@ -34,16 +34,12 @@ class VirtManager < Formula
   depends_on "osinfo-db"
   depends_on "py3cairo"
   depends_on "pygobject3"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "spice-gtk"
   depends_on "vte3"
 
   # Resources are for Python `libvirt-python` and `requests` packages
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"

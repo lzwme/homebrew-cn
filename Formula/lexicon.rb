@@ -10,13 +10,14 @@ class Lexicon < Formula
   head "https://github.com/AnalogJ/lexicon.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "44f31fc03179c30355bd45bd42db3760f610923914932f497b0f61a61d90366b"
-    sha256 cellar: :any,                 arm64_monterey: "65d3142571077129f7325855a5266d9923dec97e76a81c5bd9151d5fd393f1ad"
-    sha256 cellar: :any,                 arm64_big_sur:  "9020ef3d0b912b211733d462bbfe2eb065941f5f2e8c3b12df61bfcc0bd19f3b"
-    sha256 cellar: :any,                 ventura:        "7124a630336b6fe204e53f51e02c68aee9e068438548591ac62331ee2f0ea30d"
-    sha256 cellar: :any,                 monterey:       "89a01bf27925ce631de099bfd0f1857af4863fd8c3f66a2314971799675364c7"
-    sha256 cellar: :any,                 big_sur:        "0cca409a1d025390a50bd7191f37b84ca7c31dc57b86b76e381210ed3b36b668"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a43f5f2524991b6bfc1e0c227fbb206288526eac6dead7de844f879648834aa"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "e5b9698f98abb8901b5c25b91b582b530c589de84d1164e8d108e374860c8d47"
+    sha256 cellar: :any,                 arm64_monterey: "7c3eb724673eaa10be65e65048007bb6bb736fbfa8ceba90156b9e37da32947a"
+    sha256 cellar: :any,                 arm64_big_sur:  "6ccac7f49331543e310cbfe0ab13638ddd23a2a63faa4466cfc6a85073b3a34e"
+    sha256 cellar: :any,                 ventura:        "2d867fa6854e564a4876a212e42602f68a622e0ecfaeb4b9a597b20fbe7ecf09"
+    sha256 cellar: :any,                 monterey:       "21e24890f621fb42dd721babcbcb0a9f6b8176a17bc4f8c12fbd7cac5a1733ee"
+    sha256 cellar: :any,                 big_sur:        "02c3d25cc77f38bc13e8f81a17f257e57181696b7add4bb7837e13f0d96dfe1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f243e0ec75c63ce6ccb46f9f9a6a945515d854821ead6bb76c6c321c9ebb23a"
   end
 
   depends_on "pkg-config" => :build
@@ -25,6 +26,7 @@ class Lexicon < Formula
   depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -50,11 +52,6 @@ class Lexicon < Formula
   resource "botocore" do
     url "https://files.pythonhosted.org/packages/54/ce/3aced9653aa3b81aeda70574f342cd3014ecc36aff6a20e74c767f92864f/botocore-1.31.17.tar.gz"
     sha256 "396459065dba4339eb4da4ec8b4e6599728eb89b7caaceea199e26f7d824a41c"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

@@ -8,19 +8,21 @@ class CloudformationCli < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4d3600be37d98cca08b8dcca42b321b803b79484f477eb9b6c0f8ee81f99f231"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d7dae031eb438805c42060beb42aa03c09c363137008df9162874c574c0f003"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a17b2b676c6684e36c28104707ebb0b6fe3ed3d9ba935087c5afdc3ffbee4e97"
-    sha256 cellar: :any_skip_relocation, ventura:        "8151fc71b063da3ef1e2d05f961181e00797c2d86b1f9f4a9a879a1cc42eac32"
-    sha256 cellar: :any_skip_relocation, monterey:       "1021db629a5f343a1dace27c5348e4726a44dd3a49f4ee43ac891e13ddc3ab8b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9de585353026176ad6f0aff6758f342b1d5cd94117aa9ef172f5f84dbbe3909a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "424f3e2eb3bfdfe55c60baabe2faa3a10a74e034800cb296328e333c62e19a06"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "19ba72cfe0ffcbb3bd8c7d1ccc2f545501d169848718fd162b7c35989ef779e1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8a7d5cb5328db7026e8dbf72aaea572131bb4be49327c63d2758f3bfdbf342dc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "073943063346ed5a1e230ec2e82879139ce090dc834cb56f15754bcf3a50e026"
+    sha256 cellar: :any_skip_relocation, ventura:        "bcde7ebfd96c4a958a81546e2c636a7fb2cb1dca6650e0056e0855f283d7df27"
+    sha256 cellar: :any_skip_relocation, monterey:       "d76c05913c8b0d7d8a1226f390834dbaa5d56a7439801257916ce9727dd2fc60"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c59b0ab4072c3a5b19971e96dbe99b3c33700ab18206da08a2c9f9740a2d160d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f6715909fac4d6828e17158acd1b7ae195771aeec3eb4d85428f063abaf9563f"
   end
 
   depends_on "go" => :test
+  depends_on "python-certifi"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
+  depends_on "pyyaml"
   depends_on "six"
 
   uses_from_macos "expect" => :test
@@ -43,11 +45,6 @@ class CloudformationCli < Formula
   resource "botocore" do
     url "https://files.pythonhosted.org/packages/27/bc/453002cf9231d5020df56ea0985e523b5b28fe09f289615f99a9f2f5acc6/botocore-1.29.147.tar.gz"
     sha256 "f7433bcce5ef7baad2fdd29f97c9fdcf8de4ec1cf577ae308901caf778ed48c2"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "cfn-flip" do
@@ -215,11 +212,6 @@ class CloudformationCli < Formula
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
-  resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
-    sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
-  end
-
   resource "requests" do
     url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
@@ -263,6 +255,13 @@ class CloudformationCli < Formula
   resource "werkzeug" do
     url "https://files.pythonhosted.org/packages/2d/bf/5a00bb4a70028f7c6000bc9394492154fa9ae3f5226187e3ddcd0aa5eca1/Werkzeug-2.3.4.tar.gz"
     sha256 "1d5a58e0377d1fe39d061a5de4469e414e78ccb1e1e59c0f5ad6fa1c36c52b76"
+  end
+
+  # patch pyyaml to build with cython 3+,
+  # upstream PR ref, https://github.com/aws-cloudformation/cloudformation-cli/pull/1014
+  patch do
+    url "https://github.com/aws-cloudformation/cloudformation-cli/commit/80ca7a9c64233fd3ff435b335a658d4f2e6037f4.patch?full_index=1"
+    sha256 "81ace4511d227181fe456ac231ba25feabdafefff2c6091288ce6fb2d694f199"
   end
 
   def install

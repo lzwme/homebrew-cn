@@ -8,15 +8,17 @@ class Locust < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f4eb570782aabaa680367300e469a664ef9804809c11c79316fe316e6f9054c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6337aa1bb0ecfe8637c80c7b7bdd040faecd6d81279cedbb4d728b1bf8353273"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6f8003e9f3510a16ef1f98f2cb38c6785b2bcb7c4b6a7bad84f0d7c531fa560f"
-    sha256 cellar: :any_skip_relocation, ventura:        "c677f7e4847581b51b052df3b3363ccfe1b26e2ec426f34d4933f3f79f082aa9"
-    sha256 cellar: :any_skip_relocation, monterey:       "67eb6ad105ed4257f6484f2b3325684be919ccde769a01d384a7b1a07c4662f9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d302a8bf0e5a10f49be44df92a74d6e0e814cf508c15907163e4029dde5bdfec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fbcf7e2839e922567de79b58e604d366ba3d73542091d9839b10a3ccbf4ae8e0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "315383a3d74c8e073ae84d0f6db13c4e55684951686fa798ef7fce3f963e7812"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0699706496738fe46f0e23c9bafb907bb458d6e069712a4d12966050f1ade1b9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f73d415191b7d50bec9a7e49f58225f5195ded0604229c30e57ba94168f217d0"
+    sha256 cellar: :any_skip_relocation, ventura:        "58989cc6cf3074fc2a6a40c51abbcffce9aa5f4178a12215dac31baa4d75a66b"
+    sha256 cellar: :any_skip_relocation, monterey:       "07c74dffe5e8a431fe0032d85c5d528ba0af5e94eab85fecbad9fb7883808304"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e4ae04ac62e7fb2dd498ca4f5c66fa37d0ee7f05db877c2aefe90493a105a80f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ddd6d5c5afd10c193c42cd3d136ab981a05a1b3d0166d8f9ff1b34105383c199"
   end
 
+  depends_on "python-certifi"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "six"
@@ -29,11 +31,6 @@ class Locust < Formula
   resource "brotli" do
     url "https://files.pythonhosted.org/packages/2a/18/70c32fe9357f3eea18598b23aa9ed29b1711c3001835f7cf99a9818985d0/Brotli-1.0.9.zip"
     sha256 "4d1b810aa0ed773f81dceda2cc7b403d01057458730e309856356d4ef4188438"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

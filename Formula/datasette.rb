@@ -9,15 +9,17 @@ class Datasette < Formula
   head "https://github.com/simonw/datasette.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "433829c0f0fc726b310b813b883eb1a7cec8c9ea3a32c8ac0a2a6ce13cfa50da"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b90d446b2319fb77b00c1aadfc5dcd7056fcd1ff89efeb9f49edcdac185d8e21"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "85300e157accc6923845a98adbe453221fb766d2b8a8e3c2fadbf3e42f663ba9"
-    sha256 cellar: :any_skip_relocation, ventura:        "2b35acb2492e05ca68acac4a79853ce02b0b99e8ed98b48f0c42020d849799fb"
-    sha256 cellar: :any_skip_relocation, monterey:       "73b1da02b3ba48ce551786764a11f873a3a1bb121549ce98a74b12ad2537d0ca"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9be1c891b2ef3ad633595b89ed58b9fb3166538ac9fc6e0589656a8b8c4310ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70f022b8d8b297162daec2f4d9a4a3ef800333898f678d5201f83ca05b1cadd8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2c309a32f68c7bb91baf594e6498f233c1bd5b468bf4d29fca7afd319b422988"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "43dc350624a4ab74c45d1aa3141845265f8b768034d78193c55bf91b967a67ca"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "971f0015fea49d3cd3a95faa9ecda5c73061b41b211279adee75b0cc52fa6c36"
+    sha256 cellar: :any_skip_relocation, ventura:        "6c73a96a762a2d5e0f8cacb28c1233bb7e6834d134e1d094f0fd0c9f8d105e81"
+    sha256 cellar: :any_skip_relocation, monterey:       "3bf87fa3a4ae78725b3122ae28b57cd7a5552e8eae988188a80613066ecc4232"
+    sha256 cellar: :any_skip_relocation, big_sur:        "816e11cbce576599a619ddc1a51282933786715e154fbba162dd37c13ba8f620"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1feb80bc567fcca4256207a580a4ae19e9f49aa7fe059bfde875cbe54425154"
   end
 
+  depends_on "python-certifi"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -41,11 +43,6 @@ class Datasette < Formula
   resource "asgiref" do
     url "https://files.pythonhosted.org/packages/12/19/64e38c1c2cbf0da9635b7082bbdf0e89052e93329279f59759c24a10cc96/asgiref-3.7.2.tar.gz"
     sha256 "9e0ce3aa93a819ba5b45120216b23878cf6e8525eb3848653452b4192b92afed"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "click" do

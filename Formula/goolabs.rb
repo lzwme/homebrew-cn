@@ -9,22 +9,19 @@ class Goolabs < Formula
   revision 6
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "07491c55a405e103578678ab43f4925febea8624fa3f64675a3606e6a60845c6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca23a9f545848b5de84257b55b5eee4e039a2d702364c218a5258ad38979c6ab"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a29d8eb9dd0259f96e74bae26c5d07c86693949027e294d3cdeb4af2cf536ac5"
-    sha256 cellar: :any_skip_relocation, ventura:        "2af708e99bd66dc651915f81bc107a1389c87bc085746f721dffd0afdecfb4b9"
-    sha256 cellar: :any_skip_relocation, monterey:       "448faf5dd61a9634e912decebf9941b1bfdbc4ff8a2c0edc0da0b51eca6e79bd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5e23739c6303b72cd28449f05bd83a2bc33c894d3c3b0022c91f11d9f2416fb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c31baa603f9fe53dbb80734be888d049b89b14ca3c8b4a60fd35d725fdfc6dd9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e658052b927f381ded8fb29e51fb483413f4dfd2d968deb0f3b4655917246a00"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6545d30e95c943fa46d1481957ecea03ec0d709ffc62d144ea2ae828ade14ff7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cfcb5b0d948d2d06610af5886da741a7fa508070b6ef21a5d9faeb5e5c1a9f2c"
+    sha256 cellar: :any_skip_relocation, ventura:        "f11c2742812fa86aaf19206ddeb4556579cc4e96da09ef131fc228def2d083fd"
+    sha256 cellar: :any_skip_relocation, monterey:       "2cc76a7b0ce3b7e4356d8a36835a88bf4cb6478c8f83b78b9be37187119ff61c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c3b62af966862d5608ac825a11735bedc17f57a2274be3297b7e091740a9014e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bce094e87867d9b40980d969a9f5b5fe12f0062b604289fcdeeaf62ff8510faf"
   end
 
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "six"
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"

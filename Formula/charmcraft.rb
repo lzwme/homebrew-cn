@@ -9,13 +9,14 @@ class Charmcraft < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "acde381ca087837b10acb81b2498e2d8dfa706ff6f3e8ecaa8cac2c4714c9d82"
-    sha256 cellar: :any,                 arm64_monterey: "2608bd8e5bf31b8262f0591f0d3ba009cf725290569deeae07d142cafd679c03"
-    sha256 cellar: :any,                 arm64_big_sur:  "705f5fd8791c851667ff6e951f8d23572833be8347dbdf6cf3a90aee5e48b614"
-    sha256 cellar: :any,                 ventura:        "b259b202576e574d7c9965c4bd8c6f926374001998b6459272447c2d925dfe7c"
-    sha256 cellar: :any,                 monterey:       "84cee01d52941c6bc60e1d3e1e95c71bbdf126182ab88e867c3cf29732ede9c3"
-    sha256 cellar: :any,                 big_sur:        "77dd6fca22b60bd4e4c2bd0676ad9e216b3297289ea4514c451322af01c6ada6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "674407cb9d856f4a826638db31bff531d51d61587e4009b715260c87ee108ca5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "189d8e246a8ee17998fc99ed8e5db62b6a15d37d04c6ef82f6ba71a6f263305e"
+    sha256 cellar: :any,                 arm64_monterey: "b0a58650477e6724c855633481047a356f1c7f3b0a74dd523aad9f08faed2cf1"
+    sha256 cellar: :any,                 arm64_big_sur:  "8a6a68d71a7c2a0ccc2b6e6a0e56a8d56e65a10d14c56328d9281e0ec8909079"
+    sha256 cellar: :any,                 ventura:        "b5b2d594adbbe4519e489c71c966fcbd2dd07c7e0b644a8f88fd13966a018ba7"
+    sha256 cellar: :any,                 monterey:       "e54774880ed8f4b39dde1a6a0e00f8ae2fe18248feb4fd9884161f1b2c6c9a7a"
+    sha256 cellar: :any,                 big_sur:        "c1a68046a73c13dc6e3734db784885e91f9effef9998e9b3eecb64c17275dc9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96366cb905207c7777de6a5f390fe8f9192dfdf718e7a67184f9a6dc9f782aff"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -27,6 +28,7 @@ class Charmcraft < Formula
   depends_on "libsodium"
   depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-certifi"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -41,11 +43,6 @@ class Charmcraft < Formula
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
     sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

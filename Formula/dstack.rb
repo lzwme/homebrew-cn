@@ -8,23 +8,25 @@ class Dstack < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "71829e96c07950696d0de19fcb28f582771f7619b67f9208fb80453d9b0353ae"
-    sha256 cellar: :any,                 arm64_monterey: "84c347f4f95df6d5ecae1d0a20da2e05b0481b66fa0496be83e8273c3bab8fcd"
-    sha256 cellar: :any,                 arm64_big_sur:  "b5572e753065ddaf81e102a8b739b61d438fcf4aa93cd37573cb144e79fd23b0"
-    sha256 cellar: :any,                 ventura:        "d6aee7ca7193866ef9c50d993e69d444881ce3463e422b0fbe07693913e0f2cc"
-    sha256 cellar: :any,                 monterey:       "11674c588702642096aca27364bf7f8e32f885b6ec1ba89a3dc697487768b16d"
-    sha256 cellar: :any,                 big_sur:        "ec45a93fe6eea38d4c2596b5ee3469dc48b2ca347913f07f5411d5d1bfac5a15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e0012bba6cb9b1cca0834efe3e69153dcacf9481943e804d53de45693f6d8eb"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "bad30e1c9cdc61be00ef62af92caa2757df453114851d6f39fc1fc9d212c7dde"
+    sha256 cellar: :any,                 arm64_monterey: "db3be3541f3acca84acf4a4adbeecc48bcb6a459aef83d4bdface069fa2b6b9e"
+    sha256 cellar: :any,                 arm64_big_sur:  "96bdc1ff5973974c31948e4f5a8666be9861784d26883891866fad2521cd2de1"
+    sha256 cellar: :any,                 ventura:        "2dc0cd3ba8b5fd6b25d665f086d349c7b56a4c04273d600705c860866d6a6950"
+    sha256 cellar: :any,                 monterey:       "56189a0ecdde85a02b29c6eb4e90c98de73c1ef670b391fb9aa80a8f0488065c"
+    sha256 cellar: :any,                 big_sur:        "0f6172c3ab9faf3db5c10b4f79e387e5229682365a40155de670136bb97fe7a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2431fe041b583da65eb8524ea62ad0e307a16bc072e9122f8bba97b6e4362cdd"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
+  # `pkg-config` and `rust` are for bcrypt.
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "pycparser"
   depends_on "pygments"
+  depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -177,11 +179,6 @@ class Dstack < Formula
     sha256 "dce83f2d9b4e1f732a8cd44af8e8fab2dbe46201467fc98b3ef8f269092bf62b"
   end
 
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
-
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
     sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
@@ -190,11 +187,6 @@ class Dstack < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
     sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "cursor" do
@@ -583,10 +575,6 @@ class Dstack < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     venv = virtualenv_create(libexec, "python3.11")
     venv.pip_install resources.reject { |r| r.name == "workflows.json" }
     venv.pip_install_and_link buildpath

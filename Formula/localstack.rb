@@ -9,23 +9,22 @@ class Localstack < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3a926a1b64acbbaf59e8b83865bce964b0d2106a8b8eea188eed15541817d10c"
-    sha256 cellar: :any,                 arm64_monterey: "f3b90f181284e0143c683c65d39a155e389702f9c38de88e89afc85f5738d80d"
-    sha256 cellar: :any,                 arm64_big_sur:  "a12cb3b97890a169897d7690cacdecbf027c4f8356b8ef6eb968462805989681"
-    sha256 cellar: :any,                 ventura:        "d76aad2ed8373c9537b6021b95eff874a7ddae602d4ce99932f9bd7a2001e5e2"
-    sha256 cellar: :any,                 monterey:       "bcd250f1301f77aaf6070e93c4df59c5914ac8c0f34c17773c33499363383a14"
-    sha256 cellar: :any,                 big_sur:        "2be415b7c203c770f25ebd7f36a0882ca167d3284519b3f2440b4e8e799cf7f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56f6af332c9d32aa644aef267c72a23c95db5377b5a701ab80fde4864d3d42dc"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ca5a12950a7a08d226c3c4b7bf87f52aabcee4ea0c15e90ede73ccdca88b584"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a09b175c284ff5f4a65f1b91820851c1b002a8a0360c3460f6a7a889d3a8b1c0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b1d93a0133499d2f6112154af60710790c96e491bef4a56636cbe1f61c1ee929"
+    sha256 cellar: :any_skip_relocation, ventura:        "86d2d6845e333a5d6ba64cf01f903a57594f1c7fa63cf461d890c32b96135afc"
+    sha256 cellar: :any_skip_relocation, monterey:       "fdd166071ed10ec2733687758356d46baf08510bbc4513b93129401b4d2b61e4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1496548d1d73cf238b1f8c68232f0359e10034f748960312588065b8ea8de5ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6052be7d261ced434c2be350980103f14dcac8fe58af78bf662d2fed620fbaa4"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "docker" => :test
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "pygments"
+  depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python-tabulate"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -36,11 +35,6 @@ class Localstack < Formula
     sha256 "486471dfa8799eb7ec503a8059e263db000cdda20075ce5e48903087f79d5fd6"
   end
 
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
-
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
     sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
@@ -49,11 +43,6 @@ class Localstack < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
     sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "dill" do
@@ -177,10 +166,6 @@ class Localstack < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
     bin.install_symlink libexec/"bin/localstack"
   end

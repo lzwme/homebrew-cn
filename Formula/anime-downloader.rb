@@ -10,18 +10,19 @@ class AnimeDownloader < Formula
   head "https://github.com/anime-dl/anime-downloader.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "98e0f6cfcb073096be611b18ebd8e00409b8fffe66d356d18714055b4163538d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5a0d9538acb902ab6570f479c3f64db73588f4dfd6bbc2bfe1f97c7ff088b7fe"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9f14c91f5fc8d4085b117862fab75f7f627fce41779630d39faa074d338d69b3"
-    sha256 cellar: :any_skip_relocation, ventura:        "b36953aca79c443345fd49b26aaabdf61cf51f1e3077c20932e9fd66650b7771"
-    sha256 cellar: :any_skip_relocation, monterey:       "31f79f267a1efa5df257f9fdad0e78f20669d48ea37182d7a5172356fe8caf56"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cd65772b34924b995eba6966e3b62a9dc31d7bb482c34960db17f8e42f27e73b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e21296ba0f844f521e250fcff933fcf13375a3db3a8dee260c7a7a18eb97ddff"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "647c05f2aab4373df042279267464f1d356f96be248fba315ba73f8610438f79"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "65bf2e379d99e9af5c72b406d38ed6f336532116c9a16d11e3c3ec32bc590d83"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "34990e1ea3973b2fe138b0f171e913c4ca30211301080177bb742d82176eb6f9"
+    sha256 cellar: :any_skip_relocation, ventura:        "f226ed63d4058cd13e4d6b34b5f92bf879828aa15bb5e77b71ea14fcef04576c"
+    sha256 cellar: :any_skip_relocation, monterey:       "f1855ef41361a65b90b2a7d8dd4bc3da0705cfaa08be1c0b47db4e5f146cb7d5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2c632ca8127cbd7dc0cc3bb0670ba6c032deba47bffae8cae59723a4a3eb0ec2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c54196e4e2bd20d52d715c585705d3f4f4be4aa898bb87e528af48a0f2abc4c"
   end
 
   depends_on "aria2"
   depends_on "node"
+  depends_on "python-certifi"
   depends_on "python-tabulate"
   depends_on "python@3.11"
   depends_on "six"
@@ -44,11 +45,6 @@ class AnimeDownloader < Formula
   resource "cattrs" do
     url "https://files.pythonhosted.org/packages/fc/da/ff3239eb4241cbc6f8b69f53d4ca27a178d51f9e5a954f1a3588c8227dc5/cattrs-22.2.0.tar.gz"
     sha256 "f0eed5642399423cf656e7b66ce92cdc5b963ecafd041d1b24d136fdde7acf6d"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
-    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
   end
 
   resource "cfscrape" do

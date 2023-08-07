@@ -1,18 +1,18 @@
 class Rex < Formula
   desc "Command-line tool which executes commands on remote servers"
   homepage "https://www.rexify.org"
-  url "https://cpan.metacpan.org/authors/id/F/FE/FERKI/Rex-1.14.2.tar.gz"
-  sha256 "21daa951da747f0053afd7ad946fce2feb2c08ddb1cc2bfe00ee46601a8cab56"
+  url "https://cpan.metacpan.org/authors/id/F/FE/FERKI/Rex-1.14.3.tar.gz"
+  sha256 "027d3042ef940b67590e5989e96f22ae1e67ba744895c5dd3db569c05137025c"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e847f2cc701514ee1a3c39d1a0d9b851b1d5de6e5b671ae99438e9646304e8c8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e847f2cc701514ee1a3c39d1a0d9b851b1d5de6e5b671ae99438e9646304e8c8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "44b28480e1fdd03c5d6358e37f2129233066f612bbe3d9d77f4c4850d694414e"
-    sha256 cellar: :any_skip_relocation, ventura:        "d4cad6d5d5861fef411e050761bf49258495ded044d96fc0dd5912265d3354cc"
-    sha256 cellar: :any_skip_relocation, monterey:       "d4cad6d5d5861fef411e050761bf49258495ded044d96fc0dd5912265d3354cc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7db592bb5481680b5676f4de7a661b76df159581475ac266e654706103592dd2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d8b1bae330ae59258f14d5738d036cb6e9625c37ae3f6b6b4c3641fd55dfeb6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29f47620abab14389f36ece49eee43887cce02901ccf6c3dd4e8cb83d802b49a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "29f47620abab14389f36ece49eee43887cce02901ccf6c3dd4e8cb83d802b49a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8cacde228c4b1ecbd7402f3a73bfbfc6b6118ed122adffc725e98ae6eb3f39fd"
+    sha256 cellar: :any_skip_relocation, ventura:        "2e32a65bfd7263d2b04ba25fb23d16641bbf968c2f3395b42b3addde98945fe4"
+    sha256 cellar: :any_skip_relocation, monterey:       "2e32a65bfd7263d2b04ba25fb23d16641bbf968c2f3395b42b3addde98945fe4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e7372738a947267ec35110cf49f940f57c22c6d06c4cc0cf7f2810d5298d47c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "404ffa6fffae8423757900e7451a1264426ee2a51256d93b2be1528f24b3ad01"
   end
 
   uses_from_macos "perl", since: :big_sur
@@ -36,13 +36,13 @@ class Rex < Formula
     end
 
     resource "Exporter::Tiny" do
-      url "https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/Exporter-Tiny-1.006000.tar.gz"
-      sha256 "d95479ff085699d6422f7fc8306db085e34b626438deb82ec82d41df2295f400"
+      url "https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/Exporter-Tiny-1.006002.tar.gz"
+      sha256 "6f295e2cbffb1dbc15bdb9dadc341671c1e0cd2bdf2d312b17526273c322638d"
     end
 
     resource "JSON::MaybeXS" do
-      url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/JSON-MaybeXS-1.004004.tar.gz"
-      sha256 "7ca5921306a544f621705dce987fe955b1a6833d0b195c094626a19dca094dba"
+      url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/JSON-MaybeXS-1.004005.tar.gz"
+      sha256 "f5b6bc19f579e66b7299f8748b8ac3e171936dc4e7fcb72a8a257a9bd482a331"
     end
 
     resource "Scalar::Util" do
@@ -61,8 +61,8 @@ class Rex < Formula
     end
 
     resource "Devel::Caller" do
-      url "https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Devel-Caller-2.06.tar.gz"
-      sha256 "6a73ae6a292834255b90da9409205425305fcfe994b148dcb6d2d6ef628db7df"
+      url "https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Devel-Caller-2.07.tar.gz"
+      sha256 "b679a2b18034b0b720de82c3708724c364b10a6ca164cbc67cdc3af283f3503f"
     end
 
     resource "Digest::HMAC" do
@@ -76,8 +76,8 @@ class Rex < Formula
     end
 
     resource "File::Listing" do
-      url "https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/File-Listing-6.15.tar.gz"
-      sha256 "46c4fb9f9eb9635805e26b7ea55b54455e47302758a10ed2a0b92f392713770c"
+      url "https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/File-Listing-6.16.tar.gz"
+      sha256 "189b3a13fc0a1ba412b9d9ec5901e9e5e444cc746b9f0156d4399370d33655c6"
     end
 
     resource "File::ShareDir" do
@@ -116,8 +116,8 @@ class Rex < Formula
     end
 
     resource "Module::Build::Tiny" do
-      url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-Tiny-0.039.tar.gz"
-      sha256 "7d580ff6ace0cbe555bf36b86dc8ea232581530cbeaaea09bccb57b55797f11c"
+      url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-Tiny-0.046.tar.gz"
+      sha256 "be193027e2debb4c9926434aaf1aa46c9fc7bf4db83dcc347eb6e359ee878289"
     end
 
     resource "HTTP::Daemon" do
@@ -126,8 +126,8 @@ class Rex < Formula
     end
 
     resource "HTTP::Date" do
-      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Date-6.05.tar.gz"
-      sha256 "365d6294dfbd37ebc51def8b65b81eb79b3934ecbc95a2ec2d4d827efe6a922b"
+      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Date-6.06.tar.gz"
+      sha256 "7b685191c6acc3e773d1fc02c95ee1f9fae94f77783175f5e78c181cc92d2b52"
     end
 
     resource "HTTP::Message" do
@@ -151,8 +151,8 @@ class Rex < Formula
     end
 
     resource "LWP::UserAgent" do
-      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/libwww-perl-6.68.tar.gz"
-      sha256 "42784a5869855ee08522dfb1d30fccf98ca4ddefa8c6c1bcb0d68a0adceb7f01"
+      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/libwww-perl-6.72.tar.gz"
+      sha256 "e9b8354fd5e20be207afe23ddd584fcd59bf82998dc077decf684ba1dae5a05d"
     end
 
     resource "LWP::MediaTypes" do
@@ -161,8 +161,8 @@ class Rex < Formula
     end
 
     resource "Net::HTTP" do
-      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/Net-HTTP-6.22.tar.gz"
-      sha256 "62faf9a5b84235443fe18f780e69cecf057dea3de271d7d8a0ba72724458a1a2"
+      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/Net-HTTP-6.23.tar.gz"
+      sha256 "0d65c09dd6c8589b2ae1118174d3c1a61703b6ecfc14a3442a8c74af65e0c94e"
     end
 
     resource "NetAddr::IP" do
@@ -191,8 +191,8 @@ class Rex < Formula
     end
 
     resource "URI" do
-      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.17.tar.gz"
-      sha256 "5f7e42b769cb27499113cfae4b786c37d49e7c7d32dbb469602cd808308568f8"
+      url "https://cpan.metacpan.org/authors/id/S/SI/SIMBABQUE/URI-5.19.tar.gz"
+      sha256 "8fed5f819905c8a8e18f4447034322d042c3536b43c13ac1f09ba92e1a50a394"
     end
 
     resource "WWW::RobotRules" do
@@ -232,8 +232,8 @@ class Rex < Formula
   end
 
   resource "Net::OpenSSH" do
-    url "https://cpan.metacpan.org/authors/id/S/SA/SALVA/Net-OpenSSH-0.83.tar.gz"
-    sha256 "43d7d8672e9d4ecbd1ceb2a99e4143ca665f227d04720c43307e352f96060adf"
+    url "https://cpan.metacpan.org/authors/id/S/SA/SALVA/Net-OpenSSH-0.84.tar.gz"
+    sha256 "8780e62f01b1cf0db43c9cb705c94ff4949b032233be4be91fc91abc791539f8"
   end
 
   resource "Sort::Naturally" do

@@ -9,18 +9,20 @@ class Snakemake < Formula
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8c48d07940406513fb8d895bd81ff8cb049869cbc420aadf183dcf513ff854f9"
-    sha256 cellar: :any,                 arm64_monterey: "03c14227fa2143ea77f714fd80f6cfbc6c66ce28a926dd3049705e95f7e82e08"
-    sha256 cellar: :any,                 arm64_big_sur:  "d09137f249c120951c86a8358ffefd5ebed8cc45d5f52f937343b8dfa435c62c"
-    sha256 cellar: :any,                 ventura:        "90f5097dcf954e83d7b6deee3f633c23567e2573d8d3f21e4a70bd6d85d74e30"
-    sha256 cellar: :any,                 monterey:       "1a54e9c117de871197caca2ff3f3e3db6a75bfd49276683d13bf3c1c362523f3"
-    sha256 cellar: :any,                 big_sur:        "8f53ce654af10e1f8b971f82135b0badc420260e6ac62fc5a6576581093b7f21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "591ed2039beb465569e0be592d785d095ec9a98e19a19d887ae4619762c8166c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "3ac883c8f6e54397d863021c35f2c5251d5513caaa28147fb89d5283602993b8"
+    sha256 cellar: :any,                 arm64_monterey: "6f889c45b55cb6326315c3436256278d85a0c4dfb4bf514378201803aefe33ba"
+    sha256 cellar: :any,                 arm64_big_sur:  "e12ee52b2a637bdb90cc085d91f392671067a1259d7024e28f502344108451cb"
+    sha256 cellar: :any,                 ventura:        "ae5a3798861828dd371d98a65d6daabca257ee6453de2bbd24b4d052119adb11"
+    sha256 cellar: :any,                 monterey:       "6f9ecf9a25d543ee2918e8fb4b94f91bcf3c9584c15d84ab9d82c3f1cba37a46"
+    sha256 cellar: :any,                 big_sur:        "c8734d9e45d92008f9254eff460a544e8289a2ff3f094ed0901a8fe0558ef5b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3d92add2440ed006bc3c2e70395128ac3e61054eb7d492fd2060fa064fa47c9"
   end
 
   depends_on "rust" => :build # for rpds-py
   depends_on "cbc"
   depends_on "docutils"
+  depends_on "python-certifi"
   depends_on "python-tabulate"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -33,11 +35,6 @@ class Snakemake < Formula
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
     sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

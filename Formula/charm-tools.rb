@@ -9,22 +9,24 @@ class CharmTools < Formula
   revision 3
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "100586aaad066f13aab903c934b6e5d10713c0db86ebc510cb82f5bd7fad7043"
-    sha256 cellar: :any,                 arm64_monterey: "f446d41d1dbbfae85293fd5de83977f5a58453b7487aada98cdea66f89fa52bf"
-    sha256 cellar: :any,                 arm64_big_sur:  "71f892a1e9876b37fcb00094418c6ef0b18f2990304c623abb03806303d476a1"
-    sha256 cellar: :any,                 ventura:        "d2b30271d21ec028249b7caf6cd783494eb8ef28aa9d2c88d151baf417f873ca"
-    sha256 cellar: :any,                 monterey:       "29f2543279ddca25bdba66bfec49e5e7910dab353d0ee669284f62bacced2378"
-    sha256 cellar: :any,                 big_sur:        "cca03328e197ecc9ea36af1eb008cfbae98629be428ba8c99d2582b0eaaff937"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe74f3e5f0a5a1b6cf2d8400b5ad640daf5f7ebd56799a1b2425adf214775699"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_ventura:  "e33a7c6c42056df4423d574674a776282013b6911661c1b308313f9aab110597"
+    sha256 cellar: :any,                 arm64_monterey: "cc62f7154c0cba1c695df8f9425c5a9cff58f5b3011cc53cfdfcaec3edfcac71"
+    sha256 cellar: :any,                 arm64_big_sur:  "d7c63b26202dafdb104d3a9b21949cf375d6d798eb8a2eda602cde5a29397f19"
+    sha256 cellar: :any,                 ventura:        "d6b8d010393064f3de3be7592ba1c0d59862f59cfc308d8e0b09c0e46d8ec1ef"
+    sha256 cellar: :any,                 monterey:       "80bc69ca68f630e83b1d15aba3338e24f7f53523d9895e4ad7d7805982bed468"
+    sha256 cellar: :any,                 big_sur:        "098dd0059cf5dd92f0262d69a0f952bbde4fc2401f13abc94e460632d4fe5cb6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3cb19112cfdeed9630d8ca5e689a6ea3a583a0977e27b4cdfb894f520d84adb"
   end
 
+  # `pkg-config` and `rust` are for `rpds-py`
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "charm"
   depends_on "libyaml"
-  depends_on "openssl@3"
+  depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -49,11 +51,6 @@ class CharmTools < Formula
     sha256 "98e5854d805f50a5b58ac2333411b0482516a8210f23f43308baeb58d77c157d"
   end
 
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
-  end
-
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
     sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
@@ -67,11 +64,6 @@ class CharmTools < Formula
   resource "colander" do
     url "https://files.pythonhosted.org/packages/fa/3c/592bbb25f6199234167d713c220044473e2e57906d7ad7a34e13b7dc1144/colander-1.8.3.tar.gz"
     sha256 "259592a0d6a89cbe63c0c5771f9c0c2522387415af8d715f599583eac659f7d4"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "dict2colander" do
@@ -251,10 +243,6 @@ class CharmTools < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 

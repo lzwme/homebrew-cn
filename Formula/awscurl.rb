@@ -10,29 +10,23 @@ class Awscurl < Formula
   head "https://github.com/okigan/awscurl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "43ea14dc5fe301ab8218ae8605d29b041598a322a69b7ce27181def25abd7f71"
-    sha256 cellar: :any,                 arm64_monterey: "eff9f75ac69d93762f980e4a9df6fc262de777c75a2f5b3d073b36c4f05d67f1"
-    sha256 cellar: :any,                 arm64_big_sur:  "55c09423ca299f86717726a808ccb578b89b987025dbfc00c9eda09be37ebf07"
-    sha256 cellar: :any,                 ventura:        "0d25a1be9d35981928d73773602ec9c96ad6b9ee1a03679dd0c6ee18e4d7e3d0"
-    sha256 cellar: :any,                 monterey:       "676719d19e85a0456a2f8df59a9faf32ec3c8b24e8a161ffd0b11e84c1c4b56e"
-    sha256 cellar: :any,                 big_sur:        "fdeba2f5bb4566e317230dfc70dcf3c715c75c73bfb46ccd7115344657043165"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cda9f123135472bd298ee5a1157e0008e0dc10f5d6aa938788f25b521dcd4dff"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "651b2f50108becd6484226e3b99c27bd09e0a8efd0e4c70c278f3444e134527e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c4b60f73cec473b28e2a7b9b269199b040a3dca89028d489957009dc9520e97"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1202043bbae6351d5ce3ef9611bf4094669aadd978e7940a545f76859ef1b0be"
+    sha256 cellar: :any_skip_relocation, ventura:        "15a4df9347fe5900fa2c3793074a82f99ce77f8fc024414623c85cdfaa64adc1"
+    sha256 cellar: :any_skip_relocation, monterey:       "252814d4b04cd5a02d46894da2b8abf0c4a65df295219de97001caf1017e28fa"
+    sha256 cellar: :any_skip_relocation, big_sur:        "246cef67cd82390778b43bb6d893bb9e29b99635183fc531bd0d0caacc50d72d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "53275eabb198f089034239f7b7ca8701068da924cd4a43d454abb23a4dcb9d07"
   end
 
-  # `pkg-config`, `rust` and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
 
   uses_from_macos "libffi"
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
@@ -47,11 +41,6 @@ class Awscurl < Formula
   resource "configparser" do
     url "https://files.pythonhosted.org/packages/0b/65/bad3eb64f30657ee9fa2e00e80b3ad42037db5eb534fadd15a94a11fe979/configparser-6.0.0.tar.gz"
     sha256 "ec914ab1e56c672de1f5c3483964e68f71b34e457904b7b76e06b922aec067a8"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "idna" do
@@ -80,10 +69,6 @@ class Awscurl < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 

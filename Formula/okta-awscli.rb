@@ -9,15 +9,17 @@ class OktaAwscli < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a770baa1ce5fdfe0923dcd7fb7936d3247696e1768ff401093771e31a490a304"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d0b1ad669f4e904b1576999aee178489dc6e6f625b6aec10d4704063a6239fc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ef9e2025c7c9456ddfb29d9989ef4d9d9f52e7bd12b1f18a2296f06d585b58d7"
-    sha256 cellar: :any_skip_relocation, ventura:        "499357187764ea34b53be6255123b3a61fd1f3c9f469fca93632be593ca2b54c"
-    sha256 cellar: :any_skip_relocation, monterey:       "5c20823b0b3d58acf3f372618bf4fcb4c235a34bf630adcf4693d572da2608a0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "466a6a1461a7681fe91480681c376db5d839a981fc5dd45e01f326aae5b38023"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "014417c231aea1e240595c09d7a26ad93569780251e438a02eb49de18f6536e8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b46940acaf982918ed0ff1fd0a3596bbe9fa7d61ba72de90f387dfcd05ed2f43"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "94586478a165853faf0493e9ea69dd0cee58c364c3f7d9aa78b8a94e19f18dec"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "66c5aafc0ae0b4d8bfa97ab8e64a06e83bcb10d23f8bbd543bc8245bd53cdc10"
+    sha256 cellar: :any_skip_relocation, ventura:        "13becfe76ca3985d8fe51cbf281f8a76bfd31678706f252f051329afc67cbbcc"
+    sha256 cellar: :any_skip_relocation, monterey:       "4a824eb9351734ac06505ff80151ebf92d506adf814a69238c74f5506a6bade8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4edf5c9f681e30ff15e1af72205ff424d3e9fa9a61c099c4a99cd63be4d40828"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8e7b3475463747b1eb71d8d6d2066514c240e84bbd098cc9f25ffe6d0645b14"
   end
 
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -39,11 +41,6 @@ class OktaAwscli < Formula
   resource "bs4" do
     url "https://files.pythonhosted.org/packages/10/ed/7e8b97591f6f456174139ec089c769f89a94a1a4025fe967691de971f314/bs4-0.0.1.tar.gz"
     sha256 "36ecea1fd7cc5c0c6e4a1ff075df26d50da647b75376626cc186e2212886dd3a"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

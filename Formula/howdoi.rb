@@ -9,13 +9,14 @@ class Howdoi < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d99460aa9d5df944e26c8a57faeba296caa77068b29431097547758b5939ac8f"
-    sha256 cellar: :any,                 arm64_monterey: "3045598b0ab6db55c45dcd228bf1d64c30998d7140b42b5ca02e0fd71bf56dc9"
-    sha256 cellar: :any,                 arm64_big_sur:  "976c63e242f0546e5c69b5fcad3ac8667a380e42f4b95c853edd48c4842bf7d3"
-    sha256 cellar: :any,                 ventura:        "f9f9c8814845cb4a333d8c8e790f04f279f89807b025683f5a00b5c004bf0af6"
-    sha256 cellar: :any,                 monterey:       "1a86a4a0c37be3befeb205d1ff02585c7ae538ae42e98a8e42e8c161ce283e81"
-    sha256 cellar: :any,                 big_sur:        "e075c3ed86e66411465ea8d86db8eff32d02945a042d1ad0dfdedc3c4b6f3567"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5ccf7cd10d8be40212bc1af4338d16cc8b93e9c0c3ba81fb382841133a0c166"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "4dc00933d583ba67eabb6fb1516d10be2c2b615425178e5f71ed5ededea53a5d"
+    sha256 cellar: :any,                 arm64_monterey: "10e0a412d6ac007ed13c87d31f963feee921d57bfe09e7a98d09c4e2ece739fc"
+    sha256 cellar: :any,                 arm64_big_sur:  "534fe4dc336e62c364bb061a12c885f48688e147cfdd4e357c438443ab37ecbe"
+    sha256 cellar: :any,                 ventura:        "b061ace94b4048335b9d4769ea9f3b17e856a48ae4e289301428d945ecf02aef"
+    sha256 cellar: :any,                 monterey:       "33aadb600d1d8e1ed561fee50a8fb9899ebe3dafa03f4cdcea34cbd1f02400ad"
+    sha256 cellar: :any,                 big_sur:        "179fceb7fabe9141c828a57cc464516686196fe36f4f011848c7cdef6ff585a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dbfeab09e8c3b8622f23b593dca3b6aa518616b3ba4109b67007debe31debc6c"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -25,6 +26,7 @@ class Howdoi < Formula
   depends_on "cffi"
   depends_on "openssl@3"
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -43,11 +45,6 @@ class Howdoi < Formula
   resource "cachelib" do
     url "https://files.pythonhosted.org/packages/70/0b/e7647e072ff60997d69517072145ef56898278afda7deff7cc6858b1541f/cachelib-0.10.2.tar.gz"
     sha256 "593faeee62a7c037d50fc835617a01b887503f972fb52b188ae7e50e9cb69740"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

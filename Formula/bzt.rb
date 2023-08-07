@@ -10,13 +10,14 @@ class Bzt < Formula
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ceed6f4e7482dcdc6ebfc303e066681fc986f128c77bf780b44740742827d9ac"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f15ec0ad262615c1c902be68f6bfa1e86e84968c00ac719e615875ab5c112e3d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1398b04bc6aac44cd70b1927b4b3167d88e3bee5cd5792ad5d604967a752a0f5"
-    sha256 cellar: :any_skip_relocation, ventura:        "acfdde4fa2a6afc629dde48b25e4bc9b20b280c23904ff2afffe153b1d9d1958"
-    sha256 cellar: :any_skip_relocation, monterey:       "a59b9119135d2c3ad3e9469639e94da5faca11d0fca7e64e91c17b3ec83a77cf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "614c1bfc5fa87b64aca25ec83e32ab126ab0ad69f057d09761e5882a3efde84b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a172865b2f18b91cd68cd526cde86747efc2bd22bbe980c56f5aedbde3551b4d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "049acde1bd42caaadd478b886b2ab6b6e5787741791a2fa19b0716cfd9b87a17"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e31f4e1779e02788e116e3acd42bb3f34c3503d0755b39558c7f537694e4600f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4b003aa60535e0479c55ed06a46a1e5f8e0de720235e75979939f2af0f70e10f"
+    sha256 cellar: :any_skip_relocation, ventura:        "1b3cfe9abe1318a6adf886d9be23077e4850daf06d241a49b93438554f5c087e"
+    sha256 cellar: :any_skip_relocation, monterey:       "33f55dce9b3bfc30be9f1ce61e2e7bd03501f7a1e08c096e4d61af0fc5d1b672"
+    sha256 cellar: :any_skip_relocation, big_sur:        "52a6cdd12cce75d94d0bfa90b185416a3045966aaa332e2c8ddfd909aa7d1d1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4575372612555c174fefa203e49a75f92f45a5e0228eabc58dbc31aff62968c4"
   end
 
   depends_on "cmake" => :build
@@ -25,6 +26,7 @@ class Bzt < Formula
   depends_on "rust" => :build
   depends_on "libcython"
   depends_on "numpy"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -65,11 +67,6 @@ class Bzt < Formula
   resource "bidict" do
     url "https://files.pythonhosted.org/packages/f2/be/b31e6ea9c94096a323e7a0e2c61480db01f07610bb7e7ea72a06fd1a23a8/bidict-0.22.1.tar.gz"
     sha256 "1e0f7f74e4860e6d0943a05d4134c63a2fad86f3d4732fb265bd79e4e856d81d"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

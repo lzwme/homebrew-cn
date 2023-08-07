@@ -1,19 +1,19 @@
 class Sdns < Formula
   desc "Privacy important, fast, recursive dns resolver server with dnssec support"
   homepage "https://sdns.dev"
-  url "https://ghproxy.com/https://github.com/semihalev/sdns/archive/v1.3.2.tar.gz"
-  sha256 "2085381600d3d28c7c2d87901754076db469df2ff97446af1ac2ff14aec1889c"
+  url "https://ghproxy.com/https://github.com/semihalev/sdns/archive/v1.3.3.tar.gz"
+  sha256 "653a873298c7d1eb2d658f7e39c328fd8127f7fc19e7a7854c0b1c0b60171505"
   license "MIT"
   head "https://github.com/semihalev/sdns.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "565dcc836fd70a43ce38fc9919b081d83cb6da3d59c865e7617df8ff37d73809"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aba8aed4fd2ee68e22e929c71ef6bc4446bafe5dd97ea79bc654edee98bc0b4a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "47122a0f132d4b153038060d9bb1c8281d910a7ca94a9d728de657e3f0ac1a0f"
-    sha256 cellar: :any_skip_relocation, ventura:        "99724f75a31ba40d7e8131405db6dd2612261a49923458d6abf63344e91cd193"
-    sha256 cellar: :any_skip_relocation, monterey:       "a576d0ff9dfff62c90f2043d903d54a4e4b5ed4cc9fcd15f1a5ce05d5529b17a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d1b2753c804f823601ad28727be82666ca023e22db74339d3b9727d8a6b4c957"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a410961579ca2f7af8291fe22c57c1d617c64db0d5c8a564bfee67130812ef6d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d1b37f7ad53c96352a2d24921524b5242c9ec8f02b2c646c40595b31153c476"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "59b6b9c21ea216371074487fc0cb953516f62bf6fd7295de56fe97135c5ac64a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "09e108a2452e290f08c61d2acefdb86c63c6d0c5a1822d0bd67cb5c3dd0d9954"
+    sha256 cellar: :any_skip_relocation, ventura:        "1fc30b2d7c6d1ce2f1471b9aadc9899204d8ce86fb1585972f3f4bcd4f0a19f4"
+    sha256 cellar: :any_skip_relocation, monterey:       "3f75429570df7026ba2a889fe998ab2a0a4e926e5159fe3b50054f492cf0b384"
+    sha256 cellar: :any_skip_relocation, big_sur:        "02f18d72e2a1f21d51947f5029883bc2b8ebb6885d52b186074fd05f69d88ee0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eee38404f4b0a6a3c023d8ce01ae52ce878bf54dd02f98af37484ad3d225e130"
   end
 
   depends_on "go" => :build

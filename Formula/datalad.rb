@@ -9,18 +9,20 @@ class Datalad < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "31a763c00f3f157603ed01bdef150bf338304c44e4819a770623daf8c285b470"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "98d3105d17a07ae536e0b68309bf50b235e46ac4c14fe41972b448fcb6f970c7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "05336300d240a6d563226b92901787e609464a2cdddfaceab0d045ed961b2ed0"
-    sha256 cellar: :any_skip_relocation, ventura:        "f31fa3e08d1b3f2ce46997e7b16d9c799bfddde7d8e82c7920b6723b7d996661"
-    sha256 cellar: :any_skip_relocation, monterey:       "2fb5c9ee18aa2fada6574bda82c5bbd0add178f396c66ac6d3d9a2f25aaf6315"
-    sha256 cellar: :any_skip_relocation, big_sur:        "eb72f22d0b771c509862ed268069fe01e0f39b5bddeb959bb33639bb7aeca021"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd8827f6577153ff779fe62f5632dc5ca7b84932920c813efa199e3429571b9a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d704f30200ab14963de709ff161ed41a026d6c68ec4aebc76dba9e6b4ac47909"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d9113408160d7660e1a6b23c04573636c35dbf5399ec1ad10b39b36fe93578c7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d606f9d80ba721663c576a1a952f8b670d4e29351ea9e637d345bc8da8c8caa2"
+    sha256 cellar: :any_skip_relocation, ventura:        "6f7842c78c0d33c651221ade0f4d57a061bc418b16061f279a86301bc29764a1"
+    sha256 cellar: :any_skip_relocation, monterey:       "3a40eb59f66b78839a160b5040dccb323c8ac5cfbfafc557f12b6b8274ba85ee"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a75cd72e589aedfb2738556b433f61fb8656e4168a90fec26d7821ca71c8759a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74f9da6ae41a1fc80a20e4567a7a12a5b9c698e6a2ae8b17c9a34f5c3b07c8ac"
   end
 
   depends_on "rust" => :build # for cryptography
   depends_on "git-annex"
   depends_on "p7zip"
+  depends_on "python-certifi"
   depends_on "python@3.11"
 
   resource "annexremote" do
@@ -31,11 +33,6 @@ class Datalad < Formula
   resource "boto" do
     url "https://files.pythonhosted.org/packages/c8/af/54a920ff4255664f5d238b5aebd8eedf7a07c7a5e71e27afcfe840b82f51/boto-2.49.0.tar.gz"
     sha256 "ea0d3b40a2d852767be77ca343b58a9e3a4b00d9db440efb8da74b4e58025e5a"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "chardet" do

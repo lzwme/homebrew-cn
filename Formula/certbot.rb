@@ -10,23 +10,22 @@ class Certbot < Formula
   head "https://github.com/certbot/certbot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "52f4907a930492ef5ec011ce675a6b8dcb1a4be3a002c355449e7b3caf11ffa6"
-    sha256 cellar: :any,                 arm64_monterey: "8cdc515cbe9fbcb044cd7c3bf97b61b099de31df289d2180ba0953d11d910444"
-    sha256 cellar: :any,                 arm64_big_sur:  "39e140677fa4d8d8be6c3bcf30105b9efec991c47e8abeff96c922329c39bc49"
-    sha256 cellar: :any,                 ventura:        "a4b3c12ac11922c0874abf735b4c356228260d8f118cd158550c16cacb1617d2"
-    sha256 cellar: :any,                 monterey:       "3660f7d83ba3c77d7fb75eddb1c8690f559b90eda062da6d3247593880a15c66"
-    sha256 cellar: :any,                 big_sur:        "4410e9560c354890494d2e3171fb7ba055e29730660c99a0896f2a4f98a177b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1ceb02d4086d6754418d9f0a66611d0f9630248702f19ff7c63849619d48384"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "88d9cc5d63a3295f76a333659de272ee9ede041056cfd08c2f251a9e17d91097"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "794c29ddc1b31fe3be7cda32f2d43687f78e9ae5198a91b7087e92f5284e3c91"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a0fe200c6bc91ae9f9ecb0cf7dc3b206128ece12ad51f68702d91324c3d72318"
+    sha256 cellar: :any_skip_relocation, ventura:        "8f2f780edff868901b59534c55f926dd19fcb3bd3c4893723560a37ea05abba4"
+    sha256 cellar: :any_skip_relocation, monterey:       "7f7e5143153699cc13626ba594f29bf59e45b3c661f01f0c56af7592135b5f8f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "96006bc6029f138d98c3b1340e676345b7a91c421346409ac60d0bee8919e454"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "19e64329447b526fe842d75cce5371e91a00a0acbe7309f882d32a50446b4360"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "augeas"
   depends_on "cffi"
   depends_on "dialog"
-  depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -47,11 +46,6 @@ class Certbot < Formula
     sha256 "426038336f0eb305579aa1bd71d021cfbbfa0925d165198054763b7225d64a05"
   end
 
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
-  end
-
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
     sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
@@ -65,11 +59,6 @@ class Certbot < Formula
   resource "configobj" do
     url "https://files.pythonhosted.org/packages/cb/87/17d4c6d634c044ab08b11c0cd2a8a136d103713d438f8792d7be2c5148fb/configobj-5.0.8.tar.gz"
     sha256 "6f704434a07dc4f4dc7c9a745172c1cad449feb548febd9f7fe362629c627a97"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
-    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
   end
 
   resource "distro" do
@@ -128,10 +117,6 @@ class Certbot < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     if build.head?
       head_packages = %w[acme certbot certbot-apache certbot-nginx]
       venv = virtualenv_create(libexec, "python3.11")

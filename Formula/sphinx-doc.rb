@@ -8,13 +8,14 @@ class SphinxDoc < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef65d740fcfbd71e615ca749fd54e6d82ddc342face6541f0db48077cfa8a7c6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f44797dca86853e9ed36b4df0b0c4dbaa2c7c134a8451bc137070603a0c6cdaf"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b12d4b67b4ef19c1c065925d52d26dc5100f7d71af38cf0551f7135b2d1899f6"
-    sha256 cellar: :any_skip_relocation, ventura:        "7c14de2850ac5816401a77b3060551a30735fcdab672153a9063ac39947d63b9"
-    sha256 cellar: :any_skip_relocation, monterey:       "b545d63006f38e973d4ffa0b691aea6604c8080b41f72b93eb3ae4d79fce69af"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7707fff20d712deaa9addb7c3833360b6e2ffd922491a439f4a6c4a944109467"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d212586e74d83f1a8ec6e403717e440f100d96cc11478f6657e74e171c210af0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "016643b9d82e46e5797484466321bba9ff955368ad083150ece2ddead9ddff18"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4890a150e569209619a40e2f2ccadc5274b01f65c5ed3901d8082270b0913519"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4e3e3806280bf0c50298a4a484ebc5e2087f0fa356ea19d21ceccd964391a8b7"
+    sha256 cellar: :any_skip_relocation, ventura:        "9cfa6caa3c64435cfea0446ed3ac1415d02e2a41017dcd58ba587fe30e1d96f4"
+    sha256 cellar: :any_skip_relocation, monterey:       "c8b6cef306a6bbb16c8d2915048a3d426ff772e1357872c287d364a723b49897"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c60fc9f5f649a53bf8e43d394a925162cbc95c9a7d0d328cdda84f6bc2dce4b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96dcb163a150a72c55497e659b8a3569c7e420bb4b0f99749d2bc31bca00e094"
   end
 
   keg_only <<~EOS
@@ -24,6 +25,7 @@ class SphinxDoc < Formula
 
   depends_on "docutils"
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python@3.11"
 
   resource "alabaster" do
@@ -34,11 +36,6 @@ class SphinxDoc < Formula
   resource "babel" do
     url "https://files.pythonhosted.org/packages/ba/42/54426ba5d7aeebde9f4aaba9884596eb2fe02b413ad77d62ef0b0422e205/Babel-2.12.1.tar.gz"
     sha256 "cc2d99999cd01d44420ae725a21c9e3711b3aadc7976d6147f622d8581963455"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

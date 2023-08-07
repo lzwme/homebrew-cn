@@ -9,13 +9,14 @@ class GimmeAwsCreds < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9368ae6d91893e226823a251a4693fdfc4ab3d413e54d75d01fda60e6437d479"
-    sha256 cellar: :any,                 arm64_monterey: "9acd85c62bcad26859c64d8dd7945d1c087744c0c827666939dacb00f3a679b5"
-    sha256 cellar: :any,                 arm64_big_sur:  "1a78c800d780768abdf1806464c151dffaee2947847388c91a70c9e97a4955d4"
-    sha256 cellar: :any,                 ventura:        "ee0b954cdd64b4b64a3bad656006654e40832b5d5cd33ae4457fc08acc64a6eb"
-    sha256 cellar: :any,                 monterey:       "d780b0d238d3bff37212fa885850515c49ad04c893aa4bb6534922a84bd30539"
-    sha256 cellar: :any,                 big_sur:        "f1ee4127808854a0200aa2be6a91d3365148bd473c80c5a11a50a48954ae1352"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1277a82c3215da6b8664e6cbdb5f763fed024bbb2e77a05b0ad4c8cc30fc191a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "cb0deca43878572ce331664986cabdf2b332c8707a05b5eca3290d479aca3acf"
+    sha256 cellar: :any,                 arm64_monterey: "34bc194656f95126214295d6bd21b27723f8f74671a3f6e6831d2038642e3222"
+    sha256 cellar: :any,                 arm64_big_sur:  "a1b70f524e0efe908b92bc93187eb8bed47e1eb6970fecb9ed55c364b1f79700"
+    sha256 cellar: :any,                 ventura:        "77a3fedbd2904370404e2b167388be39c8233b49f8ab8e4c28323eee0fe3930d"
+    sha256 cellar: :any,                 monterey:       "33a4ef40914e8bd0445db480de5776e7783c9ffe1fe32f62e089be254b84c2b8"
+    sha256 cellar: :any,                 big_sur:        "8945409e815f547a190c064c9225d4386b089e8f8aefbb2db31faed76f53bdbb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f545c30082d7cd4d4772c0018e4429de48cdaedfac0c88d55c61a74002801ae6"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -23,6 +24,7 @@ class GimmeAwsCreds < Formula
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "openssl@3"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -64,11 +66,6 @@ class GimmeAwsCreds < Formula
   resource "botocore" do
     url "https://files.pythonhosted.org/packages/54/ce/3aced9653aa3b81aeda70574f342cd3014ecc36aff6a20e74c767f92864f/botocore-1.31.17.tar.gz"
     sha256 "396459065dba4339eb4da4ec8b4e6599728eb89b7caaceea199e26f7d824a41c"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

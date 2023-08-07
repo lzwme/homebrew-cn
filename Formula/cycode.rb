@@ -8,15 +8,17 @@ class Cycode < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3892a40cf178653cfa91c5226442209723654729c60df78d5d70a4748a168ee"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7a49ce30e81f65f21dc9c274aee5112dc7da34d83e83ad1d55a67b0a9ee4864c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4d374e59761af920faeda7e2e431f67e2e1f605e363501ef922575115c8d5c3c"
-    sha256 cellar: :any_skip_relocation, ventura:        "88d0682528d5bc01092de5f98581ec332e75669953ab3bb0d78bda4676bbdb9e"
-    sha256 cellar: :any_skip_relocation, monterey:       "09e97887dd131fbf4ef8dac2152e291f4265e624f283dc53182d183db7244aa8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "dca03f86ec879b6f908cd81b1acc6ca332b11438a52cb6eec4568dd8e72823eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98e4f3ccfab199ba941b974edad318d5fc6a24eb429a48f32c1c1a7c560ad5c8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca709debdbe383ee1a94251c02f88c8f4ece3971e20ee2c36d21c6053b7ce59b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c1d06f253441bf60c352ee6eb25e1779eb3af3b73a4dde3c2097c9be228e352"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "23ad8966b52ccdde2168f9bca57f1c25129fd7db498954905e12a3a97a19404b"
+    sha256 cellar: :any_skip_relocation, ventura:        "f7dca0bce0670924ff41d8dda180df6be83714ada947bbcfed47948e92a59682"
+    sha256 cellar: :any_skip_relocation, monterey:       "9b356653e36360dce57688ca2adbcf71b20a5c0771675c755c4f35ec0e1b938e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8f358d6a05819629776f99a6e07036cdf9e70dc9178d77b845609d815e279f8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9e8157a20e64c205c1bcf9cc0a79129b279161110be350dd3322ddcee18bd58"
   end
 
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -29,11 +31,6 @@ class Cycode < Formula
   resource "binaryornot" do
     url "https://files.pythonhosted.org/packages/a7/fe/7ebfec74d49f97fc55cd38240c7a7d08134002b1e14be8c3897c0dd5e49b/binaryornot-0.4.4.tar.gz"
     sha256 "359501dfc9d40632edc9fac890e19542db1a287bbcfa58175b66658392018061"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "chardet" do

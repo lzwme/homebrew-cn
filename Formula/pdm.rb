@@ -9,16 +9,18 @@ class Pdm < Formula
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9568f670346909a870883d22e35f453aabfed0e4cc8f986e5b105a18f4e8f4d4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2b0664c013e54864f8fe30ab56bfb7021be6428c0cd90eb1a208f3663b77d377"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9eb4ef25e56cd99bce0eb36347bbbf5508d81c342661c253f14081bb84ea9896"
-    sha256 cellar: :any_skip_relocation, ventura:        "c0eaed067084fd36c3123af84655712d1dc7d10a0bb66b74890991a1191de836"
-    sha256 cellar: :any_skip_relocation, monterey:       "6e1f257b7a0e12769ca48e6c1686ca20aaf9db98091956bd3fade542a420cb7e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a9d5772952764ebc73cbe2e6d8f77c4993ec3722acb0ef2a6dddac2a8136d1a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ffb13607e55030a06e10d93e10e3f555ee4c6c29aeedd6ff7a8359609c365113"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ab650051a8e2c9c07d110fb9188a69de9d4beb14732718caee47f16a7a3164c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "508652fe0beeaaa7578e303b8fe7651baffb3907b6f06e11a1b353fe836eebd4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0b0e15aaa5f86e74625efb831155c39d235891c578b8830ade6a95a8df8a2a6a"
+    sha256 cellar: :any_skip_relocation, ventura:        "0d01d393a300fc033672cd5c2790c67ec28fbce6a4a6001bb4a0001a6d3c1835"
+    sha256 cellar: :any_skip_relocation, monterey:       "6c961030cdf8570374744cb05b2286abd0645a4d86eee2991d285bd0eccccfeb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "26be2699b9ae86525301725d57b77082144dc681be3cb771790e733d79e3c3ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9beb90dd6ad646514ee1f682552ccf55b7d774ddd12ca52e559a98f931a67b3f"
   end
 
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python@3.11"
 
   resource "blinker" do
@@ -29,11 +31,6 @@ class Pdm < Formula
   resource "cachecontrol" do
     url "https://files.pythonhosted.org/packages/9e/65/3356cfc87bdee0cdf62d941235e936a26c205e4f1e1f2c85dbd952d7533a/cachecontrol-0.13.1.tar.gz"
     sha256 "f012366b79d2243a6118309ce73151bf52a38d4a5dac8ea57f09bd29087e506b"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

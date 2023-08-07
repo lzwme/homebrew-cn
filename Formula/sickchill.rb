@@ -8,22 +8,20 @@ class Sickchill < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "6b0dbff0a43e4276fbd24a124661bf2b0cfab24538360bfc9e4dc6228d8f711f"
-    sha256 cellar: :any,                 arm64_monterey: "72403807e178209fc308d16f6e1217d00087ad37c60dbe33d1e526c5e53311d4"
-    sha256 cellar: :any,                 arm64_big_sur:  "7fd432a2ab04ca2c055a77f3fb5d6dc4a7f7957053cb43f53ef9f6d39cc7e6d5"
-    sha256 cellar: :any,                 ventura:        "bd80158bc1899914bc413063c0d9e1ab5293030a7b16b891351a3edb12e528f4"
-    sha256 cellar: :any,                 monterey:       "ac7e713c1b03bbd934deab3bae17c00ad03cf97f7db8c3f4953808dd70ebcb8f"
-    sha256 cellar: :any,                 big_sur:        "ead2c53214c08b58374fe0fa40e7474b2c7497a8bfa7ed82010bb3edd7e50aaf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c5a6545db8442d6442a40783daba38931eb491b3f9bbf065c0f20f9c41842c4"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a6401ad13073cd204c85b26ae1df7a1064cc6e66eab1e8ea605fd9df53a3779b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6b57f4e83254da9ecc9968acbdb0a8ca386a03d83530d6e300841f96dd1d9d56"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4db130ef6a054a2eb4915fddd31b5ee48699d8d0abe2acf61a4bace142102980"
+    sha256 cellar: :any_skip_relocation, ventura:        "202bf4c6317ca054417de91b84b177c3fb53c76cf94bd44a21ea97d809f9fac1"
+    sha256 cellar: :any_skip_relocation, monterey:       "571b8a31d5058fe71564d9251410d2d13aced0f83f3c822fdbaf407c384b41b2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8e1289c921a090e56cbce3fd8363ff0aceaec5dd61929cc82647dc2c33c07613"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d701f524ef75d9444722c22a2f7447e9aa317708ebc438988ee38e41bbb23cf6"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -62,11 +60,6 @@ class Sickchill < Formula
     sha256 "7e408f15f4978fea2247734b308621f75f7fe169b461679519c72e8a85d61d5d"
   end
 
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
-  end
-
   resource "chardet" do
     url "https://files.pythonhosted.org/packages/41/32/cdc91dcf83849c7385bf8e2a5693d87376536ed000807fa07f5eab33430d/chardet-5.1.0.tar.gz"
     sha256 "0d62712b956bc154f85fb0a266e2a3c5913c2967e00348701b32411d6def31e5"
@@ -90,11 +83,6 @@ class Sickchill < Formula
   resource "configobj" do
     url "https://files.pythonhosted.org/packages/cb/87/17d4c6d634c044ab08b11c0cd2a8a136d103713d438f8792d7be2c5148fb/configobj-5.0.8.tar.gz"
     sha256 "6f704434a07dc4f4dc7c9a745172c1cad449feb548febd9f7fe362629c627a97"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
-    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
   end
 
   resource "decorator" do

@@ -3,29 +3,26 @@ class Httpie < Formula
 
   desc "User-friendly cURL replacement (command-line HTTP client)"
   homepage "https://httpie.io/"
-  url "https://ghproxy.com/https://github.com/httpie/httpie/archive/refs/tags/3.2.2.tar.gz"
-  sha256 "797fe33afe3bf0a4364a869a7d73f5c728f67d4ac47039be41e08bd564f86bb0"
+  url "https://ghproxy.com/https://github.com/httpie/cli/archive/refs/tags/3.2.2.tar.gz"
+  sha256 "01b4407202fac3cc68c73a8ff1f4a81a759d9575fabfad855772c29365fe18e6"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/httpie/httpie.git", branch: "master"
+  head "https://github.com/httpie/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e4647e26bafd55e41a17d6278d0389d06fe6fc78f0ab49c47299e36357594db8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e0560178483c9e3a783b65b8fc2d408fe060a650ae30e862e13097c132b0bcd7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5d790955e7ab18740cdf8f3f7faf493b33aa4f81adffa5322bb5a65fa0939c38"
-    sha256 cellar: :any_skip_relocation, ventura:        "11d02662386440ff57b9b13e0881f878320999b6217a3abd3e940b017a42254c"
-    sha256 cellar: :any_skip_relocation, monterey:       "8c0242a0502dae29b54ac7386ffaba5906a3678cc7af1a4ee3efa6dea6fbe936"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4605a8f4a1ed2fe2f505332d07e588c33f95a671c29467c568d0f3113b42c416"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "274555cd5421d933bf9c0fcd170c5a6bc77b21e0ded8bb5088898bb14d932700"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ad6c60de07befbb3c1b87cad3f1032468830cba7886f319bfc85b002a782a7b2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b1e782c6824b44e97cb2f7c941f9b89eed6bd5ab208d74e9e3e97c554bca5a42"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c135c3c2784bb3cb989908a41e54d55d3122a764445211f15b3ff4c14903623d"
+    sha256 cellar: :any_skip_relocation, ventura:        "ae9d268bd8a3f16e8bd05c99177821c5d3b0b71bb15b3f1d2abd904e5576ada3"
+    sha256 cellar: :any_skip_relocation, monterey:       "adcb363b996c5a3335559070c43a3a1c7ef153913756a461a1cb94a789373b47"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e009834aab9dfdf9279914245b3519bbbd5ed2cbf93eec703747e1b8ddc51e02"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3d66026d7c87e9f5347934a96d9f4717987f098765ea04436765e81b691ab68"
   end
 
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python@3.11"
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"

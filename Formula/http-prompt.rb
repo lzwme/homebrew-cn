@@ -10,24 +10,21 @@ class HttpPrompt < Formula
   head "https://github.com/httpie/http-prompt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8288fd49092450114aa1d45a8ff746f64f60788aa897c37348ad4a4ed64a3432"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9194186c9058d0dd8c113e97ee8cf32b9607336ea8238125da535a875228fd69"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e3938b0d089acf78e7552c83f027b20c1d3803f0e0721738709b6240f4dfc57d"
-    sha256 cellar: :any_skip_relocation, ventura:        "f4099329d6f983de5f14f388d4c13d25b555031d1890e0de7f7405bc1d46ccdf"
-    sha256 cellar: :any_skip_relocation, monterey:       "ba4fe6b5b0f830569e0a9afb8cc5f5e2b0383be16a91a4de929f17566f550e9d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "86ff9fa3088108a7a54675a543882a9f0c029f4d55c3e85f130b726b1a9a6dcf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1cf6a0d93553c4de5cbefef81a6860b8a5ea727a4da30ee6993f32488e532064"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0243bff4c459ec06d95cb9bbe363da88f3bc14549cd1bdb137034b4da4d50b26"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4d6793a641af9530355cf99e3f68761d85c86197b6b2cc817ad17389bbc1b4f1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ac1dab37dacdb90d9bc6edbac6b7d954e3d0d460035a636b92f389b81789a1e1"
+    sha256 cellar: :any_skip_relocation, ventura:        "af0a36e2f69ee45e5d5071cb780824c217a424bec500ee855fb9a4bed49257dc"
+    sha256 cellar: :any_skip_relocation, monterey:       "4d09271f94ae0c247ca89b30dbfbd39a702e6e66051404b4d84dd2f50f3be2ef"
+    sha256 cellar: :any_skip_relocation, big_sur:        "37de4fcdcf11a918adacd6c3507dd891f3dd3438593b8adb6b578d90042d9e9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ba78935f049ee10fb3022e05c2c15c0576fc5731854c52caeeb49b6649feffd"
   end
 
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"

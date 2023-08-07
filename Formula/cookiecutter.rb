@@ -9,16 +9,18 @@ class Cookiecutter < Formula
   head "https://github.com/cookiecutter/cookiecutter.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8eccbe0869c8aa0c30aafeec1e81b15a74057776ac0c805a372b9f9cc92cee56"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6dc18acf4a71860ab519383bc6e7b125cbb9d87f4003a6a7ff042dbddaabfa24"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c494653c937a4468d56604496cf746c094d1f4d374f99db732bd42f5148c9b65"
-    sha256 cellar: :any_skip_relocation, ventura:        "e73e507dab3990000474f6c591aa11c68171491dc8bb5733cab20951a6315330"
-    sha256 cellar: :any_skip_relocation, monterey:       "8e24996a7b12325deefa60aebb28a6a2f807fe97998f583e865ca7cc24a906b3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ed88fcae39dad814c106ba19e899a4578af23e3b5a0286ae4f5ac1ec90a709e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9ce29ab670ba449f9e57f3151f0e6131054a805ed85b220e1648ba7338a1a61"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25ed4f331d65e8e36885130f051c9491e88d471cb466a48c3368488539a5debe"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "97beccf38516180946b34f8885b862d80db1721636a96e331a39e6cf1432330d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d56a78657182e337637ace314436dd493c671bf74551713ddb936e2bcb08c0df"
+    sha256 cellar: :any_skip_relocation, ventura:        "3422996524a43ef9ed6d75b1d646e1f0d9c2281043ed1d061c060a9562963997"
+    sha256 cellar: :any_skip_relocation, monterey:       "2dd3a9e418383799542febefe48a891e6d86708db492ce21b88169371ace274c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3a3f3fbc36d949dce1650dfe06337e17ab437184dc9ea25f695af37d9e300a91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdb40423bfa8f0d753991c6e3ed46c022579925db11f669b38dccb43b544e5f3"
   end
 
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -31,11 +33,6 @@ class Cookiecutter < Formula
   resource "binaryornot" do
     url "https://files.pythonhosted.org/packages/a7/fe/7ebfec74d49f97fc55cd38240c7a7d08134002b1e14be8c3897c0dd5e49b/binaryornot-0.4.4.tar.gz"
     sha256 "359501dfc9d40632edc9fac890e19542db1a287bbcfa58175b66658392018061"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "chardet" do

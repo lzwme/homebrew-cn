@@ -13,13 +13,14 @@ class ConanAT1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "333f9817709f31c46dea7a440d532ffb20edaf5aefa7b776519aac4f327398be"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7c369ef24286810b3d03cfccc1b265c88093208043ecca87158de654474e8b4d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e9643d978b0797ab339936f4c353ee0e228cd55e9d55ae01b6c0195d6e7b01c9"
-    sha256 cellar: :any_skip_relocation, ventura:        "78697dc37ec0f5f8ce1d85bedbdfc89a6b7bc04ef38fd5eaf320c0ff7843a468"
-    sha256 cellar: :any_skip_relocation, monterey:       "52cccae6e6638bd9241db512d4edefa6e8cd635e751200ee9caaaf1335c0c6bf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5276d24fea8117935354216543f1b6531d047f801520c590d9967033eae561a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6929ad32e6b8a2d61abd4013cbe01ef12b7929337c340eacc45d8839c5acaf5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e22deb9dfc4311be500f17b1c69c17ba75a47d39b709c9e68b04a9a801ce8fff"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8f9452c4f1d6777c970b3131100deb76d83a07fa10f514f392005fe9fbb38a72"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fecaed327972532c9ea276374ad13af28c50fcb3b6ee4b55b77b5ccb7dbca2be"
+    sha256 cellar: :any_skip_relocation, ventura:        "3a18f1c07c21ee515f808850239ad11e1e611a88ba1828bb0efcbdaac4f98097"
+    sha256 cellar: :any_skip_relocation, monterey:       "1a5b63dc7f8dae254ed13c86ff36717c8efbed1304cdfdd0b816ebedac5978c3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a140f3caa8613b03812e041914a967444a0cc5f08f82f7130a667de473962139"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "737da38a972b410f6ef6419d6ce3a8b967bb7c2dbf64a5dd56669a6c7ffbf65a"
   end
 
   keg_only :versioned_formula
@@ -27,6 +28,7 @@ class ConanAT1 < Formula
   depends_on "pkg-config" => :build
   depends_on "cmake" => :test
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -34,11 +36,6 @@ class ConanAT1 < Formula
   resource "bottle" do
     url "https://files.pythonhosted.org/packages/fd/04/1c09ab851a52fe6bc063fd0df758504edede5cc741bd2e807bf434a09215/bottle-0.12.25.tar.gz"
     sha256 "e1a9c94970ae6d710b3fb4526294dfeb86f2cb4a81eff3a4b98dc40fb0e5e021"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

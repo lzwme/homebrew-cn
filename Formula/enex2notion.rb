@@ -9,16 +9,18 @@ class Enex2notion < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3bda151f0a9e7a7874a4748dce564a99a7fb12a3832d73ae008d54f46ac02ce4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f0937efba7a88db1c00fdfbe95890858f20c6cc7a9c4478bd7fc71514239452b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f7665cd9f35815d5b4f3e60cb8b9107ca48b7392597a53d98ba72482de669e41"
-    sha256 cellar: :any_skip_relocation, ventura:        "a0a1d6e8e353ee386f0a08b37ec1a513c2b8bdacb5743882c4647f35fe39bc98"
-    sha256 cellar: :any_skip_relocation, monterey:       "253dcc3c48b25fe9f2c19a18a616d4b4085ef9c2c6c64f6685e28ef7899eb4f5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "aec7e954571182ccdf99262ecd16d96b3bbc3eca6d72cc2825c2f33073b84818"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54b1c3925f8deaec5b35064e0387949ac897add60a1d293ea4a7cff993cd5402"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5d39c6920df7e6e306f602b029a1bbfb7a7a6922dcbae2ab0a05c2942d80e506"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b4a0c8b68b683a2f98931d94f799d6601b0ec580db0494db20cf14b29ae6648a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b4695eaf5c11a74e1916a9cd236a7b6beadf9e0ef1879d2e8fa5f1c91979b82c"
+    sha256 cellar: :any_skip_relocation, ventura:        "d1295d27d61adc78f04edd922ad1ecf8e43b5e253bda75d954e6dccbf7dfd04b"
+    sha256 cellar: :any_skip_relocation, monterey:       "24544476bd029929de0fe91253daf66aa8b72044eaa0509a0f26ac76794dda7b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3781fab5e8a321e112a16ee939760f33b890808aa6b3f4e267cf2a2fde096c1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa5b9355d547b4e96502687e25531c816ea8bacd93335bc9d5f939ad12790880"
   end
 
   depends_on "pymupdf"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -35,11 +37,6 @@ class Enex2notion < Formula
   resource "cached-property" do
     url "https://files.pythonhosted.org/packages/61/2c/d21c1c23c2895c091fa7a91a54b6872098fea913526932d21902088a7c41/cached-property-1.5.2.tar.gz"
     sha256 "9fa5755838eecbb2d234c3aa390bd80fbd3ac6b6869109bfc1b499f7bd89a130"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

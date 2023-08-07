@@ -9,16 +9,18 @@ class Censys < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c8b7850b79b4da9f8af67c5d6b756cd348eafc3c81fea748d0351e8e1bf3b461"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e824e2ebfb8fd9efdce7bf2161df5075eafeb4e865c09dc873b50fc97b768b44"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "214883893b5f6c5c386f0c6d9c0843f4bb38e64f324a83ed8c912ccbad2a8a03"
-    sha256 cellar: :any_skip_relocation, ventura:        "04b0906afa31e3c1677ffe55ab53da680c3f6d80b2861462600a2e9809d57b7e"
-    sha256 cellar: :any_skip_relocation, monterey:       "03c2544a15a4d4d144599e2ffafe9afb8a32e43ab34adf166a95a0fd3eacaa70"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5906850a3efb6591ee96a94530fc189a21158e5b53efdffd7f443218417e6960"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf5a40c2299965d3e7f2552dfac7a83fb56b59eabf574a91cb8db4d048d680ed"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "14b455d14124a1a7bdbaa99d3db99584c209eacb3ff3ba10756ea40c0dc15d1e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2831d2f5d3cc977431acd04f5c01d0f0988967bcc477b6838e61ff0268c1273c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9ce0d931dcc975c627b605d6ea401cbaaa79627d69f4e243fec9a995c2931558"
+    sha256 cellar: :any_skip_relocation, ventura:        "0d6621c60de7bc4949311867937f780ce0a749f674017ab60a6f546cc45e6eb0"
+    sha256 cellar: :any_skip_relocation, monterey:       "195b5ebd5b15010aefb11eacbb9a6c19f0a0a97eed2ec508668503126411dcb8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0503f2b979ab194d638d14762bc9c26be6d27384ec74c5dc2afc5cba7f8ac476"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "665013db97a8ba7add0c047da51bdb30ad0d23a6738d8c83c5c076821501ea4a"
   end
 
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python@3.11"
 
   resource "argcomplete" do
@@ -29,11 +31,6 @@ class Censys < Formula
   resource "backoff" do
     url "https://files.pythonhosted.org/packages/47/d7/5bbeb12c44d7c4f2fb5b56abce497eb5ed9f34d85701de869acedd602619/backoff-2.2.1.tar.gz"
     sha256 "03f829f5bb1923180821643f8753b0502c3b682293992485b0eef2807afa5cba"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

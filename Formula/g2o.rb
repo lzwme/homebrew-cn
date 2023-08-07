@@ -1,9 +1,9 @@
 class G2o < Formula
   desc "General framework for graph optimization"
   homepage "https://openslam-org.github.io/g2o.html"
-  url "https://ghproxy.com/https://github.com/RainerKuemmerle/g2o/archive/refs/tags/20230223_git.tar.gz"
-  version "20230223"
-  sha256 "c8cf002f636ce2e83fc96f5e8257be4020cf1ae9f6a9d71838ec024f4d8a16cf"
+  url "https://ghproxy.com/https://github.com/RainerKuemmerle/g2o/archive/refs/tags/20230806_git.tar.gz"
+  version "20230806"
+  sha256 "e717d3b96cc6d00fcbbaf637aae648c9823599e6aa8fcf4546fc9ad4034dcde5"
   license "BSD-2-Clause"
 
   livecheck do
@@ -12,13 +12,13 @@ class G2o < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a3b6d5e633a19b498d0021e192bd1accf972fdedd837c86037bc8d285d3fa412"
-    sha256 cellar: :any,                 arm64_monterey: "c5c08f0adc21112a2402cab26e24672a6fc340971e49be81b616a2019f7bd833"
-    sha256 cellar: :any,                 arm64_big_sur:  "2b2f4166f6b22d7044f50b2febca70a173567bdbbc27655cea3f3228af3931f9"
-    sha256 cellar: :any,                 ventura:        "bb1f0c62c4f0f1d4cfcb8e2e353e9788ee7857086c8c345ac5fab02f7fb72960"
-    sha256 cellar: :any,                 monterey:       "31bd808038407640465775c5770417cada686d17811ab8fb045b99570d34294d"
-    sha256 cellar: :any,                 big_sur:        "9e2f48ed3049183ce84e30ae541f3eceb2b41dcd4b47a426bff14c7aa1a4be50"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5dc0e4a51f41c1575782966a1b0229347173e69860c879405390abf0e24cbc10"
+    sha256 cellar: :any,                 arm64_ventura:  "d1cbe8ce20b3b583d8390364a2d76a745cf3cdfd7dbed194fa456b4ea9a251db"
+    sha256 cellar: :any,                 arm64_monterey: "8945d0ec8a2a00ce3e5bda9e3bd83953e37d2f5828b0f078b45dab8b35aaeb70"
+    sha256 cellar: :any,                 arm64_big_sur:  "77b3b006d9e12ea5176de813963afae700cebecd2c7fbb42ad6dd98d636fb386"
+    sha256 cellar: :any,                 ventura:        "67ba9a8b944f127858cbe66fff742ab900c498f27535e3287feb67161db110cf"
+    sha256 cellar: :any,                 monterey:       "eaa5b6858b45b308096959db38d5dcc59e74ac18548a2f183242c1313af4dee7"
+    sha256 cellar: :any,                 big_sur:        "3cd190b553f999dde5bf21c7f46bf4d24ad721d4381f366afe42166a41088a1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1e1c14c76fcd64f70797ff40f04b9d8861ca44f557f830ea8407e33201a0936"
   end
 
   depends_on "cmake" => :build
@@ -62,7 +62,7 @@ class G2o < Formula
     cd "src" do
       system ENV.cxx, "simple_optimize.cpp",
              "-I#{opt_include}", "-I#{Formula["eigen"].opt_include}/eigen3",
-             "-L#{opt_lib}", *libs, "-std=c++11", "-o", testpath/"simple_optimize"
+             "-L#{opt_lib}", *libs, "-std=c++17", "-o", testpath/"simple_optimize"
     end
 
     resource("homebrew-testdata").stage do

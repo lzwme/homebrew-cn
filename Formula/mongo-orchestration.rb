@@ -10,26 +10,23 @@ class MongoOrchestration < Formula
   head "https://github.com/10gen/mongo-orchestration.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e682f686d8913ffd020dca714292d862ec60546d8ea558a20cbe6dcb3ece18b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "324717f8fdc3cf7c599f5d83fcc282c1a9db3aa398aba4524ee96daaa6348023"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1197e6420cea0144959e21946b6f076de7efa2edfe9cdcb60940cf18a17bbbbd"
-    sha256 cellar: :any_skip_relocation, ventura:        "f05d185ecb16dc64963aae765e14ba8852ec35f207ed957fb835733b5ab3e550"
-    sha256 cellar: :any_skip_relocation, monterey:       "1d470eaa25c039a31e1885aac5bc728367bffd8fc214d75868c8b2a769495868"
-    sha256 cellar: :any_skip_relocation, big_sur:        "37e4fe27b430630871f5556c337cda29dd0ef147c0613467d99439ba9934a845"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0010e31ffc78f978e04b684b021504691e2900d453866e583cc7fa8b664fa5e8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0884101bc25982a442d27a1503f42a4a95d3b62f56ec3f91e010bf3f58746814"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6f3a32fd2fdf01f8c1ba8b95f525e3a7168f1abc8914d14e715dc76350e9a0f7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4afc69e2e454af89a58911bf0308794d03a628fd90b974e28a4ebf2b01ce8e93"
+    sha256 cellar: :any_skip_relocation, ventura:        "69d7e56f87266880d7430f0a226c07631968d937567786a733e827e30cc7e73d"
+    sha256 cellar: :any_skip_relocation, monterey:       "7e533ffc23e27afbc26e5b1b713bbddc24dd12ce523cdbb22a35dc3271658a02"
+    sha256 cellar: :any_skip_relocation, big_sur:        "15a1d3f33b5f7dd2a8e8de50a3092a37c119863fd1a2f442e96be01d5b22de64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b4a2428b60fe93108e399f4576b733d8a31dcb9ffcdeda0121ca428b644f490"
   end
 
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "six"
 
   resource "bottle" do
     url "https://files.pythonhosted.org/packages/fd/04/1c09ab851a52fe6bc063fd0df758504edede5cc741bd2e807bf434a09215/bottle-0.12.25.tar.gz"
     sha256 "e1a9c94970ae6d710b3fb4526294dfeb86f2cb4a81eff3a4b98dc40fb0e5e021"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

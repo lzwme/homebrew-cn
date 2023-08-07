@@ -10,21 +10,18 @@ class GitReview < Formula
   head "https://opendev.org/opendev/git-review.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4adaadaba7e9bdb9d945b46d9d7d0d9bf103d7d942ea2208bfc4e7ff58d12c23"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fc6e621d35643e3ed021de2ed4370a50689c0b03b188c9bb4ac4a057be2c0bd7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d26024685025c204008bba1022dd2dcf6dd478a56f08701b0ba1a6c2639fcd19"
-    sha256 cellar: :any_skip_relocation, ventura:        "ce5a261a9b344170b4797cec3e7bb220dd0a324df8527f2ca9dcda6cbb73f36e"
-    sha256 cellar: :any_skip_relocation, monterey:       "91dd0934b7ea3a6b8c643833683da1048ca614c89285b3ad18885556ce68c589"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ff3f88fc1a40f1a0ae7d63e2c521a31db0fbcb1b40275060d3bfacedd8e5dd28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "698bb2a79c8f17d3db351b697520175101a6b06267cc3fa5dc83f4468ffa2c13"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "99e980092fb64d12462f0f573cf8707d57624c29ef0f86b1103be6495a6d58e5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "63a7c1879c747aa4571ac639c7b1ac7ecd55b05e4bc9f2fa9d43a92229e86b69"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3dd3a29e8954a9209c221571a8f1fb5ea6a77751216878d6019ad99504f8193c"
+    sha256 cellar: :any_skip_relocation, ventura:        "9a03c2e4cd27503b17c36d79726551efa069a8ab4c4c077bed989832fc156ba4"
+    sha256 cellar: :any_skip_relocation, monterey:       "472c583ed5f331f022052886c5f36d1567c01f872daf21fd93894996a38ddded"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7a546d0572920a0eeef559299b5a94661eb64ad9c9122499ffa4c2a0957cfded"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2fca390df9939579efa74133d64237f129481b4231e6612addd20ce01b300bb2"
   end
 
+  depends_on "python-certifi"
   depends_on "python@3.11"
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"

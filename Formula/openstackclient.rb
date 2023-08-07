@@ -9,22 +9,20 @@ class Openstackclient < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "af3feaa17f0c0453aa29f7ce7762c2dd0f208cf591e0a624517c46f6b9b9b75c"
-    sha256 cellar: :any,                 arm64_monterey: "ca061dfca42860ea9dc7761beb1cf1d61e0f83a5695ce47ffdf707e481d8f587"
-    sha256 cellar: :any,                 arm64_big_sur:  "3b73cc6d0ea96ba13a706bbb5b55ed1145c2fb6a7159bce54e5f360d40fe06ea"
-    sha256 cellar: :any,                 ventura:        "644e8e14319e4896d42372b9dfb49e2eed21304f3842f682311bb3d7af7788a1"
-    sha256 cellar: :any,                 monterey:       "efcf022b146c2d46ea825b7400cde1ee10730922c47725ab56500dd53fcd32b5"
-    sha256 cellar: :any,                 big_sur:        "6f7ee46ff723b5c0715cab7ff75160ab71a6e21a22f6fd63e3a6514c1953b4bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e06072c1d0b1e997b744f5d293b0de54641306788d5c5a4e99f4a269822b4fe"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "478bcb3d3550ad12214e9dffa757a4e97e0f545baf15f2a5f79607307dbe95df"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "659e7078433111cee89480f02ef555235079870a2c918d4d300922ec5035e0d1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "88b106dd6cc17492950153b2e936b369b3ab9bdfc06770477a949e1fd8f53bf2"
+    sha256 cellar: :any_skip_relocation, ventura:        "2a3f370beffe475b9a0b51ab78f5933ed00fc023b77ba71742fdb293b2468df5"
+    sha256 cellar: :any_skip_relocation, monterey:       "4e8dda8f542b6952c8efcaede67815d75324d7ea09f1309e274ad70f994a737b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "89ffadb6dc1b0cc2f1246a0c5aa57633300e8f74d49ac95d3e788c97ca6bb380"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02dcb6d80da29018489736536c40dc66b1cca3c09593f3b804360b2f71abe914"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
-
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "pycparser"
+  depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -49,11 +47,6 @@ class Openstackclient < Formula
     sha256 "cc2d99999cd01d44420ae725a21c9e3711b3aadc7976d6147f622d8581963455"
   end
 
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
-
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
     sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
@@ -67,11 +60,6 @@ class Openstackclient < Formula
   resource "cmd2" do
     url "https://files.pythonhosted.org/packages/13/04/b85213575a7bf31cbf1d699cc7d5500d8ca8e52cbd1f3569a753a5376d5c/cmd2-2.4.3.tar.gz"
     sha256 "71873c11f72bd19e2b1db578214716f0d4f7c8fa250093c601265a9a717dee52"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "debtcollector" do
@@ -310,10 +298,6 @@ class Openstackclient < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 

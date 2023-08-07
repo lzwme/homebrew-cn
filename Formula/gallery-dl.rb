@@ -10,21 +10,18 @@ class GalleryDl < Formula
   head "https://github.com/mikf/gallery-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7cde347e133715c1cda93f8d73ae81ffbc7899ead41697ee73c7046b3e9115e3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e71a5b4c6b888f5edb545e58214239314f5f553149fa9a91b4e85d425a71ce0a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7e19519cac80490cd7602fb649f3c7fa32f8a8e95d3fe9b06bff4cc11f31ccb1"
-    sha256 cellar: :any_skip_relocation, ventura:        "086a2a55862f13d7576207ce6338b5bf703950ed2cb395f98eae6dc1ca43245c"
-    sha256 cellar: :any_skip_relocation, monterey:       "524f1a91ba4062dd6e073f65f4523d8b9ae8885a8388d5fe99c3f907b2427827"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a1e15c23a70318e635bcbdc60f8e82825372f86157d2a0fc0050adb9035b1fc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a407f0a842d7f71ad4248dc7f59ed05849a8b8e99f92b283eed7fdd5dbbff00f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "15809a724a7ecb8460f6b1a31a8c3dd487d3db3ae855f4ef844eb629595e0ca6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "772197c1740c4a4cf76a6800c41335c5169b8ca07a25e3a226194d679df7390f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "54504ee2a636e07985a2fc781693cfafad7961432f58e8a81a419aa9bd47d28b"
+    sha256 cellar: :any_skip_relocation, ventura:        "ea3994b29450abe1c7601003f04aa3203b730c0351c707e70febd8f4e67b680b"
+    sha256 cellar: :any_skip_relocation, monterey:       "f48275647e74622d59965f9bb1d7110ee7aa95f4022ade1dd72155b3c7e09989"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c566b11083df7d8e1d915ec1d626669055694ae797da5b0bac67c7cd0fe50e05"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0da6c094ec16f44a23a35d4e8dcb4895eebede063af843067015dd057053425d"
   end
 
+  depends_on "python-certifi"
   depends_on "python@3.11"
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"

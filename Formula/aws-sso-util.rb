@@ -10,15 +10,17 @@ class AwsSsoUtil < Formula
   head "https://github.com/benkehoe/aws-sso-util.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd132d3f0e2b183ce830926b0fac0c0a81b248c4f59a273da520d13c44bdc697"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a2c8be83f5e68929e2bd7ab64c1ac898631c1b3b443cc507ba0f29fca32b8c69"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1b5833f19b218e08e90efb844657b71eca9048af93cd80b87941bb3c0d18e55b"
-    sha256 cellar: :any_skip_relocation, ventura:        "0c5dab5a527ff9cd994451387fbacd2f70b9408ea00404505234c875dbab91b9"
-    sha256 cellar: :any_skip_relocation, monterey:       "76499bc6ae84fe3d34106732a90653c8465fe9123726d0e0766fa607963b2ddc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bdcb1eb52cb7a5d4af32d18794e590930ff5b4be78760028309026d557eda079"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f01b32504735060fe474b12049a18e79d7062084056d3977f9babb141bbd6b1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "69f7336da23ed6be7393b0bdf17fd0a471da6613e376ccfc4d06b5781b73eb98"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2672943e06f2d4f40efbe1595129e6a33e944649838c9f6edcfc06b9202a869c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e2dbc11bab91ebc8658b72ea97aed4e0d59d35a7cd25021f48f8543915c7486f"
+    sha256 cellar: :any_skip_relocation, ventura:        "719649540a3131a8156f170239fb1205b5db63d7e01a20b3a141fcd8e9595de7"
+    sha256 cellar: :any_skip_relocation, monterey:       "f57561bfb38e98c74f6cba5fb8c47e66691e09b49ac3ff73f97f835cd2fa6b3b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "12a5619a1abccd610ade6ad3a7d48153abaebb776efa758cd53c4530e5118228"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7fe2cb30496aa396d061e6a24c5497a99f1c0dfe88ed834f09ea383a25322f73"
   end
 
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -46,11 +48,6 @@ class AwsSsoUtil < Formula
   resource "botocore" do
     url "https://files.pythonhosted.org/packages/8f/6f/f0eb30793d6582d0ade2d98cc2de5cbf59eb9bc1c57e44d8a9741b3523e3/botocore-1.31.10.tar.gz"
     sha256 "736a9412f405d6985570c4a87b533c2396dd8d4042d8c7a0ca14e73d4f1bcf9d"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do

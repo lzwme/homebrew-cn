@@ -9,17 +9,19 @@ class Chatblade < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b0ed3f981dd53db1c454a014886a40aae3771463bfd1dd63af1223270caa9aa6"
-    sha256 cellar: :any,                 arm64_monterey: "24f7e2a3b936434c51180ff02679bf25bb1b61bffbfc21e1a654160a04d4dcb9"
-    sha256 cellar: :any,                 arm64_big_sur:  "4fd53066ced3bebf833afdd383e9775996790e8d9c15f9b666ae104dcd6eecdd"
-    sha256 cellar: :any,                 ventura:        "65e2ec5693a6cd9eed600a37f2d0cc20281f6f322af82d02d4de3ef2d9acbbb2"
-    sha256 cellar: :any,                 monterey:       "c3f2730097f501179b39bb6ea6511bd93d22521a17dd266b54aa3dc6def11aba"
-    sha256 cellar: :any,                 big_sur:        "c4eb83160aaeda296e8b389e437e2298a132fac2702cc0c409b580a87773d516"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42a4a9078b7a98d8cba511135f206af4968d56305363bb9fe47c69301e677267"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "be159c5b785e725032f2f4331e71b01f89d637baba34fd58fa135831f5b14fee"
+    sha256 cellar: :any,                 arm64_monterey: "2383ff68bbf2dd4f78df6eec7a5e886372e4f8f701aab138045cff04d73931cb"
+    sha256 cellar: :any,                 arm64_big_sur:  "4cb3e9654db21f76489123da21a957f69b047b12d5109cd3c5a4fba2bb1729d4"
+    sha256 cellar: :any,                 ventura:        "5f81c7a51e514164c964915c6ae4fa20f56da06878d6578ccc9efcbd87470ce8"
+    sha256 cellar: :any,                 monterey:       "79945074a464b0743d92cfd7478d9eb988f516e51e8a464d943ed43588d6a235"
+    sha256 cellar: :any,                 big_sur:        "ba0d61f080ca3e9eb0e9a0bdec426068ee10c11881641d2fb84eeef93139d198"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f742a937a3ef573ec7c2e665c3c2f3048da1675e8a48af3a3c912137f78a7c8"
   end
 
   depends_on "rust" => :build
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
 
@@ -41,11 +43,6 @@ class Chatblade < Formula
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
     sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
