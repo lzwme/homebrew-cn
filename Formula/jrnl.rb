@@ -9,19 +9,18 @@ class Jrnl < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "43849569ef302c422d789729e4b0ad3351b97a2aafa5e5dda6aa82ecb5c06697"
-    sha256 cellar: :any,                 arm64_monterey: "a9032dcb392bf26a72fa924dd87bab4c5166ffa7cd71cc7e390b0afcf83a62ee"
-    sha256 cellar: :any,                 arm64_big_sur:  "78d9f039f1f7d253ed334e957ae89be7b25f0579e310d23f749295256efa87e3"
-    sha256 cellar: :any,                 ventura:        "b7458aacb4ce497710191b001a257ca20ffa4f8b93f8a2849020fa43b5a77b0c"
-    sha256 cellar: :any,                 monterey:       "cf666c7e7be7d1807e8bf9f967c82816e902d7ba04a1fdaff0daf4fda97f2688"
-    sha256 cellar: :any,                 big_sur:        "b47a1cd95adb1937d92592613314769ee94918b90217d9173b4575ee5cad42af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "347b2c0c474914c1c28d979bdeaf02600d8037f382663784be3aeb36de726cb4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "67b0026495409ebebfce0b6ed8a22069c8426a2499ba63b5966a2aba7d8d6e74"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c2a30431dfcfd0e13816e75c0816cb55cb1bd76e85d3d19e4b20ddc51b108004"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d55ac08615e2122b290c67bb12bf4607161019a8b446aca538da941087efe6ad"
+    sha256 cellar: :any_skip_relocation, ventura:        "0df93cb3233774e5bf8429bc03d40d8d1132bf0bac5d1cd036b5d376d220d31e"
+    sha256 cellar: :any_skip_relocation, monterey:       "24c931229d1b451614453db6131286c163618f4b697a930c37a1c8208e47896b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c64ddef05328ade635954a7f394b8a11a78315c69626d3096e0c27e9d2f41547"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e62b29f13d1121055b7dcb4a4c8786601b9de7c4aaa80f4d3d46e9059dd2d68c"
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
+  depends_on "keyring"
   depends_on "pygments"
   depends_on "python@3.11"
   depends_on "six"
@@ -38,26 +37,6 @@ class Jrnl < Formula
     sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
   end
 
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
-  end
-
-  resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/33/44/ae06b446b8d8263d712a211e959212083a5eda2bf36d57ca7415e03f6f36/importlib_metadata-6.8.0.tar.gz"
-    sha256 "dbace7892d8c0c4ac1ad096662232f831d4e64f4c4545bd53016a3e9d4654743"
-  end
-
-  resource "jaraco-classes" do
-    url "https://files.pythonhosted.org/packages/8b/de/d0a466824ce8b53c474bb29344e6d6113023eb2c3793d1c58c0908588bfa/jaraco.classes-3.3.0.tar.gz"
-    sha256 "c063dd08e89217cee02c8d5e5ec560f2c8ce6cdc2fcdc2e68f7b2e5547ed3621"
-  end
-
-  resource "keyring" do
-    url "https://files.pythonhosted.org/packages/14/c5/7a2a66489c66ee29562300ddc5be63636f70b4025a74df71466e62d929b1/keyring-24.2.0.tar.gz"
-    sha256 "ca0746a19ec421219f4d713f848fa297a661a8a8c1504867e55bfb5e09091509"
-  end
-
   resource "markdown-it-py" do
     url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
     sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
@@ -66,11 +45,6 @@ class Jrnl < Formula
   resource "mdurl" do
     url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
-  end
-
-  resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/b7/56/7daf104a9cb6af39c00127aee6904b01040dbb12cf1ceedd6a087c097055/more-itertools-10.0.0.tar.gz"
-    sha256 "cd65437d7c4b615ab81c0640c0480bc29a550ea032891977681efd28344d51e1"
   end
 
   resource "parsedatetime" do
@@ -113,30 +87,7 @@ class Jrnl < Formula
     sha256 "46eb99ad4bdb71f3f72b7d24f4267753e240944ecfc16f25d2719ba89827a803"
   end
 
-  resource "zipp" do
-    url "https://files.pythonhosted.org/packages/e2/45/f3b987ad5bf9e08095c1ebe6352238be36f25dd106fde424a160061dce6d/zipp-3.16.2.tar.gz"
-    sha256 "ebc15946aa78bd63458992fc81ec3b6f7b1e92d51c35e6de1c3804e73b799147"
-  end
-
-  resource "jeepney" do
-    on_linux do
-      url "https://files.pythonhosted.org/packages/d6/f4/154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdf/jeepney-0.8.0.tar.gz"
-      sha256 "5efe48d255973902f6badc3ce55e2aa6c5c3b3bc642059ef3a91247bcfcc5806"
-    end
-  end
-
-  resource "SecretStorage" do
-    on_linux do
-      url "https://files.pythonhosted.org/packages/53/a4/f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691/SecretStorage-3.3.3.tar.gz"
-      sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
-    end
-  end
-
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 

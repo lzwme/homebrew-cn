@@ -9,27 +9,26 @@ class Ocrmypdf < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "0810343d1f043dce0fa1cf82c4b6a77b96f56d1e21df1028ba04afd5794d540c"
-    sha256 cellar: :any,                 arm64_monterey: "1d2c0f50fb9eaceb39bc8c288210046b9fbd6b2438466d8b1c40c0591d267fab"
-    sha256 cellar: :any,                 arm64_big_sur:  "62824b161524cb7ba4e68340672f3bfce521b69466435d4f42b525b76c32e32d"
-    sha256 cellar: :any,                 ventura:        "18daebdd2663aae22d32e43ed26547b1cfe5455b59210e414ff535a6b12109ca"
-    sha256 cellar: :any,                 monterey:       "1ac44b4dc4191c15bc47707fdb7c541739a8b86abd543eb221ccf77d80f5e4c4"
-    sha256 cellar: :any,                 big_sur:        "6bea35b8df0524737f96b004e06a298f907a00eda6ebc0f5f0b86e052913133e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3a991cd218c1c206ab541d2d19ae1402539af6c2e636065b3696ccfd9d68e98"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "69ca100e192138f9381b576f7afe888e3d5cbbd15ea5b427b56f38a8502fe13c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "72c89f0c6b07a11e20b773aeaba63fbd066a524adf6fc904eb6ebd0b34d93874"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "63076a1580793d7e9be38bfb79e241bead270f9b0b5c640f9f41e9fd248c11bf"
+    sha256 cellar: :any_skip_relocation, ventura:        "0f893ebf7bd5464a6cd9af7c7f86c7d036e98dc810e54ef85a0defc859d97bb2"
+    sha256 cellar: :any_skip_relocation, monterey:       "35959e409effbf3a3b3b330f652b5e23d21ee1d686e5fe9b8c04cff1c56c50b7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4330af3bdf59ed7c93a76f66874a99b771448e7db7cf90744f3d5cdb3ac53582"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a00aadc14f7b055c46a4605cbef8959c766fec9a6eb3e4c16f51921cdafbd526"
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "cffi"
   depends_on "freetype"
   depends_on "ghostscript"
   depends_on "jbig2enc"
   depends_on "libpng"
-  depends_on "openssl@3"
   depends_on "pillow"
   depends_on "pngquant"
   depends_on "pybind11"
   depends_on "pycparser"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "qpdf"
   depends_on "tesseract"
@@ -49,11 +48,6 @@ class Ocrmypdf < Formula
   resource "coloredlogs" do
     url "https://files.pythonhosted.org/packages/cc/c7/eed8f27100517e8c0e6b923d5f0845d0cb99763da6fdee00478f91db7325/coloredlogs-15.0.1.tar.gz"
     sha256 "7c991aa71a4577af2f82600d8f8f3a89f936baeaf9b50a9c197da014e5bf16b0"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "deprecation" do

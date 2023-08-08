@@ -1,8 +1,8 @@
 class Xbyak < Formula
   desc "C++ JIT assembler for x86 (IA32), x64 (AMD64, x86-64)"
   homepage "https://github.com/herumi/xbyak"
-  url "https://ghproxy.com/https://github.com/herumi/xbyak/archive/refs/tags/v6.72.tar.gz"
-  sha256 "ea24dd345c74de196dc89724bb8ac02f712981c41a78b8db3568513965dbc8de"
+  url "https://ghproxy.com/https://github.com/herumi/xbyak/archive/refs/tags/v6.73.tar.gz"
+  sha256 "41f3dc7727a48c751024c92fa4da24a4a1e0ed16b7930c79d05b76960b19562d"
   license "BSD-3-Clause"
   head "https://github.com/herumi/xbyak.git", branch: "master"
 
@@ -12,13 +12,7 @@ class Xbyak < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "03863e0557b8f75fafda73a69047eaa5385111436316ad2afb02ccda168a326d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "03863e0557b8f75fafda73a69047eaa5385111436316ad2afb02ccda168a326d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "03863e0557b8f75fafda73a69047eaa5385111436316ad2afb02ccda168a326d"
-    sha256 cellar: :any_skip_relocation, ventura:        "03863e0557b8f75fafda73a69047eaa5385111436316ad2afb02ccda168a326d"
-    sha256 cellar: :any_skip_relocation, monterey:       "03863e0557b8f75fafda73a69047eaa5385111436316ad2afb02ccda168a326d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "03863e0557b8f75fafda73a69047eaa5385111436316ad2afb02ccda168a326d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6983a30eb6cf8ca221aa10db6cb96ace697ea0ada3949cddf9407f93ecdb02e8"
+    sha256 cellar: :any_skip_relocation, all: "49c122bdac09df7fdedf958def1c616590a414a92e0cae12aabb304a8186e409"
   end
 
   depends_on "cmake" => :build

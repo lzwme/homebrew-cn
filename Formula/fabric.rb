@@ -3,28 +3,25 @@ class Fabric < Formula
 
   desc "Library and command-line tool for SSH"
   homepage "https://www.fabfile.org/"
-  url "https://files.pythonhosted.org/packages/d8/b0/fc6880fd6e24b60ccb5e3e1b673cec847d56b8176311f77c63f542fe9fd4/fabric-3.1.0.tar.gz"
-  sha256 "ea1c5ea3956d196b5990ba720cc8ee457fa1b9c6f265ab3b643ff63b05e8970a"
+  url "https://files.pythonhosted.org/packages/34/6a/8e8734a47dad3cf6cbf4ba8631340814cd374ea58452133a62714dc6338b/fabric-3.2.1.tar.gz"
+  sha256 "81293d7e2b509d37e51bb49a0151191455f5a7ea11ebaa158bdee995b844c668"
   license "BSD-2-Clause"
-  revision 3
   head "https://github.com/fabric/fabric.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "2c7eb542f600277b160d133ee8574623f6f5db34b27337e8abc2ae33074e1bac"
-    sha256 cellar: :any,                 arm64_monterey: "20a6aa6f83f9cb440dbd2ffe34ff089b96d9f67d99baf1e5a1238c022beb4da3"
-    sha256 cellar: :any,                 arm64_big_sur:  "1975e0d01e9993b56cc3d94329e8aa8419b3a73de5d30479d91bea1eacbc922b"
-    sha256 cellar: :any,                 ventura:        "96f7f464e545acbaaf6505f6ed9e24a8f142a63afa3c8a17b543da51007e7d83"
-    sha256 cellar: :any,                 monterey:       "b266b404907aa8d4c35eed783288e35d6833e24a3113256cc798e08c607dc56e"
-    sha256 cellar: :any,                 big_sur:        "0f20943dccef5b9e5900df698441d2e8fff4b69146679004530fa8d10776d6b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a44298a41c3e71626aa6fdb084e82758d344d33460a4a7c99a0d4cfb8bfe55d"
+    sha256 cellar: :any,                 arm64_ventura:  "2a44e63aebb1059c09035289bf10f9edd127816c14f28778c20334046249ffad"
+    sha256 cellar: :any,                 arm64_monterey: "4d984a18c6bd0fc5050f92016435c32ef95630cc663e44f8e99524ff0b9e042b"
+    sha256 cellar: :any,                 arm64_big_sur:  "cf95c2e016afaa6178c22431463e95bfd90286de3fdb886b880f728b3387474e"
+    sha256 cellar: :any,                 ventura:        "ed088d699657b0700077a847af3c1a026204ff6b32b36dbce4586905604c80f4"
+    sha256 cellar: :any,                 monterey:       "88c5649231e8bacc40ee02833f03b161384bb4518aa9d49f9c449a3dfb6f25aa"
+    sha256 cellar: :any,                 big_sur:        "5a9773a10bd322e0364d27a0c359c839f33977a083e94fdad3021ca0d987cd2d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48eebd617e0242ce94e829b4cca34875849a75aac7abc258038c72112e443ba9"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
+  depends_on "rust" => :build # for bcrypt
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "pyinvoke"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
 
   resource "bcrypt" do
@@ -32,14 +29,14 @@ class Fabric < Formula
     sha256 "27d375903ac8261cfe4047f6709d16f7d18d39b1ec92aaf72af989552a650ebd"
   end
 
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
-  end
-
   resource "decorator" do
     url "https://files.pythonhosted.org/packages/66/0c/8d907af351aa16b42caae42f9d6aa37b900c67308052d10fdce809f8d952/decorator-5.1.1.tar.gz"
     sha256 "637996211036b6385ef91435e4fae22989472f9d571faba8927ba8253acbc330"
+  end
+
+  resource "deprecated" do
+    url "https://files.pythonhosted.org/packages/92/14/1e41f504a246fc224d2ac264c227975427a85caf37c3979979edb9b1b232/Deprecated-1.2.14.tar.gz"
+    sha256 "e5323eb936458dccc2582dc6f9c322c852a775a27065ff2b0c4970b9d53d01b3"
   end
 
   resource "paramiko" do
@@ -52,11 +49,12 @@ class Fabric < Formula
     sha256 "8ac7448f09ab85811607bdd21ec2464495ac8b7c66d146bf545b0f08fb9220ba"
   end
 
-  def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
+  resource "wrapt" do
+    url "https://files.pythonhosted.org/packages/f8/7d/73e4e3cdb2c780e13f9d87dc10488d7566d8fd77f8d68f0e416bfbd144c7/wrapt-1.15.0.tar.gz"
+    sha256 "d06730c6aed78cee4126234cf2d071e01b44b915e725a6cb439a879ec9754a3a"
+  end
 
+  def install
     virtualenv_install_with_resources
 
     # we depend on pyinvoke, but that's a separate formula, so install a `.pth` file to link them

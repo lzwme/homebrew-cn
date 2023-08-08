@@ -1,18 +1,18 @@
 class Oras < Formula
   desc "OCI Registry As Storage"
   homepage "https://github.com/oras-project/oras"
-  url "https://ghproxy.com/https://github.com/oras-project/oras/archive/v1.0.0.tar.gz"
-  sha256 "1515f84ebad7dfce80edc7fd1771caf312b4d84c348832c34e8dd77f7d4374cb"
+  url "https://ghproxy.com/https://github.com/oras-project/oras/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "c0750d1837c449232ad8459dea55a7c660d822ce2d17a8a7882bfc3518b01646"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "999c6c836e1c77915bad96be54b29960a53b4f146b4e7d0eba94701976287156"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "999c6c836e1c77915bad96be54b29960a53b4f146b4e7d0eba94701976287156"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "999c6c836e1c77915bad96be54b29960a53b4f146b4e7d0eba94701976287156"
-    sha256 cellar: :any_skip_relocation, ventura:        "4243fa70f6048a2e3ecfc93f43dabe2ecc51aa64a373dbda7e24d700d5561fda"
-    sha256 cellar: :any_skip_relocation, monterey:       "4243fa70f6048a2e3ecfc93f43dabe2ecc51aa64a373dbda7e24d700d5561fda"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4243fa70f6048a2e3ecfc93f43dabe2ecc51aa64a373dbda7e24d700d5561fda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6cb641af3dc83987f1a279e0b0f802ab2ada4ac92e6bdf9b86070b34f15f9117"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8690763d0a9d0be6574ee4cfdb8edbab302f232c8056bae2d0083f170719afed"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8690763d0a9d0be6574ee4cfdb8edbab302f232c8056bae2d0083f170719afed"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8690763d0a9d0be6574ee4cfdb8edbab302f232c8056bae2d0083f170719afed"
+    sha256 cellar: :any_skip_relocation, ventura:        "7aa41c77868644a275e722b7cb9230296721ac0c31a467391164ded69d985773"
+    sha256 cellar: :any_skip_relocation, monterey:       "7aa41c77868644a275e722b7cb9230296721ac0c31a467391164ded69d985773"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7aa41c77868644a275e722b7cb9230296721ac0c31a467391164ded69d985773"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4e378e9d1ec53a8aae7817d58c57522e92d99e2e3aac735555650063aee6742"
   end
 
   depends_on "go" => :build

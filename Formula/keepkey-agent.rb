@@ -9,25 +9,24 @@ class KeepkeyAgent < Formula
   revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b24e0b0adc47e73232b625dfb0fcada42b3f4075b784b640d999b4b7190ebc46"
-    sha256 cellar: :any,                 arm64_monterey: "e15107caac75189dd84abb0fb947ada153c385f54ca3e677726f99ef7b49132e"
-    sha256 cellar: :any,                 arm64_big_sur:  "450aef2ddb82eba5eede13723d8716dd3a3b65c9d8305c8a5aa7c748da608a53"
-    sha256 cellar: :any,                 ventura:        "c31059abd3d74075d524733d6bbac585dfa0c40575ebffbd45fdd1c28e567b5d"
-    sha256 cellar: :any,                 monterey:       "96a0afd351289ba37315fde718220740da93081a0fd67e729d5ebd9248c5610d"
-    sha256 cellar: :any,                 big_sur:        "18dd8e8f929e1d4b2d1054f0593317e8e14091126badcf6efcb471c7376144c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "398a5139373cea7805b82802e54eacf5460e001b82956d96a375566b31f63581"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f128ad26103281c1bdcb34e0dc1d242a6f363b2d424b1200486de40e1bf5e776"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "41be839b91f5ca50df4cab3a0ebfb1fb698702d0631ff955798d17614062f9f7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "800f91926c792bd3d9c923d3d725a7b8a37c5c02abef19281eab6da16850feee"
+    sha256 cellar: :any_skip_relocation, ventura:        "eaf3ae3e2a981b46be7c29a9eced5e14936260f484924bdac1a0c39efdaf0372"
+    sha256 cellar: :any_skip_relocation, monterey:       "0964b9a99b2186e372beeb387b5e5f7294bf8ed1cdba2ae1b7ff6d13e77a1f3c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "363dc87d982c8ec74144ca3d894145b956609fdfa5850e755978c5a5518cdace"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac9da1b8bb8e33baba85812c8affcf08aa2aec625807ab49b650895b9206d910"
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "cffi"
   depends_on "docutils"
   depends_on "libusb"
-  depends_on "openssl@3"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "six"
 
-  resource "backports.shutil_which" do
+  resource "backports-shutil-which" do
     url "https://files.pythonhosted.org/packages/a0/22/51b896a4539f1bff6a7ab8514eb031b9f43f12bff23f75a4c3f4e9a666e5/backports.shutil_which-3.5.2.tar.gz"
     sha256 "fe39f567cbe4fad89e8ac4dbeb23f87ef80f7fe8e829669d0221ecdb0437c133"
   end
@@ -37,14 +36,9 @@ class KeepkeyAgent < Formula
     sha256 "7d6db8214603bd7871fcfa6c0826ef68b85b0abd90fa21c285a9c5e21d2bd899"
   end
 
-  resource "ConfigArgParse" do
-    url "https://files.pythonhosted.org/packages/16/05/385451bc8d20a3aa1d8934b32bd65847c100849ebba397dbf6c74566b237/ConfigArgParse-1.5.3.tar.gz"
-    sha256 "1b0b3cbf664ab59dada57123c81eff3d9737e0d11d8cf79e3d6eb10823f1739f"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/6a/f5/a729774d087e50fffd1438b3877a91e9281294f985bda0fd15bf99016c78/cryptography-39.0.1.tar.gz"
-    sha256 "d1f6198ee6d9148405e49887803907fe8962a23e6c6f83ea7d98f1c0de375695"
+  resource "configargparse" do
+    url "https://files.pythonhosted.org/packages/70/8a/73f1008adfad01cb923255b924b1528727b8270e67cb4ef41eabdc7d783e/ConfigArgParse-1.7.tar.gz"
+    sha256 "e7067471884de5478c58a511e529f0f9bd1c66bfef1dea90935438d6c23306d1"
   end
 
   resource "ecdsa" do
@@ -53,8 +47,14 @@ class KeepkeyAgent < Formula
   end
 
   resource "hidapi" do
-    url "https://files.pythonhosted.org/packages/78/0a/d71f35a8dcbe88dab21cd668a62b688ea6dd45872feba45a97efd0452c19/hidapi-0.13.1.tar.gz"
-    sha256 "99b18b28ec414ef9b604ddaed08182e486a400486f31ca56f61d537eed1d17cf"
+    url "https://files.pythonhosted.org/packages/95/0e/c106800c94219ec3e6b483210e91623117bfafcf1decaff3c422e18af349/hidapi-0.14.0.tar.gz"
+    sha256 "a7cb029286ced5426a381286526d9501846409701a29c2538615c3d1a612b8be"
+
+    # patch to build with Cython 3+, remove in next release
+    patch do
+      url "https://github.com/trezor/cython-hidapi/commit/749da6931f57c4c30596de678125648ccfd6e1cd.patch?full_index=1"
+      sha256 "e3d70eb9850c7be0fdb0c31bf575b33be5c5848def904760a6ca9f4c3824f000"
+    end
   end
 
   resource "keepkey" do
@@ -87,41 +87,39 @@ class KeepkeyAgent < Formula
     sha256 "7cd532c4566d0e6feafecc1059d04c7915aec8e182d1cf7adee8b24ef1e2e6ab"
   end
 
-  resource "PyMsgBox" do
+  resource "pymsgbox" do
     url "https://files.pythonhosted.org/packages/7d/ff/4c6f31a4f08979f12a663f2aeb6c8b765d3bd592e66eaaac445f547bb875/PyMsgBox-1.0.9.tar.gz"
     sha256 "2194227de8bff7a3d6da541848705a155dcbb2a06ee120d9f280a1d7f51263ff"
   end
 
-  resource "PyNaCl" do
+  resource "pynacl" do
     url "https://files.pythonhosted.org/packages/a7/22/27582568be639dfe22ddb3902225f91f2f17ceff88ce80e4db396c8986da/PyNaCl-1.5.0.tar.gz"
     sha256 "8ac7448f09ab85811607bdd21ec2464495ac8b7c66d146bf545b0f08fb9220ba"
   end
 
   resource "python-daemon" do
-    url "https://files.pythonhosted.org/packages/d9/3c/727b06abb46fead341a2bdad04ba4a4db5395c44c45d8ba0aa82b517e462/python-daemon-2.3.2.tar.gz"
-    sha256 "3deeb808e72b6b89f98611889e11cc33754f5b2c1517ecfa1aaf25f402051fb5"
+    url "https://files.pythonhosted.org/packages/84/50/97b81327fccbb70eb99f3c95bd05a0c9d7f13fb3f4cfd975885110d1205a/python-daemon-3.0.1.tar.gz"
+    sha256 "6c57452372f7eaff40934a1c03ad1826bf5e793558e87fef49131e6464b4dae5"
   end
 
   resource "semver" do
-    url "https://files.pythonhosted.org/packages/31/a9/b61190916030ee9af83de342e101f192bbb436c59be20a4cb0cdb7256ece/semver-2.13.0.tar.gz"
-    sha256 "fa0fe2722ee1c3f57eac478820c3a5ae2f624af8264cbdf9000c980ff7f75e3f"
+    url "https://files.pythonhosted.org/packages/46/30/a14b56e500e8eabf8c349edd0583d736b231e652b7dce776e85df11e9e0b/semver-3.0.1.tar.gz"
+    sha256 "9ec78c5447883c67b97f98c3b6212796708191d22e4ad30f4570f840171cbce1"
   end
 
-  resource "Unidecode" do
+  resource "unidecode" do
     url "https://files.pythonhosted.org/packages/0b/25/37c77fc07821cd06592df3f18281f5e716bc891abd6822ddb9ff941f821e/Unidecode-1.3.6.tar.gz"
     sha256 "fed09cf0be8cf415b391642c2a5addfc72194407caee4f98719e40ec2a72b830"
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/a2/b8/6a06ff0f13a00fc3c3e7d222a995526cbca26c1ad107691b6b1badbbabf1/wheel-0.38.4.tar.gz"
-    sha256 "965f5259b566725405b05e7cf774052044b1ed30119b5d586b2703aafe8719ac"
+    url "https://files.pythonhosted.org/packages/c9/3d/02a14af2b413d7abf856083f327744d286f4468365cddace393a43d9d540/wheel-0.41.1.tar.gz"
+    sha256 "12b911f083e876e10c595779709f8a88a59f45aacc646492a67fe9ef796c1b47"
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
+    # Workaround to avoid creating libexec/bin/__pycache__ which gets linked to bin
+    ENV["PYTHONPYCACHEPREFIX"] = buildpath/"pycache"
     # Help gcc to find libusb headers on Linux.
     ENV.append "CFLAGS", "-I#{Formula["libusb"].opt_include}/libusb-1.0" unless OS.mac?
     virtualenv_install_with_resources

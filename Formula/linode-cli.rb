@@ -9,27 +9,24 @@ class LinodeCli < Formula
   head "https://github.com/linode/linode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc367cc2e6728e6d054a5a4632c66da9cfe8822ed50430c502490bd3f553ae25"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "404260fa52f4457149494fcb9154be5214ae1f3dc5340259a4d908bbf011c822"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d347bfd946b8864ef681394c980685534b57b52cc69ba87b550fc95bbb2c03a2"
-    sha256 cellar: :any_skip_relocation, ventura:        "1d59464706c75886a0b444e328fdfd83c20e0e1f319bd9a28bfd9896e7f019b5"
-    sha256 cellar: :any_skip_relocation, monterey:       "86ba8b384f478d8a08cfa62e5757435d1378aed021311dfb4e80aa219ba92bf3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bef3d4523db38117c74ba54575e7a4a204355e50aa873c966ed9fb953b283be6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa339d3b6d069a2d55b58961c7e2f2431dbd5faa87303051d1a8e2b9a92b3c61"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "26a4a333e5f6f93dce367e3beecf9e9f322cede1b5293678771c38d90b75cb75"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "746e3ce41e6e3377072b7abe5bd9b8c2ef4efcc91666770a1c51b0537d2cf304"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "70c15817f4e28f549d960f8157b16cfd142252a8bd89f3911370828e30f345a2"
+    sha256 cellar: :any_skip_relocation, ventura:        "4beeb531767f13665910b3331f219e74668e30f95b1091154ce9b043fb6bd000"
+    sha256 cellar: :any_skip_relocation, monterey:       "cc33ae131db6a70facdc5ce537dae1fa71aa318519e67fc5805fe289ab8f5e4a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c3c453e295cafe46e20ea018664ad581d24e99853aa9735d310a523d765fc353"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6d84f0d6bc87552fcd4e46a5a51d290a0106b3835dc628487582d38cc202696"
   end
 
   depends_on "pygments"
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
 
   resource "linode-api-spec" do
     url "https://ghproxy.com/https://raw.githubusercontent.com/linode/linode-api-docs/refs/tags/v4.159.0/openapi.yaml"
     sha256 "a4761d7bb1b995fe88c3e4bc592ab1465c6eae6ec448186097f9fcc9a2920acb"
-  end
-
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
@@ -73,7 +70,7 @@ class LinodeCli < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.11", system_site_packages: false)
+    venv = virtualenv_create(libexec, "python3.11")
     venv.pip_install resources.reject { |r| r.name == "linode-api-spec" }
     buildpath.install resource("linode-api-spec")
 

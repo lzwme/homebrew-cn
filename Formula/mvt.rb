@@ -9,24 +9,21 @@ class Mvt < Formula
   head "https://github.com/mvt-project/mvt.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "70ce8f104a00dd31703a4e2a0c140543a267a04f336333c170db041ebeac66d5"
-    sha256 cellar: :any,                 arm64_monterey: "d1d74322a5244291e5edd2a25cd92f7b900189e6e773aada1e5a234d2db4e210"
-    sha256 cellar: :any,                 arm64_big_sur:  "c85234415906aff573fb43aa8cec8206252a0a0f1fff9a8e71ab81e5ca418bf1"
-    sha256 cellar: :any,                 ventura:        "98a8878d745448a74a38dd0f216bf576e808ce6679c86b2b8507648d7edde662"
-    sha256 cellar: :any,                 monterey:       "c78758b0f13e1124e594947a487dcd9fded4624b1f64a39e04ee52bb01f500fd"
-    sha256 cellar: :any,                 big_sur:        "fcab78bbc3b55dc10924ca88e986dd355f3a773b35c41716067d5fced55bed31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "606e588fa553d0c70a6188b2181044c7ba7c2cd918440820d51ea7218aafbae0"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "42e9523eb69dd367af172cb918503411b0bf6c9a40345893e21afbc924ef8a67"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c1c155660c27bea3c765b01c4a55112edc3886cbb9eafd844ff84b6e4d1a52f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d751d850153cbf54ba7a0d4254a2af5d24c4dc85b47631ddb5d2818a060ef1ac"
+    sha256 cellar: :any_skip_relocation, ventura:        "8d3fdd652eba9797e4e87f1b02f8618c84e425ab1a6d6652d1f44dc66454dad8"
+    sha256 cellar: :any_skip_relocation, monterey:       "ab172aa3827a280625768f47be4586380f5bdb586046f941d9a0316f9cb07f61"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c13d83935960264c3da55e40148af696555164ccef6d5050d0f9f0dbbdc3a349"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9b0fcc7a2e19fe05f581960fc27ba88955f9d78734cd6dffbe03f225cc40c07"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "pyyaml"
 
@@ -48,11 +45,6 @@ class Mvt < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
     sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "idna" do
@@ -137,10 +129,6 @@ class Mvt < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 

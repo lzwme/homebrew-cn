@@ -9,33 +9,30 @@ class Howdoi < Formula
   revision 4
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "4dc00933d583ba67eabb6fb1516d10be2c2b615425178e5f71ed5ededea53a5d"
-    sha256 cellar: :any,                 arm64_monterey: "10e0a412d6ac007ed13c87d31f963feee921d57bfe09e7a98d09c4e2ece739fc"
-    sha256 cellar: :any,                 arm64_big_sur:  "534fe4dc336e62c364bb061a12c885f48688e147cfdd4e357c438443ab37ecbe"
-    sha256 cellar: :any,                 ventura:        "b061ace94b4048335b9d4769ea9f3b17e856a48ae4e289301428d945ecf02aef"
-    sha256 cellar: :any,                 monterey:       "33aadb600d1d8e1ed561fee50a8fb9899ebe3dafa03f4cdcea34cbd1f02400ad"
-    sha256 cellar: :any,                 big_sur:        "179fceb7fabe9141c828a57cc464516686196fe36f4f011848c7cdef6ff585a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dbfeab09e8c3b8622f23b593dca3b6aa518616b3ba4109b67007debe31debc6c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c67a026b9b0cc0841066a58e3183d47c2839118cc820f41d1a4dacccc123953a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "235c81462e7fc3b3a3c822b51aa95ba55c749574bf40aa419251bce7c69987e6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4b0636bffb88bac42470c12b829478b1696bff91e8d9a5dac9ad2ed097f8be22"
+    sha256 cellar: :any_skip_relocation, ventura:        "e09e4ea1b0e39d0a561251dab53243bdca1dddbe018686e6cbe229746dfacea3"
+    sha256 cellar: :any_skip_relocation, monterey:       "6d4a4b417003feee30d8d20c3ff4f5d6fc734458f3d0b201afa62b9ea0c2b2a1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9f9fed5ac1396cf0d9807e4b3c5f49c1a818086569b3c3d7d755be84293aef8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ebcd9370c8f4ff7d67741d17267c6bcd60015f340622a678c0a7dfcf585b501"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
+  # `pkg-config` and `rust` are for `rpds-py` via `terminaltables`
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "six"
 
+  # For `lxml` resource.
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
-
-  on_linux do
-    depends_on "rust" => :build
-  end
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
@@ -60,11 +57,6 @@ class Howdoi < Formula
   resource "colorama" do
     url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
     sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "cssselect" do
@@ -148,10 +140,6 @@ class Howdoi < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 

@@ -9,21 +9,20 @@ class Sgr < Formula
   revision 5
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "6ef9e96da67491044c03c716845c85930cee98a70bf40b9fe31a200ebf110775"
-    sha256 cellar: :any,                 arm64_monterey: "fe226f3149b937b85601a6a9312e6515a46417ae728b39f9b625277493f407eb"
-    sha256 cellar: :any,                 arm64_big_sur:  "1e46933cac186ecc78b6e57102dbc0495a9fa88df026c19856e1dc75ca7860fe"
-    sha256 cellar: :any,                 ventura:        "bf8d9641f4695df8524cf68f64f6889bbd4690aa79fb9e2cd55c0b757e60cb87"
-    sha256 cellar: :any,                 monterey:       "0dde148f630f266ca3645332b8db8b195dcf2363a5ab20b77e70b4ddd7e20153"
-    sha256 cellar: :any,                 big_sur:        "93a22ce6810837b40fcadcfb5be509f8fcb3f33d5b6e9fb030a6dfd67927cc26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23a5004769f5900ea8ddc97ab004885e4ce55d528fc23dec74363c93b377c175"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "ad392a74ccaea8b17e8f00b861fafe84c93ab8aba5917d8eb25141e940afc3a8"
+    sha256 cellar: :any,                 arm64_monterey: "133b7c45be17343b7f2d7f0f75b620378253314903d7d8778234a83d1fe43fd6"
+    sha256 cellar: :any,                 arm64_big_sur:  "673d87888067d0ce6db019302234764cbbf4779f9a1f1fd50265478c71b1289d"
+    sha256 cellar: :any,                 ventura:        "266096ebc135a3a47c37e7f3f9c67669c0eb8c98f33a73b18cea575adbab0cf6"
+    sha256 cellar: :any,                 monterey:       "f2c2ffdf525071e03fcc960404b27dfee4ba28688c8bb830dc289637bbd3757c"
+    sha256 cellar: :any,                 big_sur:        "4436cc1c983d08e35c9e0609fcd9982dae57e51f7f24dfbcdd068be6f9885eec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "232774c24134629af38f7e378795aca6e61527189730ec22b5e14daf4811e0ac"
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build # for cryptography
+  depends_on "rust" => :build # for pydantic
   depends_on "libpq" # for psycopg2-binary
-  depends_on "openssl@3"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -70,11 +69,6 @@ class Sgr < Formula
   resource "click-log" do
     url "https://files.pythonhosted.org/packages/32/32/228be4f971e4bd556c33d52a22682bfe318ffe57a1ddb7a546f347a90260/click-log-0.4.0.tar.gz"
     sha256 "3970f8570ac54491237bcdb3d8ab5e3eef6c057df29f8c3d1151a51a9c23b975"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "docker" do
@@ -205,20 +199,12 @@ class Sgr < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 
   test do
     sgr_status = shell_output("#{bin}/sgr cloud login --username homebrewtest --password correcthorsebattery 2>&1", 2)
-
-    expected_output = <<~EOS
-      error: splitgraph.exceptions.AuthAPIError: {"error_code":"INVALID_CREDENTIALS","error":"Invalid username or password"}
-    EOS
-
-    assert_equal expected_output, sgr_status
+    assert_match "error: splitgraph.exceptions.AuthAPIError", sgr_status
+    assert_match version.to_s, shell_output("#{bin}/sgr --version")
   end
 end

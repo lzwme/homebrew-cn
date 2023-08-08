@@ -9,24 +9,21 @@ class Esphome < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "47840f197222f63306ff77311b2554c2c8cbd31e868a7555d0ec8510c27efdf1"
-    sha256 cellar: :any,                 arm64_monterey: "4fe8eedf5cc48b9119740e5db57fcb6fa23a3c4d579ae47e018d3ff807ebe0b8"
-    sha256 cellar: :any,                 arm64_big_sur:  "521e65016404da164875d431fe64a52a9bf4d01fa195679af25b3e7aa41a9f44"
-    sha256 cellar: :any,                 ventura:        "1294efd33e60f03ba7e82990e1876712ceefdd6b9e039cb3abaeca9be12347c2"
-    sha256 cellar: :any,                 monterey:       "14c1aadb93f824f9e29889b4fc7acc4e43d0b85e1a7dee5a86ce26941d7dc75b"
-    sha256 cellar: :any,                 big_sur:        "2c220261acb07d2e36af5a8b091b690778737ab6579acd94c5d1ef6660ab8b3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "568d0e996257e19c194448849bf64df2ff975ab31dd4050a635898f70273e4bf"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "73a558a3f6b448d561abb66e1ba570f6c12f05e023e2fa18eee9de399c2195e6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e311b475e5ff1a3074fd7d272c17234097aaf6ff66f62e378c9ec682a83ca732"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "45906d9dfd038a32f9a0fc267788589cc6cc3d224150156040d727603985d331"
+    sha256 cellar: :any_skip_relocation, ventura:        "d4c19ffb4648e57acd961e35cb068d99726dfea8f71556fd2b42532d25c9dbd3"
+    sha256 cellar: :any_skip_relocation, monterey:       "b4b0cccb1bc0437ef6be626d62fb3889126d2864ec86f314c2328d3a8ddfadfb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "15a4df8ab4d31ab9d9ed78ea0cfdd228c7be0d4dd38c9eae2e54d94df8a8a0e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dcd29b3246edba39014bf7b8790e3fe9296337accae405ff7807319410faebe2"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "pycparser"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python-tabulate"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -80,11 +77,6 @@ class Esphome < Formula
   resource "colorama" do
     url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
     sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "ecdsa" do
@@ -228,10 +220,6 @@ class Esphome < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 

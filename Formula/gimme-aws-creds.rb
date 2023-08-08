@@ -9,30 +9,23 @@ class GimmeAwsCreds < Formula
   revision 3
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "cb0deca43878572ce331664986cabdf2b332c8707a05b5eca3290d479aca3acf"
-    sha256 cellar: :any,                 arm64_monterey: "34bc194656f95126214295d6bd21b27723f8f74671a3f6e6831d2038642e3222"
-    sha256 cellar: :any,                 arm64_big_sur:  "a1b70f524e0efe908b92bc93187eb8bed47e1eb6970fecb9ed55c364b1f79700"
-    sha256 cellar: :any,                 ventura:        "77a3fedbd2904370404e2b167388be39c8233b49f8ab8e4c28323eee0fe3930d"
-    sha256 cellar: :any,                 monterey:       "33a4ef40914e8bd0445db480de5776e7783c9ffe1fe32f62e089be254b84c2b8"
-    sha256 cellar: :any,                 big_sur:        "8945409e815f547a190c064c9225d4386b089e8f8aefbb2db31faed76f53bdbb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f545c30082d7cd4d4772c0018e4429de48cdaedfac0c88d55c61a74002801ae6"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5f9ce8ff0cc909ceda8757c291125d68c36bce089b8651195729a410dfb034e6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ce60a1eb54ceb6963dfcb8bdba5b25c55c197ce3fd3773d1981a53fc157f1ee8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3b238e36d26c91ccb4afecd785a0ed9e3cc520f8c2f6119a5441bf75712e8e5e"
+    sha256 cellar: :any_skip_relocation, ventura:        "976b2763177d96ca3466fee2f7a403eb280b0a9ed0e5353d4232eb31590b66ff"
+    sha256 cellar: :any_skip_relocation, monterey:       "faec9c692c0f832ad492558e6ce1f6f3818c1caf3f484efdd878c09b10752606"
+    sha256 cellar: :any_skip_relocation, big_sur:        "77919e3df2c4ca7484d2dd153d55f0212ecaae07c80f6b639a13b4a21e0e61b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "059903421eb03dc71500713573547a8049f41febceb6ad98fa9c20408e5d645e"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "six"
 
   uses_from_macos "libffi"
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   # Extra package resources are set for platform-specific dependencies in
   # pypi_formula_mappings.json, since the output of `bump-formula-pr` and
@@ -71,11 +64,6 @@ class GimmeAwsCreds < Formula
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
     sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "ctap-keyring-device" do
@@ -189,10 +177,6 @@ class GimmeAwsCreds < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     venv = virtualenv_create(libexec, "python3.11")
     res = resources.to_set(&:name)
     if OS.mac?

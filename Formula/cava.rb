@@ -1,20 +1,19 @@
 class Cava < Formula
   desc "Console-based Audio Visualizer for ALSA"
   homepage "https://github.com/karlstav/cava"
-  url "https://ghproxy.com/https://github.com/karlstav/cava/archive/0.8.3.tar.gz"
-  sha256 "ce7378ababada5a20fa8250c6b3fe6412bc1a7dd31301a52b8b4a71d362875b9"
+  url "https://ghproxy.com/https://github.com/karlstav/cava/archive/0.9.0.tar.gz"
+  sha256 "3e79367169791fb11236dce6da7b38f46cdd859304710391785c4df7f364fd23"
   license "MIT"
   head "https://github.com/karlstav/cava.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "d9dfab68c25b0611aefcc14a14536f854a0794d4ca8f11208dfed9ab6c26f570"
-    sha256 cellar: :any, arm64_monterey: "2f5e951e4c9c6fbd64ddd4403c33b48c7367e03c8f0d8f1acb4cb27fc7b72dfd"
-    sha256 cellar: :any, arm64_big_sur:  "458780bb7131958baa5b9abe176cb52c3082a403fb5bbc91fffdae6570b8c9d1"
-    sha256 cellar: :any, ventura:        "f67fbbd62edc1b8e6ed8a2d24c0d43bf0a9e7f6e2a57d94df495abb9bde36645"
-    sha256 cellar: :any, monterey:       "c19ebbd4247a0a705ff515fbd69da8606b5803cfca8e9e1b55424f6cbbb444e5"
-    sha256 cellar: :any, big_sur:        "ac96c19d44f043541d965ab4b44196c598c64b404dbbc9463bd40489b6859c94"
-    sha256 cellar: :any, catalina:       "195e10dc98dc6070ef4a876618b66f73217cd85da70089e5d9202ff7dd996991"
-    sha256               x86_64_linux:   "7281c3eb4ae6ec6535148729c725978c88bc45655b357e4b9d983b24f8556e0d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bf60eccdd484b114b3a2d894ea5d810ec2991b6c24622a66be88635d61de0f87"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0b0c12c6369b178f26a850d12a58b76703e99059105381c471faabd58886dcd5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "33b3a06b86c4081964770bb04ec6222eab520e140eae67be76af43af208f3aa3"
+    sha256 cellar: :any_skip_relocation, ventura:        "d8f2bb30f5daf77c94b5cd2faf9a0d55db771cd8b18f90278a331598f2fb2e33"
+    sha256 cellar: :any_skip_relocation, monterey:       "baa0fbb5557eb9acec6857b99be5cc783dc41ae1f283384b6439f148597d8a56"
+    sha256 cellar: :any_skip_relocation, big_sur:        "09b6ab175da0cde893a93c908235cf2c5622276d3d3f95f3a46b0e8148ff309e"
+    sha256                               x86_64_linux:   "b09c1ed717c25cab60a36b3846d8ac7cdafe09e61be82cef1af0efd84d671d27"
   end
 
   depends_on "autoconf" => :build

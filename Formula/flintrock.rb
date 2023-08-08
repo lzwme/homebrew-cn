@@ -9,21 +9,19 @@ class Flintrock < Formula
   revision 7
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "0c2d522b1becc863b240e99d7ba91d6626d8ed4751335cc9ebe424ef1b5448d5"
-    sha256 cellar: :any,                 arm64_monterey: "a5d24923abf368f9c037a5436493876f530cfdca0e4fecc854c2379ae94bb6ba"
-    sha256 cellar: :any,                 arm64_big_sur:  "15ffee328b09834248e4de1d94fa19ba19893fdb957ea387aed15e9cccd977fa"
-    sha256 cellar: :any,                 ventura:        "f365b7e7f38705983ebc1773fc542f776b57c3e5f4ca6c93a685d4e18e5eea34"
-    sha256 cellar: :any,                 monterey:       "e9504410250ea935be9436e1962fea2a49e50403e9b91bf064dfde87600b6c40"
-    sha256 cellar: :any,                 big_sur:        "922c9839f430725233659f2a293077f6fbb7e29ce874951cd338e4761b07936c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "338d299508ddc9a1e80d194a21539376ea29c37d542d138ad42d4c0322ba60c3"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "43feda1c89b72135cc7390386c39ade62c992b7e66104b465d0b38929a601633"
+    sha256 cellar: :any,                 arm64_monterey: "c77e8d00ee2152bbdc616dbde4b0093a92855e7e64340d485e3b56fe418b48a9"
+    sha256 cellar: :any,                 arm64_big_sur:  "24c5a6c10bf16c6c0ff9859fa4380886a95b2a7beef71d7be28f034199221624"
+    sha256 cellar: :any,                 ventura:        "6fba1800ef8b82207a82fe5ff77a6b48deb099b6cb1fa92e706a30415867d121"
+    sha256 cellar: :any,                 monterey:       "862a3aa80efca9871c745622e4578f27c04522db12a7f157e02e9e1b968f580d"
+    sha256 cellar: :any,                 big_sur:        "e5b50682434b31091c86a8a0d5c68be4ee87dae044423b341b718cb55edcc1e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "86f49049502bf32b12a1a1cf54dc03d9a7fd301f826501a47607053d631dc8db"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
+  depends_on "rust" => :build # for bcrypt
   depends_on "cffi"
-  depends_on "openssl@3"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -46,11 +44,6 @@ class Flintrock < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/f8/5c/f60e9d8a1e77005f664b76ff8aeaee5bc05d0a91798afd7f53fc998dbc47/Click-7.0.tar.gz"
     sha256 "5b94b49521f6456670fdb30cd82a4eca9412788a93fa6dd6df72c94d5a8ff2d7"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
-    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "jmespath" do
@@ -84,8 +77,6 @@ class Flintrock < Formula
   end
 
   def install
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     virtualenv_install_with_resources
   end
 

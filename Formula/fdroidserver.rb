@@ -9,27 +9,25 @@ class Fdroidserver < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "c33f459ed73c8ff6848b4b23354488a19afd7d0319572d32c1371b4a462437b5"
-    sha256 cellar: :any,                 arm64_monterey: "caf2a8028f7b29b6752755f75f106b30a1fcaa8bf87c7b2de2f2bf5dcc9f168f"
-    sha256 cellar: :any,                 arm64_big_sur:  "84d32610708ea44deb250e01edfc0327b49b4ea13dd82a7f5aa2221bdaea18dc"
-    sha256 cellar: :any,                 ventura:        "723a9774d464a0cbdead5276ae93694885a39948d819f125bd71d1a11419fbe1"
-    sha256 cellar: :any,                 monterey:       "59f60bcbf85acdd2ba00a9c7201f2195ba7b285ddc4cb5fbc1d07a1c210c44dc"
-    sha256 cellar: :any,                 big_sur:        "556f293788a03c5fab3b154ca6eadb94b8bb7b2308fe613a5125863be6dcca47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a91611d5095fccd3478d5b6717d0c809f8e503386a21f31834d3ffb8b2790c6"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "304f5a323c7a7042c9445ce982f8502da409603c151ba881a18d7fdb0c38397a"
+    sha256 cellar: :any,                 arm64_monterey: "f9a34e10d0a5d8499089194d9268e70656b8800c6ecb4eaeea74f3054fce77c9"
+    sha256 cellar: :any,                 arm64_big_sur:  "96bd25ce7392fc92885692aaf23c5cf18873a4c8bbd2bee1b85137d8c31e2843"
+    sha256 cellar: :any,                 ventura:        "d7548362179cfeb0de130c3ee254a0605b8a2a1d6d5c1f6a7b6f317465f67b3c"
+    sha256 cellar: :any,                 monterey:       "8a043fddae226cc668599736a29f8d5d775e2e51b11361d9494817d1c2e5a2c7"
+    sha256 cellar: :any,                 big_sur:        "ae20909e3db410273cfdfce98c9cb845e7273b88010beb1bfa46c7584492e00d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24d3686fb530c58bb03f1a0c8feb7436a606d0adc8595d06162bb8e8ccdf9c1a"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
+  depends_on "rust" => :build # for bcrypt
   depends_on "cffi"
   depends_on "fonttools"
   depends_on "ipython"
   depends_on "numpy"
-  depends_on "openssl@3"
   depends_on "pillow"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -89,11 +87,6 @@ class Fdroidserver < Formula
   resource "contourpy" do
     url "https://files.pythonhosted.org/packages/b4/9b/6edb9d3e334a70a212f66a844188fcb57ddbd528cbc3b1fe7abfc317ddd7/contourpy-1.0.7.tar.gz"
     sha256 "d8165a088d31798b59e91117d1f5fc3df8168d8b48c4acc10fc0df0d0bdbcc5e"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/fa/f3/f4b8c175ea9a1de650b0085858059050b7953a93d66c97ed89b93b232996/cryptography-39.0.2.tar.gz"
-    sha256 "bc5b871e977c8ee5a1bbc42fa8d19bcc08baf0c51cbf1586b0e87a2694dde42f"
   end
 
   resource "cycler" do
@@ -222,10 +215,6 @@ class Fdroidserver < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     venv = virtualenv_create(libexec, "python3.11")
 
     venv.pip_install resource("lxml")

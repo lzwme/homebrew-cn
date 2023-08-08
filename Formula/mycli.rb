@@ -9,28 +9,24 @@ class Mycli < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c031ffa4e018c407a1429bb5108f85349ed55f56af39691976110c3e6b76ab04"
-    sha256 cellar: :any,                 arm64_monterey: "bff78c58fecd6ed672a6e110d50d3c33ce6c73db6243a2b8bd2e3bbe301dd1eb"
-    sha256 cellar: :any,                 arm64_big_sur:  "75b6e900ed87f20bb1496e0d0ac5dbc56d387db5b8879dcb4c046ff0384a5b29"
-    sha256 cellar: :any,                 ventura:        "9a80c17ab0e008238756fe60cf9ad6fb4a85f40e2eb295626cbb897fb2cfb32c"
-    sha256 cellar: :any,                 monterey:       "10d66432c5d1cf484f50f62d23c9d51f0168f02c3814eb97eb29d9a6d16807e6"
-    sha256 cellar: :any,                 big_sur:        "219f4c9548be893988f2053a0c3967ceff88844eb67530d6e50e5ea251b46fcc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4610978f4a7510ec140008292a238166733a14d8c43cdd64d982961b3e9f72e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2bf1e5db515be8c9551a556b3c24cea566f9da98dbf62d9897a046a115c0b633"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8bb3ede7492fb5ebf804dd6b4b94f7caa58560fa7f0b8bf41a6726739d8c82fe"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1dd4259f0f47869beef530ddc4caf8847a906a20d7438797f372f63b00404122"
+    sha256 cellar: :any_skip_relocation, ventura:        "935e5bf279c2da81c06acb27837eb715f6fea39d096f58b667ad4f31a577ed20"
+    sha256 cellar: :any_skip_relocation, monterey:       "0ba1e8fdf01bc1973100a9e02b68ae57a4d5ee9072ea94142f05ba5cab231fa0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8bfd2a17e2ce378f5426ab6b628b14eecc5b1e444bfba2d592b10cb5540e3921"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56fda4cb7bebd869875d8b08d1d3d2b540beee0f6e9a1b16fef2b71e83eb6353"
   end
 
-  depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "pygments"
+  depends_on "python-cryptography"
   depends_on "python-tabulate"
   depends_on "python@3.11"
   depends_on "six"
 
   uses_from_macos "libffi"
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   resource "cli-helpers" do
     url "https://files.pythonhosted.org/packages/27/01/6aaa4fc415274ac77372b4d259c234b9f5bfc8d78144c3fda1f3019d4690/cli_helpers-2.3.0.tar.gz"
@@ -45,11 +41,6 @@ class Mycli < Formula
   resource "configobj" do
     url "https://files.pythonhosted.org/packages/cb/87/17d4c6d634c044ab08b11c0cd2a8a136d103713d438f8792d7be2c5148fb/configobj-5.0.8.tar.gz"
     sha256 "6f704434a07dc4f4dc7c9a745172c1cad449feb548febd9f7fe362629c627a97"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/10/a7/51953e73828deef2b58ba1604de9167843ee9cd4185d8aaffcb45dd1932d/cryptography-36.0.2.tar.gz"
-    sha256 "70f8f4f7bb2ac9f340655cbac89d68c527af5bb4387522a8413e841e3e6628c9"
   end
 
   resource "importlib-resources" do

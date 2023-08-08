@@ -8,29 +8,27 @@ class Dvc < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "44ca85eebdf855bdc0135ae15927580f82dc09be50149326ec82bf3d36d5659b"
-    sha256 cellar: :any,                 arm64_monterey: "0243bf507fc4feaa59225cdf1799e622dcb9f598b7b86a549a0bd3941b8632d2"
-    sha256 cellar: :any,                 arm64_big_sur:  "69b41df6ee3c2aafa3268a97fddd96e17c44d125097b320faeb4af7ee6e5d84f"
-    sha256 cellar: :any,                 ventura:        "69658be1b01228b32b8fef39713383609132dee32e422d95a53977b91ae1ab18"
-    sha256 cellar: :any,                 monterey:       "a25fdd9ff426966a810760286d372e09e70ecbc4aff24c75645425e53721e977"
-    sha256 cellar: :any,                 big_sur:        "8c150657e6919a68ca734c739b6ab3e566e5248c4da0eb41a497a33bbfe4a83d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "950e8b59ab174df7255e0341213332743d836f4242ca8aa936eb887b1f083dbc"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_ventura:  "769ac6b0ec27cb93dec3379304b66c00c23a9ff48c766c25895ab0df6ecffc1a"
+    sha256 cellar: :any,                 arm64_monterey: "0a45d7ff6883ccefba6d69df820c96157f9614e7a64d54637bb74450b2eaccc3"
+    sha256 cellar: :any,                 arm64_big_sur:  "f276f666528a6d9efaf1fc90788c40d10bbc6027c7a4e1f8bc8a7e6c3eaf0555"
+    sha256 cellar: :any,                 ventura:        "3d36f0d955cf013656b5b5b131b09362edbc1e1343741f2ec6e29ee058c56839"
+    sha256 cellar: :any,                 monterey:       "f98cce6b747a2b80ab3434e782397cf5a0b29f199ab07f6e30b6d3e6b8a10e5b"
+    sha256 cellar: :any,                 big_sur:        "16da014bf55a2827eea9aae1e9fdd8c4c6f97e81450ac93863571141bb6b37d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "165a88e21583f79184fd3aba81f18c498995fd017fd7a45bc2ebb7b187284339"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "openjdk" => :build # for hydra-core
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
+  depends_on "rust" => :build # for bcrypt
   depends_on "apache-arrow"
   depends_on "cffi"
   depends_on "numpy"
-  depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "pycparser"
   depends_on "pygit2"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -213,11 +211,6 @@ class Dvc < Formula
   resource "crcmod" do
     url "https://files.pythonhosted.org/packages/6b/b0/e595ce2a2527e169c3bcd6c33d2473c1918e0b7f6826a043ca1245dd4e5b/crcmod-1.7.tar.gz"
     sha256 "dc7051a0db5f2bd48665a990d3ec1cc305a466a77358ca4492826f41f283601e"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "decorator" do
@@ -761,10 +754,6 @@ class Dvc < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     # NOTE: dvc uses this file [1] to know which package it was installed from,
     # so that it is able to provide appropriate instructions for updates.
     # [1] https://github.com/iterative/dvc/blob/3.0.0/scripts/build.py#L23

@@ -5,6 +5,11 @@ class Libabw < Formula
   sha256 "e763a9dc21c3d2667402d66e202e3f8ef4db51b34b79ef41f56cacb86dcd6eed"
   license "MPL-2.0"
 
+  livecheck do
+    url "https://dev-www.libreoffice.org/src/libabw/"
+    regex(/href=.*?libabw[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "6ad85dc29ed6262c148bd70631ea06886e1e7fce5d6c8abf66b9486d85e8055b"
     sha256 cellar: :any,                 arm64_monterey: "32cfa5aeedc8f7bff68a474f0bb6cc8d3501b301bb57c3a13c2a3bf535bedada"

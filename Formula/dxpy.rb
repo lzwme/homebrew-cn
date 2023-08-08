@@ -8,21 +8,19 @@ class Dxpy < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "0ddb4db33d67fabdc57894e2d246009fa5e642921f50e8ea2512bb553bcc8382"
-    sha256 cellar: :any,                 arm64_monterey: "f5dd558a78be6163da5cc8d33d12ed712556525bb2e68b382d7817f8d610ce34"
-    sha256 cellar: :any,                 arm64_big_sur:  "2a535e70bef5a4e1cb8bf1b74165f2e442bb2159f49f02c421d363e9a4d78a38"
-    sha256 cellar: :any,                 ventura:        "b05c43e87cafbb0a59fe828c679861e80db57c380c1cb42c8c13753ed5e76837"
-    sha256 cellar: :any,                 monterey:       "72465148eaea269c7461d9f6056d9c5e7cace8edd79ed653d804a95cd118932d"
-    sha256 cellar: :any,                 big_sur:        "7f3a6c97791d891310bd8f98ded8a06eadb7c204808bcf864e13af96f13b7b0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b14164a04d203a8d02feb2b76278c731bf59de261995cd91bb4ab49bbbfe2d4"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2fd0f1243596d8dc63f8a4886908107de0f9ec05305eb92480888924d96ca7f3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "15351dd7a7f860c2df590fbad24a2e3aaa7e4b2bd8ecb37686e81e327395bc9c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9faa8232bd3a1f9a09973cb40e5db57613e957be3204bda3a050665c577dd25b"
+    sha256 cellar: :any_skip_relocation, ventura:        "9a013ab65a6a65432df5f0a5a323134a429677f1b63f26756e5ab686d617184c"
+    sha256 cellar: :any_skip_relocation, monterey:       "03431d12d0e2c2eb959615381c74559a120364efbe724a3a40e2b8cecc64fd2e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "633f89907510b878102430290a01c04674ec8545fb634630f8c6109504393bb9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d928c47ea7e9925d6537000a5c726144c0b61699919d59a850e067fdcdbbff6"
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build # for cryptography
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -40,11 +38,6 @@ class Dxpy < Formula
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
     sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz"
-    sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
   end
 
   resource "idna" do
@@ -78,10 +71,6 @@ class Dxpy < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 

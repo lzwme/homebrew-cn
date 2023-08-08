@@ -9,25 +9,21 @@ class Moto < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "7bf21fb2fbf1b5fafb139395fbbc049c5ce92f0a40d2a25e6851eaaee071a10c"
-    sha256 cellar: :any,                 arm64_monterey: "8dd0d5ee93a285335ed327a3c7cbc8495ec3f748f6df85c005943b8afcc8fdfb"
-    sha256 cellar: :any,                 arm64_big_sur:  "5d13864a2ac25640c928286a49dbfa0d350478d876327b266daf70be9df1d762"
-    sha256 cellar: :any,                 ventura:        "029add5778fd39c145de0ba7c650b0d8b48cdf9e66740523bc5ed0af0a6e876f"
-    sha256 cellar: :any,                 monterey:       "1881983171399184b0b2a107d91ec5c6849019c541178aac0f59ec091d241d03"
-    sha256 cellar: :any,                 big_sur:        "dbb4a68525a436e662531cea594f8382e56ad92312df1735f5ca886c9b4193f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2da9b012307b3c5a136b996fcc1818b4bfef2ff23febf49811d2bbf054140d2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "080d745ab4b10692479cf5911ffda6be35a0dbab15c3148f830755e59914a7d7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b8adb4362433ebc5c17571fe4760bb18a89b5d7701e741f3ec246223507af472"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "203121bb3db3d4d0aba466072d661ff959b6f85c4e2769de8dacf371a38e6395"
+    sha256 cellar: :any_skip_relocation, ventura:        "8cda94887abd1a03ae3eec862e29dd1937fa4eed0a606d2a3a9393fab8f51a4d"
+    sha256 cellar: :any_skip_relocation, monterey:       "653a94f8f3fca8976c270cd49a653bb639a60b3ecef9ff172645a46dd947e6e6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1d1969f0a65a6d5f7807a13d50c1c4c1203323d16aa6de746be8286c5941148b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d472ec2a359b73ed8d0ecb2d1b5b3ae530c96fe89e94f00bb73835d6ce593cc7"
   end
-
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
 
   depends_on "cffi"
   depends_on "cfn-lint"
-  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -71,11 +67,6 @@ class Moto < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
     sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "docker" do
@@ -319,10 +310,6 @@ class Moto < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     virtualenv_install_with_resources
   end
 

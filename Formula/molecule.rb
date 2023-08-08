@@ -9,21 +9,22 @@ class Molecule < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "697018e8380cfbddf9e71da760efdfa7726bcfcc7e66279b77cc625676a6caed"
-    sha256 cellar: :any,                 arm64_monterey: "685b304859ac4eb3c0699ec2ca03506f825c20629278125d4b48b34fa2cc0c44"
-    sha256 cellar: :any,                 arm64_big_sur:  "f05e90aaf5ae3d0da586696d2c068e27de345c029bae0ae4f11a463b96d11fac"
-    sha256 cellar: :any,                 ventura:        "7264248206c7a367a14590ed3d87be3988de829c2f0fa4e987dc4a0f622b8049"
-    sha256 cellar: :any,                 monterey:       "932a8f9c1e8e7de61e44c25611ee4fa1b9c5589d943510f55422609e4d2b7476"
-    sha256 cellar: :any,                 big_sur:        "778b226d4a2e49cb2155d537ef7afa0c4acf81f699436cf4121218d56dd9e71b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa3425a7fd252e4577bf9dbe20536dfc55c5a91496eec055e42bfcb4eb408754"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "e79776cf0c2406fbeb340d8e67c93c19db9ff732526a1127507152b200640aab"
+    sha256 cellar: :any,                 arm64_monterey: "e868fb52c31bc433e0f4074d96d46d3412b19443a4cd2c3f330a44c93783cfa1"
+    sha256 cellar: :any,                 arm64_big_sur:  "0463278bedb83ad6064f6315ae55804dae976987eba50e5b7f90d9b40a3c1dce"
+    sha256 cellar: :any,                 ventura:        "7ad1152eb678df972a87dabad50e040a9feee0bc2b72faaa49f2f616f3f0e825"
+    sha256 cellar: :any,                 monterey:       "809f1817587bef5b9e94dc541a4e4c1e8c3997292eead430baeeffbd66b90ef9"
+    sha256 cellar: :any,                 big_sur:        "185a307b80ee516a83fdcd376dfcee5e637b08d86460c75493913ecc9bf0f76f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a526447d1a2e9e605b5fded78c20b76468e40bce1c4ab7374362eb953b0434b"
   end
 
-  depends_on "rust" => :build
+  depends_on "rust" => :build # for rpds-py
   depends_on "ansible"
   depends_on "cffi"
   depends_on "cookiecutter"
-  depends_on "openssl@3"
   depends_on "pygments"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -31,7 +32,6 @@ class Molecule < Formula
   uses_from_macos "libffi"
 
   on_linux do
-    depends_on "pkg-config" => :build
     depends_on "gmp"
   end
 
@@ -53,11 +53,6 @@ class Molecule < Formula
   resource "click-help-colors" do
     url "https://files.pythonhosted.org/packages/6c/c1/abc07420cfdc046c1005e16bc8090bc1f226d631b2bd172e5a8f5524c127/click-help-colors-0.9.1.tar.gz"
     sha256 "78cbcf30cfa81c5fc2a52f49220121e1a8190cd19197d9245997605d3405824d"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/8e/5d/2bf54672898375d081cb24b30baeb7793568ae5d958ef781349e9635d1c8/cryptography-41.0.3.tar.gz"
-    sha256 "6d192741113ef5e30d89dcb5b956ef4e1578f304708701b8b73d38e3e1461f34"
   end
 
   resource "distro" do

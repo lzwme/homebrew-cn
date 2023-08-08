@@ -10,27 +10,24 @@ class Mitmproxy < Formula
   head "https://github.com/mitmproxy/mitmproxy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ca3e12a6c975ad77ef6eb334a44a049e471027cbce44ac7187ceec2f5d9eae31"
-    sha256 cellar: :any,                 arm64_monterey: "19e94e25e6da7392f2a4ef7da2cf7d12477566477566196048de1bfaf41e1d19"
-    sha256 cellar: :any,                 arm64_big_sur:  "291650761885807ed9ea2cfdca922942ddbd18caecaf892152231c1ceb9d6537"
-    sha256 cellar: :any,                 ventura:        "e2b2d369667c4e829d90b2095534626ab541f35bed2cb214a1c37976148b92b0"
-    sha256 cellar: :any,                 monterey:       "45eb384ce8e697e457eaf50143d276649a94be3b0ca28355b6092d9c8a1e4151"
-    sha256 cellar: :any,                 big_sur:        "e47754110274f8cf1950f2b50704c7cad1e7f17f31ea6e6740237951ab5bc05f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2508184ceaff37804e8c9f56d4387591e8cd8dc506f41990708aee6c7cda6815"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "7c096b6008614335cb9914e6344c0f2fd67f2f516f46b918a0e629795d7ea135"
+    sha256 cellar: :any,                 arm64_monterey: "41c13c5f22d688247af489662e0c697a97944bded6f2762c6ee8da8fcee86484"
+    sha256 cellar: :any,                 arm64_big_sur:  "7cb7e90e633a15a739d54b337a7faf43fbcc613233c5c25450a8db3d70b94c91"
+    sha256 cellar: :any,                 ventura:        "392d3124d601cfad95a82d0a7436b7feac6094a637500c1c97a9022e602973e1"
+    sha256 cellar: :any,                 monterey:       "4437fe7cf9c9d38a6677bc65ea3a3569a4023431c58b9d135b3fea0f07d0033d"
+    sha256 cellar: :any,                 big_sur:        "6da643662b138a0f78410f729807d065f5ce1d737f1a03138ade3449dd9566e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c244f3d0bd643f42c0e81d99962b016dbdedc12de093e562f9e6d218d03b4811"
   end
 
-  depends_on "rust" => :build # for cryptography
+  depends_on "rust" => :build # for mitmproxy-wireguard
   depends_on "cffi"
-  depends_on "openssl@3"
   depends_on "protobuf"
+  depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
-  depends_on "six"
 
   uses_from_macos "libffi"
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   resource "asgiref" do
     url "https://files.pythonhosted.org/packages/1f/35/e7d59b92ceffb1dc62c65156278de378670b46ab2364a3ea7216fe194ba3/asgiref-3.5.2.tar.gz"
@@ -42,24 +39,9 @@ class Mitmproxy < Formula
     sha256 "4d1b810aa0ed773f81dceda2cc7b403d01057458730e309856356d4ef4188438"
   end
 
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
-
-  resource "cffi" do
-    url "https://files.pythonhosted.org/packages/2b/a8/050ab4f0c3d4c1b8aaa805f70e26e84d0e27004907c5b8ecc1d31815f92a/cffi-1.15.1.tar.gz"
-    sha256 "d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"
-  end
-
   resource "click" do
     url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
     sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/e3/3f/41186b1f2fd86a542d399175f6b8e43f82cd4dfa51235a0b030a042b811a/cryptography-38.0.4.tar.gz"
-    sha256 "175c1a818b87c9ac80bb7377f5520b7f31b3ef2a0004e2420319beadedb67290"
   end
 
   resource "flask" do
@@ -203,9 +185,7 @@ class Mitmproxy < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.11")
-    venv.pip_install resources
-    venv.pip_install_and_link buildpath
+    virtualenv_install_with_resources
   end
 
   test do

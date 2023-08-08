@@ -9,14 +9,14 @@ class Hatch < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c1b5f90a507f495ad221aebf081ca7b51c497cfea033620c0bebc585b8cc86e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6fc17cceec3c9069076a4d4903a4cc0d6c74312b7edf185610726c3bbc183e16"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0893056475aab9f0dab72d9b7ac7c4db7abdf34041220f312a34c6216aa479ae"
-    sha256 cellar: :any_skip_relocation, ventura:        "44e9c20191d9a36bdcae752f131376b66d08b9522c4e3281b419cec1a19d910d"
-    sha256 cellar: :any_skip_relocation, monterey:       "ab16b6201809049504f1907e70849d8d959c337c782704e25816b7f35659c462"
-    sha256 cellar: :any_skip_relocation, big_sur:        "248a3112cfc987084e01b4eb53009a9cc0c645c74299b327af460cff3a35d57a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa9cfd10a756f4e693853295de634e8fa49208b9250a1d01ea8d3b7e5897beb7"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e90d8c974c792611911eafefaeec74a9f537a78abb64e2fa5f194b3825eb0aa0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1fe289ad318090ce3bd1d9e1eb4c058fa95eb050b734b2e406f8b6836aa47c59"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "14bd9b8c75f98a1d9931ce640137e39b2e0b120cac285d653be7072e6c186f6b"
+    sha256 cellar: :any_skip_relocation, ventura:        "8622ba372daaa21011459b273b244cb35c866c5f5f151c1664164634869d9930"
+    sha256 cellar: :any_skip_relocation, monterey:       "71e6b907c295e77008087f7d9a223ba857f1c53cec35e52f21dc8534b1852fdc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "956e9cb59ec9ee4a20aaaf4f2d2fe50218181d5c6ab09dcab628a805bef412e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15b1b527274b2387df5ae2c0d60f3306d0ea146e20e0f852b4aef5f2a417f59a"
   end
 
   depends_on "pygments"
@@ -25,17 +25,9 @@ class Hatch < Formula
   depends_on "virtualenv"
 
   on_linux do
-    # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-    depends_on "pkg-config" => :build
-    depends_on "rust" => :build
     depends_on "cffi"
-    depends_on "openssl@3"
     depends_on "pycparser"
-
-    resource "cryptography" do
-      url "https://files.pythonhosted.org/packages/15/d9/c679e9eda76bfc0d60c9d7a4084ca52d0631d9f24ef04f818012f6d1282e/cryptography-40.0.1.tar.gz"
-      sha256 "2803f2f8b1e95f614419926c7e6f55d828afc614ca5ed61543877ae668cc3472"
-    end
+    depends_on "python-cryptography"
 
     resource "jeepney" do
       url "https://files.pythonhosted.org/packages/d6/f4/154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdf/jeepney-0.8.0.tar.gz"
@@ -214,12 +206,6 @@ class Hatch < Formula
   end
 
   def install
-    if OS.linux?
-      # Ensure that the `openssl` crate picks up the intended library.
-      ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-      ENV["OPENSSL_NO_VENDOR"] = "1"
-    end
-
     virtualenv_install_with_resources
 
     # we depend on virtualenv, but that's a separate formula, so install a `.pth` file to link them

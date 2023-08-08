@@ -3,19 +3,18 @@ class Cycode < Formula
 
   desc "Boost software development security via secret scanning, SAST, SCA, and IaC"
   homepage "https://github.com/cycodehq-public/cycode-cli"
-  url "https://files.pythonhosted.org/packages/f1/29/5225ef43f33e036a01f11a236c66f9247a6ec45c04177692a7ea6de42ee5/cycode-1.0.0.tar.gz"
-  sha256 "f5740497337504b167d6d8e976f300dbb67cc3de0d123ef64ff7778016902029"
+  url "https://files.pythonhosted.org/packages/66/aa/0a1fd9601299384a87706463254a0cdd682fa982585ab6a8e872fa1e7d1c/cycode-1.1.0.tar.gz"
+  sha256 "d9a359be988a09b96fc487b958b515a62447bb1871cf3b77a17c4f47a8c4e782"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca709debdbe383ee1a94251c02f88c8f4ece3971e20ee2c36d21c6053b7ce59b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c1d06f253441bf60c352ee6eb25e1779eb3af3b73a4dde3c2097c9be228e352"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "23ad8966b52ccdde2168f9bca57f1c25129fd7db498954905e12a3a97a19404b"
-    sha256 cellar: :any_skip_relocation, ventura:        "f7dca0bce0670924ff41d8dda180df6be83714ada947bbcfed47948e92a59682"
-    sha256 cellar: :any_skip_relocation, monterey:       "9b356653e36360dce57688ca2adbcf71b20a5c0771675c755c4f35ec0e1b938e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8f358d6a05819629776f99a6e07036cdf9e70dc9178d77b845609d815e279f8e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9e8157a20e64c205c1bcf9cc0a79129b279161110be350dd3322ddcee18bd58"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d17ad737b5d02b7317a8682ea2b6a5dc7c7c718dcce7f51eb1a47e301c932eb7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b8b18d5df7298c734758b89fb4e1108e762b32e6c04574358c27ff3afe4cb60d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4b9511da5d1ff0ae169ef16f3075927e0dc11d85ab45a21b203afdc9a8d4d501"
+    sha256 cellar: :any_skip_relocation, ventura:        "8b027c6890506589ef5b321f639a337e789c991cc0fe7c8dc3e13dbba8b68926"
+    sha256 cellar: :any_skip_relocation, monterey:       "93abea1fe859d90386db84d6c5589ab15712176e9477ec079e0902dd2466b0b7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f781608fc40e88da6a8b155bfd244c17833691753247b122cbf56d0b4749fae7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f73865a2df332c119ad2f24716ac02970c1162340373e308015a2952dc4c7303"
   end
 
   depends_on "python-certifi"
@@ -34,8 +33,8 @@ class Cycode < Formula
   end
 
   resource "chardet" do
-    url "https://files.pythonhosted.org/packages/41/32/cdc91dcf83849c7385bf8e2a5693d87376536ed000807fa07f5eab33430d/chardet-5.1.0.tar.gz"
-    sha256 "0d62712b956bc154f85fb0a266e2a3c5913c2967e00348701b32411d6def31e5"
+    url "https://files.pythonhosted.org/packages/f3/0d/f7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079/chardet-5.2.0.tar.gz"
+    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
   end
 
   resource "charset-normalizer" do

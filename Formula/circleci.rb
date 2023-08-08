@@ -3,19 +3,19 @@ class Circleci < Formula
   homepage "https://circleci.com/docs/2.0/local-cli/"
   # Updates should be pushed no more frequently than once per week.
   url "https://github.com/CircleCI-Public/circleci-cli.git",
-      tag:      "v0.1.28434",
-      revision: "55236583a42bf63947b87055e56a571141e15a25"
+      tag:      "v0.1.28528",
+      revision: "83956f7f724ca1da625034c3be033b4a5bd03b05"
   license "MIT"
   head "https://github.com/CircleCI-Public/circleci-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cd0267e1a303e1e6d6de8b41a106b79fb1d05656c79225a50bf9bdef8ab59517"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cd0267e1a303e1e6d6de8b41a106b79fb1d05656c79225a50bf9bdef8ab59517"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cd0267e1a303e1e6d6de8b41a106b79fb1d05656c79225a50bf9bdef8ab59517"
-    sha256 cellar: :any_skip_relocation, ventura:        "2776283b1b05e1d1d8beb2b0b6a8a55929f1fae3d6f028566284b581d1c05f16"
-    sha256 cellar: :any_skip_relocation, monterey:       "2776283b1b05e1d1d8beb2b0b6a8a55929f1fae3d6f028566284b581d1c05f16"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2776283b1b05e1d1d8beb2b0b6a8a55929f1fae3d6f028566284b581d1c05f16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7210b8668b5b5d2f17af7b5ec5e8b02ea595f304fb5a4157226b9373bb276766"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7cecab1e1767cfb6b40adf82748bd48cac58607f7b7a73020c79d36c8a561ff1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7cecab1e1767cfb6b40adf82748bd48cac58607f7b7a73020c79d36c8a561ff1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7cecab1e1767cfb6b40adf82748bd48cac58607f7b7a73020c79d36c8a561ff1"
+    sha256 cellar: :any_skip_relocation, ventura:        "31a594b32daf365100b6dcd976952973c1feed708d1981a9ba24c3740f84de1f"
+    sha256 cellar: :any_skip_relocation, monterey:       "31a594b32daf365100b6dcd976952973c1feed708d1981a9ba24c3740f84de1f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "31a594b32daf365100b6dcd976952973c1feed708d1981a9ba24c3740f84de1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26539d4559e974e7e2a4050bd17c36f8d7c6a07267f8f14967bb70d289ec424c"
   end
 
   depends_on "go" => :build

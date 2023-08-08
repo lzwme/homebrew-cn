@@ -9,26 +9,23 @@ class Charmcraft < Formula
   revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "189d8e246a8ee17998fc99ed8e5db62b6a15d37d04c6ef82f6ba71a6f263305e"
-    sha256 cellar: :any,                 arm64_monterey: "b0a58650477e6724c855633481047a356f1c7f3b0a74dd523aad9f08faed2cf1"
-    sha256 cellar: :any,                 arm64_big_sur:  "8a6a68d71a7c2a0ccc2b6e6a0e56a8d56e65a10d14c56328d9281e0ec8909079"
-    sha256 cellar: :any,                 ventura:        "b5b2d594adbbe4519e489c71c966fcbd2dd07c7e0b644a8f88fd13966a018ba7"
-    sha256 cellar: :any,                 monterey:       "e54774880ed8f4b39dde1a6a0e00f8ae2fe18248feb4fd9884161f1b2c6c9a7a"
-    sha256 cellar: :any,                 big_sur:        "c1a68046a73c13dc6e3734db784885e91f9effef9998e9b3eecb64c17275dc9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96366cb905207c7777de6a5f390fe8f9192dfdf718e7a67184f9a6dc9f782aff"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "9e01b62a8baa51f2913f4f3a60b246470252c81903ffe9408b2478a2801da05d"
+    sha256 cellar: :any,                 arm64_monterey: "956bbb2f241065ebbe8f259828f667b5c72a556d856354ad4de2f6ec455eb724"
+    sha256 cellar: :any,                 arm64_big_sur:  "42c06bb9578f017106c7b8f2474460c61176a77ac75e7cf1e35ef2091680fa4b"
+    sha256 cellar: :any,                 ventura:        "ef9a4d6b0b37c6eb27a4a9f802c84f427497761ff6ab4409caa458a267858625"
+    sha256 cellar: :any,                 monterey:       "f108bc91f02b7b5511294622d6c4ec0b231fdcbe4b2d1334778daf18c5c9f886"
+    sha256 cellar: :any,                 big_sur:        "6c05d228e20ea8020897d02e10d043119cc2fde2846054a9ced539f471cfa7b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd5c14d03f8ab08025243bf848281bd2c75fa88c457184a3a8d016abfd9434a0"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
-
+  depends_on "rust" => :build # for rpds-py
   depends_on "cffi"
   depends_on "keyring"
   depends_on "libsodium"
-  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -68,11 +65,6 @@ class Charmcraft < Formula
   resource "craft-store" do
     url "https://files.pythonhosted.org/packages/2c/81/d1ef36c5bb5caece17c9361a8a9c45418286f13f74a25b9f60425e50e4cf/craft-store-2.4.0.tar.gz"
     sha256 "6813e32df00003df16cf17257619ef25e86d5933b3ede41615b3d48a768a18cf"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/ea/d8/2afd2890fe451a3c109d2bdb6bc4ded55ec43059e524344d5e0004e36412/cryptography-3.4.tar.gz"
-    sha256 "9f7aa11ea95723359f914be3217d8b378bc3897f65a1ec1ab4e0118c336f51fc"
   end
 
   resource "Deprecated" do
@@ -263,10 +255,6 @@ class Charmcraft < Formula
   end
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     # Workaround for Xcode 14.3
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version == 1403
 

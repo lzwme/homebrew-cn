@@ -9,27 +9,25 @@ class Duplicity < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "50fbe703230df28adc8de206791c7aaba072b369479db843b686e960226e2a68"
-    sha256 cellar: :any,                 arm64_monterey: "db8d4b3d89c4781c864d04b559d5bfc5d781af26a41274a505ee51ac150cdb2a"
-    sha256 cellar: :any,                 arm64_big_sur:  "c31d24d17059a2bf3a0d47b93e21c4f1aa405b6942387e54d7641f16586c4332"
-    sha256 cellar: :any,                 ventura:        "4d10d690a06d1fc20f7cb546ea68280c408990cff5da95cd92f795ee84685235"
-    sha256 cellar: :any,                 monterey:       "26146fc71838cfc31977b702585be2e1d4292c59c5565daf352da02accebe95c"
-    sha256 cellar: :any,                 big_sur:        "7194854ddce451efd8b0c6f10909330a45ee117b7b20d9d7b55d12e41d0964cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0341710599769daaa5a2fda373e8e6f5fe9fee00c970ca47ab8b301dfe7941c0"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "8551ef713b427f09faadb52d90cfa879b4a31912427df865e0a65717e08fec47"
+    sha256 cellar: :any,                 arm64_monterey: "6973c24a57742cf2209be8bbec96fe390b88eff686b4bea0ffa87ca94a60da91"
+    sha256 cellar: :any,                 arm64_big_sur:  "661e9510a8a5a230f86744db498a92a2cf6ee9ae749895a067251fdcd0ee8324"
+    sha256 cellar: :any,                 ventura:        "c0c690549dca246ae957d01105fb02dac1803436a98444d354bd64def2165fd3"
+    sha256 cellar: :any,                 monterey:       "dc79512652eca0ba2413c45d4556b38b3964c504c5aea95fc82f6a730e41fc3d"
+    sha256 cellar: :any,                 big_sur:        "36bc06885b50a5c80d7ee11d792dfcd1a26c2021e3a74a58624d216adfe038a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0cd1a0ccc0611285f8fab8134a068d2d3faa56eebbb4a01f6f1caaebee2ac07"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "gettext" => :build # for msgfmt
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
+  depends_on "rust" => :build # for bcrypt
   depends_on "cffi"
   depends_on "gnupg"
   depends_on "librsync"
-  depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "pycparser"
   depends_on "python-certifi"
+  depends_on "python-cryptography"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -106,11 +104,6 @@ class Duplicity < Formula
   resource "clint" do
     url "https://files.pythonhosted.org/packages/3d/b4/41ecb1516f1ba728f39ee7062b9dac1352d39823f513bb6f9e8aeb86e26d/clint-0.5.1.tar.gz"
     sha256 "05224c32b1075563d0b16d0015faaf9da43aa214e4a2140e51f08789e7a4c5aa"
-  end
-
-  resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
-    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
   end
 
   resource "debtcollector" do
