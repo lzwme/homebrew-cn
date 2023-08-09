@@ -2,18 +2,18 @@ class Argocd < Formula
   desc "GitOps Continuous Delivery for Kubernetes"
   homepage "https://argoproj.github.io/cd"
   url "https://github.com/argoproj/argo-cd.git",
-      tag:      "v2.7.10",
-      revision: "469f25753b2be7ef0905a11632a6382060bcae99"
+      tag:      "v2.8.0",
+      revision: "804d4b8ca6bc4c2cf02c5c971aa923ec5b8623f0"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8bc16c1814bf96ef7c414718307e49de98e13ac6ec02d729cd8dbefb6695e0fc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "083dc21799a6124e3a5fa8f84fd19991e9fd39b42cd1b4da15841547a17631df"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "26cadcc3c0fcaa36798e0a0ab714ee1432d492611872c343bbd5ce4cb03cf8f1"
-    sha256 cellar: :any_skip_relocation, ventura:        "d111e6e837ab899141d4147689efc8a54f5e34ce6930b4ff35e57f5d6a9fd863"
-    sha256 cellar: :any_skip_relocation, monterey:       "881f1f3b56fa3c91455c70888127efa77ed24db77d5f08433cc10a3c0a9c806c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "da59f678448e6030bb30901b4528c11772c1ed534c065c008257fe1e2fd51e53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebdc04cd8db48a764f30863da31907a4ae310e263cc27274f28a9f9c7ef6d792"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3cac8b1eb73747e1ca686f8ce880fb8842f50de73338f3d7d6972bba78cd49dd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "92864d7bf933d943b6c653c9b94507578f45776d760adbc424a2e8ee0f9b3463"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "28969d5ba72e451687b5663f04113cb9e6f5030b1b648afffc73768fbc5097d5"
+    sha256 cellar: :any_skip_relocation, ventura:        "42c2f75193a70ee3f6549c830b1cd5311dca59e3d9b9eb09f4ea47357642cdcc"
+    sha256 cellar: :any_skip_relocation, monterey:       "29ae83bdb8fb88b3926653a7ad3b57a944a0142418ed23db48a59605db8bc563"
+    sha256 cellar: :any_skip_relocation, big_sur:        "49631fcd8c94e6be062b8536ef0fe574154e08b67c9b68a274936956d241641b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03769be29d7876b51ef9205bf3960a16a03ae2a4e482c3a351d977fb0fd6a861"
   end
 
   depends_on "go" => :build

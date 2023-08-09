@@ -4,16 +4,17 @@ class Rizin < Formula
   url "https://ghproxy.com/https://github.com/rizinorg/rizin/releases/download/v0.6.0/rizin-src-v0.6.0.tar.xz"
   sha256 "6a924906efdf547ac50462767f5add53902436e7a4862d2c0e24ca91b7761508"
   license "LGPL-3.0-only"
+  revision 1
   head "https://github.com/rizinorg/rizin.git", branch: "dev"
 
   bottle do
-    sha256 arm64_ventura:  "dab22a50a7ceb810cbbe56539e3c40db2a1a4d2dd0004668e181d87c0dbed212"
-    sha256 arm64_monterey: "b013b48ef8c24dad5e6da7dbb15e679071ecd617e53c8ebf4ab87a4c6d741b84"
-    sha256 arm64_big_sur:  "ffd62c3ae5dafb88563d19950845e78f565c528f20d85c9f2988c20cfbe96fe2"
-    sha256 ventura:        "e1de78b77a4cfc8202a8528dd688fd87a2bba4524512c7e901a70ac341e3313b"
-    sha256 monterey:       "e74641cd40714ad377109eee3184c5124fd97e7751fad5a169f5c75c4228c939"
-    sha256 big_sur:        "2762e8f6f570013c483d135a1f1addb178205993196dd55c3be027514e2e4141"
-    sha256 x86_64_linux:   "e102a7b0156390ea0be2dc1bceb7c0ac22c2a759fc10148d5e8ad946351496e1"
+    sha256 arm64_ventura:  "851c6ea0a78df7ef9099c5f25ee607be12be0edcea789ed368fe25599bae8c8d"
+    sha256 arm64_monterey: "cd638a3a23f28fcd7380dbba4ddef251f04c7bacd5a6bb7a31fe035a05829d3e"
+    sha256 arm64_big_sur:  "e20a047829d5ac1ed6a0aa549a70b87375057d7e6249a82606e86529f1d4dffa"
+    sha256 ventura:        "f94f9267c6eadffbf82f70ef383db5d779083770f056c05f81dc0865da9405f3"
+    sha256 monterey:       "19c9c269c670341b1cf9de0fd1f8b14be0a59ba87f163b27c8754c1985d7d2ca"
+    sha256 big_sur:        "c01368faee40cd7183e98e792dd4767eb8d0c35009699e44084c787dc5ef9372"
+    sha256 x86_64_linux:   "f97f900b84442c0b2e078a9ee0864670bcaeddfdc2529b6b5c9cc9a41d141688"
   end
 
   depends_on "meson" => :build
@@ -43,7 +44,7 @@ class Rizin < Formula
         "-Duse_sys_capstone=enabled",
         "-Duse_sys_xxhash=enabled",
         "-Duse_sys_magic=enabled",
-        "-Drizin_plugins=#{HOMEBREW_PREFIX}/lib/rizin/plugins",
+        "-Dextra_prefix=#{HOMEBREW_PREFIX}",
         "-Denable_tests=false",
         "-Denable_rz_test=false",
         "--wrap-mode=nodownload",

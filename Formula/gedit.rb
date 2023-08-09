@@ -1,18 +1,18 @@
 class Gedit < Formula
   desc "GNOME text editor"
   homepage "https://wiki.gnome.org/Apps/Gedit"
-  url "https://download.gnome.org/sources/gedit/46/gedit-46.0.tar.xz"
-  sha256 "2ca1be052902cf05b1f3d389d12e3cc8cb906740c10c9bde3cb8af6db58f655f"
+  url "https://download.gnome.org/sources/gedit/46/gedit-46.1.tar.xz"
+  sha256 "a1a6e37f041765dff7227a1f5578b6f49faaf016b1e17e869caf5bfb94c6aa4e"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "d49f8def6f60ae80e863c314f929740a7ade2f0044d02b59210cbf7e91b82d12"
-    sha256 arm64_monterey: "431cf737ae2c7190028c134424659df02561a9edb2209f14cb1467ceb1a66818"
-    sha256 arm64_big_sur:  "b9d339a2cda8c0b06e119a9b07738ddc8a2a180e2d614d03a0af7a42b3515239"
-    sha256 ventura:        "02cb9152f7888d9f41e415b3f79b3b508bf1e073307c12e15992846e3dce449c"
-    sha256 monterey:       "092f8a1ceea8e165f5ca81ec05ec3fe92d8721876938a15859af13b8965e2c09"
-    sha256 big_sur:        "afcf433c246f23d77a3945d749824c05563f4bf2611878ff788bc45b4a3f48bf"
-    sha256 x86_64_linux:   "f74b0d3d8e9b1efb0e22c5fa92c49a2adce96fd5bbbc22ac60a65a2211d0c9da"
+    sha256 arm64_ventura:  "c5c423f03f3223640738588e8b039ffba1a7aa693ee624c3351faa5befeee5e4"
+    sha256 arm64_monterey: "94eb96a3893d9ff2594a62d0121ee2e7da81c089612fab86fbb0889b2a3857c9"
+    sha256 arm64_big_sur:  "4c9bd81c2ac45b00625beab8471105e7e8c1b861f8749a30e1a7c3033697a7e2"
+    sha256 ventura:        "0e3029e4939dabcce383c8a3d69dee70863c2508d6af010da83e4e61af717132"
+    sha256 monterey:       "f3c17e4bfcf524a88662f4adab87a00b4b9ba7a5802623f7261a523dbd76eb28"
+    sha256 big_sur:        "aefd5b227129370ddb1d90bc92c6df4908980984fdec991a2f461edb6dbccb4d"
+    sha256 x86_64_linux:   "ccb491551263d3e43dc064c02141b0095ebf615e78374445f59df7a2eecd8a3e"
   end
 
   depends_on "desktop-file-utils" => :build # for update-desktop-database
@@ -40,13 +40,6 @@ class Gedit < Formula
   depends_on "libxml2"
   depends_on "pango"
   depends_on "tepl"
-
-  # Fixes `git submodule` failure.
-  # Remove on next release.
-  patch do
-    url "https://gitlab.gnome.org/GNOME/gedit/-/commit/02b0a3ab1486406c1fb300c1bdee7060946c3d66.diff"
-    sha256 "4cb4cb888964248cf9507ad58e4eaef99267b446f6f8d06cd2d82c8d32818bd3"
-  end
 
   def install
     ENV["DESTDIR"] = "/"

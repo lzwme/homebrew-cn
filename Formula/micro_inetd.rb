@@ -6,6 +6,14 @@ class MicroInetd < Formula
   sha256 "15f5558753bb50ed18e4a1445b3e8a185f3b1840ec8e017a5e6fc7690616ec52"
   license "BSD-2-Clause"
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?micro_inetd[._-](\w+)\.t/i)
+    strategy :page_match do |page, regex|
+      page.scan(regex).map { |match| Date.parse(match[0])&.strftime("%Y-%m-%d") }
+    end
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2571772cdf0c887a13fa608f34a9bd4e866634f72c7df20a04aa6426e8e0f634"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "523ce480e35f50c093ebe4b0ae2c60b6a21007f0543a697b173c562c10a2639f"

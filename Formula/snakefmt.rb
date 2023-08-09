@@ -9,27 +9,25 @@ class Snakefmt < Formula
   head "https://github.com/snakemake/snakefmt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aacdd85f47b9d06f40d5f6914c9d75aca441a4e4e7035847c6e2ffa3501e4a1f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c515b72d75101adb1c0219312e3f0ac252556e49578f061162a95c36754e2cc9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6d336d69b89cbed603f00c61c2da20b450977e74ad2a4bd033e301bde8760f39"
-    sha256 cellar: :any_skip_relocation, ventura:        "59752e99382174eb8cce0baba33d460ac69c9f569d0bb78fa64ffd08e877d10e"
-    sha256 cellar: :any_skip_relocation, monterey:       "91b6459f98238ef9a08c5706ca6750064a900209c022cdeb83e18cc4f07046a3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b98ed4fb2bccfd8361905ead0c3b42768bddcd502fd1a123a8056df621fe4828"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96caa291d8fe76b796a11ed33d6b9bd8264ecd9612cbdedbf00c7fee7feccb05"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "78fa80a9a0dd8bed819be21b14eb7f5ba5256e26a3ba79da185ed73dbbc162b6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e3df170687d2d0d028e335724a8d8c0ba1294671fdace69565b54ad0ec901573"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a6e7660112c57b1db419e5374a4402c2d6b39cc69f7a1bdbd0a3557f459539b3"
+    sha256 cellar: :any_skip_relocation, ventura:        "a1f0e554d2aa849e04e1b8c5dd003468f5a80865339e1965c2678c52b3449678"
+    sha256 cellar: :any_skip_relocation, monterey:       "e70923304c46034abb3af0cf3993ca7b24673a0e38edf9142862d11425b0e6de"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9057a5052ecc45abc5df3ba28b0daaaf5a8ba017a99887bda5f676af7597e0c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "890638778841809d83b6fc803cd9ea611c0b1aa2d80cb3f8c35f49373a61eef7"
   end
 
-  depends_on "cmake" => :build
   depends_on "black"
+  depends_on "python-toml"
   depends_on "python@3.11"
 
-  on_linux do
-    depends_on "pkg-config" => :build
-    depends_on "rust" => :build
-  end
-
-  resource "toml" do
-    url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
-    sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
+  # Switch build-system to poetry-core to avoid rust dependency on Linux.
+  # https://github.com/snakemake/snakefmt/pull/199
+  patch do
+    url "https://github.com/snakemake/snakefmt/commit/cee8a662c286fc78a593534f5700e08a7096c822.patch?full_index=1"
+    sha256 "094e56dd75bf2506ac3c73ab9877cd2a56137092c98bd8063404f57a77825536"
   end
 
   def install

@@ -9,22 +9,19 @@ class CondaLock < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "06b204c795536195662ccd9930c3629bf836dc1dabe28254c056e3403ea6f248"
-    sha256 cellar: :any,                 arm64_monterey: "596f3576eb095e5958d4ef5c18f4b8cc4a79906edb56547d512828ec8c7d7f8e"
-    sha256 cellar: :any,                 arm64_big_sur:  "80bfa96eee953e18b0113a8d0a086da7044a8b8c39a81c85a477c8ca1889c9e7"
-    sha256 cellar: :any,                 ventura:        "64d0f36863fa4f15be906d5238854c7aed8adf3a085fafee7b972529489b5f8d"
-    sha256 cellar: :any,                 monterey:       "a811f4cf02c93dc02a46d7434a317fbffa2b964e1fff4e302c57e1c7fd9183a9"
-    sha256 cellar: :any,                 big_sur:        "f971c8dc452b42ab0fb1356c935c19f163b98e0769aee558505042c0250ee19e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eaecccc7d8e4cf33fbfbc1ff1b0e971471761000fb398c2f0c44233b9ba45537"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "77cbacbe42d9b7f04b77627f72d0db20993c9c47d4f92c94837537e6e99a6157"
+    sha256 cellar: :any,                 arm64_monterey: "5d7f481eb7d1fe09b31bc9f0d8e7cbdc7dfce4ceae60561a3e4a8b47946a9758"
+    sha256 cellar: :any,                 arm64_big_sur:  "5887020fa45a0c9fef25732e148838dde923055e24449927c004916b71534b56"
+    sha256 cellar: :any,                 ventura:        "97b503ba44ad717586f2bbc2eece30d73f65798c674552bb276cc9c171cdd6b8"
+    sha256 cellar: :any,                 monterey:       "31bb4cb96e18f9a1bea4e0e53a720e2f8a83ad0c8d664115fbfc7a219e444d4e"
+    sha256 cellar: :any,                 big_sur:        "cc85bc7bb477a024ca02472a8c7ec5864eb57c72ad1531862c678a4870798e4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ad7b72404a45f34d480cad9c5ede6a506d0c0021b6ca0d7878d2b25402110f8"
   end
 
-  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
+  depends_on "rust" => :build # for pydantic
   depends_on "cffi"
   depends_on "keyring"
-  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-typing-extensions"
@@ -64,8 +61,8 @@ class CondaLock < Formula
   end
 
   resource "click-default-group" do
-    url "https://files.pythonhosted.org/packages/22/3a/e9feb3435bd4b002d183fcb9ee08fb369a7e570831ab1407bc73f079948f/click-default-group-1.2.2.tar.gz"
-    sha256 "d9560e8e8dfa44b3562fbc9425042a0fd6d21956fcc2db0077f63f34253ab904"
+    url "https://files.pythonhosted.org/packages/1d/ce/edb087fb53de63dad3b36408ca30368f438738098e668b78c87f93cd41df/click_default_group-1.2.4.tar.gz"
+    sha256 "eb3f3c99ec0d456ca6cd2a7f08f7d4e91771bef51b01bdd9580cc6450fe1251e"
   end
 
   resource "clikit" do
@@ -113,16 +110,6 @@ class CondaLock < Formula
     sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
   end
 
-  resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/33/44/ae06b446b8d8263d712a211e959212083a5eda2bf36d57ca7415e03f6f36/importlib_metadata-6.8.0.tar.gz"
-    sha256 "dbace7892d8c0c4ac1ad096662232f831d4e64f4c4545bd53016a3e9d4654743"
-  end
-
-  resource "jaraco-classes" do
-    url "https://files.pythonhosted.org/packages/8b/de/d0a466824ce8b53c474bb29344e6d6113023eb2c3793d1c58c0908588bfa/jaraco.classes-3.3.0.tar.gz"
-    sha256 "c063dd08e89217cee02c8d5e5ec560f2c8ce6cdc2fcdc2e68f7b2e5547ed3621"
-  end
-
   resource "jinja2" do
     url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
@@ -131,11 +118,6 @@ class CondaLock < Formula
   resource "markupsafe" do
     url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
     sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
-  end
-
-  resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/b7/56/7daf104a9cb6af39c00127aee6904b01040dbb12cf1ceedd6a087c097055/more-itertools-10.0.0.tar.gz"
-    sha256 "cd65437d7c4b615ab81c0640c0480bc29a550ea032891977681efd28344d51e1"
   end
 
   resource "msgpack" do
@@ -218,11 +200,6 @@ class CondaLock < Formula
     sha256 "b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"
   end
 
-  resource "zipp" do
-    url "https://files.pythonhosted.org/packages/e2/45/f3b987ad5bf9e08095c1ebe6352238be36f25dd106fde424a160061dce6d/zipp-3.16.2.tar.gz"
-    sha256 "ebc15946aa78bd63458992fc81ec3b6f7b1e92d51c35e6de1c3804e73b799147"
-  end
-
   def install
     virtualenv_install_with_resources
 
@@ -242,7 +219,7 @@ class CondaLock < Formula
       dependencies:
         - python=3.11
     EOS
-    system "#{bin}/conda-lock", "-p", "osx-64", "-p", "osx-arm64"
+    system bin/"conda-lock", "-p", "osx-64", "-p", "osx-arm64"
     assert_path_exists testpath/"conda-lock.yml"
   end
 end

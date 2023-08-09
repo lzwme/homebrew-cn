@@ -1,14 +1,14 @@
 class Upx < Formula
   desc "Compress/expand executable files"
   homepage "https://upx.github.io/"
-  url "https://ghproxy.com/https://github.com/upx/upx/releases/download/v4.0.2/upx-4.0.2-src.tar.xz"
-  sha256 "1221e725b1a89e06739df27fae394d6bc88aedbe12f137c630ec772522cbc76f"
+  url "https://ghproxy.com/https://github.com/upx/upx/releases/download/v4.1.0/upx-4.1.0-src.tar.xz"
+  sha256 "0582f78b517ea87ba1caa6e8c111474f58edd167e5f01f074d7d9ca2f81d47d0"
   license "GPL-2.0-or-later"
   head "https://github.com/upx/upx.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, monterey: "2e7f9c35cac2e339b6de8a3608f436314e7d8b2c4ee60689195a6bb9b3aeb7c9"
-    sha256 cellar: :any_skip_relocation, big_sur:  "2ed424d5f94c10e279b0a03c08de69e07ee96f2eefe77d7ffaea6eddddaefb18"
+    sha256 cellar: :any_skip_relocation, monterey: "db18963055dd657d579824a7daaf69f79e1639a10fd1accb399e84ddcd5d649c"
+    sha256 cellar: :any_skip_relocation, big_sur:  "8e6aa21f689985270ff1cc3857ef9848f63f3c79a96604884ee846ce76e6401b"
   end
 
   depends_on "cmake" => :build

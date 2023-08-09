@@ -3,21 +3,19 @@ class Bzt < Formula
 
   desc "BlazeMeter Taurus"
   homepage "https://gettaurus.org/"
-  url "https://files.pythonhosted.org/packages/7c/09/7d38d9327dcb279f8863985f3808c3da25543eda4bac0bb38681ea36c28f/bzt-1.16.23.tar.gz"
-  sha256 "2d90a58c0316697399e83f7cf96a7f99d2ee244f5dffb9ebf5cc4be21161efd8"
+  url "https://files.pythonhosted.org/packages/26/20/04e5ecc56688d0485c73b4cd12333694dc7b89eedfe48bd2643e77df1e65/bzt-1.16.24.tar.gz"
+  sha256 "a89652def362be33149a78b888f877c69b385fe6d00b55a3ee40e2b2f4ab2a5a"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "049acde1bd42caaadd478b886b2ab6b6e5787741791a2fa19b0716cfd9b87a17"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e31f4e1779e02788e116e3acd42bb3f34c3503d0755b39558c7f537694e4600f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4b003aa60535e0479c55ed06a46a1e5f8e0de720235e75979939f2af0f70e10f"
-    sha256 cellar: :any_skip_relocation, ventura:        "1b3cfe9abe1318a6adf886d9be23077e4850daf06d241a49b93438554f5c087e"
-    sha256 cellar: :any_skip_relocation, monterey:       "33f55dce9b3bfc30be9f1ce61e2e7bd03501f7a1e08c096e4d61af0fc5d1b672"
-    sha256 cellar: :any_skip_relocation, big_sur:        "52a6cdd12cce75d94d0bfa90b185416a3045966aaa332e2c8ddfd909aa7d1d1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4575372612555c174fefa203e49a75f92f45a5e0228eabc58dbc31aff62968c4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c61a9dd3daaed7f16ff005a0f4ce631ba064b43cb6d1dffebd23ce189ffee589"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "144b60ca7cd396e624e0bcf5060f2dbe418a7f178a890298cd0a6ec0ac0e6ffd"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b23f30a6d6f8975e136e2cf167e7031a8003a322baf1be356b8759824f894918"
+    sha256 cellar: :any_skip_relocation, ventura:        "38abe8809dccc649a612babd6e6a492160b7c32b48005942e950457631fdb763"
+    sha256 cellar: :any_skip_relocation, monterey:       "c50f63ca7db4acbc7db9c06003a75fbdd3bf692a1bf0efe58f85781865ff0cd6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "aecfe2fdceb8bbb71982f20026b6a622003e5ed9a364311324270a75ba526486"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dac66318dc366b0de797fcdd99c481b739073ce126fd69d9326302e7fd1083b0"
   end
 
   depends_on "cmake" => :build
@@ -185,8 +183,8 @@ class Bzt < Formula
   end
 
   resource "rapidfuzz" do
-    url "https://files.pythonhosted.org/packages/29/73/b41cac4dcb1c8fde87fe6f1ce6e4e08de688305d48b99e8bfbba2654a57b/rapidfuzz-3.1.2.tar.gz"
-    sha256 "1b1b2eab728efc239c8aab97b4821f8e10dcd5a1b066365d0e38023e3b2289e8"
+    url "https://files.pythonhosted.org/packages/77/76/224d6eeab59c705bb7c1986b91b3e756dd65efbcf5bda148d39c3cbf402b/rapidfuzz-3.2.0.tar.gz"
+    sha256 "448d031d9960fea7826d42bd4284156fc68d3b55a6946eb34ca5c6acf960577b"
   end
 
   resource "requests" do
@@ -200,8 +198,8 @@ class Bzt < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
-    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
+    url "https://files.pythonhosted.org/packages/e2/7d/539e6f0cf9f0b95b71dd701a56dae89f768cd39fd8ce0096af3546aeb5a3/urllib3-1.26.16.tar.gz"
+    sha256 "8f135f6502756bde6b2a9b28989df5fbe87c9970cecaa69041edcce7f0589b14"
   end
 
   resource "urwid" do
@@ -220,8 +218,8 @@ class Bzt < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/ec/34/903929e15b2657335b2ce8723d92fc804d3569b7ac0f1f8877ed1a7b2024/wheel-0.41.0.tar.gz"
-    sha256 "55a0f0a5a84869bce5ba775abfd9c462e3a6b1b7b7ec69d72c0b83d673a5114d"
+    url "https://files.pythonhosted.org/packages/c9/3d/02a14af2b413d7abf856083f327744d286f4468365cddace393a43d9d540/wheel-0.41.1.tar.gz"
+    sha256 "12b911f083e876e10c595779709f8a88a59f45aacc646492a67fe9ef796c1b47"
   end
 
   resource "yarl" do
