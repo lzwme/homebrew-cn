@@ -3,18 +3,12 @@ require "language/node"
 class Astgen < Formula
   desc "Generate AST in json format for JS/TS"
   homepage "https://github.com/joernio/astgen"
-  url "https://ghproxy.com/https://github.com/joernio/astgen/archive/refs/tags/v3.2.0.tar.gz"
-  sha256 "414afa102fb62ef8d4b2085e53e3b466c1e330188c392fbd616fba900b3548ea"
+  url "https://ghproxy.com/https://github.com/joernio/astgen/archive/refs/tags/v3.3.0.tar.gz"
+  sha256 "aaec054bb66b0c38699c1601c68b331fa09d1c34619a0a1d0a3b5ca4ba8dba3f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "745ca1dfe7840ace17f24165c652376b9097428c4e6f9c3a535c4eb195478da4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "745ca1dfe7840ace17f24165c652376b9097428c4e6f9c3a535c4eb195478da4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "745ca1dfe7840ace17f24165c652376b9097428c4e6f9c3a535c4eb195478da4"
-    sha256 cellar: :any_skip_relocation, ventura:        "745ca1dfe7840ace17f24165c652376b9097428c4e6f9c3a535c4eb195478da4"
-    sha256 cellar: :any_skip_relocation, monterey:       "745ca1dfe7840ace17f24165c652376b9097428c4e6f9c3a535c4eb195478da4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "745ca1dfe7840ace17f24165c652376b9097428c4e6f9c3a535c4eb195478da4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd60603fc6d722fe83e7e6658d8bdbc1902fd286df5b136ce3278607995c76c5"
+    sha256 cellar: :any_skip_relocation, all: "17e90e5aa92df21c0dd11e8138b86571686459eac7d056b6458c381593df5fe4"
   end
 
   depends_on "node"

@@ -1,10 +1,9 @@
 class Netdata < Formula
   desc "Diagnose infrastructure problems with metrics, visualizations & alarms"
   homepage "https://netdata.cloud/"
-  url "https://ghproxy.com/https://github.com/netdata/netdata/releases/download/v1.40.1/netdata-v1.40.1.tar.gz"
-  sha256 "cc86172acd5e6ec05bc0fa86a50d967502a264d8adf7f79293923ccd8febb251"
+  url "https://ghproxy.com/https://github.com/netdata/netdata/releases/download/v1.41.0/netdata-v1.41.0.tar.gz"
+  sha256 "8372d86ab88f7ec0b0b714dabbf2d03cf819d5db9bf4d8ae612f1a3dbc96b9a0"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,13 +11,13 @@ class Netdata < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "0b44428889581ff7165334228da42785fb25763d8c8eb6b6b7f0161f7df78cd0"
-    sha256 arm64_monterey: "c8159a9fc98bdb85b5f6201c5cb7a78821bc1d74ae77e8a2ce69ba6e8a93d59b"
-    sha256 arm64_big_sur:  "b5f6bd4070370f0dde62b619e70e442e5efbd4710dba6f7dabed4a14fd9d021e"
-    sha256 ventura:        "5bb6bd953e01232562e65b51837286287fdc971a673c6624fe59d63926fb9f5b"
-    sha256 monterey:       "9048cfa0172fa0163e167587287116d304a55717bd720531276b982574929b13"
-    sha256 big_sur:        "9c32907c656326ee5259c8679735bc4888b4ea565309169458316963b8c03ca0"
-    sha256 x86_64_linux:   "04ea80142e1d2c4e46a181ce6eff65ca2bce91eff9ec21906bc7a52ea60801bc"
+    sha256 arm64_ventura:  "2b2389859eede0e66070c57225798de7c40575f04ea1cc318eec4b3c7dfac06c"
+    sha256 arm64_monterey: "c8221d5abd74622069189b7a326ab0a2bd1f6f791cf7952eb3e4a305f669b7a7"
+    sha256 arm64_big_sur:  "8822cecedc5473f1fc023065544d890ea36a6014713a33daed3cdf4f5ec14ed1"
+    sha256 ventura:        "3ea6b3439c77997eaf0b4f9542d0f27f96820d79dd001e5acec5eb12a69dad8b"
+    sha256 monterey:       "e57807fc1de31cf5610b1eccf81ae9e925b357d6ee46e92ce8b6bb1fc0b7ecf6"
+    sha256 big_sur:        "499faea0f13d0a877075ab529f1e05ed0211932be6f8ac47314d5ed4a81aaf78"
+    sha256 x86_64_linux:   "2e31e28dc085b2a7b8eb37000977e94000e5db5f9f0a0102b127494612a0e410"
   end
 
   depends_on "autoconf" => :build
@@ -42,13 +41,6 @@ class Netdata < Formula
   resource "judy" do
     url "https://downloads.sourceforge.net/project/judy/judy/Judy-1.0.5/Judy-1.0.5.tar.gz"
     sha256 "d2704089f85fdb6f2cd7e77be21170ced4b4375c03ef1ad4cf1075bd414a63eb"
-  end
-
-  # Support Protobuf 22+.
-  # https://github.com/netdata/netdata/pull/15266
-  patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/5e3398d5a5a67447d86867581ee4a7df3dee98cb/netdata/protobuf-22.patch"
-    sha256 "b8b60037786d77aff0ef1c15bada5c929de01b370f9bae1e52c6f5f707780eb6"
   end
 
   def install
@@ -107,6 +99,7 @@ class Netdata < Formula
   def post_install
     (var/"cache/netdata/unittest-dbengine/dbengine").mkpath
     (var/"lib/netdata/registry").mkpath
+    (var/"lib/netdata/lock").mkpath
     (var/"log/netdata").mkpath
     (var/"netdata").mkpath
   end

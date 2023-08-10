@@ -1,19 +1,19 @@
 class Seqkit < Formula
   desc "Cross-platform and ultrafast toolkit for FASTA/Q file manipulation in Golang"
   homepage "https://bioinf.shenwei.me/seqkit"
-  url "https://ghproxy.com/https://github.com/shenwei356/seqkit/archive/v2.5.0.tar.gz"
-  sha256 "e3bcbfc25cae8f2a50ff3cc3aad96b3ab06d19549b6311e26547d4db2f28b50d"
+  url "https://ghproxy.com/https://github.com/shenwei356/seqkit/archive/refs/tags/v2.5.1.tar.gz"
+  sha256 "76d105921f918be20e616fbb607fe0fb2db603535a254ec0f853cb36bef817da"
   license "MIT"
   head "https://github.com/shenwei356/seqkit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eacda5a3ceee7133b8166c49034b9988be5a69c29e10e707c4768ab59469a865"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "eacda5a3ceee7133b8166c49034b9988be5a69c29e10e707c4768ab59469a865"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "eacda5a3ceee7133b8166c49034b9988be5a69c29e10e707c4768ab59469a865"
-    sha256 cellar: :any_skip_relocation, ventura:        "436d7d075821b1c2ff19491cf514173fb2ccc19d4f1d1b3f6b754b22830dea16"
-    sha256 cellar: :any_skip_relocation, monterey:       "436d7d075821b1c2ff19491cf514173fb2ccc19d4f1d1b3f6b754b22830dea16"
-    sha256 cellar: :any_skip_relocation, big_sur:        "436d7d075821b1c2ff19491cf514173fb2ccc19d4f1d1b3f6b754b22830dea16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b76e4872cc908ccdf1a90e93fbf39a2bab03f34052bd40e5638d63e6c7904d6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fafcd5531a29dd73b5870d0c9525c0a9f6bcf77967d750e4bb62bc9a18ebf3b5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fafcd5531a29dd73b5870d0c9525c0a9f6bcf77967d750e4bb62bc9a18ebf3b5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fafcd5531a29dd73b5870d0c9525c0a9f6bcf77967d750e4bb62bc9a18ebf3b5"
+    sha256 cellar: :any_skip_relocation, ventura:        "bb9b4b600fe138d1544f3ed9e9024e6b53f5d47d7fc868a8ece96f0a3c74430f"
+    sha256 cellar: :any_skip_relocation, monterey:       "bb9b4b600fe138d1544f3ed9e9024e6b53f5d47d7fc868a8ece96f0a3c74430f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bb9b4b600fe138d1544f3ed9e9024e6b53f5d47d7fc868a8ece96f0a3c74430f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b84099abd1282a294988c4f94180188c98e43d3462c62e84dbfceb5537d50777"
   end
 
   depends_on "go" => :build

@@ -24,10 +24,11 @@ class Tlsx < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args, "./cmd/tlsx/main.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/tlsx"
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/tlsx -version 2>&1")
     system bin/"tlsx", "-u", "expired.badssl.com:443", "-expired"
   end
 end

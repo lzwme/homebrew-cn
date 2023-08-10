@@ -4,8 +4,8 @@
 class Mu < Formula
   desc "Tool for searching e-mail messages stored in the maildir-format"
   homepage "https://www.djcbsoftware.nl/code/mu/"
-  url "https://ghproxy.com/https://github.com/djcb/mu/releases/download/v1.10.5/mu-1.10.5.tar.xz"
-  sha256 "1af693dc19d6980f743b98494ab6db97656b6954e7edff343ceb62e65ca5cc2d"
+  url "https://ghproxy.com/https://github.com/djcb/mu/releases/download/v1.10.6/mu-1.10.6.tar.xz"
+  sha256 "3c45b72ad5de350c8ff6e1ad19a3cb868719cfc3e65c3427797e757d6eff18d6"
   license "GPL-3.0-or-later"
   head "https://github.com/djcb/mu.git", branch: "master"
 
@@ -18,13 +18,13 @@ class Mu < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "5ba2f9f51203e325aed48a325b1b9ffa2372bdf0716f8285a7c02b397ee7a2db"
-    sha256 arm64_monterey: "32c5cd4a2f9e983cee90da8b3daaf3f2b6b0402fd0580c346301efb31f70aa56"
-    sha256 arm64_big_sur:  "3b61ebe92f252689294157d4b6d794363615fb2f40c791a37a189bc345b48a51"
-    sha256 ventura:        "44b769f1c72b9c37e24b6c542f421006557c650fef20ff9ce7a67a3b7c376502"
-    sha256 monterey:       "82fe85bef764a5f7942272ff8f5246b1fd266aae8ce17483f5f7d52249e3a492"
-    sha256 big_sur:        "289d83eb41aef614c41986ba78955e891e8344de7e3d6fcad7050c25eb530a37"
-    sha256 x86_64_linux:   "3f789810494c974f242f75d91a8e5554415b0240a3e4646e294f5eef928b31eb"
+    sha256 arm64_ventura:  "81f1e70c20875e92a3f431746e7373e9088428870f435929136b887df72d7f06"
+    sha256 arm64_monterey: "5d1671287275d822a3c101466f4b9cb1099e5edade871a364eccac1c9617e92f"
+    sha256 arm64_big_sur:  "30faf5ef8dd448bbcbe680ebf8954bdc587752e10082ed2d24c4f14084a41258"
+    sha256 ventura:        "d85d7c499c099b62c68c6a5646ff8a440dc190c8b3df174d7758423b092a4f7d"
+    sha256 monterey:       "d34b8d54ab20d14960aef7698fc95a57ce25d682202b61cffddaa5a1d31d470c"
+    sha256 big_sur:        "2377c67a64adbe6583ab98c342ae2909c1ea17ead499908a13ccf69c1c38b152"
+    sha256 x86_64_linux:   "56efa3b5c5368b8b1a77c7430aae13a254d837748d142502268c1ca697aa1a1b"
   end
 
   depends_on "emacs" => :build
@@ -47,12 +47,14 @@ class Mu < Formula
 
   fails_with gcc: "5"
 
+  # upstream bug report, https://github.com/djcb/mu/issues/2531
+  # reverts https://github.com/djcb/mu/pull/2522
+  patch :DATA
+
   def install
-    mkdir "build" do
-      system "meson", *std_meson_args, "-Dlispdir=#{elisp}", ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", "setup", "build", "-Dlispdir=#{elisp}", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   # Regression test for:
@@ -95,3 +97,20 @@ class Mu < Formula
     EOS
   end
 end
+
+__END__
+diff --git a/guile/meson.build b/guile/meson.build
+index 933553c..ca051d1 100644
+--- a/guile/meson.build
++++ b/guile/meson.build
+@@ -73,9 +73,7 @@ lib_guile_mu = shared_module(
+   [ 'mu-guile.cc',
+     'mu-guile-message.cc' ],
+   dependencies: [guile_dep, glib_dep, lib_mu_dep, config_h_dep, thread_dep ],
+-  install: true,
+-  install_dir: guile_dep.get_variable(pkgconfig: 'extensiondir')
+-)
++  install: true)
+
+ if makeinfo.found()
+   custom_target('mu_guile_info',

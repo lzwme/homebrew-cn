@@ -1,19 +1,19 @@
 class F2 < Formula
   desc "Command-line batch renaming tool"
   homepage "https://github.com/ayoisaiah/f2"
-  url "https://ghproxy.com/https://github.com/ayoisaiah/f2/archive/v1.9.0.tar.gz"
-  sha256 "acbc80567640f0f3afa75321b1f3a4e5dd2ff126046089ff537ee71dabcb2350"
+  url "https://ghproxy.com/https://github.com/ayoisaiah/f2/archive/v1.9.1.tar.gz"
+  sha256 "fbeb4540c4afe4aa25565685ee7ef7498449da7fc5f5b70a0e303b15c6e35f71"
   license "MIT"
   head "https://github.com/ayoisaiah/f2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9ff76e7f4650aa977f0d48e0af9acb21c4fb4a1817346cdbc1fece8aaa8effa1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "675998e4d801cf74e82bafa118ad4b9deaa67a18db166ef5b94d23d7d0ce94ff"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6aea8a32d9c15e9823a43d4d3f742696d10d2c6366eacb37676587fbc1379d48"
-    sha256 cellar: :any_skip_relocation, ventura:        "8c5a3d32c5c868803917727d5bb454fd24f4c3a1dc610a0bc0870b2c7b60ce7c"
-    sha256 cellar: :any_skip_relocation, monterey:       "d0cbeac1bd0c3b790d19b5225074ff80d48bc28d045443744f175ed60c1d1f36"
-    sha256 cellar: :any_skip_relocation, big_sur:        "40e06a3df7453e30bcb74533c4af307ae2032c93936046a86832fd613460869d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9465d9b80409ab0db25a8c56a9eb006b249f9300c54c205992eae238af516d0b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "05a3ff917d9aaab41874915d0270151d14b03d2b45b30346338ba0bc6bbe7aa8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "05a3ff917d9aaab41874915d0270151d14b03d2b45b30346338ba0bc6bbe7aa8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "05a3ff917d9aaab41874915d0270151d14b03d2b45b30346338ba0bc6bbe7aa8"
+    sha256 cellar: :any_skip_relocation, ventura:        "640ad76f6012ed3c7d4dcc4f054e6edfa44621f3594303d32c3cd3c8763351ed"
+    sha256 cellar: :any_skip_relocation, monterey:       "640ad76f6012ed3c7d4dcc4f054e6edfa44621f3594303d32c3cd3c8763351ed"
+    sha256 cellar: :any_skip_relocation, big_sur:        "640ad76f6012ed3c7d4dcc4f054e6edfa44621f3594303d32c3cd3c8763351ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "00ebec8aaa2a5d08b8516bc009e658923f3a55eb9df0d92ee8effd98207fabed"
   end
 
   depends_on "go" => :build

@@ -1,21 +1,19 @@
 class CassandraCppDriver < Formula
   desc "DataStax C/C++ Driver for Apache Cassandra"
   homepage "https://docs.datastax.com/en/developer/cpp-driver/latest"
-  url "https://ghproxy.com/https://github.com/datastax/cpp-driver/archive/2.16.2.tar.gz"
-  sha256 "de60751bd575b5364c2c5a17a24a40f3058264ea2ee6fef19de126ae550febc9"
+  url "https://ghproxy.com/https://github.com/datastax/cpp-driver/archive/2.17.0.tar.gz"
+  sha256 "075af6a6920b0a8b12e37b8e5aa335b0c7919334aa1b451642668e6e37c5372f"
   license "Apache-2.0"
   head "https://github.com/datastax/cpp-driver.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "1f94b7c0d0411f6c14267d82f7161a885fb740854ad919e738e3de2fe79f6837"
-    sha256 cellar: :any,                 arm64_monterey: "9bc308348bd4255276447d174fc29a2c542213bf169408363896dfc49956ca35"
-    sha256 cellar: :any,                 arm64_big_sur:  "cac923a6c616a2e1bc661803649147b908087590f92a1481715c41b03bd326c0"
-    sha256 cellar: :any,                 ventura:        "a9a4ab72c7ced27cf60d95b402659425e946dad16bd3eaa35f66ac8b1eedf929"
-    sha256 cellar: :any,                 monterey:       "d2b5345fb271d6828ee7dd30066e9052130ccce62290d08e679e2d0d461ee778"
-    sha256 cellar: :any,                 big_sur:        "55ff95e3125b9b9fb85e77b3a41f11b76f3717cc9d8ed444e86d12bd50c52e6c"
-    sha256 cellar: :any,                 catalina:       "388592bafbc1a2d775cea095a5fc7bbb81996542eac910ae00621af12803ed9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90e70a2b4e18cf01957a124f1f5143102d03a8a20d9ad650f48a5241278aa14d"
+    sha256 cellar: :any,                 arm64_ventura:  "f2c0f84c604ce004d37cd749bb37340f647fd5abc51d0acbeef3e1bb29b44cba"
+    sha256 cellar: :any,                 arm64_monterey: "b171190fe175ef14558beb72ec499301c3dc6351fea12aab1659b42ce7f027b0"
+    sha256 cellar: :any,                 arm64_big_sur:  "db0e37ce8d95554dfe8812adcd74d6df1745deb9aed5a2afc829942447939609"
+    sha256 cellar: :any,                 ventura:        "cf5ffec87eec474e78e9144d912d1251082bffae3bafa34980d6b86ddb9e1100"
+    sha256 cellar: :any,                 monterey:       "922860104f8a70e3678b183dcf72846569978467c716785f6e5fc2cb92e8c2c5"
+    sha256 cellar: :any,                 big_sur:        "e7625ecdf2d1638dcb076dc8b3860a0919af3b86b4fc3791b7cad3b00f8d7bfb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f8f67baa1eb5712c113cdcb4802ee3f4f857e1055f7981d1970c2c47622afad"
   end
 
   depends_on "cmake" => :build

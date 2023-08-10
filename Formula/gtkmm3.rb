@@ -1,8 +1,8 @@
 class Gtkmm3 < Formula
   desc "C++ interfaces for GTK+ and GNOME"
   homepage "https://www.gtkmm.org/"
-  url "https://download.gnome.org/sources/gtkmm/3.24/gtkmm-3.24.7.tar.xz"
-  sha256 "1d7a35af9c5ceccacb244ee3c2deb9b245720d8510ac5c7e6f4b6f9947e6789c"
+  url "https://download.gnome.org/sources/gtkmm/3.24/gtkmm-3.24.8.tar.xz"
+  sha256 "d2940c64922e5b958554b23d4c41d1839ea9e43e0d2e5b3819cfb46824a098c4"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,14 +11,13 @@ class Gtkmm3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "9c5913ee79cab986ee26accb6bf5ce09609f0680656086a7f6e00a54caa92659"
-    sha256 cellar: :any, arm64_monterey: "808bfe18b6b0520ae339f1547226186e26d2921aec56a1a893e23d944a4c8526"
-    sha256 cellar: :any, arm64_big_sur:  "27b6d3262145f8603093b58ca8acb18f2ab85e0a7c278e5b07cf6af9da8e6095"
-    sha256 cellar: :any, ventura:        "0826ae1a46d4c9e3d26ca4cbcb00202f193e2ab7287bda7e2d0f4366b0f7bb75"
-    sha256 cellar: :any, monterey:       "0d993ae9c31063d3e051809dc39e5c519f757488d0dc2329cd55088676d0ee89"
-    sha256 cellar: :any, big_sur:        "d02cdf945b5d228921bd461fadffeb28e384e29166b4483760ee3be9f7ab2c9f"
-    sha256 cellar: :any, catalina:       "c482ea55a5f8d0eace78b24ce5b8337b355f47816cc3c3b71f2767af2ed5bdb1"
-    sha256               x86_64_linux:   "a13ec506b7a75317c847535caa40ab647b8ac562d306eee35a499030ab9594d2"
+    sha256 cellar: :any, arm64_ventura:  "d09df4ca0f3ab0d81e6f6adf49fb8897e69f8d8782fe435fd941e1f8e67ce367"
+    sha256 cellar: :any, arm64_monterey: "abc44666af25bedd6e470ed46dd54f6d8b9ce1e3e03c4020e335fa269e6f16e5"
+    sha256 cellar: :any, arm64_big_sur:  "74547d4474ffdc944b017fa8394681b7ee669216ca1d3b0957d69c17968c99ca"
+    sha256 cellar: :any, ventura:        "63fca66eadb4a64d3a4155e8671ec80dccc423150eeab5bb50534830eae4221d"
+    sha256 cellar: :any, monterey:       "25d28cb65838bb115c07facd15450f69b16919fca544e97c2302cb51e1d33070"
+    sha256 cellar: :any, big_sur:        "cc4a7601a18212b67b82c0b630a93d8bd95cd67cee936f2e8c93b612d7bbf12e"
+    sha256               x86_64_linux:   "4636cb05f997adce9a64c56c745dcc553f0f2884d6a803cfd25371ab7dd6dfe2"
   end
 
   depends_on "meson" => :build
@@ -30,13 +29,9 @@ class Gtkmm3 < Formula
   depends_on "pangomm@2.46"
 
   def install
-    ENV.cxx11
-
-    mkdir "build" do
-      system "meson", *std_meson_args, ".."
-      system "ninja"
-      system "ninja", "install"
-    end
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do

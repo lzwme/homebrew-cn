@@ -4,6 +4,7 @@ class Tesseract < Formula
   url "https://ghproxy.com/https://github.com/tesseract-ocr/tesseract/archive/5.3.2.tar.gz"
   sha256 "b99d30fed47360d7168c3e25d194a7416ceb1d9e4b232c7f121cc5f77084d3e7"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/tesseract-ocr/tesseract.git", branch: "main"
 
   livecheck do
@@ -12,13 +13,13 @@ class Tesseract < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e7a2fbeb1e5a141f0146bd60ff65486c0e94415d83a6b62d0dca61cbcfd8a687"
-    sha256 cellar: :any,                 arm64_monterey: "1816b1e991555cb2041e055d4afec41b717b0bb2cf238de62dbdbd4b1ee8110b"
-    sha256 cellar: :any,                 arm64_big_sur:  "266cfc666e1826c545d90ab22c8abe70e8de57e1f228815260a0534c968a036f"
-    sha256 cellar: :any,                 ventura:        "955413a76311dba99ee2c4051987879627f9f4fc4a842635d547cfb99de6c584"
-    sha256 cellar: :any,                 monterey:       "3b0f1898dced9ef7fa1d5b47d0194c9dd20392b86124791dff9c0aef89920ab4"
-    sha256 cellar: :any,                 big_sur:        "2c0b29448a1cc238ef18464fc8733c4400485123badd4aa4688489c0e72bb9b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "519db9ee763b1070e572fcf57d71afc57c892043de465f11f3e8d287165be808"
+    sha256 cellar: :any,                 arm64_ventura:  "d16c37b9e59fbe63d93ab0b3625d106be443d9adc03a0c2bba83460733b1974a"
+    sha256 cellar: :any,                 arm64_monterey: "322cf359943d012bcee4b5484f7b95372d8e072bf67698d37ce58ac4d721ffd2"
+    sha256 cellar: :any,                 arm64_big_sur:  "86dc7e056a65562b944be9f7efbaf1637a5a0958d0ac279d8bea782a77b602b2"
+    sha256 cellar: :any,                 ventura:        "59908aafca08a99af7a3285b1d94a1543c302dda64e09437a5492fbd569c0238"
+    sha256 cellar: :any,                 monterey:       "096a0f3e3041b4799fcbe9e1d0d80a50a84f005f89d516bdbb24a1cb7b9f491c"
+    sha256 cellar: :any,                 big_sur:        "724f075c0d95517ec3325a82e86abf8ee3a31658f0fc3e44a3eeba4acece04e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "785fb6a9f3a58492bfb1b4e320891bb51507f3ad6beb71fbbe630e3351e6269a"
   end
 
   depends_on "autoconf" => :build

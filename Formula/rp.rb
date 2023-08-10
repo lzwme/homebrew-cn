@@ -1,19 +1,19 @@
 class Rp < Formula
   desc "Tool to find ROP sequences in PE/Elf/Mach-O x86/x64 binaries"
   homepage "https://github.com/0vercl0k/rp"
-  url "https://ghproxy.com/https://github.com/0vercl0k/rp/archive/refs/tags/v2.1.1.tar.gz"
-  sha256 "474101ec7c63502e7452b4782de0891dc8f9b5178af52ae1c7c2bf0ca768bf77"
+  url "https://ghproxy.com/https://github.com/0vercl0k/rp/archive/refs/tags/v2.1.2.tar.gz"
+  sha256 "7d0b523e123315c1a4e66ab6386a733ce3200d0cc2c489f04edbe398a016a160"
   license "MIT"
   head "https://github.com/0vercl0k/rp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bdfa362fde7e355ca6f744ba769c56ce5bc363395d03f9edc98f3ab2cc870691"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c5d1f9a14df3dc6b306171c9ff3ca6d5040558460b086bc164e58b9e51e1a832"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1815c0d63c6d81a94cc3f541be3239d728d6a65ce8e64b48b8ec6b17fc4fa1b3"
-    sha256 cellar: :any_skip_relocation, ventura:        "8972c16a121e84298e409eb2e6c6a24f2752dea2284e619022554d5e561dd669"
-    sha256 cellar: :any_skip_relocation, monterey:       "f1d38a7711b2980683396a0eff31c4a25caf7940fd3072a82617da6c30c17110"
-    sha256 cellar: :any_skip_relocation, big_sur:        "17cdde7cc1903040ee1a81a2d95f6288b093ee2cf31019ae3e29515fb2f01bbc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec132fe23ad6b93063140db30ae2a264c89d3c1bc19a66b1b57cd97e1887b1cc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bdd40e9a4e27e956fa2be3591ced32e8b0022c5c487f4c5cb20437db094eb36d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3d5f2862e0a53666572c7b03e80b3c652440f063b435d616f135bdfb0462ccdd"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5e983fea67e1c46a4aa86b9bdb193c07519bfa94f137a975b106088011d200f3"
+    sha256 cellar: :any_skip_relocation, ventura:        "55eb4dce3cd61ded9718afecbab81d156a4d1d85786d7f10223a8492286233ce"
+    sha256 cellar: :any_skip_relocation, monterey:       "3f71e97c714faef8b03f0d1f2e8b787a6db8cb20a8853de18498d351e22c19a1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bb1a502f06dd14112dd034e6f81a7e3c398d36700b084c9bf1069a432f2ed6b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25a9224b577e2a01fa32da55b29c9cd070875f4a24517c8e25ca9e0a7a5e0d3c"
   end
 
   depends_on "cmake" => :build

@@ -8,12 +8,12 @@ class MariadbConnectorC < Formula
   revision 1
   head "https://github.com/mariadb-corporation/mariadb-connector-c.git", branch: "3.3"
 
-  # https://mariadb.org/download/ sometimes lists an older version as newest,
-  # so we check the JSON data used to populate the mariadb.com downloads page
-  # (which lists GA releases).
   livecheck do
-    url "https://mariadb.com/downloads_data.json"
-    regex(/href=.*?mariadb-connector-c[._-]v?(\d+(?:\.\d+)+)-src\.t/i)
+    url "https://downloads.mariadb.org/rest-api/connector-c/all-releases/?olderReleases=false"
+    strategy :json do |json|
+      json["releases"]&.select { |release| release["status"] == "stable" }
+                      &.map { |release| release["release_number"] }
+    end
   end
 
   bottle do

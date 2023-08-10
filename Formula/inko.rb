@@ -4,7 +4,7 @@ class Inko < Formula
   url "https://releases.inko-lang.org/0.12.0.tar.gz"
   sha256 "56584ece9d1522401d0855d3d103ee7e53fee74f12441a5e26b32f8d5eb934b8"
   license "MPL-2.0"
-  head "https://github.com/inko-lang/inko.git", branch: "master"
+  head "https://github.com/inko-lang/inko.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "e4dfd8dfcabe4bd91017d969517af9a78a615aa12ba4701358bab0324ae6b26d"

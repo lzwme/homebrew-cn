@@ -1,10 +1,9 @@
 class Chrony < Formula
   desc "Versatile implementation of the Network Time Protocol (NTP)"
   homepage "https://chrony-project.org"
-  url "https://chrony-project.org/releases/chrony-4.3.tar.gz"
-  sha256 "9d0da889a865f089a5a21610ffb6713e3c9438ce303a63b49c2fb6eaff5b8804"
+  url "https://chrony-project.org/releases/chrony-4.4.tar.gz"
+  sha256 "eafb07e6daf92b142200f478856dfed6efc9ea2d146eeded5edcb09b93127088"
   license "GPL-2.0-only"
-  revision 1
 
   livecheck do
     url "https://chrony-project.org/download.html"
@@ -12,13 +11,13 @@ class Chrony < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "88e2454307944b9e285480b943964de23851b0fae1717e250f061e521bf18fe5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "451d968c15da421fb5ddc27c4f0551fbabff228d5acd3220826d2f80dddcfa34"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4ffbb300f8de033449878b4c19a44f8b37b8885c9a9fa362210b755b4c75e519"
-    sha256 cellar: :any_skip_relocation, ventura:        "38479adf9a253a0f1b3354bb39b169237107a792a99c29e5d32671af6751ae64"
-    sha256 cellar: :any_skip_relocation, monterey:       "839c1232ef4dcb274ac537395706c29de8151afec218136d084c00cbcd6af95b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ac419164fd20ef6a925333ee5358ac146d469c62e29e51a7a98871b5f7d45914"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0dc242aba927d01713694aefeab587003e3946fb3bfefaefbb858d058edb489"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cfb99fd7b217e10e1d9ae7690c40e7f863fc6f42111b35ddc1b601a92827df5a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c8b3a86682971e2294dc86510f9a51b5537bc32010d1537c05f2f1b51f6e1e2d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4261a28c36662da557d8e52b70a25948f8096b0ba29f0017d1e19a66ee07f0c9"
+    sha256 cellar: :any_skip_relocation, ventura:        "940ecfd6fb5a46b2d39f182cd10c8f738be2a3bff664c544dd4c7466178b035a"
+    sha256 cellar: :any_skip_relocation, monterey:       "1de81641ae0c6205645751f4f9cbecfa788a7ce14f4dbff4f23675c6d8f5e8e5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e3917015f55056098ecb2f7526ca50df4ae90cfe6548ce3027708d2196009504"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38f294460a17ac1720cfe8c46b2958caf0fbf19c2cead23d468acf874d942f91"
   end
 
   depends_on "nettle"

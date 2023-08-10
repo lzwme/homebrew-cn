@@ -3,19 +3,19 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/1a/63/b9f48ef92757088cfd2855b36148facac3d53caf02aeac44ad21a03d62e0/snakemake-7.32.2.tar.gz"
-  sha256 "902dca1e50d8ea16be3a2ecf314259e3157e9fd619c8dcd7cd166aeb12336718"
+  url "https://files.pythonhosted.org/packages/6e/14/07b0cfc648c0317021bdd9c40d26b83f2a3f13f3585a0d8294ca414239d9/snakemake-7.32.3.tar.gz"
+  sha256 "cbe586fe28349982307f008ca40e839d569cf5d540008b0c91ebfef689b49b18"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "44364b2dcf9b8d2984aba1fe212c7cdf3d8399790455019d5fdbfddf89b7b23d"
-    sha256 cellar: :any,                 arm64_monterey: "bb1dbab9d72c9e6c4a2f02cd683db179e5304011a634fe72da1311d487d04696"
-    sha256 cellar: :any,                 arm64_big_sur:  "27946ea4bde8fb3caa31f29c92c0d6ae294d21ab0a4ee1acda1b96d4c0a82870"
-    sha256 cellar: :any,                 ventura:        "186bc6b3186377867a4e7ba79a6253ad52528ba5660adcdc31910527df495789"
-    sha256 cellar: :any,                 monterey:       "002384c285dbb5d0c3f49f504108c47797df8b1bb4029277c4a59844d40f5378"
-    sha256 cellar: :any,                 big_sur:        "d115c17a0937853a2a464451964933b0249d6dc76f9b01dc28c67cc10efb3d4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61f21799b74d652958156e8da8714c26351b684f1e792c3655eb9cba72d41809"
+    sha256 cellar: :any,                 arm64_ventura:  "afe068669e236e78237618122f74cb1bf3dbc3880e2f2212a68466608f03999f"
+    sha256 cellar: :any,                 arm64_monterey: "e6dc716c0c30db225f14710f1b66d778e32f5203c8375629dce836445c382873"
+    sha256 cellar: :any,                 arm64_big_sur:  "74936f489540bd3990a4f3d260ddade5aa82e24cbac8eb4155835bd4a65413d2"
+    sha256 cellar: :any,                 ventura:        "2df84687ae856be587b04a045d8669d842bbad01db06af649711ab3f997d773d"
+    sha256 cellar: :any,                 monterey:       "b880a0a4ab747020d04801f03af21e77e41c007e673fe47ca2c2808db74127fd"
+    sha256 cellar: :any,                 big_sur:        "b8c2f9c13dd7d6fc50c160e1efd698d66d2db5f35ffda296ea3ce8ddde4c2544"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af59d817d49d9e2b7d862ea630266cf8886a06b70e110b474514ac695ef0d7a2"
   end
 
   depends_on "rust" => :build # for rpds-py

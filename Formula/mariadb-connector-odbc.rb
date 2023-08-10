@@ -6,12 +6,12 @@ class MariadbConnectorOdbc < Formula
   sha256 "26420dac7d6d630fc34fb2fe77fdc9fc2a7e8e896d274d3c052db9ecd06bd48f"
   license "LGPL-2.1-or-later"
 
-  # https://mariadb.org/download/ sometimes lists an older version as newest,
-  # so we check the JSON data used to populate the mariadb.com downloads page
-  # (which lists GA releases).
   livecheck do
-    url "https://mariadb.com/downloads_data.json"
-    regex(/href=.*?mariadb-connector-odbc[._-]v?(\d+(?:\.\d+)+)-src\.t/i)
+    url "https://downloads.mariadb.org/rest-api/connector-odbc/all-releases/?olderReleases=false"
+    strategy :json do |json|
+      json["releases"]&.select { |release| release["status"] == "stable" }
+                      &.map { |release| release["release_number"] }
+    end
   end
 
   bottle do

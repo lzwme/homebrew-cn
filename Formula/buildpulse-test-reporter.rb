@@ -1,8 +1,8 @@
 class BuildpulseTestReporter < Formula
   desc "Connect your CI to BuildPulse to detect, track, and rank flaky tests"
   homepage "https://buildpulse.io"
-  url "https://ghproxy.com/https://github.com/buildpulse/test-reporter/archive/refs/tags/v0.27.0.tar.gz"
-  sha256 "cd0b3dfe1992d1a680cadc363fcbcbda7f67dd7b4789178a4425e5cf0c4ba961"
+  url "https://ghproxy.com/https://github.com/buildpulse/test-reporter/archive/refs/tags/v0.27.1.tar.gz"
+  sha256 "209618eef253c15bf2d625cb1539fbab5b9b10c342798a6159d9e515f27ac46d"
   license "MIT"
   head "https://github.com/buildpulse/test-reporter.git", branch: "main"
 
@@ -12,13 +12,13 @@ class BuildpulseTestReporter < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d19d7259228925e2cef5537a7bfbddbe8b96eaa29d668a57f3f67179ff025e08"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d19d7259228925e2cef5537a7bfbddbe8b96eaa29d668a57f3f67179ff025e08"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d19d7259228925e2cef5537a7bfbddbe8b96eaa29d668a57f3f67179ff025e08"
-    sha256 cellar: :any_skip_relocation, ventura:        "3191e5ce1871c1ed6c47d560c98f6cbfc24f110abc15d6b97eba7e3d6b5051f8"
-    sha256 cellar: :any_skip_relocation, monterey:       "3191e5ce1871c1ed6c47d560c98f6cbfc24f110abc15d6b97eba7e3d6b5051f8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3191e5ce1871c1ed6c47d560c98f6cbfc24f110abc15d6b97eba7e3d6b5051f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca08692fccecdba2dcdeccd0e5daa5a994132e7c602893226f3cb74545bedbf6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb35a28c4244c5963acd0146e124d25cde9bcb34011d307edca7af30d0097e56"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cb35a28c4244c5963acd0146e124d25cde9bcb34011d307edca7af30d0097e56"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cb35a28c4244c5963acd0146e124d25cde9bcb34011d307edca7af30d0097e56"
+    sha256 cellar: :any_skip_relocation, ventura:        "2bb67ce1dd3d9092f95ba1305b50103dbacc8fa1660c0b1f3ddc92374adfb9a0"
+    sha256 cellar: :any_skip_relocation, monterey:       "2bb67ce1dd3d9092f95ba1305b50103dbacc8fa1660c0b1f3ddc92374adfb9a0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2bb67ce1dd3d9092f95ba1305b50103dbacc8fa1660c0b1f3ddc92374adfb9a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e435448000cdaa35937fb7d108aa403c974bddb262e9219ce1a7525f5ab0d29"
   end
 
   depends_on "go" => :build

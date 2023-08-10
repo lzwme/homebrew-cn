@@ -3,18 +3,18 @@ require "language/node"
 class Cdk8s < Formula
   desc "Define k8s native apps and abstractions using object-oriented programming"
   homepage "https://cdk8s.io/"
-  url "https://registry.npmjs.org/cdk8s-cli/-/cdk8s-cli-2.27.0.tgz"
-  sha256 "41d53db1e8965cec3ca7df5e977bec794a29c7fc9dcd6f1a3b5543298b00c2b8"
+  url "https://registry.npmjs.org/cdk8s-cli/-/cdk8s-cli-2.29.0.tgz"
+  sha256 "4a3e529edf70cb31a12d1e897b0ac6d5f3f5623affbb7ed680d3bc9d5ba93441"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b2ed979bec596b8f67208cfb4620a301a0852f204398497f8c27d7fb6a802ade"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b2ed979bec596b8f67208cfb4620a301a0852f204398497f8c27d7fb6a802ade"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b2ed979bec596b8f67208cfb4620a301a0852f204398497f8c27d7fb6a802ade"
-    sha256 cellar: :any_skip_relocation, ventura:        "e6f5a562077fe9f3ed1c416b1bb5ba0919717c573eed10384ba97fcb93ed4ca5"
-    sha256 cellar: :any_skip_relocation, monterey:       "e6f5a562077fe9f3ed1c416b1bb5ba0919717c573eed10384ba97fcb93ed4ca5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e6f5a562077fe9f3ed1c416b1bb5ba0919717c573eed10384ba97fcb93ed4ca5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2ed979bec596b8f67208cfb4620a301a0852f204398497f8c27d7fb6a802ade"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d726950d6d7cc28f827d1c6f5943e79d87a769e24a258045ec9cc493d054e459"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d726950d6d7cc28f827d1c6f5943e79d87a769e24a258045ec9cc493d054e459"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d726950d6d7cc28f827d1c6f5943e79d87a769e24a258045ec9cc493d054e459"
+    sha256 cellar: :any_skip_relocation, ventura:        "7bc96aa6b77feb0c84cab94a53debf963ae31a4b5c726af7cc2fa13d7f8b7411"
+    sha256 cellar: :any_skip_relocation, monterey:       "7bc96aa6b77feb0c84cab94a53debf963ae31a4b5c726af7cc2fa13d7f8b7411"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7bc96aa6b77feb0c84cab94a53debf963ae31a4b5c726af7cc2fa13d7f8b7411"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d726950d6d7cc28f827d1c6f5943e79d87a769e24a258045ec9cc493d054e459"
   end
 
   depends_on "node"

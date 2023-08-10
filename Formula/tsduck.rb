@@ -1,19 +1,19 @@
 class Tsduck < Formula
   desc "MPEG Transport Stream Toolkit"
   homepage "https://tsduck.io/"
-  url "https://ghproxy.com/https://github.com/tsduck/tsduck/archive/v3.34-3197.tar.gz"
-  sha256 "5e58f220063a5284080a612cc0f62e7f99329a1b2b1d5763f4b014b2578c95c2"
+  url "https://ghproxy.com/https://github.com/tsduck/tsduck/archive/v3.35-3258.tar.gz"
+  sha256 "7c28d04fad9ef8415dc02d56f377e5b2b4c3f173dcc9487a906ee73da38f4e41"
   license "BSD-2-Clause"
   head "https://github.com/tsduck/tsduck.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "539152d1b7f015ddaf46efed98990c652437539c746b931de18412c9f79f2c59"
-    sha256 cellar: :any,                 arm64_monterey: "a2433af95c5bffba31a50b53b579ccb1323bba279d75fd768d4abb1ac4c8679c"
-    sha256 cellar: :any,                 arm64_big_sur:  "e8c0466dbeb431fd9626007eb9e0b970dd544f1ca1fa36457ee1e78abb4044cf"
-    sha256 cellar: :any,                 ventura:        "6da426602d463109f9c96b39b13c1abac0ed8dffd7a7c746ab6d8a7d64694737"
-    sha256 cellar: :any,                 monterey:       "7d57277af59d9ade26a8abae82c62ca232489a619d4cbcf48638da92099f3e57"
-    sha256 cellar: :any,                 big_sur:        "bb5f9489b2c88f405eafa158b772761ba38f57fc68c4deffeab3296dc1822b80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "754bae1053aeaa551240815156ef0ab370a0b4715dc3f0ef8c43f6a99f6d93c0"
+    sha256 cellar: :any,                 arm64_ventura:  "0a0deb09a99bdc6cdfa3c9f0c4aa699583b4078cd40d1b2c2467d9af401d3468"
+    sha256 cellar: :any,                 arm64_monterey: "5fbfd3ad644a55f629a5362f73e7b91f8ec9e1b9a75bd8a917efd90e34d5d4ba"
+    sha256 cellar: :any,                 arm64_big_sur:  "8f7187549fa37f4b6e6917ef377f1536932c895efe43914955c4f5af32559546"
+    sha256 cellar: :any,                 ventura:        "cafc935c1db3487f2c1c9a93433ee9dbed1cc5c34d5d84b24705d78b1eb4d7f0"
+    sha256 cellar: :any,                 monterey:       "d6b9078e240bd7460bb9cddfc64789659d38ba5ddfba50c5f265e78d0d9748cf"
+    sha256 cellar: :any,                 big_sur:        "1e1b5d3cb13135bd8d3dad274cc899291219335124fd223ea1a72fd331196c7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82979de53cb002e265fb5991aeecc734f263b954808221b550435eec1aa1c37a"
   end
 
   depends_on "dos2unix" => :build

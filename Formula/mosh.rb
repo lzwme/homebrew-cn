@@ -40,9 +40,6 @@ class Mosh < Formula
   def install
     # https://github.com/protocolbuffers/protobuf/issues/9947
     ENV.append_to_cflags "-DNDEBUG"
-    # Keep C++ standard in sync with abseil.rb.
-    # Use `gnu++17` since Mosh allows use of GNU extensions (-std=gnu++11).
-    ENV.append "CXXFLAGS", "-std=gnu++17"
 
     # teach mosh to locate mosh-client without referring
     # PATH to support launching outside shell e.g. via launcher
@@ -52,12 +49,17 @@ class Mosh < Formula
       # Prevent mosh from reporting `-dirty` in the version string.
       inreplace "Makefile.am", "--dirty", "--dirty=-Homebrew"
       system "./autogen.sh"
+    elsif version <= "1.4.0" # remove `elsif` block and `else` at version bump.
+      # Keep C++ standard in sync with abseil.rb.
+      # Use `gnu++17` since Mosh allows use of GNU extensions (-std=gnu++11).
+      ENV.append "CXXFLAGS", "-std=gnu++17"
+    else # Remove `else` block at version bump.
+      odie "Install method needs updating!"
     end
 
     # `configure` does not recognise `--disable-debug` in `std_configure_args`.
     system "./configure", "--prefix=#{prefix}", "--enable-completion", "--disable-silent-rules"
-    # We insist on a newer C++ standard than the project expects, so
-    # let's run the tests to make sure we didn't break anything.
+    # Mosh provides remote shell access, so let's run the tests to avoid shipping an insecure build.
     system "make", "check" if OS.mac? # Fails on Linux.
     system "make", "install"
   end
