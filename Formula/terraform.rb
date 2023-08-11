@@ -1,8 +1,8 @@
 class Terraform < Formula
   desc "Tool to build, change, and version infrastructure"
   homepage "https://www.terraform.io/"
-  url "https://ghproxy.com/https://github.com/hashicorp/terraform/archive/v1.5.4.tar.gz"
-  sha256 "7a2dce5babc8a93cd7dfd5e4c59bacdd1f09776c7fa9152f7f7e4c9f2a714a71"
+  url "https://ghproxy.com/https://github.com/hashicorp/terraform/archive/v1.5.5.tar.gz"
+  sha256 "06a72b5ecda4e10d5f2a3c7627420cf0ca0a6b7b47ef0ae151cc1c6ef38eb2fe"
   license "MPL-2.0"
   head "https://github.com/hashicorp/terraform.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Terraform < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89c7c39b1404a1ad733e4a9c2e81336637870452508733053ec5499c55faa6ba"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "89c7c39b1404a1ad733e4a9c2e81336637870452508733053ec5499c55faa6ba"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "89c7c39b1404a1ad733e4a9c2e81336637870452508733053ec5499c55faa6ba"
-    sha256 cellar: :any_skip_relocation, ventura:        "113fb0eef0065f84c5a9d3d919f184713eb54a730c902750a1f7344e13aeb925"
-    sha256 cellar: :any_skip_relocation, monterey:       "113fb0eef0065f84c5a9d3d919f184713eb54a730c902750a1f7344e13aeb925"
-    sha256 cellar: :any_skip_relocation, big_sur:        "113fb0eef0065f84c5a9d3d919f184713eb54a730c902750a1f7344e13aeb925"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "72c8e4c7030dc4dc07c13146bae090b25fb8ccc016afeccb5efa2421501092f3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "36bab128ce1eadbb70ba7c9e4e3d7dc8920281efc67797ff2390a2d68bd5889e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "36bab128ce1eadbb70ba7c9e4e3d7dc8920281efc67797ff2390a2d68bd5889e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "36bab128ce1eadbb70ba7c9e4e3d7dc8920281efc67797ff2390a2d68bd5889e"
+    sha256 cellar: :any_skip_relocation, ventura:        "c294eccff528712de05bf1093be22936efe5743107d74d0a64137c2d4ece0254"
+    sha256 cellar: :any_skip_relocation, monterey:       "c294eccff528712de05bf1093be22936efe5743107d74d0a64137c2d4ece0254"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c294eccff528712de05bf1093be22936efe5743107d74d0a64137c2d4ece0254"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8e6d7e8c81de8169d368f1b24733789ae4206dbf92deac01199ff2f34a0c46e"
   end
 
   depends_on "go" => :build

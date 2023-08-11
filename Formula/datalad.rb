@@ -3,20 +3,18 @@ class Datalad < Formula
 
   desc "Data distribution geared toward scientific datasets"
   homepage "https://www.datalad.org"
-  url "https://files.pythonhosted.org/packages/8f/84/274042d4be1b50b3264471f38ea8465edbd928be33630ec0a2d8bcaa86c7/datalad-0.19.2.tar.gz"
-  sha256 "eeae1b28096c7c0f5879c84d48548ad2edc4dd3b894e23137f0753e6ed0173ce"
+  url "https://files.pythonhosted.org/packages/4e/3a/96d26ed9813c260294a497c8630fce1400da1112fbf478422cede3e9b9e8/datalad-0.19.3.tar.gz"
+  sha256 "1002181d50fc8d8f7f434ec39b6daa70c1b7786d275c52a56aa04af26ca74e05"
   license "MIT"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d704f30200ab14963de709ff161ed41a026d6c68ec4aebc76dba9e6b4ac47909"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d9113408160d7660e1a6b23c04573636c35dbf5399ec1ad10b39b36fe93578c7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d606f9d80ba721663c576a1a952f8b670d4e29351ea9e637d345bc8da8c8caa2"
-    sha256 cellar: :any_skip_relocation, ventura:        "6f7842c78c0d33c651221ade0f4d57a061bc418b16061f279a86301bc29764a1"
-    sha256 cellar: :any_skip_relocation, monterey:       "3a40eb59f66b78839a160b5040dccb323c8ac5cfbfafc557f12b6b8274ba85ee"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a75cd72e589aedfb2738556b433f61fb8656e4168a90fec26d7821ca71c8759a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74f9da6ae41a1fc80a20e4567a7a12a5b9c698e6a2ae8b17c9a34f5c3b07c8ac"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7d92f4c2c03cb41965bfc7ac84e567e60638aa99770d2924d68607d0e0e99541"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8b61e9135e61788cb9da2cb62e2e592d7d2faa27be5ae801c88a576404074210"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7c5d3365239ff8e6db0281c8fc20166dce8e41e653edeadbd2d087d3878509ad"
+    sha256 cellar: :any_skip_relocation, ventura:        "c826382cdafef21b5f8854752c9ca3bd1932519c5216c26af472890d319ce843"
+    sha256 cellar: :any_skip_relocation, monterey:       "db59f451e2aaa267af3e4bb50a434b115f03b9dfc72953a94b7644a62e10b2be"
+    sha256 cellar: :any_skip_relocation, big_sur:        "deda9286b755d29e99ffefc6b41d5e0c23e5e34e7fe25b4c4e00b22c184e423d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc1339d6ab31d83e1aee76c667bdafb8c666edc1b3226a20fd4dcc5ba057a339"
   end
 
   depends_on "rust" => :build # for cryptography
@@ -36,8 +34,8 @@ class Datalad < Formula
   end
 
   resource "chardet" do
-    url "https://files.pythonhosted.org/packages/41/32/cdc91dcf83849c7385bf8e2a5693d87376536ed000807fa07f5eab33430d/chardet-5.1.0.tar.gz"
-    sha256 "0d62712b956bc154f85fb0a266e2a3c5913c2967e00348701b32411d6def31e5"
+    url "https://files.pythonhosted.org/packages/f3/0d/f7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079/chardet-5.2.0.tar.gz"
+    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
   end
 
   resource "charset-normalizer" do
@@ -96,8 +94,8 @@ class Datalad < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/b7/56/7daf104a9cb6af39c00127aee6904b01040dbb12cf1ceedd6a087c097055/more-itertools-10.0.0.tar.gz"
-    sha256 "cd65437d7c4b615ab81c0640c0480bc29a550ea032891977681efd28344d51e1"
+    url "https://files.pythonhosted.org/packages/2d/73/3557e45746fcaded71125c0a1c0f87616e8258c78391f0c365bf97bbfc99/more-itertools-10.1.0.tar.gz"
+    sha256 "626c369fa0eb37bac0291bce8259b332fd59ac792fa5497b59837309cd5b114a"
   end
 
   resource "msgpack" do
@@ -116,8 +114,8 @@ class Datalad < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/a1/70/c1d14c0c58d975f06a449a403fac69d3c9c6e8ae2a529f387d77c29c2e56/platformdirs-3.9.1.tar.gz"
-    sha256 "1b42b450ad933e981d56e59f1b97495428c9bd60698baab9f3eb3d00d5822421"
+    url "https://files.pythonhosted.org/packages/dc/99/c922839819f5d00d78b3a1057b5ceee3123c69b2216e776ddcb5a4c265ff/platformdirs-3.10.0.tar.gz"
+    sha256 "b45696dab2d7cc691a3226759c0d3b00c47c8b6e293d96f6436f733303f77f6d"
   end
 
   resource "python-gitlab" do
@@ -136,8 +134,8 @@ class Datalad < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/3d/78/81191f56abb7d3d56963337dbdff6aa4f55805c8afd8bad64b0a34199e9b/tqdm-4.65.0.tar.gz"
-    sha256 "1871fb68a86b8fb3b59ca4cdd3dcccbc7e6d613eeed31f4c332531977b89beb5"
+    url "https://files.pythonhosted.org/packages/62/06/d5604a70d160f6a6ca5fd2ba25597c24abd5c5ca5f437263d177ac242308/tqdm-4.66.1.tar.gz"
+    sha256 "d88e651f9db8d8551a62556d3cff9e3034274ca5d66e93197cf2490e2dcb69c7"
   end
 
   resource "urllib3" do

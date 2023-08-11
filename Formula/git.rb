@@ -14,13 +14,14 @@ class Git < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "da6d23d518ee5148c4c1308406b4eabba0b2c5ba1f653d63e9fe8f56de59bc29"
-    sha256 arm64_monterey: "7682a7436bd8e9889170b09b30b999a7cb082e83235c124f32bd5ae7e59273f6"
-    sha256 arm64_big_sur:  "4b278fea7ff2d4cc450f62b5d1f6de05dfbb4892ed8ecc226e547e45390c0aed"
-    sha256 ventura:        "623bea9a6c510f6c36d718f656957c93a65a2a8b81b77cfc02c622bc41f596f7"
-    sha256 monterey:       "ecbadeb2cbd9e2752d656327fc69f2f3144add145c24f4edb6bea9f96aac0376"
-    sha256 big_sur:        "016ea10f78c7a5d90c230beea4df74116280f4dddae9ebdf311cca5121ab563a"
-    sha256 x86_64_linux:   "59a972b97c2396da07630256954731319b7faeb28ac7de5b791af5213a7a48d8"
+    rebuild 1
+    sha256 arm64_ventura:  "4bea6de3334de088b716f05aef9a95d185af6ed1237aebc97be1824b1d223584"
+    sha256 arm64_monterey: "8ff4e3a966efd6dea5544633195122994a942027722878949ca06b263f5827e2"
+    sha256 arm64_big_sur:  "03c655c2028b4a0c3cd188c80ab0efb04f9b97d7833d0bb4eadd2e31bd20bd47"
+    sha256 ventura:        "b2660c95dac23a5c7fdef545399b5eff987cc78755a29e7a8fe87afef35f177c"
+    sha256 monterey:       "36cb8b459b3ac11131ec58b663d6dc7209b0ea2e3b26de16fe7486308b4148e0"
+    sha256 big_sur:        "7c446d04c50a6473bd6d0859b5a4601245363b69baffb757ef7d8ea85788e3ae"
+    sha256 x86_64_linux:   "03b0f32b3507b1f9bef265af06ee501905c9087c831f4405e9474f9cf18b7a4b"
   end
 
   depends_on "gettext"
@@ -93,6 +94,10 @@ class Git < Formula
 
       %W[NO_APPLE_COMMON_CRYPTO=1 OPENSSLDIR=#{openssl_prefix}]
     end
+
+    # Make sure `git` looks in `opt_prefix` instead of the Cellar.
+    # Otherwise, Cellar references propagate to generated plists from `git maintenance`.
+    inreplace "Makefile", /(-DFALLBACK_RUNTIME_PREFIX=")[^"]+/, "\\1#{opt_prefix}"
 
     system "make", "install", *args
 
@@ -187,16 +192,21 @@ class Git < Formula
     system bin/"git", "commit", "-a", "-m", "Initial Commit"
     assert_equal "haunted\nhouse", shell_output("#{bin}/git ls-files").strip
 
+    # Check that our `inreplace` for the `Makefile` does not break.
+    # If this assertion fails, please fix the `inreplace` instead of removing this test.
+    # The failure of this test means that `git` will generate broken launchctl plist files.
+    refute_match HOMEBREW_CELLAR.to_s, shell_output("#{bin}/git --exec-path")
+
+    return unless OS.mac?
+
     # Check Net::SMTP or Net::SMTP::SSL works for git-send-email
-    if OS.mac?
-      %w[foo bar].each { |f| touch testpath/f }
-      system bin/"git", "add", "foo", "bar"
-      system bin/"git", "commit", "-a", "-m", "Second Commit"
-      assert_match "Authentication Required", pipe_output(
-        "#{bin}/git send-email --from=test@example.com --to=dev@null.com " \
-        "--smtp-server=smtp.gmail.com --smtp-server-port=587 " \
-        "--smtp-encryption=tls --confirm=never HEAD^ 2>&1",
-      )
-    end
+    %w[foo bar].each { |f| touch testpath/f }
+    system bin/"git", "add", "foo", "bar"
+    system bin/"git", "commit", "-a", "-m", "Second Commit"
+    assert_match "Authentication Required", pipe_output(
+      "#{bin}/git send-email --from=test@example.com --to=dev@null.com " \
+      "--smtp-server=smtp.gmail.com --smtp-server-port=587 " \
+      "--smtp-encryption=tls --confirm=never HEAD^ 2>&1",
+    )
   end
 end

@@ -1,19 +1,19 @@
 class Rover < Formula
   desc "CLI for managing and maintaining data graphs with Apollo Studio"
   homepage "https://www.apollographql.com/docs/rover/"
-  url "https://ghproxy.com/https://github.com/apollographql/rover/archive/refs/tags/v0.17.3.tar.gz"
-  sha256 "04756cfe56c67e9fe2b540feb25151994e6c0c527838878e0b884c9c12078529"
+  url "https://ghproxy.com/https://github.com/apollographql/rover/archive/refs/tags/v0.18.0.tar.gz"
+  sha256 "6145b5e304220f4210d251a0c408414e37612b8fc37486b98d0dfbd18d15d05b"
   license "MIT"
   head "https://github.com/apollographql/rover.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f33eaca6bc83be2cf57c8457ff110205e2abf5b5c7a392caa70e156f3a57fae7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8bd9a1a6734bdc52ee992cb0064c31535c2c1efd677cfc07ee7f54ce893f4be1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a85794fe46fbcabf7477bcb4968b2e000529fdcaa3d46efadb5ffa7e7a51a42e"
-    sha256 cellar: :any_skip_relocation, ventura:        "78596a5a5f25503e43a6476227c2f55fda6995aa647d0d940573e7c1dd8eb6df"
-    sha256 cellar: :any_skip_relocation, monterey:       "00ce9343dd079cb2288e2d015adb64575ad1df16ef16e02668534c92c1c2924e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8b54f8173554290efc9138be976d6cc7294748b3741624a30092e4e320e7099f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "de0dd529a3bc7d3c4dee9ed4bfd1ed301575fd3759198ca4f68a9a2c654e2875"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a52422ee2f02e1e166a4b0420490aec132af7ec021caed687e2e0956032ef76"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8b5640fb576228950a703dd19f2b6dc17baf35c4a16b158eb2bd74417df76d4e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e696a8a0e6552f43c4d558fadbeb854d9e71f0717be0f4cd18053ee270f38269"
+    sha256 cellar: :any_skip_relocation, ventura:        "739122aa327786cc4e321385e70ea5b531c5bae98f8e29c989719936222c879d"
+    sha256 cellar: :any_skip_relocation, monterey:       "94ebedb67204308c42adf1e35fc1364240e649589f3a4eabe6b0e94348b7deaf"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6175faf9cf2ef0ed94c9dcdf08aa012150906a903eb9a3711b455760a80aea76"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76f0773cd0d77cb8f43d9b4b5ba51714312eb06bf6f9fc5ef00f20951be4a9b7"
   end
 
   depends_on "rust" => :build

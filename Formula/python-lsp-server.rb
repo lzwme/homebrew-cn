@@ -9,15 +9,20 @@ class PythonLspServer < Formula
   head "https://github.com/python-lsp/python-lsp-server.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "57d34e162fcf7aef1306819128666e8074b403c286079eebd8dbb103a06ca2ac"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2a55c509df735ed9d7b7012429638e3d23bdc188c69f3743e43471ba5b84825a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cc0867d011ced05959711f954de6e648b52a9baf7bc26684a2544f8c388589d0"
-    sha256 cellar: :any_skip_relocation, ventura:        "1ee8b82feb43df17440a7a1e8bc4753ea9eed0fddc3f88fff17e21333665b721"
-    sha256 cellar: :any_skip_relocation, monterey:       "2cdb423a3dd9a313147fc6c8f9f869b374f4cb1412a58479f573f21755b6052d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0295940e60167375957319f45cd49ccc085c27696e8fc6bc10d2fa4a6ff12ea9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc751949b75695e98248f3414340deae6249e2d07eb9465cfaf40316cf8b9d80"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb8b37a15eb903e65accb806f4e65dc032cd6ef7e42f8bbd6c7f0e7053c49513"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5d37a5d42959c0188598f2fe3b01477ecd46cbbc18b70dfde7cfa9ccf42c8007"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "44126dac9bf0d9f1eaba24cd6cc536dc2288ab9b5a8a909ab5295070bcc4231e"
+    sha256 cellar: :any_skip_relocation, ventura:        "d20862919fe83b44cebba195404d65de0b0ba64747f66486d58e9f19e3216737"
+    sha256 cellar: :any_skip_relocation, monterey:       "96a67a2fe928a61e20bc40cf5f57c1098d40a6216d3d9fef7cd2cbe8c82f25ff"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f09d550a792b0a8a1f8c041f90c4211a82e910ee05fe591a4c65752ad4364265"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6dc3f895a332b33e5d6d6c5badecc2571dd80f411a431584a6e6794746fbcc6e"
   end
 
+  depends_on "black"
+  depends_on "mypy"
+  depends_on "pycodestyle"
+  depends_on "pydocstyle"
   depends_on "python@3.11"
 
   resource "docstring-to-markdown" do
@@ -40,6 +45,16 @@ class PythonLspServer < Formula
     sha256 "d12f0c4b579b15f5e054301bb226ee85eeeba08ffec228092f8defbaa3a4c4b3"
   end
 
+  resource "pylsp-mypy" do
+    url "https://files.pythonhosted.org/packages/5f/56/5dd31793481169f71f3849d9b455c253511c1298db7ec73f484b923bac22/pylsp-mypy-0.6.7.tar.gz"
+    sha256 "06ba6d09bdd6ec29025ccc952dd66a849361a224a9f04cebd69b9f45f7d4a064"
+  end
+
+  resource "python-lsp-black" do
+    url "https://files.pythonhosted.org/packages/ad/1b/f20e612a33f9dcc2a0863a42ee62cc4f30ee724f1e7cc869b92c786c8ebd/python-lsp-black-1.3.0.tar.gz"
+    sha256 "5aa257e9e7b7e5a2316ef2a9fbcd242e82e0f695bf1622e31c0bf5cd69e6113f"
+  end
+
   resource "python-lsp-jsonrpc" do
     url "https://files.pythonhosted.org/packages/99/45/1c2a272950679af529f7360af6ee567ef266f282e451be926329e8d50d84/python-lsp-jsonrpc-1.0.0.tar.gz"
     sha256 "7bec170733db628d3506ea3a5288ff76aa33c70215ed223abdb0d95e957660bd"
@@ -50,8 +65,25 @@ class PythonLspServer < Formula
     sha256 "78e318def4ade898a461b3d92a79f9441e7e0e4d2ad5419abed4336d702c7425"
   end
 
+  resource "websockets" do
+    url "https://files.pythonhosted.org/packages/d8/3b/2ed38e52eed4cf277f9df5f0463a99199a04d9e29c9e227cfafa57bd3993/websockets-11.0.3.tar.gz"
+    sha256 "88fc51d9a26b10fc331be344f1781224a375b78488fc343620184e95a4b27016"
+  end
+
+  def python3
+    "python3.11"
+  end
+
   def install
     virtualenv_install_with_resources
+
+    # link dependent virtualenvs to this one
+    site_packages = Language::Python.site_packages(python3)
+    paths = %w[black mypy pycodestyle pydocstyle].map do |package_name|
+      package = Formula[package_name].opt_libexec
+      package/site_packages
+    end
+    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end
 
   test do

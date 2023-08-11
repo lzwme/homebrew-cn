@@ -3,19 +3,18 @@ class Prowler < Formula
 
   desc "Open Source Security tool to perform Cloud Security best practices"
   homepage "https://prowler.pro/"
-  url "https://files.pythonhosted.org/packages/0e/55/93040b46b24bd8ff035f128a9ce4dfa09bd8a1d89d596c395530698d95a8/prowler-3.8.0.tar.gz"
-  sha256 "eb9f588f33d9205eb31b262e76b4459acf71361c45a549a73ee711e2409a789c"
+  url "https://files.pythonhosted.org/packages/11/86/e0faae5bd8d35b70868a8161f7b4ecc8893fe665693b51010fb4be119ffc/prowler-3.8.1.tar.gz"
+  sha256 "914b97de9b6c4c9464695094cb71c573290374c8eb931c5a5776bb0c7001729e"
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5bafc3c0fc4a6931ca8c4504b02ed0b50433929b6a2ea90ff062b1f02d0ee84"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c1a1fb5e5570a0b69c327201c099b41cb8c7517eda833821a258a29d59c30baf"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6645271b712f9b8978788685316ccce2b3899ac1cae8d0d0aef63e2babdbfb5b"
-    sha256 cellar: :any_skip_relocation, ventura:        "75219e40090b2301e8169a2feb6ab789cff8d49ca51fdc43fca7f8d09ddbb117"
-    sha256 cellar: :any_skip_relocation, monterey:       "a237234b0e16b571f648b5862b3d71ff5c03cdc4052e780bdb234fe32f10b41d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6980fdbf5c31f9aa5691ec0ca9af5e8dc809645e6759a6bb65238c4e8363efb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c9ef2d5c80774223c767f42eff515672467c431f8626a04a6de58146b14d8b7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a99ddd3338f7d756f9cee0a05a7645ffad51fc2ff7a2931848e02590a2627f28"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3b36668de2c0ee977263473c789af617308a1ea06db8628fafd55057830d437e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4a30c0897009476d688f226a1cb6f12bc323760ad5ce5d4d4e35750d8255f06c"
+    sha256 cellar: :any_skip_relocation, ventura:        "f3405ea01813c23ccaba60bc83ed13a13d291414e33a196e4f51a70327d30ea0"
+    sha256 cellar: :any_skip_relocation, monterey:       "6e14e17cf7ad4a43f7032715d9d7bda743157b09e270dc9c485d1c8d5ea5cb24"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7eb2efa8bd6806a0d2b83f8ae9541f68779585eadbdec211968278f6ac160b99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f21326a7ac68482d3b3d3c86db0dd67bddef3e41fa0d12c3bb090ceb9d10572b"
   end
 
   depends_on "cffi"
@@ -49,8 +48,8 @@ class Prowler < Formula
   end
 
   resource "azure-core" do
-    url "https://files.pythonhosted.org/packages/fd/51/0ee0a2844712f54117b3ee4853c3d209ba37641f0c587be22a993990989e/azure-core-1.28.0.zip"
-    sha256 "e9eefc66fc1fde56dab6f04d4e5d12c60754d5a9fa49bdcfd8534fc96ed936bd"
+    url "https://files.pythonhosted.org/packages/df/d4/1472562806c1cef919503207082c2b2be70d005cd6deb9ae46d4af0c1b4a/azure-core-1.29.1.zip"
+    sha256 "68e5bb6e3a3230ec202001cc5cb88e57f11c441c8345e921a9ffb8c370abf936"
   end
 
   resource "azure-identity" do
@@ -219,8 +218,8 @@ class Prowler < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/d3/1c/de86d82a5fc780feca36ef52c1231823bb3140266af8a04ed6286957aa6e/protobuf-4.23.4.tar.gz"
-    sha256 "ccd9430c0719dce806b93f89c91de7977304729e55377f872a92465d548329a9"
+    url "https://files.pythonhosted.org/packages/ff/a1/86152de5ba58796bb99dbff0b7fe7bf4f906ce0544bb42d9f835999351eb/protobuf-4.24.0.tar.gz"
+    sha256 "5d0ceb9de6e08311832169e601d1fc71bd8e8c779f3ee38a97a78554945ecb85"
   end
 
   resource "pyasn1" do

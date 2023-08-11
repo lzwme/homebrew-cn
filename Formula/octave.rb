@@ -5,16 +5,16 @@ class Octave < Formula
   mirror "https://ftpmirror.gnu.org/octave/octave-8.2.0.tar.xz"
   sha256 "b7b9d6e5004ff039450cfedd2a59ddbe2a3c22296df927a8af994182eb2670de"
   license "GPL-3.0-or-later"
-  revision 4
+  revision 5
 
   bottle do
-    sha256 arm64_ventura:  "88a47710561aa2381d4a169a06f9e590835065ad7a546bbb1ef5084cbdeb6750"
-    sha256 arm64_monterey: "f040d4b4c389bf70cad0e2b863468ba8560e720b203dd4c67f213c12da39d396"
-    sha256 arm64_big_sur:  "6832037286f864df056c29472fee8f2d5307ca0b3793829a3aa4be8353d77a6c"
-    sha256 ventura:        "66ccab7ac517876ff193e50d4abccd9cb450ad363000a27c40907de20c980557"
-    sha256 monterey:       "254b0600d5172fe87775bf8239aef718223f7ee3ecd7cd35239ad459a634cdc9"
-    sha256 big_sur:        "d356b843464763c109fcadf890edd11a38986083959951ca87b0b90fc56a4d3c"
-    sha256 x86_64_linux:   "47ccc33c5e53fd5a7679d4d43af878508040cad3fe15064478aed0a550de5423"
+    sha256 arm64_ventura:  "fe76f0522e7e27d06858e45f860cd501043903205a90321761e9f7688b90ff73"
+    sha256 arm64_monterey: "0b395ddabeff0cc6112efae65de139ab91832693907ca6e823b213628f7d7459"
+    sha256 arm64_big_sur:  "a205ef7b83d729e983ccd4a77909b3d72c453584e1f90ba2b6b91463cea09559"
+    sha256 ventura:        "9045e38fc6c6bc93c62e375f863a57690e378debbbf97b6ac4f0a79bbe0ae2da"
+    sha256 monterey:       "15149ce822a08e9e919ff0760da8f6be099982fc16d5575472e973cc93e5356f"
+    sha256 big_sur:        "2cc855ab87a2c6f85b0096e4c1fb20ba75b4ef9b9f5ca59e73cb5b1484bfa8ae"
+    sha256 x86_64_linux:   "c9bb830ca7832e8e120121c6bd2c0f2308eae8f6dd36151fba1da5be3300088d"
   end
 
   head do

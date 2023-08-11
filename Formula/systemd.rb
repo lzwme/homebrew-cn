@@ -1,13 +1,13 @@
 class Systemd < Formula
   desc "System and service manager"
   homepage "https://wiki.freedesktop.org/www/Software/systemd/"
-  url "https://ghproxy.com/https://github.com/systemd/systemd-stable/archive/refs/tags/v254.tar.gz"
-  sha256 "18db69c8fc33afebf95a40cfa3769df5f0e4a07bccdebd33b2fd81c8b75e7a02"
+  url "https://ghproxy.com/https://github.com/systemd/systemd-stable/archive/refs/tags/v254.1.tar.gz"
+  sha256 "d1e372a6ff817e639cdf58cc3888f72d37a380c0027d42bc875e5ab4b628a580"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
   head "https://github.com/systemd/systemd.git", branch: "main"
 
   bottle do
-    sha256 x86_64_linux: "ec7fe5637b9ba5c52de93525c3c05796c7b96b07b3f08fd0831148f32958fa28"
+    sha256 x86_64_linux: "06059190201d4a5ff957378af237fa958e7e6bc0284e48a9176609503bb7f57b"
   end
 
   depends_on "coreutils" => :build

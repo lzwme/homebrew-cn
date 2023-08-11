@@ -7,6 +7,14 @@ class Corsixth < Formula
   revision 2
   head "https://github.com/CorsixTH/CorsixTH.git", branch: "master"
 
+  # Upstream uses GitHub releases to indicate that a version is released
+  # (there's also sometimes a notable gap between when a version is tagged and
+  # and the release is created), so the `GithubLatest` strategy is necessary.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     rebuild 1
     sha256 arm64_ventura:  "2b24d1a08a4689af712b1d7f0d71c62933fffa9eb2241afc8dd80b21a5f4f1f7"

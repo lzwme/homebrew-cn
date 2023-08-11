@@ -1,10 +1,9 @@
 class PostgresqlAT15 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v15.3/postgresql-15.3.tar.bz2"
-  sha256 "ffc7d4891f00ffbf5c3f4eab7fbbced8460b8c0ee63c5a5167133b9e6599d932"
+  url "https://ftp.postgresql.org/pub/source/v15.4/postgresql-15.4.tar.bz2"
+  sha256 "baec5a4bdc4437336653b6cb5d9ed89be5bd5c0c58b94e0becee0a999e63c8f9"
   license "PostgreSQL"
-  revision 2
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -12,13 +11,13 @@ class PostgresqlAT15 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "b9da8f2232ce30598a6f48ea2ab04993161dbdf577949496be158ec14b2bbf76"
-    sha256 arm64_monterey: "f9b1414a2d3e40a9aafbaedeaa88a18e0848f1c37698558e4f160c4133d189bf"
-    sha256 arm64_big_sur:  "50eb9b7436b66a2d2827e75422192b4ba72c5ad090413f795be50ecfe41d5d2b"
-    sha256 ventura:        "34a2974dcf3cde79b0e39cb4a536002fc2182dcc94e4e79d69558870ff2e277c"
-    sha256 monterey:       "663c4916d9fb87ad344e8a2f60ff2a1a39f8503e572ad87698028c78fc722f3e"
-    sha256 big_sur:        "7f3afb7d50091950e9ce1599871b92d23d294296bf7f87a2c677d26964786593"
-    sha256 x86_64_linux:   "939eb56654bae7df55af034a981bb91a6019415fde9978924eec8df74153ec99"
+    sha256 arm64_ventura:  "741a446d1f8893ef9bb1df9611958b1ad6b452fb9b18026bd5bd3049c321f2ef"
+    sha256 arm64_monterey: "4b8e78dc858e5f41b3c742d385e54e4473b14941e6293d19023e89bfba4344d6"
+    sha256 arm64_big_sur:  "d66d14ceb827b337f0bb7e23c28756c18c74a2aba056945d2325bfc5cb24be10"
+    sha256 ventura:        "14d80da8d5b89ea84eabbc8fbde385a84640be2d851ba5d53b6643e76d61243d"
+    sha256 monterey:       "d4f013897eea550b212684087a5e097991dc127baedc659f1791168a34875a5d"
+    sha256 big_sur:        "4f0960735c05ea8d449d976ec529426cf7d90ba680e67dbe3aeffc9d10cb287e"
+    sha256 x86_64_linux:   "7feaf5e5343d6c356133b5e8f6e98415af6cf997eb53ef2220b64451657c6a30"
   end
 
   keg_only :versioned_formula

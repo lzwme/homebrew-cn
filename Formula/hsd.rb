@@ -3,8 +3,8 @@ require "language/node"
 class Hsd < Formula
   desc "Handshake Daemon & Full Node"
   homepage "https://handshake.org"
-  url "https://ghproxy.com/https://github.com/handshake-org/hsd/archive/v5.1.0.tar.gz"
-  sha256 "26ea58625a2d2a650b5c5ab6298549d9322d94dbe77923891f587701989f6acb"
+  url "https://ghproxy.com/https://github.com/handshake-org/hsd/archive/v6.0.0.tar.gz"
+  sha256 "1f07826ecc286fb80a20174e1b958bae9408270f65dc25021d02407e3696f060"
   license "MIT"
 
   livecheck do
@@ -13,13 +13,13 @@ class Hsd < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "6e33b650cd716fa7c8f222a1647d80206cafe3b1a5737510e19d454db3b9f885"
-    sha256                               arm64_monterey: "891e09d4fc846d9c28333bb7802adc3f58aeb97e1c43f8a7d531eb833189d62b"
-    sha256                               arm64_big_sur:  "1a86e93df427d26c37970a7802e3485d20d7e89fc5a0e3621a6d6e3b07623bb9"
-    sha256                               ventura:        "874d449265b346303794c5f2a3933ae695fe0fb7308d3d9c48ed022fde97c7e5"
-    sha256                               monterey:       "f1a3506fe4aa86949cc468918117fb2de360495b7e2fc52bd55432bc2a26fe48"
-    sha256                               big_sur:        "e05a3527a83d7c9a9b6d97eaec92e4a2817ebaec978b3c4d2cb765df9d6d295d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29fd069adcadcf9158a73c2245aee9f983dd690009778dfb395115e3b5694850"
+    sha256                               arm64_ventura:  "0b6bf59d02584210a68f0cf04728f85319cd134e62b55b51090079911bfb30e3"
+    sha256                               arm64_monterey: "f3b00ab458925affd02fb786353bc550a91602aa7938fbf3bb4165825d56a226"
+    sha256                               arm64_big_sur:  "d42321c8c5e790d127ddfd4ad73c73326818ae4a31c60a2a70cef775bf32af62"
+    sha256                               ventura:        "b0c30462c393fb7803c7e8db884a8ee54622160c66b539d767906efacd78ea25"
+    sha256                               monterey:       "a73971fdbe43045eff09427c71b4e3b93804f781fd72d37dfb938ead9ee470d2"
+    sha256                               big_sur:        "ebb7896590500b4a90ca1cb29c7f2df51ab21e480f787ed9fa1c5e8f7f675b68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "97c07bd4b0d19b92b7edbd49694b7b9c27cbfcfaa66f10db7134081d631517cc"
   end
 
   depends_on "node"

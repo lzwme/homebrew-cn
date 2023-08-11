@@ -1,10 +1,10 @@
 class Openssh < Formula
   desc "OpenBSD freely-licensed SSH connectivity tools"
   homepage "https://www.openssh.com/"
-  url "https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.3p2.tar.gz"
-  mirror "https://cloudflare.cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.3p2.tar.gz"
-  version "9.3p2"
-  sha256 "200ebe147f6cb3f101fd0cdf9e02442af7ddca298dffd9f456878e7ccac676e8"
+  url "https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.4p1.tar.gz"
+  mirror "https://cloudflare.cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.4p1.tar.gz"
+  version "9.4p1"
+  sha256 "3608fd9088db2163ceb3e600c85ab79d0de3d221e59192ea1923e23263866a85"
   license "SSH-OpenSSH"
 
   livecheck do
@@ -13,13 +13,13 @@ class Openssh < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "3c84e969dc1fdff8fc0a8b2b0e04784674582dbd369955a152fd3096399455f3"
-    sha256 arm64_monterey: "4ca1e11f3a45296734f5a380e61c7ecba635f2d011d3cb2e3b8e399dd588fddf"
-    sha256 arm64_big_sur:  "33ed419e6a8b861c03d54cc5b99eb4d85199ed26803299ba27de79f206ae6093"
-    sha256 ventura:        "1c130123be768e8f4fd6131062853df18901c0653e84aa28c537e1527a1d7690"
-    sha256 monterey:       "feadb5a989a05f330bcd0c98b447d23137934bdb8733928a424e4094b5723c4d"
-    sha256 big_sur:        "c8b876a2d2c777fbea09a466ef04619d97d6cd0a6370233e9e9a9e8492a0520a"
-    sha256 x86_64_linux:   "77f3fd5fee0a6a267bdbbc379489fab099d2ce376506dc54dbcaecfd5128cae5"
+    sha256 arm64_ventura:  "e675acf182dd43614b18607563f7625fc462cbe11c9949cb4c3cbd727d5a7392"
+    sha256 arm64_monterey: "44867677c99a7c799aaf5b37a910c369d634fdede95236cc8b0762246dd427f0"
+    sha256 arm64_big_sur:  "55b463f337e63330e3343f5268ab61ddd21c0c2e4ab1c82271384392e0176954"
+    sha256 ventura:        "04c3661daec7445f77010eef55f41e5664750e31d08155ea7a4bcd35b88e6c5f"
+    sha256 monterey:       "8371408b7143e5a490d3de92b1c1881cd8cce44397e516aa85ade4d10413d00d"
+    sha256 big_sur:        "6ad9f6c74f937e504486d292eab15aae3bc7f6ca870ca0e8d389e30dc4ec1a08"
+    sha256 x86_64_linux:   "9fd7279473487cedd14c89a6ae497be5e45de6dff9891d13f0c3e584f2cbb22b"
   end
 
   # Please don't resubmit the keychain patch option. It will never be accepted.

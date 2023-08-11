@@ -1,8 +1,8 @@
 class NodeBuild < Formula
   desc "Install NodeJS versions"
   homepage "https://github.com/nodenv/node-build"
-  url "https://github.com/nodenv/node-build/archive/v4.9.119.tar.gz"
-  sha256 "fe319aa93412c3f41ebc4acfbaffe19b0cd8417d94c3c52bb3cba58cfcac5cb3"
+  url "https://github.com/nodenv/node-build/archive/v4.9.120.tar.gz"
+  sha256 "130ce2d13155180e81ce83d503b27c74712808df68997e375b9760ffc3f695bb"
   license "MIT"
   head "https://github.com/nodenv/node-build.git", branch: "master"
 
@@ -12,13 +12,7 @@ class NodeBuild < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e81bcf30ecbdaf63aca5a428104167d506bcb670c3251454eee825f82d3e33a6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e81bcf30ecbdaf63aca5a428104167d506bcb670c3251454eee825f82d3e33a6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e81bcf30ecbdaf63aca5a428104167d506bcb670c3251454eee825f82d3e33a6"
-    sha256 cellar: :any_skip_relocation, ventura:        "e81bcf30ecbdaf63aca5a428104167d506bcb670c3251454eee825f82d3e33a6"
-    sha256 cellar: :any_skip_relocation, monterey:       "e81bcf30ecbdaf63aca5a428104167d506bcb670c3251454eee825f82d3e33a6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e81bcf30ecbdaf63aca5a428104167d506bcb670c3251454eee825f82d3e33a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4f460b87c0762e26dbf0f74ce87091f5a7264e25847a3251e50fe4114d365a0"
+    sha256 cellar: :any_skip_relocation, all: "182d32aa18067027afa417c315d53a709fc75dec069e761d141249c77c3d264c"
   end
 
   depends_on "autoconf"

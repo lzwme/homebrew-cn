@@ -3,18 +3,18 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https://docs.dstack.ai/"
-  url "https://files.pythonhosted.org/packages/7c/b1/135bef9285ffb34760215977a2975ec6e39c6f73b3c34b10e83b86777a35/dstack-0.10.7.tar.gz"
-  sha256 "d995064e5297290892ec8f41e65fa4138612068a0ead1af55b014114bca6c2b4"
+  url "https://files.pythonhosted.org/packages/81/ea/8a58a0dc28aa04d52b8077cb78e98454f26bf3b4df63e4a1c708eded69d3/dstack-0.10.8.tar.gz"
+  sha256 "9bfc818f90ede29fb49e6c06513221c53d2b987804d50995abda0dc5901a9ff0"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "2c985e961ad5400d1cebb3d1e0047c58ea28a1c9cd63419097dd6e761f5de5b5"
-    sha256 cellar: :any,                 arm64_monterey: "6b3ead2a2291031524af4a71e0f906a09b311049aa09281fcb8f4bc7735e6278"
-    sha256 cellar: :any,                 arm64_big_sur:  "88e27c49d7ad1b42e87edc3ad4fbae4c16551ed6d63507327e5bf1f69df9b55f"
-    sha256 cellar: :any,                 ventura:        "5d5bd004c01ffba3564f5d2e9d39e2e2f2f756daed409e5eb6dcf5e8c1ae304c"
-    sha256 cellar: :any,                 monterey:       "c9ad2621ba9c0d080e5f817fc73a010e9d44ffc361f2f7845cc093eb3128d3de"
-    sha256 cellar: :any,                 big_sur:        "ecc6016454075fd55c1f45ca09dfde473d9ee0c25924e6f1858c0ee7c9d6ac10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0eb5750875215167ecaff92f4d0c7d387fa7f3ebe6b71f5eecb273832c886125"
+    sha256 cellar: :any,                 arm64_ventura:  "471a8af98b4237304e4174d4619a20a6e0527a6fa4cb3e0377f0370cac64408b"
+    sha256 cellar: :any,                 arm64_monterey: "258dc2110c7d55fe8b6398a777ce3a8042bec7846f18ae128b1cac3b8334ad57"
+    sha256 cellar: :any,                 arm64_big_sur:  "f06019e123639d3036c15baed39e1c46d7a3e527aed4ca3df2bd1895721a44c5"
+    sha256 cellar: :any,                 ventura:        "2250deb6402b2b8db3f2f3306f957d3f5b63bf555b079c850709f8c8b78cb9da"
+    sha256 cellar: :any,                 monterey:       "0330e6b83ce228182136e150e4035162359f5ad47a6317aec5a0afa2f06f507b"
+    sha256 cellar: :any,                 big_sur:        "d7dd180836728b53e408dee57163ba2818b6ef8393bcb0597b0c77c1750ac1e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "daa75de2c422baffeab48ee710ef6551dc6527475234f13ebdf3513f15eb80d7"
   end
 
   # `pkg-config` and `rust` are for bcrypt.
@@ -74,8 +74,8 @@ class Dstack < Formula
   end
 
   resource "azure-core" do
-    url "https://files.pythonhosted.org/packages/fd/51/0ee0a2844712f54117b3ee4853c3d209ba37641f0c587be22a993990989e/azure-core-1.28.0.zip"
-    sha256 "e9eefc66fc1fde56dab6f04d4e5d12c60754d5a9fa49bdcfd8534fc96ed936bd"
+    url "https://files.pythonhosted.org/packages/df/d4/1472562806c1cef919503207082c2b2be70d005cd6deb9ae46d4af0c1b4a/azure-core-1.29.1.zip"
+    sha256 "68e5bb6e3a3230ec202001cc5cb88e57f11c441c8345e921a9ffb8c370abf936"
   end
 
   resource "azure-graphrbac" do
@@ -84,8 +84,8 @@ class Dstack < Formula
   end
 
   resource "azure-identity" do
-    url "https://files.pythonhosted.org/packages/ad/3e/34b445ef2f536f4710903cbc3ca33c4272ad37f676609188c4544dc8463a/azure-identity-1.13.0.zip"
-    sha256 "c931c27301ffa86b07b4dcf574e29da73e3deba9ab5d1fe4f445bb6a3117e260"
+    url "https://files.pythonhosted.org/packages/e4/2c/f5e1b34c34c580d3d47ddaa75bc15374a1f601547bcbb1e1e366777e7995/azure-identity-1.14.0.zip"
+    sha256 "72441799f8c5c89bfe21026965e266672a7c5d050c2c65119ef899dd5362e2b1"
   end
 
   resource "azure-keyvault-secrets" do
@@ -164,13 +164,13 @@ class Dstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/97/3c/72fb803f5c84466942b9a2452ecb033fd468ea08ff193e8b49c71e71de9b/boto3-1.28.20.tar.gz"
-    sha256 "e3c2e8e55c17af6671a5332d6ab4635ad9793c80d0ac6d78af7b30a994d0681b"
+    url "https://files.pythonhosted.org/packages/c8/5d/e756d85addf5fa41be97df86a556eeb9fc89c9af0b51413a0f77cce95d7e/boto3-1.28.23.tar.gz"
+    sha256 "839deb868d1278dd5a3f87208cfc4a8e259c95ca3cbe607cc322d435f02f63b0"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/f9/0d/ec24cb66b7651268462d5eb5d9d3c140a99f487db3ed58a45617991b11e8/botocore-1.31.20.tar.gz"
-    sha256 "485ef175cd011ebc965f4577d8cc02a226c46bd608dd2bb75ce6938328cff0fd"
+    url "https://files.pythonhosted.org/packages/21/08/c197cf6660b7015595361224a48ea98597f4cb0143acb59ab672a1ce50e4/botocore-1.31.23.tar.gz"
+    sha256 "f3258feaebce48f138eb2675168c4d33cc3d99e9f45af13cb8de47bdc2b9c573"
   end
 
   resource "cachetools" do
@@ -234,8 +234,8 @@ class Dstack < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/d2/e8/8cbc3186a98b38332db85b4537cce71f0df170a35e5cd88c1dd3be4a0aca/google-api-python-client-2.95.0.tar.gz"
-    sha256 "d2731ede12f79e53fbe11fdb913dfe986440b44c0a28431c78a8ec275f4c1541"
+    url "https://files.pythonhosted.org/packages/df/d6/58ec56e2a2717ee16761b4809c3763d564b7478f49bf97f6d080e1a7553e/google-api-python-client-2.96.0.tar.gz"
+    sha256 "f712373d03d338af57b9f5fe98c91f4b5baaa8765469b015bc623c4681c5bd51"
   end
 
   resource "google-auth" do
@@ -259,8 +259,8 @@ class Dstack < Formula
   end
 
   resource "google-cloud-compute" do
-    url "https://files.pythonhosted.org/packages/c4/53/d228bfaec639a1ecc805292b28656355c3915599fcfee8ccb2ea9f7eecd4/google-cloud-compute-1.13.0.tar.gz"
-    sha256 "93b72129c6443c898da5a060d2021bc2d11c2a57ef2fbb9306afbb5126a376b9"
+    url "https://files.pythonhosted.org/packages/d5/41/2aa8920ead5eef42122566db05fd110e70214c9242dd987e5fe2a869775f/google-cloud-compute-1.14.0.tar.gz"
+    sha256 "02d1a3cfe82127efd623ca696af905d89e87aaaeb9a5062159bdcf3747fd8f66"
   end
 
   resource "google-cloud-core" do
@@ -539,8 +539,8 @@ class Dstack < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/3d/78/81191f56abb7d3d56963337dbdff6aa4f55805c8afd8bad64b0a34199e9b/tqdm-4.65.0.tar.gz"
-    sha256 "1871fb68a86b8fb3b59ca4cdd3dcccbc7e6d613eeed31f4c332531977b89beb5"
+    url "https://files.pythonhosted.org/packages/62/06/d5604a70d160f6a6ca5fd2ba25597c24abd5c5ca5f437263d177ac242308/tqdm-4.66.1.tar.gz"
+    sha256 "d88e651f9db8d8551a62556d3cff9e3034274ca5d66e93197cf2490e2dcb69c7"
   end
 
   resource "tzlocal" do

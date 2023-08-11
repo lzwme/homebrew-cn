@@ -1,18 +1,18 @@
 class Cglm < Formula
   desc "Optimized OpenGL/Graphics Math (glm) for C"
   homepage "https://github.com/recp/cglm"
-  url "https://ghproxy.com/https://github.com/recp/cglm/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "9b688bc52915cdd4ad8b7d4080ef59cc92674d526856d8f16bb3a114db1dd794"
+  url "https://ghproxy.com/https://github.com/recp/cglm/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "ba16ee484c9d5e808ef01e55008a156831e8ff5297f10bbca307adeb827a0913"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7d6139b47104324fe73b522e1c7fd63c51008d220b06d33de9088ee495c58e1f"
-    sha256 cellar: :any,                 arm64_monterey: "9af4d083be71a5a7e73b7758a7b94015bfbd9ed2b649cd450ac89e4e37e0a732"
-    sha256 cellar: :any,                 arm64_big_sur:  "66be16180b40d9330134a6c1d4f72ab344393801069cd1529961744a32ff4699"
-    sha256 cellar: :any,                 ventura:        "09ffd46bc5f77d667d1ff90fa6d4d1292d70f8720da52e3c78c1b15b75c833de"
-    sha256 cellar: :any,                 monterey:       "349a13ded9f19d63c68587af674cd603e7ce97bc11d25b545fcf6e95e1f7301c"
-    sha256 cellar: :any,                 big_sur:        "9960789a764ac56b204fdf03fb76d2a0a5eb8980ab840ff6b824fe5baa6eb52d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "749794c4dd2e8de4a3b8f114aed792161b014740434e885b0b84059253a8c7dd"
+    sha256 cellar: :any,                 arm64_ventura:  "0ad91be63d1d5a20d1013ef956eddf280b28dfd4dc6e1df235d24d2cb52ca5f8"
+    sha256 cellar: :any,                 arm64_monterey: "8d193551025d3f4bab0e571108cb0ac84ba6fa948ddaa210e18f7bacbd9ad371"
+    sha256 cellar: :any,                 arm64_big_sur:  "428d6899f28318fb3933c77b1756a70b8df8c67b1cf0ff260df43db640e2b422"
+    sha256 cellar: :any,                 ventura:        "5b07487bae460a44203457eb1e7e1a753b0aff917c7e68a05923fbc5c2e27a7c"
+    sha256 cellar: :any,                 monterey:       "52ee39da4fb86682f113aa8017b40ea771f23383b1297c3784f3267b3248f822"
+    sha256 cellar: :any,                 big_sur:        "9d53907b292a09644c130e4bb30fc7db8de473d482c34ef5326fa9f2c8dca220"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9538f6e96c029fe704fd0f797f0fa6f9900eca7bce5495f9052a535fc6142ea"
   end
 
   depends_on "autoconf" => :build

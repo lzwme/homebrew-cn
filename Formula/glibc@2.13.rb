@@ -63,6 +63,7 @@ class GlibcAT213 < Formula
   desc "GNU C Library"
   homepage "https://www.gnu.org/software/libc/"
   url "https://ftp.gnu.org/gnu/glibc/glibc-2.13.tar.gz"
+  mirror "https://ftpmirror.gnu.org/gnu/glibc/glibc-2.13.tar.gz"
   sha256 "bd90d6119bcc2898befd6e1bbb2cb1ed3bb1c2997d5eaa6fdbca4ee16191a906"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
   revision 1
@@ -89,7 +90,7 @@ class GlibcAT213 < Formula
 
   def install
     # Fix checking version of gcc-5 5.4.0, bad
-    inreplace "configure", "3.4* | 4.[0-9]* )", "3.4* | [4-9].* )"
+    inreplace "configure", "3.4* | 4.[0-9]* )", "3.4* | [4-9].* | 1[0-3].*)"
 
     # Fix checking version of make... 4.1, bad
     inreplace "configure", "3.79* | 3.[89]*)", "3.79* | 3.[89]* | 4.*)"
@@ -110,6 +111,11 @@ class GlibcAT213 < Formula
       LDFLAGS LD_LIBRARY_PATH LD_RUN_PATH LIBRARY_PATH
       HOMEBREW_DYNAMIC_LINKER HOMEBREW_LIBRARY_PATHS HOMEBREW_RPATH_PATHS
     ].each { |x| ENV.delete x }
+
+    # Fix relocation R_X86_64_32S against symbol `__libc_csu_fini' can not be
+    # used when making a PIE object; recompile with -fPIE
+    # See https://sourceware.org/pipermail/libc-alpha/2020-March/111688.html
+    ENV.append "LDFLAGS", "-no-pie"
 
     # Use brewed ld.so.preload rather than the host's /etc/ld.so.preload
     inreplace "elf/rtld.c", '= "/etc/ld.so.preload";', "= \"#{prefix}/etc/ld.so.preload\";"
@@ -132,6 +138,14 @@ class GlibcAT213 < Formula
 
     # Fix quoting of filenames that contain @
     inreplace [lib/"libc.so", lib/"libpthread.so"], %r{(#{Regexp.escape(prefix)}/\S*) }, '"\1" '
+
+    # Remove executables/dylibs that link with system libnsl
+    [
+      sbin/"nscd",
+      lib/"libnss_nisplus-2.13.so",
+      lib/"libnss_compat-2.13.so",
+      lib/"libnss_nis-2.13.so",
+    ].each(&:unlink)
   end
 
   def post_install
@@ -158,8 +172,8 @@ class GlibcAT213 < Formula
 
     # Set the local time zone
     sys_localtime = Pathname("/etc/localtime")
-    brew_localtime = prefix/"etc/localtime"
-    (prefix/"etc").install_symlink sys_localtime if sys_localtime.exist? && brew_localtime.exist?
+    brew_localtime = etc/"localtime"
+    etc.install_symlink sys_localtime if sys_localtime.exist? && !brew_localtime.exist?
 
     # Set zoneinfo correctly using the system installed zoneinfo
     sys_zoneinfo = Pathname("/usr/share/zoneinfo")

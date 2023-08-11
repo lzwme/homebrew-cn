@@ -6,22 +6,22 @@ class Jrnl < Formula
   url "https://files.pythonhosted.org/packages/04/59/c15befa8f1a6ff159af29d86c1abc50135e4f8768afe5a1621930e21a0d8/jrnl-4.0.1.tar.gz"
   sha256 "f3b17c4b040af44fde053ae501832eb313f2373d1b3b1a82564a8214d223ede8"
   license "GPL-3.0-only"
-  revision 3
+  revision 4
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "67b0026495409ebebfce0b6ed8a22069c8426a2499ba63b5966a2aba7d8d6e74"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c2a30431dfcfd0e13816e75c0816cb55cb1bd76e85d3d19e4b20ddc51b108004"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d55ac08615e2122b290c67bb12bf4607161019a8b446aca538da941087efe6ad"
-    sha256 cellar: :any_skip_relocation, ventura:        "0df93cb3233774e5bf8429bc03d40d8d1132bf0bac5d1cd036b5d376d220d31e"
-    sha256 cellar: :any_skip_relocation, monterey:       "24c931229d1b451614453db6131286c163618f4b697a930c37a1c8208e47896b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c64ddef05328ade635954a7f394b8a11a78315c69626d3096e0c27e9d2f41547"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e62b29f13d1121055b7dcb4a4c8786601b9de7c4aaa80f4d3d46e9059dd2d68c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e8023c19c8d51de9420a1405942d802bebfed64d402251de139ee4256187976"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "667dd5a5f42f90f7e80588a55add0880d6d4aebf7936398ac15520843f3dba6f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d2d08dbfd2571715f489833af6de0afbf0dc481fe206d514b78620de1ae0d8c5"
+    sha256 cellar: :any_skip_relocation, ventura:        "b87332491a22d044b9a7ce81498cea8f195509cd74c125c6a5ea31180a93b426"
+    sha256 cellar: :any_skip_relocation, monterey:       "8640a3b9d5449d449f5a675cd3874aa50b3f93247b1127a1ade0e73220b1af36"
+    sha256 cellar: :any_skip_relocation, big_sur:        "58ec0e20fa23d1ca8a66c39c525866282707b307ffbfcc7dd9e37844c6b2b8b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0e726aaefed69288f3cf9157f776a2af172d14a7d0f1643420a55184114462e"
   end
 
   depends_on "cffi"
   depends_on "keyring"
   depends_on "pygments"
+  depends_on "python-cryptography"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -89,6 +89,11 @@ class Jrnl < Formula
 
   def install
     virtualenv_install_with_resources
+
+    # we depend on keyring, but that's a separate formula, so install a `.pth` file to link them
+    site_packages = Language::Python.site_packages("python3.11")
+    keyring = Formula["keyring"].opt_libexec
+    (libexec/site_packages/"homebrew-keyring.pth").write keyring/site_packages
   end
 
   test do
@@ -98,65 +103,30 @@ class Jrnl < Formula
       set timeout 3
       match_max 100000
 
-      # Write the journal
-      spawn "#{bin}/jrnl" "This is the fanciest test in the world."
-
-      expect {
-        "/.local/share/jrnl/journal.txt" { send -- "#{testpath}/test.txt\r" }
-        timeout { exit 1 }
-      }
-
-      expect {
-        "Do you want to encrypt your journal?" { send -- "n\r" }
-        timeout { exit 1 }
-      }
-
-      expect {
-        "Do you want jrnl to use colors when displaying entries?" { send -- "n\r" }
-        timeout { exit 1 }
-      }
-
-      expect {
-        eof { exit }
-        timeout { exit 1 }
-      }
-
-      # Read the journal
-      spawn "#{bin}/jrnl" -1
-
-      expect {
-        "This is the fanciest test in the world." { exit }
-        timeout { exit 1 }
-        eof { exit 1 }
-      }
-
-      # Encrypt the journal
       spawn "#{bin}/jrnl" --encrypt
-
-      expect {
-        -exact "Enter password for new journal: " { send -- "homebrew\r" }
-        timeout { exit 1 }
-      }
-
-      expect {
-        -exact "Enter password again: " { send -- "homebrew\r" }
-        timeout { exit 1 }
-      }
-
-      expect {
-        -exact "Do you want to store the password in your keychain? [Y/n] " { send -- "n\r" }
-        timeout { exit 1 }
-      }
-
-      expect {
-        -re "Journal encrypted to .*/test.txt." { exit }
-        timeout { exit 1 }
-        eof { exit 1 }
-      }
+      expect -exact "Enter password for journal 'default': "
+      sleep 0.5
+      send -- "homebrew\\r"
+      expect -exact "Enter password again: "
+      sleep 0.5
+      send -- "homebrew\\r"
+      expect -exact "Do you want to store the password in your keychain? \\[Y/n\\] "
+      send -- "n\\r"
+      expect -re "Journal encrypted to .*"
+      expect eof
     EOS
 
+    # Write the journal
+    input = "#{testpath}/journal.txt\nn\nn"
+    assert_match "Journal 'default' created", pipe_output("#{bin}/jrnl My journal entry 2>&1", input, 0)
+    assert_predicate testpath/"journal.txt", :exist?
+
+    # Read the journal
+    assert_match "#{testpath}/journal.txt", shell_output("#{bin}/jrnl --list 2>&1")
+
+    # Encrypt the journal. Needs a TTY to read password.
     system "expect", "./tests.sh"
     assert_predicate testpath/".config/jrnl/jrnl.yaml", :exist?
-    assert_predicate testpath/"test.txt", :exist?
+    assert_match "encrypt: true", (testpath/".config/jrnl/jrnl.yaml").read
   end
 end

@@ -228,8 +228,8 @@ class Glibc < Formula
 
     # Set the local time zone
     sys_localtime = Pathname("/etc/localtime")
-    brew_localtime = prefix/"etc/localtime"
-    (prefix/"etc").install_symlink sys_localtime if sys_localtime.exist? && !brew_localtime.exist?
+    brew_localtime = etc/"localtime"
+    etc.install_symlink sys_localtime if sys_localtime.exist? && !brew_localtime.exist?
 
     # Set zoneinfo correctly using the system installed zoneinfo
     sys_zoneinfo = Pathname("/usr/share/zoneinfo")

@@ -22,7 +22,7 @@ class Naabu < Formula
 
   def install
     cd "v2" do
-      system "go", "build", *std_go_args, "./cmd/naabu"
+      system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/naabu"
     end
   end
 

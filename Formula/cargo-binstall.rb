@@ -1,8 +1,8 @@
 class CargoBinstall < Formula
   desc "Binary installation for rust projects"
   homepage "https://github.com/cargo-bins/cargo-binstall"
-  url "https://ghproxy.com/https://github.com/cargo-bins/cargo-binstall/archive/refs/tags/v1.1.2.tar.gz"
-  sha256 "520b99ecb1122fcfe8bcc0a9010646cf2cbce1b4f739d881c6f314060dd6a53a"
+  url "https://ghproxy.com/https://github.com/cargo-bins/cargo-binstall/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "766843dd750b5f93f4726f5111fc973c5322fe4fb349bd9e4f73035b09b09f2d"
   license "GPL-3.0-only"
   head "https://github.com/cargo-bins/cargo-binstall.git", branch: "main"
 
@@ -12,13 +12,13 @@ class CargoBinstall < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5e4bb93e272dbcdf75bf08152b127450a5ee7f2541105f5744a11222600ebb04"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e97c02441b4c846e903e3899252c8d76ce78da8e98ab9ce1c1342298208f8168"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3a542035f8267a901a58e3a4d19aabf96417fb11471507874e90c2ba2f9485f6"
-    sha256 cellar: :any_skip_relocation, ventura:        "fe6e59f5cfed01f26309859185e4c71a73206996d7525aad53c7456773304c5d"
-    sha256 cellar: :any_skip_relocation, monterey:       "22912c932ddf43227ed9c8805e3bd926a2965e906fbe0964d4c4656e59993261"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b7291a495c088c587ab64eb9e001ee8a9ed436fc164084a3feaf7c7cf8db1fe2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9753bdd31b2a09b4fc9b72efe7f4ecf309ee20696de9481376d12265a4c1a4a0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9e7fe3fb7277e7c073159f719b2138ae26cb3d4600a30647658cb3ea7a94f137"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "113372677ff2fe8401709311ddbd759c43ddcd9de39d51be7723f4d82a362910"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "606b8d170a5f6389b5e3c7f06f3034a9c085ac58d573ea0e1b591eacd8dea603"
+    sha256 cellar: :any_skip_relocation, ventura:        "32832f172eebf20378c61a2754b6001c211c50a5a4863e14808ffc53071b0020"
+    sha256 cellar: :any_skip_relocation, monterey:       "e89524921f1ba8c39ea07ff4807800888f1056ad403538db40114fd70b7ff787"
+    sha256 cellar: :any_skip_relocation, big_sur:        "09a83de6363552f6fb2804d6a1a63089d86ef138e684e2eb0530ccc9a2dea21c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a7456328878080200256fd7bbbc76c334f0b7ea3fd7447a33c02a2001a6180e7"
   end
 
   depends_on "rust" => :build

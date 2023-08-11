@@ -3,19 +3,18 @@ class Bbot < Formula
 
   desc "OSINT automation tool"
   homepage "https://github.com/blacklanternsecurity/bbot"
-  url "https://files.pythonhosted.org/packages/ea/3e/a2c05b93bba409ea656c4a822bdc38c59eae33b8f73c3563d00b36c09466/bbot-1.1.0.2090.tar.gz"
-  sha256 "b0b724d97eb1dab2fc7b61dd8dcf4f96dac8bb782df1e48a87b60fd4c3f9eaed"
+  url "https://files.pythonhosted.org/packages/5c/eb/e79160ad9d406cd0cb8cfa5ec9c2341d2c39356d6fe192996b96281efa98/bbot-1.1.0.2124.tar.gz"
+  sha256 "33841c6852e667c3f151f7463d4a3419dc9ada5a867fa8a5d34f124beb4f8152"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "db8a200cb97eb392436035353e35bb4d48589f98b03abc4a12ab83431a0a9c62"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b537f5ab2ff57bca9099323d33ae6a240b3876adcea8f713dabc08715738fa3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "228daf673e8292182f87b028290648cadcafd0c0dedec7306a51acb589faa50d"
-    sha256 cellar: :any_skip_relocation, ventura:        "6a6e734b61f6f72c59c600f60dd260ec82760d609f85016c68c9c16bc679624b"
-    sha256 cellar: :any_skip_relocation, monterey:       "22bfe8f4a7895e620d47ee3e7f4adb5455c8ff4e29cc595c9f3208f1ab518583"
-    sha256 cellar: :any_skip_relocation, big_sur:        "480a646dde6356576aa0414d1feaac3ef223ac3a4cdbe453000db05f09a90c5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0998f3605a1271b5c9933bc763e653a2a8accb6a35aeee9b922afe4ba798d6e2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bfcecbc47ec846dd2718be1ce2636e8d72ff3844dd4982a6dc64d68776dae602"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "54ca6ce603fb20777136762279c2e1b208bd45cabec12466ee18f90f0cdc8305"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c50d0bd9d14c8986d9bb5a4a6dcdb1e7a9ea69de3a52b380f9468aaf08554de8"
+    sha256 cellar: :any_skip_relocation, ventura:        "b4c28fef910aacee1b906191cd2beeae9a0a3e140161227f4763f08200b62b52"
+    sha256 cellar: :any_skip_relocation, monterey:       "bc3242074c03607d853c0d41085189fef620569f04daa1f523d54d80e99a1724"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4b5e5802536f74d86177d27780bc42a52ecb2f31eb17eafe1ffbaad3dad5f9d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b118360b38673f2935333813a1d5a4145355998353619ee047027a5fa931dd7"
   end
 
   # `pkg-config` and `rust` are for `rpds-py` via `url-normalize`
@@ -98,8 +97,8 @@ class Bbot < Formula
   end
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/78/ad/db7b362200e11378d1d286a4452c7050dab47b0e6d99afa51364ad95a9f9/dnspython-2.4.1.tar.gz"
-    sha256 "c33971c79af5be968bb897e95c2448e11a645ee84d93b265ce0b7aabe5dfdca8"
+    url "https://files.pythonhosted.org/packages/65/2d/372a20e52a87b2ba0160997575809806111a72e18aa92738daccceb8d2b9/dnspython-2.4.2.tar.gz"
+    sha256 "8dcfae8c7460a2f84b4072e26f1c9f4101ca20c071649cb7c34e8b6a93d58984"
   end
 
   resource "filelock" do
