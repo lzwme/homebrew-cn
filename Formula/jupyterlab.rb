@@ -11,13 +11,14 @@ class Jupyterlab < Formula
   ]
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "80b1b2fd36f7c0a4dac388d964dec185631f3d47253f648431b533b7d8f1d509"
-    sha256 cellar: :any,                 arm64_monterey: "c1138ded8a85036eddacb3674ac56303ddad2f5cdb8ce476de0ee64bec619f00"
-    sha256 cellar: :any,                 arm64_big_sur:  "c0f5c9ea0369f29b19001ec7105ae00040e436334e941d18e6a9fd3912afee7b"
-    sha256 cellar: :any,                 ventura:        "9060ce4fdffd33240d67645a30ecd73a6995994e04122dda9ccc3d18ed0ff094"
-    sha256 cellar: :any,                 monterey:       "7e4236389e244d5518673490df47387595b325182f7a47b593299122c5d8044f"
-    sha256 cellar: :any,                 big_sur:        "a1f4d9c6a01d0c8fe25426574781085108067a7de7d8520e26c7535a5e26a5fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c764cfa2cd7bfa1af6e7de7b029c9f72c3ba596cc7cc99e6047226436cda584d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "c970042729cf87a07fa5f8b0f3e3b352db0868fd40b814e7f5cb30dba8ac534b"
+    sha256 cellar: :any,                 arm64_monterey: "e73cae60e9c98c4db9d0b0463fe7e882f5661fa945809c40abfb8c5ee23ad50d"
+    sha256 cellar: :any,                 arm64_big_sur:  "c4808748b9479bd76104a0b76abade39b9cfa90bcc7c58b4253c2db3244a6f1e"
+    sha256 cellar: :any,                 ventura:        "e1844c539339036659f03ebf522f911ab5baac00d23a1db8db06b1e7dc1a38fb"
+    sha256 cellar: :any,                 monterey:       "96d8e5df7fa66eeadf506105d16b254042659545745eccf4045af3ff9ad1e2ed"
+    sha256 cellar: :any,                 big_sur:        "768486fdf2bd4d5d12d7c10dee21eb468765e5b15c2d2ab959704eaba52b4727"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39965d4d42f0f6f853e1822a4279b4ae1d7b992d55be957c16af007eb20656fb"
   end
 
   depends_on "hatch" => :build
@@ -30,6 +31,7 @@ class Jupyterlab < Formula
   depends_on "pycparser"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-lsp-server"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -377,11 +379,13 @@ class Jupyterlab < Formula
     venv = virtualenv_create(libexec, python3)
     ENV["JUPYTER_PATH"] = etc/"jupyter"
 
+    # link dependent virtualenvs to this one
     site_packages = Language::Python.site_packages(python3)
-    %w[ipython].each do |package_name|
+    paths = %w[ipython python-lsp-server].map do |package_name|
       package = Formula[package_name].opt_libexec
-      (libexec/site_packages/"homebrew-#{package_name}.pth").write package/site_packages
+      package/site_packages
     end
+    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
 
     postinstall = %w[jupyterlab-pygments notebook nbclassic]
     linked_hatch = %w[
@@ -451,7 +455,7 @@ class Jupyterlab < Formula
 
     (testpath/"console.exp").write <<~EOS
       spawn #{bin}/jupyter-console
-      expect "In "
+      expect -timeout 60 "In "
       send "exit\r"
     EOS
     assert_match "Jupyter console", shell_output("expect -f console.exp")

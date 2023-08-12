@@ -11,14 +11,14 @@ class TkeySshAgent < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ca5eea17cc5b9ce656512723fd0f3264618f2691c6c9f99a203e53c6d906fbf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "67a96eb8492872553954d9febb60f4288f098823089dad937eaf686ba8cf3431"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "88c4dff50fdc0d489dd4945877cb044b341040252cf79e43b1a6e42054930371"
-    sha256 cellar: :any_skip_relocation, ventura:        "ac79fd3952281c2aff071a0f0682c89cac75ea59f46909638036a3b869155e57"
-    sha256 cellar: :any_skip_relocation, monterey:       "5dc85f026d6e6cd72cb0983061438de571f5fc39bf070e8a332655f08faff2d6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3b6521eaebf5a417c218b1fe90b89b4d66330ebde5d19e50266c13c7758f9d3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0105a5d58f65721883759cbd6e75791d507c122f77a68ea878d6425a5644268a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b00f8db7fb3ec5aea7d08770da1a30de735ea365845c0dba0bd70c039116d82a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6ee703b7d46264fb1adce0b6187d19719cd2210be3fd183bc1fa34ce0b33ed8c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bdba6e501630f4265b5905162e3c7adc3ce7360451422660b6ddf3872630b901"
+    sha256 cellar: :any_skip_relocation, ventura:        "155165d00aac01bbad4dae356ad2c240ad33d53458da154e8f8173d5ebbbcfce"
+    sha256 cellar: :any_skip_relocation, monterey:       "95d87b785d72bfe0ef2bf50601c2f780c6096119734b6d81962c3f035066f0ec"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4947e759c1abfe46536aadfe8f2ab7b1651a3568b6b49a1cecced1d81b576238"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ea710fcd774b3c3f75da1f62462b0137952f8f6b4f9fc50350a45a5830fb18e"
   end
 
   depends_on "go" => :build
@@ -40,6 +40,7 @@ class TkeySshAgent < Formula
     resource("signerapp").stage("./cmd/tkey-ssh-agent/app.bin")
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/tkey-ssh-agent"
+    man1.install "system/tkey-ssh-agent.1"
   end
 
   def post_install
@@ -55,7 +56,20 @@ class TkeySshAgent < Formula
   end
 
   service do
-    run [opt_bin/"tkey-ssh-agent", "--agent-socket", var/"run/tkey-ssh-agent.sock"]
+    run macos: [
+          opt_bin/"tkey-ssh-agent",
+          "--agent-socket",
+          var/"run/tkey-ssh-agent.sock",
+          "--uss",
+          "--pinentry",
+          HOMEBREW_PREFIX/"bin/pinentry-mac",
+        ],
+        linux: [
+          opt_bin/"tkey-ssh-agent",
+          "--agent-socket",
+          var/"run/tkey-ssh-agent.sock",
+          "--uss",
+        ]
     keep_alive true
     log_path var/"log/tkey-ssh-agent.log"
     error_log_path var/"log/tkey-ssh-agent.log"

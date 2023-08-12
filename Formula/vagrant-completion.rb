@@ -1,6 +1,8 @@
 class VagrantCompletion < Formula
   desc "Bash completion for Vagrant"
   homepage "https://github.com/hashicorp/vagrant"
+  # NOTE: Do not bump to new release as license changed to BUSL-1.1
+  # https://github.com/hashicorp/vagrant/pull/13248
   url "https://ghproxy.com/https://github.com/hashicorp/vagrant/archive/v2.3.7.tar.gz"
   sha256 "fa8a96319aa7b9ff5f4a991b77cbf37f549549d84737624bcebefa8f2004bf45"
   license "MIT"

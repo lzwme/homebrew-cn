@@ -1,18 +1,18 @@
 class SignalCli < Formula
   desc "CLI and dbus interface for WhisperSystems/libsignal-service-java"
   homepage "https://github.com/AsamK/signal-cli"
-  url "https://ghproxy.com/https://github.com/AsamK/signal-cli/archive/refs/tags/v0.11.11.tar.gz"
-  sha256 "c9fa90e3e9b4a7324504cb1009a1c7c41fd7b4ef4e17361654431a436639f234"
+  url "https://ghproxy.com/https://github.com/AsamK/signal-cli/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "c69d2c9c0d69970bdaffb33115384f7dd35843cd4169661b7b6430272a17f50a"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e0da15102629aec8f4bd5f27f091d8994761bd68f9113ab9229d92335d0fc94a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bf81837cd60eee8578b0d00ed0fd9c68c7b80b28c0db224c6a1c61513697f44e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "65f8a8c3c4746a419d5b3e69bbf9ad40380351bfe8fd430f2ab0c7aead7f36ab"
-    sha256 cellar: :any_skip_relocation, ventura:        "3bf8883deeb96db1b87e55be9ec1816e1ff01f27f546ecf703f12ca8eb3710d8"
-    sha256 cellar: :any_skip_relocation, monterey:       "4bb35862302177be55ec7e027d6a4618a2aeace88b32b1e415c690ff7656e0e9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "48bc86d143652c4b56a37b05bcf5e9ed47fb7afac263bf36c9e5dbff1bf4e5d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "268c71d8f15552373a82a39caa962fce0de5f88f9a93b8ea1933735f7d2fca70"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb66ad17399a07f800acb0771398ef0893c8f0c53b842bb7ba4b89792951f54f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc1e75f2d4d3b1adfc51177fb88f1a2991dd05ea947e107d278bbc465676a2fc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "81deb14654e5ca017cdcfb780aee933bbbae8e7d9be48e95e0a8c285288c0b47"
+    sha256 cellar: :any_skip_relocation, ventura:        "da0720ecb4e1f18929f8ba4227d9d3eb9caa7e7fb70d959df2e5c5a591b57ded"
+    sha256 cellar: :any_skip_relocation, monterey:       "b5f634cc0d90db4e94aa0bb4085c68c79a5075cb5d2cdd70afa1d9dc638a2885"
+    sha256 cellar: :any_skip_relocation, big_sur:        "466d19db9733ab64ebfa3a9e3c9280e8253452e49a2fea428af16cb8351b4e95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c6ab13278ece9c08b29b3a41888f18f26c269c58f93f668b7380c0d8eaa76e0"
   end
 
   depends_on "cmake" => :build # For `boring-sys` crate in `libsignal-client`
@@ -26,21 +26,17 @@ class SignalCli < Formula
 
   depends_on "openjdk"
 
+  uses_from_macos "llvm" => :build # For `libclang`, used by `boring-sys` crate
   uses_from_macos "zip" => :build
 
-  # Use `llvm@15` to work around build failure with Clang 16 described in
-  # rust-lang/rust-bindgen#2312.
-  # TODO: Switch back to `uses_from_macos "llvm" => :build` when `libsignal`
-  # crate's dependency `boring-sys` uses `bindgen` v0.62.0 or newer.
-  on_linux do
-    depends_on "llvm@15" => :build # For `libclang`, used by `boring-sys` crate
-  end
-
-  # per https://github.com/AsamK/signal-cli/wiki/Provide-native-lib-for-libsignal#libsignal-client
-  # we want the specific libsignal-client version from 'signal-cli-#{version}/lib/libsignal-client-X.X.X.jar'
+  # https://github.com/AsamK/signal-cli/wiki/Provide-native-lib-for-libsignal#determine-the-required-libsignal-client-version
+  # To check the version of `libsignal-client`, run:
+  # curl -fsSL https://ghproxy.com/https://github.com/AsamK/signal-cli/releases/download/v${version}/signal-cli-${version}-Linux.tar.gz |
+  #   tar -tz |
+  #   grep libsignal-client
   resource "libsignal-client" do
-    url "https://ghproxy.com/https://github.com/signalapp/libsignal/archive/refs/tags/v0.25.0.tar.gz"
-    sha256 "2479bb5257a7a36ee6b929097be0b118ce13694b226f03aac6f71f64c7d896e9"
+    url "https://ghproxy.com/https://github.com/signalapp/libsignal/archive/refs/tags/v0.30.0.tar.gz"
+    sha256 "a9fe90f35c87c85d30efed3ffa0f717196e10eba4d2a9c95fa8129e88847f7f0"
   end
 
   def install
@@ -55,11 +51,12 @@ class SignalCli < Formula
     ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
 
     resource("libsignal-client").stage do |r|
-      # https://github.com/AsamK/signal-cli/wiki/Provide-native-lib-for-libsignal#building-libsignal-client-yourself
+      # https://github.com/AsamK/signal-cli/wiki/Provide-native-lib-for-libsignal#manual-build
 
       libsignal_client_jar = libexec.glob("lib/libsignal-client-*.jar").first
       embedded_jar_version = Version.new(libsignal_client_jar.to_s[/libsignal-client-(.*)\.jar$/, 1])
-      odie "#{r.name} needs to be updated to #{embedded_jar_version}!" if embedded_jar_version != r.version
+      res = r.resource
+      odie "#{res.name} needs to be updated to #{embedded_jar_version}!" if embedded_jar_version != res.version
 
       # rm originally-embedded libsignal_jni lib
       system "zip", "-d", libsignal_client_jar, "libsignal_jni.so", "libsignal_jni.dylib", "signal_jni.dll"

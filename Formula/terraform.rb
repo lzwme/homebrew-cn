@@ -1,6 +1,8 @@
 class Terraform < Formula
   desc "Tool to build, change, and version infrastructure"
   homepage "https://www.terraform.io/"
+  # NOTE: Do not bump to new release as license changed to BUSL-1.1
+  # https://github.com/hashicorp/terraform/pull/33661
   url "https://ghproxy.com/https://github.com/hashicorp/terraform/archive/v1.5.5.tar.gz"
   sha256 "06a72b5ecda4e10d5f2a3c7627420cf0ca0a6b7b47ef0ae151cc1c6ef38eb2fe"
   license "MPL-2.0"

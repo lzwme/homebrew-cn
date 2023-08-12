@@ -1,18 +1,18 @@
 class Simdutf < Formula
   desc "Unicode conversion routines, fast"
   homepage "https://github.com/simdutf/simdutf"
-  url "https://ghproxy.com/https://github.com/simdutf/simdutf/archive/refs/tags/v3.2.16.tar.gz"
-  sha256 "7a8f789d400fe6a2fd8ecd430de2e27b4b9117f9dd2279bec85e024d5f302706"
+  url "https://ghproxy.com/https://github.com/simdutf/simdutf/archive/refs/tags/v3.2.17.tar.gz"
+  sha256 "c24e3eec1e08522a09b33e603352e574f26d367a7701bf069a65881f64acd519"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/simdutf/simdutf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e89ce6bf62b014e58304ebcc6c7d18df8dc0f6cf81f9773f909af9dee9f744da"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d686afa07cb5befa09d22c31943752072526201fed8008cca9d484ac1f890455"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b91ec1dcb118e6becdd8a43fa7240e3c3c2c6be0745184dfc9114df0acaafd7d"
-    sha256 cellar: :any_skip_relocation, ventura:        "eb8df0bc003841bc87ec23c0937c9fa558f86c4a5a679201fcde288ab69e346f"
-    sha256 cellar: :any_skip_relocation, monterey:       "53ee3738da098e70243ad71948c55f94ee39351e8daccda55e92ecb6d4ee976c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b31489f05ff5758a560fdf7d9a15acf77d8ebf44ec463d8e155cc3fac3637ed4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e47da9bcb4afcd60d9378dbd36186a646ccd17e0ff2863e3ec8885709160b090"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ee98252314db62b8306d26e9d2468408dd3718cae28f3db15e2274f22f0c1f2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "75ba65683f24bc6aab82e88147783bf2b55dab87e4b28204e02e59f2013621f1"
+    sha256 cellar: :any_skip_relocation, ventura:        "45671f3cd92efd2353cab9ddf3626cea80b820e9b39c8a55667aa7d182e10e25"
+    sha256 cellar: :any_skip_relocation, monterey:       "1746c5e39177dc930f838c2c0bf5bf584adacd640cc84b936a06f6e107f5e3fb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "77c4f97ed9d907527660fbf00e2ef3c19d7ab7779439b594b93988e4beee11d6"
   end
 
   depends_on "cmake" => :build

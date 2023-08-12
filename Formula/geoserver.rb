@@ -8,11 +8,10 @@ class Geoserver < Formula
   # GeoServer releases contain a large number of files for each version, so the
   # SourceForge RSS feed may only contain the most recent version (which may
   # have a different major/minor version than the latest stable). We check the
-  # "GeoServer" directory page instead, since this is reliable.
+  # first-party download page for stable versions, since this is reliable.
   livecheck do
-    url "https://sourceforge.net/projects/geoserver/files/GeoServer/"
-    regex(%r{href=(?:["']|.*?GeoServer/)?v?(\d+(?:\.\d+)+)/?["' >]}i)
-    strategy :page_match
+    url "https://geoserver.org/release/stable/"
+    regex(%r{/GeoServer/v?(\d+(?:\.\d+)+)/?}i)
   end
 
   bottle do

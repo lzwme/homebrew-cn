@@ -1,10 +1,9 @@
 class Dps8m < Formula
   desc "Simulator of the 36‑bit GE/Honeywell/Bull 600/6000‑series mainframe computers"
   homepage "https://dps8m.gitlab.io/"
-  url "https://dps8m.gitlab.io/dps8m-archive/R3.0.0/dps8m-r3.0.0-src.tar.gz"
-  sha256 "e3eac9e4f8b6c7fad498ff1848ba722e1a2e220b793ce02e2ea6a7a585e0c91f"
+  url "https://dps8m.gitlab.io/dps8m-r3.0.1-archive/R3.0.1/dps8m-r3.0.1-src.tar.gz"
+  sha256 "4c7daf668021204b83dde43504396d80ddc36259fd80f3b9f810d6db83b29b28"
   license "ICU"
-  revision 1
   head "https://gitlab.com/dps8m/dps8m.git", branch: "master"
 
   livecheck do
@@ -13,13 +12,13 @@ class Dps8m < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ba27cf723d5702593457efb495c769f2846b4bd3a6878ac79f92c0eca54da8f9"
-    sha256 cellar: :any,                 arm64_monterey: "efbf793085471011b68d7203e5a6a10a2ac9bfd2f9ea8b12a6e1f464a825b5ac"
-    sha256 cellar: :any,                 arm64_big_sur:  "b898cb7a4f4bd2d32cfdaa53c2792e3243fca88a316782605dc6b0ec75f379b8"
-    sha256 cellar: :any,                 ventura:        "3b2b3258518e5757a97a7270f1fba79fdd2380117326b25d913d7a857318a446"
-    sha256 cellar: :any,                 monterey:       "128e289f09358b7fc7913772787d2cd3a266d789e0f7f95d059e32f9a3984ff8"
-    sha256 cellar: :any,                 big_sur:        "a9e0b7f6aca5cc731c7f83126232510f70431839b3d5865f1bf97f19ea0f68bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "86d29e9bdb2a3f19ac2010e8f0f1aaa9768a0c8c1d4cac5133549b0ca090a84a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "34bcbbb25c2dfd78c480cabc2fe15524079bbe3cb2a928166bebac1ef7599b34"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "23ce64ca8ce99c74b5b50e47ad924980659a4971e569718b88f384146d7ed06d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "abe9ac4fb9b51cfbacd7047980ae30712abf795017bab0d50a2ca9a6eb562ee4"
+    sha256 cellar: :any_skip_relocation, ventura:        "81654fc8c297d212c51325ff99a85a4118b30448f1142a8996f3091159b8df0c"
+    sha256 cellar: :any_skip_relocation, monterey:       "9a59be99e76eb327e76dbf8e29bd94b43037689a4287c53ef4d882fbfd0e626d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ec9347f931db9539b6a17a5e3dd9559fd8d4eb0fd56aa7c26c8535c40d3a9c52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2607bb961e0b28e82e64392f258f472ccc84335785c703bad7de6b5ebeb1b236"
   end
 
   depends_on "libuv"

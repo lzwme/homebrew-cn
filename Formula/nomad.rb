@@ -1,6 +1,8 @@
 class Nomad < Formula
   desc "Distributed, Highly Available, Datacenter-Aware Scheduler"
   homepage "https://www.nomadproject.io"
+  # NOTE: Do not bump to new release as license changed to BUSL-1.1
+  # https://github.com/hashicorp/nomad/pull/18187
   url "https://ghproxy.com/https://github.com/hashicorp/nomad/archive/v1.6.1.tar.gz"
   sha256 "dabd35cf10d7c632fc3dc337d53dca1875d803db6f2dd49c79e99f61bbab5d57"
   license "MPL-2.0"

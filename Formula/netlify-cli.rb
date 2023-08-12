@@ -3,19 +3,19 @@ require "language/node"
 class NetlifyCli < Formula
   desc "Netlify command-line tool"
   homepage "https://www.netlify.com/docs/cli"
-  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-16.0.1.tgz"
-  sha256 "8acee9351524ee59ae3a41c73d1bed522ad5a1482453b50a2bd8926c0f237941"
+  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-16.0.2.tgz"
+  sha256 "0fd76f5079aa1ef25c26a0c8d7b8637b4aefb15de83be481bb7a00d0377084a2"
   license "MIT"
   head "https://github.com/netlify/cli.git", branch: "main"
 
   bottle do
-    sha256                               arm64_ventura:  "dcc61011190fa0d9c0a7b00f722c13a1dfa13b38faff3e4c49997bcc8a9de227"
-    sha256                               arm64_monterey: "b0b3667d1e85a9c2ab64c097fa86b77e5fd86297f4c08a085669b2722ecc9315"
-    sha256                               arm64_big_sur:  "12a28c882cdd919aa51f573dd7bec50d7428acb84c38ccd63caa32ddf22f940c"
-    sha256                               ventura:        "e49cc15f065d619eed69a2e466ee6807e01849461b530b632fda7d737d09326a"
-    sha256                               monterey:       "cdd8c44ebac0601f5238c89d59cb18aadcc83e202be6ae79c6c94a3606dbabe6"
-    sha256                               big_sur:        "b181b78743948ad8d7d3251b689d7d1255d57cef35c8f22950fc43fcc447fd2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "673843050bd0a078ed4b5bca8e6a23a6207f6fdcdbaa9157937a86618b219ffc"
+    sha256                               arm64_ventura:  "9c0c449ad2c53e0126f1081022336533b9e998006e50b7f7b7441d25937af208"
+    sha256                               arm64_monterey: "e52707d9e00494dadead8565c899312ad8510d22cddac9836c3b585f29fa7c74"
+    sha256                               arm64_big_sur:  "819857d0ba0c6c7945b43425b58d92dc1be8b80e1318c3b5acd2264e9731781b"
+    sha256                               ventura:        "f4b0eb51d492699d123dec36f44968bb654745c3d70175cc2ffb3e220abd2ec3"
+    sha256                               monterey:       "6b88a9ef2b5bd2f09724a7610dff2257fc04065bac0cae7753e361ca4994ae52"
+    sha256                               big_sur:        "ab85b8da1741a54f0036899e6e32b0e13fd5ba0c6546115bf0cf1a4c5b7eef20"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89e8348d58db0940d73b46f4a46410e3ca120f8a2fb86f407f89f3860e99a485"
   end
 
   depends_on "node"

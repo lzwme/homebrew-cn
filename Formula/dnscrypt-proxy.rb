@@ -1,8 +1,8 @@
 class DnscryptProxy < Formula
   desc "Secure communications between a client and a DNS resolver"
   homepage "https://dnscrypt.info"
-  url "https://ghproxy.com/https://github.com/DNSCrypt/dnscrypt-proxy/archive/2.1.4.tar.gz"
-  sha256 "05f0a3e8c8f489caf95919e2a75a1ec4598edd3428d2b9dd357caba6adb2607d"
+  url "https://ghproxy.com/https://github.com/DNSCrypt/dnscrypt-proxy/archive/2.1.5.tar.gz"
+  sha256 "044c4db9a3c7bdcf886ff8f83c4b137d2fd37a65477a92bfe86bf69587ea7355"
   license "ISC"
   head "https://github.com/DNSCrypt/dnscrypt-proxy.git", branch: "master"
 
@@ -12,13 +12,13 @@ class DnscryptProxy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da74df355890ed829d55080348adc125bf5dfe0f70e0c04c286ce4e65e3b709d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "02aeddf862d70235a647e24bc64efb14b29d0c84931d7b2590fe142358bd5557"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "93f345adfc058e7ead522d7b2e7a7bf0609475865bf37c9d2238c3fa2ccaf7f0"
-    sha256 cellar: :any_skip_relocation, ventura:        "a23dae15ae623b6fe438b911eae117ac87d8d2d866757e527948e5b0bc665b2e"
-    sha256 cellar: :any_skip_relocation, monterey:       "8251312fe68d98ad53d4a5edc4c31a34d3d583e62ad5b9b4a6a5b5a63ca9b813"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1d4b533f001583fdd3d627ed51b0809e33e5d5318ddb26a0ba0b1da6f6918bf0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "28702655cf286ac6850f31cafb4d365c12d8b65877d6ff1ace4c1da2795259ac"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "288115da2b5dbd3ba90f2d6479dbd1697a6ca13da9bdac901866edd44cea8f99"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "288115da2b5dbd3ba90f2d6479dbd1697a6ca13da9bdac901866edd44cea8f99"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "288115da2b5dbd3ba90f2d6479dbd1697a6ca13da9bdac901866edd44cea8f99"
+    sha256 cellar: :any_skip_relocation, ventura:        "d520dcc7b0c3183221fbda50ed0847ff0a1fd10f2dbde120ce45e8ab4799585f"
+    sha256 cellar: :any_skip_relocation, monterey:       "d520dcc7b0c3183221fbda50ed0847ff0a1fd10f2dbde120ce45e8ab4799585f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d520dcc7b0c3183221fbda50ed0847ff0a1fd10f2dbde120ce45e8ab4799585f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fea5a34cbe6e64ea9163827d9cfbf84b2c415f6f10ecc9dcd1ba6ead3a8a633d"
   end
 
   depends_on "go" => :build
