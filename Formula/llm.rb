@@ -3,19 +3,18 @@ class Llm < Formula
 
   desc "Access large language models from the command-line"
   homepage "https://llm.datasette.io/"
-  url "https://files.pythonhosted.org/packages/a4/27/99003e30e646346e3beb160edb9d8554aa6a3aaa2b62168f665776d06d16/llm-0.6.1.tar.gz"
-  sha256 "f4470292202abb57871b6ee373c1397b9da6271044094b01afd8efdb7f0770ca"
+  url "https://files.pythonhosted.org/packages/10/5e/02a264657f6e5f13db50d8ab4ad01c1568dd753a4550a673de73ab3d1cfc/llm-0.7.tar.gz"
+  sha256 "3ee66c97a52355426fa7839b854c9bb1fd013c6cee12863650d2faf4cf8fc748"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "7a4b587bf8d9cc0a7e4291711289511a3808a1c759be9562ac45a486041a563f"
-    sha256 cellar: :any,                 arm64_monterey: "17735b0c648cad6ea55a541b53c57dbfbf124f19e594f4156eafe9f0153338bd"
-    sha256 cellar: :any,                 arm64_big_sur:  "8398f8d7faee7942faa25b8d0b04dfa5c6f56f34c02ed8dbcf38099faf34d47c"
-    sha256 cellar: :any,                 ventura:        "e871c1b0231128e8f307e434970de9d36931b079f749b3d9d9bdacf96ce431ca"
-    sha256 cellar: :any,                 monterey:       "bc8852d0660c672aafeef9ca5f0b6bf2b53c50aadd740984d324cced4778dedd"
-    sha256 cellar: :any,                 big_sur:        "1fbc929370fd14b0e01540bc4d83253dc75948d6180b8ef0342a4b63e2402130"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea7342d5c5d1d112108b0daaaa45546ee00c7bd308284f5cc129174c245750d8"
+    sha256 cellar: :any,                 arm64_ventura:  "0654f944b9d5f7bb8caa1b33cb7096418505260ba23fd3d25b219afaa9d6da84"
+    sha256 cellar: :any,                 arm64_monterey: "49243a82a0831e5507941a0bb00bae20830cb7802da6121f6b0a804b5dd92303"
+    sha256 cellar: :any,                 arm64_big_sur:  "3936a48c9aaa82793f40ad06f95ea78a68e64ca751a322878910ce6888d3f02a"
+    sha256 cellar: :any,                 ventura:        "b755dfaf72ef41e6d98ea754309d0921545988f8ccbdc811bbce516a72e382d4"
+    sha256 cellar: :any,                 monterey:       "38ea91309a71625e5d4b21e93f3a00dc5c6b2971b7065eb26346f14d8f8c1198"
+    sha256 cellar: :any,                 big_sur:        "6271fa44106b2b238ec5434904ce1ecb6013f8a40804dc03f629f98fbbd0464f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45f466e425ca4c859c2bde780ea3dcbac52ba6404b064f90b2f555eabb3a665e"
   end
 
   depends_on "rust" => :build
@@ -43,8 +42,8 @@ class Llm < Formula
   end
 
   resource "async-timeout" do
-    url "https://files.pythonhosted.org/packages/54/6e/9678f7b2993537452710ffb1750c62d2c26df438aa621ad5fa9d1507a43a/async-timeout-4.0.2.tar.gz"
-    sha256 "2163e1640ddb52b7a8c80d0a67a08587e5d245cc9c553a74a847056bc2976b15"
+    url "https://files.pythonhosted.org/packages/87/d6/21b30a550dafea84b1b8eee21b5e23fa16d010ae006011221f33dcd8d7f8/async-timeout-4.0.3.tar.gz"
+    sha256 "4640d96be84d82d02ed59ea2b7105a0f7b33abe8703703cd0ab0bf87c427522f"
   end
 
   resource "attrs" do
@@ -93,13 +92,13 @@ class Llm < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/11/07/106b00ae62297bb3c89b6fbeb571feaf7cbbf6b2ada0e513d756daafd4ce/pydantic-2.0.3.tar.gz"
-    sha256 "94f13e0dcf139a5125e88283fc999788d894e14ed90cf478bcc2ee50bd4fc630"
+    url "https://files.pythonhosted.org/packages/0f/46/12689d28731c709890361af3414a9d0d04328043beb7c9fc4e4caa580b5c/pydantic-2.1.1.tar.gz"
+    sha256 "22d63db5ce4831afd16e7c58b3192d3faf8f79154980d9397d9867254310ba4b"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/57/ea/edff47ad42857534f3abcc87472802b3181041f4e4fbeac988a5ecfcffae/pydantic_core-2.3.0.tar.gz"
-    sha256 "5cfb5ac4e82c47d5dc25b209dd4c3989e284b80109f9e08b33c895080c424b4f"
+    url "https://files.pythonhosted.org/packages/8a/6a/2609fb28f3c289eacb2a2ddaceb7ad0d327b4b4678146573295d98f012b8/pydantic_core-2.4.0.tar.gz"
+    sha256 "ec3473c9789cc00c7260d840c3db2c16dbfc816ca70ec87a00cddfa3e1a1cdd5"
   end
 
   resource "python-dateutil" do
@@ -128,8 +127,8 @@ class Llm < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/3d/78/81191f56abb7d3d56963337dbdff6aa4f55805c8afd8bad64b0a34199e9b/tqdm-4.65.0.tar.gz"
-    sha256 "1871fb68a86b8fb3b59ca4cdd3dcccbc7e6d613eeed31f4c332531977b89beb5"
+    url "https://files.pythonhosted.org/packages/62/06/d5604a70d160f6a6ca5fd2ba25597c24abd5c5ca5f437263d177ac242308/tqdm-4.66.1.tar.gz"
+    sha256 "d88e651f9db8d8551a62556d3cff9e3034274ca5d66e93197cf2490e2dcb69c7"
   end
 
   resource "urllib3" do

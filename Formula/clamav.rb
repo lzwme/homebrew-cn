@@ -14,13 +14,14 @@ class Clamav < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "9ae2e6e79a10ac3eb7d08d5386e9b8a99500d6a92909304b479c6c910374afd6"
-    sha256 arm64_monterey: "efb65f1eb739aecd178693e7ed9e82d449a03648ac90bc78f3a77270c1c5d884"
-    sha256 arm64_big_sur:  "e247eddf9a09fc2da4a2b7a335473d63204fcde035f095f001481757d8033764"
-    sha256 ventura:        "1f4fad01de3a3663309ac8cc76eb18f242260c8f8e93b4984f01745c62af6eb7"
-    sha256 monterey:       "b45c9d78705826e199fc4bb2e3e3aa96bb80011244380743c8c4484cd6c2a1b5"
-    sha256 big_sur:        "39b20d42f011de92f8f230077bbe62fba5ffc0947563828f20805f7bb9502fd1"
-    sha256 x86_64_linux:   "b44199d0e01d0c25c54dae2ebdc44a3eec9506adc55cfdd83c895b67fea3a1d8"
+    rebuild 1
+    sha256 arm64_ventura:  "662ffabfc4ae40f797d06e4dec92b28c6829c098f77e6fa97db671a11899d97a"
+    sha256 arm64_monterey: "1ce783e4d2e2ba813481313e85567be5028cb4f92967413c5a947dd18e5725b4"
+    sha256 arm64_big_sur:  "d15441ba011b2b7e7396eea172b967c3dfc3a6d7e84faa619c315291a6a85e97"
+    sha256 ventura:        "e5e2328cc4283169013fe320e170f357388526f2ca9c6802e74accaf0e507967"
+    sha256 monterey:       "ff7217fd2414ee715481ae64c4f189d07ead1f293290a8f7a2ad48efc7e1b5bd"
+    sha256 big_sur:        "9eeed4584fd2cf1b855f026863d329875ad1013a203f51a63107b9972d36d0cc"
+    sha256 x86_64_linux:   "cbc83747e96b646908950b2988fedcc7536f085fd4602e448d30c71d3baeee84"
   end
 
   depends_on "cmake" => :build
@@ -58,6 +59,12 @@ class Clamav < Formula
 
   def post_install
     (var/"lib/clamav").mkpath
+  end
+
+  service do
+    run [opt_sbin/"clamd", "--foreground"]
+    keep_alive true
+    require_root true
   end
 
   def caveats

@@ -1,10 +1,9 @@
 class Graphicsmagick < Formula
   desc "Image processing tools collection"
   homepage "http://www.graphicsmagick.org/"
-  url "https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.40/GraphicsMagick-1.3.40.tar.xz"
-  sha256 "97dc1a9d4e89c77b25a3b24505e7ff1653b88f9bfe31f189ce10804b8efa7746"
+  url "https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.41/GraphicsMagick-1.3.41.tar.xz"
+  sha256 "b741b11ba86162db4d4ec1b354989a773f73c40722d1148239f6c69c9f04a6aa"
   license "MIT"
-  revision 2
   head "http://hg.code.sf.net/p/graphicsmagick/code", using: :hg
 
   livecheck do
@@ -12,13 +11,13 @@ class Graphicsmagick < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "446e3cb08c86bb7de71f3c8cade78129d164b59eda6a487895bd5e4fafcb581d"
-    sha256 arm64_monterey: "a4690f3c994060ebcf9f35eb8c1dda04d0c0b87e3dc33c76b0b9dc42b2ec8232"
-    sha256 arm64_big_sur:  "f0fc2e65a54c8c133ba460c20dc6e5f9dd132a7d2e044df941480aed6c37052d"
-    sha256 ventura:        "29e61a26f58cf53d311c0f2b286a8e3f05846ee60d29a6cc0c279e9f2b048420"
-    sha256 monterey:       "3a3586f6d9aa5fbb3837678d99de86910442b762f9ac24e9725ee9117cc0dbf0"
-    sha256 big_sur:        "f88307db7a99295947f897822880544492aefb2451274b298dc593886ff0e6ff"
-    sha256 x86_64_linux:   "9872ca3b3cbc1411aca7ae0eb036a75904bc8418129b9b5f472d50bd25441e1e"
+    sha256 arm64_ventura:  "f7b8c2e7c65a55ec5f69cc621dc750559afe6615db3c01ac09be2266d2d6161a"
+    sha256 arm64_monterey: "f9cf922a20de55d46901e9e767d28eb269ae81fbe9544ecc709c8fd87a6b93b2"
+    sha256 arm64_big_sur:  "c3bf730c6046e819611af275786b4c370ebcc1bca520368beffb9e5e67d71b93"
+    sha256 ventura:        "b3bcdb9316527c4309fecca441dfcf14597de283c28beb104193f1b1d1508779"
+    sha256 monterey:       "b99bfc76808e6119c8706c09630567159ea7b63e115ce4009e57e395efb61ade"
+    sha256 big_sur:        "6fd70f7706737eea23e1ec3ad6c3efb487343e1eaaea0daa4de433d56b795218"
+    sha256 x86_64_linux:   "b8420ca7668403e46320f96a19d3be2a01604dfec5d53ae94dcef133f09321ac"
   end
 
   depends_on "pkg-config" => :build

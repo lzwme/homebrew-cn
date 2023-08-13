@@ -7,13 +7,14 @@ class Gator < Formula
   head "https://github.com/open-policy-agent/gatekeeper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "280b4d53e6f61df1e9de336c65c40256c5fdabce7f62cb59ff1f58fbecab0703"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "280b4d53e6f61df1e9de336c65c40256c5fdabce7f62cb59ff1f58fbecab0703"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "280b4d53e6f61df1e9de336c65c40256c5fdabce7f62cb59ff1f58fbecab0703"
-    sha256 cellar: :any_skip_relocation, ventura:        "843a8ac828b8add4d6cfe8361bdbe7947f8386f2952661e25950c46edfe3a57b"
-    sha256 cellar: :any_skip_relocation, monterey:       "843a8ac828b8add4d6cfe8361bdbe7947f8386f2952661e25950c46edfe3a57b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "843a8ac828b8add4d6cfe8361bdbe7947f8386f2952661e25950c46edfe3a57b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "267ea4d520bec29f509af003ec03c128b247cf3d3e8e34adb87d2b2f12a479b5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "519851c955caa3b86dfe89cefa447c65b66b5d771af82fc64f9d345744e34321"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "519851c955caa3b86dfe89cefa447c65b66b5d771af82fc64f9d345744e34321"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "519851c955caa3b86dfe89cefa447c65b66b5d771af82fc64f9d345744e34321"
+    sha256 cellar: :any_skip_relocation, ventura:        "10e39c3b3653c8619351ffc144860707c4e6e0d83f8816c7bb2390c4724c0d51"
+    sha256 cellar: :any_skip_relocation, monterey:       "10e39c3b3653c8619351ffc144860707c4e6e0d83f8816c7bb2390c4724c0d51"
+    sha256 cellar: :any_skip_relocation, big_sur:        "10e39c3b3653c8619351ffc144860707c4e6e0d83f8816c7bb2390c4724c0d51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0bdd9f1d7fe8cc460de74a47ccc8b0b6a240ccee719c0afd2a9acdea81e99ec0"
   end
 
   depends_on "go" => :build
@@ -21,7 +22,7 @@ class Gator < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/open-policy-agent/gatekeeper/pkg/version.Version=#{version}
+      -X github.com/open-policy-agent/gatekeeper/v3/pkg/version.Version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/gator"
 
@@ -103,5 +104,7 @@ class Gator < Formula
     EOS
 
     assert_empty shell_output("#{bin}/gator test -f gator-manifest.yaml -f template-and-constraints/")
+
+    assert_match version.to_s, shell_output("#{bin}/gator --version")
   end
 end

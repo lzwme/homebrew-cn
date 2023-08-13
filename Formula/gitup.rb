@@ -6,18 +6,17 @@ class Gitup < Formula
   url "https://files.pythonhosted.org/packages/7f/07/4835f8f4de5924b5f38b816c648bde284f0cec9a9ae65bd7e5b7f5867638/gitup-0.5.1.tar.gz"
   sha256 "4f787079cd65d8f60c5842181204635e1b72d3533ae91f0c619624c6b20846dd"
   license "MIT"
-  revision 5
+  revision 6
   head "https://github.com/earwig/git-repo-updater.git", branch: "develop"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6110fff8fd46bffadb3b59d51a48eec76210962047600d867582004749110e73"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2912ddcf3ad3afa21a00a57c61d4cf6e91f399f8ca038883c5e18c34329f5b2c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "904c9403ba3d1debd7caae12b2022e8eebb1a0dab75d6d2c7937ec00177bd822"
-    sha256 cellar: :any_skip_relocation, ventura:        "cc14ccaf85e55faf029a5cbdbfed3f242bc28054f0578989a5f073355a214807"
-    sha256 cellar: :any_skip_relocation, monterey:       "7128646ce0ed24a44a05193e7c6fff6725bf97b5cf76693945e8bc40027aad2e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7172cbae00985c0f57a1b89b9f5026bd305455546a5266ba1b8d7c212b0fe3ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45c09f68a85e5d32050da31f4f8364d930f08cadeb19d2002e9f05d1cd624435"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6870816729cae11e3b82b0512bb50ff9b7f9716851ec68686b9dd6eb5de90cfa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f660a02d89994450e7ce1c5434f5b4935dd8bd513b257074828446b034713cf0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1052f5b31f6396f43ace0ae59d523aa92d084d25403d3806e821e97878af4167"
+    sha256 cellar: :any_skip_relocation, ventura:        "cf233f84181cfc57a9139476b195cf8ac679177159546b093a87597372127a5b"
+    sha256 cellar: :any_skip_relocation, monterey:       "6ae827efe563d6ed0667d7cdf18aecc2c7de8e115ae65d125699fbf1da69da35"
+    sha256 cellar: :any_skip_relocation, big_sur:        "206b625f387c4548560cff24a9225585a7cdfb966aa38fd9be59fd7617433866"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "691b8c02a3179c31ddab29a1ca882c8456b3deee11a7a0a8b88e9cb3ba74b2ad"
   end
 
   depends_on "python@3.11"
@@ -32,9 +31,9 @@ class Gitup < Formula
     sha256 "6eb990b69df4e15bad899ea868dc46572c3f75339735663b81de79b06f17eb9a"
   end
 
-  resource "GitPython" do
-    url "https://files.pythonhosted.org/packages/ef/8d/50658d134d89e080bb33eb8e2f75d17563b5a9dfb75383ea1a78e1df6fff/GitPython-3.1.30.tar.gz"
-    sha256 "769c2d83e13f5d938b7688479da374c4e3d49f71549aaf462b646db9602ea6f8"
+  resource "gitpython" do
+    url "https://files.pythonhosted.org/packages/87/56/6dcdfde2f3a747988d1693100224fb88fc1d3bbcb3f18377b2a3ef53a70a/GitPython-3.1.32.tar.gz"
+    sha256 "8d9b8cb1e80b9735e8717c9362079d3ce4c6e5ddeebedd0361b228c3a67a62f6"
   end
 
   resource "smmap" do

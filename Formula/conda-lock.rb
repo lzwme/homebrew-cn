@@ -9,14 +9,14 @@ class CondaLock < Formula
   revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_ventura:  "77cbacbe42d9b7f04b77627f72d0db20993c9c47d4f92c94837537e6e99a6157"
-    sha256 cellar: :any,                 arm64_monterey: "5d7f481eb7d1fe09b31bc9f0d8e7cbdc7dfce4ceae60561a3e4a8b47946a9758"
-    sha256 cellar: :any,                 arm64_big_sur:  "5887020fa45a0c9fef25732e148838dde923055e24449927c004916b71534b56"
-    sha256 cellar: :any,                 ventura:        "97b503ba44ad717586f2bbc2eece30d73f65798c674552bb276cc9c171cdd6b8"
-    sha256 cellar: :any,                 monterey:       "31bb4cb96e18f9a1bea4e0e53a720e2f8a83ad0c8d664115fbfc7a219e444d4e"
-    sha256 cellar: :any,                 big_sur:        "cc85bc7bb477a024ca02472a8c7ec5864eb57c72ad1531862c678a4870798e4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ad7b72404a45f34d480cad9c5ede6a506d0c0021b6ca0d7878d2b25402110f8"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_ventura:  "b96b524e54db1767900e32e716ff6c55c8c55bd5dcc9f8132bae657d1576eff4"
+    sha256 cellar: :any,                 arm64_monterey: "f8189874ac24fcea8abb35338d9584f06109c8156ba6b0bf4b92fe8f902b4209"
+    sha256 cellar: :any,                 arm64_big_sur:  "ecbfdc7f19a8c4eee2ae419db6d0ae85f30ba4f98359b7cb5b318e978fa588fc"
+    sha256 cellar: :any,                 ventura:        "ba6ba9473ee348a35ba20e4ec14f2f32c78236aebd0abe42f4a6d942c248690b"
+    sha256 cellar: :any,                 monterey:       "a664b2b8e1b382b80289570519f3587fc736520f853f136d3eb5d5b692e7861a"
+    sha256 cellar: :any,                 big_sur:        "98333abf0b975b71f7e7e0818b5a98279836f1c7a5866c62fc9b81cdb0d7ee41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "12f2e638bddea0901b75abede95bfa93743bfd2a9102bec24e0e00c63a3331c9"
   end
 
   depends_on "rust" => :build # for pydantic
@@ -205,8 +205,8 @@ class CondaLock < Formula
 
     # we depend on virtualenv, but that's a separate formula, so install a `.pth` file to link them
     site_packages = Language::Python.site_packages("python3.11")
-    virtualenv = Formula["virtualenv"].opt_libexec
-    (libexec/site_packages/"homebrew-virtualenv.pth").write virtualenv/site_packages
+    paths = %w[keyring virtualenv].map { |p| Formula[p].opt_libexec/site_packages }
+    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end
 
   test do

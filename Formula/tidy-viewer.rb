@@ -5,10 +5,11 @@ class TidyViewer < Formula
   sha256 "3f950c1d05cc7fd5806a49a3f10a9437290e2b24ddf8402ec04d54c63d1a60d5"
   license "Unlicense"
 
+  # Some tagged versions using a stable version format are marked as
+  # "pre-release" on GitHub, so it's necessary to check releases.
   livecheck do
-    url "https://github.com/alexhallam/tv/releases?q=prerelease%3Afalse"
-    regex(%r{href=["']?[^"' >]*?/tag/v?(\d+(?:\.\d+)+)(?:[._-]release)?["' >]}i)
-    strategy :page_match
+    url :stable
+    strategy :github_latest
   end
 
   bottle do

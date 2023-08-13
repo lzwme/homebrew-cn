@@ -6,17 +6,17 @@ class Bandit < Formula
   url "https://files.pythonhosted.org/packages/5e/67/997278e785edf155bd57163ae7030f979a0907857365cb30815d93b5354b/bandit-1.7.5.tar.gz"
   sha256 "bdfc739baa03b880c2d15d0431b31c658ffc348e907fe197e54e0389dd59e11e"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/PyCQA/bandit.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb572e6133251ae18d544a2b26c8a916e460a02a8bf1196f251208332cc9c9a8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2721a0771c2b77d91fa7bc77df94f0f8fa6445ecf63274100920e290b0fdd62b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fad59da6c7e4023955e927849e1f1a824ab969b05b06b1fb88c82b93ceddfad7"
-    sha256 cellar: :any_skip_relocation, ventura:        "bd055f8f3f5d2a956e2714ac742ebe79cac986bc7d22a3e31a845a677fd509fd"
-    sha256 cellar: :any_skip_relocation, monterey:       "09e68c3dc8639c89f59f729bcda7d1afd839d1f272c6f991d455908b9bb2d4f4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a36476aca0395cfc2172b22083eb1dc6162e68caaf4f20c316be2b073bacdb03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5907253f645409b05277595de95d54595bc577b2ca90ce8fb58b217c1b468d59"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e70697adce1fd8fb4c3edb962bf1c489feda5a712f2d391e93617f183b02709b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8ae655df2ce5c98c1596f29484db086835ff7f49e3e28912ae69ceb9c1849fbb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "da6614343852882a17f9ca441107f9febd10505893fd30d20707a843a6e446c9"
+    sha256 cellar: :any_skip_relocation, ventura:        "45c09fb21228fb8ab0000bf6178906b88e6016aa831268fb0e05932a4d796861"
+    sha256 cellar: :any_skip_relocation, monterey:       "23a9c236cf51839c4790f89428b8ed5b9003737792053d6976ad9132f0b81e57"
+    sha256 cellar: :any_skip_relocation, big_sur:        "885028e4d766267c186a0fb1ea128dc941df50878e6321116b648ad24302b60b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89fecf3bf69cb61551db4f6e15ce5f3e7f6270c406e0f6d69300e4cd73f5fb41"
   end
 
   depends_on "pygments"
@@ -28,14 +28,14 @@ class Bandit < Formula
     sha256 "6eb990b69df4e15bad899ea868dc46572c3f75339735663b81de79b06f17eb9a"
   end
 
-  resource "GitPython" do
-    url "https://files.pythonhosted.org/packages/5f/11/2b0f60686dbda49028cec8c66bd18a5e82c96d92eef4bc34961e35bb3762/GitPython-3.1.31.tar.gz"
-    sha256 "8ce3bcf69adfdf7c7d503e78fd3b1c492af782d58893b650adb2ac8912ddd573"
+  resource "gitpython" do
+    url "https://files.pythonhosted.org/packages/87/56/6dcdfde2f3a747988d1693100224fb88fc1d3bbcb3f18377b2a3ef53a70a/GitPython-3.1.32.tar.gz"
+    sha256 "8d9b8cb1e80b9735e8717c9362079d3ce4c6e5ddeebedd0361b228c3a67a62f6"
   end
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/e4/c0/59bd6d0571986f72899288a95d9d6178d0eebd70b6650f1bb3f0da90f8f7/markdown-it-py-2.2.0.tar.gz"
-    sha256 "7c9a5e412688bc771c67432cbfebcdd686c93ce6484913dccf06cb5a0bea35a1"
+    url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
+    sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
   end
 
   resource "mdurl" do
@@ -49,8 +49,8 @@ class Bandit < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/5e/0e/ef0a49be56dbc4052a086888cd2490e15fcc95b0eda79e9d0e737b1ab93d/rich-13.3.2.tar.gz"
-    sha256 "91954fe80cfb7985727a467ca98a7618e5dd15178cc2da10f553b36a93859001"
+    url "https://files.pythonhosted.org/packages/ad/1a/94fe086875350afbd61795c3805e38ef085af466a695db605bcdd34b4c9c/rich-13.5.2.tar.gz"
+    sha256 "fb9d6c0a0f643c99eed3875b5377a184132ba9be4d61516a55273d3554d75a39"
   end
 
   resource "smmap" do
@@ -59,8 +59,8 @@ class Bandit < Formula
   end
 
   resource "stevedore" do
-    url "https://files.pythonhosted.org/packages/f1/25/993d09dc7be3e7927228853c75324104d734bb784bd766b025ebf9f47b16/stevedore-5.0.0.tar.gz"
-    sha256 "2c428d2338976279e8eb2196f7a94910960d9f7ba2f41f3988511e95ca447021"
+    url "https://files.pythonhosted.org/packages/ac/d6/77387d3fc81f07bc8877e6f29507bd7943569093583b0a07b28cfa286780/stevedore-5.1.0.tar.gz"
+    sha256 "a54534acf9b89bc7ed264807013b505bf07f74dbe4bcfa37d32bd063870b087c"
   end
 
   def install

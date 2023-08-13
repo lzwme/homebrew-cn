@@ -1,8 +1,8 @@
 class Cryptominisat < Formula
   desc "Advanced SAT solver"
   homepage "https://www.msoos.org/cryptominisat5/"
-  url "https://ghproxy.com/https://github.com/msoos/cryptominisat/archive/5.11.11.tar.gz"
-  sha256 "20efedfab285293eb8c9804939b5298e43071489c8b09e135e118aec54f682bc"
+  url "https://ghproxy.com/https://github.com/msoos/cryptominisat/archive/5.11.12.tar.gz"
+  sha256 "d59bdaf06d71a14362535a58fcbe1ed53e5302de2aa64394253ccfae26db5b46"
   # Everything that's needed to run/build/install/link the system is MIT licensed. This allows
   # easy distribution and running of the system everywhere.
   license "MIT"
@@ -13,13 +13,13 @@ class Cryptominisat < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8e907ec4f33fba7ec64b46f9393189fc11bdc2192182882da7d5390db6912779"
-    sha256 cellar: :any,                 arm64_monterey: "f81c55dc4589092427df6780683e93b86d68094f5b62ce0afb27b01eff88d5c0"
-    sha256 cellar: :any,                 arm64_big_sur:  "c118a63a3a3b450fd6a7bfbafe4a82a343207655766b729b5bc51f6e6ccca426"
-    sha256 cellar: :any,                 ventura:        "13e87a692679f6c3c443096ab4038de98d656e5397a9b99da1d46223ce0aeda6"
-    sha256 cellar: :any,                 monterey:       "a8a194eccee06a03623f2a4ed913ab643ba267b4c2a1602e7ee8f6e826d397f1"
-    sha256 cellar: :any,                 big_sur:        "da9e09f77d1bcd2323232171bf8faf5dc813d33dc0e76dcab68f014280b161c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05219a8badbad06bd37007e2e2b555dd6bffc3edb7ec864a17416cc847872af8"
+    sha256 cellar: :any,                 arm64_ventura:  "f4de656aa865667cb8f6b7f18bd15fd9a0f3cf5525aec53507100268b7c083f7"
+    sha256 cellar: :any,                 arm64_monterey: "b0528b2edba4932609be44ab1a026c217b3ac390082068ed1b4d935f47c2d98c"
+    sha256 cellar: :any,                 arm64_big_sur:  "6b515e6e9a00c7f8dfbc8e37c95363f7d581eed113ed5451b49da2142309153b"
+    sha256 cellar: :any,                 ventura:        "a31ba29eb5e0c24b4bd86a23e32aedd39b3853487e004e2f0fb0b8e7d647d063"
+    sha256 cellar: :any,                 monterey:       "3bf4fd1ef6dea8e670adc3fa486a72d06f05e8f64e48f005d4dd6b5ba4597454"
+    sha256 cellar: :any,                 big_sur:        "d3fcf58b537413d0c675ed90fa79f13419faacd7d306c9b7b6c654ea372ef272"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f52e7b7a4b7faa91ea27b84da64a6a66a1e1d8eb0d16ff1a277228f445e676de"
   end
 
   depends_on "cmake" => :build

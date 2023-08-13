@@ -2,7 +2,7 @@ class Dynare < Formula
   desc "Platform for economic models, particularly DSGE and OLG models"
   homepage "https://www.dynare.org/"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
 
   # Remove when patch is no longer needed.
   stable do
@@ -32,14 +32,13 @@ class Dynare < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "d2a7971809c3e2c2c504c60879f4a1dfff60fc935671aa1a0de8451b2dc17194"
-    sha256 cellar: :any,                 arm64_monterey: "7dddf275e3d2d9fa48a3e8a02e98c2f9124d901abd5075268e477ad5e7d02b85"
-    sha256 cellar: :any,                 arm64_big_sur:  "34a0749fac7f7cc2a2b093140678a20e2b9e6adeb06ea4298f4d4fea9b5de47e"
-    sha256 cellar: :any,                 ventura:        "97c0cab3c345887bbb7ff5cd8a2c79aeca822d16a10fbd7227ddbc50cfe009db"
-    sha256 cellar: :any,                 monterey:       "a59c743a74e5cc54b9acee6ebda38e0ea5f275a00e6f7c38bf95c1fe678319dd"
-    sha256 cellar: :any,                 big_sur:        "261c3a7a3e3797c6b40663c53587ed22f4887cb9ce7de267ab4471c40e8a1521"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d9ac0a044d461b5e9905d6788cfbacaf243675fb4b434301c74d098c125558f"
+    sha256                               arm64_ventura:  "b0dd7c5ee63b6b5b43a1329794a1491ae1e146881f0786d79bf20866483bd0ef"
+    sha256                               arm64_monterey: "cb8e792c83f4137b50ce60aeeaf2525eaed133771f26563d2fd5ef1206f707fd"
+    sha256                               arm64_big_sur:  "7da08f1aadaf44592ac7ca9de4c19abe524e342d7f3cc9bf47f74287281c8084"
+    sha256                               ventura:        "f532e19598a494ee11f857210047c614389a0b707dd9b01e9b35af81b6f51f36"
+    sha256                               monterey:       "307231733746225517044e5038d24c349e1a49c14fe796d48b9ac7edc9799ae5"
+    sha256                               big_sur:        "0ba4e71943a7c99f86d03ca25d99c76c266d08041b02382f01f1471505c7d0a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3da6684f9b314ccdbd400d8d17a2629e6ccfedae91839511fb4d42e97d98f23"
   end
 
   head do
