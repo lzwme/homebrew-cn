@@ -4,6 +4,7 @@ class GoCritic < Formula
   url "https://ghproxy.com/https://github.com/go-critic/go-critic/archive/refs/tags/v0.9.0.tar.gz"
   sha256 "d2e266aa6f7e7390a12144c159f616a7eaa2c37a4834a169b2debd33e601467a"
   license "MIT"
+  revision 1
   head "https://github.com/go-critic/go-critic.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class GoCritic < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d9a212a31f7d17a2d38edd8ca1ff8858bea92ad04b616a29a348e4bc4e987561"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d9a212a31f7d17a2d38edd8ca1ff8858bea92ad04b616a29a348e4bc4e987561"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d9a212a31f7d17a2d38edd8ca1ff8858bea92ad04b616a29a348e4bc4e987561"
-    sha256 cellar: :any_skip_relocation, ventura:        "fc82502653f1ecedf666130b3844d6345537a228c23492a041e35bd369d30da3"
-    sha256 cellar: :any_skip_relocation, monterey:       "fc82502653f1ecedf666130b3844d6345537a228c23492a041e35bd369d30da3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fc82502653f1ecedf666130b3844d6345537a228c23492a041e35bd369d30da3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1107319e79944ee3051601f1085a48f4807de7194d3f3a504243bab83ab70a4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "751a7ba33d429ec2457ca8ba92275cdce9b15bc234ea8fd962ca1b5869bd6461"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "751a7ba33d429ec2457ca8ba92275cdce9b15bc234ea8fd962ca1b5869bd6461"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "751a7ba33d429ec2457ca8ba92275cdce9b15bc234ea8fd962ca1b5869bd6461"
+    sha256 cellar: :any_skip_relocation, ventura:        "643274fa569b56452578647cda64676c9d53ef5c22c02d83e0399e2bff6696f7"
+    sha256 cellar: :any_skip_relocation, monterey:       "643274fa569b56452578647cda64676c9d53ef5c22c02d83e0399e2bff6696f7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "643274fa569b56452578647cda64676c9d53ef5c22c02d83e0399e2bff6696f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc1ec677c594afe79f413acd26cda65a4ad74ffad84f7bf9c173af2aa71c01e9"
   end
 
   depends_on "go"

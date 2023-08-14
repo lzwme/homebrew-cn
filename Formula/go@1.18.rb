@@ -6,11 +6,6 @@ class GoAT118 < Formula
   sha256 "9cedcca58845df0c9474ae00274c44a95c9dfaefb132fc59921c28c7c106f8e6"
   license "BSD-3-Clause"
 
-  livecheck do
-    url "https://go.dev/dl/"
-    regex(/href=.*?go[._-]?v?(1\.18(?:\.\d+)*)[._-]src\.t/i)
-  end
-
   bottle do
     sha256 arm64_ventura:  "15289dd579551ed629bda489e6ba7fb0d641d8ef468d6ed62a9fde136fd8406f"
     sha256 arm64_monterey: "fb4e5c1a52261198a393492baa2a44983fccfc4f2917dde8c0509f13d0e27450"

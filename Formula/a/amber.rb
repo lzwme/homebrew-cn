@@ -1,24 +1,30 @@
 class Amber < Formula
   desc "Crystal web framework. Bare metal performance, productivity and happiness"
   homepage "https://amberframework.org/"
-  url "https://ghproxy.com/https://github.com/amberframework/amber/archive/refs/tags/v1.3.2.tar.gz"
-  sha256 "37511d6b4afe308e1943cedeab9114b01d5787d868c23d2c0cc555917a21c830"
+  url "https://ghproxy.com/https://github.com/amberframework/amber/archive/refs/tags/v1.4.1.tar.gz"
+  sha256 "92664a859fb27699855dfa5d87dc9bf2e4a614d3e54844a8344196d2807e775c"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 arm64_ventura:  "a58e71da8f3bd81d7ea0865629192516c7b78ffdf86f4a36ef9d16f0989f4d53"
-    sha256 arm64_monterey: "242d9eae3535ff3923abc04f150293a831629401b2c5137814c4314254d524ee"
-    sha256 arm64_big_sur:  "89d5c6078a78519c8448d69e3dae8fa566b2cb2cdf9072ebcb2f3b26620d567d"
-    sha256 ventura:        "e20092fc8b6a737600755e31f6d10c1235411d0ba8a82b3c9ffbb9817c5170ca"
-    sha256 monterey:       "58f0ea20927b9e0a637f86b1cc27af7d3fe3967ce1eb4b4dc58ea1673035ea0c"
-    sha256 big_sur:        "da3c927123d4b58560c201a213411030ec071b11f0a287f8a0542e801d0770a6"
-    sha256 x86_64_linux:   "564fadf54bc255a81862b1c60fe76ffe611b5ef8eebc452a1e3e12e169a8d44a"
+    sha256 arm64_ventura:  "9c3ad755b1bd22beae98dbc088df82b80180f04b1d541d3b708c1af29a502c41"
+    sha256 arm64_monterey: "c00f64c38a9edbcc84fcba1f7ac17674e5b9d48066e95bc838e31d495ae7035f"
+    sha256 arm64_big_sur:  "0474b1b3726aaec6f8ad34e7d7d1fbd7ea6d0ec1bfa627cd213ce5e50468f44d"
+    sha256 ventura:        "d529f79e1baff921927446fb6ad72469042e595720531334c164036a73b11c23"
+    sha256 monterey:       "584480426c743539cb3f70dfcb55625f6e27977248e2e747366e3dcd547039af"
+    sha256 big_sur:        "951253c81419f90acab9fa226d5b5ec4c858e4c6837b78c9490ae085b76fc008"
+    sha256 x86_64_linux:   "3f79958bab0aeb33079eaddd9f5481756d1803d55ef861d8f07b632229d4bcfc"
   end
 
   depends_on "crystal"
   depends_on "openssl@3"
   uses_from_macos "sqlite"
+
+  # patch granite to fix db dependency resolution issue
+  # upstream patch https://github.com/amberframework/amber/pull/1339
+  patch do
+    url "https://github.com/amberframework/amber/commit/20f95cae1d8c934dcd97070daeaec0077b00d599.patch?full_index=1"
+    sha256 "ad8a303fe75611583ada10686fee300ab89f3ae37139b50f22eeabef04a48bdf"
+  end
 
   def install
     system "shards", "install"
@@ -34,7 +40,6 @@ class Amber < Formula
       public
       src/controllers
       src/views
-      src/assets
       src/test_app.cr
     ].each do |path|
       assert_match path, output

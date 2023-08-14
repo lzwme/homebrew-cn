@@ -4,17 +4,17 @@ class Keploy < Formula
   desc "Testing Toolkit creates test-cases and data mocks from API calls, DB queries"
   homepage "https://keploy.io"
   url "https://ghproxy.com/https://github.com/keploy/keploy/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "3f3691d1a9c6b78ca3395b60aa3445f62c1fc2abeab6c2cb02952508c00c6fc8"
+  sha256 "0e45207362bc17dd37e2efa8c881c72878525bca79ddfc45e6c242ea97fb12a1"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "31a9f1033cc516bbca1300e93040784786641d81f7c3a34eae8ae8c511ecbbab"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3d3ebe286769e95676567789d2d188bafb12f0b116a82c35fbf2003190622ba6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6e347cdde332d84ae4cd87ef6850b79dd861155502c11ee5ddb434503080e6bf"
-    sha256 cellar: :any_skip_relocation, ventura:        "cec42361779647e32136bd267ed3f711601b0d4fac3c8cb9e8d9260e95f377c6"
-    sha256 cellar: :any_skip_relocation, monterey:       "a09a0326e431c8672da014f0a1f2a649228daa2b72a185b1750040cbc112c49c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "55db0bed90f088de13d55aede4f616de3a19f57f998f40807c4d73d9805ff4bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc325652e271a16da522854d36f6f1e5ab93509d67f067f9e5eff1130a932a2f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "61adb55108c119cbaf60a0679b45a2bff5cce9d02e68e90b5f423fc7d0fe8f43"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3307c3128ee1a3d12d3c29d969af5dd27268aef707f3cc99cc69934c6b90156"
+    sha256 cellar: :any_skip_relocation, ventura:        "57cf7126114751fd4b4e2bdf2a12d3820181fe069220a046fd1626a8b934fc02"
+    sha256 cellar: :any_skip_relocation, monterey:       "d8e8a354dfac6feedea50008b3b023e061dc4591c43ab7e1dd300913ff409c1d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7736b3ff430fa17c7d38311558adb2e3f790c771cb7ad841b56793cc0798eac4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0709e89362133925d029532ce2fc6f0854d1e0c6cb2063b30fdfb4789b22ef7"
   end
 
   depends_on "gatsby-cli" => :build

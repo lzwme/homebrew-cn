@@ -27,6 +27,6 @@ class Whalebrew < Formula
 
   test do
     output = shell_output("#{bin}/whalebrew install whalebrew/whalesay -y", 255)
-    assert_match(/(denied while trying to|Cannot) connect to the Docker daemon/, output)
+    assert_match(/connect to the Docker daemon|operation not permitted/, output)
   end
 end

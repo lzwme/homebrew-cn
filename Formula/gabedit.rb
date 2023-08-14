@@ -1,6 +1,6 @@
 class Gabedit < Formula
   desc "GUI to computational chemistry packages like Gamess-US, Gaussian, etc."
-  homepage "https://gabedit.sourceforge.io/"
+  homepage "https://gabedit.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/gabedit/gabedit/Gabedit251/GabeditSrc251.tar.gz"
   version "2.5.1"
   sha256 "efcb00151af383f662d535a7a36a2b0ed2f14c420861a28807feaa9e938bff9e"

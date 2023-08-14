@@ -1,6 +1,6 @@
 class Libiptcdata < Formula
   desc "Virtual package provided by libiptcdata0"
-  homepage "https://libiptcdata.sourceforge.io/"
+  homepage "https://libiptcdata.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/libiptcdata/libiptcdata/1.0.4/libiptcdata-1.0.4.tar.gz"
   sha256 "79f63b8ce71ee45cefd34efbb66e39a22101443f4060809b8fc29c5eebdcee0e"
   license "LGPL-2.0-only"

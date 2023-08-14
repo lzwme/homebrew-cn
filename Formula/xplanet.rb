@@ -1,6 +1,6 @@
 class Xplanet < Formula
   desc "Create HQ wallpapers of planet Earth"
-  homepage "https://xplanet.sourceforge.io/"
+  homepage "https://xplanet.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/xplanet/xplanet/1.3.1/xplanet-1.3.1.tar.gz"
   sha256 "4380d570a8bf27b81fb629c97a636c1673407f4ac4989ce931720078a90aece7"
   license "GPL-2.0-or-later"
@@ -37,7 +37,7 @@ class Xplanet < Formula
   end
 
   # Fix compilation with giflib 5
-  # https://xplanet.sourceforge.io/FUDforum2/index.php?t=msg&th=592
+  # https://xplanet.sourceforge.net/FUDforum2/index.php?t=msg&th=592
   patch do
     url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/6b8519a9391b96477c38e1b1c865892f7bf093ca/xplanet/xplanet-1.3.1-giflib5.patch"
     sha256 "0a88a9c984462659da37db58d003da18a4c21c0f4cd8c5c52f5da2b118576d6e"

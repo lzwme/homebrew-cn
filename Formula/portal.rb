@@ -2,18 +2,19 @@ class Portal < Formula
   desc "Quick and easy command-line file transfer utility from any computer to another"
   homepage "https://github.com/SpatiumPortae/portal"
   url "https://ghproxy.com/https://github.com/SpatiumPortae/portal/archive/v1.2.3.tar.gz"
-  sha256 "6d71f8c4b60da2bff404509fbeff57fc41a1300b51867aeace9632562fa9e30a"
+  sha256 "7a457ab1efa559b89eb5d7edbebccb1342896a42e30dbd943ffb6eea14179b36"
   license "MIT"
   head "https://github.com/SpatiumPortae/portal.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "956d12c9e7f7c8f8979c8b17ca0eaeb45e8639419a8c8ab2d271ebf19e1def0c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "956d12c9e7f7c8f8979c8b17ca0eaeb45e8639419a8c8ab2d271ebf19e1def0c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "956d12c9e7f7c8f8979c8b17ca0eaeb45e8639419a8c8ab2d271ebf19e1def0c"
-    sha256 cellar: :any_skip_relocation, ventura:        "93a8ee8abb4795f58ed78bf8050d87c68c997d6af40c9791e504cb93de26022a"
-    sha256 cellar: :any_skip_relocation, monterey:       "93a8ee8abb4795f58ed78bf8050d87c68c997d6af40c9791e504cb93de26022a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "93a8ee8abb4795f58ed78bf8050d87c68c997d6af40c9791e504cb93de26022a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "611aa11a9045911553b7751fc59df6f0c58bbe9107d0b88442ee2d349da8d8e6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5582fc03d1182135f8c7e73cb4503a8cedcd5350264185551f07ce37e09986d4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f858964534d5af5cef3195b4ad2fa818f07bf79deeea55f328b9db9d04c5616a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "98ad1510eb543d4c3129e6d17c1a844f99cb039615a1a281489bd4c4bb2485ea"
+    sha256 cellar: :any_skip_relocation, ventura:        "885a629b00af358c5d919abede7ea6b7be6604b2805279e0a5d9d9d435633101"
+    sha256 cellar: :any_skip_relocation, monterey:       "ed4cde3174861f1109761cf4934093fe18330a2b60a4266b0efb692b4d390214"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5ff2035231f98a1cc9c4e5c945619feb5336b9bf8b4736e8245be36cceb41270"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db75b7a2beec3a4b2920bc8b44c6045206930a73d08cbccf481a98b176de56d7"
   end
 
   depends_on "go" => :build

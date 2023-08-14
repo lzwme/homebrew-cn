@@ -1,6 +1,6 @@
 class Ninvaders < Formula
   desc "Space Invaders in the terminal"
-  homepage "https://ninvaders.sourceforge.io/"
+  homepage "https://ninvaders.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/ninvaders/ninvaders/0.1.1/ninvaders-0.1.1.tar.gz"
   sha256 "bfbc5c378704d9cf5e7fed288dac88859149bee5ed0850175759d310b61fd30b"
 

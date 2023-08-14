@@ -1,6 +1,6 @@
 class Mp3unicode < Formula
   desc "Command-line utility to convert mp3 tags between different encodings"
-  homepage "https://mp3unicode.sourceforge.io/"
+  homepage "https://mp3unicode.sourceforge.net/"
   url "https://ghproxy.com/https://github.com/alonbl/mp3unicode/releases/download/mp3unicode-1.2.1/mp3unicode-1.2.1.tar.bz2"
   sha256 "375b432ce784407e74fceb055d115bf83b1bd04a83b95256171e1a36e00cfe07"
   license "GPL-2.0-only"

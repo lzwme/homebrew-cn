@@ -1,6 +1,6 @@
 class Ctags < Formula
   desc "Reimplementation of ctags(1)"
-  homepage "https://ctags.sourceforge.io/"
+  homepage "https://ctags.sourceforge.net/"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
   revision 2
 

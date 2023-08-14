@@ -1,6 +1,6 @@
 class Docx2txt < Formula
   desc "Converts Microsoft Office docx documents to equivalent text documents"
-  homepage "https://docx2txt.sourceforge.io/"
+  homepage "https://docx2txt.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/docx2txt/docx2txt/v1.4/docx2txt-1.4.tgz"
   sha256 "b297752910a404c1435e703d5aedb4571222bd759fa316c86ad8c8bbe58c6d1b"
   license "GPL-3.0"

@@ -1,6 +1,6 @@
 class DfuUtil < Formula
   desc "USB programmer"
-  homepage "https://dfu-util.sourceforge.io/"
+  homepage "https://dfu-util.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/dfu-util/dfu-util-0.11.tar.gz"
   sha256 "b4b53ba21a82ef7e3d4c47df2952adf5fa494f499b6b0b57c58c5d04ae8ff19e"
   license "GPL-2.0-or-later"

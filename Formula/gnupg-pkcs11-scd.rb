@@ -1,6 +1,6 @@
 class GnupgPkcs11Scd < Formula
   desc "Enable the use of PKCS#11 tokens with GnuPG"
-  homepage "https://gnupg-pkcs11.sourceforge.io"
+  homepage "https://gnupg-pkcs11.sourceforge.net/"
   url "https://ghproxy.com/https://github.com/alonbl/gnupg-pkcs11-scd/releases/download/gnupg-pkcs11-scd-0.10.0/gnupg-pkcs11-scd-0.10.0.tar.bz2"
   sha256 "29bf29e7780f921c6d3a11f608e2b0483c1bb510c5afa8473090249dd57c5249"
   license "BSD-3-Clause"

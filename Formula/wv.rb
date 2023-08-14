@@ -1,6 +1,6 @@
 class Wv < Formula
   desc "Programs for accessing Microsoft Word documents"
-  homepage "https://wvware.sourceforge.io/"
+  homepage "https://wvware.sourceforge.net/"
   url "https://abisource.com/downloads/wv/1.2.9/wv-1.2.9.tar.gz"
   sha256 "4c730d3b325c0785450dd3a043eeb53e1518598c4f41f155558385dd2635c19d"
   license "GPL-2.0-or-later"

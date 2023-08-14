@@ -1,6 +1,6 @@
 class Freeglut < Formula
   desc "Open-source alternative to the OpenGL Utility Toolkit (GLUT) library"
-  homepage "https://freeglut.sourceforge.io/"
+  homepage "https://freeglut.sourceforge.net/"
   url "https://ghproxy.com/https://github.com/FreeGLUTProject/freeglut/releases/download/v3.4.0/freeglut-3.4.0.tar.gz"
   sha256 "3c0bcb915d9b180a97edaebd011b7a1de54583a838644dcd42bb0ea0c6f3eaec"
   license "MIT"

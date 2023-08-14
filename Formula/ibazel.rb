@@ -26,7 +26,7 @@ class Ibazel < Formula
   end
 
   # bazel 6.x support issue, https://github.com/bazelbuild/bazel-watcher/issues/616
-  # patch to use bazel 6.3.1, upstream PR, https://github.com/bazelbuild/bazel-watcher/pull/575
+  # patch to use bazel 6.3.2, upstream PR, https://github.com/bazelbuild/bazel-watcher/pull/575
   patch :DATA
 
   def install
@@ -41,10 +41,10 @@ class Ibazel < Formula
 
       http_archive(
         name = "io_bazel_rules_go",
-        sha256 = "dd926a88a564a9246713a9c00b35315f54cbd46b31a26d5d8fb264c07045f05d",
+        sha256 = "278b7ff5a826f3dc10f04feaf0b70d48b68748ccd512d7f98bf442077f043fe3",
         urls = [
-            "https://mirror.bazel.build/github.com/bazelbuild/rules_go/releases/download/v0.38.1/rules_go-v0.38.1.zip",
-            "https://ghproxy.com/https://github.com/bazelbuild/rules_go/releases/download/v0.38.1/rules_go-v0.38.1.zip",
+            "https://mirror.bazel.build/github.com/bazelbuild/rules_go/releases/download/v0.41.0/rules_go-v0.41.0.zip",
+            "https://ghproxy.com/https://github.com/bazelbuild/rules_go/releases/download/v0.41.0/rules_go-v0.41.0.zip",
         ],
       )
 
@@ -90,4 +90,4 @@ index 8a30e8f..09b254e 100644
 +++ b/.bazelversion
 @@ -1 +1 @@
 -5.4.0
-+6.3.1
++6.3.2

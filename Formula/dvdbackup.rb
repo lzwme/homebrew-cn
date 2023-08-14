@@ -1,6 +1,6 @@
 class Dvdbackup < Formula
   desc "Rip DVD's from the command-line"
-  homepage "https://dvdbackup.sourceforge.io"
+  homepage "https://dvdbackup.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/dvdbackup/dvdbackup/dvdbackup-0.4.2/dvdbackup-0.4.2.tar.gz"
   sha256 "0a37c31cc6f2d3c146ec57064bda8a06cf5f2ec90455366cb250506bab964550"
   revision 3

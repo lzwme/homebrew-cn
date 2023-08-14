@@ -1,6 +1,6 @@
 class Gpsim < Formula
   desc "Simulator for Microchip's PIC microcontrollers"
-  homepage "https://gpsim.sourceforge.io/"
+  homepage "https://gpsim.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/gpsim/gpsim/0.31.0/gpsim-0.31.0.tar.gz"
   sha256 "110ee6be3a5d02b32803a91e480cbfc9d423ef72e0830703fc0bc97b9569923f"
   license "GPL-2.0"

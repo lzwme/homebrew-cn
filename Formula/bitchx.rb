@@ -1,6 +1,6 @@
 class Bitchx < Formula
   desc "Text-based, scriptable IRC client"
-  homepage "https://bitchx.sourceforge.io/"
+  homepage "https://bitchx.sourceforge.net/"
   license "BSD-3-Clause"
   revision 1
   head "https://git.code.sf.net/p/bitchx/git.git", branch: "master"

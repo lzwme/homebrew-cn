@@ -1,6 +1,6 @@
 class Cdrdao < Formula
   desc "Record CDs in Disk-At-Once mode"
-  homepage "https://cdrdao.sourceforge.io/"
+  homepage "https://cdrdao.sourceforge.net/"
   url "https://ghproxy.com/https://github.com/cdrdao/cdrdao/archive/refs/tags/rel_1_2_5.tar.gz"
   sha256 "b347189ab550ae5bd1a19d323cdfd8928039853c23aa5e33d7273ab8c750692a"
   license "GPL-2.0-or-later"

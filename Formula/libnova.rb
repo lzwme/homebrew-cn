@@ -1,6 +1,6 @@
 class Libnova < Formula
   desc "Celestial mechanics, astrometry and astrodynamics library"
-  homepage "https://libnova.sourceforge.io/"
+  homepage "https://libnova.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/libnova/libnova/v%200.15.0/libnova-0.15.0.tar.gz"
   sha256 "7c5aa33e45a3e7118d77df05af7341e61784284f1e8d0d965307f1663f415bb1"
 

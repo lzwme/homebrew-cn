@@ -3,19 +3,19 @@ class Lexicon < Formula
 
   desc "Manipulate DNS records on various DNS providers in a standardized way"
   homepage "https://github.com/AnalogJ/lexicon"
-  url "https://files.pythonhosted.org/packages/09/79/fbc54f9399a5861d625ba5db9ea26f182b904b07b63569dcfda95be62fa8/dns_lexicon-3.13.0.tar.gz"
-  sha256 "38e1db9f325e6dc92e8e5c80da24f1e15ab59598a67911e7aad987c2ff3456f6"
+  url "https://files.pythonhosted.org/packages/68/d0/0b67536c916324c37d4d53ecdc82dae8c683c2be7d4cac95820d812df127/dns_lexicon-3.14.0.tar.gz"
+  sha256 "506dc3a4e0f8a33bee2f71d3f24228f0c0e5dc167353d3ed7116e4d9206edc3e"
   license "MIT"
   head "https://github.com/AnalogJ/lexicon.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "628f4cf0523dd8e2c8ac910f96060f5e4b83d5fe6718af4e5d624b0c771b2fe2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "30b2d89b0f064b6f753f1aedc0e3cdd35268988bcc7b1ad8696032d35f0fa3ab"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "45763730eb43e538acb0a0ac064715ada754f721d00928db31a8c68765288b11"
-    sha256 cellar: :any_skip_relocation, ventura:        "eba16b2398a504b0ffe198dd17b94da02b973e467a7147b41ee4a37122bde450"
-    sha256 cellar: :any_skip_relocation, monterey:       "00ce7941f48bfa343e8a44f1aa032e41b95e522eafb92c1a78b21d5062a99c60"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8833513e120a317215581d5d5e32aab622ffb3b9ef722034972b915e10fa2276"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65a5a57f42bc17f4ccc5cd8ab61f541b795bbc86bf640ae018464741f9998247"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca0ad5d06e57829cd2014c6261933267b09ab563698bcd0ceee888f2c3daa7bd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "45b9a258fb95abb3c52699d5f7aff23c3d5f3620622881269005503f889bf44c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ea56619cafe2b9ffa42908f8f5dd296c7f7af996b6f9322ce6ba3c57d284c0f9"
+    sha256 cellar: :any_skip_relocation, ventura:        "57541b26e2778d1f2da36863cb4e7e11dfb82283cd496230faf4234052568a33"
+    sha256 cellar: :any_skip_relocation, monterey:       "8a7d61551a70be0f84a34c68738c4a6bbded9e60938119fe2205c52fd2f29278"
+    sha256 cellar: :any_skip_relocation, big_sur:        "dbf439019ae03ab5fc53002d55255990e8471ce638a359acd2f9676fb10d3676"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a1929cc2e411395529bb2524c419000ddcad0cf7325e32af630705424677f25"
   end
 
   depends_on "cffi"
@@ -41,13 +41,13 @@ class Lexicon < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/44/0c/b3146986fc4ea93b5d4fa3097417a1ae3a215ac54745fc28ffe390d2accc/boto3-1.28.21.tar.gz"
-    sha256 "0ad6932b2469f4fa4e63f4baf8508ccc1b1bc215b9c835df73505aa85210fc27"
+    url "https://files.pythonhosted.org/packages/f7/d9/eafe5695c2db98f686b962a6985a8f41843da1dd2f5710311804eb885aea/boto3-1.28.25.tar.gz"
+    sha256 "20feedb753e87d6dd55665e2e9dda08b031518291350c9c57b552c86a537fd4e"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/5a/ef/af6816f51dd07c8013686806a33ed80e878b714fb87a015d8315ba4c28c7/botocore-1.31.21.tar.gz"
-    sha256 "9a13736b16aea3f16829b00edfb2c656fee72ecbfe5eb396cc2f8632e31fd524"
+    url "https://files.pythonhosted.org/packages/bf/9c/4b5d7f9197510a898215becf62fd9862be3fb0a2a63af5b656d24daf9de0/botocore-1.31.25.tar.gz"
+    sha256 "b8a40b0ca1e3c8290a4c0d473c8e1575d2e8b2ddc3c61dd8814c3976357cac84"
   end
 
   resource "charset-normalizer" do
@@ -66,8 +66,8 @@ class Lexicon < Formula
   end
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/78/ad/db7b362200e11378d1d286a4452c7050dab47b0e6d99afa51364ad95a9f9/dnspython-2.4.1.tar.gz"
-    sha256 "c33971c79af5be968bb897e95c2448e11a645ee84d93b265ce0b7aabe5dfdca8"
+    url "https://files.pythonhosted.org/packages/65/2d/372a20e52a87b2ba0160997575809806111a72e18aa92738daccceb8d2b9/dnspython-2.4.2.tar.gz"
+    sha256 "8dcfae8c7460a2f84b4072e26f1c9f4101ca20c071649cb7c34e8b6a93d58984"
   end
 
   resource "filelock" do

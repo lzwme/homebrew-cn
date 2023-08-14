@@ -1,12 +1,12 @@
 class Crm114 < Formula
   desc "Examine, sort, filter or alter logs or data streams"
-  homepage "https://crm114.sourceforge.io/"
-  url "https://crm114.sourceforge.io/tarballs/crm114-20100106-BlameMichelson.src.tar.gz"
+  homepage "https://crm114.sourceforge.net/"
+  url "https://crm114.sourceforge.net/tarballs/crm114-20100106-BlameMichelson.src.tar.gz"
   sha256 "fb626472eca43ac2bc03526d49151c5f76b46b92327ab9ee9c9455210b938c2b"
   license "GPL-3.0-only"
 
   livecheck do
-    url "https://crm114.sourceforge.io/wiki/doku.php?id=download"
+    url "https://crm114.sourceforge.net/wiki/doku.php?id=download"
     regex(%r{href=.*?/crm114[._-]v?(\d+(?:\.\d+)*)[._-]([a-z]+)?\.src\.t}i)
   end
 

@@ -1,6 +1,6 @@
 class Sng < Formula
   desc "Enable lossless editing of PNGs via a textual representation"
-  homepage "https://sng.sourceforge.io/"
+  homepage "https://sng.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/sng/sng-1.1.0.tar.gz"
   sha256 "119c55870c1d1bdc65f7de9dbc62929ccb0c301c2fb79f77df63f5d477f34619"
   license "Zlib"

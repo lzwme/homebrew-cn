@@ -2,7 +2,7 @@ class Quex < Formula
   include Language::Python::Shebang
 
   desc "Generate lexical analyzers"
-  homepage "https://quex.sourceforge.io/"
+  homepage "https://quex.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/quex/quex-0.71.2.zip"
   sha256 "0453227304a37497e247e11b41a1a8eb04bcd0af06a3f9d627d706b175a8a965"
   license "MIT"

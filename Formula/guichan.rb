@@ -1,6 +1,6 @@
 class Guichan < Formula
   desc "Small, efficient C++ GUI library designed for games"
-  homepage "https://guichan.sourceforge.io/"
+  homepage "https://guichan.sourceforge.net/"
   url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/guichan/guichan-0.8.2.tar.gz"
   sha256 "eedf206eae5201eaae027b133226d0793ab9a287bfd74c5f82c7681e3684eeab"
   revision 1
@@ -29,7 +29,7 @@ class Guichan < Formula
   end
 
   resource "fixedfont.bmp" do
-    url "http://guichan.sourceforge.io/oldsite/images/fixedfont.bmp"
+    url "https://guichan.sourceforge.net/oldsite/images/fixedfont.bmp"
     sha256 "fc6144c8fefa27c207560820450abb41378c705a0655f536ce33e44a5332c5cc"
   end
 

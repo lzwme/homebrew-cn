@@ -1,6 +1,6 @@
 class Plplot < Formula
   desc "Cross-platform software package for creating scientific plots"
-  homepage "https://plplot.sourceforge.io"
+  homepage "https://plplot.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/plplot/plplot/5.15.0%20Source/plplot-5.15.0.tar.gz"
   sha256 "b92de4d8f626a9b20c84fc94f4f6a9976edd76e33fb1eae44f6804bdcc628c7b"
   revision 4

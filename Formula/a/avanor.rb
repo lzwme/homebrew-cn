@@ -1,6 +1,6 @@
 class Avanor < Formula
   desc "Quick-growing roguelike game with easy ADOM-like UI"
-  homepage "https://avanor.sourceforge.io/"
+  homepage "https://avanor.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/avanor/avanor/0.5.8/avanor-0.5.8-src.tar.bz2"
   sha256 "8f55be83d985470b9a5220263fc87d0a0a6e2b60dbbc977c1c49347321379ef3"
   license "GPL-2.0-or-later"

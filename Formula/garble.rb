@@ -8,13 +8,14 @@ class Garble < Formula
   head "https://github.com/burrowers/garble.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "73907c284591a743abdf2d4f561e7b5d496250e5e03b5851201d67269e73e0ce"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "73907c284591a743abdf2d4f561e7b5d496250e5e03b5851201d67269e73e0ce"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "73907c284591a743abdf2d4f561e7b5d496250e5e03b5851201d67269e73e0ce"
-    sha256 cellar: :any_skip_relocation, ventura:        "af879b7502518587d503004339f641f3586119f6b40937098a2df7c75a186fdd"
-    sha256 cellar: :any_skip_relocation, monterey:       "af879b7502518587d503004339f641f3586119f6b40937098a2df7c75a186fdd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "af879b7502518587d503004339f641f3586119f6b40937098a2df7c75a186fdd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9fe89f012b56a10daed4211e299fa7e98bf1bb80ccacdadf5e0d8f33b4a60519"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "68801fedbed69d7e0acc8bf6d7bc2d6ed580009f9d9cc9575cba3121ec08e3b9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b18cb70aaecc39dd9eab835978136188226db620a8109a5fa22e486f36fe1398"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6e732ee4ec2265028000152c1931cbc4adaaae2fa5bcb28cc49ec77f715666dc"
+    sha256 cellar: :any_skip_relocation, ventura:        "d89fa84f9f985722ec2e989af7fa6da9a21c8d5345e203c9f5f61463beebf3dd"
+    sha256 cellar: :any_skip_relocation, monterey:       "ca922c0f2e222c14d24b6cecf9e17b3eef23b309047119db76b1e61f874228a7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0fecd55a27e267e527f81dcba0db8c01b3df21ef368e96481923557926dca433"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3c546c33261a2e539609f6166c8772206a457450b6d369645707485828f09dc"
   end
 
   depends_on "go" => [:build, :test]
@@ -45,6 +46,7 @@ class Garble < Formula
             -buildmode exe
              -compiler gc
              -trimpath true
+        DefaultGODEBUG panicnil=1
            CGO_ENABLED 1
                 GOARCH #{goarch}
                   GOOS #{goos}

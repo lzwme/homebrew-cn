@@ -1,6 +1,6 @@
 class Sipp < Formula
   desc "Traffic generator for the SIP protocol"
-  homepage "https://sipp.sourceforge.io/"
+  homepage "https://sipp.sourceforge.net/"
   url "https://github.com/SIPp/sipp.git",
       tag:      "v3.7.1",
       revision: "1126a8b27af21850a74b1f17b9c9af5c6c8d4309"

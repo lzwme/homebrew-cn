@@ -1,6 +1,6 @@
 class Crackpkcs < Formula
   desc "Multithreaded program to crack PKCS#12 files"
-  homepage "https://crackpkcs12.sourceforge.io"
+  homepage "https://crackpkcs12.sourceforge.net/"
   url "https://download.sourceforge.net/project/crackpkcs12/0.2.11/crackpkcs12-0.2.11.tar.gz"
   sha256 "9cfd0aa1160545810404fff60234c7b6372ce7fcf9df392a7944366cae3fbf25"
   license "GPL-3.0-or-later"

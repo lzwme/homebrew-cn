@@ -6,16 +6,23 @@ class Brook < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ec9f423c75799d77ff6232c636195a4f6aeaffd022f578af101df67f79b8e227"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ec9f423c75799d77ff6232c636195a4f6aeaffd022f578af101df67f79b8e227"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ec9f423c75799d77ff6232c636195a4f6aeaffd022f578af101df67f79b8e227"
-    sha256 cellar: :any_skip_relocation, ventura:        "759abb842e4c46a4c86ec776666098a4270d3f6cc635dec0a70915e91c451397"
-    sha256 cellar: :any_skip_relocation, monterey:       "759abb842e4c46a4c86ec776666098a4270d3f6cc635dec0a70915e91c451397"
-    sha256 cellar: :any_skip_relocation, big_sur:        "759abb842e4c46a4c86ec776666098a4270d3f6cc635dec0a70915e91c451397"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a5854caf4874c75ae5a761c4cb5a7aabecfd89f1775b8f18f4fbe48ea8c3620"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "545d4d40b00c8046b78c3db7ea4f58860e615dfcc852fb876acbc93b57ca25c0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cc4ddadf8a89af7569b54aeafdf2138601bab81cfa7ae6a4db56087c8914305d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9239e17a226fdfcc053059d0e8165ccb3ec4c41ee66a98d45de873786c66088b"
+    sha256 cellar: :any_skip_relocation, ventura:        "87d006e6916613366cc87b68219385cfe326d91deb6984f440064d5ecd09f719"
+    sha256 cellar: :any_skip_relocation, monterey:       "ab1b1252075be3283d66b63db52e8ec286a497464382cf5c761a04e4bf151f7f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a7dfa4b5d67cf7f30cca218baebc1aabca00cbced98098f3b96e24fcd4bc689c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03d317c85e8bec7ece9ed2594aa763d544728b17aaf60e8eed22c299828ff908"
   end
 
   depends_on "go" => :build
+
+  # quic-go patch for go1.21.0 build
+  patch do
+    url "https://github.com/txthinking/brook/commit/3b8488e9138393b63da3a1f090e0f0fb109f12d1.patch?full_index=1"
+    sha256 "8974cc16188269daabd84950aac061cf3af827bb1d9a713c66647511011829a7"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cli/brook"

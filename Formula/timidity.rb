@@ -1,6 +1,6 @@
 class Timidity < Formula
   desc "Software synthesizer"
-  homepage "https://timidity.sourceforge.io/"
+  homepage "https://timidity.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/timidity/TiMidity++/TiMidity++-2.15.0/TiMidity++-2.15.0.tar.bz2"
   sha256 "161fc0395af16b51f7117ad007c3e434c825a308fa29ad44b626ee8f9bb1c8f5"
   revision 2

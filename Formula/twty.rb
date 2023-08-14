@@ -32,8 +32,9 @@ class Twty < Formula
     # twty requires PIN code from stdin and putting nothing to stdin to make authentication failed
     require "pty"
     PTY.spawn(bin/"twty") do |r, w, _pid|
-      assert_match "Open this URL and enter PIN.", r.gets
-      assert_match "https://api.twitter.com/oauth/authenticate?oauth_token=", r.gets
+      output = r.gets
+      assert_match "cannot request temporary credentials: OAuth server status 401", output
+      assert_match "{\"errors\":[{\"code\":32,\"message\":\"Could not authenticate you.\"}]}", output
       w.puts
       sleep 1 # Wait for twty exiting
     end

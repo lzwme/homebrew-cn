@@ -1,6 +1,6 @@
 class Libwps < Formula
   desc "Library to import files in MS Works format"
-  homepage "https://libwps.sourceforge.io"
+  homepage "https://libwps.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/libwps/libwps/libwps-0.4.14/libwps-0.4.14.tar.xz"
   sha256 "365b968e270e85a8469c6b160aa6af5619a4e6c995dbb04c1ecc1b4dd13e80de"
   license any_of: ["LGPL-2.1-or-later", "MPL-2.0"]

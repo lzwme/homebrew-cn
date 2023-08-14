@@ -1,6 +1,6 @@
 class W3m < Formula
   desc "Pager/text based browser"
-  homepage "https://w3m.sourceforge.io/"
+  homepage "https://w3m.sourceforge.net/"
   license "w3m"
   revision 8
   head "https://github.com/tats/w3m.git", branch: "master"

@@ -1,6 +1,6 @@
 class CmuSphinxbase < Formula
   desc "Lightweight speech recognition engine for mobile devices"
-  homepage "https://cmusphinx.sourceforge.io/"
+  homepage "https://cmusphinx.sourceforge.net/"
   license "BSD-2-Clause"
 
   stable do

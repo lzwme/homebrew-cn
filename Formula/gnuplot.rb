@@ -6,6 +6,11 @@ class Gnuplot < Formula
   license "gnuplot"
   revision 1
 
+  livecheck do
+    url :stable
+    regex(%r{url=.*?/gnuplot[._-]v?(\d+(?:\.\d+)+)\.t}i)
+  end
+
   bottle do
     sha256 arm64_ventura:  "d40df5c11e7f90b5ef3c489dff54bf405cf9125cda3de61f8fc24d0b3fcafd05"
     sha256 arm64_monterey: "2b0b0ae3446b80af02452bb2ff1f2a787c41ac3627bd7499bbb96ce35bac62ae"

@@ -1,6 +1,6 @@
 class Netpbm < Formula
   desc "Image manipulation"
-  homepage "https://netpbm.sourceforge.io/"
+  homepage "https://netpbm.sourceforge.net/"
   # Maintainers: Look at https://sourceforge.net/p/netpbm/code/HEAD/tree/
   # for stable versions and matching revisions.
   url "https://svn.code.sf.net/p/netpbm/code/stable", revision: "4534"

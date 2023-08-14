@@ -1,6 +1,6 @@
 class Perltidy < Formula
   desc "Indents and reformats Perl scripts to make them easier to read"
-  homepage "https://perltidy.sourceforge.io/"
+  homepage "https://perltidy.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/perltidy/20230701/Perl-Tidy-20230701.tar.gz"
   sha256 "e04922ba34a0c0c8dca7d6897a70399e1b1358441f66d3abd0f021a413869743"
   license "GPL-2.0-or-later"

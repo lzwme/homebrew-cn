@@ -7,16 +7,23 @@ class Doggo < Formula
   head "https://github.com/mr-karan/doggo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fceb196ab22d9a9f9172f2f9fccfcd84ae6022ceb8b3b65ad794aa58e7485cd7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fceb196ab22d9a9f9172f2f9fccfcd84ae6022ceb8b3b65ad794aa58e7485cd7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fceb196ab22d9a9f9172f2f9fccfcd84ae6022ceb8b3b65ad794aa58e7485cd7"
-    sha256 cellar: :any_skip_relocation, ventura:        "a548503cd8dd80fba7103fce86e2a429d24f50df2fa75d92e2323380f8071fb9"
-    sha256 cellar: :any_skip_relocation, monterey:       "a548503cd8dd80fba7103fce86e2a429d24f50df2fa75d92e2323380f8071fb9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a548503cd8dd80fba7103fce86e2a429d24f50df2fa75d92e2323380f8071fb9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "778ab912f7339cb843103c0aed18fc38b506bc44298552d9c69651032eb919a1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b788c7ba4ed0cf74463335b2f013e1a9846fc2ff1df0e73a889447625839917"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a28947b7d156241ad42c3525cbaf52f811fb1c956b255430c5248b5997ea5aea"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "21883ad0571cdd465fa838154dd32a1f18650ba04512a502ec4e58400242c63a"
+    sha256 cellar: :any_skip_relocation, ventura:        "4c95b7e5d1eaa1827f94634df29794f7972fe3ca881072116ffab8926062f666"
+    sha256 cellar: :any_skip_relocation, monterey:       "0e98ea20aa5596ec69607bfa22a0d7aa891ef398d9162fcfe423bcb4192f8f87"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a102dc47b0ff374bb0449f973710af220d4fca7e313ab5f8b0372e7ea3299731"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52e0cbe5449476605483e106b02c23e93daefffd4879410d1cabea145fec7efc"
   end
 
   depends_on "go" => :build
+
+  # quic-go patch for go1.21.0 build
+  patch do
+    url "https://github.com/mr-karan/doggo/commit/b296706c7b25a9bfa40fd927af9280b836c03c3a.patch?full_index=1"
+    sha256 "27f3444ec7e3629665dad7a767990cb118807575894bd7dfd13ce481a937eaa9"
+  end
 
   def install
     ldflags = %W[

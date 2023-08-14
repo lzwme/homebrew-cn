@@ -1,9 +1,8 @@
 class CoreLightning < Formula
   desc "Lightning Network implementation focusing on spec compliance and performance"
   homepage "https://github.com/ElementsProject/lightning"
-  url "https://github.com/ElementsProject/lightning.git",
-      tag:      "v23.05.2",
-      revision: "e512f918fcaef276163b185cd712b89335424afd"
+  url "https://ghproxy.com/https://github.com/ElementsProject/lightning/releases/download/v23.05.2/clightning-v23.05.2.zip"
+  sha256 "4e3e726d56b1a64e7098ec3ce4b91e538a6033d35897a4a79831b68325eb4c7c"
   license "MIT"
 
   livecheck do
@@ -31,15 +30,15 @@ class CoreLightning < Formula
   depends_on "pkg-config" => :build
   depends_on "poetry" => :build
   depends_on "protobuf" => :build
-  depends_on "python@3.8" => :build
+  depends_on "python@3.10" => :build
   depends_on "bitcoin"
   depends_on "gmp"
   uses_from_macos "sqlite"
 
   def install
-    remove_dir("external/lowdown")
-    system "poetry", "env", "use", "3.8"
-    system "poetry", "install"
+    (buildpath/"external/lowdown").rmtree
+    system "poetry", "env", "use", "3.10"
+    system "poetry", "install", "--only=main"
     system "./configure", "--prefix=#{prefix}"
     system "poetry", "run", "make", "install"
   end

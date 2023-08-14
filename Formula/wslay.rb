@@ -1,6 +1,6 @@
 class Wslay < Formula
   desc "C websocket library"
-  homepage "https://wslay.sourceforge.io/"
+  homepage "https://wslay.sourceforge.net/"
   url "https://ghproxy.com/https://github.com/tatsuhiro-t/wslay/releases/download/release-1.1.1/wslay-1.1.1.tar.xz"
   sha256 "166cfa9e3971f868470057ed924ae1b53f428db061b361b9a17c0508719d2cb5"
   license "MIT"

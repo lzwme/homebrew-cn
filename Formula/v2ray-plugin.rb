@@ -6,11 +6,6 @@ class V2rayPlugin < Formula
   license "MIT"
   head "https://github.com/shadowsocks/v2ray-plugin.git", branch: "master"
 
-  livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "451c0d3013468c460f7f829d45fd5f2f91ccc20da50156f5a7b09244eff82636"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "72e881a144403b3d336c0d652601342580a9f67724647e46e2eaaa36e8408c70"
@@ -23,6 +18,10 @@ class V2rayPlugin < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "f11b330c3dc9c445b757188057c93ce94de89f03f4adfa1a8c6405f5ba66b400"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ad295c462b215b5a36d4b8087f03675ef1e0e1508d53dfb96c63bc0be688d8c"
   end
+
+  # v2ray-plugin does not even build with go1.19,
+  # upstream bug report https://github.com/shadowsocks/v2ray-plugin/issues/292
+  deprecate! date: "2023-08-13", because: :unmaintained
 
   depends_on "go" => :build
 

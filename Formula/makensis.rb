@@ -1,6 +1,6 @@
 class Makensis < Formula
   desc "System to create Windows installers"
-  homepage "https://nsis.sourceforge.io/"
+  homepage "https://nsis.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/nsis/NSIS%203/3.09/nsis-3.09-src.tar.bz2"
   sha256 "0cd846c6e9c59068020a87bfca556d4c630f2c5d554c1098024425242ddc56e2"
   license "Zlib"

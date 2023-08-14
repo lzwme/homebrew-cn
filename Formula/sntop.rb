@@ -1,6 +1,6 @@
 class Sntop < Formula
   desc "Curses-based utility that polls hosts to determine connectivity"
-  homepage "https://sntop.sourceforge.io/"
+  homepage "https://sntop.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/sntop/sntop/1.4.3/sntop-1.4.3.tar.gz"
   sha256 "943a5af1905c3ae7ead064e531cde6e9b3dc82598bbda26ed4a43788d81d6d89"
   license "GPL-2.0"

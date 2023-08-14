@@ -1,6 +1,6 @@
 class ExVi < Formula
   desc "UTF8-friendly version of tradition vi"
-  homepage "https://ex-vi.sourceforge.io/"
+  homepage "https://ex-vi.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/ex-vi/ex-vi/050325/ex-050325.tar.bz2"
   sha256 "da4be7cf67e94572463b19e56850aa36dc4e39eb0d933d3688fe8574bb632409"
   license all_of: ["BSD-4-Clause", "BSD-4-Clause-UC"]

@@ -5,6 +5,11 @@ class GitXargs < Formula
   sha256 "316021d2c2e676acea7a44dac1ddc1964add5b576b1830bc2116fd8be2a38dda"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a4b2a545083fc33f7230ad54752503cbebe75f1b8a144cb0327a7644e538d4ee"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a4b2a545083fc33f7230ad54752503cbebe75f1b8a144cb0327a7644e538d4ee"

@@ -1,6 +1,6 @@
 class Sec < Formula
   desc "Event correlation tool for event processing of various kinds"
-  homepage "https://simple-evcorr.sourceforge.io/"
+  homepage "https://simple-evcorr.sourceforge.net/"
   url "https://ghproxy.com/https://github.com/simple-evcorr/sec/releases/download/2.9.2/sec-2.9.2.tar.gz"
   sha256 "97c8bde4bcb8d7bacef6e186acfae4f6037928dc308fecc69db82d16267a18d2"
   license "GPL-2.0-or-later"

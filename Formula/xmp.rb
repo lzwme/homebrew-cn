@@ -1,6 +1,6 @@
 class Xmp < Formula
   desc "Command-line player for module music formats (MOD, S3M, IT, etc)"
-  homepage "https://xmp.sourceforge.io/"
+  homepage "https://xmp.sourceforge.net/"
   url "https://ghproxy.com/https://github.com/libxmp/xmp-cli/releases/download/xmp-4.2.0/xmp-4.2.0.tar.gz"
   sha256 "dc54513af9a4681029a1243fd0c9cdf153d813a1125de6c782926674285bc5ae"
   license "GPL-2.0-or-later"

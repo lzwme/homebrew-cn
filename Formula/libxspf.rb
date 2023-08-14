@@ -1,6 +1,6 @@
 class Libxspf < Formula
   desc "C++ library for XSPF playlist reading and writing"
-  homepage "https://libspiff.sourceforge.io/"
+  homepage "https://libspiff.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/libspiff/Sources/1.2.1/libxspf-1.2.1.tar.bz2"
   sha256 "ce78a7f7df73b7420b6a54b5766f9b74e396d5e0b37661c9a448f2f589754a49"
   license "BSD-3-Clause"
