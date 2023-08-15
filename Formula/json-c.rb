@@ -1,9 +1,9 @@
 class JsonC < Formula
   desc "JSON parser for C"
   homepage "https://github.com/json-c/json-c/wiki"
-  url "https://ghproxy.com/https://github.com/json-c/json-c/archive/refs/tags/json-c-0.16-20220414.tar.gz"
-  version "0.16"
-  sha256 "3ecaeedffd99a60b1262819f9e60d7d983844073abc74e495cb822b251904185"
+  url "https://ghproxy.com/https://github.com/json-c/json-c/archive/refs/tags/json-c-0.17-20230812.tar.gz"
+  version "0.17"
+  sha256 "024d302a3aadcbf9f78735320a6d5aedf8b77876c8ac8bbb95081ca55054c7eb"
   license "MIT"
   head "https://github.com/json-c/json-c.git", branch: "master"
 
@@ -13,14 +13,13 @@ class JsonC < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "cad45d82dc941532f7863eeca9a355764f5976b3d772ab2fa3b5a1e0a7a626c5"
-    sha256 cellar: :any,                 arm64_monterey: "0f71590b7e5045f6c8c892527a7f6f3e7d3b5d7cf0f43b93cf50bf662cdd84f2"
-    sha256 cellar: :any,                 arm64_big_sur:  "efc09489ecb843511393e5166d8351ab8bf3c5e263d91a5838735b574e8dd4e7"
-    sha256 cellar: :any,                 ventura:        "98957cbd34b40da1964eaf3a7b35271e46c7d5c62c69d2dfadf1001d40f63042"
-    sha256 cellar: :any,                 monterey:       "2d032280aa3e434671354c91a191b865f8de9290f5f8fba2336cac88037c1f33"
-    sha256 cellar: :any,                 big_sur:        "e31bc0e529950442ccc42719107e14de5e995847f8abab34f0961d19d9d45976"
-    sha256 cellar: :any,                 catalina:       "425524c4c8a10f50da278278e624b4dce61ff94f464511095d30a17a3bea68ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "afd62a8176c2684a0385f921312805e17b8c85db63a617266e24ec7b93488563"
+    sha256 cellar: :any,                 arm64_ventura:  "f06d21bf49bb8378ef1648221ed367e7ead751b84925b255ef0b62f14d1824dc"
+    sha256 cellar: :any,                 arm64_monterey: "61480b16756199897acf340e53625706814566dcf89ecf546e267a08397a9f22"
+    sha256 cellar: :any,                 arm64_big_sur:  "bf59859457fc4fb5179ade327a515df884730b7ab8002d7f56eec828f0743bb8"
+    sha256 cellar: :any,                 ventura:        "6964da23ee0822500168be2c7c15d2709a1c7cf22f9ad8a6fa1f38376ef039bd"
+    sha256 cellar: :any,                 monterey:       "2f05628637cfa60d6e03546c490d9a72065c378fe537ccb4b3373f00e7347608"
+    sha256 cellar: :any,                 big_sur:        "753822a39038451b42ecac7afc27da1bfc4acacfe1c8d9ac1d9ae0d365d946a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "febcc3f9759d70c935f513a81e3fd9ea637de002fc5be4b2ecc8449160e90920"
   end
 
   depends_on "cmake" => :build

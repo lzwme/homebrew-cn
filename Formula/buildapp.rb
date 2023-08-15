@@ -8,14 +8,13 @@ class Buildapp < Formula
   head "https://github.com/xach/buildapp.git", branch: "master"
 
   bottle do
-    sha256 arm64_ventura:  "2b0fa0169991beae8813c92b3d80c514a80824d73c528ca95ae9e5708a29207c"
-    sha256 arm64_monterey: "c6a7dd43bd91f0e656162985b9786a8ec621fbfb593c84fd817fe5b1341ac9ed"
-    sha256 arm64_big_sur:  "3a4d0ac54096f853b8b271e02369dd2666e5b69c975d3b3f18ae6e54b4adf966"
-    sha256 ventura:        "5de604ca969929fb1ead705f6b976bc75933a19273d7557bd2b82d067271dfbd"
-    sha256 monterey:       "f1899b47ef6aa32c5e121deb5509b263e4b112af9886722422ba764edaa27a1e"
-    sha256 big_sur:        "55bb441ef8f0eed0e698f246541dcf874bbe652de2897d9deb89a2999c2c239b"
-    sha256 catalina:       "631fa946cd687d3cc593fa43e489c96814de75fc6b98adebf11258d1f2043bd5"
-    sha256 mojave:         "607c7238095cd1da76f2439679ed77ec4467649febfbbf99a24aefe0f23616b9"
+    rebuild 1
+    sha256 arm64_ventura:  "468c2887f5a309815e85988bcfca8eef8764c3f5055572e342da83ee3409c7c4"
+    sha256 arm64_monterey: "d2b5001a28d69d60a31214ddb65e0a4a10b240d4ff80168e1e7606cc9bd7bce8"
+    sha256 arm64_big_sur:  "55b809a69e52c8adcc143bdbc4bad1e4f0a478c1a7861abc2801cbf44584ddad"
+    sha256 ventura:        "4655e54b740f13f6e3c29ef8fc242586b5e98e8d548dff8b3a2300256b5487bf"
+    sha256 monterey:       "f431518369e379b761850cc758a05a24c8192a48bd5a67c4ed165622910c1c46"
+    sha256 big_sur:        "60a961473709c72ba66996bb99f3d0385d220eab7c3c833b603fd6a8b93bceaf"
   end
 
   depends_on "sbcl"

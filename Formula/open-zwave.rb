@@ -1,6 +1,6 @@
 class OpenZwave < Formula
   desc "Library that interfaces with selected Z-Wave PC controllers"
-  homepage "http://www.openzwave.com"
+  homepage "https://github.com/OpenZWave/open-zwave"
   url "http://old.openzwave.com/downloads/openzwave-1.6.1914.tar.gz"
   sha256 "c4e4eb643709eb73c30cc25cffc24e9e7b6d7c49bd97ee8986c309d168d9ad2f"
   license "LGPL-3.0-or-later"
@@ -21,6 +21,8 @@ class OpenZwave < Formula
     sha256 mojave:         "9680488853f6ee6db1f0e299ff1f00597e8652c095ecb411e322a99b8b43caad"
     sha256 x86_64_linux:   "32e72b176dcd28b5876df5dca595f9d9a93c159d475fbbe2affb9e21d6e1c30b"
   end
+
+  deprecate! date: "2023-08-14", because: :unmaintained
 
   depends_on "doxygen" => :build
   depends_on "pkg-config" => :build

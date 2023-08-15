@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Open Source Security tool to perform Cloud Security best practices"
   homepage "https://prowler.pro/"
-  url "https://files.pythonhosted.org/packages/11/86/e0faae5bd8d35b70868a8161f7b4ecc8893fe665693b51010fb4be119ffc/prowler-3.8.1.tar.gz"
-  sha256 "914b97de9b6c4c9464695094cb71c573290374c8eb931c5a5776bb0c7001729e"
+  url "https://files.pythonhosted.org/packages/c3/3c/64d47bd17ce7babd3611f5e6d63e7e55453d3886a3c23a3d047deafa3b3f/prowler-3.8.2.tar.gz"
+  sha256 "e3d91fe7386313fb3fe4480cbcd356b525d1b9cadbcd8e5691db6b905b503ef5"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a99ddd3338f7d756f9cee0a05a7645ffad51fc2ff7a2931848e02590a2627f28"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3b36668de2c0ee977263473c789af617308a1ea06db8628fafd55057830d437e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4a30c0897009476d688f226a1cb6f12bc323760ad5ce5d4d4e35750d8255f06c"
-    sha256 cellar: :any_skip_relocation, ventura:        "f3405ea01813c23ccaba60bc83ed13a13d291414e33a196e4f51a70327d30ea0"
-    sha256 cellar: :any_skip_relocation, monterey:       "6e14e17cf7ad4a43f7032715d9d7bda743157b09e270dc9c485d1c8d5ea5cb24"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7eb2efa8bd6806a0d2b83f8ae9541f68779585eadbdec211968278f6ac160b99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f21326a7ac68482d3b3d3c86db0dd67bddef3e41fa0d12c3bb090ceb9d10572b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4a444eaba67b8d4c6b3aeac56475ea9e159132e904faedd6342eef6597c34ba8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b8931ef11545e3f83ff2d1e4c48e078005574dcf63427a4bac75cda1b8f93c6f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5b6489ac8c00bf19f406c78f820c7dc5eb64402392eccb3cc094f7c579e3728b"
+    sha256 cellar: :any_skip_relocation, ventura:        "90004d1d6826e6376aefb41f2b2d4f8d864b670ec1c5f363e56567533f802497"
+    sha256 cellar: :any_skip_relocation, monterey:       "9b1f24bb437c2a68b610b5f6962c77eaae90dc0357f3638d3beced9dca33d1c6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a0289c21a8590b859bf824a9e41b22714df18e7bd5d5380b38603836e1624cfc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0596370c357ed9efc6c5ff4dfb756dcc4eb669449a4463d0400e0f757d38ae82"
   end
 
   depends_on "cffi"

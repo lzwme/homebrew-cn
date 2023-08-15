@@ -12,9 +12,9 @@ class Clusterctl < Formula
   # don't check the Git tags for this project because a version may not be
   # considered released until the GitHub release is created.
   livecheck do
-    url "https://github.com/kubernetes-sigs/cluster-api/releases?q=prerelease%3Afalse"
-    regex(%r{href=["']?[^"' >]*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
-    strategy :page_match
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_releases
   end
 
   bottle do

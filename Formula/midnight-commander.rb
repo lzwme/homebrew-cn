@@ -1,11 +1,10 @@
 class MidnightCommander < Formula
   desc "Terminal-based visual file manager"
   homepage "https://www.midnight-commander.org/"
-  url "https://www.midnight-commander.org/downloads/mc-4.8.29.tar.xz"
-  mirror "https://ftp.osuosl.org/pub/midnightcommander/mc-4.8.29.tar.xz"
-  sha256 "01d8a3b94f58180cca5bf17257b5078d1fd6fd27a9b5c0e970ec767549540ad4"
+  url "https://www.midnight-commander.org/downloads/mc-4.8.30.tar.xz"
+  mirror "https://ftp.osuosl.org/pub/midnightcommander/mc-4.8.30.tar.xz"
+  sha256 "5ebc3cb2144b970c5149fda556c4ad50b78780494696cdf2d14a53204c95c7df"
   license "GPL-3.0-or-later"
-  revision 2
 
   livecheck do
     url "https://ftp.osuosl.org/pub/midnightcommander/"
@@ -13,13 +12,13 @@ class MidnightCommander < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "84c4c8b9f0f1d7ac87e4f72edaf82a98208043bd82fab1dff79bdd4f3c8170de"
-    sha256 arm64_monterey: "570da292695980caeabf0c8728bca6b5eab9a11abcd19370700f024221a743cf"
-    sha256 arm64_big_sur:  "e9d0b1f60c480e3351fc94002f3d5743b57d8d3098d2f84a527392618bb4ede6"
-    sha256 ventura:        "c8ce411cb9c92f791b2e2b516e782369196ecc75541991ca6a4c8dc66d485cdd"
-    sha256 monterey:       "615f4220d50caef801d175e06e0fc4e3e1db459217e76c97b8d685e0447a4321"
-    sha256 big_sur:        "840c554ece6e30ea97d153a27df21bd207b534ec3893eda7fc4711e200c0ae6d"
-    sha256 x86_64_linux:   "9c43af90de0768cb38771de82d38e88ab2aac764b57bf440dc33bb7c5e82835d"
+    sha256 arm64_ventura:  "6c9997cc0e3abe409b02fc2f5b834e5c805d4c01bace1b1e8930dbf5bda9974d"
+    sha256 arm64_monterey: "e87079b81d73cb205be44d7b37761d004dae2edb14d62fe3791e34a2ac27fd38"
+    sha256 arm64_big_sur:  "b63985ce7b866b053613f2847d2b68f3145d8807d6e9ca49bb08757676f4c627"
+    sha256 ventura:        "83f00b049d08761da7b730ab73cf05acfbb03c2982b17abdbd59d810c3a6aab5"
+    sha256 monterey:       "5f996907eea175493f1a42d8bf88e6eb3f0ef3d2d456b1c3480b2a8092adc8e2"
+    sha256 big_sur:        "a9fa1931be3b67b41358cb328304781010fd8d5984c5337a13749aafe8b1f2f0"
+    sha256 x86_64_linux:   "f901b34e155fff6a4cb2acc7e011ec2ad88d03d3129b8db7815db432eb0a8b0a"
   end
 
   head do

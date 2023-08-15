@@ -1,18 +1,18 @@
 class Staq < Formula
   desc "Full-stack quantum processing toolkit"
   homepage "https://github.com/softwareQinc/staq"
-  url "https://ghproxy.com/https://github.com/softwareQinc/staq/archive/v3.2.2.tar.gz"
-  sha256 "3054a25dab7b49885b212482220e86c89aa7f7e9d902ccb9059e827b4e62d745"
+  url "https://ghproxy.com/https://github.com/softwareQinc/staq/archive/v3.2.3.tar.gz"
+  sha256 "048bba1c2d78bc6b641ee9ba71788cb66847e78e8b47ca54effea49e76c4565d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d0791dcd7e1a30dc58610055766dcaf509918ba46beb5d5854ebe73e53e172e6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "afcc7f0ad34f38920b20853b35f2a11186138efae52500bd2df34d456e7a5d66"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e351139e0d3782788a3c99202c30db69a7682e964737eb52c46af70de53e61f7"
-    sha256 cellar: :any_skip_relocation, ventura:        "c707fb7c3367d3f35fbb93c0425c30fb9e7a6c24a071c9ed0c5db31e56706e4c"
-    sha256 cellar: :any_skip_relocation, monterey:       "2dafc93aea6dcaf9a0d04ec5d0e9895154167db184b056f0d1fdeecbad7d1d14"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6e55d0d33c45f05c8dfd109c39e211fbdd8855c5832a2e8e3c35f23041683abc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a3b452b620ff2debb75af1950cfe4319cf7ecbe05ae58f01123791aa9998b87"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dc455153c9bb1e2c1ab2735549595c8038bc81c1dc199d3954ccd6b17c033eaa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "50531c8d02ad552eac013e4db68af439ba8c96e5bd030454bb5dc72cfadc9c22"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fade095b71096ad7edf92cf8db82669c798ccd6ce782602f56d0ca354ba1af59"
+    sha256 cellar: :any_skip_relocation, ventura:        "eee004d9964a81988665a1fecb3083f74309c293a38fd0fe1bda36343f6492bd"
+    sha256 cellar: :any_skip_relocation, monterey:       "ced86c03bc0db24e1f0b9d22812898010ba9154929f85ccf8dcb14ae2e77d901"
+    sha256 cellar: :any_skip_relocation, big_sur:        "34c82144382e8dc438a39e64941ae14dee0e41926d6c69fb254144f33deeec7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab6e829fdde807b9861154c871864e9ed53578bb82f911f35c5e64e3c9e4e66c"
   end
 
   depends_on "cmake" => :build

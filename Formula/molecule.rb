@@ -3,20 +3,18 @@ class Molecule < Formula
 
   desc "Automated testing for Ansible roles"
   homepage "https://molecule.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/e7/69/c2d5028b1cab582dd2df69d8603a6300c2f2ffeaaa14abcaed56f152a1a4/molecule-5.1.0.tar.gz"
-  sha256 "fa7af89fdf9317539c3eca99cb1e5e7522d7a57e0b67f5b698e44276f98d9d82"
+  url "https://files.pythonhosted.org/packages/e2/c9/91cc4a5078a2c16ccaf2a147446b594c15585fd5c4d642c55b5ee6749e5e/molecule-6.0.0.tar.gz"
+  sha256 "23d466fd36fbca0d4f8de5cd5a6132aacbe52c5252c05f37afea1eb6e5e740c4"
   license "MIT"
-  revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "e79776cf0c2406fbeb340d8e67c93c19db9ff732526a1127507152b200640aab"
-    sha256 cellar: :any,                 arm64_monterey: "e868fb52c31bc433e0f4074d96d46d3412b19443a4cd2c3f330a44c93783cfa1"
-    sha256 cellar: :any,                 arm64_big_sur:  "0463278bedb83ad6064f6315ae55804dae976987eba50e5b7f90d9b40a3c1dce"
-    sha256 cellar: :any,                 ventura:        "7ad1152eb678df972a87dabad50e040a9feee0bc2b72faaa49f2f616f3f0e825"
-    sha256 cellar: :any,                 monterey:       "809f1817587bef5b9e94dc541a4e4c1e8c3997292eead430baeeffbd66b90ef9"
-    sha256 cellar: :any,                 big_sur:        "185a307b80ee516a83fdcd376dfcee5e637b08d86460c75493913ecc9bf0f76f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a526447d1a2e9e605b5fded78c20b76468e40bce1c4ab7374362eb953b0434b"
+    sha256 cellar: :any,                 arm64_ventura:  "f41745220cf8dcecaea664fdf71f8808d363574037d942dfdf7a45da5df8ec11"
+    sha256 cellar: :any,                 arm64_monterey: "c7d98c6d75bf27d83160af4d7be731e27ca5e29d73a043d205ddacf8683f1dde"
+    sha256 cellar: :any,                 arm64_big_sur:  "f8d730776ccf2c04734c6f0e635f3b827338e2bd53963c879b16f74c08f06f6b"
+    sha256 cellar: :any,                 ventura:        "942084f5166c6b17af626ffcc799a70e5b6296f6980549b579481ece88943200"
+    sha256 cellar: :any,                 monterey:       "2df291272e3a9c615193545873404b061e938638eecdda1f6d029b46a3ad40ce"
+    sha256 cellar: :any,                 big_sur:        "63a3d789503a96d0cee53600f7fbc393499b6eab0bfa9e7b41cf38f768f13ad5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3816a89a093655375e9b2d83fc0abf0e163f4f2677e9c602e603252d00633f5"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -50,6 +48,11 @@ class Molecule < Formula
     sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
   end
 
+  resource "bracex" do
+    url "https://files.pythonhosted.org/packages/b3/96/d53e290ddf6215cfb24f93449a1835eff566f79a1f332cf046a978df0c9e/bracex-2.3.post1.tar.gz"
+    sha256 "e7b23fc8b2cd06d3dec0692baabecb249dda94e06a617901ff03a6c56fd71693"
+  end
+
   resource "click-help-colors" do
     url "https://files.pythonhosted.org/packages/6c/c1/abc07420cfdc046c1005e16bc8090bc1f226d631b2bd172e5a8f5524c127/click-help-colors-0.9.1.tar.gz"
     sha256 "78cbcf30cfa81c5fc2a52f49220121e1a8190cd19197d9245997605d3405824d"
@@ -76,8 +79,8 @@ class Molecule < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/e5/a2/3e03efdd25f93e1296d0454a7680456fda2925f2ff624bf43855d785b3bd/jsonschema-4.18.4.tar.gz"
-    sha256 "fb3642735399fa958c0d2aad7057901554596c63349f4f6b283c493cf692a25d"
+    url "https://files.pythonhosted.org/packages/99/ba/e51d376c6160d27669c7a9ad0b61d9cbd58fa58be6e6ddc0e7e0b6e6aa40/jsonschema-4.19.0.tar.gz"
+    sha256 "6e1e7569ac13be8139b2dd2c21a55d350066ee3f80df06c608b398cdc6f30e8f"
   end
 
   resource "jsonschema-specifications" do
@@ -116,8 +119,8 @@ class Molecule < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/ae/0e/5a4c22e046dc8c94fec2046255ddd7068b7aaff66b3d0d0dd2cfbf8a7b20/referencing-0.30.0.tar.gz"
-    sha256 "47237742e990457f7512c7d27486394a9aadaf876cbfaa4be65b27b4f4d47c6b"
+    url "https://files.pythonhosted.org/packages/e1/43/d3f6cf3e1ec9003520c5fb31dc363ee488c517f09402abd2a1c90df63bbb/referencing-0.30.2.tar.gz"
+    sha256 "794ad8003c65938edcdbc027f1933215e0d0ccc0291e3ce20a4d87432b59efc0"
   end
 
   resource "resolvelib" do
@@ -145,6 +148,11 @@ class Molecule < Formula
     sha256 "b3c124993f8b88d1eb1c2fde0bc2069787eac720ba88771cba17e8c93324825d"
   end
 
+  resource "wcmatch" do
+    url "https://files.pythonhosted.org/packages/b7/94/5dd083fc972655f6689587c3af705aabc8b8e781bacdf22d6d2282fe6142/wcmatch-8.4.1.tar.gz"
+    sha256 "b1f042a899ea4c458b7321da1b5e3331e3e0ec781583434de1301946ceadb943"
+  end
+
   resource "websocket-client" do
     url "https://files.pythonhosted.org/packages/b1/34/3a5cae1e07d9566ad073fa6d169bf22c03a3ba7b31b3c3422ec88d039108/websocket-client-1.6.1.tar.gz"
     sha256 "c951af98631d24f8df89ab1019fc365f2227c0892f12fd150e935607c79dd0dd"
@@ -163,14 +171,11 @@ class Molecule < Formula
   test do
     ENV["ANSIBLE_REMOTE_TMP"] = testpath/"tmp"
     # Test the Vagrant driver
-    system bin/"molecule", "init", "role", "acme.foo_vagrant", "--driver-name",
-                           "vagrant", "--verifier-name", "testinfra"
-    assert_predicate testpath/"foo_vagrant/molecule/default/molecule.yml", :exist?,
-                     "Failed to create 'foo_vagrant/molecule/default/molecule.yml' file!"
-    assert_predicate testpath/"foo_vagrant/molecule/default/tests/test_default.py", :exist?,
-                     "Failed to create 'foo_vagrant/molecule/default/tests/test_default.py' file!"
-    cd "foo_vagrant" do
-      system bin/"molecule", "list"
-    end
+    system bin/"molecule", "init", "scenario", "acme.foo_vagrant", "--driver-name",
+                           "vagrant", "--provisioner-name", "ansible"
+    assert_predicate testpath/"molecule/acme.foo_vagrant/molecule.yml", :exist?,
+                     "Failed to create 'molecule/acme.foo_vagrant/molecule.yml' file!"
+    output = shell_output("#{bin}/molecule list --format yaml").chomp
+    assert_match "Scenario Name: acme.foo_vagrant", output
   end
 end

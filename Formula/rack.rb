@@ -21,6 +21,9 @@ class Rack < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "88a7a29b2c8fc2f04d5009bb498e2a424aaf2c246a55915c2f0d7b12f7accfec"
   end
 
+  # https://github.com/rackspace/rack/pull/470
+  deprecate! date: "2023-08-13", because: :unmaintained
+
   depends_on "go" => :build
 
   def install
