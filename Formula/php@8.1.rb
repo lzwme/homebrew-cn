@@ -1,35 +1,27 @@
 class PhpAT81 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  # Should only be updated if the new version is announced on the homepage, https://www.php.net/
   url "https://www.php.net/distributions/php-8.1.22.tar.xz"
   mirror "https://fossies.org/linux/www/php-8.1.22.tar.xz"
   sha256 "9ea4f4cfe775cb5866c057323d6b320f3a6e0adb1be41a068ff7bfec6f83e71d"
   license "PHP-3.01"
 
-  livecheck do
-    url "https://www.php.net/downloads"
-    regex(/href=.*?php[._-]v?(#{Regexp.escape(version.major_minor)}(?:\.\d+)*)\.t/i)
-  end
-
   bottle do
-    sha256 arm64_ventura:  "580bf653bac5d8a2386a7e32364216f25853689945ce61baf25b2be89713c041"
-    sha256 arm64_monterey: "e8593e73f729145cc4a547ee9f0072664de9bd45324aad0116aacf2e56862294"
-    sha256 arm64_big_sur:  "468f861cb9a590065c2496aa6010134d13ef35c368b4236c15e547433134d36d"
-    sha256 ventura:        "6893611f1d94e1d89b92ba9aea0b4e13c9595e6e1c76de7392ee9fa514e660b5"
-    sha256 monterey:       "f2261cdf25058505b66820728774e374d933ada08d6e1ea953e251927c10d72f"
-    sha256 big_sur:        "602e5bd2d82e13b3ce0d2c020ed8765a568c779d3012cb4b104a4cad75d93153"
-    sha256 x86_64_linux:   "8697ccc005955ca78c191a4bc06838e4f09d6cab8ed06fe89adbc2f1f5c2274b"
+    root_url "https://ghcr.io/v2/shivammathur/php"
+    sha256 arm64_monterey: "90ba921bfe88d65e78486dff528b4723c8e93cca434bf68115726eb14d16bfe3"
+    sha256 arm64_big_sur:  "84fc7b3e47966433a36b999513622c4d1e6c791393cf280f7b64caf4b50a3bc5"
+    sha256 ventura:        "70268c1551dc8ac0a9a98fe702ca951182a514f88009b770327c0dfc20d1f5d1"
+    sha256 monterey:       "1dedb9592c47da016c30c2d4af9041cabd13c35b6edbae3bbf4de950131508d3"
+    sha256 big_sur:        "cf349ed872a97c8b23ecb5a1dd9214b1dc2ca4271c2ed632a9cfd015e9fdda41"
+    sha256 x86_64_linux:   "12e9a64fb8f35313a54ab40c1314f7140a8e4a04325c8a056f3c6483a8c9786c"
   end
 
   keg_only :versioned_formula
 
-  # Security Support Until Nov 25 2024
-  # https://www.php.net/supported-versions.php
-  deprecate! date: "2024-11-25", because: :unsupported
-
+  depends_on "bison" => :build
   depends_on "httpd" => [:build, :test]
   depends_on "pkg-config" => :build
+  depends_on "re2c" => :build
   depends_on "apr"
   depends_on "apr-util"
   depends_on "argon2"
@@ -53,7 +45,6 @@ class PhpAT81 < Formula
   depends_on "tidy-html5"
   depends_on "unixodbc"
 
-  uses_from_macos "xz" => :build
   uses_from_macos "bzip2"
   uses_from_macos "libedit"
   uses_from_macos "libffi", since: :catalina
@@ -63,7 +54,6 @@ class PhpAT81 < Formula
 
   on_macos do
     # PHP build system incorrectly links system libraries
-    # see https://github.com/php/php-src/issues/10680
     patch :DATA
   end
 
@@ -97,11 +87,11 @@ class PhpAT81 < Formula
 
     inreplace "sapi/fpm/php-fpm.conf.in", ";daemonize = yes", "daemonize = no"
 
-    config_path = etc/"php/#{version.major_minor}"
+    config_path = etc/"php/#{php_version}"
     # Prevent system pear config from inhibiting pear install
     (config_path/"pear.conf").delete if (config_path/"pear.conf").exist?
 
-    # Prevent homebrew from hardcoding path to sed shim in phpize script
+    # Prevent homebrew from harcoding path to sed shim in phpize script
     ENV["lt_cv_path_SED"] = "sed"
 
     # system pkg-config missing
@@ -109,7 +99,8 @@ class PhpAT81 < Formula
     if OS.mac?
       ENV["SASL_CFLAGS"] = "-I#{MacOS.sdk_path_if_needed}/usr/include/sasl"
       ENV["SASL_LIBS"] = "-lsasl2"
-    else
+    end
+    if OS.linux?
       ENV["SQLITE_CFLAGS"] = "-I#{Formula["sqlite"].opt_include}"
       ENV["SQLITE_LIBS"] = "-lsqlite3"
       ENV["BZIP_DIR"] = Formula["bzip2"].opt_prefix
@@ -117,6 +108,7 @@ class PhpAT81 < Formula
 
     # Each extension that is built on Mojave needs a direct reference to the
     # sdk path or it won't find the headers
+    headers_path = ""
     headers_path = "=#{MacOS.sdk_path_if_needed}/usr" if OS.mac?
 
     args = %W[
@@ -137,9 +129,11 @@ class PhpAT81 < Formula
       --enable-mbregex
       --enable-mbstring
       --enable-mysqlnd
+      --enable-opcache
       --enable-pcntl
       --enable-phpdbg
       --enable-phpdbg-readline
+      --enable-phpdbg-webhelper
       --enable-shmop
       --enable-soap
       --enable-sockets
@@ -167,7 +161,7 @@ class PhpAT81 < Formula
       --with-mysqli=mysqlnd
       --with-ndbm#{headers_path}
       --with-openssl
-      --with-password-argon2=#{Formula["argon2"].opt_prefix}
+      --with-password-argon2
       --with-pdo-dblib=#{Formula["freetds"].opt_prefix}
       --with-pdo-mysql=mysqlnd
       --with-pdo-odbc=unixODBC,#{Formula["unixodbc"].opt_prefix}
@@ -189,7 +183,8 @@ class PhpAT81 < Formula
       args << "--enable-dtrace"
       args << "--with-ldap-sasl"
       args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}"
-    else
+    end
+    if OS.linux?
       args << "--disable-dtrace"
       args << "--without-ldap-sasl"
       args << "--without-ndbm"
@@ -264,10 +259,10 @@ class PhpAT81 < Formula
     php_ext_dir = opt_prefix/"lib/php"/php_basename
 
     # fix pear config to install outside cellar
-    pear_path = HOMEBREW_PREFIX/"share/pear@#{version.major_minor}"
+    pear_path = HOMEBREW_PREFIX/"share/pear@#{php_version}"
     cp_r pkgshare/"pear/.", pear_path
     {
-      "php_ini"  => etc/"php/#{version.major_minor}/php.ini",
+      "php_ini"  => etc/"php/#{php_version}/php.ini",
       "php_dir"  => pear_path,
       "doc_dir"  => pear_path/"doc",
       "ext_dir"  => pecl_path/php_basename,
@@ -288,7 +283,7 @@ class PhpAT81 < Formula
     %w[
       opcache
     ].each do |e|
-      ext_config_path = etc/"php/#{version.major_minor}/conf.d/ext-#{e}.ini"
+      ext_config_path = etc/"php/#{php_version}/conf.d/ext-#{e}.ini"
       extension_type = (e == "opcache") ? "zend_extension" : "extension"
       if ext_config_path.exist?
         inreplace ext_config_path,
@@ -315,11 +310,14 @@ class PhpAT81 < Formula
           DirectoryIndex index.php index.html
 
       The php.ini and php-fpm.ini file can be found in:
-          #{etc}/php/#{version.major_minor}/
+          #{etc}/php/#{php_version}/
     EOS
   end
 
-  plist_options manual: "php-fpm"
+  def php_version
+    version.to_s.split(".")[0..1].join(".")
+  end
+
   service do
     run [opt_sbin/"php-fpm", "--nodaemonize"]
     run_type :immediate
@@ -343,8 +341,14 @@ class PhpAT81 < Formula
     refute_match(/^snmp$/, shell_output("#{bin}/php -m"),
       "SNMP extension doesn't work reliably with Homebrew on High Sierra")
     begin
-      port = free_port
-      port_fpm = free_port
+      require "socket"
+
+      server = TCPServer.new(0)
+      port = server.addr[1]
+      server_fpm = TCPServer.new(0)
+      port_fpm = server_fpm.addr[1]
+      server.close
+      server_fpm.close
 
       expected_output = /^Hello world!$/
       (testpath/"index.php").write <<~EOS

@@ -2,9 +2,9 @@ class Php < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.2.8.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.2.8.tar.xz"
-  sha256 "cfe1055fbcd486de7d3312da6146949aae577365808790af6018205567609801"
+  url "https://www.php.net/distributions/php-8.2.9.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.2.9.tar.xz"
+  sha256 "1e6cb77f997613864ab3127fbfc6a8c7fdaa89a95e8ed6167617b913b4de4765"
   license "PHP-3.01"
 
   livecheck do
@@ -13,13 +13,13 @@ class Php < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "cf4ed8e8303a71f58e86ac4579a05f8795a4ea244ed8075359fd6cd30197100a"
-    sha256 arm64_monterey: "157787c62289dbe695e67f10c0501961161b6489db49fa1b0e652b6cc05d820c"
-    sha256 arm64_big_sur:  "260cdfadd930a214df1418e5711acb2d6d85e148bd9dd5f26d0bbe2eef812472"
-    sha256 ventura:        "361f34eddaad8dd22b282b7ce7e927af0525a9fab2cfb04b81d58a3769b192f6"
-    sha256 monterey:       "f15cdb07e75d00fa906fa1f8a7b8407c34bf8a7ace3bdbad0a038aa0ffca5d0f"
-    sha256 big_sur:        "4aba8baa472a8a0986d1b545e6455fc9da886a8a0b85b70dbcaa4f4f8c1f6fb4"
-    sha256 x86_64_linux:   "6477da1344889e9b98a7617946ca513d16ef63fd4b567d922f8a0ac82314013e"
+    root_url "https://ghcr.io/v2/shivammathur/php"
+    sha256 arm64_monterey: "0fc055aa3349a70c5f679fbafa4af5f3124e8d7ba44f5f87fe35395080b73ed6"
+    sha256 arm64_big_sur:  "37e91e68dd181c80996e220a7346ce64a362836e02a5153b037d6ea09e2deb0d"
+    sha256 ventura:        "d35d6166b8a7cb3601bc3ba99adc915f26518a411f650fa6036203cf1cebe172"
+    sha256 monterey:       "060a83ee3de39658d43883d81ce178f48c61b500caf27272fe98f4897e6409cd"
+    sha256 big_sur:        "e3d1ffd14adc9bc4f4642af65159321ed488bbf2971455fb3c5165e030c55cae"
+    sha256 x86_64_linux:   "378ae41597b0272e283ed52af6cf87525f21c2ea696bcd11b2966574a4192ab7"
   end
 
   head do
@@ -64,7 +64,6 @@ class Php < Formula
 
   on_macos do
     # PHP build system incorrectly links system libraries
-    # see https://github.com/php/php-src/issues/10680
     patch :DATA
   end
 
@@ -98,7 +97,7 @@ class Php < Formula
     # Prevent system pear config from inhibiting pear install
     (config_path/"pear.conf").delete if (config_path/"pear.conf").exist?
 
-    # Prevent homebrew from hardcoding path to sed shim in phpize script
+    # Prevent homebrew from harcoding path to sed shim in phpize script
     ENV["lt_cv_path_SED"] = "sed"
 
     # system pkg-config missing
@@ -106,7 +105,8 @@ class Php < Formula
     if OS.mac?
       ENV["SASL_CFLAGS"] = "-I#{MacOS.sdk_path_if_needed}/usr/include/sasl"
       ENV["SASL_LIBS"] = "-lsasl2"
-    else
+    end
+    if OS.linux?
       ENV["SQLITE_CFLAGS"] = "-I#{Formula["sqlite"].opt_include}"
       ENV["SQLITE_LIBS"] = "-lsqlite3"
       ENV["BZIP_DIR"] = Formula["bzip2"].opt_prefix
@@ -114,11 +114,8 @@ class Php < Formula
 
     # Each extension that is built on Mojave needs a direct reference to the
     # sdk path or it won't find the headers
+    headers_path = ""
     headers_path = "=#{MacOS.sdk_path_if_needed}/usr" if OS.mac?
-
-    # `_www` only exists on macOS.
-    fpm_user = OS.mac? ? "_www" : "www-data"
-    fpm_group = OS.mac? ? "_www" : "www-data"
 
     args = %W[
       --prefix=#{prefix}
@@ -153,8 +150,8 @@ class Php < Formula
       --with-external-gd
       --with-external-pcre
       --with-ffi
-      --with-fpm-user=#{fpm_user}
-      --with-fpm-group=#{fpm_group}
+      --with-fpm-user=_www
+      --with-fpm-group=_www
       --with-gettext=#{Formula["gettext"].opt_prefix}
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-iconv#{headers_path}
@@ -190,7 +187,8 @@ class Php < Formula
       args << "--enable-dtrace"
       args << "--with-ldap-sasl"
       args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}"
-    else
+    end
+    if OS.linux?
       args << "--disable-dtrace"
       args << "--without-ldap-sasl"
       args << "--without-ndbm"
