@@ -5,15 +5,16 @@ class Trafficserver < Formula
   mirror "https://archive.apache.org/dist/trafficserver/trafficserver-9.2.2.tar.bz2"
   sha256 "5960dd2d075e8f1c71d299a09155ca8ed6dd02af1d39678e7379c1e5bd81c388"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 arm64_ventura:  "ead1ae3a4043e2d6280239fa83e5466febec54ab7cc0b878b6ff8e437e5c4864"
-    sha256 arm64_monterey: "04fdb16031a006c727c7220100d50aa5ee85e15c86cae0bf296649c1f54f26bd"
-    sha256 arm64_big_sur:  "de42b001e9b0d634319f21936d8a03cfefc565f4225f64fdc2c4b5f4c9f9360e"
-    sha256 ventura:        "cb30731d87ec6e311ebec4ed9fb8e8713b76ea88e5d0c7d548beefffddaebe79"
-    sha256 monterey:       "48c7f1a10d674aa560a59a2cf7cf77716405cb7b767ebe21f34e975e7d962770"
-    sha256 big_sur:        "c1bbc06a2e060403f8421b7a03ff09f5e9017bed6498d73a11590884b7dfabd8"
-    sha256 x86_64_linux:   "374a0d6b06faf0e992a5b8822a08b6d6f801e02ef08c2d627320cbf42741a282"
+    sha256 arm64_ventura:  "9deeccd755fa83b9570c876b4fcaff07d116552e7e06af1ce7f6ca3f690412fc"
+    sha256 arm64_monterey: "16f589e488c325a0bbcc55e46ef39468526286bbcd38a4277e189cea42f6bceb"
+    sha256 arm64_big_sur:  "2f340076bfcb24ab8e723166171a7ce5a9a0aeffa681f1bebd7b6918f9a49795"
+    sha256 ventura:        "defc92934de8f85f91674b7974b0e7bf29a91d899d8a004b09f63cc3b8429074"
+    sha256 monterey:       "8509309e4f08579095ccbc35fc1d6f5ccb8e7df0abbe63d02791079981939723"
+    sha256 big_sur:        "be51035d713408d1fe9d3136c8732350816fb3e7b257900249c3348c9d466609"
+    sha256 x86_64_linux:   "fb19527c0a3d968e9ca1f3fdfd190ed5072eedaab0d373d288e56012b7a49137"
   end
 
   head do

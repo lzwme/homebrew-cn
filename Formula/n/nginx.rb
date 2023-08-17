@@ -3,10 +3,9 @@ class Nginx < Formula
   homepage "https://nginx.org/"
   # Use "mainline" releases only (odd minor version number), not "stable"
   # See https://www.nginx.com/blog/nginx-1-12-1-13-released/ for why
-  url "https://nginx.org/download/nginx-1.25.1.tar.gz"
-  sha256 "f09071ac46e0ea3adc0008ef0baca229fc6b4be4533baef9bbbfba7de29a8602"
+  url "https://nginx.org/download/nginx-1.25.2.tar.gz"
+  sha256 "05dd6d9356d66a74e61035f2a42162f8c754c97cf1ba64e7a801ba158d6c0711"
   license "BSD-2-Clause"
-  revision 1
   head "https://hg.nginx.org/nginx/", using: :hg
 
   livecheck do
@@ -15,13 +14,13 @@ class Nginx < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "29aa5568ae9d9f0e021c2624740b57fcd570f1225e1b86be6b108a217ec71357"
-    sha256 arm64_monterey: "f62d70584d2f83b1f29b7c94b12c7969e3ac13aa348e9352490e3d81d6652709"
-    sha256 arm64_big_sur:  "5024b4a8407d5f4cd231697ed7fa09f1ebf23c52e8a893f9ca6698a75620281f"
-    sha256 ventura:        "fdec83c8c5b3aaeefdeaddb9d320d6f4d6348976fb9e63f069d38a9f3bde6016"
-    sha256 monterey:       "453e9f63fd027084d7b61f78fedaac1b5db5a6735454fb99972fa105312e2cdb"
-    sha256 big_sur:        "275da3fa0f5948ae79fee364ed9f3b39a3640490cd88a26a3d89c8779d9fff67"
-    sha256 x86_64_linux:   "d787d092728485358fe2e969986aec2d9c05d790b570cbba1c5c27b911016ae0"
+    sha256 arm64_ventura:  "bb7b7e469df875b0dae7fdbb02bc25af6d711daa72c8003f421dafe3a32ba2cf"
+    sha256 arm64_monterey: "b279d889a15c902af6fef8d1b176c9d2ee176eacfbff24149970f03656619fe0"
+    sha256 arm64_big_sur:  "3947690efcf7a3114d2136d6deae709fba48b2db868236dd79be0189a69a4879"
+    sha256 ventura:        "bfc0c38f83251ab8e3117379b5b0628a23a3f73000763c4ca4e5fcd6cbc61a94"
+    sha256 monterey:       "9d21ff12ad5b8fe3d7c5c44b9754e75847e06c1ecfcdc828d2092e4e121b640d"
+    sha256 big_sur:        "4f364d17f86ba8d37b1a6d4d80994ca7d2d95cc830edcdd7b58bbbaf4e712eaa"
+    sha256 x86_64_linux:   "96853f356ac8b25b7f8d7cf455342bab56d22854b87b0199c5ab88748086666b"
   end
 
   depends_on "openssl@3"

@@ -2,8 +2,8 @@ class KubernetesCli < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/"
   url "https://github.com/kubernetes/kubernetes.git",
-      tag:      "v1.27.4",
-      revision: "fa3d7990104d7c1f16943a67f11b154b71f6a132"
+      tag:      "v1.28.0",
+      revision: "855e7c48de7388eb330da0f8d9d2394ee818fb8d"
   license "Apache-2.0"
   head "https://github.com/kubernetes/kubernetes.git", branch: "master"
 
@@ -13,13 +13,13 @@ class KubernetesCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9f9e22602963585f9415691fd23c5603d194b9e4cdfb9187e8b38a451aeb9a67"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "922f33e2f38e660e8e8a36188bfefb42682e3883df306e625dc3f990d8b08daf"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "020a9b8763cf2864ff28f5f92d8380f9a3809cb30431ab8a36aef4c3a85e2a19"
-    sha256 cellar: :any_skip_relocation, ventura:        "edc6ced447d957b366526978d201d962aba11bb2555cfa160012eb56d15c13e5"
-    sha256 cellar: :any_skip_relocation, monterey:       "2c0eb9dccb44d8f636c4f06e823329e8c24b94e88a5f3f2b72fa603e94ba8ad2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5811cd0ddeee8a0bd155e843b29a65260e4cd3a0fd0a9750acc562f1a60a76ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9d2d80152b16d4c6438b4f7075e43b3cd3cc5b03bf5ff1d76abb0b2b766c730"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dc6ccc44521c02779177403df925fc4495b13c0227054a9bb99e23896a0a227a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6aa7819c5727e8ca7e669d70ddc488a86fc82a206ec2a28ec1953a21c2e535b7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d722eaf1c5dee70bf647eccaba9ed9d6ef14f343a03d0d33fea482d393598ba4"
+    sha256 cellar: :any_skip_relocation, ventura:        "9162f72bd059ce246bb1e34b1f327666b9981c11abeb9fd54749a1f21c0108b1"
+    sha256 cellar: :any_skip_relocation, monterey:       "a11e7ab4e304f7f5255b9387094aacaa7187cd02b793bc000fe513140a1fa5ac"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8afd638b8514bbac9fca85934c452186512013498fd11c71f25bc36931747c81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3791e7dc0fe2e3cdf08c72b4c874988b1ec564e4ddb37b910d2ad69d96672633"
   end
 
   depends_on "bash" => :build
@@ -48,8 +48,8 @@ class KubernetesCli < Formula
     run_output = shell_output("#{bin}/kubectl 2>&1")
     assert_match "kubectl controls the Kubernetes cluster manager.", run_output
 
-    version_output = shell_output("#{bin}/kubectl version --client 2>&1")
-    assert_match "GitTreeState:\"clean\"", version_output
+    version_output = shell_output("#{bin}/kubectl version --client --output=yaml 2>&1")
+    assert_match "gitTreeState: clean", version_output
     if build.stable?
       revision = stable.specs[:revision]
       assert_match revision.to_s, version_output

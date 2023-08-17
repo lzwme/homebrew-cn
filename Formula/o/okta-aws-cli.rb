@@ -1,18 +1,18 @@
 class OktaAwsCli < Formula
   desc "Okta federated identity for AWS CLI"
   homepage "https://github.com/okta/okta-aws-cli"
-  url "https://ghproxy.com/https://github.com/okta/okta-aws-cli/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "9c853ff13237b5afdb14dfcdbb62a34fc7a2cc61e70d23a440fb5f287049b831"
+  url "https://ghproxy.com/https://github.com/okta/okta-aws-cli/archive/refs/tags/v1.2.1.tar.gz"
+  sha256 "4e16572757702d55c938d6cf1688fc1386d6b20f981cc8432366a3ffefc8f2eb"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e897d2391615326f14fff747153c7e9725f4c445d083f1d2be751f48d7654cf7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e516ccdfa0af55dc15f78d5882a7c502464c68437ab40bf615d2c9a2357edcdb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bb32aed9e1b8c2cdb8d04ba1399e154bb83fd5dd1b329c30684ac9a5c14cd5c2"
-    sha256 cellar: :any_skip_relocation, ventura:        "6ea8171f3fa353c30f53c5480f07c6e97768fdc2cabd95d27bf6e597d5d38e0e"
-    sha256 cellar: :any_skip_relocation, monterey:       "cadb3611f7a6d67a57f08b2e03470c8b072a8fa6a84141b12b40e6824104e3b4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7c32c24aecc8a04e8146c3db7ab703bc7afe2d99e3750c236a489606cb348ce9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a36953539fa2af31d3d3b3d8470d8a1e2374d7b12531aaac0435daceec9153a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e48cb6a1855355c8e37d9a63a8230c8e8b917456a8fb97349a14c34cb7a27337"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3147e8617511571329c7ca44ccf8ca25f290670b61d5346667f93a9f7e8a630"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c30e2e80b3f9aa9cde5f9b788212f967d3373f18abbefb2545b80af79078aaee"
+    sha256 cellar: :any_skip_relocation, ventura:        "1b1c05c54cf71124ecdffc1684316381d21ee183048b53a7b7f0c56c9bdab965"
+    sha256 cellar: :any_skip_relocation, monterey:       "c534a06d7f448f5f3668347df9f2e6f559014ac5a3fe94a9ee48c19d096dc490"
+    sha256 cellar: :any_skip_relocation, big_sur:        "197067921d6abecec3c1f39e73de5fbf6d1e7d50a3a6fd6775ceef8fe79c9ae5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "745dc6d51dfa0ec0c7afcc491773a70a13bf411648851710b3f30c163b97c1ff"
   end
 
   depends_on "go" => :build

@@ -1,19 +1,18 @@
 class YamlCpp < Formula
   desc "C++ YAML parser and emitter for YAML 1.2 spec"
   homepage "https://github.com/jbeder/yaml-cpp"
-  url "https://ghproxy.com/https://github.com/jbeder/yaml-cpp/archive/yaml-cpp-0.7.0.tar.gz"
-  sha256 "43e6a9fcb146ad871515f0d0873947e5d497a1c9c60c58cb102a97b47208b7c3"
+  url "https://ghproxy.com/https://github.com/jbeder/yaml-cpp/archive/refs/tags/0.8.0.tar.gz"
+  sha256 "fbe74bbdcee21d656715688706da3c8becfd946d92cd44705cc6098bb23b3a16"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c0c34d815d25a11a6d2abcdd1d48491880a6c52ccb834517583d417be32da89d"
-    sha256 cellar: :any,                 arm64_monterey: "870e42a85ee38ad3e908d2316f084ea62d01ee79aaa99975226457acdc0267df"
-    sha256 cellar: :any,                 arm64_big_sur:  "73eb2c62c966671c744577b1ee6661edd0c1f993756ecdd68845aed7d67cc89a"
-    sha256 cellar: :any,                 ventura:        "7d8e17b3f46aa111e1f911bdb16735d7199208299bb5c54d40f69434abf72b24"
-    sha256 cellar: :any,                 monterey:       "352369aa5a46cbbc4f28296f51707ac0adfe30884a11d8b3e75b6a877d5f92e4"
-    sha256 cellar: :any,                 big_sur:        "d78ff4565c1d214901754ec12f0e410d60c907a9a312ea246197bbf18fca4e8c"
-    sha256 cellar: :any,                 catalina:       "7b8fb20fdf64723b7aa72127d070484ec9e3e3225c4ab5f3c6247743b987e9f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16923a628827f80bea57cad5c5a2ca222b2b00d0105367cb265f6c3df7f4b5c2"
+    sha256 cellar: :any,                 arm64_ventura:  "a257981f293174574400a08830c9edb3fef18a1d27d9c7a8f2a8ec0a6450a15f"
+    sha256 cellar: :any,                 arm64_monterey: "5590ca844620d1eec096d947cd88d77acd0cec2094ea6558c56802f2960f3a80"
+    sha256 cellar: :any,                 arm64_big_sur:  "2106ac96acedc1d4ee2d8e086b5408a8fc3cd67cea199234f91dcef2f1980fa3"
+    sha256 cellar: :any,                 ventura:        "6df59a455c4312b58a636ea26c0f7b07a98e2718b7702f9c9a6603a3d18db540"
+    sha256 cellar: :any,                 monterey:       "ed2271a45db27da472a35762a95ec0e36ee8be8a193593637b289eaa40d34e68"
+    sha256 cellar: :any,                 big_sur:        "34e2ea6e7e4c5db76bdbe1eb799025c0143c3cda82ad561bf6354ba79e014427"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eea8c23888c9026a8994e5b7b3b62e65b89da4d08db764c340900ecbe190f36d"
   end
 
   depends_on "cmake" => :build

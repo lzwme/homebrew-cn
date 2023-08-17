@@ -1,8 +1,8 @@
 class Ngspice < Formula
   desc "Spice circuit simulator"
   homepage "https://ngspice.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/40/ngspice-40.tar.gz"
-  sha256 "e303ca7bc0f594e2d6aa84f68785423e6bf0c8dad009bb20be4d5742588e890d"
+  url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41.tar.gz"
+  sha256 "1ce219395d2f50c33eb223a1403f8318b168f1e6d1015a7db9dbf439408de8c4"
   license :cannot_represent
 
   livecheck do
@@ -11,29 +11,31 @@ class Ngspice < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "b50abb56b1275031efec85f77040673e06863541a8e6614e87ab230454641f22"
-    sha256 arm64_monterey: "dbcb4e346292bde2427661ffb4116b3a9b2cea0292ea44be8210d45fb5f4cb16"
-    sha256 arm64_big_sur:  "e29ab21f16e3e16f7412291c7c0cad9c812ae2496e59c150b759a8b3d4e84195"
-    sha256 ventura:        "4c3901f4a2e557787ede17558af36d3a9854a890c8110170c300c37adc5c1d40"
-    sha256 monterey:       "23023b8b6d7077f0f32a16cf8564efa4ffcb059b05fc985ec2432e804f2126ed"
-    sha256 big_sur:        "4910cf0ed17fa9d0e237848b525a72879c1222229f2385ea84dc25f4db671776"
-    sha256 x86_64_linux:   "0492961d5b4fc1aabb0d9ad7be95f8018236e0ed683d7e8e522877fed1495d7d"
+    sha256 arm64_ventura:  "8e36bc3e8ab359c91e0f0b2c01cc604e158526b711e11289c5ae8e186266a1cd"
+    sha256 arm64_monterey: "f902ee20c956ce7cfcfe714c707faa27a9f97efaf0937fb5099927857f9903b0"
+    sha256 arm64_big_sur:  "db4112cb7dd18fe865980f04cc5b52d4d202fe6eaa96be28f6f0a30c5873fc51"
+    sha256 ventura:        "836200d6dd7bbabac59e51d73bdd2048e5e4173c6919a9a5904b161178ab3632"
+    sha256 monterey:       "ce332690f0c8fd65b69ce3ae665911ea014b011e6796c21b2e64b0fff3b83f88"
+    sha256 big_sur:        "fe20b393cb57a19b05b0809f2ccf8ab5282aa193b270b1da7ae79630ec2573d1"
+    sha256 x86_64_linux:   "07a2aa97edc37e0e379fc4728563314a72ca110e1d564acd8bafc2bd94649e65"
   end
 
   head do
     url "https://git.code.sf.net/p/ngspice/ngspice.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "bison" => :build
-  depends_on "libtool" => :build
   depends_on "fftw"
   depends_on "libngspice"
   depends_on "readline"
 
+  uses_from_macos "bison" => :build
+
   def install
-    system "./autogen.sh"
+    system "./autogen.sh" if build.head?
 
     args = %w[
       --with-readline=yes

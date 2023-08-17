@@ -1,23 +1,30 @@
 class Smpeg < Formula
   desc "SDL MPEG Player Library"
   homepage "https://icculus.org/smpeg/"
-  url "svn://svn.icculus.org/smpeg/tags/release_0_4_5/", revision: "399"
+  url "https://ghproxy.com/https://github.com/icculus/smpeg/archive/refs/tags/release_0_4_5.tar.gz"
+  sha256 "e2e53bfd2e6401e2c29e5eb3929be0e8698bc9e4c9d731751f67e77b408f1f74"
+  # license change was done in 2021 Aug, which is 8 years after 0.4.5 release
+  # commit ref, https://github.com/icculus/smpeg/commit/ffa0d54
+  license "LGPL-2.0-or-later"
   revision 1
 
   livecheck do
-    url "https://svn.icculus.org/smpeg/tags/"
-    regex(%r{href=.*?release[._-]v?([01](?:[._]\d+)+)/}i)
+    url :stable
+    regex(/^release[._-]v?([01](?:[._]\d+)+)$/i)
+    strategy :git do |tags, regex|
+      tags.map { |tag| tag[regex, 1]&.tr("_", ".") }
+    end
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "504f24fcc195211810c6d0f810452051d3bedeeb8418948458dea50645ea0d56"
-    sha256 cellar: :any,                 arm64_monterey: "c5eab6893599eb3853a814df8bd10232024992b610e464713faef09c9b89af15"
-    sha256 cellar: :any,                 arm64_big_sur:  "a681c545d54533151554e7ae875ceb10ab50557265b6903e82a7db1f649195a0"
-    sha256 cellar: :any,                 ventura:        "2897235fc45521bd90346d67627a7d1fc8a43bb4c6077e1eea0b861f7d3573f9"
-    sha256 cellar: :any,                 monterey:       "0dee6e8e4fc6dc7b4d97813c61c3bd31613c158dc17f4cf9ae3c24f91d93b591"
-    sha256 cellar: :any,                 big_sur:        "a095b94ab3d0072785c4e5c59ee5518b83e5d8d677f77561dbc5e53026313c32"
-    sha256 cellar: :any,                 catalina:       "884228b0396550379ea0f63b23cba2a078d495470424096232b6eff869972a08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e66be23025650d303fb1d05e4203d5d696369052d5cdd5f5289c69b00f7405e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "8023f2a680920c2c2184d38422b4111359ee56dad5a3fa5abcf66e06ebbc3242"
+    sha256 cellar: :any,                 arm64_monterey: "f6bec866d75df98036cdf109c1f98fd0fa2be764e4f82a8d7382e4e5b4affa08"
+    sha256 cellar: :any,                 arm64_big_sur:  "75662ff4a7c2f2c1202fddcc301872696aa5123718028541cff67db96acad8d2"
+    sha256 cellar: :any,                 ventura:        "03c1eb05860e58ea080834b7fc760a10dc28aec402fb684c9a263b716693ec8f"
+    sha256 cellar: :any,                 monterey:       "27336fb6005e4d498db6eb1f68deee86cad53c86ac10843984f833e2bf5bcb7d"
+    sha256 cellar: :any,                 big_sur:        "7c97d1fb7a8df3df8cca2eb794a7898d9dc4c93ae3f201dc582ed8982c74e725"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b98076e9055fbe29549fd5c340deb22c733c24f3ab754a638dd24c425ba076d3"
   end
 
   depends_on "autoconf" => :build

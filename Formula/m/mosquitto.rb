@@ -1,12 +1,11 @@
 class Mosquitto < Formula
   desc "Message broker implementing the MQTT protocol"
   homepage "https://mosquitto.org/"
-  url "https://mosquitto.org/files/source/mosquitto-2.0.15.tar.gz"
-  sha256 "4735b1d32e3f91c7a8896741d88a3022e89730a1ee897946decfa0df27039ac6"
+  url "https://mosquitto.org/files/source/mosquitto-2.0.16.tar.gz"
+  sha256 "638db9e43e89d243ea98d10d66e76ff376131217780decd01abaffacc66d8035"
   # dual-licensed under EPL-1.0 and EDL-1.0 (Eclipse Distribution License v1.0),
   # EDL-1.0 is not in the SPDX list
   license "EPL-1.0"
-  revision 1
 
   livecheck do
     url "https://mosquitto.org/download/"
@@ -14,13 +13,13 @@ class Mosquitto < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "11d453a758710e8bab026178dacce23bf9585df446beba8ad130159a5bbefc6c"
-    sha256 arm64_monterey: "6c04405cb9719bc16b60fc10aac9ae3aa4394cea6a3e59f06b1f5999b66f4909"
-    sha256 arm64_big_sur:  "1eca680ea93f7023cb3b94a906bbc612536a57810021ea5e27ee60a178a8f07d"
-    sha256 ventura:        "42ce86124cf4eca533db7615e47fb568392d3078af9a6efbda3e2883b193d93e"
-    sha256 monterey:       "9d996c8555a24dbda8786a9d094142a7f245aa7e6563c26e50c6b757be8cd396"
-    sha256 big_sur:        "1baedd5c20794771215a66f5708038a495d724ce8192ffe8fbdaf56bf64c3119"
-    sha256 x86_64_linux:   "ce4e52637ec2ec0fe38afa6388375fba7122a788e6433f039c7354c047bd72e7"
+    sha256 arm64_ventura:  "80b65d020c420302300986dfe0c617d298a8548b457f7f02c8d51f92cda0a0af"
+    sha256 arm64_monterey: "0e698aaa31de0269cfed65d37218ed0e90bec67484a8a3ba23e98b862ac09b51"
+    sha256 arm64_big_sur:  "73397563769ae4d1971c03a12d201ebe14cbc577dcfc8696538b566b0de00cb0"
+    sha256 ventura:        "8ee95d43a3bedcc11ac820946c1725ccfb07e0646ca02b2a20c63f07e431dab3"
+    sha256 monterey:       "356b5a180dad384498883c5fdbabb65da91204eee6d5568a33d8b236a1f8e7db"
+    sha256 big_sur:        "a61ac1bd1c5c25222a2f67e3fa3455712c3c6f966debf0ede85fe82faf9e4936"
+    sha256 x86_64_linux:   "01151bd16cc3f3ff54ca08bd0fdacb74acbdbbc5e7742a1d49ec06ce55719363"
   end
 
   depends_on "cmake" => :build

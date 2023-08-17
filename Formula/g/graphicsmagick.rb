@@ -4,6 +4,7 @@ class Graphicsmagick < Formula
   url "https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.41/GraphicsMagick-1.3.41.tar.xz"
   sha256 "b741b11ba86162db4d4ec1b354989a773f73c40722d1148239f6c69c9f04a6aa"
   license "MIT"
+  revision 1
   head "http://hg.code.sf.net/p/graphicsmagick/code", using: :hg
 
   livecheck do
@@ -11,13 +12,13 @@ class Graphicsmagick < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "f7b8c2e7c65a55ec5f69cc621dc750559afe6615db3c01ac09be2266d2d6161a"
-    sha256 arm64_monterey: "f9cf922a20de55d46901e9e767d28eb269ae81fbe9544ecc709c8fd87a6b93b2"
-    sha256 arm64_big_sur:  "c3bf730c6046e819611af275786b4c370ebcc1bca520368beffb9e5e67d71b93"
-    sha256 ventura:        "b3bcdb9316527c4309fecca441dfcf14597de283c28beb104193f1b1d1508779"
-    sha256 monterey:       "b99bfc76808e6119c8706c09630567159ea7b63e115ce4009e57e395efb61ade"
-    sha256 big_sur:        "6fd70f7706737eea23e1ec3ad6c3efb487343e1eaaea0daa4de433d56b795218"
-    sha256 x86_64_linux:   "b8420ca7668403e46320f96a19d3be2a01604dfec5d53ae94dcef133f09321ac"
+    sha256 arm64_ventura:  "4f124e242ad6316aa4cb9015d5fc093c44bbc345199419909baf634f771716fc"
+    sha256 arm64_monterey: "c1c6f774744204a02932a710f27398e2c72ced67993955199c7fabbc46a62325"
+    sha256 arm64_big_sur:  "fe2933be797bd6c40264071d4597e3d83046ea58737cb4b4f6232f634f1f0668"
+    sha256 ventura:        "9ce44c958b0871720b818ecfcdb550432effc6058ac61fff876488683d6bb68c"
+    sha256 monterey:       "2c7153e854059e7715c4d8d16cbefda41925c86167ac2d1d4765c20d1d94cb50"
+    sha256 big_sur:        "e52498494fc7fd930a60475225ef1245ec2aa680b23552aa1587a9863ff49d90"
+    sha256 x86_64_linux:   "6c518a2ae30ab24cde772fd013b31b84751264ee663f08fbf80a9e005eaa6b86"
   end
 
   depends_on "pkg-config" => :build
@@ -36,6 +37,13 @@ class Graphicsmagick < Formula
   uses_from_macos "zlib"
 
   skip_clean :la
+
+  # See https://sourceforge.net/p/graphicsmagick/bugs/718/.
+  # Remove in next release.
+  patch do
+    url "https://sourceforge.net/p/graphicsmagick/bugs/718/attachment/002-tiff-transparency.patch"
+    sha256 "e040ba17c50391d03322e9f47ca5876385e8f1a984ec96856276a97f2794be16"
+  end
 
   def install
     args = %W[

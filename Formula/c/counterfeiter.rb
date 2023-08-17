@@ -1,19 +1,19 @@
 class Counterfeiter < Formula
   desc "Tool for generating self-contained, type-safe test doubles in go"
   homepage "https://github.com/maxbrunsfeld/counterfeiter"
-  url "https://ghproxy.com/https://github.com/maxbrunsfeld/counterfeiter/archive/refs/tags/v6.6.2.tar.gz"
-  sha256 "fd1e7566387f7104c3c83a7818e160eda399c6efedcd3d262088a28a35eb01e1"
+  url "https://ghproxy.com/https://github.com/maxbrunsfeld/counterfeiter/archive/refs/tags/v6.7.0.tar.gz"
+  sha256 "e5f7ec8cd40ee82a54b255c2f295fc6a2285fb161b330cb021890cf0df888bc2"
   license "MIT"
   head "https://github.com/maxbrunsfeld/counterfeiter.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c26f49f3b74c8609b3f4b07650b9dcb6667ba2cd220dc3e20c6f1b6ee558a763"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4a7a8ba2f44e3aeebf82ce9d5e0f9a5dee1a60107ecee4dc322425c4ef6fcc1f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e17a3528b0607ea518cddeb42fdae5a3415d0b8ab7012f9f0f7db6bb40e7ba24"
-    sha256 cellar: :any_skip_relocation, ventura:        "6fe661609b7048d878c84d8cf0f2aa585acbdfdbd9e44396471df9e85f571bd4"
-    sha256 cellar: :any_skip_relocation, monterey:       "1f5db7989ad1ada9b1bb559c4166a85f1216085a65c2974a1cb853efcb0c4096"
-    sha256 cellar: :any_skip_relocation, big_sur:        "99e3bd162e3593efd95be27443dd1505e3d5cf1ccbc22bcb994e4de261299c49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae5703c931b6e8f9380f194423dfddc8dad506c0befd404b6d909dfeeceed24f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "16fdcb71b5887ab145368cea470a03d5e428e701738a9534dd88959ea7300581"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e73be61cdc53c9f6ca7e1cca448e60a2ebfff526800c3811aa0643ccf8ea20b4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2c38b8e3644abedaa8bd16e157f52e79a7e39690e8f7d182230b7bef461c26f8"
+    sha256 cellar: :any_skip_relocation, ventura:        "4d4920f7072e6a520b918bed28d5f7ac89240b8c5288fb0c3e41d1fc4956127d"
+    sha256 cellar: :any_skip_relocation, monterey:       "98834b7f6fcedbeb47b4c2791d35f27215790219ff1db7bd8509e65f5e995419"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4b8986c33e6464f6381f9ac8f175d6ff0b9e014f09c95e8b1db6e7ab983d5676"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebab4e8988af4aa6eeabe3f9b56ba1fab43cb9c007d8987c37ea6908207ab38d"
   end
 
   depends_on "go"

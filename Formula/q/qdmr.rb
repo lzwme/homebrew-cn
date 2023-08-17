@@ -1,18 +1,19 @@
 class Qdmr < Formula
   desc "Codeplug programming tool for DMR radios"
   homepage "https://dm3mat.darc.de/qdmr/"
-  url "https://ghproxy.com/https://github.com/hmatuschek/qdmr/archive/refs/tags/v0.11.2.tar.gz"
-  sha256 "812e51ac9e2c4fe430673d8f7c9a2f351feb5f70275755c6da88e26bbab2b272"
+  url "https://ghproxy.com/https://github.com/hmatuschek/qdmr/archive/refs/tags/v0.11.3.tar.gz"
+  sha256 "bad499faec7533c460e72c121716141f8cca0ea613ed55143ba1780b06a49b9a"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_ventura:  "9f9e5910625df0f7897bc51cdc652e66a445293f351d0e07041009c15df06fc3"
-    sha256 arm64_monterey: "835b15ebcf170ab9fe42771785fc5a6429843ad1dde5309a1d8c0d5ac683ad5a"
-    sha256 arm64_big_sur:  "149b1a4cbcf0c671dd597a791189c2cfd9c9214f5f00290d736a065adc68002d"
-    sha256 ventura:        "1d4cf81c6a95c0877fc0bda0d7f8627005336d429ec612224cb11231cfc47750"
-    sha256 monterey:       "95e440a52946065b7aabfc640bc6c809b74b08b08a76442d24689b87ce4c8bbd"
-    sha256 big_sur:        "f3ad0bd0bc1a61f5d18a74b2f4a6faaca791b6c83524b912253da6e83bd038c8"
-    sha256 x86_64_linux:   "fe3a8652b0b152b832a5bd27de6d49a22b45371083df26f51e684c01037be032"
+    sha256 arm64_ventura:  "a3d47d1a4f74f29d7205b551e09602e0d7459677f25653fc788e3bf8fe3cbd6f"
+    sha256 arm64_monterey: "b825f13edb4f363391a354ff6c99b1f117dbc07ea222804ddeade267642fafc6"
+    sha256 arm64_big_sur:  "e24d6e79da29b3e49aa5e727b89aa6c41cfc8d87d6d731576ad643507701a867"
+    sha256 ventura:        "96a334c4673dd26658fac496c7788bb27f4efcdf0b1bf8f2b720888a435e2cbb"
+    sha256 monterey:       "7702c73879f9acdbab76b3fdfa684533f674a6b36f35ed23ae91ae1c983f73a7"
+    sha256 big_sur:        "0115dad9c598ae7fd2ebcf0127d5daaf87db0bb324698ff99dd6e8e9d3c99d86"
+    sha256 x86_64_linux:   "f63dfccf38fe9a7542be3adec7d0ca85777c566a8a92fd3a9e5f527ad8db270e"
   end
 
   depends_on "cmake" => :build

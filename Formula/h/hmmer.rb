@@ -1,8 +1,8 @@
 class Hmmer < Formula
   desc "Build profile HMMs and scan against sequence databases"
   homepage "http://hmmer.org/"
-  url "http://eddylab.org/software/hmmer/hmmer-3.3.2.tar.gz"
-  sha256 "92fee9b5efe37a5276352d3502775e7c46e9f7a0ee45a331eacb2a0cac713c69"
+  url "http://eddylab.org/software/hmmer/hmmer-3.4.tar.gz"
+  sha256 "ca70d94fd0cf271bd7063423aabb116d42de533117343a9b27a65c17ff06fbf3"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,12 +11,13 @@ class Hmmer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, ventura:      "0663d641b8c378d675b29c085eac9473db9c043a23193c46ae109316c5aced17"
-    sha256 cellar: :any_skip_relocation, monterey:     "85399c5d79f4d97c5e1755688bc29ce31985a6a489d8c859a5e080e5a564ad98"
-    sha256 cellar: :any_skip_relocation, big_sur:      "af45073d7f7d1ce1231c03381c5e50af9de1d6773762a65200a6067b84590c9d"
-    sha256 cellar: :any_skip_relocation, catalina:     "6bd9bbe8efab7ec335de773b059922574ec2a89d755afd09dc475f6b251fb886"
-    sha256 cellar: :any_skip_relocation, mojave:       "f170a16fcc45126a552ae1b0fdd3cbb25e73f77a53f10011e5c304afa69694fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3ae7f46facfc99d3247a3d30db78ea54bc79fcf255ed4c099eb4ddca023d7458"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6285afc40e6975a1c8c0def48bc621e91801995481683954e580529fe4a5ae2a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5c32f8196a92df90112d84a4478ff8621ad2682074765fb956e6eb47a2ad9a86"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "37ffb9e206f2bd9a6bcfc8ec0209ef879057293ec0cf3588c083e6948c51c548"
+    sha256 cellar: :any_skip_relocation, ventura:        "1158f5420a01acc1906a56f654c564dc1538fc7961472f4a00598875b474f7c3"
+    sha256 cellar: :any_skip_relocation, monterey:       "454e0ba7a19efebc0ec14b06d0075c377fab5ffc69c2a2fc7c54a2bac6406d76"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3fd8305a219c8084fa7fa34915fb904837b172fe7f3aafc8d6aa3c4e9a6f919d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6de4e838a141d9cd836421806beeb8fea120434756ab1897a7dcd2d6e858e0ae"
   end
 
   def install

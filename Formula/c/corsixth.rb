@@ -1,10 +1,9 @@
 class Corsixth < Formula
   desc "Open source clone of Theme Hospital"
   homepage "https://github.com/CorsixTH/CorsixTH"
-  url "https://ghproxy.com/https://github.com/CorsixTH/CorsixTH/archive/v0.66.tar.gz"
-  sha256 "9f87ff002405501b12798a715b691496775a4f9727188eeba167143816992a0f"
+  url "https://ghproxy.com/https://github.com/CorsixTH/CorsixTH/archive/v0.67.tar.gz"
+  sha256 "4e88cf1916bf4d7c304b551ddb91fb9194f110bad4663038ca73d31b939d69e3"
   license "MIT"
-  revision 2
   head "https://github.com/CorsixTH/CorsixTH.git", branch: "master"
 
   # Upstream uses GitHub releases to indicate that a version is released
@@ -16,14 +15,13 @@ class Corsixth < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "2b24d1a08a4689af712b1d7f0d71c62933fffa9eb2241afc8dd80b21a5f4f1f7"
-    sha256 arm64_monterey: "5d231145c5339c718a911244162d6fe1156dc3282faf2b0109d19d426c008ea1"
-    sha256 arm64_big_sur:  "f61fddb936ec57322c72bcd49da76a29d5493c3101175784be0044f302a04d0e"
-    sha256 ventura:        "bc39a7854e63fdebc717bf4ac83abdbffc10a59b657b70f5b81b1f73319566b7"
-    sha256 monterey:       "0192298eb91d4485932332847c8003d459b4eaa594d66720b064da7d5bc6446f"
-    sha256 big_sur:        "d8929963841a6c3be9b75aa97de70019e96a76ee1e509898b0728baaaf4187c9"
-    sha256 x86_64_linux:   "cf05cd60c46795448dbb2aa6f282cfcf58d2e71f64ab6e0d02ef844931fd66c2"
+    sha256 arm64_ventura:  "035e6944e7e1abc531de4c0cb8388926df696d453145e5bf9568b209ad6467e4"
+    sha256 arm64_monterey: "5ae127cb3138c8c4ca20c177b1b3a38ccc47d03d53a7c6d4758b7c75c2bd3e2c"
+    sha256 arm64_big_sur:  "a48d409e22e0b093779f66531d7535f298befa7c2d24699ad82e2f63d954662a"
+    sha256 ventura:        "5fc3aae89e7848b74fe5f6e1198a1dfbbc51a9b4cfe7498081fb40ec4460beb6"
+    sha256 monterey:       "2b262036861f56996d28a71db429143fe6a27fbff344ef6603d71ec683600a9c"
+    sha256 big_sur:        "25aad27558005508dfbb2f866c9757834842e340109589c37cc75ee12d895094"
+    sha256 x86_64_linux:   "2e4a1074b13130f2bfb29406c4f6b3f0d143a86be19337fea0845c634d75839f"
   end
 
   depends_on "cmake" => :build

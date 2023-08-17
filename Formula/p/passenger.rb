@@ -4,17 +4,17 @@ class Passenger < Formula
   url "https://ghproxy.com/https://github.com/phusion/passenger/releases/download/release-6.0.18/passenger-6.0.18.tar.gz"
   sha256 "dfcd9bcae364ce09b6ae59ea598f9dcad3e27a980b12c4b245acd336fa02c5a2"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/phusion/passenger.git", branch: "stable-6.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "dd73888ceedd2868558d318cc2cf0ec079f69f07b0f2ffbdeb350b28060189ac"
-    sha256 cellar: :any,                 arm64_monterey: "73d6f053e4a59d2217bce722016f80b420bcc98a11dd6a5d15bcf54e4bcbeb70"
-    sha256 cellar: :any,                 arm64_big_sur:  "ca0cfedb2065dfbe821a8577dcdfafd5ddd99de21c3820ba5b47af4f25a93910"
-    sha256 cellar: :any,                 ventura:        "1c93a629d22e23c9ed517a7ada453ee988d76f3ebb638f7a9e99fe362bc1db3a"
-    sha256 cellar: :any,                 monterey:       "ee1d40df21f929c5b4e1ddf7620da02b6b823dbebf78aa9f9c4092c5fa95f03d"
-    sha256 cellar: :any,                 big_sur:        "2bea314fe715f938911f6283ce717af0e64ea700c4c733af1756766f4f244614"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7b088e6d9f5606b47e2c7730b75e0d777f3a10a164c02beac1fa6726602ec6c"
+    sha256                               arm64_ventura:  "64261fcbe859cb04c75c09026224619ed28117c6aa6a8e67cd1c2a6df4db940e"
+    sha256                               arm64_monterey: "290fea979c89b6d82add7ec94304678689983fbbdc34e68fcbc03482d7879d9d"
+    sha256                               arm64_big_sur:  "6dd5c3a43a584ee6b9da56f29f020bb468b797472a3ea50e7b17f831ff91e20a"
+    sha256                               ventura:        "208c33acc007dec45e421f6f47ed49c3b18bd14254128a46d4ef2c7c30d29406"
+    sha256                               monterey:       "4bbae9f2d361dfc56715ba191b2c1e00d07ecbc6bb9647ba33800e688df7af9f"
+    sha256                               big_sur:        "e3a374c42b51be97f78331948a651f62ae98f384804990323769887f46af7c63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50bf68e47c7d1ad046aaf8a10a1ced178bc30b089de9b761f9b95c6956ccf03d"
   end
 
   depends_on "httpd" => :build # to build the apache2 module
@@ -93,7 +93,7 @@ class Passenger < Formula
 
     system "./bin/passenger-config", "compile-nginx-engine",
       "--nginx-tarball", buildpath/"nginx.tar.gz",
-      "--nginx-version", Formula["nginx"].version
+      "--nginx-version", Formula["nginx"].version.to_s
     cp Dir["buildout/support-binaries/nginx*"], libexec/"buildout/support-binaries", preserve: true
 
     nginx_addon_dir.gsub!(/^#{Regexp.escape Dir.pwd}/, libexec)

@@ -12,19 +12,26 @@ class Ninja < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6202ee2d9cdb003e70bd93acca07a070eb9145f0a2fe658d22ffd8119260b4bb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "daa36dfde4c007ccbc92a7b011fb21f475619ee72ee7b9fe4e287bbf69febcc7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3f6aeafb7814bf2a89527aae69ae64f47fd699c8bf0b5a4213a81d3fc01ff9c7"
-    sha256 cellar: :any_skip_relocation, ventura:        "5ed5c0e37faba8d07715936ca1f213d4c39de915aa4a2ec94fde9cfc74f30c15"
-    sha256 cellar: :any_skip_relocation, monterey:       "15b65736bfc5c619019cabb2c0f36f2b02a031de9a8bd6c148eba0f329e907bf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2ebce34e727724d140fb8c22ae3ac845c1c9e61339dc0f5a5ee13d7a04780a5e"
-    sha256 cellar: :any_skip_relocation, catalina:       "3e89d7587da0c026f88aec5490582522f9fbfee0bd0e13d1bb773724aee84c23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0124cfd2fc96edec66111ffd30f51fa02be75e01a4b930bab17c8e980b28d14"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f973424d56f32c88d2de08e26d2ab37c9966ab3f0b6ad5e8d36a953e24a1998e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9258efc6ef75aa56f68844ddf48f8ca050a91a45738c6715de73e5a2fe88dccf"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "293c707dd52fb9136ca3d95f74e63a741a975e4589c0900e9a184bfeb90d0625"
+    sha256 cellar: :any_skip_relocation, ventura:        "51b5d6787ffc70b7b5762942c9329d2341afacbc96c3035f5e46ade9b036af7c"
+    sha256 cellar: :any_skip_relocation, monterey:       "7083778d561200849c37c7763032f157c66ddfdcd9f2a813a685d1fc90ca2799"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3f625fc538dbceeecebb5088bda7b3d2daa8477adb3f9653f01e3eff76983b8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96fe0b239b3add346f8e4e2ea7e0713018f49f03e684e80706fcf4cba7b24fcb"
   end
 
   # Ninja only needs Python for some non-core functionality.
   depends_on "python@3.11" => :build
   uses_from_macos "python" => :test, since: :catalina
+
+  # Fix `source code cannot contain null bytes` for Python 3.11.4+
+  # https://github.com/ninja-build/ninja/pull/2311
+  patch do
+    url "https://github.com/ninja-build/ninja/commit/67834978a6abdfb790dac165b8b1f1c93648e624.patch?full_index=1"
+    sha256 "078c7d08278aebff346b0e7490d98f3d147db88ebfa6abf34be615b5f12bdf42"
+  end
 
   def install
     system "python3.11", "configure.py", "--bootstrap", "--verbose", "--with-python=python3"

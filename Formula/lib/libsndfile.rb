@@ -1,10 +1,9 @@
 class Libsndfile < Formula
   desc "C library for files containing sampled sound"
   homepage "https://libsndfile.github.io/libsndfile/"
-  url "https://ghproxy.com/https://github.com/libsndfile/libsndfile/releases/download/1.2.0/libsndfile-1.2.0.tar.xz"
-  sha256 "0e30e7072f83dc84863e2e55f299175c7e04a5902ae79cfb99d4249ee8f6d60a"
+  url "https://ghproxy.com/https://github.com/libsndfile/libsndfile/releases/download/1.2.2/libsndfile-1.2.2.tar.xz"
+  sha256 "3799ca9924d3125038880367bf1468e53a1b7e3686a934f098b7e1d286cdb80e"
   license "LGPL-2.1-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,13 +11,13 @@ class Libsndfile < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d47a7f33280fbfe3cb631ca61ab171a7ffaa47034d11ba319a3c3bb5b4f0f33b"
-    sha256 cellar: :any,                 arm64_monterey: "0d591252ff07fa6aac8833b67fdedc5f1b32317aec3be57db3bb3f7b80e00462"
-    sha256 cellar: :any,                 arm64_big_sur:  "0cfcd4a6778e9273fed09dd99bee8dff9912a7c3a008491fb8074d94809b8eaf"
-    sha256 cellar: :any,                 ventura:        "182c363201a8a9891ec319080b61259a0849b2cf506a0f964ae016102ade085d"
-    sha256 cellar: :any,                 monterey:       "a5bd790aa2431212bc81a2993dcff31e11a53601d4c0882c9c52ba92e6f16dd2"
-    sha256 cellar: :any,                 big_sur:        "7653baa66df98b46cb5409303f92b6abb38d994b867c27bf3b4a474bc17469e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ccaf1d11b4b2120285c628d9b6b19b1e58104d7dc5a6dada00e0eab9936bdb6"
+    sha256 cellar: :any,                 arm64_ventura:  "0d50a581032c9791f8e36c41f7284a3883b42d7f6e23175392eab1d87989e99e"
+    sha256 cellar: :any,                 arm64_monterey: "547fe6bd512625b461f9882cd5029f49bafe3de7acc998aa773ae62bd6050527"
+    sha256 cellar: :any,                 arm64_big_sur:  "75a2ee999c1663e3ea707dc472c29cfeb752f257ae5e24125726876a1667e009"
+    sha256 cellar: :any,                 ventura:        "9f646d3fd4351b4e7283cb53bdc96b74ff56e4d77aaa715f3cf1d61f3877652d"
+    sha256 cellar: :any,                 monterey:       "b1515b56788d6e87b6f56cd592a52d12344de897eda10852cbb09765eb8d0374"
+    sha256 cellar: :any,                 big_sur:        "ad1f35e4deb5c32a6ff6cb6c7a96978549d5e41f3c21fb510082120826714397"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "914371e566d295641a09cc67688dace4ea21b7a2952c8a97e7ba8e29d00358d8"
   end
 
   depends_on "cmake" => :build

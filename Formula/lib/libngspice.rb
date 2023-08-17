@@ -1,45 +1,37 @@
 class Libngspice < Formula
   desc "Spice circuit simulator as shared library"
   homepage "https://ngspice.sourceforge.io/"
+  url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41.tar.gz"
+  sha256 "1ce219395d2f50c33eb223a1403f8318b168f1e6d1015a7db9dbf439408de8c4"
   license :cannot_represent
-
-  stable do
-    url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/40/ngspice-40.tar.gz"
-    sha256 "e303ca7bc0f594e2d6aa84f68785423e6bf0c8dad009bb20be4d5742588e890d"
-
-    # Fix -flat_namespace being used on Big Sur and later.
-    patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-    end
-  end
 
   livecheck do
     formula "ngspice"
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "94c62857772079959572fb5531bfaff1760587ee6ffdeffd347a2e0ae6d0dba3"
-    sha256 cellar: :any,                 arm64_monterey: "809effc0b4ace2682dd7a7fdabcbb944a165d186371ce07caf1c9b829a28db7b"
-    sha256 cellar: :any,                 arm64_big_sur:  "1a7a9bc7bc98c0f12139ff6b1c2fe17640a80fef7dffb9ecd733083d3ef91c6c"
-    sha256 cellar: :any,                 ventura:        "a5ac75e3210913fa6e0fcd797b4e0b4751726a2c135534ed2155aca06bf64e2f"
-    sha256 cellar: :any,                 monterey:       "bd9f509b6afc0bbf420425e81ce28f91da99a6eacda3e78f786a29ad60de6808"
-    sha256 cellar: :any,                 big_sur:        "ea8c715b7aa3f06b1e00d5737a382850eb478aedd9a1b910b78b343211b83cb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8fc02026eee4e3b859bb0d931915f14b1d4972dc6e472a5bca4d03bfafc841ce"
+    sha256 cellar: :any,                 arm64_ventura:  "35e4991aa14029725d0512964f20bb798de91144d854420b414ec51227a0af00"
+    sha256 cellar: :any,                 arm64_monterey: "f0a2be752a5e2a3e1a6804ad6b065be2cfc0698ec25d54c5739955da96619ae9"
+    sha256 cellar: :any,                 arm64_big_sur:  "155f952fc22ab43f0442bda6a7fc4a0b3772daad51a92c7235975bc9ecaf0c5b"
+    sha256 cellar: :any,                 ventura:        "133060ca3e897fca4a0b43b2b461754b451611eda52ab563ccccbdb47f51d05f"
+    sha256 cellar: :any,                 monterey:       "20b974fd43b86bc618e3dc5d45d0c62898c478e05923d79dbd5b30736fd2bd65"
+    sha256 cellar: :any,                 big_sur:        "de9bdd19e9de3ddb90798e57c83393a07e5e437970780c9da875057203e34241"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "faa574b5ef1f44ad398276d866a93d83db532b75101f30ceb7a276d9ba9e08a3"
   end
 
   head do
     url "https://git.code.sf.net/p/ngspice/ngspice.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "bison" => :build
-  depends_on "flex" => :build
-  depends_on "libtool" => :build
+  uses_from_macos "bison" => :build
+  uses_from_macos "flex" => :build
 
   def install
-    system "./autogen.sh"
+    system "./autogen.sh" if build.head?
 
     args = %w[
       --with-ngshared

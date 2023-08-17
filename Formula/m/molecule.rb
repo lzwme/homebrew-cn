@@ -3,18 +3,18 @@ class Molecule < Formula
 
   desc "Automated testing for Ansible roles"
   homepage "https://molecule.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/e2/c9/91cc4a5078a2c16ccaf2a147446b594c15585fd5c4d642c55b5ee6749e5e/molecule-6.0.0.tar.gz"
-  sha256 "23d466fd36fbca0d4f8de5cd5a6132aacbe52c5252c05f37afea1eb6e5e740c4"
+  url "https://files.pythonhosted.org/packages/d1/99/ff56d9f55f81f63d965a4402bee4145d741ad451b39ae83104a1dae4b850/molecule-6.0.1.tar.gz"
+  sha256 "b2c0111d5b44a77a56ef7eb85a1c61b470165b97d11578a2a168047334c8df23"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f41745220cf8dcecaea664fdf71f8808d363574037d942dfdf7a45da5df8ec11"
-    sha256 cellar: :any,                 arm64_monterey: "c7d98c6d75bf27d83160af4d7be731e27ca5e29d73a043d205ddacf8683f1dde"
-    sha256 cellar: :any,                 arm64_big_sur:  "f8d730776ccf2c04734c6f0e635f3b827338e2bd53963c879b16f74c08f06f6b"
-    sha256 cellar: :any,                 ventura:        "942084f5166c6b17af626ffcc799a70e5b6296f6980549b579481ece88943200"
-    sha256 cellar: :any,                 monterey:       "2df291272e3a9c615193545873404b061e938638eecdda1f6d029b46a3ad40ce"
-    sha256 cellar: :any,                 big_sur:        "63a3d789503a96d0cee53600f7fbc393499b6eab0bfa9e7b41cf38f768f13ad5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3816a89a093655375e9b2d83fc0abf0e163f4f2677e9c602e603252d00633f5"
+    sha256 cellar: :any,                 arm64_ventura:  "a9bd7c0b34a0e7cfdb0c1d9117efa3a8b459be7238aea3057679885af75edd60"
+    sha256 cellar: :any,                 arm64_monterey: "e2c8e0d68c693ca76cf3f5e89781d6812d1af99457b0f7242cb208ddcbccbc1a"
+    sha256 cellar: :any,                 arm64_big_sur:  "fed9f11d0c3a8dcc916e38e1cef50524ba71d843f17611c8cb7ee8e828988cb6"
+    sha256 cellar: :any,                 ventura:        "fda606c353a10186975dc62bff642b52b55b22e3ea0f18b1240197ec10e8a175"
+    sha256 cellar: :any,                 monterey:       "18fe8dde8919371b1ed127cb6217ff6b848e707f7885c39cfcc8ac635d4c7246"
+    sha256 cellar: :any,                 big_sur:        "76769fea1081b3d153f9cfca65ec102d94039d3f4da69bb66a68266a130ba8c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7cb8bc59fedc7c8fade9a1011c9f519cf808dd065938ba40c38560e8565c812"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -39,8 +39,8 @@ class Molecule < Formula
   end
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/e9/cf/a169a1f505c15d92bcff3a08b68ed5646f0a8262c74a7a2de11ecd3efe81/ansible-core-2.15.2.tar.gz"
-    sha256 "84251b001f2f9c0914beedffcf19529e745a13108159d1fe27de9e3a6a63ac5a"
+    url "https://files.pythonhosted.org/packages/3c/4d/892b2c2211af9bea68e79b9899921cf96f370361bdd3355d1d84801d40bb/ansible-core-2.15.3.tar.gz"
+    sha256 "261bc01a15274fc5a6950d5b92b9aa1b7d7c6e8f7543c914505e5bfd9744793a"
   end
 
   resource "attrs" do

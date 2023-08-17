@@ -1,19 +1,18 @@
 class Swtpm < Formula
   desc "Software TPM Emulator based on libtpms"
   homepage "https://github.com/stefanberger/swtpm"
-  url "https://ghproxy.com/https://github.com/stefanberger/swtpm/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "ad433f9272fb794aafd550914d24cc0ca33d4652cfd087fa41b911fa9e54be3d"
+  url "https://ghproxy.com/https://github.com/stefanberger/swtpm/archive/refs/tags/v0.8.1.tar.gz"
+  sha256 "7bba52aa41090f75087034fac5fe8daed10c3e7e7234df7c9558849318927f41"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    sha256 arm64_ventura:  "a1f92979238ce96a9e1dad059c61b915f28fe2af8af61be3c4f01d9bb13b64b0"
-    sha256 arm64_monterey: "906099706defaa4b82d070d35cde96b9b716560bf8f29c5f1d18fbd7b2fa847e"
-    sha256 arm64_big_sur:  "7b4ca50ae7f28dbdad95b376d69c0c43f1dff3cc95968232fd58267a734eb054"
-    sha256 ventura:        "ec02a4188053a686607498eefbd7534ea17cc899f212e3c8c430c3ede788c30a"
-    sha256 monterey:       "63a28803f336a0d14afae5d9a541a2662ca731e6e951fb2f5d09b55037627022"
-    sha256 big_sur:        "a71339943c70c494e10817a86af73a0a9f46b1d7b95bc01ef0713a4ed6fed820"
-    sha256 x86_64_linux:   "82fa70aa54fc95945c71a9714302fd0140dd19b741e0cbd8c093ce521c6bd3d3"
+    sha256 arm64_ventura:  "6bf7f54c1532d4a14a2f4b210aeca4cb4749b642e39637cce1b749b5b324500d"
+    sha256 arm64_monterey: "dd61348ec16bc6a6479a0d1520af5c48312a964dd10fa90d1f85ad578da433a7"
+    sha256 arm64_big_sur:  "d5c938d7e41d4ff9e1eaabe10536e7cc1b0493660d0bd1b80479e3e14f9f7b76"
+    sha256 ventura:        "c023e0cc4da956913cd6cc945846c3c514eac0111b801b5f8f332bcd850a3277"
+    sha256 monterey:       "b106e386bcc25ef4f3f3157c5227d1d8ddd07d3da66a817699b987c8c166fcc1"
+    sha256 big_sur:        "1c199f5dd2b71c10663900633c6f990cb8b94e59e8bb0020dc8bc18361ee3bdd"
+    sha256 x86_64_linux:   "867a9a8dd72a24aa10930b7e838848efdac7d5b1bd9448c38c9f34d9cc0e71cc"
   end
 
   depends_on "autoconf" => :build
