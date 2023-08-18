@@ -1,18 +1,12 @@
 class Jbang < Formula
   desc "Tool to create, edit and run self-contained source-only Java programs"
   homepage "https://jbang.dev/"
-  url "https://ghproxy.com/https://github.com/jbangdev/jbang/releases/download/v0.110.0/jbang-0.110.0.zip"
-  sha256 "693376d102dd372f5590b5cda4eaca7bfb32424af51b20d6944b857b628a33fd"
+  url "https://ghproxy.com/https://github.com/jbangdev/jbang/releases/download/v0.110.1/jbang-0.110.1.zip"
+  sha256 "d81aacd8f15acc11590c6227b66a185f6c6384e3e18f5d08aaf6499ec2345c51"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "50782f3cf7fc385a6fcb916ded33bc0aa353e15fcfd456151769921bebb4bd5b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "50782f3cf7fc385a6fcb916ded33bc0aa353e15fcfd456151769921bebb4bd5b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "50782f3cf7fc385a6fcb916ded33bc0aa353e15fcfd456151769921bebb4bd5b"
-    sha256 cellar: :any_skip_relocation, ventura:        "50782f3cf7fc385a6fcb916ded33bc0aa353e15fcfd456151769921bebb4bd5b"
-    sha256 cellar: :any_skip_relocation, monterey:       "50782f3cf7fc385a6fcb916ded33bc0aa353e15fcfd456151769921bebb4bd5b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "50782f3cf7fc385a6fcb916ded33bc0aa353e15fcfd456151769921bebb4bd5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f446acd0dbbb647bc95c09615f342eb7af51591fce191c88a00f54ff5ece4d6f"
+    sha256 cellar: :any_skip_relocation, all: "b260543f24f78e12cc1390b19f8e53d1f1e0aa5974a3c90cdb2ca01f80d13e8b"
   end
 
   depends_on "openjdk"

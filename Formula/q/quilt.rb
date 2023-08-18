@@ -1,11 +1,23 @@
 class Quilt < Formula
   desc "Work with series of patches"
   homepage "https://savannah.nongnu.org/projects/quilt"
-  url "https://download.savannah.gnu.org/releases/quilt/quilt-0.67.tar.gz"
-  sha256 "3be3be0987e72a6c364678bb827e3e1fcc10322b56bc5f02b576698f55013cc2"
   license "GPL-2.0-or-later"
   revision 1
   head "https://git.savannah.gnu.org/git/quilt.git", branch: "master"
+
+  stable do
+    url "https://download.savannah.gnu.org/releases/quilt/quilt-0.67.tar.gz"
+    sha256 "3be3be0987e72a6c364678bb827e3e1fcc10322b56bc5f02b576698f55013cc2"
+
+    # This fixes 'quilt refresh' with macOS/BSD awk. In stable, 'quilt refresh'
+    # just appends the whole patch-file content to the file again and again.
+    # This commit is upstream but not included in a stable version yet.
+    # Remove on next release.
+    patch do
+      url "https://git.savannah.nongnu.org/cgit/quilt.git/patch/?id=ce9c68abb7cee0b4fb0d5a7ff7048d0ab3b726f8"
+      sha256 "5b936570d75ea30c892baa481293f1e7b9265d106304f87d05853c61e09b2522"
+    end
+  end
 
   livecheck do
     url "https://download.savannah.gnu.org/releases/quilt/"
@@ -13,14 +25,14 @@ class Quilt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7dc018071ad510cf518a434ab4111cbe7c9818ce7e128cb0db45c9b070f28999"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fc016251e7f6e00724b265762408f2f71c3414690f8c7e3e9b680af3f78240ef"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0a0dd81f8d4dadfd624bd4cdaf6521e7530c722938856ed515b25ee43d48c70b"
-    sha256 cellar: :any_skip_relocation, ventura:        "7dc018071ad510cf518a434ab4111cbe7c9818ce7e128cb0db45c9b070f28999"
-    sha256 cellar: :any_skip_relocation, monterey:       "fc016251e7f6e00724b265762408f2f71c3414690f8c7e3e9b680af3f78240ef"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0a0dd81f8d4dadfd624bd4cdaf6521e7530c722938856ed515b25ee43d48c70b"
-    sha256 cellar: :any_skip_relocation, catalina:       "d8bd4472f644e650e62b719bbae716c2f2c40c159dd6155e2d6fe74cbb02448e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a674930a170db7d564dea2f5a6cfa90efbb59dbf3d6d801f7554c6306a5905c8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "85ffd84dafa24dda7015974948cd605116a4e225221d8bd7c186c31ea755559f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "10cd41c30603f01fe89ec6ae643bc44e24bf1cd3f5f484ac2099fbb0e05dbf15"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "66e778f938ed310928846102d07d5055f32ccc16068fa4d0c985e0ada6ea5d59"
+    sha256 cellar: :any_skip_relocation, ventura:        "85ffd84dafa24dda7015974948cd605116a4e225221d8bd7c186c31ea755559f"
+    sha256 cellar: :any_skip_relocation, monterey:       "10cd41c30603f01fe89ec6ae643bc44e24bf1cd3f5f484ac2099fbb0e05dbf15"
+    sha256 cellar: :any_skip_relocation, big_sur:        "66e778f938ed310928846102d07d5055f32ccc16068fa4d0c985e0ada6ea5d59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cfac0b11eaeeb52b79ac7b5a5ccd6af8b434f963c1365c95fb9e7b125766ff6e"
   end
 
   depends_on "coreutils"

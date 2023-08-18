@@ -8,6 +8,7 @@ class PerconaToolkit < Formula
   url "https://www.percona.com/downloads/percona-toolkit/3.5.4/source/tarball/percona-toolkit-3.5.4.tar.gz"
   sha256 "822003a386593352780e5d974a53de9bc5a7e35e64f7bbe631652f153c710ef8"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
+  revision 1
   head "lp:percona-toolkit", using: :bzr
 
   livecheck do
@@ -16,13 +17,13 @@ class PerconaToolkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e0821eca0349aa75630663fd21f9fdcd712d84a9f53a01c146f4af961b307fc7"
-    sha256 cellar: :any,                 arm64_monterey: "ad46f9da71dd6d08dc11e512406f127db1f180a8eae21673674dd2838e379277"
-    sha256 cellar: :any,                 arm64_big_sur:  "14ce5916eae39f893d8f5a4a9a92fdc98cf61ea92f758402a534d6bfd7512942"
-    sha256 cellar: :any,                 ventura:        "5c4639e809bc92e8c6035a4b9a25ee4fbd206ff4e60c70dd6265a8630422f6d7"
-    sha256 cellar: :any,                 monterey:       "5e9f635c394e72054cb93ae117cca374b2404ac786f3489e30d1d13a794cf6b4"
-    sha256 cellar: :any,                 big_sur:        "b59a0a7884c6df9143b19b929345fd6f17a13a69391d33ce68054e829d58b99d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4644e831db248a11ba18dd4c8d1e71d68ae99650763c64b6f300a2992c13efb9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6f73efec47769d7b701ebda892a64b21a086de1189cdeece38a2e2328c61c84a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "611538615f6a27b335e080696b51632e28bf96f62e69d64c9ddd85c3a4071735"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4e4a7ba167d73b2cad33917512833d6c5ac295a9af6a1644a2aff09f324dab48"
+    sha256 cellar: :any_skip_relocation, ventura:        "4b57892eddf70deb84d120196cc3500840a5abda97215ca027fce5780fa627f6"
+    sha256 cellar: :any_skip_relocation, monterey:       "a3da68d2e1c2e1e3a6bdc0403a69ae53a5c89db0e2b2ae3fe61c3f89b6c95082"
+    sha256 cellar: :any_skip_relocation, big_sur:        "40a0b46b42ca674bd5081e12a830ee71c5b7f6e346f0fcff5c44f61151b9783b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "72c5307b2ece3580680883017356ff7b12788b26b9bcee8f82e4ea98c00065d2"
   end
 
   depends_on "mysql-client"

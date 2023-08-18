@@ -1,13 +1,12 @@
 class XcbProto < Formula
   desc "X.Org: XML-XCB protocol descriptions for libxcb code generation"
   homepage "https://www.x.org/"
-  url "https://xorg.freedesktop.org/archive/individual/proto/xcb-proto-1.15.2.tar.xz"
-  sha256 "7072beb1f680a2fe3f9e535b797c146d22528990c72f63ddb49d2f350a3653ed"
+  url "https://xorg.freedesktop.org/archive/individual/proto/xcb-proto-1.16.0.tar.xz"
+  sha256 "a75a1848ad2a89a82d841a51be56ce988ff3c63a8d6bf4383ae3219d8d915119"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "7aff8671654c8a9bde8b257cff31f05a6f09a322f35c16c5d985eb525faae8f2"
+    sha256 cellar: :any_skip_relocation, all: "1b6168c2541cdc925dcb4de03e071365e60ed74d39173c8bc136424b01d2ecb2"
   end
 
   depends_on "pkg-config" => [:build, :test]

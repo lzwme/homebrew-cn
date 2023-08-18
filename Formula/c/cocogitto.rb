@@ -1,18 +1,18 @@
 class Cocogitto < Formula
   desc "Conventional Commits toolbox"
   homepage "https://github.com/cocogitto/cocogitto"
-  url "https://ghproxy.com/https://github.com/cocogitto/cocogitto/archive/refs/tags/5.4.0.tar.gz"
-  sha256 "93065217191d3e1739e6bca78b0b6de7d7dd1b5334229702fff9e84162060feb"
+  url "https://ghproxy.com/https://github.com/cocogitto/cocogitto/archive/refs/tags/5.5.0.tar.gz"
+  sha256 "709c54c6c64463af607590ac970dc5a45cbcc0236a5a15d609d9a77461f11325"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d0f4ff56482a662d285b666d9030c20488466fdf27383ef8a46285c2a0b460e3"
-    sha256 cellar: :any,                 arm64_monterey: "ce1322bd55e47a79ce7d44f788c4d30f7998a3da705736ed8e0a3053023663fe"
-    sha256 cellar: :any,                 arm64_big_sur:  "3dc3218633779197ee83d3a5b5533b8f4865eef5c9ab2d664d26dfb7b4165171"
-    sha256 cellar: :any,                 ventura:        "dc004e3f1d7b8ac3c4483ac4ae265c357943383185af674b34879a33c4a4131f"
-    sha256 cellar: :any,                 monterey:       "6c63e7ef30899de9a20e12957ba90dcb32ac485a5711f4e4efb8ce3b6733d934"
-    sha256 cellar: :any,                 big_sur:        "a7aadf2c28eac11ba755aedf12df88c0364d865f0edbbfe7743cb8bcf3e4a615"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5d09607c9674b3f3c8d80edf83eb4bbc2e315278e36f0fd9ddbcc044f7abd55"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "456942c9a48b07404d21a3defd62ebb9bde0a99ef74946f8873ff0aeadf5f90f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd0eb9639bcd1250e282a490f6ce81e75bec842749db1aba5f05085df3597645"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "681033f9d26aa769f3860c43019a0be004df0f225ae6b5fa0a18bb4c6488ba50"
+    sha256 cellar: :any_skip_relocation, ventura:        "f2abd54fbe1990daaac8de69ebc40e8d9169e49fe533c0e3796f8a6babfbdb28"
+    sha256 cellar: :any_skip_relocation, monterey:       "a63c561c67150d972db228c8d2810c59727e252c4cc9a10949ee1c9c7952b8b7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c186ccbddf859470d35777e3ec60effd384586769ee4d88efe05ca7e4d820853"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d341bd7abf7da08a9b140f045a94d28cdd134809a57569b2122c27c5cd7265d"
   end
 
   depends_on "pkg-config" => :build

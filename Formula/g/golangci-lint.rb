@@ -5,16 +5,17 @@ class GolangciLint < Formula
         tag:      "v1.54.1",
         revision: "a9378d9bb87e3d5952a7586d1008c6fac3ebd764"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/golangci/golangci-lint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ccd95855d76829768363f312f7e4d16668a77ba571f5a257892d30f2620ae8e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "174a34478ed4cfbbf502aea9a4d0476242fb88e66467c78e8af3718e71f25489"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "34fcacc216b1970dc417441a961417044eceecccb27bbd0629d792b5ae1ce612"
-    sha256 cellar: :any_skip_relocation, ventura:        "b8bd2d9a88f4a5fdabdba8d2788ab686c46d5ac8daa900a24bbea5d4675cc228"
-    sha256 cellar: :any_skip_relocation, monterey:       "b2d4ed7ca30046905fd12165c628c67a2ffd654118814359a45c864bba0e95c8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fb3d27e4bf538d10d6d4cb96e2e419ed8cf7aac3f7bea985b75327ea002ccdfb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "644998665608bd3979336d598466ca18e43328ae9ffd2a096f1e1baa596fbd1f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb1e622a8570bc87cad5f24200f9df58b21c6ec988d10ebdec1d057ea6d40b97"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7939c4f0e3baf46d55dfcd0cfcd44230efb7c0bcfd565e6ea79a95e80f0e4337"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "08ec07bdc555d155ad707db1407b0537347174763514e46cf32204137f3ce02b"
+    sha256 cellar: :any_skip_relocation, ventura:        "74bacc47ae541da1caa138c83d078842e49f0d347a97e91a7dfc167a8cf6f427"
+    sha256 cellar: :any_skip_relocation, monterey:       "4d68a761fa7262b6790e1688aaa35da1dbbf8dedb49782b93ba82501e9a32ff1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0736337bf948edf1d1d3059a95bad1cd92d22b6de287146790a5d6aa0469d87b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f15abc4e5b65bdba530ed80d6282612d8491f5ab3dde47b5c32cc4fa757aacb6"
   end
 
   depends_on "go"
@@ -49,6 +50,7 @@ class GolangciLint < Formula
         for _, n := range nums {
           res += n
         }
+        clear(nums)
         return
       }
     EOS

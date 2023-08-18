@@ -1,7 +1,7 @@
 class Powerman < Formula
   desc "Control (remotely and in parallel) switched power distribution units"
-  homepage "https://code.google.com/p/powerman/"
-  license "GPL-2.0"
+  homepage "https://github.com/chaos/powerman"
+  license "GPL-2.0-or-later"
 
   stable do
     url "https://ghproxy.com/https://github.com/chaos/powerman/releases/download/v2.3.27/powerman-2.3.27.tar.gz"

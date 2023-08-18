@@ -1,18 +1,18 @@
 class Odpi < Formula
   desc "Oracle Database Programming Interface for Drivers and Applications"
   homepage "https://oracle.github.io/odpi/"
-  url "https://ghproxy.com/https://github.com/oracle/odpi/archive/v4.6.1.tar.gz"
-  sha256 "30a50f831436528dcd5c8409e0c5e493838e0626c7718c8ec2c8f3e4f2e4b4ab"
+  url "https://ghproxy.com/https://github.com/oracle/odpi/archive/v5.0.0.tar.gz"
+  sha256 "4251c8b7725b039f6ab463e4429ba8a7b6578f0aa0172403e59aac2c465ffee5"
   license any_of: ["Apache-2.0", "UPL-1.0"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "29c0aefa5550a599fc2547e5a2fa78be214880e84fc9e5a9b4c4cdab27009426"
-    sha256 cellar: :any,                 arm64_monterey: "e113d66087633f040ea6196f00674ffd0973ff033b2bdcef2bf322df1d6abda0"
-    sha256 cellar: :any,                 arm64_big_sur:  "5bd09af65c636f9f5ce46116e3dfabc8fe1d5533c72fbd479598146a4c8723fc"
-    sha256 cellar: :any,                 ventura:        "5a658bfc7ef147112a666391048fb3be2a546316df8662d3df025f99ebc2c006"
-    sha256 cellar: :any,                 monterey:       "05dfb6bfaa79212ec76f959aeeccd05aa721157431fcad4509a790f8dbf90916"
-    sha256 cellar: :any,                 big_sur:        "f4d457db5ebecd652759d18b3a050e1b76606a6515c2d9578071a32a08dac826"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5acc9a1232a419c84587cb40dcd8b5e1adc86d2415294cb7cbba03fe4773a830"
+    sha256 cellar: :any,                 arm64_ventura:  "9d9c6d3b22b66843e7ef5938db8756f1991140b04442d83edce1c00e19e0088d"
+    sha256 cellar: :any,                 arm64_monterey: "90e4d0679531b5332e974625571d257c76b0289f7beb851cdeb87f5da085a8da"
+    sha256 cellar: :any,                 arm64_big_sur:  "94f188c0aa74cc3bfb9d84a67be67e47a4b71a5d45600499bfd80521e9a2435e"
+    sha256 cellar: :any,                 ventura:        "93c96dbb7c326a5b55308bc221b5e08974bd8e9b008e92034be2903b1ebb8fd9"
+    sha256 cellar: :any,                 monterey:       "13b28ffb076250f759f57b367b5ab61fc6f4ffa926570bd4182e5a0ed19d5b89"
+    sha256 cellar: :any,                 big_sur:        "2aaba644f281d8f195c65fd13557e64992b103b62e89829f522e58b9e6ac3c3f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4816ae3e7cf5ae1cb4bb242d4ddd713b6cd30e594378b2c1581285003b890a5c"
   end
 
   def install

@@ -7,17 +7,18 @@ class Traefik < Formula
   head "https://github.com/traefik/traefik.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b99c383994f55a141e6694bcb64192b64d67a921327ad2596d2332a17fe5ddd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6b99c383994f55a141e6694bcb64192b64d67a921327ad2596d2332a17fe5ddd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6b99c383994f55a141e6694bcb64192b64d67a921327ad2596d2332a17fe5ddd"
-    sha256 cellar: :any_skip_relocation, ventura:        "d84b466de767b17a03e75db7f64ae3964232346b4b818f8d42b2da8be5f0e325"
-    sha256 cellar: :any_skip_relocation, monterey:       "84cd2ebc39550ff3d0307676e5045a9b005665095a589623cb8bc5ebf77abf50"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f0cabd8e7acd22ca82fc7be8be6eddca72c3f46e1f85afde7b0199788e3dbecb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a8e7592fcf1d1fa12266d85e7966ef2ec36bab6566e107db365e87920aa735d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9ac1ccf2902a09befe1f3f6e720486429b5b4483de407a43b16dd83153e46f55"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ac1ccf2902a09befe1f3f6e720486429b5b4483de407a43b16dd83153e46f55"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9ac1ccf2902a09befe1f3f6e720486429b5b4483de407a43b16dd83153e46f55"
+    sha256 cellar: :any_skip_relocation, ventura:        "bbdb02446db1fae950d9690c744d5ce527f7d093fc49c327b77b8e343456e511"
+    sha256 cellar: :any_skip_relocation, monterey:       "9119342da47f752c6b0bfc26404c77d305b05ad5e46f19b3be2774f5a62f8a6b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ed923e2b55eaaf7f5640e9160fabcaff20dd248a6580a2c38477f603e7a15970"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eee0330f8c7c7cc759c8834078d804a43c685ab6190bfae68dfcdff06fdd7484"
   end
 
-  depends_on "go" => :build
-  depends_on "go-bindata" => :build
+  # pin to 1.20 needed for release <= 2.10.4, which doesn't yet include https://github.com/traefik/traefik/pull/10078
+  depends_on "go@1.20" => :build
 
   def install
     ldflags = %W[
