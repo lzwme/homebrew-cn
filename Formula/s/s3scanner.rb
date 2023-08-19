@@ -1,18 +1,18 @@
 class S3scanner < Formula
   desc "Scan for misconfigured S3 buckets across S3-compatible APIs!"
   homepage "https://github.com/sa7mon/S3Scanner"
-  url "https://ghproxy.com/https://github.com/sa7mon/S3Scanner/archive/refs/tags/v3.0.0.tar.gz"
-  sha256 "bf6d40f919be2284840980ab874cd9a345c3ea948902b14504f225d9ef1af953"
+  url "https://ghproxy.com/https://github.com/sa7mon/S3Scanner/archive/refs/tags/v3.0.1.tar.gz"
+  sha256 "ef4702f0e7b2d2575febc1ebc58f9503342e65e8815ed0e7cafe532a134a5c8f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "71ae001ea9ab31eff87a50a7642ca56d0e39e991dcf5bad334777afaa317193d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "71ae001ea9ab31eff87a50a7642ca56d0e39e991dcf5bad334777afaa317193d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "71ae001ea9ab31eff87a50a7642ca56d0e39e991dcf5bad334777afaa317193d"
-    sha256 cellar: :any_skip_relocation, ventura:        "7800f52f9d4858d4c6deb66b0b330756d35fffb18a5654a4b83298a07f883cb5"
-    sha256 cellar: :any_skip_relocation, monterey:       "7800f52f9d4858d4c6deb66b0b330756d35fffb18a5654a4b83298a07f883cb5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7800f52f9d4858d4c6deb66b0b330756d35fffb18a5654a4b83298a07f883cb5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "856a2954c1c74c2d209bc99d00a7a22658b1cf55094985fccbb981a6ee009be1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4aa512469b6b7aff876e164956157ee54c89399c372f1167cd1fbd8593172db5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fa05d32e755dcc635183e99eb8e54f818129a7d44a631ffc65a9c63cdafcceeb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1bca8ab3654f3299393ac55f1a0765dca0a3caf01eba2a524381d5e115401c61"
+    sha256 cellar: :any_skip_relocation, ventura:        "9aa79ea9ceaeaef662aef154fcb919f8c3b360d46ea2e3fb47ddf4f632857520"
+    sha256 cellar: :any_skip_relocation, monterey:       "23553777b35f95aa7f7b243a4c6e5bcd83042e9c9bfa9f7810e8ac6b85346acd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0a555ed6dfff6696a94f668be5d0226dd757e9ec90663e4f9136af82d56f0e33"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3570835053f9540f07e4010438b16750fbb87ccf0e698a5fd7b848698b00fc7f"
   end
 
   depends_on "go" => :build

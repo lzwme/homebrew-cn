@@ -6,13 +6,13 @@ class HapiFhirCli < Formula
   license "Apache-2.0"
 
   # The "latest" release on GitHub is sometimes for an older major/minor, so we
-  # can't rely on it being the newest version. The formula's `stable` URL is a
-  # release archive, so it's also not appropriate to check the Git tags here.
-  # Instead we have to check tags of releases (omitting pre-release versions).
+  # can't rely on it being the newest version. However, the formula's `stable`
+  # URL is a release asset, so it's necessary to check multiple releases to
+  # identify the highest version.
   livecheck do
-    url "https://github.com/hapifhir/hapi-fhir/releases?q=prerelease%3Afalse"
-    regex(%r{href=["']?[^"' >]*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
-    strategy :page_match
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_releases
   end
 
   bottle do

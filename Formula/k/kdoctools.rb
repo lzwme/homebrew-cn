@@ -1,8 +1,8 @@
 class Kdoctools < Formula
   desc "Create documentation from DocBook"
   homepage "https://api.kde.org/frameworks/kdoctools/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.108/kdoctools-5.108.0.tar.xz"
-  sha256 "997f4b7c7fd25a18c45833becef12efbf0fe67df91249860d257122b87da237e"
+  url "https://download.kde.org/stable/frameworks/5.109/kdoctools-5.109.0.tar.xz"
+  sha256 "a44e5b5e02ba5857d9dabe391672e889a1cbcd18e4b6a0794f9778af5250e69d"
   license all_of: [
     "BSD-3-Clause",
     "GPL-2.0-or-later",
@@ -19,13 +19,13 @@ class Kdoctools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ca97024e3f6d198ace8e5e950ef74c68a8b456a4c922d59db1caf2e8b5f10da6"
-    sha256 cellar: :any,                 arm64_monterey: "03dadc0d87875fdffe9702afc0cbca3c3c881bc283abea07cfc0cecd1f957ba4"
-    sha256 cellar: :any,                 arm64_big_sur:  "d4188467d961e993c3b7bc1a9712207517ffa78fb12a93936a34e155c17658e1"
-    sha256 cellar: :any,                 ventura:        "e6fcf66f623367492362d69bcef39ba036fac3cdea538371e016621a9331724b"
-    sha256 cellar: :any,                 monterey:       "81124b776b3227766a6a9709929e9e0cfbd1bcef0b5d279b4f1fe73c985c495c"
-    sha256 cellar: :any,                 big_sur:        "a349796deb51b3d7e3bac346b514d4779dafacbdef35ec6a48a5060fb0bccf9c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0438d6cc9bfb7f2bce953857550e9d6d5e679a51763a80fc9b4376a88fc8d75e"
+    sha256 cellar: :any,                 arm64_ventura:  "d94968a3bb383df27a7df2e13e8218ffd6c311cc9b5ad83b65570bd1d1053601"
+    sha256 cellar: :any,                 arm64_monterey: "074878d7d67515d9e1b06080a1d1f0c8553a4ffbbde02dea95e52f89a70dc5ca"
+    sha256 cellar: :any,                 arm64_big_sur:  "0ff839e1f95fbdf33fc9a37e7c7307d4aeed098a5bca2994b47dc12395301675"
+    sha256 cellar: :any,                 ventura:        "5c9ff58fead157941fa154aed08fd785443a184d982dccc06b114aeda949812a"
+    sha256 cellar: :any,                 monterey:       "1ef8f8a18a21f40f4bcd1d3c1e7b438dc664b6b04505034814551e4557a23154"
+    sha256 cellar: :any,                 big_sur:        "373b3d785d9cbfef68aa24c444b5efbf630acf7e94a24f9d384271ee7a68d501"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ddffc9dd6f3e1a60a8ef661ddf392845bc4188e55e2029df01e6a860f593df1f"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -44,8 +44,8 @@ class Kdoctools < Formula
   fails_with gcc: "5"
 
   resource "URI::Escape" do
-    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.12.tar.gz"
-    sha256 "66abe0eaddd76b74801ecd28ec1411605887550fc0a45ef6aa744fdad768d9b3"
+    url "https://cpan.metacpan.org/authors/id/S/SI/SIMBABQUE/URI-5.19.tar.gz"
+    sha256 "8fed5f819905c8a8e18f4447034322d042c3536b43c13ac1f09ba92e1a50a394"
   end
 
   def install

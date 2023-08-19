@@ -8,7 +8,7 @@ class Icode < Formula
   depends_on "openjdk"
 
   def install
-    system "chmod", "+x", "icode"
+    chmod("+x", "icode")
     libexec.install Dir["*"]
     Pathname.glob("#{libexec}/icode") do |file|
       basename = "" + file.basename
@@ -16,7 +16,7 @@ class Icode < Formula
     end
   end
 
-  def test
+  test do
     system "#{bin}/icode", "--version"
   end
 end

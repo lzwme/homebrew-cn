@@ -2,19 +2,19 @@ class Tygo < Formula
   desc "Generate Typescript types from Golang source code"
   homepage "https://github.com/gzuidhof/tygo"
   url "https://github.com/gzuidhof/tygo.git",
-      tag:      "v0.2.7",
-      revision: "6cb2668c1edb239b4a1819dc07e9c1d79574982f"
+      tag:      "v0.2.8",
+      revision: "57dbd87b4a929ba2645d86b858774fbfa751dc4c"
   license "MIT"
   head "https://github.com/gzuidhof/tygo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "06840c78c9543754f717fa1a31b903ca272413ca6aad5b50627b8c28cf94fcbc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "337e88a1d23b9bc8247f7a571130e7863522ea0dcf5a1166c39e9229189ffa0b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6149ca68dc4c013c2dd6cdb0e624c0f77aef8366dafa55a6e076926811093c92"
-    sha256 cellar: :any_skip_relocation, ventura:        "6a102cd6741f65a9581443ef88fd1355529659d1438dc8aa174698f9017c4256"
-    sha256 cellar: :any_skip_relocation, monterey:       "4d6d8aab5f87ddbff1ca65706ca868d776d46b5d982fcec75e67cd9da36db8c4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0929a22e12b25b62ab6caff989c89ceeadc914fa3aa5be4af49b4e8825d2a865"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "682dac5d06ba4e8feb56174b9089e6e8dd4b44fe1b8b88138c653f546843982e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "897b683865549dd48d2188f976715a61927ab6155f855ac9ef713a35cdc45f93"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8969c7b17f9bff62e377c0a76487933199ac78c477664456df528cfb038fa6bd"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "268c60cd34f660636faad6223eb55d08f1c53d1a90d4d24a823b1a65514e6798"
+    sha256 cellar: :any_skip_relocation, ventura:        "64f69f70140f2617c43db3ca198939fa4c712fbbc8698c014792fed078d801a3"
+    sha256 cellar: :any_skip_relocation, monterey:       "77ab55a77bb5583b2cc8ea5f1ac9f48585bd72f7b54d20162c1607c004e024ef"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e0ea00c3661c02c5a2cd20b3991c10f30be8a022e0647bc729690ce38374e808"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd9e35fd677cf93a8c2e819d19ad8048d508f9fe272a222260632f6a1b133b5d"
   end
 
   depends_on "go" => [:build, :test]

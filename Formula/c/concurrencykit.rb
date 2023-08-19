@@ -6,6 +6,14 @@ class Concurrencykit < Formula
   license "BSD-2-Clause"
   head "https://github.com/concurrencykit/ck.git", branch: "master"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "e5dd4b47a7200e0179e740bfa48f34fa0194263e038020b97303e9b2f7cc93d7"
     sha256 cellar: :any,                 arm64_monterey: "b2d070df1dd5cad29f20b6a5192c2683086af490bd768a3b698e0fddb657cc2a"

@@ -1,8 +1,7 @@
 class Ftnchek < Formula
-  desc ""
-  homepage ""
+  desc "Static analyzer for Fortran 77 programs"
+  homepage "https://www.dsm.fordham.edu/~ftnchek/"
   url "https://www.dsm.fordham.edu/~ftnchek/download/ftnchek-3.3.1.tar.gz"
-  version "3.3.1"
   sha256 "d92212dc0316e4ae711f7480d59e16095c75e19aff6e0095db2209e7d31702d4"
   license ""
 
@@ -12,7 +11,9 @@ class Ftnchek < Formula
   # end
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules", "--disable-submodel", "OPTIONS=-O2"
+    # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
+    system "./configure", *std_configure_args, "--disable-silent-rules", "--disable-submodel", "OPTIONS=-O2",
+"--mandir=#{man}"
     system "make", "install"
   end
 

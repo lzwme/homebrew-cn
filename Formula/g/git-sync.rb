@@ -1,23 +1,19 @@
 class GitSync < Formula
   desc "Clones a git repository and keeps it synchronized with the upstream"
   homepage "https://github.com/kubernetes/git-sync#readme"
-  url "https://ghproxy.com/https://github.com/kubernetes/git-sync/archive/refs/tags/v3.6.9.tar.gz"
-  sha256 "e5410963a31fbdb0335a6466719bc8f4cbff542e19ac57abcd68bb287e5d5564"
+  url "https://ghproxy.com/https://github.com/kubernetes/git-sync/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "64b585b6c40446a7715c654d512ba3912b6a6669c3e93a5ea7e5cfe9f960b217"
   license "Apache-2.0"
+  head "https://github.com/kubernetes/git-sync.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cc6c15d742dd629f5c3cfb6fa393837c801dcbfe2b27a0caa43e9c46016c801c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cc6c15d742dd629f5c3cfb6fa393837c801dcbfe2b27a0caa43e9c46016c801c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cc6c15d742dd629f5c3cfb6fa393837c801dcbfe2b27a0caa43e9c46016c801c"
-    sha256 cellar: :any_skip_relocation, ventura:        "79ca4ec9bb3ff57b6a831331a4e286b891372e6e8cc362440e2745d82356ddae"
-    sha256 cellar: :any_skip_relocation, monterey:       "79ca4ec9bb3ff57b6a831331a4e286b891372e6e8cc362440e2745d82356ddae"
-    sha256 cellar: :any_skip_relocation, big_sur:        "79ca4ec9bb3ff57b6a831331a4e286b891372e6e8cc362440e2745d82356ddae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ddd31f530de2e7a704b977cf8bdb7e560bc2947a7658d1c39f9d137e7575f128"
-  end
-
-  head do
-    url "https://github.com/kubernetes/git-sync.git", branch: "master"
-    depends_on "pandoc" => :build
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "85fbd08417109e801b8a4121d97358cb70b0b8bf468bfa6f59edbf370a72d277"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4f375c3fe11ec7c9eee58dd579cfa068df87310abac85595247462d11d73c356"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b830e03c0d5cdbdd0f42cd526ff4d62fd11b6cd064c8e941ccb1201135c010e6"
+    sha256 cellar: :any_skip_relocation, ventura:        "a222bc10bc075b4521ddf811a574f6b4139ba1b2c6876866b07873288a4f83d0"
+    sha256 cellar: :any_skip_relocation, monterey:       "bb57ad2ff9ca5876a0afb4922440a69b49edbc2556eb1aa5bf28369e6728b947"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7dcdb0489499b8e39aa000484518a9efc03592dd0c33e02a4bd0463cfce5499d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea565ef9e2b43ebb1d67f921b29ce8afbb8b75cbf226caefedd7c99d5c8ad40a"
   end
 
   depends_on "go" => :build
@@ -27,24 +23,17 @@ class GitSync < Formula
   conflicts_with "git-extras", because: "both install `git-sync` binaries"
 
   def install
-    ENV["CGO_ENABLED"] = "0"
-    inreplace "cmd/#{name}/main.go", "\"mv\", \"-T\"", "\"#{Formula["coreutils"].opt_bin}/gmv\", \"-T\"" if OS.mac?
-    modpath = Utils.safe_popen_read("go", "list", "-m").chomp
-    ldflags = "-X #{modpath}/pkg/version.VERSION=v#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/#{name}"
-    # man page generation is only supported in v4.x (HEAD) at this time (2022-07-30)
-    if build.head?
-      pandoc_opts = "-V title=#{name} -V section=1"
-      system "#{bin}/#{name} --man | #{Formula["pandoc"].bin}/pandoc #{pandoc_opts} -s -t man - -o #{name}.1"
-      man1.install "#{name}.1"
-    end
-    cd "docs" do
-      doc.install Dir["*"]
-    end
+    ldflags = %W[
+      -s -w
+      -X k8s.io/git-sync/pkg/version.VERSION=v#{version}
+    ]
+    system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
   test do
-    expected_output = "fatal: repository '127.0.0.1/x' does not exist"
+    expected_output = "Could not read from remote repository"
     assert_match expected_output, shell_output("#{bin}/#{name} --repo=127.0.0.1/x --root=/tmp/x 2>&1", 1)
+
+    assert_match version.to_s, shell_output("#{bin}/#{name} --version")
   end
 end

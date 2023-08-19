@@ -2,18 +2,18 @@ class SqliteUtils < Formula
   include Language::Python::Virtualenv
   desc "CLI utility for manipulating SQLite databases"
   homepage "https://sqlite-utils.datasette.io/"
-  url "https://files.pythonhosted.org/packages/29/4d/eae906595a22c1ffa96105f6a5477cd502cc3ec1dfcabad2f5057dced4ea/sqlite-utils-3.34.tar.gz"
-  sha256 "4607683cbb32cfd4f3c63929045eaa020ab0221c5036f9bb41b7b25bc755cd23"
+  url "https://files.pythonhosted.org/packages/73/4f/a652fe1b36ac71f7f7bd85219f233d3619f327efcfe0a1c235b262a5ab53/sqlite-utils-3.35.tar.gz"
+  sha256 "8f6fe7f8d12772cd5cf4594703a98dcd0c37c0fd6820dd20541ba74b9fca363a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a4648bd291f0ab3428840f5e67801f212251f5f95766c59a25ecd0b2618373c2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "38c429ccccd02239c6b9bc0387da72534db57586277fc34be4ca0c327309f60d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7830e15e76f117a66d63623196f003edd234bc786547a6a6ec355e26e6109370"
-    sha256 cellar: :any_skip_relocation, ventura:        "a2040a1278e9091dbfeacd52c067cd99a042529a3365c1e6102a470d759b86ac"
-    sha256 cellar: :any_skip_relocation, monterey:       "3174c772dd1167e7d412389289f50d712151936438b525af2dd4d5c9b4a8e372"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0d75779a9c953cd238eb131115b38f247eb97bb68ffe4ea8605ad536d0ae7f0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6f5c304e3355d8eb5eb99912b41131851e19935377ba695f38872e2591cd97f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "34725ae562ed519bc6e326f12f1f306fa9ad922b00cc7037376e666bd3c73665"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dffabc5c395cf06f4b041bd34b13e7d216abc801c7399e668d8a9661d6558744"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5827bb2ab93ba6b17b8e68383683adb8f4c96cee9ba431781c301f7942f8db58"
+    sha256 cellar: :any_skip_relocation, ventura:        "681ca901ebf5e4f5754f3f8f610e09026e75c5b5930395496fc82ee39fc0b5df"
+    sha256 cellar: :any_skip_relocation, monterey:       "0febc2b516e39c75d3abcb93db2c6d685ab98188ff080c787b449b01d3d3f450"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d056df231fd8f5e61ae3f0998fd636f71fb8df04e5d6b41e2b8714164f62b9f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc4925dba76d62ac537f0facac529f4c4989d125f02ba705420acc17996d0815"
   end
 
   depends_on "python-tabulate"
@@ -21,8 +21,8 @@ class SqliteUtils < Formula
   depends_on "six"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
-    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "click-default-group-wheel" do

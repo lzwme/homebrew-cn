@@ -2,7 +2,7 @@ class Toot < Formula
   include Language::Python::Virtualenv
 
   desc "Mastodon CLI & TUI"
-  homepage "https://toot.readthedocs.io/en/latest/index.html"
+  homepage "https://toot.bezdomni.net/"
   url "https://files.pythonhosted.org/packages/4c/55/f7c6578f031e1c5d6605c1977ea36a9d7b89a72aef79b93fbd9719a15a74/toot-0.38.1.tar.gz"
   sha256 "be9e5479a21ea8fb13cf7ba98d542daae07fd87fb56b20b8923b69ffa521c6b2"
   license "GPL-3.0-only"

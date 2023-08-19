@@ -1,8 +1,8 @@
 class Karchive < Formula
   desc "Reading, creating, and manipulating file archives"
   homepage "https://api.kde.org/frameworks/karchive/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.108/karchive-5.108.0.tar.xz"
-  sha256 "9e9049551ec7e21dbf173e27390d5ce919d34bf31f395bebb467bfec348075e5"
+  url "https://download.kde.org/stable/frameworks/5.109/karchive-5.109.0.tar.xz"
+  sha256 "9c4a01c2e4190824e901d487aaa8ce6b2731aa8254fddd9c1a25ee1d1bbbc966"
   license all_of: [
     "BSD-2-Clause",
     "LGPL-2.0-only",
@@ -19,13 +19,13 @@ class Karchive < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "554bf87bc6c318b6508c07173bd2321ddb284e613fc3c4187e088dd4c40cd41d"
-    sha256 cellar: :any,                 arm64_monterey: "b5b2a0941728c89b62d75804f824c7597d15f2d329e3737d4a2ee27fab2ea509"
-    sha256 cellar: :any,                 arm64_big_sur:  "e67f45b726b2f62d7eda5663c6c9d30afca66d40465143fb606d8757d1296f8f"
-    sha256 cellar: :any,                 ventura:        "0d540a3bf82150b29b4ab3e717af7e07efa1cadd0ff7df5e13ff31433014bc8a"
-    sha256 cellar: :any,                 monterey:       "aadde4c78d6b00fdda38e98dff55a577aeea8a88b4693e65221b4b957b95af82"
-    sha256 cellar: :any,                 big_sur:        "3b4448543fe7dac7444a6d3b22a54157c9cadee02657d5633e07a5f7aa4ea6a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a77baea224eec7a52e2da5f845da5ffa500531d2d55a3541af8c5706a0b7f5a"
+    sha256 cellar: :any,                 arm64_ventura:  "e2d8d313a9e1b8e823194afdc1184d5c70dd11f3a71a321eebfbcdc6b8dd18b9"
+    sha256 cellar: :any,                 arm64_monterey: "d071bc0cab03b1f52404b109bb93ae616f4f7b21e13159c1e590043ab8b43150"
+    sha256 cellar: :any,                 arm64_big_sur:  "7cd7f9f03d4c5ef7dcad47e019b09b72ff1995e2b5628148629edf9251dd5eda"
+    sha256 cellar: :any,                 ventura:        "b617e61d90e8c3d9e84b8abc40badfcf3c82e13cfdf0f2cbd3e9393434ae64dd"
+    sha256 cellar: :any,                 monterey:       "9d72c864d8e0a6ec5d20216ae6578eb2dc619d78eeccfddb3c4360195fb49c61"
+    sha256 cellar: :any,                 big_sur:        "81bb6b6b85de27a0b57a365341153f3ae21b2cbbf6d2cc100b72fef215a1a3f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6384d86c851f2e889176970eb3a7b9604a7265344944ab74aa5b4aaf12354286"
   end
 
   depends_on "cmake" => [:build, :test]

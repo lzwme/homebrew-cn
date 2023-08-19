@@ -1,19 +1,19 @@
 class EasyRsa < Formula
   desc "CLI utility to build and manage a PKI CA"
   homepage "https://github.com/OpenVPN/easy-rsa"
-  url "https://ghproxy.com/https://github.com/OpenVPN/easy-rsa/archive/v3.1.5.tar.gz"
-  sha256 "9292046ceb1267cdebd3ea770c6842b5298365c167b1fae75f388e11c6bf9093"
+  url "https://ghproxy.com/https://github.com/OpenVPN/easy-rsa/archive/v3.1.6.tar.gz"
+  sha256 "82958fc66ba3825dd78113c3b3283858303d9973caff434989a4a235d47a319d"
   license "GPL-2.0-only"
   head "https://github.com/OpenVPN/easy-rsa.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a638a78e738e3fc633eb849a1bbd326f1495acb4b740be083092572625372004"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a638a78e738e3fc633eb849a1bbd326f1495acb4b740be083092572625372004"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a638a78e738e3fc633eb849a1bbd326f1495acb4b740be083092572625372004"
-    sha256 cellar: :any_skip_relocation, ventura:        "86f6e2ec6216a7c7e56f47f09360dcb1c887f0dae3cd6c9dfb003dc5ce5f4e19"
-    sha256 cellar: :any_skip_relocation, monterey:       "86f6e2ec6216a7c7e56f47f09360dcb1c887f0dae3cd6c9dfb003dc5ce5f4e19"
-    sha256 cellar: :any_skip_relocation, big_sur:        "86f6e2ec6216a7c7e56f47f09360dcb1c887f0dae3cd6c9dfb003dc5ce5f4e19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a638a78e738e3fc633eb849a1bbd326f1495acb4b740be083092572625372004"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "42813aefc0517c80c7b7efd846eede30d816cf05ee47fd49b1e6c5dfd72f8cc8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "42813aefc0517c80c7b7efd846eede30d816cf05ee47fd49b1e6c5dfd72f8cc8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "42813aefc0517c80c7b7efd846eede30d816cf05ee47fd49b1e6c5dfd72f8cc8"
+    sha256 cellar: :any_skip_relocation, ventura:        "d1cd86ad4f56473e7295ca8eb15655bd781ba7c4353d6f242a9ec57dd3960f96"
+    sha256 cellar: :any_skip_relocation, monterey:       "d1cd86ad4f56473e7295ca8eb15655bd781ba7c4353d6f242a9ec57dd3960f96"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d1cd86ad4f56473e7295ca8eb15655bd781ba7c4353d6f242a9ec57dd3960f96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42813aefc0517c80c7b7efd846eede30d816cf05ee47fd49b1e6c5dfd72f8cc8"
   end
 
   depends_on "openssl@3"

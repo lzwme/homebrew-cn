@@ -1,19 +1,19 @@
 class Luau < Formula
   desc "Fast, safe, gradually typed embeddable scripting language derived from Lua"
   homepage "https://luau-lang.org"
-  url "https://ghproxy.com/https://github.com/Roblox/luau/archive/0.590.tar.gz"
-  sha256 "942286e616edad6177f6a24a0b3bd92a8158bba9a578eb26cdee34e280f3d1ef"
+  url "https://ghproxy.com/https://github.com/Roblox/luau/archive/0.591.tar.gz"
+  sha256 "5943d66439a1902e555fc5595e28d96b8722eda4ac81c385a69b5b9d0ed60cff"
   license "MIT"
   head "https://github.com/Roblox/luau.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5da859d712648a31ca6db2297a6e742d21d918350d527f97c3468782474c3fb6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "96edaac44ec61b67c7723d5758c934125f2c8029ef3f64e60b9f88e22be8a772"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8692981b9e22421a17c6f3f66819b7b44dbee4d6edeab13191222dc1e68de6b4"
-    sha256 cellar: :any_skip_relocation, ventura:        "db68d677111dc3da2ad8b2913e936629e43a7b223f8130b6b1def45b89c66cc6"
-    sha256 cellar: :any_skip_relocation, monterey:       "ae86406b219e3280b6b3783c47b808c9f7c865523f1891b9b0394b707637b350"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b8c1b79f7df65273b225661bf060a4703768cbcdd8621cfed562cd8eb0e74cb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93c93eb8e01204d2b1071c6f5273e36a86f215d0eb18ed066cc44be06074de87"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b415a1854d8967a780ffc7144a450a17c2da37b75a586dd2223c21349e6b5df2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cdda9822b1cb8cec05da55b923e849e97c8cbbb46933547c0492b0ae1df5365d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "649ba0bf0e6674597ed13a27c509211188e6a34bdcf3e66fbbeb98f133e4c0ed"
+    sha256 cellar: :any_skip_relocation, ventura:        "9aec72f12417cc456147ccc87a5c1e4b591ad996dec274fef62935559f7ef4b0"
+    sha256 cellar: :any_skip_relocation, monterey:       "a5d830d6a59f11b371e6c503af846f23ef650af45e442991c2308628faca7eae"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5f6affb95a8ad5f53a494fa441dc6296485e396836094dbb368dea5f13698579"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f4b9e0b45ddb2fe52f2cc542e1dc0a95532deaaf05eb58edee4c90bad638097"
   end
 
   depends_on "cmake" => :build
