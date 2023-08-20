@@ -76,6 +76,13 @@ class Ffmpeg < Formula
 
   fails_with gcc: "5"
 
+  # Fix for binutils, remove with next release
+  # https://www.linuxquestions.org/questions/slackware-14/regression-on-current-with-ffmpeg-4175727691/
+  patch do
+    url "https://git.videolan.org/?p=ffmpeg.git;a=patch;h=effadce6c756247ea8bae32dc13bb3e6f464f0eb"
+    sha256 "a50d7da9870a3fd801ad3a4d13d5c9b260acb094cf8bfa4afd95a54741173a7f"
+  end
+
   def install
     args = %W[
       --prefix=#{prefix}

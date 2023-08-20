@@ -12,13 +12,14 @@ class PythonAT39 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "cde9ee24a80f10c8a1798776626916cebbb29c44a7ee15c747ef0f59a23afcd4"
-    sha256 arm64_monterey: "9811dc1844613b46ec891ce9e93ae4dbb7daa3fec4a2bd8e9e440e898d1fde75"
-    sha256 arm64_big_sur:  "d23b0f26a2de1ccd5f3b0dadd0b45d9fca295e16b3a4ed54a0d6b71935f0facc"
-    sha256 ventura:        "6b1f50029ca197a10fc838cce0d8c6ab4582288213fc1da2d3bc80370353d22a"
-    sha256 monterey:       "db100efbd01963a4bf4378dc49411bfd7bd0272fd7575caba33e7a912e1d38d1"
-    sha256 big_sur:        "6935a997cda8a3223c0099e8f4fe50ad3a539817c6c6f200b969c31938915707"
-    sha256 x86_64_linux:   "b60dc509cb0faa8219deefc9543dfe66c6f58501b0b2cc387c7557293f6f2430"
+    rebuild 1
+    sha256 arm64_ventura:  "0aa799cf1a346ec2edbffbe7247e5396e5814441f05ada070d3c58268ceb6fb6"
+    sha256 arm64_monterey: "12b408100035126bac9fdef0c271efd325f040fa7aafb055bfc7b8b9b0c56722"
+    sha256 arm64_big_sur:  "5ece4e57b4e6d8d41798bb1804ddb0595d694a17f735de28eb282d8680e573b4"
+    sha256 ventura:        "a5ee9f29ccd08dc5216ea64f0efe4f6142da8dd11032f1c01f62124fd4c46fe8"
+    sha256 monterey:       "829b4f82304f149578ee475e3c51a97a697050c7c1eb477ba82ca2d94049674f"
+    sha256 big_sur:        "1f23851ae45bb2297038715013f441e65ed05a5c871b6e26d0777828e79c9617"
+    sha256 x86_64_linux:   "ecdc2152e04a2810c4122f3e832f137c1b13085fce7318099be0831e732084d2"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -50,19 +51,24 @@ class PythonAT39 < Formula
              "bin/easy_install-3.7", "bin/easy_install-3.8"
 
   # Always update to latest release
+  resource "flit-core" do
+    url "https://files.pythonhosted.org/packages/c4/e6/c1ac50fe3eebb38a155155711e6e864e254ce4b6e17fe2429b4c4d5b9e80/flit_core-3.9.0.tar.gz"
+    sha256 "72ad266176c4a3fcfab5f2930d76896059851240570ce9a98733b658cb786eba"
+  end
+
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/b6/21/cb9a8d0b2c8597c83fce8e9c02884bce3d4951e41e807fc35791c6b23d9a/setuptools-65.6.3.tar.gz"
-    sha256 "a7620757bf984b58deaf32fc8a4577a9bbc0850cf92c20e1ce41c38c19e5fb75"
+    url "https://files.pythonhosted.org/packages/dc/98/5f896af066c128669229ff1aa81553ac14cfb3e5e74b6b44594132b8540e/setuptools-68.0.0.tar.gz"
+    sha256 "baf1fdb41c6da4cd2eae722e135500da913332ab3f2f5c7d33af9b492acb5235"
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/a3/50/c4d2727b99052780aad92c7297465af5fe6eec2dbae490aa9763273ffdc1/pip-22.3.1.tar.gz"
-    sha256 "65fd48317359f3af8e593943e6ae1506b66325085ea64b706a998c6e83eeaf38"
+    url "https://files.pythonhosted.org/packages/ba/19/e63fb4e0d20e48bd2167bb7e857abc0e21679e24805ba921a224df8977c0/pip-23.2.1.tar.gz"
+    sha256 "fb0bd5435b3200c602b5bf61d2d43c2f13c02e29c1707567ae7fbc514eb9faf2"
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/a2/b8/6a06ff0f13a00fc3c3e7d222a995526cbca26c1ad107691b6b1badbbabf1/wheel-0.38.4.tar.gz"
-    sha256 "965f5259b566725405b05e7cf774052044b1ed30119b5d586b2703aafe8719ac"
+    url "https://files.pythonhosted.org/packages/ec/34/903929e15b2657335b2ce8723d92fc804d3569b7ac0f1f8877ed1a7b2024/wheel-0.41.0.tar.gz"
+    sha256 "55a0f0a5a84869bce5ba775abfd9c462e3a6b1b7b7ec69d72c0b83d673a5114d"
   end
 
   # Link against libmpdec.so.3, update for mpdecimal.h symbol cleanup.
@@ -265,6 +271,9 @@ class PythonAT39 < Formula
     ]
     whl_build = buildpath/"whl_build"
     system python3, "-m", "venv", whl_build
+    resource("flit-core").stage do
+      system whl_build/"bin/pip3", "install", *common_pip_args, "."
+    end
     resource("wheel").stage do
       system whl_build/"bin/pip3", "install", *common_pip_args, "."
       system whl_build/"bin/pip3", "wheel", *common_pip_args,

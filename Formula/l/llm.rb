@@ -3,18 +3,18 @@ class Llm < Formula
 
   desc "Access large language models from the command-line"
   homepage "https://llm.datasette.io/"
-  url "https://files.pythonhosted.org/packages/10/5e/02a264657f6e5f13db50d8ab4ad01c1568dd753a4550a673de73ab3d1cfc/llm-0.7.tar.gz"
-  sha256 "3ee66c97a52355426fa7839b854c9bb1fd013c6cee12863650d2faf4cf8fc748"
+  url "https://files.pythonhosted.org/packages/a5/ef/88950afa00b4bb9f574edc71c5becf1a6d45180d9ab9381586a02b995c80/llm-0.7.1.tar.gz"
+  sha256 "7e148b4b2935436fef88ea1eb133335458a7f176955c347d39ef401d80f28282"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "0654f944b9d5f7bb8caa1b33cb7096418505260ba23fd3d25b219afaa9d6da84"
-    sha256 cellar: :any,                 arm64_monterey: "49243a82a0831e5507941a0bb00bae20830cb7802da6121f6b0a804b5dd92303"
-    sha256 cellar: :any,                 arm64_big_sur:  "3936a48c9aaa82793f40ad06f95ea78a68e64ca751a322878910ce6888d3f02a"
-    sha256 cellar: :any,                 ventura:        "b755dfaf72ef41e6d98ea754309d0921545988f8ccbdc811bbce516a72e382d4"
-    sha256 cellar: :any,                 monterey:       "38ea91309a71625e5d4b21e93f3a00dc5c6b2971b7065eb26346f14d8f8c1198"
-    sha256 cellar: :any,                 big_sur:        "6271fa44106b2b238ec5434904ce1ecb6013f8a40804dc03f629f98fbbd0464f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45f466e425ca4c859c2bde780ea3dcbac52ba6404b064f90b2f555eabb3a665e"
+    sha256 cellar: :any,                 arm64_ventura:  "484c7bb51bf3c89256ab08eb642daad9684d4b3c5f6a1858dd8b8e60a1c7fd37"
+    sha256 cellar: :any,                 arm64_monterey: "2c4b92ee091605384af5914ce611c12e680ea9c4db6ee85c8080f0fb07dd0c2a"
+    sha256 cellar: :any,                 arm64_big_sur:  "37c9f30c263a1227b781301481da64c87c9b36bbf012b0708ac0da03af1b29c3"
+    sha256 cellar: :any,                 ventura:        "21d803f03d0caa30e3ebdb0e7d6f423a97ab4daee19e290a9c8878d2bc12fc52"
+    sha256 cellar: :any,                 monterey:       "8635329cbd95691cecaec416714c827d8573239ff55785cfc9937c1c64f9a8e1"
+    sha256 cellar: :any,                 big_sur:        "d87a09bfdf50c8ab14ac2f2d789e03a84fee08b5baffc3cfc3b8068053343bd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b6472cad492f932027bcc31797041a9c39e654be729cfc68cc78782f3fd2f95"
   end
 
   depends_on "rust" => :build
@@ -57,8 +57,8 @@ class Llm < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
-    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "click-default-group-wheel" do
@@ -92,13 +92,13 @@ class Llm < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/0f/46/12689d28731c709890361af3414a9d0d04328043beb7c9fc4e4caa580b5c/pydantic-2.1.1.tar.gz"
-    sha256 "22d63db5ce4831afd16e7c58b3192d3faf8f79154980d9397d9867254310ba4b"
+    url "https://files.pythonhosted.org/packages/61/d3/e707508ce5b2f3015ec50db40c51f9deb1d69538d496deba27a1704dec58/pydantic-2.2.1.tar.gz"
+    sha256 "31b5cada74b2320999fb2577e6df80332a200ff92e7775a52448b6b036fce24a"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/8a/6a/2609fb28f3c289eacb2a2ddaceb7ad0d327b4b4678146573295d98f012b8/pydantic_core-2.4.0.tar.gz"
-    sha256 "ec3473c9789cc00c7260d840c3db2c16dbfc816ca70ec87a00cddfa3e1a1cdd5"
+    url "https://files.pythonhosted.org/packages/d9/5f/3db8f8cd1234ef6c3c3aeb8c3f7e3a9da62ebf178dd59d19d991d30cc987/pydantic_core-2.6.1.tar.gz"
+    sha256 "5b4efa68bcfa6f2b93624c6660b6cf4b7b4336d4225afb314254a0ed9c9f4153"
   end
 
   resource "python-dateutil" do
@@ -122,8 +122,8 @@ class Llm < Formula
   end
 
   resource "sqlite-utils" do
-    url "https://files.pythonhosted.org/packages/29/4d/eae906595a22c1ffa96105f6a5477cd502cc3ec1dfcabad2f5057dced4ea/sqlite-utils-3.34.tar.gz"
-    sha256 "4607683cbb32cfd4f3c63929045eaa020ab0221c5036f9bb41b7b25bc755cd23"
+    url "https://files.pythonhosted.org/packages/73/4f/a652fe1b36ac71f7f7bd85219f233d3619f327efcfe0a1c235b262a5ab53/sqlite-utils-3.35.tar.gz"
+    sha256 "8f6fe7f8d12772cd5cf4594703a98dcd0c37c0fd6820dd20541ba74b9fca363a"
   end
 
   resource "tqdm" do
