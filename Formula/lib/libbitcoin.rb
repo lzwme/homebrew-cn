@@ -1,10 +1,9 @@
 class Libbitcoin < Formula
   desc "Bitcoin Cross-Platform C++ Development Toolkit"
   homepage "https://github.com/libbitcoin/libbitcoin-system"
-  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-system/archive/v3.6.0.tar.gz"
-  sha256 "5bcc4c31b53acbc9c0d151ace95d684909db4bf946f8d724f76c711934c6775c"
+  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-system/archive/v3.8.0.tar.gz"
+  sha256 "b5dd2a97289370fbb93672dd3114383f30d877061de1d1683fa8bdda5309bfa2"
   license "AGPL-3.0-or-later"
-  revision 8
 
   livecheck do
     url :stable
@@ -12,14 +11,13 @@ class Libbitcoin < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "0833776d4e928b8a5bc65df18153d3f8162eaf3ab15b58e0dba8ab6f138319d8"
-    sha256 cellar: :any,                 arm64_monterey: "0060cc24d1816bfa7e5bf5c86ecc627588de61bc9f1295e684e96bee6226e60b"
-    sha256 cellar: :any,                 arm64_big_sur:  "548ad7d450169e5769ac187c406264e68aaf94564f135de119a79ad00f6621dd"
-    sha256 cellar: :any,                 ventura:        "2b14ced640cb54167f0732b94881d2ec55d5cf3cb8992865daf3988125c9aae3"
-    sha256 cellar: :any,                 monterey:       "c007205d17c148faa8770c22e0147b204aa7f29042801f42c10a9314fc10b5c6"
-    sha256 cellar: :any,                 big_sur:        "bbd766cb1ee0caffc03f6a38d5d838de9aa7db45c7cdfa4773211c37cec73595"
-    sha256 cellar: :any,                 catalina:       "701cfe443d10ff56bb8765ad0ede7658aba928e3a996213c94f26303069f9fc9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa6d0e3356cb07b7efb3a6de11b013cc4358a134d20cd0006ee35c853045b241"
+    sha256                               arm64_ventura:  "f0a93d33bc38415aaa6d6da0d135b151f43e8e9132ab1d2aa934c8112dcd950f"
+    sha256                               arm64_monterey: "3f308c8e5a160fc45a51e0affebe5dcb2382f28bbf00eaf98152374b57ed19dd"
+    sha256                               arm64_big_sur:  "e03b859c607df3b9b21a813645721a4d11b1d7923e3770ed5532551c5fe1aea9"
+    sha256                               ventura:        "389ed798a948326062f7315a8648233b62164e7d26a39e8895296bc78dff7c26"
+    sha256                               monterey:       "bea6b3ee59b7f3c4b866971d50eacfb794701331831e42235af7ecb61a27d086"
+    sha256                               big_sur:        "dde076ed507c4b564802ff9a60e896aca09fdd7ca6727b7ab105555f5ecbd7bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81ab5be0a7b329e9eff96942a69ecbbdcc4062254d8c83b6a003935cffd01659"
   end
 
   depends_on "autoconf" => :build
@@ -32,8 +30,8 @@ class Libbitcoin < Formula
   depends_on "qrencode"
 
   resource "secp256k1" do
-    url "https://ghproxy.com/https://github.com/libbitcoin/secp256k1/archive/v0.1.0.13.tar.gz"
-    sha256 "9e48dbc88d0fb5646d40ea12df9375c577f0e77525e49833fb744d3c2a69e727"
+    url "https://ghproxy.com/https://github.com/libbitcoin/secp256k1/archive/v0.1.0.20.tar.gz"
+    sha256 "61583939f1f25b92e6401e5b819e399da02562de663873df3056993b40148701"
   end
 
   def install
@@ -63,7 +61,7 @@ class Libbitcoin < Formula
   test do
     boost = Formula["boost@1.76"]
     (testpath/"test.cpp").write <<~EOS
-      #include <bitcoin/bitcoin.hpp>
+      #include <bitcoin/system.hpp>
       int main() {
         const auto block = bc::chain::block::genesis_mainnet();
         const auto& tx = block.transactions().front();
@@ -76,7 +74,7 @@ class Libbitcoin < Formula
     EOS
     system ENV.cxx, "-std=c++11", "test.cpp",
                     "-I#{boost.include}",
-                    "-L#{lib}", "-lbitcoin",
+                    "-L#{lib}", "-lbitcoin-system",
                     "-L#{boost.lib}", "-lboost_system",
                     "-o", "test"
     system "./test"

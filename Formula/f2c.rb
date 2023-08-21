@@ -1,6 +1,6 @@
 class F2c < Formula
   desc "Fortran to C translator"
-  homepage "http://www.netlib.org/f2c/"
+  homepage "https://www.netlib.org/f2c/"
   url "http://deb.debian.org/debian/pool/main/f/f2c/f2c_20200916.orig.tar.xz"
   version "20200916"
   sha256 "84673d587268506b159d1322b18a510eb2d00af3f764d180d895300dac7f31a0"

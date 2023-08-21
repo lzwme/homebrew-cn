@@ -16,4 +16,8 @@ class GitCredentialRbw < Formula
         git config --global credential.helper rbw
     EOS
   end
+
+  test do
+    assert_equal "", `#{bin}/git-credential-rbw`
+  end
 end

@@ -7,4 +7,9 @@ class GitCredentialKeepassxc < Formula
   def install
     bin.install Dir["*"]
   end
+
+  test do
+    system "#{bin}/git-credential-keepassxc", "--version"
+    assert_equal "git-credential-keepassxc #{version}\n", `#{bin}/git-credential-keepassxc --version`
+  end
 end

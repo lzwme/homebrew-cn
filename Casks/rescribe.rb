@@ -8,9 +8,8 @@ cask "rescribe" do
   homepage "https://rescribe.xyz/rescribe/"
 
   livecheck do
-    url "https://rescribe.xyz/rescribe/"
-    regex(%r{href="(\d+(?:\.\d+)+)/darwin}i)
-    strategy :page_match
+    url "https://github.com/rescribe/bookpipeline"
+    strategy :git
   end
 
   app "Rescribe.app"

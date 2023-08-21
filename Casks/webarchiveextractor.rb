@@ -6,7 +6,7 @@ cask "webarchiveextractor" do
       verified: "github.com/robrohan/WebArchiveExtractor/"
   name "WebArchiveExtractor"
   desc "Utility to un-archive .webarchive files (like when saving from Safari)"
-  homepage "http://robrohan.github.io/WebArchiveExtractor/"
+  homepage "https://robrohan.github.io/WebArchiveExtractor/"
 
   app "WebArchiveExtractor.app"
 end

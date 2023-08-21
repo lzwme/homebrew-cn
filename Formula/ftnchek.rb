@@ -10,6 +10,11 @@ class Ftnchek < Formula
   #   sha256 "cc4372b0ab7daf6170b26e35125a65601c2204e1d0060d6aaadcffb1b2f31d38"
   # end
 
+  livecheck do
+    url "https://www.dsm.fordham.edu/~ftnchek/ftp-index.html"
+    regex(/href=.*?ftnchek[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   def install
     # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
     system "./configure", *std_configure_args, "--disable-silent-rules", "--disable-submodel", "OPTIONS=-O2",

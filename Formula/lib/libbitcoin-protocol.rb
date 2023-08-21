@@ -1,20 +1,18 @@
 class LibbitcoinProtocol < Formula
   desc "Bitcoin Blockchain Query Protocol"
   homepage "https://github.com/libbitcoin/libbitcoin-protocol"
-  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-protocol/archive/v3.6.0.tar.gz"
-  sha256 "fc41c64f6d3ee78bcccb63fd0879775c62bba5326f38c90b4c6804e2b9e8686e"
+  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-protocol/archive/v3.8.0.tar.gz"
+  sha256 "654aee258d7e110cce3c445906684f130c7dc6b8be2273c8dab4b46a49d8f741"
   license "AGPL-3.0"
-  revision 8
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f29aa2e8e18875c0142fd2c0f6c92b9801161c2d5aba1bbd5f2d41f04eaf5641"
-    sha256 cellar: :any,                 arm64_monterey: "7edb84274d423491d9a08b123e41e58d8b5a9cc3a672453d4a85d79b32bbdd51"
-    sha256 cellar: :any,                 arm64_big_sur:  "d4028de413f3f0ba181267d6a069ae68c266d28e7dd3fc2751bc95a304404beb"
-    sha256 cellar: :any,                 ventura:        "9209fec88345ab55e73b1129e2ec94a02eacf672cd1aa7cf4db1bfb7c38645f8"
-    sha256 cellar: :any,                 monterey:       "c67ae588036f05668243ec8a398e13f4d75e6f79fcab811dfd88480ace00ac11"
-    sha256 cellar: :any,                 big_sur:        "b41eac4e335c9400111aaaef13b1673483bf0f0b6d73ce07302170fb449ddba4"
-    sha256 cellar: :any,                 catalina:       "b6c185248d160d72d40da00e6731425bff8874fb888000f4b479a1a64dd7497c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42ab31508a68eb374536d8545f101883c3898f16391e8b1f5f913dbb7617f0fa"
+    sha256                               arm64_ventura:  "4ee9419560f3991033fc7977b4b1b9a197deb90830efef19747536a2814f3d07"
+    sha256                               arm64_monterey: "aa558d64c9b046e5ae2a7d271533a30e3fd898429591978210649110ddc8c19d"
+    sha256                               arm64_big_sur:  "55ea861126ebcf7607d9cd82c209e6ede5bd3f36902f47f4f74471185f1e5104"
+    sha256                               ventura:        "1460be17264c4610beb15c19e60d27283f359e6e805c07b76177f400061c2386"
+    sha256                               monterey:       "41b79e8ceeec9e83affdcfb8980f0626c00b1769f3d7d236109ee866c8c124fe"
+    sha256                               big_sur:        "2add9dbb1ae40c821299924d43ad48cff33643ee1848f57941446b1d4d8fb6bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "266a10fa688b253db2c329e9e98235d983995dca088c365b25e060b5c427c4f5"
   end
 
   depends_on "autoconf" => :build
@@ -51,7 +49,7 @@ class LibbitcoinProtocol < Formula
     EOS
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test",
                     "-I#{boost.include}",
-                    "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin",
+                    "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin-system",
                     "-L#{lib}", "-lbitcoin-protocol",
                     "-L#{boost.lib}", "-lboost_system"
     system "./test"

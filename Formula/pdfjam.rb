@@ -4,7 +4,7 @@ class Pdfjam < Formula
   homepage "https://github.com/rrthomas/pdfjam"
   url "https://ghproxy.com/https://github.com/rrthomas/pdfjam/releases/download/v3.07/pdfjam-3.07.tar.gz"
   sha256 "00dcd37db9a7f6246da225be31724faf3616db4f78a3dba521682d54d1e9eba5"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   def install
     bin.install Dir["bin/*"]

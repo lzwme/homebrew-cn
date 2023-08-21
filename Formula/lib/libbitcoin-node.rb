@@ -1,20 +1,18 @@
 class LibbitcoinNode < Formula
   desc "Bitcoin Full Node"
   homepage "https://github.com/libbitcoin/libbitcoin-node"
-  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-node/archive/v3.6.0.tar.gz"
-  sha256 "9556ee8aab91e893db1cf343883034571153b206ffbbce3e3133c97e6ee4693b"
+  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-node/archive/v3.8.0.tar.gz"
+  sha256 "49a2c83a01c3fe2f80eb22dd48b2a2ea77cbb963bcc5b98f07d0248dbb4ee7a9"
   license "AGPL-3.0"
-  revision 2
 
   bottle do
-    sha256 arm64_ventura:  "cc194f6874baa26fce10fb3b58b0ab520d0d6e3905f9fc21efaca2cc6f380393"
-    sha256 arm64_monterey: "0fbb1c20470a60232647651c29ad41b547b8a162d5f6f59d64bacec746aa8a1a"
-    sha256 arm64_big_sur:  "3ca1bcd8c32bfa5d8e3a5327d9f8358df52fecdf812fb3087de7892b6d0dec03"
-    sha256 ventura:        "d2051f6d157cef0abe11c17b479e8c04f7f47b283412b76034a93b749f24249b"
-    sha256 monterey:       "a5571bba28d70456ccc9305288dbd732026ab47c10617fee089a96edbaf04ec3"
-    sha256 big_sur:        "9a5602620a3379a70257c8982f18c93b17de661201100e612e0c47276ad7b1ba"
-    sha256 catalina:       "858904050abfa1fb52dfc0f4e2c3cd87938824ad41582d439c0d411817b00213"
-    sha256 x86_64_linux:   "d1c90e07fdb6ffc78954bdba380dd7930a3acd243047a8f470a4f1a2fb792610"
+    sha256 arm64_ventura:  "86822901903e146be4fb9399f903cf1059731f1d0a086500436d64dea831cbad"
+    sha256 arm64_monterey: "9a33df34d698757e0b61ee039c11195ab1aeba642bb9b6c1c86a8c35f9e64a33"
+    sha256 arm64_big_sur:  "4f7509df7d2794e50bd619601f325320aa74b2e1117ae2c69bf72c22974faf35"
+    sha256 ventura:        "7235300573e4a21004a041919fed4fd315c049640009831d8bb22aadbd8d2d51"
+    sha256 monterey:       "42bf7aa7ab02771e21eb738911c790770e6adee737bdc345d7be9f5944e2dc26"
+    sha256 big_sur:        "16f460f7b71ba5b2aa3ffd22a2b462a3be06700689ea7c0f3916db7da0c83e72"
+    sha256 x86_64_linux:   "6e805714d022543fb058f87ecf8c2d464bc65a186beb217117f1941c08b14d2b"
   end
 
   depends_on "autoconf" => :build
@@ -53,7 +51,7 @@ class LibbitcoinNode < Formula
     EOS
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test",
                     "-I#{boost.include}",
-                    "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin",
+                    "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin-system",
                     "-L#{lib}", "-lbitcoin-node",
                     "-L#{boost.lib}", "-lboost_system"
     system "./test"

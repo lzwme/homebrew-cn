@@ -6,6 +6,11 @@ class Qemu < Formula
   license "GPL-2.0-only"
   head "https://git.qemu.org/git/qemu.git", branch: "master"
 
+  livecheck do
+    url "https://www.qemu.org/download/"
+    regex(/href=.*?qemu[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     rebuild 1
     sha256 arm64_ventura:  "73592702d0a676fa2cc69cd456ff580531f7d01fbca2c55bb41dc3f87056efa6"

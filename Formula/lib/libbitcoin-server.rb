@@ -1,20 +1,18 @@
 class LibbitcoinServer < Formula
   desc "Bitcoin Full Node and Query Server"
   homepage "https://github.com/libbitcoin/libbitcoin-server"
-  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-server/archive/v3.6.0.tar.gz"
-  sha256 "283fa7572fcde70a488c93e8298e57f7f9a8e8403e209ac232549b2c433674e1"
+  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-server/archive/v3.8.0.tar.gz"
+  sha256 "17e6f72606a2d132a966727c87f8afeef652b0e882b6e961673e06af89c56516"
   license "AGPL-3.0"
-  revision 8
 
   bottle do
-    sha256 arm64_ventura:  "88cd9412ba4ba25d1234f342eaaba0240448783c420b9da55a60534ec2bf07a9"
-    sha256 arm64_monterey: "4868aed6b0d00889b48e51756dc2c1e4dc83a84813121c0ae34bc9ba7b32b69e"
-    sha256 arm64_big_sur:  "98c8f92377aeda734d266bab207245c01ebc9cf3dac2b3f7522f561aa8c3dfdb"
-    sha256 ventura:        "2faa22142ff16be03d52ccbe3c819682e0427eccede453d1032a23ff501f45ee"
-    sha256 monterey:       "eed7d99d4a8d2d99aae78790f15428c43434272ddafe624f44f277f7d9f69922"
-    sha256 big_sur:        "f288f34e1f92e3dab7396b5a23129119c5be203f57e05531a99bdb72466e09f0"
-    sha256 catalina:       "f91b158f0e650cd12dfc48afd2bfa9f3df331a2029397a1037cd05a8bc59cdd2"
-    sha256 x86_64_linux:   "0036af164e55dc5ae5fa0e09f0a02c9bf553efc52757bd4d7b9f94290b99cfce"
+    sha256 arm64_ventura:  "082bea2bfaedf6c6f3a4ee4a12645b75aedfced2341f513042a99517e06ab8d5"
+    sha256 arm64_monterey: "4501c991f8f454465b21b3930538052899fd767cf831e5b3812cc8c918a04e4e"
+    sha256 arm64_big_sur:  "e4a843fb4a7bdf3c06f10143d25d96a2715dfb96e160adbc703180ef6956c4c8"
+    sha256 ventura:        "757d05c4ed7198ae2229d73e7ed777f5773883d6ba64b659e98f930765d69b47"
+    sha256 monterey:       "14afab6b6ff11bc0bcc4022e3dbcd736d83fcaaa182ba743328d49478c3ef96b"
+    sha256 big_sur:        "e06cc874112bc7a00e4f8ef8d64d85932678704d841aa506cdf7c1782e79f068"
+    sha256 x86_64_linux:   "3ce85aab0f43c4a663cf955ea4b0375f3ce129fc921479d4434efca41c02192b"
   end
 
   depends_on "autoconf" => :build
@@ -52,7 +50,7 @@ class LibbitcoinServer < Formula
     EOS
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test",
                     "-I#{boost.include}",
-                    "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin",
+                    "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin-system",
                     "-L#{lib}", "-lbitcoin-server",
                     "-L#{boost.lib}", "-lboost_system"
     system "./test"

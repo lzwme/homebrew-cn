@@ -5,7 +5,7 @@ class PdfjamExtras < Formula
   version "2019-11-18"
   sha256 "f78ebba20df8a1c2a2f1ad374b3c5ad9c5e43da707b091767b81c5bdd3670ad8"
   license "GPL-2.0"
-  head "https://github.com/rrthomas/pdfjam-extras.git"
+  head "https://github.com/rrthomas/pdfjam-extras.git", branch: "master"
 
   depends_on "pdfjam"
 

@@ -5,22 +5,24 @@ class VulkanValidationlayers < Formula
   head "https://github.com/KhronosGroup/Vulkan-ValidationLayers.git", branch: "main"
 
   stable do
-    url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/refs/tags/v1.3.250.tar.gz"
-    sha256 "1c3609321c1167f9af5d3687a443885e2cb1e8e5150df16356200e84bef685f3"
+    url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/refs/tags/v1.3.261.tar.gz"
+    sha256 "ab769d9d7550e1636c9309387a7e53be5ba89f0b19f810bb40caa1b6eaefe8ee"
 
-    # upstream commit ref, https://github.com/KhronosGroup/SPIRV-Tools/commit/d4c0abdcad60325a2ab3c00a81847e2dbdc927a2
-    # remove in next release
-    patch :DATA
+    # revert vulkan-utility-libraries dependency, remove in next release
+    patch do
+      url "https://github.com/KhronosGroup/Vulkan-ValidationLayers/commit/e6bdb8d71409a96a4174589ea195d0dc1e920625.patch?full_index=1"
+      sha256 "5bc8e5bbae533f4d2586055fd4eccc93c2e4d7bccf5faea1fca8bae9f332246c"
+    end
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a344fc4bccbf4505caa2a700a21f46e147a9e79f6876809b40967fb169d8fd37"
-    sha256 cellar: :any,                 arm64_monterey: "a2744ddfcec7ddc534e933aec54a3a361bd7c78a5943db20ff5c566400341bb1"
-    sha256 cellar: :any,                 arm64_big_sur:  "9931def5297dce6d87327d64093555a060132ba7d98d54da3e8afba43c250fb0"
-    sha256 cellar: :any,                 ventura:        "3f6dc678afd4b1355875746df32e6bcc7eda0c83e7d8a3b92e573564f18af2b5"
-    sha256 cellar: :any,                 monterey:       "65c790510017b6ae55e0666a26b00bcbc52b75c9ecc1ed2d420bc3abe7d5d64b"
-    sha256 cellar: :any,                 big_sur:        "6b3a8ab678a607bd891ab85acece74fd8f91139de5812ebf70fe49b19eee4067"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e834d1d737fbc101412b4c784435bc3ae1611deee28a3c7299559453efee41f5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f37fe2ee839a27f8f4133a2c3e789a438b79853f40f476d5435db15b88668ab6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "21430d3ef63936fff9b4cebaefb99c7d83afd8faee28c516acf34fa49f481cd9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "38fcd518903434385edcaa079c188b18c4ac1d328f9d3c1122eaaf0b8aa85925"
+    sha256 cellar: :any_skip_relocation, ventura:        "3a1898951bfd3aafc075080a28f827e31692f2723291c0a28cce4bc5e17720f8"
+    sha256 cellar: :any_skip_relocation, monterey:       "3d9f8172eae3fc6ddc1a0a745424c3f1e1cdaa72c85f9a9c694eaeb3a7acccb3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "37649c4755647960b8ea4c5251a2c2c9f75c13fdd1d9b475304c402df0d91b44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "304b76b07443da42bbd9590d719233665405123c58eeb44a68d64c78f6b00b0b"
   end
 
   depends_on "cmake" => :build
@@ -30,7 +32,6 @@ class VulkanValidationlayers < Formula
   depends_on "vulkan-tools" => :test
   depends_on "glslang"
   depends_on "spirv-headers"
-  depends_on "spirv-tools"
   depends_on "vulkan-headers"
 
   on_linux do
@@ -41,11 +42,28 @@ class VulkanValidationlayers < Formula
     depends_on "wayland" => :build
   end
 
+  # https://github.com/KhronosGroup/Vulkan-ValidationLayers/blob/v#{version}/scripts/known_good.json#L57
+  resource "SPIRV-Tools" do
+    url "https://github.com/KhronosGroup/SPIRV-Tools.git",
+        revision: "e553b884c7c9febaa4e52334f683641fb5f196a0"
+  end
+
   def install
+    resource("SPIRV-Tools").stage do
+      system "cmake", "-S", ".", "-B", "build",
+                      "-DSPIRV-Headers_SOURCE_DIR=#{Formula["spirv-headers"].prefix}",
+                      "-DSPIRV_WERROR=OFF",
+                      "-DSPIRV_SKIP_TESTS=ON",
+                      "-DSPIRV_SKIP_EXECUTABLES=ON",
+                      *std_cmake_args(install_prefix: buildpath/"third_party/SPIRV-Tools")
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
+    end
+
     args = [
       "-DGLSLANG_INSTALL_DIR=#{Formula["glslang"].prefix}",
       "-DSPIRV_HEADERS_INSTALL_DIR=#{Formula["spirv-headers"].prefix}",
-      "-DSPIRV_TOOLS_INSTALL_DIR=#{Formula["spirv-tools"].prefix}",
+      "-DSPIRV_TOOLS_INSTALL_DIR=#{buildpath}/third_party/SPIRV-Tools",
       "-DVULKAN_HEADERS_INSTALL_DIR=#{Formula["vulkan-headers"].prefix}",
       "-DBUILD_LAYERS=ON",
       "-DBUILD_LAYER_SUPPORT_FILES=ON",
@@ -78,23 +96,9 @@ class VulkanValidationlayers < Formula
     expected = <<~EOS
       Instance Layers: count = 1
       --------------------------
-      VK_LAYER_KHRONOS_validation Khronos Validation Layer \\d\\.\\d\\.\\d+  version 1
+      VK_LAYER_KHRONOS_validation Khronos Validation Layer #{version}  version 1
     EOS
     actual = shell_output("vulkaninfo --summary")
-    assert_match Regexp.new(expected), actual
+    assert_match expected, actual
   end
 end
-
-__END__
-diff --git a/layers/gpu_validation/gpu_validation.h b/layers/gpu_validation/gpu_validation.h
-index 8183fdf..0f2ea6b 100644
---- a/layers/gpu_validation/gpu_validation.h
-+++ b/layers/gpu_validation/gpu_validation.h
-@@ -330,3 +330,7 @@ class GpuAssisted : public GpuAssistedBase {
-     bool descriptor_indexing = false;
-     bool buffer_device_address;
- };
-+
-+namespace spvtools {
-+    static const int kDebugInputBindlessMaxDescSets = 32;
-+}

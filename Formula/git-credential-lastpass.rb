@@ -17,4 +17,9 @@ class GitCredentialLastpass < Formula
         git config --global credential.helper "lastpass"
     EOS
   end
+
+  test do
+    system "#{bin}/git-credential-lastpass", "--version"
+    assert_equal "", `#{bin}/git-credential-lastpass --version`
+  end
 end
