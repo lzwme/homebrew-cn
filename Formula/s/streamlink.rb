@@ -3,20 +3,19 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/41/71/1349b3230de702b65e792718b193102b065209c8332799743fd50d7a569f/streamlink-6.0.1.tar.gz"
-  sha256 "d10a6297f6e1d85f96686d33bf8cb1133c7a7b57efdedf7179dfa7853f8d0bb5"
+  url "https://files.pythonhosted.org/packages/1c/90/566646a689c4533204f00885928892cdf63bac21cde55bbd325b9118401f/streamlink-6.1.0.tar.gz"
+  sha256 "170b2027d4d8073087c58941c31aec384cbf9901fcb401f824e919ae387c4385"
   license "BSD-2-Clause"
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "145780f4b2c92fe55ba69d1b6d3260557f67e8795980264fa4e71f4bc8daf7ab"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "26aedc94db4968d75e9952ab5add7830bb52316013078450a11564199cf73a49"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7bb6cf612c99e83cfb9ff08f8ceb11e7411eafcbd32d40a41080f0fdfd195c16"
-    sha256 cellar: :any_skip_relocation, ventura:        "e54ca5a9d2c669714866d28f6990212aebd2c6955d60ab7d6644274004e3d28b"
-    sha256 cellar: :any_skip_relocation, monterey:       "7ba703f675bc10137b416228c1b05a9f7ad96073527910bd6698ff75af5a9eb8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "21b11e0e2f795734246c18c2752dd42a38c10d4d2e40249aa4915e5f23f49f3c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e97d43a3fba0f6edfa909ff1381df513c1bc6213bdf733ce574e194c0edd2bd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "502c5dc6c004455927f699d17107d09ab03a9d8198f4723c2746bd41af4e8c10"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ad374ad661aa296373dea0f2f2461c02ad7c6d0599264ad2e35a86495a720060"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2a4718a1abcf61ca60260890e79a7580f9c24f18e9d815528d5aed32b249c47a"
+    sha256 cellar: :any_skip_relocation, ventura:        "bbf8bcf0d7811c09565ed60aabb98164305ad5c2435a37bbd164673144130ec1"
+    sha256 cellar: :any_skip_relocation, monterey:       "7883dcfbbb2fd6c8ee2a20b9ca06f076014244db60542641bd06b695b4b7f5e8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8b7e653429e81110fba003dfb636f8b6611b12c915d52a638e2ba9d3c0120d54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05f2aea8472a6bbbd68eb66b359c364b92535e6bb350508bbce7a651ad553485"
   end
 
   depends_on "libxml2" # https://github.com/Homebrew/homebrew-core/issues/98468
@@ -43,8 +42,8 @@ class Streamlink < Formula
   end
 
   resource "exceptiongroup" do
-    url "https://files.pythonhosted.org/packages/55/09/5d2079ecab0ca483e527a1707a483562bdc17abf829d3e73f0c1a73b61c7/exceptiongroup-1.1.2.tar.gz"
-    sha256 "12c3e887d6485d16943a309616de20ae5582633e0a2eda17f4e10fd61c1e8af5"
+    url "https://files.pythonhosted.org/packages/c2/e1/5561ad26f99b7779c28356f73f69a8b468ef491d0f6adf20d7ed0ac98ec1/exceptiongroup-1.1.3.tar.gz"
+    sha256 "097acd85d473d75af5bb98e41b61ff7fe35efe6675e4f9370ec6ec5126d160e9"
   end
 
   resource "h11" do
@@ -132,8 +131,8 @@ class Streamlink < Formula
   end
 
   test do
-    system "#{bin}/streamlink", "https://youtu.be/he2a4xK8ctk", "360p", "-o", "video.mp4"
-    assert_match "video.mp4: ISO Media, MP4 v2", shell_output("file video.mp4")
+    system "#{bin}/streamlink", "https://youtu.be/he2a4xK8ctk", "audio_mp4a", "-o", "video.mp4"
+    assert_match "video.mp4: ISO Media, MPEG v4 system", shell_output("file video.mp4")
 
     url = OS.mac? ? "https://ok.ru/video/3388934659879" : "https://www.youtube.com/watch?v=pOtd1cbOP7k"
     output = shell_output("#{bin}/streamlink --ffmpeg-no-validation -l debug '#{url}'")

@@ -19,6 +19,9 @@ class Wellington < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1efe7a942728970650560a933ba9344e79cf5a63e96c18553cef995ab77445ef"
   end
 
+  # upstream go1.20 support report, https://github.com/wellington/wellington/issues/223
+  deprecate! date: "2023-08-20", because: :unmaintained
+
   # Bump to 1.20 on the next release, if possible.
   depends_on "go@1.19" => :build
 

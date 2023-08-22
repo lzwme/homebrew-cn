@@ -5,6 +5,7 @@ class Sqlite < Formula
   version "3.42.0"
   sha256 "7abcfd161c6e2742ca5c6c0895d1f853c940f203304a0b49da4e1eca5d088ca6"
   license "blessing"
+  revision 1
 
   livecheck do
     url :homepage
@@ -15,13 +16,13 @@ class Sqlite < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c9b11a8dd4fd8996ba24018f60c21ccf494bcc8525cc5669ae09d73d096f5ed3"
-    sha256 cellar: :any,                 arm64_monterey: "98b205e8fea377e8be33e7164954d34897bb8e272a2bf4747fa18f5df3f7b419"
-    sha256 cellar: :any,                 arm64_big_sur:  "229f5e3a47df464bfec8e6f59e970f7a2755c9b948e0fb81a6bd27aa070aa769"
-    sha256 cellar: :any,                 ventura:        "4bbf2bd9382c9f257712e60ff36fcddc7de69fcb95a06006558673f6985da85d"
-    sha256 cellar: :any,                 monterey:       "ab99129920b56e88f1d89bbcc07bb3f3278575029213fb070f4220b5bcd9f8d9"
-    sha256 cellar: :any,                 big_sur:        "f0ccc2c64cc793a160be644fbb654074f42750735488702169a1353d3efc1326"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8226fd550248842674a281032e758b0f2fd1f0d7dd543f6eb78512b1edf00ad5"
+    sha256 cellar: :any,                 arm64_ventura:  "9fd1693db4fc5e3c2dbe0d836e9a5c6199beceb1dafac2e4eae250e848cfb1c8"
+    sha256 cellar: :any,                 arm64_monterey: "a507945a01732e928fc4fb9866d96bba234184ec380e938b6663c601c7509639"
+    sha256 cellar: :any,                 arm64_big_sur:  "e78fc4425fe78bf1a9cc60d1987566c69af7cf46eb9230143329e096b9e6c5a1"
+    sha256 cellar: :any,                 ventura:        "23b4e8610b9a6f6ddd6457e015b49ec8c9562ae5fb3a259fb02da78365ad293a"
+    sha256 cellar: :any,                 monterey:       "1fddb3a8bc04073da2177031e9fd0ec68030aa3913aee80aa23d58f2f7dacc11"
+    sha256 cellar: :any,                 big_sur:        "4a6bec3a76d437b72e13ed44aabfa1d982d623cfb8d780c1758d2958f5cc5c98"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2baf2a34e6843ec8bf5cecd715a1dc95e858b4695f4669dae124d532234f1d8"
   end
 
   keg_only :provided_by_macos
@@ -31,13 +32,17 @@ class Sqlite < Formula
   uses_from_macos "zlib"
 
   def install
-    ENV.append "CPPFLAGS", "-DSQLITE_ENABLE_COLUMN_METADATA=1"
     # Default value of MAX_VARIABLE_NUMBER is 999 which is too low for many
     # applications. Set to 250000 (Same value used in Debian and Ubuntu).
-    ENV.append "CPPFLAGS", "-DSQLITE_MAX_VARIABLE_NUMBER=250000"
-    ENV.append "CPPFLAGS", "-DSQLITE_ENABLE_RTREE=1"
-    ENV.append "CPPFLAGS", "-DSQLITE_ENABLE_FTS3=1 -DSQLITE_ENABLE_FTS3_PARENTHESIS=1"
-    ENV.append "CPPFLAGS", "-DSQLITE_ENABLE_JSON1=1"
+    ENV.append "CPPFLAGS", %w[
+      -DSQLITE_ENABLE_COLUMN_METADATA=1
+      -DSQLITE_ENABLE_FTS3=1
+      -DSQLITE_ENABLE_FTS3_PARENTHESIS=1
+      -DSQLITE_ENABLE_JSON1=1
+      -DSQLITE_ENABLE_RTREE=1
+      -DSQLITE_ENABLE_UNLOCK_NOTIFY=1
+      -DSQLITE_MAX_VARIABLE_NUMBER=250000
+    ].join(" ")
 
     args = %W[
       --prefix=#{prefix}

@@ -3,19 +3,19 @@ class Vulture < Formula
 
   desc "Find dead Python code"
   homepage "https://github.com/jendrikseipp/vulture"
-  url "https://files.pythonhosted.org/packages/f8/12/a4f70dc86015a76d66785e2dbc3a03e00fb6ff70a4d039dd8ed14a9df03a/vulture-2.8.tar.gz"
-  sha256 "393293f183508064294b0feb4c8579e7f1f27e5bf74c9def6a3d52f38b29b599"
+  url "https://files.pythonhosted.org/packages/4c/5d/4734f4808f63e8b7897cef965a5413e94845eafbc256f70126c0c462a84d/vulture-2.9.1.tar.gz"
+  sha256 "b6a2aa632b6fd51488a8eeac650ab4a509bb1a032e81943817a8a2e6a63a30b3"
   license "MIT"
   head "https://github.com/jendrikseipp/vulture.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "28808ad1470a0e3cadfcb63cf68c82921e6fda0c04789454890428b314cfcd89"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cabacd95b9c2e0bac4a37b4459bf310363a0b169dab7553aa3abf2368b5a8785"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e8eb7af91c80458509ff157b57f50d0297d638b14979878664257d53c5135e57"
-    sha256 cellar: :any_skip_relocation, ventura:        "225a367c4a920558f7b33772c5ef35aab23bedb44dffcd42870746794d97100d"
-    sha256 cellar: :any_skip_relocation, monterey:       "3e20bcd278282381534e85376fb858417953066f78d1f05e9e9c7357075c53d6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e6e8de8bb8050d860550b864a0ff6795ca2b34d25ae5e244dc47c4da768055ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef1619b88935c28ab2eb778554513f85b83da6df870fe52a43aaf08be202d5fc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "810b7b778416c4e803aeff1b667136c07ed49028aea3e4a60ea949f7203c36a2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f8c4d69446eb8399b5946a674a173a5385d18eb8c1905bb841276ef6abcadc7d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0e280dc6445c2a24fb8bd88a44ea672eda8d758f33387205ca54016040d85069"
+    sha256 cellar: :any_skip_relocation, ventura:        "509e428b7465d021fe292aaa04b1436c47ca5b0cc8e380f6678e5a0938f719b1"
+    sha256 cellar: :any_skip_relocation, monterey:       "9e517bb3ac2b5e594cdadb02cb315efc76aa30b23f0d8cb247e13716b2ad6437"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9b8be202d1fcce0c4527f2943c630b354ffc11509098e70f86efb0a05ed3710e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad9d61521203bae3f98d338df3ff10cd1f9f46bc12996f90394863d0aff5432a"
   end
 
   depends_on "python-toml"
@@ -27,8 +27,9 @@ class Vulture < Formula
 
   test do
     assert_equal "vulture #{version}\n", shell_output("#{bin}/vulture --version")
+
     (testpath/"unused.py").write "class Unused: pass"
-    assert_match "unused.py:1: unused class 'Unused'", shell_output("#{bin}/vulture #{testpath}/unused.py", 1)
+    assert_match "unused.py:1: unused class 'Unused'", shell_output("#{bin}/vulture #{testpath}/unused.py", 3)
     (testpath/"used.py").write "print(1+1)"
     assert_empty shell_output("#{bin}/vulture #{testpath}/used.py")
   end

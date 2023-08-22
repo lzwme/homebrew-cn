@@ -1,8 +1,8 @@
 class Nqp < Formula
   desc "Lightweight Raku-like environment for virtual machines"
   homepage "https://github.com/Raku/nqp"
-  url "https://ghproxy.com/https://github.com/Raku/nqp/releases/download/2023.06/nqp-2023.06.tar.gz"
-  sha256 "ddcb92f29180699ebaf0a7faa46ad4ac902f9c8826d7476d9c6f71176cadd7d3"
+  url "https://ghproxy.com/https://github.com/Raku/nqp/releases/download/2023.08/nqp-2023.08.tar.gz"
+  sha256 "a0774ffa60b2d0f12f52ac433501ba4d5d4fafec8b3cf2baab8e0ac817455a25"
   license "Artistic-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Nqp < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "6de4c501b2f9d51c26743c5e8dc277cb1d3be1bf833fd2d8edb626c7dc8b7043"
-    sha256 arm64_monterey: "4718040cae7912e40176beedddb95e865f30e979e57d08796ee1299330eb7b99"
-    sha256 arm64_big_sur:  "083187e3b032bfbf440f79586a3cc56ee13660acef3c974dfdbe7c597a0cd0ef"
-    sha256 ventura:        "474ef34e4698ef872bf33a095829f77b3ce77d032bfca3c34c531313ee79e62d"
-    sha256 monterey:       "4ce6f856be4697992bee7688dfebe10a74fcb6e68d3dcc6db9e611735694f71b"
-    sha256 big_sur:        "c7940d2f4c989cecf2dca1a366582821fbd253c8c60ea3788602edaa90e810cc"
-    sha256 x86_64_linux:   "0bf1a53bd5bc89d14cd2c9f8a4841c102bbdb3c2a6d5f21e87ba6d8396a8bbd8"
+    sha256 arm64_ventura:  "82aae859724117afd8e6be746dcc7449bc64cd53fffc4d3f218b5527ef1ca980"
+    sha256 arm64_monterey: "47aeabbdf3201581bca69f907b2fd397faaaa9c2ae56d1bf9f0e61dea166529e"
+    sha256 arm64_big_sur:  "4e1bfb41ab5922c807f8a00a94579e1ff7adf182d050c7122492ce3d36f4c2d1"
+    sha256 ventura:        "ac4dad648ed5828cf7554ad0426b3f1c841e1045a8914ba3be894b0f3039904f"
+    sha256 monterey:       "6cc7300b754264d0ab541a1b86d2527e122ab6850b2656d0e24c8aae094d49a5"
+    sha256 big_sur:        "b3637dcf4a469379091620ec02f53de463881c5ac15d41a8e32bbc65cafd261e"
+    sha256 x86_64_linux:   "28d3d5b50a707c764dbf8efb8295598026a95e822408cf6fc919e8f3bf46ce70"
   end
 
   depends_on "libtommath"

@@ -3,19 +3,19 @@ class Poetry < Formula
 
   desc "Python package management tool"
   homepage "https://python-poetry.org/"
-  url "https://files.pythonhosted.org/packages/b8/49/7d3d8f79356ded464ece366d9b77cc69fed3647debe358619c1c2f307734/poetry-1.6.0.tar.gz"
-  sha256 "77324092ab3b3f975a87a2893a53152cbac7853c8359204b828f0d96f078e4c7"
+  url "https://files.pythonhosted.org/packages/c6/5f/f60c900299e05736900a732f079a306b762d1343e47d965862d140b6e550/poetry-1.6.1.tar.gz"
+  sha256 "0ab9b1a592731cc8b252b8d6aaeea19c72cc0a109d7468b829ad57e6c48039d2"
   license "MIT"
   head "https://github.com/python-poetry/poetry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f96b088a0013b9c79e838aad3a46999c616322ea58b24cac548eef0935025427"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "eb373462ce34b67036b3ce1ecbf611ab842630a53b5c2eb0d4ea91a891dd5634"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c9bd98e379a06e05e1025dd86606019631c9f9f0b5172d91114b8631aad67876"
-    sha256 cellar: :any_skip_relocation, ventura:        "fd795af79fd638231e355dc304fbd6f89a54dc8855567b0a97e7f4175c2c8f9f"
-    sha256 cellar: :any_skip_relocation, monterey:       "b9922d23bbba3d32e393dd2a83251e44a44d96e1e222d7aa0062af3906327dd7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "73eeec0d00e72620862e0d18842abfd9a4ef46d662a10c231bfe4f60eead5722"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d74819671c885c3724beed5b6c3b34b9604a2a66c7a8e75cefd0f093f6586796"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7d4e3a18f0b2d3ca689d9ee9d6136a16b3662034ce60c0a35ba3d054cd86b76"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5510d572b301e0e9aa93ad1cfccc1e89e81b000de199a1c1eaad5f4bf03e9a2b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2cb7be08f618d43eda9eeda7f987eba4462a0bcae5257d39e117c21640c58d88"
+    sha256 cellar: :any_skip_relocation, ventura:        "38cf33613055dd5da2b0d0397fb060c9974bc2e8893354c2a13d445f98a094b4"
+    sha256 cellar: :any_skip_relocation, monterey:       "92795d86f907184e7cd0998400318bf896cf69c92ea4f38ce1f14fc59a358a88"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3719976c2c542b314d9913d64a486f91bcdff4866c9ace0a5d62f1267d3e7322"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e57600085b2bdf5ffda22eea0ba151ac571554a6bd45ae1673fabee1f4d2986"
   end
 
   depends_on "cmake" => :build # for rapidfuzz

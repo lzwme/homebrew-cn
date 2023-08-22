@@ -6,11 +6,6 @@ class GoAT119 < Formula
   sha256 "ee5d50e0a7fd74ba1b137cb879609aaaef9880bf72b5d1742100e38ae72bb557"
   license "BSD-3-Clause"
 
-  livecheck do
-    url "https://go.dev/dl/"
-    regex(/href=.*?go[._-]?v?(1\.19(?:\.\d+)*)[._-]src\.t/i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "db23b7875ee6f0aba7b55244439aa6807b059fe1d8e317ff0f273f86b4591ebe"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b719fda8b9e23e6d706ee6c859faf284146c7844e4ccf8529651e16133dffdb8"
@@ -22,6 +17,10 @@ class GoAT119 < Formula
   end
 
   keg_only :versioned_formula
+
+  # EOL with Go 1.21 release (2023-08-08)
+  # Ref: https://go.dev/doc/devel/release#policy
+  deprecate! date: "2023-08-13", because: :unsupported
 
   depends_on "go" => :build
 

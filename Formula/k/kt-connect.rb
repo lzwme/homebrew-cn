@@ -17,6 +17,9 @@ class KtConnect < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ac819a53007214f4d5e59877c0e5caacb17bd4e777993a89cbdd6383884ed45"
   end
 
+  # upstream go1.20 support report, https://github.com/alibaba/kt-connect/issues/398
+  deprecate! date: "2023-08-20", because: :unmaintained
+
   # https://github.com/alibaba/kt-connect/issues/398
   depends_on "go@1.19" => :build
 

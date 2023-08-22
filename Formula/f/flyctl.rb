@@ -2,8 +2,8 @@ class Flyctl < Formula
   desc "Command-line tools for fly.io services"
   homepage "https://fly.io"
   url "https://github.com/superfly/flyctl.git",
-      tag:      "v0.1.80",
-      revision: "b61fe0fa4ef70f2a97aac8abf0d23cb5a3d4c50e"
+      tag:      "v0.1.81",
+      revision: "adc9a058e8d6421c6321e14dee389594f8ddcf2b"
   license "Apache-2.0"
   head "https://github.com/superfly/flyctl.git", branch: "master"
 
@@ -13,13 +13,13 @@ class Flyctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "424979397746cea71dc9b42b67b4c392a723062b32c5af7b32a5afd75bea55a8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "424979397746cea71dc9b42b67b4c392a723062b32c5af7b32a5afd75bea55a8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "424979397746cea71dc9b42b67b4c392a723062b32c5af7b32a5afd75bea55a8"
-    sha256 cellar: :any_skip_relocation, ventura:        "6c8a3f03c1e0699e202eef7c362bc55e40381fcbf1377743d7e2d48b9b1448ac"
-    sha256 cellar: :any_skip_relocation, monterey:       "6c8a3f03c1e0699e202eef7c362bc55e40381fcbf1377743d7e2d48b9b1448ac"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6c8a3f03c1e0699e202eef7c362bc55e40381fcbf1377743d7e2d48b9b1448ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21a6a43431f3afa8de7a945e54a5bf9ff9c11c446c3942c225f16ccf6199531b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7571bb536092779bff89f53df619da8921375e94f2bd5794e1ae6cb572f3f87d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7571bb536092779bff89f53df619da8921375e94f2bd5794e1ae6cb572f3f87d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7571bb536092779bff89f53df619da8921375e94f2bd5794e1ae6cb572f3f87d"
+    sha256 cellar: :any_skip_relocation, ventura:        "e49488c4c9ba3bb5151af00c0e69beec0fe51c09d7cbe0637212ce5a60e0a92c"
+    sha256 cellar: :any_skip_relocation, monterey:       "e49488c4c9ba3bb5151af00c0e69beec0fe51c09d7cbe0637212ce5a60e0a92c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e49488c4c9ba3bb5151af00c0e69beec0fe51c09d7cbe0637212ce5a60e0a92c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec79790c3d31d45a5e421e12a58b5b486c8898d705fd50a2513344329a8b23fe"
   end
 
   # go 1.21.0 support bug report, https://github.com/superfly/flyctl/issues/2688

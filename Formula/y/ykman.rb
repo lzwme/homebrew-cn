@@ -3,21 +3,19 @@ class Ykman < Formula
 
   desc "Tool for managing your YubiKey configuration"
   homepage "https://developers.yubico.com/yubikey-manager/"
-  url "https://files.pythonhosted.org/packages/8e/70/d4c632df03f0c1f45ce26981a356fd10fe3ae49fccc1856769448efe396a/yubikey_manager-5.1.1.tar.gz"
-  sha256 "684102affd4a0d29611756da263c22f8e67226e80f65c5460c8c5608f9c0d58d"
+  url "https://files.pythonhosted.org/packages/f4/69/6f67728862a97903f060df2e687aa836ab48e453cd47da316ff4411d5cf4/yubikey_manager-5.2.0.tar.gz"
+  sha256 "45e0f09e3cee2375b6f930dd5d89c1d3a7ca5d5cccb599b16a12f8f7d989fd36"
   license "BSD-2-Clause"
-  revision 2
   head "https://github.com/Yubico/yubikey-manager.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02472f99430c2acf79707fc6daf08b5fbba173f6e49272f9720be65a646b4277"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "932871713f6120ead63242e92bb5161c6970e9653e2474f1bb3ec727d9238a76"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "32aaf52b2f1eb2470ae08a03238fdbc81e5e74ff3fe183f30f3f5dca54153943"
-    sha256 cellar: :any_skip_relocation, ventura:        "6c415f4a15e876176bdf54c2dc58c6b304854f17ea478e4289f22820db0daf12"
-    sha256 cellar: :any_skip_relocation, monterey:       "1257daac542e2fdfda45584f9cc6052db16a53f34739a9996841134746ff201d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "25f7a78b74870c6b1160605179eebe193a82b769f902b864fb2880fe0f1433aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c675b26e1d23eefed38c3c7516029024028ef1aec832b0269c7ce3d9c8c0aa4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5f1f6d24841709bcb25424f67cb53f68607c9a00b9a8428f7db074190b23fe50"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "688f902225d0dce45af59a13a27fa226020bdd06430c2e1abac4489f6a195f54"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "55f320e74ba93f8359cf3830d648119914dd2fabee84e881f98215d22f1bd339"
+    sha256 cellar: :any_skip_relocation, ventura:        "b0d43e335b614660cbbf1f295130d8fecdda1b226054d516090eb8ded578938b"
+    sha256 cellar: :any_skip_relocation, monterey:       "7981e8e3e23954cc7d72733b10c0a50534e0f24a70c272c0c2c4d6b31108b335"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3fdeb3fa69775a71f223249f34fc06dccc763d27b754df52e68d22ea065bdb27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e12332ffcd9ae6ff0f93508e782dc4f0b2f3d531848006e25206f54287634582"
   end
 
   depends_on "swig" => :build
@@ -31,8 +29,8 @@ class Ykman < Formula
   uses_from_macos "pcsc-lite"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/7e/ad/7a6a96fab480fb2fbf52f782b2deb3abe1d2c81eca3ef68a575b5a6a4f2e/click-8.1.5.tar.gz"
-    sha256 "4be4b1af8d665c6d942909916d31a213a106800c47d0eeba73d34da3cbc11367"
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "fido2" do
@@ -51,8 +49,8 @@ class Ykman < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/2e/d0/bea165535891bd1dcb5152263603e902c0ec1f4c9a2e152cc4adff6b3a38/more-itertools-9.1.0.tar.gz"
-    sha256 "cabaa341ad0389ea83c17a94566a53ae4c9d07349861ecb14dc6d0345cf9ac5d"
+    url "https://files.pythonhosted.org/packages/2d/73/3557e45746fcaded71125c0a1c0f87616e8258c78391f0c365bf97bbfc99/more-itertools-10.1.0.tar.gz"
+    sha256 "626c369fa0eb37bac0291bce8259b332fd59ac792fa5497b59837309cd5b114a"
   end
 
   resource "pyscard" do

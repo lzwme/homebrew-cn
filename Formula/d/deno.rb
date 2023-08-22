@@ -7,13 +7,14 @@ class Deno < Formula
   head "https://github.com/denoland/deno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "58ed1a26461c3559f2637cfd9c41141173f03f5f218d769dc6173b6488669989"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d55a9ccbc8961deb14c6b50fe5c44f9e3a9ffdc0706afc890161cf21673970bd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8308482ecb351155bcbd6a56a6ee50911f13481e4d6047d8cd8eca96597bcb7f"
-    sha256 cellar: :any_skip_relocation, ventura:        "eefba11f169b6a926d42a5bcc4aaf3a4eb5774aafa969eaebbd0548206a5a687"
-    sha256 cellar: :any_skip_relocation, monterey:       "b706c0cc086d2c794df6ae0033d44b63ba71e7a6b72d79bdab5aa81fe5acaa9f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e155c63b759fe316378ccd0c464edba3eb479c8ace3ac6c2fc06cb28a7d0ef07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "826b3fd1a2d86f8ef407c3033bb772cb0d8b76110643be8d7419962591ca58d8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a9f67b4695f760ad079dc130f08be53ee0a2f9a948d7181ee81f67d19a902a84"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c5cb3f47e5ec45ee095f7011796776c0ed87b0da9a7799b4e30477b576527f01"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "76e7697e6ffb6cb2ea6dca9e9037f9c0ee3a008e68d3e02746b94211e062d80e"
+    sha256 cellar: :any_skip_relocation, ventura:        "b787f1bae0122afe13b28e5224ed65ced9eb86913a9e8de3d12896d62ac1087a"
+    sha256 cellar: :any_skip_relocation, monterey:       "b4f98cf3ee1aef6870c8e57cf99a04858f5a1b5d63cf36fce69738abbe895d8b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4c551e4a04ed99c714a447a0f5066a77662e7d2ed71a2ac1e7a21347c05be5ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52839e7e16a97e5165795cb4b8d528d2ae9fb23c41669276a842b8a85c767ad9"
   end
 
   depends_on "cmake" => :build
@@ -21,10 +22,7 @@ class Deno < Formula
   depends_on "ninja" => :build
   depends_on "python@3.11" => :build
   depends_on "rust" => :build
-  # TODO: after https://github.com/Homebrew/homebrew-core/pull/139382 is merged,
-  # add "depends_on `sqlite` # needs `sqlite3_unlock_notify`" to try linking
-  # with brewed `sqlite`.
-  # Make sure to uncomment the related lines in `install` and `test` blocks too.
+  depends_on "sqlite" # needs `sqlite3_unlock_notify`
 
   uses_from_macos "libffi"
   uses_from_macos "xz"
@@ -87,9 +85,9 @@ class Deno < Formula
     inreplace "ext/node/Cargo.toml",
               /^libz-sys = { version = "(.+)", features = \["static"\] }$/,
               'libz-sys = "\\1"'
-    # inreplace "Cargo.toml",
-    #           /^rusqlite = { version = "(.+)", features = \["unlock_notify", "bundled"\] }$/,
-    #           'rusqlite = { version = "\\1", features = ["unlock_notify"] }'
+    inreplace "Cargo.toml",
+              /^rusqlite = { version = "(.+)", features = \["unlock_notify", "bundled"\] }$/,
+              'rusqlite = { version = "\\1", features = ["unlock_notify"] }'
 
     if OS.mac? && (MacOS.version < :mojave)
       # Overwrite Chromium minimum SDK version of 10.15
@@ -139,7 +137,7 @@ class Deno < Formula
                    "#{testpath}/hello.ts")
 
     linked_libraries = [
-      # Formula["sqlite"].opt_lib/shared_library("libsqlite3"),
+      Formula["sqlite"].opt_lib/shared_library("libsqlite3"),
     ]
     unless OS.mac?
       linked_libraries += [

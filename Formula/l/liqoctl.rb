@@ -1,18 +1,18 @@
 class Liqoctl < Formula
   desc "Is a CLI tool to install and manage Liqo-enabled clusters"
   homepage "https://liqo.io"
-  url "https://ghproxy.com/https://github.com/liqotech/liqo/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "ea350df8e650bab3c4b9250edbb9e97233f96b4e8e7291655b5993d0fbbfba7c"
+  url "https://ghproxy.com/https://github.com/liqotech/liqo/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "13b2ccca3efcd757aacf985e13fa7adcff471039d0a4449cf792d806539b10b6"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "043d3133d552127d6a13ad12a4750195c7c0b8401eace8d32b1728c563085d37"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "043d3133d552127d6a13ad12a4750195c7c0b8401eace8d32b1728c563085d37"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "043d3133d552127d6a13ad12a4750195c7c0b8401eace8d32b1728c563085d37"
-    sha256 cellar: :any_skip_relocation, ventura:        "7b93138456257acf9c0692945215b8b11712ad33be9f16c30c054d0dff5d2ad7"
-    sha256 cellar: :any_skip_relocation, monterey:       "7b93138456257acf9c0692945215b8b11712ad33be9f16c30c054d0dff5d2ad7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7b93138456257acf9c0692945215b8b11712ad33be9f16c30c054d0dff5d2ad7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d330ee67d99972adabf8e08cbb95f48abf8657bc7692558ce9247733c481c2d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "52d77a524468718e864ae7a96fc1602831172b7a75a22fd83213876232c5a61f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "52d77a524468718e864ae7a96fc1602831172b7a75a22fd83213876232c5a61f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "52d77a524468718e864ae7a96fc1602831172b7a75a22fd83213876232c5a61f"
+    sha256 cellar: :any_skip_relocation, ventura:        "cb2663491d68ad40a3a0d47ca47b25435cb37aa5d5a1b68678f03cc522a31cc2"
+    sha256 cellar: :any_skip_relocation, monterey:       "cb2663491d68ad40a3a0d47ca47b25435cb37aa5d5a1b68678f03cc522a31cc2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cb2663491d68ad40a3a0d47ca47b25435cb37aa5d5a1b68678f03cc522a31cc2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81af199758126ea89978d8dc3f57c538b4a144052083d2337d9cac5e001db004"
   end
 
   depends_on "go" => :build

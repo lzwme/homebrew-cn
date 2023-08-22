@@ -4,9 +4,9 @@ class Unisonlang < Formula
   desc "Friendly programming language from the future"
   homepage "https://unison-lang.org/"
   url "https://github.com/unisonweb/unison.git",
-      tag:      "release/M4h",
-      revision: "b5fca58162798dc8635bedd200eb735a707a7fe8"
-  version "M4h"
+      tag:      "release/M5c",
+      revision: "5e428a7701005710ac05e9bf30d1547edd8f25e9"
+  version "M5c"
   license "MIT"
   head "https://github.com/unisonweb/unison.git", branch: "trunk"
 
@@ -16,15 +16,15 @@ class Unisonlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6b9fb7bcd2579fa83e38e192bca8458f9d64a69e340872070b958b3c8ba2ccff"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "51ef67afce4c2f5c19129fdd06101f142db9feb3c2be56388bb96cd8502b1bba"
-    sha256 cellar: :any_skip_relocation, ventura:        "2f85c99bf33b350380933fa67a222827ef2eaba16a5fcb6b206dee303c875fd7"
-    sha256 cellar: :any_skip_relocation, monterey:       "e60accc2a84b3d8fa001fb7da9132b9d82fd6d2607e8d3ded872d1d4eeef7114"
-    sha256 cellar: :any_skip_relocation, big_sur:        "166c193bb3c83c683b6df7f8c4a48d3d46c960103b403107590154d3cd615ddf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae23dafd3afa7e35fe6c3c98d1db200fd0b1a8ff4a23e0dd40263e20397558be"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9e9b8981f03099f0ad52026988f0de162e36d5fa8edc72ec2d15b7427c3eb835"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b72e935ca41ef451c2edf902971ca0641e74ece6ebc6fffb0301b87521fe876e"
+    sha256 cellar: :any_skip_relocation, ventura:        "03841f8c57255a83d0d715c98ce44c5d37578aee2a46afb67e4755d3e04e7478"
+    sha256 cellar: :any_skip_relocation, monterey:       "7a95df6e28095a8ed8f54067ec959290b786896a88ffb00bf2c2f9d871220168"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0de679779d113977c2e5cc0eb9aa8c4e8a976e7bed10979afa529012b8cb5deb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5876e2238bafed8133771462e1365caa8ecad3bc15aa81939e95ce072df9baba"
   end
 
-  depends_on "ghc@8.10" => :build # GHC 9.2 open PR: https://github.com/unisonweb/unison/pull/3642
+  depends_on "ghc@9.2" => :build
   depends_on "haskell-stack" => :build
   depends_on "node@18" => :build
 
@@ -32,10 +32,18 @@ class Unisonlang < Formula
   uses_from_macos "xz" => :build
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "ncurses"
+  end
+
+  on_arm do
+    depends_on "elm" => :build
+  end
+
   resource "local-ui" do
-    url "https://ghproxy.com/https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/M4h.tar.gz"
-    version "M4h"
-    sha256 "cac7ddd1cbac628e54dbf56d879cb0a22f2b70ef3e711cf51b9e05cd5e409e44"
+    url "https://ghproxy.com/https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/M5c.tar.gz"
+    version "M5c"
+    sha256 "efcb1fa73d37da47cc7145d5923c2a2077bdc5f9863db0673c1a694eac544694"
   end
 
   def install
@@ -45,6 +53,12 @@ class Unisonlang < Formula
     # Build and install the web interface
     resource("local-ui").stage do
       system "npm", "install", *Language::Node.local_npm_install_args
+      if Hardware::CPU.arm?
+        # Replace x86_64 elm binary to avoid dependency on Rosetta
+        elm = Pathname("node_modules/elm/bin/elm")
+        elm.unlink
+        elm.parent.install_symlink Formula["elm"].opt_bin/"elm"
+      end
       # HACK: Flaky command occasionally stalls build indefinitely so we force fail
       # if that occurs. Problem seems to happening while running `elm-json install`.
       # Issue ref: https://github.com/zwilias/elm-json/issues/50
@@ -75,10 +89,6 @@ class Unisonlang < Formula
     # Ensure the local-ui version matches the ucm version
     assert_equal version, resource("local-ui").version
 
-    # Initialize a codebase by starting the server/repl, but then run the "exit" command
-    # once everything is set up.
-    pipe_output("#{bin}/ucm -C ./", "exit")
-
     (testpath/"hello.u").write <<~EOS
       helloTo : Text ->{IO, Exception} ()
       helloTo name =
@@ -89,6 +99,15 @@ class Unisonlang < Formula
         helloTo "Homebrew"
     EOS
 
-    assert_match "Hello Homebrew", shell_output("#{bin}/ucm -C ./ run.file ./hello.u hello")
+    (testpath/"hello.md").write <<~EOS
+      ```ucm
+      .> project.create test
+      test/main> load hello.u
+      test/main> add
+      test/main> run hello
+      ```
+    EOS
+
+    assert_match "Hello Homebrew", shell_output("#{bin}/ucm --codebase-create ./ transcript.fork hello.md")
   end
 end

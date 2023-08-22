@@ -8,10 +8,18 @@ class Macvim < Formula
   license "Vim"
   head "https://github.com/macvim-dev/macvim.git", branch: "master"
 
+  # The stable Git tags use a `release-123` format and it's necessary to check
+  # the GitHub release description to identify the Vim version from the
+  # "Updated to Vim 1.2.3456" text.
   livecheck do
-    url "https://github.com/macvim-dev/macvim/releases?q=prerelease%3Afalse&expanded=true"
+    url :stable
     regex(/Updated\s+to\s+Vim\s+v?(\d+(?:\.\d+)+)/i)
-    strategy :page_match
+    strategy :github_latest do |json, regex|
+      match = json["body"]&.match(regex)
+      next if match.blank?
+
+      match[1]
+    end
   end
 
   bottle do
