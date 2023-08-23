@@ -1,8 +1,8 @@
 class WasmMicroRuntime < Formula
   desc "WebAssembly Micro Runtime (WAMR)"
   homepage "https://github.com/bytecodealliance/wasm-micro-runtime"
-  url "https://ghproxy.com/https://github.com/bytecodealliance/wasm-micro-runtime/archive/refs/tags/WAMR-1.2.2.tar.gz"
-  sha256 "d328fc1e19c54cfdb4248b861de54b62977b9b85c0a40eaaeb9cd9b628c0c788"
+  url "https://ghproxy.com/https://github.com/bytecodealliance/wasm-micro-runtime/archive/refs/tags/WAMR-1.2.3.tar.gz"
+  sha256 "5c1b8a72bbc1943aa6bda7cfbabb909a89bf3a4a2115ef8f8821315a5594d2e2"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/bytecodealliance/wasm-micro-runtime.git", branch: "main"
 
@@ -12,13 +12,13 @@ class WasmMicroRuntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "181341349a9b3026597d51c624a2b255f1d0440644df2c1b13205bee1f318e81"
-    sha256 cellar: :any,                 arm64_monterey: "9433f36989f142176de102697b05ee27873a9b66043d11fc6413349ede4dbc42"
-    sha256 cellar: :any,                 arm64_big_sur:  "8ba285831eb9b9516577e2f7b7dd16c40959e970fef86e9482b33e5be4c5fcee"
-    sha256 cellar: :any,                 ventura:        "dfb24a6ab8fbac094c65794de5f4541a40e2dbf1da6e07f8285d863ffeafb923"
-    sha256 cellar: :any,                 monterey:       "09b96fbdc7299407d93ab7e4951a2dd20d1f5fd46c3899a38d68128953922aaf"
-    sha256 cellar: :any,                 big_sur:        "3a4043d8dc69191efdcc444e34b0f06750ab30bda69f1bcacc6ca7cc3540dbd8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "55d7b4ff3e905dbb087f19fef36b689374d31bc5b10d58efd57b1c609b3c2759"
+    sha256 cellar: :any,                 arm64_ventura:  "4587fad7622d938be7daf2981bc1122f2bbc58712805e715869c2ef0c6f6af90"
+    sha256 cellar: :any,                 arm64_monterey: "ea4a7e600529e8b9eff9ae75d63cb6173a7367d7edc2dcabae988d1939cae3c5"
+    sha256 cellar: :any,                 arm64_big_sur:  "c2f0931318437df0f323b11e849e1f7c5068927c1a19980abaf7fa732c836612"
+    sha256 cellar: :any,                 ventura:        "b3459a58b87fda1d8f3443252d1d643f794d4dee7e36be678f04669e03135327"
+    sha256 cellar: :any,                 monterey:       "4d2be4bdc605ac92a629e5f1a01af4c6f1169297d30a5f7eae6c8204d23a02a7"
+    sha256 cellar: :any,                 big_sur:        "3670878e30af5a164743dcc4b9397a6a36b0b53654e0000ae3933af3753cc9b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9adfdede849d11cdd909c9dd5793345550362af778c4831e2233e8e99a80638"
   end
 
   depends_on "cmake" => :build
@@ -37,6 +37,7 @@ class WasmMicroRuntime < Formula
       -DWAMR_BUILD_DUMP_CALL_STACK=1
       -DWAMR_BUILD_JIT=0
       -DWAMR_BUILD_LIBC_UVWASI=0
+      -DCMAKE_STRIP=0
     ]
     cmake_source = buildpath/"product-mini/platforms"/OS.kernel_name.downcase
 

@@ -1,8 +1,8 @@
 class KnotResolver < Formula
   desc "Minimalistic, caching, DNSSEC-validating DNS resolver"
   homepage "https://www.knot-resolver.cz"
-  url "https://secure.nic.cz/files/knot-resolver/knot-resolver-5.6.0.tar.xz"
-  sha256 "0c82ae937b685dc477fb3176098e3dc106c898b7cd83553e5bc54dccb83c80d7"
+  url "https://secure.nic.cz/files/knot-resolver/knot-resolver-5.7.0.tar.xz"
+  sha256 "383ef6db1cccabd2dd788ea9385f05e98a2bafdfeb7f0eda57ff9d572f4fad71"
   license all_of: ["CC0-1.0", "GPL-3.0-or-later", "LGPL-2.1-or-later", "MIT"]
   head "https://gitlab.labs.nic.cz/knot/knot-resolver.git", branch: "master"
 
@@ -12,13 +12,13 @@ class KnotResolver < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "5ca10e63c6082ebbd34e44e53f955022ee86f41f76171bc3f0442b75bc11df79"
-    sha256 arm64_monterey: "a7cf2a04f6eb227f6cb40a2b020a181df5e8c0e079a2639e17a61fe88d71ba47"
-    sha256 arm64_big_sur:  "de3ab727f527992c33269355569cf16bcd2c106d8df028d78b5088a1cf90669f"
-    sha256 ventura:        "1b3af6eb07c55fe1024092a11cb8026328c35e77e4b623a4c1b9656438624c50"
-    sha256 monterey:       "1d2600e90bdecc21f41ce437920fdaf111ad8992fbcff1ba16788d8fb395fe87"
-    sha256 big_sur:        "077ab810b11de8686206f95b1164c86cf519ad93e5fc5e65259ee7de2bb3ac83"
-    sha256 x86_64_linux:   "3b70cd4bce30b89bb79e609f0dfa06b31095f640be7ea3039f07c9a5e715d054"
+    sha256 arm64_ventura:  "0e1274ddc57db35e579b734f77df4d7b7904d54b3e5021f32c0c643eb08190c5"
+    sha256 arm64_monterey: "dcab2be0fad605f28ccbec9f5d87933d9199e47f8447d9a7562a1836b78a0501"
+    sha256 arm64_big_sur:  "cec36062181ed6d7f7cd0b5c660af37f74cf2fa55384443ccc5ae4562155b803"
+    sha256 ventura:        "1f415a229e9ac1af89603fc2df28c6f5259adc13525e0f3e6f3cab60ce9e2f3b"
+    sha256 monterey:       "e4e3991148d3ba950d70f2d73f28e374288bed9ff3ccf3602906f99540f5739d"
+    sha256 big_sur:        "17fde0ae5f3b80df699654c303466a2c23ca36651cc4eb7e60903d8c93d44293"
+    sha256 x86_64_linux:   "af3faf4977aff5279ecb857a4c17eb7985dc3019746a33f372489d858f8238d7"
   end
 
   depends_on "meson" => :build

@@ -3,21 +3,19 @@ class Fypp < Formula
 
   desc "Python powered Fortran preprocessor"
   homepage "https://fypp.readthedocs.io/en/stable/"
-  url "https://ghproxy.com/https://github.com/aradi/fypp/archive/refs/tags/3.1.tar.gz"
-  sha256 "0f66e849869632978a8a0623ee510bb860a74004fdabfbfb542656c6c1a7eb5a"
+  url "https://ghproxy.com/https://github.com/aradi/fypp/archive/refs/tags/3.2.tar.gz"
+  sha256 "33f48c8d2337db539865265ce33c7c50e4d521aacbd31ac7b7e8b189d771ce1d"
   license "BSD-2-Clause"
   head "https://github.com/aradi/fypp.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8ca9fbd711044d3b965ccdd93d62b2436d711e56007444ccc60e37be7357da85"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8ca9fbd711044d3b965ccdd93d62b2436d711e56007444ccc60e37be7357da85"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8ca9fbd711044d3b965ccdd93d62b2436d711e56007444ccc60e37be7357da85"
-    sha256 cellar: :any_skip_relocation, ventura:        "8372e31d3e4eeac3f809238c738cf05024367264f1fe41fbcb4ed238856b5448"
-    sha256 cellar: :any_skip_relocation, monterey:       "8372e31d3e4eeac3f809238c738cf05024367264f1fe41fbcb4ed238856b5448"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8372e31d3e4eeac3f809238c738cf05024367264f1fe41fbcb4ed238856b5448"
-    sha256 cellar: :any_skip_relocation, catalina:       "8372e31d3e4eeac3f809238c738cf05024367264f1fe41fbcb4ed238856b5448"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb267affdd4b9177495d506ea7e5c53c51bb8c1314edef2f7b3cfaed856ea704"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a72f87c255aefd9dfc94a8acf0054e9d00b009ca29c378c55a948a267ccadb80"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1eaaeb839757540bf468a3c4a34edfae25ebce99847fd5ef3f88ff748b2df440"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5ba5ec09160516d21d7afde092b4b78fb95144b2b4fd29d2013f52b0b47ed247"
+    sha256 cellar: :any_skip_relocation, ventura:        "97f13cd046501c26e14d8e6ddd26917d864776426468fce6441cfdd62781a00a"
+    sha256 cellar: :any_skip_relocation, monterey:       "7d92b29bd552bd7dcbb5c8aa19f0482aa1f0d3661191c8cc419f378c97b76a0d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "af80edb6449af0192ce8586f0f07af91aedb55d52ad352207e04ac25820656f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "676b067d2f477d15bceabf21d7dec716c76d3c438e20384635ecfcaf506254d3"
   end
 
   depends_on "gcc" => :test

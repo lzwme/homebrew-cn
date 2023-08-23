@@ -5,6 +5,14 @@ class CiliumCli < Formula
   sha256 "80173ee60c8860dac67865952b0b74d00e7f5ae2786193ac4e531a58ef58c1af"
   license "Apache-2.0"
 
+  # Upstream uses GitHub releases to indicate that a version is released
+  # (there's also sometimes a notable gap between when a version is tagged and
+  # and the release is created), so the `GithubLatest` strategy is necessary.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "36d84dc6f35bb5033fb7ae9317a458c5f66720c9ab88415923e2e475b35716c5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b6d4f0149e4e9d7550244b656107fcfbb66f312d12cbc63d43a78101f72eaadf"

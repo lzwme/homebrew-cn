@@ -1,8 +1,8 @@
 class Mosquitto < Formula
   desc "Message broker implementing the MQTT protocol"
   homepage "https://mosquitto.org/"
-  url "https://mosquitto.org/files/source/mosquitto-2.0.16.tar.gz"
-  sha256 "638db9e43e89d243ea98d10d66e76ff376131217780decd01abaffacc66d8035"
+  url "https://mosquitto.org/files/source/mosquitto-2.0.17.tar.gz"
+  sha256 "3be7a911236567c1a9fbe25baf3e3167004ba4a0c151a448ef1f7fc077dba52f"
   # dual-licensed under EPL-1.0 and EDL-1.0 (Eclipse Distribution License v1.0),
   # EDL-1.0 is not in the SPDX list
   license "EPL-1.0"
@@ -13,13 +13,13 @@ class Mosquitto < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "80b65d020c420302300986dfe0c617d298a8548b457f7f02c8d51f92cda0a0af"
-    sha256 arm64_monterey: "0e698aaa31de0269cfed65d37218ed0e90bec67484a8a3ba23e98b862ac09b51"
-    sha256 arm64_big_sur:  "73397563769ae4d1971c03a12d201ebe14cbc577dcfc8696538b566b0de00cb0"
-    sha256 ventura:        "8ee95d43a3bedcc11ac820946c1725ccfb07e0646ca02b2a20c63f07e431dab3"
-    sha256 monterey:       "356b5a180dad384498883c5fdbabb65da91204eee6d5568a33d8b236a1f8e7db"
-    sha256 big_sur:        "a61ac1bd1c5c25222a2f67e3fa3455712c3c6f966debf0ede85fe82faf9e4936"
-    sha256 x86_64_linux:   "01151bd16cc3f3ff54ca08bd0fdacb74acbdbbc5e7742a1d49ec06ce55719363"
+    sha256 arm64_ventura:  "151d4602be94b6c9afba945e1bf1e1b00b583a44e7f524754412ba668205c9e9"
+    sha256 arm64_monterey: "e1f7833a29d520667233f8f1520ed93efa16f5203aa2ba41983390d6914b5542"
+    sha256 arm64_big_sur:  "626ac57a2ee05bf77b60d04abd5675ca4a99f61b826d83e4365f17841615598b"
+    sha256 ventura:        "b06442f194bf0597cd50f2e4c87e719b4ab53c34b02a810343f05b1eec02f757"
+    sha256 monterey:       "6d5d948e77f84c99e3a83b4709e766849693f09fa05da8810bec5fab885ced59"
+    sha256 big_sur:        "a94e32e4a0c3ff0c06dc0f07b9f0cc3e8e3a236d9f4e56669a06b3bfe9cea05b"
+    sha256 x86_64_linux:   "c8f88d6c08fa5840601730e1244ba0ce0db627cfa1606c30daf9afad29bf7803"
   end
 
   depends_on "cmake" => :build

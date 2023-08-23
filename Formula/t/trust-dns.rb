@@ -1,19 +1,19 @@
 class TrustDns < Formula
   desc "Rust based DNS client, server, and resolver"
   homepage "https://github.com/bluejekyll/trust-dns"
-  url "https://ghproxy.com/https://github.com/bluejekyll/trust-dns/archive/refs/tags/v0.22.1.tar.gz"
-  sha256 "48debc51079b43a942f05f51dfd6d7ea900ed21f6db72e3136f100cb35263a15"
+  url "https://ghproxy.com/https://github.com/bluejekyll/trust-dns/archive/refs/tags/v0.23.0.tar.gz"
+  sha256 "258c33f0d0e6a6007afcce1dd9453b14bf4d4f074111ec4488f24be0f11645dd"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/bluejekyll/trust-dns.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fabca7db9c4e9ebf00c2e0cc49ada98a3592f2fa9f2c75228ac975c50ae8c53e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c965b32e370d998e7afeae07785fc37d3fc26e58a0a4063c436602ac950e1987"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5280c4cdddcdab6e7d658ddf21af8e52c4328f3d7e3639aa58c11315368b7feb"
-    sha256 cellar: :any_skip_relocation, ventura:        "37162e844630ce06bb23edf76e0d8b292052c0e06c1cee69826d68012aec0e38"
-    sha256 cellar: :any_skip_relocation, monterey:       "e4459b5c8d61f086d22f1f87529d274720d29d006e6004af4fba42a26ee27b16"
-    sha256 cellar: :any_skip_relocation, big_sur:        "61fc5a09b2cc325d50a6755d548d770a862f4217e73f1a8456e67e4bd5f6e4b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7607f9f4e4a599259107c7a974a8515ed30e75c8fe0b4017b76435dd0db51a32"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5bac8e1ce73f817ab96bcf8d7ba3f287908e8d9ff96ba010ac7299080c5671fa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9914de2d35f8eeafb0df04a00992eb5fdf38147cb063aafda84117511ad3d285"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0d24296a7b53a912582bdc3872f45e8af3a9798ebca4dd99606648b222ddec21"
+    sha256 cellar: :any_skip_relocation, ventura:        "422744ec62682cc9810603127ba556e451f8ff212b183b9cf144d403edbd9315"
+    sha256 cellar: :any_skip_relocation, monterey:       "ed626729cc1473f3d286af7a934bcb77c4ba884c0e21784d5a5d89ef0ad0254b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "68a852e9a815c6f94361935b6f5d8819c68ce9100e87a4347646bf9819282dec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ec9b380bbcae0627faa1cabb533c59c094d61f811ab82cfb679bc44a9071d39"
   end
 
   depends_on "rust" => :build
@@ -30,7 +30,7 @@ class TrustDns < Formula
   test do
     test_port = free_port
     cp_r pkgshare/"test-data", testpath
-    test_config_path = testpath/"test-data/named_test_configs"
+    test_config_path = testpath/"test-data/test_configs"
     example_config = test_config_path/"example.toml"
 
     pid = fork do
@@ -41,7 +41,7 @@ class TrustDns < Formula
     expected = "www.example.com.	86400	IN	A	127.0.0.1"
     assert_match expected, output
 
-    assert_match "trust-dns #{version}", shell_output("#{bin}/trust-dns --version")
+    assert_match "Trust-DNS named server #{version}", shell_output("#{bin}/trust-dns --version")
   ensure
     Process.kill "SIGTERM", pid
     Process.wait pid

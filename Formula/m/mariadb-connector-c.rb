@@ -1,18 +1,22 @@
 class MariadbConnectorC < Formula
   desc "MariaDB database connector for C applications"
   homepage "https://mariadb.org/download/?tab=connector&prod=connector-c"
-  url "https://downloads.mariadb.com/Connectors/c/connector-c-3.3.5/mariadb-connector-c-3.3.5-src.tar.gz"
+  url "https://archive.mariadb.org/connector-c-3.3.5/mariadb-connector-c-3.3.5-src.tar.gz"
   mirror "https://fossies.org/linux/misc/mariadb-connector-c-3.3.5-src.tar.gz/"
   sha256 "ca72eb26f6db2befa77e48ff966f71bcd3cb44b33bd8bbb810b65e6d011c1e5c"
   license "LGPL-2.1-or-later"
   revision 1
   head "https://github.com/mariadb-corporation/mariadb-connector-c.git", branch: "3.3"
 
+  # The REST API may omit the newest major/minor versions unless the
+  # `olderReleases` parameter is set to `true`.
   livecheck do
-    url "https://downloads.mariadb.org/rest-api/connector-c/all-releases/?olderReleases=false"
+    url "https://downloads.mariadb.org/rest-api/connector-c/all-releases/?olderReleases=true"
     strategy :json do |json|
-      json["releases"]&.select { |release| release["status"] == "stable" }
-                      &.map { |release| release["release_number"] }
+      json["releases"]&.map do |_, group|
+        group["children"]&.select { |release| release["status"] == "stable" }
+                         &.map { |release| release["release_number"] }
+      end&.flatten
     end
   end
 

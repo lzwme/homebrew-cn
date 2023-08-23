@@ -6,6 +6,7 @@ class Ffmpeg < Formula
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/FFmpeg/FFmpeg.git", branch: "master"
 
   livecheck do
@@ -14,14 +15,13 @@ class Ffmpeg < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "cd3d6af30b9dd5adc545ef6ded53987665e88ad0f498cfef3ed154099b7e24c0"
-    sha256 arm64_monterey: "a0c02bd23396b2cdfd5fa22fea2f25962fe140b3b3513ee9a5841b5d0a9170e3"
-    sha256 arm64_big_sur:  "d21fa5146f66ba1c92be64f9bb340b6ce1cee593b5847eef200e3520b184dab8"
-    sha256 ventura:        "498b4e1f10f898845f00cfcd14199ee3a51b67fe54370625e99799cf3003b616"
-    sha256 monterey:       "6b1dc5718ec8496ae851d7171e0abfb611d05ced2735c18fb2df793c6ffe7a61"
-    sha256 big_sur:        "5dcdfca2a21b890c606803739674b6b78e1b3a18280024848e6ce0fa4a8ea555"
-    sha256 x86_64_linux:   "0c2060da94b748abc4644fd0a38e6d535e7ab4b94456ee0a503d87b287a575fb"
+    sha256 arm64_ventura:  "adc16acae9282fbe6794459e2f86ac4fc257586840f72e526dbb8993c32d890a"
+    sha256 arm64_monterey: "7b1d3dc6c1d7d23217ce78e559125c6c4e089bdfe6331a7472d72476c30d4188"
+    sha256 arm64_big_sur:  "5b35267cf103f0c985a793caca31df4cb8bfc8a795305917b4e234f3bf62cee7"
+    sha256 ventura:        "74597bd8254cd242adea4024340fff4cf33329fe6e5cc86a7e1c1a5b05cc3a02"
+    sha256 monterey:       "a41ef7a55137493c397590da7d519e79206060710956edf2b70b1dce1ff7f1e1"
+    sha256 big_sur:        "aad4ec2113bea323f6564a5ceb40f821279a8f6bc3eb590b9b6b223b6e0c9d73"
+    sha256 x86_64_linux:   "edc5bf97e59ea91e8123e88bb887fea2fed1b13e66dc10603c69f0d449e03491"
   end
 
   depends_on "pkg-config" => :build
@@ -75,6 +75,13 @@ class Ffmpeg < Formula
   end
 
   fails_with gcc: "5"
+
+  # Fix for QtWebEngine, do not remove
+  # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=270209
+  patch do
+    url "https://gitlab.archlinux.org/archlinux/packaging/packages/ffmpeg/-/raw/main/add-av_stream_get_first_dts-for-chromium.patch"
+    sha256 "57e26caced5a1382cb639235f9555fc50e45e7bf8333f7c9ae3d49b3241d3f77"
+  end
 
   # Fix for binutils, remove with next release
   # https://www.linuxquestions.org/questions/slackware-14/regression-on-current-with-ffmpeg-4175727691/
