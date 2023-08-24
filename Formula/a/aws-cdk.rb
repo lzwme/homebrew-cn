@@ -3,18 +3,18 @@ require "language/node"
 class AwsCdk < Formula
   desc "AWS Cloud Development Kit - framework for defining AWS infra as code"
   homepage "https://github.com/aws/aws-cdk"
-  url "https://registry.npmjs.org/aws-cdk/-/aws-cdk-2.92.0.tgz"
-  sha256 "97dd7f09e77595ffd74d3cf331492c1f00c2fe7dab082ff8f34eed65056991a6"
+  url "https://registry.npmjs.org/aws-cdk/-/aws-cdk-2.93.0.tgz"
+  sha256 "48c63e9a8097c0c9b124ace327858d490d831d82355867987d4ffe5884664461"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e841227793b87e42299cd5d1b882a5f8f939f6967bb7fa104d54fa9de1ac82a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0e841227793b87e42299cd5d1b882a5f8f939f6967bb7fa104d54fa9de1ac82a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0e841227793b87e42299cd5d1b882a5f8f939f6967bb7fa104d54fa9de1ac82a"
-    sha256 cellar: :any_skip_relocation, ventura:        "62263b3cd3d12281457fe0cc8139a4c18b337877a86d79d395a4812948f05381"
-    sha256 cellar: :any_skip_relocation, monterey:       "62263b3cd3d12281457fe0cc8139a4c18b337877a86d79d395a4812948f05381"
-    sha256 cellar: :any_skip_relocation, big_sur:        "62263b3cd3d12281457fe0cc8139a4c18b337877a86d79d395a4812948f05381"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "267875ad8f138b47be9381f38268b6d183e9a4317b62e20001d40fcc983809a0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7a2a90c9a5bbb0445e4346322f786570eb56e066ead4d43aab1d9bb33b307ed"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f7a2a90c9a5bbb0445e4346322f786570eb56e066ead4d43aab1d9bb33b307ed"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f7a2a90c9a5bbb0445e4346322f786570eb56e066ead4d43aab1d9bb33b307ed"
+    sha256 cellar: :any_skip_relocation, ventura:        "b375d25bb133892fa9a3641a955c63ba1f7fb53f5564a4ee26777792c0a1216f"
+    sha256 cellar: :any_skip_relocation, monterey:       "b375d25bb133892fa9a3641a955c63ba1f7fb53f5564a4ee26777792c0a1216f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b375d25bb133892fa9a3641a955c63ba1f7fb53f5564a4ee26777792c0a1216f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20cab9558267834675f85626754af5d3f1b9c004245421593b30cd7bed270234"
   end
 
   depends_on "node"

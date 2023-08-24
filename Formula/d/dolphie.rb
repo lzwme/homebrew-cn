@@ -3,18 +3,18 @@ class Dolphie < Formula
 
   desc "Feature-rich top tool for monitoring MySQL"
   homepage "https://github.com/charles-001/dolphie"
-  url "https://files.pythonhosted.org/packages/77/2f/e95451d07331f3429c8c74ffcb235b829638e6d87a5996f60746c4201f71/dolphie-3.0.8.tar.gz"
-  sha256 "2e637a8aee411dad97f6a4a279f4ff3dbfc1c6461d265ef6d0444ca785d3bb19"
+  url "https://files.pythonhosted.org/packages/23/2f/014357524aec51d273810eb13b8f1fac43e773faaa735c7db4def9a2c69c/dolphie-3.0.9.tar.gz"
+  sha256 "59973a33c8b9b505ec68817410695484380d7a4897323ca37a0ace1b5065b44d"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e6c98e3bd88653354ce4a44d3af8b7fd600d4e70a8debf8563d00fb21569bda2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "26c4da5adee43cfc0406a766181d4be61eb80c8c33fedd05a97647b9c238826d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1c42535e350a9e14f415cd4ffc62513c4ea78ab763ea76d65cd66354ab9caa8e"
-    sha256 cellar: :any_skip_relocation, ventura:        "d7bbde86df281eeeae940957a1e9888d3b1fdeb6c2e95b0c302399acc5c331d9"
-    sha256 cellar: :any_skip_relocation, monterey:       "4f1f263fe25946df1980ce8f83076fec23091fe739dd67182ea5b7012cb16dad"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a5425e378f8d65716a52635c134fd78dd14e8cda96b2d83a3d7f225f50d32fae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d9ce32172d539f260765e1e1d77248fec9dbad6aa791aa7c0d1fc5d5e2091b5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7ce9adf02c63121a7486de7a53f053510b52b41dc80650565419f96526e7646"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d60da0a0267cbb47a52edcd9cdc10b7fa93aa925b4be4460260d90e62dc26155"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "54f35ec0e0dacf18a3ae171889fd6cd475a7338bbf0b8662dada8059f945c064"
+    sha256 cellar: :any_skip_relocation, ventura:        "c00fd317a2a83c98a986d64946709de77c8ba8de4eab6b27cbbbe02b18d6c1c1"
+    sha256 cellar: :any_skip_relocation, monterey:       "c909093da83af6decb0b023c008c51f306f52d0b62a337315f51a50c56739889"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5915ec0c3854d2ca60cdf13526db3a9b9776c0ae618e799f8739d81454c38690"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4835b2fba1df5c424391abff638a6c181e72ab9ac002fa778de3c569695f7ce0"
   end
 
   depends_on "cffi"
@@ -96,8 +96,8 @@ class Dolphie < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/fb/5c/9feb7539ef042024d04e15f31a1ab09f83b1c09d5f5c87c080e59bd0d0c1/textual-0.33.0.tar.gz"
-    sha256 "e0a98b1d9c4458c5bb4269c65d0a7f3e926f197411242d2f8faf80183d47a728"
+    url "https://files.pythonhosted.org/packages/26/c1/a03d903920167f4022e61eeff8b7280dd5fc2541147a78c90aabdd459eb2/textual-0.34.0.tar.gz"
+    sha256 "b66deee4afa9f6986c1bee973731d7dad2b169872377d238c9aad7141449b443"
   end
 
   resource "textual-autocomplete" do

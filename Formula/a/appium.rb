@@ -3,17 +3,17 @@ require "language/node"
 class Appium < Formula
   desc "Automation for Apps"
   homepage "https://appium.io/"
-  url "https://registry.npmjs.org/appium/-/appium-2.1.2.tgz"
-  sha256 "6087e6186f09f69410d69870b0a2c52e0b573df8c5b849f0dbbbab89162b9c05"
+  url "https://registry.npmjs.org/appium/-/appium-2.1.3.tgz"
+  sha256 "af7a194c89df51986c343adca5d68dfe6b6380d50b393a7d6f93c2491feac624"
   license "Apache-2.0"
   head "https://github.com/appium/appium.git", branch: "master"
 
   bottle do
-    sha256                               arm64_ventura:  "ecc60b5327a98e47598dc134d9471535f69e11aeeadf7e7308462fc82becb963"
-    sha256                               arm64_monterey: "21b7305524b23abefd36035e4684502e89158d5955c7f9a6045dd3a294d4c31d"
-    sha256                               arm64_big_sur:  "3c7ed19cb92c1a5c2c5d5deb3f9e45f44db54377df588672ec55f01a0f2492b0"
-    sha256                               ventura:        "9eccd2adfd0c9f6a47a9e8f8df4fad5a45ef7bbae682b4029fc9ee383af035b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad0dd8f53d4135c87b641c841df714fe89c685db215c33ba7e3e1e2473bf6d0b"
+    sha256                               arm64_ventura:  "e5cda4e54a7126fe2db09cddc195f7c08593f34d3b5fd54b1394f135120642a7"
+    sha256                               arm64_monterey: "9b1f7feb77e006c5953f8339fff2c5f50c1641b90f9c30316c99a7b948a7ebd9"
+    sha256                               arm64_big_sur:  "57f9c61ca3fcfd70229350aa07378fa5c24ac6f85a55c279044e13c262a5d76a"
+    sha256                               ventura:        "c80f2cf7b7e56b8eebdd7cf953c952a3666958ad49c107bf460d596642479039"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a838fd4c51ff7d3ea37566f1616feaf1fc1a9dad7ee8e6ece179190c147da131"
   end
 
   depends_on "node"

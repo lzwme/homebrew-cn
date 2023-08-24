@@ -1,18 +1,18 @@
 class Sile < Formula
   desc "Modern typesetting system inspired by TeX"
   homepage "https://sile-typesetter.org"
-  url "https://ghproxy.com/https://github.com/sile-typesetter/sile/releases/download/v0.14.10/sile-0.14.10.tar.xz"
-  sha256 "208ac6030d3a6f3922fa4addc5ede75aa3c3931cf681c5437c7f0c8f69ca5816"
+  url "https://ghproxy.com/https://github.com/sile-typesetter/sile/releases/download/v0.14.11/sile-0.14.11.tar.xz"
+  sha256 "25796088ad57c996527b9417cf4eb3c0402755886221986121a0667f1020452e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "300147ce484851f50745e7c2be5e7a8ab1beb06f03dc31f4a8eaae085cb406bf"
-    sha256 cellar: :any,                 arm64_monterey: "2aab4b259829736e3f9bba03cb6cf63a654a14ec105f445b116ddea5de48eae8"
-    sha256 cellar: :any,                 arm64_big_sur:  "e633a49e6ac850ffe465e34e522b86d812c899eadcbee507778450c50cc35f44"
-    sha256 cellar: :any,                 ventura:        "323f79b54c374468fe1d82f26e54265566db1e9b1f406ef64606d9233737b98c"
-    sha256 cellar: :any,                 monterey:       "89d935af69973c74f69faf7680f5df25cbb61f1e8457079465681022505faa92"
-    sha256 cellar: :any,                 big_sur:        "4b349daed7af784fc826a4d9329d23ae3ee79617d8599c96c7f3fdf2817ea3c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e95a7a7ce93ebaa9f00903793a1af1c46b4eb93344c61e2a13bb29ac1c99e71d"
+    sha256 cellar: :any,                 arm64_ventura:  "314384bd475c5d9f4a0e2d82da552909a4ba99996fe0b9bd4fbdb2b57dd10090"
+    sha256 cellar: :any,                 arm64_monterey: "a59ed9b675f966e7c16ca600ee1dba18600f141a2116544724b139d5d963f12c"
+    sha256 cellar: :any,                 arm64_big_sur:  "41c0f36c2e6a982f69ed9953915eb6f5b7e9db76a3666fcdb272fc23ee7372e2"
+    sha256 cellar: :any,                 ventura:        "1f51fd443d603b4253e705b84b0bcf8e6794106441f243f390c798ad827d8c9a"
+    sha256 cellar: :any,                 monterey:       "6437a38a6366af054944a06187bf9231f2d1993272dc27c0e514e4587b186d3f"
+    sha256 cellar: :any,                 big_sur:        "048c7a7ce8799750ba94e8360676641a451325113fb382c21a86507c2e52fdf1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05a272df6d2e9dea92b041758ac2a6d3d70116c4c4a59663e1770e6850e07b7c"
   end
 
   head do
@@ -97,8 +97,8 @@ class Sile < Formula
 
   # depends on luasocket
   resource "luasec" do
-    url "https://luarocks.org/manifests/brunoos/luasec-1.2.0-1.src.rock"
-    sha256 "82d9ea7d11688a2b11fc1c4549a2e7b0aca00790b49e67a41dac0c81f2890f1c"
+    url "https://luarocks.org/manifests/brunoos/luasec-1.3.1-1.src.rock"
+    sha256 "234353b695cdec264b22e6ff5472f4f7f70cd10a9b65f6fd4ad65652c786bb20"
   end
 
   # depends on luafilesystem
@@ -126,8 +126,8 @@ class Sile < Formula
   end
 
   resource "luautf8" do
-    url "https://luarocks.org/manifests/xavier-wang/luautf8-0.1.5-1.src.rock"
-    sha256 "33ce04dad817a9d9b05ea5e14663aa4b83da6f8a82dea594e556693fd0b8e42a"
+    url "https://luarocks.org/manifests/xavier-wang/luautf8-0.1.5-2.src.rock"
+    sha256 "68bd8e3c3e20f98fceb9e20d5a7a50168202c22eb45b87eff3247a0608f465ae"
   end
 
   resource "vstruct" do

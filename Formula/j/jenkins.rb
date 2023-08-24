@@ -1,8 +1,8 @@
 class Jenkins < Formula
   desc "Extendable open source continuous integration server"
   homepage "https://www.jenkins.io/"
-  url "https://get.jenkins.io/war/2.419/jenkins.war"
-  sha256 "895a90dd5929a38c8cc8c0342478d27a6e01470cd7e8da8c4ae51f26aa1bdf85"
+  url "https://get.jenkins.io/war/2.420/jenkins.war"
+  sha256 "c9e0778a6eb54e652658ee757848d792bfbd702f7af14a8c2e05978155facc62"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class Jenkins < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f481799c352c61bc3f483c0b2a82614d06a8d5058936cead3dfd3428b5a2f505"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f481799c352c61bc3f483c0b2a82614d06a8d5058936cead3dfd3428b5a2f505"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f481799c352c61bc3f483c0b2a82614d06a8d5058936cead3dfd3428b5a2f505"
-    sha256 cellar: :any_skip_relocation, ventura:        "f481799c352c61bc3f483c0b2a82614d06a8d5058936cead3dfd3428b5a2f505"
-    sha256 cellar: :any_skip_relocation, monterey:       "f481799c352c61bc3f483c0b2a82614d06a8d5058936cead3dfd3428b5a2f505"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f481799c352c61bc3f483c0b2a82614d06a8d5058936cead3dfd3428b5a2f505"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b357f0ee192166394fbe23e1b0bec805dbf9dffca5ae1a8760cc1a032dc9e8bb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed3f6f1f0c52b724c8e2c2ca10c1b1b63a3f37c33ce2bab65c5850bbc027b68f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed3f6f1f0c52b724c8e2c2ca10c1b1b63a3f37c33ce2bab65c5850bbc027b68f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ed3f6f1f0c52b724c8e2c2ca10c1b1b63a3f37c33ce2bab65c5850bbc027b68f"
+    sha256 cellar: :any_skip_relocation, ventura:        "ed3f6f1f0c52b724c8e2c2ca10c1b1b63a3f37c33ce2bab65c5850bbc027b68f"
+    sha256 cellar: :any_skip_relocation, monterey:       "ed3f6f1f0c52b724c8e2c2ca10c1b1b63a3f37c33ce2bab65c5850bbc027b68f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ed3f6f1f0c52b724c8e2c2ca10c1b1b63a3f37c33ce2bab65c5850bbc027b68f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "123962831ebecf275eb2a33a46889450d3d16017a8a21e87195a6dbef31e9d31"
   end
 
   head do

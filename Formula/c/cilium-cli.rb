@@ -1,8 +1,8 @@
 class CiliumCli < Formula
   desc "CLI to install, manage & troubleshoot Kubernetes clusters running Cilium"
   homepage "https://cilium.io"
-  url "https://ghproxy.com/https://github.com/cilium/cilium-cli/archive/refs/tags/v0.15.5.tar.gz"
-  sha256 "80173ee60c8860dac67865952b0b74d00e7f5ae2786193ac4e531a58ef58c1af"
+  url "https://ghproxy.com/https://github.com/cilium/cilium-cli/archive/refs/tags/v0.15.6.tar.gz"
+  sha256 "8f11349a2d817e68cfc40b6dbcc879f3c320f022762730234097d1a313c0fbb4"
   license "Apache-2.0"
 
   # Upstream uses GitHub releases to indicate that a version is released
@@ -14,13 +14,13 @@ class CiliumCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "36d84dc6f35bb5033fb7ae9317a458c5f66720c9ab88415923e2e475b35716c5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b6d4f0149e4e9d7550244b656107fcfbb66f312d12cbc63d43a78101f72eaadf"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "995e43860b7d7e4ff16534d4eb19b940587df6abafc499d48eef921b621bcb13"
-    sha256 cellar: :any_skip_relocation, ventura:        "9607091e5aec6b2b8ebe525a2622595478e2982e8e416a2ed28bfb00c5295236"
-    sha256 cellar: :any_skip_relocation, monterey:       "7639419b9dccd6d73672b84feec5b27cc464aba401a0bc74a35706cc29e28faf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8458002eed50d2648dd2082ddba6cf18b8ce87357295d18436899bd85c6100e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1006e2fc9b46fb5108aaf4e1a778f5ac02e8eae3306aeeecb8f65d1f91fb208a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc5d0b107bd905e45b82d991d11c1c979abd23bd844b91d00a1b59461e1e2423"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "61457e4da3e2e701348c0af301bfb300b09d8ac1000ee6c790b9f699a5ad6d0a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8e531b3ab2f41fd0f98702536cb85489c8ba598e8bc1bd931f91a27cab7378b8"
+    sha256 cellar: :any_skip_relocation, ventura:        "52edb4181e87f7c11d70c027d51a49e02339760f41882e827be77960e56b752f"
+    sha256 cellar: :any_skip_relocation, monterey:       "6f9946b1f46a3450df6dc6d02d7f10385e53fb3227a61b464e7000b9be9b53c3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3e69d24510a6f4eeb614dabf74f4a2e35f401507677e0b39234458d8d9fb20e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "359b79722c3a31d1e0b7eb5752703367d87b34eddce68ce37da1c7b2f66ed019"
   end
 
   depends_on "go" => :build

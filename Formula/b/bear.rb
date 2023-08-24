@@ -4,17 +4,17 @@ class Bear < Formula
   url "https://ghproxy.com/https://github.com/rizsotto/Bear/archive/3.1.2.tar.gz"
   sha256 "5f94e98480bd8576a64cd1d59649f34b09b4e02a81f1d983c92af1113e061fc3"
   license "GPL-3.0-or-later"
-  revision 7
+  revision 8
   head "https://github.com/rizsotto/Bear.git", branch: "master"
 
   bottle do
-    sha256 arm64_ventura:  "fa19be74445bc3ec4a0b9c1f1df2efd735076b1db7442ce8949c0b892c946a96"
-    sha256 arm64_monterey: "e4dba78bf7e41f0a5451444e7df10b6fb5f0f76c624848b6c7632cdac2277dda"
-    sha256 arm64_big_sur:  "320eeef842433d2dc2afbd10d5a7fff0aa338c0bfc1c2dec34982c8ff8c32fe6"
-    sha256 ventura:        "217d9788adaaa5990c2a731328938f5cdd155d914657d79dd4166e516516039c"
-    sha256 monterey:       "1f5a5947dd0652cda86a285c113fd79bbbe8e42058def5caf84b4911a467e63b"
-    sha256 big_sur:        "7b9381cc719cf6c68aca49d599f295403ba81484ac7213469719c84965d109b9"
-    sha256 x86_64_linux:   "ae7c5ff9227dbe6b3af8b585180c8da4130d66374ee01ea2ca5ca4a5b42d2250"
+    sha256 arm64_ventura:  "de24837278d844b667ccdad3efb38e3004064549c58a8cd40fac4aa5522fcb65"
+    sha256 arm64_monterey: "fee200d29359732114e9fd115d3f5f3211fbcba708c0929d73bfeaab70791f30"
+    sha256 arm64_big_sur:  "b72f7c81a7bef584efe90196245078f0e0c5e235fc02d4635e17de5a01c4c8c1"
+    sha256 ventura:        "ecc17cb9ccc86953ef8d1091df2591c219d5f51e3b39d341f24bbd2561c741e9"
+    sha256 monterey:       "da796509abf3875aae9eaa28db7954c108ff51cbeb2a3d2ab8a6d2d20bdec509"
+    sha256 big_sur:        "ffef1938aa287b15ff802f05f3e457cfdead8aa12c169b4ff040de99aec54684"
+    sha256 x86_64_linux:   "f17cc600fe96a850bf06560bc0813f3e9c0a6a40322baff2104fcc1ae33da521"
   end
 
   depends_on "cmake" => :build
@@ -44,6 +44,12 @@ class Bear < Formula
   patch do
     url "https://github.com/rizsotto/Bear/commit/46a032fa0fc8131779ece13f26735ec84be891e8.patch?full_index=1"
     sha256 "af2a1bb3feb008f2ed354c6409b734f570a89caf8bcc860d9ccf02ebe611d167"
+  end
+
+  # Add support for fmt 10.1 https://github.com/rizsotto/Bear/pull/543
+  patch do
+    url "https://github.com/rizsotto/Bear/commit/00636df012c251a99157e76401f0d595efef85fc.patch?full_index=1"
+    sha256 "f0b003aef6c2ad04086dad064ff5af6d0745b1353c8e0ff19a75a3e812969568"
   end
 
   def install
