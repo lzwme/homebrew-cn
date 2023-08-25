@@ -1,8 +1,8 @@
 class Daemon < Formula
   desc "Turn other processes into daemons"
   homepage "https://libslack.org/daemon/"
-  url "https://libslack.org/daemon/download/daemon-0.8.3.tar.gz"
-  sha256 "bd6fd870ca4761f43f045d72db0f8a0de81a3eac07264bf449b152d7dd899ac0"
+  url "https://libslack.org/daemon/download/daemon-0.8.4.tar.gz"
+  sha256 "fa28859ad341cb0a0b012c11c271814f870482013b49f710600321d379887cd1"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Daemon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4a5baeff9a97593e7a29b182b74c92a27d86538b058d24eff3c6d30e05240afa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "12090499c8e437515b8dde21f47c00f401e1d3988e8bd7db9ee8d8a3f7778142"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0ff12c5df6b267ccd13f8726cb7f991c1b2baa2c24d68aac53eb216a23ff4ba7"
-    sha256 cellar: :any_skip_relocation, ventura:        "dc74dc5684591db1fc2c1a0284a6ff976733c1655c4d51ceb81a86959ee573fe"
-    sha256 cellar: :any_skip_relocation, monterey:       "e1b683bc98f5b9ba58b3f5ac8617bb3edbb88dfc74068c9ee038a17395853130"
-    sha256 cellar: :any_skip_relocation, big_sur:        "04bc3084255d0d5337b8cefcb4a535adb791a2dad19b783a3f244a716ef773e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23a9a59bb5045562e80171f3b0f7f9511b393759e44bfa903af4a9c83c81b472"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "101e6130d15ab59ff302b56ac933ec41f4daf94820e0177acd7b500c6afabc29"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "91563d72f29b423fb13d3b486e8e6bc0b8e1bf8d8d1a682df7b4ae14da077855"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "76f97fb46b1d1568f0cdf54c251c187c9cb5e0205e9951fae178d09e13ac5aef"
+    sha256 cellar: :any_skip_relocation, ventura:        "fbe58edeb92d71e3ba4e5e7f3f6e9bfd5cb9710357bbd6098c92065f38d27b62"
+    sha256 cellar: :any_skip_relocation, monterey:       "708784508effbf7aa7c2d5680fd52c7c1ae572ffdbd08d672d8ec7eab33534f9"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ab2a22bdc41a9a0a551bf77c6ea2ad5f3a75b6ad75def292d6ebd4f59979ce93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "861a0eb58cced7a2c88edb3309eef07521084b317725b9fe4f67acf71b83f331"
   end
 
   def install

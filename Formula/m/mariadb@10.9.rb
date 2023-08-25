@@ -6,23 +6,6 @@ class MariadbAT109 < Formula
   license "GPL-2.0-only"
   revision 1
 
-  # This uses a placeholder regex to satisfy the `PageMatch` strategy
-  # requirement. In the future, this will be updated to use a `Json` strategy
-  # and we can remove the unused regex at that time.
-  livecheck do
-    url "https://downloads.mariadb.org/rest-api/mariadb/all-releases/?olderReleases=false"
-    regex(/unused/i)
-    strategy :page_match do |page|
-      json = JSON.parse(page)
-      json["releases"]&.map do |release|
-        next unless release["release_number"]&.start_with?(version.major_minor)
-        next unless release["status"]&.include?("stable")
-
-        release["status"].include?("stable") ? release["release_number"] : nil
-      end
-    end
-  end
-
   bottle do
     sha256 arm64_ventura:  "58a3406ba84aa1352155a0d407002f6cebf2c9f29f29db8101e381ebf9174902"
     sha256 arm64_monterey: "a63fcf97e39a43aab4d5395992f9b8c00dd67b597b59aa0aa12fa3201397a4ea"

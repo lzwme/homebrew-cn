@@ -9,8 +9,11 @@ class MariadbConnectorOdbc < Formula
   livecheck do
     url "https://downloads.mariadb.org/rest-api/connector-odbc/all-releases/?olderReleases=false"
     strategy :json do |json|
-      json["releases"]&.select { |release| release["status"] == "stable" }
-                      &.map { |release| release["release_number"] }
+      json["releases"]&.map do |release|
+        next if release["status"] != "stable"
+
+        release["release_number"]
+      end
     end
   end
 

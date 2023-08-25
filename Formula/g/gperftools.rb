@@ -4,8 +4,8 @@ class Gperftools < Formula
   license "BSD-3-Clause"
 
   stable do
-    url "https://ghproxy.com/https://github.com/gperftools/gperftools/releases/download/gperftools-2.11/gperftools-2.11.tar.gz"
-    sha256 "8ffda10e7c500fea23df182d7adddbf378a203c681515ad913c28a64b87e24dc"
+    url "https://ghproxy.com/https://github.com/gperftools/gperftools/releases/download/gperftools-2.12/gperftools-2.12.tar.gz"
+    sha256 "fb611b56871a3d9c92ab0cc41f9c807e8dfa81a54a4a9de7f30e838756b5c7c6"
   end
 
   livecheck do
@@ -15,13 +15,13 @@ class Gperftools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6c6c3e16fa7fca30205f400257f5eb427c27d704098cc9c266c9897bdf8e09bd"
-    sha256 cellar: :any,                 arm64_monterey: "5f51a35d4055b548a42ad3e0009e5bf44a1dc15dcd4d3319fe9b86587e6ec916"
-    sha256 cellar: :any,                 arm64_big_sur:  "d8c4a525a638167330f07fe519214efdae76cd141d08cd7a82a24af3f8ad382c"
-    sha256 cellar: :any,                 ventura:        "36b66a37fb05abbed3ae165b902115f0cdca3917fe234ef05a43a0927b65cda3"
-    sha256 cellar: :any,                 monterey:       "b5748b86f6ae4a051de593243800bffca453c3fd8bfbe222baa657388c3aa28b"
-    sha256 cellar: :any,                 big_sur:        "a88112dfe2cff88a50d8c8634ba45a45b803693b9bc8cefba2e7b6dfa6a13e9a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb6c55e7d9c2aabda701076d96dcddb7688b0809e5a56780649ae396871ec603"
+    sha256 cellar: :any,                 arm64_ventura:  "544641aac87613e9a372be604b4cf74049a924cf8f9998d8c6bbaf16bbb1048a"
+    sha256 cellar: :any,                 arm64_monterey: "0f6f0bfb2422e7d0bad20f4efc1b14057e8b6d2c324fe87d54f5241545770e83"
+    sha256 cellar: :any,                 arm64_big_sur:  "2e7bd053cb4b19fd4baa5c8d3f5e320bcc9072c7d27ec72d549c62b0cc747f7c"
+    sha256 cellar: :any,                 ventura:        "a24bfb67a31001cf9af30c8987620d031590362ed38b7324a3d61ca047a91c03"
+    sha256 cellar: :any,                 monterey:       "62318959469fdf36e2478f5275eb515d2e8dea8bca4b8c707cafe56adfeba1cc"
+    sha256 cellar: :any,                 big_sur:        "2e9667c2aa56f63b97a7676269b38e7a8eee275d0ed5d3ef3450ccad8716f92d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0529fb74df942233be49fe092c20cb3ea66c9b434050ad76c32183dcb085fc6"
   end
 
   head do

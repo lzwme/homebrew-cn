@@ -2,18 +2,18 @@ class Ponyc < Formula
   desc "Object-oriented, actor-model, capabilities-secure programming language"
   homepage "https://www.ponylang.io/"
   url "https://github.com/ponylang/ponyc.git",
-      tag:      "0.55.0",
-      revision: "6a1b4c09b62f3ee8241a0376a993b3550efe16c4"
+      tag:      "0.55.1",
+      revision: "800527f783997c8a32066980a99fbffeeab10d11"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0a708a961ce34c4e286715370c55bc7ca9ba511bc077945facb9b87fad601baa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "07ef00a98a3404876b25f4f6e3437da3bb3d7904c7617614b53d8b65389dbb18"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9d4d93a52d2d86c9db65f693a315437524c2bb746893fcde0acf47c73e4bc769"
-    sha256 cellar: :any_skip_relocation, ventura:        "3be7ffa1da625fc06c78fe413e1b7608794324f7dbb279a1c656b7d9b43e293c"
-    sha256 cellar: :any_skip_relocation, monterey:       "b2c7caec3325890ebc4f3a28c0b6163bd1d0e0dfcb890b7234246962598e40d1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ade002ec2c393916f215089d13e8c6cefd78b569782f41acfc8fdd1e8cc1447a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab0f56c6b8a91edf04935e9883beb751bd5ffad15fa8efdfaee446e11ef2416e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "96d0dfc77a754bc9bdf078738a4a582c36099c73f9400855e872277fe52303de"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4409d69ef04220c0ff504a9e7a9853abc4002a48fd283e1c34490bf284dd5595"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "09626299ee4361f0c89ff99e576e68f5d7faf22f108de127566d3c83268713e2"
+    sha256 cellar: :any_skip_relocation, ventura:        "6ae38eccb5145c9aed1c4f2de2adf1dc40e336fbfe859e1ca044bfc8de30aad7"
+    sha256 cellar: :any_skip_relocation, monterey:       "3ece8fc390107782d7663bb4fab0831bfb70c2ea8d42970d3a6511aff84e4263"
+    sha256 cellar: :any_skip_relocation, big_sur:        "293495e4542c8bacf80465ff2aa87e4a44e8b0cf9d52f11183dd2b58063d67e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7aaf2ca49ffb9b40ae75224b815cee5bebbcecb06a8c2fbd85c1dc9628a8be9a"
   end
 
   depends_on "cmake" => :build
@@ -34,7 +34,9 @@ class Ponyc < Formula
   def install
     inreplace "CMakeLists.txt", "PONY_COMPILER=\"${CMAKE_C_COMPILER}\"", "PONY_COMPILER=\"#{ENV.cc}\"" if OS.linux?
 
+    ENV["CMAKE_FLAGS"] = "-DCMAKE_OSX_SYSROOT=#{MacOS.sdk_path}" if OS.mac?
     ENV["MAKEFLAGS"] = "build_flags=-j#{ENV.make_jobs}"
+
     system "make", "libs"
     system "make", "configure"
     system "make", "build"

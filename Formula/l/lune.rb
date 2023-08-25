@@ -1,18 +1,18 @@
 class Lune < Formula
   desc "Standalone Luau script runtime"
   homepage "https://lune-org.github.io/docs"
-  url "https://ghproxy.com/https://github.com/filiptibell/lune/archive/refs/tags/v0.7.6.tar.gz"
-  sha256 "235c26df94d7c7f1e8a4fa79f9a08b407841cc4477274b42b172828eaf67d1bc"
+  url "https://ghproxy.com/https://github.com/filiptibell/lune/archive/refs/tags/v0.7.7.tar.gz"
+  sha256 "f6311720ede916d520a427c04be469cd59cb2359a4ca7bc4b8abedaa8c3691ed"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f83b8cb4f1e1f13b4f92eec6ffbbd35328bad11cea4326ce9c31297e1e5ef350"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "69fd3189a226aeeab4ff594b94faabef00ffbdfe08d7214216d32eb520dd4247"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0aa9f4ca0db60d6dca2f1b20807115b32608f15e62700a073c051ec5e4600d08"
-    sha256 cellar: :any_skip_relocation, ventura:        "0d0846909637b2763ba6bc0f3e311848951f98a3540c167b0cec564c8d091e52"
-    sha256 cellar: :any_skip_relocation, monterey:       "8b6a77a6690d83756def851b3fcb66df5cf1c0a1a8b7aacfbf5227af24ee5410"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f8582cfdad44243e56f9b80cf080e9828ebbd46196b41326d09067486226336a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf4e0ef9f59b40936fcdcd0b0aaefdd33bfcb76f290b778fd5026fd905dd70c6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ea828b044c1abc26d7ab128ad56e826eda8195d6706fbc142e44c313b2ed95e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "05d029cafc6b1189dcd70bca88140e146a36eb8bf6885daf1a246f1c460f4c12"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d1d5b9673a25ff3e4be192991ade81fa119d7f6152bd2672c191eb8ca5cef16f"
+    sha256 cellar: :any_skip_relocation, ventura:        "485a24de18876afa5c2fad739975f35a46c590dccc959276569ad3b6a8e50b62"
+    sha256 cellar: :any_skip_relocation, monterey:       "2c50229eef76293184d0a26ab53fe0523ed9b5f3a682a36c768892d41cc36193"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1df25b8302cf9253d3f80b180799e0b514efb35692a20f11c4fe72f64685a0ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5b5a86e88d056cb51ee27ddb900395025b1bed4d128f5f4d27a8867e6f73d54"
   end
 
   depends_on "rust" => :build

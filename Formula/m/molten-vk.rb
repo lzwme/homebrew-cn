@@ -5,7 +5,7 @@ class MoltenVk < Formula
 
   stable do
     url "https://ghproxy.com/https://github.com/KhronosGroup/MoltenVK/archive/v1.2.5.tar.gz"
-    sha256 "b4468aee1abf7dcc79dc12a817b1eb3b8fcef9e44f547f32ea1fdcd7a9d2c8ba"
+    sha256 "946d8f0e7ae3b47774b03a610d3a3e7e4bcbef3e667e1362325936839035a115"
 
     # MoltenVK depends on very specific revisions of its dependencies.
     # For each resource the path to the file describing the expected
@@ -59,12 +59,13 @@ class MoltenVk < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "31f2396be9fc6e5db1f2a9a513af59f523554ebd085030d090425a3f6c43898b"
-    sha256 cellar: :any, arm64_monterey: "94797a8a513c8d89e08bcaf6126ffb153b23271aea049ffb6b6157673d9faa45"
-    sha256 cellar: :any, arm64_big_sur:  "99e0ac79032a91bfdf0b9f9203dc127410e0e31bf89ec90f2b1811cb79f33939"
-    sha256 cellar: :any, ventura:        "94c450f2eecf1966fee321368d0862a33bdb520a9beec81b7724a267eb2b7928"
-    sha256 cellar: :any, monterey:       "b2b0e10e0f5378b13982d9fd96737b6865bbcb71a6b8f08f4083935de912e78c"
-    sha256 cellar: :any, big_sur:        "efe6e68a86fba95408616a6233c5f92186ba9bea8734580d4aa6ed7a8c79142a"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura:  "7a9684d363618feee18fa741463b624814c4f179837fef4daa92f05819e8a222"
+    sha256 cellar: :any, arm64_monterey: "ed4899652a2bc551b827dfccb3ca0d4058f0b6d4137d05e7b65bef32d8578d0f"
+    sha256 cellar: :any, arm64_big_sur:  "e772b95cde972c636d0c7f59cd640501d0b800607734ac278d92e2dff49fa4a5"
+    sha256 cellar: :any, ventura:        "fc571455b786a2fb26d5a69f734ea207596799c8f46f2f2446684ae043f4ef13"
+    sha256 cellar: :any, monterey:       "00d7a45764907c21c729dc07f5c826a5fcc59c9ad9d7e44c2691dc15b68c0208"
+    sha256 cellar: :any, big_sur:        "3daa0c65349c068aeeaf2167e6de0daa5981efc27688dfaa76ed84ed82910c39"
   end
 
   head do

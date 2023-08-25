@@ -5,9 +5,12 @@ class Coursier < Formula
   sha256 "4bea0aad07d4cc45a96f04db2a2f32a9f98c8251e98043d0395a29cac3beba46"
   license "Apache-2.0"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+(?:-M\d+)?)$/i)
+    strategy :github_latest
   end
 
   bottle do

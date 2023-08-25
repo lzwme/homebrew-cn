@@ -14,8 +14,11 @@ class MariadbConnectorC < Formula
     url "https://downloads.mariadb.org/rest-api/connector-c/all-releases/?olderReleases=true"
     strategy :json do |json|
       json["releases"]&.map do |_, group|
-        group["children"]&.select { |release| release["status"] == "stable" }
-                         &.map { |release| release["release_number"] }
+        group["children"]&.map do |release|
+          next if release["status"] != "stable"
+
+          release["release_number"]
+        end
       end&.flatten
     end
   end

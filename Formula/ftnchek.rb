@@ -10,6 +10,7 @@ class Ftnchek < Formula
   end
 
   # depends_on "bison@1.875c" => :build # not truely necessary but maintains consistency
+  depends_on "groff" => :build
 
   patch :Z do
     url "https://www.dsm.fordham.edu/~ftnchek/download/ftnchek-3.3.1-varfmt.patch"
@@ -19,7 +20,7 @@ class Ftnchek < Formula
   def install
     # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
     system "./configure", *std_configure_args, "--disable-silent-rules", "--disable-submodel", "OPTIONS=-O2",
-"--mandir=#{man}"
+"--mandir=#{man}", "SOELIM=/usr/local/opt/groff/bin/soelim"
     `make fortran.c || true` # bison regenerate from patched fortran.y, fails build to notify dependency changes
     system "make", "install"
   end

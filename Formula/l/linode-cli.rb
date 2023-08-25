@@ -3,20 +3,19 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https://www.linode.com/products/cli/"
-  url "https://files.pythonhosted.org/packages/87/9a/e4d3fa5d8e2191a18b6aa9960a89ef8e3713edf8fcdeeb86e8cab6ac17e6/linode-cli-5.41.3.tar.gz"
-  sha256 "03f23c34255881f7124f40a2d699556beefba196d4049429fa97bdfb9370a0b4"
+  url "https://files.pythonhosted.org/packages/a1/40/4cdd0131feb9b268c46943bdf5a845ffca2f8ed5ec1dce6d63f84543e7b8/linode-cli-5.42.0.tar.gz"
+  sha256 "92ea486cf056ac8f5d68c14f8eed781b7cc165aee655d0768d7253eb2a73cc02"
   license "BSD-3-Clause"
   head "https://github.com/linode/linode-cli.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "26a4a333e5f6f93dce367e3beecf9e9f322cede1b5293678771c38d90b75cb75"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "746e3ce41e6e3377072b7abe5bd9b8c2ef4efcc91666770a1c51b0537d2cf304"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "70c15817f4e28f549d960f8157b16cfd142252a8bd89f3911370828e30f345a2"
-    sha256 cellar: :any_skip_relocation, ventura:        "4beeb531767f13665910b3331f219e74668e30f95b1091154ce9b043fb6bd000"
-    sha256 cellar: :any_skip_relocation, monterey:       "cc33ae131db6a70facdc5ce537dae1fa71aa318519e67fc5805fe289ab8f5e4a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c3c453e295cafe46e20ea018664ad581d24e99853aa9735d310a523d765fc353"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6d84f0d6bc87552fcd4e46a5a51d290a0106b3835dc628487582d38cc202696"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b97d98b4f0adca8617b474aabe76dcc7d516dfd29395e0e294aceceb5a64a063"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3f968fce075ae987c84849a1473071990ac059f8ffdb8facbc433a86c41f0462"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5999ee3bd58f683476991f341c33c30bdda4f88531daaee5027d15af38707388"
+    sha256 cellar: :any_skip_relocation, ventura:        "2db80f2fc9a4809a7312eda4a44c64648da664d0062a529c7ae4a0eca2327e9c"
+    sha256 cellar: :any_skip_relocation, monterey:       "e01ce6de1c6ba2cad990af530b3a86aec80c26edf1c3a0b261a6150cb9b8b16b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e112b18bb27c843772e320f2c7b9dca0daa859d9d6b2b191e1f7b7b1de517282"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "052a4aa98d964e42aa7cfdc1b803f4005429860712115f021f12f32ab4636948"
   end
 
   depends_on "pygments"
@@ -25,8 +24,8 @@ class LinodeCli < Formula
   depends_on "pyyaml"
 
   resource "linode-api-spec" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/linode/linode-api-docs/refs/tags/v4.159.0/openapi.yaml"
-    sha256 "a4761d7bb1b995fe88c3e4bc592ab1465c6eae6ec448186097f9fcc9a2920acb"
+    url "https://ghproxy.com/https://raw.githubusercontent.com/linode/linode-api-docs/refs/tags/v4.161.0/openapi.yaml"
+    sha256 "464d23edcae38c927f1ac81b287db7f559c6ffac93aa2dfaf5e718834d1097bd"
   end
 
   resource "charset-normalizer" do
@@ -49,6 +48,11 @@ class LinodeCli < Formula
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
   end
 
+  resource "openapi3" do
+    url "https://files.pythonhosted.org/packages/7b/09/58889a60b8b4c1796b980b09b1fac752e5f29ff55bce93eeb900aff64389/openapi3-1.8.1.tar.gz"
+    sha256 "cc696ce11088a7fbb5f366307b0aebd115528adfb401b3e817c520adf2e68f86"
+  end
+
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
     sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
@@ -60,8 +64,8 @@ class LinodeCli < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/e3/12/67d0098eb77005f5e068de639e6f4cfb8f24e6fcb0fd2037df0e1d538fee/rich-13.4.2.tar.gz"
-    sha256 "d653d6bccede5844304c605d5aac802c7cf9621efd700b46c7ec2b51ea914898"
+    url "https://files.pythonhosted.org/packages/ad/1a/94fe086875350afbd61795c3805e38ef085af466a695db605bcdd34b4c9c/rich-13.5.2.tar.gz"
+    sha256 "fb9d6c0a0f643c99eed3875b5377a184132ba9be4d61516a55273d3554d75a39"
   end
 
   resource "urllib3" do
