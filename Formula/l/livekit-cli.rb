@@ -1,28 +1,19 @@
 class LivekitCli < Formula
   desc "Command-line interface to LiveKit"
   homepage "https://livekit.io"
+  url "https://ghproxy.com/https://github.com/livekit/livekit-cli/archive/refs/tags/v1.2.10.tar.gz"
+  sha256 "ea3d76abdbc458b22efc2a5bfc294ddc17fe7a329936c054f1f292b0c87d455f"
   license "Apache-2.0"
   head "https://github.com/livekit/livekit-cli.git", branch: "main"
 
-  stable do
-    url "https://ghproxy.com/https://github.com/livekit/livekit-cli/archive/refs/tags/v1.2.9.tar.gz"
-    sha256 "34713c13888618a29604058656edf791da87a1709ec63b67f6f6b3bb986dea59"
-
-    # patch version to match with the release
-    patch do
-      url "https://github.com/livekit/livekit-cli/commit/facb869aa1cf8a1a275f9f514028591a7e7ec4a5.patch?full_index=1"
-      sha256 "75a91337301019ed224a28968e5c1c4216ce63f2285c702f8cc304df53133c52"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "150c05c77a8faa323ba661e05e11209dce9b61bc48704c72ba9bd7877af6ab9b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d9913b8b1a6a63af7aa178bbc8ab3d028c00e9e238d84952417c7b721c79937b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bb3d54fe284f97e5d66c63d5b09c5b8b1f2765091f248885821fb2ae706c234b"
-    sha256 cellar: :any_skip_relocation, ventura:        "588cc2f06d4e407c42a4f41eeb7d00acd743749e24dd97393008b36fdc9d9a24"
-    sha256 cellar: :any_skip_relocation, monterey:       "583d365aa80e21d74c350b037082b74c9b8bd03add9c2a057145d987cda2bc5a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "da575131ea4d035b43e70d74219d5cfd5a64c68521a3af308f94b19eec98176d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1689673ffafa56522c56aa892915be38b4b587443757049ac4942b7bc2e72d9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dbe61bde5349a0404bc61ba530cde90dc6f6a80b8f476fd2a91875362e2a3e88"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "46ee3c89ada3e1f48117487808c361441ea484a4b7f044595902fe4003513c1f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c780414f4e9020ee4da8d246f56fa941d248a0dac0afcffaaac4a45e6d831306"
+    sha256 cellar: :any_skip_relocation, ventura:        "e493742c9a95c9fb94aff947dc2fd96dbb7199d5d70973304bdd70f747f467bc"
+    sha256 cellar: :any_skip_relocation, monterey:       "aa30214d6b436954db636d31c7821b22dc34d5267a9781d0f2b7edb5123e7477"
+    sha256 cellar: :any_skip_relocation, big_sur:        "20f96c67357d9550d96959594cdeb788a576e2785e75d26e3308390a0df81dc8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "30cc6592e7c74fca94340f53206a3e33d9dcd97c117c86761d77a321945872f1"
   end
 
   depends_on "go" => :build

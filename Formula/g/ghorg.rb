@@ -1,18 +1,18 @@
 class Ghorg < Formula
   desc "Quickly clone an entire org's or user's repositories into one directory"
   homepage "https://github.com/gabrie30/ghorg"
-  url "https://ghproxy.com/https://github.com/gabrie30/ghorg/archive/refs/tags/v1.9.7.tar.gz"
-  sha256 "e9a9c11dca9692f0ed7218da2235b632c9fe7cb56e9197e959a7b24ecb1c83c5"
+  url "https://ghproxy.com/https://github.com/gabrie30/ghorg/archive/refs/tags/v1.9.8.tar.gz"
+  sha256 "778d33fdad371733b63f019fc66ff1279fe8b9b2a7a1886ad8a0054c36847335"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f1beaf9c34a03d2f6f2b03a750a43702e084da99b4fb39d1d7187f5194519fe1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f1beaf9c34a03d2f6f2b03a750a43702e084da99b4fb39d1d7187f5194519fe1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f1beaf9c34a03d2f6f2b03a750a43702e084da99b4fb39d1d7187f5194519fe1"
-    sha256 cellar: :any_skip_relocation, ventura:        "733ff29665963e67bdd9bd91a05501391b4fdec153219e28d9623d9a3941a368"
-    sha256 cellar: :any_skip_relocation, monterey:       "733ff29665963e67bdd9bd91a05501391b4fdec153219e28d9623d9a3941a368"
-    sha256 cellar: :any_skip_relocation, big_sur:        "733ff29665963e67bdd9bd91a05501391b4fdec153219e28d9623d9a3941a368"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "371ae6b719ec2a97d12d34afcafdabd8a52ad769359c37ec999e1cd300458383"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bae49265692afdc0a81cf617ef631c67d38e295a4c2e7c7506aa8b07e0626681"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e3e295979f9cda37f5e437bb9b94b50af6f41d5ebd88569a7d976ba199ff5b7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1bea417cc7ea49ab59afb5f2c1f3053083b0dbf198b92a83e9be1a8d650982c6"
+    sha256 cellar: :any_skip_relocation, ventura:        "a6f983321e5bebd7b7d95e928f27f20efbca973142d95ed5527acb481d539f93"
+    sha256 cellar: :any_skip_relocation, monterey:       "e2f6ea63e69433fcd5bf08f4e4279a472cbc964c4ffdfd9f9efd31883dd2fe87"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f582441d5ceb7962408d64f8c20459bd5f22983c5399bc67be5a29df204dd424"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9a235c63a6040f71b4f36979c9b87a3105b6f40c31884dd370d77cb244eacc6"
   end
 
   depends_on "go" => :build

@@ -3,18 +3,18 @@ require "language/node"
 class Mongosh < Formula
   desc "MongoDB Shell to connect, configure, query, and work with your MongoDB database"
   homepage "https://github.com/mongodb-js/mongosh#readme"
-  url "https://registry.npmjs.org/@mongosh/cli-repl/-/cli-repl-1.10.5.tgz"
-  sha256 "3fa241c40dc93cb68d56af9ee0c2ed6d6532d61cdf80a3e72f56974a6eea17d7"
+  url "https://registry.npmjs.org/@mongosh/cli-repl/-/cli-repl-1.10.6.tgz"
+  sha256 "e5e0ed2b2990e0a6666e7452a71789b75c40e573d2f2cf815973bc46377c8b49"
   license "Apache-2.0"
 
   bottle do
-    sha256                               arm64_ventura:  "44aebe4a05dc8d023672d0544c442ec630e61cf3a791e5d5ba7552f33a433099"
-    sha256                               arm64_monterey: "18626161ca4ca78ddebb906b5bd1a0038ac40adaf41497f8b7bd8cf553c1e10a"
-    sha256                               arm64_big_sur:  "5aa8625d2e97fa8075beaecab7ad0d82cb8fea0548d5df24a920fce14a0f5c60"
-    sha256                               ventura:        "b6ad6c99de6d54dccebe2d58c75da8acae5a4d4d7c477d6e71ed2e13abab4d86"
-    sha256                               monterey:       "a86cb35035ecd27d1797ea465b6eeacc4e853f61403c3f2f89e1040cf512662c"
-    sha256                               big_sur:        "6c18f6933d5712c4f25895b3487b2f383a5d16e1785ca4a9e2c0355ddfc3748b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ee303353559e82befade4d8f6cd05b0c492ac6b055de96e1446bf6d4d3f0135"
+    sha256                               arm64_ventura:  "bf8421d71d5dff9706c1c4775a8a89d7977006b2ecfaf07db8b103eac9e74c21"
+    sha256                               arm64_monterey: "3df26b51507754c808696faa820041829f31c523529f5b081a2ed08aa024b647"
+    sha256                               arm64_big_sur:  "dac34c2cb2c1bdae6cd915480a52d73d52d77813ecf532a4ecca2d947bc99e84"
+    sha256                               ventura:        "dd6e5358b3e403b1ea3037fbde81aaa0eeeb791247818329bcf4259164a4fc48"
+    sha256                               monterey:       "3c4ed7eb788f17446424455e40d915598e8f9eb4d6321b23bcb5a98c65752c3c"
+    sha256                               big_sur:        "0b567c68e45696b6b2f91001a827655eac9ed9ceb1764c7a2f04c03428f3815f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f767dab25c0fe933e4741b89f4cd5fd020b994bcabbbb1b3cb29ed03b8cc5f4f"
   end
 
   depends_on "node@16" # try `node` after https://jira.mongodb.org/browse/MONGOSH-1391

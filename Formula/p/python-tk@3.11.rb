@@ -1,8 +1,8 @@
 class PythonTkAT311 < Formula
   desc "Python interface to Tcl/Tk"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.11.4/Python-3.11.4.tgz"
-  sha256 "85c37a265e5c9dd9f75b35f954e31fbfc10383162417285e30ad25cc073a0d63"
+  url "https://www.python.org/ftp/python/3.11.5/Python-3.11.5.tgz"
+  sha256 "a12a0a013a30b846c786c010f2c19dd36b7298d888f7c4bd1581d90ce18b5e58"
   license "Python-2.0"
 
   livecheck do
@@ -10,13 +10,13 @@ class PythonTkAT311 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "18138527b22efdf48a841094b98aacb58dfaeff84513622054859048b0185869"
-    sha256 cellar: :any,                 arm64_monterey: "073dd807274d72fc44246d10a8863d214f8fec0185b3e14dfbfde3efa0ada67e"
-    sha256 cellar: :any,                 arm64_big_sur:  "3ad3a5bdf1042e2327e5a47d9b42b18308b99a58dfc553d1e45e14d8ebeed242"
-    sha256 cellar: :any,                 ventura:        "23696e881fd3cf3dac5626a5acbc0f83860a0838905ee829534c1a27076448fd"
-    sha256 cellar: :any,                 monterey:       "2f10060f14e59204a42a72a38c2210fe322e7fdda4209815e2f06d18a112d348"
-    sha256 cellar: :any,                 big_sur:        "4b64ace86b3a5e97731044939fbf8a6437ad059104e21c25b7f3ae2141ecccfb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08113116080ba01ee72766d9dbaf28a014444d6c8f0fb51c14d918f4bf844e03"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5844fa8f52d14b4beda66b05aa35659a0894d0191e6b8b39cc8bb58dce688f33"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cf0e26a34872554aa0323b61d0ec5b2aa71cfd291c2b93ddb2a7a92419717610"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "47c3b5e525baec45b02848b400e26a67022ae3c52304fbcab8c38d3eb942ef83"
+    sha256 cellar: :any_skip_relocation, ventura:        "40b26d0ef0df727124c374ef8552aea27d0a9e5e45fc72c5d02fec2e43dfa1d4"
+    sha256 cellar: :any_skip_relocation, monterey:       "aee33ea9893d1765e0e4606fa28117097855982bba4d3016dea1fbeeecf5071a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bfa211f6ceae8b0a059238de543a5142bc7bc147e1b4b21e8f9e24386753dc8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3dc525befaa4d2172771916e3770c08a2b8d04026c5797bc2a27b67d7c37ef87"
   end
 
   depends_on "python@3.11"

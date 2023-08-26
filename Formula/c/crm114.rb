@@ -7,7 +7,8 @@ class Crm114 < Formula
 
   livecheck do
     url "https://crm114.sourceforge.net/wiki/doku.php?id=download"
-    regex(%r{href=.*?/crm114[._-]v?(\d+(?:\.\d+)*)[._-]([a-z]+)?\.src\.t}i)
+    regex(%r{href=.*?/crm114[._-]v?(\d+(?:\.\d+)*)[._-][^"' >]*?[._-]src\.t}i)
+    strategy :page_match
   end
 
   bottle do

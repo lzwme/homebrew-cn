@@ -1,8 +1,8 @@
 class Aptos < Formula
   desc "Layer 1 blockchain built to support fair access to decentralized assets for all"
   homepage "https://aptoslabs.com/"
-  url "https://ghproxy.com/https://github.com/aptos-labs/aptos-core/archive/refs/tags/aptos-cli-v2.0.3.tar.gz"
-  sha256 "4b76639b3758a2990a0b54ebdcba6db99b89d980b5d3e45a63a22d5344391ef5"
+  url "https://ghproxy.com/https://github.com/aptos-labs/aptos-core/archive/refs/tags/aptos-cli-v2.1.0.tar.gz"
+  sha256 "3a35b68d8587be1ac2bea99535a1f77832a267962117b5a36ac6fd5842190bc7"
   license "Apache-2.0"
   head "https://github.com/aptos-labs/aptos-core.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Aptos < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f3f59bcad940a142226d617f2d4542b20937bbccff76401e14fe4cd89aeb4079"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "faa8ff58a53507bbe504eddc07599bcccaf4dd46227aa8f24e90063e598e155b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "65101ccdf8175ac0f15246313820dc4b7b8f1b182637a438a0d4aad1b63d3f3b"
-    sha256 cellar: :any_skip_relocation, ventura:        "8d1bb781238baf3f12e79df3da65228de2dee1a6203b720a8e473d9f9afd624d"
-    sha256 cellar: :any_skip_relocation, monterey:       "8c1fcf9a4c1723cd45381f7d060e78cf3d440ac4463c4eb7ce199a9e670b2ff9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6616de72382fada4ed37d6c444c1c70a71d776b08c81a9c77432368d582f008e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ca17dbbb150e9362ff9c623af3904150ddf0b9b79c4d39e156be287b4758139"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1a2f68186f97ac3503ee05cc4cc2f20ccd632b5172242a4a26d5df50d44939e0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4cb17eb4cec8958cbd798f1ae5140e8c80789e54dc2e3d4c69097921369b38af"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e49af3d9a2243394add84616e02c8e2505a800af198ffabc695272ff5703b651"
+    sha256 cellar: :any_skip_relocation, ventura:        "ce1f6b15cfdfd394a39151a98fd9a3d6f563eec61647d426081f699d20979291"
+    sha256 cellar: :any_skip_relocation, monterey:       "83f46e535672b412509ecb5130929017a57f5571b664a15a9da983a7191236d3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2bfe730243707288d89d8d60a713b12541fce2fd90f02f829af051c47d1b6412"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e28be8bbc8add9c6a3d7027d6b9cbab5fc36d20d482c51c7ceceda60d08d6b93"
   end
 
   depends_on "cmake" => :build

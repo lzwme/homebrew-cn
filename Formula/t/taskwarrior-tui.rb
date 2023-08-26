@@ -1,8 +1,8 @@
 class TaskwarriorTui < Formula
   desc "Terminal user interface for taskwarrior"
   homepage "https://github.com/kdheepak/taskwarrior-tui"
-  url "https://ghproxy.com/https://github.com/kdheepak/taskwarrior-tui/archive/v0.25.1.tar.gz"
-  sha256 "52be07ec3331b830b1fa626e0da9a2196aa861db0bd04653445d009c74322361"
+  url "https://ghproxy.com/https://github.com/kdheepak/taskwarrior-tui/archive/v0.25.2.tar.gz"
+  sha256 "d594c63ad2191dbebd0842790f64c73b28de00074f7b20c10e8326d78db039c1"
   license "MIT"
   head "https://github.com/kdheepak/taskwarrior-tui.git", branch: "main"
 
@@ -12,13 +12,13 @@ class TaskwarriorTui < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9fb215c70f38c00a4ea26ca86794b785a77fecf6f7c73179d8349757107b8e2e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0d93f84b62d236ae6a5c087608ed8bf817eb752fbd75ba6649b9f8da8220135c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2d7eb47ff3b55c12464d9c025dac8dda6f803a0eed814ec31d359a7bb86b4104"
-    sha256 cellar: :any_skip_relocation, ventura:        "280b68740275379103d17a566f5af5a60eb625be31e4493a35eaa46a0241546b"
-    sha256 cellar: :any_skip_relocation, monterey:       "9d701c4e984401e9712c98cfb6fbaa2b49e3bc1f2f21e357bde6df6ddc2d544c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "911d5b5f0d4954d56ce72d56d6e758ae09ef0fabdfca51e58e639a9a740ea911"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5aee91a1e5c66899a5561bb625d13b5488a870bc760a0886e353c56fa72a6fcf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "19de8cddfa9ea7da09df4e1cffd209b59c49a29b65d8a091f9eea92d423717bc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "506e6cd55eba0f7f661704b829cea2687bfbde2558b4d82d07fc58b4a99c4f17"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cbd7d3bbdb51871db1a40e3511586baf681b7380fa62bb056dfb3f5954e63b06"
+    sha256 cellar: :any_skip_relocation, ventura:        "0ae1944e6541ff4d769165881781a2214e127f9a77aaa16decf623678c59c6d6"
+    sha256 cellar: :any_skip_relocation, monterey:       "a28119875b522ca1019e72542480578047fcdb47d3e4462fee5d01c78fe28ed6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "42be6d405f3f657b2597c2029ee2398b5c99a4d92dd967b19d9f3f8cff5add70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2a3b137c54cf2d9882a0d9ad0b154dbdc07a6fbc8d9addb6dceb11f4e0dc9d0"
   end
 
   depends_on "rust" => :build

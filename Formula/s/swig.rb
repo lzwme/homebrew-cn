@@ -24,7 +24,7 @@ class Swig < Formula
 
   depends_on "pcre2"
 
-  uses_from_macos "ruby" => :test
+  uses_from_macos "python" => :test
 
   def install
     system "./autogen.sh" if build.head?
@@ -47,27 +47,24 @@ class Swig < Formula
       extern int add(int x, int y);
       %}
     EOS
-    (testpath/"run.rb").write <<~EOS
-      require "./test"
-      puts Test.add(1, 1)
+    (testpath/"setup.py").write <<~EOS
+      #!/usr/bin/env python3
+      from distutils.core import setup, Extension
+      test_module = Extension("_test", sources=["test_wrap.c", "test.c"])
+      setup(name="test",
+            version="0.1",
+            ext_modules=[test_module],
+            py_modules=["test"])
     EOS
-    system "#{bin}/swig", "-ruby", "test.i"
-    if OS.mac?
-      system ENV.cc, "-c", "test.c"
-      system ENV.cc, "-c", "test_wrap.c", "-I#{MacOS.sdk_path}/System/Library/Frameworks/Ruby.framework/Headers/"
-      system ENV.cc, "-bundle", "-undefined", "dynamic_lookup", "test.o", "test_wrap.o", "-o", "test.bundle"
-    else
-      ruby = Formula["ruby"]
-      args = Utils.safe_popen_read(
-        ruby.opt_bin/"ruby", "-e", "'puts RbConfig::CONFIG[\"LIBRUBYARG\"]'"
-      ).chomp
-      system ENV.cc, "-c", "-fPIC", "test.c"
-      system ENV.cc, "-c", "-fPIC", "test_wrap.c",
-             "-I#{ruby.opt_include}/ruby-#{ruby.version.major_minor}.0",
-             "-I#{ruby.opt_include}/ruby-#{ruby.version.major_minor}.0/x86_64-linux/"
-      system ENV.cc, "-shared", "test.o", "test_wrap.o", "-o", "test.so",
-             *args.delete("'").split
-    end
-    assert_equal "2", shell_output("ruby run.rb").strip
+    (testpath/"run.py").write <<~EOS
+      #!/usr/bin/env python3
+      import test
+      print(test.add(1, 1))
+    EOS
+
+    ENV.remove_from_cflags(/-march=\S*/)
+    system "#{bin}/swig", "-python", "test.i"
+    system "python3", "setup.py", "build_ext", "--inplace"
+    assert_equal "2", shell_output("python3 ./run.py").strip
   end
 end

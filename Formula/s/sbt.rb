@@ -1,9 +1,9 @@
 class Sbt < Formula
   desc "Build tool for Scala projects"
   homepage "https://www.scala-sbt.org/"
-  url "https://ghproxy.com/https://github.com/sbt/sbt/releases/download/v1.9.3/sbt-1.9.3.tgz"
-  mirror "https://sbt-downloads.cdnedge.bluemix.net/releases/v1.9.3/sbt-1.9.3.tgz"
-  sha256 "9ccf944eccb33c66830ef9ff9d46c3402741cdc6d883251045261db33e748e82"
+  url "https://ghproxy.com/https://github.com/sbt/sbt/releases/download/v1.9.4/sbt-1.9.4.tgz"
+  mirror "https://sbt-downloads.cdnedge.bluemix.net/releases/v1.9.4/sbt-1.9.4.tgz"
+  sha256 "68bd0225c29da39b2cfb25b6770a919f69e47621bb250112152742d7f29ab870"
   license "Apache-2.0"
 
   livecheck do
@@ -12,13 +12,7 @@ class Sbt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "75de7534a6fc431cc71af754c5877351f3cc73a6c32106c7db015f974b98a4ea"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "75de7534a6fc431cc71af754c5877351f3cc73a6c32106c7db015f974b98a4ea"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "75de7534a6fc431cc71af754c5877351f3cc73a6c32106c7db015f974b98a4ea"
-    sha256 cellar: :any_skip_relocation, ventura:        "75de7534a6fc431cc71af754c5877351f3cc73a6c32106c7db015f974b98a4ea"
-    sha256 cellar: :any_skip_relocation, monterey:       "75de7534a6fc431cc71af754c5877351f3cc73a6c32106c7db015f974b98a4ea"
-    sha256 cellar: :any_skip_relocation, big_sur:        "75de7534a6fc431cc71af754c5877351f3cc73a6c32106c7db015f974b98a4ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d213c5364b6bdda19e51e70030e90657ffdad0f6c4c2bd033066699bdcdd212"
+    sha256 cellar: :any_skip_relocation, all: "778e64d236650088741f3c4ae72ed377e9f916adc053d5da5062989ce6ad488c"
   end
 
   depends_on "openjdk"
