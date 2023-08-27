@@ -3,19 +3,19 @@ require "language/node"
 class GitlabCiLocal < Formula
   desc "Run gitlab pipelines locally as shell executor or docker executor"
   homepage "https://github.com/firecow/gitlab-ci-local"
-  url "https://registry.npmjs.org/gitlab-ci-local/-/gitlab-ci-local-4.42.0.tgz"
-  sha256 "b278af22b6423f88cdfb4ff771ef6fb40e864585ed2ee4ccfa6a9334b4732619"
+  url "https://registry.npmjs.org/gitlab-ci-local/-/gitlab-ci-local-4.43.0.tgz"
+  sha256 "ccb2f2bed0ef73bf8287f769770b692aa65f47cd37c024eb2331f9b7afc256b3"
   license "MIT"
   head "https://github.com/firecow/gitlab-ci-local.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "18b976aea6d141e85d09fa2e387f318d51b02137c488c35b2b4aef2b3d344f34"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "18b976aea6d141e85d09fa2e387f318d51b02137c488c35b2b4aef2b3d344f34"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "18b976aea6d141e85d09fa2e387f318d51b02137c488c35b2b4aef2b3d344f34"
-    sha256 cellar: :any_skip_relocation, ventura:        "cc3ea34ee93bda6cbeb81e05fdbfe99e8c58d54a542b2d08334d8dddcb37497d"
-    sha256 cellar: :any_skip_relocation, monterey:       "cc3ea34ee93bda6cbeb81e05fdbfe99e8c58d54a542b2d08334d8dddcb37497d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cc3ea34ee93bda6cbeb81e05fdbfe99e8c58d54a542b2d08334d8dddcb37497d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c942d1207f92f5c7fed131b56eeb1e9e4a2ce15014358b5072e8421f949c8b4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5a3715b632d061230aa8bbbffc5915c5d3a4d939481c34a5ea70d32906a4b65a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5a3715b632d061230aa8bbbffc5915c5d3a4d939481c34a5ea70d32906a4b65a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5a3715b632d061230aa8bbbffc5915c5d3a4d939481c34a5ea70d32906a4b65a"
+    sha256 cellar: :any_skip_relocation, ventura:        "18cecf9e17d5404ef3539f74f433db107fe48e50065ccc3160832c26bab9eca2"
+    sha256 cellar: :any_skip_relocation, monterey:       "18cecf9e17d5404ef3539f74f433db107fe48e50065ccc3160832c26bab9eca2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "18cecf9e17d5404ef3539f74f433db107fe48e50065ccc3160832c26bab9eca2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a3715b632d061230aa8bbbffc5915c5d3a4d939481c34a5ea70d32906a4b65a"
   end
 
   depends_on "node"

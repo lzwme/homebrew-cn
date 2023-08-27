@@ -8,12 +8,11 @@ class Rke < Formula
   # It's necessary to check releases instead of tags here (to avoid upstream
   # tag issues) but we can't use the `GithubLatest` strategy because upstream
   # creates releases for more than one minor version (i.e., the "latest" release
-  # isn't the newest version at times). We normally avoid checking the releases
-  # page because pagination can cause problems but this is our only choice.
+  # isn't the newest version at times).
   livecheck do
-    url "https://github.com/rancher/rke/releases?q=prerelease%3Afalse"
-    regex(%r{href=["']?[^"' >]*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
-    strategy :page_match
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_releases
   end
 
   bottle do

@@ -1,9 +1,9 @@
 class Wireshark < Formula
   desc "Graphical network analyzer and capture tool"
   homepage "https://www.wireshark.org"
-  url "https://www.wireshark.org/download/src/all-versions/wireshark-4.0.8.tar.xz"
-  mirror "https://1.eu.dl.wireshark.org/src/all-versions/wireshark-4.0.8.tar.xz"
-  sha256 "16663585c0ffefd5593a6628d4a20cc8241b9703b11283cfe71ead2b750888c8"
+  url "https://www.wireshark.org/download/src/all-versions/wireshark-4.1.0.tar.xz"
+  mirror "https://1.eu.dl.wireshark.org/src/all-versions/wireshark-4.1.0.tar.xz"
+  sha256 "9a32ae59f0a843aefd8856c0d208fc464b93ce9415fb8da8723c550c840ab1d5"
   license "GPL-2.0-or-later"
   head "https://gitlab.com/wireshark/wireshark.git", branch: "master"
 
@@ -13,13 +13,13 @@ class Wireshark < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "40a194f5831930e3d3f0b1eb2b21ededd50a3ce7aea7934d82f0ebeed5a14102"
-    sha256                               arm64_monterey: "6dc206d8ed92240b6cb693129cc0d779158ca5078112025349f2753d86428f8c"
-    sha256                               arm64_big_sur:  "362c629aaf8c7ddc03e8a10974183573a0f8bf262c6e0fcea269ae7721918236"
-    sha256                               ventura:        "8c7a0754831b17a31208557af8d7e6c998b52028393a12675f8692c160d271a5"
-    sha256                               monterey:       "4052cf1161403dad3c82d3161cfe3bd444a8cfd708a44eff31aa7f1650904216"
-    sha256                               big_sur:        "cfff96b97de50691f45e14745de932920c8a33c5d3632de40bd1f2217062517a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a4890046282f40d59fedd1b32506c8148447df08fd97f02bad12be3f69a0913"
+    sha256                               arm64_ventura:  "29b300dbfcdf66a9788c47d34b004597b335a0fa337db83ede9fd5058341106a"
+    sha256                               arm64_monterey: "dfa02759e46a2d6b9a63c68554de28f5ebc73c39bf297b310dac77f2ee975cf4"
+    sha256                               arm64_big_sur:  "1b04324e5aa82f65af4d99f49ace42c0b943d4a9588a46aeb47e0bb53e5ca713"
+    sha256                               ventura:        "0127e9ebfb2bbdc8bdeabcd80c1cb657417d05887404e38fd02b59a1112bc69e"
+    sha256                               monterey:       "6939bafb4effca4d8397b88fe37cdbf6cc2c30ee05874c47b6ae0035d468c4aa"
+    sha256                               big_sur:        "c5b1344c9a6e7553d4356533d75b0e8ac51aa046baf27736bb18c11232c66deb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "276a65970d0340ba9c8cfdbcf10a56421be409920f02c1c9e02fdf771189cc24"
   end
 
   depends_on "cmake" => :build
@@ -32,6 +32,7 @@ class Wireshark < Formula
   depends_on "libsmi"
   depends_on "libssh"
   depends_on "lua"
+  depends_on "speexdsp"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build

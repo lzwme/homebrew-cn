@@ -1,20 +1,19 @@
 class Goplus < Formula
   desc "Programming language for engineering, STEM education, and data science"
   homepage "https://goplus.org"
-  url "https://ghproxy.com/https://github.com/goplus/gop/archive/v1.1.5.tar.gz"
-  sha256 "ce93d5ff9a939a3fb3fd8d0f8c2db6ed38b799c302028ce222bfa41c01992210"
+  url "https://ghproxy.com/https://github.com/goplus/gop/archive/v1.1.6.tar.gz"
+  sha256 "e96c62e254d5600851b1479e03f05f7b70a91516de28b26b686c4b7f6b4dcb87"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/goplus/gop.git", branch: "main"
 
   bottle do
-    sha256 arm64_ventura:  "c4491a45561870db752ed10549dfa08c55a3ef78540d2f107439489fcde3037f"
-    sha256 arm64_monterey: "a52268db166500a28bebd36555c23c5a32be7ff6b82ec611cd6294d26e891d59"
-    sha256 arm64_big_sur:  "607a569175685f27ec5e149858a6ce86fee88eee82afd52597e5d8657285effb"
-    sha256 ventura:        "68a0d939a8dfcd789be76605cfce752acf3e1db968cb220780919c1f86ede9e6"
-    sha256 monterey:       "2bbe592a614ec333abf7c41182ec92bd1db8d67d8b6fe5b00e68f203d60ea454"
-    sha256 big_sur:        "63f6a2a3e914b1ad3c5ce71f12218514ae789a3641626f3c56b197dd7e72332b"
-    sha256 x86_64_linux:   "1c7abff51afc33d15a6d9ea0e8bc37cb66edf7cd384c19173e44078e8a633fb1"
+    sha256 arm64_ventura:  "f2655bcc4256523bbedac33504243317eb722f1487a8d8ade3d5b6f97b3e16d5"
+    sha256 arm64_monterey: "dd57548063da4333a46dd58bba1ab370feb1dfea4aab9bd71889701ee30bb811"
+    sha256 arm64_big_sur:  "2f5a6dd005220f8d70b162e5b12ec16442fc5b8ca134d8e9faefc31e46397d03"
+    sha256 ventura:        "1c483b3cae4196342550cfd4cd1ac56ec2aa29a3b68c63a3dce092de922606fb"
+    sha256 monterey:       "84a19d4b70b87964d799c8808703f8e11e50a386de5a0abed61e6a31e87d6d24"
+    sha256 big_sur:        "40aa7cd615adbb7489c26aa2f9076e2fb320bdc5c0d1f5b8430de46f613669f0"
+    sha256 x86_64_linux:   "162e4b149d60176d919174aca3e5090e3dfd9d3d1b1e4dc721e435c8724e8324"
   end
 
   depends_on "go"

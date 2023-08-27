@@ -1,19 +1,19 @@
 class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.ai/"
-  url "https://ghproxy.com/https://github.com/jmorganca/ollama/archive/refs/tags/v0.0.15.tar.gz"
-  sha256 "c97a0e8d26cca73e5a75f22f90c300733bfeddc3f11ae3280e76d0c10ef14ccc"
+  url "https://ghproxy.com/https://github.com/jmorganca/ollama/archive/refs/tags/v0.0.16.tar.gz"
+  sha256 "40152f8876f9048d09ada31cef68475bf1857adff15858b0cb991599fdf62eac"
   license "MIT"
   head "https://github.com/jmorganca/ollama.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb4ad3e13a329c686db9d36f59bdc200ec520a6d96f1961a1860341a67a20748"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "532803afdb9f3f74b9e02d33d01f523aa3021e17dadc6ee46daea57d5a425c8a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5a6e6cad9a5e350aea3138b9e7d3fb2c82aa0ca6c710007dfae0306ebf9b9bd3"
-    sha256 cellar: :any_skip_relocation, ventura:        "827a41ec68619787948439aeb8cbec215578060f5c17579f664a4aca45c4f195"
-    sha256 cellar: :any_skip_relocation, monterey:       "c43da513bc3d09057db226c3a6266e3b229851786aa3f6caae2caebb1779b31f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ea2823a7233b8bd0d3e7f0f024868394233be5b5d0fedaa4313b416eeb359609"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "720701af7f81c07a54ae017b0a86af4b6fb9cd2832b0da8b119cd81dceca44ee"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "18891fd18f553b1a98ea0142591e7e464f1a81165edc732e6624282e88ddd5a0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1efa357d39300054cf02e3bbe0461c8057b81e596c3e3dec7cfa0e9719de9499"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e1b6601f78a603eb8b198af74393787049feddd141ef6174555ca4dcb591ffb3"
+    sha256 cellar: :any_skip_relocation, ventura:        "0ceaec0e781c0586aeb6c3bb77aa2036c4e0c92115c1a35a222bcd08f3cc94eb"
+    sha256 cellar: :any_skip_relocation, monterey:       "0ec193c8b03cdd8d26c1daca404a4c7d0b1728eb8a5432386fe70321a80f9679"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5decb92e7192285b3539a0c89e2ca93b7cfec876b09d9c07e4db24e8068793e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d91084a321551bad660dd46fc8fd90c662cfa1ea3cdfaaff791544be1ab8807e"
   end
 
   depends_on "go" => :build

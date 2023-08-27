@@ -1,19 +1,19 @@
 class BaidupcsGo < Formula
   desc "Terminal utility for Baidu Network Disk"
   homepage "https://github.com/qjfoidnh/BaiduPCS-Go"
-  url "https://ghproxy.com/https://github.com/qjfoidnh/BaiduPCS-Go/archive/v3.9.2.tar.gz"
-  sha256 "da7749bb0534f23154cbca7aad7e77d5531c3aabe458a0a0b1cd618b76f59217"
+  url "https://ghproxy.com/https://github.com/qjfoidnh/BaiduPCS-Go/archive/v3.9.3.tar.gz"
+  sha256 "e560b1a977fda5e4d3e9e67df5ae8eddd45ed0bf9f9e65b604afe06aeed8a1c8"
   license "Apache-2.0"
   head "https://github.com/qjfoidnh/BaiduPCS-Go.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2a6296c9f0196a0525732244a03f983c197cc340c5658d259f05624a91d7d27a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2a6296c9f0196a0525732244a03f983c197cc340c5658d259f05624a91d7d27a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2a6296c9f0196a0525732244a03f983c197cc340c5658d259f05624a91d7d27a"
-    sha256 cellar: :any_skip_relocation, ventura:        "67905fed7172ac28532c8ae6a2a64528625618be7ecfe59cebad34ea95a28080"
-    sha256 cellar: :any_skip_relocation, monterey:       "67905fed7172ac28532c8ae6a2a64528625618be7ecfe59cebad34ea95a28080"
-    sha256 cellar: :any_skip_relocation, big_sur:        "67905fed7172ac28532c8ae6a2a64528625618be7ecfe59cebad34ea95a28080"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a7d5cde8e8718d32b2ca2c4b433700d25b23f67a7d48ac9be753663b967b5b1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f278f9b0c3f5286084ff43a432ae91db6390814620c9b3f4284ffe7f988dfb64"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f883c13f897a9788d52f5972f3079e9e4b0e32ef6cb27933e823b148dfc94936"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "30d536cc4d681438ef3170e9a1c14d57e58044d974e615e0cd7775baf91c4725"
+    sha256 cellar: :any_skip_relocation, ventura:        "a812c990e528a0d5885866a648f1f179d621ea1c2fe782c5f401bea178b8af27"
+    sha256 cellar: :any_skip_relocation, monterey:       "322841c4c0fcf526be973708481ade6f05ac300368c3929a5804a9de70c3d6db"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ca6c4ddf8d987c55f6c9f65712bbbac60106158c838b4a57a61210ffbc75aaaf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "023375a3d8fc635316329338e3671e55f64137f16d96381985afbed95ab7e4d8"
   end
 
   depends_on "go" => :build

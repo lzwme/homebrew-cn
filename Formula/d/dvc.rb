@@ -6,15 +6,16 @@ class Dvc < Formula
   url "https://files.pythonhosted.org/packages/8d/ad/cd854d9a763c61e14451ae0c37edb5b9346bc6a852d9460541c0faf0eda1/dvc-3.16.0.tar.gz"
   sha256 "0e54ee4b185065a45d2aa8b44db819a1d05f24b9cd6e085327784e872a2d6057"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b51b9d27494c7f4882f3ce35b60bc8e8a67158785ac73fbb8adf08bbbb73612a"
-    sha256 cellar: :any,                 arm64_monterey: "f6f152bb8e0f80d629cdb1efbd24f3a0ed257b3be62d851ceb9abf0e770abf40"
-    sha256 cellar: :any,                 arm64_big_sur:  "39130251612b6bae4dc3542d60e56d7f3b9bc576af931d85afb3cc168b855947"
-    sha256 cellar: :any,                 ventura:        "97eb2b3c466ec6a8b09906572cb140bdf39f93bd967c048eea45a88ced08fc79"
-    sha256 cellar: :any,                 monterey:       "ab70c1d692ddbda38dcacf37bdcb7881170bd931d4e568cdbcba03c039b39525"
-    sha256 cellar: :any,                 big_sur:        "1bad0dee4d6e2ad07d20b7d05debe56070b06163637ba28a77b4f3935c64f6b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95ca731f52dd166607797a9e7feef1e973125f2eb1337fb97e88f596c349fff4"
+    sha256 cellar: :any,                 arm64_ventura:  "2c56b8f2a2763ee033aefebb1a83b17565201f5e72f67fdf591d8b2f0f9444b4"
+    sha256 cellar: :any,                 arm64_monterey: "8bd19c86dea5793759677fd90a57450b379a03ab59813f5a281481c814125191"
+    sha256 cellar: :any,                 arm64_big_sur:  "68f1e2415d9e1c2f353268fa13e53dfe05acd2def8e4ac38b2446e2a6252edff"
+    sha256 cellar: :any,                 ventura:        "672171a73145d1abb8f862a8252680e6f98c204f3a377ad1a2f1bcb0d99b30d2"
+    sha256 cellar: :any,                 monterey:       "66b1371f38b88000d202a9e05af5d46e27c6e429eeecd941f6ab698f5d7d71c8"
+    sha256 cellar: :any,                 big_sur:        "e047322e5ad21ec6f3a933b44f343e18f08c42080a887cf036e6a1d0a522f9ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d727d8165aa0817de9bc8734c46a1debc15964e6665bf4927b0b6c93ce8e140f"
   end
 
   depends_on "openjdk" => :build # for hydra-core

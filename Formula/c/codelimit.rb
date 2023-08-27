@@ -3,18 +3,18 @@ class Codelimit < Formula
 
   desc "Your Refactoring Alarm"
   homepage "https://github.com/getcodelimit/codelimit"
-  url "https://files.pythonhosted.org/packages/71/db/872656169f3a75e923faf89c4ef57ccf7691722422e6d708f6ced6edbde2/codelimit-0.6.0.tar.gz"
-  sha256 "2791dded3c894a44525bcb9d354088626d1627272137b8273513bfb704efbfea"
+  url "https://files.pythonhosted.org/packages/9a/98/c56316cfac4aed19ef7b05f8455e87b6f1e0273aa3e35d545bbd53dbfc98/codelimit-0.6.2.tar.gz"
+  sha256 "26209ca3f09dfa4efc7dafa6fa25a0499aa909c46c41cd35a0ea79487f3c6611"
   license "ISC"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f423f175a27699173edad109327fe2d1245e8ff64cab0e81f6617455a0c6ea11"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "027012bbeade70cd4cb881100e853c5cfcca24c2ade52844257a00d98fa205e5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "22d430c5cdf93d74761f3a9f3a1b665350e978de1c9caa82ec3c85e2af398696"
-    sha256 cellar: :any_skip_relocation, ventura:        "492ae9a8dd6a0849c64d18ca63cd3065642c8c04df108c018c431bf0b308b68d"
-    sha256 cellar: :any_skip_relocation, monterey:       "eb3246af12bd573d93c64cc5bd4d0c4e41d8f79d9aa530f9b76d30d870471a28"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a695b33f1f1278cb4f8c34777c4bb8a8dc1ccdd58f60a6647ed2172386fd844d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a198eff559add1e5a05f7454216e31c4bf3c8f2226b739c3f605a47002e43fd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa2900872700c100009c845c59c6166110b5f8380afbf7237e2366790c57fcdf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "90df7c15cf28a0bbd23f5a20fde17bda5eb3bdd8cf48bf5410b3a58e2cae415b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bb79909e384b4b83b06b136823113b9fd78fdcb205955aefaf9e8915f9fbf047"
+    sha256 cellar: :any_skip_relocation, ventura:        "3ea0bd086034eb9a9f9a12a750966f9ec9a9914b3b985e4dc7958ca1dfa8040d"
+    sha256 cellar: :any_skip_relocation, monterey:       "391db0a51c227cf54cea9667b4e46d82900e3493d201faf4ba6bd08c81e46e3a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "12b3e614eaac692d2db229d9ffc4089064712e90b4d46bbc6f904177dffd44dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dff8f65e7178d076223f47394aaa83a7e88f5b19b7141232bb402b8ea13f9c7a"
   end
 
   depends_on "pygments"
