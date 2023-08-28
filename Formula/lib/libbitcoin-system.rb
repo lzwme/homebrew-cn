@@ -1,23 +1,18 @@
-class Libbitcoin < Formula
+class LibbitcoinSystem < Formula
   desc "Bitcoin Cross-Platform C++ Development Toolkit"
   homepage "https://github.com/libbitcoin/libbitcoin-system"
   url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-system/archive/v3.8.0.tar.gz"
   sha256 "b5dd2a97289370fbb93672dd3114383f30d877061de1d1683fa8bdda5309bfa2"
   license "AGPL-3.0-or-later"
 
-  livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   bottle do
-    sha256                               arm64_ventura:  "f0a93d33bc38415aaa6d6da0d135b151f43e8e9132ab1d2aa934c8112dcd950f"
-    sha256                               arm64_monterey: "3f308c8e5a160fc45a51e0affebe5dcb2382f28bbf00eaf98152374b57ed19dd"
-    sha256                               arm64_big_sur:  "e03b859c607df3b9b21a813645721a4d11b1d7923e3770ed5532551c5fe1aea9"
-    sha256                               ventura:        "389ed798a948326062f7315a8648233b62164e7d26a39e8895296bc78dff7c26"
-    sha256                               monterey:       "bea6b3ee59b7f3c4b866971d50eacfb794701331831e42235af7ecb61a27d086"
-    sha256                               big_sur:        "dde076ed507c4b564802ff9a60e896aca09fdd7ca6727b7ab105555f5ecbd7bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81ab5be0a7b329e9eff96942a69ecbbdcc4062254d8c83b6a003935cffd01659"
+    sha256                               arm64_ventura:  "aed49e03846e0be62e5e605ca01179ba431dfb35d3f1b844ff8fce859549862f"
+    sha256                               arm64_monterey: "0a300abdc05543b90b2b5db0e0d6117ca3d8c97cce089349350435d169321525"
+    sha256                               arm64_big_sur:  "346c920f79aca4136d57b17deee022f6d12938b9813b4ee90a5f41a1019d7ef9"
+    sha256                               ventura:        "60aea6392017d5e69d5a8c3474c3561929286300fe3b174eacad804669451523"
+    sha256                               monterey:       "e93abbec391254c0b3687735eede748b0efd90426730f51fb30b6fa0838bc756"
+    sha256                               big_sur:        "a4a7556454aee07df23327dc93fa861b9a7fc429577adbc3b7788ae8430262c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9f1a6063cdcb6c35a069eb546968520935ad2addcc25e4d76229dcc8b61806a"
   end
 
   depends_on "autoconf" => :build
@@ -26,8 +21,6 @@ class Libbitcoin < Formula
   depends_on "pkg-config" => :build
   # https://github.com/libbitcoin/libbitcoin-system/issues/1234
   depends_on "boost@1.76"
-  depends_on "libpng"
-  depends_on "qrencode"
 
   resource "secp256k1" do
     url "https://ghproxy.com/https://github.com/libbitcoin/secp256k1/archive/v0.1.0.20.tar.gz"
@@ -52,9 +45,7 @@ class Libbitcoin < Formula
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
-                          "--with-boost-libdir=#{Formula["boost@1.76"].opt_lib}",
-                          "--with-png",
-                          "--with-qrencode"
+                          "--with-boost-libdir=#{Formula["boost@1.76"].opt_lib}"
     system "make", "install"
   end
 

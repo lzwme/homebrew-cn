@@ -1,18 +1,18 @@
 class Bkt < Formula
   desc "Utility for caching the results of shell commands"
   homepage "https://www.bkt.rs"
-  url "https://ghproxy.com/https://github.com/dimo414/bkt/archive/refs/tags/0.6.1.tar.gz"
-  sha256 "01ae0983eb199d2abd027e2b7b160c870d89477afdee2c5281faac4740814607"
+  url "https://ghproxy.com/https://github.com/dimo414/bkt/archive/refs/tags/0.7.0.tar.gz"
+  sha256 "1a846e163fa0c530d64a3fdd3935895a2e3b66a00ff099070bcfd1f0bdf1f674"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "565bde22f3681c85933ffbd44c18fc8735866ff6bfc8ba21b557461aca1ac5f1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2417842bbd0988c6696ce3991833121ff8e65f3460180037e6e1b90722d3c327"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e95bfb0699da1275a4179f29841fdf240f3bd8eea867b7e9aa58d7b2cd65f2df"
-    sha256 cellar: :any_skip_relocation, ventura:        "17c00a7a7f2c7d2eb1d51fece94a383d7fc2afb9ed3a38b4d3a9c8040fde7751"
-    sha256 cellar: :any_skip_relocation, monterey:       "fa79aa546022943ea1d4e62a8417215d2608f9b592cce01b044f37687c1beb26"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2bc5eafbcc4fdbe55d5e6dab094a0c6dc99966070d3aa6bb0f1ad59c34daa317"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eebf5d4b7f0a6efc825ea3317a5455765fb384eef399d321e663f44702f02567"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6c454d031bb9cb8ebcf36b49137d4be6a2248d28dcb202a4a75047d92a4e511f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8342dc86fbdbf19564f772c038c361e232b8239412d3a52457cc437dddf8cea2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bc939d9cc3cabb34301dffe4f8d63a112dd6637213316b9786b347ae23cab335"
+    sha256 cellar: :any_skip_relocation, ventura:        "2182cf10cfe68da489b3bce17c190dc6ff0a60c0295b1dc6f07669d4a7ebe241"
+    sha256 cellar: :any_skip_relocation, monterey:       "56b8f087e1ee3f7ec485ad47a628020a3566f9fe75cd1578ff3f665f8d81c884"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5a220cdaa5cd9368270b2c7f4e5fc276b3b0dcfedf10819df4312441ee20a8e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3476550548768973aa8915b03350100d50a845e6d4f14aac64335fb26ccb3fac"
   end
 
   depends_on "rust" => :build

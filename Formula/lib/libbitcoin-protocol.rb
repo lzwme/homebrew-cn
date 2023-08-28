@@ -4,15 +4,16 @@ class LibbitcoinProtocol < Formula
   url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-protocol/archive/v3.8.0.tar.gz"
   sha256 "654aee258d7e110cce3c445906684f130c7dc6b8be2273c8dab4b46a49d8f741"
   license "AGPL-3.0"
+  revision 1
 
   bottle do
-    sha256                               arm64_ventura:  "4ee9419560f3991033fc7977b4b1b9a197deb90830efef19747536a2814f3d07"
-    sha256                               arm64_monterey: "aa558d64c9b046e5ae2a7d271533a30e3fd898429591978210649110ddc8c19d"
-    sha256                               arm64_big_sur:  "55ea861126ebcf7607d9cd82c209e6ede5bd3f36902f47f4f74471185f1e5104"
-    sha256                               ventura:        "1460be17264c4610beb15c19e60d27283f359e6e805c07b76177f400061c2386"
-    sha256                               monterey:       "41b79e8ceeec9e83affdcfb8980f0626c00b1769f3d7d236109ee866c8c124fe"
-    sha256                               big_sur:        "2add9dbb1ae40c821299924d43ad48cff33643ee1848f57941446b1d4d8fb6bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "266a10fa688b253db2c329e9e98235d983995dca088c365b25e060b5c427c4f5"
+    sha256                               arm64_ventura:  "3c587e28a40ccc268220b03f49db30c2bda7bc33804a7199c5d12e3eb3d39ca3"
+    sha256                               arm64_monterey: "d354d235a093c9c45023844595f060185e66a96a51e5b34ee1a9e57919345f93"
+    sha256                               arm64_big_sur:  "5ac648e724db6e394eb88bd1183027b9f08770e0ec12cbeba1843ff660f3b05c"
+    sha256                               ventura:        "38b6d0a27c96288a0bf855fab65a2372e96dd3a473685d9a6e3f2d109447fff0"
+    sha256                               monterey:       "704058e2ad64d8ee6b367aa079155ad854cd92fa0054e341f7e2ab5a4738748c"
+    sha256                               big_sur:        "643c4eef9890fa62ee862f19892fc9fbb46f7ffd50eaaea1c0097adec9968b19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe92a2d85f4c2aad06829a398e78b6f61b617f9c10b5ccceb94dbd87faeab327"
   end
 
   depends_on "autoconf" => :build
@@ -21,7 +22,7 @@ class LibbitcoinProtocol < Formula
   depends_on "pkg-config" => :build
   # https://github.com/libbitcoin/libbitcoin-system/issues/1234
   depends_on "boost@1.76"
-  depends_on "libbitcoin"
+  depends_on "libbitcoin-system"
   depends_on "zeromq"
 
   def install

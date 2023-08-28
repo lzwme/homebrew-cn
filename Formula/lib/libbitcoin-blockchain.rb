@@ -4,15 +4,16 @@ class LibbitcoinBlockchain < Formula
   url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-blockchain/archive/v3.8.0.tar.gz"
   sha256 "e7a3f2d2ea8275946218d734cd3d5d805c61e69eb29d1fb16e3064554bd2b584"
   license "AGPL-3.0"
+  revision 1
 
   bottle do
-    sha256                               arm64_ventura:  "afa7ce1350b814247298e7ded5f6e73c9656d06076207bf334f53c5d9e0f106f"
-    sha256                               arm64_monterey: "de135045d1b91c2091c49a3db2ef17cb2da1730a8a5951ec07e01b00d8dd13d8"
-    sha256                               arm64_big_sur:  "42a7f74478b2c51f134308e28ab4b8c68d702f80fe63f29b2249592172ca94bd"
-    sha256                               ventura:        "6557ae872316db8677cd179e96173ebd085ff0c423ab9f1ed9b617b152228264"
-    sha256                               monterey:       "64887449b66a9435d94227b2d26ead978799b6f7cb83aa659e457ed5d68025ee"
-    sha256                               big_sur:        "a2a4b0f81e71389ae3981f6468fe26718d397c3052144caccd49a8a073de01d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f75dfb68e40960b2238997b568cbbae18541f556ea727ab7b5797750e051c9eb"
+    sha256                               arm64_ventura:  "643036ef5fdad2d2686dfd0e943e7427f2921a679ca6b65dc2d7520702f607b6"
+    sha256                               arm64_monterey: "87003f5fe6734526014672e39ffa2e9654962fa068aff56fac817b31b1191b47"
+    sha256                               arm64_big_sur:  "b578deb82d92c0a638e03b3c275550235ae86b4124ffd0ad80b080cbfcde9268"
+    sha256                               ventura:        "2442e4da6b10806fe090df445baf70eb1b8fc02402af7bfe0381b116cdc5da47"
+    sha256                               monterey:       "e41010dcffc1263b452d253b58ab955fff3d117621d28d600b1095e42d0ef564"
+    sha256                               big_sur:        "1098628c8c88b9ab9b82188e9b048d442080242c1b77766b474eaf405765d8fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f806a8129d3d225515cb2c5c789f29c26b756df83e4ea3139f3baddd353a288"
   end
 
   depends_on "autoconf" => :build

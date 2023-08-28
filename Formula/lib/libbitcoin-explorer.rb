@@ -4,15 +4,16 @@ class LibbitcoinExplorer < Formula
   url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-explorer/archive/v3.8.0.tar.gz"
   sha256 "c10993ab4846e98ec4618ca2d2aab31669dc091fa2feb17d421eb96b9c35c340"
   license "AGPL-3.0"
+  revision 1
 
   bottle do
-    sha256 arm64_ventura:  "8f6b2f1752e487ac635b6f807c88051d1458792b28b00f99c8f4128c031d5dea"
-    sha256 arm64_monterey: "8905b2ce3cc9a3b8cbdfeb7bc06b2d894ab99cd0992b4f457bffc03278541524"
-    sha256 arm64_big_sur:  "de0fc3d7f4f40eddec6523b5e8f3e6ad42883d2111316ffeed218c15d15d8456"
-    sha256 ventura:        "e9ded55241e482320b8e9b3c2a68711b309a7b27442d64cb71b27a28c82aceed"
-    sha256 monterey:       "c8bc9fdcbc6be70ff5a9d01d4d59878cb4c681f6d60143157a68dee3275835df"
-    sha256 big_sur:        "bac7f9ba8045541c6d9ec1793233852d8ee6b0b4ecda84e38ade70b80e3a9aae"
-    sha256 x86_64_linux:   "a3c4084ff4fd08b3dd0b961ab95df7510d0542891ff347d1986409bc7dd38871"
+    sha256 arm64_ventura:  "d5fc065a4adae41bad1efcbafa5d52f0711af9c796dedbf10d4bd1d1146e474f"
+    sha256 arm64_monterey: "a4d4bcb767aece7188b6c8243981dc73bb94ae38e76723c99673360e05fd231e"
+    sha256 arm64_big_sur:  "054bb3bee90b894445e989211340eb082b5f271ab1d30916a09f7ca909fa4462"
+    sha256 ventura:        "3f5070a099083f4777bec5f31c73f9440f1dcdceca65b4e38f830c38aaddb008"
+    sha256 monterey:       "480e13a7e581d74e31cfa6be2902765ec7b6bc9fda794c20125fc1652274addd"
+    sha256 big_sur:        "50676d0d3790be0a842e3bb07545dd6bad666c5b8bb3f8acbe8ea5e685d21ab4"
+    sha256 x86_64_linux:   "4f51230a63c0edc7078d666f53dcaee6e8e4b97a4475cded4f4e1705869f3cc6"
   end
 
   depends_on "autoconf" => :build

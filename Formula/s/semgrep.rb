@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/returntocorp/semgrep.git",
-      tag:      "v1.36.0",
-      revision: "52543b77abc9cb2ca5122aa2e71593318a368e19"
+      tag:      "v1.37.0",
+      revision: "26bcb21a359de1824e683266dbbca1ef5f21f124"
   license "LGPL-2.1-only"
   head "https://github.com/returntocorp/semgrep.git", branch: "develop"
 
@@ -15,13 +15,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "9ee40ae9261a01064d89b48471e474aa8c9ec09f36e3b2730dbdb8eceecd7eb7"
-    sha256 cellar: :any, arm64_monterey: "04cee372b1fb8a6db0f93de4ac0ae293142ee3b8082356c3b947b4818ee271d8"
-    sha256 cellar: :any, arm64_big_sur:  "ff2ee50c5dbddbf1d38d971e1bdac8a518701263b130307077a0e32c901b0494"
-    sha256 cellar: :any, ventura:        "2a31dc17a3cabd84386f215dca5c890fee2588ba30b2e572840e50193124266c"
-    sha256 cellar: :any, monterey:       "4537080236d0b98200e02cce15389348562899e3492f1d45434ec5dc90566197"
-    sha256 cellar: :any, big_sur:        "c3ec216bc5d090bc35537f944b63fe460ef0bfabf83f39646e6f9cd80329c668"
-    sha256               x86_64_linux:   "fceed14b6b5590911c89a47270a2d707cc225fdc1904c7baa19c72c479a42b74"
+    sha256 cellar: :any, arm64_ventura:  "95ecc9d2146fcb879db4d06219fd2f05de016c4895dddc63245e8583c3ee2533"
+    sha256 cellar: :any, arm64_monterey: "7042c94e8a16a83db2341b6d7c644853459aa7483c4f596a439cceef5272e872"
+    sha256 cellar: :any, arm64_big_sur:  "ef24798f8482a37e2d5a8bea0ca7f0e1345a4bd9cfe06059b64142916e359f90"
+    sha256 cellar: :any, ventura:        "30fb6df2d06af873b858b2f4896b3f7a10ed1e5967221ecbb242b6136335b6c1"
+    sha256 cellar: :any, monterey:       "018f4210db9bdca57c536a7d5ecddea0692d0e280c4cce3d2b75134d368f2f1e"
+    sha256 cellar: :any, big_sur:        "f1540417f50a8bb35334dcffd4ab98ca2faa3828ed3b35703ce4b4c82a5a4bfe"
+    sha256               x86_64_linux:   "6093e1c918aa94709726f75de1f272dae3ba818e940d9d48a0f05c405205b12e"
   end
 
   depends_on "autoconf" => :build
@@ -66,8 +66,8 @@ class Semgrep < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
-    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "click-option-group" do
@@ -211,7 +211,8 @@ class Semgrep < Formula
       # Install semgrep-core and spacegrep
       system "opam", "install", "--deps-only", "-y", "."
       system "opam", "exec", "--", "make", "core"
-      system "opam", "exec", "--", "make", "core-install"
+      system "opam", "exec", "--", "make", "copy-core-for-cli"
+
       bin.install "_build/install/default/bin/semgrep-core" => "semgrep-core"
     end
 
