@@ -3,19 +3,19 @@ class CheckJsonschema < Formula
 
   desc "JSON Schema CLI"
   homepage "https://github.com/python-jsonschema/check-jsonschema"
-  url "https://files.pythonhosted.org/packages/25/de/88ec4d9c5c49b3758520aa4106123697bce901c8de80e1181d0afe0b16e4/check-jsonschema-0.26.1.tar.gz"
-  sha256 "b9a5adbbd0fdde4754b723a3dc3b46c277fb8d7828622f1f0a6cb8c2402c74fa"
+  url "https://files.pythonhosted.org/packages/84/8a/ff01a98f562dcaf4a18c984e98376c151455775d69fca72ff2062b2abef8/check-jsonschema-0.26.3.tar.gz"
+  sha256 "b27ee84bbcb3e59fb0700417eccf8862210c87c1bb772a417172783308501b74"
   license "Apache-2.0"
   head "https://github.com/python-jsonschema/check-jsonschema.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "fa30c038fb155bd05da0fcd59c0eeba6f0e175792b7e4a8a0ba920a969723757"
-    sha256 cellar: :any,                 arm64_monterey: "8b686cd88a253c90dedcd5d022d16d5187685f26c51dbe08c4470e507c8f6328"
-    sha256 cellar: :any,                 arm64_big_sur:  "302358a0e1b8676ef424f572c6b039f880b807f592a368cabdc0778c502958d9"
-    sha256 cellar: :any,                 ventura:        "ab4f5563b8bdaf4e32bc037ec72701bcccdf9ea5ee44132e5986fd2fc0f8529c"
-    sha256 cellar: :any,                 monterey:       "54bbe24e51783873261ceca2e2511f38bb5734f272d219591ec95e638f2f9e1a"
-    sha256 cellar: :any,                 big_sur:        "a0d829378244466f8fc20d20cdcae575d4d0c2f3b0a392ec2a8224327bf7345a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f6b07f129186dee5e14a4ce6c7f4bc7b201908d23b627b4d23af72880fc258d0"
+    sha256 cellar: :any,                 arm64_ventura:  "14b065b9c8e0b0367984ab73a93688cc2ac4620d0b5bab835983adb814942759"
+    sha256 cellar: :any,                 arm64_monterey: "67b6bfcbe2087d1153982af54e2e16e56ae51fc21e3ce22e5e5b6b00c23a560a"
+    sha256 cellar: :any,                 arm64_big_sur:  "5fee42fa569d459660defa7299ba4930c0191c138b67af3c28c8223e3345a61b"
+    sha256 cellar: :any,                 ventura:        "518fe7bed86eef3a661e52caa7bf8a3366b8656a27a54c2bfe82c8bb75d4fcb0"
+    sha256 cellar: :any,                 monterey:       "6d34600fd0856304173606b899d61792b7541983c8621193fccf39dca6b07fbf"
+    sha256 cellar: :any,                 big_sur:        "df258e3a7c0d2faadf5659b976b10bdc2fa6081890308f1f548e68881c363e6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b346cbe395b92006014a7632fa6211573e375faacaa871a8f186e8b8613ff0c"
   end
 
   depends_on "rust" => :build

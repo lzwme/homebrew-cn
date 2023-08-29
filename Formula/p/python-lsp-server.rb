@@ -9,14 +9,14 @@ class PythonLspServer < Formula
   head "https://github.com/python-lsp/python-lsp-server.git", branch: "develop"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb8b37a15eb903e65accb806f4e65dc032cd6ef7e42f8bbd6c7f0e7053c49513"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5d37a5d42959c0188598f2fe3b01477ecd46cbbc18b70dfde7cfa9ccf42c8007"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "44126dac9bf0d9f1eaba24cd6cc536dc2288ab9b5a8a909ab5295070bcc4231e"
-    sha256 cellar: :any_skip_relocation, ventura:        "d20862919fe83b44cebba195404d65de0b0ba64747f66486d58e9f19e3216737"
-    sha256 cellar: :any_skip_relocation, monterey:       "96a67a2fe928a61e20bc40cf5f57c1098d40a6216d3d9fef7cd2cbe8c82f25ff"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f09d550a792b0a8a1f8c041f90c4211a82e910ee05fe591a4c65752ad4364265"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6dc3f895a332b33e5d6d6c5badecc2571dd80f411a431584a6e6794746fbcc6e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a7fb96234f1dc5f4b88e6b032895defc2665e465b9e9cbd5858626a02a96e04d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "47ed95806d4e60f9d700bc9bcff6d48397644537d9d5e1a2eaa3e1fc8e327cfd"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "28658ff59eee7650d9254a647d67cc35ee488793c86d75035d84502c54539c00"
+    sha256 cellar: :any_skip_relocation, ventura:        "48cb325d02a72f9273b741c86659f8926a35bc9ec06b94b9fededd0e6ca29954"
+    sha256 cellar: :any_skip_relocation, monterey:       "81f75b30fafbeb3bbcb786ed262395b260e05fcca6482c69fbc66d15f085ab02"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f0cae81c122af9e5eda5cce18fb14bd5645a3d4260edb630609a7ea6b9bbbb59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "310457c42ce3d8d0154782108dfc73b7fdae789d0317f4532a87a45c162a4840"
   end
 
   depends_on "black"
@@ -24,6 +24,17 @@ class PythonLspServer < Formula
   depends_on "pycodestyle"
   depends_on "pydocstyle"
   depends_on "python@3.11"
+  depends_on "ruff"
+
+  resource "attrs" do
+    url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
+    sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
+  end
+
+  resource "cattrs" do
+    url "https://files.pythonhosted.org/packages/68/d4/27f9fd840e74d51b6d6a024d39ff495b56ffde71d28eb82758b7b85d0617/cattrs-23.1.2.tar.gz"
+    sha256 "db1c821b8c537382b2c7c66678c3790091ca0275ac486c76f3c8f3920e83c657"
+  end
 
   resource "docstring-to-markdown" do
     url "https://files.pythonhosted.org/packages/52/c2/6f73c08b97bacd1242835bdca1cfc123b059eb15af9350eb1eb5d58868fc/docstring-to-markdown-0.12.tar.gz"
@@ -35,14 +46,19 @@ class PythonLspServer < Formula
     sha256 "bae794c30d07f6d910d32a7048af09b5a39ed740918da923c6b780790ebac612"
   end
 
+  resource "lsprotocol" do
+    url "https://files.pythonhosted.org/packages/f3/70/4e0e841e35ac450ca7f994020887c05aeb4d0cd25e8d53901f448dd43acb/lsprotocol-2023.0.0a2.tar.gz"
+    sha256 "80aae7e39171b49025876a524937c10be2eb986f4be700ca22ee7d186b8488aa"
+  end
+
   resource "parso" do
     url "https://files.pythonhosted.org/packages/a2/0e/41f0cca4b85a6ea74d66d2226a7cda8e41206a624f5b330b958ef48e2e52/parso-0.8.3.tar.gz"
     sha256 "8c07be290bb59f03588915921e29e8a50002acaf2cdc5fa0e0114f91709fafa0"
   end
 
   resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/8a/42/8f2833655a29c4e9cb52ee8a2be04ceac61bcff4a680fb338cbd3d1e322d/pluggy-1.2.0.tar.gz"
-    sha256 "d12f0c4b579b15f5e054301bb226ee85eeeba08ffec228092f8defbaa3a4c4b3"
+    url "https://files.pythonhosted.org/packages/36/51/04defc761583568cae5fd533abda3d40164cbdcf22dee5b7126ffef68a40/pluggy-1.3.0.tar.gz"
+    sha256 "cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12"
   end
 
   resource "pylsp-mypy" do
@@ -58,6 +74,11 @@ class PythonLspServer < Formula
   resource "python-lsp-jsonrpc" do
     url "https://files.pythonhosted.org/packages/99/45/1c2a272950679af529f7360af6ee567ef266f282e451be926329e8d50d84/python-lsp-jsonrpc-1.0.0.tar.gz"
     sha256 "7bec170733db628d3506ea3a5288ff76aa33c70215ed223abdb0d95e957660bd"
+  end
+
+  resource "python-lsp-ruff" do
+    url "https://files.pythonhosted.org/packages/de/26/6fb2d8525c3ada0112d85a161f73e39270a37190fad0ed32691d8f0559cf/python-lsp-ruff-1.5.1.tar.gz"
+    sha256 "caf1b8427f5aca6d2b4c300b511c47ad6b4384eee0d9562c23eccb81bf33fa01"
   end
 
   resource "ujson" do

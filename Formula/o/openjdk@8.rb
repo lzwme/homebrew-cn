@@ -1,9 +1,9 @@
 class OpenjdkAT8 < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.java.net/"
-  url "https://ghproxy.com/https://github.com/openjdk/jdk8u/archive/refs/tags/jdk8u372-ga.tar.gz"
-  version "1.8.0+372"
-  sha256 "3235a744b51896beb1e8b738412982ebc06e2affb9d50ae3371203d9a46504da"
+  url "https://ghproxy.com/https://github.com/openjdk/jdk8u/archive/refs/tags/jdk8u382-ga.tar.gz"
+  version "1.8.0+382"
+  sha256 "a000ec82e594ccfe46ac1a4aa3d7399532aa53875042f22f16eae9367c4b20eb"
   license "GPL-2.0-only"
 
   livecheck do
@@ -15,10 +15,10 @@ class OpenjdkAT8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 ventura:      "eb1e1ff913b7002c99bd8110c80a2d011c9ad521bddcefff38b5b79f45a5ae7e"
-    sha256 cellar: :any,                 monterey:     "3cfce9f0954818817deba5edcad32a0551365b175ea4eb4bef1668988ee01928"
-    sha256 cellar: :any,                 big_sur:      "005cca2c8c38f9cb9fb573a9c3f5153586a5635279030e044db20df6e54e0178"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "6e4bbbcb75992e822fec593eaf3d2bbdc647ca50b1451b1a6ef37cbd949311e9"
+    sha256 cellar: :any,                 ventura:      "9b5ff6be944932238bd1193d1635d2fc6f2f7959e3c6c3b83442c84d7740a0eb"
+    sha256 cellar: :any,                 monterey:     "8f690c5b77189b80fa87bb5f9cd201d65f6a1b92f6971659946d8251affebb58"
+    sha256 cellar: :any,                 big_sur:      "f532b4485fb2b9405fab01e80f0e738721bd8525b97b0c75b38b651dfa139f82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ba87ca35a5b1d453e9f70bf015d664e0f8eccae62552fc3499036d891f0aed6f"
   end
 
   keg_only :versioned_formula

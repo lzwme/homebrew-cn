@@ -1,8 +1,8 @@
 class Keptn < Formula
   desc "CLI for keptn.sh, a message-driven control-plane for application delivery"
   homepage "https://keptn.sh"
-  url "https://ghproxy.com/https://github.com/keptn/keptn/archive/1.4.1.tar.gz"
-  sha256 "c680a8a447c71957fffe242a3f9a88b0c1deb70acca577aad45017f502f58891"
+  url "https://ghproxy.com/https://github.com/keptn/keptn/archive/refs/tags/1.4.2.tar.gz"
+  sha256 "0b4489256597d5cc0963e387a750f183d389bdda93ecd783e674d702c6c425ed"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Keptn < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "39b893d3a204719d97d653e27bf61140db969aeb5268a0409ba9ad01f391f7dc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1cb9a0b74309d0c8e3992bde7f620e5cec6fec33883e8a7ee0958560f07501f7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a9bc4c50958ec1692c29369d2826723a7e41a5c5a0d51c215e07af9109d0aa65"
-    sha256 cellar: :any_skip_relocation, ventura:        "7cd5d852c5154f83e8f60f135990f4aa36279f88b9642b87e327a6984e4eba62"
-    sha256 cellar: :any_skip_relocation, monterey:       "b9ee7cc7073f6598f280019a757244192d402011ef08b1990dbaf820bf548fb7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ad51c102f6b70ccc46b6669f5e234bd406d9fc31b359734f7b32d31900e12aa0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c17f287c76e468b75b5422c9e0b5961224b98e85b01a28cec3bca743bbda9329"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d0f40ee4af457f38467a66ec8eb6e720842bca5ca75f08d2eaa84075e7d6d374"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3d5d5bba0fe227aeaab85159dfab03c7f438880a4b12d8fcf475c04ee1231cd2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7028fd1d9edd6eb21745ad4f8394130aa09c2b56789d3ec3d25f0af8e2e4504c"
+    sha256 cellar: :any_skip_relocation, ventura:        "fe2272970e14cded9b79c9ee90f009b23d9b3dd2564e1d81e27225094512ab65"
+    sha256 cellar: :any_skip_relocation, monterey:       "5391066339f23d10a89653f7b3b6e8a05c551f93ed52539fbd883e5024afcad4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bc8777eff2b3d99da12833b7442670afc076a5edc24f30fe69b26c0753314224"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8658de205632c8446f98b63597122f3fe10f6f71b37b8b06029c11a267802069"
   end
 
   depends_on "go" => :build

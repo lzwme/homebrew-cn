@@ -1,19 +1,18 @@
 class CargoEdit < Formula
   desc "Utility for managing cargo dependencies from the command-line"
   homepage "https://killercup.github.io/cargo-edit/"
-  url "https://ghproxy.com/https://github.com/killercup/cargo-edit/archive/v0.12.0.tar.gz"
-  sha256 "a8168ea2320c095f55d2b32f8bede8c814dcdc4290c250df36dc8ce0f6fb2095"
+  url "https://ghproxy.com/https://github.com/killercup/cargo-edit/archive/v0.12.1.tar.gz"
+  sha256 "2223107d04c17643ad3261fb2c106200df61a988daa8257ed8bffd8c0a8383ab"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "fc9733fcc9a17ddec26cf85c6b3d78012d4be90accb077607e45ec22e78349c5"
-    sha256 cellar: :any,                 arm64_monterey: "c3650279b6ee915c9463492908197860208dc426a28e95762fc10cdbc7257fd1"
-    sha256 cellar: :any,                 arm64_big_sur:  "e5ce6bf8ca65178bd4df7bf646b819f7103ddff0c516c242d8ea2fd89585464c"
-    sha256 cellar: :any,                 ventura:        "a79a10921fbfbc69a34c237498265c8e962b16dd9144f0cfa6fdd8235ce41675"
-    sha256 cellar: :any,                 monterey:       "41c7884cfe078e882e04ad2d7b97e7f0b728f0d0f36852ae5bd4bfe003991fad"
-    sha256 cellar: :any,                 big_sur:        "def7d5ad96345c237572ef1fcca6fe7c2570114932ed59c0c99352d511d63c04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2674078d811596c0e31ef8ca74c764f3eeef1e2950f70c94656e25ac24de3bd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f4f5ac5c34c0555d7c7fa89b210a3423850705960053a272388bcfbe57ede2f1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9854f0ed61d660953ceaf6cb20a6896468662cee7253ccf0bab78b7bd17d7859"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f9a74467ac2a0be3c788a287da9a4da7e2718def4dbdde910fe78faf0e7f26a9"
+    sha256 cellar: :any_skip_relocation, ventura:        "d5300d085be7d34dfad2b99438785ccb589c94bf4a3c522b7d05cb39808c4146"
+    sha256 cellar: :any_skip_relocation, monterey:       "8df12fdb7ec5063d5dbeb2ef86ebbd89c934b438cb7cbadd48c12377645e11a6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b8c9856ef6a06a266d8913adf6d9e30f5b3afad6d1aae69dbb223e0d40a52e23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21764bba2319eac641f01c4b9244350a90829eee27aa11f65fccf90be722d7b5"
   end
 
   depends_on "pkg-config" => :build

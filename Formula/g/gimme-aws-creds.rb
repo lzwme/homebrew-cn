@@ -4,18 +4,18 @@ class GimmeAwsCreds < Formula
   desc "CLI to retrieve AWS credentials from Okta"
   homepage "https://github.com/Nike-Inc/gimme-aws-creds"
   # upstream bug report about the pypi sdist missing, https://github.com/Nike-Inc/gimme-aws-creds/issues/423
-  url "https://ghproxy.com/https://github.com/Nike-Inc/gimme-aws-creds/archive/refs/tags/v2.7.1.tar.gz"
-  sha256 "3a0c688e99aa5f05a79b5c09271e68980481840c39be28a761b9c29aa5c9b7b8"
+  url "https://ghproxy.com/https://github.com/Nike-Inc/gimme-aws-creds/archive/refs/tags/v2.7.2.tar.gz"
+  sha256 "f4de154d449a8daa6ae7d810517e54a6e9415cec32e101dbf9075e47cd58dd4a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d1c29f6e9b9b0840d43a465f1254d764beac15c5b5496ac3fe703f76d737770e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dec7d7edb2449aaee91fac9fcccc2af08563c0cb1bec52d21af5f2b7ce5302f9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "27a51978f3af1a15e84e73719555169aecc81574b5d3d55bc0d8ab9f9d84dd1b"
-    sha256 cellar: :any_skip_relocation, ventura:        "50a6a1faf1da1f3d60f9175c1a10d2e43206d86038143cf1a26aff6d14070cd8"
-    sha256 cellar: :any_skip_relocation, monterey:       "d420f75204b69c5a2d71d6978683bd6347d48fe9cd45b8b3050e67cf4138827c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "aff46d3df62dc8bbed04b01ec6206da28d561f6635bee621711f0c5e31285f92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "feccb0b3995582083d58da98e8c393f6902ed71fe81ad736fb3e8316da2b8363"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6dd7d9767e56d8c7353a15d2940932f957f59fd9b66d106f8e275bee01e01382"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2081b5f81775a20b330e510e492af47da7ce31610ca2d1eb09e669ddb3e80771"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f8a5c9320ac7ca7677640e9c1c58b6689cebde858b658f7dfca6bb42fb441bdd"
+    sha256 cellar: :any_skip_relocation, ventura:        "144fe810bcf6d37c47e144b510ad8d8e4872f19600db9d65d8ac40a61bc5d0ee"
+    sha256 cellar: :any_skip_relocation, monterey:       "ad5f57a42d91d3fef81924979e4c88f6cc8152667032eadbc952941d10024464"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8f2d04b1bb50b1535a2ecd447e8a46d12e1356fb8ab5e619d733050769872825"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5d70d5d258668317107f9a55693097db5529e2c3ecafd58f8f3e0f81361ccca"
   end
 
   depends_on "cffi"
@@ -51,13 +51,13 @@ class GimmeAwsCreds < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/b8/6b/96460736f7fd725d1a47932b6c55b1bb07db32dbcd14c82ba285604adbb4/boto3-1.28.28.tar.gz"
-    sha256 "4a435fdbd77628e3d32cfbc8b6225e779d8f789027fadb6a51fe1b456e15ef54"
+    url "https://files.pythonhosted.org/packages/77/57/32ed300facd766f9e0ae52792fafd429525c23aef28c7df4940682edc4c2/boto3-1.28.35.tar.gz"
+    sha256 "580b584e36967155abed7cc9b088b3bd784e8242ae4d8841f58cb50ab05520dc"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/f7/46/44a76f62605e8dee2cafd65ba71a33675bdb455dd0258001d0c392673e04/botocore-1.31.28.tar.gz"
-    sha256 "1fcfbd23c7f1f66f16c5c1a1e8565ee8ff68429cc0ee9d2acfb1b55739584cbd"
+    url "https://files.pythonhosted.org/packages/b8/7e/989d7fdebd245cc392995fd6720f2f7769f7caa7aac434887e54a1c6d320/botocore-1.31.35.tar.gz"
+    sha256 "7e4534325262f43293a9cc9937cb3f1711365244ffde8b925a6ee862bcf30a83"
   end
 
   resource "charset-normalizer" do

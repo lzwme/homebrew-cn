@@ -7,12 +7,22 @@ class Solana < Formula
   version_scheme 1
 
   # This formula tracks the stable channel but the "latest" release on GitHub
-  # varies between Mainnet and Testnet releases. This identifies versions by
-  # checking the releases page and only matching Mainnet releases.
+  # varies between Mainnet and Testnet releases. This only returns versions
+  # from releases with "Mainnet" in the title (e.g. "Mainnet - v1.2.3").
   livecheck do
-    url "https://github.com/solana-labs/solana/releases?q=prerelease%3Afalse"
-    regex(%r{href=["']?[^"' >]*?/tag/v?(\d+(?:\.\d+)+)["' >][^>]*?>\s*Mainnet}i)
-    strategy :page_match
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_releases do |json, regex|
+      json.map do |release|
+        next if release["draft"] || release["prerelease"]
+        next unless release["name"]&.downcase&.include?("mainnet")
+
+        match = release["tag_name"]&.match(regex)
+        next if match.blank?
+
+        match[1]
+      end
+    end
   end
 
   bottle do

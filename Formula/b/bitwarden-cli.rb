@@ -3,18 +3,18 @@ require "language/node"
 class BitwardenCli < Formula
   desc "Secure and free password manager for all of your devices"
   homepage "https://bitwarden.com/"
-  url "https://registry.npmjs.org/@bitwarden/cli/-/cli-2023.7.0.tgz"
-  sha256 "d9f23fb967d4fb625031396026a2423298ac43a41c99e6043ea156278d243db8"
+  url "https://registry.npmjs.org/@bitwarden/cli/-/cli-2023.8.2.tgz"
+  sha256 "faa7fa3f2fc36de1e2fa3672bcb2bc25efc4d5d834e213f0e60af52487b4905f"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2828cbd31326690c1418340c017ef47c329d566c9046fd2ffadc32c4706a5da3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b99cddb377441608dcb8ed6ed825ad1b625ad36fee4d9a90a61461b7a683e7c3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8341dbe751be579794706a899e9a0303a388f6dac549aa9fd251827f4cf0acc7"
-    sha256 cellar: :any_skip_relocation, ventura:        "5dfbf48db3b5ad6d890fb6a3dada040a018d31ab2fcf08510b001e6baaaf37a3"
-    sha256 cellar: :any_skip_relocation, monterey:       "197b3d117f56462be03d33bdf49dabc9d29910898c97602233e071925f929218"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cdd3118bf2d165cd737fd2b44d7833da01bfa72f1f9539d51c1bef1d29408ef4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06c0518f5ce8f908145607105706803eeca4a2caa08cd372dc2bd18e371b21f5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "edde18a365a4c4e4b09421ae44673bd254f57bc1b331bd3b721aed7817ff9516"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b8c4378f5dbf9979474fa27847c83d2de754e7fe9114c4546d95630a6fc737be"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ec48b34ee51ac7148b190cf2d5a1df80fcf483dc828054d6acfd6fd780a9526e"
+    sha256 cellar: :any_skip_relocation, ventura:        "b67eb228c277b726c64b00729018e06e020d24892b0b194451ee199c1382c131"
+    sha256 cellar: :any_skip_relocation, monterey:       "16278177c7c11cd0d58d06f19f4b4e34fb199ea01f1f1daa3e9f8f103ff95c42"
+    sha256 cellar: :any_skip_relocation, big_sur:        "460e1c279984406652724a7520db91deaac7b90aa48c37e1797a96b14308e0f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "688ec47af55ceb3585c937cbc71b7f775ae00fd251b185373c174fcf43edee1a"
   end
 
   depends_on "node"

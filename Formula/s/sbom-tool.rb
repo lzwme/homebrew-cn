@@ -1,16 +1,24 @@
 class SbomTool < Formula
   desc "Scalable and enterprise ready tool to create SBOMs for any variety of artifacts"
   homepage "https://github.com/microsoft/sbom-tool"
-  url "https://ghproxy.com/https://github.com/microsoft/sbom-tool/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "6997e195ce2cb0902d913ec23cec0ebb015f90d1ab26c861beaaaadf4f456391"
+  url "https://ghproxy.com/https://github.com/microsoft/sbom-tool/archive/refs/tags/v1.5.1.tar.gz"
+  sha256 "ebc52490acbe7509f880c93737b5051202a2173215ddb975550f61ea3f3b1a2d"
   license "MIT"
   head "https://github.com/microsoft/sbom-tool.git", branch: "main"
 
+  # Upstream uses GitHub releases to indicate that a version is released
+  # (there's also sometimes a notable gap between when a version is tagged and
+  # and the release is created), so the `GithubLatest` strategy is necessary.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, ventura:      "ef15a9fc649fcd7119238b34dd611bf861797a3a9102ee83bd511676e7018612"
-    sha256 cellar: :any_skip_relocation, monterey:     "ef15a9fc649fcd7119238b34dd611bf861797a3a9102ee83bd511676e7018612"
-    sha256 cellar: :any_skip_relocation, big_sur:      "ef15a9fc649fcd7119238b34dd611bf861797a3a9102ee83bd511676e7018612"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7097725fda79fb57dcc71f0073312db48f19fed5b24874313e9efb9b5ff067bb"
+    sha256 cellar: :any_skip_relocation, ventura:      "1750d74c4752f49908b36ed9e5fe82ca31508a96176c1356f7e89997f1eba21c"
+    sha256 cellar: :any_skip_relocation, monterey:     "1750d74c4752f49908b36ed9e5fe82ca31508a96176c1356f7e89997f1eba21c"
+    sha256 cellar: :any_skip_relocation, big_sur:      "1750d74c4752f49908b36ed9e5fe82ca31508a96176c1356f7e89997f1eba21c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a14b7ecba503fe14a46f793e1e59aa091ab66dfc6bd05557dbdb663bd3cd07e8"
   end
 
   depends_on "dotnet" => :build

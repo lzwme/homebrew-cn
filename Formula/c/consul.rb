@@ -1,6 +1,9 @@
 class Consul < Formula
   desc "Tool for service discovery, monitoring and configuration"
   homepage "https://www.consul.io"
+  # NOTE: Do not bump to 1.17.0+ as license changed to BUSL-1.1
+  # https://github.com/hashicorp/consul/pull/18443
+  # https://github.com/hashicorp/consul/pull/18479
   url "https://ghproxy.com/https://github.com/hashicorp/consul/archive/refs/tags/v1.16.1.tar.gz"
   sha256 "9fec1683131ff122a43512f265131729e20212e26353d017805c5566dfec2333"
   license "MPL-2.0"

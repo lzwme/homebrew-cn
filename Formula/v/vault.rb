@@ -4,8 +4,9 @@
 class Vault < Formula
   desc "Secures, stores, and tightly controls access to secrets"
   homepage "https://vaultproject.io/"
-  # NOTE: Do not bump to new release as license changed to BUSL-1.1
+  # NOTE: Do not bump to v1.15.0+ as license changed to BUSL-1.1
   # https://github.com/hashicorp/vault/pull/22290
+  # https://github.com/hashicorp/vault/pull/22357
   url "https://github.com/hashicorp/vault.git",
       tag:      "v1.14.1",
       revision: "bf23fe8636b04d554c0fa35a756c75c2f59026c0"

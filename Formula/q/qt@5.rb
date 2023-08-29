@@ -9,16 +9,16 @@ class QtAT5 < Formula
   mirror "https://mirrors.ocf.berkeley.edu/qt/archive/qt/5.15/5.15.10/single/qt-everywhere-opensource-src-5.15.10.tar.xz"
   sha256 "b545cb83c60934adc9a6bbd27e2af79e5013de77d46f5b9f5bb2a3c762bf55ca"
   license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-2.1-only", "LGPL-3.0-only"]
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "8caeb580012da1742aa9d2ce0b06ebd69a14d1e2cb1c5f8452de5bf351eb38a0"
-    sha256 cellar: :any,                 arm64_monterey: "82d9c11e66478d53c106a9b6cf827e15ed3d9f985191a39b9d50f2273a31f093"
-    sha256 cellar: :any,                 arm64_big_sur:  "9bfa378a951e54e0b557d72fd9c73c6ca6d35c914ddab249573987ed289fe8c9"
-    sha256 cellar: :any,                 ventura:        "74d8d57fc5e31ef60565e74d421f1b80fa68f67adf41663d30922b68bc4ccfbd"
-    sha256 cellar: :any,                 monterey:       "f0beebfcdc5eafa89b84cc6ffa15f0359be50969efb706688168f94647c8077c"
-    sha256 cellar: :any,                 big_sur:        "ada5a2bd5fb44eb222e8b99a06cd075bc7d78e146291acbf905922482acf3914"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3cefabf81e57004029003a2fc31e836487c51695f261071d318f9c2f74d776c3"
+    sha256                               arm64_ventura:  "330939c7756ddee5e43da5e9798a15796cdf7135e6914939899be2a217918f2f"
+    sha256                               arm64_monterey: "1f17cce98119eddcf96818e51b8c1f08945fc94ad27628153115e4dc48497b5a"
+    sha256                               arm64_big_sur:  "c7710f1d370c4cb9152e552c494839fab03f4832ca1f6f4c82d530c33ce292d2"
+    sha256                               ventura:        "cd820d8c2d510b8164504cf4b6d73aded029eaa085dec90eca7827fbd09c67fb"
+    sha256                               monterey:       "45aa69692119d95baaaabe4a685e95d052eb6a6284b42faa05857bdddc3461cb"
+    sha256                               big_sur:        "ccc45e8c1ef15a2172c6df6b7222e8d3f71e07cb485de12533de2f6fb2ae7efb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bbb2c33ff6ae8495f6f255b8c5a7304db66c66c659687a80e78f126a11b0e2c1"
   end
 
   keg_only :versioned_formula
@@ -64,7 +64,6 @@ class QtAT5 < Formula
     depends_on "nss"
     depends_on "opus"
     depends_on "pulseaudio"
-    depends_on "re2"
     depends_on "sdl2"
     depends_on "snappy"
     depends_on "systemd"
@@ -113,6 +112,10 @@ class QtAT5 < Formula
       sha256 "142c4fb11dca6c0bbc86ca8f74410447c23be1b1d314758515bfda20afa6f612"
       directory "src/3rdparty"
     end
+
+    # Fix ffmpeg build with binutils
+    # https://www.linuxquestions.org/questions/slackware-14/regression-on-current-with-ffmpeg-4175727691/
+    patch :DATA
   end
 
   # Update catapult to a revision that supports Python 3.
@@ -302,3 +305,77 @@ class QtAT5 < Formula
     system "./hello"
   end
 end
+
+__END__
+From effadce6c756247ea8bae32dc13bb3e6f464f0eb Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?R=C3=A9mi=20Denis-Courmont?= <remi@remlab.net>
+Date: Sun, 16 Jul 2023 18:18:02 +0300
+Subject: [PATCH] avcodec/x86/mathops: clip constants used with shift
+ instructions within inline assembly
+
+Fixes assembling with binutil as >= 2.41
+
+Signed-off-by: James Almer <jamrial@gmail.com>
+---
+ src/3rdparty/chromium/third_party/ffmpeg/libavcodec/x86/mathops.h | 26 +++++++++++++++++++++++---
+ 1 file changed, 23 insertions(+), 3 deletions(-)
+
+diff --git a/src/3rdparty/chromium/third_party/ffmpeg/libavcodec/x86/mathops.h b/src/3rdparty/chromium/third_party/ffmpeg/libavcodec/x86/mathops.h
+index 6298f5ed1983b84205479d1a714bd657435789f9..ca7e2dffc1076f82d2cabf55eae0681adbdcfb96 100644
+--- a/src/3rdparty/chromium/third_party/ffmpeg/libavcodec/x86/mathops.h
++++ b/src/3rdparty/chromium/third_party/ffmpeg/libavcodec/x86/mathops.h
+@@ -35,12 +35,20 @@
+ static av_always_inline av_const int MULL(int a, int b, unsigned shift)
+ {
+     int rt, dummy;
++    if (__builtin_constant_p(shift))
+     __asm__ (
+         "imull %3               \n\t"
+         "shrdl %4, %%edx, %%eax \n\t"
+         :"=a"(rt), "=d"(dummy)
+-        :"a"(a), "rm"(b), "ci"((uint8_t)shift)
++        :"a"(a), "rm"(b), "i"(shift & 0x1F)
+     );
++    else
++        __asm__ (
++            "imull %3               \n\t"
++            "shrdl %4, %%edx, %%eax \n\t"
++            :"=a"(rt), "=d"(dummy)
++            :"a"(a), "rm"(b), "c"((uint8_t)shift)
++        );
+     return rt;
+ }
+ 
+@@ -113,19 +121,31 @@ __asm__ volatile(\
+ // avoid +32 for shift optimization (gcc should do that ...)
+ #define NEG_SSR32 NEG_SSR32
+ static inline  int32_t NEG_SSR32( int32_t a, int8_t s){
++    if (__builtin_constant_p(s))
+     __asm__ ("sarl %1, %0\n\t"
+          : "+r" (a)
+-         : "ic" ((uint8_t)(-s))
++         : "i" (-s & 0x1F)
+     );
++    else
++        __asm__ ("sarl %1, %0\n\t"
++               : "+r" (a)
++               : "c" ((uint8_t)(-s))
++        );
+     return a;
+ }
+ 
+ #define NEG_USR32 NEG_USR32
+ static inline uint32_t NEG_USR32(uint32_t a, int8_t s){
++    if (__builtin_constant_p(s))
+     __asm__ ("shrl %1, %0\n\t"
+          : "+r" (a)
+-         : "ic" ((uint8_t)(-s))
++         : "i" (-s & 0x1F)
+     );
++    else
++        __asm__ ("shrl %1, %0\n\t"
++               : "+r" (a)
++               : "c" ((uint8_t)(-s))
++        );
+     return a;
+ }

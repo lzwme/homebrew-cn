@@ -4,6 +4,7 @@ class Qemu < Formula
   url "https://download.qemu.org/qemu-8.1.0.tar.xz"
   sha256 "710c101198e334d4762eef65f649bc43fa8a5dd75303554b8acfec3eb25f0e55"
   license "GPL-2.0-only"
+  revision 1
   head "https://git.qemu.org/git/qemu.git", branch: "master"
 
   livecheck do
@@ -13,13 +14,13 @@ class Qemu < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_ventura:  "52d3e63d2c3bf151cb35ecc03d9a8c5c15c34f29b24b67165142d8925ee2fa25"
-    sha256 arm64_monterey: "bfbe1fdcf23be544754fb10d002146ef8e3402cbbdc1f678ae2e83a024197676"
-    sha256 arm64_big_sur:  "c1f47476fcb45e6d92dddace9a154be7696e2dedf0fd11b9f100d9ed516abfad"
-    sha256 ventura:        "2871c264e94c3e4e3dbb0cce11b697c6e2a5db9b18603b2d48eabfe0260c279b"
-    sha256 monterey:       "e6edd0e709ec7ef082976f5565e17b50b097b601fab9b61225e06c7131df19e4"
-    sha256 big_sur:        "f3d0c9ca63b277af07674efab15a051776fd34c9ed5fa5c6105dbe5b9cdf4da0"
-    sha256 x86_64_linux:   "82f5dc4aa92614f16e82771ea64d1057d7feb603709a04c5609f4a63d187f178"
+    sha256 arm64_ventura:  "9b96017b8a7d8235275108a23224a388cb8b9a7276c76dcf876dc11eae372562"
+    sha256 arm64_monterey: "af679e6c1a3809f746cc738de3f6a240f63f865539dd7d2f642a630583514c2a"
+    sha256 arm64_big_sur:  "ec7c065b872400d74bddbabbb800cd03ccc4e415af028511b03a8e14c03bb19d"
+    sha256 ventura:        "845671e9625736ab6a15108d369e47f5a6b20b8f6d0e99ba1a3f39d18df1c94d"
+    sha256 monterey:       "246862506a64cbe52bce23f20ca8b1b7474618a00e2114c2ab9c06066ac58dde"
+    sha256 big_sur:        "7e809a87f13451bd5ea006234391e88b70eea2087dd0d7cbc0363254e9a96eb8"
+    sha256 x86_64_linux:   "44b2c6359b908b47b23d6c781a704371cf3b4e0e6a3e740511329d28c77f6980"
   end
 
   depends_on "libtool" => :build
@@ -29,6 +30,7 @@ class Qemu < Formula
   depends_on "spice-protocol" => :build
 
   depends_on "capstone"
+  depends_on "dtc"
   depends_on "glib"
   depends_on "gnutls"
   depends_on "jpeg-turbo"
@@ -73,6 +75,7 @@ class Qemu < Formula
       --enable-slirp
       --enable-capstone
       --enable-curses
+      --enable-fdt=system
       --enable-libssh
       --enable-vde
       --enable-virtfs

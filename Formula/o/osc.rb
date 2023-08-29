@@ -3,8 +3,8 @@ class Osc < Formula
 
   desc "Command-line interface to work with an Open Build Service"
   homepage "https://openbuildservice.org"
-  url "https://ghproxy.com/https://github.com/openSUSE/osc/archive/1.3.0.tar.gz"
-  sha256 "77653f92555a644f436570f9d45ea97eec63d76c0a173a154ec4232e05d11d69"
+  url "https://ghproxy.com/https://github.com/openSUSE/osc/archive/1.3.1.tar.gz"
+  sha256 "6fb9fee8dfd86276632d6a7a25169f34bec1bc251c79161b5f096a9ebde51cd8"
   license "GPL-2.0-or-later"
   head "https://github.com/openSUSE/osc.git", branch: "master"
 
@@ -14,13 +14,13 @@ class Osc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "78fce6615a5df5bed73fd932a26e2377dc540ce2c8edc1230d3390384c87cf80"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b5e95e32c63c37404d5815bd89aa3ffce807dc2357d850419c81eaefdf7836b3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7157872947b25eff8ce9e45f91b53878b8a094cb3f18d071a927b70ea12e157e"
-    sha256 cellar: :any_skip_relocation, ventura:        "c5a4012003c2576704badba653ac99667618adfbdce441bcc3f955d53495d319"
-    sha256 cellar: :any_skip_relocation, monterey:       "2b3c3bbf690b815b8f7383e614e4de5eb706fe42d5d9b1c412b71974ab65cc18"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9a75499954038e39a94b8ab501d1f4eadfd3609e1c94ffb92bf9721b9cacf88c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a931e719c696206fd3b1f570a74a5eb1718ea0bd4a252994b86bd49d48e41554"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba87f53d181c1feb7e4d7a8503c9ef6b0e248d5c3659d72d865547e8a5dfdcb5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "444e7a6b88fd425d0af40acbd57a304f079ebeabdd650b97c11f8a8c04bce8dc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4552d489269cdb724a5ee65ab916c4a41f0a3a4baf50fcd9d65d5f44a41749c6"
+    sha256 cellar: :any_skip_relocation, ventura:        "a8bf22d523c081adbf36e0e8a9b8ac0349ea6af0bf1c9515a2ee2c0ccf7fdcb8"
+    sha256 cellar: :any_skip_relocation, monterey:       "34b219fca71847b18fec439feabe73a686df04f3c7e91c184fde2f873dcd8093"
+    sha256 cellar: :any_skip_relocation, big_sur:        "377b241e75fc821c90df9fa35255361eff998770dc42e7412d788e075d910f21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "352bf366e1130d660d2cfbafe91e56c1b8dfc530401e4c6a37a09ba1bb98a65c"
   end
 
   depends_on "cffi"

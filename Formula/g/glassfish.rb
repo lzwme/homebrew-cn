@@ -1,9 +1,9 @@
 class Glassfish < Formula
   desc "Java EE application server"
   homepage "https://glassfish.org/"
-  url "https://download.eclipse.org/ee4j/glassfish/glassfish-7.0.7.zip"
-  mirror "https://ghproxy.com/https://github.com/eclipse-ee4j/glassfish/releases/download/7.0.7/glassfish-7.0.7.zip"
-  sha256 "d6465b3e85eb9717e5934332a47648d9928f87063cdd37873c94dd1d234efad9"
+  url "https://download.eclipse.org/ee4j/glassfish/glassfish-7.0.8.zip"
+  mirror "https://ghproxy.com/https://github.com/eclipse-ee4j/glassfish/releases/download/7.0.8/glassfish-7.0.8.zip"
+  sha256 "aabd63a2e6eef19d4e8f2c908035822c59a906bbda89b28a84dd3d2b01fce638"
   license "EPL-2.0"
 
   livecheck do
@@ -12,13 +12,7 @@ class Glassfish < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "41b0df03f99eb41938ec3ab11c644e68a6233c5d93ac687b823468a1635bce7e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "41b0df03f99eb41938ec3ab11c644e68a6233c5d93ac687b823468a1635bce7e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "41b0df03f99eb41938ec3ab11c644e68a6233c5d93ac687b823468a1635bce7e"
-    sha256 cellar: :any_skip_relocation, ventura:        "41b0df03f99eb41938ec3ab11c644e68a6233c5d93ac687b823468a1635bce7e"
-    sha256 cellar: :any_skip_relocation, monterey:       "41b0df03f99eb41938ec3ab11c644e68a6233c5d93ac687b823468a1635bce7e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "41b0df03f99eb41938ec3ab11c644e68a6233c5d93ac687b823468a1635bce7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b24f7470842debfe625465cc06ecc808abdf720a4240b1ef5804a4a7300e750f"
+    sha256 cellar: :any_skip_relocation, all: "acb208104a2319421d51c84f585d357a4bfb9b03535b8a5f8dbe169a9c3aa99b"
   end
 
   depends_on "openjdk@17"

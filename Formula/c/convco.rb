@@ -1,19 +1,19 @@
 class Convco < Formula
   desc "Conventional commits, changelog, versioning, validation"
   homepage "https://convco.github.io"
-  url "https://ghproxy.com/https://github.com/convco/convco/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "bbee100a10db98adfa2a0913583136d91ceec915a0c7758ec22f1072419fa541"
+  url "https://ghproxy.com/https://github.com/convco/convco/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "1e63e07e3d98aa0bcce10824d9aa2de89f0bda90bad3a322311dba4efe7a1d13"
   license "MIT"
   head "https://github.com/convco/convco.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8ee8a2bf71ef064983d5aeb7548bc731f83eaf77986a9b20850cafe82eaafed2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e20cc2679a1936d2a555478cfdc222c6c361faf4a24dc001b8b6f2ad6bbbb416"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a16b337a37293a1f26fa30ea689e6f94b4113e6950781f9b4167ca24b4183471"
-    sha256 cellar: :any_skip_relocation, ventura:        "40a9f70415415f9ba51681f34502ab65b29fb35f4882091f13648bba99335fcc"
-    sha256 cellar: :any_skip_relocation, monterey:       "73fcb427e230a6eca27987c8430fd55bf392fd20ae2aa978ed3a07c1a85eed21"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2af48db266a0021cbdc8150e5041f35eedfa34c11aef15ca36d8cf4f24ebbda2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b736ffa84c5b8628c8c4a35f6686a4a3409b00d3078f818daafeb538ad9b5d1b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ea517cbafb83b9a4ce1420773d0d89b71eea5ac42ad4f05690dc9ee475554d1a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5322db8557f1ca86ea4a94593ac5fe30efdada6600a6eae4808b697cdf7f1af2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "426a1db5b23301a0b322ea49dc9e7f9f8ddeab1c6bcd860953ea3bc85b94ebd6"
+    sha256 cellar: :any_skip_relocation, ventura:        "407fb94a65ca83c8be823b86b4b49e0d0ffee37003defea44b654750516ab3e5"
+    sha256 cellar: :any_skip_relocation, monterey:       "2740d00336264d7adb9c143ce7c058add67e3e36680645d809a85d117d899296"
+    sha256 cellar: :any_skip_relocation, big_sur:        "61abb3e9faea2d5b130f19d412d51404ad9d9c84705d94b0ca57589b79f1de24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b045246fa28644eafc66816dca6b7c738a142f357c4aa0fe7a711c52566e7959"
   end
 
   depends_on "pkg-config" => :build

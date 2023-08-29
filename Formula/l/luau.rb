@@ -7,13 +7,14 @@ class Luau < Formula
   head "https://github.com/Roblox/luau.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b0ebd293083f2496253e9bf50c2fbaabc15b76e54cb398bbc3e19a76a59c2e4d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "78a081f1f5370f070fd3b2a8746889e61cf7122a0b6f198c417be9495ee8cee9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5d5989bb57075455263d71199437ed64004fefc984a06b28362cee0d9924c13a"
-    sha256 cellar: :any_skip_relocation, ventura:        "74a3191aa110064367d70c8ce70f414330f98e43d4e16f2124115cc5fa0b9c11"
-    sha256 cellar: :any_skip_relocation, monterey:       "e94381cb0751471c9a411d0bfa5e5a27dc856f58683674914ef42596b0daa0bf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4b3163b91e4e9f0ca13a130130898b33069c14986fc01b178a8f7d4eea6aa3b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe3dac25eeb05bf873660e607db7c82152f32503aae77477eb18ad9f0a1fc8b0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ddfae2577161fa92de7104966c678f71fde092b7d758b35fce253c0bb70f72f1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "76f07ff0c966e2facaa6b54a846f897716aaf0d98f8d7b4c3a1d6d88aa126c47"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0070078429fa8ea05bbc956409c38cba5c91e67d70c489da9af22200a9db0207"
+    sha256 cellar: :any_skip_relocation, ventura:        "3a533848ae1b72da22198569a4878393024243a82992742588c975b55169bd3c"
+    sha256 cellar: :any_skip_relocation, monterey:       "deed9dd44d8b8c777fb3bfb18d1071e48304482b08cbdeb2bc62b0b0bef93ef6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7e9b31fd3295764b8d21c5811a15a11541d4611c8b32f15c7d82e5ac4485d3de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "665c0f3d1e7f8847279304c2ea03c8eadcaa0ee3329334ad902c833356b44ebf"
   end
 
   depends_on "cmake" => :build
@@ -23,7 +24,13 @@ class Luau < Formula
   def install
     system "cmake", "-S", ".", "-B", "build", "-DLUAU_BUILD_TESTS=OFF", *std_cmake_args
     system "cmake", "--build", "build"
-    bin.install "build/luau", "build/luau-analyze"
+    bin.install %w[
+      build/luau
+      build/luau-analyze
+      build/luau-ast
+      build/luau-compile
+      build/luau-reduce
+    ]
   end
 
   test do
