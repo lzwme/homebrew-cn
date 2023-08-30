@@ -9,8 +9,8 @@ class Pocl < Formula
   head "https://github.com/pocl/pocl.git", branch: "master"
 
   livecheck do
-    url "http://portablecl.org/download.html"
-    regex(/href=.*?pocl[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do

@@ -1,8 +1,8 @@
 class Astyle < Formula
   desc "Source code beautifier for C, C++, C#, and Java"
   homepage "https://astyle.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/astyle/astyle/astyle%203.4/astyle-3.4.tar.bz2"
-  sha256 "2bac07a46197da962bf3fb8313373242e2190b7739e4203a703eb89b603aaa07"
+  url "https://downloads.sourceforge.net/project/astyle/astyle/astyle%203.4/astyle-3.4.6.tar.bz2"
+  sha256 "6d0ad0405048e2ec90566a8be4cc0b7f0e2a8d96482e24090b502d4e9fa46c42"
   license "MIT"
   head "https://svn.code.sf.net/p/astyle/code/trunk/AStyle"
 
@@ -12,13 +12,13 @@ class Astyle < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0a66b4114de4b1673fe52cd50645dc4e9ec9462e78098683b12ca1ae4b93d729"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b4d11a1c40f9ac0becedca729d6d9ffa8da49536ac974fec78676fab85f53c99"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "296528ec43b0e09422d9f397904af74e02e87f3fe919ab992dacb5c64b2e4a66"
-    sha256 cellar: :any_skip_relocation, ventura:        "0f60a1c72e95832aee6b0433772854dd01060e9184a2feb68982607c83c91ef0"
-    sha256 cellar: :any_skip_relocation, monterey:       "84767ac6a2e7c8d3f3edb22aff50dda54cc362e070e1db67f7377d5ba4ecfb52"
-    sha256 cellar: :any_skip_relocation, big_sur:        "833addcbf161e536f7579500ea51ce95d9cd5cd37c04646190ae1630c8f4bb33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d2854a24709d893ab6f3cb35763760ff39cb089964877df7591fdcf64138532"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f33710961eefb51df4a78511594e59e3566329daa69a95acfb9d74bbfad205f6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ac2f1da1a0cb7f2685f8887190c42db41eb47b3740fce14250e59f3fdcd2fc6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a926dfb3377df63ae4d7759c9d638a89bd818bfa82afae63e446db9175facdff"
+    sha256 cellar: :any_skip_relocation, ventura:        "b3b7f7f89797ae217319582e8d3d5869175ab777729b063044ee8790ef8a41ab"
+    sha256 cellar: :any_skip_relocation, monterey:       "c22fcdbb5a53daaf712a2822a8c1f5b4ddbed2bbfb1cc6d5b65e6fc080109e64"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d65f4afc2c0e5dc1f1b2982f965267d5db3c669eb1bc4e508b6f2cb7b4962204"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a81a210c243e5763f836876e31b2653fcbd0c850dc4379a4b440dfeaf797abba"
   end
 
   def install

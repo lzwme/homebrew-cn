@@ -3,18 +3,18 @@ class Duplicity < Formula
 
   desc "Bandwidth-efficient encrypted backup"
   homepage "https://gitlab.com/duplicity/duplicity"
-  url "https://files.pythonhosted.org/packages/0c/d7/1eb0fcb56261087b98026390101ac0ede4ee38f0b5e21127556d1ce11a9b/duplicity-2.0.2.tar.gz"
-  sha256 "0d8f92d6d7fb655f5b4ba067fdc2bdd3f067721f8994a7d1a2b4ba76230e49b9"
+  url "https://files.pythonhosted.org/packages/af/d0/1f3dc045e57c719d950a0dc71a3afdeaef2311306ddf5a4245b697a093e8/duplicity-2.1.0.tar.gz"
+  sha256 "1ab95a5fcb42d518d9c39b3b31ab5443249b0151067e9367f2eb6de99c71bd02"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "213cc34445056631909162ff5d9f9d221e343baa4515acab159e23ee871b846a"
-    sha256 cellar: :any,                 arm64_monterey: "a94745bea13848ef4c1b901f60b6f52884807b52cfcecbaf5bdd1afe1944a870"
-    sha256 cellar: :any,                 arm64_big_sur:  "8651e50b50deeb3778711f746abfbe51b58a599a3b1dff287bd997c30173d696"
-    sha256 cellar: :any,                 ventura:        "976b3e62828fc15dddce33fd81fb707f132108dc88997feba8a65f8759c618ae"
-    sha256 cellar: :any,                 monterey:       "8b4e6c812a1f75abc37810f5a8fd0ce9d04609e6a2d1e3409a76b7a084cabd1e"
-    sha256 cellar: :any,                 big_sur:        "2f465bc1e399cbefeba4eedc88826ba3779afda4082185f4b32916fff617fbfe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71823617b1eca0de66025fda7b56e944bd1cc6a24f897219b137f8c40a4ad99f"
+    sha256 cellar: :any,                 arm64_ventura:  "1ce27120c7bce3f644a6d0edc02360a461ba1c38269cc65d1a669a413de7c923"
+    sha256 cellar: :any,                 arm64_monterey: "f13e61809b52db231bb1eab833dc046b3129fd997ea8dbe54ff8af182f099f99"
+    sha256 cellar: :any,                 arm64_big_sur:  "e7d5bcc75d526511dd414db6f6628ca0927960734624f24d0333ee99647393d5"
+    sha256 cellar: :any,                 ventura:        "7c898dc5355ab01f0ad495cd8c07307624ee2033149201861acb052e60dffdeb"
+    sha256 cellar: :any,                 monterey:       "daf3fb08f1a63fe6dc38f6bb8d25cad192ba41ea888c349e2bf9938c66b0a14c"
+    sha256 cellar: :any,                 big_sur:        "831db39d00c2b389bea25035cfc734c013066212da5357620c4b1712f5ec330b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57819bbc2fa6ef577e6b01b0cb882300725ab73d9798ac830382aebca321b622"
   end
 
   depends_on "gettext" => :build # for msgfmt
@@ -45,8 +45,8 @@ class Duplicity < Formula
   end
 
   resource "azure-core" do
-    url "https://files.pythonhosted.org/packages/4c/9f/2a0b9b845069bb1f27e1db9af1c1318a5ff6a10183cb5bf12723cebea691/azure-core-1.29.2.zip"
-    sha256 "beb0fe88d1043d8457318e8fb841d9caa648211092eda213c16b376401f3710d"
+    url "https://files.pythonhosted.org/packages/63/c5/8023aaea4f8b8a512e883a4f8933fb6e5241b0e6db6f0f992bf9d89759ae/azure-core-1.29.3.tar.gz"
+    sha256 "c92700af982e71c8c73de9f4c20da8b3f03ce2c22d13066e4d416b4629c87903"
   end
 
   resource "azure-storage-blob" do
@@ -75,8 +75,8 @@ class Duplicity < Formula
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/2d/6e/27f7d6f3745bd0129d25f8713426fbd0f371d54c80ba323338c09874f701/botocore-1.31.27.tar.gz"
-    sha256 "739d09e13751e3b9b0f341b5ffe5bf8d0452b8769d435c4084ee88739d42b7f7"
+    url "https://files.pythonhosted.org/packages/9d/27/086162a35e042df3b8b64ea0a11e4f9af9dda20561df48769263500265a7/botocore-1.31.36.tar.gz"
+    sha256 "df3ab6f41c6aad602dc52f82aef5326edc02aea93e132f8b9175e3ec589687c0"
   end
 
   resource "boxsdk" do
@@ -165,8 +165,8 @@ class Duplicity < Formula
   end
 
   resource "humanize" do
-    url "https://files.pythonhosted.org/packages/69/86/34d04afc5c33a31f4e9939f857e28fc9d039440f29b99a34f2190f0ab0ac/humanize-4.7.0.tar.gz"
-    sha256 "7ca0e43e870981fa684acb5b062deb307218193bca1a01f2b2676479df849b3a"
+    url "https://files.pythonhosted.org/packages/0c/84/e58c665f4ebb03d2fbeb28b51afb0743f846db18a5b594ed8b8973676ddf/humanize-4.8.0.tar.gz"
+    sha256 "9783373bf1eec713a770ecaa7c2d7a7902c98398009dfa3d8a2df91eec9311e8"
   end
 
   resource "idna" do
@@ -265,23 +265,23 @@ class Duplicity < Formula
   end
 
   resource "oslo.config" do
-    url "https://files.pythonhosted.org/packages/c2/f1/9012e248ca4a53d64aa2db2a9aad1c38861ec77237a149a521d00cf95c0a/oslo.config-9.1.1.tar.gz"
-    sha256 "b07654b53d87792ae8e739962ad729c529c9938a118d891ece9ee31d59716bc9"
+    url "https://files.pythonhosted.org/packages/86/df/3806c478e29866001cd0e04f22a9688851928a2da830aceb5a026d125a40/oslo.config-9.2.0.tar.gz"
+    sha256 "ffeb01ca65a603d5525905f1a88a3319be09ce2c6ac376c4312aaec283095878"
   end
 
   resource "oslo.i18n" do
-    url "https://files.pythonhosted.org/packages/52/7a/655c1c95666d30400d59612a67f510a5395d821f7ae9e306b3fa2a2102e0/oslo.i18n-6.0.0.tar.gz"
-    sha256 "ed10686b75f7c607825177a669155f4e259ce39f6143a375f6359bbcaa4a35cd"
+    url "https://files.pythonhosted.org/packages/f3/84/6949f4ae2ab3fe2996a1200a6e2cd6acc9982d3a07790e43d807c7f9b99b/oslo.i18n-6.1.0.tar.gz"
+    sha256 "e2b829f205bf1eb6204756cc34027d119494b62d271feee860bf816ca7a07ead"
   end
 
   resource "oslo.serialization" do
-    url "https://files.pythonhosted.org/packages/57/7c/fb7ac9b6fd5137763bb1265c85134decfbe3c6a3ee398e1a4b70a8183bad/oslo.serialization-5.1.1.tar.gz"
-    sha256 "8abbda8b1763a06071fc28c5d8a9be547ba285f4830e68a70ff88fe11f16bf43"
+    url "https://files.pythonhosted.org/packages/1d/75/dff75372e7af48468da06f52c6a9abca63b7a4000165ce49e161011a4a10/oslo.serialization-5.2.0.tar.gz"
+    sha256 "9cf030d61a6cce1f47a62d4050f5e83e1bd1a1018ac671bb193aee07d15bdbc2"
   end
 
   resource "oslo.utils" do
-    url "https://files.pythonhosted.org/packages/b7/66/29520a59aecf0ea83c32e0efa1052cef543dbddd6fcd92f3617d41f6398a/oslo.utils-6.2.0.tar.gz"
-    sha256 "fe1d166f4cb004fbd6b6bc9adfbc32aedeaf3eb54eeaf70d91a224a87543c6a5"
+    url "https://files.pythonhosted.org/packages/4b/d0/efe8943f8f4130708440870bb8f8167b16204b556fb94236554f4b213756/oslo.utils-6.2.1.tar.gz"
+    sha256 "1322ba05fa0ff3c1a8afc727fcf945df5aa82d6584727d2e04af038b5ae84244"
   end
 
   resource "packaging" do

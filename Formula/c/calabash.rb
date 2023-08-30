@@ -6,17 +6,23 @@ class Calabash < Formula
   license any_of: ["GPL-2.0-only", "CDDL-1.0"]
 
   # According to ndw/xmlcalabash1#342, each release comes in "flavours" that
-  # target different `saxon` versions. For example, 1.5.4-110 targets `saxon`
-  # 11.x. Make sure the release we ship matches our `saxon` version.
+  # target different Saxon versions (e.g. 1.5.4-110 targets Saxon 11.x).
+  # The "latest" release on GitHub may not target the same version as our
+  # `saxon` formula, so we have to check multiple releases to find the newest
+  # applicable version.
   livecheck do
     url :stable
     regex(/^v?(\d+(?:[.-]\d+)+)$/i)
-    strategy :git do |tags, regex|
+    strategy :github_releases do |json, regex|
       saxon_suffix = "-#{Formula["saxon"].version.major}0"
 
-      tags.map do |tag|
-        version = tag[regex, 1]
-        version.end_with?(saxon_suffix) ? version : nil
+      json.map do |release|
+        next if release["draft"] || release["prerelease"]
+
+        match = release["tag_name"]&.match(regex)
+        next if match.blank?
+
+        match[1] if match[1].end_with?(saxon_suffix)
       end
     end
   end

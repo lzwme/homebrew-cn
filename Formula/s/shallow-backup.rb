@@ -3,20 +3,19 @@ class ShallowBackup < Formula
 
   desc "Git-integrated backup tool for macOS and Linux devs"
   homepage "https://github.com/alichtman/shallow-backup"
-  url "https://files.pythonhosted.org/packages/96/d7/c59ad086eabfc1b2984e32cc2615368f9ab0b375b8fc5a7a63e5ca81c017/shallow-backup-5.3.tar.gz"
-  sha256 "0af200e5c2d1887e9209bfd970a6835d1d304cc22183569613f378f00848cfe1"
+  url "https://files.pythonhosted.org/packages/eb/33/4b56af73e95125cd6d92972a3e55c82f3ac9386d3401dd198f886a99bb0e/shallow-backup-6.0.tar.gz"
+  sha256 "8fa5b8052c9f9c4f4ef456cf2f0163ef0fffb5c3a96e506665bae7899b5cc72c"
   license "MIT"
-  revision 1
   head "https://github.com/alichtman/shallow-backup.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "866b78717b9ffad60bc6b4db59a602ecc873d244a8ecefde769d46b679bed271"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f95a7fce6f6e5f17430b5377edb84ac14e3973c3473096bb4c86fb0a76b46e30"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "301950ee66f45630727896a443a0ed8e2f8cc6865fc6d60d4aa805fc28540ebe"
-    sha256 cellar: :any_skip_relocation, ventura:        "f490674bfb6dec97ee4f2f96d31395d4faefb0ab2ece996dc11f6f7f917a8b2a"
-    sha256 cellar: :any_skip_relocation, monterey:       "f0a0cc0e31b8e61b9db30abf4ec5f36bafff02881fb143cb32e2e73b89d62d97"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2d0517b9b05aef720398b74f9ed802431b7c7ec994b3f525509f5dc1e778ce3d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09a694e3e79b3dc9f2b6486cc0f8a45d20d72fa5a02c04a6979e3abd4428a555"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5e903d25ebcd4585598a407a750c591dd168182d4dce835fdb850d5a249e863a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "baf70d9f5db4dad07b7ba7539d431ad32f42496832f63079eecb2202abd26129"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fc231568e2a29008df15056217eda0e5e976efe4da3855573b6bea4629ebeb3e"
+    sha256 cellar: :any_skip_relocation, ventura:        "79410391f978ada840f59e0ee503e979c8d43e8daa37b054dec74f97030ce9d3"
+    sha256 cellar: :any_skip_relocation, monterey:       "fba22fd09eb858c1da29be37d35a45435309960885c24a86cad745482aa0987b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a1f648eb39be7156bd0876a868fae8c1272f095d974b7a84e64d9958075bbae5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e26b2acdbf312a20aba729abae4fb250648f933fa2f474740b63852e7a8c8c3c"
   end
 
   depends_on "python@3.11"
@@ -28,8 +27,8 @@ class ShallowBackup < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
-    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "colorama" do
@@ -87,6 +86,6 @@ class ShallowBackup < Formula
     assert_predicate testpath/".config/shallow-backup.conf", :exist?
 
     # Checks if the test file is in the config
-    assert_match "test.svg", shell_output("#{bin}/shallow-backup -show")
+    assert_match "test.svg", shell_output("#{bin}/shallow-backup --show")
   end
 end

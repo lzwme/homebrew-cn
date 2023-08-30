@@ -3,19 +3,19 @@ class Wtfis < Formula
 
   desc "Passive hostname, domain, and IP lookup tool"
   homepage "https://github.com/pirxthepilot/wtfis"
-  url "https://files.pythonhosted.org/packages/05/20/3899e7190173c089a689ddc7fbf84cdd1638ddf85d64fa16a761db160851/wtfis-0.7.0.tar.gz"
-  sha256 "e5922c6550488e90e8a6e19805f0432a607155f27edcb75f1a43e5152e72a197"
+  url "https://files.pythonhosted.org/packages/25/2a/6ede7b982da3e94102b3d7cfe968b95bad28364c082fbff4cf88ab9aba40/wtfis-0.7.1.tar.gz"
+  sha256 "812cc1679f5bc4b07f73d84d96a963b16cbed2e4ccc07c7f24b2b696abba3dd3"
   license "MIT"
   head "https://github.com/pirxthepilot/wtfis.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "dd9352f26c7f9717451c62344209297534dd7ad13ba7a280544c6f1ff31b9346"
-    sha256 cellar: :any,                 arm64_monterey: "b137854775af1c7153d99bf3d51222bec2c75dc125022afc32e455627af203a8"
-    sha256 cellar: :any,                 arm64_big_sur:  "17fb4507dee3bf99529280ed4efa7e33f69839abad582136387a952ae6dcd681"
-    sha256 cellar: :any,                 ventura:        "e1607866490b048c4af83db5d9d8825b273b0eaa5f669527f3e910d804c593af"
-    sha256 cellar: :any,                 monterey:       "3e7e1a17f88ba22bae30c77f215ca1f1edc4f3e256c9b68befcf5ee6f6e49fe2"
-    sha256 cellar: :any,                 big_sur:        "b12fbaeedb31129b79f75b035a6e9044cd4e155cc9f9d342f19b807fabd46676"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0df8d8727077b074656f9bac4fdded4b351b2ae0088a24b174acd5d6022db9d7"
+    sha256 cellar: :any,                 arm64_ventura:  "2b74225670db582fb8cc09c8aa50e458f5ea5ba7787bf60de7005cb16f47b167"
+    sha256 cellar: :any,                 arm64_monterey: "6374c7e9df014573a760d4f169687f5930670a07f2efce6ca2f1b5b84e306044"
+    sha256 cellar: :any,                 arm64_big_sur:  "f0a3ed658042768313613e2c6fad718be384ac852c466288adf5d4b77e2c61a5"
+    sha256 cellar: :any,                 ventura:        "bd48472c73f9760edf8b75f69d265f588f08badafffe23709d0695284004c5f8"
+    sha256 cellar: :any,                 monterey:       "5b4074ea99779c82a1bcf90717407f3953a87b35c8d37b6367502b268a165243"
+    sha256 cellar: :any,                 big_sur:        "ef4be44b198806274de7d41c280fdf1a4e1df0fca8339f68631e85e7c392e89e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "235f58a84ebc95a665d08200bf19175f7c83a96d071b133f01f8ea69e8569d9d"
   end
 
   depends_on "rust" => :build

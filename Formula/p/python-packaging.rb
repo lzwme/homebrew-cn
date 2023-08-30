@@ -15,10 +15,10 @@ class PythonPackaging < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e80a9bfba138c421ead861d29127e0af76d68e10b73127f6b54947e145b3ffe6"
   end
 
+  depends_on "python-flit-core" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.9" => [:build, :test]
-  depends_on "python-flit-core"
 
   def pythons
     deps.map(&:to_formula).sort_by(&:version).filter { |f| f.name.start_with?("python@") }

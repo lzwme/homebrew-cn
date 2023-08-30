@@ -1,8 +1,8 @@
 class Opensubdiv < Formula
   desc "Open-source subdivision surface library"
   homepage "https://graphics.pixar.com/opensubdiv/docs/intro.html"
-  url "https://ghproxy.com/https://github.com/PixarAnimationStudios/OpenSubdiv/archive/v3_5_0.tar.gz"
-  sha256 "8f5044f453b94162755131f77c08069004f25306fd6dc2192b6d49889efb8095"
+  url "https://ghproxy.com/https://github.com/PixarAnimationStudios/OpenSubdiv/archive/v3_5_1.tar.gz"
+  sha256 "42c7c89ffa552f37e9742d1ecfa4bd1d6a2892e01b68fc156775d104154d3d43"
   license "Apache-2.0"
 
   livecheck do
@@ -11,14 +11,13 @@ class Opensubdiv < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "57c75be298bb59fe44f68c707b74ad63b9c2f6877d492ff2a449c450e31c874a"
-    sha256 cellar: :any,                 arm64_monterey: "55e4971fc63f46550a0e6ce5e2c28a7ea690500b3794a91b27b40a9c2b1d722c"
-    sha256 cellar: :any,                 arm64_big_sur:  "5611125d1094c5fd95ddffadb9969ef9429827c06707d6538a25e664cea033a7"
-    sha256 cellar: :any,                 ventura:        "b70e5062658748cf1266dda5e6231bd4545e4d43866c5d0462b8843629282745"
-    sha256 cellar: :any,                 monterey:       "eb6089b7f26f5f1ebf0f5563d000ac557ed6d971229840ec97cd91ca258cfa3d"
-    sha256 cellar: :any,                 big_sur:        "e6bae70b4bd8560798e75db3145625a1fc6d04d1d330ce69eb32a43fa3360ee7"
-    sha256 cellar: :any,                 catalina:       "299153bc3c8d9836d5da04116de0fc37ec9ed8d18b7eb34b4a411d42d4f38056"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "034c5adee4fdccbc45db5c84b74b72c2447dd84a85e713958eba8384c27ded62"
+    sha256 cellar: :any,                 arm64_ventura:  "9c6ad7c140280dedc0ada0800682cb8d5d355afcdc7e112beab09d7dacccf9f1"
+    sha256 cellar: :any,                 arm64_monterey: "5c2327f25b985439c13f2a3336b00f899a676f713c5a3d955d7a4d2cddc3a5af"
+    sha256 cellar: :any,                 arm64_big_sur:  "2355471b5a1fe15f3083feab03f0326baef2edaa1d8f19230a866819f80c4989"
+    sha256 cellar: :any,                 ventura:        "5931a532b5f78cf0c0beb223ac144798d63d18e4b822a4ad4773513d59e0a1f1"
+    sha256 cellar: :any,                 monterey:       "15fd118eba4ceac5ba401c4226eeb7ace629319f011e7e1e02e1de14a07651b3"
+    sha256 cellar: :any,                 big_sur:        "bd387d91bf9f0543e74ab9a181808e6640a4bcedb54d0af991b1f2b50141f9ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "14a24f84173fa51e3ade65a2cacc4d1d919df865ed784e08084ede6f1bc9f31b"
   end
 
   depends_on "cmake" => :build

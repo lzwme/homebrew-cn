@@ -2,8 +2,8 @@ class NewrelicInfraAgent < Formula
   desc "New Relic infrastructure agent"
   homepage "https://github.com/newrelic/infrastructure-agent"
   url "https://github.com/newrelic/infrastructure-agent.git",
-      tag:      "1.46.0",
-      revision: "ac47a7224fb7edbb64b500f1136785f4835638cc"
+      tag:      "1.47.0",
+      revision: "73da2d373f064b96297f9504b5b0755ad0307ef6"
   license "Apache-2.0"
   head "https://github.com/newrelic/infrastructure-agent.git", branch: "master"
 
@@ -15,13 +15,13 @@ class NewrelicInfraAgent < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c06e91d8390515c056f243b3cf795be10d82f14b479a796808902a5d1bb56e7e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a30c00ed3b9e592779a44a573a91eb9351879c1eee3697ff153b87a266abe6fe"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1fc04999ee4d6457d3a5c19f86f627dbcce3bd2e7edef0b081bdf54424e46a29"
-    sha256 cellar: :any_skip_relocation, ventura:        "518ac9d0b19eb2f022b297420280ebf73050914fbcc7e40ce00e8dca27593e8c"
-    sha256 cellar: :any_skip_relocation, monterey:       "b75753b457fc478a3da6a37902d602f409c6f6da86112437aa7888c3771c6539"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fffca69554b7b54edae1af1e309e574e9d4e704f9935a721f91594f243238b6d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d9f0b3c62df5c21aa8b228d3dede960c077465cc6cb851d0446c34be52aaadd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "744c7f31630ba9a668a2607074045bd8abf2aeb71de1319469ef4a1990679d4c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3046c61bf581d9570d44dc00dfeb18c7788c59364323de5e8f32d7f1ed160c7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b4710f007f95fd1105f35d0cd1ee381aa2a39115332a6527ef646b11e43d8531"
+    sha256 cellar: :any_skip_relocation, ventura:        "6f590f7b3294a00ab8e601496ad56498119f4fb0bdfd0143fdda4ba6efe16bb1"
+    sha256 cellar: :any_skip_relocation, monterey:       "c35efcf94402369ca3f3210c94f07ec07e33d473b10e14dd25f91ff1a43f071c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "61a4c9bff7ab55cefe3df4fdeebb9f330ac3393a03dcf9b1da8cf3b5a40ec03f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b8708bb2874bb3757f82ee4be2ab7bfc194921ec8769f7eb32674b4724935e4"
   end
 
   depends_on "go" => :build

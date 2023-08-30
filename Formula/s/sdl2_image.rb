@@ -4,7 +4,7 @@ class Sdl2Image < Formula
   url "https://ghproxy.com/https://github.com/libsdl-org/SDL_image/releases/download/release-2.6.3/SDL2_image-2.6.3.tar.gz"
   sha256 "931c9be5bf1d7c8fae9b7dc157828b7eee874e23c7f24b44ba7eff6b4836312c"
   license "Zlib"
-  revision 1
+  revision 2
 
   # This formula uses a file from a GitHub release, so we check the latest
   # release version instead of Git tags.
@@ -15,13 +15,13 @@ class Sdl2Image < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f31a8a5f9fa1c0a5f4e54e1db39bcc7cb3b5b1ff4b87ddb586da69092918a6d8"
-    sha256 cellar: :any,                 arm64_monterey: "35962214be840c932088cebc063866e081a0eaca94535ff0a3ef56c0bb834e13"
-    sha256 cellar: :any,                 arm64_big_sur:  "b80dc377a80a3c810bf34a874ba29e7a2a4b9466147e43a71adba6e4a9dbf11d"
-    sha256 cellar: :any,                 ventura:        "4c272fc2cfca1f7896e75ec309512995ec5662ebed6a5b42b9fbb4122e743e85"
-    sha256 cellar: :any,                 monterey:       "77f2b55835c07bed2bd94a5b1976abb8e1cc19dcc5fac9faa9a6cd7404ef38be"
-    sha256 cellar: :any,                 big_sur:        "979228e07f3e8826b07a294de300d5ac665856725030b79064250b85a365de3d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "811c932399df786285c0e5cf381b8075aa586e52c06216b3967afbb82a304af4"
+    sha256 cellar: :any,                 arm64_ventura:  "6f14ff0269c000e2b8652c49f8d2835f48648e54483d126b562206e14a51aef8"
+    sha256 cellar: :any,                 arm64_monterey: "e0989678c782e57f0f4647f66e5e05ed32726d4e4c6ef9d94184dc6dd8e5373c"
+    sha256 cellar: :any,                 arm64_big_sur:  "296fde5a7497eb99132ad84c7516c34915265386c093a95d0d972965d308b4aa"
+    sha256 cellar: :any,                 ventura:        "31d279a5850274f05e554a431c7bced83f7ca2a630e850f6644a4dd215069581"
+    sha256 cellar: :any,                 monterey:       "8106006bc5909a02088cbb369958827e12e7cad2a812b620692f1803560c021d"
+    sha256 cellar: :any,                 big_sur:        "f4b1c030ae565fcf14b5bd63f98c629f6d7b9b8a0f332b48a08acf43d9efebfa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1e9cebf9e4ecc9f1c4fd55fa99babb47d586f33e24127f95adf0e4e7883f954"
   end
 
   head do

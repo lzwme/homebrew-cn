@@ -27,7 +27,8 @@ class IslAT018 < Formula
 
   keg_only :versioned_formula
 
-  deprecate! date: "2020-11-05", because: :versioned_formula
+  # Match `gcc@5` deprecation date, as they have to be disabled together
+  deprecate! date: "2022-09-09", because: :versioned_formula
 
   depends_on "gmp"
 
