@@ -4,6 +4,7 @@ class Netdata < Formula
   url "https://ghproxy.com/https://github.com/netdata/netdata/releases/download/v1.42.2/netdata-v1.42.2.tar.gz"
   sha256 "857108e3076f0d35de4109622847dea3ca750c326400798723a8f45a7842d276"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,13 +12,13 @@ class Netdata < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "e9105662dd0e2b93ef39f229b225e440dc357f45da28abf8e7bf90d14f709381"
-    sha256 arm64_monterey: "f6a8511efb9eea51357ef99689d2c7d18d4e182285c975a8062a48cb9c873124"
-    sha256 arm64_big_sur:  "1960eaa95d226b3bf7b493cbd2e0518c459ee8c88706f6a0ce79a24527e979f0"
-    sha256 ventura:        "86ba83adb2f4e4e137602158add9f8e116791a40de0820a8eb5c6d26186cc177"
-    sha256 monterey:       "9e4e982c874ced27b705c231e372b8fa3289c3d0ed18b571836059feae1597b3"
-    sha256 big_sur:        "782e85c31b446623a59416d6de3797c650ca484c63957b55b2db961f61d2b40f"
-    sha256 x86_64_linux:   "379d8b5cc30b9cd5616eba98f16a401226a36f990b66e2fc81648eaa3174ef97"
+    sha256 arm64_ventura:  "f29e98fe6a3331bf2d31f7522ccc3b04d594c4e4036e9795917d4a0f79fb0524"
+    sha256 arm64_monterey: "f2336ce8c1c0ae26ed778af4bdc7d9d6f9716ffd73c416f65ce2068c7b8404cb"
+    sha256 arm64_big_sur:  "d5172881d03e6818ab4abcd77ec6c32dd93aa3867342c9f069252320bcdd3497"
+    sha256 ventura:        "22fb68d18f69bff9254b8c069f485860b1394e89d1831e679973b60f60736aa5"
+    sha256 monterey:       "36561c786f408851333d2ea2562afefafc0c80aef0023078c35159a7e60f76bb"
+    sha256 big_sur:        "6f147dac1976ed383ff2528a06d494b6df949f585b2ab652485ef9db0de6315d"
+    sha256 x86_64_linux:   "37d8461723f60c090a733ed43db0ebe50cc2da149aeb92d267f2d4dfad20a0f5"
   end
 
   depends_on "autoconf" => :build

@@ -4,16 +4,16 @@ class Mosh < Formula
   url "https://ghproxy.com/https://github.com/mobile-shell/mosh/releases/download/mosh-1.4.0/mosh-1.4.0.tar.gz"
   sha256 "872e4b134e5df29c8933dff12350785054d2fd2839b5ae6b5587b14db1465ddd"
   license "GPL-3.0-or-later"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c52e7bd55c91a623e7845478c3b00e22f9a5a0acf64dd2fc1423882253ad323"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "99e5a62a3d5daca45b137f6c00ba40416e462ef0ef191f28e9c92f52089830a4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e92f1e47d3901316b8d3bb44b256bbb1e53f1e11820963d97736996bc16f9f2d"
-    sha256 cellar: :any_skip_relocation, ventura:        "b10c2b2340597f6c761b36050a1760a62b34db36a6f0d76bf116d789c749cef1"
-    sha256 cellar: :any_skip_relocation, monterey:       "b9652751caabfc7fa813bbec2824a20667cfa7833f1871a80790b29a2c9bc12f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2864197dbe87b91fb90e342023a3ba943867770ac53f9e3dd13ba2c8899957cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f73161e554caa84dd4a340271cd3122cb4852c52b2c48ab5a87003d98044d75"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c92a411f516871d71fd86987de194516ed90fb2bdb66fd199295903b0a449f35"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1ff656d9d4d9d4776b25ebd08bb383f3d6c01f96dfaac1a8d866605cf24dbb82"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "180bbf51d1e2dd862ecb6d3f2b2a418ed83a7c49103fa6a7409ba8ab4e7c8a7d"
+    sha256 cellar: :any_skip_relocation, ventura:        "532b879dbbc099c75b85755f2c400fd164261e22354403df340c3580a0f45371"
+    sha256 cellar: :any_skip_relocation, monterey:       "d65ff2d91dd0b26441fceabb9f51df7389643c2433b212e808a00ee348cbe736"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9f3a12be720b6dd2aaa1dd27d90ec8b46efb970dd66ef86e65daf8e45ab2922e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "212673108abc31995e8347bb46299075699437f5e80e5c4724fed99a72e0ca7e"
   end
 
   head do

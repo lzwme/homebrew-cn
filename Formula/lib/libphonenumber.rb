@@ -4,7 +4,7 @@ class Libphonenumber < Formula
   url "https://ghproxy.com/https://github.com/google/libphonenumber/archive/v8.13.19.tar.gz"
   sha256 "2dc0bff42ef15d020ca2ff2e25828443c92c870e224a877e9154622b97d0bac7"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -12,13 +12,13 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4c65ab0745dda13ef959c6245dcc10f66c5bec194d0e8f1c55d5f04789a078f3"
-    sha256 cellar: :any,                 arm64_monterey: "ca933abfd573c0d3eb1885e5e87cf15ca7593e378db92eb54d2a08b3d86ecdcc"
-    sha256 cellar: :any,                 arm64_big_sur:  "d5d46e829772f44bd9ae2b2684aea43f44c72647aaf9cabd3a204fe93e423f6d"
-    sha256 cellar: :any,                 ventura:        "cb2908a275631f088b05c683f386d4838b973a84fdee21d00148bbc42f6cee02"
-    sha256 cellar: :any,                 monterey:       "c2b0951719e111b87d5665d67a3e9d935ebb027511b5b494ab4cd43ff9e3347a"
-    sha256 cellar: :any,                 big_sur:        "322ca0cb12cdcac7a199228fbb97e9a40c9ad57ff18a9fcde900fb7ae3ba27ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d50bb191668ab77a6802f3b5e78cd46c9398f2a1330188e68b2e7199d04c33ca"
+    sha256 cellar: :any,                 arm64_ventura:  "797c040031e911b6069a5b1849a5f0688f5fb5e943e5cfe826ee01b7ab2459c7"
+    sha256 cellar: :any,                 arm64_monterey: "10e5d1a7fb17177acc14ee9315231b27022cecb560e41bcdbb06984bb2417ab8"
+    sha256 cellar: :any,                 arm64_big_sur:  "9333bf3739bde811e089b35591135f378e8d538e8f1da8e2b7c749855d981016"
+    sha256 cellar: :any,                 ventura:        "f3383bbe502b9927bf91640518c2f3b0107dd82931b04752a19aa3f4d86540fe"
+    sha256 cellar: :any,                 monterey:       "27501fd698685219b45d3f8a1de92406367787047593ba83892574e9fb68833d"
+    sha256 cellar: :any,                 big_sur:        "c3d6f7abdc493ad35562fcdabe53f7b9ddde5d7a3e19f5a2f2dc4de03834e61a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52b55ed72d9664bcfa22c15feb2ce11762a4d24481df35448ad81d9fde63de28"
   end
 
   depends_on "cmake" => :build

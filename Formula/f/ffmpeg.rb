@@ -25,13 +25,14 @@ class Ffmpeg < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "adc16acae9282fbe6794459e2f86ac4fc257586840f72e526dbb8993c32d890a"
-    sha256 arm64_monterey: "7b1d3dc6c1d7d23217ce78e559125c6c4e089bdfe6331a7472d72476c30d4188"
-    sha256 arm64_big_sur:  "5b35267cf103f0c985a793caca31df4cb8bfc8a795305917b4e234f3bf62cee7"
-    sha256 ventura:        "74597bd8254cd242adea4024340fff4cf33329fe6e5cc86a7e1c1a5b05cc3a02"
-    sha256 monterey:       "a41ef7a55137493c397590da7d519e79206060710956edf2b70b1dce1ff7f1e1"
-    sha256 big_sur:        "aad4ec2113bea323f6564a5ceb40f821279a8f6bc3eb590b9b6b223b6e0c9d73"
-    sha256 x86_64_linux:   "edc5bf97e59ea91e8123e88bb887fea2fed1b13e66dc10603c69f0d449e03491"
+    rebuild 1
+    sha256 arm64_ventura:  "729117c6150c83f1d777150bd7a27095694ff2223b214eea36c87fed5a3bed3b"
+    sha256 arm64_monterey: "6bb2917a8e52afcea688aca3e9ff513e61f73ab91ce7a36d6a965c9804d80cdb"
+    sha256 arm64_big_sur:  "e2a2c049c31d4aba0e9a94992eadd77325815d18271525a519e707f36252b663"
+    sha256 ventura:        "f68289b6c324ec56523280f5ef9da27bc4d91dc40492c9549fa7f2d102027e4c"
+    sha256 monterey:       "3ee3b0cbcd2a1a70d7f8f4a10e714e90cc506d80778d98d85c77941d1334f9f6"
+    sha256 big_sur:        "67fa43102ea1b4fbc40793269a1c3675d7080291f5d5ce1f34461df57b1637c1"
+    sha256 x86_64_linux:   "0ffde8698c2fde197654c833776afac30294df3cd98f8be799124dec4437db03"
   end
 
   depends_on "pkg-config" => :build
@@ -42,6 +43,7 @@ class Ffmpeg < Formula
   depends_on "freetype"
   depends_on "frei0r"
   depends_on "gnutls"
+  depends_on "jpeg-xl"
   depends_on "lame"
   depends_on "libass"
   depends_on "libbluray"
@@ -109,6 +111,7 @@ class Ffmpeg < Formula
       --enable-libaribb24
       --enable-libbluray
       --enable-libdav1d
+      --enable-libjxl
       --enable-libmp3lame
       --enable-libopus
       --enable-librav1e

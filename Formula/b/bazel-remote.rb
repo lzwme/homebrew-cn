@@ -1,18 +1,18 @@
 class BazelRemote < Formula
   desc "Remote cache for Bazel"
   homepage "https://github.com/buchgr/bazel-remote/"
-  url "https://ghproxy.com/https://github.com/buchgr/bazel-remote/archive/refs/tags/v2.4.2.tar.gz"
-  sha256 "c0c037589dba49329b5ad4947dce0af82abf4d53298ae32fb88cbafdbe5bf0dd"
+  url "https://ghproxy.com/https://github.com/buchgr/bazel-remote/archive/refs/tags/v2.4.3.tar.gz"
+  sha256 "01a84e318ff7ee4aa72d756c40a6ae9753d2dfaaaf5612fe1c8c8a66ad221bde"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3dcf61e7cea7f0f04a333458798e37b5ba9afa93e06282ddfafe4925a46e6dca"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "eaa0577a258d1fc18f2d3741fb9c7f5f3f860502d332e0936d3c7cafdc324bfa"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d3a12be536fcbe1732d7ac81c0d129173807e23c66d50f65c5f0514733206195"
-    sha256 cellar: :any_skip_relocation, ventura:        "0cd9972c4a5f15814060dc76fa25c3eec25c1f34f332dedc8d5a5117c056ff31"
-    sha256 cellar: :any_skip_relocation, monterey:       "8bf61b11e6d1123db56bbef8878dac31a6e188d051d06d904ba65d0fa0121a74"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ec7428bd881d456f38e731bdccd1d3a97c8871529e762bca0d67fad8cdecf16a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7f5ba898e0fd0687d9bf7cbfa6ea68fa817c4d4c7501408b805ffd3fd1b5380"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a225c9b5bf31ef038040df03648868db7a6caa1fa2d9af830ab06607ac9a4a78"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e6ae273979792960354093127f879ae6e94c4b4dad5701973c44d622c2a3913b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5fdf1244726d44e93e92bb1012c52787c6584996ea3957354a2ff7dbb63fa29c"
+    sha256 cellar: :any_skip_relocation, ventura:        "39e68df4dc6de1ca076e9bcc64bb18e78bed969b49730db4228c7e51c00a0277"
+    sha256 cellar: :any_skip_relocation, monterey:       "5613813762a2e1f583e4d422e6c0a886cc890da0db7bc4eb9f7b856891115eea"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3286617b7a170b5a3f28002bed706f9be30ee6d9fb99f13e2cd63120ba684387"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8913b32477f70a440f5fdb1fec1f57410fd92512ab4dade36a0d63898228137"
   end
 
   depends_on "go" => :build

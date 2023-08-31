@@ -1,18 +1,18 @@
 class GrafanaAgent < Formula
   desc "Exporter for Prometheus Metrics, Loki Logs, and Tempo Traces"
   homepage "https://grafana.com/docs/agent/"
-  url "https://ghproxy.com/https://github.com/grafana/agent/archive/refs/tags/v0.35.4.tar.gz"
-  sha256 "4847360e87bb2c9088f4b629ccfbaa84e424f23fa3442a55f73fc598a779e503"
+  url "https://ghproxy.com/https://github.com/grafana/agent/archive/refs/tags/v0.36.0.tar.gz"
+  sha256 "d5725005f2b5ef99cf9a986254fdcdb308b0497f69373090cff2f04557a5fa2a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9a830f71a9a00b84b13e5d61cf8972028fad414a396240f5342c4a2fabebdb73"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e1cf458aa4b57fbe2f36e25ede7a14f5da4abfeea2fff30ad3b142d35086744"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "905e18e65498ba5e4e9c87e6348c6101ac50812c3e95016a388f9b894ef55651"
-    sha256 cellar: :any_skip_relocation, ventura:        "fc31722cb368461f812c1db1a063067b91dd87c544fc21cae2902c3a95b541c7"
-    sha256 cellar: :any_skip_relocation, monterey:       "99289aa4dcc95595e3b0a54aefc0975fe01a756ff5087719ca38ddb0647427ab"
-    sha256 cellar: :any_skip_relocation, big_sur:        "69c6634b329d01b5d6baf133c3ec8fc4596e036ec01df6f39bca0ef4a91d22a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59197f41f946a6d3a9588f32182aad821b702317180fc6674e5594a4628d47d7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a58afb8306ec38d410ed7c07c4d38ed8bb0aeb9e3dbe2fdf32953cead93f1e1f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "20a445d8199f20147c9d3c8e7ae6362a2dc5f05e8147f747bac838b5eee89b4e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "315d5399a415cf78df0355b51e17a100cbec5cb5ca0f0234440823f3ec3a383b"
+    sha256 cellar: :any_skip_relocation, ventura:        "e06e7d9b2e099a5b685c67cda605b5d288e5f60a8f2b90ec86fc7d8d81c271b2"
+    sha256 cellar: :any_skip_relocation, monterey:       "9eebd44bd334a8e4b9d255f9b146ca87eacd12586608bfe4048e422631e6be6b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ad63a5750b0fc1dd215307435d143bc65178f80c36e416d2d4bd7c422dc8e7f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "214b3ae674dc7f3b13265dc159c270fe90c66a6f4b1568fb082ea9c70a292a20"
   end
 
   depends_on "go" => :build
@@ -22,6 +22,10 @@ class GrafanaAgent < Formula
   on_linux do
     depends_on "systemd" => :build
   end
+
+  # go 1.21.0 build patch, https://github.com/grafana/agent/pull/4946
+  # remove in next release
+  patch :DATA
 
   def install
     ldflags = %W[
@@ -88,3 +92,33 @@ class GrafanaAgent < Formula
     assert_match "agent_build_info", output
   end
 end
+
+__END__
+diff --git a/go.mod b/go.mod
+index 2d8d826..e8048d4 100644
+--- a/go.mod
++++ b/go.mod
+@@ -149,7 +149,7 @@ require (
+ 	github.com/prometheus/prometheus v1.99.0
+ 	github.com/prometheus/snmp_exporter v0.22.1-0.20230623130038-562ae9055ce3
+ 	github.com/prometheus/statsd_exporter v0.22.8
+-	github.com/pyroscope-io/godeltaprof v0.1.1
++	github.com/pyroscope-io/godeltaprof v0.1.2
+ 	github.com/richardartoul/molecule v1.0.1-0.20221107223329-32cfee06a052
+ 	github.com/rs/cors v1.9.0
+ 	github.com/shirou/gopsutil/v3 v3.23.5
+diff --git a/go.sum b/go.sum
+index 0a16dee..a8a4c27 100644
+--- a/go.sum
++++ b/go.sum
+@@ -3047,8 +3047,8 @@ github.com/prometheus/statsd_exporter v0.22.7/go.mod h1:N/TevpjkIh9ccs6nuzY3jQn9
+ github.com/prometheus/statsd_exporter v0.22.8 h1:Qo2D9ZzaQG+id9i5NYNGmbf1aa/KxKbB9aKfMS+Yib0=
+ github.com/prometheus/statsd_exporter v0.22.8/go.mod h1:/DzwbTEaFTE0Ojz5PqcSk6+PFHOPWGxdXVr6yC8eFOM=
+ github.com/prometheus/tsdb v0.7.1/go.mod h1:qhTCs0VvXwvX/y3TZrWD7rabWM+ijKTux40TwIPHuXU=
+-github.com/pyroscope-io/godeltaprof v0.1.1 h1:+Mmi+b9gR3s/qufuQSxOBjyXZR1fmvS/C12Q73PIPvw=
+-github.com/pyroscope-io/godeltaprof v0.1.1/go.mod h1:psMITXp90+8pFenXkKIpNhrfmI9saQnPbba27VIaiQE=
++github.com/pyroscope-io/godeltaprof v0.1.2 h1:MdlEmYELd5w+lvIzmZvXGNMVzW2Qc9jDMuJaPOR75g4=
++github.com/pyroscope-io/godeltaprof v0.1.2/go.mod h1:psMITXp90+8pFenXkKIpNhrfmI9saQnPbba27VIaiQE=
+ github.com/rcrowley/go-metrics v0.0.0-20181016184325-3113b8401b8a/go.mod h1:bCqnVzQkZxMG4s8nGwiZ5l3QUCyqpo9Y+/ZMZ9VjZe4=
+ github.com/rcrowley/go-metrics v0.0.0-20200313005456-10cdbea86bc0/go.mod h1:bCqnVzQkZxMG4s8nGwiZ5l3QUCyqpo9Y+/ZMZ9VjZe4=
+ github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475 h1:N/ElC8H3+5XpJzTSTfLsJV/mx9Q9g7kxmchpfZyxgzM=

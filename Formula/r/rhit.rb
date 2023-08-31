@@ -1,19 +1,19 @@
 class Rhit < Formula
   desc "Nginx log explorer"
   homepage "https://dystroy.org/rhit/"
-  url "https://ghproxy.com/https://github.com/Canop/rhit/archive/refs/tags/v1.7.2.tar.gz"
-  sha256 "a5381d88bc434a4a3db75ef39a86e9351b21b778eb54e7a264bd04863a48bad7"
+  url "https://ghproxy.com/https://github.com/Canop/rhit/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "c95e10c48be82f34481bf85173148e5b9ecb649a0cae4541c449bb6605ebd085"
   license "MIT"
   head "https://github.com/Canop/rhit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c4d5986998c13973c41b570465f978123fc899337b6ee6accb54d7b4fd87b7e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d7423336d8a61032802ef01b6117624b517b788f1f7e969957eb69e2e2825fea"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7be5b5ed2c7e863bf884cf43c5d0b0eb6e126e787e352d0f94cb35cf8ee3b86e"
-    sha256 cellar: :any_skip_relocation, ventura:        "6902048697acb0e8b2ae11cd40c065fe210f921ab03025fd9873123882c839d7"
-    sha256 cellar: :any_skip_relocation, monterey:       "158b929d890de826935bde583c3a6775f6ffaa4b4e3bb0a34c7f9a5c4de2ae05"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3b5326ab1996014ae1442270f76435f157a0da1df05477eedecab614cb60cd09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d99fc8a4eee321381a3fcae9b9704a39a246c2281b67c6b9c0ba4ee218a97fb9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3b095b1084475f0e53b0b4c78eccc20c8f1f159fdd24567bb6af884379ebb34d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b004d5005f4e4d85bb89ded25fc48106f85dc012b9ba95b1bf68a74044835faa"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7fb594ffb5801ed36eda5d75ec8202bb3040893295645b4aca516653843c287c"
+    sha256 cellar: :any_skip_relocation, ventura:        "a34eabc996ad935771947ec3adb143c16ac0d18b18bd5bae3d37875154c66be8"
+    sha256 cellar: :any_skip_relocation, monterey:       "0bddb4ca7414065f49c8f02c7a576840203141951eb1e0861adeae7abcee7c9d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d861b8b79d99aee5cb7f21750b18f9ea41d1b1d8551af363105b1038e88c4548"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eec4c23d683ace387844659c873a1d32d295afbfc0d4335f89c33878215da35c"
   end
 
   depends_on "rust" => :build

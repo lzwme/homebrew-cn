@@ -1,9 +1,9 @@
 class Tor < Formula
   desc "Anonymizing overlay network for TCP"
   homepage "https://www.torproject.org/"
-  url "https://www.torproject.org/dist/tor-0.4.8.4.tar.gz"
-  mirror "https://www.torservers.net/mirrors/torproject.org/dist/tor-0.4.8.4.tar.gz"
-  sha256 "09c1ce74a25fc3b48c81ff146cbd0dd538cbbb8fe4e2964fc2fb2b192f6a1d2b"
+  url "https://www.torproject.org/dist/tor-0.4.8.5.tar.gz"
+  mirror "https://www.torservers.net/mirrors/torproject.org/dist/tor-0.4.8.5.tar.gz"
+  sha256 "6957cfd14a29eee7555c52f8387a46f2ce2f5fe7dadf93547f1bc74b1657e119"
   # Complete list of licenses:
   # https://gitweb.torproject.org/tor.git/plain/LICENSE
   license all_of: [
@@ -19,13 +19,13 @@ class Tor < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "8e16160b00e6869a069e9b5aef9e6153ce682801d225eeca1cba7cb6daf679f0"
-    sha256 arm64_monterey: "dcf0b01f3ba258e3716fc632671c688ae064016354872be181645c36dbb52de1"
-    sha256 arm64_big_sur:  "f602190ebfc43a551ff3dd2d0e29866bf4cb7dfd66427ba9d069f9ca98340944"
-    sha256 ventura:        "d1bc85e6d5d0581c3e05fd415e8484c32ebfdb66c3650a7a139041fc01ffc39d"
-    sha256 monterey:       "9051edd72d2087cec17fcc33aed6dbdfe0dc2792cf01d3d0470c01808ca4b07c"
-    sha256 big_sur:        "df6243609e421bd3a0bb9f9a58ad0984b6dc871f1403106d4e50fef9b8d64de4"
-    sha256 x86_64_linux:   "37a5117b6931dc404d6c05691108bd5febac5f0406a44df64bbcec699d064073"
+    sha256 arm64_ventura:  "c17be70561804a03e94941f88b7490bb2ade499aafdd8c76b67dcc8185d206a2"
+    sha256 arm64_monterey: "5a2d29cfd325b74c207678d6aa0f06492a914944db733e7ffbe03dc25ede0f0a"
+    sha256 arm64_big_sur:  "ba723e035c8e5c3684cd9598a42fe8a9dea42a991d6105e81e3789512ff5354c"
+    sha256 ventura:        "bc0d15cc0eb2f587203a53b937fdbb05371537555d9f1361322de948b0506707"
+    sha256 monterey:       "17986aa8b3609a7777e629a9e65db61c65ec9ac01e59e197f0ec3ffd8d123fb8"
+    sha256 big_sur:        "1c011fe400025f3c9c5b569f8d7e180c87fe7bf906ac12040a040c05fa291139"
+    sha256 x86_64_linux:   "86075a5ff1afc27cc28982f9ed917374526b7576bce162e48a3b6a4a00385131"
   end
 
   depends_on "pkg-config" => :build

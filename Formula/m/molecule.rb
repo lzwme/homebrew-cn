@@ -3,18 +3,18 @@ class Molecule < Formula
 
   desc "Automated testing for Ansible roles"
   homepage "https://molecule.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/d1/99/ff56d9f55f81f63d965a4402bee4145d741ad451b39ae83104a1dae4b850/molecule-6.0.1.tar.gz"
-  sha256 "b2c0111d5b44a77a56ef7eb85a1c61b470165b97d11578a2a168047334c8df23"
+  url "https://files.pythonhosted.org/packages/e6/60/cc687cbccfb3543b17ba5d404007f7e43edcb7fa3c780b4f9ec1cadee83f/molecule-6.0.2.tar.gz"
+  sha256 "b919353f799746de60b16a27575627783e39c268fdf2f2aa0372f0162c7b5478"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a9bd7c0b34a0e7cfdb0c1d9117efa3a8b459be7238aea3057679885af75edd60"
-    sha256 cellar: :any,                 arm64_monterey: "e2c8e0d68c693ca76cf3f5e89781d6812d1af99457b0f7242cb208ddcbccbc1a"
-    sha256 cellar: :any,                 arm64_big_sur:  "fed9f11d0c3a8dcc916e38e1cef50524ba71d843f17611c8cb7ee8e828988cb6"
-    sha256 cellar: :any,                 ventura:        "fda606c353a10186975dc62bff642b52b55b22e3ea0f18b1240197ec10e8a175"
-    sha256 cellar: :any,                 monterey:       "18fe8dde8919371b1ed127cb6217ff6b848e707f7885c39cfcc8ac635d4c7246"
-    sha256 cellar: :any,                 big_sur:        "76769fea1081b3d153f9cfca65ec102d94039d3f4da69bb66a68266a130ba8c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7cb8bc59fedc7c8fade9a1011c9f519cf808dd065938ba40c38560e8565c812"
+    sha256 cellar: :any,                 arm64_ventura:  "23e879ee0e5dccfb363644611749bfd2c47ad1b214cc7d7f51345b6926e57405"
+    sha256 cellar: :any,                 arm64_monterey: "029e4600b66c8367af82251f1f6eb6659088435ea7064cda26db35fe2e460c78"
+    sha256 cellar: :any,                 arm64_big_sur:  "5a07aa8c888c7ecdf3ba72645d117984dd4a8ab01c860716e0bfee13de1b95ba"
+    sha256 cellar: :any,                 ventura:        "cc0df4c3d7102683d7a1e3866ac7108b2640740d034793021309f0b11792aa4c"
+    sha256 cellar: :any,                 monterey:       "8da8df11af33556208f43f203da1620ddc80ff0982e99c34c6e96e7ebd72eaa9"
+    sha256 cellar: :any,                 big_sur:        "1e10a5ab30e985ec3358a15e38a86ed9daacf9e23ba8a735236f985b6316dd94"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0a181b9c03572a6cde435ca443f8268000ef2a8ccea69512e3b63d552144fb9"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -34,8 +34,8 @@ class Molecule < Formula
   end
 
   resource "ansible-compat" do
-    url "https://files.pythonhosted.org/packages/50/38/47e84d84b5b2a7b37a46f49e50c5a24bbdb23ccbca0bcca07702f804692d/ansible-compat-4.1.5.tar.gz"
-    sha256 "597c836a184c1131feeb6b0e23cda236c41fecdee64427375278fb6920fd2e74"
+    url "https://files.pythonhosted.org/packages/aa/26/4e272378fe92ba91f92eb95528592072193b1e343472de1989a1d5692816/ansible-compat-4.1.8.tar.gz"
+    sha256 "f58135f5d123e08fdb7e11849b82945e1900f8c899ba0859d4b41b25c76ca955"
   end
 
   resource "ansible-core" do
@@ -54,8 +54,8 @@ class Molecule < Formula
   end
 
   resource "click-help-colors" do
-    url "https://files.pythonhosted.org/packages/6c/c1/abc07420cfdc046c1005e16bc8090bc1f226d631b2bd172e5a8f5524c127/click-help-colors-0.9.1.tar.gz"
-    sha256 "78cbcf30cfa81c5fc2a52f49220121e1a8190cd19197d9245997605d3405824d"
+    url "https://files.pythonhosted.org/packages/a8/5a/e38178c3fd7bb0a0f143ed5291f7f80d391431f262db5a5e16e7d8f34046/click-help-colors-0.9.2.tar.gz"
+    sha256 "756245e542d29226bb3bc056bfa58886f212ba2b82f4e8cf5fc884176ac96d72"
   end
 
   resource "distro" do
@@ -109,8 +109,8 @@ class Molecule < Formula
   end
 
   resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/8a/42/8f2833655a29c4e9cb52ee8a2be04ceac61bcff4a680fb338cbd3d1e322d/pluggy-1.2.0.tar.gz"
-    sha256 "d12f0c4b579b15f5e054301bb226ee85eeeba08ffec228092f8defbaa3a4c4b3"
+    url "https://files.pythonhosted.org/packages/36/51/04defc761583568cae5fd533abda3d40164cbdcf22dee5b7126ffef68a40/pluggy-1.3.0.tar.gz"
+    sha256 "cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12"
   end
 
   resource "python-vagrant" do
@@ -134,8 +134,8 @@ class Molecule < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/da/3c/fa2701bfc5d67f4a23f1f0f4347284c51801e9dbc24f916231c2446647df/rpds_py-0.9.2.tar.gz"
-    sha256 "8d70e8f14900f2657c249ea4def963bed86a29b81f81f5b76b5a9215680de945"
+    url "https://files.pythonhosted.org/packages/77/5a/0c82d0ef1322227e8e997dbbd3d4e235383d51c299dbdfd2fed2625971b0/rpds_py-0.10.0.tar.gz"
+    sha256 "e36d7369363d2707d5f68950a64c4e025991eb0177db01ccb6aa6facae48b69f"
   end
 
   resource "selinux" do
@@ -154,8 +154,8 @@ class Molecule < Formula
   end
 
   resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/b1/34/3a5cae1e07d9566ad073fa6d169bf22c03a3ba7b31b3c3422ec88d039108/websocket-client-1.6.1.tar.gz"
-    sha256 "c951af98631d24f8df89ab1019fc365f2227c0892f12fd150e935607c79dd0dd"
+    url "https://files.pythonhosted.org/packages/38/44/d747807b707465625ba5e18371bc7c448925314d7217ced1801162b74ca6/websocket-client-1.6.2.tar.gz"
+    sha256 "53e95c826bf800c4c465f50093a8c4ff091c7327023b10bfaff40cf1ef170eaa"
   end
 
   def install

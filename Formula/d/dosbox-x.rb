@@ -7,10 +7,15 @@ class DosboxX < Formula
   version_scheme 1
   head "https://github.com/joncampbell123/dosbox-x.git", branch: "master"
 
+  # We check multiple releases because upstream sometimes creates releases with
+  # a `dosbox-x-windows-` tag prefix and we've historically only used releases
+  # with the `dosbox-x-` tag prefix. If upstream stops creating `...windows-`
+  # releases in the future (or they are versions that are also appropriate for
+  # the formula), we can update this to us the `GithubLatest` strategy.
   livecheck do
-    url "https://github.com/joncampbell123/dosbox-x/releases?q=prerelease%3Afalse"
-    regex(%r{href=["']?[^"' >]*?/tag/dosbox-x[._-]v?(\d+(?:\.\d+)+)["' >]}i)
-    strategy :page_match
+    url :stable
+    regex(/^dosbox-x[._-]v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_releases
   end
 
   bottle do

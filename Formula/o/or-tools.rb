@@ -4,7 +4,7 @@ class OrTools < Formula
   url "https://ghproxy.com/https://github.com/google/or-tools/archive/v9.7.tar.gz"
   sha256 "054d9517fc6c83f15150c93ef1c2c674ffd7d4a0d1fdc78f6ef8bc3e25c2e339"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/google/or-tools.git", branch: "stable"
 
   livecheck do
@@ -13,13 +13,13 @@ class OrTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "621316a16b4959714c83e876559199d18e3d74a1f786649461239013d2608150"
-    sha256 cellar: :any,                 arm64_monterey: "bd036250efb03140433302c34894b5ca2ca8387a075c59144572906412197a96"
-    sha256 cellar: :any,                 arm64_big_sur:  "95c8b1f0db6e428b8371161dc9bdd1c00c8ecfd213d525b06ca0c555ba1c6bc9"
-    sha256 cellar: :any,                 ventura:        "6feae7accd621dd0c4ab8017dc589edc78ed5975e0f5e672c341d63165b6cd7b"
-    sha256 cellar: :any,                 monterey:       "fcd1f3ff6b070c53f9552f67d51afe08f52c5e0d25573308eeeaaf11f5559d21"
-    sha256 cellar: :any,                 big_sur:        "114a33b956dfcbecc2583fa2ca65b688a7c6bf47a54a015251463ec396397bf5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a44d19520e08821a7e0abc9f4b38641f07c0bf86006bd77475f34f7bc7e78478"
+    sha256 cellar: :any,                 arm64_ventura:  "046a6ed95989f611e53b8bbb7d3c63d17c72f5245ff09e90f750599d15f3fec0"
+    sha256 cellar: :any,                 arm64_monterey: "3c3fe15a21583bc8b347bdbd336e45131440cd90b9a770a2f4dee18c3414e82c"
+    sha256 cellar: :any,                 arm64_big_sur:  "8b5f1ee304ebe49386f248fa6939341ba75cbe007042a87a41f30433adcc909e"
+    sha256 cellar: :any,                 ventura:        "0e957203d502e0f84b4a24c72a10b4c3e61fcba1d821235255d1040701753264"
+    sha256 cellar: :any,                 monterey:       "73abcc9044cc3e6434ac189b8c45a561b83516d9e9a32a57f115f10b50490f61"
+    sha256 cellar: :any,                 big_sur:        "0697fabbfa90640e9da61e69efa9e17d0ce98b4c6a571a7f864520c572d5d667"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6412271ffd9956bb93e9c534ebace4f3e9380350e4d236304bf1b264b037b1f6"
   end
 
   depends_on "cmake" => :build
@@ -38,6 +38,21 @@ class OrTools < Formula
   uses_from_macos "zlib"
 
   fails_with gcc: "5"
+
+  # Fix build with abseil 20230802. Remove when included in a stable release.
+  # (It suffices to look for commit 734df45, the last of the three below.)
+  patch do
+    url "https://github.com/google/or-tools/commit/bb7c013bf8a4f1217ef3feb8f9670e6057b43aff.patch?full_index=1"
+    sha256 "ac2618ed0a4106ea0af37ea7fc91e34c2f93c2e17c264d9df31b5867ce302745"
+  end
+  patch do
+    url "https://github.com/google/or-tools/commit/aaf306ca38a4d634113d25a31ae7a558f824cab0.patch?full_index=1"
+    sha256 "e2f3cb11a9db4dc53e3452ae28dcd2160ca86886385acb0a9c3076b179a39e88"
+  end
+  patch do
+    url "https://github.com/google/or-tools/commit/734df45de4cf8c1a59b3fef972182dd0b48ef3e2.patch?full_index=1"
+    sha256 "9bffe6f80ef61da0591ec9970751a90cff5c023089d6bd6331686d8e5d3e87a1"
+  end
 
   def install
     args = %w[

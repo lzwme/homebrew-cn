@@ -7,13 +7,14 @@ class Mrboom < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "cf2c1633672145fe98dcc7ed89e75b1282081941d8def655b84967c5d2a80ea8"
-    sha256 cellar: :any,                 arm64_big_sur:  "90484ee7a62a29aa82242664b917340def45c3b999a7d21197ac10e020617194"
-    sha256 cellar: :any,                 monterey:       "fd4bf9a47d15da1e296433860388dd78cbc6d46d036a0145eb36c651693fce25"
-    sha256 cellar: :any,                 big_sur:        "904cd506e99c6269809fe4c593263de7cc1f0746fe0c5b5180aa63ef522ca212"
-    sha256 cellar: :any,                 catalina:       "7fc60e5a37d093f2311b797c5822dbeb098cdf47c038c808496973d29f563f2c"
-    sha256 cellar: :any,                 mojave:         "262fab23ed3b5a3b80948ae4fb4eca1c0c0cad04220a031a731905d812aebaae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb5d8f528c43dfa0eb5970a5ba8e0b98d4db662f903ec2d62751d98ef013f780"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "90b91f583d2e1e4a613ac864ca3fa48465057d16810a5077013c8d93bd7b62a7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bd5b5ec729889a0abe7b4c97a4ebbed82fe36d9e85a745bc59bfb32994198dac"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e8b8a1256014093b7946f4bb1dfefc7f435ba8a0e4884cd2378a90879b88a8d6"
+    sha256 cellar: :any_skip_relocation, ventura:        "a0fd60e4cfeaae4d0858f0135ac4d08fc929b7f93909e0b3f7f3113ced889eff"
+    sha256 cellar: :any_skip_relocation, monterey:       "b6d0d0f72bb83338b61a8c94a3e4072f37e909aa000ce52f4731c5e2b2973225"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c646553ede84d787e4d1b356a6d4e22139e6eb451a772a7e3e605bbed034bb6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57b9aa451a11a810ecef7586e680a2a6ade3da9546e60f704bc450c506f4d2d9"
   end
 
   depends_on "cmake" => :build
@@ -21,6 +22,13 @@ class Mrboom < Formula
   depends_on "minizip"
   depends_on "sdl2"
   depends_on "sdl2_mixer"
+
+  # Remove in next release
+  # Fixes: common.cpp:115:10: fatal error: 'SDL_mixer.h' file not found
+  patch do
+    url "https://github.com/Javanaise/mrboom-libretro/commit/d483c2dc308ddaf831fb81bff965a1bca266b7c8.patch?full_index=1"
+    sha256 "573f11c68b97190398f7f0bcb3338c6f387bf4be39e4fbd3896278b611d0cf59"
+  end
 
   def install
     system "make", "mrboom", "LIBSDL2=1"

@@ -1,19 +1,19 @@
 class Okteto < Formula
   desc "Build better apps by developing and testing code directly in Kubernetes"
   homepage "https://okteto.com"
-  url "https://ghproxy.com/https://github.com/okteto/okteto/archive/2.19.1.tar.gz"
-  sha256 "786dec607c6095906bdb410e6ec5ecc8ff00d02a4008f42fbde2e4f6e4cfbb0c"
+  url "https://ghproxy.com/https://github.com/okteto/okteto/archive/2.19.2.tar.gz"
+  sha256 "4a872fdf1654f324c849256cc898ae09dd18bd81281cca310df6606643e8fe56"
   license "Apache-2.0"
   head "https://github.com/okteto/okteto.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d2615382a254054c0b9995d7ceba6a96eb9e92b14f296b0509af6be07cb9ce4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0066041c8441528e4fa024addbf10a43429a9285eb8680a300a9397427533ce5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e9162184a494bb4b516cb0a7698a21a0b2a88d76b5cd7ffae3a9d8717bcfce79"
-    sha256 cellar: :any_skip_relocation, ventura:        "8701b0b751088478c513c41351d3d2fc757e49d7b53ffdb68a599173256da9fb"
-    sha256 cellar: :any_skip_relocation, monterey:       "7c5e8a3e5a309f56c05fad5b23572e22e960381c1a532fc0dcbf48adec5dd9d9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "836df7fccda17ce4c1ac21addd82bc888bfd46bdcf97b2e6a582771b17bfe8de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c97a1b166c0e1059ee81fd5bfd9e8e330d6c20e1699cccc70a53cac1f9f59ca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e1344de08ed796f901096606a02593303b38f2dc2518b20c813714a33176368f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "59a96cd3b34f54db91c5a680991ffbda6b4171a82a155354f3de32abd40a27d6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "72e8297b91b24b82b4e20337ec5f04b63b3e04806b17387886881a2762ebb9de"
+    sha256 cellar: :any_skip_relocation, ventura:        "646a4b5603f48d6f2c0bf57bc9542bdf43edc49517f6ea602f9371b8f62d924d"
+    sha256 cellar: :any_skip_relocation, monterey:       "edd78696dcb8a4c0d731f8956716136cccc7f24e78bdd22f5e6cf185b2bb9e12"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e7d1f3f66b317cb5c847ca73e18bf90b953dd12c188589ff612fc1197b906bcf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f6947a5d95676bafbb38c18db8db741896de8a963dcd2e144c889a36ac41508"
   end
 
   depends_on "go" => :build

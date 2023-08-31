@@ -4,17 +4,17 @@ class Ncnn < Formula
   url "https://ghproxy.com/https://github.com/Tencent/ncnn/archive/refs/tags/20230816.tar.gz"
   sha256 "6b14105b6aba1e5fc87321b161c1d996c507f9b671a961831c8cd9987e807aa1"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/Tencent/ncnn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a1553f4fe3c30431b7e4c14c4000050300fc4233abc8c378c2cf5e46b5979f2f"
-    sha256 cellar: :any,                 arm64_monterey: "96ef7a5caba2f1a5a6072b2d228e907c1bae5db8939960b818c8d80e7c224a1b"
-    sha256 cellar: :any,                 arm64_big_sur:  "77f6e514978c992257a8852ca1f285fa2812193f2ab1558e4fffbe97cf0d48a4"
-    sha256 cellar: :any,                 ventura:        "7aaa540ec7c26f1760c518210c1bfeffebcc8f51d5d0367bf593819084653d18"
-    sha256 cellar: :any,                 monterey:       "c39464a664a7a6e3a2ebc3d3dac1d44a40937fc300c6e9f721a15f2bc3599b72"
-    sha256 cellar: :any,                 big_sur:        "17a975a672a3b5257668ef6116278573f9fcf11b78e03e076eb0bd9959901370"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df5f1a858583d8a4c9428e7801b8e9bf561c8d88890da205ba99718c1db778b3"
+    sha256 cellar: :any,                 arm64_ventura:  "5474a589394ea7e3e41eb9af6fea6d2d5cb4941a30ef3d6946c0a80d97ba4d85"
+    sha256 cellar: :any,                 arm64_monterey: "7af59ce0f722349ee1cd0cee9ba6063e17e8ccf867076570d57a4f67ad69de61"
+    sha256 cellar: :any,                 arm64_big_sur:  "bd1a326c5d76f1b7c0083ecaf67583763f741347d8d57f1bf53a2f3703c9583a"
+    sha256 cellar: :any,                 ventura:        "24dae11ec769b5c94ec9a337116757e55b76a8a9d6afffa8b1afd630a18c4d35"
+    sha256 cellar: :any,                 monterey:       "ae35181c148bed74065389edd9c20fd15d0672118c84cd829adf6f99380b3b65"
+    sha256 cellar: :any,                 big_sur:        "fe55414d2634afde9166571bcdb2802d536799fc0b71b44a7a1097cbc988a66b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ab69c7626395f001aa18214aae3bd5704e39dbfd04e4952e94e1aeb923c72a1"
   end
 
   depends_on "cmake" => :build

@@ -1,18 +1,18 @@
 class Libavif < Formula
   desc "Library for encoding and decoding .avif files"
   homepage "https://github.com/AOMediaCodec/libavif"
-  url "https://ghproxy.com/https://github.com/AOMediaCodec/libavif/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "410f85cf0d13f403b41197c0774da469f5d73b89aa06d40fc726165377f215a0"
+  url "https://ghproxy.com/https://github.com/AOMediaCodec/libavif/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "398fe7039ce35db80fe7da8d116035924f2c02ea4a4aa9f4903df6699287599c"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "76070a66979942ef18513ad6c972c9c1e6075e8fd869215f2c4698d483c3c680"
-    sha256 cellar: :any,                 arm64_monterey: "bd3e7b4974f96a2b22e504b82e00b69623a22ce71a93668157c59f0a12108100"
-    sha256 cellar: :any,                 arm64_big_sur:  "1ba88f4e7dbd8cc738a609a4d1037777d6d30663c984a01e1a7bcc3858bc5344"
-    sha256 cellar: :any,                 ventura:        "b29b3cf4472037702041b759478b8ae0652adac8cd4d3507bfcb73c837377f7d"
-    sha256 cellar: :any,                 monterey:       "cf033a07e21c5d6ba808233a61769fe34d578043dbb1f0ce143f6b4a3a7eb444"
-    sha256 cellar: :any,                 big_sur:        "f478699a85ae54ee873703295c1a7ff795a1946a20f3105953e458cd2d13a26c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d734c6a76e0502ff13e33ac4d6f4c90a191d479b474002b714b634c6518420ae"
+    sha256 cellar: :any,                 arm64_ventura:  "044695408924ba007b0d4ed5c37bdb609506bcdc4e58adde06a3bda6418aebc0"
+    sha256 cellar: :any,                 arm64_monterey: "7ddfcba784b0f96a9ae9e6502bd37c783e16f9f10cc52bc00028e859b2cbfd69"
+    sha256 cellar: :any,                 arm64_big_sur:  "508783fd212b0daa97487d1ba075ffab6cdd35280f20216fe1a565456c570c7c"
+    sha256 cellar: :any,                 ventura:        "b8e5bef8eaee1eebe6365e3f04ae1ce8f537c99482d414c3b606d9f8a26157a6"
+    sha256 cellar: :any,                 monterey:       "713f393dfba18c8d48b9a798775ccb0e7f488038e091a46890c1b6981c78c070"
+    sha256 cellar: :any,                 big_sur:        "3a807baae421db708ef8497c0764ce54f18e7c81ece4604207d734fe291eb6d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0e05c23ac6188951d52c803cc40b76c0e87e999bd082267263f3aba99baa6f9"
   end
 
   depends_on "cmake" => :build
