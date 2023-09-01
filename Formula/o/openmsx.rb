@@ -1,8 +1,8 @@
 class Openmsx < Formula
   desc "MSX emulator"
   homepage "https://openmsx.org/"
-  url "https://ghproxy.com/https://github.com/openMSX/openMSX/releases/download/RELEASE_19_0/openmsx-19.0.tar.gz"
-  sha256 "bbc8afff5f933278ed96b1699446b7c85daeeaa1b71fd369391231d6474b3af1"
+  url "https://ghproxy.com/https://github.com/openMSX/openMSX/releases/download/RELEASE_19_1/openmsx-19.1.tar.gz"
+  sha256 "979b1322215095d82d5ea4a455c5e089fcbc4916c0725d6362a15b7022c0e249"
   license "GPL-2.0-or-later"
   head "https://github.com/openMSX/openMSX.git", branch: "master"
 
@@ -13,13 +13,13 @@ class Openmsx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a9a26afc3143a8cbcd38bc1fab2aabf12087054a91d80bf042d2723b61742e44"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "677d11ca125b73f9eb43730abe19f86462c0397c4a348461dc550700016b14ab"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "13e6427001210187c09c65a17eb7abadb1481ec73387b6a3ae3ffcab0fcd6de5"
-    sha256 cellar: :any_skip_relocation, ventura:        "dfc639b3b7fe4ef943ec4890add0bc5881d9f5573b6029ae45ac5d860ce24d40"
-    sha256 cellar: :any_skip_relocation, monterey:       "af508931f94301164cef50c82f134d92b3ac6a697f4f575731fbd627ff1d8532"
-    sha256 cellar: :any_skip_relocation, big_sur:        "319a5085d7ed0ddf6a08a39d5942837f423412a305dbb4cf5b11fdcd91a2d9ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec2ae1eaab1752ecb6309a49470417a87cb2f85eb9de3d57f9c33313f2bc9525"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2fc603ee93d27464126277dc97a244707dbf534a2432781d6995bba3c4135a17"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dbeab633f428ffa82660c21e981473032adafd22697143db3c16c0679ae4cf4d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4b8801dbe18da6330df0aa221dda79f0d73e4290f79ee77267cdcaba3df83e0d"
+    sha256 cellar: :any_skip_relocation, ventura:        "7114ed2d2d4ceb881ca64f0ed05d16d7d355aa1e5aaba54c6901a6f05cba2b16"
+    sha256 cellar: :any_skip_relocation, monterey:       "149b0d1626cd2e2ae7782008f54118a13929245b79a7e74ed49d192e7aef77bc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "faea2b8ed860e0ba7b62a6b74fad36916ed2dd2ec6d45dfdf4a30323aa3ce4c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd11f2af1e91fa6e4e59e952dead395775ff2858a6a65d954b696aa6539e10f5"
   end
 
   depends_on "freetype"

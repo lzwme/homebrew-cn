@@ -12,8 +12,8 @@ class I2cTools < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b17d7eb58e6a534bc87f6ce9963032a647add81c9355020e18730722775e0bec"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "72b4a7dd702576379650b3c314c5181e7fa26e21a2b5526284b7e0fa5190651a"
   end
 
   depends_on "python@3.11" => [:build, :test]
@@ -26,7 +26,7 @@ class I2cTools < Formula
   def install
     system "make", "install", "PREFIX=#{prefix}", "EXTRA=eeprog"
     cd "py-smbus" do
-      system python3, *Language::Python.setup_install_args(prefix, python3)
+      system python3, "-m", "pip", "install", *std_pip_args, "."
     end
   end
 

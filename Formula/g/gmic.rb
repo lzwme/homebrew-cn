@@ -4,6 +4,7 @@ class Gmic < Formula
   url "https://gmic.eu/files/source/gmic_3.2.6.tar.gz"
   sha256 "55993e55a30fe2da32f9533b9db2a3250affa2b32003b0c49c36eec2b2c6e007"
   license "CECILL-2.1"
+  revision 1
   head "https://github.com/GreycLab/gmic.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Gmic < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "af8dcc248995ba79019cd490b80258a1afb8eec7fcb7f0f317ca5860f95ccbac"
-    sha256 cellar: :any,                 arm64_monterey: "228e98960e94ce29af2adf1d1aca78837176b7504957143d9cd15180ec5dda98"
-    sha256 cellar: :any,                 arm64_big_sur:  "84bd46cd387916397daa14303877ee5b56f773bc766ebb58c164ae7ee9d34b99"
-    sha256 cellar: :any,                 ventura:        "970e878955061bf68a212400b9c219cc8de8776ac2d431614c0467a471a153e5"
-    sha256 cellar: :any,                 monterey:       "9639de0c722952bb6bea2af4a9d2e4957f0c7a95266d0ef25d7191049121f2a0"
-    sha256 cellar: :any,                 big_sur:        "9eb871a19c482c244e367b7513225aba05f801bbbf595a87221ea2f96ad3c007"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cae040fe5358ac7ce3d20e6e4c30eabef88b8f154123c5b969b80c294cc8dfe2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4910592360d8bf41b5bb32cbdecb7c08d2dcde27d0a775bee724fe02d80f9682"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e37492988fc86bc04b0da69b19f20b22002367ea2ce5b4ef160401c67bff1029"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b1e751b9dd840ce5396b0808f41069110117d3e94e3f9387257c40d5a39ec912"
+    sha256 cellar: :any_skip_relocation, ventura:        "715914047c679d60888fee76bf45085cafa1ccee4bb8a06c9a8ce4544f5a6903"
+    sha256 cellar: :any_skip_relocation, monterey:       "96138880e5e00f7b76a64ad2db02fc9af3e7dfb9f7dede0193b2f32a53f4a291"
+    sha256 cellar: :any_skip_relocation, big_sur:        "38da3f9c843c51cb8c8025231df855f6e4e5c442c8347ca551b59af5c1f7c821"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb745a1eb297c12066a2ba05af168499ab217648d9f2ca8355b70a931e5b181d"
   end
 
   depends_on "pkg-config" => :build

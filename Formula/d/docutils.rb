@@ -6,14 +6,24 @@ class Docutils < Formula
   license all_of: [:public_domain, "BSD-2-Clause", "GPL-3.0-or-later", "Python-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ea0e9988733ecd494fb9b5ec6479f25eeb11718f1614fc92f0174f44acc913bb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "86fb46edc7859129fd319ec6d63aa3bf29383fdb51f96aa3ef466f97b13ca8a5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7cdb9692e679f6f477986b265ce0cc47c32513067761aebd4b01accbd7bfdad4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ab511781e0dda714dd2a7c6762bcfbd24cf31a40af63349607d8efd2d810a588"
+    sha256 cellar: :any_skip_relocation, ventura:        "510eb4b5aa120cb0c6b3a3d11be6150ef5b52c1500225c0bc68263112a42755e"
+    sha256 cellar: :any_skip_relocation, monterey:       "baef0621bdbcdbfbb2a3e407d54b533010f021a4b9f78a3e978e22ad0cbaf727"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6c6107d3abb89359e378110485db98076b41f6a08c36d7b2643efaaace94991e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f62e7d49f5e36fc8b2621c919f0d531d1f9e1d29c7c18edb1076f34865f3c6e8"
   end
 
   depends_on "python@3.11"
 
+  def python3
+    which("python3.11")
+  end
+
   def install
-    python3 = "python3.11"
-    system python3, *Language::Python.setup_install_args(prefix, python3)
+    system python3, "-m", "pip", "install", *std_pip_args, "."
 
     bin.glob("*.py") do |f|
       bin.install_symlink f => f.basename(".py")

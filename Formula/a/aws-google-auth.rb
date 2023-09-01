@@ -10,26 +10,25 @@ class AwsGoogleAuth < Formula
   head "https://github.com/cevoaustralia/aws-google-auth.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5d5918633fe4efb46b997222256a4e3a5095939e6976c1e58b6b8afc8aefc153"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e55be72510f6467251d96e7a23b2ffb510da6c23dd5e56e51a48ac5df012c074"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cfb5aef632e9be6fdf97f53945dbdbda8493b14ed8cd2d0b93b59f36af6df73b"
-    sha256 cellar: :any_skip_relocation, ventura:        "579ea90dd52d23547d5a7491ed8a435ca7c32563310e4bef534e759c18edb478"
-    sha256 cellar: :any_skip_relocation, monterey:       "f94e895aeb1520ce59683a98b0b43f0fede12fdeb51eff4a0545b063999eb405"
-    sha256 cellar: :any_skip_relocation, big_sur:        "224de652beffb8ca088cd7c91e0ecb977688035d4db347461e27f6941e5ad640"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2918cd1ef09ee154cf30afbb459f70eb095d0b8d6de06cfd68087a7008616156"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "620967644d82958a0091921ca9a205ee914ac3643ffa2114cb06f1e741ca7aef"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e394c7c2613806d96347def9eed48791061d89f378645773276d3d77316d48c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f5438e6e8063da5eac2a4d5ef5c212c4cb2f0023e694432a36c6ab979543f611"
+    sha256 cellar: :any_skip_relocation, ventura:        "c472049396250816619c8d95b170f8c0d8aa57e2b45ef7f61a9785feb36d3e76"
+    sha256 cellar: :any_skip_relocation, monterey:       "9b684555eafeaee4e3da02ae96de11a7d19862ae8f5c65f7602470491b95b2b7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1e553c029440787ad64e94e6d3520e284376cb718a0b3846dedae2bbbbc71fab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6fa09fdead88d0365aa5eca05b7360712534b5fa406b5d3657f722e2c0f824df"
   end
 
   depends_on "keyring"
   depends_on "pillow"
   depends_on "python-certifi"
+  depends_on "python-lxml"
   depends_on "python-tabulate"
   depends_on "python@3.11"
   depends_on "six"
 
   uses_from_macos "libffi"
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
 
   on_linux do
     depends_on "cffi"
@@ -41,13 +40,13 @@ class AwsGoogleAuth < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/97/3c/72fb803f5c84466942b9a2452ecb033fd468ea08ff193e8b49c71e71de9b/boto3-1.28.20.tar.gz"
-    sha256 "e3c2e8e55c17af6671a5332d6ab4635ad9793c80d0ac6d78af7b30a994d0681b"
+    url "https://files.pythonhosted.org/packages/20/a6/c1fab54e40fdae8d2c835e97c79d5051f59df427222f5adf5b6ed14f6405/boto3-1.28.38.tar.gz"
+    sha256 "cdb466e51ebe4c99640269d88d5450328271437d58e6ce089690d0485bef6174"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/f9/0d/ec24cb66b7651268462d5eb5d9d3c140a99f487db3ed58a45617991b11e8/botocore-1.31.20.tar.gz"
-    sha256 "485ef175cd011ebc965f4577d8cc02a226c46bd608dd2bb75ce6938328cff0fd"
+    url "https://files.pythonhosted.org/packages/bf/d9/e1f6a770eac0e6f1e2bd4913d3758fae36785e33150db19a35d5d5956fd2/botocore-1.31.38.tar.gz"
+    sha256 "b02de7898f0a7de0f6569be1c87046035a974006c31fd641f4b97a8dba1fad21"
   end
 
   resource "charset-normalizer" do
@@ -61,8 +60,8 @@ class AwsGoogleAuth < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/00/0b/c506e9e44e4c4b6c89fcecda23dc115bf8e7ff7eb127e0cb9c114cbc9a15/filelock-3.12.2.tar.gz"
-    sha256 "002740518d8aa59a26b0c76e10fb8c6e15eae825d34b6fdf670333fd7b938d81"
+    url "https://files.pythonhosted.org/packages/5a/47/f1f3f5b6da710d5a7178a7f8484d9b86b75ee596fb4fefefb50e8dd2205a/filelock-3.12.3.tar.gz"
+    sha256 "0ecc1dd2ec4672a10c8550a8182f1bd0c0a5088470ecd5a125e45f49472fac3d"
   end
 
   resource "idna" do
@@ -80,11 +79,6 @@ class AwsGoogleAuth < Formula
     sha256 "9d446cb47bbcea90ffa2ecc3e8003acf41573fc201bf44b4bf13bd0e11484828"
   end
 
-  resource "lxml" do
-    url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
-    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
-  end
-
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
@@ -96,8 +90,8 @@ class AwsGoogleAuth < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/49/bd/def2ab4c04063a5e114963aae90bcd3e3aca821a595124358b3b00244407/s3transfer-0.6.1.tar.gz"
-    sha256 "640bb492711f4c0c0905e1f62b6aaeb771881935ad27884852411f8e9cacbca9"
+    url "https://files.pythonhosted.org/packages/5a/47/d676353674e651910085e3537866f093d2b9e9699e95e89d960e78df9ecf/s3transfer-0.6.2.tar.gz"
+    sha256 "cab66d3380cca3e70939ef2255d01cd8aece6a4907a9528740f668c4b0611861"
   end
 
   resource "soupsieve" do

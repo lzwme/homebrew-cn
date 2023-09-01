@@ -3,19 +3,19 @@ class Platformio < Formula
 
   desc "Your Gateway to Embedded Software Development Excellence"
   homepage "https://platformio.org/"
-  url "https://files.pythonhosted.org/packages/fa/f0/32f8e9dc3cfb418af074f06ee419ab5f490df01141196d0f20d14b5037c5/platformio-6.1.10.tar.gz"
-  sha256 "046ad5bf0f723a98f0fc98cf6ef71cfd57dd85dc6c547af0e801fbc952f8fe58"
+  url "https://files.pythonhosted.org/packages/85/9b/37452c9b7e99638c9d761c7864a463e4721ce7206fb526174813ffe6a949/platformio-6.1.11.tar.gz"
+  sha256 "1977201887cd11487adf1babf17a28f45f6dbbec8cbc5e3cc144cb43b320a0d0"
   license "Apache-2.0"
   head "https://github.com/platformio/platformio-core.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "deebf94df2e6ac9a89adbf2acb0988117b449c751c382626824991d549c6eb19"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "de24e10ac2cb470d5d077c53aae69986c53b289d70ca436a1bfe4861769a0dae"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "52b5a93f37f71b599e819fa786f2bcce5cd0542b50de8d03211e369052aabe45"
-    sha256 cellar: :any_skip_relocation, ventura:        "f03e1e58af8a2c18b4c114506855a4b618fa59f5a09b9775d8071a483d55207f"
-    sha256 cellar: :any_skip_relocation, monterey:       "7104624559c7e53b2e9e9abc913ecf4ec4034fa8437f4211bbd8dd6631a8079b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9e0b83d3001a93a9d01e3ea5ddb22d67cd3ceab71fa7e5de8e35bbd125fade56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9cfa97602afa880dd52efe7cde23c378279f72d1a9e7b99b7dbf24fadeaf9a7d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29fcb281fc6c6b614ce81aec6e6d63022b985ee4bd6143adbcb110b25d8a2183"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5cb2f3f512c9522b753cd17d4dea74dfc9761abe255974a9e6b7853536e7ab59"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "43609e10c55fbc9534ba3f2704d5a421ba79f5aa6f744a586c35644c098606f4"
+    sha256 cellar: :any_skip_relocation, ventura:        "2849f990c2fe85285af38d244eb63f130eec8e03a1983ba72bfda17d27156849"
+    sha256 cellar: :any_skip_relocation, monterey:       "e12acb50db6d7bead7496dd12dc6d2166b301a49f1831200f86912d3b6847f88"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7b3717f7128208c6d941512b27f4514a97e16b8edcc36237132aee595b2186b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e67ce19a0fb3e16049a88a83331ef494387046f2703cdce747402e6c75ec994"
   end
 
   depends_on "python-certifi"
@@ -28,8 +28,8 @@ class Platformio < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/28/99/2dfd53fd55ce9838e6ff2d4dac20ce58263798bd1a0dbe18b3a9af3fcfce/anyio-3.7.1.tar.gz"
-    sha256 "44a3c9aba0f5defa43261a8b3efb97891f2bd7d804e0e1f56419befa1adfc780"
+    url "https://files.pythonhosted.org/packages/74/17/5075225ee1abbb93cd7fc30a2d343c6a3f5f71cf388f14768a7a38256581/anyio-4.0.0.tar.gz"
+    sha256 "f7ed51751b2c2add651e5747c891b47e26d2a21be5d32d9311dfe9692f3e5d7a"
   end
 
   resource "bottle" do
@@ -43,8 +43,8 @@ class Platformio < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
-    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "colorama" do
@@ -98,8 +98,8 @@ class Platformio < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/0f/62/0b59c1ed652ce7935f018ae2fc3bdab2d8a6a5675f914ed9618eb8ee70b3/starlette-0.31.0.tar.gz"
-    sha256 "7df0a3d8fa2c027d641506204ef69239d19bf9406ad2e77b319926e476ac3042"
+    url "https://files.pythonhosted.org/packages/e1/4b/fcd426d9477554d31dacb0c8069828466841b69ad26c8cfab9c5321830ec/starlette-0.31.1.tar.gz"
+    sha256 "a4dc2a3448fb059000868d7eb774dd71229261b6d49b6851e7849bec69c0a011"
   end
 
   resource "urllib3" do

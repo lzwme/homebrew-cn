@@ -3,18 +3,18 @@ class SphinxDoc < Formula
 
   desc "Tool to create intelligent and beautiful documentation"
   homepage "https://www.sphinx-doc.org/"
-  url "https://files.pythonhosted.org/packages/a8/6a/c4cb054ac1a96cf5990b4b397e3ddd81f0cb7a3122cd98b4ec57adfb0f23/sphinx-7.2.4.tar.gz"
-  sha256 "1aeec862bf1edff4374012ac38082e0d1daa066c9e327841a846401164797988"
+  url "https://files.pythonhosted.org/packages/70/aa/7f284cb72eafff634eab41ddf18a9bcf2f335d830fa3879072b877c1d72b/sphinx-7.2.5.tar.gz"
+  sha256 "1a9290001b75c497fd087e92b0334f1bbfa1a1ae7fddc084990c4b7bd1130b88"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3eb8369a281eea18cad6fd5a6f378ab3bf72d56806114a05bc51de9680b07630"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bf76bc71ee80004a4cab05d5a540fde77c0c0f4071125629d3406ab20bd10863"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8ce5fa271bb8c6291913400dae393b9d94629d0bb4c2317221ee55095e909e44"
-    sha256 cellar: :any_skip_relocation, ventura:        "d610b0e2d41c0d2d4bc85007bcb2c96f4559127dc9d8f1d8943d3b9a38801eeb"
-    sha256 cellar: :any_skip_relocation, monterey:       "0ff0e3f3fe1a3f456ff9c3e6429f41afd7b4be282f82d531e1d152bef21430d9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "23a2544319577af1c5e32a14e6d96731c37dbbae779c0684ffa91062b839400b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c22a240bd1b6c4f176ee6b9ed18ad5526e78be9cb27a8f584ad515af97fcfcd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3125adbf3be4a709a0c79b7b606a9e1d88a6df10532a5ce8e4e55d58f236fe3f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d04d9a26b9dee29ec9e0242b4ced5c4717e98bd5ea984470805ae0ee878c5150"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f5002e326ca478e8351222aeaf8457def2547a6f50c28328e6dc9923b520b57a"
+    sha256 cellar: :any_skip_relocation, ventura:        "e204d278fe4e72e9476b0563ce0d8526c7147db49d2d6cefe04fd6d7d82bf99a"
+    sha256 cellar: :any_skip_relocation, monterey:       "7a0850f10e1f6aba251931ffa88db2bf52bfecfa77e7d336a720801ca642c8f6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "35af23975135596a11c246ded1f449f36e7b4d2e1c2fe302d39cab643101c311"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9bbb0bacfd5f87f8a580103ada0d4f3b90dd638b2862274b89262560192c84b1"
   end
 
   keg_only <<~EOS
@@ -25,6 +25,7 @@ class SphinxDoc < Formula
   depends_on "docutils"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-packaging"
   depends_on "python@3.11"
 
   resource "alabaster" do
@@ -65,11 +66,6 @@ class SphinxDoc < Formula
   resource "numpydoc" do
     url "https://files.pythonhosted.org/packages/27/59/e9ee6fc936961fd7012167c8a3191599206deec2e6e26882f1dd1b42b761/numpydoc-1.5.0.tar.gz"
     sha256 "b0db7b75a32367a0e25c23b397842c65e344a1206524d16c8069f0a1c91b5f4c"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "requests" do

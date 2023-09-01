@@ -2,18 +2,18 @@ class Ponyc < Formula
   desc "Object-oriented, actor-model, capabilities-secure programming language"
   homepage "https://www.ponylang.io/"
   url "https://github.com/ponylang/ponyc.git",
-      tag:      "0.55.1",
-      revision: "800527f783997c8a32066980a99fbffeeab10d11"
+      tag:      "0.56.0",
+      revision: "06a706d4dafe95030f9170ac4417678588bd01ba"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "96d0dfc77a754bc9bdf078738a4a582c36099c73f9400855e872277fe52303de"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4409d69ef04220c0ff504a9e7a9853abc4002a48fd283e1c34490bf284dd5595"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "09626299ee4361f0c89ff99e576e68f5d7faf22f108de127566d3c83268713e2"
-    sha256 cellar: :any_skip_relocation, ventura:        "6ae38eccb5145c9aed1c4f2de2adf1dc40e336fbfe859e1ca044bfc8de30aad7"
-    sha256 cellar: :any_skip_relocation, monterey:       "3ece8fc390107782d7663bb4fab0831bfb70c2ea8d42970d3a6511aff84e4263"
-    sha256 cellar: :any_skip_relocation, big_sur:        "293495e4542c8bacf80465ff2aa87e4a44e8b0cf9d52f11183dd2b58063d67e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7aaf2ca49ffb9b40ae75224b815cee5bebbcecb06a8c2fbd85c1dc9628a8be9a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "712b7e98a45be1326f98faffaef8d50c3b9dcef34cae856c630c890e242a7e3c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "19a90d8528e9b3c98037ea35e63e0cf86286e08948356e76943ffe538cddf09a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "593a6253ab6bf89a8f86cb3c2a0739a6d9842e83794d7ae7326873e96b2bb425"
+    sha256 cellar: :any_skip_relocation, ventura:        "f1a38edf64bf15fadf6c6d44dc6f19583c9dabd39d677dae530bba8a15b3a742"
+    sha256 cellar: :any_skip_relocation, monterey:       "bd398b46958d181ffc6ef2697e8be2f44c10ab7cf0dd22156024f211ef116619"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5d84e088dcefa991cc5e4ad67ad78ff7e02a7b72eaa1ded1be360c9a7bd1e0bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "73e251fe43aa4fcf9a463f5d34b5eab282afab8f119c39db6526237751460fe0"
   end
 
   depends_on "cmake" => :build

@@ -10,22 +10,20 @@ class BandcampDl < Formula
   head "https://github.com/iheanyi/bandcamp-dl.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "42e9e7c0226ae85e203b4ddca33edccf767e27b63a4283268a69913f2cb978e8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "16aec7ad7d02c15f0e7be237a0be072778b21030a3c794e4414688acaa4691ab"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2c80f4b3a22c51a52053d7c22f0bd0c234648647cb8708847f346d29a1ba87dc"
-    sha256 cellar: :any_skip_relocation, ventura:        "4a23f89c121b9ccf8b82818290685a55531ca1f02a4d3cf16e7bcfbb0f634521"
-    sha256 cellar: :any_skip_relocation, monterey:       "17a8084c258d32fb0394e2b11bb807ea9ca7e12509f53bf74d8d48497eb1d566"
-    sha256 cellar: :any_skip_relocation, big_sur:        "811d606c399181406396afdf202baaf713b092e0d5e1a65214010c5154c31b42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e99678869ab62b5689c6767d5b5231c08521971e3abc42da10634c2fa22a784"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a25bb6e7b509c689214bbb76a3b1d65749a175227e76d909650e3a6bc9c5a4fb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b08597bc816d5bf8000d41b78d134cd87a44faa538205109c347526300de5312"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "958a773139a146f7b203da5cdb16877b8ee391e82829e2db1fc34812b0906cc4"
+    sha256 cellar: :any_skip_relocation, ventura:        "b21dae6509ee5d8aadbbf6246e1614783058ac48551b4ba87fc5be5f325983aa"
+    sha256 cellar: :any_skip_relocation, monterey:       "32b19551b72383f9929e5704584495b08e6838e8ccffbb3ce0a21aa0325b0f7f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "43fbf2f3567ceb55c051208e9873b920b19872d4296c33295750559fcd74b0a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7032b7b27f79a6c064d955ac5e5164790342ea06280c37a20b3cbdd13565dbfe"
   end
 
   depends_on "python-certifi"
+  depends_on "python-lxml"
   depends_on "python@3.11"
   depends_on "six"
-
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
 
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/af/0b/44c39cf3b18a9280950ad63a579ce395dda4c32193ee9da7ff0aed547094/beautifulsoup4-4.12.2.tar.gz"
@@ -33,8 +31,8 @@ class BandcampDl < Formula
   end
 
   resource "chardet" do
-    url "https://files.pythonhosted.org/packages/41/32/cdc91dcf83849c7385bf8e2a5693d87376536ed000807fa07f5eab33430d/chardet-5.1.0.tar.gz"
-    sha256 "0d62712b956bc154f85fb0a266e2a3c5913c2967e00348701b32411d6def31e5"
+    url "https://files.pythonhosted.org/packages/f3/0d/f7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079/chardet-5.2.0.tar.gz"
+    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
   end
 
   resource "charset-normalizer" do
@@ -55,11 +53,6 @@ class BandcampDl < Formula
   resource "idna" do
     url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
     sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
-  end
-
-  resource "lxml" do
-    url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
-    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
   end
 
   resource "mock" do

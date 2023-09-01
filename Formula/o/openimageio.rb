@@ -4,6 +4,7 @@ class Openimageio < Formula
   url "https://ghproxy.com/https://github.com/OpenImageIO/oiio/archive/v2.4.14.0.tar.gz"
   sha256 "92ad4b107394b273397baa1abe90207e1f8ef9fd52ffbfc23b46e3b0005d4439"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/OpenImageIO/oiio.git", branch: "master"
 
   livecheck do
@@ -13,13 +14,13 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "22c9096d03d076b28c21d87bf6f5c6ca9fea12daaced8f9f533d8ccf77f33a02"
-    sha256 cellar: :any,                 arm64_monterey: "27269b6aa11ed491f8fd41339b27095a4f0e862ff0d60bb80a7aa5f12f4455da"
-    sha256 cellar: :any,                 arm64_big_sur:  "c6493bc9cfed4494d3a88235397fb247a7eaca1b21f24707c9199356eb943245"
-    sha256 cellar: :any,                 ventura:        "33669c84c924d005504a34a9565c0aa54e4bf6ed9ef8811aee150ad92ae33de1"
-    sha256 cellar: :any,                 monterey:       "15c1242d1e0667b9c3829c813241f7d339e9d9555bd62966956a791f4c600718"
-    sha256 cellar: :any,                 big_sur:        "4f3b350467ec04d0fc8b61ae0b156bba55427fb2584fda35b207c49715584b94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01f00d5e12311263470c0e1870f659ac0c37ea3686ea47ae02a87e3ae890a213"
+    sha256 cellar: :any,                 arm64_ventura:  "7f86914b8278ba0e57e974e04fceb57fa50c49c869e1ccd409998690fca0ca8a"
+    sha256 cellar: :any,                 arm64_monterey: "3fb3d5230e3a2cc305164fa75830ac729ccc474762f7f9fa363abc3bcbf41362"
+    sha256 cellar: :any,                 arm64_big_sur:  "33fba08d2969cf7ebd4fb1c4958ca04dab6bda5a8fd26f1dc6829896f949143d"
+    sha256 cellar: :any,                 ventura:        "42b1130e561f4cb83bcb2cbe41d0848c0d0b0f420e8477b563042e0c3d554889"
+    sha256 cellar: :any,                 monterey:       "6201823189b9bb1f9996f367f487ba5473e701dfe3044e4cd6efbb277cbd4e56"
+    sha256 cellar: :any,                 big_sur:        "b66d2b396b80c64ae74e15c90fbe290a85044be583ba34d6398378afb80b4912"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "438fa3498037407042506bf7abf6f928e4a3d3f1e3e75cb6cc71a724c5a2c9f4"
   end
 
   depends_on "cmake" => :build

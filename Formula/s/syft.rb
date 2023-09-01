@@ -1,19 +1,19 @@
 class Syft < Formula
   desc "CLI for generating a Software Bill of Materials from container images"
   homepage "https://github.com/anchore/syft"
-  url "https://ghproxy.com/https://github.com/anchore/syft/archive/refs/tags/v0.88.0.tar.gz"
-  sha256 "37b2c4a3ba555351ffe164293d6f2fdaebf2dbeab69f6ffe8e18b85d4dcebc9e"
+  url "https://ghproxy.com/https://github.com/anchore/syft/archive/refs/tags/v0.89.0.tar.gz"
+  sha256 "e8b4bf1481f3101adb2881f35f95528cceb58470f1c568c7c05c2864031dfdaa"
   license "Apache-2.0"
   head "https://github.com/anchore/syft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca8012878376039205d3c462205992507ee8d38be6d372411a6180d9e4406e84"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6b8dcdf38ce3a8b008084ab111c7d76b37e51896a854f9e17b3810e888321406"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "20ef53a44293aa2557074745d19108b496680d1a5a26c4a9cb35839f01907077"
-    sha256 cellar: :any_skip_relocation, ventura:        "1acd79d946885861c2a4489232200299aab9a7dc4cc17d66b3fcd816ba811bde"
-    sha256 cellar: :any_skip_relocation, monterey:       "4ce773547a6cdcfb26ef180b993a8399debd2f6a203ccf62eb66c21e7ff501e2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "84f3a517b5c8ace514582f0f5b9631f19b040da61d620479883391cd231db3f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2365977ac4d0de3b9d39d3177ffd17f27434f2d0d34589ea51c667515c80ca9d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "374c79feda2e4735dcee33a8a8168c94e24bd5d664d5a2841795a651b41f25d2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7613c9c065db303464de14ecb64c2f2d05a9b8dc9ea32d5757d4f94b299a81f7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f81527dd20b208bc23c55be79f42ce4ba9d150dac921a047f97e6a52c34a533b"
+    sha256 cellar: :any_skip_relocation, ventura:        "6a6c17387b6553450b674c70412c4c57cd4f2925c9ac6fc91c85bbeed323d3eb"
+    sha256 cellar: :any_skip_relocation, monterey:       "2bb4f85e6346c8f4b2a3144c010e910562c3b956e865e998436b821036928778"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d44df5a38db06c33f20110181d65d9a9e7e64df4d51d102188db5c517385c03a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "12d0163d81fd88049c9f8fb2750e01511a0a2dc8a99fd704d9dc0827d43752ed"
   end
 
   depends_on "go" => :build
@@ -27,9 +27,9 @@ class Syft < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/anchore/syft/internal/version.version=#{version}
-      -X github.com/anchore/syft/internal/version.gitCommit=#{tap.user}
-      -X github.com/anchore/syft/internal/version.buildDate=#{time.iso8601}
+      -X main.version=#{version}
+      -X main.gitCommit=#{tap.user}
+      -X main.buildDate=#{time.iso8601}
     ]
 
     # Building for OSX with -extldflags "-static" results in the error:
