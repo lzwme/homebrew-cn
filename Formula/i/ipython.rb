@@ -3,19 +3,19 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https://ipython.org/"
-  url "https://files.pythonhosted.org/packages/fa/cb/2b777f625cca49b4a747b0dfe9986c21f5b46e5b548176903a914cdbec55/ipython-8.14.0.tar.gz"
-  sha256 "1d197b907b6ba441b692c48cf2a3a2de280dc0ac91a3405b39349a50272ca0a1"
+  url "https://files.pythonhosted.org/packages/15/d0/b84b1131d7b958b2e4564f784c9a88b63ce7c181af914f0c26ac07970dc1/ipython-8.15.0.tar.gz"
+  sha256 "2baeb5be6949eeebf532150f81746f8333e2ccce02de1c7eedde3f23ed5e9f1e"
   license "BSD-3-Clause"
   head "https://github.com/ipython/ipython.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e68cd2cc9201da243fae68a0ad883cf1543b33c96204d4d2586a7097da5ef115"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c587c92ff285d4181185f4e6a52c5755cbc378bac8514086491ff998dab8f8eb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9081163bddeb79a3b3ac7cf6269984b22a284517e550ae71b72368fb64c03817"
-    sha256 cellar: :any_skip_relocation, ventura:        "741909ec0e95ac0c413a27b773380efcf6e2db9c475ea1149dd5d0e9d6df6556"
-    sha256 cellar: :any_skip_relocation, monterey:       "302b8049b901ad8ff2c3e238d8ad14415f23e731c93c0794ea2aa4c03aca9b98"
-    sha256 cellar: :any_skip_relocation, big_sur:        "564672b7fc00350527c42a7b7de22a601d6a1286b2ec65f6440822e6dabbd814"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0df7f9aa36643222faaec3ade488edc23e99fa198762bb52052329b6fdaf06bb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25ab3d98095fac752392e707d8db27a73fc36c6672382df961b1baf9023130c0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1340cd2fd5d08406c8ff0a321aa9cdcdadb25282c6f4a4f00c5fb8791becc6cf"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0cd02457aaf3838e61278d15b123b22c9dcc348bb6d12072e59a737f16bf579f"
+    sha256 cellar: :any_skip_relocation, ventura:        "492aefb2db5cdede9b4bc44a62a2c65ccb7cec4ab0c56af11eb73501fd5c7a24"
+    sha256 cellar: :any_skip_relocation, monterey:       "0257e2650602e4b74681ea8d59c956bfadaca7d9c78827ea613fff4184a59825"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b2375cd720bf0a7b04e73bf98f1c701977b637b3fe9fc58b565f73cb3ed17afc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea7dee9e561f96b8df9271692e5dd447b32b72ea03bde8ba5758ebbbdaeaf76e"
   end
 
   depends_on "pygments"
@@ -48,8 +48,8 @@ class Ipython < Formula
   end
 
   resource "jedi" do
-    url "https://files.pythonhosted.org/packages/15/02/afd43c5066de05f6b3188f3aa74136a3289e6c30e7a45f351546cab0928c/jedi-0.18.2.tar.gz"
-    sha256 "bae794c30d07f6d910d32a7048af09b5a39ed740918da923c6b780790ebac612"
+    url "https://files.pythonhosted.org/packages/57/38/4ac6f712c308de92af967142bd67e9d27e784ea5a3524c9e84f33507d82f/jedi-0.19.0.tar.gz"
+    sha256 "bcf9894f1753969cbac8022a8c2eaee06bfa3724e4192470aaffe7eb6272b0c4"
   end
 
   resource "matplotlib-inline" do
@@ -73,8 +73,8 @@ class Ipython < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/4b/bb/75cdcd356f57d17b295aba121494c2333d26bfff1a837e6199b8b83c415a/prompt_toolkit-3.0.38.tar.gz"
-    sha256 "23ac5d50538a9a38c8bde05fecb47d0b403ecd0662857a86f886f798563d5b9b"
+    url "https://files.pythonhosted.org/packages/9a/02/76cadde6135986dc1e82e2928f35ebeb5a1af805e2527fe466285593a2ba/prompt_toolkit-3.0.39.tar.gz"
+    sha256 "04505ade687dc26dc4284b1ad19a83be2f2afe83e7a828ace0c72f3a1df72aac"
   end
 
   resource "ptyprocess" do

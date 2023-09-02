@@ -1,20 +1,19 @@
 class CargoGenerate < Formula
   desc "Use pre-existing git repositories as templates"
   homepage "https://github.com/cargo-generate/cargo-generate"
-  url "https://ghproxy.com/https://github.com/cargo-generate/cargo-generate/archive/refs/tags/v0.18.3.tar.gz"
-  sha256 "e44e021dbc83cc862e4f52fce76ed6cfab0cf08d74505fe177bec048f981ac9b"
+  url "https://ghproxy.com/https://github.com/cargo-generate/cargo-generate/archive/refs/tags/v0.18.4.tar.gz"
+  sha256 "830c9a6bc6350f47e854260291d7303b8058659f8e03b85894f5636ec2d69b17"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 1
   head "https://github.com/cargo-generate/cargo-generate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f1423eba17a969331a6245be5750dd057993c96dd7d3f88e6e10f3775522bb44"
-    sha256 cellar: :any,                 arm64_monterey: "872007cf7741a8c95e571d06cae772ce30bf4b05792cb38cc3070290b88a0657"
-    sha256 cellar: :any,                 arm64_big_sur:  "a279ff568f299917443c319f901544faf7bc49e067758e6b011710a286dc95af"
-    sha256 cellar: :any,                 ventura:        "83f7d54dc2ca09ae6696e2e58e5e9601c2d4ef8404630c9772ea7a48b1145707"
-    sha256 cellar: :any,                 monterey:       "99a7741c22c61bf9f48f0b0e1b565231b35f4a1f52a5836bc0f86d1dd490ff8f"
-    sha256 cellar: :any,                 big_sur:        "6f7b3ce671653d4f4660943708f41d49846d0aef7f4018cdf2d076d5c96627ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7100287872bf0fabcf2a03cfa891eb83c63a780c84d8b03f07b9ba69ae6711bc"
+    sha256 cellar: :any,                 arm64_ventura:  "791a92ebdb3cf161da2b1413b6208ddb9fb59bef74be16ec83764ebcf0c386e5"
+    sha256 cellar: :any,                 arm64_monterey: "f74825395f0857f6b3fea510d7b9c7842689250f44863cad71948209728763fd"
+    sha256 cellar: :any,                 arm64_big_sur:  "7757aef9ac22d7281caa3292df1f51d4cee35907ec8005eb6b9f4edd8d1cd84f"
+    sha256 cellar: :any,                 ventura:        "4a08f08e3bf1e508da6dbfe71eae3d159277b2e80c68a76c228df076ab394620"
+    sha256 cellar: :any,                 monterey:       "f4a0b758f62e76b606944bb82821a22edd120ea140b78e54afad31e8f2ced419"
+    sha256 cellar: :any,                 big_sur:        "fae60e4ec6cbd26eb15b0acc99e9af9080b3836a0d0388126b211be5072b7813"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b89a4aba4a58ca7e913561633f56b805ce55e43efe220d5e9eff61926f2a151"
   end
 
   depends_on "pkg-config" => :build

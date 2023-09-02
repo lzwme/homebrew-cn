@@ -4,7 +4,7 @@ class Atlantis < Formula
   url "https://ghproxy.com/https://github.com/runatlantis/atlantis/archive/v0.25.0.tar.gz"
   sha256 "23cbd2f992a1fb90de80fcef8f0ab11024379bae76a2db322c48696b0efb81b7"
   license "Apache-2.0"
-  head "https://github.com/runatlantis/atlantis.git", branch: "master"
+  head "https://github.com/runatlantis/atlantis.git", branch: "main"
 
   livecheck do
     url :stable
