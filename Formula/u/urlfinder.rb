@@ -1,19 +1,19 @@
 class Urlfinder < Formula
   desc "Extracting URLs and subdomains from JS files on a website"
   homepage "https://github.com/pingc0y/URLFinder"
-  url "https://ghproxy.com/https://github.com/pingc0y/URLFinder/archive/refs/tags/2023.8.30.tar.gz"
-  sha256 "a8a05f8bc9e4a1fe56b3920a213f12c60350004f85529280b45f90361d68a24b"
+  url "https://ghproxy.com/https://github.com/pingc0y/URLFinder/archive/refs/tags/2023.9.2.tar.gz"
+  sha256 "ffc5c2a92f3f43a2e135903a5a2d3ac2c3f7e21a9e4bcf0913f59687b1ccfdcc"
   license "MIT"
   head "https://github.com/pingc0y/URLFinder.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "063b533a9038c1cc32aeade4df541d2c99dad35f503bed97fc4f1ca423f53574"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "75f4f97b1db830288d3c45077e84f9499959e234cf5473de63f3deb817c566da"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d1e6e5975095223bdb42312f0f42c4aa9e8997ac52d144f36514e91c7b13ffec"
-    sha256 cellar: :any_skip_relocation, ventura:        "3def9792a0212d09bf9bbfadf739d4e899a608a983e4af0b414202305ae26f47"
-    sha256 cellar: :any_skip_relocation, monterey:       "71b2983b6be2e9a2ae237a26cee3ebba5c52c98178e344195f4cbb25d205bcaf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ef6bf2f39af660bb97152bfefef89391b66a0ea7cfab3c47f41be22c7c77599d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "211ca1d91233974c02ec2dfc849f1f80520cc068bb2567af72e52e20ebb4db40"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb7017df1768bbc97f4603e4d6dd9927c0d500b77f947a3e5ec9d0f8706d0749"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "02b1966e6142fe82853321c78bc7a13ac776f05b62c848028a18348a4899992c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5a67be3b9a7dedc090d658252d0940c8cb2412af8e8fe8e87038f424532a04f8"
+    sha256 cellar: :any_skip_relocation, ventura:        "93c9fd8b4abf61d885182cf4e623860a97407605d182959c187a8c34f46019f5"
+    sha256 cellar: :any_skip_relocation, monterey:       "cea0962e9c2ad0880a7be08d77ba7c3e279052f28e53b3ccbfdf4fff9b47fe91"
+    sha256 cellar: :any_skip_relocation, big_sur:        "009e3be83b8fcae2e6f9995e613fcadc875d0cc9261ceda52bd111d337b19089"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2187cf29f2e379bf8d54ea5f86ba4822f32e6ba2004768ea7f07e2cd45616d3e"
   end
 
   depends_on "go" => :build

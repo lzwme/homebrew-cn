@@ -3,18 +3,18 @@ class PassGitHelper < Formula
 
   desc "Git credential helper interfacing with pass"
   homepage "https://github.com/languitar/pass-git-helper"
-  url "https://ghproxy.com/https://github.com/languitar/pass-git-helper/archive/v1.3.0.tar.gz"
-  sha256 "9600bba2e7ac389a45a8222478c4fb2a4b1722682868df7dc7daa991828d851c"
+  url "https://ghproxy.com/https://github.com/languitar/pass-git-helper/archive/v1.4.0.tar.gz"
+  sha256 "e7ff68b074ad25f61cac0a8f291fec8cdb9b701c32fbde37e1b5bfa8f2211c6d"
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "096a1079c9aff6cd26748511bb063471d213ba7864f2c5f8ef35b3a72c721c6d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "98cbfad039d46dae12c8d9b047f67cddc1861ef2e1bd9a9c4dd729ba0e994844"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2f9d4fd7aafb8714b71e6f7c0a71afe9def4e380d5fd7a8da11baeea61f745cf"
-    sha256 cellar: :any_skip_relocation, ventura:        "6fe0bf8854884e104906d3e906e3f91b64f7ce7a001f6ecc85b65e8283a3ee6c"
-    sha256 cellar: :any_skip_relocation, monterey:       "6cd8680f0b5c9c1bd32ab74bc1ace7cef5ace2d382c240509abdcd04f9d8c188"
-    sha256 cellar: :any_skip_relocation, big_sur:        "67830f4ad1bd4b50186ea747685cadd738d7c3b471ac030b818181b0f9a6608d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2330b6069770b1620418485c1436fe348e9acbd74bf4b49e12ffabf54b1f009"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa1908081936c96726efc978ebda0bb925774fad4c2db387ed68cef69deae138"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "525dbef2e267f434fea8d53aec68e569e9f6fca9768c8d06e89a83aeaeec9f00"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "46d1f3cd4408ed377783b6c3e208b8e4b99e510a09c0a0a1b29b8b5f153ee756"
+    sha256 cellar: :any_skip_relocation, ventura:        "8ac8045fc1950475ae41c755bdcf8393e718c1646e9e1028e0c8b17e180dda9c"
+    sha256 cellar: :any_skip_relocation, monterey:       "ed2127fc69d08a420a5bd06ed99422c5f4340ce32d74ca6b77fbf427fcd24eba"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8daa0b2b079f9d4d105536769ce5e4a9012e3106997f4c4411168206634c7aa1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "519db42f0f2d80890ee442287fe642e4c5cfdcdab470e5b162ba9180e0e4952f"
   end
 
   depends_on "gnupg" => :test

@@ -1,8 +1,8 @@
 class DosboxX < Formula
   desc "DOSBox with accurate emulation and wide testing"
   homepage "https://dosbox-x.com/"
-  url "https://ghproxy.com/https://github.com/joncampbell123/dosbox-x/archive/refs/tags/dosbox-x-v2023.05.01.tar.gz"
-  sha256 "0aa75b873978aec41ecfee62bb103d8a17fe3566a3ebf5415245cee0dd032ebb"
+  url "https://ghproxy.com/https://github.com/joncampbell123/dosbox-x/archive/refs/tags/dosbox-x-v2023.09.01.tar.gz"
+  sha256 "71bf4477ae1640406fa24023f51766ab158ebf26f0e2f317f6fd7bd84c15b4e6"
   license "GPL-2.0-or-later"
   version_scheme 1
   head "https://github.com/joncampbell123/dosbox-x.git", branch: "master"
@@ -19,13 +19,13 @@ class DosboxX < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "89dae5ac74ff447c36d42c31853f4e508ba2b29fc298922731b3a323eae4cf2d"
-    sha256 arm64_monterey: "28fe74aaed1dc8e5e6821dbb0824fb9169cd8a3988f5eae3f964af96d09ea1ce"
-    sha256 arm64_big_sur:  "d47e4223e48dcb353844fe1248c9f8fd87fed18effdf9a503ac6f90c165104c6"
-    sha256 ventura:        "9fee80e8182e9bf33964199007aa18e9350a7641b72f738448f5f2dffad3c72d"
-    sha256 monterey:       "bd64240e9131f534bf6c9cbf9773d644036870b5ea0a34898eec7dbec2918b28"
-    sha256 big_sur:        "a351f7daf2be8a72c1976cd050c38519c0227c7807d6282622e552b06bc6aceb"
-    sha256 x86_64_linux:   "271467270b225ed90b3883c583b7e2d2e5e68aa86ae6c5173e00e5d16f567f9d"
+    sha256 arm64_ventura:  "624373d0a30ed5639434432e333076cc4ae3b3eaaf55f162163dcaa2150ceef0"
+    sha256 arm64_monterey: "6752e60c1c2f99b9e93cfd80cef21e85143a666c2659f97792265752cade29ec"
+    sha256 arm64_big_sur:  "d2a0bac203d16a92c6b53627231e5b41d838efcd417e9ca0e0c3f447238aafb7"
+    sha256 ventura:        "e5fee193ccbd2bcce67464cd7cd9a1125e59be262a914ba2ec79c79e01687060"
+    sha256 monterey:       "fe6568b9b67ae1badefe13228b9d63867be1f9754ad7366fd73452aa0b140d1f"
+    sha256 big_sur:        "00db7767780674a386babca9522a07b86fc9afbc7eca306f5da23c6dcfc93a8e"
+    sha256 x86_64_linux:   "6bde23080e8e1e0e11fcc99506902400b0c01ac1c989cb7130cca0611e35afd7"
   end
 
   depends_on "autoconf" => :build

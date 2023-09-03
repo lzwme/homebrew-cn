@@ -7,15 +7,16 @@ class Checkov < Formula
   url "https://files.pythonhosted.org/packages/bc/86/f26132d8e1e62784b01397ca2830e64b2e93bdaf0aaeeea9efc1c220ebe7/checkov-2.4.20.tar.gz"
   sha256 "b27633b340f4dd62a35e2dbb64e1535b275c82f5d0dba01378b95ebf106234e3"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4edc425ea1fd36828361501ceec77b4ce93a9565818fbaada9c03312042a55d9"
-    sha256 cellar: :any,                 arm64_monterey: "04009b1debe2d7dd620a4bfa5c84809628c970e67bd7d4ccec4fc8931754e51d"
-    sha256 cellar: :any,                 arm64_big_sur:  "b10d8799ad6692fb0ed140c3372a5758a1223390e0e57de836259228266f2d36"
-    sha256 cellar: :any,                 ventura:        "1c1325a17884f4706bbbdbe8e330270f4257514510f56299212f90da35b8e1ba"
-    sha256 cellar: :any,                 monterey:       "a14f6dadd864f40cc167d2a7cacd65d2ebf2e42eedb9d0b0dbab40d1a4f736b5"
-    sha256 cellar: :any,                 big_sur:        "e28f7131583f0a23e87a36c18bb0e61c72dd9ef0dbfba9101b42a3d19d3946b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3ac019193204eb62a9c44c601266008f6d56b9659c698b414c50b4171b1c58e"
+    sha256 cellar: :any,                 arm64_ventura:  "7ff58258eec957beb1f8a030a65b78a5d4dbda76756e3970d95048d57d61478b"
+    sha256 cellar: :any,                 arm64_monterey: "2023844defdbfe49721da6319a947baac707985d0f5bf34249feb29ce5f25c46"
+    sha256 cellar: :any,                 arm64_big_sur:  "3c81b45eaeb05895bea0ffede31ed883d45a521deb42ccc10f1b592953096322"
+    sha256 cellar: :any,                 ventura:        "84fb7e9485a994cf1721054d8eb331af93b079d27e9a631120aa08896678a3e1"
+    sha256 cellar: :any,                 monterey:       "ff071506548d6c81e2628feb8fb3ddbbe224f22a4ec90b8715b1c5de2b4e24de"
+    sha256 cellar: :any,                 big_sur:        "bd29eff6c7e4dfe6e3250c946a096c150e4a75d426e06a338b986915f784c260"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f2f60be0db4795791af8927aaefe851acee0a54cfd28958b0b5134f65e2988c"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -96,13 +97,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/20/a6/c1fab54e40fdae8d2c835e97c79d5051f59df427222f5adf5b6ed14f6405/boto3-1.28.38.tar.gz"
-    sha256 "cdb466e51ebe4c99640269d88d5450328271437d58e6ce089690d0485bef6174"
+    url "https://files.pythonhosted.org/packages/fb/00/20a7ddef854c51347165d114c879203d656e12f7d9b7b30dd8cd244adcf1/boto3-1.28.40.tar.gz"
+    sha256 "6ff9a5b815e106656596064d51c9b6ba97a307807baa5f89634384b7d3f7ecc6"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/bf/d9/e1f6a770eac0e6f1e2bd4913d3758fae36785e33150db19a35d5d5956fd2/botocore-1.31.38.tar.gz"
-    sha256 "b02de7898f0a7de0f6569be1c87046035a974006c31fd641f4b97a8dba1fad21"
+    url "https://files.pythonhosted.org/packages/96/b2/810868e32687760da8666ca65d2e307d7f50ed38276b5aef6cdf0a9fde14/botocore-1.31.40.tar.gz"
+    sha256 "ce22a82ef8674f49691477d09558992cc87e7331f65c6a5b0da897ab192240ca"
   end
 
   resource "cached-property" do
@@ -191,8 +192,8 @@ class Checkov < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/87/56/6dcdfde2f3a747988d1693100224fb88fc1d3bbcb3f18377b2a3ef53a70a/GitPython-3.1.32.tar.gz"
-    sha256 "8d9b8cb1e80b9735e8717c9362079d3ce4c6e5ddeebedd0361b228c3a67a62f6"
+    url "https://files.pythonhosted.org/packages/8d/1e/33389155dfe8cebbaa0c5b5ed0d3bd82c5e70064be00b2b3ee938da8b5d2/GitPython-3.1.33.tar.gz"
+    sha256 "13aaa3dff88a23afec2d00eb3da3f2e040e2282e41de484c5791669b31146084"
   end
 
   resource "idna" do
@@ -266,8 +267,8 @@ class Checkov < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/e6/d4/67ed9c516b5f480cffd0bcc535a2168647da7578533ab650f0cb6b67ecd4/openai-0.27.10.tar.gz"
-    sha256 "60e09edf7100080283688748c6803b7b3b52d5a55d21890f3815292a0552d83b"
+    url "https://files.pythonhosted.org/packages/5e/a8/f8d00a76f3991ff250b6584434ca24c2d275c6f3e97592b44f4ca124c47a/openai-0.28.0.tar.gz"
+    sha256 "417b78c4c2864ba696aedaf1ccff77be1f04a581ab1739f0a56e0aae19e5a794"
   end
 
   resource "packageurl-python" do

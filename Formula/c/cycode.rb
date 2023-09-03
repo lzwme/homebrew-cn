@@ -6,15 +6,16 @@ class Cycode < Formula
   url "https://files.pythonhosted.org/packages/66/aa/0a1fd9601299384a87706463254a0cdd682fa982585ab6a8e872fa1e7d1c/cycode-1.1.0.tar.gz"
   sha256 "d9a359be988a09b96fc487b958b515a62447bb1871cf3b77a17c4f47a8c4e782"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d17ad737b5d02b7317a8682ea2b6a5dc7c7c718dcce7f51eb1a47e301c932eb7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b8b18d5df7298c734758b89fb4e1108e762b32e6c04574358c27ff3afe4cb60d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4b9511da5d1ff0ae169ef16f3075927e0dc11d85ab45a21b203afdc9a8d4d501"
-    sha256 cellar: :any_skip_relocation, ventura:        "8b027c6890506589ef5b321f639a337e789c991cc0fe7c8dc3e13dbba8b68926"
-    sha256 cellar: :any_skip_relocation, monterey:       "93abea1fe859d90386db84d6c5589ab15712176e9477ec079e0902dd2466b0b7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f781608fc40e88da6a8b155bfd244c17833691753247b122cbf56d0b4749fae7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f73865a2df332c119ad2f24716ac02970c1162340373e308015a2952dc4c7303"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9bcc75d7bb75feba73fc23099900b0a13708d98375bcd00ce999d6218ea9522f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "79ca8efea14e5b1600b353c5890005067af24dbae1cd6433b97f54e43e9edb57"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d0513aa671760ece1dcf07c40db70f4e4fabbe2de196919ac6e8de8d0a53d591"
+    sha256 cellar: :any_skip_relocation, ventura:        "5828647ae91007b8570741c027594a420aac9bd7cf1649672fb80e79df404b25"
+    sha256 cellar: :any_skip_relocation, monterey:       "90b2076531017724f0e0017af578a02f7831f0089b0fc440b1411e283a675a9e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "881c18ecfa6e218f8bef374857c77763a13ff022fe4301235db7b6971262f4bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "47bc1e6fac54aaf6b6ea778d2a2f07eaec52f0bf158a6897ab10dff3d4793460"
   end
 
   depends_on "python-certifi"
@@ -43,8 +44,8 @@ class Cycode < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
-    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "colorama" do
@@ -58,8 +59,8 @@ class Cycode < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/87/56/6dcdfde2f3a747988d1693100224fb88fc1d3bbcb3f18377b2a3ef53a70a/GitPython-3.1.32.tar.gz"
-    sha256 "8d9b8cb1e80b9735e8717c9362079d3ce4c6e5ddeebedd0361b228c3a67a62f6"
+    url "https://files.pythonhosted.org/packages/8d/1e/33389155dfe8cebbaa0c5b5ed0d3bd82c5e70064be00b2b3ee938da8b5d2/GitPython-3.1.33.tar.gz"
+    sha256 "13aaa3dff88a23afec2d00eb3da3f2e040e2282e41de484c5791669b31146084"
   end
 
   resource "idna" do

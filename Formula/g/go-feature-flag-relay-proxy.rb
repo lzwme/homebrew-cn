@@ -1,31 +1,25 @@
 class GoFeatureFlagRelayProxy < Formula
   desc "Stand alone server to run GO Feature Flag"
   homepage "https://gofeatureflag.org"
-  url "https://github.com/thomaspoignant/go-feature-flag.git",
-      tag:      "v1.15.0",
-      revision: "403fa03c279bd4b5a19e3741da23ab11e1071490"
+  url "https://ghproxy.com/https://github.com/thomaspoignant/go-feature-flag/archive/refs/tags/v1.15.1.tar.gz"
+  sha256 "1aada56d7a43c1dc61df5bbd9f7f5d7e1d94b4eac324563572855887909a5d68"
   license "MIT"
   head "https://github.com/thomaspoignant/go-feature-flag.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "08ab557ae812389fed5619cdcafdf4bc7417f9952a4552700f478bd5b7509cb3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "08ab557ae812389fed5619cdcafdf4bc7417f9952a4552700f478bd5b7509cb3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "08ab557ae812389fed5619cdcafdf4bc7417f9952a4552700f478bd5b7509cb3"
-    sha256 cellar: :any_skip_relocation, ventura:        "f2ef50dce47a31834c9c76fc8a870f3c62540ec6659c776105defc2370e66655"
-    sha256 cellar: :any_skip_relocation, monterey:       "f2ef50dce47a31834c9c76fc8a870f3c62540ec6659c776105defc2370e66655"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f2ef50dce47a31834c9c76fc8a870f3c62540ec6659c776105defc2370e66655"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e335ec21946076abd99adeb6453592a6e1af47c59f84e00e2f3b8d28e1d00b13"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3f30998493399bb11ca6357a79727bba47054612b6ab02d4c04b997b07be2d76"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "da9631b8d8246cdc4449295c93d4c1accf22de77464138b700c22d75d6d54ff2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a7a5b4a32edf780b40f083873b35010f143cf0214df7264540224e36f8f335d4"
+    sha256 cellar: :any_skip_relocation, ventura:        "75357aa2a2b1ef92afe4d2b431cd2bfe128cec5616deb5fa706a924e2ee36bd9"
+    sha256 cellar: :any_skip_relocation, monterey:       "dc1579790c9f81f890e3ccdd9d2c7ede68310639596251bed6e72a91a074581f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bbf1919b5f58b6170ecbde2395b65b27bb3ec34fde829568ae7c89cb307e4ad8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f411215069892856b8b9299caf8c373622224740e26af2f26967960268f2b543"
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "0"
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-    ]
-
+    ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/relayproxy"
   end
 

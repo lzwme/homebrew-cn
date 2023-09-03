@@ -5,15 +5,16 @@ class Octave < Formula
   mirror "https://ftpmirror.gnu.org/octave/octave-8.3.0.tar.xz"
   sha256 "919c9494f02ca435e1e3474990e6df8ddef9acbc9c90565e08d40b8f50445ba9"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_ventura:  "901b8521e343a0de60e1096397d117968b103ca557a1fb653e0607c91e7f93d0"
-    sha256 arm64_monterey: "5e7b9ff5089ff23909ed78dc0aca353ec16d45b0a582a279206cc477e932e77d"
-    sha256 arm64_big_sur:  "2b9fcc572fde1ce6264755a9338a90635d0dbda529ad75e56f5582ab90c11cd7"
-    sha256 ventura:        "ff96323b25844b0ebe6228f65c4d08ecffcc98e963ff462eafcf2ddab3ac582e"
-    sha256 monterey:       "9d746aee56b620cbd7a1a2a1b8964501f67d32e90d757b4dacce7bb7b61494fa"
-    sha256 big_sur:        "a620fd2a5338720ba4530b98bbf0855d2e959cb75cadce64667be133dd51fcd6"
-    sha256 x86_64_linux:   "a8d62533f922925cb8575cae56a02bfe0d06b2e448ab490cc57ac923dc87df15"
+    sha256 arm64_ventura:  "fb279a7fb4fef23f3931ee4b5c26d23247e8b9e19385d21137406ee8dccfde88"
+    sha256 arm64_monterey: "8d62f2881568001ab4bb4392af3f9466c3761bf32cbfe1f41ac6c2a3e0b5a7eb"
+    sha256 arm64_big_sur:  "d775c3696444b10693b52ffbf3f3eb7f4b293afc5593fd06c90cbb6bb81b7756"
+    sha256 ventura:        "b805c2d57fd7dd77f15882df068b95985ef898c518dba04a600c35bc6897adc2"
+    sha256 monterey:       "547e9fbe3f5835f1c6a0f0a7a5420bdf463103e97d266ff3d17997621592df8c"
+    sha256 big_sur:        "e4892f761d7f455dc36b7f7f69b8074dc22484cfff4ab10b67d418d54f3a61e3"
+    sha256 x86_64_linux:   "c136d09a6244c6317e23f99a9682304db7177d46429e864fe1847489236b5d6b"
   end
 
   head do
@@ -52,7 +53,7 @@ class Octave < Formula
   depends_on "qhull"
   depends_on "qrupdate"
   depends_on "qscintilla2"
-  depends_on "qt@5"
+  depends_on "qt"
   depends_on "rapidjson"
   depends_on "readline"
   depends_on "suite-sparse"
@@ -84,16 +85,6 @@ class Octave < Formula
     # SUNDIALS 6.4.0 and later needs C++14 for C++ based features
     # Configure to use gnu++14 instead of c++14 as octave uses GNU extensions
     ENV.append "CXX", "-std=gnu++14"
-
-    # Qt 5.12 compatibility
-    # https://savannah.gnu.org/bugs/?55187
-    ENV["QCOLLECTIONGENERATOR"] = "qhelpgenerator"
-    # These "shouldn't" be necessary, but the build breaks without them.
-    # https://savannah.gnu.org/bugs/?55883
-    ENV["QT_CPPFLAGS"]="-I#{Formula["qt@5"].opt_include}"
-    ENV.append "CPPFLAGS", "-I#{Formula["qt@5"].opt_include}"
-    ENV["QT_LDFLAGS"]="-F#{Formula["qt@5"].opt_lib}"
-    ENV.append "LDFLAGS", "-F#{Formula["qt@5"].opt_lib}"
 
     system "./bootstrap" if build.head?
     args = ["--prefix=#{prefix}",

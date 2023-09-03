@@ -3,19 +3,18 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/91/f5/91eb46de58d31e0dfa5f53e724dc34fdd734f284584e4d88f8d777bfafe0/moto-4.2.0.tar.gz"
-  sha256 "00fbae396fc48c3596e47b4e3267c1a41ca01c968de023beb68e774c63910b58"
+  url "https://files.pythonhosted.org/packages/c3/0a/d7c4eec6753f3fefac84078e8cdae53c0d72051769aa0c83c41d449212f0/moto-4.2.2.tar.gz"
+  sha256 "ee34c4c3f53900d953180946920c9dba127a483e2ed40e6dbf93d4ae2e760e7c"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6c104b600221db121a18174f7bdc40ac42b11dc5cc374e86815d310d0e4508fc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c99d5bf7828905c977455449eae3bf9b0c8bdf09a6a16f11c35e3cb92f22634e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ed64fc7bef88d9bf4826711ac46cc02d28786e8975162b2e43d22a528fa19862"
-    sha256 cellar: :any_skip_relocation, ventura:        "8a971e297c7525c9f45613c78f3f62ec6c1b9f067d74c0789238d745cbe97357"
-    sha256 cellar: :any_skip_relocation, monterey:       "dcc5a155d734b4215c9158770519ecbf3970936f12b550a22048ef15f2516950"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ff49af627d337a799593c533993709be69f80d5d125b9fe1f329c357c33aaf10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c45a09bfaa9f561a715a8139bbaf7f01be68ced7020ab2fb49f4f252e8657b1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "643c579039924a37f80bab5392cbb61bc50aade54ac8c594c2c353a2a4873c6d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c894f7d00e37a9c56f59f940e2df2e3c9a4e69b47b5429c7436f67b0b75f4fea"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a9c63866afaace49b64bc199b9cf46dbb47951853b0f79e0835fd79666e17fed"
+    sha256 cellar: :any_skip_relocation, ventura:        "3194e514d0ee370fea849f8f118714c71f98fca406be14152476a726c6e6356a"
+    sha256 cellar: :any_skip_relocation, monterey:       "f2e2ac2cee3a11c55ce98c382936780375ab8543ae54f2bef9f3e05d4f58f7ba"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3a0c5649e5a633e2ecadd81f48418b28c2e5e4f4d0bcf586578b9cbf21762577"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c37d22926593234d093eb265d08c6ea50713b273b0e9fedbb03c406573518b3"
   end
 
   depends_on "cffi"

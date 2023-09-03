@@ -1,24 +1,25 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.land/"
-  url "https://ghproxy.com/https://github.com/denoland/deno/releases/download/v1.36.3/deno_src.tar.gz"
-  sha256 "aac93b064dd5f9658184879542a9cad61f7cea599b85442563b86fd78da116d1"
+  url "https://ghproxy.com/https://github.com/denoland/deno/releases/download/v1.36.4/deno_src.tar.gz"
+  sha256 "6cb639ee21bc6306a321a502b12cd336f5f9be5ffa37096293b413d4b8895baf"
   license "MIT"
   head "https://github.com/denoland/deno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cd9018fd28d275e7a086f9a78741deddaf0154a25240cf30eecaf6720ef1c2fa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4b2f79d4183f7e4ab3ba5b52b3b3aa4f73ff5c92b09e0e719829599d1de5df76"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e67c94b85c34aec34a579fa7cb15767f2fa9ea04f8d429bf7e8696ec7e502ad4"
-    sha256 cellar: :any_skip_relocation, ventura:        "520e03bc5e051672123346ddbc9f317bb20afa567365b797fb9e9f6d339ab352"
-    sha256 cellar: :any_skip_relocation, monterey:       "1ae0672d7512704d00b87469e9ac3df7df539a7cc4b97a4def8df6e2ea482db2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4f85a97e7948ab9ae4f49924c235a611b88decbde7a77a7e4bf24b4b5b1c88b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "499279241bf3a4de7e7eb9ef835dcd6389347b01a0f0920fdf11387006f5fde9"
+    sha256 cellar: :any,                 arm64_ventura:  "e65493d30794cb61bececd92d17ff64f5408c0b5fc2ed094faf9738154c3b585"
+    sha256 cellar: :any,                 arm64_monterey: "316a706669c0fd55c675aba16901b7d0873866c3bb3850c1a60e5ea40ba69a9f"
+    sha256 cellar: :any,                 arm64_big_sur:  "8cbd53b5023c2d2b48522f7b78a2cfe0627f8892e66eb1c6c21d39244534c1d0"
+    sha256 cellar: :any,                 ventura:        "6ea9bc9cbd5119ff5e6980b6266400947f5a2fc711153c8153c6c7151a26720c"
+    sha256 cellar: :any,                 monterey:       "4c511bac53b1ce41dc27beaffc0c6af548500cd3d21bcd65cf3b01d767b47aa0"
+    sha256 cellar: :any,                 big_sur:        "8228327c84937ad21327b45f7a1af2368e5b78209564018b9faa5292b36e6b98"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "008dc1e397fcfef4972c6da9a84312eb4c5230f469e8751b3e1f68e05fbd8b2c"
   end
 
   depends_on "cmake" => :build
   depends_on "llvm" => :build
   depends_on "ninja" => :build
+  depends_on "protobuf" => :build
   depends_on "python@3.11" => :build
   depends_on "rust" => :build
   depends_on "sqlite" # needs `sqlite3_unlock_notify`

@@ -3,19 +3,19 @@ class Libxmlb < Formula
 
   desc "Library for querying compressed XML metadata"
   homepage "https://github.com/hughsie/libxmlb"
-  url "https://ghproxy.com/https://github.com/hughsie/libxmlb/releases/download/0.3.13/libxmlb-0.3.13.tar.xz"
-  sha256 "ae45ae4c0606f94d98fea16b7097b3470e48c2f277954ae9bc4d9d029ed72496"
+  url "https://ghproxy.com/https://github.com/hughsie/libxmlb/releases/download/0.3.14/libxmlb-0.3.14.tar.xz"
+  sha256 "a2f0056eed14ff791aee2b08b1514a0f1b6cf215f0579138a8cae8c45a0d3b0f"
   license "LGPL-2.1-or-later"
   head "https://github.com/hughsie/libxmlb.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "9254cc28ae1f707d85af4da33112ec899d9ea423e30f01d11351215046477caa"
-    sha256 cellar: :any, arm64_monterey: "2b41e04835d1b221e92c2457101e82c985cf79ffedd71292600af576263ab3e9"
-    sha256 cellar: :any, arm64_big_sur:  "83d06ead9fd0f40f8633aeaf94768cdf22a4ae28c947a2523d93cb38511d0047"
-    sha256 cellar: :any, ventura:        "5fb074755b8635f7ca54797438facf12276867b181e534e667f6ccae8867d39a"
-    sha256 cellar: :any, monterey:       "8a7c22844f0e5fe14da453f61fbf56cdfbcac8b6f59a4e84759a57445d9bf95d"
-    sha256 cellar: :any, big_sur:        "3326934369e5785e07d058f84e6722c958db07d7edb23b0b613d1a571f783879"
-    sha256               x86_64_linux:   "0cfb3670114944252092f1ae43bad42947924562771529242b4472751fbb7af5"
+    sha256 cellar: :any, arm64_ventura:  "d559affb136b4760ff305c43a5e44e5718825d288c51e6cdecd0010f714bec6d"
+    sha256 cellar: :any, arm64_monterey: "9d9c5f63e7b4954af974a934a25f336b21414c03f5c211760f60129b9fdb6535"
+    sha256 cellar: :any, arm64_big_sur:  "f3e90937bc23a93fdabed8a57a3730bc493c8d4b7f11c596b3866f0fe8af3fb4"
+    sha256 cellar: :any, ventura:        "32f59c353bd95d2adfe0f211bb72ab4151ab6036a2903505526fc0235bb8f1da"
+    sha256 cellar: :any, monterey:       "a8bd5a4736840b4101c025e9a1f388fcecc59b5b38bd8dc7d190fc85b518b98e"
+    sha256 cellar: :any, big_sur:        "90c78e6761f8205aee5e6cc17f84df1242dd39e9e40ab1b7ff31c6377f59fcab"
+    sha256               x86_64_linux:   "2edcfafa3520e595284fe6c23536e7761a49465e55b7b00de444da193ea7ab25"
   end
 
   depends_on "gi-docgen" => :build

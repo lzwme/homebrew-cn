@@ -1,19 +1,19 @@
 class Dtools < Formula
   desc "D programming language tools"
   homepage "https://dlang.org/"
-  url "https://ghproxy.com/https://github.com/dlang/tools/archive/refs/tags/v2.105.0.tar.gz"
-  sha256 "4775807baa07acc4ad576a14507fc0d94cacd80fba2369679ffd01415716ed98"
+  url "https://ghproxy.com/https://github.com/dlang/tools/archive/refs/tags/v2.105.1.tar.gz"
+  sha256 "68b56ba685e16971e743fca47bb636b118589dddcc302a7b74efa70e6d62cd8b"
   license "BSL-1.0"
   head "https://github.com/dlang/tools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7a7803975882b442103cdf8d17d27539590377a6eeda3163e8cf8ebb051f709c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "eee71030279b7a55c94effc6f71c7f41a6db0c71536356ac101b31e5d5974f93"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7ef4742bbe3c409b449d0ea578a18a98118a2cbb1067a91d2a471e2ca75add84"
-    sha256 cellar: :any_skip_relocation, ventura:        "11b7fe8f734151cb1676cd298c758d1e1036f977d1ead01e1919ddc7a547cb2f"
-    sha256 cellar: :any_skip_relocation, monterey:       "0e1024608dce16e87ac5833e154cad19743a1ce10dc9d4cfcb77f008ae0ddffe"
-    sha256 cellar: :any_skip_relocation, big_sur:        "61ac5baf9bf4de9cdd2cf3e5e1c3d5258a24ab84a50c241555325baefadc67f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f46294681c518759d08b9dab30b46b71814d45f1d476603bdb65c6270d989aa1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a90e9c53e243ce496da183592858b75ac86a4069f5890a62a93ff87c096e7444"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7f6ba20d1a119896bdb1fdbc183ef60e2f25da10545c9ce18ebda0ba244eb0b7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f61bb150aa2614b4fa395450ab55705c036bdff8feae87f4c5f011762aac75a7"
+    sha256 cellar: :any_skip_relocation, ventura:        "3511cc0e1ee21131acced560137af9d9981b873962024291e86f29e65b7e2387"
+    sha256 cellar: :any_skip_relocation, monterey:       "57c3a2789a2fa5437ea84147c6f3a6aba76ce696f7f774bce7b4077abd7eed5f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "535b2e04a77ae544f7718202664c42cd8aee5d0ea8b61f6a57f28df45e76eec5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0897bc751fd4775ee7438302bb52397260b8ad30b2fa6f537b924c7d7e02cdae"
   end
 
   depends_on "dub" => :build

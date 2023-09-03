@@ -6,16 +6,17 @@ class Snakemake < Formula
   url "https://files.pythonhosted.org/packages/6e/14/07b0cfc648c0317021bdd9c40d26b83f2a3f13f3585a0d8294ca414239d9/snakemake-7.32.3.tar.gz"
   sha256 "cbe586fe28349982307f008ca40e839d569cf5d540008b0c91ebfef689b49b18"
   license "MIT"
+  revision 1
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "afe068669e236e78237618122f74cb1bf3dbc3880e2f2212a68466608f03999f"
-    sha256 cellar: :any,                 arm64_monterey: "e6dc716c0c30db225f14710f1b66d778e32f5203c8375629dce836445c382873"
-    sha256 cellar: :any,                 arm64_big_sur:  "74936f489540bd3990a4f3d260ddade5aa82e24cbac8eb4155835bd4a65413d2"
-    sha256 cellar: :any,                 ventura:        "2df84687ae856be587b04a045d8669d842bbad01db06af649711ab3f997d773d"
-    sha256 cellar: :any,                 monterey:       "b880a0a4ab747020d04801f03af21e77e41c007e673fe47ca2c2808db74127fd"
-    sha256 cellar: :any,                 big_sur:        "b8c2f9c13dd7d6fc50c160e1efd698d66d2db5f35ffda296ea3ce8ddde4c2544"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af59d817d49d9e2b7d862ea630266cf8886a06b70e110b474514ac695ef0d7a2"
+    sha256 cellar: :any,                 arm64_ventura:  "11fe1e98c9e105607cc87ce62bca8b32b48718d88659191a093151c833b1f39d"
+    sha256 cellar: :any,                 arm64_monterey: "462d176301d90757b7e5e6a495d70b283113758bf5d7141784a611df3313bede"
+    sha256 cellar: :any,                 arm64_big_sur:  "09fd636ef5101aca9e6156f7f2bc3f71ac92d5be593d282b25aa85f300bad8f3"
+    sha256 cellar: :any,                 ventura:        "3970b037c5fa53819a15c00d16bbf4cbe756dd19e1d8074839c8dec0bad0626e"
+    sha256 cellar: :any,                 monterey:       "db98a62f052c67f817ab78483de6d2d704f9c31cb6fd2c2702fbbd838bd60556"
+    sha256 cellar: :any,                 big_sur:        "5c9cb52a9de1a9634ba69220a8ff35bdb062f2e384670189dc1fa5450540a10b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7dc2c134b87a8e9139a5d6f28c4344d8961d9b53812a1b2fd369c96b9476a253"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -72,8 +73,8 @@ class Snakemake < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/87/56/6dcdfde2f3a747988d1693100224fb88fc1d3bbcb3f18377b2a3ef53a70a/GitPython-3.1.32.tar.gz"
-    sha256 "8d9b8cb1e80b9735e8717c9362079d3ce4c6e5ddeebedd0361b228c3a67a62f6"
+    url "https://files.pythonhosted.org/packages/8d/1e/33389155dfe8cebbaa0c5b5ed0d3bd82c5e70064be00b2b3ee938da8b5d2/GitPython-3.1.33.tar.gz"
+    sha256 "13aaa3dff88a23afec2d00eb3da3f2e040e2282e41de484c5791669b31146084"
   end
 
   resource "humanfriendly" do
@@ -157,8 +158,8 @@ class Snakemake < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/da/3c/fa2701bfc5d67f4a23f1f0f4347284c51801e9dbc24f916231c2446647df/rpds_py-0.9.2.tar.gz"
-    sha256 "8d70e8f14900f2657c249ea4def963bed86a29b81f81f5b76b5a9215680de945"
+    url "https://files.pythonhosted.org/packages/77/5a/0c82d0ef1322227e8e997dbbd3d4e235383d51c299dbdfd2fed2625971b0/rpds_py-0.10.0.tar.gz"
+    sha256 "e36d7369363d2707d5f68950a64c4e025991eb0177db01ccb6aa6facae48b69f"
   end
 
   resource "smart-open" do
