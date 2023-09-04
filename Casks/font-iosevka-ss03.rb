@@ -1,6 +1,6 @@
 cask "font-iosevka-ss03" do
-  version "26.2.2"
-  sha256 "aa76abc3fb5147261f70ab90fc158865b2610989c3c2483e1bf6e7802317cf21"
+  version "26.3.1"
+  sha256 "730d6c70a8b4c65efe41e89f5185439db8f57a9ead5ba6e9af6f7c081d553a69"
 
   url "https://ghproxy.com/https://github.com/be5invis/Iosevka/releases/download/v#{version}/ttc-iosevka-ss03-#{version}.zip"
   name "Iosevka SS03"

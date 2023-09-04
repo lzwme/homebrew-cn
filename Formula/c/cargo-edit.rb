@@ -1,24 +1,31 @@
 class CargoEdit < Formula
   desc "Utility for managing cargo dependencies from the command-line"
   homepage "https://killercup.github.io/cargo-edit/"
-  url "https://ghproxy.com/https://github.com/killercup/cargo-edit/archive/v0.12.1.tar.gz"
+  # TODO: check if we can use unversioned `libgit2` at version bump.
+  # See comments below for details.
+  url "https://ghproxy.com/https://github.com/killercup/cargo-edit/archive/refs/tags/v0.12.1.tar.gz"
   sha256 "2223107d04c17643ad3261fb2c106200df61a988daa8257ed8bffd8c0a8383ab"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f4f5ac5c34c0555d7c7fa89b210a3423850705960053a272388bcfbe57ede2f1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9854f0ed61d660953ceaf6cb20a6896468662cee7253ccf0bab78b7bd17d7859"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f9a74467ac2a0be3c788a287da9a4da7e2718def4dbdde910fe78faf0e7f26a9"
-    sha256 cellar: :any_skip_relocation, ventura:        "d5300d085be7d34dfad2b99438785ccb589c94bf4a3c522b7d05cb39808c4146"
-    sha256 cellar: :any_skip_relocation, monterey:       "8df12fdb7ec5063d5dbeb2ef86ebbd89c934b438cb7cbadd48c12377645e11a6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b8c9856ef6a06a266d8913adf6d9e30f5b3afad6d1aae69dbb223e0d40a52e23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21764bba2319eac641f01c4b9244350a90829eee27aa11f65fccf90be722d7b5"
+    sha256 cellar: :any,                 arm64_ventura: "8146e650e28d12c8ebea086f92a6d2d2b42234630c778cbc48a28f6b9293f09e"
+    sha256 cellar: :any,                 arm64_big_sur: "542b6d72ddfc43065ba2a96834125e5a62041d21cace645fa9fd189033093e2b"
+    sha256 cellar: :any,                 monterey:      "adeab0eee7bf0a4f5f08a3b31f6b7fdcfdefe0a1e8f3bd9208075ad151deca72"
+    sha256 cellar: :any,                 big_sur:       "a157d76707cb5d4c6509e2f1214d66b04dcade6ecba8fd85e90ae3f11eb60128"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4880d64208760fa9d9582e24a310f7cfba45fd847d361bc39b6315e879d10150"
   end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "rustup-init" => :test
-  depends_on "libgit2"
+  # To check for `libgit2` version:
+  # 1. Search for `libgit2-sys` version at https://github.com/killercup/cargo-edit/blob/v#{version}/Cargo.lock
+  # 2. If the version suffix of `libgit2-sys` is newer than +1.6.*, then:
+  #    - Migrate to the corresponding `libgit2` formula.
+  #    - Change the `LIBGIT2_SYS_USE_PKG_CONFIG` env var below to `LIBGIT2_NO_VENDOR`.
+  #      See: https://github.com/rust-lang/git2-rs/commit/59a81cac9ada22b5ea6ca2841f5bd1229f1dd659.
+  depends_on "libgit2@1.6"
   depends_on "openssl@3"
 
   def install
@@ -32,6 +39,7 @@ class CargoEdit < Formula
     cargo_option_regex = /default\s*=\s*(\[.+?\])/m
     cargo_options = JSON.parse(cargo_toml[cargo_option_regex, 1].sub(",\n]", "]"))
     cargo_options.delete("vendored-libgit2")
+    ENV["LIBGIT2_SYS_USE_PKG_CONFIG"] = "1"
 
     # We use the `features` flags to disable vendored `libgit2` but enable all other defaults.
     # We do this since there is no way to disable a specific default feature with `cargo`.
@@ -76,7 +84,7 @@ class CargoEdit < Formula
     end
 
     [
-      Formula["libgit2"].opt_lib/shared_library("libgit2"),
+      Formula["libgit2@1.6"].opt_lib/shared_library("libgit2"),
       Formula["openssl@3"].opt_lib/shared_library("libssl"),
       Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
     ].each do |library|

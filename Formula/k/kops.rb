@@ -1,8 +1,8 @@
 class Kops < Formula
   desc "Production Grade K8s Installation, Upgrades, and Management"
   homepage "https://kops.sigs.k8s.io/"
-  url "https://ghproxy.com/https://github.com/kubernetes/kops/archive/v1.27.0.tar.gz"
-  sha256 "b5d5945554e41ec335917a22710484f971c01af5df0ca5a50f2e9a91b3abfa33"
+  url "https://ghproxy.com/https://github.com/kubernetes/kops/archive/v1.27.1.tar.gz"
+  sha256 "a45fb4c33ed44407121330462f4c323e9cdb70d46b8112e3ad78fcaa5b00ee0f"
   license "Apache-2.0"
   head "https://github.com/kubernetes/kops.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Kops < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e89ff0530fd886be8d8e7ed3e3d675e4f9114cc07badc25a28118aeb19b0ac52"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "56c76430e503f81efd5832771135a75288b94b9aa350e93bf43bf64db4e4ad9d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2c215aed04d69b0ca38252831a96b3c361ed9acd862056da085fa78feab07f00"
-    sha256 cellar: :any_skip_relocation, ventura:        "c50001709be6a53b5b6c548ac975f95e97cec00d2329f0e4aeaa2e29816d8d04"
-    sha256 cellar: :any_skip_relocation, monterey:       "60c2c2e7382fd02e70e37c2a972bd6204da488c4f02a36c4ddfae1904c415064"
-    sha256 cellar: :any_skip_relocation, big_sur:        "88a96ed71c96fb84136b3979c7b2727b6a6d4724ceef040fd669932ffa3249af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0abda224246bdb1355596ff65336531a0bda7499074098190e78fa42a616cbfc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e238c97d5a81e687269997a7957c162a659290c8b2b58c0797d9cc45bf818e07"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "462c3f3237f9e470db2c39de1f5adcc42f0dc804dccdf4f11c4489599b459661"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1344543f768455ccd36af26a969076a5d4dd2cfd33f52ece4026f3e19a33a353"
+    sha256 cellar: :any_skip_relocation, ventura:        "d141b0780d588bcf94c27853ec84d0a23404e6062b7f887b34161f5129cc3675"
+    sha256 cellar: :any_skip_relocation, monterey:       "a1e6ea01ea962db198bfcb8647a86e11ac192ea0f0c2f4d7259464dabe79c883"
+    sha256 cellar: :any_skip_relocation, big_sur:        "55d851839999d925cb102d2ddb787a830808d0628dac748de0bd2fe395fda070"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1869d8f197371d900fc022f3cf50dc8ee1269a0804f69acc24d4f134bc467be8"
   end
 
   depends_on "go" => :build

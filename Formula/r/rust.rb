@@ -2,8 +2,11 @@ class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
 
   stable do
+    # TODO: check if we can use unversioned `libgit2` at version bump.
+    # See comments below for details.
     url "https://static.rust-lang.org/dist/rustc-1.72.0-src.tar.gz"
     sha256 "ea9d61bbb51d76b6ea681156f69f0e0596b59722f04414b01c6e100b4b5be3a1"
 
@@ -26,13 +29,13 @@ class Rust < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "28e026c3d24f6dce2c1fb5087cf35cc5ffd88aa9055de215b81ae33d17e1f33b"
-    sha256                               arm64_monterey: "9a1ee1b72f0e6c6a0c1aa4d44de57ad18616710233c18e1e24960b9219d448aa"
-    sha256                               arm64_big_sur:  "7a65f06827c04b4d5ec27ff88efd143bc970081225eede6db71d2ce888ddf6ef"
-    sha256                               ventura:        "dbc20ef5f433182b31d7b2bf0f2bb29c96abcf2ecf2cccfc00c9774b46c27038"
-    sha256                               monterey:       "2a0ec660efed84e2ccfaaed4c30d2fc0577cbb9a41df32b374d8706202793837"
-    sha256                               big_sur:        "daaa3f24643f928e4098dae014c9e2055057a05f4c12710b837991808c59b193"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1701167773a55ba430ef5c318cb951f38041387949aed7f37a43b909e78a607c"
+    sha256 cellar: :any,                 arm64_ventura:  "da3cc5cdc2d6200c8b692ddd38f06b35f73ed4521e33b4fb019f1d887b8c1f45"
+    sha256 cellar: :any,                 arm64_monterey: "389b05ad8cb33c862279ccab174118580dc44f0b736729cb2d3779ebfe712fea"
+    sha256 cellar: :any,                 arm64_big_sur:  "f138aa23c66f8818e5545be2b1294fd940d40370fadbe431160877424f786261"
+    sha256 cellar: :any,                 ventura:        "dfe9048cdb4e153ef0b16c915adfb47fca3d07c39241601f2c96c7ed5e46d595"
+    sha256 cellar: :any,                 monterey:       "9857814f1e00f63f0e35c77f63697def916f96e88ff5f766893cc1b6f0fa918e"
+    sha256 cellar: :any,                 big_sur:        "32c58867be17708f066d735024c755d0165683ebb56f3c5e78fa5a0fbfa34702"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa7272644a7bd61217aa864015a39dda2056562015a18f7fcc1199efd39991e7"
   end
 
   head do
@@ -46,7 +49,13 @@ class Rust < Formula
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "python@3.11" => :build
-  depends_on "libgit2"
+  # To check for `libgit2` version:
+  # 1. Search for `libgit2-sys` version at https://github.com/rust-lang/cargo/blob/#{version}/Cargo.lock
+  # 2. If the version suffix of `libgit2-sys` is newer than +1.6.*, then:
+  #    - Use the corresponding `libgit2` formula.
+  #    - Change the `LIBGIT2_SYS_USE_PKG_CONFIG` env var below to `LIBGIT2_NO_VENDOR`.
+  #      See: https://github.com/rust-lang/git2-rs/commit/59a81cac9ada22b5ea6ca2841f5bd1229f1dd659.
+  depends_on "libgit2@1.6"
   depends_on "libssh2"
   depends_on "llvm"
   depends_on "openssl@3"
@@ -161,6 +170,14 @@ class Rust < Formula
     end
   end
 
+  def check_binary_linkage(binary, library)
+    binary.dynamically_linked_libraries.any? do |dll|
+      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
+
+      File.realpath(dll) == File.realpath(library)
+    end
+  end
+
   test do
     system bin/"rustdoc", "-h"
     (testpath/"hello.rs").write <<~EOS
@@ -172,5 +189,28 @@ class Rust < Formula
     assert_equal "Hello World!\n", shell_output("./hello")
     system bin/"cargo", "new", "hello_world", "--bin"
     assert_equal "Hello, world!", cd("hello_world") { shell_output("#{bin}/cargo run").split("\n").last }
+
+    # We only check the tools' linkage here. No need to check rustc.
+    expected_linkage = {
+      bin/"cargo" => [
+        Formula["libgit2@1.6"].opt_lib/shared_library("libgit2"),
+        Formula["libssh2"].opt_lib/shared_library("libssh2"),
+        Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
+        Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      ],
+    }
+    unless OS.mac?
+      expected_linkage[bin/"cargo"] += [
+        Formula["curl"].opt_lib/shared_library("libcurl"),
+        Formula["zlib"].opt_lib/shared_library("libz"),
+      ]
+    end
+    missing_linkage = []
+    expected_linkage.each do |binary, dylibs|
+      dylibs.each do |dylib|
+        missing_linkage << "#{binary} => #{dylib}" unless check_binary_linkage(binary, dylib)
+      end
+    end
+    assert missing_linkage.empty?, "Missing linkage: #{missing_linkage.join(", ")}"
   end
 end

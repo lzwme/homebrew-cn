@@ -5,16 +5,16 @@ class Octave < Formula
   mirror "https://ftpmirror.gnu.org/octave/octave-8.3.0.tar.xz"
   sha256 "919c9494f02ca435e1e3474990e6df8ddef9acbc9c90565e08d40b8f50445ba9"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 arm64_ventura:  "fb279a7fb4fef23f3931ee4b5c26d23247e8b9e19385d21137406ee8dccfde88"
-    sha256 arm64_monterey: "8d62f2881568001ab4bb4392af3f9466c3761bf32cbfe1f41ac6c2a3e0b5a7eb"
-    sha256 arm64_big_sur:  "d775c3696444b10693b52ffbf3f3eb7f4b293afc5593fd06c90cbb6bb81b7756"
-    sha256 ventura:        "b805c2d57fd7dd77f15882df068b95985ef898c518dba04a600c35bc6897adc2"
-    sha256 monterey:       "547e9fbe3f5835f1c6a0f0a7a5420bdf463103e97d266ff3d17997621592df8c"
-    sha256 big_sur:        "e4892f761d7f455dc36b7f7f69b8074dc22484cfff4ab10b67d418d54f3a61e3"
-    sha256 x86_64_linux:   "c136d09a6244c6317e23f99a9682304db7177d46429e864fe1847489236b5d6b"
+    sha256 arm64_ventura:  "0fde25bc570c10a6d9849c836ba3f1debc7c754deae1bcd776ea7e9822c0f826"
+    sha256 arm64_monterey: "43803af5509d210d34d002931fd788377cad1ce1e98c4661743287aa934e44d3"
+    sha256 arm64_big_sur:  "ffc066b4a4b17475943b4af0b918a55068ce285e919f8933af8d98b6999bacc3"
+    sha256 ventura:        "f8a4358ab506f538f18b26680c02473671515330839b55f9fa7ea416c1fe674f"
+    sha256 monterey:       "3ce5276b7678a148ffc6571eeaa7c4d4feab2efb244f3eeff5ba17cce5e4ed5c"
+    sha256 big_sur:        "96d558383ae7a1c265c903e96e6c6805e3b4f9c9255532bbdae81b61a311b7d7"
+    sha256 x86_64_linux:   "f0b9501a82ba1d4aac132c4f84d2bd9a5529cd3f50172ce6e66a0c422863aed5"
   end
 
   head do
@@ -53,7 +53,9 @@ class Octave < Formula
   depends_on "qhull"
   depends_on "qrupdate"
   depends_on "qscintilla2"
-  depends_on "qt"
+  # Stuck on qt@5
+  # https://octave.discourse.group/t/transition-octave-to-qt6/3139/15
+  depends_on "qt@5"
   depends_on "rapidjson"
   depends_on "readline"
   depends_on "suite-sparse"
@@ -85,6 +87,16 @@ class Octave < Formula
     # SUNDIALS 6.4.0 and later needs C++14 for C++ based features
     # Configure to use gnu++14 instead of c++14 as octave uses GNU extensions
     ENV.append "CXX", "-std=gnu++14"
+
+    # Qt 5.12 compatibility
+    # https://savannah.gnu.org/bugs/?55187
+    ENV["QCOLLECTIONGENERATOR"] = "qhelpgenerator"
+    # These "shouldn't" be necessary, but the build breaks without them.
+    # https://savannah.gnu.org/bugs/?55883
+    ENV["QT_CPPFLAGS"]="-I#{Formula["qt@5"].opt_include}"
+    ENV.append "CPPFLAGS", "-I#{Formula["qt@5"].opt_include}"
+    ENV["QT_LDFLAGS"]="-F#{Formula["qt@5"].opt_lib}"
+    ENV.append "LDFLAGS", "-F#{Formula["qt@5"].opt_lib}"
 
     system "./bootstrap" if build.head?
     args = ["--prefix=#{prefix}",

@@ -1,16 +1,11 @@
 class Ffmpeg2theora < Formula
   desc "Convert video files to Ogg Theora format"
-  homepage "https://v2v.cc/~j/ffmpeg2theora/"
-  url "https://v2v.cc/~j/ffmpeg2theora/downloads/ffmpeg2theora-0.30.tar.bz2"
-  sha256 "4f6464b444acab5d778e0a3359d836e0867a3dcec4ad8f1cdcf87cb711ccc6df"
+  homepage "https://gitlab.xiph.org/xiph/ffmpeg2theora"
+  url "https://gitlab.xiph.org/xiph/ffmpeg2theora/-/archive/0.30/ffmpeg2theora-0.30.tar.gz"
+  sha256 "9bc69b7c3430184e8e74d648e39bd8a35a8bb10e9e6d6d5750f334c4feaca8d6"
   license "GPL-2.0-or-later"
   revision 10
   head "https://gitlab.xiph.org/xiph/ffmpeg2theora.git", branch: "master"
-
-  livecheck do
-    url "http://v2v.cc/~j/ffmpeg2theora/download.html"
-    regex(/href=.*?ffmpeg2theora[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
 
   bottle do
     rebuild 1

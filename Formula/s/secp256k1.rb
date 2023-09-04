@@ -6,13 +6,14 @@ class Secp256k1 < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "0c7aadfa2c4e16008976d0392d303d853ca303761a33edefbc91bd65349033d1"
-    sha256 cellar: :any,                 arm64_monterey: "b151935b712ede931579c527659980601eb91daa75914bce6a2aa18f8acc598a"
-    sha256 cellar: :any,                 arm64_big_sur:  "4cd10f47fcd3830ad58ccaea156aa804d74af61adbbbd886e7db1a8503259089"
-    sha256 cellar: :any,                 ventura:        "97b55ceb0fd8419d8374ea420cb3517a90a88252469d590074aacd3b2a20c7f5"
-    sha256 cellar: :any,                 monterey:       "4bdeb1e333d34144fe0c1b461461cd0772ac64a45acb38fc26ed81c75ce13614"
-    sha256 cellar: :any,                 big_sur:        "72c9a488df7b3885b8cbeb636e00dab0fcf0efd9ad015156869083b23e0b5e3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b59e49adc20fcfff78ad76299b8e4f314d43f59a3f35fa33fcbc315ad52aad5c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "e32d424477c0f61fd7b604ad93ec422aa0d744169f26de0d09550adadc4c3a73"
+    sha256 cellar: :any,                 arm64_monterey: "d385ce952ce29ad2ab9f33d02c5404b63c91767b7986a069711f9acdb534a054"
+    sha256 cellar: :any,                 arm64_big_sur:  "a45f1e598aec64cb1a02788d6567e66654f053701bce3f033a242ecad4108f61"
+    sha256 cellar: :any,                 ventura:        "c3927517aad3b15d931e69e0192d6b6be8883301e327e0bc3faacf7e871fd21f"
+    sha256 cellar: :any,                 monterey:       "a0e0360ea1bcf9f75fb59e443e77107dd733e7709baf0992643bc8d6e9923312"
+    sha256 cellar: :any,                 big_sur:        "9b1571fac73b29e67d7c5e36b07ba944a8b10db2fa295b23d6902847d4b47fa8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab86008470bc3287875e260776939b00de3d09db6ffd3efa4099cd4b76241abf"
   end
 
   depends_on "autoconf" => [:build]
@@ -21,7 +22,14 @@ class Secp256k1 < Formula
 
   def install
     system "./autogen.sh"
-    system "./configure", *std_configure_args, "--disable-silent-rules", "--enable-module-recovery"
+    args = %w[
+      --disable-silent-rules
+      --enable-module-recovery
+      --enable-module-ecdh
+      --enable-module-schnorrsig
+      --enable-module-extrakeys
+    ]
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end

@@ -4,7 +4,7 @@ class Exa < Formula
   url "https://ghproxy.com/https://github.com/ogham/exa/archive/v0.10.1.tar.gz"
   sha256 "ff0fa0bfc4edef8bdbbb3cabe6fdbd5481a71abbbcc2159f402dea515353ae7c"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/ogham/exa.git", branch: "master"
 
   livecheck do
@@ -13,13 +13,13 @@ class Exa < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "eae98c987e68e0940cb5f261b8d2fb98fe8f4f7b2d3fcf463c9b38494edeb351"
-    sha256 cellar: :any,                 arm64_monterey: "4b57d8ffd16277cd825f13b629a8e6c75e9bebce9bec3432a36c375715b37b3a"
-    sha256 cellar: :any,                 arm64_big_sur:  "7fd0284ff0a703050e5099619285060b6a0c6d687e291fd36e339a3e9182ae9a"
-    sha256 cellar: :any,                 ventura:        "f38dc756d78e6cf42fdac94f2763642f112128d1ac5d8717dd72ba0c56b495da"
-    sha256 cellar: :any,                 monterey:       "5021c8d446048e11b4bedc2836d91ed3d11f5a29e6d88085eb43921be26c1934"
-    sha256 cellar: :any,                 big_sur:        "ebb304f59ba398ab7376e5dd59e7d48dd9937c01ef8d9cbb44e9a70424fce2b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb7c0012074288ebd3331dd75c57c5e8957b7a8719fdc027597365f0ef379e53"
+    sha256 cellar: :any,                 arm64_ventura:  "f6ffddb1955d59bd6bec1eef0ca215beaa97f21ed1c79f787ad9bc9d62a917fd"
+    sha256 cellar: :any,                 arm64_monterey: "c45e4ab5bca902c1a1c404586048915a88b75485760c4b01569818e344a871ac"
+    sha256 cellar: :any,                 arm64_big_sur:  "8f42c8fb57379c0f79ad43d226aa4982ee4a64196052db03b9b758530b5bdc27"
+    sha256 cellar: :any,                 ventura:        "c9df09eff6bd471405a0fcdf387e9f3a24bfae28e9cf1493578ae7232322ab33"
+    sha256 cellar: :any,                 monterey:       "dd7d5ae25d2db208f28b52d1166a1ebaafc5f2dbcc255fda4b4154c58eae1c88"
+    sha256 cellar: :any,                 big_sur:        "ef0c0717451182f796a0725b849cc22f2d647c547d2fdbeb68974d9e3336e0f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f246ae588fc60262256922e351c4d6df6bac9bc5bd475accf33103912288518"
   end
 
   depends_on "pandoc" => :build

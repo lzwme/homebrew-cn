@@ -1,13 +1,13 @@
 class Flint < Formula
   desc "C library for number theory"
-  homepage "https://www.flintlib.org/"
-  url "https://www.flintlib.org/flint-2.9.0.tar.gz"
+  homepage "https://flintlib.org/"
+  url "https://flintlib.org/flint-2.9.0.tar.gz"
   sha256 "2fc090d51033c93208e6c10d406397a53c983ae5343b958eb25f72a57a4ce76a"
   license "LGPL-2.1-or-later"
   head "https://github.com/wbhart/flint2.git", branch: "trunk"
 
   livecheck do
-    url "https://www.flintlib.org/downloads.html"
+    url "https://flintlib.org/downloads.html"
     regex(/href=.*?flint[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 

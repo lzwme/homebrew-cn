@@ -4,7 +4,7 @@ class Qscintilla2 < Formula
   url "https://www.riverbankcomputing.com/static/Downloads/QScintilla/2.14.1/QScintilla_src-2.14.1.tar.gz"
   sha256 "dfe13c6acc9d85dfcba76ccc8061e71a223957a6c02f3c343b30a9d43a4cdd4d"
   license "GPL-3.0-only"
-  revision 1
+  revision 2
 
   # The downloads page also lists pre-release versions, which use the same file
   # name format as stable versions. The only difference is that files for
@@ -17,21 +17,22 @@ class Qscintilla2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d34650d1b726d21185ea54d3067080e4cd8501beaeebf71c6be1be801ccb07d4"
-    sha256 cellar: :any,                 arm64_monterey: "f0b7e7b76f802f1c65c26700701d1111ca6cf23bdd93fb505f7b37f7ec36e691"
-    sha256 cellar: :any,                 arm64_big_sur:  "fc4dcf4f8d283d42eb333177c592278be165400dffa90dcb79cb7d9e6643d45e"
-    sha256 cellar: :any,                 ventura:        "235fbda31e95d0aad423e78df07005322cf0758faaf219f1ff16fe640de7023d"
-    sha256 cellar: :any,                 monterey:       "b3bd7a1cf1311ccfcc9fac651acd206de17d92543ba473b025e23881e069d97d"
-    sha256 cellar: :any,                 big_sur:        "01d81d87353c9916cbe8bed2bdb2a88150ff657b82842e35958da8b8a55b80e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bced96a1cbe82f4a1557fd1f5089700f349e56a5792706d7a6a2275a448019c1"
+    sha256 cellar: :any,                 arm64_ventura:  "b4fc34f2bf9994694a2bcc79186fcc3c63b2c76f3a8147183c5c3bf4429c3cf5"
+    sha256 cellar: :any,                 arm64_monterey: "c6de8f883ab5941a03bd2bed30500ff4785bb4aaa5b19cebf205d56c08118df4"
+    sha256 cellar: :any,                 arm64_big_sur:  "9623a679469c1803e948315ed0d34758d3bde435e1b232e6e2588076edbe4c92"
+    sha256 cellar: :any,                 ventura:        "d6fd65f0cebf021208064ad096e3a6183a9d4a2b10a9d1e4e9376c4ffbcde767"
+    sha256 cellar: :any,                 monterey:       "0c90e3302753557ce769634718bb8b3c083da16c8ca8694930cbb31beee2fd0d"
+    sha256 cellar: :any,                 big_sur:        "2c769ed8817441f8a905b01b7463c48a84b3208b230ca72cbdc680548a6821ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22420bf92a32afdfeb6d489f1f683cecb411c62781312394e6efb20af8861210"
   end
 
   depends_on "pyqt-builder" => :build
   depends_on "sip"          => :build
 
-  depends_on "pyqt"
+  # TODO: use qt when octave can migrate to qt6
+  depends_on "pyqt@5"
   depends_on "python@3.11"
-  depends_on "qt"
+  depends_on "qt@5"
 
   fails_with gcc: "5"
 
@@ -43,12 +44,13 @@ class Qscintilla2 < Formula
     args = []
 
     if OS.mac?
+      # TODO: when using qt 6, modify the spec
       spec = (ENV.compiler == :clang) ? "macx-clang" : "macx-g++"
       args = %W[-config release -spec #{spec}]
     end
 
-    pyqt = Formula["pyqt"]
-    qt = Formula["qt"]
+    pyqt = Formula["pyqt@5"]
+    qt = Formula["qt@5"]
     site_packages = Language::Python.site_packages(python3)
 
     cd "src" do
@@ -57,9 +59,13 @@ class Qscintilla2 < Formula
           "QMAKE_POST_LINK += install_name_tool -id #{lib}/$(TARGET1) $(TARGET)"
         s.gsub! "$$[QT_INSTALL_LIBS]", lib
         s.gsub! "$$[QT_INSTALL_HEADERS]", include
-        s.gsub! "$$[QT_INSTALL_TRANSLATIONS]", share/"qt/translations"
-        s.gsub! "$$[QT_INSTALL_DATA]", share/"qt"
-        s.gsub! "$$[QT_HOST_DATA]", share/"qt"
+        # TODO: use qt6 directory layout when octave can migrate to qt6
+        s.gsub! "$$[QT_INSTALL_TRANSLATIONS]", prefix/"trans"
+        s.gsub! "$$[QT_INSTALL_DATA]", prefix/"data"
+        s.gsub! "$$[QT_HOST_DATA]", prefix/"data"
+        # s.gsub! "$$[QT_INSTALL_TRANSLATIONS]", share/"qt/translations"
+        # s.gsub! "$$[QT_INSTALL_DATA]", share/"qt"
+        # s.gsub! "$$[QT_HOST_DATA]", share/"qt"
       end
 
       inreplace "features/qscintilla2.prf" do |s|
@@ -79,20 +85,23 @@ class Qscintilla2 < Formula
         sip-include-dirs = ["#{pyqt.opt_prefix/site_packages}/PyQt#{pyqt.version.major}/bindings"]
       EOS
 
+      # TODO: qt6 options
+      # --qsci-features-dir #{share}/qt/mkspecs/features
+      # --api-dir #{share}/qt/qsci/api/python
       args = %W[
         --target-dir #{prefix/site_packages}
 
-        --qsci-features-dir #{share}/qt/mkspecs/features
+        --qsci-features-dir #{prefix}/data/mkspecs/features
         --qsci-include-dir #{include}
         --qsci-library-dir #{lib}
-        --api-dir #{share}/qt/qsci/api/python
+        --api-dir #{prefix}/data/qsci/api/python
       ]
       system "sip-install", *args
     end
   end
 
   test do
-    pyqt = Formula["pyqt"]
+    pyqt = Formula["pyqt@5"]
     (testpath/"test.py").write <<~EOS
       import PyQt#{pyqt.version.major}.Qsci
       assert("QsciLexer" in dir(PyQt#{pyqt.version.major}.Qsci))

@@ -9,14 +9,14 @@ class PythonLspServer < Formula
   head "https://github.com/python-lsp/python-lsp-server.git", branch: "develop"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9bd1ed6fb9fe37790f72d41b93a134d674c7bbe5aa3f4c3c509ea988d427e7af"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c18b1e2f60824c20b75cbd21078d61f0a58f222c1225c54842d337d80b9e94a3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "aeb4d1600d0afee5f893a02ef2fbbe29a9c2acb79cdfd92b9f456f075590e556"
-    sha256 cellar: :any_skip_relocation, ventura:        "8270e0e435a36ac3f69dba7b2394b24b263109a104658f142e7a7a2f57abb846"
-    sha256 cellar: :any_skip_relocation, monterey:       "0659993fa31b2e55592f42d29078c4f5128170c26da8a986031a2791217d24b4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fd2b02b7b73361415333277325fa58c18960a481759a1f53ab75e581b3c6a285"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd2fcd937f93c50e34282cdc4ac836539e727de06e8c47a545d172f77041dad4"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89f9021239e699fb18c19b354ba9cd82e4f1941702221a713a814f59fef10c0b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dabd803ad235cea55ad451b04227a6852a8ce900a0bbbcc1b0ed011fbca835d6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1b809892606d5f231a1a46db44c72f11f7f0f67991d4cc429423679e51191588"
+    sha256 cellar: :any_skip_relocation, ventura:        "f48e1ccffbef502fdf4ad56ca8e724524801b32c6225d92de1b3485ef5699528"
+    sha256 cellar: :any_skip_relocation, monterey:       "ede25a9040a902a2a58aa23ae29b75760a8f80dd947ff18b2cbb175ace7eb2e4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "858ae3d10a1615b8ad6bb96941bfdec86faa4a212607a0e2f27be5066630db7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f85b2e9abf7559951a595a05d363d7a6058a2468796c7b69c31314d562d9f00e"
   end
 
   depends_on "black"
@@ -24,6 +24,11 @@ class PythonLspServer < Formula
   depends_on "pydocstyle"
   depends_on "python@3.11"
   depends_on "ruff"
+
+  resource "attrs" do
+    url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
+    sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
+  end
 
   resource "cattrs" do
     url "https://files.pythonhosted.org/packages/68/d4/27f9fd840e74d51b6d6a024d39ff495b56ffde71d28eb82758b7b85d0617/cattrs-23.1.2.tar.gz"
@@ -65,11 +70,6 @@ class PythonLspServer < Formula
     sha256 "48aadf993dafa5e8fca1108b4a5431314cf80bc78cffdd56400ead9c407553be"
   end
 
-  resource "pytoolconfig" do
-    url "https://files.pythonhosted.org/packages/aa/ce/ac21cf0549ae05d8924e91f02f8b406e43beb42e605dc732fdf700f8cd8c/pytoolconfig-1.2.5.tar.gz"
-    sha256 "a50f9dfe23b03a9d40414c1fdf902fefbeae12f2ac75a3c8f915944d6ffac279"
-  end
-
   resource "python-lsp-black" do
     url "https://files.pythonhosted.org/packages/ad/1b/f20e612a33f9dcc2a0863a42ee62cc4f30ee724f1e7cc869b92c786c8ebd/python-lsp-black-1.3.0.tar.gz"
     sha256 "5aa257e9e7b7e5a2316ef2a9fbcd242e82e0f695bf1622e31c0bf5cd69e6113f"
@@ -87,6 +87,11 @@ class PythonLspServer < Formula
     # this depends on `ruff` solely to install the binary,
     # but we can just depend on the `ruff` formula in Homebrew
     patch :DATA
+  end
+
+  resource "pytoolconfig" do
+    url "https://files.pythonhosted.org/packages/aa/ce/ac21cf0549ae05d8924e91f02f8b406e43beb42e605dc732fdf700f8cd8c/pytoolconfig-1.2.5.tar.gz"
+    sha256 "a50f9dfe23b03a9d40414c1fdf902fefbeae12f2ac75a3c8f915944d6ffac279"
   end
 
   resource "rope" do
