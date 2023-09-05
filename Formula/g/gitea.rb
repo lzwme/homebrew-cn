@@ -6,6 +6,13 @@ class Gitea < Formula
   license "MIT"
   head "https://github.com/go-gitea/gitea.git", branch: "main"
 
+  livecheck do
+    url "https://dl.gitea.com/gitea/version.json"
+    strategy :json do |json|
+      json.dig("latest", "version")
+    end
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1254a12d6d8146b04d9c2e620e9826db014c05ec42731df927ea1b93838b4476"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "160e9ebd20434db8460cf667125c37a407e5a45b99036fe7a35d7f0fa0a8bc91"

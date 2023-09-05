@@ -15,13 +15,14 @@ class Sdl2Image < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6f14ff0269c000e2b8652c49f8d2835f48648e54483d126b562206e14a51aef8"
-    sha256 cellar: :any,                 arm64_monterey: "e0989678c782e57f0f4647f66e5e05ed32726d4e4c6ef9d94184dc6dd8e5373c"
-    sha256 cellar: :any,                 arm64_big_sur:  "296fde5a7497eb99132ad84c7516c34915265386c093a95d0d972965d308b4aa"
-    sha256 cellar: :any,                 ventura:        "31d279a5850274f05e554a431c7bced83f7ca2a630e850f6644a4dd215069581"
-    sha256 cellar: :any,                 monterey:       "8106006bc5909a02088cbb369958827e12e7cad2a812b620692f1803560c021d"
-    sha256 cellar: :any,                 big_sur:        "f4b1c030ae565fcf14b5bd63f98c629f6d7b9b8a0f332b48a08acf43d9efebfa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1e9cebf9e4ecc9f1c4fd55fa99babb47d586f33e24127f95adf0e4e7883f954"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "bb43982d9f926fb5be7983d2aa4c74c1b045c0ac81656e8326b8377d011bd6e7"
+    sha256 cellar: :any,                 arm64_monterey: "7865d5fc5d7f76abf3798b9b44bd03b92cb4ad0805eead866042effa37c7ee63"
+    sha256 cellar: :any,                 arm64_big_sur:  "4f8f838052625cfb3356e465785aaaf0f8d61e6394dcaedaf1bc44460ce462a5"
+    sha256 cellar: :any,                 ventura:        "d2207f59ca7a2dd0ecd2584b47220de9344b3d1b6d3069a15d67b24d6f0d8203"
+    sha256 cellar: :any,                 monterey:       "22da2defb584868e75af04623219ca07adf78d495c166c10deb56fdc485abf63"
+    sha256 cellar: :any,                 big_sur:        "eea32beea59b8a9ee9b3f9a064a82607e08a1c75ecde8f1aa8ea12ef647786b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2d26e8915542c685991d8da6b120792a7948b374491dcbe8bdedd75ceac5806"
   end
 
   head do

@@ -4,7 +4,7 @@ class ArgyllCms < Formula
   url "https://www.argyllcms.com/Argyll_V2.3.1_src.zip"
   sha256 "bd0bcf58cec284824b79ff55baa242903ed361e12b1b37e12228679f9754961c"
   license "AGPL-3.0-only"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.argyllcms.com/downloadsrc.html"
@@ -12,13 +12,13 @@ class ArgyllCms < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a5fcde403ff9fcd5066e618d9881746cd74497673cb45b5b70513dd7eed2e4e5"
-    sha256 cellar: :any,                 arm64_monterey: "b984e5dad0d132169e324c0ce6e2247a3215978ffab873389c076e3d4329dd0a"
-    sha256 cellar: :any,                 arm64_big_sur:  "7da00534b2a37d605ad48b5040f5c3963ab34e4e532aa8e141cb06bc8b95a3de"
-    sha256 cellar: :any,                 ventura:        "82a1932941c85b76d58c00161b08778a67adf2f79c17d62022b43f50e12f6f38"
-    sha256 cellar: :any,                 monterey:       "046626e1817bfb96c4c5bd57eca3e5fb431c468280ca2719826f761980211c80"
-    sha256 cellar: :any,                 big_sur:        "7b6bb889e77f4f01c17dd64e8c99170b5e7b00248d4701459d01c14f1fbf47e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85d4cb96a1cb7f85063ef58ba270e68c55e9dedd2d6ab5807acc0946d549ca6a"
+    sha256 cellar: :any,                 arm64_ventura:  "6ad35dcd73ff37d15df2b15987a5f79c5b7f41162a9ee42da8f584cac54064a4"
+    sha256 cellar: :any,                 arm64_monterey: "ef4aff5c9c30f8eb6fcb636eb12a5dbe3cb60ccf505b30e774a3aa5a30469e7e"
+    sha256 cellar: :any,                 arm64_big_sur:  "d5f7c5c9c7f4fca8fd7af2727ac552bb35e06ebe2f13245da69bc27cb6a4d9e7"
+    sha256 cellar: :any,                 ventura:        "c7ebeb7d9e4c04a0fd084be13c60096b835f6bbf5542569d8bf0e3cdb973604b"
+    sha256 cellar: :any,                 monterey:       "ff74541a571f54ee365a65ff561ac2306838c84d184409b3739e0196a4cb8b42"
+    sha256 cellar: :any,                 big_sur:        "f028044af8ff1a5cbb4bc1790e71dcd57ed42c55502b2f3ab02e6e91e9c05fec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6bee4ce2f70e61cba9cf09688157135cbd7672c5558877e29bfbc7fe7ade7907"
   end
 
   depends_on "jam" => :build

@@ -9,21 +9,27 @@ class Nbdime < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4058c573e6b60df940e22505192701b98ba488ba983c8863df27269c5bd77bc4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca594667a33afc96a1f60a881079f3d242102b4a70a1b56347f012f330d77c73"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6c097270ebb2a966b80d5ab25f6c54d778dd1c32784a926067d62c28738f8074"
-    sha256 cellar: :any_skip_relocation, ventura:        "9d5c5e622c240ea2105ecbc6fbc6aaa0ec49c463b582fd7178967e896368d2b6"
-    sha256 cellar: :any_skip_relocation, monterey:       "466fc9452217ec92c44a36e4778b8a9a815a28c9a9e368152086b10ad1b5b259"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e08a0bddfabc6e2bc5edcecf3902136a86d81684d466a1e9f730fd90de5e5bce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6cbb6c91ae3de21780272ed347387e4cedae6876689da4f97fc0beaae7d9044f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d894b28914c2b8ad7f161e1e8e7272640180b72615521cf0aa5747c98783e595"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c960e7587a859f6dd6df1b7814875fee9d3e30551009311caf5a2c342e6898e0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7d79591dd48c4aeec2af94cd0d1f20330e4ebe844384f7b5f987e5df36f5bebb"
+    sha256 cellar: :any_skip_relocation, ventura:        "52dc262bc45fc56d5c53448d968b9c9f8904e88f4327adbe229d1c2a79883c4b"
+    sha256 cellar: :any_skip_relocation, monterey:       "424fe675df2e1be1437bdc8e5de9ef270477a53f75a3331967358a0b198e51cc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b58d4bc46de70d55a97a14383b396d41a495e859603745860704d2a5121268f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "60de2886c3aa66e8ddcba1db332b6dbcba0f4cf10a053b4142ec966100f2ce38"
   end
 
   depends_on "rust" => :build # for rpds-py
-  depends_on "ipython"
-  depends_on "jupyterlab"
+  depends_on "jupyterlab" # only to provide jupyter-server and nbconvert
+  depends_on "python-certifi"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
+
+  resource "charset-normalizer" do
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+  end
 
   resource "colorama" do
     url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
@@ -36,8 +42,8 @@ class Nbdime < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/8d/1e/33389155dfe8cebbaa0c5b5ed0d3bd82c5e70064be00b2b3ee938da8b5d2/GitPython-3.1.33.tar.gz"
-    sha256 "13aaa3dff88a23afec2d00eb3da3f2e040e2282e41de484c5791669b31146084"
+    url "https://files.pythonhosted.org/packages/f6/7e/74206b2ac9f63a40cbfc7bfdf69cda4a3bde9d932129bee2352f6bdec555/GitPython-3.1.34.tar.gz"
+    sha256 "85f7d365d1f6bf677ae51039c1ef67ca59091c7ebd5a3509aa399d4eda02d6dd"
   end
 
   resource "jupyter-server-mathjax" do
@@ -45,9 +51,19 @@ class Nbdime < Formula
     sha256 "bb1e6b6dc0686c1fe386a22b5886163db548893a99c2810c36399e9c4ca23943"
   end
 
+  resource "requests" do
+    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
+    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+  end
+
   resource "smmap" do
     url "https://files.pythonhosted.org/packages/21/2d/39c6c57032f786f1965022563eec60623bb3e1409ade6ad834ff703724f3/smmap-5.0.0.tar.gz"
     sha256 "c840e62059cd3be204b0c9c9f74be2c09d5648eddd4580d9314c3ecde0b30936"
+  end
+
+  resource "urllib3" do
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   def python3
@@ -62,10 +78,10 @@ class Nbdime < Formula
     virtualenv_install_with_resources
 
     site_packages = Language::Python.site_packages(python3)
-    %w[jupyterlab ipython].each do |package_name|
-      package = Formula[package_name].opt_libexec
-      (libexec/site_packages/"homebrew-#{package_name}.pth").write package/site_packages
+    paths = %w[jupyterlab].map do |p|
+      "import site; site.addsitedir('#{Formula[p].opt_libexec/site_packages}')"
     end
+    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end
 
   test do

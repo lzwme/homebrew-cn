@@ -4,7 +4,7 @@ class Qemu < Formula
   url "https://download.qemu.org/qemu-8.1.0.tar.xz"
   sha256 "710c101198e334d4762eef65f649bc43fa8a5dd75303554b8acfec3eb25f0e55"
   license "GPL-2.0-only"
-  revision 1
+  revision 2
   head "https://git.qemu.org/git/qemu.git", branch: "master"
 
   livecheck do
@@ -13,14 +13,13 @@ class Qemu < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "9b96017b8a7d8235275108a23224a388cb8b9a7276c76dcf876dc11eae372562"
-    sha256 arm64_monterey: "af679e6c1a3809f746cc738de3f6a240f63f865539dd7d2f642a630583514c2a"
-    sha256 arm64_big_sur:  "ec7c065b872400d74bddbabbb800cd03ccc4e415af028511b03a8e14c03bb19d"
-    sha256 ventura:        "845671e9625736ab6a15108d369e47f5a6b20b8f6d0e99ba1a3f39d18df1c94d"
-    sha256 monterey:       "246862506a64cbe52bce23f20ca8b1b7474618a00e2114c2ab9c06066ac58dde"
-    sha256 big_sur:        "7e809a87f13451bd5ea006234391e88b70eea2087dd0d7cbc0363254e9a96eb8"
-    sha256 x86_64_linux:   "44b2c6359b908b47b23d6c781a704371cf3b4e0e6a3e740511329d28c77f6980"
+    sha256 arm64_ventura:  "1d77e290fda1f2a711f80af61152982030e14e06fedd3007385267a1e72d09d4"
+    sha256 arm64_monterey: "13cab8c3a046244e14da5679f9851db2d432835ada2da665b4767b5c16868789"
+    sha256 arm64_big_sur:  "8e74dacf72b976b25a7fe20fa7ae29078e77065263821ab79352586e6e7a1d31"
+    sha256 ventura:        "5cfd8dc3360b0bc9bb2eb2bcab26580adc5b88ed4907214db7e024fc21d9fc12"
+    sha256 monterey:       "9796e925d5e8fa9bcb347b55dad73e31b123fed6f30f22ee6dd38d61e39a8334"
+    sha256 big_sur:        "6362f9ec44a6004f77da034ced700cf187734ca14b39def3b9ae57db8840a703"
+    sha256 x86_64_linux:   "fc6bb461bfac99403d29d2a095c0d1fc0054e131b031f40ea85fffb11e906367"
   end
 
   depends_on "libtool" => :build

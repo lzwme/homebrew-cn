@@ -4,15 +4,16 @@ class Tracy < Formula
   url "https://ghproxy.com/https://github.com/wolfpld/tracy/archive/refs/tags/v0.9.1.tar.gz"
   sha256 "c2de9f35ab2a516a9689ff18f5b62a55b73b93b66514bd09ba013d7957993cd7"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "83e94a2d3f9c29911844e48b55def7807b42f11ca0be6a96fa5ec31bfa7c56e9"
-    sha256 cellar: :any,                 arm64_monterey: "c1c03506306ce73ef85af7a40442eca87e4b4ce1b9aab09c64c2c38f23ecd992"
-    sha256 cellar: :any,                 arm64_big_sur:  "390bf6bb1f080b20285929679304758a04140e52ce86956f57694b7835bfec78"
-    sha256 cellar: :any,                 ventura:        "226dc07fc98a86cd44dc3e626257d238b8557fe7cc6b44f579a41ed59d91afce"
-    sha256 cellar: :any,                 monterey:       "34ebd84f9ddeb63b81e9aad5b5ae40fd144290967789ba47cb279523ef5fd077"
-    sha256 cellar: :any,                 big_sur:        "306585e77d83ad00b9160ffa2bd5b04fd83ca07d11a44080d113ad4bea82cc06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48d39610618ac1e3972d0db0afdacf0d305438358486f65b9c60b11e10bf763a"
+    sha256 cellar: :any,                 arm64_ventura:  "e0b1f660695b770f2ef198e4e7c3a64edcad50fdd5c992beed7250bb1327d4e3"
+    sha256 cellar: :any,                 arm64_monterey: "34e51f9fc7008c8c6f9f328cd818a7e7903722c7ef7d0d72dfd27ab5ad8a0ce9"
+    sha256 cellar: :any,                 arm64_big_sur:  "55aac4cf3f25fc366b1be4c3c29cafbc658e3de10cdeee75447e0995176498ce"
+    sha256 cellar: :any,                 ventura:        "e6cada4786ff58d06ef5bd68b95a1112c7b9ac6f1742bb690c4c373e8c95aa29"
+    sha256 cellar: :any,                 monterey:       "0f42dbfd5532724edcba0cce7e00cfc0facc8d935fc07ef852a7c77a2b877057"
+    sha256 cellar: :any,                 big_sur:        "bb8583cd33abebeb2028620d15cc066467988e284c623d79ea7b342a915d1a1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1158c9be06860d65840513ebd0189af488a59b5b52a63248bfff2e98570a2b65"
   end
 
   depends_on "pkg-config" => :build

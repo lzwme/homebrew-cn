@@ -1,7 +1,7 @@
 class Portaudio < Formula
   desc "Cross-platform library for audio I/O"
-  homepage "http://www.portaudio.com"
-  url "http://files.portaudio.com/archives/pa_stable_v190700_20210406.tgz"
+  homepage "https://www.portaudio.com"
+  url "https://files.portaudio.com/archives/pa_stable_v190700_20210406.tgz"
   version "19.7.0"
   sha256 "47efbf42c77c19a05d22e627d42873e991ec0c1357219c0d74ce6a2948cb2def"
   license "MIT"
@@ -9,7 +9,7 @@ class Portaudio < Formula
   head "https://github.com/PortAudio/portaudio.git", branch: "master"
 
   livecheck do
-    url "http://files.portaudio.com/download.html"
+    url "https://files.portaudio.com/download.html"
     regex(/href=.*?pa[._-]stable[._-]v?(\d+)(?:[._-]\d+)?\.t/i)
     strategy :page_match do |page, regex|
       # Modify filename version (190700) to match formula version (19.7.0)

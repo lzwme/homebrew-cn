@@ -18,7 +18,8 @@ class Mathlibtools < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe7a9237c5b1d8239f5aa00f0119f2871db4f3b47466ccc026ffa789c22f384e"
   end
 
-  depends_on "lean" => :test
+  deprecate! date: "2023-09-04", because: :repo_archived
+
   depends_on "cffi"
   depends_on "python-certifi"
   depends_on "python-cryptography"
@@ -126,9 +127,6 @@ class Mathlibtools < Formula
   end
 
   test do
-    system bin/"leanproject", "new", "my_project"
-    project_toml = testpath/"my_project/leanpkg.toml"
-    assert_predicate project_toml, :exist?, "leanpkg.toml should have been created"
-    assert_includes project_toml.read, "my_project"
+    assert_equal "Could not find a leanpkg.toml\n", shell_output("#{bin}/leanproject build 2>&1", 255)
   end
 end

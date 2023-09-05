@@ -3,18 +3,18 @@ class Tmuxp < Formula
 
   desc "Tmux session manager. Built on libtmux"
   homepage "https://tmuxp.git-pull.com/"
-  url "https://files.pythonhosted.org/packages/8b/d0/8ce5dd49eb1be54a7870274b836117ff7a49f4b576044f3d836100e97390/tmuxp-1.29.1.tar.gz"
-  sha256 "b82f004c77b1fb45d0e7f8c9dc0877cd109b0ec11cc65a8f766123c10f91270e"
+  url "https://files.pythonhosted.org/packages/a4/72/c25f9cb44747f77fb9e8892d0acb950331d5fed6b87a45f431eef10fcd00/tmuxp-1.30.0.tar.gz"
+  sha256 "4e4ac1f2f389a01c859e6d6c690e60513a028ff29d9cc4d73354bdaf9514a4d2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f14f937e179cc0ced66e638ee4d6abffc67c403440c53f270c6d4a742350e610"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ab49de2c293926a0c0855c337032f682a5db845791268d5adb851bc211082329"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a1c26c7d67e1c954ef0aefe6508dc15ecda1468f0ef86ef05005787989fa5478"
-    sha256 cellar: :any_skip_relocation, ventura:        "af6911d29a8b9609e964a7308ef98ac7a9f5ab07ee5e22d2456241ca317cb3ec"
-    sha256 cellar: :any_skip_relocation, monterey:       "bbf04e9f0a247a40a2733ab1588f850b706af7039ee8392b707e32b8d32d2180"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3de75e3cc3bf8c0d764450e1338523c4bf3d99aa284954d12f189bc4a1e5c24d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b5f5f48550941e0f14ba62e4567f9641f78f40616e30ed52563023c9cd34363"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "93b08d5cfb7defe5147f5e93777b9da4a68fefc82f1f1b884cb268cbd6738dd7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3a7ac7fc5bec4cf005370e3b1036c9ecee1258db759ce65a36123b9c54885ccc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cae2daeb1be8a66950bbbd2c294b114ff0725a9890cdc57963e1dcf749fc98a7"
+    sha256 cellar: :any_skip_relocation, ventura:        "e478d25ef8bcaff3adb9bd71bdb82a004aadd15446d599ce0c6fbb6b87047208"
+    sha256 cellar: :any_skip_relocation, monterey:       "9e369576071f0b78b5048da9d9eaf8f173811b5ade54f325a9794e7e5927cd6f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a461c740cb74abfd78418a2bb5cfd75e2f1354d72776607542693b3f563a34a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "69d66820788e2122fc59c8c428cc594ea574a502332960fd28bc400f5817554d"
   end
 
   depends_on "python@3.11"

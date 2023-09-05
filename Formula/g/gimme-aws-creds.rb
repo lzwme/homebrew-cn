@@ -3,22 +3,23 @@ class GimmeAwsCreds < Formula
 
   desc "CLI to retrieve AWS credentials from Okta"
   homepage "https://github.com/Nike-Inc/gimme-aws-creds"
-  # upstream bug report about the pypi sdist missing, https://github.com/Nike-Inc/gimme-aws-creds/issues/423
-  url "https://ghproxy.com/https://github.com/Nike-Inc/gimme-aws-creds/archive/refs/tags/v2.7.2.tar.gz"
-  sha256 "f4de154d449a8daa6ae7d810517e54a6e9415cec32e101dbf9075e47cd58dd4a"
+  url "https://files.pythonhosted.org/packages/69/76/a6c0e4d65438ef3b95099c919388fbdc617d89afb40e024ec2c22665e3d5/gimme_aws_creds-2.7.2.tar.gz"
+  sha256 "71526a98bd249bb3880cb2813817623d29ea880eaf260bbb5d1d366ccfae9474"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6dd7d9767e56d8c7353a15d2940932f957f59fd9b66d106f8e275bee01e01382"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2081b5f81775a20b330e510e492af47da7ce31610ca2d1eb09e669ddb3e80771"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f8a5c9320ac7ca7677640e9c1c58b6689cebde858b658f7dfca6bb42fb441bdd"
-    sha256 cellar: :any_skip_relocation, ventura:        "144fe810bcf6d37c47e144b510ad8d8e4872f19600db9d65d8ac40a61bc5d0ee"
-    sha256 cellar: :any_skip_relocation, monterey:       "ad5f57a42d91d3fef81924979e4c88f6cc8152667032eadbc952941d10024464"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8f2d04b1bb50b1535a2ecd447e8a46d12e1356fb8ab5e619d733050769872825"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5d70d5d258668317107f9a55693097db5529e2c3ecafd58f8f3e0f81361ccca"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ddc8a05a1af606e82d5e38d62f832f1089f7c8100c59edd909661b2f8c952d9d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c43431fbbd3c19fb56aea2092d87dc0f742f8d2f32ca6dc4c06506f7b1926bd"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cb25b0c2c2369a5bf282f6be1d48b0028fca31ef4c7ad14768e52e5c4f73f22f"
+    sha256 cellar: :any_skip_relocation, ventura:        "2e8b5f439c1c19e784ba286ef349cc6d82a0272d5409054ae865d751f368c4ab"
+    sha256 cellar: :any_skip_relocation, monterey:       "b28537511f7006659815da5a9893e2212dee684cd19977d6a0683576ffbd24bc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "62455badfbbb719dfe11df465cb82d9238fb8ce55d43cf20e6b5962f6f16565a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6538adcf12d501ad65390cce6582132734c6d4e576a08613fed110e25463ad8d"
   end
 
   depends_on "cffi"
+  depends_on "keyring"
   depends_on "python-certifi"
   depends_on "python-cryptography"
   depends_on "python@3.11"
@@ -31,12 +32,6 @@ class GimmeAwsCreds < Formula
   # `update-python-resources` is impacted by whether command is run on macOS
   # or Linux. Remove if Homebrew logic is enhanced to handle this. Also,
   # occasionally check if any of these Python dependencies are no longer used.
-  #
-  # Linux: `jeepney`, `SecretStorage`
-  # - gimme-aws-creds
-  #   ├── keyring
-  #       ├── jeepney
-  #       └── secretstorage
   #
   # macOS: `pyobjc-framework-localauthentication`, ...
   # - gimme-aws-creds
@@ -51,13 +46,13 @@ class GimmeAwsCreds < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/77/57/32ed300facd766f9e0ae52792fafd429525c23aef28c7df4940682edc4c2/boto3-1.28.35.tar.gz"
-    sha256 "580b584e36967155abed7cc9b088b3bd784e8242ae4d8841f58cb50ab05520dc"
+    url "https://files.pythonhosted.org/packages/fb/00/20a7ddef854c51347165d114c879203d656e12f7d9b7b30dd8cd244adcf1/boto3-1.28.40.tar.gz"
+    sha256 "6ff9a5b815e106656596064d51c9b6ba97a307807baa5f89634384b7d3f7ecc6"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/b8/7e/989d7fdebd245cc392995fd6720f2f7769f7caa7aac434887e54a1c6d320/botocore-1.31.35.tar.gz"
-    sha256 "7e4534325262f43293a9cc9937cb3f1711365244ffde8b925a6ee862bcf30a83"
+    url "https://files.pythonhosted.org/packages/96/b2/810868e32687760da8666ca65d2e307d7f50ed38276b5aef6cdf0a9fde14/botocore-1.31.40.tar.gz"
+    sha256 "ce22a82ef8674f49691477d09558992cc87e7331f65c6a5b0da897ab192240ca"
   end
 
   resource "charset-normalizer" do
@@ -80,34 +75,9 @@ class GimmeAwsCreds < Formula
     sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
   end
 
-  resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/33/44/ae06b446b8d8263d712a211e959212083a5eda2bf36d57ca7415e03f6f36/importlib_metadata-6.8.0.tar.gz"
-    sha256 "dbace7892d8c0c4ac1ad096662232f831d4e64f4c4545bd53016a3e9d4654743"
-  end
-
-  resource "jaraco-classes" do
-    url "https://files.pythonhosted.org/packages/8b/de/d0a466824ce8b53c474bb29344e6d6113023eb2c3793d1c58c0908588bfa/jaraco.classes-3.3.0.tar.gz"
-    sha256 "c063dd08e89217cee02c8d5e5ec560f2c8ce6cdc2fcdc2e68f7b2e5547ed3621"
-  end
-
-  resource "jeepney" do
-    url "https://files.pythonhosted.org/packages/d6/f4/154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdf/jeepney-0.8.0.tar.gz"
-    sha256 "5efe48d255973902f6badc3ce55e2aa6c5c3b3bc642059ef3a91247bcfcc5806"
-  end
-
   resource "jmespath" do
     url "https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz"
     sha256 "90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
-  end
-
-  resource "keyring" do
-    url "https://files.pythonhosted.org/packages/14/c5/7a2a66489c66ee29562300ddc5be63636f70b4025a74df71466e62d929b1/keyring-24.2.0.tar.gz"
-    sha256 "ca0746a19ec421219f4d713f848fa297a661a8a8c1504867e55bfb5e09091509"
-  end
-
-  resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/2d/73/3557e45746fcaded71125c0a1c0f87616e8258c78391f0c365bf97bbfc99/more-itertools-10.1.0.tar.gz"
-    sha256 "626c369fa0eb37bac0291bce8259b332fd59ac792fa5497b59837309cd5b114a"
   end
 
   resource "okta" do
@@ -155,14 +125,9 @@ class GimmeAwsCreds < Formula
     sha256 "cab66d3380cca3e70939ef2255d01cd8aece6a4907a9528740f668c4b0611861"
   end
 
-  resource "secretstorage" do
-    url "https://files.pythonhosted.org/packages/53/a4/f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691/SecretStorage-3.3.3.tar.gz"
-    sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
-  end
-
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/47/9e/780779233a615777fbdf75a4dee2af7a345f4bf74b42d4a5f836800b9d91/soupsieve-2.4.1.tar.gz"
-    sha256 "89d12b2d5dfcd2c9e8c22326da9d9aa9cb3dfab0a83a024f05704076ee8d35ea"
+    url "https://files.pythonhosted.org/packages/ce/21/952a240de1c196c7e3fbcd4e559681f0419b1280c617db21157a0390717b/soupsieve-2.5.tar.gz"
+    sha256 "5663d5a7b3bfaeee0bc4372e7fc48f9cff4940b3eec54a6451cc5299f1097690"
   end
 
   resource "urllib3" do
@@ -170,23 +135,15 @@ class GimmeAwsCreds < Formula
     sha256 "8f135f6502756bde6b2a9b28989df5fbe87c9970cecaa69041edcce7f0589b14"
   end
 
-  resource "zipp" do
-    url "https://files.pythonhosted.org/packages/e2/45/f3b987ad5bf9e08095c1ebe6352238be36f25dd106fde424a160061dce6d/zipp-3.16.2.tar.gz"
-    sha256 "ebc15946aa78bd63458992fc81ec3b6f7b1e92d51c35e6de1c3804e73b799147"
-  end
-
   def install
     venv = virtualenv_create(libexec, "python3.11")
-    res = resources.to_set(&:name)
-    if OS.mac?
-      res -= ["jeepney", "SecretStorage"]
-    else
-      res.reject! { |r| r.start_with? "pyobjc" }
-    end
-    res.each do |r|
-      venv.pip_install resource(r)
-    end
+    venv.pip_install resources.reject { |r| r.name.start_with?("pyobjc") && OS.linux? }
     venv.pip_install_and_link buildpath
+
+    # we depend on virtualenv, but that's a separate formula, so install a `.pth` file to link them
+    site_packages = Language::Python.site_packages("python3.11")
+    paths = %w[keyring].map { |p| Formula[p].opt_libexec/site_packages }
+    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end
 
   test do

@@ -8,33 +8,27 @@ class Bbot < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bfcecbc47ec846dd2718be1ce2636e8d72ff3844dd4982a6dc64d68776dae602"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "54ca6ce603fb20777136762279c2e1b208bd45cabec12466ee18f90f0cdc8305"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c50d0bd9d14c8986d9bb5a4a6dcdb1e7a9ea69de3a52b380f9468aaf08554de8"
-    sha256 cellar: :any_skip_relocation, ventura:        "b4c28fef910aacee1b906191cd2beeae9a0a3e140161227f4763f08200b62b52"
-    sha256 cellar: :any_skip_relocation, monterey:       "bc3242074c03607d853c0d41085189fef620569f04daa1f523d54d80e99a1724"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4b5e5802536f74d86177d27780bc42a52ecb2f31eb17eafe1ffbaad3dad5f9d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b118360b38673f2935333813a1d5a4145355998353619ee047027a5fa931dd7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "04bdcbe78058a4181b5fa0cb901f6922a010b714181faa6f2d4dba9ba1e84732"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "74476e1a032f23672c8623c69af9612e11ed2d7b4f0be6d15294a32f35c72e56"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9c314cc37a4decd0a5edbcbaa5bffd8d55e1f7c618f7b2c2f8207446d8fabcef"
+    sha256 cellar: :any_skip_relocation, ventura:        "a44cc819ad9adbeb1cb3e98fa8d6eaa7bc7f7c317e6129f67a24b2dc03ef6fa0"
+    sha256 cellar: :any_skip_relocation, monterey:       "9f025130258400dbd2df612f8a7047fbe03567ebc58defb00de75cff24f6e195"
+    sha256 cellar: :any_skip_relocation, big_sur:        "12bdec042ae5c07c29ac62bbd7280e77f29119eb856bc40903ffd2aa486ddf57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50a6225e0d16f58426163d788192637698f66be9c249060f458d6c717f0e72d1"
   end
 
-  # `pkg-config` and `rust` are for `rpds-py` via `url-normalize`
-  depends_on "cmake" => :build
-  depends_on "openjdk" => :build
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
+  depends_on "openjdk" => :build # for omegaconf
   depends_on "cffi"
   depends_on "docutils"
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-lxml"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
-
-  # For `lxml` resource.
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
 
   resource "ansible" do
     url "https://files.pythonhosted.org/packages/39/47/bef8fd8bc2b6e7b5058b61565959c91819eccb8be119a66f8524c0252c62/ansible-7.7.0.tar.gz"
@@ -42,13 +36,13 @@ class Bbot < Formula
   end
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/a6/fb/75c4c623c971c346b1f322677477b229d98412371464550ff53997134362/ansible-core-2.14.8.tar.gz"
-    sha256 "637f62c9547023fb4704cd5de1329dc7c02ef9e583cea1c3be2ce6c2fde7739c"
+    url "https://files.pythonhosted.org/packages/15/75/080b926e400284f2834aa33e3a699b052f197caf7c8eeded80dc1cb110f5/ansible-core-2.14.9.tar.gz"
+    sha256 "911354fe9f6b4c58c9546b3eca7c5244ea39007fa590096f7419fb9c019f9a05"
   end
 
   resource "ansible-runner" do
-    url "https://files.pythonhosted.org/packages/f6/8e/4f7af61d9bb92e9c6f46d7154f8821122596a67b82be761fe63ca8b2fbba/ansible-runner-2.3.3.tar.gz"
-    sha256 "38ff635e4b94791de2956c81e265836ec4965b30e9ee35d72fcf3271dc46b98b"
+    url "https://files.pythonhosted.org/packages/1a/2f/7962542e2a85e8786f44e11825e1f85923ddd95c9f83cfc7cc525f5dad67/ansible-runner-2.3.4.tar.gz"
+    sha256 "79a1bd134d813c8ea3740599c6fd961a11425ce7757f2fd725cf56d6a1a7236c"
   end
 
   resource "antlr4-python3-runtime" do
@@ -92,8 +86,8 @@ class Bbot < Formula
   end
 
   resource "deepdiff" do
-    url "https://files.pythonhosted.org/packages/ce/d4/63608f24e053acdc283aae8be47758573975b5d3794a08e684dd892c010f/deepdiff-6.3.1.tar.gz"
-    sha256 "e8c1bb409a2caf1d757799add53b3a490f707dd792ada0eca7cac1328055097a"
+    url "https://files.pythonhosted.org/packages/c7/ea/5f9833b7f851c5990fc314795a28d5dcc28fa7366530ba70503ce199ff22/deepdiff-6.4.1.tar.gz"
+    sha256 "744c4e54ff83eaa77a995b3311dccdce6ee67773335a34a5ef269fa048005457"
   end
 
   resource "dnspython" do
@@ -102,8 +96,8 @@ class Bbot < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/00/0b/c506e9e44e4c4b6c89fcecda23dc115bf8e7ff7eb127e0cb9c114cbc9a15/filelock-3.12.2.tar.gz"
-    sha256 "002740518d8aa59a26b0c76e10fb8c6e15eae825d34b6fdf670333fd7b938d81"
+    url "https://files.pythonhosted.org/packages/5a/47/f1f3f5b6da710d5a7178a7f8484d9b86b75ee596fb4fefefb50e8dd2205a/filelock-3.12.3.tar.gz"
+    sha256 "0ecc1dd2ec4672a10c8550a8182f1bd0c0a5088470ecd5a125e45f49472fac3d"
   end
 
   resource "h11" do
@@ -149,11 +143,6 @@ class Bbot < Formula
   resource "lockfile" do
     url "https://files.pythonhosted.org/packages/17/47/72cb04a58a35ec495f96984dddb48232b551aafb95bde614605b754fe6f7/lockfile-0.12.2.tar.gz"
     sha256 "6aed02de03cba24efabcd600b30540140634fc06cfa603822d508d5361e9f799"
-  end
-
-  resource "lxml" do
-    url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
-    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
   end
 
   resource "markupsafe" do
@@ -237,8 +226,8 @@ class Bbot < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/47/9e/780779233a615777fbdf75a4dee2af7a345f4bf74b42d4a5f836800b9d91/soupsieve-2.4.1.tar.gz"
-    sha256 "89d12b2d5dfcd2c9e8c22326da9d9aa9cb3dfab0a83a024f05704076ee8d35ea"
+    url "https://files.pythonhosted.org/packages/ce/21/952a240de1c196c7e3fbcd4e559681f0419b1280c617db21157a0390717b/soupsieve-2.5.tar.gz"
+    sha256 "5663d5a7b3bfaeee0bc4372e7fc48f9cff4940b3eec54a6451cc5299f1097690"
   end
 
   resource "tabulate" do
@@ -254,6 +243,13 @@ class Bbot < Formula
   resource "url-normalize" do
     url "https://files.pythonhosted.org/packages/ec/ea/780a38c99fef750897158c0afb83b979def3b379aaac28b31538d24c4e8f/url-normalize-1.4.3.tar.gz"
     sha256 "d23d3a070ac52a67b83a1c59a0e68f8608d1cd538783b401bc9de2c0fac999b2"
+
+    # Switch build-system to poetry-core to avoid rust dependency on Linux.
+    # Remove in the next release of url-normalize
+    patch do
+      url "https://github.com/niksite/url-normalize/commit/b8557b10c977b191cc9d37e6337afe874a24ad08.patch?full_index=1"
+      sha256 "b24bf01ec8d6c163a6d3c97672beba761d35006922d4ad930dbeca79b6c52bfe"
+    end
   end
 
   resource "urllib3" do

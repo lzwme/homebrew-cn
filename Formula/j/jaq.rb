@@ -6,6 +6,11 @@ class Jaq < Formula
   license "MIT"
   head "https://github.com/01mf02/jaq.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e9901f4b60de7c279d9908107dfc91fd2d4221324b1df4dec846dfe4abca8c24"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "20865f47966b40e3d5806159c34f94eea43199d64bfcd6604fa65e42b99f312a"

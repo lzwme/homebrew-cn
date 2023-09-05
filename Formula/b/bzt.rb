@@ -9,13 +9,14 @@ class Bzt < Formula
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c61a9dd3daaed7f16ff005a0f4ce631ba064b43cb6d1dffebd23ce189ffee589"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "144b60ca7cd396e624e0bcf5060f2dbe418a7f178a890298cd0a6ec0ac0e6ffd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b23f30a6d6f8975e136e2cf167e7031a8003a322baf1be356b8759824f894918"
-    sha256 cellar: :any_skip_relocation, ventura:        "38abe8809dccc649a612babd6e6a492160b7c32b48005942e950457631fdb763"
-    sha256 cellar: :any_skip_relocation, monterey:       "c50f63ca7db4acbc7db9c06003a75fbdd3bf692a1bf0efe58f85781865ff0cd6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "aecfe2fdceb8bbb71982f20026b6a622003e5ed9a364311324270a75ba526486"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dac66318dc366b0de797fcdd99c481b739073ce126fd69d9326302e7fd1083b0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a9d6e8f8901d603bb46717a10c30b9ab02f61baa04969d674712fda9eb539cc2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "246929bbf41975f7a4286de5c651cd367b97f86230322a09efa9061526be0da8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ec93e5f044d7d7b8d1ad2f6a13a030abf5d2f6fbea0c4500b73a902abc683556"
+    sha256 cellar: :any_skip_relocation, ventura:        "a8af8a4d43804237f5937f2ed1a21c6e84ba45eb4f557807bc36792b888fad39"
+    sha256 cellar: :any_skip_relocation, monterey:       "2f2c4deb6333ad3f6b8e3f693dc7512bfbcba75617ec19fd4ce918e9ab2663f0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "88436a0410e7dc983cae4f1654acb834e65521a73e9f93148e8b6f475b07266c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be423835b8a2a4ff6ea918b48b61461e0b41e1ddd6baeef0331dc62f758ad3ef"
   end
 
   depends_on "cmake" => :build
@@ -25,6 +26,7 @@ class Bzt < Formula
   depends_on "libcython"
   depends_on "numpy"
   depends_on "python-certifi"
+  depends_on "python-pytz"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -170,11 +172,6 @@ class Bzt < Formula
   resource "python-socketio" do
     url "https://files.pythonhosted.org/packages/c6/4e/69e98ca93a7aa59b5e868afe54b133c7675828af710805ee5cde955fd732/python-socketio-5.8.0.tar.gz"
     sha256 "e714f4dddfaaa0cb0e37a1e2deef2bb60590a5b9fea9c343dd8ca5e688416fd9"
-  end
-
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/5e/32/12032aa8c673ee16707a9b6cdda2b09c0089131f35af55d443b6a9c69c1d/pytz-2023.3.tar.gz"
-    sha256 "1d8ce29db189191fb55338ee6d0387d82ab59f3d00eac103412d64e0ebd0c588"
   end
 
   resource "pyvirtualdisplay" do

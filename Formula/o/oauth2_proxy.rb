@@ -1,20 +1,19 @@
 class Oauth2Proxy < Formula
   desc "Reverse proxy for authenticating users via OAuth 2 providers"
   homepage "https://oauth2-proxy.github.io/oauth2-proxy/"
-  url "https://ghproxy.com/https://github.com/oauth2-proxy/oauth2_proxy/archive/v7.4.0.tar.gz"
-  sha256 "f9c5791537b1286b5985b0123f19ad84d390a7fffc1edc1b7c50c5d66c67ebdd"
+  url "https://ghproxy.com/https://github.com/oauth2-proxy/oauth2-proxy/archive/refs/tags/v7.5.0.tar.gz"
+  sha256 "d31206ca1eff121d4560e84a652a55efd0a8a01bf7fbcd30d524f0e4676cd75c"
   license "MIT"
   head "https://github.com/oauth2-proxy/oauth2-proxy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2deab940416c36a506300ce0a03d047169212327b2bb658a5119469ee5f983d2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1813499b6d63547f16af1b40833a8f8cb95053f6b04e67f2a3f5b86533e0debc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8de92ac8df98b26aadfe3ab97025d61285d57cf40d4509a1559fab6475803270"
-    sha256 cellar: :any_skip_relocation, ventura:        "64d6ff728f148317e71607a49c090f28bfb343cbf2d66161a114e0d7e2509a83"
-    sha256 cellar: :any_skip_relocation, monterey:       "0af00d421c7605c8199bc1a9c0e5482d14db98608fff1b4f2413b1742911e546"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fdee9a9322baf39ec39ace1c84166946bb1f9b2f1330a01356486783b851a11f"
-    sha256 cellar: :any_skip_relocation, catalina:       "d8e4cc0cfdaf43bbfda3ae3144e1ec0a8bad83f5bd07082cf8a8d30eb4eb1c91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a50775f653494005e9d967fa5fa26c97983e3b28886989526bb092b76cf63486"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "23acdbd8105fb3dceae557eca1edade800d7978b5c00df8a72259ae3e3d87fd3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0db4a423b26bd41d68bd8159615546909d2a78f245a2d2f2083d985617ad4756"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c09d0f120f6054ae9631b3b394891b99e7b41f7a185eb15c37568844a18c56be"
+    sha256 cellar: :any_skip_relocation, ventura:        "45d549534bde1ac431a7d45e2b184225e61ca485cbd32566327de001f933e6af"
+    sha256 cellar: :any_skip_relocation, monterey:       "fd59f377d5cbd6b51846e0897a57b0b120efe8c949aa9a4db4966b0e6aa6094b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9201925f6b5edc17777f98172574f73eebaac8f2f477654e27504de8207a0287"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7060a3124e4efa4d415c38b87850dd90353b58a5ae6c2b2e7af49de538558b21"
   end
 
   depends_on "go" => :build

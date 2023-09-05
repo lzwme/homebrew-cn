@@ -6,6 +6,11 @@ class Juicefs < Formula
   license "Apache-2.0"
   head "https://github.com/juicedata/juicefs.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5dafa90fb815c4302d2cdfcd1bb69a36b6ebf5c0c7d5851750dcf7925b5e745"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "320bec004a51c82faddff438289db703a7c6b10f1b227ed3d20b0433f215e25b"

@@ -8,20 +8,21 @@ class Sickchill < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a6401ad13073cd204c85b26ae1df7a1064cc6e66eab1e8ea605fd9df53a3779b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6b57f4e83254da9ecc9968acbdb0a8ca386a03d83530d6e300841f96dd1d9d56"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4db130ef6a054a2eb4915fddd31b5ee48699d8d0abe2acf61a4bace142102980"
-    sha256 cellar: :any_skip_relocation, ventura:        "202bf4c6317ca054417de91b84b177c3fb53c76cf94bd44a21ea97d809f9fac1"
-    sha256 cellar: :any_skip_relocation, monterey:       "571b8a31d5058fe71564d9251410d2d13aced0f83f3c822fdbaf407c384b41b2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8e1289c921a090e56cbce3fd8363ff0aceaec5dd61929cc82647dc2c33c07613"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d701f524ef75d9444722c22a2f7447e9aa317708ebc438988ee38e41bbb23cf6"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b0fabd330e2456041744cd122546e3485d549dde9813ca74951c693a17987d80"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7d88a3eae7435bdb9030ae181e8b415a09247c05550a02c1aeac91f680468c02"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1c01fcc3bd297d13903fd9ca9beea901f4df3db925747a3595ff092773e76d75"
+    sha256 cellar: :any_skip_relocation, ventura:        "3814ffc343cb623813b1675ffdb5bd990135a024f77dd4ba400e4ecd23763b3c"
+    sha256 cellar: :any_skip_relocation, monterey:       "48f07b6b6cfc34627ef0e5f7a477dfe7ac55fb2ebfa95c5b4cfa40369340c453"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9138afa7d250ce68a07001f81048d49774b5526dae1f41827383ed0acf446a22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1ccfc88f849783ff972b02cb8cb6f823b94648237f7ace689bf180f4d9925b9"
   end
 
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-pytz"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -268,11 +269,6 @@ class Sickchill < Formula
   resource "python3-fanart" do
     url "https://files.pythonhosted.org/packages/2e/55/d09b26a5c3bc41e9b92cba5342f1801ea9e8c1bec0862a428401e24dfd19/python3-fanart-2.0.0.tar.gz"
     sha256 "8bfb0605ced5be0123c9aa82c392e8c307e9c65bff47d545d6413bbb643a4a74"
-  end
-
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/5e/32/12032aa8c673ee16707a9b6cdda2b09c0089131f35af55d443b6a9c69c1d/pytz-2023.3.tar.gz"
-    sha256 "1d8ce29db189191fb55338ee6d0387d82ab59f3d00eac103412d64e0ebd0c588"
   end
 
   resource "qbittorrent-api" do

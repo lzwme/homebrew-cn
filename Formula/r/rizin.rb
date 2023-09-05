@@ -4,16 +4,17 @@ class Rizin < Formula
   url "https://ghproxy.com/https://github.com/rizinorg/rizin/releases/download/v0.6.1/rizin-src-v0.6.1.tar.xz"
   sha256 "760647caf8a78a638a0e040bf7b89c3ed064fabdfeac4fe44ff15d62baac6c91"
   license "LGPL-3.0-only"
+  revision 1
   head "https://github.com/rizinorg/rizin.git", branch: "dev"
 
   bottle do
-    sha256 arm64_ventura:  "d09c0803260afd0be84d54486ad622a2cc7e6cf19a1602b8c2b5124b20160e0d"
-    sha256 arm64_monterey: "84a525bbe108e0f8b2edde68e6579996b2fccb3f3747accfb6b6adae39864fb7"
-    sha256 arm64_big_sur:  "13c7999c3d60a008a3420d7c5091bd6f1cbec5e20aed4b05e2e43ce4f41571d9"
-    sha256 ventura:        "6881398daeb2cf5ebb5b98b1e6ed6d20815871f7e6d66f52a4db1bf72b7e086c"
-    sha256 monterey:       "fc1c704ba466a5fee2f9c482638ea4ade4cc0a1f72a1f5c8f119a9a6a25d56c5"
-    sha256 big_sur:        "6fe774d10ffe33393ea3887d929e1852b2f57e82591017de065b9366c0318556"
-    sha256 x86_64_linux:   "0a87e19462967b7458130f897db7064454b9ee95b5baccee774e6097de739f99"
+    sha256 arm64_ventura:  "fa18e2e8e95c3fbf47637ab8aeee8c968d3f7309c360dceab1cdb425821f006c"
+    sha256 arm64_monterey: "a2a6dad5f6d676d3bb270bf872b16dff8742ad6087c30685c02a64d19eef44c4"
+    sha256 arm64_big_sur:  "f2719040f43665978fbd105786972d755c04b34f00f81ba1478d3b2ab861cdaf"
+    sha256 ventura:        "56f79b6362437028ffda3e2c6b6bcbedce44af5ed727b38e4468b38c53d5d8ff"
+    sha256 monterey:       "04f1cbb0d44ddd34834bb2af4aebabd17cac4bcc285854859224868674eb5bee"
+    sha256 big_sur:        "a3682fc67aeb116fefc9e3029223178de6a3d943260bdc638742d97931a1c90b"
+    sha256 x86_64_linux:   "2fcd6facfca8fa3f6c5f4d7276c6a62a7891873ae531fdce24fbbc549be0b2ed"
   end
 
   depends_on "meson" => :build

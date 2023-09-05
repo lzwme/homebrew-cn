@@ -6,13 +6,14 @@ class Libavif < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "044695408924ba007b0d4ed5c37bdb609506bcdc4e58adde06a3bda6418aebc0"
-    sha256 cellar: :any,                 arm64_monterey: "7ddfcba784b0f96a9ae9e6502bd37c783e16f9f10cc52bc00028e859b2cbfd69"
-    sha256 cellar: :any,                 arm64_big_sur:  "508783fd212b0daa97487d1ba075ffab6cdd35280f20216fe1a565456c570c7c"
-    sha256 cellar: :any,                 ventura:        "b8e5bef8eaee1eebe6365e3f04ae1ce8f537c99482d414c3b606d9f8a26157a6"
-    sha256 cellar: :any,                 monterey:       "713f393dfba18c8d48b9a798775ccb0e7f488038e091a46890c1b6981c78c070"
-    sha256 cellar: :any,                 big_sur:        "3a807baae421db708ef8497c0764ce54f18e7c81ece4604207d734fe291eb6d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0e05c23ac6188951d52c803cc40b76c0e87e999bd082267263f3aba99baa6f9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "aa693b58c72506486ef50575cc41622694f3defbfc0f22cfe70beb6440fd95e2"
+    sha256 cellar: :any,                 arm64_monterey: "d9365bd3d2af26a58a0b97bd38950f4a3552e2db636e94fe979adc4afe862bb5"
+    sha256 cellar: :any,                 arm64_big_sur:  "3d5d27c66520861b3617a5bbeec94fce564c00b7372f5442003b782202b8b51d"
+    sha256 cellar: :any,                 ventura:        "ddcc5741e21a55901035eac578f559d7082fd16ff9e38c0f3071feb448d928e6"
+    sha256 cellar: :any,                 monterey:       "0f2f58c588305b6e29d99b9e789c59a1c72dfb9f34936f6ecefea7db605db4c3"
+    sha256 cellar: :any,                 big_sur:        "cf9e39eadf86c47bac043ea4ce305bd934384ad466ecc862385c7c81b0a3ccd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0306509252db9ce7dedb1801697e4a65f7e8340c668b9c36d8e0ec1f8d17ca1"
   end
 
   depends_on "cmake" => :build

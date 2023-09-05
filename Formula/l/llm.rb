@@ -3,18 +3,18 @@ class Llm < Formula
 
   desc "Access large language models from the command-line"
   homepage "https://llm.datasette.io/"
-  url "https://files.pythonhosted.org/packages/15/8a/e300b7e9865ca41e16198d1e659d7a6ede6e5b5fad2f9c0f69797b78c62f/llm-0.8.1.tar.gz"
-  sha256 "3360b4df917660d59180dcde5748a2b3f5d51a80b82485a93845eb32dba03a23"
+  url "https://files.pythonhosted.org/packages/10/d4/d2e0afafe54d904c848ab24dfbc9e72f459f3a92920bb4c26b39e9490752/llm-0.9.tar.gz"
+  sha256 "a8b60750ea03c9e9cc3cc05ba777711bdc6853c63d366a378431f70e1186126f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8f91abc8c5e7bc01fe61ec64c8ed37e98764f3e88a132e875afbc8f2f448fbc1"
-    sha256 cellar: :any,                 arm64_monterey: "6a5d28324e529ae0a5caa024bb887971ecd3d9aa37df902dddc90803e69029dd"
-    sha256 cellar: :any,                 arm64_big_sur:  "dcf44d27aa8198df6ebaf913b9b8099f627ffccbb2226a6a2ee7c44a53a7ad9b"
-    sha256 cellar: :any,                 ventura:        "5b1076f8ab4c2e1c801ce959b13e3952f4f84b25baa4ac37889d67a3fe66cc50"
-    sha256 cellar: :any,                 monterey:       "e11cf46479bd013096f3567e0c0a93a6b443b36241629ee5f7b4f2bc7a0e7cb9"
-    sha256 cellar: :any,                 big_sur:        "385f981cfb9b2e07765d5cd570c88b33f3b32c5bedc6c68d8d5263df5979e228"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d8a7b9dac0252b808657d42312775026d98e78d57857c61ef4bb5056680a8ba"
+    sha256 cellar: :any,                 arm64_ventura:  "61566a334fa52689ee76ab474ebc2f506e44ae50c84aadb337ea58c4dd060171"
+    sha256 cellar: :any,                 arm64_monterey: "33efe391ef556c4891eae36a7e278b2e4508fa776281582fa9544d417b920119"
+    sha256 cellar: :any,                 arm64_big_sur:  "a12437f1b5db7548122673a91284cae45b4bf1c9842f77e94e9a758417803795"
+    sha256 cellar: :any,                 ventura:        "3a0bf1f2ae61e6aa453d8cfb7a89d6d3552d36a6764ebe5d60447f1694e0e135"
+    sha256 cellar: :any,                 monterey:       "87ffe5667430a13234ae0a87caa906da870f26bf0ea95445208a8361a0aed65b"
+    sha256 cellar: :any,                 big_sur:        "ec1df145cfe106767a256fa05818c1c574365370792acf3a78bee5a22c1bd95e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cfcef264de707a1d8cba5ba14d15ceb0fc5fec4dc982c2644d0873d09b65df60"
   end
 
   depends_on "rust" => :build
@@ -119,6 +119,11 @@ class Llm < Formula
   resource "sqlite-fts4" do
     url "https://files.pythonhosted.org/packages/c2/6d/9dad6c3b433ab8912ace969c66abd595f8e0a2ccccdb73602b1291dbda29/sqlite-fts4-1.0.3.tar.gz"
     sha256 "78b05eeaf6680e9dbed8986bde011e9c086a06cb0c931b3cf7da94c214e8930c"
+  end
+
+  resource "sqlite-migrate" do
+    url "https://files.pythonhosted.org/packages/9e/33/0b0fc2ac04f91b0cde409ec1a177753a2ff46a7f211116d511dde2e6d2a2/sqlite-migrate-0.1a2.tar.gz"
+    sha256 "c33b40a9edd35b4490e095f55cf59e03828d25c8b97377cd8a1f7b72694fc111"
   end
 
   resource "sqlite-utils" do
