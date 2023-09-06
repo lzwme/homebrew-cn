@@ -9,16 +9,18 @@ class Todoman < Formula
   head "https://github.com/pimutils/todoman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2afd35c248a430264803ea0d0f4cf94500134382f86a58e39c6aa2660c45504b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "04f7d5aeb886757a0bd90b84d02cb1374f861fb848197aa5dc7f3efec67cf693"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c63d155de0d9f3fad2374e2dddd1e8bb79410195c63043136bc21c4f7fa62694"
-    sha256 cellar: :any_skip_relocation, ventura:        "c837cedc19d8f4660125994ffe360440e8d65006fb537c8b95355cd45e54670e"
-    sha256 cellar: :any_skip_relocation, monterey:       "7308c702f84a0b736809f63e4b1c11057338425fc68239427c7497c600c8d2e6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "12de74b0b3d6d38e6d122a2112b8471a1427e11e26d42bdda137e51bcea8c5d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b115f53e3000aa398e06faddb35229d7a57eea4687c6ad922fb4ae15c7dfbd11"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "249b3ce30a69c54004e47f6b19fd9134bdae268d810541a159e46a1897302444"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c4684afd0c210682e18b315df03e15f5cb394cf0350b9e406e6c8f8da91d3072"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f050be3cebc464a42026921e4deec5c13c00edf539458f396c283d2e1c4655ba"
+    sha256 cellar: :any_skip_relocation, ventura:        "4237c8f8db82372c68303ffc669ff4805749e5d39e1c8ce0ffde2ef24ed70bad"
+    sha256 cellar: :any_skip_relocation, monterey:       "083b667953cb1c519e861f2d4bfe357e49c1c8f28ac5b2be93f00eeebe458221"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c0c2706ec89d18a213f45f038268dfe161802d6a8a1100a8ab048f5b04c14c8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10b2dac184cb3b0967d3c28c44d4ea9a932dabf88ccde7cd5e52db85ef637367"
   end
 
   depends_on "jq" # Needed for ZSH completions.
+  depends_on "python-pytz"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -57,11 +59,6 @@ class Todoman < Formula
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
-  end
-
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/5e/32/12032aa8c673ee16707a9b6cdda2b09c0089131f35af55d443b6a9c69c1d/pytz-2023.3.tar.gz"
-    sha256 "1d8ce29db189191fb55338ee6d0387d82ab59f3d00eac103412d64e0ebd0c588"
   end
 
   resource "pyxdg" do

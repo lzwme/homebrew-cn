@@ -3,18 +3,18 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/c0/a5/f32e6f6b69d126acf88c3655e3148492a61c3d2d6b5b1c976fb5c10a5945/esphome-2023.8.2.tar.gz"
-  sha256 "ba24394167daa454237064de6c2f91c09e33cbc5f9d38dc9bd2936ef82f9a798"
+  url "https://files.pythonhosted.org/packages/99/0f/7cb7c2049ec6705dc021ea06444e13fe43a268ace5c30041dc84fbe0af86/esphome-2023.8.3.tar.gz"
+  sha256 "f0ada0daf124d31f6436d396ba888e18359f137097d82b3e0c02ffcf32c061fa"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b8bff18c430e598a97f04e399b7b65e20409e9162a3fe1880fe020246e8a3370"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "db132d347f33551f06d6e0cfdf4275817a3749f3cfc3ffea5f41063b212d41cf"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ab00724e9545434604b1ef958cd2a336f9037c61a7b206b56fbafa992bba0af8"
-    sha256 cellar: :any_skip_relocation, ventura:        "e17a5733824b098fc872bed44d1c329bcd0e743887132e3fdfa346b41c51b514"
-    sha256 cellar: :any_skip_relocation, monterey:       "39a195b0e642a0e0669b8ae16c2a3f033ba2dde450cb18b2b5376c1262a880d9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2f70c412b3b140d770528a0efc449a15c76550e1d6430e526b526df07954deef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4ec3f2e89ec43bef4e61f60edbd011e0a3872d3ccb84c0523344b684306cf40"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e1d0b15e4799ee2312951ef52c311e60e0b877c73689aeb34fccf0d419069d19"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3f96d28251a4381bf2de7ba530a4e50605f0d3af0e9522a60c604f4ad4509108"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6d1f67472efbbbc19e0ed58faa31ea67908173fc77715416d33315316e528cc6"
+    sha256 cellar: :any_skip_relocation, ventura:        "c30cf05db0be11c907bdb0ddf2b60c0cca1fa1bac7a63371a4dcaedea88650c3"
+    sha256 cellar: :any_skip_relocation, monterey:       "dea36e78951bfce378988f4cd2934d83b30b9a59fa809ad7547df40e45d440a1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e6914bb47babe0d55f79439d63cd1d2e91ced862bb4153037fb9f021788bad6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e71b64bf4d77772354398c67a0a3997e2764c83532ce644f98cf6db2aa207dc"
   end
 
   depends_on "cffi"
@@ -43,8 +43,8 @@ class Esphome < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/28/99/2dfd53fd55ce9838e6ff2d4dac20ce58263798bd1a0dbe18b3a9af3fcfce/anyio-3.7.1.tar.gz"
-    sha256 "44a3c9aba0f5defa43261a8b3efb97891f2bd7d804e0e1f56419befa1adfc780"
+    url "https://files.pythonhosted.org/packages/74/17/5075225ee1abbb93cd7fc30a2d343c6a3f5f71cf388f14768a7a38256581/anyio-4.0.0.tar.gz"
+    sha256 "f7ed51751b2c2add651e5747c891b47e26d2a21be5d32d9311dfe9692f3e5d7a"
   end
 
   resource "async-timeout" do
@@ -53,13 +53,13 @@ class Esphome < Formula
   end
 
   resource "bitarray" do
-    url "https://files.pythonhosted.org/packages/62/de/40c5dda9e95144943dae72f475c71294a3cc36440b255df4b53b867f0bac/bitarray-2.8.0.tar.gz"
-    sha256 "cd69a926a3363e25e94a64408303283c59085be96d71524bdbe6bfc8da2e34e0"
+    url "https://files.pythonhosted.org/packages/2b/22/b33fdaea9cb2de8a5b00b4b57bc91edef10c7e4aebec1f5c6235d501ba91/bitarray-2.8.1.tar.gz"
+    sha256 "e68ceef35a88625d16169550768fcc8d3894913e363c24ecbf6b8c07eb02c8f3"
   end
 
   resource "bitstring" do
-    url "https://files.pythonhosted.org/packages/20/4b/852dcabc994aeb4a112f9decd9600c610c59b07e530c1c07aef77c9a1e26/bitstring-4.1.0.tar.gz"
-    sha256 "b1672fb31721dbb6c809e76a3a19ac76a608e1f8fcacce9349ae2b72b1917b20"
+    url "https://files.pythonhosted.org/packages/4a/a5/4e6c8ec7cadd227ceb387b334a067ee19386a09841b527e5f5bc1d9455d9/bitstring-4.1.1.tar.gz"
+    sha256 "a9c97fdf9fe38f27ea0ac2b4cf2a3f5bce5ccc23b863082582b9f48b22274528"
   end
 
   resource "bottle" do

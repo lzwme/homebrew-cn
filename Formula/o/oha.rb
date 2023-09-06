@@ -1,19 +1,19 @@
 class Oha < Formula
   desc "HTTP load generator, inspired by rakyll/hey with tui animation"
   homepage "https://github.com/hatoo/oha/"
-  url "https://ghproxy.com/https://github.com/hatoo/oha/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "c7ab7cd84dacbdd42f6917c23aa2cba28eb016a38d29a62782b0fb0956b1f201"
+  url "https://ghproxy.com/https://github.com/hatoo/oha/archive/refs/tags/v0.6.3.tar.gz"
+  sha256 "d979355a7dbd858c9188cd2cb7d90b931e3a73d471cdb1abacc7468565888dd6"
   license "MIT"
   head "https://github.com/hatoo/oha.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc201d7f8f6091ef39c4c41f2b38f76a234ccf7d382df7a47dbe93404e3d6e2e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "47a1321369f5be51da5c7bbcc650702f8940b06b7f9b1a815513cac55eaacae6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "07c3c25aa1d79583f142365447ef5db0ed2384c27937e2c8ebdb03d3bd8b2630"
-    sha256 cellar: :any_skip_relocation, ventura:        "06766e0563f28cd1f2d5095440e80edc5f37a09650e8339d1cd2a6871082b628"
-    sha256 cellar: :any_skip_relocation, monterey:       "dfebb1cedc6ffdb716c5bdff1e90d625d71f1a0cb6c3acfab5f8925c2f16520e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b65b11dc039b405b52a1607e7af423fc64d1b90db62b827204cf5a435b1eb901"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8ddf41107339a626d3b392a192c9f1ccab9c068d9f2f6c9ecc0c33297c685c2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2f65ae0a7fd8aaa72581cf9302d15dce16a41638864d96933de0ef5be1920a59"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "554067cb1ad250110b9653c1891b2053cfcab3ef690db32e708943cde953e99f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "622129f42793e50c3f29683671eca1bf30477947cb2895f929f2db0ab79c0dc9"
+    sha256 cellar: :any_skip_relocation, ventura:        "5a477b1eaa95f885d932186997a0d6017411dc4575be0de1441deab6257e6a77"
+    sha256 cellar: :any_skip_relocation, monterey:       "54dc92a6616473afc71fcd0d51fd8a98258b9f7c082b95782430eaa15cac91ed"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0994894d64caa5cc751642172a5640e1688f6a42c3ae82080b6aa8ab491c9857"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d17d3ad528b0b8bd3836fecaac8ea87d122fb7f4a88e9b47819eb3d1ce59eba"
   end
 
   depends_on "rust" => :build

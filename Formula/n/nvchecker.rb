@@ -9,23 +9,19 @@ class Nvchecker < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "47288b1fa808ce67e7b7fe0063784ed04add719e1387ab780191bce931a2aa21"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c1bffe2dc457ed6797fc8de6e6c116762e8b1013718f45dcc517da6c7f02d5c6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "641aea8c3cb378d81b4ecb08317e20813d9ce1698ac3e54b712cc6dbd69744fd"
-    sha256 cellar: :any_skip_relocation, ventura:        "7530ac266b3423319cd11f41681e0aff6ade71ab241e75c6ab04d7a13ca868bd"
-    sha256 cellar: :any_skip_relocation, monterey:       "07f9f6e6255f1cfb8a75abbbd5b61e8f6895715e2d125ed57f8e3f790b057310"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4a5dacaa160b2d7b9aeb242fe8e54d505780d9849d3ffd1ed92ef7d4aebeacc5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "608784a3a5b015876a0480013b6e9de9a36c6ddb5eb829dbdeac1d52bdc25688"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "079e0d89e2de1eb842343d8b17f1123ea660bc7546bf8de3e1a1daae766532b4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "08ed62366a642353aa53f5ca4f9c7f25a6571c88df44f5eaa9c49e9502be414a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1a207081ca818d3612e5fd73dc2e035360b62b5a02b6e4181feddad525c00a82"
+    sha256 cellar: :any_skip_relocation, ventura:        "d0b1350f7fa05d92ef511673afe50671d3b1264f24baa3ab7d77240d24a51c90"
+    sha256 cellar: :any_skip_relocation, monterey:       "7d9bddb089cdb973d189fc3e62cf67f33094080acce7bb0daec3630b245d2991"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6460ce5f228a78ff2edc4072823d0fc6a6a0d6945711a7c2415ac81ee6358e06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "571577e757d6ae1a43737a68c0e09d7474482cd26960d7f2d1c5d5ceafa15e6a"
   end
 
   depends_on "jq" => :test
+  depends_on "python-pycurl"
   depends_on "python@3.11"
-
-  uses_from_macos "curl"
-
-  on_linux do
-    depends_on "openssl@3"
-  end
 
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
@@ -35,11 +31,6 @@ class Nvchecker < Formula
   resource "platformdirs" do
     url "https://files.pythonhosted.org/packages/dc/99/c922839819f5d00d78b3a1057b5ceee3123c69b2216e776ddcb5a4c265ff/platformdirs-3.10.0.tar.gz"
     sha256 "b45696dab2d7cc691a3226759c0d3b00c47c8b6e293d96f6436f733303f77f6d"
-  end
-
-  resource "pycurl" do
-    url "https://files.pythonhosted.org/packages/a8/af/24d3acfa76b867dbd8f1166853c18eefc890fc5da03a48672b38ea77ddae/pycurl-7.45.2.tar.gz"
-    sha256 "5730590be0271364a5bddd9e245c9cc0fb710c4cbacbdd95264a3122d23224ca"
   end
 
   resource "structlog" do
