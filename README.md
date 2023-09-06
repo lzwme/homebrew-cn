@@ -4,22 +4,6 @@
 
 本仓库主要从多个开源仓库同步更新，保留安装文件在 Github release 等外网下载慢的应用，并将从 `github release` 下载的应用地址修改为基于 `ghporxy.com` 的代理下载地址。
 
-## Usage
-
-```bash
-# 添加当前仓库源
-brew tap lzwme/cn --custom-remote https://ghproxy.com/github.com/lzwme/homebrew-cn
-
-# 搜索某个应用
-brew search switchhosts
-
-# 从 lzwme/homebrew-cn 仓库安装应用
-brew install lzwme/cn/switchhosts
-
-# 也可以一次性从 rb 应用文件安装 (后续若有更新也只能手动检查判断)
-brew install https://ghproxy.com/github.com/lzwme/homebrew-cn/blob/main/Formula/<formula>.rb
-```
-
 ## 国内 Macbook 安装与配置 Homebrew 参考
 
 执行如下命令进行安装和配置：
@@ -45,6 +29,22 @@ brew tap lzwme/cn --custom-remote https://ghproxy.com/github.com/lzwme/homebrew-
 
 # 更新
 brew update
+```
+
+## Usage
+
+```bash
+# 添加当前仓库源
+brew tap lzwme/cn --custom-remote https://ghproxy.com/github.com/lzwme/homebrew-cn
+
+# 搜索某个应用
+brew search switchhosts
+
+# 从 lzwme/homebrew-cn 仓库安装应用
+brew install lzwme/cn/switchhosts
+
+# 也可以一次性从 rb 应用文件安装 (后续若有更新也只能手动检查判断)
+brew install https://ghproxy.com/github.com/lzwme/homebrew-cn/blob/main/Formula/<formula>.rb
 ```
 
 ## Sync From
