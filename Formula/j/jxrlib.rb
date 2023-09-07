@@ -5,16 +5,16 @@ class Jxrlib < Formula
   version "1.2_git20170615-f752187.orig"
   sha256 "3e3c9d3752b0bbf018ed9ce01b43dcd4be866521dc2370dc9221520b5bd440d4"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "ad134074333a2b08fb5381ebb7d050451d1a5d632dff810feec5456e15a82a93"
-    sha256 cellar: :any,                 arm64_monterey: "f343ef9670df408cb127fd016246695f5a123b3e71a66cdade3692bd5e5ced30"
-    sha256 cellar: :any,                 arm64_big_sur:  "5a50f665f18598f468eb24546bb968e008e3ef4fe7561625bf5e4ca1973c5080"
-    sha256 cellar: :any,                 ventura:        "22590456157a808cc093e7c9f8a56f244413cc4a88d95e43756394572591508a"
-    sha256 cellar: :any,                 monterey:       "b755f19b7ff8de43480760bbe9dc58f974005e84d7974c8e03ded262ca80e91e"
-    sha256 cellar: :any,                 big_sur:        "19c64d9570f903b1e5a08f5cb78d9c1b895acd5614e09073389f9fc5558fddd3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ceb2e8f381a0d231d0f014d85dfad4e690ff5f01bdc599a4ac415a72adaf42e"
+    sha256 cellar: :any,                 arm64_ventura:  "aec102465350547c4a3437747738433c8e16dcda9ce615120335e3f881682e44"
+    sha256 cellar: :any,                 arm64_monterey: "58453b7b2a1705876b9e5677803fa5186db134fc89a1d580e771e35cbcfc2601"
+    sha256 cellar: :any,                 arm64_big_sur:  "9b6f4241a43f2311bddfc1279cd05ce6ac81ab4f735b57898cb1795e99c54230"
+    sha256 cellar: :any,                 ventura:        "4a1ac556c9424cef5bdb2f64154e63f4ca956598f6178b99b0ff6f58859fcfee"
+    sha256 cellar: :any,                 monterey:       "d2388230a8788594452d1b6c301821a73b33dfa00643abe30cf660ee12fd2848"
+    sha256 cellar: :any,                 big_sur:        "d0b02e434b4baae0aeb64e769d5adacb5c0dd4597758958c8aaafa54ea1585c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4e90e6ae7c545f08907c3bc4961348447f6a77d6cc182c35b0f526dd223fd3b"
   end
 
   depends_on "cmake" => :build

@@ -3,30 +3,25 @@ class HomeassistantCli < Formula
 
   desc "Command-line utility for Home Assistant"
   homepage "https://github.com/home-assistant-ecosystem/home-assistant-cli"
-  # 0.9.6 artifact is missing in pypi, https://github.com/home-assistant-ecosystem/home-assistant-cli/issues/393
-  url "https://ghproxy.com/https://github.com/home-assistant-ecosystem/home-assistant-cli/archive/refs/tags/0.9.6.tar.gz"
-  sha256 "f971ac78a74922f4555ee7f77e327d8008819a8a83db1ad8037c0601e74a40ba"
+  url "https://files.pythonhosted.org/packages/b2/98/fd5e7beb7cc135f80d78b32c85ac15f3ba9219063b794b1d184fb07fd84b/homeassistant-cli-0.9.6.tar.gz"
+  sha256 "9b9b705eaf6ee40dc6a732f3458c78ba37b62b7330bc17b132e6fee385ec8606"
   license "Apache-2.0"
   revision 3
   head "https://github.com/home-assistant-ecosystem/home-assistant-cli.git", branch: "dev"
 
-  livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c34ceb4b17416eaa1bb7742339928a383332024c591ea14156b29e5d8604c46"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "845a3c366e987314aa34343948c18e46535264407016e054f7db5d558e4a9a5f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "42117719d98336a56af2cd5c65f78b92f01e9116b46e4731a0ef746927eb0893"
-    sha256 cellar: :any_skip_relocation, ventura:        "1fd19b518afcf632e281723ff866e92580928a5956b4943addc6d3a87d13e984"
-    sha256 cellar: :any_skip_relocation, monterey:       "1e8de6b6f101be63e0a4dbd14b6314343553078af81e2f164d15459781e7e08a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3437b64911e6c4b65822e353912d49971014ee73b8b99931c9a3dbc78279a034"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1892def570f9fb4174a9d19c81e928e50dac7259542def9e37bdb9fd5aee014f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aa3b66a08ae9996863ed3f6d26afc62d24f877abe48928a40c6116e316957a95"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f97b0da614f3399a0ddfe3a0085f54a6d459d4f71f5ee7465858a9a47f7088f1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "18c394ed2f4f11d4be008774d0c7ecaf663358810bd1ba22225ca24b2dc26596"
+    sha256 cellar: :any_skip_relocation, ventura:        "4196b504da31a0957915a1b2227e0a671c43472fa8046a45207c08b161c7e6aa"
+    sha256 cellar: :any_skip_relocation, monterey:       "8a817fd64bde83eb39b48b9433cf55bb7fe257f1dbc344d216f2e73b60afb8e3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a7e160a421211774f2d4d6c3270aead44f5740343a1e5fdae7105ff6439ffe17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "84292248ed95210656c82a41d84bee1ac3b1149874f5a3f0c8c428ef2efdc1a4"
   end
 
   depends_on "python-certifi"
+  depends_on "python-pytz"
   depends_on "python-tabulate"
   depends_on "python@3.11"
   depends_on "six"
@@ -124,11 +119,6 @@ class HomeassistantCli < Formula
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
-  end
-
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/5e/32/12032aa8c673ee16707a9b6cdda2b09c0089131f35af55d443b6a9c69c1d/pytz-2023.3.tar.gz"
-    sha256 "1d8ce29db189191fb55338ee6d0387d82ab59f3d00eac103412d64e0ebd0c588"
   end
 
   resource "regex" do

@@ -5,7 +5,7 @@ class Sapling < Formula
   version "0.2.20230523-092610-f12b7eee"
   sha256 "57a04327052f900d95d0dd3800d8b13a411b08222307bb141109afca1d1d0eaf"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/facebook/sapling.git", branch: "main"
 
   livecheck do
@@ -15,14 +15,13 @@ class Sapling < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "9719427c4a27ed33aec85a6076a1b76480d2b65d52188e9bfb861baf724a55f4"
-    sha256 cellar: :any,                 arm64_monterey: "bbb5e51e950d4dbd549cc4a3fb91028e2895bb7e5edeb8b036dfc0fa99e5dba5"
-    sha256 cellar: :any,                 arm64_big_sur:  "22cfc7f1045aa2172b550e311f98b82809117e6d8b422441984c557362dac5ff"
-    sha256 cellar: :any,                 ventura:        "492fe295bee2ac71fb20385895699daf83467be6a6d0bfaeaf8504bb2d158da0"
-    sha256 cellar: :any,                 monterey:       "2fd38d0007761d0fa39d388a4accf18d29d55a8fe83f7a7f4bb11df3558d436d"
-    sha256 cellar: :any,                 big_sur:        "63ed71121cbf672e38c4f6f16babb11f2198238393103d629a4383a98824c6a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3967a9b8b632d99ff9aee2df754425071103432131d9e47ee2871bbfac8f2bad"
+    sha256 cellar: :any,                 arm64_ventura:  "13d796b6ab41617dbfe6d0f0198220a9773738a1150842ea410fbcdaf4ed3036"
+    sha256 cellar: :any,                 arm64_monterey: "21bf1046985e20082d31d9f3112b05d5adff667d89f2c22e83b85a59236122cd"
+    sha256 cellar: :any,                 arm64_big_sur:  "20dedd0b47ebd210b69c024c45369b2f88c1d0495c5f7fefc3782f1fa4f1db43"
+    sha256 cellar: :any,                 ventura:        "597f06474069628d5f47ff10523410b131454351ed0b78d855e4b49ecb170301"
+    sha256 cellar: :any,                 monterey:       "ea66d7d774293cb46710839063c268c2a98e7557df0729bb32f019fbf5d7099e"
+    sha256 cellar: :any,                 big_sur:        "9f1afc4de2980f9c13885a02a153d89052a3d100afb5838d00e50b9a79130659"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0e6c07133d5bff4dc9f9b7f5dc4fb5e3e6174337524773336570cdc1fce7f0b"
   end
 
   depends_on "cmake" => :build

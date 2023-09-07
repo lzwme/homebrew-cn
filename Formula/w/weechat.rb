@@ -1,19 +1,19 @@
 class Weechat < Formula
   desc "Extensible IRC client"
   homepage "https://www.weechat.org"
-  url "https://weechat.org/files/src/weechat-3.8.tar.xz"
-  sha256 "f7cb65c200f8c090c56f2cf98c0b184051e516e5f7099a4308cacf86f174bf28"
+  url "https://weechat.org/files/src/weechat-4.0.4.tar.xz"
+  sha256 "ae5f4979b5ada0339b84e741d5f7e481ee91e3fecd40a09907b64751829eb6f6"
   license "GPL-3.0-or-later"
   head "https://github.com/weechat/weechat.git", branch: "master"
 
   bottle do
-    sha256 arm64_ventura:  "81dbe3808e48d498b71187fac4d3405957bdfdd1b01f2273b21c9f5b929947af"
-    sha256 arm64_monterey: "951d48b9710833aad49e12e9d2a997a5a28eb130c5c80af02a8c36e905fb6a9c"
-    sha256 arm64_big_sur:  "00ae684fae58358de7ed78b190287e6444915a314a95ed1b294a13afe0e14c24"
-    sha256 ventura:        "fa0bde3a8c097ca235321e51acf6c506bd226fdad9c784a974ec94040429eaff"
-    sha256 monterey:       "1b0516b0c52f70bd4643739a43b68eaa003e1e4e7f6f8e9cc6aeb75720f23c83"
-    sha256 big_sur:        "1b6fb83746f34664b1e4a7fee449b0a564acba1e886dde587b40074722df9388"
-    sha256 x86_64_linux:   "1a4c2fd9d2a1e4ba4bc5d083fcaa78cbe93a3e9dfbeb4356198fdc85db213794"
+    sha256 arm64_ventura:  "9c218ef0fbab62664257aebd1d02d97d87bf3bf7d1235065272beed54c578a3c"
+    sha256 arm64_monterey: "3dc6b1b4b7b6050f35ef83fdc21ab56cb8414fc75a1f1c4e87182543e5dff57b"
+    sha256 arm64_big_sur:  "6ad0d5f7f5797892e256a6af3f7d231ba605a39f659e296321587fef4906b99b"
+    sha256 ventura:        "e2ae47ee02a1dee06a593d6b1717fb3de5e2b6f60d1a71df209044f7b7e37faf"
+    sha256 monterey:       "cdf2e397a30a62828e6cc2ac12b09b4b07aa83f10b953e4ef948ff53b9e82fa5"
+    sha256 big_sur:        "0343160e93ff7a05b39f640fb31d7b49808ec3f2d690ecec7b2945ea61f82473"
+    sha256 x86_64_linux:   "2d36f86333dd1f4d86a2bfce4b5c622cac1510d0a15aac4c57bf9b059119d146"
   end
 
   depends_on "asciidoctor" => :build
@@ -47,8 +47,10 @@ class Weechat < Formula
       -DENABLE_PHP=OFF
     ]
 
-    # Fix system gem on Mojave
-    ENV["SDKROOT"] = ENV["HOMEBREW_SDKROOT"]
+    if OS.linux?
+      args << "-DTCL_INCLUDE_PATH=#{Formula["tcl-tk"].opt_include}/tcl-tk"
+      args << "-DTK_INCLUDE_PATH=#{Formula["tcl-tk"].opt_include}/tcl-tk"
+    end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

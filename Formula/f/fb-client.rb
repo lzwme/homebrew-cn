@@ -15,26 +15,21 @@ class FbClient < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "537eda37cb3bd26c4873ce83bdb9dbc8c41caeb392d2c0ade6507e1c44695c76"
-    sha256 cellar: :any,                 arm64_monterey: "320fa43c7cabdf9f3014db7ffc0145ecf187b5e4bf915202ba74e0298eaf6590"
-    sha256 cellar: :any,                 arm64_big_sur:  "de361b1fbff71a9042ae403b5e4305ef85d09b4f4f546e3ab1184954150c3f45"
-    sha256 cellar: :any,                 ventura:        "7634d244c93543f5ab6a05e4f730ba67ee79917695b324e9d4b7bfa77819fcb4"
-    sha256 cellar: :any,                 monterey:       "b2e427fce34347a147339ca1475d88c276c5200ce3a20592ba84abe2d56e9f64"
-    sha256 cellar: :any,                 big_sur:        "3d4d6131f828be8e190b5c41a07fb43fd136c638198575f73fa42c4fd4782772"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae2fb8b3cbe02544d90f47ec3cfdccfe6e524df67285a9969ff7356f61ae85a6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2cd645e0b6c1a1e57ecf611b1271f3907b53d7eb94e76e35e3f1160741c1694a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "05e1f964c6fb35777e0c133a165f0849e784ee840b35b89bdb1f2abc4728b892"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e411d7e27f3ef04aa001b2eeab1f8def46edf7352cc36572664df6c28c50834a"
+    sha256 cellar: :any_skip_relocation, ventura:        "4c8f0b1f62e2a87e96deb9dfb48afdc6558e44ea472ec25be0a00c0f62941a76"
+    sha256 cellar: :any_skip_relocation, monterey:       "a2a27e170becfd88043a68277fc103802298d9b9d421cdfd9ef549faf30bd82f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b7830abf812f263afd129397682feec2d8a103dfba08eff24c53da18d7a97f7c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d382d9e24b1a0a00512191c171fc11e7af8b9d48e3aee43e289bfd313bfe193"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "curl"
-  depends_on "openssl@3"
+  depends_on "python-pycurl"
   depends_on "python@3.11"
 
   conflicts_with "spotbugs", because: "both install a `fb` binary"
-
-  resource "pycurl" do
-    url "https://files.pythonhosted.org/packages/09/ca/0b6da1d0f391acb8991ac6fdf8823ed9cf4c19680d4f378ab1727f90bd5c/pycurl-7.45.1.tar.gz"
-    sha256 "a863ad18ff478f5545924057887cdae422e1b2746e41674615f687498ea5b88a"
-  end
 
   resource "pyxdg" do
     url "https://files.pythonhosted.org/packages/b0/25/7998cd2dec731acbd438fbf91bc619603fc5188de0a9a17699a781840452/pyxdg-0.28.tar.gz"
@@ -42,14 +37,8 @@ class FbClient < Formula
   end
 
   def install
-    # avoid pycurl error about compile-time and link-time curl version mismatch
-    ENV.delete "SDKROOT"
-
     python3 = "python3.11"
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor"/Language::Python.site_packages(python3)
-
-    # avoid error about libcurl link-time and compile-time ssl backend mismatch
-    ENV["PYCURL_CURL_CONFIG"] = Formula["curl"].opt_bin/"curl-config"
     resources.each do |r|
       r.stage do
         system python3, "-m", "pip", "install", *std_pip_args(prefix: libexec/"vendor"), "."

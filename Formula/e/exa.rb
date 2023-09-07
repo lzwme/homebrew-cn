@@ -13,14 +13,18 @@ class Exa < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f6ffddb1955d59bd6bec1eef0ca215beaa97f21ed1c79f787ad9bc9d62a917fd"
-    sha256 cellar: :any,                 arm64_monterey: "c45e4ab5bca902c1a1c404586048915a88b75485760c4b01569818e344a871ac"
-    sha256 cellar: :any,                 arm64_big_sur:  "8f42c8fb57379c0f79ad43d226aa4982ee4a64196052db03b9b758530b5bdc27"
-    sha256 cellar: :any,                 ventura:        "c9df09eff6bd471405a0fcdf387e9f3a24bfae28e9cf1493578ae7232322ab33"
-    sha256 cellar: :any,                 monterey:       "dd7d5ae25d2db208f28b52d1166a1ebaafc5f2dbcc255fda4b4154c58eae1c88"
-    sha256 cellar: :any,                 big_sur:        "ef0c0717451182f796a0725b849cc22f2d647c547d2fdbeb68974d9e3336e0f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f246ae588fc60262256922e351c4d6df6bac9bc5bd475accf33103912288518"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "1fbc96b6cc8e79125e95d083250528237b558c80e84b658f1936d933d64d1b50"
+    sha256 cellar: :any,                 arm64_monterey: "eeeb2902af9bf5465d036b8fdab6288d5764d0d9b940e88de54bc196b39f699b"
+    sha256 cellar: :any,                 arm64_big_sur:  "bc4619504bbc74c4372db9708b683821f81da86fa9a105d29120557ef5366bdb"
+    sha256 cellar: :any,                 ventura:        "d6737d9f4980f0e085314e3494ebc03ac433baf1fffd936faac33e0a2af7c5c6"
+    sha256 cellar: :any,                 monterey:       "fe91256952b78220dfe0f26c7b73e81533d0d2c1bc9440383c4db39be0581cd9"
+    sha256 cellar: :any,                 big_sur:        "0e311b4464335682e78e141bebf3d44b4428aa4a96c2b49c354b6d0cfbe4a24a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d05214f3c9390661f6b3357c3053fbab35f547a31a1a4e6cb9e8340dc655eb1"
   end
+
+  # https://github.com/ogham/exa/commit/fb05c421ae98e076989eb6e8b1bcf42c07c1d0fe
+  deprecate! date: "2023-09-05", because: :unmaintained
 
   depends_on "pandoc" => :build
   depends_on "pkg-config" => :build

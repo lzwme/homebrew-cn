@@ -5,6 +5,7 @@ class OpenjdkAT8 < Formula
   version "1.8.0-382"
   sha256 "a000ec82e594ccfe46ac1a4aa3d7399532aa53875042f22f16eae9367c4b20eb"
   license "GPL-2.0-only"
+  revision 1
 
   livecheck do
     url :stable
@@ -15,11 +16,10 @@ class OpenjdkAT8 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 ventura:      "383d65b2682ab84a46d1281978b26e5b497bcdecf58ebe64e7baea18fdb56185"
-    sha256 cellar: :any,                 monterey:     "35d22670e1816043d11b7d1d6b128e16bdedd67b3f3df102a95be770a3a92ffe"
-    sha256 cellar: :any,                 big_sur:      "1b2fce9d31d5fbf545ebed95805a404305824895b9e107885bc5c036b624d289"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "017e14ded746eaa3717a0584dcb815a490eeb26cff50dbfed6c460642a57e12c"
+    sha256 cellar: :any,                 ventura:      "ace452ef3b9f4c56bde6ff41c6784e0f866661df99e17aabaf68d85bcc53b03a"
+    sha256 cellar: :any,                 monterey:     "41202240ac3c899dea34407fd6678a4cc00426528371a8bcefe7660445599693"
+    sha256 cellar: :any,                 big_sur:      "17fb977f50c91f0bd61ce995473dab0fdb954687f59ac7d27427186f06c622aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "db2a5e233fb3194a8eac218c137cd81dfb38dd6d7a1b6bf87568864cda195a15"
   end
 
   keg_only :versioned_formula

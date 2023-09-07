@@ -1,21 +1,34 @@
 class Waffle < Formula
   desc "C library for selecting an OpenGL API and window system at runtime"
   homepage "https://waffle.freedesktop.org/"
-  url "https://waffle.freedesktop.org/files/release/waffle-1.7.2/waffle-1.7.2.tar.xz"
-  sha256 "f676195cfea58cc75ef2441c5616b2f1d5565a7d371a6aa655aff3cc67c7c2c9"
   license "BSD-2-Clause"
+  revision 1
   head "https://gitlab.freedesktop.org/mesa/waffle.git", branch: "master"
 
-  bottle do
-    sha256 cellar: :any,                 arm64_monterey: "c49b293a55d1fc03a49c27f2932fedab240aaae603bf6de8c713a3f4472575b5"
-    sha256 cellar: :any,                 arm64_big_sur:  "44e6ed255b8ddafc5572f25b1f65cc59477e2961176eda549aa558e54a6b44f6"
-    sha256 cellar: :any,                 monterey:       "2f6bb76c9f4c50e79c627b6e2c2e954f128df89ff86ac3bda0a9007948290ae1"
-    sha256 cellar: :any,                 big_sur:        "9753062a77bcff11767245914b40ba773844a58f0991cb0487c8b76d07a34cec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d8a1781ff86d13b723a635387f6a47c67c2133e0a786ada9e4b4233dedcdd19"
+  stable do
+    url "https://waffle.freedesktop.org/files/release/waffle-1.7.2/waffle-1.7.2.tar.xz"
+    sha256 "f676195cfea58cc75ef2441c5616b2f1d5565a7d371a6aa655aff3cc67c7c2c9"
+
+    # https://gitlab.freedesktop.org/mesa/waffle/-/merge_requests/128
+    patch do
+      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/bce1f755b129aff34c21236bfa3b915f08b7246f/waffle/meson-fix-macOS-typo.patch"
+      sha256 "a072865ad22a4828e92b0e945d185feacd2596cd7d0e09828e5fb954e3b453d9"
+    end
   end
 
-  depends_on "cmake" => :build
+  bottle do
+    sha256 cellar: :any, arm64_ventura:  "721f578546fef947d5988c423d62edbf5ca4df91bf23132edd0a3dba96e415f3"
+    sha256 cellar: :any, arm64_monterey: "bd5edd13379bac6277403de70afc6a513ab780f0aaf19ee40c0e56487a1fb7b4"
+    sha256 cellar: :any, arm64_big_sur:  "3fdbf3b04577f26ecc7b15bb75ccb973157a3aea16e76b604627c215e4b79fa4"
+    sha256 cellar: :any, ventura:        "88d13319655ba24a51c7de5342d3e01a90ec5e74abd415f2d5a6ac5f5d601ff6"
+    sha256 cellar: :any, monterey:       "9675280d92c77e188cf93c766040a4f713a9e387817183c3cc646dd581a876a4"
+    sha256 cellar: :any, big_sur:        "cfda02466d84027d572e6c524bda6041d9f3e401f5ff8a7994cdffdaca0be1d8"
+    sha256               x86_64_linux:   "ef964770f31d2fdae40b23efc0b3b1c1fffdfa8430eb125adf9a9d8c805f0bb1"
+  end
+
   depends_on "docbook-xsl" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
 
   uses_from_macos "libxslt" => :build
@@ -34,17 +47,16 @@ class Waffle < Formula
     # error: unknown type name 'u_char'; did you mean 'char'?
     ENV.append_to_cflags "-D_DARWIN_C_SOURCE" if OS.mac?
 
-    args = std_cmake_args + %w[
-      -Dwaffle_build_examples=1
-      -Dwaffle_build_htmldocs=1
-      -Dwaffle_build_manpages=1
+    args = %w[
+      -Dbuild-examples=true
+      -Dbuild-htmldocs=true
+      -Dbuild-manpages=true
     ]
 
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
-    end
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
@@ -58,6 +70,7 @@ class Waffle < Formula
       inreplace "Makefile.example", "$(LDFLAGS) -o simple-x11-egl simple-x11-egl.c",
                 "simple-x11-egl.c $(LDFLAGS) -o simple-x11-egl"
     end
+    ENV.append_to_cflags "-D_DARWIN_C_SOURCE" if OS.mac?
     system "make", "-f", "Makefile.example"
   end
 end

@@ -6,7 +6,7 @@ class Rtmpdump < Formula
   version "2.4-20151223"
   sha256 "5c032f5c8cc2937eb55a81a94effdfed3b0a0304b6376147b86f951e225e3ab5"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 2
+  revision 3
   head "https://git.ffmpeg.org/rtmpdump.git", branch: "master"
 
   livecheck do
@@ -15,14 +15,13 @@ class Rtmpdump < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "844c42dad1b70ce218beace8ec8c9a69063f60d46566041b8ab822d09654c142"
-    sha256 cellar: :any,                 arm64_monterey: "b00c0b459c15c44c60bbf5e93e8ac904f41f5a009c4933b5c1a560ee3ac8809b"
-    sha256 cellar: :any,                 arm64_big_sur:  "efd5066a0a1971c72167a0d41f2cce28d7f5f6e7c3a4d4a25f08c975f701f380"
-    sha256 cellar: :any,                 ventura:        "9824a5809e7488bb78abaa463bb3db87d8d555dbd5412e075fda3deae312b392"
-    sha256 cellar: :any,                 monterey:       "65a0f652a98a2bc04273ffd295c8dc8d7df500521d331f81ec6f893a77408d6b"
-    sha256 cellar: :any,                 big_sur:        "c7e153578fd1b4f9470d2a1b8a6f69fbea745c2c93434cd5ac2fcd733ef7a61e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "27df787dca1af5084474dfbd1adab5ffee58670a2a47f8f7cf9961abb56c8b37"
+    sha256 cellar: :any,                 arm64_ventura:  "1dec5a57d0173f54cb1f38efb6bfbd0bc416bdb298289ebaac1dce3a41bdd6fb"
+    sha256 cellar: :any,                 arm64_monterey: "5151b4682fa17d931e6383dd06b584d822df647fd454b22ddf498525606cff39"
+    sha256 cellar: :any,                 arm64_big_sur:  "b548e2d6b53bc0d03bdc73fb01a175c8ef2338f80a3ca0c1963af625f0baa523"
+    sha256 cellar: :any,                 ventura:        "b27c24194ded10a47b93a379efae8ead4b04a6d3e8e34bc3a70942380b1ed68b"
+    sha256 cellar: :any,                 monterey:       "b942d0dee2c95a00b3fd080c50d1f0d715448ae3147bbb18cf5adb758cb63798"
+    sha256 cellar: :any,                 big_sur:        "794073edbf7402af7750b21fbcb44c5df038d6d3606450bd6a453dc92b6b3b09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ab7f054fd0b01975be1893437235c61e2761ed9fb54e7880a854ca37809d57e"
   end
 
   depends_on "openssl@3"

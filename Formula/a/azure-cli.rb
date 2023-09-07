@@ -6,6 +6,7 @@ class AzureCli < Formula
   url "https://ghproxy.com/https://github.com/Azure/azure-cli/archive/azure-cli-2.52.0.tar.gz"
   sha256 "1381c2057ec3454efb680ced4e9d1525ab5418b3a0441193c305403b1e5b1893"
   license "MIT"
+  revision 1
   head "https://github.com/Azure/azure-cli.git", branch: "dev"
 
   livecheck do
@@ -15,13 +16,13 @@ class AzureCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6472d449eba62f4183d9c2dbd71e4772d8feb7ba1487320ab6ade6f09b04f833"
-    sha256 cellar: :any,                 arm64_monterey: "09c14238544a66e2402225a2060a6d0ea2b0e3c8675f4c52c23004703364cfeb"
-    sha256 cellar: :any,                 arm64_big_sur:  "c1be41cc8328682c3085e30f2c4c2add0333d478f9057db2c0eb548b08f7ac97"
-    sha256 cellar: :any,                 ventura:        "07735dd6cbcafb05bcbc31dcf5d88dbdf491f34b378a5f9f48fc88053a39915f"
-    sha256 cellar: :any,                 monterey:       "08b436f0b8bf222770e27b06078edd0ed8c1d89a2d3d8c93fd463d3c2bc72f1e"
-    sha256 cellar: :any,                 big_sur:        "7e164020358a63b3f35376aca6c13099942655b052ac14d8b31d7c05df2d04c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1cdb7805c1b0b3d596d50acc17d724f2cc90543aefe42d6a40fd3163d0031632"
+    sha256 cellar: :any,                 arm64_ventura:  "adb08ae8fff8c761c3a942c8445a4c476903d0b6e5ddd5b0df19cffee9150371"
+    sha256 cellar: :any,                 arm64_monterey: "b120a038501eba0dba56bab5b6f985c3d60a8cc6bcb419e9f64f053bc57a4b5c"
+    sha256 cellar: :any,                 arm64_big_sur:  "7d93177359ab0c90577aaf49886a22cbff22386b4669530542f5552acfa0860f"
+    sha256 cellar: :any,                 ventura:        "1d8f0fcaa11e479d0b941941b84393bd178f41b8603de60bab255645f20b430c"
+    sha256 cellar: :any,                 monterey:       "9f78bc985b0f7464547d4cb5298c5fc539f58a32aa9efa41aadad1e5c2285f62"
+    sha256 cellar: :any,                 big_sur:        "6afe040deb434a3ad43043a730e4beaf50df80606d82a637f29f314573819310"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f8bc941b2cca17887758501afe516b6f3afe0360b1b4de0f8071e630f356762"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -750,7 +751,7 @@ class AzureCli < Formula
 
     (bin/"az").write <<~EOS
       #!/usr/bin/env bash
-      AZ_INSTALLER=HOMEBREW #{libexec}/bin/python -m azure.cli "$@"
+      AZ_INSTALLER=HOMEBREW #{libexec}/bin/python -Im azure.cli "$@"
     EOS
 
     bash_completion.install "az.completion" => "az"

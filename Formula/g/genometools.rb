@@ -1,12 +1,23 @@
 class Genometools < Formula
   desc "Versatile open source genome analysis software"
   homepage "http://genometools.org/"
-  # genometools does not have source code on par with their binary dist on their website
-  url "https://ghproxy.com/https://github.com/genometools/genometools/archive/v1.6.2.tar.gz"
-  sha256 "974825ddc42602bdce3d5fbe2b6e2726e7a35e81b532a0dc236f6e375d18adac"
   license "ISC"
   revision 1
   head "https://github.com/genometools/genometools.git", branch: "master"
+
+  stable do
+    # genometools does not have source code on par with their binary dist on their website
+    url "https://ghproxy.com/https://github.com/genometools/genometools/archive/v1.6.2.tar.gz"
+    sha256 "974825ddc42602bdce3d5fbe2b6e2726e7a35e81b532a0dc236f6e375d18adac"
+
+    # Fixes: ld: in lib/libgenometools.a(libsqlite.a),
+    # archive member 'libsqlite.a' with length 886432 is not mach-o or
+    # llvm bitcode file 'lib/libgenometools.a' for architecture x86_64
+    patch do
+      url "https://github.com/genometools/genometools/commit/65afd754657e2c3ffa65fc13ded222602b86e91c.patch?full_index=1"
+      sha256 "1d409b3ec0ebe04ff97f44b8cf566f556b3bc0bac21da7dec9d254b2fc066215"
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_monterey: "b09bb366e3e15f77d94aab5e6bdb072e9304534245a730783df426deccfe040a"

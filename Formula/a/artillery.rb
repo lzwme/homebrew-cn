@@ -8,7 +8,7 @@ class Artillery < Formula
   license "MPL-2.0"
 
   livecheck do
-    url :stable
+    url "https://registry.npmjs.org/artillery/latest"
     regex(%r{["'][^"' ]*?/artillery[._-]v?(\d+(?:[.-]\d+)+)\.t}i)
   end
 

@@ -9,14 +9,14 @@ class Ansible < Formula
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "100f2b202ba2d64dafa685913dfd025d32af9367d195ab6ad6460643ba896361"
-    sha256 cellar: :any,                 arm64_monterey: "81a45c8d38aa3206ed2a8493d44ce167decf4d7eaa1c41aa62b4ed6193366b44"
-    sha256 cellar: :any,                 arm64_big_sur:  "10a05fd8485573ed26820f6027f8b6d166363932d1d4f46470cf5904134c6428"
-    sha256 cellar: :any,                 ventura:        "7ac33c652ad1b0cdb0ed84bc3c598c599d3d9eaf5ce3aab5a4752d1531ab4ace"
-    sha256 cellar: :any,                 monterey:       "727f152b7e4a0fcbf29f3e85bb836fcf0c4d9edb64b8541b7db20e668c2f94d4"
-    sha256 cellar: :any,                 big_sur:        "d586f0cea9bd6e51ebb4171bbe470dcf9e4d0b6ccfbe7d0298a86904c51815fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f95e4ab477108e2caa45ab3aecd2595602434b3039f7dbc6066cf08b57006a67"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "f26ec20c18a22a0d5245a0946a1e00e6be119024551665521e542d674ab074bf"
+    sha256 cellar: :any,                 arm64_monterey: "d6fbb6e256b74df566ac8145865151d76a394d4506faa79780ec7e8b36301294"
+    sha256 cellar: :any,                 arm64_big_sur:  "a715a4d1968f91c71ab6c09b2037b91c4b5e9b0c1b35e75d611cdfdbb5369469"
+    sha256 cellar: :any,                 ventura:        "5f267f390abb2ba1153af0518c34d08285e1d6880c156568207afac6695ccb27"
+    sha256 cellar: :any,                 monterey:       "aff13679dbc1fb09ba3d6d42b5acfe65337f4047a6372f3a443f57697a1d69fa"
+    sha256 cellar: :any,                 big_sur:        "d9c77d152efe8e689965f1d0b8afaba9580b1222401daf99997df31506859fb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b0ce921e672c3214351e7ff9e41055124b542bee8cd9d7d6d9260200d0c3c02"
   end
 
   # `pkg-config` and `rust` are for bcrypt
@@ -28,6 +28,7 @@ class Ansible < Formula
   depends_on "python-cryptography"
   depends_on "python-lxml"
   depends_on "python-markupsafe"
+  depends_on "python-pytz"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -377,11 +378,6 @@ class Ansible < Formula
   resource "python-string-utils" do
     url "https://files.pythonhosted.org/packages/10/91/8c883b83c7d039ca7e6c8f8a7e154a27fdeddd98d14c10c5ee8fe425b6c0/python-string-utils-1.0.0.tar.gz"
     sha256 "dcf9060b03f07647c0a603408dc8b03f807f3b54a05c6e19eb14460256fac0cb"
-  end
-
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/5e/32/12032aa8c673ee16707a9b6cdda2b09c0089131f35af55d443b6a9c69c1d/pytz-2023.3.tar.gz"
-    sha256 "1d8ce29db189191fb55338ee6d0387d82ab59f3d00eac103412d64e0ebd0c588"
   end
 
   resource "pywinrm" do
