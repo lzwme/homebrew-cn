@@ -8,14 +8,14 @@ class AwsSamCli < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e49cbe01089c466cfef3dd6c6877f1ad2e59850d0799438510982dbfbd1840b7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6ee70e0176ec8def6538160c293d6f25954e86c37a1ff3ae4f7467042a994de8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5e4df1048412a36f0eb26bcd611f2b9b24609c98d720ce5fc63937715a88f636"
-    sha256 cellar: :any_skip_relocation, ventura:        "d6d4bbdb41c9e4c82182998a9f5775c46b6b025357cf0f857704c58d0bc283ad"
-    sha256 cellar: :any_skip_relocation, monterey:       "467c9cd9d40d5be759550f63a7e6d0161f3d86449ed6aa5948672339ea3917fb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "81dfdc21b960acbacab659a201f7c94eb836740a29db21ee28eb5b1bbd5c2a5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f8cc4caa61da2d421dc892b818952b6606805e0e91262878305abc022955a7d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "935922e42c9021ac10ca0a54dd86aa73524107d59eac8c81fb52fdc8a6ccc597"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d944fc3b323384cbdaf5e3117143c0963c3594a38e3e666fd7c542066fe8afe5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f5235a53926edd6884bf3c4bbb88419adde49bb804249fee61c9d8cb26d0394b"
+    sha256 cellar: :any_skip_relocation, ventura:        "d19a234080ba919aa966358faa11290da4969a2be46faf9230348ef3843137ba"
+    sha256 cellar: :any_skip_relocation, monterey:       "e1b5d7d6a059693334dc51161e8cc9a7b251d1341b66b606f63e117e6fdcf896"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d0c2375783fa69e8e101ef5e58d5e69a933c8e09bf52cc41eada2711e8d14f6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2eb10e39393a9bc4dc1c9166922560fc74c501a98d8ebcb0e290b718e0dde763"
   end
 
   depends_on "cffi"
@@ -23,6 +23,7 @@ class AwsSamCli < Formula
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-pytz"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -296,11 +297,6 @@ class AwsSamCli < Formula
   resource "python-slugify" do
     url "https://files.pythonhosted.org/packages/de/63/0f60208d0d3dde1a87d30a82906fa9b00e902b57f1ae9565d780de4b41d1/python-slugify-8.0.1.tar.gz"
     sha256 "ce0d46ddb668b3be82f4ed5e503dbc33dd815d83e2eb6824211310d3fb172a27"
-  end
-
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/69/4f/7bf883f12ad496ecc9514cd9e267b29a68b3e9629661a2bbc24f80eff168/pytz-2023.3.post1.tar.gz"
-    sha256 "7b4fddbeb94a1eba4b557da24f19fdf9db575192544270a9101d8509f9f43d7b"
   end
 
   resource "regex" do

@@ -1,19 +1,19 @@
 class Legitify < Formula
   desc "Tool to detect/remediate misconfig and security risks of GitHub/GitLab assets"
   homepage "https://legitify.dev/"
-  url "https://ghproxy.com/https://github.com/Legit-Labs/legitify/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "3095524885e073954d0d9b89bf468a69c8e2bebf982cdfbed50f06d7964263a6"
+  url "https://ghproxy.com/https://github.com/Legit-Labs/legitify/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "9bc8ebfda06a82a8e1e08af14c0a22041c1d26dfd8e55189f9ed2326a13a42bc"
   license "Apache-2.0"
   head "https://github.com/Legit-Labs/legitify.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0a92a1ddb8ae86d3b8a4338bc7cc6c9d732735871d6c2a6acee75522f63e5df8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "45d29538e4286db5b2183f681a57bc47680695e0d7efecd002f36fdf59d1670e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0aaf0efd24e7dbbd86993576ebc448d178782452d9bdcfc324f47f0a03e64d14"
-    sha256 cellar: :any_skip_relocation, ventura:        "938fe1279aec5442123042c6b240e598c51384de118cec48b51e0dedb570e1ee"
-    sha256 cellar: :any_skip_relocation, monterey:       "cf8dab3a355f44013d52194a47f0260ebe3e1f26f5712a6db07cf2b7674e50e5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "601b607bd73fc4e9b41f7f2f04d0e66c9e4997178eaa13c39065c69dfc5094aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6cbdc057d77b24f734d4e415945023bef229af9d34af2297aa0297039f62bb14"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fe9eafe70dc4618c0b4c778137b95629a280f26e0e2cb358e9cdc24ec227b459"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5aea7a82d05e08baac98a0ef8927e2a0a26b56803a3ce70e3b8e0261aa4c4a61"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bf0dae439bb7060893189833a51382a620707fe6ce4a036e2e58bdb7108f1259"
+    sha256 cellar: :any_skip_relocation, ventura:        "6838090a8d04faa346a702cef3edd90dc1d03069460d2654c657dffbb1044e8c"
+    sha256 cellar: :any_skip_relocation, monterey:       "469ee9ccc399d85eeefd321ebf7c16ad95844865bd87ec6a5b6f93c5b4c1b4c7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cd49f19b1dfa07702dcae76fd3984a1c0c72fd61bffb844d1a582316c0593718"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "afd1f048195ff66bd914c7e725f9b9dec11cea8f61f7da4853d2335dec8b3ebc"
   end
 
   depends_on "go" => :build

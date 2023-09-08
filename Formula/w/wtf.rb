@@ -1,8 +1,8 @@
 class Wtf < Formula
   desc "Translate common Internet acronyms"
   homepage "https://sourceforge.net/projects/bsdwtf/"
-  url "https://downloads.sourceforge.net/project/bsdwtf/wtf-20230828.tar.gz"
-  sha256 "da09ad0b59270cb27d2282caea9a7aa69577811379f24c24bcb5ef526d6a19a6"
+  url "https://downloads.sourceforge.net/project/bsdwtf/wtf-20230906.tar.gz"
+  sha256 "ed9c1fa927fcd878cce955fb0bdc586876ee1ae234666be75c3bbd6e5b2a094b"
   license :public_domain
 
   livecheck do
@@ -11,7 +11,7 @@ class Wtf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a42230b2fb667880356d3b00e4231497820b20d9cdd792588422216dc56a091a"
+    sha256 cellar: :any_skip_relocation, all: "5965342aea2df9cb60fc2ee9c42bb57bbf8c3f2117e4beac9c1f69c8a6cf627e"
   end
 
   def install

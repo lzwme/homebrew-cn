@@ -4,17 +4,17 @@ class Bear < Formula
   url "https://ghproxy.com/https://github.com/rizsotto/Bear/archive/refs/tags/3.1.3.tar.gz"
   sha256 "8314438428069ffeca15e2644eaa51284f884b7a1b2ddfdafe12152581b13398"
   license "GPL-3.0-or-later"
-  revision 3
+  revision 4
   head "https://github.com/rizsotto/Bear.git", branch: "master"
 
   bottle do
-    sha256 arm64_ventura:  "b0f677b987556e04aceddf1e24fac60d39feff3f87b383421168ae7c9f847a05"
-    sha256 arm64_monterey: "5d284bd4709b3ca61e169710ff0a5924b73087826ff5718e8445ffb61670df8d"
-    sha256 arm64_big_sur:  "02d0fe7e8626829ee61dfaff59fd7fa36444105a205d31717f2f56b6ef391920"
-    sha256 ventura:        "9a9c479eb0dfd100f32177103c4b0c8949f9b0ae7deb7b7fb454d44214b84bb6"
-    sha256 monterey:       "bc58a943802bfda9ba35e349333bec36e9855f82518dec0af3a07cc2ad774e96"
-    sha256 big_sur:        "8f76513ca24dbd051e8db40782ca5ede366a2de3b6f5b9a14583545cc9997445"
-    sha256 x86_64_linux:   "60ba1badd46acbcf341c696707947d8d7a85e98edb649cd2cc10a5beba5f0927"
+    sha256 arm64_ventura:  "11ce0854d66302f50e136c919e7eeefb0284a356e9644cb03d5999fde4b52205"
+    sha256 arm64_monterey: "8c5c3514fbfc58c6d1cf7e33ed3ce7e66c2a04da1b9143464a36e5c2f63ac567"
+    sha256 arm64_big_sur:  "91190698a637465e8d7690b9999314aad798a363e8e3d64d7ee4b6f405489e1d"
+    sha256 ventura:        "262dbaa2b8d75736cc3b48d30fefed73e1b924b21275e8dbd6e00879dc9100da"
+    sha256 monterey:       "319d713bba49eb49b4099ab0097bfe437143e528cc699d016012e4fe8c30d31e"
+    sha256 big_sur:        "99bbd1e086fffae221ecee4f0de1a1ab662123c213756f98657d1984323ed789"
+    sha256 x86_64_linux:   "c6e1ac2f796675e0e3c1aa941af496cbbced73f84be670e0b2c7c4878ea76645"
   end
 
   depends_on "cmake" => :build

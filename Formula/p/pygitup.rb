@@ -6,16 +6,16 @@ class Pygitup < Formula
   url "https://files.pythonhosted.org/packages/55/13/2dd3d4c9a021eb5fa6d8afbb29eb9e6eb57faa56cf10effe879c9626eed1/git_up-2.2.0.tar.gz"
   sha256 "1935f62162d0e3cc967cf9e6b446bd1c9e6e9902edb6a81396065095a5a0784e"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7652e7770a43ce55c81c1740f503e6222572e85357ce8bd24de866e79899a82"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b7827553c73d91d54beb49682eea961dd4cd768032eaaf749a8de93551a30fcd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a93e9e4c5dcb5240e282a1c00acb938546ce74f6b6fa320785d19a573e5b7c43"
-    sha256 cellar: :any_skip_relocation, ventura:        "49041027ead5f65384afa05f54cd77796a0dead19c5b9bf21bf027ee11a85a77"
-    sha256 cellar: :any_skip_relocation, monterey:       "7588bcbeb62bfd31e74c81b5cd5ed7f8f57763b49ccf3232e72053e216388a39"
-    sha256 cellar: :any_skip_relocation, big_sur:        "67cc6840e41bf42cfa4f816fa8fca1c2d4c0092c91b5c5d27d59690f6ff4fde7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2484148b24dc93251a95154cd8b17c1ca4520c61c67394cc039f241ffb20b86"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d03c80d0962830058c66ea625f53a589373fd7864f69244d4a179afc061dad32"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "eb6b7f9a4e83d304c7a12055d1a509593fe7cfd83b6f94f59d2904d267738b16"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a2287df898153bd5aaf59333ea1c83d333b8ab8e4f85d075c34f0b900172bc14"
+    sha256 cellar: :any_skip_relocation, ventura:        "8615f1fb55f61a241ca8b87cdee737999fa319e826c9bfed87694f96aad519cf"
+    sha256 cellar: :any_skip_relocation, monterey:       "7c07f67314f7f0e9a784891f530b1ec5d665822fc6fec59421a3be2965c34a54"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6b1cbc27a02dec2724b82baaaaf334e2a03b803ab43e34f6f883b9a3137b5300"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fbf081192080869035459b08c547940554d20f2e5cc298b7edcadf78042d83b4"
   end
 
   depends_on "python-typing-extensions"
@@ -32,8 +32,8 @@ class Pygitup < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/8d/1e/33389155dfe8cebbaa0c5b5ed0d3bd82c5e70064be00b2b3ee938da8b5d2/GitPython-3.1.33.tar.gz"
-    sha256 "13aaa3dff88a23afec2d00eb3da3f2e040e2282e41de484c5791669b31146084"
+    url "https://files.pythonhosted.org/packages/f6/7e/74206b2ac9f63a40cbfc7bfdf69cda4a3bde9d932129bee2352f6bdec555/GitPython-3.1.34.tar.gz"
+    sha256 "85f7d365d1f6bf677ae51039c1ef67ca59091c7ebd5a3509aa399d4eda02d6dd"
   end
 
   resource "smmap" do

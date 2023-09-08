@@ -3,19 +3,19 @@ class SshAudit < Formula
 
   desc "SSH server & client auditing"
   homepage "https://github.com/jtesta/ssh-audit"
-  url "https://files.pythonhosted.org/packages/09/71/aa82438fa0660fc0bc63fd84bcc4be8c3f7456752ce31d4fd1221bd63b4c/ssh-audit-2.9.0.tar.gz"
-  sha256 "7e68baaaa1fa42b68bcf5eefc81eb02805631e421bd84b6ae639d0cb86eb893d"
+  url "https://files.pythonhosted.org/packages/f2/b9/88c7f0ecba0a8fbf07e0d7674b7eac3dbf5270ac39a3b48bc34bb7c5a22c/ssh-audit-3.0.0.tar.gz"
+  sha256 "a6a9f94f6f718b56961b70dbf1efcc0e42b3441822e1ea7b0c043fce1f749072"
   license "MIT"
   head "https://github.com/jtesta/ssh-audit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "52cdbe85ff2ae19e72029ac6751cd5553f96ea158f1fee1f9f1f76659aef3e91"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "52cdbe85ff2ae19e72029ac6751cd5553f96ea158f1fee1f9f1f76659aef3e91"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "52cdbe85ff2ae19e72029ac6751cd5553f96ea158f1fee1f9f1f76659aef3e91"
-    sha256 cellar: :any_skip_relocation, ventura:        "0a10628210e4b2003ae24c7ecac43bbfbedcbc9f99ec51d5ce23fa54a140da27"
-    sha256 cellar: :any_skip_relocation, monterey:       "0a10628210e4b2003ae24c7ecac43bbfbedcbc9f99ec51d5ce23fa54a140da27"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0a10628210e4b2003ae24c7ecac43bbfbedcbc9f99ec51d5ce23fa54a140da27"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "62e991c6ee5e1bf92d4e687acaf9d27b941386bc4cb9466db881fc44b45eca4e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fb4fd261558f1fb8f307cea851bdbdecdb6295a63d1691bd11842103abfd01d7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6668313ad849f96455062174f3162d348a6d09d6468e50bc4dc9e8b0f4e6cae5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e296c8b437dc7e428b7da859d148bd41be3eb78f8a5b1f6cb754c8b583f0468a"
+    sha256 cellar: :any_skip_relocation, ventura:        "d03c6cfd9412cf6dd4eb2a2117e2ebc355bcf714eee37c9b123232ef51c35310"
+    sha256 cellar: :any_skip_relocation, monterey:       "432ba13cea83291598afdfd4d7b9b29e403c681ea840447dd19d06989f331fc7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d862c06ac3f070241f6a58bf69e6dec5e532c63ad5912223aa138bab551d9dac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "883a310a7ea3133c68213aca91d8589153bc0a525854a6ef087250e3baf8f7ef"
   end
 
   depends_on "python@3.11"

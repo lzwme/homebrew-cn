@@ -1,19 +1,19 @@
 class Hebcal < Formula
   desc "Perpetual Jewish calendar for the command-line"
   homepage "https://github.com/hebcal/hebcal"
-  url "https://ghproxy.com/https://github.com/hebcal/hebcal/archive/refs/tags/v5.8.1.tar.gz"
-  sha256 "cfb17be1a0c112a03b06c339b70d5a0a519333da9a7f699728e77c6a88dc866b"
+  url "https://ghproxy.com/https://github.com/hebcal/hebcal/archive/refs/tags/v5.8.2.tar.gz"
+  sha256 "9d881cac33e98cd55056bd38df863b3bcc4476ffda360871e35080ac57e9dc91"
   license "GPL-2.0-or-later"
   head "https://github.com/hebcal/hebcal.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eecb7970671787b9fd7b09e99e33fa687478318306daeba4b6de7e397967ebb6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "eecb7970671787b9fd7b09e99e33fa687478318306daeba4b6de7e397967ebb6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "eecb7970671787b9fd7b09e99e33fa687478318306daeba4b6de7e397967ebb6"
-    sha256 cellar: :any_skip_relocation, ventura:        "8fed100c7203f750f756ca83b02840a32eff7ff7656603a92f62b2e6cbf3ce30"
-    sha256 cellar: :any_skip_relocation, monterey:       "8fed100c7203f750f756ca83b02840a32eff7ff7656603a92f62b2e6cbf3ce30"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8fed100c7203f750f756ca83b02840a32eff7ff7656603a92f62b2e6cbf3ce30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "120da2732c8aab36db530ce1317ae79c39be2937f1836a1a60189e53aa1a32cb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "369de2a072d8facdd70e0f8ac24249be684574f0ce260741c47cecbaabf6549d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "369de2a072d8facdd70e0f8ac24249be684574f0ce260741c47cecbaabf6549d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "369de2a072d8facdd70e0f8ac24249be684574f0ce260741c47cecbaabf6549d"
+    sha256 cellar: :any_skip_relocation, ventura:        "be9877536bd7a2d7e75c4e7224e1644266829e76f5f8aab5f3e6a065a57c16cb"
+    sha256 cellar: :any_skip_relocation, monterey:       "be9877536bd7a2d7e75c4e7224e1644266829e76f5f8aab5f3e6a065a57c16cb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "be9877536bd7a2d7e75c4e7224e1644266829e76f5f8aab5f3e6a065a57c16cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f60e0176876edbcf9c21cdd6cbe5f242038f1a3b7db499775fbe9ccc6318a1b3"
   end
 
   depends_on "go" => :build

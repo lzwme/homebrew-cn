@@ -36,8 +36,9 @@ class ZshCompletions < Formula
         rm -f ~/.zcompdump; compinit
 
       Additionally, if you receive "zsh compinit: insecure directories" warnings when attempting
-      to load these completions, you may need to run this:
+      to load these completions, you may need to run these commands:
 
+        chmod go-w '#{HOMEBREW_PREFIX}/share'
         chmod -R go-w '#{HOMEBREW_PREFIX}/share/zsh'
     EOS
   end

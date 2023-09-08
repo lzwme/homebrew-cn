@@ -6,17 +6,17 @@ class Bandit < Formula
   url "https://files.pythonhosted.org/packages/5e/67/997278e785edf155bd57163ae7030f979a0907857365cb30815d93b5354b/bandit-1.7.5.tar.gz"
   sha256 "bdfc739baa03b880c2d15d0431b31c658ffc348e907fe197e54e0389dd59e11e"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/PyCQA/bandit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0774c8ed60c9b96fd07838fc3635693d2ea594f5a2f62973617fa3dc4ced96f9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "322507c5d7ceef28616ed67dce4e0b8d1d3e974ed27c033f12fda75fd80cc8d8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "61681a64327360ae6aa629ddfcf57e76ef355f7d1410edd2b7af2c85bbe5e423"
-    sha256 cellar: :any_skip_relocation, ventura:        "aaa4e9845934d3d793c3e0d69f4134d90a49e5f7da0469938aefb45b3edeefcf"
-    sha256 cellar: :any_skip_relocation, monterey:       "5bb6b70e2d400ed5817275b0ebec22c66ab164a2d5f5773b0ab7d23c861f88d0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8367a26e603711d61f2562a1f687fba2368fd3955f621fe1ce69e3e21f6b8244"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d0c5a0ebe6e969d57150dd7a55fc11b3aaa93bbb69af2ab21cb05be52916d28"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2f300ca830316f90fd277bec32ac8e56a0431afa37fe4279f5b8d3a85f043836"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "934f7937750f7d62d3cd5d6428c6ea72eae9c49d3584b51db8f8f0859e9d3203"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "326086e01569d643780b2cb5bd191b44353f5a15d138ec5bd2ed7d11a9b92e7a"
+    sha256 cellar: :any_skip_relocation, ventura:        "70f635e3f2109bbc4c389697230375680be368fa72325c0bb58d2a994d4e9da9"
+    sha256 cellar: :any_skip_relocation, monterey:       "4831c27d3fbc5d98a14cc971257e842cd25da073fc8122165f16c94cf7a0a144"
+    sha256 cellar: :any_skip_relocation, big_sur:        "547737e1fbf3fef0fe733810d897923d3b578ad20c50b609980dcb4e05ebf938"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1418a817b4d5d376f7cec81ef9d8901ecba0a66b9346f7de619960e075e1d867"
   end
 
   depends_on "pygments"
@@ -29,8 +29,8 @@ class Bandit < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/8d/1e/33389155dfe8cebbaa0c5b5ed0d3bd82c5e70064be00b2b3ee938da8b5d2/GitPython-3.1.33.tar.gz"
-    sha256 "13aaa3dff88a23afec2d00eb3da3f2e040e2282e41de484c5791669b31146084"
+    url "https://files.pythonhosted.org/packages/f6/7e/74206b2ac9f63a40cbfc7bfdf69cda4a3bde9d932129bee2352f6bdec555/GitPython-3.1.34.tar.gz"
+    sha256 "85f7d365d1f6bf677ae51039c1ef67ca59091c7ebd5a3509aa399d4eda02d6dd"
   end
 
   resource "markdown-it-py" do

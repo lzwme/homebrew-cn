@@ -1,23 +1,23 @@
 class Sonarqube < Formula
   desc "Manage code quality"
   homepage "https://www.sonarqube.org/"
-  url "https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.0.0.68432.zip"
-  sha256 "e04bc9e78cad3f4137fb89b8527963d01587ed9a6fce4f4ac7b370fe21bac199"
+  url "https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.2.0.77647.zip"
+  sha256 "873e20590ea30fb38f58efbc4423b5a4897fced37600752654a41ead8d5efd1b"
   license "LGPL-3.0-or-later"
 
   livecheck do
-    url "https://www.sonarsource.com/page-data/products/sonarqube/downloads/page-data.json"
+    url "https://www.sonarsource.com/page-data/products/sonarqube/downloads/success-download-community-edition/page-data.json"
     regex(/sonarqube[._-]v?(\d+(?:\.\d+)+)\.zip/i)
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fb1bdd10303399c4d7d4ba8cc8801eb64e9457d78d3474e85882fffa90b626b7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fb1bdd10303399c4d7d4ba8cc8801eb64e9457d78d3474e85882fffa90b626b7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fb1bdd10303399c4d7d4ba8cc8801eb64e9457d78d3474e85882fffa90b626b7"
-    sha256 cellar: :any_skip_relocation, ventura:        "fb1bdd10303399c4d7d4ba8cc8801eb64e9457d78d3474e85882fffa90b626b7"
-    sha256 cellar: :any_skip_relocation, monterey:       "fb1bdd10303399c4d7d4ba8cc8801eb64e9457d78d3474e85882fffa90b626b7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fb1bdd10303399c4d7d4ba8cc8801eb64e9457d78d3474e85882fffa90b626b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e47a49f71d418cb791eca3420a043445c97613aabcad2be69692a42122e5036b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cef6ca443e6bf81ad4f3d9da7aaf5534cabf8f7e2f83849a91c334d9c07466d3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cef6ca443e6bf81ad4f3d9da7aaf5534cabf8f7e2f83849a91c334d9c07466d3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cef6ca443e6bf81ad4f3d9da7aaf5534cabf8f7e2f83849a91c334d9c07466d3"
+    sha256 cellar: :any_skip_relocation, ventura:        "cef6ca443e6bf81ad4f3d9da7aaf5534cabf8f7e2f83849a91c334d9c07466d3"
+    sha256 cellar: :any_skip_relocation, monterey:       "cef6ca443e6bf81ad4f3d9da7aaf5534cabf8f7e2f83849a91c334d9c07466d3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cef6ca443e6bf81ad4f3d9da7aaf5534cabf8f7e2f83849a91c334d9c07466d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38e9121c11a103410727ee41ddfa39b36b3a28cf33f141d270dc202a169309cb"
   end
 
   depends_on "openjdk@17"
@@ -25,12 +25,6 @@ class Sonarqube < Formula
   conflicts_with "sonarqube-lts", because: "both install the same binaries"
 
   def install
-    platform = OS.mac? ? "macosx-universal-64" : "linux-x86-64"
-
-    inreplace buildpath/"bin"/platform/"sonar.sh",
-      %r{^PIDFILE="\./\$APP_NAME\.pid"$},
-      "PIDFILE=#{var}/run/$APP_NAME.pid"
-
     inreplace "conf/sonar.properties" do |s|
       # Write log/data/temp files outside of installation directory
       s.sub!(/^#sonar\.path\.data=.*/, "sonar.path.data=#{var}/sonarqube/data")
@@ -39,8 +33,12 @@ class Sonarqube < Formula
     end
 
     libexec.install Dir["*"]
+    (libexec/"extensions/downloads").mkpath
+
     env = Language::Java.overridable_java_home_env("17")
     env["PATH"] = "$JAVA_HOME/bin:$PATH"
+    env["PIDDIR"] = var/"run"
+    platform = OS.mac? ? "macosx-universal-64" : "linux-x86-64"
     (bin/"sonar").write_env_script libexec/"bin"/platform/"sonar.sh", env
   end
 
@@ -71,6 +69,10 @@ class Sonarqube < Formula
     ENV["SONAR_PATH_LOGS"] = testpath/"logs"
     ENV["SONAR_PATH_TEMP"] = testpath/"temp"
     ENV["SONAR_TELEMETRY_ENABLE"] = "false"
+
+    # Sonar uses `ps | grep` to verify server is running, but output is truncated to COLUMNS
+    # See https://github.com/Homebrew/homebrew-core/pull/133887#issuecomment-1679907729
+    ENV.delete "COLUMNS"
 
     assert_match(/SonarQube.* is not running/, shell_output("#{bin}/sonar status", 1))
     pid = fork { exec bin/"sonar", "console" }

@@ -37,17 +37,21 @@ class Questdb < Formula
   end
 
   test do
+    # questdb.sh uses `ps | grep` to verify server is running, but output is truncated to COLUMNS
+    # See https://github.com/Homebrew/homebrew-core/pull/133887#issuecomment-1679907729
+    ENV.delete "COLUMNS" if OS.linux?
+
     mkdir_p testpath/"data"
     begin
       fork do
-        exec "#{bin}/questdb start -d #{testpath}/data"
+        exec bin/"questdb", "start", "-d", testpath/"data"
       end
       sleep 30
       output = shell_output("curl -Is localhost:9000/index.html")
       sleep 4
       assert_match "questDB", output
     ensure
-      system "#{bin}/questdb", "stop"
+      system bin/"questdb", "stop"
     end
   end
 end

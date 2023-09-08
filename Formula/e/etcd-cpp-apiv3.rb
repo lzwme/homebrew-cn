@@ -4,16 +4,16 @@ class EtcdCppApiv3 < Formula
   url "https://ghproxy.com/https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/archive/refs/tags/v0.15.3.tar.gz"
   sha256 "1a6f4ed634f3c75cbfaa2768917e280c6df77cac2af5d945ad67ef20d53d8b60"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "39eaf00c680c64edfe8a60a8d4230190f89fe672096a766d3c2a6d1fdace1fc8"
-    sha256 cellar: :any,                 arm64_monterey: "cd6669f5df0463082ebb7a41db5355f130ed093358cfa134637c5010a2b06536"
-    sha256 cellar: :any,                 arm64_big_sur:  "f9635dd43610385a6d9a992e39796f2a4ad68c5c1744ba6ac2d841f9063c0de8"
-    sha256 cellar: :any,                 ventura:        "ae13f7da375dd52c1267eebc314da8d4d8c0744979749447a047f66690da160e"
-    sha256 cellar: :any,                 monterey:       "5669837a9c2b2c7fed70f51f1c9e6adb90a18456e32e9822018f969d9c15a72d"
-    sha256 cellar: :any,                 big_sur:        "bed7eaedb91fc0a4c21ce77b4d0ec608d4394696468e8c51b0ca13d2c0ab9ad3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5261ec2e6f6ae63b1391e6a01115460331ec467cc3851f564fa15d42028ef28f"
+    sha256 cellar: :any,                 arm64_ventura:  "ca772d1ecb19ceef1a48f49ac1938043bb450d22ce0d798620d32da687d9c42d"
+    sha256 cellar: :any,                 arm64_monterey: "ddd3531db3081c88900b83bdc19dbd7f8d068ad6877fda6a55e74e0ddfac8e35"
+    sha256 cellar: :any,                 arm64_big_sur:  "93ba5b0f80b2785e711c2c7ea7d099d00529158b7aa116dc725c4976710fe249"
+    sha256 cellar: :any,                 ventura:        "e5f58a09997213b197b953e3587dc265193bc9f2d304e74b6910cbcfb51796f8"
+    sha256 cellar: :any,                 monterey:       "f7a76f806fd11d82ea87384f9edaaa08beae57c8245a6ce4fd3c5aba88af1565"
+    sha256 cellar: :any,                 big_sur:        "70d20885a1d0f5117400f6b5db8e6af4debe6b7c1e0f2dcdaa70e49199c9b70e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3f5979886772d478b0d3ed50faf5b0c444f7312b14b19dc9e7da57c918ffbd9"
   end
 
   depends_on "cmake" => :build
