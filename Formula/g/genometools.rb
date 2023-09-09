@@ -22,6 +22,7 @@ class Genometools < Formula
   bottle do
     sha256 cellar: :any,                 arm64_monterey: "b09bb366e3e15f77d94aab5e6bdb072e9304534245a730783df426deccfe040a"
     sha256 cellar: :any,                 arm64_big_sur:  "f350d9c4cac62bcb0b3de1153d4f2fd760b529f02bd9a43f21c91ecfa5e0b47b"
+    sha256 cellar: :any,                 ventura:        "11f056d175baddd8953ff103d96ebf70e2afcc317a4698f8296ea4a9f2581062"
     sha256 cellar: :any,                 monterey:       "27d16515d739177e10547d62c76b0b20af221979572f05982d3a37392bf52dcd"
     sha256 cellar: :any,                 big_sur:        "b97131de84349e7e805095564ba995eb6d06e99b8e0f9b4f5b943e42af17997e"
     sha256 cellar: :any,                 catalina:       "4b59bf76b39c797a21e6cd2acb90fdf273316ff73cd3c97ede296f672493a42a"

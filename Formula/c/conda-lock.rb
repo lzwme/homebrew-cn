@@ -6,17 +6,16 @@ class CondaLock < Formula
   url "https://files.pythonhosted.org/packages/ea/f8/74337684545c97f1695381060df8c49f6e74f159b0ef8a94ccf5a4236843/conda_lock-2.2.0.tar.gz"
   sha256 "0cfe264457b60a02fa7d6d740a2270a8c91f0c3f952b87447535583973490c96"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "a548c53f2f59d12d469ac813ef78cf35c34676a2931c0376889e0ad96b1e1324"
-    sha256 cellar: :any,                 arm64_monterey: "7b1a9f7c4434d14fee368f2694358112c26af65fcafe268d8a5ab3b4fc5d70ec"
-    sha256 cellar: :any,                 arm64_big_sur:  "3621af9414308529efaf2fa3db027cf326ab53b48e523ccbd107503ad309e7cc"
-    sha256 cellar: :any,                 ventura:        "1aace3df2e10f4743f91e777a64392f772bea7f9a814b34b6c409e3e3796ef57"
-    sha256 cellar: :any,                 monterey:       "f123cd9298f311ba9003fce408d7bcac52d326064d64c1fc5a5603f480e18839"
-    sha256 cellar: :any,                 big_sur:        "e3d098131b37e9c5cfaf114d0082ea5f6992dddb40c95f6de6c19937a2de41b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d41f31aa1613bf8a10c48d5a3077e664a9cb2f8a09e1972988d04d17f201caba"
+    sha256 cellar: :any,                 arm64_ventura:  "12d4f50f69e457d025c925372f0d7962538516ab464f2b5b5c8901abba19dc23"
+    sha256 cellar: :any,                 arm64_monterey: "98d87c3f7451fabfe558dbae0a20af67e45ebdf39cc4fe6bce858779e1cdfa42"
+    sha256 cellar: :any,                 arm64_big_sur:  "bab29c955994c2f5e0b05d70fdf5638309179fc95ed79ef9391f347f73f5565e"
+    sha256 cellar: :any,                 ventura:        "85f3cd7a0ce6f06123d49feb960fb93183f8116a0178d67a52d48e596fc2f536"
+    sha256 cellar: :any,                 monterey:       "f5261d2a519a3352da71c384b4cd3d2025d5907040e9a9f54be73f7f0d8910b1"
+    sha256 cellar: :any,                 big_sur:        "54daf676a1e539599515389009614b0bd657a15fecec50f5714b0cac34566b95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9a8cd5549a12a71a1ffadb251be710e34ea2558ec09d2a90962ae08a66df1cf"
   end
 
   depends_on "rust" => :build # for pydantic
@@ -86,8 +85,8 @@ class CondaLock < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/f6/7e/74206b2ac9f63a40cbfc7bfdf69cda4a3bde9d932129bee2352f6bdec555/GitPython-3.1.34.tar.gz"
-    sha256 "85f7d365d1f6bf677ae51039c1ef67ca59091c7ebd5a3509aa399d4eda02d6dd"
+    url "https://files.pythonhosted.org/packages/95/4e/8b8aac116a00f0681117ed3c3f3fc7c93fcf85eaad53e5e6dea86f7b8d82/GitPython-3.1.35.tar.gz"
+    sha256 "9cbefbd1789a5fe9bcf621bb34d3f441f3a90c8461d377f84eda73e721d9b06b"
   end
 
   resource "html5lib" do

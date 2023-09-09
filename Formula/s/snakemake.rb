@@ -6,17 +6,17 @@ class Snakemake < Formula
   url "https://files.pythonhosted.org/packages/6e/14/07b0cfc648c0317021bdd9c40d26b83f2a3f13f3585a0d8294ca414239d9/snakemake-7.32.3.tar.gz"
   sha256 "cbe586fe28349982307f008ca40e839d569cf5d540008b0c91ebfef689b49b18"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c12e3b1b844079f1e3bba4d4fb8fdd9cb48e6bc37d4fffab5252754f8666f731"
-    sha256 cellar: :any,                 arm64_monterey: "60681e924855b0aba080e64c838e896d22b317cfcb37dfb87eefcc6a75c4fdb4"
-    sha256 cellar: :any,                 arm64_big_sur:  "b020dff2be9a2f3eefb13a0d08b0307aee37f3afec5ac89648b80151ad118405"
-    sha256 cellar: :any,                 ventura:        "af6f9eef2287258ef90e1ab742ac14c91f90250bc7572246ffe8684c57fcf7c8"
-    sha256 cellar: :any,                 monterey:       "727d6a422d1a45f1b62d9bc7ca15f8741da6959174007d5f35cdcb7f266d606b"
-    sha256 cellar: :any,                 big_sur:        "c05d171e8ec10651e7ea4a1949dc967ab1f86191756a752df94506735e7f9057"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2a89b50cdd87e621c568628b2771f5fe17aee3cc2d2836f0e2109e3a6408a99"
+    sha256 cellar: :any,                 arm64_ventura:  "d73621d75b993ca2fc05cbad9a21efe7a734b99f893e60bae3141ff008756c6d"
+    sha256 cellar: :any,                 arm64_monterey: "54dfbb3aeadc585258e1103f858017448ed67897120d276c44c1c6cefb604e53"
+    sha256 cellar: :any,                 arm64_big_sur:  "e063b85386f1261740ea558715440dc4c2c7b1403afdde5cf093f2d072722a2e"
+    sha256 cellar: :any,                 ventura:        "f38a2079bcd20cf2eef0280f7c6ab17debb051385b8a3f093014e101382db982"
+    sha256 cellar: :any,                 monterey:       "0cd67e2f5d3a05778209e3e0d7815805e98ca75c0b35e0cf8dbf1c496b4cfafd"
+    sha256 cellar: :any,                 big_sur:        "58a1e3aeb2fb1f168d1cd22d46dc7db6b71da457ed19f2b3eeb9107e91a98994"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "315214dffd91caeda368d0d4cda43a6d05d47c9cd8a7d6f264116f200703e77f"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -73,8 +73,8 @@ class Snakemake < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/f6/7e/74206b2ac9f63a40cbfc7bfdf69cda4a3bde9d932129bee2352f6bdec555/GitPython-3.1.34.tar.gz"
-    sha256 "85f7d365d1f6bf677ae51039c1ef67ca59091c7ebd5a3509aa399d4eda02d6dd"
+    url "https://files.pythonhosted.org/packages/95/4e/8b8aac116a00f0681117ed3c3f3fc7c93fcf85eaad53e5e6dea86f7b8d82/GitPython-3.1.35.tar.gz"
+    sha256 "9cbefbd1789a5fe9bcf621bb34d3f441f3a90c8461d377f84eda73e721d9b06b"
   end
 
   resource "humanfriendly" do

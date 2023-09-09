@@ -1,22 +1,23 @@
 class Duckscript < Formula
   desc "Simple, extendable and embeddable scripting language"
   homepage "https://sagiegurari.github.io/duckscript"
-  url "https://ghproxy.com/https://github.com/sagiegurari/duckscript/archive/0.8.20.tar.gz"
-  sha256 "126de84f2cc03cb4ed8e835ed571dc2433ff15db7c558ad0c9455d87994977d2"
+  url "https://ghproxy.com/https://github.com/sagiegurari/duckscript/archive/0.9.0.tar.gz"
+  sha256 "36b6aca7b0d87f348843900165f369721efeec5639e2eeca6c6ab1716db77732"
   license "Apache-2.0"
   head "https://github.com/sagiegurari/duckscript.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2667af49cdfdafe3f1115280adfdcedc2e9fe9b3053bc2eb03a658e859a82ea5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6d1230e098bce64a0bf9190d9ad2171f64b80b3b29ce31b5c009e02779a653a8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "186eaa2970ab0cea315729f5492aa99c285c24d9261fac505e674754526611d4"
-    sha256 cellar: :any_skip_relocation, ventura:        "f05eb25e79cd6dbfeee3fd7fbb93ec1cd8c9bae5bcaff9a1948dcf3a9696a68f"
-    sha256 cellar: :any_skip_relocation, monterey:       "5d7113f6cc7b63d6ccc504c3ac921561153d4e9d0e51fa0bddc1516b7d4d5e88"
-    sha256 cellar: :any_skip_relocation, big_sur:        "63734ea36b9ae620d5fa55f88ea8f470b4cb72d63f3f8fe28a7f7555cb5f9281"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f2ca9501af23dbc06e2a97fe7eb16482a0963173045892be624399d7e0e08b7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29cb8c485985ba65050db547fb600453ba3b5681fcc468e23b711a66e1e754bf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "358b185ec3d951eb2e57352c39816b618c30a5c3a3d1589c3778e2c807cafded"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1ac98e42154d21d571bc698fb24fe451ddc62aabc3842a85507f66d9c97d6384"
+    sha256 cellar: :any_skip_relocation, ventura:        "31224b6366dedb3c912e2f0c0da0c492cde99034f64bb014d3fa8492bb3d900d"
+    sha256 cellar: :any_skip_relocation, monterey:       "c93f6c08035b9ede67412db605d08ca7060920413a85de7c2a06ac89c25e37ab"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d99bc5dff34d7267e438868addaeb3387b4bfe8a2da6a7cbe39c4ec5050df10a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c05a1ca7924aeab3ba174164692e80151f02d1b601f2ad6500cdd96efe88ae0d"
   end
 
   depends_on "rust" => :build
+  uses_from_macos "bzip2"
 
   on_linux do
     depends_on "pkg-config" => :build

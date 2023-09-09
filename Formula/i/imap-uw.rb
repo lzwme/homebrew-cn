@@ -60,12 +60,16 @@ class ImapUw < Formula
     # Skip IPv6 warning on Linux as libc should be IPv6 safe.
     touch "ip6"
 
+    args = []
+    # Workaround for Xcode 14.3.
+    args << "EXTRACFLAGS=-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     target = if OS.mac?
       "oxp"
     else
       "ldb"
     end
-    system "make", target
+    system "make", target, *args
 
     # email servers:
     sbin.install "imapd/imapd", "ipopd/ipop2d", "ipopd/ipop3d"
