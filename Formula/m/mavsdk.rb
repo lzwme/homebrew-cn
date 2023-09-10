@@ -7,7 +7,7 @@ class Mavsdk < Formula
       tag:      "v1.4.16",
       revision: "a14d604c2baa950dab1510448bce7c0b490a4f1a"
   license "BSD-3-Clause"
-  revision 10
+  revision 11
 
   livecheck do
     url :stable
@@ -15,13 +15,13 @@ class Mavsdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "2e568be2826c982fe9cb6df6a5aca25900a457b5b64b3796ff4eab2646813f36"
-    sha256 cellar: :any,                 arm64_monterey: "c92a4fcb483020ee2f7f9087c323c1eb428ef83b6334e2b799e2ba200281ddb5"
-    sha256 cellar: :any,                 arm64_big_sur:  "4193f516eda2b92e1d9f88682ee7de4f5452236e0e828f96c547ac9589635acb"
-    sha256 cellar: :any,                 ventura:        "af6c1aa3c6f4fd0ea31ed9c27ffce358db0c4cfad16e325e7da0af90e16da416"
-    sha256 cellar: :any,                 monterey:       "48f0a932af7236b7ccb463b0c74161f0d3c99b82d863fa461e150afd9a0de486"
-    sha256 cellar: :any,                 big_sur:        "db1ac002efbe33240bbc6955f5884487d733597d20fc872609f5b68ce1b38cab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01153fe89511eb1b63c3ec3b86d7b99396d46c487c532f0df4ac3f9b1006da54"
+    sha256 cellar: :any,                 arm64_ventura:  "0af4cf5ab7b5abc60c632ffdda3efe332873e6ae63079ee0dbb80e1abcb67972"
+    sha256 cellar: :any,                 arm64_monterey: "d6c1c7eec5d2adfa23cc50099eb8f3c5bd578cad655aba31cc2e7f97280a2232"
+    sha256 cellar: :any,                 arm64_big_sur:  "7a620c04dba4b65558337b4cc052b7f1ab93e13fdc96e6a0434f3bcfd417ccab"
+    sha256 cellar: :any,                 ventura:        "f347aa900474f58a99b28d4e0a521b0230d1771b1f1c53a4c38ee074ffb8d4f8"
+    sha256 cellar: :any,                 monterey:       "42e23d5deb89b72467426b4a31c81e7dc81d2d80b9c8d8afc2dcdb9828390688"
+    sha256 cellar: :any,                 big_sur:        "7c8cc3b518b7a1a74ca3b756d350fe6715321b62aacb143b0c824c64c99ed22b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7be655fc1394a63c4c5163fbd116025bec65ce2bfdd9be03c98b492b94844cc9"
   end
 
   depends_on "cmake" => :build

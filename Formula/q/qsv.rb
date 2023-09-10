@@ -1,19 +1,19 @@
 class Qsv < Formula
   desc "Ultra-fast CSV data-wrangling toolkit"
   homepage "https://github.com/jqnatividad/qsv"
-  url "https://ghproxy.com/https://github.com/jqnatividad/qsv/archive/refs/tags/0.112.0.tar.gz"
-  sha256 "f8f32939e1a631e3b611cfb841a86ec376fdca66c3cca6edb923650634a727e6"
+  url "https://ghproxy.com/https://github.com/jqnatividad/qsv/archive/refs/tags/0.113.0.tar.gz"
+  sha256 "c7adcf4f0782001d258f3a6e4432fc3bde14fdf679b096c85d9f1ea83fb6d55f"
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/jqnatividad/qsv.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d225d372d5eec7affbf0ffd5d216e5c7c7f9fd2809b58ddadb3937881f7d1664"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "26ab0fb5ff33ab95c144760dd748bb13aebeb8dc26798db135434c860a20c8af"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "274a31cc85f85844a743e519ad6a2a184d423fe6c9a82acf56e3a1ddc0d806bb"
-    sha256 cellar: :any_skip_relocation, ventura:        "f4a8339a82b744fe798afe87e93c331cf6a30d9a0eb9659b6f7194a991f98fe4"
-    sha256 cellar: :any_skip_relocation, monterey:       "971ebf7677347537b3d20f753306c1dbdc4bcf1c69f303d3d5fd61cda6ebd833"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b5aba7176fbfe2ff98665fc31b4e4645bd714daf9218abbf282104aa8f43d66c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f45bed4e661233ae36fecd05c9beaa20827b2078abf479dea2ec68f1a1f5758"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "143c4bab693a56ed0ec8772087519a9e462e6f08d55d5a32ebec3141d590f8f1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c501e697575b0d66143115874584602f955ab033c4d1b9f32079e2439b5a8cd3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fa14e16c3dd8c84642c9017fc5468f78421ce9cd22ccd0386f8af67527d01695"
+    sha256 cellar: :any_skip_relocation, ventura:        "ae1b26ad19bd81c150b703c8c563c868645b624abd08c26278cd8a51be5830c2"
+    sha256 cellar: :any_skip_relocation, monterey:       "16d500a46eab6a7682afa239e48386227b36fbb7f2567c6dbb827485289a5092"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8bddbad4f7226c2c86f53dff0376ff3ba894a5b343924b22522d0552f45059a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "baae57fc0c9a13cb11c4bfc73dd0b1aae94b655c2c02c7cbcd3e271cd189683d"
   end
 
   depends_on "rust" => :build

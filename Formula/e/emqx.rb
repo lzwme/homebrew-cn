@@ -8,6 +8,14 @@ class Emqx < Formula
   license "Apache-2.0"
   head "https://github.com/emqx/emqx.git", branch: "master"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "792df9f7e11ae9cb767b94b61707e31bd6e3926712153177696644823b402078"
     sha256 cellar: :any,                 arm64_monterey: "2f123fa9f940697a52d49f3ba9786dcddb75ee169f949210d22627371650426b"

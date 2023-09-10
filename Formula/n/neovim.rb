@@ -4,8 +4,8 @@ class Neovim < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://ghproxy.com/https://github.com/neovim/neovim/archive/v0.9.1.tar.gz"
-    sha256 "8db17c2a1f4776dcda00e59489ea0d98ba82f7d1a8ea03281d640e58d8a3a00e"
+    url "https://ghproxy.com/https://github.com/neovim/neovim/archive/v0.9.2.tar.gz"
+    sha256 "06b8518bad4237a28a67a4fbc16ec32581f35f216b27f4c98347acee7f5fb369"
 
     # Remove when `mpack` resource is removed.
     depends_on "luarocks" => :build
@@ -22,13 +22,13 @@ class Neovim < Formula
     # TODO: Consider shipping these as separate formulae instead. See discussion at
     #       https://github.com/orgs/Homebrew/discussions/3611
     resource "tree-sitter-c" do
-      url "https://ghproxy.com/https://github.com/tree-sitter/tree-sitter-c/archive/v0.20.2.tar.gz"
-      sha256 "af66fde03feb0df4faf03750102a0d265b007e5d957057b6b293c13116a70af2"
+      url "https://ghproxy.com/https://github.com/tree-sitter/tree-sitter-c/archive/v0.20.5.tar.gz"
+      sha256 "694a5408246ee45d535df9df025febecdb50bee764df64a94346b9805a5f349b"
     end
 
     resource "tree-sitter-lua" do
-      url "https://ghproxy.com/https://github.com/MunifTanjim/tree-sitter-lua/archive/v0.0.17.tar.gz"
-      sha256 "8963fd0a185d786c164dfca3824941c7eaec497ce49a3a0bc24bf753f5e0e59c"
+      url "https://ghproxy.com/https://github.com/MunifTanjim/tree-sitter-lua/archive/v0.0.18.tar.gz"
+      sha256 "659beef871a7fa1d9a02c23f5ebf55019aa3adce6d7f5441947781e128845256"
     end
 
     resource "tree-sitter-vim" do
@@ -53,13 +53,13 @@ class Neovim < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "ca207194a6ed07851c3a36293e32c37e879365f2ad2731f450455da1bec9d7a4"
-    sha256 arm64_monterey: "85795a3a28506df3c7d281d9f9fe1d1f2d50c3834e7287bb17d86d80cbe67f3d"
-    sha256 arm64_big_sur:  "ec4415c980e03abb98631cf6d701bf02eb31430b696de11915900ab2daebb9e0"
-    sha256 ventura:        "70888c68b7413575337a00a044b17a1a06e8948b6b3fa3317a99f66ea6f03f58"
-    sha256 monterey:       "3993bd104e748db9b4f1b2994082d570ebb84ff4facaaeb66ce9d20647613a09"
-    sha256 big_sur:        "fe91386e1a0e9cddb90b13b3998f8f1e293d74f1a4a411b7b6e122771ae3ade7"
-    sha256 x86_64_linux:   "17a892c8ecfd1206aa894663b6d68a7dea4767b4b323afd76263e9aafe3fa673"
+    sha256 arm64_ventura:  "ed82c990549171cc7fc57adc63a497bd0695f49ee5873862bb2fa09812d3471c"
+    sha256 arm64_monterey: "03599c7880db8ef50818df21b76fb520f8b5259dd8fee2f6fd9f670abd3c19ef"
+    sha256 arm64_big_sur:  "443e25018cb6da8aadf9a98a79a5ab1e873fcc7b7842301aeef3c3ca9c638cfd"
+    sha256 ventura:        "e5794d9525acc5e127b2b43e3b5a687dcb37434f16311a2f691310c5b26751a2"
+    sha256 monterey:       "f3086448bcde12c4679ec8ceb3ade1d85a510816d425ba42c9efa42ad76b80b5"
+    sha256 big_sur:        "de7e8957ecae7b11f927fc5d6136e9e3fe314b8c7e56e850dd5ce6820796f36a"
+    sha256 x86_64_linux:   "4e558bb3bd69d373adfdb43c842fd48f7d7efc83fea99cc9b77bef6dfa34371f"
   end
 
   # TODO: Replace with single-line `head` when `lpeg`

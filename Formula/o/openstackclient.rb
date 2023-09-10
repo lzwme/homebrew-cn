@@ -9,20 +9,21 @@ class Openstackclient < Formula
   revision 4
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "478bcb3d3550ad12214e9dffa757a4e97e0f545baf15f2a5f79607307dbe95df"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "659e7078433111cee89480f02ef555235079870a2c918d4d300922ec5035e0d1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "88b106dd6cc17492950153b2e936b369b3ab9bdfc06770477a949e1fd8f53bf2"
-    sha256 cellar: :any_skip_relocation, ventura:        "2a3f370beffe475b9a0b51ab78f5933ed00fc023b77ba71742fdb293b2468df5"
-    sha256 cellar: :any_skip_relocation, monterey:       "4e8dda8f542b6952c8efcaede67815d75324d7ea09f1309e274ad70f994a737b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "89ffadb6dc1b0cc2f1246a0c5aa57633300e8f74d49ac95d3e788c97ca6bb380"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02dcb6d80da29018489736536c40dc66b1cca3c09593f3b804360b2f71abe914"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4d2c87fc666fafe7f4613226d7138f30909f2be203fe70b4c9d12370fe5cfb1a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "53c0cc5f691072176f7ee441e035a1de1f73b3114c8496fc2d83fb38df5c5a2b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "079c2702a873e89d90560aed3a2298553a8cd20cb38ef475aa5345a608b0952a"
+    sha256 cellar: :any_skip_relocation, ventura:        "7aba24ce43aae0af78b368f32cc097e5c746f8776d2b870862e9bf40ec2ac5cb"
+    sha256 cellar: :any_skip_relocation, monterey:       "6b1c7f077ced17a5e9e2bc921dadb353423c77e0d37ea0af59960f0b2cafe2b2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "47e9af49db7f498f4ab6129bd49ec1dc189de0dc996c8f0b18258012c98ebdc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4887e89bb6ac4304ad8c0e17904904259c71e4471d82f84f87ad1625ee97439b"
   end
 
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-pytz"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -240,11 +241,6 @@ class Openstackclient < Formula
   resource "python-swiftclient" do
     url "https://files.pythonhosted.org/packages/51/8a/fc31e8e08bff444ddd5b2ac483320f301999c43c82bebd1bd5461ff5ce08/python-swiftclient-4.3.0.tar.gz"
     sha256 "1e3ddf998ccbea7dc25aa6df8eb3df7d38bf4bc96b065f2f84431e8259817b33"
-  end
-
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/5e/32/12032aa8c673ee16707a9b6cdda2b09c0089131f35af55d443b6a9c69c1d/pytz-2023.3.tar.gz"
-    sha256 "1d8ce29db189191fb55338ee6d0387d82ab59f3d00eac103412d64e0ebd0c588"
   end
 
   resource "requests" do

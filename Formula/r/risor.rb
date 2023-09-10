@@ -6,6 +6,11 @@ class Risor < Formula
   license "Apache-2.0"
   head "https://github.com/risor-io/risor.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4f241407bc2dfca70039654006c20bcbda13db7119eee3803451d7d3738ce6a5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "eff741b006bebc17ff3cf7a2501f1fe8718d8e5c2a3206501cbf030158642b5e"
