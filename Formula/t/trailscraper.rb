@@ -9,15 +9,17 @@ class Trailscraper < Formula
   head "https://github.com/flosell/trailscraper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f9e66ebb373a566bd0ba72e945245a6c4ab05236b509cf7170e8aa65bbb7fee0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a98eb9f9bcd1605ed0a50e5129e50e52a27ae2003b4045f1adab0e6e91d47ce8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ea1caa6f8c28b1f272fe6ce234f74625f71174998b4f5671d11d3964cd26d52f"
-    sha256 cellar: :any_skip_relocation, ventura:        "5bb42af07983d50f5c8d5bab7b1b0f9602365221c6d16f8cff518a3ad6d94129"
-    sha256 cellar: :any_skip_relocation, monterey:       "4969c624af360265353808133fb25715e012d6b4c9e957903caba4972c6e8ac0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "849b319c01e99fdc14bffd06b3610a4d053c5885b523303fe925e58055c86dd7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23ab1666ebdbfdc0d6bce107d6f774f26a232f31a713524aa643264fb7ca0474"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b87fec044a26e2e3fd333c9614df8e26ec569f75d5657cc42434b8332e90b735"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cfda67fe5f3bd69b46ad613853a5e85804fe8bed4b46dfd57a105214025e3dad"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f434396c02fc132f82b07e91ed32fae472f5232a1f3932d1d41a4b0c0942724b"
+    sha256 cellar: :any_skip_relocation, ventura:        "a9846d052fa51ef60c87e10742c6bd74f9de402d110e5655a1f04a038c8ffe22"
+    sha256 cellar: :any_skip_relocation, monterey:       "da647ab846459c5d3dd6c8d9ea1ca01b20a53401162c86bf483152ac0b6f1f73"
+    sha256 cellar: :any_skip_relocation, big_sur:        "617829de5e4c30181e71c7a21e142d0ba14eb4604655b3707b0ac2ba93a2feea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d4ec4ad084fff4058d9cb8010f6d33b3e3c1d18d119f5b48cd603ea79472433"
   end
 
+  depends_on "python-pytz"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -49,11 +51,6 @@ class Trailscraper < Formula
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
-  end
-
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/03/3e/dc5c793b62c60d0ca0b7e58f1fdd84d5aaa9f8df23e7589b39cc9ce20a03/pytz-2022.7.1.tar.gz"
-    sha256 "01a0681c4b9684a28304615eba55d1ab31ae00bf68ec157ec3708a8182dbbcd0"
   end
 
   resource "pytz-deprecation-shim" do

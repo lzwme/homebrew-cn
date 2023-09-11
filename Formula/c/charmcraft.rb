@@ -9,14 +9,14 @@ class Charmcraft < Formula
   revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_ventura:  "9e01b62a8baa51f2913f4f3a60b246470252c81903ffe9408b2478a2801da05d"
-    sha256 cellar: :any,                 arm64_monterey: "956bbb2f241065ebbe8f259828f667b5c72a556d856354ad4de2f6ec455eb724"
-    sha256 cellar: :any,                 arm64_big_sur:  "42c06bb9578f017106c7b8f2474460c61176a77ac75e7cf1e35ef2091680fa4b"
-    sha256 cellar: :any,                 ventura:        "ef9a4d6b0b37c6eb27a4a9f802c84f427497761ff6ab4409caa458a267858625"
-    sha256 cellar: :any,                 monterey:       "f108bc91f02b7b5511294622d6c4ec0b231fdcbe4b2d1334778daf18c5c9f886"
-    sha256 cellar: :any,                 big_sur:        "6c05d228e20ea8020897d02e10d043119cc2fde2846054a9ced539f471cfa7b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd5c14d03f8ab08025243bf848281bd2c75fa88c457184a3a8d016abfd9434a0"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_ventura:  "6df408d6e44a8d24f67b43c4407121cd0889e85b3c88abee3b3d8bc0e0a1af80"
+    sha256 cellar: :any,                 arm64_monterey: "84b05ce134ca8c3636c7100d7c16eced2ffb59898351255465100510497c77fc"
+    sha256 cellar: :any,                 arm64_big_sur:  "334ed21ab42da4ecff81374fbc6fbdac7f1cd495e52ad4e33626536cb23faeb1"
+    sha256 cellar: :any,                 ventura:        "6f7cfa41c8c6783631d94bbffaf39aab5088f267e38d918a124669a8c2d43c8f"
+    sha256 cellar: :any,                 monterey:       "4677953e47bc210439fb52e17195ba80974cebcd3c82e5979ef4e44b338b4fcf"
+    sha256 cellar: :any,                 big_sur:        "c4dbe9a195a7ee3de0673fc50b10e5c760487fa0afca2333bdc58f360af71fb6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eab273d36d7eaec1394ddbd44cf629b42e5f96dbf593235a5c3bf924295fbd08"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -26,6 +26,7 @@ class Charmcraft < Formula
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-pytz"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -172,11 +173,6 @@ class Charmcraft < Formula
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
-  end
-
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/5e/32/12032aa8c673ee16707a9b6cdda2b09c0089131f35af55d443b6a9c69c1d/pytz-2023.3.tar.gz"
-    sha256 "1d8ce29db189191fb55338ee6d0387d82ab59f3d00eac103412d64e0ebd0c588"
   end
 
   resource "pyxdg" do

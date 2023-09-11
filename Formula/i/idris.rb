@@ -16,6 +16,9 @@ class Idris < Formula
     sha256 x86_64_linux:   "864094063e7ad6971b4e121b6b4debb38fecaa338be1b829d6c8e626f8b0f8b9"
   end
 
+  # https://github.com/idris-lang/Idris-dev/commit/9c9e936c3d80a6868ab7621f104e34bcc4b0bc9d
+  deprecate! date: "2021-08-21", because: :unmaintained
+
   depends_on "cabal-install" => :build
   depends_on "pkg-config" => :build
   depends_on "ghc@8.10"

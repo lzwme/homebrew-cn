@@ -53,13 +53,14 @@ class Neovim < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "ed82c990549171cc7fc57adc63a497bd0695f49ee5873862bb2fa09812d3471c"
-    sha256 arm64_monterey: "03599c7880db8ef50818df21b76fb520f8b5259dd8fee2f6fd9f670abd3c19ef"
-    sha256 arm64_big_sur:  "443e25018cb6da8aadf9a98a79a5ab1e873fcc7b7842301aeef3c3ca9c638cfd"
-    sha256 ventura:        "e5794d9525acc5e127b2b43e3b5a687dcb37434f16311a2f691310c5b26751a2"
-    sha256 monterey:       "f3086448bcde12c4679ec8ceb3ade1d85a510816d425ba42c9efa42ad76b80b5"
-    sha256 big_sur:        "de7e8957ecae7b11f927fc5d6136e9e3fe314b8c7e56e850dd5ce6820796f36a"
-    sha256 x86_64_linux:   "4e558bb3bd69d373adfdb43c842fd48f7d7efc83fea99cc9b77bef6dfa34371f"
+    rebuild 1
+    sha256 arm64_ventura:  "1331fb8fbe169fa8df3209f995ac07b1c3d3116b68a56b7d84d5ad2232d19621"
+    sha256 arm64_monterey: "b593f04943f12915e7d3e33a4fb313fa3d9734767a26ed7f7d4ddb9e1bb57346"
+    sha256 arm64_big_sur:  "db136225812aa77d1989562bb21131d7be2764ad099624f3bdfa0700320ab594"
+    sha256 ventura:        "c33d7e0c78d8d3f232b60b34d8203038d66c42cc796bf64d54bc834522805f6c"
+    sha256 monterey:       "000aa80bcbd9d47e0d52d98717a087304ec643b19d15fc5b4b51bf0680b1b988"
+    sha256 big_sur:        "77e2dc10ca228748aa60dbebcac9ea739809f4eabcd4a22f861d5701acd191c6"
+    sha256 x86_64_linux:   "50d91513b35af090a520f5a319bbe5eef6d5ff2d8dbf1e5d7d913e3b9dda3721"
   end
 
   # TODO: Replace with single-line `head` when `lpeg`
@@ -148,6 +149,7 @@ class Neovim < Formula
     system "cmake", "-S", ".", "-B", "build",
                     "-DLUV_LIBRARY=#{Formula["luv"].opt_lib/shared_library("libluv")}",
                     "-DLIBUV_LIBRARY=#{Formula["libuv"].opt_lib/shared_library("libuv")}",
+                    "-DLPEG_LIBRARY=#{Formula["lpeg"].opt_lib/shared_library("liblpeg")}",
                     *std_cmake_args
 
     system "cmake", "--build", "build"

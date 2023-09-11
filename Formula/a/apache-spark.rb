@@ -9,7 +9,8 @@ class ApacheSpark < Formula
   head "https://github.com/apache/spark.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f4335fa90cf2693e2d6886e5b32fa24c0b5aef301c9232b05ab0411ea7f5e795"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "841aa2a29c6fbda9a1cb1ce1b11fb39fafbb7c446db543f2edfd124774381a04"
   end
 
   depends_on "openjdk@17"
@@ -21,7 +22,7 @@ class ApacheSpark < Formula
     rm_f Dir["bin/*.cmd"]
     libexec.install Dir["*"]
     bin.install Dir[libexec/"bin/*"]
-    bin.env_script_all_files(libexec/"bin", JAVA_HOME: Formula["openjdk@17"].opt_prefix)
+    bin.env_script_all_files(libexec/"bin", JAVA_HOME: Language::Java.overridable_java_home_env("17")[:JAVA_HOME])
   end
 
   test do
