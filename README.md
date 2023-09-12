@@ -53,7 +53,10 @@ brew install https://ghproxy.com/github.com/lzwme/homebrew-cn/blob/main/Formula/
 - [Homebrew/homebrew-cask](https://github.com/Homebrew/homebrew-cask)
 - [Homebrew/homebrew-cask-fonts](https://github.com/Homebrew/homebrew-cask-fonts)
 - [Homebrew/homebrew-cask-versions](https://github.com/Homebrew/homebrew-cask-versions)
-- [Homebrew/homebrew-cask-drivers](https://github.com/Homebrew/homebrew-cask-drivers)
+- [nicerloop/homebrew-nicerloop](https://github.com/nicerloop/homebrew-nicerloop)
+- [codello/homebrew-brewery](https://github.com/codello/homebrew-brewery)
+- [shivammathur/homebrew-php](https://github.com/shivammathur/homebrew-php)
+- [https://raw.githubusercontent.com/lencx/ChatGPT/main/casks/chatgpt.rb](https://raw.githubusercontent.com/lencx/ChatGPT/main/casks/chatgpt.rb)
 
 ## 声明
 

@@ -15,7 +15,7 @@ const CONFIG = {
     `Homebrew/homebrew-cask`,
     `Homebrew/homebrew-cask-fonts`,
     `Homebrew/homebrew-cask-versions`,
-    `Homebrew/homebrew-cask-drivers`,
+    // `Homebrew/homebrew-cask-drivers`,
     `nicerloop/homebrew-nicerloop`,
     `codello/homebrew-brewery`,
     `shivammathur/homebrew-php`,
@@ -155,6 +155,7 @@ async function gitCommit() {
 }
 
 function updateInstall() {
+  logger.info('starting update install.sh');
   const installUrl = `${isDebug ? "https://ghproxy.com/" : ""}https://raw.githubusercontent.com/Homebrew/install/master/install.sh`;
   execSync(`curl -fsSLO ${installUrl}`, "inherit", rootDir);
   const content = fs
@@ -162,25 +163,34 @@ function updateInstall() {
     .replaceAll("https://github.com/Homebrew/", "https://ghproxy.com/github.com/Homebrew/");
   fs.writeFileSync("install.sh", content, "utf8");
 }
+async function updateReadme() {
+  const rdFile = path.resolve(rootDir, "README.md");
+  const list = [...CONFIG.repo].map((repo) => `- [${repo}](${repo.startsWith("http") ? "" : "https://github.com/"}${repo})`).join("\n");
+  const content = fs.readFileSync(rdFile, "utf8");
+  const updated = content.replace(/## Sync From[\s\S]+##/g, `## Sync From\n\n${list}\n\n##`);
+  if (updated !== content) fs.writeFileSync(rdFile, updated, "utf8");
+  else logger.debug("[UPDATE-READE] No Chagned");
+}
 
 function outputSources() {
   logger.debug("starting output for", CONFIG.sourcesStatFile);
 
   const list = [...destFilesCache.values()]
     .sort((a, b) => a.src > b.src)
-    .map((item) => `${(item.src.replace(CONFIG.tmpDir), "")}, ${item.repo}, ${item.fixed ? 1 : 0}`);
+    .map((item) => `${item.src.replace(CONFIG.tmpDir, "")}, ${item.repo}, ${item.fixed ? 1 : 0}`);
   if (list.length > 0) fs.writeFileSync(CONFIG.sourcesStatFile, list.join('\n'), "utf8");
 }
 
 async function sync() {
   const stats = {
-    sync: { Formula: 0, Casks: 0 },
+    sync: { Formula: 0, Casks: 0, lib: 0 },
     repo: { abc: 0 },
   };
 
   updateInstall();
   if (isCI) [...Object.keys(stats.sync), "tmp"].forEach((d) => rmrf(d));
 
+  /** 临时存放 repo 配置为单个具体 rb 的文件 */
   const tmpRbFileDir = path.resolve(CONFIG.tmpDir, "abc");
   mkdirp(tmpRbFileDir);
 
@@ -210,6 +220,8 @@ async function sync() {
     outputSources();
     gitCommit();
   }
+
+  updateReadme();
 
   const fixedCount = [...destFilesCache.values()].filter((d) => d.fixed).length;
   logger.info("Done!", `Total: ${destFilesCache.size}, Fixed: ${fixedCount}`, stats);
