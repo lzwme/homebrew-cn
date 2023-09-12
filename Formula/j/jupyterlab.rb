@@ -12,14 +12,14 @@ class Jupyterlab < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "ce525e5353eb485ede4f1e63604a0ca6ff2decd7fd5afa5c3ca627dae945d4e1"
-    sha256 cellar: :any,                 arm64_monterey: "2e8c9ea3ee9c5a29fc548a3e0327558421b6bfc309e9121a71b591d358c6b6f9"
-    sha256 cellar: :any,                 arm64_big_sur:  "14a08db1dc9e2d28b6a24ce658a614a86c69d2f75905f160adb4d85105f73652"
-    sha256 cellar: :any,                 ventura:        "2e0b25971d854f39e48ee83fa16d00896885f9ccc0cc8de73e6f21dc6b72b862"
-    sha256 cellar: :any,                 monterey:       "ef3bb51f4c7a3938617cc5ec7c13939d7b3c3af64058de456fb7903fa429bd09"
-    sha256 cellar: :any,                 big_sur:        "943a6665ebca09137911ae703369f1c5cce970dd36064e3eb5a074f3b5cdee66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0317cca53b4c5138fe2a5372d06db039112abe5701dac335d78afe631456d13f"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "de165787c838c8cc99476b9296d71c6bf85d2356feb7bb3542cc5a169c27f01e"
+    sha256 cellar: :any,                 arm64_monterey: "7994567be11fba3aebc469615adf586fa139204cd1790c3dfeed52cad0f10832"
+    sha256 cellar: :any,                 arm64_big_sur:  "afaabdc6c0810d083ea8fdef42beea6c783b478ce7d30933481ac451345d27e5"
+    sha256 cellar: :any,                 ventura:        "f57f4c452163a61b83d463e24fa784d9c0c82f7c436401e16234ef56ff606112"
+    sha256 cellar: :any,                 monterey:       "0d6234c1531e63b6b8fc6f4760e8b5df784dfd5a8faa15e84a221be631fb1467"
+    sha256 cellar: :any,                 big_sur:        "395b1e0d1fde09980fe470e7fd6f4b4978c87d28a65181adb63679cb9514bea0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0317b27fb2e1a22aea8bf889eced162145a5a7aa5db0f542da3fe9794a9d1df9"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -31,6 +31,7 @@ class Jupyterlab < Formula
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-lsp-server"
+  depends_on "python-packaging"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -243,11 +244,6 @@ class Jupyterlab < Formula
   resource "overrides" do
     url "https://files.pythonhosted.org/packages/4d/27/30c865a1e62f1913a0730e667e94459ca038392b6f44d69ef7a585690337/overrides-7.4.0.tar.gz"
     sha256 "9502a3cca51f4fac40b5feca985b6703a5c1f6ad815588a7ca9e285b9dca6757"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "pandocfilters" do

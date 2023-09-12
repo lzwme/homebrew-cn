@@ -9,13 +9,14 @@ class Fwupd < Formula
   head "https://github.com/fwupd/fwupd.git", branch: "main"
 
   bottle do
-    sha256 arm64_ventura:  "d7e7a0edf5ef48f47ce9b6e37b4b87207707ed39131da80f7838c4a36707ed61"
-    sha256 arm64_monterey: "a4efadea9daad726dbafcfac8735b5dbef3097a1c57475e20e8f28633712f731"
-    sha256 arm64_big_sur:  "fbe7b8db9ff110c503d2e5be8e2743f6fcadfb5df4fab347e0957d160a715a64"
-    sha256 ventura:        "3c29e2ec08d286e953a08bc35889bf3c966033c2732d7be14c17aa8c165c113e"
-    sha256 monterey:       "6702bfba9db5eaf60ac52d9664ef931b6e27c51195aedebbddfdf56d302290f7"
-    sha256 big_sur:        "c69745c9eb39c5c38f3ba701ffa073b936eb0ebba67738ada40683609c36dce0"
-    sha256 x86_64_linux:   "9be49b476d7d147431e63ac7cd0c87d759eb3b55f2f63daa0cac85e4cfceeadc"
+    rebuild 1
+    sha256 arm64_ventura:  "e3cb97c25f8620bc5bb4cdf7f76fc0a198e56b80430d327f3683311698538ba6"
+    sha256 arm64_monterey: "6ee0840adc9ce90d01761d32aadc616886eceb383bb005c73774c8bbe433526d"
+    sha256 arm64_big_sur:  "2b2d7d2ec92d10caef46e5b499077a6ac644ac1b607c1aec7ffa1efc6297f093"
+    sha256 ventura:        "104bf7001de23e552902ff4725b89ca0df66dc84fbce0eca6567956d2734d25b"
+    sha256 monterey:       "14f5d36e91a8cac3ef1c2f788c5b7d021c5cd0c83b831f265db96216aec18cbc"
+    sha256 big_sur:        "2fa9406c77045e9dc7cb256710a6de3f38371950eec3bed09ae07eebc9f7f28b"
+    sha256 x86_64_linux:   "9b13b1d783c768df23fdd626138b5b1ae4a51053828487843989851fe73e7caa"
   end
 
   depends_on "gi-docgen" => :build
@@ -31,13 +32,13 @@ class Fwupd < Formula
   depends_on "glib"
   depends_on "gnutls"
   depends_on "json-glib"
+  depends_on "libarchive"
   depends_on "libcbor"
   depends_on "libgusb"
   depends_on "libjcat"
   depends_on "libxmlb"
   depends_on "protobuf-c"
   uses_from_macos "curl"
-  uses_from_macos "libarchive"
   uses_from_macos "sqlite"
 
   resource "jinja2" do
@@ -56,6 +57,7 @@ class Fwupd < Formula
 
     system "meson", "setup", "build",
                     "-Dbuild=standalone", # this is used as PolicyKit is not available on macOS
+                    "-Dlibarchive=enabled", # fail if missing
                     "-Dpython=#{venv_root}/bin/python",
                     "-Dsupported_build=enabled",
                     "-Dplugin_dell=disabled",

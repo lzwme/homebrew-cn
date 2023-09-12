@@ -1,18 +1,18 @@
 class Eza < Formula
   desc "Modern, maintained replacement for ls"
   homepage "https://github.com/eza-community/eza"
-  url "https://ghproxy.com/https://github.com/eza-community/eza/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "fdaaf450cfaaa41d6ea8ae12fbb8e41e955e255b1169022a7675ca29d7d621c0"
+  url "https://ghproxy.com/https://github.com/eza-community/eza/archive/refs/tags/v0.11.1.tar.gz"
+  sha256 "dbc2ee7c8c20383ab2ad5daeadd0ed4624ba41fea1791a6698ce1309bba1e27a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "311f5e0b71948ba646711dca93f6bdbf06f44a1271f67582490039f82457c487"
-    sha256 cellar: :any,                 arm64_monterey: "5b0eafcf88ec260f84606986dcd8e8d7ae1a8c58bc05098cbb4cb4872f0f42c2"
-    sha256 cellar: :any,                 arm64_big_sur:  "a891a78b12fef218239c3d4a3814057359b3ba47c3aedb9f1a0ff86788cb4104"
-    sha256 cellar: :any,                 ventura:        "bc631f12244ad3cc79f9018ec312a109af45b27144d931aecb7359dfcbcd9c55"
-    sha256 cellar: :any,                 monterey:       "3b27552d47fbf679f1b7ccc95b82e0f27ecbd7a64e69092bb3c717b260e7b5a7"
-    sha256 cellar: :any,                 big_sur:        "30d988f922e1b29012e141c0992f8414248165e6bbd83ce0dafdb0bc25026458"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2845fc8e6570c70d907d0452f078cc8aac5d6cc98bc5f122553c65151c33cc6"
+    sha256 cellar: :any,                 arm64_ventura:  "2536ce41e8ec626f2e5cc99cc354aca67c753b0c490eff5ceb19b3da180982d6"
+    sha256 cellar: :any,                 arm64_monterey: "a1a197aac270b8f60ae7298f53b63d9bbede5fc4c7de1f94c9cb115a5190980e"
+    sha256 cellar: :any,                 arm64_big_sur:  "9dcf06c5bd51c87ee8c269e7b349cab54eefcc5d201383a425954308de7c664a"
+    sha256 cellar: :any,                 ventura:        "a559c8de30deb52f6e992c6b88dac112fe93b1cbe65c53849aaa869c1dbaf9ad"
+    sha256 cellar: :any,                 monterey:       "d94cdb8c6abfbcf49fb79e724f6a368841c41c6b772a7db939d31d6f9c5c5d25"
+    sha256 cellar: :any,                 big_sur:        "3fa35b1958c814a602603dec50439e471ab313e5a86347b5a3dd8c9e9d8b79fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a635d47ccfa3b78e80e72e7dab8389e9f7b4145964aa6bd19932e333fe3161a2"
   end
 
   depends_on "just" => :build

@@ -9,14 +9,14 @@ class YtDlp < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7af529d4305815e86d0d27431a59e6e64fdc7cda31cbc6b7c16f4c1f111aed28"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "62a89b18f3fe6452c24217fed43bec9abfb4d4ea1f9de4fa44ebcc8c28732fb3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0045eefa4f8b63308dcc9684da91b6effd60aa3528e56a28a8b5cb9e929baa94"
-    sha256 cellar: :any_skip_relocation, ventura:        "37f3696765f471d5325c780a9823d45177412c7ea2c5c3077fad7f38a7a09430"
-    sha256 cellar: :any_skip_relocation, monterey:       "4a246654ec69866a6fb04e05ab24d45543332cb1b71f3721504f67205c2c4202"
-    sha256 cellar: :any_skip_relocation, big_sur:        "94937c92c0ba7f1fec7c5bedc07880b4c1fc1dd98bca43aa1833f2b5b56a89a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6bc41d23380525ee80f42c29ab3cc56784b1d207daacd88ba11cdcaae9138dcb"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bda3b7ff3e1a21cdf3a6ae8ee74c619b1ded8eaf3c4c8bc27be8eadbcd53c61a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1f4915e7a93536ce47a22aeb142a4e6e6bd8b65c59f6a8187c54519ad254222e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "21f6d0153bd80dfab8b3bccd9a01479c7fa7e5a572f287b680fedc839afafbe9"
+    sha256 cellar: :any_skip_relocation, ventura:        "50b4977a36a1bbe35376c8ff63a0938ef095175dd55033adf8a451a75b80d955"
+    sha256 cellar: :any_skip_relocation, monterey:       "4242b28e5152b7e5cc8179852ea1420eb107136b6dabc56af9064f87f2a15244"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b5a93f0baaac1a92fb552c5d2b5034019e9383596b2566086b4f8857686c9e40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "14d02969e3d2453c145014e841d80e3da3003d109ee0828d0010fca27dda643c"
   end
 
   head do
@@ -25,16 +25,12 @@ class YtDlp < Formula
   end
 
   depends_on "python-certifi"
+  depends_on "python-mutagen"
   depends_on "python@3.11"
 
   resource "brotli" do
     url "https://files.pythonhosted.org/packages/2a/18/70c32fe9357f3eea18598b23aa9ed29b1711c3001835f7cf99a9818985d0/Brotli-1.0.9.zip"
     sha256 "4d1b810aa0ed773f81dceda2cc7b403d01057458730e309856356d4ef4188438"
-  end
-
-  resource "mutagen" do
-    url "https://files.pythonhosted.org/packages/b1/54/d1760a363d0fe345528e37782f6c18123b0e99e8ea755022fd51f1ecd0f9/mutagen-1.46.0.tar.gz"
-    sha256 "6e5f8ba84836b99fe60be5fb27f84be4ad919bbb6b49caa6ae81e70584b55e58"
   end
 
   resource "pycryptodomex" do

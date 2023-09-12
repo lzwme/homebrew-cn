@@ -1,8 +1,8 @@
 class SbomTool < Formula
   desc "Scalable and enterprise ready tool to create SBOMs for any variety of artifacts"
   homepage "https://github.com/microsoft/sbom-tool"
-  url "https://ghproxy.com/https://github.com/microsoft/sbom-tool/archive/refs/tags/v1.6.0.tar.gz"
-  sha256 "5aed29a68016cd248592735319ddebed25dc8d98957925f92791ecb1b91d9a53"
+  url "https://ghproxy.com/https://github.com/microsoft/sbom-tool/archive/refs/tags/v1.6.1.tar.gz"
+  sha256 "2cd65af77543e54be380de1ca94c681c3b880293183874368ddf4cb2957d5bfd"
   license "MIT"
   head "https://github.com/microsoft/sbom-tool.git", branch: "main"
 
@@ -15,13 +15,13 @@ class SbomTool < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b776d2bcb7ec0b125a537e08a5a59b6a80887810f27d8593e7411d99d212c85"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9b776d2bcb7ec0b125a537e08a5a59b6a80887810f27d8593e7411d99d212c85"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9b776d2bcb7ec0b125a537e08a5a59b6a80887810f27d8593e7411d99d212c85"
-    sha256 cellar: :any_skip_relocation, ventura:        "41e60ae2445044398eac8f93607c87651c9fc8b03ce61b4f2caa921888e1bd0e"
-    sha256 cellar: :any_skip_relocation, monterey:       "41e60ae2445044398eac8f93607c87651c9fc8b03ce61b4f2caa921888e1bd0e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "41e60ae2445044398eac8f93607c87651c9fc8b03ce61b4f2caa921888e1bd0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "312a889d39c979b8e1e06747a145e84c2b671f4c04890b13f106c8a98b2cde66"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "095f0ba6f783ca5b17418c5b4ff29a97544edf60ae8e3247cae613b2eca33c95"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "095f0ba6f783ca5b17418c5b4ff29a97544edf60ae8e3247cae613b2eca33c95"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "095f0ba6f783ca5b17418c5b4ff29a97544edf60ae8e3247cae613b2eca33c95"
+    sha256 cellar: :any_skip_relocation, ventura:        "0f709758d7c799b43a6cbc4aefd5b900e3a5bc6934652b48a56cc719475624e5"
+    sha256 cellar: :any_skip_relocation, monterey:       "0f709758d7c799b43a6cbc4aefd5b900e3a5bc6934652b48a56cc719475624e5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0f709758d7c799b43a6cbc4aefd5b900e3a5bc6934652b48a56cc719475624e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f6243dae54e2ec558261da8070d6c5be6ce9b3d636f97897cb1920401791f46"
   end
 
   depends_on "dotnet" => :build
