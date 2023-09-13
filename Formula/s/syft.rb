@@ -1,28 +1,22 @@
 class Syft < Formula
   desc "CLI for generating a Software Bill of Materials from container images"
   homepage "https://github.com/anchore/syft"
-  url "https://ghproxy.com/https://github.com/anchore/syft/archive/refs/tags/v0.89.0.tar.gz"
-  sha256 "e8b4bf1481f3101adb2881f35f95528cceb58470f1c568c7c05c2864031dfdaa"
+  url "https://ghproxy.com/https://github.com/anchore/syft/archive/refs/tags/v0.90.0.tar.gz"
+  sha256 "50b5e499948d06905e4e188d4189d4520aa0e28d7470c9a459a12b26af28caf9"
   license "Apache-2.0"
   head "https://github.com/anchore/syft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "374c79feda2e4735dcee33a8a8168c94e24bd5d664d5a2841795a651b41f25d2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7613c9c065db303464de14ecb64c2f2d05a9b8dc9ea32d5757d4f94b299a81f7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f81527dd20b208bc23c55be79f42ce4ba9d150dac921a047f97e6a52c34a533b"
-    sha256 cellar: :any_skip_relocation, ventura:        "6a6c17387b6553450b674c70412c4c57cd4f2925c9ac6fc91c85bbeed323d3eb"
-    sha256 cellar: :any_skip_relocation, monterey:       "2bb4f85e6346c8f4b2a3144c010e910562c3b956e865e998436b821036928778"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d44df5a38db06c33f20110181d65d9a9e7e64df4d51d102188db5c517385c03a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "12d0163d81fd88049c9f8fb2750e01511a0a2dc8a99fd704d9dc0827d43752ed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bea3c1ebc5a565cb995c9384cdba3ca5d75d49257591c705230dba538c9c2520"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3d225709c7c3fa89bf94e71080e6fc1e5f9f29764eed307f991459af53b8937c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fee279d6e18305154b02136ab0bc4ed01914736f907a9584eff171c1cfd7d8e4"
+    sha256 cellar: :any_skip_relocation, ventura:        "f7cd6f1b43a287c091f433f6e7bfb37d3e4aa547b9771f258c8a1c8b568fe9d2"
+    sha256 cellar: :any_skip_relocation, monterey:       "cf444acf1c3d61463b8108c318c37f7ce1e6981e54a21b234b8a8cdd3c642d3e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2848bdf25a32a67d85c50107bb87d98d864f0f0969bf52e5fd7ed861b7a9d88f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "224ea4c1e20a1cced153b71d2f872bcf7feb64d5396fd7669701db55bd2b79e0"
   end
 
   depends_on "go" => :build
-
-  # patch to build with go1.21, upstream PR, https://github.com/anchore/syft/pull/2067
-  patch do
-    url "https://github.com/anchore/syft/commit/aef33a0effe14830347867f24ab18aaac2d679a8.patch?full_index=1"
-    sha256 "c78f11977678e324b550dddd0e1b3a18051cc015c4156792c72553b3c6ff14d0"
-  end
 
   def install
     ldflags = %W[

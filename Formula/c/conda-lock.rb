@@ -3,18 +3,18 @@ class CondaLock < Formula
 
   desc "Lightweight lockfile for conda environments"
   homepage "https://github.com/conda/conda-lock"
-  url "https://files.pythonhosted.org/packages/4d/9b/7fd9f0314a9b17ba43af1117af9e78dca44939637387b1a7e11274a4927f/conda_lock-2.2.1.tar.gz"
-  sha256 "5fe13e49877c7770d205e38e58ba2a4b6f98a88ebfe87576bac37ea55a6ae217"
+  url "https://files.pythonhosted.org/packages/f3/2e/e491ef84df5e60fca5ca1b0832fde6f8ce779e6d5189a8b95435961cc0d6/conda_lock-2.3.0.tar.gz"
+  sha256 "5f20c2fa8d560cb13c776e0723af6add0765b349862cc051cf9c77fcef4588d0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b6c07c375d108a08ba942eebcb6f1cafe494a312fb26c15d8005e6e2cc3dadf7"
-    sha256 cellar: :any,                 arm64_monterey: "1a42f0bbf235519146a7b450e378ed0cf71a58072cd4461973dda287faec4ecd"
-    sha256 cellar: :any,                 arm64_big_sur:  "490d1bf5d41ecca41da289ee9f9a6c35594a28dcc1bf8db47ce0c9b1e0823c95"
-    sha256 cellar: :any,                 ventura:        "3b7116c210fae6e0384fceec596342e15a60a21f4283b5f82764b91c81c90b52"
-    sha256 cellar: :any,                 monterey:       "b1a50914ab95cc40c931c3a7725a293b110b830ead4777bb59e531b4babd017a"
-    sha256 cellar: :any,                 big_sur:        "0b2f6f25d25b8b05ed9e817275e63a9fb23508efaf58d2be46f3cfa2df6bb5c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "570c432ae1dfa7dc07ec51225b1c6782fa2fa557612ec3e85e4a4267db221ae2"
+    sha256 cellar: :any,                 arm64_ventura:  "c6b68799cb02818e774df9e13c4adc35887bf6dfc3321984abacfd000678ebae"
+    sha256 cellar: :any,                 arm64_monterey: "914496a37ff51a13f5e581561f7055788e93079234c39c29569c3e5a21720ec6"
+    sha256 cellar: :any,                 arm64_big_sur:  "1b0b298c92185f61b43fe56a16db42a891dd1a2197a0d1e04ee4bd33700c7e8d"
+    sha256 cellar: :any,                 ventura:        "3929d4ef8f2c3aa70c4895ec81089235b8ef8a17600061d51abe804816e5b383"
+    sha256 cellar: :any,                 monterey:       "a8c33bc93ea18647a38aaf097a5d3064a977724304cee1f5790215420548ff1d"
+    sha256 cellar: :any,                 big_sur:        "01ec9210d6d4d2397a7facf47a8b68195ed1bd604ddb461c306f439194e401a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a5bd184c13c7d2dba5833dd291a402d9a89f3e7d708c7cbfb3a145af4bcb04f"
   end
 
   depends_on "rust" => :build # for pydantic

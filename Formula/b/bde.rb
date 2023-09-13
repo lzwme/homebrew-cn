@@ -1,8 +1,8 @@
 class Bde < Formula
   desc "Basic Development Environment: foundational C++ libraries used at Bloomberg"
   homepage "https://github.com/bloomberg/bde"
-  url "https://ghproxy.com/https://github.com/bloomberg/bde/archive/3.117.0.0.tar.gz"
-  sha256 "7dcea8f13105df27f2207fc80e271f97314e763ee573ad936f9b8d7f076b57bb"
+  url "https://ghproxy.com/https://github.com/bloomberg/bde/archive/3.123.0.0.tar.gz"
+  sha256 "17254dc8bedd081e18c118881df13bffe42b6175836f998e87cc27ea0c4d8949"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Bde < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6ca88d6a3cb310b366c419f699a8a811b8742906c4d66d0655fc30c1b2a3bb5c"
-    sha256 cellar: :any,                 arm64_monterey: "28a9d3bbc353dccd450607ab0592d43645954b2d52dc388928e032925fdfe1f5"
-    sha256 cellar: :any,                 arm64_big_sur:  "65686e68e713323b90c22118ada6590cb176b4cf83d2e1b6a44265e22625d4e9"
-    sha256 cellar: :any,                 ventura:        "436e18f57b3bc003471e3f8c0e021671bf65a03067087c2eb3ecb599a9a0459d"
-    sha256 cellar: :any,                 monterey:       "24cdc824e5f45852dbd7b8a39f231ace7a0fb0ae1bc0833ac2ffb2cb49b1b5ba"
-    sha256 cellar: :any,                 big_sur:        "ada9edb55e92eda3952efafbe87d91a904d44e2f3df3431353cc9311e990a123"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ff35f52c38e498cbfb8d45a1ae4c6e66fa51d3580d2c8499fb963803f718600"
+    sha256 cellar: :any,                 arm64_ventura:  "1339d9b1c6d5d200e2976ffbbdcbf170205bcf365d871c06cdfb232e0dd219aa"
+    sha256 cellar: :any,                 arm64_monterey: "8cf31eea8fe8b7339af8779b7c4d22e097e92bde46d3579293e22dd1cb3b25d0"
+    sha256 cellar: :any,                 arm64_big_sur:  "a46ee4eb904081a33c898ae7a0aecf78a5b12a555681a7ca386d16665b572225"
+    sha256 cellar: :any,                 ventura:        "1a8251173a88df9386233d8c13927aca254ccb57f96dcbf302873086bdacb542"
+    sha256 cellar: :any,                 monterey:       "e1eb4806f33aa9d9866f0eeaa5dfa5cd9142d8430f300c2ebf01f1f1387e0f22"
+    sha256 cellar: :any,                 big_sur:        "de9b109a18d344ae06dcf852b011e09ca07914b76b6d7ae4966b09f6cf2af550"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5a1d5d353d6f8b2cc94a292b13c6226bf89689a7f11010191cf4a73d0c6a5f8"
   end
 
   depends_on "cmake" => :build
@@ -26,8 +26,8 @@ class Bde < Formula
   depends_on "pcre2"
 
   resource "bde-tools" do
-    url "https://ghproxy.com/https://github.com/bloomberg/bde-tools/archive/3.117.0.0.tar.gz"
-    sha256 "9f92f4c2cf1fc96d483743a367ed42f929dc0f41a6c0a8a8b7f72099bd52f28b"
+    url "https://ghproxy.com/https://github.com/bloomberg/bde-tools/archive/3.123.0.0.tar.gz"
+    sha256 "9dac9d89e8485595a92db9d5464d5f54e487879382cd8dd708e20f5d022ca531"
   end
 
   def install
@@ -58,6 +58,8 @@ class Bde < Formula
   end
 
   test do
+    assert_equal version, resource("bde-tools").version, "`bde-tools` resource needs updating!"
+
     # bde tests are incredibly performance intensive
     # test below does a simple sanity check for linking against bsl.
     (testpath/"test.cpp").write <<~EOS

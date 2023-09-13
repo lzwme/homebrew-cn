@@ -3,19 +3,19 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/3c/82/835ca4f6ebb67a0fc220eb865a4dc411afe57e8c9c8a81b34fbf9874ebc4/pdm-2.9.1.tar.gz"
-  sha256 "fc8014dd2ffb727179a8ec0243cfac9ed3a9dc45348be1d7f97d1f290ad60fcb"
+  url "https://files.pythonhosted.org/packages/0c/1a/5475da7e816fa32e8a94e4df657d8ccb44643257d1d0c307e8e6d420a583/pdm-2.9.2.tar.gz"
+  sha256 "53d37a84a0bd3d5dc9db3e3de19ab120d2dda82ebfcc1e4508ea7be34221181e"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f32fa810d3c60b2c4a6872b04de879622a6d53469fbb97b720079179e95a87b1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4411f7e961b95a3b6788fdb7df35bec0435488920f8c6f1d5d6e2183092fe9a6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "478e17ef4b22fb89ada1d3133ea052c47568489dd02a5ca9d3d6e0adda8cc371"
-    sha256 cellar: :any_skip_relocation, ventura:        "e6f100c8eaa48686e9b2349e53d2b5938899788f7e513632face027e29e73b46"
-    sha256 cellar: :any_skip_relocation, monterey:       "c221abe034f95c7b2c14a94c6ef7ef2b7a130f3ff075be8d9d8958b5c8455a07"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d22d9d43367fd2441051e15e37b21c1fb64b0722184397864440d38e47eb94b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa531dfd7e69a661cdfdbe3dda631a2659a0b39aec315d4ce2a4edd771bb6e2f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2356bc5417849ce5e7b38d730110444d0538437b76468779d8c0c3e8e0c3001d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "99352d89b5ed46028e7bd5f51d0c810638000b6948b8169a036bc1e6f2b71064"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0f2a1ebcb5ce94b3e4aff90454df715ab32200ceb8bd5bb6b30758199804e9f5"
+    sha256 cellar: :any_skip_relocation, ventura:        "f985f924952dcfc80c97c07aa603803c8fec9165b710080de51942931135d704"
+    sha256 cellar: :any_skip_relocation, monterey:       "15d6d7ffed19a7ff4c8c037819a105cb8f1e9c9d569df8b6f6798b9f7717f746"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c5fdac7a3c0da12740b05638964ecb7df33e0ec33712a9e671ee8b95dd6b7d75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8375998a9a3359b27a48a7e4d5805e6aad03fcd882f1e42dfc010bc91cb45106"
   end
 
   depends_on "pygments"
@@ -128,8 +128,8 @@ class Pdm < Formula
   end
 
   resource "truststore" do
-    url "https://files.pythonhosted.org/packages/d4/cf/4f715c59d1be8928c42ae5da9ca42878f6effb52791702caeed28daa3d74/truststore-0.7.0.tar.gz"
-    sha256 "72e784507a624375434381e4bad3eff8614bc8c845a7f5ae16a25a2624d0683f"
+    url "https://files.pythonhosted.org/packages/25/fa/852059855159181dba77129770834e419e0235ecf99a2c0e0d15a2b18a31/truststore-0.8.0.tar.gz"
+    sha256 "dc70da89634944a579bfeec70a7a4523c53ffdb3cf52d1bb4a431fda278ddb96"
   end
 
   resource "unearth" do
@@ -143,8 +143,8 @@ class Pdm < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/a6/8e/2ebdf99a0dd15249272780e34fa40e3becfd28689505979d3ec6aa2f6ce1/virtualenv-20.24.4.tar.gz"
-    sha256 "772b05bfda7ed3b8ecd16021ca9716273ad9f4467c801f27e83ac73430246dca"
+    url "https://files.pythonhosted.org/packages/d3/50/fa955bbda25c0f01297843be105f9d022f461423e69a6ab487ed6cabf75d/virtualenv-20.24.5.tar.gz"
+    sha256 "e8361967f6da6fbdf1426483bfe9fca8287c242ac0bc30429905721cefbff752"
   end
 
   resource "wheel" do

@@ -1,20 +1,20 @@
 class Cmctl < Formula
   desc "Command-line tool to manage cert-manager"
   homepage "https://cert-manager.io"
-  url "https://github.com/cert-manager/cert-manager.git",
-      tag:      "v1.12.4",
-      revision: "fe419511b51c162b59f8f431d7768cd7acc48678"
+  url "https://ghproxy.com/https://github.com/cert-manager/cert-manager/archive/refs/tags/v1.12.4.tar.gz"
+  sha256 "c2dfbc4997c46a81a10d9ae8837fa20fc612abeffdd71bc938b7bd8874aa86d7"
   license "Apache-2.0"
   head "https://github.com/cert-manager/cert-manager.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "af73364023f681cc1c3573ed7a3565f272f75df54af0d76b585818c8e00f2360"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5ed7803d7e99899170ef594eb504e5ab129d04274d480acde894c02b1f8e52be"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c77a8a4b7200c14cfeb69321f5be6d92d52909bed5869fb5eaa4ed10e22a1757"
-    sha256 cellar: :any_skip_relocation, ventura:        "e3f1069f5f19e2803d567fd780ea9a564beafae272ea0993381977ae997e5083"
-    sha256 cellar: :any_skip_relocation, monterey:       "dabd56b01da3489f2619a80491943c37cc289ef447cdda86abeaaee4f6edf700"
-    sha256 cellar: :any_skip_relocation, big_sur:        "acdd895948c11eb10c52347860306dff546018a87f3078d6acae8472961f15f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1740f250e12c7bcaa9abb618acf971d8f40b45b3ec55fc18e6bb1534e7171e8c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f2d46b8e916e4fce096edca889330b01849c7c2829ba5c24b830473844030398"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "45aa3a098d11dcb77c15ee927abc3aeae2108cdb63ee9f75c61515502519c6c4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ed8a28dd6a4385cbc9bcc0d2789943a883dcf9ec7c5aa00bce9397c1a57a2a11"
+    sha256 cellar: :any_skip_relocation, ventura:        "6a68ebd2082c41069e27e3458953c821137c4a86cc82d400f7bec968573883fe"
+    sha256 cellar: :any_skip_relocation, monterey:       "8bf918a38c9d00e54c53b6c860ae813bd3bfdefbe53cd244a921df0a6e1b7af3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b63d1f0282e596d9119469e60d6d75cc77b3490280a43c2395805c05bfc5ba84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f722b25e0fe1fc883dbc375d2e0990542b8ecdaf91836c88406cde90a81764f8"
   end
 
   depends_on "go" => :build
@@ -25,7 +25,7 @@ class Cmctl < Formula
       -X github.com/cert-manager/cert-manager/cmd/ctl/pkg/build.name=cmctl
       -X github.com/cert-manager/cert-manager/cmd/ctl/pkg/build/commands.registerCompletion=true
       -X github.com/cert-manager/cert-manager/pkg/util.AppVersion=v#{version}
-      -X github.com/cert-manager/cert-manager/pkg/util.AppGitCommit=#{Utils.git_head}
+      -X github.com/cert-manager/cert-manager/pkg/util.AppGitCommit=#{tap.user}
     ]
 
     cd "cmd/ctl" do
