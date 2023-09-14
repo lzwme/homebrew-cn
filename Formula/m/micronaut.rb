@@ -1,8 +1,8 @@
 class Micronaut < Formula
   desc "Modern JVM-based framework for building modular microservices"
   homepage "https://micronaut.io/"
-  url "https://ghproxy.com/https://github.com/micronaut-projects/micronaut-starter/archive/refs/tags/v4.1.0.tar.gz"
-  sha256 "f1a22313e92178f174ab4d6c2217633daa60cb1365de7c94a5aa59d7e61e4f10"
+  url "https://ghproxy.com/https://github.com/micronaut-projects/micronaut-starter/archive/refs/tags/v4.1.1.tar.gz"
+  sha256 "8d6f01c87898d9c523c4d9e695825eee6c3e7ae7f7ce0df7d8181b7c9cf640e2"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Micronaut < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d7a2f16930a4c7ee627b30561abf4c63e0ab1c55736994522c3a5f72f1e3a253"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8cf40744f62ee76ddcdf6a75d1afc911696272fb1a67e7fe118e86b3d6982642"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f4892155caec7cbe1daf77673bd6f8a358fece16ed11e2e591c32416a02062f4"
-    sha256 cellar: :any_skip_relocation, ventura:        "b6390bcac5f67c01393b8e8a3ca6c4cead42007d7ae6729192b7c3f9bdb080f1"
-    sha256 cellar: :any_skip_relocation, monterey:       "80008fd91815ecdb41119f5230ad1e4d3d6433b6f679fa7c14ccf24248cc9842"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0849dcf2ef536c1eac68b0811ab16645094893f40a0997b2c55a6906edf25e74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2445377b43756999f100a68f23b4e00e11bd41a04c8100ee7cb8d2771f48be4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a43154da425ae2ed7611b75e7c193e02d7a22cb1acfee70b987ecde47dc06f54"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ffde302e6c231c99118dcbdb6f9ec4935bd18322b8b14e4edac19f8bc40aab1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a8ca9eac3fd42be4b0e7bbd1fbb1743d368511cba1732d0b89ceb2735719d3ae"
+    sha256 cellar: :any_skip_relocation, ventura:        "58362bad34d9a691f356f742237a04b76adc5131877476b6c16d7889ae824add"
+    sha256 cellar: :any_skip_relocation, monterey:       "fadf36458da68e094bdf6042ef3161b0383df11010ebfce7b3c464e433753696"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5f4d7e6e95cd427a985be63e31bfae06280eb19f5b72be1db596679fa3b3ab78"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be0ec5c8896217dea20511ee027d6716aefac32c55d2fbd13cb3777c959f116f"
   end
 
   # Uses a hardcoded list of supported JDKs. Try switching to `openjdk` on update.

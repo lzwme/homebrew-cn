@@ -8,9 +8,11 @@ class SphinxDoc < Formula
   license "BSD-2-Clause"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ed13a282643ae49f446ca667977d13621e8f947d880374c5cda3a0e55e5a1f63"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3125adbf3be4a709a0c79b7b606a9e1d88a6df10532a5ce8e4e55d58f236fe3f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d04d9a26b9dee29ec9e0242b4ced5c4717e98bd5ea984470805ae0ee878c5150"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f5002e326ca478e8351222aeaf8457def2547a6f50c28328e6dc9923b520b57a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b487ea607e09ed94b9d2e798d15248bb9306f6b34a6eacd471a92396ee3a0174"
     sha256 cellar: :any_skip_relocation, ventura:        "e204d278fe4e72e9476b0563ce0d8526c7147db49d2d6cefe04fd6d7d82bf99a"
     sha256 cellar: :any_skip_relocation, monterey:       "7a0850f10e1f6aba251931ffa88db2bf52bfecfa77e7d336a720801ca642c8f6"
     sha256 cellar: :any_skip_relocation, big_sur:        "35af23975135596a11c246ded1f449f36e7b4d2e1c2fe302d39cab643101c311"

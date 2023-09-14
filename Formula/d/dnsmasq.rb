@@ -42,8 +42,8 @@ class Dnsmasq < Formula
     ENV.append_to_cflags "-D__APPLE_USE_RFC_3542"
 
     inreplace "Makefile" do |s|
-      s.change_make_var! "CFLAGS", ENV.cflags
-      s.change_make_var! "LDFLAGS", ENV.ldflags
+      s.change_make_var! "CFLAGS", ENV.cflags || ""
+      s.change_make_var! "LDFLAGS", ENV.ldflags || ""
     end
 
     system "make", "install", "PREFIX=#{prefix}"

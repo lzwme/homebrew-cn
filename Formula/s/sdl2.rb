@@ -12,9 +12,11 @@ class Sdl2 < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "b78dcbdbfee6298d248eabb06468d7f991f2495104344f16dd35e503a6a0b1aa"
     sha256 cellar: :any,                 arm64_ventura:  "764084498b650c302759a7eb26b1dc3886e650d8b6ac3f3f6f560a9cfe225b5e"
     sha256 cellar: :any,                 arm64_monterey: "db232b4a952027efb697a56826442de66ab84328c2bc0b9e8f2b23465a1bcb2e"
     sha256 cellar: :any,                 arm64_big_sur:  "003bc7fa2207369cd2ed794d3f88df844c9961bd7e172d1edb2f6aa20575474f"
+    sha256 cellar: :any,                 sonoma:         "4bff4927d69d7258b07540782a74d46d822d1113a8cbde0839f3b7fd1547b52e"
     sha256 cellar: :any,                 ventura:        "7963704fdcfa3b1dbfbc82a18951109d9fddcdede7215fd9fa15c0709f9b98f1"
     sha256 cellar: :any,                 monterey:       "63d2c2dab020fc0cbd13c815883108174eba3d394220724ae4baa561266a2e1e"
     sha256 cellar: :any,                 big_sur:        "dc5f0129e21d34697904f54526c7c9f609b0b29cca456fd8f401b6abc7665e50"

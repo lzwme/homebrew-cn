@@ -8,6 +8,13 @@ class ApacheSpark < Formula
   license "Apache-2.0"
   head "https://github.com/apache/spark.git", branch: "master"
 
+  # The download page creates file links using JavaScript, so we identify
+  # versions within the related JS file.
+  livecheck do
+    url "https://spark.apache.org/js/downloads.js"
+    regex(/addRelease\(.*?["']v?(\d+(?:\.\d+)+)["']/i)
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "841aa2a29c6fbda9a1cb1ce1b11fb39fafbb7c446db543f2edfd124774381a04"

@@ -8,9 +8,11 @@ class Hugo < Formula
   head "https://github.com/gohugoio/hugo.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e6aaff1bd68624a0ece43cc0ccf7e795abec8d21bccc0831634c8585e4adbee1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0544bddcaa7b0cb693b557f2cea279e884fa36b816cb5fa21fac18d83de4a820"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "653243f98c0ee80ba706ac482a1a0486922260fce6998cc9239be88fbf81fdc9"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "03725c0752bf4483358ed60533f44f4b76d01e66543fc2065d6df8a25caa2017"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f5f1d1bfd9516d6fe0736c41fc77fe477f724f7bdf6679b5ec922044cab283b1"
     sha256 cellar: :any_skip_relocation, ventura:        "3a01a62b12089b23abff51f239cb384d67498aeaaf31df88884a0ab72ac127e0"
     sha256 cellar: :any_skip_relocation, monterey:       "b6dedf1096b4bcb8401b40ec3a9d753624086b42e75a41dd32361b62f1e30bcb"
     sha256 cellar: :any_skip_relocation, big_sur:        "be04de91302d404cfebdd233fde40b30e021ddee09b5cbba1595e7206155dd0c"

@@ -2,8 +2,8 @@ class Arkade < Formula
   desc "Open Source Kubernetes Marketplace"
   homepage "https://blog.alexellis.io/kubernetes-marketplace-two-year-update/"
   url "https://github.com/alexellis/arkade.git",
-      tag:      "0.10.0",
-      revision: "8965ff8b7bdfc6f23543d509cc1e6774c37a9fe6"
+      tag:      "0.10.4",
+      revision: "944a86bc3a649fc220992df360d67a39a1b498cf"
   license "MIT"
 
   livecheck do
@@ -12,13 +12,13 @@ class Arkade < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "64044af792734f2a95a5c733bcefdc51636b288688fad83161cb9cc74357b678"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d84cdae443b7af8a94f5673b60338682e0bf39dbe87c01c72ba023ebb5b0e4c0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "06d5c14d1620044e66da57d93d7ec766da700b37acbc9e6df441a6243d54c854"
-    sha256 cellar: :any_skip_relocation, ventura:        "7b8ff551de6f1f154d8ab6958a354e1fb32f9071d2941487a7129730ac302e59"
-    sha256 cellar: :any_skip_relocation, monterey:       "39a020fea79d7b68f5498ab0c99eac714aae87ec131203aef60f9b544c128d6d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ee59a010f1c69a2c3ec1d08010060875fafe50fa7a7f9a3a17025142f177916c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c3db2bcff2ddc2fc2f72d942194f177b7ebb5b9e234df2553a7c1b4212e0eac"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "10c3957591e3acac6b2236cc888cd24506c1381a53c7ee48e73a545e2511080c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "84775b53426ec0e1288e274727e14198386f450d44db975dd15d7901dd4fe224"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "551366b8596d3bcff47144e7047a48554f331f82cd6c7dc70d2918e321a579de"
+    sha256 cellar: :any_skip_relocation, ventura:        "3506de25a8e2457df7058bbfcdea789e673e6aa53924d3fe9b4ada16ac1d724c"
+    sha256 cellar: :any_skip_relocation, monterey:       "2bfe00ac81ad8858e933f893c84b5fee3c7c9505b66444cadc32e8614a4bbeee"
+    sha256 cellar: :any_skip_relocation, big_sur:        "def702a37f6075e1ad86ecb19cbba70c30cca8cd35b92de51034de6d8374b6da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e788c718aaa7d9cf1da7b445dc1b9ddd543a7f5a5201a96d9d5455e9cc4eced"
   end
 
   depends_on "go" => :build
