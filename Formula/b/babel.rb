@@ -4,18 +4,18 @@ require "json"
 class Babel < Formula
   desc "Compiler for writing next generation JavaScript"
   homepage "https://babeljs.io/"
-  url "https://registry.npmjs.org/@babel/core/-/core-7.22.17.tgz"
-  sha256 "763d265bda25be4a5c5e6c4cd2ed06c6008a0baf01ea30554ec470c5cd4ffc92"
+  url "https://registry.npmjs.org/@babel/core/-/core-7.22.19.tgz"
+  sha256 "54e851ce1f40903b2265c42cf325ac92d3bc36958cb85e204d4794a9a49c86cd"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "77525e17bb2e0ec77698ce7444c85afd00d9cbc7275cdd0771ce995dd22e287a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "77525e17bb2e0ec77698ce7444c85afd00d9cbc7275cdd0771ce995dd22e287a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "77525e17bb2e0ec77698ce7444c85afd00d9cbc7275cdd0771ce995dd22e287a"
-    sha256 cellar: :any_skip_relocation, ventura:        "77525e17bb2e0ec77698ce7444c85afd00d9cbc7275cdd0771ce995dd22e287a"
-    sha256 cellar: :any_skip_relocation, monterey:       "77525e17bb2e0ec77698ce7444c85afd00d9cbc7275cdd0771ce995dd22e287a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "77525e17bb2e0ec77698ce7444c85afd00d9cbc7275cdd0771ce995dd22e287a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6bcb999238201b550162fda8ec82b736f79550a25cafe498e2cdc0292f6add8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aa4a51ea57957e2d711164711068b05af2191d2996f8dbe2f63fa9c542a278d3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "aa4a51ea57957e2d711164711068b05af2191d2996f8dbe2f63fa9c542a278d3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "aa4a51ea57957e2d711164711068b05af2191d2996f8dbe2f63fa9c542a278d3"
+    sha256 cellar: :any_skip_relocation, ventura:        "aa4a51ea57957e2d711164711068b05af2191d2996f8dbe2f63fa9c542a278d3"
+    sha256 cellar: :any_skip_relocation, monterey:       "aa4a51ea57957e2d711164711068b05af2191d2996f8dbe2f63fa9c542a278d3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "aa4a51ea57957e2d711164711068b05af2191d2996f8dbe2f63fa9c542a278d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d37b788f0f5790161f0d1b28565842feab2ca89167cbfdef076a07f5982d512c"
   end
 
   depends_on "node"

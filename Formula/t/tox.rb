@@ -8,15 +8,17 @@ class Tox < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d66ccc0d72498ff5fbc041bbb14442bcc3177715366ac70f43ffb1612ab31894"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "28b1e1db08639f6a4363e3afc3a272b638daddd011dcfb5416a421090aa4d147"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8677b5ec35513ebdac830dbc9517165523633f6a6fecb4392ecef2bc2256f19c"
-    sha256 cellar: :any_skip_relocation, ventura:        "3cda3eedc1ea560cd667884447de6930ed5760f51ad212bed18b210c34bc9277"
-    sha256 cellar: :any_skip_relocation, monterey:       "e7c2ee41d8a59aefff21bee79c20500076dd25844fb8b860ba616bbd5d280357"
-    sha256 cellar: :any_skip_relocation, big_sur:        "64f63a7682ef9df831a64926b1641f693b50ab40af2bd9d2b636e6fc4149dead"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf071aaac1a8322f558b3756cb6fa9659c6fe3e94743bf54d1067ce630a0eaa6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a968c4368429f468a49abcdf5cfbfc2e5f6e35494fcbb83e0d03506373895aa3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "000489ca9ac0ed9d47d93d2539042bd1f8b0b1d8f951be95af2a441770960a0e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "84bf272cb1aab37dd222bfc8428aa063b30c16c84e94ff6d27892dc9928dad3a"
+    sha256 cellar: :any_skip_relocation, ventura:        "d6891295d2dda0a440759197f15af3ebd3bbf48c3b9eb891981422accfcaf263"
+    sha256 cellar: :any_skip_relocation, monterey:       "5c62b8f473b68d13701cc10b8476b0a8f33325d030527b4b41a40724e14a17b9"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b26f96f2f1154b30b733d94ad76074135b30784cb4778de7f27adeb08229475c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40c22a8548df1ed782243f64663e8373c1178ca27c49a17389cc98aee7d140c9"
   end
 
+  depends_on "python-packaging"
   depends_on "python@3.11"
 
   resource "cachetools" do
@@ -42,11 +44,6 @@ class Tox < Formula
   resource "filelock" do
     url "https://files.pythonhosted.org/packages/5a/47/f1f3f5b6da710d5a7178a7f8484d9b86b75ee596fb4fefefb50e8dd2205a/filelock-3.12.3.tar.gz"
     sha256 "0ecc1dd2ec4672a10c8550a8182f1bd0c0a5088470ecd5a125e45f49472fac3d"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "platformdirs" do

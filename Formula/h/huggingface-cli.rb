@@ -8,17 +8,19 @@ class HuggingfaceCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "205a15a23001a15f9995e924d0f67c9728b9663d881485e524bf117e664c2514"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cac45e9fe7d7e7d4faa79a749c667367de7c07669add7bbb4191f64b4c518b62"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "71cd0b1464f71baf1b4561d92a99e4839a05f3a3e8362bda5f17d336a27a7f04"
-    sha256 cellar: :any_skip_relocation, ventura:        "530ee8356925898f177e01f02179d0d42a91368428a33d919475eeb6875623a6"
-    sha256 cellar: :any_skip_relocation, monterey:       "4a30341dd23e4bdc7f0ba8f72d080cf009294fc8447cf8ab4fa72e309fddbebf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "eae222093b8d237dd7a917e6a3241d8b863fdc4677aee3f8093b77cf1b6d7a66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b49c69979d4750f7197da58a316d8929253dfade0e7e4841e9a56b9076018b1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7bd260d7b0b2273a664554225e02d3d3b5998ac41dd1d2ba2de977b335954f8e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c41b7e8f48aff7a0a2be2f043419f6afe69168c774ade740f709d3413a4e29b6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b8618a04f0f6adeada2f65f02937b258d8d47851e155e1ee25078a94b08ef2a3"
+    sha256 cellar: :any_skip_relocation, ventura:        "2bd1f94faaecd2f9206591b32a20fcbc34364a3373fc92cecdfb8a4ae683807d"
+    sha256 cellar: :any_skip_relocation, monterey:       "d31e0214dc119806431049d1c48b0485fadc4562adef3bee34f52fe1dcb94f6d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "401086f78fb755547646c7f82fa88c469c872838d59d0016aadfb1e148cc44c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "527b3a774f8dd4fb18abd8a679d56ed50c179008739a396cf72993de6166ea11"
   end
 
   depends_on "git-lfs"
   depends_on "python-certifi"
+  depends_on "python-packaging"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -41,11 +43,6 @@ class HuggingfaceCli < Formula
   resource "idna" do
     url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
     sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "requests" do

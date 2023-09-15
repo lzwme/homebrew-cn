@@ -1,6 +1,6 @@
 cask "keyboardholder" do
-  version "1.12.4"
-  sha256 "8d6b78a53260fc073f077337c2e452d31561df13f32bafe9590067cd61d206ba"
+  version "1.12.6"
+  sha256 "cbdc5c751160e2d6266e3e76f85fc522ea56d3184e2ce3d74c8c32cefc7c9e99"
 
   url "https://ghproxy.com/https://github.com/leaves615/KeyboardHolder/releases/download/v#{version}/KeyboardHolder-#{version}.zip",
       verified: "github.com/leaves615/KeyboardHolder/"

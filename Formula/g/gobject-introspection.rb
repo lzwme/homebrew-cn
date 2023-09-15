@@ -8,9 +8,11 @@ class GobjectIntrospection < Formula
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later", "MIT"]
 
   bottle do
+    sha256 arm64_sonoma:   "d232c7d84731f329d3e0f108c0ada363fd9a2874052faea3a91477e80ad2df78"
     sha256 arm64_ventura:  "6b4ee982ddd1a6a724ae2f54dd477591efa7c48bccd75c342d2acae7eb7ff3ae"
     sha256 arm64_monterey: "ca7bc73d0fc6709ab490cbaa403aa6cdf79d2ad5e8a3b112df149ce7b26c1282"
     sha256 arm64_big_sur:  "4054a01f1538a066b61fb7229e10cde9e910e8ed6f6a6f1d14b244f12225eb37"
+    sha256 sonoma:         "53e610ede9117c52b027ef382b68525e0556f69f92a59e8f7bc45dd6943a2e71"
     sha256 ventura:        "2dab70e61b9868bdab40eace98ad44cf1b9543a894a861a181e231ab5fa4a9fc"
     sha256 monterey:       "c805d29410abe00a7bcd510702e568411d7bef2fd023c49be5480daf7ca557c3"
     sha256 big_sur:        "7011af2059a2c1169b74c02558756ea13d7d7fc0488e0dab3c88b99f3eaabfc5"

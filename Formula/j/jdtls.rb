@@ -2,10 +2,10 @@ class Jdtls < Formula
   include Language::Python::Shebang
 
   desc "Java language specific implementation of the Language Server Protocol"
-  homepage "https://github.com/eclipse/eclipse.jdt.ls"
-  url "https://www.eclipse.org/downloads/download.php?file=/jdtls/milestones/1.27.0/jdt-language-server-1.27.0-202309121406.tar.gz"
-  version "1.27.0"
-  sha256 "05ea76aca936b88de04b549df126258235728f1179b44926d1ad1073e1f45036"
+  homepage "https://github.com/eclipse-jdtls/eclipse.jdt.ls"
+  url "https://www.eclipse.org/downloads/download.php?file=/jdtls/milestones/1.27.1/jdt-language-server-1.27.1-202309140221.tar.gz"
+  version "1.27.1"
+  sha256 "8866ab98c9557e54e68bde3df8b27fb1e4a0c3a1785a7f8e16ccf267bc5b5ac5"
   license "EPL-2.0"
   version_scheme 1
 
@@ -15,7 +15,7 @@ class Jdtls < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8ed1f8479b401a90642e3935531f8623e0d6eb19ba6b1d8451aa2dcffb4fddfc"
+    sha256 cellar: :any_skip_relocation, all: "38e3dabd587eae75b195ce40fe541f8b508d90731de31cc542f8428cdad6b336"
   end
 
   depends_on "openjdk"

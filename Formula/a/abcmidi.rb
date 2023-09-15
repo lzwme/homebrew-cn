@@ -1,8 +1,8 @@
 class Abcmidi < Formula
   desc "Converts abc music notation files to MIDI files"
   homepage "https://ifdo.ca/~seymour/runabc/top.html"
-  url "https://ifdo.ca/~seymour/runabc/abcMIDI-2023.09.11.zip"
-  sha256 "50dc43bede6ce98d13bdb7e3d2b51921d9857b2e3b3529f3e57ed828160b6496"
+  url "https://ifdo.ca/~seymour/runabc/abcMIDI-2023.09.13.zip"
+  sha256 "a0cb92907da7d0bc02858cffedc42a2c00bf4b35a1607b18f67010b7f43948b1"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Abcmidi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "befe297b31e346baefe656ebd34193082c1a71bb228f21b2a8bb425819a4b749"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8b631923b4936ec8249a7d9b71d1b06ba61a128adca3ebc1f52949ace3bffdfb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "defd0e1d21098676cd37e0886749b5ccb8bbd47e1af244f7e857569b19f4894f"
-    sha256 cellar: :any_skip_relocation, ventura:        "8c6fca3fc5db160bd46a403887d03fefcab1a3a2b8d6c527adf8ea67d1a13731"
-    sha256 cellar: :any_skip_relocation, monterey:       "305817a9133928b6cc0ca1fcdd18617c12e2a1065aac613c594e11196d65e585"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e2543d6ba8735508877c881cdd920e0694204e276ace3af9f43635063d880776"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c523d26eba873112d51691bf7c21293ca0854201f0b136b7df4e678f5afd4b8e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "50413bca1c634afc990cf093a17bc149ba0cd9e395f27893be7ca5d4f781b30f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7f34c244a50c510b91a2a261828ddf11341d5f2395a7f1c7713c6a457b38e8d8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e3cffde7071e4396c64a6caa1401b399a246d4a9b296a786e7380e246cc14c60"
+    sha256 cellar: :any_skip_relocation, ventura:        "5cb3386a70c425ef3b0e43fbf2f527707623f0c69c253ae3594914c100505666"
+    sha256 cellar: :any_skip_relocation, monterey:       "c1961068773f0da28b00c190133b1e00c37ce2b7b3bdb674eb4f897b96ffd16f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d8d89e452406c6462e1b53c5571b29ecf47e55bfa6d5ff5959914d5f0c4e01e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "222650ef75dd5743b7ef77f73e39a187823370bb494a91958e8215ea6d8c0d68"
   end
 
   def install

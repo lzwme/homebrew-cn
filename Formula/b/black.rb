@@ -14,15 +14,17 @@ class Black < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "175e20f2cb757664ac1937a92570c5c4143c460f5d45d202dab7de3252d988e9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e6f9d79475b3ae51f094ee1189c69f16a34019eb9427a2bce5a2432834b17441"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2a612a7b228c2b88ccc53fb7c865cb299c78d48d0bc14a0d9fd4e7d6e34100f6"
-    sha256 cellar: :any_skip_relocation, ventura:        "ab607d8bc69741b2c0dd879a91bf807f61b99ec7a1d89c33ddb88911f663f7f0"
-    sha256 cellar: :any_skip_relocation, monterey:       "6882fe33fc919b02ccfd66b366573fb09ac345e4022e7cbcfcd14aee4f8de8e8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3c5066e72be883c2a4e291305851eadf213b707584d248fa81e084e67958d463"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cfca7f3ac5ea582c9415e26d7728a0f3632aa2849caf77cdc195937bf34f4cd1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f938667c44891c794331ff50f1ba907d5949741f938d3f638848f0f4d97dcd3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d3301e61856c6cad779669653d32689ae8dcf3c08db533abab1772f827f88a87"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d1ac9becae085994dde5bd5953ad07cbc9141fad58f20849ec2106e3d3813dea"
+    sha256 cellar: :any_skip_relocation, ventura:        "795cd51afa310b4bb8f6fd6e7f30ad807914511ed5e4db8b879133023335d5f5"
+    sha256 cellar: :any_skip_relocation, monterey:       "4a9f4d2bd79d0604d3915d6d55a8616c299131628f5434ba4b2712e7a89f06b8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2861a1d42c7bce45c5a952d4dc0fb872c867731e8a5d6912f9ba492e6084807b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a93e6bff77cdc8929680c09629b580a89a601f15d9e2e3db3f531c2358cd4511"
   end
 
+  depends_on "python-packaging"
   depends_on "python@3.11"
 
   resource "aiohttp" do
@@ -73,11 +75,6 @@ class Black < Formula
   resource "mypy-extensions" do
     url "https://files.pythonhosted.org/packages/98/a4/1ab47638b92648243faf97a5aeb6ea83059cc3624972ab6b8d2316078d3f/mypy_extensions-1.0.0.tar.gz"
     sha256 "75dbf8955dc00442a438fc4d0666508a9a97b6bd41aa2f0ffe9d2f2725af0782"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "pathspec" do
