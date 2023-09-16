@@ -24,9 +24,11 @@ class Nmap < Formula
 
   bottle do
     rebuild 2
+    sha256 arm64_sonoma:   "a2e968804393cf5dadff37cdf5c9fa3e6a1b0c1454ed93ed54807e76cb95072a"
     sha256 arm64_ventura:  "aa642e107f9b1fb16d729c695610cc8aa6812d67c3509f3fb5d1edb1a34dfa00"
     sha256 arm64_monterey: "6a5c8706843e47e4f7628ae22f8c944ff64a597e11bea98b1c098551d33d10a1"
     sha256 arm64_big_sur:  "afde313363e967039eea3c63362dfe38b30372a24283a19fb8fd5db254e722c4"
+    sha256 sonoma:         "525e002a6320e185cc4fa1d34b80d3e6988d171e0b856fa801df23d70f204d3e"
     sha256 ventura:        "631de555fe12ba7e1bd5ab64bffa7230b1a199be1ceb2f4f55b41e86447a9f65"
     sha256 monterey:       "9b434cc856194b8ea128ddd9ef20a5aa4e2bad768d6332a68a9daef7a5d95236"
     sha256 big_sur:        "62a6dfc9eb7b925bd2cbeb65be00f80f59ba109351ff70215cb5b652c92f32e7"

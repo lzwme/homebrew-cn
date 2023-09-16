@@ -5,9 +5,16 @@ class Ballerina < Formula
   sha256 "c6616088acff52c744d8bdf0701d106de20259c5a9e067df44031e81c61f7086"
   license "Apache-2.0"
 
+  # The Downloads and Installation Options pages don't include any version
+  # information or download links in the HTML. This information is instead
+  # found in page-specific JavaScript files but those use a unique cache-busting
+  # hash in the file name. In this scenario, we would have to fetch the page,
+  # find the JS file name in the HTML, and fetch the JS file to identify the
+  # version. To avoid that setup, we identify the version information from the
+  # release notes URL on the Downloads page (though it's a less ideal check).
   livecheck do
-    url "https://github.com/ballerina-platform/ballerina-lang.git"
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    url "https://ballerina.io/downloads/"
+    regex(%r{href=.*?release-notes/[^/]*?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
   bottle do

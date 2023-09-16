@@ -8,8 +8,10 @@ class Sourcery < Formula
   head "https://github.com/krzysztofzablocki/Sourcery.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "50ce87b3f819e0b6794cff306329fb62786068ef49894294e31c175f26ddb890"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "27afb4e8b4090f28a583bbf412e5aa66dd8061c84f0e22be15ca6395fb699af7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6ff4932710f2a7b201ff9c6cb43493f37dca6cd04574491d205e2f96fffbd2fe"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2a0895e7d053539cbf3ee69123e9ff763a4b4532946ae4a7627d8393f0c63854"
     sha256 cellar: :any_skip_relocation, ventura:        "29d81854d22e0f8ce8aba0086116e13d5c382ff9d263c7b9603f3f23d4fedef4"
     sha256 cellar: :any_skip_relocation, monterey:       "23a3b64d05a689bbeada45f2db507059b12baa261860de81acad9c2e67f86308"
   end

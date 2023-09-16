@@ -15,9 +15,11 @@ class Cups < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sonoma:   "7547779c1d49a79fdbdb48baf9981a62269f6384e9b78bd2c0fabc082e0aa365"
     sha256 arm64_ventura:  "5097ac6de3fcd9c2da3bd4f09c01714d73761c0399c8695592d6534cdf23c6e8"
     sha256 arm64_monterey: "65d0e5f4ba75438cca64d341adca30d9d1bfc4867358421cb74fa375b94a7e69"
     sha256 arm64_big_sur:  "f0b6128fddf54ec1069c32a9b83788457f377a0b09dc256b6464f4f2161560ae"
+    sha256 sonoma:         "5540a2cee4335337db05889f1a76adfe6b589d97bd2dfba8796d82d8a3d22baa"
     sha256 ventura:        "1bd88a31dd6fc3292cf4df626b6531c05b1a35fb35c4e219950710df939da85f"
     sha256 monterey:       "9f9324ad8a39f8d3d4863a044107290e8933b9e8b091dbe5d32bc5d490db5c35"
     sha256 big_sur:        "f52e62e443641e19a167ced1e76969c45486a513b4fed8bdc33cc80f1203dc36"

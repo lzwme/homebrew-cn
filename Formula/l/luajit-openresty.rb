@@ -19,9 +19,11 @@ class LuajitOpenresty < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "d5aa75d72285be10742ddec81614df04b144edadcf98e68768ba5c794411f6bb"
     sha256 cellar: :any,                 arm64_ventura:  "c1cf1893f73e17e35d32dd654a653b054ab342adc8541a7c1ce40c0eb3616d66"
     sha256 cellar: :any,                 arm64_monterey: "722a0d4852476c3b1c829175325df6a3a25fb1944c6c189018945e1a6d20c73b"
     sha256 cellar: :any,                 arm64_big_sur:  "0ead2380ce5d009aa15b9413d4b7c7ee8b153be5c0940188c64e20e3f9415dd2"
+    sha256 cellar: :any,                 sonoma:         "5d7adcf6907bf1e43fa612cd8dabcb8b3e2ecb73da99acf766c166fb7c34fa22"
     sha256 cellar: :any,                 ventura:        "3ab4983b69821739f67695ad5733cbb087e4b34ebe368bc0b5f1586d05aa7386"
     sha256 cellar: :any,                 monterey:       "557e13824af8c5963314e78f432c6ff802c2c490a849877caf2f0bb988a919fa"
     sha256 cellar: :any,                 big_sur:        "fd43b09d15522ae7cbe24d5e621e62dee5d5745c6619eaa4f3bb5e1d046d0e48"

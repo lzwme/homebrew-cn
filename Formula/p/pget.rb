@@ -1,19 +1,19 @@
 class Pget < Formula
   desc "File download client"
   homepage "https://github.com/Code-Hex/pget"
-  url "https://ghproxy.com/https://github.com/Code-Hex/pget/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "3619c32ed021f22262d19edadc678620e2cf2d69acecf31c044e5dc60899d485"
+  url "https://ghproxy.com/https://github.com/Code-Hex/pget/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "fa7646bec975dd3995fb45d6b1f190565d6c4fae03c46c4eda34716c83ede03e"
   license "MIT"
   head "https://github.com/Code-Hex/pget.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1cba79746eda046084bc76fd4f95874ee7ab7105bbef3b1b5679643cf5d9e6a9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e489cab61f88a71e99547c2b78cec91d794924552df02f2985096f1781c6483f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1c3c0f4bed551176497e45ac6b4837ab71fbcb7eb63980171df051eeac736563"
-    sha256 cellar: :any_skip_relocation, ventura:        "e9bd8347b441b38b076271ff900f8d77bfdc145f85b7e4f8f88fe40c7be965c6"
-    sha256 cellar: :any_skip_relocation, monterey:       "00ac25f109a1e31dd76bcbd85d17769a7df53a19872f41043633f6ac6eeddc7d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "90c7b271b441ddc0e894a9eb58619a70e9ad8efe2f8aca4cbc5943cb5a1acfe7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78b9bd18c11147399094d088dfc16693eb36e30741fb3486d662d0bc9de0c123"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e12737e48d675f8246fad2a72a0f79504d141de7eec04fc9f9490344770f542e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4d05a59354813de8e38ff2c01ecfeeb6baa7b27553bc4cae67c6480e6b6bcd8c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "88ab2a98f522495d6d8f6d84ff4fafeb4ec6cd78abee41a757f73ce02f2ca378"
+    sha256 cellar: :any_skip_relocation, ventura:        "edb9edc985e7d466dcaaacdfdb31221c7109b2604777df7e9829aa4f0185dc25"
+    sha256 cellar: :any_skip_relocation, monterey:       "0006e845fe431ee1e419028938963cb7a5258ded5d5b18c10a0670260bd6b86e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6cc06f23fbd3eb30d66a1e8c6d00b63225d864d7221f4775b0679a277a05ea56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f6edaa4e8d20796136fa7f95f21390d4827e88b4f596b04756489cde00260fa6"
   end
 
   depends_on "go" => :build

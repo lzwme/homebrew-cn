@@ -11,9 +11,11 @@ class Openjdk < Formula
   end
 
   bottle do
+    sha256 cellar: :any, arm64_sonoma:   "87ee921ad11db76e5fbe7fba697f3d4ff8d8a0a170f1ccf0f8f1a484bd3235de"
     sha256 cellar: :any, arm64_ventura:  "7c023f8b5172370350f8eef5a5363f5225be4d75003cfe1ef25e729aa474a4dc"
     sha256 cellar: :any, arm64_monterey: "563bd49837bbdb636c072bfe81257d825b0a418dbfe120bef5b3ed6ea88345e5"
     sha256 cellar: :any, arm64_big_sur:  "56de3d53e9b83b4731d8decc25087ba5df3c513ba8728759dfb776ec2ab8fb1a"
+    sha256 cellar: :any, sonoma:         "79b769226997081c25b175582e654aeac9230c141e0d54891425dc9faab12714"
     sha256 cellar: :any, ventura:        "00801f056fbce3480637acdf48b4aaffd977e38450f83b72c2954b48c329153b"
     sha256 cellar: :any, monterey:       "214cffc504d48ca3e369ec32b7c75e3bf3795d819ea8939cbe2b380f003cf924"
     sha256 cellar: :any, big_sur:        "f9f580b472e91bdc818df43c7384088b6235ce6b900850d5a7b962a52869b4a0"

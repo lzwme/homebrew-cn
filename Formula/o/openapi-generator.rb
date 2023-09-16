@@ -11,9 +11,11 @@ class OpenapiGenerator < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "263bed167fa87cebb9b3aff6bebb3339dacab073e281d871d39827d56db2a2df"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "263bed167fa87cebb9b3aff6bebb3339dacab073e281d871d39827d56db2a2df"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "263bed167fa87cebb9b3aff6bebb3339dacab073e281d871d39827d56db2a2df"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "263bed167fa87cebb9b3aff6bebb3339dacab073e281d871d39827d56db2a2df"
+    sha256 cellar: :any_skip_relocation, sonoma:         "263bed167fa87cebb9b3aff6bebb3339dacab073e281d871d39827d56db2a2df"
     sha256 cellar: :any_skip_relocation, ventura:        "263bed167fa87cebb9b3aff6bebb3339dacab073e281d871d39827d56db2a2df"
     sha256 cellar: :any_skip_relocation, monterey:       "263bed167fa87cebb9b3aff6bebb3339dacab073e281d871d39827d56db2a2df"
     sha256 cellar: :any_skip_relocation, big_sur:        "263bed167fa87cebb9b3aff6bebb3339dacab073e281d871d39827d56db2a2df"

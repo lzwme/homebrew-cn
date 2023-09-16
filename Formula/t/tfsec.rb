@@ -12,9 +12,11 @@ class Tfsec < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d3b8aa8779808e2c1b7a1c407405dca86e8823d9189c112c7ddb96260ff9e659"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "db98abfecd67349929d69fe43e9b0f1df248be79b85092c6c17ae919bf730964"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5b1f88a0b892bfcd4ad59186cad5c56183cb94f787d87ef953f02facfda2de8a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c5683f35b3523890a978f9675848f8a839030b5fb7bc3fd0eab2c4f0e22739fc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7f3abe4a42f8ebedbbcef3b43323097309dc9c21be95c851742da731ac61ce4f"
     sha256 cellar: :any_skip_relocation, ventura:        "582495f90cbca181512812e1c5b5a53a7c56a77e33c45eb70185f3c8d22cc42a"
     sha256 cellar: :any_skip_relocation, monterey:       "8134265df428c4eb7172229dfb9dc08b02038c9419c083e3b355862bef965fa7"
     sha256 cellar: :any_skip_relocation, big_sur:        "c14c29b62b6fce55287e76bf293f1acb8a2976777dbd4a0b7d93f32f8f3bfeaa"

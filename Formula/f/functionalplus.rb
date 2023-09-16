@@ -1,9 +1,9 @@
 class Functionalplus < Formula
   desc "Functional Programming Library for C++"
   homepage "https://github.com/Dobiasd/FunctionalPlus"
-  url "https://ghproxy.com/https://github.com/Dobiasd/FunctionalPlus/archive/v0.2.19-p0.tar.gz"
-  version "0.2.19"
-  sha256 "2e219250941b39aaab6299f3d3333614b8e661265ef012f64ccbc61aa6d74b93"
+  url "https://ghproxy.com/https://github.com/Dobiasd/FunctionalPlus/archive/v0.2.20-p0.tar.gz"
+  version "0.2.20"
+  sha256 "6a8e56bd7976b7d5a6a31001f36bc199c2997f1144994fa0b48a1a5b8497abbc"
   license "BSL-1.0"
   head "https://github.com/Dobiasd/FunctionalPlus.git", branch: "master"
 
@@ -17,7 +17,7 @@ class Functionalplus < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8d8940d663021face917360b84a68f9ae83f230976cbb9495e8ef43b50a173ed"
+    sha256 cellar: :any_skip_relocation, all: "73f0594419959f4e9b02af1391439c77b3807df34100224e57256ef352892d9c"
   end
 
   depends_on "cmake" => :build

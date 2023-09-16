@@ -9,9 +9,11 @@ class YoutubeDl < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0f08ba4c4d02ffdede992714e144c65c3ebe2daf3e1f0f8609c78be94dd467aa"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1785d927f08c742e1a5be3b7e78720b9b59ecbf0629097fbd3ac5f38f44c7660"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1785d927f08c742e1a5be3b7e78720b9b59ecbf0629097fbd3ac5f38f44c7660"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1785d927f08c742e1a5be3b7e78720b9b59ecbf0629097fbd3ac5f38f44c7660"
+    sha256 cellar: :any_skip_relocation, sonoma:         "180f0563e3e23780f28ef9a5fb5de1d38ab9b3db12bac859d5d8e47bdc411439"
     sha256 cellar: :any_skip_relocation, ventura:        "4a0b4ff89c2e65e477927b6e62d8aa5d9de8cfb7f655f482d847898bd61071cf"
     sha256 cellar: :any_skip_relocation, monterey:       "4a0b4ff89c2e65e477927b6e62d8aa5d9de8cfb7f655f482d847898bd61071cf"
     sha256 cellar: :any_skip_relocation, big_sur:        "4a0b4ff89c2e65e477927b6e62d8aa5d9de8cfb7f655f482d847898bd61071cf"

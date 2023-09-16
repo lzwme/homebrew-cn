@@ -7,9 +7,11 @@ class Folly < Formula
   head "https://github.com/facebook/folly.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "b8566e3f0f6eb48d7827830959aa3382869d30fe9b36ee26d2bf916aad56818e"
     sha256 cellar: :any,                 arm64_ventura:  "4cebe416a3d8a1ba9e09b304d5d65dca2bc5b02bd2a8a96dce65b2b469b82a9d"
     sha256 cellar: :any,                 arm64_monterey: "1b79a2348895fa82ba188445273773b3054f6b8ca083c7f5678b721f7c05a318"
     sha256 cellar: :any,                 arm64_big_sur:  "0b6cc8a85783ffdff3098ffb04221e16132f0015acc6ac92458699842161034c"
+    sha256 cellar: :any,                 sonoma:         "dbe17948a2457c38127c212f37adaf23c48a6d7d8217920d027fe4b246f1a9db"
     sha256 cellar: :any,                 ventura:        "2437cf0511ff2ad1dfc8a30e9dd2dba86a621c896759b3ee1b2c153c48675afa"
     sha256 cellar: :any,                 monterey:       "3065f9bd410da380a197b4d992dc04314f0f0d6a0e7114d5566d025c83fe1a15"
     sha256 cellar: :any,                 big_sur:        "e8ebc7b761aa2d86d532e5295295c1ada006d639fef281ffc3368095989687fc"

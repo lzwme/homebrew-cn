@@ -16,9 +16,11 @@ class Chezmoi < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "20fed592de1018cf860bff0b124102f1ffd3933ec52ba21a16376d8fe3cb569e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2610e87b23b7758b8731c7b579e2f92446477a93f07010c8ec2972ed002660d2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "01d2f3a63c12f13e54a077899c145b15d5efbf398e31addf63e0735ea5227c21"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1c8481a50f7a066c9cdea7d5bdf93c62508abacb4fdbdb27dc173b3d7b54c921"
+    sha256 cellar: :any_skip_relocation, sonoma:         "aed243b878cde9ba1f6bd52de32e0d5262813419136d6969cd9be49f60e7de86"
     sha256 cellar: :any_skip_relocation, ventura:        "16d86af48098252e099f88651286187f71112c01d8773b72babd217dd07a8fc4"
     sha256 cellar: :any_skip_relocation, monterey:       "8f4abd2466f9b64783eecb9519775342016af35436e1470ef22ec65a31b4bacb"
     sha256 cellar: :any_skip_relocation, big_sur:        "ec40751af2a9d3a891be0a907eaaf7069494f7218db3ca06fdf3db05e9c9009d"

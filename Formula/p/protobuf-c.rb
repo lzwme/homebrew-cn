@@ -7,9 +7,11 @@ class ProtobufC < Formula
   revision 7
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "c22945177efec85a4b167ab364a46d374b22154b3eab165aff689101d6267ce1"
     sha256 cellar: :any,                 arm64_ventura:  "37a4bccd649b2435c9c6d5d97052bedd166c6c0de7580360d6c10bd19dcbf930"
     sha256 cellar: :any,                 arm64_monterey: "c45b43b82dc7043bebec4bd0a4bcdb7e6f58b64f5495182d5530fb0571d02d2e"
     sha256 cellar: :any,                 arm64_big_sur:  "392fb3edc430d2372b401b50fa09c85347f09c393b60c905647aec7214f5f5cd"
+    sha256 cellar: :any,                 sonoma:         "1c194b43acd1c81c2f682ddd0ad537f5bcb9d19b0d2c1b566c7b208637b65faf"
     sha256 cellar: :any,                 ventura:        "40b6341261f223df456dafb7166367b7c4d007749e4e06dfff186d6537c5e290"
     sha256 cellar: :any,                 monterey:       "66f3cd044e6b8dd0cd558a3342092657b2d0d96864f08a0f1cacbba0912e06d6"
     sha256 cellar: :any,                 big_sur:        "d10693cc22348eea4be40236f6113f6ef5b2d217316da61fc762a89aaf7fa400"

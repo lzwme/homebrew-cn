@@ -6,6 +6,11 @@ class Sdl12Compat < Formula
   license all_of: ["Zlib", "MIT-0"]
   head "https://github.com/libsdl-org/sdl12-compat.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^release[._-]v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "b13aa6fa01d339b74f5f99b2e68b79b238c34182cd58b4ef476a9897706939dc"
     sha256 cellar: :any,                 arm64_ventura:  "ebad05b905bb7c02a03774c61739a80c873452c71005bd530f2a8631b90d18c7"

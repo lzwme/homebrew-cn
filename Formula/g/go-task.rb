@@ -1,19 +1,21 @@
 class GoTask < Formula
   desc "Task is a task runner/build tool that aims to be simpler and easier to use"
   homepage "https://taskfile.dev/"
-  url "https://ghproxy.com/https://github.com/go-task/task/archive/refs/tags/v3.30.0.tar.gz"
-  sha256 "e949fba7495285a4d1fa028b055068bbe98d1fa6ebcf462d922031ddb94613fe"
+  url "https://ghproxy.com/https://github.com/go-task/task/archive/refs/tags/v3.30.1.tar.gz"
+  sha256 "2ea7ade74a7007766412d905fbbff91676ee2e4fa5af0e615dfa6c8bd843482c"
   license "MIT"
   head "https://github.com/go-task/task.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9a0f04f6557d2739834c04756248f7868a436e1a8261326885601215ed142f15"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "73df4a68d42fcc70b2b05b81ff40ebbc62620bc1f81f6e8fcc81fc5c7422efd2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7efdba6dacbdf285b7d3720da93cf8515e9c86a509c108967c0267aa0989b66a"
-    sha256 cellar: :any_skip_relocation, ventura:        "4405114cf30cd3a7d38fb496c06496a27111f12d03ff057853e4b8524ee127c3"
-    sha256 cellar: :any_skip_relocation, monterey:       "3944ed16197b27ee3185efc1117f53583278dd16da53a4f4e8f54dda7cca2154"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ff94a6d813a577a9324a3350ac4bb458b99e24892a07e429c7eb31914166b886"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf639850a6079e224bd5726b2ff6786557414a3f60d648962c94e25b30ab69e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "49e9267245c37d7f1591142333f12f17976eadd74326fb52056afa9fa7e9c0dc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2598123fa18cfded604f8d3b167ec0af42422202155bdffb8113ee916227eea5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0a441d984ce9b2d3d31e2dd2a100775359167aab9efcbc55d2a344a0b4321380"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c49baf0899dc9e28934922ebdba8440e312e4e8711e0fdf3477aa0661d92b8b7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f2f658cee1396cfc331a2e775eb637542647c197bb60c3d1bea9eaf8ddb32263"
+    sha256 cellar: :any_skip_relocation, ventura:        "ac38572a44e4cfb2a7c801c2e4042e20e32d208da97c88e8e8007585418d5592"
+    sha256 cellar: :any_skip_relocation, monterey:       "43e376ba4ae9747980caf0adf6586711797d94596bd3d101a48001e8329776fe"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cb5384e348216512ed69b1184f332bb2ace3b0890fa4eae48d2a31a19f8b8473"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65558bf2394c4d6f12c5ae69432231209009a120179cfcd637949d69ede6aa27"
   end
 
   depends_on "go" => :build

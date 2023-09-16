@@ -8,9 +8,11 @@ class PythonYq < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "db3864640973d526af738763f6da4d807bd3b19c91dd1d172ac58c3aaa07e2ba"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "476feec14d96b655ff455e29c414d7e4f06332b00c2fe28045c842e7d92fb806"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5f9732056b6f510c14477c7f892752e73168dd21ca69153592885f32fbf18f29"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c97e327af55020778a3bdfdf9c90f022b3f88f6dcf933982877dd6e566e0c015"
+    sha256 cellar: :any_skip_relocation, sonoma:         "edf692f05311402dad10d01cfcf17f9af83a1d46b29dc674e3f470de1486ce9d"
     sha256 cellar: :any_skip_relocation, ventura:        "525a1bd76e8951314f4f5838f22bab9e8faefd72ee35a77731a5bc60dc0bf1b8"
     sha256 cellar: :any_skip_relocation, monterey:       "829ded8db7bb36d0782733f442b590be0b8431559f07703fca947aff298a44eb"
     sha256 cellar: :any_skip_relocation, big_sur:        "94c7565cc78e0fcfd51c4308839f05d474b2bad98083098367b18edd148a5942"

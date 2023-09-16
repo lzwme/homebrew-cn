@@ -7,9 +7,11 @@ class Trivy < Formula
   head "https://github.com/aquasecurity/trivy.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3d19200ab57a64850752796a5b0fb5a44f01543f5bef573792e1871b3866edbe"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "97f98d99ca68b975195bb0e6db489ad5aa8c7f3417661d66fda706ae26d33b5c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5232c413f3ef293c5c4581a8d2a71d9a7f03c7631c572922749c800a1093fdb0"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cebe82977301dc582ebdadae7dfcebaa4394825b383762c052698072d04a539a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "dacb504dd19d3e32104dd388a2b8493c83f49ec39ae280b15be1887a2e4dfefd"
     sha256 cellar: :any_skip_relocation, ventura:        "90df959805dbaf2e9c34aee256563fe03e0bd0c5b2d64b6dc0b78a7eeb30c8e7"
     sha256 cellar: :any_skip_relocation, monterey:       "1744a1a9cef0fec711aadca532f7fff97ca3949151d2d17c56e02435cb8c6b3c"
     sha256 cellar: :any_skip_relocation, big_sur:        "49d82093968dfd0cc814f4b5de5a732af92bffdd22c105169cd097025819ad37"

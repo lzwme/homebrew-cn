@@ -62,7 +62,7 @@ class LuaAT51 < Formula
       end
       s.remove_make_var! "CC"
       s.change_make_var! "CFLAGS", "#{ENV.cflags} $(MYCFLAGS)"
-      s.change_make_var! "MYLDFLAGS", ENV.ldflags
+      s.change_make_var! "MYLDFLAGS", ENV.ldflags || ""
     end
 
     # Fix path in the config header

@@ -7,9 +7,11 @@ class JsonGlib < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sonoma:   "73592d2619a9c92a8a911a53aaf6746ac856d156eea05f64704c1d798ee97b51"
     sha256 arm64_ventura:  "753f1b417f67019352dd2241a506056d3a61d517143983963bbf100d0bf39305"
     sha256 arm64_monterey: "2905d1e62cc0d99fd5bb240b0899401d2dc667f317d07d19378a0cccea01bf48"
     sha256 arm64_big_sur:  "e74f3f36f6388489d5940ee05c290ad6f7164d65a141d31384ba4c7454bc9064"
+    sha256 sonoma:         "40fee037f315f68abb9b6a13964292a7fb75cb838942351ec89a2103ca6a156e"
     sha256 ventura:        "bc74ee2868329c5484a5d98ce1e612f9f135f209a62e3f5ed7b80b2f446899d5"
     sha256 monterey:       "c9e3f1128cf4ac8db8ca28ca88ab72a3fb6c50a3ce0c9df5fc394ed5c95b38b3"
     sha256 big_sur:        "223b8bc85f42b9a68bbca1ccfce4e6daff89c0e51275ec26cb9a0a012b7bceeb"
