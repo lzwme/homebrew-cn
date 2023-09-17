@@ -7,9 +7,11 @@ class Libharu < Formula
   head "https://github.com/libharu/libharu.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "c1b23884bba47f0dcb7b370593bfef55beefc690f0729070ee5297fb3629ba38"
     sha256 cellar: :any,                 arm64_ventura:  "99295cb20bb4c7a8d7f7d2ba07dfca6ba604bc73ef16a1352ab89a66164de4a2"
     sha256 cellar: :any,                 arm64_monterey: "9b275ece58d1b13804e5f24c4907afb98fd903b9fbaf767ae10064fdfc4abce5"
     sha256 cellar: :any,                 arm64_big_sur:  "5d7ddfa53783e144e70d05966047cf45a0779085aa5abaf1d3bc69974e16bee4"
+    sha256 cellar: :any,                 sonoma:         "6a8a38d8f83d663475d09c30e2df41b6abb5ab64bf8563674113e216e86ae005"
     sha256 cellar: :any,                 ventura:        "d9bbee944dd85603f7a58a3924fac5ebb607196aa9d6935fcd410090e0df655a"
     sha256 cellar: :any,                 monterey:       "993cd8d5890d997b5594b477fd40453c31cda32402439ac6a83506505d8df9aa"
     sha256 cellar: :any,                 big_sur:        "8d9f255db0ee0ffd1c667832130c06c624f791e5dc06dd68befb307388ffd0af"

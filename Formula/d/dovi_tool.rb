@@ -6,6 +6,11 @@ class DoviTool < Formula
   license "MIT"
   head "https://github.com/quietvoid/dovi_tool.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "be9203db492cbbc19a2be63bc6e3c38afbf400cc7a248bddc1bbc154082230f7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2969966d41ac5f184920327758aef057d6c494efc5bf30c689825d2bd2f288b7"

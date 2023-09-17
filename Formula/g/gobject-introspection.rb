@@ -3,20 +3,18 @@ class GobjectIntrospection < Formula
 
   desc "Generate introspection data for GObject libraries"
   homepage "https://gi.readthedocs.io/en/latest/"
-  url "https://download.gnome.org/sources/gobject-introspection/1.78/gobject-introspection-1.78.0.tar.xz"
-  sha256 "84f5bd2038bd52abbce74a639832c5b46a2d17e9c5a8ae14f9788e8516c04166"
+  url "https://download.gnome.org/sources/gobject-introspection/1.78/gobject-introspection-1.78.1.tar.xz"
+  sha256 "bd7babd99af7258e76819e45ba4a6bc399608fe762d83fde3cac033c50841bb4"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later", "MIT"]
 
   bottle do
-    sha256 arm64_sonoma:   "d232c7d84731f329d3e0f108c0ada363fd9a2874052faea3a91477e80ad2df78"
-    sha256 arm64_ventura:  "6b4ee982ddd1a6a724ae2f54dd477591efa7c48bccd75c342d2acae7eb7ff3ae"
-    sha256 arm64_monterey: "ca7bc73d0fc6709ab490cbaa403aa6cdf79d2ad5e8a3b112df149ce7b26c1282"
-    sha256 arm64_big_sur:  "4054a01f1538a066b61fb7229e10cde9e910e8ed6f6a6f1d14b244f12225eb37"
-    sha256 sonoma:         "53e610ede9117c52b027ef382b68525e0556f69f92a59e8f7bc45dd6943a2e71"
-    sha256 ventura:        "2dab70e61b9868bdab40eace98ad44cf1b9543a894a861a181e231ab5fa4a9fc"
-    sha256 monterey:       "c805d29410abe00a7bcd510702e568411d7bef2fd023c49be5480daf7ca557c3"
-    sha256 big_sur:        "7011af2059a2c1169b74c02558756ea13d7d7fc0488e0dab3c88b99f3eaabfc5"
-    sha256 x86_64_linux:   "7f1aa60c7d14d1e5a81b3e0a90e9bfd4354d002d3353c98573dd078f3fbc59a8"
+    sha256 arm64_ventura:  "b2b4e8d3b3b30033357e861bd749f55dfce23407523dfadbbcf14c990ef3dd06"
+    sha256 arm64_monterey: "7daa626f4da8e5e89c28198306750465c0e95375482541686a2a3913bf0eb04a"
+    sha256 arm64_big_sur:  "59c6c1ee9ead7d4403daabf43de79ec6121fb9f4c2ac641df9fdde96b35de637"
+    sha256 ventura:        "96eb66715ded9f4e5a9d586b4e0a60a8332181068cb736b97e576eb75cf35026"
+    sha256 monterey:       "c46f507049bab04bb165da06d7d6461d3f048beadec763f9b773f677435a7d6d"
+    sha256 big_sur:        "f29fd2b664e44c6054cb60a1259fed95244e8b4404ab9e95246d900fdc214da7"
+    sha256 x86_64_linux:   "d2d964476da6d9e5cfd0831513566250ec3bdf071ddfa7a1aafca49e6b740c3e"
   end
 
   depends_on "bison" => :build

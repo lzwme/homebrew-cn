@@ -6,9 +6,11 @@ class Libdeflate < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "d5d761334a631e2b045d350c354b4078f5e94e0ff92e6448d4e22ea84ff34ba4"
     sha256 cellar: :any,                 arm64_ventura:  "1b2e112627f0d3d96bdcc963325d8adaa25b3a0f9fd496fb16c9e90bee89075c"
     sha256 cellar: :any,                 arm64_monterey: "6033e7914e305fdf6a89beb659d7b13d142c22b120cadd58818e716894d8d3ad"
     sha256 cellar: :any,                 arm64_big_sur:  "8ca091cea4f792ecccc9b1a04b5aa191069be84275026d8f558a0bf83d9de4c7"
+    sha256 cellar: :any,                 sonoma:         "51c16bd30df4c3dbed8dd912e8d9cdfe209b60b17416a70a1e7856ec1e9cbda5"
     sha256 cellar: :any,                 ventura:        "04afdbb6ce553f2fcb8d1c592dab0ae5d72c43a4aa0f9d0701548033e5512ff7"
     sha256 cellar: :any,                 monterey:       "b1cfd87672ba2ea5b73e1d9e63394eadab5e0534d6024094a866575867319deb"
     sha256 cellar: :any,                 big_sur:        "23aed6083b2e468777c4815297c9a1ef22a2cb04d827812f62b6feef8707405f"

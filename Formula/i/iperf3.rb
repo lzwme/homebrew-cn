@@ -15,6 +15,7 @@ class Iperf3 < Formula
     sha256 cellar: :any,                 arm64_ventura:  "f234c075a47f5331757dd3be027fafde8507d46562f9b186ef585ff3aade37aa"
     sha256 cellar: :any,                 arm64_monterey: "ac6c6f3c2c5c62a63244c15ea98f3aa1b1c061c33fdb662a8f9353c5607bb4ce"
     sha256 cellar: :any,                 arm64_big_sur:  "08a117ef85239a2b485a64d8cbd2a835821ce9c714eb590ff533dbf70bf1c2ec"
+    sha256 cellar: :any,                 sonoma:         "ef830212e24f6b170d83ed8439da60fcfac6bba694de1589944c6c3a41d2b15c"
     sha256 cellar: :any,                 ventura:        "90de2b3c476f7986687ced87584606ad6afba8474862a764f9faeb537c06689c"
     sha256 cellar: :any,                 monterey:       "136dc4017063a7bc9a6c0a5044c9a12fe8704e96ef0470d3cfc80fda6838b82d"
     sha256 cellar: :any,                 big_sur:        "423503cb3b0bd1d4f410ceda13a61369e885f7b2bca83bbd005a631b3f074467"

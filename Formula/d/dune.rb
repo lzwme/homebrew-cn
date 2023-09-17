@@ -7,9 +7,11 @@ class Dune < Formula
   head "https://github.com/ocaml/dune.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c7abf8d5f4273342f98d5aefe34fe26231b9c227aef3e9b9489c9fbd6b2dc2b4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6db48ee06bc484a9b0beb39010fe53961706f304cc0050116fc005420b471e92"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "948b7c795c3ed0096d3400fa57b49162d8391e021d65dfd2a55562965a7ba79e"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "847b7f7eea98ecebd446cd6959f2e62bfc5e20bc1c40ebe9d0b5abbfac653f4e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c6e2517787a0a24c95398baf2a4ef555dcc20bbd733a6c65b5b0a040afec3dae"
     sha256 cellar: :any_skip_relocation, ventura:        "a8fa64fb29a36a6b18e487291fc02e279d6cbce4001b9ac5270af610e0075c1c"
     sha256 cellar: :any_skip_relocation, monterey:       "ca4bca74b94248bbf0507c5ad989f93fe9ade574cf8fe3896878e0043f9d1b02"
     sha256 cellar: :any_skip_relocation, big_sur:        "24aec02426d77bb61e64240329917ee36fce95eced614d69f2ca285248245100"

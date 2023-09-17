@@ -1,19 +1,19 @@
 class Hysteria < Formula
   desc "Feature-packed proxy & relay tool optimized for lossy, unstable connections"
   homepage "https://hysteria.network/"
-  url "https://ghproxy.com/https://github.com/apernet/hysteria/archive/refs/tags/app/v2.0.1.tar.gz"
-  sha256 "5a181f84c1dc1b14680478e03efe11608e743b501b528c5cfa0771462ba1a350"
+  url "https://ghproxy.com/https://github.com/apernet/hysteria/archive/refs/tags/app/v2.0.2.tar.gz"
+  sha256 "eec86966a533cb4bae8e0e7b5a1c9b231a0a7a587ebc07a2a2e1e8cdb3f555f6"
   license "MIT"
   head "https://github.com/apernet/hysteria.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7e02fd7a77ef289f2e538783a30683f6c382bcc339f125f65c43ffc2f2d3de1a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "237b3cac17189021d0613354d06f6f763dabe0cce22e44c2dc3caba76868f36a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9a8455a8ec7b388ba1a8aa0f45d099e8173bf248592e2ecaf3b2b2de83ea87cb"
-    sha256 cellar: :any_skip_relocation, ventura:        "8d6b1b79c86438dcb6ad2cd930f65cb9acc4dc5326f83fa9d97eaf15a6b69a69"
-    sha256 cellar: :any_skip_relocation, monterey:       "d97db70049c79037c887bd6df27725172fab8d8e61ac0b3246b90e1172817d5a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "791d6284eb16a920fc95e8cdf22832a5e6bf7d9290cdbe40f40f1d62b2bf2a3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc76b8a730b38231698a40987fb419785f8ffd4c77ae51399678c5d1abffef2b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a65acb4e6fb99ae37f92a4cfeceb6655ee5853e3901ac7ffc6787ceff9abe7c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ec8c28ccff4d6f39530c898270a9a19bdc89246ebc06247209a7fd391990ad86"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "74399957a1d610ad6ec14eb61903a0b46d49bbe4bee842de952ed9f176f25cd5"
+    sha256 cellar: :any_skip_relocation, ventura:        "611ba6af23526c3b393d98d5176722f80a32a25462fa0e4139ff6e739749e6ad"
+    sha256 cellar: :any_skip_relocation, monterey:       "4a184d026c02ebca8fec29f1f865dac71562c8d6bde323b27f7920a471d857d0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bb5c75016ca6a0e8a3c15f1c0132fc03485aac12ce058a8500a858253a9e71e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31f27d20b99c8e5e416c1bdaf8f0891a76fcd13ee31b309328159e06fe093309"
   end
 
   depends_on "go" => :build

@@ -33,6 +33,6 @@ class Serd < Formula
   test do
     rdf_syntax_ns = "http://www.w3.org/1999/02/22-rdf-syntax-ns"
     re = %r{(<#{Regexp.quote(rdf_syntax_ns)}#.*>\s+)?<http://example.org/List>\s+\.}
-    assert_match re, pipe_output("serdi -", "() a <http://example.org/List> .")
+    assert_match re, pipe_output("#{bin}/serdi -", "() a <http://example.org/List> .")
   end
 end

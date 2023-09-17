@@ -1,18 +1,18 @@
 class Faust < Formula
   desc "Functional programming language for real time signal processing"
   homepage "https://faust.grame.fr"
-  url "https://ghproxy.com/https://github.com/grame-cncm/faust/releases/download/2.60.3/faust-2.60.3.tar.gz"
-  sha256 "1088b31ad2a6175ff27807afc33c5929c33e97a7d09a1995e126bdda9940fc1e"
+  url "https://ghproxy.com/https://github.com/grame-cncm/faust/releases/download/2.68.0/faust-2.68.0.tar.gz"
+  sha256 "423bba0bc218348d24dbcf3838a0be315b1f20e0a8f97f42741284f0ee815e07"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "0e71deead9314f7f4cb64235770f25f5e5dc1131f96f66cbc1ca795333ee534a"
-    sha256 cellar: :any,                 arm64_monterey: "09571115f90c6d6a79dc07081de33230dd6a6c80aa497d4fcde552f5c21859aa"
-    sha256 cellar: :any,                 arm64_big_sur:  "84ff66598a53ec07b5de84b63a53b89fb53e5ff204274408e2b05e640ccff13c"
-    sha256 cellar: :any,                 ventura:        "d2bb8002080dc48fc45519bb653c0cd61e7402f0565c7624378cde382f6a80b2"
-    sha256 cellar: :any,                 monterey:       "6ad803949023a14483f2d4c982436aa8ac46f5688ae92f057b938d8957603f9a"
-    sha256 cellar: :any,                 big_sur:        "e7500004d69947efc6a4dacd905baaf2d0f7441ecd42e2248434dc5d68646031"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed2562a4684e2ddd76c85b59134b342dbe039697bfa581f5ff765543fca5cced"
+    sha256 cellar: :any,                 arm64_ventura:  "9f669ca4385f8ad64cf744fa728318e7e25554742596b8f16ac6378ddbc34316"
+    sha256 cellar: :any,                 arm64_monterey: "b432e5ac62d28d69b4e917e21a3b6965c4a5eba1efef19601d3627da6be3a240"
+    sha256 cellar: :any,                 arm64_big_sur:  "c74cc1f70e889a90c7b19fcaa8ee9093c4ad4eb292c82bbd4ffd39b4f4dfe0a6"
+    sha256 cellar: :any,                 ventura:        "915550621389f81fbc7fc7e227b5ea7f2c9e604dc286e2488b25069c89a438e6"
+    sha256 cellar: :any,                 monterey:       "b95166a7064904dd6eca10fe79fa5573fe1a2131dc4ab2f7213cb16c80eb5c97"
+    sha256 cellar: :any,                 big_sur:        "8356978a5748505893e7688f65b383d07c87d83281e7ea15e4cff4c7e5a557d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "336240c1d431644a6e29a9adf0741427e6496c230abfe128bf35ef83eb1b0a70"
   end
 
   depends_on "cmake" => :build
