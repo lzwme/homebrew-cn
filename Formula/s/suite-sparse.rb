@@ -18,6 +18,7 @@ class SuiteSparse < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "c2122c45ed37c99de3ced73a0bc3bcd6482fa3d2062390722620888afa768db5"
     sha256 cellar: :any,                 arm64_ventura:  "beb04f4b1eff8c83767996c769b8e390e6068bde47c1bdadbb0edcdb3716c548"
     sha256 cellar: :any,                 arm64_monterey: "1eedd2086ad86327bb00d09df5cfdda8ca6f060b6baf06f4e6b539212a7e5ab8"
     sha256 cellar: :any,                 arm64_big_sur:  "0954c853c33c241ee5699d8d403c8c6188619aad53fb3bbe118f0482bed9135a"

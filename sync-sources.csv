@@ -461,6 +461,7 @@ Homebrew-homebrew-core/Formula/b/binkd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/binutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/binwalk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bioawk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/biome.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bioperl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/biosig.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bison.rb, Homebrew/homebrew-core, 0
@@ -4474,6 +4475,7 @@ Homebrew-homebrew-core/Formula/o/oras.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/orbiton.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/orc-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/orc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/orcania.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ord.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/orgalorg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/organize-tool.rb, Homebrew/homebrew-core, 0
@@ -6675,6 +6677,7 @@ Homebrew-homebrew-core/Formula/y/yazi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yazpp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yconalyzer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/ydcv.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/y/yder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/ydiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yelp-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yetris.rb, Homebrew/homebrew-core, 1
@@ -7315,6 +7318,7 @@ Homebrew-homebrew-cask/Casks/c/cemu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cerebro.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cernbox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chai.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/chainner.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chalk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/charles.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/charlessoft-timetracker.rb, Homebrew/homebrew-cask, 0
@@ -9403,7 +9407,7 @@ Homebrew-homebrew-cask/Casks/o/osmc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oso-cloud.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/osp-tracker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/osquery.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/o/oss-browser.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/oss-browser.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/osu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/osxfuse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/otto-matic.rb, Homebrew/homebrew-cask, 1
@@ -9557,6 +9561,7 @@ Homebrew-homebrew-cask/Casks/p/platypus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/play.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/playback.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/playcover-community.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/p/playdate-mirror.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/playdate-simulator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/playmemories-home.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/playonmac.rb, Homebrew/homebrew-cask, 0
@@ -11652,6 +11657,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-fugaz-one.rb, Homebrew/homebrew-cask-fon
 Homebrew-homebrew-cask-fonts/Casks/font-fuggles.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-fuzzy-bubbles.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-fzshusong-z01.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-gabarito.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-gabriela.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-gaegu.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-gafata.rb, Homebrew/homebrew-cask-fonts, 0
@@ -12626,6 +12632,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-pigmo00.rb, Homebrew/homebrew-cask-fonts
 Homebrew-homebrew-cask-fonts/Casks/font-pigmo01.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-pinyon-script.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-pirata-one.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-pixelify-sans.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-plangothic.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-plaster.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-play.rb, Homebrew/homebrew-cask-fonts, 0

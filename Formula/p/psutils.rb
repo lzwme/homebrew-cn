@@ -3,20 +3,20 @@ class Psutils < Formula
 
   desc "Utilities for manipulating PostScript documents"
   homepage "https://github.com/rrthomas/psutils"
-  url "https://files.pythonhosted.org/packages/a8/95/8303c0d17381d43d3ec5fdc0d2466e3043864d3697fca438d9bc0eca148c/pspdfutils-3.3.0.tar.gz"
-  sha256 "585deacf22639c7d8b956e7894fb1f4290df25f051a6a99b225682c573912132"
+  url "https://files.pythonhosted.org/packages/df/de/ce4339642a35e20c163a1f835c326819a926fe8d82711206156629d74cff/pspdfutils-3.3.1.tar.gz"
+  sha256 "503e5469061fc6fb04ed19bddeb995b8320037417c8fc3fd2c46860c98593009"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "309a86aa10f5f58a5258fd689a26d646e0a912c8c7b07a226a9c57f50e626dd3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c5372359859f0d41d91ad663602403e27d4028659df735c3915139920dd7ef00"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "35d4017213a848825c73ba3305fb312c89114f09815ef648322ec0fea8053501"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c05040fd72b43054235c3d1ea03c1d516b0ce25b012420a915a8b3a8d0117296"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1791f6483ddd991425ceef08e8bc06be0344952cb106d326a3a7008c3d519817"
-    sha256 cellar: :any_skip_relocation, ventura:        "ec0eef3610dbfdf329d6598279457fcab27f99e64933292bbe1746684d96baab"
-    sha256 cellar: :any_skip_relocation, monterey:       "dd214b47dff3b309f41bb9d6ca83226997b9517eec6e38ff812416e3a1f6cf04"
-    sha256 cellar: :any_skip_relocation, big_sur:        "16bdb9c0d7894408b8cd54fa3eee279146cdf2e4674c435c9bf673c033fb6eaf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a4598c61ab8ca79db08045673e5e987fa3898dcf28d7be1013573d774159255"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "19fbb2f4b8145c12cdf89f69d3de7e91ca3c8f6f1abb78367abc726d966434ca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba13dace7298e93eee80e8d71574ca9c478f9e98290804930f0a4a9ad9c7f731"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "500d037b9d38ba151aae6cc03f256e319fd5ecccf81a14400c397dcf5aecc0b9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8c48cba5470858f6f92ea1477d8f3cd55bdcab40e55bd76b16dcf6b4060c9f50"
+    sha256 cellar: :any_skip_relocation, sonoma:         "594a9e8e28d952624635d6e7e8d7b79b13c2e13247c3fda11eb66010888be543"
+    sha256 cellar: :any_skip_relocation, ventura:        "684a20162c61deaebe6de9d2778c0f740ce4523d2975896ecfc7e232f4e05742"
+    sha256 cellar: :any_skip_relocation, monterey:       "15331bc1256648f59d8675aef08268dbc026bbc20386da0b266c6eeae8c585ea"
+    sha256 cellar: :any_skip_relocation, big_sur:        "594c5b21308fc002f11e026c2f5091fc1a95caa1248a2f486c57cb59f2a2bdd6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7be364c0ab85c650ad1233876a967cdfbe38e41ba0058c7f176915f3e0f427e8"
   end
 
   depends_on "libpaper"

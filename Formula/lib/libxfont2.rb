@@ -7,9 +7,11 @@ class Libxfont2 < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "9b460431534eaf8a4fc608aee15a4c6280a969dc41790a57074022aec30eb1b7"
     sha256 cellar: :any,                 arm64_ventura:  "44da375c2fc8bafff763cfb2dba910dd678f57cf6ce2aeba8fd72e4fbb86c869"
     sha256 cellar: :any,                 arm64_monterey: "09e50cb913e815ea32277dc0ec23e310bb6d4731e90e3412e9ee2affb5a262ae"
     sha256 cellar: :any,                 arm64_big_sur:  "561f79f169796b4a1efa9e2d16ca265f4953d4a1f2cb6be6c8a27ad8304f5fd6"
+    sha256 cellar: :any,                 sonoma:         "2337adff049134c0599e19b96e9e11a685c24d0d97d5541cde98b04cc39a99cd"
     sha256 cellar: :any,                 ventura:        "f94e0374fabd345c61bf9f1e075df63a3f463031dd50c3122993f839b6e0aa91"
     sha256 cellar: :any,                 monterey:       "c4b1e0ccbbe516996d172865a1800982d2da702ffdce524c622e657fba52d066"
     sha256 cellar: :any,                 big_sur:        "141d3bd006ad7bd579d4831694331cde1c53f6ef1c62c34c6ed14cd9143c948d"

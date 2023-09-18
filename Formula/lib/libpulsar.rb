@@ -8,9 +8,11 @@ class Libpulsar < Formula
   revision 3
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "bcc717ebd4ac78c2048ad3743d74db08c5c2b5c797101391755ce51ad607e2ce"
     sha256 cellar: :any,                 arm64_ventura:  "b5c658655fb912566a9da286a9b9f5d04eff7105c0ca8cea9077036ebbf42ed5"
     sha256 cellar: :any,                 arm64_monterey: "7b55fa7fcab05387ad79a638d3370fe5b2f748d83f59cec95d1b2fcb6e3d1e04"
     sha256 cellar: :any,                 arm64_big_sur:  "5a2edfc2213a714627d7d5fd923b1871f682a7897ca09508057158b7c9305194"
+    sha256 cellar: :any,                 sonoma:         "15f8ff1f8f480dae89b324f1539e66854112b5384a1dcdc38207a7e5a6ee0283"
     sha256 cellar: :any,                 ventura:        "67e502e57ec30777695069ec7ad2557aa42ff1af2ede7b3bff9f8aa585d41ad2"
     sha256 cellar: :any,                 monterey:       "86431289e53512a56245f5d9537263442be971f43d35213010f8b6cd249caf5e"
     sha256 cellar: :any,                 big_sur:        "4c52c5bbdfeddda7cb92773734bf8369c2b75437158b8e55d3c6442a0e8f1680"

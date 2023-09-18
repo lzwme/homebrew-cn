@@ -27,9 +27,11 @@ class Libplacebo < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "7b8924949ce4f6ea2c8bd8e9c47e5b06c108891c5590d193c7bb8fb2162b3a1d"
     sha256 cellar: :any,                 arm64_ventura:  "d39fd06d944a02a6a4524999e97002eb089ad206a5efea6d43d19667417e10e4"
     sha256 cellar: :any,                 arm64_monterey: "fee86a840f4eb479d542ebf23cc2919cebaa038cc655e7bc03cf5a20dba6ee97"
     sha256 cellar: :any,                 arm64_big_sur:  "f9970f6b25f49516e84f773c326533cd895c1a5cdb09870ffefe442df5cd682f"
+    sha256 cellar: :any,                 sonoma:         "fdccd4f5c326dd6d5b16a5b94369fbbdb5d3f4878a440659b99f46a15bd819ec"
     sha256 cellar: :any,                 ventura:        "1ece32e31129e380dbb56346ae9498b1e26170b8c184f57f690bf7c0f18656f4"
     sha256 cellar: :any,                 monterey:       "3de6a1292e3389365d91fa4bd1eebc64a3160d39c270ad59b28999f02a5a1357"
     sha256 cellar: :any,                 big_sur:        "b269179f597f0c09a6b3b145b26067fd4301ebfc1233f2871e2ee98e296bf0be"
@@ -48,7 +50,15 @@ class Libplacebo < Formula
 
   def install
     resources.each do |r|
-      r.stage(Pathname("3rdparty")/r.name)
+      # Override resource name to use expected directory name
+      dir_name = case r.name
+      when "glad2", "jinja2"
+        r.name.sub(/\d+$/, "")
+      else
+        r.name
+      end
+
+      r.stage(Pathname("3rdparty")/dir_name)
     end
 
     system "meson", "setup", "build",
