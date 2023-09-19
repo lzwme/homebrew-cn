@@ -8,9 +8,11 @@ class Yapf < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1c19c4e9d28745f25fc4b32bd3f47b8d3a038c8ab1ee05c9c56ade537850df79"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "80bba73a25b7c33436b8b4d2cd807b05a45de6290f74ac562577c0304451f2e6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "30ff81bd6bc8d793242886ec13d025b1ab941bf92f6dd6cb7fc0e39643107108"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "75a0982a9845c4a81f5e49570da98be6582e873db542a93a5b920acdf1af1c50"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fda284ecb54448f9990b5d997d285284824feba8ff2b8ff7b4578991285c8d73"
     sha256 cellar: :any_skip_relocation, ventura:        "c8bad7425f63d9b777a998250d915c164dff024d7e97af3a46477e42d82dd044"
     sha256 cellar: :any_skip_relocation, monterey:       "a350dc2c0ff2519996bc8f5d6f04668dcb771d5dafe3726029967cbac3997e72"
     sha256 cellar: :any_skip_relocation, big_sur:        "e32bed37cb71e4aea5e8da2274e5598573d7b241794ae788fe2b08139c3ee14b"

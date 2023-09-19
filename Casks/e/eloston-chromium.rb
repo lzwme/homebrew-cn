@@ -2,12 +2,12 @@ cask "eloston-chromium" do
   arch arm: "arm64", intel: "x86-64"
 
   on_arm do
-    version "116.0.5845.187-1.1,1694615791"
-    sha256 "39826539a72da40e3b16a0f6b10231a28b18c5b51292c5b9fca202ac67431ca8"
+    version "117.0.5938.62-1.1,1695024143"
+    sha256 "0d171c1fa5920397e4a49557c0d041715d5fda112dd4dbc97f75b137abe1888e"
   end
   on_intel do
-    version "116.0.5845.187-1.1,1694582307"
-    sha256 "40afa1c620943ec44390318b48a4ad9d5c21d75ca6e05e772cdfa78903d98b66"
+    version "117.0.5938.62-1.1,1694986322"
+    sha256 "d0e4fc0fa50ff5c91d460317e1959f8053d2884dc676e9dbca971204d16c5090"
   end
 
   url "https://ghproxy.com/https://github.com/ungoogled-software/ungoogled-chromium-macos/releases/download/#{version.csv.first}_#{arch}__#{version.csv.second}/ungoogled-chromium_#{version.csv.first}_#{arch}-macos.dmg",

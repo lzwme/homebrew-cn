@@ -8,9 +8,11 @@ class Libusbmuxd < Formula
   head "https://github.com/libimobiledevice/libusbmuxd.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "b7febe75e6292367794866227f674d10ddf7691b47818a2a5a1394bf51723142"
     sha256 cellar: :any,                 arm64_ventura:  "a35936b03dba9cecdd2af294daa9b7a879ad9c11043f557f2531e799a3fd71aa"
     sha256 cellar: :any,                 arm64_monterey: "92201ac3007f70957e11d1cc9be9ae9862202559a95f95456f8b7bf76fd9b204"
     sha256 cellar: :any,                 arm64_big_sur:  "9f995ac0325e79244ca44de94d0c5f86292e2f565d2205bb6bb43fe61856c16f"
+    sha256 cellar: :any,                 sonoma:         "a2c71b6f0db26e3a3fd00fdc5672394651b786562f8eed6437e518127dd56b72"
     sha256 cellar: :any,                 ventura:        "2cc0d1c983ab8d088af3dc0b8f4fd9d555a7e95908066d2ee33df58ae7a0961c"
     sha256 cellar: :any,                 monterey:       "4f5a4f31c18fc736e2c5d32564df1337995f936564cbb935675d45d3fd3eb249"
     sha256 cellar: :any,                 big_sur:        "5dcfdb9eb43ac45ced1eefb9b88b25a48e99198ee8c57e466bcb5112392d1de1"

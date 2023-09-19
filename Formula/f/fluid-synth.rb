@@ -7,9 +7,11 @@ class FluidSynth < Formula
   head "https://github.com/FluidSynth/fluidsynth.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "e4ff08b152aa5a84dbdf4081285aa28096fd297aa196cefca433482d2f0bdb43"
     sha256 cellar: :any,                 arm64_ventura:  "da5bf065ed02260f06956649b2ee93754bacda5087f19fd8c853ee7066a216a3"
     sha256 cellar: :any,                 arm64_monterey: "e0b2996b64eccc958d3b763b74c252cb1c98fc3226b0e4e23bd6f8782b276664"
     sha256 cellar: :any,                 arm64_big_sur:  "3adf010702a3ab2b4ef6cd6f60bd9441ebd30234ba82f56cbdd06e6ec70d4155"
+    sha256 cellar: :any,                 sonoma:         "0e100fe8349cd3ba125d1f6a6077e73826944e0a0beb3590b2c18af6d0caefc3"
     sha256 cellar: :any,                 ventura:        "5fd006e36431322f5f5c76537f1d9e53ffb34c555e8807d30c8ebe05ad0d95cd"
     sha256 cellar: :any,                 monterey:       "4e26125a6fcd8a3addcb426f23ac01224a0ec8a8032af4261ba1899eb295d584"
     sha256 cellar: :any,                 big_sur:        "133fe112c2b05d607c3a2e52ccdf6d3c475447500c0e8dc227f635ddd3ffc9cb"

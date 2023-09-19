@@ -7,9 +7,11 @@ class WebpPixbufLoader < Formula
   head "https://github.com/aruiz/webp-pixbuf-loader.git", branch: "mainline"
 
   bottle do
+    sha256 cellar: :any, arm64_sonoma:   "f1295ddeca6e71d6c2c458af0b089cb272c886b981d7e047ec579efe519869bd"
     sha256 cellar: :any, arm64_ventura:  "d5d42134ea2ca02f53b231777b0027c7265f95820bb33fdc034a376b5b26bb87"
     sha256 cellar: :any, arm64_monterey: "f3cb479094f5cbd4f6f15926b1ef4f2b0b20bc5c5cd3965cca92d9f1ddb98a1a"
     sha256 cellar: :any, arm64_big_sur:  "eb9c71706217fea7e4199fb1d2f8ff7652c0ce0bb2fff96835c3999813698918"
+    sha256 cellar: :any, sonoma:         "f61183f3acc60661d4ea8ba02dc370d604c963969cfb4bdaa0af96422ae47d94"
     sha256 cellar: :any, ventura:        "dba630af9d61b17ee0718e00819f6a690c4d9317fee54720cf7ef64cdbcbaa83"
     sha256 cellar: :any, monterey:       "81594183c7d2167be7d22ef9997cb4e4b46e1dd97a78baa8914697b430bc1a9c"
     sha256 cellar: :any, big_sur:        "4c268b88d45a04ad088bb79bcfa83ea6dcfba972ddd2c89ccc263c0f19b187d3"

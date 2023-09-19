@@ -1,21 +1,20 @@
 class Cycode < Formula
   include Language::Python::Virtualenv
 
-  desc "Boost software development security via secret scanning, SAST, SCA, and IaC"
+  desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq-public/cycode-cli"
-  url "https://files.pythonhosted.org/packages/66/aa/0a1fd9601299384a87706463254a0cdd682fa982585ab6a8e872fa1e7d1c/cycode-1.1.0.tar.gz"
-  sha256 "d9a359be988a09b96fc487b958b515a62447bb1871cf3b77a17c4f47a8c4e782"
+  url "https://files.pythonhosted.org/packages/72/ea/2280271192e2669a5254e0885d6d103e154267e5fda87d9d56e1b5d007c1/cycode-1.2.0.tar.gz"
+  sha256 "2b10033b2f80871618587d64ced932ee92fab928d96cd6476ff536597724b1a4"
   license "MIT"
-  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb006d2e275fe667e490d75a4ec127e4b6e3b317f6b4df732ea6c78d89f629cb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e79a68db67c24cdc2870904322019b8b92bf733ef76e46466a0356392246c1c1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ca8f8575033ec6d127b7870f5f1fb7e0f5bc9e76b477d92e1765b573ff0cc8d4"
-    sha256 cellar: :any_skip_relocation, ventura:        "02940cd1bd4392cec455ecf37196954f1d95d8d13e28054376fd87cebed0f5c0"
-    sha256 cellar: :any_skip_relocation, monterey:       "6491aae153d6a99c3850082720c329cb93d1751ea7b4d8ddc1565bafbcef11a8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "44780a06bc94426ba05d42c480fc520d5118c1d1e6b098204992870797c45559"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2406318e76a64a60ca77f6a99ba7797a22514c5154bbc1600915f7558cf99057"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "67ca27d79d4f8545e891427cce7b91b832e5152f92a5353bbc14c64d15bb8bd3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a990d8a8c143ce9e1f003ffa2625a7fcdbfe6d09ba92a3084ba5758b978064e6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ca297adcf9699467ff9fe1d07069827481df8d4ffd85bf6c2874805e962775bc"
+    sha256 cellar: :any_skip_relocation, ventura:        "8d9091e83c6bccf94c1ff1cbb396bee3971131fdd4bdf8cbc7da64c8db75dce9"
+    sha256 cellar: :any_skip_relocation, monterey:       "353ee2369966c09b0feb131b42ca215debaeb16ad6e1899f1b77cdfcce228720"
+    sha256 cellar: :any_skip_relocation, big_sur:        "aae888cc51d00be052dcc7b966adb0d4b21e219e3e43f8d53cafa489cddb12ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93088e826daab9b2acfce0bc4049d5655b7c22af4fd3ef08897546ace0afcaf3"
   end
 
   depends_on "python-certifi"
@@ -59,8 +58,8 @@ class Cycode < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/95/4e/8b8aac116a00f0681117ed3c3f3fc7c93fcf85eaad53e5e6dea86f7b8d82/GitPython-3.1.35.tar.gz"
-    sha256 "9cbefbd1789a5fe9bcf621bb34d3f441f3a90c8461d377f84eda73e721d9b06b"
+    url "https://files.pythonhosted.org/packages/a7/bc/4970a84934f8783cbd7851703531742977aa6fb77a2128401e5ba3c5989f/GitPython-3.1.36.tar.gz"
+    sha256 "4bb0c2a6995e85064140d31a33289aa5dce80133a23d36fcd372d716c54d3ebf"
   end
 
   resource "idna" do
@@ -89,8 +88,8 @@ class Cycode < Formula
   end
 
   resource "smmap" do
-    url "https://files.pythonhosted.org/packages/21/2d/39c6c57032f786f1965022563eec60623bb3e1409ade6ad834ff703724f3/smmap-5.0.0.tar.gz"
-    sha256 "c840e62059cd3be204b0c9c9f74be2c09d5648eddd4580d9314c3ecde0b30936"
+    url "https://files.pythonhosted.org/packages/88/04/b5bf6d21dc4041000ccba7eb17dd3055feb237e7ffc2c20d3fae3af62baa/smmap-5.0.1.tar.gz"
+    sha256 "dceeb6c0028fdb6734471eb07c0cd2aae706ccaecab45965ee83f11c8d3b1f62"
   end
 
   resource "texttable" do

@@ -2,7 +2,7 @@ class YoutubeDl < Formula
   include Language::Python::Virtualenv
 
   desc "Download YouTube videos from the command-line"
-  homepage "https://youtube-dl.org/"
+  homepage "https://ytdl-org.github.io/youtube-dl/"
   url "https://files.pythonhosted.org/packages/01/4f/ab0d0806f4d818168d0ec833df14078c9d1ddddb5c42fa7bfb6f15ecbfa7/youtube_dl-2021.12.17.tar.gz"
   sha256 "bc59e86c5d15d887ac590454511f08ce2c47698d5a82c27bfe27b5d814bbaed2"
   license "Unlicense"
@@ -29,7 +29,8 @@ class YoutubeDl < Formula
 
   def install
     if build.head?
-      system "make", "PREFIX=#{prefix}", "MANDIR=#{man}", "PYTHON=python3", "install"
+      python = Formula["python@3.11"].opt_bin/"python3"
+      system "make", "PREFIX=#{prefix}", "MANDIR=#{man}", "PYTHON=#{python}", "install"
       fish_completion.install prefix/"etc/fish/completions/youtube-dl.fish"
       (prefix/"etc/fish").rmtree
     else

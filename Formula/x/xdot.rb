@@ -9,6 +9,7 @@ class Xdot < Formula
   head "https://github.com/jrfonseca/xdot.py.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a59db9e091ecff0b318f223f9ba316f91e1173e3221e19371cbf769f34721df4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8e2e3c088fc43db9fd8d2b2ebfa02e729a533ef3e8562a78e06cb2652dc8a873"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4f6bb055d3e4b04f798da20971c16d3ea67b3464d892592db34c23bbad3dcc35"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "724df2bb58f5435fa527b1e2f8863071f369178bb7becf1d07e583b6eb0b98ac"

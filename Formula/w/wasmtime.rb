@@ -13,9 +13,11 @@ class Wasmtime < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "b29070b1203481cb6b61b6ca9c7e957eaf05fa02d202f04acff1767cf3e65da8"
     sha256 cellar: :any,                 arm64_ventura:  "69e2a5912295d8e563b6d5db8dafea3b4c411c4e2a1846736aa3492b957bc90c"
     sha256 cellar: :any,                 arm64_monterey: "ccee5e10d33439408bc14ecb6cefe8f570174ec7563b3fec6177a513c1996ef5"
     sha256 cellar: :any,                 arm64_big_sur:  "19f6aa8f36cab41e307ce5c4e4b1147604fcb2f522888b1074734135d86a1c9f"
+    sha256 cellar: :any,                 sonoma:         "366786beea79271c199fdf7dc4052aeebea73ed22aef2e8888c0f2654d3c222b"
     sha256 cellar: :any,                 ventura:        "96914dac92bd2ca4cd34dad60d5fc23573707c0d1d88a48d3876334e6fc14502"
     sha256 cellar: :any,                 monterey:       "dd61a1f07eb41b6db0cab962410887e04ad6d6ef95ef89a4c8116d2db3fa81b4"
     sha256 cellar: :any,                 big_sur:        "c25929af7d642491983888cf3ca0ccaf4ae1f89c2507355478c40a064373eef8"

@@ -12,9 +12,11 @@ class WasmTools < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1bfa16e508dcaadd9e610dd2ffc538c3e14dcb787e467b79cec03d94b504521e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "627cc2791c1f94031e47b9daa64d185f00ccd34cc4049b36002b201792357d5c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4215b55ffc88464d1b9e3b2f5430482dcba2101a09292885b934cc15701a5fee"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7eb7162743cfbb81aa97a706996c8158fd7d420ddf0da13054d2af0e413ad0cc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "57dae75c4bfad0aeff193a4c3d471dc1c8dec5d8ce4a8e4d12b8ff082e703233"
     sha256 cellar: :any_skip_relocation, ventura:        "8515bedafc8fd58e0ab1a555db2d2d3e5c5a1a13972cf80b4022e56a482695b6"
     sha256 cellar: :any_skip_relocation, monterey:       "7970e5ff233fd4d1d14c0bf462a58270c9266a27d3b90436d183a1ab5bcddde2"
     sha256 cellar: :any_skip_relocation, big_sur:        "2d2d2ac3dc3087a3b264b571dc66da115a45ff4d869c2ac679b1de3b5a705e69"

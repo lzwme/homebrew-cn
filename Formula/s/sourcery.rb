@@ -1,25 +1,25 @@
 class Sourcery < Formula
   desc "Meta-programming for Swift, stop writing boilerplate code"
   homepage "https://github.com/krzysztofzablocki/Sourcery"
-  url "https://ghproxy.com/https://github.com/krzysztofzablocki/Sourcery/archive/2.0.3.tar.gz"
-  sha256 "3779a52e2f7d87d9616ec467344930b27d84ae1e8c57799b77f305bddf6ee297"
+  url "https://ghproxy.com/https://github.com/krzysztofzablocki/Sourcery/archive/2.1.0.tar.gz"
+  sha256 "656f3b8b9463ae3a2afaf0bdcd55a03e7141d52a49e7fce1f4092991c14897e1"
   license "MIT"
   version_scheme 1
   head "https://github.com/krzysztofzablocki/Sourcery.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "50ce87b3f819e0b6794cff306329fb62786068ef49894294e31c175f26ddb890"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "27afb4e8b4090f28a583bbf412e5aa66dd8061c84f0e22be15ca6395fb699af7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6ff4932710f2a7b201ff9c6cb43493f37dca6cd04574491d205e2f96fffbd2fe"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2a0895e7d053539cbf3ee69123e9ff763a4b4532946ae4a7627d8393f0c63854"
-    sha256 cellar: :any_skip_relocation, ventura:        "29d81854d22e0f8ce8aba0086116e13d5c382ff9d263c7b9603f3f23d4fedef4"
-    sha256 cellar: :any_skip_relocation, monterey:       "23a3b64d05a689bbeada45f2db507059b12baa261860de81acad9c2e67f86308"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3df6faef9028d8647dc275cad471f255d84a1befeeb28ca601bc517de1e705db"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b18f07023f563c3152ea345e09cbd3fcbd2cb7cf6aa6938c228717dabbd26f81"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e310f2b9ff6249a7fbdddebe234ba8426a253406d5e22932f0df4180b28f7ce5"
+    sha256 cellar: :any_skip_relocation, ventura:       "60aae10574ccb3e26d2e9c0e03ec5e05cd626e89e91f414732f2177a5a1e6c6e"
+    sha256                               x86_64_linux:  "d04a75e6f9432d5f45aeb7b71c5607b74dd395b71f978c394db3782e9b78532e"
   end
 
-  depends_on :macos # Linux support is still a WIP: https://github.com/krzysztofzablocki/Sourcery/issues/306
-  depends_on xcode: "13.3"
+  depends_on xcode: "14.3"
 
   uses_from_macos "ruby" => :build
+  uses_from_macos "sqlite"
+  uses_from_macos "swift"
 
   def install
     system "rake", "build"

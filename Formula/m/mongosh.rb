@@ -8,20 +8,21 @@ class Mongosh < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256                               arm64_ventura:  "c38c1a4ae77f3db835c06ef0ef70bdb568a2fe61be2071ef8277cb094cdee90f"
-    sha256                               arm64_monterey: "12cf74a7424f06e55ba56830601dc339ff6ff2dc7787a9b39bc7cdbc91f914e9"
-    sha256                               arm64_big_sur:  "821e20fc084433cd51ded02328ce55bc0fcd7f8add6614bf4206580df6e656ec"
-    sha256                               ventura:        "afdd48e0e07cd6497e390211a314d5f66c6c79cd6cf7bee65022c15d5d268e6e"
-    sha256                               monterey:       "efe60c2a14b808904f97af61edd5d83135e252a593bf9879f0694c41334aae0e"
-    sha256                               big_sur:        "334d97b62aca31102c97c45cc53c55fd1348b6d4362f196640c851279407de9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82c5edbb357dedc606a1971a0073af8b7ba90beaeed29f3e646d661e9a84be10"
+    rebuild 1
+    sha256                               arm64_ventura:  "48bcfea84d679548db10cd2721754c8e44253de9a10b863176d40d8320829dd6"
+    sha256                               arm64_monterey: "fb5da67af28fc05d2778bc3b0a504bb28800e83c84b3f4448cc3d6e8843f774d"
+    sha256                               arm64_big_sur:  "c9f100c478778fafb3fa6f3d099ab6475b670770be73fc6d4267e26d4de5fceb"
+    sha256                               ventura:        "8d83db48a99274d8b11516bef376110a59cf7c27346d08cc5cda0bd4e3a76e3e"
+    sha256                               monterey:       "3f134553b42bf5f0e518e2f73eb2814a361a4fbc79d62d28bab460c9c8b9fd76"
+    sha256                               big_sur:        "f03488ab4dc6483dabdab04b6454ce81fda98e97927cc1621dfcb627cfb48381"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b630dd6a2e8b94facc619b96a85050c5493c39f8f622071d5b3de7479d44e59"
   end
 
   depends_on "node"
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir[libexec/"bin/*"]
+    (bin/"mongosh").write_env_script libexec/"bin/mongosh", PATH: "#{Formula["node"].opt_bin}:$PATH"
   end
 
   test do

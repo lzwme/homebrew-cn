@@ -7,9 +7,11 @@ class Yyjson < Formula
   head "https://github.com/ibireme/yyjson.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "e01eed4e426b1f2263756a7b10f24ee373106c5cc6868cae967e5e4f0994d9e3"
     sha256 cellar: :any,                 arm64_ventura:  "3449c7a7b83124cbd4b1cdbdb42c1a6db8a8828b812324a0103912ce0f562392"
     sha256 cellar: :any,                 arm64_monterey: "9ccea7329ede91039de7149ed5430899abdc2c2a1cd4e19748db266021a49b24"
     sha256 cellar: :any,                 arm64_big_sur:  "a7b669addfdb02dc52c30e59d6c1634b7abec5b5b80c914e790e627150424954"
+    sha256 cellar: :any,                 sonoma:         "0cc4fcf63c0cf85caf1dd2ccc2ad021243c862d4b45e75834a2a9edc239c9a95"
     sha256 cellar: :any,                 ventura:        "2dc6a58b5723be0e1b047e1d3d7650a5902d252d593316367c24caf019daf9e2"
     sha256 cellar: :any,                 monterey:       "c5a0af8a58e10bb3e04de71cce8c0c1250b25540055e1eb2061606f324da2e48"
     sha256 cellar: :any,                 big_sur:        "390a4950994bb564c36ebe35d82e38cc825cbcf7a15bead14c2f57e663a97eb0"
