@@ -10,9 +10,11 @@ class Bat < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "14b72f60bc162be5d6b6eed8ced978e7b7c14dd49e4ad3c82dce35e532e3070b"
     sha256 cellar: :any,                 arm64_ventura:  "715bd9459d6ad4d47292666ecd86ac44da11875f417701e84762d74040eb71ba"
     sha256 cellar: :any,                 arm64_monterey: "d9cd7ef7a71c8a68a0684f4b09adf24d4df64ec4fbd70b39fe81a6d8c3cbf201"
     sha256 cellar: :any,                 arm64_big_sur:  "b00b1ebb963536f84c3eeb36fcf8f243ddf0fec4488f41661bae074b9301b46f"
+    sha256 cellar: :any,                 sonoma:         "f6d0c0c8c48859c8dcdc1786ec36e38a59ea9f66147e8b1b343f5f9c4fe6c3bd"
     sha256 cellar: :any,                 ventura:        "8b9e019fbd1cdeb8aeff993fecc9ef411c9793e15bf86553dee983812d683de3"
     sha256 cellar: :any,                 monterey:       "e60e9f641cf9f3f896fec2fd9585fe2459471b0a7f4149e64a91e49ada5886ba"
     sha256 cellar: :any,                 big_sur:        "226c3f635e4b5a0f0acf1f5758dc6d9705b564af7c4593bd78f664387cfca6a4"

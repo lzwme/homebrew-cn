@@ -7,9 +7,11 @@ class Mold < Formula
   head "https://github.com/rui314/mold.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "3d6808dbe4dc192f309239a0ab7a74c9750f811f0fe25762bc1021e8d6c9dfdd"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f330fa8f16e90211c7035636537cada48f164c3a81fad65f619179977cb1109c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9d539b9139eb5fcebdbd6a40b6cb6cf6d61208b3cc16eb432292d41a97267b0e"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9cc83da97a8153ab7f5c983c700e8cc772522b3ba3d2001473360c73b0f03200"
+    sha256 cellar: :any,                 sonoma:         "1d06627c146cf47ac2f726f826793cdb0ccf575dba21f307c3de837a23761b4f"
     sha256 cellar: :any_skip_relocation, ventura:        "ae8e847d4fa89295747e43ca0b51607b771b1cff1debabd3908ab85601f50f38"
     sha256 cellar: :any_skip_relocation, monterey:       "cb88098f530802e221ed840d7b36aca3b04c596a1095be69efc6d791f4d344f2"
     sha256 cellar: :any_skip_relocation, big_sur:        "2c2d661b6139dbb842313e1f1d9a49cb474e4d9e81ba756ff2f97a46b09eb895"

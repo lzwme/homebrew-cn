@@ -6,9 +6,11 @@ class Stoken < Formula
   license "LGPL-2.1-only"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "ef8f9c9c4a3edbf707c41392dc366204f0a65ed60420b192108cf20f5a84c18e"
     sha256 cellar: :any,                 arm64_ventura:  "d8f2d8b3a88c1361a7f82da8aeccc3272f568d9ec9fb031dd547f76bc865d76e"
     sha256 cellar: :any,                 arm64_monterey: "bd715ff4141234ceacd14910254d1b372b98fca4e490286017055b9345a66b69"
     sha256 cellar: :any,                 arm64_big_sur:  "b14841f8656142a47ad851e2e524642dd71c4ee7c568abfbbe626bf2570d4336"
+    sha256 cellar: :any,                 sonoma:         "8b6a3bb0bc8d471162e70570a9effdc056f007d43eeb6974b452518fe6c4162f"
     sha256 cellar: :any,                 ventura:        "205dca5a696dfd3a9e7ccd43300325209397b32793ea336d2d80b8d93a45369b"
     sha256 cellar: :any,                 monterey:       "14c75a261aa3357a8bbc8da63403727e3dc975df604973235d35da28f58c25da"
     sha256 cellar: :any,                 big_sur:        "59e08afd001c42067ef8502638958742426da6bbdae56ac5b731a5aa4bcbbe51"

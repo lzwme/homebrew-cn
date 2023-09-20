@@ -11,9 +11,11 @@ class CargoNextest < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "92ea15afd01f9baa0f10f4f83b7494bcc4d941c880127aa0cf957d74ef0ab1ff"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7f70c8745c4663e364d8488e810e1acb440fe37506cdf674896a5ab56a46614d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "edf32be4740da65c3708445d9911b9d10fbbe11f3b52f07f4371f1f9b1ad2d35"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dab0a52f1adb5efe128a6bb1aa06c90ef0661d350bb44e8b0840c6c39fde5103"
+    sha256 cellar: :any_skip_relocation, sonoma:         "156b91d181ecb7cf23d0e3eb0c75286b4280505b2d3dcc48220cba1e01078a51"
     sha256 cellar: :any_skip_relocation, ventura:        "adad86c80616c99f2a35a0cee50d2752a7a4fc5413070928d732d152ff6c32eb"
     sha256 cellar: :any_skip_relocation, monterey:       "3c7114f78519e06e17d164a6d042483f69f66ba576ed334c7686301eaa9660ae"
     sha256 cellar: :any_skip_relocation, big_sur:        "114c7a9b263d5a9a9ae47d9bf45fb6aac5dab274f48b4b07226d6be431ea992f"

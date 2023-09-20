@@ -8,9 +8,11 @@ class CargoEdit < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "5235c556554c2eb6def794df2e685aef958a2fc8a1065d3633a14f1e8b15f167"
     sha256 cellar: :any,                 arm64_ventura:  "6107b6be4adadbcebb57c48a1e2d0a9db7ee59c3c88ffff9a26291464015ec86"
     sha256 cellar: :any,                 arm64_monterey: "27a9d9bd285690b75e28929ad7fcbc4c823d1d4edafce07472795401c5db95bf"
     sha256 cellar: :any,                 arm64_big_sur:  "96f7883d97ab6de68eaf0cda9deecf920754bf438c21ab920da63def1379d786"
+    sha256 cellar: :any,                 sonoma:         "0285b7a2772bc5f346319ae2bfb68d685a0e47bb5b08856f70ce757eb61edea0"
     sha256 cellar: :any,                 ventura:        "ce20a66b7219a80617ad20042284afd4eaa8608f90084ca854701fb31e68c7e7"
     sha256 cellar: :any,                 monterey:       "78be6fc5df8d7ae8d3926a0bb1497ac26db866acb84ddb0974dfb73632fe6018"
     sha256 cellar: :any,                 big_sur:        "1be9c417a263a035c124020a65786c495b2219d664d4bd18d0a7b0d850c37a28"

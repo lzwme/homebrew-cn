@@ -8,9 +8,11 @@ class Psutils < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "601c65de5fcc9366a9e1dabb4176a614efe48991244c0532df58f427f8aca3de"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c6482e49ddb120757197a3e64a31e67ff40f4c7456266cf9ae37abd72d1210c3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8e3a59a4e24124ece21b2b13571319bad92de2d8fa3df5efd20bcf0d5be1387a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a17b81eba7a9c7a1f94b3ae97f578a8cc40d7caa673483d5c52c09f502891b73"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0eabe68e455b3c1cfbda9e6f9e8649bfe6355a1b0b2f1bd8fdef57433afb54d9"
     sha256 cellar: :any_skip_relocation, ventura:        "56aaec88e0610d3bfa1832638f7365356ab11124a9d8e37aa0a6d65e4add22ae"
     sha256 cellar: :any_skip_relocation, monterey:       "35fe9eaed5eda798bb09456026bc9002ff144a36aae6522c44cf8e7d86e23f94"
     sha256 cellar: :any_skip_relocation, big_sur:        "450c4a7d78da0c5ce20ae0f232acb590264c2b9a7557b885d59b7e8399c88b68"

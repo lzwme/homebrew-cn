@@ -3,19 +3,18 @@ class Mkdocs < Formula
 
   desc "Project documentation with Markdown"
   homepage "https://www.mkdocs.org/"
-  url "https://files.pythonhosted.org/packages/35/6a/63612e19d9c903a608caf91fd2c1f07ccbb9610de4ddb6f187aec1cce197/mkdocs-1.5.2.tar.gz"
-  sha256 "70d0da09c26cff288852471be03c23f0f521fc15cf16ac89c7a3bfb9ae8d24f9"
+  url "https://files.pythonhosted.org/packages/ed/bb/24a22f8154cf79b07b45da070633613837d6e59c7d870076f693b7b1c556/mkdocs-1.5.3.tar.gz"
+  sha256 "eb7c99214dcb945313ba30426c2451b735992c73c2e10838f76d09e39ff4d0e2"
   license "BSD-2-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "249b5998c5d738de86911b237847392eed7595a0af74257bf5c0ce335a2f579f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "98ff8fec37e7ea3e796ca2b899ef7367e49c53ecef4016c0b8d614d9e43a41d8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3c541029e15c00fa6f47fb9f57290253586a1ac1d6c4efea65d79be8b145f4ef"
-    sha256 cellar: :any_skip_relocation, ventura:        "d28d7e5dcfd94cd83d304c53fb7b3b2b9ebb222cd5267aefebb20160bb9f5ca0"
-    sha256 cellar: :any_skip_relocation, monterey:       "21ebf8073ce196f7954d92899e69dffe68fa57733bd2a1478694f82c1ede929b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8c6b374343347d3efd7ff9297575ed740557ca0e017668428c8f6d64fc91cfa9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4b6fb23dee11ef2a58981ae3634769850427bb6f218eb6c7872d1bdefad1746"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6210d999608db4ec68ffe29afeee3feec6532c36f189b08ba5344f2fa62abe57"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f1791818a033479edc68ff695987101a25512658e6fa6076becc7201c0f797c3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a8993f9d44d7e133275e5cb842f5303aa55c54edc8dc202b5c4142a154ffdd38"
+    sha256 cellar: :any_skip_relocation, ventura:        "1805d06118bca9a27fb1b5f29b336aea4ab4ee42192b96497dea94656e8ff8a3"
+    sha256 cellar: :any_skip_relocation, monterey:       "6c8b5ebc2343978a8a768d1d2f2dca3e6179405a4bd6fbffe5d50546a68ce525"
+    sha256 cellar: :any_skip_relocation, big_sur:        "aba9624b023303a598559abf2310a49b7143ec9e00da1868624984bc233b433f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e767ff483e264f6a446326c8378f3e0e02af60b586c2dd1a817880e6af427c77"
   end
 
   depends_on "python-markdown"
@@ -26,8 +25,8 @@ class Mkdocs < Formula
   depends_on "six"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
-    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "ghp-import" do

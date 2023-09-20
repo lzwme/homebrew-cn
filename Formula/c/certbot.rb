@@ -11,9 +11,11 @@ class Certbot < Formula
 
   bottle do
     rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b78c95e215775e1a95fd8c7cbce1d2f3a56d5bfd8ec0595d555b6f86b40a8eab"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "46ae3f6fbc052236c12de0e26eec2ba49e1fc242701f4f5dcf17bf75461fab90"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "94455c31df1c852aeb3f9356756e441eadd3a352a962fae85fc45eb4cb57d7ff"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0c7e31e25c8f3d0ab63f1d69dab45bf3af007589fcaa1035f4762502e24136c4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c169ecfdc98c4f34bd1b25d3ca77381d3ce5b1d1a353e87c61ace9d4e57563b7"
     sha256 cellar: :any_skip_relocation, ventura:        "d7f056e3bb0385653713c127931f85c02f352ce0a810c4183e7c814f4a58b599"
     sha256 cellar: :any_skip_relocation, monterey:       "89ec02a403152c4b945a5ad20747b4c34ba05366a26bf46003540c388062af79"
     sha256 cellar: :any_skip_relocation, big_sur:        "65a0c30a7352571b82602881ec693033b01b00e54feb9c27791d02a2b1d97f94"

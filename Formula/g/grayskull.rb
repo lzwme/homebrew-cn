@@ -3,20 +3,18 @@ class Grayskull < Formula
 
   desc "Recipe generator for Conda"
   homepage "https://github.com/conda/grayskull"
-  url "https://files.pythonhosted.org/packages/71/93/27ffbfcb57281a6051d738d9c8c35f9748a8b3c1f406249160006fa3aca2/grayskull-2.3.1.tar.gz"
-  sha256 "41dd1cc94c8b8951571af7628ffa97146ae76e99295918a20d8db84b2f60b5e7"
+  url "https://files.pythonhosted.org/packages/df/a9/1c0d4fa688e54f13bf4c8b3abed96bd9e1308917454693ba746c8eab86fb/grayskull-2.4.0.tar.gz"
+  sha256 "96eafc2d280eb9fe09db82d08531a1e519a8c13ada411c8f6879885dcf886a86"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "084de10e02d28a61c073f2a34aa069f26326f793f8d7c6504b3d8a8d13428b72"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b75b6708e0d66c8b01669964a9771c91230368e7a7b0b7f0898a8dd3523fb7a7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d092faf329c325ea88ce9d954bc863336780751565b797a49698023d9e88a057"
-    sha256 cellar: :any_skip_relocation, ventura:        "0dc14938bebad6e3cc9d32d56477a6452eca63725d42bef7e6ccbfe36beedbcc"
-    sha256 cellar: :any_skip_relocation, monterey:       "a38cab62b6bca78908576b16b46ddd0c11c7207a27dfd53596b89aa68997e867"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3d9136a0efad99188e96883172cd5f47e78f0d3510488efe64c6f9de7d6c67c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7802c6740e6b3d92c299f6edf4e7d8739080cdff3c42f0e6355cf3a92c05ea22"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "42288a5264b9ca22006ab726fd2492555351aa21b4cb0eb0e74ae2901a416f55"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1eccf433af02996610fc375a1d797f3a595320a3f8febd191853ded7c8ba3118"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "24e83594842f5f6c873595a3874af9ffa8eddd32932269d81746d052ad2493f6"
+    sha256 cellar: :any_skip_relocation, ventura:        "048af06a6fe74db52245a8a8ec13167eb8ba1562d8e5979e1b26c866eff29e59"
+    sha256 cellar: :any_skip_relocation, monterey:       "4f876da88c66e1a0595a6bf472e9c70960c7cccd8905e127000c4dabd7fa230d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ae4b22243fd412c50a22278a7e50ed1e555313cbec67745487d5d0575f43f36c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1cd2228e34b9232d0640cfd1fe881b3eceeb3cafedd317b3349fedec8cf70402"
   end
 
   depends_on "cmake" => :build
@@ -69,8 +67,8 @@ class Grayskull < Formula
   end
 
   resource "rapidfuzz" do
-    url "https://files.pythonhosted.org/packages/29/73/b41cac4dcb1c8fde87fe6f1ce6e4e08de688305d48b99e8bfbba2654a57b/rapidfuzz-3.1.2.tar.gz"
-    sha256 "1b1b2eab728efc239c8aab97b4821f8e10dcd5a1b066365d0e38023e3b2289e8"
+    url "https://files.pythonhosted.org/packages/20/ab/f7f65cfeb2d9dda1fcf4190ccd3bfe8e4bfd4bce00375d90e20926fe7a28/rapidfuzz-3.3.0.tar.gz"
+    sha256 "5e71bc5829f41e78b2d009431aedeb308ee3699d2bbbc68b7739db9b40bd1465"
   end
 
   resource "requests" do
@@ -99,8 +97,8 @@ class Grayskull < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/47/9e/780779233a615777fbdf75a4dee2af7a345f4bf74b42d4a5f836800b9d91/soupsieve-2.4.1.tar.gz"
-    sha256 "89d12b2d5dfcd2c9e8c22326da9d9aa9cb3dfab0a83a024f05704076ee8d35ea"
+    url "https://files.pythonhosted.org/packages/ce/21/952a240de1c196c7e3fbcd4e559681f0419b1280c617db21157a0390717b/soupsieve-2.5.tar.gz"
+    sha256 "5663d5a7b3bfaeee0bc4372e7fc48f9cff4940b3eec54a6451cc5299f1097690"
   end
 
   resource "stdlib-list" do
@@ -119,8 +117,8 @@ class Grayskull < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/3c/8b/0111dd7d6c1478bf83baa1cab85c686426c7a6274119aceb2bd9d35395ad/typing_extensions-4.7.1.tar.gz"
-    sha256 "b75ddc264f0ba5615db7ba217daeb99701ad295353c45f9e95963337ceeeffb2"
+    url "https://files.pythonhosted.org/packages/1f/7a/8b94bb016069caa12fc9f587b28080ac33b4fbb8ca369b98bc0a4828543e/typing_extensions-4.8.0.tar.gz"
+    sha256 "df8e4339e9cb77357558cbdbceca33c303714cf861d1eef15e1070055ae8b7ef"
   end
 
   resource "urllib3" do

@@ -9,9 +9,11 @@ class CargoRelease < Formula
   head "https://github.com/crate-ci/cargo-release.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "2861c7999fd556f54e4214ff9647f8f6a25588e2ac4250db7a99214f5cac5dff"
     sha256 cellar: :any,                 arm64_ventura:  "c1220849bf433dd4604abee375f2790118c1aa9d6cee63733c769c7ccfc87865"
     sha256 cellar: :any,                 arm64_monterey: "b56c7ae3f7de31880a517e081b8b6e7823ed3e03dfe4eb2c340413e608119bbd"
     sha256 cellar: :any,                 arm64_big_sur:  "426fda66942b2b406901b94959e1e6a22b4cf85f8c475a4299e41c16bf9979d5"
+    sha256 cellar: :any,                 sonoma:         "aaffc2e74a9b05881a96183c0bf53cd9ce69bda55e38e178c778e11b4363d076"
     sha256 cellar: :any,                 ventura:        "8c8b4794590df563589aeafd48faaaf9af2455053ef5978e0a23fd1c5397ce11"
     sha256 cellar: :any,                 monterey:       "3fcc8af36b4e73d4f4760c128196ef926f7630b3a65db868f58c16b687749557"
     sha256 cellar: :any,                 big_sur:        "f2bd3595848df2a0b998127045f05153efd859d2e4e2458a0a0d8f70dbc50df1"

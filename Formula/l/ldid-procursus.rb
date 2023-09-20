@@ -31,7 +31,22 @@ class LdidProcursus < Formula
   end
 
   test do
+    (testpath/"test.xml").write <<~EOS
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <plist version="1.0">
+      <dict>
+      	<key>platform-application</key>
+      	<true/>
+      	<key>com.apple-private.security.no-container</key>
+      	<true/>
+      	<key>com.apple-private.skip-library-validation</key>
+      	<true/>
+      </dict>
+      </plist>
+    EOS
     cp test_fixtures("mach/a.out"), testpath
-    system bin/"ldid", "-S", "a.out"
+    system bin/"ldid", "-Stest.xml", "a.out"
+    assert_match (testpath/"test.xml").read, shell_output("#{bin}/ldid -arch x86_64 -e a.out")
   end
 end

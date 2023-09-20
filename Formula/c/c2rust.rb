@@ -6,9 +6,11 @@ class C2rust < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "ca441b082795e705ea05221e031cc3d23bb99220551c456f7befb6c38dd0005e"
     sha256 cellar: :any,                 arm64_ventura:  "98a206d507f2da3996fd319e341de81c76254d98b3a5d607db5403b1cf6ac711"
     sha256 cellar: :any,                 arm64_monterey: "85ad71fbc83acf2e5c6828e71d1d8490767c825652eeffe14c8bde8daa46f57d"
     sha256 cellar: :any,                 arm64_big_sur:  "7f2009a3a0edd49c972c3466b5914439e4b13510a041c4b250729d574fa26bed"
+    sha256 cellar: :any,                 sonoma:         "0e2d8316952eeb376ba728d21fbf233f5b1f1d00a2634d6ea6bcc6abc28bea08"
     sha256 cellar: :any,                 ventura:        "615d64b0907a80653c3a86072fa94fe70bc9fa9918d1c7a42bc09e8902e8b724"
     sha256 cellar: :any,                 monterey:       "eec3bde1181c4dac28702aea6fdf9b8c520394a60e1db26c19af660868eb624f"
     sha256 cellar: :any,                 big_sur:        "de6199fff18618ea3e68a913387508b167cd62defe60b939184cee2cdb9819a7"

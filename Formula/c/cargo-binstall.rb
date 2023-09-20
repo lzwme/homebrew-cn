@@ -12,9 +12,11 @@ class CargoBinstall < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d60a11c957933a274988a38fcf87ea39d9df43ba21b234d579f793d2234f7759"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "93eafdb0ed2e57ec67cc6b6879db14aa3b4acd4700c931bccf900b4d6df099f4"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7a55ec208afb4d3b86a99ebcac245cfefea791c45d7b4565fbfef940cb89d038"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4870b535cfbc17d9e24aee1a7c3e39387e491658e66a8f4be5e8a86d0dc9516c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4be661e73444b820ecb501d2e5a742b6cd9e69c3564e3ecfa77e613a79774618"
     sha256 cellar: :any_skip_relocation, ventura:        "254d85f398d1bb3f70019f4c7b31da5295437970d391ba2b29d9c87bd3ad2e6c"
     sha256 cellar: :any_skip_relocation, monterey:       "6663373166defe71b95a3c7deb36ed6b2337778909887ac2343fb188e1ea3541"
     sha256 cellar: :any_skip_relocation, big_sur:        "9b9e9bca21162b7f01cb32f2cd192f912a63dcbc12385d4fdcc1f0e7825ea0a6"
