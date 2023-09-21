@@ -7,6 +7,14 @@ class Yara < Formula
   revision 1
   head "https://github.com/VirusTotal/yara.git", branch: "master"
 
+  # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
+  # but are labeled as "pre-release" on GitHub, so it's necessary to use the
+  # `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "89b72648e12c3afc9c59b8f20f604f8237d372727de03113724303bb43a434ee"
     sha256 cellar: :any,                 arm64_ventura:  "ef3e280e87b7607f3eea94508e8fa9a628009f60676fccdce22340809a70cb36"

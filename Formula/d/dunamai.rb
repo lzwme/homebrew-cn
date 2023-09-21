@@ -8,21 +8,18 @@ class Dunamai < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6945b4438559c6b638924175abf2a2ea82e9e26287680c69e96a9ee38e9a93fa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6dd8af031e7a9a11059b7fbb3a35deb3b6ab361968a056d118ed07fd8cd9b693"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ebb3b6232125c18a83e656204244f0523734366bc25c30962a9eb49447fe7399"
-    sha256 cellar: :any_skip_relocation, ventura:        "9cf8ab1ccada6c06e052804d4ec9007bac080710a97b622c65b6c5ac351f6e62"
-    sha256 cellar: :any_skip_relocation, monterey:       "a4de1854607b52304e0ba638ee2f056285ba61c45f609436f3e6816bedfea73b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8e745307de017055f29c996470a9929176589ecad846158dc193fee59e104888"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fcd88fccf7512658a531acd4c1c21c7183a74a50ebcb59bc1699c6fa5f8f674e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ecb0f63fa62c43e87d625e058a727773adb88d966bb1fa73c0f925cc541d5c4f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3a6c139106ef9979e2d052b9ef7f9adf41a25936b3ed9d197e70bbebefb285c4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "23f613b8e47081d6b5c79302719c9761dcfb1a670a9db650a99d62e6d4e47252"
+    sha256 cellar: :any_skip_relocation, ventura:        "fd9cc9d120a0648ec86c98b3e3593c047e51f8363b2b809face37c6522023cf1"
+    sha256 cellar: :any_skip_relocation, monterey:       "1f6c6d848c3aacce1c3e55331d768d7d0d2d0f70cbcbb8041f19934d8a8d5a67"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1985cf0e853bcdd2a28a5464640b4f50cfd10e85888b4da8f3279374d9c6378c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c403a7a27376bea29bb5bf6d126d735c5a568f01e6ba5190dc2f59df680df9a"
   end
 
+  depends_on "python-packaging"
   depends_on "python@3.11"
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
-  end
 
   def install
     virtualenv_install_with_resources

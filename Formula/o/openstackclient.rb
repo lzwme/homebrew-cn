@@ -8,13 +8,14 @@ class Openstackclient < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e8cfa2d8c698364af2f1d52eb670be746a366c496fda0c947dd150bb8da96a56"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "20c2a4d14d4b8b66b1a2a0b1f4d8e670f1fcc522510f31f0d5fc5924c361b7f9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a1abbd0a9e0625fda0318b93386a8a53d88cce281abc396d68eec81cc5a77861"
-    sha256 cellar: :any_skip_relocation, ventura:        "06da6ef56bd6e98947527fcf608abe6c30d12aea73453b790fec0540da6ff616"
-    sha256 cellar: :any_skip_relocation, monterey:       "34618ff15f1e69152ee1b98c574db5a797a4cc9b784b55dcf4be5e4482f7504b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "df43f51545de68cdce8268d9b04ad2774e89a76255eccc6bee6743b81127c5d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ee1abede387f99c3e75d77ab576a32ab3dabfab5e1df79770b94abb88a919c2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b284254ee393289bfa767899788dd734765f81730293be08c8f3e02c477c727"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6d452f24daa0f57c52344860dbc828efed19d858a1da1a5b8a36e15b5100a7ab"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "76a52f4320934610e7dcf0f729efb90fd5c6e3b5a5471d141ac47f539ae687b7"
+    sha256 cellar: :any_skip_relocation, ventura:        "509b08b7727974e7db5668a064ed7d00d0400b88c407e40f2c176309c014ba57"
+    sha256 cellar: :any_skip_relocation, monterey:       "8c251c5b5a95f9134dfd35fdfa8e30d1a26e1f2eb9a6330e3e13545e6694980e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "992ce4b5523116d723c938e0b6a4a894e6a29ae50edf0e7ffbf74b173f8fcf57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c54efbca7584b83d70a11186a73e4aa32fc5b7f63e31e9e9f2320379c5c288c9"
   end
 
   depends_on "cffi"
@@ -209,6 +210,11 @@ class Openstackclient < Formula
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+  end
+
+  resource "python-designateclient" do
+    url "https://files.pythonhosted.org/packages/77/39/256c2c4a54c5d9efe64a9c711f49d7756a4b59c802649ead4787ab24a599/python-designateclient-5.3.0.tar.gz"
+    sha256 "ee7ae841eabff1cc389dc4582387366ed574a353c46b16a96fb411253d469844"
   end
 
   resource "python-heatclient" do

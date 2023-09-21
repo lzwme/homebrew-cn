@@ -7,9 +7,11 @@ class ElanInit < Formula
   head "https://github.com/leanprover/elan.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "996fd2e6b7ac46ae690d97b7ac0e1baefe4664d0236a8a462526680825619482"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b4d9b6ab44dff35ef3ade3c1e8f425042f05d25f7b04fed7f3291b4c46b3a27"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "94a8d34bbfb3d7ba6fd72cf5c25f8a9a8a8874be4b7cfae46c65073caa7e8b20"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f337d05a721349509c7896bc699e2be0f0301ec66ec0ccd36378559b689ff0d1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e34fdc9a3c381fd71652ed930e82a59dd74b7aa93ee527113dd3eebd24e3b311"
     sha256 cellar: :any_skip_relocation, ventura:        "9c5781b03a1d973bff99ecc5e1fb85c6445779df7e94fa4490e42cd9437a66c2"
     sha256 cellar: :any_skip_relocation, monterey:       "b6afe6d0327ee99a7fa5cb81f1f79e669b9be6ec1e0b544b10ce7575abfc3101"
     sha256 cellar: :any_skip_relocation, big_sur:        "16ddfdd1746bbf89dde1333a15959dc07272c9925ef16f04822c5bbdb0e508a3"

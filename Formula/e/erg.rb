@@ -6,9 +6,11 @@ class Erg < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "975010c2749c8c217405f383e6da46cfd077a8b2b2a7f89619a0a906e573c055"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a6ff8ae9531bee24ba6d6b1e6e40768e4fce30a5c3710bf4a710a4257f266106"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7fa0169465db766c0adb8c2001314c0b5bca97705d9d7d2b3f86e02ed40044cf"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6ccc0fc7639e8ab6fdc0062525977551beb290d36657bca373c5ac585ab463ef"
+    sha256 cellar: :any_skip_relocation, sonoma:         "160b8dd5d507b2f52fe26a3c37fa66f34016f151b89e104c194b8c266b8309fa"
     sha256 cellar: :any_skip_relocation, ventura:        "06c3fc97c164d6e304bbcea113d44f0c15739a718e710c96579161b9badd6822"
     sha256 cellar: :any_skip_relocation, monterey:       "286529f91b17b15f6099e465b8cbb8820009d1892222ad989b1b11413ebe9fd6"
     sha256 cellar: :any_skip_relocation, big_sur:        "8f9ed9af3b4b98ef65e7f6e729ffa1d425fd3362daafb686f4713137bcc8ca9f"

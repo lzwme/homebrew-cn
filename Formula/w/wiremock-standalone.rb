@@ -11,9 +11,11 @@ class WiremockStandalone < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0c642ef364fefdc76482d5f66ec06da8c00e8186f9fc772911a60d7fd0ba5a7b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0c642ef364fefdc76482d5f66ec06da8c00e8186f9fc772911a60d7fd0ba5a7b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0c642ef364fefdc76482d5f66ec06da8c00e8186f9fc772911a60d7fd0ba5a7b"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0c642ef364fefdc76482d5f66ec06da8c00e8186f9fc772911a60d7fd0ba5a7b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0c642ef364fefdc76482d5f66ec06da8c00e8186f9fc772911a60d7fd0ba5a7b"
     sha256 cellar: :any_skip_relocation, ventura:        "0c642ef364fefdc76482d5f66ec06da8c00e8186f9fc772911a60d7fd0ba5a7b"
     sha256 cellar: :any_skip_relocation, monterey:       "0c642ef364fefdc76482d5f66ec06da8c00e8186f9fc772911a60d7fd0ba5a7b"
     sha256 cellar: :any_skip_relocation, big_sur:        "0c642ef364fefdc76482d5f66ec06da8c00e8186f9fc772911a60d7fd0ba5a7b"

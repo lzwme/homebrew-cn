@@ -3,18 +3,18 @@ class Llm < Formula
 
   desc "Access large language models from the command-line"
   homepage "https://llm.datasette.io/"
-  url "https://files.pythonhosted.org/packages/a9/0a/feb801e768ada21e07744d3340d24c8c91855be50903b451646918282f56/llm-0.10.tar.gz"
-  sha256 "67e64734365024a2ea563664af659600e7e48b2a6669aaa764f09bdef14362cc"
+  url "https://files.pythonhosted.org/packages/d8/63/ed127918b70651e0087db7d003827d88ecd67c7a82ec58ad7f74d09017c1/llm-0.11.tar.gz"
+  sha256 "fc09c8bd53cd417807c70cc2b24f5c1ac0915f45808434a09546a62c1edf36fd"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8b396176b035f32688f565b382b87f0a0eeb7b208b71c5bbd3bb76b47866d687"
-    sha256 cellar: :any,                 arm64_monterey: "a7e5eab4baacd8b935239ae88917d346c128bc0bfbff60ac759c608adde934ee"
-    sha256 cellar: :any,                 arm64_big_sur:  "e994a7b16803a6ad22a08f674451c02442d5944b47a87f4ddd45d5f3b96ff846"
-    sha256 cellar: :any,                 ventura:        "c10feda519398e38a99ab220f85b2eb421d9fe90c5ca5a5c59c3546861a68246"
-    sha256 cellar: :any,                 monterey:       "f83e227888ea03f021cc4004e318e20e7b5db09cd9bb5684f869c08d0c6df520"
-    sha256 cellar: :any,                 big_sur:        "5ee1c0a3134dea0a252500631b7a74a244315bd1f8a5cbbcb3f0d1800777ac1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "175434e62f732fe820957d6c6d288ea11772bc7ed417e812f04fb03e6efcc436"
+    sha256 cellar: :any,                 arm64_ventura:  "e13d2f1e8cc89098a7ff1d4f09544b2c635dab18cf0cdbadad0d2d2ea130df24"
+    sha256 cellar: :any,                 arm64_monterey: "333d89df4d408253f6d75930e32301b8f9587233c1d93c86616fd65414551168"
+    sha256 cellar: :any,                 arm64_big_sur:  "d6b33926778bad943da55ffb9c6efbd0711a7f4fd35a93d262da743b7c7995b1"
+    sha256 cellar: :any,                 ventura:        "b7e0058101da84ffc5c1b31e883d0c020cfd3ebd38c26733e70fd2556efee5cf"
+    sha256 cellar: :any,                 monterey:       "b9c265849faee50766bb509a7a35416378e180d8425763358784d0570adbab87"
+    sha256 cellar: :any,                 big_sur:        "753297b420c3a432c9ab4a62e793a9816a670f30f39570b578bdcf6b79e3b9a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13c1784b0ca1ea4adf7d3e235e0259e52e6cba8200d4bb7cf434c3903a7aab48"
   end
 
   depends_on "rust" => :build

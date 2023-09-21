@@ -2433,6 +2433,7 @@ Homebrew-homebrew-core/Formula/h/hebcal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/heimdal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/heksa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/helib.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/helidon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hello.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/helm.rb, Homebrew/homebrew-core, 0
@@ -3378,6 +3379,7 @@ Homebrew-homebrew-core/Formula/lib/libidn.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libidn2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libilbc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libimagequant.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libimobiledevice-glue.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libimobiledevice.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libiodbc.rb, Homebrew/homebrew-core, 1
@@ -3406,6 +3408,7 @@ Homebrew-homebrew-core/Formula/lib/liblxi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/liblzf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libmaa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libmagic.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libmapper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libmarpa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libmatio.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libmatroska.rb, Homebrew/homebrew-core, 0
@@ -10271,6 +10274,7 @@ Homebrew-homebrew-cask/Casks/s/spotify4bigsur.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spotmenu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spotspot.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/springtoolsuite.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/spundle.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spybuster.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spyder.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sql-tabs.rb, Homebrew/homebrew-cask, 1
@@ -13399,6 +13403,7 @@ Homebrew-homebrew-cask-versions/Casks/zulu11.rb, Homebrew/homebrew-cask-versions
 Homebrew-homebrew-cask-versions/Casks/zulu13.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/zulu15.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/zulu17.rb, Homebrew/homebrew-cask-versions, 0
+Homebrew-homebrew-cask-versions/Casks/zulu21.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/zulu7.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/zulu8.rb, Homebrew/homebrew-cask-versions, 0
 nicerloop-homebrew-nicerloop/Formula/bison@1.875c.rb, nicerloop/homebrew-nicerloop, 0
@@ -13417,6 +13422,7 @@ nicerloop-homebrew-nicerloop/Formula/jpdftweak.rb, nicerloop/homebrew-nicerloop,
 nicerloop-homebrew-nicerloop/Formula/kindletool.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/libf2c.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/macos-scripts.rb, nicerloop/homebrew-nicerloop, 1
+nicerloop-homebrew-nicerloop/Formula/mas.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/optic.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/pdf-strip-watermark.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/pdfbox.rb, nicerloop/homebrew-nicerloop, 0

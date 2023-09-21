@@ -9,9 +9,11 @@ class Bbot < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5e56de8ecd60aa4ff18debfbc0e07afdf583b621cc888a5899604913304b5c4d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "04bdcbe78058a4181b5fa0cb901f6922a010b714181faa6f2d4dba9ba1e84732"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "74476e1a032f23672c8623c69af9612e11ed2d7b4f0be6d15294a32f35c72e56"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9c314cc37a4decd0a5edbcbaa5bffd8d55e1f7c618f7b2c2f8207446d8fabcef"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b2f14f32d09132058d41ad60d02f81acd9b33b2bf15072f24230627b80c6835a"
     sha256 cellar: :any_skip_relocation, ventura:        "a44cc819ad9adbeb1cb3e98fa8d6eaa7bc7f7c317e6129f67a24b2dc03ef6fa0"
     sha256 cellar: :any_skip_relocation, monterey:       "9f025130258400dbd2df612f8a7047fbe03567ebc58defb00de75cff24f6e195"
     sha256 cellar: :any_skip_relocation, big_sur:        "12bdec042ae5c07c29ac62bbd7280e77f29119eb856bc40903ffd2aa486ddf57"

@@ -7,9 +7,11 @@ class PythonCryptography < Formula
   head "https://github.com/pyca/cryptography.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "6d69cb16ab2bcf78c47313d34158ee91dc6b3d0df52b42b34daff236aa91e71f"
     sha256 cellar: :any,                 arm64_ventura:  "204d71821d29792768eef5f00f1fc1941e1ff14d87f90a2b1953db5aab4b39c1"
     sha256 cellar: :any,                 arm64_monterey: "9227155a34256ddde7a983aa07fb7b999dff74eed2b55bd654be6c319fc26251"
     sha256 cellar: :any,                 arm64_big_sur:  "e485f428a5abb240089dbdd3e22557521b4a693d241c6a199de0a2449d7ae792"
+    sha256 cellar: :any,                 sonoma:         "ec65a945555d11b7ec3bc1f10eda4fa48570f4368c75615dcd5dfe97086a9548"
     sha256 cellar: :any,                 ventura:        "f322799292cf5dcc247fa518c3f1079cc8640918e9b4bd6255d7cc124c9fae2a"
     sha256 cellar: :any,                 monterey:       "87220db8fedc1a46acb3cc7f8245036d0679c99ba5b38fc248ebeb7aed6a655d"
     sha256 cellar: :any,                 big_sur:        "b3454ec9a0804f932a53cb7a80da91239f42a1c6654cb5a0f7c5661bec5fd125"

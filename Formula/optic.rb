@@ -1,9 +1,9 @@
 class Optic < Formula
   desc "OpenAPI linting, diffing and testing"
   homepage "https://github.com/opticdev/optic"
-  url "https://ghproxy.com/https://github.com/opticdev/optic/releases/download/v0.50.0/optic-darwin-amd64.tar.gz"
-  version "0.50.0"
-  sha256 "67aee1115a51ab5f64c8a432142e72bbae218309da902b897a6c10b7418351ec"
+  url "https://ghproxy.com/https://github.com/opticdev/optic/releases/download/v0.50.2/optic-darwin-amd64.tar.gz"
+  version "0.50.2"
+  sha256 "02747f44e1b02a2e6e2cf66e1fc111200ce345b30400be3964fcb66e1614dfce"
   license "MIT"
 
   livecheck do

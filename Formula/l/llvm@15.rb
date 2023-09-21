@@ -12,9 +12,11 @@ class LlvmAT15 < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "472316668bee26d9aad40bb1cb6c206da3dedb8c9b5fd1a6cd8c75a4f90c6244"
     sha256 cellar: :any,                 arm64_ventura:  "fd420324c3289bcd91b85e13ece10818363cf0d82fc25f8983de306f8114cc01"
     sha256 cellar: :any,                 arm64_monterey: "51c8e2d66e1c205c0e1713245bbcd9fa38dc406a038127778bc2224bd119f7a1"
     sha256 cellar: :any,                 arm64_big_sur:  "58b9831ccbad0b30d52faac286f84e6a0478ad871cdd9cac4be38ceff63f3139"
+    sha256 cellar: :any,                 sonoma:         "296070c0831891f506d86669474c780fb6fd960a444440a7567ff2291d2212ad"
     sha256 cellar: :any,                 ventura:        "bf6135a0f1a083171f828cfb5a80f0a57177d01bc8bd27f6d18cee2b1d919303"
     sha256 cellar: :any,                 monterey:       "c7a514479964a2c3216450748cfa47069b8c7203ab59df62d574101ec8551a60"
     sha256 cellar: :any,                 big_sur:        "34d0ad786313f16d7063cb7c76c320dc0830eb066f5020acd1ba254f106e78c1"

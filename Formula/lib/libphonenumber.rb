@@ -1,10 +1,9 @@
 class Libphonenumber < Formula
   desc "C++ Phone Number library by Google"
   homepage "https://github.com/google/libphonenumber"
-  url "https://ghproxy.com/https://github.com/google/libphonenumber/archive/v8.13.20.tar.gz"
-  sha256 "81ac6371367912463c612a4b4a6942ab10b7faf800b8dc026d6db3d157bed9b5"
+  url "https://ghproxy.com/https://github.com/google/libphonenumber/archive/v8.13.21.tar.gz"
+  sha256 "bca757a8e04849c8158bbbc243c500699daa7601d1fd23a1277fc2643188b44b"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,15 +11,15 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3631f401bad659c9346efcb97aca41516fcfb4c48e84f837a2dfff7bc9db4a84"
-    sha256 cellar: :any,                 arm64_ventura:  "6c3feb841d072844cb6e7f009f2ac33d0065885074bc5f3420191bc6987e259f"
-    sha256 cellar: :any,                 arm64_monterey: "53b7497ae972bcd8b4f3e61ae8ff315c7e77f5ac6c44169868c3988529e85a01"
-    sha256 cellar: :any,                 arm64_big_sur:  "6874af7f1f56f6681c1f3af528608eb9101948e0d641b92725be37371dca2e1f"
-    sha256 cellar: :any,                 sonoma:         "2f9068597409c9a5081c8e861493acb3393c99ed74cfec9a1e985f1e2714d229"
-    sha256 cellar: :any,                 ventura:        "e698156bf79f21fa40f0960ec7ab213a4e13dee452ed743e92051cb1198ef988"
-    sha256 cellar: :any,                 monterey:       "7c9d7f9bfb0e4958be017b28edbc663dfe431a3273cea1683a56ac461a393ee5"
-    sha256 cellar: :any,                 big_sur:        "f3ac44d714fe988787caa93e737826a665d598aa878a71845cd4504b3e9a8405"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "37fa68cc59f176b07c2f3c717a34d156d69542ee18b082aef6d4102dc28d200b"
+    sha256 cellar: :any,                 arm64_sonoma:   "5118b6bad63f63b6d7622764178be5f2a26e407dc74b431a562ce9c04ed445c1"
+    sha256 cellar: :any,                 arm64_ventura:  "21a3a475b9b870a53540ceb6dba7f20740b5a1c735c2d0afe7dffeda616a1b61"
+    sha256 cellar: :any,                 arm64_monterey: "7ce9fe50a39ae9db051868b9556f2bbb6c3091661fcca726778a8670a079e260"
+    sha256 cellar: :any,                 arm64_big_sur:  "fedf724d2955f069ee9a513babe657b1300d55f66fb5fa64dd0d44718d60d6f7"
+    sha256 cellar: :any,                 sonoma:         "d93656b2580ee70b076313691ef8df1cf574f5d7e8bebe0b7209534206116557"
+    sha256 cellar: :any,                 ventura:        "77b45e40d790accc6663fa77496bed64163dfab386a68a2aab74d8ee2c54ddb4"
+    sha256 cellar: :any,                 monterey:       "61c27850633c036763947c586bf2c247d60ee2371508e4caf34dc2025c959d08"
+    sha256 cellar: :any,                 big_sur:        "99b5759b5f8645392176418c42b2ee0e29c496ae4054d2fa762156b024bc80ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f55aebcfdaa44ea71bdf5021547920a2e8d759911d618104495deb293e131daa"
   end
 
   depends_on "cmake" => :build
@@ -33,8 +32,6 @@ class Libphonenumber < Formula
   depends_on "re2"
 
   fails_with gcc: "5" # For abseil and C++17
-
-  patch :DATA
 
   def install
     ENV.append_to_cflags "-Wno-sign-compare" # Avoid build failure on Linux.
@@ -73,35 +70,3 @@ class Libphonenumber < Formula
     system "./test"
   end
 end
-
-__END__
-diff --git a/cpp/CMakeLists.txt b/cpp/CMakeLists.txt
-index d2d111d..5b7d2b2 100644
---- a/cpp/CMakeLists.txt
-+++ b/cpp/CMakeLists.txt
-@@ -19,8 +19,8 @@ cmake_minimum_required (VERSION 3.11)
- project (libphonenumber VERSION 8.13.0)
-
- # Pick the C++ standard to compile with.
--# Abseil currently supports C++11, C++14, and C++17.
--set(CMAKE_CXX_STANDARD 11 CACHE STRING "C++ standard used to compile this project")
-+# Abseil currently supports C++14, and C++17.
-+set(CMAKE_CXX_STANDARD 17 CACHE STRING "C++ standard used to compile this project")
- set(CMAKE_CXX_STANDARD_REQUIRED ON)
- set(CMAKE_POSITION_INDEPENDENT_CODE TRUE)
-
-diff --git a/tools/cpp/CMakeLists.txt b/tools/cpp/CMakeLists.txt
-index 91c9052..ae8db75 100644
---- a/tools/cpp/CMakeLists.txt
-+++ b/tools/cpp/CMakeLists.txt
-@@ -17,8 +17,8 @@
- cmake_minimum_required (VERSION 3.11)
-
- # Pick the C++ standard to compile with.
--# Abseil currently supports C++11, C++14, and C++17.
--set(CMAKE_CXX_STANDARD 11)
-+# Abseil currently supports C++14, and C++17.
-+set(CMAKE_CXX_STANDARD 17)
- set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
- project (generate_geocoding_data)
