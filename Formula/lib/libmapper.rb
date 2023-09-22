@@ -1,18 +1,18 @@
 class Libmapper < Formula
   desc "Distributed system for media control mapping"
   homepage "http://www.libmapper.org"
-  url "https://ghproxy.com/https://github.com/libmapper/libmapper/releases/download/2.4.2/libmapper-2.4.2.tar.gz"
-  sha256 "130d0761cd6006c2f7458771ae0484d53d601d85dba9315cdffd4da4c30bf86b"
+  url "https://ghproxy.com/https://github.com/libmapper/libmapper/releases/download/2.4.4/libmapper-2.4.4.tar.gz"
+  sha256 "2204f610f6a3eff4f66cb866101c3cda911a5e5a9fe04b518a0a99608a8473ff"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ea306668b0240c47d5fbc4da409dda8f4a8a1cded90de8226895fa990d6c064f"
-    sha256 cellar: :any,                 arm64_monterey: "b9743ebdf0c9492894b22d116e21416283ade34fdecf5b2a3d68be08c116265c"
-    sha256 cellar: :any,                 arm64_big_sur:  "e53548b90eaba32f33d881a87e8738f62d6311e920e1e24e1044926c91424312"
-    sha256 cellar: :any,                 ventura:        "b868a59a5f1c3513f08fa18e2d319a4b925a3aad76b607e3ed608df61c092eff"
-    sha256 cellar: :any,                 monterey:       "02abf80027d8834ba0ff8f7e02cf1b7d00d73e417ec6ea90ea657486b89b17bc"
-    sha256 cellar: :any,                 big_sur:        "a405d611f9b6050b5918a32daad40d081aa557e99e8d3ec0166b154c86c8c15c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b2077872b0e033064ad525842e7a992922e1280d493630b8764facb444fb64e"
+    sha256 cellar: :any,                 arm64_ventura:  "35cfd6a1ebeb7b1972ba02e2a72ebced311ca8105c1578cfd6430f4b39b63143"
+    sha256 cellar: :any,                 arm64_monterey: "f376d8f2b23d4a31021455cc5bccb4eb5a18680bba3cc005735dda8240800dd0"
+    sha256 cellar: :any,                 arm64_big_sur:  "fac6bccd4981c29700fa149986fd16c72a7abfef4afe263ae8a25fe731df123a"
+    sha256 cellar: :any,                 ventura:        "c3f5d81edf4cc1fb4445c7cb97d5eb712f1b82d8e537afbbd37c167c0ffe39d4"
+    sha256 cellar: :any,                 monterey:       "96e34dcaee6d6d07e05bca570aefe3601ad8c24e6d850258f21aaf7144529b2a"
+    sha256 cellar: :any,                 big_sur:        "5affd8c13da08159d12f496a6abe4ce7d4900cb2d3d21a25ddee94a59009fe73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "089ec04b44e1bd620ac7e68c60c6c31a0367b5daeb80e0d9fe389ba0c18aa3cd"
   end
 
   depends_on "autoconf" => :build

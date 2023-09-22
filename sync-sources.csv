@@ -5869,6 +5869,7 @@ Homebrew-homebrew-core/Formula/t/tagref.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tailor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tailscale.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tailwindcss-language-server.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/tailwindcss.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/takt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/taktuk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tal.rb, Homebrew/homebrew-core, 0
@@ -7104,6 +7105,7 @@ Homebrew-homebrew-cask/Casks/b/batteries.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/battery-buddy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/battery-report.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/battery.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/b/batteryboi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/battle-net.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/battlescribe.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/baudline.rb, Homebrew/homebrew-cask, 0
@@ -7396,6 +7398,7 @@ Homebrew-homebrew-cask/Casks/c/clicker-for-netflix.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clicker-for-youtube.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clickhouse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clickup.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/clinq.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clip-studio-paint.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clipgrab.rb, Homebrew/homebrew-cask, 0
@@ -7889,6 +7892,7 @@ Homebrew-homebrew-cask/Casks/e/exifrenamer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/exist-db.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/expandrive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/explorer.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/e/expo-orbit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/expo-xde.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/expressions.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/expressscribe.rb, Homebrew/homebrew-cask, 0
@@ -8316,7 +8320,6 @@ Homebrew-homebrew-cask/Casks/h/honer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/honto.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hookmark.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hookshot.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/h/hopper-debugger-server.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/horndis.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/horos.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hostsx.rb, Homebrew/homebrew-cask, 1
@@ -13217,6 +13220,7 @@ Homebrew-homebrew-cask-versions/Casks/dash3.rb, Homebrew/homebrew-cask-versions,
 Homebrew-homebrew-cask-versions/Casks/dash4.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/dash5.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/dash6.rb, Homebrew/homebrew-cask-versions, 0
+Homebrew-homebrew-cask-versions/Casks/db-browser-for-sqlcipher-nightly.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/db-browser-for-sqlite-nightly.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/deadbeef-nightly.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/defold-alpha.rb, Homebrew/homebrew-cask-versions, 0

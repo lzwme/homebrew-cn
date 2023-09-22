@@ -1,21 +1,21 @@
 class PhpAT84 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghproxy.com/https://github.com/php/php-src/archive/55432bfa16c8d45aa255ee4b92038a99022cd24f.tar.gz?commit=55432bfa16c8d45aa255ee4b92038a99022cd24f"
+  url "https://ghproxy.com/https://github.com/php/php-src/archive/8a812c3fdaf194ae48a14b15ba72ecac55ce6f0c.tar.gz?commit=8a812c3fdaf194ae48a14b15ba72ecac55ce6f0c"
   version "8.4.0"
-  sha256 "37df7c55824ccede76caa7ba58ead42a517c16ca2e6ec6d71e094da0de9a01f8"
+  sha256 "360623389a400973e13e9e8d7e25c5216e6ef8834ef05840218e27d287b7082e"
   license "PHP-3.01"
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 10
-    sha256 arm64_ventura:  "d96b95bb1dd24256c7c5af986b8063e92fe4fa7e42bfbd56e486e62ddf7c16ca"
-    sha256 arm64_monterey: "390e0567aac5b517215ec256c6b6617095f55e91796a18b7c401dbf5d58b722a"
-    sha256 arm64_big_sur:  "ea6c84a1bbaeb2157d3bf9e14664091f1d34e0a8d00793ba4c4653ab0b0eaf13"
-    sha256 ventura:        "e880b989c99166d56277b580a416279816e78c03a2af81ef272eeaa5a212270f"
-    sha256 monterey:       "cad228228abddaa2447c95a76be248c674d733d314827de50f2b307be5ba9194"
-    sha256 big_sur:        "a7a88ce290868ba6896f29ad45d77c5e6ae4c35db0b9865fe96aab50129d1272"
-    sha256 x86_64_linux:   "b0e1464072c601d686cd4ea615c7f3d62140dbb7d53e36170e7b3e20741da352"
+    rebuild 11
+    sha256 arm64_ventura:  "00d969a577ede3e75668d3dcacc2cf9c07f0f0324e74b284fc0d86f7cc7eea52"
+    sha256 arm64_monterey: "8225dc10c60287383c706f086c1e6cab196bab1590594401cbd6622c885a1122"
+    sha256 arm64_big_sur:  "7b9ae920055854f6bbf0c19b50018abe485c78756f444743902b46ac15a6be44"
+    sha256 ventura:        "a58ecd6ae66919dadbb28ae473aa760b4cb7547449fb24d4547a1c31d2e8dd79"
+    sha256 monterey:       "32019ed84cf75eaf31cacc55aeb8c4dddf0fe4993667bdf6042cb10553c61295"
+    sha256 big_sur:        "51fe4a903d40e25a62ba6238baf8d202b2393ef5fc6c04495bb733b3a5a8f6e2"
+    sha256 x86_64_linux:   "899bc2f992ecff3cab49949bdbcb8ee8a5ce335bb7c4f54afd86eb4a93a9b7a6"
   end
 
   keg_only :versioned_formula
