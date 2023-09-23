@@ -1,9 +1,11 @@
 class Castxml < Formula
   desc "C-family Abstract Syntax Tree XML Output"
   homepage "https://github.com/CastXML/CastXML"
+  # TODO: Check if we can use unversioned `llvm` at version bump.
   url "https://ghproxy.com/https://github.com/CastXML/CastXML/archive/v0.6.2.tar.gz"
   sha256 "9bb108de1b3348a257be5b08a9f8418f89fdcd4af2e6ee271d68b0203ac75d5e"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/CastXML/castxml.git", branch: "master"
 
   livecheck do
@@ -12,17 +14,18 @@ class Castxml < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4e1ca2f66435c4d1bff7c8346ea94b6b66c8c94858e844b72b8952ed233981c7"
-    sha256 cellar: :any,                 arm64_monterey: "84a60af22cd31a13027b28106593273bfefd78e2ef83c57593d9c87de51554a5"
-    sha256 cellar: :any,                 arm64_big_sur:  "141bfe75ede4778684f2e39971f52b3282730cd6b139414d8003834f98990b9e"
-    sha256 cellar: :any,                 ventura:        "af757918825b0d3b8d7daef7c3631e5a6ebaec3784b2750152a0acb4624415ce"
-    sha256 cellar: :any,                 monterey:       "b51edd85a8bb2b34ac0ee3851dbb86962adbace379b8f5c80ce34a0f51a149c0"
-    sha256 cellar: :any,                 big_sur:        "72f9c4790de59342cb6d331380d41c1d009318ad40a9beb82e19caab24071830"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc8b2583616f8ccde7c0731fb1885090ee86553571ad83cf059adc5189cc8bca"
+    sha256 cellar: :any,                 arm64_ventura:  "d7ded2fba99df7ee395660728d91cf4187f05f0ea7805842e836ec3658d943b8"
+    sha256 cellar: :any,                 arm64_monterey: "b02ec494a6b210797c71664482ad84e57dc69c68d142529cce99accc9dcea965"
+    sha256 cellar: :any,                 arm64_big_sur:  "91117f5841beaa80b834f3f2c048d1ad5aa5733fe0f620f5ba496aa247802757"
+    sha256 cellar: :any,                 ventura:        "b8b1b0724b651d6786bd9da6bcf9e9bcee84636312c44c06314cc6d4fcc329e5"
+    sha256 cellar: :any,                 monterey:       "9a8ab98a048c0ee688fc0fde68c6c98790b24eac17b89dd5d6b68faa6d962c8a"
+    sha256 cellar: :any,                 big_sur:        "bf89e0b5774a3d8995bdf99a78f81955a261cfced7ef290fe7df037d6dec153d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f5fd8a102d9b21dc477b633308cb9911c5e212e1d3467d2ab0aa6935caf6adc"
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm"
+  depends_on "llvm@16"
+  uses_from_macos "llvm" => :test # Our test uses `clang++`.
 
   fails_with gcc: "5"
 

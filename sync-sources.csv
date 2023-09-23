@@ -3098,6 +3098,7 @@ Homebrew-homebrew-core/Formula/l/llvm@12.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@13.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@14.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@15.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/llvm@16.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@7.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/llvm@8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@9.rb, Homebrew/homebrew-core, 1
@@ -5433,7 +5434,7 @@ Homebrew-homebrew-core/Formula/s/serverless.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/service-weaver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/servus.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/setweblocthumb.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/seven-kingdoms.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/seven-kingdoms.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sevenzip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sextractor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sf-pwgen.rb, Homebrew/homebrew-core, 1

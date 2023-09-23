@@ -7,9 +7,11 @@ class Urlfinder < Formula
   head "https://github.com/pingc0y/URLFinder.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2696316763f9ba4efd365b8d76c62ff87a417b4b06aa1cc566da1f4f2b01faf8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f4b8b469498628aa1b97562c53a55f8faea5b6337b0d546163907889f9948f16"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f7a21bbee69256af88f1c123453284c9813fe12850093bba484bfaf2f08c7cdc"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "830f418eecdb18171ff48442ed58949225c4481225181c5896ae1b87ce54c6e3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6450a88906097f54b892397bbb2a421a1367836be2cf82ce1afdff1f372b6b57"
     sha256 cellar: :any_skip_relocation, ventura:        "0e126e8624e34eb2f23653cc1e5db89ca938db380214cd2a9f6638385dd41cad"
     sha256 cellar: :any_skip_relocation, monterey:       "de4942e24d0f6e39160b160bad5ecb54ad6b0e7bc02ca32eecdb91b55b0a1f4c"
     sha256 cellar: :any_skip_relocation, big_sur:        "4963b3f926b8d62356802c9ab2ff6bf14ea47348b34fabc6ae32a5373a16c1b4"

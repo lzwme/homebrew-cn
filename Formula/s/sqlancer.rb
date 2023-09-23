@@ -4,6 +4,7 @@ class Sqlancer < Formula
   url "https://ghproxy.com/https://github.com/sqlancer/sqlancer/archive/v2.0.0.tar.gz"
   sha256 "4811fea3d08d668cd2a41086be049bdcf74c46a6bb714eb73cdf6ed19a013f41"
   license "MIT"
+  head "https://github.com/sqlancer/sqlancer.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7a8f6995c0eaf3002eead99ad6ca75a3922c7e6d4f1206a1f573fc55b2445140"
@@ -22,6 +23,10 @@ class Sqlancer < Formula
   uses_from_macos "sqlite" => :test
 
   def install
+    if build.head?
+      inreplace "pom.xml", %r{<artifactId>sqlancer</artifactId>\n\s*<version>#{stable.version}</version>},
+                             "<artifactId>sqlancer</artifactId>\n   <version>#{version}</version>"
+    end
     system "mvn", "package", "-DskipTests=true",
                              "-Dmaven.javadoc.skip=true",
                              "-Djacoco.skip=true"

@@ -14,9 +14,11 @@ class Cups < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "83c7d1a58176fd6172b73f3662eb54003a1ca05d9643934d80f8fb6594a7768a"
     sha256 arm64_ventura:  "643eea6223eb736d6f3595e92539027c1b628227a1638367dd924fe41f5c3781"
     sha256 arm64_monterey: "58309d40f9b93952534d8d8aeecf930a1874b6df5b73508c0e3493bc6ab9fb82"
     sha256 arm64_big_sur:  "7ab8cb68128235e0e8b8dff6c2d7d75dd7d06da9365aaa54421d42155ca77499"
+    sha256 sonoma:         "60a478a3285852bf2eb481eccb05c0ae6348f36cf0a0ede1439246d1799ca50f"
     sha256 ventura:        "d6d37503ff0f322c238a5f177c4723d77814327d6b39ae2b27c05b679e4dd822"
     sha256 monterey:       "0b1aead51e1611627e4c9f336647476d1ce7e344a162fd3f68e8b4cd24b63ece"
     sha256 big_sur:        "eae22d8b730fcfda7bbb9a776ae5b5e7d1061b00200ec0926aeac030cf24e1e0"

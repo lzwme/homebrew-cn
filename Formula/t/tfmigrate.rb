@@ -7,9 +7,11 @@ class Tfmigrate < Formula
   head "https://github.com/minamijoyo/tfmigrate.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2935b81f079d09eda409db2914834cd3f71f254243b911a01d46c8eba4905108"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2935b81f079d09eda409db2914834cd3f71f254243b911a01d46c8eba4905108"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2935b81f079d09eda409db2914834cd3f71f254243b911a01d46c8eba4905108"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2935b81f079d09eda409db2914834cd3f71f254243b911a01d46c8eba4905108"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f20507f37f3a5a84f62bc6bb6e3cfa4b6eff58fbcc31cba9722f306938618634"
     sha256 cellar: :any_skip_relocation, ventura:        "f20507f37f3a5a84f62bc6bb6e3cfa4b6eff58fbcc31cba9722f306938618634"
     sha256 cellar: :any_skip_relocation, monterey:       "f20507f37f3a5a84f62bc6bb6e3cfa4b6eff58fbcc31cba9722f306938618634"
     sha256 cellar: :any_skip_relocation, big_sur:        "f20507f37f3a5a84f62bc6bb6e3cfa4b6eff58fbcc31cba9722f306938618634"

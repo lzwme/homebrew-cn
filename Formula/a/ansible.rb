@@ -9,15 +9,14 @@ class Ansible < Formula
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "586ee1450f760379e90a339c93a1d09a1f1b97dd208a5af1b6342885ad5c3f57"
-    sha256 cellar: :any,                 arm64_ventura:  "66379d22591c8b4d67a6b34bb0a6b717d9297ba2882810f5cee9d5e04f515f9e"
-    sha256 cellar: :any,                 arm64_monterey: "5a0e6675ad06e41f7958ad0daeade624e0feef6701ec49f3468ef85dd1e32779"
-    sha256 cellar: :any,                 arm64_big_sur:  "47932bfa75334c39d48b5902a2b6c53afcb72102c6e0ba997f7093fc6f3f326c"
-    sha256 cellar: :any,                 sonoma:         "336c4e31bff115d9daadcb7347133a051abfacfa9ee4b99aa1f46491ff3a7e01"
-    sha256 cellar: :any,                 ventura:        "fd152310f69e17119eae0655a2dffa8f6223cd4271857892f98b663138db2529"
-    sha256 cellar: :any,                 monterey:       "e003aaeacbd445c7c77af1ad828c16e2882b2d777841da7e7ab40ed96f225309"
-    sha256 cellar: :any,                 big_sur:        "08c478a8d6dd5feb4064a7e3fac53da33a7c2a2b1c1538a6fb261c66e04d1315"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "36e34e2ee2eff2cae384bacd36d2b473fc1a7852de2a794d6c93c41030d837b5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "26f5d24fe16505f11440c1295648741b2c14f5ba9f00080fd7553feb1a6fdce9"
+    sha256 cellar: :any,                 arm64_monterey: "dedaa2f9a3d05b1b19167ae2c075945614f5f008af2b7f4ba13933a4fc7954a4"
+    sha256 cellar: :any,                 arm64_big_sur:  "930ff7df2b3b842f2b631d1bf031ac4a75997f7119f55d74f481232e68b3b669"
+    sha256 cellar: :any,                 ventura:        "39f584720c69f73bf6d009a6b18125adf4ea9cdf28a85e2d34a2a2bb9c812122"
+    sha256 cellar: :any,                 monterey:       "15f655237af2328f6d9bb4dd71df2dfd927b37c333648c121bda80eb24963558"
+    sha256 cellar: :any,                 big_sur:        "8f339abe8aebffce2015b67e34a4c5f0cd30c9be6ded65e03a56c648d26427cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9689b001d4d6f03f6f175695c1b4728f27855fe3ef3bfc63bf36c5ad3ada3b3"
   end
 
   # `pkg-config` and `rust` are for bcrypt
@@ -29,6 +28,7 @@ class Ansible < Formula
   depends_on "python-cryptography"
   depends_on "python-lxml"
   depends_on "python-markupsafe"
+  depends_on "python-packaging"
   depends_on "python-pytz"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -274,11 +274,6 @@ class Ansible < Formula
   resource "oslo-utils" do
     url "https://files.pythonhosted.org/packages/4b/d0/efe8943f8f4130708440870bb8f8167b16204b556fb94236554f4b213756/oslo.utils-6.2.1.tar.gz"
     sha256 "1322ba05fa0ff3c1a8afc727fcf945df5aa82d6584727d2e04af038b5ae84244"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "paramiko" do

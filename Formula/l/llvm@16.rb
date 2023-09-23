@@ -1,37 +1,40 @@
-class Llvm < Formula
+class LlvmAT16 < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https://llvm.org/"
-  url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.1/llvm-project-17.0.1.src.tar.xz"
-  sha256 "b0e42aafc01ece2ca2b42e3526f54bebc4b1f1dc8de6e34f46a0446a13e882b9"
+  # TODO: Remove `six` dependency and `LLDB_USE_SYSTEM_SIX` at next release.
+  url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.6/llvm-project-16.0.6.src.tar.xz"
+  sha256 "ce5e71081d17ce9e86d7cbcfa28c4b04b9300f8fb7e78422b1feb6bc52c3028e"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
-  head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^llvmorg[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(/^llvmorg[._-]v?(16(?:\.\d+)+)$/i)
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "69eff5a857c65f50be42a0eb710f43ccb45c5dd5680f39546a50d394361a5608"
-    sha256 cellar: :any,                 arm64_monterey: "221fe00969e0c9d7087ec190da6dced30138e4e27464cfe65a82e62de36fcc89"
-    sha256 cellar: :any,                 arm64_big_sur:  "8f3ed3015d777f9a047d62a50f78c91fc63d382856f7491bc1e00ac3d133458d"
-    sha256 cellar: :any,                 ventura:        "5eca42c94fd36993f555d6dd44554cbc7c2f4f9c8f11f01c96d050b447978dc2"
-    sha256 cellar: :any,                 monterey:       "67c96213969230688ece9fac81ba6b45b44f57ff46bd15d9f89f2a8ae2ccd710"
-    sha256 cellar: :any,                 big_sur:        "b3f8a1185a8adc92a994092391a1812652078882788fa9b49a45cc5bcc4eb5c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "122b88090b1df07be022d5974f2becb268532d07982e0d9e1ba033d1b37509a7"
+    sha256 cellar: :any,                 arm64_sonoma:   "81f212c7551f00423633e9b6a1ca31b2c6a5867ef11782c4b4456571b82700ac"
+    sha256 cellar: :any,                 arm64_ventura:  "27a5fb204fa1527f59a0e5e5b5e8ac38b8f0d277aedf1f1c0caf591f47cd0a3d"
+    sha256 cellar: :any,                 arm64_monterey: "99f03a72e55e3bd150efce1986c4c222f29cf816a1603cfb20f5e21c2b6ba5bf"
+    sha256 cellar: :any,                 arm64_big_sur:  "cb2e5bf72cd9a9bcb1f64b3152136b5f254a1128b34c27dd4f653ef0008e00a5"
+    sha256 cellar: :any,                 sonoma:         "dd1251e1ac3d36763f001b31583a9231e129232799ea331de701bd38b1362b3d"
+    sha256 cellar: :any,                 ventura:        "76b4e48cd98725698332f12c86c34d56ebae85b39716a38a308a4b9a60981dd8"
+    sha256 cellar: :any,                 monterey:       "e715afb5ea84deb02a5c546222b6a9e5279c9e22a4021e1f63514db579404fd1"
+    sha256 cellar: :any,                 big_sur:        "e730097d562a31c03efb9f24c37d36649980fed0fe7b2f4d72d91fe491219017"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22ff6a08a852f8243574d97a78a5b6fb63923ace012674efa16a6d308ba68a62"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
   pour_bottle? only_if: :clt_installed
 
-  keg_only :provided_by_macos
+  keg_only :versioned_formula
 
   # https://llvm.org/docs/GettingStarted.html#requirement
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "swig" => :build
   depends_on "python@3.11"
+  depends_on "six" # TODO: Remove at next release.
   depends_on "z3"
   depends_on "zstd"
 
@@ -48,6 +51,13 @@ class Llvm < Formula
 
   # Fails at building LLDB
   fails_with gcc: "5"
+
+  # Fixes https://github.com/mesonbuild/meson/issues/11642
+  # Remove at next release.
+  patch do
+    url "https://github.com/llvm/llvm-project/commit/ab8d4f5a122fde5740f8c084c8165f51a26c93c7.patch?full_index=1"
+    sha256 "9b01de9708e4eb5cef10c18f25dd42e126306ed8cbd9d9a26bb5fbb91ac7d7a3"
+  end
 
   def python3
     "python3.11"
@@ -116,6 +126,7 @@ class Llvm < Formula
       -DLLDB_ENABLE_PYTHON=ON
       -DLLDB_ENABLE_LUA=OFF
       -DLLDB_ENABLE_LZMA=ON
+      -DLLDB_USE_SYSTEM_SIX=ON
       -DLLDB_PYTHON_RELATIVE_PATH=libexec/#{site_packages}
       -DLIBOMP_INSTALL_ALIASES=OFF
       -DCLANG_PYTHON_BINDINGS_VERSIONS=#{python_versions.join(";")}

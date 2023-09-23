@@ -3,18 +3,18 @@ class Vineyard < Formula
 
   desc "In-memory immutable data manager. (Project under CNCF)"
   homepage "https://v6d.io"
-  url "https://ghproxy.com/https://github.com/v6d-io/v6d/releases/download/v0.17.2/v6d-0.17.2.tar.gz"
-  sha256 "6e6cc412dae1b918d20839279b7b39fd5332ebeb062ea209fc555399d6cc1859"
+  url "https://ghproxy.com/https://github.com/v6d-io/v6d/releases/download/v0.17.3/v6d-0.17.3.tar.gz"
+  sha256 "34178fbc814a28b0dae8f26bf1c140ef0163c4c6fb57d5c4be06cd6c4d904718"
   license "Apache-2.0"
 
   bottle do
-    sha256                               arm64_ventura:  "3821d75dd97b0eb2beb1e5a37ae86dbf499575707148b6ba195cc34b9505238f"
-    sha256                               arm64_monterey: "d5ea142f355077cafffe811d34f3f165b8fb429ff4971d36bc88c93ff5bd2c45"
-    sha256                               arm64_big_sur:  "5aca11c7d13ee04a603570100c49b22a297bea3c96f399734d6c70b376738ca8"
-    sha256                               ventura:        "a73e4b86e9fe8e9b9a1e8ff56b51366c98eff34ff25850c47ef18b744d066a1b"
-    sha256                               monterey:       "1084e7a3d249352746b3caabc1c91ba8261c42da0b4fc7ce6867ec8ea6fc633e"
-    sha256                               big_sur:        "79c2f37b5c501360512ee00da82ed598169060a6111bc0b254d6fe01651fe488"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b626d9f2ed51762366f38fb5b19da04952589293640b24d3fac4bce61e71b4a8"
+    sha256                               arm64_ventura:  "0eb4f6c805274c7fcb30a7021757f3acdf1bc80f4e530f4b4fd7113198fda6c5"
+    sha256                               arm64_monterey: "b6c36c673b8d6aa923d09209368601cb89f6a0c18b1cbe42700dde5beb294c3d"
+    sha256                               arm64_big_sur:  "83f2504d7757031dbed874b7a648c09076f780c32610b8f723ca913e4c1284eb"
+    sha256                               ventura:        "8b87fc5edbbd4ee724ed47726beb5ddffdeb5925d8f8d34a0ad02eb1c2e5ade5"
+    sha256                               monterey:       "2efa7b91cf630ec81fba1ee2bea70fc9012b3699fa71891e06b33ac28f1cdfd8"
+    sha256                               big_sur:        "7111eaa76927e71ecbe94b4d92e51a3e3ff9ff01624f76d517c40883b6dd8a03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49d6843fc0a1b19210f83978baf847eb88740a686538f3099091d708b644fe40"
   end
 
   depends_on "cmake" => :build

@@ -8,25 +8,32 @@ class Whalebrew < Formula
   head "https://github.com/whalebrew/whalebrew.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "648b3a384d987ff824c9e165732c722c4bb000fc202f49658b08228c664ec855"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6d46a38aeb20d1796c51ac11de14bf84a80f063953891042b265c72284f63e3e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c79a962ae505334ed9928409892cfb64bdb5faabf61812fdb7bc3b67367e3d27"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8287404bc73e04a949d09c8750ea28a33b8ca72e1201d9027a471f6a9bc457a8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9d4b5b85e37efbf4a5e7dc7ae939a3f9579b7f3ddd04273096ebe715e3441409"
-    sha256 cellar: :any_skip_relocation, ventura:        "d3d58156c45770291a5d380c55eb76315845be7fbf1069bda91b9fed0b0acb63"
-    sha256 cellar: :any_skip_relocation, monterey:       "65f42c7c8913cde5493c499072546e315ca2ae62d93961f95097e20bb682273b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "62f017b4103e3b3e17e31855dbb4dc56d8e851bc88fb83e5c6e47bdf2411cf4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b46a0b822da1ba80286fc14697e18f1c64a69a305a58d3b7532150ed9745967"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "49d1976a3cc330964ceaedbd16bac6f74ebda577fbd2821b084b5208a8bdea25"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "add3e44f64fab3b42879f1feda57e1b60e8f21194cc6bb3cfc59005792e39b31"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5ee597313bdf6047a3bda89bb9dd0fb75c85e4706de548f8b264602c498a27f6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "49ed81ef33ddec19910c0889703e35e19f6af05e1245c1c4dc8119fc0b69b927"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fa70a5b0c08e5bbd20e5f40089c9a1e27eaf71c59e30491284e835e953a0cad3"
+    sha256 cellar: :any_skip_relocation, ventura:        "00fa03ff0f1e044041b1e1c54b1e2e36aa41417481d154cf2b85779b21e50d3e"
+    sha256 cellar: :any_skip_relocation, monterey:       "5ef0b7ab5462b12ce1d1e6000076bbaaac46e0fa1a008d5eba9da3bfef243a6b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "dea3baf9dc0ee45b753174822a6f16ae45e202377814ea8316f589369a80b737"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "55d5ea63da72e4ee959858e609f27e04eedac26f5cf42409fd1205690cf84df5"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    ldflags = %W[
+      -s -w
+      -X github.com/whalebrew/whalebrew/version.Version=#{version}+homebrew
+    ]
+    system "go", "build", *std_go_args(ldflags: ldflags)
     generate_completions_from_executable(bin/"whalebrew", "completion")
   end
 
   test do
+    assert_match "Whalebrew #{version}+homebrew", shell_output("#{bin}/whalebrew version")
+
     output = shell_output("#{bin}/whalebrew install whalebrew/whalesay -y", 255)
     assert_match(/connect to the Docker daemon|operation not permitted/, output)
   end

@@ -6,24 +6,26 @@ class Ccls < Formula
   #       https://github.com/Homebrew/homebrew-core/pull/106939
   #       https://github.com/MaskRay/ccls/issues/786
   #       https://github.com/MaskRay/ccls/issues/895
+  # TODO: Check if we can use unversioned `llvm` at version bump.
   url "https://ghproxy.com/https://github.com/MaskRay/ccls/archive/0.20230717.tar.gz"
   sha256 "118e84cc17172b1deef0f9c50767b7a2015198fd44adac7966614eb399867af8"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/MaskRay/ccls.git", branch: "master"
 
   bottle do
-    sha256                               arm64_ventura:  "cf1908b3b52c8679134450bcc7b16e7d18303b2674fd4860b656da7969dc88ce"
-    sha256                               arm64_monterey: "f8afdcb8187ae0f51c798ea460b021abdee631a4178dc806798a597ab13dc7d1"
-    sha256                               arm64_big_sur:  "c966d84260aec4ace69299ca1845bd5eeda3203478db825ba3c137e88dd73cdc"
-    sha256                               ventura:        "29d0842ee27560a77272cf09bc20a7133aa3a7c92b82e3e370deb30babd4679b"
-    sha256                               monterey:       "cccf7e7ca6a22068c1064201e7b0f6aa07b67dd5bbcb4bd51eb9c71513367508"
-    sha256                               big_sur:        "a5bcc838ed9f57144a2983d93efdf89374e65ab88e64dd8862438b1130cd8d0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b035a7eb87a37d4d2c15f1e13f7172cf29b2d4ac99c38c28873e2ca1171a9b1"
+    sha256                               arm64_ventura:  "0f28cbeef439f2e41dca0596883ffa9b3e7346b31940dabec02edb34d0ab57ec"
+    sha256                               arm64_monterey: "0b97c6471ce313aab1825af453825627cb98df4680ded949a6f2c6431f530816"
+    sha256                               arm64_big_sur:  "7d3df565ce249c9a48e8b2518b40c90bc754804aeafcd7c25326d9f99a56070c"
+    sha256                               ventura:        "fb7338b36e280fd289a83d830a39f93f244975be794252468c77d6accefcdcf8"
+    sha256                               monterey:       "f3b6d17355b31ae1caf87aa392c7ff17d70ab6289a5d924fd5f7b6ef3125111c"
+    sha256                               big_sur:        "1f32a422e5f1fa6eb5a3ffba9e08f034a41ee841154cdc24ba29c30377412454"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a405c9ede1c1366486b987bd99446c98dd41aaae2562755573570116f215a878"
   end
 
   depends_on "cmake" => :build
   depends_on "rapidjson" => :build
-  depends_on "llvm"
+  depends_on "llvm@16"
   depends_on macos: :high_sierra # C++ 17 is required
 
   fails_with gcc: "5"

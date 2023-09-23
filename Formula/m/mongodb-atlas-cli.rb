@@ -1,8 +1,8 @@
 class MongodbAtlasCli < Formula
   desc "Atlas CLI enables you to manage your MongoDB Atlas"
   homepage "https://www.mongodb.com/docs/atlas/cli/stable/"
-  url "https://ghproxy.com/https://github.com/mongodb/mongodb-atlas-cli/archive/refs/tags/atlascli/v1.11.0.tar.gz"
-  sha256 "85de0092f02e7af7140e47c27c38f1c8be386776d93165395bb0e2b09d2ffbeb"
+  url "https://ghproxy.com/https://github.com/mongodb/mongodb-atlas-cli/archive/refs/tags/atlascli/v1.12.0.tar.gz"
+  sha256 "9c070a8b3fdc073553480e9c75d531f3e3150bc626c5bda15982617f776b8867"
   license "Apache-2.0"
   head "https://github.com/mongodb/mongodb-atlas-cli.git", branch: "master"
 
@@ -12,13 +12,13 @@ class MongodbAtlasCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f28eba2c6e82d1eeb9a64b8b99f0744e8052403a6a73a3e2ed6aa4bd78a14ce7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7db8ee18f9daa2bacec4bbb3a88767e4becda984d3589ff34494fb7e605da4db"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "145b00c62367bf17221ea972fd11b4c5a09a5e7143f4c204e24c71c6afe47748"
-    sha256 cellar: :any_skip_relocation, ventura:        "27342abfd4877563705e59f9b37e391995bb54e20f1b6bdea7fbf11a6e072331"
-    sha256 cellar: :any_skip_relocation, monterey:       "35373e4b110b5f45557364afc93b424ceade5e0629df21ce3a1a5900dd9d76c7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0d6e5ee63067a9925f19df5fcbe9b971458d5d135f81bf22a8f4d3f564bb34ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ecf4e4c32c89cea2422f3716866c1a748287caa765a53b75b706091ed27fcc5b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8adb611ac09f5f493d5c513141b8453b11596e942fe9ff41fb6598efd6a4b662"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6dd5dfd3af9278143b5854ccfcef2bdbc56870058654803dff7aaf212d54d86d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8b00234242e8ebc888397c56bd0f2bea5b8e6af5cd4f43491b2f31c4c6c09e53"
+    sha256 cellar: :any_skip_relocation, ventura:        "734de9647bcbab303a038790f53ea3d197ca2e4e2a942a140c9b932d87c096e8"
+    sha256 cellar: :any_skip_relocation, monterey:       "34cc32e4e9bc15ef9543e31a0c8d11a0459aa0d421da491c9c0ce54793c69f50"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cd1d8e0efac0aaeaebcdb102446fbe6e8156c4d0921d8f8c7079caebf3f95d81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba3fe8fa519b09a49271f723bff5b68e5e4470c890d1c6ffe4fb9c32ed7aa06f"
   end
 
   depends_on "go" => :build

@@ -3,18 +3,18 @@ class Grayskull < Formula
 
   desc "Recipe generator for Conda"
   homepage "https://github.com/conda/grayskull"
-  url "https://files.pythonhosted.org/packages/68/0d/cf4b21650e87104fd12d8d0bbc4407b575cda4a55a13c2e0f35e9719484d/grayskull-2.4.1.tar.gz"
-  sha256 "3ecc684008ed6166b82518eb46f18e99c0407ee226c141dd469d4216c5989a3d"
+  url "https://files.pythonhosted.org/packages/d4/28/103ed458290f40221e0eb4d8f8268e7fbdc6b4f5ccd49bef73f7ddd26f86/grayskull-2.5.0.tar.gz"
+  sha256 "b021138655be550fd1b93b8db08b9c66169fac9cba6bcdad1411263e12fc703f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f3011070b8a876a3749f8ddf43325864a2645689f9ef76eff501466e0341267"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "af4e10eca9d83022203f3ff0063740e8159569a1e4edb2037ff3492ab5439fe0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "28f67600ed2d2d309e1510c424e392691db7c897b5eb645165723cbe928ce59b"
-    sha256 cellar: :any_skip_relocation, ventura:        "a5efdb8d12ed4197975c36eb2939f26f82b56589fe99eac5e35c005692ef92de"
-    sha256 cellar: :any_skip_relocation, monterey:       "5ee4cc3afc7814f05814c0c224a572834ff4a708ba613195efb6856f4e2a1527"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d17635d0cba7a42ebac629432d9e54a2bd3e1184c61f8c1cae8853e8d29f30e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dae6af1d5baff13c7c5b91330df35a062907067e0967162323726b5835199417"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f35096a386123fab4bec130fe53af056e2626884ad1c612e47181a55ecc2cac"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2697d5bfb7ee6d5c5f216cb208cd330678d33d9f68cd2ec1cd007fc10067f720"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4b3febec4f160f1b0cb4966e93746343e94e887c27b29d469265fd94dafa6c6d"
+    sha256 cellar: :any_skip_relocation, ventura:        "31130ce058ec78f534ed835440dd446a2eee27eda8af6b1e959c7a5026f42831"
+    sha256 cellar: :any_skip_relocation, monterey:       "3005b6fae9d498879305febe0b5f8f63a965f0d6e7a48169efc0940d5f5ae701"
+    sha256 cellar: :any_skip_relocation, big_sur:        "45fc03820aa1fa139c926fbb51c66b93c22d61371ceff3a49b0685af237e65f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d080ecad38e99ee5ed0e4c95c00fd17f7761d9c9c3c182c620208e70a239ec9"
   end
 
   depends_on "cmake" => :build

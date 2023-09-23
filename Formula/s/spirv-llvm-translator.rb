@@ -1,24 +1,26 @@
 class SpirvLlvmTranslator < Formula
   desc "Tool and a library for bi-directional translation between SPIR-V and LLVM IR"
+  # TODO: Check if we can use unversioned `llvm` at version bump.
   homepage "https://github.com/KhronosGroup/SPIRV-LLVM-Translator"
   url "https://ghproxy.com/https://github.com/KhronosGroup/SPIRV-LLVM-Translator/archive/refs/tags/v16.0.0.tar.gz"
   sha256 "305fac5bb8efdad9054f0d27b5b765aca8b3349a500e2ba0c927763e42badc2b"
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "948010a3bb4c1eaeb69ce42b7b80e7cac083270559120753be07d79742c5d99a"
-    sha256 cellar: :any,                 arm64_ventura:  "33089120098629f38fc95bf77e546b88621fc17d728a1ac1696e9f3ed0d05990"
-    sha256 cellar: :any,                 arm64_monterey: "8019ed273411a8735364c93f62ee983453b6d6e3537b26e5c1276b6fabc8ee4c"
-    sha256 cellar: :any,                 arm64_big_sur:  "08998820e25b83bc260fb003a804bd1a48d45b8d5d1a59cb7fc855bc4aeaebf8"
-    sha256 cellar: :any,                 sonoma:         "cef4df6319e1e495ebef4c5d0588d73357e81797804ab984e06f3d55e6bc6873"
-    sha256 cellar: :any,                 ventura:        "452c59b3c06adb9fee5b6994f5ca671e9613b9496f9fb123438232b91accfdda"
-    sha256 cellar: :any,                 monterey:       "7a651c2959c2599b8566672a2a673b3b57fa063aac59c9a52d65346cdff06348"
-    sha256 cellar: :any,                 big_sur:        "b11a428a3045237d0b7208c85e420a6020337004dd07de66ce44804ad3a9a17e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34b47b6b0a422ea03383704b5fdf61703bcae7f72249f640a478db25780e49d3"
+    sha256 cellar: :any,                 arm64_sonoma:   "bcf217abc3cf6dff0301f12d3cc96361e4795d98b36d7db301e5db06421c4fb0"
+    sha256 cellar: :any,                 arm64_ventura:  "82cb73e5f654afa05b7216ced0ea9c0faadb40469053ba0242391ebfb3e6ad5d"
+    sha256 cellar: :any,                 arm64_monterey: "cc3218029bf78c8b44484105f4260f7b9e985b00569b09eb87f4980c58e4d79e"
+    sha256 cellar: :any,                 arm64_big_sur:  "03c9ae50323c6f0d5f0209c5861529d1dda363b17a20306c5efbc177f831a0a3"
+    sha256 cellar: :any,                 sonoma:         "b3034ad8eb4e4224e3b2eccf614391dda06c165525b806cac25aa937c7a27daa"
+    sha256 cellar: :any,                 ventura:        "3ec6762a23e42954c15e075b8139555dea129c192ccac7dc6bfe66331058dbd6"
+    sha256 cellar: :any,                 monterey:       "f311b176fe18873113fcf5e22ec209d4f360df8badbe89c724770e9c287d32ee"
+    sha256 cellar: :any,                 big_sur:        "fff2616cc45266a010d662ad32baf046ec6bfafe3d4e570c5d15ba01edd73742"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "333574e0d95b281a71dcac5f4e8346ffefabd0f4b11e6a607317ab8b97050cd4"
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm"
+  depends_on "llvm@16"
 
   # See https://gcc.gnu.org/bugzilla/show_bug.cgi?id=56480
   fails_with gcc: "5"

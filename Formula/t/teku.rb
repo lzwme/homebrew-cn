@@ -8,9 +8,11 @@ class Teku < Formula
   head "https://github.com/ConsenSys/teku.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1fb8d232244f20680e720dcc2a0068233bf4c2e4b78fbe5b52f6a80e887bcd44"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "bb1b6404c783fccd49d951db6c0b7a61f3ea84a20b74cb4f83731fb57138fb41"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "bb1b6404c783fccd49d951db6c0b7a61f3ea84a20b74cb4f83731fb57138fb41"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bb1b6404c783fccd49d951db6c0b7a61f3ea84a20b74cb4f83731fb57138fb41"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e208d5697001c2d3b5ed83f583f918b2fdc742c5d284532e0fac666a23f4b06f"
     sha256 cellar: :any_skip_relocation, ventura:        "159f777b21df2c647820a8be458f5612a69e58955328ebfb2d3ad7ad8765e755"
     sha256 cellar: :any_skip_relocation, monterey:       "159f777b21df2c647820a8be458f5612a69e58955328ebfb2d3ad7ad8765e755"
     sha256 cellar: :any_skip_relocation, big_sur:        "159f777b21df2c647820a8be458f5612a69e58955328ebfb2d3ad7ad8765e755"

@@ -1,25 +1,27 @@
 class Faust < Formula
   desc "Functional programming language for real time signal processing"
   homepage "https://faust.grame.fr"
+  # TODO: Check if we can use unversioned `llvm` at version bump.
   url "https://ghproxy.com/https://github.com/grame-cncm/faust/releases/download/2.68.1/faust-2.68.1.tar.gz"
   sha256 "d4ee30e2444bed55b593c6c70ec4e330b71260819d4011b37d8c9b9c061e810f"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b45850608b669abcaefa6099dfee88d8764535be63a74303d013ff1c80adc4ba"
-    sha256 cellar: :any,                 arm64_monterey: "bccd0d3ea0ba6960e305bfc2e5e9c3766be367d292e3d57e6001785f67634b78"
-    sha256 cellar: :any,                 arm64_big_sur:  "0ea493bf42bdf6d80e42b2cd4a5fad15a481fc513435d0f509a43479d077eb3e"
-    sha256 cellar: :any,                 ventura:        "c5bb3f47a95767ddcff657283c1bc71a3072e287c8ab631b5d349556cdfc6faa"
-    sha256 cellar: :any,                 monterey:       "5b6547c0a22ffa0727458d5e3c1551d89a55333d979aba4a7113975e59b065ed"
-    sha256 cellar: :any,                 big_sur:        "95673475939bf786e04159be8d99e4be2e1ee27a2690235895d85c3b208fa662"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c99d180157e67a5dd0e8b2eea2a915ce46a3af0b447b9628799c1ddf41e330c5"
+    sha256 cellar: :any,                 arm64_ventura:  "a0354cdea965ade3b8ca19b3b31c3942690560fcd5bb61016ce32e8e90f6cb8e"
+    sha256 cellar: :any,                 arm64_monterey: "8f3b06b67c43cb8edb447dee45c0fc0df7482e22ba71b31db04f8a11ad9d7fee"
+    sha256 cellar: :any,                 arm64_big_sur:  "8375f27903f2bd0f1dee073b3de81a07e7314040b7236e52278a56a3c492feb5"
+    sha256 cellar: :any,                 ventura:        "c789092307ddfe487c46ea67bc34ee1ec43aa56d6ea79b2ba089f8a54a8b5eae"
+    sha256 cellar: :any,                 monterey:       "1fc2e43214eaed4a924dc27ad6d9409ac5b20259921259d273fdc51b71093869"
+    sha256 cellar: :any,                 big_sur:        "ff8796eed8f6fe52446430ca66fdbb070cbace09e0f30d88bbd230a704c2ba06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "838c1a2a66a5e8e2c6647e5e8fcb96cdb06f6094bdd8847fe318e86d0d56beb9"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "libmicrohttpd"
   depends_on "libsndfile"
-  depends_on "llvm"
+  depends_on "llvm@16"
 
   fails_with gcc: "5"
 

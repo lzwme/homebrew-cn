@@ -9,7 +9,7 @@ class Aalib < Formula
   # The latest version in the formula is a release candidate, so we have to
   # allow matching of unstable versions.
   livecheck do
-    url :stable
+    url "https://sourceforge.net/projects/aa-project/rss?path=/aa-lib"
     regex(%r{url=.*?/aalib[._-]v?(\d+(?:\.\d+)+.*?)\.t}i)
   end
 
@@ -27,9 +27,10 @@ class Aalib < Formula
 
   # Fix malloc/stdlib issue on macOS
   # Fix underquoted definition of AM_PATH_AALIB in aalib.m4
+  # Fix implicit function declarations
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/6e23dfb/aalib/1.4rc5.patch"
-    sha256 "54aeff2adaea53902afc2660afb9534675b3ea522c767cbc24a5281080457b2c"
+    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/4cd6785/aalib/1.4rc5.patch"
+    sha256 "9843e109d580e7112291871248140b8657108faac6d90ce5caf66cd25e8d0d1e"
   end
 
   def install

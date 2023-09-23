@@ -15,9 +15,11 @@ class Urlview < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b7573ee9d9ec6ad057e1942b86cdc5f87d1200edfa87671394efd95fef009908"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6bd9f4ace151dc3bdd13ab54546319f4c3453a4d4255fd0acad4b720a683fc6e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b567514b30c1ee47b2ccd0d37913b753fe12b5f8171a50df6a27f084cee86764"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8bf235ca8f0965c5f2ed2fed715ba1ef442edf015e815804d88a5f4ee9c6810e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b2b0b467e190129c65fdbf47e5d71d5f78d80fd438f9587ee0ccd8f9dc752b1f"
     sha256 cellar: :any_skip_relocation, ventura:        "f23b48aa03b4a6bbbff88712b5ae0b854d384aba75782ba4d9c9729f150d3653"
     sha256 cellar: :any_skip_relocation, monterey:       "758abed3f78263e758f923d939501ad1a020f6a13a2f517f96114686cd235141"
     sha256 cellar: :any_skip_relocation, big_sur:        "4f33d54be1cd6b13f0f164bed70ef1aae7785d981a05eb2465baf11fa85fdb5a"
