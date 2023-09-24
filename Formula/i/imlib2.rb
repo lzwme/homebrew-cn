@@ -6,9 +6,11 @@ class Imlib2 < Formula
   license "Imlib2"
 
   bottle do
+    sha256 arm64_sonoma:   "340686a62cc73b407b8865ff898036958d36ae3cd44748a79ce04ed3c255d51c"
     sha256 arm64_ventura:  "24a12ac9285633fe1a0f844331d19abcde5dd99520edbe0432ea687cd64f1f25"
     sha256 arm64_monterey: "72815d83d4ff40106b987e870ebbcaaad10786abc8a581747e9339dcb6a67af4"
     sha256 arm64_big_sur:  "5c0a0f84abf3ff248989ad1d38f7c2cb41988ac3063d0e034fc3f64303adfc3f"
+    sha256 sonoma:         "34f0974010b985d40c0636a1587c8f81b2614b4b364541216e473d154550be3a"
     sha256 ventura:        "0d99ef3348e92763a8e2adfea2857cc8d3145e7cbefbc6a8209445096d6e58d1"
     sha256 monterey:       "844f5e867091e1ddaee95f600cedfad67b9397748f5d53ccebba7e4b8c1bf8be"
     sha256 big_sur:        "1b4b17a721c859d2a1ef2cbff577794aa713ee1c1a63b13d0765696146b30f4d"

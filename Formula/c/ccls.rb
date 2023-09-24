@@ -14,9 +14,11 @@ class Ccls < Formula
   head "https://github.com/MaskRay/ccls.git", branch: "master"
 
   bottle do
+    sha256                               arm64_sonoma:   "1e8428a18298b518d0b501d00ae12caf881e8ac2e259efd1d4f739bb921b98c2"
     sha256                               arm64_ventura:  "0f28cbeef439f2e41dca0596883ffa9b3e7346b31940dabec02edb34d0ab57ec"
     sha256                               arm64_monterey: "0b97c6471ce313aab1825af453825627cb98df4680ded949a6f2c6431f530816"
     sha256                               arm64_big_sur:  "7d3df565ce249c9a48e8b2518b40c90bc754804aeafcd7c25326d9f99a56070c"
+    sha256                               sonoma:         "eca627049fe24744fdbf739f2012ba26183a3eb2a86fad672a3a998021540003"
     sha256                               ventura:        "fb7338b36e280fd289a83d830a39f93f244975be794252468c77d6accefcdcf8"
     sha256                               monterey:       "f3b6d17355b31ae1caf87aa392c7ff17d70ab6289a5d924fd5f7b6ef3125111c"
     sha256                               big_sur:        "1f32a422e5f1fa6eb5a3ffba9e08f034a41ee841154cdc24ba29c30377412454"

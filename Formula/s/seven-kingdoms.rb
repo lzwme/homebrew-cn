@@ -6,9 +6,11 @@ class SevenKingdoms < Formula
   license "GPL-2.0-only"
 
   bottle do
+    sha256 arm64_sonoma:   "0538f01561c991e0ef25767624f8128516e2886fff6892c045163add87b82b03"
     sha256 arm64_ventura:  "7f964ac849ddfcb41f1deb913ac3f87e4d426a0caabb2f327ef2aa9f1820d29c"
     sha256 arm64_monterey: "368104c0637397af096cf0c77a02c16360e94e7007906a910f2d32588876a597"
     sha256 arm64_big_sur:  "b8cb6def3fcc6b7d7f501825caea49f9a79e11c8233a9b7f5c2c8330ed12e209"
+    sha256 sonoma:         "d1c5fe322a26ee51c9a467b65b09da51f79f338bf9c9c765ceb2964884781ade"
     sha256 ventura:        "caccaab293176a553d5de69b2ad00b641292e8a716ab670c55cf4eecd2ea9946"
     sha256 monterey:       "de4af0d1f139d9315cdc9e026885bbae192c0d0a8bc7258760fad0010b273109"
     sha256 big_sur:        "38ef036f2d21f70bc7a89a7603ec581dc185e076a747200630a7f55f6b835b29"

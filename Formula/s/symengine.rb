@@ -8,9 +8,11 @@ class Symengine < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "4ea77c5ba66a825bb1ba2f6c93be7a806cd22dc741157f8286662d7de62a3d59"
     sha256 cellar: :any,                 arm64_ventura:  "b7de3d65c754f61b1e00b26dab6d356607ea596bcdf07d295a5ca6d20b2d9127"
     sha256 cellar: :any,                 arm64_monterey: "fa8597b8f74572776e248524a590d04a4228872d3d5625578d9034715e145aa8"
     sha256 cellar: :any,                 arm64_big_sur:  "453225c8cd6f3c8d70b8addf9ccd59319015e4cf348cba1d60ecd2f7a96b6003"
+    sha256 cellar: :any,                 sonoma:         "bc4b7681c129c46c837e76b8309d666fa752d462d8086a756d30f244abcda249"
     sha256 cellar: :any,                 ventura:        "a7d87307e9641560a1c055b12d0e118c60363c4499541b1b2efc32c8de75acb4"
     sha256 cellar: :any,                 monterey:       "bedf50c1624699bf3fd2a2c82bfacf997080610a937ac058e7a7e1d48f4f79f1"
     sha256 cellar: :any,                 big_sur:        "d394fe9cb7dc8e28b78dbe4cf63e7b1728cb32778b385c3331e7312dda2c9fc7"

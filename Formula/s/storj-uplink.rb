@@ -5,9 +5,16 @@ class StorjUplink < Formula
   sha256 "071f6186cd72897bc2f595ecc55dba77040d557b69eb69611c8a1c4b1e336c6a"
   license "AGPL-3.0-only"
 
+  # Upstream creates stable releases and marks them as "pre-release" before
+  # release (though some versions have permanently remained as "pre-release"),
+  # so it's necessary to check releases. However, upstream has not marked
+  # recent releases as "latest", so it's necessary to check all releases.
+  # NOTE: We should return to using the `GithubLatest` strategy if/when
+  # upstream reliably marks stable releases as "latest" again.
   livecheck do
     url :stable
-    strategy :github_latest
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_releases
   end
 
   bottle do

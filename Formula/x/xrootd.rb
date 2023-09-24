@@ -13,9 +13,11 @@ class Xrootd < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "87c77231be5cb088cce982292b9b013f72e9a3be85791e415247ed6f30048b9c"
     sha256 cellar: :any,                 arm64_ventura:  "7acb7f79182720a35dd96a893f49aedacb036536b0b286566c4eb6f058f0f43b"
     sha256 cellar: :any,                 arm64_monterey: "559ad3141c7f01748799dc03c502ff96b2967df3ef4a545e0207ee83b2acb45a"
     sha256 cellar: :any,                 arm64_big_sur:  "819954cc4b6b214f6af3a67d5b8a29948e43b7f4a3d3f038e8024e272ee50b06"
+    sha256 cellar: :any,                 sonoma:         "de0df3a5fe90ad7201d851de4a56c443b63dac14842390b0c450069c8c87d7bb"
     sha256 cellar: :any,                 ventura:        "6495a734018e2ad94be300958b09774a281616801f3ab417c78ee561ab9b6c8b"
     sha256 cellar: :any,                 monterey:       "97f74537d663f8ee675f1739c9c16d5177e09be77f890a0874754393a4a67744"
     sha256 cellar: :any,                 big_sur:        "092f9c30f1234492f000e401cd156c5fa5122011d614d47198ce156afac252f6"

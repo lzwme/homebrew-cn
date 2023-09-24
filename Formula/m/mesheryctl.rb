@@ -8,9 +8,11 @@ class Mesheryctl < Formula
   head "https://github.com/meshery/meshery.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c31cb3d440d56093113204a828d6c330a57f6d2aeae7fdf0462fe68c05a72832"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c31cb3d440d56093113204a828d6c330a57f6d2aeae7fdf0462fe68c05a72832"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c31cb3d440d56093113204a828d6c330a57f6d2aeae7fdf0462fe68c05a72832"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c31cb3d440d56093113204a828d6c330a57f6d2aeae7fdf0462fe68c05a72832"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fb159e275562c0d54a3b14749980b0cadb152ccf7578887313ec9f0845cded88"
     sha256 cellar: :any_skip_relocation, ventura:        "fb159e275562c0d54a3b14749980b0cadb152ccf7578887313ec9f0845cded88"
     sha256 cellar: :any_skip_relocation, monterey:       "fb159e275562c0d54a3b14749980b0cadb152ccf7578887313ec9f0845cded88"
     sha256 cellar: :any_skip_relocation, big_sur:        "fb159e275562c0d54a3b14749980b0cadb152ccf7578887313ec9f0845cded88"

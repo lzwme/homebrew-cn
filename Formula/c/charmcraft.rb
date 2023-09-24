@@ -10,9 +10,11 @@ class Charmcraft < Formula
 
   bottle do
     rebuild 4
+    sha256 cellar: :any,                 arm64_sonoma:   "3dd0ea220cbfadcf07e6cf4316d8ad1ddb05dc4821849024dd2852c948f7c3f2"
     sha256 cellar: :any,                 arm64_ventura:  "1bde9a0953e11f0c2282ab53f8f16efd048763794b1ac4230848a8e3f1973b2d"
     sha256 cellar: :any,                 arm64_monterey: "3ff96991b6d6d07583d469650a110032673489802eb1976c590e1847a195ae28"
     sha256 cellar: :any,                 arm64_big_sur:  "3cd774b49ad84dcf83c8b2672aec8aa80ee26840006979b62f3f0aeb04463dc7"
+    sha256 cellar: :any,                 sonoma:         "5aba3396be249d92d81ff0e3a2316682429fe6192ce9ea669047a18b3c6006d9"
     sha256 cellar: :any,                 ventura:        "9e30b374a05d68d5dbadfa74e67347506b63e13f1f5a043b0c82348c0d5c0faf"
     sha256 cellar: :any,                 monterey:       "01b12f124b363fe6b83ac1078af60909ff1d8a484bdbec632c0bb24b6eeaa657"
     sha256 cellar: :any,                 big_sur:        "2fa14041e36f62cfe8f18f34790c6b2ebf2629a33b20a7352427db52c4a53fe5"

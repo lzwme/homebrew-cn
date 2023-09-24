@@ -7,9 +7,11 @@ class TotpCli < Formula
   head "https://github.com/yitsushi/totp-cli.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7cf96c4619c281509e6f9a18445f0b3e57b2747d0e536bc66ae514a2e54da608"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "61ee777774ac2030459ce5b7991400348223e42076af0f9c4360fbb55ebecd9a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5dc30adfd4beb9bb72adac32e7f0acbe33e91f283706b729a7ce51877e8a09cb"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7b65e50ae09eebb3990dadce6718216787479460b3b1a624fbaa0b15aa33f256"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9a891dc7bf3ace9b045fc626f0e375b629d4dc19039c20600bf1216b92bba548"
     sha256 cellar: :any_skip_relocation, ventura:        "fc486f50a35151146af2f091437af92c05b12ec8034be82cf633c9e19808c3d6"
     sha256 cellar: :any_skip_relocation, monterey:       "83741c0fd5095a8a7a1b0853a461ed976ecdc1f45a32160e616985fcf48449f3"
     sha256 cellar: :any_skip_relocation, big_sur:        "73a69d90c74afe6d5e64a9e5332e0e0747f6f9f6b03332a3df965ddfe1a8d73b"

@@ -11,9 +11,11 @@ class Moarvm < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "f68ab31f049b69c96f2035d8dafd6ba47ad28a1ce297d85b6ff0a8fe385e0318"
     sha256 arm64_ventura:  "04f2cc489486610519c3e716eea580d6f24ab9d231c1c04e76a318850eae53a4"
     sha256 arm64_monterey: "3ab7583d13292e2a49531ce0bc0f43cdec19478590fe51374717a97affc04e03"
     sha256 arm64_big_sur:  "548ebe2602d96b6336103b5d5c7275744b27f80a3f1f467dfa62f7c01a13001c"
+    sha256 sonoma:         "78754c7742e49a644dbb00c3c9383d3b9289359c9abd489ad427971f1c451635"
     sha256 ventura:        "db2e695b151cf359b8334547ef99794bde92d0cdadf388624a7b3a1f1dec0674"
     sha256 monterey:       "a8231753ece49dbf4f9efbe4b1c3e3aede96927162b23c545d885141681bdbb4"
     sha256 big_sur:        "f9ec52d75825e92140cb32dc0a911d3d5d2fe80f24d9b2fd63dabaa6f1a8282a"

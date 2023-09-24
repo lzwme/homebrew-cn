@@ -2,19 +2,19 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.ai/"
   url "https://github.com/jmorganca/ollama.git",
-      tag:      "v0.0.19",
-      revision: "45ac07cd025f9d1e84917db3f00e0f3e5651aede"
+      tag:      "v0.0.21",
+      revision: "01c44d687eca23bf101c9617c6db26683c2c8c9e"
   license "MIT"
   head "https://github.com/jmorganca/ollama.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c28605511527744c3ab620cac100eb06b37cc61a2ae25787cceb39a3e5453a4c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "76a75f39312e93533fc994a4834c81b8eb299a0112c2581f7cdbd543588d8732"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0f0a925eb20550fc7692e265098b041d1ce1a48ae33a8f5fca280043f0b536db"
-    sha256 cellar: :any_skip_relocation, ventura:        "20ba83604dadb1d87737b2268c33e27a6cf2115d3412c06ba2db3ae12488cbeb"
-    sha256 cellar: :any_skip_relocation, monterey:       "4db836410137eabb475fa8c57e9b8a2e814c28a1e51d0c98694b232bac215745"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d1df20f8318a30f2ad5ff6262d8a0c754d08670b36af281a5462e26c16c3da8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "87a5f4499beb3e41c73d758346921342f87443581059870a224cb01e22b6bc62"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4a9c9ca85adfef534f31e8de18b0b7c55bb8daef03fb124d70792b8fddbb4ee5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8f6cc4807d04def80fc5c0f9d6fa9739f67d7a456ff7e5cbd4c33ccdc2f2fc92"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d8c37262159471615e35441467ceb8451623161a5b4366c903322db22943cdc5"
+    sha256 cellar: :any_skip_relocation, ventura:        "f464b09016794bc2aec63477088e0874812d457ca3ec64529de69dca2fcfe6ac"
+    sha256 cellar: :any_skip_relocation, monterey:       "215eb79e173596c3869db0ac3abfbf9111202d8a5e4e829529cdb3a9f8ea1189"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a1292973d6ca3ea0e9a516cb0f93722ee7b2b3f7b3d317a6feb3a4a17030f054"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce34f446b04d659f0db6b0d1727835f3ff3dff3a91036a0fc2e62c3f3c7710cc"
   end
 
   depends_on "cmake" => :build
@@ -37,8 +37,7 @@ class Ollama < Formula
 
   test do
     port = free_port
-    ENV["OLLAMA_HOST"] = "localhost"
-    ENV["OLLAMA_PORT"] = port.to_s
+    ENV["OLLAMA_HOST"] = "localhost:#{port}"
 
     pid = fork { exec "#{bin}/ollama", "serve" }
     sleep 1

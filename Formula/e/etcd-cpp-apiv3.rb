@@ -7,9 +7,11 @@ class EtcdCppApiv3 < Formula
   revision 5
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "b4e512e915caf04f7b9f509a0da401118d735afc69b6644705c7773a15b4bc5a"
     sha256 cellar: :any,                 arm64_ventura:  "0967350e5aefc6fadef0a31ff439b4daad02bd2b161a9e0f5af16c1e83bfe8ba"
     sha256 cellar: :any,                 arm64_monterey: "77b88abc3f01e265089598410465fd814c5cca9578fc2fdd5d6c25441e9249e2"
     sha256 cellar: :any,                 arm64_big_sur:  "c0fdf8e7eb00a48ef69ef794c07ea6146838449b8838c12a7314c4a92a996b82"
+    sha256 cellar: :any,                 sonoma:         "5e9e7d5db902517a149e1ad88d37d6a6f34da08c7f9185e06924e8bffcbc2bcc"
     sha256 cellar: :any,                 ventura:        "1acef2ed84ca1250646313f6196aff1a9610db2a0c5030e544882668595cbafe"
     sha256 cellar: :any,                 monterey:       "06d0624167c07f6b7ed1d026d501bd41979468ed4cb4d7c9c0f162bc8c7da0f3"
     sha256 cellar: :any,                 big_sur:        "9b8a88edd420954d60ef1682dcc06e4f713d0cd31179033ebb9155911f4b3aef"

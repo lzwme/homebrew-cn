@@ -1,28 +1,18 @@
 class HopenpgpTools < Formula
   desc "Command-line tools for OpenPGP-related operations"
   homepage "https://hackage.haskell.org/package/hopenpgp-tools"
+  url "https://hackage.haskell.org/package/hopenpgp-tools-0.23.8/hopenpgp-tools-0.23.8.tar.gz"
+  sha256 "158be5544d28fcb3989376b6aee700aa6eed8390ffb8d41146b0aeff09433401"
   license "AGPL-3.0-or-later"
   head "https://salsa.debian.org/clint/hOpenPGP.git", branch: "master"
 
-  stable do
-    url "https://hackage.haskell.org/package/hopenpgp-tools-0.23.7/hopenpgp-tools-0.23.7.tar.gz"
-    sha256 "b04137b315106f3f276509876acf396024fbb7152794e1e2a0ddd3afd740f857"
-
-    # Fixes https://salsa.debian.org/clint/hopenpgp-tools/-/issues/5
-    patch do
-      url "https://salsa.debian.org/clint/hopenpgp-tools/-/commit/fc4214399f06d4ddeb2ecf93ddd3d9bc9ed140bc.patch"
-      sha256 "56f1666227d421b42f375c53b5e747090418a2f669b1e7df285c11bdb23d6390"
-    end
-  end
-
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "359571c43c58a508b85ee454ed7739cb820ab76171b672121395a2ff1c97891a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "22a950b1becb04770da6b835d0efbbb0ab473bf74d9c44393a1cc2b02dd37f55"
-    sha256 cellar: :any_skip_relocation, ventura:        "5f8784ecf8c90427a17ea3d970a30311eee3f933b5831a2ecbb41b083b776c20"
-    sha256 cellar: :any_skip_relocation, monterey:       "3de460b6a7913596fedba72191000532956232ab3b91a2bec1cb2e90c2331440"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f1560215c06cec48de589a1eb1d2822822f5e45bd610918bc9d6b284b45cec74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31710cce55c0ed6f28a1fa468ab107f6a4c580e8478611a27a067509d0def253"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c6e3ec151bf0dcdd8763a1e38b15f46d8f631387365f938e8e5a944605c25e86"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3dcb691db29afcb3c1230189085d41daad9f13e9d32dc0950daf18c102558e5b"
+    sha256 cellar: :any_skip_relocation, ventura:        "8370937e307f6fe9abf7465cc83db8598598b05dfb65e327b0fc4679c03bfae8"
+    sha256 cellar: :any_skip_relocation, monterey:       "be3d61452b9b26924c2286162e7b013f7111ece5a2c59e7696dbf4877f33d039"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e577fed1816884cb7fa00040b84f255ad3eb7f852ddbe4a1816506640b8d5a0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5df863ac90d97fee229b7ef72eb22eae55841bd788f3d530d0aaa78ff1ebef5e"
   end
 
   depends_on "cabal-install" => :build

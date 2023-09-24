@@ -8,9 +8,11 @@ class Ispc < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "af5ef48ee6f33c9ac86c183eca004fbf4f254187c715f5d2c3c0f42b8f5243c0"
     sha256 cellar: :any,                 arm64_ventura:  "7e43f261e5dfc5b6062bcdf8dacf85c8f13d8019bfd5b91bff91e09724d95359"
     sha256 cellar: :any,                 arm64_monterey: "f37589c9357b32bbf8274630132d4e87b8affdcb6f39490ee6fedc1b272dce6b"
     sha256 cellar: :any,                 arm64_big_sur:  "52716d7e78db928ed6cc15b79cf45ce0d57327e4650a68b31de885c3057da246"
+    sha256 cellar: :any,                 sonoma:         "c20fed701b750163625b9704a870bc2752e2e73393c8298ba2563edb635a331a"
     sha256 cellar: :any,                 ventura:        "75f9cda460ab9dc1217bfee756ec3542869498fb27d3875de070b85be607e860"
     sha256 cellar: :any,                 monterey:       "3f3ceec3a5612c379c913d397ba78aa1797898845457df0e4ed0746b69b71bcd"
     sha256 cellar: :any,                 big_sur:        "24c8a8f743f466ebb7e66f35bdb93995562528dbfc132f642ed35cf08e24dfe1"

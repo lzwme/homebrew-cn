@@ -12,9 +12,11 @@ class VespaCli < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4d33aa47b4817ddf5abf9a77dbb47cfbf40d050caf2dc30a9c8ef94b6c6e8630"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "43f7177fc1a30df2ee5be64d41322b583a5b79c4ee40add900b3e899e907b16f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d05cf71df9d71fdd6f43767f509a12efd45e5aacdb14ebd25d3e9093eedf9a81"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e1d46ba69efb79066a774bbe06a1c8d1178f70fa469cb01cc249a0eeb930f9b1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9a16fe8ff4f3c65e45f883c4b8305d6f1e21ffa396fee42b0944e22c97e9da5d"
     sha256 cellar: :any_skip_relocation, ventura:        "893a6c65a90cfb2248b8ad8b406c367158caab0e0b391da5b5657372ad4f2f7b"
     sha256 cellar: :any_skip_relocation, monterey:       "66e4feb0b6cf5a83894e3d152df4658aed6029d8c7d652e9f431b68d91ec4aca"
     sha256 cellar: :any_skip_relocation, big_sur:        "766c77f27a4caea1e7ae894010d7bf0171854ba7aa6965504d635bd193a6c56b"

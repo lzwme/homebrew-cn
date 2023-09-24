@@ -12,9 +12,11 @@ class OpensslAT30 < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "49a423fdf19afa01581e74f890952078793963573ea74af615aebe476e7d3a92"
     sha256 arm64_ventura:  "7da0facf56ab5171f7578ed2b944b4322e7e0c7d1ab524f134b5d769066397a9"
     sha256 arm64_monterey: "f3e4da82e9d838881f88ee05b692dfd8e117d8708023cef00a020147b8f24c1b"
     sha256 arm64_big_sur:  "7fd1f6c2dc50511bd72bab3d9953472ed62cc11b4ead5b43ebadb4329aa949c4"
+    sha256 sonoma:         "c5b66c9d5a88888ba0ecba8989aa02c8222a1e461d288aab6a0b5fe013a9dc82"
     sha256 ventura:        "b9d484a3dfbbe977fb05554063915a6801c8064766264e037ce517f8bd2d9027"
     sha256 monterey:       "d860b5b03426ba96b33f201419d7089ceec582622f85e04e291e5f4c4d9db1f5"
     sha256 big_sur:        "0a5d215b4fad927e3862cb4ca305a831e69dfa2e125c8bd829937faa071cfe5f"

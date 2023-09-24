@@ -17,9 +17,11 @@ class WebpPixbufLoader < Formula
   end
 
   bottle do
+    sha256 cellar: :any, arm64_sonoma:   "d29960938bca600f4b5166f1897b0d38e5c9b025c0f6996add35563d52e67cda"
     sha256 cellar: :any, arm64_ventura:  "7531ecb4aa70bce99a3059d7c82e506ed5fe7c4fa1e792a6be2a68e87676588d"
     sha256 cellar: :any, arm64_monterey: "47639a4bb7975877244484087771294933d27f90c2981224a0e3a6047183da05"
     sha256 cellar: :any, arm64_big_sur:  "90dcc06d8ec9f9d703d4c8552e434e5d786fd0db9a2607a279d3e9d24ca026ab"
+    sha256 cellar: :any, sonoma:         "0cf65d81ea12d20abb568b59d79ed18a6c0b3ab1ed8efc05f24ce4196640e76b"
     sha256 cellar: :any, ventura:        "d2baba7398b98e509448c9441927debb42108994a51b08519041e35aa03e8e9a"
     sha256 cellar: :any, monterey:       "8f41fee655cf01d8e341b590eac2781ef47edb051eff27f98675ef962aab2dfa"
     sha256 cellar: :any, big_sur:        "520a708ebfbac9bb610593cf9fd31fd3cf51af812eb65de73a0326eaec876f3c"

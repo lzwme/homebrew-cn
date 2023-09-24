@@ -8,9 +8,11 @@ class Nvc < Formula
   revision 1
 
   bottle do
+    sha256 arm64_sonoma:   "d0d7971301f9be2b2c6f6e2432bdb3e59230ced7ebc20e13c6406c4b9ac386fa"
     sha256 arm64_ventura:  "2f568a87ec6f689427b32a8d1bbff6717ae0fbf91d07880407e2688caf11ce55"
     sha256 arm64_monterey: "90389cd5f754ad2bc53d75c4787fdb360e5b95426fa212e776898f39cc8e4bd3"
     sha256 arm64_big_sur:  "fe9523056acf0d58eb2879623f56789812d2308998e4c17fdbaf19e35356c8f5"
+    sha256 sonoma:         "fb2188e53e6764ffe09e85df5a00f2fa93a74c35a28beec3e868d70abe5a7532"
     sha256 ventura:        "a9ae0406ca50f65910baf3c13a5a751465b3165a5881cc8f9bf38b0e735d5e46"
     sha256 monterey:       "3107eb0b0eca3f27ddc380bfea7a0d9b2413eb8f93b644151353d4efd6f92a04"
     sha256 big_sur:        "7b1b28fd1bae8818a7a2ebcd87d247b159808763f8216a1dc03628ddd0806c3d"

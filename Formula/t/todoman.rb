@@ -9,9 +9,11 @@ class Todoman < Formula
   head "https://github.com/pimutils/todoman.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "86b961abfd2932466d05b570bc1ac2109139425d3913a2543d950f89ded8339e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "aeef37c08213393f090663bf4636a23caf98ef876f93d4829e364138f62b41cd"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "182224eccaf1d7247af9ad47346e9f62a14ada31b278ea31317b8bc8e25fb580"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c4792c6c4ad0cac00a2f4b53c5fce8a31b9df75396010e3d890492a3d6e642e6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fe0dfb2d10800489b5982b83957a8a3d695209edddfdc77391096a136a59b8b0"
     sha256 cellar: :any_skip_relocation, ventura:        "85f30f84a61cc4aa6c4945bc36a6be35fbcf201521c9c96a59a61674099e4df9"
     sha256 cellar: :any_skip_relocation, monterey:       "268fb8a0aad8323a9ed5bdd7d63b786305675ab8688c9594e1cc15727de48ea0"
     sha256 cellar: :any_skip_relocation, big_sur:        "44f0378b4008370549c045694ccbfd477ec714d3acfe28adfa9847e5b2b19703"
