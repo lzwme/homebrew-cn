@@ -8,13 +8,14 @@ class Moto < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b6842628a29fc907e49663fcb97665b7863deeeaed81ef730513fe4ed4a1cee5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "34a94af25fc224b76286677508db371046666c0f1ce024343ca60035cbbf0396"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "24ea3db990f7f2d0b40613cb4344b7a330a139ede4de467c40400adf1b100784"
-    sha256 cellar: :any_skip_relocation, ventura:        "5edded9044522e6945e391a85d41802319fa5632e7de63885db714f675fde6ce"
-    sha256 cellar: :any_skip_relocation, monterey:       "647d30bd894bcde289157afddb4346cf2167a5e7c9d0f4124d2c8a0974aec3db"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6d2087f8450ef5ab29f80a50d4f43cef8891f964fec7b34a0a843001c643093a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "650cf86db0766028cb04f8dd5cda3a3852ff82a605e1664ae04f53b6a9caee19"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "473d38c327f172f0016ecbfba0839c19d7285ac22b50db25cc902a2d9834a941"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "333938fb08a6643282ab22b10125bf86c4ed52db3e059b95456827a9b6156d88"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c07f29dc1e375913799b4ed5bb504b6231cf301b707d57636c09ba9eee3d4325"
+    sha256 cellar: :any_skip_relocation, ventura:        "6adafe27c53907437e9ddb9ca2acebc206da84ad4d78a0d2b5c0e0719b9b40f1"
+    sha256 cellar: :any_skip_relocation, monterey:       "29a1b3339744efe190ac1860977f4c7e26a0af8d8054753e2c09b5ec161410f3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "18bd829a0cb8df9a32007d37a82f371049abf142f4b206a092adb526b28409aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4467c2356b441684f3b8296e98a5e604f1bb23060a6bbe0e51f94810d180c2d7"
   end
 
   depends_on "cffi"
@@ -22,6 +23,7 @@ class Moto < Formula
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-packaging"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -115,11 +117,6 @@ class Moto < Formula
   resource "openapi-spec-validator" do
     url "https://files.pythonhosted.org/packages/3f/87/733b5e5ccd80fc28046b3fbe559d54068094261d931a909e880c99bdcfe9/openapi_spec_validator-0.6.0.tar.gz"
     sha256 "68c4c212c88ef14c6b1a591b895bf742c455783c7ebba2507abd7dbc1365a616"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "pathable" do

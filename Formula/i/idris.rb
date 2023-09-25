@@ -17,7 +17,7 @@ class Idris < Formula
   end
 
   # https://github.com/idris-lang/Idris-dev/commit/9c9e936c3d80a6868ab7621f104e34bcc4b0bc9d
-  deprecate! date: "2021-08-21", because: :unmaintained
+  disable! date: "2023-09-24", because: :unmaintained
 
   depends_on "cabal-install" => :build
   depends_on "pkg-config" => :build

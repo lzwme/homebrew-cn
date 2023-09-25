@@ -1,8 +1,13 @@
 class Jam < Formula
   desc "Make-like build tool"
   homepage "https://www.perforce.com/documentation/jam-documentation"
-  url "https://swarm.workshop.perforce.com/projects/perforce_software-jam/download/main/jam-2.6.1.zip"
+  url "https://swarm.workshop.perforce.com/downloads/guest/perforce_software/jam/jam-2.6.1.zip"
   sha256 "72ea48500ad3d61877f7212aa3d673eab2db28d77b874c5a0b9f88decf41cb73"
+  license "Jam"
+
+  livecheck do
+    skip "No longer developed"
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae7aceb6a763b9da9860724b7347f2449f4983c004d3b58bdb21580deeb45482"
@@ -26,6 +31,15 @@ class Jam < Formula
   # deprecate! date: "2021-07-10", because: :unmaintained
 
   conflicts_with "ftjam", because: "both install a `jam` binary"
+
+  # * Ensure <unistd.h> is included on macOS, fixing the following error:
+  #   `make1.c:392:8: error: call to undeclared function 'unlink'`.
+  # * Fix a typo that leads to an undeclared function error:
+  #   `parse.c:102:20: error: call to undeclared function 'yylineno'`
+  patch do
+    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/42252ab3d438f7ada66e83b92bb51a9178d3df10/jam/2.6.1-undeclared_functions.diff"
+    sha256 "d567cbaf3914f38bb8c5017ff01cc40fe85970c34d3ad84dbeda8c893518ffae"
+  end
 
   def install
     system "make", "CC=#{ENV.cc}", "CFLAGS=#{ENV.cflags}", "LOCATE_TARGET=bin"

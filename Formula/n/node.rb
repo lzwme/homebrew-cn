@@ -12,9 +12,11 @@ class Node < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "1bcf2077a58ebdc453b6a12dcc33796854cef4efcd709409b6a7dc1b2e7fabcc"
     sha256 arm64_ventura:  "a278eb1ace9cc5b780a96fc3a3dc5bd7625ec1af61962b4842c702b2260c9aba"
     sha256 arm64_monterey: "b2dd70c05e75a27b8133311479449de63374df016dfa2bbcffb80efed38b8b7d"
     sha256 arm64_big_sur:  "6de9b960e95bfd69dbab17bdc802981209a5ff0558447a757f3ad1484782d2f9"
+    sha256 sonoma:         "acaa4ddb8d0dacbeafa85167ef55edc8aa740f5438ef203bd210f7150f659259"
     sha256 ventura:        "4ca2870c75178c5caaed1f04014b3daea02a3883e9d146c1eb42274e1185b9fa"
     sha256 monterey:       "ece9cf97eac813fa1ae8b8a63891954da1fe1f01c851d77e00009ab67281329f"
     sha256 big_sur:        "da2224b24fe0f834bee0a0d436010395c265ac8f4bd5f4a5729e6179a88042f5"
@@ -55,6 +57,9 @@ class Node < Formula
 
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
+
+    # The new linker crashed during LTO due to high memory usage.
+    ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
 
     # make sure subprocesses spawned by make are using our Python 3
     ENV["PYTHON"] = which("python3.11")

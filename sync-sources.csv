@@ -481,6 +481,7 @@ Homebrew-homebrew-core/Formula/b/black.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/blackbox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/blades.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/blahtexml.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/blake3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/blast.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/blastem.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/blaze.rb, Homebrew/homebrew-core, 0
@@ -2709,7 +2710,7 @@ Homebrew-homebrew-core/Formula/j/jackett.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jadx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jags.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jailkit.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/j/jam.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/j/jam.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/janet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jansson.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jaq.rb, Homebrew/homebrew-core, 1
@@ -7736,6 +7737,7 @@ Homebrew-homebrew-cask/Casks/d/dropdmg.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dropletmanager.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/droplr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dropshare.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/dropshelf.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dropzone.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/drovio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dteoh-devdocs.rb, Homebrew/homebrew-cask, 1

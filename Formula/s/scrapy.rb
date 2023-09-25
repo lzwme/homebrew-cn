@@ -9,21 +9,23 @@ class Scrapy < Formula
   head "https://github.com/scrapy/scrapy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5adc6ed6b641bf73033f4c60711d528dd0e4224e59383095ccc7d321df5c6b3e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "54c19d181e573a30ce6a48782feb2a75c89a1584fe7c81df466ca7f13e082b59"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1863960942cf158852b27dc139781882c628012ee788c6acb53c835d89f24308"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7a4270dc0097452d877d7f50eaa305f41ed02f0f3f738e578ea0f77c38cdbed5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cc57cab6e568cacc1c03839958966de8ab4d03750ef84ee295741b8c7c988cc7"
-    sha256 cellar: :any_skip_relocation, ventura:        "dccb21bb17254130d1f9674443224797db26bae8d29e377a1e76c78353111f6d"
-    sha256 cellar: :any_skip_relocation, monterey:       "e1ee365c32269aa8767c855d3e1a88a080dd03c6163778a354043d49fdc4d15e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8645fb0bf627ec544a66ac947072f089d00aafc195645b27a49ccffbedf393e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2b5ef4809eb1331b9a90e3fe70a1eeb131dd57fbfe0b200a57e7a953c0891e5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4fb3f41d3c2fef67c182e9baefd299d58a5f6c43a12894eef8feb5107d9659f2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "153ef7384f330e18f9f82e712ae53ff631eca7b83118826ea8d1dafed59b7b67"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "177e0dd17ef638fc70115ff722529891381512be6cede628065812ccd0f3c3e5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "25057cfd228a2af7ae2de5021e7fd955358bc5dd700c9d1a423deefcf5c27d37"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9ec11454e1bb0827c06b6132d9631a0fbed0cea4c93d9099c7e4ae6892e172fc"
+    sha256 cellar: :any_skip_relocation, ventura:        "9f4a59bb0dfaee12ef353cc03f133540526b2086e9c630f53ade5f346c499c09"
+    sha256 cellar: :any_skip_relocation, monterey:       "ee2f13039557e00fb3f36f59049469f276ba603d2c02fc8494bf895c5aa1eaad"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2bd5153e794a061ba2e4275c23c963aa3c390c83a1ddf499e845eecbcec0662c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a16c06fdfbe70f10af8016f30f9b9161cc4cb853b075879676272466fe09b21d"
   end
 
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-packaging"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "six"
@@ -95,11 +97,6 @@ class Scrapy < Formula
   resource "lxml" do
     url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
     sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "parsel" do

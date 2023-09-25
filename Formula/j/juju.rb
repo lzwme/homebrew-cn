@@ -16,9 +16,11 @@ class Juju < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1130265f693de69125c75800aeffb53880d5d4b14ed2fed560d070b148bbd37d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f3c3b88d8ccc81cf68d260920a6bf33cccecda42bcc74b3b3f705354e635be74"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "52d1cc141cae792aa9641eb98915f03e0a36ad872cf7ec273dde7f0954a8cdb7"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1b308f8013e9ceb01b3971d75a45799ec5c5909cf4bcad78065b3157beade829"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0a91e1eca674b42291b7ea7e1706a0daa1cece4fa232f528f68edaa28fc55c2c"
     sha256 cellar: :any_skip_relocation, ventura:        "d4ca0097cdd2375a6fdaf5dc829f0722ddfd9e7a3a2ae5ccd707b4f8b7cfe524"
     sha256 cellar: :any_skip_relocation, monterey:       "ca8c60a918d8d1c11a125b77bd0aa568cd7ada7f4a3300a547cd80cab7f7ac6f"
     sha256 cellar: :any_skip_relocation, big_sur:        "8acc6f5631dca298772139362c2f7935162ee442ca5fe71401f3f3d2123a5bc1"
