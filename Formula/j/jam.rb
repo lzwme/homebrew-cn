@@ -10,9 +10,11 @@ class Jam < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "750191fa0660e62dee16dca7e7105fa4cbc783fa3b5dd87bddb727bddcbaa5a3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae7aceb6a763b9da9860724b7347f2449f4983c004d3b58bdb21580deeb45482"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c63b8dd9caebb84eed84bd05412e698106c41dae126fefe7b5c4e713edcf827a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4c203e7cd06975b4a931ef7f79b150f3275c2b875aefc050893e7f7ffab76293"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b40493167fccdb8af709e58449f9ff771cc058e57f0854e3e39703d5a135a981"
     sha256 cellar: :any_skip_relocation, ventura:        "4a163487e3a73e5df99989d796356585e204928634e96c708199f49d68feb864"
     sha256 cellar: :any_skip_relocation, monterey:       "e523ce38232f61b98a93132faba3c61f5a1ef8cfd08d9d650a716d6b6c90daa0"
     sha256 cellar: :any_skip_relocation, big_sur:        "8ec0896e57af05a0d2e6bfdb508e77b2b45d8fcea5baa82f00f5d0a8cf2b75d4"

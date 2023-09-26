@@ -2,9 +2,9 @@ class MinioMc < Formula
   desc "Replacement for ls, cp and other commands for object storage"
   homepage "https://github.com/minio/mc"
   url "https://github.com/minio/mc.git",
-      tag:      "RELEASE.2023-09-20T15-22-31Z",
-      revision: "38b8665e9e8649f98e6162bdb5163172e6ecc187"
-  version "20230920152231"
+      tag:      "RELEASE.2023-09-22T05-07-46Z",
+      revision: "ae05d451739bb8cd35952f7cac0b11f60407cd52"
+  version "20230922050746"
   license "AGPL-3.0-or-later"
   head "https://github.com/minio/mc.git", branch: "master"
 
@@ -17,13 +17,13 @@ class MinioMc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4b218212e733b206a7aceccfd8cccbc6dbab04f4021cd8854bf79ec11881b52"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2b28b839e959665ff5873084dcdbbf60093981d9ceed260a2e956323e435c346"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e65c30800bf520d906bb79901ec21182cc5bd919b2464d179d2f832633e54ce3"
-    sha256 cellar: :any_skip_relocation, ventura:        "3a131ac5729682fedddc3719a3a5f997255b429701719e78860a5a3bc97e005b"
-    sha256 cellar: :any_skip_relocation, monterey:       "6fc1dde46063ef270d497e90646000007100576f9aec52236b4022f54df0bce0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "66f2630a82c4f1b0cf783c55991dbfe2536ae55b1a17b0cc7a5d2402ebfbab8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4642c730b698035561bed8370dacb0dc8eb2a706c3841fe1f8b28fe3add3b673"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4a445cc5df083ad77bebab858c14cd41f9df0d0c10ee86e98e8288d6cf67817f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "130740e457e6f55bad02fb24ee26031f913d816fc9bdc0cf99fd55ba44b16014"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4f58423f583fe9cfdb569bd41d43e17f5667a3d3d0483a0203f8c7885f036f03"
+    sha256 cellar: :any_skip_relocation, ventura:        "424757852637de9bff333304253e91acaea0136d3ce41c3d9365ef67473babe1"
+    sha256 cellar: :any_skip_relocation, monterey:       "8f22729d6a5f14892cdf3fce96ec9ab3c9d3ce623b27ec30bc320bed16c1f67f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0dc132a1871afe2544d2b34084ac87c77ac5ca964469f8d823195ab4f28ee3b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99a48bc22d5915a0adcf25f33f170ee919b2cb4a9eea7f27c1a1ba1447b0be84"
   end
 
   depends_on "go" => :build

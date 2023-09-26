@@ -2,20 +2,18 @@ class Tailscale < Formula
   desc "Easiest, most secure way to use WireGuard and 2FA"
   homepage "https://tailscale.com"
   url "https://github.com/tailscale/tailscale.git",
-      tag:      "v1.48.2",
-      revision: "ab970fe55dcaa38fe9675a948b3c103929d6347e"
+      tag:      "v1.50.0",
+      revision: "a30a7198bee21c331ab9e561fcc4e3ceb88f7044"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cb9ba215ffb130df5e17b75de70c7aa9ac89bb875a99062ec5e577abc6d06f9e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c8d76163a93c9245df71b7ce1c161626c95339f9bc374fc8a62537ab1bb9c2c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ea7ca10464b415f3f7392f154541774811ea955344e27b5cafc6c828846734e7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9359076bb26bc24c75576b920cb4b7699eb0db34aebd63b9f4b047695b60add7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9806d5054e21af47d733af7b03a97d615cc12fd5e572fde3d2898d99eb510471"
-    sha256 cellar: :any_skip_relocation, ventura:        "e73c2e1981bed2268da158b1fe21c1ab5ba6489fb61a8829a4c98282977c1f53"
-    sha256 cellar: :any_skip_relocation, monterey:       "06f3edf409db1186c2e6796c1de42a761da7866b1a333edfc8028bfa4e7a7627"
-    sha256 cellar: :any_skip_relocation, big_sur:        "559a474f9bffad789118f353a68af7e2a48b72069c669f54d19f72739d4f6edb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1071e46e4efecf0481b5670bb81022e93a42e5d1c971a6c25d35d4ec13d79692"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "298b5f4d32bc10c70f28f875693fa98290e7710fda33cb618d9bbf74d848f916"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "74b1e07b6b6fae6f270fb9b5955781382df62ffc6eb39ab087feac6a9fd40ca2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ad7e446b98eb06e723e54628f4acd54ece87311f8bdd1ae61f6e016879ec067a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e14885a5258409b2e7618389529103cf47934f170d2162a179119e18440bd9b9"
+    sha256 cellar: :any_skip_relocation, ventura:        "1b755817fe676ecf8140fdf1ccd2d2b3d166b6770bf21e3f85c658e69a672366"
+    sha256 cellar: :any_skip_relocation, monterey:       "38138ccdeab88307993d3105685bbf451a6aad9f923daacfb784a22e18d40b6d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "30623cf0ce63a61247dd8ac398ad785f6ad83162c008b0c79eb4b12eb27e1040"
   end
 
   depends_on "go" => :build

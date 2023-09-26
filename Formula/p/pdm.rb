@@ -3,19 +3,19 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/0c/1a/5475da7e816fa32e8a94e4df657d8ccb44643257d1d0c307e8e6d420a583/pdm-2.9.2.tar.gz"
-  sha256 "53d37a84a0bd3d5dc9db3e3de19ab120d2dda82ebfcc1e4508ea7be34221181e"
+  url "https://files.pythonhosted.org/packages/58/fd/b081937c283502be42efdf7ae4d7c7f8014c57bd74dbc7f9b629f44d22a2/pdm-2.9.3.tar.gz"
+  sha256 "0b1195b51e9630b5a0b063f27dfcb0120cb6ea284f1a4cd975a3a26f0856d253"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2356bc5417849ce5e7b38d730110444d0538437b76468779d8c0c3e8e0c3001d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "99352d89b5ed46028e7bd5f51d0c810638000b6948b8169a036bc1e6f2b71064"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0f2a1ebcb5ce94b3e4aff90454df715ab32200ceb8bd5bb6b30758199804e9f5"
-    sha256 cellar: :any_skip_relocation, ventura:        "f985f924952dcfc80c97c07aa603803c8fec9165b710080de51942931135d704"
-    sha256 cellar: :any_skip_relocation, monterey:       "15d6d7ffed19a7ff4c8c037819a105cb8f1e9c9d569df8b6f6798b9f7717f746"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c5fdac7a3c0da12740b05638964ecb7df33e0ec33712a9e671ee8b95dd6b7d75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8375998a9a3359b27a48a7e4d5805e6aad03fcd882f1e42dfc010bc91cb45106"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f9575e9fb086318f52d7bb1c20536bcafa0423c11a55e5928ffcbe0d2d8c8e15"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6b7fbbbd3353911164de1ee580e2bca76be3ef8ead2c50e5da15207296a6b894"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2f8e2c40419d0d1695869f545eea29cbcbd6b2ee297065f4761118c4878abbc9"
+    sha256 cellar: :any_skip_relocation, ventura:        "d7e320e2753a87ccb2a0253760926e2a9ba596d1d3dffd15be710345b0c5338b"
+    sha256 cellar: :any_skip_relocation, monterey:       "2dcbe138bdefd307453987887e6d6e31407f1c08c748c09b67b4a6c87bbd3466"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9af45482fb38904ea8fbd0b34ed5033d5678467a3ccea7f7fefa40b373cd74f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "592291128ce1441a12bcac8b2cf3c38aa54b58e924c89674c9316fbe7c6fcadc"
   end
 
   depends_on "pygments"
@@ -43,13 +43,13 @@ class Pdm < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/5a/47/f1f3f5b6da710d5a7178a7f8484d9b86b75ee596fb4fefefb50e8dd2205a/filelock-3.12.3.tar.gz"
-    sha256 "0ecc1dd2ec4672a10c8550a8182f1bd0c0a5088470ecd5a125e45f49472fac3d"
+    url "https://files.pythonhosted.org/packages/d5/71/bb1326535231229dd69a9dd2e338f6f54b2d57bd88fc4a52285c0ab8a5f6/filelock-3.12.4.tar.gz"
+    sha256 "2e6f249f1f3654291606e046b09f1fd5eac39b360664c27f5aad072012f8bcbd"
   end
 
   resource "findpython" do
-    url "https://files.pythonhosted.org/packages/5f/f1/e41623e7952500b0b0a259dcc3c3383800eb97da74772fb8b023464855ca/findpython-0.3.1.tar.gz"
-    sha256 "7621f8a9c199a70d219831cddaeb84ca7e83e20b8358172bff47871a18a5eda4"
+    url "https://files.pythonhosted.org/packages/9f/8b/b58064e28219d08905116692192e34fde978c736c3c4af55dae8d16afa95/findpython-0.4.0.tar.gz"
+    sha256 "18b14d115678da18ae92ee22d7001cc30915ea531053f77010ee05a39680f438"
   end
 
   resource "idna" do
@@ -73,8 +73,8 @@ class Pdm < Formula
   end
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/dc/a1/eba11a0d4b764bc62966a565b470f8c6f38242723ba3057e9b5098678c30/msgpack-1.0.5.tar.gz"
-    sha256 "c075544284eadc5cddc70f4757331d99dcbc16b2bbd4849d15f8aae4cf36d31c"
+    url "https://files.pythonhosted.org/packages/ea/bf/47afb03ba397adced887ccc4adf2e7b7e8c59b220f5a25d6c99bdd03565e/msgpack-1.0.6.tar.gz"
+    sha256 "25d3746da40f3c8c59c3b1d001e49fd2aa17904438f980d9a391370366df001e"
   end
 
   resource "packaging" do
@@ -113,8 +113,8 @@ class Pdm < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/ad/1a/94fe086875350afbd61795c3805e38ef085af466a695db605bcdd34b4c9c/rich-13.5.2.tar.gz"
-    sha256 "fb9d6c0a0f643c99eed3875b5377a184132ba9be4d61516a55273d3554d75a39"
+    url "https://files.pythonhosted.org/packages/1d/d6/9773d48804d085962c4f522db96f6a9ea9bd2e0480b3959a929176d92f01/rich-13.5.3.tar.gz"
+    sha256 "87b43e0543149efa1253f485cd845bb7ee54df16c9617b8a893650ab84b4acb6"
   end
 
   resource "shellingham" do
@@ -133,13 +133,13 @@ class Pdm < Formula
   end
 
   resource "unearth" do
-    url "https://files.pythonhosted.org/packages/d6/fb/366494a04d7331969be6113b043f9a721aaf329bb65db4cafa5c7ebd7951/unearth-0.10.0.tar.gz"
-    sha256 "d5b152a5ab2aa3e5149a11cf7b3ba5c5d493176dca38f66ca8969dadd5a8f645"
+    url "https://files.pythonhosted.org/packages/92/05/9b871e2262113d6b275cf0c57548a1aa15daa1c2fd96b5a308bf23995e81/unearth-0.11.0.tar.gz"
+    sha256 "af20729b398d2f3b839251d745e4f40f23cb09bd6b797e0a6ff6eed46ca70422"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
-    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
+    url "https://files.pythonhosted.org/packages/51/13/62cb4a0af89fdf72db4a0ead8026e724c7f3cbf69706d84a4eff439be853/urllib3-2.0.5.tar.gz"
+    sha256 "13abf37382ea2ce6fb744d4dad67838eec857c9f4f57009891805e0b5e123594"
   end
 
   resource "virtualenv" do

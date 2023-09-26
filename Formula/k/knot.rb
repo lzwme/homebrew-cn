@@ -11,9 +11,11 @@ class Knot < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "9bafa4e70a2de2753091a74cebba75b1ca40789176875cb52150f9685c27700c"
     sha256 arm64_ventura:  "fdab087109be263ecb271d33ab96c24a7e69e323861e6adc67f087a7d1b75f5e"
     sha256 arm64_monterey: "658ae67c5b0a97c88a0a11724876a14699888ba958ee6c64c2d775adcbeb88a0"
     sha256 arm64_big_sur:  "4fc2c4f4e3883a651f3af679e6a752ecc4005f157c7b851db00c90003bbbaa33"
+    sha256 sonoma:         "27cae6a0d5a25563f1cdc8f8b5db488854cd231a691c4d49fb4978145c1ee3ba"
     sha256 ventura:        "a9053be1aaa13108e7b0af12de072db03376ace07d5e9f51883c61a35c311b39"
     sha256 monterey:       "4ea0e015df97eac68fd4512d5ec264754d185968de74c732522a6ce09fe9807c"
     sha256 big_sur:        "28a94bcdcb8cce27e8c3e7d9ff1365ffb824dd8f76389fa107cbbed549301fa6"

@@ -1,21 +1,19 @@
 class Talhelper < Formula
   desc "Configuration helper for talos clusters"
   homepage "https://github.com/budimanjojo/talhelper"
-  url "https://ghproxy.com/https://github.com/budimanjojo/talhelper/archive/refs/tags/v1.12.0.tar.gz"
-  sha256 "0e68c282a54e076adc29f8d8f0821b0d52cc7288302b5af07a6f5365d7af3ffd"
+  url "https://ghproxy.com/https://github.com/budimanjojo/talhelper/archive/refs/tags/v1.13.0.tar.gz"
+  sha256 "33a01584aa8550875eef9376eb8c4bfda5429602b26a5eed0708653f67016f9a"
   license "BSD-3-Clause"
   head "https://github.com/budimanjojo/talhelper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5186538b6e6462d00f54765360fbd703c94675de4a40ec777f7246d0de48c63a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89222ce1059d60203baa678632c38c50c1c9d405ff468e2656da2ab5ae136eba"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c22939c469b839f4fe7726f52a7e35ad10e92bb29bcfced766eb95623fa71ce9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6946e74dbf96530fb947e7abced13b7ebd8df6e7f4c31193e3fa857d4a53c286"
-    sha256 cellar: :any_skip_relocation, sonoma:         "daf675193e2abcc21702c03a86a9ff8f8874fe8ff552ab8f8ec191f55cd936ec"
-    sha256 cellar: :any_skip_relocation, ventura:        "d2684bc20e92cf305780acc5c5e9f746f98b58822d56093d1e3f7a2a3ee869a8"
-    sha256 cellar: :any_skip_relocation, monterey:       "ccdeaf914d5828682b6b231136a6c9e33756e8c386d319bdcc00de73186f2b54"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7edc59ea4b41d6adeb55362f88b48490d6558b82ec0ea466d4c8c870e214b356"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb96b99ecc9cfa050ab3dd53d45aa8958eb4618f8d68f8991a919e4a621eed3c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "22de33ac93fdf555d7ea63ce1c576ba2225dcf85d9fe97ebffeb77ad9104c4ca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "66993c7fb7f0bb71b3afebdf100e2620199e086d11515a91a929431570039198"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "337bc1f362fa032889964e1967bf7879f377ebc272f0519c0ca64766e9bcca79"
+    sha256 cellar: :any_skip_relocation, sonoma:         "605f2dcb61487afe39ce0e1684178591318f186978a909636e91c5997d3022ed"
+    sha256 cellar: :any_skip_relocation, ventura:        "31fc73807a5570330666d64c54fd771a2017354ac80d4eb4acee59789c96ba3f"
+    sha256 cellar: :any_skip_relocation, monterey:       "093ab47e5b14fa0bdff83f02ff7ab916b175691c68b3d5a91f7480dd7f565094"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cccc0f17f5d8df02fd2d32b8b98a38663e09e0ffbd8f899b9b934d570ff9188a"
   end
 
   depends_on "go" => :build

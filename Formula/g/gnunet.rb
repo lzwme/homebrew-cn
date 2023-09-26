@@ -7,9 +7,11 @@ class Gnunet < Formula
   license "AGPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "d89d3de6ce37b653142678e5a08bbcc457521fa2220f7b7c40bfc6851fa9829f"
     sha256 cellar: :any,                 arm64_ventura:  "81fc020cce9c1a070db69e8b9f9ac433a8cecee206a6f9e1170910deed10a48b"
     sha256 cellar: :any,                 arm64_monterey: "22bd3ec3ee2b752e6f68fb2bb6968f3c03bc8170d2e3106c3b073ecf7cc17fbc"
     sha256 cellar: :any,                 arm64_big_sur:  "4149465b6dea58fe81d6137dd34b8be0694b76c2edb7aefe30a29e5d924f67d6"
+    sha256 cellar: :any,                 sonoma:         "6c5ae81c5b931c95d8e0dda90dca72cbfd15dcb5681eba19b24ea407a5ad870c"
     sha256 cellar: :any,                 ventura:        "879feb9a82281ef9f84ecce2b396adad09f5fe33f960b02d3e04b91a218e2e5e"
     sha256 cellar: :any,                 monterey:       "6dcde89d85af48fdfcedc86ba96d813cc07900f21a093b59ac0312b79c8eb182"
     sha256 cellar: :any,                 big_sur:        "185248d135529c2b82059bcec8af98f4d25f0eaeb7274ebc052bb7708a69b437"

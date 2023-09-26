@@ -4284,6 +4284,7 @@ Homebrew-homebrew-core/Formula/n/nudoku.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nuget.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/num-utils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/numactl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/numbat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/numcpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/numdiff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/numpy.rb, Homebrew/homebrew-core, 0
@@ -5005,6 +5006,7 @@ Homebrew-homebrew-core/Formula/p/pywhat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyyaml.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/q.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qalculate-gtk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/q/qalculate-qt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qbe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qbs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qca.rb, Homebrew/homebrew-core, 0
@@ -5699,6 +5701,7 @@ Homebrew-homebrew-core/Formula/s/sqlmap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlpage.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlparse.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sqls.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sqlsmith.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlx-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqoop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sqsmover.rb, Homebrew/homebrew-core, 1
@@ -6411,7 +6414,7 @@ Homebrew-homebrew-core/Formula/v/vvenc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/w-calc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/w3m.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wabt.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/w/waffle.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/waffle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wagyu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wait_on.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wakatime-cli.rb, Homebrew/homebrew-core, 0
@@ -7582,7 +7585,6 @@ Homebrew-homebrew-cask/Casks/d/datazenit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/datovka.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/datweatherdoe.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/davmail.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/d/day-o.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/db-browser-for-sqlite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dbeaver-community.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dbeaver-enterprise.rb, Homebrew/homebrew-cask, 0
@@ -9165,6 +9167,7 @@ Homebrew-homebrew-cask/Casks/m/musictube.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mutedeck.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mutespotifyads.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mutesync.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/muyu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/muzzle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mweb-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mx-power-gadget.rb, Homebrew/homebrew-cask, 0

@@ -12,17 +12,19 @@ class MongodbAtlasCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8adb611ac09f5f493d5c513141b8453b11596e942fe9ff41fb6598efd6a4b662"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6dd5dfd3af9278143b5854ccfcef2bdbc56870058654803dff7aaf212d54d86d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8b00234242e8ebc888397c56bd0f2bea5b8e6af5cd4f43491b2f31c4c6c09e53"
-    sha256 cellar: :any_skip_relocation, ventura:        "734de9647bcbab303a038790f53ea3d197ca2e4e2a942a140c9b932d87c096e8"
-    sha256 cellar: :any_skip_relocation, monterey:       "34cc32e4e9bc15ef9543e31a0c8d11a0459aa0d421da491c9c0ce54793c69f50"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cd1d8e0efac0aaeaebcdb102446fbe6e8156c4d0921d8f8c7079caebf3f95d81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba3fe8fa519b09a49271f723bff5b68e5e4470c890d1c6ffe4fb9c32ed7aa06f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d89846f5ae215963c38e7b5520f4751374ce2ea086dcb5acfec71925356feaa0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "636b8e606d69a15dbc57ccf493a154a38cb02b366b9f290f109d0fc4cf87933a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d84a9c803cab442b276772ad00f18ebd4f4a95f617c4759535e4830640e7a41b"
+    sha256 cellar: :any_skip_relocation, ventura:        "20f59898d8f0393f80fe968ace0df42bfa73638ce94d3e3f025162283ff9ddb5"
+    sha256 cellar: :any_skip_relocation, monterey:       "bee58d8705a42b4696b379e7f0ecf430ab9884f8bad7c48705aec88feeef5c76"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0fd1d78f60c79ade2228825acc4f98fca8c4922dfbafc90cd6b64c0a16079191"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3d0477213bca536d72bbbd8aabd4213d1276da6c33b6f3e1e01402a203a9a02"
   end
 
   depends_on "go" => :build
   depends_on "mongosh"
+  depends_on "podman"
 
   def install
     with_env(

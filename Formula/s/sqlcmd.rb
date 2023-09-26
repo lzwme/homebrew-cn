@@ -11,9 +11,11 @@ class Sqlcmd < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f9c84f748be179755f010bc1956886ef5304e0eb6195f2ad9a06367e412f8806"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a4c9823d564b8b033ddd8b01f06a669625019c6dc399fb30e9d32805574ab167"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "dbd59e90fffb35a63d3abe0271b966c03e4a784664b1b15ffbf9c446c73019db"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4513217092698fc0ed4c7adc6f9e207ee74a42beec33b4d8ab57e5c369a03bbb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7ef42e38d8ee65c1c4d2cd71e2ccdbd0d4b35c0ff33ea59109218fef5cbdfdae"
     sha256 cellar: :any_skip_relocation, ventura:        "d3627c405d4c550e6548e31bc863a0a57670dd4bb0c79ccaafd5f09afedcc8ce"
     sha256 cellar: :any_skip_relocation, monterey:       "e5162b747dc00dc136e95ed48bdc600e95fb34eeab4b822a74d0eda60468b947"
     sha256 cellar: :any_skip_relocation, big_sur:        "3e1edf24cb8ff391d4394c378a9b27666606983beb994575761b3de4559daea8"

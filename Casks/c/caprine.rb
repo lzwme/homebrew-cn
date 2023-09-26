@@ -1,9 +1,9 @@
 cask "caprine" do
-  arch arm: "-arm64", intel: ""
+  arch arm: "-arm64"
 
-  version "2.58.1"
-  sha256 arm:   "945a69300fb6c3fd09474fe38c80a427ea6a7d96bb590a37cf3791bbd8232550",
-         intel: "6afa13a8333673b52870a9a9a58a8c5e6788873f232b770b5630c86340604bb6"
+  version "2.58.3"
+  sha256 arm:   "f444aa499b438c2a015dc48a1b39495f0c7bf04a2754facf153306118cfe0810",
+         intel: "e8cc766644f685d9da495b7684a30c57dc5ceeb60f1456f1723eaf6fce288d85"
 
   url "https://ghproxy.com/https://github.com/sindresorhus/caprine/releases/download/v#{version}/Caprine-#{version}#{arch}.dmg"
   name "Caprine"

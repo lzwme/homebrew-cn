@@ -3,18 +3,18 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/a4/93/d403122c76bf9d28d1f1afe5a02e2c93e6487f08fe344d42db249d6dad19/dvc-3.22.0.tar.gz"
-  sha256 "870748efdf810836bbe4d4f525954a43768ce844802031348d8ab06d4b18baf0"
+  url "https://files.pythonhosted.org/packages/ae/78/78d6da405fc8f570bb13c0b3210fcbbb81d7aceb03675f74fc563e1a1e9e/dvc-3.22.1.tar.gz"
+  sha256 "f90428bcce0068f58ba884d9da1520210aae13a979d74bf55eba9f6cc1c498e7"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e183f61d9f2bd74a7858b88ab3bb2a4e24de648208ab7fd6e25b0936de08209c"
-    sha256 cellar: :any,                 arm64_monterey: "27b4947e4daf32dd04c110e0ea95785498e90e21f80a2b8928372a6942f45a46"
-    sha256 cellar: :any,                 arm64_big_sur:  "b45eece9ea2ff594be3eaa01b9ab5c5bdc4e8f17edbb5e13aa35329faef85840"
-    sha256 cellar: :any,                 ventura:        "a3267a67badfc9e9ccfb7d7ccb191645202dfc5a945a29770bf0cdc281e404c7"
-    sha256 cellar: :any,                 monterey:       "9a71b3dc7b88ccc6419e9888a971a768e112b64a3b8d888fe634c9793d871a18"
-    sha256 cellar: :any,                 big_sur:        "0a4f5afbcb5fcb42aa98868f8cc13ea73d4bd194c1ed7cb347861d464ade3a52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "651e743ab98973bc19e449fdc0b51f4a98d668876e4932c1871f1294da22b124"
+    sha256 cellar: :any,                 arm64_ventura:  "2083da4895f7d95aab3efa2afb0cdf49c16ae19f6cd71aff574a9e880c377223"
+    sha256 cellar: :any,                 arm64_monterey: "59e344fd45b202e931f56d397fbcd92eaf1f78e2f85f4a8c9ba58085b6271b84"
+    sha256 cellar: :any,                 arm64_big_sur:  "33558114abb4f4d2fbfa2e2dece116fe60905112f44e5f251f230dc46708e7e8"
+    sha256 cellar: :any,                 ventura:        "c51f4f2f1f7f9e999a806174d51a2c9be44261d40d5979093d7f6cf4c1f82f7c"
+    sha256 cellar: :any,                 monterey:       "199fe5a0498d61d8075a385ae86b0ed4d057b792ebfdbf1561b56cd10fa7313d"
+    sha256 cellar: :any,                 big_sur:        "a9e70b47e1002dfc73713130a2c9031ddea8cef486f0e0cccd6e95ae03d3a8b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99caa2ffce67e886162f9ab0f9a350f8a968ce848df3a7dfa26c6e18444a2099"
   end
 
   depends_on "openjdk" => :build # for hydra-core
@@ -253,8 +253,8 @@ class Dvc < Formula
   end
 
   resource "dvc-data" do
-    url "https://files.pythonhosted.org/packages/0d/94/f39d33134fcb6d980a904078605bc2e96397bbd5a3147ffb598da5dfa63b/dvc-data-2.16.1.tar.gz"
-    sha256 "b9aac503eab6edc14038c2039ee7e71d3ccf04d82e11b5e25804dc2790355805"
+    url "https://files.pythonhosted.org/packages/5b/c7/981503c3c5e66c386d88f16ab42f441a04d222cb6a6882d73b1fc1bdee27/dvc-data-2.16.3.tar.gz"
+    sha256 "637a680c8595ce1a03082f1abfcf3f9b570258c111c43836c0e3f082b6e12a87"
   end
 
   resource "dvc-gdrive" do
@@ -363,8 +363,8 @@ class Dvc < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/a7/bc/4970a84934f8783cbd7851703531742977aa6fb77a2128401e5ba3c5989f/GitPython-3.1.36.tar.gz"
-    sha256 "4bb0c2a6995e85064140d31a33289aa5dce80133a23d36fcd372d716c54d3ebf"
+    url "https://files.pythonhosted.org/packages/c6/33/5e633d3a8b3dbec3696415960ed30f6718ed04ef423ce0fbc6512a92fa9a/GitPython-3.1.37.tar.gz"
+    sha256 "f9b9ddc0761c125d5780eab2d64be4873fc6817c2899cbcb34b02344bdc7bc54"
   end
 
   resource "google-api-core" do
@@ -373,8 +373,8 @@ class Dvc < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/08/fb/a3d059b3ddd8b40bde15f10cb6d90986955b9ff2f91f8e8c7dacc2f14148/google-api-python-client-2.99.0.tar.gz"
-    sha256 "e733fd0f2c8793b1a000d5e69ac81b1b9ec0665b445b7ed83bdbbb0038973306"
+    url "https://files.pythonhosted.org/packages/46/bb/698f5d2168dde75dab70aea53321d0cccf015b6ceb2083523c240863fa24/google-api-python-client-2.100.0.tar.gz"
+    sha256 "eaed50efc2f8a4027dcca8fd0037f4b1b03b8093efc84ce3cb6c75bfc79a7e31"
   end
 
   resource "google-auth" do
@@ -398,8 +398,8 @@ class Dvc < Formula
   end
 
   resource "google-cloud-storage" do
-    url "https://files.pythonhosted.org/packages/6b/20/51e9676cc112ec7344c0a8690361175dc1f41ed6edf618eae8af87d92a49/google-cloud-storage-2.10.0.tar.gz"
-    sha256 "934b31ead5f3994e5360f9ff5750982c5b6b11604dc072bc452c25965e076dc7"
+    url "https://files.pythonhosted.org/packages/50/a5/6c9a105eabe77deeb313cbf1d13c2cda4444af7298e17d3ab350a0e5cfb9/google-cloud-storage-2.11.0.tar.gz"
+    sha256 "6fbf62659b83c8f3a0a743af0d661d2046c97c3a5bfb587c4662c4bc68de3e31"
   end
 
   resource "google-crc32c" do

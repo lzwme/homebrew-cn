@@ -22,6 +22,7 @@ class Bind < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "4c63777a9a6b02c0039a4e7a30bc243857aa2eb2b6b03511564e45d8a4acff9a"
     sha256 arm64_ventura:  "3fa17ded26484ce26cc1a177626a6261fd743ee5296b633a493e5477a1391fd0"
     sha256 arm64_monterey: "4d69cad398a9e34b631dff611feaa591ec76859ad61ed9cd5547b8e32848a9b9"
     sha256 arm64_big_sur:  "068666a3a07e259d410854fb723132a42bef4dd9a94a70cc323895af632a4eb1"

@@ -6,9 +6,11 @@ class Libsoup < Formula
   license "LGPL-2.0-or-later"
 
   bottle do
+    sha256 arm64_sonoma:   "c3ade9e20bf3ea03797a318d07ef8fc8206c6b6847252068f97949e24b230828"
     sha256 arm64_ventura:  "bbd63967797a9e2cb8e6bf2ded17e4ceca55ecdc2f0081b36e98ec7d4d9ea6be"
     sha256 arm64_monterey: "fde5a1b7198294423a38b7dc3315f94a23e809f050aa2a2b78378f1a35de7684"
     sha256 arm64_big_sur:  "1ed93a0e32c9a10583123991e26fb25d62bd6b6d695d8efd72f289bdd62655c4"
+    sha256 sonoma:         "11176fcfd4a989c00771a6fed73792aaf0af9fe6a42c17f09206fdbd461e074a"
     sha256 ventura:        "49f11b9e9da31be090fd8d93cdc644fe481fe9de01fc4d8722f1774d8a195f19"
     sha256 monterey:       "f88bb6ed28ef15bafdefaf8fd24cfb03ff7bac2509596d0f2b51adf15233cd12"
     sha256 big_sur:        "a42d3dbe8e4a21e9e04c084f616dce7fcdbab0b313c5a602991228e55e7994f7"
