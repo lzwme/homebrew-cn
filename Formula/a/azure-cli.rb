@@ -3,10 +3,9 @@ class AzureCli < Formula
 
   desc "Microsoft Azure CLI 2.0"
   homepage "https://docs.microsoft.com/cli/azure/overview"
-  url "https://ghproxy.com/https://github.com/Azure/azure-cli/archive/azure-cli-2.52.0.tar.gz"
-  sha256 "1381c2057ec3454efb680ced4e9d1525ab5418b3a0441193c305403b1e5b1893"
+  url "https://ghproxy.com/https://github.com/Azure/azure-cli/archive/azure-cli-2.53.0.tar.gz"
+  sha256 "8076c55a6c6327879b973a1906f4ad45928004292ece5d696fc5855e92e1aeb2"
   license "MIT"
-  revision 1
   head "https://github.com/Azure/azure-cli.git", branch: "dev"
 
   livecheck do
@@ -16,15 +15,13 @@ class AzureCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2ae594535225f7ba35a3f083b22226101e2dd64eaed06826cdd8dd05beec055d"
-    sha256 cellar: :any,                 arm64_ventura:  "adb08ae8fff8c761c3a942c8445a4c476903d0b6e5ddd5b0df19cffee9150371"
-    sha256 cellar: :any,                 arm64_monterey: "b120a038501eba0dba56bab5b6f985c3d60a8cc6bcb419e9f64f053bc57a4b5c"
-    sha256 cellar: :any,                 arm64_big_sur:  "7d93177359ab0c90577aaf49886a22cbff22386b4669530542f5552acfa0860f"
-    sha256 cellar: :any,                 sonoma:         "a1614d6a51f93a076b9676fc2d0c1acff85ea0ccf4fd95e402e09c0564a4223a"
-    sha256 cellar: :any,                 ventura:        "1d8f0fcaa11e479d0b941941b84393bd178f41b8603de60bab255645f20b430c"
-    sha256 cellar: :any,                 monterey:       "9f78bc985b0f7464547d4cb5298c5fc539f58a32aa9efa41aadad1e5c2285f62"
-    sha256 cellar: :any,                 big_sur:        "6afe040deb434a3ad43043a730e4beaf50df80606d82a637f29f314573819310"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f8bc941b2cca17887758501afe516b6f3afe0360b1b4de0f8071e630f356762"
+    sha256 cellar: :any,                 arm64_sonoma:   "a3d09b2b057a132b832fe5eda69ea987189b55b5c976c87b27a42073c20100d4"
+    sha256 cellar: :any,                 arm64_ventura:  "166d5f49911be6551a8ff948a20cbbfada59cac0e8aa44b77d644ff70a13535e"
+    sha256 cellar: :any,                 arm64_monterey: "2d815b1e9cf31d96304c493196a8edf92026af70f368483540eb74c33aabada5"
+    sha256 cellar: :any,                 sonoma:         "422ce59279b0964a39c22086ae262994486d1f0af03dac8d508428b18337dc9c"
+    sha256 cellar: :any,                 ventura:        "76d18647d5f2453ace9f1dceabfc1bb401fa94c22b8300a455f3ec7b201d3000"
+    sha256 cellar: :any,                 monterey:       "c3cf5b2d649ff7956e551c1f2e3e32acead40cc53029d8e9367e4df013e4b0c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31fdc1ed412509e1917a0e55d0e1ecc124ff4bacc4c1ce665b099f93a500fa86"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -350,8 +347,8 @@ class AzureCli < Formula
   end
 
   resource "azure-mgmt-netapp" do
-    url "https://files.pythonhosted.org/packages/ee/bd/82e8ee14fa61db2ef53aafb8f5b31efcc7748cae851f5c0567afb1903a2d/azure-mgmt-netapp-10.0.0.zip"
-    sha256 "f7e717b18f10af976cf65630dfd76e59d72a9ba4144de7506e39fcc7acc9a321"
+    url "https://files.pythonhosted.org/packages/0f/f2/074f7ddf5e62b5853b88483fcdc5bd5acb12ae16d98aa910c8e57132f1f3/azure-mgmt-netapp-10.1.0.zip"
+    sha256 "7898964ce0a4d82efd268b64bbd6ca96edef53a1fcd34e215ab5fe87be8c8d03"
   end
 
   resource "azure-mgmt-nspkg" do
@@ -375,13 +372,13 @@ class AzureCli < Formula
   end
 
   resource "azure-mgmt-recoveryservices" do
-    url "https://files.pythonhosted.org/packages/70/e1/f6d04b1128f655ef4451c8b3bd977fc185c6cb866e3bf4d31ce79c8f5530/azure-mgmt-recoveryservices-2.4.0.zip"
-    sha256 "d8978ebed371c7a677018e0623d7c144a6cc718547b1bae193c0bee6de5e7a59"
+    url "https://files.pythonhosted.org/packages/ac/d8/24320755875f749066e1f504667abdb75b20dd3b6332df8304c5fb175b3e/azure-mgmt-recoveryservices-2.5.0.tar.gz"
+    sha256 "5f1a308c4858c79b83ff8bd8e61192092bdc6ab99d6dd73963618b1dc884bab5"
   end
 
   resource "azure-mgmt-recoveryservicesbackup" do
-    url "https://files.pythonhosted.org/packages/38/3a/9e604acfe62dbd2af81ee3f2562da0bb86685843f5e2c33e6503d5ad43f0/azure-mgmt-recoveryservicesbackup-6.0.0.zip"
-    sha256 "9481188bf8ef17da586e71fe7255337d4d1f131958f9d6688c8c9946d4cb421f"
+    url "https://files.pythonhosted.org/packages/1c/26/acece583c6a4626631df7b0c572b786620961407e635ff8937e0197b11d7/azure-mgmt-recoveryservicesbackup-7.0.0.tar.gz"
+    sha256 "1ae5bac7c24674179dcb0ba6e1f0c043caf06d553d520416807ac5a89e94cfd0"
   end
 
   resource "azure-mgmt-redhatopenshift" do
@@ -585,8 +582,8 @@ class AzureCli < Formula
   end
 
   resource "msal" do
-    url "https://files.pythonhosted.org/packages/21/a0/c6004afb301469ce4dc9a7381aada4b8ddeab3f0e9e59437ff96aac3428d/msal-1.24.0b1.tar.gz"
-    sha256 "cdee42a97fa6f171f83541022f64a0353f445d5e304bfd0380ee573031e8fd4a"
+    url "https://files.pythonhosted.org/packages/e1/e3/29efa5525198ecd4e1de11b24ab54670e9483510cc001e9121863debe533/msal-1.24.0b2.tar.gz"
+    sha256 "a0e6e3f1b099ed29a39e167e83a069ab84d9a7712627f72950030b56791b7cbc"
   end
 
   resource "msal-extensions" do
@@ -659,6 +656,11 @@ class AzureCli < Formula
     sha256 "276f931f55a452e7dea69c7173e984eb2a4407ce413c918aa34b55f82f9b8bac"
   end
 
+  resource "pycomposefile" do
+    url "https://files.pythonhosted.org/packages/a6/29/58e6dddddf8f76af870365be52532d84ad40b469a317b39e9c0f087fa214/pycomposefile-0.0.30.tar.gz"
+    sha256 "190a2920ef05f86e620f3e0d1761931c2a57a38baa2877472337df69c8a1ca53"
+  end
+
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/ad/99/5b2e99737edeb28c71bcbec5b5dda19d0d9ef3ca3e92e3e925e7c0bb364c/python-dateutil-2.8.0.tar.gz"
     sha256 "c89805f6f4d64db21ed966fda138f8a5ed7a4fdbc1a8ee329ce1b74e3c74da9e"
@@ -705,8 +707,8 @@ class AzureCli < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/3c/8b/0111dd7d6c1478bf83baa1cab85c686426c7a6274119aceb2bd9d35395ad/typing_extensions-4.7.1.tar.gz"
-    sha256 "b75ddc264f0ba5615db7ba217daeb99701ad295353c45f9e95963337ceeeffb2"
+    url "https://files.pythonhosted.org/packages/1f/7a/8b94bb016069caa12fc9f587b28080ac33b4fbb8ca369b98bc0a4828543e/typing_extensions-4.8.0.tar.gz"
+    sha256 "df8e4339e9cb77357558cbdbceca33c303714cf861d1eef15e1070055ae8b7ef"
   end
 
   resource "urllib3" do

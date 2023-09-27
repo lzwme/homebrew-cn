@@ -9,13 +9,14 @@ class ApacheArrow < Formula
   head "https://github.com/apache/arrow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "a27a6aa8371e49b6f06bb115489531abdf2ce3fa5f5aad892d8b317b15fe4297"
-    sha256 cellar: :any, arm64_monterey: "589078884d6f22d6d98749d3147a037bc80d8ee2527b04d2c0cdbe1da5934116"
-    sha256 cellar: :any, arm64_big_sur:  "d319a3a73ffe22b0c7c62b99e6a70a000b35fd8a13fc984e8e681d776468aa32"
-    sha256 cellar: :any, ventura:        "10931ae12e4a2bcff1caca63b59469ca16e333af0ee414820336150c904d77b6"
-    sha256 cellar: :any, monterey:       "d86fdd75b9712907a77157e6689691af1f7eb42145e2a8845a3d5cae326584bb"
-    sha256 cellar: :any, big_sur:        "1135b9b798b0c245932350283b849ac71704d37433fe31aef863077d9727ce5d"
-    sha256               x86_64_linux:   "5d841bb40f44ca4131e9e3129b64fbb59042c1224f008e94f723e218e28482f3"
+    rebuild 1
+    sha256 cellar: :any, arm64_sonoma:   "f3b954b3af84c3e984e2a9b5f95a3f0ca98ab48f1262782d7068af14b068e557"
+    sha256 cellar: :any, arm64_ventura:  "dcef7b28b3cbd3ca240b6c53cd9f764e5be8400fbb82fa56399d5d66e5661e34"
+    sha256 cellar: :any, arm64_monterey: "48545780490f3e5487862f889e035351d8d982cd23d44506db6b43caeefe894e"
+    sha256 cellar: :any, sonoma:         "b7ac6afda41ba35a4498722d8d27b32610c473db6488b9b61daa9f21302de464"
+    sha256 cellar: :any, ventura:        "98175deb2d7c783b53af559a989479659466fbcbb22e530f67a4dbf6451e7a9b"
+    sha256 cellar: :any, monterey:       "d26bc149bbdc4e07a4e721d680178ac762bcf6a97e2cd720f0c44e8e52f53f86"
+    sha256               x86_64_linux:   "dcef6cead3cf7f92ee73ce40fa2c853960beb9040bc2020adb096b20c89cdbec"
   end
 
   depends_on "boost" => :build
@@ -42,6 +43,10 @@ class ApacheArrow < Formula
   def install
     # https://github.com/Homebrew/homebrew-core/issues/76537
     ENV.runtime_cpu_detection if Hardware::CPU.intel?
+
+    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
+    # libunwind due to it being present in a library search path.
+    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm@15"].opt_lib
 
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}

@@ -23,9 +23,11 @@ class Macvim < Formula
   end
 
   bottle do
+    sha256 cellar: :any, arm64_sonoma:   "5fe2f1421519b418162f9c80a28043324b00db7f8e4f6be1183f98609500c976"
     sha256 cellar: :any, arm64_ventura:  "39198d211ef17ef7427dbd3cf5eb17355c74410c0dc3c1f5bebcfd490e4ea899"
     sha256 cellar: :any, arm64_monterey: "77b14d1113a7cd0623d94688269dbe32a3f9db1b307cfe5d8a5464b4e7233236"
     sha256 cellar: :any, arm64_big_sur:  "b5d51585a49add837e26d5edb4a635b2272aaa7741d6b052cf8b7299be04f58d"
+    sha256 cellar: :any, sonoma:         "b0081c21d415a56f1ba165ee3f647c3e4776936fe5d7f3ee14d42177b43b126a"
     sha256 cellar: :any, ventura:        "7bc997af23083f89dc87f4e19fc3fa14cb39b702a5d21ce44cd892c949ad8698"
     sha256 cellar: :any, monterey:       "6334b9b0857174284f17ab0e59ae4d5c474a7148659bc344233e27273062ae8d"
     sha256 cellar: :any, big_sur:        "06c134ecd9e882386167e7e2e0f852df420cac357e9f6c25d45668234fc3788b"

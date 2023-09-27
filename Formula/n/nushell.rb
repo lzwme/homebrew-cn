@@ -13,9 +13,11 @@ class Nushell < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "7d5f3ebfc9eb49e0c7655f0b4ccde9315483f22dbef80b3a524bb94258d8f8a6"
     sha256 cellar: :any,                 arm64_ventura:  "b473a1f6e806247f01afe3c907c514ffef96db7a16a28d1f4870f4fd7dee42ee"
     sha256 cellar: :any,                 arm64_monterey: "8e17bd501d26b77daa3dd1b4910f2a5759705b4f11326eb8f4f4bece7679c738"
     sha256 cellar: :any,                 arm64_big_sur:  "343dcb2b288eefc9710f52562e36e5de740051c9898d5b5d61d62266a30f59d1"
+    sha256 cellar: :any,                 sonoma:         "16d21d5b1b93ebb330146f0ecef6876c1a44551cbc446e59b22dddcd39ca6877"
     sha256 cellar: :any,                 ventura:        "b80decf0eb340e468f011943d2d4cc5bdaebc1786bb7f9e333fea73f98bdaeb6"
     sha256 cellar: :any,                 monterey:       "fbe4773018c4458639cef9229f662f3182da100ce204ca4a4b48afdfe0fb732b"
     sha256 cellar: :any,                 big_sur:        "5580df6b5e68efefded9eca82782f95e76d99b4d28f049f3360a5a26ebc53717"

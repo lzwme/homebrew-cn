@@ -6,9 +6,11 @@ class Grpcurl < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f39c9cbc93767fdc0d4582c393421f5d5a4355c4c1460c1ef902f1ebf4291717"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "73aa020887bbfd505d1d9cd74fb30d83f696b00dbbff462ce186f18e02017b2d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c483a82109e8e90c88df75803ecd52aa816850085d7d87cad01fc88cac011538"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "33423e62a521007067f8a0cdd2ba3f6047dc5e77c251b3c90036911359b90e35"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fc774ec6b2cd6a06fb7ec559264fd1da07465cfac30a80c1f8ba995d4d89beb2"
     sha256 cellar: :any_skip_relocation, ventura:        "d07c310be5bdfd492647f696c7dd4f8816054c2d5f1bb90f185702be031d1b59"
     sha256 cellar: :any_skip_relocation, monterey:       "e279d0a8384f3cc69b8b9605472e5d53e332181aab280ded64d722754b1eb0c4"
     sha256 cellar: :any_skip_relocation, big_sur:        "6c09776cc6061c824cbe167adc3099ee3a6df1991d495f5c2060cc9ee1da47f7"

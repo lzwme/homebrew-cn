@@ -7,9 +7,11 @@ class Cppcheck < Formula
   head "https://github.com/danmar/cppcheck.git", branch: "main"
 
   bottle do
+    sha256 arm64_sonoma:   "f9d1dcdc375c36d065912a3ae7901a9e46c95450129f7dcd019448e550460cac"
     sha256 arm64_ventura:  "f858f3e680730de9f02559dbd8b384dcb099c35d73d3213b079c89703d219e4b"
     sha256 arm64_monterey: "fb562470a72bddd43b8ae2ecabbbdcd052620db07bdaedd28ca5812427d81c6b"
     sha256 arm64_big_sur:  "50fb12f5e4202ec2fd5e644bb5cfcd32f294c946631217c42818cde35bae4f2e"
+    sha256 sonoma:         "050b65351bf0947ee96d2fa0e49f9b295cbab8a228da1198ea3ef6efe198ec39"
     sha256 ventura:        "e0257bc44282a5636a1ee2fb8c3cd5f9fafa9703bca57671887b0e21b1c05b85"
     sha256 monterey:       "c28d5b9303673fc6792db4f2db482ee5f628d34b8fc9eb0ea4611f725ba4bbcc"
     sha256 big_sur:        "183c3de3d7059aec1b6fa7e4b146e4b454f89a7d89b5e61959b12c887ae80ec3"

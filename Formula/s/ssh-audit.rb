@@ -9,9 +9,11 @@ class SshAudit < Formula
   head "https://github.com/jtesta/ssh-audit.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "07ca3ad26792c0eccd135ee1b787266779d59eb7b9c3ed338e9d96931fb8a05f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fb4fd261558f1fb8f307cea851bdbdecdb6295a63d1691bd11842103abfd01d7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6668313ad849f96455062174f3162d348a6d09d6468e50bc4dc9e8b0f4e6cae5"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e296c8b437dc7e428b7da859d148bd41be3eb78f8a5b1f6cb754c8b583f0468a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "135a6e0b060394058afdf1bd4f7b4672e7d86335c60d7aa728056db5760f80cc"
     sha256 cellar: :any_skip_relocation, ventura:        "d03c6cfd9412cf6dd4eb2a2117e2ebc355bcf714eee37c9b123232ef51c35310"
     sha256 cellar: :any_skip_relocation, monterey:       "432ba13cea83291598afdfd4d7b9b29e403c681ea840447dd19d06989f331fc7"
     sha256 cellar: :any_skip_relocation, big_sur:        "d862c06ac3f070241f6a58bf69e6dec5e532c63ad5912223aa138bab551d9dac"

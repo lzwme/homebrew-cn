@@ -5,7 +5,7 @@ class Freetds < Formula
 
   stable do
     url "https://www.freetds.org/files/stable/freetds-1.4.tar.bz2", using: :homebrew_curl
-    sha256 "1dd62979822d46ca67635bf7114f84255016b49bd9e262f254067455238dbb70"
+    sha256 "35cb55743c5c2e0b579caf180eebb5cb4a65155b7c7aa3428c1b6b5d3cc291f4"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -20,13 +20,14 @@ class Freetds < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "c105510de006140baa9d8d93a82ef0c912606593d233c7c19d8d40d57b9a2b07"
-    sha256 arm64_monterey: "fed0a6634348e3b524ed890f7acc62d3344d15380e7d37ce6ef8becc9f8cc2fa"
-    sha256 arm64_big_sur:  "673225850da65966c97e49ed1c2f989c230009de31b75011203fa0594eebcdf4"
-    sha256 ventura:        "5a1434ca4ae5317bcfbdff6d81293fcc388357a0008b686ea0aa705187290130"
-    sha256 monterey:       "e3abd13b0815f94139d6bd6c4311ffdc7a15c312ffda6c98c61dce37d4fefbe7"
-    sha256 big_sur:        "4046a8377984cbcaf73bafaeba1b99e9b04fb0e883817fcdb9374f634b2593d5"
-    sha256 x86_64_linux:   "7ce29c59f8a798f8854fe072c815c096247a3064f0236643ec243e97945f24e9"
+    rebuild 1
+    sha256 arm64_sonoma:   "678f903de89b18bcb772dcb11a831fce4ed888453c38c366fb998b4fd87e1407"
+    sha256 arm64_ventura:  "73a6ecfd16ce5dc98992cdd85668363a4dbe83730cb5fb03ae12d276387d8985"
+    sha256 arm64_monterey: "7f10873e41bba6b15e0e60fb8341801eecfdca01dad974fbc5d5a01b8985d96f"
+    sha256 sonoma:         "bf11d3da7d30bfb79977d053fbfd098e97f4bd28eb7113168886333fea75227e"
+    sha256 ventura:        "8481f3e35bf0162e472d06712c77d8ccd1a8ace6d18e51b2d5ef391f15c859ac"
+    sha256 monterey:       "37169f967145ec7c9192a9a5c952eaefc9e2af7a072a7fa95e5046b2faf00379"
+    sha256 x86_64_linux:   "f05d44c14c92f001650cfaaa4b0eee26e176af33cd47d495e00ffd87ec3b38fc"
   end
 
   head do

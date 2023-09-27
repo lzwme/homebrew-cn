@@ -24,17 +24,22 @@ class Srecord < Formula
   depends_on "libtool" => :build
   depends_on "libgcrypt"
 
-  on_system :linux, macos: :ventura_or_newer do
+  on_sonoma :or_newer do
+    depends_on "ghostscript" => :build # for ps2pdf
+  end
+
+  on_ventura :or_newer do
     depends_on "groff" => :build
   end
 
   on_linux do
     depends_on "ghostscript" => :build # for ps2pdf
+    depends_on "groff" => :build
   end
 
   # Use macOS's pstopdf
   patch do
-    on_macos do
+    on_ventura :or_older do
       url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9/srecord/1.64.patch"
       sha256 "140e032d0ffe921c94b19145e5904538233423ab7dc03a9c3c90bf434de4dd03"
     end

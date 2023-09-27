@@ -10,9 +10,11 @@ class Sshuttle < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dacd0f4e37f44b50a95e33ff749a15a635cc2879714684d9d8a2284168d66769"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "90c2823e56ebaeb8b25636b88c882d9345d04e55af0d83269a09a952c459e111"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "90c2823e56ebaeb8b25636b88c882d9345d04e55af0d83269a09a952c459e111"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "90c2823e56ebaeb8b25636b88c882d9345d04e55af0d83269a09a952c459e111"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2a836262d62a1edd98f20e2fff11d9eab09ad42f55d488e490d5a2225d8ad733"
     sha256 cellar: :any_skip_relocation, ventura:        "180b62b05fd0d2134dc57648bd830cd52ccb2cf169ccfd7f8224c58dd7597b22"
     sha256 cellar: :any_skip_relocation, monterey:       "180b62b05fd0d2134dc57648bd830cd52ccb2cf169ccfd7f8224c58dd7597b22"
     sha256 cellar: :any_skip_relocation, big_sur:        "180b62b05fd0d2134dc57648bd830cd52ccb2cf169ccfd7f8224c58dd7597b22"

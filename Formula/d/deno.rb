@@ -7,13 +7,14 @@ class Deno < Formula
   head "https://github.com/denoland/deno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b63f109675b48efccbad515777b859fa70a10ecd4aaf21354b9d015ad4c9f0df"
-    sha256 cellar: :any,                 arm64_monterey: "69a66dc124190ccd02f1816fb9b0443371712f4560dde84a390fd28d94d9cc3b"
-    sha256 cellar: :any,                 arm64_big_sur:  "84d1427f4bed792589d0602f508696307596a53a3ef7b5f601e64aff510ee7d2"
-    sha256 cellar: :any,                 ventura:        "fe4a1ccf0cf8bd4e828622d0a2f439fdfb4a322a7d8e5e25751f51ff411dd79d"
-    sha256 cellar: :any,                 monterey:       "6a50965e06f76c558c829cdfe6da3f564388dcbfe63041768873be95f495bdb9"
-    sha256 cellar: :any,                 big_sur:        "1a7d7863d4b1d7eca0d90c1782e68c6a01af1bc9a800d3c4112a8900f211d0fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78b9e61fbdb5ec9704947203afcc2d6cbe7383a49ab2e61c9cbea13bd3e95236"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "64281cc1ca11d4ad2139aa2f08a1aa07ba831a05882128003ee2544a765efd6e"
+    sha256 cellar: :any,                 arm64_ventura:  "5803cc1e3225f7840846d6aae48bce8af3d76a7f4fc3fd98d770b87ae137de47"
+    sha256 cellar: :any,                 arm64_monterey: "a6b3ba2a10a3b81afdcb59eb96b24452935bfa6cfd97345c7183a744b5f6688b"
+    sha256 cellar: :any,                 sonoma:         "1826bbe821dfd262f61456b0f1a1d126f1b810ebdf8338541f6a44005c329ee0"
+    sha256 cellar: :any,                 ventura:        "7a42ff9f63d95720278179d98becb4870634be012b2304af08f2523e5b3459b0"
+    sha256 cellar: :any,                 monterey:       "82de81e1edcc27a5c882722679bd0d81bbba35a77963a3a8d9c3785ba140eb1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db9b88bcabe9e314d7fd604448456d76ba375623925c232190b327cd431bc90a"
   end
 
   depends_on "cmake" => :build
@@ -114,6 +115,10 @@ class Deno < Formula
     ENV["V8_FROM_SOURCE"] = "1"
     # Build with llvm and link against system libc++ (no runtime dep)
     ENV["CLANG_BASE_PATH"] = Formula["llvm"].prefix
+
+    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
+    # libunwind due to it being present in a library search path.
+    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
 
     resource("gn").stage buildpath/"gn"
     cd "gn" do

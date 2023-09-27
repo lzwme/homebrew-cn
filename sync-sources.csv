@@ -643,6 +643,7 @@ Homebrew-homebrew-core/Formula/c/canfigger.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cap-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/capnp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/capstone.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/caracal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-about.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-all-features.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-audit.rb, Homebrew/homebrew-core, 1
@@ -1716,7 +1717,7 @@ Homebrew-homebrew-core/Formula/f/fizmo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fizsh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fizz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flac.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/f/flac123.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/flac123.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flactag.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flagd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flake.rb, Homebrew/homebrew-core, 0
@@ -1961,6 +1962,7 @@ Homebrew-homebrew-core/Formula/g/gffread.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gflags.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gfold.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gforth.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/ggshield.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/ghc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@8.10.rb, Homebrew/homebrew-core, 0
@@ -5891,7 +5893,7 @@ Homebrew-homebrew-core/Formula/t/tarsnapper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tart.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/task-spooler.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/task.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/taskd.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/taskd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/taskell.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tasksh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/taskwarrior-tui.rb, Homebrew/homebrew-core, 1
@@ -10678,7 +10680,6 @@ Homebrew-homebrew-cask/Casks/u/ubar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/ubersicht.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/ubiquiti-unifi-controller.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/ubports-installer.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/u/udeler.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/udig.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/ueli.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/uhk-agent.rb, Homebrew/homebrew-cask, 1
@@ -13383,6 +13384,7 @@ Homebrew-homebrew-cask-versions/Casks/tor-browser-alpha.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask-versions/Casks/tower2.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/transmission-nightly.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/transmit4.rb, Homebrew/homebrew-cask-versions, 0
+Homebrew-homebrew-cask-versions/Casks/tsh13.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/tunnelblick-beta.rb, Homebrew/homebrew-cask-versions, 1
 Homebrew-homebrew-cask-versions/Casks/typora-dev.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/utm-beta.rb, Homebrew/homebrew-cask-versions, 1

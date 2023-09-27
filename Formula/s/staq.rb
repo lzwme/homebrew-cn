@@ -6,9 +6,11 @@ class Staq < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6e7dc6ff5724cab2e6e050d6c40ea9af4ba93fb3fd2dd00f73fa6cdae05dc2f7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "dc455153c9bb1e2c1ab2735549595c8038bc81c1dc199d3954ccd6b17c033eaa"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "50531c8d02ad552eac013e4db68af439ba8c96e5bd030454bb5dc72cfadc9c22"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fade095b71096ad7edf92cf8db82669c798ccd6ce782602f56d0ca354ba1af59"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a224bcd3bfe54444919f1eb418432c2a7aae805ecd41e9e8aae0c6e0d761cb26"
     sha256 cellar: :any_skip_relocation, ventura:        "eee004d9964a81988665a1fecb3083f74309c293a38fd0fe1bda36343f6492bd"
     sha256 cellar: :any_skip_relocation, monterey:       "ced86c03bc0db24e1f0b9d22812898010ba9154929f85ccf8dcb14ae2e77d901"
     sha256 cellar: :any_skip_relocation, big_sur:        "34c82144382e8dc438a39e64941ae14dee0e41926d6c69fb254144f33deeec7d"

@@ -1,8 +1,8 @@
 class Zabbix < Formula
   desc "Availability and monitoring solution"
   homepage "https://www.zabbix.com/"
-  url "https://cdn.zabbix.com/zabbix/sources/stable/6.4/zabbix-6.4.6.tar.gz"
-  sha256 "4e432f8a87d8a6cfa3366457c4165c3c6b045b03b781c46eac17cf96c98bb933"
+  url "https://cdn.zabbix.com/zabbix/sources/stable/6.4/zabbix-6.4.7.tar.gz"
+  sha256 "6b4e81f07de4c82c7994871bea51be4d6427683fa9a7fbe112fd7559b3670e49"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
   head "https://github.com/zabbix/zabbix.git", branch: "master"
 
@@ -12,15 +12,13 @@ class Zabbix < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "32b725d14ee83a37c96e66837b8ad339c152348885fff311c1b42476a4037477"
-    sha256 arm64_ventura:  "d0b3f3c1b294e9f18e9eae604e5f0f8a41b2562e1e281528483f87fde5de3639"
-    sha256 arm64_monterey: "f1e330f62084cdd0a747f377c50c6f6891c9d8bb87b6734b11addc53cfdcec6b"
-    sha256 arm64_big_sur:  "c0fb1a45331262b4c334ae0bf220bcc65500767ae12469e1723b187b891f26a3"
-    sha256 sonoma:         "5ee01be322313a73f0bc89adfd624737e4adf21f3f525dcbbf3b1e06632627ac"
-    sha256 ventura:        "b0ae12e20bbf686252b8023f2aef94d8e41eb46fd977f5821b458158dfc1877e"
-    sha256 monterey:       "147b3ecbceb0aafda0268a8eb374148ff515554558994b9fbc295c0f972864e5"
-    sha256 big_sur:        "f5b4f08de25a73efb90feec364515f9cf92ea4eecefcfdb6cc02d526a325892f"
-    sha256 x86_64_linux:   "b7d32d54f9ce783f6c4592ab08f8e138b7fff4a8f9d4a66f7c5ced34a5d93acc"
+    sha256 arm64_sonoma:   "d16638cdb1dc6a5c43dff3e6ca4521ce420de54406b86c78ebc938728555b207"
+    sha256 arm64_ventura:  "50a5b6bd5a36abd9cd2fab4cf6ab185663196f6d1efe99890c1fad16492c8f75"
+    sha256 arm64_monterey: "e994dc8c290c727cff1563a668a8a84cc719359ef85b2effef27af33b6c64269"
+    sha256 sonoma:         "c3b408c7e9d65b985870a4d06dd82fcaca0f96403bce1838dbef9f080dba149f"
+    sha256 ventura:        "9d4d741cc312367870a9f40ee4af6db418470477b9107b5e577c3d6a92202ab1"
+    sha256 monterey:       "de845b6ed584f4739ef96b1d43f1133c812d659273913e852c0cc42d9c7e10c7"
+    sha256 x86_64_linux:   "2ecdb25cbfbe9f593feec7f831399c879f261a59352243cea60b734f0ca3822e"
   end
 
   depends_on "pkg-config" => :build

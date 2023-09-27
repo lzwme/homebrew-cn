@@ -3,8 +3,8 @@ class Pnpm < Formula
 
   desc "Fast, disk space efficient package manager"
   homepage "https://pnpm.io/"
-  url "https://registry.npmjs.org/pnpm/-/pnpm-8.7.6.tgz"
-  sha256 "c95869d443ed8fd6b7bb164bb8e89b56cabdc24f3c79b87ef68d8ae1c6b1d0e2"
+  url "https://registry.npmjs.org/pnpm/-/pnpm-8.8.0.tgz"
+  sha256 "d713a5750e41c3660d1e090608c7f607ad00d1dd5ba9b6552b5f390bf37924e9"
   license "MIT"
 
   livecheck do
@@ -13,15 +13,13 @@ class Pnpm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9c1be30a455f6bef2d96fe6215f527c33aa9b2e080e4f4c99da4696b308d1770"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c1be30a455f6bef2d96fe6215f527c33aa9b2e080e4f4c99da4696b308d1770"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c1be30a455f6bef2d96fe6215f527c33aa9b2e080e4f4c99da4696b308d1770"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9c1be30a455f6bef2d96fe6215f527c33aa9b2e080e4f4c99da4696b308d1770"
-    sha256 cellar: :any_skip_relocation, sonoma:         "03b9ff712ec76351c91346b90ae74a6da1de342765c485e2271944cffe357576"
-    sha256 cellar: :any_skip_relocation, ventura:        "03b9ff712ec76351c91346b90ae74a6da1de342765c485e2271944cffe357576"
-    sha256 cellar: :any_skip_relocation, monterey:       "03b9ff712ec76351c91346b90ae74a6da1de342765c485e2271944cffe357576"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ddd20679488445df2d841c8f9e8214c2663df150c672e91ef86f4dc78fc13c86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c1be30a455f6bef2d96fe6215f527c33aa9b2e080e4f4c99da4696b308d1770"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9677d2dc4e1aef473ef6f4fd0a002707fdf4ca97084946f849a093cd2dfd54ac"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9677d2dc4e1aef473ef6f4fd0a002707fdf4ca97084946f849a093cd2dfd54ac"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9677d2dc4e1aef473ef6f4fd0a002707fdf4ca97084946f849a093cd2dfd54ac"
+    sha256 cellar: :any_skip_relocation, sonoma:         "da5585f04a37c153ce69ebb86ef0031b896036c968c4a1f09ae549b9ecca6fca"
+    sha256 cellar: :any_skip_relocation, ventura:        "da5585f04a37c153ce69ebb86ef0031b896036c968c4a1f09ae549b9ecca6fca"
+    sha256 cellar: :any_skip_relocation, monterey:       "da5585f04a37c153ce69ebb86ef0031b896036c968c4a1f09ae549b9ecca6fca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9677d2dc4e1aef473ef6f4fd0a002707fdf4ca97084946f849a093cd2dfd54ac"
   end
 
   depends_on "node" => :test

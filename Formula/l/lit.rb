@@ -3,21 +3,18 @@ class Lit < Formula
 
   desc "Portable tool for LLVM- and Clang-style test suites"
   homepage "https://llvm.org"
-  url "https://files.pythonhosted.org/packages/bf/fa/0b75c53253ebf3ab566be702a9da16f5783862d8c1ae404c907a8830f283/lit-16.0.6.tar.gz"
-  sha256 "84623c9c23b6b14763d637f4e63e6b721b3446ada40bf7001d8fee70b8e77a9a"
+  url "https://files.pythonhosted.org/packages/ef/99/419ecd996ca10eed06ea7ba68923c19168c2b373dccba0ecc6645d94cf47/lit-17.0.1.tar.gz"
+  sha256 "44867ae576b5790567b120bc3f0d9f021dac9424d1b0840c75acd85f4610ac04"
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e347898a96fb8de90877ca4f45a4eaf554006c03de0443d6a7993bb8dd988dd9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "298d8a706d5d6bba84af7dddbbc272105e7a5df96b6b10808180af27e447c73c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "abe1ece83d737b1bdf63cbff18a5821c55657eaa7dd4759a2eb0e361e86a1f7c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "85c02bb81a6cbd4d8542012918ede1038ebd85dea50e880b322c580aae32f564"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d3afdd7509816b993991559846acd77c6b6479b57128a8c15c5f4c4c155450e0"
-    sha256 cellar: :any_skip_relocation, ventura:        "d2e9f12e4bd6dd82571197e9c93d1c5b6d227c3f27209fe325c9375256cfc0b2"
-    sha256 cellar: :any_skip_relocation, monterey:       "0918b34b39e86dac41c5b548aafc8b11ec6292bd3b448ed4298e5008541bf874"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1740d9638df0c84fb1396c0019a3a0f11177474a20d6d75bfdcf28f5cdfa3118"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ee9c28173ee2079211cf6c353aa0aa036b23d8c662f3cff2cc20c975b749f06"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e1aff4c1a6b4df27ab95ba949efdd9feb4616c80603ad0c67f14ca3cc43196b4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "09bf34c6d1af3de8bfd273ac7ebb5ef7a3683796f85aa948b618bfb39f0f1bd2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "665005ef2943c33d34a7af05275929057fefcf6ad5d2f70c3a8aa5155276ed3c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d8ef146f38179292d78b27aea2f1a6e1e44ea5cbea2da4acd7fecf9405094b87"
+    sha256 cellar: :any_skip_relocation, ventura:        "a3d9d72ebcb60db7d955a121b6881074d68c389ec810ac373c72c0f0fbdb6a4e"
+    sha256 cellar: :any_skip_relocation, monterey:       "9cc62332b00c6ec96a599345858a90f847b76fac7d9c2ef95f38d5bb9b65b56d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6af08c0c655ba9bd6c074422bd2805552819aa850e60d682a58fa6d9283ce6d"
   end
 
   depends_on "llvm" => :test

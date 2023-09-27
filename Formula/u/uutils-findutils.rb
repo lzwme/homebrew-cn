@@ -7,14 +7,14 @@ class UutilsFindutils < Formula
   head "https://github.com/uutils/findutils.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "b2d4ebf4a5d4079307a9194c0de2f97365866c810361d494ac89dd44e8854e77"
-    sha256 cellar: :any,                 arm64_monterey: "1d12336e8576070509a6934ec3392ae7e6721ecff4078c42304fa9beb6ac3bb7"
-    sha256 cellar: :any,                 arm64_big_sur:  "821c3aa45921a61bd90ba37824fbe4744ae05aac7306e8a73f1b1f345b5098f1"
-    sha256 cellar: :any,                 ventura:        "b3b25561744df530c87603c7e77144945bc49405862818739307bd190d8f0e88"
-    sha256 cellar: :any,                 monterey:       "8fe723a29bf22921d4ff4cc899cc3d59d6b62ab56963d6bc125d2b0ac16fef29"
-    sha256 cellar: :any,                 big_sur:        "9017c63a62a1db58789b5e169ba7fb1b7fd2a4d29ef2bb890d475915e3d02a53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a03fc5f016bd6c98e2ec90889ecc2cb55d89e4bfc146c10fb746411f4b5341c2"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "c9b20a92a27ec6e59d85ea2c7504c7b6b742a8fbce18584add667691bd8ed3a7"
+    sha256 cellar: :any,                 arm64_ventura:  "8be60da1dbce8c62f921e9906b76a9f3384b0f6e7d912a26afd633ac694889a2"
+    sha256 cellar: :any,                 arm64_monterey: "a6a59cb7c7e765c4df4135ddcd8766f676e70d5c08dc004f744e598bfba3481f"
+    sha256 cellar: :any,                 sonoma:         "9b65bda73278dfffcb6977d9e5771bb0134050937b1b181bcee4a2308817e9d2"
+    sha256 cellar: :any,                 ventura:        "a3bc5fead8a81e9c9cf771ac931f204b4fa258be83a14ffd3648c9e5267784e5"
+    sha256 cellar: :any,                 monterey:       "ca68615f9cdca938f9a3d45833207603fd8a2fc9217c86fe0e79857e00c6ed8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c81b5f592d7e87310bbf175f5890e0e18a0177d2c819447021576bf8691f22a6"
   end
 
   # Use `llvm@15` to work around build failure with Clang 16 described in
@@ -41,6 +41,10 @@ class UutilsFindutils < Formula
       odie "`bindgen` crate is updated to 0.62.0 or newer! Please remove " \
            'this check and try switching to `uses_from_macos "llvm" => :build`.'
     end
+
+    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
+    # libunwind due to it being present in a library search path.
+    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm@15"].opt_lib
 
     ENV["LIBCLANG_PATH"] = Formula["llvm@15"].opt_lib.to_s
     ENV["RUSTONIG_DYNAMIC_LIBONIG"] = "1"

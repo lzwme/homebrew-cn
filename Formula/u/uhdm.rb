@@ -3,21 +3,19 @@ class Uhdm < Formula
 
   desc "Universal Hardware Data Model, modeling of the SystemVerilog Object Model"
   homepage "https://github.com/chipsalliance/UHDM"
-  url "https://ghproxy.com/https://github.com/chipsalliance/UHDM/archive/refs/tags/v1.74.tar.gz"
-  sha256 "92cefa641610457772c91d45864e3f4d65bfa0bf300886dc3067a561358a8eed"
+  url "https://ghproxy.com/https://github.com/chipsalliance/UHDM/archive/refs/tags/v1.75.tar.gz"
+  sha256 "7dcb999a6b04b1abe40d40db25e6269470313c09804ce8285cc450c2f0bcd446"
   license "Apache-2.0"
   head "https://github.com/chipsalliance/UHDM.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "340e4a506f527c159e00afeabdf1b7f4f731a071d560550d898e179b3cf1827d"
-    sha256 cellar: :any,                 arm64_ventura:  "603fcfd30bdb29e75ded1156f152364ffea6df466afece5c49b294cefe8675ae"
-    sha256 cellar: :any,                 arm64_monterey: "7fd82d12d05fae2cfea5dff5b0fb81f0019efbb680b066eacf10126219cb3634"
-    sha256 cellar: :any,                 arm64_big_sur:  "791a84a9622356e0575021473756bd3eb1deb14b1c33304227e4a9b575c63904"
-    sha256 cellar: :any,                 sonoma:         "73c98ed56abe037b7ef19b2362e77cfe3b760d3d4cfe4d7f28b5ebf64b3195fe"
-    sha256 cellar: :any,                 ventura:        "5b1146c774ede11adc43259efe9846f477faa80fe7b0cd5ec6132b97038527e1"
-    sha256 cellar: :any,                 monterey:       "430e489576fa08f114332a90be1c09bc39031e7dc5908637f309ebea2fc69096"
-    sha256 cellar: :any,                 big_sur:        "96f6edbfb623b7b03bcbc8e9477d29b0b542a5ebf97f876d9104952ca1e5dc5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4bb22de79f1b6978db5017ff3f2b9efaed408b86cd61d2e5cdcce0f49a1517f5"
+    sha256 cellar: :any,                 arm64_sonoma:   "a82d03b201bded54960c022e616ed3c44dfd937a8d9f2182fc7e9fc785b56286"
+    sha256 cellar: :any,                 arm64_ventura:  "6782fbef862b157140c0b732cc4d262ca6a7fce39a2776134cf325f9f534cc90"
+    sha256 cellar: :any,                 arm64_monterey: "62eb446dbc78114b04c821253aaac41ce889d1ba864f0bedae15498b51274e9e"
+    sha256 cellar: :any,                 sonoma:         "e594b4f586c771f43fdd5b00c7902da52fa5932e94185b8c6472032a0d76cc5c"
+    sha256 cellar: :any,                 ventura:        "9776099fa953829d9393f90ef62cd4bc1a7ea67e28b64999e6363ace2ab93f20"
+    sha256 cellar: :any,                 monterey:       "3b77d76a019c0d12849d153a47a125ba6b98f528670838468c365e2d9d4a0758"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "504d025c6cbd09635dd51d9405721b6fedc13a50ee79656c1a2829df2715692f"
   end
 
   depends_on "cmake" => :build
@@ -46,10 +44,6 @@ class Uhdm < Formula
       "-DPython3_EXECUTABLE=#{buildpath}/venv/bin/python", *std_cmake_args
     system "cmake", "--build", "build_shared"
     system "cmake", "--install", "build_shared"
-
-    # moving to share
-    # https://github.com/chipsalliance/UHDM/pull/1013
-    rm lib/"UHDM.capnp"
   end
 
   test do

@@ -20,6 +20,9 @@ class Libbpg < Formula
     sha256 cellar: :any, catalina:       "f7d21d83158c5122b604bbe9641014628257dbc754fdc66ebf2ffc237bdd9893"
   end
 
+  # Test fails, email sent to upstream on Aug 2023, no response
+  deprecate! date: "2023-09-26", because: :unmaintained
+
   depends_on "cmake" => :build
   depends_on "yasm" => :build
   depends_on "jpeg-turbo"

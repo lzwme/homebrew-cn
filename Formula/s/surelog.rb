@@ -3,19 +3,19 @@ class Surelog < Formula
 
   desc "SystemVerilog Pre-processor, parser, elaborator, UHDM compiler"
   homepage "https://github.com/chipsalliance/Surelog"
-  url "https://ghproxy.com/https://github.com/chipsalliance/Surelog/archive/refs/tags/v1.74.tar.gz"
-  sha256 "0fb8d6e55ed3189ecb9aa3e33616d5b4b92f91fa25ff2e4415e1ee661d75fa88"
+  url "https://ghproxy.com/https://github.com/chipsalliance/Surelog/archive/refs/tags/v1.75.tar.gz"
+  sha256 "4e6c44392dea7fba7bfc082459ab60458e91def59f3cdf0eccdad229d572829d"
   license "Apache-2.0"
   head "https://github.com/chipsalliance/Surelog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "2815c9dc77e307fd8e074c359c9dcc9a8b73750da31c9a02c4ebc9decd19368d"
-    sha256 cellar: :any,                 arm64_monterey: "8cb72c3a4b6760a636992e26cdfa288905de25d295b00ff3bd6fede8d8cdcf2b"
-    sha256 cellar: :any,                 arm64_big_sur:  "bcb2b836d9e990ede654e6852e855a9f1cb481b5edda27b24bb16065a0bced94"
-    sha256 cellar: :any,                 ventura:        "6098ca48b2524e6aff517a9ae877d65417a8ea33e393b6590e883e4806c13ddc"
-    sha256 cellar: :any,                 monterey:       "a351929ab584d8bda2cc5d77fae50c597bcc9db68432203a3421f6d94fb6ef37"
-    sha256 cellar: :any,                 big_sur:        "4b45bdcd7d15ef0b4ad3af6092c5ba26fd389330efadf19a50a2e8b9b1ab1fa6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "883735da2c198ca50c5b8adccd5d82eecd59aaae1da3f59a4cc164e473f08c7d"
+    sha256 cellar: :any,                 arm64_sonoma:   "8096bab7a03a58c654a3f597202a79243f275fc849b407f0a5d2cf50baeb7dd4"
+    sha256 cellar: :any,                 arm64_ventura:  "a1738d56876ce4763e30b1e81c8abb4c65b807428eae594d5ba5a301fc2a2870"
+    sha256 cellar: :any,                 arm64_monterey: "eecf48acf8bfc72b271222833de5112813af406dc267aea29f93ee176103a2ce"
+    sha256 cellar: :any,                 sonoma:         "1c6f32005f0b8ff9e650c22d757106dc64fb29356e3977d2d57e2a527a9c2ec3"
+    sha256 cellar: :any,                 ventura:        "28e638affcff8e462569db119cb31b4ca893bc0cb0f1222ecd92180cfd2ce04e"
+    sha256 cellar: :any,                 monterey:       "11cc6b994c38974bd865c3a3cb57a0ee5d7cbf48b99f8460ce19e71c9e6df8c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab40d6534df4e6a8a382d2f95c53b9f958f7d41ce298aa06954cca7568f4e3b7"
   end
 
   depends_on "antlr" => :build
@@ -55,15 +55,10 @@ class Surelog < Formula
       "-DGTEST_MAIN_LIBRARY=unused",
       "-DANTLR_JAR_LOCATION=#{Formula["antlr"].opt_prefix}/antlr-#{Formula["antlr"].version}-complete.jar",
       "-DSURELOG_WITH_ZLIB=ON",
-      "-DCMAKE_INSTALL_RPATH=#{rpath}/surelog",
+      "-DCMAKE_INSTALL_RPATH=#{rpath}",
       "-DPython3_EXECUTABLE=#{buildpath}/venv/bin/python", *std_cmake_args
     system "cmake", "--build", "build_shared"
     system "cmake", "--install", "build_shared"
-
-    if OS.linux?
-      # https://github.com/chipsalliance/Surelog/pull/3828
-      ln_s lib/"surelog/libsurelog.so", lib
-    end
   end
 
   test do

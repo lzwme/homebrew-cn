@@ -7,9 +7,11 @@ class Putty < Formula
   head "https://git.tartarus.org/simon/putty.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d3e41862005254ae9af35bc2470db8f03c096f9d7ad41d03ee6c39a0505632ad"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ea44fd2f1e5e45aeb12d4c1b1538ca7fb4c41524d05c6e0999070f5ff40fed98"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6fae9d89bbf462789f4146ea555e6384174fcb1d99cbeb3f66c6786299cb374c"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d55a3b006c5854daf0ff821293458660fc298f9d72e7f7f0065fac637f7b19c1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c9ef2373d66fa0434da953f83d2b54b4cc3b77ecf12c7fde394e8f5235e9384b"
     sha256 cellar: :any_skip_relocation, ventura:        "aaae6300920f3da24bf2713ad8be57ae3f12b585d4b3f0499c3226a97c039455"
     sha256 cellar: :any_skip_relocation, monterey:       "470befc911fc9d3fb454efe342418fa6ed1dca736a498de0ae909a3faab0a79f"
     sha256 cellar: :any_skip_relocation, big_sur:        "b35b6e0ca90d4aa5fea2e473e3c2f17be6f16b3edcc2cb1e037bc8c240bd2b7b"

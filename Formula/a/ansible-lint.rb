@@ -8,9 +8,11 @@ class AnsibleLint < Formula
   license all_of: ["MIT", "GPL-3.0-or-later"]
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "56799256a79ee368c629202c89b4a9a52bd63495539f249ab9ca248cd2102910"
     sha256 cellar: :any,                 arm64_ventura:  "b38a9aee4c3dfa68b53b7598093010cf8e671e29ea2cf2356ebd16080fc31f3b"
     sha256 cellar: :any,                 arm64_monterey: "8905b050d055b6e06ac300ec38daec2fdcef03a9bf3ca3faa09bcf7eadd5baf2"
     sha256 cellar: :any,                 arm64_big_sur:  "77fae3c900fc3fb2587d9b352c4e695baae83109a25108a0121a253674d44d93"
+    sha256 cellar: :any,                 sonoma:         "a595b5c4015899a72f754ff3d89a93e6287ef93714fa4f9d4275177da981bb13"
     sha256 cellar: :any,                 ventura:        "a43bede02ba6a0ea812cc0c4dca4bf3271b6d582ba8293c50df1b150df89abe1"
     sha256 cellar: :any,                 monterey:       "819cb23a1a8619822286ea94c82c69678d8a1878d48988400fecf02a974986d1"
     sha256 cellar: :any,                 big_sur:        "1afb95eda5067e8d539d5c01ab627de948640f3969edbfe291744292510205fb"

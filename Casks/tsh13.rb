@@ -1,19 +1,19 @@
-cask "tsh" do
-  version "14.0.0"
-  sha256 "5222d60d691e2830bf7b89fcdf0eb6fc70122719509c4a2d011b34f64dd055c2"
+cask "tsh13" do
+  version "13.4.0"
+  sha256 "4d6d27492bf7ddf6a5ef3482dee404a9dfc060b3f06a161dca4d9a2471d57b63"
 
   url "https://cdn.teleport.dev/tsh-#{version}.pkg",
       verified: "cdn.teleport.dev/"
-  name "Teleport TSH"
+  name "Teleport TSH (v13)"
   desc "SSH server for teams managing distributed infrastructure"
   homepage "https://goteleport.com/"
 
   livecheck do
     url "https://goteleport.com/download/"
-    regex(/tsh[._-]v?(\d+(?:\.\d+)+)\.pkg/i)
+    regex(/tsh[._-]v?(13(?:\.\d+)+)\.pkg/i)
   end
 
-  conflicts_with cask:    "homebrew/cask-versions/tsh13",
+  conflicts_with cask:    "tsh",
                  formula: "teleport"
 
   pkg "tsh-#{version}.pkg"

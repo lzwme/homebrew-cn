@@ -1,8 +1,8 @@
 class Jenkins < Formula
   desc "Extendable open source continuous integration server"
   homepage "https://www.jenkins.io/"
-  url "https://get.jenkins.io/war/2.424/jenkins.war"
-  sha256 "592b7be5d6d7bf3a6028ffaa0c71b4f5b887cd1e659f9f97fecbbe4d2d4843cc"
+  url "https://get.jenkins.io/war/2.425/jenkins.war"
+  sha256 "5f338373e018e08032b97db2dfedc365e6dc35bd98aeacf00d73dc141c5a75af"
   license "MIT"
 
   livecheck do
@@ -11,15 +11,13 @@ class Jenkins < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bc2b127cfe05e9ab74644299ef307dda51b22c6900a87e03e4f4a4ecd664c902"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc2b127cfe05e9ab74644299ef307dda51b22c6900a87e03e4f4a4ecd664c902"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc2b127cfe05e9ab74644299ef307dda51b22c6900a87e03e4f4a4ecd664c902"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bc2b127cfe05e9ab74644299ef307dda51b22c6900a87e03e4f4a4ecd664c902"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bc2b127cfe05e9ab74644299ef307dda51b22c6900a87e03e4f4a4ecd664c902"
-    sha256 cellar: :any_skip_relocation, ventura:        "bc2b127cfe05e9ab74644299ef307dda51b22c6900a87e03e4f4a4ecd664c902"
-    sha256 cellar: :any_skip_relocation, monterey:       "bc2b127cfe05e9ab74644299ef307dda51b22c6900a87e03e4f4a4ecd664c902"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bc2b127cfe05e9ab74644299ef307dda51b22c6900a87e03e4f4a4ecd664c902"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f01728655dd4eedd3e9ad92765ac10a6f02ca79ba78371c270031787630d9e02"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b7e612240652fd5863d0dd8d0f5153d58eee247a37d205e07bff7fa83e6241f1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7e612240652fd5863d0dd8d0f5153d58eee247a37d205e07bff7fa83e6241f1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b7e612240652fd5863d0dd8d0f5153d58eee247a37d205e07bff7fa83e6241f1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b7e612240652fd5863d0dd8d0f5153d58eee247a37d205e07bff7fa83e6241f1"
+    sha256 cellar: :any_skip_relocation, ventura:        "b7e612240652fd5863d0dd8d0f5153d58eee247a37d205e07bff7fa83e6241f1"
+    sha256 cellar: :any_skip_relocation, monterey:       "b7e612240652fd5863d0dd8d0f5153d58eee247a37d205e07bff7fa83e6241f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0897a042e656d5586d813d23e6a042803e3a188e49236078bf4f6b00bb8f9e4f"
   end
 
   head do

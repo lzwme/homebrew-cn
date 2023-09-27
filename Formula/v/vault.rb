@@ -19,6 +19,7 @@ class Vault < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ff27ada531fcea473f8ccddf9d36fcd89e966e040396425e12c0dfb2fe21afc7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3086e3905538354b33c4911f384cfd7bbfd359739a4a8b84d165ae3ac18420c9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4880824d6d5cd662a005c7232c789037ecbfb4dcb838981a5237365f5ea5afd7"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a670d63e3d73729bac35261c9ac536b8aa70374a1c31c6a93bf97a7680722be4"

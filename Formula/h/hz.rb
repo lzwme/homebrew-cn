@@ -1,8 +1,8 @@
 class Hz < Formula
   desc "Golang HTTP framework for microservices"
   homepage "https://github.com/cloudwego/hertz"
-  url "https://ghproxy.com/https://github.com/cloudwego/hertz/archive/refs/tags/cmd/hz/v0.6.7.tar.gz"
-  sha256 "8c2427d6f3e2f326094b793f7f368267dce8a58c7e0d29356d4bfef84a0255e3"
+  url "https://ghproxy.com/https://github.com/cloudwego/hertz/archive/refs/tags/cmd/hz/v0.7.0.tar.gz"
+  sha256 "7719ca66324510b9134b90003d3892e5ef54447859ace01213b9c4b327975ce9"
   license "Apache-2.0"
   head "https://github.com/cloudwego/hertz.git", branch: "develop"
 
@@ -12,13 +12,13 @@ class Hz < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc1f60475c7ead9bd19e98cf41c4f3ca14ae792bdee8515b5bc81502121a297c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cfa6e9f1b244afab8759fc6e97c7f227370a52a838b4f357bb3dc6cd0521c14f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "48fd18259e20df689455caf940379d3517da5a379d1a4b07e9de47ca245f7d46"
-    sha256 cellar: :any_skip_relocation, ventura:        "3e19dda489577034e239472212721d6261c441b6734e98b0e29282bf641e4a95"
-    sha256 cellar: :any_skip_relocation, monterey:       "ede14230e97850a10ac4770abd1df71c180d4050cd7a46d3b687d8ea4c698ef2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "79a41ca946eed6ced6d2a77953b6586707ce2851e43e9d7177dd44b47cd198bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9c3bab54808b9cc6bbc508dd182678d20594def9b99b771d80528952d43452b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "52da6b522723f95c29d3be208340a7ab432c0628262c957de8ac752d17c8cf91"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "79bbbbd46882bca56a3f00b5c23df38651eae8910320391c9ba58204d44ac320"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4f14e5d4db407a7357021a5503d5c1ba4ab01d73957dadfcf4a939a4f17ef770"
+    sha256 cellar: :any_skip_relocation, sonoma:         "51a975a5b0261303d5a0a72b5a89a139fb830d99dc3b8349b4bd6f7ea78f4696"
+    sha256 cellar: :any_skip_relocation, ventura:        "d3628e519903b72124f2fe23e3ef6c80c21764b935fb510932bf6cb052bece61"
+    sha256 cellar: :any_skip_relocation, monterey:       "4e4be8b0d00753734c3aa7e0ea3ab7ebbac968a3ac0d6ae8d006b6b96f304eaa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34b3b3f19ae69cf2e4c2805753cbf7d7ebec89deb5b830d64dd46966e5dda8da"
   end
 
   depends_on "go" => :build
