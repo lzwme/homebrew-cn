@@ -11,9 +11,11 @@ class SwaggerCodegenAT2 < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a74d24cf80f007a26a30d63d63d32e1ff2616e3904ce6fab078f3db17b05d68f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "95005d8b832a30dc10cbc458e611354f1f156288d36b2cfd60c2880f87768005"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3642046a6316344f9c236097cc5c51c6bdd10c95b7401ab34824bab44f27e275"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "95d594cc6ee387701f713c5479953c7e2e325a2ec11f4385b45bda0a4aa774d6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c3c7ae094eb715b6e060053579af5da3763e4207739d45bd4e913d285f0f31ac"
     sha256 cellar: :any_skip_relocation, ventura:        "be20870ef3994ce48953c5d9134e740954d3a4dedab4eda0edaeaaf1ee4faf81"
     sha256 cellar: :any_skip_relocation, monterey:       "c081a292ef84ca0a23c299d7ce2d7a09f53bdf4e85ffda8a13d8110f8f0ae441"
     sha256 cellar: :any_skip_relocation, big_sur:        "d44b97fcee0aa0d68ce8cd5a21ef57309ca650c9d1fc852d17f7f1cbabf97d5a"

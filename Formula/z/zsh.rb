@@ -42,10 +42,10 @@ class Zsh < Formula
   end
 
   def install
-    # Work around configure issues with Xcode 12
+    # Fix compile with newer Clang
     # https://www.zsh.org/mla/workers/2020/index.html
     # https://github.com/Homebrew/homebrew-core/issues/64921
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
 
     system "Util/preconfig" if build.head?
 

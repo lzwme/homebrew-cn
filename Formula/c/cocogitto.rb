@@ -1,27 +1,35 @@
 class Cocogitto < Formula
   desc "Conventional Commits toolbox"
   homepage "https://github.com/cocogitto/cocogitto"
-  url "https://ghproxy.com/https://github.com/cocogitto/cocogitto/archive/refs/tags/5.5.0.tar.gz"
-  sha256 "709c54c6c64463af607590ac970dc5a45cbcc0236a5a15d609d9a77461f11325"
+  # TODO: check if we can use unversioned `libgit2` at version bump.
+  # See comments below for details.
+  url "https://ghproxy.com/https://github.com/cocogitto/cocogitto/archive/refs/tags/5.6.0.tar.gz"
+  sha256 "eea9655f4750cb2567eaca9ca4968a3a639f9003242ef733b205bf5410d90c86"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "bcb744ae30392baf1c43fd7d2a040f885f468dec70478057c03bcb62fe41c628"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "456942c9a48b07404d21a3defd62ebb9bde0a99ef74946f8873ff0aeadf5f90f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd0eb9639bcd1250e282a490f6ce81e75bec842749db1aba5f05085df3597645"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "681033f9d26aa769f3860c43019a0be004df0f225ae6b5fa0a18bb4c6488ba50"
-    sha256 cellar: :any,                 sonoma:         "18c5539b25d31bd63e92022beed66e7f4fff1ae7b1c464895616628c4590d3c3"
-    sha256 cellar: :any_skip_relocation, ventura:        "f2abd54fbe1990daaac8de69ebc40e8d9169e49fe533c0e3796f8a6babfbdb28"
-    sha256 cellar: :any_skip_relocation, monterey:       "a63c561c67150d972db228c8d2810c59727e252c4cc9a10949ee1c9c7952b8b7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c186ccbddf859470d35777e3ec60effd384586769ee4d88efe05ca7e4d820853"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d341bd7abf7da08a9b140f045a94d28cdd134809a57569b2122c27c5cd7265d"
+    sha256 cellar: :any,                 arm64_sonoma:   "0a18e6f99bc8980508958e84de42620b43f29356033cdca605edbc9a4609aac7"
+    sha256 cellar: :any,                 arm64_ventura:  "525d3455c07596e577a49e32b758faf76745e8da4b9d87989843ba195952471d"
+    sha256 cellar: :any,                 arm64_monterey: "d03f406d6da7c32a17d60c5328010e8b0c8e2a4ff4c7aa93ec6540aa798bbdd4"
+    sha256 cellar: :any,                 sonoma:         "e219670240bbd846d552a073c6bfc863246c8e8f53e11b38b25e211ca76f635c"
+    sha256 cellar: :any,                 ventura:        "e8ad261793d24dfa5dc1b1843865dddbd4ef132545554a65a150cbaa769ae59f"
+    sha256 cellar: :any,                 monterey:       "462d651dc15e2ea09de66be8fa9cfd39f77e2232dc8e32d70d6fac2fcd164274"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e2db3d7839f814f183e7c2273c54672a1eeef2ab0ae22d49ad0d6c159413fef"
   end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
+  # To check for `libgit2` version:
+  # 1. Search for `libgit2-sys` version at https://github.com/cocogitto/cocogitto/blob/#{version}/Cargo.lock
+  # 2. If the version suffix of `libgit2-sys` is newer than +1.5.*, then:
+  #    - Use the corresponding `libgit2` formula.
+  #    - Change the `LIBGIT2_SYS_USE_PKG_CONFIG` env var below to `LIBGIT2_NO_VENDOR`.
+  #      See: https://github.com/rust-lang/git2-rs/commit/59a81cac9ada22b5ea6ca2841f5bd1229f1dd659.
   depends_on "libgit2@1.5"
 
   def install
+    ENV["LIBGIT2_SYS_USE_PKG_CONFIG"] = "1"
+
     system "cargo", "install", *std_cargo_args
     generate_completions_from_executable(bin/"cog", "generate-completions", base_name: "cog")
   end

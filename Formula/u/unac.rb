@@ -30,23 +30,18 @@ class Unac < Formula
     patch :DATA
   end
 
-  patch :p0 do
-    url "https://bugs.debian.org/cgi-bin/bugreport.cgi?msg=5;filename=patch-libunac1.txt;att=1;bug=623340"
-    sha256 "59e98d779424c17f6549860672085ffbd4dda8961d49eda289aa6835710b91c8"
-  end
-
-  patch :p0 do
-    url "https://bugs.debian.org/cgi-bin/bugreport.cgi?msg=10;filename=patch-unaccent.c.txt;att=1;bug=623340"
-    sha256 "a2fd06151214400ba007ecd2193b07bdfb81f84aa63323ef3e31a196e38afda7"
+  # Patches from https://udd.debian.org/patches.cgi?src=unac&version=1.8.0-8
+  patch do
+    url "https://sources.debian.org/data/main/u/unac/1.8.0-8/debian/patches/gcc-4-fix-bug-556379.patch"
+    sha256 "f91d2c376826ff05eba7a13ee37b8152851f2c24ced29ee88afdf9b42b6a2fc8"
   end
 
   patch do
-    url "https://deb.debian.org/debian/pool/main/u/unac/unac_1.8.0-6.diff.gz"
-    sha256 "13a362f8d682670c71182ab5f0bbf3756295a99fae0d7deb9311e611a43b8111"
+    url "https://sources.debian.org/data/main/u/unac/1.8.0-8/debian/patches/update-autotools.diff"
+    sha256 "8310103e199edf477e3f3fd961a2ecb09bf361ba1602871b8a223b1ee65cc11a"
   end
 
   def install
-    chmod 0755, "configure"
     touch "config.rpath"
     inreplace "autogen.sh", "libtool", "glibtool"
     system "./autogen.sh"

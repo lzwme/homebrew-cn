@@ -16,9 +16,11 @@ class HasuraCli < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "44c61e7371be70a3b4770330810d53449326eeff067ffd2ce2c5cf887e771db4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8730a3d4003b277b36a22a2f140edfd9f7c02f619131c06c8dda898e115373b9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4e734e30354ac6b23eb840df15321cb7767c2cd42231174bf211dc265b8f6a77"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "78a0dae10a1a5c78fde5db7ee4ebcd3e1bc6c8fa3810eaf945c2ec3615b81820"
+    sha256 cellar: :any_skip_relocation, sonoma:         "175c7a0814a19104fff994d0bb773b1073e823bb7e3d20a4869ee1823937d455"
     sha256 cellar: :any_skip_relocation, ventura:        "8e0dd57f4c3aef860ffcab2185764ae12a0dfec09dead0bf4989827dbc9e0128"
     sha256 cellar: :any_skip_relocation, monterey:       "11318263852f5c0537b870335674e4fefed7ac4b55e4c43d4c4d8af2d6e65c59"
     sha256 cellar: :any_skip_relocation, big_sur:        "6044616b25b9b826eefb2a2bbd30b415daa075c4cbdee8dc21cfa73b48af5437"

@@ -25,8 +25,8 @@ class XmlrpcC < Formula
   uses_from_macos "libxml2"
 
   def install
-    # Avoid errors with Xcode 15
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     ENV.deparallelize
     # --enable-libxml2-backend to lose some weight and not statically link in expat

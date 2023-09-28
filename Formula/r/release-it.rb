@@ -3,18 +3,18 @@ require "language/node"
 class ReleaseIt < Formula
   desc "Generic CLI tool to automate versioning and package publishing related tasks"
   homepage "https://github.com/release-it/release-it"
-  url "https://registry.npmjs.org/release-it/-/release-it-16.2.0.tgz"
-  sha256 "a0864063f413874c0de398ff1560b1cc3ac0ba4bc0dae7525e5d76b52549c655"
+  url "https://registry.npmjs.org/release-it/-/release-it-16.2.1.tgz"
+  sha256 "b3ed1dcea2f9436de64684f10debb640178b56a8eddfe962060b9cb242d6f4b3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "baa467dd14c52fac860d5e358033e018192b7ab7e50e32037593729afddcdfe1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "baa467dd14c52fac860d5e358033e018192b7ab7e50e32037593729afddcdfe1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "baa467dd14c52fac860d5e358033e018192b7ab7e50e32037593729afddcdfe1"
-    sha256 cellar: :any_skip_relocation, ventura:        "3783192f9ba57404e2866a13da55044ca351a0f5991b90a348995409467ff3e5"
-    sha256 cellar: :any_skip_relocation, monterey:       "3783192f9ba57404e2866a13da55044ca351a0f5991b90a348995409467ff3e5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3783192f9ba57404e2866a13da55044ca351a0f5991b90a348995409467ff3e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "baa467dd14c52fac860d5e358033e018192b7ab7e50e32037593729afddcdfe1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "085aadf8b83ec9bab890b34442c8c983b465debd497a213e0f64c8a9a25fd9ed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "085aadf8b83ec9bab890b34442c8c983b465debd497a213e0f64c8a9a25fd9ed"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "085aadf8b83ec9bab890b34442c8c983b465debd497a213e0f64c8a9a25fd9ed"
+    sha256 cellar: :any_skip_relocation, sonoma:         "72b2b4e7e7bb835465358427041008b79822e6b8a9fc1e1fe905dd2cc688f007"
+    sha256 cellar: :any_skip_relocation, ventura:        "72b2b4e7e7bb835465358427041008b79822e6b8a9fc1e1fe905dd2cc688f007"
+    sha256 cellar: :any_skip_relocation, monterey:       "72b2b4e7e7bb835465358427041008b79822e6b8a9fc1e1fe905dd2cc688f007"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "085aadf8b83ec9bab890b34442c8c983b465debd497a213e0f64c8a9a25fd9ed"
   end
 
   depends_on "node"

@@ -12,17 +12,21 @@ class Redis < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "1f8bc92ee86e652c307f4cb242fd1c20e852b57655bd675a2c4d4e6eeb6ce9aa"
-    sha256 cellar: :any,                 arm64_monterey: "3b5fd4f19340f608800faefbdec54141139ffbab0c1f5f9e28ac6540a6f92e0f"
-    sha256 cellar: :any,                 arm64_big_sur:  "7399b07530ec8ecf674b6d1e3bec31c1f46374a9f545982ea27953c654659988"
-    sha256 cellar: :any,                 sonoma:         "3b37dd962054703ce81d9fb204257642181b34b9c26829b3f44bfc735dd4e536"
-    sha256 cellar: :any,                 ventura:        "1004403807ad5b66a43e9378f4d16d258ec0ee4f54d68ccc5a44f1f8b1bf1b6f"
-    sha256 cellar: :any,                 monterey:       "697cd84b21cf855dec8e583ea46ce723ed139ce68d9f8ef90642437956de5ffd"
-    sha256 cellar: :any,                 big_sur:        "d5d3966e8d18f3d610ce87037c0832a492278e7bb39d23db4b09a8031e767201"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca0d71336e4db1c285f3333679afea03e05f2587cf3feaaff57f0db6a751aecb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "53943e914be8be83327314d5e23a550f4b6ee31cb4ebebe85e27aa1bce80968a"
+    sha256 cellar: :any,                 arm64_ventura:  "cd7dc0b092e95bf3fdcf6f6d6a26a68c4bafcf6018220c121c7cd0fc3f5d5465"
+    sha256 cellar: :any,                 arm64_monterey: "a151d72c6dc3d502a0f53640e8ef89bf5401ba3c444b0da5a6f52a93ff418192"
+    sha256 cellar: :any,                 sonoma:         "648d64daed3802f6510ec1849704f85f8272eaa346a01a1bb2144306b0c438a5"
+    sha256 cellar: :any,                 ventura:        "1568685e4500ef9cae5c998763f13c51c4d87beead4c61b21e266f729439b5ed"
+    sha256 cellar: :any,                 monterey:       "6cdc1f0ec9d5efa53d1a8820e5deafed6a5e87e967785045a5c4240bca203063"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17ee5e17a10fc95eef2b90c07668fa70a155081d0387d023b9f988abdb906601"
   end
 
   depends_on "openssl@3"
+
+  # Upstream fix for compilation on macOS Sonoma
+  # https://github.com/redis/redis/issues/12585
+  patch :DATA
 
   def install
     system "make", "install", "PREFIX=#{prefix}", "CC=#{ENV.cc}", "BUILD_TLS=yes"
@@ -53,3 +57,16 @@ class Redis < Formula
     %w[run db/redis log].each { |p| assert_predicate var/p, :exist?, "#{var/p} doesn't exist!" }
   end
 end
+__END__
+diff --git a/src/config.h b/src/config.h
+index 3c9a2701..4607c177 100644
+--- a/src/config.h
++++ b/src/config.h
+@@ -31,6 +31,7 @@
+ #define __CONFIG_H
+
+ #ifdef __APPLE__
++#define _DARWIN_C_SOURCE
+ #include <fcntl.h> // for fcntl(fd, F_FULLFSYNC)
+ #include <AvailabilityMacros.h>
+ #endif

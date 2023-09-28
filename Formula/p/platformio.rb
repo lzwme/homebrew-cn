@@ -9,9 +9,11 @@ class Platformio < Formula
   head "https://github.com/platformio/platformio-core.git", branch: "develop"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6c435f08169d89fa5504e9f63f282bce0b1b9c40dec6f323b838e121570477bf"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "29fcb281fc6c6b614ce81aec6e6d63022b985ee4bd6143adbcb110b25d8a2183"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5cb2f3f512c9522b753cd17d4dea74dfc9761abe255974a9e6b7853536e7ab59"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "43609e10c55fbc9534ba3f2704d5a421ba79f5aa6f744a586c35644c098606f4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "37ecacf07a256dafd3fc6c6b54b3bc143c91c3500e4fb0fffc386d7d8e40b6d4"
     sha256 cellar: :any_skip_relocation, ventura:        "2849f990c2fe85285af38d244eb63f130eec8e03a1983ba72bfda17d27156849"
     sha256 cellar: :any_skip_relocation, monterey:       "e12acb50db6d7bead7496dd12dc6d2166b301a49f1831200f86912d3b6847f88"
     sha256 cellar: :any_skip_relocation, big_sur:        "7b3717f7128208c6d941512b27f4514a97e16b8edcc36237132aee595b2186b7"

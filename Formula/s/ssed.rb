@@ -27,8 +27,9 @@ class Ssed < Formula
   conflicts_with "gnu-sed", because: "both install share/info/sed.info"
 
   def install
-    # CFLAGS adjustment is needed to build on Xcode 12
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
+
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}",

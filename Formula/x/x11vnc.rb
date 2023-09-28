@@ -37,8 +37,8 @@ class X11vnc < Formula
   uses_from_macos "libxcrypt"
 
   def install
-    # Avoid errors with Xcode 15
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib/"pkgconfig"
 

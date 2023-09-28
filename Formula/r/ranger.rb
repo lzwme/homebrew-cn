@@ -11,9 +11,11 @@ class Ranger < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "57a13f28316c962532f7786c950a1a187bf8b83315368aef254703ec210e4c35"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3a4d109e42f3146daeb999e613a9cedca98cbd851f98f950f54cfaab5e872c58"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3a4d109e42f3146daeb999e613a9cedca98cbd851f98f950f54cfaab5e872c58"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3a4d109e42f3146daeb999e613a9cedca98cbd851f98f950f54cfaab5e872c58"
+    sha256 cellar: :any_skip_relocation, sonoma:         "834a9aee1adde7412c2180154725980746d208da4e0050e7d2e9d5877f169b13"
     sha256 cellar: :any_skip_relocation, ventura:        "92e4fd7b02e9314319342a86b176bcb78c902ab326b6db482c653194ec5389df"
     sha256 cellar: :any_skip_relocation, monterey:       "92e4fd7b02e9314319342a86b176bcb78c902ab326b6db482c653194ec5389df"
     sha256 cellar: :any_skip_relocation, big_sur:        "92e4fd7b02e9314319342a86b176bcb78c902ab326b6db482c653194ec5389df"

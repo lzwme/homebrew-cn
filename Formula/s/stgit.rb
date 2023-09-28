@@ -7,9 +7,11 @@ class Stgit < Formula
   head "https://github.com/stacked-git/stgit.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0f6a42019b2308710e9b267102a491595ce103ad2feffe77f542886a1df87119"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "aad33ef5ad466d0309837d7833fc31d6ab8c6b5649567a041fc64e84e968fe3a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "55385c02a13ed971938d151bb387f55a90cbb304122ab85f2df8538ba19b1db6"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "58066bbf80c510ebeac1f0ac8c79221ec3518eba346f322f4fa9d6494edaf508"
+    sha256 cellar: :any_skip_relocation, sonoma:         "da5ef83bd06583f0152cee5d3b7c75bbdce696183110b95ec9ac5fe7c8ca81db"
     sha256 cellar: :any_skip_relocation, ventura:        "9fa293871d35f0f5ce0ea5da69b9455e52397e7f674505dbce3c3e922177e450"
     sha256 cellar: :any_skip_relocation, monterey:       "c02c0d71c6482bc62b70606f0df9778aa06eac91eeb443b4a64ed4a417b6de6e"
     sha256 cellar: :any_skip_relocation, big_sur:        "801f90006ed1ec8381948d1e04cf8edb01b16392d1ec3c84650ae1f47f6b63d4"

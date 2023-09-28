@@ -1,21 +1,19 @@
 class CargoLlvmLines < Formula
   desc "Count lines of LLVM IR per generic function"
   homepage "https://github.com/dtolnay/cargo-llvm-lines"
-  url "https://ghproxy.com/https://github.com/dtolnay/cargo-llvm-lines/archive/0.4.34.tar.gz"
-  sha256 "0068de412343dcf47b53abee9600713ae565aa6f43f39212ef94db50d0c29cb9"
+  url "https://ghproxy.com/https://github.com/dtolnay/cargo-llvm-lines/archive/0.4.35.tar.gz"
+  sha256 "4c681776badfbf2bf987aae374caebefabf3bbb5ac5412c8fbd5097577126288"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/dtolnay/cargo-llvm-lines.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "264c64c1a098b15956a63d7ef9c3b992806ffa56393dc109a53c78856fa0b199"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "41c3affa27c139326ef43541969c45d5881d412547c724574b37906a1f91aece"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "223e4efc1ca26d811077dbc3a6eb274fe5e4523cb3c83ca9768966c551fa79d2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2d82da5c6b9aa2e16cd7ac04c10d097b74880ada3e8d38d1727fdaeca43770cf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1c794021500eb2eaae74d151c3e7aa0d6026d62c5d5734dd54a86d21470a0650"
-    sha256 cellar: :any_skip_relocation, ventura:        "2f4cca6fe9fa61d1ccf2478d30223daa46c10a0a19c7f6bd5f1f3e32522efc68"
-    sha256 cellar: :any_skip_relocation, monterey:       "e916b786091b298b3d45b464435c3a672550ada111ffbe6904c9ed77fffe1de8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "44cab04b2843015588f586120c7269a37dbba65d0cfd8916eecd63feece23aad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b04ed2c97d3130483d8e373d15f2f38edaaf1c5e09805361360ff0e1c7fa09fb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cd374547f6b8d5afe415e68c89690bd03055a340dde4e0b2dc3730c3d30f0596"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "65608afa456f20903770c3ba86f4b46ae2c78a452fb8fb9c0518f215a7a73ced"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "424c630c130ee5dae968eb63dd5f93703da40593facf92776fabbef0d7664bdb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bcde45facbdb56008dad95732875417ca24868c839e9e2c8243a3a3f50fe0a00"
+    sha256 cellar: :any_skip_relocation, ventura:        "b2e286e8eb19a54da7f4c2d7e1cc1c76374799f7fbb15d3309172fe4b19c010c"
+    sha256 cellar: :any_skip_relocation, monterey:       "372ee44e7006d1c4d24109bc099b82615aa15cd5e6d5ac5cab9c4e24d77a0581"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b95229a7af6568d73446d120b96e434880236f0a01af26c24852bdb2d37bac2"
   end
 
   depends_on "rust" => :build

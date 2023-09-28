@@ -32,8 +32,8 @@ class Ncrack < Formula
   depends_on "openssl@3"
 
   def install
-    # Work around configure issues with Xcode 12 (at least in the opensshlib component)
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
 
     system "./configure", *std_configure_args, "--with-openssl=#{Formula["openssl@3"].opt_prefix}"
     system "make"

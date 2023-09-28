@@ -28,8 +28,8 @@ class Udptunnel < Formula
   depends_on "automake" => :build
 
   def install
-    # Work around build issues with Xcode 12:
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
 
     system "autoreconf", "--verbose", "--install", "--force"
     system "./configure", "--disable-debug",

@@ -11,9 +11,11 @@ class Prometheus < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6f94a8c47e21d2eb2c0b9cecf132468db54c71bdbaa08e64133664b189bb739f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "83b8e4b8103f4b0e578c3c92a1b7fe3fe86a482942d9a6d2b850a85a83787113"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "15b0160315b9bd0a1de054f7fe5ba8e26e08326bc216ead530707d4cbc35d46d"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4e9829fe2cb10570251801daee662bf18de2292f2274e60c48521653b3eb5829"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b596d11e47b08f9fe04bcdc0e675bf6b84d8b2ccbd7cf5abe687c5a19aea6de1"
     sha256 cellar: :any_skip_relocation, ventura:        "58610fb5440dada1c8bd3b0c056d9ac2bb9223008f70909800eeefd6a884c707"
     sha256 cellar: :any_skip_relocation, monterey:       "8d5da5f4c79d5eaf6ee75d21da79a5caa4a0f121943d9ba65e91cc4cbc95f121"
     sha256 cellar: :any_skip_relocation, big_sur:        "3625fae460bba357b012622d5b1482ba58cef5e32fadc90c013c933052e18918"

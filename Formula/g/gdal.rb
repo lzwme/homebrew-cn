@@ -11,9 +11,11 @@ class Gdal < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "03da2f590e355494982e1f4d0100eb4d577952541011616e62b9e2db81fc1a00"
     sha256 arm64_ventura:  "ae8d8b7f0e1fb8cf64abe76e129ebf46c4ba9cfaea4a760c092e979a2022a9a8"
     sha256 arm64_monterey: "21cd143023165431543aa93677ea62ddf5abf19aeb7a9dccae3fdcd883565d62"
     sha256 arm64_big_sur:  "89becebfe1651b1a33dc86784aa952ac8923399b4e8063743ab9b36efe5d7aba"
+    sha256 sonoma:         "96501a26a620814fb90efacba7da94224a0628fc8448c41f8fa7439b13b21351"
     sha256 ventura:        "1ac7769b179073211d6f45adbcc96e11e21bd87035eeb82c988a9c4e03fa7f8c"
     sha256 monterey:       "346a54fa5d687b2bfceca2ea50629b185ca92e0d947ca88d5a23a63cb1baad15"
     sha256 big_sur:        "11b8f87ffdba7e0e4aa9a04dddc2fa6e7cafacc14d42227114aac2f44412932b"

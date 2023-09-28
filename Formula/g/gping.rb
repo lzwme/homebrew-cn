@@ -19,9 +19,11 @@ class Gping < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "2a7e8e5ac645b7fe8926f13fd955a78456cca1b6df550aee1a484733382e81ab"
     sha256 cellar: :any,                 arm64_ventura:  "12a9bd754d2f1597e89d5cc6690af8af14d2d3836b974f90452abe849c5c6c6f"
     sha256 cellar: :any,                 arm64_monterey: "9ffad7b6407af60c32cffcd3099d50e57f74a25e601864c3dc2712eb2dec00ae"
     sha256 cellar: :any,                 arm64_big_sur:  "8df9a4ea92dbc359024d08fa8c6a3dcf9d55ce828b4975a8f5d82bb6ce0a65d2"
+    sha256 cellar: :any,                 sonoma:         "06c573c3c30745fa9f0965eea02526c6622bb9b73e04bae0629fd617dc3ad5c1"
     sha256 cellar: :any,                 ventura:        "853207d921bf41d05992e8fd5c874992865040e9fba970ca7566b26fa0509e61"
     sha256 cellar: :any,                 monterey:       "6f6b83f8510cb0f67f3bdf123c22a9b5f73e5fc64be5aebff7a0ce2591e21aa7"
     sha256 cellar: :any,                 big_sur:        "df95fab0f12d5d4ceeab96132e1220f3fc70bdcc435403c15e3db047219ea5c8"

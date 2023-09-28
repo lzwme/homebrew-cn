@@ -62,8 +62,9 @@ class GnustepBase < Formula
     if OS.mac? && (sdk = MacOS.sdk_path_if_needed)
       ENV["ICU_CFLAGS"] = "-I#{sdk}/usr/include"
       ENV["ICU_LIBS"] = "-L#{sdk}/usr/lib -licucore"
-      # Workaround for implicit function declaration error.
-      ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version == 1403
+
+      # Fix compile with newer Clang
+      ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
     end
 
     # Don't let gnustep-base try to install its makefiles in cellar of gnustep-make.

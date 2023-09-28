@@ -9,9 +9,11 @@ class Asciinema < Formula
   head "https://github.com/asciinema/asciinema.git", branch: "develop"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "15596e1ccab39dd628a5e0451c649552036939aa54433dc00f80107001f7f6aa"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6dae7f1d9929f2038918cb726b9ebfcb8c799ebeab382d4cefc66b19bd11415a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "19b1b2088615754f5ac48a0678a13747ca2c993401b6191a2ac12ea3e0bfbf8f"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f4ddfa118137c9f06e75af99db2b2a116fd8012fe4dfd299eea7a804d30d546f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "54053760e8f2e6bbe7ff925cd04da767748248432a36be059103f526d86eb363"
     sha256 cellar: :any_skip_relocation, ventura:        "db4188518aade133a74961306c063b5100adcdbaff8b2c868ba137a1caa50be4"
     sha256 cellar: :any_skip_relocation, monterey:       "1fd2a3729306568bc7a1ca034a364fe0e62526715a8068d9a4bfa0e124abb22c"
     sha256 cellar: :any_skip_relocation, big_sur:        "be49b0dc0c626328a2263ffd2cb516d6f7ab1f8a10ba48528e06bfb64239108e"

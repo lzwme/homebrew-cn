@@ -3,7 +3,7 @@ class Gpp < Formula
   homepage "https://logological.org/gpp"
   url "https://files.nothingisreal.com/software/gpp/gpp-2.28.tar.bz2"
   sha256 "343d33d562e2492ca9b51ff2cc4b06968a17a85fdc59d5d4e78eed3b1d854b70"
-  license "GPL-3.0"
+  license "LGPL-3.0-only"
 
   livecheck do
     url "https://github.com/logological/gpp.git"
@@ -19,15 +19,37 @@ class Gpp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "be597ec6ac79fcb2df75a6dcf090a1f888cfff801f4da2c154105bf36ca0acd0"
   end
 
+  head do
+    url "https://github.com/logological/gpp.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+  end
+
   def install
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}", "--mandir=#{man}"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system "./configure", *std_configure_args.reject { |s| s["--disable-debug"] },
+                          "--mandir=#{man}"
     system "make"
     system "make", "check"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/gpp", "--version"
+    assert_match version.to_s, shell_output("#{bin}/gpp --version")
+
+    (testpath/"test.cpp").write <<~EOS
+      #define FOO This is
+      #define BAR a message.
+      #define concat #1 #2
+      concat(FOO,BAR)
+      #ifeq (concat(foo,bar)) (foo bar)
+      This is output.
+      #else
+      This is not output.
+      #endif
+    EOS
+
+    assert_match "This is a message.\nThis is output.", shell_output("#{bin}/gpp #{testpath}/test.cpp")
   end
 end

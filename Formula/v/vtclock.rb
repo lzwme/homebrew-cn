@@ -30,7 +30,7 @@ class Vtclock < Formula
   uses_from_macos "ncurses"
 
   def install
-    # Workaround for Xcode 14.3+
+    # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     system "make"

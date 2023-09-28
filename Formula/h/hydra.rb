@@ -8,9 +8,11 @@ class Hydra < Formula
   head "https://github.com/vanhauser-thc/thc-hydra.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "3b5572227a5ef2ff439b5d95e41502d3aac78efc01c43ed4316fa9570acc0554"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4dd1a40a47a6d21db024a3fa9c9c538c46f2e6a19b7db8b7443977b87b8baf76"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e1d8c51d8f1768fa1b4f88b90cbdc792f59387e59562a1a9d057a2a4bcba0541"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a5b0056b050593dc17211890362fa09c1bd52d889fd142736b7b4c1114bb5e05"
+    sha256 cellar: :any,                 sonoma:         "a5cd4f90c900f58438505c2e65a0cea4a16b3c2b214c7274684473ad44fa9e51"
     sha256 cellar: :any_skip_relocation, ventura:        "fdd37885440ef848dfc7030e67c281262b5b5b5e4139372f40a91f894b28f256"
     sha256 cellar: :any_skip_relocation, monterey:       "073cd2c90a68bdeb9c2108e84bdb18dc1caf8c2b924f7466d868288edc6ef929"
     sha256 cellar: :any_skip_relocation, big_sur:        "4d411dcdc73070bdc6c01b458ba694717b8a9970a21ddcc75d4ab7c87611015c"

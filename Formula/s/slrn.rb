@@ -33,9 +33,8 @@ class Slrn < Formula
     man1.mkpath
     mkdir_p "#{var}/spool/news/slrnpull"
 
-    # Work around configure issues with Xcode 12.  Hopefully this will not be
-    # needed after next slrn release.
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
 
     system "./configure", *std_configure_args,
                           "--with-ssl=#{Formula["openssl@3"].opt_prefix}",

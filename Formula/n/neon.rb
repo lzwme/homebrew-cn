@@ -31,8 +31,9 @@ class Neon < Formula
   uses_from_macos "libxml2"
 
   def install
-    # Work around configure issues with Xcode 12
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
+
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 
     system "./configure", "--disable-debug",

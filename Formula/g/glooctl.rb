@@ -4,8 +4,8 @@ class Glooctl < Formula
   # NOTE: Please wait until the newest stable release is finished building and
   # no longer marked as "Pre-release" before creating a PR for a new version.
   url "https://github.com/solo-io/gloo.git",
-      tag:      "v1.15.6",
-      revision: "a4b18b9403cb8d81e6486c4cce94cdbff76ac25c"
+      tag:      "v1.15.7",
+      revision: "110cc22034ece5987c50059d33768389d9a35b36"
   license "Apache-2.0"
   head "https://github.com/solo-io/gloo.git", branch: "master"
 
@@ -15,13 +15,13 @@ class Glooctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "70f835f6270e803f37a392b634ecd7acebf6275b7f455e634a946cc71a670b23"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e595799853ed1db877594f2792566af919b3372df6225be8a89ea7bba2920f12"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f592eecff8c87443d057ad05c74ee2df97f0a4692a7d1c1cd77e5c3560c17631"
-    sha256 cellar: :any_skip_relocation, ventura:        "0b9775e4fe4e6ab15dc27272ed6c2be78f815dd8777ff6925a666600aa740eb8"
-    sha256 cellar: :any_skip_relocation, monterey:       "02e87a33a648c465a0779340d913ebf249955abd1f65dfd6513636c497a300aa"
-    sha256 cellar: :any_skip_relocation, big_sur:        "31ef2d33516b1abedb7f5d2e7796ee4dee51d7cfebf383e7da210e7793c66134"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c655f495adbf5180434e3ee8c3144878d806780f3b44bc392014674423d691e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9332064637f0cc60ed652c0ab97dbc2b3b78e2ff0938617281f1482cea5b41c4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fcbfde9d530bd029050209f275672a9cef7eb7409202282232b9f09f747499e5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "febe5361c9f7eb6c2a5a3725fc8f690db1728b4ca1d121c4a76f6c1a50a60b68"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c4c10c4c3b2b8fe25b96b931f2ee87a8bc349ed42700d604ba07107e54f1a032"
+    sha256 cellar: :any_skip_relocation, ventura:        "ff0ccf140e7d2979803984f8b4cfa9769087912db64a11b8877c9855486c518c"
+    sha256 cellar: :any_skip_relocation, monterey:       "4ab38f2631c8a73545ba3eedad46792c64bfe9b52fb6ce4fdfda20e2a91057d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4ea11e33630c054e402444ec587acc2e4bb3150a662ab69f2970eb1cf23004f"
   end
 
   depends_on "go" => :build

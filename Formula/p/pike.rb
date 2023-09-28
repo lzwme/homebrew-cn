@@ -49,8 +49,9 @@ class Pike < Formula
     ENV.append "CFLAGS", "-m64"
     ENV.deparallelize
 
-    # Workaround for https://git.lysator.liu.se/pikelang/pike/-/issues/10058
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+    # Fix compile with newer Clang
+    # https://git.lysator.liu.se/pikelang/pike/-/issues/10058
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     # Use GNU sed on macOS to avoid this build failure:
     # sed: RE error: illegal byte sequence

@@ -8,9 +8,11 @@ class MagicWormhole < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "5128b1718816c4c3808b3ed1a4c528f303a787661aaf6f3ac837d68d8b5ba4a5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b689f1eb8d6984e50f8ef2bd095f60ef3af431879875a8e02eeff801bb440d43"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "11491ccc6c93c02156c5d8ed26eec0bba942170c03a95824e247fd18946800ef"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "708ee97548814a029146d5ca16e48dab8059ddc3d1971aff4ebcee0a62435bd2"
+    sha256 cellar: :any,                 sonoma:         "c387d3e8199ca64dfb88a65611b561afd6eac45a992320aa08896287c77ef2d0"
     sha256 cellar: :any_skip_relocation, ventura:        "9ad83bc1b32dc11ef0ec119a66cb0281120a3ef69e2becc444fc2fefdfee4bb8"
     sha256 cellar: :any_skip_relocation, monterey:       "155d3cb7fc10ba5ec3ea63f4986174abd14cf42070d5c114042a9d5b998ae879"
     sha256 cellar: :any_skip_relocation, big_sur:        "1adc0c43c716c7d6e3e4528d42e5fb511b60569b69874040a5c1520ee82786a6"

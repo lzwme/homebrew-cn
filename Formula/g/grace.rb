@@ -37,7 +37,10 @@ class Grace < Formula
 
   def install
     ENV.O1 # https://github.com/Homebrew/homebrew/issues/27840#issuecomment-38536704
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
+
     system "./configure", *std_configure_args,
                           "--enable-grace-home=#{prefix}",
                           "--disable-pdfdrv"

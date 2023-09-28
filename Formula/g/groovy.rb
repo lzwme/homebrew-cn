@@ -49,8 +49,8 @@ class Groovy < Formula
     if OS.mac?
       jline_jar = buildpath/"lib/jline-2.14.6.jar"
       resource("jansi-native").stage do
-        # Workaround for Xcode 14.3.
-        ENV.append_to_cflags "-Wno-implicit-function-declaration"
+        # Fix compile with newer Clang
+        ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
         system "mvn", "-Dplatform=osx", "prepare-package"
         system "zip", "-d", jline_jar, "META-INF/native/*"

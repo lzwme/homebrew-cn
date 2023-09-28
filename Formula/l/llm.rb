@@ -8,9 +8,11 @@ class Llm < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "c2d4fdbf04fdef2f6e6ed31da866e8cfc9938533e3038e144e4f533ae19ee1e0"
     sha256 cellar: :any,                 arm64_ventura:  "e13d2f1e8cc89098a7ff1d4f09544b2c635dab18cf0cdbadad0d2d2ea130df24"
     sha256 cellar: :any,                 arm64_monterey: "333d89df4d408253f6d75930e32301b8f9587233c1d93c86616fd65414551168"
     sha256 cellar: :any,                 arm64_big_sur:  "d6b33926778bad943da55ffb9c6efbd0711a7f4fd35a93d262da743b7c7995b1"
+    sha256 cellar: :any,                 sonoma:         "6fdc55be7cbbbc3b93eeb127190952a4e3b0d934fa36ff40481ba95471630f1e"
     sha256 cellar: :any,                 ventura:        "b7e0058101da84ffc5c1b31e883d0c020cfd3ebd38c26733e70fd2556efee5cf"
     sha256 cellar: :any,                 monterey:       "b9c265849faee50766bb509a7a35416378e180d8425763358784d0570adbab87"
     sha256 cellar: :any,                 big_sur:        "753297b420c3a432c9ab4a62e793a9816a670f30f39570b578bdcf6b79e3b9a9"

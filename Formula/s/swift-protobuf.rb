@@ -7,9 +7,11 @@ class SwiftProtobuf < Formula
   head "https://github.com/apple/swift-protobuf.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "df6703de1a764d018325f5ed473070197ce7dedd69b5b468338867b59507c0b0"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9cf901f7261a0caf3e9955e8c188af17ecce5524a8ad8449e795c02df824325d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "41497677eb325c4cf69aacd4a3e6a5449e54a719be22cfa4b4f37b1f7392ec60"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "41707f45996f15262d3a7cc9052a22f13f644e2b35a3e849ce1a8e22ea8358fd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ab255174da373c55e64ece32e83bd0534d12a6a151b44b68da2f760304aad81f"
     sha256 cellar: :any_skip_relocation, ventura:        "b4e709b28a0ad11c05d78fca4413ba2659c4d8ebc1e3886ca7c291ffade59a85"
     sha256 cellar: :any_skip_relocation, monterey:       "0c917917de7ad44cfdd6b9634d984fce07789ac1168f2cfe5fa7d26a4c237017"
     sha256 cellar: :any_skip_relocation, big_sur:        "b2c0bf671c1cbf830d7ab78559ee8d8756e82b8f9684a124020c30a617e050e1"

@@ -7,9 +7,11 @@ class Syft < Formula
   head "https://github.com/anchore/syft.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d26562532da9cc9ac4f6779723cbba0f63d45ea72762c866809fe199527d759e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "def1f45fd271dc97eb3319d0f5933b81234c004f9f5987355f390800e7be4e7e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "962b306380c9e3aa35c82c6bc2cd4a297e28db5dcdc21eb1500bc6518e9fbb57"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "43c70fb35938d68fdd523350809062bfcb6f2ea497510654e8ec313eecd25761"
+    sha256 cellar: :any_skip_relocation, sonoma:         "62dd4a68bf17e669175f00abcf73b39b9c75bca070289b55abaa45585238781d"
     sha256 cellar: :any_skip_relocation, ventura:        "6b38e0d02b97056da7ae4e6d53f493edde7a42c64707df762f0813f63819c85b"
     sha256 cellar: :any_skip_relocation, monterey:       "37e6d8f55fe2e9167748496ae2fe09693910b2b6c8a4923850091306aac5b135"
     sha256 cellar: :any_skip_relocation, big_sur:        "b69b3a0cbfff92b18f9364c7ec6d610803569ebcd410f7fb35d97c76feec3c2e"

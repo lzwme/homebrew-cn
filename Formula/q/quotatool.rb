@@ -3,7 +3,7 @@ class Quotatool < Formula
   homepage "https://quotatool.ekenberg.se/"
   url "https://quotatool.ekenberg.se/quotatool-1.6.2.tar.gz"
   sha256 "e53adc480d54ae873d160dc0e88d78095f95d9131e528749fd982245513ea090"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url "https://quotatool.ekenberg.se/index.php?node=download"
@@ -26,6 +26,10 @@ class Quotatool < Formula
   end
 
   def install
+    # workaround for Xcode 14.3
+    # https://github.com/ekenberg/quotatool/issues/24
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     system "./configure", "--prefix=#{prefix}"
     sbin.mkpath
     man8.mkpath

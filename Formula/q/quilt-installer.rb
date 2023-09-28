@@ -11,9 +11,11 @@ class QuiltInstaller < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "559c265187cadc6c47e6e51131076a48fad123348cae4c1da271170d9ba42e48"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "34772e07f6c1b7e48008b991b7ba08cc4f7f35c997608e98699126c79c2c528a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "34772e07f6c1b7e48008b991b7ba08cc4f7f35c997608e98699126c79c2c528a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "34772e07f6c1b7e48008b991b7ba08cc4f7f35c997608e98699126c79c2c528a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "559c265187cadc6c47e6e51131076a48fad123348cae4c1da271170d9ba42e48"
     sha256 cellar: :any_skip_relocation, ventura:        "34772e07f6c1b7e48008b991b7ba08cc4f7f35c997608e98699126c79c2c528a"
     sha256 cellar: :any_skip_relocation, monterey:       "34772e07f6c1b7e48008b991b7ba08cc4f7f35c997608e98699126c79c2c528a"
     sha256 cellar: :any_skip_relocation, big_sur:        "34772e07f6c1b7e48008b991b7ba08cc4f7f35c997608e98699126c79c2c528a"

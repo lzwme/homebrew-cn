@@ -27,7 +27,7 @@ class Premake < Formula
   end
 
   def install
-    # Workaround for Xcode 14.3
+    # Fix compile with newer Clang
     # upstream issue, https://github.com/premake/premake-core/issues/2092
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 

@@ -8,9 +8,11 @@ class Sysbench < Formula
   head "https://github.com/akopytov/sysbench.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "ed29e43c94e1713c5e4eb2f48bd41cc1f6bd2ff41f1c08916e0581339933d479"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "81962fb67a1580a33a35250ad0b1a04a03d37ad9a1d576b6a59e8b32325f1945"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3d96776e2af71e38a6cf1e8ca92eef2279d84d6cae3f3eed3e0d6c6400d9b5ba"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8da6ba2affa28401106d38efaf5152545a59f91d5d07fdd766ce0e889b8ae22a"
+    sha256 cellar: :any,                 sonoma:         "c88109c162804f5679c8a19cdcfd48f7554854d7159e27ff98f85b680fbcbb55"
     sha256 cellar: :any_skip_relocation, ventura:        "22b44b41d90e0784d60a4ddff9fc2227a85152df9bdc911e9925e69949fc294a"
     sha256 cellar: :any_skip_relocation, monterey:       "b407155ac959bac94e4f41b3e730495815b31bd129604ff69bed0435cacfc3c1"
     sha256 cellar: :any_skip_relocation, big_sur:        "8d1192e27825c1176ddadae072936ff0364015e94d0f8bf36a06d63c0d262f2b"

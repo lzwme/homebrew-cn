@@ -47,8 +47,9 @@ class Passwdqc < Formula
       "SECUREDIR=#{prefix}/pam"
     end
 
-    # Workaround for Xcode 14.3
-    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version == 1403
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     args << "CFLAGS=#{ENV.cflags}" if ENV.cflags.present?
 
     system "make", *args

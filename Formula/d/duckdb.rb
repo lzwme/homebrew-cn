@@ -2,18 +2,19 @@ class Duckdb < Formula
   desc "Embeddable SQL OLAP Database Management System"
   homepage "https://www.duckdb.org"
   url "https://github.com/duckdb/duckdb.git",
-      tag:      "v0.8.1",
-      revision: "6536a772329002b05decbfc0a9d3f606e0ec7f55"
+      tag:      "v0.9.0",
+      revision: "0d84ccf478578278b2d1168675b8b93c60f78a5e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7285e35f75dcc9445ce051ed160e3e598dce1928958ba576597f7594f1a91e6e"
-    sha256 cellar: :any,                 arm64_monterey: "6d2dbd766cdd3b3d0f5efae4a6b0a84f954a37dca404ff90341118c3bfe48091"
-    sha256 cellar: :any,                 arm64_big_sur:  "2eacb6a11d23d169773ff5cdcdd58902da5b8e0750046fbb8bc31096e5e1a935"
-    sha256 cellar: :any,                 ventura:        "18eb3e511611edc32910d442f723dfb80275945f329fb1863eed9c618dbb43d6"
-    sha256 cellar: :any,                 monterey:       "1506500f6ed51cc029bd46c8448a21e9f499d8e2339be179ca40e7a0b907a780"
-    sha256 cellar: :any,                 big_sur:        "e121ad95a43e8d875e82fb0e01da4aade5315670ad4f1f3f5cb73742f1da9ee6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f758dff6e407bbf618cb9d0d37fd84f65718188d1d559d1977f27fc5846e4e2a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "d18542d913fba90f296f8b0519ce07713bd638299377e8f000b3e6909cd58d0d"
+    sha256 cellar: :any,                 arm64_ventura:  "1dc9ff97a29f128d0c0dbc97db02348b9f3dbf7d4279351f2ab2c0480216babd"
+    sha256 cellar: :any,                 arm64_monterey: "db272754f45c59a06f1c17a297438a3dec6054339933e67ac41da8c8e2d2716a"
+    sha256 cellar: :any,                 sonoma:         "d8c710feb90678e72ce66b56914ff9417840f3114c416cb0dfbfd220fe229315"
+    sha256 cellar: :any,                 ventura:        "8fcfe1f5893ad2f401907ad5530443738dc81fce76f7e7371624529d0cc5e5d1"
+    sha256 cellar: :any,                 monterey:       "bf2c2aa3e465f436d4548e9056780c84af130313cc38b95a7f601ca25f8471f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a6597b61d124f60ff9dae4104af5ade0bd8bc05618e7232f81b33c10a21b521"
   end
 
   depends_on "cmake" => :build
@@ -21,8 +22,9 @@ class Duckdb < Formula
   def install
     mkdir "build"
     cd "build" do
-      system "cmake", "..", *std_cmake_args, "-DBUILD_ICU_EXTENSION=1", "-DBUILD_JSON_EXTENSION=1",
-             "-DBUILD_PARQUET_EXTENSION=1"
+      system "cmake", "..", *std_cmake_args, "-DBUILD_EXTENSIONS='autocomplete;icu;parquet;json'",
+             "-DCMAKE_LTO=thin", "-DENABLE_EXTENSION_AUTOLOADING=1",
+             "-DENABLE_EXTENSION_AUTOINSTALL=1"
       system "make"
       system "make", "install"
       bin.install "duckdb"

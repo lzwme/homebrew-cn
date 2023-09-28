@@ -34,8 +34,8 @@ class Libicns < Formula
       "png_set_gray_1_2_4_to_8",
       "png_set_expand_gray_1_2_4_to_8"
 
-    # Avoid errors with Xcode 15
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"

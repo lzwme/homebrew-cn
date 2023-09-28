@@ -25,14 +25,12 @@ class Ffmpeg < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "729117c6150c83f1d777150bd7a27095694ff2223b214eea36c87fed5a3bed3b"
-    sha256 arm64_monterey: "6bb2917a8e52afcea688aca3e9ff513e61f73ab91ce7a36d6a965c9804d80cdb"
-    sha256 arm64_big_sur:  "e2a2c049c31d4aba0e9a94992eadd77325815d18271525a519e707f36252b663"
-    sha256 ventura:        "f68289b6c324ec56523280f5ef9da27bc4d91dc40492c9549fa7f2d102027e4c"
-    sha256 monterey:       "3ee3b0cbcd2a1a70d7f8f4a10e714e90cc506d80778d98d85c77941d1334f9f6"
-    sha256 big_sur:        "67fa43102ea1b4fbc40793269a1c3675d7080291f5d5ce1f34461df57b1637c1"
-    sha256 x86_64_linux:   "0ffde8698c2fde197654c833776afac30294df3cd98f8be799124dec4437db03"
+    rebuild 2
+    sha256 arm64_ventura:  "b24e520a37513ec46162a1c291af1344ff25a4ff9107065a487714758f4e0ea4"
+    sha256 arm64_monterey: "42405b8904eb0a1dda935b538a076b6e30b9a736a54f43471b99bb86f3e4e364"
+    sha256 ventura:        "58ebcf43e522105745c3d406e01ce8a65007996544198a6691c0011cb90152e1"
+    sha256 monterey:       "541c4febd795e1bbb8d76087f58b9a83f8ef8cc65020050530d582b45956ceb9"
+    sha256 x86_64_linux:   "e970046eb88d3e8ad157063599ed3284fa2ed8b8289f58fa1d96e0bd1798f9d4"
   end
 
   depends_on "pkg-config" => :build
@@ -96,6 +94,9 @@ class Ffmpeg < Formula
   end
 
   def install
+    # The new linker leads to duplicate symbol issue https://github.com/homebrew-ffmpeg/homebrew-ffmpeg/issues/140
+    ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
+
     args = %W[
       --prefix=#{prefix}
       --enable-shared

@@ -7,9 +7,11 @@ class Istioctl < Formula
   head "https://github.com/istio/istio.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ba494298aef01342f9e6781702b09625effe6f02c03592ae20537694c210d10b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e53327d665a911cefd821db04c062d186060f7187feac2f7b932b50d91bfb49b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f3f16e3b1326b8a986e23e21947de98ab4e6ab88bbf92827614390d8bcc9d628"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b82ca81361c916e5789f573f0ad628bd9a2a50c32da5e590c448304ff5b307cd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9adda988a7eeac8df6b10a5fc20faf5979c3fa13d4d3dcb5c804f183f936e568"
     sha256 cellar: :any_skip_relocation, ventura:        "1b34d08f5b89ed28b22bd01416f5876edc2e5cc5e6375076f77427aa50b54747"
     sha256 cellar: :any_skip_relocation, monterey:       "9e1b1b6ae79225708a76b312bd9966a4d35b7d8b25814d4748549cfe72fa9a38"
     sha256 cellar: :any_skip_relocation, big_sur:        "1f27fe7d574dcdbb16376758ff6aa0bd62927ea1c1370917d9e8a2b64be68d52"

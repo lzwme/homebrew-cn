@@ -55,9 +55,8 @@ class VorbisTools < Formula
     # Workaround for Xcode 14 ld.
     system "autoreconf", "--force", "--install", "--verbose" if MacOS.version >= :monterey
 
-    # Work around "-Werror,-Wimplicit-function-declaration" issues with
-    # configure scripts on Xcode 14:
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     system "./configure", *std_configure_args, "--disable-nls"
     system "make", "install"

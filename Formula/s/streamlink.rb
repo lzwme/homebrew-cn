@@ -9,6 +9,7 @@ class Streamlink < Formula
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "2e1b347b2fe2dd7d9d31d6981c2fd99abbb1003dcfb47a5116ff9391c5b2af2c"
     sha256 cellar: :any,                 arm64_ventura:  "63e8b10d8e38cd56f8fc133bfddc4952f33e889e4141f4204b043a0e646c4962"
     sha256 cellar: :any,                 arm64_monterey: "5077e77eed242d779ae24ba17c2b22675a6c6d9cfa04490db287ce021e2e8317"
     sha256 cellar: :any,                 arm64_big_sur:  "08511925a3804a10bcbcee72a0dd9839a70632a00b4d3aea574833d3635fdb77"

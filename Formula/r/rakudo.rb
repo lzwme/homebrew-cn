@@ -11,9 +11,11 @@ class Rakudo < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "96f0341ce7223bff0fa17eb455505cec2c0174ea6eb8171a9b0dbe88c3dd4e98"
     sha256 arm64_ventura:  "37e968cbd9e9df5fa12e359f68b862800ed34c220dddfbf9f2e0cbd28f4c8036"
     sha256 arm64_monterey: "ba928972182ad121c2cd2f87a323b761fbaf3f04f5012faceda48f83a0dd0c3d"
     sha256 arm64_big_sur:  "ede21c4f9da8441a6db1783c9ff7874fa9df066cd92d8046f1a98e74582cbf3b"
+    sha256 sonoma:         "98cb1b2da579d740fd34bb9d22f2cc824f63d6fdaa1a10fabc95b891c29eae18"
     sha256 ventura:        "d565edf7336a06139678b87ecd6c02ff34ed317b1f4489b019dd88e8660d34bb"
     sha256 monterey:       "b3b7e5f5a6b0e7d664d9c5c48a962f9c03a9a31559fcdf1a5b25e9cf57b6484c"
     sha256 big_sur:        "204177d792bbec421abd38fff5a1e25fe87f35625378e8aa5f1e83bb2474b3de"

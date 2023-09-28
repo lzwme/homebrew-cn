@@ -41,9 +41,9 @@ class Screen < Formula
     # Fix error: dereferencing pointer to incomplete type 'struct utmp'
     ENV.append_to_cflags "-include utmp.h"
 
-    # Fix for Xcode 12 build errors.
+    # Fix compile with newer Clang
     # https://savannah.gnu.org/bugs/index.php?59465
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
 
     # master branch configure script has no
     # --enable-colors256, so don't use it

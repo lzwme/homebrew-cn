@@ -44,8 +44,8 @@ class Ldapvi < Formula
   end
 
   def install
-    # Workaround for Xcode 14.3.
-    ENV.append_to_cflags "-Wno-implicit-function-declaration"
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     # Fix compilation with clang by changing `return` to `return 0`.
     inreplace "ldapvi.c", "if (lstat(sasl, &st) == -1) return;",

@@ -60,7 +60,10 @@ class Netpbm < Formula
     end
 
     ENV.deparallelize
-    ENV.append_to_cflags "-Wno-implicit-function-declaration" # Workaround for Xcode 14.3.
+
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     system "make"
     system "make", "package", "pkgdir=#{buildpath}/stage"
 

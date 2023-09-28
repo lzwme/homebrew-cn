@@ -2650,6 +2650,7 @@ Homebrew-homebrew-core/Formula/i/internetarchive.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/intltool.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/inxi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/io.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/iocextract.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ioctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/iodine.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ioke.rb, Homebrew/homebrew-core, 0
@@ -3010,6 +3011,7 @@ Homebrew-homebrew-core/Formula/l/lcs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/ld-find-code-refs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ldapvi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/ldc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/ldeep.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/ldid-procursus.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/ldid.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/ldns.rb, Homebrew/homebrew-core, 0
@@ -10080,6 +10082,7 @@ Homebrew-homebrew-cask/Casks/s/session.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sessionrestore.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/setapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sf-symbols.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/sf.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sfdx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sfm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/shades.rb, Homebrew/homebrew-cask, 0
@@ -10340,7 +10343,6 @@ Homebrew-homebrew-cask/Casks/s/stoplight-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stork.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/storyboarder.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/strawberry-wallpaper.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/s/strawberry.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/streamlabs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/streamlink-twitch-gui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stremio.rb, Homebrew/homebrew-cask, 0
@@ -13191,9 +13193,9 @@ Homebrew-homebrew-cask-versions/Casks/adguard-nightly.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask-versions/Casks/adguard-vpn-nightly.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/adoptopenjdk8.rb, Homebrew/homebrew-cask-versions, 1
 Homebrew-homebrew-cask-versions/Casks/aerial-beta.rb, Homebrew/homebrew-cask-versions, 1
-Homebrew-homebrew-cask-versions/Casks/affinity-designer-beta.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/affinity-designer1.rb, Homebrew/homebrew-cask-versions, 0
-Homebrew-homebrew-cask-versions/Casks/affinity-photo-beta.rb, Homebrew/homebrew-cask-versions, 0
+Homebrew-homebrew-cask-versions/Casks/affinity-photo1.rb, Homebrew/homebrew-cask-versions, 0
+Homebrew-homebrew-cask-versions/Casks/affinity-publisher1.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/alfred2.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/alfred3.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/alfred4.rb, Homebrew/homebrew-cask-versions, 0

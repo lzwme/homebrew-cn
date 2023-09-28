@@ -12,9 +12,11 @@ class Pigz < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "97752b6fd2b65df80d73068299789a714fb01b6b904fd843c142677e4f2c3db7"
     sha256 cellar: :any,                 arm64_ventura:  "ddd9fed16f07f42285d3a4a46b6d769f4ca2e902827dbd44a3f69597eca5cb77"
     sha256 cellar: :any,                 arm64_monterey: "043af6f4e17cb7776003f982331552ed3b6ce10a46fdce4687952fa9443fbab8"
     sha256 cellar: :any,                 arm64_big_sur:  "1f4b378d4427db80c89231ddf0ca710f11c6a300d36687b30025dcd263c9441e"
+    sha256 cellar: :any,                 sonoma:         "cd7b739570e228afbea2ad719c4789607d41a441d6c03dd4115a97e67cae729c"
     sha256 cellar: :any,                 ventura:        "0d30f581ef66c28103ccec510b9df46f2cd761bc9f9ce76af0422b60256739f7"
     sha256 cellar: :any,                 monterey:       "0ef362a072b9e707ee292162d44d46a23e9f04c1e239d05f462d20fad9c8c1b2"
     sha256 cellar: :any,                 big_sur:        "cd36e7d4ec7c3f373a4e74f280ac1001aa834d035f20a3ec3a2e3140f75fd525"

@@ -1,21 +1,19 @@
 class Alp < Formula
   desc "Access Log Profiler"
   homepage "https://github.com/tkuchiki/alp"
-  url "https://ghproxy.com/https://github.com/tkuchiki/alp/archive/v1.0.17.tar.gz"
-  sha256 "a9feb638f18452793cc48ff731a03bc473d418f022c57eded5834df15a6e65ff"
+  url "https://ghproxy.com/https://github.com/tkuchiki/alp/archive/v1.0.18.tar.gz"
+  sha256 "3252d44c7f23b989da15f27e7b7a67c17e47dd95a6a45ba662b0fbbb9ea0f1c3"
   license "MIT"
   head "https://github.com/tkuchiki/alp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d31301dc338ae5772b0d5706ba7121b1b7a32622d56aeeac56888a562b550e70"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "34860cacaa560b71e226d0808066c4cc11ae5001cf10278bf4b211f13e78bcfe"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3d53ff1e0d7615ba3988c67b1483b0113de3a7ae5824d9860be42a24ede19426"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "49011a415c9aba887a17fc514bfd809a571eb6dbdc76e99f127d5edfdcc14f9b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e1ce8bcf04757293bc8b44e3c67381921bfb2e15afe40b640cbb1ed2badc5d3b"
-    sha256 cellar: :any_skip_relocation, ventura:        "a54b047aa25787ae4eb5a8c963e118aa2ec35c4b5f621175f274cf8325cbd4af"
-    sha256 cellar: :any_skip_relocation, monterey:       "5aab708e4292c17a296a741e1e7271c497a58b6dc5dab2ecfef8370a45820827"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1a0f18dd2664e099041a9e998197bab37618695f70e659c2925dffd5886a409d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "240eac6ebbf9329bf6a22f84fe647f3e0bef5b94d119534bc38185acb6bc5f82"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5134ec9924c0c426cf39ffc330b4880e8b71a036bc88ff22cc5862ac537abc93"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "54b159580cf45b93126164ab30b38ab529c739a13c2a00cef175e6240dc85423"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "52e7f830a83fb19f5ca2ca82362100034d9744596acdba18c60c0ed7aa66ce61"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fc2828e4f77c1951bd9417a6a99f7fb5f32817f02217dfe41dc3cd0d30a6cc9b"
+    sha256 cellar: :any_skip_relocation, ventura:        "0999d550e743f9c53806a905de57d44bc85225cf126ec007359a54165d23ac65"
+    sha256 cellar: :any_skip_relocation, monterey:       "2f9a8b3b105e3c5661ed0fbc3c8d814349e3983eda3db774f9a2dee3fa57da5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a06032ec85b8c4cece8b83afc9a6efdf7ca8ea015e26b59ec192a3c9a3b426d"
   end
 
   depends_on "go" => :build

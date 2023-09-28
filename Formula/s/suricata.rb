@@ -11,9 +11,11 @@ class Suricata < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "8c135b0e87a5f5ca3498243bd5df74b779073f3b3d29ae388a11ab9fd66b3aa7"
     sha256 arm64_ventura:  "6c0e091bc55413c312adeb12fe40c4f6b6b48ee3cadaf1a26fc9fbb1efd4cdc5"
     sha256 arm64_monterey: "84e3f070aa1c2f353dfa6fa29ce21b015e1bc081bdb7e071b417c8c3db03bd23"
     sha256 arm64_big_sur:  "841856af3e342b605145d8b7aae649c71cf50661d163a5150c422803685b4c43"
+    sha256 sonoma:         "fba8bfe0a74021d8d9ec382f81e35e40d0943883736ab9c5d1a9d5bf72bbb492"
     sha256 ventura:        "d7cf0013e35f2bdcd0f65d67649b6b187d2780952a4dc2be6d36ce579e29d0b4"
     sha256 monterey:       "ccf7baf8ffc298dc280d36004437eb6536a7e82a2b0f300fb0b12f82cadd9e93"
     sha256 big_sur:        "5700ef72c2a3c05fb2e345dd75141beb3d4b4976f2672733632f0dad662cba98"

@@ -30,9 +30,8 @@ class Jnettop < Formula
   uses_from_macos "libpcap"
 
   def install
-    # Work around "-Werror,-Wimplicit-function-declaration" issues with
-    # configure scripts on Xcode 12:
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
 
     # Fix undefined reference to `g_thread_init'
     if OS.linux?

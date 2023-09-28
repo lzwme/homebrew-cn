@@ -7,9 +7,11 @@ class Swiftdraw < Formula
   head "https://github.com/swhitty/SwiftDraw.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0c4ac9c9fa26941f408930776f64c3f98ff89314be5be8490a9cd955ee921d7e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4e702504aa7d0a368b1d9706aa605300801339198fa27df151a65963a236d6c3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "961243384aa0da2c6013e0c11127e973a6f734c35c1a9cd2d4dbaa7fd18d8a52"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "db489c563202c9f9f7c24ff0dc6a0187861e0b51d56b1ef3a06bed0a5cf66816"
+    sha256 cellar: :any_skip_relocation, sonoma:         "17fa70aa1a326ebfefaffca6aa635717627c3c3de12e7b139e58a3cb97315e67"
     sha256 cellar: :any_skip_relocation, ventura:        "c4fe74a86e322fc66fed91a19ae2ea6450e5c133987cf564f3e81f1a11254683"
     sha256 cellar: :any_skip_relocation, monterey:       "6acd8e0f63b02164c00ebb5c7fc45b691776ec0c686daa3a0345590d5da8b2d2"
     sha256 cellar: :any_skip_relocation, big_sur:        "c0782650f7808912cf99a77420d1cfadb51c41f0bb27736dbfc1c93292a1d3c1"

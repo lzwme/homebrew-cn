@@ -58,8 +58,10 @@ class BerkeleyDbAT5 < Formula
   def install
     # BerkeleyDB dislikes parallel builds
     ENV.deparallelize
-    # Work around issues ./configure has with Xcode 12
-    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
+
     # Work around ancient config files not recognizing aarch64 linux
     # configure: error: cannot guess build type; you must specify one
     if OS.linux? && Hardware::CPU.arm?

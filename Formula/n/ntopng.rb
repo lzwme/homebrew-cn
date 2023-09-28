@@ -12,9 +12,11 @@ class Ntopng < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "6928114d7ebb726d42fc7358d1a7255733766f87b6b72e29489ea7fa9921f1bf"
     sha256 arm64_ventura:  "b6a10e66516e91c27fca7bf00a7df47147f34ae02f76288ad13aaaa7fdaab32a"
     sha256 arm64_monterey: "835bbeb2e9150a115b1b37e7a4df63fa626da91246dd6e79d957530a2db2918c"
     sha256 arm64_big_sur:  "e9f915790e77adf175ed49078c4cab42abcaa7b1cea2be342f4a735663916b6d"
+    sha256 sonoma:         "5d6711bb5b6394f3909603eeb6d57c261a2dbd0ee1c3d53b98ab97c8b856284c"
     sha256 ventura:        "2f4dc4eefa8dbe992fa4f7579eb13a1885ff0bdc5a49dac0ce4e50314a8a8b90"
     sha256 monterey:       "182f8189385e995117baa72ca9cb4f00d029416e63efa592e164247cfe76b277"
     sha256 big_sur:        "f3611d2b63cf4af0609fa071fabe2b171ec14c3b118b36354469394fd5ee9b85"

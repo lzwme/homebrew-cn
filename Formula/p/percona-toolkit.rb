@@ -17,9 +17,11 @@ class PerconaToolkit < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "94cd33c93f4a5986bea8fa1f62d6aeadaa569e5fbe5a7034d707f4607999f7ee"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6f73efec47769d7b701ebda892a64b21a086de1189cdeece38a2e2328c61c84a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "611538615f6a27b335e080696b51632e28bf96f62e69d64c9ddd85c3a4071735"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4e4a7ba167d73b2cad33917512833d6c5ac295a9af6a1644a2aff09f324dab48"
+    sha256 cellar: :any,                 sonoma:         "4ac9af79c70124ca63fb12ed035fec663ff5cc269e7a600d3c19400fa87eb388"
     sha256 cellar: :any_skip_relocation, ventura:        "4b57892eddf70deb84d120196cc3500840a5abda97215ca027fce5780fa627f6"
     sha256 cellar: :any_skip_relocation, monterey:       "a3da68d2e1c2e1e3a6bdc0403a69ae53a5c89db0e2b2ae3fe61c3f89b6c95082"
     sha256 cellar: :any_skip_relocation, big_sur:        "40a0b46b42ca674bd5081e12a830ee71c5b7f6e346f0fcff5c44f61151b9783b"

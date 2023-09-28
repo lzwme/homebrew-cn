@@ -6,9 +6,11 @@ class Stylua < Formula
   license "MPL-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f2537e2f97ce2d3acd580839e0719d6373c1a509bdfd4cfeb967f9f51bca1cd5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e5aafd3c0c7350a4693d53ef1a072ab23b18a16ecbbd3878837a5554f9a62c29"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1c23d73fa348162b7b024c6b25d7ed03520da64c2c77180c6a98b055c11432d9"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c8f9f250710e3770dacc58d48be88aa42d44c4842b7ac9b4b226304d60dcb079"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ed7e294ebe9a89d0c99b607297590a323f075e51a15b0fd03b09dfa97d91b59b"
     sha256 cellar: :any_skip_relocation, ventura:        "df8883cdd97203c2200a1271a76234ea0c2ec2b78af48c58e285e1dcb2efa8bb"
     sha256 cellar: :any_skip_relocation, monterey:       "5dc1b41e33c7162d4406eb0ff2f3859bd619701ea0a6a072280ca476d46d7330"
     sha256 cellar: :any_skip_relocation, big_sur:        "0ee70c9016f249ee808f406d32911d976344855ff1f0b5ef7076cb8ea4cc2f32"

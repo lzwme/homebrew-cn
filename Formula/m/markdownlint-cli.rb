@@ -8,9 +8,11 @@ class MarkdownlintCli < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4f44ee2d353ff2ce3ced373a1749aec8564e31f686df68a5fd0703a8ce056c46"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2c3844abd058474c9f9e8e2e3c252fdc591afd0ed80a3bf530a774ad2db4f8bf"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2c3844abd058474c9f9e8e2e3c252fdc591afd0ed80a3bf530a774ad2db4f8bf"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2c3844abd058474c9f9e8e2e3c252fdc591afd0ed80a3bf530a774ad2db4f8bf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "75c6997fbd749681b44a9bf337cbf2a6b174d2bb24a76456aafed62eb8008a71"
     sha256 cellar: :any_skip_relocation, ventura:        "ac7d8b351ea6a5772fe111190439803a3f2ddf2715ac4b9b00483987764e098a"
     sha256 cellar: :any_skip_relocation, monterey:       "ac7d8b351ea6a5772fe111190439803a3f2ddf2715ac4b9b00483987764e098a"
     sha256 cellar: :any_skip_relocation, big_sur:        "ac7d8b351ea6a5772fe111190439803a3f2ddf2715ac4b9b00483987764e098a"
