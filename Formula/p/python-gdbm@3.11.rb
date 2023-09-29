@@ -10,9 +10,11 @@ class PythonGdbmAT311 < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "c446fa9555253fd794b1c85c3510fd7e13f5c5eea7bfb1358929f55c918a63da"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d76bbeb515f9923b5a7c935e11e00a1391b0bf71e548176e5536b066261ff64"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "217ec8688e841270213f67d7390230ad69c5ebc6d0f1c071091041777fceb0fd"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b6b6331f12a31de9e4681c8845d410e7bb1f1bd68224d4724ad4011a3d8d36f0"
+    sha256 cellar: :any,                 sonoma:         "c54a694407e0d13a5999e499d0b143bd446837a689816fbe6e7cb11e2f26d1df"
     sha256 cellar: :any_skip_relocation, ventura:        "e3fa7ba0909a3d5f3a9be6570f49a0538af3d0abd3dde50cc0f65f7b99fd6809"
     sha256 cellar: :any_skip_relocation, monterey:       "aaf89542521a28dfccd7259fdb68e5d9e75568ae9efea90dced8dc5b8d5d3add"
     sha256 cellar: :any_skip_relocation, big_sur:        "40e25d2c3ecc4d5ce8c8a613a37b0a167b4bf1fd403df8ba9b6229212f69f6f2"

@@ -12,9 +12,11 @@ class Risor < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "78774e8bff1ae13835a726a8e170ef6c62306cacc6fc63f46d9edf83351adcf1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf5b08c138141dd652a95ffe417006a326a14cd78b4d45b8702859ec7fa98523"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "206ee1737cd952fe7a3333ef80426ba5b0f0299b01760a13b34f692dda76a033"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "48b02df886cee81e90bce35431ebcc94bd3e8344b68688af586797eb0d644e1b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a97359084791fec4e743e41d57e64ab1e0eea18871a5c90d0af8e791adb4431e"
     sha256 cellar: :any_skip_relocation, ventura:        "b1abf5d26b045c2a45e7731a392a9bbc67cbf1b38457aeeede9787faadcbb209"
     sha256 cellar: :any_skip_relocation, monterey:       "e294f7a42aca359c290e28a771b376504213816531bccf9b574030a923e9edfe"
     sha256 cellar: :any_skip_relocation, big_sur:        "ae15467343a10c8dc7d39bb2a8cba1ebaf81dd43323baaacf1487df0665d3f87"

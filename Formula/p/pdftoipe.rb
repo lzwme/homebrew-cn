@@ -7,9 +7,11 @@ class Pdftoipe < Formula
   revision 15
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "ec2f9301b85d67e109a67570b5839a4e7db9f59e2d6eb97ae09436199874f77f"
     sha256 cellar: :any,                 arm64_ventura:  "7967f09b3e92c4a9cec947e32b018fc56f0fbc18c8ea3480adb35e192fe156fb"
     sha256 cellar: :any,                 arm64_monterey: "c095e593c1437c137e289a044502e8d562fa54e63a06c685ad0b0f24111b6bd0"
     sha256 cellar: :any,                 arm64_big_sur:  "2c06d5a543e3dca5a74d6719ab14fb0ea9d7ecd8d2139fbe39450bd449f03261"
+    sha256 cellar: :any,                 sonoma:         "deff867e79955ca38d7b767e3b362c288c095d84a56041e1929c45d8b7070cb6"
     sha256 cellar: :any,                 ventura:        "65efb36fd72e552d8e9ea73dad63de041fb36ab8cd534f9b86fd86f941e55cda"
     sha256 cellar: :any,                 monterey:       "9e9119411bf2bdc5eb6b6ef44f2d1e3005f95bca8493fb069dcc75780d2a36f2"
     sha256 cellar: :any,                 big_sur:        "86af4aedda6eb4eac2004e9aab456ac3ed5c5e005b589cbdcde7314a567fd89e"

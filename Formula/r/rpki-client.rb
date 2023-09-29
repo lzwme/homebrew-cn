@@ -12,9 +12,11 @@ class RpkiClient < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sonoma:   "e13a515c8bf799be96e1dca39fa53f4c07bf7713f62ce91098c8cc94d89d3e5e"
     sha256 arm64_ventura:  "7331492460379fec1022f135c2f1323730870e292b5a0875cd6e2e77dae4b543"
     sha256 arm64_monterey: "192904bd8f416f581149263942a88666f4d4634db355c6014e98504f08d4798a"
     sha256 arm64_big_sur:  "fe358a4ff927933060ce39c6be5738f59b745da7a29568aa01aec10657088fe4"
+    sha256 sonoma:         "a7861619ec926693db8f353feefcdd3eec3bacd9055096d4444391085bbb1aa9"
     sha256 ventura:        "140b08e18de719c09098cef83a018de78af2ee96ca8507e0a737b37ea1c7f55e"
     sha256 monterey:       "f73ee1a63276e87d567f366f074b5fe7b8f63c14c6ba18ed3d089f299819c020"
     sha256 big_sur:        "903cfca33c4b72ee83112aaeca2396f506f428bcd319205d5ec244456cbd322f"

@@ -5713,6 +5713,7 @@ Homebrew-homebrew-core/Formula/s/sqtop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/squashfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/squashfuse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/squid.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/squiid.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/squirrel.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sratom.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sratoolkit.rb, Homebrew/homebrew-core, 1
@@ -9491,6 +9492,7 @@ Homebrew-homebrew-cask/Casks/p/pastebot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/patchwork.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/path-finder.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pathephone.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/p/paulxstretch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/paw.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pb.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pcoipclient.rb, Homebrew/homebrew-cask, 0
@@ -10581,6 +10583,7 @@ Homebrew-homebrew-cask/Casks/t/tla-plus-toolbox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tlv.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tmpdisk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tnefs-enough.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/to-audio-converter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/todesk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/todoist.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/todometer.rb, Homebrew/homebrew-cask, 1
@@ -13300,6 +13303,7 @@ Homebrew-homebrew-cask-versions/Casks/microsoft-edge-beta.rb, Homebrew/homebrew-
 Homebrew-homebrew-cask-versions/Casks/microsoft-edge-dev.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/microsoft-office-2016.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/microsoft-openjdk11.rb, Homebrew/homebrew-cask-versions, 0
+Homebrew-homebrew-cask-versions/Casks/microsoft-openjdk17.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/miniconda2.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/mixxx-snapshot.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/monal-beta.rb, Homebrew/homebrew-cask-versions, 0

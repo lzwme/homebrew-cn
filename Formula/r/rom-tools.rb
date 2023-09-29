@@ -12,9 +12,11 @@ class RomTools < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "596dff78c798e49af6a31695caceccef6a5370f07f62c313e650a9c368cb50a0"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "33db643d169e651cf0e9c2eba975d6227514519c81f2e3884a100f73f1f0d8e4"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "96a7ba794c6fa5fddc96df0cbedfb85a0ca6b534c8f17f73762e70bc5ff8fe58"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6ac2dad72a7389d65fdce04e241e60e6a65a1a6cab9e6be14c9169400ef5a1af"
+    sha256 cellar: :any,                 sonoma:         "fba20bf4736d0fd336325eeb294c21b9b33bf17412a763dc15a8230ff5c549da"
     sha256 cellar: :any_skip_relocation, ventura:        "ab541e69c3a4b2c706c9a31bcba7b491daced3210676c32fa72d6beb1fe3ee52"
     sha256 cellar: :any_skip_relocation, monterey:       "c89e0f63e8a670126ddd5fe0cf86bcd99489d3e7968c5aece6351d3684c6ff6d"
     sha256 cellar: :any_skip_relocation, big_sur:        "a505275add4ebc5d01d793bedd2896cb0af901562bd9eb9452b7bb83ec7d65c2"

@@ -8,9 +8,11 @@ class GetIplayer < Formula
   head "https://github.com/get-iplayer/get_iplayer.git", branch: "develop"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "040e51d5e4673638a36bbaa91b4ab60f09d686cf196f0019496bc250cb0dc64a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "568e8f2399345c5bf93df88fc1bb5e2d1ef0f88984ffb0d37acbbc329c4bcac5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "568e8f2399345c5bf93df88fc1bb5e2d1ef0f88984ffb0d37acbbc329c4bcac5"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c682ca0e14757911b8dbfec3bb3fa1700f03c830a791b7170f19c1ce8d43643e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bc12264c18bdba8bf009a0fb21186f7a99a9dec892a70ffbae161c59e6a850fd"
     sha256 cellar: :any_skip_relocation, ventura:        "d71cfd6353b2abc4ab054e79358edb24eba7ea12f44020a4a94e00985554ea9c"
     sha256 cellar: :any_skip_relocation, monterey:       "d71cfd6353b2abc4ab054e79358edb24eba7ea12f44020a4a94e00985554ea9c"
     sha256 cellar: :any_skip_relocation, big_sur:        "80d896c2c0c0c9cfe09c1999a1efca481122070fe9795c877be73e138a816b82"

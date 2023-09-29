@@ -6,9 +6,11 @@ class Proxytunnel < Formula
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "febfbd114a235c2894ad0ad93205c63c932a18813791956256c15eaa734baea3"
     sha256 cellar: :any,                 arm64_ventura:  "07bb36a07ae75f71bfe246d5bb5b1232a8baad865e37c167de15b0aa98002b54"
     sha256 cellar: :any,                 arm64_monterey: "0f97697c9115a10b5e570f5d81919b7b5fdea36d8ba569d409ae9dfd3187b5a1"
     sha256 cellar: :any,                 arm64_big_sur:  "d9df09429d4d52fb92cdd3b6ef2072abaacaf6370fb2361139e94e83cf8173c6"
+    sha256 cellar: :any,                 sonoma:         "779c82e14e58abbb5d64e98eb5c48017647499a13b545b15353b334e664dc7e5"
     sha256 cellar: :any,                 ventura:        "381b822242673289f29312b4f98bf4ff8c7c9a59607b8f4635dc1d452c5b958e"
     sha256 cellar: :any,                 monterey:       "a1e106e210f10226c6685e600f2938b059ded79b619efebc35846477eaf7745a"
     sha256 cellar: :any,                 big_sur:        "d713f28c6e1620c749ecc47ac9a711ace29160299a4fcda1dd2a833166eb1658"

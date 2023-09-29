@@ -11,9 +11,11 @@ class Pgbouncer < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "951ea67e9e5b123fcc05dc2817e8d46c456a8643ec29c80d0593b1be81d3d997"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a94e496cf7ebbf7e0dd1bdcb4425c9d963db8068d0facb4b5cc8184d05d88f75"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "324e78695be835d58010fd647152733778178e5ef9197d81fdd024eabcaf979f"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d2daded50db318c8083bf5aa1bee66b78a25914f068111c395054e47cecfcf44"
+    sha256 cellar: :any,                 sonoma:         "56f3659a30f85326e7b852d25cc8c44e2cde12aa36b243863b7f2a2f0d70229f"
     sha256 cellar: :any_skip_relocation, ventura:        "8df99b1040fd67c08f09205261ffadfc524a05be9661559919bbb42d476a80ab"
     sha256 cellar: :any_skip_relocation, monterey:       "71cdcac59c53ec9c3a05f7483a49329c8b77fd64587020e0beb991e674da3d60"
     sha256 cellar: :any_skip_relocation, big_sur:        "16c60979ed52c2b00c246f590188deb7aaef2a0d56370bbdd80addcd7ad49cfd"

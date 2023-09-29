@@ -8,6 +8,7 @@ class Proxygen < Formula
   head "https://github.com/facebook/proxygen.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "d3bd52e2c867f91100ee9f189a586d3c9b6936c9af78a774f476ec7c17b56d00"
     sha256 cellar: :any,                 arm64_ventura:  "a119242adeb58d1f7be87197937ef4a6afe23c8d92457b7f2bcbb0568dd0d937"
     sha256 cellar: :any,                 arm64_monterey: "19fd3dbc3be2cb8138486d50fa9ef72cf346fbf82fdbfbd890f37bc9d93626cf"
     sha256 cellar: :any,                 arm64_big_sur:  "3c1c720cd27f9cf3fbde369cf90922376fd1582770ac574cebde012dd4698990"

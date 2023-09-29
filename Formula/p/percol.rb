@@ -11,9 +11,11 @@ class Percol < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f123a6be41ca05abf0a6d640b8ab810b943880a19808314b7c42bf6cfc2e87e1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6da475ab49df0faeb44eea45669d160a11113925d29fa3ccc7cc20e8500eea27"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6da475ab49df0faeb44eea45669d160a11113925d29fa3ccc7cc20e8500eea27"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6da475ab49df0faeb44eea45669d160a11113925d29fa3ccc7cc20e8500eea27"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d54c238b583a5e0799b317b4a6736f4aafafd1178fdad2bf0df9353929e50f99"
     sha256 cellar: :any_skip_relocation, ventura:        "c416bc3dcab1ee767c0b63f5766411bdc48f8042fa83b8068bee178ff16df39c"
     sha256 cellar: :any_skip_relocation, monterey:       "c416bc3dcab1ee767c0b63f5766411bdc48f8042fa83b8068bee178ff16df39c"
     sha256 cellar: :any_skip_relocation, big_sur:        "c416bc3dcab1ee767c0b63f5766411bdc48f8042fa83b8068bee178ff16df39c"

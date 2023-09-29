@@ -11,9 +11,11 @@ class Pdnsrec < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "e01a88ba0308bb0b1a039bf07204e4b3684400e6afcde39b48dcd5e7507cbcbf"
     sha256 arm64_ventura:  "ea27bb4982e910b0ef61008de12ba63830300545ea72d24706f70ef06cd4d5ed"
     sha256 arm64_monterey: "25a7a9b9dd08d3492196a4c704ad68f6dfb429348d464b86247313623ea5ba51"
     sha256 arm64_big_sur:  "95c8fc8a4c86e0c811b91f68018825f8ac0cd8cedff9a127af61a0f3c7c0f3d2"
+    sha256 sonoma:         "c91221f37d64800cff102d54b80eaa7c6155e13c012b3eef30403c60cc84cfc1"
     sha256 ventura:        "db92f6d5fd727d7ef01442a99a94432509204d1fcd2990ec6ee85c76fcb297d6"
     sha256 monterey:       "6c1d46010c229ce5a67d2692d0a040b4bc1638435f7ff30700991df67438f7a5"
     sha256 big_sur:        "6f9cb98fc1556afab3bcba149b82d72c4117e3427c53ba08ae8bdb18a207daf6"

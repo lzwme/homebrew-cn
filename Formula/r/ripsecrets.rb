@@ -7,9 +7,11 @@ class Ripsecrets < Formula
   head "https://github.com/sirwart/ripsecrets.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6b415b9920dbb68c100df02345b2db0cf022d4cd2d613ce0bc8e9605c8024d3c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e8cd8cb33cd39e9fbd569d78216b9a22f72dec7eeabbcfc14b38b96b63b23ade"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7d8356fc7e86f2b176eb1c7ea5b8c104d0f68ae6b96b0b4f6431fd94151c4c58"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d5dc8e5a51ebb4de784a6b095996df4441de7689ab3fb91949225619ceb7b7ec"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7f472b1057e9af8f8c95e64e66578b8ab86699644e772f5b11b6aee11c33cc3c"
     sha256 cellar: :any_skip_relocation, ventura:        "4855d68e9b91f38a55e452bdd73c77dcfa55c542039204ea313b7fb54b803f16"
     sha256 cellar: :any_skip_relocation, monterey:       "4a280b78f13e1a6046ec946d115405897683e76499c43824b4f9b79bd4cf90d6"
     sha256 cellar: :any_skip_relocation, big_sur:        "04e94ca4ed4cfdfa7352728a4eb895b84c055a6d7998ff5c2d81a83b2d6bceb7"

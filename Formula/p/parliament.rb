@@ -9,9 +9,11 @@ class Parliament < Formula
   head "https://github.com/duo-labs/parliament.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "600c80ed332cc5a9808adba20a4910a6576bf11983abb5aa84eae6d8ad1d5afd"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "793aaf3ec629b551aef846cf197c6eed1333b11bdf77b87849f665daa4ece393"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "deebfe54315a56ed439cf8c65b3b1adae33aa1fbf3c4f39b4cf14caf5313401f"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "249f3257fbc3aa941a84be43b1c6feaede1eb6a47eed1005c958bd7c4409f4a0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cda6aaa44affb4e044bbf218fca2b4823c13703beeb7903b376e43b4b1668ed2"
     sha256 cellar: :any_skip_relocation, ventura:        "3d62c6315016bfce9e2b866b8668d275bab7fe1d6c5fb57eaac49e836af5a971"
     sha256 cellar: :any_skip_relocation, monterey:       "67a3074ef1ab056322eb9c205fe698dbc0fcecdb79d787c6e6565f8de30d0403"
     sha256 cellar: :any_skip_relocation, big_sur:        "530a75b7270e1132fed8dab200c248b05b523acf274dd9e0f283804c413552b9"

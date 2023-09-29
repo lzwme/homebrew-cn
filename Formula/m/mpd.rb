@@ -9,9 +9,11 @@ class Mpd < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "4684b5e5f938d42f5886654eefe1c93362d6bb750f4c498db3dd8e12075bf192"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a21b1f1b0d56d248df2f8ab332c4d70a41ea232136a9ffa7d91539e8308e2d28"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b641c81963a361820ddb9478a10ba2478874cb9ba1f00e05234f51c2d9e15abf"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e2df9d64db0154005420087258fefd1b3d835dc688679a2f7cf681a77d8feac5"
+    sha256 cellar: :any,                 sonoma:         "3deb55d9aa3fc6e1d3ac2f2c23819976b4afe5823c242a40a59d65a60c4813b7"
     sha256 cellar: :any_skip_relocation, ventura:        "167be1c3a62175b460948a691a6aa49e8fcb454f6c57ee715db251278767577e"
     sha256 cellar: :any_skip_relocation, monterey:       "d3ed12ae6333ad367d4a1eb01aa6ac51909d02197d39c680d86f43bd083f64ca"
     sha256 cellar: :any_skip_relocation, big_sur:        "e925b63fdceb63410fb99ee89b6deca6c9aad74426e7c7a4da5edc9037d6768d"

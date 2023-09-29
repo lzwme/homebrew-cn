@@ -10,9 +10,11 @@ class RichCli < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "13aab5e328aa67ad5f12a13ae0939444127059e885e92bf40eede6425f3f2b36"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c40cd3a2281e69781faeeded8fe14785a1cb10ed9d9ffb6e9fac3593a215efb1"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e2b29139a36d82363f829d3f69a7bfd35eaae27179b7e14affe762b78dcc69c2"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cad5798a07679c79423c2b1a87c0be0290e931d048810f4641757605bb4d0cf5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9782e7f3646bb3cacc5cad4144c565e609c44cbca3a8245ca1959feb1596e050"
     sha256 cellar: :any_skip_relocation, ventura:        "600d6ebe25ff45c5bcac4ed52dc505813b21362fb1ffd56c5e9c232cc2e982c5"
     sha256 cellar: :any_skip_relocation, monterey:       "575e2dcb16079752251854dbf0b417146f7bc566477c7ebb2607bb19c26583cf"
     sha256 cellar: :any_skip_relocation, big_sur:        "81a19b363401f828ba2a74359a245b8ff5c4ed9c4193d366a7a4353b2a0f86e5"

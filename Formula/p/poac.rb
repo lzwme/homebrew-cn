@@ -8,9 +8,11 @@ class Poac < Formula
   head "https://github.com/poac-dev/poac.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "9ffe2bbbec16b994b36efb4d5ae00f402ac995bffccd584d80f976fe94d72c4c"
     sha256 cellar: :any,                 arm64_ventura:  "f7264c6ec7cde08cab75221bda05747b0158e8bd84194dd99bc8002ae0e22a7f"
     sha256 cellar: :any,                 arm64_monterey: "7a4308dae0c519cca092333b242a284c3e0f12f50957f999ccb2f0064996aae9"
     sha256 cellar: :any,                 arm64_big_sur:  "f18740594d83e20f9738846fcaf2f9681f6ac33ff559e95aa8c4cb3f7e70047a"
+    sha256 cellar: :any,                 sonoma:         "7ae7681aa2d500429c3a0983fbdd8d5c35b85cf4329a62329ee751cff8e44d22"
     sha256 cellar: :any,                 ventura:        "b1cda02d8561d37821cb1a78c9e69d17e9efa283e046f4f713a8be1baf01bf77"
     sha256 cellar: :any,                 monterey:       "036be47724682d90f5d7baf82fdb2e5e6c637128c2995d7584d2c0b5bc7f683c"
     sha256 cellar: :any,                 big_sur:        "aad661ddcf4a5754a5c93ca6d2daf2e794a715a09a2f7cfa107d3ddefd79f4d7"

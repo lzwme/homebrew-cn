@@ -8,9 +8,11 @@ class Fontforge < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sonoma:   "3a8746ad31bb550eacee6c68a26b5117892127d3bc1accea97232b522632a4a0"
     sha256 arm64_ventura:  "864cdef006295be1c065314cc6caad3f9ebbdb3c0f6c6c832649d92af7327d44"
     sha256 arm64_monterey: "941de4b89e7cedda2477e4c0024c8ab3e1e200117c516a5c76a6cf129d61bc9c"
     sha256 arm64_big_sur:  "7d48ebc8e93c097808422cda06e15e580629afeb7e02475d916b635f93f1d581"
+    sha256 sonoma:         "f657225f4580a4ca44676736a3c3de7e2dbe48fea7e4dff49b16884dca9bc090"
     sha256 ventura:        "1b7d154062de6f9134800d2c422288243a67f6e9c32921b173fb3dfe49a235b4"
     sha256 monterey:       "a698046927fda5202622adf5c7f2c1f0d3b040fca05b82629f125156fa53ce62"
     sha256 big_sur:        "2f92236bf0eb3b88a2d567767b3bf1da6e77442b570483b1f2ccefc98cbfdd5c"

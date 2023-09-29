@@ -9,9 +9,11 @@ class Postgraphile < Formula
   head "https://github.com/graphile/postgraphile.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3321198259f1a0a3f6624eed7403e7796175d606a5ddd0d048ee800b30a6e302"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "89fe3ed5c28e49b954f36201b2c1b641a38ec737216ff48ca04aa63256156334"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "89fe3ed5c28e49b954f36201b2c1b641a38ec737216ff48ca04aa63256156334"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "89fe3ed5c28e49b954f36201b2c1b641a38ec737216ff48ca04aa63256156334"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8ac799e371db8337895e99d2e1e826b9c4fdbf78f5f66af5749fbcfa6e223388"
     sha256 cellar: :any_skip_relocation, ventura:        "f4eba09e6051328f2d1ece4bb1c5539cb78112912afe17034a72d922e07f0814"
     sha256 cellar: :any_skip_relocation, monterey:       "f4eba09e6051328f2d1ece4bb1c5539cb78112912afe17034a72d922e07f0814"
     sha256 cellar: :any_skip_relocation, big_sur:        "f4eba09e6051328f2d1ece4bb1c5539cb78112912afe17034a72d922e07f0814"

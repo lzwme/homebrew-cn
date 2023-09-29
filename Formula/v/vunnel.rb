@@ -3,19 +3,19 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/ef/05/d3e4e81a74f498f310c9a8be5fba0effea671298f6961c904242bd2b3952/vunnel-0.16.0.tar.gz"
-  sha256 "9d53086786b33e06bf6076f7cd22c7d7ef77cbef34fa2db92d18b14ce0f9fae5"
+  url "https://files.pythonhosted.org/packages/a0/3b/8cb2da638cd35054374e97002cf65a7989eb5c9d71388d7ec183020b9219/vunnel-0.17.0.tar.gz"
+  sha256 "2b52383e3099b53cba654bdb00bf3b7b3ff733a6c7d2c3d20726816723f5d267"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "1bd9e927c7aafcf4a74c1516331951ba5d13bb2bf1ad79962554213d3f42faf3"
-    sha256 cellar: :any,                 arm64_monterey: "124b44541b98b123da751c95d22152a0806fd73678449aa730a2a32db90534bb"
-    sha256 cellar: :any,                 arm64_big_sur:  "0fb9b777dd7473f92c1812c318d7747d85ca5032473f1c8105f00e0ffd99515b"
-    sha256 cellar: :any,                 ventura:        "7c5e20a29dd937982334d68ab1ec7ab0ed86c4a723a4b85bff7e5b240ebcf842"
-    sha256 cellar: :any,                 monterey:       "4b41b7519f9e41a48831b812462c28af670bb0ccdbc595af2fdb66df46c75986"
-    sha256 cellar: :any,                 big_sur:        "c92739b2e9b4f045e7b3a0b95c62cc43dc25bba65ae8f2ba769009bfc9dc9d4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15de4efe68b3b1ebde6c5a1e996fc26b1ec4f45741d464cafcdb1738ced92309"
+    sha256 cellar: :any,                 arm64_sonoma:   "f6d518ecf51ead1950540d1847cec6ca947873d2ebc063c071aa51d3503592ad"
+    sha256 cellar: :any,                 arm64_ventura:  "09d15a2e0c97add4d86f476ea69900395c26fff3bde9699532f632545832d9a1"
+    sha256 cellar: :any,                 arm64_monterey: "495b54aa63daf8a9d7ccc2390380634be8b4a1ae9ca1a216a0c94a3738e56046"
+    sha256 cellar: :any,                 sonoma:         "a67d43c83bfe19d6ad8834dc5b80b509a5346ebefa1876387b83870a765f5062"
+    sha256 cellar: :any,                 ventura:        "0e958c1a3f18eff97846dc4280312297ee1c96ba71bc9e2bb2c175f0d5478434"
+    sha256 cellar: :any,                 monterey:       "f6a1333d8dc7882e85eb37a37386d6e909febedda60f97267344a2871afc1e48"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78903d9de527d22637f1b634156e699631bbb35cc38dcc76110c8639b36fd2fa"
   end
 
   depends_on "rust" => :build

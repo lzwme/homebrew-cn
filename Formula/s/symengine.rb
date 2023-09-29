@@ -2,21 +2,18 @@ class Symengine < Formula
   desc "Fast symbolic manipulation library written in C++"
   homepage "https://sympy.org"
   # TODO: Check if we can use unversioned `llvm` at version bump.
-  url "https://ghproxy.com/https://github.com/symengine/symengine/releases/download/v0.10.1/symengine-0.10.1.tar.gz"
-  sha256 "9c007c99e9633f5549a55fa7a66ebcbcf9e04092eb55f7bb781c22b9cf0570c4"
+  url "https://ghproxy.com/https://github.com/symengine/symengine/releases/download/v0.11.1/symengine-0.11.1.tar.gz"
+  sha256 "217b39955dc19f920c6f54c057fdc89e8e155ddee8f0e3c3cacc67b3e3850b64"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4ea77c5ba66a825bb1ba2f6c93be7a806cd22dc741157f8286662d7de62a3d59"
-    sha256 cellar: :any,                 arm64_ventura:  "b7de3d65c754f61b1e00b26dab6d356607ea596bcdf07d295a5ca6d20b2d9127"
-    sha256 cellar: :any,                 arm64_monterey: "fa8597b8f74572776e248524a590d04a4228872d3d5625578d9034715e145aa8"
-    sha256 cellar: :any,                 arm64_big_sur:  "453225c8cd6f3c8d70b8addf9ccd59319015e4cf348cba1d60ecd2f7a96b6003"
-    sha256 cellar: :any,                 sonoma:         "bc4b7681c129c46c837e76b8309d666fa752d462d8086a756d30f244abcda249"
-    sha256 cellar: :any,                 ventura:        "a7d87307e9641560a1c055b12d0e118c60363c4499541b1b2efc32c8de75acb4"
-    sha256 cellar: :any,                 monterey:       "bedf50c1624699bf3fd2a2c82bfacf997080610a937ac058e7a7e1d48f4f79f1"
-    sha256 cellar: :any,                 big_sur:        "d394fe9cb7dc8e28b78dbe4cf63e7b1728cb32778b385c3331e7312dda2c9fc7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94b6334af9257858308b626b6050e08d95df7cba15ea94aa944ef0acbdb2cef9"
+    sha256 cellar: :any,                 arm64_sonoma:   "452da25ab2ac00b95aa885ae5e3f47169dc309f76afa0b662c2469032615b4af"
+    sha256 cellar: :any,                 arm64_ventura:  "dcfec817fb0b4ac1bb455d7e880c4eb09202b2396ce2a3c5ee668dfdf7afe6fa"
+    sha256 cellar: :any,                 arm64_monterey: "8726f63a9c1e49521d17b9b8ce0bf0a7b7522261ade102cc21b163ccb45b0533"
+    sha256 cellar: :any,                 sonoma:         "52b05a062669c7d8dcbafbeb4fe8290a7e9100c5a2f1405e3146a76fa12309f7"
+    sha256 cellar: :any,                 ventura:        "ae7957ea5a89e3b173380fde901a813221896ef5413fcdf7ca5634bcdf348de4"
+    sha256 cellar: :any,                 monterey:       "cf73ccf03218d5fef43a2746afddff296fac3b162ea8e71c9caf3dae5b4c43a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b87ca38ef53f35491afab8bb022f034681d2a5b5dacef31c692c8412abbdfdd"
   end
 
   depends_on "cereal" => :build

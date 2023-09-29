@@ -8,9 +8,11 @@ class Rpl < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e748fcb997a9f4173d55a618c5bd76db037c8c89ab87f3b49af797dc1c92ecbe"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "33bdfb7ac03b2f0bc8fa9744ce91ff3bcab8e95f729b219f2c52796ed3039b5c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8260d9b4929478ebb46333397ceaa14b54908f1ad54237eeff07398e76c4c06d"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b45f7e45719d16c8181411f29f330251bf20a0e4af946c76653f386307ffefa9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c03e8e4350ee2d87d9165131353ccf39438d648088411b6ea00c47b21f3ee360"
     sha256 cellar: :any_skip_relocation, ventura:        "bc7e9093f065ce21c4453a4672dbbfe711552cd8307ad3996f7926e68d030c0f"
     sha256 cellar: :any_skip_relocation, monterey:       "87d755ad01e755e32f8d67bfe5a4a005ecfcf8c2117e813e195d4c624ca7732f"
     sha256 cellar: :any_skip_relocation, big_sur:        "416a16df6f81200d1ece3520963a6d77cc82330d91f760566436c76b6a4bf5a0"

@@ -1,8 +1,8 @@
 class FluentBit < Formula
   desc "Fast and Lightweight Logs and Metrics processor"
   homepage "https://github.com/fluent/fluent-bit"
-  url "https://ghproxy.com/https://github.com/fluent/fluent-bit/archive/refs/tags/v2.1.9.tar.gz"
-  sha256 "4b7e86718df490c0e3b8546ceefa9f82cae4683dcc0dd4bf08a3d9b47c26436a"
+  url "https://ghproxy.com/https://github.com/fluent/fluent-bit/archive/refs/tags/v2.1.10.tar.gz"
+  sha256 "d7ed402bd79d4c219ee6a30ae52c9d788812271c23e96fe633837f8c3c630181"
   license "Apache-2.0"
   head "https://github.com/fluent/fluent-bit.git", branch: "master"
 
@@ -12,14 +12,13 @@ class FluentBit < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_ventura:  "95df3702becc2c0e754131a85a634b806d343df20c70e0a554b88cd7389eb9fe"
-    sha256                               arm64_monterey: "ce569e7faab33a88733cc17ae73ef54225c416ba6a1d1b22a134df15ba817dea"
-    sha256                               arm64_big_sur:  "5f84fbf611614901b5e8d95b4ea1dc9d8d5f5ad36c5d421fe64a16a3edf56a91"
-    sha256                               ventura:        "aa8086bc7272a460d02c78a9b64b8a30f4ff5cd8e7bb3bac1da601a712dcb642"
-    sha256                               monterey:       "aa7c64c3068db21e23546df41fa5df6ed9d4710de13825484e48760e872f43db"
-    sha256                               big_sur:        "c1de94dadfea23dd41e0123f5d5b142f19377b0ad68252ad64d79925529066f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2bf0e785955f5de2e3c69268de01bd88f7940e16ac8c9346ce3c89e0ee8f901e"
+    sha256                               arm64_sonoma:   "3f0fd81d568678badd6e4953fba86a6e010741381e33a8eebeb94ed23f6b58af"
+    sha256                               arm64_ventura:  "02ab877ea13f764a66050f2ffb8cb5b9dbbbaef6ea4ad8f925f0982cc44dd55a"
+    sha256                               arm64_monterey: "7ce25fe862f403b478e0d6327ba7a3e3984c853d984a3f4f094b6a8badbcb39b"
+    sha256                               sonoma:         "3ae6cc39c8e7960df83222deda23a6bbb0fe5b09de46138caadd070776c0e06b"
+    sha256                               ventura:        "61ef1f693961155ce13134e2c7217bd5f935e70175c8a942ebb8b30c50d3e05f"
+    sha256                               monterey:       "9c6ecc14cc2bc8368c5e7c6482d7d11c9f8b220487a1bc4e9eb429ed48c7ec99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96b52ea33a8720111cf1db08dcb221194b836cdf96218d3260305cb5d32c64b5"
   end
 
   depends_on "bison" => :build

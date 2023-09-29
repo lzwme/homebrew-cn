@@ -1,19 +1,19 @@
 class Mfem < Formula
   desc "Free, lightweight, scalable C++ library for FEM"
   homepage "http://www.mfem.org/"
-  url "https://ghproxy.com/https://github.com/mfem/mfem/archive/refs/tags/v4.5.2.tar.gz"
-  sha256 "9431d72a2834078f25c58430767bf2fd62bf43a0feb003189a86847c68b8af4a"
+  url "https://ghproxy.com/https://github.com/mfem/mfem/archive/refs/tags/v4.6.tar.gz"
+  sha256 "250bb6aa0fd5f6a6002c072d357656241ed38acfc750e43e87d8c36a8f8a4b4f"
   license "BSD-3-Clause"
   head "https://github.com/mfem/mfem.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8b7a3ed63a7e5f44598a10355e58efb02967d6d0a7d91021a7f70ee785a3d769"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4757c720028fd0d2c596d94eddc0d2e57f23bd11a6b7d50750ecf76dccde2fd7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "584ef622c88ff2ea7173634385776fb292f838d752be5830c018368644615da7"
-    sha256 cellar: :any_skip_relocation, ventura:        "c10c51c3dfab840d9d6a2ccb6872886404b6cf847935302a79ddec69023ae303"
-    sha256 cellar: :any_skip_relocation, monterey:       "a44c2c7cbc4f59908f99fd9b1db39f7f8985e67c712ef5bfc2911ee68c0c5075"
-    sha256 cellar: :any_skip_relocation, big_sur:        "54ee50777555e5566c3331113060be394e1c20c0b39400ee9e3508e57a191b0d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "145f352362f8d1fe19ec60c98a55d92dd35bccc726dc4a8b8c3c7cf911f50444"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "292fbde591e849f8ab68227d2ce11c2413eb50b7aabde23023664a94bd1dde3b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9346ba1c03ecd5af2ff25d86913786d604b9b89b8306b47319f82e63b78f44b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "82f356f2539c0be8cbda5f3e3cdbfe2341f36d27ccc9740983e929259da95ede"
+    sha256 cellar: :any_skip_relocation, sonoma:         "35d380c43b1b58588d7e39fdf17abcd1a9701fd2c42e6e28387a6cdc0f11ab58"
+    sha256 cellar: :any_skip_relocation, ventura:        "f8ba072821194be67e0c5df9f75d327ea8bb41be7e62354cf98eac03c532785c"
+    sha256 cellar: :any_skip_relocation, monterey:       "2b3f5d26158cc7086905036a770a2e240140433f1929f90700dc119c0f4f2c0b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a55f727fbf719d8fb9f746dc38f0881e8aea1ddc7cba8cac6b0c58f1b8e75b0"
   end
 
   depends_on "cmake" => :build

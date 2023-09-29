@@ -7,9 +7,11 @@ class Phoneinfoga < Formula
   head "https://github.com/sundowndev/phoneinfoga.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "05eac35183d7ed9a5a4c3925f40ac4db5c555dd14bae91b8900c43149b0ac43b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "adda96680af077cc100e72b30546128ca60a5af0d5bd9004403fd1ce44b842be"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1ea74cb7e516aaae8d68d531116dd796b32f1c9ce580810efa263fbc65df84d1"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3d89f826b851aa2079145fe62d5e6fb95851135e4427a06110657bd264f74470"
+    sha256 cellar: :any_skip_relocation, sonoma:         "05419d7fa9b55c8df91b0bb9235ff6a7bad4d2dfcff0a61962f2cdbc7ec37470"
     sha256 cellar: :any_skip_relocation, ventura:        "a2da9a20587e92301cda1b890bc0e5a7a8369a9270c8e12339fe4c2d96f91307"
     sha256 cellar: :any_skip_relocation, monterey:       "f7e2c5cf3e76ce4cc78a17524ee2c27fd9b83b3a87908658596f9aab21a958b8"
     sha256 cellar: :any_skip_relocation, big_sur:        "d01314dc129020adb39e2c04f94356277b88400d7d5638b7ff1936df89b071eb"

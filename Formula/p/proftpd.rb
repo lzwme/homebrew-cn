@@ -17,9 +17,11 @@ class Proftpd < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "50b2adb932453fda1b97dfdadda0a25264d70f82afe128b0504952c69605caaa"
     sha256 arm64_ventura:  "33f8063b1091a4ed78261a858a6469addd60fce2fae3bf662d800b695d214bed"
     sha256 arm64_monterey: "daad1aaa7a68c37157ffe1413b7b42a6ccb84861dc364e7ed6f18fb5c42e61c0"
     sha256 arm64_big_sur:  "5bda56800a66fa203e0e4ee496bce2495e86791900c59e34af486a5c0799b6e5"
+    sha256 sonoma:         "4ccc85d4f4290ab7c748ec28b03aa7727dee6d0a3d1d24bc753f418f88f045d4"
     sha256 ventura:        "7ae1010fc5a818f9d34f3af95d17d1b199a74ff54ea18a05fdfd852b049032e6"
     sha256 monterey:       "9059bb7d481426b7c40c42203301ddb8db983ef87a6b81c7bd559cbe4d740471"
     sha256 big_sur:        "a5295fda88d783978f9c9eb8b8af88c5ccf606a8e32dbe520fa574fdf2966b78"

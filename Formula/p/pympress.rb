@@ -9,9 +9,11 @@ class Pympress < Formula
   head "https://github.com/Cimbali/pympress.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "927a480a5e7839195f0cdff8c6ed5f7c5a85b6d27fc85addc75e7e09342f4bdf"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4aad20967579ed6336c439cd43479ee629f462457551ec1933fd48c522f95e73"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5c86e6d2e4dc15f051306fd163459262bec890dd5c92bb700544eb7068790496"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c18b1adf0fe81bcf0de1fcc3e4bfc1588daac39ec24549100196c8d20c72e09c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f875c068d33334d0a6ae16ba684859758cb45c4bacde1a72f0bb0b897a8e06ed"
     sha256 cellar: :any_skip_relocation, ventura:        "063caefab7d4550f34ce2b9691ad1952b062df9b9e022e4d630450a9683e5a2a"
     sha256 cellar: :any_skip_relocation, monterey:       "8a218b585ecec29f5db849f463af0362625127106bd038dd87284b5532e86845"
     sha256 cellar: :any_skip_relocation, big_sur:        "0962fbc7a213a9314e236e8deecc5bc6ebdb8bfbc6c77672772eab985ae6a367"

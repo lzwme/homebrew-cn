@@ -7,9 +7,11 @@ class Pgbadger < Formula
   head "https://github.com/darold/pgbadger.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "43fdc11961083b2fe26404ec3cf1db0f385bed9d7790c507309d9102fd65cbae"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "43fdc11961083b2fe26404ec3cf1db0f385bed9d7790c507309d9102fd65cbae"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "43fdc11961083b2fe26404ec3cf1db0f385bed9d7790c507309d9102fd65cbae"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2ef944f78b90a0325f1ab62b6754e28bb5178ad6eae0daaf5d3c028265419b44"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1d9a26125895ff45d1f63e31cd90d0b92fb598c92fdf3b3d38ab7dfc7e95f4c9"
     sha256 cellar: :any_skip_relocation, ventura:        "1d9a26125895ff45d1f63e31cd90d0b92fb598c92fdf3b3d38ab7dfc7e95f4c9"
     sha256 cellar: :any_skip_relocation, monterey:       "1d9a26125895ff45d1f63e31cd90d0b92fb598c92fdf3b3d38ab7dfc7e95f4c9"
     sha256 cellar: :any_skip_relocation, big_sur:        "deb782255ba028c3ce3909bbf492f891cac710b248364473a9230fc9752fa345"

@@ -10,9 +10,11 @@ class ReconNg < Formula
 
   bottle do
     rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "71adcfceb96bf675149bb7af761c1e03d6a40d43b6719ec71a5a5bc2b65264da"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ebf5406a1ec6b8d3ec9e5bfab3973ecbf5935694ff29aa606083d984407b251"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4d07d6919639a7d6f468bc78e6b09c90eb1682d40abacc4c86c534156e157176"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4b30680e12fc2de311f6d809175b58091b7d0436f1f03c3f59cb9417f355112c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "537ad1207c6b9f65c59effa37d1d7c689af51b0c4de4b4e12ae39459a92ae3cf"
     sha256 cellar: :any_skip_relocation, ventura:        "a0649ae316be3b710b4f60fa053fa6af7d2a5a6cc39aba5e500d897259e8ef47"
     sha256 cellar: :any_skip_relocation, monterey:       "ee19fd99b15ac1ce6899dc80396ba1b351f86dfa1d78ebf46fc0ad7e812823bc"
     sha256 cellar: :any_skip_relocation, big_sur:        "0155811b21380cb3086edf0c904b0a299875701445ad7855513452e5c8a2f9d5"

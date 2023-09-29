@@ -10,9 +10,11 @@ class Woob < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9765ebcc6bb85bf334060c289b2587456d03cc2bfe560bfae29181069f4af0fa"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c97975ba764c1ed4bea18a81765f8df592eafad056a3adf27a77536e65ac6bd"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e7cd596d44b9db8163f87e782a2295f1bcc1dc555e994adcb579ee3c3ef46b5d"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9513ff24e3fba7b0de377f719a75cbe05758c48c3cc41cca4299c624d97b41e1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4175933e9edd58db3e006b940280d5eb043b314664094e281ea28fb16a4d39ed"
     sha256 cellar: :any_skip_relocation, ventura:        "948c26886f17bff9c235a8991d26573a6443605d619f1719e719ddce5ba34f7b"
     sha256 cellar: :any_skip_relocation, monterey:       "dc26c1a50926cd5d41aee212aa2e2fa65fb45b29f7f4fbc68abab5edb68a1d35"
     sha256 cellar: :any_skip_relocation, big_sur:        "6829614e07810612a5f6b760ee4c005054c687d2729867077c43c344d44c75bd"

@@ -1,19 +1,19 @@
 class Massdriver < Formula
   desc "Manage applications and infrastructure on Massdriver Cloud"
   homepage "https://www.massdriver.cloud/"
-  url "https://ghproxy.com/https://github.com/massdriver-cloud/mass/archive/refs/tags/1.5.1.tar.gz"
-  sha256 "d527b7c45cb225915340515420a2fb3f33b73188dd6bab5f09f5470cd1378294"
+  url "https://ghproxy.com/https://github.com/massdriver-cloud/mass/archive/refs/tags/1.5.4.tar.gz"
+  sha256 "3ffcbc099ce7b6a166bcd85b5933065f0c8bfde682844575d5c3cd7d770407ec"
   license "Apache-2.0"
   head "https://github.com/massdriver-cloud/mass.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6bb9ae95be3cd7ad384c9e7e454bea9a35b7b6196b7412e16588bef4c4b649e5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "15ef2ce9d0eb24e525526fa6a25cc882a86dcc7c891ba3a11c055a2930b654dc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e2ecdd021527c4997920a57e297bccfe2c2e0e7b6528e669cda9772c005a57d5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "677bc465cdcfd2dd2232bc57b47dc84932562743d9844e795258b2b89c78cb48"
-    sha256 cellar: :any_skip_relocation, ventura:        "8ec5b4ed9901330685d0d37e39ab632b27ddd79238ff06d11206cb0bd56e90e4"
-    sha256 cellar: :any_skip_relocation, monterey:       "f7e283a6e533afa447dffa5c46cf275d819665b4dbbbfa90ac1aebc7a511ce08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "648b74545add8b6bc652b11c6a40db592ace59f3f9aa778ae431dd124efe8699"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4f947ab49faf643c7c84ad62ed5fbc3cab271b62b79bc598a25902b8eda10509"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "24c725039a230afbe65161300fcd415438b807f375d9c37a773d6fe70ddacaab"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "01a0d80855d4757d414a3256eb66560a86833d44c219e87300f4b37bfca711f8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e9f285c5cdca81bf357590ef9dd3411de02925e0bf7980d6e880f50c439adb52"
+    sha256 cellar: :any_skip_relocation, ventura:        "112aa97a3d8d225f16627796c233dacc158be3169246130de96cab05bd1222e6"
+    sha256 cellar: :any_skip_relocation, monterey:       "094a5d807f36a0c94f0676ce457750220015f9d31cbe87ac11604e80b60fff32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78884476c4e37d1a8d87111dd94cdf06da8054849af4231710e75224b580c6d5"
   end
 
   depends_on "go" => :build

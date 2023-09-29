@@ -10,9 +10,11 @@ class Mapproxy < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "8feb714c103f61cb4953ab95dbb7aaf62c6fbe1c44c560ed1034fc7f567ff53f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a4d62d3b9582cbad75557c070576a7b3a41d7ba2eee3397072183083b7b21dbf"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "82c7dd4bf09cba521f587db39964d50601381ea5d0edacdd14c92f9fa2ba2ab7"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "53556be7146ab2c20b8510d5204883d1f1eef915d333f9fca0906ddc4e989f13"
+    sha256 cellar: :any,                 sonoma:         "d549784cdb5fe87cb8ff4fec00316decc3204499591c312ae2dd4c9862fe756c"
     sha256 cellar: :any_skip_relocation, ventura:        "dcc64e57343878981e73170c4b1c0c8800345dbe14f58a354e37f51c8e254380"
     sha256 cellar: :any_skip_relocation, monterey:       "1b27b3755848f832b0ebb31e6b59c2b3a0a93ca57f3e9d276d549cea0cd6325a"
     sha256 cellar: :any_skip_relocation, big_sur:        "ebf5d78a5d1fd156418889fe073fda2624bc559b702039a85ceb049321805067"

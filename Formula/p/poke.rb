@@ -6,9 +6,11 @@ class Poke < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 arm64_sonoma:   "62eeb80839b693df98398078f0df6dfb100a0d17d6e2e422b5f9e7757dc9b48c"
     sha256 arm64_ventura:  "a88a2508d3dddc7e4ec7f6a1127b09c33b0a31d071e7dd2a25095a808681b5dc"
     sha256 arm64_monterey: "81de3d285f045c30526092a8e8fe30e8498b149b7684cc2aeb4859ec08769d13"
     sha256 arm64_big_sur:  "10c70e57d91e1ba919e02b10cfc8568b2c00b5b1418b575816a5f04bffcae067"
+    sha256 sonoma:         "f012ec7c61f29775cb3a9693bff6cf4e59f5d6b1334699557ed12f36db3cdb86"
     sha256 ventura:        "5e6b38c7b29f95b85ed4cda0b047db50a2d849d60b4f85eb90e7a91246710760"
     sha256 monterey:       "472e62f3691745a9f7675ad43b7717dd14c14fe3517ab358fe476954d87b937d"
     sha256 big_sur:        "9f2bd469ff64b420f47ea4a221d0c0ed9694b689e00190f43c4a4bd03155d028"

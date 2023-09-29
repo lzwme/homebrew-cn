@@ -8,9 +8,11 @@ class PassGitHelper < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6ad1e4a2750244fbeb3b64f8dd75f47754283a26f4d3c1924d408bdc5fe41d93"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa1908081936c96726efc978ebda0bb925774fad4c2db387ed68cef69deae138"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "525dbef2e267f434fea8d53aec68e569e9f6fca9768c8d06e89a83aeaeec9f00"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "46d1f3cd4408ed377783b6c3e208b8e4b99e510a09c0a0a1b29b8b5f153ee756"
+    sha256 cellar: :any_skip_relocation, sonoma:         "712c6ccfc72d9d62e095f0f7d10df780cd96f48dd0539234720d0f6a90d54596"
     sha256 cellar: :any_skip_relocation, ventura:        "8ac8045fc1950475ae41c755bdcf8393e718c1646e9e1028e0c8b17e180dda9c"
     sha256 cellar: :any_skip_relocation, monterey:       "ed2127fc69d08a420a5bd06ed99422c5f4340ce32d74ca6b77fbf427fcd24eba"
     sha256 cellar: :any_skip_relocation, big_sur:        "8daa0b2b079f9d4d105536769ce5e4a9012e3106997f4c4411168206634c7aa1"

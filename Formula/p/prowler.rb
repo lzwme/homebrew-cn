@@ -8,9 +8,11 @@ class Prowler < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9b79a914b9f995c98e26a093fc20d944653fe76504cbd3bc2766b81da7dd072c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "dee63474e5fc673d8fd3cb0629430a48a381eeb02f3528b0746793480b041251"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "03f741f785dddfb81941133349592529754051807470525ac5c86502bdebe682"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "71fdced9f03cd44eae96272dbd9623a70345d3c34fae59eb2db5a992333feb6e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "10383daba5f0ec87f753ff04c51b0f2f79beb4f0e229d865949c71d990e4de93"
     sha256 cellar: :any_skip_relocation, ventura:        "d1413f64c72d22a697d3da1e3acc2990537cf63d462151de6ed3cebad925928d"
     sha256 cellar: :any_skip_relocation, monterey:       "1e8ed22d1cdf2a04f3e33183c0f44973a31db1a58707b7aba59397decf65017f"
     sha256 cellar: :any_skip_relocation, big_sur:        "1adafe21d18d5309d74c4b86b79703da5b035d9755962769a9f6a44ff67ac8b6"

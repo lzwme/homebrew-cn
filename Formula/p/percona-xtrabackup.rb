@@ -20,9 +20,11 @@ class PerconaXtrabackup < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "4f7102862711e05f0983fc4f360a8d40905f5cb593d397f07f1e196d523c391c"
     sha256 arm64_ventura:  "2764795befb42a6e22e8789c31c231e1d2d8e1733ab7c4cbf5fa82ffb9d418aa"
     sha256 arm64_monterey: "eddbd1568b6e8944ce0b2659d616d1692a2ccd4f82d961eacfd033bd2366c45b"
     sha256 arm64_big_sur:  "f66796cc3e73e9a02d0522b339655446a5a860cec10a489ff1295e96401f20b0"
+    sha256 sonoma:         "1b3037f50e0f07d4bed46f709daa2036cc2bf70e036c8bd132ae7b68e5e0c886"
     sha256 ventura:        "4f4cbcfa36e16220e90997bb379c516a9153878ea58cdf04311d5e823c3afc3d"
     sha256 monterey:       "af8430d405bcf8fbc4df570f501f2a0779cdad689385c885aa0402501940ffd7"
     sha256 big_sur:        "103b2c76f1d450f2df412784afacd4939fa07c4d3a7d2135878fea0931d81059"

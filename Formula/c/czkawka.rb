@@ -6,9 +6,11 @@ class Czkawka < Formula
   license all_of: ["MIT", "CC-BY-4.0"]
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "00968309a6449f7fb21d938d42347b206fcc7f9c6ea9771d15e9b8fdc3a03526"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2125f4140031578713e01c1bac342abb820335b055c26e715a3fef419102f688"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0be17333e389d968109758ae3dc14ad48abda93c97c0f23f79c24ea9e8a3d465"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "76739fe606b5e23b6b56e627784e739624731b793d4f1f5a704a8e79fcbdd5ba"
+    sha256 cellar: :any,                 sonoma:         "4a0b2574752e9e59c9faff9b73e7eefb4ef6c87213820f8acddae201e974e364"
     sha256 cellar: :any_skip_relocation, ventura:        "00af83011687eeabdc799939d1356719fb915087e771e43928004c0a3675cb87"
     sha256 cellar: :any_skip_relocation, monterey:       "49b00193f4bdf29ab78856f35de3da1d91b3629fd0f391cde46b3e845fcff6eb"
     sha256 cellar: :any_skip_relocation, big_sur:        "64029ce9a7db71b6d24fc1fd735f873a4efde30c9a7ee0e342536956d76efa8b"

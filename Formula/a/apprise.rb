@@ -8,9 +8,11 @@ class Apprise < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8f1e186d8f742ad7dafbf99aa9101207b4baad74c2124fbad70d29ca37f86996"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1217080df5328723a218217aadca53fceb25bf67796f65855a8f7c7a4522a7eb"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0fe8596972c1a7fbceb26a7320203d8d815616fab833f9c779fec8a7c35c9397"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cbbb14c2735522c7545b736ea692c61ffe4169415881e7f9cba4f7b1e930a2da"
+    sha256 cellar: :any_skip_relocation, sonoma:         "59bbe7dcf817acf0251182ee717251cb63db529505a2e953b5093cc50059ec44"
     sha256 cellar: :any_skip_relocation, ventura:        "8f725f43edc94142c0b4d715e4fc9acbc8659254ad55219fa7afbdbafcb28b85"
     sha256 cellar: :any_skip_relocation, monterey:       "7961117709aea378a24be648c6f7c21c3ffc11db10afee1f2cbe08796bfd9afd"
     sha256 cellar: :any_skip_relocation, big_sur:        "fbf6b8c0347b84ba4acef9b64ac61074b0848cd3f32b522fae5d3f6385f2063f"

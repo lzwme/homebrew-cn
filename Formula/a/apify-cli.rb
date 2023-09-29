@@ -10,9 +10,11 @@ class ApifyCli < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0b5b46b7cb2e997a4aa1d9b7739500e4728b5a8af17987d3732d8f0937934e8d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c5dd67c07137004d0afe93eab2070c6b18544de201b14eefd8d996846bc3afd3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c5dd67c07137004d0afe93eab2070c6b18544de201b14eefd8d996846bc3afd3"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c5dd67c07137004d0afe93eab2070c6b18544de201b14eefd8d996846bc3afd3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7bc71ae1ae89bca27b1723bfb5cfc3839ec4a389defe6ec235446cba81a659e2"
     sha256 cellar: :any_skip_relocation, ventura:        "fa35d221e286aaebc337065d405a82585ffecf45febbcd0851fdee4731c24e79"
     sha256 cellar: :any_skip_relocation, monterey:       "fa35d221e286aaebc337065d405a82585ffecf45febbcd0851fdee4731c24e79"
     sha256 cellar: :any_skip_relocation, big_sur:        "fa35d221e286aaebc337065d405a82585ffecf45febbcd0851fdee4731c24e79"

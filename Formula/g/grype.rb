@@ -1,19 +1,19 @@
 class Grype < Formula
   desc "Vulnerability scanner for container images and filesystems"
   homepage "https://github.com/anchore/grype"
-  url "https://ghproxy.com/https://github.com/anchore/grype/archive/refs/tags/v0.69.0.tar.gz"
-  sha256 "d20e1fb2fdc28af123ce197ceef3ac9dd99327f3a298e7e3e2eb1dd5dd7b43a3"
+  url "https://ghproxy.com/https://github.com/anchore/grype/archive/refs/tags/v0.69.1.tar.gz"
+  sha256 "662045a79c1697c9a181ec68133434fa86177dd26435e6998d32d094d11f3ce9"
   license "Apache-2.0"
   head "https://github.com/anchore/grype.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "56bb1cc2790c72bb725523d05eb18cdc332fd7160184d045c00c4912e17e063e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f97ee2c9092d9c2438be2c7c485fce6a5994b1270f4d88e024a0564f3b67604e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2b62d4331cc0393e175981174ee2028e896ad08a0ca8f7fec96e75607f5f8363"
-    sha256 cellar: :any_skip_relocation, ventura:        "c6612b1d53bc4d5b637cf4e9044b513ad5a1128c882c590052109e8e84b3efb2"
-    sha256 cellar: :any_skip_relocation, monterey:       "bae7a8a6d055012e2b84cd572f36ba1b0c0f56e4adf5976eded65a302fc04a42"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9abfb66a4a4054f07cf01def2e89022c9dc7bfaa7d657c6299fb906ff4673096"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3613f060f1a319e58bc276c4527d74547cc6d344643f627619050981d3aa4abe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "87d77de9f384fb6e933de789801c701285449672d79b3fdc088b625f350237e8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a21fb53f892199a719cf5c7be8590d9412578fc94260eef1773d7fc5c7f2aada"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "66bc58a07929389af11ab88f161b5ea7d180d40b1e017e4cfafde2b8e2362aeb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "258db299783b18911e79945816286f605d57fd5d6b47e16ee9b122e800cf5151"
+    sha256 cellar: :any_skip_relocation, ventura:        "b400c9658c58e0c3641590098b06e87d8a17ad8618e1d79dcbe897d8af9b1219"
+    sha256 cellar: :any_skip_relocation, monterey:       "c3ca0abbaaa095953b1415eae52d8224c895e46036daf873ce6364c00908b050"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e62b3bd9f3900264e1f0ced163494fae375b793eaa432ab77a814cad19069183"
   end
 
   depends_on "go" => :build

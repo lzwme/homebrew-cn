@@ -6,9 +6,11 @@ class Bundletool < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "512d90074771106a03a4e3b369252133c04c56621a2bc2ab53c7c110a7650d5e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "512d90074771106a03a4e3b369252133c04c56621a2bc2ab53c7c110a7650d5e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "512d90074771106a03a4e3b369252133c04c56621a2bc2ab53c7c110a7650d5e"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "512d90074771106a03a4e3b369252133c04c56621a2bc2ab53c7c110a7650d5e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "512d90074771106a03a4e3b369252133c04c56621a2bc2ab53c7c110a7650d5e"
     sha256 cellar: :any_skip_relocation, ventura:        "512d90074771106a03a4e3b369252133c04c56621a2bc2ab53c7c110a7650d5e"
     sha256 cellar: :any_skip_relocation, monterey:       "512d90074771106a03a4e3b369252133c04c56621a2bc2ab53c7c110a7650d5e"
     sha256 cellar: :any_skip_relocation, big_sur:        "512d90074771106a03a4e3b369252133c04c56621a2bc2ab53c7c110a7650d5e"

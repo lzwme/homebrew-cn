@@ -2,9 +2,9 @@ class Php < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.2.10.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.2.10.tar.xz"
-  sha256 "561dc4acd5386e47f25be76f2c8df6ae854756469159248313bcf276e282fbb3"
+  url "https://www.php.net/distributions/php-8.2.11.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.2.11.tar.xz"
+  sha256 "29af82e4f7509831490552918aad502697453f0869a579ee1b80b08f9112c5b8"
   license "PHP-3.01"
 
   livecheck do
@@ -13,15 +13,13 @@ class Php < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "15f074dcb8c5f20c79058af0bd9e35ca27fac3c4cbb9b77bd6a394d677d9a610"
-    sha256 arm64_ventura:  "97e5418fdafe5d36c2dff9073ee1397da9f4d20136e5e36fff04f6ca3aeaeab8"
-    sha256 arm64_monterey: "1e54114be5753a900b783038cf70feff9e0a98de8cba3947687dbc904639557b"
-    sha256 arm64_big_sur:  "673a6e5a4b339621cc92e2fe24b62aa56ea370274731f012450b3266872c0614"
-    sha256 sonoma:         "a2872c54b338f725805e891b4b999527d3466139eea7c75978ae4e0718c3455d"
-    sha256 ventura:        "67301960913de19344b979470ba9831a1013b9a2980e2462d039452ee1f3d20c"
-    sha256 monterey:       "c4a45c736210f9ccd0c0111d8b85af4e60cdf8036fd195c8eea49e27d7051c92"
-    sha256 big_sur:        "2561ad4f2663c16b8f7e263a5b2ccea13496c78a76a55f2b071912ce4207df99"
-    sha256 x86_64_linux:   "85ce1db26b1c184fdb8dd92938b17c584da4f31cca0b1cb277236019438a78c9"
+    sha256 arm64_sonoma:   "86e273ac2b5d64d2b3c1a23d253df0eca981f3b87e232e7588aa5a9c44f6cbba"
+    sha256 arm64_ventura:  "dc007003563de596ac2d95de735c5c928c2221fdfdd066a9c4172e1d4f807ff9"
+    sha256 arm64_monterey: "ae14a5fa3d44f4c03810bb68bfb4706290d286e61b10cad2ce8726800b667a34"
+    sha256 sonoma:         "a2635b2703e92a86f76960d79093754b377ac4dc096c29cf29d16e90c9fec49d"
+    sha256 ventura:        "abc3a1b3e77a135871be0fba39ce4938c841129a7873477a9d2234efe7a5f13a"
+    sha256 monterey:       "cee4ecaa70d02b445ad185dc5af5ac5f239c635fff48dd84f58a1714862a892a"
+    sha256 x86_64_linux:   "94ec51f23caead10adc4502fedfe5c321a8d09029366bfc0d7ce695fa8d7283e"
   end
 
   head do

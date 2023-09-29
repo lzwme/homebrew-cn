@@ -7,9 +7,11 @@ class Rizin < Formula
   head "https://github.com/rizinorg/rizin.git", branch: "dev"
 
   bottle do
+    sha256 arm64_sonoma:   "5021d7962d12dca710e372c07e0e508447a8f541526e79953cb659ad7c123db5"
     sha256 arm64_ventura:  "d25e105b66cad21f89e9404990faaa709ec2437a11f6402ca87a6f049608607b"
     sha256 arm64_monterey: "35db62d58c5ee63450d0459ac73c7804c943d3e13ff08addaa9360bfa768b132"
     sha256 arm64_big_sur:  "f7139d17f16671225d7e604c910addef06cf7122f501a8518e02842a24fae52e"
+    sha256 sonoma:         "ce37296cbaa00ba72dd0f86f30c5514b85ecaf6cb6478f63b4c200b744c9a625"
     sha256 ventura:        "a521ec17ed67e879b4c2f5595dae3171a8485d92bccb8ace7565ebbdc954b5d6"
     sha256 monterey:       "a4ba60ec71dbbf5234d7e6056b2f2c2d2c511fcab4d321121320a353b9fd36d8"
     sha256 big_sur:        "e2b698934765e132f2107b391951f233c80f322b23fca77c653d84c8b23da6d9"

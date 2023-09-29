@@ -11,9 +11,11 @@ class Proselint < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f9d6e15ffc7e491e87eb4684eed42b0ada29e199216e64791f64030ff3ae7dcf"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9a5829fdcd105a044993dc63bf9ee2bb42a075b15aa416f05b41587e448a74bd"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a99d0eff9a09c4e195caf20a2eb448e4305c61786b592adbd6ad98dc788e5849"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7423630937ce4c70aeba94ab02532422fb1d0d19132fe632335cbd1679dc7fbd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fbc864b7d51597a311b0531712a511c9cdcb8f088b567facab720888ddcf0ff7"
     sha256 cellar: :any_skip_relocation, ventura:        "94aabb15c29ab3291aace706ee0acf906ec6bfce8ce1ba86506028209face8eb"
     sha256 cellar: :any_skip_relocation, monterey:       "4aa8f05c1e3f1082c8c8186d4fca8f47b2887a01917cc2f2ac573cf594eef8d1"
     sha256 cellar: :any_skip_relocation, big_sur:        "e3fa366974923cf5fd04d11e0f70dc8b6d6b57863b965ad67297c24530bd0548"

@@ -6,9 +6,11 @@ class Pgrok < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3f3c04a70e800411cafa8a6d0bf1fc6c71ba981fa5cb0765d1002f21b8aa82ed"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8165af1dc7d72e1c72eb642feb20e1da01911a8e5c027d5af113207e9144ae2e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f43696d9e60b6dff2bb3f93309fa67e5618143035759a92b02dc80875cb918e7"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ef5d9be8ee4f399660c507eca7647606b3d6b2bb2f3bbe54c9167deda458792d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4cc88748f7cd6039f277cc17f9e6dd3d7dbc516c8584661a447e0153ba4341f1"
     sha256 cellar: :any_skip_relocation, ventura:        "a0df041caadeec0edd908855e60e69ddeba089a85b8167eb235b230098c9c30f"
     sha256 cellar: :any_skip_relocation, monterey:       "2b2ef4dd3b91082a88bb0d9dd86479ce26b846c5e60647f2a1ef7ba40b179f79"
     sha256 cellar: :any_skip_relocation, big_sur:        "1c31fb7b354524f3801b871d7b737b2d7adf1cbf6b1abd1e1551b02c0b713fb5"

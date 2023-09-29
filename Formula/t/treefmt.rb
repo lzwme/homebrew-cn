@@ -1,22 +1,20 @@
 class Treefmt < Formula
   desc "One CLI to format the code tree"
   homepage "https://github.com/numtide/treefmt"
-  url "https://ghproxy.com/https://github.com/numtide/treefmt/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "2ba130f4920b45409efb7d939c21d9a9d4640d46f76a5ede13e2bb01725670c8"
+  url "https://ghproxy.com/https://github.com/numtide/treefmt/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "2d1e506e5c488b4da1061bc5bd5c91074b8d136bcfa90b6bd8c76c461d81224b"
   license "MIT"
 
   head "https://github.com/numtide/treefmt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "05dc703cb96a37ee27a28b846e1a2fbc3dde1ba0ae48dc12e8f000ad0ab1b233"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e6b4e5ac0a0a14309bc2c23a6eda313753e7369e27a428516dea578ba3ded552"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "95bbad56e99d607acea2e60867c7b91799acc581dba563c0b2ab5da700c009e5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a1f3dd5443560d3a461fc920ed071fb3ab9819addde82d17ab97afbf83d7f07c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "307353ef795d72e68c2018cddc660071b2ce8eb0680c276e838f25c7ec2ccd71"
-    sha256 cellar: :any_skip_relocation, ventura:        "41d17fe258ad94a2aa57130b76a1fb56912165620f1a543a68ffa76d98d52b24"
-    sha256 cellar: :any_skip_relocation, monterey:       "3894d15b1fa3a022aab9c6fe436b90100c9f6b51acb6ef44f8cc7a39647319c9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f76733299331b9f3b0e065a5d5b4bbb4e4ba436ee4b38d8f5873d40fa0186155"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f416a903eb4fda7f650970bd58074efa1688b1e6467dbb61d31c687c91f0a90"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f06934b7c3f526dc635681f59a78c8f66768c9d3764835aa925d39ef22203882"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "98a1d33fd5ac322f3f309f28ec942a6cd4f2e49206c9e1cfc7e11f633d304b85"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cfb60eca7db12e3527dfe858fd904c24d0ab3eba4895ce01e4954f60c103fe5b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b892aeff88d1576dcad733f8bf5a1d76cc72bae3250bb4e6a635e54421079ef6"
+    sha256 cellar: :any_skip_relocation, ventura:        "0e617dc388f7177becf3b05660e240ed2fa3468cdcb5dffb3b7c8831837f2eff"
+    sha256 cellar: :any_skip_relocation, monterey:       "df15d38adad2365fdcbb2640466cba9e3a5b2552d8d6acb73595c959c0c12af7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "872db04b20754da18c65355c65953231746a9c17ac478db5f5a2fbc91ca3ea6f"
   end
 
   depends_on "rust" => :build

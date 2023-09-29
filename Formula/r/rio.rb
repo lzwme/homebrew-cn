@@ -12,9 +12,11 @@ class Rio < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "be49e63af52354df5423c17670fa5e3b404222404a41b7ad94e6bb4569b4f1a6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c57c630cffd6532d0e3bd5088ef8146b7c529c719931de268db99bf2dec71f60"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "75b3f25c488ce34b762cc02328f0b789cdf3466396313df5eac5e2942aabd725"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "96285f19ba8d610a63841c0fa7aba59b6d73c6a662c199575f654025d5d4e4a4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "162512a8c75524e0efad548ad764d32f1ef726dd48e393287a6c46b1681f72db"
     sha256 cellar: :any_skip_relocation, ventura:        "8c66897647a804f3eb2dd6ac1f7d16c48f96701a5b7787af3a26406e0466e6d5"
     sha256 cellar: :any_skip_relocation, monterey:       "55e4880f2b9784bc36eefbb637867afab58538f32fceaca509dbe59388e01874"
     sha256 cellar: :any_skip_relocation, big_sur:        "662085669ae6326a63c01a58459d3e1bc257233e0f69a5c5044dea47407434ad"

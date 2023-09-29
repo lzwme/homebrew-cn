@@ -8,9 +8,11 @@ class PodmanCompose < Formula
   license "GPL-2.0-only"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0ff28098a5aade1215418673eff8f6c4908152b550c19bc6214e89dc4d2a1fca"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7eab4f78ae279cecaadcbe69296c9494f4d4f82fce5690066b5717f0be00aec0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7eab4f78ae279cecaadcbe69296c9494f4d4f82fce5690066b5717f0be00aec0"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7eab4f78ae279cecaadcbe69296c9494f4d4f82fce5690066b5717f0be00aec0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fed3e89eef4a0a26ed0ac0130763288001dd8d0f6ed3e6ac43a20ac195ff6f3c"
     sha256 cellar: :any_skip_relocation, ventura:        "b9d8b85155552c42aba788d8e55e17d3a5273fecd8edba8316b40225d265f720"
     sha256 cellar: :any_skip_relocation, monterey:       "b9d8b85155552c42aba788d8e55e17d3a5273fecd8edba8316b40225d265f720"
     sha256 cellar: :any_skip_relocation, big_sur:        "b9d8b85155552c42aba788d8e55e17d3a5273fecd8edba8316b40225d265f720"

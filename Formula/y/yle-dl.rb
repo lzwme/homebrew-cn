@@ -11,9 +11,11 @@ class YleDl < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c7e4705ade71d163916167728f62e7c3af0a7b52a9944ed5795ac736f4433e55"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "91c9ffe658b53123216210b8c1e0e30368f75050a4e0544d2efe8658237d3e55"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6e5c27cfb11d86938cee0045797890672d840cae80638b23f84da93d27255b3b"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "364b5ed3c8d2fa576f612cd0e92eab132b490a3154a915921c19a3ebc8fa138d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a7702442a8391d3d4b619efcca73cfe8c0b1f4daab164a57bbd13615144a3cb3"
     sha256 cellar: :any_skip_relocation, ventura:        "0a0214cd0b1ddda26462d7660f5d0b280d735f5133ad7126e1c25718bdaf4235"
     sha256 cellar: :any_skip_relocation, monterey:       "f73650a9e2b715425d8646b6c2395e8de50103cbcea741d34bcde0e98a4ac109"
     sha256 cellar: :any_skip_relocation, big_sur:        "d636d0f53b2577056b209e261369537b664e087028ad8a2522f24c02707a60d4"

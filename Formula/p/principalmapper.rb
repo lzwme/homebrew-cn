@@ -10,9 +10,11 @@ class Principalmapper < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "88129364b1771eba2faf4eb8ef4e57febcf635b833360e1bb18602e25e322505"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e0b0609b68206f01b9f0b420831e9e303d9dd9e97dd6989222d13307c16f18fe"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "40db4bf177682d1efe58ce309aeb052b2d04b3bfda841529f3711f89cce15971"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ad1ea1e603edfa2278847f70e194565c883c4feeb3d47f6b5ae19fd54c08d33c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "807e6564b8b4c6419d6895bedc6b847f891f228bf5bf690c438903148392f5c2"
     sha256 cellar: :any_skip_relocation, ventura:        "fc7b301326ce7f99cc5ef04ef0690fe57960b5f114a4b5674ed3eddaa7202511"
     sha256 cellar: :any_skip_relocation, monterey:       "cceceaa1b6018b7e539ab6d539cb1733040b951430abcfe85fff61059f9a44d4"
     sha256 cellar: :any_skip_relocation, big_sur:        "a7d9626874aa2df94cd4c3763ff45d3a51ac174be3ae6b7304e352107c51df50"

@@ -2,8 +2,8 @@ class Zbctl < Formula
   desc "Zeebe CLI client"
   homepage "https://docs.camunda.io/docs/apis-clients/cli-client/index/"
   url "https://github.com/camunda/zeebe.git",
-      tag:      "8.2.13",
-      revision: "0235787fc28321534a8ab25e7628253e1e39312a"
+      tag:      "8.2.15",
+      revision: "393b02d6a53edbcca5aa4780cae8590a58cb5e47"
   license "Apache-2.0"
   head "https://github.com/camunda/zeebe.git", branch: "develop"
 
@@ -16,15 +16,13 @@ class Zbctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a1e2c1049bb2696469e0d4589d6fb873d20a7bd6cb58479560d0bfd18513119"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4a1e2c1049bb2696469e0d4589d6fb873d20a7bd6cb58479560d0bfd18513119"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4a1e2c1049bb2696469e0d4589d6fb873d20a7bd6cb58479560d0bfd18513119"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4a1e2c1049bb2696469e0d4589d6fb873d20a7bd6cb58479560d0bfd18513119"
-    sha256 cellar: :any_skip_relocation, sonoma:         "180dd74ce44a0681a003f7fd67b17adfb5f87d43bb7de6532530e64cdf66ad24"
-    sha256 cellar: :any_skip_relocation, ventura:        "180dd74ce44a0681a003f7fd67b17adfb5f87d43bb7de6532530e64cdf66ad24"
-    sha256 cellar: :any_skip_relocation, monterey:       "180dd74ce44a0681a003f7fd67b17adfb5f87d43bb7de6532530e64cdf66ad24"
-    sha256 cellar: :any_skip_relocation, big_sur:        "180dd74ce44a0681a003f7fd67b17adfb5f87d43bb7de6532530e64cdf66ad24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f867f9682a7d5cb072fb0c94d5f97683cde59404c021408df3db865a6219350f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "be4233d66fdd7d4694c13e7b3ccbe1e02c9e80e8dd75039838238501d327cc77"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "be4233d66fdd7d4694c13e7b3ccbe1e02c9e80e8dd75039838238501d327cc77"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "be4233d66fdd7d4694c13e7b3ccbe1e02c9e80e8dd75039838238501d327cc77"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b1b3df55bb1067bff0a00183d2e1991b262e7f20d0db62d724a86dd7b78926a6"
+    sha256 cellar: :any_skip_relocation, ventura:        "b1b3df55bb1067bff0a00183d2e1991b262e7f20d0db62d724a86dd7b78926a6"
+    sha256 cellar: :any_skip_relocation, monterey:       "b1b3df55bb1067bff0a00183d2e1991b262e7f20d0db62d724a86dd7b78926a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed81b8a314001713e9d218dabaf976094220ac8d84e0c746531029e987c37f92"
   end
 
   depends_on "go" => :build

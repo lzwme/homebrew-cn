@@ -9,9 +9,11 @@ class Remarshal < Formula
   head "https://github.com/dbohdan/remarshal.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6f47d4d6a3e837702bcc6c74deb0d707cdd9df8ad26d7bf4e4dcb1f56b62274d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "607638802a9dfd178b40a5c34457b5a3e9198fb4cd746b01ec34e688c12b43ff"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ace154efdbeb9ec7707f91285ef27ffaed18d462919af65ce5b9eecbbae5522a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "75653f097087df6528b02ae5a91883174f90ff2451ab4522afb07eac0e519d27"
+    sha256 cellar: :any_skip_relocation, sonoma:         "03bb245981b0d78c855fa05f7e1ca79b0ef43f543e3b6b42d6be15985f08c789"
     sha256 cellar: :any_skip_relocation, ventura:        "7daba016136490845fedfe33a1ac5ecf5b12ccc9395e5a183b2ae246da0f8da7"
     sha256 cellar: :any_skip_relocation, monterey:       "df698cf43430fd252e08fd9d6d076af64bcd6e3b7caf6b85f0842b8751983886"
     sha256 cellar: :any_skip_relocation, big_sur:        "38d1cf8116ce176a28f6d2aa89100428b5eecb7fe200720e8152decb58ed1106"

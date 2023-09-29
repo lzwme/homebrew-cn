@@ -8,9 +8,11 @@ class Pipdeptree < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b1c01c0f64fd4a675a1e49eaa8b7972daea385ba99dcbbefa6022df1875c00f5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e84f824be54564cc09fe56c7c198447a35ff85391de158d34432dff183dcd87"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2f7b325351b7153b7c8f88c92e4c5d470c8cc1a8f6393ca3b542e2d960627fce"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d76afea856091e47b805b4bfda708a12a4d6aee16d66dd72db2b0609675bd265"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a67fe08cb598bbf22df9dc3c020e8c33c24c2834c51d77214577f07fe649b551"
     sha256 cellar: :any_skip_relocation, ventura:        "7f1d9d978ef8069bb7923c1177e9a9855947b85ec619e662880c592b1b2dda59"
     sha256 cellar: :any_skip_relocation, monterey:       "0ed03fc8e8036c41b63ce1ef934c3e6c76fcfa56fe626597ecf5553b62762fe1"
     sha256 cellar: :any_skip_relocation, big_sur:        "c251ba421de9451114ea03bc807f4cbef4e9de066993d201cfe4ae2409b5adce"

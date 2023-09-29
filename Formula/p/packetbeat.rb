@@ -8,9 +8,11 @@ class Packetbeat < Formula
   head "https://github.com/elastic/beats.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d1a37ff40ca9b9939ea010caba23fff0a2469584c04de5072d5d7b3c7ab43fa9"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3f0a169afd63c1c9ca663e4ba0d600eea70199fd9734b6f435609a24477a5aa7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6990c078503cb0b02e7b16eebf9e4670cfc5653b8123de11055ae0a904ca71f7"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b9046c5ff9bddfd20b9fa3f2d0f805647a7abc784038df7ff228fb7443bc453d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4b9c5e5d044d3d700af69b2af6fff3018221b36b14236c07784f6cafe9d6aec4"
     sha256 cellar: :any_skip_relocation, ventura:        "2524df5d5c112a263dc7b321b36805af1c3956c440279d04631fe7bf9743fa31"
     sha256 cellar: :any_skip_relocation, monterey:       "b2b3a24cb176c7e50752569f173f7dd65a21d9deb39c10efd93907d6230bd5e3"
     sha256 cellar: :any_skip_relocation, big_sur:        "75f90f60bfc18b3688bd643f8fb236ddf976c572b59a757759bd4a642f300b76"

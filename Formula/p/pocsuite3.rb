@@ -10,9 +10,11 @@ class Pocsuite3 < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6e2243f7b7468ab4dcaa62d5f8b87e2af3e99a54af182bf6ef8a23cf3757fa92"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "543ff08089e3ae8c09f5c8f7b379c35571a6d99951bb196af0f7ed24fc5051bd"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f18624025f1d2cb62b9ab942408c5f1f2e3140457219b06dba840a272e42a6c0"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3f1e864343728410eeeeebf6178869603c2a3ef845ab862fbb98a997d19b2aab"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8e69b85603bdb0da200fdb477fda8f0a8e73cc87b823732cb953cc47433660ed"
     sha256 cellar: :any_skip_relocation, ventura:        "c76bf9330875620614dfd9b929f692a9f06f1d827274cc0627bd64a193c4a238"
     sha256 cellar: :any_skip_relocation, monterey:       "4f38bde40e499ac8e427e77cbd491e4ea758ba307282696f13ea8df960390f05"
     sha256 cellar: :any_skip_relocation, big_sur:        "4ec685e94bd61152fdfd7224f98fcd68d04c15ab94a8ff65613f636951def1e9"

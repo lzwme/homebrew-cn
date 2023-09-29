@@ -6,9 +6,11 @@ class Riff < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ab02bb76625c66a9f465284e2efc0365a74d9c654942af0b05f5142b844b8f89"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "317449f99db80877017627711e5ddd70b5d331e618f0562b078eab381df79ed9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "618002aeb404cf30daf1a46b5802d1880a20b62736c225a25614cfc78cd9823f"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bddf1ab6700622ec0300a00ca29edbb72e25565f7a9b7573031ec6233bcaa126"
+    sha256 cellar: :any_skip_relocation, sonoma:         "de499e52167ac53c22a132450b3b529164643cb23b6f56238e5ca3c31f247ff8"
     sha256 cellar: :any_skip_relocation, ventura:        "3c2876305293dd9f21f919aadf58db2af95e1374ceb255b24cdc49736d361b77"
     sha256 cellar: :any_skip_relocation, monterey:       "0dc5e7c4802700300da4b4fa7a58769173eb65cd017ccaeb85ceb0659443ffe2"
     sha256 cellar: :any_skip_relocation, big_sur:        "025375408e2b11e98d9e9ced9254352adb7ddc066f47ab98477b60cca97cb97e"

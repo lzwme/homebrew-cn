@@ -6,9 +6,11 @@ class Procs < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b89337f013b28db60650adada664045bcb7250d89f6ecae1800e277e005aca9c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "de9c1631762b37a015ef29105948b0d16e040f114d771fc7cebe1f7c8c1ec27c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "43df9e9c419a6746dfa675e4950aa00785d628179e8c01966620970f770e391a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3d51c5e8f70fd83cf4b83586ac4a5a33a97b68850948b905064ede175a869e25"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d7be773ff49e54935a0fe8d064ed73ae446832cd6b7e5b94ad24eb9072f8f76a"
     sha256 cellar: :any_skip_relocation, ventura:        "b2358cc32f33927686a09fc9fb380487fde56f79add118fb7d36848bbf8af29f"
     sha256 cellar: :any_skip_relocation, monterey:       "883c61ba9506ab4540781a29b7c0f5e0cbce671d7712be64b21ece718ff42090"
     sha256 cellar: :any_skip_relocation, big_sur:        "9f221df219dbf0dc1736132cf9c96b1b7ac6bde0fbd397711b8a50e3503294ca"

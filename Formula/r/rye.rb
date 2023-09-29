@@ -6,9 +6,11 @@ class Rye < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "66c150b08a829a275e5f088acd52569259b0ebd0ab120237d73c49b8dbadb29a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "19e6a8da3e86c35e0d3a77095c20605ba6457193c68e41b00ecb2b9aff745b81"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3f401872fd688127e6503b529baed24c821b3e9fa7784c49bcd4e6c8c734ed55"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2ce5691e88da7e285f0d84356a18cf1af6f90a4c38d74464ace8bd52b2671ffd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2a9aec07fd32eb9e5576560b3f4d2a1d151fcff04230e4898fee06f34481ac4e"
     sha256 cellar: :any_skip_relocation, ventura:        "a8e7a5926db65fa6fa225e73673c85c66b64e3b7c1b3d7a49aacd52ca9077e05"
     sha256 cellar: :any_skip_relocation, monterey:       "35ad2964da4e56aec8c1523fde687db9d5c84046d47b058b5c233663652025fb"
     sha256 cellar: :any_skip_relocation, big_sur:        "cedc38e2518394259306eed7459af31d7399695c8e4f988d254bb90b74652d83"

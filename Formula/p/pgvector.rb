@@ -6,9 +6,11 @@ class Pgvector < Formula
   license "PostgreSQL"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3526136d0624382f46442423dcaa4e64f80303c5ea5fab757e7d8d7173732cba"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a251dca05b8268948fc840031e5a27ff80652aec10c1805b7580adbafbe26e9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d802b90636b7a957d2be85eac32c2e04372ee08e16651031682c1d400a00a48c"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "60d13134b47e61ad515e567a592a8d97dae3a7b30dfd538279152cdb3c0e6905"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fa8ad8788c194e50c69c8e57d88e2166d8669a5382f8725dc80dfad791f575c7"
     sha256 cellar: :any_skip_relocation, ventura:        "b4cc58fea3541edf4ed854a51ffdf984c5391dd6469a8eebbeb29e0cd2fa7a69"
     sha256 cellar: :any_skip_relocation, monterey:       "cc79b35c5f5b823e3a11058d9e964b7bcd0155639946a651ab976ae82fab82c0"
     sha256 cellar: :any_skip_relocation, big_sur:        "b06be53cfeba3b30ed0ede1690b7aea89ceff93dd0c5cd5773977b3e3f10a2ce"

@@ -2,20 +2,18 @@ class Cbmc < Formula
   desc "C Bounded Model Checker"
   homepage "https://www.cprover.org/cbmc/"
   url "https://github.com/diffblue/cbmc.git",
-      tag:      "cbmc-5.92.0",
-      revision: "671e46a67401970aacc937f9c9284ae845289471"
+      tag:      "cbmc-5.93.0",
+      revision: "99c54024b4911bfb2c6ed4fbdbe33d199389896d"
   license "BSD-4-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c45395cb1fa92165d1e54953c50132d8e4b728f5889a37e9904b039c5447e9f3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d7e5662905945a8974713bce287a9d00703a30ae3ef5361b0d9e905e5ea74993"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "219251de020f2fce4a7263487422b34a140922fdf521dce02a632d81520855bc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7d0c0ceadb212c2e8b4c8ed84c48f958e567d7ef4cef0877b85929a050a5c054"
-    sha256 cellar: :any_skip_relocation, sonoma:         "03ea1ec068d0ea01d87ef56f7690fa45145cbba258c16eb24a4a6037225a0dd7"
-    sha256 cellar: :any_skip_relocation, ventura:        "eec05207f1ccdcace1cb86836fd9d07ba2ffd3d50552a45e2e17e14420a54f53"
-    sha256 cellar: :any_skip_relocation, monterey:       "7aa6d14a0d00aa5cd08b941fddc773f409a075594e0439de18e6ec893ec4c08f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1f0a1497b169d7efc90a145f7097b2346e914f0254ff2fd675ea6c58e31486f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a88cdd3a9bcc082b1a55658eec0b32303b49110108fe2c174a0dbfa37343892"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9b0aedf45666a0664b577df29f534763df5cb5c670285ec9d4c768201e816a19"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8fe2411d7a62c3d073bf007fa3a48c1237322a7429be7a1ae6b6179b0310095e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ce4caf2024a073424d7563091b36bd95d80a20da67bc1cfa6ad819b1458ac08"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2e96bac9fbfc3fd899af6918975d31fe9d3cc79f0900da600c27962dc3a821f3"
+    sha256 cellar: :any_skip_relocation, ventura:        "487855d54e433d451c4cccdc3185d8b8b8914c39a8d48b3d14b02922fb12c89e"
+    sha256 cellar: :any_skip_relocation, monterey:       "230820db7b18292f1218f5f31641cf421eaf27a3f8b6ca346537236c5d1011b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d753015adda6d7ea1b85876d091bebe1831b25c37c769f12356d7ea74e4371dc"
   end
 
   depends_on "cmake" => :build

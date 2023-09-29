@@ -7,9 +7,11 @@ class Resvg < Formula
   head "https://github.com/RazrFalcon/resvg.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "bada42f8cac8c61eb1d201a01b0349e9f932fab68a8cc2137a70db7fbb3e43c9"
     sha256 cellar: :any,                 arm64_ventura:  "89ac01f3efd842bda12e4099bf31c3eeb7e1d4f599dc4ab44c0ba1c5ce4b2e6c"
     sha256 cellar: :any,                 arm64_monterey: "a508552cb2d6bc65e3a05d3ec3e40e1022e99a1b858eba6c970b768e49b101ac"
     sha256 cellar: :any,                 arm64_big_sur:  "05d352ed05aa3fbbf31c05eae8fb55b7260e41421793a516dc21e3ccc6ce67d3"
+    sha256 cellar: :any,                 sonoma:         "918c52486cc3f66fe80fabd2a26174573da034aa7cb68c3fd1512317697676cd"
     sha256 cellar: :any,                 ventura:        "159a8349ab10e016dc74713c21167cc25c43e2f0a544277e791428b66d24a49b"
     sha256 cellar: :any,                 monterey:       "ce0206df6999f0879319868cfbbc97b94a70c4ab73c7257cbb15640b3c8ac45e"
     sha256 cellar: :any,                 big_sur:        "738e2aa23854ca4f33268b96378f7bf7a2d10a1a619530c9607dda0c7fbb0f91"

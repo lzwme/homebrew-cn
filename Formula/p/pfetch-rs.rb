@@ -7,9 +7,11 @@ class PfetchRs < Formula
   head "https://github.com/Gobidev/pfetch-rs.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c4801bcb6f0703c9a4414c6afb8d6cb76ad3d57c42203a9aca8a2b4117fbf51e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e1fdb1dbe1230b64af06c2e620a03cd2f53413ab288f5dd8e954561ad466f95c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4d4866ff19fb0423a0ee1de124dd506f809a25eb3c982d861b2c0dd5b167cccb"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "66c49e16c55ece2d9e31eef29a1bc9b5343b4c4eb2c3690514c1cdb25a0926de"
+    sha256 cellar: :any_skip_relocation, sonoma:         "843d430768473db1a735147d9609641d7e21845baa1940616326aad488cdca00"
     sha256 cellar: :any_skip_relocation, ventura:        "47e3f7ef56da69d6aef625a822aa177b817c8dcce4166bb715cc95bfd58df9b2"
     sha256 cellar: :any_skip_relocation, monterey:       "073c0e7443a39b656ddddec860ae4daedb49fb5fd702ea46e9ccbe7f1d66eaf7"
     sha256 cellar: :any_skip_relocation, big_sur:        "1906af7fefec5d4e35476b9a15ef06c1e8e93b06f03a7e2f9147d00f9e694226"

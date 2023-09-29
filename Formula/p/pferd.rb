@@ -8,9 +8,11 @@ class Pferd < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e90a247a0fae4fe0657e45e520463db1885361b64e03387473d39373c152663f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ddd1e21c2bfd358231f1ac4310ec33ce36e00ab572b68bc4387acd34b94c14f0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "dfa77af99f8e2bbde01289795d42e1349935759ef57ee901d1bedbc6b57b7274"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "68df51cac47ce6cd9cbacee403e935ad6b29ed78ea52a73ef3e90196cb7b791b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "809054fdf318fff05112c238c1e4e09058eefddba4634673537c71aadd1b00bc"
     sha256 cellar: :any_skip_relocation, ventura:        "633bdba6cb8ce40d8d101c0c83605dab4e84c28178de6f427bf52940906e896b"
     sha256 cellar: :any_skip_relocation, monterey:       "e1f017f7a0c9a0e39fd0070569f04682e05a67550ad25d0dc3126cf2f6e57725"
     sha256 cellar: :any_skip_relocation, big_sur:        "38579d38ef6f8f3fe1a924841fefc2831bc4e2f384f1e417a3e9029e447f6e96"

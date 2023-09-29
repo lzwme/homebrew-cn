@@ -7,9 +7,11 @@ class Nnn < Formula
   head "https://github.com/jarun/nnn.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "b6db038e5881996c464a0a03cff5822a1ef447b7a871aa74cbf7d49a584e049b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "aedf2b937bfbc61834f9373386907ef9aef7e2c5582ee8b7fb189557937067de"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a325f22a8f7d399aaa7d24cc7e92e72f26afbbdf122fae72fb4d4f435987142b"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5e49a1963570a2bf1ac43bd44a88a417dddd383c2cbe0636c7d331aa9726d143"
+    sha256 cellar: :any,                 sonoma:         "4ad5b7bea096a5a0a1a47b1c05dfc5e9290ab8cba0045b48683432c61b92fd86"
     sha256 cellar: :any_skip_relocation, ventura:        "d44bae7e9592cf3deeba0be69df4e7a79cb98aed93270ec16126fe12fc5d8189"
     sha256 cellar: :any_skip_relocation, monterey:       "6c5fbf8f266297f31e77e288dc8b1844854ac5e2ca5de6306951b41fde18327a"
     sha256 cellar: :any_skip_relocation, big_sur:        "8e218da4b7158b4d7e14a1fcc95d26d2448e308e45a131d4e8b7540c1735c2c5"

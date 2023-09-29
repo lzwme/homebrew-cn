@@ -2,21 +2,19 @@ class Podman < Formula
   desc "Tool for managing OCI containers and pods"
   homepage "https://podman.io/"
   url "https://github.com/containers/podman.git",
-      tag:      "v4.6.2",
-      revision: "5db42e86862ef42c59304c38aa583732fd80f178"
+      tag:      "v4.7.0",
+      revision: "073183fe1723d7bda826b574437891976a958c65"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
   head "https://github.com/containers/podman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "03e7a9edb9e39a0284716fa917cc97493f0603eefd337124e6cd7c1e7f9e4ced"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9a2b6cafedebf4b837220e747b73e09fc038677291534cd97a011802d8ccf11a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "277aee25c8f74181945b8e0a9fbb735fdcce9df4ffa54bfd561f9352ca31f0a5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "df89788337baa7898e7023d0c19029483709e5c3fc3ba25c503bb4e06baff78e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f8a70f2b6ab44bec09af0df07d3e3d77d098aff4c7d60b254c42fb64c42e0786"
-    sha256 cellar: :any_skip_relocation, ventura:        "d75447f0a1c9307a576fd2188690246316ce9a17d32837d20e99b1b121cab471"
-    sha256 cellar: :any_skip_relocation, monterey:       "799b17ef0f6d03deb70c22b87dc134e544ac6ceea382a363bd78de46f40a94b7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a206e00acf04b6227f6b182d621ef3fa1b09391984979f167ad1c00c074e5de5"
-    sha256                               x86_64_linux:   "72b3c417ae303ce3c1b458e0cfc976d7c788363fd3a5cbabe4857a63fc6c4aa9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1be0bcae89de122bb57493b9fa7df64361fee27a4f9be3a047d14c2d9e89f954"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cd864c443ed80442be12ae886796d0ad78ce4dd2f3b12f1606179bbf4999372b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e770638e82065294379fa8ed5049107cf0c6e8d7517a2032ba273ca8589de09"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e96cb1761558519b75e9861247f694ba9cf7f183be23797acda0f86e2570216b"
+    sha256 cellar: :any_skip_relocation, ventura:        "3fe1b2c085d895071039e794d47d965bfc9a78eadb03c947a163285cf2f4ab44"
+    sha256 cellar: :any_skip_relocation, monterey:       "c51d468fc013e73a0a2e49076c974a95bc33c866cd67ac1f8751556465140891"
+    sha256                               x86_64_linux:   "7f76f76bfdb0631c042d462c7ba56e9843237f1a0594a8872a59a766e962a55c"
   end
 
   depends_on "go" => :build

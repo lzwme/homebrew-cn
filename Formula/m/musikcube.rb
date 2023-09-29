@@ -12,9 +12,11 @@ class Musikcube < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "1242ab2fcf643b3ed64cde86e11b96297e8592d34edf4fc2ea1ed2ab27ffeef4"
     sha256 arm64_ventura:  "512fb81f7ba32be15e99b9cc7f1b5f5641ece2280a57fb9959b16c7a5a7d8d69"
     sha256 arm64_monterey: "fee7d42e15666be622d7ea0c82cfba4c016018084e65b33c51fb11275e1ed068"
     sha256 arm64_big_sur:  "c0f55bc4c17cd63c6f60a38c5dc23e575af1fc6e351d374463dbf6002cfd11aa"
+    sha256 sonoma:         "a70527ff296b35d657d53f65aff29c25f15f67f4c6a4279fc2e9edb56690aaa8"
     sha256 ventura:        "e234af5ad4c039335c5318b3b3a44d63e80a51bbad81ad8dc45b8211b24810fa"
     sha256 monterey:       "4921d57427b29a1d1d51f06a8a39770223b1a4d08308c002faca0b2126b7db9f"
     sha256 big_sur:        "e5adeaf772f02f6a98ef4794f77c28c46eff02ff5c5a1e48d0cd21eb3b4e151f"

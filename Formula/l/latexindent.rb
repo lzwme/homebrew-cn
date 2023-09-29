@@ -4,15 +4,16 @@ class Latexindent < Formula
   url "https://ghproxy.com/https://github.com/cmhughes/latexindent.pl/archive/V3.23.2.tar.gz"
   sha256 "e6df687a4ddc161e2004ac778828e3e5e013fa87d52bb74c5080b822902c1dad"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "70ad25d77f8e9edac1cdd042eff2bec117355ec72587a2f88882db16f95c1f82"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4a099c96d6a31571600f4b2f01fde90be1c4cb8d781b8fa56029f6b1d2accae9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "de6f43e30c821d7c2f8bb221afea7f3a6e07346a6c33d00994de373963e0d8b4"
-    sha256 cellar: :any_skip_relocation, ventura:        "dcb9d3650269589bf388b9f618ee567ce113ba5bdad29c5a8f5b2eaca30302af"
-    sha256 cellar: :any_skip_relocation, monterey:       "0eba507049354d510c971de62b0e2481940bedb0ed54ce5f263ec0014390782e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "511a978b3999e6c4759b07197c35316e5ab8fa9f0601636151fca7fe770d9066"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5fc7160b29a91e2d3f0ff518d8d692afe9871d0dd84a54c38e29a3ca000072b0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "365cc85af0fcea636e0395e54a69126a222d9bdebe2966f56dca467e1fe54bb6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "20a4f36d22423cf6095338d76a597a3e29317164e9fae314289f20de6c04ff19"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4dbb8ce970488b944746df15f8b6d536b8299009f96644542f01b0527b327de8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ff0ad9e52ff8a561198cd7c1778b7185398475f2ffc930a900aebe119aff6e1d"
+    sha256 cellar: :any_skip_relocation, ventura:        "27377b30aeff6a349de6ea094efbb5646685f7c008e3835312232dd300ca1516"
+    sha256 cellar: :any_skip_relocation, monterey:       "a813b33497ce214a07b9fc8f354dc249cac5d457c58416e58236a156bc529490"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9345721e70b5dccf552ab0a5933fc6de5fdfb0e713fd9560795ac6141bab7f36"
   end
 
   depends_on "perl"

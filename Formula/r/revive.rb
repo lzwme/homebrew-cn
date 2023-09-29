@@ -8,9 +8,11 @@ class Revive < Formula
   head "https://github.com/mgechev/revive.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "728e04384b88fbde733917c69ff26eaf3c83a137f31858232f59001c47d1c666"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "728e04384b88fbde733917c69ff26eaf3c83a137f31858232f59001c47d1c666"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "728e04384b88fbde733917c69ff26eaf3c83a137f31858232f59001c47d1c666"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "728e04384b88fbde733917c69ff26eaf3c83a137f31858232f59001c47d1c666"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c90c9afd9bdca22eba4f1910d6197edb10b3874102b0f8890a3eb33242ee44a0"
     sha256 cellar: :any_skip_relocation, ventura:        "c90c9afd9bdca22eba4f1910d6197edb10b3874102b0f8890a3eb33242ee44a0"
     sha256 cellar: :any_skip_relocation, monterey:       "c90c9afd9bdca22eba4f1910d6197edb10b3874102b0f8890a3eb33242ee44a0"
     sha256 cellar: :any_skip_relocation, big_sur:        "c90c9afd9bdca22eba4f1910d6197edb10b3874102b0f8890a3eb33242ee44a0"

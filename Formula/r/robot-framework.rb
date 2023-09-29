@@ -11,9 +11,11 @@ class RobotFramework < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "a69d73a2bf16dc7d7f2156335559cf11712f078dae47eb98bafe9725e559f350"
     sha256 cellar: :any,                 arm64_ventura:  "52537fc67d6dcba0e4ff96d48ac226c78e5429ccde37965d158f635b6cc513d5"
     sha256 cellar: :any,                 arm64_monterey: "5d67f5327b8932627320fc1f8fcc272e27a6b6be3996acc627e4f799870aaadb"
     sha256 cellar: :any,                 arm64_big_sur:  "c2f1b5e14aad71f8cd1fece802ef6379ac996151aea7698018badc058e03c3f0"
+    sha256 cellar: :any,                 sonoma:         "aa1c6a553049d29e15e6b15ed0f9fa401b5b5be432d9659f7c1a17a9519a1ec4"
     sha256 cellar: :any,                 ventura:        "7d97a6629178e30474df79e66b49febce64350d3140d85860c1b1eb4c6482c46"
     sha256 cellar: :any,                 monterey:       "4deff0fde70efcd79785d7c39cc0393781a744c1d6922056afd786725555d51f"
     sha256 cellar: :any,                 big_sur:        "af6d384e80ba3e15fead77f9250819b8c5dc94d4c1656b6757f6805f9bb77bc3"

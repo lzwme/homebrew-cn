@@ -11,6 +11,7 @@ class Bazarr < Formula
   head "https://github.com/morpheus65535/bazarr.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d38e734b9152727cd60db4a67aa56ec70ef5a89c478f14caf12672c903d54ecc"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "bfcf49587b985e7c947a1233d0cdd27c1ab0167d5b8b3c942643c3b5871e2255"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "022b93481060948b4fdcf32c47b66c9e88424b7884db1968128823fc04d0e45b"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b20845c7d0036f1cd162724a257956d56d1e0e38883d933954164d5b5dd072d6"

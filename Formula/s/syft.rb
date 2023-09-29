@@ -1,21 +1,19 @@
 class Syft < Formula
   desc "CLI for generating a Software Bill of Materials from container images"
   homepage "https://github.com/anchore/syft"
-  url "https://ghproxy.com/https://github.com/anchore/syft/archive/refs/tags/v0.91.0.tar.gz"
-  sha256 "f29cb3fd96b41ed48795e1f8fd81f3900505cf3dd84844b749db850d790f3768"
+  url "https://ghproxy.com/https://github.com/anchore/syft/archive/refs/tags/v0.92.0.tar.gz"
+  sha256 "15073d2a349ab2ebcba7e4f446016fdb6f9422b94bd59bcb8dd7839fab2e4807"
   license "Apache-2.0"
   head "https://github.com/anchore/syft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d26562532da9cc9ac4f6779723cbba0f63d45ea72762c866809fe199527d759e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "def1f45fd271dc97eb3319d0f5933b81234c004f9f5987355f390800e7be4e7e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "962b306380c9e3aa35c82c6bc2cd4a297e28db5dcdc21eb1500bc6518e9fbb57"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "43c70fb35938d68fdd523350809062bfcb6f2ea497510654e8ec313eecd25761"
-    sha256 cellar: :any_skip_relocation, sonoma:         "62dd4a68bf17e669175f00abcf73b39b9c75bca070289b55abaa45585238781d"
-    sha256 cellar: :any_skip_relocation, ventura:        "6b38e0d02b97056da7ae4e6d53f493edde7a42c64707df762f0813f63819c85b"
-    sha256 cellar: :any_skip_relocation, monterey:       "37e6d8f55fe2e9167748496ae2fe09693910b2b6c8a4923850091306aac5b135"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b69b3a0cbfff92b18f9364c7ec6d610803569ebcd410f7fb35d97c76feec3c2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3af7b5f19faf7bed1df5478939dcc80f5babf498b89889f384686c8e38d08af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5ace7f5234269aaadded9fe95b639dd7df2575dd2def9b02af5ddd48ce5e6fe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a881abf8f3fa7505e7cbc68e6c9858cbf59c000976fc94d99e433601306ccec2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "189794f4501a76908f5294269aac48a1318d82e45ada320006068063801fee43"
+    sha256 cellar: :any_skip_relocation, sonoma:         "116cfc5fd4d2a65d0a2773a1878f21d8b2244ad77708ce9f8fa659edb09d3873"
+    sha256 cellar: :any_skip_relocation, ventura:        "906c4835f0ca16c88076e6b38f083e7960cc654c45ffa0d6e6fee91a902f11ea"
+    sha256 cellar: :any_skip_relocation, monterey:       "b0cdf0d08fb5efef779247bed501559d7d928916535cc856154941e76a6214b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "423825b67704e47605f87bc46e793ae6898c7d0d20ef3dfbd00a28b1792407fd"
   end
 
   depends_on "go" => :build

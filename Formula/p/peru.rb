@@ -9,9 +9,11 @@ class Peru < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "61e80ccd3861cb26fd8a98c45e3a185fe814ea0f666e3ef01883563565e46816"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "33781e91b6ffa754ccb1f3b3df42fb627325ce6809ff9a42941fc67ba0740d82"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "33781e91b6ffa754ccb1f3b3df42fb627325ce6809ff9a42941fc67ba0740d82"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "33781e91b6ffa754ccb1f3b3df42fb627325ce6809ff9a42941fc67ba0740d82"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5afe03070bb10bb264bcf29560ad2bf24b11ff044d2b4134f356d0c2584d40a4"
     sha256 cellar: :any_skip_relocation, ventura:        "f94520f666b3acef6644b3ea43b4d9327b28ca45cfd822909e8010ab6d6e6834"
     sha256 cellar: :any_skip_relocation, monterey:       "f94520f666b3acef6644b3ea43b4d9327b28ca45cfd822909e8010ab6d6e6834"
     sha256 cellar: :any_skip_relocation, big_sur:        "f94520f666b3acef6644b3ea43b4d9327b28ca45cfd822909e8010ab6d6e6834"

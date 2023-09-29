@@ -7,9 +7,11 @@ class Runme < Formula
   head "https://github.com/stateful/runme.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "372cb5a24ced291f455c7dd5a4df0f49d5a26de895f27a8448b72bb5322e79e4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "02247994370a6cf58857b56004db5dfe327d536674145f11179d8435082cd9b6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "234346ad9f21aa8a868ec84e862b6f68df6a6371409df27030cace00673d122a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cd388a9d7048e3b96517e350180d311ff765f36df1a6e2ec92ec4bffefda630c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d56ff7da4a3eeab1e930b207044c025e9cde7b3459419b1eba82e0ddbd19c293"
     sha256 cellar: :any_skip_relocation, ventura:        "51172d00ba6dee868faa78bc9278b0e67d13661070502a69977bdb740a5ddca1"
     sha256 cellar: :any_skip_relocation, monterey:       "9aa4651ea252747f700a3d222c36f0f8d54d3ac490c66bda0648db03ee9875a1"
     sha256 cellar: :any_skip_relocation, big_sur:        "b8344fa028064305fc17b4e424119a8c1a12deb2ab7be2347153cdcfd8e92394"

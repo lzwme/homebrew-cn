@@ -12,9 +12,11 @@ class Rtf2latex2e < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "20d8b8da32f9ff8602f0cbe64dec244a89825507fdfd805bb1d2d6cfc75a85d2"
     sha256 arm64_ventura:  "12f88e9bf99968693672ded4a3784e42558e15895be581c13df04a7c99e978d4"
     sha256 arm64_monterey: "dad0a2da5ef80b23fc0dfef461a75c8df8aea2d8c1fbe2714c0c1bc9cbf8f2fc"
     sha256 arm64_big_sur:  "35639bec913a1d60de52ac3d15d633bc17878c06829a1e5338272bae0f2399cd"
+    sha256 sonoma:         "8ed26391c02189f76bd07fa5fb453ac44dcba86f7991884fd9f8c43555e81709"
     sha256 ventura:        "6c9d8dd73ea187545b5b6400918c8f2f493e32584c4ac01e9b035738c658fe66"
     sha256 monterey:       "3a88828b56f1fa396ee82d9b8e40f15631512a587b57489d9513a773bea157ac"
     sha256 big_sur:        "c0348eb7e801057a74bedb8665b51ab62d9239ee7d6fff51d2c094ce092b6e6e"

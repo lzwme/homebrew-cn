@@ -15,9 +15,11 @@ class Root < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "94e1426e8d16fc3e3c825888cc63c19bc9fd4a13af34d1b19cc5fdcdcb4d2c0e"
     sha256 arm64_ventura:  "3014c8d983209f274ea11ecb083270a840b6d3625519c60709e0c276c2d68e13"
     sha256 arm64_monterey: "3ae3aec1ce5aec5dca74a146eb15c4f50e203b962299a134d1c855f2d672d514"
     sha256 arm64_big_sur:  "98aa1bf5a2713e90c028d738c4f0b1e8e29952ac4ec8c7b233e077ed286b2f21"
+    sha256 sonoma:         "03c3f3b0423d8cb3c91e6b7b3812094b5e503d677fcfb647401598e9cca640e7"
     sha256 ventura:        "38eba991e027f38d40aa0c6ad561f52673a6a0eaf01e61bb224a5d307c8cf981"
     sha256 monterey:       "bc9a2362b26f94b57c28138bbc07daf904f25d92812374aebcd83faf947d8d75"
     sha256 big_sur:        "c3408f666240f788efe6c0b852aab6458ddebb1c605f65e17dcb61d8eceee56a"

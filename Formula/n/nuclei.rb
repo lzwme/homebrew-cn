@@ -7,9 +7,11 @@ class Nuclei < Formula
   head "https://github.com/projectdiscovery/nuclei.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "039347dffd8633a967c6622f74c792555852ec59ff262ffcf8f91cc9a7497294"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a8207c8c31949eef4934e034f91597d0d57f472287742b628df28041cb84db37"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "647794535369587e1add3ffe5d7eab51f6ed9d1d02d1ee37dac186d39b23da36"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dc9ed876f891ed70af869706a24f82cdc9a3f941001eaeaee243831b7920d2b1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "56208e0813c2a659d01556c63afc635dbd52cb77edf024662e06cf4aff0d1c7b"
     sha256 cellar: :any_skip_relocation, ventura:        "a434e5b04efbb41f20bf86883a81331cb78c101718a3b73cea51f4d0b02a4b1d"
     sha256 cellar: :any_skip_relocation, monterey:       "d4cf5c899f217816579ee43faf37eda9c51e616651c4acdfbe91dbc24f8e4920"
     sha256 cellar: :any_skip_relocation, big_sur:        "53d6a7d1d99665eda0c38d32a6e0e40d694799d831d8457fd25861898c143127"
