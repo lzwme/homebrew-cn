@@ -8,9 +8,11 @@ class Autopep8 < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9a4f1ce31dd579c43c505745a37db0fa48b62d7887266c5429dfc812e5c3e66f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "36de75d0e997f7c1bc641887d3b5afaa431f4627d0f81e1063d50cb9f8b0611c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "37e5360983afa86681a67f5e990bfc4f5e64a2219765787b758f21382650f142"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6998c1c00f9514ec14eb56fc4eeafdd2e7bd653a8580467759cfddd901362294"
+    sha256 cellar: :any_skip_relocation, sonoma:         "978a67bb20683fc480fe35b79480aedc1e8eee078e3407a16ebe83f37c33a12c"
     sha256 cellar: :any_skip_relocation, ventura:        "015da1d24ec154c9dbe483bee4eb6dd11b46e5753a93703aca90a2a1f55b04a1"
     sha256 cellar: :any_skip_relocation, monterey:       "7ada12c470062e74388d795f4c5dbdb16aba23244cbaaacb193c7f2bf6b45873"
     sha256 cellar: :any_skip_relocation, big_sur:        "6f43c56095df935ee2d399412d2b06642f32bd973bf24918e200d9f8d8fb4b3d"

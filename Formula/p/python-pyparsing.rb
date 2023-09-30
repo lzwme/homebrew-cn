@@ -6,9 +6,11 @@ class PythonPyparsing < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "18769ebaab1db3501664d664b4ecec95a3123008904c1dd095fcdd400ceedf65"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "25b7d932df97bdaabd8e6e78ae6f3216ad436f3b697d301bcc9d78d88e150ffd"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "79ced112ba2a082b40b8cd8223fb17288c8538c4e17e84b893e5af5367de00de"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "69724ec58a9ae398b52f44ce831da38e87d388a08675d94b04ff269c0ffd304a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cd0e15cc7c7bbdc9bcc2cd77d0d4cce5973e54b58d2dd464005268418e744597"
     sha256 cellar: :any_skip_relocation, ventura:        "7c968e222494cfe4fa73a3d1e3e377b6bf8c0dc9622b1f4ab90e99ceac162620"
     sha256 cellar: :any_skip_relocation, monterey:       "73124f9168de665a4fc1ab992d82a070fb910fb1e5f8fa42e28f20ca31e1a52f"
     sha256 cellar: :any_skip_relocation, big_sur:        "abcfca8076d7aad90989ba59253aacc5ccb34f69f22c3f0608b31d39bdfcbf89"

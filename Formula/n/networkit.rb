@@ -9,9 +9,11 @@ class Networkit < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "373572010294de60707d78c79dac5a1de76ec7f5a31b5b73097e10f4bb271af3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "728f021d0fbf6fe3237db7ba75b3cc637fe38b0db5d4bcf1f8c88f4fc0461dfd"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "23470b1cb591899116c01c966304451024bcea4ed7ba8f13ae4bbe1986ec00c1"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fcb9af0f8f137c35009fe9ac19c25c165adc7e123653a221c00b6f780cb4ac7a"
+    sha256 cellar: :any,                 sonoma:         "7c54e33533baae65e91d5adb57ed732f5e675e8d6d1fe25edb7a6f93c74915dc"
     sha256 cellar: :any_skip_relocation, ventura:        "7d3e07e85b55cda32842c7eae2d7752a59618a3fbcb2fe11231bf9c392cc641b"
     sha256 cellar: :any_skip_relocation, monterey:       "b6ce1a8d4694d1e3434fc23e0a99d605bd777f151b2e7c8da56b5312ce3e7130"
     sha256 cellar: :any_skip_relocation, big_sur:        "45397cfad06aeb74e92fd34c773772d5fa14ecf9aa32d23b79643e31e1ae33a2"

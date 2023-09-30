@@ -9,9 +9,11 @@ class Mathlibtools < Formula
   revision 5
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a2e8646e0f773da9349b7fe49f05fefef83ae4a7ff46276587411598fe8f67e1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c71084702108daab6c3b8329df05b88233747ce987960c2a5899529ba27ad291"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b6992369cbb006825754b41fb8ff8172746d9952402498adf3109c00f1967e46"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0362772fc926684bfd7ecc17484a7c44738844990e73914deec264d25448be28"
+    sha256 cellar: :any_skip_relocation, sonoma:         "82967eb2e6a7f4ac38b494505ed63471f221bd647352d5680f371e6b0466b41b"
     sha256 cellar: :any_skip_relocation, ventura:        "a7056b7128fede1c8946bc0f9120e06495609578112ac71624f9538333ef3243"
     sha256 cellar: :any_skip_relocation, monterey:       "fdb6baf4e7be1608b664eb8452fc54d11610808ab93179ffe39476ddd756b961"
     sha256 cellar: :any_skip_relocation, big_sur:        "25af634aeef3f335dd73a1f30783581a798fe3ed3571638ffd8ac62d052cdeb6"

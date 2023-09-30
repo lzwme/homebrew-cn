@@ -14,9 +14,11 @@ class AstrometryNet < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "36cdffb5f2d46c92e05cff1ee5889f930e28e465837f568be8eb5f54092990b0"
     sha256 cellar: :any,                 arm64_ventura:  "356db74e6046493a7127d43ea1de143bf091a84c39787429976d3ab0e090c25f"
     sha256 cellar: :any,                 arm64_monterey: "256c59d966aaf972fc85c0e7e9ecbcda086d44d748f332fa99e4c35a72d04340"
     sha256 cellar: :any,                 arm64_big_sur:  "ab294e1b740d8a0a0ac9780b8b509bad3440d674cb4a0114ff24dacf8156b400"
+    sha256 cellar: :any,                 sonoma:         "9f4d92c0f6b5238786ff19de2a6b974b7d51652502ada85833c06286a0afd15c"
     sha256 cellar: :any,                 ventura:        "6ce43a9102d8a11dc8065925ca9621255edd20c3feb61a09c0a3216806ba0e9d"
     sha256 cellar: :any,                 monterey:       "d620964767090e24f85d5893772c6fe4edf7a2770b5f1b4cd3d31f6549996baf"
     sha256 cellar: :any,                 big_sur:        "3e9fd0fa60d70e538921151ec1f32c60e4dd45b2148ef41ff6237a0d0196c89d"

@@ -15,9 +15,11 @@ class Nomad < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "57af75515a8706b2bf7229d144870f017890bf41f11dd908af028e18dabc75a3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed444abdde4adcbf77a5c91ebbe57cd40de9f9275b57772b7a5d2abc42c3ba1e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e85355b125037326086493552b1af5c8b6079b92e5ab272d38949ee756315ca4"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3d1502e3b25a243f1aafb47d3d251271691f53e672f9561a17c67fafc9282741"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5ff7924f9708395e40faaf842996971fe0383c3e2addbdc2b5ed32bc28f4d8f7"
     sha256 cellar: :any_skip_relocation, ventura:        "40c38a4e90bbcad4b67ea3f0402968fb48bd4e4e8a27fc888bb686470559e3dd"
     sha256 cellar: :any_skip_relocation, monterey:       "0e093b904787ccdcd37af3f127c16fbb2482c77bc1f9de77bf4c0df5b3bce4cd"
     sha256 cellar: :any_skip_relocation, big_sur:        "2e247a13f25c6bf03e21e21567484dab364337864661b3a0728879527974ca20"

@@ -7,9 +7,11 @@ class Ord < Formula
   head "https://github.com/ordinals/ord.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c14cd8e7dc18e635929bd65aedb4ed139b20fd7ee25b95da515ba57966af6101"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ffe624b6a4ea136d7019ad1cb23dbc056b4716660aa1d5556baa60f64f86e88e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "911b973fbb7e0a84975c70a7430845176265c2f2ba94c6da1275013059bb4987"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3e54fabdb185aeb6ffffd5b951963ce3afcbc76278944d132a229d57c3314d33"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8daff509b54fb39a919f84d3f73b4dd16217fc4ae2796fdb8ae5409f53d133dc"
     sha256 cellar: :any_skip_relocation, ventura:        "64390de3aaec097fca7426b37ff87f57e35107b4fde21bf10569ff269e48ce1a"
     sha256 cellar: :any_skip_relocation, monterey:       "4ee6e29dcb608a91fe3b8df84cdf8abc952b8129a224992ac562c62949f29c07"
     sha256 cellar: :any_skip_relocation, big_sur:        "e4f22034998c5df50a41010acdf2f00e39aa5c7907a818856f99f26182d1f7ca"

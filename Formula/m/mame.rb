@@ -19,9 +19,11 @@ class Mame < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "6d7ca4f992c14bab61a2de797741526348cfe2f00048bc5d24f6e794f0709b95"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c2df1e4bbaf3c543f1eb7d144feda042eef884921ff6bbc4999e32499b05ceda"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c86ac70530295e1582edf3c7662c33ab747f6aec55692b0cc1691963610f92bc"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bd025fe448c45d0c38c65a2129c8d4dcd6c0dcf7176439c599331ba59f7fdb20"
+    sha256 cellar: :any,                 sonoma:         "c66581cc5e01d70258434d003d0383afa5d4f605565aabc87e2223d5d90aa866"
     sha256 cellar: :any_skip_relocation, ventura:        "89b3dbee853e6f287ddea63d0bc90f199276d40cf00b903bd026be63d788fd2c"
     sha256 cellar: :any_skip_relocation, monterey:       "051d50e9fa0c472e49b132db26bfe3c88924e4f31cb95deaf5d74b0f3b318aae"
     sha256 cellar: :any_skip_relocation, big_sur:        "886be7c511aa89583a42f865b57fd240ea33b31c37b2f92e4d60e48eaa2cdaf7"

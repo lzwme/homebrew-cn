@@ -8,9 +8,11 @@ class Pyspelling < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9fa786885d4f4dec84ef1d42ed43362e8452df8cee3e641ed189052eb6c49580"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6c6954deb1b6db7bada545e28e3dace4fc26fc3f4612f15ade5221709a35b3ba"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1c9ab926a6bff7148400151417fd52a3e1b5b0e51fae0dd2bf9002c57654d49c"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6db2a098714e7fef3bf41ad38a231557a339fef54313c9f6a976e68feee94e53"
+    sha256 cellar: :any_skip_relocation, sonoma:         "279bc6f4e95a686bc65113911356fa5f0238c7f591efdfb7fc6b6617e516c2a4"
     sha256 cellar: :any_skip_relocation, ventura:        "6d3dd6fb3145cc2229f78bdf5739d096b3673a9c7b7deff6a242b9d7f704874c"
     sha256 cellar: :any_skip_relocation, monterey:       "70115b4c31e5865ebf0150786385f0588b2f205d8e2f5edb0f9680c4b4a6c36c"
     sha256 cellar: :any_skip_relocation, big_sur:        "4caf2e4be74224347c1403d7e77111b3304967ea0a4c856231e7cf0e7c45f090"

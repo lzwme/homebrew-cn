@@ -12,9 +12,11 @@ class OpenAdventure < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "772bf66cb32b388d7de22d828450d6fc6809e107653595b15caf69d620a7e4c7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e6f2d3f7a760d964064cee9c866733598248904d490c977f0d4a730dbfcd7ea"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "16eb8d8d02295df84ddc94176aed567869161c6cb61bb223d7223e17e1ec8cb3"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "195f5a0edff650d5de1ce70899c466b0d29fe64f04bd6667bb8e8f4b357fcc7f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f472d14282b9cf775311716b145f93e1222111abdcabceeeb26d60479a7f1afd"
     sha256 cellar: :any_skip_relocation, ventura:        "4a3c131645f948efa59328b8820f21b67060c0fbf08fb0444d05d17858798580"
     sha256 cellar: :any_skip_relocation, monterey:       "62e6659adad76fa8cad53f9dcab9692182d292cbd844e86700f58702a0fe7fdc"
     sha256 cellar: :any_skip_relocation, big_sur:        "dc2567ca7d9614aa10bc35dac478f3dc6665968262197dc64a399ae29daef50e"

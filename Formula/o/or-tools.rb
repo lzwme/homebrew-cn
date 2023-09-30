@@ -13,9 +13,11 @@ class OrTools < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "a2854bfb612e48197d9b9a97df795b2b0c090cf005b67925c9c28c992bfad52a"
     sha256 cellar: :any,                 arm64_ventura:  "20d80244fab7bc89025c0597a63356efd30cd140e5a9997ccdb6f8e1c3428111"
     sha256 cellar: :any,                 arm64_monterey: "2aef42a9b14c6b502e6de7cdd47717f063dbb491733b07551819c6f8a1efcf7a"
     sha256 cellar: :any,                 arm64_big_sur:  "814a1d0744c97fa4567948eb397f3d0d73fb0dd1b5069e86400fa6f885ca8ea7"
+    sha256 cellar: :any,                 sonoma:         "13afca6db17b69cf3505adb0e120c9c310d01babd3c35d8a027e0ab0a36be62f"
     sha256 cellar: :any,                 ventura:        "53a1057bf1ac144ed781341b82bf46753fb53246179d2b4b92f448f4716aee4e"
     sha256 cellar: :any,                 monterey:       "d03bc7801c4c266a6a9c225606fb906a39ef4e59925946cfaa91db3cf30d23fa"
     sha256 cellar: :any,                 big_sur:        "5d9a84f593137bf444cace94c2d1689015b76e185a780ab731723970d91250d1"

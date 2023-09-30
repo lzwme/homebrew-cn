@@ -7,9 +7,11 @@ class Nexttrace < Formula
   head "https://github.com/sjlleo/nexttrace-core.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8e4666dad1dc6b1a37a49a50917be6c7baf5d1ce519e127a299d36e81cd2d1c2"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e177d51b26ecb007b220ab6f2de23f8da9eb03dbbf8d1f88824f6460fae2666c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "be086f5209dc1eee40ab10d8a0123b0a96ea2239a7951ce62f84320bb7be0679"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "22f2141fe46e062ca211a015481b3925cd05aec65004ec95f4338008cbf8cffe"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2633187f46a05c2d12debf84f11fd6c3d8ef1b35da352279059376fcc54cbf57"
     sha256 cellar: :any_skip_relocation, ventura:        "cddc2a5971066a27cfff7202160af4f1908e6954965a0574b6adaf3f5fcacf16"
     sha256 cellar: :any_skip_relocation, monterey:       "859054ddb09798b9c45a782c8a3337159cf1ec01232b0d5de6d82137c5df21d1"
     sha256 cellar: :any_skip_relocation, big_sur:        "99af9852dfe9e9195f9838bcd2f44bb28a5b91b69f587324f4d56d6d2cc22688"

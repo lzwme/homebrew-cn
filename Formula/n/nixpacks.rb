@@ -7,9 +7,11 @@ class Nixpacks < Formula
   head "https://github.com/railwayapp/nixpacks.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "52a7c4efb114c0292395e40a4517ae78ce2efd26327e9bce2adf2fe3a9c96307"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa724265432d4cefffc60bf882ce80ccc6e1d5c1fe88952abff2ba43fcc61c8b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1ec1c75498c784e31a7c47a70329f4d128a6d046f940840082772533b41c6b8a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "53175c255ae4d0773cebdbf5c97dacf9115b2f5d8feb33b6a149a931eeeae9e3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ee749c45fe89d08b3fa374957566a5d8437196bc3c1be5f7d6d2ef2c1b9a5b33"
     sha256 cellar: :any_skip_relocation, ventura:        "a1ab0a17e348a4b666ac9bd6fc421d582cb7d801d7638eaeec2a5ccdef12e5db"
     sha256 cellar: :any_skip_relocation, monterey:       "854e317759f2aed885a475bfbae43dbc0cf25109e40b7846e11a759874038196"
     sha256 cellar: :any_skip_relocation, big_sur:        "f91c037d89b20da5b14d9f706da73ea34bfd9a9a28caba435823d4b26645080a"

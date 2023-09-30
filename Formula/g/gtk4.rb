@@ -1,8 +1,8 @@
 class Gtk4 < Formula
   desc "Toolkit for creating graphical user interfaces"
   homepage "https://gtk.org/"
-  url "https://download.gnome.org/sources/gtk/4.12/gtk-4.12.2.tar.xz"
-  sha256 "2f4f4d4f92e09f216d386cfdadd54d33d97f23a4555d67b97decfa6f815b6b81"
+  url "https://download.gnome.org/sources/gtk/4.12/gtk-4.12.3.tar.xz"
+  sha256 "148ce262f6c86487455fb1d9793c3f58bc3e1da477a29617fadb0420f5870a89"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,15 +11,13 @@ class Gtk4 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "2b1d6374b816cb21a87666e3285831ea5e36d0a21a21808a89f7ae04531756e1"
-    sha256 arm64_ventura:  "5b923de901b87ebb056c200ed7df25766e6ee625d09faef7b68be8bea3f7703f"
-    sha256 arm64_monterey: "c73f29eb63f04d6b07600ae411684c8a72f532671d4ee4496960f9fb623a4c08"
-    sha256 arm64_big_sur:  "a4135b668f0b89cf2c47a8c5f0fd7d31465d33e02d34ef5cb473cc6c6ac92016"
-    sha256 sonoma:         "cd18ca402f8c9af1fceba88c6dcdcd8cc28f72ccc4ac409cf161360006c66ea5"
-    sha256 ventura:        "09bbdbed01415ac0e54f888c60a87b158ac57d0327150647c5ea2f10ef504997"
-    sha256 monterey:       "9c310b295e70a4d9d8b9626df5010c3fcf03415fed3c6f4469cd46d36a0cc3ab"
-    sha256 big_sur:        "e217c1ea95d44d800734eb93009d4974535bd2dbd8aa1520b538b6875ff00d3f"
-    sha256 x86_64_linux:   "1743cb8842b8d74c276b191a7aed3ee13d1813467292ec24c52108ed93a3054d"
+    sha256 arm64_sonoma:   "f44f31d9a220357beabd3db55ab802185b6afcc5b94ba3a16e13dfe84b09a744"
+    sha256 arm64_ventura:  "73a887bca2a27d369027c8a01ad0d46ae531055a51c7da7a54079ec3564c0e7e"
+    sha256 arm64_monterey: "8459e35842015867877cc64e04166b62216049e1bf94c9f57cc32e8db137457e"
+    sha256 sonoma:         "8155a6fcea9753412a08b4f72bd3f5b516a937acce9405e2c0959308636212b1"
+    sha256 ventura:        "97c1021d1312e42055cb31ba0da8514208c2a0ffb265fe71896f0f43d4da53e4"
+    sha256 monterey:       "9f73d0fd6b5eb332ea16d91f48a37b0d56faafb56a0bbfc0e68928bbc5d2f4bc"
+    sha256 x86_64_linux:   "cc422a47a87958e4f5932d12c3170734572ed4548b7a498a5dd9ec8ae0783cbd"
   end
 
   depends_on "docbook" => :build

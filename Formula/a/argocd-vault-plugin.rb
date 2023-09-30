@@ -7,9 +7,11 @@ class ArgocdVaultPlugin < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4659c5a97feb603b498c5d0080052542a14fdfb9e6ac1ddfe72aa7efc4b00ecc"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d7be79ced0f90cd76b237f13cf3f42fa7122d361b7cf3c512dac7952b5e13a84"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d7be79ced0f90cd76b237f13cf3f42fa7122d361b7cf3c512dac7952b5e13a84"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d7be79ced0f90cd76b237f13cf3f42fa7122d361b7cf3c512dac7952b5e13a84"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cbce0e77a6e90f9e0238734460fcf7ff67628dee60705b58f2ee0b311e5ebeaa"
     sha256 cellar: :any_skip_relocation, ventura:        "084167429a16d4611084a75ec7641c67e793c56b5370c3002940a61681210d64"
     sha256 cellar: :any_skip_relocation, monterey:       "084167429a16d4611084a75ec7641c67e793c56b5370c3002940a61681210d64"
     sha256 cellar: :any_skip_relocation, big_sur:        "084167429a16d4611084a75ec7641c67e793c56b5370c3002940a61681210d64"

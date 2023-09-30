@@ -12,9 +12,11 @@ class Onednn < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "ed2d08fdea49c58572aed00db71ac60ed10a706225e7cb006e8bf274ddb6ae0b"
     sha256 cellar: :any,                 arm64_ventura:  "ec53d5ea12651ed953092f729cc57a9261a0306b5e2a7a8bf5c794cd19b3354d"
     sha256 cellar: :any,                 arm64_monterey: "a420934bfd06b53f50e8501c7727ced9ecd85882caabbaf38aae1708a5bede9a"
     sha256 cellar: :any,                 arm64_big_sur:  "35063d9d401dfad170021f621647c97ac1ef9e1f0e59ba4d5102711fc1aee3ca"
+    sha256 cellar: :any,                 sonoma:         "30f7077adc2bc40955bcefe2521fee5338dd6a84769ed1a76fb2728045b09b76"
     sha256 cellar: :any,                 ventura:        "d4359decefdc6ee8b51fff8ab539dd80782c696b1cdd3bbb0f5a28a6cf87ad76"
     sha256 cellar: :any,                 monterey:       "0da7de658ddfbc868ea9989629590c93c17b878497fd4a44a384dc08c73c56e6"
     sha256 cellar: :any,                 big_sur:        "95199b5edecbec0b4116cccf2709ef9babbe78bcaa225ed76a9bdb486ae72384"

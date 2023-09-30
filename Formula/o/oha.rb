@@ -7,9 +7,11 @@ class Oha < Formula
   head "https://github.com/hatoo/oha.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0baa30559549e4b02d90abbef522e519175071301de26c4d69d94ac020835fc4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c633858514e81ba5f04f7db764863ebd8c061ec98327260756a33bb324930c59"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7a3d55dcce1fdbc03ae242ee4b8908545c7114120dfe46befa7cb45a969f20fa"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a2f03b63bcac4b04a7504b0679623659563fa9f709311b9ea88777071e4f165a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d93ad0cfabc91d659c2b6a6f65a48acfddf6295c0b8fb80077ba10ae50226c2e"
     sha256 cellar: :any_skip_relocation, ventura:        "524ddbb82b31ebdf916a18e69df8e268897b72b58a65beeae1dcb67cb27278f4"
     sha256 cellar: :any_skip_relocation, monterey:       "eaecdf50dbc1936c56520dff3929597a55af1c17d86da6b6512863f4de3df96c"
     sha256 cellar: :any_skip_relocation, big_sur:        "bd77d98386c719b01930812852f57965fdbc5bff8244278e596a53cbb7e36f4c"

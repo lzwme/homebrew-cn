@@ -15,9 +15,11 @@ class MinimalRacket < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "7113d2033b213accb4680da8b309c24d1e6a756b1c5670e139f077b1ae957c9d"
     sha256 arm64_ventura:  "cea1af4de3e74fbee75b3b95f1f37883118f88b088ead31b5f5c924b6bdd130d"
     sha256 arm64_monterey: "c633be11e598f579656445128082a6cfd8c00d166e644d952eb3c1e7ed70da4c"
     sha256 arm64_big_sur:  "04735ab34c59cdf2f401e70718812ac157686912105135061ebdd3d0a985f829"
+    sha256 sonoma:         "4f129e28df0cca68b561b40df58aa6559d6c2f6c9643524ef01db101e59c1bb3"
     sha256 ventura:        "1b757c2e8208c5622636625b04e853d8dec84da20c43944f1c61ed4d6b4e5c3e"
     sha256 monterey:       "4c3a14e521d3229c34ca9dce4c0d600d0651c7e67b32ca48acb14590963da966"
     sha256 big_sur:        "729eca5613020c1bf6ceb19311cc601aeace343771d5b9cb9593870314baff4d"

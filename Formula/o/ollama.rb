@@ -8,9 +8,11 @@ class Ollama < Formula
   head "https://github.com/jmorganca/ollama.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0818b260c9cb32101350393d33b95e627b6cf72a8c46f151febad56ba11d5865"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4a9c9ca85adfef534f31e8de18b0b7c55bb8daef03fb124d70792b8fddbb4ee5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8f6cc4807d04def80fc5c0f9d6fa9739f67d7a456ff7e5cbd4c33ccdc2f2fc92"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d8c37262159471615e35441467ceb8451623161a5b4366c903322db22943cdc5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "973bbca796ba46050bfc295f290138f7e12a3266bfccf2f3039bda0f0d260d55"
     sha256 cellar: :any_skip_relocation, ventura:        "f464b09016794bc2aec63477088e0874812d457ca3ec64529de69dca2fcfe6ac"
     sha256 cellar: :any_skip_relocation, monterey:       "215eb79e173596c3869db0ac3abfbf9111202d8a5e4e829529cdb3a9f8ea1189"
     sha256 cellar: :any_skip_relocation, big_sur:        "a1292973d6ca3ea0e9a516cb0f93722ee7b2b3f7b3d317a6feb3a4a17030f054"

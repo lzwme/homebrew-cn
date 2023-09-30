@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v20.7.0/node-v20.7.0.tar.xz"
-  sha256 "3fcfdcd05c461517480596596674df85b35cfce597dd0ae33f5416fc4df12bea"
+  url "https://registry.npmmirror.com/-/binary/node/v20.8.0/node-v20.8.0.tar.xz"
+  sha256 "412be847ae6df61010ba9da3cc3e6be5b67aa002e354e919f59ec8360371704c"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -12,15 +12,13 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "1bcf2077a58ebdc453b6a12dcc33796854cef4efcd709409b6a7dc1b2e7fabcc"
-    sha256 arm64_ventura:  "a278eb1ace9cc5b780a96fc3a3dc5bd7625ec1af61962b4842c702b2260c9aba"
-    sha256 arm64_monterey: "b2dd70c05e75a27b8133311479449de63374df016dfa2bbcffb80efed38b8b7d"
-    sha256 arm64_big_sur:  "6de9b960e95bfd69dbab17bdc802981209a5ff0558447a757f3ad1484782d2f9"
-    sha256 sonoma:         "acaa4ddb8d0dacbeafa85167ef55edc8aa740f5438ef203bd210f7150f659259"
-    sha256 ventura:        "4ca2870c75178c5caaed1f04014b3daea02a3883e9d146c1eb42274e1185b9fa"
-    sha256 monterey:       "ece9cf97eac813fa1ae8b8a63891954da1fe1f01c851d77e00009ab67281329f"
-    sha256 big_sur:        "da2224b24fe0f834bee0a0d436010395c265ac8f4bd5f4a5729e6179a88042f5"
-    sha256 x86_64_linux:   "25cdc2b38cb4e9c34bfe01c3534eace8efd96e6c7f20f6a840c9d13d34ca2094"
+    sha256 arm64_sonoma:   "e890913b6be256f1f441b823aefde1d10e609b457f276130df8528427395d097"
+    sha256 arm64_ventura:  "8b7d223bf571e3f3acbf8a1a065f4070bc836abc79bcbf41ebf95bd44fdc7bf4"
+    sha256 arm64_monterey: "95d8f0d137b74376fccabecc0a7755012de9682dc85f7889a5ac21fcced40f93"
+    sha256 sonoma:         "95978cebe26247c5f0b04e012517b4f77ae5561febd1baa9a895b92849055637"
+    sha256 ventura:        "808ac5dac602c1d27d20aa5ed0f0b07f3a520a2d3d4b3092950e8767291d7524"
+    sha256 monterey:       "32495b336e0342c4dfdf3841542bf3fccd629d4d35eaab305d6ce2b3a1deb0f9"
+    sha256 x86_64_linux:   "f1c91d726a89e0485638329e93cba3115643c4b10bf7f1e6465f39e02851356a"
   end
 
   depends_on "pkg-config" => :build

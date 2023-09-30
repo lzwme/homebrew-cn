@@ -16,6 +16,7 @@ class AnycableGo < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b64ef4b6c5100f948cc1d34b48f3fc140dfd885b0763b840b3557a2a1ab9063"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7cb16701e93081f681a3eda8b637c8fbd930c920b120f5634124d760e831c12b"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7cc60eb2365550d70312bcde1ed6a8a9124055f795a6e4aeac571c90830527ba"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2f2dfc3ff5222112d99ce6898fdb52471082ee7da23e4dee7530397be3e9467b"
     sha256 cellar: :any_skip_relocation, ventura:        "ec36b2f1052410c22c237ec649bd745e3caea6e29482d4f512b42f3c72674214"
     sha256 cellar: :any_skip_relocation, monterey:       "23e46eb00233427a8b9c31fd4179af1fde82276cc261604c61c3de344d9d7db3"
     sha256 cellar: :any_skip_relocation, big_sur:        "f759c3ac589024d1b3b41ad032e35e617df6e075c1cdf3d60ec98acd842894a6"

@@ -7,9 +7,11 @@ class Pystring < Formula
   head "https://github.com/imageworks/pystring.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "c26e8b819cc438eca6d9cbc63695d5de3946e8593e2a6ae7a80dad9f00755291"
     sha256 cellar: :any,                 arm64_ventura:  "7691c2829ccd208b1805929cff0802595a93e1603710279064eae8d05eb4d56f"
     sha256 cellar: :any,                 arm64_monterey: "1890973661e9420d561fbff94d3679ac9cb60e3b224753b9c91313606e26beda"
     sha256 cellar: :any,                 arm64_big_sur:  "d9c0e8a46ac482f4e5e55484cb629263244cd7ab4bc90f9cd25bcac2e28b2755"
+    sha256 cellar: :any,                 sonoma:         "743ac4c3b6deb23ba26d6d35fb38e7fac4ad7fa7f8daf99913810b42a5c64793"
     sha256 cellar: :any,                 ventura:        "02c48d989fc55ecf9e197d512c4f256a5338327427492bac35e84d5f89a2de8f"
     sha256 cellar: :any,                 monterey:       "99038ecff46d9ea2ba35f6a3e976d92a2206082c7299447f331914da9477b75a"
     sha256 cellar: :any,                 big_sur:        "e9e60b007a95bba54ef74fdae69c817b3888a8ae05bca19e4f01371a12fc90bc"

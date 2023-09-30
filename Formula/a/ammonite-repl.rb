@@ -2,9 +2,9 @@ class AmmoniteRepl < Formula
   desc "Ammonite is a cleanroom re-implementation of the Scala REPL"
   homepage "https://ammonite.io/"
   # TODO: Check if we can use unversioned `openjdk` (or `openjdk@21`) at version bump.
-  url "https://ghproxy.com/https://github.com/com-lihaoyi/Ammonite/releases/download/2.5.9/3.2-2.5.9"
-  version "2.5.9"
-  sha256 "46526cf213b29328c4bb64b4c27f701b25aff7ccb0f0d0336871fbddb4a3714e"
+  url "https://ghproxy.com/https://github.com/com-lihaoyi/Ammonite/releases/download/2.5.11/3.2-2.5.11"
+  version "2.5.11"
+  sha256 "384cf08e2591be4d199c75cf1913d44c043466b8cddeaa21dd5669d10f94a18f"
   license "MIT"
 
   livecheck do
@@ -13,8 +13,7 @@ class AmmoniteRepl < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "3e9cb15604ec2bc9038ce20600af80f8234dac7a51df7f812f7a108068684da3"
+    sha256 cellar: :any_skip_relocation, all: "bc3ee73003b1b68cd598d24833dc3ca8ca8ba30dfac338bf5d2e48fe30bf6f4d"
   end
 
   depends_on "openjdk@17"

@@ -7,9 +7,11 @@ class Autodiff < Formula
   head "https://github.com/autodiff/autodiff.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7daecfe8c04513bc51aca5fe3118571cdeb848d6109ca424d7c264d07b8e7629"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a90a50e5c2c406a5d6f7902680d6b7f06a29ad34445670b9a1b35b6dd9e95bd8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d09f93e264066002a82052ef4350682622740ceddf8757363426ccfe03572155"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "192d6b6b9e7b9b0a20038cf30b782b6ec2fc9f49c78e4be7e482b4d3c6e04efc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2eb74054c490344a04230ec14977ce39e5ba447863ef2d89ddcdcc6f7bb5ac0c"
     sha256 cellar: :any_skip_relocation, ventura:        "9ff50c5fd82428db110802b085fee58aa541be9061a564b7e39f98c0dcf53970"
     sha256 cellar: :any_skip_relocation, monterey:       "d6224d50b997a6be02918a8b2086d7a87c0afc21344fc615928bfcdf5c36b1d2"
     sha256 cellar: :any_skip_relocation, big_sur:        "ab6fc6f7b6ec4f60cd99893e964b73a1ccf5fa09b55637f78c9cfe45124a1185"

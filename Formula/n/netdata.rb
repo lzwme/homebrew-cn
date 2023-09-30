@@ -11,9 +11,11 @@ class Netdata < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "a90a665b3ab025652db75b18ea073821d2cec9b612853d9f86bed1c0c9466a93"
     sha256 arm64_ventura:  "7c8d8df5ee9302c30c50e24fa58e22a7093bc9528a4325497267584744013032"
     sha256 arm64_monterey: "2782ae3c60e121fe779eb961f066d142370f609b3585f460e730db6a12803331"
     sha256 arm64_big_sur:  "f62cfc58feb690b4169ef7d69cad35474aaf42c051cc0c0f98ae97f2f9b51e9b"
+    sha256 sonoma:         "5a19633f1a6d740a95cf7766dcc8c397d32aeb30289f6cc5d4cbb0a6ab4dbaa4"
     sha256 ventura:        "84ed2c860ad536ad6e6b4f3761753075fe200ee5e3caf42059e71f603c2ea7a0"
     sha256 monterey:       "aacb2516f927bb427de7d2869fd90b9c6147cd9187524ab92fc5bbc6e4416a57"
     sha256 big_sur:        "2543ca3b7ed49581f3573181bef00974bab1c5b8eddbbf1a3f1450b9442766cc"

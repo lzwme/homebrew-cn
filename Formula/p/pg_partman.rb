@@ -1,20 +1,18 @@
 class PgPartman < Formula
   desc "Partition management extension for PostgreSQL"
   homepage "https://github.com/pgpartman/pg_partman"
-  url "https://ghproxy.com/https://github.com/pgpartman/pg_partman/archive/refs/tags/v4.7.4.tar.gz"
-  sha256 "e81e9b4edbd36490be6389e2a593cac9a55b1694ba84f8fd4b08df5b17d6233e"
+  url "https://ghproxy.com/https://github.com/pgpartman/pg_partman/archive/refs/tags/v5.0.0.tar.gz"
+  sha256 "222e7175c9afc417aa6e03e826de4a5eb2a88fd8d1e3d06321aa8dac2471c005"
   license "PostgreSQL"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7179b3094d09b2b2484d6018547100bc1130b12ec7fecd1a2def8c891642c407"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "73b11b7a1e1258bcb463fe36863e6c276739952250c492fba3628ab9cdbe4080"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7dc19da93cb2fa7f1bb168f52456a2d2410ec01a8b686f0f1d4ec2e5f90d877e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "599763c1eb5ef88cf5a42c7c0b4d12bdc87ee8f93c3e39b37d3036a98917f501"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ebc3e67b621df0dc853adecf9971ba71cd101b573ff834998588a955e8791bed"
-    sha256 cellar: :any_skip_relocation, ventura:        "9a3854be8ee43736608469f7e7913b403b40ca9b11b24be7a8eeac0661227368"
-    sha256 cellar: :any_skip_relocation, monterey:       "3f7ba9cde4ee1693b3d6db89888dfca753327a91e5140b8cf813860b896fb5ac"
-    sha256 cellar: :any_skip_relocation, big_sur:        "be5abc5ebc570d9c4fa01327ebf15c721d9b18666e800389c635d8f2cbd6e7b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f17ce22ba0ff4f9204f4a53020fc3aea3383e67432d69ed6d932e8dad4091a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "350aa7f059bfbda180a1caadae4108706a5337f4067f93a8e85d50fe203d4e57"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c1761cb66d3b4e4a78858d225eab346cbb3572c16231ea382a7617cbfb4b5b6c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "260e9e596d8e09f13f12fd5dd5f89b39062e8f3005b0a9660ccb5fbc0ef6893d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f7b923f121dfda40451b2ba3f6db7fc3b27803faa8e4055a8f1c948b27c8f06e"
+    sha256 cellar: :any_skip_relocation, ventura:        "f2703df6ff6667b1e25e83cbd2922edce3bb17f4986e8abdd91f091ba59daec8"
+    sha256 cellar: :any_skip_relocation, monterey:       "a07314ff83b1459022031658d0fdc501a94decb869c815380c96e974db6e2ec7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3167d017909a68ebb1a94f01e943dea86964b8d4976051c8f888a678ebfe33cf"
   end
 
   depends_on "postgresql@14"

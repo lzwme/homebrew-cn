@@ -7,9 +7,11 @@ class Autorestic < Formula
   head "https://github.com/cupcakearmy/autorestic.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a3951c1d062f2e1d689057d9ab093bcf2232bc66daefc58320bc469bff6330c1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "038a4cc1f761cdb7487b3f23344229c8ded9cf9fdb40a2e9aaa4b5854b76962b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "038a4cc1f761cdb7487b3f23344229c8ded9cf9fdb40a2e9aaa4b5854b76962b"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "038a4cc1f761cdb7487b3f23344229c8ded9cf9fdb40a2e9aaa4b5854b76962b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b9b03d181674fd5673a42d074577fc76a75a404c3263995ec4249bf9a50062e0"
     sha256 cellar: :any_skip_relocation, ventura:        "00491c3ed12f5f38a3622879a06d3d754a5b666967b0fc96955cc014ba9afd8f"
     sha256 cellar: :any_skip_relocation, monterey:       "00491c3ed12f5f38a3622879a06d3d754a5b666967b0fc96955cc014ba9afd8f"
     sha256 cellar: :any_skip_relocation, big_sur:        "00491c3ed12f5f38a3622879a06d3d754a5b666967b0fc96955cc014ba9afd8f"

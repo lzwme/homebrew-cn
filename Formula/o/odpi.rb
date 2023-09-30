@@ -6,9 +6,11 @@ class Odpi < Formula
   license any_of: ["Apache-2.0", "UPL-1.0"]
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "20679f22fb609ba2c801d959b30e9802b76053d4f0bec21e479c720fec31bfc4"
     sha256 cellar: :any,                 arm64_ventura:  "9d9c6d3b22b66843e7ef5938db8756f1991140b04442d83edce1c00e19e0088d"
     sha256 cellar: :any,                 arm64_monterey: "90e4d0679531b5332e974625571d257c76b0289f7beb851cdeb87f5da085a8da"
     sha256 cellar: :any,                 arm64_big_sur:  "94f188c0aa74cc3bfb9d84a67be67e47a4b71a5d45600499bfd80521e9a2435e"
+    sha256 cellar: :any,                 sonoma:         "69d1b55bcd5c31ba73e8d4f99fa16f53353eb79dd85d057801ddb7d82d5ac22c"
     sha256 cellar: :any,                 ventura:        "93c96dbb7c326a5b55308bc221b5e08974bd8e9b008e92034be2903b1ebb8fd9"
     sha256 cellar: :any,                 monterey:       "13b28ffb076250f759f57b367b5ab61fc6f4ffa926570bd4182e5a0ed19d5b89"
     sha256 cellar: :any,                 big_sur:        "2aaba644f281d8f195c65fd13557e64992b103b62e89829f522e58b9e6ac3c3f"

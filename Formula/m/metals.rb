@@ -15,9 +15,11 @@ class Metals < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "52790140100e521fd519c88a39db84d47d2b0d62c814616fca2d58a53068fdac"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b32885725341ab3cbacbf30beffcfce7e6ac86eb8078b49148e71a469bc22a3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4b3cfeb7071944f3641968372235a47c3f4c871e229d6103043615b3e4341132"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "931aa55a8ad851b6f7da59f0b241ed4a3da67fd92ebd3ef3d842046a0ef6e829"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f5a096227a035fd488d4595cdaa7738e46223a82e26022a5ba321a3892931844"
     sha256 cellar: :any_skip_relocation, ventura:        "a592d1973c3a7136d77d8732c43ae485f9a768bf3a1d84db1780d34aa0352212"
     sha256 cellar: :any_skip_relocation, monterey:       "5c56392bbb2ca4913359c7e78c8ed5a377af5e7dbbbdbd071570813fddca049d"
     sha256 cellar: :any_skip_relocation, big_sur:        "b424547318a9b7dc694918f797aa53a9bd7c5384217a0dbf3df7f9bfb75421d0"

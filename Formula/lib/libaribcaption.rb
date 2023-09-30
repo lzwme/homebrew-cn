@@ -1,21 +1,19 @@
 class Libaribcaption < Formula
   desc "Portable ARIB STD-B24 Caption Decoder/Renderer"
   homepage "https://github.com/xqq/libaribcaption"
-  url "https://ghproxy.com/https://github.com/xqq/libaribcaption/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "6e4ff246155524e0e90d8657148b53e1322d5197d524e7b490bbee4ffcdc66c5"
+  url "https://ghproxy.com/https://github.com/xqq/libaribcaption/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "f7086598374d2f978d8bb1b675b082de2740a1792ed9c03838caa9ef58d7b51b"
   license "MIT"
   head "https://github.com/xqq/libaribcaption.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6b38612e1286db5ca478575fb3e2b52f18a19772ce944c47501be1419be5f329"
-    sha256 cellar: :any,                 arm64_ventura:  "95f26086bd7441422b937c1b5669c83949002748c830f6c9169d99b8607f798f"
-    sha256 cellar: :any,                 arm64_monterey: "54e6fe96fd275bf48cd7855079e57f9db065b13236217d091672da5215d04d65"
-    sha256 cellar: :any,                 arm64_big_sur:  "70938eafd08f1bdd3d350acc46a1cc2883d7bd7ab59443b8e4534978738f3469"
-    sha256 cellar: :any,                 sonoma:         "bbd00ccc6065dcf54db0c69cb5def58827c6dce1da8ac90ac780c470aee93c23"
-    sha256 cellar: :any,                 ventura:        "d98426fc8cf65f3a4b4c158e87502e011241027e407ba3e367d39b15b3b0bd92"
-    sha256 cellar: :any,                 monterey:       "fabcf532d86466ffc3718a5be2aa9084ac0071832e859bb27dc4f9c589e7857e"
-    sha256 cellar: :any,                 big_sur:        "3cfe6d592c479f2196544b2b364b967b2d87e62a07dbcbb61b094e05f1ae039f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f2162518abbdfb04a4b49310753e4e9df426f6fd83ba467ff8a725f049884f7"
+    sha256 cellar: :any,                 arm64_sonoma:   "fb8cf57a2f97e761174cbbc8680829521b118ff177fa7492125bb166cbcd013b"
+    sha256 cellar: :any,                 arm64_ventura:  "7ddde82db3b18874c25d662d61441d40e70b57dc9ec10837ca10a288ae598855"
+    sha256 cellar: :any,                 arm64_monterey: "8b17142360c7210639cc36bb33a21d44d8b23b61c1ec7f05852c807aaefe9a74"
+    sha256 cellar: :any,                 sonoma:         "5ee566338537ebe8dd21130e039f75ab293fd0e21af37131eed4e9aa9d1ed0a8"
+    sha256 cellar: :any,                 ventura:        "9584a0f004cfd9d81ed26ead29573426b15735ee623f8bde4feda6fb32ba3b43"
+    sha256 cellar: :any,                 monterey:       "27073df385cdecb81f4c27177133f4ce76ca57fd0abdb3225e137cce3eb92674"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae99927e8a35c453a98b9dfad48203c7fc68f4339095d42b5a411ab5b282778a"
   end
 
   depends_on "cmake" => :build

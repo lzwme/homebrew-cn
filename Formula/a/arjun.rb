@@ -10,9 +10,11 @@ class Arjun < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c222a6a78644bffa4f4210001ea1370280275068ce4bac69b85c4d1130e5db61"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "58fb3067a738ec816d57d2749bc304703ad30ce39cc73d97d049e142c4b13d86"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a73485dc5b8e940f5a8653b15eb5d3dc02b841199551de73019d4154d4030789"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "31f7be78b336f904e935f7e2a5f192b5e5cb6aec331193cb8a6600e6b2525f87"
+    sha256 cellar: :any_skip_relocation, sonoma:         "50fa3dfe6d192e985e80f445d380ee17f15580be4573aa1356acd7b392fc8d40"
     sha256 cellar: :any_skip_relocation, ventura:        "92eba3573ef8e3c438186c0045836817fb6ed89ec8eb0a0eaaabec34c5057077"
     sha256 cellar: :any_skip_relocation, monterey:       "7fabbdb2a7a3164bd01ab139ba7ccd4d254efa7e40c2ade599c412de20aee68d"
     sha256 cellar: :any_skip_relocation, big_sur:        "19df3cf79b5734b715ae8a3c0996fdcd748e60f163ac8727956c8bf05a06ac5f"

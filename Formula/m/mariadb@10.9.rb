@@ -6,9 +6,11 @@ class MariadbAT109 < Formula
   license "GPL-2.0-only"
 
   bottle do
+    sha256 arm64_sonoma:   "2026b53c5752ce6113ed7c8af1318fdbc0e0d6733115b8dada7bd035cf9bf7c4"
     sha256 arm64_ventura:  "65cb2f2fdd5c29ad8f14f9f0a55970b61285fa2be6e5ed29dcdfa1872638b5c8"
     sha256 arm64_monterey: "1d9aa2dcc5ec1cc3856d7d3caf36b98eee15044105e7df4d44c43c7eba9e2547"
     sha256 arm64_big_sur:  "4caba5b164a403900c0678b4407c05b05b98458d9aaa63e0661421d8548a58c4"
+    sha256 sonoma:         "206df40f0fb3bae52c8edb5994260ae35e7090ec9bdf39bc8b83c9cb13701418"
     sha256 ventura:        "7d10b5f059ddab6df41cffe7c0956307b0a5dbade98a317aa39b3d414ba01708"
     sha256 monterey:       "6f76bcbba2e365771130061f42b8618dd5c33783507aa8257bc151e27ecab0f5"
     sha256 big_sur:        "404272fdb775d32dd35cea91a4affb3e2a7bd938f84ef7ad038f3bede3edc52d"

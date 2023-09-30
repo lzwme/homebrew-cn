@@ -8,9 +8,11 @@ class OpentelemetryCpp < Formula
   head "https://github.com/open-telemetry/opentelemetry-cpp.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "d27842f0e9b737cc9e019a3df12e265aa25719eca99bef850093c5706eae5a68"
     sha256 cellar: :any,                 arm64_ventura:  "7f2d9318a7cde7033f3faeb6f50d89741468684e423a051c09fe0cbfb7cabe1b"
     sha256 cellar: :any,                 arm64_monterey: "d1bb1379cac2092193bf03f454c0944b18d6a6db4e91bf8a428115b2e565971d"
     sha256 cellar: :any,                 arm64_big_sur:  "4fbfd68460bc252055d384ef853ff6340a6d094c07718b6b462e21cbedcacf3d"
+    sha256 cellar: :any,                 sonoma:         "d152827015a00b179bf2662581406dbc320a2769a7855783d38180ec0997dc2a"
     sha256 cellar: :any,                 ventura:        "a973e874e4f03a2731ac1fcbb6ed9328fe68d61e848b0efafdfc21554a468886"
     sha256 cellar: :any,                 monterey:       "2fd2764bcf781c2dbf271c22e8b9d611a890b50cdb52f0892613bc15104326df"
     sha256 cellar: :any,                 big_sur:        "7f26e011f6c7adb643a2c648960c1d9ff060e4f51ea8685c462deccd01b19477"

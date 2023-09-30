@@ -6,8 +6,10 @@ class Needle < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any, arm64_sonoma:   "d701a8da8eb60eeb86f034d27f0793e124ba4dac5155b35b95c92042f41cca65"
     sha256 cellar: :any, arm64_ventura:  "2b953b5225793b663e30652c4dcf15af21883f3161e1424cf3ae4884def4fc85"
     sha256 cellar: :any, arm64_monterey: "f5336518cc424b2a5daf3400d9968035966226f1372d75ad4e8d950a5bfced93"
+    sha256 cellar: :any, sonoma:         "f267e4418bd50cdab1cdbf5765f647cb7bde25a46e3e861fc1b337249954de47"
     sha256 cellar: :any, ventura:        "4a2e37bdcfa6fd09d7a6115ef0d61ed067f6c32ff336513a0e48efc7ce4e502c"
     sha256 cellar: :any, monterey:       "0a7abfa75a75acf3773fc1bef1ed9e268ddda7da6ceafb2c5f74c6d36a4922c8"
   end

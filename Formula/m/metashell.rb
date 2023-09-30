@@ -6,9 +6,11 @@ class Metashell < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "109c76fa2e8da1b4bdddd8368c4c3e8328477658a44064bdd77da42f60e48bf6"
     sha256 cellar: :any,                 arm64_ventura:  "2cc250a4e2c795206aed7e6e3c29bd58fd7c48adbb406ac9ad6076249c783537"
     sha256 cellar: :any,                 arm64_monterey: "7cbd8c82695aad556936488bcfcf3bacf33866d2d75401ff31eaf5cd60920997"
     sha256 cellar: :any,                 arm64_big_sur:  "287f647cf8550653078479c27d4e985a456e68ef24491a3de01175e92234e55a"
+    sha256 cellar: :any,                 sonoma:         "6ee5ee0f262ea927bd82f2860399ae5e3c751ecdd6ef8399a601f6dcb8db3c37"
     sha256 cellar: :any,                 ventura:        "f196e01be3cba5fde64a8114afbd1c4adf6c6ef5a44fc5e7f848cf7f7797d086"
     sha256 cellar: :any,                 monterey:       "5573b01681807008a818cdab233292aaeb7db1bf93694cade04410dd60dc39d1"
     sha256 cellar: :any,                 big_sur:        "e2f9bdc3e9b406683dc706aa08d10efa38e5cebe033268f324341872c62ec390"

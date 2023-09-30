@@ -1,20 +1,18 @@
 class Cffi < Formula
   desc "C Foreign Function Interface for Python"
   homepage "https://cffi.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/2b/a8/050ab4f0c3d4c1b8aaa805f70e26e84d0e27004907c5b8ecc1d31815f92a/cffi-1.15.1.tar.gz"
-  sha256 "d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"
+  url "https://files.pythonhosted.org/packages/68/ce/95b0bae7968c65473e1298efb042e10cafc7bafc14d9e4f154008241c91d/cffi-1.16.0.tar.gz"
+  sha256 "bcb3ef43e58665bbda2fb198698fcae6776483e0c4a631aa5647806c25e02cc0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "82d180fb97e07d7debff3e97fe8450dd4dab44477166a7e98a678ccfbc8c3999"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5971b4b3104b5b50eb147696a0ce95d93b2e62fe6dc219a78368e512f6d0b519"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4b3a6548b25534c9cb8fc9561d2fdbee5a59c9fc9c0acf7bc766a0918683487e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f6e36e0a87362dfe3052329c7a38f7bd10325ab6473f58ba90e428f065df68d2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "db12ed813d5bcc194ce6b9edae9e6459bb71b782f465923c39d2c538bb6d3fd0"
-    sha256 cellar: :any_skip_relocation, ventura:        "3865305b346855d194487dae89baf1d4c8ea47d25a18adf48d1f46896eb06aa0"
-    sha256 cellar: :any_skip_relocation, monterey:       "1f56e911853ab2d4d0508a4062c00e47d3c83e73ad99a5fc93114dc76798a881"
-    sha256 cellar: :any_skip_relocation, big_sur:        "746640d4f76e427485dbf604b51a3c753e1ddf2cf56337d9e80fe1167cdbc610"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca6ed36c6e14a67c5c7d105a46905a8144ea2f1fed314159fc9de67de52cb07a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "055f741e8aea1859fef03a2411b8a212bfa52df2ef2af92e406a39da80c38bfc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6fc5b431b1b0fe3ffd6fbaa8a971c6a90fb0fd3d04546196c6a0b06e4b2febde"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "523b00cf3b61a665e19ea1511ecf6bf297ead3e61cd990add5c42ddc7c8a78b0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ed75fad526297630484f618319a76d51bc8a6a08dd5614452f5dd1b779e66c77"
+    sha256 cellar: :any_skip_relocation, ventura:        "23bbe37b7a777a0f2a47686f87773784194ec7adf0698b47aa9bf8f7c7481cce"
+    sha256 cellar: :any_skip_relocation, monterey:       "404352ffd01e392bff60745d0d2b17988d71d990bef27596a4b06eaf657e0bb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0bebf686878c7eb40b83df3af01b0dbc94fd39c44dd5d19e8f2a7e7e122e1c2b"
   end
 
   depends_on "pycparser"

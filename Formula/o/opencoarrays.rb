@@ -9,9 +9,11 @@ class Opencoarrays < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "9421879ab10259b1d30a48d075be3fa3ac3ad489c96259c8af31d38b55f11a45"
     sha256 cellar: :any,                 arm64_ventura:  "34ac30208c143808ef8ba9c70f0e8a4e025fa2772878a3d7ee294378bd98eae9"
     sha256 cellar: :any,                 arm64_monterey: "c949b97866c6b19884a3547575306bf3d288e1cad006a8e987e2d29fa4f13708"
     sha256 cellar: :any,                 arm64_big_sur:  "e07007d8dc742feaab1455322b5b9d39375c30712e354fab23ee8f8db5df596d"
+    sha256 cellar: :any,                 sonoma:         "0fc07196f92f70b5e9bfd250cd8609890bda39df3d8b4a1705f47f3612e940d7"
     sha256 cellar: :any,                 ventura:        "5424c08546ff3c93f549fddee86f76d1923e6b3ec8710e8d13d88e508a31e355"
     sha256 cellar: :any,                 monterey:       "f7997c9dde7fd5e028a013e9f1d68a2cf5e12cdc59f44f7abd8012f0d1abeca1"
     sha256 cellar: :any,                 big_sur:        "8e7707061f7929fbe390b77a64e1ec4f86b1c192dd7cb356a5694bb7f262a893"

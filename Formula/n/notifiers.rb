@@ -10,9 +10,11 @@ class Notifiers < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "deb3c09a6c8c78e4aff431ec584c1bde0d10ccb4cb16be907aae38127b24d6f6"
     sha256 cellar: :any,                 arm64_ventura:  "37f36d2c5a00f4813f572f1b266bacae7d3e661cd3541744182d9a585da2a411"
     sha256 cellar: :any,                 arm64_monterey: "a617f82423428f57dc6f45845e56cc8ebeaa9ba6195ca3d5c00463052c94ed3a"
     sha256 cellar: :any,                 arm64_big_sur:  "c1c6131264960fea4932e136387ddd11d3abf3da10b561538ea73f0adf10565f"
+    sha256 cellar: :any,                 sonoma:         "7dd3e533749c147708ec901ce9d9b03cf50122c1fedb32b0f11e27370cbb20fd"
     sha256 cellar: :any,                 ventura:        "73fc8b2c03048a228dd4a699ab2252f181f50450c1741be5d082d1ca8051ef6b"
     sha256 cellar: :any,                 monterey:       "0a39bfe48811b9a9bae8b00048971ee374c06999bccac5f1b5dec60ee625ef8d"
     sha256 cellar: :any,                 big_sur:        "64a96ad971f2f6e76fd0fa818ef84827c064005bf5a2f50cc2b3b85da52b5dbe"

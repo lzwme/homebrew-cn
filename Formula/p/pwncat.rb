@@ -10,9 +10,11 @@ class Pwncat < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f09cfd0fce779e6dc1dffe89ba2ddd7d6c3652aaa5ac0958db57487223dadda1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "13ef41fbecdf01f47064a3e29ce0ac70a4bfa0110e1dbc2cb5d6cd09a187642a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "13ef41fbecdf01f47064a3e29ce0ac70a4bfa0110e1dbc2cb5d6cd09a187642a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "13ef41fbecdf01f47064a3e29ce0ac70a4bfa0110e1dbc2cb5d6cd09a187642a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ff49e6dd27b37e43cd7c42dece534b50ecbb5ffbf63782d7e01fb4dee4518b1f"
     sha256 cellar: :any_skip_relocation, ventura:        "28c110818dc6d9aa1a4c6a06376f5c66dfc485a6f74c21f94dd207ac6b1f2e39"
     sha256 cellar: :any_skip_relocation, monterey:       "28c110818dc6d9aa1a4c6a06376f5c66dfc485a6f74c21f94dd207ac6b1f2e39"
     sha256 cellar: :any_skip_relocation, big_sur:        "28c110818dc6d9aa1a4c6a06376f5c66dfc485a6f74c21f94dd207ac6b1f2e39"

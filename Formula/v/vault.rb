@@ -8,8 +8,8 @@ class Vault < Formula
   # https://github.com/hashicorp/vault/pull/22290
   # https://github.com/hashicorp/vault/pull/22357
   url "https://github.com/hashicorp/vault.git",
-      tag:      "v1.14.3",
-      revision: "56debfa71653e72433345f23cd26276bc90629ce"
+      tag:      "v1.14.4",
+      revision: "ccdd48d1f7b95fc99fd11d67fc1c687576b338de"
   license "MPL-2.0"
   head "https://github.com/hashicorp/vault.git", branch: "main"
 
@@ -19,14 +19,13 @@ class Vault < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ff27ada531fcea473f8ccddf9d36fcd89e966e040396425e12c0dfb2fe21afc7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3086e3905538354b33c4911f384cfd7bbfd359739a4a8b84d165ae3ac18420c9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4880824d6d5cd662a005c7232c789037ecbfb4dcb838981a5237365f5ea5afd7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a670d63e3d73729bac35261c9ac536b8aa70374a1c31c6a93bf97a7680722be4"
-    sha256 cellar: :any_skip_relocation, ventura:        "9734327f8b5e97c9de79e3f82ab2ff96045528ba95985b564daebc33f28d2769"
-    sha256 cellar: :any_skip_relocation, monterey:       "1b64817ab855f410c7da61eb485243706fd36a5acd2ab52164b93d9fa0d36b46"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2beca3488ac63d787b47d7c04c3eb3c7432421828f7d818c0b9c2e70a31a5244"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f34e688c24991ad03cd9e02520652c44e62e6180467ad4303ecf60d0329a6a5d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "26af537dd044826cf7569c9cb4385e53c3de560518f8a521397b18695e9daa2c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "18ee0a998f38e77c9e5a6bf406fc7326c69caca580efd84b277346344e1afef2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "79afeebdd21423dd875a11eb314f3c2367da14cc489284836820b97cac63bfc0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4a4eb54aca81ed892781260cba36dd75c0274c52562ed21e3e6720ebbea75ff5"
+    sha256 cellar: :any_skip_relocation, ventura:        "d21db328b2e6cd298c7dd00a9515f676294862fa8a865b1c7c86ea93d8c8e678"
+    sha256 cellar: :any_skip_relocation, monterey:       "5521823fa49b37426440fbe642e2013edabba13d841686d759d4d8f699a9c921"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4518c13f4613bb7adf425c5eabcd4a4cff94fdfe7def03201ac193f10fa7cb8"
   end
 
   depends_on "go" => :build

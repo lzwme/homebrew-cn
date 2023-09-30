@@ -6,9 +6,11 @@ class Nco < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "09c8395f84a161e8351fd20f1c9d54a229fe9931a06203ddf314c0453586ff76"
     sha256 cellar: :any,                 arm64_ventura:  "b218dc0d44d0092e608743cbb72d8ea31edc247e65cf0406c6abc7bcb1f5fc39"
     sha256 cellar: :any,                 arm64_monterey: "dc16d9013fdf30c97deb8a4c71b80be0da3a9f397b643b5e9eecec8595f770bd"
     sha256 cellar: :any,                 arm64_big_sur:  "a28ee76bc4aedc0593d48f049c2871df9633f8c3c695fdcab5587b5d14e61a28"
+    sha256 cellar: :any,                 sonoma:         "712baad468d86466cec57c23fb8f3571c51a5e31b8c0d86342a4df6eb6cea603"
     sha256 cellar: :any,                 ventura:        "134167d5a432d8ea96e40dc527c61c10f5cfcec65fa2feec929047898b3d9883"
     sha256 cellar: :any,                 monterey:       "dc0c4201dffa9e8c403e3d065835d9368b875846a56f2b46998313807ad83f54"
     sha256 cellar: :any,                 big_sur:        "7efeb383400726df89f010aecc11613cad04a2b80ffa0207edd344c2fccb02db"

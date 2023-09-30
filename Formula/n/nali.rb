@@ -7,9 +7,11 @@ class Nali < Formula
   head "https://github.com/zu1k/nali.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ffd3f77598711b0aee5c1ba18de6cfd345819ba91bf71955bf6394760e664673"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7fe418f9bc06ea40fde09eba380059926131febb9cfffe7a1ec412f693b2666b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7fe418f9bc06ea40fde09eba380059926131febb9cfffe7a1ec412f693b2666b"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7fe418f9bc06ea40fde09eba380059926131febb9cfffe7a1ec412f693b2666b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8684af90c8f4a354cbd4041aa71f159b4cfc6b8b090eb3bf2993d2d7c1cfd0a9"
     sha256 cellar: :any_skip_relocation, ventura:        "d8223e754e41d2a95999d2f78ffd1894b0a3308b247a30fae0a2d5342c61c373"
     sha256 cellar: :any_skip_relocation, monterey:       "d8223e754e41d2a95999d2f78ffd1894b0a3308b247a30fae0a2d5342c61c373"
     sha256 cellar: :any_skip_relocation, big_sur:        "d8223e754e41d2a95999d2f78ffd1894b0a3308b247a30fae0a2d5342c61c373"

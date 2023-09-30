@@ -10,9 +10,11 @@ class OktaAwscli < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d23c07b9d7c9d57e3cf5d793bdccc43c8f126f2d9518fb5acd3767ea517224d6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b46940acaf982918ed0ff1fd0a3596bbe9fa7d61ba72de90f387dfcd05ed2f43"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "94586478a165853faf0493e9ea69dd0cee58c364c3f7d9aa78b8a94e19f18dec"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "66c5aafc0ae0b4d8bfa97ab8e64a06e83bcb10d23f8bbd543bc8245bd53cdc10"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f486e053e36e03695ff555c08914b312b313092fa919d8622cead2ae442c3db9"
     sha256 cellar: :any_skip_relocation, ventura:        "13becfe76ca3985d8fe51cbf281f8a76bfd31678706f252f051329afc67cbbcc"
     sha256 cellar: :any_skip_relocation, monterey:       "4a824eb9351734ac06505ff80151ebf92d506adf814a69238c74f5506a6bade8"
     sha256 cellar: :any_skip_relocation, big_sur:        "4edf5c9f681e30ff15e1af72205ff424d3e9fa9a61c099c4a99cd63be4d40828"

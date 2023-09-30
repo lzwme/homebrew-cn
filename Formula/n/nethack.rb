@@ -17,9 +17,11 @@ class Nethack < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "ce30c296e474a239cb110c54a7b16950de538e9782414718290606a8cc9424d1"
     sha256 arm64_ventura:  "e51292f937dbfdb68feb969552da8ab484a8728d5fb85fc6e389cdfd0ed57922"
     sha256 arm64_monterey: "f546283d68a22ff79a4a382a05fb9f7c1949b8057e52f478c8cead4300d424b4"
     sha256 arm64_big_sur:  "078ee2989d66bf8a98a577509c86dc4e7bddc009fe475dcfe172c075bd0cdb39"
+    sha256 sonoma:         "496413acccb6c48f8ae064d8beed827062858948e4f28dd7e792ef256d6236ad"
     sha256 ventura:        "a2ca955b4f528e11d3d5baceeb8bb9783914f595a1a010e12ce23cc5206e85ef"
     sha256 monterey:       "0fad9d74cfab3770167a0de3de5228f2ec5c079e94d6956c140f820b3b8e2097"
     sha256 big_sur:        "9478349296901830cee4abfeecbca729453a87732753603216e6a7ca8b31695a"

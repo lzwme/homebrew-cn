@@ -8,9 +8,11 @@ class Nox < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "140ecd3a7d7a07319f5913882f950f0d0847c3d3868589bdfe6695b07319f8d6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4d3ed5090b94223d95f5ba8abbb8d5112de339423da57d541e94ab89439035d4"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2e65be811d2a457c78af21a73f7897dfc4d75cbd4c559f29adb2f387b5303a6a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "332d48ce9c4da2e1cb52f1edda3b92a471dbbdaa42a64857930faefc0b89bff9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d3bb2edff83ee7153bd21bb58845d82fc1331b6d2284bb22c2879708c6d0a3e2"
     sha256 cellar: :any_skip_relocation, ventura:        "1418e1025cd468cf8784bd954a7dcdf7718a4b1da83e9bcbfaf8b169e71f1228"
     sha256 cellar: :any_skip_relocation, monterey:       "59135b3eaed034a371da233fae873babbb1270aac148a6b19f4a9cf36d5fb5b2"
     sha256 cellar: :any_skip_relocation, big_sur:        "62bed763b77dda3faeb98aef921d1993fa11fd6c2b6b58aa3c8e48ff5b65beea"

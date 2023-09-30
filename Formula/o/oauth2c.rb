@@ -7,9 +7,11 @@ class Oauth2c < Formula
   head "https://github.com/cloudentity/oauth2c.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6c3ea3f1f9277950a6b2d68a6ec086cc4caf4680eb64bb15ab038bdcafd1ef11"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a78d191b203cc8b6573fb0cb67b8c47c1bb81e2171ab72881664e549aacde19b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a9f59ea6d289afea9164d55bb07410300f7195013de164330da8f5aa6f30c3c7"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "47a5f846fac6134c42fbe70e1a1a530ee432fe9541c7649ff7c0dd06d2eded7b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c2463875dbfdf6e1a6c20588195027a94ea33db8a0f27019a10d7d7af961ce75"
     sha256 cellar: :any_skip_relocation, ventura:        "52b52f339edb62d0a2756689f740da6dce035f0f858fa4fa80d79f3dda62ba6e"
     sha256 cellar: :any_skip_relocation, monterey:       "ba1dfda0e8be9e1881ae91a1a03f3375008dd8365dd4da3d28fed71470bb7f4c"
     sha256 cellar: :any_skip_relocation, big_sur:        "b3a4c2fde629d1c941ecc21c78492c44eff5476cb13d85147c52ec878fa7a024"

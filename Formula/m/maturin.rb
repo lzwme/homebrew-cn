@@ -8,9 +8,11 @@ class Maturin < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "b372bd7bc5a1f716740598a65fc6dd7ba9f302dc54c7ff3b663ae7018a1f713c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "94a1c679bd2fa3acf25e14cbb8f571e80162d7231b93a2820b87905cb9c63a89"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2c54561198519e6a02e38d3f4bafdc7a5b58eb0bd9e3069367a410d40d191ebc"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "30a2b03bdf7e5423e662ddd2a63643889692f7c97ee7371097df7d38d863403d"
+    sha256 cellar: :any,                 sonoma:         "ba5b5c0af42a42688cd2121cb238b85adea87628f3ca52c63dd85fc98ef3ffb3"
     sha256 cellar: :any_skip_relocation, ventura:        "c04a1d6f98b063a6d0a472a1bcdc94f3e99d7ab71cbd6547ba37581210fb60c0"
     sha256 cellar: :any_skip_relocation, monterey:       "d2a39e45c65b5e06e2265f659edc7e59e95264a055e7f6b272ba213b1e3b1047"
     sha256 cellar: :any_skip_relocation, big_sur:        "51f68a51569e06a2c9725a3569e7de1b1a430b97c5c887b7d53b124c685a6234"

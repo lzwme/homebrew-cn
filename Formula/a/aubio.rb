@@ -13,9 +13,11 @@ class Aubio < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "8c23c7633064df0072287f6bf5178bd44dac868efd2224e28f85f0408d1445ec"
     sha256 cellar: :any,                 arm64_ventura:  "1eee72e6668994865c26b6e3ae4cdde3dd8c275448e5940c36b251db5cc66bc1"
     sha256 cellar: :any,                 arm64_monterey: "f61587af7daa4baca8780ffc61dcc4cc72f03d0a9d0567f7153d27960746f28b"
     sha256 cellar: :any,                 arm64_big_sur:  "aa410dbe37a4beb13ad47982da915eb678f621090cb6cf2c96c5e36b534a3bb7"
+    sha256 cellar: :any,                 sonoma:         "02cae2513ca092204e792bcee49057f214aad446ea951bdcd9f1673bcf23fa80"
     sha256 cellar: :any,                 ventura:        "32087ed3e3f47b5a1b7d38efc99f91b215eafb28dd989bdbca98dbdd45f75939"
     sha256 cellar: :any,                 monterey:       "86ec0b11858d37483abeac3750d7af632dd2b719f8043cdd6341c6654e4290d3"
     sha256 cellar: :any,                 big_sur:        "7e012835534713c23613399d0e92fdafa1736f584d877e3952b5c128e3d7792c"

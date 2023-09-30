@@ -28,6 +28,11 @@ class Pipebench < Formula
   end
 
   def install
+    # Contacted the upstream author at https://www.habets.pp.se/synscan/contact.html on 2023-09-28
+    inreplace "pipebench.c",
+              "#include <stdio.h>\n",
+              "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n"
+
     system "make"
     bin.install "pipebench"
     man1.install "pipebench.1"

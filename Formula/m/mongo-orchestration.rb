@@ -11,9 +11,11 @@ class MongoOrchestration < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "80ba9af4e2c6e96aef35f50bab5eecaa69040a651c87027601b2ae890fc25ca8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0884101bc25982a442d27a1503f42a4a95d3b62f56ec3f91e010bf3f58746814"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6f3a32fd2fdf01f8c1ba8b95f525e3a7168f1abc8914d14e715dc76350e9a0f7"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4afc69e2e454af89a58911bf0308794d03a628fd90b974e28a4ebf2b01ce8e93"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a4219c11be5e37a97f93dee627bfb239b8c8dffc483e30b102627827f108d2e3"
     sha256 cellar: :any_skip_relocation, ventura:        "69d7e56f87266880d7430f0a226c07631968d937567786a733e827e30cc7e73d"
     sha256 cellar: :any_skip_relocation, monterey:       "7e533ffc23e27afbc26e5b1b713bbddc24dd12ce523cdbb22a35dc3271658a02"
     sha256 cellar: :any_skip_relocation, big_sur:        "15a1d3f33b5f7dd2a8e8de50a3092a37c119863fd1a2f442e96be01d5b22de64"

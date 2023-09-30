@@ -6,9 +6,11 @@ class Mdless < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a5e20dc35f8c5fac99066e982b12842e50e66859c539c020a2c05b49e13dff5a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5e20dc35f8c5fac99066e982b12842e50e66859c539c020a2c05b49e13dff5a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a5e20dc35f8c5fac99066e982b12842e50e66859c539c020a2c05b49e13dff5a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a5e20dc35f8c5fac99066e982b12842e50e66859c539c020a2c05b49e13dff5a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a5e20dc35f8c5fac99066e982b12842e50e66859c539c020a2c05b49e13dff5a"
     sha256 cellar: :any_skip_relocation, ventura:        "a5e20dc35f8c5fac99066e982b12842e50e66859c539c020a2c05b49e13dff5a"
     sha256 cellar: :any_skip_relocation, monterey:       "a5e20dc35f8c5fac99066e982b12842e50e66859c539c020a2c05b49e13dff5a"
     sha256 cellar: :any_skip_relocation, big_sur:        "a5e20dc35f8c5fac99066e982b12842e50e66859c539c020a2c05b49e13dff5a"

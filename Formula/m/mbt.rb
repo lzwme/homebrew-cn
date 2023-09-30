@@ -7,9 +7,11 @@ class Mbt < Formula
   head "https://github.com/SAP/cloud-mta-build-tool.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "05437a7b76ac0efff4b7823fc7c8802113c2cae08f6dc853b7c798573f8a607d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "41f8c47d26c21854e75912bd863d6af8c36fe3d007850b4b9eed94e973e170b8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5e9626b386bace246a2d3c55f9dbbaf62da8818e3651299766a198d934e3b0cb"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "83d8075db7afea337bddcfc6bd89ee271ef37a8f0f8e442aa40d95cef8ea32e3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8e4774b9acf183bce8b4b7063a6625af31528e1522ab0f113f18718248177d29"
     sha256 cellar: :any_skip_relocation, ventura:        "28c79ee4e63eaad64ed6169ccb0de2a71d0e490bbb0485c0324c97bcc300b0db"
     sha256 cellar: :any_skip_relocation, monterey:       "71199b2ee2078bfbdce574972c361a0b4f1e5346e532126ba19b4e35b7fc7754"
     sha256 cellar: :any_skip_relocation, big_sur:        "0d9e7a29f9014289de8ee0d945a698d776685252d2750fbc1d131191d249c93c"

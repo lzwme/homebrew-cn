@@ -1,8 +1,8 @@
 class Aptos < Formula
   desc "Layer 1 blockchain built to support fair access to decentralized assets for all"
   homepage "https://aptoslabs.com/"
-  url "https://ghproxy.com/https://github.com/aptos-labs/aptos-core/archive/refs/tags/aptos-cli-v2.1.0.tar.gz"
-  sha256 "3a35b68d8587be1ac2bea99535a1f77832a267962117b5a36ac6fd5842190bc7"
+  url "https://ghproxy.com/https://github.com/aptos-labs/aptos-core/archive/refs/tags/aptos-cli-v2.1.1.tar.gz"
+  sha256 "a7da6602c70e22d38bb6759d9f86bbcbd1c066e5bbe17f258b6185258f379558"
   license "Apache-2.0"
   head "https://github.com/aptos-labs/aptos-core.git", branch: "main"
 
@@ -12,18 +12,18 @@ class Aptos < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1a2f68186f97ac3503ee05cc4cc2f20ccd632b5172242a4a26d5df50d44939e0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4cb17eb4cec8958cbd798f1ae5140e8c80789e54dc2e3d4c69097921369b38af"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e49af3d9a2243394add84616e02c8e2505a800af198ffabc695272ff5703b651"
-    sha256 cellar: :any_skip_relocation, ventura:        "ce1f6b15cfdfd394a39151a98fd9a3d6f563eec61647d426081f699d20979291"
-    sha256 cellar: :any_skip_relocation, monterey:       "83f46e535672b412509ecb5130929017a57f5571b664a15a9da983a7191236d3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2bfe730243707288d89d8d60a713b12541fce2fd90f02f829af051c47d1b6412"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e28be8bbc8add9c6a3d7027d6b9cbab5fc36d20d482c51c7ceceda60d08d6b93"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "10a50967d6fef179bbc3c9b9739aaf9285cca69de1c0a3a4b46f28d7e3a02412"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fdb4d26a6b20a3a4f56b7549ea6c91054a9f612aeeb4daab390bf654736e5690"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9836df8ce3f77e57f22fb9d78097ce1675f79e5de052563ba523624a6281e938"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3dab1a74ad3de2602bc2cbe10ce4b23b849906c6cc3f0d3b5ebb30a49bc55301"
+    sha256 cellar: :any_skip_relocation, ventura:        "f200addb6f3c3b85be6b31503eceb5fe4a92a3ef9a7ea91e06836756eeb11f9e"
+    sha256 cellar: :any_skip_relocation, monterey:       "27628e2ddbc83b524f0da2f5b653d4eadf64686a91550ef0fb9adc849ad6b090"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5477ccf54224bad7f1cc28b196ec4da06fea716e18faffce9c8f5a51a52d63e"
   end
 
   depends_on "cmake" => :build
   depends_on "rust" => :build
-  depends_on "openssl@3"
+  depends_on "rustfmt" => :build
   uses_from_macos "llvm" => :build
 
   on_linux do
@@ -33,10 +33,6 @@ class Aptos < Formula
   end
 
   def install
-    # Ensure the correct `openssl` will be picked up.
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-
     # FIXME: Figure out why cargo doesn't respect .cargo/config.toml's rustflags
     ENV["RUSTFLAGS"] = "--cfg tokio_unstable -C force-frame-pointers=yes -C force-unwind-tables=yes"
     system "cargo", "install", *std_cargo_args(path: "crates/aptos"), "--profile=cli"
@@ -52,14 +48,5 @@ class Aptos < Formula
 
   test do
     assert_match(/output.pub/i, shell_output("#{bin}/aptos key generate --output-file output"))
-
-    linked_libraries = [
-      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
-      Formula["openssl@3"].opt_lib/shared_library("libssl"),
-    ]
-    linked_libraries.each do |library|
-      assert check_binary_linkage(bin/"aptos", library),
-             "No linkage with #{library.basename}! Cargo is likely using a vendored version."
-    end
   end
 end

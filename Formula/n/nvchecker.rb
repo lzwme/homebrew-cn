@@ -10,9 +10,11 @@ class Nvchecker < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "629ea45a90f3e89233858bb8a93f94f190f9c48d1d2f30358a688903ca123239"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "079e0d89e2de1eb842343d8b17f1123ea660bc7546bf8de3e1a1daae766532b4"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "08ed62366a642353aa53f5ca4f9c7f25a6571c88df44f5eaa9c49e9502be414a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1a207081ca818d3612e5fd73dc2e035360b62b5a02b6e4181feddad525c00a82"
+    sha256 cellar: :any_skip_relocation, sonoma:         "524275673c9ddc808655e60c479e2e4d2b3e1b47de1c3f231a430ae3722fd4d4"
     sha256 cellar: :any_skip_relocation, ventura:        "d0b1350f7fa05d92ef511673afe50671d3b1264f24baa3ab7d77240d24a51c90"
     sha256 cellar: :any_skip_relocation, monterey:       "7d9bddb089cdb973d189fc3e62cf67f33094080acce7bb0daec3630b245d2991"
     sha256 cellar: :any_skip_relocation, big_sur:        "6460ce5f228a78ff2edc4072823d0fc6a6a0d6945711a7c2415ac81ee6358e06"

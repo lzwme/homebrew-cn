@@ -8,9 +8,11 @@ class OrganizeTool < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "deff4fc686f6beff177f73805f5e5db0f4d92b8d5806813510160e9cb2f7d6f2"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "055813ca1dcb9581d1574372b1877696869ff81c326c470321c2e97c71cae462"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b3835754084757f4f94f8ec9da82674cec9514322faee8c31d18470a084793e7"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5f859a04ab286a264df5424b9903f92ec558f86bef9fd971650cb4ef7838b0fd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "99ac95068abf68f4c1f2e1435473721f5c9735542ad1777600db944fbdeb468b"
     sha256 cellar: :any_skip_relocation, ventura:        "dd4a3d1d6ae92fb1c33eace7d295579709f1dd7ad83868af57a1833e82d8743e"
     sha256 cellar: :any_skip_relocation, monterey:       "4a7739dfb507d4eeab50d6c78ff4fe64fd5cf9fad3d5fd5ea99d71476085c4be"
     sha256 cellar: :any_skip_relocation, big_sur:        "32119a2c58698b9e9533567fd7529c1866b17f8cc2ae608b5d17b0d85d5dd1a7"

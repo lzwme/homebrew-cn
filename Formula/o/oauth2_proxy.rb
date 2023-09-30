@@ -7,9 +7,11 @@ class Oauth2Proxy < Formula
   head "https://github.com/oauth2-proxy/oauth2-proxy.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8a7469374857fbb85e9d9f4e299bfb882561af3806ca623ba05d11cd66b9dcd8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "09e38835e404203559311558a7205f57844bfa5fae1f03b2dea535dde82d51de"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "79c2131dbf92a3deba0c0d55bdd038377437400bb278702a3c358baf438fc162"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "efc245492714e5ad2b018657d808acd19f8aa181c3d84f15ba333e3a4c0357e3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "15119dec77a2edf6611e601280e73876f018e7fa75781a88591ce075dc00fb44"
     sha256 cellar: :any_skip_relocation, ventura:        "3aa7b4203cdd1edc6401ec3250e97e928c0338a7c7186b298fb436272e401da2"
     sha256 cellar: :any_skip_relocation, monterey:       "ee90e11e224739522e8fd59448e9ae6a13e7725d6c65a2eaa11d0fa9482851d4"
     sha256 cellar: :any_skip_relocation, big_sur:        "e0c6f546f65ff9d15eda15b9e2ac246f53b651b6e04fd40f5165ccfca117937e"

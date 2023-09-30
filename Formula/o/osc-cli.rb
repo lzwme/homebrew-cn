@@ -10,9 +10,11 @@ class OscCli < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ac85baf88612393794f22442898c792c6b710bc7df04022e43f11ede9dd2850b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "78267ea2c905d0d85c4bcf95779374dc196d81e42ee761766496a754860f8917"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7019905459fa8dd2a3b14c750fc3a806afc55bf506302ed5b557bc8c013f66cf"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ffb4b4d34054fff08f72568ef8e2b024c85ef744973988efa971efcd7b150b4a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "21bbfea1481564c11e14e0d8992999936f922042af95d18fcedd5956815f7424"
     sha256 cellar: :any_skip_relocation, ventura:        "1d90a84dd719d69fb4bba9a4ae69ee413d4d09af26ee2f885c27df5d42df6a39"
     sha256 cellar: :any_skip_relocation, monterey:       "07515ab538ba8711fa988610638fbde42e021fc372a14745e49fb88e74fdcb95"
     sha256 cellar: :any_skip_relocation, big_sur:        "7c0f23e5dfd6ab5b536b8ed18dd19f8e23b67d099211e0213ad2445788d749e9"

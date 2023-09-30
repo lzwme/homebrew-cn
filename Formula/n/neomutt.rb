@@ -8,9 +8,11 @@ class Neomutt < Formula
   head "https://github.com/neomutt/neomutt.git", branch: "main"
 
   bottle do
+    sha256 arm64_sonoma:   "88d514d4ed9e4a120df0a5e157beed30121678b9982a144994e573c9164234f3"
     sha256 arm64_ventura:  "a377ee2883c36d7b44da59c63168771c17ced1cb642106b7fd465327ab78cbd3"
     sha256 arm64_monterey: "3275eab7b93a7672015d3baf4809f273dbb5a366a5ef057b72244bb1592018bf"
     sha256 arm64_big_sur:  "d960fc10feef5540fb53cc003f53e113594e9e84442f46690fa9be836ba538ce"
+    sha256 sonoma:         "ac96a64263209c3aec3fb766d782da85dea2428550ea0ada0072b54b3b38e92b"
     sha256 ventura:        "c83efe9f4d5fb7eb1aba7e048d2b86422397e763dc5efab346d8c8f101b0bcd5"
     sha256 monterey:       "c60758b014d4c42ab104e38fe144cd89f8cc15f59a570910a6db421476bd95e1"
     sha256 big_sur:        "75d34c5cd9dc3a862a5d04d5c468b2fa54745419b5e2a96481c0a8e32184525c"

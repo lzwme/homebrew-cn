@@ -3,21 +3,19 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https://ipython.org/"
-  url "https://files.pythonhosted.org/packages/15/d0/b84b1131d7b958b2e4564f784c9a88b63ce7c181af914f0c26ac07970dc1/ipython-8.15.0.tar.gz"
-  sha256 "2baeb5be6949eeebf532150f81746f8333e2ccce02de1c7eedde3f23ed5e9f1e"
+  url "https://files.pythonhosted.org/packages/bc/7f/33ab8dfcf529b9bd0220792a26378b722999fc2b857ce4b06f6e0030ed98/ipython-8.16.0.tar.gz"
+  sha256 "7a1b2e1e6a3ec5baa466163c451335081f31859883889ff0289c6b21f7a095e2"
   license "BSD-3-Clause"
   head "https://github.com/ipython/ipython.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7f162e4456baf89eb0b6c60998bb06d5dcaf40dab94eec596d2f5f5d32f88552"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25ab3d98095fac752392e707d8db27a73fc36c6672382df961b1baf9023130c0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1340cd2fd5d08406c8ff0a321aa9cdcdadb25282c6f4a4f00c5fb8791becc6cf"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0cd02457aaf3838e61278d15b123b22c9dcc348bb6d12072e59a737f16bf579f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "64f67e77806b17df9ff26fe86ce493237edc6938bd637b84777a844341c27286"
-    sha256 cellar: :any_skip_relocation, ventura:        "492aefb2db5cdede9b4bc44a62a2c65ccb7cec4ab0c56af11eb73501fd5c7a24"
-    sha256 cellar: :any_skip_relocation, monterey:       "0257e2650602e4b74681ea8d59c956bfadaca7d9c78827ea613fff4184a59825"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b2375cd720bf0a7b04e73bf98f1c701977b637b3fe9fc58b565f73cb3ed17afc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea7dee9e561f96b8df9271692e5dd447b32b72ea03bde8ba5758ebbbdaeaf76e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5657da4d5990a9122c975a4687b5ee67253c34b6c5164f97a1ca3602b560632f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5d224020796d08b5d40c7f99b2cc6409596ce18fbcb801a212be667d8cbd113a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6c543918f11847deb3ea5033425004a4f789207fba5209ddf7fcd853ce3f0670"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b622b39c716f8e9363b23f86682a8d88ca04e392467c9cc6bad8d09e669ec830"
+    sha256 cellar: :any_skip_relocation, ventura:        "a8534ab8890f7d65b02c43a775bd7909ecc8eed22faf13c0a95c52cabfd54a61"
+    sha256 cellar: :any_skip_relocation, monterey:       "e1bb6041e02417da7a65a55c7e4f9a233fa405766387e1c546703514e817a80a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5560788dc89ed2e99b336b25bb5722f8465f8b4c808a599fd392c3a3b1b901e5"
   end
 
   depends_on "pygments"
@@ -30,8 +28,8 @@ class Ipython < Formula
   end
 
   resource "asttokens" do
-    url "https://files.pythonhosted.org/packages/c8/e3/b0b4f32162621126fbdaba636c152c6b6baec486c99f48686e66343d638f/asttokens-2.2.1.tar.gz"
-    sha256 "4622110b2a6f30b77e1473affaa97e711bc2f07d3f10848420ff1898edbe94f3"
+    url "https://files.pythonhosted.org/packages/ed/e0/7e5af07a090b9ef4f88e29b6edb8db8ca3366a0d7736ae9c3a6522fae140/asttokens-2.4.0.tar.gz"
+    sha256 "2e0171b991b2c959acc6c49318049236844a5da1d65ba2672c4880c1c894834e"
   end
 
   resource "backcall" do
@@ -95,13 +93,13 @@ class Ipython < Formula
   end
 
   resource "traitlets" do
-    url "https://files.pythonhosted.org/packages/39/c3/205e88f02959712b62008502952707313640369144a7fded4cbc61f48321/traitlets-5.9.0.tar.gz"
-    sha256 "f6cde21a9c68cf756af02035f72d5a723bf607e862e7be33ece505abf4a3bad9"
+    url "https://files.pythonhosted.org/packages/3a/ae/362f1733cbd3160771fa059beb0e2bdab442b7065e7651465b01bc5e4ffa/traitlets-5.10.1.tar.gz"
+    sha256 "db9c4aa58139c3ba850101913915c042bdba86f7c8a0dda1c6f7f92c5da8e542"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/5e/5f/1e4bd82a9cc1f17b2c2361a2d876d4c38973a997003ba5eb400e8a932b6c/wcwidth-0.2.6.tar.gz"
-    sha256 "a5220780a404dbe3353789870978e472cfe477761f06ee55077256e509b156d0"
+    url "https://files.pythonhosted.org/packages/7c/67/31b3c1411efeb4b95e0a1c63c263c07676c49f59375d31a21b11ff16f9dc/wcwidth-0.2.7.tar.gz"
+    sha256 "1b6d30a98ddd5ce9bbdb33658191fd2423fc9da203fe3ef1855407dcb7ee4e26"
   end
 
   def install

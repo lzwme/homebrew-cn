@@ -10,9 +10,11 @@ class Pssh < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e9760ed3e719a72bc630a50cd8fd58450511d222e73d2238ed8b63e125af21e2"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "485a041e54166f986f97aaa0d6e06d36c3cef6246fe1074a3772f8e8a8190d3a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "485a041e54166f986f97aaa0d6e06d36c3cef6246fe1074a3772f8e8a8190d3a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "485a041e54166f986f97aaa0d6e06d36c3cef6246fe1074a3772f8e8a8190d3a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e41b14325f15319f2a3550da8265221d77e5064b568fb22230b37b9bbed95da3"
     sha256 cellar: :any_skip_relocation, ventura:        "e3afbad672d7e15d741a1efeb98b8f77a75ae88ad1168534df18e1d1dc2feee5"
     sha256 cellar: :any_skip_relocation, monterey:       "e3afbad672d7e15d741a1efeb98b8f77a75ae88ad1168534df18e1d1dc2feee5"
     sha256 cellar: :any_skip_relocation, big_sur:        "e3afbad672d7e15d741a1efeb98b8f77a75ae88ad1168534df18e1d1dc2feee5"

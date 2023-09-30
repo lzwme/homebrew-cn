@@ -7,9 +7,11 @@ class Notation < Formula
   head "https://github.com/notaryproject/notation.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e80a23898cebd06bf6621ebd89c6b4304477e2dab2950d542039009a31cb76f3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "dace95af3497540a4f288c26dad180ffcac605e39559bf7724543edefa7585be"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "bcf87f3ec5d3065299216fc05f675cd0c41706264209b83cf2d7f6dbc9bbc0e4"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b873594a2ef7d95385666669470fa850f25344354ab0b373b3d6455845f216ec"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cfdb7626c75010eb8db75700b7be1740d46a233bef95b80c0466c62f3798bc09"
     sha256 cellar: :any_skip_relocation, ventura:        "257bab825349099484695a235b9a380dd32d181bd270657c7e156a478ec0ab81"
     sha256 cellar: :any_skip_relocation, monterey:       "376ede052a69f5b98552106845090f262c263a7a9d2661bf166971fab32520ba"
     sha256 cellar: :any_skip_relocation, big_sur:        "4178e3f434a7ae62b7bd6f5af5849a05e2f49680332e1678dc5fe2943cfbe4d3"

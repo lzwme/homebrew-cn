@@ -12,9 +12,11 @@ class Pumba < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b92a5355efbd2150e97340df0a8e51d18585bb33339a9d80d150985b8d28ee60"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "77f912f81252725e4fa18d6c7e7439192e17561b2f11990db1ef08ff1344f673"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6289f50c1a0e902802f5bd62df73186722456b640593108c77f6e934a5143835"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "51dc8f2ea1052d6fe9c0308ce7aa47e20879b071d37db6e4c3165a38f07f197b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "599b9b0af904ea0f9449fbb30d162622da1c8055ad2d8c2e1488653c215cf279"
     sha256 cellar: :any_skip_relocation, ventura:        "8fab4867017f6b121a4ac5e66d593111b50d638ce11b11772a498846a26b2866"
     sha256 cellar: :any_skip_relocation, monterey:       "5296c98082cc77718b35eb86c9bf136aae3f0bf3af7845e9e043e3b8f91bbdb5"
     sha256 cellar: :any_skip_relocation, big_sur:        "6418e931f4f0ff9563c7e3992697a8682bddefa92203fd15af12be1906176acf"

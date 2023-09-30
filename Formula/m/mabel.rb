@@ -8,9 +8,11 @@ class Mabel < Formula
   head "https://github.com/smmr-software/mabel.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7bf38463d084fe08c99e94d6db50a410bba56792550bacb94e360246eba52620"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d9a2e1ca4eafe45d6cc7a28fe77631cc32dffaf3d766f4991cb467fd21ae531"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "633e0d76b3a7368f5c84544996dca69a93e8c0e3a0a0646f4123629e027d8fba"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5411828b95a20f7b4b0364b10edf02fe510da922fde1bb014f1b2ed2e6f01603"
+    sha256 cellar: :any_skip_relocation, sonoma:         "aa4371cca2ceb58486dd3a0c57e4952a8448f749c6c0657aaade9287dacf66b4"
     sha256 cellar: :any_skip_relocation, ventura:        "d716d6bc90d55927c92b18046ef89baf4f13dc24c3419c22e288384784c3e8d6"
     sha256 cellar: :any_skip_relocation, monterey:       "0f44e456ff3baaf737ccc551b9d35f9861b8bc9167bf07e4fbf9cf8685932bf8"
     sha256 cellar: :any_skip_relocation, big_sur:        "6844db2f3fdffac755f626c6875b5f06eb80ea389dd7d2ff67d685ba50a88325"

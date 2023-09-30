@@ -9,9 +9,11 @@ class Ptpython < Formula
   head "https://github.com/prompt-toolkit/ptpython.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2785b37d3e096f4bf8513112ae5ddc6fb0ee6218787dde9560e2c3b1b329c00a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae423ad98867ba33d617d85cf0238e8b72593786d6681f195c91679b0d4ad0ef"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "47bba0b5aae615868f735419b935c70c1b97144b95152f9f31f152986b85f6e8"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b5ce664b22e7d3d411812234546d60b2ced4cc1a5295721b15a962366e41271f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a2726340aa3f7436ad8e41fbf5557ae7a448c65bc76ed79ebc0938bab0b67cdd"
     sha256 cellar: :any_skip_relocation, ventura:        "7c71c1fec1fcd8e5bbf5e9ec04a1990306d07030f2076796b6e1d45bc51140b6"
     sha256 cellar: :any_skip_relocation, monterey:       "d00f080700e6c20c0e8cf3f21278111fa9fa9227d8fb8a43c655758fea327226"
     sha256 cellar: :any_skip_relocation, big_sur:        "c3913be54671d6b1d439ecd379e4352257675a9a28ba9a73e95502ee8d43bd27"

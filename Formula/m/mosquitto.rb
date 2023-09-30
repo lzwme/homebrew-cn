@@ -3,9 +3,10 @@ class Mosquitto < Formula
   homepage "https://mosquitto.org/"
   url "https://mosquitto.org/files/source/mosquitto-2.0.18.tar.gz"
   sha256 "d665fe7d0032881b1371a47f34169ee4edab67903b2cd2b4c083822823f4448a"
-  # dual-licensed under EPL-1.0 and EDL-1.0 (Eclipse Distribution License v1.0),
-  # EDL-1.0 is not in the SPDX list
-  license "EPL-1.0"
+  # # dual-licensed under EPL-1.0 and EDL-1.0 (Eclipse Distribution License v1.0),
+  # EDL-1.0 is pretty the same as BSD-3-Clause,
+  # see discussions in https://github.com/spdx/license-list-XML/issues/1149
+  license any_of: ["EPL-1.0", "BSD-3-Clause"]
 
   livecheck do
     url "https://mosquitto.org/download/"

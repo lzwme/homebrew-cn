@@ -12,9 +12,11 @@ class MdaLv2 < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "4267d996a645325160e57e4b4ad67206f41119d77d7c4cb86b3579cb4d0b4ff5"
     sha256 cellar: :any,                 arm64_ventura:  "6d241076e433268cb541caec4a74ee61aabaeb056717bf76cc219352895b7a08"
     sha256 cellar: :any,                 arm64_monterey: "e780aa5e6c3d9374a120635996ee851a35191919eda1156ffdc5855bc5f927b4"
     sha256 cellar: :any,                 arm64_big_sur:  "b57083c5363f020da2ff8f41756b63ff03800a82691c76141d3a48f5eabc2872"
+    sha256 cellar: :any,                 sonoma:         "43012dbccd122bfabc8c36d4ba542a9aded99c194d8e55f43aa3f6725d646e55"
     sha256 cellar: :any,                 ventura:        "69214dc90ea0b35a252852a86d0060c496c5394e25704361f2fb4653cafed564"
     sha256 cellar: :any,                 monterey:       "a07ff2fc6086254b1fd4d122505cea924a2501d2c45a458dbc3112b696cdfd67"
     sha256 cellar: :any,                 big_sur:        "036d0587dc2d24728b21dcbf2b2d791aea14f12751ecb376d8517c997c863ba5"

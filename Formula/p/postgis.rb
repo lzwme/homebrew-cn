@@ -69,7 +69,7 @@ class Postgis < Formula
 
     system "./autogen.sh" if build.head?
     # Fixes config/install-sh: No such file or directory
-    # This is caused by a misalignment between ./configure in postgres@14 and postgis
+    # This is caused by a misalignment between ./configure in postgresql@14 and postgis
     mv "build-aux", "config"
     inreplace %w[configure utils/Makefile.in] do |s|
       s.gsub! "build-aux", "config"

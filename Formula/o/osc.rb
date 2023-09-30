@@ -14,9 +14,11 @@ class Osc < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "269709d25fffe18a00c3c79d85cb0256053fb484d8f201c1b14a0ff0813069a1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba87f53d181c1feb7e4d7a8503c9ef6b0e248d5c3659d72d865547e8a5dfdcb5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "444e7a6b88fd425d0af40acbd57a304f079ebeabdd650b97c11f8a8c04bce8dc"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4552d489269cdb724a5ee65ab916c4a41f0a3a4baf50fcd9d65d5f44a41749c6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a4749b99baa9d2a6030cf8130a2391cd9b763d8d6ec912d89eb7cb40db6c7e34"
     sha256 cellar: :any_skip_relocation, ventura:        "a8bf22d523c081adbf36e0e8a9b8ac0349ea6af0bf1c9515a2ee2c0ccf7fdcb8"
     sha256 cellar: :any_skip_relocation, monterey:       "34b219fca71847b18fec439feabe73a686df04f3c7e91c184fde2f873dcd8093"
     sha256 cellar: :any_skip_relocation, big_sur:        "377b241e75fc821c90df9fa35255361eff998770dc42e7412d788e075d910f21"

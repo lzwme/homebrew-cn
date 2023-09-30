@@ -7,9 +7,11 @@ class Okteto < Formula
   head "https://github.com/okteto/okteto.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "11a4f204b3dc8cc3afc07e8ae0a484a8c284b34915c204ab0b2c6e6d243384d7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a732c8e8da1f13e9e2566eefc51958ea0cd875cfea1672e028eb2964ec04a675"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b296c0d0204e27bf1529cdb44c49d5d4d9827ff8d0740d6a289a9eb790b59ec4"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8339f166e99c53515efa92676dbbed4c9485eb513f0715d413e760041c5d191d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "98b1108cd6255c9f692036c8ee76eab082821e5008dd7e4c1caefada157dcd65"
     sha256 cellar: :any_skip_relocation, ventura:        "2bcfd12a462f32562d78f2867fc40af45cbbdfe5c155942b49cc97663ea5fc27"
     sha256 cellar: :any_skip_relocation, monterey:       "f2771144198f2e677adb953af3756bcff4cc394a07b3f9d2a6b0f65164672ef3"
     sha256 cellar: :any_skip_relocation, big_sur:        "c2a642ecd2635c82c903ca4ce771ae5a3c77bcd278757072d7ab5bf38b95aa93"

@@ -18,9 +18,11 @@ class MariadbAT1010 < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "b8b826b403dbaf25c258ae6657d4fc6501f7a5af7cb2cb712838c82012d6b810"
     sha256 arm64_ventura:  "395118d3a58f904e2d5b19cfa4954c0626dbfeed9c76255cfca83986a3ed6c3a"
     sha256 arm64_monterey: "d1bd7efe169303750f320b005b4c23297fbe66727e3154497f3c48351f4cfc42"
     sha256 arm64_big_sur:  "2a7fd1b426a9f392b351ccd833d9aec27b8b4c5fe3d355dc394fe4a8787a7248"
+    sha256 sonoma:         "0c2f2459f540d39a335e62bccec7b3c5e9f102850797d712bb69cc2ae43ae828"
     sha256 ventura:        "21353e99497360f02fea72b14869c36a59adbd13bd7262f66f11505f45eab1a7"
     sha256 monterey:       "8d2819079bf464aa7a36cb11cf82bca51bb6cd4161813ae977047e5021539bb7"
     sha256 big_sur:        "ede3a042cc47221714d4662ac6ae19d1aac4c35599b95e2b56f153e4d021b913"

@@ -10,9 +10,11 @@ class MetaPackageManager < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9d40d98c5e327fc7a0d5824f7a23c17b618ad673e5420279749e9a696e6cb7d4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "00d9485ef471629224e9038aff390d72e25eecc1a3f8d5d1d3e781236539b8c8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "633e5115e34d9659cc2a07764c78e615b5889102cefb802964b3ff9fea371eda"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c1a55ecb44441c58fad8f9286038320d395ec98c57a50f250469bd5c10b64f5f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8b9fb25c756e5450d86d8d151dd54398e119d8cf14f3fc6f24b3563f4db1280d"
     sha256 cellar: :any_skip_relocation, ventura:        "b69aa72dd6f21a32c9dd1f43f46bcd450a5d44cda666e6602f43653ad4b85caf"
     sha256 cellar: :any_skip_relocation, monterey:       "97e0a807e34b6d32d594426373b719dcd2438b3ac2925d4b1a82ffa733043402"
     sha256 cellar: :any_skip_relocation, big_sur:        "d36820010895eeb1d08ab3915b38364570b543ee42573e990a79675ec3d06d52"

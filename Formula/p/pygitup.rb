@@ -9,9 +9,11 @@ class Pygitup < Formula
   revision 4
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "73e134b70437917d4a583e3a832ec20b2961f921df54413ea5b7c5c837ffe455"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "410b4b0c43dfba5d96493eed825c3f5787fcc9dfddaa8339a089acd639917c2c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3caef7b708c7a4619c6c54ba91519f5a5286c72b42e538ce26b3e4ff5607f958"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "550ca56e0ca9bc748a14cf3191874f9fbcb5723c62f2cdfc5e4e551f455600bd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2e1cadd899ecc83a203bbe154654e9a7a7ada1f201719a260d50570ee070d8f6"
     sha256 cellar: :any_skip_relocation, ventura:        "63c552de33d45c558d03215885bd18b4ac6cd3a547d68bd7789b39cdfec4d992"
     sha256 cellar: :any_skip_relocation, monterey:       "f38ad79505b0ccd2fce9e1284eac12b1b1e38da4d8a878367d7ece456c3d7635"
     sha256 cellar: :any_skip_relocation, big_sur:        "edeaae1dc183881ad5df88aebc6cc7752802a59218648945f2b95db1009bd409"

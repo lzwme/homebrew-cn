@@ -1,20 +1,18 @@
 class PgCron < Formula
   desc "Run periodic jobs in PostgreSQL"
   homepage "https://github.com/citusdata/pg_cron"
-  url "https://ghproxy.com/https://github.com/citusdata/pg_cron/archive/refs/tags/v1.6.0.tar.gz"
-  sha256 "383a627867d730222c272bfd25cd5e151c578d73f696d32910c7db8c665cc7db"
+  url "https://ghproxy.com/https://github.com/citusdata/pg_cron/archive/refs/tags/v1.6.1.tar.gz"
+  sha256 "7e5ec9a519b8f7c5a2b350153093c7b87ff7d94aef2ed461a5844e4313aadf07"
   license "PostgreSQL"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fcbf5e275efc24a1361b40cfb3e64d272be77b5736b4a42bc8cef97bf76f3054"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f811a5d1797e7ebde363aa65b2fcc16cbdba160a6e4a90c08a9651d3a9bd06a2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d04d16a202c767536dc3854418ff5c69fdbd20baffe7ae2d8d596fd04cab7f9b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "762c93e33e1d94f2013e92db692921935f405cdf24e7987552011567988c15e2"
-    sha256 cellar: :any,                 sonoma:         "ad587d8c9947c77aee95f43299692f79344e3457c3aed12e48460ce60beee8e5"
-    sha256 cellar: :any_skip_relocation, ventura:        "7e2731391c07e10d9388b8aaa0e82bc243ae56637dcd64c70d60a39a9d6dcc4f"
-    sha256 cellar: :any_skip_relocation, monterey:       "b794504c34f59541c9b43c7f93b28f388e456bd3fdd62fecbc3ff3faa9af77c5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8e4d4c4a75ef147f2d26d31c25f0d698cfd2b299e07a3971a230adb318282b45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a594de01858cd014b8c7ff3fc81c34b0a2048066aeba4b6909d1a2c59c910e00"
+    sha256 cellar: :any,                 arm64_sonoma:   "5571e9ac1e68d7499478fe6ed3e10bbab5f4fb0028347f287069643270fca2dc"
+    sha256 cellar: :any,                 arm64_ventura:  "773177d9e4572507103e317feddee472943fb8ab16ed9efc53d3858cf6d72ad7"
+    sha256 cellar: :any,                 arm64_monterey: "5c459350d01db22c58ddfa9028fa86e8fbf1ff1b5f3f231b4571cc8714b32667"
+    sha256 cellar: :any,                 sonoma:         "afe71323fdeb10ae760c0720ab9b3c0e071ca70fbe20cf28bab17cdd9b4615f9"
+    sha256 cellar: :any,                 ventura:        "9fd69e080d04d2c9556e8a8e11340267d04873481a4c62e06eaea2c4ee22a0ff"
+    sha256 cellar: :any,                 monterey:       "197f7fac1541f6e6e521e2a9c9bba3ff5a5a27d52c6b44a2b3c1224e3862a6c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4ca4ded99eac1f0c194cd313806d66e0fe884e6e97f60ab95b813b6d73b2dc5"
   end
 
   # upstream issue for running with pg@15, https://github.com/citusdata/pg_cron/issues/237

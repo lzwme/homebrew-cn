@@ -7,9 +7,11 @@ class Asnmap < Formula
   head "https://github.com/projectdiscovery/asnmap.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ffc30a0823b44858fcd95d58690e05a9ef8461cb8f2804b7f36fcf84dd639672"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "74f6face763385abcd3e34b6cd80d09518c9ac32ff391f7acc0cc37b0d98dadc"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "930050a225bf414ea4a1a623f043bb7c1837f33c5b17fce6ba50039a2ff11ec0"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bfb632e8c5a3081d4dcc168acde3017964878b67dd95c1bb7234679035e9e81f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "961bc5f7277e94da91e1b22cf237fde6802918bf374e1ab3ffd9f66abbb77a5d"
     sha256 cellar: :any_skip_relocation, ventura:        "6c264c751c1bfeeaaecea4821812ac7104df668696727897f93bd41495c5e803"
     sha256 cellar: :any_skip_relocation, monterey:       "4fd1ee8804310cbcb2f6a5cb63c0d5bebcc478c7b5a652f4748ad13c51dc4082"
     sha256 cellar: :any_skip_relocation, big_sur:        "af93a5b7997ae0cf976ed75f52e8213f400f92da312a03bf4f4f335c1ce349ba"

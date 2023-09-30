@@ -6,9 +6,11 @@ class Mask < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b33a32e800416a81e8f5fdfa3242d6def8979f72d5b3c7fffa150b5c89672995"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "73f9c9c0c4560645e966bd43877dc515af084596ead09d6e5f0f84b2a5177513"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1d7124bbbf12af553c85d1181f42a712f5b0002a9790220d4f81527aaa471674"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8f94ee39fe3f0054d250994ba555e7e5422b047d6171f0e2b99864d4e51c4ab1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e73f8a3d1368d403c329285ffcc016ed04095fa1478b2d2cb07292626aa43b1a"
     sha256 cellar: :any_skip_relocation, ventura:        "6ec576ca24d59929a51a18d91556e768f08eca59eac7c0c5d3739f6519150f94"
     sha256 cellar: :any_skip_relocation, monterey:       "865ac5f8d110a6559e9823e254fc3e89f0289f1911a37b1b68dee77eddefc717"
     sha256 cellar: :any_skip_relocation, big_sur:        "a4634a535ceef99e088aae29e74504b0771a13ba0410795e4b0024c001792832"

@@ -6,9 +6,11 @@ class Micropython < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "83bb0f12de4a170e877653995faee2050b0e2a51f718d8fa752bddb9446040e9"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0fe34aa684c31925b2408db17f07770e30553f8ee710974ca46bcd8d9c92de91"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0e00554ee1669f08562cf5e9ac399031f95a165e1b536f60635ddcb079b7f203"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6b6109e0fff249f845059b7e4d18ce7756151882d1237d115f4313e1a595553e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "df0d5a29c7f654df932abe204ac06a4f603326a4e306f32bb898123c5d6cc59c"
     sha256 cellar: :any_skip_relocation, ventura:        "b3c52db1a033a9fe6a4404298a0020e7694ea0a3380740e30a5ad00ee273b626"
     sha256 cellar: :any_skip_relocation, monterey:       "7c7b22c8d84550cbf337cad903f3540c4994dada2cf18497ad09efe87e85895f"
     sha256 cellar: :any_skip_relocation, big_sur:        "2cf2de3cde04394ae7db07cf2369f24a243037ace7bab2f9a9c29ce2da4a1759"

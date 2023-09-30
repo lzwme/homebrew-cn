@@ -3,16 +3,18 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://ocrmypdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/92/4d/59a95672941db14a3f7b1ef0aa3ba2f60f479327bb3c660a64fd52a4b351/ocrmypdf-15.0.1.tar.gz"
-  sha256 "391dcfd3a6d102c05a5f0632a0e9333bf4647a90c90a265dda49fe44fa78d2e2"
+  url "https://files.pythonhosted.org/packages/9d/b0/fe7180c229089785fdf0093ceb827c63307d5a5b1f45e579ce22abb8dbb9/ocrmypdf-15.0.2.tar.gz"
+  sha256 "138d34da16784bb1ccb1759fb44714c05b9c93a13d0be8fe76b8bae3b6a94f36"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "247a0d2f5dea8ddbc991ad2c5bd30bf6f9e187668627acd172249ae18a8a68d6"
-    sha256 cellar: :any,                 arm64_monterey: "004da2655c72aece2492fb54a36f217a63ac45f26042754c3c53f929b4258738"
-    sha256 cellar: :any,                 ventura:        "0ce6fdce1c3c574506b0f18afc086de7ca9bdac779e7de64df27599c8708e1d7"
-    sha256 cellar: :any,                 monterey:       "02a49682761fa995124804fbd7164de33a2daa1d5d2e409e79744ed2fc204c6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05dfdc3be706260d1211d59bba4fe3eb211afd5625e0fe0dcd653cf58aa30ae1"
+    sha256 cellar: :any,                 arm64_sonoma:   "2380ffc26fe7c1e0426a8e60368ec221f0de9921bd1d44bf7955c7aff8bad392"
+    sha256 cellar: :any,                 arm64_ventura:  "841bf1d88f11dbcf39e2a450a1f397c78396d31b936697e804d7baf21d3f7ed1"
+    sha256 cellar: :any,                 arm64_monterey: "297a8f287130db1516756c5b93b2b8822e1acdf1a35ddb73f7ef5fc3edf78bc2"
+    sha256 cellar: :any,                 sonoma:         "275cca8e0b334344e7345ee220076a0cf9c2b7ca9f6ffdad712aa881ac81db42"
+    sha256 cellar: :any,                 ventura:        "6bef4440e2e802763f1b889b890bb01b5cc38e49e06b4a1f8c1f627849e7080b"
+    sha256 cellar: :any,                 monterey:       "bf12542248c0b625bd3f1507eecae0fca1a341d0c946e33a9cd11d5da2076eba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79a5c91a945a18dfd656e1926dbd1ce2d9cdfc7913527a43dd427abf12ea0abb"
   end
 
   depends_on "cffi"

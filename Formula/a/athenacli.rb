@@ -10,9 +10,11 @@ class Athenacli < Formula
 
   bottle do
     rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "289ba4f7ca50b43de6d977b7a866019a733d4cb3a7763613df06f9c5461b57f3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "19abdd458c36309d2ad2100dae56ce5bc4faa927b6e9b56080141deb08ecadc7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3301f4e7df42efbe11e59d6c9f23c627954675b5d306ae6dfce0a1d03dbe167e"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f7352cc00a19e95a24c91b399d31127d90f68136b29966db6d1d8520284400d1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b3194353e0aff8d56c865ef3bab1887387c188e928c9dac90427409060c4b596"
     sha256 cellar: :any_skip_relocation, ventura:        "1d0ddb8308bd53ea087a9977352b942785fdd33a192c51f727b810b14dc84568"
     sha256 cellar: :any_skip_relocation, monterey:       "d913515ae10f7d4cc012624f2f2b20e87cfbe91572b15538623b7a534704bfb8"
     sha256 cellar: :any_skip_relocation, big_sur:        "12907a64698643c40fb0fdb3a7a5fd791dbd617177dced1dc993e0dcd3ecfc15"

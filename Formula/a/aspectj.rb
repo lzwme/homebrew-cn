@@ -11,9 +11,11 @@ class Aspectj < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bbfa6cab56a66e5ac4d895a89153e8fba00be7ecf65128c88e072868aca2326c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b1265454259b88ce08c2bd0a5923b6e0740c578300a2749144ccb513360744c5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "075b826056529da2c82c8a51f9f0dfe5696b5a1eb5ec5b56bacc39276d13aca7"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b47d0da2aad2b92fdfbb58e9563e1629888e5e6e3d4a95f4d028edf4441697ca"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e29f3b6b7a09fe41c8571ae626ba868533b8739ed53bb8905ea38551a8e63f73"
     sha256 cellar: :any_skip_relocation, ventura:        "7122a63ee0a47f9fa04443f4b83ce2128afa1ebf879650b153840743d1b02498"
     sha256 cellar: :any_skip_relocation, monterey:       "4bcb50e4ccfc1ab291d4960c501f012f4d03c0c615732035e3751d72d561d3bc"
     sha256 cellar: :any_skip_relocation, big_sur:        "9c70934a17e83ff66a81a23281052f97082b4e2fc4fcd25af08eb934a953e886"
