@@ -8,9 +8,11 @@ class Copa < Formula
   head "https://github.com/project-copacetic/copacetic.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "942ba3fcc05a4fb24b548fe747fcd91e85ca5c11707da94420c4bedbc96ac069"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3667231786301df5bdca39a6ac904ca2ec79229662ad2e6c71cdb1324a5ef96"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d95ccee0202f096779a4f75197a6d9c526b3c15f18e6798abf40a2080a5e6ecb"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c237ea9ad722f6b5aa0359b616722f9b58639aa94b23652b7133ddef3e1b3e8f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2d6ef970f98034739def61640b067c7ae493044352802ccdc9112ef242bd4377"
     sha256 cellar: :any_skip_relocation, ventura:        "14f651023f64a2eba0e98806771cb6cd5533f9ec0ac98a20dd92f3394b22d82d"
     sha256 cellar: :any_skip_relocation, monterey:       "206e617d60efec58055088a3ddcd7e40310cf0ede918a4a7659595e5dd0435e7"
     sha256 cellar: :any_skip_relocation, big_sur:        "0e8f3d933e3c9ef810f8070867794f6d119943e5f2633d58afa38080991cae07"

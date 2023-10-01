@@ -10,9 +10,11 @@ class CfnFlip < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9c265f1235ec80f983c307f1660e67827cffb039079c9656ac0993e773ca88e1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "74bf24bbe2143370918782c493b21b39abc6257e0ebd307e42ebd15fe8511824"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "74bf24bbe2143370918782c493b21b39abc6257e0ebd307e42ebd15fe8511824"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "74bf24bbe2143370918782c493b21b39abc6257e0ebd307e42ebd15fe8511824"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2c23808cf263bc749a8db3c1981098b6b4b3942bc8380185b199418527ab944a"
     sha256 cellar: :any_skip_relocation, ventura:        "703b9ce40aa1b8cab19e85ce08e228d949d13af32512af0984af022ca9e0c93c"
     sha256 cellar: :any_skip_relocation, monterey:       "703b9ce40aa1b8cab19e85ce08e228d949d13af32512af0984af022ca9e0c93c"
     sha256 cellar: :any_skip_relocation, big_sur:        "703b9ce40aa1b8cab19e85ce08e228d949d13af32512af0984af022ca9e0c93c"

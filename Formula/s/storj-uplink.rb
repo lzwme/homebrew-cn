@@ -1,8 +1,8 @@
 class StorjUplink < Formula
   desc "Uplink CLI for the Storj network"
   homepage "https://storj.io"
-  url "https://ghproxy.com/https://github.com/storj/storj/archive/refs/tags/v1.88.3.tar.gz"
-  sha256 "20d98f7b072e3e6f4bcef9a1156aaff27ef6972153f87576a918c394567d1524"
+  url "https://ghproxy.com/https://github.com/storj/storj/archive/refs/tags/v1.89.2.tar.gz"
+  sha256 "fe99d38c4448e74adddb28feffcbcfb77116bacef40f748df29f403e073006ec"
   license "AGPL-3.0-only"
 
   # Upstream creates stable releases and marks them as "pre-release" before
@@ -18,13 +18,13 @@ class StorjUplink < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9b0f031af39d21e4410ca446b14b8f8d2f45f1672da966045e3e974beafa715b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d1d1c848de7fa5debfd6c00b42a06e6947dacb3048cd4306a572390fd5255358"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8800d89f7b658b10c60e34ddc15a5803f4135332c0faf1bcc08af1be1f597131"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dfb9b5a0ad32b160c4a05c7a1e935e36a3e8b902da81213ee45fa425802e444e"
-    sha256 cellar: :any_skip_relocation, ventura:        "442a9f0429b29a95606bfbf42ddcdb9029a1eb1d19f84d4269de8ea5108f8a0f"
-    sha256 cellar: :any_skip_relocation, monterey:       "9508d397e002d802852868e790a5c008972ada41b9238e98130c043885f1c9a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "074172639bc795d552c8fbe2b413aa588d452597be8f0bb2fcd9f5fa61c1ffbf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c249d724d51d2e9c5f7d41474dcf99d1a9858a80621ca9d8919a736f06daafc2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "274c409eb08e8dc0d1cb03c5a814f962a6b479c0c471bf999b382e2bfb4bcaef"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "29f033671c92ae6406277ecaba6efe1a1d61784964be010d4c0b530085c3cc8a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fb7f20243930522db62304b7427497b04bf30e3bec2e5873c02fba6dd03cac81"
+    sha256 cellar: :any_skip_relocation, ventura:        "2185d4dcf55262655bd4df5acf416c16d153b053b992bddcac3a7f458ef51adb"
+    sha256 cellar: :any_skip_relocation, monterey:       "fdda8e3a64fa45660043650a44dff61d6afcb8c52e1cc2d81afd70fc4be8522f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78562dd9824a72a4472b32a855bb552154a80035ad189001b253c35ce488531f"
   end
 
   depends_on "go" => :build

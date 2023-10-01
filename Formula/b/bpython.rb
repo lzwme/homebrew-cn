@@ -11,9 +11,11 @@ class Bpython < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8d00cd4aca8522decf9f1e17ad0ad800e87c0448e73ae71d3b3ecd64dc714445"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c5791f2b34555110075d1ce3c0508cd40f28d8385ba7853aa4a11797456d08b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "de0dafac43c67e84a1ea97ddc4c05ac81e4d5122a3a0f698b25c75d4ff7ddb9b"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "565a7d8863386aad6c98f6c6b6294e9a518faefdd11c050f9114d185687cb8ed"
+    sha256 cellar: :any_skip_relocation, sonoma:         "82b4a416e33a27942570767d9e7d978f077733e6bdd11eadb0d01b9a999e3701"
     sha256 cellar: :any_skip_relocation, ventura:        "ca022095c4ea8656604bac324f20cf6cfd67e3b1588dea56ce528914dea5263f"
     sha256 cellar: :any_skip_relocation, monterey:       "e00f55fb2e54b52489dcafc4a7ef42da5810cc79043da5a91f43fe0c805ce669"
     sha256 cellar: :any_skip_relocation, big_sur:        "77121ad02c20f00ff670545a66c53897ee62529260adf2fa915b58e664686947"

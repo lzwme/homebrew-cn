@@ -4,18 +4,16 @@ class EtcdCppApiv3 < Formula
   url "https://ghproxy.com/https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/archive/refs/tags/v0.15.3.tar.gz"
   sha256 "1a6f4ed634f3c75cbfaa2768917e280c6df77cac2af5d945ad67ef20d53d8b60"
   license "BSD-3-Clause"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b4e512e915caf04f7b9f509a0da401118d735afc69b6644705c7773a15b4bc5a"
-    sha256 cellar: :any,                 arm64_ventura:  "0967350e5aefc6fadef0a31ff439b4daad02bd2b161a9e0f5af16c1e83bfe8ba"
-    sha256 cellar: :any,                 arm64_monterey: "77b88abc3f01e265089598410465fd814c5cca9578fc2fdd5d6c25441e9249e2"
-    sha256 cellar: :any,                 arm64_big_sur:  "c0fdf8e7eb00a48ef69ef794c07ea6146838449b8838c12a7314c4a92a996b82"
-    sha256 cellar: :any,                 sonoma:         "5e9e7d5db902517a149e1ad88d37d6a6f34da08c7f9185e06924e8bffcbc2bcc"
-    sha256 cellar: :any,                 ventura:        "1acef2ed84ca1250646313f6196aff1a9610db2a0c5030e544882668595cbafe"
-    sha256 cellar: :any,                 monterey:       "06d0624167c07f6b7ed1d026d501bd41979468ed4cb4d7c9c0f162bc8c7da0f3"
-    sha256 cellar: :any,                 big_sur:        "9b8a88edd420954d60ef1682dcc06e4f713d0cd31179033ebb9155911f4b3aef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "adf69daf9faed652615651f80d76a9d4cb3fab149ba95043781fd0cf6c47fd5f"
+    sha256 cellar: :any,                 arm64_sonoma:   "e4e52cb38887ccfc0241fabcacbb04ffb90a8ea6046abe0ede60ea4ec96acac9"
+    sha256 cellar: :any,                 arm64_ventura:  "a8a195cbd8f80687208cb4065bff6b7e3fd391d76382106164f6323299d4a3a3"
+    sha256 cellar: :any,                 arm64_monterey: "5c4f1c7ce652ce044feac098f5275941e90df661974e3756a9d8920b731d6c31"
+    sha256 cellar: :any,                 sonoma:         "4b4cafe9662a4c584801cfc094b43271cc495bef8f2e4a1fe5769e850ddf26b4"
+    sha256 cellar: :any,                 ventura:        "deafef3c56a6f5132e2ae8c3dd480e1b0fca998d8a1abdcf0d080b5e536fdc23"
+    sha256 cellar: :any,                 monterey:       "44faf8da8f89a6ba5f9d17b08fe3a82b24e9587d9d384016254b3cf8dca27660"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d2202d4df212fe805faec95474b178de56e952add60d2dbc9a2afcb39426308"
   end
 
   depends_on "cmake" => :build

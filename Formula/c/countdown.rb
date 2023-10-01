@@ -6,9 +6,11 @@ class Countdown < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "38a5941ae73ed1aceb80861659045b316492a0ca982022a747912f8585a67895"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "38a5941ae73ed1aceb80861659045b316492a0ca982022a747912f8585a67895"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "38a5941ae73ed1aceb80861659045b316492a0ca982022a747912f8585a67895"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "38a5941ae73ed1aceb80861659045b316492a0ca982022a747912f8585a67895"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ddf45211af332196f188371a462c0af25b115d64e08d568c20370e5be9992b2f"
     sha256 cellar: :any_skip_relocation, ventura:        "ddf45211af332196f188371a462c0af25b115d64e08d568c20370e5be9992b2f"
     sha256 cellar: :any_skip_relocation, monterey:       "ddf45211af332196f188371a462c0af25b115d64e08d568c20370e5be9992b2f"
     sha256 cellar: :any_skip_relocation, big_sur:        "ddf45211af332196f188371a462c0af25b115d64e08d568c20370e5be9992b2f"

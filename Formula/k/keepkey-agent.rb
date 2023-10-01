@@ -10,9 +10,11 @@ class KeepkeyAgent < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "acb84c2f38436ced1117dc23d0c2542ce0ed6dcec1cbc492ef820b81be5c129c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f128ad26103281c1bdcb34e0dc1d242a6f363b2d424b1200486de40e1bf5e776"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "41be839b91f5ca50df4cab3a0ebfb1fb698702d0631ff955798d17614062f9f7"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "800f91926c792bd3d9c923d3d725a7b8a37c5c02abef19281eab6da16850feee"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6f0fd06b95fbd4e5ef37ef581a7cd4dc78a4e5b775b97569c7d0d241fd262b7a"
     sha256 cellar: :any_skip_relocation, ventura:        "eaf3ae3e2a981b46be7c29a9eced5e14936260f484924bdac1a0c39efdaf0372"
     sha256 cellar: :any_skip_relocation, monterey:       "0964b9a99b2186e372beeb387b5e5f7294bf8ed1cdba2ae1b7ff6d13e77a1f3c"
     sha256 cellar: :any_skip_relocation, big_sur:        "363dc87d982c8ec74144ca3d894145b956609fdfa5850e755978c5a5518cdace"

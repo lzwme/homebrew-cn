@@ -14,9 +14,11 @@ class CiliumCli < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9950f99e4c0f5e0fc759d4f330cfa5139e44e6e7777adad44c73dc00381a0486"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "483ff7a9396c555a66bb86a997469623e681381ae10f53e6d53597057e76400b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a41c0e795f757c89249d86abd7280e01988ba9b8c996e4a32c5ecf3598413848"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "48ae58d6a92907596490655cdb3288c3d5b9fea1acea87d6cd907129c334c9cd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7512bc9a81f481760a25a9bf0087aeaa0eed4d10cd1df7aea0e318017b785a7e"
     sha256 cellar: :any_skip_relocation, ventura:        "317dbf402325231abe6c06bc26f887b78abf86559b2bae47e356845e9231128c"
     sha256 cellar: :any_skip_relocation, monterey:       "49337b2b437bad000b8c2748ca0ea3e9836445eed940452eb0d9eb1cb98bb294"
     sha256 cellar: :any_skip_relocation, big_sur:        "421e5c4d9c181d846eda5b5742ed9da7a7d997973a415fa2b1fc94900844e835"

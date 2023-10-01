@@ -6,9 +6,11 @@ class Liqoctl < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dddbb1efc3378142de8d59ef90562a5aa51807e64056377d2e9d1ac59c44fe75"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "dddbb1efc3378142de8d59ef90562a5aa51807e64056377d2e9d1ac59c44fe75"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "dddbb1efc3378142de8d59ef90562a5aa51807e64056377d2e9d1ac59c44fe75"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dddbb1efc3378142de8d59ef90562a5aa51807e64056377d2e9d1ac59c44fe75"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c43f1c43c2644f567b5cdf11bfc834cd221ee7485a73de9f3ad9658936adec06"
     sha256 cellar: :any_skip_relocation, ventura:        "c43f1c43c2644f567b5cdf11bfc834cd221ee7485a73de9f3ad9658936adec06"
     sha256 cellar: :any_skip_relocation, monterey:       "c43f1c43c2644f567b5cdf11bfc834cd221ee7485a73de9f3ad9658936adec06"
     sha256 cellar: :any_skip_relocation, big_sur:        "c43f1c43c2644f567b5cdf11bfc834cd221ee7485a73de9f3ad9658936adec06"

@@ -7,9 +7,11 @@ class Levant < Formula
   head "https://github.com/hashicorp/levant.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d6fd4691d3618b7e382fa703b619a187cd53cfdecae17d9baf41e469ee77e2d7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "49fa1eb4de5ae77a728efc129bbfed654dfc06fb2d97a9989c0a078501275a0e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "698d495bff4fea26d8d85a35e44d70a29b6a46fe052e9d0cd7a4a5f381a2682b"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "74a1511f41e293e36a03331fe767beedde31d511db67a1516cdc99d523a08ba6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0f0724547d4e238fc34154e85d751a77ee6caaf4ed0aa27948f79e43b9693249"
     sha256 cellar: :any_skip_relocation, ventura:        "93d00730cef62f3adfcba0e3b8a31b21f3e2e6e388ce6b3e2b821890a2f54b66"
     sha256 cellar: :any_skip_relocation, monterey:       "b1debb65e23d4a1831a4d37d7276b28fbb7903cfdeb501ad3b3c15027161f9fe"
     sha256 cellar: :any_skip_relocation, big_sur:        "b16a163a59df0456d7eec9c90d8427850b474097b3ec331f18067be084649b74"

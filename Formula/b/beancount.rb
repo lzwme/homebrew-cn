@@ -11,9 +11,11 @@ class Beancount < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "33bd940de51dbad15ff80a1ed2313cf5a6e4d22b8cd583c65be244b056c607c7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "85b4e8da406e9d747b3f5b5feb1f10bf5fcbd49c8156a7d7611f54f35759ef02"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f4902eff120777a381b0102b3677b94ec09bda58e2a6eada7a680e6b874e78d2"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "97d8c421970ca06031cdbdd198fd876fe126dbd2d5ce248e400695568f8f2c43"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f4338c5e101c8aeb7b219733db47435d9e691c03b2b42429b3bef620dacc655b"
     sha256 cellar: :any_skip_relocation, ventura:        "42d2757ff54f67813350039a8b5f05b6b16f5fdbce3e70bcb4ae6cbdbb47826a"
     sha256 cellar: :any_skip_relocation, monterey:       "1715a664675b5f5fc23a43854892967151b9ea6cf878f2605167a6c8286efe90"
     sha256 cellar: :any_skip_relocation, big_sur:        "716f0ec46ec0594b19fc02e06885426bfd914add259e3416fb1ec52332083573"

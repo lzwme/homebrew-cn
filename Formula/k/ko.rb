@@ -6,9 +6,11 @@ class Ko < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "199e14436bc3bd64aa413c319936f99939b579ea757fbc3214d5572635d42272"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "beb1ee324e611b2e0d7f15f7bee20898574cf54668d9dbf1cfa9f4642548fbc2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "beb1ee324e611b2e0d7f15f7bee20898574cf54668d9dbf1cfa9f4642548fbc2"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "beb1ee324e611b2e0d7f15f7bee20898574cf54668d9dbf1cfa9f4642548fbc2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "91f0d3aed176985deb87aaacc8ac1fcf0c1e03cdb5edec63568acb8ca12ace6a"
     sha256 cellar: :any_skip_relocation, ventura:        "412d7c615d05ebe5ba08f61e91cc8ff930389344afc4c48ec794c849b30ee2a9"
     sha256 cellar: :any_skip_relocation, monterey:       "412d7c615d05ebe5ba08f61e91cc8ff930389344afc4c48ec794c849b30ee2a9"
     sha256 cellar: :any_skip_relocation, big_sur:        "412d7c615d05ebe5ba08f61e91cc8ff930389344afc4c48ec794c849b30ee2a9"

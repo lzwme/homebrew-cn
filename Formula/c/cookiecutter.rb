@@ -3,21 +3,19 @@ class Cookiecutter < Formula
 
   desc "Utility that creates projects from templates"
   homepage "https://github.com/cookiecutter/cookiecutter"
-  url "https://files.pythonhosted.org/packages/f0/d2/6301fc9bd1c8715d1393af7bba91be5e1593b692b9598f8d70f3b3bb68aa/cookiecutter-2.3.1.tar.gz"
-  sha256 "42aa1d27368f58be600d13e56d5d2177684f8f69a40d9cbad84851ba44f842de"
+  url "https://files.pythonhosted.org/packages/48/7e/5d9dba54ddd4301f2e50e857b9aea01dd8312f97eb87cd690817ee3bc421/cookiecutter-2.4.0.tar.gz"
+  sha256 "6d1494e66a784f23324df9d593f3e43af3db4f4b926b9e49e6ff060169fc042a"
   license "BSD-3-Clause"
   head "https://github.com/cookiecutter/cookiecutter.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8191cbef612b39804c58538691a25937c6e298c0e066279bb82331c2de51aea3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bdc7c1b33a0e4c96658a059e78f1e26417eb8855a723cf9124a7cdfa1d3a445d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "634837753c0a03fb939ea70f68900b7cea12757d2f8b9e9dd4a3a9c94dbdf066"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8d2fa6e3878b9b9f476d1c3a3a4e279b43e8db5e123a3145d53ce4a9bb8d5362"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2958abb780f722e8f136907081e76e4d63ce8c9cbee9fbc865824165e69c2eda"
-    sha256 cellar: :any_skip_relocation, ventura:        "134c194e3c8a08637c5bcf95a453c7736d20b506b8d9fb64bd37cd789608f5de"
-    sha256 cellar: :any_skip_relocation, monterey:       "bab5a3253bfd1284372f61311627e567f23c8bab30b4dd22af9cac387bee900f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6708929048c1b9d598ef75b6491dcb908d2a13e7fb78c76940f4d2df81521e00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7d2daae698e24a2e8489cd25c64902c8cb4b67f6c1968a02bfb8c7dfcaa4bfb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0b3634ff2c2440ec40bfb303d69d58c208e4d6d4c87781d774ce572a051c08f1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1b2a649b355d8a8c196d499232a088476b6c5c854b0ec45bb90dd403b4c77766"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a23c94e1554db6ef0ce4057f8523dbcaed9f90a71cb7beac6e55314f7bba0b92"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a3f5560e6024d08eaaf3abf500f9c5a057e050c9734c079137905e7bb2a4cc2e"
+    sha256 cellar: :any_skip_relocation, ventura:        "6388a61cbbd29d0ca2e60d8fcda44c10a30190a9e1434f83e33eb2c05806cd90"
+    sha256 cellar: :any_skip_relocation, monterey:       "03c46e39ccf4cecd87bb7091f4a8b85136ed513570bccbacbade93d3fa5ee43c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "adf9eadcf461f31a4f6603b54c5993867ce70e1c1b2adb694a44f930978e8309"
   end
 
   depends_on "pygments"

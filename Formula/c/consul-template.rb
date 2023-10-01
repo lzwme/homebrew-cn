@@ -8,9 +8,11 @@ class ConsulTemplate < Formula
   head "https://github.com/hashicorp/consul-template.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6aa5237e089196a2575384ffa88a0fb746007bcbd52895dbfa506278694f1b4b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "03eb51783a49413b4d19a745c0a26dfe5607c62dc7df8664f6bf4fc901148ea5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "03eb51783a49413b4d19a745c0a26dfe5607c62dc7df8664f6bf4fc901148ea5"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "03eb51783a49413b4d19a745c0a26dfe5607c62dc7df8664f6bf4fc901148ea5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "dd6a2ce952485dd14d47a4c81a5041008e552678c59554f2c83824933f5f4625"
     sha256 cellar: :any_skip_relocation, ventura:        "aaaa55f835282cac99d2b398eea04532c91919b635965f00b54eb55fbeb013c1"
     sha256 cellar: :any_skip_relocation, monterey:       "aaaa55f835282cac99d2b398eea04532c91919b635965f00b54eb55fbeb013c1"
     sha256 cellar: :any_skip_relocation, big_sur:        "aaaa55f835282cac99d2b398eea04532c91919b635965f00b54eb55fbeb013c1"

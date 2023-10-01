@@ -16,9 +16,11 @@ class Kcptun < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "281adde2e1236b95b4aecdf625df97c7571e2f15be50a9266dcc1a5e70f2fbb9"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0d46b30f802914474dea2a4ac7bcd3b8a06ab12ae0030cb4285a00aac22eec6c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "be93b3e3e26e07f9bba245efdf55a4f970367f0655e22a40d7cdaa19538c2012"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "102cee7da5bb4bae1abe8082f965377b7dc7cb8b9a1c8a85f90df49d8a2eb43e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d6bc11d158ca57f16e19260f1673b43c48dd22d23d226682d957ec173f7bb1b8"
     sha256 cellar: :any_skip_relocation, ventura:        "500274c46344a4cff3c99d68647e7fea74444c477abfd0d65ddf6c135077428f"
     sha256 cellar: :any_skip_relocation, monterey:       "1a06832a6c15e48ec155a8402ca1aa7c77086c286260bf89857be28d3a28ae9b"
     sha256 cellar: :any_skip_relocation, big_sur:        "616aa1790b2d5737d4f81653029c8287096ec3496bec16e347512f1ed43f6953"

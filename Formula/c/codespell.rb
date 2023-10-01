@@ -8,9 +8,11 @@ class Codespell < Formula
   license "GPL-2.0-only"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "64a5cede10ca93c17237e1b51d311a10b2e076ca021782ba76368c4019799b88"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8aa82a4c3f4aa50d6f72d96fefd13f3f0c9b6a364ca0399252a3401703df8a84"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c847fb8c0268d2d747f056ed1211accd80c2c1519dbd1b4a903d9711c51da821"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "78df4c24f208a27d026a49e4d4969945b262b94a680dc780560beebf05eaa22e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "16ebf4ac8db28f443839fd44a50664682ed2cec0b7d571d40dfb62e5a0101f44"
     sha256 cellar: :any_skip_relocation, ventura:        "98c24425f23f166a1eb0639bf979cd53f61c7f11aa8e447d325458165b60df15"
     sha256 cellar: :any_skip_relocation, monterey:       "7889a56823419a602800b6e80c839fb872bf5816a6bd4f27ecf3ddcb28a3448d"
     sha256 cellar: :any_skip_relocation, big_sur:        "28076847bb2b331667668383a35957f34b8268549d3ba18d1321087b7d7458a2"

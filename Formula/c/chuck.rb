@@ -13,9 +13,11 @@ class Chuck < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e355bb0217ba5f89e12c2792d4fc519159cfedd7736cc32db441c1e4772eabdc"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7da73a1bc4dc342141062e27ce0b6d5184bc386830456fafdbc78e5e1b106b4c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "27226895635e59d8f7b1ee97b914b60937f9397de8f19427f91e60e6ef7c9b45"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "270b991d4c9521628b2d2e6b3170701355e9636d03c757a4337923897805b73b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ea283ae76e37f0fee260557f32406a8b2031a4caf71b77d8cd2fc8a38c7220a9"
     sha256 cellar: :any_skip_relocation, ventura:        "6d4472b72244cd4638d5817e6798b132203d33fb9de123ef13feadb75d43e9fa"
     sha256 cellar: :any_skip_relocation, monterey:       "c0ac87852bf66b8e60d08ce7ee18a0787d1088ac2d8f2d07bb0c578f825830fd"
     sha256 cellar: :any_skip_relocation, big_sur:        "f6f35775e6f0942280aee1d9e6e0857f0fdd0922e683af062c5e91f3ba7ab0ed"

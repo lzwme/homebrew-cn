@@ -9,9 +9,11 @@ class Babel < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e09a46c9ce56209b46e5ca0d92439c1e4011caa4683693ce36a55945ce01f40f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3dec96d759c77f49e5b939eeb682f0a93acbc07616f24e612e3f1ef54303200e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3dec96d759c77f49e5b939eeb682f0a93acbc07616f24e612e3f1ef54303200e"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3dec96d759c77f49e5b939eeb682f0a93acbc07616f24e612e3f1ef54303200e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e09a46c9ce56209b46e5ca0d92439c1e4011caa4683693ce36a55945ce01f40f"
     sha256 cellar: :any_skip_relocation, ventura:        "a9f73f987fb97c86e94e9e6f258d58a35e1fa1e767b12633d2c547987d199a7b"
     sha256 cellar: :any_skip_relocation, monterey:       "a9f73f987fb97c86e94e9e6f258d58a35e1fa1e767b12633d2c547987d199a7b"
     sha256 cellar: :any_skip_relocation, big_sur:        "a9f73f987fb97c86e94e9e6f258d58a35e1fa1e767b12633d2c547987d199a7b"

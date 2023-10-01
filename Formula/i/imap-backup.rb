@@ -1,8 +1,8 @@
 class ImapBackup < Formula
   desc "Backup GMail (or other IMAP) accounts to disk"
   homepage "https://github.com/joeyates/imap-backup"
-  url "https://ghproxy.com/https://github.com/joeyates/imap-backup/archive/refs/tags/v12.1.0.tar.gz"
-  sha256 "1595503f559a570a4c1f8293e02f849d8db13a4391131b6bb47c5c6fe9167720"
+  url "https://ghproxy.com/https://github.com/joeyates/imap-backup/archive/refs/tags/v13.0.0.tar.gz"
+  sha256 "dbe4bea805e8c2c318f8a21630d7229faa626288d60c32c2e377146a157b1697"
   license "MIT"
 
   livecheck do
@@ -11,16 +11,11 @@ class ImapBackup < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1ffb68cbc53f441e204ab31b1fe39a57166eb6ecd389db19fbc2d031861bff6f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ffb68cbc53f441e204ab31b1fe39a57166eb6ecd389db19fbc2d031861bff6f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1ffb68cbc53f441e204ab31b1fe39a57166eb6ecd389db19fbc2d031861bff6f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1ffb68cbc53f441e204ab31b1fe39a57166eb6ecd389db19fbc2d031861bff6f"
-    sha256 cellar: :any_skip_relocation, ventura:        "1ffb68cbc53f441e204ab31b1fe39a57166eb6ecd389db19fbc2d031861bff6f"
-    sha256 cellar: :any_skip_relocation, monterey:       "1ffb68cbc53f441e204ab31b1fe39a57166eb6ecd389db19fbc2d031861bff6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0aa7917eda399c3cdf27560bb304b62e1631d9cf37fa571a4ebd8657e84d243"
+    sha256 cellar: :any_skip_relocation, all: "7c2454ca39fcf0cf342b86fa3599e430362af998745d5f98cff71fe6f2c41814"
   end
 
-  uses_from_macos "ruby", since: :catalina
+  # Requires Ruby >= 2.7
+  depends_on "ruby"
 
   def install
     ENV["GEM_HOME"] = libexec

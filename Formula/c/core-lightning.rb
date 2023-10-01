@@ -11,9 +11,11 @@ class CoreLightning < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "baab62ca3b976bfde8093407a7e47d5880c93b35c9e6a87b81ad916bb630d9c9"
     sha256 cellar: :any,                 arm64_ventura:  "6add9c773848aa7a474dd4ae47776e4bb830fc9430166b9886b3d4bb10c1f83c"
     sha256 cellar: :any,                 arm64_monterey: "f464696331e5515091210b9e860a5f9b1ea4de67d7c9d0d4892fe0895c7ce687"
     sha256 cellar: :any,                 arm64_big_sur:  "4fcf88bc7d95b0172dea7e67a017d4aa9d5e7092bf1bccd5b848b2029722288e"
+    sha256 cellar: :any,                 sonoma:         "27b0f096d527b87a4fcf242e5d9d07c1a60ebe8d3181e6dc4929b753bfa7cbf5"
     sha256 cellar: :any,                 ventura:        "da47826e047c559ce53bb80d3abab89e454111e417435d1b8d2d2a07046141bb"
     sha256 cellar: :any,                 monterey:       "f374b23408ba296f9a33e1c9c9b4403143ba5b188e48695b8c7a867c029ec09d"
     sha256 cellar: :any,                 big_sur:        "5f0fbd03d05d6cd8b38803f0480f154923051c5a1053da4ddff1a5770437d796"

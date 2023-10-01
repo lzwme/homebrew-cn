@@ -9,9 +9,11 @@ class LizardAnalyzer < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eba4ad1e79abacf1c27e78b3a75ef0349335120034152cdcb7927dc347202668"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "39c001d8d352931dd67b8fd4a55fde66128da28134c84d652a7f0a5b59803bb6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "39c001d8d352931dd67b8fd4a55fde66128da28134c84d652a7f0a5b59803bb6"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "39c001d8d352931dd67b8fd4a55fde66128da28134c84d652a7f0a5b59803bb6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "373a5d44a7db19996c6997dfcc480372b00e04f0ed4c29049e0af28ae0a350cc"
     sha256 cellar: :any_skip_relocation, ventura:        "6a4198753f2f0d1ec45e36a3a10c4f93e7d25c08dfc19bdbaeaddec98f16027f"
     sha256 cellar: :any_skip_relocation, monterey:       "6a4198753f2f0d1ec45e36a3a10c4f93e7d25c08dfc19bdbaeaddec98f16027f"
     sha256 cellar: :any_skip_relocation, big_sur:        "6a4198753f2f0d1ec45e36a3a10c4f93e7d25c08dfc19bdbaeaddec98f16027f"

@@ -14,9 +14,11 @@ class Clipboard < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "747745238f792985b7fe6c9f1365c93c8e35009199f6d38a2caa36200183ddbf"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e8feed1743d3e55ee1e67c1b8085f3cf3a4412e695147426fd3a6339b12e9d8d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "231181f3c2a24bc0dd02798b450dd7833f3615ebcbfdd0c53ebc54465ab297cb"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7f8ca9e02c1d1382b380ed7dc07543a383a4089fa21de7424e56a335af62a4fa"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6a75cf7acc636885fe5b1d4717394095e489602737f065fca76fdd3b173e6efe"
     sha256 cellar: :any_skip_relocation, ventura:        "db42eb5e14ceb1eec15a4a1d77d4c1f0a94f5ac5c28a125863f0899aabd9c403"
     sha256 cellar: :any_skip_relocation, monterey:       "cd70f44184dea81283be87d4b90a0c7c2631dc6fe214e8bd73ca4258231dc7a5"
     sha256 cellar: :any_skip_relocation, big_sur:        "d02ded9cabcd024303d12b648383e15183089e56a2bd22254b1d0f2a693abbb0"

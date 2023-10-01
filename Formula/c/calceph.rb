@@ -11,9 +11,11 @@ class Calceph < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "aaabf19a88946b281b82c80f55a7b2540f9495a51a2964bbf4e4da45ed1829b7"
     sha256 cellar: :any,                 arm64_ventura:  "c26c4cb6eba9c5dc6d5144ec75aa649c64af8d956feb56ad0968168608cb7e24"
     sha256 cellar: :any,                 arm64_monterey: "c1f882709bc71c3785109466e41e7e2828a79a866190160d781a95fd40a36c38"
     sha256 cellar: :any,                 arm64_big_sur:  "21265e292c3ba49e39265ce3084bce1afb07f1908911df4d61a80e70c2fadb1d"
+    sha256 cellar: :any,                 sonoma:         "391675fa0bf6d18d7afccafc2ba08f53cade9786ab5e4ac2aaebc4089505afe9"
     sha256 cellar: :any,                 ventura:        "2d09dfe20da47d176f40a7ad06e76ee8fa9efc597b57983332e1343e6c331851"
     sha256 cellar: :any,                 monterey:       "c7935ce0cf39131e1c011d29ba2180a0b86dcbe622e7f00e81e6032737ed01cd"
     sha256 cellar: :any,                 big_sur:        "543c2da4f31607e18b6a20842d093726240c96ab04dfccb5f1c028810aff8387"

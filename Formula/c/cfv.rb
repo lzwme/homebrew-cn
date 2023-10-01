@@ -8,9 +8,11 @@ class Cfv < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fdbd9f46aacb95a188ebbc8c364db75f3acd673dc2e2d0c3619b5638bd51697c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f826a41136bc033c173de5b9759e9e6ce0902895558db00cb0a0fd403bdb312a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f826a41136bc033c173de5b9759e9e6ce0902895558db00cb0a0fd403bdb312a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f826a41136bc033c173de5b9759e9e6ce0902895558db00cb0a0fd403bdb312a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d1e62c173718ca5d3a3abf33417d3edfcf0eac32c3cafec18871bcaebbaaecf9"
     sha256 cellar: :any_skip_relocation, ventura:        "bb57fa29453a2dd671eae3ecdfeb5d54e7139a28e5d231e488ddd36edd42f99f"
     sha256 cellar: :any_skip_relocation, monterey:       "bb57fa29453a2dd671eae3ecdfeb5d54e7139a28e5d231e488ddd36edd42f99f"
     sha256 cellar: :any_skip_relocation, big_sur:        "bb57fa29453a2dd671eae3ecdfeb5d54e7139a28e5d231e488ddd36edd42f99f"

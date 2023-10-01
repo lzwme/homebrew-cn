@@ -12,9 +12,11 @@ class Butane < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c75ecfd43688eabce20e1c201063e6a71c99d31d529d97cafcc56a0342b803c2"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8525d45c1a4104e1c591d11b28774021afaec713c375190fafdcee1ab959ca00"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8525d45c1a4104e1c591d11b28774021afaec713c375190fafdcee1ab959ca00"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8525d45c1a4104e1c591d11b28774021afaec713c375190fafdcee1ab959ca00"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3969144d78b954c6ac1e8e80e2af26fb992e2c2c4181a619e6d6c4726f6bd454"
     sha256 cellar: :any_skip_relocation, ventura:        "dffc4ee6a6b8658b268db6328d21af8242ce791c41390e37da3a8c1236bc5a2d"
     sha256 cellar: :any_skip_relocation, monterey:       "dffc4ee6a6b8658b268db6328d21af8242ce791c41390e37da3a8c1236bc5a2d"
     sha256 cellar: :any_skip_relocation, big_sur:        "dffc4ee6a6b8658b268db6328d21af8242ce791c41390e37da3a8c1236bc5a2d"

@@ -12,9 +12,11 @@ class Lilv < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any, arm64_sonoma:   "95a3964e345843dcd721994a4be05e400e507d4ae1c89c4aba0b2bb65518c574"
     sha256 cellar: :any, arm64_ventura:  "130b4e53fd8079fc21e38a76b8e313a63e2812c195066f46bfaddc665dbdb50b"
     sha256 cellar: :any, arm64_monterey: "b5582d65b08f1ba6287b1257e9338e8b4aa54d04d25909630313a04511c3c2f1"
     sha256 cellar: :any, arm64_big_sur:  "a82cc9f0fad3d3200eab9747d3aefa9e74dcbeb8a8fea5af89bb8dcd6ce65e78"
+    sha256 cellar: :any, sonoma:         "313594d663a1cb2a16199729edf16e6ebb3db003e6b648415cff84ff83c3541f"
     sha256 cellar: :any, ventura:        "8281ac099bcec8c94bd4c6a55a8398b180854125f4626ef8bdf484a36726d82c"
     sha256 cellar: :any, monterey:       "4eb1cd9188565a4ebcbc2f15e6f2c5a4ccc4e4b86fe6728448e06723cd73fffb"
     sha256 cellar: :any, big_sur:        "0c615040bed3ee0cdc6d7cc99868c62a51e9febfeefa9ffefd26694bd8a3a09d"

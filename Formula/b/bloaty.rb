@@ -7,9 +7,11 @@ class Bloaty < Formula
   revision 17
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "b394ea0935385079416cdc4e0fcf54b3fa204ed512281a1bd5a12b737074c395"
     sha256 cellar: :any,                 arm64_ventura:  "3fac406a0ec1ca79cff005abbde0b2eb3583e12437b16416700aef4a71465d09"
     sha256 cellar: :any,                 arm64_monterey: "9df61277d6cab0d016289b488df9cab8a1ebb42be9b081665d6f72669db86d75"
     sha256 cellar: :any,                 arm64_big_sur:  "1eaaef8d8e5370cfa247e89a311d46a23f669fb6f62613cd2c04ad33f8546027"
+    sha256 cellar: :any,                 sonoma:         "9af7a8d12d62aa7ac70db482349f01bbfd7901bc8ebeb8feb6e26ff6efbd0724"
     sha256 cellar: :any,                 ventura:        "38ebaaa88f32202facfd508083f9000918f51b4f25bf64331f62a2f9b5d1f5dc"
     sha256 cellar: :any,                 monterey:       "241b3a651e3cff5bd4a26bb807f865e4edfcb3f6cae36f1e1d0e6d6102391f1a"
     sha256 cellar: :any,                 big_sur:        "3f25a3ffd9e738dbdc7492381094fcbe97ce8ab87af95a6dbd4415196dfb3db6"

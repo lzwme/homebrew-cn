@@ -11,9 +11,11 @@ class Awslogs < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c8c13bf3f6ee08a6ab1e0ffd278857c342dd40ed941c79ce01d8c6aa9ea3b592"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d903b045b2d7f2b6240eefd864cccfe0438c2ad36018d2d61079d9254203575"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1efe03135ba5ff520a19fbe02d27510b7c1a04b77052a00994407a2e04ef3553"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cb58f1336ed1a9d4c8b393390e00e9ff85f01ec99d6ae561cf6103e2171d6a6d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8aa086c0ca98addb3ff42e474ff78f30962789ac0924220f7fe56fe449c3a246"
     sha256 cellar: :any_skip_relocation, ventura:        "050eb23a706b239e08b4ca6e8cbcec2d158351aebfb7e17d771f163dffc9ae16"
     sha256 cellar: :any_skip_relocation, monterey:       "e0546faa28ea19e19406712f90f96e7f4e9a5205383825f0f634106e782b3574"
     sha256 cellar: :any_skip_relocation, big_sur:        "e9c85e3d53f2f3a715cfaa91165b4e722cf57197d09b2fc0341833ba6307221c"

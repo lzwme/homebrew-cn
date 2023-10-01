@@ -3,19 +3,18 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/6b/15/565f7a29a974ae41d820e16ed2ee9b15e0ba888eab315b6df27e456d10be/moto-4.2.4.tar.gz"
-  sha256 "eea3c5b29987e8b12816b355dfdcca5d7a815a9d9f17208af31fa32acbe8b389"
+  url "https://files.pythonhosted.org/packages/2c/72/75adc1668eaeb4cdbab52c43f9043992789a1e49c1b7aff9de5c8d298431/moto-4.2.5.tar.gz"
+  sha256 "cc9650747088a72db810ed0fd96f852b6fa296ca4b5e7818d17d9e7fdaf5dde6"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "473d38c327f172f0016ecbfba0839c19d7285ac22b50db25cc902a2d9834a941"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "333938fb08a6643282ab22b10125bf86c4ed52db3e059b95456827a9b6156d88"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c07f29dc1e375913799b4ed5bb504b6231cf301b707d57636c09ba9eee3d4325"
-    sha256 cellar: :any_skip_relocation, ventura:        "6adafe27c53907437e9ddb9ca2acebc206da84ad4d78a0d2b5c0e0719b9b40f1"
-    sha256 cellar: :any_skip_relocation, monterey:       "29a1b3339744efe190ac1860977f4c7e26a0af8d8054753e2c09b5ec161410f3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "18bd829a0cb8df9a32007d37a82f371049abf142f4b206a092adb526b28409aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4467c2356b441684f3b8296e98a5e604f1bb23060a6bbe0e51f94810d180c2d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc591b9708ed5c52357c79764b282ee72f49d7b6b578ff48ee40a14101e31c1f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc39fe3f037744695e9c0283171f5a44bf5cdfd31c5b13db33008d888b71126e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "98d74ccccfc9dc1d13f75923b8a1033c6807b9dd12cdb43c56e3281bc9e86b2a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0f14841bee18bc8db24afe139b0b5aacaff168182cd933338744bb1fbb1a7ed1"
+    sha256 cellar: :any_skip_relocation, ventura:        "e6348453a247e6158a4d0a41810cd771e537868b9acc5b9a433f49dcb2575b4d"
+    sha256 cellar: :any_skip_relocation, monterey:       "9a3073a0de76221e4ef97493dabf0280a4b4207726c8060944a1097d7a8362d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b35f562a2f6064cd7560534daaada7c8fa2d96c021b530257e9bac8b36871f4"
   end
 
   depends_on "cffi"
@@ -40,8 +39,8 @@ class Moto < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "click" do
@@ -60,8 +59,8 @@ class Moto < Formula
   end
 
   resource "flask" do
-    url "https://files.pythonhosted.org/packages/46/b7/4ace17e37abd9c21715dea5ee11774a25e404c486a7893fa18e764326ead/flask-2.3.3.tar.gz"
-    sha256 "09c347a92aa7ff4a8e7f3206795f30d826654baf38b873d0744cd571ca609efc"
+    url "https://files.pythonhosted.org/packages/d8/09/c1a7354d3925a3c6c8cfdebf4245bae67d633ffda1ba415add06ffc839c5/flask-3.0.0.tar.gz"
+    sha256 "cfadcdb638b609361d29ec22360d6070a77d7463dcb3ab08d2c2f2f168845f58"
   end
 
   resource "flask-cors" do
@@ -107,6 +106,11 @@ class Moto < Formula
   resource "markupsafe" do
     url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
     sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
+  end
+
+  resource "multipart" do
+    url "https://files.pythonhosted.org/packages/1f/ce/8709efe606d05e591519c051deba36df346b165652b05e91c3e97eb6eb01/multipart-0.2.4.tar.gz"
+    sha256 "06ba205360bc7096fefe618e4f1e9b2cdb890b4f2157053a81f386912a2522cb"
   end
 
   resource "openapi-schema-validator" do
@@ -170,8 +174,8 @@ class Moto < Formula
   end
 
   resource "types-pyyaml" do
-    url "https://files.pythonhosted.org/packages/04/c0/7358cce7f79f1b369ebbe57da67d5f538ea81ce5b9c97093121bfc973f09/types-PyYAML-6.0.12.11.tar.gz"
-    sha256 "7d340b19ca28cddfdba438ee638cd4084bde213e501a3978738543e27094775b"
+    url "https://files.pythonhosted.org/packages/af/48/b3bbe63a129a80911b60f57929c5b243af909bc1c9590917434bca61a4a3/types-PyYAML-6.0.12.12.tar.gz"
+    sha256 "334373d392fde0fdf95af5c3f1661885fa10c52167b14593eb856289e1855062"
   end
 
   resource "websocket-client" do
@@ -180,8 +184,8 @@ class Moto < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/ef/56/0acc9f560053478a4987fa35c95d904f04b6915f6b5c4d1c14dc8862ba0a/werkzeug-2.3.7.tar.gz"
-    sha256 "2b8c0e447b4b9dbcc85dd97b6eeb4dcbaf6c8b6c3be0bd654e25553e0a2157d8"
+    url "https://files.pythonhosted.org/packages/8c/47/75c7099c78dc207486e30cdb2b16059ca6d5c6cdcf9290f4621368bd06e4/werkzeug-3.0.0.tar.gz"
+    sha256 "3ffff4dcc32db52ef3cc94dff3000a3c2846890f3a5a51800a27b909c5e770f0"
   end
 
   resource "wrapt" do

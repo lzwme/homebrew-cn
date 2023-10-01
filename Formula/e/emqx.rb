@@ -3,8 +3,8 @@ class Emqx < Formula
   homepage "https://www.emqx.io/"
   # TODO: Check if we can use unversioned `erlang` at version bump:
   #   https://github.com/emqx/emqx/blob/v#{version}/scripts/ensure-rebar3.sh#L9
-  url "https://ghproxy.com/https://github.com/emqx/emqx/archive/refs/tags/v5.2.1.tar.gz"
-  sha256 "46513ebb562913d3fc945520a4bb77f3ae43578b2931daf44f3df7f909198e18"
+  url "https://ghproxy.com/https://github.com/emqx/emqx/archive/refs/tags/v5.3.0.tar.gz"
+  sha256 "086b1df81a7e5c93c7838a79076dacd2c2ce0371031991f239b6b5a628ecd08f"
   license "Apache-2.0"
   head "https://github.com/emqx/emqx.git", branch: "master"
 
@@ -17,13 +17,13 @@ class Emqx < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f74592d13ab2fba6e35a1611e58bc9a4dfd9c04f17b4a338dd55b956964fbf18"
-    sha256 cellar: :any,                 arm64_monterey: "fbca9235732050894704099414b0f6fd862a3198944bf78066bec57be8062762"
-    sha256 cellar: :any,                 arm64_big_sur:  "dc91eb86ac5b39914ba6ee89e1275dedef5c73e881c1829b7b9e724f9da7c030"
-    sha256 cellar: :any,                 ventura:        "7d795bb01581a1ba6a8255be12b550d4794a9833342c795a9189872ab3fda9b9"
-    sha256 cellar: :any,                 monterey:       "0c50c48fc8e5ab4d38703739a0406f54803f1f2388dcd5888f96de3895c5ba7f"
-    sha256 cellar: :any,                 big_sur:        "b5170279c05269fec6f331389ada0a4a3c2ec325bf8d11d75e26d29fdf995308"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d634479d6b322b88ed4648088482a7435cef6d34161f1209162c4d1a24c5a48c"
+    sha256 cellar: :any,                 arm64_sonoma:   "ca4c303352f820c8d0167902e99f2c77a94f25624df35546c3d0354e0771f0ea"
+    sha256 cellar: :any,                 arm64_ventura:  "e7e554eb0d3eb6a0b252a2ba87cff7ff262b431eb9842a909fe5278927be8d11"
+    sha256 cellar: :any,                 arm64_monterey: "5cfdc23d3e14fa9e6637c1bfe4fece6e3942f0382ca8e2da34f749967837c5db"
+    sha256 cellar: :any,                 sonoma:         "0629ffef4adfbb671018e0e24e14d7784f310aba37d9275c14e0a2b77eab7173"
+    sha256 cellar: :any,                 ventura:        "cd91b2b24e31ee9b1b8d8de732b4be183998a29f654e5bee8c1d4731604758d9"
+    sha256 cellar: :any,                 monterey:       "09930459b416581d7609e45bff2472f4d2faa173a64de1b9a652252cb1d25417"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "adb64dafa5afab5325ef563ded57640de9160d561e4d1356c6b73510b2e80b0f"
   end
 
   depends_on "autoconf"  => :build

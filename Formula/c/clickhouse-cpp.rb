@@ -1,19 +1,19 @@
 class ClickhouseCpp < Formula
   desc "C++ client library for ClickHouse"
   homepage "https://github.com/ClickHouse/clickhouse-cpp#readme"
-  url "https://ghproxy.com/https://github.com/ClickHouse/clickhouse-cpp/archive/refs/tags/v2.5.0.tar.gz"
-  sha256 "7eead6beb47a64be9b1f12f2435f0fb6304e8363823ed72178c76faf0d835801"
+  url "https://ghproxy.com/https://github.com/ClickHouse/clickhouse-cpp/archive/refs/tags/v2.5.1.tar.gz"
+  sha256 "8942fc702eca1f656e59c680c7e464205bffea038b62c1a0ad1f794ee01e7266"
   license "Apache-2.0"
   head "https://github.com/ClickHouse/clickhouse-cpp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8edc749190719094fa7fbb0721c61eec348222130eb3d539639eee7f4a9ec09b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c93493fda367e6632172ab9d46a1fc5b41a6e8d6fc33df334597454413ff2e0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e34367cdb41dae0349cc13f08e2ca46354d86d5e1d2e6cdaf759909d172b046a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c27e926040c53929538a96497aa92fedc99010c2fbe93230a12a800b926a181b"
-    sha256 cellar: :any_skip_relocation, ventura:        "b372d8d36380782eab3025272cc0c4ce409593b7ae74d8df39d34edd7479ce22"
-    sha256 cellar: :any_skip_relocation, monterey:       "44fb332d4f3f294ebbbaf322bf13efbde7dcfe20b370a5bafef8ce6d837ed4f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8684045cc3b68ba73fa57952d5f746fcac18fccb4d45fc7d4b0e8ca0449d0c7e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cb116ae767d8a4c24d40b04e8839ac3829fe8ec91e35b95e6fc57240ed7ee460"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cd89dba1b35ec393371df54f97b29e8634f1269a9882bcde8d4cc69e723e4de3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "65b02be3ff3f7ce09709380bace6cf7a0d2df5d01e701e1b251479092c99cf82"
+    sha256 cellar: :any_skip_relocation, sonoma:         "09ce8d0fb952b3bda5572045ad18c6ed25020cbce2e083a2b60b2f98e73a064c"
+    sha256 cellar: :any_skip_relocation, ventura:        "e9b636ce43a3b54279a63e4d1c791fa557ca353d420a96ff016cd1acd24279aa"
+    sha256 cellar: :any_skip_relocation, monterey:       "dbcf8a1e4018cf0af46745531ac710a174105e89e661eaff6d18ce77ba6c1e17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90fc7c7a8549c0bd752ee992ea04c1cd44d75721a95bd488cb4bf644a55dca28"
   end
 
   depends_on "cmake" => :build

@@ -6,9 +6,11 @@ class CassandraReaper < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3ca65d24a4519c6542176b0e2b2f994cc74dfc779ea4886ed40ae1cfcd2e629a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3ca65d24a4519c6542176b0e2b2f994cc74dfc779ea4886ed40ae1cfcd2e629a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3ca65d24a4519c6542176b0e2b2f994cc74dfc779ea4886ed40ae1cfcd2e629a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3ca65d24a4519c6542176b0e2b2f994cc74dfc779ea4886ed40ae1cfcd2e629a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3ca65d24a4519c6542176b0e2b2f994cc74dfc779ea4886ed40ae1cfcd2e629a"
     sha256 cellar: :any_skip_relocation, ventura:        "3ca65d24a4519c6542176b0e2b2f994cc74dfc779ea4886ed40ae1cfcd2e629a"
     sha256 cellar: :any_skip_relocation, monterey:       "3ca65d24a4519c6542176b0e2b2f994cc74dfc779ea4886ed40ae1cfcd2e629a"
     sha256 cellar: :any_skip_relocation, big_sur:        "3ca65d24a4519c6542176b0e2b2f994cc74dfc779ea4886ed40ae1cfcd2e629a"

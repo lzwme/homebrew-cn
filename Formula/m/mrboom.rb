@@ -1,20 +1,18 @@
 class Mrboom < Formula
   desc "Eight player Bomberman clone"
   homepage "http://mrboom.mumblecore.org/"
-  url "https://ghproxy.com/https://github.com/Javanaise/mrboom-libretro/releases/download/5.2/MrBoom-src-5.2.454d614.tar.gz"
-  version "5.2"
-  sha256 "50e4fe4bc74b23ac441499c756c4575dfe9faab9e787a3ab942a856ac63cf10d"
+  url "https://ghproxy.com/https://github.com/Javanaise/mrboom-libretro/releases/download/5.3/MrBoom-src-5.3.tar.gz"
+  sha256 "75c3812878809c908094416b0d50e8b380d158d0ad12b9ae6a9a95ab926866c1"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "90b91f583d2e1e4a613ac864ca3fa48465057d16810a5077013c8d93bd7b62a7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bd5b5ec729889a0abe7b4c97a4ebbed82fe36d9e85a745bc59bfb32994198dac"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e8b8a1256014093b7946f4bb1dfefc7f435ba8a0e4884cd2378a90879b88a8d6"
-    sha256 cellar: :any_skip_relocation, ventura:        "a0fd60e4cfeaae4d0858f0135ac4d08fc929b7f93909e0b3f7f3113ced889eff"
-    sha256 cellar: :any_skip_relocation, monterey:       "b6d0d0f72bb83338b61a8c94a3e4072f37e909aa000ce52f4731c5e2b2973225"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c646553ede84d787e4d1b356a6d4e22139e6eb451a772a7e3e605bbed034bb6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57b9aa451a11a810ecef7586e680a2a6ade3da9546e60f704bc450c506f4d2d9"
+    sha256 cellar: :any,                 arm64_sonoma:   "cdaaa2a50c27d99e9d66601ebd40897dc14e019b2def57077d2484af8297112c"
+    sha256 cellar: :any,                 arm64_ventura:  "d7812215deb1254ac2b4003ee0182d4ec03ae45f81c4d9f41d627efc8dff65f2"
+    sha256 cellar: :any,                 arm64_monterey: "5098c3b755f663af968243251760fe3a39ce38c4af256959df60fb09f12c82a2"
+    sha256 cellar: :any,                 sonoma:         "5a083da53a4c1a630b5c8b77cf8fb95572aa319caebd179bc0b285175df3ef91"
+    sha256 cellar: :any,                 ventura:        "e7080fdad61d206f0ab52a03d09c2e7a53347bed66e6f4993530ccbdf96d8c87"
+    sha256 cellar: :any,                 monterey:       "7009374a1fb96c001f1cffb96e08c004455b4e114670c906c82e78f8c01853ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf114b335c1056c8e6a1e94cb4eab46974c84ef2c8f2f5521440c46d5b36bc82"
   end
 
   depends_on "cmake" => :build

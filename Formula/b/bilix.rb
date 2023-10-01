@@ -8,9 +8,11 @@ class Bilix < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d218bbec6db6816b94356abbb2d6ade86d9ea56d8eae69e976808a30b1a5c5e7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2c834a90812c262ef5e8709628c7aab39c57cffb8bb4aa174ab2472f36f3f1f0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "428ff190673be4231804ff8b6feea6c5964113f4c18f68039d028c4b986ffa1c"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "be712c174cb6e4abf0c612bd985ac677b2944e04b0dab22c9ca1350a2fa8afae"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8069f826f9c548f2a27ff017f5e370d8e02275a64836b588d1c62fbe011133aa"
     sha256 cellar: :any_skip_relocation, ventura:        "9c19911a7e5d82d7a7cbc1aa1e0727e10d934855b2d132c59ade39ee5bbd8aee"
     sha256 cellar: :any_skip_relocation, monterey:       "35795e3c553913a41eb1e167398a6a121af70fccba64cb0183883928bc2d95ff"
     sha256 cellar: :any_skip_relocation, big_sur:        "9538e936336521be37c47c5c87a9c6907e3d7db98ce1da25a44ffcfd63bde601"

@@ -11,9 +11,11 @@ class Keptn < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cee7b1c481a6d2ef468a5dcee3f1e0c118bf4b4151f21f1ca0414d60f68b1884"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d0f40ee4af457f38467a66ec8eb6e720842bca5ca75f08d2eaa84075e7d6d374"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3d5d5bba0fe227aeaab85159dfab03c7f438880a4b12d8fcf475c04ee1231cd2"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7028fd1d9edd6eb21745ad4f8394130aa09c2b56789d3ec3d25f0af8e2e4504c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ff9e9e2eb77c3577efd94b54443b9bf6aa4b97160b0555bc86aa45c4febcba1e"
     sha256 cellar: :any_skip_relocation, ventura:        "fe2272970e14cded9b79c9ee90f009b23d9b3dd2564e1d81e27225094512ab65"
     sha256 cellar: :any_skip_relocation, monterey:       "5391066339f23d10a89653f7b3b6e8a05c551f93ed52539fbd883e5024afcad4"
     sha256 cellar: :any_skip_relocation, big_sur:        "bc8777eff2b3d99da12833b7442670afc076a5edc24f30fe69b26c0753314224"

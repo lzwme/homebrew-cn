@@ -11,9 +11,11 @@ class AwsSsoUtil < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "55fd19c2d4956f6bdd187554939e5c5a8732df11c08db3758315d7060ea0273a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "69f7336da23ed6be7393b0bdf17fd0a471da6613e376ccfc4d06b5781b73eb98"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "2672943e06f2d4f40efbe1595129e6a33e944649838c9f6edcfc06b9202a869c"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e2dbc11bab91ebc8658b72ea97aed4e0d59d35a7cd25021f48f8543915c7486f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "09d5d7da3e38da3a3edb0cdd9919c687badadbeccc1a2596765c9486bd9cdcc3"
     sha256 cellar: :any_skip_relocation, ventura:        "719649540a3131a8156f170239fb1205b5db63d7e01a20b3a141fcd8e9595de7"
     sha256 cellar: :any_skip_relocation, monterey:       "f57561bfb38e98c74f6cba5fb8c47e66691e09b49ac3ff73f97f835cd2fa6b3b"
     sha256 cellar: :any_skip_relocation, big_sur:        "12a5619a1abccd610ade6ad3a7d48153abaebb776efa758cd53c4530e5118228"

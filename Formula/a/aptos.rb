@@ -38,14 +38,6 @@ class Aptos < Formula
     system "cargo", "install", *std_cargo_args(path: "crates/aptos"), "--profile=cli"
   end
 
-  def check_binary_linkage(binary, library)
-    binary.dynamically_linked_libraries.any? do |dll|
-      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
-
-      File.realpath(dll) == File.realpath(library)
-    end
-  end
-
   test do
     assert_match(/output.pub/i, shell_output("#{bin}/aptos key generate --output-file output"))
   end

@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/returntocorp/semgrep.git",
-      tag:      "v1.41.0",
-      revision: "d6476384e5ed33a020d06f731ed551d63f2ba418"
+      tag:      "v1.42.0",
+      revision: "d2cbd3bec8ad906bfe8fcc37da120439eec124fd"
   license "LGPL-2.1-only"
   head "https://github.com/returntocorp/semgrep.git", branch: "develop"
 
@@ -15,15 +15,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "3d88afc38e09462915566e8681c4e4ece896555b20f27ce0ce8301a51b3dda4c"
-    sha256 cellar: :any, arm64_ventura:  "e1f48d9790becb1b70eedd3fa3e36abb4b705b98bb318885390a5d67937e7351"
-    sha256 cellar: :any, arm64_monterey: "737233eabde96cbc1968990b042ae6323dad3611ac82643b48f5e2bd1eb12b0a"
-    sha256 cellar: :any, arm64_big_sur:  "1d9bc1eac3f935080a54a5d6681682d0d005198c600f5d9b4e83d893c4e97e8c"
-    sha256 cellar: :any, sonoma:         "4d1db85e74a3182b5fd7ec801c162f7b738e425a9ac20e929f1dccc56941f396"
-    sha256 cellar: :any, ventura:        "47cdaafa687efda41caa5707371ff841bd304c20592f8e23f14b067df9c48dde"
-    sha256 cellar: :any, monterey:       "7fdb5ede419c20ef05cb867f57f4419c48d759bb9f2ce4c6f82dd6cb84b8ecaf"
-    sha256 cellar: :any, big_sur:        "85864cc1bedf110a1172375ff7d19c0a3421178a12bfb1de6badec512344274a"
-    sha256               x86_64_linux:   "e3fd8efd5cd6076b1bdcc9f1e68cb17f6e068cc36b87f5298d8c1644ee6233c0"
+    sha256 cellar: :any, arm64_sonoma:   "2fe65587e57f31c881bcd5d85a054ad841b0fb989128c0b4c85ee5021ba0bee8"
+    sha256 cellar: :any, arm64_ventura:  "72cdc042452688adea6d650910d33d1a3a22f15eecddebd609612dbf8022721f"
+    sha256 cellar: :any, arm64_monterey: "819db47deb04c2009f296c06b5d1108b5cd5dc371f1112792baa534dab434afe"
+    sha256 cellar: :any, sonoma:         "15c3a7e9d29c461b17c763e81d2dc4b046cb8650291e2bdca04cc6122310fbea"
+    sha256 cellar: :any, ventura:        "b3855becbcc7bb474d83f625501cff255346251d27f896b9b84df828ea2b7711"
+    sha256 cellar: :any, monterey:       "4e3b1e1984f0e3fc7878a6d41079387a89e8728387b23113d6a7b69826167c74"
+    sha256               x86_64_linux:   "debad40d190e1ca75c1b3ad67ab1c7c8a3a619f6d274ade69a6c45b300a85a9c"
   end
 
   depends_on "autoconf" => :build
@@ -103,8 +101,8 @@ class Semgrep < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/99/ba/e51d376c6160d27669c7a9ad0b61d9cbd58fa58be6e6ddc0e7e0b6e6aa40/jsonschema-4.19.0.tar.gz"
-    sha256 "6e1e7569ac13be8139b2dd2c21a55d350066ee3f80df06c608b398cdc6f30e8f"
+    url "https://files.pythonhosted.org/packages/e4/43/087b24516db11722c8687e0caf0f66c7785c0b1c51b0ab951dfde924e3f5/jsonschema-4.19.1.tar.gz"
+    sha256 "ec84cc37cfa703ef7cd4928db24f9cb31428a5d0fa77747b8b51a847458e0bbf"
   end
 
   resource "jsonschema-specifications" do
@@ -158,8 +156,8 @@ class Semgrep < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/63/dd/b4719a290e49015536bd0ab06ab13e3b468d8697bec6c2f668ac48b05661/ruamel.yaml-0.17.32.tar.gz"
-    sha256 "ec939063761914e14542972a5cba6d33c23b0859ab6342f61cf070cfc600efc2"
+    url "https://files.pythonhosted.org/packages/27/fc/73edf1269fab4ae08ada602f4bf17b0a0428b3bf10574c2ea7331d73f87d/ruamel.yaml-0.17.33.tar.gz"
+    sha256 "5c56aa0bff2afceaa93bffbfc78b450b7dc1e01d5edb80b3a570695286ae62b1"
   end
 
   resource "ruamel-yaml-clib" do

@@ -13,9 +13,11 @@ class Msitools < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "ee10c9cb4bc12d8b4576418734817953546f1aaae34b94b1aa19fa0649159bdf"
     sha256 arm64_ventura:  "01b5cc782019274ccbad9e4afe6c5a27cc2e109dfa6bfb7ee143fd09a63a38a6"
     sha256 arm64_monterey: "5a6840a0a0b3c0e54e55ef878605137f4eb4e2c1082ca7ba62bc02b484fdea2e"
     sha256 arm64_big_sur:  "76e21c30adc03a9a4cb84106f51b3c54d31c9f326b2d9222f3e35adbf186a401"
+    sha256 sonoma:         "cb728cc524057356ccb7d6cd0af3c60e029e7b49398909c0a48f1d5764926fa8"
     sha256 ventura:        "62b2ae934d45e550a1cbe0ba9ac658e5e0fba3dded31ef04f98c8d903918291e"
     sha256 monterey:       "e7439f8b6c48cd20c91511bd38c9c9865f82eb2b6523f77c3f5c529f0e1ee240"
     sha256 big_sur:        "9b37bccc09e4ab2bf6bb43c43091200a88f5718041ac90b51cb71b76decbdf68"

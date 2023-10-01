@@ -8,9 +8,11 @@ class Cdktf < Formula
   license "MPL-2.0"
 
   bottle do
+    sha256                               arm64_sonoma:   "5ae67479b56d33f0a73483bbfd061d23c2dccfc564dbbf6c07a38b8eb7548aa7"
     sha256                               arm64_ventura:  "2630edb0e543fdfe9ef02f8734ff40ef4dd61bd92e0861c5ed7e698e08f2a696"
     sha256                               arm64_monterey: "ae2422e2e54aa2fdd2f4ea3729b73bafc1a1f5cb46f9b90b29616f1a18113754"
     sha256                               arm64_big_sur:  "07dffeaccc3191ce338ab9e04ffac32df7a25cb3d5806f580297196528a44486"
+    sha256                               sonoma:         "60fe897a937ba06f5ffe0824d15c77ca4ce00e1261ab047c691081854f8a0bd4"
     sha256                               ventura:        "58af90dc88edd3eaecd4e0adb6052bb8ccb0c4ff57739b81dc4253ad387b9d82"
     sha256                               monterey:       "e130e4f3c52efb16c2e71d66a689722b6cee8f8891b5773cc6aa8011c1933316"
     sha256                               big_sur:        "299cd6a93e45399e4d04b19235411d030897415eef4d723d59a4356c7e77ffbd"

@@ -11,9 +11,11 @@ class BandcampDl < Formula
 
   bottle do
     rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "73f5c48390e988975f4e9d4348db118cb9872b7b2f988394c229a0233154c586"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1bfca2bc474dd918d164b7778384d1396eb25eda1212318c4b16108b40172b00"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e89544228cec16160da75506b77650136c052dc98b88a5f087c1b9baeb6b90df"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f1dd0ab56e61066a38893ea57cc5909afabe06df93a5fc123a5dab05135973da"
+    sha256 cellar: :any_skip_relocation, sonoma:         "00924e9edcc65aea5946baa9bdb67c586047d007fd84f359db7ff8469d9c7ae9"
     sha256 cellar: :any_skip_relocation, ventura:        "1c960807100c592ed10a4e29a7949c979c83e6010f4ff24975f2c60f6ac6ed7d"
     sha256 cellar: :any_skip_relocation, monterey:       "f11bfd55e7a20eced7eaab59ce462baa13306d97ac43521213334c115935537e"
     sha256 cellar: :any_skip_relocation, big_sur:        "edf1c27f8ca55f14d55136dd31c9d9ca73c355c5567b6fe9b07a19b54ade2973"

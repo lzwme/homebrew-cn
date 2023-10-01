@@ -13,9 +13,11 @@ class Mydumper < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "e76c16211b4c38989db3cd42bd8160feb2c1fa6ee0b040aabcac5ca4c0e5dd4e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b6a34014c31b05f49d41924fb324c278e103b662eb62f33129002e7fc301390f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "db7932dda55b7c2966653d52bb8e1f39e54fec008f81b17a4528ff44451773ed"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "077fbf649c4eba232a578647a2fac1312c4ae7ec46c4fe14ad11dda3b3369528"
+    sha256 cellar: :any,                 sonoma:         "301fb4f6bc834227bf8c942ca843be8788bd2f9bbf17bddb2985cead1babcc2a"
     sha256 cellar: :any_skip_relocation, ventura:        "44135487d0d21e3a247426e5383560b7f6de82cfe8dea264ab46a9e08ae76336"
     sha256 cellar: :any_skip_relocation, monterey:       "11da5157606945cf92a6714e22aad18900ea42f87eda51239ccedab3e5f5062b"
     sha256 cellar: :any_skip_relocation, big_sur:        "169d62b34e47c949b31f39d49d480d6a703911256b052c44c6c9b12f2b6c60a7"

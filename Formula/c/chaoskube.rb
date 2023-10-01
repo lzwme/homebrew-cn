@@ -7,9 +7,11 @@ class Chaoskube < Formula
   head "https://github.com/linki/chaoskube.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9de445ad8f4e772de9d52bce0cb90fc495555ebc63cf97054a03f2cd6f45d712"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "aefaadbcfe49da56f8eb31d9d28954fcd79fc17f5e3ca84f46c87be401cc01fe"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1898ef8bd07023b59fee75b43db9d3fafab8ff72e36429b6c49f562f1ac4328b"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "33200291a34be6dbd43eecb619ac3be2d5c4f8eab0749c91c909939c4b1ce130"
+    sha256 cellar: :any_skip_relocation, sonoma:         "534a605e30e270bd7144cb1772d92baa7e3e0a38900f858e3f4c5889870ec652"
     sha256 cellar: :any_skip_relocation, ventura:        "4f5c3cad3bb6f23a1225d75db028e90fde98b583bceac54b4718c4c296bd0401"
     sha256 cellar: :any_skip_relocation, monterey:       "d0cd1e28af710f912b0546638c194fc3a728f5137144e87f61cdddc3686c4cd5"
     sha256 cellar: :any_skip_relocation, big_sur:        "36aca039fce802e95e52179ab3f549764dc42ed76492d6d79b007704aa33bd9c"

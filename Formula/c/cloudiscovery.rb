@@ -9,9 +9,11 @@ class Cloudiscovery < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c0b25395ac88e2b4f5d3df99b4078544aca3acecfb3eefe27679a5285db6f85e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "54c8bb3eaf84b4c30ed099ab566ecd3bfc6bb62386eea997cf6d92bfc9f0d46d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0dc0e6fe74ac18974c14853b86a84d829e17f1f8aa45a6c25940e13fc8761c1e"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cd1849cfeb4c0b5b6fa0907eff03f5b4e55fdcf8851a71eb285cb240af6891b9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a6d7ac4c0ad0b24d0cb7a0e066e3fe677cc5a3e5ad768bf3d1ed044d5917c03b"
     sha256 cellar: :any_skip_relocation, ventura:        "76db217e282648101dc9a2fc7e0f9a451d8eb11529d227d7ea00ebb659fe7e70"
     sha256 cellar: :any_skip_relocation, monterey:       "4700efbb294906114494c31e1cd057579d6364975da4c7753aa14ada27863366"
     sha256 cellar: :any_skip_relocation, big_sur:        "118c08839dfbb217adda61e18fb1c1ab78f4e688ca656c693a6d6ad08981b8fa"

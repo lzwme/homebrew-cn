@@ -6,9 +6,11 @@ class Lesspipe < Formula
   license "GPL-2.0-only"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "543bc7a53e235926eff9c30c0a0d61129f38cb0fae0a9dc6ae4bd231a7ad0cde"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7d5acbe4e5584844585a9680028b6ca2fff44f32aa6cb9a28eef05c5dfba2b72"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7d5acbe4e5584844585a9680028b6ca2fff44f32aa6cb9a28eef05c5dfba2b72"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7d5acbe4e5584844585a9680028b6ca2fff44f32aa6cb9a28eef05c5dfba2b72"
+    sha256 cellar: :any_skip_relocation, sonoma:         "543bc7a53e235926eff9c30c0a0d61129f38cb0fae0a9dc6ae4bd231a7ad0cde"
     sha256 cellar: :any_skip_relocation, ventura:        "7d5acbe4e5584844585a9680028b6ca2fff44f32aa6cb9a28eef05c5dfba2b72"
     sha256 cellar: :any_skip_relocation, monterey:       "7d5acbe4e5584844585a9680028b6ca2fff44f32aa6cb9a28eef05c5dfba2b72"
     sha256 cellar: :any_skip_relocation, big_sur:        "7d5acbe4e5584844585a9680028b6ca2fff44f32aa6cb9a28eef05c5dfba2b72"

@@ -1,21 +1,19 @@
 class AdaUrl < Formula
   desc "WHATWG-compliant and fast URL parser written in modern C++"
   homepage "https://github.com/ada-url/ada"
-  url "https://ghproxy.com/https://github.com/ada-url/ada/archive/refs/tags/v2.6.8.tar.gz"
-  sha256 "c3cc83ea57f89e93520674c8e7fdd884d6ea95fec48419f1a2b481e1a4f6b71e"
+  url "https://ghproxy.com/https://github.com/ada-url/ada/archive/refs/tags/v2.6.9.tar.gz"
+  sha256 "d409a64cba23be6f603e7a521abab1d64b8d1bc1d228276be54cc2b50714c3c1"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/ada-url/ada.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eaeaa602d1ad50cb198337f880dd3b36c689df038cc6ceba9aed889fc2dfc41e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f6a051b6351a1a426c660aa2c964613fe5d96e437d62dffe1cd8b38def8a22d7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d7e3189f50c5e7de8f1fde8071a973c37fa55c95af404de77bbe10db98269753"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7abe6a3c7588373d3f6710fe64de97056f902cbf8003acd2ef5d18f8e2998d87"
-    sha256 cellar: :any_skip_relocation, sonoma:         "85cb1f20206511c639bd044fc848d3d585127b53c6d52b1af068e23fcf6d853e"
-    sha256 cellar: :any_skip_relocation, ventura:        "65a3aff8807f5ddbc012af632dacabba6e0f0e4f653e2eae7b28369cf46efb1f"
-    sha256 cellar: :any_skip_relocation, monterey:       "8cb106b98714ebfb505ca3b9f0923b06f0d504d18b29f6fe3ae8ebc1cb9e6da5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "aaf587ceac35f3faf10a3bc1039a3c06e03c0ae0df66fabb0d27853ea6d79585"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c570a129d1ce04d898ae556bb7aa9eb3b9bf447f04297b7ff37fae64bdb4858"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e4c02025792952fd16e91ff85778fcfbef0905556bcddec8024081d180ffd8fe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "db1d7cce0f3e12927a7289d40e0e9d4b7c048fcde65d38580adf9ef63a27d0ac"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e0b8b9e590ad9aa7e2a73be3a33b63453d483e8125705b6ddc3e1c822c47b001"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4d96be511c5290103a4d7673d57cd64826edfa699358839353254b844e86d870"
+    sha256 cellar: :any_skip_relocation, ventura:        "dc8b00e75e91825bae7e228d754aeb384cbac45f4f0a93386f321cffa0fe616d"
+    sha256 cellar: :any_skip_relocation, monterey:       "38d1c54bb830cb458b186385038926103300016e86e2290e9e12923517eede0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ce580668fa959c882c486089c9cc9eb4a5c9f40b64510a060a39f322211df66"
   end
 
   depends_on "cmake" => :build

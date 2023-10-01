@@ -13,9 +13,11 @@ class BalenaCli < Formula
   end
 
   bottle do
+    sha256                               arm64_sonoma:   "77ab9004178c68091209b764cad43732a6d33489eb3be0c79567132315d10691"
     sha256                               arm64_ventura:  "d5b82e558de3a394167f9f187b6589a078e641b74cf8a27e9aba4de36cbf18b7"
     sha256                               arm64_monterey: "1b3f7fdbf0fda78532da67eaf7189bf162a846fc1d2411dbde25a426d790209f"
     sha256                               arm64_big_sur:  "46b4ebeff51922f1e10d98ef366947dd66753e829d3263d6a2bcdbe8a7cf539c"
+    sha256                               sonoma:         "1407ce6650ff9388b6084a27a46ef95c8c88faa2ba47188dd77cded2c2aee482"
     sha256                               ventura:        "3973cf05d927d02b5fe9ec9916e8a2ae677dcb62d10afdac76b826757341642e"
     sha256                               monterey:       "f1ccabb8aeed85d2b0b9da0159a03558364c4add918e2ce7c0917602ce97f1df"
     sha256                               big_sur:        "0129d2278d56367004b9551537df060b3a5bd32bc16efe84c69f633993949754"

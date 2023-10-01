@@ -6,9 +6,11 @@ class Cloudprober < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "21c6490d84f6c5c29a13927179c6b7fdcf862042b3dd3238c93f666a20004b8c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6753afc3c9272f863a787d92cd4c3c0612961109394229e99388c45149d4eb47"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ba7976dd0cb9bba989d949bd5bb52e0d59d70b22919e153a6333401370a274c8"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f0c256bdbf9ac222c325f86844326534f43c0ba32b18b6e12362412b10599161"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8005cd28baaa9125bfa8420163eb72efb2cf73dfdbaff91d6636a116ceff6175"
     sha256 cellar: :any_skip_relocation, ventura:        "44e86b8305c13b846d17f1cf03db942c0924fda730abaa880d03cad9aa46251c"
     sha256 cellar: :any_skip_relocation, monterey:       "0ba014eb10ed1af43e4be7247b14e56585371e09c3095d0d8e22ad58f521cb7c"
     sha256 cellar: :any_skip_relocation, big_sur:        "64190d38e6928d90eeccdb639915dc2fc425e347519128496fc08e021674bff5"

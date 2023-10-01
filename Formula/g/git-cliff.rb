@@ -1,18 +1,18 @@
 class GitCliff < Formula
   desc "Highly customizable changelog generator"
   homepage "https://github.com/orhun/git-cliff"
-  url "https://ghproxy.com/https://github.com/orhun/git-cliff/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "3c130ebbd3121d3994ecd1ff1062220de610c7491ada02f9d421c8869674c386"
-  license "GPL-3.0-only"
+  url "https://ghproxy.com/https://github.com/orhun/git-cliff/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "909b652939299040ebbd15994d710aff7e38fa38683bb5111dd46cc4ed454b43"
+  license all_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c05efaf75ee7ab7f098593bcb1850e7db67856b37a4bee8095be97582a3eaeee"
-    sha256 cellar: :any,                 arm64_monterey: "58d2b4864149a94e45821249ce6942a42398b90f9b06e2ae930110869a56734f"
-    sha256 cellar: :any,                 arm64_big_sur:  "82dc1e4505d418b87e73dcb5c549e371bc7b93788be56f78b3d81b235a2e5e6d"
-    sha256 cellar: :any,                 ventura:        "54a241406d437bc2bca7fab7d39ebd00e5c818d10f9a1732db901a972f419966"
-    sha256 cellar: :any,                 monterey:       "beb081b8d5063d21d94715fb0177e3a55833742b360856a8d868d06bd2f21902"
-    sha256 cellar: :any,                 big_sur:        "60a41e3cd6a44e2aa273fc46d8b51d77875eb4dc783c5973b00d3b258862aa73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce2d66d88c44e6e6479ac337a3151be89936bbc4258c194c53a3304a3ddf3bb7"
+    sha256 cellar: :any,                 arm64_sonoma:   "d105241e4938241dadf3339827303bff621f9b148975e2668f4b0a865b1cf3f5"
+    sha256 cellar: :any,                 arm64_ventura:  "265420c86b0cb0818ea00b0112f78ce85936a1215c0e86eb0d28b8b892cc83d9"
+    sha256 cellar: :any,                 arm64_monterey: "611c085855ca2bc9ee77539ce104f6b538269b2175f99bfb1f1479d1e6253c25"
+    sha256 cellar: :any,                 sonoma:         "d4ef877b14ba2b3a3b6ced90407a3c4ff2794dc0ce0abadc5e4d761b1e8864b8"
+    sha256 cellar: :any,                 ventura:        "d4a5553e5fd5df120570fc02cb51eccbd8e61e11f780f3ca27b71bfb17662321"
+    sha256 cellar: :any,                 monterey:       "e74d9a12e07e2f6a8f3a982f3aad52f30261bdd581344e1e0180509fe448ea21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "729942b1b50484dc32740d06bec62299db54fc4b209d9446b90643ba208e0b7a"
   end
 
   depends_on "pkg-config" => :build

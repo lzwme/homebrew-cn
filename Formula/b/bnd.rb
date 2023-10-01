@@ -11,9 +11,11 @@ class Bnd < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fb9cf40a41266b51c26d7feaaad7bcc60147e6fd0facc0f559008eb80390d806"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a72b84f857a282a23dac9e995d4462d59c74430da39cd71eb0e28aefba8111cc"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a72b84f857a282a23dac9e995d4462d59c74430da39cd71eb0e28aefba8111cc"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a72b84f857a282a23dac9e995d4462d59c74430da39cd71eb0e28aefba8111cc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fb9cf40a41266b51c26d7feaaad7bcc60147e6fd0facc0f559008eb80390d806"
     sha256 cellar: :any_skip_relocation, ventura:        "a72b84f857a282a23dac9e995d4462d59c74430da39cd71eb0e28aefba8111cc"
     sha256 cellar: :any_skip_relocation, monterey:       "a72b84f857a282a23dac9e995d4462d59c74430da39cd71eb0e28aefba8111cc"
     sha256 cellar: :any_skip_relocation, big_sur:        "a72b84f857a282a23dac9e995d4462d59c74430da39cd71eb0e28aefba8111cc"

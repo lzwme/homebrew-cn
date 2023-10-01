@@ -8,9 +8,11 @@ class Aws2Wrap < Formula
   license "GPL-3.0-only"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a60e7773a08e324e2e4f61e67e03cd65331ff5e658496ee506ce9299a27e433f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b674a21c0c093399bb3504de8754e55bf91f6048d09fbee714e6149b5e9592ed"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "afe746e339b4a0035b736be16c901ecce4cd3559db5c228bdebb37003df6bce5"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "010f352e8abd3811461df22ce194c88d8af2d69815b9aacacc5eff6dec5b1204"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3e310f72b7ff00906b5a2b4ab24a3063f62d58340c6bc2d63f6243d52e4cf8c1"
     sha256 cellar: :any_skip_relocation, ventura:        "3a16f4a02da618252eb33ca6d15c7f80128155e23774ccdd17ad14f67f833666"
     sha256 cellar: :any_skip_relocation, monterey:       "67da428ede437becefb978d6c57f798e9e6d0e9751e88c2a8f66ee012955d432"
     sha256 cellar: :any_skip_relocation, big_sur:        "2edae4d6d8b898ad8057b266256491615ac0832d09fed2209ca30acfebe9aa15"

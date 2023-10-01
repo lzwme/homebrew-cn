@@ -7,9 +7,11 @@ class CargoAllFeatures < Formula
   head "https://github.com/frewsxcv/cargo-all-features.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b12a3968ae8ee10062526525c6cc07c5d288529204b51696e9f3ea104dffb1f3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d72b4b7f454143ec36fbaa284c2564c60c97ed8eb0de568e634c18dc485284c8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d399885e0cc2a32003b98de866fc80c9c74b3aeac8a8254ad9c40d1d617a36fd"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "50e52b0f7d74b369aebb9809cb318cf03a13c2161b95059810c53bab6698ed4c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "482a7cfad0c83737225ad19497e41ff876434fd9c2ebcf05a9f7c7f452931ebb"
     sha256 cellar: :any_skip_relocation, ventura:        "39177b01645bfdf19d6d9757c863e96bdd711170d8e87a1f5b2c7d9720f0a33a"
     sha256 cellar: :any_skip_relocation, monterey:       "912aeeaf3ae966f434cacda0b8e5c5c904f8ad83d33ff3334724c3022e151185"
     sha256 cellar: :any_skip_relocation, big_sur:        "680c7a563c12800a68c8e24afbad0b5c8ca8380c7e16e5e2a4f045af3bae7406"

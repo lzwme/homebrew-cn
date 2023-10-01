@@ -13,9 +13,11 @@ class ConanAT1 < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "480510503714d9025ca5c190f49dba737a4dc7af745f00de52aa24323bc11f6d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1163d5ea8663f52408c270f3eee4b8497704a32798957cb572f7c5bfb22d9c3a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3d146a72a173394fc4858c2de4e4c990efdafce2ba2fe54065f82481b083b3e4"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bd91fd589efce9a2d6ef647b286a519b605a37656fb954d82ad0a81fb60b93f4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5b304012c395c313eb8f8385ceae4337a425b581ca2ff52ad46971eb3c7f514b"
     sha256 cellar: :any_skip_relocation, ventura:        "c27fc513c141ebd99d3eca78eeef2b11bf34b61c09e1707c0bd42e81a4df8952"
     sha256 cellar: :any_skip_relocation, monterey:       "491ef0a794349fd44b3d6fb7adc9dd7bf1c0d6576d59bd19f905c83ea52e6021"
     sha256 cellar: :any_skip_relocation, big_sur:        "14daafcf9066b9da9beaa9a1331c3f8230759817f0ff410e579646ccc1fc554f"

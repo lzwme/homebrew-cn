@@ -11,9 +11,11 @@ class Clair < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "62619d044adfebf4cfb546c08880808452443ce19c711e4fc2464198f8436e25"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d13a2ff8953622339570da184eb135f35661f3b12fe8f85401816a9ccc69a3a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9d13a2ff8953622339570da184eb135f35661f3b12fe8f85401816a9ccc69a3a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9d13a2ff8953622339570da184eb135f35661f3b12fe8f85401816a9ccc69a3a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "71fec90e40c8c985d6f5cc955c63f7575a227b74608eabe1b89718cdfe8aa772"
     sha256 cellar: :any_skip_relocation, ventura:        "b5677134198c2f8a4140cbe6da17df0783765ab60a0b75aac9451a67139d5d52"
     sha256 cellar: :any_skip_relocation, monterey:       "b5677134198c2f8a4140cbe6da17df0783765ab60a0b75aac9451a67139d5d52"
     sha256 cellar: :any_skip_relocation, big_sur:        "b5677134198c2f8a4140cbe6da17df0783765ab60a0b75aac9451a67139d5d52"

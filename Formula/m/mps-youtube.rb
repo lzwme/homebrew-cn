@@ -10,9 +10,11 @@ class MpsYoutube < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "71e781a593e259f5de0ab1f26553a0b6879d859ec2fc719213e44c4fa840ed16"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "34b87b2545d398fbda0fa4d275a171a952f4d7c9cf62b0ab1c3b2920b0cf446f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "34b87b2545d398fbda0fa4d275a171a952f4d7c9cf62b0ab1c3b2920b0cf446f"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "34b87b2545d398fbda0fa4d275a171a952f4d7c9cf62b0ab1c3b2920b0cf446f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5f2dc0ba04fb7cfca027c2dfb2c25f59b6ac79457b090aabc38e068e747d6d9b"
     sha256 cellar: :any_skip_relocation, ventura:        "17af74c4e50533a28f381707209239aca41abb4cd5af1653dbe6bf40ba008fcd"
     sha256 cellar: :any_skip_relocation, monterey:       "17af74c4e50533a28f381707209239aca41abb4cd5af1653dbe6bf40ba008fcd"
     sha256 cellar: :any_skip_relocation, big_sur:        "17af74c4e50533a28f381707209239aca41abb4cd5af1653dbe6bf40ba008fcd"

@@ -6,15 +6,14 @@ class Vineyard < Formula
   url "https://ghproxy.com/https://github.com/v6d-io/v6d/releases/download/v0.17.3/v6d-0.17.3.tar.gz"
   sha256 "34178fbc814a28b0dae8f26bf1c140ef0163c4c6fb57d5c4be06cd6c4d904718"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256                               arm64_ventura:  "0eb4f6c805274c7fcb30a7021757f3acdf1bc80f4e530f4b4fd7113198fda6c5"
-    sha256                               arm64_monterey: "b6c36c673b8d6aa923d09209368601cb89f6a0c18b1cbe42700dde5beb294c3d"
-    sha256                               arm64_big_sur:  "83f2504d7757031dbed874b7a648c09076f780c32610b8f723ca913e4c1284eb"
-    sha256                               ventura:        "8b87fc5edbbd4ee724ed47726beb5ddffdeb5925d8f8d34a0ad02eb1c2e5ade5"
-    sha256                               monterey:       "2efa7b91cf630ec81fba1ee2bea70fc9012b3699fa71891e06b33ac28f1cdfd8"
-    sha256                               big_sur:        "7111eaa76927e71ecbe94b4d92e51a3e3ff9ff01624f76d517c40883b6dd8a03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49d6843fc0a1b19210f83978baf847eb88740a686538f3099091d708b644fe40"
+    sha256                               arm64_ventura:  "25ff02a074aef9b042994536f1cf2606ea7a48ce8a079818e5b21e042fb4901e"
+    sha256                               arm64_monterey: "011dc086caefdeece5d6a2c0313096807204e0aad25348b4252cb711123e1f55"
+    sha256                               ventura:        "b9ddd2ec3f4dce5ff900de6f0d2c28e6a838b90d526250546c03550fcd3e23e2"
+    sha256                               monterey:       "795a6db23f0ba06eb29868f837533138f854b75bda6f942af66078025e9b1ab6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2c0d1fd660e4c12fe13b4c282fd1c27f29a79177192992b3e3c6af0d1103b1a"
   end
 
   depends_on "cmake" => :build

@@ -8,9 +8,11 @@ class CondaLock < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "85419ad7837675572a6a4514461067fdce63e827bfeb2a88612e12b9cfa65880"
     sha256 cellar: :any,                 arm64_ventura:  "c6b68799cb02818e774df9e13c4adc35887bf6dfc3321984abacfd000678ebae"
     sha256 cellar: :any,                 arm64_monterey: "914496a37ff51a13f5e581561f7055788e93079234c39c29569c3e5a21720ec6"
     sha256 cellar: :any,                 arm64_big_sur:  "1b0b298c92185f61b43fe56a16db42a891dd1a2197a0d1e04ee4bd33700c7e8d"
+    sha256 cellar: :any,                 sonoma:         "0c696ce87a6762b5b0638acb974dadc5dba58b43740ef8d39f0451c4660dc594"
     sha256 cellar: :any,                 ventura:        "3929d4ef8f2c3aa70c4895ec81089235b8ef8a17600061d51abe804816e5b383"
     sha256 cellar: :any,                 monterey:       "a8c33bc93ea18647a38aaf097a5d3064a977724304cee1f5790215420548ff1d"
     sha256 cellar: :any,                 big_sur:        "01ec9210d6d4d2397a7facf47a8b68195ed1bd604ddb461c306f439194e401a2"

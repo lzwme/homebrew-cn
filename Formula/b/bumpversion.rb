@@ -12,9 +12,11 @@ class Bumpversion < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b42cb49e230099c7805eda9f55a749d91e04b364fd485810dc0615190fee0180"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d744c60c727965e1457efbdb52a1cf1523ce9c29b846f73105a735f19ed31b57"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d744c60c727965e1457efbdb52a1cf1523ce9c29b846f73105a735f19ed31b57"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d744c60c727965e1457efbdb52a1cf1523ce9c29b846f73105a735f19ed31b57"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ad1e64521ce3b2a19bec7182c016d5b733a6cfee6d4356c5bfbad901b57507c4"
     sha256 cellar: :any_skip_relocation, ventura:        "ed3afb6ecd34d1b4e898877d309e6652a3ddfcc7a145322477a7f58d5d0bd6f2"
     sha256 cellar: :any_skip_relocation, monterey:       "ed3afb6ecd34d1b4e898877d309e6652a3ddfcc7a145322477a7f58d5d0bd6f2"
     sha256 cellar: :any_skip_relocation, big_sur:        "ed3afb6ecd34d1b4e898877d309e6652a3ddfcc7a145322477a7f58d5d0bd6f2"

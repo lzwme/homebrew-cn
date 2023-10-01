@@ -10,9 +10,11 @@ class Khal < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f0e39c9168625316bca57f9f3d091f3d67e4688f853ad682f09f447177846458"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4d5add8bc50712ce725cc2c24c10e64d37e66a25e66376025b08f5ff5064f72a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ec2b5ca208925b0d2dcc1d7fb2f9fa2f8fa4c49b9b1fcc3c1debf89378497be8"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2713acc1441967abdb6a2c5e53c130a3699d221d82447f2f8d0efa8ecddcfd97"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ca25af2e66b7e7cc47eaa014257cacf34fc7dedeb644acf519f1e5468bbe0159"
     sha256 cellar: :any_skip_relocation, ventura:        "d24cb3c1925c2ca5c0ca34b27ff02a8cc1e7336e14e96e77623d16001d3f2acc"
     sha256 cellar: :any_skip_relocation, monterey:       "a9a1bfc0d045479dcc69f4528fc6b3e07b1c1787e0f44ee9fbfd6bae42ec4b0f"
     sha256 cellar: :any_skip_relocation, big_sur:        "4205a9a014ef6f2371bdb85920b68da88cf3afc4d2edde68efa3f99a8ac15810"

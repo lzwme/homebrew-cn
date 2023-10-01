@@ -10,9 +10,11 @@ class Legit < Formula
   head "https://github.com/frostming/legit.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8e76c5f438e540ae273fbc73bf5d025df9238ecc846d2c63b8bbcb47441b1c07"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1b835900ae7b1678c8ef172b0eff89f3a3362826f5147bb59ccc19e32377e03d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7e84db292857d0f157444bb83d756c3ac7e4204a2d53ba62157949e74594e943"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bd3628086fa6c180d33f8f880ff7eaf791fbe9c0f0ec0bdfc61a188a2229b5ca"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4f36b38b0ca43c869e1be054b1a2222b1e26cb32b757b68185ee6375138123ae"
     sha256 cellar: :any_skip_relocation, ventura:        "228b599fc45b39c91864af5c3523037e80063aeb540fa5b1fdf037f6a889348b"
     sha256 cellar: :any_skip_relocation, monterey:       "93de7a67085e641ac6cab09912a3c5f73ad801319d4a12824ecb839ca22b84ed"
     sha256 cellar: :any_skip_relocation, big_sur:        "0273518a985eefaae71e5c7b11c0c3bf3381a0b85afb09e4b3485e09ded48ac2"

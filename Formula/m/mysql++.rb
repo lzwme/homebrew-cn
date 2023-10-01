@@ -12,9 +12,11 @@ class Mysqlxx < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "eee1456f0bc1e77efe95cad1415ca377525ae10c618cbb033c190dc1309bafca"
     sha256 cellar: :any,                 arm64_ventura:  "9244f1ab36df8527bde5bbfa1896fc43511076cb4c1312b70b88dda97cf514d4"
     sha256 cellar: :any,                 arm64_monterey: "c042304bf3959e8ff9f5f98c6e7121af78daeeec0d3ae9efb650eabaa713536a"
     sha256 cellar: :any,                 arm64_big_sur:  "2a0f6e540ab0ebb1594fae343e8358d98cf22bda4887d039f9e05155ec9f5dab"
+    sha256 cellar: :any,                 sonoma:         "a0f19621b399f1e21fa6cc9d902012280d960c0f39c37fbfcbd1b63c8c483180"
     sha256 cellar: :any,                 ventura:        "665e4cc095a04a2e7d04edc1f8fb7f306a1b4923b2be8afce48b39c107873c43"
     sha256 cellar: :any,                 monterey:       "675b77e64a1ca5dbb5fc8dff4a720a4182e7143906cceecbd074d274f5b19cb4"
     sha256 cellar: :any,                 big_sur:        "aeaf076e16d85aaee1e5dddd2c926bd0a8cc142735ab585a7a1530e41dd15b2b"

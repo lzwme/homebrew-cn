@@ -9,13 +9,14 @@ class Checkov < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9edac786e10613fb120d37bf1d1b4d188315bca680b6fe4bd9e784cb5d2fa50e"
-    sha256 cellar: :any,                 arm64_ventura:  "2729fd10e3a47f5b7998b10c3019157503400f45ea31ef8f9af28d578d8a3821"
-    sha256 cellar: :any,                 arm64_monterey: "3ab64e6ea199132917ce027d4f5078268480e0e24ae019274ef0f74a64511a93"
-    sha256 cellar: :any,                 sonoma:         "01ec472c9dd2f2940b9bb6b235e18d932edd3565f7fb6f29dd37bcc7aaa3a03c"
-    sha256 cellar: :any,                 ventura:        "deeca000be8d363e6a20179793c58be6f98a9460482805a900a93cc55e984239"
-    sha256 cellar: :any,                 monterey:       "46c20135a454bbc77df4a6c6d75289b2e363e85d5ac3933882f8f496cf2dde0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d985b112ad2dee1a53edaad0c030c109b34705830dcacacd0518705a02f0e845"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "8e3802776a22b00e29030e91260a8aae20bb7fcb35307ac6a58dc60840bab15a"
+    sha256 cellar: :any,                 arm64_ventura:  "6ab3507251adae43acca9ecb98b8305ea624491a83945ed61b7674d68f31f50a"
+    sha256 cellar: :any,                 arm64_monterey: "19f150328daf90f1644310ad2bf1f4acff1e9da48e74f0ae2d5b33847abac8e5"
+    sha256 cellar: :any,                 sonoma:         "c7ee0f1ef52eeab9c789852edcdcd03839cc42a008b5bf0363a9587fd8162de1"
+    sha256 cellar: :any,                 ventura:        "6b0bee8af95acc8e3af3ab8571bf99acbcd20276090bb8f912d5da5d23054881"
+    sha256 cellar: :any,                 monterey:       "acc333f8729fa4612052fb24666e4c76f6dee362fe6dda46b09f12f43758305f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ea92454bc084d0e20af697f4143e67a598823bab7bde867c53810f1f9794782"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -24,6 +25,7 @@ class Checkov < Formula
   depends_on "cffi"
   depends_on "python-certifi"
   depends_on "python-markdown"
+  depends_on "python-packaging"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -273,11 +275,6 @@ class Checkov < Formula
   resource "packageurl-python" do
     url "https://files.pythonhosted.org/packages/33/34/a7843f732e1e0b01e961f6ae835b3fd6bd4e361c1a3a72debd31244cb718/packageurl-python-0.11.2.tar.gz"
     sha256 "01fbf74a41ef85cf413f1ede529a1411f658bda66ed22d45d27280ad9ceba471"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "ply" do

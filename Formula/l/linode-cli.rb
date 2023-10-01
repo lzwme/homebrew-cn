@@ -9,9 +9,11 @@ class LinodeCli < Formula
   head "https://github.com/linode/linode-cli.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1306bdb16185525b85c1a620bf20297a37624b0b0e8147e509da79882da1fcd5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f785b6cec0e0fa2b5c64486a9c2685325690f6e594f49f7cef3c9080d16701fa"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9cc998a6314852a40f08b5d3e18031644fbc8f05e59802f44b1e0335a62f0017"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b663920fe6477cc402722dfc843037db72464d79ed67810cdddac76454256602"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e845e671e5b3f4af0f266bedb8dc3c66c2e3a104276646a7f056d64cc73fc9cd"
     sha256 cellar: :any_skip_relocation, ventura:        "86a8a0458de7324448e48b8feb50e7e9cd08e33aff603322c30489f5c6361bc7"
     sha256 cellar: :any_skip_relocation, monterey:       "f0cebb1407788d88afa228b9cb658901eeae969e1ae41ad2bcde03cf1f8e196f"
     sha256 cellar: :any_skip_relocation, big_sur:        "3d8babe679a240039d389be645c44f2a393673b16bec0c37d8356e0c15a6bca7"

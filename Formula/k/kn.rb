@@ -8,9 +8,11 @@ class Kn < Formula
   head "https://github.com/knative/client.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "da64e6df6fe9d58c5096216a9760918fdb500be387cb48299a6751edf21d7f54"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "546d118d179de625ea3cbb70ac0ae21a2b132b0462733e7246956d106c0f6443"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "546d118d179de625ea3cbb70ac0ae21a2b132b0462733e7246956d106c0f6443"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "546d118d179de625ea3cbb70ac0ae21a2b132b0462733e7246956d106c0f6443"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d3cd12f755de862fbe16bb3ad35d592b854f951add77230f57c3dbbc944cfb10"
     sha256 cellar: :any_skip_relocation, ventura:        "031b6652bea16800f4e90026255cf65c648c96f2c251786abecdee027bd7ba28"
     sha256 cellar: :any_skip_relocation, monterey:       "031b6652bea16800f4e90026255cf65c648c96f2c251786abecdee027bd7ba28"
     sha256 cellar: :any_skip_relocation, big_sur:        "031b6652bea16800f4e90026255cf65c648c96f2c251786abecdee027bd7ba28"

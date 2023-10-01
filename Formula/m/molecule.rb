@@ -9,9 +9,11 @@ class Molecule < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "972457ba5f6974f13c7a45fd5b9d0cef4cf372abc11f5b48cd4159d281a7740c"
     sha256 cellar: :any,                 arm64_ventura:  "a6c61cdfe4fcf5d99dd758da28f0cd89bcf7461776532d8ff0ca5128a8683593"
     sha256 cellar: :any,                 arm64_monterey: "bb49453c82a4515486b0350a51c8ea3464f1a467a1cc1c6881382d4560de1e17"
     sha256 cellar: :any,                 arm64_big_sur:  "cd5a8938cd02e1214f443dcea2b3d7f346dfee7ce3a907a848626656e334dc0b"
+    sha256 cellar: :any,                 sonoma:         "50d48a5396eb4249204726d98015b72fe9b9cc96452d554cde43714e9a0d7e26"
     sha256 cellar: :any,                 ventura:        "21d98f7e43a05c9b676931704b7fb580670e61607bc19442f2fb61ad6e82925f"
     sha256 cellar: :any,                 monterey:       "c016297438af25c704f6bbe6e63fded563af1c6f32cb2e695a60b9b27874c2a3"
     sha256 cellar: :any,                 big_sur:        "2d4526bd7dc11a43113ab8d2c812be358eb60dee4772bc2b6f18a91514718110"

@@ -7,9 +7,11 @@ class CargoBinutils < Formula
   head "https://github.com/rust-embedded/cargo-binutils.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "54c3cd2a10fc84faf03c3dfe9ca8ffeef01811c0a264473430c202b624672539"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "73469ea42c9f0ee96fbd51f1b08f356104a0a3114a7a8428c9cb659fd636654f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c9440dcd36d4c6335d6503aa36766cd83692203b16c36ff184ef8337bb360b65"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ea6191a3486774767591b8da025736c7911618aa5d825fc93372bad6a15f4d41"
+    sha256 cellar: :any_skip_relocation, sonoma:         "346badf808aff5c0a49a830a8fe2169ad509c9ea10869d94ed513b7e4626d9fa"
     sha256 cellar: :any_skip_relocation, ventura:        "06566f6a3668b2ee04e4caada6d092c2be827d17c94d4e3d9dc78b860ae66f24"
     sha256 cellar: :any_skip_relocation, monterey:       "f723cc7c2965cf903f9bb3e0eb825b4d07fcb343f1c4ab13fd8b9042708dd82d"
     sha256 cellar: :any_skip_relocation, big_sur:        "bbffb949c95924792a8467de511a274b2f0243087ebc3caed26f8fce8ae536d3"

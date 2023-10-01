@@ -9,9 +9,11 @@ class Mvt < Formula
   head "https://github.com/mvt-project/mvt.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "837f68c879c7beb2493106a2674144b9298e4e7d0d6a48595cb722d436656979"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d871e2bc09e8d7c2ed4884bfadf801307b9c3f5b0a02fe2c56b270e1601164b2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d0c21d9d8103e0373dffc0675273d238deb513d36753b14dba9c76450fdc02e1"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1a441ecc94cf21fba90f6c353d6365abb1a60a4c813bb74dfcea8888d14d8d3c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9aed275f13c83cd48376f2179d3063592e33cba1197d6bd04f2ced46aa3b1aa6"
     sha256 cellar: :any_skip_relocation, ventura:        "18c200b70d5ad2c3b227373a97ae674a7e84cb1453ad822003ac259fcf9f37be"
     sha256 cellar: :any_skip_relocation, monterey:       "a31670e414637a216c4fc5223c4d09c85e85745cadb1e0b611235d233fea8ab5"
     sha256 cellar: :any_skip_relocation, big_sur:        "b84fb0a4d23a19fc334c5291291ee847865a28d535fc36b81fa7133663174b95"

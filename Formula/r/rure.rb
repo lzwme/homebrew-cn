@@ -1,23 +1,21 @@
 class Rure < Formula
   desc "C API for RUst's REgex engine"
   homepage "https://github.com/rust-lang/regex/tree/HEAD/regex-capi"
-  url "https://ghproxy.com/https://github.com/rust-lang/regex/archive/1.9.5.tar.gz"
-  sha256 "adaaba54fe18cf5c5cff17573a26daae0ada64be03ec38568dc5c9d189e61bbf"
+  url "https://ghproxy.com/https://github.com/rust-lang/regex/archive/1.9.6.tar.gz"
+  sha256 "3510396bf539cc9326824990bc6f24764742db740e84045fd7ec8654aee5980f"
   license all_of: [
     "Unicode-TOU",
     any_of: ["Apache-2.0", "MIT"],
   ]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "217568a83632fa292787ae04f848dee39f08f168ad704cdbdbec0b66f8c48821"
-    sha256 cellar: :any,                 arm64_ventura:  "7f28a4df0515889cf222d2a717ba8ed0bad0a5c7a2544860ca5746d7bcc3de9d"
-    sha256 cellar: :any,                 arm64_monterey: "ee41505ea11ce9e2f57256d76984d503f849a5534524754fb98a012ebed747fe"
-    sha256 cellar: :any,                 arm64_big_sur:  "829d94dbb7d129f1a54467a9980d24548f5a36d86c4241930f20ba57fea92038"
-    sha256 cellar: :any,                 sonoma:         "a088dc6a53d103232d7ac2d4d64faba4bac92eb290860e6bc58fd405b32beb5c"
-    sha256 cellar: :any,                 ventura:        "2dffd4117dc257b75ae928dda86552975f6c0deeec4989e1edc2294f70865e63"
-    sha256 cellar: :any,                 monterey:       "b30d330d9ca2a63f2ebd0b10c86393f6939b465c9f5c0ba821e15813e2471533"
-    sha256 cellar: :any,                 big_sur:        "88e5d928bfebfaeeb251650a5662b78b96274919919856639515dc2e74faf257"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "195488d563883cbeaea74f4bb7a672b783a63f8682a723722fc1effcb0ea991b"
+    sha256 cellar: :any,                 arm64_sonoma:   "5f671feda9e5afc572d3a557ca098a2e9cd2d9d7be736320a8e070dc1e526513"
+    sha256 cellar: :any,                 arm64_ventura:  "62cfda5f175dcbf8a712a52894257544700b7478c1a407e6a4a0370e7933b718"
+    sha256 cellar: :any,                 arm64_monterey: "538ec208fe5276d85746bbbd2dee9813cb4a6fa1f717eec31eb8aa649575a323"
+    sha256 cellar: :any,                 sonoma:         "d1d91844f853ef0ca86df0539311cfe6d1347b91b0dce0d0c952b20f6221d353"
+    sha256 cellar: :any,                 ventura:        "0ea45c1bc8c9d614a596b70f19204677e94fb6fc8821c2a5a12292f6be2563a6"
+    sha256 cellar: :any,                 monterey:       "2c162da9155f8a496a09c3c61c3240f87d7aa671940f1055327b92cd21ca8085"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a27740e02de49f5bcad3df1e00e6e756f929918ed05275588dca7f8588c12cb"
   end
 
   depends_on "rust" => :build

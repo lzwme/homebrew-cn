@@ -8,9 +8,11 @@ class Licensed < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "01f9d3789a4289a252f371d5bf13629b1439344c6591c93575d9c133b2fbcde2"
     sha256 cellar: :any,                 arm64_ventura:  "e29a894119212da640f791ca9549c8e0f287748555bd061ba03aee8a70c1b6a1"
     sha256 cellar: :any,                 arm64_monterey: "37443d189f124d38d0b6eedab9faa1bc867f2e3a188d28f08127eeb9e4e73dc5"
     sha256 cellar: :any,                 arm64_big_sur:  "3ead2b4adf3be289685403b317be482d00bf0818f566afb449be4de75e15c022"
+    sha256 cellar: :any,                 sonoma:         "6474f0adb8bf66d8ef13868f453d028ca05aa11b742f608009f6ce32df792cb0"
     sha256 cellar: :any,                 ventura:        "b3f32e768216de09fa52dd2fe0a0b9f2bacb752809e2b53397e020c2f1a53295"
     sha256 cellar: :any,                 monterey:       "423470bea18004c09b236e8f4e8d044ee3d472ad481ec609f3e95867b99fc1cd"
     sha256 cellar: :any,                 big_sur:        "e1e5c8de404141168428d94c4e6ad62be08d4cb865041de59333cb95f97e2511"

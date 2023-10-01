@@ -17,9 +17,11 @@ class Bagit < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dd3d0ccfed47a60b957217320af5f1d3ce5104909b591ae67a4096c332306497"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "60395129ac88a0d1a5e1d3c9772092d17a2645c202ee3b6969608c161315e9c1"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "60395129ac88a0d1a5e1d3c9772092d17a2645c202ee3b6969608c161315e9c1"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "60395129ac88a0d1a5e1d3c9772092d17a2645c202ee3b6969608c161315e9c1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ea57458604d5bba0379d762de56d85f04f6485a285a99707b0ee5989d4747263"
     sha256 cellar: :any_skip_relocation, ventura:        "da64b9f36df90101ccf6702a55206eb9309d0ce2dcbc33722f3c709d00a87ec8"
     sha256 cellar: :any_skip_relocation, monterey:       "da64b9f36df90101ccf6702a55206eb9309d0ce2dcbc33722f3c709d00a87ec8"
     sha256 cellar: :any_skip_relocation, big_sur:        "da64b9f36df90101ccf6702a55206eb9309d0ce2dcbc33722f3c709d00a87ec8"

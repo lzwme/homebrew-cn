@@ -7,9 +7,11 @@ class LinkGrammar < Formula
   head "https://github.com/opencog/link-grammar.git", branch: "master"
 
   bottle do
+    sha256 arm64_sonoma:   "88fe0776b6350c24b9966f21ddeccb1ab82ef64548d8d3f28dc3b9a95c019e73"
     sha256 arm64_ventura:  "68780a19c3e1cdf5b93773774607a747d73b77914118cc3eb9a443bca81423e6"
     sha256 arm64_monterey: "4645310867d66555678ea8036cf34559064ab28a63bc1527a8e99645133a8a69"
     sha256 arm64_big_sur:  "627549f901d893ae19650a1b0091f5f548327a65749f7b53cd5d82e94ed5f3bf"
+    sha256 sonoma:         "0825b755ddae7896536120185cb815ad3c1e65eb575d88dbf02b32a66668c5c0"
     sha256 ventura:        "9d719498637426049045d2ac4a1532d3fc90a63ccc9da91b0cd9c4a472db1342"
     sha256 monterey:       "a530e218f0513110ace858a69961edd3d824eb8f03a97af63bcd99467c6439eb"
     sha256 big_sur:        "ddfb36df0a1b30aae66e1b432d3b47259b2514b3859b7c5cedcd5148cce95927"

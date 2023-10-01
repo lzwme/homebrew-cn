@@ -7,9 +7,11 @@ class Cnats < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "ac2ee8e9cdb15c44302d79f37d3cfc5aee8efaba2be3a242cb61fca2fe764f38"
     sha256 cellar: :any,                 arm64_ventura:  "223440be48c43cb502eeceb78514c29b0238717cf17de88ab36113762e545c9a"
     sha256 cellar: :any,                 arm64_monterey: "862262c067872cac1476ab24f7f55ce0c0dafc5f54725041d0e5a4e4d10eb0e6"
     sha256 cellar: :any,                 arm64_big_sur:  "0706ceffcf2d56c553da948c2736b04f0e72e1ff8b510a13c0e189bfee7be8ff"
+    sha256 cellar: :any,                 sonoma:         "497e2651f21d14832f4eae6a82896ad90925b1bcaba084d326d7deea6614f995"
     sha256 cellar: :any,                 ventura:        "000d38458fefeb3fa9ed904de8520194edd218f712d1ee270d40c1d01e862d69"
     sha256 cellar: :any,                 monterey:       "3eb2b9fd6eafb0da1a4edd95161944335384d9a2239d7932fee0b1837d05cab8"
     sha256 cellar: :any,                 big_sur:        "6e2ab1a62323570a24bb87e63de6f94415a032b543603148d6b7821149f9bb6f"

@@ -8,9 +8,11 @@ class Bashate < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ef33118a17365396dbe9e235b02f6bf1132b2136caf8022513f4ba801d773885"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0404cc095c3112a2393efa839c8ede16e4016a80f3e72767ca568d7956a685c4"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0404cc095c3112a2393efa839c8ede16e4016a80f3e72767ca568d7956a685c4"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0404cc095c3112a2393efa839c8ede16e4016a80f3e72767ca568d7956a685c4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1e0e76ca665bb7a2140af9b429a6e31317baf1591672863a76f744a5fa6dca5a"
     sha256 cellar: :any_skip_relocation, ventura:        "92be21fb90d03ca6e332233b0128d97c512ec5299988fdaa2f1da61e2bf7fe98"
     sha256 cellar: :any_skip_relocation, monterey:       "92be21fb90d03ca6e332233b0128d97c512ec5299988fdaa2f1da61e2bf7fe98"
     sha256 cellar: :any_skip_relocation, big_sur:        "92be21fb90d03ca6e332233b0128d97c512ec5299988fdaa2f1da61e2bf7fe98"

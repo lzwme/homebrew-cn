@@ -21,9 +21,11 @@ class Lean < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "a5568b994d186b0a5e50a10dcfaa7e7ada0106308a8f80412eea4e71662729cf"
     sha256 cellar: :any,                 arm64_ventura:  "0525ce214174c28a6604f69a8ccf14477dcf311b587572c19729d8b7302dfd8e"
     sha256 cellar: :any,                 arm64_monterey: "fdf55df69720f665834f8b31e8071e0d0802552a265aa0075bbe60676faf7a0a"
     sha256 cellar: :any,                 arm64_big_sur:  "d231fbba7c033640f2f5f912a4e23a92831217d7a374f54836b8075707ab263b"
+    sha256 cellar: :any,                 sonoma:         "500529aa863acd0c4d5f1257d391bd496d40cafa6aba87595071d786c38d7f47"
     sha256 cellar: :any,                 ventura:        "2cab4d1b6b3a2386333dce3b836f47e815747fd95d5cd3ce84e1b094be7f8278"
     sha256 cellar: :any,                 monterey:       "418e91f115eda2f2956ec13d4ba57101e55d1cfee8154518db90f5fbbda48344"
     sha256 cellar: :any,                 big_sur:        "e101719fb4712cbe706aa8a32d1335b3b6b5211a2e741eb2fb714f079814b2ed"

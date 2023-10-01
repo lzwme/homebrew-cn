@@ -8,9 +8,11 @@ class Codelimit < Formula
   license "ISC"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "567c1e5f18f0e2c7a8e1850a80b81b2240760d01dbdfda4e5ea7a577c02eb6cf"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa2900872700c100009c845c59c6166110b5f8380afbf7237e2366790c57fcdf"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "90df7c15cf28a0bbd23f5a20fde17bda5eb3bdd8cf48bf5410b3a58e2cae415b"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bb79909e384b4b83b06b136823113b9fd78fdcb205955aefaf9e8915f9fbf047"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1f2d4a308ee236c05e481e0f0e90de345cf140aab391fd701f71a486dfa2ed06"
     sha256 cellar: :any_skip_relocation, ventura:        "3ea0bd086034eb9a9f9a12a750966f9ec9a9914b3b985e4dc7958ca1dfa8040d"
     sha256 cellar: :any_skip_relocation, monterey:       "391db0a51c227cf54cea9667b4e46d82900e3493d201faf4ba6bd08c81e46e3a"
     sha256 cellar: :any_skip_relocation, big_sur:        "12b3e614eaac692d2db229d9ffc4089064712e90b4d46bbc6f904177dffd44dc"
