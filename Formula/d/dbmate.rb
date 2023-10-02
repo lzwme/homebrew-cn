@@ -7,9 +7,11 @@ class Dbmate < Formula
   head "https://github.com/amacneil/dbmate.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3e29fe79e8a2656366f90832bb9b48cc43d9f76898289b23683c416aaf099264"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf98f62bb5a2d18f3b075eebe0b76313f6e41f46cfdb2fc105e386a36e653617"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a8cbab80894be04e5ea50301b666db34d97ff3516a8d1bc16a2eaccf72473566"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4028a90a25875319ba554d441991232f31010a7bf0d4eb7b4b2c8b8bb9ef0130"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f63da9f0a0d7f2f5511cc84b640f9c0c3ce9f02d40c03bafca0062f3b06584a9"
     sha256 cellar: :any_skip_relocation, ventura:        "778e673d1529753eed6ce2e3ce952dc4b81e37004462f8a138dd5e4290156cad"
     sha256 cellar: :any_skip_relocation, monterey:       "925800f0f36e28a22451b61b3564fdf928ab9b53a3142b55ae0cd0585f068088"
     sha256 cellar: :any_skip_relocation, big_sur:        "1bbcfb4324f14ca75360929156082c48d6237d53caa0d80dd89473b738c03c68"

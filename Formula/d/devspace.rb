@@ -13,9 +13,11 @@ class Devspace < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "db3ca51c67bc08915f626567466e6d3036802c8a180e314a8d97d825e858ecd5"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "56cfb7fc34adcfd2b0e4d722e670468c66d5ad588d07aad275279b46f340699c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0c4cfd7cee429997d0d11f23fd04bed177d778a7ead274d672877afbc2e6589a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "86a2ee73a8d3f31176b42ba19114ce554428e0add140643d847dcb7f82f421ae"
+    sha256 cellar: :any_skip_relocation, sonoma:         "91de88de238acf7e615cfbc46cf34493e1579c91e6347e580db885ab84bd3f59"
     sha256 cellar: :any_skip_relocation, ventura:        "341818742870cc55f99296e2769fe76228acfcf5242aed9a45b9e01be999e834"
     sha256 cellar: :any_skip_relocation, monterey:       "5672d8fa21495a949671fdaa5f61045519aae08f27d6a8af6b72a493de60b064"
     sha256 cellar: :any_skip_relocation, big_sur:        "98f1e718d7997847fe20e48a4eca3cd4195a2d2f267fb96cab955ffd6e7a6702"

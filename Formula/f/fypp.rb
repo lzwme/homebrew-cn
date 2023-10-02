@@ -9,9 +9,11 @@ class Fypp < Formula
   head "https://github.com/aradi/fypp.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0afee7dd1017190e39b10b65cf298850f76c6ed293998b1c14cdd831aebae008"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a72f87c255aefd9dfc94a8acf0054e9d00b009ca29c378c55a948a267ccadb80"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1eaaeb839757540bf468a3c4a34edfae25ebce99847fd5ef3f88ff748b2df440"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5ba5ec09160516d21d7afde092b4b78fb95144b2b4fd29d2013f52b0b47ed247"
+    sha256 cellar: :any_skip_relocation, sonoma:         "aa2f6aae3cdcad720bfbe9a781c2bf0df1d58ded169db4031c3fcedf870e3489"
     sha256 cellar: :any_skip_relocation, ventura:        "97f13cd046501c26e14d8e6ddd26917d864776426468fce6441cfdd62781a00a"
     sha256 cellar: :any_skip_relocation, monterey:       "7d92b29bd552bd7dcbb5c8aa19f0482aa1f0d3661191c8cc419f378c97b76a0d"
     sha256 cellar: :any_skip_relocation, big_sur:        "af80edb6449af0192ce8586f0f07af91aedb55d52ad352207e04ac25820656f4"

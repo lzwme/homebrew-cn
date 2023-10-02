@@ -8,9 +8,11 @@ class Dolphie < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a7f6e6a575940102ae25f5dfdba0779fa771feda328e68def2ff6d5dc3ef4acf"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5327ade408b44280248862bc8deb322f5ece723244aec1212354106687a9c197"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "442c8a6cf0cfd73dbd61911ff56d2eab14ff8eba0976a8f0741aab8dd8a62628"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "af4980f721b0dd8e2243daac228b735d3c1372059ae07791ada3068a3accb112"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6329692bda6a0fa18f48ea47b9441e18e6f47a64e4f169a18a79a0922f783b5f"
     sha256 cellar: :any_skip_relocation, ventura:        "eae4af4c8722fad1e7881426702ca65c85fa73f87eadc0184845dff15f798aec"
     sha256 cellar: :any_skip_relocation, monterey:       "513683a586f888ff1ddb5790cd3db83de6ffeda61e45e2ab756f470f437062de"
     sha256 cellar: :any_skip_relocation, big_sur:        "46f96d093a0c9b07d2ba3fda7abc2f6a799e991b6b7dbd8e4a11fb36d61327fd"

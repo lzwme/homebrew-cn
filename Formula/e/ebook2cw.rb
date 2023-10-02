@@ -6,9 +6,11 @@ class Ebook2cw < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 arm64_sonoma:   "db414d0d717be52093b787e79f866d82e2f91fbdf7290b89b194ce5da6a2116b"
     sha256 arm64_ventura:  "b489e82a61e8939850597bcfe3a9f550171ee9a60c192677e9d7882d7ab6d9da"
     sha256 arm64_monterey: "51fa1ee26a03240c46e41a82f8aec2b3c6adb240df22906d2d7515e0c416d766"
     sha256 arm64_big_sur:  "3a135e19472fa1cf7c261704d9b6731c3d7ed11e16146141feac522d6cc9a735"
+    sha256 sonoma:         "b2e633fc299f13bcfb391665dc4d2693a5a7bbc9dbbb304c14772c22460bb5a5"
     sha256 ventura:        "eb4f79ba7941e073eb076731d020a3c948b086602b18eaf27dd819e51611d9f5"
     sha256 monterey:       "875f2b989098018048e20711591dfde60aa903c6aaf9a18b7850a4388898c741"
     sha256 big_sur:        "07d3d9f7a7446a9686a1a2052fca0f7fc40e1b111445e2cba1425fbd7afbbb4c"

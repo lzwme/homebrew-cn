@@ -13,9 +13,11 @@ class Cppcms < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "47fe8f637046b69cbb78f9aaa2d8131fc876630744b0d0debd4bc93326cadcab"
     sha256 cellar: :any,                 arm64_ventura:  "1e231383932392067c2f82db565e7c89fdf262257dc18ae3c7069b661b7e37ad"
     sha256 cellar: :any,                 arm64_monterey: "fbe7cecff46a4e2bc8f799354a4fe510d195721e56c769f077a0573e54d71739"
     sha256 cellar: :any,                 arm64_big_sur:  "4bd9653322f70e9300800e2b221af694d228667967a6ee8df6069bc3496344af"
+    sha256 cellar: :any,                 sonoma:         "2e0109067f2409251880e5f31269b0d0b6df67cad8f31883160a29d06c3576ba"
     sha256 cellar: :any,                 ventura:        "ae8964621f8e24d7494a9f7370dbbf4369a36e3dc0533632e101a6eb37adf4e1"
     sha256 cellar: :any,                 monterey:       "295e57a50103781f5f6d9d00f0693f8fa23802068fd53ee1fa0964bb1c9e556a"
     sha256 cellar: :any,                 big_sur:        "91451434afc317d71cee36e03047d170f453efcf4bcd61487750b353da4bb303"

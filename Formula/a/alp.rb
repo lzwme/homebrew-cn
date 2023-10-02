@@ -1,19 +1,19 @@
 class Alp < Formula
   desc "Access Log Profiler"
   homepage "https://github.com/tkuchiki/alp"
-  url "https://ghproxy.com/https://github.com/tkuchiki/alp/archive/v1.0.19.tar.gz"
-  sha256 "a336776379a9d46222ac7d8309714772b848d95111a482b0a1526dde5af81dec"
+  url "https://ghproxy.com/https://github.com/tkuchiki/alp/archive/v1.0.20.tar.gz"
+  sha256 "a8477fe3fb1fb2f1e4e64d00697b743b6fe542e10325a65efac0f25524d36084"
   license "MIT"
   head "https://github.com/tkuchiki/alp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ed66be85ad016bafa66943b7d7f25cbb3933c5a1ad6eb6dd26ac69efb06e1c3a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8c040d7d97cfb24ad9e22d2cd4965469f8831d217e4aea8f7b0a6e3c026167ae"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f1db02e17f990c3eb1eab0462774a1d7cc78e0b66c67c1419e7a4938dca39e7d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f57196f1b86571f0bed2dea0ed5cfc59e46ca3494e00800b7c802ff1200a207d"
-    sha256 cellar: :any_skip_relocation, ventura:        "93b092fdbd4021b1defe1ac50deab95b11dd6f038c5d9e389112e5cb3be3ba70"
-    sha256 cellar: :any_skip_relocation, monterey:       "39c77b8613aea21d5617c413cab241f6ad927cb9ae1230804a0ad47331ba6e41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad10009596770ba551cbd14a8fb41f0bd35fb54b0a1bd22c254edc1e7e1d163e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5c5945bfc16063496e594b661296fc79034f76ba9d4451bc3b478ad23cd7912c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "43bd4d01e9ed44225bce5772bef0818283f92e331e57125645dbc56583df3d8b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "04ebb17e0874316d24eff8963d11c32f7e1af4d2ae34bb7db47790e74c866834"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f8758398261ce3e2942dcdfee4681359f3a49a8087be202f7e502556359adaea"
+    sha256 cellar: :any_skip_relocation, ventura:        "c8cc8f89dea8ea8cc79b440bba8f0a6d730909d43c1f627846d42fcc5421be62"
+    sha256 cellar: :any_skip_relocation, monterey:       "918aacd045c5e49dfaefc27172b77ebb984be0526b0ade1102af3dda34a789b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "51a2f290a1e4e8faeb47caff659fd13446b2a82691038ba493c6c2f9e5d0e302"
   end
 
   depends_on "go" => :build

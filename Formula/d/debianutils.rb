@@ -11,9 +11,11 @@ class Debianutils < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c1a9dbd59e8becc2044abde1d86a6d1e4f6a0ede4fb9d9db863b582f7ef5995e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "df97d7ff05eb39718695a6e41e37ef4f772e842de39855a4a6f35e2b4986585d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "aa15bfad54a42448c00b23cea5c1c3d20af4fe40e51c7d783a99b9ab206563b6"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4e736217c519c0a5936b8688c6784157e27b1052b11d785247dab91752a2a3c4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5ea0b621ec5467c177db2dfe3f44cecbab89b1ad87679e2f032e6ea537c7270f"
     sha256 cellar: :any_skip_relocation, ventura:        "75c6c80a9cf65298ed7a5eb432917ce3f48b71ef9f4637552aadd12b0aacbb3f"
     sha256 cellar: :any_skip_relocation, monterey:       "2708b24868d97c985bffaa6b1ec7ecaa25c812d28e3df76a8660a4a7fc358afc"
     sha256 cellar: :any_skip_relocation, big_sur:        "1043f16c427b7563d436b44e1b5662c2d8c6cf3732207c8c6f20399cb0006e04"

@@ -8,9 +8,11 @@ class Fades < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d1f4fdcd0fe35710a5260ff6484ca3c1999fae4e5bed4b3484bcdae68d0177fd"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c0b7a66d6d4d9b19bc3453d4cf84259779648837634149ca0ed482cb051e1787"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "faaf390a5ced6e0f8591d82839d7e1dbfa1a3d81dda5df42dad37dc9ba59e860"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8bebccd6c533872ab4aa5a3961ced0b0e5e9223621b6f2c7f185994aff468125"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7d93e814d5b1edb8357f73802f55c91f7426fa56c0494dcde71aee11db2cc7fc"
     sha256 cellar: :any_skip_relocation, ventura:        "7e3a7c935370d3fe21d37788d09be37b6aafd043692706c3282b40b7b499427a"
     sha256 cellar: :any_skip_relocation, monterey:       "334fb96ed33d63b0b439a46f5b4ea00f8c73cd071fc9223ff5f8a4a6288c81f7"
     sha256 cellar: :any_skip_relocation, big_sur:        "83399213117615c742b8caf868e8e4841b3d9711113ee11d29c465139191a355"

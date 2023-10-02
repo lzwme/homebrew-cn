@@ -6,9 +6,11 @@ class Ghr < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "50b5eddd0e7beb7505709da8ae8238050c851cc32bb59fd82e622266e1ce56ea"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "aaf361b786efae90b48964bc56fd935412c4db14303dd4bdca230331f285fd5c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "aff88f794b79ecc4412ba3f56c3ec835c1ee4d620b2948b918b2d07cc35c18e9"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "52233c065fddeca71a3932cda06c6fc6737675f42f6e9cec325834ba3a1f1d7a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "526ed850fd034f7a5db5dd2c41e8239e17f192b278e94fefd4fbc83031fe45d2"
     sha256 cellar: :any_skip_relocation, ventura:        "33393c84870f74c92acdaec6294bf5d49a555b354d249d54b8376c23645020b2"
     sha256 cellar: :any_skip_relocation, monterey:       "d6900cd810ced4aa78c721505833f3b4d06fc75c004c555044c2ed2bd6098063"
     sha256 cellar: :any_skip_relocation, big_sur:        "71c80121c792b3f62ac50215adfec225022c9f79cc902493792a87e7bcc81c45"

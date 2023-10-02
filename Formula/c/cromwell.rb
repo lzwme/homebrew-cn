@@ -6,9 +6,11 @@ class Cromwell < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "21b57b6266828d68dd3b30aa650f8f000c77dbadb2f0cbada44215a2b03ce514"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "32c1c6f5ba62df9c2fa1ee21ecd00cd71f6e176cf9f481a388602beaaaad1fe2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "32c1c6f5ba62df9c2fa1ee21ecd00cd71f6e176cf9f481a388602beaaaad1fe2"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "32c1c6f5ba62df9c2fa1ee21ecd00cd71f6e176cf9f481a388602beaaaad1fe2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "21b57b6266828d68dd3b30aa650f8f000c77dbadb2f0cbada44215a2b03ce514"
     sha256 cellar: :any_skip_relocation, ventura:        "32c1c6f5ba62df9c2fa1ee21ecd00cd71f6e176cf9f481a388602beaaaad1fe2"
     sha256 cellar: :any_skip_relocation, monterey:       "32c1c6f5ba62df9c2fa1ee21ecd00cd71f6e176cf9f481a388602beaaaad1fe2"
     sha256 cellar: :any_skip_relocation, big_sur:        "32c1c6f5ba62df9c2fa1ee21ecd00cd71f6e176cf9f481a388602beaaaad1fe2"

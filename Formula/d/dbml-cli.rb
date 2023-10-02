@@ -8,9 +8,11 @@ class DbmlCli < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d0fe0e4c9e7ac47132cce65bdc7390771ff5b356a549fa60802f15877e3bd50d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e274651e5d49958388e18aea38f74201ed25bc19448807bf34e784d2aa61b52f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e274651e5d49958388e18aea38f74201ed25bc19448807bf34e784d2aa61b52f"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e274651e5d49958388e18aea38f74201ed25bc19448807bf34e784d2aa61b52f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "03603d193c792253856367422c227416c85ba3bc5df25cfc83ab3d858272db6d"
     sha256 cellar: :any_skip_relocation, ventura:        "fdccf17f37f18d22d95697b39c452234ac321d5f4943303c424f3058bdd23108"
     sha256 cellar: :any_skip_relocation, monterey:       "fdccf17f37f18d22d95697b39c452234ac321d5f4943303c424f3058bdd23108"
     sha256 cellar: :any_skip_relocation, big_sur:        "fdccf17f37f18d22d95697b39c452234ac321d5f4943303c424f3058bdd23108"

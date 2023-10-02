@@ -12,9 +12,11 @@ class Fail2ban < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6e9521263ab1bdd108f6c4c7de18b6bf278da9f7c44ed9e53fc2075acfdf66c9"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f911d7921d2738aa75228e317e2a4100e1462de3464acd2a7a5edd716f74ed4a"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f911d7921d2738aa75228e317e2a4100e1462de3464acd2a7a5edd716f74ed4a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f911d7921d2738aa75228e317e2a4100e1462de3464acd2a7a5edd716f74ed4a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0b9426b3cb3d1ffeafaa433e3093d37a3db0f8c267585837e1487d715a1dca74"
     sha256 cellar: :any_skip_relocation, ventura:        "0a05b30fecd031fba3686b8667325b4b4e14c31ce23c879d28227b0f1613b51c"
     sha256 cellar: :any_skip_relocation, monterey:       "0a05b30fecd031fba3686b8667325b4b4e14c31ce23c879d28227b0f1613b51c"
     sha256 cellar: :any_skip_relocation, big_sur:        "0a05b30fecd031fba3686b8667325b4b4e14c31ce23c879d28227b0f1613b51c"

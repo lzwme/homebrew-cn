@@ -13,9 +13,11 @@ class Distcc < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "564449039dc1a3df80ca130f5f717b28166e68527d6af17ad949918ec9c4104e"
     sha256 arm64_ventura:  "8b2fbc5cf4cb8d9476da2625a957915944649cae75fb3108b0bc96a4a4566dc2"
     sha256 arm64_monterey: "c81d6a2c9a61ef14dce35ace5f8c6178818fc31df0737340e7a132f00f0f65a4"
     sha256 arm64_big_sur:  "65af444c16f90e930c9bfb1bbc409dc3bb448de3074fd66d6c4e838286a97de0"
+    sha256 sonoma:         "12f66af9cb0e8c6baa22497aba3ccd0340e3f7063acc91cca1c2941d1ef3a932"
     sha256 ventura:        "df8c4c8014e106395f5bd5c442b3e001d74ebc4b5f974501f62398e1bfe7c9d7"
     sha256 monterey:       "8f3321e99183c5839f84d1a6c49e64befa3d4c028a7e245b1943ac91c36d513e"
     sha256 big_sur:        "beb61452ff642e970da5d457f55d7bee4667c095a531dd2f34424afebf6dca00"

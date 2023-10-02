@@ -8,9 +8,11 @@ class Json2ts < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d441f2af6a99f5c954361cc7f68ab1b56423f6cafd8c9250443012e0a2555b67"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0941fe65ac8ce455223411a65f4362084f308c2c71ab24e1e16528d7b99ff711"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0941fe65ac8ce455223411a65f4362084f308c2c71ab24e1e16528d7b99ff711"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0941fe65ac8ce455223411a65f4362084f308c2c71ab24e1e16528d7b99ff711"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8c7a7ac5c33c05a56c13131a4625b29e6662557580e83835e5b2ff19cf683fb8"
     sha256 cellar: :any_skip_relocation, ventura:        "8560351905cb49e8bccc04af3edb1895f5fe491b006d9fb8dcfbd6c81ce16c3e"
     sha256 cellar: :any_skip_relocation, monterey:       "8560351905cb49e8bccc04af3edb1895f5fe491b006d9fb8dcfbd6c81ce16c3e"
     sha256 cellar: :any_skip_relocation, big_sur:        "8560351905cb49e8bccc04af3edb1895f5fe491b006d9fb8dcfbd6c81ce16c3e"

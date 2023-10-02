@@ -7,9 +7,11 @@ class Ksh93 < Formula
   head "https://github.com/ksh93/ksh.git", branch: "dev"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a6b25f714e055c51d1ce2293ef846aa07c46670d283c940de421883bbcd371b8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3fc13a75c291e28e40e3464f184c548690e2fa0842f06e99c13fa200cd36f3b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "12c116df90fbb33260470ea0d4ab610373845d252b0a6c19a32f8f86fa87abb6"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a4a7f851a0b19462d3da1c32014cc7d239a31f3ab652ecc86165c349e16e3d23"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d523eac85ec37f505f2886736fd2542245104c74f11e08a5b7d589afec6a46d5"
     sha256 cellar: :any_skip_relocation, ventura:        "9c711e85c2aac9cd02cd40e20d4f6bec6db6edccf1306b488ff1f18dec4e47c2"
     sha256 cellar: :any_skip_relocation, monterey:       "42f23778ca66202d1274c0fb02ce382d962780f3fdfc2a4c7246cb7b2f64a8e3"
     sha256 cellar: :any_skip_relocation, big_sur:        "37a3d61e3e6dee0a2689a682dca040056724f2329b8637b3bd8aebfcd2c774e8"

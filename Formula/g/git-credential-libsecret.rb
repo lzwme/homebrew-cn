@@ -11,9 +11,11 @@ class GitCredentialLibsecret < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "03239dd55d5a27b4ff92c0e0dd33e3cbf5cf22c479eaa2ca893fa9d201669951"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "28f0cb50d9d232d8d08f163b3e9e5bb09daaf4c7c0a20d0f62f2d4746140f657"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "bae03b9e7c2999c12ba7d94b14e475dd88043ceb151e00546e43a668bebaf1e6"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bbdfff905373151e25d49cb34cd682fc873f0df9792b1a47c3ad393a03c737aa"
+    sha256 cellar: :any,                 sonoma:         "40b65178f13df28634aca6cf83a48bc028b88718c6d3f5c854f6a84c91cd72ed"
     sha256 cellar: :any_skip_relocation, ventura:        "001a599c5e79e05253f9314c4ff95db40b5e8f4948291f89196a4c678f012bff"
     sha256 cellar: :any_skip_relocation, monterey:       "8fef0a7f29ffa32a6d8b289b67eba7316436f44a785e85e2aee45b85fcbc2133"
     sha256 cellar: :any_skip_relocation, big_sur:        "1729f8c0f40937c777b266705773e25a08cfca5449cf5175c0824991969571f5"

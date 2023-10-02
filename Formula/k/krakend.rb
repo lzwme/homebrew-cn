@@ -6,9 +6,11 @@ class Krakend < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d2a346c9635e787afb0e9979929ae884548e050ae0453431417a523f2dabecfe"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f177f258b90812573c13fb9abe7a6b79c5e421fa32328d2dc065b8715ae00fe"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b7ec19f4bbc12779b2e22b6c252b5a9968d89958514ddc1394438330d2cbcf41"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5bde8120cceddc6e5122ef71e8d7e030468aa0337cbfc46ec9e7915d817cd67b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1bff0a19e5fcc61bfe7ba798025baee263a6c330b2519cbc6f6dd985ed993184"
     sha256 cellar: :any_skip_relocation, ventura:        "aceaf8463c1e0227611cc7c8808459ac442c82b2cd1ce1fe16ee5dd514e48cc8"
     sha256 cellar: :any_skip_relocation, monterey:       "d5ff63f7988d26281046b049dd3eac01f3ca503a81a2158fc8e46dd88c7e9627"
     sha256 cellar: :any_skip_relocation, big_sur:        "60c389fb6fd8dceabb3d84107d126dbbd93e511915d9cc6bbf88136de93dd138"

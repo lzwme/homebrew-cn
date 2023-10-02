@@ -9,17 +9,17 @@ class West < Formula
   head "https://github.com/zephyrproject-rtos/west.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6f96da0ddd8658a76b4db83cd6741630d365b8462ae0faa68797bd8c7e31ab90"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "033938c6c219f61ce3846cf9f57804ff66ded9f4d994a839f2e80a3585c8a5d4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6c52037f121bc26c812b88681c1d009173b6f2e7b2e9ae3005d128780450081f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0a146e72623bd339743c230d679a9d1b04bd43d2d0de5e8825b42ed9baf801a8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "75efeadf3f41b915083f60b29b46fb62720cf22c6ec080879b6ba10fa9ed6615"
-    sha256 cellar: :any_skip_relocation, ventura:        "c5ec0caa3e3df3c593ebc3ed967ee4bb6c62a84e850ad35f6939fddb35389d6b"
-    sha256 cellar: :any_skip_relocation, monterey:       "80f990a6cf0eb15d4a2e107289764183ed68b6bb6949af703d5cb59ae8107770"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cc7efbd750dcbf7b1044925caca6b6d0ea24a7faa5b9d9cb2b54c5bfbb470bb6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "982130e610ef3fed5ca58c473badd345fd67f4d9039e9e436d08b9ae741daf2e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9bcc0276be418767d679ac8e471233e2ce704523d217dc33305b7acd2c9442ba"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "12730e2db9b91b4c4648e45a4cead960c355e55c368f7151a13b63aa39cf8314"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6d4b5806166ff6c9d55ea797b5b0e9116d9b7680d20d6da8b42baab9f469ce89"
+    sha256 cellar: :any_skip_relocation, sonoma:         "eaea62f5290a3129f7de51a32787c54000a7fbfd4e3903b5bda6886716b12139"
+    sha256 cellar: :any_skip_relocation, ventura:        "43b4e25782c07a955667f5e3dc2151770cb154ac824b799a966116b4e368904a"
+    sha256 cellar: :any_skip_relocation, monterey:       "863f4084c84660e25c52a77f1017b613a8bbb6514604c78c4ea17003dcc152b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc890a60524bd150078685403ef4783b0aa679f4a6951acc48533b6e31691291"
   end
 
+  depends_on "python-packaging"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -32,11 +32,6 @@ class West < Formula
   resource "docopt" do
     url "https://files.pythonhosted.org/packages/a2/55/8f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9/docopt-0.6.2.tar.gz"
     sha256 "49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "pykwalify" do

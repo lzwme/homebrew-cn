@@ -1,8 +1,8 @@
 class Cadical < Formula
   desc "Clean and efficient state-of-the-art SAT solver"
   homepage "https://fmv.jku.at/cadical/"
-  url "https://ghproxy.com/https://github.com/arminbiere/cadical/archive/refs/tags/rel-1.7.4.tar.gz"
-  sha256 "866c8a1332ff1ad5dc7ad403bdef3164420f3f947816b5c9509aad1d18ada7a1"
+  url "https://ghproxy.com/https://github.com/arminbiere/cadical/archive/refs/tags/rel-1.7.5.tar.gz"
+  sha256 "1465c95d4d4f1e8f1d0c812af6d2e6ac0b509b43dc7fa125c74d2fe3152f3c25"
   license "MIT"
 
   livecheck do
@@ -11,15 +11,13 @@ class Cadical < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ee5299d053992222ad687c4e7af6769e2be18864a7cc5fa43376f88d903e91c1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f5c644766ae64fb3e1e7dc4b4afa509b676ed6085125cfb95698e6e68f712a82"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cebf996fcb5f645743700cd9a0b146425183a7d57f8f1d095bf8fc6f189c8584"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f5e485cb7e2a53e0adc5302f70bcbe2429e8f568df8f2e9496ed657f290b6316"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8227ab240d418a534ecf2c9baabe952200235ac7b05991f410d16144fd484541"
-    sha256 cellar: :any_skip_relocation, ventura:        "4211e48e6f78c57c2deed6606f92c47cd4b1fadc8d4ca5db71ab60ea5ae870b9"
-    sha256 cellar: :any_skip_relocation, monterey:       "b2b7710d8ff936dbf1129f9f74358965ff2c5f0a48228d58bbba0d0b6745a2f1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7b805a2799550a219abe236bd5324943919d02598e9034ad01e4459c75a5fc27"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22461e495d24f88c94834ae03d3db3a6ff5fcec94c8596b2bd3ba2ce547cf790"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "98ea2b5d23e82786fe7881da77ac9068c861d761f919321fae0504e97e1a5af6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8277cd158468696fedb569c7bd1f65a5233e818f89e53d35eeb5a91000672282"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "52a05f0cc3d64364965dea076083d5a78f0e206d43107b0df850d37e708874f0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a777d37851bbf3233e3629e43c6e43ed7b8dbc79204962ccd7eab1d09a6c2410"
+    sha256 cellar: :any_skip_relocation, ventura:        "f4ab3a8081dc367542e50e4e6243d6dd0b45c8a2582a273fd972907c7e7f2b77"
+    sha256 cellar: :any_skip_relocation, monterey:       "5d0957e19d2bb58403191873cf7956f3d1107d425a4ed094e857cad1fdb93ffc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9cb04f314af3f89da7d9d264af06ab97bdbeead196cc8126fd8fec7f12fa692"
   end
 
   def install

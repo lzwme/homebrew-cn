@@ -12,9 +12,11 @@ class Discount < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "14e2177eb0728e9d8690a7e6854250f174f5d988a046dd3f071c9beecf930540"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "130512a4b6b48f7dc9352cf9591b27f1f3083a2ff22d88e71f47507178a87e43"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "19bff1a2b50eae855a70eb7e6ed839f37891b9001f77780245a8c484b009a108"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "49f9e9459165f07289b9e418e1db9398e94acd67fa480d50c2fc6951bd9f4bf8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4f4407e7dc8307e20dfcb377e033e194c4161ee7128214644065f7a7cb400982"
     sha256 cellar: :any_skip_relocation, ventura:        "aa3f9a506863629ddcb54c8f52193e4bcf55563d2ad0a6e610bb84b262dad679"
     sha256 cellar: :any_skip_relocation, monterey:       "698db890a09df9b32fdaa93ac1f178cfbaf497a5b93ede5380c00ea539bcbcc1"
     sha256 cellar: :any_skip_relocation, big_sur:        "a1cfca46da847dcd5346cecf299b699b6f72826f3f5ab7a25ede643de3c26945"

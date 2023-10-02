@@ -10,9 +10,11 @@ class Fortls < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1bc5360cd0371b332cd9aa7b505dde957a059f1e066ff6fc6ae1f3bcf64b345d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5084af342b76751abfb89ccf94cc02e9c933ad2255b726c2684723cab71baa66"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3f98955f773c5ef23b33ce6594b77d2fda676d2ea0789fb15d81f9a40921a74f"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c1b913720062c466bf1bf3fdbd7c3c2740b3fb2a601614a42ac616653738e781"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e024f98f25ae37e3e0eaa0afa7f5c833edb570c689273d7072c872ef5f60be6f"
     sha256 cellar: :any_skip_relocation, ventura:        "39bdc99826e7b98a9aff6e3bec0890ffce6193c52c25e0241ad8eb6b6ac3134c"
     sha256 cellar: :any_skip_relocation, monterey:       "b264dc16ce0c546bdf2bb88ee9d97257540fc67900496534055e1c7ac721197f"
     sha256 cellar: :any_skip_relocation, big_sur:        "ee205e3032f671e4f1a74537babce6b5a601ed200409f4a06e8a33b0b31733b9"

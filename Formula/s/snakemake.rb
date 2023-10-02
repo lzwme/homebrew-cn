@@ -9,19 +9,21 @@ class Snakemake < Formula
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4ffccb5c6aecdbb763fad5ecf6977bdbbbaf6b2c4b601eaf61b314bf06df4a07"
-    sha256 cellar: :any,                 arm64_monterey: "2b773d9ad6d7e4d5b72ae798de57fe5f7dca239368ec1539636789244c1d477b"
-    sha256 cellar: :any,                 arm64_big_sur:  "def02d41f8612b197cee228eb42a763f27b3b30ba438111a1d8ff70041c2f37b"
-    sha256 cellar: :any,                 ventura:        "2c0edfc23d73951cc407e5f902de42d20d263c58d5a5814592c1effe7b562a1d"
-    sha256 cellar: :any,                 monterey:       "5b528b84e5bed1d65efcf3e0068a9e29bdb20c49b6260a317d03f5ec0dc4f94b"
-    sha256 cellar: :any,                 big_sur:        "ba0be89ae7277eef5e630ff9379636999b8f75b720755a1ffeecbc1cb317a157"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af4776ac6c23342d43e8f8c24f4c889c382d583541e6c63f4e137b84ed4d4ea5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "4b0bbdcbbf1973ef9fcc5c7a619ab02fd7dca474e7c9df085326de5915ab2779"
+    sha256 cellar: :any,                 arm64_ventura:  "2ba91d48bc758b936d090ba35651e36db800b35f8eeb7c1d9202ca0c55a5a27a"
+    sha256 cellar: :any,                 arm64_monterey: "e847069d012783bbe8c3b768637b9b36b687b601c804e3cf1917f13fdffbef14"
+    sha256 cellar: :any,                 sonoma:         "eddc142b9b15f191445bdc0e1952b45616f75d159f0282415ee8a93d301a573e"
+    sha256 cellar: :any,                 ventura:        "91ac5ef35f747782a72e6d22f04e9da9ed861bd9e59aeb451e35dce5112d7a90"
+    sha256 cellar: :any,                 monterey:       "3424767d47b55122abdb38ae97d7a2a0b86b7ca75db64ff0eddda61aeeae3f24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fdfb854cf94c8d532bcdb0babf13d585c504f61f25c6b9f0d9921e8c16418615"
   end
 
   depends_on "rust" => :build # for rpds-py
   depends_on "cbc"
   depends_on "docutils"
   depends_on "python-certifi"
+  depends_on "python-packaging"
   depends_on "python-tabulate"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -114,11 +116,6 @@ class Snakemake < Formula
   resource "nbformat" do
     url "https://files.pythonhosted.org/packages/54/d8/31dceef56952da6ea2c43405a83c9759a22a86cb530197988cfa8599b178/nbformat-5.9.2.tar.gz"
     sha256 "5f98b5ba1997dff175e77e0c17d5c10a96eaed2cbd1de3533d1fc35d5e111192"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "plac" do

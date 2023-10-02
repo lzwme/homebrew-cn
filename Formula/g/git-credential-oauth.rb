@@ -7,9 +7,11 @@ class GitCredentialOauth < Formula
   head "https://github.com/hickford/git-credential-oauth.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "76539e3eba4f693bb9bc8aa37bbd00409468d4304a29085639209d1ee938bbf0"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ca6107887d009f0bbf63cec6dc76c47f79e4bf8e3391ec15f6e4fa5806774d9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0dfd9b05498af0fbfd6b1334f51fa94b7280c839045ac1f5b2add507706722b0"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c57a4b73f0e492430de041ba932d95a0a1b1ecea996f5d9a328bd59cb2bb0476"
+    sha256 cellar: :any_skip_relocation, sonoma:         "19d2ac54fd73c6f1b893ee4241b4439723c816b1396ac851fe3457dc6b183809"
     sha256 cellar: :any_skip_relocation, ventura:        "0b1f1cd30a23363b58f0ff4528a2851fd60f0181d490699223d5ab951dbe3545"
     sha256 cellar: :any_skip_relocation, monterey:       "5d3923ccec91541b27fb7bf9dfd2ff4d292a477bf90295479fa8f1d7efa82824"
     sha256 cellar: :any_skip_relocation, big_sur:        "89f82da0f6532c5cde0ba82769ca64a8adc3bf0daa9c55a424ae2fceb2f23db7"

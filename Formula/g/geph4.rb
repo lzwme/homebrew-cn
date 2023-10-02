@@ -7,9 +7,11 @@ class Geph4 < Formula
   head "https://github.com/geph-official/geph4-client.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b1474ce7772df7648050377c2fd99036ff0069f2a24589294118a1a52a557661"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fbba29bc3299286063537aa78c0de38e06b430945b97f0dc51c070db2b50bccb"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "df0d743e889c90b8aeec583747bc54b3ab60ed63bf6628f5182d9517b7471611"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5d4ce91db857546aadf29c60311906b737acfbaf406bd2898ca6cbaf5082c0a3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8b72859496a1e0c2d0db201a47fb2f7523fda9382b08c2321d2f8977094dbc9a"
     sha256 cellar: :any_skip_relocation, ventura:        "fa305c96c087e5672862c176414fa1c24f48f560e6641ce2ae341c0d59438d17"
     sha256 cellar: :any_skip_relocation, monterey:       "7743cb69bb35a763352fcb7db352401af88d7ce581756a3e23cffb8a15650bc6"
     sha256 cellar: :any_skip_relocation, big_sur:        "7908384141d9c2c9f48850334272550be25b98cbda6a95fc7fb82218afc0294c"

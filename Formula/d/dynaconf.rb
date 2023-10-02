@@ -8,9 +8,11 @@ class Dynaconf < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c9927d79769bbc7872a34a6414d6deb4a67abc446b0a847cee1c42464fc9395b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ea3ea17268e70962f3068a0ce040797a7229bffe387c1ba279a81d539745e550"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "bb30eae2cf3ecd2be2f65b7ad701c6c9842aadb62ed3cad8e180e3e80d87d1a0"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9dcd76c59dec51e236cfdbbf20c432cbc01532db7156e30924d520886b94db52"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6cab153517bdaed28153e5de14b14e386b985dd4aeb5225e9f94ac9486b0f676"
     sha256 cellar: :any_skip_relocation, ventura:        "a08af654ce380561ecb933fbcb97b71f9020017d9506949883eb72e12cafa5ab"
     sha256 cellar: :any_skip_relocation, monterey:       "b16e7a578e4b9c68c0b8d8770334bc31649d8f04e699c1e1d31f69970d694f51"
     sha256 cellar: :any_skip_relocation, big_sur:        "df97b45a3380dfe0e110e57891d169c96b877cc9c9053b357bd3d652fc66ad55"

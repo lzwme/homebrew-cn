@@ -7,9 +7,11 @@ class Dnsx < Formula
   head "https://github.com/projectdiscovery/dnsx.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6ae2858bbd9627cf9f2a653a457327fcef117170eb433669820a44336c0f6420"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a64217d06cdeba903b2b362d0e2de0f22ce19a797d38736df06c49c4ccb86bb8"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4d7ca87b6b3052d08ee19c18cd625b5afb009344ba94023b1423e1ae26464d0a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "addb094b6ee28822fcb8b16fea8d6ce9a3ac36891d9013beeee17e3b88db664e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2809e94284a3dc58fa9dd15cc54e4e27769b04d3be917b9bc4b3c89421d0ef8f"
     sha256 cellar: :any_skip_relocation, ventura:        "afd205b9da91a63184540b6f8c5e8cda405b8c699861bf481380f81dc2c4063e"
     sha256 cellar: :any_skip_relocation, monterey:       "ac22abda2803954d5dbd554060b673083ebd21b07201e4866036b05a8988bbe2"
     sha256 cellar: :any_skip_relocation, big_sur:        "dc179d4cc7d5d44e0d1d1706b4ab4288fba90fcbd32cd1668c2711e7ab44c640"

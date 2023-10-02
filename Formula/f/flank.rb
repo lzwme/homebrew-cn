@@ -11,9 +11,11 @@ class Flank < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6e12b1c3caea2a6e0a4283f86b486fe16286b505d2ef9020b8f9879907ad7793"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f61019aaf6202342f09854bf6213643aedab3b400ce0ab0349f5084f36d04446"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f61019aaf6202342f09854bf6213643aedab3b400ce0ab0349f5084f36d04446"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f61019aaf6202342f09854bf6213643aedab3b400ce0ab0349f5084f36d04446"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6e12b1c3caea2a6e0a4283f86b486fe16286b505d2ef9020b8f9879907ad7793"
     sha256 cellar: :any_skip_relocation, ventura:        "f61019aaf6202342f09854bf6213643aedab3b400ce0ab0349f5084f36d04446"
     sha256 cellar: :any_skip_relocation, monterey:       "f61019aaf6202342f09854bf6213643aedab3b400ce0ab0349f5084f36d04446"
     sha256 cellar: :any_skip_relocation, big_sur:        "f61019aaf6202342f09854bf6213643aedab3b400ce0ab0349f5084f36d04446"

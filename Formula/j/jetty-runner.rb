@@ -12,9 +12,11 @@ class JettyRunner < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "21f8207c7576f0469caabae4483eeddc35e3bd707f5205463cc5b42087b1faac"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "21f8207c7576f0469caabae4483eeddc35e3bd707f5205463cc5b42087b1faac"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "21f8207c7576f0469caabae4483eeddc35e3bd707f5205463cc5b42087b1faac"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "21f8207c7576f0469caabae4483eeddc35e3bd707f5205463cc5b42087b1faac"
+    sha256 cellar: :any_skip_relocation, sonoma:         "21f8207c7576f0469caabae4483eeddc35e3bd707f5205463cc5b42087b1faac"
     sha256 cellar: :any_skip_relocation, ventura:        "21f8207c7576f0469caabae4483eeddc35e3bd707f5205463cc5b42087b1faac"
     sha256 cellar: :any_skip_relocation, monterey:       "21f8207c7576f0469caabae4483eeddc35e3bd707f5205463cc5b42087b1faac"
     sha256 cellar: :any_skip_relocation, big_sur:        "21f8207c7576f0469caabae4483eeddc35e3bd707f5205463cc5b42087b1faac"

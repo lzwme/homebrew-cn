@@ -10,9 +10,11 @@ class JujuWait < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e67c5512200855fe0f4bbbae425df3f84f824c80002d1b5bd536460932149fcb"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "02a5b44bd00be30c7637fa792cda345136a29314e7b62168495c44d7c092eb03"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "02a5b44bd00be30c7637fa792cda345136a29314e7b62168495c44d7c092eb03"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "02a5b44bd00be30c7637fa792cda345136a29314e7b62168495c44d7c092eb03"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0440104ed6c98b21f9469cecb84c6e0d3cfee4f460450add068a8ee4470b1e7c"
     sha256 cellar: :any_skip_relocation, ventura:        "6e14483aeeb4bb6b08f5b70ec193830c26ea765f80314f8637a8a160d39d6aad"
     sha256 cellar: :any_skip_relocation, monterey:       "6e14483aeeb4bb6b08f5b70ec193830c26ea765f80314f8637a8a160d39d6aad"
     sha256 cellar: :any_skip_relocation, big_sur:        "6e14483aeeb4bb6b08f5b70ec193830c26ea765f80314f8637a8a160d39d6aad"

@@ -9,9 +9,11 @@ class Cpplint < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7cf96afe7b401df7624a2ecc9b17c766e5a18de162f67fc887b62be3c991658e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "bdd27cfe1e885629d384959cb649c133ae6f9102522294e68c6ee23732dcc4e5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "bdd27cfe1e885629d384959cb649c133ae6f9102522294e68c6ee23732dcc4e5"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bdd27cfe1e885629d384959cb649c133ae6f9102522294e68c6ee23732dcc4e5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bf9e6fe2355df7e9d69ab1bc187643f977a3222c1718ef45c999b241f74f699f"
     sha256 cellar: :any_skip_relocation, ventura:        "39d32c6b83bba93c843dfd6b3f90a427970212ebc83352b96973f28425e9c6bb"
     sha256 cellar: :any_skip_relocation, monterey:       "39d32c6b83bba93c843dfd6b3f90a427970212ebc83352b96973f28425e9c6bb"
     sha256 cellar: :any_skip_relocation, big_sur:        "39d32c6b83bba93c843dfd6b3f90a427970212ebc83352b96973f28425e9c6bb"

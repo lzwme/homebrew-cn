@@ -4,6 +4,7 @@ class Objfw < Formula
   url "https://objfw.nil.im/downloads/objfw-1.0.3.tar.gz"
   sha256 "1c81d7d03578b2d9084fc5d8722d4eaa4bdc2f3f09ce41231e7ceab8212fae17"
   license any_of: ["QPL-1.0", "GPL-2.0-only", "GPL-3.0-only"]
+  head "https://objfw.nil.im/", using: :fossil
 
   livecheck do
     url "https://objfw.nil.im/wiki?name=Releases"
@@ -20,10 +21,6 @@ class Objfw < Formula
     sha256 monterey:       "d5477967a8ee629aca8fffc52d68e887f38454f7e2bb44a52ec04a1119e085ae"
     sha256 big_sur:        "da289589275ea7828d4dde5e3ca909aa5a8d0030327186f4325b28bd30289e57"
     sha256 x86_64_linux:   "7d42f608d3c923914b0b7d6fc1a118cca0068852d6522a50fbbb492169990b64"
-  end
-
-  head do
-    url "https://github.com/ObjFW/ObjFW.git", branch: "master"
   end
 
   depends_on "autoconf" => :build

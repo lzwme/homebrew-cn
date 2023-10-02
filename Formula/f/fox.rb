@@ -7,9 +7,11 @@ class Fox < Formula
   revision 4
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "6490dbfbbd60bd7f4b4b14fcbfe774d3e758c23486484ece21a6b09dd14867c2"
     sha256 cellar: :any,                 arm64_ventura:  "e3a425ba8dc21f31f67bbf515030956f044f42af7e06a12ed5eea4c00b10feb0"
     sha256 cellar: :any,                 arm64_monterey: "825cfc53620606c3366928e1e7da404bc11e31283b7de29497ba504652abe149"
     sha256 cellar: :any,                 arm64_big_sur:  "8328ac03359070c9f20537a6277d15d8a815e35387bba1c5cdcd11af51d4baa6"
+    sha256 cellar: :any,                 sonoma:         "84fc67b6f359c4b84e833c878af73eadc1e433e83d036834eacf4fe40194e6b4"
     sha256 cellar: :any,                 ventura:        "74567e8739db08f0369e2d6177c0b6e38d5dc862342042b164682b0cddf7d64b"
     sha256 cellar: :any,                 monterey:       "2396ca931860ca6523b7507a084ec9c5518493be593c5cf6a0a56735619e16c5"
     sha256 cellar: :any,                 big_sur:        "bb8bdbecbd7b8c4c8f9c3caa90f17063579e1ecbdd9beea3276330fb8116d907"

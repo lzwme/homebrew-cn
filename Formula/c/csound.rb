@@ -14,9 +14,11 @@ class Csound < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "f8e19a40f4f2e66f30714ac3eda31c9252d5330a8fd3d7279c4a310a666b2ca6"
     sha256 arm64_ventura:  "ae764437e6448fc70ace10e8932487b3e136b4cc12ab5d07e08fdde7ff45d1fa"
     sha256 arm64_monterey: "aa903abec753e1d1f850ba0050fd982bfe54e52f4db3737120fca90a4f1e7834"
     sha256 arm64_big_sur:  "c5be70240c4d54762463547499053f8a488b5033b60b92796b6dd358253f013c"
+    sha256 sonoma:         "de3e95858554c42065343f61e7e0c2f33411b87bc9cd9844a58d8a1fede9625b"
     sha256 ventura:        "3143d0de41809667d9e8ae46a24c87b492534e6aa866c7a4b8b0ce9123f6ace3"
     sha256 monterey:       "e95eff8aa14d9466ecad003eeca4bc8393a1b67c92951a80dd0266bd63218c68"
     sha256 big_sur:        "64a7a619b22139c1c8504c1a1a9c4267cd18923d6b5a14afeee80c95665c7daf"

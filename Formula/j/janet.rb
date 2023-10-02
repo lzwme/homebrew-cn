@@ -7,9 +7,11 @@ class Janet < Formula
   head "https://github.com/janet-lang/janet.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "06cb7a675ab1edc260bd526b265f392516d425d8f05d30db74b99fa7e7032168"
     sha256 cellar: :any,                 arm64_ventura:  "0b0ab17b6496c7cb26ad53dea43aab050eed1e2c1d12bd85477de6c88c9e8e76"
     sha256 cellar: :any,                 arm64_monterey: "c804e4fa2ebd094f5b42d42830f659f2c4c88fe870155d99df95c02c55f082c2"
     sha256 cellar: :any,                 arm64_big_sur:  "7ebef2db661fc1a91f49d8f98641603556dde41ef57159e811ca16b479bb72cb"
+    sha256 cellar: :any,                 sonoma:         "8ef63c7898a97beeb26b18843b1ac027731660530100c7a5f945e3617d862fbb"
     sha256 cellar: :any,                 ventura:        "180e87e361a65d52f4ce416f031e9f53019592b83bcc2a0d1568dac74a9d3cf3"
     sha256 cellar: :any,                 monterey:       "69785c69b0edea20fffe24bc7dfe1d21e7bd43a625af4fb2b4daf6225051b2a2"
     sha256 cellar: :any,                 big_sur:        "dfdbb0e7df1e62538020878225188e704ded3b272d2d9a954b646d7d8c84da83"

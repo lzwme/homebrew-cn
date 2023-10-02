@@ -10,9 +10,11 @@ class Gfold < Formula
   head "https://github.com/nickgerace/gfold.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "a8b4997231ab3ed1680bf1411f5b50542ad22cba63458759700cb193c4378375"
     sha256 cellar: :any,                 arm64_ventura:  "2c3202011e9ed676192d573292428cc2f96b6b93d8584b32f5c9902afc91835c"
     sha256 cellar: :any,                 arm64_monterey: "6bf31918b5130dd9b20c50e1aa0d1ce30eb4e7360d24246568edf1d1ce327d0f"
     sha256 cellar: :any,                 arm64_big_sur:  "b8575070e071d18fb85d33996f652dd41332efe4de74c39bff9eb31d613cd3a6"
+    sha256 cellar: :any,                 sonoma:         "445893f4ab6386a49958dd0f64d115e9152716297f691836dd07c1a6e2f2deaf"
     sha256 cellar: :any,                 ventura:        "e331f58eb2250adeefc2a2c725963e27c7fb4cd18089141c02f5863bcb27d767"
     sha256 cellar: :any,                 monterey:       "7c85c66db643ee79188c3ba810f0995750f366bd6fb2252a2df2297dab666bc4"
     sha256 cellar: :any,                 big_sur:        "a187356fa10c4af5116a9ceebae7f1bc09bef032b7b5c1c2eaebfab3bccfe8be"

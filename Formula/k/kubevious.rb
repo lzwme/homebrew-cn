@@ -9,9 +9,11 @@ class Kubevious < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "42e67595a77abe29794275a9277c9362aac33180c2f12cfddab63ecb96c3c131"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5b735b8ac7cc099a47f32e103624b2f7b4cf38b549117827f3aa83dc867cd77"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d5b735b8ac7cc099a47f32e103624b2f7b4cf38b549117827f3aa83dc867cd77"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d5b735b8ac7cc099a47f32e103624b2f7b4cf38b549117827f3aa83dc867cd77"
+    sha256 cellar: :any_skip_relocation, sonoma:         "afd0c2693e1d2fd6a8ba6b060cba7db2a77b34265a61815d02fe1819d2318497"
     sha256 cellar: :any_skip_relocation, ventura:        "c06ee99ad24dbf8bb1bbfda8e031fd6f378416df5605839049e894903bb3864c"
     sha256 cellar: :any_skip_relocation, monterey:       "c06ee99ad24dbf8bb1bbfda8e031fd6f378416df5605839049e894903bb3864c"
     sha256 cellar: :any_skip_relocation, big_sur:        "c06ee99ad24dbf8bb1bbfda8e031fd6f378416df5605839049e894903bb3864c"

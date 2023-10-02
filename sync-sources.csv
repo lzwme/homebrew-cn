@@ -1064,7 +1064,7 @@ Homebrew-homebrew-core/Formula/c/create-dmg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/credstash.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/creduce.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crf++.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/crfsuite.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/crfsuite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cri-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crispy-doom.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/criterion.rb, Homebrew/homebrew-core, 1
@@ -3105,7 +3105,6 @@ Homebrew-homebrew-core/Formula/l/llvm@13.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@14.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@15.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@16.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/l/llvm@7.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/llvm@8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llvm@9.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lm-sensors.rb, Homebrew/homebrew-core, 1
@@ -3499,7 +3498,7 @@ Homebrew-homebrew-core/Formula/lib/libpgm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libphonenumber.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libpinyin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libpipeline.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/lib/libplacebo.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libplacebo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libplctag.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libplist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libpng.rb, Homebrew/homebrew-core, 0
@@ -10258,6 +10257,7 @@ Homebrew-homebrew-cask/Casks/s/soundtoys.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sourcenote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sourcetrail.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sourcetree.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/space-capsule.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/space-saver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spaceid.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spacelauncher.rb, Homebrew/homebrew-cask, 0

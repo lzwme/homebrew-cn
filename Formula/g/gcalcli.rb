@@ -11,9 +11,11 @@ class Gcalcli < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c0d4eb60e067e9b0a660355ff4401292cfab1d5b14ae6a0d30eca76f80e44fa6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4e7ae215c9b4b0b6bf398e2ae53615898157083b0f15ef6a351139d771060167"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c609f00c7be05b920f09a8502393d9365e735730a89dfe3de7008e28621a4503"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b24b74e5187e22ba7c48858c30508ed1bce75b5dd8fcbcc0446b64c2d082762a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a924839878d4642387ab8551b65057be9e473df8cc580b72abf0d40acf4c4135"
     sha256 cellar: :any_skip_relocation, ventura:        "46c3156be7d24ab384444030f1c79df3814a2885f961a806be8a66bbb446b30d"
     sha256 cellar: :any_skip_relocation, monterey:       "e41cb12e77ed4c00d26d5a44b196f9346c24a07dda0acdaf848a625e7816b306"
     sha256 cellar: :any_skip_relocation, big_sur:        "779c47ce1fcae48d80d26ec5dbc1e64074565255ff38648f5b05f8d42adaaa43"

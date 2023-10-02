@@ -10,9 +10,11 @@ class Esptool < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ddddc43e30ececad6a06a4d4390f1bfd35f2fef7a8d2a99dd408135739cb2909"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4517b511bbcd91822736fa48918f3f9afa0ae1e284b407f8a6875f1d738853f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ae65f4afe6c08c172d9498e616d6007d79d45297d9783ef7242753fa3a6fd3b4"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "549b0faeb57eaa7713757bca7f5b6919dd65f339d2ee153455ae826c5fbe6779"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ebf816423d2e64a2ff195ba6cfe4fc85606bfc21408dc9cad5666f776ac386f6"
     sha256 cellar: :any_skip_relocation, ventura:        "51fdf57b1836ed2c4b23709e7d196eb7cbc19515e115c4122e85d74ff720c299"
     sha256 cellar: :any_skip_relocation, monterey:       "1399c973bb2f882c3660d338aaebe555315dcd449825ff3e9a9741907af0778f"
     sha256 cellar: :any_skip_relocation, big_sur:        "f24dfb880ab417140a921aa0f648824e2276071fc1303ccdaf60cb3491a5e4a1"

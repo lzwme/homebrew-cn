@@ -1,34 +1,41 @@
 class Smake < Formula
   desc "Portable make program with automake features"
   homepage "https://s-make.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/s-make/smake-1.2.5.tar.bz2"
-  sha256 "27566aa731a400c791cd95361cc755288b44ff659fa879933d4ea35d052259d4"
+  url "https://codeberg.org/schilytools/schilytools/archive/2023-04-19.tar.gz"
+  version "1.7-2023-04-19"
+  sha256 "a4270cdcca5dd69c0114079277b06e5efad260b0a099c9c09d31e16e99a23ff5"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 arm64_ventura:  "3ba94034a2afbc1b5ecb9e9fc016bbd082731977487e6dd0f33cfe8b4e572964"
-    sha256 arm64_monterey: "2d5169eeee1297a1def9e51c0fcc0955a3ccd910bf4eff43ae78f514c52a6a29"
-    sha256 arm64_big_sur:  "43034c1f8106c8f34f94e6ffbfc143521f1688929227b28a0c2c35d15a36e1a2"
-    sha256 sonoma:         "f8dee9bd3e9d9d675fa756fea428c9de6d5b9382c8620281c3b943e45fd3600c"
-    sha256 ventura:        "127941112a838979063acfb59e2c5352d0cc037b609dfc99acde2ff77275014a"
-    sha256 monterey:       "52d900209f60d961485e6c2fe1c09c21f88d2a7f3cecd5340570ea876c7bfb01"
-    sha256 big_sur:        "91320cb3802a9b395c25e93efc7162ebdf59514ec70fe82a7476b045120d7adc"
-    sha256 catalina:       "c09f4bc9cdcaa26dddc33ec021083885ed7d9236b2af2c87713446ad1a0cb538"
-    sha256 mojave:         "6dd776264c5583a982b9a8270956c84274387719aeae7b057d7c581ebc438c70"
-    sha256 high_sierra:    "5b1860ab709b7a27201f781f31a34ccf6db6da600ef60741fd918a95c3beedb7"
-    sha256 sierra:         "b1afe84c5a7b535738d2b2ee3f2abf879c908cf4f3b9c5a6f9f9cdd3fc403536"
-    sha256 el_capitan:     "a5cb6ea4fab2d0ce67342f482fd0efb4dcc20483722e56ae120880d2a97ebab0"
-    sha256 x86_64_linux:   "5d03986ec19a639fd339db5cb01fb7d1e11dbea580614a3ff70a24e1151feb24"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "55c37ff0fcdc4063d4d032dd8a2eecbd89993d7f72c1c78118dea2600dd906da"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b91cff7c5ad2764b76ed32823d1d34c66caf9edb9573b0aceae67fc747e12c40"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "993f7ba465c357fe4708e82d83ed5756ba3d99840057ec805193f5cc97360136"
+    sha256 cellar: :any_skip_relocation, ventura:        "e2ca634976e6b65601812a0b47a3b8a3aeb1e03fac68d72a1c8f8ef8c84c997a"
+    sha256 cellar: :any_skip_relocation, monterey:       "7146378cd1a1321496f23f8140f4dbbf325f4ed48d826fb0f87173607b220aa9"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1029afbfea413385bcc1b9794e6c634e19b568ae2e922a542212098c4e20a934"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "988c67994a34d30556d86182b63efee239863cc70dc4a645a3a265791ffa06af"
   end
 
   def install
-    # ARM fails to build with Os
-    ENV.O1 if Hardware::CPU.arm?
+    cd "psmake" do
+      system "./MAKE-all"
+    end
 
-    system "make", "GMAKE_NOWARN=true", "INS_BASE=#{libexec}", "INS_RBASE=#{libexec}", "install"
-    bin.install_symlink libexec/"bin/smake"
-    man1.install_symlink Dir["#{libexec}/share/man/man1/*.1"]
-    man5.install_symlink Dir["#{libexec}/share/man/man5/*.5"]
+    cd "libschily" do
+      system "../psmake/smake"
+    end
+
+    cd "smake" do
+      system "../psmake/smake"
+    end
+
+    cd "man" do
+      system "../psmake/smake"
+    end
+
+    bin.install Dir.glob("smake/OBJ/*/smake")
+    man1.install Dir.glob("smake/OBJ/*/*/*.1")
+    man5.install Dir.glob("man/man5/OBJ/*/*/*.5")
   end
 
   test do

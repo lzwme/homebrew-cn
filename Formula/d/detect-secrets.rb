@@ -11,9 +11,11 @@ class DetectSecrets < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5c52a490e637286e1f8085413c0aa2391c731725fedd05b811d23c87b5ebd9ca"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7d406f96b55d25c172002af752f055d8b16cb941c1c8f71b1f109c34f01618f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a360bf8ffe9ddf0fc025431061a6f155dfb65e2f59febc53f55316ede82eb801"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f631142f552c0d1a03258b135963a753cbff2297602384142b2f8cc886deec5b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "18973a0ac282869bdf63b5f7f8dc740d9f07bab936576765404b5062408fb62a"
     sha256 cellar: :any_skip_relocation, ventura:        "3f51a6d84d1c69b8121340b12648e71c900a8c073f027caac8e4eba0e7935792"
     sha256 cellar: :any_skip_relocation, monterey:       "1dabc85eca7b07da8551ffd5951ddeffe52c20772e626e184fe5273c411984c4"
     sha256 cellar: :any_skip_relocation, big_sur:        "f3165fd88b2217ed08c8cb860ab03f9f45c84c8b756867a2f83f0c8f9d8c6b04"

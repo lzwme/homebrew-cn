@@ -7,9 +7,11 @@ class Kopia < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f24dee26f7efae39a2c46efd17c33ff8100df739c53f978f216af0edef068327"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "411bc644a85c1a21468960fdc74fcb5154e5711b073de1d080ce1cd16c0752d3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "fd36423b92b5211e80cf27be7a69288100d300402ba89b596ce08bf9537ef890"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e5844cfaacc337b1a5594bbef5e55696edab5990886b1b169c754e34521e441f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c2f432660f7ae5b6cd49003e779dac987861a26621d9d410539dfa477e408e44"
     sha256 cellar: :any_skip_relocation, ventura:        "3da13b0bd98dd2083bd7f30827f46179aa8502be201614e16477590819641180"
     sha256 cellar: :any_skip_relocation, monterey:       "efb7e4b3804ec8dbb6f1f119e33274ac5e5c52e96673d2024dbc10f7ea4ad764"
     sha256 cellar: :any_skip_relocation, big_sur:        "bf6a384330b3660f91dd554c5df6c6af586c036585665894c87cb48622c028a1"

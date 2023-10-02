@@ -8,9 +8,11 @@ class Johnnydep < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5e8cd77c55f3735154ff307f732c13abbfd82e09011db4521242c1e881afcdaa"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "de94e94726133216f77b8a14904fea72e6249d11056e1575f2b0642fdf283bc6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1f9d87f8eea995073cbcea25c564432816c8f4ab284f4698c6cfc1ce981f295a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "27fd5b5ed3a42591ec58d2078d2f51f8988b949935be528894ac70f1ee616900"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8f5866143f5aadd674e38cc6c58cb9bd8455d7c4226dcf10e505da1b49ab4537"
     sha256 cellar: :any_skip_relocation, ventura:        "bb6e2bd87eef32400a569e7950f13c334fba8f2d0d908a47ae4a5201598ba6a4"
     sha256 cellar: :any_skip_relocation, monterey:       "5bcef486cf0c202df58094484a27de695e73cd1590e215fc3abaed43e80169d4"
     sha256 cellar: :any_skip_relocation, big_sur:        "a53d592ae95a9dffe5184212f583253e291e1db4c516841d003484b4e87cda12"

@@ -6,9 +6,11 @@ class Dtm < Formula
   license "BSD-3-Clause"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6386209d6b4384aba68b2622cf633aa4ac4f1c9617ac78c6ff4dfa1153d697e1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ff87fce08bcade7df5311fcf3f1cb9ba458224d95953ed3186fba74a2d8ba800"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d46d32e25a716a50023acd5364498ad1e6b0610f4de8a7c8e018148a6f28ee96"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6653fa440adfd7a243a8c840d36fc1e91ec419b0fe0c8326eb6158a65c356b2f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "78c513fee5b224d2f4c64aa75b91e645ba5aecc6051a0137889d72ae33b58de0"
     sha256 cellar: :any_skip_relocation, ventura:        "44e85fa8e4cf7a3ffcd2d990e58a323a8f7ab5de7b87589293072d29b22dd01a"
     sha256 cellar: :any_skip_relocation, monterey:       "5507ab53c28a4a2be0382303b5508ceaedf819b17783e802391e9debbfa38d35"
     sha256 cellar: :any_skip_relocation, big_sur:        "7cdf652c63b4eafc63fcc63b39f6b04b8faf93de6dd175e26424e58e42570c54"

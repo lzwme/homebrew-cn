@@ -7,9 +7,11 @@ class Frps < Formula
   license "Apache-2.0"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3ffa2874e1358d7c2869fe33868a01aa064676e8c182f546bfcf9ea88b376917"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "926388f26c0cce1fb0f4f655e657b2e33550d9695d211e7c2859af5768c81766"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "926388f26c0cce1fb0f4f655e657b2e33550d9695d211e7c2859af5768c81766"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "926388f26c0cce1fb0f4f655e657b2e33550d9695d211e7c2859af5768c81766"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0eac9b10d75623bd6aa06b658a75cb303836a9920db7395d2ed36d376fc0fc23"
     sha256 cellar: :any_skip_relocation, ventura:        "eb5ae712cd48c690662c3d683db59431913b1354188d980eb03dbace76571c44"
     sha256 cellar: :any_skip_relocation, monterey:       "eb5ae712cd48c690662c3d683db59431913b1354188d980eb03dbace76571c44"
     sha256 cellar: :any_skip_relocation, big_sur:        "eb5ae712cd48c690662c3d683db59431913b1354188d980eb03dbace76571c44"

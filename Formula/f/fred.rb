@@ -10,9 +10,11 @@ class Fred < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ac4ecc74f2bdc0e4c5efb91c11168b0a8c7e9eee9c7cbea30491138cc11ca3ef"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "01c36997674d538777c886b26adc78ce1ed4cdd7d0169f442c227f17ba10480d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b34bb800a8ac7017c0282ee92d78716cc7d6409dcdb22b60499eb573859ff715"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c5c1b97f1f9a99aeb9f29160014f22bdea6513b0613b7f35fab6b02416d4a4ee"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0b7caa39c8e363718adee2ff72bff5b41b3292db69681a2f0ea3db87aad05998"
     sha256 cellar: :any_skip_relocation, ventura:        "775b68aa90cca49d4857bdf7bde6a1a8dd278110a29f543d8a86ec05f8db7941"
     sha256 cellar: :any_skip_relocation, monterey:       "c1f1e2c62a367d8d1330e687311d3e214d0ac24ea08a94b02e6a0328c03165a6"
     sha256 cellar: :any_skip_relocation, big_sur:        "6a483ce3cc2e3df1754717ba582754ea47f4dce765c0388a95b569a2d9d270db"

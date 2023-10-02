@@ -10,9 +10,11 @@ class Fprettify < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bbad627df9aa001ef5e0f032e942ae8732e9d33868a33e75009491eb1f5486d4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4eaf9f8515de83e38a2279f945676e4c634b7831f91095b1da7321fc58dcb39c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4eaf9f8515de83e38a2279f945676e4c634b7831f91095b1da7321fc58dcb39c"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4eaf9f8515de83e38a2279f945676e4c634b7831f91095b1da7321fc58dcb39c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "27105d6edbd98e3c71bf26cc306073c5b831934c8a6944c669a188fe42e99b5f"
     sha256 cellar: :any_skip_relocation, ventura:        "e7bf15a8edcf12f4aa936c7da9ce8e771f84a9e4177897351a87d25d1f281ba6"
     sha256 cellar: :any_skip_relocation, monterey:       "e7bf15a8edcf12f4aa936c7da9ce8e771f84a9e4177897351a87d25d1f281ba6"
     sha256 cellar: :any_skip_relocation, big_sur:        "e7bf15a8edcf12f4aa936c7da9ce8e771f84a9e4177897351a87d25d1f281ba6"

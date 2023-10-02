@@ -12,9 +12,11 @@ class Jetty < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "4803964b26ce2d8e37b51d6c7724b56cab16fec8b24c57894b999c6579a62ac0"
     sha256 cellar: :any,                 arm64_ventura:  "f3b6f94fc5ca6bd5c8eeed03ba584ce31a4cf4ec02188fe4168d29bc530009dd"
     sha256 cellar: :any,                 arm64_monterey: "37609fc201d7767a7325e61bd9a6131df4ecc06dc31b97ccec8fc8b568141947"
     sha256 cellar: :any,                 arm64_big_sur:  "a269520bbf2ac1046184872de4388e72102b9d23a42958369f0f59fee7d38cd9"
+    sha256 cellar: :any,                 sonoma:         "991eda4ae9731fc9fa98ce0a28c23635f8570f612943bdc5eeef81b3a1e568b1"
     sha256 cellar: :any,                 ventura:        "991eda4ae9731fc9fa98ce0a28c23635f8570f612943bdc5eeef81b3a1e568b1"
     sha256 cellar: :any,                 monterey:       "991eda4ae9731fc9fa98ce0a28c23635f8570f612943bdc5eeef81b3a1e568b1"
     sha256 cellar: :any,                 big_sur:        "991eda4ae9731fc9fa98ce0a28c23635f8570f612943bdc5eeef81b3a1e568b1"

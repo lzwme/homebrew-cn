@@ -8,9 +8,11 @@ class Idris2 < Formula
   head "https://github.com/idris-lang/Idris2.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "d0b67881ced575137bfac860387c8a5393a138746078857d04a685c0af9947bd"
     sha256 cellar: :any,                 arm64_ventura:  "1b0403d50b6f4051e8819ee620b1ea1d821220bbbd81757538f30b0650bbde02"
     sha256 cellar: :any,                 arm64_monterey: "fe954c126580a4dce5e362731af0450ee58a592567ed61c4577a6f4ebc4fdc80"
     sha256 cellar: :any,                 arm64_big_sur:  "87a4f6c28283471b0e6ffb0d5014c5f19407cf529ae06ac394d738a8c78a14a6"
+    sha256 cellar: :any,                 sonoma:         "71f6113d8f89301a58117844a673403e6c1644c5f944a47b290c366974bd00ed"
     sha256 cellar: :any,                 ventura:        "6d3669405d16c316734407fca9ad6f9c08979469ab4e94978bb9590b675dc880"
     sha256 cellar: :any,                 monterey:       "f749917597db5e0325e46a193d756fda2b3b68cdf0d0c6217f7f6d0cb3fc7526"
     sha256 cellar: :any,                 big_sur:        "b4654aca4c0b6b8388e0eeb1816df35d073d50de97c9f32c04b6a1041ec184c3"

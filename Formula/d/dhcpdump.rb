@@ -1,9 +1,10 @@
 class Dhcpdump < Formula
   desc "Monitor DHCP traffic for debugging purposes"
-  homepage "https://www.mavetju.org/unix/general.php"
-  url "https://www.mavetju.org/download/dhcpdump-1.8.tar.gz"
+  homepage "http://www.mavetju.org/unix/general.php"
+  url "http://www.mavetju.org/download/dhcpdump-1.8.tar.gz"
   mirror "https://deb.debian.org/debian/pool/main/d/dhcpdump/dhcpdump_1.8.orig.tar.gz"
   sha256 "6d5eb9418162fb738bc56e4c1682ce7f7392dd96e568cc996e44c28de7f77190"
+  license "BSD-2-Clause"
 
   livecheck do
     url :homepage

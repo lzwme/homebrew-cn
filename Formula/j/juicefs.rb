@@ -12,9 +12,11 @@ class Juicefs < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "26ab09e158117d83499a5d1c0b1eee80de2a78c4886af61031dc6ddbf901d0fb"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d4f2b828411be54759b68bd2c35de73e62c7a3765105d570e4d34ac2c97e119f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "723faba5b5a34649ef5c1eb6f46c773d4c3c83e93666995bde959488644e13a4"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9bedcf875761f5442e08350bba29d9ee202f995efe706cfc3d3ac573a9a1e7be"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0ad5d208b8db05455ec5f87d1675936141e58c88c73d60c85c3ce2836e205388"
     sha256 cellar: :any_skip_relocation, ventura:        "3022581aff6b242a1a57a23d0819c8aaf563ff1c7da9e23f99812dcd67c7bf5c"
     sha256 cellar: :any_skip_relocation, monterey:       "dd007211ad22407b11a7bc7ebc75bcad01d0b2d06eec5f21d2084df9c205894a"
     sha256 cellar: :any_skip_relocation, big_sur:        "49c6aa4b817dace8f5fd14644061889c1bcdbc4ef568ec62f587a9f411c9ec63"

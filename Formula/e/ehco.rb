@@ -22,9 +22,11 @@ class Ehco < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ce87be268da3599a4b465c714c53bdd48c16175eb0ed116c362d43d42070b5d4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "160dad33d85042932828946aa471dedf9b4e7b7ecc3bb7373028cc41b20e137b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d4a07a01a296fea82d902512cfba70c690dd78316c651498a4f547d9970aa0f6"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cf3a460190a6e3a371e2438b652291d87813a3ad330b921fa75c2d572c1805d8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0116095188ec9eaa269a42074efe4cac03e1dee04f1223284996b5468b9d815a"
     sha256 cellar: :any_skip_relocation, ventura:        "cfe40d06528a0a3de3fcf2104798bd16bf1c983336388ad55fa768242656703b"
     sha256 cellar: :any_skip_relocation, monterey:       "07d03ba1e3d42a0d642eb5ae5d1542e4182fb65dbefa19aed3282fae4698ce99"
     sha256 cellar: :any_skip_relocation, big_sur:        "50868b237dec60e966853112729055bbbd905e76a24e2775a4db4ba783137c7d"

@@ -8,9 +8,11 @@ class Jello < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0640d669e55190c1bb552ca91d6000d7150ce2398ed401e34ae825093f1fdb5b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f1217174cb1d558540f2b90eef4ce0c329684032514ad18c165287db1da0b7a2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f1217174cb1d558540f2b90eef4ce0c329684032514ad18c165287db1da0b7a2"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f1217174cb1d558540f2b90eef4ce0c329684032514ad18c165287db1da0b7a2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f8345225954ddc34f7a8e733f1fabed6cea6caff2e53a9851feba48a16ad5ae0"
     sha256 cellar: :any_skip_relocation, ventura:        "ab0954cb09156c2c55502e596220e2fdfe887dde5ccbda8c20db768d68d2d4dd"
     sha256 cellar: :any_skip_relocation, monterey:       "ab0954cb09156c2c55502e596220e2fdfe887dde5ccbda8c20db768d68d2d4dd"
     sha256 cellar: :any_skip_relocation, big_sur:        "ab0954cb09156c2c55502e596220e2fdfe887dde5ccbda8c20db768d68d2d4dd"

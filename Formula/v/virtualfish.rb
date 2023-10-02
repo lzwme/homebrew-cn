@@ -9,18 +9,18 @@ class Virtualfish < Formula
   head "https://github.com/justinmayer/virtualfish.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c1f2b69c4de3adc72490790bdc1305763e69a014244e2828a2d9ab03bf9663c4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0e0cc677febba260aab7df92b1c7dcb129c18a17fb456f1dda5042c334dc0a1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "34627b7e4f36609c1f8d644bf50e1253d8c48e5051c3023cb619f46dfd36c1cc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7702bc920a867e3b00c329ed4019f32537260f79698d93f699c2602fac1f6b1a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cbc2e959af9739c68ffc6b7e0087ec1bf8317a547c1f81e4f63611bb371ab449"
-    sha256 cellar: :any_skip_relocation, ventura:        "4efedd58a9b4f7f5729d6a6f48c95caac465cce605f99f61320c8da8531b7c90"
-    sha256 cellar: :any_skip_relocation, monterey:       "ad8acef6081ca8056bff84170a35a1e34b0d120f5464081bda62c7ef77e593c0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7f0797f44a77c01d99676e37d6f5ecb9ac4ce2bdd05a433bcbf67fa0c00134a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "62d85d58ec0c5c531c7222c0921bb14d60fd78be2e41c533247e79f228a51cea"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bb5659a3dccf8aca0ce26357a44412fc37eaa41b549e267a40877295976cc506"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8ab3ff5ace0d73f23f48e9ff60d3052938b74067f8619e62f7a20aa3391202ce"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3188b932a2fd5c42febe89ad2f7938a5690192e0169e451fae2546e4ab0b9e8e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "679572b2f87e4b3c5920f31e613fc855d80240486a0dac358e0eb1c236bd0a1e"
+    sha256 cellar: :any_skip_relocation, ventura:        "399e30b5c9a5880f369c54ed9ac1bd1f4841e9d368e6cc653e42e70cba1536ae"
+    sha256 cellar: :any_skip_relocation, monterey:       "d6c920275b55f1691e96646bd476793fcb2b472727bf18bf190121102fffef06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ddd06c6b6146915a6a50a9cd64ef45ad385f54e49f5a272063d56690b081e7dc"
   end
 
   depends_on "fish"
+  depends_on "python-packaging"
   depends_on "python@3.11"
 
   resource "distlib" do
@@ -31,11 +31,6 @@ class Virtualfish < Formula
   resource "filelock" do
     url "https://files.pythonhosted.org/packages/24/85/cf4df939cc0a037ebfe18353005e775916faec24dcdbc7a2f6539ad9d943/filelock-3.12.0.tar.gz"
     sha256 "fc03ae43288c013d2ea83c8597001b1129db351aad9c57fe2409327916b8e718"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "pkgconfig" do

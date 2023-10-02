@@ -15,9 +15,11 @@ class Geoserver < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "57d7d0ce44729edee6e232740b68eb822acc5e737dae6330db2edaa71becb2e7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef77db1edcb761685bcebe4e91c82eb5244bf78e1115a7c129529de2a78d25ea"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ef77db1edcb761685bcebe4e91c82eb5244bf78e1115a7c129529de2a78d25ea"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ef77db1edcb761685bcebe4e91c82eb5244bf78e1115a7c129529de2a78d25ea"
+    sha256 cellar: :any_skip_relocation, sonoma:         "57d7d0ce44729edee6e232740b68eb822acc5e737dae6330db2edaa71becb2e7"
     sha256 cellar: :any_skip_relocation, ventura:        "ef77db1edcb761685bcebe4e91c82eb5244bf78e1115a7c129529de2a78d25ea"
     sha256 cellar: :any_skip_relocation, monterey:       "ef77db1edcb761685bcebe4e91c82eb5244bf78e1115a7c129529de2a78d25ea"
     sha256 cellar: :any_skip_relocation, big_sur:        "ef77db1edcb761685bcebe4e91c82eb5244bf78e1115a7c129529de2a78d25ea"

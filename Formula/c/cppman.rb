@@ -8,9 +8,11 @@ class Cppman < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "846f2de8903994f5383601ff8539bc83469dd12eab008c3ecc65914ba7e618f1"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "85ce804f79cc3df74fb57f78cb83d260b0f6d3cd7bf2eeb593441a9898c7bba3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "529031e649ee5929ff3d2c4e191eecf8b1b78996d926c25695a26a1e22328d24"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0ef54048e0c3f56e7fc643a8299c520022a79d72647e599498f300ae020586e7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0b7575164b4b72fb79560377d79a1021e7c6b3c452d488ab8653e9824695f5e3"
     sha256 cellar: :any_skip_relocation, ventura:        "00ef1e771cab08185d25dcb0eec05ba2b07bd0cc89cbcbf81a065fa2ab75e6d6"
     sha256 cellar: :any_skip_relocation, monterey:       "52726dea84aa5115e17cc55ee8642046b677929e089b2f08fb2d0b2bdb1dbb43"
     sha256 cellar: :any_skip_relocation, big_sur:        "bbbd8842697830a91f72c4c656656b25f889f94ba850d39368232d8d3cb549fc"

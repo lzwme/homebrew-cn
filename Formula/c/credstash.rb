@@ -11,9 +11,11 @@ class Credstash < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d664a1db5cc06cdfe123be195526a719cf10aba04bf94e5252346c41ba390e83"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b86ad1d335d4746f547947fc9b42ce6addc5f1c29463c8218c15fc334c8e1715"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f77105f741e79810e8dfba34cacd76a0f9966426815b62c408fec2bba5348fb3"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e0391a96475de52009bc689bbaa4472a876a79d211873a89a4038d5e75087d75"
+    sha256 cellar: :any_skip_relocation, sonoma:         "de83502f77b844ae67d1e96631d926c2e7e424fdbb307269596b5f48e2149ba3"
     sha256 cellar: :any_skip_relocation, ventura:        "2986114fe1b33be3e0122e3810e14b4efa2486028b2cc99500aca94f448def5b"
     sha256 cellar: :any_skip_relocation, monterey:       "126c705b846615953eae6057d205728c479236eeb8081c23203022aadd2ac273"
     sha256 cellar: :any_skip_relocation, big_sur:        "386372a295a6b8a73f1f1f6824e70d5ceff72be362c442f82f79495894ccf177"

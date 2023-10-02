@@ -11,9 +11,11 @@ class Dovecot < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "b3d70604dcf10caaf9cf9505f3bd90ed48bdee2ba891ef891ae1c10fe0a7a4e2"
     sha256 arm64_ventura:  "b89589ccfe9620e87c163c99ed504fb875585dd23d4a53487dc7935b02866c0e"
     sha256 arm64_monterey: "5ae2a7172bf487a36f90ee0115e57572f7a52e5b1dabdfd8929ee4f01b78d2be"
     sha256 arm64_big_sur:  "ff928eaeb4ec664bd5e8cba3060a4745a9f6a34f667ff288e0f119c930692f3a"
+    sha256 sonoma:         "5f21b1c455dc089610cf936add3d7e6c3318da234aa945c3e98191663b9b6022"
     sha256 ventura:        "5c6db5e542ce460ccfc2168b3f14ec80279a621cd076fc5836bad88eb93f5d55"
     sha256 monterey:       "dd17baa57200f7d95ebc5f8870cca4cf9e48c570840e42c9b1f51d02ec1dbbec"
     sha256 big_sur:        "e3cba8498560c19191205b503aad5093a1dde6bf45c3e01319f94d89f554321d"

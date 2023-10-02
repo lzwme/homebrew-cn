@@ -8,9 +8,11 @@ class Datasette < Formula
   head "https://github.com/simonw/datasette.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f67c15efdda494d7d825959be3eaa8a06b054c8e45cd0ad578f05b71b843ea92"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "16dc9d42dab2c6c3803aa08acbd9560ef0877f14b7a4777ff3c40b9cc63fd15b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5f05fd462d8109b6944f71996580f3a613087f2dc72c7aa155f62acbeda02274"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7f75e798312bba2c9c54a73ebd7191aa823b6310fc9509ae0dff388c2e866590"
+    sha256 cellar: :any_skip_relocation, sonoma:         "983d9e862e7b0dd2ab8ac976c0ba72c83b680078480669bf45d192012586aadd"
     sha256 cellar: :any_skip_relocation, ventura:        "f0348901f4427ab27aff1a4328ec0624b0430ddb05cc0238294f3e09d842ee65"
     sha256 cellar: :any_skip_relocation, monterey:       "7b766606fe8e0fbc0f58f754e57e49d44cbe1d1b1298ba2603871c3cbbbd2acf"
     sha256 cellar: :any_skip_relocation, big_sur:        "b23a508d15f48c13e2ac6cc33cc498e0eac71327064f01ae7bb59b6414c09adc"

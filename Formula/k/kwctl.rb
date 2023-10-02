@@ -7,9 +7,11 @@ class Kwctl < Formula
   head "https://github.com/kubewarden/kwctl.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "880c09fe16753953d989a20e52dc622b8dfb35ede929919a83a3bf897809a558"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "009aab04aad839c76aa2fcec21087a50050ad9c36a7f8bd5852b3c5937bd46c9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c7dd2f0e268783fe1f7248872f76573164f7fa164bd169aa8fa7582825a3e971"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a690cfdbdd6056eaf4e0940b6f8f24aa19e8e030f2689e69aa5104d4a107e332"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f78f6376e6a1c608ecba036e44ccc86f228c616da9948cc25d29495380b081f7"
     sha256 cellar: :any_skip_relocation, ventura:        "4fbc4c10ee480c057c330f043c28c1990ee13d5dfcef9e196a714579ce1ebd81"
     sha256 cellar: :any_skip_relocation, monterey:       "e312a93b827f28c47cdb442c7d0a53ad16ef41e0464eaed9ae694ce8fe452500"
     sha256 cellar: :any_skip_relocation, big_sur:        "e0652d9ef3ca92d684028d81d8a4a3e0ae2412e581bca3f81d8025d77d82dab7"

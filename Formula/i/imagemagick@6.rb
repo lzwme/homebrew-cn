@@ -1,8 +1,8 @@
 class ImagemagickAT6 < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://legacy.imagemagick.org/"
-  url "https://imagemagick.org/archive/releases/ImageMagick-6.9.12-96.tar.xz"
-  sha256 "570419d87cc8f22d36a038b4a91de349b181d3c23cfbedc241f89789564402b0"
+  url "https://imagemagick.org/archive/releases/ImageMagick-6.9.12-97.tar.xz"
+  sha256 "82d006fabfb9848705de12ec43808250f242bf5e767a44663a6d5c4138119ffa"
   license "ImageMagick"
   head "https://github.com/imagemagick/imagemagick6.git", branch: "main"
 
@@ -12,15 +12,13 @@ class ImagemagickAT6 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "d5fcf314adfbe1c8f7c694ed75d9c0477e4ebda134cbb10ec8c13f3b47b5a577"
-    sha256 arm64_ventura:  "c533e07298a9f72d32e6df01dac0161234c35ceae477e6520663bffab360ece8"
-    sha256 arm64_monterey: "4b1120c9913a07b7acd63e8b88a61b546b2b2e7555a2490be127ed1e847482b6"
-    sha256 arm64_big_sur:  "adeceecc8b01c21fe11f2059c50f4b47fe5a54289a98e68447c4c216068557f4"
-    sha256 sonoma:         "6cce60a322699019375f1399b4e080294917869cd2e165b6036d6c0a27d4ab91"
-    sha256 ventura:        "9906b2e4d797b835405c485e053b945fcc452273d6ddf60f38a972b4be0d305a"
-    sha256 monterey:       "1ebc697d6561e66a9bf8ef1581654e559e46a699e6ade5ce07f9ff15f547c15d"
-    sha256 big_sur:        "b1a1ba209a529d825ef47de53e169b894fb61cd2fda73033edd6931b80032745"
-    sha256 x86_64_linux:   "2535e2a6affec57e09d7488a0f106e58f1ad97258ba04e574c6af187869cec3a"
+    sha256 arm64_sonoma:   "cb0f264dae319c93230406415aa7c5a8e4dd5bcf995c6c7a921cee48b99c82a6"
+    sha256 arm64_ventura:  "e5c5210f70ede165ba37d07eef1baabf86bb84ab1b008ca240e0fcf99e23f57f"
+    sha256 arm64_monterey: "3fa0c782c40e973b30f81e0568ace371abef0ecc05fb95787269779c08a80ace"
+    sha256 sonoma:         "a07de1b0846d2738ea8cceee89dee68632709ba0f7504302c96d804484d16218"
+    sha256 ventura:        "e2e079bcc96dc91f2501ba60a3b67cd1ce286874b0b6d43234e8bbd461bc2445"
+    sha256 monterey:       "0710b94958f51c38e0371044549e480ee781f36cd48abda6748d9654c8aaecc9"
+    sha256 x86_64_linux:   "f234a0238a201716206b6efa0f1c1831c36c6868afda7cb40e47214df023a105"
   end
 
   keg_only :versioned_formula

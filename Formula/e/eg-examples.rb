@@ -8,9 +8,11 @@ class EgExamples < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e3617374f584201cb1f1e4c822e3fdf66b2432637aa62a4051c76bd2a607aa13"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f330e1f5d275b7b3a99733158c3f1f30d5784d0e3c08fcef84f0db7015b9ba3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1f330e1f5d275b7b3a99733158c3f1f30d5784d0e3c08fcef84f0db7015b9ba3"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1f330e1f5d275b7b3a99733158c3f1f30d5784d0e3c08fcef84f0db7015b9ba3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fac0743123470fa2a50c0d9fb945b3295176a5b90b03c41c0ac6987f30da574b"
     sha256 cellar: :any_skip_relocation, ventura:        "719513828804556f4ee23b00a34b2043761640d853173a5eb061625b2750c073"
     sha256 cellar: :any_skip_relocation, monterey:       "719513828804556f4ee23b00a34b2043761640d853173a5eb061625b2750c073"
     sha256 cellar: :any_skip_relocation, big_sur:        "719513828804556f4ee23b00a34b2043761640d853173a5eb061625b2750c073"

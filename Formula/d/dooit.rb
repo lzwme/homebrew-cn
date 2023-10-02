@@ -3,20 +3,19 @@ class Dooit < Formula
 
   desc "TUI todo manager"
   homepage "https://github.com/kraanzu/dooit"
-  url "https://files.pythonhosted.org/packages/5d/30/b4bc0081fdc21a432cd04ada051560eebbbf90c1d685c2e9f9a350c694a0/dooit-2.0.0.tar.gz"
-  sha256 "4630ccf599ebc72a315c26acfff2dc9c5cf79946eba84a3f81f1951f7bc96ac5"
+  url "https://files.pythonhosted.org/packages/c7/b3/8d73a4ed09c6589242adf005d3c83b662989ac944b983efbfe27fc6b3d93/dooit-2.0.1.tar.gz"
+  sha256 "ebf1a83a1cd6f3a101cf7a4b122790d705905540ddf89b5a4a64a4de1199c983"
   license "MIT"
   head "https://github.com/kraanzu/dooit.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bbe8ad4bf5c7beb2d311ffeb98f54633a7167f6518b9aab6c829597786a2b870"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "67821f831096f513b730b6732f727fa5a310878d24fc895c1a6df9049a66652a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "56a73c794ae86b504b99131998b4042cf51aa09539f9d5272d0bf956903e3b80"
-    sha256 cellar: :any_skip_relocation, ventura:        "99ed48530b2f4c98e27a13e2e4fe5ce34c8ef35c3d995793663a6595e8423f5d"
-    sha256 cellar: :any_skip_relocation, monterey:       "ca87f4e9445c0a7a332c49c0ac52f020c6048d19f736bd89f14d4fc2249bad7e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "44b728a8b73123ffaa24e48f9043e7b3208f3c6638ef6ea1c5340f16df305178"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6352582928aa3bc58bfa8af6e960b61b6f14984c33715cf97c91d02f73b3fe63"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "df114a5785a311e1fac2e06b617f6ceafabc6e52322baa75eff4a552aa517bb3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4dcb0c3456451f88f1725fcee8dbe50d2d17abf5da0258092d9f816a6368b993"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "aa322851a8aef284f2a4d35ccd572c2185255035d9e0e50bb945a6c656acef13"
+    sha256 cellar: :any_skip_relocation, sonoma:         "42638336cc79a01a8a1734baaf5f7840b25b0f7eb2e1f8c24f0cb779910477cc"
+    sha256 cellar: :any_skip_relocation, ventura:        "f6b3107a0b41c2074e86377e2cc12dcf78713e2158229a4af057be921ce793f8"
+    sha256 cellar: :any_skip_relocation, monterey:       "07140dc860b11d0a047d559ef3b0d92d563186de43b3f2369247abe8536f72c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1bff0a41917fd66f034757ba62fa666a94927737ef4bc639b8db23f3fb2895a0"
   end
 
   depends_on "cmake" => :build
@@ -58,19 +57,19 @@ class Dooit < Formula
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
   end
 
-  resource "parsedatetime" do
-    url "https://files.pythonhosted.org/packages/a8/20/cb587f6672dbe585d101f590c3871d16e7aec5a576a1694997a3777312ac/parsedatetime-2.6.tar.gz"
-    sha256 "4cb368fbb18a0b7231f4d76119165451c8d2e35951455dfee97c62a87b04d455"
-  end
-
   resource "pyperclip" do
     url "https://files.pythonhosted.org/packages/a7/2c/4c64579f847bd5d539803c8b909e54ba087a79d01bb3aba433a95879a6c5/pyperclip-1.8.2.tar.gz"
     sha256 "105254a8b04934f0bc84e9c24eb360a591aaf6535c9def5f29d92af107a9bf57"
   end
 
+  resource "python-dateutil" do
+    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
+    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+  end
+
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/ad/1a/94fe086875350afbd61795c3805e38ef085af466a695db605bcdd34b4c9c/rich-13.5.2.tar.gz"
-    sha256 "fb9d6c0a0f643c99eed3875b5377a184132ba9be4d61516a55273d3554d75a39"
+    url "https://files.pythonhosted.org/packages/b1/0e/e5aa3ab6857a16dadac7a970b2e1af21ddf23f03c99248db2c01082090a3/rich-13.6.0.tar.gz"
+    sha256 "5c14d22737e6d5084ef4771b62d5d4363165b403455a30a1c8ca39dc7b644bef"
   end
 
   resource "textual" do
@@ -89,8 +88,8 @@ class Dooit < Formula
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/e2/45/f3b987ad5bf9e08095c1ebe6352238be36f25dd106fde424a160061dce6d/zipp-3.16.2.tar.gz"
-    sha256 "ebc15946aa78bd63458992fc81ec3b6f7b1e92d51c35e6de1c3804e73b799147"
+    url "https://files.pythonhosted.org/packages/58/03/dd5ccf4e06dec9537ecba8fcc67bbd4ea48a2791773e469e73f94c3ba9a6/zipp-3.17.0.tar.gz"
+    sha256 "84e64a1c28cf7e91ed2078bb8cc8c259cb19b76942096c8d7b84947690cabaf0"
   end
 
   def install

@@ -7,9 +7,11 @@ class Exodriver < Formula
   head "https://github.com/labjack/exodriver.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "459ce6ca331aeac97187dda22c289353e521a130ca33f3db6db8810b64d9ad6c"
     sha256 cellar: :any,                 arm64_ventura:  "70b1afd209046f565518384c2c974346ca96324beb2dc51fced383463c6133bf"
     sha256 cellar: :any,                 arm64_monterey: "dfa84090b35d7105eb7e57d95a8aa1c29d82996b530ab185996d3ac9ab09e01a"
     sha256 cellar: :any,                 arm64_big_sur:  "cf6b1fc2151d7058b04b0e21ef74604a657ea8fc02f61de05bb05ff3fc4c0e9f"
+    sha256 cellar: :any,                 sonoma:         "bc4979f9cb06b3bf093a6f7a5d60c2b372299c0c0dab38e24cb0833767f6b4bd"
     sha256 cellar: :any,                 ventura:        "32715a1a59209051175d941d67522ac295d1676a86588029a88b1450a15e2688"
     sha256 cellar: :any,                 monterey:       "22a821cbd31ec096872832ed6d0cb11aa0c5790f2db69d4bc2782cf3b619c454"
     sha256 cellar: :any,                 big_sur:        "507baa6e157dfa2b3b5f824aa6a73fd58f19daac9b1e73fd735048323fb241cb"

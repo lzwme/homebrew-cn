@@ -7,9 +7,11 @@ class Imgproxy < Formula
   head "https://github.com/imgproxy/imgproxy.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "945558c493d04c60b2761f6e5afcde12abcae501fffd6fa5ed86c3d8ef1afd11"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b2566545d16514f3057218a3d8d8a23a388d09c65c569788f323a3921f20c4f6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "cee946674c921b38b64ed9c38d2350eb252d59ca9670f34b29ac6521207b92b8"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "479b9f9a9c57bbdbf77cf18fd4856a780fb07cda21d3f5deecc7745d1365bde7"
+    sha256 cellar: :any,                 sonoma:         "928297affa16dc8ad7599faa87fdbcd89f11a25bce6b9d45e8f4d811fe295cbf"
     sha256 cellar: :any_skip_relocation, ventura:        "cfded487ba77086e27653cd910ceda91c09fbd655f72ac15074d044a1a17128c"
     sha256 cellar: :any_skip_relocation, monterey:       "b8520cdd3147c0ae93a0cb738ddc2fec857366eeba74f8f50398ff401ac0e0b1"
     sha256 cellar: :any_skip_relocation, big_sur:        "effd35e9328f10b657dde0aa4f1d72a0f1033be894078080f948947d3bca4b28"

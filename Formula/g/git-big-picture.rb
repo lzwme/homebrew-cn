@@ -8,9 +8,11 @@ class GitBigPicture < Formula
   license "GPL-3.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "66ded7ad1e5c08d491ab753537bdabb74066bbec53eeb934b2fa2dbf4753e435"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7646579430d2ab35d1aabe5661be2eacde3da778db1259e962c4c0df78720bf1"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "7646579430d2ab35d1aabe5661be2eacde3da778db1259e962c4c0df78720bf1"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7646579430d2ab35d1aabe5661be2eacde3da778db1259e962c4c0df78720bf1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "70ffef854d075c9bac0204cac0e38c6ae101c29af58435e38cc1834bd0bb0725"
     sha256 cellar: :any_skip_relocation, ventura:        "705f6bfdb8623f2a158fc034a7b51097f4cf541da9db461f9000c33ccdf3d193"
     sha256 cellar: :any_skip_relocation, monterey:       "705f6bfdb8623f2a158fc034a7b51097f4cf541da9db461f9000c33ccdf3d193"
     sha256 cellar: :any_skip_relocation, big_sur:        "705f6bfdb8623f2a158fc034a7b51097f4cf541da9db461f9000c33ccdf3d193"

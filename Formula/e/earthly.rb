@@ -8,9 +8,11 @@ class Earthly < Formula
   head "https://github.com/earthly/earthly.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9e61da47c2af0dbb81ddf8cad72b55be0d2e1b346a08c7e93018897914d0f11f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "9e61da47c2af0dbb81ddf8cad72b55be0d2e1b346a08c7e93018897914d0f11f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "9e61da47c2af0dbb81ddf8cad72b55be0d2e1b346a08c7e93018897914d0f11f"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9e61da47c2af0dbb81ddf8cad72b55be0d2e1b346a08c7e93018897914d0f11f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ef64c705751c0e1b46a24e54508352c889173046a55141357f2b7b4650f268d5"
     sha256 cellar: :any_skip_relocation, ventura:        "ef64c705751c0e1b46a24e54508352c889173046a55141357f2b7b4650f268d5"
     sha256 cellar: :any_skip_relocation, monterey:       "ef64c705751c0e1b46a24e54508352c889173046a55141357f2b7b4650f268d5"
     sha256 cellar: :any_skip_relocation, big_sur:        "ef64c705751c0e1b46a24e54508352c889173046a55141357f2b7b4650f268d5"

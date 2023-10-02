@@ -7,6 +7,7 @@ class Ghostunnel < Formula
   head "https://github.com/ghostunnel/ghostunnel.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b91fc4f97fdd37a4193dc2a9128ec8758d1b11667d84d8bac2dffd341fe2f629"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f6456eea77410787d8fe28c7f9cae2ae8624fbaffc2fba2e06d11dda74b3bc9c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b66f6e2fec5210fe2189461b3732ff558386fcc98d0850442a5df862bdec0910"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3d37b5c7e36c2192474cbc43bcc966af03534f8c8ab7da0ab192aae4e3650d8f"

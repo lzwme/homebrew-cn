@@ -11,9 +11,11 @@ class Cubelib < Formula
   end
 
   bottle do
+    sha256                               arm64_sonoma:   "2b11087f52488b50b2828f240d8ab658c30c92aa29512b59d8b18dfe3366df43"
     sha256                               arm64_ventura:  "1d811d0574291b83062360b03a449d381dac2b229296bea739f33aeb1a17edfb"
     sha256                               arm64_monterey: "aadd710f61fc65f005f5e07ba91eebd5b4d7c91d47779b0fde316b9eeeb36992"
     sha256                               arm64_big_sur:  "323e03f8439b4fb0250fbb0016bf7950ab3816a7a9cf8b47c1ab29a5c2d42c86"
+    sha256                               sonoma:         "44e70a9911bebf2ecac7827c87c1107d497fd2d791cf61e65f30d310dc741da3"
     sha256                               ventura:        "fe41d2cf6093309fc12bb5564e7cbb6b641451aec92956f3d89920e5cd6bc441"
     sha256                               monterey:       "9dc98f1eaa021114b31615d0c9b804cea0755d7c839f1dd7a0df2889ca2d2131"
     sha256                               big_sur:        "d66981b620159dd57d48bb0c45240dc6cf37085acdf288d9c5500ff07bc828ba"
