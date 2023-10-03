@@ -1,10 +1,10 @@
 class Cryptopp < Formula
   desc "Free C++ class library of cryptographic schemes"
   homepage "https://cryptopp.com/"
-  url "https://cryptopp.com/cryptopp880.zip"
-  mirror "https://ghproxy.com/https://github.com/weidai11/cryptopp/releases/download/CRYPTOPP_8_8_0/cryptopp880.zip"
-  version "8.8.0"
-  sha256 "ace1c7b010a409eba5e86c4fd5a8845c43a6ac39bb6110e64ca5d7fea08583f4"
+  url "https://cryptopp.com/cryptopp890.zip"
+  mirror "https://ghproxy.com/https://github.com/weidai11/cryptopp/releases/download/CRYPTOPP_8_9_0/cryptopp890.zip"
+  version "8.9.0"
+  sha256 "4cc0ccc324625b80b695fcd3dee63a66f1a460d3e51b71640cdbfc4cd1a3779c"
   license all_of: [:public_domain, "BSL-1.0"]
   head "https://github.com/weidai11/cryptopp.git", branch: "master"
 
@@ -17,15 +17,13 @@ class Cryptopp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2d04588d2ce3edc4cd36fa83d89961006c9ec29435134e9e903df75ea3c30b05"
-    sha256 cellar: :any,                 arm64_ventura:  "7d03053c9802c0533b277549f9a4173ca985ac065076d5ec1846673400665177"
-    sha256 cellar: :any,                 arm64_monterey: "2e3fa5188ca17a91484735723c37272f56c26f14f71d8328b3d10ebab5ca14d8"
-    sha256 cellar: :any,                 arm64_big_sur:  "a6d82bdb7e7fb9422abfb954c2008c014c819552304b3a3dfa944ca5a73b8eaa"
-    sha256 cellar: :any,                 sonoma:         "72516250a4581363fafcb46c224295bbafb6c96805971368fea386c87d0a0e32"
-    sha256 cellar: :any,                 ventura:        "67ef7d471cc2702a3d113167ab62073dd413f408f1461e11fd18c25347293f04"
-    sha256 cellar: :any,                 monterey:       "013ce1ca4a1a3ccbe379794214bf9b9a433e77d4a6f85870acfdaa258e1d5ec1"
-    sha256 cellar: :any,                 big_sur:        "5be44e1e27595782ceac99eb8a36c43b567d9eb8db2116e5702aaaecfe9073f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebdd057a75c85f69868a0d64b3da7b0f4514856f889ec959ff67408e2c3431e1"
+    sha256 cellar: :any,                 arm64_sonoma:   "9f71fb46be984b3de81084bc400340f93a1e888bb580b3829c522fc43d8c97eb"
+    sha256 cellar: :any,                 arm64_ventura:  "1f37a8ac9856c2249251e98da5e75a95bf34fab3dfbf600488c1fabe6dd1d546"
+    sha256 cellar: :any,                 arm64_monterey: "6bcd6f6a6afabaea3c17c1d08afbe71dfd1daa0023064035dca0ec0a84980d34"
+    sha256 cellar: :any,                 sonoma:         "da2d97ae9b15cc9df4de1098db5492795ed8d10c830c595ae57b8965aef99b9f"
+    sha256 cellar: :any,                 ventura:        "04a1f334f8ceca0f56dca4120e4a41892c400b7302c884438a1d242278fded4a"
+    sha256 cellar: :any,                 monterey:       "86aeb2c3a76277dd6cb99e697768ad77e2f77fd23063fbb9c3321d3bab51b91c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be09ea086a11c50c5717a8cf7e2c2f682bd9a2c9cbdff945c85d4e4bab290116"
   end
 
   def install

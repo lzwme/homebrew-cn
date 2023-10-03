@@ -8,9 +8,11 @@ class Htmlcleaner < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "80b49c3d2908f0b16012c0df1ca1b8106b89c3cf32acec145297e73fd9b07db2"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7a24575c2b43f626d3d9da81c7c5827552373384c34906e311e609d65e443485"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f8f9df98d6b5f4876d20c9b92912655d90cde869c551749e341df6c7e267d308"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8845ce2d35c04af60ced49eff3a85c9bc36aa04f1bb6aaf4cca88ceaebe4304f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0693691bbeeb073072948882cc808f3614781c2cc641d2e20fad1511ee3f883e"
     sha256 cellar: :any_skip_relocation, ventura:        "92b7d24b687fb475b97e90e783c69f9ef552ee52517d7c15b7f36f1389751bc7"
     sha256 cellar: :any_skip_relocation, monterey:       "9e41d626c3516fc8790e4e5a0dbb25063bca90204847acdf3024ea59bb825b3b"
     sha256 cellar: :any_skip_relocation, big_sur:        "d0d1da20c65da61938e3a1f13987a8668eb0c11d7a437ffbf03c25a5d5829253"

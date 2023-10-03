@@ -7,9 +7,11 @@ class Gom < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any, arm64_sonoma:   "bdb7e9c5ba043787e13988a7cc6401b2ae910ab8d3a7f8a1a08b24eb60e91575"
     sha256 cellar: :any, arm64_ventura:  "1db9a445a9ca871063b486b13569c1d40294fbc61bce2830b92bb464454a88fd"
     sha256 cellar: :any, arm64_monterey: "b0d9c5cdb6be395f3a219b0a507a33083af49b45d67b09f53fd2a1f1854bd974"
     sha256 cellar: :any, arm64_big_sur:  "177ec20f055b4dd60a520964535dda64c7ee7b398b01659b61b9c23044b0ff89"
+    sha256 cellar: :any, sonoma:         "7df006ec8d06744c5a59dfb2ce8dd1032179eb9befee8fe090930c980ee51352"
     sha256 cellar: :any, ventura:        "9e4fbb963c63ea9ce7eb29bcc44b92c0190bd0a4acdb33dce184cf25835ad7a7"
     sha256 cellar: :any, monterey:       "8f54d9de185474a26c57d6252ded258e5964e51e4577409ab9dffa23c11d9f44"
     sha256 cellar: :any, big_sur:        "ecf4e4b467ea8911a19be1f22291ca193e7733490a1dcce5641becc10979a63b"

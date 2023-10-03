@@ -7,6 +7,7 @@ class Libcpuid < Formula
   head "https://github.com/anrieff/libcpuid.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 sonoma:       "ed281b23f1a3aa4d61b95becbac4d154950133491d8c1105dc1f199b2b7b0510"
     sha256 cellar: :any,                 ventura:      "84d3564619410abf63cb5dd759bd5c129d9caf273ab972bc1f04ff4fa3fcb29a"
     sha256 cellar: :any,                 monterey:     "d05aefe01176128d788f2c914d02b8ffc6a111ef2c2e04d142a2c3f3fc46a68b"
     sha256 cellar: :any,                 big_sur:      "35cae66754dd499614f854c21da717fec919aaf7cfd50ea8e0a3c9b83e332a19"

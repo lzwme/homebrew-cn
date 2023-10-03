@@ -12,9 +12,11 @@ class Grokj2k < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "97d23005578ffc4079d6644f3fdae12b40e552f58830f35e1e55914363e5e2f2"
     sha256 cellar: :any,                 arm64_ventura:  "454e5db3da106f4a05d3e910d2a9eddad4d8686da39b6d3960d6fa3e30396040"
     sha256 cellar: :any,                 arm64_monterey: "ec19f0bd07ad94ead5ff5ae27f67c3a5865cb7ba44675c5ef80625d93c701ea3"
     sha256 cellar: :any,                 arm64_big_sur:  "b3fc7d488dd1744db86fe4dccae13a73c3864abdef7f9341ab6106372312f42b"
+    sha256 cellar: :any,                 sonoma:         "a579ebd1aa0ddbb4ff87b4bb8ee44ce557641b254922bf556881f4da42a0e3cd"
     sha256 cellar: :any,                 ventura:        "60f638ed5e3b00f3e6e0539adecf6983214f55098da5d07d615625499d7cfa8f"
     sha256 cellar: :any,                 monterey:       "b30205941ca26a9db98b3e9df4db4cb7bf178bb0b4ee786d41f2f7acb4eab3b7"
     sha256 cellar: :any,                 big_sur:        "167f3e00b817fb9627fd4016a450d9e1699a26e42d976558b2de4a95e652bf5c"

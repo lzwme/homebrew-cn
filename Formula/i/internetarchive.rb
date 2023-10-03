@@ -10,9 +10,11 @@ class Internetarchive < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6406ebbf065e5367eb7364c35d25a395d4efca91d97d6066cf537e65776d8ca3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "222306cd4e691e4c810bd79b8b268a30a05b5f32c837fe2111c360e43dbdb07b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8f5b906d5a13a9876f67b685cb068d50a6a2cbb3d1414b843944dc73dd35ce2d"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c4b30d5a1996078de70cea20d95433acfd1dd18f1869ed5f7d028f2179dc68e5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "50d2f2c5edfba16128b9df2c5feb22ff35cf07083e8699b52f8f2e914b8ef930"
     sha256 cellar: :any_skip_relocation, ventura:        "291fb0fca73c998b09d861b8441ab75648e3d146e2fb992e1481fea8c5896ea3"
     sha256 cellar: :any_skip_relocation, monterey:       "8b25f2df1ec188caadda7679899079ec8f3835330743743709f14769d05c9213"
     sha256 cellar: :any_skip_relocation, big_sur:        "e51eb0dcf05fd16a01afa74c2bd601d62b15e20d2ca112b2a7d61aeda8c2c609"

@@ -8,9 +8,11 @@ class GitMachete < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9dfede52de20741141b77d7f9668d46c3b23be77a739b01bb2c1178875df2544"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0cfa11606b97f95f2a9d60007dc09bee24cb4285b3e8511a855a2ecffabfe51"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "18671e9c3df07986f25a8d23195d6b9e489a48ebf5160d790427a22aeddfc944"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "788fd83484d5d2b8a202fe9adcae1f4e38aecafae709dc56b2623d221e0dd184"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8add786782943b140350a00d56bf4eaf907c61045ac7517d1562fd41895058f0"
     sha256 cellar: :any_skip_relocation, ventura:        "705e75f2dbf4f09861891f3bab78c27a2cba668404b0874efb30286c15257c56"
     sha256 cellar: :any_skip_relocation, monterey:       "04f1d9d0b4ddfdc55c5eff6c00c4028fb5259ed37eeb14a38e8156ff18c2dfe2"
     sha256 cellar: :any_skip_relocation, big_sur:        "ce81f35b2a1ba406b3e630428ebcd69598766d59db9811ac719835e619da6e80"

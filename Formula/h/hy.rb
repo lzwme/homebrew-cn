@@ -8,9 +8,11 @@ class Hy < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "11c045872f25c8ca4100afd57f232cab2ec1afce1a7b1b0795bb72143dddda08"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "99df8063944e29bbed30139a63e51dfa53fb57b4c3b3d7dd0e1b45e8f6e28a1f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "49b43ece3869b0c1d72b07520d78f90ca30d596adebe9671d226e1cca55f9c60"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "60d685cb144ef2c1bffbb0be0e51cbc46890eedcada3370142cfbfd4e1a3bcae"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3ac2338b6f87cb264deb04c64ced8c4876c8fdc4502cc58cab9fc81e656aa2ed"
     sha256 cellar: :any_skip_relocation, ventura:        "a130249a9cefc514995672692d37a26a0f8acf1484f0fdf800f5ae276c2c8136"
     sha256 cellar: :any_skip_relocation, monterey:       "7d68a3d749219788fba9bf2c8606bbf078bcb7000cb83ed0a41c6ea1616733e3"
     sha256 cellar: :any_skip_relocation, big_sur:        "2fb6e62c38f6b1ccab054d67eee72bb2fdd92a2b6da3be2d728d4bb70c6757fa"

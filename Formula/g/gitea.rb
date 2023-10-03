@@ -14,9 +14,11 @@ class Gitea < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7ab533a1ccda66e0f3c94e0a92478e671613f1050fd2e5abdf8ffbe2b4403e06"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "55867053e1bdb14b943dab0454a700e951fb2ea19a4635a062b74a5def7ab0e0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "257883212f90aeec989f47ed03997f8a1882df7e060a611dd36f91227c07e544"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4f1a345d528d62de1cc1ba6bda137238365bebd9c788a6b71636e8c2f94e520f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cacf5a1910633ef63513594f1f8f30daf5d7d12a08df8e5ec61d72a9cdf558f3"
     sha256 cellar: :any_skip_relocation, ventura:        "f6165fe66c0b0ceb3e5712291b850ac7532cdc252a9401d89fc0ef63ff99c044"
     sha256 cellar: :any_skip_relocation, monterey:       "c33f659891965d5642dd2c9b3e9cf93374cd24811e3ee3a14c8aafd803106558"
     sha256 cellar: :any_skip_relocation, big_sur:        "0e5c5b28cea6f498b03808fc93a9ff078d59a91033292a9c84f680e25651c0ec"

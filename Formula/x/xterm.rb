@@ -1,9 +1,9 @@
 class Xterm < Formula
   desc "Terminal emulator for the X Window System"
   homepage "https://invisible-island.net/xterm/"
-  url "https://invisible-mirror.net/archives/xterm/xterm-384.tgz"
-  mirror "https://deb.debian.org/debian/pool/main/x/xterm/xterm_384.orig.tar.gz"
-  sha256 "31ef870740ceae020c3c4b4a9601c7f47bfd46672c1aaf2d213a565d64cbc373"
+  url "https://invisible-mirror.net/archives/xterm/xterm-385.tgz"
+  mirror "https://deb.debian.org/debian/pool/main/x/xterm/xterm_385.orig.tar.gz"
+  sha256 "37592d8fef0b22bf2f62d8b840d3b22baff2b965265e8fe5b0582f0b1d637e55"
   license "X11"
 
   livecheck do
@@ -12,15 +12,13 @@ class Xterm < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "53f25034222ee0b8e0b610f2a878a7da4f0da503b6a1aadccf81d8e7e3775a37"
-    sha256 arm64_ventura:  "237ed591ac78166be805c164fa81cbc6edf015c831f59f1136925429c1f807a4"
-    sha256 arm64_monterey: "d9f66a51ae4ac93eb953fb1f69662c8a8ec53a31cc422061e7a59051528d95d9"
-    sha256 arm64_big_sur:  "9e76b30e573658633a989391e56ef02d93220a946be21bd1999b72accfc18483"
-    sha256 sonoma:         "5857f196465b84d0ca787705f6dd9fa1730055876a28bac92027f6eb7628c6f1"
-    sha256 ventura:        "8d5e32b06ff89d6a39074778c14246c1c5593fdc98b7af8253e44fb728365209"
-    sha256 monterey:       "379dcd7ca034170c42ede65ee4b00e3ab1e1cd958485904760c92feea65aff9e"
-    sha256 big_sur:        "ce78a86fe3e7abbf1375b217d2122eeee7cfc50a19247e41df34f4335790f2b0"
-    sha256 x86_64_linux:   "763d87094f32ca3ee8364d2259375716dd2e3fc1c58d0cc9087fd5eec06894c3"
+    sha256 arm64_sonoma:   "44159ea3423ddfa4ba99a34210514f5fec54891b45ef691a02b0ba3733343baa"
+    sha256 arm64_ventura:  "9d2c78ee4f42c2be5949f25d0ff1a5f3fc7a78db78fecf8ee2a074b881897fd0"
+    sha256 arm64_monterey: "22cc7e39f20b9b5a1fef5a0afb65ea08bbca59cd45bc30e3a7747404feb332f5"
+    sha256 sonoma:         "b5fcaf1e25401e82c127579a9414d11f158b730ba55382d6dbe082b9b00665d1"
+    sha256 ventura:        "036ad3b95037f3cac8496853deae162940b76921a4b9254056af71cff1c81847"
+    sha256 monterey:       "4cca493f397d86bc7bcc08c2570a1e78cd5321ed6ebf3cfd2008ccd2c54a0aa1"
+    sha256 x86_64_linux:   "d964ee17912db4afee48794a42de076f3d5645847ab1d865f3aa9103231588a2"
   end
 
   depends_on "fontconfig"

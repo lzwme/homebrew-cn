@@ -9,9 +9,11 @@ class VapoursynthSub < Formula
   head "https://github.com/vapoursynth/subtext.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "0393a83e6f65637a7fabc339eccf60c8704a4d65f4b733f1b16ba1c97e842612"
     sha256 cellar: :any,                 arm64_ventura:  "18df66402b5b0612d575766fefadc18f40d8fe7aed14ff7a6ec97c1a05e94bff"
     sha256 cellar: :any,                 arm64_monterey: "0be08d3ca56d404588d61badae14e9930f1abe0df0eae0c6b69ac6eff85d1db3"
     sha256 cellar: :any,                 arm64_big_sur:  "b01b9b7977bdbf1e5ff744e6f4bf91f0c5f659cbad4054bb72aabe1ab801e169"
+    sha256 cellar: :any,                 sonoma:         "8a99120b75ee2d5c41e3c03f082ba67a2831377d94e0feca17b0611502e45eef"
     sha256 cellar: :any,                 ventura:        "ef507c8bd5dbbbeb8e330bcec90cf01f3a8a974baeb3aea0b8b68a834b15032a"
     sha256 cellar: :any,                 monterey:       "65a9159a7dd44be6977ee0fc089db43e182024e7fd4080daee108c39bd185b02"
     sha256 cellar: :any,                 big_sur:        "a943de850d54d3bec2297cad3aa6031bf80d9f002994af268741314122fb3a08"

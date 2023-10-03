@@ -1,19 +1,19 @@
 class Smake < Formula
   desc "Portable make program with automake features"
   homepage "https://s-make.sourceforge.net/"
-  url "https://codeberg.org/schilytools/schilytools/archive/2023-04-19.tar.gz"
-  version "1.7-2023-04-19"
-  sha256 "a4270cdcca5dd69c0114079277b06e5efad260b0a099c9c09d31e16e99a23ff5"
+  url "https://codeberg.org/schilytools/schilytools/archive/2023-09-28.tar.gz"
+  version "1.7-2023-09-28"
+  sha256 "564ea2365876a53eba02f184c565016399aee188c26d862589906cf3f92198e6"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "55c37ff0fcdc4063d4d032dd8a2eecbd89993d7f72c1c78118dea2600dd906da"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b91cff7c5ad2764b76ed32823d1d34c66caf9edb9573b0aceae67fc747e12c40"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "993f7ba465c357fe4708e82d83ed5756ba3d99840057ec805193f5cc97360136"
-    sha256 cellar: :any_skip_relocation, ventura:        "e2ca634976e6b65601812a0b47a3b8a3aeb1e03fac68d72a1c8f8ef8c84c997a"
-    sha256 cellar: :any_skip_relocation, monterey:       "7146378cd1a1321496f23f8140f4dbbf325f4ed48d826fb0f87173607b220aa9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1029afbfea413385bcc1b9794e6c634e19b568ae2e922a542212098c4e20a934"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "988c67994a34d30556d86182b63efee239863cc70dc4a645a3a265791ffa06af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f96bcc9d691106585693783553b709cf4366170f1dadfbe76121e22eb94a2f2f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "090a8a9be4f73f219b85f283f833de8336d8009418c64195cc6aba8599a96889"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a3710a51c46dead615576fa397995c278615e2cb7e094678da14a41906a7eebc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1e51561e230f171753c2d163ed67ebba865fafeeca559f514c98a18b9e358b34"
+    sha256 cellar: :any_skip_relocation, ventura:        "15cd5351102ca3e6b5b93fe36e3c92d4e88015175077ffafacd182b54284c33c"
+    sha256 cellar: :any_skip_relocation, monterey:       "43af100fd2db88ded7bb3d9628b9b7b2d786458f7b698448287b597353aa9918"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d6cf53c6412f3e5e5ae1ba150ca4f3f54624bd8ecc5ef9dc5ada42c4f59ded1"
   end
 
   def install

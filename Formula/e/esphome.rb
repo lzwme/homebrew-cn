@@ -3,18 +3,18 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/50/75/19e4ba2287f2fe79d1275ab012a305cbe3137ceb7738dc1ce13b2286f879/esphome-2023.9.1.tar.gz"
-  sha256 "cdb827c5ba825df60de1ae8b729c3f68f646b607592805ceb3a866a793391988"
+  url "https://files.pythonhosted.org/packages/de/07/e033a9798612cc6001cef1c7d80cf18528893f54d19c6a484c6f0dcbe230/esphome-2023.9.2.tar.gz"
+  sha256 "710ff623bc1b6ee6d7cf273e79cd45cfd803ab8bb2cf003f75fa832accf8aba9"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3e79046b67d8ea6ab6f9d16ea3aa81214dcf822fe632cde61ecce91ae827beb0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f6494291a9d7d7c8fa773f47dbdc609b463095197f93fe9dc4b4eb69b93f109"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f7feeba0889e59d761f0485eceeacdfaf3e496f1520df62042de38d0053d01d0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5ccc544d0c8a1c93157354114a0370e4ed9b192602154103e4bc78acc229bcca"
-    sha256 cellar: :any_skip_relocation, ventura:        "0a3b39bf536c3df3db3b84bc898dd7af95522e9c5c1addef74a2512fc245bb9d"
-    sha256 cellar: :any_skip_relocation, monterey:       "15243e28558af4b61df9518a8a981a357e4d0b05de0347e2825996c3a8aab1b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34445161c1122172330662f512f64c3a923050fe1f0e0fb61b3d6cd9418522c8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "860b2ef3099f6d01a16b64cd6b7708a1743c9cb8c1778a3824a8f274bcbfbefe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "321a689394f87cf2b83b4826ef4ec612302424f000973a9915d1026c5570f313"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3be1a07aa224774808ca0f94bd5588fee9d90dbcb64aba8b7b9afaf6de1bb73b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cf788850b88b3a92b29adbcfafc31a35f9c314cbce9a20842f6a368825126af8"
+    sha256 cellar: :any_skip_relocation, ventura:        "f1975936035a110a679e3a8566fcb83d627f0ada8e7a331915eb886e0480c67a"
+    sha256 cellar: :any_skip_relocation, monterey:       "893e3b92b8306d35e74226bdfb94d96fc39f17415cbfdb3d294baf8d8dd0aa15"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4622eae3bf44ce48fbcce33a4d563f6fce87ebf2c3602b3d18a7316b39a3d71f"
   end
 
   depends_on "cffi"
@@ -63,8 +63,8 @@ class Esphome < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "click" do
@@ -123,8 +123,8 @@ class Esphome < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
+    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
+    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "paho-mqtt" do

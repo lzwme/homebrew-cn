@@ -17,9 +17,11 @@ class Gost < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3333b5b518c55f24c532d6cbcf44dad08f72415b3371c65e59d7e6ad2c7c7b6f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b880bb2bace71fb50f816374dd623ad62e893e7abd06101ba88b01f026ba9110"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b880bb2bace71fb50f816374dd623ad62e893e7abd06101ba88b01f026ba9110"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b880bb2bace71fb50f816374dd623ad62e893e7abd06101ba88b01f026ba9110"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7f8b42a119ce3827df9b3ec1e9a7e9e2fc00ebff4c2c60745aa7d77289241950"
     sha256 cellar: :any_skip_relocation, ventura:        "77320157771741abee963d6a3e1745a80702745c896ddd83b82cbcf6d46d4e8e"
     sha256 cellar: :any_skip_relocation, monterey:       "77320157771741abee963d6a3e1745a80702745c896ddd83b82cbcf6d46d4e8e"
     sha256 cellar: :any_skip_relocation, big_sur:        "77320157771741abee963d6a3e1745a80702745c896ddd83b82cbcf6d46d4e8e"

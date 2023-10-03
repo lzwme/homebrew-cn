@@ -1,8 +1,8 @@
 class Libvirt < Formula
   desc "C virtualization API"
   homepage "https://libvirt.org/"
-  url "https://download.libvirt.org/libvirt-9.7.0.tar.xz"
-  sha256 "d8c758fe7db640f572489caa8ea6dd8262d169a4372326c23a3a013cdc40b8ce"
+  url "https://download.libvirt.org/libvirt-9.8.0.tar.xz"
+  sha256 "7aa90d133bb301e94663a45c36176f46f4a9fc1b34d77d2e22b7a2517106f506"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
   head "https://gitlab.com/libvirt/libvirt.git", branch: "master"
 
@@ -12,15 +12,13 @@ class Libvirt < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "468febc743197d4cd6c0a80d8bd75dd123665f6ee25277e085e1f3c013c7490e"
-    sha256 arm64_ventura:  "d55e3fc6c457032f8b2c5b44b75ed77f01d2a4a3a97f2730b60da23d350963d7"
-    sha256 arm64_monterey: "58b53c8a7cb208680027e6d455c7a2f4f2ffa99424dd9e857a4861510dd2bcc7"
-    sha256 arm64_big_sur:  "c7f5b81a05b16010112365e45e36bf891a4402ee9bd848cd3b61c13727709afe"
-    sha256 sonoma:         "acddc2da228b32118f99443e3d80f362aab16e102557dd4a20829fea15638293"
-    sha256 ventura:        "20c31db122628dfc7625b608c0a37cd3add2b82decb86fb9e440affa5b9f6b4c"
-    sha256 monterey:       "2065626ec360f21b3d23844cbaa2b3efbd523a6cfedef41a71bb44834ae85553"
-    sha256 big_sur:        "e9edb7b67225a96e268844166bac23d71a4b8388d2a9c291ad824dffcf6e3383"
-    sha256 x86_64_linux:   "bc8bcc24c133eeabcd4651539a68490055a651a4827059d37b4e8756ee4c5d10"
+    sha256 arm64_sonoma:   "58bf34fada6137e522075c9e2de2691e1622295c5a91f20452c2a3530c629a7c"
+    sha256 arm64_ventura:  "e669c91eb3d470ed65b6202b3a0e2657e28c6581ac8097e5c3a214b536903518"
+    sha256 arm64_monterey: "48654bf2324166e728af9b32fd2131d5cbe09335fd214664d019c1bb0eaa807a"
+    sha256 sonoma:         "c5c5786ac014cbc4a499b0f73e861f2fa5c34c2e4e8436371f0bf86ddb79c892"
+    sha256 ventura:        "6a00868d3a77bdf6a59774f11a1af9286f620aeebcb5623ef2b41ddb32cf3caf"
+    sha256 monterey:       "17a2fb7dcd0024f0898b321c99e0614b61a26b28ffcd7a72e1dec6b8ca664ae8"
+    sha256 x86_64_linux:   "c15f46b3a0892dd8c2fef41eddd8be1c1f14a6f052d8d010abd871f399181e17"
   end
 
   depends_on "docutils" => :build

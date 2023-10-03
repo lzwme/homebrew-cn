@@ -9,6 +9,7 @@ class Star < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2ff2215c3e9ccb9d58eedaa95e868df3e7f04c2ee76dd56390eb1f6db327e276"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1c741d208f7a080264af2c3431029d3473c6f3c9a3cead02f25a537ed41a7e40"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0c002816e54a4bf9a821386bb231d34f9cc6ac9f9daf1f6d9241f79d9fc568c7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "dc5ce3e5393314e2cb89d01ed0b916f19e273e488afbf92c2bd9c18a09609231"
     sha256 cellar: :any_skip_relocation, ventura:        "396e08b4d8d8e9a68e6847508aad7a41f76ff96d596c3ceccd541d3d00c82867"
     sha256 cellar: :any_skip_relocation, monterey:       "6e05507949b924107ed8cdec69938443580b072c41ceafb39a1819fe417a6154"
     sha256 cellar: :any_skip_relocation, big_sur:        "b35d569dd3653c0ea0d626206d2101e7de401f39c2e046e5c4553e3701fabb25"

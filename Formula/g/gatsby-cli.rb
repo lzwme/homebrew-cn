@@ -8,9 +8,11 @@ class GatsbyCli < Formula
   license "MIT"
 
   bottle do
+    sha256                               arm64_sonoma:   "8d37e25c2e8199e87433ce8d7c45f602beb97eb3a0d0abdda3133393605e05fa"
     sha256                               arm64_ventura:  "97a8334bc0871883b779f908d4e50a128432f2288698881f50d4a33267ded1d1"
     sha256                               arm64_monterey: "6538d29f74e28b91086c6fa452b67cee54d6bcbbe4b9aa5571164e03dbda0fd8"
     sha256                               arm64_big_sur:  "b9e9ef64f6eb7c35ccd05b6db2f3ae802a5ecc1d318cae8dbeb77d98a1c0d1c8"
+    sha256                               sonoma:         "893f60e93df341b95637169f5c9f6abfba1119959a52f4134e5069ae3c3f82be"
     sha256                               ventura:        "29bac5d299062af44548edb55e67c86dec6fc68ca74cfa7e3b4c804b9090968a"
     sha256                               monterey:       "93734697b23031d3df7b9dbc4223aa5dc8cec1e3e74a41ae254e23b9f28b0777"
     sha256                               big_sur:        "88f8f86428c7164427e9199b7a05ce485927ac0b56e6f96cbc45ccd36d330cca"

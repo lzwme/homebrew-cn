@@ -13,9 +13,11 @@ class Irssi < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "4eb3e56f00e5beeb3164b1f0d5a869087e7b4d90dca54681446e5b13836ea834"
     sha256 arm64_ventura:  "fd81cf719504dda54a2335a49c745870b6996326096ded24504094a0df531ae3"
     sha256 arm64_monterey: "837aed2e22573fca9cc4ca6d7ed520a0c05e8160aa0df094f5531f4e281c48eb"
     sha256 arm64_big_sur:  "d3b5e6066a0e40f5cf365ae955e30a26a110ea4ef4687c44b3e6d0ee6cb729e4"
+    sha256 sonoma:         "e827032f7cba05ba9148cde7ed74b028d289775118bff7608e125ba2ec269a4e"
     sha256 ventura:        "3301c9947b6a95f068203b20511d0df67bff7165420cd4360189558e4e3f7522"
     sha256 monterey:       "d2846432df35bd76a9f268bb77227494e4f3cb12904c8d5dcb67aceb58915c0a"
     sha256 big_sur:        "7c0df2821bcdc4e622b87b39ff409f68097cdc60834c8aaa98a7c513ff1ef830"

@@ -7,9 +7,11 @@ class Gocloc < Formula
   head "https://github.com/hhatto/gocloc.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc277e8749f881d99850a15fefb4e7ae47088492524bbb0c284dae94c3932ce8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc663abeb85582ffd4fa48e2ff7b398b9087d1351f83f549ac72d67b5db12945"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "bc663abeb85582ffd4fa48e2ff7b398b9087d1351f83f549ac72d67b5db12945"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bc663abeb85582ffd4fa48e2ff7b398b9087d1351f83f549ac72d67b5db12945"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0186193839630eecc7fb3b4196fe1d463ccef7754ce20a77922b5b90d6b5c1d7"
     sha256 cellar: :any_skip_relocation, ventura:        "21fa97d6b4b718d29bd17495203d9d18852958dd566047c789e9c3687bf0db69"
     sha256 cellar: :any_skip_relocation, monterey:       "21fa97d6b4b718d29bd17495203d9d18852958dd566047c789e9c3687bf0db69"
     sha256 cellar: :any_skip_relocation, big_sur:        "21fa97d6b4b718d29bd17495203d9d18852958dd566047c789e9c3687bf0db69"

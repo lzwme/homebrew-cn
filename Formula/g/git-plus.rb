@@ -9,9 +9,11 @@ class GitPlus < Formula
   head "https://github.com/tkrajina/git-plus.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a3db2e14cf96f120fb4618d486dd959fd8a2d79fa5f9701232a9989c7187ad9f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5993edd0f14bcf89323609395296369bf8c7c74697f421cf1324ed22246d295"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a5993edd0f14bcf89323609395296369bf8c7c74697f421cf1324ed22246d295"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a5993edd0f14bcf89323609395296369bf8c7c74697f421cf1324ed22246d295"
+    sha256 cellar: :any_skip_relocation, sonoma:         "698428f41dd268744d770f94118ef2c1b5f1462d390b1d31246bbf5aeb72ba2d"
     sha256 cellar: :any_skip_relocation, ventura:        "9bdce13d800f40dc51edcb780600d7cf7775624173f54521e4b6544619adcd63"
     sha256 cellar: :any_skip_relocation, monterey:       "9bdce13d800f40dc51edcb780600d7cf7775624173f54521e4b6544619adcd63"
     sha256 cellar: :any_skip_relocation, big_sur:        "9bdce13d800f40dc51edcb780600d7cf7775624173f54521e4b6544619adcd63"

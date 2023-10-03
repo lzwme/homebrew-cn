@@ -9,9 +9,11 @@ class Glances < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7be7619d86b4e39edf798b27143603084c00ebad993a041f55d4ab289b5ee657"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "22f18a314cf59788d0db48f919f4d96d6af4e12b52da0c09ca86b1ecf0f15087"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a1487ddb17c66be835537486f8e94e26cf61abea23fdb5e605386a3998e08157"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6d3764224fa08a2838af25daf73994b8d952feadc960d565b5603e2d1378d3ca"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f226429e1ff4bbac60bbb8cb1efac9bc08399ae8a7b2c835510b98e8ed4d3316"
     sha256 cellar: :any_skip_relocation, ventura:        "8b06764f0a662200a9859043254dc7248be133d24bca33fd88654812049cdf48"
     sha256 cellar: :any_skip_relocation, monterey:       "b975b704e59b44f11cc1ade9a0918ca8acf234360e65fb99687fee3f57939cc5"
     sha256 cellar: :any_skip_relocation, big_sur:        "c79bf402bba946aaa7182fb9c822bac9f771ab7af90c03201b0e9b1bf24bd734"

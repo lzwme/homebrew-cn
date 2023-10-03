@@ -10,9 +10,11 @@ class Gprof2dot < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2a7e5622cf92e4598713d2c1a975f60dc0245a6bffff19312dc9e26265583ef8"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "54d2c550983bcbc7d974c926f90f95a9d339db13551790772149aa94b5b1d47e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "68791ba75d96fce85372e3fc54cd25576b38a6fbea077032096b7f297c3b26e7"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5b50a7ebf952acaf260fabef9c6a8e2dd64cd2fa5b0c8f526b126eed6036aa91"
+    sha256 cellar: :any_skip_relocation, sonoma:         "289276968eea5c77be1b863aee44508df5ec428daffe0cabb7724c5e99017ee4"
     sha256 cellar: :any_skip_relocation, ventura:        "baeaf28578b2f2c920fc45bddd496c797aba212eebd07ffdc3e70be04d423455"
     sha256 cellar: :any_skip_relocation, monterey:       "dabb15b4183ef5c1094a36f8efe73f9c3e722aee48b749b9c0b7e37e396031c2"
     sha256 cellar: :any_skip_relocation, big_sur:        "a5eb84239ac7fb8d99effac8c63952dafccd7458173dc29222d5df693b3cf50a"

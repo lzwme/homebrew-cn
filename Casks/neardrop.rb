@@ -1,6 +1,6 @@
 cask "neardrop" do
-  version "1.1.1"
-  sha256 "af03242ab504a48cfa310ba1ad5b6f98c9501d3a48acea5c9bf7ba62ac7257e1"
+  version "2.0.2"
+  sha256 "b270f084d2a25d3c3f7302112739898dbf6e1fd48b4b560d3f80b04c482f95a8"
 
   url "https://ghproxy.com/https://github.com/grishka/NearDrop/releases/download/v#{version}/NearDrop.app.zip"
   name "NearDrop"

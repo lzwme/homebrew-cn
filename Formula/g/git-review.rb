@@ -11,9 +11,11 @@ class GitReview < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f1f756b99e24458d13e21c5aff1ae3fbfeaa5230b1eaf0c7c354ad241ca33612"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "99e980092fb64d12462f0f573cf8707d57624c29ef0f86b1103be6495a6d58e5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "63a7c1879c747aa4571ac639c7b1ac7ecd55b05e4bc9f2fa9d43a92229e86b69"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3dd3a29e8954a9209c221571a8f1fb5ea6a77751216878d6019ad99504f8193c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "86bb164713b4a1a7b4d20aef02e706144931e975f7f7f176ea818a239074707f"
     sha256 cellar: :any_skip_relocation, ventura:        "9a03c2e4cd27503b17c36d79726551efa069a8ab4c4c077bed989832fc156ba4"
     sha256 cellar: :any_skip_relocation, monterey:       "472c583ed5f331f022052886c5f36d1567c01f872daf21fd93894996a38ddded"
     sha256 cellar: :any_skip_relocation, big_sur:        "7a546d0572920a0eeef559299b5a94661eb64ad9c9122499ffa4c2a0957cfded"

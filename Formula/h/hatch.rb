@@ -10,9 +10,11 @@ class Hatch < Formula
 
   bottle do
     rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b5086f3d1e1188776844435f2cd816a39e9916e19dd72f23ecdb2ca8872498e4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7a57d8bc12bfe3656a9ec833d6e966bc909bf85fe2b9582e944cc4a8e7ff163d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "246be0dbf7e34fc51da93226d88ca80780b349717b137c417e65c0c4ae86c7dd"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0f8ef7c934c5d7446456f86f4676d27b619d7077fe90f92625f30fd640e730e6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "19e35a7299b4567f9905e2122a5b54c09fd72c15335d6289bec789b6f750d27a"
     sha256 cellar: :any_skip_relocation, ventura:        "2c453a376801bd5bb48d9c56f9b25fc1de77a0a87e41464c41e5a27d6ee14ede"
     sha256 cellar: :any_skip_relocation, monterey:       "0d3ba80d718a647b402e28bd20bea4f96dcd4c086a78a3be3b7eae82cbe20990"
     sha256 cellar: :any_skip_relocation, big_sur:        "3a5db978126d656683c01f6b5633b289e1f4c6b799def250245a1bd0b1da6886"

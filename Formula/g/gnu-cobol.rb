@@ -13,9 +13,11 @@ class GnuCobol < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_sonoma:   "fbcc72a5f64c3bba2fa960aa302e43aee0843ea06c56658fa90e07e8caa40c9b"
     sha256 arm64_ventura:  "d01c72df3a149061c95811e7796a6de37fea2eb38e3dc7ff792c4c8b021e3ae5"
     sha256 arm64_monterey: "1ea182723a1ff54e10c49cb133af6baf21f1e0e3f97ece6d51e46796d7f8de19"
     sha256 arm64_big_sur:  "0bacd95ade364209c06081b2ae6255acf393502ac8c0130d37a2f86aa9dee5df"
+    sha256 sonoma:         "ea200e8c1c0d30c3e173788b920af6160c29468e97499c5b02bb8a30664d05a6"
     sha256 ventura:        "b284db83cc174f2db09b0f7ee799d43512645969ec5a9ad00542c549f640fb14"
     sha256 monterey:       "6209c9f8ccb8a34e1da4d936d521d9fde5b74cd4e3aebf0df010c5d76659f2e0"
     sha256 big_sur:        "ad2f3b544b029285ac0e6ac318c0233588cf7c194ec61ee32fe343abcd046c99"

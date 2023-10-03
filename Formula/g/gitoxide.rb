@@ -12,9 +12,11 @@ class Gitoxide < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e7596419f524e2e62a137e5e6b66c58756282154cdceee023b999b531d681333"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9cd80ed4f8c1c9bcbace3f18f87b24fe76792aeb4e1d45c8dfaccd1aee4401d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1fc0cd6fdd143f3218892ba59d57df20d737e84c4a3a83fe97e7173c419a9724"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e28b90d9a715a306f6401a1332622888a88f13d515bb298189290329aa4adffb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "358e4b90395f4abac20a385e8d8d5cdadc1f4f8da7ae75ac8f4920a3f8fd1734"
     sha256 cellar: :any_skip_relocation, ventura:        "7a7c614909bd3ed52c752b1d2bd001a6821feb0814f749518c3da77eff1d816f"
     sha256 cellar: :any_skip_relocation, monterey:       "c337b306eafc78df5aa59a423774bda6df76934339d0d1060ad9b7e6922cc9e3"
     sha256 cellar: :any_skip_relocation, big_sur:        "993e91f41daaee3964750ce72b5a51bb6f012a42a14c3fc0edb81e0c923a6b2b"

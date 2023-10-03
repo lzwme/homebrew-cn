@@ -12,9 +12,11 @@ class Envoy < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "363462f23cac96d875d61b08bc2094b8b43ad91ed9da45b57b0eb304dd7e2d4c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d99adc9097b64deaeb383c0f2925d6a2cfea8c705b05d799a6c090f13b4e560c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0d8dccd9daba63ccaca2dd16873777bcb261d5e146c06651958413d5efc30932"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2b85d11708bb1c8d76deeb066efe78f3231f4d4226d35411d89811e559087aa7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "20f53d76536da3a13b57023b7ff3c34b979a7a3c3901dda4ae3d4a4c56fc36af"
     sha256 cellar: :any_skip_relocation, ventura:        "af28a5d930551fb2a61edecc935df75b9f158abd25456e3d7eeeeebd390afca8"
     sha256 cellar: :any_skip_relocation, monterey:       "e2ec638544b36b3ebb2ac99fb70f900fdb1dd87ba861d5414e820bf8ee2bfd1e"
     sha256 cellar: :any_skip_relocation, big_sur:        "bfadf63208fff3d32908254573433b4df2efddf165de5fe43f6ba0fbe87b8524"

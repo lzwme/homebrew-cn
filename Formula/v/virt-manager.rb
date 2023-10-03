@@ -10,13 +10,11 @@ class VirtManager < Formula
   head "https://github.com/virt-manager/virt-manager.git", branch: "main"
 
   bottle do
-    rebuild 5
-    sha256 cellar: :any, arm64_ventura:  "88a829e22ab054eade2bf6c6a53778eea2792c74b41114d2c2da8b825cfcc943"
-    sha256 cellar: :any, arm64_monterey: "7448c48989055e14ce6344005a590cd42083c240de299b5b1ae3f2cb93386c1c"
-    sha256 cellar: :any, arm64_big_sur:  "8ea0253d46249104e81660d8a1d8571ed2ced06d67b67d2210298f3bfcb68f0b"
-    sha256 cellar: :any, ventura:        "2afe706948ca1bd6c058d2d91e782609b144c0f1bb13e1918049e5157d9645cf"
-    sha256 cellar: :any, monterey:       "50251aba50a6cdb3799ae261ca8ccd675d27882dc9f341fe52498ed8d2dac7c5"
-    sha256 cellar: :any, big_sur:        "3556b2bbdf0e43b9dceffeb2fccd083d13b4a2f0579b55e3d933f237a0eb0f18"
+    rebuild 6
+    sha256 cellar: :any, arm64_ventura:  "a75d570b617fb75b03f40b684fe319ce9c8aaf09d30bb3f320b47253c7cad572"
+    sha256 cellar: :any, arm64_monterey: "6b295f52f38a006101871fc80a36bffa007e18b163c761f9a4c8cccd5f54cafb"
+    sha256 cellar: :any, ventura:        "925399764789c23fdeadd145ef0ba625e150977f81527a069fa6be65c978f321"
+    sha256 cellar: :any, monterey:       "6710fe9edcfdf3a64d5dfca1055d00836d8aeeacd33e35b8dab687bbb458fb08"
   end
 
   depends_on "docutils" => :build
@@ -42,8 +40,8 @@ class VirtManager < Formula
   # Resources are for Python `libvirt-python` and `requests` packages
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "idna" do
@@ -52,8 +50,8 @@ class VirtManager < Formula
   end
 
   resource "libvirt-python" do
-    url "https://files.pythonhosted.org/packages/29/38/c1129145b981e4da22a63ef7429b74903ef8771be121d189749561eb209f/libvirt-python-9.7.0.tar.gz"
-    sha256 "d8be9eaa75bad75641e13b608285926cde46d6440a239f106277a6dd55235470"
+    url "https://files.pythonhosted.org/packages/90/63/722b08934531bf0842295b0532d2b2120d30774ed6b04ec44dff85a26db6/libvirt-python-9.8.0.tar.gz"
+    sha256 "4069ecb226eab1b810728ef62a9c993a592b2258b0ff489937addd560020a5f1"
   end
 
   resource "requests" do

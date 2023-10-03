@@ -11,9 +11,11 @@ class S4cmd < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "64d6ba679835e76229529b3cf69343facc90aa06e2ccd9294285ae737c582b27"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4330aa16ed535e58baec539539457273ca137b7fd940381a5ece53b5ed264377"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "61b5e9c004791b55d9b448c58823c8e64766b8aae3f98b41d85c9225ea8d3a69"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dc21a20e8b4e7fc2df9e5f8f4be01ef866cb9c5ea2b59ffbc9912baf8b1a9f0e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "34add3299f3dba73217668d597af0b3d82ff7c7d4d90e2c836eb25ff2250ad4d"
     sha256 cellar: :any_skip_relocation, ventura:        "89921083aec7aecee35c209b8f9507a4ca2d7a1b2ea1d8a025c63221f0751700"
     sha256 cellar: :any_skip_relocation, monterey:       "02ba6c7b38706ba52e55eb92017eaab34ae59f9c5ae70742f5aeb6b015a8fb68"
     sha256 cellar: :any_skip_relocation, big_sur:        "0e8c0d2faf3f76e97c7821d4c99b01d2751bc4d55bc9a2fb368b6dd15c2da4e4"

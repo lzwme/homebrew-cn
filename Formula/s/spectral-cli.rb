@@ -8,9 +8,11 @@ class SpectralCli < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6aeacf5b951ccb06f453238d28cfe2d1d1da156e548822d1d7826dba74265cd9"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ef33221a2c02526be1e6d8c9e6b07cc18dc23b55f82dc73d8eb4c234720d128"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1ef33221a2c02526be1e6d8c9e6b07cc18dc23b55f82dc73d8eb4c234720d128"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1ef33221a2c02526be1e6d8c9e6b07cc18dc23b55f82dc73d8eb4c234720d128"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e660bc784f8669841e3ded67bdf33045420738dd107b10f607743360c9e5cc7b"
     sha256 cellar: :any_skip_relocation, ventura:        "df52506dd10de2bead141fca23ac1f69f0e996cd2532663f7c5bd17cd1e5f736"
     sha256 cellar: :any_skip_relocation, monterey:       "df52506dd10de2bead141fca23ac1f69f0e996cd2532663f7c5bd17cd1e5f736"
     sha256 cellar: :any_skip_relocation, big_sur:        "df52506dd10de2bead141fca23ac1f69f0e996cd2532663f7c5bd17cd1e5f736"

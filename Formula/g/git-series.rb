@@ -7,9 +7,11 @@ class GitSeries < Formula
   revision 10
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "b4cb77bc3e8a626bc8a490b3f43e079fe7c474ad8b0df429af8f6bc72d8507da"
     sha256 cellar: :any,                 arm64_ventura:  "09bac8a166e42326111fd8473ae3c7a9ff6291989d8a275856773ca85482ec7a"
     sha256 cellar: :any,                 arm64_monterey: "b864619ca53b4b446f46d18f871fc10559aa566e54818ffd982c4b4aa26f9cc8"
     sha256 cellar: :any,                 arm64_big_sur:  "ac2992338ed769e8228cb1a78aa76b0d00e9ba48d81f0d3ae8c20ce86b4a0ea9"
+    sha256 cellar: :any,                 sonoma:         "ff61b72a799758cec2cfd9a656a88589b5f319cafce6ccff27900695371a48b5"
     sha256 cellar: :any,                 ventura:        "e2eb3577da8e480f59a8288f3ffb1135360772651b538413bdbb20f7ce7831ae"
     sha256 cellar: :any,                 monterey:       "8fc34ddc950682131191a0b1c7e5dabfb6a66b4d50e115cf1d73313999e52e90"
     sha256 cellar: :any,                 big_sur:        "3874b2b34b9e86b75a71862e4d029117ecb46ce56fa359bfd7d033cbcd6c10d4"

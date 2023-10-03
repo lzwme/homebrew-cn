@@ -8,9 +8,11 @@ class WikibaseCli < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f280314f86b047ead7e0793566c8f38db5480eb65f25d59d601ac08ff7c63296"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "68f46528fb69d6f521e99bd1404e425a14c0e0e7a31f7293196ba4be33ebdbc5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "68f46528fb69d6f521e99bd1404e425a14c0e0e7a31f7293196ba4be33ebdbc5"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "68f46528fb69d6f521e99bd1404e425a14c0e0e7a31f7293196ba4be33ebdbc5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f6e0a79a21c31ff2af2f65a60a4789e0ded87d5b9b1bea4a23e87ecc0dcebb3f"
     sha256 cellar: :any_skip_relocation, ventura:        "36924252e03742e4270d686b65ef314e3b8e90295a0d5dbf0a6510db299720e0"
     sha256 cellar: :any_skip_relocation, monterey:       "36924252e03742e4270d686b65ef314e3b8e90295a0d5dbf0a6510db299720e0"
     sha256 cellar: :any_skip_relocation, big_sur:        "36924252e03742e4270d686b65ef314e3b8e90295a0d5dbf0a6510db299720e0"

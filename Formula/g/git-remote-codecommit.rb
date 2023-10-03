@@ -9,9 +9,11 @@ class GitRemoteCodecommit < Formula
   head "https://github.com/aws/git-remote-codecommit.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "13821d67f996636ff9cb63e803f938ff7cc1b8d1c5e5148324dcacf9a4db0a76"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f5fa7fb4190f083a0487f6cd76d81de5fff0b2de1560f3a4ed2771813c718740"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "851d49753d31c586baf66b4ae9bf2999f540949cd3f0a34991043baa096d8f64"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "43ee82fc6d2d60575f2b829d469f9e38117d872afa3a8d58af122848e92563f3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2495f76ee6af5064bf5d4cafe080384d45e294d69de346d23195a05a26d0f03f"
     sha256 cellar: :any_skip_relocation, ventura:        "28035b9e540732924cc603921de59f82c8d47d58ada794f04868f83b13aa74fb"
     sha256 cellar: :any_skip_relocation, monterey:       "74d2eb666a5449f280e64642b401dfcd97b51f0ffbe754ebbefbc5f19090a98d"
     sha256 cellar: :any_skip_relocation, big_sur:        "32033eb6caa3f053f5af34ab88594a79d5c5386288dbd3275a4c5c02993009d9"

@@ -2916,7 +2916,7 @@ Homebrew-homebrew-core/Formula/k/kopia.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kops.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kore.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/k/kosli-cli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/kosli-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kotlin-language-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kotlin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kpcli.rb, Homebrew/homebrew-core, 0
@@ -4377,6 +4377,7 @@ Homebrew-homebrew-core/Formula/o/onefetch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/onetime.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/oniguruma.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/onioncat.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/onionprobe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/onlykey-agent.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/onnxruntime.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/onscripter.rb, Homebrew/homebrew-core, 0
@@ -5567,6 +5568,7 @@ Homebrew-homebrew-core/Formula/s/smartdns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/smartmontools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/smartypants.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/smimesign.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/smlfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/smlpkg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/smpeg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/smpeg2.rb, Homebrew/homebrew-core, 1
@@ -7741,6 +7743,7 @@ Homebrew-homebrew-cask/Casks/d/droidcam-obs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/droidid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/drop-to-gif.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dropbox-capture.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/dropbox-dash.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dropbox-passwords.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dropbox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dropdmg.rb, Homebrew/homebrew-cask, 0
@@ -7957,8 +7960,8 @@ Homebrew-homebrew-cask/Casks/f/fetch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/ff-works.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fig.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fightcade.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/figma-agent.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/figma.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/f/figmadaemon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/figtree.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fiji.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/file-juicer.rb, Homebrew/homebrew-cask, 0
@@ -8342,6 +8345,7 @@ Homebrew-homebrew-cask/Casks/h/hot.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hotswitch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/houdahspot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hovrly.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/h/hp-easy-admin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hp-easy-start.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hp-eprint.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hp-prime.rb, Homebrew/homebrew-cask, 0
@@ -11687,7 +11691,10 @@ Homebrew-homebrew-cask-fonts/Casks/font-fruktur.rb, Homebrew/homebrew-cask-fonts
 Homebrew-homebrew-cask-fonts/Casks/font-fugaz-one.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-fuggles.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-fuzzy-bubbles.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-fzfangsong-z02.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-fzkai-z03.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-fzshusong-z01.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-fzxiaobiaosong-b05.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-gabarito.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-gabriela.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-gaegu.rb, Homebrew/homebrew-cask-fonts, 0

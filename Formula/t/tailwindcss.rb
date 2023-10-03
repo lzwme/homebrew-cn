@@ -8,9 +8,11 @@ class Tailwindcss < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6dac773db8b95bc5c61698f79b448a73d85d2ed6153571f90f4d84f398a84347"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8fdb912f3b5e441ef509d688118ad3965a2f92fa4d0601a1b0fd1d15e6cc4e75"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8fdb912f3b5e441ef509d688118ad3965a2f92fa4d0601a1b0fd1d15e6cc4e75"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6dac773db8b95bc5c61698f79b448a73d85d2ed6153571f90f4d84f398a84347"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8130046aab1d5652bfa3e74733692240410820a86fe60173a132ddaa37e4432e"
     sha256 cellar: :any_skip_relocation, ventura:        "e90486f16f96cb63016e0fc51dd5a05079405c5d78f764912f594a0801bd7841"
     sha256 cellar: :any_skip_relocation, monterey:       "e90486f16f96cb63016e0fc51dd5a05079405c5d78f764912f594a0801bd7841"
     sha256 cellar: :any_skip_relocation, big_sur:        "8130046aab1d5652bfa3e74733692240410820a86fe60173a132ddaa37e4432e"
