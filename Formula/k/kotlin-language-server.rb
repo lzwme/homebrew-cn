@@ -1,31 +1,22 @@
 class KotlinLanguageServer < Formula
   desc "Intelligent Kotlin support for any editor/IDE using the Language Server Protocol"
   homepage "https://github.com/fwcd/kotlin-language-server"
-  url "https://ghproxy.com/https://github.com/fwcd/kotlin-language-server/archive/refs/tags/1.3.5.tar.gz"
-  sha256 "df5fc81eee20dd46b24fc4284d3670487f3fe2d8d4ab9270031de2e41a819b97"
+  url "https://ghproxy.com/https://github.com/fwcd/kotlin-language-server/archive/refs/tags/1.3.6.tar.gz"
+  sha256 "1e8151a4495fed21a0e4e925203b3f8c67f2c2cf5f4d6006b174822ec48216b2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb424ccf4fa8bc13c7cb573618c1c04f8e87533e78be27addaa5abc369990f81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "570f1087fa7ae48a3fff7aef5acc1bbd4c4decdedd4316d7d9b745eeed6eb484"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8a00ece273254080708a8a03e111a0ef4aaed2b6d960b7aacbdbd888d0bad77a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "868f60ab2bcda8496e305eb45902b244a249e7917475f5e99cf58dbc6e4c0ffe"
-    sha256 cellar: :any_skip_relocation, sonoma:         "66985efa1ad388714eec969d0767c80bc09d8e890fde83de173e89725bbf398f"
-    sha256 cellar: :any_skip_relocation, ventura:        "c34802202a2f544c145c6af6938d82027962b3e0aeae856872f5418d7a35b527"
-    sha256 cellar: :any_skip_relocation, monterey:       "b60acb09c93acb542c1dc59b3d99ab31b19d833f1ca79336fe5a652fc4419735"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2710a5e649593f52e0ffb38dc976ad26a7ed4751092795413efdd75c1d629f4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d29c47355602db272cd66c0601ad58da335b3e4c94d7f56017f70c78dd9dac3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0e4e72a406d5a8c15cea8f0bde7761f737068a5ec95db04e079bbce02c7a520c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d3353fee430b9058b366efd38386e9e9d6b64d17cfa99a3f49afee455ef153c3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "526c097297b85866afb573485d241d99dd9da9aef376bbb74446d72c8d98056d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0acf70d02b32fd0e59d33f128a23833176f320425059577f0d931db0bd85c757"
+    sha256 cellar: :any_skip_relocation, ventura:        "5b5bc3a2d946a102228ed6c09c0fb0f702e02da6d5eb22df6da367a5d9741422"
+    sha256 cellar: :any_skip_relocation, monterey:       "0559a9ea167687b28d894efc6c97d6e4f4cf0df696a15ea96d84971ac3fda46c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f8c77821236f9520d51e039e17c575fc2568a8f34994a6a3063c10be18680df"
   end
 
   depends_on "gradle" => :build
   depends_on "openjdk@17"
-
-  # build patch to build with gradle 8.3
-  # upstream PR ref, https://github.com/fwcd/kotlin-language-server/pull/493
-  patch do
-    url "https://github.com/fwcd/kotlin-language-server/commit/622a63aefa827d69b841e0eb4a94375c02eace0c.patch?full_index=1"
-    sha256 "ee7ff97d0af66a673183959d712bb45abf6bdd9b1233100390657b52a2bc147b"
-  end
 
   def install
     ENV["JAVA_HOME"] = Language::Java.java_home("17")

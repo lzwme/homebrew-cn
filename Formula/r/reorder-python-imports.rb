@@ -3,21 +3,19 @@ class ReorderPythonImports < Formula
 
   desc "Rewrites source to reorder python imports"
   homepage "https://github.com/asottile/reorder_python_imports"
-  url "https://files.pythonhosted.org/packages/8e/8a/0a388c66c58bd5afa9a8f1fa8c28ec2aab3da2f9f397265cc3ebc9d526ad/reorder_python_imports-3.11.0.tar.gz"
-  sha256 "b39776d1f43083f6f537d14642a9b70ea6d7aa91a013330543d2ae7d12e2e7e2"
+  url "https://files.pythonhosted.org/packages/f2/a4/b9299bb0ce17c405fda20efa39f6993b418b10c765e978961f3c97254f4e/reorder_python_imports-3.12.0.tar.gz"
+  sha256 "f93106a662b0c034ca81c91fd1c2f21a1e94ece47c9f192672e2a13c8ec1856c"
   license "MIT"
   head "https://github.com/asottile/reorder_python_imports.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "532c0755c6f4d88265ba7a2139921f23e3382be54e815f9ef9fe8a877cbf3a57"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "44d27fc5bbf3addef5890df0afbc42df36ff2ea2ea0a69bb9438563bea142e2c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b524242a72ee2c9a2bc8df0c605f33ad16841fdf61ec011eee0bb58bd4f88634"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "80d848ca5e778047046932f8463d4508e5aaf211aaa784a6eda4c5390b1a4a79"
-    sha256 cellar: :any_skip_relocation, sonoma:         "95a8feb1f47e5c57af5fc380766f9f6dfa32cd060a2591a1c5fc926dcb634f3a"
-    sha256 cellar: :any_skip_relocation, ventura:        "df7ccb1fdc6de5e13430ac4b4b41c96f903242a520a8a16f8e85cd29659b32f5"
-    sha256 cellar: :any_skip_relocation, monterey:       "75db721df6b20dc6297d8e672d91ede5a3c36c2d2021c2436077cdb56e99343d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3f428ec3e9ddaa9a574d8957425386b2736cb26633fa490e8db667d9421ccfb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13df84fa6f80a6f330b9618a465b070b26dad233e6f058f98cd259fca7020c0f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3b3a21e974205812118ec179bdbc0d8ab0c921629b8550845fb23ad13ed3ca58"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d1d2f800916c0ec2b54551d587e6ef0c9c5708d5329994b66f0463eebc00b0d4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c830b0252795f821b689e746c1c9138e1ce0d51d77f4161a9119590c585703ee"
+    sha256 cellar: :any_skip_relocation, sonoma:         "524a17481bfcb8cc9af6526bba3b95b02b39c7fac5e911d10b2b68025bd813a8"
+    sha256 cellar: :any_skip_relocation, ventura:        "34ca800b0a39ef54a5df5e38ddd6287997a25d14da17802a8e2fcdc2ca031aa6"
+    sha256 cellar: :any_skip_relocation, monterey:       "da02e4f1338ee0f8b9d39558f01a6d58dbfc4355130a595a27c6078145f69231"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eadc175aa8038915435cb89a4c7c0c64af337a11d53a2bb5dfedfbe900565597"
   end
 
   depends_on "python@3.11"

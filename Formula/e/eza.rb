@@ -1,16 +1,16 @@
 class Eza < Formula
   desc "Modern, maintained replacement for ls"
   homepage "https://github.com/eza-community/eza"
-  url "https://ghproxy.com/https://github.com/eza-community/eza/archive/refs/tags/v0.13.1.tar.gz"
-  sha256 "f175e21114cbea292fab35145428a54c58a69c22d871786eb6b0d7248f874ccf"
+  url "https://ghproxy.com/https://github.com/eza-community/eza/archive/refs/tags/v0.14.0.tar.gz"
+  sha256 "00932e1c81e761490e45d16902356d8e6ae7efe4accc0a41e18c342424167f47"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "40f40db53fe4b1f0eb317616e0b18d94ce8b3579c8160682b7e0d60a4247e0b5"
-    sha256 cellar: :any,                 arm64_monterey: "d6bfa6bb483181680e858ea1797a37861b2ca9db1f5f402ad90ef073e2680d80"
-    sha256 cellar: :any,                 ventura:        "a3304d733a77501b006c379fc87ccfeede3d642913f9dbde88334644d2878fbc"
-    sha256 cellar: :any,                 monterey:       "1b60f38239373ece20eb6904112b46f46c1641bf2ad6caa11dfc4589f24f4d5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc7f8d706c17454d3b68b38682452c69b183a9d5d48d9c8132854fb66b6a2905"
+    sha256 cellar: :any,                 arm64_ventura:  "e43231e93cb3621855808cbbf6b0a0c0dc64b605f5ed55555ba0e3f3279b6358"
+    sha256 cellar: :any,                 arm64_monterey: "6cd4c2dae3e41629c4b2c698821d946c46cb045c4a868d3fa571df549a84fcaa"
+    sha256 cellar: :any,                 ventura:        "1f7e1792d0ac5fcb96ff700249dc7279076f6865f951d5c75fa319c1183f2cbb"
+    sha256 cellar: :any,                 monterey:       "1ce0c92dc58f6f44762f0edae209bd8d76182360bf1882a8c9af8b0f6588cba0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3a50fa886774a4e6104c0ab4821a28e79b3a2f47e52dd3400eb09ea359cf284"
   end
 
   depends_on "pandoc" => :build

@@ -3,20 +3,18 @@ class Codespell < Formula
 
   desc "Fix common misspellings in source code and text files"
   homepage "https://github.com/codespell-project/codespell"
-  url "https://files.pythonhosted.org/packages/81/30/e1b32067c551d745df2bdc9f1d510422d8a5819ca3b610b4433654cf578c/codespell-2.2.5.tar.gz"
-  sha256 "6d9faddf6eedb692bf80c9a94ec13ab4f5fb585aabae5f3750727148d7b5be56"
+  url "https://files.pythonhosted.org/packages/e1/97/df3e00b4d795c96233e35d269c211131c5572503d2270afb6fed7d859cc2/codespell-2.2.6.tar.gz"
+  sha256 "a8c65d8eb3faa03deabab6b3bbe798bea72e1799c7e9e955d57eca4096abcff9"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "64a5cede10ca93c17237e1b51d311a10b2e076ca021782ba76368c4019799b88"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8aa82a4c3f4aa50d6f72d96fefd13f3f0c9b6a364ca0399252a3401703df8a84"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c847fb8c0268d2d747f056ed1211accd80c2c1519dbd1b4a903d9711c51da821"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "78df4c24f208a27d026a49e4d4969945b262b94a680dc780560beebf05eaa22e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "16ebf4ac8db28f443839fd44a50664682ed2cec0b7d571d40dfb62e5a0101f44"
-    sha256 cellar: :any_skip_relocation, ventura:        "98c24425f23f166a1eb0639bf979cd53f61c7f11aa8e447d325458165b60df15"
-    sha256 cellar: :any_skip_relocation, monterey:       "7889a56823419a602800b6e80c839fb872bf5816a6bd4f27ecf3ddcb28a3448d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "28076847bb2b331667668383a35957f34b8268549d3ba18d1321087b7d7458a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f36d32df3d6b68858377cbe3c597099c646acba5f0e7ffbcf540952988e9ce7a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c16233869623f279d39c9868d2679501cea1bdf1bd5ecdd3541255c89489b46e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "84525740e3a2496e47627d113cc6d8a1084d6abbe4d79374db6e23d48ef0536f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4b83abe4d2e6dede87848fdb28951d2369ef6c57238c2c958bda30f7b77610e4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "87cc81986615b16b7853579c879948c742be38b954799b040af2605163b73239"
+    sha256 cellar: :any_skip_relocation, ventura:        "5dd81567618e1274aa7f4f71a06f0e1b210af89bc6152331051b05c517ef42ed"
+    sha256 cellar: :any_skip_relocation, monterey:       "5af272bbde1aac9a1630ccf8dc99e561fd76703e446d759be01aff458fa7c5f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16a6952f0ffb74d2e30463eedd8977834aca933dae65e82042aceee453483bbe"
   end
 
   depends_on "python@3.11"

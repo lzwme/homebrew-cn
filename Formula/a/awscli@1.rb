@@ -7,6 +7,7 @@ class AwscliAT1 < Formula
   url "https://files.pythonhosted.org/packages/bc/d4/184b185a625010b19fa3771398c34a1edf11bb5a79a85011d3d00e6a1422/awscli-1.29.50.tar.gz"
   sha256 "c9a6d631a27f93d9d6cee80e0d9a91d46a06dbc01f8ada5f44bf3656ab465256"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://github.com/aws/aws-cli.git"
@@ -14,15 +15,13 @@ class AwscliAT1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "64f85ac63d643669a024a4db45092160d623e7ef1216e11f62c36b827e7a1319"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d2e3232632feb9261c83106d5dd1fce4fdc15a4f5b59f58ff3a1f19a6d9aaf6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cd0f463778ce27cca5c274043ce8605180f669b51882f3dcf4598234f864e14b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bc02b96298e36c40b1db1ae35df16a7fa355a1ebfd6fcfc956835515d5de4387"
-    sha256 cellar: :any_skip_relocation, sonoma:         "13fe0fbd43bf753e6092700cab9e04822bcf83e127365ef8854eb72363a53adc"
-    sha256 cellar: :any_skip_relocation, ventura:        "dc623c5ec18562d2f4312dff13bfdd18191188c1a0273c537e79b4b27bd8adf6"
-    sha256 cellar: :any_skip_relocation, monterey:       "07a4b8edcbf867a541d3026bf5ea71e9f10768f2977d4ca2a3757250073363fa"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f566e37df76a24dcaf5fcce976bdd45237a36fa5509dedbee085414fab2a7a44"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5a885ca5630d38e43b3309d86df7236817602a44e80ddde0d804cb2ef6d389a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "711641cb94b3803a0b5645636049222a46e1eb666ce94c5e43338dd02aebb58d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1c6a724b12dc88265c87e1260dfcb5cf7eed4c97d0b45a1e02d5322090459126"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2fd9442a6df0308a5f853be0e085238d21c650153f78cdcb7bff86c466d1d51b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c156566c7d8a51dc67804803ceacfed1f42c263886c533e388659563814195ad"
+    sha256 cellar: :any_skip_relocation, ventura:        "ba5f5e0b235d37a3b0f3798393eafaa2c1eeb3a34bd2f56976f37c3c0750f07a"
+    sha256 cellar: :any_skip_relocation, monterey:       "d99eff5a290f0778d45b09d4b4e7a86731cb7045b1114970a3bc2030d5ca5882"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68f788e6659cea4b57b04d338f3d9b472f9c729ef9f804c671379441089ef1d2"
   end
 
   keg_only :versioned_formula
@@ -70,8 +69,8 @@ class AwscliAT1 < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/e2/7d/539e6f0cf9f0b95b71dd701a56dae89f768cd39fd8ce0096af3546aeb5a3/urllib3-1.26.16.tar.gz"
-    sha256 "8f135f6502756bde6b2a9b28989df5fbe87c9970cecaa69041edcce7f0589b14"
+    url "https://files.pythonhosted.org/packages/dd/19/9e5c8b813a8bddbfb035fa2b0c29077836ae7c4def1a55ae4632167b3511/urllib3-1.26.17.tar.gz"
+    sha256 "24d6a242c28d29af46c3fae832c36db3bbebcc533dd1bb549172cd739c82df21"
   end
 
   def install

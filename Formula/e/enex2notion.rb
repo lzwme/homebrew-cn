@@ -10,9 +10,11 @@ class Enex2notion < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9a4dde7b108ec4703bf1a07f1300810bb2b3759f56ac0e86203389c2645ec024"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5d39c6920df7e6e306f602b029a1bbfb7a7a6922dcbae2ab0a05c2942d80e506"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b4a0c8b68b683a2f98931d94f799d6601b0ec580db0494db20cf14b29ae6648a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b4695eaf5c11a74e1916a9cd236a7b6beadf9e0ef1879d2e8fa5f1c91979b82c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "48a60a69325182776fd4c31ba3e43e73b1ddd7104e6faf0bc8b12c1b1916e251"
     sha256 cellar: :any_skip_relocation, ventura:        "d1295d27d61adc78f04edd922ad1ecf8e43b5e253bda75d954e6dccbf7dfd04b"
     sha256 cellar: :any_skip_relocation, monterey:       "24544476bd029929de0fe91253daf66aa8b72044eaa0509a0f26ac76794dda7b"
     sha256 cellar: :any_skip_relocation, big_sur:        "3781fab5e8a321e112a16ee939760f33b890808aa6b3f4e267cf2a2fde096c1b"

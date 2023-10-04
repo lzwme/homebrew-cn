@@ -12,9 +12,11 @@ class Nwchem < Formula
   end
 
   bottle do
+    sha256                               arm64_sonoma:   "5fd7bd4869ff0e16da4d7f9a5be8fd1aa8c5c057eb4cfff7512c96e816dde6c5"
     sha256                               arm64_ventura:  "6f2813bab91bb47361c3311aa00a238d5417e54e41ada9a9ff56b63dd6d2abc8"
     sha256                               arm64_monterey: "4ad3206f334c98bd0c1441ae82ee86cbab62ca401dff557fa51b7e450f079ec5"
     sha256                               arm64_big_sur:  "d57fbea35192e517e1034ff8d8504bfb54c4a259dd838317b53497ad706b4212"
+    sha256 cellar: :any,                 sonoma:         "0f694a4ad0212009adcfedd4e0b6afec8e3d690a77627873cb9c08151bdfc9f2"
     sha256 cellar: :any,                 ventura:        "c308301f1e5b07c2cc5a9de2dd35f331942ed457d928148af7bb3756985a0b40"
     sha256 cellar: :any,                 monterey:       "be5d075056247429c4483383f849928026deaad1fc37e9bcb8c8aba355885371"
     sha256 cellar: :any,                 big_sur:        "fd2032b804cf888c5db6e967ffeb9ed90d6db592392630a5c7bf5babc95330c5"

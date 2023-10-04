@@ -4,20 +4,18 @@ class Px < Formula
   desc "Ps and top for human beings (px / ptop)"
   homepage "https://github.com/walles/px"
   url "https://github.com/walles/px.git",
-      tag:      "3.3.1",
-      revision: "74162d39a483599686d8d002f89657d5d6fb452f"
+      tag:      "3.4.0",
+      revision: "18dd82c9cbfb85b50f835e120b10d71a20c35de3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8d0c2038743d0444c8e12628a3b1a53701cc712f62d21c90798fb0d1edba2170"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0537c8e90f41b5ebbdc27a32b9f0aedda74a7f96822e2ae904031a86b924ff37"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e3885d71f00bcf5c1860efd6e42f395e43048daf9f190864f511c92abfbc9d9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f0d89830877ea97aac7a53de9e188b2d53e8646a2d06211193cc95eb99775ddf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ee3384a765b1b6ca0c3aef3945f03ffb2b6777389bf47c6530b910cd2066afe7"
-    sha256 cellar: :any_skip_relocation, ventura:        "28bae00c3fa433d437bb43d78d68d59c9e605edb28bd08445d80aae84eee3401"
-    sha256 cellar: :any_skip_relocation, monterey:       "d16c70a1e8b35ff38c5eb465e904db7a72b1d0c913d8618a18fbdc118fc4acb1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "82dba60a8a8f212928320d5a11245b848eb86d7358361665b65ac8425c4bd3d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d28d919bba7bfe9e7ef3ec42774fe64fabb50c0f6eeafd52793226fcb581428d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ee16b97e2dc20cc75df898e38089c94e6ca2c9ebd8e3f32436fd1cf7392a12a9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "01aea88c5bccb6cddb9d6d7f76bf38c143bafd761cb9ef9311f9b8cac19e7436"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c62ee044e4349b81826adeb6202ede26e85aa380bef6156c53fb90a152b5cbac"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3075b607f724b96c9b6ba07ac68e6c6420660ac4b1b126c458e30c5b168dd6da"
+    sha256 cellar: :any_skip_relocation, ventura:        "ea4b7f9849885b59f76ab4feb849ffb0e61fe59b9835e5f6ea4cb1085f7e852c"
+    sha256 cellar: :any_skip_relocation, monterey:       "c63b674ffe129bcd68e8752c0355e89cd884fe978aa65543e265e91823518f68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d33e60156b1a95dd9932f011c56f85d1377061cffcab86511c3bebd6e4dc9899"
   end
 
   depends_on "python@3.11"

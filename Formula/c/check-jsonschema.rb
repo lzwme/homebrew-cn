@@ -6,16 +6,17 @@ class CheckJsonschema < Formula
   url "https://files.pythonhosted.org/packages/f2/7a/4c76d3622aa72b9c47a26e70a6ee9c0ea93658dfea02cf8092b5a7d01c33/check-jsonschema-0.27.0.tar.gz"
   sha256 "57a78e78e1865e5f965a344db92816034dba1135468ad622efb6e410d2adf823"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/python-jsonschema/check-jsonschema.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e4d9c4c1d677a9a905bb14aae8c8e87f8e51c4dc337e172299528f1249397d17"
-    sha256 cellar: :any,                 arm64_ventura:  "fe08d6d61d239ef6cf0ea93142c1cc4937d7002bc31ab7d8410c25935d373d90"
-    sha256 cellar: :any,                 arm64_monterey: "cf431eaadbac2dcdf280e602f14abc1f4c23660a93c66a6b0b6a90e3df59dc70"
-    sha256 cellar: :any,                 sonoma:         "6828f1c74ea3d7a39b2e035e9a0983b44bb5cbc1a1fde56f5e61c875d28f5949"
-    sha256 cellar: :any,                 ventura:        "4c6bf915b5e50df511ed165d57d4b74944b6b35b207c103237338a1366e87e6e"
-    sha256 cellar: :any,                 monterey:       "1e18d3882b53c4476d30daa7dd0947b71fc996e4bd07b9c2f7c6f622a5252080"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c26258b959492c8b17b13d343fba05488cb9e0c49624187f97be291ad7573933"
+    sha256 cellar: :any,                 arm64_sonoma:   "5f92162fcf2bf7b113399ca9768b70309615a3f7a55346a6c8606121e3a2b5cc"
+    sha256 cellar: :any,                 arm64_ventura:  "4d56cebcccd4b0714bd212784ca7f00d52ca8911f7b15574d7d4df0b8a35bb68"
+    sha256 cellar: :any,                 arm64_monterey: "26df1bd6935afcc3c5fb17e9cf64a1494cfb10d4acdbc0282a108798db3d028b"
+    sha256 cellar: :any,                 sonoma:         "6debb687f1571ec61bab130297cbda5673e9390894de2f257848cde513303696"
+    sha256 cellar: :any,                 ventura:        "1cc2a28667f0ce8e024e906b9947b9bc3859f4c92d607b0b5ce4b604f75d54de"
+    sha256 cellar: :any,                 monterey:       "84c2f74a6305de45b56d232c32a5bd5d429fd56f412a237c990350fc10eded5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68d53d3d89296f904660934a952df28b5d9544b9513da652275436f8596a0558"
   end
 
   depends_on "rust" => :build
@@ -24,8 +25,8 @@ class CheckJsonschema < Formula
   depends_on "six"
 
   resource "arrow" do
-    url "https://files.pythonhosted.org/packages/7f/c0/c601ea7811f422700ef809f167683899cdfddec5aa3f83597edf97349962/arrow-1.2.3.tar.gz"
-    sha256 "3934b30ca1b9f292376d9db15b19446088d12ec58629bc3f0da28fd55fb633a1"
+    url "https://files.pythonhosted.org/packages/2e/00/0f6e8fcdb23ea632c866620cc872729ff43ed91d284c866b515c6342b173/arrow-1.3.0.tar.gz"
+    sha256 "d4540617648cb5f895730f1ad8c82a65f2dad0166f57b75f3ca54759c4d67a85"
   end
 
   resource "attrs" do
@@ -34,8 +35,8 @@ class CheckJsonschema < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "click" do
@@ -118,14 +119,19 @@ class CheckJsonschema < Formula
     sha256 "1f08fd5a2bea9c4180db71678e850b995d2a5f4537be0e94557668cf0f5f9497"
   end
 
+  resource "types-python-dateutil" do
+    url "https://files.pythonhosted.org/packages/1b/2d/f189e5c03c22700c4ce5aece4b51bb73fa8adcfd7848629de0fb78af5f6f/types-python-dateutil-2.8.19.14.tar.gz"
+    sha256 "1f4f10ac98bb8b16ade9dbee3518d9ace017821d94b057a425b069f834737f4b"
+  end
+
   resource "uri-template" do
     url "https://files.pythonhosted.org/packages/31/c7/0336f2bd0bcbada6ccef7aaa25e443c118a704f828a0620c6fa0207c1b64/uri-template-1.3.0.tar.gz"
     sha256 "0e00f8eb65e18c7de20d595a14336e9f337ead580c70934141624b6d1ffdacc7"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/51/13/62cb4a0af89fdf72db4a0ead8026e724c7f3cbf69706d84a4eff439be853/urllib3-2.0.5.tar.gz"
-    sha256 "13abf37382ea2ce6fb744d4dad67838eec857c9f4f57009891805e0b5e123594"
+    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
+    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
   end
 
   resource "webcolors" do

@@ -1,8 +1,8 @@
 class Goenv < Formula
   desc "Go version management"
   homepage "https://github.com/go-nv/goenv"
-  url "https://ghproxy.com/https://github.com/go-nv/goenv/archive/2.1.4.tar.gz"
-  sha256 "073d0149f8971c5af6bb98458cc1d85d5fcbf00b6080387e84093ad9e805e79e"
+  url "https://ghproxy.com/https://github.com/go-nv/goenv/archive/2.1.5.tar.gz"
+  sha256 "09f9f3857144cc3172619700d2fc70f3a2f85114c5ca7d6993bb1a418e581935"
   license "MIT"
   version_scheme 1
   head "https://github.com/go-nv/goenv.git", branch: "master"
@@ -13,15 +13,13 @@ class Goenv < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "182907fde11e7bd046752b8bd9a8dccfe662bdbdd515914d727f0da7f477c478"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "182907fde11e7bd046752b8bd9a8dccfe662bdbdd515914d727f0da7f477c478"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "182907fde11e7bd046752b8bd9a8dccfe662bdbdd515914d727f0da7f477c478"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "182907fde11e7bd046752b8bd9a8dccfe662bdbdd515914d727f0da7f477c478"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cbe0b2900942a72bdf1e138d56b2c4d76229a31fc6fa52f64a300f19abcb203b"
-    sha256 cellar: :any_skip_relocation, ventura:        "cbe0b2900942a72bdf1e138d56b2c4d76229a31fc6fa52f64a300f19abcb203b"
-    sha256 cellar: :any_skip_relocation, monterey:       "cbe0b2900942a72bdf1e138d56b2c4d76229a31fc6fa52f64a300f19abcb203b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cbe0b2900942a72bdf1e138d56b2c4d76229a31fc6fa52f64a300f19abcb203b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "182907fde11e7bd046752b8bd9a8dccfe662bdbdd515914d727f0da7f477c478"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ecc8df1871383c5436987568aadd17467ebaafade75bd9be6cdd93907fc8d86d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ecc8df1871383c5436987568aadd17467ebaafade75bd9be6cdd93907fc8d86d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ecc8df1871383c5436987568aadd17467ebaafade75bd9be6cdd93907fc8d86d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7de573477e10ab3b39e19d5745ac968fb2e53425e073e0cae0dfe2989d05ddb5"
+    sha256 cellar: :any_skip_relocation, ventura:        "7de573477e10ab3b39e19d5745ac968fb2e53425e073e0cae0dfe2989d05ddb5"
+    sha256 cellar: :any_skip_relocation, monterey:       "7de573477e10ab3b39e19d5745ac968fb2e53425e073e0cae0dfe2989d05ddb5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ecc8df1871383c5436987568aadd17467ebaafade75bd9be6cdd93907fc8d86d"
   end
 
   def install

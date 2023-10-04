@@ -365,6 +365,7 @@ Homebrew-homebrew-core/Formula/b/ballerina.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bam.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bamtools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bandcamp-dl.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/bandicoot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bandit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bandwhich.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/baobab.rb, Homebrew/homebrew-core, 0
@@ -534,6 +535,7 @@ Homebrew-homebrew-core/Formula/b/bower.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bowtie2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/box2d.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/boxes.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/bozohttpd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bpm-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bpython.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bpytop.rb, Homebrew/homebrew-core, 1
@@ -1241,6 +1243,7 @@ Homebrew-homebrew-core/Formula/d/devtodo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dex2jar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dexter.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dezoomify-rs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dfc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dfix.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dfmt.rb, Homebrew/homebrew-core, 0
@@ -6112,6 +6115,7 @@ Homebrew-homebrew-core/Formula/t/trader.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/traefik.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/traefik@1.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trafficserver.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/trafilatura.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/trafshow.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/traildb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trailscraper.rb, Homebrew/homebrew-core, 0

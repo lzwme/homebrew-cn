@@ -6,15 +6,16 @@ class Censys < Formula
   url "https://files.pythonhosted.org/packages/31/3f/2094e4c07b5f8142242705b8f7af42550f1b70c9ce457684b834850d40ea/censys-2.2.7.tar.gz"
   sha256 "abec858e5be89c45a60477bd7e51412fee7f55917325b11c3cd970298de3e2bd"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0a7e38ecc9dbb05df021bbbec6528755bebf07986c246c5f456e5f2a5b0dbdeb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f347cb60c12dc09cd910daadf313f626f095a1a4e2a0876efa83449b2d036e2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "086bb86feb934518083551be2e611bd5b0db95a281a01c6dbfa76668044ffae9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2e9f3969522e518607932abc2f8113a748b3f2b403dd8208b10197d4d0b65d4c"
-    sha256 cellar: :any_skip_relocation, ventura:        "d14e7897437aca1900cb0be8a238dea77bd18a59c605bd4bb502db9a37ecc984"
-    sha256 cellar: :any_skip_relocation, monterey:       "cc07396258bf4bb1e3dea19fbcaaa9c6206b042df6de1d0074ae1fae2c234533"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4497bf0d5dfb92c500f1964b5931b9ebc8e560eed5d38d6ec5ff50280de24d0f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2e5581285ff151566b603b2b57b2503ea31aef0e5b7d8625599927a93f041260"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "deb22226d182c62b478c7ad27834845d702a8105c670b61a39aaef14ada53a30"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "77484d6b1a81230dddb3134606a071342a4685ff384e81d6212300747da0693c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "80b457793085cb778c6036c27a1056ed83c5aa292ba498cf2aa4f702351399d0"
+    sha256 cellar: :any_skip_relocation, ventura:        "5a2c23a62d990cb71fac75882173fed5bc4c58731de2f677321c45c11504b6f2"
+    sha256 cellar: :any_skip_relocation, monterey:       "9b82a92e509e9b787a899d418fb1a0eb2dea67a59fafce1da41267d5b7f6abd9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c01e43df3ffabe2126cc0530581fa894ae7220c963a631832ac8464cf5898750"
   end
 
   depends_on "pygments"
@@ -62,8 +63,8 @@ class Censys < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/51/13/62cb4a0af89fdf72db4a0ead8026e724c7f3cbf69706d84a4eff439be853/urllib3-2.0.5.tar.gz"
-    sha256 "13abf37382ea2ce6fb744d4dad67838eec857c9f4f57009891805e0b5e123594"
+    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
+    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
   end
 
   def install

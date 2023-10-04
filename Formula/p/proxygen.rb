@@ -4,18 +4,16 @@ class Proxygen < Formula
   url "https://ghproxy.com/https://github.com/facebook/proxygen/releases/download/v2023.09.04.00/proxygen-v2023.09.04.00.tar.gz"
   sha256 "e4db076db908b003a23ac139b6c433d8c34daa77cbdea33fd5a77bf9889dcdb2"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/facebook/proxygen.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d3bd52e2c867f91100ee9f189a586d3c9b6936c9af78a774f476ec7c17b56d00"
-    sha256 cellar: :any,                 arm64_ventura:  "a119242adeb58d1f7be87197937ef4a6afe23c8d92457b7f2bcbb0568dd0d937"
-    sha256 cellar: :any,                 arm64_monterey: "19fd3dbc3be2cb8138486d50fa9ef72cf346fbf82fdbfbd890f37bc9d93626cf"
-    sha256 cellar: :any,                 arm64_big_sur:  "3c1c720cd27f9cf3fbde369cf90922376fd1582770ac574cebde012dd4698990"
-    sha256 cellar: :any,                 ventura:        "089d1586683128d15776e9a0c8e05f3ed7f24cfa61259f8f1fde679d30892eb6"
-    sha256 cellar: :any,                 monterey:       "1b73b5d8ce8f68854e06e684f1a257e2cb6417a0ff4834c9a424e0d7e0ec89d1"
-    sha256 cellar: :any,                 big_sur:        "cff17fef29debe312082af94a15f42b869b141c5a7b2751565706d6e5735e242"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "594c7b537a70c796b14a9e941a8883cd97c252391a6927e5b78068fcc643a968"
+    sha256 cellar: :any,                 arm64_sonoma:   "547c90eb0e3f74f1797aeee1c4525eef7a0902b8db2d256265ce6c6c7b386362"
+    sha256 cellar: :any,                 arm64_ventura:  "77b30f1f5082f58a11b43bec50923b3212c599a78b1eda53d363309979150127"
+    sha256 cellar: :any,                 arm64_monterey: "7e84ec72f2e402a5d2a3d763dc986b6d6203b0985cb4964fe1a38480f65bf388"
+    sha256 cellar: :any,                 ventura:        "804ffb87e49c1a04e961c01e7d1904216caf052afde8d865896df175f496ef8d"
+    sha256 cellar: :any,                 monterey:       "a90277dc3a784955956f83b1671eecf9489c4f7c55c21d5a031ae650fb0ba552"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "47e044a23ca3f0b538329d6f3ea96271c9ebc013dd61be075b1d56dfcccf5a95"
   end
 
   depends_on "cmake" => :build
