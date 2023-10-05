@@ -8,18 +8,17 @@ class AdbEnhanced < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "158b3b7eb95d97e93d694367cf4bf783670bccb075d36c580fbc1f9d4ab1ba6a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bdf2f9aad3d0e66174694171ad61979e05c4d9ede01f6fe763c8a3a57115a959"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3ead73d8a0fa21811a47787e6e4170e1fc91afffd62a3d987457c4e9d98231fb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "329deefa3c598541c38baa46666890c962d679a21d0ecba377a50b4373f5b2c0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "98a2dac68ba0a318b3a28efbc6a328b5d537e7421677fecdaa9de9503633c582"
-    sha256 cellar: :any_skip_relocation, ventura:        "58db3296ce92d5afe942d37f0422e5e67729ab4b55955d73f810d3c546b4b53b"
-    sha256 cellar: :any_skip_relocation, monterey:       "caae90d5ae7111c4354f43a33cc23643ef072e585fe7317100c4acdf73280b8a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e141e2e5e569d6672b882c2b43e74c8b430232fa0e6f75c8b33699cf42b671bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "435f9ddd2f1852f03cc8c3358289f440a07e266748efb8c1913e6d9427c7d4e6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "35a349686e3d2164c7e8670a5ba766aaf5033e238e6c4014b80d67cae5ec4af4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f3692fd1971e2b1c5071799c018093cdb61dd82ee283164c288dc863073f963f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d1ed282fe0dc7099e52291140989b0d89d2672f1b1059faf13196c7c6455e9cf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9bdce11bbb1ffdb458f8003326aa02100df9877671faea33c22c0a1fd490c321"
+    sha256 cellar: :any_skip_relocation, ventura:        "eaf7bcb836fa4b9238a86aacee12b889b550602e924cafda1a0dba63025d595b"
+    sha256 cellar: :any_skip_relocation, monterey:       "bdb9fb28d912d89cdb0f6b519bfd416c8ad5cf806d5e2af2bb78a1e043b27cd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76054a79869e3dd04d2f3b9d12b513fc07665d00994bc481ffa42c9402a4b6e4"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "docopt" do
     url "https://files.pythonhosted.org/packages/a2/55/8f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9/docopt-0.6.2.tar.gz"

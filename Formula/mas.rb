@@ -4,9 +4,9 @@ class Mas < Formula
   url "https://github.com/mas-cli/mas.git",
       tag:      "v1.8.6",
       revision: "560c89af2c1fdf0da9982a085e19bb6f5f9ad2d0"
+  version "1.8.6+pr496"
   license "MIT"
   head "https://github.com/mas-cli/mas.git", branch: "main"
-  version "1.8.6+pr496"
 
   depends_on :macos
   on_arm do

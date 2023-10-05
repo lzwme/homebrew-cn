@@ -4985,6 +4985,7 @@ Homebrew-homebrew-core/Formula/p/python-click.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-cryptography.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-flit-core.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.11.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-gdbm@3.12.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-launcher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lsp-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-lxml.rb, Homebrew/homebrew-core, 0
@@ -4996,15 +4997,18 @@ Homebrew-homebrew-core/Formula/p/python-pycurl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pyparsing.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pyproject-hooks.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pytz.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-setuptools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tabulate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tk@3.10.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tk@3.11.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-tk@3.12.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tk@3.9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-toml.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-typing-extensions.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-yq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python@3.10.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python@3.11.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/python@3.12.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python@3.7.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python@3.8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python@3.9.rb, Homebrew/homebrew-core, 0
@@ -6755,7 +6759,7 @@ Homebrew-homebrew-core/Formula/z/zim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zimg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zinit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zint.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/z/zip.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/z/zip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zita-convolver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zlib-ng.rb, Homebrew/homebrew-core, 1
@@ -8795,7 +8799,6 @@ Homebrew-homebrew-cask/Casks/l/logmein-hamachi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/logos.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/logseq.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lookin.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/l/lookingglassbridge.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lookingglassstudio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/loom.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/loopback.rb, Homebrew/homebrew-cask, 0
@@ -13448,6 +13451,7 @@ nicerloop-homebrew-nicerloop/Formula/bison@1.875c.rb, nicerloop/homebrew-nicerlo
 nicerloop-homebrew-nicerloop/Formula/czkawka.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/f2c.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/ftnchek.rb, nicerloop/homebrew-nicerloop, 0
+nicerloop-homebrew-nicerloop/Formula/get-scoop.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/git-credential-keepassxc.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/git-credential-lastpass.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/git-credential-rbw.rb, nicerloop/homebrew-nicerloop, 1
@@ -13492,6 +13496,7 @@ nicerloop-homebrew-nicerloop/Casks/neardrop.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/nomad-login-ad.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Casks/opencore-legacy-patcher.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/openemu-nonmetal.rb, nicerloop/homebrew-nicerloop, 1
+nicerloop-homebrew-nicerloop/Casks/peazip.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/replaywebpage.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/rescribe.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Casks/scantailor-advanced.rb, nicerloop/homebrew-nicerloop, 1

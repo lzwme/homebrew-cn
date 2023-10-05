@@ -8,9 +8,11 @@ class Ncnn < Formula
   head "https://github.com/Tencent/ncnn.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "0f8805cc74dde457b7b0262c5c5b0a16f86bd9767faa4efbf524393ff17787b8"
     sha256 cellar: :any,                 arm64_ventura:  "babe021fab681fdb55b985baa47ca19aae564ef1664344453cd216b25b936217"
     sha256 cellar: :any,                 arm64_monterey: "4c5fe412084696f8c5456d964615c7da9c5ac452279038c93f10351eef84265d"
     sha256 cellar: :any,                 arm64_big_sur:  "f1e8b9c35d88039311138049437dd8e6cc9833db7d0fb0fc9df913ee4308f5e8"
+    sha256 cellar: :any,                 sonoma:         "9f5ca541229c3ccb1af8acd07bf743ca1139bf2e4376c9a4eb2c1dcdfe5ca9cb"
     sha256 cellar: :any,                 ventura:        "c41eb84ee11b7f4c5a61801428765af3e24c386d97bf51960ec64e93d64f41ca"
     sha256 cellar: :any,                 monterey:       "1e507820cfa6e07f946ab5dfd4094308a3ae5f9273e4aa644b59b223d55ec491"
     sha256 cellar: :any,                 big_sur:        "9f1f4ba1e2d9c8877ce39d618995f5c5c577e2f01601ebc21d651ea02f2e175e"

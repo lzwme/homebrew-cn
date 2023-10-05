@@ -3,19 +3,18 @@ class B2Tools < Formula
 
   desc "B2 Cloud Storage Command-Line Tools"
   homepage "https://github.com/Backblaze/B2_Command_Line_Tool"
-  url "https://files.pythonhosted.org/packages/5e/da/a83310e00ebe92ce18d1a09bf11ba9b6c8425242e2eb78f43ce12784820f/b2-3.10.1.tar.gz"
-  sha256 "48cf8270641e35a50e9fb06d98c7b64db0d45d7df3550e9549eb1dbc3cbc2b31"
+  url "https://files.pythonhosted.org/packages/27/2c/1829421e891cddc63cd9317f8e53cc3f94dd649fd0828f268845b10d97c4/b2-3.11.0.tar.gz"
+  sha256 "295a1cddf1fa809a4a53545ad9f19694c8458769d7e5e839194f3e8de46c2b9d"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fb2c05b04b250836f824fa78180be83082fbdc8d31eb1befddfcf73d7878c16e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a297cc4b113dd8f475dca83f3f275928e52408757ff9586d506257b83cff3a73"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f76864feec1a08b4a46ebd45f24034dd9d400db10db897f297c577c5e0933d4c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9c650d9726f94e9a65ac3b514a03c47532e9efba2c7a7ee59a3aa0cb29bfd7d3"
-    sha256 cellar: :any_skip_relocation, ventura:        "bd6ace38064a6b0cd2a2974eb40b16d663b2eb37f53767dc14a540e2402eb05e"
-    sha256 cellar: :any_skip_relocation, monterey:       "e0208cc1013f97f248cad0a3417788bafa9c8a8a76b526ea0bbb8f060bb972b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fbfb30afc0ac5b5e8b2e75275943fb9f2a29102ebca2a4affa60ceabcd5f8d27"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bdf5b6f02029e36510dc5e3f062247e62182160b0448c7dec569960b28d8aca8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ab9a023eabc8572c777791f31909166005c55ffa939dfe6acdfd96475601dfc8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0b62ff06a8f7c98a26c96e7f058d9d37fba320ca766b1cbe0a7c04cc27018c53"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a447d0713e7a6c517eedd9b9630c7c9595c45fb23198ba02576c199d9221d50a"
+    sha256 cellar: :any_skip_relocation, ventura:        "7f7e5b010c887f5e39fc519b4d01d25d7e692af62507687f80d3085761c21aa8"
+    sha256 cellar: :any_skip_relocation, monterey:       "78509298d072789812a7cc847f2744772b25e83cdf9193a8664912244018f949"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2ac9c9faf38580922483252b60fb68f42fca81b0ab63986f0f632160edae661"
   end
 
   depends_on "docutils"

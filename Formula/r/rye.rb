@@ -1,18 +1,18 @@
 class Rye < Formula
   desc "Experimental Package Management Solution for Python"
   homepage "https://rye-up.com/"
-  url "https://ghproxy.com/https://github.com/mitsuhiko/rye/archive/refs/tags/0.15.1.tar.gz"
-  sha256 "a6ca07877da3ad508305ba13ea5cabb595245fc3c916a83af6903334682f94ff"
+  url "https://ghproxy.com/https://github.com/mitsuhiko/rye/archive/refs/tags/0.15.2.tar.gz"
+  sha256 "2ee835db0697645e1a902f47e1404173451dd5624c72c0917330acedef3c4aff"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0a5f203542513b2ba3f6800d4b6015be674ed4a7884182836520477e55aa161c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8cef0e08be4c76fed48edf5c8b0d7d70c0d9894918066d4ecff9d7e31a2384d2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b9c2f0066692cc8e08e9bba0ed1b5164570f2ae5817670bdfc5fb08f4e8347d9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "817a019b4d2ccd9175e9ef7160029aefaff0b609a559e6656af55ae209d11487"
-    sha256 cellar: :any_skip_relocation, ventura:        "adb626dd415ae865d0619bd1999452bfa9a3eac2beae6e382b31592d7760e03a"
-    sha256 cellar: :any_skip_relocation, monterey:       "b8088fdd7b738e0606392ce588cf2b6cf0a2f2ecd5416a118f35345f4159092d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "333d731bc6112357b1e5206865af5484df139b7568e7c524df90a667c4f767a2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2d26467492066915dce15b3d0cf8e9fdc54108efee6aef1d77faf6f551522a7c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2679e456689490fb3d7d2d2bef12cb12a004f0fb0b73f0f7c7892842fcf9225a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "819a338424559e3f5ed8cf5425e773f49d43ee914949eed6080969c919ee475a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5bb71d1fdaa12184308f23fdc14a0d68751d0d50ade8bad60a7f19d1b363a9c4"
+    sha256 cellar: :any_skip_relocation, ventura:        "86c41769b42bc4d40978a779957028f0d896d84c764b617f3bbb863697402888"
+    sha256 cellar: :any_skip_relocation, monterey:       "5a7e6a2967d55b194f18d060c5222f5142b0a3a858979706e04d3a0cdbd0e2d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a361fcd76d019931ca3bcd54804b7767a0661d96ae639eef6756faa38b827ec"
   end
 
   depends_on "rust" => :build

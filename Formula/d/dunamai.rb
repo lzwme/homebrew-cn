@@ -3,20 +3,18 @@ class Dunamai < Formula
 
   desc "Dynamic version generation"
   homepage "https://github.com/mtkennerly/dunamai"
-  url "https://files.pythonhosted.org/packages/61/f8/416bf0a7ef5775b631305a5772d2c5d67282caeb9fad3fd5181d1742e336/dunamai-1.18.1.tar.gz"
-  sha256 "5e9a91e43d16bb56fa8fcddcf92fa31b2e1126e060c3dcc8d094d9b508061f9d"
+  url "https://files.pythonhosted.org/packages/1d/03/338fba56a6c76ea6d99ca0b7af3098292c2dd6597ed656daa6ae26a07a77/dunamai-1.19.0.tar.gz"
+  sha256 "6ad99ae34f7cd290550a2ef1305d2e0292e6e6b5b1b830dfc07ceb7fd35fec09"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "30e20f4d1d59704dd7555fb0a5bcd57d67847e0b1b8dd8dd77c0fbe6759628a2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "caa2225fdf48444298424b60887eb0ed28d486faba484873e907a9bf54c5f6db"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2448421f350edb4f4ac76704827d6c30bf33876da7d861f80b4b0aea71b6aed9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "db76ded7233363f3f8538f9581fef119a6ab3237e5789a794c6a9800abf1afe1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "57db73e0005d057ff0553b4cb98aa2419e309de2169a0d693193d5d37ad27156"
-    sha256 cellar: :any_skip_relocation, ventura:        "ae43ea2e87c37456d770b6cf85ff38ab8be0565b31d1f3cfbc27032b9280a399"
-    sha256 cellar: :any_skip_relocation, monterey:       "532ad466acd49661945263389a234aa81327e31734b5cd8468e42b27aae6c9bc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9ad7005fa07caea1d5c47544192d20786bebf239f9422b14208ca9c605038a8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d5b62b8f371fb341cc936f76c788111f8eccda2012de87b079ea2af66ee056c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "29ec1600f234393ea6a7324cd390184e40208de3e004535724a726b8fe7ec1ac"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5764111fe4e0c7b3a7ca2ebac6c64717134bc3acf2f4a1121502ba95bfa11c2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "28c49c5cf768dea3d798b4be25476366f038c2b82325838e6b6ef737299e96f0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0bc870de579b120eb04040cc34b76c8c52cdc2fa4273fb34d1b58d4217e52923"
+    sha256 cellar: :any_skip_relocation, ventura:        "72b0a6b4ecdf8241b85c1e96a500c6250c2748fad36bcc2dc8d692ebab9d0e98"
+    sha256 cellar: :any_skip_relocation, monterey:       "e6b4e18fa7064fe54a24a5bacd1202367353bb9616d08b386dcce624bba8666f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1199b665d9ca97cfab29e557649c70ddfd120c7da54213333ffb66a0c43c8d35"
   end
 
   depends_on "python-packaging"

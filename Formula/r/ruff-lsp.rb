@@ -8,15 +8,17 @@ class RuffLsp < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1a8708674d50dcc5a697d02e75ad717bbf38a679e751c9c23f1c088d46c390d1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf05f1dc699a28b06b4e096d37ad0839c353b015738644f5b2f4b6feba76927b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bdd534f02e1a245ab00b42480cced751cafcd83e52ed2eb3f6405b20ab273cad"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7e03a6714609f7ccf7f823cea3eac0cdc3a58bea92eb3a325493ebf51ed8cff8"
-    sha256 cellar: :any_skip_relocation, ventura:        "77abff0aa91e51f6e395462317b5ac7201316a0fa26c95715f4ac662d1e02227"
-    sha256 cellar: :any_skip_relocation, monterey:       "8f12e56e7772ae5ea28034af69d2ec8bf174d6f85db58315944451cbc5b51982"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3384cb7690d38228874ed16c5e4839140d3db3ea898e7c319822531fbc0fdd0a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8c1c973ccb6f87f76701e708a640756eb0307ee84f23904d434abc333426be00"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c451af62399969ddc7d2fd4b214d3a626cdba80f6af0b58d008b3fb64ad39fbe"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8efb540deac738c7d898233a1a2d8191dfc1b910a53a4884d9be1f738946116d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a2e70db033ee237fdf2cab67438ac18d4c6a673d2889f0ca763e9cfb620232e6"
+    sha256 cellar: :any_skip_relocation, ventura:        "40c2f0925c69c172b9c5ba66446bc722dad9da900a7125bdd0c5f828544966b7"
+    sha256 cellar: :any_skip_relocation, monterey:       "4ad0995755858c3417e511ac09b83407bd26debaff8632cb1953717333c2bf21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca4bafed1d3e971b0ceabc6577b6702fee9313de7b2471cf1089623e8ed1fb0f"
   end
 
+  depends_on "python-packaging"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "ruff"
@@ -34,11 +36,6 @@ class RuffLsp < Formula
   resource "lsprotocol" do
     url "https://files.pythonhosted.org/packages/22/a1/4df53bbe3663de65ad90c6bbc2e6e8779b61fba1e13ee9a21a0f2f7db8f9/lsprotocol-2023.0.0b1.tar.gz"
     sha256 "f7a2d4655cbd5639f373ddd1789807450c543341fa0a32b064ad30dbb9f510d4"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "pygls" do

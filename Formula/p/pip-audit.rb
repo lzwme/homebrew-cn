@@ -9,16 +9,14 @@ class PipAudit < Formula
   version_scheme 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ac82040418ea7cb7bba0a475f586a6097bdd744b9c330e05974208ac7dfb249d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c766a569cf207c0037899b744d9d3bdf19bd83551b7863ceabeb47834b62fe33"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e806c0d1c276e48e944594d3e12aad583ca5d45a4efc298bc0ccb3514405d6b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "651cdad878a1949d5399d73cf070e511ea73c5fde2cabb927563fd203f580f2b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "263a3b76db1458e7ea8e6e50771a9f330e878bbc184868f34ee0751a3e60ae33"
-    sha256 cellar: :any_skip_relocation, ventura:        "dd2294d5013a25a4eb83c3f17f6a9e2ba3eecee2532f61ae3cbf2fe4899eb6ab"
-    sha256 cellar: :any_skip_relocation, monterey:       "6dab01163eff1fa103020bfea772b4fadcad32ff66e63ec10785108acad44451"
-    sha256 cellar: :any_skip_relocation, big_sur:        "84757652e6877fcf8bfa55ae1e1c72d94a8dad072a0349d3c21c23a41a6b1f04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3c406df572fad31b261ec6c690e1a657f1485ab5edde5da0589b3b6b0cce05f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9eaa4a646bbe2a6f149bc78b94e1655e4af19661a58bb6f28d5a3d6138367d09"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a990ca60c45e373e59c68db714676f6b9a09c5a36378fd887ea4cb30f44e3268"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "701fcb68b2661272774ac0365355efae571e30fabb45ebd7163e8862ea7a82d4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ec46e86273adb444f1839577e38725c2ce7e76ce314bae86ca265da6d357cd25"
+    sha256 cellar: :any_skip_relocation, ventura:        "a31d82002baed3626e0d9b3bfd997be2e9d190526a380294fbda8add2de6106a"
+    sha256 cellar: :any_skip_relocation, monterey:       "7258f78610bd6d53517e07677b0dcd8756c73141411e4b59201fd15b57b0a10a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba92e295d41e3ced61f0615f416ceddfa32a0cbb1f417c13f47673bcaffe4b46"
   end
 
   depends_on "pygments"
@@ -26,19 +24,24 @@ class PipAudit < Formula
   depends_on "python@3.11"
   depends_on "six"
 
+  resource "boolean-py" do
+    url "https://files.pythonhosted.org/packages/a2/d9/b6e56a303d221fc0bdff2c775e4eef7fedd58194aa5a96fa89fb71634cc9/boolean.py-4.0.tar.gz"
+    sha256 "17b9a181630e43dde1851d42bef546d616d5d9b4480357514597e78b203d06e4"
+  end
+
   resource "cachecontrol" do
     url "https://files.pythonhosted.org/packages/9e/65/3356cfc87bdee0cdf62d941235e936a26c205e4f1e1f2c85dbd952d7533a/cachecontrol-0.13.1.tar.gz"
     sha256 "f012366b79d2243a6118309ce73151bf52a38d4a5dac8ea57f09bd29087e506b"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "cyclonedx-python-lib" do
-    url "https://files.pythonhosted.org/packages/92/6f/b5e9ede426a65367bdb1f34f1f19101fa95d69441776a65597ab6cc7d88f/cyclonedx_python_lib-4.0.1.tar.gz"
-    sha256 "878e33b8e0080c786f6cbd4c6f87ad610db65d6a3a686a5698415d9cfcd8925d"
+    url "https://files.pythonhosted.org/packages/19/b5/ff160aa03f4b9ed3fa655ee35871e43c215408e71daa437342ad434c88f3/cyclonedx_python_lib-4.2.2.tar.gz"
+    sha256 "d8fd40a94ab9130e9d1292ecebd35bd081f8a2d589c5259eaf7ec5caa5e95a43"
   end
 
   resource "defusedxml" do
@@ -47,8 +50,8 @@ class PipAudit < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/00/0b/c506e9e44e4c4b6c89fcecda23dc115bf8e7ff7eb127e0cb9c114cbc9a15/filelock-3.12.2.tar.gz"
-    sha256 "002740518d8aa59a26b0c76e10fb8c6e15eae825d34b6fdf670333fd7b938d81"
+    url "https://files.pythonhosted.org/packages/d5/71/bb1326535231229dd69a9dd2e338f6f54b2d57bd88fc4a52285c0ab8a5f6/filelock-3.12.4.tar.gz"
+    sha256 "2e6f249f1f3654291606e046b09f1fd5eac39b360664c27f5aad072012f8bcbd"
   end
 
   resource "html5lib" do
@@ -59,6 +62,11 @@ class PipAudit < Formula
   resource "idna" do
     url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
     sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
+  end
+
+  resource "license-expression" do
+    url "https://files.pythonhosted.org/packages/90/93/0fc8c72a5c9b65c2fd56154ef9e08c0c7a7fd0596ae69c65ce714ea5cd84/license-expression-30.1.1.tar.gz"
+    sha256 "42375df653ad85e6f5b4b0385138b2dbea1f5d66360783d8625c3e4f97f11f0c"
   end
 
   resource "markdown-it-py" do
@@ -72,18 +80,18 @@ class PipAudit < Formula
   end
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/dc/a1/eba11a0d4b764bc62966a565b470f8c6f38242723ba3057e9b5098678c30/msgpack-1.0.5.tar.gz"
-    sha256 "c075544284eadc5cddc70f4757331d99dcbc16b2bbd4849d15f8aae4cf36d31c"
+    url "https://files.pythonhosted.org/packages/c2/d5/5662032db1571110b5b51647aed4b56dfbd01bfae789fa566a2be1f385d1/msgpack-1.0.7.tar.gz"
+    sha256 "572efc93db7a4d27e404501975ca6d2d9775705c2d922390d878fcf768d92c87"
   end
 
   resource "packageurl-python" do
-    url "https://files.pythonhosted.org/packages/91/c7/47a411700a121acc05fe78642b019afe320592078e58c182537c7c65006f/packageurl-python-0.11.1.tar.gz"
-    sha256 "bbcc53d2cb5920c815c1626c75992f319bfc450b73893fa7bd8aac5869aa49fe"
+    url "https://files.pythonhosted.org/packages/33/34/a7843f732e1e0b01e961f6ae835b3fd6bd4e361c1a3a72debd31244cb718/packageurl-python-0.11.2.tar.gz"
+    sha256 "01fbf74a41ef85cf413f1ede529a1411f658bda66ed22d45d27280ad9ceba471"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
+    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
+    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "pip-api" do
@@ -102,8 +110,8 @@ class PipAudit < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/4f/13/28e88033cab976721512e7741000fb0635fa078045e530a91abb25aea0c0/pyparsing-3.1.0.tar.gz"
-    sha256 "edb662d6fe322d6e990b1594b5feaeadf806803359e3d4d42f11e295e588f0ea"
+    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
+    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
   end
 
   resource "requests" do
@@ -112,8 +120,8 @@ class PipAudit < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/e3/12/67d0098eb77005f5e068de639e6f4cfb8f24e6fcb0fd2037df0e1d538fee/rich-13.4.2.tar.gz"
-    sha256 "d653d6bccede5844304c605d5aac802c7cf9621efd700b46c7ec2b51ea914898"
+    url "https://files.pythonhosted.org/packages/b1/0e/e5aa3ab6857a16dadac7a970b2e1af21ddf23f03c99248db2c01082090a3/rich-13.6.0.tar.gz"
+    sha256 "5c14d22737e6d5084ef4771b62d5d4363165b403455a30a1c8ca39dc7b644bef"
   end
 
   resource "sortedcontainers" do
@@ -127,8 +135,8 @@ class PipAudit < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
-    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
+    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
+    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
   end
 
   resource "webencodings" do

@@ -8,16 +8,17 @@ class Codespell < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c16233869623f279d39c9868d2679501cea1bdf1bd5ecdd3541255c89489b46e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "84525740e3a2496e47627d113cc6d8a1084d6abbe4d79374db6e23d48ef0536f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4b83abe4d2e6dede87848fdb28951d2369ef6c57238c2c958bda30f7b77610e4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "87cc81986615b16b7853579c879948c742be38b954799b040af2605163b73239"
-    sha256 cellar: :any_skip_relocation, ventura:        "5dd81567618e1274aa7f4f71a06f0e1b210af89bc6152331051b05c517ef42ed"
-    sha256 cellar: :any_skip_relocation, monterey:       "5af272bbde1aac9a1630ccf8dc99e561fd76703e446d759be01aff458fa7c5f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16a6952f0ffb74d2e30463eedd8977834aca933dae65e82042aceee453483bbe"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ffd5d8a44b48858c9882083acbd5abaddd612a1019d80cc502ad1b41d75d6bb0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3854426224f0d3d07fd3f400dcb56eccf7b69efe46377871ef0e35e512e45fb4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0fc5b733f9670d830760e980b5d0e0b96f41ecce6e294a77ae5935fb3b1308a6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fa7711e4c842edeca00598e2a13cf19e2d3874bb09847b08e0d4ac2042bb6ff4"
+    sha256 cellar: :any_skip_relocation, ventura:        "f8aa834fd9afb8964095c36e2c8d80f6cc233769c20fc5109c1570d908950b41"
+    sha256 cellar: :any_skip_relocation, monterey:       "0d331809dd115374560dfa34fc928c6ae28786cef02a3c2a0d23a839496abc50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be12c81122de1ef61972790e8d51ead7e81fbd577e4bf356f096abfc475c2a3b"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     virtualenv_install_with_resources
