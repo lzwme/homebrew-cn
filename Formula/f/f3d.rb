@@ -14,9 +14,11 @@ class F3d < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "c7c7ccb0cb1677db9f6edf076b9bfcf0b26784c7eb1997fb073b1bd2fb78363f"
     sha256 cellar: :any,                 arm64_ventura:  "ea4c99012e19ad2523a9dba29f42068d89cac37720f0633793d28064c5d0bf79"
     sha256 cellar: :any,                 arm64_monterey: "7491ab9bdd77d2bc108189317d65a0712aefb1142aae095d7acd58f2bffa82cd"
     sha256 cellar: :any,                 arm64_big_sur:  "df7bdcbdca0774f4ff4a3b4e5dbf9906929184004159b096cc849df671791582"
+    sha256 cellar: :any,                 sonoma:         "aa4998b6e8cb34410602576791cd400cb4e8b7bd0df907a7088b8988488589d0"
     sha256 cellar: :any,                 ventura:        "fa22f84a2dfd658244a2c5f30d7ba08e2ef497aee292a7de6fe52575874eeede"
     sha256 cellar: :any,                 monterey:       "c02c294aad555af62c090185996eb64e77d58b92e730a55aad152c99034c6231"
     sha256 cellar: :any,                 big_sur:        "0c68b8f075631601d6715e8cf71f90376e6c426ec34f494a762c9fcc96302edd"

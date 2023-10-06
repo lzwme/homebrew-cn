@@ -1,6 +1,6 @@
 cask "marked" do
-  version "2.6.25,1046"
-  sha256 "c9960b6977a4dca091870ac365feb5fd98ea6533cf0394e10c7de431b6956004"
+  version "2.6.27,1049"
+  sha256 "22f23c24b987a663b3457b91b333b7b27e8fe2135ff9c6ffc23f243f260c7c91"
 
   url "https://updates.marked2app.com/Marked#{version.csv.first}#{version.csv.second}.dmg"
   name "Marked"
@@ -13,7 +13,7 @@ cask "marked" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sierra"
+  depends_on macos: ">= :high_sierra"
 
   app "Marked #{version.major}.app"
 

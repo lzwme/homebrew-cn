@@ -10,9 +10,11 @@ class QtPostgresql < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "be6ef087ba33f375dfb5b94df0f254c4acec0dcb23532456e5a53c69e96e85f9"
     sha256 cellar: :any,                 arm64_ventura:  "fc01b20e5779e739d2973013cadbbe6cd44dfad15d420792ddc846a732938131"
     sha256 cellar: :any,                 arm64_monterey: "75d449518836e9bd760544462114b7bf3f4d437ff19cbece5b7d044c07d80dda"
     sha256 cellar: :any,                 arm64_big_sur:  "bdd662f2703c847ad57c9a862c952fa2d1d32911af2f7488118c0850254de0ae"
+    sha256 cellar: :any,                 sonoma:         "3e43b711227214d30020125ce10f6f9bb7389c09aad5db34c06548ccb2b644ec"
     sha256 cellar: :any,                 ventura:        "8beec9b0643db83e743d5d4c88876429616604ea44217d1a4e8a31a35e05d112"
     sha256 cellar: :any,                 monterey:       "88e5a949cc4bc54b417fa6cef723d667c351c1caad2552d8d645349d89036179"
     sha256 cellar: :any,                 big_sur:        "0187a1a2d55da8c98f38c631a5f450f863f9285eaead1f65a0bd4c0acb9e7f15"

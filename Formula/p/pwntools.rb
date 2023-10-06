@@ -9,15 +9,14 @@ class Pwntools < Formula
   head "https://github.com/Gallopsled/pwntools.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3df260e8b2f0a00ab61ed1389d512a1cb2ab4e8bc9f9351c292b03bbe102da18"
-    sha256 cellar: :any,                 arm64_ventura:  "87801660c81e42f58dafb22b8a8e466db4aec08eb90fad4172cc286731661410"
-    sha256 cellar: :any,                 arm64_monterey: "b6e6014b698f287cf89180bcbeaeac375d7716e3ee0a5e1e34683050e936271e"
-    sha256 cellar: :any,                 arm64_big_sur:  "835727e91d4464836c739189a5a3378e158ff28c5301d3f862f6fc95a5541035"
-    sha256 cellar: :any,                 sonoma:         "6c611099c3cd9452870cbb6049a6c7252763523e9ed6ad69006d92dc670f0ac9"
-    sha256 cellar: :any,                 ventura:        "b1c56183ef38554cc4bcffbd211b515da9d4a067ab2bba56d0191d6925114d19"
-    sha256 cellar: :any,                 monterey:       "bf49f1a6d97b4b841b5a7442a36bb0f573c050a49925de5c5245490431bd00d2"
-    sha256 cellar: :any,                 big_sur:        "3fda3cee281bf567cffcb2ce119046ec660a50a83d81f67db7176dea0b54bc69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0fb7b6e36b67baa1aa74ad8182dd873394836e44c72b0836400deb742e6bb170"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "9be19cf7cfa4743e55b8959ef87a068653158ed86d6a06cf80f76579328d2b70"
+    sha256 cellar: :any,                 arm64_ventura:  "f69b4ff8fb2a575845220e9a75309d2d054777ee1af9498a888e09d1a5dc0c03"
+    sha256 cellar: :any,                 arm64_monterey: "3f41f54315ea05e28b8e3a0f0903144de835e465132e86100de50930f7deb9da"
+    sha256 cellar: :any,                 sonoma:         "076e40e9f02a30d9b1347b0ebd5c193ca37293b072a2c7689af60362e5bb0d66"
+    sha256 cellar: :any,                 ventura:        "e836e03d7cdf53fa540687f0f57ef78eae8056890e240f31d06a3817607e09c1"
+    sha256 cellar: :any,                 monterey:       "835461d2840662a743f8dce9abb4a6e6fab5082d1f703e100a4e85a17a4b6198"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "578b60f0cf0888d7659206a53ab775af90e1e0c681347d8ab4cfcb44abdecfb4"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -26,6 +25,7 @@ class Pwntools < Formula
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-packaging"
   depends_on "python@3.11"
   depends_on "six"
   depends_on "unicorn"
@@ -72,11 +72,6 @@ class Pwntools < Formula
   resource "markupsafe" do
     url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
     sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "paramiko" do

@@ -11,9 +11,11 @@ class QtMysql < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "f1aa250d76991df324ecff7b26915fcb108d9752e12da33d66ce70269aa84296"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1bfc728209369a52f821cd0fa3a5148f8d52cfe3107383eeac28617fb0fd687e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e1bf71b43b404d012bcbb62949657acfb21524983edf36965f94fef34a15a326"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "20d8e8a698289dd1b715fae366fc4e8b7cad5debbaf83d756f8e2c7cb24dd13c"
+    sha256 cellar: :any,                 sonoma:         "498ef32620727631452dd31248da18db2e505359201d3ad01a5fee678b6345d8"
     sha256 cellar: :any_skip_relocation, ventura:        "c0ef0588a2b6195d1c55215f0dad2c495245ee59dde5f59d4efca9c88f4ad961"
     sha256 cellar: :any_skip_relocation, monterey:       "6883b13f11a91ff7048ff6a237d4b8820788ebef95a6831fdd99937069413ce9"
     sha256 cellar: :any_skip_relocation, big_sur:        "0979f7ffccab1379db612b87abcde50753837fe98c86ed6636f6d4459c41a653"

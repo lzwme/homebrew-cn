@@ -10,9 +10,11 @@ class QtUnixodbc < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "085ac431e47c676160bed5e012a48911d9c930e51e996f902472f242c38d69c4"
     sha256 cellar: :any,                 arm64_ventura:  "fbae1c11298d5b3b00fc2297222bc877ef67508ea0b75152d3cb86d4880db3b6"
     sha256 cellar: :any,                 arm64_monterey: "09bf198d7066f0af56cc84907a5c35817f3460788c084ae16f9d5ef4587f0e45"
     sha256 cellar: :any,                 arm64_big_sur:  "0b16a536b91cb783230feb7d1a492700215071b532934c7d2be44b001be52e3a"
+    sha256 cellar: :any,                 sonoma:         "e226b5a500f5d1ed8121cf4f7ea72d57296bc576e07f388cc7edbe74269e7c6e"
     sha256 cellar: :any,                 ventura:        "6d8f3b7fbf38c0fed278f3189ebde536c34884ecf72a477b24a93b03348867b0"
     sha256 cellar: :any,                 monterey:       "5ce7fa0555edfd016950adeae6afb3170cb7d0941b972eb023bfcc2ce4dc35f4"
     sha256 cellar: :any,                 big_sur:        "2f82e90fef0117dad086ba0ed050a9c3d05e9b6ff2fc5bf8f48827631cb04867"

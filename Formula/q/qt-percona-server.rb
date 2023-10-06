@@ -11,9 +11,11 @@ class QtPerconaServer < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "08d26aa391fbc065a7122ac15b3702983a5de527da6a068513ee8482c612ec3a"
     sha256 cellar: :any,                 arm64_ventura:  "b32e9ae3cc043307ee278c449f2eb76ef85caa0c30d1c0d315cf73e9eb9c85c4"
     sha256 cellar: :any,                 arm64_monterey: "d918f5098cfa4131ad417aaf36fb5da2ab6e7edb016b279813634b9b74dd9244"
     sha256 cellar: :any,                 arm64_big_sur:  "da23de68a5f0a33c3c18224c028d2ec45ab36efe215defc3b78ac1fe8dd9350f"
+    sha256 cellar: :any,                 sonoma:         "f9357ac95680a3b14e129a716dfe69ed4f0b82785d6c471cd6ad914b70a179ce"
     sha256 cellar: :any,                 ventura:        "6c7216393f5536a33a069ee2171d8d6b9b1098361d2892335bebed73d4a66427"
     sha256 cellar: :any,                 monterey:       "05d9e0fb047abbe171ecd16a3f923a10a9e286f0852b0cedb0bd5a6f747f97bb"
     sha256 cellar: :any,                 big_sur:        "b1905ee3be1127084423f54c4c958869497c7e744ee786ca6ab9cfe41531215f"

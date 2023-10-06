@@ -12,8 +12,10 @@ class Wxmaxima < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "ca1436ac23726f58a3ec07010b6cb29eb12e430fb4b5057acb380b82a7f5cd28"
     sha256 arm64_ventura:  "6ee1024fad8f3731a20fecd696ae95d474b462c0a90d8030ef7ad86b0e9eba30"
     sha256 arm64_monterey: "a49d8dd60079b066600dcdd827de8a51fc76c8e3f68481d1478cb92489ee7bb9"
+    sha256 sonoma:         "cac016670e8a7c7663a1810724404d2633cae2d41d2bcc8921cd266d7f013969"
     sha256 ventura:        "41e0f8278845f6b903531a325a7c8e78e6c026c7751deef0584908a42a664196"
     sha256 monterey:       "a197b0e89b0990eb8ddfee8a4da412e11f1a0237a297ed234ff39190a62bac95"
   end

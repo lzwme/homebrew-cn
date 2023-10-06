@@ -11,8 +11,10 @@ class Opencv < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "8598e159f57ae66a9d05009db6ce4bba55929993751aebf3c034683d28425b1c"
     sha256 arm64_ventura:  "5516a97cf31d38135050a381335603a032de9a0c28a285c236fe43951c585ddb"
     sha256 arm64_monterey: "10c4c9e7d67fc27d98aa099e8ae9dfedd2928b35104aa3b24abb7f5f7c9ee3ea"
+    sha256 sonoma:         "4a51c3fb04735a89b7d1c173ac9babe88f4d0dc64ba513b15866a6a732d067cc"
     sha256 ventura:        "f7d345a11a8df65d1496ae9e40650ca5e08fe93f7e80bc1ebec560bce89dbf7b"
     sha256 monterey:       "b9bd7ba2ca18752c657985d3f44f6733e2daed3fe38bb1c1b0a7e25bbced6bd7"
     sha256 x86_64_linux:   "5cf5e082ac6e274fbb188a73e1859947c299284962ccca2a0691598f3014c9f6"

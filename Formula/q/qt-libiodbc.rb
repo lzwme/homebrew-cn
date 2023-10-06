@@ -10,9 +10,11 @@ class QtLibiodbc < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "e72b42788f0af98b71114e977bf4da59f7f15b950e40d1acf1f65dacf756b0fd"
     sha256 cellar: :any,                 arm64_ventura:  "f62327a22bafa282609f72ec2f815b44a58a7db77043dacc405a6a679e51d2ce"
     sha256 cellar: :any,                 arm64_monterey: "247fc0c70555369e01305228d3df61dd3e27e346c32c2134925940f9063c2328"
     sha256 cellar: :any,                 arm64_big_sur:  "ca01eba10d31aee5604f53703aeabbacae9b8239589e7f2ccd4bce1ea9b709a0"
+    sha256 cellar: :any,                 sonoma:         "09e1f54b07ec44b4ba8d3c0d5b8aa40c0325e62a02e743a7e3f64efb0d86ceb0"
     sha256 cellar: :any,                 ventura:        "3f625e01b17b31ea7d2f7b0923375cd6cf29373ceed0c6a85ff0f9498be9e1b3"
     sha256 cellar: :any,                 monterey:       "82625921539ee09bb118394dd24fc6217fc736fd06142149859477d51de71104"
     sha256 cellar: :any,                 big_sur:        "940dce88335e2bc3871388a846a3ea8eaff9a4804d024d84b4e373d921c8436f"
