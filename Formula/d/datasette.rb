@@ -8,15 +8,14 @@ class Datasette < Formula
   head "https://github.com/simonw/datasette.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f67c15efdda494d7d825959be3eaa8a06b054c8e45cd0ad578f05b71b843ea92"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "16dc9d42dab2c6c3803aa08acbd9560ef0877f14b7a4777ff3c40b9cc63fd15b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5f05fd462d8109b6944f71996580f3a613087f2dc72c7aa155f62acbeda02274"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7f75e798312bba2c9c54a73ebd7191aa823b6310fc9509ae0dff388c2e866590"
-    sha256 cellar: :any_skip_relocation, sonoma:         "983d9e862e7b0dd2ab8ac976c0ba72c83b680078480669bf45d192012586aadd"
-    sha256 cellar: :any_skip_relocation, ventura:        "f0348901f4427ab27aff1a4328ec0624b0430ddb05cc0238294f3e09d842ee65"
-    sha256 cellar: :any_skip_relocation, monterey:       "7b766606fe8e0fbc0f58f754e57e49d44cbe1d1b1298ba2603871c3cbbbd2acf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b23a508d15f48c13e2ac6cc33cc498e0eac71327064f01ae7bb59b6414c09adc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f734657a0eb243abcbf50aeb17363f077a1eaf8ff08c86aa92c3f681a2a11519"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1dd07474ec57466d92b4fade850518ed72e838aa35bd51e1c79f7bc3350b50c6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "05fc37af6c53d2f523b26de5d79c3858006b8f029ef3aef2d76956293e352ec3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c0dd4830a43536107c093fce1efa503f1f71c51d86362fd69887dcce5bad195"
+    sha256 cellar: :any_skip_relocation, sonoma:         "820fb89a1bddf63f09084c608dc6005463238aa9f8c0120b773d9c28fd28d622"
+    sha256 cellar: :any_skip_relocation, ventura:        "63bb3823368dc83bd50aab54b9cf87c63d57d49235dd5d685d68b0ab0f3c24ca"
+    sha256 cellar: :any_skip_relocation, monterey:       "77d99fb35dc09bfa0a848f936a61b3a06e033c6e0f2559e7170f75bd4cc14985"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfe571317cfaf1f0e031ea35f80072756a64cdf89d59f211d2ba0295cec38f9d"
   end
 
   depends_on "python-certifi"
@@ -137,6 +136,8 @@ class Datasette < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"datasette", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

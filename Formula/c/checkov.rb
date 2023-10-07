@@ -4,18 +4,18 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 10 releases on multiples of 10
-  url "https://files.pythonhosted.org/packages/c6/be/447816d0a394dd9f755164cb859818a203813a88371f963051b40f2072f6/checkov-2.4.60.tar.gz"
-  sha256 "8ca8e2c165cfcaf425e331b59e4689d362ea624ba1fb03aea9e455956688184e"
+  url "https://files.pythonhosted.org/packages/7d/fd/f38acb8ba016018d99982eb431973085813f15be9d16fac1156a4be4ab6e/checkov-2.5.0.tar.gz"
+  sha256 "582220714d614e9d489dd3f18357fd4ca03adea1dd2b85b674da3f994e340588"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "819463fbbeb185dcb03fa78d9cd1ba3d18896bd982eee66d385724b4f9b46277"
-    sha256 cellar: :any,                 arm64_ventura:  "5a24a16dad542ec163aa36c1946e9b11db79f0e10b65186c06187743cfd04ad7"
-    sha256 cellar: :any,                 arm64_monterey: "999a4eef0a5f684388a2fbe6627508d04118af7ca8de421000e104b594a9cf4b"
-    sha256 cellar: :any,                 sonoma:         "698642febaf29447648724ced6ac7d83861c485f9535e3ca538362d953845f4a"
-    sha256 cellar: :any,                 ventura:        "86eb3607426b64cfeafdb32e92cfe3c290c5f835c77e94e9d27a7cad4addb15e"
-    sha256 cellar: :any,                 monterey:       "ab116cc82909bf0ded4952d304d5b9d7627f67dd99e08a1f045b1b629f318e53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d38e1dacdc72a86db74fdbf61cd692d1ca9f75d7023b8a238d32c76c8ffe06c2"
+    sha256 cellar: :any,                 arm64_sonoma:   "9b7f768e5ce2b75dac368b1726e0fb8004be2b473d6fbe9d5ae98a85558e739a"
+    sha256 cellar: :any,                 arm64_ventura:  "53f28c50cf217a98db7ed41dc47a47fcc77ea5fb5f6835b78c40def73b39681b"
+    sha256 cellar: :any,                 arm64_monterey: "6302a97b6c5862a601bf1ce1e8a004067178ab3b7c4f7c87d01509521928eae3"
+    sha256 cellar: :any,                 sonoma:         "517fc65e8bf3b94f40f53af99028d4ca83641a61e36e0f795baaacc60d63ce78"
+    sha256 cellar: :any,                 ventura:        "6ee03a02e3e1989e493802c65ea44b0780e2fcf0b91e2d2b3eb033ceb5cca902"
+    sha256 cellar: :any,                 monterey:       "1e994ed8f2ae60fc905fcd6c48f47a2d29ec476182daedf08babec0439c57aae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a01f44d824d55e3a689a77fdbac8d75fc14242d31807743ae1700d8b44f288a2"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -25,6 +25,7 @@ class Checkov < Formula
   depends_on "numpy"
   depends_on "python-certifi"
   depends_on "python-markdown"
+  depends_on "python-markupsafe"
   depends_on "python-packaging"
   depends_on "python-pyparsing"
   depends_on "python-tabulate"
@@ -100,13 +101,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/2f/35/6b344e4b9e726956a2d0c15255659c4967bc234b185694c5bf9887b7cb9c/boto3-1.28.59.tar.gz"
-    sha256 "aa861e5568a564a5ce2fff5413d6ae2cda0eed7399b3a949bc861a20915e2046"
+    url "https://files.pythonhosted.org/packages/42/56/633b5f5b930732282e8dfb05c02a3d19394d41f4e60abfe85d26497e8036/boto3-1.28.61.tar.gz"
+    sha256 "7a539aaf00eb45aea1ae857ef5d05e67def24fc07af4cb36c202fa45f8f30590"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/c2/d2/0640bb7298d9056a4ffcb4cdfc518ac5b5654816e55cf82a413a275ce5ae/botocore-1.31.59.tar.gz"
-    sha256 "159f637300206a0b37b49c1bee61265650843f591e9cb62e9adcb3d1c2afec91"
+    url "https://files.pythonhosted.org/packages/05/2e/9cb8adca433af2bb6240514448b35fa797c881975ea752242294d6e0b79f/botocore-1.31.61.tar.gz"
+    sha256 "39b059603f0e92a26599eecc7fe9b141f13eb412c964786ca3a7df5375928c87"
   end
 
   resource "cached-property" do
@@ -162,11 +163,6 @@ class Checkov < Formula
   resource "decorator" do
     url "https://files.pythonhosted.org/packages/66/0c/8d907af351aa16b42caae42f9d6aa37b900c67308052d10fdce809f8d952/decorator-5.1.1.tar.gz"
     sha256 "637996211036b6385ef91435e4fae22989472f9d571faba8927ba8253acbc330"
-  end
-
-  resource "deep-merge" do
-    url "https://files.pythonhosted.org/packages/a5/25/aa35c20acd8a4f515f9e4c8dee4c7731446234101a6dae0c34cf498bb342/deep_merge-0.0.4.tar.gz"
-    sha256 "b54415f90934c42e334114e2864cb4d4e7335b34ad396e35ad8610c96065a47e"
   end
 
   resource "docker" do
@@ -254,11 +250,6 @@ class Checkov < Formula
     sha256 "42375df653ad85e6f5b4b0385138b2dbea1f5d66360783d8625c3e4f97f11f0c"
   end
 
-  resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
-    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
-  end
-
   resource "multidict" do
     url "https://files.pythonhosted.org/packages/4a/15/bd620f7a6eb9aa5112c4ef93e7031bcd071e0611763d8e17706ef8ba65e0/multidict-6.0.4.tar.gz"
     sha256 "3666906492efb76453c0e7b97f2cf459b0682e7402c0489a95484965dbc1da49"
@@ -335,8 +326,8 @@ class Checkov < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/52/fa/31c7210f4430317c890ed0c8713093843442a98d8a9cafd0333c0040dda4/rpds_py-0.10.3.tar.gz"
-    sha256 "fcc1ebb7561a3e24a6588f7c6ded15d80aec22c66a070c757559b57b17ffd1cb"
+    url "https://files.pythonhosted.org/packages/9e/a8/4a4e5ef90c4c4f27683ce2bb74b9521b5b1d06ac134cd650333fdca0f52c/rpds_py-0.10.4.tar.gz"
+    sha256 "18d5ff7fbd305a1d564273e9eb22de83ae3cd9cd6329fddc8f12f6428a711a6a"
   end
 
   resource "rustworkx" do

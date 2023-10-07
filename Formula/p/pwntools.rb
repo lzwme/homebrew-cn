@@ -6,17 +6,17 @@ class Pwntools < Formula
   url "https://files.pythonhosted.org/packages/cf/ce/5b44dc18f0090a2f7188f0a8b98f00aebaa10537fffa3e66351b6972c02e/pwntools-4.11.0.tar.gz"
   sha256 "a85f1e777f343f91e221d175e1523d006eef1c8106c10fd2e338280bab273fa6"
   license "MIT"
+  revision 1
   head "https://github.com/Gallopsled/pwntools.git", branch: "dev"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "9be19cf7cfa4743e55b8959ef87a068653158ed86d6a06cf80f76579328d2b70"
-    sha256 cellar: :any,                 arm64_ventura:  "f69b4ff8fb2a575845220e9a75309d2d054777ee1af9498a888e09d1a5dc0c03"
-    sha256 cellar: :any,                 arm64_monterey: "3f41f54315ea05e28b8e3a0f0903144de835e465132e86100de50930f7deb9da"
-    sha256 cellar: :any,                 sonoma:         "076e40e9f02a30d9b1347b0ebd5c193ca37293b072a2c7689af60362e5bb0d66"
-    sha256 cellar: :any,                 ventura:        "e836e03d7cdf53fa540687f0f57ef78eae8056890e240f31d06a3817607e09c1"
-    sha256 cellar: :any,                 monterey:       "835461d2840662a743f8dce9abb4a6e6fab5082d1f703e100a4e85a17a4b6198"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "578b60f0cf0888d7659206a53ab775af90e1e0c681347d8ab4cfcb44abdecfb4"
+    sha256 cellar: :any,                 arm64_sonoma:   "5b5d0dac5bfeaf0ea136d933424b8f345c831e4087b790082e8e0e9b7c5db9e3"
+    sha256 cellar: :any,                 arm64_ventura:  "028e38df40268f66468178e964d6fe833823e8eadb75199e013a99e3510f1721"
+    sha256 cellar: :any,                 arm64_monterey: "43667de85b5c3b57a3fd440b4e633808e8b28c3d86540a84de443362fcbc6a01"
+    sha256 cellar: :any,                 sonoma:         "24b1e98176b27c6ccfb6f270227706471bab0f30a585ef0ffdd8f79e4cef1b40"
+    sha256 cellar: :any,                 ventura:        "ff1b7006967c69d42c20fc4afee7b72f11b095d3a508f54f9936a767467b2aa9"
+    sha256 cellar: :any,                 monterey:       "a6302c2159160caa423244851a762ae3b98e5fef14e4f7ee0cefcb2c24abe920"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f907b1e0fd1ed2871751320193ecd035f1322a63c1252f507e793983ec44ffc"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -45,8 +45,8 @@ class Pwntools < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "colored-traceback" do
@@ -140,8 +140,8 @@ class Pwntools < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
-    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
+    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
+    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
   end
 
   def install

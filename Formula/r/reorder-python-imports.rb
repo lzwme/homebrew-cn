@@ -9,16 +9,17 @@ class ReorderPythonImports < Formula
   head "https://github.com/asottile/reorder_python_imports.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3b3a21e974205812118ec179bdbc0d8ab0c921629b8550845fb23ad13ed3ca58"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d1d2f800916c0ec2b54551d587e6ef0c9c5708d5329994b66f0463eebc00b0d4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c830b0252795f821b689e746c1c9138e1ce0d51d77f4161a9119590c585703ee"
-    sha256 cellar: :any_skip_relocation, sonoma:         "524a17481bfcb8cc9af6526bba3b95b02b39c7fac5e911d10b2b68025bd813a8"
-    sha256 cellar: :any_skip_relocation, ventura:        "34ca800b0a39ef54a5df5e38ddd6287997a25d14da17802a8e2fcdc2ca031aa6"
-    sha256 cellar: :any_skip_relocation, monterey:       "da02e4f1338ee0f8b9d39558f01a6d58dbfc4355130a595a27c6078145f69231"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eadc175aa8038915435cb89a4c7c0c64af337a11d53a2bb5dfedfbe900565597"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "811806a260a4222b5c0e3a9d57742190ec27c6dc5d631bea6648f2c5c9b5b25e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "559576e8f8e7b85add2071857c12a70f1d749837dc732f5202dda11eaf891fba"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca0b9735c93193e9d687782909b0912f8cca9008314c80abfc69ce1708c0866b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f3f7e647bb739cdf2b44f000d4a0d73834234d9262e4239205c0db27bd3f1075"
+    sha256 cellar: :any_skip_relocation, ventura:        "fea905f69f10190b0696e81f66f9f62e868b0cb07324a130924239b9d92a0d25"
+    sha256 cellar: :any_skip_relocation, monterey:       "042dcbe53a84f21685ebca83179bfb64f804d1431194a62b157a0cda622bb5d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfab9926d9f27a1ec50d80fe7b8da56e3737b90a6999ffe86b8dd4fc2b2d329d"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "classify-imports" do
     url "https://files.pythonhosted.org/packages/7e/b6/6cdc486fced92110a8166aa190b7d60435165119990fc2e187a56d15144b/classify_imports-4.2.0.tar.gz"

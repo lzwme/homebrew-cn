@@ -6,20 +6,17 @@ class Shub < Formula
   url "https://files.pythonhosted.org/packages/ff/1c/02b628a398b06d3f2c34c5e413d61f92300064da01bbf212fe056d9eea0d/shub-2.14.5.tar.gz"
   sha256 "241b31dc4c2a96aa0915cf40f0e8d371fe116cd8d785ce18c96ff5bc4c585a73"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/scrapinghub/shub.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "020bc8763bee81d5705847e99fa115271037ee5d1027122d97ce180462b795f7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "856df624a43227a0bd5e6184318336309da4d7dc0c7b05f21a412720ff22e297"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f9c8782c210729ac2ba711fd7cf1e3da4149b6fb11a1a427afad830aa9776fe9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7540837707dd9821295ed4ccdc53dbe45e38ac8114d82aed20cee2af997d2fa9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f6388ac25380b71c44c97187bbe9d01faf3a881672fcaaa347c3af3f939eb686"
-    sha256 cellar: :any_skip_relocation, ventura:        "4b48416d5f31ed136802bd473c41e19773e0e4c24261dcac69054f417f6b3657"
-    sha256 cellar: :any_skip_relocation, monterey:       "6982d40d8d5213f9207da8c3dc3576cc8b9af9dbd6b6fcdd12fb5244391127be"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ec4fd12ed6914d69cbe966d20e97f136064b287f126b1cdebfbc73cbb28c19c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "322eff975092342eb1796830aa28fa129763699aaf83cdc6124b7756012ea552"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b5cc68616be7190ab5d78abf1c7a3e90173022dadf8cc4556e44edf4677d4424"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2df96756dd2f64fa29409290d0996c18aafefd6ee9419f991f68074701d732b3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "03a2fe47111723659bb629b8d7e8bea555ecc793761f82dc26b4f2bf10f70c31"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e2e50fa2a044c8fde03fbe1e0c6a282075abfdf63c38f5c2ed9979875f76e5d3"
+    sha256 cellar: :any_skip_relocation, ventura:        "ed11416cfa5a57359f8b749455e9cb9a52438ec862322d45e6495283a4ad25ec"
+    sha256 cellar: :any_skip_relocation, monterey:       "d7d196967ef1f15c57bb3bd7abc8fded7dfdfd51997cd7f57de0b8380ba3ad6d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e74ac8c2e23e7e83138c681b9c36cd81b0302ec948c57c3b97450c54773f201b"
   end
 
   depends_on "python-certifi"
@@ -28,13 +25,13 @@ class Shub < Formula
   depends_on "six"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
-    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "docker" do
@@ -48,8 +45,8 @@ class Shub < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
+    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
+    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "requests" do
@@ -78,13 +75,13 @@ class Shub < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
-    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
+    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
+    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
   end
 
   resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/b1/34/3a5cae1e07d9566ad073fa6d169bf22c03a3ba7b31b3c3422ec88d039108/websocket-client-1.6.1.tar.gz"
-    sha256 "c951af98631d24f8df89ab1019fc365f2227c0892f12fd150e935607c79dd0dd"
+    url "https://files.pythonhosted.org/packages/44/34/551f30cbdc0515c39c2e78ef5919615785cd370844e40ada82367c1fab3f/websocket-client-1.6.3.tar.gz"
+    sha256 "3aad25d31284266bcfcfd1fd8a743f63282305a364b8d0948a43bd606acc652f"
   end
 
   def install

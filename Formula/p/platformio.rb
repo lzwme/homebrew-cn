@@ -6,18 +6,17 @@ class Platformio < Formula
   url "https://files.pythonhosted.org/packages/85/9b/37452c9b7e99638c9d761c7864a463e4721ce7206fb526174813ffe6a949/platformio-6.1.11.tar.gz"
   sha256 "1977201887cd11487adf1babf17a28f45f6dbbec8cbc5e3cc144cb43b320a0d0"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/platformio/platformio-core.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6c435f08169d89fa5504e9f63f282bce0b1b9c40dec6f323b838e121570477bf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29fcb281fc6c6b614ce81aec6e6d63022b985ee4bd6143adbcb110b25d8a2183"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5cb2f3f512c9522b753cd17d4dea74dfc9761abe255974a9e6b7853536e7ab59"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "43609e10c55fbc9534ba3f2704d5a421ba79f5aa6f744a586c35644c098606f4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "37ecacf07a256dafd3fc6c6b54b3bc143c91c3500e4fb0fffc386d7d8e40b6d4"
-    sha256 cellar: :any_skip_relocation, ventura:        "2849f990c2fe85285af38d244eb63f130eec8e03a1983ba72bfda17d27156849"
-    sha256 cellar: :any_skip_relocation, monterey:       "e12acb50db6d7bead7496dd12dc6d2166b301a49f1831200f86912d3b6847f88"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7b3717f7128208c6d941512b27f4514a97e16b8edcc36237132aee595b2186b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e67ce19a0fb3e16049a88a83331ef494387046f2703cdce747402e6c75ec994"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d0c6648d78a0d75d52ad258ea79dedfbe5a5bf355aae3b96c49d06056e8373da"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c6e70812f64dafadbdcb9993942423f1296d81b6a339e4c5b11216fd140b83d1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "25375e2e1f78f2813d07f59417460d60ee26015c8dd0aedc68dc463e18efca2e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "865fe1d99a833fd52acc24d0b38e4562def0d58001a7e6ae81dc38c7863c9f32"
+    sha256 cellar: :any_skip_relocation, ventura:        "5c948715148340515aeb392e3195e34d9f3158c0611cfd0a3d5aaa19b9cd693a"
+    sha256 cellar: :any_skip_relocation, monterey:       "f410f71e027d202286338ed74d9b7d500c7e2e421194c9bf99d06368e8424ae0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1742f23171f2e9384b3438c62510db4f12c3424d730cf1be7b49e47058a86bf8"
   end
 
   depends_on "python-certifi"
@@ -40,8 +39,8 @@ class Platformio < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "click" do
@@ -70,8 +69,8 @@ class Platformio < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
+    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
+    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "pyelftools" do
@@ -105,8 +104,8 @@ class Platformio < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
-    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
+    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
+    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
   end
 
   resource "uvicorn" do

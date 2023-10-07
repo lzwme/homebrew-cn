@@ -1,35 +1,34 @@
 class Stgit < Formula
   desc "Manage Git commits as a stack of patches"
   homepage "https://stacked-git.github.io"
-  url "https://ghproxy.com/https://github.com/stacked-git/stgit/releases/download/v2.3.2/stgit-2.3.2.tar.gz"
-  sha256 "8d337a9e998c8b7e5ad5b0d061aa65c241071b6af5274ab2bc796fc1e8c808d5"
+  url "https://ghproxy.com/https://github.com/stacked-git/stgit/releases/download/v2.3.3/stgit-2.3.3.tar.gz"
+  sha256 "49c6e93939e4c8256529eb828ce86470435a11aa73f73f8d0b36b584bace4c7b"
   license "GPL-2.0-only"
   head "https://github.com/stacked-git/stgit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0f6a42019b2308710e9b267102a491595ce103ad2feffe77f542886a1df87119"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aad33ef5ad466d0309837d7833fc31d6ab8c6b5649567a041fc64e84e968fe3a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "55385c02a13ed971938d151bb387f55a90cbb304122ab85f2df8538ba19b1db6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "58066bbf80c510ebeac1f0ac8c79221ec3518eba346f322f4fa9d6494edaf508"
-    sha256 cellar: :any_skip_relocation, sonoma:         "da5ef83bd06583f0152cee5d3b7c75bbdce696183110b95ec9ac5fe7c8ca81db"
-    sha256 cellar: :any_skip_relocation, ventura:        "9fa293871d35f0f5ce0ea5da69b9455e52397e7f674505dbce3c3e922177e450"
-    sha256 cellar: :any_skip_relocation, monterey:       "c02c0d71c6482bc62b70606f0df9778aa06eac91eeb443b4a64ed4a417b6de6e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "801f90006ed1ec8381948d1e04cf8edb01b16392d1ec3c84650ae1f47f6b63d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "12e5ab3b82281bdeb188c5586f177eca73926df1e68a39ca9c220198b303f0c4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9f389daa4cb7027c053c085c6b4052d2918e9fd4c9755c476ce7c8437a2999fe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bf117f4a4296d2928db1ee3d5eb1f58ba2090486ef9e24b4f9f8ae92f05dc3e7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "52e1bb7bff83e5a16f297a5e34fac90ab805dfb93b8c099405afeac3cf6b345f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "86a072aa3d18719abc7a0303a35105f2ef603fbd87cffca8185501e7f453427f"
+    sha256 cellar: :any_skip_relocation, ventura:        "6e291017aa389b563029e4f65a454d6caeec7a5c04e584c1240129b9630b01b9"
+    sha256 cellar: :any_skip_relocation, monterey:       "a3b684e492ec835b617dd344b62eff39968d9843c97e040bae3c7b44498a136b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "276492aaa5dd4b0cd3b970c0c1c0074c096d2d0ae49f0d721088278f830e6afc"
   end
 
+  depends_on "asciidoc" => :build
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
+  depends_on "xmlto" => :build
   depends_on "git"
 
   uses_from_macos "curl"
   uses_from_macos "zlib"
 
   def install
-    system "cargo", "install", *std_cargo_args
+    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
+    system "make", "prefix=#{prefix}", "install-bin", "install-man"
     generate_completions_from_executable(bin/"stg", "completion")
-
-    system "make", "-C", "contrib", "prefix=#{prefix}", "all"
   end
 
   test do
@@ -45,5 +44,6 @@ class Stgit < Formula
     (testpath/"test").append_lines "a change"
     system "#{bin}/stg", "refresh"
     system "#{bin}/stg", "log"
+    system "man", "#{man}/man1/stg.1"
   end
 end

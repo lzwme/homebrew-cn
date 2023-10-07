@@ -26,8 +26,10 @@ class Libcython < Formula
     Users are advised to use `pip` to install cython
   EOS
 
+  depends_on "python-setuptools" => [:build, :test]
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
 
   def pythons
     deps.map(&:to_formula)
@@ -46,7 +48,7 @@ class Libcython < Formula
     phrase = "You are using Homebrew"
     (testpath/"package_manager.pyx").write "print '#{phrase}'"
     (testpath/"setup.py").write <<~EOS
-      from distutils.core import setup
+      from setuptools import setup
       from Cython.Build import cythonize
 
       setup(

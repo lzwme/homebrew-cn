@@ -8,14 +8,14 @@ class AdbEnhanced < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "35a349686e3d2164c7e8670a5ba766aaf5033e238e6c4014b80d67cae5ec4af4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f3692fd1971e2b1c5071799c018093cdb61dd82ee283164c288dc863073f963f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d1ed282fe0dc7099e52291140989b0d89d2672f1b1059faf13196c7c6455e9cf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9bdce11bbb1ffdb458f8003326aa02100df9877671faea33c22c0a1fd490c321"
-    sha256 cellar: :any_skip_relocation, ventura:        "eaf7bcb836fa4b9238a86aacee12b889b550602e924cafda1a0dba63025d595b"
-    sha256 cellar: :any_skip_relocation, monterey:       "bdb9fb28d912d89cdb0f6b519bfd416c8ad5cf806d5e2af2bb78a1e043b27cd5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76054a79869e3dd04d2f3b9d12b513fc07665d00994bc481ffa42c9402a4b6e4"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2d22bc650c9d2bffe7d4b908d1a81e78e3426480f9bc1202a68fb5441eae9586"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c5da01990bdc3719a2cdcdaba47f517d1866887adf2085c7f5d25aa2f0eee12"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1c220eaac79ddf634fa3260cd5f28a04ad91fe806c016c830b25d3bd99c73da0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9c9144b5b3ff56d0cf41820f7dca289d8ad9a3dd118c5e84435ed4469b0d778d"
+    sha256 cellar: :any_skip_relocation, ventura:        "87866c1be5807f3cdb8c230917f68c4d6956b88eb42663544d3809e1e3d51674"
+    sha256 cellar: :any_skip_relocation, monterey:       "3f9df1b6cac3096b9fc9e5f11bbb62baa1206d52777e4182ff5bdd4ba86c284f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "941de410df686f9a6621583202e012e5ce0f28de0fa4999192887acc67ab6ef1"
   end
 
   depends_on "python@3.12"
@@ -39,6 +39,6 @@ class AdbEnhanced < Formula
     # ADB is not intentionally supplied
     # There are multiple ways to install it and we don't want dictate
     # one particular way to the end user
-    assert_match "not found", shell_output("#{bin}/adbe devices", 1)
+    assert_match(/(not found)|(No attached Android device found)/, shell_output("#{bin}/adbe devices", 1))
   end
 end

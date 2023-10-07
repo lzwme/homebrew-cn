@@ -6,17 +6,16 @@ class Codelimit < Formula
   url "https://files.pythonhosted.org/packages/9a/98/c56316cfac4aed19ef7b05f8455e87b6f1e0273aa3e35d545bbd53dbfc98/codelimit-0.6.2.tar.gz"
   sha256 "26209ca3f09dfa4efc7dafa6fa25a0499aa909c46c41cd35a0ea79487f3c6611"
   license "ISC"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "567c1e5f18f0e2c7a8e1850a80b81b2240760d01dbdfda4e5ea7a577c02eb6cf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa2900872700c100009c845c59c6166110b5f8380afbf7237e2366790c57fcdf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "90df7c15cf28a0bbd23f5a20fde17bda5eb3bdd8cf48bf5410b3a58e2cae415b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bb79909e384b4b83b06b136823113b9fd78fdcb205955aefaf9e8915f9fbf047"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1f2d4a308ee236c05e481e0f0e90de345cf140aab391fd701f71a486dfa2ed06"
-    sha256 cellar: :any_skip_relocation, ventura:        "3ea0bd086034eb9a9f9a12a750966f9ec9a9914b3b985e4dc7958ca1dfa8040d"
-    sha256 cellar: :any_skip_relocation, monterey:       "391db0a51c227cf54cea9667b4e46d82900e3493d201faf4ba6bd08c81e46e3a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "12b3e614eaac692d2db229d9ffc4089064712e90b4d46bbc6f904177dffd44dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dff8f65e7178d076223f47394aaa83a7e88f5b19b7141232bb402b8ea13f9c7a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8980bc14dee6888940d3e2b39dccf5d37470539155513757973601516422f3da"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f6386aef2b9bd1da835adc685abe1c91829fd1b05e995d4ec17db786adf252c5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d260b0e6470f4b954d4fb7ff05a0e722ba1f11d9986d42e8458f302a885acfb0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fcdfb73deaca619cea38715dd2ffd5d0269a65e9267c308b0d94e5ce2066d253"
+    sha256 cellar: :any_skip_relocation, ventura:        "43d1721a725b7cd7531235b033c72e53971a092d2a7126d63aeb720011b9ae86"
+    sha256 cellar: :any_skip_relocation, monterey:       "c2b6d9f7ecec79a334eac8ddb0e7cb1c1e4c3ee3dc8cd8be53afc7b61d8d9f57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c40655a2818a129a1ba2df4efe3ab492b3be116f0359ffb96e35e2b3ff70efd"
   end
 
   depends_on "pygments"
@@ -45,9 +44,14 @@ class Codelimit < Formula
     sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
   end
 
+  resource "certifi" do
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
+  end
+
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "click" do
@@ -96,8 +100,8 @@ class Codelimit < Formula
   end
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/dc/a1/eba11a0d4b764bc62966a565b470f8c6f38242723ba3057e9b5098678c30/msgpack-1.0.5.tar.gz"
-    sha256 "c075544284eadc5cddc70f4757331d99dcbc16b2bbd4849d15f8aae4cf36d31c"
+    url "https://files.pythonhosted.org/packages/c2/d5/5662032db1571110b5b51647aed4b56dfbd01bfae789fa566a2be1f385d1/msgpack-1.0.7.tar.gz"
+    sha256 "572efc93db7a4d27e404501975ca6d2d9775705c2d922390d878fcf768d92c87"
   end
 
   resource "multidict" do
@@ -115,14 +119,24 @@ class Codelimit < Formula
     sha256 "319a287baabeb8576a711995f973a2eba631c887aa6b0f33ab016f12c50ffebe"
   end
 
+  resource "pygments" do
+    url "https://files.pythonhosted.org/packages/d6/f7/4d461ddf9c2bcd6a4d7b2b139267ca32a69439387cc1f02a924ff8883825/Pygments-2.16.1.tar.gz"
+    sha256 "1daff0494820c69bc8941e407aa20f577374ee88364ee10a98fdbe0aece96e29"
+  end
+
   resource "requests" do
     url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/ad/1a/94fe086875350afbd61795c3805e38ef085af466a695db605bcdd34b4c9c/rich-13.5.2.tar.gz"
-    sha256 "fb9d6c0a0f643c99eed3875b5377a184132ba9be4d61516a55273d3554d75a39"
+    url "https://files.pythonhosted.org/packages/b1/0e/e5aa3ab6857a16dadac7a970b2e1af21ddf23f03c99248db2c01082090a3/rich-13.6.0.tar.gz"
+    sha256 "5c14d22737e6d5084ef4771b62d5d4363165b403455a30a1c8ca39dc7b644bef"
+  end
+
+  resource "six" do
+    url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
+    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   resource "spinners" do
@@ -145,9 +159,14 @@ class Codelimit < Formula
     sha256 "50922fd79aea2f4751a8e0408ff10d2662bd0c8bbfa84755a699f3bada2978b2"
   end
 
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/1f/7a/8b94bb016069caa12fc9f587b28080ac33b4fbb8ca369b98bc0a4828543e/typing_extensions-4.8.0.tar.gz"
+    sha256 "df8e4339e9cb77357558cbdbceca33c303714cf861d1eef15e1070055ae8b7ef"
+  end
+
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
-    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
+    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
+    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
   end
 
   resource "yarl" do
@@ -156,8 +175,8 @@ class Codelimit < Formula
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/e2/45/f3b987ad5bf9e08095c1ebe6352238be36f25dd106fde424a160061dce6d/zipp-3.16.2.tar.gz"
-    sha256 "ebc15946aa78bd63458992fc81ec3b6f7b1e92d51c35e6de1c3804e73b799147"
+    url "https://files.pythonhosted.org/packages/58/03/dd5ccf4e06dec9537ecba8fcc67bbd4ea48a2791773e469e73f94c3ba9a6/zipp-3.17.0.tar.gz"
+    sha256 "84e64a1c28cf7e91ed2078bb8cc8c259cb19b76942096c8d7b84947690cabaf0"
   end
 
   def install

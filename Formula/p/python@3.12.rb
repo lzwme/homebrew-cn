@@ -11,13 +11,14 @@ class PythonAT312 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "648679739d92f416efbba6d16301e3d4346b1db244edc55f8d27d99adfec13b3"
-    sha256 arm64_ventura:  "bf8264659e1a706e885dc6f20d265c1a3371a7ca683116b5614988be1e334ddf"
-    sha256 arm64_monterey: "83ba055c2e901f0b565a688b4b66fc69b46aacaf10bec077238cac1573cba0b8"
-    sha256 sonoma:         "0742a12a41a4ab588a454a0ee3a229320a783202b62fc3e1c30ef8c7cbaa6b8c"
-    sha256 ventura:        "8d76fdc54b06ec47bf00acfd5e831a9609b324368ec005e7ccef24ae0de3eada"
-    sha256 monterey:       "b45d7a351be94de58193b7da0278f9fe2f2e65fc289f4b61aa803773a5897430"
-    sha256 x86_64_linux:   "3292fb503860878bc713768eca77989885df778421cfba5331d566b0ab4d50dd"
+    rebuild 1
+    sha256 arm64_sonoma:   "84d0ff323d52b4d2a905cd8163dc0e69746e53f4f1db3c883374c64abc2237d8"
+    sha256 arm64_ventura:  "af08d7f69c5944fa5ef56bd791f1f162cb9435f870108e2fdbd6cbd335c276d4"
+    sha256 arm64_monterey: "1b80d028071d82c62a4eafc1d7a7c6565a6323cc5d44d22e67faab551b6154f5"
+    sha256 sonoma:         "bb924bd0cc0c46008389961c77efdbf32914327feceb4983bdaf476114fec4eb"
+    sha256 ventura:        "bb2ff3ad5b25c6981ff89a691bb15f63ff4c978c2bc668f157fadd93fe740baf"
+    sha256 monterey:       "b9824e28bee85f91ddde4a66773e67aadf5f6b066593cdb6506e5b689919e480"
+    sha256 x86_64_linux:   "fccbf4142b8927c8f24ec0004316034c582e99d5348d04a4e2fc77f0175dfd3b"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -341,7 +342,6 @@ class PythonAT312 < Formula
     # listed in the easy_install.pth. This can break setuptools build with
     # zipimport.ZipImportError: bad local file header
     # setuptools-0.9.8-py3.3.egg
-    rm_rf Dir["#{site_packages}/setuptools[-_.][0-9]*", "#{site_packages}/setuptools"]
     rm_rf Dir["#{site_packages}/distribute[-_.][0-9]*", "#{site_packages}/distribute"]
     rm_rf Dir["#{site_packages}/pip[-_.][0-9]*", "#{site_packages}/pip"]
     rm_rf Dir["#{site_packages}/wheel[-_.][0-9]*", "#{site_packages}/wheel"]

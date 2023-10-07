@@ -6,17 +6,16 @@ class Woob < Formula
   url "https://files.pythonhosted.org/packages/cf/10/3eb104a43ab4ff3109109883382bdfee663412e8fda2967d0ab220479240/woob-3.6.tar.gz"
   sha256 "3765f4c54baeb4a837053f6d0ce82e54cee851aa3c8707a72aa8cd63d4304a76"
   license "LGPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "39a4bdd79a61e91ccccd0adb6accd033adebe13a6ec6733aac5f2f06e1a781c1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ca76c157d80aacea0a73a5c2fc5be943d01e20565ed409f4858ed502d18afb8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7923f30a4cf53b80da61e4fc066b7bf189406ffa914edcbd52f3db46bc28ff79"
-    sha256 cellar: :any_skip_relocation, sonoma:         "63de9811877f640f01b14968c87d7ef6a7a0589c60f6bc05138e6f51e69cf521"
-    sha256 cellar: :any_skip_relocation, ventura:        "b51f3d1173dcff40a7bbf4b3d238e0fd47ddc6895ce0dc0d9e0b6f90dc639c13"
-    sha256 cellar: :any_skip_relocation, monterey:       "87aee8dd26c439570d20d0451442ae22cd77e94f2710040a791928d6610e2039"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d8801c2d20e8eb0704089787da695e3470b5b42e2954f6dc85ef5491650cbae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "20a8f5a36085f4ccfdc5338173f89e36a055dec576371dfb15a4e3e03d64c2ab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e7ecc425f07faa37ae8ef81ac613d6a72d1dc729e9163550ab3ad9a694f43296"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4639de3de48764a826c432cde38a424c66a72ab130d90ad10fabd186def0bf43"
+    sha256 cellar: :any_skip_relocation, sonoma:         "01732271252fbd59063091063b777c550b79bd144b64479fc9f75c02d89c8a1d"
+    sha256 cellar: :any_skip_relocation, ventura:        "68561e4f26722097d952715477e6b6cc529080d2bb272ac73edb79e502235af7"
+    sha256 cellar: :any_skip_relocation, monterey:       "d34e3f067e8ea766010dec01021b9a527921384868fb8d78bebac33b9fd58fc4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd848d7d75f3614cd61fd7cafb274d2630924f6c83a070bbf08cc8901584fe7a"
   end
 
   depends_on "gnupg"
@@ -32,13 +31,18 @@ class Woob < Formula
   uses_from_macos "libxslt"
 
   resource "babel" do
-    url "https://files.pythonhosted.org/packages/ba/42/54426ba5d7aeebde9f4aaba9884596eb2fe02b413ad77d62ef0b0422e205/Babel-2.12.1.tar.gz"
-    sha256 "cc2d99999cd01d44420ae725a21c9e3711b3aadc7976d6147f622d8581963455"
+    url "https://files.pythonhosted.org/packages/d5/7d/08e7b8b1ab446121ace3de332f144be41a52049a23303375a0126d515cb7/Babel-2.13.0.tar.gz"
+    sha256 "04c3e2d28d2b7681644508f836be388ae49e0cfe91465095340395b60d00f210"
+  end
+
+  resource "certifi" do
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "colorama" do
@@ -87,18 +91,18 @@ class Woob < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/e3/12/67d0098eb77005f5e068de639e6f4cfb8f24e6fcb0fd2037df0e1d538fee/rich-13.4.2.tar.gz"
-    sha256 "d653d6bccede5844304c605d5aac802c7cf9621efd700b46c7ec2b51ea914898"
+    url "https://files.pythonhosted.org/packages/b1/0e/e5aa3ab6857a16dadac7a970b2e1af21ddf23f03c99248db2c01082090a3/rich-13.6.0.tar.gz"
+    sha256 "5c14d22737e6d5084ef4771b62d5d4363165b403455a30a1c8ca39dc7b644bef"
   end
 
   resource "unidecode" do
-    url "https://files.pythonhosted.org/packages/0b/25/37c77fc07821cd06592df3f18281f5e716bc891abd6822ddb9ff941f821e/Unidecode-1.3.6.tar.gz"
-    sha256 "fed09cf0be8cf415b391642c2a5addfc72194407caee4f98719e40ec2a72b830"
+    url "https://files.pythonhosted.org/packages/80/5d/f156f6a7254ecc0549de0eb75f786d2df724c0310b97c825383517d2c98d/Unidecode-1.3.7.tar.gz"
+    sha256 "3c90b4662aa0de0cb591884b934ead8d2225f1800d8da675a7750cbc3bd94610"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
-    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
+    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
+    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
   end
 
   def python3

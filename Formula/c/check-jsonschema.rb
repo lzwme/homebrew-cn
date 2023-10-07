@@ -10,13 +10,14 @@ class CheckJsonschema < Formula
   head "https://github.com/python-jsonschema/check-jsonschema.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5f92162fcf2bf7b113399ca9768b70309615a3f7a55346a6c8606121e3a2b5cc"
-    sha256 cellar: :any,                 arm64_ventura:  "4d56cebcccd4b0714bd212784ca7f00d52ca8911f7b15574d7d4df0b8a35bb68"
-    sha256 cellar: :any,                 arm64_monterey: "26df1bd6935afcc3c5fb17e9cf64a1494cfb10d4acdbc0282a108798db3d028b"
-    sha256 cellar: :any,                 sonoma:         "6debb687f1571ec61bab130297cbda5673e9390894de2f257848cde513303696"
-    sha256 cellar: :any,                 ventura:        "1cc2a28667f0ce8e024e906b9947b9bc3859f4c92d607b0b5ce4b604f75d54de"
-    sha256 cellar: :any,                 monterey:       "84c2f74a6305de45b56d232c32a5bd5d429fd56f412a237c990350fc10eded5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68d53d3d89296f904660934a952df28b5d9544b9513da652275436f8596a0558"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "3270ba65797b99e1657f9aacfec25d8b65dd47bda67eb3a0b6b0688d6c13f06f"
+    sha256 cellar: :any,                 arm64_ventura:  "36ff3cd39d12c6d763d6c49b3e51d22709289fb1d2b25bcc793a80c456b9abbe"
+    sha256 cellar: :any,                 arm64_monterey: "9b4745fefc3b572868020deb2aee5db41ecc8476018b10a45f056acbd68202ea"
+    sha256 cellar: :any,                 sonoma:         "76ade6fd833761c2769f8f6c81f0d0cd08ee75aa5b66119747cf60602f65a436"
+    sha256 cellar: :any,                 ventura:        "d660d536d129a4dd6ce0f5fcf42936b2692a36a6e97922b83a84187d49650fcc"
+    sha256 cellar: :any,                 monterey:       "373ba89963c8ce8b49faf1b7b4c10739352a5662892c396f6352bcec87062287"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4da2bb0d663ed7b12d463eda44a0e08bf2824c0bf578b682766d280f5b019088"
   end
 
   depends_on "rust" => :build
@@ -141,6 +142,12 @@ class CheckJsonschema < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(
+      bin/"check-jsonschema",
+      shells:                 [:fish, :zsh],
+      shell_parameter_format: :click,
+    )
   end
 
   test do
