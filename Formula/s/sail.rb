@@ -9,18 +9,20 @@ class Sail < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9d1501e1ea620ac3fd4ef8434e6b134cbc018e919d84d049cfb57c72414798f8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fc8635f196a58f90ec6b905e76e11dea2b1372e34b83975adb37c9b58057f3b2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e4cc66fb67d5116876196baf3cd4d0d9d928b2d91a62ba7fd148d931f028f920"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e4ac7c5f7dbe200e2f8574e60798b2ac4497b3765e3339fdaf1768a001cb7b15"
-    sha256 cellar: :any_skip_relocation, ventura:        "c73232c784598e88127f042e54f5c90d53a5eee3d87abfe8bb96ed33e0df97a1"
-    sha256 cellar: :any_skip_relocation, monterey:       "10366254b7342f8a52833e13deaa5ff12c958cbbb8f66223782b921567a392c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e72820475f72507c5f415d5032a25738fbac9557d364575aa8416b087096f95"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c4b7c1f2239836062f2c53db6abb1a70b566a0cae8e84149138e43d3a2d4bdac"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b1baf32216da55cfb39623e31e0fd929d34b837daff7689ba1d1660f44d6d441"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5c6e47f01190601a16833fdb5fd6a6d5b67ebde6f1569c64382dd415ec3ad1f5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a4794b0afebab98e270be13c35a8244def5ac41d94ab763bf79c99080a0f31de"
+    sha256 cellar: :any_skip_relocation, ventura:        "6063d5f10b6cf8fc112ac557b5d07e22ed375d306636a147739e8428454403ae"
+    sha256 cellar: :any_skip_relocation, monterey:       "9e19d86ab21429308940fdeed9d629fd09bf414cfd04151d94550daeed39327c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab6c49bb15f265ce5f1e6c94d0302f114add9f89507c0ce3acd08332d99abe83"
   end
 
   depends_on "fabric"
   depends_on "pyinvoke"
   depends_on "python-certifi"
+  depends_on "python-packaging"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -60,11 +62,6 @@ class Sail < Formula
     sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
   end
 
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
-  end
-
   resource "python-digitalocean" do
     url "https://files.pythonhosted.org/packages/f8/f7/43cb73fb393c4c0da36294b6040c7424bc904042d55c1b37c73ecc9e7714/python-digitalocean-1.17.0.tar.gz"
     sha256 "107854fde1aafa21774e8053cf253b04173613c94531f75d5a039ad770562b24"
@@ -102,6 +99,8 @@ class Sail < Formula
     end
 
     venv.pip_install_and_link buildpath
+
+    generate_completions_from_executable(bin/"sail", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

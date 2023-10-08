@@ -9,18 +9,17 @@ class Doitlive < Formula
   head "https://github.com/sloria/doitlive.git", branch: "dev"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4b183e5ab93fc7d240be777beb11fb26f28a893ac33f229e89a9080a3de68ab0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e30831be33b71279f10e2a9b6dc2916d43a8d3d07f61fb3beba92226aff1c18c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0ceb7c56bc7a0e3948dc6fd3106b42e3dd96bcd3b074b2166f331c87e54184bb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e812f0e00f8a97226f89afeb3a28b663bff66b4199d0243a60cde4aec752c732"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d4cc2150fd43a2391efcd64d9ed17c8ff1ebe38764a89ff28610839c3a2d763b"
-    sha256 cellar: :any_skip_relocation, ventura:        "503295bb5da1d97bb1a26ca940efc4c6763cd3a37beccf8b35cb48084c3a8cf5"
-    sha256 cellar: :any_skip_relocation, monterey:       "9b2beb9d7173db0c2f68e199a611492612132b7b309396e3f9be90e3c27e5e9e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bfa025332c5a6eaa1c8dd821722a6a457afa2577c4583741fcd021ac831d8543"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb7433cf1708e3ed401318149c637a3e13fde41fae0360b2be50959e5138a4af"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "505088d27336c3714fb17b79070b66d4843d16f682e39aa0677d4a705f8a50a6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a800f32a719d95efda63bac79677116e18efbed25d3eaaea7d133d90081ee5d3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bf04763aa01e55be03b86124e7643b5162d705303fc50f77f4a6024ef841050d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e32cab3a03376a72ec478066f7f5136e4f2833eb3b764e8faf3edc8e6055ca5a"
+    sha256 cellar: :any_skip_relocation, ventura:        "efd16f651a4b078715883f01f3ccadcefd4c3e2295d069305dc2f997eb683cb5"
+    sha256 cellar: :any_skip_relocation, monterey:       "a67dc9f0f565904c49df05833474180c242d22f0adce238a1cf6e2d1f30ee944"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9343a180f4d18746ca9fd984770c93b0ca5e6b13250b389ecfe91942872b84e"
   end
 
+  depends_on "python-packaging"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -47,11 +46,6 @@ class Doitlive < Formula
   resource "MarkupSafe" do
     url "https://files.pythonhosted.org/packages/1d/97/2288fe498044284f39ab8950703e88abbac2abbdf65524d576157af70556/MarkupSafe-2.1.1.tar.gz"
     sha256 "7f91197cc9e48f989d12e4e6fbc46495c446636dfc81b9ccf50bb0ec74b91d4b"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/df/9e/d1a7217f69310c1db8fdf8ab396229f55a699ce34a203691794c5d1cad0c/packaging-21.3.tar.gz"
-    sha256 "dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"
   end
 
   resource "pyparsing" do

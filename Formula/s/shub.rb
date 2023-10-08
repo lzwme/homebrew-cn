@@ -10,16 +10,18 @@ class Shub < Formula
   head "https://github.com/scrapinghub/shub.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b5cc68616be7190ab5d78abf1c7a3e90173022dadf8cc4556e44edf4677d4424"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2df96756dd2f64fa29409290d0996c18aafefd6ee9419f991f68074701d732b3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "03a2fe47111723659bb629b8d7e8bea555ecc793761f82dc26b4f2bf10f70c31"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e2e50fa2a044c8fde03fbe1e0c6a282075abfdf63c38f5c2ed9979875f76e5d3"
-    sha256 cellar: :any_skip_relocation, ventura:        "ed11416cfa5a57359f8b749455e9cb9a52438ec862322d45e6495283a4ad25ec"
-    sha256 cellar: :any_skip_relocation, monterey:       "d7d196967ef1f15c57bb3bd7abc8fded7dfdfd51997cd7f57de0b8380ba3ad6d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e74ac8c2e23e7e83138c681b9c36cd81b0302ec948c57c3b97450c54773f201b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a96bc764754da00cb804d9a50f2c76967afe92afe031b891cbc9ca9072f440d3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ff9639b3b636728cc29af7a0888b6b3d952c66ba803103c1398f4618b46e05fc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e0083a146547dbe94cfcac23078e205d110c8c7c2aaa749dbc871bda85aa18a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "52b00e4d0c60f3d835d42085d714a1638eae35000bd7b6e942a8ba57da4a5fb0"
+    sha256 cellar: :any_skip_relocation, ventura:        "b4d1a50bcbdf39dbdf4bed56e4ae41de69677b32f034431eeb41c3f2338c7aab"
+    sha256 cellar: :any_skip_relocation, monterey:       "6d49909d5929b1077469eb02e3e998d892d6e8e5cb3e078eb2fba7a610abba46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3149b3188639ce45edb7e70d0db5564264694b241171af0e2d43bc23ee3c1882"
   end
 
   depends_on "python-certifi"
+  depends_on "python-packaging"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -42,11 +44,6 @@ class Shub < Formula
   resource "idna" do
     url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
     sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "requests" do
@@ -86,6 +83,8 @@ class Shub < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"shub", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

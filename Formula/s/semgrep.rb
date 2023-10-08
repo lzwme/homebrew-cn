@@ -15,13 +15,14 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "88e630efdd3f0c2a81e2658d7db0132d2567bd359c9d9c4917a6391eee882bce"
-    sha256 cellar: :any, arm64_ventura:  "e21f78228707e112556c2b0d8516925e8a6eb8841b75bfe73f97574c0afd1036"
-    sha256 cellar: :any, arm64_monterey: "b5b6a99616be95cddc3cf1ba56ed161bd2b9dcfab0ccb78a5e0baa0bcc4a333b"
-    sha256 cellar: :any, sonoma:         "53c07d9b3644c0e7ec7c3b24b664f3c61330ce9a9869d471d399f42ac552e826"
-    sha256 cellar: :any, ventura:        "ac94f53d008e003a0bedb7b2525d6bf036110b328579b3a29c5037520e8277ae"
-    sha256 cellar: :any, monterey:       "1e30424fb9d28c72777ede7a955632babb10b1adc66c52761abeb435c7a42e1d"
-    sha256               x86_64_linux:   "ec512568889f0faa3155823e93add8cf03c666144818eca060aae9529009834b"
+    rebuild 1
+    sha256 cellar: :any, arm64_sonoma:   "3b489482e6090ace129cd635259bdd54263a11956cf330417caaa9fecd966a85"
+    sha256 cellar: :any, arm64_ventura:  "f917bbb1d5986e5dd5e76a758722adaea87475475a3010e4f5cac6a70b4a84c9"
+    sha256 cellar: :any, arm64_monterey: "f2a0149c74a36c23b75693579c8cf62a51d793077ceb75111e3ca953a60abb92"
+    sha256 cellar: :any, sonoma:         "74771459dc1dc3e561d734e420e7187f9b5a2d0b34e7c6080e3b97953631e8bc"
+    sha256 cellar: :any, ventura:        "5bc94dff8d5fd4bc28991f02ffdf31ff60af56f8c5aa45bc42172501a9da257a"
+    sha256 cellar: :any, monterey:       "8e08ba437f343366be360f5edc7b8016a4ff3f8ba12aba051320f0b9f8feed0a"
+    sha256               x86_64_linux:   "95dabbabd3c6b626eead90fd367580570b4f45d2395102a33a9c17f65167a776"
   end
 
   depends_on "autoconf" => :build
@@ -37,6 +38,7 @@ class Semgrep < Formula
   depends_on "pcre"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-packaging"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "tree-sitter"
@@ -118,11 +120,6 @@ class Semgrep < Formula
   resource "mdurl" do
     url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "peewee" do
@@ -223,6 +220,8 @@ class Semgrep < Formula
       venv.pip_install resources.reject { |r| r.name == "ocaml-tree-sitter" }
       venv.pip_install_and_link buildpath/python_path
     end
+
+    generate_completions_from_executable(bin/"semgrep", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

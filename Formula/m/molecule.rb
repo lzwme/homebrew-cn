@@ -9,19 +9,21 @@ class Molecule < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "43802cc774444a047e2235f1067292c11da35456b31a7f7122f04b3c4ee63a53"
-    sha256 cellar: :any,                 arm64_ventura:  "9d90cac8be4002a6933cbe1a9926731849ce8bd46f0fd57650a9f98ebd6c0aeb"
-    sha256 cellar: :any,                 arm64_monterey: "3a457e4fc3d82da78f95e3b0be372964ceb2bc794c9607c22211a3c06e2fe765"
-    sha256 cellar: :any,                 sonoma:         "3c28ad472a40141a28c3d6a41563d9505029ac4e4ce3113a47326d776cffa34c"
-    sha256 cellar: :any,                 ventura:        "dafb3454bbe6e3d3c6da317670cb6e55d73256a1e11eed15af16f8184f3e007f"
-    sha256 cellar: :any,                 monterey:       "8ff314ad7716ab95ecbcf4e3901cd26aa5116ba34fe8c963e5620c32f93303ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7fa5eeae17d297eba41ceedfde49692b88cf565b2f6e5bc6aceb035f53b13bf7"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "d12172431e59a4d7378dd3338dc30ab4a3746445c7625dabf73a7941b024554b"
+    sha256 cellar: :any,                 arm64_ventura:  "3c670c7025e240c2581397858a7d7cf50ebf2cce68ad8b6eea30035ee5e41797"
+    sha256 cellar: :any,                 arm64_monterey: "6094ec48f35c455f3452b78e68d339892590189c3b907875d29d5b81a8612c5d"
+    sha256 cellar: :any,                 sonoma:         "3dfb22a3b3278518079aae49339403c85218c53e8a6e82b0d58f27603ae05ce4"
+    sha256 cellar: :any,                 ventura:        "8a0553fb65fcfbb3936f4d0b565413ad783729d962bdc0feae01bc9c51e58465"
+    sha256 cellar: :any,                 monterey:       "79f670676757b183c7ce1cbe38742745605253b7d8ad0e715cf54e037d2cf4b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af4c1b5786c5a2e74f8974c996d808c877e403d6e0c339f60f0ba84f21027f6f"
   end
 
   depends_on "rust" => :build # for rpds-py
   depends_on "ansible"
   depends_on "pygments"
   depends_on "python-cryptography"
+  depends_on "python-packaging"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -132,11 +134,6 @@ class Molecule < Formula
     sha256 "bb27f4ec482d0f68231f31136bfba328fc8ef7d81341874284bdd71295e278d5"
   end
 
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
-  end
-
   resource "pluggy" do
     url "https://files.pythonhosted.org/packages/36/51/04defc761583568cae5fd533abda3d40164cbdcf22dee5b7126ffef68a40/pluggy-1.3.0.tar.gz"
     sha256 "cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12"
@@ -199,6 +196,8 @@ class Molecule < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"molecule", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

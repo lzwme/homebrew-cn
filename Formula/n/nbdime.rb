@@ -9,8 +9,10 @@ class Nbdime < Formula
   revision 4
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "70b661e5097654c18c5c6c699566f6bd551fd7112b441a25240e38ffdaccb8c4"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "143885074c08d5404ba87a9bc157f9f39b1a797fd911291f3632138c3fd88f34"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "51ed074ee95c78c841b0e79ca0733ea28528965784250dae0b0d5fbd5349cbc0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9d990e90f389957e68567cde17ed7881bfad66a8bb70ea4a9570991a3e7d699c"
     sha256 cellar: :any_skip_relocation, ventura:        "727d56277a3ba270eecdbeb47303b9b1810ce238f53c5395e6e64b45860752e9"
     sha256 cellar: :any_skip_relocation, monterey:       "879bf42712f85446e37b282432615b72888f256fc5efdb8ab3a5430d7c2b863e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "aab7bc3afbae7f0b4847e8016b6b76f159c23ec209dd0021b269430589d54e75"

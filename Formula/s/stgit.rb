@@ -7,13 +7,14 @@ class Stgit < Formula
   head "https://github.com/stacked-git/stgit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9f389daa4cb7027c053c085c6b4052d2918e9fd4c9755c476ce7c8437a2999fe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bf117f4a4296d2928db1ee3d5eb1f58ba2090486ef9e24b4f9f8ae92f05dc3e7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "52e1bb7bff83e5a16f297a5e34fac90ab805dfb93b8c099405afeac3cf6b345f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "86a072aa3d18719abc7a0303a35105f2ef603fbd87cffca8185501e7f453427f"
-    sha256 cellar: :any_skip_relocation, ventura:        "6e291017aa389b563029e4f65a454d6caeec7a5c04e584c1240129b9630b01b9"
-    sha256 cellar: :any_skip_relocation, monterey:       "a3b684e492ec835b617dd344b62eff39968d9843c97e040bae3c7b44498a136b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "276492aaa5dd4b0cd3b970c0c1c0074c096d2d0ae49f0d721088278f830e6afc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "08f0139088a10c7c0b35e093f4c2302330149777558246a78ee9d3bab8caadca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9aedf92f8f1068c4f2def6e98d76dd14639273be53b8837d28e4ced0668ea043"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b127cc5e7de61a7daac9e8be4c852b17728602375533eabdab79b0217472c13"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2590e547b615c7ac57f201dd3571d75937954d77603aa4183e62e5cee924eb16"
+    sha256 cellar: :any_skip_relocation, ventura:        "e0c9deffe3a87d6c47818112b58764d048cea9aa2ca6eaabb4f353fb07516f5d"
+    sha256 cellar: :any_skip_relocation, monterey:       "b956c43885b0e675e8a04a8962f725e55a942eb1e999449efc2c034a46c97a4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed3dd8448b516e6f31aa4c9f223f4f0bcd1b56374663639652c1e1e5944d02d8"
   end
 
   depends_on "asciidoc" => :build
@@ -28,6 +29,7 @@ class Stgit < Formula
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
     system "make", "prefix=#{prefix}", "install-bin", "install-man"
+    system "make", "prefix=#{prefix}", "-C", "contrib/vim", "install"
     generate_completions_from_executable(bin/"stg", "completion")
   end
 

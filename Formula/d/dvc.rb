@@ -8,13 +8,14 @@ class Dvc < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "50fe1196818732851b762b16a11f163c38cf04955181d004d056426c40189b58"
-    sha256 cellar: :any,                 arm64_ventura:  "7078f0fd7f4d4c6efde4f417a89f7aa3c2af696d6b62b1f4d67d74c41369c352"
-    sha256 cellar: :any,                 arm64_monterey: "28a8d8da8f8b622681e50d5eef4f38423322ad2360e7dad5a534e15cbe14416b"
-    sha256 cellar: :any,                 sonoma:         "f3bddf878a494d19532149a9597c5af3996e519ee82a775e8e9d6d51320a7562"
-    sha256 cellar: :any,                 ventura:        "308ade65de903e3d69e5346196a2f6a975ea568ab0a1e12b1223adbdf0f17650"
-    sha256 cellar: :any,                 monterey:       "96e50323898e35ffb1a98b07f83bb68b9f532139f61288d1c60793a7d4ab76f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c76c8412f7aae31150a37e0a5707840afb0cc2e6a5e4f5d03b600ed945991cd"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "53d48019155b94cf28221497ff5681aa182aa1c4353055659cd06f12983e65e8"
+    sha256 cellar: :any,                 arm64_ventura:  "b5926484c74942ae6b68fb967f03088082d8886f076773276ba77527fbd875db"
+    sha256 cellar: :any,                 arm64_monterey: "e34ac2953c1f38d16d63e525528b8af6380fc74611f25c4111627d95ca86942a"
+    sha256 cellar: :any,                 sonoma:         "4569dcfd9240abb7670db83b59ae2e83add200eeac1e3134d91573150cff56da"
+    sha256 cellar: :any,                 ventura:        "277396191c6b70a3abab5e7a9d5c2b9ef5d1d908d557a1beab177cb533c3c207"
+    sha256 cellar: :any,                 monterey:       "5b136f9522dfd9b1b624f8e484d72e73c2d7cdbea1e46d47e3780b81fb9d7524"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e664915b7138577fbb3644bf284f127787aafab27021385ad657f202eef46e0"
   end
 
   depends_on "openjdk" => :build # for hydra-core
@@ -28,6 +29,7 @@ class Dvc < Formula
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-packaging"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -550,11 +552,6 @@ class Dvc < Formula
   resource "ossfs" do
     url "https://files.pythonhosted.org/packages/25/72/06d0ee01928f3fba48dd082bdff936724d049649b432e3972209801b0489/ossfs-2023.8.0.tar.gz"
     sha256 "91525c94d03d9a4e7d092f7a51b0086c973d730fbc4f1263b838f9f827d9f204"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "pathspec" do

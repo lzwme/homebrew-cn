@@ -12,8 +12,10 @@ class Jupyterlab < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "2a0ece9df87be60293e71d924a46dfaf8649e64e67a9532d4c46570cf7c2082d"
     sha256 cellar: :any,                 arm64_ventura:  "552b7c4daad878cb7af3c0931232ac8acdf85935227f666ac47eb4f5f6c9781f"
     sha256 cellar: :any,                 arm64_monterey: "eb34c92c48d2e2a1674a23e99a1129e2775a84cf73169818f8629757ce6a1f89"
+    sha256 cellar: :any,                 sonoma:         "607f1ced35f7a0379187a9cb7472d623beafa8103a410241084ccbb8e04a4379"
     sha256 cellar: :any,                 ventura:        "62505fda8cf04814f6d0156de8e1b65732ec80c7ecac7f3114fab9bb3f156d5b"
     sha256 cellar: :any,                 monterey:       "ce7267b05e60fbee004aa45cfa13e2e31932f42af4d7fc84f509cdd1d227d85c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "86b7c0793564ec4cc87ec2de82b717f041967af19a2e9155124144d389f7968b"

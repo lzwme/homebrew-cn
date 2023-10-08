@@ -9,17 +9,19 @@ class Dotdrop < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "690156d63390253624b9818fa1fa2a0264a25ba839103232571901a66d8513fa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e2cc6d2467d7e4efc66715ea0ec40b46440de883c6b2d48e6a6f59098a0ab50e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "55c4ddac86bc02ad52e0f735764ba59dbb7b719320ec003a9eb837574809bb01"
-    sha256 cellar: :any_skip_relocation, sonoma:         "02bf9d7b697cf0c827d21470dc3bbda88526d6eb2aea395e4f0bb9e1404e9f02"
-    sha256 cellar: :any_skip_relocation, ventura:        "b50e677f995194e689417b719773907e435697501d7baaa059be3613cc7e248b"
-    sha256 cellar: :any_skip_relocation, monterey:       "1521eb6056f506dc3a32ffffbfbc3fbf53c6c87b8ec42906fca0f135d7ae3093"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f37a86b0686827d5d57c58908d3a052647aefeb8c10b1a6d1e54d8c747078deb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7abe5b420c4042795179d192455c4a7d649101616c4acc6833d030d4344c73d2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dc0808da22a5baecea227515ec9677538c252a46446bd57238c16ac45c45879d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4c1de31a3ec586a4eb95008502547750ae014d8f06a1ca6b551e74c4d171961d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "80bb077968dae6ad76cf8571a16c8edcdff31e66524d959bebc34eda608ab2e2"
+    sha256 cellar: :any_skip_relocation, ventura:        "6878dd8ee355f35ff9b67b7bf3ec4329a00011855ca8a450cfdac65f994fb77c"
+    sha256 cellar: :any_skip_relocation, monterey:       "faed63027fa70481a1bad93ada8a84039eed57350795d6b87ba7aa8cd312ef21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "811b8225024ec1eb6b6fcb90d71a6795e8bbae60d7f922cbf1d605520c6d7dd8"
   end
 
   depends_on "libmagic"
   depends_on "python-certifi"
+  depends_on "python-packaging"
   depends_on "python@3.11"
 
   resource "charset-normalizer" do
@@ -50,11 +52,6 @@ class Dotdrop < Formula
   resource "markupsafe" do
     url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
     sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "python-magic" do

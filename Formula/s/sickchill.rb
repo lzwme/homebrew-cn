@@ -8,22 +8,21 @@ class Sickchill < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "170e35aae866e65e0e8dac1e976d2bdfcc2f4fa76d124e1f7ef50f0be6c240f8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b0fabd330e2456041744cd122546e3485d549dde9813ca74951c693a17987d80"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7d88a3eae7435bdb9030ae181e8b415a09247c05550a02c1aeac91f680468c02"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1c01fcc3bd297d13903fd9ca9beea901f4df3db925747a3595ff092773e76d75"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bd70fb1e710d008b843f7cdc93b62478ce2dcca2b7931bd6adce1d9d2b2c8ab7"
-    sha256 cellar: :any_skip_relocation, ventura:        "3814ffc343cb623813b1675ffdb5bd990135a024f77dd4ba400e4ecd23763b3c"
-    sha256 cellar: :any_skip_relocation, monterey:       "48f07b6b6cfc34627ef0e5f7a477dfe7ac55fb2ebfa95c5b4cfa40369340c453"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9138afa7d250ce68a07001f81048d49774b5526dae1f41827383ed0acf446a22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1ccfc88f849783ff972b02cb8cb6f823b94648237f7ace689bf180f4d9925b9"
+    rebuild 5
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d7c9d91536cfb5c1ddd4b964689655670176805d3d9e5c7a5a5080640c0d09dd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f0ae785d57cb9379f549f707181ed85c7ed0e6238ba461c861bf606646017164"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3f46b212a740757517c7d6e12f238a6aefa204b5b1b540511b1de3b8d0210874"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2c982e205f34eb75ad498e21772b37f275ef6e40934c3e4407855699bf846cba"
+    sha256 cellar: :any_skip_relocation, ventura:        "ea72cd12ebab8f25d462211951872cb08abae16c6bb035dbda8b7330e00d8f6c"
+    sha256 cellar: :any_skip_relocation, monterey:       "6eaae747ae8604d7cb067d4b03f61dbfad1743eb933a665ea6e6cb9339f1400f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9effec0933240fdea2c6ebc223e2598cd533e63754052cbd5884caebb15db977"
   end
 
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-packaging"
   depends_on "python-pytz"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -201,11 +200,6 @@ class Sickchill < Formula
   resource "oauthlib" do
     url "https://files.pythonhosted.org/packages/6d/fa/fbf4001037904031639e6bfbfc02badfc7e12f137a8afa254df6c4c8a670/oauthlib-3.2.2.tar.gz"
     sha256 "9859c40929662bec5d64f34d01c99e093149682a3f38915dc0655d5a633dd918"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
-    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "pbr" do

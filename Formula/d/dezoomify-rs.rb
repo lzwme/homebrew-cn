@@ -6,6 +6,14 @@ class DezoomifyRs < Formula
   license "GPL-3.0-only"
   head "https://github.com/lovasoa/dezoomify-rs.git", branch: "master"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c8ee8cbf3a5d1131cbfed81cba85e5e9ba08d3dd4dc55cd1f19fa10baf4348b2"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8e6a9fc41bbb3c0097249716df70783dc0fa81fcb5b5205a36a94bd46a66cebd"

@@ -9,15 +9,17 @@ class Principalmapper < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7ea29f52578c1de208c042d0e7466c57fd1d5da0cf03613a10430029a60b038c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "12540337b706aaf0e1e8488bf8e4cee4d3e58352682f9e00dcfe95513be1ef7f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "01c0eb56cdded8419c54f739b2579b0871a6dfadfad89691715d84fbefddb25b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "67cdf782371427f2ea33e61150228ed2eb73807ab9f6b1e00c686fbaad6f2290"
-    sha256 cellar: :any_skip_relocation, ventura:        "e624ab73192cc8006387d917501f6edeeac1f92be5c9c084af83590d2a5dc07c"
-    sha256 cellar: :any_skip_relocation, monterey:       "eea100212263d43a29b624d2118e87151c654fea1fc7fda785a7d37eb0fbad49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23fe818031a72f40f92849e0574fc8a831d5c8c5ba3aa856b3979e7acc8b11e6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7afdb4fa5d79933316993f46f9cad7c29f7ea30dca1b76f6c37fbd48f448e548"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b8088690d7bb90e8bb9a7f102b8520047c092d9f5786c69addeba1222f930e6f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "26c62d300d920ce4642468a807acee918cf534d7ef92c25d33de207b3e6cdcd9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7b9fd2fd2f2544f6fbd2008d0eb906e1bf9d63fd39e9d518f1f12bdc494814ff"
+    sha256 cellar: :any_skip_relocation, ventura:        "838ccbb1180aa50472bf228df177428b64eeda2b35a8fe96e21ccbd84eb46054"
+    sha256 cellar: :any_skip_relocation, monterey:       "b446d8941915dc9925ea7b39774b593f100f63b5326b9c5bf6971d133ba42e7c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f1168efc339251882c18003491e269e774dd51e18b34e5cf3b84bad357ba4af8"
   end
 
+  depends_on "python-packaging"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -29,11 +31,6 @@ class Principalmapper < Formula
   resource "jmespath" do
     url "https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz"
     sha256 "90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "pydot" do

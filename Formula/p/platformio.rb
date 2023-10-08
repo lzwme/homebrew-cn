@@ -10,16 +10,18 @@ class Platformio < Formula
   head "https://github.com/platformio/platformio-core.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d0c6648d78a0d75d52ad258ea79dedfbe5a5bf355aae3b96c49d06056e8373da"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c6e70812f64dafadbdcb9993942423f1296d81b6a339e4c5b11216fd140b83d1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "25375e2e1f78f2813d07f59417460d60ee26015c8dd0aedc68dc463e18efca2e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "865fe1d99a833fd52acc24d0b38e4562def0d58001a7e6ae81dc38c7863c9f32"
-    sha256 cellar: :any_skip_relocation, ventura:        "5c948715148340515aeb392e3195e34d9f3158c0611cfd0a3d5aaa19b9cd693a"
-    sha256 cellar: :any_skip_relocation, monterey:       "f410f71e027d202286338ed74d9b7d500c7e2e421194c9bf99d06368e8424ae0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1742f23171f2e9384b3438c62510db4f12c3424d730cf1be7b49e47058a86bf8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2de2d2772a93a23bb533ef8bccc3f175ccd9c1ce9c32d6cfa92f9d6f371d42ad"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "238fc53b98307aa3c44ccc5bbb298e7bfc722807801e402e2bf8aea263b06318"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c3999c26bc0c83632fa6174445c94eb50404d05bd26947a128e0ce2ad24256c5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6380ff7175172eb0eefcbd320f39712aae39fca969d565b5d7a9b1627c4303f9"
+    sha256 cellar: :any_skip_relocation, ventura:        "6bfae2f1e7c242259ec94361ec09d1ef16ba8b0d8d9ec03919475b8644f2dc5d"
+    sha256 cellar: :any_skip_relocation, monterey:       "a01fe730d1563ae6e2cac0f1de2de9c1f55e274b207ee6faf58f49359aa34983"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "926a8e875cf693d17fada1b296ac7ab55ae7a6d6331b340e283a3128c61572de"
   end
 
   depends_on "python-certifi"
+  depends_on "python-packaging"
   depends_on "python-tabulate"
   depends_on "python@3.11"
 
@@ -66,11 +68,6 @@ class Platformio < Formula
   resource "marshmallow" do
     url "https://files.pythonhosted.org/packages/e4/e0/3e49c0f91f3e8954806c1076f4eae2c95a9d3ed2546f267c683b877d327b/marshmallow-3.20.1.tar.gz"
     sha256 "5d2371bbe42000f2b3fb5eaa065224df7d8f8597bc19a1bbfa5bfe7fba8da889"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "pyelftools" do
@@ -120,6 +117,8 @@ class Platformio < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"pio", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

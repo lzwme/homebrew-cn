@@ -3,19 +3,18 @@ class Codelimit < Formula
 
   desc "Your Refactoring Alarm"
   homepage "https://github.com/getcodelimit/codelimit"
-  url "https://files.pythonhosted.org/packages/9a/98/c56316cfac4aed19ef7b05f8455e87b6f1e0273aa3e35d545bbd53dbfc98/codelimit-0.6.2.tar.gz"
-  sha256 "26209ca3f09dfa4efc7dafa6fa25a0499aa909c46c41cd35a0ea79487f3c6611"
+  url "https://files.pythonhosted.org/packages/ef/b0/17e7b12b587af10b1096ba44250eddc71dd28446ae4c9bac708587a0a607/codelimit-0.7.0.tar.gz"
+  sha256 "4e6caa1cbd85fb7989f24e3b9f151c43f28e4bb807cb2f7a3046bfd5b6872e57"
   license "ISC"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8980bc14dee6888940d3e2b39dccf5d37470539155513757973601516422f3da"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f6386aef2b9bd1da835adc685abe1c91829fd1b05e995d4ec17db786adf252c5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d260b0e6470f4b954d4fb7ff05a0e722ba1f11d9986d42e8458f302a885acfb0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fcdfb73deaca619cea38715dd2ffd5d0269a65e9267c308b0d94e5ce2066d253"
-    sha256 cellar: :any_skip_relocation, ventura:        "43d1721a725b7cd7531235b033c72e53971a092d2a7126d63aeb720011b9ae86"
-    sha256 cellar: :any_skip_relocation, monterey:       "c2b6d9f7ecec79a334eac8ddb0e7cb1c1e4c3ee3dc8cd8be53afc7b61d8d9f57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c40655a2818a129a1ba2df4efe3ab492b3be116f0359ffb96e35e2b3ff70efd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "883b5f50aa8452588df1bc7ac64e0f630b7212c3b0461faeec9ae08cefa8f511"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a023ccd8ca65c535513e752573177c7e3f0a85f9bc97ea96b92eecc7ce96ddc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "30a22c8361727be4f5da25e892a3ebe949b62d832e83cb66b288065f0a6872e1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "80ee603ee0aa105667b59a0d3dca77df5e4be4f9d45c0baee0e62a48b9c75766"
+    sha256 cellar: :any_skip_relocation, ventura:        "1ec39ff82b1eda91633c0dddd34a8b7c2d264ea7cbcedd73d7a134a1dcbab79f"
+    sha256 cellar: :any_skip_relocation, monterey:       "6cffd9c2e2b53d62a26c7944a25dd495ec869410a0db6a5281e929910a6d5417"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef18bf33ae94745dc174a47a0791fa91e82823ef5a8de0631e7a4dcc433778e5"
   end
 
   depends_on "pygments"
@@ -23,26 +22,6 @@ class Codelimit < Formula
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "six"
-
-  resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/d6/12/6fc7c7dcc84e263940e87cbafca17c1ef28f39dae6c0b10f51e4ccc764ee/aiohttp-3.8.5.tar.gz"
-    sha256 "b9552ec52cc147dbf1944ac7ac98af7602e51ea2dcd076ed194ca3c0d1c7d0bc"
-  end
-
-  resource "aiosignal" do
-    url "https://files.pythonhosted.org/packages/ae/67/0952ed97a9793b4958e5736f6d2b346b414a2cd63e82d05940032f45b32f/aiosignal-1.3.1.tar.gz"
-    sha256 "54cd96e15e1649b75d6c87526a6ff0b6c1b0dd3459f43d9ca11d48c339b68cfc"
-  end
-
-  resource "async-timeout" do
-    url "https://files.pythonhosted.org/packages/87/d6/21b30a550dafea84b1b8eee21b5e23fa16d010ae006011221f33dcd8d7f8/async-timeout-4.0.3.tar.gz"
-    sha256 "4640d96be84d82d02ed59ea2b7105a0f7b33abe8703703cd0ab0bf87c427522f"
-  end
-
-  resource "attrs" do
-    url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
-    sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
-  end
 
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
@@ -64,11 +43,6 @@ class Codelimit < Formula
     sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
   end
 
-  resource "frozenlist" do
-    url "https://files.pythonhosted.org/packages/8c/1f/49c96ccc87127682ba900b092863ef7c20302a2144b3185412a08480ca22/frozenlist-1.4.0.tar.gz"
-    sha256 "09163bdf0b2907454042edb19f887c6d33806adc71fbd54afc14908bfdc22251"
-  end
-
   resource "halo" do
     url "https://files.pythonhosted.org/packages/ee/48/d53580d30b1fabf25d0d1fcc3f5b26d08d2ac75a1890ff6d262f9f027436/halo-0.0.31.tar.gz"
     sha256 "7b67a3521ee91d53b7152d4ee3452811e1d2a6321975137762eb3d70063cc9d6"
@@ -80,8 +54,13 @@ class Codelimit < Formula
   end
 
   resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/55/12/ab288357b884ebc807e3f4eff63ce5ba6b941ba61499071bf19f1bbc7f7f/importlib_metadata-4.13.0.tar.gz"
-    sha256 "dd0173e8f150d6815e098fd354f6414b0f079af4644ddfe90c71e2fc6174346d"
+    url "https://files.pythonhosted.org/packages/33/44/ae06b446b8d8263d712a211e959212083a5eda2bf36d57ca7415e03f6f36/importlib_metadata-6.8.0.tar.gz"
+    sha256 "dbace7892d8c0c4ac1ad096662232f831d4e64f4c4545bd53016a3e9d4654743"
+  end
+
+  resource "linkify-it-py" do
+    url "https://files.pythonhosted.org/packages/8d/fd/73bb30ec2b3cd952fe139a79a40ce5f5fd0280dd2cc1de94c93ea6a714d2/linkify-it-py-2.0.2.tar.gz"
+    sha256 "19f3060727842c254c808e99d465c80c49d2c7306788140987a1a7a29b0d6ad2"
   end
 
   resource "log-symbols" do
@@ -94,24 +73,14 @@ class Codelimit < Formula
     sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
   end
 
+  resource "mdit-py-plugins" do
+    url "https://files.pythonhosted.org/packages/b4/db/61960d68d5c39ff0dd48cb799a39ae4e297f6e9b96bf2f8da29d897fba0c/mdit_py_plugins-0.4.0.tar.gz"
+    sha256 "d8ab27e9aed6c38aa716819fedfde15ca275715955f8a185a8e1cf90fb1d2c1b"
+  end
+
   resource "mdurl" do
     url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
-  end
-
-  resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/c2/d5/5662032db1571110b5b51647aed4b56dfbd01bfae789fa566a2be1f385d1/msgpack-1.0.7.tar.gz"
-    sha256 "572efc93db7a4d27e404501975ca6d2d9775705c2d922390d878fcf768d92c87"
-  end
-
-  resource "multidict" do
-    url "https://files.pythonhosted.org/packages/4a/15/bd620f7a6eb9aa5112c4ef93e7031bcd071e0611763d8e17706ef8ba65e0/multidict-6.0.4.tar.gz"
-    sha256 "3666906492efb76453c0e7b97f2cf459b0682e7402c0489a95484965dbc1da49"
-  end
-
-  resource "nanoid" do
-    url "https://files.pythonhosted.org/packages/b7/9d/0250bf5935d88e214df469d35eccc0f6ff7e9db046fc8a9aeb4b2a192775/nanoid-2.0.0.tar.gz"
-    sha256 "5a80cad5e9c6e9ae3a41fa2fb34ae189f7cb420b2a5d8f82bd9d23466e4efa68"
   end
 
   resource "plotext" do
@@ -150,8 +119,8 @@ class Codelimit < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/09/b4/1bffcb47a7d9859e4a3dae84fcb60efde276d5d9309a0e3cb672defd4cf8/textual-0.10.1.tar.gz"
-    sha256 "928cfeec37c60b212963f484e806b25380afdddb5a2aecd888ce8c9b46f93553"
+    url "https://files.pythonhosted.org/packages/26/c1/a03d903920167f4022e61eeff8b7280dd5fc2541147a78c90aabdd459eb2/textual-0.34.0.tar.gz"
+    sha256 "b66deee4afa9f6986c1bee973731d7dad2b169872377d238c9aad7141449b443"
   end
 
   resource "typer" do
@@ -164,14 +133,14 @@ class Codelimit < Formula
     sha256 "df8e4339e9cb77357558cbdbceca33c303714cf861d1eef15e1070055ae8b7ef"
   end
 
+  resource "uc-micro-py" do
+    url "https://files.pythonhosted.org/packages/75/db/241444fe6df6970a4c18d227193cad77fab7cec55d98e296099147de017f/uc-micro-py-1.0.2.tar.gz"
+    sha256 "30ae2ac9c49f39ac6dce743bd187fcd2b574b16ca095fa74cd9396795c954c54"
+  end
+
   resource "urllib3" do
     url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
     sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
-  end
-
-  resource "yarl" do
-    url "https://files.pythonhosted.org/packages/5f/3f/04b3c5e57844fb9c034b09c5cb6d2b43de5d64a093c30529fd233e16cf09/yarl-1.9.2.tar.gz"
-    sha256 "04ab9d4b9f587c06d801c2abfe9317b77cdf996c65a90d5e84ecc45010823571"
   end
 
   resource "zipp" do

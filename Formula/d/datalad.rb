@@ -9,8 +9,10 @@ class Datalad < Formula
   revision 1
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "490d8975a148317c7e23a5f53171e4a63cc09a1bb101278f0c09ed0b0c559f8e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b2fba6dd8b5eb1cb30a3ffe8c1932aca0108288da94b01e5540abf2596166dfc"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "aac4c7dc240c47f10fdb45fa6a368675d5ebcd3a16d2b8dca6a88036763c7ac0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ad886505ddbf1d3f829be3bf212c738a4446aa729661ea11dbf2652cbccc7af7"
     sha256 cellar: :any_skip_relocation, ventura:        "bb7591f30f921846eca5eb77fd21952aac7ffcd22027217afafdb9a2188ab2ae"
     sha256 cellar: :any_skip_relocation, monterey:       "32f0c14c229cc770aab5d04c30539a6c63e139ea88ae787fef775f0be7b16333"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c950dba17d4aadfc9cf981fc0a4690d42516cac7c1e934ebfbce9ab5397d79d"
