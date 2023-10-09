@@ -9,16 +9,17 @@ class Px < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ee16b97e2dc20cc75df898e38089c94e6ca2c9ebd8e3f32436fd1cf7392a12a9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "01aea88c5bccb6cddb9d6d7f76bf38c143bafd761cb9ef9311f9b8cac19e7436"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c62ee044e4349b81826adeb6202ede26e85aa380bef6156c53fb90a152b5cbac"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3075b607f724b96c9b6ba07ac68e6c6420660ac4b1b126c458e30c5b168dd6da"
-    sha256 cellar: :any_skip_relocation, ventura:        "ea4b7f9849885b59f76ab4feb849ffb0e61fe59b9835e5f6ea4cb1085f7e852c"
-    sha256 cellar: :any_skip_relocation, monterey:       "c63b674ffe129bcd68e8752c0355e89cd884fe978aa65543e265e91823518f68"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d33e60156b1a95dd9932f011c56f85d1377061cffcab86511c3bebd6e4dc9899"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bfcb28d46e0816d17d3fc09744f3fca508999b65ffa4b5879c8a848c6d7c2252"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d2c7660ba144d10cdd70fbe6f07b5dd01549ff005fd0ccb861975b3e2652b7cd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5e464ea6b8396cd2a2c98af8849e22f88b5f7885f172f12f062dfc8ac7ea296c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "45f85b81dd4e268809da649c477384d7a425213171edebb31936c7d2e4e4ceea"
+    sha256 cellar: :any_skip_relocation, ventura:        "97c5ddc551cb80b01e12a60fdb200e3a5cde7d4a284f6459cc18a7b899278674"
+    sha256 cellar: :any_skip_relocation, monterey:       "7ad47086635ca8dd852039464760a56dd8010d64d5f9806df898ddfe723f5ccc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5de4904594c2181a4ced17e80fbdc341a79bc45ba68cbfcb9e81d7b860235a8d"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   uses_from_macos "lsof"

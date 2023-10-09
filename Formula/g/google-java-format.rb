@@ -3,25 +3,25 @@ class GoogleJavaFormat < Formula
 
   desc "Reformats Java source code to comply with Google Java Style"
   homepage "https://github.com/google/google-java-format"
-  url "https://ghproxy.com/https://github.com/google/google-java-format/releases/download/v1.18.0/google-java-format-1.18.0-all-deps.jar"
-  sha256 "ec401485fc9a95569d81dc59ce971ec5a0e6eda7f334e949a916fe9ae056e66b"
+  url "https://ghproxy.com/https://github.com/google/google-java-format/releases/download/v1.18.1/google-java-format-1.18.1-all-deps.jar"
+  sha256 "bed3bad433f7df427700648f24b798db3c338d6dcb2cc5c08bc542b55610f910"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1995c4537ec832953aa99feb5fd1db19a8212eecbe04b735118bd1d0e8e6392b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1995c4537ec832953aa99feb5fd1db19a8212eecbe04b735118bd1d0e8e6392b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1995c4537ec832953aa99feb5fd1db19a8212eecbe04b735118bd1d0e8e6392b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1995c4537ec832953aa99feb5fd1db19a8212eecbe04b735118bd1d0e8e6392b"
-    sha256 cellar: :any_skip_relocation, ventura:        "1995c4537ec832953aa99feb5fd1db19a8212eecbe04b735118bd1d0e8e6392b"
-    sha256 cellar: :any_skip_relocation, monterey:       "1995c4537ec832953aa99feb5fd1db19a8212eecbe04b735118bd1d0e8e6392b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e1877c72693357457d9e0ec4f214c0e12cf8e354fec7905740ad19dae737d51"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "98fcafe5cd9189474aaf6d719e314089ef2682d2f03714b0dbb97bc36c1a3b69"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "98fcafe5cd9189474aaf6d719e314089ef2682d2f03714b0dbb97bc36c1a3b69"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "98fcafe5cd9189474aaf6d719e314089ef2682d2f03714b0dbb97bc36c1a3b69"
+    sha256 cellar: :any_skip_relocation, sonoma:         "98fcafe5cd9189474aaf6d719e314089ef2682d2f03714b0dbb97bc36c1a3b69"
+    sha256 cellar: :any_skip_relocation, ventura:        "98fcafe5cd9189474aaf6d719e314089ef2682d2f03714b0dbb97bc36c1a3b69"
+    sha256 cellar: :any_skip_relocation, monterey:       "98fcafe5cd9189474aaf6d719e314089ef2682d2f03714b0dbb97bc36c1a3b69"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a0271c8c3ca90b3acc81f376b1d01227631a450fe87e6189db32fa46c6275c9"
   end
 
   depends_on "openjdk"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "google-java-format-diff" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/google/google-java-format/v1.18.0/scripts/google-java-format-diff.py"
+    url "https://ghproxy.com/https://raw.githubusercontent.com/google/google-java-format/v1.18.1/scripts/google-java-format-diff.py"
     sha256 "4c46a4ed6c39c2f7cbf2bc7755eefd7eaeb0a3db740ed1386053df822f15782b"
   end
 

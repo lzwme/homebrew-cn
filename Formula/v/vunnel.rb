@@ -10,25 +10,23 @@ class Vunnel < Formula
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "39b15c8b9effa641d10d0e03c669f16d3ce5f7e76e996080f1ea138f66fec683"
-    sha256 cellar: :any,                 arm64_ventura:  "81efade09796249b954402df103b48d7f9a86b7d2eae11a48c443663740c76c8"
-    sha256 cellar: :any,                 arm64_monterey: "c679bc3e62d74ba10281e067f923d2ea2a2bb0f9f3e19d4fe523913822713773"
-    sha256 cellar: :any,                 sonoma:         "ed2487b2723bc354340ad061abbb3885b08a3833bb2363a7debd044d243def2d"
-    sha256 cellar: :any,                 ventura:        "57eacf4cc287ef3dc6e849b2d47463d99448f5bb972d1b8b47bcea9d2b3a7451"
-    sha256 cellar: :any,                 monterey:       "9ad93a6df2b26691c3bc342326319ce6e7dd80b11031e657bac19c46683fbf5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "477be610c5ec20065086e3d4db7a516d52153dc5342007746230ce0755ec1ff9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "6a0a9cf9247095546517f4b55833c6390754415e7ab7f22ee39a062f6d830103"
+    sha256 cellar: :any,                 arm64_ventura:  "e30bc26192197bba3cefe96887ac2811deedab5b3884bd338df2b7590df60a7c"
+    sha256 cellar: :any,                 arm64_monterey: "7fda7bf97b7ddcf31a98d66a7a608cd4e99a2f639bf6a982d265a99a757a0d62"
+    sha256 cellar: :any,                 sonoma:         "c8020acb9a227cc88317b2770dfb0290d891b2278e1c5caebf7d689449364d37"
+    sha256 cellar: :any,                 ventura:        "24406247d9bb255c58d3bbfa60f01a6a1e390990d77060be6aefedd5ad407f35"
+    sha256 cellar: :any,                 monterey:       "3d4f8687c166dc9a6357a8725ef5c356ef3e0bcc839ce038452b435643218453"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c5ce84eca9f90b289d9a64cd673d3c994057212a8c5a095e3dc378818dfc9d7"
   end
 
   depends_on "rust" => :build
   depends_on "python-certifi"
+  depends_on "python-lxml"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
-
-  # For `lxml` resource.
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
@@ -100,11 +98,6 @@ class Vunnel < Formula
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
   end
 
-  resource "lxml" do
-    url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
-    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
-  end
-
   resource "markupsafe" do
     url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
     sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
@@ -172,6 +165,8 @@ class Vunnel < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"vunnel", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

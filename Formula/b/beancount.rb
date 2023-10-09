@@ -10,22 +10,21 @@ class Beancount < Formula
   head "https://github.com/beancount/beancount.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a60e9bb2a68c6194583ab24c72bfa40d0f982da339f06d81ed8c3a8933647a37"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a12ef4406ad867fa04481c2e46dd954e253dcfc3d43950074df9f5c5e4c1bd78"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9cc95fe3af132ed64795db1dc7eda6ff319aa4869623050fab71872825b5cdef"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3a2b75c22df6dcc92dade0b5317c31e1b517c7b6f50b2ad5f13374d70900052b"
-    sha256 cellar: :any_skip_relocation, ventura:        "7782dd135d6469274614b748a9c844672072d7b4d9d3c110426d6900b235b8a1"
-    sha256 cellar: :any_skip_relocation, monterey:       "c1673a8f7329bbbb30efcf96855ded448b03ff6340b0b036eeb0e35e40cb24c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4cf47803ee85d0f74511d77dd72e5392447281240f3c8ecc1c64f42ca4f0c222"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5c2ec64af8e89e40b81abb4d143345e0b8dc0250fab754b08e89377f3ba3b56e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "319593c9d911ee11ac0ba134474533440552f0a0db67e8555ba15cc2dd1a9ce4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1dce63bec3f54e02d28ee3f4e5ef6cc9432b8b8e62d8976c7dd535c2bed0e087"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c18cd8803eff69062bf6bdd4d43dd3b74964beb1bb00a0a25bdd527e65b14d7b"
+    sha256 cellar: :any_skip_relocation, ventura:        "4ff18bd3e7acb8ad149b51b8b385a79de7856d3abf55186eccb90e636f465d1c"
+    sha256 cellar: :any_skip_relocation, monterey:       "144a8367b0e02293fd9b592aff8b8e68e6b75979f902b20e678db6b3d7d70380"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e74a345f7a4280bc9dd4aec59d3e0dfda69693ce6ae09c589b55bff8c7c9fe59"
   end
 
   depends_on "python-certifi"
+  depends_on "python-lxml"
   depends_on "python-packaging"
   depends_on "python@3.11"
   depends_on "six"
-
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
 
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/af/0b/44c39cf3b18a9280950ad63a579ce395dda4c32193ee9da7ff0aed547094/beautifulsoup4-4.12.2.tar.gz"
@@ -90,11 +89,6 @@ class Beancount < Formula
   resource "iniconfig" do
     url "https://files.pythonhosted.org/packages/d7/4b/cbd8e699e64a6f16ca3a8220661b5f83792b3017d0f79807cb8708d33913/iniconfig-2.0.0.tar.gz"
     sha256 "2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3"
-  end
-
-  resource "lxml" do
-    url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
-    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
   end
 
   resource "pluggy" do

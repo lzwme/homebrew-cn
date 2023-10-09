@@ -9,22 +9,21 @@ class Urlwatch < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d00d4c5b4e62dfd5ca9321fd881291e3a6763716f4db77c7798b3da82ec7ab59"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b51ef7667d85414aab742de66ec248a77ea88e747c43a0b96b008ee5abd3602d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2699fcc2c87ff27786869460e5aea19a0d2998c6e6b8c49a8aaafdb358170a7e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "70728853d1a818d2fcdb52dff6f745995304043adc7e27174ee35253c2ec0ba5"
-    sha256 cellar: :any_skip_relocation, ventura:        "b14a76bf36b800483e208d666cfe492ca392c7bcb338429d196bfdd15cf06251"
-    sha256 cellar: :any_skip_relocation, monterey:       "4af180a8abbf009362f2544350a79550e634f9373899de7bfe7e5572368b5975"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6cf3f8e83ffce0376deac7e889f55db80ba19fd0f8c0f7c990d6dfbb77ef309"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c002079d230f24dc0525dbed1197b5592b50d145b877329d5756f6f2b0f0c14f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ee54dc59e58518efd46ace39c9d2e617571d258aeb8e25e065c2c0e7f289c11b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "663756513973b40a5758053f12dd6c32192ae8a5f3645e0cc33134af746b939e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1491e09063fd5db0a59e4c19d7fc7682a00c440e7a0a0c4fe7ccff2bfe1d987e"
+    sha256 cellar: :any_skip_relocation, ventura:        "8ac2dacfd573b09dc83a9ce22602fcf5efde7c0a8d80155b74a8e6188d70e641"
+    sha256 cellar: :any_skip_relocation, monterey:       "fa7155c3cf4acacc3e7e4554ef1c7191c932618fc68893f09a0ba5e780b669fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "007acd85add49ea0144e2a390d4a7f025b5072e9a334bae20d9f466b6b342469"
   end
 
   depends_on "keyring"
   depends_on "python-certifi"
+  depends_on "python-lxml"
   depends_on "python@3.11"
   depends_on "pyyaml"
-
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
@@ -44,11 +43,6 @@ class Urlwatch < Formula
   resource "idna" do
     url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
     sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
-  end
-
-  resource "lxml" do
-    url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
-    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
   end
 
   resource "minidb" do

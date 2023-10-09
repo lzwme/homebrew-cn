@@ -2627,6 +2627,7 @@ Homebrew-homebrew-core/Formula/i/immudb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/imposm3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/inadyn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/include-what-you-use.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/i/incus.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/indicators.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/inetutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/infer.rb, Homebrew/homebrew-core, 1
@@ -4192,6 +4193,7 @@ Homebrew-homebrew-core/Formula/n/nethack.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nethacked.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nethogs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/netlify-cli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/n/netlistsvg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/netmask.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/netpbm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/netperf.rb, Homebrew/homebrew-core, 1
@@ -4980,6 +4982,7 @@ Homebrew-homebrew-core/Formula/p/pyside.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyside@2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyspelling.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pystring.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/python-argcomplete.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-build.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-certifi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-click.rb, Homebrew/homebrew-core, 0
@@ -9099,6 +9102,7 @@ Homebrew-homebrew-cask/Casks/m/modelio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/modern-csv.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/moderndeck.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/modmove.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/modrinth.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/moebius.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/moefe-google-translate.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mojibar.rb, Homebrew/homebrew-cask, 1
@@ -12020,6 +12024,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-kaushan-script.rb, Homebrew/homebrew-cas
 Homebrew-homebrew-cask-fonts/Casks/font-kavivanar.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-kavoon.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-kawkab-mono.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-kay-pho-du.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-kdam-thmor-pro.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-keania-one.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-kelly-slab.rb, Homebrew/homebrew-cask-fonts, 0
@@ -13468,6 +13473,7 @@ nicerloop-homebrew-nicerloop/Formula/libf2c.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/macos-scripts.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/mas.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/optic.rb, nicerloop/homebrew-nicerloop, 1
+nicerloop-homebrew-nicerloop/Formula/orbicfg.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/pdf-strip-watermark.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/pdfbox.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/pdfjam-extras.rb, nicerloop/homebrew-nicerloop, 1

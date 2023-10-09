@@ -9,13 +9,14 @@ class Howdoi < Formula
   revision 5
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cd85b378b89eb71c34720a6bde889d064c34ac344c22ad518098e25bb2b29089"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d64b6328f193b18bb0060306b6aa7bf8ce69459751a901c219a64fcbdd262c54"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0ad7b26ee13a778b13a315d42fc461c3ac138f766d85fc16808374c43522b98e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4f53d0bd3a568c07ada70e98ec2ce331836b148b7a977992568362391c46eb21"
-    sha256 cellar: :any_skip_relocation, ventura:        "601ca1bafc280c90711c56e0c2fa6e98ed4c660d8e4f51a0cb5c103fb6415df2"
-    sha256 cellar: :any_skip_relocation, monterey:       "982ccaf768e20d0d9dbee4a7a0e50ea7f8ccbad447ff94e9ecac10560a6c8f85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81cd8933c3ccce662969043af636c746a4f2c6d77defa97d8100817122ba6d92"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "477d1c5a448b1846e0f8356eddde9c7d7737d33d31616643da4eb7f8a4ed9a38"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "047b0a762e80c1f023808278d3d9f8df336907b032d95b419271fa68eeb26c94"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5bc197d3669ae4babe626a4f7d605d4fe2dcd6c82a8f809ff60feb25eab76355"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2572f120b9ee123197a7133ea4cc233fa344fbf3dce44bd784663b8e3a6923b3"
+    sha256 cellar: :any_skip_relocation, ventura:        "e82b258a0a29c3fa0878e50236cea86b0e7be180c58a05a85d4deb0dc42f8e6b"
+    sha256 cellar: :any_skip_relocation, monterey:       "0e1747a46881e8a923658f6272a45e88324e99da90c9c4badcab0b5d744790da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4cb83ff4cff0805df0ff4496e480a2eae2170699dac7b7e2e41e983f2ab7382"
   end
 
   # `pkg-config` and `rust` are for `rpds-py` via `terminaltables`
@@ -26,12 +27,10 @@ class Howdoi < Formula
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-lxml"
+  depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "six"
-
-  # For `lxml` resource.
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
@@ -76,11 +75,6 @@ class Howdoi < Formula
   resource "keep" do
     url "https://files.pythonhosted.org/packages/6d/f2/2c35a4bb1332d81f2b1d94725a9ede4d44902fa8ec11b25dedd210394c2f/keep-2.10.1.tar.gz"
     sha256 "3abbe445347711cecd9cbb80dab4a0777418972fc14a14e9387d0d2ae4b6adb7"
-  end
-
-  resource "lxml" do
-    url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
-    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
   end
 
   resource "markdown-it-py" do
@@ -131,11 +125,6 @@ class Howdoi < Formula
   resource "terminaltables" do
     url "https://files.pythonhosted.org/packages/f5/fc/0b73d782f5ab7feba8d007573a3773c58255f223c5940a7b7085f02153c3/terminaltables-3.1.10.tar.gz"
     sha256 "ba6eca5cb5ba02bba4c9f4f985af80c54ec3dccf94cfcd190154386255e47543"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/1f/7a/8b94bb016069caa12fc9f587b28080ac33b4fbb8ca369b98bc0a4828543e/typing_extensions-4.8.0.tar.gz"
-    sha256 "df8e4339e9cb77357558cbdbceca33c303714cf861d1eef15e1070055ae8b7ef"
   end
 
   resource "urllib3" do

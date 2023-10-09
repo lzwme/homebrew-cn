@@ -9,23 +9,19 @@ class Pipx < Formula
   head "https://github.com/pypa/pipx.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b7d802d8c4dfe404f0be64c448d6ca335fff429fe1c3cf2534e547702a30a20"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "44240ace73ffd5a684a05cdc30f332d62c27e0439febfa5a62409f13433a57fc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3ead2b906e38c1221c546739cd21ac5594cdb0029fd2deb35c242c924b4426d9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3b577374067228f7a9016e4d3dce43e2fa482b715294b6a4fbb0b8c95d1324eb"
-    sha256 cellar: :any_skip_relocation, ventura:        "770f03e469608f39adda33f541699bd5c744c71827eda2c3ba8f7118f8cade35"
-    sha256 cellar: :any_skip_relocation, monterey:       "0fbe40b54b52c7ae12f0f7fc758db38007b3a56ab434e7815d93becdf5d8b4e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8b13abbbcd60c20adba7685337ee1fa5b75833f1babd93e870fb1eb71d8f073"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "51673f0f9c015e1223d576e30783b07f6cb74829fde195b5a36fc7b0444d3da3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "622ba3224ff4c3e83c2874f0c65aea8c157acc68e42a45d629e33082b83cdd9c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0bff8d3cbcee0a989030cce191fde69140aac6af84c9e9abeac4ce4dd59bd888"
+    sha256 cellar: :any_skip_relocation, sonoma:         "311d8bb68c4add766744a58137f741e223e628877a820fe226429dca90e9ea70"
+    sha256 cellar: :any_skip_relocation, ventura:        "b6bbfbd3a993d115f96825c446a6915268f32664e9fe6fa98e3f41928c9073ff"
+    sha256 cellar: :any_skip_relocation, monterey:       "cf30fe283884e4f0c372352ace4c1c38473a4ce373b5f84832c0fdcdfa2bdeee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc299aba72faf73cc66b6864ea618c4f64793175753244c18ef44afdb241c2ea"
   end
 
+  depends_on "python-argcomplete"
   depends_on "python-packaging"
   depends_on "python@3.12"
-
-  resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/1b/c5/fb934dda06057e182f8247b2b13a281552cf55ba2b8b4450f6e003d0469f/argcomplete-3.1.2.tar.gz"
-    sha256 "d5d1e5efd41435260b8f85673b74ea2e883affcbec9f4230c582689e8e78251b"
-  end
 
   resource "click" do
     url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
@@ -39,9 +35,9 @@ class Pipx < Formula
 
   def install
     virtualenv_install_with_resources
-    bin.install_symlink libexec/"bin/register-python-argcomplete"
 
-    generate_completions_from_executable(libexec/"bin/register-python-argcomplete", "pipx", "--shell",
+    register_argcomplete = Formula["python-argcomplete"].opt_bin/"register-python-argcomplete"
+    generate_completions_from_executable(register_argcomplete, "pipx", "--shell",
                                          shells: [:bash, :fish])
   end
 

@@ -8,29 +8,27 @@ class Sickchill < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 5
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d7c9d91536cfb5c1ddd4b964689655670176805d3d9e5c7a5a5080640c0d09dd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f0ae785d57cb9379f549f707181ed85c7ed0e6238ba461c861bf606646017164"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3f46b212a740757517c7d6e12f238a6aefa204b5b1b540511b1de3b8d0210874"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2c982e205f34eb75ad498e21772b37f275ef6e40934c3e4407855699bf846cba"
-    sha256 cellar: :any_skip_relocation, ventura:        "ea72cd12ebab8f25d462211951872cb08abae16c6bb035dbda8b7330e00d8f6c"
-    sha256 cellar: :any_skip_relocation, monterey:       "6eaae747ae8604d7cb067d4b03f61dbfad1743eb933a665ea6e6cb9339f1400f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9effec0933240fdea2c6ebc223e2598cd533e63754052cbd5884caebb15db977"
+    rebuild 6
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a870bec0d1493fd51e8f5ce2dea6dbfca5c5b7fd8a9e9bd6872654957c4087f5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5844fa655bf3801f215892df8f028431b1c6b4f998708ddb2d63168ba59553f8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ec55818a97771e4e351f03ed8a98adfb98508db18772d93cdeb5990e21a3e66e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "37f0757909d4c4802b05b49a9422b1a205c36dccd303805d324807e0acde238f"
+    sha256 cellar: :any_skip_relocation, ventura:        "e74b46d558acd24b96d72244dc374c7b6681b2989df007ed5d952dd25cde1f66"
+    sha256 cellar: :any_skip_relocation, monterey:       "a58a3ceda2ff15d7bd729c981864309c806dae7e6bec07ce9084d1a40b047168"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d611f34a4be10c60b6ac691b8e6868150c2ba4db5ef4e61c64fdf59f1a0e2e1d"
   end
 
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-lxml"
   depends_on "python-packaging"
   depends_on "python-pytz"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
-
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
@@ -165,11 +163,6 @@ class Sickchill < Formula
   resource "kodipydent-alt" do
     url "https://files.pythonhosted.org/packages/dd/77/6695c399c31ffca5efa10eef3d07fd2b6b24176260477a909d35f0fc1a0b/kodipydent-alt-2022.9.3.tar.gz"
     sha256 "61fc4e5565646a799c783bcf5ae7503223513906e3242bff2ecc8aa66dc80826"
-  end
-
-  resource "lxml" do
-    url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
-    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
   end
 
   resource "Mako" do
