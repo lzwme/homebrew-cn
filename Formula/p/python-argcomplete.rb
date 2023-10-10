@@ -6,13 +6,14 @@ class PythonArgcomplete < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5ceefae3057f437bbdbd2305549d79634f8e77d4cbe7a913164fba21750ede55"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "43d4fbc8d4d3fd99b68b7235231e1f80fe39623630a0018c6867fcf0d4f81eba"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "39bd940a022253973f0c223980d543dad7541246164f4f14e28ae7141ac2b776"
-    sha256 cellar: :any_skip_relocation, sonoma:         "84d9894c8557213e0185cd1b140483d2c2998cf8fb6d90cdf8747e888aebfdaa"
-    sha256 cellar: :any_skip_relocation, ventura:        "73c56fa5973ac2b70eebd4af17973264b9042714d2b2e2a8a827a2d5ea22f55d"
-    sha256 cellar: :any_skip_relocation, monterey:       "618984fe3980ddab648a4a9ae5346c2182c41c5e500eaa2c9fe85aafb1f516da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38832fdcb17b88d1284bcc333e491c3be099bfa0596230dde0f0b9d819ef3f58"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "be09a2338a78bf46bd53f6277be6ac094f9125ee7663a175d018830436c8efd4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f1286762e4558511f61691cdf5d1cb5863b9503ec0737d2c411a2fbfc648fec9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "25228e5004a6485eb8671fd21596c65a886377c5545b8f87740a06a0ad3b89f8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "89400bdabf4a2246723bf671f73618052ac25934c9a335a895f626ce1d28346c"
+    sha256 cellar: :any_skip_relocation, ventura:        "ea522bbfb6f4b0cf57cf6b6c3a3aff6f6027e8dd4908a5ea70cb64496ab5c865"
+    sha256 cellar: :any_skip_relocation, monterey:       "a192e02f6093118b4f5aa4c7627604139ee7e964b83b59c1da09afc870faf7b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0270914f8473ce3756c7a7f3aa9a0187c9b5b1799c45eb4b5017d948370153e"
   end
 
   depends_on "python-setuptools" => :build
@@ -29,6 +30,9 @@ class PythonArgcomplete < Formula
       python_exe = python.opt_libexec/"bin/python"
       system python_exe, "-m", "pip", "install", *std_pip_args, "."
     end
+
+    bash_completion.install "argcomplete/bash_completion.d/_python-argcomplete" => "python-argcomplete"
+    zsh_completion.install_symlink bash_completion/"python-argcomplete" => "_python-argcomplete"
   end
 
   test do

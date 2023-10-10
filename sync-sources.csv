@@ -390,6 +390,7 @@ Homebrew-homebrew-core/Formula/b/bash_unit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bashate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bashdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bashish.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/bashunit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/basis_universal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bastet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bat-extras.rb, Homebrew/homebrew-core, 1
@@ -2843,6 +2844,7 @@ Homebrew-homebrew-core/Formula/j/juman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jumanpp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jump.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jupp.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/j/jupyter-r.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jupyterlab.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/just.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jvgrep.rb, Homebrew/homebrew-core, 1
@@ -4997,6 +4999,7 @@ Homebrew-homebrew-core/Formula/p/python-markdown.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-markupsafe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-mutagen.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-packaging.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-psutil.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pycurl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pyparsing.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pyproject-hooks.rb, Homebrew/homebrew-core, 0
@@ -8811,6 +8814,7 @@ Homebrew-homebrew-cask/Casks/l/losslesscut.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lotus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/loupedeck.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/love.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/l/low-profile.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lrtimelapse.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/ltspice.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/ludwig.rb, Homebrew/homebrew-cask, 0

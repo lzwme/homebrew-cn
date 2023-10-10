@@ -4,16 +4,17 @@ class Proxygen < Formula
   url "https://ghproxy.com/https://github.com/facebook/proxygen/releases/download/v2023.09.04.00/proxygen-v2023.09.04.00.tar.gz"
   sha256 "e4db076db908b003a23ac139b6c433d8c34daa77cbdea33fd5a77bf9889dcdb2"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https://github.com/facebook/proxygen.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "547c90eb0e3f74f1797aeee1c4525eef7a0902b8db2d256265ce6c6c7b386362"
-    sha256 cellar: :any,                 arm64_ventura:  "77b30f1f5082f58a11b43bec50923b3212c599a78b1eda53d363309979150127"
-    sha256 cellar: :any,                 arm64_monterey: "7e84ec72f2e402a5d2a3d763dc986b6d6203b0985cb4964fe1a38480f65bf388"
-    sha256 cellar: :any,                 ventura:        "804ffb87e49c1a04e961c01e7d1904216caf052afde8d865896df175f496ef8d"
-    sha256 cellar: :any,                 monterey:       "a90277dc3a784955956f83b1671eecf9489c4f7c55c21d5a031ae650fb0ba552"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "47e044a23ca3f0b538329d6f3ea96271c9ebc013dd61be075b1d56dfcccf5a95"
+    sha256 cellar: :any,                 arm64_sonoma:   "c2dbe0929a15bf044c13f7ea81640eff6a811d6cfba58fe794907d6dca2afbcc"
+    sha256 cellar: :any,                 arm64_ventura:  "a26b4802c745cb7e377703f45ad0cc4e537251cf8808e64f2ebcf58862bbbcd3"
+    sha256 cellar: :any,                 arm64_monterey: "9cf3bb099c1138eac2c9e1e40f53e967d4a1ab50aba1e18bc2be46935582f3c7"
+    sha256 cellar: :any,                 sonoma:         "5b6d6a4fa8e97c4718e9d8a1f3465c60b52f24578f77373de612d09f8841463d"
+    sha256 cellar: :any,                 ventura:        "0cb918d9c2dd6706afd8bcebc63786b30eb40cdc6cc5229bedd38dfcc9b16190"
+    sha256 cellar: :any,                 monterey:       "d831ef95873a1f8c008b729104fd542942e16143d49745992e55468c13d1bcb7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "36f5761fb73e8a5b51fd799448f661ab13b75527500ca7697b00f230ebbe9bd1"
   end
 
   depends_on "cmake" => :build

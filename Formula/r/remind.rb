@@ -1,8 +1,8 @@
 class Remind < Formula
   desc "Sophisticated calendar and alarm"
   homepage "https://dianne.skoll.ca/projects/remind/"
-  url "https://dianne.skoll.ca/projects/remind/download/remind-04.02.06.tar.gz"
-  sha256 "12150b3a1a42ac996dc1efd2abaee7e6100308c793a5c1aa69745f38e4735635"
+  url "https://dianne.skoll.ca/projects/remind/download/remind-04.02.07.tar.gz"
+  sha256 "03e12d90d99039ccf731be2aeea40634bea9c829d1bace27a8da2be3ce6db190"
   license "GPL-2.0-only"
   head "https://git.skoll.ca/Skollsoft-Public/Remind.git", branch: "master"
 
@@ -12,15 +12,13 @@ class Remind < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "438043f1b2584712003a5869d39bed54869baf9126e17e0cbc90dd7447f8df48"
-    sha256 arm64_ventura:  "4dbe8786d98452b1390523026b7e31ddf8b1aed3bd6f159249bfe3b96e20fcbc"
-    sha256 arm64_monterey: "e86736aaf74a58ade5ed53cd466ef33c9c2d0c6398ca20f3d11be035b8db690f"
-    sha256 arm64_big_sur:  "052c5b0622a607704ebc997ff93e7c0e84036f639b017b7267fb35feadaa3891"
-    sha256 sonoma:         "5513f5afb081cb3725eb9569bec555e958e4ec9effc547018f697c51b504eed6"
-    sha256 ventura:        "68a6840d0c435361c6c573ac1c988a7fb006a1adc65c4300adecc005bc100e9c"
-    sha256 monterey:       "71be33dbd0e83c97fc237c06ebca130937881b13de54cc2c928def10f392f7fd"
-    sha256 big_sur:        "1c43d8f5314608d27e0ca2329f581731bb814f428f43026ef76d8c1566fefb78"
-    sha256 x86_64_linux:   "1943b27db853ff573c1695b1e5ede8fea2a9dae73385f3d8de0a8f2e59d612f2"
+    sha256 arm64_sonoma:   "bed0f252ce2fb566d7f1d17f236733271881cd30077dfc997be86b878f43f0b8"
+    sha256 arm64_ventura:  "7f35831528ae7c83b2dad8cc73b29859384f4648f6fe913a62535f192702c0f6"
+    sha256 arm64_monterey: "29d0468f9913e396029378b7ac6c6781d58d6c63e94d2d49665aaa715cb8e8cc"
+    sha256 sonoma:         "ac42ab4ba826f888d02f8696029195807814b69eb67a8498eb9751f028a840c0"
+    sha256 ventura:        "67d9a8da0bdaef6539ba2e4e84ab0793200995e2b03c5bb7aaeead46ecfdcdae"
+    sha256 monterey:       "cda64f783b5d935c950cd878ab55d39567c42570612cc760622d5c50f6cca06c"
+    sha256 x86_64_linux:   "32753bc8a80d10ff96fda10a5a30c25c646546bb2a33e32add382f3bea4f9b9f"
   end
 
   conflicts_with "rem", because: "both install `rem` binaries"

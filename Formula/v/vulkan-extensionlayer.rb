@@ -1,30 +1,31 @@
 class VulkanExtensionlayer < Formula
   desc "Layer providing Vulkan features when native support is unavailable"
   homepage "https://github.com/KhronosGroup/Vulkan-ExtensionLayer"
-  url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-ExtensionLayer/archive/refs/tags/v1.3.263.tar.gz"
-  sha256 "7396834f65401055762e852df61378a1a0a410d1c3214cca4b2201fc251b1392"
+  url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-ExtensionLayer/archive/refs/tags/v1.3.267.tar.gz"
+  sha256 "670b2393107bed8da1844654e60bf52a45a628f47bf7cf741f4097fb983fd8e6"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-ExtensionLayer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3118eac366699b2162e5d7547cc99cf18fc2abacb137ac39938cdd748e705b88"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5c98d9767aa73a397b373364e7abdb03bd80800a58d257611986bd18fb38b7fc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e4b8d67148158aac7e7faf32449ead527387296846c34456f794e7a442a8ea51"
-    sha256 cellar: :any_skip_relocation, ventura:        "3c66c5d3dfd23331d8603a8d53ea7cf6b81bee5468dbb88c214983491d52b25f"
-    sha256 cellar: :any_skip_relocation, monterey:       "0bf6b8fa6bc07240d85e1ab9675972f3dfa56d3937a1c87efb203f8af13c8c02"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6bc018dc7efdf6816c8d0e0687fb519fb314e09d81bcbc3b87a7656d0c4be818"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf94969147cdfac9de29376663c8a35b9521e3cc5816d41251c0f7b7f950072d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4171d1d4d4b8d0e13dc5250d59b902b2662140dc926f049e6b2a49427965ddea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c720cfc5bcd1ade4592804328a2a17b3ff017e1d815e00eecd48f30aa3496087"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9f525d2c781c9c6149a6fb25ce4ee802be8edef9cb05da006f8be080d950b96d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f94150a313058f51138423d743953d02dca30ca1e81d147e0a944a410c91f2f1"
+    sha256 cellar: :any_skip_relocation, ventura:        "890dde383945ca26dffac7eca7cf9a6d51d41f1d903d7927a8722d484fa8a043"
+    sha256 cellar: :any_skip_relocation, monterey:       "b6370d401c2d7281edb37b5ebfb2ed0612e24c1e7285801e2ea4206c5178b8cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "495324f7f5e5b42b579ed8e714327bcdec618b0a6383cb82bd8153603e89a121"
   end
 
   depends_on "cmake" => :build
   depends_on "googletest" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on "vulkan-loader" => :test
   depends_on "vulkan-tools" => :test
   depends_on "glslang"
   depends_on "spirv-headers"
   depends_on "spirv-tools"
   depends_on "vulkan-headers"
+  depends_on "vulkan-utility-libraries"
 
   on_linux do
     depends_on "libxcb" => :build

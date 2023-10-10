@@ -9,14 +9,14 @@ class Pipx < Formula
   head "https://github.com/pypa/pipx.git", branch: "main"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "51673f0f9c015e1223d576e30783b07f6cb74829fde195b5a36fc7b0444d3da3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "622ba3224ff4c3e83c2874f0c65aea8c157acc68e42a45d629e33082b83cdd9c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0bff8d3cbcee0a989030cce191fde69140aac6af84c9e9abeac4ce4dd59bd888"
-    sha256 cellar: :any_skip_relocation, sonoma:         "311d8bb68c4add766744a58137f741e223e628877a820fe226429dca90e9ea70"
-    sha256 cellar: :any_skip_relocation, ventura:        "b6bbfbd3a993d115f96825c446a6915268f32664e9fe6fa98e3f41928c9073ff"
-    sha256 cellar: :any_skip_relocation, monterey:       "cf30fe283884e4f0c372352ace4c1c38473a4ce373b5f84832c0fdcdfa2bdeee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc299aba72faf73cc66b6864ea618c4f64793175753244c18ef44afdb241c2ea"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "29e526e0b20bcdafff2cac87062b82ad24f86215040b8306c7544cd78b5a618c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd082b4191e48175c8526f6a66afabfd8d99441602b9d7e0e8f82680b5405ff9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "085d9ab34f1e1d6f96f9107ae7d291eb6daf9653d49df79c8436bb9632441442"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ab7bc10484f1acebdda35d32b0c682f25bce7b4df4e845b1df6eabeb2104aba6"
+    sha256 cellar: :any_skip_relocation, ventura:        "8c9864bec0d66b2d997561332222c1a26553e37989aa151b6355ba21b63197cd"
+    sha256 cellar: :any_skip_relocation, monterey:       "31949ecee9dd1fb9d965abb7993569dc5632a3f7553b73dc924f78a791c43012"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3cc3ac14c32a9dfb8dc3f31934fc85eea2dc79e6d7edd16fece9b6ee4443ac5"
   end
 
   depends_on "python-argcomplete"
@@ -37,8 +37,7 @@ class Pipx < Formula
     virtualenv_install_with_resources
 
     register_argcomplete = Formula["python-argcomplete"].opt_bin/"register-python-argcomplete"
-    generate_completions_from_executable(register_argcomplete, "pipx", "--shell",
-                                         shells: [:bash, :fish])
+    generate_completions_from_executable(register_argcomplete, "pipx", shell_parameter_format: :arg)
   end
 
   test do

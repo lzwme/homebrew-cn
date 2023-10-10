@@ -34,7 +34,7 @@ class Waypoint < Formula
 
   def caveats
     <<~EOS
-      We will not accept any new packer releases in homebrew/core (with the BUSL license).
+      We will not accept any new Waypoint releases in homebrew/core (with the BUSL license).
       The next release will change to a non-open-source license:
       https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license
       See our documentation for acceptable licences:

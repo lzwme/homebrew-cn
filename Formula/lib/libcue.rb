@@ -4,28 +4,28 @@ class Libcue < Formula
   url "https://ghproxy.com/https://github.com/lipnitsk/libcue/archive/v2.2.1.tar.gz"
   sha256 "f27bc3ebb2e892cd9d32a7bee6d84576a60f955f29f748b9b487b173712f1200"
   license "GPL-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2cede6a029fa424a1e6d777d440c37f411be262cf8bdf342c17806f1a46120ed"
-    sha256 cellar: :any,                 arm64_ventura:  "5a49053c126f385cb08b5e647bfcf7485a5a1a914bdea13d550d5b2cb94e84e3"
-    sha256 cellar: :any,                 arm64_monterey: "f00d5a51c441a9698b375d1c2fca99a09e95dcc4a3931e2695aee332f46bd433"
-    sha256 cellar: :any,                 arm64_big_sur:  "7619618f7bce8398ec7fe8ffd777012876cec3511a4bb595833770e9e631fed2"
-    sha256 cellar: :any,                 sonoma:         "7a5dfde9a36aac3a63ee598d2f9468ee5ad01e7af8757f6d70e0fbe4e92bdd25"
-    sha256 cellar: :any,                 ventura:        "959f85f6095b4a938a0d76b06817ebc59893c1915420e3b30418a1ba5293fdea"
-    sha256 cellar: :any,                 monterey:       "834c3966f24d06ed8ae039608372601c20845ffc718893d81044e104103fafe0"
-    sha256 cellar: :any,                 big_sur:        "cedf45a5d0ce2803b22527805777d7f185e4e9875f004dddca1ccd1000364d5d"
-    sha256 cellar: :any,                 catalina:       "17252ea3af3c3a75478e8526ae7856dadfa641d7eb050553503bfe383573e740"
-    sha256 cellar: :any,                 mojave:         "e3f6c16d235459f97b299627d359cb9fbe7526b8635e08521b1c36460b045162"
-    sha256 cellar: :any,                 high_sierra:    "209e548399503830e0f786c6faef21836aa350d67db644b9ad291703ebe2e9c5"
-    sha256 cellar: :any,                 sierra:         "14a6edb39d2887ad6beeb34dad944501d01f70480a529cb7e50d838833404f4f"
-    sha256 cellar: :any,                 el_capitan:     "27f8ab5419958ea5817e5e44b68f24ea2a0c27d12a664556b12f6789866d0da5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "750eabefb348e1577ac23fd2d4d3ead2c21ef1f2596236ab59054067322d59c8"
+    sha256 cellar: :any,                 arm64_sonoma:   "868ba8446a3493286376015ff0cc7d5c166ec0b0a59d2fe59cb1065cca68e226"
+    sha256 cellar: :any,                 arm64_ventura:  "3f329f590af23cbb8af33de3e051bebbaf703322031973d08eb77e46a8eabaa7"
+    sha256 cellar: :any,                 arm64_monterey: "58264dcfec95c078e190e8666f53f53b1ae01eaf30af3a8465857762654e61f6"
+    sha256 cellar: :any,                 sonoma:         "01ebd6601efdde87ec1b188700ac15118850775da674a6922b8c6c87a00077e6"
+    sha256 cellar: :any,                 ventura:        "79f01b6683dcc285f154d29a8ea2cfdf7544158f0e34f03e09fed9d9b034183d"
+    sha256 cellar: :any,                 monterey:       "eb9cf37d8e694b11833cc4537e6f28f6a2710004e15fa7387f90bd46e6b09ffd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff2970c8c8aacee0ff5025aeb3f55186658258881e334f7d9ee8f1d2d7c4f382"
   end
 
   depends_on "cmake" => :build
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
+
+  # Fix CVE-2023-43641. Patch merged upstream, remove on next release.
+  patch do
+    url "https://github.com/lipnitsk/libcue/commit/fdf72c8bded8d24cfa0608b8e97f2eed210a920e.patch?full_index=1"
+    sha256 "93ada0f25cd890daaee4211b0935b875d92a52bc4b419dcb4bff5aec24a28caa"
+  end
 
   def install
     system "cmake", ".", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args

@@ -3,21 +3,19 @@ class ShallowBackup < Formula
 
   desc "Git-integrated backup tool for macOS and Linux devs"
   homepage "https://github.com/alichtman/shallow-backup"
-  url "https://files.pythonhosted.org/packages/eb/33/4b56af73e95125cd6d92972a3e55c82f3ac9386d3401dd198f886a99bb0e/shallow-backup-6.0.tar.gz"
-  sha256 "8fa5b8052c9f9c4f4ef456cf2f0163ef0fffb5c3a96e506665bae7899b5cc72c"
+  url "https://files.pythonhosted.org/packages/88/a3/95aba76be24bae02c9ada7f08a81475174853c633d6ea423abb97204fa6f/shallow-backup-6.1.tar.gz"
+  sha256 "2ee6ef89a5ab2708b428675c7a0b31f66545ab984819968a0151b8ded3e8017a"
   license "MIT"
-  revision 3
   head "https://github.com/alichtman/shallow-backup.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a8d724b4b026d20c62495c2652e896bf3acfa8e4e81d4cfa3dc4264e055e2e92"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2613e74af6a3d9199e46883b09c95178cd74667d22d8e56f69c993df864a9218"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e76a8f891ea5e97d0ed18e671572fb0777b6a089f6f1d67dfa3ce2d1564f4152"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ac1d24115ea3dd8e129f4bf19f1cc1ec98c2eaff00196c1313a48e8aac7c2f65"
-    sha256 cellar: :any_skip_relocation, ventura:        "b518a273984cac67f1cffe3acbdc4fe0fa337e4749ae4bce6cf94a9455c8057c"
-    sha256 cellar: :any_skip_relocation, monterey:       "f3ffb30d7fe69773ca9235c7494c6fed5cf38acddad7a1af3a6dc40a36b400a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d056dd75c7eefa3faa3a5d2d5ad40b5a47eb7f75e4371bba728f4a7cf21555da"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc92eaee9e88417e128bdeb94921f387798079b9284b13ddb2dc49a42f066f95"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f31a8299efde002d27d40bf32475eda4df5be4c2847a4c8ca5fcd2e8d66c440e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f08a9e9d557ea6f6bfecdaec3ac3ca8532e7ee05fda81313dea95c83dda26354"
+    sha256 cellar: :any_skip_relocation, sonoma:         "57278a5af3544e2c7a218b675ed083dcd12e731c01e0b8dc4f93bbb7c9f309f7"
+    sha256 cellar: :any_skip_relocation, ventura:        "5b26a6b1bc190e65f374870e5ab9ea0024193b98dc173034caf15c2ba425b0b3"
+    sha256 cellar: :any_skip_relocation, monterey:       "7ca51cee851c705e59a951d93cee9938b645677d9a3245819982529272ec6d55"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab3e2c9130d424926aef5be0b1b2e108a6c3fb0376cbc402c98e80d0b96bb521"
   end
 
   depends_on "python@3.12"

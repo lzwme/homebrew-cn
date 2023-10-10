@@ -11,24 +11,20 @@ class X3270 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "7300bea10a772411ba86e44a3e76cf6705762249faf64225cc9cbc8d3909d901"
-    sha256 arm64_ventura:  "66c420133f3273c8808d468402963160b5322706115fb04cf01ab8574e71c8c0"
-    sha256 arm64_monterey: "e0acb175bd3a3969ffb3f865e17d9d41edca7c6221e42a30bca00d5aa68b6400"
-    sha256 arm64_big_sur:  "f2ff2e45eddeecaad0e03b1f2d601539fd02740cbdf3a1c5e6b3eddd6123a811"
-    sha256 sonoma:         "d6d3eeafff6fc161a986bf380667499f96961ab6f3d8e3fc255eee72fe7667d6"
-    sha256 ventura:        "d22c0fd8ecc142570494b50644bfc972ff6a43894dc01d22d237828589ae3478"
-    sha256 monterey:       "94cec9d1948cb40b9d169cbc4267b7b4f27135dfac52a9b4820980f748745c6f"
-    sha256 big_sur:        "4205866cc9cda834f11f0e7aa2018be598e72404b117356cc924b0144ea24b33"
-    sha256 x86_64_linux:   "d743d4ac5943098c71ae80620159ecfce874088b4b323bd98832ccc8c52bf4a6"
+    rebuild 1
+    sha256 arm64_sonoma:   "83d2091625fb43f6ab4406da20bd75a6efca3ebc78f733f29a5c0e83597674d1"
+    sha256 arm64_ventura:  "c69a0b2303cbe9670f4b9145919157676263ed73b2093f5ac49850de9976f424"
+    sha256 arm64_monterey: "d3dd0d6757c05c454fa79baee27731c00b3de4e12f2b673708ab4e131607cba0"
+    sha256 sonoma:         "2c77fe6c78cd2e69772b74bdb191c78699b424c6c079eb71a3f4fe55d234a19f"
+    sha256 ventura:        "0e404fd6314a2af4c806e6deff14cde53c2d99e057142c1449e3f12ba0e45675"
+    sha256 monterey:       "c253dd3723216bf5e05615fd27941f991d663438b14d50acf6814d074373f128"
+    sha256 x86_64_linux:   "f27c0348dd39bb5987937b7b606b963569e9b160b89d228aee477edf725f64f6"
   end
 
+  depends_on "openssl@3"
   depends_on "readline"
 
   uses_from_macos "tcl-tk"
-
-  on_linux do
-    depends_on "openssl@3"
-  end
 
   def install
     ENV.append "CPPFLAGS", "-I#{Formula["tcl-tk"].opt_include}/tcl-tk" unless OS.mac?

@@ -1,8 +1,8 @@
 class Botan < Formula
   desc "Cryptographic algorithms and formats library in C++"
   homepage "https://botan.randombit.net/"
-  url "https://botan.randombit.net/releases/Botan-3.1.1.tar.xz"
-  sha256 "30c84fe919936a98fef5331f246c62aa2c0e4d2085b2d4511207f6a20afa3a6b"
+  url "https://botan.randombit.net/releases/Botan-3.2.0.tar.xz"
+  sha256 "049c847835fcf6ef3a9e206b33de05dd38999c325e247482772a5598d9e5ece3"
   license "BSD-2-Clause"
   head "https://github.com/randombit/botan.git", branch: "master"
 
@@ -12,15 +12,13 @@ class Botan < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "87883f4c609eb528a16c8a7bcb2ef6cef59498aee20321766047c0189275f2f6"
-    sha256 arm64_ventura:  "e155fbf0abfa49d3f24acddb83cde96ee8944f8e5f4870619b9f367db91aa093"
-    sha256 arm64_monterey: "4ad92355e643a718b79f59ea39fcaee2e178f6aacc6a5d45b91c2c99b3f1ad1d"
-    sha256 arm64_big_sur:  "086afb441414ac0c21a9a2cd4bfc63925cb84025149a3f067514a09712ed554b"
-    sha256 sonoma:         "6f400215d7b5fb9d4c57bffc3e0a1fc08bd180d57ba45c3ecc2368510fc97de6"
-    sha256 ventura:        "04b5659a9a85f81083e21c477b2e45f49e49e932130bbdacab0d6ebd8d1104f2"
-    sha256 monterey:       "a7b3dee57d226c222d62983346d9bce72e5c66adbda19f8c11bb92fe45548758"
-    sha256 big_sur:        "83028e70de04793e28f3b50839522ec69c1e1301ec5712e7a52564e3f50cf97c"
-    sha256 x86_64_linux:   "ac1c5782f0db87f770212ef4ec2ee0593746025fd231ddabce960827c15c62f6"
+    sha256 arm64_sonoma:   "5b5aaf3399bd8f4e1243e4bd84b1141a2982467614de2ca27d032776c8671178"
+    sha256 arm64_ventura:  "27cb6e286d41941376432b1ba2cc18e3ff2ee0cd5da1f067cec38d206dbd8c87"
+    sha256 arm64_monterey: "6ec5ac701a92b70cda89a089a441a98006591f03a05b06de6bf098f09214baa5"
+    sha256 sonoma:         "9d5e6464ce94f27758d23d0f67159bcf94a1f863af77a9739c05145812534187"
+    sha256 ventura:        "da25547f83de1be3ba5f4d6a283183c5678734d7f8522c5389f49dd2993e58ac"
+    sha256 monterey:       "3d5ef686c6dd72828ad97543c863acd3d302d0263c9b061c3a3400ac285b1b67"
+    sha256 x86_64_linux:   "467b74671ed4e22502cbea46d64eb709f72df01c5c46aef2bc9a18366331ff3b"
   end
 
   depends_on "pkg-config" => :build

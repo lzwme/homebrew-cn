@@ -2,20 +2,19 @@ class Datasette < Formula
   include Language::Python::Virtualenv
   desc "Open source multi-tool for exploring and publishing data"
   homepage "https://docs.datasette.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/4b/54/ef4230d74d461fab8e0590afd6cb852c8c402ba20a3dd71430cb174c2132/datasette-0.64.4.tar.gz"
-  sha256 "ef9dbade58f4a3d73e0c745b43219cf9d04b28919571f96affd5675ef8e13cfc"
+  url "https://files.pythonhosted.org/packages/44/69/2c4e85d5409ca9d162a51312d284676eb7ba4293aff6c3d427523fef116d/datasette-0.64.5.tar.gz"
+  sha256 "df917896f181ce57e26c6b3b78ff7fdfdc46c322c46673b2276fae1d8e7f19e2"
   license "Apache-2.0"
   head "https://github.com/simonw/datasette.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1dd07474ec57466d92b4fade850518ed72e838aa35bd51e1c79f7bc3350b50c6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "05fc37af6c53d2f523b26de5d79c3858006b8f029ef3aef2d76956293e352ec3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c0dd4830a43536107c093fce1efa503f1f71c51d86362fd69887dcce5bad195"
-    sha256 cellar: :any_skip_relocation, sonoma:         "820fb89a1bddf63f09084c608dc6005463238aa9f8c0120b773d9c28fd28d622"
-    sha256 cellar: :any_skip_relocation, ventura:        "63bb3823368dc83bd50aab54b9cf87c63d57d49235dd5d685d68b0ab0f3c24ca"
-    sha256 cellar: :any_skip_relocation, monterey:       "77d99fb35dc09bfa0a848f936a61b3a06e033c6e0f2559e7170f75bd4cc14985"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfe571317cfaf1f0e031ea35f80072756a64cdf89d59f211d2ba0295cec38f9d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1d036f0f2737151dab03d273868a8f1fff1e6502964b363d2182b731c642f542"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d17003498c2a4cf52a2f04cab7314fbe82a4febce11bef69c258f93f66b5fc5f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "82afad6be11cebc602671f16725bcd0a40a195b513e4f12029bc19750bb0a719"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b79fd6245fa471dc51ee0a3e63b7af76062610e78cad995e6ff2e6c21245f6bc"
+    sha256 cellar: :any_skip_relocation, ventura:        "9b893995a03d9b7fede062e079e203bfb2e3418d068cb48d373c063a22cf4317"
+    sha256 cellar: :any_skip_relocation, monterey:       "65c0dd000ac6ddaca34f295742fc18cb39e13aecabe0af400813441a6f2d3daf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb232ea2ab3ab8b133e4068cafaf16de3325c42730ae3acae4d10a2f55b6155c"
   end
 
   depends_on "python-certifi"
@@ -52,11 +51,6 @@ class Datasette < Formula
   resource "click-default-group" do
     url "https://files.pythonhosted.org/packages/1d/ce/edb087fb53de63dad3b36408ca30368f438738098e668b78c87f93cd41df/click_default_group-1.2.4.tar.gz"
     sha256 "eb3f3c99ec0d456ca6cd2a7f08f7d4e91771bef51b01bdd9580cc6450fe1251e"
-  end
-
-  resource "click-default-group-wheel" do
-    url "https://files.pythonhosted.org/packages/97/15/f6bb054abe77d08da4694a0af0c11c104c2224bd8b0286345f2023aa7bd3/click-default-group-wheel-1.2.3.tar.gz"
-    sha256 "1873fc3496669ef2492c31f4e512d87d93af26148eb383ebdf1b2b9971072519"
   end
 
   resource "h11" do

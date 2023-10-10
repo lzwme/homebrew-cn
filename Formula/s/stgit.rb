@@ -1,20 +1,19 @@
 class Stgit < Formula
   desc "Manage Git commits as a stack of patches"
   homepage "https://stacked-git.github.io"
-  url "https://ghproxy.com/https://github.com/stacked-git/stgit/releases/download/v2.3.3/stgit-2.3.3.tar.gz"
-  sha256 "49c6e93939e4c8256529eb828ce86470435a11aa73f73f8d0b36b584bace4c7b"
+  url "https://ghproxy.com/https://github.com/stacked-git/stgit/releases/download/v2.4.0/stgit-2.4.0.tar.gz"
+  sha256 "5836789617a3794f5626194e9670a24497ff5b3f9c779bd13decef3d4e1ee95d"
   license "GPL-2.0-only"
   head "https://github.com/stacked-git/stgit.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "08f0139088a10c7c0b35e093f4c2302330149777558246a78ee9d3bab8caadca"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9aedf92f8f1068c4f2def6e98d76dd14639273be53b8837d28e4ced0668ea043"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b127cc5e7de61a7daac9e8be4c852b17728602375533eabdab79b0217472c13"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2590e547b615c7ac57f201dd3571d75937954d77603aa4183e62e5cee924eb16"
-    sha256 cellar: :any_skip_relocation, ventura:        "e0c9deffe3a87d6c47818112b58764d048cea9aa2ca6eaabb4f353fb07516f5d"
-    sha256 cellar: :any_skip_relocation, monterey:       "b956c43885b0e675e8a04a8962f725e55a942eb1e999449efc2c034a46c97a4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed3dd8448b516e6f31aa4c9f223f4f0bcd1b56374663639652c1e1e5944d02d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6b15de104d2043444d48683ed7e4563b7d8251de777f77d4f62a383ec9d27913"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca85f3fde7b0f5e0e1fe03b3fbb93da980ecc1a6543c4e3b2e9c17cd6c82ff2f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "120ba3b172841812ef229f7f892aba36072d6553f7e7042f31567360524c441e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ffe6da04d401f6dbf2d7c7419ebd82d51005f361d359598994a56270de24b006"
+    sha256 cellar: :any_skip_relocation, ventura:        "6ee327bcf491e8a61140f424364270a1ba848c7227418e68db866430117463c6"
+    sha256 cellar: :any_skip_relocation, monterey:       "4ffcd985c2338b4c318a4ab12b3a85173d38b2e6a9f0ae712ef206f66dbee851"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ba0a1a8b4fb74a8cc92dd372e82241acf54f113f60986a92297ec3cc03dde69"
   end
 
   depends_on "asciidoc" => :build

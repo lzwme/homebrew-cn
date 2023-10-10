@@ -10,27 +10,25 @@ class Shodan < Formula
   head "https://github.com/achillean/shodan-python.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "55a090bfae061947ccc49e70463a946765a90a288e8fa895ce8f2c93dacd9cce"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7c2e714f36de46c1f4af87963c184be260adb19777290b0b3e5094fcf20691ca"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c80f8e6ee99fbb0715f024870e70dc8f8ee3b676b5d7f4c83dd4426cd5faa368"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6dfb5fb8582d779b9f21cb2421eb9762e8cced66e2bc0b0305d09174a2f96f52"
-    sha256 cellar: :any_skip_relocation, ventura:        "fd3f6a773a2e0a6d66e753999cf98425972f598548022fe72d15c1a7a182737a"
-    sha256 cellar: :any_skip_relocation, monterey:       "13bbc1ef48731ff893818a331f9de780aa42cbd20cc7d4bed02d0f7d4f1ba41c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78ba12e17ae4aec970b77287b448f1e0adff1222ff58f44cb244ebd484e49dab"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7bceb629ccdbce063f49edf5e9edbf77a98283bec996ab722e53eb9fc692a775"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b72af651d2d5a9da846197a30cb9594002b294da76698e2210a11f0d5997185c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3703c32e232aae79a4d717dfc407a66047481e4fe44159478adbcc38b1102966"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ca18abe7e0ac341beb7733cae620b02b6030461dbc6f10457f15c7d3c9a85070"
+    sha256 cellar: :any_skip_relocation, ventura:        "2d7ddf7a2def2ff16a11129fd4b8b9ee30687c9fffe4ff66cd9bcca7cc1019b6"
+    sha256 cellar: :any_skip_relocation, monterey:       "4eea69d3128e192c8e58ed84f49049f4fe030570c0581414341da133573b1f87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "62124a2c168727b63895bb8102381f9655527d6ee6e31804c164046471fd3b7f"
   end
 
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python-click"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
     sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "click-plugins" do
@@ -74,8 +72,8 @@ class Shodan < Formula
   end
 
   resource "xlsxwriter" do
-    url "https://files.pythonhosted.org/packages/e0/ab/bc8d317106c8ea5ff11a2394ae99cb9adf1a9d32c55d3b15eea2b505b875/XlsxWriter-3.1.6.tar.gz"
-    sha256 "2087abdaa4a5e981a3ae50b5c21ff1adae59c8fecb6157808585fc169a6bfcd9"
+    url "https://files.pythonhosted.org/packages/5c/77/956e6ab727d9e9ba29a718e172158814f7ded1670219e4366b8851fedc11/XlsxWriter-3.1.7.tar.gz"
+    sha256 "353042efb0f8551ce72baa087e98228f3394fcb380e8b96313edf1eec8d50823"
   end
 
   def install
