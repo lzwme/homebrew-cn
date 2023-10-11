@@ -1,23 +1,23 @@
 class AdaUrl < Formula
   desc "WHATWG-compliant and fast URL parser written in modern C++"
   homepage "https://github.com/ada-url/ada"
-  url "https://ghproxy.com/https://github.com/ada-url/ada/archive/refs/tags/v2.6.10.tar.gz"
-  sha256 "a43e1ea0bcdd7585edf538afffe1fc3303b936752e18bac545fa11729de088bc"
+  url "https://ghproxy.com/https://github.com/ada-url/ada/archive/refs/tags/v2.7.0.tar.gz"
+  sha256 "08646b8a41cd6367b282aab2c87c82e5ce4876078a0cbe0799af7e51e4358591"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/ada-url/ada.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6a1ccef484c9a868cb10915a022e00bf747b3c7d2724f2ebea40d824b9cca7fe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f4b4bbe17fc420826bc4238986e8dac134c6a7aa4ab7fa8402133da3a50666c0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0afb4029ed6e43d85caa45708f2c478ff909ac11a4a9a7531c06f6dffdd295d1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "24d2d5d9c8d8c329a678496528f00daf506846469cea8a6844fa9d5534eec02c"
-    sha256 cellar: :any_skip_relocation, ventura:        "ebf0dd30a9f2bd2afe301ee251ed2c8e8d3d21fa5afbc7b1b8028010cdce1a2e"
-    sha256 cellar: :any_skip_relocation, monterey:       "45e23edaee4b3f2f26ed5c0f86e67a41e58e59f98ce0aa97d70b1a67bbf74157"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "009aec22bbb3df66354fec6691ccfedd3d95da1bee0157d46ef1a28331e5a86b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a58d55efbc46b59934dd93deaeabb99f2d3488d8d6005e35777e381e3797bbc4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "705a345c358b26d80811836e84b7f7edced6463de31d315910e761bb8763628d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a65361b8218fa8c0d36ddafadbb7e4f0c786dc3ef6d30f6b68c81c29902a17ae"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d149c3ad4e28577ffa1597b2b6f4c9531a9c74466966de4df3c06938a4bda162"
+    sha256 cellar: :any_skip_relocation, ventura:        "86cb6b83ac258dfe0d7406e943ac9aeafa757291ad351e193891fe58de4dc7d7"
+    sha256 cellar: :any_skip_relocation, monterey:       "e20b008860aa65d19992db820d6c50225354b118a49faa181a13685e1e2fec4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15753c87c8c03870ce78804bbbf5978b4abbc35c0176e262e24ad4e02bce9c69"
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on macos: :catalina
 
   def install

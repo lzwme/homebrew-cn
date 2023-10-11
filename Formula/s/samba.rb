@@ -4,8 +4,8 @@ class Samba < Formula
   # option. The shared folder appears in the guest as "\\10.0.2.4\qemu".
   desc "SMB/CIFS file, print, and login server for UNIX"
   homepage "https://www.samba.org/"
-  url "https://download.samba.org/pub/samba/stable/samba-4.19.0.tar.gz"
-  sha256 "28f98ceab75a6a59432912fa110fc8c716abcab1ed6d8bdd4393d178acff3d20"
+  url "https://download.samba.org/pub/samba/stable/samba-4.19.1.tar.gz"
+  sha256 "ce3b7f0d18bf91aa5fd646e8bb385a3b35375b703c6e5123b02b85a1abc81879"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -14,15 +14,13 @@ class Samba < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "10befbe69d8589053f4347e5c1f0dc597c6485c05478f9b3c400a999226a9e28"
-    sha256 arm64_ventura:  "8d1adfe088f3b2a7487024d28dc4a5a030883445c43ca532445083995d942696"
-    sha256 arm64_monterey: "6a976454131e8459836d7147477ab72b240f5e6ad14e5b6531ebbd14aad724e5"
-    sha256 arm64_big_sur:  "7902f2cc8d05cbc9fb77202079d6fc7257e8e5eee5b097adb575d1f30907cc79"
-    sha256 sonoma:         "7c54c93a6df9b6f975fd12df52b6550ffa606df2c20af9fb685dbb592f4e5869"
-    sha256 ventura:        "41292e75b2df81bdfd40f18ddd736e82bbcb56041c6a71a6cbba0c3349696636"
-    sha256 monterey:       "069ff5f31af47dcfa9ce9eb1806847d7f56250ab509ed1c41da3f0b0cfea67f4"
-    sha256 big_sur:        "7332e3fc6a647d6a11b2ec50031f269005fde3d44d49c149681b5514efedfeb0"
-    sha256 x86_64_linux:   "a8cc76583f6eaee2e01bd8dd23fab76328daeb59095dc1b5a356261aee783a38"
+    sha256 arm64_sonoma:   "adbcda0c9a0aa0d0154218d2296dc69a04de4fa32345be7e6c499682ed5f7c31"
+    sha256 arm64_ventura:  "4af09e11ce48d0f5b5a7c8179fdc21b4a7de06d33ac5da84fbdff4b9b979c4f5"
+    sha256 arm64_monterey: "4b5fb6fa137c048e182a2f5691c1016c61e40197bd23f80ae5d7fa9d3a6fc2fb"
+    sha256 sonoma:         "a8192d053b1d69d9145de6a5a3d81f9bcc5ab4a8bbdb07404e7f5ec051b85926"
+    sha256 ventura:        "58f84dbde465ce554fa159329dc32845cf555283eba4bc65be4b34703c5154f0"
+    sha256 monterey:       "ad81fdbe997d7d8c30345372170c77deca56a8f60301cbf455084488693b741e"
+    sha256 x86_64_linux:   "c081619fb514ab740267e61c1ef36030515c8f7feac28637c43e31a4bd763973"
   end
 
   depends_on "cmocka" => :build

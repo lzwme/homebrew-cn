@@ -3,28 +3,28 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https://github.com/cycodehq-public/cycode-cli"
-  url "https://files.pythonhosted.org/packages/1c/74/1f657f5141628e067254a134b1fd06a30cc0ef1d5a621a83dc410f6f761c/cycode-1.3.0.tar.gz"
-  sha256 "7ead78f663dea0ffeed45475d6d6693a133ac27505b5da2d3e8f09de65144480"
+  url "https://files.pythonhosted.org/packages/fe/d5/99df1e57cf5af1a3316aeb420429d9738d1bee3ec990907a287f34a61577/cycode-1.4.0.tar.gz"
+  sha256 "4083b4d54ec367b79e8052e610a539335a354b6e362a3f4be6fa6340b9bede9a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bd4f8f5eb008211459989c28c7249d1e8807d256d8aa22c0a07a6de464060b36"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7e5cf8fd2ff696f87287b1500e626c62d80dae42ad18e0c0a81ccb061df1917c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e440ef984f45596f61b89fcaf813a21cbdf626482ab8edf2efe4a2dc165f85ff"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d951c75fe716d7832baa7e8b11b9730465bd75ef523d44662996842770229b8d"
-    sha256 cellar: :any_skip_relocation, ventura:        "91d861545d132589c2e92b82a6ac113fe7a8a2e7ef890e07d7a7614a89eba394"
-    sha256 cellar: :any_skip_relocation, monterey:       "50a6e3b78ad71bb82e767bad08064fdc1a425ade714abfcdf22c2abb9bf935ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ba9798417de30452c4b430f6f92d17d90fcc46b30843dde3444d8404b292801"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "932ae2f79bff929e345814e3837a8284bfaf29e1732897da46529632f6510f98"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bd80495477f57fc989dba58c3742976c45caff1f13da7ad34d6f9a970929e714"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c087c7c89eb00f2e6eb7bcf03fb7944a267dc50ad74994565013b1556b75566"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0fb1890a3719e93070bc4c08536598f64271fb64df70916fb9b0553060b600f0"
+    sha256 cellar: :any_skip_relocation, ventura:        "c6d6bd63af52b9148296cde18118fe0b35bb06bb7e3d009d808ae1f6c75c7f1b"
+    sha256 cellar: :any_skip_relocation, monterey:       "ec66d4e16bf009416326238ceec9fb61c2bfd388727d51dbc7c8411aac4be85a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ed0c28c6c9ceccafd28924db6e2eb9f649013e1d0a72cbf834e8c20f57ef92d"
   end
 
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
   resource "arrow" do
-    url "https://files.pythonhosted.org/packages/ec/74/1cf2d9912921cebdba3fa954949206c8aa159c9cc803b88140fb227f8a0e/arrow-0.17.0.tar.gz"
-    sha256 "ff08d10cda1d36c68657d6ad20d74fbea493d980f8b2d45344e00d6ed2bf6ed4"
+    url "https://files.pythonhosted.org/packages/7f/c0/c601ea7811f422700ef809f167683899cdfddec5aa3f83597edf97349962/arrow-1.2.3.tar.gz"
+    sha256 "3934b30ca1b9f292376d9db15b19446088d12ec58629bc3f0da28fd55fb633a1"
   end
 
   resource "binaryornot" do
@@ -68,8 +68,13 @@ class Cycode < Formula
   end
 
   resource "marshmallow" do
-    url "https://files.pythonhosted.org/packages/3b/34/cd19aa2e9b03ea3a4c8d3c5803f7550cf87e294f602cd9ac5679d5466c52/marshmallow-3.8.0.tar.gz"
-    sha256 "47911dd7c641a27160f0df5fd0fe94667160ffe97f70a42c3cc18388d86098cc"
+    url "https://files.pythonhosted.org/packages/e4/e0/3e49c0f91f3e8954806c1076f4eae2c95a9d3ed2546f267c683b877d327b/marshmallow-3.20.1.tar.gz"
+    sha256 "5d2371bbe42000f2b3fb5eaa065224df7d8f8597bc19a1bbfa5bfe7fba8da889"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
+    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "pathspec" do
@@ -93,8 +98,8 @@ class Cycode < Formula
   end
 
   resource "texttable" do
-    url "https://files.pythonhosted.org/packages/e4/84/4686ee611bb020038375c5f11fe7b6b3bb94ee78614a1faba45effe51591/texttable-1.6.7.tar.gz"
-    sha256 "290348fb67f7746931bcdfd55ac7584ecd4e5b0846ab164333f0794b121760f2"
+    url "https://files.pythonhosted.org/packages/1c/dc/0aff23d6036a4d3bf4f1d8c8204c5c79c4437e25e0ae94ffe4bbb55ee3c2/texttable-1.7.0.tar.gz"
+    sha256 "2d2068fb55115807d3ac77a4ca68fa48803e84ebb0ee2340f858107a36522638"
   end
 
   resource "urllib3" do

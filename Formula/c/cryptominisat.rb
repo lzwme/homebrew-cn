@@ -13,24 +13,24 @@ class Cryptominisat < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "87ce32d47a15b3ea4234706f04f803dd13d811185497c6811c6dad70b134f116"
-    sha256 cellar: :any,                 arm64_ventura:  "a5a95f3d7cea906853202955c4c4c9fcb84893f0be6fb15bf5e7859468245c7b"
-    sha256 cellar: :any,                 arm64_monterey: "4fb9e91aa63923ffc2006e3a0e85c86bc71e78b6595404c300d3e1b4fdf68b31"
-    sha256 cellar: :any,                 arm64_big_sur:  "4f859db8b42ca7439e1f3cad28bc55f67c4b12b4e309d54f66f1fd70e088a337"
-    sha256 cellar: :any,                 sonoma:         "597218d0d5fe683eb7138e75ca7c8e69f347f44f7893ee4f9e9ef18fce1dc54b"
-    sha256 cellar: :any,                 ventura:        "e3107d15e9c75b3e53361ce56343d8facb1b82714e18c638a133dc156150fc70"
-    sha256 cellar: :any,                 monterey:       "17e2fc35d04c4e9091f0034224f9a53a3c13e8499739f862afb5091dddca3302"
-    sha256 cellar: :any,                 big_sur:        "43629f3cee7a5035aeacfed05c0991dd3e5844ef8d6198c7c4527457138e9c0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "021e712dd189684887b40b2e2f1f9cca3127ec02f1310ca1d5131f8ffd5f5b3e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "3c08c9e3da22bc191469b229c408406670846606f54eca848034992904342890"
+    sha256 cellar: :any,                 arm64_ventura:  "ef39a3376f881b6486dd7f8f57e7fc995d9deebc5ad1f9321d3e55d35063b757"
+    sha256 cellar: :any,                 arm64_monterey: "0dd419d1f819abe881a30797be1aeba527f75c7d3f1067a1281f6ee9e92b7889"
+    sha256 cellar: :any,                 sonoma:         "dafe07545e573e0d5eaf1da717ba12f78473836bbbc69417ea4e8032cddff35c"
+    sha256 cellar: :any,                 ventura:        "70e442d0486a61acbbee5a864a543c3c476942b6b48de3a7e41cbaff63e00121"
+    sha256 cellar: :any,                 monterey:       "ae4a08ab69b709e8b14252fa49f7e00347303d60127b0fca8e78ba4bad3489d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d53bb9d950dddfaf72828bdd98f5fbb3b3f7415c943480ac6d6acdf2e256a1c"
   end
 
   depends_on "cmake" => :build
+  depends_on "python-setuptools" => :build
   depends_on "python-toml" => :build
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "boost"
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

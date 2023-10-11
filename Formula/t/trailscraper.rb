@@ -10,17 +10,19 @@ class Trailscraper < Formula
   head "https://github.com/flosell/trailscraper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6889bdebbb4c97b02d54c64bccc9580e9f4337c8f4d459e8dc3b265d21958628"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d43e634fce2caab83ab0d568354bdeb23882db1092959331d0f0afb6068a2934"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "333bba84a5322f49fe4325fe0357525b7b61f62a031b9f7e8b7e81a77fb21e00"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cb5ec4e516608bada1b57bf1140dd77944c7c7742f80aee28f3198aa15f8f925"
-    sha256 cellar: :any_skip_relocation, ventura:        "b13d7d98f7e30e789e98f6e0fd271a2003357e8ed83e5783256f4655169fc199"
-    sha256 cellar: :any_skip_relocation, monterey:       "f6d018ab2df77e047c92756a74473ca1e33409478808f7e2c7a8061c2d8a957b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "579dccb856d62b2854705cf125c4de5f40b6309ca085dfc073f84087f07e82e6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9d257437c306f6df1d77e12307cb561942789dbdfed653e751c9df0d7530022b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8fb40bee7a7d7d4ea912a27e544645b4ac17cf43ff2759ba47ff88cc912d042d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "326b7627898abea4ea777962bb8689651cf3836a0181565514242b93fc4b244a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "36e5937f8858d291dde7e13136a20699a1e7e7c9e101cc7d69d731d35eb1bb90"
+    sha256 cellar: :any_skip_relocation, ventura:        "ca549b50ed83e560c48e5d51e5e60d589b535290de9dacdfcca0afa65951812d"
+    sha256 cellar: :any_skip_relocation, monterey:       "ecab884a855c262b2636a3c1722b99022db495e4f4710b816a97fc8d9d18a5cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb058299f04c89b18614c8e1b8bb5cb496414960f75c7b3aaa639705360a0bd2"
   end
 
   depends_on "python-pytz"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "boto3" do

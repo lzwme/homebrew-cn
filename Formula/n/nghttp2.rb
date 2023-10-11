@@ -1,21 +1,19 @@
 class Nghttp2 < Formula
   desc "HTTP/2 C Library"
   homepage "https://nghttp2.org/"
-  url "https://ghproxy.com/https://github.com/nghttp2/nghttp2/releases/download/v1.56.0/nghttp2-1.56.0.tar.gz"
-  mirror "http://fresh-center.net/linux/www/nghttp2-1.56.0.tar.gz"
-  sha256 "eb00ded354db1159dcccabc11b0aaeac893b7c9b154f8187e4598c4b8f3446b5"
+  url "https://ghproxy.com/https://github.com/nghttp2/nghttp2/releases/download/v1.57.0/nghttp2-1.57.0.tar.gz"
+  mirror "http://fresh-center.net/linux/www/nghttp2-1.57.0.tar.gz"
+  sha256 "1e3258453784d3b7e6cc48d0be087b168f8360b5d588c66bfeda05d07ad39ffd"
   license "MIT"
 
   bottle do
-    sha256 arm64_sonoma:   "33a10961e9dec2e723405cc0cd49eddd3987f182935fda6a502559502171ee93"
-    sha256 arm64_ventura:  "fed09dcc9c9764c4d624209763b33bfa78136cd8847ba948ed44c501b06ab1ec"
-    sha256 arm64_monterey: "354731bddd11def8919a9aabbba8e6af3b3d643c6548a811fb1f148d599d3948"
-    sha256 arm64_big_sur:  "6d2b03accd138d1aefce8f909306eff780516450cd5afec3143329f228fbea2e"
-    sha256 sonoma:         "9a1841373bcc4a5e61e7eabd6b6a08a4f95d5fbee7e7aa52ba2f78313a90e6bf"
-    sha256 ventura:        "d54b8c8749e68bb3a1a1fe451f10305f77139a403f9e65034441e4f663f47e9f"
-    sha256 monterey:       "fc3a8b98e0496a36b5dfba9614b54213ad6ee38225821a6469f703b6bfc96d35"
-    sha256 big_sur:        "3c269a2cbc02823f97bd955e715fb1b3309b4b5fb377932a367ebc3fead00c3e"
-    sha256 x86_64_linux:   "01cbbf3a66b8e215f8968bf497dbdf31bf7d8063c739075166ee935770f8688e"
+    sha256 arm64_sonoma:   "7722c2224fd438b5b0833916657da3b3dfab9a501e5f766fab3cb0a634ec88bd"
+    sha256 arm64_ventura:  "e725ed12af2a06244546f2c807a23413fdd59c157c45bcbcce15c8aef08d3173"
+    sha256 arm64_monterey: "b58f4b4d65b84175c1896e20e1ecc01cab28cdd6373ee9900b9e8a1ef58d7170"
+    sha256 sonoma:         "af49d830fac0a732bc27070c8f6731f8d3bcd9e72534d9c2c605000deec5e9a7"
+    sha256 ventura:        "14e3c8391844843c34fff20bdb8774d1663ffa9d3d07e224310bfc50fac24c2e"
+    sha256 monterey:       "ddd2556c7aee932e5769db3c10ca1b1b11389999f34b3f8be6239473d7e8c534"
+    sha256 x86_64_linux:   "b61d291bb84958a5426c744a61ca7e20b5a043b377f9b984d2767b6529159af0"
   end
 
   head do

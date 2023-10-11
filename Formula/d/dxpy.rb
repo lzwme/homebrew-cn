@@ -3,25 +3,25 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/a1/5a/8b049df51203ad2970d7c35bc4df7750149b0297fec719836cdda1f70302/dxpy-0.359.0.tar.gz"
-  sha256 "f26c520759358aaf32870ac690d20c770936a365aee8756a68d2ae33ed7f8496"
+  url "https://files.pythonhosted.org/packages/f3/e6/1e8f00bc128adbdf78e3a61a1dd1650ac1a939dcdeb993e49e3d8376d515/dxpy-0.359.1.tar.gz"
+  sha256 "3ea10e7e7b59634dc8514037465bdb8cedbf9988973262a4091478f3d680571e"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3942fbbc35bbc38759e471ca7d95d571a51afe48bfeab735b5e38033c25a4180"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae83f74b00c1d5bc06fe9dde6327e079fc85eeaf6471e6c1baa81d35cf489684"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3d5885c5a5ac8d115bc83635f43c434b761325de27315875f7c3e3b90f5ce93"
-    sha256 cellar: :any_skip_relocation, sonoma:         "59059ad1fef609061d551b28ce4ec68546da985a192e4c06b205e64b663523a5"
-    sha256 cellar: :any_skip_relocation, ventura:        "662c70e74f3bf1cfa04f27ab60003970547e3ebf71c70729921dc40b853e528b"
-    sha256 cellar: :any_skip_relocation, monterey:       "c3b2756c8e3f6d866f39ecd2e71b5838a57e76188635554dc0686d82c558c58f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8add6816d22fd53a35778690d76f0557b91f287319804849141419590755b2e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "848f50ea02af3cec594949a5162fa8798bf54b489ec4866400d46deaf8c0c036"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "73dc74364f0978fad82eb8f44e35a2a0953e6ca0fc486490bb39f78f4f4c880c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bd4f9641c0fa51c7830a0429a9f80b1cbd5a49b17134e6057555aa55bcf4dfea"
+    sha256 cellar: :any_skip_relocation, sonoma:         "063bba9b7909db75274314db479e3380f4b31f5246e398eec1c12ba30ee4a392"
+    sha256 cellar: :any_skip_relocation, ventura:        "ac3866678fb563513cb0f6e2bbb35c0e7b15046486c95e6affaf9809b30bf6af"
+    sha256 cellar: :any_skip_relocation, monterey:       "9f350dd8d0c362a7540ae9ebeeacc4beae8069a5b7c6137a68e2753f9d0d4faa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa2babc2252b6d27b200e5dee8e65770de2eb1a1d147c64abbeac705a01df1ba"
   end
 
   depends_on "cffi"
   depends_on "python-certifi"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "six"
 
   uses_from_macos "libffi"

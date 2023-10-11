@@ -1,9 +1,9 @@
 class Mpg123 < Formula
   desc "MP3 player for Linux and UNIX"
   homepage "https://www.mpg123.de/"
-  url "https://www.mpg123.de/download/mpg123-1.32.1.tar.bz2"
-  mirror "https://downloads.sourceforge.net/project/mpg123/mpg123/1.32.1/mpg123-1.32.1.tar.bz2"
-  sha256 "fceb97d3999cd3d04c7f96b97e621d01a5de0a46a3d9e9ceaa87768274ea205f"
+  url "https://www.mpg123.de/download/mpg123-1.32.3.tar.bz2"
+  mirror "https://downloads.sourceforge.net/project/mpg123/mpg123/1.32.3/mpg123-1.32.3.tar.bz2"
+  sha256 "2d9913a57d4ee8f497a182c6e82582602409782a4fb481e989feebf4435867b4"
   license "LGPL-2.1-only"
 
   livecheck do
@@ -12,22 +12,17 @@ class Mpg123 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "58c3e550c5b0bbcbf67a808fd7e8eacfa438520eba0cb716d0867908cc31b433"
-    sha256 arm64_ventura:  "7b0db2565a633fc6eb2b6d8c082145f787eb92f6a16a086a8fb07b12dcffa35b"
-    sha256 arm64_monterey: "f9c7b552d04aade6e221bd0b9a3514f9e6bf7a2dbbc3e4a8acfe2f1bb5947d5a"
-    sha256 arm64_big_sur:  "4216d2721eb01f741304c853d31abc34c7f348bdc39de5a65164e545a9fd86c2"
-    sha256 sonoma:         "78daac74cda381424f521cf10f6a9c303547826b4364b0461df2f13ea66ec43f"
-    sha256 ventura:        "d3f4630322b95f6b5d47084232ef81cf07eb077cf885921eaf9fc0b3c1de7f6e"
-    sha256 monterey:       "1ae9b78c91f8ff821b47fbc7141eff2489ee15b1e1622c05c6fa596a7144d772"
-    sha256 big_sur:        "428ef3bebf139f1230ea3e5bef5f8f5c182c332b24526a2c5d30602dc3828d84"
-    sha256 x86_64_linux:   "3ed0c5d1cbd668c32c396f87af814896744d7c6839fa441ee488ecf1eeb8ee94"
+    sha256 arm64_sonoma:   "6324a30c5b49b4c62882ad10adcce474a3649c466a9557def3ca9dcda10439e6"
+    sha256 arm64_ventura:  "f0ec99c74eea1c53a1f567b5c7ddef33b9c606b5af49d9913e49e52e468f859b"
+    sha256 arm64_monterey: "fd9b2d9479afcac36e5bf8fc994c84f3dcf5706586a44e9db95bce9a6a45d043"
+    sha256 sonoma:         "d5b83bc1af027fde3daedac23dcdb0e16e200938297017b80a07ec7c73ce6674"
+    sha256 ventura:        "9058810279d84c616d1ee14a38538712cf25c2ce57d56ebf7dc542c8ae988000"
+    sha256 monterey:       "84a62db870ec01c79069eee3d1c77b7fcec72e84d78e79a32ab3c79201ec55d0"
+    sha256 x86_64_linux:   "d32e43d1bf8b202c853b0c5d532e475f53e6979c2bf61ad1d214068e88d96f79"
   end
 
   def install
-    args = %W[
-      --disable-debug
-      --disable-dependency-tracking
-      --prefix=#{prefix}
+    args = %w[
       --with-module-suffix=.so
       --enable-static
     ]
@@ -40,7 +35,7 @@ class Mpg123 < Formula
       "--with-cpu=x86-64"
     end
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 

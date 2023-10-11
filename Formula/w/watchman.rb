@@ -1,10 +1,21 @@
 class Watchman < Formula
   desc "Watch files and take action when they change"
   homepage "https://github.com/facebook/watchman"
-  url "https://ghproxy.com/https://github.com/facebook/watchman/archive/refs/tags/v2023.10.09.00.tar.gz"
-  sha256 "f7e92f4007c151480f91b57c6b687b376a91a8c4dd3a7184588166b45445861c"
   license "MIT"
   head "https://github.com/facebook/watchman.git", branch: "main"
+
+  stable do
+    url "https://ghproxy.com/https://github.com/facebook/watchman/archive/refs/tags/v2023.10.09.00.tar.gz"
+    sha256 "f7e92f4007c151480f91b57c6b687b376a91a8c4dd3a7184588166b45445861c"
+
+    # Add support for fmt 10
+    # See https://github.com/facebook/watchman/pull/1141
+    # Remove with `stable` block on next release.
+    patch do
+      url "https://github.com/facebook/watchman/commit/e9be5564fbff3b9efd21caed524cd72e33584773.patch?full_index=1"
+      sha256 "dc3ef949b0a4be7dd67267eb057fb855926b3708e0ce1df310f431fd157721ca"
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "b260ef8c6405e245bc81c379484802d4a73a4acf956370d605080ba03ebf056c"
@@ -39,27 +50,7 @@ class Watchman < Formula
 
   fails_with gcc: "5"
 
-  # Add support for fmt 10
-  # See https://github.com/facebook/watchman/pull/1141
-  patch do
-    url "https://github.com/facebook/watchman/commit/e9be5564fbff3b9efd21caed524cd72e33584773.patch?full_index=1"
-    sha256 "dc3ef949b0a4be7dd67267eb057fb855926b3708e0ce1df310f431fd157721ca"
-  end
-
   def install
-    python3 = "python3.11"
-    xy = Language::Python.major_minor_version python3
-    python_path = if OS.mac?
-      Formula["python@#{xy}"].opt_frameworks/"Python.framework/Versions/#{xy}"
-    else
-      Formula["python@#{xy}"].opt_include/"python#{xy}"
-    end
-
-    # Make sure to pick up the intended Python version.
-    inreplace "CMakeLists.txt",
-              /set\(Python3_ROOT_DIR .*\)/,
-              "set(Python3_ROOT_DIR #{python_path})"
-
     # Fix "Process terminated due to timeout" by allowing a longer timeout.
     inreplace "CMakeLists.txt",
               /gtest_discover_tests\((.*)\)/,
@@ -72,6 +63,7 @@ class Watchman < Formula
     #       formulae, so let's link them statically instead. This is done by default.
     system "cmake", "-S", ".", "-B", "build",
                     "-DENABLE_EDEN_SUPPORT=ON",
+                    "-DPython3_EXECUTABLE=#{which("python3.11")}",
                     "-DWATCHMAN_VERSION_OVERRIDE=#{version}",
                     "-DWATCHMAN_BUILDINFO_OVERRIDE=#{tap.user}",
                     "-DWATCHMAN_STATE_DIR=#{var}/run/watchman",

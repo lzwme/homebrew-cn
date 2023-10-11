@@ -6,19 +6,16 @@ class Grip < Formula
   url "https://files.pythonhosted.org/packages/b9/7b/013fad0e29839decbdf8d3b96dbbfa155cbf0b470c7c03ba736d35280d41/grip-4.6.1.tar.gz"
   sha256 "a5e6ac48cd253892f0fbd0aaef3f74fe8169d8ed3d94a2e9be6bf1540e008e9f"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2bed721c1ef6468c90fea4bb8dafbefecd3f91dfd3638aff7d469f9517a30e25"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c799923362a18c5cc9835251d14ade71c69ad898333c891b2b252f040605311c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f21e46c38501eb76b7c4d04a540f6f699c02332eafc62f310c54e11bbc414fd0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b2f0698cedd93da90d745538e17b86444e9e72adb1b25a1d1379bdbf27421eb4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1208c3fdc706a3bf5b404eb222cc39c0bd5764cd84351ab7a23670934ee2c14d"
-    sha256 cellar: :any_skip_relocation, ventura:        "f8c869eae9a51fb2f4d994d22ca686f8984eba5cb421203af652a0efeaf6f5dd"
-    sha256 cellar: :any_skip_relocation, monterey:       "834235cdc36f10575528c8c3d108b6b3e2304cd38df89221d390b2727e6e6eba"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a6525546b3457842019ea88fc23d6a561b0240b0f8b1aeec88d464ac922b54b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "900f1e266b1bd0748e891c4b4e7fdabcec5138a6b898b99a410cd1507602b45b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9a5dbaa5887352fc3256fcc7cb2d983dd9254b96e87c42d2431e2f5d7811d0d4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6019de7889b87883584d57f184e11c79eeccd53e6bcdc3ecae91fcc75525e965"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ccc732e4c75a1f78ae7562718dc99b5e958335432f6aace2d917350633c9a9f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d3ce50ea5b84f4bfbe5ffe5ca6c93478cc2f7658734cab2731e3e8b8c0ae314b"
+    sha256 cellar: :any_skip_relocation, ventura:        "84ae00e27f8680b787574d67f3ff32341532943be310797628279bb3027e5aa6"
+    sha256 cellar: :any_skip_relocation, monterey:       "b62d1acc37e5fa2c1544a809aaa4d09dda3cd35a23af3e58fe42f9611f8f4850"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f99f3a803de50a98e760377d412b98a266a9f86305fbc4e794cba8d5b9f5ffb7"
   end
 
   depends_on "pygments"
@@ -33,13 +30,13 @@ class Grip < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
-    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "docopt" do
@@ -78,8 +75,8 @@ class Grip < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
-    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
+    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
+    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
   end
 
   resource "werkzeug" do

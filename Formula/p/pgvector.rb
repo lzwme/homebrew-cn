@@ -1,20 +1,18 @@
 class Pgvector < Formula
   desc "Open-source vector similarity search for Postgres"
   homepage "https://github.com/pgvector/pgvector"
-  url "https://ghproxy.com/https://github.com/pgvector/pgvector/archive/v0.5.0.tar.gz"
-  sha256 "d8aa3504b215467ca528525a6de12c3f85f9891b091ce0e5864dd8a9b757f77b"
+  url "https://ghproxy.com/https://github.com/pgvector/pgvector/archive/v0.5.1.tar.gz"
+  sha256 "cc7a8e034a96e30a819911ac79d32f6bc47bdd1aa2de4d7d4904e26b83209dc8"
   license "PostgreSQL"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3526136d0624382f46442423dcaa4e64f80303c5ea5fab757e7d8d7173732cba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a251dca05b8268948fc840031e5a27ff80652aec10c1805b7580adbafbe26e9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d802b90636b7a957d2be85eac32c2e04372ee08e16651031682c1d400a00a48c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "60d13134b47e61ad515e567a592a8d97dae3a7b30dfd538279152cdb3c0e6905"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fa8ad8788c194e50c69c8e57d88e2166d8669a5382f8725dc80dfad791f575c7"
-    sha256 cellar: :any_skip_relocation, ventura:        "b4cc58fea3541edf4ed854a51ffdf984c5391dd6469a8eebbeb29e0cd2fa7a69"
-    sha256 cellar: :any_skip_relocation, monterey:       "cc79b35c5f5b823e3a11058d9e964b7bcd0155639946a651ab976ae82fab82c0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b06be53cfeba3b30ed0ede1690b7aea89ceff93dd0c5cd5773977b3e3f10a2ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7939053494ded4c6743882560015381ed616430242c6b42687b29e47949fa6c0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bd35ed8d3861f7a63b2e3ecb3e313a1d04c692217653047c26445e8267d068e4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3aa310ce6b3d8983b272e65a07da1b88ff70029bf4c7c345543daadbf313395c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dbc637916d4d5d1f48ecacc31f0eb84932602aa65966fd03e2184fc414abf02d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "47dcec2eba86593f17bb9c70f1df0f7e32b2164af985e89ff132f3c4336b06f9"
+    sha256 cellar: :any_skip_relocation, ventura:        "fc3096f2ad79fff305effbc82c6432b3fa86eb1b2296079822520bb3b2444062"
+    sha256 cellar: :any_skip_relocation, monterey:       "7245dd8df790678ca7708eb0a243e67f9bb7a3ac251a64eb4563a2087bdb9bd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "125ac363467a38139f439964cdfddbae17632b1d4615ebcf55ff697ad38abfd8"
   end
 
   depends_on "postgresql@14"

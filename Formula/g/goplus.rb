@@ -1,21 +1,19 @@
 class Goplus < Formula
   desc "Programming language for engineering, STEM education, and data science"
   homepage "https://goplus.org"
-  url "https://ghproxy.com/https://github.com/goplus/gop/archive/v1.1.7.tar.gz"
-  sha256 "312b8e72cf8ae933845459bd75683fd70d43c1fd57e757940e86d0a387821ecc"
+  url "https://ghproxy.com/https://github.com/goplus/gop/archive/v1.1.8.tar.gz"
+  sha256 "7d5ebcb8090a76011374d049998f684462c0effd3abf32a32f857e69e8c93ce5"
   license "Apache-2.0"
   head "https://github.com/goplus/gop.git", branch: "main"
 
   bottle do
-    sha256 arm64_sonoma:   "121b57fd62fc4e2e94f4ca2128f3b5403045306084a11fdee5109b5c9a8d0bfb"
-    sha256 arm64_ventura:  "d0544b5466345294e0bada6202c89744393f33f4ef93b2afb49b5aa3ac51dfe8"
-    sha256 arm64_monterey: "5680ce882b36ec919783c071420f50a465f1d95ecdd4dd0c40aa3cff49c95b31"
-    sha256 arm64_big_sur:  "ff51a28464e6a5b934df97f1b42df14f0a4fa0f1a12a184d80fb3d5b2e2c6089"
-    sha256 sonoma:         "948011706979f93ebb0b44e02228df6ecf93021fcc1711ccb708183a79b580cd"
-    sha256 ventura:        "08eb8bb59b6f295c3f93480a6dd1643e7052428eeeec40509b5e0625344f3a11"
-    sha256 monterey:       "150a07d2c1800acc2d68cd9e92debb40bd9305475a8adbd408323259c283d7f2"
-    sha256 big_sur:        "e884d340b88b65c96d0dc7093d3f7dd6420f4825cd1d2c872d953914199a18ca"
-    sha256 x86_64_linux:   "e89bec312a3d4b5cdebde7a263ddd44ca28829a272bced14b7ac3ec909f419a6"
+    sha256 arm64_sonoma:   "1d90729913311e1144a26832b862f868af314e15933aa0cf4949cab282870024"
+    sha256 arm64_ventura:  "c14fb55724df3de0dd7437c1d7a9bb4c113a95eff1f1ac541787e274d82ff23d"
+    sha256 arm64_monterey: "aaf819b6c2ac176cee05854093db10e20cd2f9b81ff2c02ac834c51df35bca4f"
+    sha256 sonoma:         "68999a978746653ad63430a4bf8fada533506cb1cd0f33781624d97c2eeb8b78"
+    sha256 ventura:        "8bbb3fe70488970061b79147d54aede732ed6de2a3f5c5c15ebf4865b65a32f6"
+    sha256 monterey:       "be6a74a5f743eabd40536b6b4327eb61825f03abb56d6169ec450c896a8228cb"
+    sha256 x86_64_linux:   "17e389bcbf6a408c597223d37cc830890886850791b7cdb981d698eae82e68e6"
   end
 
   depends_on "go"

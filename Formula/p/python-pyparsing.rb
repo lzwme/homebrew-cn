@@ -1,26 +1,25 @@
 class PythonPyparsing < Formula
   desc "Python library for creating PEG parsers"
-  homepage "https://click.palletsprojects.com/"
+  homepage "https://github.com/pyparsing/pyparsing"
   url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
   sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "18769ebaab1db3501664d664b4ecec95a3123008904c1dd095fcdd400ceedf65"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25b7d932df97bdaabd8e6e78ae6f3216ad436f3b697d301bcc9d78d88e150ffd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "79ced112ba2a082b40b8cd8223fb17288c8538c4e17e84b893e5af5367de00de"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "69724ec58a9ae398b52f44ce831da38e87d388a08675d94b04ff269c0ffd304a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cd0e15cc7c7bbdc9bcc2cd77d0d4cce5973e54b58d2dd464005268418e744597"
-    sha256 cellar: :any_skip_relocation, ventura:        "7c968e222494cfe4fa73a3d1e3e377b6bf8c0dc9622b1f4ab90e99ceac162620"
-    sha256 cellar: :any_skip_relocation, monterey:       "73124f9168de665a4fc1ab992d82a070fb910fb1e5f8fa42e28f20ca31e1a52f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "abcfca8076d7aad90989ba59253aacc5ccb34f69f22c3f0608b31d39bdfcbf89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a118e55b514216b8ee83ed99da9c2463ec63faffdc3c66dae9907694b0f468cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dd4702dfb8ca84f6088904991687e1690099a738947f997f05e411654f50140e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7c4a8ef0422d4a6fc0f4af53c1c3d36b7c3b7df6f6742a6f662eabe78051066"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f1ddfbe02098513fc95abbb1a46106a1dee11475fac36ff58c9145fcf54c4b37"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f356e11a1c867f454d95c8a51b3dc491a2e8e5372738f29110bc68e622890f9c"
+    sha256 cellar: :any_skip_relocation, ventura:        "fd2fb9835901fd61c84da44f06f316e22a5adec5448e71fbbef1022d7f5d5a59"
+    sha256 cellar: :any_skip_relocation, monterey:       "24ffc68ca0508e01980dd8a09cbaa6725959ab7fac4da7465ae990c4b48c4582"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1abf8870bb9b2765d5817421148000cdc7be9c9a51b54f6e0784f0d479394c5"
   end
 
   depends_on "python-flit-core" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
-  depends_on "python@3.9" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
 
   def pythons
     deps.map(&:to_formula).sort_by(&:version).filter { |f| f.name.start_with?("python@") }

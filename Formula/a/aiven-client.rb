@@ -10,17 +10,18 @@ class AivenClient < Formula
   head "https://github.com/aiven/aiven-client.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "46cdbbd41f6f6af1fd800435cb6511c7d32bb574b6d262d3a2f52960a9792c7d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7091ec3d90be6d5adf419aeda57e0b4c0736e23909d55d17b372731600809ea6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "254c45f94e28baaa9b7fa8149f8d7a9c3eb49505b5d93152df8fa5a53c1f804f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b7e5401598e2f8efb7f0f21963ae6957afc909a8cd89a83e6dd66b9886ead346"
-    sha256 cellar: :any_skip_relocation, ventura:        "77e8151f5511e6ba444aadb85baa3e88a516e5379a82af6172f858771e3e731b"
-    sha256 cellar: :any_skip_relocation, monterey:       "009187ab4dccc4d231c11b511c5344f498a18913d2dedae3a4567de872aeeb6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0e438338c91e0b0156633015f62d5eaa08bde64f27e119c609051e49bd6cb20"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "77f750bd7e72caf4138cc7bd945df66d4f1d7e3f86910d7317cb1d7b4e506104"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7afd66f8ef686dbe93417dd72359c3dde864d09cf61a5b413927cefb041687c6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "63c68a2ef02f1eac8658832d2898401387d7936fb6ef9c80fcf219aa330b9226"
+    sha256 cellar: :any_skip_relocation, sonoma:         "83516b3b950de2cf1a0afe5ae6faa8fb10b113d6ba052d9519ffb57a99c30c6e"
+    sha256 cellar: :any_skip_relocation, ventura:        "1426b787042658007b3bdda306b017f07c4831ce81fd1bfddb4a746503f76618"
+    sha256 cellar: :any_skip_relocation, monterey:       "76a6bdc25c72fe4bb2a34fa7606ad1055a85c1b2a9094454d80316a1571f2c6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9d8f8ef5a5c46c72ac5aa78b72667c4734db0d5f425b6d26f4e67e7c28a4a07"
   end
 
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"

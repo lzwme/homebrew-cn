@@ -14,11 +14,13 @@ class BtrfsProgs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5339cdc0c8336f6813c2495e46c0c86fbfdb7bfaf6296944315554be11ce7e63"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "33104605b04d518a2468885a0ad3339e1b3082a6f1f0b127ca58c1c65145807a"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12" => [:build, :test]
   depends_on "sphinx-doc" => :build
   depends_on "e2fsprogs"
   depends_on :linux
@@ -29,7 +31,7 @@ class BtrfsProgs < Formula
   depends_on "zstd"
 
   def python3
-    which("python3.11")
+    which("python3.12")
   end
 
   def install
@@ -40,9 +42,7 @@ class BtrfsProgs < Formula
     bash_completion.install "btrfs-completion" => "btrfs"
 
     # We don't use the make target `install_python` due to Homebrew's prefix scheme patch
-    cd "libbtrfsutil/python" do
-      system python3, "-m", "pip", "install", *std_pip_args, "."
-    end
+    system python3, "-m", "pip", "install", *std_pip_args, "./libbtrfsutil/python"
   end
 
   test do

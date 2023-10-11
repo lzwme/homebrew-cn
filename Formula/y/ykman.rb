@@ -3,21 +3,19 @@ class Ykman < Formula
 
   desc "Tool for managing your YubiKey configuration"
   homepage "https://developers.yubico.com/yubikey-manager/"
-  url "https://files.pythonhosted.org/packages/f4/69/6f67728862a97903f060df2e687aa836ab48e453cd47da316ff4411d5cf4/yubikey_manager-5.2.0.tar.gz"
-  sha256 "45e0f09e3cee2375b6f930dd5d89c1d3a7ca5d5cccb599b16a12f8f7d989fd36"
+  url "https://files.pythonhosted.org/packages/e4/25/3a42efa20f10f7bcec116ee678c36fb9a58b8cc12699be9603f1378d6f17/yubikey_manager-5.2.1.tar.gz"
+  sha256 "35c5aa83ac474fd2434c33267dc0e33d312b3969b108f885e533463af3fbe4e1"
   license "BSD-2-Clause"
   head "https://github.com/Yubico/yubikey-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "01ff8fb81759d4bf9ed87555c984c3b2140c14b7356f506dd4c9b34e5fa77659"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5f1f6d24841709bcb25424f67cb53f68607c9a00b9a8428f7db074190b23fe50"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "688f902225d0dce45af59a13a27fa226020bdd06430c2e1abac4489f6a195f54"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "55f320e74ba93f8359cf3830d648119914dd2fabee84e881f98215d22f1bd339"
-    sha256 cellar: :any_skip_relocation, sonoma:         "df562ffb58ca5bf7c9b2a43a8b6e6970b573ea5fe903dace2b2f8a596be33b2c"
-    sha256 cellar: :any_skip_relocation, ventura:        "b0d43e335b614660cbbf1f295130d8fecdda1b226054d516090eb8ded578938b"
-    sha256 cellar: :any_skip_relocation, monterey:       "7981e8e3e23954cc7d72733b10c0a50534e0f24a70c272c0c2c4d6b31108b335"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3fdeb3fa69775a71f223249f34fc06dccc763d27b754df52e68d22ea065bdb27"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e12332ffcd9ae6ff0f93508e782dc4f0b2f3d531848006e25206f54287634582"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "35cd1418b76d76a8ba0e8c2dba1429748a20c75b09e2a410d54d7e6998c41f20"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "44bbdebaacfce85b6dcd49e26f79be93abf95d01d5fdb972d002e424ad669cca"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f083e8ba283f53f8c2a40f41ed7f38fdc40f6ff08241385e13b1fbda895e3b04"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ac2478389dbbd8dbc8a12920dfb4efd99a05e45c2b60a88736bfd9322134020d"
+    sha256 cellar: :any_skip_relocation, ventura:        "c6090f2cacd842cd95c831855f72401c58638319d65bc7d3c2c5a159a1ac008a"
+    sha256 cellar: :any_skip_relocation, monterey:       "58809755a556f0e10b97c3e082d6c1d6b138f15ce323cab49fde7079ffee3e23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fae51a2122894b5e859b969dd799cd90815a8156e8ae2e49797168acdc65eadf"
   end
 
   depends_on "swig" => :build
@@ -40,29 +38,9 @@ class Ykman < Formula
     sha256 "6110d913106f76199201b32d262b2857562cc46ba1d0b9c51fbce30dc936c573"
   end
 
-  resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/33/44/ae06b446b8d8263d712a211e959212083a5eda2bf36d57ca7415e03f6f36/importlib_metadata-6.8.0.tar.gz"
-    sha256 "dbace7892d8c0c4ac1ad096662232f831d4e64f4c4545bd53016a3e9d4654743"
-  end
-
-  resource "jaraco-classes" do
-    url "https://files.pythonhosted.org/packages/8b/de/d0a466824ce8b53c474bb29344e6d6113023eb2c3793d1c58c0908588bfa/jaraco.classes-3.3.0.tar.gz"
-    sha256 "c063dd08e89217cee02c8d5e5ec560f2c8ce6cdc2fcdc2e68f7b2e5547ed3621"
-  end
-
-  resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/2d/73/3557e45746fcaded71125c0a1c0f87616e8258c78391f0c365bf97bbfc99/more-itertools-10.1.0.tar.gz"
-    sha256 "626c369fa0eb37bac0291bce8259b332fd59ac792fa5497b59837309cd5b114a"
-  end
-
   resource "pyscard" do
     url "https://files.pythonhosted.org/packages/cc/33/b7d115ccf1b594af18db7ca61a7b07192356be35c65dfcd1d5ef9b28dc0a/pyscard-2.0.7.tar.gz"
     sha256 "278054525fa75fbe8b10460d87edcd03a70ad94d688b11345e4739987f85c1bf"
-  end
-
-  resource "zipp" do
-    url "https://files.pythonhosted.org/packages/e2/45/f3b987ad5bf9e08095c1ebe6352238be36f25dd106fde424a160061dce6d/zipp-3.16.2.tar.gz"
-    sha256 "ebc15946aa78bd63458992fc81ec3b6f7b1e92d51c35e6de1c3804e73b799147"
   end
 
   def install

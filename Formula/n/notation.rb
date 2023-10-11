@@ -7,15 +7,14 @@ class Notation < Formula
   head "https://github.com/notaryproject/notation.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e80a23898cebd06bf6621ebd89c6b4304477e2dab2950d542039009a31cb76f3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dace95af3497540a4f288c26dad180ffcac605e39559bf7724543edefa7585be"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bcf87f3ec5d3065299216fc05f675cd0c41706264209b83cf2d7f6dbc9bbc0e4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b873594a2ef7d95385666669470fa850f25344354ab0b373b3d6455845f216ec"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cfdb7626c75010eb8db75700b7be1740d46a233bef95b80c0466c62f3798bc09"
-    sha256 cellar: :any_skip_relocation, ventura:        "257bab825349099484695a235b9a380dd32d181bd270657c7e156a478ec0ab81"
-    sha256 cellar: :any_skip_relocation, monterey:       "376ede052a69f5b98552106845090f262c263a7a9d2661bf166971fab32520ba"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4178e3f434a7ae62b7bd6f5af5849a05e2f49680332e1678dc5fe2943cfbe4d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e76d825c398991d20ba9e8243bf5cb6f1fbf4f9f1cefaccf70dfe183b5bf3a4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b967a2f4c05b38392b9a589371ed1d48315b877de2aa22c7f09876161d1aed76"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "95356462886bde10123d40640a23a135bd059ab77d92add6a0cc7442ee32379f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d93eaf9dffeba4f93a98ec1b7e42d0d17fe779215afe301dbe5cec7dd301381f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c7b03137db89f3c8457e7eabf24fb3db1cd9f377867f9e168547de5eb621bd05"
+    sha256 cellar: :any_skip_relocation, ventura:        "6d115251f1f18f2b4746224ced357fbd74efecad21b57cf67e490d2b745a6d9f"
+    sha256 cellar: :any_skip_relocation, monterey:       "456df15807ea7ec10a5a6bafb089cb39f32a1fda1f14107d0447e5d4aab64bf4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e251f61207de5067228fc4bfe045711953f983419feae855394bbf24eb48d371"
   end
 
   depends_on "go" => :build
@@ -25,7 +24,7 @@ class Notation < Formula
     ldflags = %W[
       -s -w
       -X #{project}/internal/version.Version=v#{version}
-      -X #{project}/internal/version.GitCommit=#{tap.user}
+      -X #{project}/internal/version.GitCommit=
       -X #{project}/internal/version.BuildMetadata=Homebrew
     ]
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/notation"

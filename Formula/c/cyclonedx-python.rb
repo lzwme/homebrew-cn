@@ -9,20 +9,20 @@ class CyclonedxPython < Formula
   head "https://github.com/CycloneDX/cyclonedx-python.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8e4f779399dd482fb0355b70b8a668fe5b55ab48c645778f1dbaac8728f1547d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e25ad965b04ccf89ac022c2b44cd8effeceed1bf9cb11ae3fe415c5bb049bc63"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b58411690311377f4806a751dd3ec3497e18dabdf3046d779ec48c38f7a1ade3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1a968214dd12da93ee4f348629185621cf66e94b2e9a60f861faf34490cee054"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a0649005e2ea3ca34915913137ca153393a330b44e075f7dc93b10c8ce79aade"
-    sha256 cellar: :any_skip_relocation, ventura:        "dd517526170f005c96578da35079de5037de26fa75f1d2036d836f426b991f91"
-    sha256 cellar: :any_skip_relocation, monterey:       "016d7a360369693bbd6b523d4573eded5774f02348ad6594fb297e723bad6cf6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "25fea92301ae722f2bdcb970c29e407811ae871790496dff182c55ea09ec4248"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c705d570f9a8fcb6c8de2c05eaa5bc9ac234d50629f248317d76c21c3b2f86e1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "565ed90543463f1575379f0eb0ff6d8b60eaccdbfc07bd482aab8bb5c5130592"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d4e257344cdb0c8e9889aa7e71d98c55aeb335ffc15cf0e4a762bf7301492c47"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dfef3d9ebf5a8713049bdeebe75e68fe3868b4be4ca6b36491a020612b7f4fcc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3a3dc2a4840de37498ca59e41edf6e73a3e685c4af417436c03865309858970d"
+    sha256 cellar: :any_skip_relocation, ventura:        "2fc7d6eb13df6ac986cbdffc20d47825189158b7e4ade5af2fde0af1ec449c04"
+    sha256 cellar: :any_skip_relocation, monterey:       "c93432437bf7b9756cd6a1531672e802bd3780ffcbfefc865c3a3f2724e24904"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "77f309c509a45e7c4902fe6fa183c4d3a3bc30cd8a4ce97d0218f2947f2781ac"
   end
 
   depends_on "python-packaging"
+  depends_on "python-setuptools"
   depends_on "python-toml"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "cyclonedx-python-lib" do
     url "https://files.pythonhosted.org/packages/dd/0d/2d77978ff3ebe445c00ffc209eb205d126ef7a8ece69e7f3d014e561bada/cyclonedx_python_lib-3.1.5.tar.gz"

@@ -4,16 +4,16 @@ class Neovim < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://ghproxy.com/https://github.com/neovim/neovim/archive/v0.9.2.tar.gz"
-    sha256 "06b8518bad4237a28a67a4fbc16ec32581f35f216b27f4c98347acee7f5fb369"
+    url "https://ghproxy.com/https://github.com/neovim/neovim/archive/v0.9.4.tar.gz"
+    sha256 "148356027ee8d586adebb6513a94d76accc79da9597109ace5c445b09d383093"
 
     # Remove when `mpack` resource is removed.
     depends_on "luarocks" => :build
 
     # Remove in 0.10.
     resource "mpack" do
-      url "https://ghproxy.com/https://github.com/libmpack/libmpack-lua/releases/download/1.0.10/libmpack-lua-1.0.10.tar.gz"
-      sha256 "18e202473c9a255f1d2261b019874522a4f1c6b6f989f80da93d7335933e8119"
+      url "https://ghproxy.com/https://github.com/libmpack/libmpack-lua/releases/download/1.0.11/libmpack-lua-1.0.11.tar.gz"
+      sha256 "a2d9ec184867ab92ad86e251908619fa13e345b8f2c9bc99df4ac63c8039d796"
     end
 
     # Keep resources updated according to:
@@ -53,16 +53,13 @@ class Neovim < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "1233101d31e635e36a2e52206d9720853f5d06c43d11e9a2471b206d0f7534d5"
-    sha256 arm64_ventura:  "1331fb8fbe169fa8df3209f995ac07b1c3d3116b68a56b7d84d5ad2232d19621"
-    sha256 arm64_monterey: "b593f04943f12915e7d3e33a4fb313fa3d9734767a26ed7f7d4ddb9e1bb57346"
-    sha256 arm64_big_sur:  "db136225812aa77d1989562bb21131d7be2764ad099624f3bdfa0700320ab594"
-    sha256 sonoma:         "5dc8434f02f249f349871f1e066de2715f653b16538f6adc6e3dd99a9773848e"
-    sha256 ventura:        "c33d7e0c78d8d3f232b60b34d8203038d66c42cc796bf64d54bc834522805f6c"
-    sha256 monterey:       "000aa80bcbd9d47e0d52d98717a087304ec643b19d15fc5b4b51bf0680b1b988"
-    sha256 big_sur:        "77e2dc10ca228748aa60dbebcac9ea739809f4eabcd4a22f861d5701acd191c6"
-    sha256 x86_64_linux:   "50d91513b35af090a520f5a319bbe5eef6d5ff2d8dbf1e5d7d913e3b9dda3721"
+    sha256 arm64_sonoma:   "28ef7032c35b01b4d0c787cfa479a4e5cfa721920c7e16c9cfbe16ced2899f40"
+    sha256 arm64_ventura:  "d86a5c7cfc96b756f1169d62f3193bb32837878ab230a52f66b752d817483465"
+    sha256 arm64_monterey: "107e1eeaae2826286b8e91421b9f658da562389b1a289c321c88266b710412da"
+    sha256 sonoma:         "d8349c7fc1e0605507bb7ffe8b809d459bffbc144da0d5555248f3d80358adf1"
+    sha256 ventura:        "37eb3344698eba447de3497f6232fa7075488f67d8c0fec75bc2b910db05a9d0"
+    sha256 monterey:       "f8b0ab4ccc82676f516e137b53b4a0de405ac2f609329106f1a286e2a1b37e50"
+    sha256 x86_64_linux:   "1b4a294d242a749ca6d6eb0710fcbeb4cff8873608bd9296814edcd58983f89f"
   end
 
   # TODO: Replace with single-line `head` when `lpeg`
@@ -108,7 +105,7 @@ class Neovim < Formula
           ENV.prepend "LUA_PATH", deps_build/"share/lua/5.1/?.lua", ";"
           ENV.prepend "LUA_CPATH", deps_build/"lib/lua/5.1/?.so", ";"
 
-          rock = "mpack-1.0.10-0.rockspec"
+          rock = "mpack-1.0.11-0.rockspec"
           output = Utils.safe_popen_read("luarocks", "unpack", lua_path, rock, "--tree=#{deps_build}")
           unpack_dir = output.split("\n")[-2]
 

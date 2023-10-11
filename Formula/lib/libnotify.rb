@@ -5,14 +5,6 @@ class Libnotify < Formula
   sha256 "ee8f3ef946156ad3406fdf45feedbdcd932dbd211ab4f16f75eba4f36fb2f6c0"
   license "LGPL-2.1-or-later"
 
-  # libnotify uses GNOME's "even-numbered minor is stable" version scheme but
-  # we've been using a development version 0.7.x for many years, so we have to
-  # match development versions until we're on a stable release.
-  livecheck do
-    url :stable
-    regex(/libnotify-(\d+(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "2fff04fdd870fef44affe2aacd76d6bb9cb571ce4fe94f38da720f57f5b7c065"
     sha256 cellar: :any, arm64_ventura:  "1d8682206a13d9aad42501c9e4f2f4c9629342020daacf33a5e0e29e80e58b62"

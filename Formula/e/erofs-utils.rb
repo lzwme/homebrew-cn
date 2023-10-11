@@ -7,15 +7,14 @@ class ErofsUtils < Formula
   head "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "718e6deb51438c8c794f1a65475d2d4346619086131baeb34faa0347d7905e80"
-    sha256 cellar: :any,                 arm64_ventura:  "69ce19442fa23ec4a0b782681e5fea5f321373a4a87d1c5a8b371cfabce89f0b"
-    sha256 cellar: :any,                 arm64_monterey: "b100222d442267ca2e81d5d09512277a7df5b9bd4f7985853f911e8db4026921"
-    sha256 cellar: :any,                 arm64_big_sur:  "40d063fb584e5265cf6fcaded49114064a4a063de3fa036b1be36e6be2195e9b"
-    sha256 cellar: :any,                 sonoma:         "f00bcb166f7ead85915e5bd3568149c7ee04559bc301e8e23294d0b560e46ae2"
-    sha256 cellar: :any,                 ventura:        "58057b4ea764c9c376d3cc12f1571f8ff10d9f66b873aa8d4559d818b6a147e1"
-    sha256 cellar: :any,                 monterey:       "ed0728db74796c3b7e7895e194f596743c24c5a6f91419c7eefd858c79459766"
-    sha256 cellar: :any,                 big_sur:        "70335c6c61a657148ef55844f804a90982468c11b82c0d056222fbb42eaed35b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98419dadbc3fd08a2d1c2b5f82fbeb32be2c33a0e285685d208e303feb7e678b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "705616314ec502b4b84430dd81aa18fed63d7ef0c40faa8444f219669f1dc895"
+    sha256 cellar: :any,                 arm64_ventura:  "9e8884f35e0510c5c6a3ecb974ca242b9c480587a0428ed205b3f40c00ee1795"
+    sha256 cellar: :any,                 arm64_monterey: "9477dc6bf3ded0275c9949196adb9badb49b641314cc7420d7e7777034c7fdb0"
+    sha256 cellar: :any,                 sonoma:         "b1d915256b7c3b072db4f9a0d610b412acbb8abff5ce9869b34c4bb33e17cbdb"
+    sha256 cellar: :any,                 ventura:        "e04908af1aa813b76aeb56ebd7deb33ed5f4a1cce09f6da55eab600458f4502c"
+    sha256 cellar: :any,                 monterey:       "a9aa931db81006e5e1c2548b037d1222f0d41aad16cbd12e7564918a60182a0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "076aa10a0680a395df2bd215f7a4ba917ebd6a82b51ef281df4215cc3eaf4dd7"
   end
 
   depends_on "autoconf" => :build
@@ -24,6 +23,7 @@ class ErofsUtils < Formula
   depends_on "pkg-config" => :build
   depends_on "lz4"
   depends_on "util-linux" # for libuuid
+  depends_on "xz"
 
   on_linux do
     depends_on "libfuse@2"
@@ -34,7 +34,7 @@ class ErofsUtils < Formula
     args = std_configure_args + %w[
       --disable-silent-rules
       --enable-lz4
-      --disable-lzma
+      --enable-lzma
       --without-selinux
     ]
 
@@ -58,6 +58,11 @@ class ErofsUtils < Formula
     #   (Also tests that `lz4` support is properly linked.)
     system "#{bin}/mkfs.erofs", "--quiet", "-zlz4", "test.lz4.erofs", "in"
     assert_predicate testpath/"test.lz4.erofs", :exist?
+
+    # Test mkfs.erofs can make a valid erofsimg.
+    #   (Also tests that `lzma` support is properly linked.)
+    system "#{bin}/mkfs.erofs", "--quiet", "-zlzma", "test.lzma.erofs", "in"
+    assert_predicate testpath/"test.lzma.erofs", :exist?
 
     # Unfortunately, fsck.erofs doesn't support extraction for now, and
     # erofsfuse doesn't officially work on MacOS

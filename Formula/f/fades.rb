@@ -7,22 +7,21 @@ class Fades < Formula
   head "https://github.com/PyAr/fades.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d1f4fdcd0fe35710a5260ff6484ca3c1999fae4e5bed4b3484bcdae68d0177fd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c0b7a66d6d4d9b19bc3453d4cf84259779648837634149ca0ed482cb051e1787"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "faaf390a5ced6e0f8591d82839d7e1dbfa1a3d81dda5df42dad37dc9ba59e860"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8bebccd6c533872ab4aa5a3961ced0b0e5e9223621b6f2c7f185994aff468125"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7d93e814d5b1edb8357f73802f55c91f7426fa56c0494dcde71aee11db2cc7fc"
-    sha256 cellar: :any_skip_relocation, ventura:        "7e3a7c935370d3fe21d37788d09be37b6aafd043692706c3282b40b7b499427a"
-    sha256 cellar: :any_skip_relocation, monterey:       "334fb96ed33d63b0b439a46f5b4ea00f8c73cd071fc9223ff5f8a4a6288c81f7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "83399213117615c742b8caf868e8e4841b3d9711113ee11d29c465139191a355"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dee2d857138f7d8038bc46934a7e1f4bd517891f44b293014c8f0963e10b1f36"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0d20c265fd4cb8fdff88360013130723a83475006679c99d54b53aa1aa75d81f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9fafd322dc2f3efee8a9cf01e6a35cc8bccc2c046daafb0fd1203c60918c0a76"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f186b81297c27392483d9b130d1b25d0915cd2a67be22c1d7e0764a11c191e36"
+    sha256 cellar: :any_skip_relocation, sonoma:         "47cab175dfb2758c732b496793b34de802bb7fe17119f8ea7358278cf39b47ed"
+    sha256 cellar: :any_skip_relocation, ventura:        "11020613c15a143f540f3e3eec277887aed1f17d16af9d413cc088dccdc0a599"
+    sha256 cellar: :any_skip_relocation, monterey:       "eec108d1c5d1f66543a7e80c90d9cc8b5679332f75885d94e70da3e8a94e8f9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a94986ec051694e5472114067a7fd4cb4b764aebd0a3b84a709b25443d2498f5"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
 
   def python3
-    which("python3.11")
+    which("python3.12")
   end
 
   def install

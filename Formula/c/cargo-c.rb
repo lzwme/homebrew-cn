@@ -3,10 +3,9 @@ class CargoC < Formula
   homepage "https://github.com/lu-zero/cargo-c"
   # TODO: check if we can use unversioned `libgit2` at version bump.
   # See comments below for details.
-  url "https://ghproxy.com/https://github.com/lu-zero/cargo-c/archive/refs/tags/v0.9.24.tar.gz"
-  sha256 "32f2f5c802c01c51cf93471fcf876d0cc68edbc31d22005b9f07e4549d5b98b1"
+  url "https://ghproxy.com/https://github.com/lu-zero/cargo-c/archive/refs/tags/v0.9.26.tar.gz"
+  sha256 "6101c4f1d6b17f6b42982dd908f194493e966a91d5a3cf9c210c65dbf66683b3"
   license "MIT"
-  revision 1
 
   livecheck do
     url :stable
@@ -14,14 +13,13 @@ class CargoC < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "86d415e4a05c2a5f90814fbd0ac0777e5a1b8f238152f467ec402d2da920d195"
-    sha256 cellar: :any,                 arm64_ventura:  "589237815e98e8153e0f07756b3facda654709f41fdd965659b288e21f36debf"
-    sha256 cellar: :any,                 arm64_monterey: "49ffc9d696d22126a8693fd0c4ff17bbed02d5e7e6bbe053eec7b688e747da1e"
-    sha256 cellar: :any,                 sonoma:         "b0f5460081190e1437ed25c7da27e561ac9d8f178af36c2b92bf361f976d0f43"
-    sha256 cellar: :any,                 ventura:        "78e679ffb75f32018c0d8b336f0e2339eba35c9548a21ee644bc70f771e82d48"
-    sha256 cellar: :any,                 monterey:       "b53c7647b9e3ba696ffca03e707a4386a58a9187ea9c9e4a1e26228c635164e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2197e9e20ac20ae234ece76446069613bc39ee9a2c41ef8c3adb58129a307d1"
+    sha256 cellar: :any,                 arm64_sonoma:   "2451c5384b5a757f6498e41fc9e3ba47c42d3c82f4a1ff3cd5245fa865dbd714"
+    sha256 cellar: :any,                 arm64_ventura:  "009077796236e98b6c36f3646defd3f8f33a7c991a87e46434bdd742851bd300"
+    sha256 cellar: :any,                 arm64_monterey: "b413d80a44b85fb1762bdbfdad17b9601ad78f6085c3222d2aa438351c220b7b"
+    sha256 cellar: :any,                 sonoma:         "bafb5fa8c7c3456d93d83ffca784ee314b49741895d9e7df78bc837b8afd9002"
+    sha256 cellar: :any,                 ventura:        "e6e2948fdbd0403997559fafece6397620bd0d369ea1295674e8617da5831dae"
+    sha256 cellar: :any,                 monterey:       "42032c5bb65260b93bd26954f8dae4d186f1363c359d8d713ddab2356927f3f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2638f2f5150d78cb06765ffbd4b198bc369901e320106b9d16b8676bd037f371"
   end
 
   depends_on "rust" => :build
