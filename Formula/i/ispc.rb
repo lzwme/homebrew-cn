@@ -7,6 +7,14 @@ class Ispc < Formula
   license "BSD-3-Clause"
   revision 1
 
+  # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
+  # but are labeled as "pre-release" on GitHub, so it's necessary to use the
+  # `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "af5ef48ee6f33c9ac86c183eca004fbf4f254187c715f5d2c3c0f42b8f5243c0"
     sha256 cellar: :any,                 arm64_ventura:  "7e43f261e5dfc5b6062bcdf8dacf85c8f13d8019bfd5b91bff91e09724d95359"

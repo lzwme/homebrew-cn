@@ -6,17 +6,16 @@ class Sgr < Formula
   url "https://files.pythonhosted.org/packages/dd/61/7d6cf822edb39d2426f6f185c7fc4de0ad4b80e0da3e5f50d94952795c11/splitgraph-0.3.12.tar.gz"
   sha256 "76a4476002b5ac5a2b9fba36b6fcffd85b878bcc25f5aae411387e04a5532459"
   license "Apache-2.0"
-  revision 5
+  revision 6
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sonoma:   "3d2001d881882573dd0c769e95764a149c0e7fb0bca1a8735aaa029bd506e757"
-    sha256 cellar: :any,                 arm64_ventura:  "16eba831d26a52601f4222ae98f27abddd675afd82a9d95511127c74489ba302"
-    sha256 cellar: :any,                 arm64_monterey: "3c39a5d24b824fa08da6bc55119c26e28f5649f1c1393fcaff9ec53182a7256a"
-    sha256 cellar: :any,                 sonoma:         "bfd8c901d39f9a19a9d5b96f7185741339359ec1ec7209e1aefb9923033e7195"
-    sha256 cellar: :any,                 ventura:        "c41a36ad6ccf8041d49d816311f155d6904640ca4a546d364464f30c20aad339"
-    sha256 cellar: :any,                 monterey:       "1721cd404a5d75fdc5bef98d8a053dc9472240aef40cb13ad8fda005eab964b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8903b67a7329231546b3bc43e5f3a3c2e2d602dd63e43fbc6a7486a576407b0e"
+    sha256 cellar: :any,                 arm64_sonoma:   "d649034f5e7c6f4f52f7210a5f45bbca07b07ad9fd89453c16d6a2c2bdf3dd81"
+    sha256 cellar: :any,                 arm64_ventura:  "bada60d73f8da58a292569cc473d3cf1c5e54b483616c53881c9688b167dcda0"
+    sha256 cellar: :any,                 arm64_monterey: "8a52b6c8346da5ca7852ad2e237ea41f5c2edb90703cc2b93517185d0a82bab8"
+    sha256 cellar: :any,                 sonoma:         "c40a80ce5e1fca00de7d413c832226b70b58585dbd3b1ac8891d7ef1a3d4310e"
+    sha256 cellar: :any,                 ventura:        "fcc901559b0587e0252ffefd9f86ce25de0ba940b0866b45be73bbc4c1e364aa"
+    sha256 cellar: :any,                 monterey:       "9a84cc131429610d27ac3592bb949a878ba2d36485fdda5d305329a2a17747f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b1010e22c05cf0341d79c093ef85dce0c959acf50e7fbae14fe75e60d79fcf5"
   end
 
   depends_on "rust" => :build # for pydantic
@@ -48,19 +47,14 @@ class Sgr < Formula
     sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
   end
 
-  resource "cffi" do
-    url "https://files.pythonhosted.org/packages/2e/92/87bb61538d7e60da8a7ec247dc048f7671afe17016cd0008b3b710012804/cffi-1.14.6.tar.gz"
-    sha256 "c9a875ce9d7fe32887784274dd533c57909b7b1dcadcc128a2ac21331a9765dd"
-  end
-
   resource "chardet" do
     url "https://files.pythonhosted.org/packages/ee/2d/9cdc2b527e127b4c9db64b86647d567985940ac3698eeabc7ffaccb4ea61/chardet-4.0.0.tar.gz"
     sha256 "0d6f53a15db4120f2b08c94f11e7d93d2c911ee118b6b30a04ec3ee8310179fa"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "click" do
@@ -89,13 +83,13 @@ class Sgr < Formula
   end
 
   resource "joblib" do
-    url "https://files.pythonhosted.org/packages/71/f6/fbe4661d202d11c9399d6bec6b2ad381f11e9643ae25236c3904cf46a331/joblib-1.3.1.tar.gz"
-    sha256 "1f937906df65329ba98013dc9692fe22a4c5e4a648112de500508b18a21b41e3"
+    url "https://files.pythonhosted.org/packages/15/0f/d3b33b9f106dddef461f6df1872b7881321b247f3d255b87f61a7636f7fe/joblib-1.3.2.tar.gz"
+    sha256 "92f865e621e17784e7955080b6d042489e3b8e294949cc44c6eac304f59772b1"
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/e5/a2/3e03efdd25f93e1296d0454a7680456fda2925f2ff624bf43855d785b3bd/jsonschema-4.18.4.tar.gz"
-    sha256 "fb3642735399fa958c0d2aad7057901554596c63349f4f6b283c493cf692a25d"
+    url "https://files.pythonhosted.org/packages/e4/43/087b24516db11722c8687e0caf0f66c7785c0b1c51b0ab951dfde924e3f5/jsonschema-4.19.1.tar.gz"
+    sha256 "ec84cc37cfa703ef7cd4928db24f9cb31428a5d0fa77747b8b51a847458e0bbf"
   end
 
   resource "jsonschema-specifications" do
@@ -104,8 +98,8 @@ class Sgr < Formula
   end
 
   resource "minio" do
-    url "https://files.pythonhosted.org/packages/cc/70/138926e7477f57ba32d2c0700517813234b0f5cd8f0a48e21641c9288ef1/minio-7.1.15.tar.gz"
-    sha256 "fcf8ac2cef310d5ddff2bef2c42f4e5a8bb546b87bca5bf8832135db054ca4e1"
+    url "https://files.pythonhosted.org/packages/68/72/b81f61f4d03d319022d52928177f8f32b598531d1cf02f13f06264df7a65/minio-7.1.17.tar.gz"
+    sha256 "b0b687c1ec9be422a1f8b04c65fb8e43a1c090f9508178db57c434a17341c404"
   end
 
   resource "parsimonious" do
@@ -119,23 +113,23 @@ class Sgr < Formula
   end
 
   resource "psycopg2-binary" do
-    url "https://files.pythonhosted.org/packages/98/3e/05ab0922422c91ca0ecb5939a100f8dc2b5d15f5978433beadc87c5329bf/psycopg2-binary-2.9.6.tar.gz"
-    sha256 "1f64dcfb8f6e0c014c7f55e51c9759f024f70ea572fbdef123f85318c297947c"
+    url "https://files.pythonhosted.org/packages/fc/07/e720e53bfab016ebcc34241695ccc06a9e3d91ba19b40ca81317afbdc440/psycopg2-binary-2.9.9.tar.gz"
+    sha256 "7f01846810177d829c7692f1f5ada8096762d9172af1b1a28d4ab5b77c923c1c"
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/0f/46/12689d28731c709890361af3414a9d0d04328043beb7c9fc4e4caa580b5c/pydantic-2.1.1.tar.gz"
-    sha256 "22d63db5ce4831afd16e7c58b3192d3faf8f79154980d9397d9867254310ba4b"
+    url "https://files.pythonhosted.org/packages/df/e8/4f94ebd6972eff3babcea695d9634a4d60bea63955b9a4a413ec2fd3dd41/pydantic-2.4.2.tar.gz"
+    sha256 "94f336138093a5d7f426aac732dcfe7ab4eb4da243c88f891d65deb4a2556ee7"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/8a/6a/2609fb28f3c289eacb2a2ddaceb7ad0d327b4b4678146573295d98f012b8/pydantic_core-2.4.0.tar.gz"
-    sha256 "ec3473c9789cc00c7260d840c3db2c16dbfc816ca70ec87a00cddfa3e1a1cdd5"
+    url "https://files.pythonhosted.org/packages/af/31/8e466c6ed47cddf23013d2f2ccf3fdb5b908ffa1d5c444150c41690d6eca/pydantic_core-2.10.1.tar.gz"
+    sha256 "0f8682dbdd2f67f8e1edddcbffcc29f60a6182b4901c367fc8c1c40d30bb0a82"
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/ae/0e/5a4c22e046dc8c94fec2046255ddd7068b7aaff66b3d0d0dd2cfbf8a7b20/referencing-0.30.0.tar.gz"
-    sha256 "47237742e990457f7512c7d27486394a9aadaf876cbfaa4be65b27b4f4d47c6b"
+    url "https://files.pythonhosted.org/packages/e1/43/d3f6cf3e1ec9003520c5fb31dc363ee488c517f09402abd2a1c90df63bbb/referencing-0.30.2.tar.gz"
+    sha256 "794ad8003c65938edcdbc027f1933215e0d0ccc0291e3ce20a4d87432b59efc0"
   end
 
   resource "requests" do
@@ -144,18 +138,18 @@ class Sgr < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/da/3c/fa2701bfc5d67f4a23f1f0f4347284c51801e9dbc24f916231c2446647df/rpds_py-0.9.2.tar.gz"
-    sha256 "8d70e8f14900f2657c249ea4def963bed86a29b81f81f5b76b5a9215680de945"
+    url "https://files.pythonhosted.org/packages/9e/a8/4a4e5ef90c4c4f27683ce2bb74b9521b5b1d06ac134cd650333fdca0f52c/rpds_py-0.10.4.tar.gz"
+    sha256 "18d5ff7fbd305a1d564273e9eb22de83ae3cd9cd6329fddc8f12f6428a711a6a"
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/63/dd/b4719a290e49015536bd0ab06ab13e3b468d8697bec6c2f668ac48b05661/ruamel.yaml-0.17.32.tar.gz"
-    sha256 "ec939063761914e14542972a5cba6d33c23b0859ab6342f61cf070cfc600efc2"
+    url "https://files.pythonhosted.org/packages/de/7d/4f70a93fb0bdc3fb2e1cbd859702d70021ab6962b7d07bd854ac3313cb54/ruamel.yaml-0.17.35.tar.gz"
+    sha256 "801046a9caacb1b43acc118969b49b96b65e8847f29029563b29ac61d02db61b"
   end
 
   resource "ruamel-yaml-clib" do
-    url "https://files.pythonhosted.org/packages/d5/31/a3e6411947eb7a4f1c669f887e9e47d61a68f9d117f10c3c620296694a0b/ruamel.yaml.clib-0.2.7.tar.gz"
-    sha256 "1f08fd5a2bea9c4180db71678e850b995d2a5f4537be0e94557668cf0f5f9497"
+    url "https://files.pythonhosted.org/packages/46/ab/bab9eb1566cd16f060b54055dd39cf6a34bfa0240c53a7218c43e974295b/ruamel.yaml.clib-0.2.8.tar.gz"
+    sha256 "beb2e0404003de9a4cab9753a8805a8fe9320ee6673136ed7f04255fe60bb512"
   end
 
   resource "sodapy" do
@@ -169,18 +163,18 @@ class Sgr < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/3d/78/81191f56abb7d3d56963337dbdff6aa4f55805c8afd8bad64b0a34199e9b/tqdm-4.65.0.tar.gz"
-    sha256 "1871fb68a86b8fb3b59ca4cdd3dcccbc7e6d613eeed31f4c332531977b89beb5"
+    url "https://files.pythonhosted.org/packages/62/06/d5604a70d160f6a6ca5fd2ba25597c24abd5c5ca5f437263d177ac242308/tqdm-4.66.1.tar.gz"
+    sha256 "d88e651f9db8d8551a62556d3cff9e3034274ca5d66e93197cf2490e2dcb69c7"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
-    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
+    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
+    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
   end
 
   resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/b1/34/3a5cae1e07d9566ad073fa6d169bf22c03a3ba7b31b3c3422ec88d039108/websocket-client-1.6.1.tar.gz"
-    sha256 "c951af98631d24f8df89ab1019fc365f2227c0892f12fd150e935607c79dd0dd"
+    url "https://files.pythonhosted.org/packages/44/34/551f30cbdc0515c39c2e78ef5919615785cd370844e40ada82367c1fab3f/websocket-client-1.6.3.tar.gz"
+    sha256 "3aad25d31284266bcfcfd1fd8a743f63282305a364b8d0948a43bd606acc652f"
   end
 
   # Switch build-system to poetry-core to avoid rust dependency on Linux.

@@ -1656,7 +1656,7 @@ Homebrew-homebrew-core/Formula/f/fb-client.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fb303.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fblog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fbthrift.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/f/fceux.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/fceux.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fcgi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fcgiwrap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fcitx-remote-for-osx.rb, Homebrew/homebrew-core, 1
@@ -8687,6 +8687,7 @@ Homebrew-homebrew-cask/Casks/k/krita.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/ksdiff.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/ksnip.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kstars.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/k/kuaitie.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kube-cluster.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kube-forwarder.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kubecontext.rb, Homebrew/homebrew-cask, 1
@@ -10002,8 +10003,6 @@ Homebrew-homebrew-cask/Casks/r/rowmote-helper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/royal-tsx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rpn-scientific.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rq.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/r/rrcc.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/r/rssowl.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rstudio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rsyncosx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rsyncui.rb, Homebrew/homebrew-cask, 1
@@ -10252,6 +10251,7 @@ Homebrew-homebrew-cask/Casks/s/solar2d.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/solvespace.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sonarr-menu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sonarr.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/songkong.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sonic-lineup.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sonic-pi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sonic-robo-blast-2-kart.rb, Homebrew/homebrew-cask, 1
@@ -13269,8 +13269,8 @@ Homebrew-homebrew-cask-versions/Casks/dash6.rb, Homebrew/homebrew-cask-versions,
 Homebrew-homebrew-cask-versions/Casks/db-browser-for-sqlcipher-nightly.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/db-browser-for-sqlite-nightly.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/deadbeef-nightly.rb, Homebrew/homebrew-cask-versions, 0
-Homebrew-homebrew-cask-versions/Casks/defold-alpha.rb, Homebrew/homebrew-cask-versions, 0
-Homebrew-homebrew-cask-versions/Casks/defold-beta.rb, Homebrew/homebrew-cask-versions, 0
+Homebrew-homebrew-cask-versions/Casks/defold-alpha.rb, Homebrew/homebrew-cask-versions, 1
+Homebrew-homebrew-cask-versions/Casks/defold-beta.rb, Homebrew/homebrew-cask-versions, 1
 Homebrew-homebrew-cask-versions/Casks/discord-canary.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/discord-development.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/discord-ptb.rb, Homebrew/homebrew-cask-versions, 0
@@ -13338,6 +13338,7 @@ Homebrew-homebrew-cask-versions/Casks/microsoft-edge-dev.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask-versions/Casks/microsoft-office-2016.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/microsoft-openjdk11.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/microsoft-openjdk17.rb, Homebrew/homebrew-cask-versions, 0
+Homebrew-homebrew-cask-versions/Casks/microsoft-teams-classic.rb, Homebrew/homebrew-cask-versions, 1
 Homebrew-homebrew-cask-versions/Casks/miniconda2.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/mixxx-snapshot.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/monal-beta.rb, Homebrew/homebrew-cask-versions, 0

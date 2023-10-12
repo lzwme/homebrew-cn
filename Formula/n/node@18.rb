@@ -1,8 +1,8 @@
 class NodeAT18 < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v18.18.0/node-v18.18.0.tar.xz"
-  sha256 "e4d4dbac3634d99f892f00db47da78f98493c339582e8a95fb2dd59f5cfe0f90"
+  url "https://registry.npmmirror.com/-/binary/node/v18.18.1/node-v18.18.1.tar.xz"
+  sha256 "c3c95047ec0c2b2063a5ea4b4f71ee807f6075d1dbeae4f3207cda4b9ae782f6"
   license "MIT"
 
   livecheck do
@@ -11,15 +11,13 @@ class NodeAT18 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "9bb2c47bb5f23c65da39685c4b7a24f7295fac3684f1682a12abd2b9c6162773"
-    sha256 arm64_ventura:  "ac6dadf19ea6e50d06ca132206c380d01a78b142979489c2aa7f658b98f81eeb"
-    sha256 arm64_monterey: "43098ad5cb44c079e9e7bd286f44228fe1175b68f5339292484b1c5f86f4050f"
-    sha256 arm64_big_sur:  "8cda899ab9d2fc77195161a7ea38bd5528408d8eb2ac53b803d9e31007ae5d6d"
-    sha256 sonoma:         "f1da2e36b5f8465f63cb20c36ff695c53ebada398ac6f3ae4c4b1c20229d17a8"
-    sha256 ventura:        "414a29831f37ab25f9c5336a4c4a46cb3a3a2f2ce48b337cb80f51954cdf2984"
-    sha256 monterey:       "c05bf23ba6ded8d8d46a796e54f92941a511f36928aaeb7ea02ce685746ba7c4"
-    sha256 big_sur:        "0d8b2a95fa6858574ca66f3c7a13d9ed1a5996d2bc236087f5e1477b36bd3127"
-    sha256 x86_64_linux:   "df22bef50f9f8831d8b04c5a1ee78f321eb991ed36b6f94bb34ac351f0108a9c"
+    sha256 arm64_sonoma:   "23275ebc740f7b7e38b4dd310ac6bc3ee333df6754594c20e244f5b3eec5e20d"
+    sha256 arm64_ventura:  "da49a1876961000e123ed50d518a07d3f9cb9ddeafd40e3f3e0bc4630d25a744"
+    sha256 arm64_monterey: "1339738623fed1107c191702a2b8063a0c86796a3ffaf484a8d0b3f8a9edef68"
+    sha256 sonoma:         "efa709ea377c80bc81cf46a61d0cee489d8046e1a2f3ade4321066e8bb163c39"
+    sha256 ventura:        "7986dfebc29fd7a32a4f289caecc1bcbd966ab90a9fb1a9d234acf8d72d883bb"
+    sha256 monterey:       "d22060221281e05aa532401498a51b1493b441a0f21f78a63432ce844a449bcd"
+    sha256 x86_64_linux:   "84a0284352c80096c958e2699600e824262a5ce35b57dd99c57478cf502bd939"
   end
 
   keg_only :versioned_formula

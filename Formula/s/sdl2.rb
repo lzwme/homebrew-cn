@@ -1,8 +1,8 @@
 class Sdl2 < Formula
   desc "Low-level access to audio, keyboard, mouse, joystick, and graphics"
   homepage "https://www.libsdl.org/"
-  url "https://ghproxy.com/https://github.com/libsdl-org/SDL/releases/download/release-2.28.3/SDL2-2.28.3.tar.gz"
-  sha256 "7acb8679652701a2504d734e2ba7543ec1a83e310498ddd22fd44bf965eb5518"
+  url "https://ghproxy.com/https://github.com/libsdl-org/SDL/releases/download/release-2.28.4/SDL2-2.28.4.tar.gz"
+  sha256 "888b8c39f36ae2035d023d1b14ab0191eb1d26403c3cf4d4d5ede30e66a4942c"
   license "Zlib"
 
   livecheck do
@@ -12,15 +12,13 @@ class Sdl2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b78dcbdbfee6298d248eabb06468d7f991f2495104344f16dd35e503a6a0b1aa"
-    sha256 cellar: :any,                 arm64_ventura:  "764084498b650c302759a7eb26b1dc3886e650d8b6ac3f3f6f560a9cfe225b5e"
-    sha256 cellar: :any,                 arm64_monterey: "db232b4a952027efb697a56826442de66ab84328c2bc0b9e8f2b23465a1bcb2e"
-    sha256 cellar: :any,                 arm64_big_sur:  "003bc7fa2207369cd2ed794d3f88df844c9961bd7e172d1edb2f6aa20575474f"
-    sha256 cellar: :any,                 sonoma:         "4bff4927d69d7258b07540782a74d46d822d1113a8cbde0839f3b7fd1547b52e"
-    sha256 cellar: :any,                 ventura:        "7963704fdcfa3b1dbfbc82a18951109d9fddcdede7215fd9fa15c0709f9b98f1"
-    sha256 cellar: :any,                 monterey:       "63d2c2dab020fc0cbd13c815883108174eba3d394220724ae4baa561266a2e1e"
-    sha256 cellar: :any,                 big_sur:        "dc5f0129e21d34697904f54526c7c9f609b0b29cca456fd8f401b6abc7665e50"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0475ec88b9f73de4f52fac616899a7d1cfa0ca127530abe1e2e7a83fb973cc5b"
+    sha256 cellar: :any,                 arm64_sonoma:   "e6fe97069d2c299cef1d407c11403714c20a50fd95a2ce16609e7477d792a9b9"
+    sha256 cellar: :any,                 arm64_ventura:  "ebb73d39781af471e402732e1ff8f683343f58dbe6c97dfb408cb814f95ed5ff"
+    sha256 cellar: :any,                 arm64_monterey: "d69978b66c194ae2d087322245c783083a80ca14da243f3bb1f45397ed4dbfcf"
+    sha256 cellar: :any,                 sonoma:         "d42c77061a90fcdf02f4a5180f32599ff75321285fff06d786fe9cc213e76f8d"
+    sha256 cellar: :any,                 ventura:        "9cd70d93ffac88df31be73fb88c488114b200ae3a87e51acfb6e2fc6d27ec916"
+    sha256 cellar: :any,                 monterey:       "92daa8144a71de0224e8d09f3ecba21dca93344eb109529394d498c4967e8fe4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "004689b7441721c1e95e4706fe2bc781b028f4721ba079a89457ecbcb9debc8a"
   end
 
   head do
