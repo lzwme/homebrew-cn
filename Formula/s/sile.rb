@@ -1,20 +1,18 @@
 class Sile < Formula
   desc "Modern typesetting system inspired by TeX"
   homepage "https://sile-typesetter.org"
-  url "https://ghproxy.com/https://github.com/sile-typesetter/sile/releases/download/v0.14.11/sile-0.14.11.tar.xz"
-  sha256 "25796088ad57c996527b9417cf4eb3c0402755886221986121a0667f1020452e"
+  url "https://ghproxy.com/https://github.com/sile-typesetter/sile/releases/download/v0.14.12/sile-0.14.12.tar.xz"
+  sha256 "8b2c4d8b8636cda791e8751ffc8556d4cee60745a1336cb13aa0e46f5a009078"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "665cd04480a98a92ddd7375b6e95287222419fbafa0543a99323babb1e754dc5"
-    sha256 cellar: :any,                 arm64_ventura:  "314384bd475c5d9f4a0e2d82da552909a4ba99996fe0b9bd4fbdb2b57dd10090"
-    sha256 cellar: :any,                 arm64_monterey: "a59ed9b675f966e7c16ca600ee1dba18600f141a2116544724b139d5d963f12c"
-    sha256 cellar: :any,                 arm64_big_sur:  "41c0f36c2e6a982f69ed9953915eb6f5b7e9db76a3666fcdb272fc23ee7372e2"
-    sha256 cellar: :any,                 sonoma:         "6bbda3394d47a9d1b11301db7a51a20ecf2bd875657a3a9fe38930edf075ea06"
-    sha256 cellar: :any,                 ventura:        "1f51fd443d603b4253e705b84b0bcf8e6794106441f243f390c798ad827d8c9a"
-    sha256 cellar: :any,                 monterey:       "6437a38a6366af054944a06187bf9231f2d1993272dc27c0e514e4587b186d3f"
-    sha256 cellar: :any,                 big_sur:        "048c7a7ce8799750ba94e8360676641a451325113fb382c21a86507c2e52fdf1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05a272df6d2e9dea92b041758ac2a6d3d70116c4c4a59663e1770e6850e07b7c"
+    sha256 cellar: :any,                 arm64_sonoma:   "f32691b9d1ad89498c864f8fc4cfa3c88a4f7210afeadee1843433e5c5e48b66"
+    sha256 cellar: :any,                 arm64_ventura:  "3db09098337804f370aa6e4150f4d436010dec06daf65e26a0f3c1c845143186"
+    sha256 cellar: :any,                 arm64_monterey: "f67e1047a5b0cf7b9b0026480be2a6327d90a3f0d745ad5c65c67385530f9b0a"
+    sha256 cellar: :any,                 sonoma:         "66e12f0d7819b5b3aca482aa6462da994e2cf969c3916a387d1662893a18301a"
+    sha256 cellar: :any,                 ventura:        "ced2a31899ad2f73b4bac89e0bd80731f8273f236eb224ef9f10de593df11fbe"
+    sha256 cellar: :any,                 monterey:       "fe84a797acd1564e0114030b5a8f6f3ec4a2dcdff75f1fcb36c3be4d3ef302b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cba5651c9c18183df406bda942d641603591ba5dc2a555aa9d95b4914ecb27c8"
   end
 
   head do
@@ -44,8 +42,8 @@ class Sile < Formula
   end
 
   resource "lpeg" do
-    url "https://luarocks.org/manifests/gvvaughan/lpeg-1.0.2-1.src.rock"
-    sha256 "e0d0d687897f06588558168eeb1902ac41a11edd1b58f1aa61b99d0ea0abbfbc"
+    url "https://luarocks.org/manifests/gvvaughan/lpeg-1.1.0-1.src.rock"
+    sha256 "6637fcf4d3ddef7be490a2f0155bd2dcd053272d1bb78c015498709ef9fa75dd"
   end
 
   # depends on lpeg
@@ -99,8 +97,8 @@ class Sile < Formula
 
   # depends on luasocket
   resource "luasec" do
-    url "https://luarocks.org/manifests/brunoos/luasec-1.3.1-1.src.rock"
-    sha256 "234353b695cdec264b22e6ff5472f4f7f70cd10a9b65f6fd4ad65652c786bb20"
+    url "https://luarocks.org/manifests/brunoos/luasec-1.3.2-1.src.rock"
+    sha256 "f93bf9927bd34a5d4f897f4488b285a12bee89c0e7d54b3b36dfcbf43a7ad4e5"
   end
 
   # depends on luafilesystem

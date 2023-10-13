@@ -1,18 +1,18 @@
 class Circumflex < Formula
   desc "Hacker News in your terminal"
   homepage "https://github.com/bensadeh/circumflex"
-  url "https://ghproxy.com/https://github.com/bensadeh/circumflex/archive/refs/tags/3.3.1.tar.gz"
-  sha256 "949dde816b75b85ec48bb0158931d540f6bc07606d92f441881201d4b8680a49"
+  url "https://ghproxy.com/https://github.com/bensadeh/circumflex/archive/refs/tags/3.4.tar.gz"
+  sha256 "911deed5eabf9ac1a218decec86357894a8a77deb0f33735f5faad8138ba4ff5"
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "19bbbe0c0d13ec6f4d55ee419289df13bc579bb5841bb4b439598ff2790ee25d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0528b7d4ff715f11668190ff79a44b7973eccdaf899476dfad176ef54698e857"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2d96405d7a881c70b712e4f885624e211042d2aefe3d7923b1c6c49209dd2c68"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8c2833d76bac0fb21005c6f1c7b4eac2fc57785f957b99656226ef9f1a8ac812"
-    sha256 cellar: :any_skip_relocation, ventura:        "4ff94d971380c1227b1a9be3567426ee1224c91a7eedb1fc42a614b1d29efe61"
-    sha256 cellar: :any_skip_relocation, monterey:       "7c9b0d7864a60e71089521499c162d6104d92d5efcefbb2d31fa497eb8e4ed8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d9cd936031fdf86b2e778efefc6e4ec6418914c49be817c5feaff51fd837a02"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "671eb0f32aea8923e55b3f8d910f614dcecc0e89c7f0a220dcc6837485ba16b2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a773f40874f88b907e23bbfe372beefdf5e127461e7f61e4dee3802460cd7c37"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "07af3e61ff32b873de8c2861ee38de9deace3d5a5f849b57fd6804a5260103f5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d24db7a043efe062338a32ae56c0947a9f0286d508c91a9be7d7aacdcd36c5bf"
+    sha256 cellar: :any_skip_relocation, ventura:        "2b93078164ecfd9eeb4a50f8b439241a763aab6b67a00eb676d7d6db7eb31d98"
+    sha256 cellar: :any_skip_relocation, monterey:       "8a9af69756bc6623341a66d98c3a571ed556a716e141413acc84c0ce21b9aff1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c6ab73bcb9db986943c946bcbbf32c0f7fd2f048854c857a307fa7e31073f8d"
   end
 
   depends_on "go" => :build

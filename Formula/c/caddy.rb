@@ -1,21 +1,19 @@
 class Caddy < Formula
   desc "Powerful, enterprise-ready, open source web server with automatic HTTPS"
   homepage "https://caddyserver.com/"
-  url "https://ghproxy.com/https://github.com/caddyserver/caddy/archive/v2.7.4.tar.gz"
-  sha256 "97f687c1d9fbe275952cc932639e8f0ab90cb7177961b02078fba989b4e29c31"
+  url "https://ghproxy.com/https://github.com/caddyserver/caddy/archive/v2.7.5.tar.gz"
+  sha256 "eeaecc1ea18b7aa37ece168562beb1ab592767cbedfaa411040ae0301aaeeef1"
   license "Apache-2.0"
   head "https://github.com/caddyserver/caddy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bb04f62697fc6927906e2cf9f2244b5b48ab46263da870cf8226e5e53c439ded"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c4f2e19e042547c669a8ea082922eea5f63c03ab9637c5d27e49e81f72f71a0d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c4f2e19e042547c669a8ea082922eea5f63c03ab9637c5d27e49e81f72f71a0d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c4f2e19e042547c669a8ea082922eea5f63c03ab9637c5d27e49e81f72f71a0d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9c458258202cd0be547aa509d2bf0d093e71f37832901ef1d93370ce9b076dfd"
-    sha256 cellar: :any_skip_relocation, ventura:        "92cee727d96126a084d5cb797f449a807b8c40ed70d435a3729a3444ea72b6a4"
-    sha256 cellar: :any_skip_relocation, monterey:       "92cee727d96126a084d5cb797f449a807b8c40ed70d435a3729a3444ea72b6a4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "92cee727d96126a084d5cb797f449a807b8c40ed70d435a3729a3444ea72b6a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "58c7d710892c33d3083ef4c60f8f233759b7efd1ce8dbeeb6b02de0d8c22f642"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d7f37dc97d2b098fb2e8af0f8abfa0f14625a96d1932b7ec90a51bea1fcd583b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d7f37dc97d2b098fb2e8af0f8abfa0f14625a96d1932b7ec90a51bea1fcd583b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d7f37dc97d2b098fb2e8af0f8abfa0f14625a96d1932b7ec90a51bea1fcd583b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a605d80248baeba536a2689699ca5d4bac468e96209fad67dc9818085f74f574"
+    sha256 cellar: :any_skip_relocation, ventura:        "a605d80248baeba536a2689699ca5d4bac468e96209fad67dc9818085f74f574"
+    sha256 cellar: :any_skip_relocation, monterey:       "a605d80248baeba536a2689699ca5d4bac468e96209fad67dc9818085f74f574"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1fff754967a19cb33229ae860487cf27633e1dde8c74325a3b9f9658dce47ef"
   end
 
   depends_on "go" => :build

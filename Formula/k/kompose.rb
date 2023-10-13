@@ -1,18 +1,18 @@
 class Kompose < Formula
   desc "Tool to move from `docker-compose` to Kubernetes"
   homepage "https://kompose.io/"
-  url "https://ghproxy.com/https://github.com/kubernetes/kompose/archive/v1.31.1.tar.gz"
-  sha256 "93a17b6a7e2515f0fe0ec8881d266b45bac8463d6810428edfd8ec38df0d8717"
+  url "https://ghproxy.com/https://github.com/kubernetes/kompose/archive/v1.31.2.tar.gz"
+  sha256 "6c3bb81f9845941d949fd4d950967639fdc502508fa5fe5b030a4daee6776f8d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "567422c2a937d7135586dfc0ec94dd3db5dc017fcbf67b5d12bc4d265ec63a77"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef9a48a23eb589bc40d282192eb944e6142ead05ee4b50344018bd7581bcc361"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "654f5162a23266c587860824061a11c6766afa4b17223b54b862c00c07ae290a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8fbd9915a35f69d589d3bfecae716b71de3c0567cc878a9bdcd4338e33c8f39b"
-    sha256 cellar: :any_skip_relocation, ventura:        "836415779c0789765868922fa9157d906e30ed36c8022a0262ff348173b5b92d"
-    sha256 cellar: :any_skip_relocation, monterey:       "578e0eb6132e782feaf876f3bde3bf5bc90ff594e00d81f052217701a10e1be3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a4e21c06b0c0657f4d1b439aa1932b13d4b5329b9c65b125bbe9e61d98ab219"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6cb412663d3718f63956dd285b461e8f37fb16f1dea2a587982d46120d0828c2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "77a630e1ce1bcc758309279e8466527d10440d720f015d7b5721b48c9faff305"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "44e27bc9e7f91befe3fe6e34fe665b9552cfeb5009acfa86bc11c18d956a3f41"
+    sha256 cellar: :any_skip_relocation, sonoma:         "64f97d83782f705075e65958e435867145a18837af6f6e5a9716d465529e2f3a"
+    sha256 cellar: :any_skip_relocation, ventura:        "b6cd7ca3ecef63cedf6495c87b231c5dac25071e5b2f750709580f9bccaa9777"
+    sha256 cellar: :any_skip_relocation, monterey:       "cc0e75c4069050f4806b233851c68d8ab4702a8ed908565349aca335447497e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99550035b8938199c758e0097ffc8ca525a7af19d48080d50955153c6587a0e8"
   end
 
   depends_on "go" => :build

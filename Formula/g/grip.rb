@@ -3,19 +3,18 @@ class Grip < Formula
 
   desc "GitHub Markdown previewer"
   homepage "https://github.com/joeyespo/grip"
-  url "https://files.pythonhosted.org/packages/b9/7b/013fad0e29839decbdf8d3b96dbbfa155cbf0b470c7c03ba736d35280d41/grip-4.6.1.tar.gz"
-  sha256 "a5e6ac48cd253892f0fbd0aaef3f74fe8169d8ed3d94a2e9be6bf1540e008e9f"
+  url "https://files.pythonhosted.org/packages/f4/3f/e8bc3ea1f24877292fa3962ad9e0234ad4bc787dc1eb5bd08c35afd0ceca/grip-4.6.2.tar.gz"
+  sha256 "3cf6dce0aa06edd663176914069af83f19dcb90f3a9c401271acfa71872f8ce3"
   license "MIT"
-  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9a5dbaa5887352fc3256fcc7cb2d983dd9254b96e87c42d2431e2f5d7811d0d4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6019de7889b87883584d57f184e11c79eeccd53e6bcdc3ecae91fcc75525e965"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ccc732e4c75a1f78ae7562718dc99b5e958335432f6aace2d917350633c9a9f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d3ce50ea5b84f4bfbe5ffe5ca6c93478cc2f7658734cab2731e3e8b8c0ae314b"
-    sha256 cellar: :any_skip_relocation, ventura:        "84ae00e27f8680b787574d67f3ff32341532943be310797628279bb3027e5aa6"
-    sha256 cellar: :any_skip_relocation, monterey:       "b62d1acc37e5fa2c1544a809aaa4d09dda3cd35a23af3e58fe42f9611f8f4850"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f99f3a803de50a98e760377d412b98a266a9f86305fbc4e794cba8d5b9f5ffb7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b0feb26f09baed45e03abaf7fe0403edc91daa2eaacb129bc17d144da603a359"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b014b141200109b48ff1f54d535c5fd65bded525add8f0e0ae4ceb9c41949303"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8bf80c324d6bf396dd55a1471c721cc2bdd256a9d4f023a435fe5a2a7a0b5ca3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "816e7d11f3045e57c98da61ef7e333068a16a60f5b740da7fa97a037ceeaf18a"
+    sha256 cellar: :any_skip_relocation, ventura:        "6085e2b930c57c06ac3fc99225995e45f275b3fd28345aafb68a9fca6156478b"
+    sha256 cellar: :any_skip_relocation, monterey:       "222bc9bda89b73874a324be5034895878db7f388feabd5eb72ee336aa8547371"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc86b57c27eb9f9777c6d20c9f2f155761fc3135ab023c125d7523b740c90e9d"
   end
 
   depends_on "pygments"
@@ -25,8 +24,8 @@ class Grip < Formula
   depends_on "python@3.11"
 
   resource "blinker" do
-    url "https://files.pythonhosted.org/packages/e8/f9/a05287f3d5c54d20f51a235ace01f50620984bc7ca5ceee781dc645211c5/blinker-1.6.2.tar.gz"
-    sha256 "4afd3de66ef3a9f8067559fb7a1cbe555c17dcbe15971b05d1b625c3e7abe213"
+    url "https://files.pythonhosted.org/packages/ea/96/ed1420a974540da7419094f2553bc198c454cee5f72576e7c7629dd12d6e/blinker-1.6.3.tar.gz"
+    sha256 "152090d27c1c5c722ee7e48504b02d76502811ce02e1523553b4cf8c8b3d3a8d"
   end
 
   resource "charset-normalizer" do
@@ -45,8 +44,8 @@ class Grip < Formula
   end
 
   resource "flask" do
-    url "https://files.pythonhosted.org/packages/4d/00/ef81c18da32fdfcde6381c315f4b11597fb6691180a330418848efee0ae7/Flask-2.3.2.tar.gz"
-    sha256 "8c2f9abd47a9e8df7f0c3f091ce9497d011dc3b31effcf4c85a6e2b50f4114ef"
+    url "https://files.pythonhosted.org/packages/d8/09/c1a7354d3925a3c6c8cfdebf4245bae67d633ffda1ba415add06ffc839c5/flask-3.0.0.tar.gz"
+    sha256 "cfadcdb638b609361d29ec22360d6070a77d7463dcb3ab08d2c2f2f168845f58"
   end
 
   resource "idna" do
@@ -80,8 +79,8 @@ class Grip < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/d1/7e/c35cea5749237d40effc50ed1a1c7518d9f2e768fcf30b4e9ea119e74975/Werkzeug-2.3.6.tar.gz"
-    sha256 "98c774df2f91b05550078891dee5f0eb0cb797a522c757a2452b9cee5b202330"
+    url "https://files.pythonhosted.org/packages/8c/47/75c7099c78dc207486e30cdb2b16059ca6d5c6cdcf9290f4621368bd06e4/werkzeug-3.0.0.tar.gz"
+    sha256 "3ffff4dcc32db52ef3cc94dff3000a3c2846890f3a5a51800a27b909c5e770f0"
   end
 
   def install

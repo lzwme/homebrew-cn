@@ -17,7 +17,6 @@ class Tfupdate < Formula
   end
 
   depends_on "go" => :build
-  depends_on "terraform" => :test
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
@@ -32,9 +31,6 @@ class Tfupdate < Formula
 
     system bin/"tfupdate", "provider", "aws", "-v", "2.40.0", testpath/"provider.tf"
     assert_match "2.40.0", File.read(testpath/"provider.tf")
-
-    # list the most recent 5 releases
-    assert_match Formula["terraform"].version.to_s, shell_output(bin/"tfupdate release list -n 5 hashicorp/terraform")
 
     assert_match version.to_s, shell_output(bin/"tfupdate --version")
   end

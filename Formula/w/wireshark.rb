@@ -8,9 +8,11 @@ class Wireshark < Formula
   revision 1
   head "https://gitlab.com/wireshark/wireshark.git", branch: "master"
 
+  # Upstream indicates stable releases with an even-numbered minor (see:
+  # https://wiki.wireshark.org/Development/ReleaseNumbers).
   livecheck do
     url "https://www.wireshark.org/download.html"
-    regex(/href=.*?wireshark[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(/href=.*?wireshark[._-]v?(\d+\.\d*[02468](?:\.\d+)*)\.t/i)
   end
 
   bottle do

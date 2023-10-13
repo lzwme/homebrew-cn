@@ -1,8 +1,8 @@
 class ImapBackup < Formula
   desc "Backup GMail (or other IMAP) accounts to disk"
   homepage "https://github.com/joeyates/imap-backup"
-  url "https://ghproxy.com/https://github.com/joeyates/imap-backup/archive/refs/tags/v13.4.0.tar.gz"
-  sha256 "71a3df85c153763a19c3664a869bfba1539a78e6028d9b1942edf859ac8d1e74"
+  url "https://ghproxy.com/https://github.com/joeyates/imap-backup/archive/refs/tags/v14.1.1.tar.gz"
+  sha256 "bc314e189bae2b0167aeb4b7e02da5ac36392699e7c13e526dbe68a86d718fef"
   license "MIT"
 
   livecheck do
@@ -11,7 +11,7 @@ class ImapBackup < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7683e08c9a2dff1eb4f81f163a70562ad2a5b26c721a483e114fb6f07fb3aa5c"
+    sha256 cellar: :any_skip_relocation, all: "36aa53166431ee5ceaa06243435caa5adb3f54fe8e0071e1efdc85f0ce7f076c"
   end
 
   # Requires Ruby >= 2.7

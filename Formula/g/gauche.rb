@@ -1,10 +1,9 @@
 class Gauche < Formula
   desc "R7RS Scheme implementation, developed to be a handy script interpreter"
   homepage "https://practical-scheme.net/gauche/"
-  url "https://ghproxy.com/https://github.com/shirok/Gauche/releases/download/release0_9_12/Gauche-0.9.12.tgz"
-  sha256 "b4ae64921b07a96661695ebd5aac0dec813d1a68e546a61609113d7843f5b617"
+  url "https://ghproxy.com/https://github.com/shirok/Gauche/releases/download/release0_9_13/Gauche-0.9.13.tgz"
+  sha256 "792fe4e4f800acd7293f9e3095d580a87cea8b221f33707ae37874f8a3f1b76b"
   license "BSD-3-Clause"
-  revision 4
 
   livecheck do
     url :stable
@@ -15,13 +14,13 @@ class Gauche < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "c4f061ee978fdfa0397720d8a8d24da45edaca3c03aa6fe06d72968fc265f06e"
-    sha256 arm64_ventura:  "4fc0349bf0e551cc17953a33faf24b73aa9c918f85fdb3546f56d0ffef36d382"
-    sha256 arm64_monterey: "75edd8aeddf7f499e3376ac5e4999e16a714b1f89457e963a991183b38550588"
-    sha256 sonoma:         "531bc327aac767bb15b819cdd5c46fadbc839d096b76a4ff169143a4689a9cce"
-    sha256 ventura:        "90321f5426f3d7b270e2ea970344d1029707ea8f23d25b368f50f4204e8328c7"
-    sha256 monterey:       "5f530c0aa8df9d97056829a859c1265ef9a0160ef253ae701c6b3ecbfe0313e8"
-    sha256 x86_64_linux:   "ef780888f8f24944faa4480c74dc38a827ff39e0e257401718d6886c0b1c3097"
+    sha256 arm64_sonoma:   "01957631d804616405d76fc8ba28f112254d5681951baf8a9dbe92b247f5ad9c"
+    sha256 arm64_ventura:  "df261e44c7642959df6e69f8400ffd4c5beb1437c986bc87d438e2165546c905"
+    sha256 arm64_monterey: "b31e5a9df6cbaea3fd35182c7cf44139fc77dd0a018d0fdde13a478379cdf58b"
+    sha256 sonoma:         "ad93df603aceca665e8bc4e8ee45286e7c9c5ccd1a0dc070f3d7f5e8799e5d7e"
+    sha256 ventura:        "49c692a49a7b0044137d9df07863e7087a4c2c4e87682436801bed673240274c"
+    sha256 monterey:       "be2c8499247765f41e57ecdb8ba22c25732be1597c690a345cfbe0e4244e3982"
+    sha256 x86_64_linux:   "2745732cdc421c6b45843a12c57d1aab6dd3ec24d8970683fff768ee5204b800"
   end
 
   depends_on "ca-certificates"

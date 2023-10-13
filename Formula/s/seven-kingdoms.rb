@@ -5,6 +5,11 @@ class SevenKingdoms < Formula
   sha256 "2c79b98dc04d79e87df7f78bcb69c1668ce72b22df0384f84b87bc550a654095"
   license "GPL-2.0-only"
 
+  livecheck do
+    url :stable
+    regex(%r{url=.*?/7kaa[._-]v?(\d+(?:\.\d+)+)\.t}i)
+  end
+
   bottle do
     sha256 arm64_sonoma:   "0538f01561c991e0ef25767624f8128516e2886fff6892c045163add87b82b03"
     sha256 arm64_ventura:  "7f964ac849ddfcb41f1deb913ac3f87e4d426a0caabb2f327ef2aa9f1820d29c"

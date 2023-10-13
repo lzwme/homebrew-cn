@@ -1,14 +1,12 @@
 class Spotbugs < Formula
   desc "Tool for Java static analysis (FindBugs's successor)"
   homepage "https://spotbugs.github.io/"
-  # TODO: Check if we can use unversioned `openjdk` (or `openjdk@21`) at version bump.
-  url "https://repo.maven.apache.org/maven2/com/github/spotbugs/spotbugs/4.7.3/spotbugs-4.7.3.tgz"
-  sha256 "f02e2f1135b23f3edfddb75f64be0491353cfeb567b5a584115aa4fd373d4431"
+  url "https://repo.maven.apache.org/maven2/com/github/spotbugs/spotbugs/4.8.0/spotbugs-4.8.0.tgz"
+  sha256 "15a97043faef7a371ae43137805ca83e89005c22253806b7c63a60a585e794c7"
   license "LGPL-2.1-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "ff24323893d6f69f44710ef8af1e2563a1b109d9f0ea6cad719cb7012ee5492f"
+    sha256 cellar: :any_skip_relocation, all: "4ccb5fdac9c8411e46157ab2278091090f5b2b25931e735bf25d9e69e092ad4c"
   end
 
   head do
@@ -17,13 +15,12 @@ class Spotbugs < Formula
     depends_on "gradle" => :build
   end
 
-  # `openjdk` 21 support issue: https://github.com/spotbugs/spotbugs/issues/2567
-  depends_on "openjdk@17"
+  depends_on "openjdk"
 
   conflicts_with "fb-client", because: "both install a `fb` binary"
 
   def install
-    ENV["JAVA_HOME"] = Formula["openjdk@17"].opt_prefix
+    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
     if build.head?
       system "gradle", "build"
       system "gradle", "installDist"
@@ -32,7 +29,7 @@ class Spotbugs < Formula
       libexec.install Dir["*"]
       chmod 0755, "#{libexec}/bin/spotbugs"
     end
-    (bin/"spotbugs").write_env_script "#{libexec}/bin/spotbugs", Language::Java.overridable_java_home_env("17")
+    (bin/"spotbugs").write_env_script "#{libexec}/bin/spotbugs", Language::Java.overridable_java_home_env
   end
 
   test do
@@ -47,9 +44,9 @@ class Spotbugs < Formula
         }
       }
     EOS
-    system Formula["openjdk@17"].bin/"javac", "HelloWorld.java"
-    system Formula["openjdk@17"].bin/"jar", "cvfe", "HelloWorld.jar", "HelloWorld", "HelloWorld.class"
+    system Formula["openjdk"].bin/"javac", "HelloWorld.java"
+    system Formula["openjdk"].bin/"jar", "cvfe", "HelloWorld.jar", "HelloWorld", "HelloWorld.class"
     output = shell_output("#{bin}/spotbugs -textui HelloWorld.jar")
-    assert_match(/M V EI.*\nM C UwF.*\n/, output)
+    assert_match(/M V EI.*\nM B PI.*\nM C UwF.*\n/, output)
   end
 end

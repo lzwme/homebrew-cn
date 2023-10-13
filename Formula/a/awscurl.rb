@@ -3,19 +3,19 @@ class Awscurl < Formula
 
   desc "Curl like simplicity to access AWS resources"
   homepage "https://github.com/okigan/awscurl"
-  url "https://files.pythonhosted.org/packages/58/b0/470fb7df0d814dee820ae21fd9b117da5b012e0247f2791ddfd2c3584dc3/awscurl-0.30.tar.gz"
-  sha256 "7938fc270d0cc7b9c92fff0670406e0b21cc343724930136c24fdaf0d938cc80"
+  url "https://files.pythonhosted.org/packages/09/5b/98f022bc96ceb68b12fb4cfe6fdf52cc3051fa0b7bf51dc805521afe72bd/awscurl-0.31.tar.gz"
+  sha256 "6ce032543c0ec00857ce9c08cafe8041270b5508b08ec73e264e63f1e1255601"
   license "MIT"
   head "https://github.com/okigan/awscurl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ce2243c8bca9901443f71077ab655a37455882aa08998e27f3970dba197c06ae"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "abb446ce49bb5f586089bfb7ec9891eb1f4145326cda31ae4698e35223f784ea"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1a96e8dd3abbadcc7431a9c2cc2c60c3f94ec44ddbf038764e752fbdafb5e1ab"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7f2a35c5480db6fef5cde0ae97369e2d90ac27ed79682a4660c9be4a4037a5e7"
-    sha256 cellar: :any_skip_relocation, ventura:        "89c50079919c1ff8744606d2a5419037a63aa1071e3a26535965dd6d01ac4c43"
-    sha256 cellar: :any_skip_relocation, monterey:       "d54fa8c6461325d2b84e2e73204599f8ac7c9a9b9f807d730d30cf4d1cb61d9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94abe6668915d1193bfbe10586d2f18ef09aa9eee330020fcb760a593c026f09"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bf46a701e81a0fc2b4235ba9e29e7cbdc84b51a63de46cf0098e2fd75be37fa6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9044374037b12a3efa1484cbdd7211048e85f81fdbc04e3e28c984e5fae97a56"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5020ff1cdd50cee0bfc0f6bd139f087cc30eb0933ac9c5c0fab21705f99215bc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c73a83396b87d96d1a0db07b8a716048969d3bdcfea4f5d2a418a5a6f0c1f325"
+    sha256 cellar: :any_skip_relocation, ventura:        "bcdd3d41aae6b1af19190e0c9f13e1e211f79e05165230551e670a69ced25187"
+    sha256 cellar: :any_skip_relocation, monterey:       "9f6515773f5201cdfdd3f744d4265de497fe351bdd732d817a389f46ec99e83d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f70f0d8c10124e80b736c7cd18dc000d8c78dcb11326eddc424e155cd26d6eb"
   end
 
   depends_on "cffi"
