@@ -20,7 +20,7 @@ class Fluxctl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb1422ea17a36f149248bf4952d19d72a7d56907efe589072dbeef12eeaa77ec"
   end
 
-  deprecate! date: "2022-11-08", because: :repo_archived
+  disable! date: "2023-10-13", because: :repo_archived
 
   depends_on "go" => :build
 

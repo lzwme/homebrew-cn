@@ -25,9 +25,6 @@ class Algol68g < Formula
   end
 
   def install
-    # Fix compile with newer Clang
-    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
-
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end

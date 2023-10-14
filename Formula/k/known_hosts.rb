@@ -24,7 +24,7 @@ class KnownHosts < Formula
 
   # upstream issue tracker for license
   # https://github.com/markmcconachie/known_hosts/issues/7
-  deprecate! date: "2022-12-03", because: "no license for the project"
+  disable! date: "2023-10-13", because: "no license for the project"
 
   depends_on "cmake" => :build
 

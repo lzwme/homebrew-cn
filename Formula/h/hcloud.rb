@@ -1,18 +1,18 @@
 class Hcloud < Formula
   desc "Command-line interface for Hetzner Cloud"
   homepage "https://github.com/hetznercloud/cli"
-  url "https://ghproxy.com/https://github.com/hetznercloud/cli/archive/v1.38.0.tar.gz"
-  sha256 "063379d6abcbf4b22380221a7c4d3c66b6ccfbeb843e281145710a9ae95d5319"
+  url "https://ghproxy.com/https://github.com/hetznercloud/cli/archive/v1.38.2.tar.gz"
+  sha256 "807d17d4f3a6d0a5d1558b8e79a555b5ab048325060001e8d5f0762b64e2dfb6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bae8cea77f1bb776f187c31406fb6f7bf01d1faf895546eb9b7d596e9dae2091"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "28ca4a2190e1ff6c5414a2649bc922ef77f47e01b2efa3417d40ca3fe1c05ba3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1de2b679bc7e3b4bc9f977c4fd905c7d1fe00bcb1b5c12ec90407b5287c987d2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7cfe39fe36b54f4f922be4be0c4a83217362223846a35a74319da397f64f8267"
-    sha256 cellar: :any_skip_relocation, ventura:        "954f2b58a0c9c7b084f64e202aecc3b04ec56e90769081dc0e3b1585a3532848"
-    sha256 cellar: :any_skip_relocation, monterey:       "cea5f43e4c4f893c4a42db14325c9294755e0d871e61a6199e00ee3af07aa2a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b7689b611afee6371e6ca0b3bdc3227a971c1a2ad887c6f87e141cb78b0da8f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "85f5e600b7f6de08f2d6e607bf4a9a3d08d3ba91fad03a78b858c304fc1f8fcd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6fc9482c00c8a65d8aed9fda5b7e29be67266307a87af99b206d6dd7ec6196c9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6540f76903e638ce5b6795f7f03c6ba2da740517217bee70806e375aad5478f8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "917da9cee2f9371770202c6d8f65628658130faeadb82ea4cd123c9ddf423268"
+    sha256 cellar: :any_skip_relocation, ventura:        "b78b7e8a8b00c08a0bb05734835e21129d9d8eca581b4275f027cc0e96c78dd5"
+    sha256 cellar: :any_skip_relocation, monterey:       "c3f89a12047af98ea5a356c04f90571af0480ae8ff8f9f213326814905ff38c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "236a5dd4fcb3b6df817e9c2a60d136e52c9a5910af6fc3b7d0f30bd2c17d6433"
   end
 
   depends_on "go" => :build

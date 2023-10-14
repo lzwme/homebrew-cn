@@ -745,6 +745,7 @@ Homebrew-homebrew-core/Formula/c/certstrap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/ceylon.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cf-tool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cf.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/cf2tf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cf4ocl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cfengine.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cffi.rb, Homebrew/homebrew-core, 0
@@ -770,6 +771,7 @@ Homebrew-homebrew-core/Formula/c/cgvg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chadwick.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chafa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chain-bench.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/chainloop-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chaiscript.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chakra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chalk-cli.rb, Homebrew/homebrew-core, 0
@@ -2742,7 +2744,7 @@ Homebrew-homebrew-core/Formula/j/jcal.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jdnssec-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jdtls.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/j/jdupes.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/j/jdupes.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jed.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jello.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jellyfish.rb, Homebrew/homebrew-core, 1
@@ -5344,6 +5346,7 @@ Homebrew-homebrew-core/Formula/s/s3scanner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/s4cmd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/s6.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sad.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/saf-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/safe-rm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/safeint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sagittarius-scheme.rb, Homebrew/homebrew-core, 0
@@ -9475,7 +9478,6 @@ Homebrew-homebrew-cask/Casks/o/overflow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/overkill.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/oversight.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/overt.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/o/owasp-zap.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/owncloud.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oxygen-xml-editor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/p4.rb, Homebrew/homebrew-cask, 0
@@ -9965,7 +9967,6 @@ Homebrew-homebrew-cask/Casks/r/revolver-office.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rewind.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rhino.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/ricochet-refresh.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/r/ricochet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/ricoh-theta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rider.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/ridibooks.rb, Homebrew/homebrew-cask, 0
@@ -11079,6 +11080,7 @@ Homebrew-homebrew-cask/Casks/y/yuna.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yuque.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zalo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zandronum.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/z/zap.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zappy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zazu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zdoom.rb, Homebrew/homebrew-cask, 0
@@ -13460,6 +13462,7 @@ Homebrew-homebrew-cask-versions/Casks/wine-staging.rb, Homebrew/homebrew-cask-ve
 Homebrew-homebrew-cask-versions/Casks/xampp7.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/xmind-beta.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/xmind8.rb, Homebrew/homebrew-cask-versions, 0
+Homebrew-homebrew-cask-versions/Casks/zotero-beta.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/zulu11.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/zulu13.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/zulu15.rb, Homebrew/homebrew-cask-versions, 0

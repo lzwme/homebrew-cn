@@ -2,18 +2,18 @@ class Lazydocker < Formula
   desc "Lazier way to manage everything docker"
   homepage "https://github.com/jesseduffield/lazydocker"
   url "https://github.com/jesseduffield/lazydocker.git",
-      tag:      "v0.23.0",
-      revision: "cce9d40f43c08c42a401135467aec4500895b21a"
+      tag:      "v0.23.1",
+      revision: "1060e17731c80372335446eabe6a56ba4facd2b3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ea354ddd33e98027999fb1eedcf4e72756a471adb004f036f7fc687d176abc68"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "70c429e2b09656ade4f92a67d4cf8493f936f901b3b2ce1e895640db3cae5eeb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d665c6df48bb7d0fbfc88b0ac658bcf2e558fa6d08da5ef3c21320c7b1b82ecb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "85e22cc9cf5375ca9783c3d4db24cd31caad8674e5d656e670aa8f537c09bffc"
-    sha256 cellar: :any_skip_relocation, ventura:        "ca7cef3abdf7dfe64654b74fa55512766d7a020ea847b7e218323488c64f6f26"
-    sha256 cellar: :any_skip_relocation, monterey:       "4e58a7613f1f764e7553e47fdea38d562a5ec60ece5e1a0ede3440608ee4e114"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f57864905d2ac4a8540ce0384366e59cb196dd8655a52a645f77d83a3073a692"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4cb37fa117ff2ed6401c4ebcd829f11e3c3eac03ee47f600e26223df001e141e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8e0bc6a36e1b65005680c34e97a2f7076d2c59aa0ef8496b4855c1e7e5ecf6ea"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "81b7fd5275849e4d2b2830978cd4a92de59dcf94239f030c3ceda41d4308371a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "882b9b927868750845edaab7aee196524589dd821b7e2eb9db9b3d9ffdd18507"
+    sha256 cellar: :any_skip_relocation, ventura:        "3de9590c87dcab3d565c03d56bb9cf39f1dd3a9a30374db08ee1ac9ffbe45f13"
+    sha256 cellar: :any_skip_relocation, monterey:       "48c4a284a8af8838932d03b0b8341af960f18bb9d6db5fb858cf251ddab80c59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9120342d0e2900fbdac8d02d130c506d6144e75cfe13adbe5d0212d45e4287df"
   end
 
   depends_on "go" => :build

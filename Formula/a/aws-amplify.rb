@@ -3,18 +3,18 @@ require "language/node"
 class AwsAmplify < Formula
   desc "Build full-stack web and mobile apps in hours. Easy to start, easy to scale"
   homepage "https://aws.amazon.com/amplify"
-  url "https://registry.npmjs.org/@aws-amplify/cli-internal/-/cli-internal-12.6.0.tgz"
-  sha256 "0ca64ac223ff8a0a7b31f1583fac555ebc3e32c9df9753bb0d2253c119bf424c"
+  url "https://registry.npmjs.org/@aws-amplify/cli-internal/-/cli-internal-12.7.0.tgz"
+  sha256 "b60a77ace3c7fdf022d94e27fa2be177ad6d320650a5bbf26d806269514b4d30"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "930ec36915b9bd537365a98ac22ca2e1ff4e1e336bba7a79c5a958760574b7b3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "930ec36915b9bd537365a98ac22ca2e1ff4e1e336bba7a79c5a958760574b7b3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "930ec36915b9bd537365a98ac22ca2e1ff4e1e336bba7a79c5a958760574b7b3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2203145c06ade7113d6faf8dbdc0e3771b87aab40de336964daf6db84d3058eb"
-    sha256 cellar: :any_skip_relocation, ventura:        "2203145c06ade7113d6faf8dbdc0e3771b87aab40de336964daf6db84d3058eb"
-    sha256 cellar: :any_skip_relocation, monterey:       "2203145c06ade7113d6faf8dbdc0e3771b87aab40de336964daf6db84d3058eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4406702f0ea5f0ef0b5b1a658345620ae5a7e0012cadc0e647bc5c61fbe896b4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "59ca541307ca48157e74ad7a299534852b8c3ce4ff324456005d45b6977f4b53"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "59ca541307ca48157e74ad7a299534852b8c3ce4ff324456005d45b6977f4b53"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "59ca541307ca48157e74ad7a299534852b8c3ce4ff324456005d45b6977f4b53"
+    sha256 cellar: :any_skip_relocation, sonoma:         "92621155009c53b19652bafe07479a6c3fa754de6eec839baa4972093d4e0794"
+    sha256 cellar: :any_skip_relocation, ventura:        "92621155009c53b19652bafe07479a6c3fa754de6eec839baa4972093d4e0794"
+    sha256 cellar: :any_skip_relocation, monterey:       "92621155009c53b19652bafe07479a6c3fa754de6eec839baa4972093d4e0794"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ddafd6059fb3b1cfdae6020e4e1ef3a12da774bf9893bc78d1f36df6ca999bdc"
   end
 
   depends_on "node"

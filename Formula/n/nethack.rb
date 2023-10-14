@@ -3,11 +3,20 @@
 class Nethack < Formula
   desc "Single-player roguelike video game"
   homepage "https://www.nethack.org/"
-  url "https://www.nethack.org/download/3.6.7/nethack-367-src.tgz"
-  version "3.6.7"
-  sha256 "98cf67df6debf9668a61745aa84c09bcab362e5d33f5b944ec5155d44d2aacb2"
   license "NGPL"
   head "https://github.com/NetHack/NetHack.git", branch: "NetHack-3.7"
+
+  stable do
+    url "https://www.nethack.org/download/3.6.7/nethack-367-src.tgz"
+    version "3.6.7"
+    sha256 "98cf67df6debf9668a61745aa84c09bcab362e5d33f5b944ec5155d44d2aacb2"
+
+    # add macos patch, upstream PR ref, https://github.com/NetHack/NetHack/pull/988
+    patch do
+      url "https://github.com/NetHack/NetHack/commit/79cf1e902483c070b209b55059159da5f2120b97.patch?full_index=1"
+      sha256 "5daf984512d9c512818e0376cf2b57a5cd9eefaa626ea286bfd70d899995b5de"
+    end
+  end
 
   # The /download/ page loads the following page in an iframe and this contains
   # links to version directories which contain the archive files.
@@ -32,12 +41,6 @@ class Nethack < Formula
   uses_from_macos "flex" => :build
   uses_from_macos "ncurses"
 
-  # add macos patch, upstream PR ref, https://github.com/NetHack/NetHack/pull/988
-  patch do
-    url "https://github.com/NetHack/NetHack/commit/79cf1e902483c070b209b55059159da5f2120b97.patch?full_index=1"
-    sha256 "5daf984512d9c512818e0376cf2b57a5cd9eefaa626ea286bfd70d899995b5de"
-  end
-
   def install
     # Build everything in-order; no multi builds.
     ENV.deparallelize
@@ -47,9 +50,9 @@ class Nethack < Formula
 
     cd "sys/unix" do
       hintfile = if MacOS.version >= :mojave
-        "macosx10.14"
+        build.head? ? "macOS.370" : "macosx10.14"
       else
-        "macosx10.10"
+        build.head? ? "macosx.sh" : "macosx10.10"
       end
 
       # Enable wizard mode for all users
@@ -61,13 +64,16 @@ class Nethack < Formula
         s.change_make_var! "HACKDIR", libexec
         s.change_make_var! "CHOWN", "true"
         s.change_make_var! "CHGRP", "true"
-        s.gsub! "#WANT_WIN_CURSES=1",
-                "WANT_WIN_CURSES=1\nCFLAGS+=-DVAR_PLAYGROUND='\"#{HOMEBREW_PREFIX}/share/nethack\"'"
+        if build.stable?
+          s.gsub! "#WANT_WIN_CURSES=1",
+                  "WANT_WIN_CURSES=1\nCFLAGS+=-DVAR_PLAYGROUND='\"#{HOMEBREW_PREFIX}/share/nethack\"'"
+        end
       end
 
       system "sh", "setup.sh", "hints/#{hintfile}"
     end
 
+    system "make", "fetch-lua" if build.head?
     system "make", "install"
     bin.install_symlink libexec/"nethack"
     man6.install "doc/nethack.6"

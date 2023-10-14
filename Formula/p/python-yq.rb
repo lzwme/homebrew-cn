@@ -8,14 +8,14 @@ class PythonYq < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6574c6cbda104497526069a2456d5d1240b8a6be3ed6e825103311a4d21ae146"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d0f4e9b7a3f4dacc8cd3146dc8bc97897531557fd42ed0f689eba7a576f81f88"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ba2b2b9aecd31d9584bb01ce229e0d9627a0400a633a74d6ab58444bbe56e91"
-    sha256 cellar: :any_skip_relocation, sonoma:         "75752c0236ad1b8e11bff43d60885fa6390003cf1c47bed3ced5fb3ae8bdfcb4"
-    sha256 cellar: :any_skip_relocation, ventura:        "4ec6a60524dedfd296b4376c3455feefb72ad04cdeee7b6f32720989c7446739"
-    sha256 cellar: :any_skip_relocation, monterey:       "2f3757e2c3a42b12f581e335a01c47fda679c4c9cd21f807d5e330ea65203b70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "73863bb1cda14a115569a3086daa1e8a6bdd16c84418403b967d589b1a0177c5"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "534922d4dc796a3527002c9fabfc51f01cf775c021adf99bfb2b959ece405779"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d438c01ebfccf527e7a51373f51f9cea74064d50cd86f894c6b95b89377314b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c6c73cb19b674b6771f5917086015f8c14ea5fe4a1fdc7da10efdefb1ac83ccd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "633e99d25ff61721a19e1289bf9760577f1ec48eb62cba1feccd04e80fb1f25e"
+    sha256 cellar: :any_skip_relocation, ventura:        "4a9f3f1f2eabcd6290e762106b89bc4f04dd7d31513411fb61a7c4208a501528"
+    sha256 cellar: :any_skip_relocation, monterey:       "d03392dc88c85d2fa5b25c0c69528f44fb04141f747c0a64cd08500496215637"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a7f3236ba42735197d91fdd43b650059d2e9c00475fb0f87d13a7faacca0ade"
   end
 
   depends_on "jq"
@@ -37,6 +37,16 @@ class PythonYq < Formula
 
   def install
     virtualenv_install_with_resources
+
+    python_exe = Formula["python@3.11"].opt_bin/"python3.11"
+    register_argcomplete = Formula["python-argcomplete"].opt_bin/"register-python-argcomplete"
+    %w[yq xq tomlq].each do |script|
+      generate_completions_from_executable(
+        python_exe, register_argcomplete, script,
+        base_name:              script,
+        shell_parameter_format: :arg
+      )
+    end
   end
 
   test do

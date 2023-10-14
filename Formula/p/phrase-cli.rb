@@ -1,20 +1,18 @@
 class PhraseCli < Formula
   desc "Tool to interact with the Phrase API"
   homepage "https://phrase.com/"
-  url "https://ghproxy.com/https://github.com/phrase/phrase-cli/archive/refs/tags/2.12.0.tar.gz"
-  sha256 "d97760500a4dd53629d320daec4275ae7272d3f013e08151265e4ec4dd8c3b5e"
+  url "https://ghproxy.com/https://github.com/phrase/phrase-cli/archive/refs/tags/2.13.0.tar.gz"
+  sha256 "b870686b5e2ce6f670bf419f053cec729615f424cfdee1124ba9e8de26c32c87"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "098f153cecbb17aed8447160a2c489a7361b196e74aa3fb01f50589c98566b5b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dd1c94e7338d717e81f63fad2db4f5436313e3ec2879147c7482f840c13191d8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4633343ced3d9bfa4182df7d1c4edbea4e1142b78fa88bea918db5741ee3043a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "847c45e420b560799981f84d1f1c39eb05a81ecb1d15b8a14ac706e264d6a0db"
-    sha256 cellar: :any_skip_relocation, sonoma:         "574c476069c5f6a635519613741f09d50f91d34f4089c974422e2064eb4deff8"
-    sha256 cellar: :any_skip_relocation, ventura:        "57269b4916b4efbc1ab800d25b0f1086bf35850abecce85fedbf1a1092b54161"
-    sha256 cellar: :any_skip_relocation, monterey:       "0cfad640bed0d5e253100c8d459f29545fbb8051e342ffb33dc8ced4e3f1b2f9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "38e57ee4955267be72d981ad787737ea0a156cbc0e38836148f438c2bfaed233"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94720ad4a49f71cd1e65c91586012f0de363dcac27130e67fb35e1c946359892"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "26018f6128262b9951284ce6261537dee2b9018c89d0439785ff9f9a659fd9ea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e8de9f8bc50f0f10f37c2728f82aac902b4a6125eb90aa1437ea5008af7d475"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3c186003f861984b5027c37a373d3a0079c36ab387edb612417eb13a92163c5e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c64ec58c4686a946f8ac7ecca47dd78b73d81e3d5c70d11735ab278662e8d682"
+    sha256 cellar: :any_skip_relocation, ventura:        "0cd0313bccd1b7668c98df3492b12ddead628e8a18e943e68b6f42016176b8da"
+    sha256 cellar: :any_skip_relocation, monterey:       "118fc1657ee926a35c08181a86fbadf40486571a7beee4d6797e0613b7d659d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4856e8104b90261be7a149b0e47e859c23251feb7409813ee52917640f67d9aa"
   end
 
   depends_on "go" => :build
