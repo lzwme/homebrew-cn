@@ -3,20 +3,19 @@ class Animdl < Formula
 
   desc "Anime downloader and streamer"
   homepage "https://github.com/justfoolingaround/animdl"
-  url "https://files.pythonhosted.org/packages/95/f2/27b66201f95d9d5cb1ac5d012d42aa09ef68cca965f039ff4e82f7ea2b3b/animdl-1.7.24.tar.gz"
-  sha256 "be531bbeafa0ee48a74405f6356691d2a1073ebd6c1d4169142a6948723450ba"
+  url "https://files.pythonhosted.org/packages/6b/4f/31a59316db25ce73335883cef54381a6865f1d78d8523b72e94b1a475c60/animdl-1.7.26.tar.gz"
+  sha256 "8d373b026b15a146c76c3f6210a1c778aad03bca9ed955ebd6de8cfafe7a4a80"
   license "GPL-3.0-only"
   head "https://github.com/justfoolingaround/animdl.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c7e0b839fa6f5bf0d5214d1a32eec64bc01e23db7b39c622a20d2546247f0605"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e945ecb233147f325c5804d46b55181d5a7d894a1b1fda07ed8b607f8e446e0b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "807db811fcd9170fb96b7ce855ab4c04c50b9ad1a63c2310ae914538cd6a2f5a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0859221a0407440e82330e80e6fe54d5ef1a9fd1af163624ff41246db80f0f69"
-    sha256 cellar: :any_skip_relocation, ventura:        "90a3356c825a409a7e9f4d412b5e9bfb0a2123b18206f7fa5c156de2ed962b58"
-    sha256 cellar: :any_skip_relocation, monterey:       "2bcfc31c18b75f9319cfac9c4ef356bffe1e358aca9d199e94444ee5d7a68850"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48086f27e403b732ce67c4bc791cf3f2d873c1c60b3b1e34e91b261e018d9055"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "82fb5dc2e4ba1ba0acba67ddea2c891b9403d720c5a663acbcbfc9382e96e68f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ec1cb1bbc73a56f9584227cc4186faf57ed4836599e32266d8ae9adf3e11ca90"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "83fdf9f9b08b9684f30e78844848eeb578a21a117c13ad992e3b4ea26eb58fe7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9d1669d50eb7648fa48d6d4d03a606e97d7c938bb9d1b4851259462803c2c0cc"
+    sha256 cellar: :any_skip_relocation, ventura:        "765b00f31d7001df74bd0d2308f81f1e7bc92c2a4d0a7f1e03a67c3e69c0956c"
+    sha256 cellar: :any_skip_relocation, monterey:       "3b9588c6411efdd267b743d5b0b37c750a4ed3d2243ca27c752b7812e044ea4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf55e1189bc97da60345c1068a9562af7cea114c21dd7f180775d89daf659bae"
   end
 
   depends_on "pygments"

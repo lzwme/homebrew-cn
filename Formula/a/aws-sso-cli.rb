@@ -2,21 +2,19 @@ class AwsSsoCli < Formula
   desc "Securely manage AWS API credentials using AWS SSO"
   homepage "https://github.com/synfinatic/aws-sso-cli"
   url "https://github.com/synfinatic/aws-sso-cli.git",
-      tag:      "v1.13.1",
-      revision: "7c08e58ad2a2c941bfa42ad98b0429f3fefa1ca7"
+      tag:      "v1.14.0",
+      revision: "4415620e18eef221579f334f2d0687a605b54b72"
   license "GPL-3.0-only"
   head "https://github.com/synfinatic/aws-sso-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5d2dbbedb92c56dd6cbc5a7a2a3a231026293a9260817a91a47769f40f9aac3e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "58dbeaad8daba32d282ef12874afe5306483c8b0caf64c457d338712fb45e484"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "67c24a08767e6e6ff3109343e4dbecd4f4a4b5900844df5f93367f267da2642f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "016921026e3dcfe308a4f52711e3cd42a371441450c8e03d87fcc1d1242b671f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6c8424181c2893f9c8b9216e98370de9b5dafec6e204093cfbc1427e1da37051"
-    sha256 cellar: :any_skip_relocation, ventura:        "060323302527f299e1561481a1e1af2ddfab04c69b3687f9db3e1f756e7095c5"
-    sha256 cellar: :any_skip_relocation, monterey:       "eee8531702ec69dfcbc356494aff250389f6fcdb5e7e6ddbfe4136ce81e6fe68"
-    sha256 cellar: :any_skip_relocation, big_sur:        "635e730208a6dd5213ca78ed20c1978910febdf3de3ac1ed0cc0c5d2f451cee0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "416552e81741edb2a9a96ec1dd2498533c2ae9396ae7bfd4ab569461f0b95473"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "34c3a81ae6dd2675837db2d334dfa704033d2363ceb4580c46af9517c60b5b99"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b32d92c9b3d72e2ade703ccb5860289ab77a550173a5b71b014f2b09e1c75f85"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "895f09511438d62d7229d8a0c0413bb76b39d61c65942e80bb28a758a5311e21"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fe9addb373cf238241ee3fa614d181f1334987538e29aec27a1f6f19fd4b801b"
+    sha256 cellar: :any_skip_relocation, ventura:        "f9b6e15e199a9318baa7550ed341da77f8f5c344d4adda0f78b3e811fa3f84ab"
+    sha256 cellar: :any_skip_relocation, monterey:       "6e2673d4923ddb21784ee5576f05a7ac6880704b15cc4923fbc69a0198791298"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "30f417358355e9cf44bd03b14f64ad77bad96fdcfb6fec707a8cdb5260f4d6e2"
   end
 
   depends_on "go" => :build

@@ -1,7 +1,7 @@
 class X11vnc < Formula
   desc "VNC server for real X displays"
   homepage "https://github.com/LibVNC/x11vnc"
-  license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
+  license "GPL-2.0-or-later" => { with: "x11vnc-openssl-exception" }
   revision 1
   head "https://github.com/LibVNC/x11vnc.git", branch: "master"
 

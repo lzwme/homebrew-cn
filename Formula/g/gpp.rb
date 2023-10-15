@@ -6,7 +6,8 @@ class Gpp < Formula
   license "LGPL-3.0-only"
 
   livecheck do
-    url "https://github.com/logological/gpp.git"
+    url "https://files.nothingisreal.com/software/gpp/"
+    regex(/href=.*?gpp[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do

@@ -3,7 +3,7 @@ class Lsof < Formula
   homepage "https://github.com/lsof-org/lsof"
   url "https://ghproxy.com/https://github.com/lsof-org/lsof/archive/refs/tags/4.98.0.tar.gz"
   sha256 "80308a614508814ac70eb2ae1ed2c4344dcf6076fa60afc7734d6b1a79e62b16"
-  license "Zlib"
+  license "lsof"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f1e5da9db48640f03adb5bdb7eb23e661d8c37ad2398d56eaac90c6791872c1d"

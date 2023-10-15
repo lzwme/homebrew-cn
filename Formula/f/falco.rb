@@ -1,21 +1,19 @@
 class Falco < Formula
   desc "VCL parser and linter optimized for Fastly"
   homepage "https://github.com/ysugimoto/falco"
-  url "https://ghproxy.com/https://github.com/ysugimoto/falco/archive/refs/tags/v0.24.0.tar.gz"
-  sha256 "91f8f4849891e72a5ee732e10e134e81c565df486715b5fca746f4310aa4c9cd"
+  url "https://ghproxy.com/https://github.com/ysugimoto/falco/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "67a90ea8f73cbafd5df1e17094e5aa897d1a1a65039bec2bb875dabf6ddeb9a7"
   license "MIT"
   head "https://github.com/ysugimoto/falco.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3e47b5b6348dad4bb035855f24931ad3b689f0d2e280961daa8dff2bcb05e420"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "654a8161c2922f3f300c9652e5940bfba19abff5cba06945376f2023ee9573b0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fe18424315a0c16dc5c6820bd1e5332b2165b05186641e077b7e5f715635f2c2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5141fcd9e8a9f74051f31880c0f54dfdb4d31dc2bc379e5acd1bbeab4d4bedd8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0476b7cfa96565b67af027440a0da85cf19e4b309b272e85d8d954222a0ac5fc"
-    sha256 cellar: :any_skip_relocation, ventura:        "e3544996d0f846c98f6a511fa62b7ba73a00eebc5f353c9f3ea9cd040a8764a2"
-    sha256 cellar: :any_skip_relocation, monterey:       "ead096cd6b94190c35fa5e9b0d1bf2c8af34eb81565a421e043268870b147a31"
-    sha256 cellar: :any_skip_relocation, big_sur:        "20c9204e3e05a4c79e39aaa7953913535c64c28965748b3f1e697ade301f46b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "178f7ee9d403f808e2905a3cb8df7335c372026e22bb9594dbbd6d965573d488"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6a1347e6d4abb94eaf4b8da65507fb087e0b8538e2a8149ccce8e7f2c288d0dd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3f0ee8600f3339c700ed1d8a4ff15db13cac3055efc65b5bf847874a03bf30cf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "211dec2e3dd8940f5667a746a9fe5c186c06009b85fc59dd68b50256ac7f4b5b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4a979febc2d978c2142859c3bf88a7231acf806aedc580b87684a28718cdd7f4"
+    sha256 cellar: :any_skip_relocation, ventura:        "e6d3e886ce565f386e052b1aef8ff041023d0ac1015c408fbd268f8cd14f5161"
+    sha256 cellar: :any_skip_relocation, monterey:       "23acd9e08a762ac18a3631b67f8a332f907447bef0f09d0bb76cde05ea422ac0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c551914eb48210de5653f7c2d67810cb998ab2cb70e924fd275a1ddfbac66a96"
   end
 
   depends_on "go" => :build

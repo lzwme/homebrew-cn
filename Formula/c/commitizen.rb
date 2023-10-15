@@ -3,20 +3,19 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/6c/10/12363fdce5a2505994f2b8193e2f0e5722600eaf554d67fe607e9ffbc23e/commitizen-3.10.0.tar.gz"
-  sha256 "52c819e7b474520330c3d554e79cb1b0172f2d9e0b8c32902df9a69971a7cd5b"
+  url "https://files.pythonhosted.org/packages/ac/20/a2555498eabf54bc415495ee7a491455e4e5eae5ab61f16cdb49953a3801/commitizen-3.10.1.tar.gz"
+  sha256 "a185f79f92697f612bcea9ac9036dd21eadb66b2901ef5e1f99ab23b32178825"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a77e3bc76f55c6359ab229b2a76efb2f861716b086a99ea57c198e0be2b2b727"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a73693a43abfe4d0e7311d22d8c3ab2fa2c3f2843a501dbd5647926916a474fb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7803bee1819c0053357565a7687921428801ef033a3e71b276e3a30cfd1fd9f7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "03fc59477a244a59381b0220b2ff7024b64966d2b5965ef29e6636e2926e2e1c"
-    sha256 cellar: :any_skip_relocation, ventura:        "e6a7f08e394070c0d6d76ad1333d19ba59f2f7834fb8d7b720c17fef63ce47cd"
-    sha256 cellar: :any_skip_relocation, monterey:       "19653daaaac5aab0013418c6d2c4f4e2c6013ac3ff04ccc159b2580bab0cf154"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7151f742ed8bdab05ccac2058ea54d1f5d1f51f0efff2e571b6e0a1bc78752a0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4ac1d0cd3fc53ab8f81d6fed8b754d01eae37fd986c0447b056e15db9a2cc818"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb47f51d19f18f0156a5fa2113b54bba0c9d91240b3c3d691a32236c27ec07d3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca613b5901b440fd21fd30208d5fb342189dd3945041f33525dfafdbf9fbc2f6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "05473b22d7df1e224ae460a2d3141cc41a8101ca98b8c53d74e9c761274a9e44"
+    sha256 cellar: :any_skip_relocation, ventura:        "d145da98b2ab8b9fbdb81c601ec3c6a521506ff0cecb52f7f1a4f7270a4791a3"
+    sha256 cellar: :any_skip_relocation, monterey:       "c6c01a3432113b1bf3c1aefd6de7578252a50efe72a65ce4e94fa223d38784fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1be7577a0eb757603c5fb5744f2528631bee54e96ee3a0a3d65223700f7f47ce"
   end
 
   depends_on "python-argcomplete"
@@ -26,8 +25,8 @@ class Commitizen < Formula
   depends_on "pyyaml"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "colorama" do
@@ -76,8 +75,8 @@ class Commitizen < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/5e/5f/1e4bd82a9cc1f17b2c2361a2d876d4c38973a997003ba5eb400e8a932b6c/wcwidth-0.2.6.tar.gz"
-    sha256 "a5220780a404dbe3353789870978e472cfe477761f06ee55077256e509b156d0"
+    url "https://files.pythonhosted.org/packages/cb/ee/20850e9f388d8b52b481726d41234f67bc89a85eeade6e2d6e2965be04ba/wcwidth-0.2.8.tar.gz"
+    sha256 "8705c569999ffbb4f6a87c6d1b80f324bd6db952f5eb0b95bc07517f4c1813d4"
   end
 
   resource "zipp" do
@@ -87,6 +86,14 @@ class Commitizen < Formula
 
   def install
     virtualenv_install_with_resources
+
+    python_exe = Formula["python@3.11"].opt_bin/"python3.11"
+    register_argcomplete = Formula["python-argcomplete"].opt_bin/"register-python-argcomplete"
+    generate_completions_from_executable(
+      python_exe, register_argcomplete, "cz",
+      base_name:              "cz",
+      shell_parameter_format: :arg
+    )
   end
 
   test do

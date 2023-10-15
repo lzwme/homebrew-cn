@@ -8,16 +8,18 @@ class Dxpy < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "848f50ea02af3cec594949a5162fa8798bf54b489ec4866400d46deaf8c0c036"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "73dc74364f0978fad82eb8f44e35a2a0953e6ca0fc486490bb39f78f4f4c880c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bd4f9641c0fa51c7830a0429a9f80b1cbd5a49b17134e6057555aa55bcf4dfea"
-    sha256 cellar: :any_skip_relocation, sonoma:         "063bba9b7909db75274314db479e3380f4b31f5246e398eec1c12ba30ee4a392"
-    sha256 cellar: :any_skip_relocation, ventura:        "ac3866678fb563513cb0f6e2bbb35c0e7b15046486c95e6affaf9809b30bf6af"
-    sha256 cellar: :any_skip_relocation, monterey:       "9f350dd8d0c362a7540ae9ebeeacc4beae8069a5b7c6137a68e2753f9d0d4faa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa2babc2252b6d27b200e5dee8e65770de2eb1a1d147c64abbeac705a01df1ba"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c304c1cb1a890e06ad7e1e08d963e45ddf27093785d1ee111c21a8c30caa8725"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0048e36b721c4ca927fa2e563168691c4d691e809a5a2fbdabe5415adf2658ec"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "302d70b8fc52c7d9a175ec5ceccdbc2966d6271be31c64301f969ae4fcb4bfdd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fcc15f616dcadb7cb3c36789e80356ec32e5c7cc5672ab5cb20ac300a1132c66"
+    sha256 cellar: :any_skip_relocation, ventura:        "2cae6423d2e1d6aeeb1bd34c8f8b06d93db2a6dbe47d8839f754e42410018754"
+    sha256 cellar: :any_skip_relocation, monterey:       "832a81b6b17231dacb3386d2c58d1f22359b525fe52b23fc2da1459c19afca2d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "671d1a2b20084d4f9391fc6c5c55aff14ada1402303e2039bf67798285e6feba"
   end
 
   depends_on "cffi"
+  depends_on "python-argcomplete"
   depends_on "python-certifi"
   depends_on "python-cryptography"
   depends_on "python-setuptools"
@@ -28,11 +30,6 @@ class Dxpy < Formula
 
   on_macos do
     depends_on "readline"
-  end
-
-  resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/1b/c5/fb934dda06057e182f8247b2b13a281552cf55ba2b8b4450f6e003d0469f/argcomplete-3.1.2.tar.gz"
-    sha256 "d5d1e5efd41435260b8f85673b74ea2e883affcbec9f4230c582689e8e78251b"
   end
 
   resource "charset-normalizer" do

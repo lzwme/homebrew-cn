@@ -7,13 +7,14 @@ class Duckdb < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0c05b82fba640aa6b7feba92f7a552e8b9fc778a670efd20c0c5b8130533fa93"
-    sha256 cellar: :any,                 arm64_ventura:  "7727781d93bae38d75482c5af3056402f2890a4b7b395cb338830d7ad4f4913a"
-    sha256 cellar: :any,                 arm64_monterey: "bccad7e915a188c5de6340d31d218aa8671ec678dbc2dee6351f833e3019fcab"
-    sha256 cellar: :any,                 sonoma:         "5b8287eadff7b9e449b55b7ebe622116c4d38d5e0d18d123abcb6e309f483284"
-    sha256 cellar: :any,                 ventura:        "443c540f1e6c79dd83ed435eec82883d0d0cfae66ed78bca0fed7e53c9fa0552"
-    sha256 cellar: :any,                 monterey:       "b060aca1d90b40b81c22d8b8c52c040ad466574842865ee8d4d9f60213e0b783"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d1ca0c71904e9b776df201f3bc4815123408b7400782014c22b03c1179f2734"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "179d8717e57225098d3607306baad2342fdc023a4a3a61fc25327b887c4ac279"
+    sha256 cellar: :any,                 arm64_ventura:  "18dfc4a1e2cc91357d52ace7937ea35ddc9cf2fbd9714e1df209215097902688"
+    sha256 cellar: :any,                 arm64_monterey: "7c766051d957ab13294a90cc674e9bff53f60f933f7bb4e6d1186064e0126634"
+    sha256 cellar: :any,                 sonoma:         "21d7b8b4f4d147849f0a3ece8164ab82943a6ea0c6d82710e597135fcd418243"
+    sha256 cellar: :any,                 ventura:        "556e73ca20a8552abcd04107f04a91fc6fd2c709aaa6a52b5686bb357d672aeb"
+    sha256 cellar: :any,                 monterey:       "c11c19aae255c2875cafee6fb07a7f7fbbabb9e7413b851f2495db7ab41576e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "72fe93d4c9bd0335616c5f4cbf4025b8dfd6f8ab38583f22697b5e292a1edca1"
   end
 
   depends_on "cmake" => :build
@@ -22,7 +23,7 @@ class Duckdb < Formula
     mkdir "build"
     cd "build" do
       system "cmake", "..", *std_cmake_args, "-DBUILD_EXTENSIONS='autocomplete;icu;parquet;json'",
-             "-DCMAKE_LTO=thin", "-DENABLE_EXTENSION_AUTOLOADING=1",
+             "-DENABLE_EXTENSION_AUTOLOADING=1",
              "-DENABLE_EXTENSION_AUTOINSTALL=1"
       system "make"
       system "make", "install"

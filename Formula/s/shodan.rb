@@ -3,21 +3,19 @@ class Shodan < Formula
 
   desc "Python library and command-line utility for Shodan"
   homepage "https://cli.shodan.io"
-  url "https://files.pythonhosted.org/packages/db/14/2e16620742e5d56eb6035c0bbf16ae04a8dee50d67d09d8df4e196d53184/shodan-1.30.0.tar.gz"
-  sha256 "c9617c66c47b87d4801e7080b6c769ec9a31da398defe0b047a6794927436453"
+  url "https://files.pythonhosted.org/packages/0c/b8/60c2a98f767fb991ba9452551639e8a43db9269af860feac259e636e0719/shodan-1.30.1.tar.gz"
+  sha256 "bedb6e8c2b4459592c1bc17b4d4b57dab0cb58a455ad589ee26a6304242cd505"
   license "MIT"
-  revision 1
   head "https://github.com/achillean/shodan-python.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7bceb629ccdbce063f49edf5e9edbf77a98283bec996ab722e53eb9fc692a775"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b72af651d2d5a9da846197a30cb9594002b294da76698e2210a11f0d5997185c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3703c32e232aae79a4d717dfc407a66047481e4fe44159478adbcc38b1102966"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ca18abe7e0ac341beb7733cae620b02b6030461dbc6f10457f15c7d3c9a85070"
-    sha256 cellar: :any_skip_relocation, ventura:        "2d7ddf7a2def2ff16a11129fd4b8b9ee30687c9fffe4ff66cd9bcca7cc1019b6"
-    sha256 cellar: :any_skip_relocation, monterey:       "4eea69d3128e192c8e58ed84f49049f4fe030570c0581414341da133573b1f87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "62124a2c168727b63895bb8102381f9655527d6ee6e31804c164046471fd3b7f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3e10112522d0eca1d201fa7f05715fc662e5ee571891ae98b23abb753f5a721b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5a1f155722558fa95ccfc6668ccd1ab985cf64a62d7274717e3861f7d96ab4ea"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ec5df864c60facd25ca92abbcf95895d80343b0accffc0448d56c9e45a42c7c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a9f6bb6ed5951d30c86fa00c58077b86ff65c21ea1ea1caf6ca79c18fde0b6a0"
+    sha256 cellar: :any_skip_relocation, ventura:        "b86f05f5957dd3af2c2780153aa79b8ac20959273aa4bd33224b3e9456dd4b32"
+    sha256 cellar: :any_skip_relocation, monterey:       "d2f2bb1110bce7cda4daae51a9775a0544e4a7b6585b8541c8ebad7e9aab4430"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc117ef75a836bb9d72852a9abedbaf9ce5eaace8ae925d5c4abe2814b687ef5"
   end
 
   depends_on "python-certifi"
@@ -62,8 +60,8 @@ class Shodan < Formula
   end
 
   resource "tldextract" do
-    url "https://files.pythonhosted.org/packages/ba/7a/dc3ffc0e333d33e8ccb63a14adc40180c29d89490a25ebe9f9ef01605c51/tldextract-3.6.0.tar.gz"
-    sha256 "a5d8b6583791daca268a7592ebcf764152fa49617983c49916ee9de99b366222"
+    url "https://files.pythonhosted.org/packages/1e/50/302c6a51837578a7504344bb0aab66f1f0c4d3b11c4dbd8cb18552f4cb0f/tldextract-5.0.0.tar.gz"
+    sha256 "959965f3a4715105c598ef44ef624db9c9f85ee201cbfc2e063a51f8f19b1a5b"
   end
 
   resource "urllib3" do

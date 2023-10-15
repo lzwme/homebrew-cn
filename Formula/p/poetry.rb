@@ -6,24 +6,23 @@ class Poetry < Formula
   url "https://files.pythonhosted.org/packages/c6/5f/f60c900299e05736900a732f079a306b762d1343e47d965862d140b6e550/poetry-1.6.1.tar.gz"
   sha256 "0ab9b1a592731cc8b252b8d6aaeea19c72cc0a109d7468b829ad57e6c48039d2"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/python-poetry/poetry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "746d9fc4d3b250f2fabaae71fe32f10d18101477c86fd4ef4e48563e26c5bece"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fdf0fee189d110ed2e6f08d05a1d58e7549a5883d4d13860600ad380184883b4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6a05d79d53fec1563a32c9ae44271f544b80b764d81f35e3ad1a2b380925bbde"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b6e45ae240ec4e45bbd9f0a75ca29301bb2626c2ff728b86bbb1232667ef02de"
-    sha256 cellar: :any_skip_relocation, ventura:        "03baffcfbdfee2a492bade82975b63100bb1607d7d7fa766b4776e471a8ec55f"
-    sha256 cellar: :any_skip_relocation, monterey:       "5643ff7374a7f940e912351e8e1767d47afe0cc9a9955c6c5800e4c4415dc350"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "302c743cf16cc9bf37d44021a6a577e75fe12daa32cd19e1834c0d2d67d5428e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "01b83702899d9e6265bf29a63b0b603d316d8c3d56d2306f43f43b3965851703"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "47238061c6a24dc89bf5985488698401c3ea99aa9385bf3f163bb0a37fbfaca9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7e111aa45e545ea9f0d6a6ba3a906b2443907ac3ea55e8e67a47439c3fcc0074"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3b74708f518f362a38a14fdb288a2f27088485b782df29098fbe9e5b754d95c0"
+    sha256 cellar: :any_skip_relocation, ventura:        "565cc68a95c7672656855a05eec2e4f7401a25761d4c74d9a23c04cd69f894fa"
+    sha256 cellar: :any_skip_relocation, monterey:       "c6a9cf7de6e1043407bcfc80ceea9401cd34640d17cc68764d5c244bb942f076"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cac003aae24910b46e159fef5db4716df574c70b63445809761e0c9a01e3999e"
   end
 
   depends_on "cmake" => :build # for rapidfuzz
   depends_on "cffi"
   depends_on "keyring"
   depends_on "pycparser"
-  depends_on "python-build"
   depends_on "python-certifi"
   depends_on "python-packaging"
   depends_on "python@3.11"
@@ -32,6 +31,11 @@ class Poetry < Formula
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
     sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
+  end
+
+  resource "build" do
+    url "https://files.pythonhosted.org/packages/de/1c/fb62f81952f0e74c3fbf411261d1adbdd2d615c89a24b42d0fe44eb4bcf3/build-0.10.0.tar.gz"
+    sha256 "d5b71264afdb5951d6704482aac78de887c80691c52b88a9ad195983ca2c9269"
   end
 
   resource "cachecontrol" do
@@ -104,14 +108,19 @@ class Poetry < Formula
     sha256 "5c5d0a3b48ceee0b48485e0c26037c0acd7d29765ca3fbb5cb3831d347423220"
   end
 
+  resource "pyproject-hooks" do
+    url "https://files.pythonhosted.org/packages/25/c1/374304b8407d3818f7025457b7366c8e07768377ce12edfe2aa58aa0f64c/pyproject_hooks-1.0.0.tar.gz"
+    sha256 "f271b298b97f5955d53fb12b72c1fb1948c22c1a6b70b315c54cedaca0264ef5"
+  end
+
   resource "pyrsistent" do
     url "https://files.pythonhosted.org/packages/bf/90/445a7dbd275c654c268f47fa9452152709134f61f09605cf776407055a89/pyrsistent-0.19.3.tar.gz"
     sha256 "1a2994773706bbb4995c31a97bc94f1418314923bd1048c6d964837040376440"
   end
 
   resource "rapidfuzz" do
-    url "https://files.pythonhosted.org/packages/44/19/a20bd17379cca3e0a63590a6473ecf6cdaa8351688de775afefffc701a79/rapidfuzz-2.15.1.tar.gz"
-    sha256 "d62137c2ca37aea90a11003ad7dc109c8f1739bfbe5a9a217f3cdb07d7ac00f6"
+    url "https://files.pythonhosted.org/packages/5f/ec/8428b62c29dc9841acde7e2905d417a654d33c9eb59f9439d06af21d7bff/rapidfuzz-2.15.2.tar.gz"
+    sha256 "bfc1d38a7adcbe8912f980a5f46f27a801dd8655582ff0d4a2c0431c02b7ce33"
   end
 
   resource "requests" do

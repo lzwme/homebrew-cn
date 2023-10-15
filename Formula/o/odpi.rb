@@ -1,20 +1,18 @@
 class Odpi < Formula
   desc "Oracle Database Programming Interface for Drivers and Applications"
   homepage "https://oracle.github.io/odpi/"
-  url "https://ghproxy.com/https://github.com/oracle/odpi/archive/v5.0.0.tar.gz"
-  sha256 "4251c8b7725b039f6ab463e4429ba8a7b6578f0aa0172403e59aac2c465ffee5"
+  url "https://ghproxy.com/https://github.com/oracle/odpi/archive/v5.0.1.tar.gz"
+  sha256 "e12a1053ac13de9065a1011f51a6fb1f86281756fb997150bb69c8e91fb9b640"
   license any_of: ["Apache-2.0", "UPL-1.0"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "20679f22fb609ba2c801d959b30e9802b76053d4f0bec21e479c720fec31bfc4"
-    sha256 cellar: :any,                 arm64_ventura:  "9d9c6d3b22b66843e7ef5938db8756f1991140b04442d83edce1c00e19e0088d"
-    sha256 cellar: :any,                 arm64_monterey: "90e4d0679531b5332e974625571d257c76b0289f7beb851cdeb87f5da085a8da"
-    sha256 cellar: :any,                 arm64_big_sur:  "94f188c0aa74cc3bfb9d84a67be67e47a4b71a5d45600499bfd80521e9a2435e"
-    sha256 cellar: :any,                 sonoma:         "69d1b55bcd5c31ba73e8d4f99fa16f53353eb79dd85d057801ddb7d82d5ac22c"
-    sha256 cellar: :any,                 ventura:        "93c96dbb7c326a5b55308bc221b5e08974bd8e9b008e92034be2903b1ebb8fd9"
-    sha256 cellar: :any,                 monterey:       "13b28ffb076250f759f57b367b5ab61fc6f4ffa926570bd4182e5a0ed19d5b89"
-    sha256 cellar: :any,                 big_sur:        "2aaba644f281d8f195c65fd13557e64992b103b62e89829f522e58b9e6ac3c3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4816ae3e7cf5ae1cb4bb242d4ddd713b6cd30e594378b2c1581285003b890a5c"
+    sha256 cellar: :any,                 arm64_sonoma:   "a89c151693b06a33a14195d3aa2aa4a5a5fd39918ccaa99f735f20b1d787d60a"
+    sha256 cellar: :any,                 arm64_ventura:  "4a960be0f459c2cccd1490c3176f98f589d88226c613a8e6bc272592b6a993f3"
+    sha256 cellar: :any,                 arm64_monterey: "78df68a122e9f976e5dd815ea34208efbed8a7fc1a2d12f522c7efe7607a7f20"
+    sha256 cellar: :any,                 sonoma:         "3ebeb43452ae60fd4b065dd069ae7ad98ec983fceec0c48abb0cfbb699e8f8cc"
+    sha256 cellar: :any,                 ventura:        "3b9060e9ae8c6576895711dc222c78d9669cd6e8bbfa7b6d02e0b8e0af7aca52"
+    sha256 cellar: :any,                 monterey:       "d78b6d7db88ca35e5dee4ff7168a007ecd4f147bc2379818bba6fa6db101546c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "47539eeeb7b77a7d352e3de3f372d809a05e993ae784ab95421b22e075654f28"
   end
 
   def install

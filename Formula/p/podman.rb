@@ -2,19 +2,19 @@ class Podman < Formula
   desc "Tool for managing OCI containers and pods"
   homepage "https://podman.io/"
   url "https://github.com/containers/podman.git",
-      tag:      "v4.7.0",
-      revision: "073183fe1723d7bda826b574437891976a958c65"
+      tag:      "v4.7.1",
+      revision: "ef83eeb9c7482826672f3efa12db3d61c88df6c4"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
   head "https://github.com/containers/podman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1be0bcae89de122bb57493b9fa7df64361fee27a4f9be3a047d14c2d9e89f954"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cd864c443ed80442be12ae886796d0ad78ce4dd2f3b12f1606179bbf4999372b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e770638e82065294379fa8ed5049107cf0c6e8d7517a2032ba273ca8589de09"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e96cb1761558519b75e9861247f694ba9cf7f183be23797acda0f86e2570216b"
-    sha256 cellar: :any_skip_relocation, ventura:        "3fe1b2c085d895071039e794d47d965bfc9a78eadb03c947a163285cf2f4ab44"
-    sha256 cellar: :any_skip_relocation, monterey:       "c51d468fc013e73a0a2e49076c974a95bc33c866cd67ac1f8751556465140891"
-    sha256                               x86_64_linux:   "7f76f76bfdb0631c042d462c7ba56e9843237f1a0594a8872a59a766e962a55c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a548b5f3abc24639883e76aa90de3f282c8342ac1a241083fa950826dcdfa934"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "96ea874ca28fdbae4a7b4fd72f71b15e54553c17f0d2be893f5a2345ae4a8367"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d88ad41bf88b194d5bfbe3d201f1b4078b78913a88ead7707c180dcba0b85fdd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "affb2838ad3776e42d459296d631950eb7ee3cac29b76b652af1944c1744974f"
+    sha256 cellar: :any_skip_relocation, ventura:        "a97f0162b8fb99acc0c5bd4f5a2750c58ea6d28cba3befe5168cb3deef211c2f"
+    sha256 cellar: :any_skip_relocation, monterey:       "56619db93a15222acd702b85af15b2bce56110df562860c39f12f328a4e3ff27"
+    sha256                               x86_64_linux:   "c9af55e59926c616850f5bf7b2fa02ff09aeef281cbcbc333a5eab8d26f6b30e"
   end
 
   depends_on "go" => :build
@@ -43,35 +43,29 @@ class Podman < Formula
 
   resource "gvproxy" do
     on_macos do
-      url "https://ghproxy.com/https://github.com/containers/gvisor-tap-vsock/archive/refs/tags/v0.7.0.tar.gz"
-      sha256 "e526b8bf568a5145f4f265a8d450483be27c82717e60f4f22902589a78f68e1f"
+      url "https://ghproxy.com/https://github.com/containers/gvisor-tap-vsock/archive/refs/tags/v0.7.1.tar.gz"
+      sha256 "cbc97a44b6ca8f6c427ac58e193aa39c28674e4f1d2af09b5a9e35d1d3bb7fd3"
     end
   end
 
   resource "catatonit" do
     on_linux do
-      url "https://ghproxy.com/https://github.com/openSUSE/catatonit/archive/refs/tags/v0.1.7.tar.gz"
-      sha256 "e22bc72ebc23762dad8f5d2ed9d5ab1aaad567bdd54422f1d1da775277a93296"
-
-      # Fix autogen.sh. Delete on next catatonit release.
-      patch do
-        url "https://github.com/openSUSE/catatonit/commit/99bb9048f532257f3a2c3856cfa19fe957ab6cec.patch?full_index=1"
-        sha256 "cc0828569e930ae648e53b647a7d779b1363bbb9dcbd8852eb1cd02279cdbe6c"
-      end
+      url "https://ghproxy.com/https://github.com/openSUSE/catatonit/archive/refs/tags/v0.2.0.tar.gz"
+      sha256 "d0cf1feffdc89c9fb52af20fc10127887a408bbd99e0424558d182b310a3dc92"
     end
   end
 
   resource "netavark" do
     on_linux do
-      url "https://ghproxy.com/https://github.com/containers/netavark/archive/refs/tags/v1.7.0.tar.gz"
-      sha256 "b0ed7d80fd96ef2af88e7a001d91024919125e5842d9772de94648044630e116"
+      url "https://ghproxy.com/https://github.com/containers/netavark/archive/refs/tags/v1.8.0.tar.gz"
+      sha256 "b1422ef6927458e9f80f7d322b751e29ab5d04d8ed6cb065baa82fa4291af10f"
     end
   end
 
   resource "aardvark-dns" do
     on_linux do
-      url "https://ghproxy.com/https://github.com/containers/aardvark-dns/archive/refs/tags/v1.7.0.tar.gz"
-      sha256 "6ee7dfa8bab8040b917959a2f57f25496ad036a2d933c6225114e2c1e68bab0b"
+      url "https://ghproxy.com/https://github.com/containers/aardvark-dns/archive/refs/tags/v1.8.0.tar.gz"
+      sha256 "c9b818110e3d5d45f8bdb3c9ccc48c994aedb0b19fefcc7577fc1ef7ed294343"
     end
   end
 

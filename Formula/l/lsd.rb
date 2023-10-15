@@ -4,6 +4,7 @@ class Lsd < Formula
   url "https://ghproxy.com/https://github.com/lsd-rs/lsd/archive/v1.0.0.tar.gz"
   sha256 "ab34e9c85bc77cfa42b43bfb54414200433a37419f3b1947d0e8cfbb4b7a6325"
   license "Apache-2.0"
+  head "https://github.com/lsd-rs/lsd.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "96842f513bc310991a5aed5d259fa2e3dcb28293c1f2582158fd2fc7825cebf3"

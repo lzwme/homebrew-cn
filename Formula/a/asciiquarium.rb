@@ -20,6 +20,7 @@ class Asciiquarium < Formula
     sha256 cellar: :any,                 arm64_ventura:  "b8062a7862f2dbc72be6734d7ea25b06e3acad719d8c44bed08059be02ae71d8"
     sha256 cellar: :any,                 arm64_monterey: "e197deaee9423e203938370adb0c252c92372b1e7e196a6b33477c2c1cc29ccf"
     sha256 cellar: :any,                 sonoma:         "081c78955c7ed4975d4bc660153b306675f3517a661f84c79f25fe823bfda7b3"
+    sha256 cellar: :any,                 ventura:        "e7cae33ae78d065af614e683c8d43e50053609a53936d5fb91af9a80b2daa87d"
     sha256 cellar: :any,                 monterey:       "49a2c910973ea1e73abb2f350f3c2bbb932a009790c78b41f87538195bd59546"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "32a89a8d26c5fa6243a92d0b1bce5a8be721da358c461c6a4a9f2f932bc4274b"
   end

@@ -1,21 +1,19 @@
 class EasyRsa < Formula
   desc "CLI utility to build and manage a PKI CA"
   homepage "https://github.com/OpenVPN/easy-rsa"
-  url "https://ghproxy.com/https://github.com/OpenVPN/easy-rsa/archive/v3.1.6.tar.gz"
-  sha256 "82958fc66ba3825dd78113c3b3283858303d9973caff434989a4a235d47a319d"
+  url "https://ghproxy.com/https://github.com/OpenVPN/easy-rsa/archive/v3.1.7.tar.gz"
+  sha256 "438206426324e6d34380d09da265b9ea1e2e2c0b301865dfef1ee89cb394602a"
   license "GPL-2.0-only"
   head "https://github.com/OpenVPN/easy-rsa.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "42813aefc0517c80c7b7efd846eede30d816cf05ee47fd49b1e6c5dfd72f8cc8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "42813aefc0517c80c7b7efd846eede30d816cf05ee47fd49b1e6c5dfd72f8cc8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "42813aefc0517c80c7b7efd846eede30d816cf05ee47fd49b1e6c5dfd72f8cc8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "42813aefc0517c80c7b7efd846eede30d816cf05ee47fd49b1e6c5dfd72f8cc8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d1cd86ad4f56473e7295ca8eb15655bd781ba7c4353d6f242a9ec57dd3960f96"
-    sha256 cellar: :any_skip_relocation, ventura:        "d1cd86ad4f56473e7295ca8eb15655bd781ba7c4353d6f242a9ec57dd3960f96"
-    sha256 cellar: :any_skip_relocation, monterey:       "d1cd86ad4f56473e7295ca8eb15655bd781ba7c4353d6f242a9ec57dd3960f96"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d1cd86ad4f56473e7295ca8eb15655bd781ba7c4353d6f242a9ec57dd3960f96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42813aefc0517c80c7b7efd846eede30d816cf05ee47fd49b1e6c5dfd72f8cc8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b3ac00723ab628127ed9ba4204754e4bf4e5ad49cb851a27d032e79ad437a630"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b3ac00723ab628127ed9ba4204754e4bf4e5ad49cb851a27d032e79ad437a630"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3ac00723ab628127ed9ba4204754e4bf4e5ad49cb851a27d032e79ad437a630"
+    sha256 cellar: :any_skip_relocation, sonoma:         "db0099d1a5f5540baf921b0b5231400fd28acfbfc41ee2f591d78a7cf9908e76"
+    sha256 cellar: :any_skip_relocation, ventura:        "db0099d1a5f5540baf921b0b5231400fd28acfbfc41ee2f591d78a7cf9908e76"
+    sha256 cellar: :any_skip_relocation, monterey:       "db0099d1a5f5540baf921b0b5231400fd28acfbfc41ee2f591d78a7cf9908e76"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3ac00723ab628127ed9ba4204754e4bf4e5ad49cb851a27d032e79ad437a630"
   end
 
   depends_on "openssl@3"
