@@ -9,18 +9,19 @@ class Breezy < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "cac19aa8b102cded2c2d7fc56a1de901b7f851d08c9f48a596c93899851e30c7"
-    sha256 cellar: :any,                 arm64_ventura:  "d693bf66d30a8b1f6e65515c8bfb93d073022e3b9d25ce1d80fdb6f0715a5b80"
-    sha256 cellar: :any,                 arm64_monterey: "2aa6b4fc390a6993fcb729b7752787c44ae58552624c9fcf35642f082d5ba781"
-    sha256 cellar: :any,                 sonoma:         "26f9a64f29f38544214db194b53e2cf644d68b5999fa6d43f75a352f71780c92"
-    sha256 cellar: :any,                 ventura:        "e2f8e39753f2c63db4ed0271b3b15e56a0a13a3bd25b6ffabd48ef227bb2373c"
-    sha256 cellar: :any,                 monterey:       "9f8abd88062b832263d84b00ec671a98abbf95af28b33e68516c1384d54ea778"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "178fcc89becef0d2eadfa1f8b32282005fa48c5c312b44e71c76e1319940472f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "2f8194bdd0afacc87396b6bbc8c4d6b55320d47d85eeb6ee65e75fa091b24a1b"
+    sha256 cellar: :any,                 arm64_ventura:  "7bbe1259468d58ad3522e0952a80b3b5f5358004b163946ce5fd52c293ee107e"
+    sha256 cellar: :any,                 arm64_monterey: "e98bf97cde3ea7ce268b1a0a8695ec6eb9f3c91dc1e460d356cb8b38996b1c72"
+    sha256 cellar: :any,                 sonoma:         "87c30fdc83806e6278064c30311cf3cf22827ce8d383413d93af44b9a7e37ac8"
+    sha256 cellar: :any,                 ventura:        "8554749d48049d009ef3398f8453375b95df3ba9650cee057f0f1713a95a65b3"
+    sha256 cellar: :any,                 monterey:       "d16cbbc92338c0306b13792500d469500510c6671bd1e146844a0afbd1aab5da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "059795b93f5776764382b57fd0b401b8a18fff04a4cfcefcea23bdaddfe7ccf4"
   end
 
   depends_on "gettext" => :build
   depends_on "rust" => :build
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
   uses_from_macos "openssl"

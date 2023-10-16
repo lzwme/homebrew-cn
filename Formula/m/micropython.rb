@@ -6,19 +6,19 @@ class Micropython < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6d28868290559a5ce923e725bb12a4a7bc44093bf1a5b51bc7588ed6aa11719a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "75322763fdae33e9f16116201010cc6a5ae67577d4865017524d43eb3ad6b25e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f57add74a33a8f19660e17ad58ae9d8067b6655dce66fa5b76a7a01e49359925"
-    sha256 cellar: :any_skip_relocation, sonoma:         "45d37b4699cdff3ae0bbea5a826b21ac70782a5913782b478147c2035c0b431a"
-    sha256 cellar: :any_skip_relocation, ventura:        "f6567a1c40536f5a399ae90e7518bf7b8c0491c6803e9b7d5427e293687b2394"
-    sha256 cellar: :any_skip_relocation, monterey:       "d2ae79f8009e32b5ebe774ab6823b75e3d636e1ec884ccef365d319faf7e7928"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dbf7898fabb5acb1c10f2adfcd61006d53090d5c95602c673cc1048225fd63be"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c9fd62ecdb0ea872c3cf436ede393a769ec46130afbfd086968a54262507094a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b0af4c546a74f8e57b2f5728dbf3a3bd4c51d0ecd58785546b12206c564f8610"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e1eeaaf0412ed2c298b61d616a0c342adbf3baab4f6415338595db4645f9210"
+    sha256 cellar: :any_skip_relocation, sonoma:         "deae2550a9a5ff7563e9781628741b22e44c9a1430f19f2c988f52cccea3b562"
+    sha256 cellar: :any_skip_relocation, ventura:        "961a24d06a5ae270d900bcf50f2a0bf50bcd5f67c34825da76b75f13343bcf9c"
+    sha256 cellar: :any_skip_relocation, monterey:       "d5840fe1037dfb479b8fda44363b89a896b229a5d6d75a065fcf250166e25501"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04705df2381f98f3404316e10468544e5031031fcf533b916bdfa8a32ed956eb"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" # Requires python3 executable
-
-  uses_from_macos "libffi", since: :catalina # Requires libffi v3 closure API
+  uses_from_macos "libffi", since: :catalina
+  uses_from_macos "python" # Requires libffi v3 closure API
 
   def install
     system "make", "-C", "ports/unix", "install", "PREFIX=#{prefix}"

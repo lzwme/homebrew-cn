@@ -8,15 +8,14 @@ class Borgbackup < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c25387ca6fd67cfeec6459a9931f724766d036ee7103ca5781124d5da8e7ed53"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c9cb732df27f4a87342c39b7f4de834dd53c252b3a2c0888cce02cf507d93a7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e6bf97ca6db8d2a536ff41040c01a584a80fec46ceb0c5fe627a4bbdb296433d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6a5eb195a3d26ed1f7923413d82b93e3d75c3826c1dc51c9add61b0daa89b601"
-    sha256 cellar: :any,                 sonoma:         "1a4e8ad7a6776ec74920418eea7dc0a47403ce98e5caf38ab1ee71037222355c"
-    sha256 cellar: :any_skip_relocation, ventura:        "3e0f49a545943651814fb75d6320fe8ef2d035b63a74e7225973ad01d39eef16"
-    sha256 cellar: :any_skip_relocation, monterey:       "8add3eb524d579a4bea6a55e09728057123d5c4879ed966bc2a5eb5d649dcbc4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1e3832bc6484a7a347e9c87715723b72ccf5d83ecba15fec2d5664d878fe7271"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d829fe8f25d6286444e2fb74b95996c99929e7964d11136f0705c6fa071756a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "20a868b4940aadeee8d547c9fdd95f325018623210d78a30f1f5bc6eae6e3107"
+    sha256 cellar: :any,                 arm64_ventura:  "67ca0c5c3362efb43117076d3d67710366c81b3745a0f64e71899b500c238f93"
+    sha256 cellar: :any,                 arm64_monterey: "06e511759cf40e0cb49978bb58c3cab396d154a3ac54bcff2acb88ef07c00419"
+    sha256 cellar: :any,                 sonoma:         "fb9bba97a8a5079ab107ffcc661214c58e5eb128a138027889907b09b6785926"
+    sha256 cellar: :any,                 ventura:        "0eda44bdae832aeb4fc23b46b434b5203a71e4587834e5a9d73e43c826d113db"
+    sha256 cellar: :any,                 monterey:       "cf81ce62690aa07d663dbafe2e9d96471a05d8e755686671deca79714474e3d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c5f9e4355ae28ad3645d4653a3097281ffb764b2b227ec9eb63c1abfed71f47"
   end
 
   depends_on "pkg-config" => :build
@@ -24,7 +23,7 @@ class Borgbackup < Formula
   depends_on "lz4"
   depends_on "openssl@3"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "xxhash"
   depends_on "zstd"
 

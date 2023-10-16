@@ -8,18 +8,17 @@ class Dotbot < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ab75a119395c3b40369e577362a488d251758f07d78af33a143e8c1574d5e81d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "003084192d911a6e12b04602c1a46d1c3173b004af90904d6d0a14ede0a1ab21"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "603a0f873b8df8b86ceff4b95c645d5b34f366b5c6e136ef2be8703ec1133a69"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "62bbea915d56536fa5a451b49de231332c22f2b891dc3f96a9a623093d7784b1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b9a05f40847ded1a2544f96ab519c6c57f6b35618494817117c980a8c05df9b5"
-    sha256 cellar: :any_skip_relocation, ventura:        "9aa4f0d66b27d5918557fefb8b5357240761ee96841d32a9b8c503a00e67ff7f"
-    sha256 cellar: :any_skip_relocation, monterey:       "45f6f9e0fcc859eab836d76505355259875aaae190b6225cd338eab4d401f706"
-    sha256 cellar: :any_skip_relocation, big_sur:        "df34a064a15982bf92c9539c61a94418211e648d19fce4c6cab656ca6214a680"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1f2ccdcae669a30e68b3dfcb15a11c3c5dd5aae86920447d35af1df285f7f39"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "56a2f53577f48db57ae4bb8885ff6b470bd29fffa41177029ad8662c024acefe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6d50c52618551450b7594924d815cfcc7899e3493443898712edc7573136061f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "839386908832b06ad3c07a7da606af27b79c92a4a8f37e8698a20b07901d9c46"
+    sha256 cellar: :any_skip_relocation, sonoma:         "be87ec9a1d6c7187b85cf18d3b41b1d370336b7a8a2f0f72681809d72ea51055"
+    sha256 cellar: :any_skip_relocation, ventura:        "556aa8e922e4bc658818c49979911bdaae9a7627c20da31aa06deea712e8d508"
+    sha256 cellar: :any_skip_relocation, monterey:       "2ea796e22d1dd2fd4c684da856a09c4e161db850d791b2e1143394b480e75d1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "796780e6dcf6223bda3076d05d5f52fb022491bcfd99b7ddc73676b42ce5935b"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   def install

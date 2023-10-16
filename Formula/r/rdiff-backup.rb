@@ -6,21 +6,26 @@ class RdiffBackup < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0987b90ee50e738463116cac2dadd4513e1b70475cc761c7d5951c6670fec291"
-    sha256 cellar: :any,                 arm64_ventura:  "e878eddd155f0a8289f3af7596f41e2629f4cba3c01f6eb44864379f032ae782"
-    sha256 cellar: :any,                 arm64_monterey: "295bea3f09286bada7313def5d1b85f694f6622da4fb6e1e50dd9a151591c5a4"
-    sha256 cellar: :any,                 sonoma:         "efdd668076273bc8e7549345688ce685216b5991d1f0179fc5564daf8dbaa7d9"
-    sha256 cellar: :any,                 ventura:        "63353112b6fa2c6f4acebdb9ba601398867fc31f651410e9e4178a27d150da34"
-    sha256 cellar: :any,                 monterey:       "78a13568f9fe661e6d73b0edd2f75f72aa49704372bb6866cff4d1c3c472d2d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab812d3b5219a0ea3ed048ce216a04af62b77b44fb5f258dd286d22339a7f3bd"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "0c0078f8d979ea77e3c762d180527f21cf802fd6b374e7600ec2f3ce0642ddff"
+    sha256 cellar: :any,                 arm64_ventura:  "c8cbb2ba92cd4444c7984ba20f9ea396946d56ca92b76ac7472164199d94ed6a"
+    sha256 cellar: :any,                 arm64_monterey: "6189ac0853ecd011f4cabd5200a4a66cbf11e7ecf651dd1ca6b184b25cb249ae"
+    sha256 cellar: :any,                 sonoma:         "15d9fafa877e2ce4ef11928cc7a2b102fcf2d5386dd83f4fef273f0a6e4510c2"
+    sha256 cellar: :any,                 ventura:        "a4795c66b33328a5e213e36171c589f2e182bf1023f2d446d77a63d59b894854"
+    sha256 cellar: :any,                 monterey:       "c038930bc65163511da5add62466b0273b6646ae66e3a2dacefd44688bd0c1f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8f2f55b588b003b97ef53214961864fd4e01fe2892fc494f1e34b3e7b8de7c2"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "librsync"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
+  def python3
+    which("python3.12")
+  end
+
   def install
-    python3 = "python3.11"
     system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 

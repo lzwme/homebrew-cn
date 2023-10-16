@@ -9,19 +9,20 @@ class Commitizen < Formula
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4ac1d0cd3fc53ab8f81d6fed8b754d01eae37fd986c0447b056e15db9a2cc818"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb47f51d19f18f0156a5fa2113b54bba0c9d91240b3c3d691a32236c27ec07d3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca613b5901b440fd21fd30208d5fb342189dd3945041f33525dfafdbf9fbc2f6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "05473b22d7df1e224ae460a2d3141cc41a8101ca98b8c53d74e9c761274a9e44"
-    sha256 cellar: :any_skip_relocation, ventura:        "d145da98b2ab8b9fbdb81c601ec3c6a521506ff0cecb52f7f1a4f7270a4791a3"
-    sha256 cellar: :any_skip_relocation, monterey:       "c6c01a3432113b1bf3c1aefd6de7578252a50efe72a65ce4e94fa223d38784fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1be7577a0eb757603c5fb5744f2528631bee54e96ee3a0a3d65223700f7f47ce"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cb1b238e5f9888ea9df934d5ec08e0b65127579afcc986cfe2a67a2af69038c4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f9b53c4a170a2870a3dea079a609614732600c07a552609067ee55f2f009eec6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b81904c0101c4d289e57473f40d0cc12719792d7aa56b371d7605633dcba947"
+    sha256 cellar: :any_skip_relocation, sonoma:         "081d91d973684f2a44a06a613f9cde9780e3e20798c7e6b211137b806a45c1ec"
+    sha256 cellar: :any_skip_relocation, ventura:        "c62f9f2a6589670d043706ab3896a7160f67182ab709c966ab86d78ce96e40a2"
+    sha256 cellar: :any_skip_relocation, monterey:       "4e919d970eec995c2732cfcf8ae9cf75ad90f32bdd2827b4ebe2d608a4946e2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af5b5ec15a5b7f864b44e42979024af4ab4dfe36a2554d51873d438d5147203b"
   end
 
   depends_on "python-argcomplete"
   depends_on "python-packaging"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   resource "charset-normalizer" do
@@ -87,7 +88,7 @@ class Commitizen < Formula
   def install
     virtualenv_install_with_resources
 
-    python_exe = Formula["python@3.11"].opt_bin/"python3.11"
+    python_exe = Formula["python@3.12"].opt_libexec/"bin/python"
     register_argcomplete = Formula["python-argcomplete"].opt_bin/"register-python-argcomplete"
     generate_completions_from_executable(
       python_exe, register_argcomplete, "cz",

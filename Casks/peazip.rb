@@ -7,5 +7,9 @@ cask "peazip" do
   desc "Cross-platform file and archive manager"
   homepage "https://github.com/peazip/PeaZip"
 
+  livecheck do
+    strategy :github_releases
+  end
+
   app "peazip.app"
 end

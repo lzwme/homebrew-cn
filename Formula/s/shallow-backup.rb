@@ -9,26 +9,23 @@ class ShallowBackup < Formula
   head "https://github.com/alichtman/shallow-backup.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fdd755df3fff11d7c16862167960599a510aac44f24bd562babfc32a3e3d3420"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f3b542431d9251d7f830bf3e92ec22a6e01be1dc259a2dc1ab662b7008c59b32"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "668e7f36457262d447101059d5b67a3fd4d54b028f81f00b564d4fed9bcfe4b7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f48978ac723f7de2a6100c06a2408734510da1a467d3a352831571b7a079a96d"
-    sha256 cellar: :any_skip_relocation, ventura:        "c92331eaba5bead93559264e0ab2e79bf00c1e7addd2b830c1b5bc3b41bd8364"
-    sha256 cellar: :any_skip_relocation, monterey:       "196a8581db739723c1fb12879d8cb1a98bf6e386c7eb32c73e55ef29a77718b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61a341724649f0e5dc9477700cc70071d672c84313d60cb4ec6677a11e5cf866"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6323c331fde0709972405da8dba445fc1ebc9fedd9eb850e5864c9c962cafbb7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5737468b8573c79ce1dae2a0a9758f9808df17d00c2929cdd7be4e062bef2776"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dafd1efc8a37d50370447be62d36927ae78422e71a37cb437b2d6de75aa26749"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9656e600c96cafa1ae6068925cec2447d1244c2ee10d51f647fb7a0932cbc15e"
+    sha256 cellar: :any_skip_relocation, ventura:        "1431d9a037f1ad8c0bbf12e2914f86947a7df7b8410e19d6e82db1d021fd1793"
+    sha256 cellar: :any_skip_relocation, monterey:       "c8730bb45533cd547d2e0b65dae755f68eab43ac4694d1305999149b81d520cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03906b132ad93bc094c3b0e8adecdfa80aa6bd7f07af5dfec92b31767d98cd3e"
   end
 
+  depends_on "python-click"
   depends_on "python@3.12"
   depends_on "six"
 
   resource "blessed" do
     url "https://files.pythonhosted.org/packages/25/ae/92e9968ad23205389ec6bd82e2d4fca3817f1cdef34e10aa8d529ef8b1d7/blessed-1.20.0.tar.gz"
     sha256 "2cdd67f8746e048f00df47a2880f4d6acbcdb399031b604e34ba8f71d5787680"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "colorama" do
@@ -79,6 +76,12 @@ class ShallowBackup < Formula
     inreplace libexec/Language::Python.site_packages("python3.12")/"editor.py",
       "from distutils.spawn import find_executable",
       "from shutil import which as find_executable"
+
+    generate_completions_from_executable(
+      bin/"shallow-backup",
+      shells:                 [:fish, :zsh],
+      shell_parameter_format: :click,
+    )
   end
 
   test do

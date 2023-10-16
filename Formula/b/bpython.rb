@@ -10,18 +10,19 @@ class Bpython < Formula
   head "https://github.com/bpython/bpython.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e903d3023a09c3759fed5a4e5a5dad422a9d36379deaae086273e51269517fbb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c21611d296f4dd8c1054e70dbd89a27e0f8ca969293b173d5d668c35d0cec597"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ecd04114b6780b105926142572b84ef538a82e61b2b60c86b619d0102d2ba6d7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "16cd3dd62da56121eba41ce9b0b16cf80bad8be0373eaee11693b084ae3430cd"
-    sha256 cellar: :any_skip_relocation, ventura:        "ec72c01b0322889c6f497462c848db215df8e2ae0246a00500f6e304852a89bf"
-    sha256 cellar: :any_skip_relocation, monterey:       "1e1a6d7a25ea1ddc5eeadcbb5e38bbe12f36fa23581862c54f3508a0a844ed95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e7ef0fef712230d125608f83521a003bfa5d7f6b712a6cf5607f8bf8c62be062"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6fa01fa47f623d82d6cbb065efd380f7c89acab16327b968e8e008daf214861d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "46b82e4fca4b17afd9d59897d1c3793fe5276bf1b4c4bf211c862d64f5d2aed8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d77bbe520aadb1e5765fb3bb15bfb108b25f76bf4dfe9dd973d3de1ca025ee57"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c58eac560ce90143ca7e792141be0e09622d4fb92bcad5e3d1b24334d5640f6a"
+    sha256 cellar: :any_skip_relocation, ventura:        "03dc30e6e5467b0e711c0fc9c4af2b74d3a66c65a144e813ee4d2872f88d9aa8"
+    sha256 cellar: :any_skip_relocation, monterey:       "e0a4541859477b1fb42dbc672f0baedcc29a7a87342309bbc21f83330a62087a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c72a1defa8186508158812481135a2f65c6710007104bc639176add1011a056"
   end
 
   depends_on "pygments"
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "blessed" do
@@ -74,8 +75,11 @@ class Bpython < Formula
     sha256 "8705c569999ffbb4f6a87c6d1b80f324bd6db952f5eb0b95bc07517f4c1813d4"
   end
 
+  def python3
+    which("python3.12")
+  end
+
   def install
-    python3 = "python3.11"
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources
     venv.pip_install buildpath

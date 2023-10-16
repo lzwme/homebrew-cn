@@ -20,11 +20,16 @@ class Keystone < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
+
+  def python
+    which("python3.12")
+  end
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", "-DPYTHON_EXECUTABLE=#{python}", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

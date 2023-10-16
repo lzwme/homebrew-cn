@@ -10,29 +10,26 @@ class HttpPrompt < Formula
   head "https://github.com/httpie/http-prompt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "214b507f6aa5b7780b60913afc2da6d77f61712701ef70ef60ecfdb3e0e3dfe0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6c2188cd4638315ca48f50c4cd3479d6717b165c578fbde8b8484cd2d272e971"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d8a0b14cddbdd53f9be893d1e3e13416f9833de5b3222e9213fce6fff5f49d6d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a6f5180875b58a91061be4996cc5f5671f1338d6038c57968911ec79f35ac3e7"
-    sha256 cellar: :any_skip_relocation, ventura:        "66631e2a38fa74279ff51c5656a42c7bdfba212a846d9af9f0900fe35eb997dd"
-    sha256 cellar: :any_skip_relocation, monterey:       "856657546ac65e9ca9b4c64c19aff615df3a7de0bf65109712d3c18f7c7ec457"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45ff09d231661ff92611a2c04432601719afec03fc56904ae3cb1e32464d65bb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d20ff26c113a8a2a808f7445ca48d689c8328cde823d840b8068d62617c51a60"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "390b751c99c7cca60444d3c88ae8264c295be657213bc8de83ca361af6804e5c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "acab9bff4b7721cbfe9b55c61f00807f84ae0978b7dcfaeb9fc2420d209384ee"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7ec43b37ec6363fc3a1488bdada3807704f5093acc785a9146a5c1363f067581"
+    sha256 cellar: :any_skip_relocation, ventura:        "d46a3782f43bb557485ffad41ca5662095f6c29697082afccabcc60265dd47f2"
+    sha256 cellar: :any_skip_relocation, monterey:       "8f48b17f59af2c4f1575f25a67e24c7ce4623e31a52580d35666f920553bfac4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "818d71d623024a52e2b5f48c9d00caa8e5ab75db0490293558cca69113af5cd2"
   end
 
   depends_on "pygments"
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python-click"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
     sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "defusedxml" do

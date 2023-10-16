@@ -21,7 +21,8 @@ class Bullet < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
+
+  uses_from_macos "python" => :build
 
   def install
     # C++11 for nullptr usage in examples. Can remove when fixed upstream.

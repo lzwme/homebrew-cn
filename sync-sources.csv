@@ -1271,6 +1271,7 @@ Homebrew-homebrew-core/Formula/d/diction.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/diesel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/diff-pdf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/diff-so-fancy.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/diffoci.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/diffoscope.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/diffr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/diffstat.rb, Homebrew/homebrew-core, 0
@@ -1345,6 +1346,7 @@ Homebrew-homebrew-core/Formula/d/docker-slim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker-squash.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/docker.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dockerize.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dockly.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dockutil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dockviz.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dockward.rb, Homebrew/homebrew-core, 1
@@ -2282,6 +2284,7 @@ Homebrew-homebrew-core/Formula/g/gpsbabel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gpsd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gpsim.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gptfdisk.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gptline.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gptsync.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gputils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gpx.rb, Homebrew/homebrew-core, 1
@@ -3469,6 +3472,7 @@ Homebrew-homebrew-core/Formula/lib/libnfnetlink.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libnfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libnftnl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libnghttp2.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libnghttp3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libngspice.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libnice.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libnids.rb, Homebrew/homebrew-core, 1
@@ -11140,6 +11144,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-advent-pro.rb, Homebrew/homebrew-cask-fo
 Homebrew-homebrew-cask-fonts/Casks/font-african-sans.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-african-serif.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-agave-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-agbalumo.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-agdasima.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-aguafina-script.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-ahuramzda.rb, Homebrew/homebrew-cask-fonts, 0
@@ -12138,6 +12143,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-lilita-one.rb, Homebrew/homebrew-cask-fo
 Homebrew-homebrew-cask-fonts/Casks/font-lily-script-one.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-limelight.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-linden-hill.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-linefont.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-linux-biolinum.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-linux-libertine.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-lisu-bosa.rb, Homebrew/homebrew-cask-fonts, 0
@@ -12797,6 +12803,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-red-hat-text.rb, Homebrew/homebrew-cask-
 Homebrew-homebrew-cask-fonts/Casks/font-red-rose.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-redacted-script.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-redacted.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-reddit-sans.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-redhat.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-redressed.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-reem-kufi-fun.rb, Homebrew/homebrew-cask-fonts, 0
@@ -13472,9 +13479,10 @@ Homebrew-homebrew-cask-versions/Casks/zulu7.rb, Homebrew/homebrew-cask-versions,
 Homebrew-homebrew-cask-versions/Casks/zulu8.rb, Homebrew/homebrew-cask-versions, 0
 nicerloop-homebrew-nicerloop/Formula/bison@1.875c.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/czkawka.rb, nicerloop/homebrew-nicerloop, 1
+nicerloop-homebrew-nicerloop/Formula/diffoci.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/f2c.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/ftnchek.rb, nicerloop/homebrew-nicerloop, 0
-nicerloop-homebrew-nicerloop/Formula/get-scoop.rb, nicerloop/homebrew-nicerloop, 0
+nicerloop-homebrew-nicerloop/Formula/get-scoop.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/git-credential-keepassxc.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/git-credential-lastpass.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/git-credential-rbw.rb, nicerloop/homebrew-nicerloop, 1

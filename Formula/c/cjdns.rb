@@ -19,13 +19,13 @@ class Cjdns < Formula
   end
 
   depends_on "node" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on "rust" => :build
   depends_on "six" => :build
 
   def install
     # Libuv build fails on macOS with: env: python: No such file or directory
-    ENV.prepend_path "PATH", Formula["python@3.11"].opt_libexec/"bin" if OS.mac?
+    ENV.prepend_path "PATH", Formula["python@3.12"].opt_libexec/"bin" if OS.mac?
 
     # Avoid using -march=native
     inreplace "node_build/make.js",

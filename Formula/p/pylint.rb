@@ -6,20 +6,21 @@ class Pylint < Formula
   url "https://files.pythonhosted.org/packages/9c/83/43e54a4168ef12f91a6609bd40a0ecfa6cb075eda43321ac96e57040f3ed/pylint-3.0.1.tar.gz"
   sha256 "81c6125637be216b4652ae50cc42b9f8208dfb725cdc7e04c48f6902f4dbdf40"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ca6ce2b82c90eebd73649d49850f2c57f3435b7380c45f3b7819fd461611e882"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0f11ee75047beff20091bb1fd60b264d1ac9358a3dadd1e51bc46b4b46892154"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3c93196731ff1442d16f4d9d10323175442ebb03f0b06f76eb54a5a65bc8adf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "15d8bebfc7c6234c521a8334c72c1fb4b3a58f820c912970870760ee3a5318fa"
-    sha256 cellar: :any_skip_relocation, ventura:        "0c7d530bbbd91548c6e826caddcea5c814a5236c304d56c535209170a7de47f4"
-    sha256 cellar: :any_skip_relocation, monterey:       "c7adbe3dbd5ebbb6d5c3508d017e48111bb44f1eee098c65fd9e033d6417fc5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af55a0fc43e6cfb27de3b8ec94d2a4cc12ae4bef4b6d431c7bf05ebe75d2f82f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1279b43ce10224b4d1b086ccde22b8d39429843392b777c990ca07d201083e96"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e552e35bac59ac637748c0a5dfae9786b202fd6de29dc6480e1247e8dd3c1f75"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "513a9dd10a4539050334fb976b07a3f56d212f813e5f76956821b6dcccda1b99"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5cc09ad3c351309b3dd8c2dbf1feb981bdcb5103aef9668e06d29c683d19fb71"
+    sha256 cellar: :any_skip_relocation, ventura:        "5bbe0f5a26dcffc508e5225ba0c52c2f921953a23f5bc4b5caf96d2fa1b11183"
+    sha256 cellar: :any_skip_relocation, monterey:       "c0504f842c39227c4e222817130fa93da157f248ecd7958701aef603cf48af10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "687242fab7463f04b787c2dd29f1dd892cdc00c2430c0e3c0166b9d470c4e954"
   end
 
   depends_on "isort"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "astroid" do
     url "https://files.pythonhosted.org/packages/60/f7/536d171ce4e334b0ceec9720c016f59f2c75d986e4dbc52b34601cd7834a/astroid-3.0.0.tar.gz"
@@ -50,7 +51,7 @@ class Pylint < Formula
     virtualenv_install_with_resources
 
     # we depend on isort, but that's a separate formula, so install a `.pth` file to link them
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     isort = Formula["isort"].opt_libexec
     (libexec/site_packages/"homebrew-isort.pth").write isort/site_packages
   end

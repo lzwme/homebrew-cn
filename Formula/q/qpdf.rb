@@ -1,18 +1,18 @@
 class Qpdf < Formula
   desc "Tools for and transforming and inspecting PDF files"
   homepage "https://github.com/qpdf/qpdf"
-  url "https://ghproxy.com/https://github.com/qpdf/qpdf/releases/download/v11.6.2/qpdf-11.6.2.tar.gz"
-  sha256 "9d7011c348abb9ec281dfb0675abcc4a670a14ca4fafd8b945dac5817035acb0"
+  url "https://ghproxy.com/https://github.com/qpdf/qpdf/releases/download/v11.6.3/qpdf-11.6.3.tar.gz"
+  sha256 "c394b1b0cff4cd9d13b0f5e16bdf3cf54da424dc434f9d40264b7fe67acd90bc"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b4ca8ce67f7e3c8b9861a3be6a7861ee92559b4f5d464eb849b062d330e0db44"
-    sha256 cellar: :any,                 arm64_ventura:  "c47d45c9f1d749c7cbf641477c63d2a8c7fcb527f090beab71d17e29a5064d8c"
-    sha256 cellar: :any,                 arm64_monterey: "3869c7f9763f7826c9125b5976496dd6b67adc201607f1cd3bbcca6c83669849"
-    sha256 cellar: :any,                 sonoma:         "b78110a9e5f9a9a10081119ad1e09eb953ee899b3210a67636f6ae5bd7f7c72b"
-    sha256 cellar: :any,                 ventura:        "18135ec596e3ddf2cd96754f646659ce4b55afbf1dd35245f1cb09cd4567e588"
-    sha256 cellar: :any,                 monterey:       "abde148fe6da13ea6fd728f17e31ac79f2f7868f421069576096321ef2b48e1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ec42874882b81ac35c6d87565a099d04b268dd465601862cf5f697beb0e9dca"
+    sha256 cellar: :any,                 arm64_sonoma:   "8a501b74f5e75b8c2de42a2c901879cade390e8e3d6aa01c4eb66709f6a63604"
+    sha256 cellar: :any,                 arm64_ventura:  "f5af4faff6c412816af5cccdb86cb1cc8fcc1c514dbab1224325f88605b42be9"
+    sha256 cellar: :any,                 arm64_monterey: "b3070fec0246b1c5644cdbf06a2609f698c16685b5ee44a00a79ed43b9f2e6a7"
+    sha256 cellar: :any,                 sonoma:         "4e41fa6289316fca25d32ac470c8a73525e9d0c2f38962936fe7a79f37a9f0e4"
+    sha256 cellar: :any,                 ventura:        "a20233689515691c0d26775dd1f722c173e00bf14108287f2961c9756c669358"
+    sha256 cellar: :any,                 monterey:       "506f7c87c2a889b4be73afe4f1454d3b74db8640a8ab8fd8893826e48470f748"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eba0b3d078b0d2f4fa20b4b8db8325e60bed380be820cd19a98d4b27e782de95"
   end
 
   depends_on "cmake" => :build

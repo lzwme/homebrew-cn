@@ -10,17 +10,18 @@ class Iocextract < Formula
   head "https://github.com/InQuest/iocextract.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e9016570958d900589515148ca40d08847ea93576cb2bf7aecace38c99d6facd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f0c0fbac77bae9bfffb16e536a19831c54b51c4506acb22282d317ff471b01fc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2cd8b5ee51781e42f93df880f820e53d325dc17555b934fcbb73e569db3bae5b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2227243c1f8ff0c3da9d3965ce4c36b0ebf96a86074326361e4b5dc89b220bb6"
-    sha256 cellar: :any_skip_relocation, ventura:        "aa3096f748006b73dd0027037301e75660de16bd04449f63cda5a80eeb0ba631"
-    sha256 cellar: :any_skip_relocation, monterey:       "eec0f6fa76d844ce31ac24f05801de8013969211aaade3b00886a5e2dbc7c100"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1bfabddf1be4130366cb807b27142ce29a5660e095c3fc2f63ac9529f58b60cb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6e80bc3992418144b704a706a8c34b881c4934d8bc232349fa96588c0f1b8d16"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "30b675eb4744acf08e55b38c85dcfe209e6a3e64065b3026507b8c2b737892f5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7c4c886fb0ea6fa0f4365c714a6c09375fdfc73680dc719ed8575182f3628159"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ce34bbc744923dce4e6c9462c3dad0ab63b72750b1840c1b21868f48bc647210"
+    sha256 cellar: :any_skip_relocation, ventura:        "44b744b1a9be988a88707be7c5de234c6c082ecbc959fa3ff981b9f1ae49f844"
+    sha256 cellar: :any_skip_relocation, monterey:       "a12547ae0f9a7254cb677cbb296bdc5f90784ed6d6f85f8dbfdba78797934b76"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "716ec67e46b3f2abff3d97320c8339fc04b5bb3d2898c6bec431b6e2beecdc53"
   end
 
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"

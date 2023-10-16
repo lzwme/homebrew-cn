@@ -3,23 +3,23 @@ class Uhdm < Formula
 
   desc "Universal Hardware Data Model, modeling of the SystemVerilog Object Model"
   homepage "https://github.com/chipsalliance/UHDM"
-  url "https://ghproxy.com/https://github.com/chipsalliance/UHDM/archive/refs/tags/v1.75.tar.gz"
-  sha256 "7dcb999a6b04b1abe40d40db25e6269470313c09804ce8285cc450c2f0bcd446"
+  url "https://ghproxy.com/https://github.com/chipsalliance/UHDM/archive/refs/tags/v1.76.tar.gz"
+  sha256 "72fffa0f53632716536ad70495749f460f90903650d41fe4d11e454b8b7de68a"
   license "Apache-2.0"
   head "https://github.com/chipsalliance/UHDM.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a82d03b201bded54960c022e616ed3c44dfd937a8d9f2182fc7e9fc785b56286"
-    sha256 cellar: :any,                 arm64_ventura:  "6782fbef862b157140c0b732cc4d262ca6a7fce39a2776134cf325f9f534cc90"
-    sha256 cellar: :any,                 arm64_monterey: "62eb446dbc78114b04c821253aaac41ce889d1ba864f0bedae15498b51274e9e"
-    sha256 cellar: :any,                 sonoma:         "e594b4f586c771f43fdd5b00c7902da52fa5932e94185b8c6472032a0d76cc5c"
-    sha256 cellar: :any,                 ventura:        "9776099fa953829d9393f90ef62cd4bc1a7ea67e28b64999e6363ace2ab93f20"
-    sha256 cellar: :any,                 monterey:       "3b77d76a019c0d12849d153a47a125ba6b98f528670838468c365e2d9d4a0758"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "504d025c6cbd09635dd51d9405721b6fedc13a50ee79656c1a2829df2715692f"
+    sha256 cellar: :any,                 arm64_sonoma:   "5404b860df06e17d87552d0e98f7afba95fc4e71fe31370e7df0c55ecebf1690"
+    sha256 cellar: :any,                 arm64_ventura:  "0a311e894647c4c2a2da45e3c2a91c2edb7bc32f19a85b29dca95d4d40d78945"
+    sha256 cellar: :any,                 arm64_monterey: "72314681085aee06c4a99d0c5e202b388eacf34963c0e93bd72d2fa522b70b18"
+    sha256 cellar: :any,                 sonoma:         "42e56547864ebc7067098b1e98b6f95c23355371790848a051a5384b7ede52cd"
+    sha256 cellar: :any,                 ventura:        "e3548def42c56e802784a9482c73a748c420130bc05043848f88fda2b7111132"
+    sha256 cellar: :any,                 monterey:       "30e8901c3a629b1afecd15009c8ff162f60451d2f33e81486cf74081f12f344c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e8752164babfa0db3cb1e9051f3eab3ae6b61e43f615bb6871e66d210f424d7"
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on "six" => :build
   depends_on "pkg-config" => :test
   depends_on "capnp"
@@ -29,8 +29,12 @@ class Uhdm < Formula
     sha256 "04070bbb5e87291cc9bfa51df413677faf2141c73c61d2a5f7b26bea3cd882ad"
   end
 
+  def python3
+    which("python3.12")
+  end
+
   def install
-    venv = virtualenv_create(buildpath/"venv", "python3.11")
+    venv = virtualenv_create(buildpath/"venv", python3)
     resources.each do |r|
       venv.pip_install r
     end

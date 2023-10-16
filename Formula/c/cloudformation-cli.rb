@@ -9,13 +9,14 @@ class CloudformationCli < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1db314b021b081a039123d499747b175d19d8a99ae06bcbf4b8692d18650b991"
-    sha256 cellar: :any,                 arm64_ventura:  "c469fe831e13d7414e1becbdd868b334409d8d6aac990b276235e8a2139dabc2"
-    sha256 cellar: :any,                 arm64_monterey: "6a3a035f4e20f9aa83e033d3ca55070a9e46d132c2604edb36946c0083d358cf"
-    sha256 cellar: :any,                 sonoma:         "af8cee30e85cbc5f6835f2a36ae495158a788e3dead9696d3cf4bc8f1cb5c64d"
-    sha256 cellar: :any,                 ventura:        "ee3a81970926eb8100e605de87532372f7dc5e5a34dfab8b01dd9920be202259"
-    sha256 cellar: :any,                 monterey:       "14da076bea8df4e55fef3822e08fb913a0e92bfd15fd0c48fe1358997a5d23fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ded110c67e0bafee45a27329b42c442cce0e39b7cc144c1910f2e5bd7aa9414b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "1b0d5c737891a413dc2f03ba62fe6ad253116769192f73c8c996adef7de07169"
+    sha256 cellar: :any,                 arm64_ventura:  "57e2228f23e49c3b98783c101d9eac73658bb660fc62498fb0f7793aabcb53ea"
+    sha256 cellar: :any,                 arm64_monterey: "078327b490cfb68d3ef9f0cb17587c31f16b8a7dc7eb27ce6450e96c5f0deb55"
+    sha256 cellar: :any,                 sonoma:         "8a26c364af5f3181105cf7aeaff1870313abb33a443f3cb0f4c8daa901ba5313"
+    sha256 cellar: :any,                 ventura:        "64fa175bbb2f9f586ea25c6b6110c9df94edbeb7fe97cae21b46c84804fd165a"
+    sha256 cellar: :any,                 monterey:       "ebab2b153efc01fb72d954a2b07f98cc5f2d1c2909bc71e1776d8660f10d4e6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4568603f355bf7db5f92d07f6223084361059ad3aab773f00b1a067aab44a468"
   end
 
   depends_on "rust" => :build # for pydantic
@@ -24,8 +25,9 @@ class CloudformationCli < Formula
   depends_on "python-click"
   depends_on "python-markupsafe"
   depends_on "python-packaging"
+  depends_on "python-setuptools"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 

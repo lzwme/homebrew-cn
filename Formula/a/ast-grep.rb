@@ -1,18 +1,18 @@
 class AstGrep < Formula
   desc "Code searching, linting, rewriting"
   homepage "https://github.com/ast-grep/ast-grep"
-  url "https://ghproxy.com/https://github.com/ast-grep/ast-grep/archive/refs/tags/0.12.4.tar.gz"
-  sha256 "8476a17d93ffce9f2ee4e4bf77f9f07131cc842b2992ec81588a224d0d4ca494"
+  url "https://ghproxy.com/https://github.com/ast-grep/ast-grep/archive/refs/tags/0.12.5.tar.gz"
+  sha256 "39c54c1f809340c6f2e9b8f1e941619ec161b076e2114f0140a8e5825259048d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f5e9af900c7abdc43c30324ec0c36d2bee34e55ab9d041b477cd4c561eae115b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "97cb70738a899652ae7760fc0de06edad3cddffe8cf13a7c0a4a19768c4ce208"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d493e91168ce04b5a471783f4931c29af3fc07ac9f0628c830143a7a352609a4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1a81ac290e8558f29126c35c79b58d4601d14be874178b458250782541550774"
-    sha256 cellar: :any_skip_relocation, ventura:        "18e56cce5c90b0949409281b1bdbe90f57a1c0c3f247d2d2a93a669602afbf46"
-    sha256 cellar: :any_skip_relocation, monterey:       "232f8c1eb84c4d2c831ac9ab64b040941a6da3bab04b5b61fc4c05142e400b66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f51b911cae674f1a9b9e9a97a15ea83fa08c46293f6feba35d69bf77ed3824cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a140244319583f92eb5af669c723b74a1716a269a15b50374656b31fd77e595"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ed2408ddf22e1c83b2066db2f58c39d5a47f5898b662e1d2f8909fa0312f96e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1e0688943f3b99daecd2a98b486923dd3fed4a45cb08cf9baf8b2a60ad3826ea"
+    sha256 cellar: :any_skip_relocation, sonoma:         "79f959b072d780bdb73f76bcb2334ba561e41919c93a091f399bc2e0c22b9618"
+    sha256 cellar: :any_skip_relocation, ventura:        "c9103be93ad4d0a3d85676e92a5a2c0079bc4d305e6320a9cdf31248305582e6"
+    sha256 cellar: :any_skip_relocation, monterey:       "bc3cfe4c854585da88a0cc28a08619fbce1a8636481d7ca9c4176bcd6009a31a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79751762fe9185ce8e865543c97eade4276411c5c611d0b7519df78fddfbdc7f"
   end
 
   depends_on "rust" => :build

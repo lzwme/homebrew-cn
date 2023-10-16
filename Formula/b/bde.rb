@@ -11,20 +11,19 @@ class Bde < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4359874389805af1a74358337ece9ff11b9f13d8a9d11460d7dd020511be8203"
-    sha256 cellar: :any,                 arm64_ventura:  "52a26850cf6c809d5ee9a790ecf83cebb05c2902fd9f68bc3792c1c6f932e677"
-    sha256 cellar: :any,                 arm64_monterey: "3de3d1bfa894eee380194680a413ec544ae0d565d9e7b982718ac00df6dbee91"
-    sha256 cellar: :any,                 arm64_big_sur:  "ecaa49cd4f0fa0897e92c66621beeb880f07766e711971cc328e3597f64628cb"
-    sha256 cellar: :any,                 sonoma:         "823b83e8006b2b0a02e064f6b7bb3c0e57a924281bb6160fb16c53625274f8ee"
-    sha256 cellar: :any,                 ventura:        "d4a6a0f9e18e6ecbeb74a9a214dc7d16b69025f3cae27ad7833e7bee97266349"
-    sha256 cellar: :any,                 monterey:       "1196a6d58418a5fdc28aa1fd7a7237890921d40cb3af2f3133b577f7139dd0e0"
-    sha256 cellar: :any,                 big_sur:        "163764a63426d9e1abe047681541d8b2fc83c4d0e84028cbc2bc60f1e550e130"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4989b788eb112bd6e997d5824b9d9965b3f9b56d02aa190848c6a39265c7c3bc"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "2ec67f02b6f24193a57ef4da58e6f14e93cfe472889e0c31647bb014baf386a3"
+    sha256 cellar: :any,                 arm64_ventura:  "a77966d44eff4c5151c256e3797067412d63009763ff533352b6afa4ec3db868"
+    sha256 cellar: :any,                 arm64_monterey: "c47b0514a2dbd1692a347066c3dd9880c370af0adb8f858af88d62e6438d3c91"
+    sha256 cellar: :any,                 sonoma:         "70d427ee0ea6ede4beb5f37826bab1949e55d5141f4bb7971bc0748c20d74417"
+    sha256 cellar: :any,                 ventura:        "2a30bc3f66bf879b34bb29cee2d1b909e52b46d51cd0c6407dbe8cd49ba69673"
+    sha256 cellar: :any,                 monterey:       "808d18c89ae1f51c77d718ddf1b91be6dfc47856f6eba4e533174a865f2b16fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26b96ecc32f3c86336cb592434a4d68486264a73a1fdb7b4b09be21916498a4f"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on "pcre2"
 
   resource "bde-tools" do
@@ -47,7 +46,7 @@ class Bde < Formula
       -DCMAKE_MODULE_PATH=./bde-tools/cmake
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DCMAKE_TOOLCHAIN_FILE=#{toolchain_file}
-      -DPYTHON_EXECUTABLE=#{which("python3.11")}
+      -DPYTHON_EXECUTABLE=#{which("python3.12")}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args

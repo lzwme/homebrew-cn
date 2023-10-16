@@ -9,19 +9,21 @@ class LinodeCli < Formula
   head "https://github.com/linode/linode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5d85647fce885496e3fae2fa20eec115c158bab8c5adc114b49c1bc531f50657"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f96944b594553665e1a85a771b5165ab5b2ae5f7218e2ad0d6f1735d1b5120aa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e2e6ad5f6344566071c1226a30978602fc6dbf74800db9089f0bf4bb02c9a8bb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "87d5247356722619a591aee8046dd06792cc891eca48fbf57c10b40ca3115ccb"
-    sha256 cellar: :any_skip_relocation, ventura:        "c5948192db2658cdda5552bb5bed734390f1883b6bb7a3cee2d2ae3cf2984e70"
-    sha256 cellar: :any_skip_relocation, monterey:       "c2dfdd55a950353018d9f7058fc71baf249325f41af47a6f6ea41055f51d608f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0b0d7361d5b9f12799789f2e3a754c3b8043285646084c08de8ec2f25f1a77d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "728d4ba1cc39aee51731250d69a01c231415d2c84b22368193150fe569da4d1d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "508d5a90e71309211aec47110dbb2ee45d79f9ffa986438882fdc075bc6ffe1a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "49cf4e9e25b3ee1715f1f932bf03e694ce7d143f067cdba3747df9520871614a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "48ddf5b300701cf711d90015a188a75a51d6b054889a796ccc6fd8f9928a07f6"
+    sha256 cellar: :any_skip_relocation, ventura:        "4b52aa6e828f8c372cfcb483a903e057c1296a1addcbf8d7990e824499bfa9b7"
+    sha256 cellar: :any_skip_relocation, monterey:       "c319d9fe46a4c1a395669390ade8d5817e2a68213bac94af02bab351955efdd0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03171d5f790ad33c368689350949e35238528812ba8bebc3f5f0cfc0fd22385c"
   end
 
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   resource "linode-api-spec" do
@@ -70,7 +72,7 @@ class LinodeCli < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.11")
+    venv = virtualenv_create(libexec, "python3.12")
     venv.pip_install resources.reject { |r| r.name == "linode-api-spec" }
     buildpath.install resource("linode-api-spec")
 

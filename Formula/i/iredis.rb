@@ -2,28 +2,28 @@ class Iredis < Formula
   include Language::Python::Virtualenv
 
   desc "Terminal Client for Redis with AutoCompletion and Syntax Highlighting"
-  homepage "https://iredis.io"
+  homepage "https://iredis.xbin.io/"
   url "https://files.pythonhosted.org/packages/33/30/bf585c76653873b74b9bfebf1fdb22aee4e6959f37e68d8a883684a7ec95/iredis-1.13.2.tar.gz"
   sha256 "7645fe5e153c12e231f68e58067bcc678dce2a61ee572bb0992dbe7159b85302"
   license "BSD-3-Clause"
   head "https://github.com/laixintao/iredis.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "40c23e2293bdf121aa868f0609e3332b77578552ced5cd108752727454cc645b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da261678196e2f5a48d098ce37d5c53e0eeebb5b5f900bcccde30eb3fcf36b8c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fab7656bd49fcbf0fc015402b0250f414443d288d0ad400ef6e0457005feb614"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7faf3bfa27350a3b72cca62ebea4006db909d4dde6816476b9c0a9cb22069af4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "26f219100729b4f46bca1fc7f8dcc9cb87ff65d8008b7fbc28156e02003f2492"
-    sha256 cellar: :any_skip_relocation, ventura:        "28cb02efa43e6b1d61a15ecb2489e1c3f7e2f4bc295a22c4aa0e2f889fd007bc"
-    sha256 cellar: :any_skip_relocation, monterey:       "52a5366fa52afe2a1111a9200e76a598dd247d186bad4fd0b2618f80a067da94"
-    sha256 cellar: :any_skip_relocation, big_sur:        "66fa258a69f44fa0a93d9cf7d9a634b307898bad4fbc8d007a021417212689c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce356782d7a76a37a4fdc05b9b49730e68a0f4fdf88399a98dba3c022f556831"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fade1399e18b59908d295ec1b759fc8169e81df014e578586986643c064bf67c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5a50008cee2da87dcafd7afb3c172809250a6b1b4ad81099cf385f7638f7513"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6847a48c56af908f0e493dc2491a85a02b970b33384021a0326c358dec4bc741"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6de51b264bade34980d373af935010c68fb05fee83ee988c1fa073d83c765cff"
+    sha256 cellar: :any_skip_relocation, ventura:        "e6b3885e4698d3637c19438fdbedaa7e0b074e002255812b79686d71b69597f8"
+    sha256 cellar: :any_skip_relocation, monterey:       "0ef581c30dfaaa29ab5f20c92766e803e908f83458d483821f9ebd2fb1610c1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b873556fa5ad46f33e10d99ba08ce768c59f11b1683ae3bb90ef95a73234d2b"
   end
 
   depends_on "pygments"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python-pyparsing"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "click" do
@@ -37,8 +37,8 @@ class Iredis < Formula
   end
 
   resource "mistune" do
-    url "https://files.pythonhosted.org/packages/0c/88/6862147c3203750cef135070fe9f841d82146c4206f55239592bcc27b0cd/mistune-3.0.1.tar.gz"
-    sha256 "e912116c13aa0944f9dc530db38eb88f6a77087ab128f49f84a48f4c05ea163c"
+    url "https://files.pythonhosted.org/packages/ef/c8/f0173fe3bf85fd891aee2e7bcd8207dfe26c2c683d727c5a6cc3aec7b628/mistune-3.0.2.tar.gz"
+    sha256 "fc7f93ded930c92394ef2cb6f04a8aabab4117a91449e72dcc8dfa646a508be8"
   end
 
   resource "pendulum" do
@@ -49,11 +49,6 @@ class Iredis < Formula
   resource "prompt-toolkit" do
     url "https://files.pythonhosted.org/packages/9a/02/76cadde6135986dc1e82e2928f35ebeb5a1af805e2527fe466285593a2ba/prompt_toolkit-3.0.39.tar.gz"
     sha256 "04505ade687dc26dc4284b1ad19a83be2f2afe83e7a828ace0c72f3a1df72aac"
-  end
-
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
   end
 
   resource "python-dateutil" do
@@ -77,7 +72,7 @@ class Iredis < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.11")
+    venv = virtualenv_create(libexec, "python3.12")
 
     # Switch build-system to poetry-core to avoid rust dependency on Linux.
     # Remove when merged/released: https://github.com/sdispater/pytzdata/pull/13

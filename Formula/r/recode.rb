@@ -19,8 +19,9 @@ class Recode < Formula
 
   depends_on "help2man" => :build
   depends_on "libtool" => :build
-  depends_on "python@3.11" => :build
   depends_on "gettext"
+
+  uses_from_macos "python" => :build
 
   def install
     system "./configure", *std_configure_args

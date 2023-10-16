@@ -1,20 +1,20 @@
 class Treefmt < Formula
   desc "One CLI to format the code tree"
   homepage "https://github.com/numtide/treefmt"
-  url "https://ghproxy.com/https://github.com/numtide/treefmt/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "2d1e506e5c488b4da1061bc5bd5c91074b8d136bcfa90b6bd8c76c461d81224b"
+  url "https://ghproxy.com/https://github.com/numtide/treefmt/archive/refs/tags/v0.6.1.tar.gz"
+  sha256 "5bb67936c5e1dfdb0f260e0f1795e1624697e266c6c1b9e47914df4aa17c5107"
   license "MIT"
 
   head "https://github.com/numtide/treefmt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f06934b7c3f526dc635681f59a78c8f66768c9d3764835aa925d39ef22203882"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "98a1d33fd5ac322f3f309f28ec942a6cd4f2e49206c9e1cfc7e11f633d304b85"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cfb60eca7db12e3527dfe858fd904c24d0ab3eba4895ce01e4954f60c103fe5b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b892aeff88d1576dcad733f8bf5a1d76cc72bae3250bb4e6a635e54421079ef6"
-    sha256 cellar: :any_skip_relocation, ventura:        "0e617dc388f7177becf3b05660e240ed2fa3468cdcb5dffb3b7c8831837f2eff"
-    sha256 cellar: :any_skip_relocation, monterey:       "df15d38adad2365fdcbb2640466cba9e3a5b2552d8d6acb73595c959c0c12af7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "872db04b20754da18c65355c65953231746a9c17ac478db5f5a2fbc91ca3ea6f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bba21b0bdd6ae7fd7569524b658681208c89672cb0eb92629c758f21e488e16c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ded3e211ab31c99263044c87cab977a4b614834acf31c14e699918b6c8bad104"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "44ae0868f85b77fb10d3cba220448f6e1cf8e5b8e877cb841028b39aad203f4e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "80c344cc850282f3a0dfb58b01900069b94e07c9a6495842caca856dc2a183bc"
+    sha256 cellar: :any_skip_relocation, ventura:        "64e5fd37315933d10520ebe86a8c30aa721338c62a2f1eaa924f28f5b885fc66"
+    sha256 cellar: :any_skip_relocation, monterey:       "0896efaa39e5d6f9ec65076c930427de27b0ed3b7daf8178eb3380a2c0306ddc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "00f0145abdd2b5c97fae57564e6f3db8349c712f6f935f33e3d941d27e1bf124"
   end
 
   depends_on "rust" => :build

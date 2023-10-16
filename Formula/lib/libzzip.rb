@@ -21,17 +21,20 @@ class Libzzip < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
 
   uses_from_macos "zip" => :test
   uses_from_macos "zlib"
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args, "-DZZIPTEST=OFF", "-DZZIPSDL=OFF", "-DCMAKE_INSTALL_RPATH=#{rpath}"
-      system "make", "man"
-      system "make", "install"
-    end
+    args = %W[
+      -DZZIPTEST=OFF
+      -DZZIPSDL=OFF
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

@@ -12,15 +12,14 @@ class CrosstoolNg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4e89106ff9e0491a77f299440dddd366c4fe42c6d41a3e16dfc1267c3e012e5a"
-    sha256 cellar: :any,                 arm64_ventura:  "63e6ff7e32be6449940671eca17016ea8c9d80c6f7252e209989536542beef08"
-    sha256 cellar: :any,                 arm64_monterey: "71031d1dd05a389a19f549f1354635da8b0ec6462ca5a808a35b2f3165747331"
-    sha256 cellar: :any,                 arm64_big_sur:  "9643425a8450bda42ab2bab1bef5d22ace5c0525d206010425fe9f4cb3abcb07"
-    sha256 cellar: :any,                 sonoma:         "da7a4892ff1e6000d74c8fea569ed91483e964ab164e0c8188b070a6b83fa988"
-    sha256 cellar: :any,                 ventura:        "116d161e3ba7a6150773572ae640004208744a0ecfab39f72f61debcb55c3212"
-    sha256 cellar: :any,                 monterey:       "579bd3956156eba1aebe0e683693b4bb1feec1c4a6def514385403212c0f7b0e"
-    sha256 cellar: :any,                 big_sur:        "9a5104ab1aeb98fe2c5052f5f1e48ff47430c2736b0ecdf71893b09ad94bedcf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "634af595334c49bd6ff26f9cb0d77b99fac85f65b5b5b1663deafc5b6c6da0ac"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "c3beaab909d4b0890ce0b6264c18981a6afbe7ee2487f49d01ae5b51c12ff6c6"
+    sha256 cellar: :any,                 arm64_ventura:  "d177d9aa721b098257b31e09b64d8e9ff9eea1f49ea75e20333c304778100f2a"
+    sha256 cellar: :any,                 arm64_monterey: "a0899205ebaa1b23ba3808277821a75fe418dd0929a1a35bc736f0ed32ff20df"
+    sha256 cellar: :any,                 sonoma:         "1c5e8c757523288697612a1474709ab06b89dbfbced6b26ff2384858dbceb1a3"
+    sha256 cellar: :any,                 ventura:        "8107a048de577c810cc5404b6949decc44b6f50ee812576facbfa884607f99de"
+    sha256 cellar: :any,                 monterey:       "fc5ae025b96ac3410b52e92475db88bbc06f81252cd5d096177efd6d1a681f55"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a309a9662fc4b2f991e21fde07dd0e4b552829d36add35543991cf77ea7d6b3d"
   end
 
   depends_on "help2man" => :build
@@ -34,7 +33,7 @@ class CrosstoolNg < Formula
   depends_on "lzip"
   depends_on "m4"
   depends_on "ncurses"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "xz"
 
   uses_from_macos "flex" => :build
@@ -59,7 +58,7 @@ class CrosstoolNg < Formula
 
     ENV["BISON"] = Formula["bison"].opt_bin/"bison"
     ENV["M4"] = Formula["m4"].opt_bin/"m4"
-    ENV["PYTHON"] = Formula["python@3.11"].opt_bin/"python3.11"
+    ENV["PYTHON"] = Formula["python@3.12"].opt_bin/"python3.12"
 
     if OS.mac?
       ENV["MAKE"] = Formula["make"].opt_bin/"gmake"

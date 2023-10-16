@@ -9,15 +9,14 @@ class Mathlibtools < Formula
   revision 5
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a2e8646e0f773da9349b7fe49f05fefef83ae4a7ff46276587411598fe8f67e1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c71084702108daab6c3b8329df05b88233747ce987960c2a5899529ba27ad291"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b6992369cbb006825754b41fb8ff8172746d9952402498adf3109c00f1967e46"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0362772fc926684bfd7ecc17484a7c44738844990e73914deec264d25448be28"
-    sha256 cellar: :any_skip_relocation, sonoma:         "82967eb2e6a7f4ac38b494505ed63471f221bd647352d5680f371e6b0466b41b"
-    sha256 cellar: :any_skip_relocation, ventura:        "a7056b7128fede1c8946bc0f9120e06495609578112ac71624f9538333ef3243"
-    sha256 cellar: :any_skip_relocation, monterey:       "fdb6baf4e7be1608b664eb8452fc54d11610808ab93179ffe39476ddd756b961"
-    sha256 cellar: :any_skip_relocation, big_sur:        "25af634aeef3f335dd73a1f30783581a798fe3ed3571638ffd8ac62d052cdeb6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe7a9237c5b1d8239f5aa00f0119f2871db4f3b47466ccc026ffa789c22f384e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "57c2931eff802f64303699075e2f006e690b31e05bc5061223bcb5ba0c2452b1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "44d405f28d4bfa0a39127d6d35a835e3a613e85471c9e1cde23a1abc88c25b4a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "32684d76ad5deb3b4eb2a4792bc1f7c77c91e6d4e0ea8d7c51c38cd510b2eb8c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "14702ce98273d278c09a64772942b4a38352af32a053e31ff7a69ceb90b33947"
+    sha256 cellar: :any_skip_relocation, ventura:        "aeb648de8748caed8fe6660fc58ead760b27bcdcef0c658c23d1dccca6818047"
+    sha256 cellar: :any_skip_relocation, monterey:       "001b6d2d75fcac91969eea01ee88e0e4f8e15e27c91628b3215f46663f177d94"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e2d8173639de9bb78347e67fa5b12781503ada3dbf93392b75533441edfdffb"
   end
 
   deprecate! date: "2023-09-04", because: :repo_archived
@@ -25,7 +24,7 @@ class Mathlibtools < Formula
   depends_on "cffi"
   depends_on "python-certifi"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 

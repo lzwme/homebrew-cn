@@ -17,7 +17,8 @@ class Mas < Formula
   end
 
   patch do
-    url "https://github.com/mas-cli/mas/pull/496.patch"
+    # url "https://github.com/mas-cli/mas/pull/496.patch"
+    url "https://github.com/mas-cli/mas/commit/72e697e89231461a85b543af58ec5ae8296a27de.patch?full_index=1"
   end
 
   def install

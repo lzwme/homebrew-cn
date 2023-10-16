@@ -13,20 +13,21 @@ class C7n < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "fbfe552b12f96a3401d8d99171e294ddac7396ff654e901f87d550b4c23ef140"
-    sha256 cellar: :any,                 arm64_ventura:  "ebc36b231ca7503737f13f2a8b1ef5cdd9ce87cb7fa357d809a3257fdf986a5f"
-    sha256 cellar: :any,                 arm64_monterey: "a716b3871bb1f99d6cbc639432fa1324d2c0ac6278247f2b7eebe694131db52d"
-    sha256 cellar: :any,                 sonoma:         "294e6375ea251890e393ac16d64f105d12d3ed7c8af9641d0e4451c41db017d5"
-    sha256 cellar: :any,                 ventura:        "1bb958a654bd216e638cf47ad7ee1858b2b261361bb9b5da06445fa5f2f790b8"
-    sha256 cellar: :any,                 monterey:       "ede14f340f9ae3812c0f63c74a562346a82840fa1111a90b664d302fcf2e0fa2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04dde3306cd1fed5728e70e4783552545eae3bb1abe23705423776e810fe98ee"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "b929bcc31473ddad908f3dc9050c6543881f9986819a45cd2b39c7c38700e60f"
+    sha256 cellar: :any,                 arm64_ventura:  "c6757bf0abcfb0082fab6b45d24d12cc10d55d0bf2355e8811c5d05a1fee9d97"
+    sha256 cellar: :any,                 arm64_monterey: "a9db906462cabdf79759375ef315f5733efe27a1dc3c5e792d084dfb967b3f83"
+    sha256 cellar: :any,                 sonoma:         "b35dce0676c6c08a5f75083ef60adc52fa42ab1e3de1df64fe563bdda410be1a"
+    sha256 cellar: :any,                 ventura:        "64c724bc129da3afd5b8f5850cf8cf7e14241f7ff2e6c4731b750b299faa5d59"
+    sha256 cellar: :any,                 monterey:       "9c5e4ba3610d7ddf9cd6ee7896a64d17d49c41969d7cfa93850c3a9ad12d7c71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a10feed7db014ebee614e711b28ecf6e096a7078866a350a564691b202efe1d4"
   end
 
   depends_on "rust" => :build # for rpds-py
   depends_on "python-argcomplete"
+  depends_on "python-setuptools"
   depends_on "python-tabulate"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 

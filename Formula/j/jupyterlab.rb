@@ -11,13 +11,14 @@ class Jupyterlab < Formula
   ]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f66499ba7bb4b338745002e0e03bb48fd50ba87c8de2fe5b4ff6063522aa702b"
-    sha256 cellar: :any,                 arm64_ventura:  "976cda524b25a5c58d870ff73388287d113b930b7122bd128dc2f329da0792dc"
-    sha256 cellar: :any,                 arm64_monterey: "379a9109156e045643d3c85749db41575ed38e514f57e58789fbf4e7ab3cc3ea"
-    sha256 cellar: :any,                 sonoma:         "15e48bc375c004cf4e30c4f921d9c7fe007c3c9cf29fa5baa4f9fc53a0ee724c"
-    sha256 cellar: :any,                 ventura:        "380e3721d9bb3230900599f9f1713ac97c72cdcbedf0a13bf0f7f87a42f50567"
-    sha256 cellar: :any,                 monterey:       "51c25c82e7249222598ecd11fd91917bc2ace034ea8625013542d882651704a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10b46798fa4f1a02e7a931b083a0043ffd716f6b4c19261f426cdbd1546fcb4e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "b1879cfeeb0c5009bf4535a6539d8ce6c69a55b96f9db4397ff72d48babbea33"
+    sha256 cellar: :any,                 arm64_ventura:  "e478cefdd2f5322fad6d7b10e186c62f471d8fabf099876fbf9d456f5aa54330"
+    sha256 cellar: :any,                 arm64_monterey: "f90786f3956b127a2883c99b9780fc49c51aef77d04d79e6419b54392739c2d5"
+    sha256 cellar: :any,                 sonoma:         "9e05866373bccdbe5c2ea71daa6a89f90e7eb901df3f0ea4963f722d56ec810e"
+    sha256 cellar: :any,                 ventura:        "ac3e2fcd9ec46423a283fa6e02bed056104c2b05065c32d60ca826680b276ac7"
+    sha256 cellar: :any,                 monterey:       "5e6c3dd2920879712f484ce25354a5fd4e2387f2b7602ec375bdac3f76af02bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b705292f460522ec4a12c040ad688565727f1c1c45e31924d3b223836ac5e1c8"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -30,6 +31,7 @@ class Jupyterlab < Formula
   depends_on "python-certifi"
   depends_on "python-lsp-server"
   depends_on "python-packaging"
+  depends_on "python-psutil"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -257,11 +259,6 @@ class Jupyterlab < Formula
   resource "prometheus-client" do
     url "https://files.pythonhosted.org/packages/f5/05/aee33352594522c56eb4a4382b5acd9a706a030db9ba2fc3dc38a283e75c/prometheus_client-0.17.1.tar.gz"
     sha256 "21e674f39831ae3f8acde238afd9a27a37d0d2fb5a28ea094f0ce25d2cbf2091"
-  end
-
-  resource "psutil" do
-    url "https://files.pythonhosted.org/packages/d6/0f/96b7309212a926c1448366e9ce69b081ea79d63265bde33f11cc9cfc2c07/psutil-5.9.5.tar.gz"
-    sha256 "5410638e4df39c54d957fc51ce03048acd8e6d60abc0f5107af51e5fb566eb3c"
   end
 
   resource "python-dateutil" do

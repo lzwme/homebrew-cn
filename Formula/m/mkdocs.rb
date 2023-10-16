@@ -8,28 +8,23 @@ class Mkdocs < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fbdfce5057bb9aca9b61fee37d579ab689fc473ce65fc684c3a3cce69ac2ef22"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6210d999608db4ec68ffe29afeee3feec6532c36f189b08ba5344f2fa62abe57"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f1791818a033479edc68ff695987101a25512658e6fa6076becc7201c0f797c3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a8993f9d44d7e133275e5cb842f5303aa55c54edc8dc202b5c4142a154ffdd38"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ee901cc8195fbe2f3f94c6f2be66b76d27b761ecb5e715227440e11f50ad78e3"
-    sha256 cellar: :any_skip_relocation, ventura:        "1805d06118bca9a27fb1b5f29b336aea4ab4ee42192b96497dea94656e8ff8a3"
-    sha256 cellar: :any_skip_relocation, monterey:       "6c8b5ebc2343978a8a768d1d2f2dca3e6179405a4bd6fbffe5d50546a68ce525"
-    sha256 cellar: :any_skip_relocation, big_sur:        "aba9624b023303a598559abf2310a49b7143ec9e00da1868624984bc233b433f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e767ff483e264f6a446326c8378f3e0e02af60b586c2dd1a817880e6af427c77"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d265b9eb4167e6c3f7e3924666c94840ecaa824cc614d4b99d1312f5f19c70de"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f195c032f34e3cf521d9747e16f5d7eada8f820c88774713f92a900d1a86051f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "41cdc1ebb990b2b918b15b24ba59a9ac474fd83bbc9d62d204c34fd6bcfdffa6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6882b163de5b2bb03e84cfc0ea6393cc37e9eec993555b8210edc52590339b5b"
+    sha256 cellar: :any_skip_relocation, ventura:        "f1e012b3d2f71fd3a5ec080efa67221b93511bc9771430b597f6d3a06ad0c2a6"
+    sha256 cellar: :any_skip_relocation, monterey:       "2f70c24c75fc4d120012bd2da14731ba02e587adcd969709688915c7e52aed4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "de47d980cbf275d945d58d5d9bfd254f8664b30e53892feed97e16e43d778ad9"
   end
 
+  depends_on "python-click"
   depends_on "python-markdown"
   depends_on "python-markupsafe"
   depends_on "python-packaging"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
-  end
 
   resource "ghp-import" do
     url "https://files.pythonhosted.org/packages/d9/29/d40217cbe2f6b1359e00c6c307bb3fc876ba74068cbab3dde77f03ca0dc4/ghp-import-2.1.0.tar.gz"
@@ -52,8 +47,8 @@ class Mkdocs < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/dc/99/c922839819f5d00d78b3a1057b5ceee3123c69b2216e776ddcb5a4c265ff/platformdirs-3.10.0.tar.gz"
-    sha256 "b45696dab2d7cc691a3226759c0d3b00c47c8b6e293d96f6436f733303f77f6d"
+    url "https://files.pythonhosted.org/packages/d3/e3/aa14d6b2c379fbb005993514988d956f1b9fdccd9cbe78ec0dbe5fb79bf5/platformdirs-3.11.0.tar.gz"
+    sha256 "cf8ee52a3afdb965072dcc652433e0c7e3e40cf5ea1477cd4b3b1d2eb75495b3"
   end
 
   resource "python-dateutil" do

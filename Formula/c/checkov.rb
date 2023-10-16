@@ -9,14 +9,14 @@ class Checkov < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "fd412465b3c8091cb1db6b1bc0b612be7031f010e476e2c078cb79df08190d21"
-    sha256 cellar: :any,                 arm64_ventura:  "e54ea63ba23d6c7d183e1cecb69c1c1ba051dca70a89d31a4a49d9006cf4478e"
-    sha256 cellar: :any,                 arm64_monterey: "3831c152a47c74a4619801318383487b057db6adeda7bfdc5f9a89147d242817"
-    sha256 cellar: :any,                 sonoma:         "3117a21b0a6afc1055b3b34d13b96e4b295c078f32fee1a7d8f63e21f409b516"
-    sha256 cellar: :any,                 ventura:        "a59424784b56e36c578f99998c9c2c99fc9828d1505924882236a433df4bd07e"
-    sha256 cellar: :any,                 monterey:       "05af14dbe22786a111d89e9ba5b66bd2985c3694abdd5489afe39c1dbaefaffd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "348c5a9fb4aa6d7fdb4d22418788c1fdace5ffe23c87545cf23e09387083cb6d"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "c70b777c72a012e2ad3e2f483fa0b30cb7b0f70cceb8c9334d70b14b64debf7a"
+    sha256 cellar: :any,                 arm64_ventura:  "2d77ff3a48a2808e2893c36ae55200a9ffe0ff2f6e258df006164f09181463cb"
+    sha256 cellar: :any,                 arm64_monterey: "fe9ed1ccbe3f980629b3b6406a9199ba78a8ff72d16c3d6ef505f58ef062455a"
+    sha256 cellar: :any,                 sonoma:         "ebef18e95d767a2f6abb259e659d8101fae8de50c8f3168a6c0a591370979c91"
+    sha256 cellar: :any,                 ventura:        "a9290e2709f0cc2295a379c062e1731189239fea6cee378d5078809847d071a2"
+    sha256 cellar: :any,                 monterey:       "2f74b134c948d58ce70ac6d2f1ff99af2ae1b9bdf45652272c7898f1a212da14"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d3f81250461324f437fb5cf65a7d7ef1c7b1031b0112d4e1fc1fef7d08798b5"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -429,6 +429,13 @@ class Checkov < Formula
 
   def install
     virtualenv_install_with_resources
+
+    python_exe = Formula["python@3.11"].opt_bin/"python3.11"
+    register_argcomplete = Formula["python-argcomplete"].opt_bin/"register-python-argcomplete"
+    generate_completions_from_executable(
+      python_exe, register_argcomplete, "checkov",
+      shell_parameter_format: :arg
+    )
   end
 
   test do

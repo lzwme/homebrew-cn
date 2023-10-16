@@ -6,6 +6,13 @@ class Nexttrace < Formula
   license "GPL-3.0-only"
   head "https://github.com/nxtrace/NTrace-core.git", branch: "main"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "691919a1042d9e26cd745b356288ccfbd6f56a9cd7071beeb7578a240b16b5ec"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b460bb5a31ee865868500cda30821deaa318077038c6c3d6fea70b9714d058d"

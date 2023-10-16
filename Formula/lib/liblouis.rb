@@ -6,15 +6,14 @@ class Liblouis < Formula
   license all_of: ["GPL-3.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
-    sha256 arm64_sonoma:   "b8bc2f5b10cc8bb418fa034b81ed0d837cc3e55472f6076a20c774c50e5732ef"
-    sha256 arm64_ventura:  "bd240e5b397f040b30aa68f514c1e8deee14959a5b06a9360f87e1873ab25e67"
-    sha256 arm64_monterey: "0060690874f38c4d04e853552d882591ef2d5310581ad03831e71d642f2f05a3"
-    sha256 arm64_big_sur:  "4f04d92c24beec33b12a966468ab01fc8de410a751987e0487cca9e4d167d022"
-    sha256 sonoma:         "f74ee56feddde5772c978bea32d9f857cae308ee39014a8dd4b333b201ddb138"
-    sha256 ventura:        "9876886d488f59a8267f6e24624c36e946f6d6260fe967429bf649ad0295274a"
-    sha256 monterey:       "64129789d3d26cb99f874e2ff843aa2bae7ff9343c8270517a0e98126238553b"
-    sha256 big_sur:        "ea73a854ace1c3f1c88e5189634983da9df8e8d81d0686ba1303206406bae085"
-    sha256 x86_64_linux:   "2aa0d2c13df07bad053701a984127635321fe00a55a841bfe6cf010845c83485"
+    rebuild 1
+    sha256 arm64_sonoma:   "a81eea7d4800706fd8a6b41c3ae254acbd444cdf9424bfe65a16358f6ae01686"
+    sha256 arm64_ventura:  "7e970b0edb98af8e3a7b03cf3ed95848c0f8ee9eaa501b3fa5a227edd4fa04d4"
+    sha256 arm64_monterey: "5a8536e0073325a8f9e8a95044a7453d9c03bab9281de1cfcf089789a4715b49"
+    sha256 sonoma:         "32e6ba5134dc11c832d9639bb1871e6c9ba854262184b6d5c9168d09f8bb0898"
+    sha256 ventura:        "9898201b9f21fb473ee63c4b5a2df4afd928ef86c907c85fca2d4932e2041007"
+    sha256 monterey:       "ae00b24333293c97c2815ce7590d2f58d9a3b693bbf52d9ed355a0e68d3b8597"
+    sha256 x86_64_linux:   "4784b929e8e42d0bd1c3de30de2373aabe51699db2cf15c9efcccabd7de46f2b"
   end
 
   head do
@@ -27,10 +26,11 @@ class Liblouis < Formula
 
   depends_on "help2man" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11"
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12"
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

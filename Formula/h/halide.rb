@@ -14,14 +14,13 @@ class Halide < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "564ce04ffc10ea2dcf23de77a0dfb890253057dd614fb04dc2dac5f8f2a5718b"
-    sha256 cellar: :any,                 arm64_monterey: "8f61d981dab71e927088763f5427d28b4b9503310455c4ee92e1187a79d89559"
-    sha256 cellar: :any,                 arm64_big_sur:  "e706b543dc1d61cbff0b8286b6f0f22f1cbedb78204f13207c52a7eb6ff62dc9"
-    sha256 cellar: :any,                 sonoma:         "d4372304d18e7e6afa9a75fca0646f3ae6c0288c1e234cce6372781eb531016c"
-    sha256 cellar: :any,                 ventura:        "28f28c0c0e1b17a5e8c40408684640c0bd0abec51cd1edf440dc781648cf5615"
-    sha256 cellar: :any,                 monterey:       "8c548b1ee5e6ae66f608a6240464a2e4fd356b407a7c34b4dbe1f5d9debc708f"
-    sha256 cellar: :any,                 big_sur:        "0694de37e861f05d512be47de93f33d984d5c8e46af492677c24662f87f6c5b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4f02a55949ce8dc4ffcb50ed588633e729bd66521c09f0634a3be0c538fbcab"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "9c225bdb3cb4289b5bb121934519e09d08673d20edb675597fc98624612c5539"
+    sha256 cellar: :any,                 arm64_monterey: "778bbca758d3945f263f9bc18781d4a54f49e3ab8dbc67e0913aa902b04972af"
+    sha256 cellar: :any,                 sonoma:         "cfc7bf242ade7297dbd59128746629c3058f0078eb504f62513c52922124734e"
+    sha256 cellar: :any,                 ventura:        "83b5ff39ff7172243c85d146faf5e8f689d5eb11d3d32e807417c867526559b1"
+    sha256 cellar: :any,                 monterey:       "39caeadda09ef26ba1956eb243b65e42d8880090b7c2f1ad0133e02a3d5885bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "233c56cd195d0183d4d70fac3fa9f846fc5b5c53a37415758302958f1b07de0f"
   end
 
   depends_on "cmake" => :build
@@ -29,7 +28,7 @@ class Halide < Formula
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "llvm@16"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   fails_with :gcc do
     version "6"
@@ -37,7 +36,7 @@ class Halide < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

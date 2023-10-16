@@ -10,17 +10,18 @@ class DetectSecrets < Formula
   head "https://github.com/Yelp/detect-secrets.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ef654869fd6f2c61ad9c5bc9af706c79a2e836672de72356fba891f4d6354ff2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8bc89867c5500ed09d2851c3cc678bc1a11f845c230bc6fe6628468b44d59dc5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "be5a6b6bfb144ee3c91bacca0d4ac565d7e0157c5ac15f2f3d43a11aae487ad5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d8d199e035a9258b168dae7a38dd7f8f80bc91930bfe7fc1ed1b851bbc7f5712"
-    sha256 cellar: :any_skip_relocation, ventura:        "6939d0013b6dd944397a03f705396d4d6f22ecf9e77d55e5c4fa5ca325eb5ad1"
-    sha256 cellar: :any_skip_relocation, monterey:       "5f8b5ca88444faefc5735e6fc8e2017e0eee51a458f25d5c8c886d735b85f7ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90e55cc963109f5adf53fc8ac9d4af58ec9b0c6cce5672e480053c5e73afd9f4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "07042dbc4265092748e4064f5943df0452230afe480a2c5be1276e2e11f13396"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "959e1b013175920947e98c7b51cd40df7142a1a47415a0336c4ffe276bfd0f15"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a87c9422e5baad526c76035566c6c03eae0c10d9f4df71f304c71b870e86d71f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bf95aaf408cd07a0e48a6975c8be9d3994d8336bd0109368d4b1eca4ed25a6b1"
+    sha256 cellar: :any_skip_relocation, ventura:        "1c0c9c84816de1ea5a031082d7db456d6809d151ce5fbb20f588662d49548044"
+    sha256 cellar: :any_skip_relocation, monterey:       "fd8a305098e17366475731555a8924319934389a409d8150219533f013381b5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef53b96cd445545418d73c6b84551c74f9497a3cbbbe97323c0973ebe2cee90e"
   end
 
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   resource "charset-normalizer" do

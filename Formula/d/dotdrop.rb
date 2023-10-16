@@ -9,20 +9,21 @@ class Dotdrop < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7abe5b420c4042795179d192455c4a7d649101616c4acc6833d030d4344c73d2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dc0808da22a5baecea227515ec9677538c252a46446bd57238c16ac45c45879d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4c1de31a3ec586a4eb95008502547750ae014d8f06a1ca6b551e74c4d171961d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "80bb077968dae6ad76cf8571a16c8edcdff31e66524d959bebc34eda608ab2e2"
-    sha256 cellar: :any_skip_relocation, ventura:        "6878dd8ee355f35ff9b67b7bf3ec4329a00011855ca8a450cfdac65f994fb77c"
-    sha256 cellar: :any_skip_relocation, monterey:       "faed63027fa70481a1bad93ada8a84039eed57350795d6b87ba7aa8cd312ef21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "811b8225024ec1eb6b6fcb90d71a6795e8bbae60d7f922cbf1d605520c6d7dd8"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4e9e1eb27924e5d534aa14696422be1e67779c5884edb006844bd359c2b79bb5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a9a94469f405b099bb392e368482deb5b3bba530e8c66eeb686ac7a76e35f6a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c1102af523fa4598d690b7b16ab17e6be149529dc6f5dd4a8a16038b7c9fb39"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9eadac736ef6e537c926de450432dda4d38777b8af9d1b418485664addfbbcbd"
+    sha256 cellar: :any_skip_relocation, ventura:        "5eb78e2453ba80badea9d32cb750c02f6db5e296a5ac7c69949805fb6d248b8f"
+    sha256 cellar: :any_skip_relocation, monterey:       "3b3993900fa01ffddcaeae85a97dd4ae120edc0fd59bae481e955360d53890f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eae751445eb2319ee04c54623467ff8409d072aca96570d7b27dfd84de7c5625"
   end
 
   depends_on "libmagic"
   depends_on "python-certifi"
+  depends_on "python-markupsafe"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
@@ -47,11 +48,6 @@ class Dotdrop < Formula
   resource "jinja2" do
     url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
-  end
-
-  resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
-    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
   end
 
   resource "python-magic" do

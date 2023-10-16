@@ -1,21 +1,19 @@
 class Janet < Formula
   desc "Dynamic language and bytecode vm"
   homepage "https://janet-lang.org"
-  url "https://ghproxy.com/https://github.com/janet-lang/janet/archive/v1.31.0.tar.gz"
-  sha256 "1f5064b97313b93f282e36584dfb7d491dd13d6ccf4f6550281232e77ccef780"
+  url "https://ghproxy.com/https://github.com/janet-lang/janet/archive/v1.32.0.tar.gz"
+  sha256 "d18e42b711d70254f4e0604049aa0d7307de0b92f622c6c61740838fc93cf1cb"
   license "MIT"
   head "https://github.com/janet-lang/janet.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "06cb7a675ab1edc260bd526b265f392516d425d8f05d30db74b99fa7e7032168"
-    sha256 cellar: :any,                 arm64_ventura:  "0b0ab17b6496c7cb26ad53dea43aab050eed1e2c1d12bd85477de6c88c9e8e76"
-    sha256 cellar: :any,                 arm64_monterey: "c804e4fa2ebd094f5b42d42830f659f2c4c88fe870155d99df95c02c55f082c2"
-    sha256 cellar: :any,                 arm64_big_sur:  "7ebef2db661fc1a91f49d8f98641603556dde41ef57159e811ca16b479bb72cb"
-    sha256 cellar: :any,                 sonoma:         "8ef63c7898a97beeb26b18843b1ac027731660530100c7a5f945e3617d862fbb"
-    sha256 cellar: :any,                 ventura:        "180e87e361a65d52f4ce416f031e9f53019592b83bcc2a0d1568dac74a9d3cf3"
-    sha256 cellar: :any,                 monterey:       "69785c69b0edea20fffe24bc7dfe1d21e7bd43a625af4fb2b4daf6225051b2a2"
-    sha256 cellar: :any,                 big_sur:        "dfdbb0e7df1e62538020878225188e704ded3b272d2d9a954b646d7d8c84da83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7953fdb26a6b267f648896dfa22ce10c56b688cfdf13319f08982554e9a2459"
+    sha256 cellar: :any,                 arm64_sonoma:   "c07c02eb58a2f9829cd49cb64d891e30dadf975fa527e500c62dc8b78c18115b"
+    sha256 cellar: :any,                 arm64_ventura:  "0411d13ce9569e3523221d01c840e4e5bd6b84fcb9352e6d7f2af040a34687bf"
+    sha256 cellar: :any,                 arm64_monterey: "cffcc1129e59559d172e17fc794d02ae33f3462d0842d3854c0f319fc242e157"
+    sha256 cellar: :any,                 sonoma:         "0db0e8ffa5f6237949570e00cba748a9325b54ddb4e95f0211089b415c273f63"
+    sha256 cellar: :any,                 ventura:        "e1be818482a3907ea0d161a4b6987e96ee39b86718812ee7f03e85d4f9e92feb"
+    sha256 cellar: :any,                 monterey:       "32e9368f26eda3b18c11079c769b8235d810645205b101ee34431dec7491a1b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5fa2d1ff81a44dbabe5129f3a0e7d345c4feb1b4e34015102bbb527799147945"
   end
 
   depends_on "meson" => :build

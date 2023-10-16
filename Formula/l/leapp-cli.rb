@@ -18,8 +18,9 @@ class LeappCli < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
   depends_on "node"
+
+  uses_from_macos "python" => :build
 
   on_linux do
     depends_on "libsecret"

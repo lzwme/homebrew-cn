@@ -9,22 +9,21 @@ class ArcadeLearningEnvironment < Formula
   head "https://github.com/mgbellemare/Arcade-Learning-Environment.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e0bb723744d6de4156e70a0e21725d8eba99bf92240249ee1f7a160e66d62a08"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "699b6985a1bb99a9ea1522ca7b5901397f13917293252a17ac8c6bcaf35bf370"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "38c820c3fe5fbd93bd584f66eb0f3af35ea46b420b266096c24f0f5540d1b45f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "87933443e4fa0c6c1805f71d93ccbae3c02680b6d7f2b8c7253c55ea3b682fbe"
-    sha256 cellar: :any_skip_relocation, sonoma:         "057445dae66de7a36e5c2b00aff31272d55f1ee083dde1e1aba8a669065cb1f1"
-    sha256 cellar: :any_skip_relocation, ventura:        "6857b79af2604afba4dc4ca1ef4a42a7502daa10353afbd2f2722d5f69831d4f"
-    sha256 cellar: :any_skip_relocation, monterey:       "2ce0522e1ad5db281ebe18e5556b36a82602e344965b476c633b00b1465036ba"
-    sha256 cellar: :any_skip_relocation, big_sur:        "258d393b4a5721a8951428eaf9009490c4dea20b5ad51cceba79014411824e7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "88e469190049e5d7fd9deff16e715f9571535c1a45451be8d44016a0581b33af"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c810cfd1c114453a2680a98616eb6655ed4e77d826c297808f116535263cacc9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b83fafd9f9ba1938c7afa2ba873825379cd45b3cd169d3baf35688000cfba8e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2f1ad5d707bbfe02484dcf7d26f1a198fb9d6bec141eabad5692e14b12f342b6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "854b443122257bbb7b8667b2e9f828b252e3aace232673bf98ad69ecca5e2c69"
+    sha256 cellar: :any_skip_relocation, ventura:        "fd24aee3582a77d3db5a74d7ec2faf2f64a8c44dbc16500c1585205a8175e963"
+    sha256 cellar: :any_skip_relocation, monterey:       "ca022cfbef7d0b2f6d68b03bf14300d600df758b72743473a4960daa6cbb6368"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "055912b9b89d3c61cad420eaa394554ab75c1465489f0a70519466ec6d2d4778"
   end
 
   depends_on "cmake" => :build
+  depends_on "python-setuptools" => :build
   depends_on macos: :catalina # requires std::filesystem
   depends_on "numpy"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "sdl2"
 
   uses_from_macos "zlib"
@@ -46,7 +45,7 @@ class ArcadeLearningEnvironment < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

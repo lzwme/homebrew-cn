@@ -24,11 +24,12 @@ class Monetdb < Formula
   depends_on "bison" => :build # macOS bison is too old
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
   depends_on "lz4"
   depends_on "pcre"
   depends_on "readline" # Compilation fails with libedit
   depends_on "xz"
+
+  uses_from_macos "python" => :build
 
   def install
     mkdir "build" do

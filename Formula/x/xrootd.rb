@@ -13,21 +13,20 @@ class Xrootd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "87c77231be5cb088cce982292b9b013f72e9a3be85791e415247ed6f30048b9c"
-    sha256 cellar: :any,                 arm64_ventura:  "7acb7f79182720a35dd96a893f49aedacb036536b0b286566c4eb6f058f0f43b"
-    sha256 cellar: :any,                 arm64_monterey: "559ad3141c7f01748799dc03c502ff96b2967df3ef4a545e0207ee83b2acb45a"
-    sha256 cellar: :any,                 arm64_big_sur:  "819954cc4b6b214f6af3a67d5b8a29948e43b7f4a3d3f038e8024e272ee50b06"
-    sha256 cellar: :any,                 sonoma:         "de0df3a5fe90ad7201d851de4a56c443b63dac14842390b0c450069c8c87d7bb"
-    sha256 cellar: :any,                 ventura:        "6495a734018e2ad94be300958b09774a281616801f3ab417c78ee561ab9b6c8b"
-    sha256 cellar: :any,                 monterey:       "97f74537d663f8ee675f1739c9c16d5177e09be77f890a0874754393a4a67744"
-    sha256 cellar: :any,                 big_sur:        "092f9c30f1234492f000e401cd156c5fa5122011d614d47198ce156afac252f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d78c2c832ad5833bc57ba580f6c43f51e929f3deb52e128337973d0f0aea2aa"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "8a1af96da395871d89ab52a2ec2869775ac5a636b24d08c709fb903eea4c85eb"
+    sha256 cellar: :any,                 arm64_ventura:  "03255af921540bb05bc69d57847c319ab51835fd0440ffa3806f5fbbae9c8def"
+    sha256 cellar: :any,                 arm64_monterey: "cf5c06685e1d23849955ca4fd26767b454b8aaf081448105bbd3d8cda6d8b2aa"
+    sha256 cellar: :any,                 sonoma:         "9b39b60078b0a11fcf35390fe3af7560c0747ac1d817c0a9dba85d148ff1dcd1"
+    sha256 cellar: :any,                 ventura:        "36547262bf54eafd0f2f3016d8881d1704e87ee527b8e0ef5aee2077b0949e22"
+    sha256 cellar: :any,                 monterey:       "76e69ac8826a89f16fa0a6d25793407c90992b9ecdfe61b78b5a1efc783a1207"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f8b233fdcd32e8ce431a2188754cfe3e253c44918e20148f0e5a043c467a351"
   end
 
   depends_on "cmake" => :build
   depends_on "libcython" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "davix"
   depends_on "krb5"
   depends_on "openssl@3"
@@ -48,7 +47,7 @@ class Xrootd < Formula
       -DENABLE_KRB5=ON
       -DENABLE_MACAROONS=OFF
       -DENABLE_PYTHON=ON
-      -DPYTHON_EXECUTABLE=#{which("python3.11")}
+      -DPYTHON_EXECUTABLE=#{which("python3.12")}
       -DENABLE_READLINE=ON
       -DENABLE_SCITOKENS=OFF
       -DENABLE_TESTS=OFF
@@ -67,7 +66,7 @@ class Xrootd < Formula
 
   test do
     system "#{bin}/xrootd", "-H"
-    system "python3.11", "-c", <<~EOS
+    system "python3.12", "-c", <<~EOS
       import XRootD
       from XRootD import client
     EOS

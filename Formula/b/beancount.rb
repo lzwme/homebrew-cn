@@ -9,20 +9,21 @@ class Beancount < Formula
   head "https://github.com/beancount/beancount.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5f361ad470d88b4a3257d97f56875d62e39fbf123edcc023d056a88006e59fe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "592e1e3832bf190697c924a0c79956f3603427ca0e4a71674f9c5e008a62207b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "10cada244163b3c7e284ee1bc2c82639dee79b765f98bd4c945052e6aa4f5958"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8a212370ea65d14cfe442914043533ed03f3a2de4c9c322730705dad86c09541"
-    sha256 cellar: :any_skip_relocation, ventura:        "f7794d4d312ac69b52c673251ffec5d508cbd67491bf165ed4ec3e049a302a65"
-    sha256 cellar: :any_skip_relocation, monterey:       "653274fe3a35c5cb1531ae18f6471c653e1f8307676e06348ae5596964685726"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f90ee45ec3640f974f28a110ee04484998bc6b1abaafc13d7c5e3d1e3be0d23"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a66a927232966cf466af7eb4e8653b0b5633b6af7cf80b00af0ef2e1260fa52f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1bf4aacd62eb7b0d32e15b6063fa478189cbc242979166591cc47efd86919548"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "579228ee07290e3d7bebf26796bfb4f293a39ee9edd8a289fb6f6bf140871866"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ecff7bf6ea551f350ab0aae0693762fee230cb9e8ea0758d5d00da4186209e8c"
+    sha256 cellar: :any_skip_relocation, ventura:        "fc878d48e41349e0cacd2f4a5cfee68885580d6165f7ca4e56518c0c11611cb0"
+    sha256 cellar: :any_skip_relocation, monterey:       "66756b91f17ceec68804edeb76092d17e252a2e568b4998d29279238b9ff6bb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1672ccbe521dbde8991b80f4f9cb79e7e508e3956f07fa76fd5732c64f59eae9"
   end
 
   depends_on "python-certifi"
   depends_on "python-lxml"
   depends_on "python-packaging"
   depends_on "python-pyparsing"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "beautifulsoup4" do

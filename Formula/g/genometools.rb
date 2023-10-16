@@ -8,19 +8,21 @@ class Genometools < Formula
   head "https://github.com/genometools/genometools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2a7b4c90ad72907cff0ee0f1f52dff1cd792e59ee82860ba6688df53d2a862c6"
-    sha256 cellar: :any,                 arm64_ventura:  "8c161bad28feb7c19ab0d56b2719aa56e98f25280780f3ce1d1cbc040f1effe6"
-    sha256 cellar: :any,                 arm64_monterey: "0cefb090268b9b713f4a9588af91df54eb5c64a49085c5e5e1ca76feaae311f9"
-    sha256 cellar: :any,                 sonoma:         "fe42ae0af02c4ee6d6d0ad913b9037ffafce25be3985ba228665f07055a045aa"
-    sha256 cellar: :any,                 ventura:        "1f3db34b829b97b31d2ce7c18f25ee0a23aea9f69c93165656492b4eebebed11"
-    sha256 cellar: :any,                 monterey:       "234512e3a4d4b6c398acdc3aeb7032eaee6c5486a76a0bf9568915c9e1d54821"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4819b7a02bcbbe1fa461661347da16f31d7b72db29e177dda16e0293bb30f014"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "4735666536bc7081bae338bebf4e9415ae9881826cce4dc63cdd49930b8cb472"
+    sha256 cellar: :any,                 arm64_ventura:  "b28f195383ed189e24b78057c0dcc62f792a39a681f47930763e0e163ce9744c"
+    sha256 cellar: :any,                 arm64_monterey: "0c3f0e9c6ddfb69b78b08425a863f2b2a80d63f86c928cd52aed5ae04e038727"
+    sha256 cellar: :any,                 sonoma:         "832ad65e5843c6bbdf75c8948c7be18dd263604299cae01a46f7e7a8f2627a9e"
+    sha256 cellar: :any,                 ventura:        "a8c34cdb1af7e0e93fd36be1e187b84a8f2d576a6bcddd8b58eb34c0f7dabcd8"
+    sha256 cellar: :any,                 monterey:       "5cc81847071662320ac79444fc76e040c2f9abbcaeaba7b31da3ce1a4efa0e2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ecb5b123239bf914c042628f716803e92a8ce3790a6da3292205014e0068326"
   end
 
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "cairo"
   depends_on "pango"
-  depends_on "python@3.10"
+  depends_on "python@3.12"
 
   on_linux do
     depends_on "libpthread-stubs" => :build
@@ -29,7 +31,7 @@ class Genometools < Formula
   conflicts_with "libslax", because: "both install `bin/gt`"
 
   def python3
-    "python3.10"
+    which("python3.12")
   end
 
   def install
@@ -42,13 +44,13 @@ class Genometools < Formula
         "gtlib = CDLL(\"libgenometools\" + soext)",
         "gtlib = CDLL(\"#{lib}/libgenometools\" + soext)"
 
-      system python3, *Language::Python.setup_install_args(prefix, python3)
+      system python3, "-m", "pip", "install", *std_pip_args, "."
       system python3, "-m", "unittest", "discover", "tests"
     end
   end
 
   test do
-    system "#{bin}/gt", "-test"
+    system bin/"gt", "-test"
     system python3, "-c", "import gt"
   end
 end

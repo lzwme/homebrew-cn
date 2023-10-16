@@ -9,20 +9,20 @@ class Censys < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "72d90a5b73b735b953bddbc63f43c5815668331e5da7c4ab92b66ca13a2fc2db"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aa0a1af0c86e534da6abe9d3e833ac7c0ef98cf7983e1335f9bcb9badd547ef8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f1288c5f4895aca7fac9aa26a6ed576f4313cab805b7983f6937c189b6f633e9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0704197fe7b200c4f195115fd6fac6b16dd17c242ffe7d5702083c7d1224af0b"
-    sha256 cellar: :any_skip_relocation, ventura:        "eaf35c6f42e4fc8aa24904834a177be025e337e28a86bb4b7558ae346d5af056"
-    sha256 cellar: :any_skip_relocation, monterey:       "3f335cfbb40b493eafff67a16e5a36ddb56c19d46b5c119dcba55de544cfb63d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8072503a695c6414369dd8ec2aadfb88cacf6d94c5e1797c0067ee9f554a162"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "22e00c92de590d3a45639074db68a401759fe5fe93a326810ea010f72e463c69"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "916c54b4ce2bba5eb5d98c1fa530519d740d3163c46460167021559d8b44797a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1c8d600bc32f74be9eb48c7d856bd1b375e4a4bdcc83e389f43d198fd0bdfb48"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e2be6736393efc40aa3885dc3fa15a628007288933152f9837befc2c408a0b29"
+    sha256 cellar: :any_skip_relocation, ventura:        "dbf794ff0f28161d7988662f2c59b4042c0cacbc31231c8ca4bcbad84396380e"
+    sha256 cellar: :any_skip_relocation, monterey:       "1bf596bbce4e587104d408ade8dbb10a4a095aa01363406a72896d55f52a6e61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "738ee6bce136a0e335f9b523f7da81c8538259f8d534e0a8b584e73c688ace62"
   end
 
   depends_on "pygments"
   depends_on "python-argcomplete"
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "backoff" do
     url "https://files.pythonhosted.org/packages/47/d7/5bbeb12c44d7c4f2fb5b56abce497eb5ed9f34d85701de869acedd602619/backoff-2.2.1.tar.gz"

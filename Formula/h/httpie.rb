@@ -10,18 +10,19 @@ class Httpie < Formula
   head "https://github.com/httpie/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a3e85aae8da6a3434a7c361f8c3a207d7036003ce7bab173ab9adabbd2a3afe7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd835699130bca00f5b34eeba0c13b3c5ccbb24da93a729efbee1339b37d385e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "926ce32af2713648623f31ef04817cd89100d7bd236fbad6faded17625d3f1af"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c8805aca4645dd3bb835943692eac548fe49ee81e694b3b4fac2102414d10276"
-    sha256 cellar: :any_skip_relocation, ventura:        "363f75a19dd3ca01a93e3e460434a3995b418438378d2eec7aa55e0b99df46f1"
-    sha256 cellar: :any_skip_relocation, monterey:       "28b3fd2d141b186f4d78bfad16f64c3f724ce7af9b4a92116a050a119fa0d0db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9affaf6988e6a1c63e9ed9402bb653620e2c8b792fa50af6f9a696b1d186e706"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a39f00d3d0f4a936c2a877beafefb1bc57a56874a8c5b844d4689f94a8ba9ab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b56f66d1c6c66e9a679bdfafc0ce527b76d29621aca6088d0ee3c5b6b8a2af3a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6b5b31809ca6ad7a37fee1ca01de9fcdc71bdcf5d2b3e51f3db07b4737ca7aaf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8b41c36b685859edf7f58a2c7f38ae13897e053fc900a5941481aa89539b4400"
+    sha256 cellar: :any_skip_relocation, ventura:        "8063badc74e4f3fb0918c6a2112abe433dfbd62da76adfbbae2b94cbd11c2552"
+    sha256 cellar: :any_skip_relocation, monterey:       "27e34547dbe290f16b715c9245dbb486dabd86ecae1d4c3ad5667bfb0575e7f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89bb9271d71c53311b4266724b4da0426255729a699b9a7c5f7f4a59264e0542"
   end
 
   depends_on "pygments"
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"

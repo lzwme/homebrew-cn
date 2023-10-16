@@ -9,21 +9,18 @@ class Charmcraft < Formula
   revision 2
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_sonoma:   "3dd0ea220cbfadcf07e6cf4316d8ad1ddb05dc4821849024dd2852c948f7c3f2"
-    sha256 cellar: :any,                 arm64_ventura:  "1bde9a0953e11f0c2282ab53f8f16efd048763794b1ac4230848a8e3f1973b2d"
-    sha256 cellar: :any,                 arm64_monterey: "3ff96991b6d6d07583d469650a110032673489802eb1976c590e1847a195ae28"
-    sha256 cellar: :any,                 arm64_big_sur:  "3cd774b49ad84dcf83c8b2672aec8aa80ee26840006979b62f3f0aeb04463dc7"
-    sha256 cellar: :any,                 sonoma:         "5aba3396be249d92d81ff0e3a2316682429fe6192ce9ea669047a18b3c6006d9"
-    sha256 cellar: :any,                 ventura:        "9e30b374a05d68d5dbadfa74e67347506b63e13f1f5a043b0c82348c0d5c0faf"
-    sha256 cellar: :any,                 monterey:       "01b12f124b363fe6b83ac1078af60909ff1d8a484bdbec632c0bb24b6eeaa657"
-    sha256 cellar: :any,                 big_sur:        "2fa14041e36f62cfe8f18f34790c6b2ebf2629a33b20a7352427db52c4a53fe5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "291818595ecf7bdfd2ecaac29a2d9e4c29fdfb42dc1bb51be29465343399089d"
+    rebuild 5
+    sha256 cellar: :any,                 arm64_sonoma:   "084ec61762fc295ae227f3d2d6dffb8f8abcc10e3a3f1ec3c8dcb3a7b59ecaac"
+    sha256 cellar: :any,                 arm64_ventura:  "fed97a67b43cff551ef4bfbfe429dc48a94dc97829c9ce543e921acd3db33e02"
+    sha256 cellar: :any,                 arm64_monterey: "d90b97852da74699358fffabf6795ee8f3b2b69578d8c26fd306e02e233c6aa5"
+    sha256 cellar: :any,                 sonoma:         "a611bd916d742a30524ba2d3373ea99ed8f5e545763932a8eb26cc779a5fe693"
+    sha256 cellar: :any,                 ventura:        "4e6341e6f4523aede1105c5f146c56d3e4b5e7afbec0c3c4eb70c0e3841b74b4"
+    sha256 cellar: :any,                 monterey:       "8458dbc86647891bc8f8852b47c76da62de70bc9ef88d2112068aad58f710909"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e5314d474f3efb1b5914effb954f5be1b626130ac3c8e40344b0f852c96908c"
   end
 
   depends_on "rust" => :build # for rpds-py
   depends_on "cffi"
-  depends_on "keyring"
   depends_on "libsodium"
   depends_on "pycparser"
   depends_on "python-certifi"
@@ -47,23 +44,23 @@ class Charmcraft < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "craft-cli" do
-    url "https://files.pythonhosted.org/packages/90/8a/c6681a6faa465485a9bf6d3c7c038f2ccc187f1516b7cbc1668e66921b2d/craft-cli-2.0.1.tar.gz"
-    sha256 "2d881e127df7de5bf6dc5a90eecd523c1da7f686456828f0e5ca6707e403ade4"
+    url "https://files.pythonhosted.org/packages/85/e0/be612f5c3b032237e2f884082a7747a557f1b0edf2e8ce14d577e128c2c1/craft-cli-2.1.0.tar.gz"
+    sha256 "628f09cd163ed251fca9e3c924bbbb4ed81e99d600b3173dfd0edd2fc1fca21a"
   end
 
   resource "craft-parts" do
-    url "https://files.pythonhosted.org/packages/d9/b2/8fcd95496d441f85733bb3bd6dcce47636e89336119c6166988dc8896165/craft-parts-1.23.0.tar.gz"
-    sha256 "32e286dad75f2cd369164353ffc356701396b3495dce0cc6d86e7501ec2f2128"
+    url "https://files.pythonhosted.org/packages/65/90/adb70ab621c76475fb6267fa7a794b3fa6d01d9b8483c5a15c63e82f46cb/craft-parts-1.25.1.tar.gz"
+    sha256 "5ce426f3068ed6835bf7cd7250b39f6e5de5d25efc0cfbdfa414b3389961295f"
   end
 
   resource "craft-providers" do
-    url "https://files.pythonhosted.org/packages/ee/cd/89a085985b2c03303df0c990bacdfa8d44a7dd39883609b1c61e17db4b54/craft-providers-1.14.0.tar.gz"
-    sha256 "4a164fd1a80b65ce3bb9ff67877f7acadc6884a14498d18ab7883b5efebc3eec"
+    url "https://files.pythonhosted.org/packages/24/a7/219b674acf03d427e01e34c32447a5a0ac40f646a03ac2cc65f99a8f88e1/craft-providers-1.18.0.tar.gz"
+    sha256 "f527a6b6f5ab978cd76ebc58b7b6ce04588787a4b7ea23581e7293ef407ac47b"
   end
 
   resource "craft-store" do
@@ -71,14 +68,14 @@ class Charmcraft < Formula
     sha256 "6813e32df00003df16cf17257619ef25e86d5933b3ede41615b3d48a768a18cf"
   end
 
-  resource "Deprecated" do
+  resource "deprecated" do
     url "https://files.pythonhosted.org/packages/92/14/1e41f504a246fc224d2ac264c227975427a85caf37c3979979edb9b1b232/Deprecated-1.2.14.tar.gz"
     sha256 "e5323eb936458dccc2582dc6f9c322c852a775a27065ff2b0c4970b9d53d01b3"
   end
 
   resource "humanize" do
-    url "https://files.pythonhosted.org/packages/69/86/34d04afc5c33a31f4e9939f857e28fc9d039440f29b99a34f2190f0ab0ac/humanize-4.7.0.tar.gz"
-    sha256 "7ca0e43e870981fa684acb5b062deb307218193bca1a01f2b2676479df849b3a"
+    url "https://files.pythonhosted.org/packages/0c/84/e58c665f4ebb03d2fbeb28b51afb0743f846db18a5b594ed8b8973676ddf/humanize-4.8.0.tar.gz"
+    sha256 "9783373bf1eec713a770ecaa7c2d7a7902c98398009dfa3d8a2df91eec9311e8"
   end
 
   resource "idna" do
@@ -102,13 +99,18 @@ class Charmcraft < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/e5/a2/3e03efdd25f93e1296d0454a7680456fda2925f2ff624bf43855d785b3bd/jsonschema-4.18.4.tar.gz"
-    sha256 "fb3642735399fa958c0d2aad7057901554596c63349f4f6b283c493cf692a25d"
+    url "https://files.pythonhosted.org/packages/e4/43/087b24516db11722c8687e0caf0f66c7785c0b1c51b0ab951dfde924e3f5/jsonschema-4.19.1.tar.gz"
+    sha256 "ec84cc37cfa703ef7cd4928db24f9cb31428a5d0fa77747b8b51a847458e0bbf"
   end
 
   resource "jsonschema-specifications" do
     url "https://files.pythonhosted.org/packages/12/ce/eb5396b34c28cbac19a6a8632f0e03d309135d77285536258b82120198d8/jsonschema_specifications-2023.7.1.tar.gz"
     sha256 "c91a50404e88a1f6ba40636778e2ee08f6e24c5613fe4c53ac24578a5a7f72bb"
+  end
+
+  resource "keyring" do
+    url "https://files.pythonhosted.org/packages/14/c5/7a2a66489c66ee29562300ddc5be63636f70b4025a74df71466e62d929b1/keyring-24.2.0.tar.gz"
+    sha256 "ca0746a19ec421219f4d713f848fa297a661a8a8c1504867e55bfb5e09091509"
   end
 
   resource "macaroonbakery" do
@@ -122,18 +124,18 @@ class Charmcraft < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/b7/56/7daf104a9cb6af39c00127aee6904b01040dbb12cf1ceedd6a087c097055/more-itertools-10.0.0.tar.gz"
-    sha256 "cd65437d7c4b615ab81c0640c0480bc29a550ea032891977681efd28344d51e1"
+    url "https://files.pythonhosted.org/packages/2d/73/3557e45746fcaded71125c0a1c0f87616e8258c78391f0c365bf97bbfc99/more-itertools-10.1.0.tar.gz"
+    sha256 "626c369fa0eb37bac0291bce8259b332fd59ac792fa5497b59837309cd5b114a"
   end
 
   resource "overrides" do
-    url "https://files.pythonhosted.org/packages/f6/39/e2e3c2c7eba7793a01b5f592c3c7fd6b27da53d75de81430407ef18befb7/overrides-7.3.1.tar.gz"
-    sha256 "8b97c6c1e1681b78cbc9424b138d880f0803c2254c5ebaabdde57bb6c62093f2"
+    url "https://files.pythonhosted.org/packages/4d/27/30c865a1e62f1913a0730e667e94459ca038392b6f44d69ef7a585690337/overrides-7.4.0.tar.gz"
+    sha256 "9502a3cca51f4fac40b5feca985b6703a5c1f6ad815588a7ca9e285b9dca6757"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/a1/70/c1d14c0c58d975f06a449a403fac69d3c9c6e8ae2a529f387d77c29c2e56/platformdirs-3.9.1.tar.gz"
-    sha256 "1b42b450ad933e981d56e59f1b97495428c9bd60698baab9f3eb3d00d5822421"
+    url "https://files.pythonhosted.org/packages/d3/e3/aa14d6b2c379fbb005993514988d956f1b9fdccd9cbe78ec0dbe5fb79bf5/platformdirs-3.11.0.tar.gz"
+    sha256 "cf8ee52a3afdb965072dcc652433e0c7e3e40cf5ea1477cd4b3b1d2eb75495b3"
   end
 
   resource "protobuf" do
@@ -142,8 +144,8 @@ class Charmcraft < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/3b/9b/a7631bf35e55326fd74654fe6bd896478f47d65e97ca69e60ddb1b3823ee/pydantic-1.10.12.tar.gz"
-    sha256 "0fe8a415cea8f340e7a9af9c54fc71a649b43e8ca3cc732986116b3cb135d303"
+    url "https://files.pythonhosted.org/packages/51/cd/721eb771f3f09f60de0807e240c3acf44c38828d0ced869fe8df7e79801b/pydantic-1.10.13.tar.gz"
+    sha256 "32c8b48dcd3b2ac4e78b0ba4af3a2c2eb6048cb75202f0ea7b34feb740efc340"
   end
 
   # upstream issue ref, https://github.com/canonical/charmcraft/issues/1194
@@ -179,8 +181,8 @@ class Charmcraft < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/ae/0e/5a4c22e046dc8c94fec2046255ddd7068b7aaff66b3d0d0dd2cfbf8a7b20/referencing-0.30.0.tar.gz"
-    sha256 "47237742e990457f7512c7d27486394a9aadaf876cbfaa4be65b27b4f4d47c6b"
+    url "https://files.pythonhosted.org/packages/e1/43/d3f6cf3e1ec9003520c5fb31dc363ee488c517f09402abd2a1c90df63bbb/referencing-0.30.2.tar.gz"
+    sha256 "794ad8003c65938edcdbc027f1933215e0d0ccc0291e3ce20a4d87432b59efc0"
   end
 
   resource "requests" do
@@ -199,18 +201,8 @@ class Charmcraft < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/da/3c/fa2701bfc5d67f4a23f1f0f4347284c51801e9dbc24f916231c2446647df/rpds_py-0.9.2.tar.gz"
-    sha256 "8d70e8f14900f2657c249ea4def963bed86a29b81f81f5b76b5a9215680de945"
-  end
-
-  resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/63/dd/b4719a290e49015536bd0ab06ab13e3b468d8697bec6c2f668ac48b05661/ruamel.yaml-0.17.32.tar.gz"
-    sha256 "ec939063761914e14542972a5cba6d33c23b0859ab6342f61cf070cfc600efc2"
-  end
-
-  resource "ruamel-yaml-clib" do
-    url "https://files.pythonhosted.org/packages/d5/31/a3e6411947eb7a4f1c669f887e9e47d61a68f9d117f10c3c620296694a0b/ruamel.yaml.clib-0.2.7.tar.gz"
-    sha256 "1f08fd5a2bea9c4180db71678e850b995d2a5f4537be0e94557668cf0f5f9497"
+    url "https://files.pythonhosted.org/packages/ee/12/d6cfa2699916e5ece53a42e486e03b5a14e672c76ddb16d4649efcf9efb8/rpds_py-0.10.6.tar.gz"
+    sha256 "4ce5a708d65a8dbf3748d2474b580d606b1b9f91b5c6ab2a316e0b0cf7a4ba50"
   end
 
   resource "semantic-version" do
@@ -219,23 +211,28 @@ class Charmcraft < Formula
   end
 
   resource "setuptools-rust" do
-    url "https://files.pythonhosted.org/packages/0e/c9/6f9de9f7a8404416d5d22484ccdeb138f469cc1e11bbd62a2bd26d5c1385/setuptools-rust-1.6.0.tar.gz"
-    sha256 "c86e734deac330597998bfbc08da45187e6b27837e23bd91eadb320732392262"
+    url "https://files.pythonhosted.org/packages/90/f1/70b31cacce03bf21fa645d359d6303fb5590c1a02c41c7e2df1c480826b4/setuptools-rust-1.7.0.tar.gz"
+    sha256 "c7100999948235a38ae7e555fe199aa66c253dc384b125f5d85473bf81eae3a3"
   end
 
   resource "snap-helpers" do
-    url "https://files.pythonhosted.org/packages/18/3c/791f30b8993f5d077d4dbe340cf07716015e07a5b4930dbdccb467e9ef69/snap-helpers-0.4.0.tar.gz"
-    sha256 "8199e0082fcc516bc1e8d7d80a830ed48ccd27af4ab01dd6faa6eaba820629ee"
+    url "https://files.pythonhosted.org/packages/50/2a/221ab0a9c0200065bdd8a5d2b131997e3e19ce81832fdf8138a7f5247216/snap-helpers-0.4.2.tar.gz"
+    sha256 "ef3b8621e331bb71afe27e54ef742a7dd2edd9e8026afac285beb42109c8b9a9"
   end
 
-  resource "types-Deprecated" do
+  resource "types-deprecated" do
     url "https://files.pythonhosted.org/packages/7f/43/6badee141c57e04c73d98cfee62a9b52aade5c4cacb87dbdcdb195ec6ff8/types-Deprecated-1.2.9.3.tar.gz"
     sha256 "ef87327adf3e3c4a4c7d8e06e58f6476710d3466ecfb53c49efb080804a70ef3"
   end
 
+  resource "types-pyyaml" do
+    url "https://files.pythonhosted.org/packages/af/48/b3bbe63a129a80911b60f57929c5b243af909bc1c9590917434bca61a4a3/types-PyYAML-6.0.12.12.tar.gz"
+    sha256 "334373d392fde0fdf95af5c3f1661885fa10c52167b14593eb856289e1855062"
+  end
+
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/e2/7d/539e6f0cf9f0b95b71dd701a56dae89f768cd39fd8ce0096af3546aeb5a3/urllib3-1.26.16.tar.gz"
-    sha256 "8f135f6502756bde6b2a9b28989df5fbe87c9970cecaa69041edcce7f0589b14"
+    url "https://files.pythonhosted.org/packages/dd/19/9e5c8b813a8bddbfb035fa2b0c29077836ae7c4def1a55ae4632167b3511/urllib3-1.26.17.tar.gz"
+    sha256 "24d6a242c28d29af46c3fae832c36db3bbebcc533dd1bb549172cd739c82df21"
   end
 
   resource "wrapt" do
@@ -244,8 +241,8 @@ class Charmcraft < Formula
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/e2/45/f3b987ad5bf9e08095c1ebe6352238be36f25dd106fde424a160061dce6d/zipp-3.16.2.tar.gz"
-    sha256 "ebc15946aa78bd63458992fc81ec3b6f7b1e92d51c35e6de1c3804e73b799147"
+    url "https://files.pythonhosted.org/packages/58/03/dd5ccf4e06dec9537ecba8fcc67bbd4ea48a2791773e469e73f94c3ba9a6/zipp-3.17.0.tar.gz"
+    sha256 "84e64a1c28cf7e91ed2078bb8cc8c259cb19b76942096c8d7b84947690cabaf0"
   end
 
   def install
@@ -253,11 +250,6 @@ class Charmcraft < Formula
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     virtualenv_install_with_resources
-
-    # we depend on keyring, but that's a separate formula, so install a `.pth` file to link them
-    site_packages = Language::Python.site_packages("python3.11")
-    keyring = Formula["keyring"].opt_libexec
-    (libexec/site_packages/"homebrew-keyring.pth").write keyring/site_packages
   end
 
   test do

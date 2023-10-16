@@ -23,7 +23,6 @@ class Cherrytree < Formula
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
   depends_on "adwaita-icon-theme"
   depends_on "fmt"
   depends_on "gspell"
@@ -34,6 +33,7 @@ class Cherrytree < Formula
   depends_on "uchardet"
   depends_on "vte3"
 
+  uses_from_macos "python" => :build
   uses_from_macos "curl"
 
   fails_with gcc: "5" # Needs std::optional

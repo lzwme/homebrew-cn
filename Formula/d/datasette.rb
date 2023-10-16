@@ -8,18 +8,20 @@ class Datasette < Formula
   head "https://github.com/simonw/datasette.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1d036f0f2737151dab03d273868a8f1fff1e6502964b363d2182b731c642f542"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d17003498c2a4cf52a2f04cab7314fbe82a4febce11bef69c258f93f66b5fc5f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "82afad6be11cebc602671f16725bcd0a40a195b513e4f12029bc19750bb0a719"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b79fd6245fa471dc51ee0a3e63b7af76062610e78cad995e6ff2e6c21245f6bc"
-    sha256 cellar: :any_skip_relocation, ventura:        "9b893995a03d9b7fede062e079e203bfb2e3418d068cb48d373c063a22cf4317"
-    sha256 cellar: :any_skip_relocation, monterey:       "65c0dd000ac6ddaca34f295742fc18cb39e13aecabe0af400813441a6f2d3daf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb232ea2ab3ab8b133e4068cafaf16de3325c42730ae3acae4d10a2f55b6155c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8a855fb7d2ffb2514c4664dc6a136c6a70bcf68c67ba91e0f3f644882d177cef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f0434002de28b23f98b0a560bcae129bdfaeb1ef90e8e45f7c38bb8446d13ad5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f0dfe7aadc82b286b1e1d2e3398e86ac85add7c6236b1e26ddc805887feba31a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9e389e6ec1af6f5efcf79897fc584c7e9d96ab9d6dcfd11d7d31c2d2540929e4"
+    sha256 cellar: :any_skip_relocation, ventura:        "5621a6f8d4f41e90e9cb1710787c3b5594550717a1dc467bda8b41141d82d551"
+    sha256 cellar: :any_skip_relocation, monterey:       "61d8453bccaf2b3898fa9d2ba0dbce9a05c3b08788776058408ae3066409c181"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a05ab27f375d27790a21ca8f79d8b78fb6e6e75513b965db8d396d3d998c09b6"
   end
 
   depends_on "python-certifi"
+  depends_on "python-setuptools"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 

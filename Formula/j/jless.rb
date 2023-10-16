@@ -19,8 +19,9 @@ class Jless < Formula
 
   depends_on "rust" => :build
 
+  uses_from_macos "python" => :build # for xcb < 0.10.0
+
   on_linux do
-    depends_on "python@3.11" => :build # for xcb < 0.10.0
     depends_on "libxcb"
   end
 

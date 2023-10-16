@@ -10,19 +10,20 @@ class BandcampDl < Formula
   head "https://github.com/iheanyi/bandcamp-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "54416a2e1b190d5da7a88cf5a202fa02d812d8d45c541e5b9fe4074e5dcbe7dc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8771b22e8b844a2be92db7cfc2a77050d8676358c250b3b75d51740846fd7f1b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6bd56d41b7918d25b633079a6f398ea1b6583ddcf0d960b6beb146dfce93029b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ae27ba48efe7f2c3f4f539b10a5933c42967b266225757b850cd88dc67d37d2c"
-    sha256 cellar: :any_skip_relocation, ventura:        "73d13683e7061a0a6b8410ab4d87c0d15874e5056b8cd62b42beacadb228bf7c"
-    sha256 cellar: :any_skip_relocation, monterey:       "5b22dc2d0f40938ebeb97bc6baea7194d205bb847ebfd78e1b69b3dc82cbba29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c315d66b70eaf03aaf07abff25f7ed93703a52ae2503fee75df1d8dca68f583f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "954497236c7e861e00e2dd16ba0dbd2cec8cf4060e032dd01adaf6c388f6240d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "20c5af611478ec39c6f3a344d3691db5d6ae64aecc4a54841cc3b642d9fd43c3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ae7469ea11d4f2d7de1a4c667758b18329aa486a3cde46ed575cda8166d39532"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5d7cefa39c724ec715bb24e4794d79d8c4cd3a7063936ee6eab3627f93c761e2"
+    sha256 cellar: :any_skip_relocation, ventura:        "812989e952bc37da37e17a925980aea84e7a8cf9518c4f1d273b18139aaff64d"
+    sha256 cellar: :any_skip_relocation, monterey:       "b9b34b51a4ae3296587d816670b888f9eeeecce3b0829103d8fa498f0af8258d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39acc44fa7ed6a7769256257a9f5332b839f070e773b51b484f3f8124e6f9112"
   end
 
   depends_on "python-certifi"
   depends_on "python-lxml"
   depends_on "python-mutagen"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "beautifulsoup4" do

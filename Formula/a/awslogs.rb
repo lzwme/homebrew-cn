@@ -10,16 +10,18 @@ class Awslogs < Formula
   head "https://github.com/jorgebastida/awslogs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5a2bb4c0751fb4d856947b645dced24c26e5ce5a789c2266023f6a47968e6da6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "64c83ab8bd1f827bf2ede1380326b314f767aff77b209e2e4bb2cf0d0fce5ff7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5aad6efb56affb3a35f850a3fd8f1c9dec9bb6384a9c8e55d8fdb0e8cb25396e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4fd2343cf17cb25720a24619ee266273a3e889fbf87c93d3ea02dec35e839276"
-    sha256 cellar: :any_skip_relocation, ventura:        "5a0917a93a6e3667a602eaf5e4e69e3dbef20dd1197896360d8a4287f763eec4"
-    sha256 cellar: :any_skip_relocation, monterey:       "a82cf35960b3e54a5d6da97844d0b8873919a65818f6c16fc8f071659329611a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6dc8c374da7de91b1289cc6ef625154bf5f3117d7c6dcc1c033a86d194b2efb9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "18027fb4d138d75500368fe9b8c77241a16fa266f2046eaeb8169a258c1fdee0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e85b2b3779dff1ee1d464c915cd4861a0025ab7d9139e7f7025169db4250047"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c2cb46365b1aa0acc0ecf742f600fe63e59543cf611e953487665faa0fdd42e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "64e1679b70fca48917dad1060f8530fa552880ce14ecf1c3be4d264991256822"
+    sha256 cellar: :any_skip_relocation, ventura:        "1338023b1e002bc9541499c51a3a1e3884015a4d9eace324034e92e99d3dba1e"
+    sha256 cellar: :any_skip_relocation, monterey:       "cc8bd0137d79a07a2fb090a6b47e20e39f8ca6e164e5d97b3ee49c7510c12351"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "843da92781d776b66b8eef98f620a12986dac2e20dd1b836e970b3a8b7683ce1"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "six"
 
   uses_from_macos "zlib"

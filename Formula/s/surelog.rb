@@ -3,26 +3,26 @@ class Surelog < Formula
 
   desc "SystemVerilog Pre-processor, parser, elaborator, UHDM compiler"
   homepage "https://github.com/chipsalliance/Surelog"
-  url "https://ghproxy.com/https://github.com/chipsalliance/Surelog/archive/refs/tags/v1.75.tar.gz"
-  sha256 "4e6c44392dea7fba7bfc082459ab60458e91def59f3cdf0eccdad229d572829d"
+  url "https://ghproxy.com/https://github.com/chipsalliance/Surelog/archive/refs/tags/v1.76.tar.gz"
+  sha256 "ddef62ff38f25bb1816f592b2ad0040507bbcdb268102b9b7555f592701a22dc"
   license "Apache-2.0"
   head "https://github.com/chipsalliance/Surelog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8096bab7a03a58c654a3f597202a79243f275fc849b407f0a5d2cf50baeb7dd4"
-    sha256 cellar: :any,                 arm64_ventura:  "a1738d56876ce4763e30b1e81c8abb4c65b807428eae594d5ba5a301fc2a2870"
-    sha256 cellar: :any,                 arm64_monterey: "eecf48acf8bfc72b271222833de5112813af406dc267aea29f93ee176103a2ce"
-    sha256 cellar: :any,                 sonoma:         "1c6f32005f0b8ff9e650c22d757106dc64fb29356e3977d2d57e2a527a9c2ec3"
-    sha256 cellar: :any,                 ventura:        "28e638affcff8e462569db119cb31b4ca893bc0cb0f1222ecd92180cfd2ce04e"
-    sha256 cellar: :any,                 monterey:       "11cc6b994c38974bd865c3a3cb57a0ee5d7cbf48b99f8460ce19e71c9e6df8c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab40d6534df4e6a8a382d2f95c53b9f958f7d41ce298aa06954cca7568f4e3b7"
+    sha256 cellar: :any,                 arm64_sonoma:   "a022b3479e95c96d341746a90d554cd4b41f71d764c15b67ea41b89b82f0d63f"
+    sha256 cellar: :any,                 arm64_ventura:  "3ff8af7b51b4a80371ffad7d4b8c27a49587de8fe079b109cc6c50fcd52cd84b"
+    sha256 cellar: :any,                 arm64_monterey: "df721f0af8e49a5dc1e237228bdb3468da75563390316310b708a0d32a481295"
+    sha256 cellar: :any,                 sonoma:         "dd0a02da6f3032e3dcb55247a5d28e744c2fa140bf67f97b2a69fc14a85fed53"
+    sha256 cellar: :any,                 ventura:        "9a9cc3fc52eea6aff7da2da74916dad07a935f71981b3fe9fed891554dc884ea"
+    sha256 cellar: :any,                 monterey:       "709fd825fa92150cb1ed87461f7646ec1230f8a9d3a15e47eea44a0cbefbd37f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "828542efb0bb2f91c4606fad86fdded47f1854f4f7267a08ba3cd660e01dc405"
   end
 
   depends_on "antlr" => :build
   depends_on "cmake" => :build
   depends_on "nlohmann-json" => :build
   depends_on "openjdk" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on "six" => :build
   depends_on "googletest" => :test
   depends_on "pkg-config" => :test
@@ -35,8 +35,12 @@ class Surelog < Formula
     sha256 "04070bbb5e87291cc9bfa51df413677faf2141c73c61d2a5f7b26bea3cd882ad"
   end
 
+  def python3
+    which("python3.12")
+  end
+
   def install
-    venv = virtualenv_create(buildpath/"venv", "python3.11")
+    venv = virtualenv_create(buildpath/"venv", python3)
     resources.each do |r|
       venv.pip_install r
     end

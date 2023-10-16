@@ -20,9 +20,10 @@ class Mxnet < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.11" => :build
   depends_on "openblas"
   depends_on "opencv"
+
+  uses_from_macos "python" => :build
 
   def install
     args = [

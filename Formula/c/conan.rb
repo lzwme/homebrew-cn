@@ -10,20 +10,22 @@ class Conan < Formula
   head "https://github.com/conan-io/conan.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a7b796dafdb882005c1c3b5a357a5a7149f21c5b330b1bb4f8940c1f0d2595cc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fb656ac1d55b7490b7245ef399bc904d338d07ad5e96c3f4ca9855e23e28617e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5ca41206b5f1ef238b4810f6447f86d3a327521b2e96edff62068efe94ae6445"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6e54442b86a5428b9aa33933394711ff5399772aa13f29f83b621f236caca2bb"
-    sha256 cellar: :any_skip_relocation, ventura:        "79569eaa77368f544c607642fa24ab525ee2893866b391bd265a3bc57ed25492"
-    sha256 cellar: :any_skip_relocation, monterey:       "1614579b31b465f40a6ee25c548bd26e77e80f5b82138e504bf2d4d90130bda3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec384c5323faacaed6e22dfe43cf5cf127067320c6d7d98e06f20c6ed0ca12c0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4961c57842148c994f8ed878978387c03a2c0f64fe1761be3859d6930413457c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "165bef73296a07f7328f3e6d8f3e55233acb418ca3a2b8e489ddc9a05470295e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bb8ba3c2284895935f05efa9b4039a44c570a2f4b876b3cb87e735a632c5d7b7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bbc04b4f2f15e62d61e101f117a95012d9b0d2bbe35fe065d3e9d1bec597fd43"
+    sha256 cellar: :any_skip_relocation, ventura:        "1bdeb9f2134a5e5f8903059ac4cb14f5cdb1b215b536dd68e22dc5359580c989"
+    sha256 cellar: :any_skip_relocation, monterey:       "cc7885640cc29a3ba028e1f77d6417fb8a2a5a607120743233a7513b04fab092"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba227c747926e9bd6e4db99ff1339d2ded473cd31da20e3f9346d8404fbe11fb"
   end
 
   depends_on "pkg-config" => :build
   depends_on "cmake" => :test
   depends_on "pygments"
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python-markupsafe"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
@@ -55,11 +57,6 @@ class Conan < Formula
   resource "jinja2" do
     url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
-  end
-
-  resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
-    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
   end
 
   resource "patch-ng" do

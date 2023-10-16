@@ -14,21 +14,20 @@ class Kcov < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "251550248b21e155d44d5677e4bc4a4ab58cc376c296ff4631ecaf29d8d3b81e"
-    sha256 arm64_monterey: "42dc756dc1b009db595a122342809b542f92cf75e51a70679c70bd1e15e719be"
-    sha256 arm64_big_sur:  "e162f14944c8588bef39cd000f8182d80706a05cd151d9179f9c7d4e0e0b6b2d"
-    sha256 ventura:        "dd235dd9938c6efab9cf22a27a1479f978b4988f0a1b24309ae129717d937b46"
-    sha256 monterey:       "f6eea5f30cfdfb9a99e9c15c6b2f8a496d64977accc78cd7237322e57619a1b7"
-    sha256 big_sur:        "c88b2f16ebc426158e17f36a932ff63f5a3a42cc225d6c365b0ae73c0abe2275"
-    sha256 x86_64_linux:   "2e6db1f8477d1bd9daa60af0f3e39634be0e2c42335f6a4a09a5e67d63287171"
+    rebuild 1
+    sha256 arm64_ventura:  "476ce484dd142076f04dad5584324d7598b7ec364c03077c39487739d508702d"
+    sha256 arm64_monterey: "bf315702b4328a6cd4acc2da03d867309af69a3d1a8fa418355a756300edae6d"
+    sha256 ventura:        "9c25df1dfe0c2d36848105ad8339f39febc2880df838de7cb047ae4f437753bd"
+    sha256 monterey:       "f2b4facad420ed243fd15a776ba46e4f2eb98769c0d95735a9840b3be1028c7d"
+    sha256 x86_64_linux:   "c1b0c02c2c91e11096b2cdebaf1e388349e5d78ddd1922cff70aaf30899db411"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
   depends_on "dwarfutils"
   depends_on "openssl@3"
 
+  uses_from_macos "python" => :build
   uses_from_macos "curl"
   uses_from_macos "zlib"
 

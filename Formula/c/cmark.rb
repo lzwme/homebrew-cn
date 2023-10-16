@@ -18,15 +18,16 @@ class Cmark < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.11" => :build
+  uses_from_macos "python" => :build
 
   conflicts_with "cmark-gfm", because: "both install a `cmark.h` header"
 
   def install
-    mkdir "build" do
-      system "cmake", "..", "-DCMAKE_INSTALL_LIBDIR=lib", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build",
+                        "-DCMAKE_INSTALL_LIBDIR=lib",
+                        *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

@@ -9,18 +9,20 @@ class DockerSquash < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2192e33e077d5d46f8224ff3a3bc6abad280e8ec019a4be3068b494dbc5de8c4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1378ee2d57a777149fa93da180174a165b85d82cd2c1e686f3aa664a7e31f165"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9f9b8818aa16b4435f124e524a0dfdc9b7ee6d2c0b70a6a44f7b1fef8185493d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1643c33c2dcddb68bc6a4136e45d29b02af568668f67f25f96774b2f129a52c9"
-    sha256 cellar: :any_skip_relocation, ventura:        "72b86a6b8181906bca85cf8b1d0e79c0c1c2f4b7abc16f23de6b1a7df46a8be5"
-    sha256 cellar: :any_skip_relocation, monterey:       "7f295aec12b06b917e5a60cea7a72dfb1da44bc51e98c00626aa7f945c06ee51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45b79a5ffbc39ca1153f75e7645639ce225dd557ac90a22ce56149edfc0a8185"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1a9bdc6726210983b44d200b50907264325b3a8867b09bc7bc02117234c353ce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d98d563af8fb296058921259b7ec6e11c5e84563296737a28c50db3ae30b7321"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e35cc05f29fe47ac113d1c4007add77250d35af59e984c1d32dd2be50e3be2cb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "844c6c9302b17e1dc97fa751e453926c0cd1d931e220b0ede1327c031192d2d3"
+    sha256 cellar: :any_skip_relocation, ventura:        "2cbfe15f275ed1a8e862f77dae5c13e94d80a24d0d7b976a5aee08fcf06ab986"
+    sha256 cellar: :any_skip_relocation, monterey:       "9b374bd78abd2c480216a60460fa3e621c5d318bd4a0083562f8d564689d4a7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e05739d8863c0b21903a645e19509ebef4ef00c28d45c0d7764b3398a9d5fb2d"
   end
 
   depends_on "python-certifi"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "charset-normalizer" do
@@ -49,8 +51,8 @@ class DockerSquash < Formula
   end
 
   resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/44/34/551f30cbdc0515c39c2e78ef5919615785cd370844e40ada82367c1fab3f/websocket-client-1.6.3.tar.gz"
-    sha256 "3aad25d31284266bcfcfd1fd8a743f63282305a364b8d0948a43bd606acc652f"
+    url "https://files.pythonhosted.org/packages/cb/eb/19eadbb717ef032749853ef5eb1c28e9ca974711e28bccd4815913ba5546/websocket-client-1.6.4.tar.gz"
+    sha256 "b3324019b3c28572086c4a319f91d1dcd44e6e11cd340232978c684a7650d0df"
   end
 
   def install

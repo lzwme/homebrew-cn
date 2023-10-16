@@ -12,19 +12,20 @@ class MbedtlsAT2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "641b02bc5e06707db467ee883041c69d1a518f79dd6832334fe152cd7c74f07e"
-    sha256 cellar: :any,                 arm64_ventura:  "ac5924611b73c46627a8c54ed551022cf0305aef7b0724fb9d958547ff509dd7"
-    sha256 cellar: :any,                 arm64_monterey: "0f4fb964f3423ca69276ab34180d2553f3966f35d2fe2971deff7ef660df6cc1"
-    sha256 cellar: :any,                 sonoma:         "af269f645594db17ec93d6d8c0d5f38d08608e1ba1e2c1d42f0693bd5906b635"
-    sha256 cellar: :any,                 ventura:        "7040bfbafed98d68242bf574d4021b4c2088bef4fa3aec415474fed97e4b651f"
-    sha256 cellar: :any,                 monterey:       "292979575ef337c38704cb5c7540305abe35d9d8f468c7eaab6f8925a656143d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e555bc546ad2ee3ea6037d9dfc4a207407cc9ed9779eba7b99b8322b24087e23"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "dc273264beb39ca97922e68ca070166bae3eb99d03d8d24a4924ab581b82b50b"
+    sha256 cellar: :any,                 arm64_ventura:  "28786e30c8173e0b89ac4290791d507a0f78b7a72aa1b2fb939d7d34dc363bd4"
+    sha256 cellar: :any,                 arm64_monterey: "1194cfe9e7b7fb62a445556d588e5f1a67c84e1531cad88275ad482674c22571"
+    sha256 cellar: :any,                 sonoma:         "c2c0ad96b6df8d37602118ca54f16e0bd66e4489df561048d84174b551aa7909"
+    sha256 cellar: :any,                 ventura:        "2802ee278bdb74ff8ec0bbc38c09167308c6419adaa167885214e7e8b62c5181"
+    sha256 cellar: :any,                 monterey:       "1186098c57c834638896d2cbea217aecc2cfb46212de9ad9095a3e2d96baf2b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99b1a85099e780f28bebb27bb707f48442166adf1910725abe75eb64d771bb48"
   end
 
   keg_only :versioned_formula
 
   depends_on "cmake" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
 
   def install
     inreplace "include/mbedtls/config.h" do |s|
@@ -36,7 +37,7 @@ class MbedtlsAT2 < Formula
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DUSE_SHARED_MBEDTLS_LIBRARY=On",
-                    "-DPython3_EXECUTABLE=#{which("python3.11")}",
+                    "-DPython3_EXECUTABLE=#{which("python3.12")}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     # We run CTest because this is a crypto library. Running tests in parallel causes failures.

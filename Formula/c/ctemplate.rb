@@ -23,7 +23,7 @@ class Ctemplate < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "python@3.11" => :build
+  uses_from_macos "python" => :build
 
   fails_with gcc: "5"
 
