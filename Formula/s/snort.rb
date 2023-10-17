@@ -1,9 +1,9 @@
 class Snort < Formula
   desc "Flexible Network Intrusion Detection System"
   homepage "https://www.snort.org"
-  url "https://ghproxy.com/https://github.com/snort3/snort3/archive/3.1.71.0.tar.gz"
-  mirror "https://fossies.org/linux/misc/snort3-3.1.71.0.tar.gz"
-  sha256 "b5dd52b46ca2570986d7c12750bbf9db00ee3c294983ce272b3ca321aee8fb73"
+  url "https://ghproxy.com/https://github.com/snort3/snort3/archive/3.1.72.0.tar.gz"
+  mirror "https://fossies.org/linux/misc/snort3-3.1.72.0.tar.gz"
+  sha256 "011bb367683ac5eccdef0ce2060d879562c31ca731230d803b8168094e20a69f"
   license "GPL-2.0-only"
   head "https://github.com/snort3/snort3.git", branch: "master"
 
@@ -16,11 +16,11 @@ class Snort < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "96d45e7d0d6d84febe9fc534dbcffc7bd74751420c5994531cc00d7a581872d2"
-    sha256 cellar: :any,                 arm64_monterey: "2edc41ee32704fdf4018b461bdbebf8a86e3f523770ed29c2b69d78a56189c06"
-    sha256 cellar: :any,                 ventura:        "e40cbc71919410cd8c9b512576b403f078715582807b02e6bf241273c1f541ef"
-    sha256 cellar: :any,                 monterey:       "444174af05603622abc1c6f4d2826205ec38a51101a065978e6172ee81ea07af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7faa1f7b98e519f4de802cbe2da05dfb2114d9107f37410c6de62bf35487b888"
+    sha256 cellar: :any,                 arm64_ventura:  "512c0e03e0f740a00392054775f0bfef955567be5c75b172abf9d7a0813ce321"
+    sha256 cellar: :any,                 arm64_monterey: "4836a78d92bf72c459ecca8575a7bedbaa18cadb1ea509445811b9594bcfb0e8"
+    sha256 cellar: :any,                 ventura:        "f59b9ece3444da86039f43b2b2ffe316790b058aa5a0e2845cd2d7ba8748ef40"
+    sha256 cellar: :any,                 monterey:       "90393f6b9a6b2bcb2533e1e64051ee997cc18665b6edc6a2f4facd43a24ad694"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c81da271dcf7e7c51aa85650e10efac7457c37f370951031733269ec79aa0e69"
   end
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class Ldc < Formula
   desc "Portable D programming language compiler"
   homepage "https://wiki.dlang.org/LDC"
-  url "https://ghproxy.com/https://github.com/ldc-developers/ldc/releases/download/v1.34.0/ldc-1.34.0-src.tar.gz"
-  sha256 "3005c6e9c79258538c83979766767a59e3d74f3cb90ac2cb0dce5d7573beb719"
+  url "https://ghproxy.com/https://github.com/ldc-developers/ldc/releases/download/v1.35.0/ldc-1.35.0-src.tar.gz"
+  sha256 "6e296993706c76c093e609139aa0b3f8704355fa0f3756f6758d78d44226dfa0"
   license "BSD-3-Clause"
   head "https://github.com/ldc-developers/ldc.git", branch: "master"
 
@@ -12,13 +12,11 @@ class Ldc < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "e767667f5b24fb730892896f52ec2d7add185a46a2c6b7c24559b34bf7eff78f"
-    sha256                               arm64_monterey: "4a383e12c39336537d92dd6e5296f885743ed4374e0ee5f3dfecbeb99c3fc9ba"
-    sha256                               arm64_big_sur:  "137a8547f17a398ea8ebb1bd691f19207a8c0594496b9410747d1a271f23052a"
-    sha256                               ventura:        "2ea6ea9dfa4c817a79cb110aa8a5315f1ec878fad9c12f8ff54a93c54d05b636"
-    sha256                               monterey:       "48f58b550aa5c05300c664ab83507dd8db613c30cc18664a2d3431e3c200bfdb"
-    sha256                               big_sur:        "dd884922c675c2ecb68b68302e046ce9133f7a4c6b3d185ec72472139ed14a34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4cb2d844991b2713cf78bace5451d48e5601057e8bc75f7f565fe1f2590e7445"
+    sha256                               arm64_ventura:  "61a80e7ce250c8fd2753f99a0ae8dc6f08e37e1ba7370acd4529e545ad5bd6a7"
+    sha256                               arm64_monterey: "d8050f0b00b323157701942def9367ddf959993807a019fd1dfb294c0e823cbc"
+    sha256                               ventura:        "2475db77771ad577dba5009020d923eb847a0646c54b94b1386f0816c849b61e"
+    sha256                               monterey:       "d4f10edfad963f9f2faed2d34b366ae19691b702bbced262194e3fe4bac09536"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5b5aa12699b0c8e640f73c1175924a60cd55b4bf4faa4e60480791e0a59d787"
   end
 
   depends_on "cmake" => :build

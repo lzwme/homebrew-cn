@@ -1,8 +1,8 @@
 class Logcli < Formula
   desc "Run LogQL queries against a Loki server"
   homepage "https://grafana.com/loki"
-  url "https://ghproxy.com/https://github.com/grafana/loki/archive/v2.9.1.tar.gz"
-  sha256 "60c30c9d6ac2e8f7eab6917684c9c843a638cd3d3f31755f9d0ec8c6839a8196"
+  url "https://ghproxy.com/https://github.com/grafana/loki/archive/v2.9.2.tar.gz"
+  sha256 "9c1a153ab4d57d5c109dbf55d4ea5aeab2159ccf51d3b8cc8fea19970f0a88d8"
   license "AGPL-3.0-only"
   head "https://github.com/grafana/loki.git", branch: "main"
 
@@ -11,15 +11,13 @@ class Logcli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "de3a2c27b1fa5ab8e8a14daeacbf42b97b321c80afe7032c0d51fb92671393d5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2051f59d711f0e0e8601c387c0d9f9a4e2e7677638614cf661b851d5b6dbdf0a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "487ed23b9957293c1a03aa303122a8bc20f40b253ecd290a7b182164262f8e18"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e0d894ff61a7ff3b1ab22d5c37f21a2e49d221d8341c71d2ab45d90f89b23e07"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8c8acf604306123b5ba9e0ef0303352ce37a89519a163739d8d4505001d2db53"
-    sha256 cellar: :any_skip_relocation, ventura:        "a79bbc7ef11493b0c28e947bf2345291738f28e58a4e201769c8a2ca26446e69"
-    sha256 cellar: :any_skip_relocation, monterey:       "e2b8e4e66619ce88af1607fec243e83f53903a524d6071e257397b67a83fd90b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b72b12947f01d898168119c2e77c02bf25774e70e5fc215a9a8ae39783f39391"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "888413d60b52dee3ebb45ff29fe7366c2e44dda51737ca0581c632f0f5896c90"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "99537f4a139d04734f6abb4bfe7150a41207538175c1650b845ec20d8700f8dd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c3f8ad302f76f242beb6e38183e35f63ce5b5f2510a6735434f5772d4fcb64e3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca69384d652c15c22b744338a1508b8f87a1900379af962e626df1c139ad93a6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4d8bbba82c3288cb38a8dc0ee2882ef09b4fb98768b52b53c772c8941835f30e"
+    sha256 cellar: :any_skip_relocation, ventura:        "05dbb9cad4eb050a19d6a2fdf76ed9f31e0611d18865109b4d1133f3804f4574"
+    sha256 cellar: :any_skip_relocation, monterey:       "d169a2ea5fa418a0851da84f7a72a2e0cbf7508b63d7c9741f3058bf50bfb7f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1a0b40a1329b33d171b65a5e7b9ef40a8b9f9f9f21ee1dde16cab72d8ab2e33"
   end
 
   depends_on "go" => :build

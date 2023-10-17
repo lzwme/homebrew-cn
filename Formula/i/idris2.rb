@@ -4,19 +4,17 @@ class Idris2 < Formula
   url "https://ghproxy.com/https://github.com/idris-lang/Idris2/archive/v0.6.0.tar.gz"
   sha256 "7f5597652ed26abc2d2a6ed4220ec28fafdab773cfae0062a8dfafe7d133e633"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/idris-lang/Idris2.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d0b67881ced575137bfac860387c8a5393a138746078857d04a685c0af9947bd"
-    sha256 cellar: :any,                 arm64_ventura:  "1b0403d50b6f4051e8819ee620b1ea1d821220bbbd81757538f30b0650bbde02"
-    sha256 cellar: :any,                 arm64_monterey: "fe954c126580a4dce5e362731af0450ee58a592567ed61c4577a6f4ebc4fdc80"
-    sha256 cellar: :any,                 arm64_big_sur:  "87a4f6c28283471b0e6ffb0d5014c5f19407cf529ae06ac394d738a8c78a14a6"
-    sha256 cellar: :any,                 sonoma:         "71f6113d8f89301a58117844a673403e6c1644c5f944a47b290c366974bd00ed"
-    sha256 cellar: :any,                 ventura:        "6d3669405d16c316734407fca9ad6f9c08979469ab4e94978bb9590b675dc880"
-    sha256 cellar: :any,                 monterey:       "f749917597db5e0325e46a193d756fda2b3b68cdf0d0c6217f7f6d0cb3fc7526"
-    sha256 cellar: :any,                 big_sur:        "b4654aca4c0b6b8388e0eeb1816df35d073d50de97c9f32c04b6a1041ec184c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bec98e3d1ec010bc075382337f925b0517899d76e11590c6860aa8804ea25117"
+    sha256 cellar: :any,                 arm64_sonoma:   "096ddbfbfccdbee8242d04157372aff355c2b36635700af0ef8e1e69ea69f946"
+    sha256 cellar: :any,                 arm64_ventura:  "02908db1c3731c1319cd0c0236d99c903963b9e9332d8557f6ba2acbe826378c"
+    sha256 cellar: :any,                 arm64_monterey: "31c73af3381e2a3574c69f45108a242bb9d778b01800684fc69b51284d2fa11f"
+    sha256 cellar: :any,                 sonoma:         "9dc963bc486b967c3bbbd1b9209f7f08595b97dc957a6d70899cb4dc303e5495"
+    sha256 cellar: :any,                 ventura:        "30e55e2cb668abbef2c4a56db77b6c70002e9d68888a4961dcae23761379c12b"
+    sha256 cellar: :any,                 monterey:       "a18ad57d7c9c279744f20a833f4f0af478d39628bdfd466357314976799dfb38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb5499e2beb0f08d067d587744647f4b85f443a07268b8dab1aaaa67c87755b1"
   end
 
   depends_on "gmp" => :build

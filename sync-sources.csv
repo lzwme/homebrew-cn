@@ -322,7 +322,7 @@ Homebrew-homebrew-core/Formula/a/aws-amplify.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aws-auth.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aws-cdk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aws-console.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/aws-elasticbeanstalk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/aws-elasticbeanstalk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aws-es-proxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-google-auth.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aws-iam-authenticator.rb, Homebrew/homebrew-core, 0
@@ -1202,6 +1202,7 @@ Homebrew-homebrew-core/Formula/d/dcled.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dcm2niix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dcmtk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dcos-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dcp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dcraw.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/ddate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/ddcctl.rb, Homebrew/homebrew-core, 1
@@ -1827,7 +1828,7 @@ Homebrew-homebrew-core/Formula/f/freeling.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/freeradius-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/freerdp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/freeswitch.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/f/freetds.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/freetds.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/freetype.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/freexl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/frege-repl.rb, Homebrew/homebrew-core, 1
@@ -2473,6 +2474,7 @@ Homebrew-homebrew-core/Formula/h/hey.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hfstospell.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hfsutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hg-fast-export.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/hickory-dns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hicolor-icon-theme.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hidapi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/highlight.rb, Homebrew/homebrew-core, 0
@@ -4322,6 +4324,7 @@ Homebrew-homebrew-core/Formula/n/nuxeo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nvc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nvchecker.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nvi.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/nvimpager.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nvm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nwchem.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nxengine.rb, Homebrew/homebrew-core, 0
@@ -6173,7 +6176,6 @@ Homebrew-homebrew-core/Formula/t/truffle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/trufflehog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trunk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trurl.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/trust-dns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trzsz-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trzsz-ssh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trzsz.rb, Homebrew/homebrew-core, 0
@@ -8102,6 +8104,7 @@ Homebrew-homebrew-cask/Casks/f/freac.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fredm-fuse.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/free-download-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/free-gpgmail.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/f/free-podcast-transcription.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/free-ruler.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/free42-binary.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/free42-decimal.rb, Homebrew/homebrew-cask, 0

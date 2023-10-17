@@ -1,21 +1,18 @@
 class Tracy < Formula
   desc "Real-time, nanosecond resolution frame profiler"
   homepage "https://github.com/wolfpld/tracy"
-  url "https://ghproxy.com/https://github.com/wolfpld/tracy/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "c2de9f35ab2a516a9689ff18f5b62a55b73b93b66514bd09ba013d7957993cd7"
+  url "https://ghproxy.com/https://github.com/wolfpld/tracy/archive/refs/tags/v0.10.tar.gz"
+  sha256 "a76017d928f3f2727540fb950edd3b736caa97b12dbb4e5edce66542cbea6600"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8e681087c743cee5166a3b6d06e88f2a9817124f90c501f08aea7fcbc0a8410f"
-    sha256 cellar: :any,                 arm64_ventura:  "e0b1f660695b770f2ef198e4e7c3a64edcad50fdd5c992beed7250bb1327d4e3"
-    sha256 cellar: :any,                 arm64_monterey: "34e51f9fc7008c8c6f9f328cd818a7e7903722c7ef7d0d72dfd27ab5ad8a0ce9"
-    sha256 cellar: :any,                 arm64_big_sur:  "55aac4cf3f25fc366b1be4c3c29cafbc658e3de10cdeee75447e0995176498ce"
-    sha256 cellar: :any,                 sonoma:         "4c723c214302196b3bbe41e45d6232a19af088cf6578dbdb1871821473d0e75c"
-    sha256 cellar: :any,                 ventura:        "e6cada4786ff58d06ef5bd68b95a1112c7b9ac6f1742bb690c4c373e8c95aa29"
-    sha256 cellar: :any,                 monterey:       "0f42dbfd5532724edcba0cce7e00cfc0facc8d935fc07ef852a7c77a2b877057"
-    sha256 cellar: :any,                 big_sur:        "bb8583cd33abebeb2028620d15cc066467988e284c623d79ea7b342a915d1a1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1158c9be06860d65840513ebd0189af488a59b5b52a63248bfff2e98570a2b65"
+    sha256 cellar: :any,                 arm64_sonoma:   "89d591c75f9dcf9cef53b6243b68d1a8b2d192c8f7a514000334bb8aa0a3c4e0"
+    sha256 cellar: :any,                 arm64_ventura:  "8e755a116f50f11a23a0a4ced30bdd8d990ca9708a02e1dfdd06fd47dcdc4cb7"
+    sha256 cellar: :any,                 arm64_monterey: "511c556958a4927e0f3d2ee1d8e03fc974a888a70fa436975fbdc2ac0b5002a1"
+    sha256 cellar: :any,                 sonoma:         "9bfd9235a73dacb47faa65730acb7ebced534bb49f235a674ba089f4c27ddc17"
+    sha256 cellar: :any,                 ventura:        "ba33f0fcd37ad5aad9adc864d0e29368ca93df88e7a0af1c002f0e2722df8359"
+    sha256 cellar: :any,                 monterey:       "ef4ba91b47ab2c9f8533b22eb4d00377455831c4b9282d5eee22ef829c877d5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bab7235ba26d16cecb2c91532d0b4e48d29ef9550a08c2288dd56cbd5948501f"
   end
 
   depends_on "pkg-config" => :build

@@ -1,9 +1,9 @@
 class Snap < Formula
   desc "Tool to work with .snap files"
   homepage "https://snapcraft.io/"
-  url "https://ghproxy.com/https://github.com/snapcore/snapd/releases/download/2.60.4/snapd_2.60.4.vendor.tar.xz"
-  version "2.60.4"
-  sha256 "205873c2a16c9d3e60230d543d16ee4acf1a3c34cf6aeb1a1367341f64cced3a"
+  url "https://ghproxy.com/https://github.com/snapcore/snapd/releases/download/2.61/snapd_2.61.vendor.tar.xz"
+  version "2.61"
+  sha256 "af30dc20c09872bf42faedb8f5306abc85faf9e3b010cb2388086cbc42a0909a"
   license "GPL-3.0-only"
 
   livecheck do
@@ -12,15 +12,13 @@ class Snap < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5520998dc2b76ca018634eeec0061fbf577dd0922740ed7fce80ad9138dfefe7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d735dc3fa8668a0c36ce79ebf204d0e5ccffaca9ed701462d264c09c0f51f85"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "33a9f0228ecf4b25788aa11abcde1a512cc3b54dd46106cde2b484b17bc211da"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6933ad0b4085ac7c643a902d5c6878e232ba774e17d52fd005db6f758300ce8d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "196f996a4f48279ec5869c1f9c9fee4eb982e732e36de86e2826d0cccd73b5eb"
-    sha256 cellar: :any_skip_relocation, ventura:        "eee036ab7bf4d3566716f29ad2a1a457c96dd7ea79c3fc5c7b264a0a354437bc"
-    sha256 cellar: :any_skip_relocation, monterey:       "7ac99365093c320f119c4a49010742bf31da8a13e04c86420abf7eec7aa8befb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d885f73fe9afd6a0ab9c4c62b7f37a6db0ff9d53b2cdb0c9f6dffa3995ae295f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ca3e426acd7f06f67f0703fcae7c6350b719d2c88cf5cbd08ee394c5f44ca50"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4ecc6acfc69a838dcc8522756a1b8f49b224f16d08b796c3dcd29dbc5312369e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "815dde6f13470b4d6024a9b300715d1d6f60b95ffbb37a918e657e724e28a458"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "566f8fa03c403b9fc6ca25d046500dedb158391b2bcdc75c7909c1fdf90b568d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "829a7d76b014c05d9303a45c273f57c5143ab10c12d50734407aae0e3149f8de"
+    sha256 cellar: :any_skip_relocation, ventura:        "b2d4813cbe1116866d6e9459bdc3f4054408c8a70e55c5a49d52d1a52fba9670"
+    sha256 cellar: :any_skip_relocation, monterey:       "6e83b38345b62debc11a899d6df4e6988955eca6de9bc383b63aaa9b2ba86cae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e704b39a0498f3b6014530d08c367fb909aeba07e293d6bbde6bbbb0dd2b6b3"
   end
 
   depends_on "go" => :build

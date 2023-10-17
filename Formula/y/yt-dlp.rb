@@ -8,13 +8,14 @@ class YtDlp < Formula
   license "Unlicense"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b78f82979048b864934154542dcfd191b642e015d0e36530b0e051f2ebfbf089"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d1c0e98a023a9c7e75e508939306e102eca06aaf14c5b50515b2a3332f283caf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ce0ecd50059dff5cd803ed0e4540deef7874876d30fc5e3458507f366bc9946"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d227f968503ef119fd065bea945203b018dc2b20a34dd911a271e520164b4988"
-    sha256 cellar: :any_skip_relocation, ventura:        "4122cbb62347515e666740f36b9b8466a6696e45949eda0f01dfc08e537d5214"
-    sha256 cellar: :any_skip_relocation, monterey:       "9da4b43707bd6777c50cce4af958e2544aa2f49f74e5336686365459daef6178"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6069715de6c86fcef653db70c05c10e6f422d92215f88a2bd67b344442598a72"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ea6c873efc1c3d30f6e6fb57b25b285b52b124b95a7264b9073fe6e996c096a6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2d7adf91534bf7bbc741e748a75627eda3feb351748b84c9a7ac4eb69ab23c7c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "85040fce14c698d904168c653154e02ed7215a13a6501f50f41ce7dde92fe990"
+    sha256 cellar: :any_skip_relocation, sonoma:         "193cba5872dbccd6bdac6171b56980a5d31ef7062fbd980fbc82f2f7b49f250f"
+    sha256 cellar: :any_skip_relocation, ventura:        "168c8f475eab8242106c44a0d0b16c5739721f3ecdd5db6ccdaf8b53e44887d1"
+    sha256 cellar: :any_skip_relocation, monterey:       "8f52272b731ca201a55394e470d5fdefb4cc665952832b0a9301795f492ec977"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bcd68f9bf1783ce87753a1246d0a2cc202bf634e7dc00d6e68ebc1aa9b40d269"
   end
 
   head do
@@ -24,7 +25,7 @@ class YtDlp < Formula
 
   depends_on "python-certifi"
   depends_on "python-mutagen"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "brotli" do
     url "https://files.pythonhosted.org/packages/2f/c2/f9e977608bdf958650638c3f1e28f85a1b075f075ebbe77db8555463787b/Brotli-1.1.0.tar.gz"

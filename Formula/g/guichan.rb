@@ -21,7 +21,7 @@ class Guichan < Formula
   # Uses deprecated SDL 1.2-based `sdl_image`. Also, the homepage redirects to
   # a 404 error page and only remaining site is the Google Code archive.
   # Last release on 2009-10-05
-  deprecate! date: "2023-02-05", because: :unmaintained
+  disable! date: "2023-10-16", because: :unmaintained
 
   depends_on "sdl_image"
 

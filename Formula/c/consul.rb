@@ -9,9 +9,9 @@ class Consul < Formula
   license "MPL-2.0"
   head "https://github.com/hashicorp/consul.git", branch: "main"
 
+  # TODO: Remove this if/when the formula is deprecated.
   livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    skip "Formula will not be updated due to BUSL license change"
   end
 
   bottle do

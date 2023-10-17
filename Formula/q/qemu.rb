@@ -1,21 +1,10 @@
 class Qemu < Formula
   desc "Emulator for x86 and PowerPC"
   homepage "https://www.qemu.org/"
+  url "https://download.qemu.org/qemu-8.1.2.tar.xz"
+  sha256 "541526a764576eb494d2ff5ec46aeb253e62ea29035d1c23c0a8af4e6cd4f087"
   license "GPL-2.0-only"
   head "https://git.qemu.org/git/qemu.git", branch: "master"
-
-  stable do
-    url "https://download.qemu.org/qemu-8.1.1.tar.xz"
-    sha256 "37ce2ef5e500fb752f681117c68b45118303ea49a7e26bd54080ced54fab7def"
-
-    patch do
-      # "softmmu: Use async_run_on_cpu in tcg_commit"
-      # Needed for running x86_64 VM with TCG and SMP.
-      # https://gitlab.com/qemu-project/qemu/-/issues/1864#note_1543993006
-      url "https://gitlab.com/qemu-project/qemu/-/commit/0d58c660689f6da1e3feff8a997014003d928b3b.diff"
-      sha256 "b0f9f899f269074304d59dedf980fa83296c806f705b16a5164ba4d34aad1382"
-    end
-  end
 
   livecheck do
     url "https://www.qemu.org/download/"
@@ -23,15 +12,13 @@ class Qemu < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "aae6f81773760cd3c5dc742202802a2ac655291ccd519e32f4fe99f59268422e"
-    sha256 arm64_ventura:  "23814bfe0b39b2d8e27ce504a0e9e0d90131f89096e7916f752143d81b18875c"
-    sha256 arm64_monterey: "ce028b8eec01f7531662b57fcbebe201ebc17f20cb0688c1e8e0e4c17e1d80b2"
-    sha256 arm64_big_sur:  "9fb0405a0ed2edb5457f11bd7ff95ee95e1d0ae80f71abfcc5ebc48987eaadff"
-    sha256 sonoma:         "6b700e13cff50edd3bfaa11959c5fc90f3d220c75245852087a14e79e8a67989"
-    sha256 ventura:        "f3647d5197f7a14d7ceff873c31a17934982969fb80c1c68fbc69f7c774603f1"
-    sha256 monterey:       "5217ea26acf78a933e75f80e21e5ddcee0a3018cbd1200b180d285fce62fa5b7"
-    sha256 big_sur:        "37e9e3e2734c037975b785a2a8cdbedc771c16d6027352d5438afb8d86f71b3d"
-    sha256 x86_64_linux:   "701ef6e55ceaf746ea77d5eef31fbb2302ee8fb49739807fc2894dd4ba49131c"
+    sha256 arm64_sonoma:   "5b1609f934fb3540a857a0ead8bd5c427258cae61bda0acdd61405eb8a1486f0"
+    sha256 arm64_ventura:  "a56c3c313287630810c23cac126f96102cebf1af819d38d1ec21a47bce1a7b0b"
+    sha256 arm64_monterey: "ce153e0b82293fecda857c3862341af96ec9526350163f7aab02dadef9ced578"
+    sha256 sonoma:         "82d75ff431672ffe48618a98985b49a71026632d75321ba03dd01b5ee79b3ea0"
+    sha256 ventura:        "13febcec2b4579cfbd4755debd7d6016f949844d72c121fc6ef07ae91e189dfc"
+    sha256 monterey:       "979dccabf7529fb80b5dd2dfaae81a2f1c73b7d34b3757d9b910d0d53704b015"
+    sha256 x86_64_linux:   "f58d827362062492626c328a7725aad6d50d431019d74f3433c4582e15c4e526"
   end
 
   depends_on "libtool" => :build

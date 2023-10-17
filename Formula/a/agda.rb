@@ -2,39 +2,25 @@ class Agda < Formula
   desc "Dependently typed functional programming language"
   homepage "https://wiki.portal.chalmers.se/agda/"
   license "BSD-3-Clause"
-  revision 1
 
   stable do
-    url "https://hackage.haskell.org/package/Agda-2.6.3/Agda-2.6.3.tar.gz"
-    sha256 "beacc9802c470e42bb0707f9ffe7db488a936c635407dada5d4db060b58d6016"
+    url "https://hackage.haskell.org/package/Agda-2.6.4/Agda-2.6.4.tar.gz"
+    sha256 "5b2cbc719157fadcf32f9a8d1915c360c5a5328c34745f15a7c49d71b6f5ef4b"
 
     resource "stdlib" do
-      url "https://ghproxy.com/https://github.com/agda/agda-stdlib/archive/v1.7.2.tar.gz"
-      sha256 "d86a41b9d2e1d2e956ec91bdef9cb34646da11f50f76996761c9a1562c3c47a2"
-    end
-
-    # Use Hackage metadata revision to support GHC 9.6.
-    # TODO: Remove this resource on next release along with corresponding install logic
-    resource "cabal-install.cabal" do
-      url "https://hackage.haskell.org/package/Agda-2.6.3/revision/4.cabal"
-      sha256 "908b41a77d70c723177ff6d4e2be22ef7c89d22587d4747792aac07215b1d0f5"
-    end
-
-    # Use Hackage metadata revision to support GHC 9.6.
-    # TODO: Remove this resource on next release along with corresponding install logic
-    resource "agda-stdlib-utils.cabal" do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/agda/agda-stdlib/fe151ddebedafe80c358bfc1fbcf3cea42a58db7/agda-stdlib-utils.cabal"
-      sha256 "91be962de76b0d9a06d5286afdb13b3738aef1f7d7f6feb58ac55594a86c1394"
+      url "https://ghproxy.com/https://github.com/agda/agda-stdlib/archive/v1.7.3.tar.gz"
+      sha256 "91c42323fdc94d032a8c98ea9249d9d77e7ba3b51749fe85f18536dbbe603437"
     end
   end
 
   bottle do
-    sha256 arm64_sonoma:   "30f144a088df8c6bb65bf14830225a1811a7f22326cdf8c634246c629b04ce31"
-    sha256 arm64_ventura:  "038df1f870f8656883676192ae703a2cd6671101f9c558607e65ce23ad7cfd98"
-    sha256 arm64_monterey: "ee9490269364d3ff10a764a1f1187184ecec77aee911b2e4afaa6698c2829ceb"
-    sha256 ventura:        "10a7682c89f37b23b61a13eb09cb9910cce9882848c11ca4f1616b063aefe9ab"
-    sha256 monterey:       "c62f5185a1093e13f48694a65b4f381ceca27fcb2c060823a644d6be72e21498"
-    sha256 x86_64_linux:   "ac97a785c4e9b05bc6dc845437fafd0c2a30cb9a405823da877193de1a2a3110"
+    sha256 arm64_sonoma:   "4448f766b6f8720480dd91343419fb729bf4b31d7e159db8c5875a6bc207ea26"
+    sha256 arm64_ventura:  "603697a77734602555b817b4528259d81d01e2657a5a769e31f0e5769ef3eef9"
+    sha256 arm64_monterey: "7707123f1f59194d559b8c35ae83c384347942f9e83fd000dada13c9c5cf677e"
+    sha256 sonoma:         "9f1a5b0e6d1988b7083177edadbed26c75837567441e04bd9e315df2018a2a31"
+    sha256 ventura:        "348f958cbeae5aad1eae9801d68932ead52cf4b8e2d1c050007c09aab4720b29"
+    sha256 monterey:       "570bb10e098deac4fdece09d402862b8fa64cfe9439ee9dba8842c39e711ef64"
+    sha256 x86_64_linux:   "b0059840d871280b216d5bab6155ba2124e09acce611eb8b1480307197904e6c"
   end
 
   head do
@@ -53,7 +39,6 @@ class Agda < Formula
   uses_from_macos "zlib"
 
   def install
-    resource("cabal-install.cabal").stage { buildpath.install "4.cabal" => "Agda.cabal" } unless build.head?
     system "cabal", "v2-update"
     system "cabal", "--store-dir=#{libexec}", "v2-install", *std_cabal_v2_args
 
@@ -62,11 +47,6 @@ class Agda < Formula
     resource("stdlib").stage agdalib
     cd agdalib do
       cabal_args = std_cabal_v2_args.reject { |s| s["installdir"] }
-      unless build.head?
-        resource("agda-stdlib-utils.cabal").stage do
-          agdalib.install "agda-stdlib-utils.cabal" => "agda-stdlib-utils.cabal"
-        end
-      end
       system "cabal", "v2-update"
       system "cabal", "--store-dir=#{libexec}", "v2-install", *cabal_args, "--installdir=#{lib}/agda"
       system "./GenerateEverything"

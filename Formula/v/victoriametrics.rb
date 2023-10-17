@@ -69,7 +69,7 @@ class Victoriametrics < Formula
         "-promscrape.config=#{testpath}/scrape.yml",
         "-storageDataPath=#{testpath}/victoriametrics-data"
     end
-    sleep 3
+    sleep 5
     assert_match "Single-node VictoriaMetrics", shell_output("curl -s 127.0.0.1:#{http_port}")
   ensure
     Process.kill(9, pid)

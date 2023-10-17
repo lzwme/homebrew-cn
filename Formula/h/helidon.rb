@@ -5,6 +5,14 @@ class Helidon < Formula
   sha256 "749cf3fd162bb9449ab57584c0bdf8874114d678499071ea522c047637de0f90"
   license "Apache-2.0"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ea90290bff83311c06bd73947a5b71f3784751280d7e4c6eceb3e69af48523cf"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0913524edf79cfd329a2c305a2546e3de696eac9052d128793dc3d520276292e"

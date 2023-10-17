@@ -24,7 +24,7 @@ class Glslang < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.11" => :build
+  uses_from_macos "python" => :build
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_EXTERNAL=OFF", "-DENABLE_CTEST=OFF", *std_cmake_args

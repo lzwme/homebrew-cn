@@ -12,6 +12,7 @@ class StellarCore < Formula
     sha256 cellar: :any,                 arm64_ventura:  "3d743c3c190d286146b4641686a962dc6bae910ba556ced19aa16e4f876866f7"
     sha256 cellar: :any,                 arm64_monterey: "3bd593bd7fcdf4da807c8efafc1a6811ae7d669b6eeec9e14473cdbb624e9771"
     sha256 cellar: :any,                 arm64_big_sur:  "ac8f0216f0c40a283251b535e830e5ede21a483986068e1fb5e5793abe9ac26d"
+    sha256 cellar: :any,                 ventura:        "93c9731b317370b3b0e536fe3c360d14e637a1917512ba87aaa73ccb541399dc"
     sha256 cellar: :any,                 monterey:       "8c24dc045cb0c9356ab26874cde6ac6d9a217662d04d48167c1998f1453ed641"
     sha256 cellar: :any,                 big_sur:        "70e2b6efdd7c02172c9cdc44f5485e2d821f82fca9c4fb398f5a6e639bab0b54"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7abd7620b0d2d7674acd699132917e21d542faaf7d5286f1c170df46d6aa55c3"

@@ -6,6 +6,11 @@ class Simdutf < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/simdutf/simdutf.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "a828eb98ed1522227dbbe299d4c0c21dac74f2d27614d33bec4f0651a9c222f0"
     sha256 cellar: :any, arm64_ventura:  "0ba08f0fc2bc14b63bbcf6cc75fa90306243974e9a7e27d3d2d7e05d9ca3f0a8"

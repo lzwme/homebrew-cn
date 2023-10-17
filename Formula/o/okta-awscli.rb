@@ -9,17 +9,19 @@ class OktaAwscli < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a3308176d21de2b826685cf2ad405cca3e46bc933a9bace9c7b8f6acad256639"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "61cb7a9d4e0ba295e85b8151c8c3cd27d3b4d927c29648b1c37e2516a5cc61a5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b1b07245efe05de8b03caf091ad999129f1e72eace11aae53ddd6245bc4b8b70"
-    sha256 cellar: :any_skip_relocation, sonoma:         "645ed9e19f929c311bc3b6c3dfcda9a3866ec599a74c7675bf9653d0bd5dcb5f"
-    sha256 cellar: :any_skip_relocation, ventura:        "3214a9567df9e7bff5a22612278d6a8649f74b8509a882b8a9ea5bc0d296f05a"
-    sha256 cellar: :any_skip_relocation, monterey:       "5c7e168e47ed68517f8b74b315a077a58039fc60af965ee38772e8a2a0a5f61b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f85320796a80b73577b5f24b0dcd5010bb4e12e393be4d2161c10f88466f9997"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "699d84243902ad445497970a6e1752ff8dcc23ab93f53230d6c35c42c31d91e3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7be9111236d535a5ccc967f0ab4793bd973ced2a3082877e0ef624a95ed5219b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2767c559fbe6a9bc9847f8051b36f6cb94cb76d8c022cf165f54c44eab38abcd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3a948e9abf4b6f52cbc9f8fdea37ec930fa9c8dcabbab904d7c11c656f4ff8c3"
+    sha256 cellar: :any_skip_relocation, ventura:        "ed00b3909653699bba767736c201a6561c27766e14fb5937c89ff05d6c96be31"
+    sha256 cellar: :any_skip_relocation, monterey:       "4b6d0016f1e0f1f5d81cb0aa3d2c11b7a0a77602f98c8654435f05b50d7eefe9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "699f2a007dfc16e01efd94776b900e8ad7c1598e7f0bc72993a597de6c7e5c27"
   end
 
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python-click"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "beautifulsoup4" do
@@ -28,13 +30,13 @@ class OktaAwscli < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/42/56/633b5f5b930732282e8dfb05c02a3d19394d41f4e60abfe85d26497e8036/boto3-1.28.61.tar.gz"
-    sha256 "7a539aaf00eb45aea1ae857ef5d05e67def24fc07af4cb36c202fa45f8f30590"
+    url "https://files.pythonhosted.org/packages/08/93/0f614264bca69210ac6b0ae06bc112a9569a0b849499e6a7884b670d272a/boto3-1.28.63.tar.gz"
+    sha256 "94218aba2feb5b404b665b8d76c172dc654f79b4c5fa0e9e92459c098da87bf4"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/05/2e/9cb8adca433af2bb6240514448b35fa797c881975ea752242294d6e0b79f/botocore-1.31.61.tar.gz"
-    sha256 "39b059603f0e92a26599eecc7fe9b141f13eb412c964786ca3a7df5375928c87"
+    url "https://files.pythonhosted.org/packages/a6/4f/4c2b7d96dd50aed47db6cccf6c1c089853f6474e1d1da5c5aa320d7d4157/botocore-1.31.63.tar.gz"
+    sha256 "6e582c811ea74f25bdb490ac372b2645de4a60286b42ddd8c69f3b6df82b6b12"
   end
 
   resource "bs4" do
@@ -45,11 +47,6 @@ class OktaAwscli < Formula
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
     sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "configparser" do
@@ -88,8 +85,8 @@ class OktaAwscli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/dd/19/9e5c8b813a8bddbfb035fa2b0c29077836ae7c4def1a55ae4632167b3511/urllib3-1.26.17.tar.gz"
-    sha256 "24d6a242c28d29af46c3fae832c36db3bbebcc533dd1bb549172cd739c82df21"
+    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
+    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
   end
 
   resource "validators" do

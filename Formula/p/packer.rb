@@ -9,11 +9,6 @@ class Packer < Formula
   license "MPL-2.0"
   head "https://github.com/hashicorp/packer.git", branch: "main"
 
-  livecheck do
-    url "https://releases.hashicorp.com/packer/"
-    regex(%r{href=.*?v?(\d+(?:\.\d+)+)/?["' >]}i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a88ef4032fc80f0347ece6d35b91a41ebed9aed3ed04af63d1dd03e809d324aa"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e14a06bebe83306fa56aade8483619adaf96fd85fb1a00ee7b6369b55b631995"

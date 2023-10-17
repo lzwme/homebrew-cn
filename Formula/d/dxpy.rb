@@ -3,19 +3,18 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/f3/e6/1e8f00bc128adbdf78e3a61a1dd1650ac1a939dcdeb993e49e3d8376d515/dxpy-0.359.1.tar.gz"
-  sha256 "3ea10e7e7b59634dc8514037465bdb8cedbf9988973262a4091478f3d680571e"
+  url "https://files.pythonhosted.org/packages/90/4a/8546678963831a30b5b7ca34210da4873aeef15aff0ab9d598c11fcdf965/dxpy-0.361.0.tar.gz"
+  sha256 "455c2a63764e7a1158cdb48abcf987e80d186fb92c23c539d8e6f2e4cc0368c7"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c304c1cb1a890e06ad7e1e08d963e45ddf27093785d1ee111c21a8c30caa8725"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0048e36b721c4ca927fa2e563168691c4d691e809a5a2fbdabe5415adf2658ec"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "302d70b8fc52c7d9a175ec5ceccdbc2966d6271be31c64301f969ae4fcb4bfdd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fcc15f616dcadb7cb3c36789e80356ec32e5c7cc5672ab5cb20ac300a1132c66"
-    sha256 cellar: :any_skip_relocation, ventura:        "2cae6423d2e1d6aeeb1bd34c8f8b06d93db2a6dbe47d8839f754e42410018754"
-    sha256 cellar: :any_skip_relocation, monterey:       "832a81b6b17231dacb3386d2c58d1f22359b525fe52b23fc2da1459c19afca2d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "671d1a2b20084d4f9391fc6c5c55aff14ada1402303e2039bf67798285e6feba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "099b37b0b5918f3dcd9ee4cad0a02a8ae21a832237bd96234e27393642a98443"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2866d9a8a068c5740d011b7475d6b04473d97583f7798a194bbd3d9edb5eab55"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0a86372770fba7189a48942bf075d7b475028be06354279dd61ee4b94fd9fb62"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ed3dff31259be4b19725bc2116e39f47a980c9e5a1024699fcd36633ceda641b"
+    sha256 cellar: :any_skip_relocation, ventura:        "96bc1f2d283046dd193f2f5e5374d659034aee47da54cd3fc439f1708acdd756"
+    sha256 cellar: :any_skip_relocation, monterey:       "b0dc55ce53932f85dc80b08aa9a8e6058704e2121ec87287a98090cc19a0098f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c32510913684f5a55c9a1f18c85c26ccc22355071234f6138a6f241a41f05a4b"
   end
 
   depends_on "cffi"
@@ -43,8 +42,8 @@ class Dxpy < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/d6/0f/96b7309212a926c1448366e9ce69b081ea79d63265bde33f11cc9cfc2c07/psutil-5.9.5.tar.gz"
-    sha256 "5410638e4df39c54d957fc51ce03048acd8e6d60abc0f5107af51e5fb566eb3c"
+    url "https://files.pythonhosted.org/packages/2d/01/beb7331fc6c8d1c49dd051e3611379bfe379e915c808e1301506027fce9d/psutil-5.9.6.tar.gz"
+    sha256 "e4b92ddcd7dd4cdd3f900180ea1e104932c7bce234fb88976e2a3b296441225a"
   end
 
   resource "python-dateutil" do

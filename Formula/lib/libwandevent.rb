@@ -5,11 +5,6 @@ class Libwandevent < Formula
   sha256 "48fa09918ff94f6249519118af735352e2119dc4f9b736c861ef35d59466644a"
   license "GPL-2.0"
 
-  livecheck do
-    url :homepage
-    regex(/href=.*?libwandevent[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "1520337069b3cc6c78f21ef8f4d0fe07b74ef7589f7f0cb976b0c9fde7089d0d"
     sha256 cellar: :any,                 arm64_monterey: "1cd49d09ac626760b7aee5ed8deee8d01338880d89ca3ee05077a16b7ddae100"

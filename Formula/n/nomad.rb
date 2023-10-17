@@ -9,11 +9,6 @@ class Nomad < Formula
   license "MPL-2.0"
   head "https://github.com/hashicorp/nomad.git", branch: "main"
 
-  livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "57af75515a8706b2bf7229d144870f017890bf41f11dd908af028e18dabc75a3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed444abdde4adcbf77a5c91ebbe57cd40de9f9275b57772b7a5d2abc42c3ba1e"

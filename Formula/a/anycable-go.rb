@@ -1,8 +1,8 @@
 class AnycableGo < Formula
   desc "WebSocket server with action cable protocol"
   homepage "https://github.com/anycable/anycable-go"
-  url "https://ghproxy.com/https://github.com/anycable/anycable-go/archive/v1.4.4.tar.gz"
-  sha256 "8a6cd528f8af57968ef55ec478d2cdaeee020cce37588e5e6431d3dedcbd9c7e"
+  url "https://ghproxy.com/https://github.com/anycable/anycable-go/archive/v1.4.5.tar.gz"
+  sha256 "28bedee45c76ef66c48d8131ff942a2f61058f00e6002c7cd6d515fec6b3fe59"
   license "MIT"
   head "https://github.com/anycable/anycable-go.git", branch: "master"
 
@@ -12,15 +12,13 @@ class AnycableGo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "657060872cb7ab61ce8a8da5a913219963dc4de35878ae3e65239939f1a34914"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b64ef4b6c5100f948cc1d34b48f3fc140dfd885b0763b840b3557a2a1ab9063"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7cb16701e93081f681a3eda8b637c8fbd930c920b120f5634124d760e831c12b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7cc60eb2365550d70312bcde1ed6a8a9124055f795a6e4aeac571c90830527ba"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2f2dfc3ff5222112d99ce6898fdb52471082ee7da23e4dee7530397be3e9467b"
-    sha256 cellar: :any_skip_relocation, ventura:        "ec36b2f1052410c22c237ec649bd745e3caea6e29482d4f512b42f3c72674214"
-    sha256 cellar: :any_skip_relocation, monterey:       "23e46eb00233427a8b9c31fd4179af1fde82276cc261604c61c3de344d9d7db3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f759c3ac589024d1b3b41ad032e35e617df6e075c1cdf3d60ec98acd842894a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0cc9a17dfc94c18dfda06d3a05fff9d289548059272089c32023fe3d147da72"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f40a950afdcc2722c7cf6f546f21251347a82c6597b3e8547b7d491a54e28b5a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ff16e5bddbdc29e963c408faa58c42abba4d447a978eb66cdf4fa9e1f8f36ae9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "69d61556badf4f72209b6e0d5de0fe9d2d993b31acf2dec07d645faae81da214"
+    sha256 cellar: :any_skip_relocation, sonoma:         "113ab7682ad17ca3f7b6f2cb49457cfb158224d0b9d0c806ec707d807889e400"
+    sha256 cellar: :any_skip_relocation, ventura:        "21498b20ff7765996eaf6699a2bbee79c20f72e29ad30f15e5197829bc2db50f"
+    sha256 cellar: :any_skip_relocation, monterey:       "c033ab618c5266416f6084ff29bc3eac2808a69b08ef8bbe863cd13be0e7edf6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34fe0ec0764864f9e9a11d9af674532715dbddd42a1c06a35795a93f61792ba0"
   end
 
   depends_on "go" => :build

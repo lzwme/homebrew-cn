@@ -1,18 +1,18 @@
 class Erg < Formula
   desc "Statically typed language that can deeply improve the Python ecosystem"
   homepage "https://github.com/erg-lang/erg"
-  url "https://ghproxy.com/https://github.com/erg-lang/erg/archive/refs/tags/v0.6.22.tar.gz"
-  sha256 "d85687ddf8b319fbe505190a6339208b9a0dbd1d8a0780d50cfee40dc49b137a"
+  url "https://ghproxy.com/https://github.com/erg-lang/erg/archive/refs/tags/v0.6.23.tar.gz"
+  sha256 "d9ea9def0f4d026c9e6d7dca3d049816128e4c1874ca6aca56724503c9041fcf"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5e47665b11ee064983e18bed4745d7ecaf3b9443b86c91915949bc98a43ac96"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5624d0e9878835df471614ec87ae15f4189bf81b4157a6bb5d6fda5dff69edf0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bfa36fea249b17ef9b46c1321c2e7e0e3304f136a1574e2d876f00096b318f3e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "afb2360357c46b57352210cd2602f89afdf3a1f1aabf9d328c2ba9a85269de61"
-    sha256 cellar: :any_skip_relocation, ventura:        "c49d223edd5009a64e50b07d24ceff87a97210c7976dfa4e3521f6eb3eae4943"
-    sha256 cellar: :any_skip_relocation, monterey:       "383bff7d09d04699ecd78fff94bb49a7396e3267253f815c88456a19647157bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2cdacd907772022f673167751e86b444ebe0065cdd3d6dda9dd4fedb58810d0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c69c1f3743a046add8d3bc18f7c71a477d4f6cd6e0e10200f025bc14475fabe9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dad6d113b45c446b6edf4023a2136e4b8ddc3098ee257856d457e24ac5c318c5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0fe009a058dcca88f14b5e65f2b862add21f18fad3e9af3afc6d8d28b6e9414f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "60fe926c84a9d78eb1a6da4b889e44931a311c92d57aa181e3d28035335e2444"
+    sha256 cellar: :any_skip_relocation, ventura:        "72423d6db3a375d8a0aabcd3352abf04b14bfcef2e6156fa2087316ac2082bf7"
+    sha256 cellar: :any_skip_relocation, monterey:       "d2587372e6b257ab745932d515a2577c01238a0019d36ab819c07cf0ac551946"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61e8e69a3d68227e7934749f7a23354395aa48dab547c59a26794d1c0806f350"
   end
 
   depends_on "rust" => :build

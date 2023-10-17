@@ -4,28 +4,33 @@ class Docutils < Formula
   url "https://downloads.sourceforge.net/project/docutils/docutils/0.20.1/docutils-0.20.1.tar.gz"
   sha256 "f08a4e276c3a1583a86dce3e34aba3fe04d02bba2dd51ed16106244e8a923e3b"
   license all_of: [:public_domain, "BSD-2-Clause", "GPL-3.0-or-later", "Python-2.0"]
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2f08fe34b2bc93a4213c1e7c762b62a215f9d64d91841898ddac19643e2af418"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "86fb46edc7859129fd319ec6d63aa3bf29383fdb51f96aa3ef466f97b13ca8a5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7cdb9692e679f6f477986b265ce0cc47c32513067761aebd4b01accbd7bfdad4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ab511781e0dda714dd2a7c6762bcfbd24cf31a40af63349607d8efd2d810a588"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8375a10a9a25b5331ad55e7b0c0eebeed7a2bb2862b258a8d373fe8274353c2b"
-    sha256 cellar: :any_skip_relocation, ventura:        "510eb4b5aa120cb0c6b3a3d11be6150ef5b52c1500225c0bc68263112a42755e"
-    sha256 cellar: :any_skip_relocation, monterey:       "baef0621bdbcdbfbb2a3e407d54b533010f021a4b9f78a3e978e22ad0cbaf727"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6c6107d3abb89359e378110485db98076b41f6a08c36d7b2643efaaace94991e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f62e7d49f5e36fc8b2621c919f0d531d1f9e1d29c7c18edb1076f34865f3c6e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dd4ba2b284e5267446046167888360a4d3ee4879259d1a6d2c16a0c302373cc1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9fe50df7baddc6b75851da3a9e8d68440bbcf21070e92e70a992b1684ba53574"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "12fdeaa68a7fbcbcf659679bbd34dcaf7eccfd5b1fce94f42c4d8f8e5f4a3d83"
+    sha256 cellar: :any_skip_relocation, sonoma:         "666284171cef102f63b2f3d8ad4e6edc422279264311e02e6b4562cec74da111"
+    sha256 cellar: :any_skip_relocation, ventura:        "18fa51222ab60c73986b5434796ea9a704d26d95b4d67cb41a984e90beb7a6f2"
+    sha256 cellar: :any_skip_relocation, monterey:       "5f5e79f59567a89afa053c5f92bd694120965b24a3895ca787d649ac5c5777e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "622a238e4cc5c6be5792bdbdd4f42b0c3f5052d3dbe928005183e48c6fec5b9e"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.10" => [:build, :test]
+  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
 
-  def python3
-    which("python3.11")
+  def pythons
+    deps.map(&:to_formula)
+        .select { |f| f.name.start_with?("python@") }
+        .map { |f| f.opt_libexec/"bin/python" }
   end
 
   def install
-    system python3, "-m", "pip", "install", *std_pip_args, "."
+    pythons.each do |python|
+      system python, "-m", "pip", "install", *std_pip_args, "."
+    end
 
     bin.glob("*.py") do |f|
       bin.install_symlink f => f.basename(".py")
@@ -38,5 +43,8 @@ class Docutils < Formula
     touch testpath/"docs"/"header0.txt"
     system bin/"rst2man.py", testpath/"README.txt"
     system bin/"rst2man", testpath/"README.txt"
+    pythons.each do |python|
+      system python, "-c", "import docutils"
+    end
   end
 end

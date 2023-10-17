@@ -20,7 +20,7 @@ class AnsibleAT6 < Formula
   keg_only :versioned_formula
 
   # https://docs.ansible.com/ansible/latest/reference_appendices/release_and_maintenance.html#ansible-community-package-release-cycle
-  deprecate! date: "2022-12-24", because: :unmaintained
+  disable! date: "2023-10-16", because: :unmaintained
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build

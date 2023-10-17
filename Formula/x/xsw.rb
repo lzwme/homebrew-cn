@@ -20,7 +20,7 @@ class Xsw < Formula
   end
 
   # Last release on 2009-05-09
-  deprecate! date: "2023-01-21", because: :unmaintained
+  disable! date: "2023-10-16", because: :unmaintained
 
   depends_on "sdl12-compat"
   depends_on "sdl_gfx"

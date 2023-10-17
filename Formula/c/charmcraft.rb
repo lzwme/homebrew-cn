@@ -6,17 +6,16 @@ class Charmcraft < Formula
   url "https://files.pythonhosted.org/packages/79/2f/14865ae1d3c6061c9e089a1577e4e946e09920eba76c1a7a8f6bc31374d7/charmcraft-2.2.0.tar.gz"
   sha256 "8acf952c0f302c67afae6755e912a3211803a7352b5b5cc588ed3bf8a5bc6b59"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
-    rebuild 5
-    sha256 cellar: :any,                 arm64_sonoma:   "084ec61762fc295ae227f3d2d6dffb8f8abcc10e3a3f1ec3c8dcb3a7b59ecaac"
-    sha256 cellar: :any,                 arm64_ventura:  "fed97a67b43cff551ef4bfbfe429dc48a94dc97829c9ce543e921acd3db33e02"
-    sha256 cellar: :any,                 arm64_monterey: "d90b97852da74699358fffabf6795ee8f3b2b69578d8c26fd306e02e233c6aa5"
-    sha256 cellar: :any,                 sonoma:         "a611bd916d742a30524ba2d3373ea99ed8f5e545763932a8eb26cc779a5fe693"
-    sha256 cellar: :any,                 ventura:        "4e6341e6f4523aede1105c5f146c56d3e4b5e7afbec0c3c4eb70c0e3841b74b4"
-    sha256 cellar: :any,                 monterey:       "8458dbc86647891bc8f8852b47c76da62de70bc9ef88d2112068aad58f710909"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e5314d474f3efb1b5914effb954f5be1b626130ac3c8e40344b0f852c96908c"
+    sha256 cellar: :any,                 arm64_sonoma:   "a652705bb30333fd738b5fdc8deb19926f8494fcdd93bf89b5c9e4a76bd95f8d"
+    sha256 cellar: :any,                 arm64_ventura:  "5318d8de7da9b4ca702279360e371ce3ba19c8833a6bc6f59f2e6bb762bde01a"
+    sha256 cellar: :any,                 arm64_monterey: "9005ab77738eb112599db07b55143601735717bfa22b8934a6205bb408e23d00"
+    sha256 cellar: :any,                 sonoma:         "003e5e9e713771c80fc68911c3ca5b9f4e633d25d48d65e99c62b2f281ff6cd7"
+    sha256 cellar: :any,                 ventura:        "34665d0cfd8fce8b90edcb6d26d4b7b11dda46c592b8d21c86707d3acff8e57e"
+    sha256 cellar: :any,                 monterey:       "9410a3b13ab5dad993bed6f26016f190ffff5919bcf68693381f87cc5c7d4e77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0477b9f1c864850f26df93e3f7f893f1b2c2238275e72bec683f50150be89e6"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -29,7 +28,7 @@ class Charmcraft < Formula
   depends_on "python-pytz"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
@@ -148,8 +147,6 @@ class Charmcraft < Formula
     sha256 "32c8b48dcd3b2ac4e78b0ba4af3a2c2eb6048cb75202f0ea7b34feb740efc340"
   end
 
-  # upstream issue ref, https://github.com/canonical/charmcraft/issues/1194
-  # relevant commit ref, https://github.com/Homebrew/homebrew-core/commit/be3ada7413b
   resource "pydantic-yaml" do
     url "https://files.pythonhosted.org/packages/9e/e7/30713a0fae04001f8886b0219cad667b0fbf56149f4ea3ee5a84e8e0c9e7/pydantic_yaml-0.11.2.tar.gz"
     sha256 "19c8f3c9a97041b0a3d8fc06ca5143ff71c0846c45b39fde719cfbc98be7a00c"

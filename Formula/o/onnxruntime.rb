@@ -12,17 +12,18 @@ class Onnxruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fc3f85016e2105dcbd98f6f674eff2824f929f1ed9c507158bfe49e8c8ef6d91"
-    sha256 cellar: :any,                 arm64_ventura:  "634b4c28663308cb0df6091021b4f1556b518d6bb8f08723b2076d3e38cbf80e"
-    sha256 cellar: :any,                 arm64_monterey: "169e7c325c1a935e6cd5064b057bea8646bd3deb688efe471f8e3b0fcb093fdb"
-    sha256 cellar: :any,                 sonoma:         "ea6d66d0c6e8b77807376dada255d40ef13d876ac6c3d978c6b729a391e0f75a"
-    sha256 cellar: :any,                 ventura:        "5419fe87990cc5d325c0bd8811f1164df88fd86d60f6a50332d5dece31a62f31"
-    sha256 cellar: :any,                 monterey:       "070dea6533e2034d668b49f35739c4981e2a16c191a054e8bd7dd6eb6c26797b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "efa0b88368cf8bea5872ba1ef679368822618381d5f0586c254c7626a0dfb9fb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "a3b73b535a1df178034f0b1289a1e8c610e72b39fd5b865819435ef081c1819b"
+    sha256 cellar: :any,                 arm64_ventura:  "8d1d0ab70ab5c0f74909510fd58756f424482db84d3d0646098ac49b3ffef243"
+    sha256 cellar: :any,                 arm64_monterey: "1fad4bc28a6395f17a069dca8ff4812c10fba8f2747b1ac2c9ac01a4667bcd26"
+    sha256 cellar: :any,                 sonoma:         "9ef4e9b86b447551c6010604bfbda69a71b69d0ca890238c47997b09ea7522c4"
+    sha256 cellar: :any,                 ventura:        "503e31e73051fc0d4545e1a53c64b61b456f238e0b5dc4dc778e9299c60a5db3"
+    sha256 cellar: :any,                 monterey:       "d2ae23f902f577b4b9ef84cc0044cad3626b8d0ac1facac03f006179093bbd5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9455ab44856e2a0fc27f8ebff5eca39877c66453ed448db6d903a6589ce0b16a"
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
 
   fails_with gcc: "5" # GCC version < 7 is no longer supported
 
@@ -30,7 +31,7 @@ class Onnxruntime < Formula
     cmake_args = %W[
       -Donnxruntime_RUN_ONNX_TESTS=OFF
       -Donnxruntime_GENERATE_TEST_REPORTS=OFF
-      -DPYTHON_EXECUTABLE=#{which("python3.11")}
+      -DPYTHON_EXECUTABLE=#{which("python3.12")}
       -Donnxruntime_BUILD_SHARED_LIB=ON
       -Donnxruntime_BUILD_UNIT_TESTS=OFF
     ]

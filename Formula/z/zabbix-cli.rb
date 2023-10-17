@@ -15,17 +15,18 @@ class ZabbixCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6f4d4f609fd6d3470dd9e9b87164cb8af9ae47255a141dac34edac3da872fcfc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b97e4b03bc7258d039727573b55cff5b16e068d24cc0308a86e3ac7b3f627ef"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1d53656ceaab40e98cbe55d0f3f8f4916f8ae3c9cd5b82bc1921250ff89d7dd0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "160a69b17dbd9a3026683cd5a413a6dbda26899652eacac002e0b05410d91c40"
-    sha256 cellar: :any_skip_relocation, ventura:        "ca8f1d96003c092cf839748987ee5fc8a78881f4e18ebaeee42cfa20a3bd16c9"
-    sha256 cellar: :any_skip_relocation, monterey:       "05213afeacf97db3c9309f5bde7a514dcef1b6fda6dec7abb4e23a3909886a10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81f54053bb3da58c7bed0b361bd638a68eb58bd0d992c7891d36ea65f749407e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8f020bcc3c66339040d3a17c2206acf8f5785bda6358b0d04c76915c6c39ba6a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8c2050e185d6ad9ac6b8f236efbb323e8b896a3ef6c763802bea8ca8756bb8be"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ecebdbc34f990038acdded0d4fd48a3d8af68cbb565e898d084fff8b819d2363"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8a8ed82d4b5981eb266e5ecd9fc23a7a7bad8990c13f481862cdb4917d925339"
+    sha256 cellar: :any_skip_relocation, ventura:        "713be594e5f5744b7072f2532f742328ffb19a0e27b53b6edaaa7a94bad66140"
+    sha256 cellar: :any_skip_relocation, monterey:       "8dc540e35d6b0b5c86ce171a7909fc9eeb10360eaf0548aae311bffcc4d454b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a99c1a3b4c1516f62033951a410cab81cb0c9fe9f5a3b2eff99f90798a3ee208"
   end
 
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"

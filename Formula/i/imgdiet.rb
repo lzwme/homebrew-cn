@@ -1,21 +1,19 @@
 class Imgdiet < Formula
   desc "Optimize and resize images"
   homepage "https://git.sr.ht/~jamesponddotco/imgdiet-go"
-  url "https://git.sr.ht/~jamesponddotco/imgdiet-go/archive/v0.1.1.tar.gz"
-  sha256 "c503e03bb2b2bce9fce4bd71244af3ddec2ee920e31cfd7f1ca10da8ddf66784"
+  url "https://git.sr.ht/~jamesponddotco/imgdiet-go/archive/v0.1.2.tar.gz"
+  sha256 "3f15e5453195f0657322071541b0d086eb2bf2a0e39919c54f0b29b92b3ab18c"
   license "MIT"
   head "https://git.sr.ht/~jamesponddotco/imgdiet-go", branch: "trunk"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d4057d7dbf09a77b65723b839c4ddaa1fa94887762aaa1bd99b0f7605fd6f36e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "de81fbb6f723124ee2339e1a5f52613bf0ae342164416e2418dfdda4541116b5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d26edf95f2a68ba491d063e688030638984107da0d33c77b7a008d4b740a408b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "70bd6552daa7f655a15723ec912abfd3e92cc206f2d1ebdc9d6bb32f4ed0e606"
-    sha256 cellar: :any,                 sonoma:         "bbab582ed0b38c8bd960dd71adec3be32f09d0470b20dfcbc43cca010a637c0f"
-    sha256 cellar: :any_skip_relocation, ventura:        "91e230a91073416afeec262e7a1f3db6d2db70d103dc7e67bec5d3677bc4e52a"
-    sha256 cellar: :any_skip_relocation, monterey:       "29729d6900cf925b7abcdf373b367314a3bec84fe7b7132e51706ee948c94692"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d7b37ab1f4ac867aa399cae59d41f0622d89ffb0869a08fb6298f5895e2ad3f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d5c60ff9ac8702d7a3e89e147a7674a764ef24ccc17bd2399101b170a7ac880"
+    sha256 cellar: :any,                 arm64_sonoma:   "b27da1482b19dfef907b7641e7fcbdcf7cf410152e4d445e8bbe0b9b7f03c795"
+    sha256 cellar: :any,                 arm64_ventura:  "0e0134db0d4bb1b9f51ce1807c1c833403ada6e6a0e4e316a6be6fc74097de03"
+    sha256 cellar: :any,                 arm64_monterey: "bda9f00c3b2beed5f2ec9458264d5a87c4941de5c5ae9ebc4fb65cbdd73bbf07"
+    sha256 cellar: :any,                 sonoma:         "19cac57891233c25c105b6994b3bf7327b1f3eb0acdbf07b9d49655d994ced62"
+    sha256 cellar: :any,                 ventura:        "8eb4b38290efe03c7c11ac611cdea66a587952659cb066105bb774b3fc3e83f5"
+    sha256 cellar: :any,                 monterey:       "8d5cc79d420e7578164462f03c690a35b8d51e07906d61596d7e9768361a2942"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eebf5cf72672670a354498734f5f3961a7a103a4859b09ee5647839adf2eb19a"
   end
 
   depends_on "go" => :build

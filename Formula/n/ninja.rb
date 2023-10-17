@@ -24,9 +24,7 @@ class Ninja < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "96fe0b239b3add346f8e4e2ea7e0713018f49f03e684e80706fcf4cba7b24fcb"
   end
 
-  # Ninja only needs Python for some non-core functionality.
-  depends_on "python@3.11" => :build
-  uses_from_macos "python" => :test, since: :catalina
+  uses_from_macos "python" => [:build, :test]
 
   # Fix `source code cannot contain null bytes` for Python 3.11.4+
   # https://github.com/ninja-build/ninja/pull/2311
@@ -36,7 +34,7 @@ class Ninja < Formula
   end
 
   def install
-    system "python3.11", "configure.py", "--bootstrap", "--verbose", "--with-python=python3"
+    system "python3", "configure.py", "--bootstrap", "--verbose", "--with-python=python3"
 
     bin.install "ninja"
     bash_completion.install "misc/bash-completion" => "ninja-completion.sh"

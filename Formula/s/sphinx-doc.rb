@@ -9,14 +9,14 @@ class SphinxDoc < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a23d24f9ea2ef6a31058fb148875f5f325bd46b991dd7850c22a0592a82efbe4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "843d45f7f3ef2c97f833b91c12725091f648d719fe2b3ea8a40542cc81aaa1ca"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c88a1a44969df24132ac397d96a518417821db94f95648a498e7864c4a622f0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e793e82ff10469164d9f6a457462ee820546978d76031616c3fec361893d3566"
-    sha256 cellar: :any_skip_relocation, ventura:        "825b092b5083be5a314e43c99220e70e14500f768c84d9180fbbe7c478ca9e54"
-    sha256 cellar: :any_skip_relocation, monterey:       "1c21845dc868a2fda40d82dbf98c4a02e4ad136ae9325a82cddeb165761e73c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d53825af008d94ed027577882f5c0d040b7e5a05b70c50b6b95f17023f6e4102"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "280bec768ac0a9ac9e88493bcef1d980ef2a9bd8c8a2c5233e4fdbe78331a58b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29fe22ef4a708adbf980351f23021b6c7735f1dcc8d2219d7547986d89bc1d5c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7f6aac9b27c85b689dc338d2e8b7712d3672cd56e3f930ae319214be604aea5d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b775e6055e1f5c29848a1308f67e194ee6196626af0d34e503e321e5d94fb56c"
+    sha256 cellar: :any_skip_relocation, ventura:        "d5efe3dcdfd985bde91ff0b5546d1118a356b7649074516082afbf98e7bdce64"
+    sha256 cellar: :any_skip_relocation, monterey:       "5289d33820147eb1241c8d63ba2e512c0fd25403522f8fa1fc305f5971da67b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab07762e7df706d5022f796a6f0caf9abbbbb7f92d4ca85b10934b9798fd598f"
   end
 
   keg_only <<~EOS
@@ -30,7 +30,7 @@ class SphinxDoc < Formula
   depends_on "python-markupsafe"
   depends_on "python-packaging"
   depends_on "python-tabulate"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "alabaster" do
     url "https://files.pythonhosted.org/packages/94/71/a8ee96d1fd95ca04a0d2e2d9c4081dac4c2d2b12f7ddb899c8cb9bfd1532/alabaster-0.7.13.tar.gz"
