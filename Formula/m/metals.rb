@@ -2,10 +2,9 @@ class Metals < Formula
   desc "Scala language server"
   homepage "https://github.com/scalameta/metals"
   # TODO: Check if we can use unversioned `openjdk` (or `openjdk@21`) at version bump.
-  url "https://ghproxy.com/https://github.com/scalameta/metals/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "5912c3cf0a8c2e430a6733998445b724b2f8192cccc8afe5816daa5146753d1f"
+  url "https://ghproxy.com/https://github.com/scalameta/metals/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "267cb6c3b1fcd4dd73e001d8daf889f56cd6e9f507d48ab5e619d2fba842d882"
   license "Apache-2.0"
-  revision 1
 
   # Some version tags don't become a release, so it's necessary to check the
   # GitHub releases instead.
@@ -15,15 +14,13 @@ class Metals < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "52790140100e521fd519c88a39db84d47d2b0d62c814616fca2d58a53068fdac"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b32885725341ab3cbacbf30beffcfce7e6ac86eb8078b49148e71a469bc22a3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4b3cfeb7071944f3641968372235a47c3f4c871e229d6103043615b3e4341132"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "931aa55a8ad851b6f7da59f0b241ed4a3da67fd92ebd3ef3d842046a0ef6e829"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f5a096227a035fd488d4595cdaa7738e46223a82e26022a5ba321a3892931844"
-    sha256 cellar: :any_skip_relocation, ventura:        "a592d1973c3a7136d77d8732c43ae485f9a768bf3a1d84db1780d34aa0352212"
-    sha256 cellar: :any_skip_relocation, monterey:       "5c56392bbb2ca4913359c7e78c8ed5a377af5e7dbbbdbd071570813fddca049d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b424547318a9b7dc694918f797aa53a9bd7c5384217a0dbf3df7f9bfb75421d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56516bf1fedc5fa187e525867290ffcee070b4f50d8edf8208c9607d3ddaf821"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d62c0d37054b1853fb0e4dd6e1499caed7136ccbe2959e2fe5591931dfe59216"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "463c811dd60648ea2ead2757c2e41c4c292f9742feb70338501f93c744868f4f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "70d74338c4928fd819ac7345bd27fc0001a0dfba0b7359e7a1a57cd72e83dd11"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8559671f3cb42e1844fb3de217ab385e374a3566d717822a6c12f762baa40a1a"
+    sha256 cellar: :any_skip_relocation, ventura:        "a181c38b284d1c412e4b6ba9f90fa364384bc248b840b59d1f570c6856e04933"
+    sha256 cellar: :any_skip_relocation, monterey:       "b0123ce6719d0fe2494f54b3898b7086a582191dfb23d775ccf25019a9902f5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a403f1df59c292cedbc6ace0c39bdf8db1c36f8f0ed3f15539e1dd65365e6a56"
   end
 
   depends_on "sbt" => :build

@@ -22,7 +22,7 @@ class Livestreamer < Formula
   end
 
   # https://github.com/chrippa/livestreamer/issues/1427
-  deprecate! date: "2022-11-07", because: :unmaintained
+  disable! date: "2023-10-17", because: :unmaintained
 
   depends_on "python@3.10"
 

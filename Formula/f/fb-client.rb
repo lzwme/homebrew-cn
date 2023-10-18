@@ -15,21 +15,20 @@ class FbClient < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "649b97ec44849d197d96bd28e094bc69ec21e045263a29ab937fe55600d2544f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2cd645e0b6c1a1e57ecf611b1271f3907b53d7eb94e76e35e3f1160741c1694a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "05e1f964c6fb35777e0c133a165f0849e784ee840b35b89bdb1f2abc4728b892"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e411d7e27f3ef04aa001b2eeab1f8def46edf7352cc36572664df6c28c50834a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "05b3e931a857449985db79ed468c8ee7869b40b11dbcf5d36112f80d0ef6a4af"
-    sha256 cellar: :any_skip_relocation, ventura:        "4c8f0b1f62e2a87e96deb9dfb48afdc6558e44ea472ec25be0a00c0f62941a76"
-    sha256 cellar: :any_skip_relocation, monterey:       "a2a27e170becfd88043a68277fc103802298d9b9d421cdfd9ef549faf30bd82f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b7830abf812f263afd129397682feec2d8a103dfba08eff24c53da18d7a97f7c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d382d9e24b1a0a00512191c171fc11e7af8b9d48e3aee43e289bfd313bfe193"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ef2a25298e96da7827cf583bb109e200d2a1938c87aff6d96b23fc7319fea7cc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "27f6ece51837928385e929a0ca73481cdef71e46f55fd9e506bf600bc800bfe5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c959e6058773a5bd27a9e398fa7ce82991d7af7d3d4791c4fb64cb50833a0816"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9ac0ee7d92a3549d72f0c4d368beea040c1fbb084811fa1f2c0ba8ff24b31544"
+    sha256 cellar: :any_skip_relocation, ventura:        "865fc29ae1000e103b25c1107cceb2b1a4e2dfbb492eb22616cfd4660c7113f8"
+    sha256 cellar: :any_skip_relocation, monterey:       "8694ad0ea4c4b708c92a0ca47c5ce322d085696017a9ae8b244987e5b2707916"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "648d9e52376f1d0bceebf52a373fa82d90fa0abab0b191b56007596a73019f6e"
   end
 
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "python-pycurl"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   conflicts_with "spotbugs", because: "both install a `fb` binary"
 
@@ -39,7 +38,7 @@ class FbClient < Formula
   end
 
   def install
-    python3 = "python3.11"
+    python3 = "python3.12"
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor"/Language::Python.site_packages(python3)
     resources.each do |r|
       r.stage do

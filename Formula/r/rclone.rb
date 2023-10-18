@@ -1,21 +1,19 @@
 class Rclone < Formula
   desc "Rsync for cloud storage"
   homepage "https://rclone.org/"
-  url "https://ghproxy.com/https://github.com/rclone/rclone/archive/v1.64.0.tar.gz"
-  sha256 "3297838fdcf611a5ad605835f41c0e51031ce9f220c77a4ad0af6283b7805329"
+  url "https://ghproxy.com/https://github.com/rclone/rclone/archive/v1.64.1.tar.gz"
+  sha256 "c94ad2c2fa79485667aae4a239ed04e786bd6e26bced05f9d95dda6d10f7a014"
   license "MIT"
   head "https://github.com/rclone/rclone.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5b23a2685d61394eb2c497643e287514b6b17705870c2be8186b9af546fc4e2c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dfe7fe25d71bda5479921306fbba8c84ab0ab34438d03352762133837440a6f1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "89426a7fcda9ed3a747ea99e7c49db0835a878dd29f60f79c1602a4f8f3f8582"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5976e83de95fa273c71e3d9215d0dd4394b567f8f08d93639243670e9e3871a6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "879f7ca2b4c1362e3c48e33140f116e585602dc3f3b264248f547ca3840d59e9"
-    sha256 cellar: :any_skip_relocation, ventura:        "bf826796d688550de5cbf99ac2612988b988bf3e71349a7f13469a334afbdd78"
-    sha256 cellar: :any_skip_relocation, monterey:       "fc00d993ce2bd2784095223759cb03044bd6cd341f6595acb10f57af5a3d0b7b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "caaca84e91ac99e3f7526aa00d8ac19dfaef3e6466885fd434c3236afe481f6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad18a64065bdb7673904c4835bfa694d939865364ddeb620e5f0827393b0d3c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "14883a374003628ba083cd62778d685a1508b096b4c8f0ea17df686379164b10"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4fc323c243885a3fbb0d8dac5bbd3ed9f00fe9c130ed024452844c356d970ec5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4a74fc5aaf2ea30dfd0d264d1d01af6f346662f8937a31bcaf6f5ebdb7940d8d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1cafea8642e80ac9381072d860285b559f734f1c20fd3eda4bc10dc7e51e572d"
+    sha256 cellar: :any_skip_relocation, ventura:        "dc5c93c012443082248b560d49c8e448f720e785ddb2bee5353b3dd7a1e97a1c"
+    sha256 cellar: :any_skip_relocation, monterey:       "2658d2b0e077cc8f9000d2daa0dc27e9812c7d374de5b95d9eed8b4e64d00724"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a52600f9babdd4edf73f4aa931397c8a8b257aee1bdb1b62cf357b9fb8388d79"
   end
 
   depends_on "go" => :build

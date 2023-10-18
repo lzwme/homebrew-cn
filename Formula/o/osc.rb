@@ -3,8 +3,8 @@ class Osc < Formula
 
   desc "Command-line interface to work with an Open Build Service"
   homepage "https://openbuildservice.org"
-  url "https://ghproxy.com/https://github.com/openSUSE/osc/archive/1.4.1.tar.gz"
-  sha256 "33d0f33fce7f9d85c07d4dde320dc2a9d2e7de3e23b3810149cb9a821ab6834d"
+  url "https://ghproxy.com/https://github.com/openSUSE/osc/archive/1.4.2.tar.gz"
+  sha256 "f5990b3f63fd085ff0d10af12581f8b37d65c3fdcdc56b9263fff85adaef2d33"
   license "GPL-2.0-or-later"
   head "https://github.com/openSUSE/osc.git", branch: "master"
 
@@ -14,19 +14,19 @@ class Osc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "19e79fee03a1bded2fbd2d6f2fb5b0aa47c7c10fa9b2e17244be8d1ed40cf0d8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b6039ccf61e5a75f77b3f86af36caebb6365eaa8c5c45c15bb5972f6e3b53e10"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "18a5a33af2d437be6d473c4463500e261c6a6604cf2173e0c46da7ef976de0f8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "54bd636fc96e5894d5f69f838ab9242350a09717e4b5708de5d7270fbc940f25"
-    sha256 cellar: :any_skip_relocation, ventura:        "c42831eeca8f161e5969201c823df9fb02afc0c21556ff2784cf4c4183698dfa"
-    sha256 cellar: :any_skip_relocation, monterey:       "1b9ec838ef22891cb6ca0a26cf56d0bd4f5e0115740c4def549dbf5ab661b41c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f5defe6bd36926ad8c4293706d84a1e8653d0a0451a64f8cbf079695a944427"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "49c88d416620ce980d5fb693ae6b5a6d263a4aaf1d1dc011dc48a50df19207ab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "68ef463d3e50c597af2772717eff8c0bbce7287f85c1e8d78b8f60287ed24bc7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b427ea95581a053336be1bf87c872c13d76d929247ba2e9d9d68023dfa774f1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b3309ebe741a2159d9e33ea2bb316de868b4d46cd949bf68996bdb5f34b22a70"
+    sha256 cellar: :any_skip_relocation, ventura:        "a81435f0c9c804070f2280bedf961be7c2738c72ff933c9d0ff83ae20f2d264a"
+    sha256 cellar: :any_skip_relocation, monterey:       "48a878f050f3307c810a78ec9dff512442406dd51fa2c014f4878405c12c3017"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e44689e35678a6308226a424f60f873db5ca69956884832a3fc050e73f88cc6"
   end
 
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   uses_from_macos "curl"
 

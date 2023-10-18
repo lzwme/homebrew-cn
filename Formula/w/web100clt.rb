@@ -17,7 +17,7 @@ class Web100clt < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbe252e0a733f1a880896f255f7a14e96808f89f8f0f4e33625a4c93d58d1e7a"
   end
 
-  deprecate! date: "2022-10-11", because: :deprecated_upstream
+  disable! date: "2023-10-17", because: :deprecated_upstream
 
   depends_on "i2util"
   depends_on "jansson"

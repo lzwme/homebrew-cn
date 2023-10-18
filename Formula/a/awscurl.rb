@@ -9,20 +9,21 @@ class Awscurl < Formula
   head "https://github.com/okigan/awscurl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bf46a701e81a0fc2b4235ba9e29e7cbdc84b51a63de46cf0098e2fd75be37fa6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9044374037b12a3efa1484cbdd7211048e85f81fdbc04e3e28c984e5fae97a56"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5020ff1cdd50cee0bfc0f6bd139f087cc30eb0933ac9c5c0fab21705f99215bc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c73a83396b87d96d1a0db07b8a716048969d3bdcfea4f5d2a418a5a6f0c1f325"
-    sha256 cellar: :any_skip_relocation, ventura:        "bcdd3d41aae6b1af19190e0c9f13e1e211f79e05165230551e670a69ced25187"
-    sha256 cellar: :any_skip_relocation, monterey:       "9f6515773f5201cdfdd3f744d4265de497fe351bdd732d817a389f46ec99e83d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f70f0d8c10124e80b736c7cd18dc000d8c78dcb11326eddc424e155cd26d6eb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6e0d4dfde4f37f576502b293ddac99bcb03775f90b2a2063e318bd12f5feef0a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c81097bd15b05f400cac619c3e8c74ced46337e587ebc2ff3c697019d0fe97f6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7012e7adccc4b94f331e1f48c4343f13b4db105ed99ee39d9879e4f4fa962cc5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9a8a363393c3bd9c43a96957b523e9ba3475e56da43e3dad28e76b0441797ee2"
+    sha256 cellar: :any_skip_relocation, ventura:        "2bcf2cc500dc42f182a68489913004a4f022f11d21d9a9160534fbe4b2ec363f"
+    sha256 cellar: :any_skip_relocation, monterey:       "2962653dfdb503b7e3ba87b62b29838ec2984a68bdd9525fc248f8a110bf04ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b659147cdccff75c7f2030bfe055dea873e77498882a5fb34aa3c435f1c02967"
   end
 
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   uses_from_macos "libffi"
 

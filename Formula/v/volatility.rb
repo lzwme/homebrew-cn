@@ -10,18 +10,19 @@ class Volatility < Formula
   head "https://github.com/volatilityfoundation/volatility3.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6910cee250c0795b6d434f3090aa3f115d71f651cd2f71c1f069a25de3e3369a"
-    sha256 cellar: :any,                 arm64_ventura:  "84345ca24790a5cd4d361b74df7241c8eab711f8f0a7ec3c2b3b8c0c357206c3"
-    sha256 cellar: :any,                 arm64_monterey: "bc93a09f12b75eb2845f4016d260777f1c5e6edcd0780b5c49a1aa16e9ad6b11"
-    sha256 cellar: :any,                 sonoma:         "8bbee362fd636f8c98dd6c76180b6345b26154fcdd19bb283df228069e3b0cb7"
-    sha256 cellar: :any,                 ventura:        "b58ca3e9a42576018f9c57a51491993376a2a8720bc2242f32d0b0d7dceeee84"
-    sha256 cellar: :any,                 monterey:       "df03a23332d36291cea51a77f7252c3fe5761c0ded9ee2943d13479315cfef80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a90648bbfbb03d8e4c3782dcf5f8d6fc4b505654a511788359566a1fcdd41994"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "68be854d7a0a8356c6bbe3ac3b98da0ea2d436fe81c910a906024073449e13e5"
+    sha256 cellar: :any,                 arm64_ventura:  "e2ec057e80491748229bf269ab6bb09efea684042cb7276a22d94b104174899f"
+    sha256 cellar: :any,                 arm64_monterey: "9faf00ce000d93b596e896f8c78a2ea8063b64a7d865c81f2deae3374b998a1b"
+    sha256 cellar: :any,                 sonoma:         "d1350c6e9bdcbaeeffc91896f006c75368baebfd4175c910680ab0ce6c7a3498"
+    sha256 cellar: :any,                 ventura:        "a37f994ffd3ca83f09f7820be3dc7921db86d4a8fff22195e40db8c02ba9f109"
+    sha256 cellar: :any,                 monterey:       "675e4ffcc142b39673d9d5b77cb437d1a2b7accd26719e848a3d8c9b93ab4627"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cadc760b920b5f16ae399eeb794df72890a4967a53d8b537c2211bde2ffb4a76"
   end
 
   depends_on "rust" => :build # for rpds-py
   depends_on "openssl@3"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "yara"
 
   # Extra resources are from `requirements.txt`: https://github.com/volatilityfoundation/volatility3#requirements

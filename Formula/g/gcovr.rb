@@ -9,28 +9,24 @@ class Gcovr < Formula
   head "https://github.com/gcovr/gcovr.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "83662d5efc0b3cb13143c7a86e06d30f7485e51b59494b75bae2b3ea85a137d3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2481413a3ebecdf9cbd5b1cf9985c881ea256f7d0130c1edec5a1c118b9d382a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9cd48c8122cb0537d4088eb2ca4e91f46ef65edfe3c63a61d8414dc00be360e5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "273a1e1512ab90201d3f49807acecd652d552b052b988553ec31785e21001cc9"
-    sha256 cellar: :any_skip_relocation, ventura:        "d1b37b94e8cb476dda3bdb5fc7ccca18dd0f62d0b7fbb48dfe5d523167f3f381"
-    sha256 cellar: :any_skip_relocation, monterey:       "e663267a10af1c56a6b287ddb8ad32b98ad168772b5e67f04bbf172b9ec242d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3aacf6be867f4a74b5d1a565dfb81f73c4625d573c388467f8356f4e9e02e17e"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "482b954d85f2feeb72f7699c7f6b8e70d9cbbcc904bcdcaec9b276507da8a32b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "38d423544896f5fffddd5e6514006461ef219c47979ef08ea60b8fa068c734d9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "46904919249f4e477db9336fd27db5a5b9a9b196a9abbdacfd4aaa7bd5413a3c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3bb194f19ae25d53cc0a701ddb84e3c9417b73271d385af4323fc449e64602fd"
+    sha256 cellar: :any_skip_relocation, ventura:        "bf1d15c9c92373761a37a2d8ceb1fc363b329e7ded3ba755da0f323d6733492c"
+    sha256 cellar: :any_skip_relocation, monterey:       "c45809d5f29dbb35fed915a894e483cf4de4f739bb75cade7431c3a12d7af654"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "541a7704b5fd30a5d311846d71c39a188278bba4be4fcb5455dc2bd953af0dd4"
   end
 
   depends_on "pygments"
   depends_on "python-lxml"
-  depends_on "python@3.11"
+  depends_on "python-markupsafe"
+  depends_on "python@3.12"
 
   resource "Jinja2" do
     url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
-  end
-
-  resource "MarkupSafe" do
-    url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
-    sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
   end
 
   def install

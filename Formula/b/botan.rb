@@ -12,17 +12,18 @@ class Botan < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "5b5aaf3399bd8f4e1243e4bd84b1141a2982467614de2ca27d032776c8671178"
-    sha256 arm64_ventura:  "27cb6e286d41941376432b1ba2cc18e3ff2ee0cd5da1f067cec38d206dbd8c87"
-    sha256 arm64_monterey: "6ec5ac701a92b70cda89a089a441a98006591f03a05b06de6bf098f09214baa5"
-    sha256 sonoma:         "9d5e6464ce94f27758d23d0f67159bcf94a1f863af77a9739c05145812534187"
-    sha256 ventura:        "da25547f83de1be3ba5f4d6a283183c5678734d7f8522c5389f49dd2993e58ac"
-    sha256 monterey:       "3d5ef686c6dd72828ad97543c863acd3d302d0263c9b061c3a3400ac285b1b67"
-    sha256 x86_64_linux:   "467b74671ed4e22502cbea46d64eb709f72df01c5c46aef2bc9a18366331ff3b"
+    rebuild 1
+    sha256 arm64_sonoma:   "bb6f2d3eb693d5b692b64f30296765a24ff93d53e284d322c630dde2422249b5"
+    sha256 arm64_ventura:  "01bac65450b2e718000e0c5412a1c404b12451187cc9ce5782496deeffd100f5"
+    sha256 arm64_monterey: "a2145a83102be0793df0d1f125f2ee5d94b58be251c4a6130bda25a4d19d4455"
+    sha256 sonoma:         "2adb9e029d4f155308114f14499a707f999f0c369e07a38de5a750059b69133c"
+    sha256 ventura:        "3144838597286774c9089edd77193d340f0a568defd97cb2a37281825706297b"
+    sha256 monterey:       "9eecd69953d77fca52e7a7cbe7ae4ae7ffde45958723b615e64a9b1a6d0523ee"
+    sha256 x86_64_linux:   "543af6a676b2d65794acc8eb8a8a29ac5faac19425a0b2fe4e273d392e6b94cb"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "sqlite"
 
   uses_from_macos "bzip2"
@@ -39,6 +40,10 @@ class Botan < Formula
 
   fails_with gcc: "5"
 
+  def python3
+    which("python3.12")
+  end
+
   def install
     ENV.cxx11
     ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1315
@@ -51,7 +56,7 @@ class Botan < Formula
       --with-sqlite3
     ]
 
-    system "python3.11", "configure.py", *args
+    system python3, "configure.py", *args
     system "make", "install"
   end
 

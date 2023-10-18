@@ -10,17 +10,18 @@ class Grokmirror < Formula
   head "https://github.com/mricon/grokmirror.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ef1d4b709d1fceca4f2c2cc39eb43074e48ab9f680585b4f4788fc1120eeec80"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "64e3c29c56eae36b617df6db8389dc4d8ff364026681ded0de27b941f4189b80"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a61a39deb01b9a9dd00484c0dec31b2b27ba6258e83294209f60f76db385bd2c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "96685ffb7a72eb253bb7712ffd7159e63c1d39a65ab0b0457b464482a1980251"
-    sha256 cellar: :any_skip_relocation, ventura:        "5ebdc17a922df27df570508f86e2719861b0c7292f1211a5f74d5026a73b22a4"
-    sha256 cellar: :any_skip_relocation, monterey:       "ec643a42b4f7223da4990f56e669caca035168485afcf228f763a83bd971e780"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df68ad710d46204f7957be01fad0edf5373ee252878e4e740e10c43fecd6c728"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3ea015ecfe4f68c96b4a1f816366c27e7113f476ce2d33f18e65015dccb53366"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "21f172834dac7a4425c69b21a0314fcd2098bad85718b57bbb6bd017ac74b6b1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "209dcfae908dfc583ef51c67fe1e844859756fae6a168d693a9589868b68997e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6c033c1e9a2d79ea0a4c2f9eba931d7131731592b6410b8b9f50b41e694e0d2b"
+    sha256 cellar: :any_skip_relocation, ventura:        "aff4350097dd581cca48d15440ed6de714a9a95030b41013efc4e954e7b57a38"
+    sha256 cellar: :any_skip_relocation, monterey:       "2e1bfe5ec9253f108822aa5f095cf04823058c3ee60b089370841a32a9883bea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f63301274e970079a75fd4a5518ac46afb9e763e8ce210c58357ef4f9bf1f37"
   end
 
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"

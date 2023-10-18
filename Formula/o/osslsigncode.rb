@@ -21,10 +21,7 @@ class Osslsigncode < Formula
   depends_on "openssl@3"
 
   uses_from_macos "curl"
-
-  on_linux do
-    depends_on "python@3.11"
-  end
+  uses_from_macos "python"
 
   # Fix permission issue when installing bash completionn
   patch :DATA

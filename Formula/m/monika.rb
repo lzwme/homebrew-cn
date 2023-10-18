@@ -3,18 +3,18 @@ require "language/node"
 class Monika < Formula
   desc "Synthetic monitoring made easy"
   homepage "https://monika.hyperjump.tech"
-  url "https://registry.npmjs.org/@hyperjumptech/monika/-/monika-1.15.9.tgz"
-  sha256 "fecc3cdb72c2b370e3fd29e5bda75b70179d032a269429d5ad66e12ec4d2f96e"
+  url "https://registry.npmjs.org/@hyperjumptech/monika/-/monika-1.15.10.tgz"
+  sha256 "8a1d8e6bee67c06a1f63da7b5b79f0ec95f6f7b4e48d252bd7c3ab72a44addf6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "103bc555395fe2836fdb4e981c77b1a7bed7f0e2e089fa4c6ff6a02bfd45a2d1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7c321612656fa4c4ff38f38c71411207e4a0f6046496e18947912c752d9c143e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "40f1e1461bec90ceae4ad212dd5ab349d3dd870b97f53b23ab2c2f3b15761d39"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d30373b81c3ceebd8ab44f943c915c8bc349d671a78b022ad626a30b41eeba29"
-    sha256 cellar: :any_skip_relocation, ventura:        "72a08bf2cf28ab716e91ab7915dd8b267e9f56be1e6c7f9d68ecaa0eb77daa88"
-    sha256 cellar: :any_skip_relocation, monterey:       "36289e1ecab562e21e40138049000196b4ada2d8a9887cd2d7b4f29a7ced98a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc392433b35d2b05a811f020b581e5363b3a7a7144997148a89b09b1d42d54b3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e17cd8b28abffc7c35fb7db92dc5a1ab9c2b0e27432f975a0549383258aeb83b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "054107699681d5e0d748189557d92ecd6d17eef12afe7a45b71612607af3177d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "10deefa8555e015efb49bf597124bfac14aa6dca869cd2b943a4f58ba6c42eed"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1e47c501f72a76b99cf6f52b932711aed2fcab2a8b6d9fdfced68fb0186639bd"
+    sha256 cellar: :any_skip_relocation, ventura:        "ebd190b4fc42d0cad16372caa912b5a8ddce3e308f7ad019eea03297d40d1ea2"
+    sha256 cellar: :any_skip_relocation, monterey:       "7abacad82f86dc1647bbda6ea49b05b71d487620eea7d696db5f114af88859d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dabbae7ce81e1a1465de762db80ad3ee3ce6af540f020ae3d4c00c542f009541"
   end
 
   depends_on "node"

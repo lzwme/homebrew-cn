@@ -10,17 +10,19 @@ class Gcalcli < Formula
   head "https://github.com/insanum/gcalcli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b07c6f314e5d7f12c025be5a017cdc839206c8b5ff6968b878df1313440ca04"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "28504f87b0b5eaf5a090b34be7ea38dfd7ba92dc22aeb6fc09d1e40a143027c1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "08912833bce22a4217938356f8fb980e2ec236416b57ce34595d972b8ef449d9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "09d037d9a3a5076ca0068b689a0efca43697de8191c7982635ae467911cd309c"
-    sha256 cellar: :any_skip_relocation, ventura:        "9f4dfcfcb664b97d26a59d31db8219dd7e0c8a966dcf376a580039f3d841c235"
-    sha256 cellar: :any_skip_relocation, monterey:       "274014ca9766e2650f42ff0d2f2969a890e3bc15af95b3e51a9137868b3783e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a84f9473bd5810c8e0140ce2651472fe3103e6c8a0200a7d0488d2f44be72f1c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "61b5408008b627ea5ae53dbf72ab2b02790839c2180ff6e99e9e2ef0e204d05f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "58567d597c6d01f2e9f4851c1aa73d422006d04f15b0c89f624cb88c3f19a1e4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a4eb80dcce1c4a2e7ad57b3ead4616c8ca6c119d62ac766927fb745f7aba29c8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f8c1f272fdbb7bc10dbe5af5ae9e427b9c8f90ad2e4bcfd4d087c1e792e5aa9b"
+    sha256 cellar: :any_skip_relocation, ventura:        "8b87186b30689c0bf5d585a491f25f13744aed380ac87664760ea9d2b3ef7565"
+    sha256 cellar: :any_skip_relocation, monterey:       "1033ee532d248567978a0eb78925a3a26d2e3eac7cfd0fc674ed1792b639eecf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0359e900c5370e263cdf55d811cb879578798ca92f64feb524dd9fadb5195611"
   end
 
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python-pyparsing"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "cachetools" do
@@ -39,13 +41,13 @@ class Gcalcli < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/fa/6c/97e6eeac0959783c2ac21aea3c560f970327fbb0498a6011d58cbfbb30e8/google-api-python-client-2.102.0.tar.gz"
-    sha256 "906ff9b672a4d5ddad8f4073a040e59f1fba6734909c14cd49938e37be53691d"
+    url "https://files.pythonhosted.org/packages/19/c9/ce294e72438f987b36151c49f91c1853d0fc37d59d7c360e926dae4f8a17/google-api-python-client-2.104.0.tar.gz"
+    sha256 "bbc66520e7fe9417b93fd113f2a0a1afa789d686de9009b6e94e48fdea50a60f"
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/49/5c/537d35dbbd248cd58fa1014a9770063b103fa63a3d929bbcf739d2d731f9/google-auth-2.23.2.tar.gz"
-    sha256 "5a9af4be520ba33651471a0264eead312521566f44631cbb621164bc30c8fd40"
+    url "https://files.pythonhosted.org/packages/45/71/0f19d6f51b6ea291fc8f179d152d675f49acf88cb44f743b37bf51ef2ec1/google-auth-2.23.3.tar.gz"
+    sha256 "6864247895eea5d13b9c57c9e03abb49cb94ce2dc7c58e91cba3248c7477c9e3"
   end
 
   resource "google-auth-httplib2" do
@@ -54,8 +56,8 @@ class Gcalcli < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/08/78/aedf7f323cc6d4f2116556bd42c9ffab6021cf3f2fd9925ed4e71213dd1b/googleapis-common-protos-1.60.0.tar.gz"
-    sha256 "e73ebb404098db405ba95d1e1ae0aa91c3e15a71da031a2eeb6b2e23e7bc3708"
+    url "https://files.pythonhosted.org/packages/95/41/f9d4425eac5cec8c0356575b8f183e8f1f7206875b1e748bd3af4b4a8a1e/googleapis-common-protos-1.61.0.tar.gz"
+    sha256 "8a64866a97f6304a7179873a465d6eee97b7a24ec6cfd78e0f575e96b821240b"
   end
 
   resource "httplib2" do
@@ -91,11 +93,6 @@ class Gcalcli < Formula
   resource "pyasn1-modules" do
     url "https://files.pythonhosted.org/packages/3b/e4/7dec823b1b5603c5b3c51e942d5d9e65efd6ff946e713a325ed4146d070f/pyasn1_modules-0.3.0.tar.gz"
     sha256 "5bd01446b736eb9d31512a30d46c1ac3395d676c6f3cafa4c03eb54b9925631c"
-  end
-
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
   end
 
   resource "python-dateutil" do

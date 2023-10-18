@@ -1,20 +1,18 @@
 class Findomain < Formula
   desc "Cross-platform subdomain enumerator"
   homepage "https://github.com/Findomain/Findomain"
-  url "https://ghproxy.com/https://github.com/Findomain/Findomain/archive/9.0.1.tar.gz"
-  sha256 "76fc0d63e615abf0cf3b57715ec9be18cd08e6e4d4e1d43a69618fa2b2709d49"
+  url "https://ghproxy.com/https://github.com/Findomain/Findomain/archive/9.0.2.tar.gz"
+  sha256 "1c98f5634ed19ce36a232f8a955098ae84c2d04dfe20bfcc0f10e6e335b8a562"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "573d124fea2499ef901096a2244a0657f81b6caa87a85d085b4dece5a8f1f529"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "33756792fdb409805d0697184424401721cc7988f89111831d071bcc445c8556"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cab860df135b9e57214929390c61887ff50beae41cece9f28c2969caeaee6d2e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "eeb37f59cf7e063dab1e8a8a2f80aace64233472e575e8d36ee2341ff880455b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6ffe9bcadf1ded1671dd2b23267e43fe6c02c3446015ebc84d786689b656731d"
-    sha256 cellar: :any_skip_relocation, ventura:        "33b2861bee376c982dc138cf3dfc2a7117a4a8fc1bf185f73d9736376f80bbf4"
-    sha256 cellar: :any_skip_relocation, monterey:       "5891670f06590d157466a1ce28be2bd5cc16a0fc2322a36c6a5714d1d1cdae76"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a04a3621aadd2a40bb43f98641b69f33c587cf3e8898b3a859138d4a3282a1e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9c3975d3b0d1051994d6bfdc7f561873029c48fb253ea004532f2a96b66234d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f45cad3732dfb8f286e9be640a5546ccb5555809a991e9d49969c20d9e089d7f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e93d310aeab978fcb802f7dd7c42546ff8d17f358b7c21d9fe33a066e8658139"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "741ccdabe2c7c68e357fcb4e15f69996c880a79ef242f3d1a2457e141fedf5f9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "150a3ca1de07e6b74d227e93161958741f9de9801b4305be1349024ec2303bf5"
+    sha256 cellar: :any_skip_relocation, ventura:        "0a9152e5041e328aa0ffac534d9669f75bfc5a8f43649d6f097018cbcdb8c0d5"
+    sha256 cellar: :any_skip_relocation, monterey:       "1486cbba1a7c495af67292ca74760e389e129da7df3cd4de919c863594d9cfdd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5267e52927c004cfb03e9dc049d3a9319607d8bce688e8871a0abca3436e191"
   end
 
   depends_on "pkg-config" => :build

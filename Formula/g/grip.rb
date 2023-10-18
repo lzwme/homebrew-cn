@@ -8,20 +8,21 @@ class Grip < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b0feb26f09baed45e03abaf7fe0403edc91daa2eaacb129bc17d144da603a359"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b014b141200109b48ff1f54d535c5fd65bded525add8f0e0ae4ceb9c41949303"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8bf80c324d6bf396dd55a1471c721cc2bdd256a9d4f023a435fe5a2a7a0b5ca3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "816e7d11f3045e57c98da61ef7e333068a16a60f5b740da7fa97a037ceeaf18a"
-    sha256 cellar: :any_skip_relocation, ventura:        "6085e2b930c57c06ac3fc99225995e45f275b3fd28345aafb68a9fca6156478b"
-    sha256 cellar: :any_skip_relocation, monterey:       "222bc9bda89b73874a324be5034895878db7f388feabd5eb72ee336aa8547371"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc86b57c27eb9f9777c6d20c9f2f155761fc3135ab023c125d7523b740c90e9d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eeff898f9d6cb2ab166c2c3c7cec9f0da4fbc29da05a9e163f853abc4ed65dd7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3861a5623cb92b8988650642a182a3d2ba1d7e5e2797d06870530e4405ebd7f9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2fc2710669fa5cfea938bbdfa23e6051747c9b3716abb92508cf38242dd37547"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f10a6821ab39c1a5ca0e14f770f3c0c86a4a55688cf634e2df0552bf6ce01c7b"
+    sha256 cellar: :any_skip_relocation, ventura:        "96138a8d63e755cbf34f05957cc29c2a71e1c941fcd584d3f9b56b0d9386ff47"
+    sha256 cellar: :any_skip_relocation, monterey:       "1b33c1f583f578ee9f2d85ae87772ac6186dae47fdb88a48894cbb724aee6924"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49ba025300b693aec39ccc2433c9703b29b3392e87001b9765f51d09e4f38250"
   end
 
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-markdown"
   depends_on "python-markupsafe"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "blinker" do
     url "https://files.pythonhosted.org/packages/ea/96/ed1420a974540da7419094f2553bc198c454cee5f72576e7c7629dd12d6e/blinker-1.6.3.tar.gz"

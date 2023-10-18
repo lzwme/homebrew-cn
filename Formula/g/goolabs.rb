@@ -9,27 +9,24 @@ class Goolabs < Formula
   revision 7
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7a1d34da66fd03fa5da047b4e6144c7acf4f15309d70a4faa9f3bf0fdbed8851"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce3eb814ae9d895ae64c6c0ce255992c9ffff1c5dabaed134322046896865758"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "26ec88dd65e045f3b875f514f7e234a414fde1ec2514677eb3118bc8d1c4d449"
-    sha256 cellar: :any_skip_relocation, sonoma:         "02b38c406170fec8af8fdbb31172fa993b491a68534d81d0b0f87a0b5b40b371"
-    sha256 cellar: :any_skip_relocation, ventura:        "bf5a204e2a42c48c5da2639eb7bf7324fc786abd461ef3c57912a81c92f15549"
-    sha256 cellar: :any_skip_relocation, monterey:       "0fcda3bfe1bcd8b2150eaed557a2d7e17c47d1c568bce8154396e0ee76baac86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f647470a7f7edba2ec6930191481d2d5f4982531457def2a54d5caa646bdf70b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9bd701a453f954a13658ad92f71e5c14e226c9fe6a92727c7c7ccb5f15c907a2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b9e7d7e87de181ced8471bbfce522b655d999f8241c21fbc4005ff91c17ee6d9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "13447039d6faf4f55782dd9540a2e4de141d79997b58f0546ff2571b63542166"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c36c85d100f4de6f3ac9cc96a33fce4fd723b87422ff22a18430de66f05f583f"
+    sha256 cellar: :any_skip_relocation, ventura:        "6c20f42708141d1426daa0ef8c4580d270200381c26b07d5eee8ec90b5746a44"
+    sha256 cellar: :any_skip_relocation, monterey:       "c15d278d0ea075dbeef84aa9adbaf3dbc93b787f96b8c6b7048d861caf409008"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f6283db4d6f018fb30022d0bd73c181bc32b98ea27ef9b4d63cde8d42b72620"
   end
 
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python-click"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
     sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "idna" do

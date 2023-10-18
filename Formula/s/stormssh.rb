@@ -23,7 +23,7 @@ class Stormssh < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "df73798729fb9dd5d28e815344850f973d9d469dc270192f8b8d8070a0d3e186"
   end
 
-  deprecate! date: "2022-11-28", because: :unmaintained
+  disable! date: "2023-10-17", because: :unmaintained
 
   depends_on "rust" => :build
   depends_on "python@3.10"

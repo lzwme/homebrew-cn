@@ -10,20 +10,21 @@ class Wtfis < Formula
   head "https://github.com/pirxthepilot/wtfis.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3e7b697ca5beeea03d6f7a5affe1d413bcd2ef9f32409d9f13cac9c627b85c15"
-    sha256 cellar: :any,                 arm64_ventura:  "9131a3f89f2053704c0886574493e1bd150db3df40b0109755bf969862387bb3"
-    sha256 cellar: :any,                 arm64_monterey: "e642f15fd97beca08ee13fcdd28cb3c7744d3731846bfab1065c5cafeffbd0c7"
-    sha256 cellar: :any,                 sonoma:         "afcce3c11a7beb28795ff1108a425388770ee0ad2ecdb4751acfd20e2f988fcd"
-    sha256 cellar: :any,                 ventura:        "ae05da3872eb7e67c6bf67809e1713547549ee313274915c847bcd340d49d6e0"
-    sha256 cellar: :any,                 monterey:       "7fce7e0a69ea973523df84147f38da6ff78404403a186b1f69b70b595aaf1d85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbaedbb7959248148f94898d57fa34db4ed7942660a07c6cf8ff6daf469d792c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "cba938ff9a23d73dbd511a3299b22a3d86c6a016560575a34b06a8652544c7a6"
+    sha256 cellar: :any,                 arm64_ventura:  "f6fc8a3797a036feda3a3569a1f4e19c0238784f621b5458cb7a3432513e2e00"
+    sha256 cellar: :any,                 arm64_monterey: "7643ed9617c9b9edd82ae96b080767f63b492191a740f82087571133516b74f2"
+    sha256 cellar: :any,                 sonoma:         "a3f76f1d55a023129d15974f81abee7499f438f0a5debaaa9082538605948f11"
+    sha256 cellar: :any,                 ventura:        "dac62bcc46b83d2ef766da9778888fa83f5958eedcc09f0e7d840309de3e05d3"
+    sha256 cellar: :any,                 monterey:       "71945c9240254c40f4d14dc97e78a93518d56eb872af04cb42ce77cb4e3fa61d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b73486a93f1772841312034a3b9971b089cc8474037a0071427e5b6c8a84be7"
   end
 
   depends_on "rust" => :build
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/67/fe/8c7b275824c6d2cd17c93ee85d0ee81c090285b6d52f4876ccc47cf9c3c4/annotated_types-0.6.0.tar.gz"

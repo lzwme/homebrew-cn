@@ -3,8 +3,8 @@ class Black < Formula
 
   desc "Python code formatter"
   homepage "https://black.readthedocs.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/12/c3/257adbdbf2cc60bf844b5c0e3791a9d49e4fb4f7bcd8a2e875824ca0b7bc/black-23.9.1.tar.gz"
-  sha256 "24b6b3ff5c6d9ea08a8888f6977eae858e1f340d7260cf56d70a49823236b62d"
+  url "https://files.pythonhosted.org/packages/2d/e0/8433441b0236b9d795ffbf5750f98144e0378b6e20401ba4d2db30b99a5c/black-23.10.0.tar.gz"
+  sha256 "31b9f87b277a68d0e99d2905edae08807c007973eaa609da5f0c62def6b7c0bd"
   license "MIT"
   head "https://github.com/psf/black.git", branch: "main"
 
@@ -14,22 +14,21 @@ class Black < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e1a41d76bf17a5ce90c2edb1be9738b59167572e4dc1c988f4796b91c022dce5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3c2fd4e6ee3a432d6f227a091bde4b27957707fe991a0a2d7ff4275837076c25"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "41f856c0fd2cfb7f98ea70b227c6f63ae768ad16597df91bdf00e79ec695572d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9d534163aff582e87464b31af16165e9f806fedef39ce16368b35842598684a0"
-    sha256 cellar: :any_skip_relocation, ventura:        "d481315de5417c9360d68a7cce50ba83966909088ade096af878e680964ddc64"
-    sha256 cellar: :any_skip_relocation, monterey:       "4cbf8b783e863bc853c2c3a1e656a0885b8475404ddc28d9101c6b352d3b8111"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98d00109034ec1d24e6566617af51cc691b24f37ad325b4b4941fe5ac597556e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "628e6cb4c8b91e32ed8f9215fc1891ea8e2df2acaccea63cd68913c9207cbf39"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d3a8ba2550bf8157158760c271ff785e1c6109b646dbad820d0f4dd95a5b0a38"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e7ecdbd40affceff5e4e85bb637a9d12db1076d7b7b766017907bab66c05fb3a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "52df1e3eb5679f5c2488050440809d6b9c21ba975d4e18da08d7000f29f07f0a"
+    sha256 cellar: :any_skip_relocation, ventura:        "0fa55b16a6e5eb04f700b458dd02e30ada19e3b4c7e85b0b04845ee2dc51c079"
+    sha256 cellar: :any_skip_relocation, monterey:       "0c50ce9d5e9cefb91f460341a4b4e0bf272b62aaa3f3c7c769b5bd7bcc85ce87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e894f0d6e3d3d1a635830861a90810353283b75e4df46bd8f13166216d1d93b8"
   end
 
   depends_on "python-packaging"
   depends_on "python@3.11"
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/d6/12/6fc7c7dcc84e263940e87cbafca17c1ef28f39dae6c0b10f51e4ccc764ee/aiohttp-3.8.5.tar.gz"
-    sha256 "b9552ec52cc147dbf1944ac7ac98af7602e51ea2dcd076ed194ca3c0d1c7d0bc"
+    url "https://files.pythonhosted.org/packages/fd/01/f180d31923751fd20185c96938994823f00918ee5ac7b058edc005382406/aiohttp-3.8.6.tar.gz"
+    sha256 "b0cf2a4501bff9330a8a5248b4ce951851e415bdcce9dc158e76cfd55e15085c"
   end
 
   resource "aiosignal" do
@@ -48,8 +47,8 @@ class Black < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "click" do
@@ -83,8 +82,8 @@ class Black < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/dc/99/c922839819f5d00d78b3a1057b5ceee3123c69b2216e776ddcb5a4c265ff/platformdirs-3.10.0.tar.gz"
-    sha256 "b45696dab2d7cc691a3226759c0d3b00c47c8b6e293d96f6436f733303f77f6d"
+    url "https://files.pythonhosted.org/packages/d3/e3/aa14d6b2c379fbb005993514988d956f1b9fdccd9cbe78ec0dbe5fb79bf5/platformdirs-3.11.0.tar.gz"
+    sha256 "cf8ee52a3afdb965072dcc652433e0c7e3e40cf5ea1477cd4b3b1d2eb75495b3"
   end
 
   resource "yarl" do

@@ -9,19 +9,20 @@ class Ldeep < Formula
   head "https://github.com/franc-pentest/ldeep.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dd6e00e9884095a82e445e1a523d3c4722567e372dd0d2f5a7d8c79472316931"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "369a53f5bbe546ce83f24a6256730cc033b6473b3d1ce0dcc1a70aa303c16255"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "972ee89002790ca51fe346f8601f3601209a2c511c8edd1c6858076beac81ba1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "745063b88d5e0acd9e194c768696e105b23814cb05263bd669bc10ff2a833fca"
-    sha256 cellar: :any_skip_relocation, ventura:        "5e7f990daad2a3f12283db8bbfa20c7aa3b06e31aeb160b72446618c1a3bf729"
-    sha256 cellar: :any_skip_relocation, monterey:       "4444316fc1002823a3ebe5bac5de6339406576890583f2725efc92718ec90987"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd006f5e14900d950952bd3de55bd8da1580db07aea5050f2d55c3b54ffd28e2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bb6626f5d0366c2e97d9a1ee8c9482667751cfe9d232346c9f43ef2d18b49e17"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa2a6c774c40531ac2ec08442c1cd277b7544459457d9fc5caeb66d8ae4a7d77"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b761206615acfccc058bd1df70645a9b42097b5644d8709273ccfd4c5040c522"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9cc4b100a5ebaa6f0c29635585b711d64edf6920fb6560493e5f90fac9b9b731"
+    sha256 cellar: :any_skip_relocation, ventura:        "c4c3e1b9167bbe0ce9c828adcdb44fc67ac40a1b89d6bfdfb77ed53d872b35da"
+    sha256 cellar: :any_skip_relocation, monterey:       "2807f34f8445901d45d522b1891334f20fac300ea9609e428419963746e78cc3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f7e92fe27850ed22b69e668312d0b0503f4bf37b25dc33a9bc7597513d70434"
   end
 
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "asn1crypto" do

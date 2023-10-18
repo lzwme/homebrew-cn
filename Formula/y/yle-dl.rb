@@ -10,14 +10,14 @@ class YleDl < Formula
   head "https://github.com/aajanki/yle-dl.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9ece3822fe7734f87055ceaf0cf4cddac6fb6318ee5fbdc16eab5ec5670e2024"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "222754526c7799d19962cbded77900d7a2959ca6ae7c50666a31c3b60b2ba0c8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "39a82297f83b4326ea14b9192c93bf296a61f1198fb99c280fbd0cf777ddbe02"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d51950b212404aed6710508af17aa74abd42927098fbac34644a9898ced77ca2"
-    sha256 cellar: :any_skip_relocation, ventura:        "2984322ae364ebc4d17bc92b946a390ec4dd1f12c13fb527c36b18e740cf166c"
-    sha256 cellar: :any_skip_relocation, monterey:       "8fc1c4fe1a06fff1db85d7a099362b4b729b81293843b86aff20b7917fc9e290"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4150cd6a7828f10a0f5eff4d750ff8232127e990a30c85681f6f62c7e0e1d91"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fe5878e876eee0427be18c147b4b18884492fccd3910470c7ca6e3d1cce06ec5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "db52740ef524b8897ea78be86b92a53ab7ad7e076d240c9c7482b8e69552e699"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "793c9b35fca618c66aa6bb2cfc8814591f09381b67d018bd3b8e29ed6e8d0dc4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "87f2e70f53b0505f20ecd429cd7f0348f5c2dce48a137c90476e438cbe853f03"
+    sha256 cellar: :any_skip_relocation, ventura:        "b6b5c096a5ce4c36857fc887a89c5731e974c762520aeeca7a0564c4280fca1e"
+    sha256 cellar: :any_skip_relocation, monterey:       "5736e454a114d8bd3f7131159ddb0cedaf6b9cf62f90a4a0aa0c34e9b39c6ed7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e283d0ef4c41765d3f2a0c756e25f9df8d14db19bc82249e3af1085884a336d"
   end
 
   depends_on "cffi"
@@ -25,7 +25,7 @@ class YleDl < Formula
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-lxml"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "rtmpdump"
 
   resource "attrs" do

@@ -10,19 +10,20 @@ class Credstash < Formula
   head "https://github.com/fugue/credstash.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c854434b876dd214277f3336444688e5a4961a276fe907964721dbac7b54c071"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e5ab6a017376ea7f2429313acfa03935e1e3840020323d3e2a6b14b42258bab4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "53e1a9166a66989696cd0c3d7d172ee4cec8e19e3ebbde55d951f7226461dfc5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8ed209e95cdecec887f3c619f2341ad567420b76be3d5a8e05afd83d5894c0a0"
-    sha256 cellar: :any_skip_relocation, ventura:        "8bd21419bdebbfdf519302d3f78e37de9e8c8cc235bd74570d5e73f8e52121b1"
-    sha256 cellar: :any_skip_relocation, monterey:       "c0480b79cbed85178242dbb079beee67f0322c4af0160884ab3e0a0ac2581037"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b1b65915d7050a334a7cc0b58335e79a9aa234687c452a7e6ae785035585935"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "30e9dfa2ccc36e720b7eee5e40102b2947d9122107dd7b40ba7ce9dc5375e1e1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4eb5dcf022551de21d49cc7f06492e78e0c525ae292c17f8c54db51b1bf931db"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e9e08e6ddbd9f464b06d3fd9b3d4ae4845dffa5641da31122e177df9ebc325a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5b9d87bb6fbd1f3587cbb9983589c608023f5664bcc74dd6686b0981ce1d4a34"
+    sha256 cellar: :any_skip_relocation, ventura:        "b57a63ebebb9eab01391f6392bf2e7daea6db637d82db81206769b3afd80c333"
+    sha256 cellar: :any_skip_relocation, monterey:       "0df5a49ffb25c4bf2459d9d3d834a26121af53a158b16465d99e877d8c2b09d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "43f4d15f859169b45ef90c2f055a8fd4a593b0e1fafd61387b5dd506cd4458b2"
   end
 
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   uses_from_macos "libffi"

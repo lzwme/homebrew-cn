@@ -10,17 +10,18 @@ class MongoOrchestration < Formula
   head "https://github.com/10gen/mongo-orchestration.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4547e932836b3d9d38f6199b174f1267dc6ba49bf46bb5b649fee461342d4bfc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da29974c8ce64b019de806808608cde7ad1547ba291bf4e4aea2cab529bcf6fd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "81a2be6824b095463fb0f8542b1a4deab0e47f59ff8c1a8524c0dfd2b6a3d6f4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "521e4956de0c06a663b0d22c375d24a04973c960a9cbdbd512c2229c03594656"
-    sha256 cellar: :any_skip_relocation, ventura:        "35ad6617737719ab8589338bd601b5e28fdcf7bb76784b7baf1a926fe12eb156"
-    sha256 cellar: :any_skip_relocation, monterey:       "657f4be44297cf4914a8182fbd40dd6ecd1f47b929dc99a2762a7d7c62de22a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e213e01945e80249f23659325cb13bce5c191e9386f822b608197e3fa21e63f0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "59ca776531e77a1c542d1d7ebc570cfe7e63f569c4b5be68b321d43f4a9fc406"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d64971c748181d036a9c1ecfe65c23b0ffdc9ccc77436a14d31b8c99a74ef513"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b97014e14391c6e2baa73f834a8dd30fc910ff83e3d4e1bda20da48a3dcdf16d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4b0e3788796e9d3dcd23255a84a811f11c2d021db622a2bf3e83f28e836949fa"
+    sha256 cellar: :any_skip_relocation, ventura:        "c5000578941ce147bd76bf950cdc9c71796c35c8558a1ef6dc03f135294abe87"
+    sha256 cellar: :any_skip_relocation, monterey:       "d0617c0e3dd72e9fa4c01e749a8fd3f377af48afc783c1ac4a9e61e1a3567e36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d07a730bc45476919f8c2957ba661951d720b6b4db15fbf03b958831e90c760b"
   end
 
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "bottle" do

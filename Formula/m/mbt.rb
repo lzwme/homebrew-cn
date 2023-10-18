@@ -1,21 +1,19 @@
 class Mbt < Formula
   desc "Multi-Target Application (MTA) build tool for Cloud Applications"
   homepage "https://sap.github.io/cloud-mta-build-tool"
-  url "https://ghproxy.com/https://github.com/SAP/cloud-mta-build-tool/archive/v1.2.25.tar.gz"
-  sha256 "1c13e9bf07228b238e7b4b43841428fa3cf2924adc124c157e51d9b6013e0f3e"
+  url "https://ghproxy.com/https://github.com/SAP/cloud-mta-build-tool/archive/v1.2.26.tar.gz"
+  sha256 "91e4d00563c760741aa730e210c4ce867a04d564267ca31d4ebe21af5dc1eb8d"
   license "Apache-2.0"
   head "https://github.com/SAP/cloud-mta-build-tool.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "05437a7b76ac0efff4b7823fc7c8802113c2cae08f6dc853b7c798573f8a607d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "41f8c47d26c21854e75912bd863d6af8c36fe3d007850b4b9eed94e973e170b8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5e9626b386bace246a2d3c55f9dbbaf62da8818e3651299766a198d934e3b0cb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "83d8075db7afea337bddcfc6bd89ee271ef37a8f0f8e442aa40d95cef8ea32e3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8e4774b9acf183bce8b4b7063a6625af31528e1522ab0f113f18718248177d29"
-    sha256 cellar: :any_skip_relocation, ventura:        "28c79ee4e63eaad64ed6169ccb0de2a71d0e490bbb0485c0324c97bcc300b0db"
-    sha256 cellar: :any_skip_relocation, monterey:       "71199b2ee2078bfbdce574972c361a0b4f1e5346e532126ba19b4e35b7fc7754"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0d9e7a29f9014289de8ee0d945a698d776685252d2750fbc1d131191d249c93c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a5bfa39f64d70faa78d6defb75675b801318633f44c685ec46a9a8e2227ee77"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "58278ae62283e56e7c15561d2e71de807ee738f41af7a8600cd6e29c76dad9dd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "22291992ba3b219972dfd29c8672b39fa6cb01abfaf16078dc9c7d97447fd675"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e20c0df4a662975724b6fe58659c44dae08f547d52531bc105f95db688c7ae77"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a9f7356c83f061ba935de40d894ad865b5921df5c50f51d08f4e6b31165277a6"
+    sha256 cellar: :any_skip_relocation, ventura:        "decfe5504069580968c2b103dee91ad0236fb177623b5f062b3c3f250e2b6f78"
+    sha256 cellar: :any_skip_relocation, monterey:       "42b80b7dfde1305728b448b427094835cae49f60b500dabbccb8a8168d36bd95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04fc3b5a6c16ff977a53abfb5c6bb6002de430cb195b5c0c32033fdfb661788a"
   end
 
   depends_on "go" => :build

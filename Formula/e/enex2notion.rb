@@ -3,19 +3,18 @@ class Enex2notion < Formula
 
   desc "Import Evernote ENEX files to Notion"
   homepage "https://github.com/vzhd1701/enex2notion"
-  url "https://files.pythonhosted.org/packages/b0/65/301a9406734eff3185d1724e86bdb62c697973771086f457910e550037d5/enex2notion-0.2.26.tar.gz"
-  sha256 "cd9a5a2ccb9a320d5f1cb81bbdbe8e464582f317aa6401135ddc9242ae6ccc73"
+  url "https://files.pythonhosted.org/packages/e9/69/76f7d4a560f7156fb52ec0174fc65d023734fc8a2c7703660f4e359b6a46/enex2notion-0.2.27.tar.gz"
+  sha256 "74caf499147cf18169cc7ed17cecb8c9f39e64ec4578a58105aeb69fd12ba64f"
   license "MIT"
-  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6a68b92767fe9318c2d97849afc3c1450716253c74f527d88952a20568df3985"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "98b541b8b3bbe32b7be29a34626bcece467939281caa052d9e58844d8de5732e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d9612f1c5a3f811c26763d59d65df59d02c29e87051e6476bd909aa9bbb2f13a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6c6eb75d36a3945e7e029e1e497726fdc9b74adda9f8cbb5a2f93facad363a69"
-    sha256 cellar: :any_skip_relocation, ventura:        "030afae1a545d17f1f47e7748ace912e238874f1ef73a27856e1f11ebdc84c69"
-    sha256 cellar: :any_skip_relocation, monterey:       "b4a2525708a25977f0bf1f2d7a3bb7084f1211678d5e56ddd038138d72ebbe8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3ea50cf87c1267a69584d7bc7b5cf54e0f7e0b89d9047dd27dffe2742bcdf0b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f150162509439dd2b66607b5687c1a5915bdca922d3ed3cc9fcb24f43143215d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0a0134bbfc13287ada03fb7787988353e7b4c37f8f0863ecc74d3ec712deab18"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e65d972aff797002c8a9651b9a7c6db70eb37c37d2b2a9ad3cd04770b2824ce2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c804c231ac00d2b7cbbebea453a3ef8b07635946ab3a796b5cc3b5ddf9cb5d21"
+    sha256 cellar: :any_skip_relocation, ventura:        "79ecd477c7ed2384e0e6c20f46672c6d3512e15d5bc8fb1e85db5d8fe263d1be"
+    sha256 cellar: :any_skip_relocation, monterey:       "a067fa39309dff5ce6331cee2588058c3fb665f8faf784eb499198fe8f10a98b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aed163546197266af3546189de0b246f9d227128bcf61b32418d08a420eab435"
   end
 
   depends_on "pymupdf"

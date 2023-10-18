@@ -8,13 +8,14 @@ class Localstack < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f957c1e9bee1f41d02913229aff7d2f3a7223c52907869048e11c79032d6674e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2a0841319a9e2b135bd73930e1b6b17838d59975db82a4e7ddd0df226c404996"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4fb5a1f6c9ca1c82442517c6170930cc5575687005fef791540aaefa6661e446"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6b727dfb2e85db2513fb4d806a50ee45327281eb9348eef04f672a98383fcbd3"
-    sha256 cellar: :any_skip_relocation, ventura:        "68228436f2990b928c757fce620eb3c6db6daba54df14e396c0e84a2e4f7bb79"
-    sha256 cellar: :any_skip_relocation, monterey:       "261d66970ffa6c9768cef5f7f348d09225e3b5148fa9e2468a8c02b118b45566"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b274b1f8d2110f0d5b07736bde61cffadd2dd06dc2eebe6f512e90ba196ef708"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "58f76a89a923bce4f88ea78f429f4f1877cffe71397064056735f8796238626b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ac3d05d383fa80c84215b8485c2c1d0535882fdc3cb7f868f9682ff1341d79d4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0385d84c06b598f0e7db40f86a3e24907795fc94e4ef5e4df368c6b481828654"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d3ff8817b57533119578a3eabafb2527557961bbed9ffe98000305b7434a41ca"
+    sha256 cellar: :any_skip_relocation, ventura:        "03873ab88fe883f6d6689a0e50abb234b1e0263f168cd8b499f24ed73641e021"
+    sha256 cellar: :any_skip_relocation, monterey:       "97e1a3efc7bf81f343ed42495c171be7c130df002406e8bdb56dc391bea8882f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eeeea84984e6146d31da4ae4c8f5ec446b0bd8b1325dc71f9a5cd4eb500e9c68"
   end
 
   depends_on "docker" => :test
@@ -24,8 +25,9 @@ class Localstack < Formula
   depends_on "python-certifi"
   depends_on "python-click"
   depends_on "python-cryptography"
+  depends_on "python-psutil"
   depends_on "python-tabulate"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
@@ -94,11 +96,6 @@ class Localstack < Formula
     sha256 "4a432e2bd0fd50eb165781fd2a885e2169492f1f699429afda8130a3efdd4590"
   end
 
-  resource "psutil" do
-    url "https://files.pythonhosted.org/packages/d6/0f/96b7309212a926c1448366e9ce69b081ea79d63265bde33f11cc9cfc2c07/psutil-5.9.5.tar.gz"
-    sha256 "5410638e4df39c54d957fc51ce03048acd8e6d60abc0f5107af51e5fb566eb3c"
-  end
-
   resource "pyaes" do
     url "https://files.pythonhosted.org/packages/44/66/2c17bae31c906613795711fc78045c285048168919ace2220daa372c7d72/pyaes-1.6.1.tar.gz"
     sha256 "02c1b1405c38d3c370b085fb952dd8bea3fadcee6411ad99f312cc129c536d8f"
@@ -140,8 +137,8 @@ class Localstack < Formula
   end
 
   resource "semver" do
-    url "https://files.pythonhosted.org/packages/46/30/a14b56e500e8eabf8c349edd0583d736b231e652b7dce776e85df11e9e0b/semver-3.0.1.tar.gz"
-    sha256 "9ec78c5447883c67b97f98c3b6212796708191d22e4ad30f4570f840171cbce1"
+    url "https://files.pythonhosted.org/packages/41/6c/a536cc008f38fd83b3c1b98ce19ead13b746b5588c9a0cb9dd9f6ea434bc/semver-3.0.2.tar.gz"
+    sha256 "6253adb39c70f6e51afed2fa7152bcd414c411286088fb4b9effb133885ab4cc"
   end
 
   resource "stevedore" do

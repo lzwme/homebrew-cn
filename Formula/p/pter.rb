@@ -3,18 +3,18 @@ class Pter < Formula
 
   desc "Your console and graphical UI to manage your todo.txt file(s)"
   homepage "https://vonshednob.cc/pter/"
-  url "https://files.pythonhosted.org/packages/1f/43/955ca5bbcfb19599f7f1f3f1fab8d67fc2afd17d8233bfa5f081a5b1407c/pter-3.9.0.tar.gz"
-  sha256 "a0fb507e667d0654314a3818723e7369750cbb6628a5c6ec063cab92498eb36f"
+  url "https://files.pythonhosted.org/packages/28/b7/007b72b2f7fcf1fdc2c41104abc5cc23194c0842e68736fabb0ad6cd5e2b/pter-3.10.0.tar.gz"
+  sha256 "17843623e7a8b81ff7d191507e464b47c880377f6ebf42bb6cdbe3604ebe9722"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "28d6ed939354922bb449556e17dfa14b963d13bcd28d43a13799f3f32bb217b2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a9c11406f48c405ddad47a1fd77fd2e3f07a9accd84f3f55418623851fc5e239"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d4a158d1fff0e5ba66e9c829bc78176ba687815bc65cd1499580c67129663164"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7d4e43a69402835475f19dc6bb76ac1ed1ba0d64b73d5c159820681cc1e77a4d"
-    sha256 cellar: :any_skip_relocation, ventura:        "bef794fa835a9c4e14a96050c4566a836ae532250e2fb83db681c3abfab4661f"
-    sha256 cellar: :any_skip_relocation, monterey:       "9d211e3ba2a7ce0fd9ddc1e4a2652ef3fba9a3e125d5e924f13b768e39546345"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e5e69ce93d870c95f91a74a9d2287a724fd070b264ed3676441a8f233ae66cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d91d21008f89737ecbedb165d9e9686c44da07d3899dc9c1d784498c391a11c8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5efee3feb4464197ba9cd24ef2535cd0a3d39393ae97e1173c84785a900cdc79"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5f8dd75a355e3b4296e1b88a67cfcef17d3b87d6b8189a630e10a4f6c1f5a465"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4120a87c1ce0f2dc2d6668f7bc046b41f528643b75fc672b70069ec4ec91d7b3"
+    sha256 cellar: :any_skip_relocation, ventura:        "6ec8be6cff9eb8bec17a88cb1cd7da445643ec05b7755c4dca25b7628592449f"
+    sha256 cellar: :any_skip_relocation, monterey:       "af19a972a8b017e2f410197fd3f2b1d2233cf78a4ec8d3a8e5fe6ecc089b3f1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4806f19c201a0b428d9a2ebc743096742c7e96a2d061eef14fad35fdcb892006"
   end
 
   # upstream py3.12 support issue, https://github.com/vonshednob/pter/issues/30

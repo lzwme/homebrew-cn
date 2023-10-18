@@ -6,15 +6,16 @@ class Ocrmypdf < Formula
   url "https://files.pythonhosted.org/packages/87/a1/20917b9b0c30f1dc57495409b8e4e0d12966d1bda8b7fe21f6939f54ea6f/ocrmypdf-15.2.0.tar.gz"
   sha256 "4f618e555e607b4dccd45bcf3943d5a526f357002367d5c34b524853922a5bdf"
   license "MPL-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "43b6ccab138499a2b14db433c991d0103970b61518b3a74d278ebd4e63502c76"
-    sha256 cellar: :any,                 arm64_ventura:  "82ff75ba6c431a955b5d1c43ff5a12cc2ffb3356c38fa3d617120b267aa67ad4"
-    sha256 cellar: :any,                 arm64_monterey: "cc558b465a361e55892c0f99037f34c1cda6b053c1e2415b4d768b530c02e328"
-    sha256 cellar: :any,                 sonoma:         "c4262a5592d6f22d2be43f2d2878661b2662a5d0ac9be7826e8773f3103af013"
-    sha256 cellar: :any,                 ventura:        "95dcceb13c50b6521dc6bf9b6fe87ee06ab3de784b321d0058cabe8f21454996"
-    sha256 cellar: :any,                 monterey:       "8eab99d15c5f5f4c311f9276394262eb635844ab7bf6733823b4e21eb862ca7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae864b68b12036a2e460173bc24d8972e3e9c4cc11165196eac1a38dd528fa37"
+    sha256 cellar: :any,                 arm64_sonoma:   "3f39ff1d94b40b1e79e0b93831b20d9eb1fb29641c15a7b5697581e923988b62"
+    sha256 cellar: :any,                 arm64_ventura:  "6d7b620db87846a81ff854b2c8042aa0b9ef536176ba32487b5ca3e9b5953e6d"
+    sha256 cellar: :any,                 arm64_monterey: "fd6c5f76445c56effd22dad38cdec6267e3c4be3d0e50d5080aeb2dd8d50c752"
+    sha256 cellar: :any,                 sonoma:         "92aeee6690daeb3437aed8ac4de690c4eaf8f94c332ff1c0d61624bc16207d41"
+    sha256 cellar: :any,                 ventura:        "8f4a32f7787b967112d007a8988a97ef3cbd85a9acba2351bad1fd8a51c61d97"
+    sha256 cellar: :any,                 monterey:       "5fdcecc09b1fc2360f55e59bc441432944ec7153fb2b1f5b68fb36548dbf7707"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4c8610781bcbee52d0595f62784b0e424d30d5fee477b6f149442835dce4fdb"
   end
 
   depends_on "cffi"
@@ -31,7 +32,7 @@ class Ocrmypdf < Formula
   depends_on "python-cryptography"
   depends_on "python-lxml"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "qpdf"
   depends_on "tesseract"
   depends_on "unpaper"
@@ -86,7 +87,7 @@ class Ocrmypdf < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.11")
+    venv = virtualenv_create(libexec, "python3.12")
     resource("reportlab").stage do
       (Pathname.pwd/"local-setup.cfg").write <<~EOS
         [FREETYPE_PATHS]
@@ -98,7 +99,7 @@ class Ocrmypdf < Formula
     venv.pip_install resources.reject { |r| r.name == "reportlab" }
     venv.pip_install_and_link buildpath
 
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     paths = %w[img2pdf].map { |p| Formula[p].opt_libexec/site_packages }
     (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
 

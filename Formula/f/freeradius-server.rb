@@ -22,18 +22,19 @@ class FreeradiusServer < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "ee2072014a86422fbe3bbc18a45f2c4616dd9cf4847dc455f23abe3b4abec5f4"
-    sha256 arm64_ventura:  "e42fea37cfe6021abf2289760885aaa7af3bc435f237457362b48cbcfb155e7c"
-    sha256 arm64_monterey: "d82420f76875ebbb7c9991909ca268ce1cc5ff365d5adb74406c0a89099d4c2e"
-    sha256 sonoma:         "653d3600d83f98a0f61e3dd0a08d581b15ce54ae4267f84177205946165a4d21"
-    sha256 ventura:        "3d01018d7a599e3866f3d53c445d8b2ecfa278226512d24a8e2ef313d3a7b2a2"
-    sha256 monterey:       "6c0cb688286df320107d38173304b6b575fa1282b87996944a14405258e6697b"
-    sha256 x86_64_linux:   "491803883b68aa0040c4def4d5b52b948360f6392fd6e4abf3603d61cf47c8c8"
+    rebuild 1
+    sha256 arm64_sonoma:   "975eb3ec60ead242efbddafd806f7221ca8d620d834596223cb06b1dc1757e6b"
+    sha256 arm64_ventura:  "37734c06c9574c408e54949be5cbd8d5bd854cc1ee62a38db20e59e0c40099b9"
+    sha256 arm64_monterey: "7a44daa75f6580de3b0c94272a7f9571f7a980479605ec0ed3cb758ce62efd47"
+    sha256 sonoma:         "d363438223648119548525ad6445ba46637fc98826abdb901a738975ba5b9a7b"
+    sha256 ventura:        "288de84c2b4f3c8af2c818ccb9663acddf3844e37563196eb7dccf49f6a77d9f"
+    sha256 monterey:       "f0ca09ead3c4384d90869155652a4181402da2c9c1281d6522ee2e3246c652fb"
+    sha256 x86_64_linux:   "3d3bb2b2e6a477690ac32054c51e1f01c7ebbed5c8580123f3b0afae6a85308b"
   end
 
   depends_on "collectd"
   depends_on "openssl@3"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "talloc"
 
   uses_from_macos "krb5"

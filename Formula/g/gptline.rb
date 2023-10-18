@@ -9,13 +9,14 @@ class Gptline < Formula
   head "https://github.com/gnachman/gptline.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "958958078c7c1d0b69c5df831bd8cca2649b2605ef2e5c5a10d4030a0c2684fa"
-    sha256 cellar: :any,                 arm64_ventura:  "4dc4a470ed4eb3a7ba8b65a3b1abf78918858a7382187a32a9ea3a40553f0de2"
-    sha256 cellar: :any,                 arm64_monterey: "97624f2c2652b8a3a53aa8d9b3ab9258871d2a07d1d4b54b8d7cc8c44f999ebe"
-    sha256 cellar: :any,                 sonoma:         "a4188b4e81e61a07818d6b38d9d6b2963c86c03980bd90243d66a100f23d0fdb"
-    sha256 cellar: :any,                 ventura:        "79f3aa547dedb9dab923232a6bc5e084c731a01018af8354a9855887fcc5335e"
-    sha256 cellar: :any,                 monterey:       "e120832c49727af42d763cc9b40c0bdc1d13af573d125336959bc2a6aa1e0ab9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f763085cc08cbfce50f69d35c319b36096f945c59f96fe0b5c87d4ba06f03703"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "537d0c4203eaa41465ad29fbae3f5e6d40a20ad4c97aceec14c177cf1f5756e2"
+    sha256 cellar: :any,                 arm64_ventura:  "4936733df29405cbb01bedcc967bb405a7246e69ac5aa41e48860d5c7d9d7a52"
+    sha256 cellar: :any,                 arm64_monterey: "2f0e2ebe011b3ca0cd447cba5f4a365c018ee256e994cebbe8b9458fced4a516"
+    sha256 cellar: :any,                 sonoma:         "e6664b6a1732307d245ecaf1226442a8b1f544ad4fe4345e4920516ab15a23e4"
+    sha256 cellar: :any,                 ventura:        "978b7d69f533f0a0e07cce39fa9a3d88f0d1146ec2da5f03217de01e6a0c5ca4"
+    sha256 cellar: :any,                 monterey:       "bed69d4851a90abdab25e959f6cfb80efaa1565ac956e4c5dd99a2a01d48c094"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17664c2ee514489dbc35a44ef8ff17baf73755d3e5e9a586bd43b011c17a04bc"
   end
 
   depends_on "pkg-config" => :build
@@ -25,13 +26,13 @@ class Gptline < Formula
   depends_on "python-certifi"
   depends_on "python-click"
   depends_on "python-lxml"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/fd/01/f180d31923751fd20185c96938994823f00918ee5ac7b058edc005382406/aiohttp-3.8.6.tar.gz"
-    sha256 "b0cf2a4501bff9330a8a5248b4ce951851e415bdcce9dc158e76cfd55e15085c"
+    url "https://files.pythonhosted.org/packages/c4/50/a717a133bda2efc27efbf8a65398c925b6d0605213da0db6929627ccb758/aiohttp-3.9.0b0.tar.gz"
+    sha256 "cecc64fd7bae6debdf43437e3c83183c40d4f4d86486946f412c113960598eee"
   end
 
   resource "aiosignal" do

@@ -9,28 +9,30 @@ class Virtualfish < Formula
   head "https://github.com/justinmayer/virtualfish.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bb5659a3dccf8aca0ce26357a44412fc37eaa41b549e267a40877295976cc506"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8ab3ff5ace0d73f23f48e9ff60d3052938b74067f8619e62f7a20aa3391202ce"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3188b932a2fd5c42febe89ad2f7938a5690192e0169e451fae2546e4ab0b9e8e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "679572b2f87e4b3c5920f31e613fc855d80240486a0dac358e0eb1c236bd0a1e"
-    sha256 cellar: :any_skip_relocation, ventura:        "399e30b5c9a5880f369c54ed9ac1bd1f4841e9d368e6cc653e42e70cba1536ae"
-    sha256 cellar: :any_skip_relocation, monterey:       "d6c920275b55f1691e96646bd476793fcb2b472727bf18bf190121102fffef06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ddd06c6b6146915a6a50a9cd64ef45ad385f54e49f5a272063d56690b081e7dc"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "869c8a12184ad98701a95942837e86ba30a8651f84f482f15c8d49ff6f42732e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "283a6425d3bd1d9ca8b2d212923b854683abf4137513d3e31d63fdd8739d52ec"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9dcedf8f5e261b6f571dd62f9cb3cce49446dce451eeaaffb0918982815671f7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9973b9fb1e8178283ab5fc0424f28deaaa7130cfd7edcf90ed2e2adf59ddc07a"
+    sha256 cellar: :any_skip_relocation, ventura:        "709e6684df5d34e84e37508e8f3640ce8818db3c726b14fa3d1ab142d672e354"
+    sha256 cellar: :any_skip_relocation, monterey:       "2d18040a59d0c4d2279a1cf6d2d1cc5e98067a143854b3b196b287d8bb80e705"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ceff02ecc7db355983c71e51f6dd4ca74129bfd8c19d5961021162c9611200e"
   end
 
   depends_on "fish"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python-psutil"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
 
   resource "distlib" do
-    url "https://files.pythonhosted.org/packages/58/07/815476ae605bcc5f95c87a62b95e74a1bce0878bc7a3119bc2bf4178f175/distlib-0.3.6.tar.gz"
-    sha256 "14bad2d9b04d3a36127ac97f30b12a19268f211063d8f8ee4f47108896e11b46"
+    url "https://files.pythonhosted.org/packages/29/34/63be59bdf57b3a8a8dcc252ef45c40f3c018777dc8843d45dd9b869868f0/distlib-0.3.7.tar.gz"
+    sha256 "9dafe54b34a028eafd95039d5e5d4851a13734540f1331060d31c9916e7147a8"
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/24/85/cf4df939cc0a037ebfe18353005e775916faec24dcdbc7a2f6539ad9d943/filelock-3.12.0.tar.gz"
-    sha256 "fc03ae43288c013d2ea83c8597001b1129db351aad9c57fe2409327916b8e718"
+    url "https://files.pythonhosted.org/packages/d5/71/bb1326535231229dd69a9dd2e338f6f54b2d57bd88fc4a52285c0ab8a5f6/filelock-3.12.4.tar.gz"
+    sha256 "2e6f249f1f3654291606e046b09f1fd5eac39b360664c27f5aad072012f8bcbd"
   end
 
   resource "pkgconfig" do
@@ -39,18 +41,13 @@ class Virtualfish < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/91/17/3836ffe140abb245726d0e21c5b9b984e2569e7027c20d12e969ec69bd8a/platformdirs-3.5.0.tar.gz"
-    sha256 "7954a68d0ba23558d753f73437c55f89027cf8f5108c19844d4b82e5af396335"
-  end
-
-  resource "psutil" do
-    url "https://files.pythonhosted.org/packages/d6/0f/96b7309212a926c1448366e9ce69b081ea79d63265bde33f11cc9cfc2c07/psutil-5.9.5.tar.gz"
-    sha256 "5410638e4df39c54d957fc51ce03048acd8e6d60abc0f5107af51e5fb566eb3c"
+    url "https://files.pythonhosted.org/packages/d3/e3/aa14d6b2c379fbb005993514988d956f1b9fdccd9cbe78ec0dbe5fb79bf5/platformdirs-3.11.0.tar.gz"
+    sha256 "cf8ee52a3afdb965072dcc652433e0c7e3e40cf5ea1477cd4b3b1d2eb75495b3"
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/d6/37/3ff25b2ad0d51cfd752dc68ee0ad4387f058a5ceba4d89b47ac478de3f59/virtualenv-20.23.0.tar.gz"
-    sha256 "a85caa554ced0c0afbd0d638e7e2d7b5f92d23478d05d17a76daeac8f279f924"
+    url "https://files.pythonhosted.org/packages/d3/50/fa955bbda25c0f01297843be105f9d022f461423e69a6ab487ed6cabf75d/virtualenv-20.24.5.tar.gz"
+    sha256 "e8361967f6da6fbdf1426483bfe9fca8287c242ac0bc30429905721cefbff752"
   end
 
   def install

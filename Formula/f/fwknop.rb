@@ -17,7 +17,7 @@ class Fwknop < Formula
     sha256 x86_64_linux:   "6041c174c567035e621ee9508aa89bd6af671cdfaf7bc99d88eccc473f69f9de"
   end
 
-  deprecate! date: "2022-10-01", because: :unmaintained
+  disable! date: "2023-10-17", because: :unmaintained
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build

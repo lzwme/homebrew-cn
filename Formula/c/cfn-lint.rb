@@ -6,20 +6,21 @@ class CfnLint < Formula
   url "https://files.pythonhosted.org/packages/ec/bd/60a3f36b698caeec8f4e7e35e030e268c24701de4dcccd07a5e5e1626827/cfn-lint-0.81.0.tar.gz"
   sha256 "532cbfe076fa8b68e70ec67743e9086169ef6d15be3306cae8aa57b38994fd8f"
   license "MIT-0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6fad1ebdfe41790f79df17936eebe9d257aa4525b5adc39871f2ac931967b398"
-    sha256 cellar: :any,                 arm64_ventura:  "f4ee813632e5e2a8ade2f34e9fad1f13e34366c6466c5e267ac96f71206f92c6"
-    sha256 cellar: :any,                 arm64_monterey: "44a92e6c4489fa3e7d5dc3c2121f78a56273c6c72d712da56f90bd01b543affd"
-    sha256 cellar: :any,                 sonoma:         "c3f571b64089811e3e16b25d099a1df18e582232fd5ed2a6887fb3f10114c9b6"
-    sha256 cellar: :any,                 ventura:        "ca6ea3cbc035dd6cecfde254c6ef846dc624d0baead7feb6089b31e05b3ebadf"
-    sha256 cellar: :any,                 monterey:       "0202a216f38d452f3fc6af8db76560b38dac2707d3f162d7f13ef65cda325831"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea34df221a5e7c7e5764059c291417a22bb318e0b8a8c2e4fd4b8b7d961f3ee5"
+    sha256 cellar: :any,                 arm64_sonoma:   "963ca178989d6ceaef96ac342408a67b977ad76b4647331e35b57dfd25688ebb"
+    sha256 cellar: :any,                 arm64_ventura:  "4e9a1e7ef6e3a490d3b46735c3937c2632cb40d477e555380cd14affe7914184"
+    sha256 cellar: :any,                 arm64_monterey: "6168ea09702c32b1c10fda74e7f9019ae8baf4b600e89e0a2583bf41dadb6624"
+    sha256 cellar: :any,                 sonoma:         "1a1a8358f0abeb05bbbb07ae0810f803ef03dcf380cf59c98fae1079ed2d98dd"
+    sha256 cellar: :any,                 ventura:        "ea01287fced2a1000bb2d7126ad7d6ee6b3e0d1cc4b4f694abb409b582f6ff60"
+    sha256 cellar: :any,                 monterey:       "33a88641e194c246df359d0b61eafa982969f57e73152ab72fdddf41c34ea2b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb86a99141924b992d8c8ac186bc31a98ad1efe4f2ec5a970ded458a821f88e7"
   end
 
   depends_on "rust" => :build
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 

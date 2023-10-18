@@ -9,14 +9,14 @@ class Dolphie < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "71a90e03be4224b9a5cc7c7062adfe4e0ba7de8224dfd46984b4a4ae277d45f6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "54c3dd8ff37383c5a4f826833e01ef086a5ba1e7c5ae49e2415b0f20bcd7b1fd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "880c2b6663a524f3f7dab06cc33ead1796c1d6f300c8c4595eba6dd4dcd1591e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "70559aac319ee7f5947353dd636bf3f8a7b37065d80c1f69b41b9a8ef036f0c9"
-    sha256 cellar: :any_skip_relocation, ventura:        "ed5403535f2e6252a7aa432273c473e848cee640e67afb675c5f3f1fe812cd5e"
-    sha256 cellar: :any_skip_relocation, monterey:       "fc8f17a481505b4a5e14fbb678d46a1d706fd8356d33bc9fbcb435a08c53e47c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e077a4da6f59a480308f5a6013e878fd4059b7f97f9cd14f7aafec58aedd11f2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6d14025883caeccdfadfae494a2e5ec480cefbe686a34afbaf1c9fa1d1b685f3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2d0e214ff6460488a4f28918e24514274aeeebfc1fd083125225e65f188327bf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "620dfed0f957df9ba4ee0f25ac31b0445712e9d175f3fc6a8eb0c20ab052f5ba"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e0faabac6382bc79b939a3f615e0c3f570467d339cc4d163df8904dbec16b494"
+    sha256 cellar: :any_skip_relocation, ventura:        "e621f91bea7cfb6586192be75dbaf774909b30d9a7301ba64ed1c321872121d3"
+    sha256 cellar: :any_skip_relocation, monterey:       "2b2a0fff6cd618fd8346e814b8dc3ac48ebf464fa0ea6dc43093838300f81f3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f321c3cfdb70ba3eb66244e030a553548d5593b3bbe0242f7dbdc4c0050cbe8"
   end
 
   depends_on "cffi"
@@ -26,7 +26,7 @@ class Dolphie < Formula
   depends_on "python-cryptography"
   depends_on "python-packaging"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"

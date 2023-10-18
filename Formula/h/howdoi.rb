@@ -9,14 +9,14 @@ class Howdoi < Formula
   revision 5
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "477d1c5a448b1846e0f8356eddde9c7d7737d33d31616643da4eb7f8a4ed9a38"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "047b0a762e80c1f023808278d3d9f8df336907b032d95b419271fa68eeb26c94"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5bc197d3669ae4babe626a4f7d605d4fe2dcd6c82a8f809ff60feb25eab76355"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2572f120b9ee123197a7133ea4cc233fa344fbf3dce44bd784663b8e3a6923b3"
-    sha256 cellar: :any_skip_relocation, ventura:        "e82b258a0a29c3fa0878e50236cea86b0e7be180c58a05a85d4deb0dc42f8e6b"
-    sha256 cellar: :any_skip_relocation, monterey:       "0e1747a46881e8a923658f6272a45e88324e99da90c9c4badcab0b5d744790da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4cb83ff4cff0805df0ff4496e480a2eae2170699dac7b7e2e41e983f2ab7382"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c96c8c98985e3bfadb8521b489c7688742efdf97e1f128b1f948196732a1afc0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "99154136a6f26136131868833979c82a9ed5cf2c17d1b57424cb68bc754ed4cd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d93c1d42b2e24f1abf38b89406398c1240e170dcc072a80052d57962e54711d3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c026ced2dae93ba2be1a6b9c8ca3a9d77073342a452f0d05f429680f07442bfd"
+    sha256 cellar: :any_skip_relocation, ventura:        "47923215386b53a4f9007fbf09081fdac9578d649def886f3a3c167340c8f985"
+    sha256 cellar: :any_skip_relocation, monterey:       "8670decaf52b1fd13570aeb1879427b1f0ea5337d360850beda978634ffb2182"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "808c0db074c55844317fa59048967126d4bc7b10a6a344442c126befaf2c442a"
   end
 
   # `pkg-config` and `rust` are for `rpds-py` via `terminaltables`
@@ -29,7 +29,7 @@ class Howdoi < Formula
   depends_on "python-cryptography"
   depends_on "python-lxml"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "appdirs" do

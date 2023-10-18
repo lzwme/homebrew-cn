@@ -7,6 +7,14 @@ class Ejabberd < Formula
   revision 1
   head "https://github.com/processone/ejabberd.git", branch: "master"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "687e3185fc9379d6ba0ef009d3cc8c945695e5afff1f8b3ea66a91b2f76734b8"
     sha256 cellar: :any,                 arm64_ventura:  "036f0e2d4def5984d21c0f88383cad4bbac2788aaac7297eece2c5439bcec510"

@@ -1,6 +1,6 @@
 cask "hypercal" do
-  version "0.0.101"
-  sha256 "60adb11b5924d3e954f12a335f67b457f0a41e0952cd8b2d5522f48cb448cfaa"
+  version "0.0.105"
+  sha256 "846edba5a9936677f8958bdd72e33ce2b87d2d98a3526be1810724eb04672cf5"
 
   url "https://storage.googleapis.com/hypercal-downloads/Hypercal-#{version}-universal.dmg",
       verified: "storage.googleapis.com/hypercal-downloads/"

@@ -9,20 +9,21 @@ class Checkdmarc < Formula
   head "https://github.com/domainaware/checkdmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1bd5c581200c45e72a08b6bb95a790d2ef0fb9bc2ff7ea14aaa48b2f1fa7fbf3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "00ae5ad1beeb6cfab80b4bca1614be1dedcf5e7960d3fcf00cc5df4773057693"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6666d10f2f73e33adffe5358029b5906329423793aa6715d5e083b5bc3d28e8a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2b4ea87e0309fc14aa15b64cf4249da232606a564a8333ce73c576bc33e61d51"
-    sha256 cellar: :any_skip_relocation, ventura:        "469f38dc44006182c2fd2383d1e4dadda32a8306b42feacea28a9480114d7e25"
-    sha256 cellar: :any_skip_relocation, monterey:       "a3dd861834715c7ed0840dde61f01a5bb73ddbd0ed5b43821ebcc395ab427f9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8d8614d4d0bbcd7b8c7978c26c31d808c11d918b06efa455b05e048f6aae167"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1f18bd8668e1c6c15df1a0f5e0dd3f05b88aba6954f5124920f5af141cd7b17a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "42e424c7d6dcb0ad49d68fd27751a2cb713a9743e11f6401ab602ccfc7a306ec"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5dc12547fd220f53d5adcf53feaa59abb69fc6a1a2b5be0ca027352d088d2b94"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6635a618cc8044ce89dc40dee8a0afb520a6fa6f0339e469fcf8852e04f605aa"
+    sha256 cellar: :any_skip_relocation, ventura:        "2c3fb43c4ab9c2bd4999be109bc1041e36a4207b69021e5cafede2ca98989746"
+    sha256 cellar: :any_skip_relocation, monterey:       "e5d85fba4be144ce735c331de8b0462eeb28d524bd544f37bcd21410660cf036"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45e0823041bddcd6ec511fb282151fc71fbb2cc6d3811b7ae8890c8bfdbe4dd8"
   end
 
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"

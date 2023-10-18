@@ -10,17 +10,19 @@ class GitReview < Formula
   head "https://opendev.org/opendev/git-review.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "15b7dfee9b51663a87ae69660f72125596abd94cdb33a98f3fa562ea7e888f64"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ec3d606de6eb295528465310f4e153e96a9aeb97c36f705ee8da53f516b12172"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9e08387d5092df5c2b179747d6eb161c7de750e7c6b5a6934113ab945acdf20c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "453b1a2afea256b34560b6b53d5a437a5e5b0673cf3be0a96f29cbed533c1a8f"
-    sha256 cellar: :any_skip_relocation, ventura:        "233bddc47ef0295d12f15dc783ac6a89c053b73436fc7d2b526198a29367f008"
-    sha256 cellar: :any_skip_relocation, monterey:       "b6186137291e57f3a81889b90d09d5fd587266951763149f1da14d9c9d407334"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46194cc6c165f4d1dad24851374127492c08c15928d937a86eb34e69a586b352"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc87506d7629f86f1b07e10bd7015e113d29d1890b8dab246cb00e654a578478"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ac4967435bbb849f8ce218e7f7fd6a3046e868257a79121869e140eee971a150"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "219b6eba95efe4748c6c4a2c9785258e7f78fe2164b35563789cb243499d85f8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "250859f4f5e3c47c21f7d99474d96110852b4f3cb7f1c6b4d6837f2583d7c7e9"
+    sha256 cellar: :any_skip_relocation, ventura:        "eed5dec8d78e5c354ff286c5b5d4a93075afc3f84dae12a304261618d3783aec"
+    sha256 cellar: :any_skip_relocation, monterey:       "75a5c52ab206fbbab948e5cc85111b1ae7a8e6e84d00553205417c51fb88a266"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6e47f6fa0ecea6aebe61c26eb0bc4725d55daa0fd168602305f3986ff3e2571"
   end
 
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"

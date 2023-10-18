@@ -9,18 +9,19 @@ class OscCli < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "487b7bbdd78a36851b3f9bade084c8f0e57a5fc02c4dbf87ad7dcc2891c4049e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a847ce51bf8513ffee6844999621ed0dd708e71f56eeed261949632ac3463a0d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5230e5998933a13a335385646419889f71d6e23e91b1efdaf4ee5528a33b1988"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fe4751f247ff25c7c57560edf90e2ad978c9f2730232ae4cbf3ff7d70e32560a"
-    sha256 cellar: :any_skip_relocation, ventura:        "98d9d6f608373ce29111cc88ef78df45652c65f2a6a569a83dc7e05c5a9a95e5"
-    sha256 cellar: :any_skip_relocation, monterey:       "a29726adce6a78a4f1b0f69380f620b21aadebed1ff525c2170b6247c74d84fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ce75236fec9fdab583b5990c0e4d6e1f583592f4a4395370f22670edd454aa7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "668ea8558974cc73bd548b28c7cf0fb9f1e2ce68520abfaf2e98eba144e743cc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cd06234015179d6a5dd23c9b7bafeea6bba00e35f8e14c67330675e060558557"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c07dce4a1486decbe9cf8507ec9a90830a0e7999debf36a7842662ee176b8d4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c6b3a69348a16c72e3eaaf2928b2fad6ada8db23a017b755eccac2e273546b85"
+    sha256 cellar: :any_skip_relocation, ventura:        "8e048e653d6e25c49977b56dfc2305f999533c1a06e860de846e06e2d1b15c48"
+    sha256 cellar: :any_skip_relocation, monterey:       "f650b6c13de419cd45eb83df9db96876b71aa97d431e24776e07640f3e3c3da5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "160eff20273dd30bef005084c74a21213fff040a1b65f9ab93abfb1a42820247"
   end
 
   depends_on "python-certifi"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "charset-normalizer" do
@@ -54,8 +55,8 @@ class OscCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "xmltodict" do

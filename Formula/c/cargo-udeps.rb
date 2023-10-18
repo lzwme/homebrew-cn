@@ -3,19 +3,18 @@ class CargoUdeps < Formula
   homepage "https://github.com/est31/cargo-udeps"
   # TODO: check if we can use unversioned `libgit2` at version bump.
   # See comments below for details.
-  url "https://ghproxy.com/https://github.com/est31/cargo-udeps/archive/refs/tags/v0.1.42.tar.gz"
-  sha256 "b89c4ba44112a5b9d544bc8555a69f2fa24f44a0a389035cd38f19827a262e78"
+  url "https://ghproxy.com/https://github.com/est31/cargo-udeps/archive/refs/tags/v0.1.43.tar.gz"
+  sha256 "d2c286f696f1d1314fcbef03ffa3c1a365992021529ead1caf533cbe92c3deb9"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "335521a382d7248d69e7bac2847385ef3a0dba0fc1e4da6eb1e45b28786c22c1"
-    sha256 cellar: :any,                 arm64_monterey: "be671c1ebb5ad02fb333b5c813a343969a8993f507c2cd3050481277d5258843"
-    sha256 cellar: :any,                 arm64_big_sur:  "04e54885fdb7a726858ee267bb7ebfbd9a141b6b5f275fd2c8c36c7df3ac3ffb"
-    sha256 cellar: :any,                 ventura:        "93a73f0049ad92f308ee8a0473580a0756f60cffb4365032d7c0743a8cb11e43"
-    sha256 cellar: :any,                 monterey:       "ca9c4e79c2f41acb75219cc3e936cc38f32b7f94d3b360e9df7ba235318e63dd"
-    sha256 cellar: :any,                 big_sur:        "2f471ecb6d65e02479ec193e1398bd4d18f350d0f1d383d045c6419097856621"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2453904dc8a8b9593261d08d5f9e02fca70daefc8af80faf3a9cf2bfb5d7e43e"
+    sha256 cellar: :any,                 arm64_sonoma:   "6ca5496ce19b0329b03d7274b377af1da73b2fe5b0d201c96fc65daa1d662943"
+    sha256 cellar: :any,                 arm64_ventura:  "b864fe0420a9792bc5bee52698c4dac705cd5b1ca3d2d4baea3a9b334f585822"
+    sha256 cellar: :any,                 arm64_monterey: "7e2896fbc47a15d4a9cd5fd8cdca154a865fc2674d544c0ebf4211e021fc24c3"
+    sha256 cellar: :any,                 sonoma:         "ef710e4a9173c3be562d9c0b6175b50a43c83783aed681e30338d6d3733e4610"
+    sha256 cellar: :any,                 ventura:        "cd2f80e3a72d3043f48f54c77cb59f390b62a348d4db9a5aef244103349e8301"
+    sha256 cellar: :any,                 monterey:       "5cb709be845c9c28dfff0c4fb98a783c9e64e02158c7033c6846bc39112673a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2e0ea3df0a9988e6870fb112d880c0f2e56f3ac3d9837f079c041ebd4caf58c"
   end
 
   depends_on "rust" => :build

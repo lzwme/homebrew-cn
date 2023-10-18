@@ -22,7 +22,7 @@ class Shairport < Formula
   end
 
   # https://github.com/abrasive/shairport#shairport-is-no-longer-maintained
-  deprecate! date: "2022-10-16", because: :unmaintained
+  disable! date: "2023-10-17", because: :unmaintained
 
   depends_on "pkg-config" => :build
   depends_on "openssl@3"

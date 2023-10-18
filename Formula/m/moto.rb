@@ -6,15 +6,16 @@ class Moto < Formula
   url "https://files.pythonhosted.org/packages/80/40/239f1834d73e92b5a071aa23373c5bb01ad7f97d4103c5d0ba5fabd5ea1e/moto-4.2.6.tar.gz"
   sha256 "ce0a55d7e756c59a5a4392c7097aa5ca53e00aa2dd3f7000093356be15e7aef9"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "83a7f4c24cb30f4388f8b81c2d95d9cc39d7cb33c8fbcdceb6148033b3a44133"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "17155b8ad9320ea9d0dc23aa6bbabb4163661e8041e4bf65920c6ffdef40508f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1b22ad6ed8488c59caeef97ccb3c2ac63ef8a47e45e6c7c6d4e9bbab7ccdcdd5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bfa3bafbf8cfdd0f9336290f6b108ed243a0d67607d6046b04c2074918f29805"
-    sha256 cellar: :any_skip_relocation, ventura:        "716a23d16a339f8c8e9244c2d3bdcfecef7194572aad6eaab4a8284b90430acc"
-    sha256 cellar: :any_skip_relocation, monterey:       "171bf06150b97a5eaaa80bf8a4778c1fb98ff29982e95efa6861a4324f8b02a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f11de37d94eab655f406f220e5328237cf6e2f52c4a2102315304dd38605064b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "388827653b2f3877e18f8fde3bd741b01760aaf346de578c38b9032380c069fb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29e503416fba9951e2f2be59313fe3a534e7e96cc980a8da69d7d722b7066309"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2f2e14b8685044bd8f7ca12156f41b9889d91da8b4e5592d27b815a8c65408b3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e6a198be8e6a4c2960cbae4252908481af8589336250f3eeadcb6d9d52e63696"
+    sha256 cellar: :any_skip_relocation, ventura:        "22d0ceb5db7c848a2c54b552b9b6d7d1ac2d14586c9dfdc759c6845cdba9c227"
+    sha256 cellar: :any_skip_relocation, monterey:       "1bbfd3dfa0cc4e8ffd27134ad90ac9c6b04d70259db075743bf1997b111f13c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "799eb939609bd555d2825180c02d465c6dea952e62a081dd3705bc737e61db7c"
   end
 
   depends_on "cffi"
@@ -24,7 +25,7 @@ class Moto < Formula
   depends_on "python-cryptography"
   depends_on "python-packaging"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
@@ -198,11 +199,15 @@ class Moto < Formula
     sha256 "341595a488e3e01a85a9d8911d8912fd922ede5fecc4dce437eb4b6c8d037e56"
   end
 
+  def python3
+    which("python3.12")
+  end
+
   def install
     virtualenv_install_with_resources
 
     # link dependent virtualenvs to this one
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages(python3)
     paths = %w[cfn-lint].map { |p| Formula[p].opt_libexec/site_packages }
     (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end

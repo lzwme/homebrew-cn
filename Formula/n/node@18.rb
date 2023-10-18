@@ -25,7 +25,7 @@ class NodeAT18 < Formula
 
   # https://nodejs.org/en/about/releases/
   # disable! date: "2025-04-30", because: :unsupported
-  deprecate! date: "2023-10-18", because: :unsupported
+  deprecate! date: "2023-12-18", because: :unsupported
 
   depends_on "pkg-config" => :build
   depends_on "python-setuptools" => :build

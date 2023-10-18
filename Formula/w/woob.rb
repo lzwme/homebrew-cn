@@ -9,14 +9,14 @@ class Woob < Formula
   revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "46949c070220229928d12b6d01616a6ea054c3abfd927188e2b401ac7e989760"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc08a1b9760aac55d85d5e19929a2689dcd1afd7964ea6853c8d008dd581795c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "60082e6dfa4b834dc897f1d70f27103f7764566e5087cdec15824877ac57a4b9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "98bc3820299a4d5f6ea5e9daa6a12017bd9e9135b3db9ca06ce5199b2aca9f6d"
-    sha256 cellar: :any_skip_relocation, ventura:        "29a93148119f5de984dbd288407ecd01ba494b386391137774714efa1d7202e1"
-    sha256 cellar: :any_skip_relocation, monterey:       "0591ec01c2b566910b69305ba9964696a7416e4c577ad1bfb7ebc844833e7ba4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c07ba4d8836dc6114573785561566c3951423a95d81a9543d5f0b79520b3e9d8"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3c60e3a47500a488800e30cfc7827eec1c3f5af26673f38487db841c93843082"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "108cfd5a3f520160a75d4726aa2af608b346d0ccb3bead5738ed08831d9a2274"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "76c2874fd38e445deb2868c6ff0e3f493f029fbcfab48420a7facc26fc51a30a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6297f1a08652813fdd8a60f511b85033d1714af1ca3cacdc17bb9e6e1269c8bc"
+    sha256 cellar: :any_skip_relocation, ventura:        "5c3939c4203a542a4a29e751d214247aef9c6c288d4f16a381da8e1f624edf26"
+    sha256 cellar: :any_skip_relocation, monterey:       "7253cd1a40ba2cc03b9e0e81a0fc86c6bcfa7b488d2857f124e395b83ae81b0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26fb058af399fd0506dee16d6df9e002b7b703168a8affcd337712ed7495626c"
   end
 
   depends_on "gnupg"
@@ -25,7 +25,8 @@ class Woob < Formula
   depends_on "python-certifi"
   depends_on "python-lxml"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
@@ -95,7 +96,7 @@ class Woob < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

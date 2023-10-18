@@ -7,8 +7,8 @@ class Libplacebo < Formula
   head "https://code.videolan.org/videolan/libplacebo.git", branch: "master"
 
   stable do
-    url "https://code.videolan.org/videolan/libplacebo/-/archive/v6.338.0/libplacebo-v6.338.0.tar.bz2"
-    sha256 "256c5cb01cafddc341bb7cd4df9b17f7e92b943e6cf5696ec1bd5cd1d5a381c8"
+    url "https://code.videolan.org/videolan/libplacebo/-/archive/v6.338.1/libplacebo-v6.338.1.tar.bz2"
+    sha256 "66f173e511884ad96c23073e6c3a846215db804f098e11698132abe5a63d6f72"
 
     resource "fast_float" do
       url "https://ghproxy.com/https://github.com/fastfloat/fast_float/archive/refs/tags/v5.2.0.tar.gz"
@@ -24,30 +24,27 @@ class Libplacebo < Formula
       url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
       sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
     end
-
-    resource "markupsafe" do
-      url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
-      sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
-    end
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f5c9a06e13dd825f4d48e82ea6002fd4d7d8883d41f1b32c850ef711be01d1ce"
-    sha256 cellar: :any,                 arm64_ventura:  "68223c2bd93eaebfe65e4c1cf4451ba30c6a580b872f3ced4927a3c01d71b503"
-    sha256 cellar: :any,                 arm64_monterey: "919337809c0a2b87539ffd9b848af5537869598834e0b0a99281ee2930b74a15"
-    sha256 cellar: :any,                 sonoma:         "3a3375f51275ed05ddba0c4058272bc7286e05a973da9e490531418ee79053e8"
-    sha256 cellar: :any,                 ventura:        "844927cb7086ffaef1d3e5d56028494ecdc7dacb63bbb39a47fff95a7817e8bd"
-    sha256 cellar: :any,                 monterey:       "8aadca199d518901febb930669278ed4bd877308722c443e55021c82d74add17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a180e51555a44b34fac243cdd5bb8878c4bea545de37526f2b43b90d8bb14d7"
+    sha256 cellar: :any,                 arm64_sonoma:   "e1c42d1327983e90d82f4e077e8bf14c7afae01c95aae6113b7a3f371b9ac4bf"
+    sha256 cellar: :any,                 arm64_ventura:  "e6a5759fbca2ef6e6004b6a2b7e356d84061e8723559d0f56ecd0f46dd86f67f"
+    sha256 cellar: :any,                 arm64_monterey: "886b67b276e0c879a497b20826f8d5377cfefff60d88ecb5cb71816a53d40957"
+    sha256 cellar: :any,                 sonoma:         "d35b66c02f1933b3723b2531075aa6a28df8c18ba16fc4bf0067039970a7e2f1"
+    sha256 cellar: :any,                 ventura:        "88deccd1f3d40a6449b6f71467168d1e56c0a85c30e282042b610783aeaca4e1"
+    sha256 cellar: :any,                 monterey:       "820949127d8d376762ce0c3184e2a63ad85eb55da68b8bafb98ebd9a5a44bada"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f1fbe78408554a619163e3a09961d95cab0ce22b445ae47583b65edec9e44463"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12" => :build
   depends_on "vulkan-headers" => :build
 
   depends_on "glslang"
   depends_on "little-cms2"
+  depends_on "python-markupsafe"
   depends_on "sdl2"
   depends_on "vulkan-loader"
 

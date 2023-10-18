@@ -6,22 +6,22 @@ class Img2pdf < Formula
   url "https://files.pythonhosted.org/packages/95/b5/f933f482a811fb9a7b3707f60e28f2925fed84726e5a6283ba07fdd54f49/img2pdf-0.4.4.tar.gz"
   sha256 "8ec898a9646523fd3862b154f3f47cd52609c24cc3e2dc1fb5f0168f0cbe793c"
   license "LGPL-3.0-or-later"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "83543aafc2b842e677726ed4afc43e3bf25bd836e3d8ae3648894dc9264ee224"
-    sha256 cellar: :any,                 arm64_ventura:  "0c49c0cb4274a79378c9640264bbd04cd7bddfd4d35c69b344438887d868ad1f"
-    sha256 cellar: :any,                 arm64_monterey: "77c8bd45f602e7192fe734c89dfc752e140cce963f5260d39d45a846d1d6b2a0"
-    sha256 cellar: :any,                 sonoma:         "4a86fa2455b2bbbaa1d32d6c9f707ff6ba5d837a53ea304ff5b0dc887e8b31cc"
-    sha256 cellar: :any,                 ventura:        "fcbf8a53b23c1329b184c475316864cf62a1900d0e15d5ac0d6409256b9061e9"
-    sha256 cellar: :any,                 monterey:       "30837a428470d2600616b09f979ac631f50fdf416abee96b5ce75dafe2e83042"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8893acca7dcecba310733d84246e18b061ae84de185bf688da0f9651eb7ffdd0"
+    sha256 cellar: :any,                 arm64_sonoma:   "a93aa3091566600d462cdada6230f1f4e719936965b789dba7754606aabeb47a"
+    sha256 cellar: :any,                 arm64_ventura:  "01650a4d1aa5234b48eeeee4209e9e71aa6a0ed0debaa3cd706a294a95c30954"
+    sha256 cellar: :any,                 arm64_monterey: "ff3374f676856e052de7d1db31574dd21bb097d92dffc98e329f65fce265bee6"
+    sha256 cellar: :any,                 sonoma:         "c348745f00f56765220dd0eaa23997c1bf83845d6e6a8260b19dc14f1b3b4ced"
+    sha256 cellar: :any,                 ventura:        "008a2f535e03de53b70b65ec6b8c4d0575f3dc250bb72a422c2cdae2d61adbb6"
+    sha256 cellar: :any,                 monterey:       "81c4510ca8e11eb6c72f29dbc87a8f9d5b5702f33ca913cd6557c28aa4d2d928"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed561971b932a1b94a74d0f96dae9ea7dd37567633568a9f85de9fc0ffac077e"
   end
 
   depends_on "pillow"
   depends_on "python-lxml"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "qpdf"
 
   resource "deprecation" do

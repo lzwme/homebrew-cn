@@ -20,7 +20,7 @@ class XalanC < Formula
   end
 
   # https://marc.info/?l=xalan-dev&m=166603389016762&w=2
-  deprecate! date: "2022-10-22", because: :deprecated_upstream
+  disable! date: "2023-10-17", because: :deprecated_upstream
 
   depends_on "cmake" => :build
   depends_on "xerces-c"

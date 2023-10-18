@@ -9,27 +9,29 @@ class Llm < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "eada59aa9b1026af9c68c30d453a583b97ecbab6d2da40d37a17b7230e73fceb"
-    sha256 cellar: :any,                 arm64_ventura:  "7fe17f5fd86ac9590f475a563d4dcf2f76eb2279d6d3944ce9d61f5db677969a"
-    sha256 cellar: :any,                 arm64_monterey: "a555da77786307ec7f43e437f8ff76027892247a99023f1354f8c214b3e0a6a8"
-    sha256 cellar: :any,                 sonoma:         "43bedca4843bfb0455d37984c94acfa724486f92fecb129dcad09ba506f213c8"
-    sha256 cellar: :any,                 ventura:        "ea936492a992133ad4309697f5e810787445d9a7e8597efffe12991a5d6c47f8"
-    sha256 cellar: :any,                 monterey:       "070af3a00fbea31a0a603f0c61f962a65138d8bfd0b3dd8c07f9cabffcca5594"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e0d09776aee871b1046dbff23b7b273bd85285650ebcdfe956402f11ef3efb9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "5a5aa486ef8c9a08ccb21b7c88103763de818dc8f12c11ff545259f10ae1f35c"
+    sha256 cellar: :any,                 arm64_ventura:  "92ac99c5cde25255c14c5637761ba3bd62adcb7986fb052edb5102f767c17ea5"
+    sha256 cellar: :any,                 arm64_monterey: "a93ee3121a0176eee83236cab27fd016f03f923d6f0d377a0b7075bfb32c69ac"
+    sha256 cellar: :any,                 sonoma:         "6272911562c66f7b0193966b86407c11ca61062faf5ae75c34c810ab1b029f56"
+    sha256 cellar: :any,                 ventura:        "90e1c30958394cdc8b24a305adb3d41fc630a24cac50aceaa831a3ce2adb3fab"
+    sha256 cellar: :any,                 monterey:       "0384417909161d93d9044c18049c397eafc0eaa61e3e85337ab092f3eacb2b6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2e12c741b5cd7b56bb741d56c734bef344dc1aa744f006e4055791a3587eaf3"
   end
 
   depends_on "rust" => :build
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-setuptools"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/d6/12/6fc7c7dcc84e263940e87cbafca17c1ef28f39dae6c0b10f51e4ccc764ee/aiohttp-3.8.5.tar.gz"
-    sha256 "b9552ec52cc147dbf1944ac7ac98af7602e51ea2dcd076ed194ca3c0d1c7d0bc"
+    url "https://files.pythonhosted.org/packages/c4/50/a717a133bda2efc27efbf8a65398c925b6d0605213da0db6929627ccb758/aiohttp-3.9.0b0.tar.gz"
+    sha256 "cecc64fd7bae6debdf43437e3c83183c40d4f4d86486946f412c113960598eee"
   end
 
   resource "aiosignal" do
@@ -38,8 +40,8 @@ class Llm < Formula
   end
 
   resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/42/97/41ccb6acac36fdd13592a686a21b311418f786f519e5794b957afbcea938/annotated_types-0.5.0.tar.gz"
-    sha256 "47cdc3490d9ac1506ce92c7aaa76c579dc3509ff11e098fc867e5130ab7be802"
+    url "https://files.pythonhosted.org/packages/67/fe/8c7b275824c6d2cd17c93ee85d0ee81c090285b6d52f4876ccc47cf9c3c4/annotated_types-0.6.0.tar.gz"
+    sha256 "563339e807e53ffd9c267e99fc6d9ea23eb8443c08f112651963e24e22f84a5d"
   end
 
   resource "async-timeout" do
@@ -138,8 +140,8 @@ class Llm < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "yarl" do

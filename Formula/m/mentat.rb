@@ -9,13 +9,14 @@ class Mentat < Formula
   head "https://github.com/AbanteAI/mentat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "10be447639c4bbb7a654343b8f338da6137ce2aee5e43f088e9c8ab789baa0e6"
-    sha256 cellar: :any,                 arm64_ventura:  "da20bd8b54bc45509750637110d0e7387820b5adf90e673bb7493c7b979de718"
-    sha256 cellar: :any,                 arm64_monterey: "9ed28a7e896007ef6359a86398ce96202c52389596f2c45268fd24899d3e7793"
-    sha256 cellar: :any,                 sonoma:         "d440a7b155412686167374e0e05ed205c7074261fd8130c6d97a2f461c1a0ad7"
-    sha256 cellar: :any,                 ventura:        "60b61fd186abde9a590ea40d1e00aea1393762d083cc005079ad52fd0e4acb66"
-    sha256 cellar: :any,                 monterey:       "0429f145f6c6f51371bd7ebc0f0b8a18ffd67a594ceb2d13d3dedb2464acb80e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5bf4c27f62237284bb312abdb3f5f9b5051496b3b7842ea00c3805ba045a4ab"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "da19ccc1e4e884a20955211d17b8a10bcd9d57d1b201867c6b7c49554992f178"
+    sha256 cellar: :any,                 arm64_ventura:  "e2b27d51842c20d95c559479238952f598d3e62171fe511c8d1de63639db1899"
+    sha256 cellar: :any,                 arm64_monterey: "6ad91ba99e23293fa80160ac83c74be342082c2d23756b2cf82d37d009f01ae0"
+    sha256 cellar: :any,                 sonoma:         "8ab58680ee1c641129e5ab0bd37c554479b23b6a4f2817536cc39ca8e93eab38"
+    sha256 cellar: :any,                 ventura:        "1503980df403302b3d30e0a199d1bccb6a67c97363ffedfd65d2b9d916a15d67"
+    sha256 cellar: :any,                 monterey:       "73c2e31910c9e272a6227d6774c596ee6930574952e09c7f19e160e8651115e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e5ef37be3b9661a69d546b0b2a0537ef970349f5d04e9a67e9795b6ff1ea876"
   end
 
   depends_on "rust" => :build # for tiktoken
@@ -23,12 +24,12 @@ class Mentat < Formula
   depends_on "python-certifi"
   depends_on "python-packaging"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/fd/01/f180d31923751fd20185c96938994823f00918ee5ac7b058edc005382406/aiohttp-3.8.6.tar.gz"
-    sha256 "b0cf2a4501bff9330a8a5248b4ce951851e415bdcce9dc158e76cfd55e15085c"
+    url "https://files.pythonhosted.org/packages/c4/50/a717a133bda2efc27efbf8a65398c925b6d0605213da0db6929627ccb758/aiohttp-3.9.0b0.tar.gz"
+    sha256 "cecc64fd7bae6debdf43437e3c83183c40d4f4d86486946f412c113960598eee"
   end
 
   resource "aiosignal" do
@@ -142,8 +143,8 @@ class Mentat < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "wcwidth" do

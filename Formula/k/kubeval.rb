@@ -21,7 +21,7 @@ class Kubeval < Formula
   end
 
   # https://github.com/instrumenta/kubeval/commit/fe0a7c22b93b92adfdc57d07b92d5231fd0b3e0e
-  deprecate! date: "2022-12-07", because: :unmaintained
+  disable! date: "2023-10-17", because: :unmaintained
 
   # Bump to 1.18 on the next release, if possible.
   depends_on "go@1.17" => :build

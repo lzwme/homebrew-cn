@@ -1,20 +1,19 @@
 class GetIplayer < Formula
   desc "Utility for downloading TV and radio programmes from BBC iPlayer"
   homepage "https://github.com/get-iplayer/get_iplayer"
-  url "https://ghproxy.com/https://github.com/get-iplayer/get_iplayer/archive/v3.30.tar.gz"
-  sha256 "05a39d5447eecfc2f95a616bf8d4dcf59ca3b3a0ecda1f82882401e6d74e286c"
+  url "https://ghproxy.com/https://github.com/get-iplayer/get_iplayer/archive/v3.33.tar.gz"
+  sha256 "7759dde37810a60631e603c4b56ecb5d7c5b6365dd837b2199895adf25c1c75d"
   license "GPL-3.0-or-later"
-  revision 3
   head "https://github.com/get-iplayer/get_iplayer.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d6867c24d34d72d93255aa4b0e8341c512b04d400b726d3d08305dde5b99ec99"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d6867c24d34d72d93255aa4b0e8341c512b04d400b726d3d08305dde5b99ec99"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d6867c24d34d72d93255aa4b0e8341c512b04d400b726d3d08305dde5b99ec99"
-    sha256 cellar: :any_skip_relocation, sonoma:         "acedcd7e3bb591c48f732a0b15d294379b22ec6f7a51709c5d597b606f824281"
-    sha256 cellar: :any_skip_relocation, ventura:        "acedcd7e3bb591c48f732a0b15d294379b22ec6f7a51709c5d597b606f824281"
-    sha256 cellar: :any_skip_relocation, monterey:       "acedcd7e3bb591c48f732a0b15d294379b22ec6f7a51709c5d597b606f824281"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7667be010f067d80a8683fa5870adc8d95776c5b75ed579c2414a20bcde24747"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a57cad2518582d4858cdd3a5439d64d54751dfed1774eaf417ac165fed5a1470"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a57cad2518582d4858cdd3a5439d64d54751dfed1774eaf417ac165fed5a1470"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a57cad2518582d4858cdd3a5439d64d54751dfed1774eaf417ac165fed5a1470"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3d288363f19cda392a9e6cea335d5f9e55040568b3beeb72b70b6ae6a171fa91"
+    sha256 cellar: :any_skip_relocation, ventura:        "3d288363f19cda392a9e6cea335d5f9e55040568b3beeb72b70b6ae6a171fa91"
+    sha256 cellar: :any_skip_relocation, monterey:       "3d288363f19cda392a9e6cea335d5f9e55040568b3beeb72b70b6ae6a171fa91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7a82e46361e52dec706149d84b049599efbcb7c1c1f004b2fd98a729fba42f5"
   end
 
   depends_on "atomicparsley"
