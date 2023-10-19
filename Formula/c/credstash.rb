@@ -6,18 +6,17 @@ class Credstash < Formula
   url "https://files.pythonhosted.org/packages/b4/89/f929fda5fec87046873be2420a4c0cb40a82ab5e30c6d9cb22ddec41450b/credstash-1.17.1.tar.gz"
   sha256 "6c04e8734ef556ab459018da142dd0b244093ef176b3be5583e582e9a797a120"
   license "Apache-2.0"
-  revision 9
+  revision 10
   head "https://github.com/fugue/credstash.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "30e9dfa2ccc36e720b7eee5e40102b2947d9122107dd7b40ba7ce9dc5375e1e1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4eb5dcf022551de21d49cc7f06492e78e0c525ae292c17f8c54db51b1bf931db"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e9e08e6ddbd9f464b06d3fd9b3d4ae4845dffa5641da31122e177df9ebc325a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5b9d87bb6fbd1f3587cbb9983589c608023f5664bcc74dd6686b0981ce1d4a34"
-    sha256 cellar: :any_skip_relocation, ventura:        "b57a63ebebb9eab01391f6392bf2e7daea6db637d82db81206769b3afd80c333"
-    sha256 cellar: :any_skip_relocation, monterey:       "0df5a49ffb25c4bf2459d9d3d834a26121af53a158b16465d99e877d8c2b09d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "43f4d15f859169b45ef90c2f055a8fd4a593b0e1fafd61387b5dd506cd4458b2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d02c61285d4d857d8876273c23711aabc066492fca692763eed3912a1f697ca8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b138f35a1eb341186dd6dc41c2b1540039dc518bca8e5d8c3d577ee15364b7e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "372cc126899ab73e28ee0ccefb7721ec1e450535f9533c896b8b3ff211a4314b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f73d4bd50d29a0994bbd04d77071f435bb26bdd87ddaa6c1110bc9b37ba5f43b"
+    sha256 cellar: :any_skip_relocation, ventura:        "9b33377f180d5f5feb8468f613941c3a3d56e841c1dca8830719cc19339c2380"
+    sha256 cellar: :any_skip_relocation, monterey:       "1824bdc223addab4fb427d95bb216749c1289123fd39a2ecf9640faa76a7a6a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8f89c12787051c8f50e274981484d7e5632ac128612c3be813958d2d5ce58c4"
   end
 
   depends_on "cffi"
@@ -29,13 +28,13 @@ class Credstash < Formula
   uses_from_macos "libffi"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/42/56/633b5f5b930732282e8dfb05c02a3d19394d41f4e60abfe85d26497e8036/boto3-1.28.61.tar.gz"
-    sha256 "7a539aaf00eb45aea1ae857ef5d05e67def24fc07af4cb36c202fa45f8f30590"
+    url "https://files.pythonhosted.org/packages/1b/2f/4ccd05e765a9aa3222125da37ceced40b4133094069c4d011ca7ae37681f/boto3-1.28.65.tar.gz"
+    sha256 "9d52a1605657aeb5b19b09cfc01d9a92f88a616a5daf5479a59656d6341ea6b3"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/05/2e/9cb8adca433af2bb6240514448b35fa797c881975ea752242294d6e0b79f/botocore-1.31.61.tar.gz"
-    sha256 "39b059603f0e92a26599eecc7fe9b141f13eb412c964786ca3a7df5375928c87"
+    url "https://files.pythonhosted.org/packages/42/30/e5e2126eca77baedbf51e48241c898d99784d272bcf2fb47f5a10360e555/botocore-1.31.65.tar.gz"
+    sha256 "90716c6f1af97e5c2f516e9a3379767ebdddcc6cbed79b026fa5038ce4e5e43e"
   end
 
   resource "jmespath" do
@@ -54,8 +53,8 @@ class Credstash < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/dd/19/9e5c8b813a8bddbfb035fa2b0c29077836ae7c4def1a55ae4632167b3511/urllib3-1.26.17.tar.gz"
-    sha256 "24d6a242c28d29af46c3fae832c36db3bbebcc533dd1bb549172cd739c82df21"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

@@ -8,20 +8,19 @@ class PassGitHelper < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6ad1e4a2750244fbeb3b64f8dd75f47754283a26f4d3c1924d408bdc5fe41d93"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa1908081936c96726efc978ebda0bb925774fad4c2db387ed68cef69deae138"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "525dbef2e267f434fea8d53aec68e569e9f6fca9768c8d06e89a83aeaeec9f00"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "46d1f3cd4408ed377783b6c3e208b8e4b99e510a09c0a0a1b29b8b5f153ee756"
-    sha256 cellar: :any_skip_relocation, sonoma:         "712c6ccfc72d9d62e095f0f7d10df780cd96f48dd0539234720d0f6a90d54596"
-    sha256 cellar: :any_skip_relocation, ventura:        "8ac8045fc1950475ae41c755bdcf8393e718c1646e9e1028e0c8b17e180dda9c"
-    sha256 cellar: :any_skip_relocation, monterey:       "ed2127fc69d08a420a5bd06ed99422c5f4340ce32d74ca6b77fbf427fcd24eba"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8daa0b2b079f9d4d105536769ce5e4a9012e3106997f4c4411168206634c7aa1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "519db42f0f2d80890ee442287fe642e4c5cfdcdab470e5b162ba9180e0e4952f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fdc265cc693c80244970842b29a23b10bcac4e94599cd2297573ccabe203800e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5b3de00c73f481bc8b94a6583c7876456b4d8a1012c5d04c23650fa756fefe24"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8b4058dc34bd143523ba63508fedc3c134ff2b32849760749e311f22dda2354c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9ab93883a4c6fad9590825c56b91ead41eb2bc5d26f5eb8dcdf91bc080dfd562"
+    sha256 cellar: :any_skip_relocation, ventura:        "244c7b676c2a9c4a86ccd0c65049c04f4287b57ded1b5606371c146846be91bb"
+    sha256 cellar: :any_skip_relocation, monterey:       "5e15d0b0029bd93e59274db88413b9c7cf80eafece3f5ebe09027507383d2809"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e79aba73f7d62ef27c71b6b8ae888721c89ac4ab919c1f2ddc0af9817c308ab8"
   end
 
   depends_on "gnupg" => :test
   depends_on "pass"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "pyxdg" do
     url "https://files.pythonhosted.org/packages/b0/25/7998cd2dec731acbd438fbf91bc619603fc5188de0a9a17699a781840452/pyxdg-0.28.tar.gz"

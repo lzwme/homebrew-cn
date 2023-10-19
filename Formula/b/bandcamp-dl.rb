@@ -6,18 +6,17 @@ class BandcampDl < Formula
   url "https://files.pythonhosted.org/packages/cb/6f/08d0e2b1819327e375ebf67af0689727b2d49db7c0d11d4829552ea01ae4/bandcamp-downloader-0.0.13.tar.gz"
   sha256 "c7dbf489b2611406148a6ced25e5814b1fe666e3b3da6c744cfc3df2abe1b270"
   license "Unlicense"
-  revision 3
+  revision 4
   head "https://github.com/iheanyi/bandcamp-dl.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "954497236c7e861e00e2dd16ba0dbd2cec8cf4060e032dd01adaf6c388f6240d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "20c5af611478ec39c6f3a344d3691db5d6ae64aecc4a54841cc3b642d9fd43c3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ae7469ea11d4f2d7de1a4c667758b18329aa486a3cde46ed575cda8166d39532"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5d7cefa39c724ec715bb24e4794d79d8c4cd3a7063936ee6eab3627f93c761e2"
-    sha256 cellar: :any_skip_relocation, ventura:        "812989e952bc37da37e17a925980aea84e7a8cf9518c4f1d273b18139aaff64d"
-    sha256 cellar: :any_skip_relocation, monterey:       "b9b34b51a4ae3296587d816670b888f9eeeecce3b0829103d8fa498f0af8258d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39acc44fa7ed6a7769256257a9f5332b839f070e773b51b484f3f8124e6f9112"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "93661605a6836e791ccdf48e912c7b942a20f6505a47ff33706fcc6fc03662e9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "63e3097d6b318c618c45605f58b2e3bd3aa7194af3b8196c8ed43995e5b467b2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b7b539c6181f2550212d833d6e04320609756b3246a9bd9117125b16aa70973"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7daf5c519da78e1ae4e1f08883d44b0df3f4a8f891cef81899ac963ce6c807f0"
+    sha256 cellar: :any_skip_relocation, ventura:        "edf8dc8d0213a10abf747b093cacdd1b018c65a1d3d1c82d45c4ff207a9a8bf8"
+    sha256 cellar: :any_skip_relocation, monterey:       "cd22a1c08df6803c30ab4e7a5473f93af2286c4e3a8f2a2ac0329b4f600731bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dcd35281c71568c94268fa131483689585e8e6a6866d5c71ac0425291dd7f3e1"
   end
 
   depends_on "python-certifi"
@@ -82,8 +81,8 @@ class BandcampDl < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

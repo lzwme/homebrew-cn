@@ -6,17 +6,16 @@ class Howdoi < Formula
   url "https://files.pythonhosted.org/packages/6d/43/0e8166583575bd500c0f8f1a4ab9429af9466feb6fcdc006e88de8fd23e9/howdoi-2.0.20.tar.gz"
   sha256 "51cd40c53e0c0f8f8da88f480eb7423183be2350ab4f0a4d9d4763ca6ac3e2a9"
   license "MIT"
-  revision 5
+  revision 6
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c96c8c98985e3bfadb8521b489c7688742efdf97e1f128b1f948196732a1afc0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "99154136a6f26136131868833979c82a9ed5cf2c17d1b57424cb68bc754ed4cd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d93c1d42b2e24f1abf38b89406398c1240e170dcc072a80052d57962e54711d3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c026ced2dae93ba2be1a6b9c8ca3a9d77073342a452f0d05f429680f07442bfd"
-    sha256 cellar: :any_skip_relocation, ventura:        "47923215386b53a4f9007fbf09081fdac9578d649def886f3a3c167340c8f985"
-    sha256 cellar: :any_skip_relocation, monterey:       "8670decaf52b1fd13570aeb1879427b1f0ea5337d360850beda978634ffb2182"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "808c0db074c55844317fa59048967126d4bc7b10a6a344442c126befaf2c442a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e2f8d4b70ffa2811870f264b98574b4865bdc697c2c0d5a4980c40428c74934c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "86840c35ebe6b7b4446d977b39b5cb7f9df93a6f8d60bbe36a010e3ce16fd740"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bb0f7dfe787fa4bd21019a51b188535e72368737283fb74016a8220e2bb33c73"
+    sha256 cellar: :any_skip_relocation, sonoma:         "eac53777739c8f6fb599b457e4fc6370062efb39d35f1d3cb14e9fc5176e1627"
+    sha256 cellar: :any_skip_relocation, ventura:        "3ba0981a9b1ecb363342d9f0a58d603931e53de576c4fb4a2ec23adf4774d251"
+    sha256 cellar: :any_skip_relocation, monterey:       "821f4c3cc5c0b2bea8057aaa1400174fbba4d748f41de2fac9ceb698ec218aaa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "288bcd3972f682211ac9a85278518f1336c990cad7adc4169e00c1c842952ea9"
   end
 
   # `pkg-config` and `rust` are for `rpds-py` via `terminaltables`
@@ -128,8 +127,8 @@ class Howdoi < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "wrapt" do

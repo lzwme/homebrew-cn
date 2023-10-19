@@ -6,17 +6,16 @@ class Goolabs < Formula
   url "https://files.pythonhosted.org/packages/ce/86/2d3b5bd85311ee3a7ae7a661b3619095431503cd0cae03048c646b700cad/goolabs-0.4.0.tar.gz"
   sha256 "4f768a5b98960c507f5ba4e1ca14d45e3139388669148a2750d415c312281527"
   license "MIT"
-  revision 7
+  revision 8
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9bd701a453f954a13658ad92f71e5c14e226c9fe6a92727c7c7ccb5f15c907a2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b9e7d7e87de181ced8471bbfce522b655d999f8241c21fbc4005ff91c17ee6d9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "13447039d6faf4f55782dd9540a2e4de141d79997b58f0546ff2571b63542166"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c36c85d100f4de6f3ac9cc96a33fce4fd723b87422ff22a18430de66f05f583f"
-    sha256 cellar: :any_skip_relocation, ventura:        "6c20f42708141d1426daa0ef8c4580d270200381c26b07d5eee8ec90b5746a44"
-    sha256 cellar: :any_skip_relocation, monterey:       "c15d278d0ea075dbeef84aa9adbaf3dbc93b787f96b8c6b7048d861caf409008"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f6283db4d6f018fb30022d0bd73c181bc32b98ea27ef9b4d63cde8d42b72620"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ec2d48ef64de82848734cde06416e318e0e71d226a5c9517d683ef68f3b67820"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0d8bf5afd13ac12fe10795c9a04cb75f4586d1661ff92b61cf3591a1e14bf368"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "45434838d1d08ab79ec52a6c30be5cc611b4e6bc5f342b5c10ed7ebde214c07c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "969fa451d5fec752c6d4bcf063f34fe4e68d65ec1f2de01681f19170bf3c2761"
+    sha256 cellar: :any_skip_relocation, ventura:        "89730e6267251c28fe7b536803d865b3f4c773c50810310e95c69246c79f8835"
+    sha256 cellar: :any_skip_relocation, monterey:       "fcd0aa599bc30bec9971ab63fd8d62c2c72aa66d63c0e84b232e98c92e8322af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "958887708d216fead50d597c2763e779e38bbb1e66b68c417837a41c1ba1975d"
   end
 
   depends_on "python-certifi"
@@ -40,8 +39,8 @@ class Goolabs < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

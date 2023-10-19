@@ -6,17 +6,16 @@ class Borgmatic < Formula
   url "https://files.pythonhosted.org/packages/72/07/d38dedf5d64f7213420a0353f7acd3439e12808c4abbbe145449962b0d75/borgmatic-1.8.3.tar.gz"
   sha256 "980851fa10b0ca3f9879ddb6e2fc4c12839cff583e97a8d5c9cc5f2c908b25ff"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "de9402fe77da1853da06d81ea5910a63127eb885ca658a9f0f2b574e9175b627"
-    sha256 cellar: :any,                 arm64_ventura:  "d96bbc5aa47610986dc5da07e43854f5b207e02f33f52986c2f5f8c516328958"
-    sha256 cellar: :any,                 arm64_monterey: "64334ab89adddd96873c9dc857a69431f870440760d9a696aa08fadb19d23b24"
-    sha256 cellar: :any,                 sonoma:         "8a6e4ce3fbd838b51292c6585b901ce41ee10ebcdcedb74ac2925b87196864ea"
-    sha256 cellar: :any,                 ventura:        "1ebc7e7f78efb6c0236322a9d2af034e8c4f854a8ddd11e89301ab17443c33ea"
-    sha256 cellar: :any,                 monterey:       "98fe4d31dd0492768c9717236ec6e8d83252cc4d722f8522d4320909f16f15a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ada4b7d93fd11ff3bf622d751b91033d33913e3050bc36becc1369f582dd65d"
+    sha256 cellar: :any,                 arm64_sonoma:   "17e8a059de3eea812a1d1ce0749e71f71ccc8c1fda50bb5d8137d51c590247d5"
+    sha256 cellar: :any,                 arm64_ventura:  "f980aba754ac216f48564274b450f170d7a2fa5af1fe5c2cca67ed541825c2d0"
+    sha256 cellar: :any,                 arm64_monterey: "9d14e28002b9e551802b2bcdd56b395eb072927abbcec677c4c9f7f7a7c221c0"
+    sha256 cellar: :any,                 sonoma:         "d1a305403c02aa37a84511fe723e93694e16c0fe2af65e0e46629be095caeadc"
+    sha256 cellar: :any,                 ventura:        "4ffc7b2c5c8956c1f1bf60a6c1180015196e26e048f3f43584993c4a2edfab00"
+    sha256 cellar: :any,                 monterey:       "2cd536a3116aa552a5d8c066b0da9e120469926a51d2766076224f42084b780e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2c499cf552a15cd30a4ff48fa2d99b6601a5e00fc5d41321598793f0d930082"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -80,8 +79,8 @@ class Borgmatic < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

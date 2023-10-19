@@ -6,17 +6,16 @@ class Principalmapper < Formula
   url "https://files.pythonhosted.org/packages/3f/8c/3d2efe475e9244bd45e3a776ea8207f34a9bb15caaa02f6c95e473b2ada2/principalmapper-1.1.5.tar.gz"
   sha256 "04cb9dcff0cc512df4714b3c4ea63a261001f271f95c8a453b2805290c57bbc2"
   license "AGPL-3.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3d5c7d31e824aab00c30ae828179a28176182d0932e104a699bb10689dccd6ff"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9afae15dc6ddfc76ff5816b8f48338ed9b6a16a955a2ad1f1707ba7748265cf0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a24b27a5cd5907a2730dabb49c75ebdd6b71c8390205c7d35241c5c92c16a7a2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "01f3740478ffd7efff931719561d57c2fedfe666b0e21dd73021ac669505784a"
-    sha256 cellar: :any_skip_relocation, ventura:        "9f0b2d731dcc1f183a597d7e992d9769a89a8de14599ff0837d661064ef29e2b"
-    sha256 cellar: :any_skip_relocation, monterey:       "191dcce7bb97351f7adb565bcd5cd38f84accb72cdfb4ea2c2c419cda202118b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cfda9b84968839cd2f6bf9e9d1c01e1f4421792fdbafbec2097cf018518166e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fb0e42a91b655ec406681c90f4f5b3146702d2cc22b6592ab4c5ff128cb8fda1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d90c850fdba77ddb8cc477a62472361b1d43a861dc15e403f645754fe70f5913"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e03cfca7d3bc537fcd64e5ade182b4be8e5f400d3687629b0c33ed2bb19f9819"
+    sha256 cellar: :any_skip_relocation, sonoma:         "17da4fcf6eeefc4bf20ddb5158b53f4461b5d8e148faeb806863a09eb61fceab"
+    sha256 cellar: :any_skip_relocation, ventura:        "0dfa59618f7a9c278843265366b0e5fe8eb5e731b26733af773016712bc4af0a"
+    sha256 cellar: :any_skip_relocation, monterey:       "4bb5acc0afba8c403c94f051030d53239d6b7cf8ca43797394d6bd0116dda614"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8d106b821705f88a2c7003b7cf7652d436563d8f340e9c74b7e75d756ef1bc1"
   end
 
   depends_on "python-packaging"
@@ -24,8 +23,8 @@ class Principalmapper < Formula
   depends_on "six"
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/02/d8/f7d2a1247b9430c0e8be761b4b2485930d2b45f14ec912ce0fdb4aeec348/botocore-1.31.62.tar.gz"
-    sha256 "272b78ac65256b6294cb9cdb0ac484d447ad3a85642e33cb6a3b1b8afee15a4c"
+    url "https://files.pythonhosted.org/packages/42/30/e5e2126eca77baedbf51e48241c898d99784d272bcf2fb47f5a10360e555/botocore-1.31.65.tar.gz"
+    sha256 "90716c6f1af97e5c2f516e9a3379767ebdddcc6cbed79b026fa5038ce4e5e43e"
   end
 
   resource "jmespath" do
@@ -49,8 +48,8 @@ class Principalmapper < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   # Support Python 3.10, remove on next release

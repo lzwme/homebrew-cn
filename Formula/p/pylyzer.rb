@@ -6,17 +6,17 @@ class Pylyzer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9d2f3249d1e166b4d57ef5720787d6c492cb893c28e1da46bd13cf9e45178f02"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "40c1edc9134bc07574e109f5695c793e0f23cd6b64b8cd33fb46ca1a1ea019c7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4f7a5d52474456f02076d2735a3e663551d0eb3d116c694061f37353086f0a23"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9907573261f0715749ef8e6050070761a8d58cdb09606f60eec1293323071914"
-    sha256 cellar: :any_skip_relocation, ventura:        "a503d9867132026df8ab43d33e46dfa8a345c6e7d23eb0c911793c34162c83e2"
-    sha256 cellar: :any_skip_relocation, monterey:       "f9bf6dae44b5003551c3ce8320044c4af68090063989cdd80f028b2a97ddc401"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83e971b5af3a860c44c9914058042f881a25bbf0c31fbf08c848fbb80aed3d25"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "af821b35425dd96e2b37ed57f61529dd7069124be3dcf4a5d2c5b98b462f71a2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cbd8a9da5666a57b721af3d3bf57cba47d0cb34d4235ed3e0f56c0ee8a66396c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6baaa1e9888a54a785cb60b31084a004e585a54a9dd116890ad01c27fdaaf1c3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5e3cfda82bffd6386e9af21cc8fce59a826202aaf111987fa85fbd98e2034179"
+    sha256 cellar: :any_skip_relocation, ventura:        "00daf94923253436df78c2f749704d8ece51fc94eca2763a6d4118fd72d8763f"
+    sha256 cellar: :any_skip_relocation, monterey:       "7a6ddf57d8dcc5afbb055902ca3939d86e9484126b32e20de3fb09f5c52eedec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a44e0ffd4111f88053b063c8137eff10500471abcc6d056961656f1cdee347f"
   end
 
   depends_on "rust" => :build
-  depends_on "python@3.11"
 
   def install
     ENV["HOME"] = buildpath # The build will write to HOME/.erg

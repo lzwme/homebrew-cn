@@ -6,18 +6,17 @@ class Pdm < Formula
   url "https://files.pythonhosted.org/packages/58/fd/b081937c283502be42efdf7ae4d7c7f8014c57bd74dbc7f9b629f44d22a2/pdm-2.9.3.tar.gz"
   sha256 "0b1195b51e9630b5a0b063f27dfcb0120cb6ea284f1a4cd975a3a26f0856d253"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9674eb115a60c0139d1d72f0f60a4c2641891cc05b51078686a390e87987d8b2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "85dfc9579db3ae787b990a5c00bb21b89c87246d996eed20439fdc8c38b832f3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "70e135f2d323c3a771c5a507642a2e30e1f51585eb06aa676d761abf41cdaaa7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d1a963533047eb504cc2638aa44b05ea28faac42b8dc2a2cde512df4dadbb17b"
-    sha256 cellar: :any_skip_relocation, ventura:        "32fe3ecf8936139e7514297ced56743ea251d8acd9894bf38d45b34d4b0b1517"
-    sha256 cellar: :any_skip_relocation, monterey:       "7f29ab561e2d6885af07b3a3f70f8785f49db9a09e1e9b08359690eef5598b60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdca5f1d8b3addf580be1b1ed22a04f3e7878eb1feb99bc3e210e494e5e0e2f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2f5c71000ed5def833a740b8f3632de2684aea14ee954db6ac98fa41808f8120"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b0a8ff6114502859de71ed23d2bfbdd161f63549c39a08597de1e33b33f2579f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "05bf57a1008a3b4c6e423d3d9b63ce164c4e2a32da8ff1e15145a39fd33c8cc7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5053517c0e8138dc46daca03a2581f4cd688e84fa904fb662ad1ffce4f208d57"
+    sha256 cellar: :any_skip_relocation, ventura:        "e13779230b10cf0010a02b0438d4f9d878cfa7a0b37bd907fb896aff613538ca"
+    sha256 cellar: :any_skip_relocation, monterey:       "4800c67360ffb6ca05d0744198047a135a404b867e03daa3ac3c98c6e8b78c5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "598bc81995ca61f2cbd0ff8eef91e6714edccd576c949fb00a93c86d8f150a0c"
   end
 
   depends_on "pygments"
@@ -28,8 +27,8 @@ class Pdm < Formula
   depends_on "virtualenv"
 
   resource "blinker" do
-    url "https://files.pythonhosted.org/packages/e8/f9/a05287f3d5c54d20f51a235ace01f50620984bc7ca5ceee781dc645211c5/blinker-1.6.2.tar.gz"
-    sha256 "4afd3de66ef3a9f8067559fb7a1cbe555c17dcbe15971b05d1b625c3e7abe213"
+    url "https://files.pythonhosted.org/packages/ea/96/ed1420a974540da7419094f2553bc198c454cee5f72576e7c7629dd12d6e/blinker-1.6.3.tar.gz"
+    sha256 "152090d27c1c5c722ee7e48504b02d76502811ce02e1523553b4cf8c8b3d3a8d"
   end
 
   resource "cachecontrol" do
@@ -113,13 +112,13 @@ class Pdm < Formula
   end
 
   resource "unearth" do
-    url "https://files.pythonhosted.org/packages/92/05/9b871e2262113d6b275cf0c57548a1aa15daa1c2fd96b5a308bf23995e81/unearth-0.11.0.tar.gz"
-    sha256 "af20729b398d2f3b839251d745e4f40f23cb09bd6b797e0a6ff6eed46ca70422"
+    url "https://files.pythonhosted.org/packages/54/7d/dd8e93dfa689af5b131a7de9a4066c6c1e55d814295ab6d020c584672553/unearth-0.11.2.tar.gz"
+    sha256 "0eb5a8800fda0610e095fef768b48d47c858c9b8417a785af647046c2df5ed2b"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "wheel" do

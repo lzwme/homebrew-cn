@@ -1,20 +1,18 @@
 class Fclones < Formula
   desc "Efficient Duplicate File Finder"
   homepage "https://github.com/pkolaczk/fclones"
-  url "https://ghproxy.com/https://github.com/pkolaczk/fclones/archive/refs/tags/v0.32.1.tar.gz"
-  sha256 "313d4dad30ed1db4d74abd78f30a7a9917c361918d2bc6d84c9d97a2a8c7c5cb"
+  url "https://ghproxy.com/https://github.com/pkolaczk/fclones/archive/refs/tags/v0.32.2.tar.gz"
+  sha256 "fdd214efe8f26a66e30a5555fed904a8cd8b0a0d6039012654bad96ab60af6e7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6d23243d4f527b082ae5399a65558d7b85f463ac6119ad4ce523ba118273bdff"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9067e8185d41cf16f5d3bc29fdc2b3ce8f4edad185b3c9ec383ab06aa811cca0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "03eff43c5ae76de8a591cc95a73ea5e0c65a689677d88e09f916da80606fa35b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "14f6717c129313c4d7547dbd9019045d2a1104c42bbe5885350c84ddc7ab15ee"
-    sha256 cellar: :any_skip_relocation, sonoma:         "31da480ef2aac3a948cd847eef9543bec030f2c0c44de228428fcd80cbfc48c1"
-    sha256 cellar: :any_skip_relocation, ventura:        "d5c29c8cde27f210b3980b15956bd1324c659e0c3651bf47db9038ff5295d901"
-    sha256 cellar: :any_skip_relocation, monterey:       "e36b45ce1b8df565f6d3cad2524457cc5ac8ce8052f37b515b2f9f22c1dd17ce"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6d92e888eb4d5636bf721e3cf195d2d8228a2ca3e1d4362dafa1e2d2469dc0a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8fb8949117746fa9a7d854b2f075c7ca21397f257ae46e39a6e1bfad5202a4e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fe53e22fccaf2a703813512051dcfc848923cea3700ce638b11bf6fb6faf6337"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "870827e654304c8026905c441cf9dd1c1e0dd9b9cc328e6bb47d4051eea95345"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "66d355cba9a926344f21978dbbd7a33147ffa9815d1be38361e647a3c5b391a4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9d4263003c117ea0e38de736c8843d0ceb7b1e1e8d6486e9551c3ef14433b781"
+    sha256 cellar: :any_skip_relocation, ventura:        "857dae20deeb09838a9405c62a3ce49638ca600c823d1ca18b13de462603019c"
+    sha256 cellar: :any_skip_relocation, monterey:       "458971c37bc45d7b8011197025a3c57bd2c6181287f0e7830b0e74a86e47fc6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0af033c0d97fc9a63c757ca860b8ca525250363d7605778c3011d4e78bc41f0"
   end
 
   depends_on "rust" => :build

@@ -1,22 +1,19 @@
 class Texinfo < Formula
   desc "Official documentation format of the GNU project"
   homepage "https://www.gnu.org/software/texinfo/"
-  url "https://ftp.gnu.org/gnu/texinfo/texinfo-7.0.3.tar.xz"
-  mirror "https://ftpmirror.gnu.org/texinfo/texinfo-7.0.3.tar.xz"
-  sha256 "74b420d09d7f528e84f97aa330f0dd69a98a6053e7a4e01767eed115038807bf"
+  url "https://ftp.gnu.org/gnu/texinfo/texinfo-7.1.tar.xz"
+  mirror "https://ftpmirror.gnu.org/texinfo/texinfo-7.1.tar.xz"
+  sha256 "deeec9f19f159e046fdf8ad22231981806dac332cc372f1c763504ad82b30953"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "c1cb88feb1a8464858f0d65a30ee80623acbe770efa7f391b3fb1e728609404d"
-    sha256 arm64_ventura:  "1da60ed030da20fe03388dc0a40271783c5bcc2dfb3d50710ca431f943ef48b1"
-    sha256 arm64_monterey: "d36424fb6c196b55f5acc459c393c8950b26cc71d05f15b7d5c7879ac438685b"
-    sha256 arm64_big_sur:  "f5af81647753a8f2e1f5882a7ced2d5c6a6c3b55d16a7b21d35f91951bb99eec"
-    sha256 sonoma:         "d7f2725cedafc0a11ce472a390c49a5434312f0d36db11eeba163ec99e358bbf"
-    sha256 ventura:        "023fb6a619944667e4c1601c260f4b5d12602af3e4a0acdab615426b3856ef66"
-    sha256 monterey:       "b6b367a26527726756c1addb017425929b6fc5f344171366c607c842fa53e205"
-    sha256 big_sur:        "37d2829b2d1127a25cc761de8d1ae8595720c889e24ba94695dd1786abaef626"
-    sha256 x86_64_linux:   "ec964dfd6398ab50dd10181d0fe2df909d6475942f1e1b47b35cffada2aa3236"
+    sha256 arm64_sonoma:   "6ee1d5c2e64d80dcc8da4639d55d6c7a907550efd3ecfb4757f719f875e3df1b"
+    sha256 arm64_ventura:  "7e412d561339fa51dd78af8d0f6ec0c6a56cd7ce907fb7b6c417a6c6f1eaadba"
+    sha256 arm64_monterey: "a106b57dcf2dbcd8e3c4ca4d25a48c93a8dec9ba8ba1940082d70c0220846342"
+    sha256 sonoma:         "65cf063c13da2f386da45a9161a8b1a8f88191273c66205f3c3267cc31857510"
+    sha256 ventura:        "971990897e2ec8424366cd1a0715972a58550890498b27a138f9d588115660fb"
+    sha256 monterey:       "34c5c6ada9cdd5cc4a1f84e16aa0990ddb3f3b98a9ac5890845e8ae2f327111e"
+    sha256 x86_64_linux:   "0e19faddba0095b10438272020bc3add109e39523683bc8705e1e0f1a9b2ca25"
   end
 
   uses_from_macos "ncurses"

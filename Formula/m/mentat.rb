@@ -3,23 +3,23 @@ class Mentat < Formula
 
   desc "Coding assistant that leverages GPT-4 to write code"
   homepage "https://www.mentat.ai"
-  url "https://files.pythonhosted.org/packages/72/9d/1c68404a2944423bb6450934c1b948bf38179a35bb1045133b8a2b287531/mentat-0.1.17.tar.gz"
-  sha256 "cf46aa5f214bed825ce4d283010acd64ed4dd1f6ab3fa33f24cd9f6220cfb2b8"
+  url "https://files.pythonhosted.org/packages/7e/89/c482a8b1754d733ca5bdc589c4d930c94f36047049307633eb62b7a8560c/mentat-0.1.19.tar.gz"
+  sha256 "8093ad981ad2b70d3c9d1f6d1c92cfbd9e6f4f5e028c099688eb71d02d804ebe"
   license "Apache-2.0"
   head "https://github.com/AbanteAI/mentat.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "da19ccc1e4e884a20955211d17b8a10bcd9d57d1b201867c6b7c49554992f178"
-    sha256 cellar: :any,                 arm64_ventura:  "e2b27d51842c20d95c559479238952f598d3e62171fe511c8d1de63639db1899"
-    sha256 cellar: :any,                 arm64_monterey: "6ad91ba99e23293fa80160ac83c74be342082c2d23756b2cf82d37d009f01ae0"
-    sha256 cellar: :any,                 sonoma:         "8ab58680ee1c641129e5ab0bd37c554479b23b6a4f2817536cc39ca8e93eab38"
-    sha256 cellar: :any,                 ventura:        "1503980df403302b3d30e0a199d1bccb6a67c97363ffedfd65d2b9d916a15d67"
-    sha256 cellar: :any,                 monterey:       "73c2e31910c9e272a6227d6774c596ee6930574952e09c7f19e160e8651115e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e5ef37be3b9661a69d546b0b2a0537ef970349f5d04e9a67e9795b6ff1ea876"
+    sha256 cellar: :any,                 arm64_sonoma:   "eb807dc4c2834b52b5c99c76885894d2220d268818ba7764d8889911c8f883eb"
+    sha256 cellar: :any,                 arm64_ventura:  "555e338619367ea328167c48d049f05f93eb6e07e20d06e2831c8f75b067f614"
+    sha256 cellar: :any,                 arm64_monterey: "dce88bce8accd3c20b2d5c155e52c38b152c8b9ce71f7d10be4b83898bb81550"
+    sha256 cellar: :any,                 sonoma:         "f6a8c4e37cb232d8fa6780a28013c10d899609ed2435d0cb1bd144dff989bc56"
+    sha256 cellar: :any,                 ventura:        "febdc3135c637fcc7fd87de27a0b3bc74255f41c8f36d1e30e7426dc718385b3"
+    sha256 cellar: :any,                 monterey:       "3f887ecd9748e081856a3c20e610c3ce86e22d3f189851fd88c8ce36654fc272"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d50fba98386afbf11447c740499a6428f25b592d80b9346230dfcadd25d605c"
   end
 
   depends_on "rust" => :build # for tiktoken
+  depends_on "numpy"
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-packaging"

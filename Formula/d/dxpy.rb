@@ -6,15 +6,16 @@ class Dxpy < Formula
   url "https://files.pythonhosted.org/packages/90/4a/8546678963831a30b5b7ca34210da4873aeef15aff0ab9d598c11fcdf965/dxpy-0.361.0.tar.gz"
   sha256 "455c2a63764e7a1158cdb48abcf987e80d186fb92c23c539d8e6f2e4cc0368c7"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "099b37b0b5918f3dcd9ee4cad0a02a8ae21a832237bd96234e27393642a98443"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2866d9a8a068c5740d011b7475d6b04473d97583f7798a194bbd3d9edb5eab55"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0a86372770fba7189a48942bf075d7b475028be06354279dd61ee4b94fd9fb62"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ed3dff31259be4b19725bc2116e39f47a980c9e5a1024699fcd36633ceda641b"
-    sha256 cellar: :any_skip_relocation, ventura:        "96bc1f2d283046dd193f2f5e5374d659034aee47da54cd3fc439f1708acdd756"
-    sha256 cellar: :any_skip_relocation, monterey:       "b0dc55ce53932f85dc80b08aa9a8e6058704e2121ec87287a98090cc19a0098f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c32510913684f5a55c9a1f18c85c26ccc22355071234f6138a6f241a41f05a4b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d0011354496aaca3de6acd37357ded3c4f0a874295201e4f5cdc4cf3bdf23347"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f39849d149af55661a4ba9d74014df5deac3b23d826dfb15f01f181681028851"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "099b0ca065fcde9550b128f1273b04d418bc8217ead5ad2c4dae1c7d20a843cd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ed02d43fa263af6f569226506c7560cc5ea6867677de952eb6a3b9f1497ebe17"
+    sha256 cellar: :any_skip_relocation, ventura:        "214b022749c8380df32ec42f0997be7826d9fc0af836307a31635623ae93f105"
+    sha256 cellar: :any_skip_relocation, monterey:       "5f4b90f2500f72e0b9e394efb734476503386e2e36c9e1302a6c8f4d7694e5c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "312b74775736a9a783a1312f216c78b572fa591805b0146636053f4272980a35"
   end
 
   depends_on "cffi"
@@ -57,8 +58,8 @@ class Dxpy < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/dd/19/9e5c8b813a8bddbfb035fa2b0c29077836ae7c4def1a55ae4632167b3511/urllib3-1.26.17.tar.gz"
-    sha256 "24d6a242c28d29af46c3fae832c36db3bbebcc533dd1bb549172cd739c82df21"
+    url "https://files.pythonhosted.org/packages/0c/39/64487bf07df2ed854cc06078c27c0d0abc59bd27b32232876e403c333a08/urllib3-1.26.18.tar.gz"
+    sha256 "f8ecc1bba5667413457c529ab955bf8c67b45db799d159066261719e328580a0"
   end
 
   resource "websocket-client" do

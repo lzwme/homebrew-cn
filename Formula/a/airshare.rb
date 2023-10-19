@@ -6,24 +6,24 @@ class Airshare < Formula
   url "https://files.pythonhosted.org/packages/cb/a2/d59c18cd6a143bf860c29acb70552b7351fd7e0f56213be86b624601106b/Airshare-0.1.6.tar.gz"
   sha256 "138976933bcf2c0bc99f18901242544919e9fafe43735b4f83b19d4ae5964be7"
   license "MIT"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "38e2ec90254837c42e8f46e3b3b3de65c866ead4b37bfff03c21c11ff2c026e2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "de799cc701cf125f9fd25ad976b44ddc69b39d2b2f66aff033cc1cda8b928954"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "93f2044dc07b104160d7e39fa583ccbd3f72f36a9426718ee5d611eb74524bff"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e63a0d0a07bc8f499f8d2498064ebbdf7e6ef0a04c8f2536cca0bfc4852d005a"
-    sha256 cellar: :any_skip_relocation, ventura:        "2906fe5562446038ea13eee7168130f3ddfd03a217383ad8d0ee2cdc3c69c9b9"
-    sha256 cellar: :any_skip_relocation, monterey:       "1df3b3889e9be0842a04702a6aadf60d2f37f264d283e7bbfcf9cf3aa2be703e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f62c8b27c9a842f6d65d55b2df1cfaa36068cb56960e5f5df0a2f53ebbe12cf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1beed17374f9f2048d47e37e2334c1af2ab0f64c56b49110fef9a2992e75e726"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "64d286c261e25587ed22e2da542854b4413e1ff5d6e9c56df13588e5872e0e22"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b0afb6994f374b0112e128cce9910d64b283ce291b8be13504fd8846eb9e09bf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9c9788cbbd7b58f0e6333f42a1c3419e67bce20ba0a6a96d99d3bd4eee8a9587"
+    sha256 cellar: :any_skip_relocation, ventura:        "0a83673f679d7545865036b5ee0a6b409407527506cb5a877c29332a66e0e0a2"
+    sha256 cellar: :any_skip_relocation, monterey:       "980e6c919fe3ec6bf31190ac248b902f57eda530997d82e058fe66f393cdbfd1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cca74cf6d14bc0ae5c00c747b2895912ff5dae42b7ef1d0bc8fa536854118fc1"
   end
 
   depends_on "python-certifi"
   depends_on "python@3.11"
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/d6/12/6fc7c7dcc84e263940e87cbafca17c1ef28f39dae6c0b10f51e4ccc764ee/aiohttp-3.8.5.tar.gz"
-    sha256 "b9552ec52cc147dbf1944ac7ac98af7602e51ea2dcd076ed194ca3c0d1c7d0bc"
+    url "https://files.pythonhosted.org/packages/fd/01/f180d31923751fd20185c96938994823f00918ee5ac7b058edc005382406/aiohttp-3.8.6.tar.gz"
+    sha256 "b0cf2a4501bff9330a8a5248b4ce951851e415bdcce9dc158e76cfd55e15085c"
   end
 
   resource "aiosignal" do
@@ -112,8 +112,8 @@ class Airshare < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "yarl" do
@@ -122,8 +122,8 @@ class Airshare < Formula
   end
 
   resource "zeroconf" do
-    url "https://files.pythonhosted.org/packages/d2/51/77c4bc6b117ba338091f0427a89a83dd9c0c155d941a3c92340809ab6a4f/zeroconf-0.115.1.tar.gz"
-    sha256 "401d737689565401ad0f36952eeabbbcd43e00498287b716e1bb6a50c2394238"
+    url "https://files.pythonhosted.org/packages/47/29/59b3d01126e9dfee0a53f51f6f0b3e7b0afdeb0bc26c3dae7aac59b27a14/zeroconf-0.118.0.tar.gz"
+    sha256 "d0254229b9fde339e6578caeb76d0a8d0ec7c768bb194308a006f9001467cbea"
   end
 
   def install

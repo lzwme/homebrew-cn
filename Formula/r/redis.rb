@@ -1,8 +1,8 @@
 class Redis < Formula
   desc "Persistent key-value database, with built-in net interface"
   homepage "https://redis.io/"
-  url "https://download.redis.io/releases/redis-7.2.1.tar.gz"
-  sha256 "5c76d990a1b1c5f949bcd1eed90d0c8a4f70369bdbdcb40288c561ddf88967a4"
+  url "https://download.redis.io/releases/redis-7.2.2.tar.gz"
+  sha256 "ca999be08800edc6d265379c4c7aafad92f0ee400692e4e2d69829ab4b4c3d08"
   license "BSD-3-Clause"
   head "https://github.com/redis/redis.git", branch: "unstable"
 
@@ -12,21 +12,16 @@ class Redis < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "53943e914be8be83327314d5e23a550f4b6ee31cb4ebebe85e27aa1bce80968a"
-    sha256 cellar: :any,                 arm64_ventura:  "cd7dc0b092e95bf3fdcf6f6d6a26a68c4bafcf6018220c121c7cd0fc3f5d5465"
-    sha256 cellar: :any,                 arm64_monterey: "a151d72c6dc3d502a0f53640e8ef89bf5401ba3c444b0da5a6f52a93ff418192"
-    sha256 cellar: :any,                 sonoma:         "648d64daed3802f6510ec1849704f85f8272eaa346a01a1bb2144306b0c438a5"
-    sha256 cellar: :any,                 ventura:        "1568685e4500ef9cae5c998763f13c51c4d87beead4c61b21e266f729439b5ed"
-    sha256 cellar: :any,                 monterey:       "6cdc1f0ec9d5efa53d1a8820e5deafed6a5e87e967785045a5c4240bca203063"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17ee5e17a10fc95eef2b90c07668fa70a155081d0387d023b9f988abdb906601"
+    sha256 cellar: :any,                 arm64_sonoma:   "1f6146c802a15b65de4d650687b014ca43c46a85076e3edeb22d293522e5bbbc"
+    sha256 cellar: :any,                 arm64_ventura:  "c412a9d0ac374696f8c563f0a2cdd57953f611447637c2e29120e7e3018050d7"
+    sha256 cellar: :any,                 arm64_monterey: "4f9bc4c0688c92b4d6fd4cf786212f69071c4fa637febd3f9cdaa1d793583c98"
+    sha256 cellar: :any,                 sonoma:         "7f690b472e683d20be5bebd16b9bf447f810371a94b92c2514f532b5a032acb1"
+    sha256 cellar: :any,                 ventura:        "5183bf03eba3f2c85d5081ede7792d3db633bb72d0354008fe045c86c7576b2a"
+    sha256 cellar: :any,                 monterey:       "93b090aed7c55898780b8a0a5d5c7bd91d520d178104f6c8a79c057c17fb5070"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f080cae94a2f3a819b211483ddafe9307aa79146cb70a30be40772faf5859e64"
   end
 
   depends_on "openssl@3"
-
-  # Upstream fix for compilation on macOS Sonoma
-  # https://github.com/redis/redis/issues/12585
-  patch :DATA
 
   def install
     system "make", "install", "PREFIX=#{prefix}", "CC=#{ENV.cc}", "BUILD_TLS=yes"
@@ -57,16 +52,3 @@ class Redis < Formula
     %w[run db/redis log].each { |p| assert_predicate var/p, :exist?, "#{var/p} doesn't exist!" }
   end
 end
-__END__
-diff --git a/src/config.h b/src/config.h
-index 3c9a2701..4607c177 100644
---- a/src/config.h
-+++ b/src/config.h
-@@ -31,6 +31,7 @@
- #define __CONFIG_H
-
- #ifdef __APPLE__
-+#define _DARWIN_C_SOURCE
- #include <fcntl.h> // for fcntl(fd, F_FULLFSYNC)
- #include <AvailabilityMacros.h>
- #endif

@@ -3,19 +3,18 @@ class Csvkit < Formula
 
   desc "Suite of command-line tools for converting to and working with CSV"
   homepage "https://csvkit.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/d7/b3/2ddfc514620a7c6bc22f6c0f04b27fe88d8111d96977920ff230e061fa69/csvkit-1.2.0.tar.gz"
-  sha256 "f927373b97b74d0e17957857a5d51d442127475e42a51e621572b1ba31a018d9"
+  url "https://files.pythonhosted.org/packages/3d/92/012868ef113298afd9620f281351218211347ddbb55fb17bea7f3ce9dacd/csvkit-1.3.0.tar.gz"
+  sha256 "b82e6ae2d2bb416517100ecbae8d5d856a0dffae42b712088814a2b7201e1af8"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ca3f6ebab260acafdbf2c2081be989471f88815ad52a5c61fac39ea5d30cda87"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "69af61284b63b7977895f87244293d1140c40dafd77efde72d73400c100b88d8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e0f054e1eb9a05c6e8f52fb99612edf7019cdc574288a459f53c707c208c9da5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "774560a24381b925a20b87db0bae6a93a3b42fc5875f0bf25c7c542afd23d228"
-    sha256 cellar: :any_skip_relocation, ventura:        "1a332c39febc3acbeff25b8fee0ce977cd339db802f5e40c73a0f853b6b49cb9"
-    sha256 cellar: :any_skip_relocation, monterey:       "e0dca789566636e6a64a93ea24824367befb65af05fd0b05ba9d8bb0c6ce17cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa73bc4dcdcf903367de6c5ace90c8873d382f3928971f19ee02ec33c8619ecb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a72fbb58f7d66c2fca28a7895bbfec05d6549beb08734a7d3045d3e65157b37b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b4803a89acd39feab7ec8393c8e2aeaff0c05fb8e158694179708a628dc41ce"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0c1338275f03f206661ae99f9196bffb9f6f55e7c8ff2db8cedd348b6798354b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "46c27e6a4b07712623a6f0f768f56b6b59f40f18253cc51ef42b533e28bd4278"
+    sha256 cellar: :any_skip_relocation, ventura:        "7c02b10381b42ee4994c471f230a56eeeb763fbb61f03245fad9db26b0658e80"
+    sha256 cellar: :any_skip_relocation, monterey:       "b29c964d0b89ac3fe0167960576f3442a095ef83dabaffa154627096b21a97c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42cd4c59d73f9dbcb0aecddff291a7aaa720b0707c0b5714e9dad4d4b04a3c08"
   end
 
   depends_on "python-pytz"
@@ -23,8 +22,8 @@ class Csvkit < Formula
   depends_on "six"
 
   resource "agate" do
-    url "https://files.pythonhosted.org/packages/07/12/c95569f05a85164e14ba13f974dca942a75b727bedab3925f2a29e175589/agate-1.7.1.tar.gz"
-    sha256 "eadf46d980168b8922d5d396d6258eecd5e7dbef7e6f0c0b71e968545ea96389"
+    url "https://files.pythonhosted.org/packages/61/e4/40decc7f8c851281e7196a89170a7560ae3bae7b2dd7c3f44fd75eac6ff5/agate-1.9.0.tar.gz"
+    sha256 "901b65382da982cfb52912246fb0ff3457d3ac02b94fafd4b10b0bff3ec358c5"
   end
 
   resource "agate-dbf" do
@@ -38,8 +37,8 @@ class Csvkit < Formula
   end
 
   resource "agate-sql" do
-    url "https://files.pythonhosted.org/packages/5e/e6/0c5ec2dcc5786145377cf1d4b870f12950cd39b24c9760d36eb0cf1e32b7/agate-sql-0.6.0.tar.gz"
-    sha256 "1582141e13c6c5af300936db13d1e0a8128ebd9c595834f60d284d6d3ef51bee"
+    url "https://files.pythonhosted.org/packages/3c/43/f9bcdc629d6d564dff6b962a2d4e8cac4589bcadc03044977ee4db18bbc6/agate-sql-0.7.0.tar.gz"
+    sha256 "bb21e491cdcacee62e94eb6877d2a41d09accd58769abac238bc2f42de894cc9"
   end
 
   resource "babel" do
@@ -55,6 +54,11 @@ class Csvkit < Formula
   resource "et-xmlfile" do
     url "https://files.pythonhosted.org/packages/3d/5d/0413a31d184a20c763ad741cc7852a659bf15094c24840c5bdd1754765cd/et_xmlfile-1.1.0.tar.gz"
     sha256 "8eb9e2bc2f8c97e37a2dc85a09ecdcdec9d8a396530a6d5a33b30b9a92da0c5c"
+  end
+
+  resource "greenlet" do
+    url "https://files.pythonhosted.org/packages/b6/02/47dbd5e1c9782e6d3f58187fa10789e308403f3fc3a490b3646b2bff6d9f/greenlet-3.0.0.tar.gz"
+    sha256 "19834e3f91f485442adc1ee440171ec5d9a4840a1f7bd5ed97833544719ce10b"
   end
 
   resource "isodate" do
@@ -93,8 +97,8 @@ class Csvkit < Formula
   end
 
   resource "sqlalchemy" do
-    url "https://files.pythonhosted.org/packages/fa/fd/f835dcfb49eabf12e8ea7c7779d364f7730a47912ae64ff38cd4a316ab77/SQLAlchemy-2.0.21.tar.gz"
-    sha256 "05b971ab1ac2994a14c56b35eaaa91f86ba080e9ad481b20d99d77f381bb6258"
+    url "https://files.pythonhosted.org/packages/ae/e2/47f40dc06472df5a906dd8eb9fe4ee2eb1c6b109c43545708f922b406acc/SQLAlchemy-2.0.22.tar.gz"
+    sha256 "5434cc601aa17570d79e5377f5fd45ff92f9379e2abed0be5e8c2fba8d353d2b"
   end
 
   resource "text-unidecode" do

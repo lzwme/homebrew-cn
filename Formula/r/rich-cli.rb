@@ -6,16 +6,16 @@ class RichCli < Formula
   url "https://files.pythonhosted.org/packages/ca/55/e35962573948a148a4f63416d95d25fe75feb06d9ae2f9bb35adc416f894/rich-cli-1.8.0.tar.gz"
   sha256 "7f99ed213fb18c25999b644335f74d2be621a3a68593359e7fc62e95fe7e9a8a"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e31571f000cbf0d5688d0af6ef4e33f18f90aa18e0ec8680fca1d5cc93563794"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c48b1acb9c3b4edb15a1af12135d1dbdfbd32f769b167965fe113d6eb14eb71"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9b74562fe26545db08cae77d9cc79843cb321b3f02a07d2c14798ae5bd868a6e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "554771d511efa70f707d60390b4e7a2531d7c128639b7bd98646dcf84da677e2"
-    sha256 cellar: :any_skip_relocation, ventura:        "0fc357b34eb0daf1d2ed1c7a28e6cdb2ea1208bc99d0d0b64918ff9bed6ed9b5"
-    sha256 cellar: :any_skip_relocation, monterey:       "4a8e3e09bc1b314a462809e8966c3a4e74843e3c67217a86cdb9c8596d609446"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eec52f301c7b50b8729f1c4c9fd00a4002a58e078bc79b25a530b9bc4277aaf1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "47fb8d2d88151e91f0f68f92723fe357b3e58e7664cc8d74a195cfaca82897ae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "90faa5c747089a3dfe9cda144a1323f34e43ce3f41d54d684ad442abc8493038"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "95244e7c998a0407d076f252daa802977ca967c08ddd5a88c83e2756c28457ae"
+    sha256 cellar: :any_skip_relocation, sonoma:         "366d00e49ce13c8edc2d5b7d88fc4d58b0b182211bba69ac35276b52969f39c9"
+    sha256 cellar: :any_skip_relocation, ventura:        "ec7baea1a09e98bbfd925a8dda6f68d0e1080938b9c1b8a08e9eaf2761b12ac4"
+    sha256 cellar: :any_skip_relocation, monterey:       "4f3025f2fd53aa5e3e853a14b6b17ac576364a11ad0394c20060e843240744b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b46e9e250edcbf628a50f6270ea8fd3368e4a8aab73d23d4e44b93df28c9ed11"
   end
 
   depends_on "docutils"
@@ -64,8 +64,8 @@ class RichCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

@@ -6,16 +6,17 @@ class Ggshield < Formula
   url "https://files.pythonhosted.org/packages/eb/bf/8dc9c74caa26d4d6ee9c4c14b9c2edb72f6367a81d23d0f6f95980509613/ggshield-1.20.0.tar.gz"
   sha256 "b12cbedc88cf381667e38a0c0fe5e9416291a1702309a68944bd5a872372c4a6"
   license "MIT"
+  revision 1
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a014d8604c91bc170ee83fbc55fab33a55d6ff599c81bd2a8859a8c9e22f107c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "13b37eeb7b6a21aa536a4edd8fc4c5cf3f8f2510f4c843dbc2b635568633bf27"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f1918704db3ca56033f11079954f171b8b546a5356a4a0dc8d871db8c551cfeb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b81e934718f0ea28a4241a42e12ddc204c52ad3d13af8627339d669c4b8aa657"
-    sha256 cellar: :any_skip_relocation, ventura:        "33ece3babd22fd59426e205da1e2aeb90aa532cf5a08a7a41b847d232181d9dc"
-    sha256 cellar: :any_skip_relocation, monterey:       "2daf0f906de9f43809df11a77e7e90398e3311bc503129bf75b76586924c8d0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ffd89f7985b5460dafc74b391eadb042e927a579fa427b25d6452e2ff5b099c7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8584dafe24cca747b99e8ea6c84eb498de2e00c691d1d9faab80b07dbc1cf536"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "03cdae123330e4b2a9867f5ec4b66f81c276ce62767b97def6142964b58b0343"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f5e18d6129d52646316fed5e31d3ffb19fe6518860c44c6fd4795c1ad780369a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1e2b5910153c25bd44f59ba0647284a44ac63e678dcb11cb68a9ee6d33ac5423"
+    sha256 cellar: :any_skip_relocation, ventura:        "9087c57fe0365bd077dbc17ac0b2c6d3e873a2e599afc06180f04194bd3866f3"
+    sha256 cellar: :any_skip_relocation, monterey:       "fe1e1b18ffcca8c6e1a25718eb7f8136a79d8ec582e6435fb8ff37ba9c17b0f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7b27afdf71862d55d21657e5997074bbd1ace6a5e461f25ce63c0eca1d1ba79"
   end
 
   depends_on "cffi"
@@ -100,8 +101,8 @@ class Ggshield < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

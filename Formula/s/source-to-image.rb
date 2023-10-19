@@ -2,21 +2,19 @@ class SourceToImage < Formula
   desc "Tool for building source and injecting into docker images"
   homepage "https://github.com/openshift/source-to-image"
   url "https://github.com/openshift/source-to-image.git",
-      tag:      "v1.3.8",
-      revision: "980ca195116928b3beb61b25d5939d0044b3040b"
+      tag:      "v1.3.9",
+      revision: "574a264097de0c4371017bcb1bc3e6f95f8d3690"
   license "Apache-2.0"
   head "https://github.com/openshift/source-to-image.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "88517024d9ebb1b049978c1ce084f74bc711e5095cebbc15f5fd302ede1093ba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f50ed6d499d0123e959b5027f6897cfab3daeea0a8369f77d43090e7a8a8af86"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e70fe8a14ac7600b9d273343410dd40e0d7f75d8df041367f3a83598423fec36"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a234fec43b13d68d62d3827cb9c4f76820213b99f8b2203666b2d0632a62cbc7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ce99ccdc3871da09bc54c20b7edc8c5c3a9fac66fb762057299fdde1f85b0a5c"
-    sha256 cellar: :any_skip_relocation, ventura:        "5a72887cdd4f0132ca6349e01a92c94e2d143a3b989b4b130c775a31a7b9369a"
-    sha256 cellar: :any_skip_relocation, monterey:       "21f8b669dd230f4d8749b6da504453c3529d0322d3ea49824f0b82d272313eb3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4c1b253eb3a2c8611cae470735df04eb0a73165acb9f5576236090381b56dc1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d39b5f8f2348c6ff07fe3be0575f9df5e81a45704f84b58b9b556ab3dd55821"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "526491cf1ce64d64e31308e14345183b9fdd27af8c388d32132e704eba9ba2da"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b1a00089afe93f7d0fffe09beb165f9b763b6e0d73e591e57e011b0fcd51328"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8281b0c9f94926a48cad2697a608b276cecd2976425854fbeff06dcddb78f1f0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "48a9bd6eb1ea6b3827f53625046ebbd14b2a03b966b87a3ea0d8d8d6caf1d7ce"
+    sha256 cellar: :any_skip_relocation, ventura:        "63fe8ca698084ac1aba04f127dbba0f82e9419376b449797f91fd30cba88423f"
+    sha256 cellar: :any_skip_relocation, monterey:       "aabb501a339622a73d2bbf8071d3273e6f430ff8c91e5d806d4c32e3a0705770"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c9718ac5e524a428c7561cada000e07fe1e72da62aef11464e64f71f7b44809"
   end
 
   depends_on "go" => :build

@@ -6,14 +6,14 @@ class Locust < Formula
   url "https://files.pythonhosted.org/packages/2f/f2/8228f690df243562edf03f5b42d2542f868903ebd123cdb97c47ab3e14c3/locust-2.17.0.tar.gz"
   sha256 "e50bb4647370c22d27010cd700cc87a519a0f25fef012efa7b42af68982b58f0"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0a06ccfe542ff3e4a3fe4debfd6b57a446a7c6fc2d388700cf0a4d6c67961ca4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ad78d7583e6a42e122aa237622b660fdcdd45779506499a08ca7765949a2554f"
-    sha256 cellar: :any_skip_relocation, ventura:        "df29e8a36935d037dcaf44d8a5e72024cd5a173236bfe427170fb04ba347a228"
-    sha256 cellar: :any_skip_relocation, monterey:       "891976fa70bdee97a2145b2112bb00030cc3b0092fe14718b66220189cc9c521"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "258c8c9b65b620ea3f8ad4715b6b5e7f4b04423f54d391b5df078673914b394a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c17b5d1279902a2e88ffc7837eefbaa8325cb6b9a6f803632d8e3d2beba295b0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "81e133ec641da34b1f00e3a5c2773360ef2c3b135a2012e06d16cda329ca9590"
+    sha256 cellar: :any_skip_relocation, ventura:        "40424ef5c43b4a4d9ef72d98ac8c05841810c4f21f0082d698d7c9e088f78a17"
+    sha256 cellar: :any_skip_relocation, monterey:       "b58b340e7f912a21c6d0ebd586dcdaaded4eb10c2c8ea544046c44421bf236a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7fbe51a80f8b72db6b16c5bbb7292909d5df72f2a6f881d2aca83bc886bfc6aa"
   end
 
   depends_on "python-certifi"
@@ -25,8 +25,8 @@ class Locust < Formula
   depends_on "six"
 
   resource "blinker" do
-    url "https://files.pythonhosted.org/packages/e8/f9/a05287f3d5c54d20f51a235ace01f50620984bc7ca5ceee781dc645211c5/blinker-1.6.2.tar.gz"
-    sha256 "4afd3de66ef3a9f8067559fb7a1cbe555c17dcbe15971b05d1b625c3e7abe213"
+    url "https://files.pythonhosted.org/packages/ea/96/ed1420a974540da7419094f2553bc198c454cee5f72576e7c7629dd12d6e/blinker-1.6.3.tar.gz"
+    sha256 "152090d27c1c5c722ee7e48504b02d76502811ce02e1523553b4cf8c8b3d3a8d"
   end
 
   resource "brotli" do
@@ -110,8 +110,8 @@ class Locust < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "werkzeug" do

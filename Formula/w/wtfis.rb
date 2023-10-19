@@ -6,18 +6,17 @@ class Wtfis < Formula
   url "https://files.pythonhosted.org/packages/25/2a/6ede7b982da3e94102b3d7cfe968b95bad28364c082fbff4cf88ab9aba40/wtfis-0.7.1.tar.gz"
   sha256 "812cc1679f5bc4b07f73d84d96a963b16cbed2e4ccc07c7f24b2b696abba3dd3"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/pirxthepilot/wtfis.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "cba938ff9a23d73dbd511a3299b22a3d86c6a016560575a34b06a8652544c7a6"
-    sha256 cellar: :any,                 arm64_ventura:  "f6fc8a3797a036feda3a3569a1f4e19c0238784f621b5458cb7a3432513e2e00"
-    sha256 cellar: :any,                 arm64_monterey: "7643ed9617c9b9edd82ae96b080767f63b492191a740f82087571133516b74f2"
-    sha256 cellar: :any,                 sonoma:         "a3f76f1d55a023129d15974f81abee7499f438f0a5debaaa9082538605948f11"
-    sha256 cellar: :any,                 ventura:        "dac62bcc46b83d2ef766da9778888fa83f5958eedcc09f0e7d840309de3e05d3"
-    sha256 cellar: :any,                 monterey:       "71945c9240254c40f4d14dc97e78a93518d56eb872af04cb42ce77cb4e3fa61d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b73486a93f1772841312034a3b9971b089cc8474037a0071427e5b6c8a84be7"
+    sha256 cellar: :any,                 arm64_sonoma:   "8a098e8e5dd406cc119cea317db0261fa69452b8324f49ff28404ab2ef70169b"
+    sha256 cellar: :any,                 arm64_ventura:  "9a4dbdb83098e839fccf905d4fc07212f7694b48b588e69e52ee37531ce0bb2a"
+    sha256 cellar: :any,                 arm64_monterey: "ae0e4047b1343bec0af3e19aad3ddb236bf6629351c344caf7952ee379679169"
+    sha256 cellar: :any,                 sonoma:         "9fb2f700db30a6ca7e991b4cf7f8c21c0b74562f4310ef930c4edd5c9af76d27"
+    sha256 cellar: :any,                 ventura:        "3f324e257120450e4ed9e3ac0be5817e3938f74959a7645fcf309dbb89ab28bf"
+    sha256 cellar: :any,                 monterey:       "5b67ca9c0848415c92a01baafa54f03c5e231f6a27aa7c00f0caf31f36df57c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "152ea961c9778e1638f004565f0bfc8df3a1bf58f7088068465210b975fc187c"
   end
 
   depends_on "rust" => :build
@@ -97,13 +96,13 @@ class Wtfis < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "xlsxwriter" do
-    url "https://files.pythonhosted.org/packages/e0/ab/bc8d317106c8ea5ff11a2394ae99cb9adf1a9d32c55d3b15eea2b505b875/XlsxWriter-3.1.6.tar.gz"
-    sha256 "2087abdaa4a5e981a3ae50b5c21ff1adae59c8fecb6157808585fc169a6bfcd9"
+    url "https://files.pythonhosted.org/packages/da/b3/90e50e5c285f48b5fc251a6e8ec255a110dc194349b992a18c5b9ae3e713/XlsxWriter-3.1.8.tar.gz"
+    sha256 "059d0786fbfa3055588e81e9d5acf4ace28394bf09353a31ae2cae635740fc15"
   end
 
   def install

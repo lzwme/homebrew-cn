@@ -3,18 +3,18 @@ class Sqlfluff < Formula
 
   desc "SQL linter and auto-formatter for Humans"
   homepage "https://docs.sqlfluff.com/"
-  url "https://files.pythonhosted.org/packages/c2/26/ca3cc99668dcda567df0a3abadca93380d3fd7a9591d59ddd7cade612364/sqlfluff-2.3.3.tar.gz"
-  sha256 "185e1122056bee3e2098346f0123dd80ac822727cabb418e82fa56ee978db0db"
+  url "https://files.pythonhosted.org/packages/50/58/9ac84f4ed231074c0a06e2eccbfda29aaa5485f98fe5a48634bf08707b29/sqlfluff-2.3.4.tar.gz"
+  sha256 "9d79ffdc3bb7790815db8b71dbf40fdb277774a12f6c14e9420f666446801ffc"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b7b893c9c514d0a91af6c529c0bf2cf6e1f06c55eed0e9445d826010862823d1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3f6902f95d9d55f5c73aee55074437676b66be4570edbb3a28d1d5bc136699ec"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aa3ff085576493f166733b47858bea6be9192b3465664973d0ad114c1141bdd0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7dfcfe6d1ddd97fcaa6ec0958b483ba34c85ab0f9cacb22f57ce75697492b9be"
-    sha256 cellar: :any_skip_relocation, ventura:        "73369120574a307e2549afc8b6659f3790d8a005199e45873c13fdf8c18d33f4"
-    sha256 cellar: :any_skip_relocation, monterey:       "2034e7aeff498eef12e311cb982f1f0582d818589b3812a080480c4ba95f084d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f263f088f441b2cb6fb25a57295b1ef98626637cf8a78bbd31ea7f2698ff8aa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5fffa7c05bc173e86d991a8aa284a272299afadb98e2a179e7545029dc35f69a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3f1caa4a322be3443f6743fde800b4dcbbdc561dd1c98a7a7a63561021de9448"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0167d6fd7b453144b7157de0bd87c97fdd7de38ba40098dfadb01c5344104a15"
+    sha256 cellar: :any_skip_relocation, sonoma:         "18113390df168bc8f1e2002397ea46a49fa68b4fe69968310f6196c6151f6d2c"
+    sha256 cellar: :any_skip_relocation, ventura:        "d5b352dd6f293d054851db8a27333ba7b143b9e0e0fdc81c57765cd53bdbd911"
+    sha256 cellar: :any_skip_relocation, monterey:       "9dc47c68f3fb1eb8d8f36b4837b776c5eded165d89ed9e2345a3a8efb72d8c63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8bfae179e2e1e0ecef2d9faa8b4de4eea07fd4a242825b3d1c288e6764a2ba6"
   end
 
   depends_on "pygments"
@@ -44,8 +44,8 @@ class Sqlfluff < Formula
   end
 
   resource "diff-cover" do
-    url "https://files.pythonhosted.org/packages/37/c2/f1919023fea5079b479d97793c368db8dd337170a7dbc4b5e76c1fc29d12/diff_cover-7.7.0.tar.gz"
-    sha256 "60614cf7e722cf7fb1bde497afac0b514294e1e26534449622dac4da296123fb"
+    url "https://files.pythonhosted.org/packages/80/fe/520fcd6ee8075dab12cb78f3b18eb1968b720197b88b0018df61a9b59445/diff_cover-8.0.0.tar.gz"
+    sha256 "0995b78a1d5101f5d8922006220c070b18e32a5dbb4a96a073a1941705fe71e7"
   end
 
   resource "iniconfig" do

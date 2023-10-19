@@ -6,17 +6,16 @@ class Urlwatch < Formula
   url "https://files.pythonhosted.org/packages/ef/6d/28df22a0912d40e294cfde709ead82e36441018ff9c0137c9e768ce9084e/urlwatch-2.28.tar.gz"
   sha256 "911df3abbd8923e46ec167a9657a812436caf93f7f9917cb7c95ebd73d28cce5"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c002079d230f24dc0525dbed1197b5592b50d145b877329d5756f6f2b0f0c14f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ee54dc59e58518efd46ace39c9d2e617571d258aeb8e25e065c2c0e7f289c11b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "663756513973b40a5758053f12dd6c32192ae8a5f3645e0cc33134af746b939e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1491e09063fd5db0a59e4c19d7fc7682a00c440e7a0a0c4fe7ccff2bfe1d987e"
-    sha256 cellar: :any_skip_relocation, ventura:        "8ac2dacfd573b09dc83a9ce22602fcf5efde7c0a8d80155b74a8e6188d70e641"
-    sha256 cellar: :any_skip_relocation, monterey:       "fa7155c3cf4acacc3e7e4554ef1c7191c932618fc68893f09a0ba5e780b669fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "007acd85add49ea0144e2a390d4a7f025b5072e9a334bae20d9f466b6b342469"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0cc3d8772b8f74544707923eacf442f1dc834db27e655179289e8df360e8329f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6df6182c6a44af7156ca5f7a8ac770ae35f8b9526cab0460184b0a31f99c11b2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a526d9114511b8cd1995bccf282a84a4952f02762055baf84899a36d89755460"
+    sha256 cellar: :any_skip_relocation, sonoma:         "659a778c4a4ec92f2a8d7723ca84e6d587e1cecec1fc8a970a082bc257deff23"
+    sha256 cellar: :any_skip_relocation, ventura:        "e857715c758bd9fa5601623415fcb90371062329670175198fc9beed2665fe8d"
+    sha256 cellar: :any_skip_relocation, monterey:       "74132662605533c41b18702668cbb5c892928ede851d2f065406c54cd5cefc8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea35fec6d951fadeec69ec1332f5580fb32e2669a0dc03a828ce07bf6c1cfddf"
   end
 
   depends_on "keyring"
@@ -45,6 +44,11 @@ class Urlwatch < Formula
     sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
   end
 
+  resource "lxml" do
+    url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
+    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
+  end
+
   resource "minidb" do
     url "https://files.pythonhosted.org/packages/20/d4/915ac3b905cf33f3a0df5c92619fad66ae2e23cecd8f21dbfa76a9a27133/minidb-2.0.7.tar.gz"
     sha256 "339fd231e3b34daecd3160946e0141585666ac57583882a14c4c69e597accca1"
@@ -56,8 +60,8 @@ class Urlwatch < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

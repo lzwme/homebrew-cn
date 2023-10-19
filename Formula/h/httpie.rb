@@ -6,18 +6,17 @@ class Httpie < Formula
   url "https://ghproxy.com/https://github.com/httpie/cli/archive/refs/tags/3.2.2.tar.gz"
   sha256 "01b4407202fac3cc68c73a8ff1f4a81a759d9575fabfad855772c29365fe18e6"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https://github.com/httpie/cli.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a39f00d3d0f4a936c2a877beafefb1bc57a56874a8c5b844d4689f94a8ba9ab"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b56f66d1c6c66e9a679bdfafc0ce527b76d29621aca6088d0ee3c5b6b8a2af3a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6b5b31809ca6ad7a37fee1ca01de9fcdc71bdcf5d2b3e51f3db07b4737ca7aaf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8b41c36b685859edf7f58a2c7f38ae13897e053fc900a5941481aa89539b4400"
-    sha256 cellar: :any_skip_relocation, ventura:        "8063badc74e4f3fb0918c6a2112abe433dfbd62da76adfbbae2b94cbd11c2552"
-    sha256 cellar: :any_skip_relocation, monterey:       "27e34547dbe290f16b715c9245dbb486dabd86ecae1d4c3ad5667bfb0575e7f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89bb9271d71c53311b4266724b4da0426255729a699b9a7c5f7f4a59264e0542"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4b1b8037c23ceac918bb7adb21a505e7c35ea1121e9f26019e27cb16e8e9faf3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25a61b5fa9d83aa508a3761e4fd2058ee340603e3a7c5a91c28b1fc8dddea267"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "07e9d80ba6d23aaac9e25cafa1e522f1a62bb87995ad68ca955e25c32934b31b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ea0705e403cb2ca26788f28e2554dae49b22ff0636b1fea8613782eb30e14248"
+    sha256 cellar: :any_skip_relocation, ventura:        "0105a15d0bdacde54eec24354ef7788ec9eccbb08af43ee767bb2812753ee159"
+    sha256 cellar: :any_skip_relocation, monterey:       "bb9d5a84e79700b806b6135015281a2087148976cda22306c6c5d91fb9f3cef0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65c47be216a323dc3eef8f4c4ff5dc26d7f418eb80cc4aab2eb47b492e25644b"
   end
 
   depends_on "pygments"
@@ -75,8 +74,8 @@ class Httpie < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

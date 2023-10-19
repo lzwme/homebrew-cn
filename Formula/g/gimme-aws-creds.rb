@@ -6,16 +6,16 @@ class GimmeAwsCreds < Formula
   url "https://files.pythonhosted.org/packages/69/76/a6c0e4d65438ef3b95099c919388fbdc617d89afb40e024ec2c22665e3d5/gimme_aws_creds-2.7.2.tar.gz"
   sha256 "71526a98bd249bb3880cb2813817623d29ea880eaf260bbb5d1d366ccfae9474"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "39f498026ceeb7331b64f696ca4a62337dba08d97a089f2b68c796a8f3baf689"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "114de96f48a341719b23ab8ba09332b41142ce5039ab09653171a26305fe422d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3a95c1c1a4d61493df38c3fcba2068acccfba31964efcc24bc2ea7b77020d99d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8539e0f5bbecbc2d9d49c7768f771b7a4e8bece5b3ae6f94846dd3fceac66daa"
-    sha256 cellar: :any_skip_relocation, ventura:        "30d1e2ec5da8f538f9ce79cb918767da64b72628c2e8bdd755ca81cf6202c3ce"
-    sha256 cellar: :any_skip_relocation, monterey:       "791d0c4daf037a0756cd6548cd53ac5e254d148b01e04eee386601564f368a0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a45ec30191be7865f64eea9639fa0705189cdebc8716cf0de9f1ef0a2ed22310"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0fea2d9bec04b3b14dc5f4ee335671f69a1e25700ea938ba58c5748217c50e90"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c4a075450a000134c4b80e728b245637c2abb518f98ff81acb7d8bd1905a5969"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d92111b1933337ccc3bf0ee07977bedb019c95119c480ed247856a6193b163fe"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b94939165e68ddcf09a8f00cbdfecff4025bc87a2869b4a66b7562c5ad488ea4"
+    sha256 cellar: :any_skip_relocation, ventura:        "970cc8a4ee0b448f958b72474e7d506e6bc56a94c43d9f3d0097135e03bf2b04"
+    sha256 cellar: :any_skip_relocation, monterey:       "da42f53cebba384a9c5d5c5cf63eb246a7e8b7dc1431f3c18b59fab958370ad1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b36abe7e8b4a56c403f1b2f98b885219f97c5ea18f737cffc85044277ec3d592"
   end
 
   depends_on "cffi"
@@ -46,13 +46,13 @@ class GimmeAwsCreds < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/42/56/633b5f5b930732282e8dfb05c02a3d19394d41f4e60abfe85d26497e8036/boto3-1.28.61.tar.gz"
-    sha256 "7a539aaf00eb45aea1ae857ef5d05e67def24fc07af4cb36c202fa45f8f30590"
+    url "https://files.pythonhosted.org/packages/1b/2f/4ccd05e765a9aa3222125da37ceced40b4133094069c4d011ca7ae37681f/boto3-1.28.65.tar.gz"
+    sha256 "9d52a1605657aeb5b19b09cfc01d9a92f88a616a5daf5479a59656d6341ea6b3"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/05/2e/9cb8adca433af2bb6240514448b35fa797c881975ea752242294d6e0b79f/botocore-1.31.61.tar.gz"
-    sha256 "39b059603f0e92a26599eecc7fe9b141f13eb412c964786ca3a7df5375928c87"
+    url "https://files.pythonhosted.org/packages/42/30/e5e2126eca77baedbf51e48241c898d99784d272bcf2fb47f5a10360e555/botocore-1.31.65.tar.gz"
+    sha256 "90716c6f1af97e5c2f516e9a3379767ebdddcc6cbed79b026fa5038ce4e5e43e"
   end
 
   resource "charset-normalizer" do
@@ -131,8 +131,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/dd/19/9e5c8b813a8bddbfb035fa2b0c29077836ae7c4def1a55ae4632167b3511/urllib3-1.26.17.tar.gz"
-    sha256 "24d6a242c28d29af46c3fae832c36db3bbebcc533dd1bb549172cd739c82df21"
+    url "https://files.pythonhosted.org/packages/0c/39/64487bf07df2ed854cc06078c27c0d0abc59bd27b32232876e403c333a08/urllib3-1.26.18.tar.gz"
+    sha256 "f8ecc1bba5667413457c529ab955bf8c67b45db799d159066261719e328580a0"
   end
 
   def install

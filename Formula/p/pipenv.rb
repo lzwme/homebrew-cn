@@ -8,17 +8,18 @@ class Pipenv < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "327d63fcc5bac0fec03a9fbf61fa81edc2ccd043f7dcd7f9db2237d8439cab69"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "54fdaddf7d97bb4dc9a05be91b9b4ab9b7bf4d0bf024db398d433a290158c282"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "abddeb13ad92557960939ae4e55368a72f887c4e1ab6d105313184d29d6edac5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3eb84ed53612199712a5d20a5c98cf5d81284ee6aa2c6b47865a5e8471097c17"
-    sha256 cellar: :any_skip_relocation, ventura:        "bf88daddfad1b39a33a75319a0876b1147d297671c0da4956d55407c96b02ff8"
-    sha256 cellar: :any_skip_relocation, monterey:       "1b29b49a1407668d00a8a179a50a901b98da40ef8e76f952672b6d11bce768d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "87ab5ef99d09365da5a4a88f1a0bf909e965f8e9e6cacfcdc24440229f0259ad"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4fa1817e4c67e2e7ed7a3ab3a3f17cc549c77a29b5836cf38a8a802aef5f2e70"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e0e73e3ce628fe1dda04cd9349f79b52b016d8312d036f162a20e9881dd5a8e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "55b7f9d8a8e8d79d642ee76a8c1b67e53651351949b2e819a07b79a03434eb26"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d02dff4f53a9e15f5e93564213183307e7e9821038e7757de64fc601bd93e553"
+    sha256 cellar: :any_skip_relocation, ventura:        "c5ab6246bee8d043e76e65056420c3912e9e7f4a6ed5c04d6cf0c675b0b4d3f3"
+    sha256 cellar: :any_skip_relocation, monterey:       "206977b7e13671b074bf71761d0668b9a101ff1a585bdec50680f8f498428d40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a8a5498cd5a85730eb0092489052e604e8129be97bfae9c9b572fc5b320b595"
   end
 
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "distlib" do
     url "https://files.pythonhosted.org/packages/29/34/63be59bdf57b3a8a8dcc252ef45c40f3c018777dc8843d45dd9b869868f0/distlib-0.3.7.tar.gz"
@@ -41,7 +42,7 @@ class Pipenv < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

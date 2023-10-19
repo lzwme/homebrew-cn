@@ -6,18 +6,17 @@ class Vunnel < Formula
   url "https://files.pythonhosted.org/packages/75/5d/ad5b3878e30fb13f35073af474e21775115c77f491c64acf82b7cfd23426/vunnel-0.17.1.tar.gz"
   sha256 "256c1e2f564d52fc091949ad5c86f2fb0ebf78b0e94a1b7b00c0479af8bc1b1f"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "6a0a9cf9247095546517f4b55833c6390754415e7ab7f22ee39a062f6d830103"
-    sha256 cellar: :any,                 arm64_ventura:  "e30bc26192197bba3cefe96887ac2811deedab5b3884bd338df2b7590df60a7c"
-    sha256 cellar: :any,                 arm64_monterey: "7fda7bf97b7ddcf31a98d66a7a608cd4e99a2f639bf6a982d265a99a757a0d62"
-    sha256 cellar: :any,                 sonoma:         "c8020acb9a227cc88317b2770dfb0290d891b2278e1c5caebf7d689449364d37"
-    sha256 cellar: :any,                 ventura:        "24406247d9bb255c58d3bbfa60f01a6a1e390990d77060be6aefedd5ad407f35"
-    sha256 cellar: :any,                 monterey:       "3d4f8687c166dc9a6357a8725ef5c356ef3e0bcc839ce038452b435643218453"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c5ce84eca9f90b289d9a64cd673d3c994057212a8c5a095e3dc378818dfc9d7"
+    sha256 cellar: :any,                 arm64_sonoma:   "c29f8841a38948828c0cc3406bd9ce4c8bb9d1597d639215695c79aeedab15c2"
+    sha256 cellar: :any,                 arm64_ventura:  "bc93d1533cfb11040c60101c0359bbae5efb87f6024367217f0320af0c50e918"
+    sha256 cellar: :any,                 arm64_monterey: "be694d0047471ec9927089f725fe063fbedc4d8e1e7629d20125af171000f2de"
+    sha256 cellar: :any,                 sonoma:         "13e96b0780f359ebbd7114e994ced39c8b174b1b25909ed5ca54b025c68fc355"
+    sha256 cellar: :any,                 ventura:        "5bc369fa936585c48d9e6ef33880c6183330861aab13be5da9a93456f6beaff6"
+    sha256 cellar: :any,                 monterey:       "c05a60866cfdb92f1fbec0be5d2ef54bb69c803776019dd333e21b9d8c1d73aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c6fbb21d4edb61fb2c70fbc7de37b2b27d10cd295466da8f54742bb2f260cdd"
   end
 
   depends_on "rust" => :build
@@ -109,8 +108,8 @@ class Vunnel < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/d9/e8/3b73e455a5f5f16ed70b364b5dbaec5691e7ae1d3c1e6cf8945735ec05a0/orjson-3.9.7.tar.gz"
-    sha256 "85e39198f78e2f7e054d296395f6c96f5e02892337746ef5b6a1bf3ed5910142"
+    url "https://files.pythonhosted.org/packages/d3/76/27ae074f0355712777632f3f123b66d21093a2a89532f600311c36de0d31/orjson-3.9.9.tar.gz"
+    sha256 "02e693843c2959befdd82d1ebae8b05ed12d1cb821605d5f9fe9f98ca5c9fd2b"
   end
 
   resource "python-dateutil" do
@@ -144,8 +143,8 @@ class Vunnel < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "xsdata" do

@@ -6,18 +6,17 @@ class Iocextract < Formula
   url "https://files.pythonhosted.org/packages/ad/4b/19934df6cd6a0f6923aabae391a67b630fdd03c12c1226377c99a747a4f1/iocextract-1.16.1.tar.gz"
   sha256 "ec1389a76a5083f643652579610e8313d27ed5821fc57e7b046c23ddec181d44"
   license "GPL-2.0-only"
-  revision 1
+  revision 2
   head "https://github.com/InQuest/iocextract.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6e80bc3992418144b704a706a8c34b881c4934d8bc232349fa96588c0f1b8d16"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "30b675eb4744acf08e55b38c85dcfe209e6a3e64065b3026507b8c2b737892f5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7c4c886fb0ea6fa0f4365c714a6c09375fdfc73680dc719ed8575182f3628159"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ce34bbc744923dce4e6c9462c3dad0ab63b72750b1840c1b21868f48bc647210"
-    sha256 cellar: :any_skip_relocation, ventura:        "44b744b1a9be988a88707be7c5de234c6c082ecbc959fa3ff981b9f1ae49f844"
-    sha256 cellar: :any_skip_relocation, monterey:       "a12547ae0f9a7254cb677cbb296bdc5f90784ed6d6f85f8dbfdba78797934b76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "716ec67e46b3f2abff3d97320c8339fc04b5bb3d2898c6bec431b6e2beecdc53"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "371c23a41ee9ba9e191399b996825e0b2f5cf620f1a17aa4f07db0d65207027a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0dc80dd7eea28c9c7510a0ef1f4e022fa02ab097d61b7ad25f6e08f2e997a929"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "22a6153a86b029e001a6b296ee4939a974d5320612121d04c27aa7153c99833b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "614de6646ed8054525e6c96b4444f2bb12faf05e7088dce6b58f3b774adff345"
+    sha256 cellar: :any_skip_relocation, ventura:        "6009dacdc27e7c92577467b0aae10233c38d1a999bd634b8e2a4dd645a7638c5"
+    sha256 cellar: :any_skip_relocation, monterey:       "e748ec74d33ce750650e44ca4c20e57546c8786892353cbea557bbd65dd555d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ce9bb876075f1983b121a3ee3327b9f52494d8c7028e3d6ce7ed1443308f09e"
   end
 
   depends_on "python-certifi"
@@ -44,8 +43,8 @@ class Iocextract < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

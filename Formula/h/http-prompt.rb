@@ -6,18 +6,17 @@ class HttpPrompt < Formula
   url "https://files.pythonhosted.org/packages/bf/e2/bc5b0df107afcac65fde7015df48cbe9b4d877d1d0818203544ed1a41d4c/http-prompt-2.1.0.tar.gz"
   sha256 "eee71a00fed0b8a2a35bb338b269be7a20e8a1a6f6465a65561d76a21521e7f3"
   license "MIT"
-  revision 3
+  revision 4
   head "https://github.com/httpie/http-prompt.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d20ff26c113a8a2a808f7445ca48d689c8328cde823d840b8068d62617c51a60"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "390b751c99c7cca60444d3c88ae8264c295be657213bc8de83ca361af6804e5c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "acab9bff4b7721cbfe9b55c61f00807f84ae0978b7dcfaeb9fc2420d209384ee"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7ec43b37ec6363fc3a1488bdada3807704f5093acc785a9146a5c1363f067581"
-    sha256 cellar: :any_skip_relocation, ventura:        "d46a3782f43bb557485ffad41ca5662095f6c29697082afccabcc60265dd47f2"
-    sha256 cellar: :any_skip_relocation, monterey:       "8f48b17f59af2c4f1575f25a67e24c7ce4623e31a52580d35666f920553bfac4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "818d71d623024a52e2b5f48c9d00caa8e5ab75db0490293558cca69113af5cd2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "be1eb527080eab1cecfc922dec085b85666d3904b9f210097bc17e2776972d77"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4eab34f545b7d050634ac15e8a933324ab83377900d32d244430b7874a743306"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "392b0d6bacadce44fe118ce5b7e1763285d2616894a63c479fb2c1792ccfd48a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "41a539639bae5042ea91541d25b5f180d753ae9d51d1542ab34e62a46011354a"
+    sha256 cellar: :any_skip_relocation, ventura:        "6d2bb6701b4fbe7d6e899552f75c03aed4ce81b5afcd6317a60660bdf9250ca8"
+    sha256 cellar: :any_skip_relocation, monterey:       "fa42bc10dd3280f3341b65c459720b894f88dab861ec50346ee6bfb10ccd0555"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "861164a513770a659fe9aef7ea00b1c0879532a0fb76cd3100a14414b7e4bc8b"
   end
 
   depends_on "pygments"
@@ -98,8 +97,8 @@ class HttpPrompt < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "wcwidth" do

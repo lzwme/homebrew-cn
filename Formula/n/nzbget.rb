@@ -20,7 +20,7 @@ class Nzbget < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "65fd679c775ee8595c57e5459cc0eba8802944aa7181a4548e6cc6ad0340ffb3"
   end
 
-  deprecate! date: "2022-11-20", because: :repo_archived
+  disable! date: "2023-10-18", because: :repo_archived
 
   depends_on "pkg-config" => :build
   depends_on "openssl@3"

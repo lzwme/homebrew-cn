@@ -6,16 +6,17 @@ class Cloudsplaining < Formula
   url "https://files.pythonhosted.org/packages/36/41/10330ab113c1d40a48f32f536579aff5025ea975098f37def13fd7fdaef6/cloudsplaining-0.6.2.tar.gz"
   sha256 "02fc4f8482b701b0b19b7ad543b579ba50f31b3e0389bb9f6973391891d6ecd1"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/salesforce/cloudsplaining.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2a867ec8f61d3b96d8ce0761ac97385d47099493a9c1e5a954a7c8e0ac8086c6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed7ed6d38f4eed664b11ff1b4049ab000c6b01a9e7c28e5f14ea66469870433e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "84ebf36438595ce7d813f200307fe567c5e8a62460c85350ab9cdab19baeaf69"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5b5a02a0e9c6dfb44f10e551a13df1f26913750fb1dfcde471a6f96cbee22b1d"
-    sha256 cellar: :any_skip_relocation, ventura:        "92b7e21e6c10a11d2e9b433db7b044b36a2e463daced17e523a729ceed8501c1"
-    sha256 cellar: :any_skip_relocation, monterey:       "f4b087908de39612d24349b39fa72f4e53d7f914efee969ad978096a9b69d2ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "206e93598292a9e4a45cbc9ef398072bc3b1a5d04a3e92813834a958fc548969"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "50e7dc9efac5bf3db41eb2bc04fbdf6fa74f0bca3f302fea28d6b79c0ea914fd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d3b627ce5936904bd58fd36165a59e7b4e296283e51090ee9096ef7d68f5b4a4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f0d5cf0598e6c3cb006e9a5c269ea428a6ac9d8826c15567d9967db09aeac45b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ac076d5b170565fea0263831a3f72e311a1bbc4ad2dd98b749f86a0588cab688"
+    sha256 cellar: :any_skip_relocation, ventura:        "fe97cf6bd891537b35f04ede5fe6c6a60fa4ddce3173804b132ac27e1d3a0cca"
+    sha256 cellar: :any_skip_relocation, monterey:       "e16705b0f98b2e5d3f0b4a6474488fec48e1d08910c23824dc6ffca0e6bce1c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96f8fe592a34812ebb4c8faf6cf3973c4a8484e3f5f37358f1cd2e2cd4556749"
   end
 
   depends_on "python-certifi"
@@ -32,13 +33,13 @@ class Cloudsplaining < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/08/93/0f614264bca69210ac6b0ae06bc112a9569a0b849499e6a7884b670d272a/boto3-1.28.63.tar.gz"
-    sha256 "94218aba2feb5b404b665b8d76c172dc654f79b4c5fa0e9e92459c098da87bf4"
+    url "https://files.pythonhosted.org/packages/1b/2f/4ccd05e765a9aa3222125da37ceced40b4133094069c4d011ca7ae37681f/boto3-1.28.65.tar.gz"
+    sha256 "9d52a1605657aeb5b19b09cfc01d9a92f88a616a5daf5479a59656d6341ea6b3"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/a6/4f/4c2b7d96dd50aed47db6cccf6c1c089853f6474e1d1da5c5aa320d7d4157/botocore-1.31.63.tar.gz"
-    sha256 "6e582c811ea74f25bdb490ac372b2645de4a60286b42ddd8c69f3b6df82b6b12"
+    url "https://files.pythonhosted.org/packages/42/30/e5e2126eca77baedbf51e48241c898d99784d272bcf2fb47f5a10360e555/botocore-1.31.65.tar.gz"
+    sha256 "90716c6f1af97e5c2f516e9a3379767ebdddcc6cbed79b026fa5038ce4e5e43e"
   end
 
   resource "cached-property" do
@@ -107,8 +108,8 @@ class Cloudsplaining < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

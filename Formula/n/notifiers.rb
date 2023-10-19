@@ -6,17 +6,16 @@ class Notifiers < Formula
   url "https://files.pythonhosted.org/packages/54/fc/aa5de032cc8d9ee41ceba7bbea98e2ed7090d7d95465dfe0179eb937146f/notifiers-1.3.3.tar.gz"
   sha256 "9fd8d95ab1ebcd3852423755aa90cbb0f72a805ca77af0d8c9ad7af445f58399"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "a4833bc7d17bbb25e61e405373891f8cdfb257b7b2b3f024c88c1646f5454563"
-    sha256 cellar: :any,                 arm64_ventura:  "857248f4a8188e95c28f6833400ee87b3b89a8a00e847f8210fe999e2dfa3a62"
-    sha256 cellar: :any,                 arm64_monterey: "9baf599c2b99d3b24bf7bd0691e5245025770d7968d2ec4a2270fce071dec951"
-    sha256 cellar: :any,                 sonoma:         "22d6283d03815f07653c34d0f22243cc89e7826b3412957052f2e9cb9d4ef69f"
-    sha256 cellar: :any,                 ventura:        "316f338cf21e2f9063d677d292ff06bd521cd2fcae7b8fcf315178059d7885e5"
-    sha256 cellar: :any,                 monterey:       "45f99012652212260285d948b6a01e08027d969351eaa5f7475d1f69f8941137"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ddd46ca4ed3a3bb179503ac69c5d4b48d73893427d1f9aa73ca50b5baa830877"
+    sha256 cellar: :any,                 arm64_sonoma:   "f919400c88f421b0f48027787b6bc68b37987a4ad3652d98b1456fabd50622a8"
+    sha256 cellar: :any,                 arm64_ventura:  "cf1e95035cfc3f94e118e7c3a6494dbc21769b48ddcdf4dead48b69ebf4ae9d1"
+    sha256 cellar: :any,                 arm64_monterey: "927b63c798257e525b326a354183319174aa91559d4f32b8d9611370a19537f8"
+    sha256 cellar: :any,                 sonoma:         "620ce3095dcca9a9eb325cc5b8d70bb4af41ac40f6683630e0bd687f7255f32e"
+    sha256 cellar: :any,                 ventura:        "aadabe44bf9c8bdd3370ba7e55c9e3661ac08160c9ddc8ab5b5e16ae06182423"
+    sha256 cellar: :any,                 monterey:       "67ccbdc395d818e797ba829214e9b31b93193c79c20f78544961fc6587ab442e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "36a950d0b91821439fef8c45480cacca16a647a04516b87ead09ec13d0e4ec7f"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -66,8 +65,8 @@ class Notifiers < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

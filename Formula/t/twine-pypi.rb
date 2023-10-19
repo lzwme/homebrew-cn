@@ -6,17 +6,17 @@ class TwinePypi < Formula
   url "https://files.pythonhosted.org/packages/b7/1a/a7884359429d801cd63c2c5512ad0a337a509994b0e42d9696d4778d71f6/twine-4.0.2.tar.gz"
   sha256 "9e102ef5fdd5a20661eb88fad46338806c3bd32cf1db729603fe3697b1bc83c8"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/pypa/twine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5186fc127b4cf7f776a797056eb8565107defbcda1dd6ebe81502f5ec13e997e"
-    sha256 cellar: :any,                 arm64_ventura:  "ebb1154d9318dd23905c3b6810d585c7191ab50987d959da4dd095f3ff085af0"
-    sha256 cellar: :any,                 arm64_monterey: "3516768bcec5b955a7588c2e5c9efbeb9e065d6dbd286924239908b333e16c66"
-    sha256 cellar: :any,                 sonoma:         "d7f00f8e3654a753311d8d4d304e269e2b138d278077cf3f7e0b7ba932bba1cd"
-    sha256 cellar: :any,                 ventura:        "a9bd4f947ed1d8c1165fdc25acba75c38b5b8c845c94d53688d3dc51b7ba3c44"
-    sha256 cellar: :any,                 monterey:       "1715d6843250b8e478304d40843de591bd5dce6d1c82e8dbdef27264051f5ab9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a53b68de723d8ec963d5d0b0e923e78d1f3908d484565daf4fd8cc034f6ff49"
+    sha256 cellar: :any,                 arm64_sonoma:   "460dce05ce1f934717b98636c5fc4da8fe4a29905a1ca991b2a2b7e834b7c20e"
+    sha256 cellar: :any,                 arm64_ventura:  "cca12aae0236568a1b737ca8fef90acae90346e4b87298d1136e4f5043c28dba"
+    sha256 cellar: :any,                 arm64_monterey: "dc666962efbaaba54e28071c823ad69a5127edb1d4d9d5eee6561accc5a4c66d"
+    sha256 cellar: :any,                 sonoma:         "9a40e4e6f446b559e8e58e36cd41ffd94a9ba9a26a419cf9fbf25fbd000dc0fa"
+    sha256 cellar: :any,                 ventura:        "751bdd5685703679b276b2b18b4b1157b0853f1af96e2771c6e93bcccf7d565f"
+    sha256 cellar: :any,                 monterey:       "220e3a971b023b30b4015bf382b8b7d9bbc6226be1bd15ce05da1d3e9b0721ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13f8509a592c137d5e068f8efb14cc2d600fd8455eb81f8e17c94b829b3b2cea"
   end
 
   depends_on "rust" => :build
@@ -102,8 +102,8 @@ class TwinePypi < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "zipp" do

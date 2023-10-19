@@ -6,16 +6,17 @@ class Shodan < Formula
   url "https://files.pythonhosted.org/packages/0c/b8/60c2a98f767fb991ba9452551639e8a43db9269af860feac259e636e0719/shodan-1.30.1.tar.gz"
   sha256 "bedb6e8c2b4459592c1bc17b4d4b57dab0cb58a455ad589ee26a6304242cd505"
   license "MIT"
+  revision 1
   head "https://github.com/achillean/shodan-python.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3e10112522d0eca1d201fa7f05715fc662e5ee571891ae98b23abb753f5a721b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5a1f155722558fa95ccfc6668ccd1ab985cf64a62d7274717e3861f7d96ab4ea"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ec5df864c60facd25ca92abbcf95895d80343b0accffc0448d56c9e45a42c7c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a9f6bb6ed5951d30c86fa00c58077b86ff65c21ea1ea1caf6ca79c18fde0b6a0"
-    sha256 cellar: :any_skip_relocation, ventura:        "b86f05f5957dd3af2c2780153aa79b8ac20959273aa4bd33224b3e9456dd4b32"
-    sha256 cellar: :any_skip_relocation, monterey:       "d2f2bb1110bce7cda4daae51a9775a0544e4a7b6585b8541c8ebad7e9aab4430"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc117ef75a836bb9d72852a9abedbaf9ce5eaace8ae925d5c4abe2814b687ef5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2d051fb611d1d6c905ef64bddfebe264b53e1272cfbe07750f441a9f9a83347d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "21210eed1dabadf80d38a2b5683e342c0d49d181e8fa0224e93db225dbd8a953"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5ad01d9859ceb0f0cc7dc5517c5db0cb87ae38f03de850fe61bd87b17b5590c8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0c99fcb782e1fc15d7be929faf34dd2f6ec3194cec618312b767dd51be2ef070"
+    sha256 cellar: :any_skip_relocation, ventura:        "1f36906dda16bfbecab217604bab76eb3046516a06bc2674619553ffbe54ce11"
+    sha256 cellar: :any_skip_relocation, monterey:       "54b4cd9aa8fac953ebe69df70b91c0a7952d1e6d045386d04f857c3226547a4c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "236d0139c620ebf5b1a37582c365e53b402ace74e9d23175d041b88b1e7de150"
   end
 
   depends_on "python-certifi"
@@ -60,18 +61,18 @@ class Shodan < Formula
   end
 
   resource "tldextract" do
-    url "https://files.pythonhosted.org/packages/1e/50/302c6a51837578a7504344bb0aab66f1f0c4d3b11c4dbd8cb18552f4cb0f/tldextract-5.0.0.tar.gz"
-    sha256 "959965f3a4715105c598ef44ef624db9c9f85ee201cbfc2e063a51f8f19b1a5b"
+    url "https://files.pythonhosted.org/packages/ed/41/0a06e38f7fb55a3a2abaf998e018ed7d22987c0f1abbbcc1d50e06975b4f/tldextract-5.0.1.tar.gz"
+    sha256 "ac1c5daa02616e9c2608f5fb6dd93049db03d0cf46c7f6fad46e2850a984f019"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "xlsxwriter" do
-    url "https://files.pythonhosted.org/packages/5c/77/956e6ab727d9e9ba29a718e172158814f7ded1670219e4366b8851fedc11/XlsxWriter-3.1.7.tar.gz"
-    sha256 "353042efb0f8551ce72baa087e98228f3394fcb380e8b96313edf1eec8d50823"
+    url "https://files.pythonhosted.org/packages/da/b3/90e50e5c285f48b5fc251a6e8ec255a110dc194349b992a18c5b9ae3e713/XlsxWriter-3.1.8.tar.gz"
+    sha256 "059d0786fbfa3055588e81e9d5acf4ace28394bf09353a31ae2cae635740fc15"
   end
 
   def install

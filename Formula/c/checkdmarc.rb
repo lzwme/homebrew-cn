@@ -6,17 +6,17 @@ class Checkdmarc < Formula
   url "https://files.pythonhosted.org/packages/63/e3/76fd28a05a57cd3148a5c5783c23fcfae0d580fe05e5f0f68a600c839bfe/checkdmarc-4.8.5.tar.gz"
   sha256 "cddb94f9ab944e4ed461dfb5721a81a7a80f60cacbadaf968fea3c89eff1c1e2"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/domainaware/checkdmarc.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1f18bd8668e1c6c15df1a0f5e0dd3f05b88aba6954f5124920f5af141cd7b17a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "42e424c7d6dcb0ad49d68fd27751a2cb713a9743e11f6401ab602ccfc7a306ec"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5dc12547fd220f53d5adcf53feaa59abb69fc6a1a2b5be0ca027352d088d2b94"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6635a618cc8044ce89dc40dee8a0afb520a6fa6f0339e469fcf8852e04f605aa"
-    sha256 cellar: :any_skip_relocation, ventura:        "2c3fb43c4ab9c2bd4999be109bc1041e36a4207b69021e5cafede2ca98989746"
-    sha256 cellar: :any_skip_relocation, monterey:       "e5d85fba4be144ce735c331de8b0462eeb28d524bd544f37bcd21410660cf036"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45e0823041bddcd6ec511fb282151fc71fbb2cc6d3811b7ae8890c8bfdbe4dd8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4177abee8faa042cbbfcedfb7187e67e8249a5ca2b0d169e0f221b609db7526c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d4ad89adc3ae40d9408e0411a271657dce3e9f25ea136db7756eb4afdce1cd7e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b03b7b433fba8e65da5efee052c6ea23a90fd080fafa00643f132a05f7888584"
+    sha256 cellar: :any_skip_relocation, sonoma:         "36791ced85da41620bf0d40b5478b0771fcd1f662ca3a8df3af3e68f74aa92cc"
+    sha256 cellar: :any_skip_relocation, ventura:        "d50d861effefa26e74ebd7cc52e8d7095e058ef4904c86a0822f5f4189e49070"
+    sha256 cellar: :any_skip_relocation, monterey:       "81caae1e9bf907c4580a368615e92370124747b2f5416df45e1929a81b8dde71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "847cae87cad172629ddbf00db0514e68a9562cdbc5943669572937fc24b80edc"
   end
 
   depends_on "cffi"
@@ -66,8 +66,8 @@ class Checkdmarc < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

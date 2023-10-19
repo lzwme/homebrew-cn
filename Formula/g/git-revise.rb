@@ -6,7 +6,7 @@ class GitRevise < Formula
   url "https://files.pythonhosted.org/packages/99/fe/03e0afc973c19af8ebf9c7a4a090a974c0c39578b1d4082d201d126b7f9a/git-revise-0.7.0.tar.gz"
   sha256 "af92ca2e7224c5e7ac2e16ed2f302dd36839a33521655c20fe0b7d693a1dc4c4"
   license "MIT"
-  head "https://github.com/mystor/git-revise.git", revision: "main"
+  head "https://github.com/mystor/git-revise.git", branch: "main"
 
   bottle do
     rebuild 2

@@ -6,18 +6,17 @@ class Awsume < Formula
   url "https://files.pythonhosted.org/packages/2f/d4/2f9621851aa22e06b0242d1c5dc2fbeb6267d5beca92c0adf875438793c2/awsume-4.5.3.tar.gz"
   sha256 "e94cc4c1d0f3cc0db8270572e2880c0641ce14cf226355bf42440b726bf453ef"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/trek10inc/awsume.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f556db866148efdf8b58e6447c2ffe2c339a0a5c1bc04ee7b96dd0c7fc82bc51"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a51c93d85a0e99a1562093c58d98ce415e0c0f793b05b328769b9fb8f6262ca7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4f49509903777cac25836fda9a89ebb54d22ec1cba8f04a5f44457f9fd40b5da"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c4d9b8465d5a3a1105bc634c700bda2b317564269ff42cdc33e8d1f129b16538"
-    sha256 cellar: :any_skip_relocation, ventura:        "17ff72bda84e1ce7cf8ca4294682d86aefb17e90c0e06504fa8c8e7df69720d3"
-    sha256 cellar: :any_skip_relocation, monterey:       "0f45453de113828f84d3e89deee98e616ace80a02205873d4ff07b31d6723278"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f23c094facdc74541cab5275cd0c4d7d86ee82b632a946724368054cbeb0fbe8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6fa592f87d6ccbcb83a9efdcd639c9800281dd927e39bb7539ba3b5f6c0f6e2e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "272f78dfde38ca43714ea5559e93b693a0f6273712deb1487c4cf32b48b4a8b7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7669aeff98d3b1ef062c325aadf018918e5b8e9441d3ee610790c18af26dfd59"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9b55a8b742d27019a36b36c609bce6a865249d204f3ffe587c37838f7a667bcb"
+    sha256 cellar: :any_skip_relocation, ventura:        "eb94536a788a691b5548f8d05f923a9a0a1ce0f21f07a99291bbb6ea8399d501"
+    sha256 cellar: :any_skip_relocation, monterey:       "7637cd5ec6b867798bc2986ec6dcca8824d66852ca89917e0a8f2236d135f737"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba6912a0dfb6ea0172fbab32c1ac094892b08067bd768e82e8fe93147767a390"
   end
 
   depends_on "python@3.12"
@@ -27,13 +26,13 @@ class Awsume < Formula
   uses_from_macos "sqlite"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/a8/23/ef75674c1ef3bf77479a5566a1a7c642206298feec1f7012e4710a5b35f4/boto3-1.28.58.tar.gz"
-    sha256 "2f18d2dac5d9229e8485b556eb58b7b95fca91bbf002f63bf9c39209f513f6e6"
+    url "https://files.pythonhosted.org/packages/1b/2f/4ccd05e765a9aa3222125da37ceced40b4133094069c4d011ca7ae37681f/boto3-1.28.65.tar.gz"
+    sha256 "9d52a1605657aeb5b19b09cfc01d9a92f88a616a5daf5479a59656d6341ea6b3"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/77/1d/bd7a7383a2aff3cbf01c758a5507106ac7459707b241d8afbf336520f142/botocore-1.31.58.tar.gz"
-    sha256 "002f8bdca8efde50ae7267f342bc1d03a71d76024ce3949e4ffdd1151581c53e"
+    url "https://files.pythonhosted.org/packages/42/30/e5e2126eca77baedbf51e48241c898d99784d272bcf2fb47f5a10360e555/botocore-1.31.65.tar.gz"
+    sha256 "90716c6f1af97e5c2f516e9a3379767ebdddcc6cbed79b026fa5038ce4e5e43e"
   end
 
   resource "colorama" do
@@ -52,8 +51,8 @@ class Awsume < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/d6/0f/96b7309212a926c1448366e9ce69b081ea79d63265bde33f11cc9cfc2c07/psutil-5.9.5.tar.gz"
-    sha256 "5410638e4df39c54d957fc51ce03048acd8e6d60abc0f5107af51e5fb566eb3c"
+    url "https://files.pythonhosted.org/packages/2d/01/beb7331fc6c8d1c49dd051e3611379bfe379e915c808e1301506027fce9d/psutil-5.9.6.tar.gz"
+    sha256 "e4b92ddcd7dd4cdd3f900180ea1e104932c7bce234fb88976e2a3b296441225a"
   end
 
   resource "python-dateutil" do
@@ -67,8 +66,8 @@ class Awsume < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/dd/19/9e5c8b813a8bddbfb035fa2b0c29077836ae7c4def1a55ae4632167b3511/urllib3-1.26.17.tar.gz"
-    sha256 "24d6a242c28d29af46c3fae832c36db3bbebcc533dd1bb549172cd739c82df21"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

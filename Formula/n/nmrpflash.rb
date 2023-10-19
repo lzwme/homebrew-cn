@@ -1,20 +1,18 @@
 class Nmrpflash < Formula
   desc "Netgear Unbrick Utility"
   homepage "https://github.com/jclehner/nmrpflash"
-  url "https://ghproxy.com/https://github.com/jclehner/nmrpflash/archive/refs/tags/v0.9.21.tar.gz"
-  sha256 "0be3a8771087b592002258ce6f34729da7a76d81eff52ac95dee788c0f4fc9b3"
+  url "https://ghproxy.com/https://github.com/jclehner/nmrpflash/archive/refs/tags/v0.9.22.tar.gz"
+  sha256 "cef3b54c798a4a049a2d9b959e1d6a0ac2f4f31b802d6be4f79351b9a96c3f39"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f6e093a3d7f3a7cedc6c9dc89c0b16d0574184858a26ea93eea8188c7fb7f470"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bb409a3da185ab4f0eab3d2bced58968fa73337b8ece30620895a1bdcd005b03"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "986a226ee3498af37ff8508764671fc0b5120b3f406666c8fbdec2a8367bbdbe"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ac28182aff50b1b59ec74ae1a8d85f142da331a099479c84c0305a847323778a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "90ae51f411b2394fbde1783a9724d92bbcbd21cf7fea575ce6764c1f9d6cb55d"
-    sha256 cellar: :any_skip_relocation, ventura:        "2095ab26f5da3fd8ece982cd1c4a9876cf4bda03e9780b363f513043212d8706"
-    sha256 cellar: :any_skip_relocation, monterey:       "2509a906059b82fd06583b0283ed3bd7b83b665ac0d9a343c407d0bf8d002d08"
-    sha256 cellar: :any_skip_relocation, big_sur:        "abf54e145dac5c102de298a5c1a08f6a5d3388ba5197610e91ae4c4e1e1509fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c0bf9c0f6f4b26b57d53e62e540be3a4f088c35b6030edddc5c1e890bf4f750"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7707770da6f42c1be7584a916ec0c71413daaf4d0016b21d805428937a2ae05e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ea1a68cc3899bbfd347fa8ccb4f4c57eb4c67d4eb7fd0fc1597d03f4d485167f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c4ed486e5af0f6ba6a942d62fac781aefeba10ccee0538ce7da1d54981ac8740"
+    sha256 cellar: :any_skip_relocation, sonoma:         "adfd26f227285f47a5c456a66cdd8a8c84d9640156c8c98009f7df24ba493be8"
+    sha256 cellar: :any_skip_relocation, ventura:        "22a6bfa73038cf62b5fed6de8dfee37c528a5fbeb81a41a90288c6a9dfb540b0"
+    sha256 cellar: :any_skip_relocation, monterey:       "9679ae12b03689f3d5bddf1101ba005b872ae4762a11b8cbfd8df2fede54d0aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e8e4c97df6dbe64e51af2e0d912253154c69a691cbe78cb0ff3c4f5afe85a2c"
   end
 
   uses_from_macos "libpcap"

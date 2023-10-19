@@ -6,18 +6,17 @@ class Gcalcli < Formula
   url "https://files.pythonhosted.org/packages/e8/d9/9d1f03b9b47c3082bf664a2f789a3aded0674dca9e0b894540d754b937cc/gcalcli-4.3.0.tar.gz"
   sha256 "d00081460276027196e8fb957880b29ba4f22ea43136f9e232a9408016abc110"
   license "MIT"
-  revision 5
+  revision 6
   head "https://github.com/insanum/gcalcli.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "61b5408008b627ea5ae53dbf72ab2b02790839c2180ff6e99e9e2ef0e204d05f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "58567d597c6d01f2e9f4851c1aa73d422006d04f15b0c89f624cb88c3f19a1e4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a4eb80dcce1c4a2e7ad57b3ead4616c8ca6c119d62ac766927fb745f7aba29c8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f8c1f272fdbb7bc10dbe5af5ae9e427b9c8f90ad2e4bcfd4d087c1e792e5aa9b"
-    sha256 cellar: :any_skip_relocation, ventura:        "8b87186b30689c0bf5d585a491f25f13744aed380ac87664760ea9d2b3ef7565"
-    sha256 cellar: :any_skip_relocation, monterey:       "1033ee532d248567978a0eb78925a3a26d2e3eac7cfd0fc674ed1792b639eecf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0359e900c5370e263cdf55d811cb879578798ca92f64feb524dd9fadb5195611"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "774adf923bf875af1cbeef54ede2d1b1b51984e6cd19c677e05889138be313f9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e74db3b4bab0c82fd5b9160feb9f43247a338178c24d6d14aa9a0585a8573af3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cda280b92fbf376c896afd8fdc0062c987f991ad9bf6245987ae5bc54f018a4f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d49289a3e0e523e1ed9faebaa9c0d0724e97b944e57d1c576f3f8d68f7b489fc"
+    sha256 cellar: :any_skip_relocation, ventura:        "5667cb74efa2b2580d4e912a2c38b3b61beb46fadce583194faebbbf32a1547e"
+    sha256 cellar: :any_skip_relocation, monterey:       "3ec81a2e9dccfce96261df2f50265fcdaffeb1e447cef7c4123d1ec72138769e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e629f0cf43c4e3c3b1466325b727a79b7d8d4dccf5f1e39ac8c1e31d25984a9"
   end
 
   depends_on "python-certifi"
@@ -116,8 +115,8 @@ class Gcalcli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

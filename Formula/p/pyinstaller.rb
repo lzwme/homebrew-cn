@@ -9,17 +9,19 @@ class Pyinstaller < Formula
   head "https://github.com/pyinstaller/pyinstaller.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "31417be402844ac286287843ee86fc57d5f3dca8198979c351d321de8532d9a3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f1aab0ea79ec25ffd84b4afc441a3b76277b12a4faf8337271b8775ae0ca3a9f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7f651d1e854168258dbd53db82902dbada392ae7da344c0b5c1ff992fc98c48b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cb2195b95843e68ffc4caf008a49ff3d929800d5e50d6335965b5e53eb5bf221"
-    sha256 cellar: :any_skip_relocation, ventura:        "10f15ebbdca2394d557000ca2fc2e6054ee67b26daa7c974265d006fe10e887a"
-    sha256 cellar: :any_skip_relocation, monterey:       "71eb1fa554eec785e356d28cc09c40ecbf21246709bb459dcf83c0878241dfdf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8aa832e07e69348612bbaeeb0c366c7ebc0039dee6794bceb7368c4504992b6b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "68e3a5161baaffed5e4d86f6ad2edee5d71685d88700f3cf4bdc3b8e9098f6bc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "123e17a557831b07d13acbff1bd48a622e0784c548fa7e0254f0b46b2a27e1e5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c3e36b81c88bf974aa7f0a908065bf041093c370acc5b3a075b6adb47fe71359"
+    sha256 cellar: :any_skip_relocation, sonoma:         "862118a27aa224b6cdfd93f6efe06888eaf5f86c6be4212de4c43959db00739e"
+    sha256 cellar: :any_skip_relocation, ventura:        "986b4f94c91fdad4c592339bb9c190397d5199076340e1fbe75d440f0df8a139"
+    sha256 cellar: :any_skip_relocation, monterey:       "b526c476ad1a3c39a724fd420051530a24dd4b696b03976fc78e9db8de8c2b78"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "948ffc58267af19d3df91a2177ca00de130e20276f821f454c68b8f9ea51b9cf"
   end
 
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
 
   resource "altgraph" do
     url "https://files.pythonhosted.org/packages/de/a8/7145824cf0b9e3c28046520480f207df47e927df83aa9555fb47f8505922/altgraph-0.17.4.tar.gz"
@@ -38,7 +40,7 @@ class Pyinstaller < Formula
 
   def install
     cd "bootloader" do
-      system "python3.11", "./waf", "all", "--no-universal2", "STRIP=/usr/bin/strip"
+      system "python3.12", "./waf", "all", "--no-universal2", "STRIP=/usr/bin/strip"
     end
     virtualenv_install_with_resources
   end

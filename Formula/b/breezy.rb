@@ -6,17 +6,16 @@ class Breezy < Formula
   url "https://files.pythonhosted.org/packages/5d/6e/cf538824a8ee831c761714f57803da7ba556e2bdfacd039ce8e5f27cbf98/breezy-3.3.4.tar.gz"
   sha256 "7c412f39fa3c616871fb1ba2a83fca36cb65b28e7f2b55c99c663ae2d90b2301"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "2f8194bdd0afacc87396b6bbc8c4d6b55320d47d85eeb6ee65e75fa091b24a1b"
-    sha256 cellar: :any,                 arm64_ventura:  "7bbe1259468d58ad3522e0952a80b3b5f5358004b163946ce5fd52c293ee107e"
-    sha256 cellar: :any,                 arm64_monterey: "e98bf97cde3ea7ce268b1a0a8695ec6eb9f3c91dc1e460d356cb8b38996b1c72"
-    sha256 cellar: :any,                 sonoma:         "87c30fdc83806e6278064c30311cf3cf22827ce8d383413d93af44b9a7e37ac8"
-    sha256 cellar: :any,                 ventura:        "8554749d48049d009ef3398f8453375b95df3ba9650cee057f0f1713a95a65b3"
-    sha256 cellar: :any,                 monterey:       "d16cbbc92338c0306b13792500d469500510c6671bd1e146844a0afbd1aab5da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "059795b93f5776764382b57fd0b401b8a18fff04a4cfcefcea23bdaddfe7ccf4"
+    sha256 cellar: :any,                 arm64_sonoma:   "9427827db136c5fd40e219bcc9cfab8f9c4f5e077c1595be5b8c5b4466987cad"
+    sha256 cellar: :any,                 arm64_ventura:  "90aba3a3c9fb57a16bd13f944c34886e174b352d57cf6f049e38a5ea23fb374c"
+    sha256 cellar: :any,                 arm64_monterey: "943762d09e40b920b68962c517ecafe45a9cefeea38cd0b87dd58f8f111ea01e"
+    sha256 cellar: :any,                 sonoma:         "1d2b1d867b38241129e22647cc9386c6a4dcdc58f4c83ade9af9025db189c1b8"
+    sha256 cellar: :any,                 ventura:        "e27e1614e2ed1ae542aed9f9d8326ffac2251a82f816bef58301fe259cfd7752"
+    sha256 cellar: :any,                 monterey:       "a6a4a4903ffc2ef65c065d3f34972f6c52df4dee444cf500252b657960fcf807"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "954725f22384ec46df3f0678214ab689b92be900f8e79d16248b298153f05c19"
   end
 
   depends_on "gettext" => :build
@@ -54,8 +53,8 @@ class Breezy < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

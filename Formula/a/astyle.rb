@@ -1,8 +1,8 @@
 class Astyle < Formula
   desc "Source code beautifier for C, C++, C#, and Java"
   homepage "https://astyle.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/astyle/astyle/astyle%203.4/astyle-3.4.8.tar.bz2"
-  sha256 "0f32cb097dc121099cca420a0762c62297d5a5dbc8b994fc755cb47ff4c6c666"
+  url "https://downloads.sourceforge.net/project/astyle/astyle/astyle%203.4/astyle-3.4.9.tar.bz2"
+  sha256 "44239275c70eda6591471129962cc03d19eba41b15cb194590971c3b4a2de18d"
   license "MIT"
   head "https://svn.code.sf.net/p/astyle/code/trunk/AStyle"
 
@@ -12,15 +12,13 @@ class Astyle < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d10de965c3f70e244f7ccfe07df9c21e6fdceebf6495598772e9520afc669bf3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a114dafc5cb75a0f475b791537b63acb249cc95b221a58654354143076f16b5f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bcb1a2cf4c4c9abde182ba3d376fb4ee2373b8ba3492e07100db93fcb653ec31"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "087297689e5b22bd8838f8253cccd5fc4c90871e4c78378f379554be5b42ff1f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f6eed1124a08f862faa5fe61a6959c00b657b39618fd986374ad12fd8ee4cdd0"
-    sha256 cellar: :any_skip_relocation, ventura:        "58cd2e468c999eabb1fbf3c4fc4b7e31a39123c9fa2e3572dbafc1616e11e2f0"
-    sha256 cellar: :any_skip_relocation, monterey:       "06fc81105e2beefdaac1a22402330e27d59c48605ba4ac87378c637f82858e04"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e8f99641766c6f4e699c1395d4680647e211f96009fb86e0296d271e8dcc422a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a524c662d5ee2689ebecdba574a58a11443b6bc733a2a42f8adb3825825b5148"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cfecf6cc5ac3aa3cb48bedb6990f11a2cdeda55b00fcb509096ae375579b44a1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8aab30fe0d12440995f57a0332403913d6c9e61f1559530bc2261860e8d6551b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3a64db68e88399831fdcbc086af587f8ae7c9fc55b7dc71ec10202428f3e1702"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5651acdc2f68649ab4308405a270b8b1cc4cde3c938f16089c8febdde98b222d"
+    sha256 cellar: :any_skip_relocation, ventura:        "a1d5111b26f588e9863b3b5165ef09b7490d8a65b538d10ee807d22d7c26f807"
+    sha256 cellar: :any_skip_relocation, monterey:       "cdaaba25df9b780ceea18ab62edd6b86d38aa16ab940f2dd6ecd0e98213d91a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5bd80894986c46848b68b580e7f16513b060e0441132ec2250879f09f246dfd9"
   end
 
   def install

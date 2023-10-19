@@ -2,19 +2,19 @@ class AwsSsoCli < Formula
   desc "Securely manage AWS API credentials using AWS SSO"
   homepage "https://github.com/synfinatic/aws-sso-cli"
   url "https://github.com/synfinatic/aws-sso-cli.git",
-      tag:      "v1.14.0",
-      revision: "4415620e18eef221579f334f2d0687a605b54b72"
+      tag:      "v1.14.1",
+      revision: "b3f6be7babc4e05956d0b7988bf7b3465bd25ad3"
   license "GPL-3.0-only"
   head "https://github.com/synfinatic/aws-sso-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "34c3a81ae6dd2675837db2d334dfa704033d2363ceb4580c46af9517c60b5b99"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b32d92c9b3d72e2ade703ccb5860289ab77a550173a5b71b014f2b09e1c75f85"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "895f09511438d62d7229d8a0c0413bb76b39d61c65942e80bb28a758a5311e21"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fe9addb373cf238241ee3fa614d181f1334987538e29aec27a1f6f19fd4b801b"
-    sha256 cellar: :any_skip_relocation, ventura:        "f9b6e15e199a9318baa7550ed341da77f8f5c344d4adda0f78b3e811fa3f84ab"
-    sha256 cellar: :any_skip_relocation, monterey:       "6e2673d4923ddb21784ee5576f05a7ac6880704b15cc4923fbc69a0198791298"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "30f417358355e9cf44bd03b14f64ad77bad96fdcfb6fec707a8cdb5260f4d6e2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "747bcd10a215cfb81f29d14d8bd8208c8218e0fb4bb5045369b692c97b749012"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f5adfadefc3de04f401bf1b5423e1b4e2d7c84e348dfc7f814030759cd0502a0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b709967795c22f77d6af0d5f5bc85e05855e882f69d3b09a729baa78dc20998e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "92a8d885f5ad9ee6ff7157bedbcd40d1a42880b9479796b5e26e557b50d59720"
+    sha256 cellar: :any_skip_relocation, ventura:        "18acf70a037745d2e0b77558c5e3f95221ff42b0338bfcaa3b62db58ee084466"
+    sha256 cellar: :any_skip_relocation, monterey:       "f48f57c2b7ec7e1a41523255e5e6654cbfcad2b63f3ec9e6e2d6e9062dd20712"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6758afc226615f5e4fc85d2abb3ae6a757c096c11b96c1799858b9d3afbf8c31"
   end
 
   depends_on "go" => :build

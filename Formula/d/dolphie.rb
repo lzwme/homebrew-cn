@@ -6,17 +6,16 @@ class Dolphie < Formula
   url "https://files.pythonhosted.org/packages/42/62/5853fe74430773e0e4e5c29483f1ca633a5955d25f9ede4fad24f333a809/dolphie-3.1.3.tar.gz"
   sha256 "62b008053c1ac7b5e17815782726345b95e5970ab22d29b517af58b71d3dfdb1"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6d14025883caeccdfadfae494a2e5ec480cefbe686a34afbaf1c9fa1d1b685f3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2d0e214ff6460488a4f28918e24514274aeeebfc1fd083125225e65f188327bf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "620dfed0f957df9ba4ee0f25ac31b0445712e9d175f3fc6a8eb0c20ab052f5ba"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e0faabac6382bc79b939a3f615e0c3f570467d339cc4d163df8904dbec16b494"
-    sha256 cellar: :any_skip_relocation, ventura:        "e621f91bea7cfb6586192be75dbaf774909b30d9a7301ba64ed1c321872121d3"
-    sha256 cellar: :any_skip_relocation, monterey:       "2b2a0fff6cd618fd8346e814b8dc3ac48ebf464fa0ea6dc43093838300f81f3d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f321c3cfdb70ba3eb66244e030a553548d5593b3bbe0242f7dbdc4c0050cbe8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "01eb71c04c0b7d8c7b857e1234da956ec4079d85fd0d383bde41e0a9a4d693eb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1de946dc43a3b7eb1f34dbb2fce621672f30cc76044b39b8102fcb155c865a2a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e81619f3df88b6b80b5f400be20bdab1eecf9de5a0b74193653c0300e80323c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3815c4fa864a9851629afc9c637291fa37a6d7d7edf230e450146bc496dede91"
+    sha256 cellar: :any_skip_relocation, ventura:        "6fd85ac036448f71794c43f274db8071692dfaff1f1c449da7187585ddd51d0e"
+    sha256 cellar: :any_skip_relocation, monterey:       "d2a5f5b464b49307ba8ac8b3c4fdd664439b9fdeea38c49eab439ac07f97c902"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "221efbf561cc9f8f0c8cd7cc16e93588a546f7e0ec56244742fdd19ae9647ba0"
   end
 
   depends_on "cffi"
@@ -109,8 +108,8 @@ class Dolphie < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "zipp" do

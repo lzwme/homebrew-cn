@@ -19,7 +19,7 @@ class Openmodelica < Formula
   # https://openmodelica.org/download/download-mac
   # The Mac builds of OpenModelica were discontinued after version 1.16.
   # Depends on legacy qt@5
-  deprecate! date: "2022-12-19", because: :unsupported
+  disable! date: "2023-10-18", because: :unsupported
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build

@@ -1,19 +1,19 @@
 class Kitex < Formula
   desc "Golang RPC framework for microservices"
   homepage "https://github.com/cloudwego/kitex"
-  url "https://ghproxy.com/https://github.com/cloudwego/kitex/archive/refs/tags/v0.7.2.tar.gz"
-  sha256 "663fcc0c18da67cf8cd37667c1dd876bcdf018714f9beb94171af75ac2bf46d1"
+  url "https://ghproxy.com/https://github.com/cloudwego/kitex/archive/refs/tags/v0.7.3.tar.gz"
+  sha256 "92fe89e24c5268e1c850eb578b77230e154fa6ae6571fa7191282f80ef61e87f"
   license "Apache-2.0"
   head "https://github.com/cloudwego/kitex.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "feeab8d97158b0a2447a5cce1711588beb507cc8613357a0243b6286faf61cb2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ab9df979f5b1b87a295c25ed2180972ebfc6dafc9b1e439a639c6ed9898242c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0e78affa3272df47abed98864a67c2eb052c7765d27fd29ef80f44848c0f48f7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bcd1ea5a65e7497f300fb9dbce4ef7f4cde2fa1d66b232ebb8dc0374fb6329bd"
-    sha256 cellar: :any_skip_relocation, ventura:        "d00c91abacc171b0d2cc9860c60d65dedb48b016fc127bdd1d70cd8977cd4aac"
-    sha256 cellar: :any_skip_relocation, monterey:       "3d6bae2840b082c956c8e8df06e52a9106542d1401ceaf89bac627290daae6ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6cb741fbf572cfdbddd654ae73ae20ae5a1771767d1e4315828819174f1b3ec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0596afba30fd63ea0726ed395fea5bd662f1b281937ceca0a5a81597d1790f65"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8c2390b43d1b22f835a5269b57e0b768c9f45710b5878c240877285fc179cb64"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "79be6b84ce4b00f7f5f83d2c2146454f4bde5c5f03e69bf6983983cf55c17ab0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "931820b68df3a14de6dbe548f30d4091a973d6859950d719009818146180e49d"
+    sha256 cellar: :any_skip_relocation, ventura:        "dcb4c92cd0c0afa7c1f4e1ad7fb0d373bfcea302fc5d024b2e6214d6d411e9be"
+    sha256 cellar: :any_skip_relocation, monterey:       "2b472e585c9c591a4470b2ee5180c93f68055bd407881f46c8aa16f3a6682d34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b77d0e2f1d7ae14eb1bc4214d70c067cf813fbd538160a26832df03eb037b0c3"
   end
 
   depends_on "go" => [:build, :test]

@@ -6,17 +6,17 @@ class Gptline < Formula
   url "https://files.pythonhosted.org/packages/5b/28/d15a9a5b349c77a051a633e13141151314f352067ec7d516220bd6b20fcf/gptline-1.0.8.tar.gz"
   sha256 "4a0a0b5fa4f23e5f2ad7ac5bf44a9143e5de3757b0b8eefe5d78a7757d1d34bb"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/gnachman/gptline.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "537d0c4203eaa41465ad29fbae3f5e6d40a20ad4c97aceec14c177cf1f5756e2"
-    sha256 cellar: :any,                 arm64_ventura:  "4936733df29405cbb01bedcc967bb405a7246e69ac5aa41e48860d5c7d9d7a52"
-    sha256 cellar: :any,                 arm64_monterey: "2f0e2ebe011b3ca0cd447cba5f4a365c018ee256e994cebbe8b9458fced4a516"
-    sha256 cellar: :any,                 sonoma:         "e6664b6a1732307d245ecaf1226442a8b1f544ad4fe4345e4920516ab15a23e4"
-    sha256 cellar: :any,                 ventura:        "978b7d69f533f0a0e07cce39fa9a3d88f0d1146ec2da5f03217de01e6a0c5ca4"
-    sha256 cellar: :any,                 monterey:       "bed69d4851a90abdab25e959f6cfb80efaa1565ac956e4c5dd99a2a01d48c094"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17664c2ee514489dbc35a44ef8ff17baf73755d3e5e9a586bd43b011c17a04bc"
+    sha256 cellar: :any,                 arm64_sonoma:   "98a4b92d736d3a09e4714d3ce301f6e9eb630fb5a28e962990d4418f7a0a3269"
+    sha256 cellar: :any,                 arm64_ventura:  "0c349c116bfbdb2a87d4d102bc7ea7ec86a77e1059a4d5cd31ce1057d6630c62"
+    sha256 cellar: :any,                 arm64_monterey: "89a8dc62c68d454828c68f4f21147570719925bccfb64a8c8b144dabe8fa4459"
+    sha256 cellar: :any,                 sonoma:         "929f531d344bf43b4984dc364730aadcc57de9bd60559a73025374b97ef5dc78"
+    sha256 cellar: :any,                 ventura:        "507f9fc159f8e83ddd50719aa4359ba09db98270bed249d3d97cd71541327851"
+    sha256 cellar: :any,                 monterey:       "5885e9bf79ccfe14cca8f1538cd7a4b59668817159b42e3a8f5dd3a576dc720c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "653ed4d00d176f770f15db3d4169e749546aa01863e5257537048cb51adf9c76"
   end
 
   depends_on "pkg-config" => :build
@@ -186,8 +186,8 @@ class Gptline < Formula
   end
 
   resource "tldextract" do
-    url "https://files.pythonhosted.org/packages/1e/50/302c6a51837578a7504344bb0aab66f1f0c4d3b11c4dbd8cb18552f4cb0f/tldextract-5.0.0.tar.gz"
-    sha256 "959965f3a4715105c598ef44ef624db9c9f85ee201cbfc2e063a51f8f19b1a5b"
+    url "https://files.pythonhosted.org/packages/ed/41/0a06e38f7fb55a3a2abaf998e018ed7d22987c0f1abbbcc1d50e06975b4f/tldextract-5.0.1.tar.gz"
+    sha256 "ac1c5daa02616e9c2608f5fb6dd93049db03d0cf46c7f6fad46e2850a984f019"
   end
 
   resource "tqdm" do
@@ -196,8 +196,8 @@ class Gptline < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "wcwidth" do

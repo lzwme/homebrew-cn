@@ -6,16 +6,16 @@ class Openstackclient < Formula
   url "https://files.pythonhosted.org/packages/4b/4a/4fa8b9e681dbd38ecf2a86e05f0f9fa48eb4e31e7c4f5925877367022127/python-openstackclient-6.3.0.tar.gz"
   sha256 "9ba0bdf8d03087e585b40a8dcc429cebbdd5fdec24c1d60a102bf9f331320df1"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d97a5587c895cd828d994671bba9dbe0e44200d5245d5c3f0d37b0f5021944f7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8747a7365ae1caef5ef1405cfc926cc7fe15e2c682aa0b7351a4357d1f22c6c8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4837629a50791e8d0ba092a86845e471d61738e81f757ee77437fe02ebad2798"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c60d672992ec2709d03e8b7f986edbc41e1faa2f4f3858ecdf31604d1145dd3d"
-    sha256 cellar: :any_skip_relocation, ventura:        "d018ab6f0ce7c9ef313b9d7283ae053bf9730364343cfd4ffa27ed29e7d0cc42"
-    sha256 cellar: :any_skip_relocation, monterey:       "214a994931dab50602b579a5c6805de9ed3ee874b5aa429c6246f029725740ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5398a742bb2f639e62b0c83cb20c76809ae8e5dd08d8e5ede2d7df72ae5532b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "28aba7138881035e159502736b53331572ccc8ca43fff2d730969aeaebc63005"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b95e89438a9dcd38cb95028c8d040a79be8bc4e67df24b9524272577b2839537"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bda5fe8b55fb4120387f05df1a029460f397d2661939846a3c5caa6c9ea3a62a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "01e716f93d468b4d6eee13283805ecd69a4caeada335544700ac48b870787b8b"
+    sha256 cellar: :any_skip_relocation, ventura:        "2de143204131d4d00ccdcbf5ae98f695ef4624df10cef81ea6dedbcbf3f28b34"
+    sha256 cellar: :any_skip_relocation, monterey:       "63bc2687bf117aae517242804e56c3697f6f659114dd522b45f743e8f23ec8c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "245874920656f4e692f491bb0c0e1a7af7968faac278c4468c94013f5bfba8b3"
   end
 
   depends_on "cffi"
@@ -24,7 +24,7 @@ class Openstackclient < Formula
   depends_on "python-cryptography"
   depends_on "python-packaging"
   depends_on "python-pytz"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
@@ -39,8 +39,8 @@ class Openstackclient < Formula
   end
 
   resource "autopage" do
-    url "https://files.pythonhosted.org/packages/36/b1/e5a1c2ebeb64ccc9c2a4ae133f5955d9824482628ed4bf0331c73323f0de/autopage-0.5.1.tar.gz"
-    sha256 "01be3ee61bb714e9090fcc5c10f4cf546c396331c620c6ae50a2321b28ed3199"
+    url "https://files.pythonhosted.org/packages/9f/9e/559b0cfdba9f3ed6744d8cbcdbda58880d3695c43c053a31773cefcedde3/autopage-0.5.2.tar.gz"
+    sha256 "826996d74c5aa9f4b6916195547312ac6384bac3810b8517063f293248257b72"
   end
 
   resource "babel" do
@@ -269,8 +269,8 @@ class Openstackclient < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "wcwidth" do

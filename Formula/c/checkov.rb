@@ -7,15 +7,16 @@ class Checkov < Formula
   url "https://files.pythonhosted.org/packages/19/e9/793fd6741fcc9fddc599e180a966016dedae5964cc24cde8f0f9dbfd8eef/checkov-2.5.10.tar.gz"
   sha256 "a968ca91e6ffe53d93f2c9b45c168096b4d0e7511b1e74d126c7aab68afc06cb"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2d05657abacef6fd83f58f2ef10b53baa739e9e22c6b5b479fdb4f53e50783b5"
-    sha256 cellar: :any,                 arm64_ventura:  "74b44f9ca50c7f0826aafbc256fce45395525848d7446371ae658103eaf59745"
-    sha256 cellar: :any,                 arm64_monterey: "b0c6d866e8c94b8b40a0232123bcba647ef491623463225b79f03c92cef49d20"
-    sha256 cellar: :any,                 sonoma:         "4154229b82203db3331cfaad16185d8aca55707fb5b1b0fc39fc18710f91fb26"
-    sha256 cellar: :any,                 ventura:        "16104dc1d4d4040982ffc650d8f5b558ec5c028e750df647be19634c195f1566"
-    sha256 cellar: :any,                 monterey:       "afd334c1f763a15cac3d38cb2a45e692fa987db089e0e46bd584b3f34b226bad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56bf0b505038dd73d868418f8d3b1651cf9ddb5db34f04e3b417d8623177030c"
+    sha256 cellar: :any,                 arm64_sonoma:   "33bf05d42f45f7a212f3d7b47044b56c0bfabd407ab7cd6fbf429a1931dc573e"
+    sha256 cellar: :any,                 arm64_ventura:  "a761c692fd4a273158cf5647da462c9543784dd729acdf0387733d9d7dbcb1da"
+    sha256 cellar: :any,                 arm64_monterey: "c9daec3e764f534ed2e52371e987637d800541f65bf943fb4f4f928d6b43de22"
+    sha256 cellar: :any,                 sonoma:         "14aa8acc68c0f51c4652b53ad7d5eef7a668d4141a22ab3836da1c29ce168f77"
+    sha256 cellar: :any,                 ventura:        "b986505de25d5ff57c54675e9b271e4817e2588dc065ca477abd88e4de77c227"
+    sha256 cellar: :any,                 monterey:       "76483c793d3684539bd349c9607544cc99684c56280de923ae3c53fed652022c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e68f8f133c0c83a0bd7f408b578864a20a6e09188b641fddd166d113cc20ecbb"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -97,13 +98,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/08/93/0f614264bca69210ac6b0ae06bc112a9569a0b849499e6a7884b670d272a/boto3-1.28.63.tar.gz"
-    sha256 "94218aba2feb5b404b665b8d76c172dc654f79b4c5fa0e9e92459c098da87bf4"
+    url "https://files.pythonhosted.org/packages/1b/2f/4ccd05e765a9aa3222125da37ceced40b4133094069c4d011ca7ae37681f/boto3-1.28.65.tar.gz"
+    sha256 "9d52a1605657aeb5b19b09cfc01d9a92f88a616a5daf5479a59656d6341ea6b3"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/a6/4f/4c2b7d96dd50aed47db6cccf6c1c089853f6474e1d1da5c5aa320d7d4157/botocore-1.31.63.tar.gz"
-    sha256 "6e582c811ea74f25bdb490ac372b2645de4a60286b42ddd8c69f3b6df82b6b12"
+    url "https://files.pythonhosted.org/packages/42/30/e5e2126eca77baedbf51e48241c898d99784d272bcf2fb47f5a10360e555/botocore-1.31.65.tar.gz"
+    sha256 "90716c6f1af97e5c2f516e9a3379767ebdddcc6cbed79b026fa5038ce4e5e43e"
   end
 
   resource "cached-property" do
@@ -187,8 +188,8 @@ class Checkov < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/c6/33/5e633d3a8b3dbec3696415960ed30f6718ed04ef423ce0fbc6512a92fa9a/GitPython-3.1.37.tar.gz"
-    sha256 "f9b9ddc0761c125d5780eab2d64be4873fc6817c2899cbcb34b02344bdc7bc54"
+    url "https://files.pythonhosted.org/packages/b3/45/cee7af549b6fa33f04531e402693a772b776cd9f845a2cbeca99cfac3331/GitPython-3.1.38.tar.gz"
+    sha256 "4d683e8957c8998b58ddb937e3e6cd167215a180e1ffd4da769ab81c620a89fe"
   end
 
   resource "idna" do
@@ -397,8 +398,8 @@ class Checkov < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "wcwidth" do

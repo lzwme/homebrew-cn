@@ -6,17 +6,17 @@ class Toot < Formula
   url "https://files.pythonhosted.org/packages/4c/55/f7c6578f031e1c5d6605c1977ea36a9d7b89a72aef79b93fbd9719a15a74/toot-0.38.1.tar.gz"
   sha256 "be9e5479a21ea8fb13cf7ba98d542daae07fd87fb56b20b8923b69ffa521c6b2"
   license "GPL-3.0-only"
-  revision 1
+  revision 2
   head "https://github.com/ihabunek/toot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7a289a1adf4cd38bbbd9ba544589032d05f499d1ca1d714d278ea4725b74688f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "14087b7fbb60d4dc07d1e85d8d4611f8a9fe232a29c9928abf2bf1dbb3916fda"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2daae3d36ecdb53745a29d7d5be387ac246e4c17879d8fbd67286177c50cfa3e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a7eef640e83b3a87b81ad96e48c0e6845f2ff5f63bebb43f41015caae9d06b4f"
-    sha256 cellar: :any_skip_relocation, ventura:        "4755835c07faa9e3b10f89927f89899c321c05f0e6035cba1897fef08e7ed467"
-    sha256 cellar: :any_skip_relocation, monterey:       "fa13a0a5bb11e24f50f464eb69dee48b480b8804d961464a14f9e42e3669eeb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a20b9c05c1f4a113943285818a0939c9ecceb64cb1f9630ad4e4b7399b139130"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "39bb22197dcc9819f6ddf182ad47a3d8e9455a2314706a3f438ecab9a968096e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "374eb3ed72b63c2db8d09c00afd804f0348f90807e97fe349b299e1efbf4ede4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "26184d6485072b22ff86ab67b8a06fd4b828a4a1a13d09b524bfad81a064867c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7ef51db2cdbe7656bab237894ff6f23914422436d250bdb4909fc90b99ea0ee3"
+    sha256 cellar: :any_skip_relocation, ventura:        "82a5395187a03820499ecc16449b5128619f866a54d27065b5d3fd3c53c0e41c"
+    sha256 cellar: :any_skip_relocation, monterey:       "ef348c76a5b91d059f8485061f66ddc15ba3ddc47c78d63818ce2d92fe46f125"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e04451447e3a87d1107390417347f0d22649efb140ccbd2f97d866ad6d77e67"
   end
 
   depends_on "python-certifi"
@@ -53,8 +53,8 @@ class Toot < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "urwid" do

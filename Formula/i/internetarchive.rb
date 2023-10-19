@@ -6,17 +6,16 @@ class Internetarchive < Formula
   url "https://files.pythonhosted.org/packages/7a/6a/ce5deecc9a65709e48367bf949874551fee5f4f595141b7fd0d4426b0d95/internetarchive-3.5.0.tar.gz"
   sha256 "2a9625e1dcbe431e5b898402273a4345bf5cb46012599cbe92e664ffdc36e881"
   license "AGPL-3.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "79f8fc682e21ebd541013c2a5c818ff98ac32295e9e69461215847fa3535532d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8226bb1ac080dd1362788fde83a8e2177a30f2b685c66405ed90bee9c3ceb8db"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1e6bfd91b7fe0b937c3f6159bfa6626e654148104c4905d0837a6900aeec32ff"
-    sha256 cellar: :any_skip_relocation, sonoma:         "34e62eba0a22dbc1500ea0661dd2e66056cf6886b351e559cc29a8022c87e82c"
-    sha256 cellar: :any_skip_relocation, ventura:        "22792e772f003012fe5ba23c568073dd44d7d894102c06ee27e98d372f5ed76d"
-    sha256 cellar: :any_skip_relocation, monterey:       "97867e104c26e2d5dafb2bc79b5a73570f8e465c704d70a77993f5a54b678df2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "037120f8539297774e659a013dc8d022d5bb23992ac0b957fd0d780032bdbf45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b63ea2dc2e3833bcbc2cdff29707455af4a10d0a97ce20a099d161a587d32a0a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a96eed814b3ac1b04f2af5bdfc1bee92317ed3b849482ff2197102777b23da07"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "50c37b13dbacb7d499299f983ddff6e54eb8339d5a2ee528ddf4880dd61aeb50"
+    sha256 cellar: :any_skip_relocation, sonoma:         "58029b191bb4b4260680d624d52dba6eae9ae9afa7e925e437ba41189e0babbf"
+    sha256 cellar: :any_skip_relocation, ventura:        "30bdb5f7cdb6fa269923fb4df46eb61c2b8efa49ee4a4d606bbef67a00175c94"
+    sha256 cellar: :any_skip_relocation, monterey:       "acadb0ed0d4dbaa4914d66fd3f4b84bddf75b022bf8aaa5f70be70835edf20a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23a5d702aab58e696f355d143d1df051cc43dd20b95d257ede56c0776036d87f"
   end
 
   depends_on "python-certifi"
@@ -69,8 +68,8 @@ class Internetarchive < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

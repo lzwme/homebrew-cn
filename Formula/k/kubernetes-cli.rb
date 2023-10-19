@@ -2,8 +2,8 @@ class KubernetesCli < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/docs/reference/kubectl/"
   url "https://github.com/kubernetes/kubernetes.git",
-      tag:      "v1.28.2",
-      revision: "89a4ea3e1e4ddd7f7572286090359983e0387b2f"
+      tag:      "v1.28.3",
+      revision: "a8a1abc25cad87333840cd7d54be2efaf31a3177"
   license "Apache-2.0"
   head "https://github.com/kubernetes/kubernetes.git", branch: "master"
 
@@ -13,15 +13,13 @@ class KubernetesCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1c9fc80e17d7f48d3f736075e803356d2a3382e3791739f2f53f931d61b92e10"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "008efb3291080289cb4bfa502f8ca86f5647d6e4cc10435f2a18853eec129f2d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "19f901ad385a5dcc2e6099b15c03b3b4027bcac1e7134f7c96460fbf25c61a2a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "85697cec14c761bb43f8bc43836e380b8331f2cfd0f840fbf3a53828299d2721"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7db1b0d71f8c4ce57cdcebe8b45d2cb1ec4e54045d48f9eb503be70ff7f8d983"
-    sha256 cellar: :any_skip_relocation, ventura:        "743545b7552420f17f7d5f43304cbaab879afa942daab4f5ba1b980585ef2ff2"
-    sha256 cellar: :any_skip_relocation, monterey:       "ccbab15d59b2540033ec7ce42c1ccc157562f1d70de714b17cda7301fba7f23c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "dd3ef297eca0e361b74fdd5a4b0b6e19f8cdf0f6df21e80ac82f9a2aa3194b82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ed660386217db4f4b9e3c006d2c36da39068d787630b5a5f32b7e1140036f7b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9229655d9ccb521f3c1986077a4826f2ba3049357623f39c72c53b4253fe08ad"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b403d57f3731fbafcbd44113fdf7823d1992c4a6c7eb1dcc8206e8dae62e8368"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a43a05e32c5d901c81f049b37f224dc07c3f5043be60f97ffd11a57a3de402d3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3dbba434b4e80660da2378d4079d05eca7b51af5a88ed1431b0278b995c1e3c6"
+    sha256 cellar: :any_skip_relocation, ventura:        "c61d003ef423897583d3e66bd1a5e97bb39b2c010fd7ed5a280fdf73adfb1c73"
+    sha256 cellar: :any_skip_relocation, monterey:       "dd65de10248c26946dea7f246a59f646c4a21f8ceb635d13e6876587464b1f48"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dcfbc22c8dbe24daae61beba4aa4e6c7e74d482b05fa8a49312fbda188aef13c"
   end
 
   depends_on "bash" => :build

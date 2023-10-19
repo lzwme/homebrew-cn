@@ -9,20 +9,22 @@ class PipAudit < Formula
   version_scheme 1
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "663dcd636574490889caec97fbb6f7f8d742a15ddbb1be8531d08dbcae4b5116"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cbb7df6e63d495c2befb33c32bb8296a19aa4a979e1696eea189958145b6f71d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0a59ed054b8ceeba8f9a446ef3d1a95a76543bdf5b2fa969de918db92eb1f42d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "84d1af68f5e43ad3b27be4a9fc819569b8e259a29662ad1d36528a30684516cc"
-    sha256 cellar: :any_skip_relocation, ventura:        "0e5c7eb3c9d62d3fe7d73bc4b0d885b2bd3d93ceb94e8b3a37e2a32ba5944668"
-    sha256 cellar: :any_skip_relocation, monterey:       "5bb1fdf204d4c32db5a22d8a14956e23c8e64d04644877a44641fe7dfcc7df0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f779266ab3703f75469c72aaadaf96b6bb3f45aa3b843ca1d9e953986af947a"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0d554edb653a514cda8422b286977023407fa1fbc073e2117d71f733e0dd4222"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8413bbb5ac419939c2f20b2370113d3af222acf5e239b3a21340c70d8e4c8184"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "77a268697fa13b9c06869d78f1a883d74c772940afa8cb68b318cf8cd70c7247"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5b05233ca00222ebe6a41fc0b35dcb72fc2ccf523203f212ddd7709f3829116f"
+    sha256 cellar: :any_skip_relocation, ventura:        "3e52b18d39c9ea27911d7c7fae3abe6d492a1d5cbc3305dc7d4f0c9b72e2a218"
+    sha256 cellar: :any_skip_relocation, monterey:       "47ec7c28aad2f11fdff24bbe50ca4e55edfb296a9de88c62bcf84bf0eb3b1b90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ac7ccb537419b5b9a0079391085a524e8f18527891ff3474c58d7747ff8a2c8"
   end
 
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python-pyparsing"
+  depends_on "python-toml"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "boolean-py" do
@@ -41,8 +43,8 @@ class PipAudit < Formula
   end
 
   resource "cyclonedx-python-lib" do
-    url "https://files.pythonhosted.org/packages/19/b5/ff160aa03f4b9ed3fa655ee35871e43c215408e71daa437342ad434c88f3/cyclonedx_python_lib-4.2.2.tar.gz"
-    sha256 "d8fd40a94ab9130e9d1292ecebd35bd081f8a2d589c5259eaf7ec5caa5e95a43"
+    url "https://files.pythonhosted.org/packages/1e/9a/780027d284b3c22ecee842c5b3e2bd0e056381fcb60d7f29818a5243f709/cyclonedx_python_lib-4.2.3.tar.gz"
+    sha256 "904068b55d1665f0ea96f38307603cc14f95c3b421f1687fc2411326aefde3a6"
   end
 
   resource "defusedxml" do
@@ -105,11 +107,6 @@ class PipAudit < Formula
     sha256 "ba0e1287b9e4f645a5334f1913abd8e647e7250209f84f55dce3909498a6f586"
   end
 
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
-  end
-
   resource "requests" do
     url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
@@ -125,14 +122,9 @@ class PipAudit < Formula
     sha256 "25caa5a06cc30b6b83d11423433f65d1f9d76c4c6a0c90e3379eaa43b9bfdb88"
   end
 
-  resource "toml" do
-    url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
-    sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
-  end
-
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "webencodings" do

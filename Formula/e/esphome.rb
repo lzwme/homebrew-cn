@@ -3,19 +3,18 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/26/f4/3579f0e0be29a7fbe4ead37ddc46a3f55bfc1da01a4ff210e5b3b2184af5/esphome-2023.9.3.tar.gz"
-  sha256 "b8a529f4204a252246980b2b2fe75bee1d6882630e8a91c57a8bcd825b9ca5b0"
+  url "https://files.pythonhosted.org/packages/0a/a4/e47c72409bebd1b47fc769339b0a5bb40254b362c318a954f0d9100f3e0d/esphome-2023.10.0.tar.gz"
+  sha256 "d80a42be4f6daccdd6d7c95c24e0d6edd7d6de837c03715a7d526a91a34a7bb1"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "216ae5bb2d0f1d778cb9babbc9b414abf4bc1592f51fcb93ea96eda5a6fdc787"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "578dc2273d8cb7b21b9d304cdc84243b4d0b72065a4e4f15e54598818ac5bcb1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3b93df12bf54088e0c37332a2331c4da7267c2082315dfd6306fc6c8c3bb8455"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e5a4b4a054a286d4c2f8c775c909e806704f8de7cfc2f7dee889374547c7ca2e"
-    sha256 cellar: :any_skip_relocation, ventura:        "77d97c66639c1f5f9dbc597dbadf8a6bdc1e9df11d7d9b35cd27b93cea12ea10"
-    sha256 cellar: :any_skip_relocation, monterey:       "0fb44d5f14a65110c6552d8e6fc540eed23e43657ea209b9466482820468e43a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "86a1c51970a4590d258a571f055ac55a479264eac716d0d5dbfb291611cf7597"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1311911d94f010cbf27d016ad91e9d5b24b5e465cfbb04a40dc377e9a7b1757d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ff0735ac9eafed5b4ca1b000c633b21a25ecfbc4f331c8c308d4098505cc1e62"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c2478a8cdaae3ffb6a41a909e6d459e4170b8b4f936f4f2b32d4865979c17eb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7acfebbe946973b8eef36dcb470d70cf79806e8721049e6d0c4b780ae3d17743"
+    sha256 cellar: :any_skip_relocation, ventura:        "d160597dc007c9dcb134fc2cf3dec2fabbdf74c60a9c9c531f86ccd983c4da16"
+    sha256 cellar: :any_skip_relocation, monterey:       "aae86bee21540d57527beebbe5121b061a9fe681a53a998a9d83301d76ee9610"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d1e4ad82a274dc7ff08504c80afbe9d5d3601cb87fb51d99458c3a01c14e1d3"
   end
 
   depends_on "cffi"
@@ -40,8 +39,8 @@ class Esphome < Formula
   end
 
   resource "bitarray" do
-    url "https://files.pythonhosted.org/packages/2b/22/b33fdaea9cb2de8a5b00b4b57bc91edef10c7e4aebec1f5c6235d501ba91/bitarray-2.8.1.tar.gz"
-    sha256 "e68ceef35a88625d16169550768fcc8d3894913e363c24ecbf6b8c07eb02c8f3"
+    url "https://files.pythonhosted.org/packages/99/f4/316cfb1cd62886d7bf87da48cf847ecfced48ed5f91ff8e54bc52f7fd76e/bitarray-2.8.2.tar.gz"
+    sha256 "f90b2f44b5b23364d5fbade2c34652e15b1fcfe813c46f828e008f68a709160f"
   end
 
   resource "bitstring" do

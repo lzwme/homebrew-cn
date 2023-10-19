@@ -1,20 +1,18 @@
 class Baresip < Formula
   desc "Modular SIP useragent"
   homepage "https://github.com/baresip/baresip"
-  url "https://ghproxy.com/https://github.com/baresip/baresip/archive/refs/tags/v3.5.1.tar.gz"
-  sha256 "622122edf376145870bc7749af0463c5f04a668b3d095c025b718f1910f1b77b"
+  url "https://ghproxy.com/https://github.com/baresip/baresip/archive/refs/tags/v3.6.0.tar.gz"
+  sha256 "9996197bcba8bd2cbbed209f39b52dd811d2f4e35386819370da075b7d24b864"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 arm64_sonoma:   "e3f262a7535a4f37e27b393f36c438fa0d736bb10e3ca93f70de66ae53b09c4e"
-    sha256 arm64_ventura:  "b1d138965195bbfbd1a99fa170fc79e752cd5516e8da79acc631242bab38015e"
-    sha256 arm64_monterey: "65d5fffcdf78d5dc1ce05c6c77e292d2956acf8d3fb4c2b56e72deb248521f0f"
-    sha256 arm64_big_sur:  "68f0d30cd925bfd35b8e1125a01cd42901f6cdee4c916e50b53dd1f42759657c"
-    sha256 sonoma:         "72f52db51ce059dbbc11134f157124d95f1fe7629a213986b42ffd3809de64fa"
-    sha256 ventura:        "0366b6521dd81370af41e2b448596dcb258638ebbdf86b205547af6eb1e31c73"
-    sha256 monterey:       "37e695efbeac83a59e1a27bec079a5c0c8473a34b4eaa8edd0785582da4b5af9"
-    sha256 big_sur:        "35a448b5467a408a8b4789b64492a89fadf1876ef93c7c05a0cf23436b6831f5"
-    sha256 x86_64_linux:   "d6cc0a7aab9a239df5a885912d96cb62026df26c8d9111b7a7dd8399dd8b35e5"
+    sha256 arm64_sonoma:   "a8c5d8ba20fff4dbdb26e8ef417a5aafe69a326da485357c736aa62dcfbec490"
+    sha256 arm64_ventura:  "51a3571222b9cf1774af61093899284c22a206bb48675603d43a22891f58e55f"
+    sha256 arm64_monterey: "57fa921ecee304b9bce8e329fbf05547e727f457e5838db6b6ea6a632541cbf1"
+    sha256 sonoma:         "56f3957035c95d4456e281465653ab2cd5a007b7f8fd4949ac607a9109946c1a"
+    sha256 ventura:        "a259134833d8a3fa88420067a2055d403a8f0b764b679608bafbef522b975473"
+    sha256 monterey:       "c95d6759bb38735e4de999ca1509013c2a59a61b4aadc2e7e854c6cebc840f60"
+    sha256 x86_64_linux:   "2244339137291cf40fd22b4f9eac5bdc4068cb63f7bccfccbc4726d61ddd3673"
   end
 
   depends_on "cmake" => :build

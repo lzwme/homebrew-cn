@@ -6,7 +6,7 @@ class ZabbixCli < Formula
   url "https://ghproxy.com/https://github.com/unioslo/zabbix-cli/archive/2.3.1.tar.gz"
   sha256 "1d6de0486a5cd6b4fdd53c35810bd14e423ed039ed7ad0865ea08f6082309564"
   license "GPL-3.0-or-later"
-  revision 3
+  revision 4
   head "https://github.com/unioslo/zabbix-cli.git", branch: "master"
 
   livecheck do
@@ -15,14 +15,13 @@ class ZabbixCli < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8f020bcc3c66339040d3a17c2206acf8f5785bda6358b0d04c76915c6c39ba6a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8c2050e185d6ad9ac6b8f236efbb323e8b896a3ef6c763802bea8ca8756bb8be"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ecebdbc34f990038acdded0d4fd48a3d8af68cbb565e898d084fff8b819d2363"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8a8ed82d4b5981eb266e5ecd9fc23a7a7bad8990c13f481862cdb4917d925339"
-    sha256 cellar: :any_skip_relocation, ventura:        "713be594e5f5744b7072f2532f742328ffb19a0e27b53b6edaaa7a94bad66140"
-    sha256 cellar: :any_skip_relocation, monterey:       "8dc540e35d6b0b5c86ce171a7909fc9eeb10360eaf0548aae311bffcc4d454b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a99c1a3b4c1516f62033951a410cab81cb0c9fe9f5a3b2eff99f90798a3ee208"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "642ffe700f81b54022cd4498af1dc1e5d82f8ee7c408b633c438ac1ca3b818dc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "703124d0588e3ce655d2a3519a556c39547e8fb72751c6bca9ecb40d71e56cbe"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "139cba1805f28b7d8667fc78aa5a2647b6cb6b66bfc8c593a21f8bbf55993d4c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "14509f5004c729fe5a9e68a683c2cab5172b6f50424dca819e6943dff9f2fbd8"
+    sha256 cellar: :any_skip_relocation, ventura:        "c7e1101ab39e7bb2a466aa21fdff21dacaf81a2ed6353dee127d64d5a5ecb6d9"
+    sha256 cellar: :any_skip_relocation, monterey:       "34d01b3935aeba3bcd27d3754b1f848bfef4dfc920e083b090aa079094fc757d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e755c98bf015c689e0b3b2b88e077cd37cf225d6c91f89b9fafd0782e950100"
   end
 
   depends_on "python-certifi"
@@ -44,8 +43,8 @@ class ZabbixCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

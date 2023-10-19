@@ -6,17 +6,16 @@ class Sail < Formula
   url "https://files.pythonhosted.org/packages/14/a7/7f3f93ab1d8d9f58e8dce01ff5bbbdaf5f6ce679e5e13638df0cd2bdbe9a/sailed.io-0.10.8.tar.gz"
   sha256 "c31f7adbf97ea4c2827e35f9615a54fe9a013bd0b16a655ad29a926d9f86f014"
   license "GPL-3.0-only"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c4b7c1f2239836062f2c53db6abb1a70b566a0cae8e84149138e43d3a2d4bdac"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b1baf32216da55cfb39623e31e0fd929d34b837daff7689ba1d1660f44d6d441"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5c6e47f01190601a16833fdb5fd6a6d5b67ebde6f1569c64382dd415ec3ad1f5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a4794b0afebab98e270be13c35a8244def5ac41d94ab763bf79c99080a0f31de"
-    sha256 cellar: :any_skip_relocation, ventura:        "6063d5f10b6cf8fc112ac557b5d07e22ed375d306636a147739e8428454403ae"
-    sha256 cellar: :any_skip_relocation, monterey:       "9e19d86ab21429308940fdeed9d629fd09bf414cfd04151d94550daeed39327c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab6c49bb15f265ce5f1e6c94d0302f114add9f89507c0ce3acd08332d99abe83"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4f1bf0a830fc2f81758a7f6edcf17758e647469d1db1aeb3045f1371ad765044"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "65cc6e9718ce9b762d04192f30d27e30beacbb0b3c60d54cbc0d0d547dddee5d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b701470745d3dd9d1159d2ecc2d4c754517ec1ed8696ddc74fdfa85a16e4d4c3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "184b3179b6c47f7631ab34c7481c2fa0de4a6d4b584f6af6b87c90ba79052621"
+    sha256 cellar: :any_skip_relocation, ventura:        "094685a638dcf6bff29b000e27faadfa4a92570f0805eb4e3ee6641eae32be45"
+    sha256 cellar: :any_skip_relocation, monterey:       "e546836eb204dea5cb70bab00e57484a44d4d4d8dd377fb3f71af05913385bc5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e43defd27c3e7af9834e6667112eafbec54cb9a165ffa9c3960bb3582388ef1f"
   end
 
   depends_on "fabric"
@@ -83,8 +82,8 @@ class Sail < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

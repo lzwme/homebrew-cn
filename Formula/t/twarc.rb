@@ -6,16 +6,16 @@ class Twarc < Formula
   url "https://files.pythonhosted.org/packages/8a/ed/ac80b24ece6ee552f6deb39be34f01491cff4018cca8c5602c901dc08ecf/twarc-2.14.0.tar.gz"
   sha256 "fa8ee3052d8b9678231bea95d1bdcbabb3968d35c56a8d1fcedc8982e8c66a66"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c416b31d250cd22faa952774611fe4721310b97d2ae13dd7219a5750f1b6e988"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6ffccfca80519f511c7a49fa16474a9b1155f5cb358e5e2ddf7d66243361b047"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f5375c093534fb8642ac69e2b988e48b4c17c2e6e90e42f4f462c3b7c2401d50"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9ceaaeda35fd11af6af1d2bd03edc46f6d97e91a144bed12d072f3dec85f38d8"
-    sha256 cellar: :any_skip_relocation, ventura:        "94bb8da6468f69046f3e0e40c1204416e8402c65a7a419062e86acef5db714cf"
-    sha256 cellar: :any_skip_relocation, monterey:       "e16e1f18a57bf15b65bd6ea3510f22348962c6aff87ce036f2607dab90f17ed1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f174bfdf1542c523b2c90d46f4edc96a8e4500565e85eb3fde342b4ee2be4d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5126c676b7348e311d68c340bd7f8b95f3bffa16545e1c58e0b098d3c9111df4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "53b64cf2a70e84787ee1a66d1f845fa8e6dc7c2ee8d522d6dfde21ba83c6c4f0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c5f16019bffbaceafbef7a8d0442f556ed2919fb3b066bf39ec0ae472d2be1d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "51ad7e06f061f76577b055dce8b8d03cc42ae4e6de5e1c0a91860b187e90fe0a"
+    sha256 cellar: :any_skip_relocation, ventura:        "b857135cf025bc77425f78a2b38217ced06c67fbb3dd010e8bb18d5faa81a62f"
+    sha256 cellar: :any_skip_relocation, monterey:       "7f05e45cb1a89f70753d9c263f5ae2ec7e07012fb3aafd738765aeb8dfc6f123"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13c45f1a6e383bc318571e350651131712aeeef0fc7267ddd74ecb1dcf9d66e4"
   end
 
   depends_on "python-certifi"
@@ -83,8 +83,8 @@ class Twarc < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

@@ -9,16 +9,16 @@ class Jupyterlab < Formula
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "b1879cfeeb0c5009bf4535a6539d8ce6c69a55b96f9db4397ff72d48babbea33"
-    sha256 cellar: :any,                 arm64_ventura:  "e478cefdd2f5322fad6d7b10e186c62f471d8fabf099876fbf9d456f5aa54330"
-    sha256 cellar: :any,                 arm64_monterey: "f90786f3956b127a2883c99b9780fc49c51aef77d04d79e6419b54392739c2d5"
-    sha256 cellar: :any,                 sonoma:         "9e05866373bccdbe5c2ea71daa6a89f90e7eb901df3f0ea4963f722d56ec810e"
-    sha256 cellar: :any,                 ventura:        "ac3e2fcd9ec46423a283fa6e02bed056104c2b05065c32d60ca826680b276ac7"
-    sha256 cellar: :any,                 monterey:       "5e6c3dd2920879712f484ce25354a5fd4e2387f2b7602ec375bdac3f76af02bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b705292f460522ec4a12c040ad688565727f1c1c45e31924d3b223836ac5e1c8"
+    sha256 cellar: :any,                 arm64_sonoma:   "1a0f1c9d4d651879a0529c6b4619cfb52e3c8cd9dc159e49aa836ac98cad7fa9"
+    sha256 cellar: :any,                 arm64_ventura:  "660bb74893e859f900d8af9671173ae68eefb3b3d7efad05a0ae951c311ade69"
+    sha256 cellar: :any,                 arm64_monterey: "b33566c72e3e8071ababdc28d5da2cd8a1e522e04c18d18baa6d5d214a1e6f97"
+    sha256 cellar: :any,                 sonoma:         "9f2a99db8bd86440b7aa39d4256a1f62c0b12ff20bc765d4d64c8d83792ec785"
+    sha256 cellar: :any,                 ventura:        "ed1a86e1f70c76aa7ba4d419cec6289c7c0eaa2a9e4ff089a800a09343975f46"
+    sha256 cellar: :any,                 monterey:       "c4000bf06459783332fe8cafa13fd4e2a409fccfc21ace8e9266dedd67798cbb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2313d371be719c1870212e2eb8877b58fe17ec5f370e34f67e2f037c312f19c4"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -172,8 +172,8 @@ class Jupyterlab < Formula
   end
 
   resource "jupyter-events" do
-    url "https://files.pythonhosted.org/packages/3f/0a/1c839290324ab93dc79950eaf26e198578db8b27edb587082b6061f4f9f5/jupyter_events-0.7.0.tar.gz"
-    sha256 "7be27f54b8388c03eefea123a4f79247c5b9381c49fb1cd48615ee191eb12615"
+    url "https://files.pythonhosted.org/packages/bb/1c/4b886f1312ed13d248acbee26066db759473b3c3a24244bdc211914761eb/jupyter_events-0.8.0.tar.gz"
+    sha256 "fda08f0defce5e16930542ce60634ba48e010830d50073c3dfd235759cee77bf"
   end
 
   resource "jupyter-lsp" do
@@ -182,8 +182,8 @@ class Jupyterlab < Formula
   end
 
   resource "jupyter-server" do
-    url "https://files.pythonhosted.org/packages/65/85/24d385f0b66b8a56e53e166603dc6f78fca2407f0c4ff47cb27b8ed86b25/jupyter_server-2.7.3.tar.gz"
-    sha256 "d4916c8581c4ebbc534cebdaa8eca2478d9f3bfdd88eae29fcab0120eac57649"
+    url "https://files.pythonhosted.org/packages/cb/bb/8994a5ce4089d08da5b8950e6ce3df0a6b2fb2d4969995a09b171a5fb0cd/jupyter_server-2.8.0.tar.gz"
+    sha256 "b11e2ba80667c75f55630faf8ac3d5809f8734f9006d65cce117c46a0a516ab8"
   end
 
   resource "jupyter-server-terminals" do
@@ -232,8 +232,8 @@ class Jupyterlab < Formula
   end
 
   resource "notebook" do
-    url "https://files.pythonhosted.org/packages/e6/8a/d4f88d60bea8a5b1d6eee7a9869deb5d2bffc0a9ada19a4ebae172d83cea/notebook-7.0.4.tar.gz"
-    sha256 "0c1b458f72ce8774445c8ef9ed2492bd0b9ce9605ac996e2b066114f69795e71"
+    url "https://files.pythonhosted.org/packages/87/29/0a3afe94904f4b6dad32c2e03865b827eaca18d6997d76f372306a85e0a3/notebook-7.0.6.tar.gz"
+    sha256 "ec6113b06529019f7f287819af06c97a2baf7a95ac21a8f6e32192898e9f9a58"
   end
 
   resource "notebook-shim" do
@@ -342,8 +342,8 @@ class Jupyterlab < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "webcolors" do

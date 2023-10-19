@@ -19,7 +19,7 @@ class Pkger < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c1ce72df189628d20fd0f55a3014d23c23882b603102836ae22852cc0778f6a8"
   end
 
-  deprecate! date: "2022-12-14", because: :repo_archived
+  disable! date: "2023-10-18", because: :repo_archived
 
   depends_on "go"
 

@@ -6,17 +6,17 @@ class Pwntools < Formula
   url "https://files.pythonhosted.org/packages/cf/ce/5b44dc18f0090a2f7188f0a8b98f00aebaa10537fffa3e66351b6972c02e/pwntools-4.11.0.tar.gz"
   sha256 "a85f1e777f343f91e221d175e1523d006eef1c8106c10fd2e338280bab273fa6"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/Gallopsled/pwntools.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5b5d0dac5bfeaf0ea136d933424b8f345c831e4087b790082e8e0e9b7c5db9e3"
-    sha256 cellar: :any,                 arm64_ventura:  "028e38df40268f66468178e964d6fe833823e8eadb75199e013a99e3510f1721"
-    sha256 cellar: :any,                 arm64_monterey: "43667de85b5c3b57a3fd440b4e633808e8b28c3d86540a84de443362fcbc6a01"
-    sha256 cellar: :any,                 sonoma:         "24b1e98176b27c6ccfb6f270227706471bab0f30a585ef0ffdd8f79e4cef1b40"
-    sha256 cellar: :any,                 ventura:        "ff1b7006967c69d42c20fc4afee7b72f11b095d3a508f54f9936a767467b2aa9"
-    sha256 cellar: :any,                 monterey:       "a6302c2159160caa423244851a762ae3b98e5fef14e4f7ee0cefcb2c24abe920"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f907b1e0fd1ed2871751320193ecd035f1322a63c1252f507e793983ec44ffc"
+    sha256 cellar: :any,                 arm64_sonoma:   "78f360abc90dfe51da0083c138308431f222cfedbfada4757acbae6bed9938c5"
+    sha256 cellar: :any,                 arm64_ventura:  "097f8fe2a728a8e544d3823b9fae7391501f88c81f46efd26d0d0193b06fddc8"
+    sha256 cellar: :any,                 arm64_monterey: "17f7245653a23f79113d963b67fe3464a5676297fae9bbb65e1463a79e4aa075"
+    sha256 cellar: :any,                 sonoma:         "35c12001836527a7c6784aae6f65698063215101a93bd3cf5353aeca64310e54"
+    sha256 cellar: :any,                 ventura:        "f5e61d1edb66e1fbedf578eab8eee6fde8d42a49aa01703396f87ed4ebcddcc2"
+    sha256 cellar: :any,                 monterey:       "5b94324307a6c6fca9abc297c64362b4d88351a0fd33ae1758398fee88b2ff2d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef4139bf8bb4f3d399d1e31fb48026b2a70a8f491a2fa1eb75cdb3b76f00824a"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -85,8 +85,8 @@ class Pwntools < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/d6/0f/96b7309212a926c1448366e9ce69b081ea79d63265bde33f11cc9cfc2c07/psutil-5.9.5.tar.gz"
-    sha256 "5410638e4df39c54d957fc51ce03048acd8e6d60abc0f5107af51e5fb566eb3c"
+    url "https://files.pythonhosted.org/packages/2d/01/beb7331fc6c8d1c49dd051e3611379bfe379e915c808e1301506027fce9d/psutil-5.9.6.tar.gz"
+    sha256 "e4b92ddcd7dd4cdd3f900180ea1e104932c7bce234fb88976e2a3b296441225a"
   end
 
   resource "pyelftools" do
@@ -140,8 +140,8 @@ class Pwntools < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

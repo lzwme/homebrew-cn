@@ -6,17 +6,16 @@ class Fred < Formula
   url "https://files.pythonhosted.org/packages/1e/7a/bb49f22f2ce33109ce5a5f8c7b85263cbc97bf9c9b44ba612c8380d3406f/fred-py-api-1.1.0.tar.gz"
   sha256 "f1eddf12fac2f26f656e317a11f61ec0129ba353187b659c20d05a600dba78c8"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "381204eea7616e7ce416e2a8a47af6306f30968449c5701d955d4f741494937d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "643d395f83bf5b9f0595ec50eedf0ad782d2f533d4c5c99f4e5c10e0ca07fc9d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "55863cba652f0583a23edc318c2a30d7f5be0af2788780248cce928d7f1916e0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dede5b061ca8324d18830b3f232cc65f9a28733e40fb35a1f2238d88cce5f6b6"
-    sha256 cellar: :any_skip_relocation, ventura:        "ea203e8b23746ed4b4a489385c6fada7adeffb3b591e07422d29c090f447d6ac"
-    sha256 cellar: :any_skip_relocation, monterey:       "a86a02d1f54385bf17183e1dd872e3c9c7335961e7d847d1d262a7c68ffa7e1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5e87588a4deabf0f845b3dce53dc8e65d1548e92a574103bd5a545bfda6a2e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bfb4c1bf6b535c5f7c7c992c2b25b2c7aca62ac5e54e791414233215da5146a2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cc49cf4e2950bb6d3bc7829383213de37d290f528b14e6846ea0bc9b4b99697c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5d9007f8a03afe73341e72874cef03139b0212fb1ddfb6f3f3d689bdf75ac56b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bcda2ef59d19052c0fde6be2eec96210dbfa059fc0b58d294a1afe732f9833b1"
+    sha256 cellar: :any_skip_relocation, ventura:        "90d6c3b569f8f3242550881ae83eec0ab63ff8332776f56b88c2b672ea6057df"
+    sha256 cellar: :any_skip_relocation, monterey:       "9a99533eecbd67889c74922f97c333a1e064fc5fc84c869a694fd2325a0eab13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4cd1a96f3b6bbce10bbe0d474f99780504c5964d2b3b01a959a6dd62cca97a9"
   end
 
   depends_on "python-certifi"
@@ -39,8 +38,8 @@ class Fred < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

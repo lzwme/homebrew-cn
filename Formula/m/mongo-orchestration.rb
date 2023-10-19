@@ -6,18 +6,17 @@ class MongoOrchestration < Formula
   url "https://files.pythonhosted.org/packages/80/bc/46ec328dcb9abcc8e9956c02378bfd4bfb053cb94fcf40b62b75f900d147/mongo-orchestration-0.8.0.tar.gz"
   sha256 "9cb17a4f1a19d578a04c34ef51f4d5bc2a1c768f4968948792f330644c9398f6"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/10gen/mongo-orchestration.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "59ca776531e77a1c542d1d7ebc570cfe7e63f569c4b5be68b321d43f4a9fc406"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d64971c748181d036a9c1ecfe65c23b0ffdc9ccc77436a14d31b8c99a74ef513"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b97014e14391c6e2baa73f834a8dd30fc910ff83e3d4e1bda20da48a3dcdf16d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4b0e3788796e9d3dcd23255a84a811f11c2d021db622a2bf3e83f28e836949fa"
-    sha256 cellar: :any_skip_relocation, ventura:        "c5000578941ce147bd76bf950cdc9c71796c35c8558a1ef6dc03f135294abe87"
-    sha256 cellar: :any_skip_relocation, monterey:       "d0617c0e3dd72e9fa4c01e749a8fd3f377af48afc783c1ac4a9e61e1a3567e36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d07a730bc45476919f8c2957ba661951d720b6b4db15fbf03b958831e90c760b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "16ff24f456b10c64a551a56cca562cf8858fd3d0cf4c0688b9de2980776f7b9c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d7594315c9e9082c7cf54edcc4e4a769bef0f9842de6e5be918ceb1a2c681125"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4b4c36192107a9e948db2e12b684b47b422db802c1dfd2da5c914945202e2197"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ac1a809dc8e2ede1f87c6cdababcdfde1e9b8379209612994a1d35599e677d98"
+    sha256 cellar: :any_skip_relocation, ventura:        "bb211a3ce3480761f0d3b185aff582c686020795210d82f87796ca776fb5c556"
+    sha256 cellar: :any_skip_relocation, monterey:       "a0fc0ddad4266f8cc48f543f84e659c0e006191f0d929e8181ab9b45edccc737"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23b11fc71c58fc7a9f7a49f86a33af3e8953a93e9554f92209834a38e8c2549c"
   end
 
   depends_on "python-certifi"
@@ -70,8 +69,8 @@ class MongoOrchestration < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

@@ -6,17 +6,16 @@ class Woob < Formula
   url "https://files.pythonhosted.org/packages/cf/10/3eb104a43ab4ff3109109883382bdfee663412e8fda2967d0ab220479240/woob-3.6.tar.gz"
   sha256 "3765f4c54baeb4a837053f6d0ce82e54cee851aa3c8707a72aa8cd63d4304a76"
   license "LGPL-3.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3c60e3a47500a488800e30cfc7827eec1c3f5af26673f38487db841c93843082"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "108cfd5a3f520160a75d4726aa2af608b346d0ccb3bead5738ed08831d9a2274"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "76c2874fd38e445deb2868c6ff0e3f493f029fbcfab48420a7facc26fc51a30a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6297f1a08652813fdd8a60f511b85033d1714af1ca3cacdc17bb9e6e1269c8bc"
-    sha256 cellar: :any_skip_relocation, ventura:        "5c3939c4203a542a4a29e751d214247aef9c6c288d4f16a381da8e1f624edf26"
-    sha256 cellar: :any_skip_relocation, monterey:       "7253cd1a40ba2cc03b9e0e81a0fc86c6bcfa7b488d2857f124e395b83ae81b0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26fb058af399fd0506dee16d6df9e002b7b703168a8affcd337712ed7495626c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b33990675a791ab6b95bfe8886a7d1d126b501e3c45ae5b4f817f754cef0d169"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "45a329e53211ca26edc35164d8d8e8f315acac089dcae4b8def07895ff2297b7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "85f298b5539ab84c253e702a4fde092bc41a50c0726b4b902ee79adeaf77f0f3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "064ef9dba6273999dc767caeb3fd7d773fdae3d8fdda6b663cd63ce32b04e318"
+    sha256 cellar: :any_skip_relocation, ventura:        "29af606d5791c3afb6f70767d95fd0937e233e62983208e4b644ded52718c851"
+    sha256 cellar: :any_skip_relocation, monterey:       "2b2358ff45015783606a990d5b6f915d09a431ae6df07f7faa84b8d6d5ebba05"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "383c335bbad31c941c06b65cc5ea553188a3eb67ed20be6572ce175309f07be2"
   end
 
   depends_on "gnupg"
@@ -91,8 +90,8 @@ class Woob < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def python3

@@ -1,9 +1,9 @@
 class Imapsync < Formula
   desc "Migrate or backup IMAP mail accounts"
   homepage "https://imapsync.lamiral.info/"
-  url "https://imapsync.lamiral.info/dist2/imapsync-2.261.tgz"
+  url "https://imapsync.lamiral.info/dist2/imapsync-2.264.tgz"
   # NOTE: The mirror will return 404 until the version becomes outdated.
-  sha256 "378716538a9e4425a8fde68e6d8d79bca4bb7fa2a4e87a27801d25fc2d5812cc"
+  sha256 "14469e2de0d8deba6195a63e388bc38a6b7000ff12220912bf8f01a5673d6c7d"
   license "NLPL"
   head "https://github.com/imapsync/imapsync.git", branch: "master"
 
@@ -13,11 +13,11 @@ class Imapsync < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "74c9cd05ba1b43200ac14373f2e3417beba4cfec749d6c8eac0d327e2315e537"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3890a16d0e78ce914df69740e656757db62221c9bbf936ef47d6821198f1338a"
-    sha256 cellar: :any_skip_relocation, ventura:        "79df1c420d896f6552456e9b4d2fae6bd110e65631bdefe47dc2fbb545008a2b"
-    sha256 cellar: :any_skip_relocation, monterey:       "e478a4bcf9251585d7776b665823091adfcaf3a9532652f8c292b9f349a78bc2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83b76fc7eb8dab12f8d1e833f0c5c7c4d995a6032a203c56a4c2e00681325336"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "993d05369dcd731402624b8f57a7a4b1cf2efa65ea7895856c6b90b1412e9140"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "924fa92b95987907e8f80ac5a25d4dd6cd94957a55b9430b5da6de7910d5b5e1"
+    sha256 cellar: :any_skip_relocation, ventura:        "2e1b2adfd526b957bcf60d93ccc7dc5bcd7732455b9954a384d5646a137f1d4f"
+    sha256 cellar: :any_skip_relocation, monterey:       "7c759c18d5dccc856f4cda964c42dfe181441c5dee119fb5d9fee3de6496897c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eaaa3c75e9cb324331c9a3a805892ffe1d4b5a6ecd7f489777ca23d7913147c9"
   end
 
   depends_on "pod2man" => :build

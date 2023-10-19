@@ -6,16 +6,16 @@ class B2Tools < Formula
   url "https://files.pythonhosted.org/packages/27/2c/1829421e891cddc63cd9317f8e53cc3f94dd649fd0828f268845b10d97c4/b2-3.11.0.tar.gz"
   sha256 "295a1cddf1fa809a4a53545ad9f19694c8458769d7e5e839194f3e8de46c2b9d"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fa8f4289af2b9b2b783bba1c2ad6ab9fbe744b9547ecfd573a00977b4cd0d99d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9524a8b8859aed88fdfc3933dc162b0d7757ccf371c4160b0e3f479cedbe3eb1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "994428fb77cc8dcb797d2a9cc3b14c82f10b9841b586d21b085cb69b6224fc68"
-    sha256 cellar: :any_skip_relocation, sonoma:         "790987cde1f7bc9e67bdf293790dbcb63ca4d06c041f26b0dca64240c5ceed54"
-    sha256 cellar: :any_skip_relocation, ventura:        "9e100b65790db83140ee65f4505b167b2b65cc8dc23f7fd1774f5efde4c12997"
-    sha256 cellar: :any_skip_relocation, monterey:       "639cde23422503de47e67cd352b1c382b294b413fb404dc721fc893cd272e4f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7288a6c5039d67446a7c9b8ad23c21298f8c83e726e17e61b42e3d7ab5e71652"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8e3b815541d80329268dd197f4e83fd144d868c49dd3c52abe7c99406b6eff5c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3210d5924aa0cb120baa746db29daec1c0dc397f52d356b3c1a8c23da539d2dc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bec1ac8fadca1e0b0ceb76e838ff9056189f9751f2011de8dd9a97f6b758de07"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0281e055803877d6f66a27138b2f8f9c4dc9ae8a5f53ee3b9357e24cce191707"
+    sha256 cellar: :any_skip_relocation, ventura:        "c7b9fc6395d8c5f7cf9bf0a144f75e231e81abeb02101680f92387cdd5aa1834"
+    sha256 cellar: :any_skip_relocation, monterey:       "b711d1969e0fce154a4ecb49fef26e8424e3cec9becd9627f8da8a358998399c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f56ba34947c2a5a7ec29112392bef155dd0a0d022fac8f15e070fb3e898eebe"
   end
 
   depends_on "docutils"
@@ -85,8 +85,8 @@ class B2Tools < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

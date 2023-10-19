@@ -6,17 +6,16 @@ class Instalooter < Formula
   url "https://files.pythonhosted.org/packages/30/13/907e6aaba6280e1001080ab47e750068ffc5fb7174203985b3c9d678e3f2/instalooter-2.4.4.tar.gz"
   sha256 "fb9b4a948702361a161cc42e58857e3a6c9dafd9e22568b07bc0d0b09c3c34a9"
   license "GPL-3.0-or-later"
-  revision 5
+  revision 6
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8b669faeba478d6c31af90394a35bf2393f3a0edf7ff7855dc3ef46746c82d32"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd7a038d406fbf23981f04ccf031315f7ab6ba857ba6234e0f2afad883fb7642"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "424cef7f2e7602d87fe440e05822806454156ff1465b48e78f2c6dfb78eb3442"
-    sha256 cellar: :any_skip_relocation, sonoma:         "269fbc3c64dbbef30717e4ef596c73f89e4b2e981dc5edda6f039baeda62e5ed"
-    sha256 cellar: :any_skip_relocation, ventura:        "d7e0b6127617a97ba3d1eed4892f4e23532c9356b370f0086016b123b0982db4"
-    sha256 cellar: :any_skip_relocation, monterey:       "c3add62931d5965f2864adc7dfee8af04ab4b9b6470b052f960aaf7417d73355"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3a697e66b9e0ac8ba5471dffee54f965b602c945e5c1532c861c90a049bb5ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "218bb4d62fcf7d59b67c7f142fa1e2291c55b9e96556e4612ab71848f7c81551"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c239b06f51a60de52540c565239356fea0a41b11f3cbadadd942fa099e856585"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b45a88806b1f3f25764dcc25c17decc0d17937e153bcdef2e4dd6e25ffd7846c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a99e2e11b4865088f180b77966a38443a35736fbb3ec719adbf0f569a0abf3a7"
+    sha256 cellar: :any_skip_relocation, ventura:        "77d49d33ddfeda8487555f1ce7ae01aa93d70625eb132e318cd0ae7e1c3d8082"
+    sha256 cellar: :any_skip_relocation, monterey:       "332915dc629c0147fe75f45aa8bab20f9becc9330e944cafa744bead9267b83d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c7d1ff051ea0a7dceb8c52af8397e45af4e2f0898cf2de578756111960950a5"
   end
 
   depends_on "python-certifi"
@@ -80,8 +79,8 @@ class Instalooter < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "verboselogs" do

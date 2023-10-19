@@ -6,26 +6,25 @@ class GitRemoteCodecommit < Formula
   url "https://files.pythonhosted.org/packages/6c/a0/feb4dfa42e8cb1a0bd91667233254e49696cf6618f51ad5629f6efd89dae/git-remote-codecommit-1.17.tar.gz"
   sha256 "fd4a9ba3fbd88cd455a8e2087765e415da0beaae9932d4e84010069a536de24e"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/aws/git-remote-codecommit.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5ad858e57ea1e623128df76151f824e9a76793edbe6d189ec0d62d96e687fa79"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d39c660362cc0835912543e67dd16d58422a7a1b081d293e7eee18c03d7b53e6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "91bf27b22f0dbd2d1d786e979e4c999d3da45ceb0c889cdce23b0e99674bc45c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c64fce98dc6352af38f44c5410bc6a4d5f8d22b2fd3ef89fddcfbc9276a089b3"
-    sha256 cellar: :any_skip_relocation, ventura:        "445c2b8553c8a29fb4dd7cd21f3778f4832789f1d097375088f83c18771b813c"
-    sha256 cellar: :any_skip_relocation, monterey:       "a8169c42a8deb50dc86ee9b56b342894bd0c1e1cc8ac7cf65ccb2d5a72ffe47e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "799d2de7d2c06ec19be93a5150226861fb4c2ff3188bf572119814cfbe163173"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3084e88a86952977eda57eaec5c67cc922eae58d3f811f8f2b2a4c8921a4f42"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d4632f0f3653dcbe896bfb3ccf72427bcfccb7ee0b165a766f55081920222ab"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e280cf2e2a9366a7dfe229a9523be9e0857cd71174d8aeb5d7a4a8b276ee05ac"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3b86f8792be295dbd044110e31dc8762c476e47068e6f5943d1397c5caeb4c7d"
+    sha256 cellar: :any_skip_relocation, ventura:        "9724ed02c830ea73ad8dbd6fd06796808d324a83bee2f10223b5b03fafe06337"
+    sha256 cellar: :any_skip_relocation, monterey:       "d304f2d5bec2bde699e672a0afac100fb6835f1df5a86cf256d0be615e20e4ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "12a218dbf61c8daf3fa70cf75f75f64c2d275b7bbb7e2a35e3671ebb105f059c"
   end
 
   depends_on "python@3.12"
   depends_on "six"
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/02/d8/f7d2a1247b9430c0e8be761b4b2485930d2b45f14ec912ce0fdb4aeec348/botocore-1.31.62.tar.gz"
-    sha256 "272b78ac65256b6294cb9cdb0ac484d447ad3a85642e33cb6a3b1b8afee15a4c"
+    url "https://files.pythonhosted.org/packages/42/30/e5e2126eca77baedbf51e48241c898d99784d272bcf2fb47f5a10360e555/botocore-1.31.65.tar.gz"
+    sha256 "90716c6f1af97e5c2f516e9a3379767ebdddcc6cbed79b026fa5038ce4e5e43e"
   end
 
   resource "jmespath" do
@@ -39,8 +38,8 @@ class GitRemoteCodecommit < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

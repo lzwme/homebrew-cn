@@ -6,17 +6,16 @@ class Dotdrop < Formula
   url "https://files.pythonhosted.org/packages/1d/2e/ea86e7cb0998ad742bb1019521857717db184f2b82bba856ba64564d3f02/dotdrop-1.13.2.tar.gz"
   sha256 "a0dcac9382b823cf9e858e953bed16e409761b77f53d3d87454b1ce6c936858b"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4e9e1eb27924e5d534aa14696422be1e67779c5884edb006844bd359c2b79bb5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a9a94469f405b099bb392e368482deb5b3bba530e8c66eeb686ac7a76e35f6a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c1102af523fa4598d690b7b16ab17e6be149529dc6f5dd4a8a16038b7c9fb39"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9eadac736ef6e537c926de450432dda4d38777b8af9d1b418485664addfbbcbd"
-    sha256 cellar: :any_skip_relocation, ventura:        "5eb78e2453ba80badea9d32cb750c02f6db5e296a5ac7c69949805fb6d248b8f"
-    sha256 cellar: :any_skip_relocation, monterey:       "3b3993900fa01ffddcaeae85a97dd4ae120edc0fd59bae481e955360d53890f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eae751445eb2319ee04c54623467ff8409d072aca96570d7b27dfd84de7c5625"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7d7420c42c4c3625b220764b98c00edd8b6b2281ca0697ea9f6d28c4f2ed54c8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f9df78a48743f124ed597f77056b74b7403f6cd778966ebf801ecaff6a0467a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "da6ae86e4f91503e3129cfc18e5e2d59a676de4811d2ea347430bcbd87b2452a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c23f4a0e68f18b804d53161293825fa4284c79af010810a0e504c053550704ae"
+    sha256 cellar: :any_skip_relocation, ventura:        "099aeb7bb9150aa0489262852a0ddd5bf96bf27ebc03f86c92c587cc7c2ba53d"
+    sha256 cellar: :any_skip_relocation, monterey:       "98d756740312792b95002c9562d8c01dc17c7de9c40a627bc9a8f7a7a76beec3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d45be1650e0b534f2e06ca81cb48a4d8f1860ba64791d567ffa2d2852f208cc"
   end
 
   depends_on "libmagic"
@@ -76,8 +75,8 @@ class Dotdrop < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

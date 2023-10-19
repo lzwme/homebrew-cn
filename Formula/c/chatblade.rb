@@ -6,17 +6,16 @@ class Chatblade < Formula
   url "https://files.pythonhosted.org/packages/02/bc/c3dd9e46eaeae6218909b2a13b79a71b8b6ad30fe7ede8f9dc2dba530d5b/chatblade-0.3.1.tar.gz"
   sha256 "401511bcf7c305b845f80850d12b07627673af944ddfa0aa6b60eb010656d205"
   license "GPL-3.0-only"
-  revision 3
+  revision 4
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "22f978ea71eadd1ec5608a85336925b4e43a30a3dbd07e08b5f34cd3377a3fa8"
-    sha256 cellar: :any,                 arm64_ventura:  "2819d83d9a32c3e42a6c90bb992c1ea3fa69eff35e0cb473b2f56d2b76380bde"
-    sha256 cellar: :any,                 arm64_monterey: "115b7232983ccd8deba9d926769d40f8aa531cfb7fb6bf36d9e9bcccc7328868"
-    sha256 cellar: :any,                 sonoma:         "57c82137a3ef797984695c7875a300a85fe61e10e7daf705dd9e9312c90e15e1"
-    sha256 cellar: :any,                 ventura:        "0efe091cfa9f9a9fa8680b5ddf96cd7710740237bf93716382448841f23f41f3"
-    sha256 cellar: :any,                 monterey:       "15885c9aae80d11ccc82bbdbbff75f1c0c50bc5db5bbdf8d3e198b5f9cf52c07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb2ea68d43004935d8918b064cc0806aa93b2ea72009f9978bbcbab0741c6381"
+    sha256 cellar: :any,                 arm64_sonoma:   "2dcf02f2aee0196d26329df6ef0e09a17b7d98d932974ebe72ae517859d65d85"
+    sha256 cellar: :any,                 arm64_ventura:  "f1f6f5c86baeca08d56de1906877d362f47ce61af6fffaa9368e79beb23ccf1a"
+    sha256 cellar: :any,                 arm64_monterey: "c9dfb8a62d534de934eb5abd6d6ad6c397265178afa3b6ccfa2ff91817643a42"
+    sha256 cellar: :any,                 sonoma:         "bf8ea5e420dbbe393454a096dea9864ad71c466ad5bdbef750ae0764549ce372"
+    sha256 cellar: :any,                 ventura:        "aadb4444f25139ce2a24ffa5269454c0bcd530cc995bc784f935bca9f67e5db4"
+    sha256 cellar: :any,                 monterey:       "c207e75acb034de580fd81c2c6756d13ef115c1251604487a81b3240b1605ea4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48450935b95c0e3475f5bc5f23a30bf58cad0d6995376c74a57ed13284172695"
   end
 
   depends_on "rust" => :build
@@ -111,8 +110,8 @@ class Chatblade < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "yarl" do

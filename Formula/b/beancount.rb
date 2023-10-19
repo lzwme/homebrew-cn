@@ -6,17 +6,17 @@ class Beancount < Formula
   url "https://files.pythonhosted.org/packages/f6/b1/2587862caf3367f2d421be9da278f547296b00b7f9610ca9a94fddd8c709/beancount-2.3.6.tar.gz"
   sha256 "801f93bed6b57d2e22436688c489d5a1bf1f76e210f3ced18680757e60d3475a"
   license "GPL-2.0-only"
+  revision 1
   head "https://github.com/beancount/beancount.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a66a927232966cf466af7eb4e8653b0b5633b6af7cf80b00af0ef2e1260fa52f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1bf4aacd62eb7b0d32e15b6063fa478189cbc242979166591cc47efd86919548"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "579228ee07290e3d7bebf26796bfb4f293a39ee9edd8a289fb6f6bf140871866"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ecff7bf6ea551f350ab0aae0693762fee230cb9e8ea0758d5d00da4186209e8c"
-    sha256 cellar: :any_skip_relocation, ventura:        "fc878d48e41349e0cacd2f4a5cfee68885580d6165f7ca4e56518c0c11611cb0"
-    sha256 cellar: :any_skip_relocation, monterey:       "66756b91f17ceec68804edeb76092d17e252a2e568b4998d29279238b9ff6bb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1672ccbe521dbde8991b80f4f9cb79e7e508e3956f07fa76fd5732c64f59eae9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "da648a2fd940cc481fb7403c561ff3955be081b5e1874585cf8fd622a53ce53e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c269b118ba7ea7b7315b7197a22897e97416f261e1b6ba4265548039b73102d3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0915de1f583f18c38371859d5fc8c6e391da94f0a00b4f4c3cdf8a519dae8f6a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d748dbda635dd3f975c004088f35d714f423a80bbb638b2b038a451a8c4b3fa2"
+    sha256 cellar: :any_skip_relocation, ventura:        "8c94480b69d94379d2021bb76a2a610daf29c04253b2dda12e6d4838af70c06d"
+    sha256 cellar: :any_skip_relocation, monterey:       "5216e2ee2d7bcd29c55a32b6673b71b992b08a71e41042fd9d37e8b833c346a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3af41e7108e5f1683218d6b7067a63bce8b65a0d3333438f95e613be6ba5c850"
   end
 
   depends_on "python-certifi"
@@ -57,13 +57,13 @@ class Beancount < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/fa/6c/97e6eeac0959783c2ac21aea3c560f970327fbb0498a6011d58cbfbb30e8/google-api-python-client-2.102.0.tar.gz"
-    sha256 "906ff9b672a4d5ddad8f4073a040e59f1fba6734909c14cd49938e37be53691d"
+    url "https://files.pythonhosted.org/packages/19/c9/ce294e72438f987b36151c49f91c1853d0fc37d59d7c360e926dae4f8a17/google-api-python-client-2.104.0.tar.gz"
+    sha256 "bbc66520e7fe9417b93fd113f2a0a1afa789d686de9009b6e94e48fdea50a60f"
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/49/5c/537d35dbbd248cd58fa1014a9770063b103fa63a3d929bbcf739d2d731f9/google-auth-2.23.2.tar.gz"
-    sha256 "5a9af4be520ba33651471a0264eead312521566f44631cbb621164bc30c8fd40"
+    url "https://files.pythonhosted.org/packages/45/71/0f19d6f51b6ea291fc8f179d152d675f49acf88cb44f743b37bf51ef2ec1/google-auth-2.23.3.tar.gz"
+    sha256 "6864247895eea5d13b9c57c9e03abb49cb94ce2dc7c58e91cba3248c7477c9e3"
   end
 
   resource "google-auth-httplib2" do
@@ -72,8 +72,8 @@ class Beancount < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/08/78/aedf7f323cc6d4f2116556bd42c9ffab6021cf3f2fd9925ed4e71213dd1b/googleapis-common-protos-1.60.0.tar.gz"
-    sha256 "e73ebb404098db405ba95d1e1ae0aa91c3e15a71da031a2eeb6b2e23e7bc3708"
+    url "https://files.pythonhosted.org/packages/95/41/f9d4425eac5cec8c0356575b8f183e8f1f7206875b1e748bd3af4b4a8a1e/googleapis-common-protos-1.61.0.tar.gz"
+    sha256 "8a64866a97f6304a7179873a465d6eee97b7a24ec6cfd78e0f575e96b821240b"
   end
 
   resource "httplib2" do
@@ -157,8 +157,8 @@ class Beancount < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

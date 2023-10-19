@@ -6,17 +6,16 @@ class Grayskull < Formula
   url "https://files.pythonhosted.org/packages/d4/28/103ed458290f40221e0eb4d8f8268e7fbdc6b4f5ccd49bef73f7ddd26f86/grayskull-2.5.0.tar.gz"
   sha256 "b021138655be550fd1b93b8db08b9c66169fac9cba6bcdad1411263e12fc703f"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ab4458e6a8988248f9d1e8e45c642b5bd475b1e5510c1f4b001771691a920b50"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e8d3b7c1c630747bccb78f06f759df9b99cfa57c66205699e66a61cdd36ef9a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "da54129589f43e6ab58979e57e3a05d7b70494d73e173edfc0713c8c1db6b93a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "999b0bfa66476ee23d70c3420073767e1cadc68c6c12e0853363965122d98527"
-    sha256 cellar: :any_skip_relocation, ventura:        "95ca890de98cfdec8e28e93f419c5b5509d6f8cd64a0ad4a6df7633ee4554920"
-    sha256 cellar: :any_skip_relocation, monterey:       "9d0983b473e63b099c3cf6b11b92c912a83cdcb29c837765eb91317b48dbe947"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "787c9fa6a6a35bff1594f0d02341dc5a953655b912555445989b5c52c8b476a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d53df5194dbfd9eef023649bd59d4051f4e9b3b82b6a7abdba8674c81ac85342"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e17100d76db48a7e3c78c856a587111bf6ccf157f9752373debad3182e6e173"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ff436d5c49507929579714150194f716f42ddb4dd3651e777b17463356bf8874"
+    sha256 cellar: :any_skip_relocation, sonoma:         "37fa99c64f9041be05233228b72150fb944e2764bd27a0139bb19ce8be3aed2b"
+    sha256 cellar: :any_skip_relocation, ventura:        "854ce8e4e13b3acf7ca869b94d3c99532af67af326c289de19ba9c26cd0bab7a"
+    sha256 cellar: :any_skip_relocation, monterey:       "1c83cda70988f38795100820576978546f4616f73589ad31ae016d4080db2132"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0bc1cc896b23b38e3f01e322144d81645fc7bdadaa4e8d0dcdf2fc9fb3d7530"
   end
 
   depends_on "cmake" => :build
@@ -66,8 +65,8 @@ class Grayskull < Formula
   end
 
   resource "rapidfuzz" do
-    url "https://files.pythonhosted.org/packages/1a/bc/1475cf5a75bcdfdf59b3947e9ffdfab3518629110a662c20d90b67ce037f/rapidfuzz-3.3.1.tar.gz"
-    sha256 "6783b3852f15ed7567688e2e358757a7b4f38683a915ba5edc6c64f1a3f0b450"
+    url "https://files.pythonhosted.org/packages/27/36/22741bb354505ca284c2149a4c7fdee396a6cdeae3f4c0614acf6b0ee27e/rapidfuzz-3.4.0.tar.gz"
+    sha256 "a74112e2126b428c77db5e96f7ce34e91e750552147305b2d361122cbede2955"
   end
 
   resource "requests" do
@@ -91,8 +90,8 @@ class Grayskull < Formula
   end
 
   resource "semver" do
-    url "https://files.pythonhosted.org/packages/46/30/a14b56e500e8eabf8c349edd0583d736b231e652b7dce776e85df11e9e0b/semver-3.0.1.tar.gz"
-    sha256 "9ec78c5447883c67b97f98c3b6212796708191d22e4ad30f4570f840171cbce1"
+    url "https://files.pythonhosted.org/packages/41/6c/a536cc008f38fd83b3c1b98ce19ead13b746b5588c9a0cb9dd9f6ea434bc/semver-3.0.2.tar.gz"
+    sha256 "6253adb39c70f6e51afed2fa7152bcd414c411286088fb4b9effb133885ab4cc"
   end
 
   resource "soupsieve" do
@@ -116,8 +115,8 @@ class Grayskull < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install
