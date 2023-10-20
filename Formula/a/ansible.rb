@@ -6,16 +6,17 @@ class Ansible < Formula
   url "https://files.pythonhosted.org/packages/37/6e/53718ca07b7c46ac4777f9d1b13480cbe0b04f6a686c8436029f00ce25be/ansible-8.5.0.tar.gz"
   sha256 "327c509bdaf5cdb2489d85c09d2c107e9432f9874c8bb5c0702a731160915f2d"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "442eaebea6ce5f4ca811c01fbf4380a5624150fd487249e454dab928dca41ce2"
-    sha256 cellar: :any,                 arm64_ventura:  "425da5467f5368a7a9331e07a272abf6a7e01993944d56595784f642b5b86a60"
-    sha256 cellar: :any,                 arm64_monterey: "6c981a25d12632875b60ca83f33a3eb5598955a4844f28d0369746b253eae107"
-    sha256 cellar: :any,                 sonoma:         "2fcb076d23c814b7140b9830925152aa387c81cf471535a6728d2197b3d6e917"
-    sha256 cellar: :any,                 ventura:        "5b561aacc1778586b4db72214dd7cea0a9a95296aed527a0c98e1dbb6e25d873"
-    sha256 cellar: :any,                 monterey:       "aaa4877ed08e3255deaf417e38a8a63b9d7be81105a905e449a70b970c88db11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "848494b9bd54fecf93e32818ee3a4c855420a1f1483fb1e5a194af11a8be4e93"
+    sha256 cellar: :any,                 arm64_sonoma:   "1a7c774371529a7b600ae2db34ba34988d76412833deec9874249ca5822aaf07"
+    sha256 cellar: :any,                 arm64_ventura:  "9866647bf20b466538e9890e8b8214c77de263059594fb6d86aa8ae664cd5ecb"
+    sha256 cellar: :any,                 arm64_monterey: "845f29204b92b310dde507a9e1af2e097d5b2c18dc5ec3f1f7bed182ce322108"
+    sha256 cellar: :any,                 sonoma:         "d4213423a66fb3f83a549a2024a13fb9f7b7319ce7461700772d88b9d4d68d2b"
+    sha256 cellar: :any,                 ventura:        "8f355b46a840a436ff81a2b6372e2b29b5ea16174d5415c43f88c2ad63b67060"
+    sha256 cellar: :any,                 monterey:       "23f0e167de933d129935f1d7af53e6c11a58fa0939420ddfc53ab18fd01073e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f14d7ba233e7ba21670e2efc76fd466aec1a205374479a46674dcd9fb070a91"
   end
 
   # `pkg-config` and `rust` are for bcrypt
@@ -56,8 +57,8 @@ class Ansible < Formula
   end
 
   resource "autopage" do
-    url "https://files.pythonhosted.org/packages/36/b1/e5a1c2ebeb64ccc9c2a4ae133f5955d9824482628ed4bf0331c73323f0de/autopage-0.5.1.tar.gz"
-    sha256 "01be3ee61bb714e9090fcc5c10f4cf546c396331c620c6ae50a2321b28ed3199"
+    url "https://files.pythonhosted.org/packages/9f/9e/559b0cfdba9f3ed6744d8cbcdbda58880d3695c43c053a31773cefcedde3/autopage-0.5.2.tar.gz"
+    sha256 "826996d74c5aa9f4b6916195547312ac6384bac3810b8517063f293248257b72"
   end
 
   resource "bcrypt" do
@@ -66,13 +67,13 @@ class Ansible < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/68/83/eacc938d3a931ffda361f72d72b4ca09b32e453038becf9f02091a97f749/boto3-1.28.62.tar.gz"
-    sha256 "148eeba0f1867b3db5b3e5ae2997d75a94d03fad46171374a0819168c36f7ed0"
+    url "https://files.pythonhosted.org/packages/1b/2f/4ccd05e765a9aa3222125da37ceced40b4133094069c4d011ca7ae37681f/boto3-1.28.65.tar.gz"
+    sha256 "9d52a1605657aeb5b19b09cfc01d9a92f88a616a5daf5479a59656d6341ea6b3"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/02/d8/f7d2a1247b9430c0e8be761b4b2485930d2b45f14ec912ce0fdb4aeec348/botocore-1.31.62.tar.gz"
-    sha256 "272b78ac65256b6294cb9cdb0ac484d447ad3a85642e33cb6a3b1b8afee15a4c"
+    url "https://files.pythonhosted.org/packages/42/30/e5e2126eca77baedbf51e48241c898d99784d272bcf2fb47f5a10360e555/botocore-1.31.65.tar.gz"
+    sha256 "90716c6f1af97e5c2f516e9a3379767ebdddcc6cbed79b026fa5038ce4e5e43e"
   end
 
   resource "cachetools" do
@@ -211,8 +212,8 @@ class Ansible < Formula
   end
 
   resource "ntc-templates" do
-    url "https://files.pythonhosted.org/packages/39/40/fd17bcda83038cf95248d29763a4a005a5bf5dcde2d6c103780b4ea7ed46/ntc_templates-4.0.0.tar.gz"
-    sha256 "26980a7112cfbef82fd4cff6b6d1e6f948625c7f3e0e46b7fe4da38bec9e6c68"
+    url "https://files.pythonhosted.org/packages/55/02/bb4c152beb52a24e020a494c5f1f768b9e18fa12b6c6d0fd5056d020656d/ntc_templates-4.0.1.tar.gz"
+    sha256 "5bd158592ac99e769a0b7e82e53fd714a410f912fc9e438e95cc0130cf7290a8"
   end
 
   resource "oauthlib" do
@@ -461,8 +462,8 @@ class Ansible < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/dd/19/9e5c8b813a8bddbfb035fa2b0c29077836ae7c4def1a55ae4632167b3511/urllib3-1.26.17.tar.gz"
-    sha256 "24d6a242c28d29af46c3fae832c36db3bbebcc533dd1bb549172cd739c82df21"
+    url "https://files.pythonhosted.org/packages/0c/39/64487bf07df2ed854cc06078c27c0d0abc59bd27b32232876e403c333a08/urllib3-1.26.18.tar.gz"
+    sha256 "f8ecc1bba5667413457c529ab955bf8c67b45db799d159066261719e328580a0"
   end
 
   resource "wcwidth" do

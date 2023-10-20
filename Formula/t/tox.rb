@@ -8,20 +8,18 @@ class Tox < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c29bbe3bb11284b6e9abff03c6edc6a6f9205358323f4a806a7023e7234519e0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a968c4368429f468a49abcdf5cfbfc2e5f6e35494fcbb83e0d03506373895aa3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "000489ca9ac0ed9d47d93d2539042bd1f8b0b1d8f951be95af2a441770960a0e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "84bf272cb1aab37dd222bfc8428aa063b30c16c84e94ff6d27892dc9928dad3a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f5724ba8de672cf5836a9d0d76bdf348355b1ea986f7b9b2ec94151d3027596f"
-    sha256 cellar: :any_skip_relocation, ventura:        "d6891295d2dda0a440759197f15af3ebd3bbf48c3b9eb891981422accfcaf263"
-    sha256 cellar: :any_skip_relocation, monterey:       "5c62b8f473b68d13701cc10b8476b0a8f33325d030527b4b41a40724e14a17b9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b26f96f2f1154b30b733d94ad76074135b30784cb4778de7f27adeb08229475c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40c22a8548df1ed782243f64663e8373c1178ca27c49a17389cc98aee7d140c9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3d4121cc671dbb0d9c5fcc24e052a53c1a6cfaf773c55758b4b392fdd47e94e6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f2e2861ad9c45209d0eb43836876d91ba924153123860886b6212c466e0ab236"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "405adf415f883e0bfc96b4114c6c8313f3a60f7b0344b894beb5502746bf1816"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1828d0cc8c83a133e2847bf9369b0cc8c6e96e43c2a270a201215a760d4f3b2e"
+    sha256 cellar: :any_skip_relocation, ventura:        "6556786d2ff421f43db5bff94c11b0f14b032c1478b056c1ecc9619fca68f4b0"
+    sha256 cellar: :any_skip_relocation, monterey:       "3a44c6460c9da37b2f266505d6cc4ecf12568ff43ba79f9c2ebe83a7e8c35d4c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "43e2cef48f42c6cd9d4102a0336048223e9151dc9168eecfd53f44ae9760909b"
   end
 
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "cachetools" do
     url "https://files.pythonhosted.org/packages/9d/8b/8e2ebf5ee26c21504de5ea2fb29cc6ae612b35fd05f959cdb641feb94ec4/cachetools-5.3.1.tar.gz"
@@ -87,7 +85,7 @@ class Tox < Formula
   test do
     assert_match "usage", shell_output("#{bin}/tox --help")
     system bin/"tox"
-    pyver = Language::Python.major_minor_version(Formula["python@3.11"].opt_bin/"python3.11").to_s.delete(".")
+    pyver = Language::Python.major_minor_version(Formula["python@3.12"].opt_bin/"python3.12").to_s.delete(".")
 
     system bin/"tox", "quickstart", "src"
     (testpath/"src/test_trivial.py").write <<~EOS

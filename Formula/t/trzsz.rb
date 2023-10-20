@@ -8,17 +8,18 @@ class Trzsz < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6faac52d1f634fcb27425604f334ccfa051322e2f5b1a191c36d63eeb1499bf9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "494a6a9aadac26916e2f9f0130e34e88356464dfc4d2fd40230fb7f31f50c293"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a8c9d97288a52a4a0ac09ddefccf8bfe3aef297c764dfbbbc2af54277b981ed0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fb3f2ab656976e358c5e52006f04f493124172d50aa4a8c25f285067e5acee62"
-    sha256 cellar: :any_skip_relocation, ventura:        "d3af0e7ab1ac1d74c0f964b1dcaa5d2fffabbc977b99a46e5cc097496db6144e"
-    sha256 cellar: :any_skip_relocation, monterey:       "2cf45e2f85155e9d0c8084db93193a318ec266728c0bf71b158e308ff397be16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "67d08eff71def03b6517e4085593ae2b6a955ee81a978e3f48d274bda46fd3fe"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "93365e4d0fb1bf8015a9b11c8370b7b7858b7aa99365071b1428b52f1fc887ba"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "42d837d3663936b7b858544b014dace5ce4528f82d886daa46639686a9b906b6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0565b5fd2c7dff7e61d22d0499595cdb0e3d0eba73d20aacfbcd2ce452450bda"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6567f14556a2646469835d3688e6e479f3c4b19582895598982c5ca74ae06490"
+    sha256 cellar: :any_skip_relocation, ventura:        "a80791c1ad7c1493260e7c8bc69eea6c528d99a92a8ce091bc0795bc305176ef"
+    sha256 cellar: :any_skip_relocation, monterey:       "51d4449d117cc3d568b6ac5bc547bed75f83b96a01ce780f808434283e0edb7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52ca1df3e1c0caa799fcab0567e9e2b98be6100bd708661f8cf2dbbb373d0f49"
   end
 
   depends_on "protobuf"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "iterm2" do
     url "https://files.pythonhosted.org/packages/4f/eb/47bb125fd3b32969f3bc8e0b8997bbe308484ac4d04331ae1e6199ae2c0f/iterm2-2.7.tar.gz"

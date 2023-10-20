@@ -10,17 +10,18 @@ class Toot < Formula
   head "https://github.com/ihabunek/toot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "39bb22197dcc9819f6ddf182ad47a3d8e9455a2314706a3f438ecab9a968096e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "374eb3ed72b63c2db8d09c00afd804f0348f90807e97fe349b299e1efbf4ede4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "26184d6485072b22ff86ab67b8a06fd4b828a4a1a13d09b524bfad81a064867c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7ef51db2cdbe7656bab237894ff6f23914422436d250bdb4909fc90b99ea0ee3"
-    sha256 cellar: :any_skip_relocation, ventura:        "82a5395187a03820499ecc16449b5128619f866a54d27065b5d3fd3c53c0e41c"
-    sha256 cellar: :any_skip_relocation, monterey:       "ef348c76a5b91d059f8485061f66ddc15ba3ddc47c78d63818ce2d92fe46f125"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e04451447e3a87d1107390417347f0d22649efb140ccbd2f97d866ad6d77e67"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f0e25287cb6aeac49a505a2bbc6b3d7c3e6c656d59404ae6e1204dff47fe4470"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "574872893fe084520029d1ef8e4b81eb39a94a7fef43b77aa5246493ac534d93"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "37d6f8118a8a16682b3407e87a4e46b43ab71691e7c82a44726009bb07350c4f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b57104763f3145e4579f145c2c851f88050f586ada47f601e0af77ac6aacbcf2"
+    sha256 cellar: :any_skip_relocation, ventura:        "2f758389f452d6c8e73e72cb127a5768449cec0f9abe50dba62b9d2688dd24a3"
+    sha256 cellar: :any_skip_relocation, monterey:       "5690dc646af710bde358075f893b7c2e98a81bef488107f9f159abe9602ffe8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf6fa292a4349c707cebfb205cb47687e44fcd84aca3e6d7c82c32fe3e38e042"
   end
 
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/af/0b/44c39cf3b18a9280950ad63a579ce395dda4c32193ee9da7ff0aed547094/beautifulsoup4-4.12.2.tar.gz"

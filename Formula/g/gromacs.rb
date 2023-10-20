@@ -1,8 +1,8 @@
 class Gromacs < Formula
   desc "Versatile package for molecular dynamics calculations"
   homepage "https://www.gromacs.org/"
-  url "https://ftp.gromacs.org/pub/gromacs/gromacs-2023.2.tar.gz"
-  sha256 "bce1480727e4b2bb900413b75d99a3266f3507877da4f5b2d491df798f9fcdae"
+  url "https://ftp.gromacs.org/pub/gromacs/gromacs-2023.3.tar.gz"
+  sha256 "4ec8f8d0c7af76b13f8fd16db8e2c120e749de439ae9554d9f653f812d78d1cb"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,15 +11,13 @@ class Gromacs < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "f42ec1a9a186ba3799a329faa1a19db3f67a710716ce09e650d545a7984b4377"
-    sha256 arm64_ventura:  "a7a0967a6a32d0aa14aab0c1f251f4d43e93b622b2540d216dd211735b627d5a"
-    sha256 arm64_monterey: "a04ff3fc0d7685ae63927307fd07a2278c773c2d188789f33fdca1304b1697fd"
-    sha256 arm64_big_sur:  "2f7fe800fe0ba5c7ef55fea32b81886db90669b7f472b3ea00f35f694d244baa"
-    sha256 sonoma:         "29daebe74715bc4c4a6191e36ba63e8e81d08503915403537b00949a775eeb56"
-    sha256 ventura:        "848e972271e7abee5c871be0fa2992bce4a881656a973171c080cd6812dea9e2"
-    sha256 monterey:       "298f09d76f22b3f789c109b4a3e3882de841e363e4c4e15edd354444e073821a"
-    sha256 big_sur:        "697398fc20ff1409331e83545e0a8f23c169b37fd8f40c161922922e119c8571"
-    sha256 x86_64_linux:   "034d67c68d584f62172d189e5939bfcbcac352a3565cae4ca27bfe4bcc1cdf37"
+    sha256 arm64_sonoma:   "70c402f4df69d503efbd369134774e9cf55ee10520b6beb87e0d0ddca83c8c8c"
+    sha256 arm64_ventura:  "12c4770d997a644e7d36488731541356c80456178e7e7f34f44f3d56dfb271fd"
+    sha256 arm64_monterey: "20a5dbdd1476e9aa4cc186725833f29d31def6994582dfec2427b734720043d7"
+    sha256 sonoma:         "952f8875e051420121575166557cd543e68d30fd9dc97ad4a8e957b6f0ff4187"
+    sha256 ventura:        "5fbc71c2b9510a2a5d6bfc55800cb53e71b916124b7c01fb326e7c72fe0a7b91"
+    sha256 monterey:       "98fbf9fe389ff03910a8f14bb59a5166674373dabd558b7513b6cd47ee0ec60a"
+    sha256 x86_64_linux:   "e4a5b4ec53f8cb7d421ed65efa7c56289db0a7e5139058ae5216f650e721a027"
   end
 
   depends_on "cmake" => :build

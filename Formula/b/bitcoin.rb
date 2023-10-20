@@ -1,8 +1,8 @@
 class Bitcoin < Formula
   desc "Decentralized, peer to peer payment network"
   homepage "https://bitcoincore.org/"
-  url "https://bitcoincore.org/bin/bitcoin-core-25.0/bitcoin-25.0.tar.gz"
-  sha256 "5df67cf42ca3b9a0c38cdafec5bbb517da5b58d251f32c8d2a47511f9be1ebc2"
+  url "https://bitcoincore.org/bin/bitcoin-core-25.1/bitcoin-25.1.tar.gz"
+  sha256 "bec2a598d8dfa8c2365b77f13012a733ec84b8c30386343b7ac1996e901198c9"
   license "MIT"
   head "https://github.com/bitcoin/bitcoin.git", branch: "master"
 
@@ -12,15 +12,13 @@ class Bitcoin < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "213a14e33fa520cbf1e7d00e08e3eed94e2a841e1448f211069b14aaf1b8183d"
-    sha256 cellar: :any,                 arm64_ventura:  "7964d698ce133103c43ec7e133a983028278f3d851d5382fec243215225cfec6"
-    sha256 cellar: :any,                 arm64_monterey: "69954197ac4aab4ca15fea03927f9ea870563ad574ebe962548cd69c7bcd8334"
-    sha256 cellar: :any,                 arm64_big_sur:  "9038890cd9c57dfe0f31a15b35a0a748c5a207fbf0a09684adcaf73cb0b0e4fd"
-    sha256 cellar: :any,                 sonoma:         "23bdbe09c715372b48f7a7a59eb9c23027fb69a7d82946cf4d81b32c3a0595bd"
-    sha256 cellar: :any,                 ventura:        "29a074e4a96fe7bb7c7e2a135980e6c885133abfdf6aa6669b61597d1a11b40c"
-    sha256 cellar: :any,                 monterey:       "e3af0cfeba91ba9be13a49a6525add34deaf8363aa470ada08bb92c53a48f6dd"
-    sha256 cellar: :any,                 big_sur:        "88c3d142ff5bb795fff54fd3724536d8572aeb4549c11dde27c8d7e4d5b71841"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e6f19d87b4784267c1cb1a4a19236be3e8691ef2197f4c5dab6f83dd0a209c0"
+    sha256 cellar: :any,                 arm64_sonoma:   "8e1553d204b4dacc3d4ca9d47bc22f767f204eed2101394c598515b0959d5d2b"
+    sha256 cellar: :any,                 arm64_ventura:  "b84735f2deea9d76f0baf7e3e431c1946453774329d1d38e0e5d95ad89e5235d"
+    sha256 cellar: :any,                 arm64_monterey: "1be587ef78942cd1631d7fc56ca75bc9f6a4f04f88423cd6a7672f9d334b8f0d"
+    sha256 cellar: :any,                 sonoma:         "87a46850cfe4942d3f564bb01be5d48c911d0c25921bd4f75e0f4b1842f45c00"
+    sha256 cellar: :any,                 ventura:        "754d5abddf7fb242e9316e5fb68fec66b7e614b83101e6e8c7777bee33996dc8"
+    sha256 cellar: :any,                 monterey:       "a4eb426b91914aabe88449a369d9e6447241095e2e5cf89b5b9aae2cef5a4fb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9a3f3f799e84c2fe9176dad970298b8760934b911a2e0266528418f8c8028ff"
   end
 
   depends_on "autoconf" => :build

@@ -1,8 +1,8 @@
 class Gpsbabel < Formula
   desc "Converts/uploads GPS waypoints, tracks, and routes"
   homepage "https://www.gpsbabel.org/"
-  url "https://ghproxy.com/https://github.com/GPSBabel/gpsbabel/archive/gpsbabel_1_8_0.tar.gz"
-  sha256 "448379f0bf5f5e4514ed9ca8a1069b132f4d0e2ab350e2277e0166bf126b0832"
+  url "https://ghproxy.com/https://github.com/GPSBabel/gpsbabel/archive/gpsbabel_1_9_0.tar.gz"
+  sha256 "7801d30553bbc25d0b0e8186f2f5a1ec41397e51a26b92cc8ad1aeaa77c9beb6"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,19 +11,16 @@ class Gpsbabel < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "0024f50f858f84e5b95dfff3a15e72dc9b6bd415b45c647c1510154499b2c287"
-    sha256 cellar: :any,                 arm64_ventura:  "f2b81e2ad20e8172ae57d46d67ca75f542ccfbc260cea6cef6ff9bc9ac7829e0"
-    sha256 cellar: :any,                 arm64_monterey: "646be265241a8f78c88289bef277cbe444db6a0bf7cd02e197ef395917575ca6"
-    sha256 cellar: :any,                 arm64_big_sur:  "908cf83c712d6f730d3ab1a5d7b2fd8fd0ded530949016c0b6ebaaeb322d2db0"
-    sha256                               sonoma:         "375ad717cbc3bdb28aadc9a45d3493cd40fa08bf33f1427d50c471da66e14f21"
-    sha256                               ventura:        "27797000ed7e6fd54a016955bb4a359013b9e2518dc622c87250bc7bdd920b54"
-    sha256                               monterey:       "1c425bf6dc9f522a59c67e37ad8d16af80e0dc334f5ab820ed12ad415907704a"
-    sha256                               big_sur:        "67cd2df2db497332a254d7923ebdd9bc17450195d53f327788326f2405451c4a"
-    sha256                               catalina:       "7f699fcc659b539678c725aaad769b98afd9ef25bf9071b3acc55088c46a379e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a42240e22fd5787212ff71c58030b15eddd6c362846e8dc315765cffd7437e1"
+    sha256 cellar: :any,                 arm64_sonoma:   "67f736d8b27fd6ed2273e0448d0984d1972e78daf10af9ffbd57f2e81a871050"
+    sha256 cellar: :any,                 arm64_ventura:  "2ce694f25190c74129462218a6d8d3142fd12189196269bb9d2093d7e9e62020"
+    sha256 cellar: :any,                 arm64_monterey: "2b7232b9ccc6f1a7bff33b658ecb6c719fb60305bbbda64660f5797815452dc6"
+    sha256                               sonoma:         "6509d1d01a002e03a802213ca29bf49758b3e8ce2c2e7e3cef5e02a576cfafd1"
+    sha256                               ventura:        "854131ea37991a40b5a21c2f5aa4c82824152b1569d9f891a2ecf48265bc3bea"
+    sha256                               monterey:       "d0be365943bccb275a108e728bf273a702147e42d2ccf5de3b5cc0a9416321f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e9584f4908a0568a9bc289039b3b4dbecd3dae3f4df38e1f7cccab2b8c6f3b8"
   end
 
+  depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "libusb"
   depends_on "qt"
@@ -42,12 +39,15 @@ class Gpsbabel < Formula
     rm_r "shapelib"
     rm_r "zlib"
     shapelib = Formula["shapelib"]
-    system "qmake", "GPSBabel.pro",
-           "WITH_LIBUSB=pkgconfig",
-           "WITH_SHAPELIB=custom", "INCLUDEPATH+=#{shapelib.opt_include}", "LIBS+=-L#{shapelib.opt_lib} -lshp",
-           "WITH_ZLIB=pkgconfig"
-    system "make"
-    bin.install "gpsbabel"
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DGPSBABEL_WITH_LIBUSB=pkgconfig",
+                    "-DGPSBABEL_WITH_SHAPELIB=custom",
+                    "-DGPSBABEL_EXTRA_INCLUDE_DIRECTORIES=#{shapelib.opt_include}",
+                    "-DGPSBABEL_EXTRA_LINK_LIBRARIES=-L#{shapelib.opt_lib} -lshp",
+                    "-DGPSBABEL_WITH_ZLIB=pkgconfig",
+                    *std_cmake_args
+    system "cmake", "--build", "build", "--target", "gpsbabel"
+    bin.install "build/gpsbabel"
   end
 
   test do

@@ -4,16 +4,16 @@ class Pyyaml < Formula
   url "https://files.pythonhosted.org/packages/cd/e5/af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0/PyYAML-6.0.1.tar.gz"
   sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "561544b18dbe365ea4daed0d6e1f04f84f8db7b9311a7b2b4f23448730a370d0"
-    sha256 cellar: :any,                 arm64_ventura:  "9ce2dadb085a4e6fe2fa4f5f107384559f7fd7f4d006a71a83bab79021be70c2"
-    sha256 cellar: :any,                 arm64_monterey: "0b9169a71a1d719043a8e435fe5676f043d168f67e6e7ca38d12dc7cc6595054"
-    sha256 cellar: :any,                 sonoma:         "5a8994e5ad9d4cf01275fd65cb6df8f2357c58ee87299c2dad847e95b7075b12"
-    sha256 cellar: :any,                 ventura:        "7649b84c4833bab198324c0fa390d391895081735a2ddce27afa0b1d7d33237b"
-    sha256 cellar: :any,                 monterey:       "32e3ad242518e37b4b772c137c7700f26585d1e6d1a885479dd9f10f675ea9c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "053ab09b8e289c2168344ee24de7e08318f96d0404279c916420deb01bef35a9"
+    sha256 cellar: :any,                 arm64_sonoma:   "b538bcab64b4ab3f6351c219cff42e2d163201efcaa272e4ee7e58783ffb3ce6"
+    sha256 cellar: :any,                 arm64_ventura:  "eb0cb94ff9dc6ac7926c1ee71ccdc42dc844ad3ab949b9105456cf131c25027d"
+    sha256 cellar: :any,                 arm64_monterey: "d87fbc05ae74fc9f2c882c5047f6f9587bd782165776a2132ab26fd3fa11dab7"
+    sha256 cellar: :any,                 sonoma:         "1ac9a131912b8c3d48e751d7d39c17c1c8d3d84d81353ab82d66fa5fb6d31772"
+    sha256 cellar: :any,                 ventura:        "dc66728628c4bb38e894111a480f8ac86369ac73d87b148874878f8c565bb0c5"
+    sha256 cellar: :any,                 monterey:       "e01aba3d0afab94578fc5f708ee01adf0549572005aa82c2c292679663c23995"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d53f5c35de430f055c83fdbb1e857b3423cbea9c66523f929cb525876ef55fae"
   end
 
   depends_on "cython" => :build

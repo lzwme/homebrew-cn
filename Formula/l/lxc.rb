@@ -1,21 +1,19 @@
 class Lxc < Formula
   desc "CLI client for interacting with LXD"
   homepage "https://ubuntu.com/lxd"
-  url "https://ghproxy.com/https://github.com/canonical/lxd/releases/download/lxd-5.18/lxd-5.18.tar.gz"
-  sha256 "e05e2afa39f2a44e08dbfe43eb9513dcd4697497abb524678bc26f1e4a531552"
+  url "https://ghproxy.com/https://github.com/canonical/lxd/releases/download/lxd-5.19/lxd-5.19.tar.gz"
+  sha256 "4edc371e8c7e19fa08f1d1362a96761d44db94e3c5054b3adc8051235f250223"
   license "Apache-2.0"
   head "https://github.com/canonical/lxd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5cb897a1d36a91d28e376dc4d2a82f399ebfb1423cecebb125f97e129417b46f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2f7ef6cdc351d394f301026de28714e536048ab768bcfcfbaa0440f289553d5b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "76d9a9ec06e8abce1704465af0bb543ed0fc958545280cf7fece121632ee3bbe"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "159fd7530ff285211db64338bdc53a50ced3b22a7ddc580f42aa32d0dab77372"
-    sha256 cellar: :any_skip_relocation, sonoma:         "841f5ea7251a6f35f6e06644c71ca3b0d3e372d491663ee22b8b11c56c76efb4"
-    sha256 cellar: :any_skip_relocation, ventura:        "3dcb07da04278afc607ffdd2aa22ec947e214cba4911f77e1888485a44df3030"
-    sha256 cellar: :any_skip_relocation, monterey:       "f235c25ed6d59bd527e5e6f555ff15a5693524062b779a68a6e664774d4ea6ea"
-    sha256 cellar: :any_skip_relocation, big_sur:        "87f6b3950ccbd890a8087340469f3617999fb278e1b6c9c80fee16f6c56ba86b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f0bbdf45d4833217bfc75bc8af5addce2bc644fef169eb6908cdfa8ef5a936d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "30bbdcfa31e4ad77d72a8e5f5487d05a1e9c89ecd8074bc8afce4eb52fae8940"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e1a4c74e234ebf5c6e161a7a7883c632afafe74b98118cbec9af2b02154b0dec"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "869df5ab05da79dbd6ed189423c119824d0fe760fc33e23fcb4fbc8206a5ef98"
+    sha256 cellar: :any_skip_relocation, sonoma:         "acaea9d42ac41835ac665ed1f8e859921374a8a7b391880c69e5b9a234c5b615"
+    sha256 cellar: :any_skip_relocation, ventura:        "776895f060e9bffd3d88d5d33784dd91f7c3c9b9d3d96751f94c93918f62b194"
+    sha256 cellar: :any_skip_relocation, monterey:       "da3f538c4e4c4ed19f4f682cdfa31ded58e668e37cc8b3d1da2e182db335d0e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b18251f5e267dbb4d1799c8a3b73904ab5d3c2d0371e1ec6453cd82a3d90b2a4"
   end
 
   depends_on "go" => :build

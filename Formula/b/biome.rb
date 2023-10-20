@@ -1,8 +1,8 @@
 class Biome < Formula
   desc "Toolchain of the web"
   homepage "https://biomejs.dev/"
-  url "https://ghproxy.com/https://github.com/biomejs/biome/archive/refs/tags/cli/v1.2.2.tar.gz"
-  sha256 "744847d50e716a5ada7eea2f9862fdad6c5321c5aa3ad15c3169e170b2fa09e7"
+  url "https://ghproxy.com/https://github.com/biomejs/biome/archive/refs/tags/cli/v1.3.0.tar.gz"
+  sha256 "ea41876c473012e62e0cf674f5583c0fd832147a772cad4aa691a29dea3212ad"
   license "MIT"
   head "https://github.com/biomejs/biome.git", branch: "main"
 
@@ -12,15 +12,13 @@ class Biome < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6c3379f48ec2c3321cf30ce10831daaff2ce1b86438d095a77502dd53f0f22e6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "541602aadf5477d9d7bba969d867adfc2967172a3ef1b92aacefde46304f2a98"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "89be6120d6731b8e61735e9ba5a6b3225da76aa281d5e2f4b27248a6be372f49"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7c23fe026c4f80ed608e6d60b760afccde5eb92f727ae59d35c7eadf567324d1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "db783f0a7e3ea0952f482bce6bc0828e55121aef2f18f00cf1dbf66881479fa8"
-    sha256 cellar: :any_skip_relocation, ventura:        "c3f2569e0ec60e73e5bdf78b7176272edfc128f64fc05944446bfd1f9c555c71"
-    sha256 cellar: :any_skip_relocation, monterey:       "573d350b342d47ebef71c59d12d1de948756c9c5be5ae2820790712cf979b60d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "168bc4975dc9a59654b76f6b263aa74cf8b2b0feba003b1e0c33097b182fea49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dcb251f3e2f5c34ccc2ad02ecada2cf79d8bf76cfdb4cc2103a3202f02f0922e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dcc0f225e3b94159f6c1f45fc4a76bf29e10444562e16eadd03dd6fc079713ef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd397f11e79ad24a9ac73b8a4029ccae6956994045fdd67e1aebda8a3413f83b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "10edd48f0b59722ca86bcd435990f28b898fbf4bd24ac644a8f46518fa434d2c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ca85277b623ffd04d6b6d9f5334d88baf3e45fed7d814041c7dbea119146f1ad"
+    sha256 cellar: :any_skip_relocation, ventura:        "b2741ef7849aeafd482f9d50269cc84a8527c99d428cd3c2a7090e1f3c366bde"
+    sha256 cellar: :any_skip_relocation, monterey:       "19da351cddcaefcb85db00f7afe262cee258f4fc1a1535834e38523f21df43a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e29f3cbb47407b8af751a136482ae5b7f8afc1259ef0da700d1a9270907db67a"
   end
 
   depends_on "rust" => :build
@@ -35,6 +33,6 @@ class Biome < Formula
     system bin/"biome", "format", "--semicolons=always", "--write", testpath/"test.js"
     assert_match "const x = 1;", (testpath/"test.js").read
 
-    assert_match version.to_s, shell_output("#{bin}/biome --version", 1)
+    assert_match version.to_s, shell_output("#{bin}/biome --version")
   end
 end

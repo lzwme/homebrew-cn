@@ -1,8 +1,8 @@
 class SwaggerCodegenAT2 < Formula
   desc "Generate clients, server stubs, and docs from an OpenAPI spec"
   homepage "https://swagger.io/swagger-codegen/"
-  url "https://ghproxy.com/https://github.com/swagger-api/swagger-codegen/archive/refs/tags/v2.4.33.tar.gz"
-  sha256 "461b457dd20c7ab80486a2d09f1f701e0dfc46313c16b949bfe2639980261b6a"
+  url "https://ghproxy.com/https://github.com/swagger-api/swagger-codegen/archive/refs/tags/v2.4.34.tar.gz"
+  sha256 "99ee1e7d4f7010bfec2e3b3ae01751269d86082fdccd3959102b3c9018dc5b63"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class SwaggerCodegenAT2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0a05038aad4c3de7efb30968b9cc59da8638ec79cd82ecb75e7aa837d695899e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e51ea470fea5ee116aecdd4b5ece0c7cede682da4d7f31abf319b2c8dc64b021"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ad43fb53411e5625ab1ab7bbb9a39913db6105c44d677409ba3db030df8fae17"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b2cfcdd90ea7bf53d9720e7dd8976ed8d6f8b2616bc6d7e1eb0755cb7f1ad54e"
-    sha256 cellar: :any_skip_relocation, ventura:        "e2cea5a08d86d2296bacb5083fce0b4684d993418a4b489c4830076008d9a2c0"
-    sha256 cellar: :any_skip_relocation, monterey:       "58927ad966895916918fea00b5b25b9c57a774bc4b6f25dd8aa0ab5b9c37f441"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4cd7fda2ee376846206f696e3d7a9481684b0f91748ec2b46dda6b2f2d96450"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "31d5e034a8602f5a6fdd709aa3910e34ed27e7aefb18924084cb7d3c9c4a5210"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5781dc5c4c96e196903f07bcfd9f8875b763b98bf94c66a8ee08b507e7eef723"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f621f9f768ad28e72fbc5961f062a9b5b1f71db69d3ce036bd48a5e6c26f05a2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ec69c3db179ba6bb8cdcf04bf335109222bcb1f7d041492a4c6cdc01eca91e34"
+    sha256 cellar: :any_skip_relocation, ventura:        "5bb6e03931b6bf5a707f942f1e0389f0a2c83bde8ea3263b509c9f8c4c8d2b5a"
+    sha256 cellar: :any_skip_relocation, monterey:       "bcf26d32c90aa269465b1e50a3c9388d81cbe6f5ad99bc4f06aaad507eff962d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b38c8cf1c7054e2d490abaf4019e063cc4d0414de044a5ea21e3ab360ba9a543"
   end
 
   keg_only :versioned_formula

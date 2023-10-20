@@ -25,8 +25,6 @@ class Breezy < Formula
   depends_on "six"
   uses_from_macos "openssl"
 
-  conflicts_with "bazaar", because: "both install `bzr` binaries"
-
   resource "configobj" do
     url "https://files.pythonhosted.org/packages/cb/87/17d4c6d634c044ab08b11c0cd2a8a136d103713d438f8792d7be2c5148fb/configobj-5.0.8.tar.gz"
     sha256 "6f704434a07dc4f4dc7c9a745172c1cad449feb548febd9f7fe362629c627a97"

@@ -2,20 +2,18 @@ class CartridgeCli < Formula
   desc "Tarantool Cartridge command-line utility"
   homepage "https://tarantool.org/"
   url "https://github.com/tarantool/cartridge-cli.git",
-      tag:      "2.12.8",
-      revision: "31207d89f1e0bddf0215093ce2b606d7df85fe23"
+      tag:      "2.12.9",
+      revision: "5b3eb661e594dcc79152d94c7cca97d4a66ed133"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9d5b35b0cb5dc7ce9e3e3bd60c083a8c17b3c0c2d5eb4800af522b7a299233b1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c921e17a5db76f56ce52f4384822a99b5ac0950c58334731a44335692d37cdc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d9adc336d8ddd111526e5bbc4916c512ef13923e0db6094b5267675af4590061"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9d0b22811e547db64d5be885c4672ff187aef5897adbb75ef14f1f1649df8cb5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4b74e0eb9a9440a9e6f23145ef48a04fafc7305d624c8672d7147c408a97d4d2"
-    sha256 cellar: :any_skip_relocation, ventura:        "3ce8332a10b4b62cb306411aa431c05c58424ae51da6360424efc9a6968b5289"
-    sha256 cellar: :any_skip_relocation, monterey:       "b8c8de6bb4ab7cb418e73e0eb9ced3eae9a3632e80c08b8acdc6ae49bc410b01"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e5e24430a57e2448121e8a45ad38eb6cb05737b6183e115ba11875d95dc52fbe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6db3f800a529f26992b0fb0d72dedb9c357485b273a85d60815f29217f9970ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "af90f18b389d9c11f27ec10afabcd03a90ddc0d79690f7d3074a6573011eec0e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "00aa912763aec30f0378d1a315843f7807fe41fd2ad77eea01a74d53cfa3c77f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ee29be63702a982d3022b0ae79e255730a2edef35a0358c931e71921eb2e9af"
+    sha256 cellar: :any_skip_relocation, sonoma:         "658863d508cf78c1da15534ac501e9b5efccfd42be7f068cd4b5967469028c05"
+    sha256 cellar: :any_skip_relocation, ventura:        "bc43fb1326c3527cf1e3fc382b6672e55e1ed464f51712e3d937d7c46e557481"
+    sha256 cellar: :any_skip_relocation, monterey:       "fd71f20e245e6ae870023f3c7d34e085dec6061a8e9121dd7e1a2c21e346c8e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3233b486678f04b943cd59eb933f27590e0879b6518ed2a3c29486fae0d09059"
   end
 
   depends_on "go" => :build

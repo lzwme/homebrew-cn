@@ -9,19 +9,20 @@ class Tern < Formula
   head "https://github.com/tern-tools/tern.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0c7cb882c93601c87eb373b1b608d637595358bf5bca6cd81192f6ff8a31e01e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ad030d000abf7024ba4f1391fc97e7918e239cbd0268ffbb1d93fcd734a026e8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b2cc0fedf712e6e6f58bd75ffc27b2a637807691487aa4a3529c0f827f9128a4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4bc0bb3d2e80abf4df451dccdb742bdc92ff5d2e366113acfaf5e98b1171e5ad"
-    sha256 cellar: :any_skip_relocation, ventura:        "cf4d46dec898ab4982137044d3ae12b991a69b09bf127b6fa6adf1f05fc9170b"
-    sha256 cellar: :any_skip_relocation, monterey:       "ea5569daf58e91d7aa4fdc74a58bcc377c4dbaa7b943026f3f45ab1095573e9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ef2568a5170a78a86c9f9eb487e2d0af66872434d311c9d02bbe7fc7bcdfeea"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c4c988c7b74b96edc67c090f26105b875ccd27f72cd7e44c49102bb62670111a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dc193056a56d4e0100f508651f999772d557046bd8901e49d4532a2fc76fbd3f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cbc59515013fd228b92903e054dc32c1e5dd66215b8851a24bd26f7ed46bf0ae"
+    sha256 cellar: :any_skip_relocation, sonoma:         "eb1993ed4292f26f789bf52d8656290c17d37348d26ba726174cc93e9b82e5f3"
+    sha256 cellar: :any_skip_relocation, ventura:        "da9cdaec86444e4dc533a0ee24ec1ae34fd9409f0e4d241ae79abb697bcbc91b"
+    sha256 cellar: :any_skip_relocation, monterey:       "7f943f12859b421563657744e4d51f3f97baa2fc6ada5ce24091dfbc6a992710"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d2306632ea2134ae1708ab3d3b60b8b6aedaf1470c65820dc64f3c5037e3938"
   end
 
   depends_on "python-certifi"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   on_linux do

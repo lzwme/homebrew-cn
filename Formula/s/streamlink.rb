@@ -9,19 +9,20 @@ class Streamlink < Formula
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9546322ca1d5effe2ce868adc55fcc7b50c7bc2cd44a51a226448bebfe69585a"
-    sha256 cellar: :any,                 arm64_ventura:  "a85e087f501806ccf8de6d9b8477e36524c23b7a78bc5e455a7a99f62a73bc8c"
-    sha256 cellar: :any,                 arm64_monterey: "757850f0af9ae02775015abd0401209d7883e6e431c60f13a8ce6c129d2213b1"
-    sha256 cellar: :any,                 sonoma:         "ce041dcfb26519c658d3abb9c43115ee73aa82fd6f77d5d660008c5128e880f4"
-    sha256 cellar: :any,                 ventura:        "8c291f7ef250a02fcfdc8d13300f02fd7be889765e7575db2297eff9171bf704"
-    sha256 cellar: :any,                 monterey:       "bda34a7e0daeda8efaef7bc158f87a869d371c959480ddac96d771255510e0cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74af7edd1d187715e8477b133ac9c381e488de1a836ac34c4de9379e0585f577"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "1565202e160cfdb564d5720918413cfbe6667024704cbac7c8ceb2051eacdb03"
+    sha256 cellar: :any,                 arm64_ventura:  "8bb70913bce1ef58f51284b0305a04193f235a0393a53f4d6be839c1aeac8613"
+    sha256 cellar: :any,                 arm64_monterey: "7f61ce1ffc11dbb0c8e1e0d951bef4bf6788bae1d7369098271171420e0b16d6"
+    sha256 cellar: :any,                 sonoma:         "871cd4b95ba20d73fa35dafaa7b253589743aae090e1407a674e5765abb9a735"
+    sha256 cellar: :any,                 ventura:        "05c9a086bd575561642ff37e35e0932b6f8f864a406b53f9e26a7c46650e0a49"
+    sha256 cellar: :any,                 monterey:       "53de2cdc4a5a54459805ccaef2a11a9be0e239f559c8aa4510243e893d360c2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c873c5d448ec6cfb06ebaedcfd279b1489b550d936c6473f2cfdffba6c805687"
   end
 
   depends_on "libxml2" # https://github.com/Homebrew/homebrew-core/issues/98468
   depends_on "python-certifi"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   uses_from_macos "libffi"

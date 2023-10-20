@@ -1,26 +1,25 @@
 class Rizin < Formula
   desc "UNIX-like reverse engineering framework and command-line toolset"
   homepage "https://rizin.re"
-  url "https://ghproxy.com/https://github.com/rizinorg/rizin/releases/download/v0.6.2/rizin-src-v0.6.2.tar.xz"
-  sha256 "e29a00a3e22004bdd10146d286b1cce0e06196d41aae4729aafc9d78321ff86b"
+  url "https://ghproxy.com/https://github.com/rizinorg/rizin/releases/download/v0.6.3/rizin-src-v0.6.3.tar.xz"
+  sha256 "95f64c6ab9e6daa9e9fa5634398eb8f6cdb4ebf2e814da2e4cb969d31f4509c2"
   license "LGPL-3.0-only"
   head "https://github.com/rizinorg/rizin.git", branch: "dev"
 
   bottle do
-    sha256 arm64_sonoma:   "5021d7962d12dca710e372c07e0e508447a8f541526e79953cb659ad7c123db5"
-    sha256 arm64_ventura:  "d25e105b66cad21f89e9404990faaa709ec2437a11f6402ca87a6f049608607b"
-    sha256 arm64_monterey: "35db62d58c5ee63450d0459ac73c7804c943d3e13ff08addaa9360bfa768b132"
-    sha256 arm64_big_sur:  "f7139d17f16671225d7e604c910addef06cf7122f501a8518e02842a24fae52e"
-    sha256 sonoma:         "ce37296cbaa00ba72dd0f86f30c5514b85ecaf6cb6478f63b4c200b744c9a625"
-    sha256 ventura:        "a521ec17ed67e879b4c2f5595dae3171a8485d92bccb8ace7565ebbdc954b5d6"
-    sha256 monterey:       "a4ba60ec71dbbf5234d7e6056b2f2c2d2c511fcab4d321121320a353b9fd36d8"
-    sha256 big_sur:        "e2b698934765e132f2107b391951f233c80f322b23fca77c653d84c8b23da6d9"
-    sha256 x86_64_linux:   "13e5eb46d3609a27a4c709f42b9675ffd97cbefa848ed40516b3484e6b1de3fb"
+    sha256 arm64_sonoma:   "6a02ff9082c7fef57a7813200d2cae47e0c1a257ade2ce263306063fc4324837"
+    sha256 arm64_ventura:  "e482f300af3190ecec4d78739648915e3993944c76e87c3826fcc7f353a76d60"
+    sha256 arm64_monterey: "6c9df7bc34edd2ca6371e0a79c055a1e416a3974d9787067e1219f19eb07090e"
+    sha256 sonoma:         "9d72ef15a4004739978d7afee2864e3410a907dfe806d2e50f94660ac7962f49"
+    sha256 ventura:        "061a4a6b5d494c6eaeba008cc8fbb66f0a4f28e71ee274d7d3b8916751a8c957"
+    sha256 monterey:       "29e63fc95ec43077fd1f7fc7fe4b4ab21609f4e4a656e0807a04d5aa3b440942"
+    sha256 x86_64_linux:   "fa252b3ccbabd010acdd1ed41053f96aac05054c0d640304bdcbabbc325c76c1"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "capstone"
   depends_on "libmagic"
   depends_on "libzip"

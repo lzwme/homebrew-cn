@@ -9,18 +9,20 @@ class Trafilatura < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5f57e59608df16b900dfc05df39567197c6eadd6497283a6bb10637b12ff4ae0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "49630e272857ff3cf82214507859cf7e0e8f60c847383d9e0eb340abfad19f47"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b063e6cad8caaa9994a5205212fc19a5134bb60e9444737f5d06b80f7fb9ac3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "61d8a677da50482d548ab9845347205838797d3c386c9a760d251c93493ceb9d"
-    sha256 cellar: :any_skip_relocation, ventura:        "81a5a37407867c003828e6af278e844a84b10b7f05e304cc37062732486f2491"
-    sha256 cellar: :any_skip_relocation, monterey:       "4a277a32be0d19e35a77e359cf3ef9cdb05c8da70fe48d1e241bba26c9808980"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a63ead097c3711a225bb925511e2170bdeb10063d304159fa40115d47cb3f369"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "96c45c89a1520c322da479f614ce24097db803bc341db3b5793237f4d5a74fd8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2c20e837dd42ed1e79790791a454fe244ead9fc302ffb188660772e9b0c3e592"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1c1774db036de1e6b241bf2b78af9aeb2c10ddbd04ded1b36519b17d0c617f6f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f6e4a856a91e1da3b0015eee1ecea94e86235d5d6b719789b945ab659306aa60"
+    sha256 cellar: :any_skip_relocation, ventura:        "53f17647e44daead12d7c6f0b46dd9d5f860546bfda40c3b0ef90596b28c6fb4"
+    sha256 cellar: :any_skip_relocation, monterey:       "b4cc4a174d899822a849ea292243fde3002dea45e68f3585fa6922e16f5564e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3106b2e14ced3f85f90d8eb926dfa1799d8bb34d3dd75b738554214bd368435"
   end
 
   depends_on "python-certifi"
   depends_on "python-lxml"
-  depends_on "python@3.11"
+  depends_on "python-pytz"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "charset-normalizer" do
@@ -56,11 +58,6 @@ class Trafilatura < Formula
   resource "python-dateutil" do
     url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
-  end
-
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/69/4f/7bf883f12ad496ecc9514cd9e267b29a68b3e9629661a2bbc24f80eff168/pytz-2023.3.post1.tar.gz"
-    sha256 "7b4fddbeb94a1eba4b557da24f19fdf9db575192544270a9101d8509f9f43d7b"
   end
 
   resource "regex" do

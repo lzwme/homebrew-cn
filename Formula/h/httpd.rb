@@ -1,22 +1,19 @@
 class Httpd < Formula
   desc "Apache HTTP server"
   homepage "https://httpd.apache.org/"
-  url "https://dlcdn.apache.org/httpd/httpd-2.4.57.tar.bz2"
-  mirror "https://downloads.apache.org/httpd/httpd-2.4.57.tar.bz2"
-  sha256 "dbccb84aee95e095edfbb81e5eb926ccd24e6ada55dcd83caecb262e5cf94d2a"
+  url "https://dlcdn.apache.org/httpd/httpd-2.4.58.tar.bz2"
+  mirror "https://downloads.apache.org/httpd/httpd-2.4.58.tar.bz2"
+  sha256 "fa16d72a078210a54c47dd5bef2f8b9b8a01d94909a51453956b3ec6442ea4c5"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "d643a841af2addc61a5176afe28181407b1f419ad272cfba765e32b1e89ac267"
-    sha256 arm64_ventura:  "cd1df761f081f37617aa370ae5eb5920b9498f407e3b5fd13ce4292064f6e040"
-    sha256 arm64_monterey: "9328555b146535a63b4e824793379ee2347165e13c9f9d06aa0a8898c1afd156"
-    sha256 arm64_big_sur:  "64f4a71eaa38d9df9223c6b28100539dbd14adfa94be12e83a11e06e56bfbb11"
-    sha256 sonoma:         "9e629032d54613258e371be52e5eb402d3bb5421c6cb5f417c70da8e4b7e1bef"
-    sha256 ventura:        "cdee36e9d429a55c9e2f590c1dc63b776ac7c9c3f8b72e5ae3512822668ac2a9"
-    sha256 monterey:       "0f8e42d107b4292af18eb2f32fe12a92f5c67aa1642be0cec768144298df3402"
-    sha256 big_sur:        "ec117d9e9cec8268195476b1426ac25100a3267eda333fb3cb75569a6288b219"
-    sha256 x86_64_linux:   "aff4fd796b8e88fd96dcc9737a83735f4d49c4811226af9de50a7e1085f2a3c2"
+    sha256 arm64_sonoma:   "b9af089ded423db731462956289794ba745381677aa61252cf64b43e7e66f737"
+    sha256 arm64_ventura:  "49f6811342d88ae562ef98cba19825c3637fcf957c1190d34f4a035ae0932994"
+    sha256 arm64_monterey: "f9f5605a7557edf21da1449d40a203d023f3596602cd36986baa939f7f623ede"
+    sha256 sonoma:         "0e08db131a2c4ec99151a53f3b516d3fcc51e0fd5e2b391c85dd887f5e163e41"
+    sha256 ventura:        "c9fd7170c6cf991930600631e3ccea78933e92cdad8d2e851cef2c1a91a1435b"
+    sha256 monterey:       "25223f06d20cb963decba9155ea4f4a199359ac2a9eeec00d316ae775728cb27"
+    sha256 x86_64_linux:   "f7f9a8b229f5838b1a219184c85fc6d83761a4604ab1c52e48a2e1affe75755f"
   end
 
   depends_on "apr"

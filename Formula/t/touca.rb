@@ -8,18 +8,19 @@ class Touca < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ed8008cbd754746f1835681d82b45cd9636b139ee442034b4200b3ff83b0d851"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c0af7af9f81ea4542435b574acee9a7c903dcc46f89f86392e963e10ccf2c682"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f6e6b2c91ef282e4f95286e8f6b011b32003526bb19d5af97244d043e7143b28"
-    sha256 cellar: :any_skip_relocation, sonoma:         "38441395fbd6261883976aa796f06399fbe825b61bcdb55b5770fd7ab5488de0"
-    sha256 cellar: :any_skip_relocation, ventura:        "066768172dea3900faaf38d1bed543ad64c3ebb9072901be765cc99766bbb0ec"
-    sha256 cellar: :any_skip_relocation, monterey:       "2d7d929f207755392be0c0da16f12fc230958caff977d39c64fb04a3c4943d0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce9495442d083c1da866b714a7c20da2045d8d60ed81f66fd1cd4c1d7f50ebbf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a885219aadafa7a8691d1442b9dcbb0f8b711a2630a45a9254bf2490529650c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "12452b5c5d4105d8d4d9e953f95e88446a471127c2741981df374b92377414b6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f125890b52bbb83c41da6dcbce56e37730c6b60eb3c91ea8a7ef750c0bae6ebc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9ee394c3708cdbc2aaf49834d8f7d98cdeb594f35ee7141c530bee624dd8d67a"
+    sha256 cellar: :any_skip_relocation, ventura:        "b94b3e407073badc2157340226b1a0d3719dac71f11b86523b719a3304343f70"
+    sha256 cellar: :any_skip_relocation, monterey:       "a11d5858f280a2c2d64d7b8f9c787a811e1a3e109bd21003290d0871b17fa68f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f30224270a4263629886ed84036ff4ab0e7adf48ac95dfd82c1d159e2d2a005"
   end
 
   depends_on "pygments"
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "commonmark" do
     url "https://files.pythonhosted.org/packages/60/48/a60f593447e8f0894ebb7f6e6c1f25dafc5e89c5879fdc9360ae93ff83f0/commonmark-0.9.1.tar.gz"

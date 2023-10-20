@@ -7,9 +7,12 @@ class Kubekey < Formula
   license "Apache-2.0"
   head "https://github.com/kubesphere/kubekey.git", branch: "master"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do

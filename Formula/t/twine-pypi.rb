@@ -10,20 +10,21 @@ class TwinePypi < Formula
   head "https://github.com/pypa/twine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "460dce05ce1f934717b98636c5fc4da8fe4a29905a1ca991b2a2b7e834b7c20e"
-    sha256 cellar: :any,                 arm64_ventura:  "cca12aae0236568a1b737ca8fef90acae90346e4b87298d1136e4f5043c28dba"
-    sha256 cellar: :any,                 arm64_monterey: "dc666962efbaaba54e28071c823ad69a5127edb1d4d9d5eee6561accc5a4c66d"
-    sha256 cellar: :any,                 sonoma:         "9a40e4e6f446b559e8e58e36cd41ffd94a9ba9a26a419cf9fbf25fbd000dc0fa"
-    sha256 cellar: :any,                 ventura:        "751bdd5685703679b276b2b18b4b1157b0853f1af96e2771c6e93bcccf7d565f"
-    sha256 cellar: :any,                 monterey:       "220e3a971b023b30b4015bf382b8b7d9bbc6226be1bd15ce05da1d3e9b0721ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13f8509a592c137d5e068f8efb14cc2d600fd8455eb81f8e17c94b829b3b2cea"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "ef2b80a806c734e800e0e0edd3c55b445c8a30011296aa0ede9108b012124a6a"
+    sha256 cellar: :any,                 arm64_ventura:  "f0c05638258edb8ae0bb3b062a4e79face4e7ed62cb6d9ca43ad03f3f7c46d85"
+    sha256 cellar: :any,                 arm64_monterey: "93cd209cde5f396a421c1b891981e8c65c40755bf4c3b577d8856d8c0c6e86bd"
+    sha256 cellar: :any,                 sonoma:         "af9454e5a04dc506924fe1d99b150fda3cd23da73de571b5d820e0c4db695495"
+    sha256 cellar: :any,                 ventura:        "37f9168b8efb604d7edb8d54b68696c3934de3eeac27cb6118b0849aba2cded3"
+    sha256 cellar: :any,                 monterey:       "be49ac5622974fc3156f834b977b5e14e667678a207416f35266433cb5fcb386"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c8704077951e7b5088f1cdf12f432e497f8c8f3febf6b4ba7d24f9aa8433c4a"
   end
 
   depends_on "rust" => :build
   depends_on "docutils"
   depends_on "pygments"
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "charset-normalizer" do

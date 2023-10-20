@@ -1,13 +1,14 @@
 class Mvnvm < Formula
   desc "Maven version manager"
-  homepage "https://mvnvm.org/"
-  url "https://bitbucket.org/mjensen/mvnvm/get/mvnvm-1.0.24.tar.gz"
-  sha256 "dfd7257b4b9c4a8aee8d1746c99b6553c54ebc00b508be8822e65a19f62a6a0b"
+  # upstream homepage bug report, https://bitbucket.org/mjensen/mvnvm/issues/41/https-mvnvmorg-is-not-reachable
+  homepage "https://bitbucket.org/mjensen/mvnvm/"
+  url "https://bitbucket.org/mjensen/mvnvm/get/mvnvm-1.0.25.tar.gz"
+  sha256 "34721339ba1d33df92c2357af8ae9a03196e922c623923345a60821d6db28a89"
   license "Apache-2.0"
   head "https://bitbucket.org/mjensen/mvnvm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "25848dc18509b4927ff96288c6a0bf4a1da5242d4b9a5e9f7daa30c97848c6c2"
+    sha256 cellar: :any_skip_relocation, all: "fa8b7e3de4be0a893591368168ef4e199683bc0a63db3849a55ab979de565c58"
   end
 
   depends_on "openjdk"

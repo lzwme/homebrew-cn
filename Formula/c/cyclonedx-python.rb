@@ -3,26 +3,30 @@ class CyclonedxPython < Formula
 
   desc "Creates CycloneDX Software Bill of Materials (SBOM) from Python projects"
   homepage "https://cyclonedx.org/"
-  url "https://files.pythonhosted.org/packages/6a/4f/e2e935ecb9e840685aea2abe68c7aa4ff76d30b828a961752c40959254c2/cyclonedx_bom-3.11.2.tar.gz"
-  sha256 "b0c2beab3364ded549e3b386d5f8e973ba89b8306b755e905fd7a62439ba37e0"
+  url "https://files.pythonhosted.org/packages/06/b1/0f1757cf1e790d5af7dab11360de661b17ff57dfe15874970991062011e5/cyclonedx_bom-3.11.4.tar.gz"
+  sha256 "c3f129674a96975058ae5ae3010ed136514d40a7f1d0372909d696ebb80b813c"
   license "Apache-2.0"
   head "https://github.com/CycloneDX/cyclonedx-python.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "565ed90543463f1575379f0eb0ff6d8b60eaccdbfc07bd482aab8bb5c5130592"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d4e257344cdb0c8e9889aa7e71d98c55aeb335ffc15cf0e4a762bf7301492c47"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dfef3d9ebf5a8713049bdeebe75e68fe3868b4be4ca6b36491a020612b7f4fcc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3a3dc2a4840de37498ca59e41edf6e73a3e685c4af417436c03865309858970d"
-    sha256 cellar: :any_skip_relocation, ventura:        "2fc7d6eb13df6ac986cbdffc20d47825189158b7e4ade5af2fde0af1ec449c04"
-    sha256 cellar: :any_skip_relocation, monterey:       "c93432437bf7b9756cd6a1531672e802bd3780ffcbfefc865c3a3f2724e24904"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "77f309c509a45e7c4902fe6fa183c4d3a3bc30cd8a4ce97d0218f2947f2781ac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9cd3d725903a4eb61aaff2c96af2b3bfce95384d4ad7513506541ba71b4cf1ef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "42802c3890a07cb7a6ab67e4813526b9bff5c50b2052bb281d4468120d84311e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cd0a1008f4f173f2abf0001ce9b740ec3089745ea23f3b5612bf1796a3db95b1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1839ae7dfe47fb4ff1ada0c2873ba7cc80edfdf096976de104b0883cf75fbf7e"
+    sha256 cellar: :any_skip_relocation, ventura:        "d4a8420abd124cab261d7f5084b224f76fb99f16e0f26bc3bf0813ca1484659b"
+    sha256 cellar: :any_skip_relocation, monterey:       "6fcb4204bc12b4aad0818aca79c80f9aa7dfb921e79621d954a521925c684328"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0fc39f34061f9cf4947075cfe1b200dff1d1cdcd64d49ee126689b6056bd59b8"
   end
 
   depends_on "python-packaging"
   depends_on "python-setuptools"
   depends_on "python-toml"
   depends_on "python@3.12"
+
+  resource "chardet" do
+    url "https://files.pythonhosted.org/packages/f3/0d/f7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079/chardet-5.2.0.tar.gz"
+    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
+  end
 
   resource "cyclonedx-python-lib" do
     url "https://files.pythonhosted.org/packages/dd/0d/2d77978ff3ebe445c00ffc209eb205d126ef7a8ece69e7f3d014e561bada/cyclonedx_python_lib-3.1.5.tar.gz"

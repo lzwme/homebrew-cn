@@ -9,20 +9,21 @@ class SvtplayDl < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "de86e2e276bca91dab492a5d5624db8960df9724e2b12edb290e98bd424c19c7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5e65cc6be8a2d63c73487034b28b9de0b63946b2007cbc743da9237eb1beb114"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0faa0907ad7b3901e244e0e6ad93f535ad243f4966b9fff34f078a7b54efa7fb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "82c2e0494b387cc44af762f81852302332af4757495b527b1b2eb7035c79a06f"
-    sha256 cellar: :any_skip_relocation, ventura:        "a31f2a50e4f3bbd3c5757e5e54422dcf9cd039b2f4a7248908cf3bb37c7e28af"
-    sha256 cellar: :any_skip_relocation, monterey:       "61bf5372df4e08c13f21ea9ca24a48b36ba5972848a915351b734209d718e610"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b41d6e4fb4ac9ae5d18a209f01806925d115a3bdca2252073cd54ab9e2cb7a5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6a197cab5e1e821db1014e25de5410c0cf26db587545507b3d42dcb25311ee70"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b21ec0a26f99c7915c6d8dda9228e03d369e4a2cc8734bb8a189e7067dd58e1c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d1306a44b56392036db34860a5a8cc709b94bff2e514c9c6246f541a313c3170"
+    sha256 cellar: :any_skip_relocation, sonoma:         "60cd0da0da181f60dc0f9bdcb7e292f7499999b733b56d9db1c19ad8c0c90d5e"
+    sha256 cellar: :any_skip_relocation, ventura:        "e7ae851a17a2b9e691429d4cff17aa2acc9597cd8a4fb2c0d22bc86546584788"
+    sha256 cellar: :any_skip_relocation, monterey:       "5de8bbc7529078e3c3b766317cd6760f6e1a2ae1e906ae9a199ec947aded9436"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "968980f91f4bf8abec6068e22fb60c72a38be68c6d00a93616192e91f72b61bd"
   end
 
   depends_on "cffi"
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   resource "charset-normalizer" do

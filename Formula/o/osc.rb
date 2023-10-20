@@ -3,10 +3,9 @@ class Osc < Formula
 
   desc "Command-line interface to work with an Open Build Service"
   homepage "https://openbuildservice.org"
-  url "https://ghproxy.com/https://github.com/openSUSE/osc/archive/1.4.2.tar.gz"
-  sha256 "f5990b3f63fd085ff0d10af12581f8b37d65c3fdcdc56b9263fff85adaef2d33"
+  url "https://ghproxy.com/https://github.com/openSUSE/osc/archive/1.4.3.tar.gz"
+  sha256 "fda7113740893d1dcc5507c4b392073f1d8459631b52b5a793f614f820562760"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/openSUSE/osc.git", branch: "master"
 
   livecheck do
@@ -15,13 +14,13 @@ class Osc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd42aa9f05a2ab55b54858bc78f79453ccb846d51a9e554d8ecbe3b704310f22"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dd8c4b5e7f8fedce28aa75aeb065be6d93bac3db553ca42fb36e0095ed16292d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d884095e004cfe2a538e8381ed84becd3b96aadcda12b4761964766ccd035849"
-    sha256 cellar: :any_skip_relocation, sonoma:         "62c3c5c9d28f3bb2c09aee5af08d3873a8855818a3ab63f0c004b4264c9c44d0"
-    sha256 cellar: :any_skip_relocation, ventura:        "502e42d977678cdbdd35bbf64a200692e2ce1238213a9f719cced69e222e9e47"
-    sha256 cellar: :any_skip_relocation, monterey:       "5b6f337735d6706ae46f7fa44c290d256e8823b7572b161322272a7923ea5ab2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5883d0143146396b7bbf4410903784009b535f8ad12d01ee759a1d75a99f967c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d856bfaf1e27f36b3882ace466436a12d6f33d58e3b2291893e56fe9ed01bd8f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cfe852dc7ca9eeab949736db81ebc9ec539b241de012e53702b0887b7fe59057"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ce9d69c9aaf6d9b879fc3b854631d4e78ee19386a659e0decbb8a4d8e23a263"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cc51d6312bd43de9ad87049cbd87106dccdd39b01f7c432741a91959c4befa01"
+    sha256 cellar: :any_skip_relocation, ventura:        "f5c3f063729d2c15452d382ff0315877f8eb0b0ce0d8b2a97c277f2da799524a"
+    sha256 cellar: :any_skip_relocation, monterey:       "ed83119738fa7d3767180fc84fbbc18e26b429568728098faa119a8e92df313a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "64e5f25099bbec8e6e05ac69feebf5aa37473e09925fe0e5ff94c12391f5d15e"
   end
 
   depends_on "cffi"

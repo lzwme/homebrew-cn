@@ -7,25 +7,25 @@ class Tsduck < Formula
   head "https://github.com/tsduck/tsduck.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9e83c29f8d52148fecc67e9dea6db28308cb8729d8c1c196194d367f05796df5"
-    sha256 cellar: :any,                 arm64_ventura:  "0a0deb09a99bdc6cdfa3c9f0c4aa699583b4078cd40d1b2c2467d9af401d3468"
-    sha256 cellar: :any,                 arm64_monterey: "5fbfd3ad644a55f629a5362f73e7b91f8ec9e1b9a75bd8a917efd90e34d5d4ba"
-    sha256 cellar: :any,                 arm64_big_sur:  "8f7187549fa37f4b6e6917ef377f1536932c895efe43914955c4f5af32559546"
-    sha256 cellar: :any,                 sonoma:         "9345401e8cd2b498cb6b9aee6e925f4c07468594ecef30462abe187034661440"
-    sha256 cellar: :any,                 ventura:        "cafc935c1db3487f2c1c9a93433ee9dbed1cc5c34d5d84b24705d78b1eb4d7f0"
-    sha256 cellar: :any,                 monterey:       "d6b9078e240bd7460bb9cddfc64789659d38ba5ddfba50c5f265e78d0d9748cf"
-    sha256 cellar: :any,                 big_sur:        "1e1b5d3cb13135bd8d3dad274cc899291219335124fd223ea1a72fd331196c7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82979de53cb002e265fb5991aeecc734f263b954808221b550435eec1aa1c37a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "0cc0d482dbf87e673963628265f088a77a515ed9417ba1652c45523bcbe7ae2c"
+    sha256 cellar: :any,                 arm64_ventura:  "a7e0248e056e1bd5ee2ecd3b22eab57da544b79454c7ac66068517af7a768f8e"
+    sha256 cellar: :any,                 arm64_monterey: "0729c92185a3aa5820ee7d484e81552ac7561ef5b8a0326f1cbd704eefbe3fae"
+    sha256 cellar: :any,                 sonoma:         "0bfab763e2e3fd6ede6cd5dc776ec4171d72679f73979f810ff42984268cea9a"
+    sha256 cellar: :any,                 ventura:        "880887f7c27957f9b3066c62afd41b5aee6ce0781570ac8d8a4fc396fa9d3c72"
+    sha256 cellar: :any,                 monterey:       "c3b4cc04b214268702454fe3b2b2daeba24e940cf2fe96cddb6453ac47cf6e04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4d97dfd0ea2bc3620c72bd7be5aa6ecaf9cf6f1e452f113e8171686a7be4f3f"
   end
 
   depends_on "dos2unix" => :build
   depends_on "gnu-sed" => :build
   depends_on "grep" => :build
   depends_on "openjdk" => :build
-  depends_on "python@3.11" => :build
   depends_on "librist"
   depends_on "libvatek"
   depends_on "srt"
+
+  uses_from_macos "python" => :build
   uses_from_macos "curl"
   uses_from_macos "libedit"
   uses_from_macos "pcsc-lite"

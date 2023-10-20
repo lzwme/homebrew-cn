@@ -1,9 +1,9 @@
 class WildflyAs < Formula
   desc "Managed application runtime for building applications"
   homepage "https://www.wildfly.org/"
-  url "https://ghproxy.com/https://github.com/wildfly/wildfly/releases/download/29.0.1.Final/wildfly-29.0.1.Final.tar.gz"
-  sha256 "af974eed6f095f49c250ddbc121050fa5c1bf9a1575f880eff9418898aef4269"
-  license "LGPL-2.1-or-later"
+  url "https://ghproxy.com/https://github.com/wildfly/wildfly/releases/download/30.0.0.Final/wildfly-30.0.0.Final.tar.gz"
+  sha256 "e10404c9d3e035a7d364b22b2e343fe8ae867b6bbcbf945bf2a969eff7d9ebea"
+  license "Apache-2.0"
 
   livecheck do
     url "https://www.wildfly.org/downloads/"
@@ -11,14 +11,12 @@ class WildflyAs < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "9cab7370edc5fcb4844e658ac38ec11ef8d9c99c43dc4e8b9983499e50fc4dd6"
-    sha256 cellar: :any, arm64_ventura:  "9cab7370edc5fcb4844e658ac38ec11ef8d9c99c43dc4e8b9983499e50fc4dd6"
-    sha256 cellar: :any, arm64_monterey: "9cab7370edc5fcb4844e658ac38ec11ef8d9c99c43dc4e8b9983499e50fc4dd6"
-    sha256 cellar: :any, arm64_big_sur:  "9cab7370edc5fcb4844e658ac38ec11ef8d9c99c43dc4e8b9983499e50fc4dd6"
-    sha256 cellar: :any, sonoma:         "6814dc8c437460bd9cf02b420c81a4ac37576e7751cdd296a21100e92910167d"
-    sha256 cellar: :any, ventura:        "6814dc8c437460bd9cf02b420c81a4ac37576e7751cdd296a21100e92910167d"
-    sha256 cellar: :any, monterey:       "6814dc8c437460bd9cf02b420c81a4ac37576e7751cdd296a21100e92910167d"
-    sha256 cellar: :any, big_sur:        "6814dc8c437460bd9cf02b420c81a4ac37576e7751cdd296a21100e92910167d"
+    sha256 cellar: :any, arm64_sonoma:   "6bbea4633eb9c618e5d5fa08d926a9f65000dfcc7323c7ab7de3a110176eed48"
+    sha256 cellar: :any, arm64_ventura:  "6bbea4633eb9c618e5d5fa08d926a9f65000dfcc7323c7ab7de3a110176eed48"
+    sha256 cellar: :any, arm64_monterey: "6bbea4633eb9c618e5d5fa08d926a9f65000dfcc7323c7ab7de3a110176eed48"
+    sha256 cellar: :any, sonoma:         "f9cd88aa5606ec0c0911719149f3e8e92006d67b9026d2c87b5c3a49963db196"
+    sha256 cellar: :any, ventura:        "f9cd88aa5606ec0c0911719149f3e8e92006d67b9026d2c87b5c3a49963db196"
+    sha256 cellar: :any, monterey:       "f9cd88aa5606ec0c0911719149f3e8e92006d67b9026d2c87b5c3a49963db196"
   end
 
   # Installs a pre-built `libartemis-native-64.so` file with linkage to libaio.so.1

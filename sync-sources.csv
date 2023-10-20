@@ -397,7 +397,6 @@ Homebrew-homebrew-core/Formula/b/bat-extras.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/batik.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bats-core.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/b/bazaar.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bazarr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bazel-diff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bazel-remote.rb, Homebrew/homebrew-core, 1
@@ -599,14 +598,6 @@ Homebrew-homebrew-core/Formula/b/byobu.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/byteman.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bzip2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bzip3.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/b/bzr-builder.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/b/bzr-colo.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/b/bzr-externals.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/b/bzr-extmerge.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/b/bzr-rewrite.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/b/bzr-upload.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/b/bzr-xmloutput.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/b/bzrtools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bzt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/c-ares.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/c-blosc.rb, Homebrew/homebrew-core, 1
@@ -7290,6 +7281,7 @@ Homebrew-homebrew-cask/Casks/b/bria.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bricklink-partdesigner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bricklink-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bricksmith.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/brickstore.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bridge.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/brightness-sync.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/brisk.rb, Homebrew/homebrew-cask, 1
@@ -9350,6 +9342,7 @@ Homebrew-homebrew-cask/Casks/n/numi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nutstore.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvalt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvidia-geforce-now.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/nvs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nwjs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nzbget.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nzbvortex.rb, Homebrew/homebrew-cask, 0

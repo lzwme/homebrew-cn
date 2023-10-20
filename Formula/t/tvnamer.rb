@@ -10,17 +10,18 @@ class Tvnamer < Formula
   head "https://github.com/dbr/tvnamer.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "974777077c36a94d0e9fe4b4bcb02b7f7995abe1b995891da1ee1776a05a0603"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bd70a05bee2e609b325f5b0d94297c83dd021f647abf54a61674c2e9d826d011"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "06055448d303e93858c88c2c766097c6b41d267dc29db30e3eb480b57f7cec44"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a5ce7122324b2f1b9f6b517e0ed5c34065d8e9866f3359f39ecbd92da9fd9dd9"
-    sha256 cellar: :any_skip_relocation, ventura:        "4f5bbde309773969f1f68b83305851fedf12da2182b4f03b615752d4c4cbca60"
-    sha256 cellar: :any_skip_relocation, monterey:       "1ea3f6e68823af3702372c5c1046ab47b03a155f46ee8218c2689658395cff5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6cfe580dc56d29ba81b81229a259030f7fcd784cda73484b86dda2ca24820d4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4e672f525c0ebc2b890a6c1341a05d19b0cf17aa3698a39db3192f77bbc0a94a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b154512029949f5e824231825c5507e99e585d8e21c5ab04cac622eed1f84f5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f6ebc6af65cb260e4db4e22f7ee11f9fdcc49bbc526854b36d7c1aefe7e3b47f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e15af8ab54bd5b37ee2e046b3d3922af6768ea58419e590fa45594138ab38a82"
+    sha256 cellar: :any_skip_relocation, ventura:        "fdc31d4cbb21340738dbe923238f5170d78830626409ca35540815f9369037ee"
+    sha256 cellar: :any_skip_relocation, monterey:       "8a7ffce09ece55aa0f76159f463360f8a8da903ba71f79237349e0ce0326be77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fdb156ffafb08a5bbfeea58f69ca33f3014008e5a1add188d1177c7a829ccbb4"
   end
 
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"

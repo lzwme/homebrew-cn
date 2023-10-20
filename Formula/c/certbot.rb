@@ -6,16 +6,17 @@ class Certbot < Formula
   url "https://files.pythonhosted.org/packages/fb/da/1124407c79ae88b6eec56dcd057f08c1ebc6fbcd4c98d046ea24ccfbd2c5/certbot-2.7.1.tar.gz"
   sha256 "22604d6ab8e5b665ea1aa201d65840298f5e4f98a100d399f52cf30c6f5c7408"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/certbot/certbot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6856c82a05a823f71e47fa9ab656aed2ef288a58a161b93b8aa884375ca3bedb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "42a576f963a01aaadc3a1d18fab6aabbfa0e18ce482aec91ff1ae80f16ddb38e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a1eab356a7051017833828fe2281c8cb72f816aa799207ebc5369d45ed328aa2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "78af5ea7a7ee23446dfc15b136a966243da42077b3f2c076b4abd8943f2d6c71"
-    sha256 cellar: :any_skip_relocation, ventura:        "4442c03ce8fb8beb4f57b52b93ff513521d1e8c533f6313c01bda9817384f025"
-    sha256 cellar: :any_skip_relocation, monterey:       "c789917e514c5fed32109576f029320fd5a6a4d6c6ed6045d1bd2640542fbdf0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec16e4305c09995451131286c0d347c56702cf07dacf8e93242fabe1146be2c1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d6c51936e826dc03885b44897b7731481cd9fc5162d749ba03253aca9ba11036"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a29c950031be37941bddbb9d048b104d694623293a05dafa31a8500be6a2cfc0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d3f0a56515e28f3af99487d47ad1b60b5216196b8383be8ac62a72c0b300dc09"
+    sha256 cellar: :any_skip_relocation, sonoma:         "427f4c2a95002738f026ecc569c18010690c53c5d18bfdf2595bed6cca34e0db"
+    sha256 cellar: :any_skip_relocation, ventura:        "08be31671b16265e52538eb1c6ccdf6a4fc607e7e67a96fa7b7fe3b4f2958b83"
+    sha256 cellar: :any_skip_relocation, monterey:       "0221cc7ccb1f6465cea6997a237210ecc82721cdc1382bc617ffa5d1576cb9d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8b2e1c4134cce72ff9d4245e703ef0c8aa98be1c95936feb54a752bf9e73c13"
   end
 
   depends_on "augeas"
@@ -26,7 +27,7 @@ class Certbot < Formula
   depends_on "python-cryptography"
   depends_on "python-pyparsing"
   depends_on "python-pytz"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   uses_from_macos "libffi"
@@ -102,14 +103,14 @@ class Certbot < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install
     if build.head?
       head_packages = %w[acme certbot certbot-apache certbot-nginx]
-      venv = virtualenv_create(libexec, "python3.11")
+      venv = virtualenv_create(libexec, "python3.12")
       venv.pip_install resources.reject { |r| head_packages.include? r.name }
       venv.pip_install_and_link head_packages.map { |pkg| buildpath/pkg }
       pkgshare.install buildpath/"certbot/examples"

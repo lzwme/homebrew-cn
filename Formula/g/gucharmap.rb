@@ -1,20 +1,18 @@
 class Gucharmap < Formula
   desc "GNOME Character Map, based on the Unicode Character Database"
   homepage "https://wiki.gnome.org/Apps/Gucharmap"
-  url "https://gitlab.gnome.org/GNOME/gucharmap/-/archive/15.1.1/gucharmap-15.1.1.tar.bz2"
-  sha256 "f05b21586e6a762fb01561892b48f917230f29a115aa7f8405396843feccc9de"
+  url "https://gitlab.gnome.org/GNOME/gucharmap/-/archive/15.1.2/gucharmap-15.1.2.tar.bz2"
+  sha256 "f8580cb191d0a430513d0384b1f619a5eb8ad40dbd609d0c0f8370afa756c1fe"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "4ad7319a7b8d3c6658fbc6ea024ae6c9486d1d438270d3c0d7af785cbecab249"
-    sha256 arm64_ventura:  "7f790825f16db96d6f9f15da97e27b0e66c8f3ebbfbf437e2d47d27ba4bbec77"
-    sha256 arm64_monterey: "30a69554b2edce6e814d6c74d496f7e4a64a809480521b1f02dd4ed0e41fd0d0"
-    sha256 arm64_big_sur:  "9913003890e70cbbb7bfab1bb46fd306a24b96cb58d646a9fb04328dc47599d4"
-    sha256 sonoma:         "ecb387151903f8fea45bb93fe952e4fc813f36fc2692b06b783a23dec1b3a16c"
-    sha256 ventura:        "cddcd3d7af5cea1520327372f99235e7c3661e476c810dcd3d63fbd60ca41ae7"
-    sha256 monterey:       "66eea725ac33e1a862804eaf09334805ca958984901b1451bbe21da002eda5b6"
-    sha256 big_sur:        "8db37062d45f502c9b98132d5ea9f6c928d3e0d7ea1a95d6f5a1b890239cbb4b"
-    sha256 x86_64_linux:   "fbe16b6ad2dadf10b11518175eb1865b9a3c35c890fa5bc49f503d9dd3c6f361"
+    sha256 arm64_sonoma:   "c22f7ead176bde24d19ee63dca996c0805d2b8b8a3eed4086605315673d3a9fa"
+    sha256 arm64_ventura:  "36bddb28a682d518b6d931f8329c833129a484f138fc18df8ce435348e93c2c0"
+    sha256 arm64_monterey: "693ab829817863ac15880d67920ad502c81672c693ff91166d4433a56171b035"
+    sha256 sonoma:         "9c8c8e7df3d2376d9fa860fd78c5c0d5e4bdfa69238eb08aa925cce2e1cb2217"
+    sha256 ventura:        "a112495d47384cc0bfca2f7be8515951292dbc3a8a01da73bc67b1b8a2217cbb"
+    sha256 monterey:       "259e7121667d30b0e3ecd0615a92b1d2039796ee34a9087dbad965fadb9dd766"
+    sha256 x86_64_linux:   "5983b9f46d861e8d71c69c7874d0b4438b14d4213081a194e12e94bda2c58be2"
   end
 
   depends_on "desktop-file-utils" => :build

@@ -10,21 +10,23 @@ class Vdirsyncer < Formula
   head "https://github.com/pimutils/vdirsyncer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b2058a9820b011a2cea6d9846f09e1efe2d0e32b534de1dcf69abc0186d60ddd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5e11257b36e09a145c7a74c09834c3359ba09225a03c2750ed7851b42ee30944"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "46cecbafe09833a36d0826bf1d369e662f5511716453106b6fcf9f32f4ada4b8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "36d63a4aa8b529c60ce6d7d10045ffb85a6efc31563b99158576e65067ada1e3"
-    sha256 cellar: :any_skip_relocation, ventura:        "f5e740a97cabd7ea94af7efee9aac54bc733676b2797e96d8beb462a0cbb4fd9"
-    sha256 cellar: :any_skip_relocation, monterey:       "a9e8e0c6a067f866dbc0c075f19e16723d6f1232e0f393eeaae8eee6186a0014"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "926f612e0eda629131cfa6aaa974ab7388486a2cb96b69a05b8c0d3e8e6e84d9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c987635a33de3d0a3aef0385c48848cb0c8690b392c2e985a3b786df05c8be80"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a80978524ecdb8de382791194c1493b9e0065d74956c1a09adbb2fc797f68778"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bbc668caae29f03c744291e53f6d623932f21eb30dbdf1102524b72ce56d41de"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b94ee212a623bd487395568735a31900cc359425a8125d4ef71a47a25c29f73b"
+    sha256 cellar: :any_skip_relocation, ventura:        "a0c6cce676b36d52a118ec566c34924c2708081c8817af52dcd9b63effdba34c"
+    sha256 cellar: :any_skip_relocation, monterey:       "5f798d011c0d5c511d027b0d639a4d7f18040e65ca6e8d42e29cad2fb616d371"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b75ac1cb217a2fc8ec945ca5cd2d227f0af38030d42a793ab698d0572d208c0"
   end
 
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python-click"
+  depends_on "python@3.12"
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/fd/01/f180d31923751fd20185c96938994823f00918ee5ac7b058edc005382406/aiohttp-3.8.6.tar.gz"
-    sha256 "b0cf2a4501bff9330a8a5248b4ce951851e415bdcce9dc158e76cfd55e15085c"
+    url "https://files.pythonhosted.org/packages/c4/50/a717a133bda2efc27efbf8a65398c925b6d0605213da0db6929627ccb758/aiohttp-3.9.0b0.tar.gz"
+    sha256 "cecc64fd7bae6debdf43437e3c83183c40d4f4d86486946f412c113960598eee"
   end
 
   resource "aiohttp-oauthlib" do
@@ -60,11 +62,6 @@ class Vdirsyncer < Formula
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
     sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "click-log" do

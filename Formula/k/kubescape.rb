@@ -1,8 +1,8 @@
 class Kubescape < Formula
   desc "Kubernetes testing according to Hardening Guidance by NSA and CISA"
   homepage "https://github.com/kubescape/kubescape"
-  url "https://ghproxy.com/https://github.com/kubescape/kubescape/archive/refs/tags/v2.9.1.tar.gz"
-  sha256 "de1465db108043918209403a9633ccc694131c34b1339b7ab851de3065f54dbc"
+  url "https://ghproxy.com/https://github.com/kubescape/kubescape/archive/refs/tags/v2.9.2.tar.gz"
+  sha256 "63c9052b5e402a471fde909932ee8a660e96262a4256fd472fe3834e793be14c"
   license "Apache-2.0"
   head "https://github.com/kubescape/kubescape.git", branch: "master"
 
@@ -12,15 +12,13 @@ class Kubescape < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5a621a95a5c7adc58c31490acbe07ed898c17750c098164ddfbda9bddc71b05"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "78c01ab720eeeb0c7033acff81ec7deed3198f608455060563191e6dcc655ba4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4794c0c4f6ef176c18ce68237f4024322106f4d10d5e1d61ecae516c07ec3eb1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "66b1a517bb8b74ebb6f868f4ee8c3e3097daec2427198ad3f28deaeb7b11dee3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "034bd503a9e2dd5e7222f371076da9f9fd9cb7d20d6ca40473185a66561dfe18"
-    sha256 cellar: :any_skip_relocation, ventura:        "6cb5b855cf0d11d4fa2bec68c92e5e11f18fea14f9731a86f19622d7f56d9769"
-    sha256 cellar: :any_skip_relocation, monterey:       "12ba126cddb3a2f8df58cf45a571755bb103f4026c6ff7a6120de054f6198bfc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "351f9e1b9168fa51e2d595cdbb98ffb8a4b6cfa127fd146dc82cbe1013bd1332"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80be887726225e166eaaf22f1e196f2c13f1fb1f3d545b6a4f9e2b3c2de50beb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bb1f9786e1ee14e3708d82f9b158e2839fd1989706d9e6073796615c1705f9ed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0f07601cd657b4dc6ebe271d163069bdd9f28ceb4801365e57bf1046a34add29"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e19376c29f33e905e7ecd4023abb2f662fcde48f4c7b0c4a1781bedaa6c673d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "86beaf7eb6a77cde54689a2364a64fca959d48b50d4d8b0209cba3138e76aef6"
+    sha256 cellar: :any_skip_relocation, ventura:        "c5f2e35cf3b733d955f9fa87b83fd8f91a67c47fab66adcda78140b8fccea647"
+    sha256 cellar: :any_skip_relocation, monterey:       "ac610713e4f0b3738ae788f949f43a51e427b4c143a14dcd54aeb145f4d23e39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "daf571f132b146a44d284c36d50b4df2090b5ea0a8a290f64d129e1959a43a5a"
   end
 
   depends_on "go" => :build
@@ -38,7 +36,7 @@ class Kubescape < Formula
 
   test do
     manifest = "https://ghproxy.com/https://raw.githubusercontent.com/GoogleCloudPlatform/microservices-demo/main/release/kubernetes-manifests.yaml"
-    assert_match "FAILED RESOURCES", shell_output("#{bin}/kubescape scan framework nsa #{manifest}")
+    assert_match "Failed Resources", shell_output("#{bin}/kubescape scan framework nsa #{manifest}")
 
     assert_match version.to_s, shell_output("#{bin}/kubescape version")
   end

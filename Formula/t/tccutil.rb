@@ -9,16 +9,16 @@ class Tccutil < Formula
   head "https://github.com/jacobsalmela/tccutil.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "7572b145a9f4f438671841e5a8f776780b8d4dd08f6add76a92ca59c7a96337f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "d57eaab2e7dac4348893666c3b32c01270c28d77be17ad6de74c190f7b620efb"
   end
 
   depends_on :macos
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def python3
-    which("python3.11")
+    which("python3.12")
   end
 
   def install

@@ -10,20 +10,18 @@ class Vint < Formula
   head "https://github.com/Vimjas/vint.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "68da7fec962866504c8548d8d16f5a06a378e2ac42094f02664d5bc6c6ee3375"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "903c19aef5bbbd7e125cdb721c1b605d3db84143ba8c48b2acda71fa3a8c5b3a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "903c19aef5bbbd7e125cdb721c1b605d3db84143ba8c48b2acda71fa3a8c5b3a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "903c19aef5bbbd7e125cdb721c1b605d3db84143ba8c48b2acda71fa3a8c5b3a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "09b6630b676a65eed734581fabe41c473d4726566eccf0f8d65790fb9c0d9e4c"
-    sha256 cellar: :any_skip_relocation, ventura:        "260e13702ec21eca7707a1fc7ce138e2056bfe1756fb5551650f947971c3b865"
-    sha256 cellar: :any_skip_relocation, monterey:       "260e13702ec21eca7707a1fc7ce138e2056bfe1756fb5551650f947971c3b865"
-    sha256 cellar: :any_skip_relocation, big_sur:        "260e13702ec21eca7707a1fc7ce138e2056bfe1756fb5551650f947971c3b865"
-    sha256 cellar: :any_skip_relocation, catalina:       "260e13702ec21eca7707a1fc7ce138e2056bfe1756fb5551650f947971c3b865"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e33a39133442c624e46b3ae03af2629a7f6e35f4aabb8e0d6095472f87f98de7"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1319077794aae2570266011f32f314e0bce928260c3483fc3e8028cfd5b0cf67"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da095f3c3d7bf27d006250c11af9146b99e2be722b042c85b86cd233ac5ded12"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0d3589692befc631c2ea8d474df1df078748a5993c9a5ff21d8800d00f34ad49"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d41e154871646df72a558e72d6e9d0d385e3a304faee61e275f843d22c35c243"
+    sha256 cellar: :any_skip_relocation, ventura:        "748682bc4aa982f38f04302e83a1e9e17ecd640dceb5ab8f4cb59d5b21f37902"
+    sha256 cellar: :any_skip_relocation, monterey:       "5128d9f27ec3a1c69f3b0bfc0d09e41c7e755824066da0e2b88d98969dadfc02"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c0c1dc2caf33492d3808738a46aa2fe536b0b8b712f17e5b7e8749bff2de117"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   resource "ansicolor" do

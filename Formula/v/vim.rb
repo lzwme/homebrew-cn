@@ -2,8 +2,8 @@ class Vim < Formula
   desc "Vi 'workalike' with many additional features"
   homepage "https://www.vim.org/"
   # vim should only be updated every 50 releases on multiples of 50
-  url "https://ghproxy.com/https://github.com/vim/vim/archive/v9.0.2000.tar.gz"
-  sha256 "6e96e992948a5584345184cbc8c195fa5ad337307a84185e7ca26af301c665ac"
+  url "https://ghproxy.com/https://github.com/vim/vim/archive/v9.0.2050.tar.gz"
+  sha256 "0387014cba4283d55e3b6611b7b574c81670fbb5d195d0fc7b264b94e95592e3"
   license "Vim"
   head "https://github.com/vim/vim.git", branch: "master"
 
@@ -17,13 +17,13 @@ class Vim < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "d0ba7f36761385a65fb45c7d26b39a34a31f1854a46152d88b86ca2d09df0e65"
-    sha256 arm64_ventura:  "3ab4e06d0f57d54305a9b0295e173e7c01b4583e35713bb9ace9ecc553c5a854"
-    sha256 arm64_monterey: "f6f8262f43e1230e6951b3de189046c0d223f90cce2133be7e4afb9af83256e2"
-    sha256 sonoma:         "5439a6c3288380b6c89d5d977ffceef546ac91b926f769d24f6bd17164ef649a"
-    sha256 ventura:        "2770812875b55a3d9f17443c78a17d94d035f11614bf2960ecfd1f70f491e344"
-    sha256 monterey:       "8e0511be6ec187adc3e88c1502aa7088d329d2f30609a80e331761867095791d"
-    sha256 x86_64_linux:   "1b1e8a8321f8269a93343e8bce04d1aa020ad54e1bc9e315083fe3e3007f637d"
+    sha256 arm64_sonoma:   "293d8ae75fb44244bb916e4422401704ab5db8c2b50d01d17073982baa380966"
+    sha256 arm64_ventura:  "ffeea762ce0c0f9e247f1f979353b18a70140d64e8c95cce0fd0cee507e150b9"
+    sha256 arm64_monterey: "2d2f2237bb9506822dde3bcf5fa32ec818cd97a822d6c966ac0c42a466e3c334"
+    sha256 sonoma:         "e318fdc17503ae8721677a6ecce7488aa2910beb6148c05ba48ac363d8a9050f"
+    sha256 ventura:        "5b8ed99f3adaeed4a523fdbffe6b47cbd35f92b7462cacb2eeeee3f86048e7d4"
+    sha256 monterey:       "a2a727cf7cab6dd79055835e8662e838671bc455fd1cbdf3d86f71e684b52b63"
+    sha256 x86_64_linux:   "9d272077004910f255d40e46a36749cd32d8ec2e2ffaea9804a3735052f9d8ad"
   end
 
   depends_on "gettext"
@@ -31,7 +31,7 @@ class Vim < Formula
   depends_on "lua"
   depends_on "ncurses"
   depends_on "perl"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "ruby"
 
   conflicts_with "ex-vi",
@@ -41,7 +41,7 @@ class Vim < Formula
     because: "vim and macvim both install vi* binaries"
 
   def install
-    ENV.prepend_path "PATH", Formula["python@3.11"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["python@3.12"].opt_libexec/"bin"
 
     # https://github.com/Homebrew/homebrew-core/pull/1046
     ENV.delete("SDKROOT")

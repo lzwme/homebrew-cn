@@ -3,19 +3,18 @@ class Censys < Formula
 
   desc "Command-line interface for the Censys APIs (censys.io)"
   homepage "https://github.com/censys/censys-python"
-  url "https://files.pythonhosted.org/packages/31/3f/2094e4c07b5f8142242705b8f7af42550f1b70c9ce457684b834850d40ea/censys-2.2.7.tar.gz"
-  sha256 "abec858e5be89c45a60477bd7e51412fee7f55917325b11c3cd970298de3e2bd"
+  url "https://files.pythonhosted.org/packages/95/94/b8aebec34a8f6d7d266cc5afff92a4853f8885bbea77f0223695279b5c86/censys-2.2.8.tar.gz"
+  sha256 "e3c6d1e0715f36630a0c52fc2a837849b9d5ffbd6a1f6648e81b1b5a09b7731c"
   license "Apache-2.0"
-  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "38e8c30372157890e313a762380ad686d5bb75fa6ee8c4dd1f6835aa9f84c457"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "83d0b868c1155c3fa44d231b640551dcd6f05551cc2e5d503e2e01f4b99fd344"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b8cde7764f54ce35afc379ba6fde734ced7ba8173b8e033264d1107be8e91b57"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d09030bfc8d7ea773375756d502f1872718a06b637dce5dc16eb9676ef0359a7"
-    sha256 cellar: :any_skip_relocation, ventura:        "bc8edb18b4aa88176a78f7a47e69201df7d985e7f1758258861e7b37b88d6ca1"
-    sha256 cellar: :any_skip_relocation, monterey:       "99c9412e07074a75adc80ace6f26129165d37798995af6057d3fdd6f2c55dcf1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3d2bf2b9319e00279880685b2e9e4bc91eb55fa9824b468ba4a63c56294b715"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "84a72ce13445ff7414a7b8aeb62d9dbd1421d57c4e118ac0ff25a3a792b1c176"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aa7bdbe88688627b7a8ecaea43c1443bd28f15a171129dd98d703f4eee053554"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fc1efc6ff89c84bb9b8052dfe944b7bfa0af4c62bf22e1a2fb42576f1222cdd3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "50194cb3240ee65956ede73afbd4b14840f607e519a3ec9a2a359581a516d36a"
+    sha256 cellar: :any_skip_relocation, ventura:        "0099e0aed5b722a478ffc8c6ce510b4bcb67daf619addc07160693fcd46b1eec"
+    sha256 cellar: :any_skip_relocation, monterey:       "3e6a72f6470dedcea0fa39d4f41d34077c47a78e32cc847a76d734e5b02b8e84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e9e203add78dbfee146e04135c63fb27fbc4bede3ae819b5ce89c71eb9d7d58"
   end
 
   depends_on "pygments"

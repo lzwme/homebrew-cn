@@ -1,8 +1,8 @@
 class Suricata < Formula
   desc "Network IDS, IPS, and security monitoring engine"
   homepage "https://suricata.io"
-  url "https://www.openinfosecfoundation.org/download/suricata-7.0.1.tar.gz"
-  sha256 "6047c75f9e79a9b0cc6d6c7632024a4126812bc212f52acf5d3c813cc7c9fb0b"
+  url "https://www.openinfosecfoundation.org/download/suricata-7.0.2.tar.gz"
+  sha256 "b4eb604838ef99a8396bc8b7bb54cad11f2442cbd7cbb300e7f5aab19097bc4d"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,15 +11,13 @@ class Suricata < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "8c135b0e87a5f5ca3498243bd5df74b779073f3b3d29ae388a11ab9fd66b3aa7"
-    sha256 arm64_ventura:  "6c0e091bc55413c312adeb12fe40c4f6b6b48ee3cadaf1a26fc9fbb1efd4cdc5"
-    sha256 arm64_monterey: "84e3f070aa1c2f353dfa6fa29ce21b015e1bc081bdb7e071b417c8c3db03bd23"
-    sha256 arm64_big_sur:  "841856af3e342b605145d8b7aae649c71cf50661d163a5150c422803685b4c43"
-    sha256 sonoma:         "fba8bfe0a74021d8d9ec382f81e35e40d0943883736ab9c5d1a9d5bf72bbb492"
-    sha256 ventura:        "d7cf0013e35f2bdcd0f65d67649b6b187d2780952a4dc2be6d36ce579e29d0b4"
-    sha256 monterey:       "ccf7baf8ffc298dc280d36004437eb6536a7e82a2b0f300fb0b12f82cadd9e93"
-    sha256 big_sur:        "5700ef72c2a3c05fb2e345dd75141beb3d4b4976f2672733632f0dad662cba98"
-    sha256 x86_64_linux:   "047f924a159c6922ce829f6f4cd18098a083d36d3a59a3feada8cb027cb7b36c"
+    sha256 arm64_sonoma:   "e15bfd1b58eedaa4fc944947b1602796f9203affc2ef1535a80266c9e6f9a243"
+    sha256 arm64_ventura:  "e45883309a6be49ab0229b42f68a8c801f9b594d09ce449ff35990ee321f654e"
+    sha256 arm64_monterey: "9ffc4ba4da4b02f90618352b917d80b8f8de105a5b2a426f85f4831dc7232f10"
+    sha256 sonoma:         "e8611e95ed8675534e74a3247fec210705219b215fb4182a3b5bc6d081d63165"
+    sha256 ventura:        "846c9440c73d6d6cff7648fe58fe75f188248ada7ec79dcf58dba778b3f55ba6"
+    sha256 monterey:       "86c83f58625ff651de5808db5c95bb8f0e8df62011fd4b365e4b4166d3ead4e6"
+    sha256 x86_64_linux:   "7c0612bc088d482ce6468066cd93de8929494d759c8c6447d56a2d7abcf60328"
   end
 
   depends_on "pkg-config" => :build
@@ -29,7 +27,7 @@ class Suricata < Formula
   depends_on "libnet"
   depends_on "lz4"
   depends_on "pcre2"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   uses_from_macos "libpcap"
@@ -60,7 +58,7 @@ class Suricata < Formula
       args << "--with-libpcap-libraries=#{Formula["libpcap"].opt_lib}"
     end
 
-    inreplace "configure", "for ac_prog in python3 ", "for ac_prog in python3.11 "
+    inreplace "configure", "for ac_prog in python3 ", "for ac_prog in python3.12 "
     system "./configure", *std_configure_args, *args
     system "make", "install-full"
 
