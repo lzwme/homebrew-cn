@@ -1,20 +1,18 @@
 class RakudoStar < Formula
   desc "Rakudo compiler and commonly used packages"
   homepage "https://rakudo.org/"
-  url "https://ghproxy.com/https://github.com/rakudo/star/releases/download/2023.09/rakudo-star-2023.09.tar.gz"
-  sha256 "86cdb2b21becfbf0c090c68a9370bbc8e0b3f39f3e32a84da7b7bd7815340845"
+  url "https://ghproxy.com/https://github.com/rakudo/star/releases/download/2023.10/rakudo-star-2023.10.tar.gz"
+  sha256 "4c5fb2bd521ac2bcb9f747bb854fe1682dd64a6e69d3636e4101f6c6b5cdcd95"
   license "Artistic-2.0"
 
   bottle do
-    sha256 arm64_sonoma:   "6be6f2da76ba18e86892af0c94f6e3a5823fe4753ab548c3ca7bbdcdebaff154"
-    sha256 arm64_ventura:  "6ad2b86f7e12318103493e6dfcc553e3ea32feab4e71fdf00e20f226ea1a45a2"
-    sha256 arm64_monterey: "8a8d98e092eefa86139187c9d8be47c27c79db8612ed8533b72d2eda558486aa"
-    sha256 arm64_big_sur:  "0042e6231dfba9a0ee6b90b1f6b0e1bb90189fc6a7b0c4af477dd28b2cc10bab"
-    sha256 sonoma:         "676211df17920a4190dc0b823850b7d3a7097b81531bf7f3b3cace44c38171e9"
-    sha256 ventura:        "fd8ef482465fe495a84039e1cf0e1aec8a01a0601b9bb1a4a8e21a512868eb07"
-    sha256 monterey:       "a0cffe2e20723b6ea29cf5ad7b0708387227dea86fadab81b6f78f4cbd5129ff"
-    sha256 big_sur:        "67a27c86b131bcfdb7f884a794e45acf193d1e7dacbd2432f4c78a65f159fc5f"
-    sha256 x86_64_linux:   "22ac1b2fd3469f05fa7ed0c911795cbe529ca8ee0dcaed5aa13769268d411a58"
+    sha256 arm64_sonoma:   "cd07f9be4d1ef449d10d0fa0400d34445ead526ebf63561176b0b0f212c8f6ac"
+    sha256 arm64_ventura:  "bc202148ebd4833ba61943d03053a00ec6684e453ad57ae1c877710200c64164"
+    sha256 arm64_monterey: "f5f1409fd6a4c4873f53cb64596fafcb8520dcaeecdf591ae67e2785055a7ed2"
+    sha256 sonoma:         "fe94b6fa9e77c58acd9fafede5fd39b61bbbd17d5c454c4514a41cb07976c82f"
+    sha256 ventura:        "3498255caa1e1ec8cefd9bcb0fab2cdf16ac5d0fe3b1ba3a10c83bd0d1c490d1"
+    sha256 monterey:       "c3a8fd192571cb4d203dcd56dca19e919ec75122d8e8e2c29eacd1f06a5dcef8"
+    sha256 x86_64_linux:   "6b478adc00ed2226d06ae836f5303623a932f7ad85c00ed237e0b3d35e6e5ef8"
   end
 
   depends_on "bash" => :build

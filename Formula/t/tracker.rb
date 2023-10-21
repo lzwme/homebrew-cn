@@ -1,10 +1,11 @@
 class Tracker < Formula
   desc "Library and daemon that is an efficient search engine and triplestore"
   homepage "https://gnome.pages.gitlab.gnome.org/tracker/"
-  url "https://download.gnome.org/sources/tracker/3.4/tracker-3.4.2.tar.xz"
-  sha256 "4e6df142a4f704878fca98ebb5a224750e5ea546aa2aaabaa726a73540bd1731"
+  # pull from git tag to get submodules
+  url "https://gitlab.gnome.org/GNOME/tracker.git",
+      tag:      "3.6.0",
+      revision: "624ef729966f2d9cf748321bd7bac822489fa8ed"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
-  revision 2
 
   # Tracker doesn't follow GNOME's "even-numbered minor is stable" version scheme.
   livecheck do
@@ -13,15 +14,13 @@ class Tracker < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "113afb1a7d9510152915ffd8976636cbd0c39be1244b3e7a54736cb359932f24"
-    sha256 arm64_ventura:  "862475e57b9555c8a51d07644d70e853b615b777910dd74acfa4989b43241df2"
-    sha256 arm64_monterey: "b67fdb99fefe3db73ba4d2910ad1d52143904a3a47e00ebf39a70fa93b137f63"
-    sha256 arm64_big_sur:  "b590c4b4004f3f6b18a3200733a758fbefc2bcf47e419ed43d96379d59dc1eef"
-    sha256 sonoma:         "f320aa19f31d28f9a10cb1a0be459425f8d56a28a368d7e8491dec469f7056f3"
-    sha256 ventura:        "9cddcfd7d9d46072a9a84b2d4bcfb170ed01d5f4166966eea897e50680add8b8"
-    sha256 monterey:       "b7bee6306879806dc623dcc61d38c5e78d6f1d459f7f9e83854ee79ff88ded5d"
-    sha256 big_sur:        "56a6c4203c7ecff7324e56c398fb61adc360a9a1a066290e794b9a0054738af6"
-    sha256 x86_64_linux:   "28bf2f5d9e19ef524e45475bc9ce0a0dd5af36711855ff4fb81c852023f0965a"
+    sha256 arm64_sonoma:   "1f5e4992b3fa05c595419f3c74bc6c1ed060d88713732c53b94bcbd7cca992ac"
+    sha256 arm64_ventura:  "d1f4c659bc3bcb540267a77f037bc9fb2482729631d67a08fa85ef6b0bd395e4"
+    sha256 arm64_monterey: "d20678b865cc20bb74fb8e94b723218f04df877f88eb04630466b85b70d3668d"
+    sha256 sonoma:         "76b0f840a5a237480948a4eb0c3e669baedc2dc4bcdf645cf98191b366f92c85"
+    sha256 ventura:        "fcb5fd3a9e459a7e22fc43f659c28f86f6be87d0f608f47cf2218f0f549cf45e"
+    sha256 monterey:       "1f5bb1ce43ea8cf8b5d909f4d8c2f5c0696ee7c1f8af2deffe45c73320340cd1"
+    sha256 x86_64_linux:   "d29cab10448fb77fe9bb36c19503b9b35663582294df079083c38775270fe66d"
   end
 
   depends_on "gobject-introspection" => :build
@@ -47,15 +46,13 @@ class Tracker < Formula
       -Dsystemd_user_services=false
       -Dtests=false
       -Dsoup=soup3
+      --force-fallback-for=gvdb
     ]
 
     ENV["DESTDIR"] = "/"
-    mkdir "build" do
-      system "meson", *args, ".."
-      # Disable parallel build due to error: 'libtracker-sparql/tracker-sparql-enum-types.h' file not found
-      system "ninja", "-v", "-j1"
-      system "ninja", "install", "-v"
-    end
+    system "meson", "setup", "build", *args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   def post_install

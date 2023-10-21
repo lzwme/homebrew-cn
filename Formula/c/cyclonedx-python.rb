@@ -3,19 +3,19 @@ class CyclonedxPython < Formula
 
   desc "Creates CycloneDX Software Bill of Materials (SBOM) from Python projects"
   homepage "https://cyclonedx.org/"
-  url "https://files.pythonhosted.org/packages/06/b1/0f1757cf1e790d5af7dab11360de661b17ff57dfe15874970991062011e5/cyclonedx_bom-3.11.4.tar.gz"
-  sha256 "c3f129674a96975058ae5ae3010ed136514d40a7f1d0372909d696ebb80b813c"
+  url "https://files.pythonhosted.org/packages/42/16/18cc08428819ac1dfe462fb38c4d431298e4940edb23c8b4d468833f7919/cyclonedx_bom-3.11.5.tar.gz"
+  sha256 "65589a061be98233fcffcdd2dad70e99999a5ecef6cecff049e2d77f35bb95a1"
   license "Apache-2.0"
   head "https://github.com/CycloneDX/cyclonedx-python.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9cd3d725903a4eb61aaff2c96af2b3bfce95384d4ad7513506541ba71b4cf1ef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "42802c3890a07cb7a6ab67e4813526b9bff5c50b2052bb281d4468120d84311e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cd0a1008f4f173f2abf0001ce9b740ec3089745ea23f3b5612bf1796a3db95b1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1839ae7dfe47fb4ff1ada0c2873ba7cc80edfdf096976de104b0883cf75fbf7e"
-    sha256 cellar: :any_skip_relocation, ventura:        "d4a8420abd124cab261d7f5084b224f76fb99f16e0f26bc3bf0813ca1484659b"
-    sha256 cellar: :any_skip_relocation, monterey:       "6fcb4204bc12b4aad0818aca79c80f9aa7dfb921e79621d954a521925c684328"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0fc39f34061f9cf4947075cfe1b200dff1d1cdcd64d49ee126689b6056bd59b8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f1345bd103a034ec48a83abb7c576e52cf1c09b6008ac2d5461b7759637a4e4d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dabdc218280cd4848fac0afa29a2d6101802b3bfccebf75b91adc2f1ce281a69"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "44288cb55384fd69b44b7e87d5729376627a8cd645b928232f532c632fa3d807"
+    sha256 cellar: :any_skip_relocation, sonoma:         "eaa853c06af6fb66b4141a07f11e58d1745ed9fab9b991d6f1abaec206891652"
+    sha256 cellar: :any_skip_relocation, ventura:        "3ce16a1531551b0986dc42b7b005df3019d034b9c7f76d303e0f823366342e8e"
+    sha256 cellar: :any_skip_relocation, monterey:       "43eb0bb3884557db4af6b6d6f2e6d756f40ff573c499097235c73fe1681d67bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "452a58f4ce1f50f2f715e7055320f1ab62431ca0ae97f6f768e1b3f67c8fc1ad"
   end
 
   depends_on "python-packaging"

@@ -9,21 +9,25 @@ class Moto < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "388827653b2f3877e18f8fde3bd741b01760aaf346de578c38b9032380c069fb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29e503416fba9951e2f2be59313fe3a534e7e96cc980a8da69d7d722b7066309"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2f2e14b8685044bd8f7ca12156f41b9889d91da8b4e5592d27b815a8c65408b3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e6a198be8e6a4c2960cbae4252908481af8589336250f3eeadcb6d9d52e63696"
-    sha256 cellar: :any_skip_relocation, ventura:        "22d0ceb5db7c848a2c54b552b9b6d7d1ac2d14586c9dfdc759c6845cdba9c227"
-    sha256 cellar: :any_skip_relocation, monterey:       "1bbfd3dfa0cc4e8ffd27134ad90ac9c6b04d70259db075743bf1997b111f13c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "799eb939609bd555d2825180c02d465c6dea952e62a081dd3705bc737e61db7c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "575aef924a5386992fe6cdf3e478c57f75555d8380c83c34a85b61b7126b767a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c658c02a5ce3a8a35b15258a95944bdb597f550b71de16d6e4e20c7aeeb70b73"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5251a283e12c91ebdbaf1446d6cb13a678698dccd9b9225c073c770823d01892"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1f952938d5b95d33ffeff893cea785fd51a2bbb4b032f6d6deb2b516c980622e"
+    sha256 cellar: :any_skip_relocation, ventura:        "c49ea5424043b27a1a351fb707c767ec31279fc5e7377de0e57140ae97d5a72c"
+    sha256 cellar: :any_skip_relocation, monterey:       "8fc1e6e56f01e3dcd5def7c121486ce6b17d1ac2d50492ff32fd3cec2891a795"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea3328f552756f59f194a56814fc041c071b9cccc30dddd43e0a27bbc3326404"
   end
 
   depends_on "cffi"
   depends_on "cfn-lint"
   depends_on "pycparser"
   depends_on "python-certifi"
+  depends_on "python-click"
   depends_on "python-cryptography"
+  depends_on "python-markupsafe"
   depends_on "python-packaging"
+  depends_on "python-pyparsing"
   depends_on "python-typing-extensions"
   depends_on "python@3.12"
   depends_on "pyyaml"
@@ -42,11 +46,6 @@ class Moto < Formula
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
     sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "docker" do
@@ -104,11 +103,6 @@ class Moto < Formula
     sha256 "659fb5809fa4629b8a1ac5106f669cfc7bef26fbb389dda53b3e010d1ac4ebae"
   end
 
-  resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
-    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
-  end
-
   resource "multipart" do
     url "https://files.pythonhosted.org/packages/1f/ce/8709efe606d05e591519c051deba36df346b165652b05e91c3e97eb6eb01/multipart-0.2.4.tar.gz"
     sha256 "06ba205360bc7096fefe618e4f1e9b2cdb890b4f2157053a81f386912a2522cb"
@@ -137,11 +131,6 @@ class Moto < Formula
   resource "pyasn1" do
     url "https://files.pythonhosted.org/packages/61/ef/945a8bcda7895717c8ba4688c08a11ef6454f32b8e5cb6e352a9004ee89d/pyasn1-0.5.0.tar.gz"
     sha256 "97b7290ca68e62a832558ec3976f15cbf911bf5d7c7039d8b861c2a0ece69fde"
-  end
-
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
   end
 
   resource "python-jose" do

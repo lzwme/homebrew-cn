@@ -10,18 +10,21 @@ class SearchThatHash < Formula
   head "https://github.com/HashPals/Search-That-Hash.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "09326eb65d047f0a38383712917336fc048387aa5d9d46d9711b38a64cfdff03"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "461e630805d60334b56d501a28a704344187971bc8acb70061bdbb2801ff3e45"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8211dd3bcdb80c7c33b6d6898c232f00ed2103ba9a97d7a08e20a6dd70f1ed74"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7cccfbdf99cd31a976b7dbc010a8d50e0f22c45a4dab2ced8535a4a18e9ddf86"
-    sha256 cellar: :any_skip_relocation, ventura:        "a7473dbd6e8ed1a8c9fc31f4b706ac1970e57f77bec28bebd7990d150eb9b643"
-    sha256 cellar: :any_skip_relocation, monterey:       "1886bbe55dec71b904882240851dab5d6da163e16fbc9fe66c6c6d1e9d5c7a75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3eb63c8cd5a1de64a8d9fea3f9c015a692af7ee88f96c726bfa0faab93100db8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "354a02bb045db86f60161b4d8bb395f850483fca2433fa9b064d3c4845e9228a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "787e063861cfba51dba2b1232db09032f20f134d0c4a03943fca5546fd971e0b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e2b59220c9287608e76892f891ea691c8faf778830b68188a3cadfc88e339d3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "88833c4b4cdab2860aab715f538b8caa26357052b3cbd5962ecc0c90659a998e"
+    sha256 cellar: :any_skip_relocation, ventura:        "e378ac015b287b04647feba9102f465d78ee98062fc1fa3233ab8056e986e02d"
+    sha256 cellar: :any_skip_relocation, monterey:       "c81254051fd25f243d5170530c67ab10bba7409dc67e3a00d0af2d17085de823"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a64017fd9b628e65ce3bb6f7eb5a5b18e763a8f1513297c4d25f30729d401b2"
   end
 
   depends_on "name-that-hash"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-pyparsing"
+  depends_on "python-toml"
   depends_on "python-typing-extensions"
   depends_on "python@3.12"
 
@@ -65,11 +68,6 @@ class SearchThatHash < Formula
     sha256 "b28e72ac7a98be3d28ad28570299a393dfcd32e5e3f6a353dec94675767b6319"
   end
 
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
-  end
-
   resource "requests" do
     url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
@@ -78,11 +76,6 @@ class SearchThatHash < Formula
   resource "requests-toolbelt" do
     url "https://files.pythonhosted.org/packages/f3/61/d7545dafb7ac2230c70d38d31cbfe4cc64f7144dc41f6e4e4b78ecd9f5bb/requests-toolbelt-1.0.0.tar.gz"
     sha256 "7681a0a3d047012b5bdc0ee37d7f8f07ebe76ab08caeccfc3921ce23c88d5bc6"
-  end
-
-  resource "toml" do
-    url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
-    sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
   end
 
   resource "urllib3" do

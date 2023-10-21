@@ -1,8 +1,8 @@
 class Rakudo < Formula
   desc "Mature, production-ready implementation of the Raku language"
   homepage "https://rakudo.org"
-  url "https://ghproxy.com/https://github.com/rakudo/rakudo/releases/download/2023.09/rakudo-2023.09.tar.gz"
-  sha256 "e33b9999f2157721faa97a9a3df52825759680f777bc480a922bdd20757e0cf7"
+  url "https://ghproxy.com/https://github.com/rakudo/rakudo/releases/download/2023.10/rakudo-2023.10.tar.gz"
+  sha256 "a219aca078b99002fed7b3fa2c2e280457224cf581e9a27af44bcb5f9c8dc160"
   license "Artistic-2.0"
 
   livecheck do
@@ -11,15 +11,13 @@ class Rakudo < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "96f0341ce7223bff0fa17eb455505cec2c0174ea6eb8171a9b0dbe88c3dd4e98"
-    sha256 arm64_ventura:  "37e968cbd9e9df5fa12e359f68b862800ed34c220dddfbf9f2e0cbd28f4c8036"
-    sha256 arm64_monterey: "ba928972182ad121c2cd2f87a323b761fbaf3f04f5012faceda48f83a0dd0c3d"
-    sha256 arm64_big_sur:  "ede21c4f9da8441a6db1783c9ff7874fa9df066cd92d8046f1a98e74582cbf3b"
-    sha256 sonoma:         "98cb1b2da579d740fd34bb9d22f2cc824f63d6fdaa1a10fabc95b891c29eae18"
-    sha256 ventura:        "d565edf7336a06139678b87ecd6c02ff34ed317b1f4489b019dd88e8660d34bb"
-    sha256 monterey:       "b3b7e5f5a6b0e7d664d9c5c48a962f9c03a9a31559fcdf1a5b25e9cf57b6484c"
-    sha256 big_sur:        "204177d792bbec421abd38fff5a1e25fe87f35625378e8aa5f1e83bb2474b3de"
-    sha256 x86_64_linux:   "da09c10ce071e7635f3f6518d47251289d8c264bd343088ce0857874e044b514"
+    sha256 arm64_sonoma:   "6db0150adbbb18859cebb36fc7ab1e58a549575837b97ea7374c7d30091d1798"
+    sha256 arm64_ventura:  "a0b2b99d63310fabb83e9a1db834d6bddb13bf65bba25bcc82c8d951a06ae7f1"
+    sha256 arm64_monterey: "f866f821c1d8f9b53a46ddca52a2c8a23680db79137e5e7aba07fc6b90ae305f"
+    sha256 sonoma:         "117bcaa0a3994381764caab9595a74d71e6b23093bb5e068ac18c72da5324ea5"
+    sha256 ventura:        "fb2ed565b5a937046bf9aebd83d8f76a19cd22e905e816fcba013b8237202dcf"
+    sha256 monterey:       "6757040f589fc0e5350fff6db69835692f2c4de264e72fe4b87544f913e1c200"
+    sha256 x86_64_linux:   "71f874a82d552a4edb6007e37e0e11d1e331323d72af323450477879acb3af3f"
   end
 
   depends_on "libtommath"

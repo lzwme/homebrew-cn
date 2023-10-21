@@ -6,33 +6,34 @@ class Cloudiscovery < Formula
   url "https://files.pythonhosted.org/packages/d3/c2/9a5f93ac5376f83903c8550bde45e2888da3fb092b63e02e19d6c852134c/cloudiscovery-2.4.4.tar.gz"
   sha256 "1170ea352a3c7d5643652ebe96b068482734cd995b9c92dc820206f1b87407e5"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ec941b6660e92dff5ede53fae16b989f9170e86a02f1fe0f676b0037885aef71"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9dcf3ec0126c5b413ad1d9d7b02a5d3d926a1f58f4c60d5965574dde1057929f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6226b8060ad869aca076fcd4d780165102ab43eea4a9c5196290ef01a4ad06ed"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5a73f2d211f3eed358e9731bbe9f57457e849d69d58e7796a1017e9c4658f60d"
-    sha256 cellar: :any_skip_relocation, ventura:        "c3d5344bc1f6e281d293d699e8c7dbe0420337101eceac717c3288df0412b8f3"
-    sha256 cellar: :any_skip_relocation, monterey:       "309e0576648de98f9dbac8b0fcd9d26366ff8e76d1346f8c2fa85324682a0ace"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29237a00dbd5694bbd4b79507966e5149e88e8b3a0f9e0a56590461020f187ed"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ede59442132c867b152828f3e1d6319b4fa79a684f147894efcffe47afa39a64"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd4f9f60e99574607aadce72237a18c5dfe061f685b466d172b1cac80f5c63d6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8f266ba342a75d4ac5361196c6231e445b3210c86a2ee60e36fcd426fd546c97"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6276ddc13fb94ecba41b68f2f7adf8c8a12949854a67906cc83a3c50c1d669a7"
+    sha256 cellar: :any_skip_relocation, ventura:        "41e77eedf1b3e157787e3b87b6566e39a10d590d4135c1aa13a47954b9254fd0"
+    sha256 cellar: :any_skip_relocation, monterey:       "952dcbb35850c6b99d3593a7ea3f961c19c11ce9b0c1c3b530ca24ec01128b90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e97e95bcae08b01c0721862baf395c44ed68aa518ada04bdc2604d75415b0348"
   end
 
-  depends_on "python-markupsafe"
   depends_on "python-pytz"
   depends_on "python-setuptools"
   depends_on "python@3.12"
   depends_on "six"
 
+  # markupsafe needs to pinned to 2.0.1
+  # see PR, https://github.com/Homebrew/homebrew-core/pull/151558
+
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/42/56/633b5f5b930732282e8dfb05c02a3d19394d41f4e60abfe85d26497e8036/boto3-1.28.61.tar.gz"
-    sha256 "7a539aaf00eb45aea1ae857ef5d05e67def24fc07af4cb36c202fa45f8f30590"
+    url "https://files.pythonhosted.org/packages/4b/cd/9331ee4ecdbfd58e268664fc1126e7aa015a31ce088b0c1e3cf48bb56e97/boto3-1.28.66.tar.gz"
+    sha256 "38658585791f47cca3fc6aad03838de0136778b533e8c71c6a9590aedc60fbde"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/05/2e/9cb8adca433af2bb6240514448b35fa797c881975ea752242294d6e0b79f/botocore-1.31.61.tar.gz"
-    sha256 "39b059603f0e92a26599eecc7fe9b141f13eb412c964786ca3a7df5375928c87"
+    url "https://files.pythonhosted.org/packages/ed/19/489d319b286f629be7c56025dfc0df41e69166eb559996bd07f664b2c63d/botocore-1.31.66.tar.gz"
+    sha256 "70e94a5f9bd46b26b63a41fb441ad35f2ae8862ad9d90765b6fa31ccc02c0a19"
   end
 
   resource "cachetools" do
@@ -91,8 +92,8 @@ class Cloudiscovery < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/dd/19/9e5c8b813a8bddbfb035fa2b0c29077836ae7c4def1a55ae4632167b3511/urllib3-1.26.17.tar.gz"
-    sha256 "24d6a242c28d29af46c3fae832c36db3bbebcc533dd1bb549172cd739c82df21"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

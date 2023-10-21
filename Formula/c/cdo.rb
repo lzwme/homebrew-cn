@@ -1,8 +1,8 @@
 class Cdo < Formula
   desc "Climate Data Operators"
   homepage "https://code.mpimet.mpg.de/projects/cdo"
-  url "https://code.mpimet.mpg.de/attachments/download/28882/cdo-2.2.2.tar.gz"
-  sha256 "419c77315244019af41a296c05066f474cccbf94debfaae9e2106da51bc7c937"
+  url "https://code.mpimet.mpg.de/attachments/download/29019/cdo-2.3.0.tar.gz"
+  sha256 "10c878227baf718a6917837527d4426c2d0022cfac4457c65155b9c57f091f6b"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,15 +11,13 @@ class Cdo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5e175f37dcbf11d0270cb4ab30c769a026dad190a64da36baa062d331e0d52d2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ee063b2b16728c7f3aec6822663bd948c12aa04c88eedf72923b69ac28ac646"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bf27b3f73669012dced5d979f0fa0da10668104b06b1ab51c77b3b4b3098d945"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "13c7779e2597e7b4bcc1bef46033df537e3160e6313a317b0383ee88883afe9e"
-    sha256 cellar: :any,                 sonoma:         "c93c1e8128dd7bad4e3ec892cc0444277ba221acc5e2cd705bdce9db7f1972a8"
-    sha256 cellar: :any_skip_relocation, ventura:        "2b7464bb058d3a5058eed98112470936b31c4dedca6faaaf3a55ba13ec21be46"
-    sha256 cellar: :any_skip_relocation, monterey:       "cd875d8ba47f2017144f2efa4a5208ba7b10f8392c3aded5ce573105a13ec13d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4b6fc23e090613eb2242c22695d1aaecbba8ba898e44f3c0b29ae2b07de68de4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb42517595a6963b898c777f2a6148acdd72132f8bb7ff0cc3a544cac006250d"
+    sha256 cellar: :any,                 arm64_sonoma:   "9532b61726537587c8287254f8106b594e93a1f98f5508ea865b3ef2bbd9a10b"
+    sha256 cellar: :any,                 arm64_ventura:  "a5189ceda83bf399da659c7826970cef4fea37009412ee9e833cf5ca181b67f8"
+    sha256 cellar: :any,                 arm64_monterey: "511967f2945f01952c1f2e93a7d5af9b80d0c8eb82f7dfd36ecbfa3c0fb8c250"
+    sha256 cellar: :any,                 sonoma:         "0d8d07d9066063fc9fd05bfc6307a1d7250755780fc8d71372b7d623f5e5fdf5"
+    sha256 cellar: :any,                 ventura:        "b8f042b2882c80bfde1d58a6abcfe934d67b344e08695880efc878d9ebe67e8b"
+    sha256 cellar: :any,                 monterey:       "caf3aaf38e3e101c2ef00da2c414cdb0a16cad3fdff61e378c7b27202e754a55"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63eeb8df337d0c252a1ea4f992ff7c9d0668294dc22524efc882f12d60fabfc8"
   end
 
   depends_on "eccodes"

@@ -1,8 +1,9 @@
 class Immudb < Formula
   desc "Lightweight, high-speed immutable database"
   homepage "https://www.codenotary.io"
-  url "https://ghproxy.com/https://github.com/codenotary/immudb/archive/v1.5.0.tar.gz"
-  sha256 "273e35b5c83923b21ea09cbe1b7d5a8ed58e62a17565d1f6b37bb5d1034deb9b"
+  url "https://ghproxy.com/https://github.com/codenotary/immudb/archive/refs/tags/v1.9DOM.0.tar.gz"
+  version "1.9.0"
+  sha256 "62d2638cf2e7005045441e7c44457dd6686714b85b54be98c1460c228f4ddc94"
   license "Apache-2.0"
 
   livecheck do
@@ -11,15 +12,13 @@ class Immudb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bbd0803944a3bf29797aed9c4bfe9e1f81a1e492aa13c28704611fe97d935af0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7031a7c18e82336d7d43b30f726193092b01969a50155a3f5b39efd090ae6cf2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c3d0ddbf7cea4795f770b088edd3353c88ea462efb9f6c48ba9f57d3ac8f33f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bb5616d77b7e632e6937a8e788fb4577a64be5da2194bc140504ab3f4833c9c8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "12ba3f34aed34a32028b600697a7ffac6a34475122b424f6f733c131282de72f"
-    sha256 cellar: :any_skip_relocation, ventura:        "fd6039539880414d746650a57545d2ec325fd7ed04f2cc0af32057f44ece8b66"
-    sha256 cellar: :any_skip_relocation, monterey:       "5552a13143bec98d81d4b9358be10266b5b350cb22d4a1006fa1aaa5687678a1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "979f2e49fe74ccc11da42ac9687ed2d79e266a2d458b45b1ec7f873427367a8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3416a095de4ee0a7aed417fcf74225a1369729e5f80ad62a24f4153b1e8da07a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "834e9427584a33dc302feac93faec7f206439500d8c2e123e7adf06659cb0fcd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d5d4eef5cf3c16a668393215399d58e17f11a2cad00bf1946bd61a773fe6889"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "058de2088ed836a8cfaac661568c649c1f6dbb4070b3cc0de73466fe23e6eb17"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1514af18dc0a24acd9e4432b92373e22f00603420a6fec4892d53f9a12e13202"
+    sha256 cellar: :any_skip_relocation, ventura:        "395b96224666a93a8559f4e139da56af4bf8833e3e57aa9598a8baf677f31965"
+    sha256 cellar: :any_skip_relocation, monterey:       "2df58871fb914df342910ffc5f2c2fa25c889f5b5014ab1e57bf4274100a057e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d979a4d4f3969f537aba36f911653acc53f60095f5b7c34d62f206cfc7376b5e"
   end
 
   depends_on "go" => :build

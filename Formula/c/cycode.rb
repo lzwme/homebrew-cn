@@ -8,16 +8,19 @@ class Cycode < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "932ae2f79bff929e345814e3837a8284bfaf29e1732897da46529632f6510f98"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bd80495477f57fc989dba58c3742976c45caff1f13da7ad34d6f9a970929e714"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c087c7c89eb00f2e6eb7bcf03fb7944a267dc50ad74994565013b1556b75566"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0fb1890a3719e93070bc4c08536598f64271fb64df70916fb9b0553060b600f0"
-    sha256 cellar: :any_skip_relocation, ventura:        "c6d6bd63af52b9148296cde18118fe0b35bb06bb7e3d009d808ae1f6c75c7f1b"
-    sha256 cellar: :any_skip_relocation, monterey:       "ec66d4e16bf009416326238ceec9fb61c2bfd388727d51dbc7c8411aac4be85a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ed0c28c6c9ceccafd28924db6e2eb9f649013e1d0a72cbf834e8c20f57ef92d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "70377626439a97b4116bef99f41418c65ba5c9da385e136e3b8b8e83dfcbd603"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2d1e8593fd8a5f37acb78ae97075bde8bf673182b553bce10388dc979dbcd262"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0b9f6a5373f6e662f42d2bdd09583398de8ba590b8fca3cb8e8f34d0cf4fe8d7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c325f85de9e54db02fcb5b127e3a0fd2825ba4d479b186b301b05469ce265544"
+    sha256 cellar: :any_skip_relocation, ventura:        "1ceb0d599681636172018cef91d459b1588c2c6933c9aaa29aeac8f2fb681e0d"
+    sha256 cellar: :any_skip_relocation, monterey:       "d73b391f4c5792a82b59930601649cea93c1ba9716ff85d477d4e45ee767a890"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9866c7710cd764521512cfa46a27a73eec59ea6884965ed717e4a24235cd3204"
   end
 
   depends_on "python-certifi"
+  depends_on "python-click"
+  depends_on "python-packaging"
   depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
@@ -40,11 +43,6 @@ class Cycode < Formula
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
     sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "colorama" do
@@ -70,11 +68,6 @@ class Cycode < Formula
   resource "marshmallow" do
     url "https://files.pythonhosted.org/packages/e4/e0/3e49c0f91f3e8954806c1076f4eae2c95a9d3ed2546f267c683b877d327b/marshmallow-3.20.1.tar.gz"
     sha256 "5d2371bbe42000f2b3fb5eaa065224df7d8f8597bc19a1bbfa5bfe7fba8da889"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "pathspec" do
@@ -109,6 +102,8 @@ class Cycode < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"cycode", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

@@ -8,20 +8,21 @@ class Volk < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "c0a5c2ee515d15917cefb2b026ad6839c56beb4662dba097a9516d12d3d900ee"
-    sha256 arm64_ventura:  "e16a8fe2ea0edc034efba5d123a5f6ead3ad7e2b1d7073f5bb8ee5b4e3c0b978"
-    sha256 arm64_monterey: "feeefe367288110e433ba776918c72c73e50b8b3c6360e7bbb9a476fde417703"
-    sha256 sonoma:         "16d5b6931dfb847ff8981acda1dbac48c91f6a528f2fe4fd93070d3bfea1ca43"
-    sha256 ventura:        "b9cb846aa9f83f5b9ff363d73ff101f52bb46dc4ab9e4167616e7eb028537eab"
-    sha256 monterey:       "88e5cb768c82195b32ad3115b9ba35590aaff351823c713736380cb40f71f788"
-    sha256 x86_64_linux:   "a53ab9928c3785f01ce2138c1d534b6478414a8822edbc9323d9294ce83abd18"
+    rebuild 2
+    sha256 arm64_sonoma:   "0cc483d3b627ca413559e042ec8490e72e4e89b94b1ce9e843abc1f265402d11"
+    sha256 arm64_ventura:  "cd4bd7224339fe505ba92c6499e293e2e09ff1bd92f7ec59bd8b1b1c435bfcb4"
+    sha256 arm64_monterey: "6f5a4f9da3f8e68634a37d8424d3ea7932f2c35c096f83363eb00aaa84f41fba"
+    sha256 sonoma:         "11bd508d48a3ee05c2bae2e03227a26172b1c1eaf8caea047ad03e784798e68a"
+    sha256 ventura:        "502c305f3ef12668a78187baec9fff3932ab7ff4d449a12153d49e157f3f9e71"
+    sha256 monterey:       "33435c0f6c14b6b473ebd62217b64e8d0cce837057eb0c2af8d5f1613189bd25"
+    sha256 x86_64_linux:   "05a6f706e27f0089342f093168e0112c8005128ea171d297f3093285d1ccdeed"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "orc"
   depends_on "pygments"
+  depends_on "python-markupsafe"
   depends_on "python@3.12"
 
   on_intel do
@@ -33,11 +34,6 @@ class Volk < Formula
   resource "Mako" do
     url "https://files.pythonhosted.org/packages/05/5f/2ba6e026d33a0e6ddc1dddf9958677f76f5f80c236bd65309d280b166d3e/Mako-1.2.4.tar.gz"
     sha256 "d60a3903dc3bb01a18ad6a89cdbe2e4eadc69c0bc8ef1e3773ba53d44c3f7a34"
-  end
-
-  resource "MarkupSafe" do
-    url "https://files.pythonhosted.org/packages/1d/97/2288fe498044284f39ab8950703e88abbac2abbdf65524d576157af70556/MarkupSafe-2.1.1.tar.gz"
-    sha256 "7f91197cc9e48f989d12e4e6fbc46495c446636dfc81b9ccf50bb0ec74b91d4b"
   end
 
   def install

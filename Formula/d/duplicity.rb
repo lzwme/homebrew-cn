@@ -8,20 +8,20 @@ class Duplicity < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ab81d9836e39eebba437e91015637094c90648ce2ec4889cce03a2533e7388f3"
-    sha256 cellar: :any,                 arm64_ventura:  "59135ba7bf5f165f5d7c55e68d676cf59d767507df0e1a0c033b0abb1eb46f25"
-    sha256 cellar: :any,                 arm64_monterey: "21c8a2bc9c329ab9d9f2baea506f20e85db9f31267ae5c63a9128b97d7d8601e"
-    sha256 cellar: :any,                 sonoma:         "7c4fb3d39d30aac2e9443f66f35329e32303a75fd79f42b8c493204e7f84dc6d"
-    sha256 cellar: :any,                 ventura:        "823e471139f193d3be9d67d4cec7197bba0a262e96f214c8d974d683bf89c8c8"
-    sha256 cellar: :any,                 monterey:       "0e7723e42e11d073287a3d8f865fea4ce3643f6ae7bcd9cba9e459e8caffb2ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94bd82e4d495f592915e2973c9fcc1510c303fd21311f57d3129688246674d9b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "d0e9ffc5f8ef4ab981422713be6a499d8e020e4f7c25190f3533c6d52a159add"
+    sha256 cellar: :any,                 arm64_ventura:  "033f073bc5c0f92178cad7f6d035f71739ce826cbac0e35d6cc72b7b4928543b"
+    sha256 cellar: :any,                 arm64_monterey: "b42f43e726362ed82b712314e1e1e757a31d7d94ace983b0f65a8035e17fe323"
+    sha256 cellar: :any,                 sonoma:         "65422bc21b7c892a7af2be43e5a95cddadceb85918aa1a5511879dc1a38e14c1"
+    sha256 cellar: :any,                 ventura:        "a9d123914aa66813d7f44e05493ffabe561182b6aec5101c8812382b58c2466f"
+    sha256 cellar: :any,                 monterey:       "bff66fa7ea0ddb546d948a3805b39a1036505d6bc779fd5c63b8798a4459f29d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4cd860147060abf32834804325fcfced332eb5e530f577cbc47350c3fab99ae5"
   end
 
   depends_on "gettext" => :build # for msgfmt
   depends_on "rust" => :build # for bcrypt
   depends_on "cffi"
   depends_on "gnupg"
-  depends_on "keyring"
   depends_on "librsync"
   depends_on "protobuf"
   depends_on "pycparser"
@@ -35,8 +35,17 @@ class Duplicity < Formula
   depends_on "pyyaml"
   depends_on "six"
 
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
+  on_linux do
+    resource "jeepney" do
+      url "https://files.pythonhosted.org/packages/d6/f4/154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdf/jeepney-0.8.0.tar.gz"
+      sha256 "5efe48d255973902f6badc3ce55e2aa6c5c3b3bc642059ef3a91247bcfcc5806"
+    end
+
+    resource "secretstorage" do
+      url "https://files.pythonhosted.org/packages/53/a4/f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691/SecretStorage-3.3.3.tar.gz"
+      sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
+    end
+  end
 
   resource "args" do
     url "https://files.pythonhosted.org/packages/e5/1c/b701b3f4bd8d3667df8342f311b3efaeab86078a840fb826bd204118cc6b/args-0.1.0.tar.gz"
@@ -206,6 +215,11 @@ class Duplicity < Formula
   resource "jottalib" do
     url "https://files.pythonhosted.org/packages/aa/4b/7a5dea988a7a76842738fa23ff8e397109ccb0a85702d10153ce9e46c3ca/jottalib-0.5.1.tar.gz"
     sha256 "015c9a1772f06a2ad496278aff4b20ad41acc660304fa8f8b854932c662bb0a5"
+  end
+
+  resource "keyring" do
+    url "https://files.pythonhosted.org/packages/14/c5/7a2a66489c66ee29562300ddc5be63636f70b4025a74df71466e62d929b1/keyring-24.2.0.tar.gz"
+    sha256 "ca0746a19ec421219f4d713f848fa297a661a8a8c1504867e55bfb5e09091509"
   end
 
   resource "keystoneauth1" do

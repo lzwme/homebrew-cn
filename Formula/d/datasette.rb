@@ -8,17 +8,19 @@ class Datasette < Formula
   head "https://github.com/simonw/datasette.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8a855fb7d2ffb2514c4664dc6a136c6a70bcf68c67ba91e0f3f644882d177cef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f0434002de28b23f98b0a560bcae129bdfaeb1ef90e8e45f7c38bb8446d13ad5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f0dfe7aadc82b286b1e1d2e3398e86ac85add7c6236b1e26ddc805887feba31a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9e389e6ec1af6f5efcf79897fc584c7e9d96ab9d6dcfd11d7d31c2d2540929e4"
-    sha256 cellar: :any_skip_relocation, ventura:        "5621a6f8d4f41e90e9cb1710787c3b5594550717a1dc467bda8b41141d82d551"
-    sha256 cellar: :any_skip_relocation, monterey:       "61d8453bccaf2b3898fa9d2ba0dbce9a05c3b08788776058408ae3066409c181"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a05ab27f375d27790a21ca8f79d8b78fb6e6e75513b965db8d396d3d998c09b6"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "452ddbe226535756e688bb135e6c9d8759ce92e0475fad097eac26f8570d49ca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e5b428ea4dcad6f7c5e627e3159d67bf2e79b295d2123eeb38450fb45efd73e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b75cb9ada88cdb3905b32f3255a18ec9a9dffecbc7742e4e399aa5bdd170c465"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e07477c2d89aa6107926f3f22982abd50378934c0046f2874aa9d28abd6d8f3d"
+    sha256 cellar: :any_skip_relocation, ventura:        "a2729dbe249fe66a461a5b5e1182eaf6491acb887c36be21cf3deda72cb9d068"
+    sha256 cellar: :any_skip_relocation, monterey:       "f71a37609ad6578c51abf0122254ad2be375c665ecb1dd95e93998887f4ebd97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc6ee8cb9499e984535a064d3fa8e6fd70db27901ee56a30a31c694472423f13"
   end
 
   depends_on "python-certifi"
+  depends_on "python-click"
+  depends_on "python-markupsafe"
   depends_on "python-setuptools"
   depends_on "python-typing-extensions"
   depends_on "python@3.12"
@@ -43,11 +45,6 @@ class Datasette < Formula
   resource "asgiref" do
     url "https://files.pythonhosted.org/packages/12/19/64e38c1c2cbf0da9635b7082bbdf0e89052e93329279f59759c24a10cc96/asgiref-3.7.2.tar.gz"
     sha256 "9e0ce3aa93a819ba5b45120216b23878cf6e8525eb3848653452b4192b92afed"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "click-default-group" do
@@ -93,11 +90,6 @@ class Datasette < Formula
   resource "jinja2" do
     url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
-  end
-
-  resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
-    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
   end
 
   resource "mergedeep" do
