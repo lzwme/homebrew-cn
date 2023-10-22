@@ -1,10 +1,9 @@
 class Ddclient < Formula
   desc "Update dynamic DNS entries"
   homepage "https://ddclient.net/"
-  url "https://ghproxy.com/https://github.com/ddclient/ddclient/archive/v3.10.0.tar.gz"
-  sha256 "34b6d9a946290af0927e27460a965ad018a7c525625063b0f380cbddffc01c1b"
+  url "https://ghproxy.com/https://github.com/ddclient/ddclient/archive/v3.11.0.tar.gz"
+  sha256 "0e7ad53049c7e8699a316c834cf12cf14134671c7d87a44fe5783a481b886b64"
   license "GPL-2.0-or-later"
-  revision 2
   head "https://github.com/ddclient/ddclient.git", branch: "master"
 
   livecheck do
@@ -13,16 +12,13 @@ class Ddclient < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "83767a9b969effc64f9c079b499a0cdb3b7c59c149423a70f6d7ad35150d94f5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4d7b4313f149190585d9acdb4f0cc0c4457d7cf907c0b78c3d6351fa72d1a6e8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4d7b4313f149190585d9acdb4f0cc0c4457d7cf907c0b78c3d6351fa72d1a6e8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4d7b4313f149190585d9acdb4f0cc0c4457d7cf907c0b78c3d6351fa72d1a6e8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "83767a9b969effc64f9c079b499a0cdb3b7c59c149423a70f6d7ad35150d94f5"
-    sha256 cellar: :any_skip_relocation, ventura:        "4d7b4313f149190585d9acdb4f0cc0c4457d7cf907c0b78c3d6351fa72d1a6e8"
-    sha256 cellar: :any_skip_relocation, monterey:       "4d7b4313f149190585d9acdb4f0cc0c4457d7cf907c0b78c3d6351fa72d1a6e8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4d7b4313f149190585d9acdb4f0cc0c4457d7cf907c0b78c3d6351fa72d1a6e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71744d2abf1d487d7749ab508eee5786e62adffc9f6f81f7f81c53ac1c76e223"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "395d99b1f05d3079114f412bc723d82e845d542ffd68432b8b906b7df837ccf2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "395d99b1f05d3079114f412bc723d82e845d542ffd68432b8b906b7df837ccf2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "395d99b1f05d3079114f412bc723d82e845d542ffd68432b8b906b7df837ccf2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "395d99b1f05d3079114f412bc723d82e845d542ffd68432b8b906b7df837ccf2"
+    sha256 cellar: :any_skip_relocation, ventura:        "395d99b1f05d3079114f412bc723d82e845d542ffd68432b8b906b7df837ccf2"
+    sha256 cellar: :any_skip_relocation, monterey:       "395d99b1f05d3079114f412bc723d82e845d542ffd68432b8b906b7df837ccf2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "633c923ef4e5315ad829dce58ba1544d941d39d95c3c0b4d251cce18916b9733"
   end
 
   depends_on "autoconf" => :build

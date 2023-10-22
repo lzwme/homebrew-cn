@@ -1,22 +1,19 @@
 class Davix < Formula
   desc "Library and tools for advanced file I/O with HTTP-based protocols"
   homepage "https://github.com/cern-fts/davix"
-  url "https://ghproxy.com/https://github.com/cern-fts/davix/releases/download/R_0_8_4/davix-0.8.4.tar.gz"
-  sha256 "519d56f746e86ea3fd615bc49e559b520df07e051e1ca3d8c092067958f3b2b7"
+  url "https://ghproxy.com/https://github.com/cern-fts/davix/releases/download/R_0_8_5/davix-0.8.5.tar.gz"
+  sha256 "f9ce21bcc2ed248f7825059d17577876616258c35177d74fad8f854a818a87f9"
   license "LGPL-2.1-or-later"
-  revision 1
   head "https://github.com/cern-fts/davix.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "23a1f6d4742da4b6b5a4a32cb4dfe147a67f78ab485fec35d7b39100485e1da0"
-    sha256 cellar: :any,                 arm64_ventura:  "d6c39dcc41daaa79286a5f843a96438016dd3dc12e6b90496fa0c0a8c98879de"
-    sha256 cellar: :any,                 arm64_monterey: "63ddded6d7553a2b25b7577a90b6f0b26d71a9b0491aeb0538e6e8d96a453dc2"
-    sha256 cellar: :any,                 arm64_big_sur:  "8077eff019705fe76a8bbc059e12a3925cd5e3619a1f5b1709a0efe9d7117dfb"
-    sha256 cellar: :any,                 sonoma:         "2eb17e58bb217e5b964ca5a347ef2bc1a7d3187909688fda5ba1e976977685e0"
-    sha256 cellar: :any,                 ventura:        "6afd4fc8493c01b9d575ed87d170a8ca3b06b88c6fa7603b43dc8fa124488194"
-    sha256 cellar: :any,                 monterey:       "d5d56f9c9fe987cb03a000f86a0b0a7af42a801765ea7ec4c27264e41834f49d"
-    sha256 cellar: :any,                 big_sur:        "dfa3470f6a0e655a4c07d5cdf4821e5ed115c1cce287208fe1feec7f7dcd79b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b41952cfa51be57c74dd2998a8c8d33234082d9b2ea9725d1b8b727bf1996235"
+    sha256 cellar: :any,                 arm64_sonoma:   "4cf4dca18507005e724230890fa5a70dde080f27f39b47915bc484f07d34949c"
+    sha256 cellar: :any,                 arm64_ventura:  "21689783bbfb19dbd1412a1cac201a95c814bb98361855761affaed90f34057c"
+    sha256 cellar: :any,                 arm64_monterey: "92423b49102bce10e2accd1693912dbffe174b0b0cfe85d57e00c08a69cb7ddb"
+    sha256 cellar: :any,                 sonoma:         "7005c023ba24c247e12d6de562b0bbc46ecc46fd2f826690d656390d54dcd28d"
+    sha256 cellar: :any,                 ventura:        "5e722d24dbd14d51d6b8a3be44c0d904d4bdcbcfe4efcf5a9e5f6ba18718feea"
+    sha256 cellar: :any,                 monterey:       "7fabe42ccc68cd7f9db8fbd5f8df869486846cce32ed7e2851a9cc8c390717de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c481ce720f59fd0c4da185aa28e01226056a2b029c74506414eeebaf045f598"
   end
 
   depends_on "cmake" => :build

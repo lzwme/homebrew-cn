@@ -1,21 +1,30 @@
 class Helix < Formula
   desc "Post-modern modal text editor"
   homepage "https://helix-editor.com"
-  url "https://ghproxy.com/https://github.com/helix-editor/helix/releases/download/23.05/helix-23.05-source.tar.xz"
-  sha256 "c1ca69facde99d708175c686ce5bf3585e119e372c83e1c3dc1d562c7a8e3d87"
   license "MPL-2.0"
+  revision 1
   head "https://github.com/helix-editor/helix.git", branch: "master"
 
+  stable do
+    url "https://ghproxy.com/https://github.com/helix-editor/helix/releases/download/23.05/helix-23.05-source.tar.xz"
+    sha256 "c1ca69facde99d708175c686ce5bf3585e119e372c83e1c3dc1d562c7a8e3d87"
+
+    # Fix crash with rust 1.71+: https://github.com/helix-editor/helix/pull/7227
+    # Remove with next release
+    patch do
+      url "https://github.com/helix-editor/helix/commit/de0ef8af15945fb7f761503c615a2d6213d2fd82.patch?full_index=1"
+      sha256 "c33a139f97e78473ecdee3412f2d153c362c9a3c2de6b14e66efb4b10eed02e8"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4858308cbc994f6cb715c271683cc99a205571614656d5321a03c2aeb71cf3b8"
-    sha256 cellar: :any,                 arm64_ventura:  "bd40b4751765df4dbae46c4a014d033b5a5428aaeac13fe277a569516cbb82de"
-    sha256 cellar: :any,                 arm64_monterey: "8d304cac9406203074f151b77df1a72e985f1e4e6573f2d1ab94706a90e3fac2"
-    sha256 cellar: :any,                 arm64_big_sur:  "11b879bf0dcf0ccbcf6a4377ba949ec70bc9f149465282abfa1750ea947cdaaf"
-    sha256 cellar: :any,                 sonoma:         "96628225a616201d74a7ce9fff218e1be3373d3ddbecdd1db2034ecba29aafc7"
-    sha256 cellar: :any,                 ventura:        "ee131ad851144fdacfb48848a9c8a9370d4da586962ef9ba24dde74adf77261f"
-    sha256 cellar: :any,                 monterey:       "330c56170f9af4fb38cd20925198ac92a430eb980db2ac6a14d6851e9cce7e4c"
-    sha256 cellar: :any,                 big_sur:        "7bd477b8d2827682263498884db7855474609b744eac00df48f8d5b2483605ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e7afb2304044a713719d335ccc870e5dd311118a229da312c4122b362a8e42bb"
+    sha256 cellar: :any,                 arm64_sonoma:   "4deaac0584ab704b1013ad8f36d1dea61d6fb8877ea685846b7342e164f543a1"
+    sha256 cellar: :any,                 arm64_ventura:  "ef6c29f888ebb6c4a5e46cf8b93aaa91278b0bf3ee64819bdb7b14ba37bacf91"
+    sha256 cellar: :any,                 arm64_monterey: "b998914e72f311382d28c9b869a6897713a1cccca2cd316b3543567fe27d769b"
+    sha256 cellar: :any,                 sonoma:         "347beb27e09efe3de9740e842e992367e02f79f5337887a6174ace58fe36930f"
+    sha256 cellar: :any,                 ventura:        "44fd0fabcc454b96620e8fdf8f1c2190233a70574af75352177afa13e4e6d2cd"
+    sha256 cellar: :any,                 monterey:       "27abf7b2efd7db94b188e7c8457af83267a628f48f7e0dfde5ec626252fa8bf6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e00bc0e5b1e97e3318d84b8a9ae4337943c5fbab39680bd9841c310b60573868"
   end
 
   depends_on "rust" => :build

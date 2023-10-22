@@ -1,8 +1,8 @@
 class Gnuplot < Formula
   desc "Command-driven, interactive function plotting"
   homepage "http://www.gnuplot.info/"
-  url "https://downloads.sourceforge.net/project/gnuplot/gnuplot/5.4.9/gnuplot-5.4.9.tar.gz"
-  sha256 "a328a021f53dc05459be6066020e9a71e8eab6255d3381e22696120d465c6a97"
+  url "https://downloads.sourceforge.net/project/gnuplot/gnuplot/5.4.10/gnuplot-5.4.10.tar.gz"
+  sha256 "975d8c1cc2c41c7cedc4e323aff035d977feb9a97f0296dd2a8a66d197a5b27c"
   license "gnuplot"
 
   livecheck do
@@ -11,15 +11,13 @@ class Gnuplot < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "86cc3fb83691b2ae56ecb6800597824a1b218953d67919383afa49cedca8cbae"
-    sha256 arm64_ventura:  "a9969d9124b0a9ac3c3bc5a5f19e215bc3757a34e142beb888f76cd631441f66"
-    sha256 arm64_monterey: "23519be29392ea57db23622bd5ed5cfc413c7a653bd3fd8b87f31489db326d2a"
-    sha256 arm64_big_sur:  "895fe52a242f77ee6cb9e241980f803fe35d20318bb1fa6d4628a8c9e234d288"
-    sha256 sonoma:         "f72c06e6a10f614136f4a35709270c1f4c45c9b5c32479067a3798854797918e"
-    sha256 ventura:        "dce9d5e1c207f5742c204324b9a6cb97aff7f474ffa7725da510c7c82f7970e0"
-    sha256 monterey:       "70543600a2b405793486fa519819fc8872edad5a12f0a4886e3b1d3a97ef5f02"
-    sha256 big_sur:        "ae3a916cbce4f6b4fd55c694c147cba837be988ef9a1a4bb0f6d17683bceaa21"
-    sha256 x86_64_linux:   "90328aa900398f630f6ef936f94c4c2298c3140d3146573fbca25da28813b119"
+    sha256 arm64_sonoma:   "04ca8099532e677c80a2e0dd65d2012941e5c3b53c3897f41b47c236c89129ca"
+    sha256 arm64_ventura:  "e25c05265f8d139a0b01a06bd1ea71557f170625743cd8a497496cd362817acf"
+    sha256 arm64_monterey: "3e2407a40a5424390354534912ca8d885e39cb3414dcc57f954d0911e1591715"
+    sha256 sonoma:         "6d4854f0ea469038e2bd64c99a4e04d94d1feb4672f9a67e89cad3a2f19962e9"
+    sha256 ventura:        "92b7ec37f33014601c24d3b9edc9f1c60569edf340aa10897a1d737345136b36"
+    sha256 monterey:       "c5eb8a8ebc3a532d0c42e989344eb86084d365672f5e596d7eda9e79b0075c0d"
+    sha256 x86_64_linux:   "c81d616534185dfc47a258325132b0d8f15dc4fff2661a7e1bf1468376aeccba"
   end
 
   head do
@@ -39,11 +37,6 @@ class Gnuplot < Formula
   depends_on "readline"
 
   fails_with gcc: "5"
-
-  # Fixes `uic-qt6: No such file or directory`
-  # Fixes `lrelease-qt6: No such file or directory`
-  # https://sourceforge.net/p/gnuplot/bugs/2649/
-  patch :DATA
 
   def install
     args = %W[
@@ -95,28 +88,3 @@ class Gnuplot < Formula
     assert_predicate testpath/"graph.txt", :exist?
   end
 end
-__END__
-diff --git a/configure b/configure
-index c918ea8..019dcc0 100755
---- a/configure
-+++ b/configure
-@@ -16393,12 +16393,17 @@ fi
-           UIC=${QT6LOC}/uic
-           MOC=${QT6LOC}/moc
-           RCC=${QT6LOC}/rcc
--      else
-+      elif test "x${UIC}" = "x"; then
-           UIC=uic-qt6
-           MOC=moc-qt6
-           RCC=rcc-qt6
-       fi
--      LRELEASE=lrelease-qt6
-+      QT6BIN=`$PKG_CONFIG --variable=bindir Qt6Core`
-+      if test "x${QT6BIN}" != "x"; then
-+          LRELEASE=${QT6BIN}/lrelease
-+      elif test "x${LRELEASE}" = "x"; then
-+          LRELEASE=lrelease-qt6
-+      fi
-       CXXFLAGS="$CXXFLAGS -fPIC"
-       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: The Qt terminal will use Qt6." >&5
- printf "%s\n" "The Qt terminal will use Qt6." >&6; }

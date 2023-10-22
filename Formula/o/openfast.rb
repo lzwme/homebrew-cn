@@ -1,20 +1,18 @@
 class Openfast < Formula
   desc "NREL-supported OpenFAST whole-turbine simulation code"
   homepage "https://openfast.readthedocs.io"
-  url "https://ghproxy.com/https://github.com/openfast/openfast/archive/v3.5.0.tar.gz"
-  sha256 "159bdd00d8483da77146c7a2d316e65150eee027a5a63dd1efbbbddee677e793"
+  url "https://ghproxy.com/https://github.com/openfast/openfast/archive/v3.5.1.tar.gz"
+  sha256 "94da085f1d8861a93ab32b6b39335a403d182be0b5f7ff48f63d5805eb7f2b2c"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "dd351677059a2cbeb1bbd3d6e0736f86e88a351665d73c3b1970b410eb25c225"
-    sha256 cellar: :any,                 arm64_ventura:  "3c8114d72bf6297b402e24113f948419dcdd603be737bddd6f17757fea49bdea"
-    sha256 cellar: :any,                 arm64_monterey: "08decbbe549849dc949075318d4414a16dcb6be5adaa54e160336005a15ba651"
-    sha256 cellar: :any,                 arm64_big_sur:  "02843b0d2e40c708bcf3637ef418eb774fb6aa8d67c0a83e3c79ee4ad93905a6"
-    sha256 cellar: :any,                 sonoma:         "98cf299cc763a51bab9622ba3db4f5a7f35336039d92534c7a641f78dbff0047"
-    sha256 cellar: :any,                 ventura:        "ff00385872ac1c9131cbbb0360763062c34a812f841ece0f5066b7b2145b949d"
-    sha256 cellar: :any,                 monterey:       "4f6fa51b03eda107bf2da080c957dcbba22c60a3ada674845f3e68cf4d195484"
-    sha256 cellar: :any,                 big_sur:        "252d26505307ce0e6943acc0c96663a3a69cb5421d3ebc0aa107bd94d1d8b0f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "debd0d0cbbbd5ee5895cb23157322cf38490fe7eb7f3ba0256fc8fb924e557bb"
+    sha256 cellar: :any,                 arm64_sonoma:   "256f980f1d2e0c6d577aab542ecdcf13fac4c4bf40f856370fbcd3757984b7cd"
+    sha256 cellar: :any,                 arm64_ventura:  "ecfba7bb9f597a978220a88980586c4236c1122d119efc91eb3a08100d26bdb2"
+    sha256 cellar: :any,                 arm64_monterey: "5fba6613355f1dd36fc11f15ceabcf84d8cb58dee47b64396d8d5809a51f91f7"
+    sha256 cellar: :any,                 sonoma:         "7373077cf9603a5efc17014312d38f81011bbb673e86f58046f6a5dbd91ad3da"
+    sha256 cellar: :any,                 ventura:        "2b31108043ffa95ecec322ddaa20d2497caea385ae43e102e268f489a67b3b56"
+    sha256 cellar: :any,                 monterey:       "9bd18484bf388193642065d9c19ee74364958845b6e1d8925a03352c12debe21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1bcea829334cb9a1e2ce33e0c1c04f45ef7d6583f2bee1c49c0eac93d15a9a0e"
   end
 
   depends_on "cmake" => :build

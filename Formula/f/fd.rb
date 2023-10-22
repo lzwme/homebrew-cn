@@ -1,21 +1,19 @@
 class Fd < Formula
   desc "Simple, fast and user-friendly alternative to find"
   homepage "https://github.com/sharkdp/fd"
-  url "https://ghproxy.com/https://github.com/sharkdp/fd/archive/v8.7.0.tar.gz"
-  sha256 "13da15f3197d58a54768aaad0099c80ad2e9756dd1b0c7df68c413ad2d5238c9"
+  url "https://ghproxy.com/https://github.com/sharkdp/fd/archive/refs/tags/v8.7.1.tar.gz"
+  sha256 "2292cf6e4ba9262c592075b19ef9c241db32742b61ce613a3f42c474c01a3e28"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/sharkdp/fd.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "28a45abbbbb4cd293defbbee0a70b13c87a124d86e60be390fc9bfe2f37491fb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "97281975697f4338e4ec9adca10144759323332a9976d4b52f73078d09fec55f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6714a0d1e7be8c21bfb980d76995b38a3e27a2809530d2eacd5ce6c62b96451d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "25b34d213330b2ab2e72754101acd9f77aa95ef6b2ee7909dc7df97cc06aea9b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d4f23360e49af812046dbffde428aba4f5097dffce5f4b227bb2d9fadcf59130"
-    sha256 cellar: :any_skip_relocation, ventura:        "9a0154c723baedc9bed355b282c180b62d265bd7b30413a5857cf2c17e14a12d"
-    sha256 cellar: :any_skip_relocation, monterey:       "a6bf3e9aeacb4a6e1cff103480bbb1b77fd2c5c08ba06b74cafa7a6ebc03a449"
-    sha256 cellar: :any_skip_relocation, big_sur:        "aeb2360ba43e2e508e45f0e832d53f11b4a89d209ae619af9d16f24159aafcd5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b83137db9ea1cdbe2c8af884325afca72a11a0b1e640d97232cb164028bc4ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "52d6ff0f147babfa22162f493c0cc7a97dc57b1461f57eb485c3f9dfcecd3be8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e8cae0dad642e8e9675133ffa28b71d0ac8e44d7539cd3d7b2c50de31a9537fc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5e089fd913851353ebf64ce69b19fbb5b6985c04710c3783c84778359d58d94a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c13159ca10073bc82ce3c955aa0aaa04eee6d98f0693c3eba3e4dd394acd12cc"
+    sha256 cellar: :any_skip_relocation, ventura:        "8ea4261b080f82ea6e286bddcf328e75ddff7e2cfc39c3d54329ccfb50716f75"
+    sha256 cellar: :any_skip_relocation, monterey:       "98802160ee5705eb5cf8aa5eb1478ee3bc5148073aab33eed23773cfc737b005"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "934ac23a2432d4055a59e30d88eb80af723076aad313e55625107a1e4080c931"
   end
 
   depends_on "rust" => :build

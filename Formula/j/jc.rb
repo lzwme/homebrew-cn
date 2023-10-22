@@ -3,27 +3,26 @@ class Jc < Formula
 
   desc "Serializes the output of command-line tools to structured JSON output"
   homepage "https://github.com/kellyjonbrazil/jc"
-  url "https://files.pythonhosted.org/packages/c0/06/62f18df8f03b042eea35749dc957e26d6b43f9aba3eb932c126a6aeb92af/jc-1.23.4.tar.gz"
-  sha256 "c1e86e230cd3f890953868b3016e45dd3806b8f467e24954335d433644db4df8"
+  url "https://files.pythonhosted.org/packages/34/dd/edf3143224e9f566fe982c4fa47184c2a67f439cbd3ed2edd6f3c17abd5e/jc-1.23.5.tar.gz"
+  sha256 "bba586461f5cb4b11ac8b66a5827a26f8521f1973b28b55a45049c12b720f6fd"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "37233b0b2000cba1832c7f57b4d3e822137c4d99b728558efcb5fab413267dcd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f60ba35ce1b3ea71683ce71610a2f7c857bb1488e019364e4b313aa3b9b4ce3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "67ecdba2eec1b9396f736002ee88366498cb01ea688ffc9dfa69621278470c8d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e07c53b1e47ac1330df052b205ae96b5c835839a00d1feed4d59f4849e32de10"
-    sha256 cellar: :any_skip_relocation, ventura:        "f231766d63ce0a64e37fa6a8e68f49b6febfcaf07acd5c3476a4bc34b43c189b"
-    sha256 cellar: :any_skip_relocation, monterey:       "8b17f4fdea74d7df21a11644b46efdeefccba98fcccee80f44f78db35d16432a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29cef8094611b16c79aca23937889a2409726e95f90e638aaed3c301e15b76f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3a954cf76792812527baaf04cd3cc5182e88f855ec29328553f0fd42647f5183"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc69934a298181b6daa4f0747b0d5522e7b4b83b2ff5bb7499e9305325ae8c85"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "30ecb579123b82ae0a86a19fcda47231bad112965d54bd2fea78caaa0b42ca3d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ca2aed74511cc48f3ff303a0d50902c1d5ac65679bb485e6f7f506b41919ec5e"
+    sha256 cellar: :any_skip_relocation, ventura:        "bce31a80525012be36c1823bcc27cfca5832e4142f464dbf02587720b5cae36b"
+    sha256 cellar: :any_skip_relocation, monterey:       "e49f2a9061e2b3d37777645958f48e6f2da7ad788ad780fc33842f9c7ebb9494"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d362b19b5dcf7272d9d68b60225ef2ce47bb1c73ea5c94d658525e8083b7691"
   end
 
   depends_on "pygments"
   depends_on "python@3.12"
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/de/7d/4f70a93fb0bdc3fb2e1cbd859702d70021ab6962b7d07bd854ac3313cb54/ruamel.yaml-0.17.35.tar.gz"
-    sha256 "801046a9caacb1b43acc118969b49b96b65e8847f29029563b29ac61d02db61b"
+    url "https://files.pythonhosted.org/packages/d1/d6/eb2833ccba5ea36f8f4de4bcfa0d1a91eb618f832d430b70e3086821f251/ruamel.yaml-0.17.40.tar.gz"
+    sha256 "6024b986f06765d482b5b07e086cc4b4cd05dd22ddcbc758fa23d54873cf313d"
   end
 
   resource "ruamel-yaml-clib" do

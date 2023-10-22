@@ -1,19 +1,17 @@
 class Chronograf < Formula
   desc "Open source monitoring and visualization UI for the TICK stack"
   homepage "https://docs.influxdata.com/chronograf/latest/"
-  url "https://ghproxy.com/https://github.com/influxdata/chronograf/archive/1.10.1.tar.gz"
-  sha256 "d2fb4759f4f94d81dcde5c50fece46febd7f610ee7d9373fd000d7a9986a52d8"
+  url "https://ghproxy.com/https://github.com/influxdata/chronograf/archive/refs/tags/v1.10.2.tar.gz"
+  sha256 "d8a27ec44b4422da87fcfce22adb1227adcca6515e72a04dbd28876ed232483d"
   license "AGPL-3.0-or-later"
   head "https://github.com/influxdata/chronograf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "602fe0232ff480acb80ff6cb3b31c8dbaf3bb0ce1c47402f32487b00bcd1a268"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5d26103a39387cd6d8a5274337dfa457e00c8530b70ba7ac5517537a09e1862b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d6df8eed31030398474b427f569afb3ff0360d6ba9180c4e42db83ed750b37fa"
-    sha256 cellar: :any_skip_relocation, ventura:        "4aa35bb186c11b248680c1a339b9275941233de29b1fb44e469c7a558c679693"
-    sha256 cellar: :any_skip_relocation, monterey:       "d5309c8de2da2b81da5eaa363b282e7baee913030c38e9e19defe80cd7d6ca5a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fd509ab2599058d4f1eb3e7d2564af70e6b862240d7e07ea770e389de52d3ca4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c07cf1484bb28d5abe7461afb21ffd54b3bbcb1dc6afa4afff288ca68026666"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7a25c0fb19478a91aba0d01425493570f4688706eb747322985e5460ce41a00a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9e3bea8e695c8d0cec4e82ebf5ea5a4a1087c07e11fe63560b053cbcd58191a9"
+    sha256 cellar: :any_skip_relocation, ventura:        "988b458e02d84790b924e821fd3b8811c1dff0abde7b7889e16addef16b94f01"
+    sha256 cellar: :any_skip_relocation, monterey:       "bf9ba175b2a8cc8667d5d87896b4451191d6e7a97815b590f99b3eb6e0d59ad2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "60df6e8ac060c779920a4dd7e4b2bae17bbed21a05f976875089fe16f7c11744"
   end
 
   depends_on "go" => :build

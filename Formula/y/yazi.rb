@@ -1,21 +1,19 @@
 class Yazi < Formula
   desc "️Blazing fast terminal file manager written in Rust, based on async I/O"
   homepage "https://github.com/sxyazi/yazi"
-  url "https://ghproxy.com/https://github.com/sxyazi/yazi/archive/refs/tags/v0.1.4.tar.gz"
-  sha256 "991f8621cf6f362d0c22cd598a434b6fb42fb7e9fde4c2f678297f9ac4959d36"
+  url "https://ghproxy.com/https://github.com/sxyazi/yazi/archive/refs/tags/v0.1.5.tar.gz"
+  sha256 "cfaf32fe58f68b7532f33b2a60e9507939ee54e32164db051357e059c553afec"
   license "MIT"
   head "https://github.com/sxyazi/yazi.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "47238030562f56a8b8c8d113c5c266d23d893ff85084a43a2c70f3053de945ae"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "301b1c8fcb96c2b952be3362878dee3ceb534e2d04126027348211e04abee9eb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7057f16963dcb9d11c2a24a99755460bf8e7098bffe16f5a96d58c075958a2c4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "280d30ce1cc37b618540bd93f60211847e81b3e6274c4083120d95c8be50b25b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "095b051f4f4a57c8c67ac8fcfff1c8c2714a31d33917f9fa99b52bbc6d3c43ed"
-    sha256 cellar: :any_skip_relocation, ventura:        "751a62e7215323685c5b66986da52d68556a6751b7d802cb81237fe9c6cd7b12"
-    sha256 cellar: :any_skip_relocation, monterey:       "fdca4277149409056ab9def139e5d87ddf11c4a6ee167978f4fc61e1f2a7eeca"
-    sha256 cellar: :any_skip_relocation, big_sur:        "07280d1a9341eed2646d316b340880c5965f948b318aaa872404584651e1cb35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "406dc52a16ce8b2de137c1ab866dcbdb3e55133db21299535941df76384550de"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b50744b72dcb5c074d7bdda8b19724e48ee656a810955d7f4318791d6ae300e1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5be8049f6a9422adcccdf8b4c91d8340a569e94693bb95668a1f8e7436b5714b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a3676e95614db729138473147498ed5abde5558e06b8dffa2cb7cc631cfcb66b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "68c0028ac63869139707253d19da55f573c263c4f91c448fd21c67c67b5d02d6"
+    sha256 cellar: :any_skip_relocation, ventura:        "762ce4a801525ed8ef8f0cf22ac319e556db0b2ce9ac54d7446ce3240d2ff880"
+    sha256 cellar: :any_skip_relocation, monterey:       "ce424d94681c839c467b0e5a98a8cafc06d11b2e522df31e15708cd086b318a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "425962eb6f2d7d52c2272931726d19af6461342878f37bb4ff114817ba061c97"
   end
 
   depends_on "rust" => :build

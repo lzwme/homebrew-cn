@@ -6,13 +6,8 @@ class ElixirLs < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8a8aa1474647e30e5e1ec2f4c007881f3d6f6937e929a9a13d6a12ee75a72607"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "54589f156f0cd73a7e9138cb22118ccd97eb70e98bf4cf4889e75d36d25434dd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a6b3f18dd14e39009c3346ea4392f010fd587cc880db513aab9e586d11425b0a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "441e5bcce12575597b33c54848f3ab9daf99bcfd79a3868c62c8b6d459d9e80e"
-    sha256 cellar: :any_skip_relocation, ventura:        "1d85fabfa9c6e16e9460aaf639ded792e188e4b18d54e51babb709b4028c2cee"
-    sha256 cellar: :any_skip_relocation, monterey:       "d471fa3d718c462f482531f729fe6e0bdc6d0e5060737c74db58ec24b3d6b30b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3584eca7260ebfd081fd2563ba5e84d6cc3fe52f097960e36e4c04827d152feb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "bd14a2884acd5e950babdf061e2d68c74e22e8911d069a864de0ae79c9ca3999"
   end
 
   depends_on "elixir"
@@ -24,7 +19,8 @@ class ElixirLs < Formula
     system "mix", "local.rebar", "--force"
     system "mix", "deps.get"
     system "mix", "compile"
-    system "mix", "elixir_ls.release", "-o", libexec
+    system "mix", "elixir_ls.release2", "-o", libexec
+    libexec.glob("*.bat").map(&:unlink)
 
     bin.install_symlink libexec/"language_server.sh" => "elixir-ls"
   end

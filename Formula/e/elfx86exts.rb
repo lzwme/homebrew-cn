@@ -1,8 +1,8 @@
 class Elfx86exts < Formula
   desc "Decodes x86 binaries (ELF and Mach-O) and prints out ISA extensions in use"
   homepage "https://github.com/pkgw/elfx86exts"
-  url "https://ghproxy.com/https://github.com/pkgw/elfx86exts/archive/refs/tags/elfx86exts@0.6.0.tar.gz"
-  sha256 "976f845635f08160c1330f3e70fd9b61bafbc26c76577bd278a7f2e8513d4130"
+  url "https://ghproxy.com/https://github.com/pkgw/elfx86exts/archive/refs/tags/elfx86exts@0.6.1.tar.gz"
+  sha256 "64b218bbddabd1484ecb092f4e55a7fc6095b18e76170cff2d391822c91b7ce9"
   license "MIT"
   head "https://github.com/pkgw/elfx86exts.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Elfx86exts < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c716057d907972efaeca5bea46c37b55cab430c1bc137ad0e13598824c0c9d82"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5a0554a17a80005a128712f2d36bf76937e6fe8c6e251924df4675d1d254826e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "814b6a9eafe0ba01113f321ff3422b0a0b548ced73990f0bcd1536a892b93e88"
-    sha256 cellar: :any_skip_relocation, sonoma:         "49652af634ddcdc92910dfa7b5ce9732d96e1314285b3263247c49721da35db3"
-    sha256 cellar: :any_skip_relocation, ventura:        "53ae0ee4d79ac9da52afd2889ac36e8b2dae183b99445d3b0d6f2ab8abef155f"
-    sha256 cellar: :any_skip_relocation, monterey:       "afd45d57a6586a7c6551a5e8e64bce951672aba684066e2eb0136077410b88e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e3a46896ba36346c6338838c2380ccb3cdf26c23cb796bbe95d3a7bf95434b5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "73b494a5b906d4dd12879622dd51f8b5b781c4d45ba59991eaeabf1b0b247d80"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5dcd1d75a9e8f897faa804e16bf979c5fcee55e5f56c1d3006794f0c5d551d8d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0c657b8e8829c4637ce4df5d33e24d2a7a1d6c0211250989ca80f4a9b1d644db"
+    sha256 cellar: :any_skip_relocation, sonoma:         "69c8b6bbd323fd4687a86940f8a134994a0e2138619b9b093d9e4e24d50b7203"
+    sha256 cellar: :any_skip_relocation, ventura:        "4aa7430eec235cb5f83d1448c2a2b8dd831da214ed3282289408f53ab7ba62e5"
+    sha256 cellar: :any_skip_relocation, monterey:       "7327c27537ac203c900d266f0f2f89f910de5640753b0b59137ff3376c808917"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "893c4936e95086dab4b7da3455a6ebf4a1c8ede630858a3a329548d5ecb851d5"
   end
 
   depends_on "rust" => :build
