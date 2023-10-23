@@ -63,9 +63,12 @@ class Gpredict < Formula
   uses_from_macos "perl" => :build
   uses_from_macos "curl"
 
+  on_linux do
+    depends_on "perl-xml-parser" => :build
+  end
+
   def install
-    # Needed by intltool (xml::parser)
-    ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5" if OS.linux?
+    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5" if OS.linux?
 
     if build.head?
       inreplace "autogen.sh", "libtoolize", "glibtoolize"

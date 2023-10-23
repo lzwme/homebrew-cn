@@ -4,6 +4,7 @@ class HppFcl < Formula
   url "https://ghproxy.com/https://github.com/humanoid-path-planner/hpp-fcl/releases/download/v2.3.6/hpp-fcl-2.3.6.tar.gz"
   sha256 "17b7aa65d942168b44ca4ad17be28454aef50729867034021d7789a122dce6a7"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/humanoid-path-planner/hpp-fcl.git", branch: "devel"
 
   livecheck do
@@ -12,13 +13,13 @@ class HppFcl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "feef6968977b06720c55d0533ec7bf1ca70f7aa0a8b51676424a969b938311cc"
-    sha256 cellar: :any,                 arm64_ventura:  "f4ab492b7f4827669355078e6aeb2265498c77e9c54a13f506f03a753c37ecd4"
-    sha256 cellar: :any,                 arm64_monterey: "43bab3395409fc372fb25d4de2e410ee93424b66b89e3ad17f142419d44de996"
-    sha256 cellar: :any,                 sonoma:         "251c14b38f5170ba770d0df667593a8c3c16f7af7a089e6881a9516933e296d8"
-    sha256 cellar: :any,                 ventura:        "1a2f61c00c5ffab58b80483db6b0f7517e273ec40285b9e574a651647adf5677"
-    sha256 cellar: :any,                 monterey:       "d01612c9e3977ed2b6889bd74a0aefcfba2e83a3b65474dc1ff6b2c8f2593bee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "19299ba8ac8ce7818337cbed5f502c8818c0016d409b485713c66894f0d415d2"
+    sha256 cellar: :any,                 arm64_sonoma:   "9c979d5cfa38e91c9ceba35e1ff22fdf120c57f0110b2b487bd481e9d553ea3a"
+    sha256 cellar: :any,                 arm64_ventura:  "0357cf3cbe5d390f1b522544d34dc43f769bf41ef2610215d0254dfab74c090e"
+    sha256 cellar: :any,                 arm64_monterey: "eaf32066fba97c74646360a3e5e2ed22b7520b36e4de7d6047afa301077a2cfc"
+    sha256 cellar: :any,                 sonoma:         "4041d9ac1b2281e8cd7ff1eece54d1ca56728faf38599e479969b3efe8e1f8b3"
+    sha256 cellar: :any,                 ventura:        "ced5b0043d61d3950e999a98232bea374107543b766d207dea837083802b61dc"
+    sha256 cellar: :any,                 monterey:       "b0bf47d12a19211f3efa995a791e6aa44e7c52b68f2b3598adc4c35e80827098"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11d87805ba57abaf948fa9d5f48495037fd84ad48c275b177dd2abc03beee52c"
   end
 
   depends_on "cmake" => :build

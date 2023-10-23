@@ -4,7 +4,7 @@ class Redex < Formula
   desc "Bytecode optimizer for Android apps"
   homepage "https://github.com/facebook/redex"
   license "MIT"
-  revision 12
+  revision 13
   head "https://github.com/facebook/redex.git", branch: "main"
 
   stable do
@@ -38,15 +38,13 @@ class Redex < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "eaafdcc35fbb70517593e3944edb35bbba69f23884c6757a580b3ad352eafd1f"
-    sha256 cellar: :any,                 arm64_ventura:  "e25e28b448f6d3123a3ac849ffac1d88967cd02411bd85ed44e3a159085ba096"
-    sha256 cellar: :any,                 arm64_monterey: "5a4a62ced9c73a9186cb2837a31880504ba64e237e0a8060751176fe3652632a"
-    sha256 cellar: :any,                 arm64_big_sur:  "701f5020ad8a3a72cd7f1de913af4f4404a881a1399196ebd1468164126fe363"
-    sha256 cellar: :any,                 sonoma:         "8f6a1ced2dbd16ae8d2572c5381fbedb710e6f42921aa1ecbecb3e6ca49db136"
-    sha256 cellar: :any,                 ventura:        "e7ab3fc11cd1620b651767594eee62e7db9c06e0419e32ac1df5a92a3e34d79c"
-    sha256 cellar: :any,                 monterey:       "97e06d7df13ac4e0ee46c295c6d28c0d19888173eee06d3f2e30a9d9b2b3fcb4"
-    sha256 cellar: :any,                 big_sur:        "2dee5174ab23e7ff88913a599b63766db149848ded87f2645e976a7f3ce0fffa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2dfb3c6830b5a9b646e2739d446611ba476ed3c86402dbf160f11fa0f9f4de07"
+    sha256 cellar: :any,                 arm64_sonoma:   "5432d337825371686b4021b8898003c75505c4a09b0b5afe37ad9104843d7ba4"
+    sha256 cellar: :any,                 arm64_ventura:  "6bdf687aef61253b280936c81bf9c8b8fcc0ec830087885973ac836c29e1fe8f"
+    sha256 cellar: :any,                 arm64_monterey: "bc02b64093d49159e8a92bd83df951b7e099563c43dafba3765db81c5e4722d4"
+    sha256 cellar: :any,                 sonoma:         "95af337e88269e9dc187bab2bb8b3cd3588e36fdb6591fca58e6a6b364ca4f91"
+    sha256 cellar: :any,                 ventura:        "8fee121096aea10a76db45b4db03fb91426623e5460c5889c8d3d05dc285d5e7"
+    sha256 cellar: :any,                 monterey:       "f2e979f03d9e3882bfcc3fd46b2ba9e327ad0e118609f813a1959338e96c448d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "37698a87c862ca311ed5b2fc5c182e225891ddc67f3cd089d349ae6675bbf9a2"
   end
 
   depends_on "autoconf" => :build
@@ -55,12 +53,8 @@ class Redex < Formula
   depends_on "libtool" => :build
   depends_on "boost"
   depends_on "jsoncpp"
-  depends_on "python@3.11"
-
-  resource "homebrew-test_apk" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/facebook/redex/fa32d542d4074dbd485584413d69ea0c9c3cbc98/test/instr/redex-test.apk"
-    sha256 "7851cf2a15230ea6ff076639c2273bc4ca4c3d81917d2e13c05edcc4d537cc04"
-  end
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
 
   def install
     if build.stable?
@@ -92,6 +86,11 @@ class Redex < Formula
   end
 
   test do
+    resource "homebrew-test_apk" do
+      url "https://ghproxy.com/https://raw.githubusercontent.com/facebook/redex/fa32d542d4074dbd485584413d69ea0c9c3cbc98/test/instr/redex-test.apk"
+      sha256 "7851cf2a15230ea6ff076639c2273bc4ca4c3d81917d2e13c05edcc4d537cc04"
+    end
+
     testpath.install resource("homebrew-test_apk")
     system bin/"redex", "--ignore-zipalign", "redex-test.apk", "-o", "redex-test-out.apk"
     assert_predicate testpath/"redex-test-out.apk", :exist?

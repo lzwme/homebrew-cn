@@ -4,18 +4,16 @@ class C10t < Formula
   url "https://ghproxy.com/https://github.com/udoprog/c10t/archive/1.7.tar.gz"
   sha256 "0e5779d517105bfdd14944c849a395e1a8670bedba5bdab281a0165c3eb077dc"
   license "BSD-3-Clause"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "09dd4f17134af1c7713a83287ff40aff88d4453bbb3c9d4e519da8b5f0f08862"
-    sha256 cellar: :any,                 arm64_ventura:  "144e7ec64d19feedfe7e3854a0897f5a5b2da0eb048fb548f1fbcdd4efa65b47"
-    sha256 cellar: :any,                 arm64_monterey: "9ef90eca2b3e0ff042a64f03512ca48a48f6ed32202b01ac9600446d9ccd49ff"
-    sha256 cellar: :any,                 arm64_big_sur:  "2fd469a1817d4d374970f452cdeaeec7ae048b113a32acffda510207c3c8f407"
-    sha256 cellar: :any,                 sonoma:         "8e88f418693192b971244cd40bce437326a78e632d1cd475e766e22003b8c662"
-    sha256 cellar: :any,                 ventura:        "9129f50c43f2d6740aa081c9746c86c6ff83b8c61ee02b2f684e5843237f5421"
-    sha256 cellar: :any,                 monterey:       "c97f2ee507b1e1dbe0ce3349644c061ba512bae6fe47c4de50b70d5f928eb1d1"
-    sha256 cellar: :any,                 big_sur:        "f3eebbb5b5e070925ac4b1e353e21b977b57a64b40565e4aea59b2b534e66f46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c6bc31979972be1e242d28708be6a0041fb48417dd4078f0075e52eacaa2226"
+    sha256 cellar: :any,                 arm64_sonoma:   "3bbd6fd6d50ef43f5397e84496db5cc8f6cf5302130de7956516d9cc8d37a199"
+    sha256 cellar: :any,                 arm64_ventura:  "7306ba4a05eeb7969901d53d2ee18febbee1e9cc7463d89d945ff7eee34887c5"
+    sha256 cellar: :any,                 arm64_monterey: "588e977a224a004d26dc7db65d188068351d083ea26295560de6f2da1d1147a3"
+    sha256 cellar: :any,                 sonoma:         "e4f02c6b980a0a0e50570df5c4916b467a5d1da05462500f81642ab7e9b7cb02"
+    sha256 cellar: :any,                 ventura:        "a7e87a9ac487a9cd60779974608732f5ddc86bc2afdeae0c79a385a1ac92cbf4"
+    sha256 cellar: :any,                 monterey:       "75bd5a76ffc3a70274f1ba370ebb3d06d17c1a92589cc8e09d50bdd096b8436e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2edc116a10083ea04381986a30741553688507a84e935c4b5659dffe815f0ac9"
   end
 
   depends_on "cmake" => :build

@@ -6,14 +6,13 @@ class Profanity < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "767e78c8d0f0edfac622aa21facbf37f6fb26a0e3751569cac48df24b9223786"
-    sha256 arm64_ventura:  "8d5cef943b569c324bfa8de07fa5770ca0ef932ce3feeae68cf25d3f08ed8631"
-    sha256 arm64_monterey: "8a1b33ced9dc9a01ff881753f9bcc60cef4a3117183bcb27c5571ebfdc908bec"
-    sha256 arm64_big_sur:  "eda1ac7caca301457e9af1d70c68282098d59f02c417c31b7168cc19bdf1171a"
-    sha256 ventura:        "c3dd576320d0639dd3c2ce4641aa5390e52e22ec429828798cde4fec1cd07b7d"
-    sha256 monterey:       "f2802b8a422f883cdb68f89d5dd9550dad5861840343f729b6ef202a6a91e0a3"
-    sha256 big_sur:        "2b5e313f5cb796cd54e2e0edeffbefad53881cc63233c57c8b3be7b7662a99f4"
-    sha256 x86_64_linux:   "073f126f659a24c7e5ca76fc0dafff472f98a131802cb6537a1133c45408a0e6"
+    rebuild 1
+    sha256 arm64_sonoma:   "244bfea9088b20382b2fa6d094b207f711dd0519e157b6fc9ae94f2da6011478"
+    sha256 arm64_ventura:  "5b0b3b659be206020c43262e5afecb2c4c028b5349ea92fe04ef91973f56232c"
+    sha256 arm64_monterey: "c9850c6da8adc21e93fed0410bf2dd1a508e26530260c0a357c4d8ef8a350b88"
+    sha256 ventura:        "c8e2c1ee834cbb44c56c43b0cb32b4ac01815b0cf8b9a84daaaf707ac8f9dfb9"
+    sha256 monterey:       "ba6a50ab342e1108ff971a101ed33c96a00dd437391b8e04b49629a7833a8bdc"
+    sha256 x86_64_linux:   "3e71d2099b2aacdcffea417afbfb1f0e0058ffc325ab17880c79c4080afeb971"
   end
 
   head do
@@ -33,7 +32,7 @@ class Profanity < Formula
   depends_on "libotr"
   depends_on "libsignal-protocol-c"
   depends_on "libstrophe"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "readline"
 
   on_macos do
@@ -41,7 +40,7 @@ class Profanity < Formula
   end
 
   def install
-    ENV.prepend_path "PATH", Formula["python@3.11"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["python@3.12"].opt_libexec/"bin"
 
     system "./bootstrap.sh" if build.head?
 

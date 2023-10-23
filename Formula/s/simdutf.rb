@@ -1,8 +1,8 @@
 class Simdutf < Formula
   desc "Unicode conversion routines, fast"
   homepage "https://github.com/simdutf/simdutf"
-  url "https://ghproxy.com/https://github.com/simdutf/simdutf/archive/refs/tags/v3.2.18.tar.gz"
-  sha256 "c4910a05100f9fbef710d732f626f58e21c6d896bc940ef81d061803f2ec76ee"
+  url "https://ghproxy.com/https://github.com/simdutf/simdutf/archive/refs/tags/v4.0.1.tar.gz"
+  sha256 "8e78866e2a3a77e6a6cd5a27a6896d5cde46a4609c10a562d8487d6b4c1dcf8b"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/simdutf/simdutf.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Simdutf < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "a828eb98ed1522227dbbe299d4c0c21dac74f2d27614d33bec4f0651a9c222f0"
-    sha256 cellar: :any, arm64_ventura:  "0ba08f0fc2bc14b63bbcf6cc75fa90306243974e9a7e27d3d2d7e05d9ca3f0a8"
-    sha256 cellar: :any, arm64_monterey: "177e31f95d22a4623230c7ee96110d8cdd1ba623c509ab95f942aa081c9cb030"
-    sha256 cellar: :any, sonoma:         "79641dc40c1649be5b3b9eabec7675c8a21531aa6ac2402be2bacd329a12d35b"
-    sha256 cellar: :any, ventura:        "eba5bcbc5d9757e4872c213555c0b173cfefb102685404dbe604329f1de02890"
-    sha256 cellar: :any, monterey:       "8a87e3cce90f4d7774f50b8342ba99a547b32d791b8e3967f9fc97a6ecddd89f"
+    sha256 cellar: :any, arm64_sonoma:   "c429d410be11bf5d4eecc8604843cf7435f64363c69164b52f725e2e34dde466"
+    sha256 cellar: :any, arm64_ventura:  "5e171791519538e30e060ec098d23b27c7fce71ceb868b524e92144ec2940089"
+    sha256 cellar: :any, arm64_monterey: "b751bca90566354d805cd2979ae80800235b9c5f5320e90f18c701339fc707dc"
+    sha256 cellar: :any, sonoma:         "7442bd55fa5f87f9f85590cc42bcebce82206ac226f6c4411931c5630ca9d5b5"
+    sha256 cellar: :any, ventura:        "697c4c0d4c37d6b38033c86033acffe1d20cd544c8292c3bf367c9fcbe5d22ab"
+    sha256 cellar: :any, monterey:       "f495c5f46a815ccc1756f87b750a1cfc819328d3ea76ea17b68f055e44c89fa8"
   end
 
   depends_on "cmake" => :build
@@ -26,7 +26,11 @@ class Simdutf < Formula
   depends_on macos: :catalina
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DBUILD_TESTING=ON"
+    args = %w[
+      -DSIMDUTF_BENCHMARKS=ON
+      -DBUILD_TESTING=ON
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     bin.install "build/benchmarks/benchmark" => "sutf-benchmark"

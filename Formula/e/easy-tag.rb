@@ -19,6 +19,7 @@ class EasyTag < Formula
     sha256 x86_64_linux:   "2990dcdd7b0c5eb9c23aa7bb3af2720d8ead25ef00ae9d2f6edf5004d32526e1"
   end
 
+  depends_on "gettext" => :build
   depends_on "intltool" => :build
   depends_on "itstool" => :build
   depends_on "pkg-config" => :build
@@ -37,12 +38,16 @@ class EasyTag < Formula
 
   uses_from_macos "perl" => :build
 
+  on_linux do
+    depends_on "perl-xml-parser" => :build
+  end
+
   # disable gtk-update-icon-cache
   patch :DATA
 
   def install
     ENV.append_path "PYTHONPATH", Formula["libxml2"].opt_prefix/Language::Python.site_packages("python3")
-    ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5" unless OS.mac?
+    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5" unless OS.mac?
     ENV.append "LDFLAGS", "-lz"
 
     system "./configure", *std_configure_args, "--disable-schemas-compile"

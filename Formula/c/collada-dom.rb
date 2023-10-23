@@ -3,19 +3,17 @@ class ColladaDom < Formula
   homepage "https://www.khronos.org/collada/wiki/Portal:COLLADA_DOM"
   url "https://ghproxy.com/https://github.com/rdiankov/collada-dom/archive/v2.5.0.tar.gz"
   sha256 "3be672407a7aef60b64ce4b39704b32816b0b28f61ebffd4fbd02c8012901e0d"
-  revision 6
+  revision 7
   head "https://github.com/rdiankov/collada-dom.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9235146a1aa84c38133fbcd3677737d92d5243877899dff9e02728e2eadda939"
-    sha256 cellar: :any,                 arm64_ventura:  "4d09b42ccb15cc1ea1387eca3ea1e2c16fecaddc33a482fab5a4030d67b73ac7"
-    sha256 cellar: :any,                 arm64_monterey: "8e6113955d8a7190e773d71851152d9957a75e2d3bf1153ec056af0190cde261"
-    sha256 cellar: :any,                 arm64_big_sur:  "a392f8f5c3055ba99b094be9e57d791c3284276c10fbebc9c0e73d56bb33edfa"
-    sha256 cellar: :any,                 sonoma:         "ea24f8c02813877d90090f00f161a8fbb05e65944e2162d6ff8ed1749850dc2d"
-    sha256 cellar: :any,                 ventura:        "ac8dcee133cf2923bc6e508974ae9950944d6f9bf22a821cb5447ad8cd7c800e"
-    sha256 cellar: :any,                 monterey:       "848905d73d077fa02c7ca62bea14bc104febaf0a64e765e9fa19235c97114e3b"
-    sha256 cellar: :any,                 big_sur:        "1d537d126e8d473e20015670d0e218480c416d8592027ffd90e9714ab693c7dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "86dc502cb34113b167e7fbb9a63837a373bd76cff2fc007c3c00b63e89f78819"
+    sha256 cellar: :any,                 arm64_sonoma:   "15aa656e045954f1c843adfdcf67fb48ca3ba1bcfc05bc2a98e2a0d3b18512dc"
+    sha256 cellar: :any,                 arm64_ventura:  "55d77e055d62389e516eec15f0eccba903bdcd12bd9d1814c1683f6eec865044"
+    sha256 cellar: :any,                 arm64_monterey: "450a588e8483de8ef7995888fc41f49927ec8702dd65183949184f8a7e5dd0e4"
+    sha256 cellar: :any,                 sonoma:         "b562c6c1f54045dbf6aaa20e0132d181d567eb9f4317fe68bbb05cc21b29d9aa"
+    sha256 cellar: :any,                 ventura:        "89aa983d8b0dfa007392027d80f3a358a0e6205cc596d817983e50c5bef85cb2"
+    sha256 cellar: :any,                 monterey:       "7deaeeaf0cc73e1b657c527fa4e658d82942816fe64e676f69856308caaa7d4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "baaa30ccc9d1bf80a9cf686f1dcd35daf6dd7db3e3df090c34238bcd0eeaca59"
   end
 
   depends_on "cmake" => :build

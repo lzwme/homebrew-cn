@@ -3,19 +3,18 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://ocrmypdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/87/a1/20917b9b0c30f1dc57495409b8e4e0d12966d1bda8b7fe21f6939f54ea6f/ocrmypdf-15.2.0.tar.gz"
-  sha256 "4f618e555e607b4dccd45bcf3943d5a526f357002367d5c34b524853922a5bdf"
+  url "https://files.pythonhosted.org/packages/36/0f/81ba4b490b4a0f565ca219ce748c317a0bd3776cb30084efbb83792ece99/ocrmypdf-15.3.0.tar.gz"
+  sha256 "70be7e01ea8ff33037230a8dfc189185e12258b692a7013d10d2a42ed85ba0d0"
   license "MPL-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3f39ff1d94b40b1e79e0b93831b20d9eb1fb29641c15a7b5697581e923988b62"
-    sha256 cellar: :any,                 arm64_ventura:  "6d7b620db87846a81ff854b2c8042aa0b9ef536176ba32487b5ca3e9b5953e6d"
-    sha256 cellar: :any,                 arm64_monterey: "fd6c5f76445c56effd22dad38cdec6267e3c4be3d0e50d5080aeb2dd8d50c752"
-    sha256 cellar: :any,                 sonoma:         "92aeee6690daeb3437aed8ac4de690c4eaf8f94c332ff1c0d61624bc16207d41"
-    sha256 cellar: :any,                 ventura:        "8f4a32f7787b967112d007a8988a97ef3cbd85a9acba2351bad1fd8a51c61d97"
-    sha256 cellar: :any,                 monterey:       "5fdcecc09b1fc2360f55e59bc441432944ec7153fb2b1f5b68fb36548dbf7707"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4c8610781bcbee52d0595f62784b0e424d30d5fee477b6f149442835dce4fdb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fccb3e7efc355ae52f245e964a98a354e5093eb7307babb121d037151a0ad43e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b29f505894e02472edb9ed2b453806d70a1549c972abba7b1d41ead7d3663e4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e3a2415616de817aa16ce1f5a4e8e57d32df96eafcf9d5c89f5ff34955ff7e44"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cbe5448150d85e85a689214d1ac96f22331705efd12e4655417453b4b545dd26"
+    sha256 cellar: :any_skip_relocation, ventura:        "d97aec65012e2b29092107fe57b6744b7b0a9a6b260ae6c5b0af277f2c08ad32"
+    sha256 cellar: :any_skip_relocation, monterey:       "f7a5c248476229509766d726c759550e022a112d6f1b3690c475466aa46822ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5cb0167852b060b64b3dee6fd6a0a0264a91f334ecfb62d322f7691237d645cb"
   end
 
   depends_on "cffi"
@@ -46,11 +45,6 @@ class Ocrmypdf < Formula
     sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
-  resource "deprecation" do
-    url "https://files.pythonhosted.org/packages/5a/d3/8ae2869247df154b64c1884d7346d412fed0c49df84db635aab2d1c40e62/deprecation-2.1.0.tar.gz"
-    sha256 "72b3bde64e5d778694b0cf68178aed03d15e15477116add3fb773e581f9518ff"
-  end
-
   resource "markdown-it-py" do
     url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
     sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
@@ -66,19 +60,14 @@ class Ocrmypdf < Formula
     sha256 "8448ab7b939d18b64820478ecac5394f482d7a79f5f7eaa7703c6c959c175e1d"
   end
 
-  resource "pikepdf" do
-    url "https://files.pythonhosted.org/packages/10/44/27ab858d600b2196b6699dd854f2439826348fa62c305d83bb799b929bf9/pikepdf-8.5.1.tar.gz"
-    sha256 "f1a1de1a241912f96cb202b7ac28b4bc229d66c8bdf08d8dc25144f155adf653"
-  end
-
   resource "pluggy" do
     url "https://files.pythonhosted.org/packages/36/51/04defc761583568cae5fd533abda3d40164cbdcf22dee5b7126ffef68a40/pluggy-1.3.0.tar.gz"
     sha256 "cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12"
   end
 
   resource "reportlab" do
-    url "https://files.pythonhosted.org/packages/10/ec/4a423a97e53399c05889cd12f789ab9175f2498c77b47cc006b6482b71c1/reportlab-4.0.5.tar.gz"
-    sha256 "9c68f277736f585c5c9938755b826dd57c877fcaeb203e21cefea12b3b1db4f5"
+    url "https://files.pythonhosted.org/packages/74/dd/5931d75069458bd39d921fcb157061e9436e169a2e3c47ad9f15cf37f52d/reportlab-4.0.6.tar.gz"
+    sha256 "069aa35da7c882921f419f6e26327e14dac1d9d0adeb40b584cdadd974d99fc0"
   end
 
   resource "rich" do

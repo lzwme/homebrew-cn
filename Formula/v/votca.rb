@@ -4,18 +4,16 @@ class Votca < Formula
   url "https://ghproxy.com/https://github.com/votca/votca/archive/refs/tags/v2022.1.tar.gz"
   sha256 "4710a7552f94789936324d76d2e0830b576de8d3f1c605748e2d20947d018100"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "04b9715c8b76a72d8996a0f6265a905b17b7ddeca633f7dce4d0ee0ca446d408"
-    sha256 cellar: :any,                 arm64_ventura:  "ad34a8fdf13c83d4cf4ed6ee1aad28bb6161f4cc438f81b340cecfb4ac5c7ed3"
-    sha256 cellar: :any,                 arm64_monterey: "0784db80c5bc27862a3ba49f00d62c805ec18744261639e396886eae1b49f555"
-    sha256 cellar: :any,                 arm64_big_sur:  "5fab23c3eaaddf5f2925d59faa696892bc87cd6a9e8773d0e15ede3888b5a798"
-    sha256 cellar: :any,                 sonoma:         "0991d9164ab91fd31635efc7358a4082da329720d5557a25532779b0c74d67d7"
-    sha256 cellar: :any,                 ventura:        "ea91a1fb5731bd55db8c3fe18fcfa9ac960123b467b5e584ee74e1122310da42"
-    sha256 cellar: :any,                 monterey:       "42ec271c4ae0624818a3d0b121c64e7fb51bc1aaee27ac967e56579d7b5f9346"
-    sha256 cellar: :any,                 big_sur:        "ec1350082099bef7701d08a0c9015f900a356bbe97c3d907cec9b28f0313a020"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2acf1dbc9533e8d317ff5215f37f3a336177d6b28f30718c335c6dafb954847f"
+    sha256 cellar: :any,                 arm64_sonoma:   "c8126c7eb7617240a3f291d78384cc44af121918c16489382da872e22213f398"
+    sha256 cellar: :any,                 arm64_ventura:  "9a56a34972be8b73f1141b627cf70589ea122cadeb19460cca669d08543c3f7a"
+    sha256 cellar: :any,                 arm64_monterey: "d163159437e27a790e08199bb9a67a50df1d9b64e63921621ffaaf6549d0ef83"
+    sha256 cellar: :any,                 sonoma:         "a8b179826b75eb7e537a59dd6396f0d175afc5561bdd50b87883828fd47d2fa4"
+    sha256 cellar: :any,                 ventura:        "2498e39368dc9a7d006b91694b52bd84d83dd03268036c1658ec8d54c16e964d"
+    sha256 cellar: :any,                 monterey:       "8cb9d1b8da668edd05806c9138aabd9591b24bb5ce79d174d04cf0e2800edfaa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc8137cbcfd0b47d74f39fc02ce7fc8412be8f315cef2df27274c35912f2c566"
   end
 
   depends_on "cmake" => :build
@@ -29,12 +27,19 @@ class Votca < Formula
   depends_on "libecpint"
   depends_on "libint"
   depends_on "libxc"
+  depends_on "numpy"
   depends_on "python@3.11"
 
   uses_from_macos "expat"
 
   on_macos do
     depends_on "libomp"
+  end
+
+  # patch for boost 1.83, remove in next release
+  patch do
+    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/81862a091ac2fc2df5c5d79a28bb95fee0a67e7c/votca/boost-1.83.patch"
+    sha256 "c0701fd6a86b2227a4b3af5af296cddf6e40c48d4f118cb23f2f104b4d334a15"
   end
 
   def install

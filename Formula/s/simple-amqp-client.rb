@@ -4,19 +4,17 @@ class SimpleAmqpClient < Formula
   url "https://ghproxy.com/https://github.com/alanxz/SimpleAmqpClient/archive/v2.5.1.tar.gz"
   sha256 "057c56b29390ec7659de1527f9ccbadb602e3e73048de79594521b3141ab586d"
   license "MIT"
-  revision 5
+  revision 6
   head "https://github.com/alanxz/SimpleAmqpClient.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "abffd0c722c6a6f8d136305108cda167ea3727c0b669328bc0b7556c8a4add9b"
-    sha256 cellar: :any,                 arm64_ventura:  "08254107e1722e12718b480db1dbf6de07197827921a78becfe322d0f9eebe68"
-    sha256 cellar: :any,                 arm64_monterey: "8b276e2dcd1d156db170e63af4b947ce370e87c511808810ae1a8dbd3c7c74b4"
-    sha256 cellar: :any,                 arm64_big_sur:  "6eb50b2ded72ece524376758aad62fcfa41001e07f7c118800494d23302b968e"
-    sha256 cellar: :any,                 sonoma:         "93934db62e46111b2a1c4c1201c23833caf8c77fe13c58d1c08862785a5d9841"
-    sha256 cellar: :any,                 ventura:        "96b8108c180fa64cac43b882cec0bb675b4e029170beeb60b034cc137f7cfe3f"
-    sha256 cellar: :any,                 monterey:       "0266a55c8bc15714604fd6ed646a6e3e4254cf3204db8044b12c2a8b93f50be4"
-    sha256 cellar: :any,                 big_sur:        "e453369d97ecbe31463b1bb86f4b9ab9c0bb1082f0c9f44eb1e15f5700fbc642"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2dddcb4edfe7fb23b493c2ccb330b7a68c802d8996ee34170c6f529341f919aa"
+    sha256 cellar: :any,                 arm64_sonoma:   "f6bd6bf6f3d8d9d8de51f542da48e4969953e00feb39fde3bb8f47ae85727140"
+    sha256 cellar: :any,                 arm64_ventura:  "87541854d6127e353f9520e65150b53f9dc08906786b06fdad0dd14dc75feb4e"
+    sha256 cellar: :any,                 arm64_monterey: "287fc84fbaece2eb235aa040f4dff6ffc6c9c95bbaf57c306e55a2d93ce85416"
+    sha256 cellar: :any,                 sonoma:         "99702fa54ac07f44fc2f02a17e8684a786acbb828a00b5c44653c70769e4caea"
+    sha256 cellar: :any,                 ventura:        "f7c421c9b737bb5bfd3ff194a9e9e2b1a7aea197104d74a57ba87ba7f4842990"
+    sha256 cellar: :any,                 monterey:       "218104a4d4ce1ed7e3a918b23ac7d8b8d3dafc7aa5e9d5de96d04c80acdd2477"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e2edbc9411379b1ef91abcf2ecb1f783087ebc7cb6e2786e9a65214a350736d"
   end
 
   depends_on "cmake" => :build

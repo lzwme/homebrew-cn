@@ -2,20 +2,18 @@ class Kopia < Formula
   desc "Fast and secure open-source backup"
   homepage "https://kopia.io"
   url "https://github.com/kopia/kopia.git",
-      tag:      "v0.14.1",
-      revision: "1f70992d2ebe7e44c21e113375678e7372ca00bd"
+      tag:      "v0.15.0",
+      revision: "dd1ebb11cfdb7902a2b87106dfeea038858bafb5"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f24dee26f7efae39a2c46efd17c33ff8100df739c53f978f216af0edef068327"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "411bc644a85c1a21468960fdc74fcb5154e5711b073de1d080ce1cd16c0752d3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd36423b92b5211e80cf27be7a69288100d300402ba89b596ce08bf9537ef890"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e5844cfaacc337b1a5594bbef5e55696edab5990886b1b169c754e34521e441f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c2f432660f7ae5b6cd49003e779dac987861a26621d9d410539dfa477e408e44"
-    sha256 cellar: :any_skip_relocation, ventura:        "3da13b0bd98dd2083bd7f30827f46179aa8502be201614e16477590819641180"
-    sha256 cellar: :any_skip_relocation, monterey:       "efb7e4b3804ec8dbb6f1f119e33274ac5e5c52e96673d2024dbc10f7ea4ad764"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bf6a384330b3660f91dd554c5df6c6af586c036585665894c87cb48622c028a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "221b6b8dce59d258ecaa9006a242882182d3cc72edd7e86c7832c92712c919c4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf80f785401241e76181af386fde858abb64d185baf35e90d03ca9b676e3fec4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f8a020de8fcd08e6dd01834fcde242f8b67af42b3be5d39d70fe43ec15da374d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cd135f46b697ffa632ecc2967d58f205bf154e56fb358c839ec455a6a326eb79"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e4a44b366382d6e317230b6812203fdebc78d3f9c0782d1461bc910b621e8fd6"
+    sha256 cellar: :any_skip_relocation, ventura:        "d0cd0d66b11d6b3d18e4ad4e8994a0e3e14461ce7eb678fd0e224c4ce0cd65af"
+    sha256 cellar: :any_skip_relocation, monterey:       "09eb8a32950d8adf03e96b732f9ec1b3668ceaf58cb2b1db23b7ca5a7c4996c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "58795eaf28548324f4eb03a3af9a0b1453547841826deb161b0b4c78ad78a63b"
   end
 
   depends_on "go" => :build

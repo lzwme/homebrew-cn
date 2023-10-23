@@ -4,18 +4,16 @@ class Mapcrafter < Formula
   url "https://ghproxy.com/https://github.com/mapcrafter/mapcrafter/archive/v.2.4.tar.gz"
   sha256 "f3b698d34c02c2da0c4d2b7f4e251bcba058d0d1e4479c0418eeba264d1c8dae"
   license "GPL-3.0"
-  revision 8
+  revision 9
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "cee2b25298358a4b79f778c9cbfe62d2782d8686582c2c2e489fd85fa72eb79e"
-    sha256 cellar: :any,                 arm64_ventura:  "36ff4b40514ff54c7796b7e71066027767ca3c11da6d16985ad46ecab54e42c9"
-    sha256 cellar: :any,                 arm64_monterey: "eb153aadf3c2e8045cbe44e90c6d853a22c568550036d3bcca79fd6696a5b884"
-    sha256 cellar: :any,                 arm64_big_sur:  "ded0b905addf1bb71549afed880edab9edb1abed2cb0a4c27956e8eaf42f1e50"
-    sha256 cellar: :any,                 sonoma:         "3e88635e7037292bf1f23d8af0204b1bab0d060e7537a4cc16d1145328418bc2"
-    sha256 cellar: :any,                 ventura:        "49ec055023f31d116deccd3fdf1f7b580f3f4d1809cd648b5a71539002e43cf6"
-    sha256 cellar: :any,                 monterey:       "151c271cc060321f496cb589c64a090a1f41e4f1c4fff4058253f01e84847f68"
-    sha256 cellar: :any,                 big_sur:        "f41228de2471a1a044d181bcb3afc03bde67369235f486bc2cbe926a9268fc2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "257afbb0520e3f954f24fc9103aa90b5a2325705dafd07e79bd19916d0c5dfe9"
+    sha256 cellar: :any,                 arm64_sonoma:   "ac7eef67debaadc5962317b020c729af5f5598e5f7ac6818e47cb38814248739"
+    sha256 cellar: :any,                 arm64_ventura:  "eab67b9a569b873e0caf36097acd63f26536b0e5277816e2546fd94b6e6cfbd6"
+    sha256 cellar: :any,                 arm64_monterey: "7283b931a4ed1861d6cf179a8363f5a9559e72bdcfa6d104988abe7a41c8b89a"
+    sha256 cellar: :any,                 sonoma:         "86d70b83d4bb841e7036f8de5ce82147ee35f025cb28212b619b3b6b20f2c79c"
+    sha256 cellar: :any,                 ventura:        "bb7a1e2f790a248680fa80ced4bcaa3de40cf0c03ab5ad9cfa4b45de926aa8e7"
+    sha256 cellar: :any,                 monterey:       "81bbded934bc26e4de2db7b7cfa4d44bf1a893a7c80bf911e4ecd8c55a5e6bca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7ed13bf91340907ab2f3728a80f4d9109d884cc1b4925e3a71df2baeefc9232"
   end
 
   depends_on "cmake" => :build

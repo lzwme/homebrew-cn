@@ -4,6 +4,7 @@ class Pinocchio < Formula
   url "https://ghproxy.com/https://github.com/stack-of-tasks/pinocchio/releases/download/v2.6.20/pinocchio-2.6.20.tar.gz"
   sha256 "2fcead7b1b2f08aa47acd28891e4b204f2e9cc14a4e4c9027168b8c58f9aedd2"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/stack-of-tasks/pinocchio.git", branch: "master"
 
   livecheck do
@@ -12,15 +13,13 @@ class Pinocchio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0ecbf9a816ee133a5a52f21aa79422ca3f97e1424a09ce3d540645f181cf6031"
-    sha256 cellar: :any,                 arm64_ventura:  "17438d1a1a62a985b37da67a5b239dd9fd36e5d784d4dcb05df07ed4dd0636fa"
-    sha256 cellar: :any,                 arm64_monterey: "bb765bc71e766c50bfd8a8fd3f1ed7c4f85a63f34c2fe2d145b06e9c36547295"
-    sha256 cellar: :any,                 arm64_big_sur:  "4e30be51dada386ba8d3beeed1e7e3e52fbc480e23346a6c6667964ac5af9643"
-    sha256 cellar: :any,                 sonoma:         "ac5fab93e9f216ffcbac573f9d540b683ddffe315aff54aa70956f00e8a8b40a"
-    sha256 cellar: :any,                 ventura:        "2db0a491c86c36fb7b76785bad436cd9dc0d8b2259b4b97bd181ab8bcc1e368d"
-    sha256 cellar: :any,                 monterey:       "bb4040ee5e150f47477e83b50c04560ae25261a6824489064653d160e874c82e"
-    sha256 cellar: :any,                 big_sur:        "54988b7d293941778115dfd93d579c8a7a86f9adf38bb4267a9a10130773f287"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6da1057fe635648830480ba4c6189818e3f818fc6a728ac2977472b575d23b07"
+    sha256 cellar: :any,                 arm64_sonoma:   "366311e84cfcf1ae0f12b06135f8708003ef6ba3f0f3cb267bdb46cf6f66b9f1"
+    sha256 cellar: :any,                 arm64_ventura:  "140feb32bd7d332e671f6a4426c17401aa5410f631661e2539c38e17edb3acf5"
+    sha256 cellar: :any,                 arm64_monterey: "618f283c5e5df0d62dbdcbfd044c706ee18c9c39a327f76ded9b561b37d16bc3"
+    sha256 cellar: :any,                 sonoma:         "67eb6b1d7e9f08dc44d5ec8e9a4846423be027c2fda8ad519b89e3afd2528449"
+    sha256 cellar: :any,                 ventura:        "b505b3bcb88b0a5e3061bbd904c5dfdf9902f68bf2590cfd2255702ef4f962a7"
+    sha256 cellar: :any,                 monterey:       "a65b65f37851582de0db11220303d14aff84c8cab270ad03e535ec35040f202d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9bf1e77ddc80249e6f1ca699b04d06a51e56a258bcaf24af5de8cb6bb67a028"
   end
 
   depends_on "cmake" => :build

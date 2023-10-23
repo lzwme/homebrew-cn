@@ -4,7 +4,7 @@ class Ompl < Formula
   url "https://ghproxy.com/https://github.com/ompl/ompl/archive/1.6.0.tar.gz"
   sha256 "f03daa95d2bbf1c21e91a38786242c245f4740f16aa9e9adbf7c7e0236e3c625"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https://github.com/ompl/ompl.git", branch: "main"
 
   # We check the first-party download page because the "latest" GitHub release
@@ -15,15 +15,13 @@ class Ompl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b4b13bd774417b103b221039e105c56bfca911ac57b009f0670201a99d2db404"
-    sha256 cellar: :any,                 arm64_ventura:  "ccd3ddf46f7dca92ef55b7bb4a489ce963a5fa970704d0d5feb41644fcc669e8"
-    sha256 cellar: :any,                 arm64_monterey: "48dc10208f60928674899e1f2b1dc3b9c23e6dd8fdb418a195e32b3f09f5c91a"
-    sha256 cellar: :any,                 arm64_big_sur:  "f5caee24de18a4433c05b670083ecebeae1be0ed68f8ce1ea352ff72df8b4706"
-    sha256 cellar: :any,                 sonoma:         "6643c22624e2bc0cb352eca139feab5070fab13b8cdbfb7cedc876d066948b2d"
-    sha256 cellar: :any,                 ventura:        "6e592b53634c02ae3bd77d65ca5f0882a8baa94eab9449a63a42ea1fcedd43d4"
-    sha256 cellar: :any,                 monterey:       "e60fa2eb8226877f3c53e03b8ce68912b6bfeb8bbfd24988406b86c972c1cabb"
-    sha256 cellar: :any,                 big_sur:        "9591de73236c06daed6725fda63c675a8b449f6bdc06c7b2bdf0f5e6d8d8d1b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "946ff80d88357649aae358dbf969215c303184f241ba0105ffdf3da165d17fc8"
+    sha256 cellar: :any,                 arm64_sonoma:   "a09917c91429a3f0617e5b556e114a0e55e927467dbea407a1214ca230f95479"
+    sha256 cellar: :any,                 arm64_ventura:  "b359522cb2aa7364331493dbb63c0f155e1f3788861577cdbe78d40b0fd619aa"
+    sha256 cellar: :any,                 arm64_monterey: "863f2322e9db3e3f065b5d102ba0c0fa68c45f7be97ecacf07335e55a2882139"
+    sha256 cellar: :any,                 sonoma:         "fcc8806e0fffebb8407290128dcc55cea76171f55a567bac566e3ac6006b5913"
+    sha256 cellar: :any,                 ventura:        "e688f03ca6de7cb397c1fe96ad4e37a4eaa365fb9d4322b71205b674a92da3a3"
+    sha256 cellar: :any,                 monterey:       "cd8be6859d0105df8c8ee2d6ff87653ea034c4e07470a4c5d85432678ba54f2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "51141a585e759f13151d135f15098c17753898798a16d327ab0246395c15f637"
   end
 
   depends_on "cmake" => :build

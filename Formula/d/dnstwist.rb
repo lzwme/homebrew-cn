@@ -9,18 +9,19 @@ class Dnstwist < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d62ee6303a44a9ee1b681869aaa9125288bf44e45a7c5d993e4bc77a8807e8fb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b6651ef9d67fc7e21d063e6786ff95f78fbd55d501bedb08a91064699e95f54"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "55f6da6ba6ff972dbdb23f8dc955d478ae20e4de92e7bcb48ff6d5bdb7955913"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a7e08ca3c6e2ce53e8cbc9e93d8fdcf4700b438f49054a4aa47292fa3cb9dccd"
-    sha256 cellar: :any_skip_relocation, ventura:        "a2d8b45482d8790a1e7f1c3848c8e64a4b5eb267742dbcb985e20309cba59214"
-    sha256 cellar: :any_skip_relocation, monterey:       "9e11d291c43f7bce536057bf6bebfdc09ecd16f42d2a0765181451ef1152b091"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cf3958b4e36c9057e180a4d6700d280f53a384e456e8182921f628fc814e524"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ea19313243bfc48a6541cc206b69431b01aec479dbe31ecc350e8f0121f8edbd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "071406fa124d47eb99565b4234d01e62b07419a6122140d2727a48b8f44176f2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e797add2a6c25c1e5bd193a3d8ccf500a35f58f437ea5c0bf4c301bfe5580ea"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fa56af93874c76d696869fe167213a38447de036fcba8ac6d1fd684c96a3e24c"
+    sha256 cellar: :any_skip_relocation, ventura:        "b561c0b606f4b491a2df2475204e9e59a3beccbf6e317a247c2d57715212c2fa"
+    sha256 cellar: :any_skip_relocation, monterey:       "663c7756fb5cc5e0912d95d58e3a49358b73a88df580d9ce7fa2448bd013e546"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8fb3db74b34d3e3cbe4a56fd095081441e4a3fdffa2f4e4b7960eef6111de1eb"
   end
 
   depends_on "geoip"
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "ssdeep"
 
   uses_from_macos "libffi"
@@ -30,8 +31,8 @@ class Dnstwist < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/fd/01/f180d31923751fd20185c96938994823f00918ee5ac7b058edc005382406/aiohttp-3.8.6.tar.gz"
-    sha256 "b0cf2a4501bff9330a8a5248b4ce951851e415bdcce9dc158e76cfd55e15085c"
+    url "https://files.pythonhosted.org/packages/c4/50/a717a133bda2efc27efbf8a65398c925b6d0605213da0db6929627ccb758/aiohttp-3.9.0b0.tar.gz"
+    sha256 "cecc64fd7bae6debdf43437e3c83183c40d4f4d86486946f412c113960598eee"
   end
 
   resource "aiosignal" do
@@ -117,7 +118,7 @@ class Dnstwist < Formula
   def install
     ENV.append "CPPFLAGS", "-I#{MacOS.sdk_path_if_needed}/usr/include/ffi"
 
-    venv = virtualenv_create(libexec, "python3.11")
+    venv = virtualenv_create(libexec, "python3.12")
     venv.pip_install resources
 
     (libexec/"bin").install "dnstwist.py" => "dnstwist"

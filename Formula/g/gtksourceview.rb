@@ -27,6 +27,10 @@ class Gtksourceview < Formula
 
   uses_from_macos "perl" => :build
 
+  on_linux do
+    depends_on "perl-xml-parser" => :build
+  end
+
   resource "gtk-mac-integration" do
     on_macos do
       url "https://download.gnome.org/sources/gtk-mac-integration/3.0/gtk-mac-integration-3.0.1.tar.xz"
@@ -56,7 +60,7 @@ class Gtksourceview < Formula
       end
       ENV.prepend_path "PKG_CONFIG_PATH", libexec/"lib/pkgconfig"
     else
-      ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5"
+      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5"
     end
 
     system "./configure", *std_configure_args, "--disable-silent-rules"

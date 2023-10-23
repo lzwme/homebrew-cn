@@ -22,9 +22,10 @@ class QpidProton < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
   depends_on "libuv"
   depends_on "openssl@3"
+
+  uses_from_macos "python" => :build
 
   def install
     system "cmake", "-S", ".", "-B", "build",

@@ -4,18 +4,16 @@ class Sfcgal < Formula
   url "https://gitlab.com/Oslandia/SFCGAL/-/archive/v1.4.1/SFCGAL-v1.4.1.tar.gz"
   sha256 "1800c8a26241588f11cddcf433049e9b9aea902e923414d2ecef33a3295626c3"
   license "LGPL-2.0-or-later"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7bc6c995493f0ce8530cbc1c2109a9c63affc862c4f4963406fe7024c2c30d85"
-    sha256 cellar: :any,                 arm64_ventura:  "d2986bd33428614aed8fd61d52e81331003178532ac7749914429786432b1b75"
-    sha256 cellar: :any,                 arm64_monterey: "679e76ea188a7c9aa039dcb762b7ca8375e35009f4b1ac49dd787100ef3705f0"
-    sha256 cellar: :any,                 arm64_big_sur:  "b10a871b2372aeb03c36b2fe9d2b7d45518b2b4ad0d27b5a10e3a133632c6acb"
-    sha256 cellar: :any,                 sonoma:         "9741cc0132a0fc5cca2d471b8a968bdc7a07e03140521d881fc784f97bf8e7e7"
-    sha256 cellar: :any,                 ventura:        "bf5a5e7d0a59f52e41dd2c6e5137f8ce684fa7b44f1d5dd803ad9a59f3050d76"
-    sha256 cellar: :any,                 monterey:       "bca215c4596244f5de554e14d68774950e8ca9d7f5f0aa1d66da5ef0ee960da8"
-    sha256 cellar: :any,                 big_sur:        "aee4b0a1b0ce8ac96413f603ced79d4139476938eda9ca5caffbce8bd0f90935"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "97ab272a0db9c4e22fa4df1df5d8e78bcf72ea02923b485babfd843b97e8002b"
+    sha256 cellar: :any,                 arm64_sonoma:   "c5d6e4ad71e25a5e58f54505749378852c6bc63488d4ae4b5c1e5eac71e23324"
+    sha256 cellar: :any,                 arm64_ventura:  "8b5a7b82c65cd6916c06e0bddc5c2c6b594ee1ac4f772af78b4b66ad9c6f999d"
+    sha256 cellar: :any,                 arm64_monterey: "d699cd167ddd41aa8a19939812420515168c57a826c9b2beefecb8921d9b044a"
+    sha256 cellar: :any,                 sonoma:         "433739850305ab3c56a876be71ff4c2acd3eb6eabc30a90aa7442e870d0770f9"
+    sha256 cellar: :any,                 ventura:        "809115aeb7e79a69922c16210fff18725ecda80aac01ff6cd5359bb249b2e357"
+    sha256 cellar: :any,                 monterey:       "8eb91b8d88f001cdf308730331de331e182441072fc24750753f220313142c75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90e5f0fef7da5fd9c79d5c55e10e3cb4fd4b09838ceeb9d03a09f073c60bfef3"
   end
 
   depends_on "cmake" => :build

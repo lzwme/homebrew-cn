@@ -4,7 +4,7 @@ class LibtorrentRasterbar < Formula
   url "https://ghproxy.com/https://github.com/arvidn/libtorrent/releases/download/v2.0.9/libtorrent-rasterbar-2.0.9.tar.gz"
   sha256 "90cd92b6061c5b664840c3d5e151d43fedb24f5b2b24e14425ffbb884ef1798e"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https://github.com/arvidn/libtorrent.git", branch: "RC_2_0"
 
   livecheck do
@@ -13,15 +13,13 @@ class LibtorrentRasterbar < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f91390f2e29bfcea35690f4ddd7d9b61a36299125160f3f0b55943ad012c1336"
-    sha256 cellar: :any,                 arm64_ventura:  "86e523fc8cd5fd49599171295c4866b6ad14d6374ad46a495b8cda6d38e2d098"
-    sha256 cellar: :any,                 arm64_monterey: "5678eb2ed0b5693f3316d9ead4a4485bf295f7d49d8a94d031f949fccb7902c6"
-    sha256 cellar: :any,                 arm64_big_sur:  "9d36a8ba83f84e6712f9d4390934dedb36060b4511207524a2d37489595d42cc"
-    sha256 cellar: :any,                 sonoma:         "18d46d686880f7bae22b69bff7ba85ff090e98ca1cd467097dbd7a8b585b1350"
-    sha256 cellar: :any,                 ventura:        "f857488d501e6d047043532584a75d9f526d4be2b2e6c1a88313ac38078de700"
-    sha256 cellar: :any,                 monterey:       "67361c2f8ae3c68f044bec1a2552f94bfb46f79ae33b1092b921b82010ab6e6f"
-    sha256 cellar: :any,                 big_sur:        "1c2c548868767ed00f74abdc585e099941c489ca0f4a67fe1de3bb2469f09ba8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab8611e0547f2c6378d2aab25616ae23baadfed0f259691ea407d14d0fa173dc"
+    sha256 cellar: :any,                 arm64_sonoma:   "3179ae10a0acd273c5bfc287fd9cfe62b6e1ba39052e475e362de43d66a30c6d"
+    sha256 cellar: :any,                 arm64_ventura:  "2ddf7b7b31cc03f6334e426fb08f2c94ff4834119b219fdcb6d60f9923ab5a34"
+    sha256 cellar: :any,                 arm64_monterey: "79ad82aa82cec56cf13e6cc06830141309e2a4592d55b65a46af464137a92361"
+    sha256 cellar: :any,                 sonoma:         "1d1f18379d1d8513a1e941b02b1df0090b72d28efea8f40bcb9670ce13bbe1a2"
+    sha256 cellar: :any,                 ventura:        "56b7065bb0d70d3440cec7a3eddaf71f6da2b2f7cd34d28d35dfb96d00a13c58"
+    sha256 cellar: :any,                 monterey:       "5e9282816acf457f696a2ce53b3d44da67eb2b4e9463ba51bfd1fce500f96d16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "86cc11f756add016fac5db365e033bdf50d343f031f760f673025c2089002b2d"
   end
 
   depends_on "cmake" => :build

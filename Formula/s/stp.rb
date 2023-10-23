@@ -4,7 +4,7 @@ class Stp < Formula
   url "https://ghproxy.com/https://github.com/stp/stp/archive/refs/tags/2.3.3.tar.gz"
   sha256 "ea6115c0fc11312c797a4b7c4db8734afcfce4908d078f386616189e01b4fffa"
   license "MIT"
-  revision 6
+  revision 7
   head "https://github.com/stp/stp.git", branch: "master"
 
   livecheck do
@@ -13,15 +13,13 @@ class Stp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2ec3f56f211575a5fd5790b8adf782993496f0f97a7e2b5a0ec0471781edae40"
-    sha256 cellar: :any,                 arm64_ventura:  "11f98021c059c0b510d2a7d0245037832b3b3a7348a43b15f19a849d5a11e9d6"
-    sha256 cellar: :any,                 arm64_monterey: "6daedfc806728ad067500b9cce8aae26b76c2026317b90f6aeb9cdadd3979f95"
-    sha256 cellar: :any,                 arm64_big_sur:  "cd1329b5f9035e9add08a7cbd12b5ed644cd49dfbb9c5468377ef423cebedd93"
-    sha256 cellar: :any,                 sonoma:         "84e00fa0ffb5360181a6f5526b87ab4b837ad21f6d443676b3c920692d7592cd"
-    sha256 cellar: :any,                 ventura:        "bd2c430c8ab7bc3bedff913245869da6c3b6715cdb6329ea077a497c67301f01"
-    sha256 cellar: :any,                 monterey:       "f17957b6ca37ee88003ea4d66b98b409d0c2bb39116089858742fe5496082060"
-    sha256 cellar: :any,                 big_sur:        "8f4b0d7f28d70fd02d5b7afef3d1efec1b0313e3477c96274c7e7aab35757cb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e43192bd96fd4143fe4dce2055eeec42be74c8775ede475bd0a87b5b1e79081"
+    sha256 cellar: :any,                 arm64_sonoma:   "df203f08ddff7a08fa2b967ef008cfe14cc82a9703ae0fa1ad83ea3603da2cb3"
+    sha256 cellar: :any,                 arm64_ventura:  "a0c9c388c24b6f86c13f53099399a2ee9f2c2603e231b1ea533f1a28ad6425d8"
+    sha256 cellar: :any,                 arm64_monterey: "d0cd11c1e75e9d6965ee6fbac27308eddd72744c559f43d7f4e569fbf6391954"
+    sha256 cellar: :any,                 sonoma:         "8301a5e49fd277788d4085edec1922ffe782a9e03f4fbdf43aa3204604c86040"
+    sha256 cellar: :any,                 ventura:        "d394e87302eb22cbeaf8db5c99f057edae0a6e5a98f79905bdd01cef9abdd152"
+    sha256 cellar: :any,                 monterey:       "83f85d893568f0b5ee34d55428981e5aae35355cd2453012c6d013462163fa2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ba95876b0a7084bd5a6ac91ca0817ff4aeb9ef6ea1fd59dbfd67e5546e12fe7"
   end
 
   # stp refuses to build with system bison and flex

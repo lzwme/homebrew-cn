@@ -37,6 +37,7 @@ class Goffice < Formula
   depends_on "librsvg"
   depends_on "pango"
 
+  uses_from_macos "perl" => :build
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
 
@@ -44,10 +45,13 @@ class Goffice < Formula
     depends_on "gettext"
   end
 
+  on_linux do
+    depends_on "perl-xml-parser" => :build
+  end
+
   def install
     if OS.linux?
-      # Needed to find intltool (xml::parser)
-      ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5"
+      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5"
       ENV["INTLTOOL_PERL"] = Formula["perl"].bin/"perl"
     end
 

@@ -10,16 +10,18 @@ class Parliament < Formula
   head "https://github.com/duo-labs/parliament.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fe5c0b6d766a6b539043b5ebc43cad8aeebd2a0349434fe65bed49fd8e4eb242"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "326f9d7e4764cd679f76b55328f835097aff2fdbe42adfcdc2ec5577c888c2c7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c3ac49bb16f7641ca3b4e8de5f97df65f05e0cc8033d43355fa93c1af4a364f3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ee290a61e5174c9d65535276648c6bac78475e79ac8c69210b6f790e1b35898c"
-    sha256 cellar: :any_skip_relocation, ventura:        "3d83e90f69aa19f234c27488b5858158bb253d9a3ed6705d343051184052999a"
-    sha256 cellar: :any_skip_relocation, monterey:       "bcac289b8dcf56695891908a4bf3bbe31226db649e05a90cc7053d36b0a0f3d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22a8c80dbde299ab9b4a82acf4af154ed0783d2e3645c5f5bdd5329e3879a400"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e01d074f7de71687970fab13562d326b8fcfb432d2dd16a1f57211954179a68a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fe1bf228b3700c862f538f5d3b016c1f1d10331445f6660a11db8712b2174241"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "faef05880b2eb11adb8d5263786127f3a3ea35e16e69323bfd5fa6575ea5f9c0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ca7929d4afa4630760e37de691b55b80abdad4b0d3a5fa1c9de358b49d2ca1f9"
+    sha256 cellar: :any_skip_relocation, ventura:        "250cd1b0e5fae6451954e44ff7f818bfe3cbf9b52971b0f7fb3ccfa8a1cb56e3"
+    sha256 cellar: :any_skip_relocation, monterey:       "45e5d368de43b11dce582538c6a4e21b38fb51a27f9781d5d3ad10da34d6c6f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3fe2f41c5140c3829be6e7ed6490d653472b65252da6878f01431df674e7e467"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 

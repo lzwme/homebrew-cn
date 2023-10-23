@@ -1,6 +1,6 @@
 cask "font-iosevka-aile" do
-  version "27.2.1"
-  sha256 "f804a0205659189c70e8584c1c984b781c9d9e9c364585e21c8d84e1f90eee9a"
+  version "27.3.1"
+  sha256 "f9cfb7597173a994f411d0de8ca77f4f629b2ea60052e2479562a9a1de4c85de"
 
   url "https://ghproxy.com/https://github.com/be5invis/Iosevka/releases/download/v#{version}/ttc-iosevka-aile-#{version}.zip"
   name "Iosevka Aile"

@@ -4,17 +4,16 @@ class OsmiumTool < Formula
   url "https://ghproxy.com/https://github.com/osmcode/osmium-tool/archive/v1.16.0.tar.gz"
   sha256 "f98454d9f901be42e0b6751aef40106d734887ee35190c224b174c2f27ef1c0f"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "95ebcb7d3b5a0cf22d422468f23c894a4ec9902e638b0dcc170515a6f28cc53c"
-    sha256 cellar: :any,                 arm64_ventura:  "6ed20085ddcadb8f0e5fe7999361ee4c05e15f27135d58216e2b8ccc3445d385"
-    sha256 cellar: :any,                 arm64_monterey: "f96842d0ddbd0ebc7aface97569adaed09f82e725bf019d1cece927a1c9bd188"
-    sha256 cellar: :any,                 arm64_big_sur:  "afc0eb11e5248389f5b5f8a8cf7adab899b033f84f94e60f97d2ec8aa8ca1a6b"
-    sha256 cellar: :any,                 sonoma:         "6e0977de14cc0672e42b2bc63fa4593f76c011edac39f8f46ebbf60eb8b265d0"
-    sha256 cellar: :any,                 ventura:        "b45cdaca24db13c5150d7abb1d5a47f16ae5a02e3f091e14660a2153702e8fd1"
-    sha256 cellar: :any,                 monterey:       "b848130312527ea781cbecabb8089611ea0c672f13a0ab8f9e1bb1d464562d48"
-    sha256 cellar: :any,                 big_sur:        "4b0829bd58fb611d0e7e4a928b29379ada6a72f3d832b181c88c43e7a04c52bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa14b99e94a4e37231b2aaa7dea65f6d831641c322e16bed401a91b7d055d288"
+    sha256 cellar: :any,                 arm64_sonoma:   "55329c1becac125aeb151223fd76b76ccb81aea0d6ce15fb3c2232e3ca4943e0"
+    sha256 cellar: :any,                 arm64_ventura:  "db12bbd293ca97a9aa6e368d0528eea332305d6907cdac8e3a433ce6bc09a243"
+    sha256 cellar: :any,                 arm64_monterey: "e2c7fc365262f6ebb99429c03d756a59129e9b5d4929c91c68e614c7edd9934c"
+    sha256 cellar: :any,                 sonoma:         "906525c1fe6001685e8aff71b7483eb813be1c4997f34a25685764d23617aede"
+    sha256 cellar: :any,                 ventura:        "69b1356c9997b12d054443564e84108f71c60ba2ebb30ba845dd94c0c599a257"
+    sha256 cellar: :any,                 monterey:       "e256f4edcdf493b546f56f009182620de8359bcf7ad1824000f37be677eafa4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3fe8f6f3c8d8237b37bfd4b6b418b1a64352aa88a2fa8a701c338ad64c82e486"
   end
 
   depends_on "cmake" => :build

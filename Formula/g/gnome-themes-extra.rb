@@ -20,13 +20,18 @@ class GnomeThemesExtra < Formula
   depends_on "pkg-config" => :build
   depends_on "gtk+"
 
+  on_linux do
+    depends_on "perl-xml-parser" => :build
+  end
+
   def install
     if OS.linux?
-      # Needed to find intltool (xml::parser)
-      ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5"
+      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].opt_libexec/"lib/perl5"
       ENV["INTLTOOL_PERL"] = Formula["perl"].bin/"perl"
     end
 
+    # To find gtk-update-icon-cache
+    ENV.prepend_path "PATH", Formula["gtk+"].opt_libexec
     system "./configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--disable-gtk3-engine"

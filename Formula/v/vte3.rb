@@ -1,20 +1,18 @@
 class Vte3 < Formula
   desc "Terminal emulator widget used by GNOME terminal"
   homepage "https://wiki.gnome.org/Apps/Terminal/VTE"
-  url "https://download.gnome.org/sources/vte/0.74/vte-0.74.0.tar.xz"
-  sha256 "9ae08f777952ba793221152d360550451580f42d3b570e3341ebb6841984c76b"
+  url "https://download.gnome.org/sources/vte/0.74/vte-0.74.1.tar.xz"
+  sha256 "2328c3f1c998350a18e0e513348e9fc581d57ea4e7b89aedf11e0e3c65042b4f"
   license "LGPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "cc22f94d6f70d85f24a6e578936a057b8f697f63150bbc6f0012a38b8bb81d11"
-    sha256 arm64_ventura:  "bbd2a98932548ba836f5e5463b866c095e031056eaae94afcfddf26ba2f0958a"
-    sha256 arm64_monterey: "3d35f6f70b7941c2d45d95e915cd97c8f896dae7b2fdf833d45910f8335012d9"
-    sha256 arm64_big_sur:  "a279247cf09741b615a70f2152dcae8313e87e921946c8eb267d890cdac1881f"
-    sha256 sonoma:         "14a6e2381950eabb55eb45255010b192d2944c7bba545602dcb34b7ac846c586"
-    sha256 ventura:        "0051a31e65236ce11c28fe34394ba0287d1982cc80c1c3eaa322ccb37c4d77dd"
-    sha256 monterey:       "4cf49fd4d7a8dd9655439478df7956dfdb0341147a06ab671255896f5c2e15ab"
-    sha256 big_sur:        "e90b00ff5a11130466d98b35e0e6cb08834ccc152704d38b04ebf43da6db3370"
-    sha256 x86_64_linux:   "87ff394a696b3fbc9db8f65de7d0afc78b9b998a29597d947ec9fc16c7e668c6"
+    sha256 arm64_sonoma:   "21e7d8c2be2b75d20dab8f84b25d87d1402bc539d98affd15c636221dc25d18a"
+    sha256 arm64_ventura:  "560ca78106d886b6a099c7aba9983a7f2a160ed511fb2325a45510b341ba2d8b"
+    sha256 arm64_monterey: "6d0d488a968ffbe722ef7a4b8f1f5f1f33ce02d733c8f3e98dde4543a679ac06"
+    sha256 sonoma:         "744676486abf9d32a5013fd8dc457fdc0e1aa8718a69271f29304480ab0b9a29"
+    sha256 ventura:        "4162f2077783c7255eb661d58be379c4b31b3f74bf169fa03f29954411e1fccd"
+    sha256 monterey:       "d4f592f51bc76d788ba5ea5a99d22a2193e70197e730ed0dbb026adae70ace2c"
+    sha256 x86_64_linux:   "473b1eeaed4cd5819fb5794a95c99eeef74c2b896e3000e9c0be89ae9a170605"
   end
 
   depends_on "gettext" => :build

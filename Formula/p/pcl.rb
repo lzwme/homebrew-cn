@@ -4,19 +4,17 @@ class Pcl < Formula
   url "https://ghproxy.com/https://github.com/PointCloudLibrary/pcl/archive/pcl-1.13.1.tar.gz"
   sha256 "8ab98a9db371d822de0859084a375a74bdc7f31c96d674147710cf4101b79621"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https://github.com/PointCloudLibrary/pcl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "bf35b3f05a12a11fbbe48ae51f8cf168b566cb7d62b22615a3c40edca07a9069"
-    sha256 cellar: :any,                 arm64_ventura:  "c2bdc69964fd9a4db03282f88ddb38b70606c75dcb94ed113b5ca39d171bca87"
-    sha256 cellar: :any,                 arm64_monterey: "d09bb9c4d5041bb4d695f566c77d437513f62d6ceaf1031c32019f72cf096839"
-    sha256 cellar: :any,                 arm64_big_sur:  "760edc5eaa8270b0fcb62435723361a3c915b33a070736ed897caa0a7a7c2592"
-    sha256 cellar: :any,                 sonoma:         "3a47bc4653c569f9c6066267b1f5025bfc2fb615a5b89feb83d2826c2093b5bb"
-    sha256 cellar: :any,                 ventura:        "7fc94ebb02820db5afd4b8c4ea0f0f4add189f7e7b174d85a9a26e9483c09e0e"
-    sha256 cellar: :any,                 monterey:       "0d95ebde14a90d394e65370a79647dac7b3874e3fc7a0b2c1bd6e74757ad6ed5"
-    sha256 cellar: :any,                 big_sur:        "2ce70da8eefae1457fc3c0f7f5d77d3c65582c4a86737aa6b371275f5394e433"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ad577cfc09f3bb2f37fe1b59850cb18869fddfc0c24ae6576ebbbcde0b989f5"
+    sha256 cellar: :any,                 arm64_sonoma:   "edbace24153cdcd9382c0fd1fa856e1d21bdc5aa99d7b5a66a614b9968f2f010"
+    sha256 cellar: :any,                 arm64_ventura:  "9f8570ed4ffe6693b7ac06e2f1702221798a3336556dcb3faaa82f2d82ddaddf"
+    sha256 cellar: :any,                 arm64_monterey: "4fa617ebe0f8ee949887f4ae74ce1fd016da1c03a0642a263aeca504e7074644"
+    sha256 cellar: :any,                 sonoma:         "196f36808b240b699a3cd6f73a9e605f61628a4b28af86ce98914df946c8f53d"
+    sha256 cellar: :any,                 ventura:        "ea7675b1b52d6d41e16f9d8741df4b074f09542db3096ee4f17eab369d999e7d"
+    sha256 cellar: :any,                 monterey:       "371b5d9112adfbd620bb32d235d27d93b616a72e66666ab45002f294b9c82f46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb19d5724ccd53ff209a86dfc2c8aaca1332cd4de9216c567b304be8f97beedb"
   end
 
   depends_on "cmake" => [:build, :test]

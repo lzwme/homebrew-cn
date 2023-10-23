@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v20.8.1/node-v20.8.1.tar.xz"
-  sha256 "f799c66f6a6386bb8ac2c75a378f740c455e97f1fe964393dd39c9f9f6efbc70"
+  url "https://registry.npmmirror.com/-/binary/node/v21.0.0/node-v21.0.0.tar.xz"
+  sha256 "bc56192b951ad183506dca9acf7a4d0c02591140b7fc8f25661375199266f3f2"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -12,14 +12,13 @@ class Node < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "2797beb6f0b88241309e1711bad0e9cb9a60d26cf3e5ea11e6c7311e86d72385"
-    sha256 arm64_ventura:  "90a2e545f6332b1a8d35f0b4d60ff9cd281db9e4ca30d0c5b187a6c708f54550"
-    sha256 arm64_monterey: "55b06adc8d5a1e0017ab8393e061b82f2dfb479d30144b9f4ba510a65338a88f"
-    sha256 sonoma:         "11523f478bc1122a9bd30e7ec11d3fd33ec21f39a6841b821456af8f48e1a6b0"
-    sha256 ventura:        "38b2dadbf4798da3af4b434cb2c316c9e49f7da3fdd7f23779ef6d7b87ca4fc4"
-    sha256 monterey:       "d7920897f0b55072650f5ae93f83cd268efcd441cbaa940744f0d11d446c30ef"
-    sha256 x86_64_linux:   "4e7a5ed3488811d150819282762f1a7278dab0c3e92047a83e9de4434c4e1943"
+    sha256 arm64_sonoma:   "d386de0555fdb527e4844ae7ff0ab2bbfa6d84102740bd6c3e9e56d7f2aba44f"
+    sha256 arm64_ventura:  "d40049aa78d7b0a62b21002bfb8a2027073fea6ad383a13ee9bea195ba3a1609"
+    sha256 arm64_monterey: "abf5f4e2d0530a50877a396f33382c732f6b5b159b44b3bd34ae5d04a4a93446"
+    sha256 sonoma:         "40c49640be08345f1d7e6aaaa1e10e5288e5a98248c66c14e8b2b765b253f976"
+    sha256 ventura:        "c4908f28fd2a3920f9e20d377fbf44a391856499f18d5b4e7ca1a37edf581211"
+    sha256 monterey:       "0642efa61470d2ed7ad96c3a5594aa4c6cdbabcfd409076564db04cb3f4df8b2"
+    sha256 x86_64_linux:   "4bef6bc60c104a331e00ce3b1953b4692b0c1a8c3451ba525b2544e5575a4fd1"
   end
 
   depends_on "pkg-config" => :build
@@ -51,8 +50,8 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-10.1.0.tgz"
-    sha256 "7cb31c0a881964a22577fd84e5a9a5b11e6f49ef8aa0893036b0b68015056252"
+    url "https://registry.npmjs.org/npm/-/npm-10.2.0.tgz"
+    sha256 "c362077587b1e782e5aef3dcf85826399ae552ad66b760e2585c4ac11102243f"
   end
 
   # Support Python 3.12

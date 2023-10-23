@@ -4,18 +4,17 @@ class Papilo < Formula
   url "https://ghproxy.com/https://github.com/scipopt/papilo/archive/refs/tags/v2.1.3.tar.gz"
   sha256 "d22e8e2e91e1967afda5cf27eaeaa4ab3d40694c7716b4d328d69a50e05d5115"
   license all_of: ["LGPL-3.0-only", "GPL-3.0-only"]
+  revision 1
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4db0f467bdf56ebd1fe50e81974c31d2838b7f020be1cff112b99999b92c888c"
-    sha256 cellar: :any,                 arm64_ventura:  "459944b69f6696883339cf10250a72ee3262adc73ee5d8cfd4eed224890d1681"
-    sha256 cellar: :any,                 arm64_monterey: "e48ec9dcab6c0306b94ccfe3fc776446eea11d946fbf491378b8fe818d7000f1"
-    sha256 cellar: :any,                 arm64_big_sur:  "ecd6a2a4d9e6845fb4e134145e68501e679dd1f574134ffd91d38559108acd14"
-    sha256 cellar: :any,                 sonoma:         "4d8b951221e179b5930701da5dac7656234fed44f62f647ae709718bbe373dcd"
-    sha256 cellar: :any,                 ventura:        "814bfffa3e31b7f9368250af37995636b0ce99dc3a911e12cb8db4523123f76c"
-    sha256 cellar: :any,                 monterey:       "8c06f84df0799aaebec9c324359ea9acc2e41b4db206ae31aac52a4ef643c313"
-    sha256 cellar: :any,                 big_sur:        "19a9dfeefbdee9159d2c16961cb67109ec3215e1eda91559a46265f5c060517f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "918bd6e7546a96a404ecc66941fefe09a5d7a055a1447bf0b1ddcb64c3e068a9"
+    sha256 cellar: :any,                 arm64_sonoma:   "469f944fedcfb169db7c55b2e0837fb126016e1ffdf849d3b7061e5058040678"
+    sha256 cellar: :any,                 arm64_ventura:  "b60ce3216a9b99c82e725d46d5eb4629922691767196215c77b313062428693b"
+    sha256 cellar: :any,                 arm64_monterey: "8403692ca8e41d4e6903e5ec84884b8d87d3815d0ab616c9ea8d3775562f3189"
+    sha256 cellar: :any,                 sonoma:         "131b161ee77e0bccca3e186bf5a804e91fafa9737e3ea19f4ac358e36e32af25"
+    sha256 cellar: :any,                 ventura:        "b08cf2812c1903f6fd09104ac1ed7d72f0d8f13b748b713d9a35c9ad7e5d5de6"
+    sha256 cellar: :any,                 monterey:       "3615edebfbc716144d0e483d319bfcbf3e9a32c72c6dae1fecbd4e570902089d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "445bf0a77af259f6ff65ab88a001732f94868003fdf606ca16d67149f6ba78a9"
   end
 
   depends_on "cmake" => :build

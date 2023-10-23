@@ -2,7 +2,7 @@ class Mapnik < Formula
   desc "Toolkit for developing mapping applications"
   homepage "https://mapnik.org/"
   license "LGPL-2.1-or-later"
-  revision 21
+  revision 22
   head "https://github.com/mapnik/mapnik.git", branch: "master"
 
   # TODO: Try switching to CMake build on next release as it works better with
@@ -25,20 +25,18 @@ class Mapnik < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fec9025587f262e58075e31e657c673f691765dc958999c754dc66e2d2e77eb2"
-    sha256                               arm64_ventura:  "0dca5deae922d9f2b39fe75690dabfd20331a7449d1af97c16d16c39ece30759"
-    sha256                               arm64_monterey: "098cdc2b84b8bfdaba32c5320942bd0e636e63295446dfc9cf9b7e2cfdda6010"
-    sha256                               arm64_big_sur:  "477d220e0bb4096d27ee3821c1c0a99b3733c4e1b6970f27e6acc6881d5adc83"
-    sha256 cellar: :any,                 sonoma:         "2003061371fd388dbea4602d5a9fefeac5ae0478622809c0fc53384c5c3c02fb"
-    sha256                               ventura:        "17f5fab836011f04c4ee4071ccf3d233dfc27b94172487d1a20d98395ec4220a"
-    sha256                               monterey:       "1d5322c0b334abf0e48f55e0a891947cfc62e0c880340878d390921b5595af3e"
-    sha256                               big_sur:        "0f5a5d5c01e90b51cbe47a14a1f5f86ae45d3970d9374de6ffb84cd42cf75c84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95a8d9c4faa4d700cdc75acfb01544dba0602316632ee1a8f29e18095b93bbe6"
+    sha256 cellar: :any,                 arm64_sonoma:   "f7d27be65cbe32c04839c5fdbad0e274a7b2fcbdb2fb779f57f31af28ed89889"
+    sha256 cellar: :any,                 arm64_ventura:  "95e60fb0d3e171ab84c4737acabb381192a9fca28d4ca9bc859e24b70f45c3c3"
+    sha256 cellar: :any,                 arm64_monterey: "1f59ebc32d6e8f5bec88b38bf4b66521f9f46fe1f5bc94dbf3a9e7d0189ee0de"
+    sha256 cellar: :any,                 sonoma:         "05a26cefa57e3c1677477da4b35320395491fa9b8f1347ade60196c267095a62"
+    sha256 cellar: :any,                 ventura:        "deaf0723bb99a1dfc70e7cb532d8c401143e01c73d62b1ff31dfdfde9ce739e2"
+    sha256 cellar: :any,                 monterey:       "45fc08f3c0d566bad96df494a31bacdbdb0d29fc6cd20a36fc7c4ebfe632bd35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "874c70dc093dbfdcd2a6ab6cb0b02bba79b735d9ee4f2a09431873cff99e5d14"
   end
 
   depends_on "pkg-config" => :build
   depends_on "scons" => :build
-  depends_on "boost"
+  depends_on "boost@1.76"
   depends_on "cairo"
   depends_on "freetype"
   depends_on "gdal"
@@ -55,7 +53,7 @@ class Mapnik < Formula
   uses_from_macos "zlib"
 
   def install
-    boost = Formula["boost"]
+    boost = Formula["boost@1.76"]
     harfbuzz = Formula["harfbuzz"]
     icu = Formula["icu4c"]
     jpeg = Formula["jpeg-turbo"]

@@ -2,7 +2,7 @@ class OsrmBackend < Formula
   desc "High performance routing engine"
   homepage "http://project-osrm.org/"
   license "BSD-2-Clause"
-  revision 2
+  revision 3
   head "https://github.com/Project-OSRM/osrm-backend.git", branch: "master"
 
   stable do
@@ -20,15 +20,13 @@ class OsrmBackend < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8cabeea661b54d765ac785393d9f75ccfdcbcacc92647fdb8909362bdd5c7403"
-    sha256 cellar: :any,                 arm64_ventura:  "44144dafdb204030ddefce66ac98e5d15c330bd98ff9397500ba9d4b65a94565"
-    sha256 cellar: :any,                 arm64_monterey: "d81204f9ffcc5999aae199e93fe8eedfd48d3ed65143fa287e9bd660716da2a9"
-    sha256 cellar: :any,                 arm64_big_sur:  "d48cfda368155e929f22c0cf08d1f8edee08366ebb65045b53d069fd1aeed86b"
-    sha256 cellar: :any,                 sonoma:         "d46f7fa4be50de4bbddb3e7f592b4c0e6156c981e703e8d99020442d541c7018"
-    sha256 cellar: :any,                 ventura:        "b68803f30785d4bc12e7a21f72b189e0918a8091f50d7b86df0d37df11b473d2"
-    sha256 cellar: :any,                 monterey:       "b40166ee8b4752089e41213e9795eb90c3fb8b057f77375342669b46001c444b"
-    sha256 cellar: :any,                 big_sur:        "f7468b379ec2ef34dba76e5ab90ff9bbc86a505d54493f039548b59760551787"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1806109f9e7cdc92d5467d998a92190c0d15e0e9f9a2efd3e3fab633deab85b"
+    sha256 cellar: :any,                 arm64_sonoma:   "650ea136cb0ac674ad516c9c35699e7c20bbdd308a24ef299897d7fa5efd9c34"
+    sha256 cellar: :any,                 arm64_ventura:  "428dff4f7597745a1f927575eb5cc4de00cc9732e666981fdf3f1d15ae0dee77"
+    sha256 cellar: :any,                 arm64_monterey: "51f91040008829d8407cc2e31a5a6b3894250fa89996ff52d5a6eed20d027317"
+    sha256 cellar: :any,                 sonoma:         "244ea8c5cc9170c6066aaf05530bdf713726de18f831b3e644071fd08d8ce89b"
+    sha256 cellar: :any,                 ventura:        "baf1bb1bede9f14881c7a201eed9090bcd4215145e711da9d045786a26b8c487"
+    sha256 cellar: :any,                 monterey:       "cca3d7cecab4b71d589768d7644044a5bedb9417d6e7a2b260fa94edc0f22ede"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df6c9ce58d2b0f8a45d20ad5ea1bd88811c0fc986792c6fb9663efb5c3657b52"
   end
 
   depends_on "cmake" => :build

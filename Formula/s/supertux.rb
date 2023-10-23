@@ -4,7 +4,7 @@ class Supertux < Formula
   url "https://ghproxy.com/https://github.com/SuperTux/supertux/releases/download/v0.6.3/SuperTux-v0.6.3-Source.tar.gz"
   sha256 "f7940e6009c40226eb34ebab8ffb0e3a894892d891a07b35d0e5762dd41c79f6"
   license "GPL-3.0-or-later"
-  revision 5
+  revision 6
   head "https://github.com/SuperTux/supertux.git", branch: "master"
 
   livecheck do
@@ -13,15 +13,13 @@ class Supertux < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "277b9408e3c91def0ae1ec7ca49aaa89cebe7a89da57f1171bbfb3beb3dd1298"
-    sha256 cellar: :any,                 arm64_ventura:  "10c0c7d82c4febfe1f5b5bbc6b0211c2059dd88f06deec4a49ba66714db4178a"
-    sha256 cellar: :any,                 arm64_monterey: "e5c784e30f00052d68f402ac8de525ce4c7af69099eee823d04ee3efc4e52cd5"
-    sha256 cellar: :any,                 arm64_big_sur:  "32425f5048b29966d32a6c864b69bde8fff548e490c4a21ce5c26506885abb1f"
-    sha256 cellar: :any,                 sonoma:         "1c40a37126f7c498aaf8d7402037db84dec26b2f950cf878a11f6d59e86ad3da"
-    sha256 cellar: :any,                 ventura:        "99daaa4aa45da2c7e8df9ab09522294bbc2791529b86d61ff587225a3ff62cc3"
-    sha256 cellar: :any,                 monterey:       "ab0f2f0bc71f37dbd6743f5a7de71649ddd013ad34add68a4ad9b256466e374e"
-    sha256 cellar: :any,                 big_sur:        "8544df6656d9e2cc0414c4cf9ba14e5e459e84ab01ea828a00dd41c77c55e9cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c9a51832d4daac56cff59ead774f542a2c25de35a7a7294b80e3c357c159921"
+    sha256 cellar: :any,                 arm64_sonoma:   "10852cf7b4740312c1e5ba67d487744d69d5583539b4c9f62f3a898612a8c87b"
+    sha256 cellar: :any,                 arm64_ventura:  "ea036fefea735c4d01b354f6262903ac3bc7d00bb024d949a852952b5a24c6ae"
+    sha256 cellar: :any,                 arm64_monterey: "11d6ac1caab26b4922866fca32e7db3a684ee57727a48c96c8de8aba8543c972"
+    sha256 cellar: :any,                 sonoma:         "e412155b34b8093bdbf2e085705ff40c3afb2b040095ad1278db9542f9cf7c53"
+    sha256 cellar: :any,                 ventura:        "1bcd07682ccb0f06a775e5d002dcf11986bd2f891a3085ebfec1b5fe2ae50523"
+    sha256 cellar: :any,                 monterey:       "8300e258fe02b48a4075731689a42d917d93d0b47a3b67438759483f224b4529"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e82f3dbe4f07dde17554e9df00ce014439003f8bba86bf0ba8491e90330e06b2"
   end
 
   depends_on "cmake" => :build

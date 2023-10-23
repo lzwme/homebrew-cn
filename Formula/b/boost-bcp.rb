@@ -1,8 +1,8 @@
 class BoostBcp < Formula
   desc "Utility for extracting subsets of the Boost library"
   homepage "https://www.boost.org/doc/tools/bcp/"
-  url "https://ghproxy.com/https://github.com/boostorg/boost/releases/download/boost-1.82.0/boost-1.82.0.tar.xz"
-  sha256 "fd60da30be908eff945735ac7d4d9addc7f7725b1ff6fcdcaede5262d511d21e"
+  url "https://ghproxy.com/https://github.com/boostorg/boost/releases/download/boost-1.83.0/boost-1.83.0.tar.xz"
+  sha256 "c5a0688e1f0c05f354bbd0b32244d36085d9ffc9f932e8a18983a9908096f614"
   license "BSL-1.0"
   head "https://github.com/boostorg/boost.git", branch: "master"
 
@@ -11,15 +11,13 @@ class BoostBcp < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "38341dfb6df17577de68b6d50a3dbb05c9d172f78bc4432a0642ddcc37a902e2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "546e2e4b992b227502893bb99802046bd148eac46dc70d351ac15e3a1c741fb0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "19f66c853e71c38810c7ea1f931c0c739ab21a5f05f7eaef122f469ce676051e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "292512be6a33b38e7b5a02adb43590b8166d6c35a3a0f9f999c41949dc6fe6e0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b64c18afb233850ae88c7cac5c10c185af4459bfdb70d876d79d778ac80e0374"
-    sha256 cellar: :any_skip_relocation, ventura:        "de25d6bbb70a8c3601dcf42ea912a37532271684b7d7b6620a8a8125b9709c0d"
-    sha256 cellar: :any_skip_relocation, monterey:       "6c284bfdabf3553242dcf2b80fc79ed6c80d61e85a5b4b6239464f003da62feb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8fe0266537ddf50a031ab743e22ab672adcd64889cdd2944cbafabb45a585005"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71a4ddd60a9968795a0fc0c961b56bbb5d97a4dfffe2daf4b1be92e7e9647cdf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7937a18c05e7bc667834d66bcbb9813e045850d60a27554a5ca3976f880fe8b4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "942063a3ed8a10a8f184d9a4cd5e8cb5c1a759791d3f1703af63c5f9153ea6b7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "65fe213908ca1c81e37d1bd4085e435a810c692485fd8cae7188151aa77443e2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "61d0aed611a3c111c31d2a2700b8f596a464f815bb88102d6fa42b5b7831d1f1"
+    sha256 cellar: :any_skip_relocation, ventura:        "d4d6e592eb31c30f6c704f28fd8433d1bb509229ec7dedaf8c4c5386c632a9ec"
+    sha256 cellar: :any_skip_relocation, monterey:       "19e92c43386a4fa956fcb908bc0cbc744ca60eb7f854818105f177720d83069c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3de00e56a9473a25d3af260aad76847cb4e1bdf96e4ffd56f92e12952f6cf3a7"
   end
 
   depends_on "boost-build" => :build

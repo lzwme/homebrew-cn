@@ -1,20 +1,18 @@
 class TrzszSsh < Formula
   desc "Simple ssh client with trzsz ( trz / tsz ) support"
   homepage "https://trzsz.github.io/ssh"
-  url "https://ghproxy.com/https://github.com/trzsz/trzsz-ssh/archive/refs/tags/v0.1.11.tar.gz"
-  sha256 "1e11ffefd5021996bf1bcbc9b84b644a48ea7ef2262acece2f373f0795e48c35"
+  url "https://ghproxy.com/https://github.com/trzsz/trzsz-ssh/archive/refs/tags/v0.1.12.tar.gz"
+  sha256 "15b7c40adf09b53f3d3d8f7f592390908b56a4fdd7318dd5f8dfc6e288ca61c9"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c1ffd7ca39ba10f825bcd039085dd253f85e952398cb674c0e3c7a8421931ea0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d6f50f406455b5859a7dfb9e246684fc46299c34a70057675eeb39c9dc2beec"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d7199aae0cc11edecc9c1aff0c3b1ba622a20203838bc87a13a86018935b754e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "431f6b1cde494c494aaed50daf5c28fefbae7636f9f983ac7f6386f00fbcdc62"
-    sha256 cellar: :any_skip_relocation, sonoma:         "46253a2e18ae213a553a56c5f500608be2bdc7fd1e0e69203d371aab6c76dd03"
-    sha256 cellar: :any_skip_relocation, ventura:        "70b7b95250d6d5dba79c96b83b2cb7eb33c22080de8206577a347f3bccfc454c"
-    sha256 cellar: :any_skip_relocation, monterey:       "dd2bc73958945bfab0f6d71d130b72d4388d0aae46b474aaa3e2c05a0f179f8c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "21a23642ddbfac93eefbaef6902c805a627910a58f2a7e250b489b5d8b901562"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e43ac2536dfac843b88726bf3dabf3b6951b64cd41320075a0dcf23209000e9b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7ca49b45375b70ad7ddab7ce8876f28dcc35d2bc29a5b2fc91f6127409d35fc7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02e050242327c7f46796320da05f383155076f015093624ac5c36770826374a6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "877051ec62b7fef67111929904268e9e986e18b7d844c83ba95084c4147d5e31"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3f5f6a344704275628a4558bb2a48667774d7d0d6cbad43186b699e4214954c0"
+    sha256 cellar: :any_skip_relocation, ventura:        "f60e891509c1f3afc93bfa205aff0a8461c56869ba9ec3fae90d7b1dd9e98d00"
+    sha256 cellar: :any_skip_relocation, monterey:       "21de5a438c064a0bc3306d8ad1ee5dd62ace66032fd88bdfa16de9a6e6f557fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46f4caf4b0d904fdd5db1a2eb7de9e072eeb6c1dd96bf83e68b97a32fc50579a"
   end
 
   depends_on "go" => :build

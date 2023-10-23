@@ -4,17 +4,16 @@ class I2pd < Formula
   url "https://ghproxy.com/https://github.com/PurpleI2P/i2pd/archive/2.49.0.tar.gz"
   sha256 "d8e07f78cc9f1ba65e8460db27c649dd0cfdd3ba334725f8d6f9ee815cb40e68"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d894067ebb3756e9d32e1c7d3930d9deccb012ae544a307a9d255852518c1671"
-    sha256 cellar: :any,                 arm64_ventura:  "8a845f109a208d1b4507c9dc406d448e3126d5d778ebdb9472f7d275757b5a4e"
-    sha256 cellar: :any,                 arm64_monterey: "e3c10b7bb1f6e048c3cf32e4f13a69e981a128b850517782cc84954553a92273"
-    sha256 cellar: :any,                 arm64_big_sur:  "89fb8e47c6ff0fbbbcd0e21699438d510ae03e3fbbe958eff9a87cebf3346171"
-    sha256 cellar: :any,                 sonoma:         "c704c0da3224e615a1e3c3fe9769eb18f007d3d7f294d3692433e89c484f57fb"
-    sha256 cellar: :any,                 ventura:        "10737ea8eca3c502fda677d6719acbd0f093a96e0c605aed2a15e41d03ce71d9"
-    sha256 cellar: :any,                 monterey:       "d911bfc93c106e2626d07fa0c4009846c873025ef4fbe7c9b399567d70ce2666"
-    sha256 cellar: :any,                 big_sur:        "53011ce5df89c0df9203cac60372b325d5e2745fb611ee8929ad2aa90a267203"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f8c3b889a96c29814dfee2831fe473582af55da281f0321c545f4dc29e15e16"
+    sha256 cellar: :any,                 arm64_sonoma:   "3c5f91b45bd3ae82d543d1c5343312c27aabfa7b8df415a1d7df8483fdf8cc28"
+    sha256 cellar: :any,                 arm64_ventura:  "ff7af6fe06ee01e7010eef65bed7ee3e9cb1724424973d2b530a57d4c6c1554a"
+    sha256 cellar: :any,                 arm64_monterey: "86da15510b20431a56053e0a8d61ae2d2098af1833c2e6488a07cbb48e5686d9"
+    sha256 cellar: :any,                 sonoma:         "fa99d75dc9f3d165347c7adf8cd79198be295420f5527a860c7e9a1c2c462d1c"
+    sha256 cellar: :any,                 ventura:        "984568f33af0e93d5c8adbcacc2211ef9c6e34946370ac7c4e19ecd633d13a05"
+    sha256 cellar: :any,                 monterey:       "1f7ba02391ee429c059489673ede9d4f5354220e43d83b55dfa313edcd2c6791"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1bd15e8f62ec4b7c090fae10801fa2d3d7511f58074e7d6bf80dbc1a20a3ccb5"
   end
 
   depends_on "boost"

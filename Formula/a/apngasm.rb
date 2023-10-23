@@ -4,19 +4,17 @@ class Apngasm < Formula
   url "https://ghproxy.com/https://github.com/apngasm/apngasm/archive/3.1.10.tar.gz"
   sha256 "8171e2c1d37ab231a2061320cb1e5d15cee37642e3ce78e8ab0b8dfc45b80f6c"
   license "Zlib"
-  revision 7
+  revision 8
   head "https://github.com/apngasm/apngasm.git", branch: "master"
 
   bottle do
-    sha256                               arm64_sonoma:   "d06584bffeace37d61046d9bb3696082134a3d894e6fe8c7575e34eefe9953ee"
-    sha256 cellar: :any,                 arm64_ventura:  "3f9da6cc06a428bf332a05d0e37f24b8ef58d3367d387f3d0e0b055a88865cc8"
-    sha256 cellar: :any,                 arm64_monterey: "5da7148c96b13c85f4ff8cdb1b3f3a309be19b0a07ebb5711eaa7d2037158d19"
-    sha256 cellar: :any,                 arm64_big_sur:  "38878c113cd01abe132818b6e50b48382c221390c5aca0d118d35a4f49c58066"
-    sha256                               sonoma:         "ab9a837c0c58c071afcc96d81d8e9506ae31638f0ec7c4bf3e1c96282ab2da34"
-    sha256 cellar: :any,                 ventura:        "7c0293ed4c217e252bb34875f4ae70d0bfdfa139a1b52ff2668140358d39c54f"
-    sha256 cellar: :any,                 monterey:       "10b52f74ab62f801c62f1b78614eba2e4e21f080eee53c3aea2e9c9718d24a62"
-    sha256 cellar: :any,                 big_sur:        "e5becfcec0027d6cd8752e4d8382040877d34fa36099dbd558e554801029fced"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0315fdfade74e9d14cffb22a4f2fd7d8647cda3b2c4b32058de119db301f75ba"
+    sha256                               arm64_sonoma:   "1482f26eabdfedaa35741d0c281e315d863d4678fe3d92677653d2460694d36b"
+    sha256 cellar: :any,                 arm64_ventura:  "1979f8768835588284eb04ff9a0cc2ceee1f755604bb6eba37d59ac2277203c1"
+    sha256 cellar: :any,                 arm64_monterey: "caf5ddef45e3d6b18e541744456270d72a3d8f64fd3534a8cc4fa157c73b381a"
+    sha256                               sonoma:         "7e27ca950dbed5132a0812b7a61b212ce73198d91486efc604065a42f316a792"
+    sha256 cellar: :any,                 ventura:        "e0fac2cdb862f7eaef78d42cbd2d8d904f76568c54fd94583050b26761ad5fc4"
+    sha256 cellar: :any,                 monterey:       "4b003e22148109be8518ed8029fa66b82428c903e6dbc21529ad3b2f7cb19d07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9eb5323e8383c2c02396dfc27a4a59dcf593dbc1102276b0a70352a3faea4f0"
   end
 
   depends_on "cmake" => :build

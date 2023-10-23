@@ -1,10 +1,9 @@
 class Netdata < Formula
   desc "Diagnose infrastructure problems with metrics, visualizations & alarms"
   homepage "https://netdata.cloud/"
-  url "https://ghproxy.com/https://github.com/netdata/netdata/releases/download/v1.42.4/netdata-v1.42.4.tar.gz"
-  sha256 "412f9612341132e978f76da0e4b26dd22f3ba4df20f063083ddf2e7b75d6bc9e"
+  url "https://ghproxy.com/https://github.com/netdata/netdata/releases/download/v1.43.0/netdata-v1.43.0.tar.gz"
+  sha256 "d3c66273d8eb62290d412c870dcde45ea214ad187df9d5350f682d9e6d19d426"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,13 +11,13 @@ class Netdata < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "594cce6cf43c901d1a98e5290b2766fc4d8c818eed6a31eb6409f1026e1ea659"
-    sha256 arm64_ventura:  "9c035f5d6adb17acd5a8ed3c16fefa59bb01147ff02a8b3eb38ee7b8e4e3b53c"
-    sha256 arm64_monterey: "f506fed45afb6488da69bc637b4e84224f6bc6ea3dea689f78a42dbf63425716"
-    sha256 sonoma:         "cbf5d9df79e96ed5ded2ccd32c48355e5b0337b88300a2a319bd49dd011fea83"
-    sha256 ventura:        "0a8f7cfeec4d29e18c52b144d4b74058f77cd7f0408310e98e2b4c5ec379da00"
-    sha256 monterey:       "0494e78f09e9cee9ae4002bbf04ed7141a4ef0f551398f0db28aa5c8eb77305d"
-    sha256 x86_64_linux:   "cdc9427d6cd6cc931b546559776ccd6e907a0b85d2cb23d68bef4f9b28591b55"
+    sha256 arm64_sonoma:   "527d9f4359fe05149edc4d91d42012d57685adee5eb06c79dab81b8666aa9a76"
+    sha256 arm64_ventura:  "2ac904e2b01ac35cd10056b11cba2ccbcb58e3c70b9d3be681cecabd4981e474"
+    sha256 arm64_monterey: "4e18caeb44da95eb20423bf8d3444ca23e5a3425d9989f37889e918d41e7aa32"
+    sha256 sonoma:         "4204d069b018ac4521b573062939aafe894fdd9d5a19f7af17828be25db25e18"
+    sha256 ventura:        "873a7ddc5ae3865decd70cced13b4ab4212bef0b07a3f68ed3721020bcae6532"
+    sha256 monterey:       "b720a3e0c8b4117c0f067e38969b81c01db866a65d4e228588c8d5b744817ba0"
+    sha256 x86_64_linux:   "4317c4efd1070d6c0cd5e6ab7d090a6721cd6b0a8169170ccc16c0122df12ea8"
   end
 
   depends_on "autoconf" => :build

@@ -4,16 +4,15 @@ class Mgis < Formula
   url "https://ghproxy.com/https://github.com/thelfer/MFrontGenericInterfaceSupport/archive/refs/tags/MFrontGenericInterfaceSupport-2.1.tar.gz"
   sha256 "f5b556aab130da0c423f395fe4c35d6bf509dd8fc958242f2e37ea788464aea9"
   license any_of: ["LGPL-3.0-only", "CECILL-1.0"]
+  revision 1
   head "https://github.com/thelfer/MFrontGenericInterfaceSupport.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "00031d296c66f07c93873ccf0d591543b32cecb2a4a2028badb00de8efe0d290"
-    sha256 cellar: :any,                 arm64_monterey: "4cf5e165f080678d90509858aac09f8fb0d7d456d60507e776823d910cb03553"
-    sha256 cellar: :any,                 arm64_big_sur:  "dc5ef7e662788b84c4b77641505187e2d7350b0cb860be2de6758556e7d2b1fa"
-    sha256 cellar: :any,                 ventura:        "4c882ebc70ee1a5a936224cdb6dd87498f0a679807465084bcefe8975fdf2816"
-    sha256 cellar: :any,                 monterey:       "a7bc885365b452c7ecb6fb15d8d5c6cc4cc0b56cfbe0bf590051415a9e9bcd00"
-    sha256 cellar: :any,                 big_sur:        "ddd5890d15d2e91048dd43a96690cb5a7c3e80432e0e1af4b9ad8ef5bd126f16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a981f8819c30768bc39ca6cc37014147402bdeba1840cb125c1753a85c9f33ac"
+    sha256 cellar: :any,                 arm64_ventura:  "d35eeacabd8ade1b19dee20bcc839bc9cf3d4d75f33bed4021f5a41d1b74edc3"
+    sha256 cellar: :any,                 arm64_monterey: "fba6608e28cafcd3e8833ff2773d39c0115572231fe86404c034b8fc9f5ee958"
+    sha256 cellar: :any,                 ventura:        "14b53d88997a7d620f05cad5be6c8eed0a6e8e8b981118e7556d6092523a1568"
+    sha256 cellar: :any,                 monterey:       "b38dff28f3b85c1dc7f7f62b8cab0ff25a589f91296caaa76d605b28fae46c13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd8a72d6f65924ff42a7967e69ea008d8d54ea627abbeed8d0688c3bb20005cf"
   end
 
   depends_on "cmake" => :build

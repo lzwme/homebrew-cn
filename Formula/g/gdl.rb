@@ -26,10 +26,15 @@ class Gdl < Formula
   depends_on "gtk+3"
   depends_on "libxml2"
 
+  uses_from_macos "perl" => :build
+
+  on_linux do
+    depends_on "perl-xml-parser" => :build
+  end
+
   def install
     if OS.linux?
-      # Needed to find intltool (xml::parser)
-      ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5"
+      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5"
       ENV["INTLTOOL_PERL"] = Formula["perl"].bin/"perl"
     end
 

@@ -3,8 +3,8 @@ require "language/node"
 class Artillery < Formula
   desc "Cloud-native performance & reliability testing for developers and SREs"
   homepage "https://artillery.io/"
-  url "https://registry.npmjs.org/artillery/-/artillery-2.0.0-37.tgz"
-  sha256 "7e90c6627287b3e6b1e37a991e24b3928eef3a56e96471b2be8c0f4f9107babf"
+  url "https://registry.npmjs.org/artillery/-/artillery-2.0.0-38.tgz"
+  sha256 "4b110c4eff35e3a786a88429beb05b9fd0f50eb22c045e687d10d9ea886dc86b"
   license "MPL-2.0"
 
   livecheck do
@@ -13,13 +13,13 @@ class Artillery < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "bbe2d126a575d870cbd0dc5ba61526d2f793385f975bca90ada8c524cc6fc69b"
-    sha256                               arm64_monterey: "6d380ed2c8250cbf5db5151592d96cd88e4648fce5bd5aed623eb638ea0eb4e7"
-    sha256                               arm64_big_sur:  "684cac3f7e4a734cf3c1a899b11e9479c91265dbe43c07ca98247a2b906ac605"
-    sha256                               ventura:        "178ce66109510a171ec28c1df06c77adbd2347d1660013c7c91ca5a188b586af"
-    sha256                               monterey:       "8029e4d469e72f924762fb805d5eb80f769bd4a523d9b34bad9378135879e46d"
-    sha256                               big_sur:        "26d15be6be080ad17430a500438743609d43a54d112ecc0e125379433b686a53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03c25b4560193af9b3673c9d90b7e751dd27e633d26b55379d8dffe7504a4d02"
+    sha256                               arm64_sonoma:   "4fc24d42f2c84758e528981df38c70551ae965c4227a5b625e003c4b5d8026b8"
+    sha256                               arm64_ventura:  "ae4e4e3a27c311a25865ec6f64af64c20d4fee22eb46f734a3250b5ed6b2bf1c"
+    sha256                               arm64_monterey: "6de5619f5cf0fb9afcf80abf1301d7628ebab41e1b0f2a5df64275ebf7e83517"
+    sha256                               sonoma:         "bdae67900a63c770a0bab56b122252016991ac9ea1904c99c8f42f30cfbe45c5"
+    sha256                               ventura:        "f29faa4a5bc2d92e447f31c05fe0bad648b8557eaefadaaa6f709bafb1cf243b"
+    sha256                               monterey:       "85e8a1484e4f42f81a40e3758f287ddff0b1470b7c0c2a3e01c7a6da124732b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9005ee5d17851fa0260a4958e69312daccb03d6d301995a0aa0d17b4b9a2af3d"
   end
 
   depends_on "node"
@@ -31,6 +31,9 @@ class Artillery < Formula
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    # Replace universal binaries with their native slices
+    deuniversalize_machos libexec/"lib/node_modules/artillery/node_modules/fsevents/fsevents.node"
   end
 
   test do

@@ -4,18 +4,16 @@ class Acl2 < Formula
   url "https://ghproxy.com/https://github.com/acl2/acl2/archive/8.5.tar.gz"
   sha256 "dcc18ab0220027b90f30cd9e5a67d8f603ff0e5b26528f3aab75dc8d3d4ebc0f"
   license "BSD-3-Clause"
-  revision 10
+  revision 11
 
   bottle do
-    sha256 arm64_sonoma:   "ede78b2f81f8a2f0ed7352a372995cbc30050b0b9377972e343deb56e7774720"
-    sha256 arm64_ventura:  "8752b12e385983197037b2c2d9afaacaad6f9bc8f2282d1bf5f1e7efb28003a2"
-    sha256 arm64_monterey: "1ed29ac65859c1b9d116ec370430a7fe2c7cbaf42fdc43f4e1f47c308daa124f"
-    sha256 arm64_big_sur:  "387282792f41c7d89ab357b21249966a6e3758818796a51e7c98286a811fd1a6"
-    sha256 sonoma:         "27d63fe9090d087f6471923cee9efcc1805550e35131ccee1bf8de1f5dc9c4be"
-    sha256 ventura:        "1ad7ba9a8e738da3a8e12369bc7aa5b9e4627d950c3c3350d9627df38c0c1b31"
-    sha256 monterey:       "9fb0df96fd48546ad1bbcb52e0320ce343f6b06dc8e45bd5ac957ecc30b133a7"
-    sha256 big_sur:        "346faa83e90acb38abf3e6a0e3260faa4d0b2a9c98cb6fdd7c46c3b9c883698b"
-    sha256 x86_64_linux:   "1511c4c21a77a36870a0ee67ffbaef4bab1d6a49acb65db8ab62771efe7c9dca"
+    sha256 arm64_sonoma:   "4d9a66e5abfaa62f799541a08d57f1a55e50aaf8d2a2c1d8d85ecd633e4a2b66"
+    sha256 arm64_ventura:  "d180d483d96ee516c4553c702326ab23212be5e58b020aa91b1ad8ddd4ac84ff"
+    sha256 arm64_monterey: "731f9efc2c1b64567616172fa76bea3ac763b04185f8e957cafb49fd39f14e45"
+    sha256 sonoma:         "304ce6c004bba8494a41d34fb529ab565a6fa7f14e2efe8443bbdbfffad0b00b"
+    sha256 ventura:        "236b171ce0956e97fda681f1bfd0a5586d4d4018a6477e052f0fe1e7632b2b2d"
+    sha256 monterey:       "e52a89ac18a5d7ba3f6eab7180aafddd309040779617122411158a1e3ecd29c5"
+    sha256 x86_64_linux:   "51c7f763c558b03fdab9ef1ced74c57d3950af3eb74a5e745ed01202761d5a86"
   end
 
   depends_on "sbcl"

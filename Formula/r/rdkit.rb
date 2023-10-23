@@ -4,6 +4,7 @@ class Rdkit < Formula
   url "https://ghproxy.com/https://github.com/rdkit/rdkit/archive/Release_2023_09_1.tar.gz"
   sha256 "e0ff8e330c98b93ac8277a59b2369d9a38027afadb4f03bb34c6924d445f08d5"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/rdkit/rdkit.git", branch: "master"
 
   livecheck do
@@ -15,13 +16,13 @@ class Rdkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2648a61f2e1e941730033874b6c4d4e68537b69d3bee9a044df89ea1a8b3b01a"
-    sha256 cellar: :any,                 arm64_ventura:  "79378a7b789eca6ddacb1ed46382df274f74d8529a6bc8408abafd1c36e7c016"
-    sha256 cellar: :any,                 arm64_monterey: "5d09118f9793572fcd53fc40823cfb0a236bfae7f9e305451f4d9744283a534b"
-    sha256 cellar: :any,                 sonoma:         "17cc75d5111ab6002741484d2f4d353924256d8f402c5f57eccd64dc0ed8bb44"
-    sha256 cellar: :any,                 ventura:        "7210c103cdc01f2bc6c4f8a2dc750851f351466b18c1b68e15009718e5dd425f"
-    sha256 cellar: :any,                 monterey:       "95bc37778781d1a9cae96bcc6972b5fa1027f548eb21636e328f99ea6f935422"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03bf9b346783e1ef0c6626b2c91bae7114b701a9a29bfdc5d5fbcf79ad9a0c59"
+    sha256 cellar: :any,                 arm64_sonoma:   "61bdf8de08cf1a9612f52107e96734218005ffb06f79beda68e632cdfe2a5744"
+    sha256 cellar: :any,                 arm64_ventura:  "848ac75e7d5e4d9ae9c392d3b03938386db0058442286b835e50052cccbf09b6"
+    sha256 cellar: :any,                 arm64_monterey: "549b804201ddff07696bac1155c399793b0efdc4746e304072bdff5a556a5e6a"
+    sha256 cellar: :any,                 sonoma:         "471690a7f4fc2f2cbfffdf7763af023a080b17d49ce484c9f4c40292d0644e2b"
+    sha256 cellar: :any,                 ventura:        "f838cf3b96d13cd17634f6d52bf44e27afe3833fe253422b961793b815fec867"
+    sha256 cellar: :any,                 monterey:       "21c6cf7559163004a6f894aacb0019a44aeb89e30cbac73972681420400381b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb5bfc27459078461ea6d4e496a99a272803bb85ac8ff50acd265c0d083f949e"
   end
 
   depends_on "cmake" => :build

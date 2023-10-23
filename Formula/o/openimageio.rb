@@ -4,6 +4,7 @@ class Openimageio < Formula
   url "https://ghproxy.com/https://github.com/OpenImageIO/oiio/archive/v2.5.4.0.tar.gz"
   sha256 "2e262ae5e5281f839651cd706e417c83c58294a26527ec184b466a2ba6ca31dc"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/OpenImageIO/oiio.git", branch: "master"
 
   livecheck do
@@ -13,12 +14,12 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8474d6fb87d1909f317074a39575cf1cc8a040bcad4fd07fc312e9179dacce4e"
-    sha256 cellar: :any,                 arm64_ventura:  "c0e706e61cfec17ce882b2f1a934863224ce5f72add9a568d39a841012ebd7d5"
-    sha256 cellar: :any,                 arm64_monterey: "24b8a66ff6ed1d3fbf1a3e1bfefaacd5824e5c80a6ca5af986172c9812c2e0d5"
-    sha256 cellar: :any,                 ventura:        "0e829bc4da876abe84676dd4454dccd396dd6371fd1936fcc61080ac74657d25"
-    sha256 cellar: :any,                 monterey:       "d30d69d3354b32b3ae3f7ccada13b9648113d94ab986fb6393430b05de5a1a28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca7baad7a82d56cca1a06060555b5bbf85cf4f10fbcf1eb03956fbe0d49a0bd8"
+    sha256 cellar: :any,                 arm64_sonoma:   "bd6185b8fced06dc593fbd55805c19995b08c13086e069aff544608204647f21"
+    sha256 cellar: :any,                 arm64_ventura:  "0375ab2d2985fe528f6fef46c5f8b67f442319bb68be6ffe30317eb45a64d9d0"
+    sha256 cellar: :any,                 arm64_monterey: "69f7e30d49822aca423c8eccb61c9727abfd06b492b1226d7035cb8c75e60e6a"
+    sha256 cellar: :any,                 ventura:        "fa75fa03b32b79738593500ef11d343b5ba7d5b9c27f1ed84b180c42fdc6b05d"
+    sha256 cellar: :any,                 monterey:       "b6119e1d21b849e9ecd620601e57dd913bcf01225db16b785bef4f6858039381"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1465ae4b67f899eef42b912a84d0dc51e46679aef57edc68d6af0f6076ab249"
   end
 
   depends_on "cmake" => :build

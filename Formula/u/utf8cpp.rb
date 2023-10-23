@@ -1,27 +1,20 @@
 class Utf8cpp < Formula
   desc "UTF-8 with C++ in a Portable Way"
   homepage "https://github.com/nemtrif/utfcpp"
-  url "https://ghproxy.com/https://github.com/nemtrif/utfcpp/archive/v3.2.5.tar.gz"
-  sha256 "14fd1b3c466814cb4c40771b7f207b61d2c7a0aa6a5e620ca05c00df27f25afd"
+  url "https://ghproxy.com/https://github.com/nemtrif/utfcpp/archive/v4.0.0.tar.gz"
+  sha256 "ac44d9652aa2ee64d405c1705718f26b385337a9b8cf20bf2b2aac6435a16c1e"
   license "BSL-1.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ef0a0128a797444a7941f62dbb8e6780837cbcbc77c863b8a2dea51344917b94"
+    sha256 cellar: :any_skip_relocation, all: "117f06b3d77d266bce6652c18db9ba6758d7733b6e7497fe9cb8da110ee7757b"
   end
 
   depends_on "cmake" => [:build, :test]
 
   def install
-    args = std_cmake_args + %w[
-      -DUTF8_INSTALL:BOOL=ON
-      -DUTF8_SAMPLES:BOOL=OFF
-      -DUTF8_TESTS:BOOL=OFF
-    ]
-
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -30,7 +23,6 @@ class Utf8cpp < Formula
       project(utf8_append LANGUAGES CXX)
       find_package(utf8cpp REQUIRED CONFIG)
       add_executable(utf8_append utf8_append.cpp)
-      target_link_libraries(utf8_append PRIVATE utf8cpp)
     EOS
 
     (testpath/"utf8_append.cpp").write <<~EOS

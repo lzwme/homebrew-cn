@@ -6,15 +6,16 @@ class Cdktf < Formula
   url "https://registry.npmjs.org/cdktf-cli/-/cdktf-cli-0.19.0.tgz"
   sha256 "1e8cf857b5ef4ef2b737e8366a51a923013d231c38ff301d0a43c14f293c1b4d"
   license "MPL-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "958644c1bb520bb5317ed1a36ee7c4433c52c39b33e8876488c9ef8316e43c73"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "958644c1bb520bb5317ed1a36ee7c4433c52c39b33e8876488c9ef8316e43c73"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "958644c1bb520bb5317ed1a36ee7c4433c52c39b33e8876488c9ef8316e43c73"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3708004d66e6b6bed1e15635a0bbc6ba011ed2f4238992851c7d99320854865c"
-    sha256 cellar: :any_skip_relocation, ventura:        "3708004d66e6b6bed1e15635a0bbc6ba011ed2f4238992851c7d99320854865c"
-    sha256 cellar: :any_skip_relocation, monterey:       "3708004d66e6b6bed1e15635a0bbc6ba011ed2f4238992851c7d99320854865c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3091a78e5fd8c77097701c4f8b7e2c0433c3e8ac2b32527997f34360f6a9d37"
+    sha256                               arm64_sonoma:   "c2b13603929ea3285828acd37c21a40c26ace189c79bb201a7f87c9940b8e230"
+    sha256                               arm64_ventura:  "fc1e82ee42db919f8475a7b788e45c6a59a28f1fe50499b9467ccb885bddb8bc"
+    sha256                               arm64_monterey: "e29089d4ad74b383e03f3a52ca9e27ba165ac2962fc5ea58f3d6bc48ab1ada33"
+    sha256                               sonoma:         "311d7c2bf907f490b4187cd69d0cc962288adc34a44ccbafe933728c6145de4b"
+    sha256                               ventura:        "670d37390d86dd5d10f9910cd840b60af91f386a41e66ff1cb048a8fc205a115"
+    sha256                               monterey:       "e0bdf93dd2f962fe8a8781dedf994b6bb0c5f296aaca23fa1bd2ae1bc65a456c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63d8e8af6ced4674c25853f0f4974962a3b238c21d575ab3d24e10ae0fc0a837"
   end
 
   depends_on "node"

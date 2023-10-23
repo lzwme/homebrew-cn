@@ -1,9 +1,9 @@
 class UniversalCtags < Formula
   desc "Maintained ctags implementation"
   homepage "https://github.com/universal-ctags/ctags"
-  url "https://ghproxy.com/https://github.com/universal-ctags/ctags/archive/refs/tags/p6.0.20231001.0.tar.gz"
-  version "p6.0.20231001.0"
-  sha256 "785d2c172c9ff88ccfdb43bad64c316808c80321d8c79e85cf394df5dd3bf160"
+  url "https://ghproxy.com/https://github.com/universal-ctags/ctags/archive/refs/tags/p6.0.20231022.0.tar.gz"
+  version "p6.0.20231022.0"
+  sha256 "a562d1603bf6f4cbb5300425708bcfdfedbd3b3808ba0ad5ae03247a31508e33"
   license "GPL-2.0-only"
   head "https://github.com/universal-ctags/ctags.git", branch: "master"
 
@@ -13,19 +13,20 @@ class UniversalCtags < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e0416191ab0a33256ee7e7d36833be7abf1c2bab4269f378a4f91c6950fad36c"
-    sha256 cellar: :any,                 arm64_ventura:  "a5ad11f06dbab7f827ffff5f50625ab14e0b6b837f471e414962f358c5c687d3"
-    sha256 cellar: :any,                 arm64_monterey: "12376b0ed5f82a7fe3bb186112259a20e8ba5f1bd4cee6518aab72005f6ecf48"
-    sha256 cellar: :any,                 sonoma:         "e7acb16d126dbef0fdabb650b09d7075b6bb77796bbfece29d89d1f15e634753"
-    sha256 cellar: :any,                 ventura:        "ffa95a2c0e683c444111e415b173b96d720df117c8a60c0cce538a0f2e0d0701"
-    sha256 cellar: :any,                 monterey:       "171aa357e0c93e478333ae86a3cf48e89077a58fa815611e70ae043c1bbe9b60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ab44e1443930961b7b7ea6ddd4622b6afdd73545c3a4dfea7b29c07ed8a74e4"
+    sha256 cellar: :any,                 arm64_sonoma:   "31cf05c3a962d0d32afc7b7a3a78e13da6423432e1b733ef835ebe821273cea7"
+    sha256 cellar: :any,                 arm64_ventura:  "096bf7d4ca313acb1bb4b30b112641738f026df3426099faba76916494a73aa3"
+    sha256 cellar: :any,                 arm64_monterey: "0ce4cd9b2fa57a88dce7f0a6bc669478a641d23d46b663542d8a39b43434ed44"
+    sha256 cellar: :any,                 sonoma:         "823ce28c38fc5247727ece05758120a2f81aa69c71e249553a62ef98767c6de4"
+    sha256 cellar: :any,                 ventura:        "210b6c0a3296ffdec89addbec59b1cbbf84ab6b72ae120c452611f5835a36839"
+    sha256 cellar: :any,                 monterey:       "cc6f951414a54874775c3d4afa78c5705e75f81edff7affe0608fd5f120ee4df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cf2aa1c25b73bd763e02e6f0b32e873890bc54d97341ae9ab1be68a6796d4b4"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "docutils" => :build
   depends_on "pkg-config" => :build
+  depends_on "python@3.12" => :build
   depends_on "jansson"
   depends_on "libyaml"
   depends_on "pcre2"

@@ -4,18 +4,16 @@ class AzureStorageCpp < Formula
   url "https://ghproxy.com/https://github.com/Azure/azure-storage-cpp/archive/v7.5.0.tar.gz"
   sha256 "446a821d115949f6511b7eb01e6a0e4f014b17bfeba0f3dc33a51750a9d5eca5"
   license "Apache-2.0"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "24e15a4652c0901a3b2d5c6b2ec25f09396e25673f84cd271c41bef31328217a"
-    sha256 cellar: :any,                 arm64_ventura:  "ab552ebf3bdc993fc9e579e2a6b75759c9da2ae1be66951caf8f9e609d7a1800"
-    sha256 cellar: :any,                 arm64_monterey: "46cd609d6586555b067f95d24cf0de532e40db79b0b3367c290d51cab751ce41"
-    sha256 cellar: :any,                 arm64_big_sur:  "be9e3706cc237d12e7285ca3184b45681784905855e0f12e71457fdde06e980d"
-    sha256 cellar: :any,                 sonoma:         "4da76bd9176c7282e8e9e6fa223c9865bb2142ec5c0866d7a505117806ea5a89"
-    sha256 cellar: :any,                 ventura:        "30ff16a364d78d4ff1b0478c79262628c42f614a585be85649cdb6dd1ef9d37c"
-    sha256 cellar: :any,                 monterey:       "412a2a4bc2bb9a1e8e350fc906b43bc1f6461efc36bc21246358b4ee0cea2c4f"
-    sha256 cellar: :any,                 big_sur:        "cf309d60aec3a7898cb09864286a950332cda74e165f7c8d741ef8f74b1cdd3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc25900db6d940de570b1196d2680d440be510bbadf5310208e3728b6b55ebed"
+    sha256 cellar: :any,                 arm64_sonoma:   "4bc4cb251618870f0a409a992d721bb2ee42931a220fa2e4c845a1973b71764a"
+    sha256 cellar: :any,                 arm64_ventura:  "dba71aa9c5484a25ef89187163979735d645eba1f88d7d424fe994502ea7df27"
+    sha256 cellar: :any,                 arm64_monterey: "034dcfbb9f56c28eba5d07d74f76ae6c091c9e9480138b7d1e810f89d83d6334"
+    sha256 cellar: :any,                 sonoma:         "cd544f7d3b75c30b84b1279c5d7fe0fa8e7e1cd76dbea530eb172785e6862a98"
+    sha256 cellar: :any,                 ventura:        "1779aa8d72752a5134f3782b042ef647fba38b78e866e3ca4ae169018673adf0"
+    sha256 cellar: :any,                 monterey:       "6a3781a788553d7fa7e115544aea8967caff24a503a2b601b640dcec8566b50d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba7e2306012855a6e9c341f710b07580132b8b5c5bb8d35b21309643f9891c85"
   end
 
   depends_on "cmake" => :build

@@ -1,9 +1,9 @@
 class Unum < Formula
   desc "Interconvert numbers, Unicode, and HTML/XHTML entities"
   homepage "https://www.fourmilab.ch/webtools/unum/"
-  url "https://www.fourmilab.ch/webtools/unum/prior-releases/3.5-15.0.0/unum.tar.gz"
-  version "3.5-15.0.0"
-  sha256 "7723433fc5eeda0e9ea01befde15d76523792177f2325980083c270fb62043ae"
+  url "https://www.fourmilab.ch/webtools/unum/prior-releases/3.6-15.1.0/unum.tar.gz"
+  version "3.6-15.1.0"
+  sha256 "9e4cb91aff389091f8c04122107ce3f7face4389ee27a9fb398b574dda20b457"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
 
   livecheck do
@@ -12,16 +12,13 @@ class Unum < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c6990b37e8aa8526acc5d1a451104bcd8835a697d3e460c1f7e11b8af0a837c1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c22bef3d871c22b2ae47fe00da1c301a0acae08e51268a6807747fac0939b4a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c22bef3d871c22b2ae47fe00da1c301a0acae08e51268a6807747fac0939b4a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cd5abefdf57460ea0ebdc949267fc2b3443c71aaf2af7cb70701c8fd797b977d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "327049ccbe5d627cecd6a061654d26fb780a83dcf9a7c236bc87af9a603bebe8"
-    sha256 cellar: :any_skip_relocation, ventura:        "8a80b4ff18e6259cf34baaadb8a37e773225b14bd90b2104835fab1fee239f1f"
-    sha256 cellar: :any_skip_relocation, monterey:       "22e5c8640275d380cfe78193668b1c7444add4abf05b7390cbd360d1e3d37fe0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fd97a83fe0f4c0bb3c1ff8966c9f116237cdd243db8b2d057454642ab67ccd18"
-    sha256 cellar: :any_skip_relocation, catalina:       "81439219eeb57ab4ea2ece284592bff4bba3a55be535a6302ccd8106f56caafd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8beb082a5c05e340d3dc8606e855cae89e646cb922f9c599b2859aac39f4a8d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "da2908ba84393f040c3fd859a4c1f44c9ead4a5ce06cee7dd38625065e0631bb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da2908ba84393f040c3fd859a4c1f44c9ead4a5ce06cee7dd38625065e0631bb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "da2908ba84393f040c3fd859a4c1f44c9ead4a5ce06cee7dd38625065e0631bb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "11d6646154273911dea7b648880e183aeab4a93bb6599a696c059f4dde13d98d"
+    sha256 cellar: :any_skip_relocation, ventura:        "11d6646154273911dea7b648880e183aeab4a93bb6599a696c059f4dde13d98d"
+    sha256 cellar: :any_skip_relocation, monterey:       "11d6646154273911dea7b648880e183aeab4a93bb6599a696c059f4dde13d98d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb8caefc407d78aa4c1f58392ae2b227a54ab50ed17734440cf92b1f6aa81298"
   end
 
   depends_on "pod2man" => :build

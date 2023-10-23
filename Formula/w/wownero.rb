@@ -6,6 +6,7 @@ class Wownero < Formula
       tag:      "v0.11.1.0",
       revision: "1b8475003c065b0387f21323dad8a03b131ae7d1"
   license "BSD-3-Clause"
+  revision 1
 
   # The `strategy` code below can be removed if/when this software exceeds
   # version 10.0.0. Until then, it's used to omit a malformed tag that would
@@ -24,13 +25,13 @@ class Wownero < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fcb47744629c28e38b394ce3cb035e23997d300a5cdd9df88bd1a235860e4f0a"
-    sha256 cellar: :any,                 arm64_ventura:  "2b92d800b9ecdcefd71b4fb9a3fa84fa78ae61f4c0b5134b499134eaa3c44d19"
-    sha256 cellar: :any,                 arm64_monterey: "9eb5bfdf90a6ee311595963cab3b7cb7e7aae34dda897f06f975f048adda838f"
-    sha256 cellar: :any,                 sonoma:         "34c6811f414fea8e0d19f6053f1ef5af895f1dc264c921bd1e12587655268325"
-    sha256 cellar: :any,                 ventura:        "55ed51a6db9fa2b55f4d5a26b7fe1a1f154ac0cbe71902e354b5f11d54576ae7"
-    sha256 cellar: :any,                 monterey:       "b70d89d962b51c601dd335ba4da21acbaa21e02c44ac265997dc1db2c45a0378"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c1ab70959cb2f0d13e761a9bd8d4c2f7ee304cd4253d09e7068cceb59248f10"
+    sha256 cellar: :any,                 arm64_sonoma:   "50fc0954f040e8211f7e6d49d20adc99d5f49b58ef68c92d4c9ffd2ec6d6da93"
+    sha256 cellar: :any,                 arm64_ventura:  "d869702d01199df642d636f23582f42cb911f884a351304af455e2af0ee68765"
+    sha256 cellar: :any,                 arm64_monterey: "a5db5e05bb7075b437aa2eac47468fc5737b9764f4937d3f4b080cbe14da7557"
+    sha256 cellar: :any,                 sonoma:         "1163887e1cc4ed1bb20a77c3fae327333d53aa5f40bcccd320cb18c9f3fac41d"
+    sha256 cellar: :any,                 ventura:        "08a35b3578d565c876f8cd681b822d46c02c95ee53c78d6727357a1c6eca09ad"
+    sha256 cellar: :any,                 monterey:       "f3fac7f2aa73fa0762610b3cfbd6d956f58fa2df74dec20b391178ad1aa72736"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "43c7eb13bf159db6061aa2230b36bf74415b6e65ece15dd5a01651c96c0fcf81"
   end
 
   depends_on "cmake" => :build

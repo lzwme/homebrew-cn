@@ -4,7 +4,7 @@ class Ncmpcpp < Formula
   url "https://rybczak.net/ncmpcpp/stable/ncmpcpp-0.9.2.tar.bz2"
   sha256 "faabf6157c8cb1b24a059af276e162fa9f9a3b9cd3810c43b9128860c9383a1b"
   license "GPL-2.0-or-later"
-  revision 12
+  revision 13
 
   livecheck do
     url "https://rybczak.net/ncmpcpp/installation/"
@@ -12,15 +12,13 @@ class Ncmpcpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "444ec5c60d794d301940dbcb8290d1372dc8cba63792371c50b9fea0818cad4b"
-    sha256 cellar: :any,                 arm64_ventura:  "7e108edcc6bb7560e2fd59a3ff84a2c23332713a70ee87a7c4bfe73dca3a9dc8"
-    sha256 cellar: :any,                 arm64_monterey: "236d1c723a22ca5cc26ec73385970210f049c00914c28d46e3f5b07e383dfaa6"
-    sha256 cellar: :any,                 arm64_big_sur:  "0f26de5f9f6b05b5c26244521814714a7391476340096d1884ad986d3b4419ac"
-    sha256 cellar: :any,                 sonoma:         "3407816d394ae2e31ed1b30b9e3836462357e82c6e5b6f4b014809f39680476e"
-    sha256 cellar: :any,                 ventura:        "1af2074eba35f2db1b4ff7727e78e88ad883858cc0c5697ff4b8c52e79dfb0c9"
-    sha256 cellar: :any,                 monterey:       "56daaa3e0b881c2407e5d072f60a00d84ab2547d540bc9b5799b9cf4311e8c7d"
-    sha256 cellar: :any,                 big_sur:        "28e694da13a4c9309dd455be2eca2c199b134153fed11b0aac7be7e48209b662"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "525e7566cf49eca2980c22ff9da6593fa323a6f8e8adc4421dcfcbd7b7256ccb"
+    sha256 cellar: :any,                 arm64_sonoma:   "40d4913d8c556937fa9ca9494127af13941cad9183c8f8b7016186083594091e"
+    sha256 cellar: :any,                 arm64_ventura:  "502d720759a4e969aaa175cecdb283cfc229e4539eac1e1717aaeeaf43dc4abd"
+    sha256 cellar: :any,                 arm64_monterey: "5031c0d057f776c111c5167ffcffc0d08e06706617aa20f6cf07272f0f70268f"
+    sha256 cellar: :any,                 sonoma:         "1b97a0523f3d07043b4e31dde84b28205472c44d2f5cfb4e2713aa76eaab285c"
+    sha256 cellar: :any,                 ventura:        "a9dbc49286030bcc299435381654eb4f8553e1a3bb1b7ce34e350a5665a6c2be"
+    sha256 cellar: :any,                 monterey:       "fe26e3f3af539d13b86e7de615b30ba2b8dcf120cc776d19fb0ed03001c08789"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc2c8f3114843c49ce5657f734946f4dcc2390c0506512331af3377aaf9a391f"
   end
 
   head do

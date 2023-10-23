@@ -1,8 +1,8 @@
 class BoostPython3 < Formula
   desc "C++ library for C++/Python3 interoperability"
   homepage "https://www.boost.org/"
-  url "https://ghproxy.com/https://github.com/boostorg/boost/releases/download/boost-1.82.0/boost-1.82.0.tar.xz"
-  sha256 "fd60da30be908eff945735ac7d4d9addc7f7725b1ff6fcdcaede5262d511d21e"
+  url "https://ghproxy.com/https://github.com/boostorg/boost/releases/download/boost-1.83.0/boost-1.83.0.tar.xz"
+  sha256 "c5a0688e1f0c05f354bbd0b32244d36085d9ffc9f932e8a18983a9908096f614"
   license "BSL-1.0"
   head "https://github.com/boostorg/boost.git", branch: "master"
 
@@ -11,15 +11,13 @@ class BoostPython3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8139adeef33baeed370c09b4dd96c9fa0ddea4e62e61a7b7bb25d602dbd92aab"
-    sha256 cellar: :any,                 arm64_ventura:  "54a07f5f3d5babda43d7adb2af3cb46b3f756ec3e2b67fe50f6da2aff81c7b41"
-    sha256 cellar: :any,                 arm64_monterey: "518fa733ea9fd88e320a9bdd12c259e76c29f2dd1dae0368ca7016830c0c7b1e"
-    sha256 cellar: :any,                 arm64_big_sur:  "a1a6fe4845cc1fb97e50c408a11a84d1a09fe0163e973d15a6320db83b19a156"
-    sha256 cellar: :any,                 sonoma:         "4c9be9349cac45ef46d89e6224a16be34a12ae073c1a1cf9e81b05a0bc9a431a"
-    sha256 cellar: :any,                 ventura:        "c5222b373a4b2f5b5c7e1f9b9012bd34f70a28b56bf9a691426650a8825a0659"
-    sha256 cellar: :any,                 monterey:       "b097a520137dcc5360df7998b7468b12cb33147cdae3c10ab1270f1e36749aaa"
-    sha256 cellar: :any,                 big_sur:        "65864416a8314dc2669890da5bc0246aa4ea5c73985773ed1cea3082b03d1711"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5129320e1bb52a1c69204df65c31f283c9a0caf8a2b6515833c9d689bd4594cd"
+    sha256 cellar: :any,                 arm64_sonoma:   "3d877dd3a7fef04019b9abd09905c816c264837d4e0a1615b24780d1d858c053"
+    sha256 cellar: :any,                 arm64_ventura:  "2b468394d24b854131ada0c428628cecaf20a9e05460f03c12178cbaaf0ea876"
+    sha256 cellar: :any,                 arm64_monterey: "0160991f40341b7a7b0368b5032096c1316651827e591759f7339bed8cf649c1"
+    sha256 cellar: :any,                 sonoma:         "70dd857783020599380618ce95cce3c8760592644577367d6a2623280c5d344c"
+    sha256 cellar: :any,                 ventura:        "5a288da9ad53a8bf11014385c4c1cb67c0076eb7074485afc4a468354043cd59"
+    sha256 cellar: :any,                 monterey:       "73f8e0b878568df1f22228acff8ea350fedf61e44ddd3930f9377ce250a9820d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c7f6ec979cb96b725e4c8d2badd78d50fc61276c4fe045f85ece077e8bf4593"
   end
 
   depends_on "numpy" => :build

@@ -4,7 +4,7 @@ class Innoextract < Formula
   url "https://constexpr.org/innoextract/files/innoextract-1.9.tar.gz"
   sha256 "6344a69fc1ed847d4ed3e272e0da5998948c6b828cb7af39c6321aba6cf88126"
   license "Zlib"
-  revision 5
+  revision 6
   head "https://github.com/dscharrer/innoextract.git", branch: "master"
 
   livecheck do
@@ -13,15 +13,13 @@ class Innoextract < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b12b36708029f4b70796df3c6452c40a253d4e48fed6eba37c6c65fa6cf821a3"
-    sha256 cellar: :any,                 arm64_ventura:  "ebcb60a9fe025e08d6d8c0f45f99e5a9cb366ccb8d2e0b4daea489c62c194ca5"
-    sha256 cellar: :any,                 arm64_monterey: "e623de0fda46002192554731817a9649e297e0f8910497037e542a9c543461bc"
-    sha256 cellar: :any,                 arm64_big_sur:  "7386d13c829e8f9811e30ed8e5b2560497ded75196d9aa069ceb7fa781145153"
-    sha256 cellar: :any,                 sonoma:         "5816776bb982e19c1b4ccd69c95ba40d60f19c0f02ce19baf9cbbde4c9dea8fb"
-    sha256 cellar: :any,                 ventura:        "fbe7a2614f803edf24c8bf694dedcdb347d3dd83930b45874e8df2cef6af8361"
-    sha256 cellar: :any,                 monterey:       "dc205a7c6e14aebebe36249f8ed7be173216e62e3e80f725afed17540455f083"
-    sha256 cellar: :any,                 big_sur:        "cab8494a91d792086cf4de85f12e9eb4cd0ba02ff686ba34eb923035b2d7b31f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea25a9572bf392c5efc94ba0b1786a669ce3b23069fba8c67e3eeab825cae06b"
+    sha256 cellar: :any,                 arm64_sonoma:   "2123d53eec27b2f68656f72df70ca1625d0579a2d2582ef6b66664f31ac90305"
+    sha256 cellar: :any,                 arm64_ventura:  "5d3be8341c3452bc90f94b9d9e6ba45e5c4d6708d7b3c3cca81ea5ca56f69b82"
+    sha256 cellar: :any,                 arm64_monterey: "7ebe336dbca7d52211b6dcdf183bb9c241bab7efe28edc6cfa3c4fbe6ee1c365"
+    sha256 cellar: :any,                 sonoma:         "a1f1f376f09ba0910e014ab9548c98b0083502aa7fa2ec7cd0f7a91f447f413d"
+    sha256 cellar: :any,                 ventura:        "5438b13e79c2f9d37d0af1661d6f2c14fcaf0b976731bf74a8fecd9e72830cfd"
+    sha256 cellar: :any,                 monterey:       "222d556a09ccc53fa4d8e69060825c85cac9cde2c64bb6d089c7f0d439dbf0ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1bd41318171b61adac1811c3f06bc4ce8e8fedcc5c61d51723b46d78b42d603a"
   end
 
   depends_on "cmake" => :build

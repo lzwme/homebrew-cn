@@ -17,21 +17,19 @@ class Ponysay < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "877b9d3b8f991220879d63c10b5bf17c6907df74628cf51328a43a70080a23cc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02c08b336e498548b23192de0e1fb91f9acd63c56c1bc5d3128b680b78c49467"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5cd34a134f11b527838ccc5efeca9cc880af360706c58807956b1f4e5677f1bd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fe930dcefbd56d918a49219076728d073a5aae1488b9aff703ff6fa3e2695468"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bf428ab93f31f8123add23140b4e21f0118ace3596cf5116a3ea66a88de145ae"
-    sha256 cellar: :any_skip_relocation, ventura:        "6f2049df606cba06f2591dae3a2ce085e9ff0c5a3dcd36b2e25035ec9b6ac8f0"
-    sha256 cellar: :any_skip_relocation, monterey:       "2ffadbb803a343031c9579f03813d0f116150893a87dcde90480239baae42344"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e6ddef5171a1455ebf3bf897b7b6e3dc4fc91bdea0b778b87de63ab6dc01ceb2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71f0cb0d260f51fe6234cc2451d8abe69b869f463a26cd6bd22221151a051612"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1eca8b3e7cdcdcce01318a2d876e56ddbee396f5743a86505ebf10890495bfed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d372bd35d2c931e62724cd071813731b6d2b7ed218c2b97ea22d0ea3b21e270b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a04a741432a0b11230d1fd4a166e21124560fcbedd9d342871c7fe94262cef09"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7ae64325c0fc4bcb425a922a9313ff2f965d79f8cb7f1efe3dfa3bd09866027f"
+    sha256 cellar: :any_skip_relocation, ventura:        "f5d7684b1337c8cbd02fb95bb5053fc7976dbedbce2af249fb7edb797e3fb7c1"
+    sha256 cellar: :any_skip_relocation, monterey:       "0bcb34fbf82236dc5e6fe5483c0e92920285e9bb9e8852ce23640281d1af6320"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "511bcb624a5d9ffe092b33037026376eb3fc2f93c221776efacf32a2a2d7fd54"
   end
 
   depends_on "gzip" => :build
   depends_on "coreutils"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
@@ -43,7 +41,7 @@ class Ponysay < Formula
            "--prefix=#{prefix}",
            "--cache-dir=#{prefix}/var/cache",
            "--sysconf-dir=#{prefix}/etc",
-           "--with-custom-env-python=#{Formula["python@3.11"].opt_bin}/python3.11",
+           "--with-custom-env-python=#{Formula["python@3.12"].opt_bin}/python3.12",
            "install"
   end
 

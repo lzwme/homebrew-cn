@@ -2,6 +2,7 @@ class Watchman < Formula
   desc "Watch files and take action when they change"
   homepage "https://github.com/facebook/watchman"
   license "MIT"
+  revision 1
   head "https://github.com/facebook/watchman.git", branch: "main"
 
   stable do
@@ -18,13 +19,13 @@ class Watchman < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b260ef8c6405e245bc81c379484802d4a73a4acf956370d605080ba03ebf056c"
-    sha256 cellar: :any,                 arm64_ventura:  "7c1ff98949395ad3da84ed36543bb45bb2b5522bdfa07da30bb1cba6ff284849"
-    sha256 cellar: :any,                 arm64_monterey: "8c4fdb600a5fa453bb26a682caa7c1a6efd698bec641953a459f1f99af0a45bb"
-    sha256 cellar: :any,                 sonoma:         "215ed6e496a6288b2d0716c7f05b4a8fb1de4a1130b6145dc40c8f9395aed729"
-    sha256 cellar: :any,                 ventura:        "9fba8d481f96efb52a9d00688ab0e9733c764304db520547a6073b5623cda295"
-    sha256 cellar: :any,                 monterey:       "413aea41bddd75af521b7beaaa04d4052f77535f1eafa6cf12fb63f5c8992749"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad2a79df110dd0dc44b43a02b750a4790ecff952026423cd624e052bf2510258"
+    sha256 cellar: :any,                 arm64_sonoma:   "6f4022c251338bbdb496886775239f6cd023c354e2f79c98e93dcf899814b942"
+    sha256 cellar: :any,                 arm64_ventura:  "c40872901c50bf34008609522898f6d06accf88bf9f588af1e4bd24c751774a1"
+    sha256 cellar: :any,                 arm64_monterey: "d20e9567c275fcbd10a2afce4f97e0fcc9ae5e4179cbdafc91e8dba7f05aea97"
+    sha256 cellar: :any,                 sonoma:         "35caf0c03ee34e2745260f18b3a0844c2a6f2dbc689db20c5a84664fd8041a5f"
+    sha256 cellar: :any,                 ventura:        "8385d8184ffe1b3033f4f7d9e80f234e7251cbc466405e3055d40c8404dfa966"
+    sha256 cellar: :any,                 monterey:       "a7dc2739b1ec9af8bdddeb77416079df84f4c285a697bf3af3a2c4185f406169"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80e056f44cc35f9480bd031b71a3ce4f5824ec106c0ec54eed18be8cdb95ba36"
   end
 
   # https://github.com/facebook/watchman/issues/963

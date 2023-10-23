@@ -2,9 +2,9 @@ class Homebank < Formula
   desc "Manage your personal accounts at home"
   homepage "http://homebank.free.fr"
   # A mirror is used as primary URL because the official one is unstable.
-  url "https://deb.debian.org/debian/pool/main/h/homebank/homebank_5.6.5.orig.tar.gz"
-  mirror "http://homebank.free.fr/public/sources/homebank-5.6.5.tar.gz"
-  sha256 "b5494dfcf87d7a8572696a2afa2a04496ba79e3857cd3e3b18ac03bd1b6d2ca8"
+  url "https://deb.debian.org/debian/pool/main/h/homebank/homebank_5.7.1.orig.tar.gz"
+  mirror "http://homebank.free.fr/public/sources/homebank-5.7.1.tar.gz"
+  sha256 "7f0a929d775eef26a5a9f29fa3c013f3eefadbf6982cc086a7c75dddb9b4f429"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -13,15 +13,13 @@ class Homebank < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "2f0d301de9f8166e63b005bac90d2a9f1cd23fa09ef55aad83476210b9ba8923"
-    sha256 arm64_ventura:  "823c59b268c4ecfbc0ce6f41a6d4e163f220328a9372c55f74600df49091bd75"
-    sha256 arm64_monterey: "863be05486d2cec3a2c26047fecd5a2e18589b8070af8cf10d98273b5f9a4579"
-    sha256 arm64_big_sur:  "2ac06c19e7389bf818594fbfaeb195abbab67532e4f8f15bcf2062ad7e442019"
-    sha256 sonoma:         "f38688213d5b51c0fbce39dcb3ef6419142ca396bc3024fa35402114180732f3"
-    sha256 ventura:        "87a1cad60518869e3ddc82c0a02b32783b8661a04cbf65d65ee4963301ff2316"
-    sha256 monterey:       "b478bd78a5dff976268d7e5fea71a4cc154f9bb128217690bb25f74bc1e0cea8"
-    sha256 big_sur:        "113bd9f7f2061e6f8fd64052187049085115c8bcc9c139d975b4d173a25f6063"
-    sha256 x86_64_linux:   "dffd3f69785c13d21f412db1fa4cec636fe887b0922c080ba2da59176369a589"
+    sha256 arm64_sonoma:   "f8f69b7528397655cec90fbb26c905c0f458302d8fcc62737e16e53ef85d0fe1"
+    sha256 arm64_ventura:  "6ec975c1c1f50c19e2d59ca183da7b6abe7d75445f939248b3aa6fd3e791a37b"
+    sha256 arm64_monterey: "6eac90b943e9b6e1156a0e2d6f0bc2b9cac3f7e34a8d78a88de20a824a2185b9"
+    sha256 sonoma:         "a59d2eeda8f39496f47312132780b160fd70806941b8acae6759b50afbdbdd55"
+    sha256 ventura:        "08078b68ce17ff2e41dd013a6e3ad13b4c061fcb4b8816744c2b110362330c10"
+    sha256 monterey:       "9d45eb8e77de3b14f94788466e5fccf3212901ad434f9cd53743755a90db30a0"
+    sha256 x86_64_linux:   "0f06ac514054a4d11c10dbc03e56d92cb04ca415823ccf4ea3658c53a57b12af"
   end
 
   depends_on "intltool" => :build
@@ -33,12 +31,17 @@ class Homebank < Formula
   depends_on "gtk+3"
   depends_on "hicolor-icon-theme"
   depends_on "libofx"
-  depends_on "libsoup@2"
+  depends_on "libsoup"
+
+  uses_from_macos "perl"
+
+  on_linux do
+    depends_on "perl-xml-parser" => :build
+  end
 
   def install
     if OS.linux?
-      # Needed to find intltool (xml::parser)
-      ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5"
+      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5"
       ENV["INTLTOOL_PERL"] = Formula["perl"].bin/"perl"
     end
 

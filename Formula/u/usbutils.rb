@@ -2,8 +2,8 @@ class Usbutils < Formula
   desc "List detailed info about USB devices"
   # Homepage for multiple Linux USB tools, 'usbutils' is one of them.
   homepage "http://www.linux-usb.org/"
-  url "https://mirrors.edge.kernel.org/pub/linux/utils/usb/usbutils/usbutils-015.tar.gz"
-  sha256 "2b8140664578f39c3f6f0166a1b950f8655304e63e3d7f89899acb99bc5cb8e7"
+  url "https://mirrors.edge.kernel.org/pub/linux/utils/usb/usbutils/usbutils-016.tar.gz"
+  sha256 "a039479b88979d8e6dafa5a82d91eb5183b087104204a87d0e7ae6a26257f0e5"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
 
   livecheck do
@@ -12,15 +12,13 @@ class Usbutils < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e1b408002f719733881315e34fe4c0e72066008533f419add60144cd5cfd9e0d"
-    sha256 cellar: :any,                 arm64_ventura:  "0e99cf12fb0f563a2b3d1989c9d48a1e32b50929698adce3b55ec987cfebd7bf"
-    sha256 cellar: :any,                 arm64_monterey: "c67a9bb88a9cd63c920331a86db072da46957021de78c4a6f3d8283978b85473"
-    sha256 cellar: :any,                 arm64_big_sur:  "947ef6a6c17f7874a41d3c2320f91fa494ca29ff9c61e23c8de1964407853d7e"
-    sha256 cellar: :any,                 sonoma:         "c9e59058b53aa965dbd4be7c5c2cac3ad915d3661cc313876aef5f7eda6cbb3a"
-    sha256 cellar: :any,                 ventura:        "f8adae8b13b1fbf6df63cd14b9f0da8449c6cbbbece3ced1e11ede87b7f46070"
-    sha256 cellar: :any,                 monterey:       "df6424c3b6aedb0cb484679980e452ea4af24cd65ac94f674084f209f19f0915"
-    sha256 cellar: :any,                 big_sur:        "d1a3c62a690bf4bf4697ce22690468495a97e79bece17d464a6b961de8fa7c7f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ada2b7a26c837e0cc24b81aec12a29d5bbff51366a4222a6b14ae5013e102b27"
+    sha256 cellar: :any,                 arm64_sonoma:   "22b2748584a3a2dadb98f2358bf3e8c626e86116d0f86d8f31cabde5a9510ef7"
+    sha256 cellar: :any,                 arm64_ventura:  "3a764eca8ec97a20e574155971ca36d605e147895cfe662e928b9fdc9e1d3ea4"
+    sha256 cellar: :any,                 arm64_monterey: "e666369f0a077167aaefc89d35cae73155de75a99a1283a2b20619a598ab27e7"
+    sha256 cellar: :any,                 sonoma:         "9339cb51844c2fca1291cd46c004ba63412be085c97b1447c1c32da6e35eb55f"
+    sha256 cellar: :any,                 ventura:        "3615052e1133e70b936e9976abcd205409cc1d84983936ab8e41d79fd114b2ca"
+    sha256 cellar: :any,                 monterey:       "08689120babf873589ba31a10b5dbe78544401601b15d0370271125d0af155a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a47e38802224bad18abd534a2d48dc84092382f4b60084b221f15ff53adbeab2"
   end
 
   depends_on "autoconf" => :build

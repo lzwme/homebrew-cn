@@ -4,7 +4,7 @@ class Metaproxy < Formula
   url "https://ftp.indexdata.com/pub/metaproxy/metaproxy-1.21.0.tar.gz"
   sha256 "874223a820b15ee2626240c378eee71e31a4e6d3498a433c94409c949e654fae"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   # The homepage doesn't link to the latest source file, so we have to check
   # the directory listing page directly.
@@ -14,15 +14,13 @@ class Metaproxy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2299016e0b81ae308aa417a856aa69afd5e05429895bf08bd2defea09d325432"
-    sha256 cellar: :any,                 arm64_ventura:  "2c39998f77952b5a09b6869f82895af7be109ad7bcf85235e2687302b7e7da7e"
-    sha256 cellar: :any,                 arm64_monterey: "dcad5af967b3aea05d0c2716abb421e398458ae45424f8b4f5b5cb6bdab66762"
-    sha256 cellar: :any,                 arm64_big_sur:  "75ef8bba6fdf29e2ff25ede0180e33ccaf5ecdf77057ace160055d61c9a02b88"
-    sha256 cellar: :any,                 sonoma:         "10d49a0163efd5a3cd1284df1c8b7efa49986981ae2e3a721fb72a53d34379c0"
-    sha256 cellar: :any,                 ventura:        "53a9d7795665a872e74651f9600428d53b63605028d850b3c9cda02686ddff30"
-    sha256 cellar: :any,                 monterey:       "b08581aa2833dca73cf699fd4c9910a575cf097113f8d78655cff7f680fa57b0"
-    sha256 cellar: :any,                 big_sur:        "6316f51dfc9500d525be283e8d0c02724a9ab7270cc31ae5a200fb5d7b631c0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c45c4c7615c434ea2276608fc8df307554652f95d3a80060ca54aa592b6b4f9"
+    sha256 cellar: :any,                 arm64_sonoma:   "d5d9b4d33412b474fe213a4fb8bfe5ca593d2a1248e605f8100df76d7da202fc"
+    sha256 cellar: :any,                 arm64_ventura:  "a7493932dc0c7626d7dfb352475c77b3222bf901fe69840eb6518b82e42ea23d"
+    sha256 cellar: :any,                 arm64_monterey: "da71b3ce74fd2efaf026c78d15eb88ac2c1c0e09f56fb29b38b8c161ec04db41"
+    sha256 cellar: :any,                 sonoma:         "e943ea0630efe57688244642acd0172c49e6a7f71a4a13654eb0713c3d44dcc7"
+    sha256 cellar: :any,                 ventura:        "be047393c79d9a9d4a1976f873f156a622a3f16eb91048b4c701aa7beaa4e949"
+    sha256 cellar: :any,                 monterey:       "a00fd54b9fbb8579aa615047acd4ff892981b248d1ac7c8b1b34810b8e1e97b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1118fcfa98ffcbaa2d43cbd775c496e7808981b0238cafcd572712f09d001f71"
   end
 
   depends_on "pkg-config" => :build

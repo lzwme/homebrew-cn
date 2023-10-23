@@ -1,6 +1,6 @@
 cask "font-iosevka-ss15" do
-  version "27.2.1"
-  sha256 "1c10cf847d96bb2a01391beb4ac430cda69209284d719e7dbcd65b74c6068c78"
+  version "27.3.1"
+  sha256 "ad2c19404b9c43845dd20477ceb1f42f5b38e63c87f58c070606287ef1df04f9"
 
   url "https://ghproxy.com/https://github.com/be5invis/Iosevka/releases/download/v#{version}/ttc-iosevka-ss15-#{version}.zip"
   name "Iosevka SS15"

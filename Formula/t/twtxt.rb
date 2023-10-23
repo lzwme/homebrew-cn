@@ -9,23 +9,23 @@ class Twtxt < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc26bf2cce0cd82864b27ff92fad9a81381904a0793b026a215e01c5deb2217b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa9f2e9273510525b7be2937857ab48aa5e66296cb48e6331320a8cac5cf7e63"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bcd1bfa2c61d90c65902d90af65d8ae9a164f9a2e0faa831769f91882bcd7958"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "73533d9386f31044ce65316484d359bfdfc8feeef26440aa11202c7e8c85d25b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "62c202d3f2f5d4966ad96bc204f9a33162b08f479a6a3fc469a987089e093f82"
-    sha256 cellar: :any_skip_relocation, ventura:        "293d74157b98140bcf576f9aa1168d13765cfe58d275cf0c0684ed16d2915cdd"
-    sha256 cellar: :any_skip_relocation, monterey:       "b5e242f048a01738ec0bcd3fa9aa908fe5fffaeae75fc4471e7466905f30146e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5653a8b6cdfee8a04eb84eb85a2ca7caac2c8253dc23eb1617802d442e11c440"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "440ce20cf4e39666f2182ec31a33cd1e4dd7064e296bf3fb3dd3c62e8020a72d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f3aae43e883e94a56fa92f3c8bf4bfa6dfdd04c9f52527d53502effadb56c962"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4f514b62bc63f978f39929115fd57e329966426611d5a281c3535eef2e515be"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ab582facffacaff620fe7aee8944ceee7fdcb5ebd4f44c860c3dd7bda04baa6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b689433915d58dd5400ca606e3ce6356ab87c6ae087553413cac9807399d91b8"
+    sha256 cellar: :any_skip_relocation, ventura:        "0c3179cb2a0aa414b2876792e2027f1ef379e30ff651cb4cd88e670e6dd4d652"
+    sha256 cellar: :any_skip_relocation, monterey:       "744e52d56287003e23980e22189fd1f840845a43124719734e66e6e18832812c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1426ec869f8312fb9f5c27f39848d772f2ed73ecfecf423e957a09b27c21d607"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/d6/12/6fc7c7dcc84e263940e87cbafca17c1ef28f39dae6c0b10f51e4ccc764ee/aiohttp-3.8.5.tar.gz"
-    sha256 "b9552ec52cc147dbf1944ac7ac98af7602e51ea2dcd076ed194ca3c0d1c7d0bc"
+    url "https://files.pythonhosted.org/packages/c4/50/a717a133bda2efc27efbf8a65398c925b6d0605213da0db6929627ccb758/aiohttp-3.9.0b0.tar.gz"
+    sha256 "cecc64fd7bae6debdf43437e3c83183c40d4f4d86486946f412c113960598eee"
   end
 
   resource "aiosignal" do
@@ -34,8 +34,8 @@ class Twtxt < Formula
   end
 
   resource "async-timeout" do
-    url "https://files.pythonhosted.org/packages/54/6e/9678f7b2993537452710ffb1750c62d2c26df438aa621ad5fa9d1507a43a/async-timeout-4.0.2.tar.gz"
-    sha256 "2163e1640ddb52b7a8c80d0a67a08587e5d245cc9c553a74a847056bc2976b15"
+    url "https://files.pythonhosted.org/packages/87/d6/21b30a550dafea84b1b8eee21b5e23fa16d010ae006011221f33dcd8d7f8/async-timeout-4.0.3.tar.gz"
+    sha256 "4640d96be84d82d02ed59ea2b7105a0f7b33abe8703703cd0ab0bf87c427522f"
   end
 
   resource "attrs" do
@@ -44,13 +44,13 @@ class Twtxt < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
+    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
-    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "frozenlist" do
@@ -59,8 +59,8 @@ class Twtxt < Formula
   end
 
   resource "humanize" do
-    url "https://files.pythonhosted.org/packages/69/86/34d04afc5c33a31f4e9939f857e28fc9d039440f29b99a34f2190f0ab0ac/humanize-4.7.0.tar.gz"
-    sha256 "7ca0e43e870981fa684acb5b062deb307218193bca1a01f2b2676479df849b3a"
+    url "https://files.pythonhosted.org/packages/0c/84/e58c665f4ebb03d2fbeb28b51afb0743f846db18a5b594ed8b8973676ddf/humanize-4.8.0.tar.gz"
+    sha256 "9783373bf1eec713a770ecaa7c2d7a7902c98398009dfa3d8a2df91eec9311e8"
   end
 
   resource "idna" do

@@ -3,7 +3,7 @@ class Standardese < Formula
   homepage "https://standardese.github.io"
   # TODO: use resource blocks for vendored deps
   license "MIT"
-  revision 15
+  revision 16
   head "https://github.com/standardese/standardese.git", branch: "master"
 
   # Remove stable block when patch is no longer needed.
@@ -21,15 +21,13 @@ class Standardese < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "c7a184bf6c96a6a2f3d9b555de0a3e7653bd25ff1b9ce854fecf84a3bb1bd3e2"
-    sha256                               arm64_ventura:  "d70779cd237b4c18330977418d41349f2e19c708b9928a675816d8f7ae855179"
-    sha256                               arm64_monterey: "db40d8808507f679b37aed32cfcac9bd451098f70574a2448deadd0269f69cd3"
-    sha256                               arm64_big_sur:  "dcb784cdd4d1ef8dc56735500dc7d936d5d3080012f43165a44e4bc78885f3a7"
-    sha256                               sonoma:         "b12640133365198013c139bef9b587e52c7cde0ec15eabb7e56293d609fd3068"
-    sha256                               ventura:        "02a1b1c16993c683b59baaa2082016ecd6c6c3aa2b9c65db04350e7a3fdcf9be"
-    sha256                               monterey:       "e49513abcbee20979a5353149428067e3b6094c79c58d87bbad1a903df93379f"
-    sha256                               big_sur:        "59f7d73ae05fb94512ac40e7d864f63862c7cc9b4366cd7ccb42c02a3c7cf753"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34e3d14bbacf5a4619d513305a7765b610598c2cb009d66fd5c06d616b8307d5"
+    sha256                               arm64_sonoma:   "6166cdd409393c81b194cadd60222e3ea5b9e31b480428e5a38c2da7fd71bf3f"
+    sha256                               arm64_ventura:  "3d60eee3619b6f879efd2255556c983f28f04d56c6e1a3507af8958829f2adbd"
+    sha256                               arm64_monterey: "2a95f4e9a7968eeaf74614c2048f5dab0a61d25ae6048f1e36b42c208f96fe3e"
+    sha256                               sonoma:         "1ed661bac7ee3f4baccc2593a99b1f5f93eb244d6e590cee905724b6e536dfba"
+    sha256                               ventura:        "9da6db645e8be2b636dc6a5402c5e20d444443cb05740a8c3f28f2cbbe7495aa"
+    sha256                               monterey:       "ec417af3efb5cb2c9273609b9e616b44c2b23a9bdc919f4933177c6ab0b27c47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08c91ec9ce61b49137b60c619d6dc4349912e572a54ce4a146a79886a3b13616"
   end
 
   depends_on "cmake" => :build

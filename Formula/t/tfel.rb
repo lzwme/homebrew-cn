@@ -4,19 +4,17 @@ class Tfel < Formula
   url "https://ghproxy.com/https://github.com/thelfer/tfel/archive/refs/tags/TFEL-4.1.0.tar.gz"
   sha256 "7505c41da9df5fb3c281651ff29b58a18fd4d91b92f839322f0267269c5f1375"
   license "GPL-1.0-or-later"
-  revision 2
+  revision 3
   head "https://github.com/thelfer/tfel.git", using: :git, branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "56db371da14c6f1349895110b4b5d9e36e4407ef0bf1350317469af3f6149445"
-    sha256 arm64_ventura:  "e7a36c0e5e16ea86948fac8e6dbe5154280e92762d005c502ae67d78c2266752"
-    sha256 arm64_monterey: "e2bacd1722df002e836c893028af2ba0a2889f09809eb494243f6c63f1dd7eb2"
-    sha256 arm64_big_sur:  "14369581648f19f2c106dc318180182b6bae6334e31976cfc21f4ce5c13e8769"
-    sha256 sonoma:         "e3933a86f02d1f811a90f1eef9e23a6afb6e127d01937e71d3f910117386fb18"
-    sha256 ventura:        "d461a7949788f856112f39cec75dfb45c71e76c194eadf3d58a08d092aa87a57"
-    sha256 monterey:       "a9041744c78a7c6d157979493cf8685b55b2a0ed5ad0e246664c8e67cb53d586"
-    sha256 big_sur:        "bdf5e24ae4870225ac84ffeff3fd3891711b40837dc0c8c0180928f83041ffa7"
-    sha256 x86_64_linux:   "bd95038005351e47768c896557df3e8c95bdc75fe764a3d3badec12af9f01ef9"
+    sha256 arm64_sonoma:   "d0d0249365f4257ac0305d28b1feb4ddec767a531fa9e35039bbc2566c4cc6f9"
+    sha256 arm64_ventura:  "df01dc4668e066acfbe5f8126e51732e64078456f31c9a9b5a3c44df119558fb"
+    sha256 arm64_monterey: "a863dc8f6c489c495e445e77c44e70d00f5e592091d106067f647a288a53bb4c"
+    sha256 sonoma:         "1b549b313281caff2777ff81fd954776486df50d1f939c5a9b28797110a40099"
+    sha256 ventura:        "d7a7b725ffd3d5159b0039076b910dfda41d8ac18e5508257a67113b9ead0ebe"
+    sha256 monterey:       "338749c2eeb93a7e042213a7f6c7136f22f6a706fcb9713e3db585169814a0ae"
+    sha256 x86_64_linux:   "2ec823e88281a20344276930bbbfa1c6529ab81be54a2f458fee2054b7a7afae"
   end
 
   depends_on "cmake" => :build

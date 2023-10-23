@@ -1,20 +1,18 @@
 class Gitbucket < Formula
   desc "Git platform powered by Scala offering"
   homepage "https://github.com/gitbucket/gitbucket"
-  url "https://ghproxy.com/https://github.com/gitbucket/gitbucket/releases/download/4.39.0/gitbucket.war"
-  sha256 "ca7454a7fb472b61a0ca4ad056ae8930bdafd53b7cc6cd0fc3b30c6cf09c7666"
+  url "https://ghproxy.com/https://github.com/gitbucket/gitbucket/releases/download/4.40.0/gitbucket.war"
+  sha256 "7e124543a48f3d349b2e93dddbaace1a7122a18b1a11b0e6ab403f0645d646d5"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf311b3c11eb5aa696796227264dfa8a796a52a5bb2c4373493a3aa420a2aa61"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5eda39fbee0512a3e34ccb30eb23f6ddbfe6ced65e665a7cbfdb02846b489011"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5eda39fbee0512a3e34ccb30eb23f6ddbfe6ced65e665a7cbfdb02846b489011"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5eda39fbee0512a3e34ccb30eb23f6ddbfe6ced65e665a7cbfdb02846b489011"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cf311b3c11eb5aa696796227264dfa8a796a52a5bb2c4373493a3aa420a2aa61"
-    sha256 cellar: :any_skip_relocation, ventura:        "5eda39fbee0512a3e34ccb30eb23f6ddbfe6ced65e665a7cbfdb02846b489011"
-    sha256 cellar: :any_skip_relocation, monterey:       "5eda39fbee0512a3e34ccb30eb23f6ddbfe6ced65e665a7cbfdb02846b489011"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5eda39fbee0512a3e34ccb30eb23f6ddbfe6ced65e665a7cbfdb02846b489011"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff39786b69d94da3c46979fe7ceb5dc9584a14a290420c9dc66ed5bc6f38a871"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1c987e6512cd806f10867ea20dd4f89252f3434aca0b88bb4466d5f6749cff2b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1c987e6512cd806f10867ea20dd4f89252f3434aca0b88bb4466d5f6749cff2b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1c987e6512cd806f10867ea20dd4f89252f3434aca0b88bb4466d5f6749cff2b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1c987e6512cd806f10867ea20dd4f89252f3434aca0b88bb4466d5f6749cff2b"
+    sha256 cellar: :any_skip_relocation, ventura:        "1c987e6512cd806f10867ea20dd4f89252f3434aca0b88bb4466d5f6749cff2b"
+    sha256 cellar: :any_skip_relocation, monterey:       "1c987e6512cd806f10867ea20dd4f89252f3434aca0b88bb4466d5f6749cff2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf2837bebb2f01687b9ecb65795ca7bf7f62f80e9b7ee298f7eacb1ea340889c"
   end
 
   head do

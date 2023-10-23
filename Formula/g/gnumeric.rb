@@ -4,17 +4,16 @@ class Gnumeric < Formula
   url "https://download.gnome.org/sources/gnumeric/1.12/gnumeric-1.12.55.tar.xz"
   sha256 "c69a09cd190b622acca476bbc3d4c03d68d7ccf59bba61bf036ce60885f9fb65"
   license any_of: ["GPL-3.0-only", "GPL-2.0-only"]
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "5bff6b05940bdccf798dfc3b10213e9032bbc1ed4fe9a4b33661b6aca6e259b1"
-    sha256 arm64_ventura:  "488370521c3bff2b234422df1c6468b33dd562c1497ca4cd8cfcf1c88a1a9dde"
-    sha256 arm64_monterey: "b1398c8ebef228c9d6bf70ab7412245efd9e239a84c77a71cb1d26bf8906586e"
-    sha256 arm64_big_sur:  "3c638fb56a210bb76c33dc932f74c5640317e90b7f5a61b14ed8cbf76a09eb57"
-    sha256 sonoma:         "9651e6351cb2764088a65d063d780e86ba5d99db379a25e8965c76ccb13f3c3b"
-    sha256 ventura:        "5d5d4ae015519c7fb93b1e49c865e0cc24402b88628028e5d0b5840fdb2b9abe"
-    sha256 monterey:       "abf3df42402d276c0275fd20697f0a1d58e9242cab0b85a3a40257624cba83d2"
-    sha256 big_sur:        "233706512d8b3812b44d02048c91edd36976ff7a2a4f86706aba72a9d0ba66c4"
-    sha256 x86_64_linux:   "1626ab57af930045ffe261f807e1492580cc9d290835ec1c8b16b11d8bd012d8"
+    sha256                               arm64_sonoma:   "dd42aa96ff8b79898c9f90647b7747529d2a67396c12d01a2d94a8d4200b340e"
+    sha256                               arm64_ventura:  "83ab915e64347ea4c3b3cf55bc82f48b5c23c504dd5b844c55013b87d1f249dc"
+    sha256                               arm64_monterey: "88cfead4de113e54b1c24834df19440088cd7453cd435bd75f43c5dcc772490d"
+    sha256                               sonoma:         "6f1ed50227be68a9af440d39c3d7ec2758ce18664e9c47d8e9f3c986b86ba3fe"
+    sha256                               ventura:        "ff12af5b542cd23f0fc62a3cd07090ee289d229abb83ace465485e0f84ee2655"
+    sha256                               monterey:       "6a5163689240a62d309898b16d7b1c4755af057aa5aa93c7db51cf7e7da78d41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "120582c44f3d7c75a37124a87ab8521600157c5cebd1e0eba4f2d428b49d5ead"
   end
 
   depends_on "gettext" => :build
@@ -36,8 +35,12 @@ class Gnumeric < Formula
     depends_on "gettext"
   end
 
+  on_linux do
+    depends_on "perl-xml-parser"
+  end
+
   def install
-    ENV.prepend_path "PERL5LIB", Formula["intltool"].opt_libexec/"lib/perl5" unless OS.mac?
+    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].opt_libexec/"lib/perl5" unless OS.mac?
 
     # ensures that the files remain within the keg
     inreplace "component/Makefile.in",

@@ -5,6 +5,7 @@ class Monero < Formula
       tag:      "v0.18.3.1",
       revision: "2656cdf5056c07684741c4425a051760b97025b0"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,13 +13,13 @@ class Monero < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f3fec95a2139b925780d20f8957bae54fd7444a72c1ebe856e47d38d69f18d7f"
-    sha256 cellar: :any,                 arm64_ventura:  "c13ba0a80ae9e48eda8ef55ddcb08f22ef3da9e6b2283a330ea38b5b604be166"
-    sha256 cellar: :any,                 arm64_monterey: "0ea9f8a1c025eec5a3f78e173f411a7b9c97eb5987e1bee69075064d4ac5f5d2"
-    sha256 cellar: :any,                 sonoma:         "3dda2b16796e0c5e7fc6378238f67a8308e5a1996955b32cb9d344a098db4d37"
-    sha256 cellar: :any,                 ventura:        "5d08ea51e3f3f3be0486f1f38088bbad8cad4d1d80ee5f5e1adceadefd463081"
-    sha256 cellar: :any,                 monterey:       "d5bb73dd84f32b9fa5b899a2849f1eb7bafe5dedd13ae6fdff44be976bb47844"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48ab04ddd490714d6c6149982dd87f61972baedac00882d784d89713fe36f832"
+    sha256 cellar: :any,                 arm64_sonoma:   "90279280450a2c450e65b94fbceb2972c7e7d7c19aa9e8dcc11b271ee600affe"
+    sha256 cellar: :any,                 arm64_ventura:  "1b3792d4f759c901c776cb2bc1d03ef6661e253f30e584a76ebb3af4c07c6071"
+    sha256 cellar: :any,                 arm64_monterey: "bd283ffde4a292692be6ffed9cbd4525f6f683c7e383c968c8d722af7b7a991e"
+    sha256 cellar: :any,                 sonoma:         "869c628d280ede1f9cf06e81224bc9aeaafb994566f4afd60876c22826887aea"
+    sha256 cellar: :any,                 ventura:        "75c3db596e2ae2be0437217586f7ce302790896a3db93d1a5bb2bbd74b65fd71"
+    sha256 cellar: :any,                 monterey:       "b57d321aedbfa90abd154a88cb95ecd89bcd1e167b58b6793868a5b85b003d38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ab52123f9ba7d2b60641f9601333cbb2ac270ef2e14c7beb2aa9e8cd7aa1b47"
   end
 
   depends_on "cmake" => :build

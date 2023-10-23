@@ -1,8 +1,8 @@
 class Suil < Formula
   desc "Lightweight C library for loading and wrapping LV2 plugin UIs"
   homepage "https://drobilla.net/software/suil.html"
-  url "https://download.drobilla.net/suil-0.10.18.tar.xz"
-  sha256 "84ada094fbe17ad3e765379002f3a0c7149b43b020235e4d7fa41432f206f85f"
+  url "https://download.drobilla.net/suil-0.10.20.tar.xz"
+  sha256 "334a3ed3e73d5e17ff400b3db9801f63809155b0faa8b1b9046f9dd3ffef934e"
   license "ISC"
   head "https://gitlab.com/lv2/suil.git", branch: "master"
 
@@ -12,16 +12,13 @@ class Suil < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "da4e96201ab8522bf7fa29606b0f173362b7559aa99b1ea23edee4c46f0d885a"
-    sha256 arm64_ventura:  "c16352b240c86569da188787f15046383e4a19e1c29c43af837fcef3920e5e8b"
-    sha256 arm64_monterey: "0c4d8b7e8560e0943ddec670ff4d3a67ee0875b5d277df4c3000c9944e6dca1f"
-    sha256 arm64_big_sur:  "2182b7000767586fb9e95a79f56e8099eebdad2592a3a8d2aefe2c857a941415"
-    sha256 sonoma:         "082717615091cc3caf9a9f2619deb24c8777a00a667e725a802ff6bc3b1bc50b"
-    sha256 ventura:        "9b1422b8a975aa305885b35234a38774a764b9a19163a62ce970b43af29f3a89"
-    sha256 monterey:       "934191e852bb9a873c72de4049009d1572e1258e8984deb69a7270e2a4ebba5e"
-    sha256 big_sur:        "e4e4e33c56f403d0d8947c9955c44e38f488a44aee173c6776c5450b360fdb69"
-    sha256 catalina:       "479de98313d7f3f58e78bc1667b1169b3a92157f5f64d2a2eb54d567dde1be33"
-    sha256 x86_64_linux:   "57ddadd96885c8ba621b7f8e8538392defbf0048bd332e9ca62075a379d5872b"
+    sha256 arm64_sonoma:   "3786a8f72e84d526393aacf88914e0e2c8846be83237c3583293a81a4501f172"
+    sha256 arm64_ventura:  "2ae1dceda234d02d9345dda24395ac7b3c23420821107aa95c919d73953ad159"
+    sha256 arm64_monterey: "cabdba5ebcc04aefab86262329a739b9fe072fe514294aba5188f5d48fc2988c"
+    sha256 sonoma:         "7774467a2d248fd6251bb32ff1ba996e8b1d14e53bf20b58bf7e0e4aed2719dc"
+    sha256 ventura:        "73c258d4b84425e3f4644c632bef762824481cf30b5ac2b5a6183f639d05cd9a"
+    sha256 monterey:       "5455af86ac9b03718c82f1b1d7b7c45060d7183dc5b186ac3dab29c46fa939b3"
+    sha256 x86_64_linux:   "cd685f9ad0942a691b83de434016e1363322bf0418fb8169778e81c81e4d05a5"
   end
 
   depends_on "meson" => :build
