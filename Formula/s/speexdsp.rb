@@ -1,7 +1,7 @@
 class Speexdsp < Formula
   desc "Speex audio processing library"
   homepage "https://github.com/xiph/speexdsp"
-  url "https://ghproxy.com/https://github.com/xiph/speexdsp/archive/SpeexDSP-1.2.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/xiph/speexdsp/archive/refs/tags/SpeexDSP-1.2.1.tar.gz"
   sha256 "d17ca363654556a4ff1d02cc13d9eb1fc5a8642c90b40bd54ce266c3807b91a7"
   license "BSD-3-Clause"
 

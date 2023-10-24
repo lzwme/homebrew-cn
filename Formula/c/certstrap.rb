@@ -1,7 +1,7 @@
 class Certstrap < Formula
   desc "Tools to bootstrap CAs, certificate requests, and signed certificates"
   homepage "https://github.com/square/certstrap"
-  url "https://ghproxy.com/https://github.com/square/certstrap/archive/v1.3.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/square/certstrap/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "4b32289c20dfad7bf8ab653c200954b3b9981fcbf101b699ceb575c6e7661a90"
   license "Apache-2.0"
 

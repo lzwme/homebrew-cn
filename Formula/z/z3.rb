@@ -1,7 +1,7 @@
 class Z3 < Formula
   desc "High-performance theorem prover"
   homepage "https://github.com/Z3Prover/z3"
-  url "https://ghproxy.com/https://github.com/Z3Prover/z3/archive/z3-4.12.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/Z3Prover/z3/archive/refs/tags/z3-4.12.2.tar.gz"
   sha256 "9f58f3710bd2094085951a75791550f547903d75fe7e2fcb373c5f03fc761b8f"
   license "MIT"
   head "https://github.com/Z3Prover/z3.git", branch: "master"

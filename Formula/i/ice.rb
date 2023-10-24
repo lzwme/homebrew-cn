@@ -1,7 +1,7 @@
 class Ice < Formula
   desc "Comprehensive RPC framework"
   homepage "https://zeroc.com"
-  url "https://ghproxy.com/https://github.com/zeroc-ice/ice/archive/v3.7.9.tar.gz"
+  url "https://ghproxy.com/https://github.com/zeroc-ice/ice/archive/refs/tags/v3.7.9.tar.gz"
   sha256 "960b51bb14a0c89d60c0e65cb1d4c6b09fe94d4e4c033c50254f7cc9c862d3c0"
   license "GPL-2.0-only"
 

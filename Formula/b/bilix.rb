@@ -1,7 +1,7 @@
 class Bilix < Formula
   include Language::Python::Virtualenv
 
-  desc "️Lightning-fast asynchronous download tool for bilibili and more"
+  desc "Lightning-fast asynchronous download tool for bilibili and more"
   homepage "https://github.com/HFrost0/bilix"
   url "https://files.pythonhosted.org/packages/8c/10/cab5099f3085749b07a18b0f9ce9871d005b9ce48aa6fd49d8104e2a506b/bilix-0.18.4.tar.gz"
   sha256 "e62e030b975f338a6d4e40a56af589e65b05a1d667747a3737ecb5cdec4093f9"

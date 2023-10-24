@@ -1,7 +1,7 @@
 class Cuetools < Formula
   desc "Utilities for .cue and .toc files"
   homepage "https://github.com/svend/cuetools"
-  url "https://ghproxy.com/https://github.com/svend/cuetools/archive/1.4.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/svend/cuetools/archive/refs/tags/1.4.1.tar.gz"
   sha256 "24a2420f100c69a6539a9feeb4130d19532f9f8a0428a8b9b289c6da761eb107"
   license "GPL-2.0"
   head "https://github.com/svend/cuetools.git", branch: "master"

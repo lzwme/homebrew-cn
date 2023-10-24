@@ -1,7 +1,7 @@
 class Dynein < Formula
   desc "DynamoDB CLI"
   homepage "https://github.com/awslabs/dynein"
-  url "https://ghproxy.com/https://github.com/awslabs/dynein/archive/v0.2.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/awslabs/dynein/archive/refs/tags/v0.2.1.tar.gz"
   sha256 "1946d521b74da303bafd19a0a36fd7510a9f8c9fc5cf64d2e6742b4b0b2c9389"
   license "Apache-2.0"
   head "https://github.com/awslabs/dynein.git", branch: "main"

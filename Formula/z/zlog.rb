@@ -1,7 +1,7 @@
 class Zlog < Formula
   desc "High-performance C logging library"
   homepage "https://github.com/HardySimpson/zlog"
-  url "https://ghproxy.com/https://github.com/HardySimpson/zlog/archive/1.2.16.tar.gz"
+  url "https://ghproxy.com/https://github.com/HardySimpson/zlog/archive/refs/tags/1.2.16.tar.gz"
   sha256 "742401902f2134eb272c49631fe5c38d7aeb9a2ad56fa3ec3d15219b371ba655"
   license "LGPL-2.1-only"
 

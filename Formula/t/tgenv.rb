@@ -1,7 +1,7 @@
 class Tgenv < Formula
   desc "Terragrunt version manager inspired by tfenv"
   homepage "https://github.com/cunymatthieu/tgenv"
-  url "https://ghproxy.com/https://github.com/cunymatthieu/tgenv/archive/v0.0.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/cunymatthieu/tgenv/archive/refs/tags/v0.0.3.tar.gz"
   sha256 "e59c4cc9dfccb7d52b9ff714b726ceee694cfa389474cbe01a65c5f9bc13eca4"
   license "MIT"
   head "https://github.com/cunymatthieu/tgenv.git", branch: "master"

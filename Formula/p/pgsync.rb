@@ -1,7 +1,7 @@
 class Pgsync < Formula
   desc "Sync Postgres data between databases"
   homepage "https://github.com/ankane/pgsync"
-  url "https://ghproxy.com/https://github.com/ankane/pgsync/archive/v0.7.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/ankane/pgsync/archive/refs/tags/v0.7.4.tar.gz"
   sha256 "0d8c0d319374f658a8aacafb15edbc074328aaec503fa92aae6032d3e1f12e60"
   license "MIT"
 

@@ -1,7 +1,7 @@
 class Odo < Formula
   desc "Atomic odometer for the command-line"
   homepage "https://github.com/atomicobject/odo"
-  url "https://ghproxy.com/https://github.com/atomicobject/odo/archive/v0.2.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/atomicobject/odo/archive/refs/tags/v0.2.2.tar.gz"
   sha256 "52133a6b92510d27dfe80c7e9f333b90af43d12f7ea0cf00718aee8a85824df5"
 
   bottle do

@@ -1,7 +1,7 @@
 class SofiaSip < Formula
   desc "SIP User-Agent library"
   homepage "https://sofia-sip.sourceforge.net/"
-  url "https://ghproxy.com/https://github.com/freeswitch/sofia-sip/archive/v1.13.16.tar.gz"
+  url "https://ghproxy.com/https://github.com/freeswitch/sofia-sip/archive/refs/tags/v1.13.16.tar.gz"
   sha256 "125a9653bea1fc1cb275e4aec3445aa2deadf1fe3f1adffae9559d2349bfab36"
   license "LGPL-2.1-or-later"
 

@@ -1,7 +1,7 @@
 class Srtp < Formula
   desc "Implementation of the Secure Real-time Transport Protocol"
   homepage "https://github.com/cisco/libsrtp"
-  url "https://ghproxy.com/https://github.com/cisco/libsrtp/archive/v2.5.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/cisco/libsrtp/archive/refs/tags/v2.5.0.tar.gz"
   sha256 "8a43ef8e9ae2b665292591af62aa1a4ae41e468b6d98d8258f91478735da4e09"
   license "BSD-3-Clause"
   revision 1

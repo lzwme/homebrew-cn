@@ -1,7 +1,7 @@
 class Mmseqs2 < Formula
   desc "Software suite for very fast sequence search and clustering"
   homepage "https://mmseqs.com/"
-  url "https://ghproxy.com/https://github.com/soedinglab/MMseqs2/archive/14-7e284.tar.gz"
+  url "https://ghproxy.com/https://github.com/soedinglab/MMseqs2/archive/refs/tags/14-7e284.tar.gz"
   version "14-7e284"
   sha256 "a15fd59b121073fdcc8b259fc703e5ce4c671d2c56eb5c027749f4bd4c28dfe1"
   license "GPL-3.0-or-later"

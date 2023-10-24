@@ -6,7 +6,7 @@ class X11vnc < Formula
   head "https://github.com/LibVNC/x11vnc.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/LibVNC/x11vnc/archive/0.9.16.tar.gz"
+    url "https://ghproxy.com/https://github.com/LibVNC/x11vnc/archive/refs/tags/0.9.16.tar.gz"
     sha256 "885e5b5f5f25eec6f9e4a1e8be3d0ac71a686331ee1cfb442dba391111bd32bd"
 
     # Fix build with -fno-common. Remove in the next release

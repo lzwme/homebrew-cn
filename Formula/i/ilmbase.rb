@@ -1,7 +1,7 @@
 class Ilmbase < Formula
   desc "OpenEXR ILM Base libraries (high dynamic-range image file format)"
   homepage "https://www.openexr.com/"
-  url "https://ghproxy.com/https://github.com/AcademySoftwareFoundation/openexr/archive/v2.5.8.tar.gz"
+  url "https://ghproxy.com/https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v2.5.8.tar.gz"
   sha256 "db261a7fcc046ec6634e4c5696a2fc2ce8b55f50aac6abe034308f54c8495f55"
   license "BSD-3-Clause"
 

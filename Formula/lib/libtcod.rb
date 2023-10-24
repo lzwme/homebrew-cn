@@ -1,7 +1,7 @@
 class Libtcod < Formula
   desc "API for roguelike developers"
   homepage "https://github.com/libtcod/libtcod"
-  url "https://ghproxy.com/https://github.com/libtcod/libtcod/archive/1.24.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/libtcod/libtcod/archive/refs/tags/1.24.0.tar.gz"
   sha256 "13e7ed49f91b897ac637e29295df8eeac24e284fbd9129bb09fd05dba0dcc1fb"
   license "BSD-3-Clause"
 

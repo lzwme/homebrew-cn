@@ -1,7 +1,7 @@
 class Cconv < Formula
   desc "Iconv based simplified-traditional Chinese conversion tool"
   homepage "https://github.com/xiaoyjy/cconv"
-  url "https://ghproxy.com/https://github.com/xiaoyjy/cconv/archive/v0.6.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/xiaoyjy/cconv/archive/refs/tags/v0.6.3.tar.gz"
   sha256 "82f46a94829f5a8157d6f686e302ff5710108931973e133d6e19593061b81d84"
   license "MIT"
 

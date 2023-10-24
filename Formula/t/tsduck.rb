@@ -1,7 +1,7 @@
 class Tsduck < Formula
   desc "MPEG Transport Stream Toolkit"
   homepage "https://tsduck.io/"
-  url "https://ghproxy.com/https://github.com/tsduck/tsduck/archive/v3.35-3258.tar.gz"
+  url "https://ghproxy.com/https://github.com/tsduck/tsduck/archive/refs/tags/v3.35-3258.tar.gz"
   sha256 "7c28d04fad9ef8415dc02d56f377e5b2b4c3f173dcc9487a906ee73da38f4e41"
   license "BSD-2-Clause"
   head "https://github.com/tsduck/tsduck.git", branch: "master"

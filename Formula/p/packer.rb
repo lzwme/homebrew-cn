@@ -4,7 +4,7 @@ class Packer < Formula
   # NOTE: Do not bump to 1.10.0 as license changed to BUSL-1.1
   # https://github.com/hashicorp/packer/pull/12568
   # https://github.com/hashicorp/packer/pull/12575
-  url "https://ghproxy.com/https://github.com/hashicorp/packer/archive/v1.9.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/hashicorp/packer/archive/refs/tags/v1.9.4.tar.gz"
   sha256 "c07db8375190668571077784f4a650514d6ef879ae45cb4c3c1717ad8308c47e"
   license "MPL-2.0"
   head "https://github.com/hashicorp/packer.git", branch: "main"

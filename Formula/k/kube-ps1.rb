@@ -1,7 +1,7 @@
 class KubePs1 < Formula
   desc "Kubernetes prompt info for bash and zsh"
   homepage "https://github.com/jonmosco/kube-ps1"
-  url "https://ghproxy.com/https://github.com/jonmosco/kube-ps1/archive/v0.8.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/jonmosco/kube-ps1/archive/refs/tags/v0.8.0.tar.gz"
   sha256 "7e57dc42d60f6c18fc1c814800c74b0ffb4e6f9d8e2b53f6f40bd7076f6c50a0"
   license "Apache-2.0"
   head "https://github.com/jonmosco/kube-ps1.git", branch: "master"

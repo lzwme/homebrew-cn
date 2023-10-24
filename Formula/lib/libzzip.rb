@@ -1,7 +1,7 @@
 class Libzzip < Formula
   desc "Library providing read access on ZIP-archives"
   homepage "https://github.com/gdraheim/zziplib"
-  url "https://ghproxy.com/https://github.com/gdraheim/zziplib/archive/v0.13.72.tar.gz"
+  url "https://ghproxy.com/https://github.com/gdraheim/zziplib/archive/refs/tags/v0.13.72.tar.gz"
   sha256 "93ef44bf1f1ea24fc66080426a469df82fa631d13ca3b2e4abaeab89538518dc"
   license any_of: ["LGPL-2.0-or-later", "MPL-1.1"]
   revision 1

@@ -1,7 +1,7 @@
 class Libswiftnav < Formula
   desc "C library implementing GNSS related functions and algorithms"
   homepage "https://github.com/swift-nav/libswiftnav"
-  url "https://ghproxy.com/https://github.com/swift-nav/libswiftnav/archive/v2.4.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/swift-nav/libswiftnav/archive/refs/tags/v2.4.2.tar.gz"
   sha256 "9dfe4ce4b4da28ffdb71acad261eef4dd98ad79daee4c1776e93b6f1765fccfa"
   license "LGPL-3.0-only"
 

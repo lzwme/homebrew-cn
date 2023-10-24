@@ -1,7 +1,7 @@
 class NoMoreSecrets < Formula
   desc "Recreates the SETEC ASTRONOMY effect from 'Sneakers'"
   homepage "https://github.com/bartobri/no-more-secrets"
-  url "https://ghproxy.com/https://github.com/bartobri/no-more-secrets/archive/v1.0.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/bartobri/no-more-secrets/archive/refs/tags/v1.0.1.tar.gz"
   sha256 "4422e59bb3cf62bca3c73d1fdae771b83aab686cd044f73fe14b1b9c2af1cb1b"
   license "GPL-3.0"
 

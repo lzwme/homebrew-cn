@@ -1,7 +1,7 @@
 class CargoWatch < Formula
   desc "Watches over your Cargo project's source"
   homepage "https://watchexec.github.io/#cargo-watch"
-  url "https://ghproxy.com/https://github.com/watchexec/cargo-watch/archive/v8.4.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/watchexec/cargo-watch/archive/refs/tags/v8.4.1.tar.gz"
   sha256 "af1b649de787630144ccbb510b854d2e2a21b91df6cc7e0f420fd14518978572"
   license "CC0-1.0"
   head "https://github.com/watchexec/cargo-watch.git", branch: "main"

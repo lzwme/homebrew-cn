@@ -1,7 +1,7 @@
 class Cue < Formula
   desc "Validate and define text-based and dynamic configuration"
   homepage "https://cuelang.org/"
-  url "https://ghproxy.com/https://github.com/cue-lang/cue/archive/v0.6.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/cue-lang/cue/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "8e884d9cf6138e05136ba7110ddd5ec20a312ed0d75868dc0a2fdb235e69f5e1"
   license "Apache-2.0"
   head "https://github.com/cue-lang/cue.git", branch: "master"

@@ -1,7 +1,7 @@
 class Ttygif < Formula
   desc "Converts a ttyrec file into gif files"
   homepage "https://github.com/icholy/ttygif"
-  url "https://ghproxy.com/https://github.com/icholy/ttygif/archive/1.6.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/icholy/ttygif/archive/refs/tags/1.6.0.tar.gz"
   sha256 "050b9e86f98fb790a2925cea6148f82f95808d707735b2650f3856cb6f53e0ae"
   license "MIT"
 

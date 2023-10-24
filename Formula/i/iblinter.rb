@@ -1,7 +1,7 @@
 class Iblinter < Formula
   desc "Linter tool for Interface Builder"
   homepage "https://github.com/IBDecodable/IBLinter"
-  url "https://ghproxy.com/https://github.com/IBDecodable/IBLinter/archive/0.5.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/IBDecodable/IBLinter/archive/refs/tags/0.5.0.tar.gz"
   sha256 "d1aafdca18bc81205ef30a2ee59f33513061b20184f0f51436531cec4a6f7170"
   license "MIT"
   head "https://github.com/IBDecodable/IBLinter.git", branch: "master"

@@ -1,7 +1,7 @@
 class Wrk < Formula
   desc "HTTP benchmarking tool"
   homepage "https://github.com/wg/wrk"
-  url "https://ghproxy.com/https://github.com/wg/wrk/archive/4.2.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/wg/wrk/archive/refs/tags/4.2.0.tar.gz"
   sha256 "e255f696bff6e329f5d19091da6b06164b8d59d62cb9e673625bdcd27fe7bdad"
   # License is modified Apache 2.0 with addition to Section 4 Redistribution:
   #

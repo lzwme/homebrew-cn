@@ -40,12 +40,12 @@ class Veraxx < Formula
   end
 
   resource "lua" do
-    url "https://ghproxy.com/https://github.com/LuaDist/lua/archive/5.2.3.tar.gz"
+    url "https://ghproxy.com/https://github.com/LuaDist/lua/archive/refs/tags/5.2.3.tar.gz"
     sha256 "c8aa2c74e8f31861cea8f030ece6b6cb18974477bd1e9e1db4c01aee8f18f5b6"
   end
 
   resource "luabind" do
-    url "https://ghproxy.com/https://github.com/verateam/luabind/archive/vera-1.3.0.tar.gz"
+    url "https://ghproxy.com/https://github.com/verateam/luabind/archive/refs/tags/vera-1.3.0.tar.gz"
     sha256 "7d93908b7d978e44ebe5dfad6624e6daa033f284a5f24013f37cac162a18f71a"
   end
 

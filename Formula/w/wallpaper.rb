@@ -1,7 +1,7 @@
 class Wallpaper < Formula
   desc "Manage the desktop wallpaper"
   homepage "https://github.com/sindresorhus/macos-wallpaper"
-  url "https://ghproxy.com/https://github.com/sindresorhus/macos-wallpaper/archive/v2.3.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/sindresorhus/macos-wallpaper/archive/refs/tags/v2.3.1.tar.gz"
   sha256 "d6aebaca1083ee3e5d6494f5574931691bad239a98e8fe99655790a40f2cb80a"
   license "MIT"
   head "https://github.com/sindresorhus/macos-wallpaper.git", branch: "main"

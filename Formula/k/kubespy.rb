@@ -1,7 +1,7 @@
 class Kubespy < Formula
   desc "Tools for observing Kubernetes resources in realtime"
   homepage "https://github.com/pulumi/kubespy"
-  url "https://ghproxy.com/https://github.com/pulumi/kubespy/archive/v0.6.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/pulumi/kubespy/archive/refs/tags/v0.6.2.tar.gz"
   sha256 "17a1c75357557f2caa9a6f781bcf628323b4cae42a05b123cd2d73f0bf9bd73c"
   license "Apache-2.0"
 

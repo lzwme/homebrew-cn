@@ -1,7 +1,7 @@
 class RangeV3 < Formula
   desc "Experimental range library for C++14/17/20"
   homepage "https://ericniebler.github.io/range-v3/"
-  url "https://ghproxy.com/https://github.com/ericniebler/range-v3/archive/0.12.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/ericniebler/range-v3/archive/refs/tags/0.12.0.tar.gz"
   sha256 "015adb2300a98edfceaf0725beec3337f542af4915cec4d0b89fa0886f4ba9cb"
   license "BSL-1.0"
 

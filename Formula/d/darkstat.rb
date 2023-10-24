@@ -1,7 +1,7 @@
 class Darkstat < Formula
   desc "Network traffic analyzer"
   homepage "https://unix4lyfe.org/darkstat/"
-  url "https://ghproxy.com/https://github.com/emikulic/darkstat/archive/3.0.721.tar.gz"
+  url "https://ghproxy.com/https://github.com/emikulic/darkstat/archive/refs/tags/3.0.721.tar.gz"
   sha256 "0b405a6c011240f577559d84db22684a6349b25067c3a800df12439783c25494"
   license all_of: ["BSD-4-Clause-UC", "GPL-2.0-only", "GPL-3.0-or-later", "X11"]
   head "https://github.com/emikulic/darkstat.git", branch: "master"

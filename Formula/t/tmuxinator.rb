@@ -1,7 +1,7 @@
 class Tmuxinator < Formula
   desc "Manage complex tmux sessions easily"
   homepage "https://github.com/tmuxinator/tmuxinator"
-  url "https://ghproxy.com/https://github.com/tmuxinator/tmuxinator/archive/v3.0.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/tmuxinator/tmuxinator/archive/refs/tags/v3.0.5.tar.gz"
   sha256 "f67296a0b600fb5d8e51bf8fc9f8376a887754fd74cd59b6a8d9c962ad8f80a4"
   license "MIT"
   head "https://github.com/tmuxinator/tmuxinator.git", branch: "master"

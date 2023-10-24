@@ -5,7 +5,7 @@ class GitSecret < Formula
   head "https://github.com/sobolevn/git-secret.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/sobolevn/git-secret/archive/v0.5.0.tar.gz"
+    url "https://ghproxy.com/https://github.com/sobolevn/git-secret/archive/refs/tags/v0.5.0.tar.gz"
     sha256 "1cba04a59c8109389079b479c1bf5719b595e799680e10d35ce9aa091cb752af"
   end
 

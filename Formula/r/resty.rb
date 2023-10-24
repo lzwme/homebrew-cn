@@ -3,7 +3,7 @@ class Resty < Formula
 
   desc "Command-line REST client that can be used in pipelines"
   homepage "https://github.com/micha/resty"
-  url "https://ghproxy.com/https://github.com/micha/resty/archive/v3.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/micha/resty/archive/refs/tags/v3.0.tar.gz"
   sha256 "9ed8f50dcf70a765b3438840024b557470d7faae2f0c1957a011ebb6c94b9dd1"
   license "MIT"
   revision 1

@@ -1,7 +1,7 @@
 class Iamy < Formula
   desc "AWS IAM import and export tool"
   homepage "https://github.com/99designs/iamy"
-  url "https://ghproxy.com/https://github.com/99designs/iamy/archive/v2.4.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/99designs/iamy/archive/refs/tags/v2.4.0.tar.gz"
   sha256 "13bd9e66afbeb30d386aa132a4af5d2e9a231d2aadf54fe8e5dc325583379359"
   license "MIT"
   head "https://github.com/99designs/iamy.git", branch: "master"

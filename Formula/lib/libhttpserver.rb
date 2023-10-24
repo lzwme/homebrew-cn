@@ -1,7 +1,7 @@
 class Libhttpserver < Formula
   desc "C++ library of embedded Rest HTTP server"
   homepage "https://github.com/etr/libhttpserver"
-  url "https://ghproxy.com/https://github.com/etr/libhttpserver/archive/0.19.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/etr/libhttpserver/archive/refs/tags/0.19.0.tar.gz"
   sha256 "b108769ed68d72c58961c517ab16c3a64e4efdc4c45687723bb45bb9e04c5193"
   license "LGPL-2.1-or-later"
   head "https://github.com/etr/libhttpserver.git", branch: "master"

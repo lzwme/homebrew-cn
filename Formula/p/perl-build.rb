@@ -1,7 +1,7 @@
 class PerlBuild < Formula
   desc "Perl builder"
   homepage "https://github.com/tokuhirom/Perl-Build"
-  url "https://ghproxy.com/https://github.com/tokuhirom/Perl-Build/archive/1.34.tar.gz"
+  url "https://ghproxy.com/https://github.com/tokuhirom/Perl-Build/archive/refs/tags/1.34.tar.gz"
   sha256 "50e90b18f2541aca857b8743bd3c187b7844c608076c4f2aa13eadc0689b1644"
   license any_of: ["Artistic-1.0", "GPL-1.0-or-later"]
   head "https://github.com/tokuhirom/perl-build.git", branch: "master"

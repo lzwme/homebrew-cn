@@ -1,7 +1,7 @@
 class CpuFeatures < Formula
   desc "Cross platform C99 library to get cpu features at runtime"
   homepage "https://github.com/google/cpu_features"
-  url "https://ghproxy.com/https://github.com/google/cpu_features/archive/v0.9.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/google/cpu_features/archive/refs/tags/v0.9.0.tar.gz"
   sha256 "bdb3484de8297c49b59955c3b22dba834401bc2df984ef5cfc17acbe69c5018e"
   license "Apache-2.0"
   head "https://github.com/google/cpu_features.git", branch: "main"

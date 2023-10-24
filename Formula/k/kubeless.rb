@@ -1,7 +1,7 @@
 class Kubeless < Formula
   desc "Kubernetes Native Serverless Framework"
   homepage "https://kubeless.io"
-  url "https://ghproxy.com/https://github.com/vmware-archive/kubeless/archive/v1.0.8.tar.gz"
+  url "https://ghproxy.com/https://github.com/vmware-archive/kubeless/archive/refs/tags/v1.0.8.tar.gz"
   sha256 "c25dd4908747ac9e2b1f815dfca3e1f5d582378ea5a05c959f96221cafd3e4cf"
   license "Apache-2.0"
 

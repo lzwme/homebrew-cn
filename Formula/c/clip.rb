@@ -6,7 +6,7 @@ class Clip < Formula
   head "https://github.com/asmuth/clip.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/asmuth/clip/archive/v0.7.tar.gz"
+    url "https://ghproxy.com/https://github.com/asmuth/clip/archive/refs/tags/v0.7.tar.gz"
     sha256 "f38f455cf3e9201614ac71d8a871e4ff94a6e4cf461fd5bf81bdf457ba2e6b3e"
     # Fix build with fmt 10, the issue is fixed on HEAD because the logic was changed
     patch :DATA

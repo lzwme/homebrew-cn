@@ -1,7 +1,7 @@
 class Genders < Formula
   desc "Static cluster configuration database for cluster management"
   homepage "https://github.com/chaos/genders"
-  url "https://ghproxy.com/https://github.com/chaos/genders/archive/genders-1-28-1.tar.gz"
+  url "https://ghproxy.com/https://github.com/chaos/genders/archive/refs/tags/genders-1-28-1.tar.gz"
   version "1.28.1"
   sha256 "3ca8b4771b2bf39383a3c383d36d308fa113de5c481e16fdef9cabd643359d09"
   license "GPL-2.0-or-later"

@@ -6,7 +6,7 @@ class Ffmpegthumbnailer < Formula
   head "https://github.com/dirkvdb/ffmpegthumbnailer.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/dirkvdb/ffmpegthumbnailer/archive/2.2.2.tar.gz"
+    url "https://ghproxy.com/https://github.com/dirkvdb/ffmpegthumbnailer/archive/refs/tags/2.2.2.tar.gz"
     sha256 "8c4c42ab68144a9e2349710d42c0248407a87e7dc0ba4366891905322b331f92"
 
     # Backport support for FFmpeg 5. Remove in the next release

@@ -1,7 +1,7 @@
 class Scry < Formula
   desc "Code analysis server for Crystal programming language"
   homepage "https://github.com/crystal-lang-tools/scry/"
-  url "https://ghproxy.com/https://github.com/crystal-lang-tools/scry/archive/v0.9.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/crystal-lang-tools/scry/archive/refs/tags/v0.9.1.tar.gz"
   sha256 "53bf972557f8b6a697d2aa727df465d6e7d04f6426fcd4559a4d77c90becad81"
   license "MIT"
   head "https://github.com/crystal-lang-tools/scry.git", branch: "master"

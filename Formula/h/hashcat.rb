@@ -2,7 +2,7 @@ class Hashcat < Formula
   desc "World's fastest and most advanced password recovery utility"
   homepage "https://hashcat.net/hashcat/"
   url "https://hashcat.net/files/hashcat-6.2.6.tar.gz"
-  mirror "https://ghproxy.com/https://github.com/hashcat/hashcat/archive/v6.2.6.tar.gz"
+  mirror "https://ghproxy.com/https://github.com/hashcat/hashcat/archive/refs/tags/v6.2.6.tar.gz"
   sha256 "b25e1077bcf34908cc8f18c1a69a2ec98b047b2cbcf0f51144dcf3ba1e0b7b2a"
   license "MIT"
   revision 1

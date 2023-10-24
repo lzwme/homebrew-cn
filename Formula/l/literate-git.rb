@@ -3,7 +3,7 @@ class LiterateGit < Formula
 
   desc "Render hierarchical git repositories into HTML"
   homepage "https://github.com/bennorth/literate-git"
-  url "https://ghproxy.com/https://github.com/bennorth/literate-git/archive/v0.3.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/bennorth/literate-git/archive/refs/tags/v0.3.1.tar.gz"
   sha256 "f1dec77584236a5ab2bcee9169e16b5d976e83cd53d279512136bdc90b04940a"
   license "GPL-3.0-or-later"
   revision 13

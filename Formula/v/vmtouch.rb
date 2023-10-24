@@ -1,7 +1,7 @@
 class Vmtouch < Formula
   desc "Portable file system cache diagnostics and control"
   homepage "https://hoytech.com/vmtouch/"
-  url "https://ghproxy.com/https://github.com/hoytech/vmtouch/archive/v1.3.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/hoytech/vmtouch/archive/refs/tags/v1.3.1.tar.gz"
   sha256 "d57b7b3ae1146c4516429ab7d6db6f2122401db814ddd9cdaad10980e9c8428c"
   head "https://github.com/hoytech/vmtouch.git", branch: "master"
 

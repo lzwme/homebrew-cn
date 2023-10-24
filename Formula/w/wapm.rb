@@ -1,7 +1,7 @@
 class Wapm < Formula
   desc "WebAssembly Package Manager (CLI)"
   homepage "https://wapm.io/"
-  url "https://ghproxy.com/https://github.com/wasmerio/wapm-cli/archive/v0.5.9.tar.gz"
+  url "https://ghproxy.com/https://github.com/wasmerio/wapm-cli/archive/refs/tags/v0.5.9.tar.gz"
   sha256 "67f98e7e584ee05b53a70e19624ca73538aef28f46e1bb31c49262ba0e00a2ec"
   license "MIT"
   head "https://github.com/wasmerio/wapm-cli.git", branch: "master"

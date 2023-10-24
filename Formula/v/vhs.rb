@@ -1,7 +1,7 @@
 class Vhs < Formula
   desc "Your CLI home video recorder"
   homepage "https://github.com/charmbracelet/vhs"
-  url "https://ghproxy.com/https://github.com/charmbracelet/vhs/archive/v0.6.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/charmbracelet/vhs/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "bf41f264730f18b5146c2269d82b5b69757470799a2cce6099e420b5f3ec7fa3"
   license "MIT"
   head "https://github.com/charmbracelet/vhs.git", branch: "main"

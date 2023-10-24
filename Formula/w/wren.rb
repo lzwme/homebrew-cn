@@ -1,7 +1,7 @@
 class Wren < Formula
   desc "Small, fast, class-based concurrent scripting language"
   homepage "https://wren.io"
-  url "https://ghproxy.com/https://github.com/wren-lang/wren/archive/0.4.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/wren-lang/wren/archive/refs/tags/0.4.0.tar.gz"
   sha256 "23c0ddeb6c67a4ed9285bded49f7c91714922c2e7bb88f42428386bf1cf7b339"
   license "MIT"
 

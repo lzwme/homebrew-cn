@@ -1,7 +1,7 @@
 class Comby < Formula
   desc "Tool for changing code across many languages"
   homepage "https://comby.dev"
-  url "https://ghproxy.com/https://github.com/comby-tools/comby/archive/1.8.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/comby-tools/comby/archive/refs/tags/1.8.1.tar.gz"
   sha256 "04d51cf742bbbf5e5fda064a710be44537fac49bff598d0e9762a3a799d666e2"
   license "Apache-2.0"
 

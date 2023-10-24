@@ -1,7 +1,7 @@
 class Gluon < Formula
   desc "Static, type inferred and embeddable language written in Rust"
   homepage "https://gluon-lang.org"
-  url "https://ghproxy.com/https://github.com/gluon-lang/gluon/archive/v0.18.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/gluon-lang/gluon/archive/refs/tags/v0.18.0.tar.gz"
   sha256 "1532cae94c85c9172e0b96b061384c448e6e1b35093d1aacf0cd214e751fe1e3"
   license "MIT"
   head "https://github.com/gluon-lang/gluon.git", branch: "master"

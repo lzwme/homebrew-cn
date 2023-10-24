@@ -1,7 +1,7 @@
 class Unshield < Formula
   desc "Extract files from InstallShield cabinet files"
   homepage "https://github.com/twogood/unshield"
-  url "https://ghproxy.com/https://github.com/twogood/unshield/archive/1.5.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/twogood/unshield/archive/refs/tags/1.5.1.tar.gz"
   sha256 "34cd97ff1e6f764436d71676e3d6842dc7bd8e2dd5014068da5c560fe4661f60"
   license "MIT"
   revision 1

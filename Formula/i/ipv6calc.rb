@@ -5,7 +5,7 @@ class Ipv6calc < Formula
 
   desc "Small utility for manipulating IPv6 addresses"
   homepage "https://www.deepspace6.net/projects/ipv6calc.html"
-  url "https://ghproxy.com/https://github.com/pbiering/ipv6calc/archive/4.0.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/pbiering/ipv6calc/archive/refs/tags/4.0.2.tar.gz"
   sha256 "f96a89bdce201ec313f66514ee52eeab5f5ead3d2ba9efe5ed9f757632cd01a1"
   license "GPL-2.0-only"
 

@@ -1,7 +1,7 @@
 class Googletest < Formula
   desc "Google Testing and Mocking Framework"
   homepage "https://github.com/google/googletest"
-  url "https://ghproxy.com/https://github.com/google/googletest/archive/v1.14.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/google/googletest/archive/refs/tags/v1.14.0.tar.gz"
   sha256 "8ad598c73ad796e0d8280b082cebd82a630d73e73cd3c70057938a6501bba5d7"
   license "BSD-3-Clause"
   head "https://github.com/google/googletest.git", branch: "main"

@@ -1,7 +1,7 @@
 class Smimesign < Formula
   desc "S/MIME signing utility for use with Git"
   homepage "https://github.com/github/smimesign"
-  url "https://ghproxy.com/https://github.com/github/smimesign/archive/v0.2.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/github/smimesign/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "b5921dc3f3b446743e130d1ee39ab9ed2e256b001bd52cf410d30a0eb087f54e"
   license "MIT"
 

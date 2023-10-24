@@ -1,7 +1,7 @@
 class Uptimed < Formula
   desc "Utility to track your highest uptimes"
   homepage "https://github.com/rpodgorny/uptimed/"
-  url "https://ghproxy.com/https://github.com/rpodgorny/uptimed/archive/v0.4.6.tar.gz"
+  url "https://ghproxy.com/https://github.com/rpodgorny/uptimed/archive/refs/tags/v0.4.6.tar.gz"
   sha256 "48656498ac30c59b902e98dc5e411e97cbb96278a01946bdf0941d8da72b2ae1"
   license "GPL-2.0-only"
 

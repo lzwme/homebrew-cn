@@ -1,7 +1,7 @@
 class Chisel < Formula
   desc "Collection of LLDB commands to assist debugging iOS apps"
   homepage "https://github.com/facebook/chisel"
-  url "https://ghproxy.com/https://github.com/facebook/chisel/archive/2.0.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/facebook/chisel/archive/refs/tags/2.0.1.tar.gz"
   sha256 "6f019d5e7ab5eb06542a9eccbbe29e7d26165d3676828a32e143575ff102d5f9"
   license "MIT"
   head "https://github.com/facebook/chisel.git", branch: "master"

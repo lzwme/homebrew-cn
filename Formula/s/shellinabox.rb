@@ -1,7 +1,7 @@
 class Shellinabox < Formula
   desc "Export command-line tools to web based terminal emulator"
   homepage "https://github.com/shellinabox/shellinabox"
-  url "https://ghproxy.com/https://github.com/shellinabox/shellinabox/archive/v2.20.tar.gz"
+  url "https://ghproxy.com/https://github.com/shellinabox/shellinabox/archive/refs/tags/v2.20.tar.gz"
   sha256 "27a5ec6c3439f87aee238c47cc56e7357a6249e5ca9ed0f044f0057ef389d81e"
   license "GPL-2.0-only"
   revision 1

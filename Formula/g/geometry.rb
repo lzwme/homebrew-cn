@@ -1,7 +1,7 @@
 class Geometry < Formula
   desc "Minimal, fully customizable and composable zsh prompt theme"
   homepage "https://github.com/geometry-zsh/geometry"
-  url "https://ghproxy.com/https://github.com/geometry-zsh/geometry/archive/v2.2.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/geometry-zsh/geometry/archive/refs/tags/v2.2.0.tar.gz"
   sha256 "2ffe63fbe83813e368933d2add79b7f6439c7ade4fcc8243cb0166c17178cd9a"
   license "ISC"
   head "https://github.com/geometry-zsh/geometry.git", branch: "main"

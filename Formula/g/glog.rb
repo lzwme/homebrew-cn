@@ -1,7 +1,7 @@
 class Glog < Formula
   desc "Application-level logging library"
   homepage "https://github.com/google/glog"
-  url "https://ghproxy.com/https://github.com/google/glog/archive/v0.6.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/google/glog/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "8a83bf982f37bb70825df71a9709fa90ea9f4447fb3c099e1d720a439d88bad6"
   license "BSD-3-Clause"
   head "https://github.com/google/glog.git", branch: "master"

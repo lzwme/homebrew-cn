@@ -1,7 +1,7 @@
 class DnscryptWrapper < Formula
   desc "Server-side proxy that adds dnscrypt support to name resolvers"
   homepage "https://cofyc.github.io/dnscrypt-wrapper/"
-  url "https://ghproxy.com/https://github.com/cofyc/dnscrypt-wrapper/archive/v0.4.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/cofyc/dnscrypt-wrapper/archive/refs/tags/v0.4.2.tar.gz"
   sha256 "911856dc4e211f906ca798fcf84f5b62be7fdbf73c53e5715ce18d553814ac86"
   license "ISC"
   revision 1

@@ -1,7 +1,7 @@
 class Zopfli < Formula
   desc "New zlib (gzip, deflate) compatible compressor"
   homepage "https://github.com/google/zopfli"
-  url "https://ghproxy.com/https://github.com/google/zopfli/archive/zopfli-1.0.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/google/zopfli/archive/refs/tags/zopfli-1.0.3.tar.gz"
   sha256 "e955a7739f71af37ef3349c4fa141c648e8775bceb2195be07e86f8e638814bd"
   license "Apache-2.0"
   revision 1

@@ -1,7 +1,7 @@
 class Kalign < Formula
   desc "Fast multiple sequence alignment program for biological sequences"
   homepage "https://github.com/TimoLassmann/kalign"
-  url "https://ghproxy.com/https://github.com/TimoLassmann/kalign/archive/v3.3.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/TimoLassmann/kalign/archive/refs/tags/v3.3.5.tar.gz"
   sha256 "75f3a127d2a9eef1eafd931fb0785736eb3f82826be506e7edd00daf1ba26212"
   license "GPL-3.0-or-later"
 

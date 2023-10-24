@@ -1,7 +1,7 @@
 class Libscrypt < Formula
   desc "Library for scrypt"
   homepage "https://github.com/technion/libscrypt"
-  url "https://ghproxy.com/https://github.com/technion/libscrypt/archive/v1.22.tar.gz"
+  url "https://ghproxy.com/https://github.com/technion/libscrypt/archive/refs/tags/v1.22.tar.gz"
   sha256 "a2d30ea16e6d288772791de68be56153965fe4fd4bcd787777618b8048708936"
   license "BSD-2-Clause"
 

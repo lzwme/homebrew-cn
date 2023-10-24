@@ -1,7 +1,7 @@
 class Openalpr < Formula
   desc "Automatic License Plate Recognition library"
   homepage "https://www.openalpr.com"
-  url "https://ghproxy.com/https://github.com/openalpr/openalpr/archive/v2.3.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/openalpr/openalpr/archive/refs/tags/v2.3.0.tar.gz"
   sha256 "1cfcaab6f06e9984186ee19633a949158c0e2aacf9264127e2f86bd97641d6b9"
   license "AGPL-3.0-or-later"
   revision 2

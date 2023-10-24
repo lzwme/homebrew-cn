@@ -1,7 +1,7 @@
 class MysqlSearchReplace < Formula
   desc "Database search and replace script in PHP"
   homepage "https://interconnectit.com/products/search-and-replace-for-wordpress-databases/"
-  url "https://ghproxy.com/https://github.com/interconnectit/Search-Replace-DB/archive/4.1.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/interconnectit/Search-Replace-DB/archive/refs/tags/4.1.2.tar.gz"
   sha256 "3da4b2af67bb820534c0e8d8dc6b87f4b38be6fe2410df90177a39dc24ae4593"
   license "GPL-3.0"
 

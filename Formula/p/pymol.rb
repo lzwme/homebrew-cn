@@ -2,7 +2,7 @@ class Pymol < Formula
   include Language::Python::Virtualenv
   desc "Molecular visualization system"
   homepage "https://pymol.org/"
-  url "https://ghproxy.com/https://github.com/schrodinger/pymol-open-source/archive/v2.5.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/schrodinger/pymol-open-source/archive/refs/tags/v2.5.0.tar.gz"
   sha256 "aa828bf5719bd9a14510118a93182a6e0cadc03a574ba1e327e1e9780a0e80b3"
   license :cannot_represent
   head "https://github.com/schrodinger/pymol-open-source.git", branch: "master"

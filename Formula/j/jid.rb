@@ -1,7 +1,7 @@
 class Jid < Formula
   desc "Json incremental digger"
   homepage "https://github.com/simeji/jid"
-  url "https://ghproxy.com/https://github.com/simeji/jid/archive/v0.7.6.tar.gz"
+  url "https://ghproxy.com/https://github.com/simeji/jid/archive/refs/tags/v0.7.6.tar.gz"
   sha256 "0912050b3be3760804afaf7ecd6b42bfe79e7160066587fbc0afa5324b03fb48"
   license "MIT"
 

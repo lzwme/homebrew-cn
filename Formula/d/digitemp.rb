@@ -1,7 +1,7 @@
 class Digitemp < Formula
   desc "Read temperature sensors in a 1-Wire net"
   homepage "https://www.digitemp.com/"
-  url "https://ghproxy.com/https://github.com/bcl/digitemp/archive/v3.7.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/bcl/digitemp/archive/refs/tags/v3.7.2.tar.gz"
   sha256 "683df4ab5cc53a45fe4f860c698f148d34bcca91b3e0568a342f32d64d12ba24"
   license "GPL-2.0"
   head "https://github.com/bcl/digitemp.git", branch: "master"

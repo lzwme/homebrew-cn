@@ -1,7 +1,7 @@
 class TerraformLandscape < Formula
   desc "Improve Terraform's plan output"
   homepage "https://github.com/coinbase/terraform-landscape"
-  url "https://ghproxy.com/https://github.com/coinbase/terraform-landscape/archive/v0.3.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/coinbase/terraform-landscape/archive/refs/tags/v0.3.4.tar.gz"
   sha256 "9e9b8e00aacf821fd07c9e3194e1e9f5824032dad4b12995649bcd9c59731ee1"
   license "Apache-2.0"
 

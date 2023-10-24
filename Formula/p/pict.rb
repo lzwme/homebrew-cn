@@ -1,7 +1,7 @@
 class Pict < Formula
   desc "Pairwise Independent Combinatorial Tool"
   homepage "https://github.com/Microsoft/pict/"
-  url "https://ghproxy.com/https://github.com/Microsoft/pict/archive/v3.7.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/Microsoft/pict/archive/refs/tags/v3.7.4.tar.gz"
   sha256 "42af3ac7948d5dfed66525c4b6a58464dfd8f78a370b1fc03a8d35be2179928f"
   license "MIT"
 

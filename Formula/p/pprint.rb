@@ -1,7 +1,7 @@
 class Pprint < Formula
   desc "Pretty printer for modern C++"
   homepage "https://github.com/p-ranav/pprint"
-  url "https://ghproxy.com/https://github.com/p-ranav/pprint/archive/v0.9.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/p-ranav/pprint/archive/refs/tags/v0.9.1.tar.gz"
   sha256 "b9cc0d42f7be4abbb50b2e3b6a89589c5399201a3dc1fd7cfa72d412afdb2f86"
   license "MIT"
 

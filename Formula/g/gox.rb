@@ -1,7 +1,7 @@
 class Gox < Formula
   desc "Go cross compile tool"
   homepage "https://github.com/mitchellh/gox"
-  url "https://ghproxy.com/https://github.com/mitchellh/gox/archive/v1.0.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/mitchellh/gox/archive/refs/tags/v1.0.1.tar.gz"
   sha256 "25aab55a4ba75653931be2a2b95e29216b54bd8fecc7931bd416efe49a388229"
   license "MPL-2.0"
   head "https://github.com/mitchellh/gox.git", branch: "master"
@@ -30,7 +30,7 @@ class Gox < Formula
 
   # This resource is for the test so doesn't really need to be updated.
   resource "pup" do
-    url "https://ghproxy.com/https://github.com/ericchiang/pup/archive/v0.4.0.tar.gz"
+    url "https://ghproxy.com/https://github.com/ericchiang/pup/archive/refs/tags/v0.4.0.tar.gz"
     sha256 "0d546ab78588e07e1601007772d83795495aa329b19bd1c3cde589ddb1c538b0"
   end
 

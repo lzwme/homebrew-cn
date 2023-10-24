@@ -2,7 +2,7 @@ class Hadolint < Formula
   desc "Smarter Dockerfile linter to validate best practices"
   homepage "https://github.com/hadolint/hadolint"
   # TODO: Try to switch `ghc@9.2` to `ghc` when spdx supports base>=4.17
-  url "https://ghproxy.com/https://github.com/hadolint/hadolint/archive/v2.12.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/hadolint/hadolint/archive/refs/tags/v2.12.0.tar.gz"
   sha256 "1f972f070fa068a8a18b62016c9cbd00df994006e069647038694fc6cde45545"
   license "GPL-3.0-only"
 

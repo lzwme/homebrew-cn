@@ -1,7 +1,7 @@
 class Chars < Formula
   desc "Command-line tool to display information about unicode characters"
   homepage "https://github.com/antifuchs/chars/"
-  url "https://ghproxy.com/https://github.com/antifuchs/chars/archive/v0.7.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/antifuchs/chars/archive/refs/tags/v0.7.0.tar.gz"
   sha256 "2f79843a3b1173870b41ebce491a54812b13a44090d0ae30a6f572caa91f0736"
   license "MIT"
   head "https://github.com/antifuchs/chars.git", branch: "master"

@@ -1,7 +1,7 @@
 class Kondo < Formula
   desc "Save disk space by cleaning non-essential files from software projects"
   homepage "https://github.com/tbillington/kondo"
-  url "https://ghproxy.com/https://github.com/tbillington/kondo/archive/v0.7.tar.gz"
+  url "https://ghproxy.com/https://github.com/tbillington/kondo/archive/refs/tags/v0.7.tar.gz"
   sha256 "b7535807ba98bde86adfb920ec439e98b7c652361feb6a224e55c88cda569ff2"
   license "MIT"
 

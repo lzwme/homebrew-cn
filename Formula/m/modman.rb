@@ -1,7 +1,7 @@
 class Modman < Formula
   desc "Module deployment script geared towards Magento development"
   homepage "https://github.com/colinmollenhour/modman"
-  url "https://ghproxy.com/https://github.com/colinmollenhour/modman/archive/1.14.tar.gz"
+  url "https://ghproxy.com/https://github.com/colinmollenhour/modman/archive/refs/tags/1.14.tar.gz"
   sha256 "58ac5b27b11def9ba162881c3687f2085c06a6ed4cfb496bafdc64ce1a2eaac6"
   license "Apache-2.0"
 

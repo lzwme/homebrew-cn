@@ -1,7 +1,7 @@
 class Hostess < Formula
   desc "Idempotent command-line utility for managing your /etc/hosts file"
   homepage "https://github.com/cbednarski/hostess"
-  url "https://ghproxy.com/https://github.com/cbednarski/hostess/archive/v0.5.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/cbednarski/hostess/archive/refs/tags/v0.5.2.tar.gz"
   sha256 "ece52d72e9e886e5cc877379b94c7d8fe6ba5e22ab823ef41b66015e5326da87"
   license "MIT"
   head "https://github.com/cbednarski/hostess.git", branch: "master"

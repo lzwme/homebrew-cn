@@ -1,7 +1,7 @@
 class GitIntegration < Formula
   desc "Manage git integration branches"
   homepage "https://johnkeeping.github.io/git-integration/"
-  url "https://ghproxy.com/https://github.com/johnkeeping/git-integration/archive/v0.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/johnkeeping/git-integration/archive/refs/tags/v0.4.tar.gz"
   sha256 "b0259e90dca29c71f6afec4bfdea41fe9c08825e740ce18409cfdbd34289cc02"
   license "GPL-2.0"
   head "https://github.com/johnkeeping/git-integration.git", branch: "master"

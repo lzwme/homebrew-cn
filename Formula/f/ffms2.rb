@@ -8,7 +8,7 @@ class Ffms2 < Formula
   head "https://github.com/FFMS/ffms2.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/FFMS/ffms2/archive/2.40.tar.gz"
+    url "https://ghproxy.com/https://github.com/FFMS/ffms2/archive/refs/tags/2.40.tar.gz"
     mirror "https://deb.debian.org/debian/pool/main/f/ffms2/ffms2_2.40.orig.tar.gz"
     sha256 "82e95662946f3d6e1b529eadbd72bed196adfbc41368b2d50493efce6e716320"
 

@@ -1,7 +1,7 @@
 class Mdr < Formula
   desc "Make diffs readable"
   homepage "https://github.com/halffullheart/mdr"
-  url "https://ghproxy.com/https://github.com/halffullheart/mdr/archive/v1.0.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/halffullheart/mdr/archive/refs/tags/v1.0.1.tar.gz"
   sha256 "103d52c47133a43cc7a6cb8a21bfabe2d6e35e222d5b675bc0c868699a127c67"
   license "GPL-3.0"
 

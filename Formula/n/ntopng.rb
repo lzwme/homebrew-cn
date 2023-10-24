@@ -5,7 +5,7 @@ class Ntopng < Formula
   revision 3
 
   stable do
-    url "https://ghproxy.com/https://github.com/ntop/ntopng/archive/5.2.1.tar.gz"
+    url "https://ghproxy.com/https://github.com/ntop/ntopng/archive/refs/tags/5.2.1.tar.gz"
     sha256 "67404ccd87202864d2c3c44426e60cb59cc2e87d746c704b27e6a63d61ec7644"
 
     depends_on "ndpi"

@@ -1,7 +1,7 @@
 class Karn < Formula
   desc "Manage multiple Git identities"
   homepage "https://github.com/prydonius/karn"
-  url "https://ghproxy.com/https://github.com/prydonius/karn/archive/v0.1.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/prydonius/karn/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "96f10ff263468b9f91244edf16d8ea548c9d281cba9b2597eaf5270f9e6127e3"
   license "MIT"
 

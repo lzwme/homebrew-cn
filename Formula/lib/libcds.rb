@@ -1,7 +1,7 @@
 class Libcds < Formula
   desc "C++ library of Concurrent Data Structures"
   homepage "https://libcds.sourceforge.net/doc/cds-api/index.html"
-  url "https://ghproxy.com/https://github.com/khizmax/libcds/archive/v2.3.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/khizmax/libcds/archive/refs/tags/v2.3.3.tar.gz"
   sha256 "f090380ecd6b63a3c2b2f0bdb27260de2ccb22486ef7f47cc1175b70c6e4e388"
   license "BSL-1.0"
   revision 1

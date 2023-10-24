@@ -6,7 +6,7 @@ class Infer < Formula
   head "https://github.com/facebook/infer.git", branch: "main"
 
   stable do
-    url "https://ghproxy.com/https://github.com/facebook/infer/archive/v1.1.0.tar.gz"
+    url "https://ghproxy.com/https://github.com/facebook/infer/archive/refs/tags/v1.1.0.tar.gz"
     sha256 "201c7797668a4b498fe108fcc13031b72d9dbf04dab0dc65dd6bd3f30e1f89ee"
 
     # Fix FileUtils.cpp:44:57: error: invalid initialization of reference of type 'const string& ...

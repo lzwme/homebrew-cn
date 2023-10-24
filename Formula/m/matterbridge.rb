@@ -1,7 +1,7 @@
 class Matterbridge < Formula
   desc "Protocol bridge for multiple chat platforms"
   homepage "https://github.com/42wim/matterbridge"
-  url "https://ghproxy.com/https://github.com/42wim/matterbridge/archive/v1.26.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/42wim/matterbridge/archive/refs/tags/v1.26.0.tar.gz"
   sha256 "00e1bbfe3b32f2feccf9a7f13a6f12b1ce28a5eb04cc7b922b344e3493497425"
   license "Apache-2.0"
 

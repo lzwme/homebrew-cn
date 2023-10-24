@@ -1,7 +1,7 @@
 class Shfmt < Formula
   desc "Autoformat shell script source code"
   homepage "https://github.com/mvdan/sh"
-  url "https://ghproxy.com/https://github.com/mvdan/sh/archive/v3.7.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/mvdan/sh/archive/refs/tags/v3.7.0.tar.gz"
   sha256 "89eafc8790df93305dfa42233e262fb25e1c96726a3db420a7555abadf3111ed"
   license "BSD-3-Clause"
   head "https://github.com/mvdan/sh.git", branch: "master"

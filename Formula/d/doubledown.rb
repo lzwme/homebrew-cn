@@ -1,7 +1,7 @@
 class Doubledown < Formula
   desc "Sync local changes to a remote directory"
   homepage "https://github.com/devstructure/doubledown"
-  url "https://ghproxy.com/https://github.com/devstructure/doubledown/archive/v0.0.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/devstructure/doubledown/archive/refs/tags/v0.0.2.tar.gz"
   sha256 "47ff56b6197c5302a29ae4a373663229d3b396fd54d132adbf9f499172caeb71"
   license "BSD-2-Clause"
   head "https://github.com/devstructure/doubledown.git", branch: "master"

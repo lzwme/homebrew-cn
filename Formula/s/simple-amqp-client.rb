@@ -1,7 +1,7 @@
 class SimpleAmqpClient < Formula
   desc "C++ interface to rabbitmq-c"
   homepage "https://github.com/alanxz/SimpleAmqpClient"
-  url "https://ghproxy.com/https://github.com/alanxz/SimpleAmqpClient/archive/v2.5.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/alanxz/SimpleAmqpClient/archive/refs/tags/v2.5.1.tar.gz"
   sha256 "057c56b29390ec7659de1527f9ccbadb602e3e73048de79594521b3141ab586d"
   license "MIT"
   revision 6

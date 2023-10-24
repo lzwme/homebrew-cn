@@ -1,7 +1,7 @@
 class Yank < Formula
   desc "Copy terminal output to clipboard"
   homepage "https://github.com/mptre/yank"
-  url "https://ghproxy.com/https://github.com/mptre/yank/archive/v1.3.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/mptre/yank/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "40f5472df5f6356a4d6f48862a19091bd4de3f802b3444891b3bc4b710fb35ca"
   license "MIT"
 

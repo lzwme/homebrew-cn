@@ -2,8 +2,8 @@ class Wasmtime < Formula
   desc "Standalone JIT-style runtime for WebAssembly, using Cranelift"
   homepage "https://wasmtime.dev/"
   url "https://github.com/bytecodealliance/wasmtime.git",
-      tag:      "v13.0.0",
-      revision: "aec4b25b8f62f409175a3cc6c4a4ed18b446d3ae"
+      tag:      "v14.0.0",
+      revision: "2da78ca5c4c1e5a8cbc88a8ad3accf24bb4e6cfb"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/bytecodealliance/wasmtime.git", branch: "main"
 
@@ -13,15 +13,13 @@ class Wasmtime < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "097db44404ba4feabe591c81b25d2392e6ed2c34e3ecd6cb522e39b4037626b4"
-    sha256 cellar: :any,                 arm64_ventura:  "4315e41d531d021ebc8b223196e72381d6f52f6140d2a0a94f304984da2ff438"
-    sha256 cellar: :any,                 arm64_monterey: "7136dc34eca291c2f520a08098f4efd9456f1f508ec87c19ea9a273d210a2d1b"
-    sha256 cellar: :any,                 arm64_big_sur:  "f2e30b14569690957c00d89fe77804a49022a7244a6c6f6c5bcc12680e6e8c5f"
-    sha256 cellar: :any,                 sonoma:         "f8fb68c759ae2e6ef523e3c7fb7e054cfadd7254bfb954a7ca006dac360b14c1"
-    sha256 cellar: :any,                 ventura:        "4c932d867d848bca92ffe832b65e29054a42669e43be7024494c2eac4e49948c"
-    sha256 cellar: :any,                 monterey:       "59fbd7bee12ff391cbd7f81718941af62ea5e4f1d85203f4ee453323778d43fb"
-    sha256 cellar: :any,                 big_sur:        "93f0a3efc672191430807c17092b266bfa3120e7c66b9b9c2c792ced44ce5fe2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3498651826b0148c181636838af2f03b95457e2151a531b359251be5743bcb6"
+    sha256 cellar: :any,                 arm64_sonoma:   "92b8d6bf1ce58f63d5961288676f0f68bc75e1e5161846b05af802a2b9c0de26"
+    sha256 cellar: :any,                 arm64_ventura:  "5584fc248e3c6329e6db5d84ec4a9ac5157851783ed69bd5bceede054614f2c7"
+    sha256 cellar: :any,                 arm64_monterey: "e349a7bad482b40d2d96f1b3015cba26813680e0aa21b166c2792933d307a77e"
+    sha256 cellar: :any,                 sonoma:         "9943f2f772fff386efc4054c4ff1a310f0f94e5608ed0e5912ef7b1516e326fe"
+    sha256 cellar: :any,                 ventura:        "91783c713b6be85f5c58435bf3d7c4e7a0705e35c267c010c9b33844c0f54790"
+    sha256 cellar: :any,                 monterey:       "0d89028002ed65183d0e5f061dc4ea69cae68777676971c06d81d74197034057"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b79ac7fe6cdddf6d0747b5960ab80de76b0241974a6e7e4f31eeb4e404a0913"
   end
 
   depends_on "rust" => :build
@@ -39,7 +37,7 @@ class Wasmtime < Formula
     wasm = ["0061736d0100000001070160027f7f017f030201000707010373756d00000a09010700200020016a0b"].pack("H*")
     (testpath/"sum.wasm").write(wasm)
     assert_equal "3\n",
-      shell_output("#{bin}/wasmtime #{testpath/"sum.wasm"} --invoke sum 1 2")
+      shell_output("#{bin}/wasmtime --invoke sum #{testpath/"sum.wasm"} 1 2")
 
     (testpath/"hello.wat").write <<~EOS
       (module

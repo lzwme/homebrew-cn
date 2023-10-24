@@ -4,7 +4,7 @@ class Waypoint < Formula
   # NOTE: Do not bump to v0.12.0+ as license changed to BUSL-1.1
   # https://github.com/hashicorp/waypoint/pull/4878
   # https://github.com/hashicorp/waypoint/pull/4888
-  url "https://ghproxy.com/https://github.com/hashicorp/waypoint/archive/v0.11.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/hashicorp/waypoint/archive/refs/tags/v0.11.4.tar.gz"
   sha256 "e2526a621880fdc92c285250242532d2e9c5053fd53d2df9ad4ca7efa6b951a3"
   license "MPL-2.0"
   head "https://github.com/hashicorp/waypoint.git", branch: "main"

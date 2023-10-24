@@ -1,7 +1,7 @@
 class Tesseract < Formula
   desc "OCR (Optical Character Recognition) engine"
   homepage "https://github.com/tesseract-ocr/"
-  url "https://ghproxy.com/https://github.com/tesseract-ocr/tesseract/archive/5.3.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.3.3.tar.gz"
   sha256 "dc4329f85f41191b2d813b71b528ba6047745813474e583ccce8795ff2ff5681"
   license "Apache-2.0"
   head "https://github.com/tesseract-ocr/tesseract.git", branch: "main"

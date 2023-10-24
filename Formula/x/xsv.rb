@@ -1,7 +1,7 @@
 class Xsv < Formula
   desc "Fast CSV toolkit written in Rust"
   homepage "https://github.com/BurntSushi/xsv"
-  url "https://ghproxy.com/https://github.com/BurntSushi/xsv/archive/0.13.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/BurntSushi/xsv/archive/refs/tags/0.13.0.tar.gz"
   sha256 "2b75309b764c9f2f3fdc1dd31eeea5a74498f7da21ae757b3ffd6fd537ec5345"
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/BurntSushi/xsv.git", branch: "master"

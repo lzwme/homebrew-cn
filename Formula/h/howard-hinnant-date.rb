@@ -1,7 +1,7 @@
 class HowardHinnantDate < Formula
   desc "C++ library for date and time operations based on <chrono>"
   homepage "https://github.com/HowardHinnant/date"
-  url "https://ghproxy.com/https://github.com/HowardHinnant/date/archive/v3.0.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/HowardHinnant/date/archive/refs/tags/v3.0.1.tar.gz"
   sha256 "7a390f200f0ccd207e8cff6757e04817c1a0aec3e327b006b7eb451c57ee3538"
   license "MIT"
 

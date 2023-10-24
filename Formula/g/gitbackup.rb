@@ -1,7 +1,7 @@
 class Gitbackup < Formula
   desc "Tool to backup your Bitbucket, GitHub and GitLab repositories"
   homepage "https://github.com/amitsaha/gitbackup"
-  url "https://ghproxy.com/https://github.com/amitsaha/gitbackup/archive/v0.9.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/amitsaha/gitbackup/archive/refs/tags/v0.9.0.tar.gz"
   sha256 "dc25680b498995ea4c52b1cb2c756aee200f163fc7dbfa695f0d0fd4cc10c28c"
   license "MIT"
 

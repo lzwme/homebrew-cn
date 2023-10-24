@@ -1,7 +1,7 @@
 class Indicators < Formula
   desc "Activity indicators for modern C++"
   homepage "https://github.com/p-ranav/indicators"
-  url "https://ghproxy.com/https://github.com/p-ranav/indicators/archive/v2.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/p-ranav/indicators/archive/refs/tags/v2.3.tar.gz"
   sha256 "70da7a693ff7a6a283850ab6d62acf628eea17d386488af8918576d0760aef7b"
   license "MIT"
   head "https://github.com/p-ranav/indicators.git", branch: "master"

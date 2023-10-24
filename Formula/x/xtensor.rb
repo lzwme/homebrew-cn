@@ -1,7 +1,7 @@
 class Xtensor < Formula
   desc "Multi-dimensional arrays with broadcasting and lazy computing"
   homepage "https://xtensor.readthedocs.io/en/latest/"
-  url "https://ghproxy.com/https://github.com/xtensor-stack/xtensor/archive/0.24.7.tar.gz"
+  url "https://ghproxy.com/https://github.com/xtensor-stack/xtensor/archive/refs/tags/0.24.7.tar.gz"
   sha256 "0fbbd524dde2199b731b6af99b16063780de6cf1d0d6cb1f3f4d4ceb318f3106"
   license "BSD-3-Clause"
 
@@ -12,7 +12,7 @@ class Xtensor < Formula
   depends_on "cmake" => :build
 
   resource "xtl" do
-    url "https://ghproxy.com/https://github.com/xtensor-stack/xtl/archive/0.7.5.tar.gz"
+    url "https://ghproxy.com/https://github.com/xtensor-stack/xtl/archive/refs/tags/0.7.5.tar.gz"
     sha256 "3286fef5fee5d58f82f7b91375cd449c819848584bae9367893501114d923cbe"
   end
 

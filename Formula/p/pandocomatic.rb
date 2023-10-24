@@ -1,7 +1,7 @@
 class Pandocomatic < Formula
   desc "Automate the use of pandoc"
   homepage "https://heerdebeer.org/Software/markdown/pandocomatic/"
-  url "https://ghproxy.com/https://github.com/htdebeer/pandocomatic/archive/1.1.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/htdebeer/pandocomatic/archive/refs/tags/1.1.1.tar.gz"
   sha256 "fb3b77f01cb52927163965fd911f9b59a04f133896b3a15d9aa1b56704a0d6e8"
   license "GPL-3.0-or-later"
 

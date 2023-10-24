@@ -1,7 +1,7 @@
 class TrecEval < Formula
   desc "Evaluation software used in the Text Retrieval Conference"
   homepage "https://trec.nist.gov/"
-  url "https://ghproxy.com/https://github.com/usnistgov/trec_eval/archive/v9.0.8.tar.gz"
+  url "https://ghproxy.com/https://github.com/usnistgov/trec_eval/archive/refs/tags/v9.0.8.tar.gz"
   sha256 "c3994a73103ec842e12df693749584a45814c35c36dcc15f38984bd463566ba1"
   license :public_domain
 

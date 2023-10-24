@@ -3,7 +3,7 @@ class HgFastExport < Formula
 
   desc "Fast Mercurial to Git converter"
   homepage "https://repo.or.cz/fast-export.git"
-  url "https://ghproxy.com/https://github.com/frej/fast-export/archive/v221024.tar.gz"
+  url "https://ghproxy.com/https://github.com/frej/fast-export/archive/refs/tags/v221024.tar.gz"
   sha256 "0dfecc3a2fd0833434d7ef57eb34c16432a8b2930df22a56ccf1a2bbb4626ba7"
   license "GPL-2.0-or-later"
   revision 1

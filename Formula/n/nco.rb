@@ -1,7 +1,7 @@
 class Nco < Formula
   desc "Command-line operators for netCDF and HDF files"
   homepage "https://nco.sourceforge.net/"
-  url "https://ghproxy.com/https://github.com/nco/nco/archive/5.1.8.tar.gz"
+  url "https://ghproxy.com/https://github.com/nco/nco/archive/refs/tags/5.1.8.tar.gz"
   sha256 "f22c63a3cbe1947fbf06160a6ed7b6d1934aa242fbe3feeb8d1964eef266b7d5"
   license "BSD-3-Clause"
 

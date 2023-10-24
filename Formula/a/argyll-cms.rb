@@ -1,8 +1,8 @@
 class ArgyllCms < Formula
   desc "ICC compatible color management system"
   homepage "https://www.argyllcms.com/"
-  url "https://www.argyllcms.com/Argyll_V3.0.1_src.zip"
-  sha256 "6b0d17bc81304d8c0d9c80dce8a0097dfa49ff85cea3aba89b45d94e51d8546a"
+  url "https://www.argyllcms.com/Argyll_V3.0.2_src.zip"
+  sha256 "b31ba4c055445be01d3a560cbc3a5a38c62fbd676e38d7495dc6ffc9aa3c964c"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -11,13 +11,13 @@ class ArgyllCms < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "722d0b47fdc848a917d0e69270de2a6d5f21dfd23cceaabb691989dcf3d19246"
-    sha256 cellar: :any,                 arm64_ventura:  "47a273d86f87f6e1b92f1a2e19409bd952763959588eac7a928a8d39b27e27b5"
-    sha256 cellar: :any,                 arm64_monterey: "f59900716848d6c5562495bf0734f81ec2925ed12325be048f6e77a21a29de41"
-    sha256 cellar: :any,                 sonoma:         "3257be1437ee5ecad3d2477cc3ef40dc1798ae467cc722753cc635e472f4bab7"
-    sha256 cellar: :any,                 ventura:        "59eb801b856fd7c9196c888fe51e9f9a3c0883b64a5b410b9a40965ad50cced1"
-    sha256 cellar: :any,                 monterey:       "71c1e953071b15f5c9890aef04b21af15b34a04eb22c08ef0bbfe15c6ca05efa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbf962645e0ee497f613654b46cf34cf0f9b600536ab6d082e88d6acf6564d2c"
+    sha256 cellar: :any,                 arm64_sonoma:   "083267f64369a64dd0c5ed50b801270478444035dbc0675c990d9e2f5c375443"
+    sha256 cellar: :any,                 arm64_ventura:  "847b973903d22bf9d4a61a1b8f1dd44e64b2a5c7fe4bb406abc9a8f79a85734c"
+    sha256 cellar: :any,                 arm64_monterey: "03bd01d9a18255f331819f96758dc62096256c93657c727577532b1c573ffe35"
+    sha256 cellar: :any,                 sonoma:         "907afbf5faa2049f33e9b1c05ad1db0e6beb0874eabcbbf6573e1c7bce074aa5"
+    sha256 cellar: :any,                 ventura:        "9302648254a90f14748ed52470c8eb92b009520d54f847ab69165d5139217cf1"
+    sha256 cellar: :any,                 monterey:       "654fd0c65d0053d04fdf92f68d3b01e3157c4889458e5f25d2975a6863b1e9fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdf87674a178a4e64514780b64cd2d96d18099cfb46f3759d0d8c7ca6e04fa78"
   end
 
   depends_on "jam" => :build

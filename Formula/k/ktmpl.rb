@@ -1,7 +1,7 @@
 class Ktmpl < Formula
   desc "Parameterized templates for Kubernetes manifests"
   homepage "https://github.com/jimmycuadra/ktmpl"
-  url "https://ghproxy.com/https://github.com/jimmycuadra/ktmpl/archive/0.9.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/jimmycuadra/ktmpl/archive/refs/tags/0.9.1.tar.gz"
   sha256 "3377f10477775dd40e78f9b3d65c3db29ecd0553e9ce8a5bdcb8d09414c782e9"
   license "MIT"
   head "https://github.com/jimmycuadra/ktmpl.git", branch: "master"

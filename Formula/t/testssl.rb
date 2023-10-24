@@ -1,7 +1,7 @@
 class Testssl < Formula
   desc "Tool which checks for the support of TLS/SSL ciphers and flaws"
   homepage "https://testssl.sh/"
-  url "https://ghproxy.com/https://github.com/drwetter/testssl.sh/archive/v3.0.8.tar.gz"
+  url "https://ghproxy.com/https://github.com/drwetter/testssl.sh/archive/refs/tags/v3.0.8.tar.gz"
   sha256 "22c5dc6dfc7500db94b6f8a48775f72b5149d0a372b8552ed7666016ee79edf0"
   license "GPL-2.0-only"
   head "https://github.com/drwetter/testssl.sh.git", branch: "3.1dev"

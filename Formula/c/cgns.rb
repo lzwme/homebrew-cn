@@ -1,7 +1,7 @@
 class Cgns < Formula
   desc "CFD General Notation System"
   homepage "http://cgns.org/"
-  url "https://ghproxy.com/https://github.com/CGNS/CGNS/archive/v4.4.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/CGNS/CGNS/archive/refs/tags/v4.4.0.tar.gz"
   sha256 "3b0615d1e6b566aa8772616ba5fd9ca4eca1a600720e36eadd914be348925fe2"
   license "BSD-3-Clause"
   head "https://github.com/CGNS/CGNS.git", branch: "develop"

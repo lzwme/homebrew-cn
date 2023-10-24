@@ -6,7 +6,7 @@ class Sslsplit < Formula
   head "https://github.com/droe/sslsplit.git", branch: "develop"
 
   stable do
-    url "https://ghproxy.com/https://github.com/droe/sslsplit/archive/0.5.5.tar.gz"
+    url "https://ghproxy.com/https://github.com/droe/sslsplit/archive/refs/tags/0.5.5.tar.gz"
     sha256 "3a6b9caa3552c9139ea5c9841d4bf24d47764f14b1b04b7aae7fa2697641080b"
 
     # Patch to add `openssl@3` support

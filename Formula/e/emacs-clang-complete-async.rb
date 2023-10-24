@@ -6,7 +6,7 @@ class EmacsClangCompleteAsync < Formula
   head "https://github.com/Golevka/emacs-clang-complete-async.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/Golevka/emacs-clang-complete-async/archive/v0.5.tar.gz"
+    url "https://ghproxy.com/https://github.com/Golevka/emacs-clang-complete-async/archive/refs/tags/v0.5.tar.gz"
     sha256 "151a81ae8dd9181116e564abafdef8e81d1e0085a1e85e81158d722a14f55c76"
 
     # https://github.com/Golevka/emacs-clang-complete-async/issues/65

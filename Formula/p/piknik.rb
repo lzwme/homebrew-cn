@@ -1,7 +1,7 @@
 class Piknik < Formula
   desc "Copy/paste anything over the network"
   homepage "https://github.com/jedisct1/piknik"
-  url "https://ghproxy.com/https://github.com/jedisct1/piknik/archive/0.10.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/jedisct1/piknik/archive/refs/tags/0.10.1.tar.gz"
   sha256 "9172acb424d864ba3563bbdb0cd2307815129027eec1a6ca04aee17da7f936c2"
   license "BSD-2-Clause"
   head "https://github.com/jedisct1/piknik.git", branch: "master"

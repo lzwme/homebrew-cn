@@ -5,7 +5,7 @@ class Devd < Formula
   head "https://github.com/cortesi/devd.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/cortesi/devd/archive/v0.9.tar.gz"
+    url "https://ghproxy.com/https://github.com/cortesi/devd/archive/refs/tags/v0.9.tar.gz"
     sha256 "5aee062c49ffba1e596713c0c32d88340360744f57619f95809d01c59bff071f"
 
     # Get go.mod and go.sum from commit after v0.9 release.

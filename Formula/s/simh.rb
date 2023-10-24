@@ -1,7 +1,7 @@
 class Simh < Formula
   desc "Portable, multi-system simulator"
   homepage "http://simh.trailing-edge.com/"
-  url "https://ghproxy.com/https://github.com/simh/simh/archive/v3.12-2.tar.gz"
+  url "https://ghproxy.com/https://github.com/simh/simh/archive/refs/tags/v3.12-2.tar.gz"
   version "3.12.2"
   sha256 "bd8b01c24e62d9ba930f41a7ae7c87bf0c1e5794e27ff689c1b058ed75ebc3e8"
   license "MIT"

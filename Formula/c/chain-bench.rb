@@ -1,22 +1,27 @@
 class ChainBench < Formula
   desc "Software supply chain auditing tool based on CIS benchmark"
   homepage "https://github.com/aquasecurity/chain-bench"
-  url "https://ghproxy.com/https://github.com/aquasecurity/chain-bench/archive/v0.1.7.tar.gz"
-  sha256 "bc42551bde3ce61500d0eea3f4443e29bc2c5d86b1f01e87f929c46ce308ca9a"
+  url "https://ghproxy.com/https://github.com/aquasecurity/chain-bench/archive/refs/tags/v0.1.8.tar.gz"
+  sha256 "e1080490aa70620de9545ab361e0516fe69e61d8bab47a016d0dfac4123a353c"
   license "Apache-2.0"
   head "https://github.com/aquasecurity/chain-bench.git", branch: "main"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bfbb60ac5af691f4eae0f750b0f3f15a5c28e752075434711c333aee8b154815"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c86422a1ddd597f84353351f5c77e3ba2f798552d4b4ae30ab1a2f2de612145d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "35983e5f6f4c054c2d2c517cb6465994097e0353575f0739f44f693729c96b02"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c2fdcc6689aad1a4423cb5ef265694759562854410bd41bfcaae5530ed26b0f7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5bb5e7bc46bec7b2ac3c68aebbbcf55cbae0e1861e0aac8d859fa44bbe0db75c"
-    sha256 cellar: :any_skip_relocation, ventura:        "a0bf6c469e4c139d58665ad3da59a7fbbdeacc1d8fa14a49dacac4f43b5c7596"
-    sha256 cellar: :any_skip_relocation, monterey:       "988a2f425eb35a050aca2a354cfd1f2552b31270e295e488866f7534fb4cc470"
-    sha256 cellar: :any_skip_relocation, big_sur:        "eaf5fda8e47568cf818eb9f07b586b04b7973c8dac9290fc89a6280d3cdd8909"
-    sha256 cellar: :any_skip_relocation, catalina:       "3ba54ed8c1422ae0f3c9067f3ad898af922b94caa6a0a8ddb60e2a8ba829d746"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39585a1d4be722d0b0588e7403f1491c919fb06b95f55a82b4246a1879b2c24b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d7050abfe7d09c162a6a2b53325cffdfcb1345b8a9f1f63f4475a59a43ea885a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d31556ec7fd0332b2e585c7c8d2228727aeaf937853aedbc1f41a1b494fdcd07"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "893fbb9ee133f6e9d84f7de36e45ba887128ee4192f06b28e3944f90ed19d691"
+    sha256 cellar: :any_skip_relocation, sonoma:         "904a256edda978524279d1b5bc32ea74a7303983c374252c07b76b19e85b612f"
+    sha256 cellar: :any_skip_relocation, ventura:        "a231cde832b749d27980418bffb8398e0ccb7099f1ceb9cdb657fcec24951c10"
+    sha256 cellar: :any_skip_relocation, monterey:       "d94601127ee6516a0004c388e5779848136c84b20e485f46267b7270b32afce5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06ac6ccaf7d6204e3f6b2e22f46dea5f5bdbe500937c25e33857d5f68c6e7603"
   end
 
   depends_on "go" => :build

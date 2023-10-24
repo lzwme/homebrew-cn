@@ -1,7 +1,7 @@
 class Envv < Formula
   desc "Shell-independent handling of environment variables"
   homepage "https://github.com/jakewendt/envv#readme"
-  url "https://ghproxy.com/https://github.com/jakewendt/envv/archive/v1.7.tar.gz"
+  url "https://ghproxy.com/https://github.com/jakewendt/envv/archive/refs/tags/v1.7.tar.gz"
   sha256 "1db05b46904e0cc4d777edf3ea14665f6157ade0567359e28663b5b00f6fa59a"
   license "MIT"
 

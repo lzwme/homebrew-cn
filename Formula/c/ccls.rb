@@ -7,7 +7,7 @@ class Ccls < Formula
   #       https://github.com/MaskRay/ccls/issues/786
   #       https://github.com/MaskRay/ccls/issues/895
   # TODO: Check if we can use unversioned `llvm` at version bump.
-  url "https://ghproxy.com/https://github.com/MaskRay/ccls/archive/0.20230717.tar.gz"
+  url "https://ghproxy.com/https://github.com/MaskRay/ccls/archive/refs/tags/0.20230717.tar.gz"
   sha256 "118e84cc17172b1deef0f9c50767b7a2015198fd44adac7966614eb399867af8"
   license "Apache-2.0"
   revision 1

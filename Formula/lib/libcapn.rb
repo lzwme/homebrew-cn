@@ -6,7 +6,7 @@ class Libcapn < Formula
   head "https://github.com/adobkin/libcapn.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/adobkin/libcapn/archive/v2.0.0.tar.gz"
+    url "https://ghproxy.com/https://github.com/adobkin/libcapn/archive/refs/tags/v2.0.0.tar.gz"
     sha256 "6a0d786a431864178f19300aa5e1208c6c0cbd2d54fadcd27f032b4f3dd3539e"
 
     resource "jansson" do

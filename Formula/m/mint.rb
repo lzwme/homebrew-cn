@@ -1,7 +1,7 @@
 class Mint < Formula
   desc "Dependency manager that installs and runs Swift command-line tool packages"
   homepage "https://github.com/yonaskolb/Mint"
-  url "https://ghproxy.com/https://github.com/yonaskolb/Mint/archive/0.17.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/yonaskolb/Mint/archive/refs/tags/0.17.5.tar.gz"
   sha256 "f55350f7778c4ccd38311ed36f39287ff74bb63eb230f6d448e35e7f934c489c"
   license "MIT"
 

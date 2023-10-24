@@ -5,7 +5,7 @@ class Speedread < Formula
   head "https://github.com/pasky/speedread.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/pasky/speedread/archive/v1.0.tar.gz"
+    url "https://ghproxy.com/https://github.com/pasky/speedread/archive/refs/tags/v1.0.tar.gz"
     sha256 "a65f5bec427e66893663bcfc49a22e43169dd35976302eaed467eec2a5aafc1b"
 
     # Fix error with macOS 11 Perl: "The encoding pragma is no longer supported"

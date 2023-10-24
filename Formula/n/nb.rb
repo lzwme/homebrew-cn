@@ -1,5 +1,5 @@
 class Nb < Formula
-  desc "Command-line and local web note‑taking, bookmarking, and archiving"
+  desc "Command-line and local web note-taking, bookmarking, and archiving"
   homepage "https://xwmx.github.io/nb"
   url "https://ghproxy.com/https://github.com/xwmx/nb/archive/refs/tags/7.7.1.tar.gz"
   sha256 "ef5d1b06eac367c110223dd03858fe76f9eca5aeccf39e65621b153326ffe4eb"

@@ -1,7 +1,7 @@
 class Glide < Formula
   desc "Simplified Go project management, dependency management, and vendoring"
   homepage "https://github.com/Masterminds/glide"
-  url "https://ghproxy.com/https://github.com/Masterminds/glide/archive/v0.13.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/Masterminds/glide/archive/refs/tags/v0.13.3.tar.gz"
   sha256 "817dad2f25303d835789c889bf2fac5e141ad2442b9f75da7b164650f0de3fee"
   license "MIT"
   head "https://github.com/Masterminds/glide.git", branch: "master"

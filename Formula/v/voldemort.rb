@@ -1,7 +1,7 @@
 class Voldemort < Formula
   desc "Distributed key-value storage system"
   homepage "https://www.project-voldemort.com/"
-  url "https://ghproxy.com/https://github.com/voldemort/voldemort/archive/release-1.10.26-cutoff.tar.gz"
+  url "https://ghproxy.com/https://github.com/voldemort/voldemort/archive/refs/tags/release-1.10.26-cutoff.tar.gz"
   sha256 "8bd41b53c3b903615d281e7277d5a9225075c3d00ea56c6e44d73f6327c73d55"
   license "Apache-2.0"
   revision 2

@@ -1,7 +1,7 @@
 class Lmod < Formula
   desc "Lua-based environment modules system to modify PATH variable"
   homepage "https://lmod.readthedocs.io"
-  url "https://ghproxy.com/https://github.com/TACC/Lmod/archive/8.7.32.tar.gz"
+  url "https://ghproxy.com/https://github.com/TACC/Lmod/archive/refs/tags/8.7.32.tar.gz"
   sha256 "727df3dafb634749947418b334a0828d63753c38f02d4d7a27c6c507e9512d3b"
   license "MIT"
 
@@ -26,7 +26,7 @@ class Lmod < Formula
   uses_from_macos "tcl-tk"
 
   resource "luafilesystem" do
-    url "https://ghproxy.com/https://github.com/keplerproject/luafilesystem/archive/v1_8_0.tar.gz"
+    url "https://ghproxy.com/https://github.com/keplerproject/luafilesystem/archive/refs/tags/v1_8_0.tar.gz"
     sha256 "16d17c788b8093f2047325343f5e9b74cccb1ea96001e45914a58bbae8932495"
   end
 

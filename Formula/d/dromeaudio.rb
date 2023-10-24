@@ -1,7 +1,7 @@
 class Dromeaudio < Formula
   desc "Small C++ audio manipulation and playback library"
   homepage "https://github.com/joshb/dromeaudio/"
-  url "https://ghproxy.com/https://github.com/joshb/DromeAudio/archive/v0.3.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/joshb/DromeAudio/archive/refs/tags/v0.3.0.tar.gz"
   sha256 "d226fa3f16d8a41aeea2d0a32178ca15519aebfa109bc6eee36669fa7f7c6b83"
   license "BSD-2-Clause"
   head "https://github.com/joshb/dromeaudio.git", branch: "master"

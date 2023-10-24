@@ -1,7 +1,7 @@
 class Libvidstab < Formula
   desc "Transcode video stabilization plugin"
   homepage "http://public.hronopik.de/vid.stab/"
-  url "https://ghproxy.com/https://github.com/georgmartius/vid.stab/archive/v1.1.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/georgmartius/vid.stab/archive/refs/tags/v1.1.1.tar.gz"
   sha256 "9001b6df73933555e56deac19a0f225aae152abbc0e97dc70034814a1943f3d4"
   license "GPL-2.0-or-later"
 

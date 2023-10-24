@@ -5,11 +5,11 @@ class Coin3d < Formula
   revision 4
 
   stable do
-    url "https://ghproxy.com/https://github.com/coin3d/coin/archive/Coin-4.0.0.tar.gz"
+    url "https://ghproxy.com/https://github.com/coin3d/coin/archive/refs/tags/Coin-4.0.0.tar.gz"
     sha256 "b00d2a8e9d962397cf9bf0d9baa81bcecfbd16eef675a98c792f5cf49eb6e805"
 
     resource "pivy" do
-      url "https://ghproxy.com/https://github.com/coin3d/pivy/archive/0.6.8.tar.gz"
+      url "https://ghproxy.com/https://github.com/coin3d/pivy/archive/refs/tags/0.6.8.tar.gz"
       sha256 "c443dd7dd724b0bfa06427478b9d24d31e0c3b5138ac5741a2917a443b28f346"
     end
   end

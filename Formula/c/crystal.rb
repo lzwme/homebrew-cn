@@ -4,11 +4,11 @@ class Crystal < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://ghproxy.com/https://github.com/crystal-lang/crystal/archive/1.10.1.tar.gz"
+    url "https://ghproxy.com/https://github.com/crystal-lang/crystal/archive/refs/tags/1.10.1.tar.gz"
     sha256 "f6449ffff519c86383f5e845455f3e6f6b10d6090effab09568f4c7414a8a51b"
 
     resource "shards" do
-      url "https://ghproxy.com/https://github.com/crystal-lang/shards/archive/v0.17.3.tar.gz"
+      url "https://ghproxy.com/https://github.com/crystal-lang/shards/archive/refs/tags/v0.17.3.tar.gz"
       sha256 "6512ff51bd69057f4da4783eb6b14c29d9a88b97d35985356d1dc644a08424c7"
     end
   end

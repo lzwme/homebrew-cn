@@ -1,7 +1,7 @@
 class Um < Formula
   desc "Command-line utility for creating and maintaining personal man pages"
   homepage "https://github.com/sinclairtarget/um"
-  url "https://ghproxy.com/https://github.com/sinclairtarget/um/archive/4.2.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/sinclairtarget/um/archive/refs/tags/4.2.0.tar.gz"
   sha256 "f8c3f4bc5933cb4ab9643dcef7b01b8e8edf2dcbcd8062ef3ef214d1673ae64e"
   license "MIT"
 

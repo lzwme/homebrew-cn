@@ -1,7 +1,7 @@
 class Tundra < Formula
   desc "Code build system that tries to be fast for incremental builds"
   homepage "https://github.com/deplinenoise/tundra"
-  url "https://ghproxy.com/https://github.com/deplinenoise/tundra/archive/v2.17.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/deplinenoise/tundra/archive/refs/tags/v2.17.1.tar.gz"
   sha256 "8cc16bf466b1006b089c132e46373fa651ed9fc5ef60d147a5af689f40686396"
   license "MIT"
 

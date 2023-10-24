@@ -6,15 +6,16 @@ class Apprise < Formula
   url "https://files.pythonhosted.org/packages/71/c5/07b2749256c9e14d062c7f48b59bda176644ace52ae94153b22ee6fadb1b/apprise-1.6.0.tar.gz"
   sha256 "3eefab1c5d7978b0e65c5091d1cdbe9206865dc3cb5d19ca5cfbddb76e8aaffe"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9a95b00f3af60eafba4005811cd2055ca4d060419b935961bbcbbea88113d0bc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d65d5f34d04615b1e35dcff3a8d09843fa8453b3582d2f97887854a110a930b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a989474dfd16db50fe234bef20d25fad4ca31afb6f46cbf69cdfab473dfdd96c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fd24a7681bbf34515f797bf6113de364d27196b8994e4b8c126116bf85d2eeee"
-    sha256 cellar: :any_skip_relocation, ventura:        "6f17431395a889c0745de506a12ac624b473f70198c6ae0eab963de6a0d16912"
-    sha256 cellar: :any_skip_relocation, monterey:       "939198a76b1863b6ef42ca2fc438a4c4822d1a559f4edd29b6802312f783af00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3bfcc96cedbb3dd3a1b3a2dfd2549530ee43f80b533566c2b3dadd7f35b681f4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2bb9755338ed19822b03e6a7023fe3adae97cc2a6feb8732427d6586d71777de"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "181f23bec8f1ed53c1c21705857e34e95dd52634a575f1c1d9d52135b9e5eff5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "65e4da7aa0b1cb91e54a36889f9801ab85368f40886681e4a18e6db4af414d63"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0061cfca38e9a477d7da725f6bab2f5afaf0df31054707eb5ba2dac0345458ac"
+    sha256 cellar: :any_skip_relocation, ventura:        "4531dabb5e250be6ec7c56055b5b4210ebbe187053778fa02eb44c324b4aaf08"
+    sha256 cellar: :any_skip_relocation, monterey:       "4749101567e80e289764bcf70b2d276ca4b9400c1d434a47a78e771b4fb167ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26638084c6398cd94d0052f0777b39419e12b7f3734204fa806b108b25bb1b24"
   end
 
   depends_on "python-certifi"
@@ -23,8 +24,8 @@ class Apprise < Formula
   depends_on "pyyaml"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
+    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
   end
 
   resource "click" do
@@ -53,8 +54,8 @@ class Apprise < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

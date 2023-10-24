@@ -1,7 +1,7 @@
 class Vf < Formula
   desc "Enhanced version of `cd` command"
   homepage "https://github.com/glejeune/vf"
-  url "https://ghproxy.com/https://github.com/glejeune/vf/archive/0.0.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/glejeune/vf/archive/refs/tags/0.0.1.tar.gz"
   sha256 "6418d188b88d5f3885b7a8d24520ac47accadb5144ae24e836aafbea4bd41859"
   head "https://github.com/glejeune/vf.git", branch: "master"
 

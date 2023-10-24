@@ -1,7 +1,7 @@
 class MixCompletion < Formula
   desc "Elixir Mix completion plus shortcuts/colors"
   homepage "https://github.com/davidhq/mix-power-completion"
-  url "https://ghproxy.com/https://github.com/davidhq/mix-power-completion/archive/0.8.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/davidhq/mix-power-completion/archive/refs/tags/0.8.2.tar.gz"
   sha256 "0e3e94b199f847926f3668b4cebf1b132e63a44d438425dd5c45ac4a299f28f3"
   head "https://github.com/davidhq/mix-power-completion.git", branch: "master"
 

@@ -1,7 +1,7 @@
 class Dynamips < Formula
   desc "Cisco 7200/3600/3725/3745/2600/1700 Router Emulator"
   homepage "https://github.com/GNS3/dynamips"
-  url "https://ghproxy.com/https://github.com/GNS3/dynamips/archive/v0.2.23.tar.gz"
+  url "https://ghproxy.com/https://github.com/GNS3/dynamips/archive/refs/tags/v0.2.23.tar.gz"
   sha256 "503bbb52c03f91900ea8dbe8bd0b804b76e2e28d0b7242624e0d3c52dda441a1"
 
   livecheck do

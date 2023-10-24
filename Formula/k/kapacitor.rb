@@ -42,7 +42,7 @@ class Kapacitor < Formula
   # NOTE: The version here is specified in the go.mod of kapacitor.
   # If you're upgrading to a newer kapacitor version, check to see if this needs upgraded too.
   resource "pkg-config-wrapper" do
-    url "https://ghproxy.com/https://github.com/influxdata/pkg-config/archive/v0.2.12.tar.gz"
+    url "https://ghproxy.com/https://github.com/influxdata/pkg-config/archive/refs/tags/v0.2.12.tar.gz"
     sha256 "23b2ed6a2f04d42906f5a8c28c8d681d03d47a1c32435b5df008adac5b935f1a"
   end
 

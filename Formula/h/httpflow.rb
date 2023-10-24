@@ -1,7 +1,7 @@
 class Httpflow < Formula
   desc "Packet capture and analysis utility similar to tcpdump for HTTP"
   homepage "https://github.com/six-ddc/httpflow"
-  url "https://ghproxy.com/https://github.com/six-ddc/httpflow/archive/0.0.9.tar.gz"
+  url "https://ghproxy.com/https://github.com/six-ddc/httpflow/archive/refs/tags/0.0.9.tar.gz"
   sha256 "2347bd416641e165669bf1362107499d0bc4524ed9bfbb273ccd3b3dd411e89c"
   license "MIT"
   head "https://github.com/six-ddc/httpflow.git", branch: "master"

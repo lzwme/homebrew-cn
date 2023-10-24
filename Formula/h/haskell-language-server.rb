@@ -1,7 +1,7 @@
 class HaskellLanguageServer < Formula
   desc "Integration point for ghcide and haskell-ide-engine. One IDE to rule them all"
   homepage "https://github.com/haskell/haskell-language-server"
-  url "https://ghproxy.com/https://github.com/haskell/haskell-language-server/archive/2.3.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/haskell/haskell-language-server/archive/refs/tags/2.3.0.0.tar.gz"
   sha256 "cb8248aacac0ad02cf3f9d9904c54cd5527c08e47b91cf032ace732d910198a4"
   license "Apache-2.0"
   head "https://github.com/haskell/haskell-language-server.git", branch: "master"

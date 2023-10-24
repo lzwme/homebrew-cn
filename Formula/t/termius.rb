@@ -3,7 +3,7 @@ class Termius < Formula
 
   desc "CLI tool for termius.com (aka serverauditor.com)"
   homepage "https://termius.com"
-  url "https://ghproxy.com/https://github.com/termius/termius-cli/archive/v1.2.15.tar.gz"
+  url "https://ghproxy.com/https://github.com/termius/termius-cli/archive/refs/tags/v1.2.15.tar.gz"
   sha256 "ac1a43e0f485a0a4541cae6385d344e767cc2df239a06b78577a3eb87fe3aecf"
   license "BSD-3-Clause"
   revision 6

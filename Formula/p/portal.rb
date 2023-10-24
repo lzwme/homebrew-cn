@@ -1,7 +1,7 @@
 class Portal < Formula
   desc "Quick and easy command-line file transfer utility from any computer to another"
   homepage "https://github.com/SpatiumPortae/portal"
-  url "https://ghproxy.com/https://github.com/SpatiumPortae/portal/archive/v1.2.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/SpatiumPortae/portal/archive/refs/tags/v1.2.3.tar.gz"
   sha256 "7a457ab1efa559b89eb5d7edbebccb1342896a42e30dbd943ffb6eea14179b36"
   license "MIT"
   head "https://github.com/SpatiumPortae/portal.git", branch: "master"

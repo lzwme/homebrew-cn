@@ -1,7 +1,7 @@
 class Kcov < Formula
   desc "Code coverage tester for compiled programs, Python, and shell scripts"
   homepage "https://simonkagstrom.github.io/kcov/"
-  url "https://ghproxy.com/https://github.com/SimonKagstrom/kcov/archive/v42.tar.gz"
+  url "https://ghproxy.com/https://github.com/SimonKagstrom/kcov/archive/refs/tags/v42.tar.gz"
   sha256 "2c47d75397af248bc387f60cdd79180763e1f88f3dd71c94bb52478f8e74a1f8"
   license "GPL-2.0-or-later"
   head "https://github.com/SimonKagstrom/kcov.git", branch: "master"

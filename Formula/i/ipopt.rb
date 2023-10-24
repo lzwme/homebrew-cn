@@ -1,7 +1,7 @@
 class Ipopt < Formula
   desc "Interior point optimizer"
   homepage "https://coin-or.github.io/Ipopt/"
-  url "https://ghproxy.com/https://github.com/coin-or/Ipopt/archive/releases/3.14.12.tar.gz"
+  url "https://ghproxy.com/https://github.com/coin-or/Ipopt/archive/refs/tags/releases/3.14.12.tar.gz"
   sha256 "6b06cd6280d5ca52fc97ca95adaaddd43529e6e8637c274e21ee1072c3b4577f"
   license "EPL-2.0"
   head "https://github.com/coin-or/Ipopt.git", branch: "stable/3.14"
@@ -45,7 +45,7 @@ class Ipopt < Formula
   end
 
   resource "test" do
-    url "https://ghproxy.com/https://github.com/coin-or/Ipopt/archive/releases/3.14.12.tar.gz"
+    url "https://ghproxy.com/https://github.com/coin-or/Ipopt/archive/refs/tags/releases/3.14.12.tar.gz"
     sha256 "6b06cd6280d5ca52fc97ca95adaaddd43529e6e8637c274e21ee1072c3b4577f"
   end
 

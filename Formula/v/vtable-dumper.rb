@@ -1,7 +1,7 @@
 class VtableDumper < Formula
   desc "List contents of virtual tables in a shared library"
   homepage "https://github.com/lvc/vtable-dumper"
-  url "https://ghproxy.com/https://github.com/lvc/vtable-dumper/archive/1.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/lvc/vtable-dumper/archive/refs/tags/1.2.tar.gz"
   sha256 "6993781b6a00936fc5f76dc0db4c410acb46b6d6e9836ddbe2e3c525c6dd1fd2"
   license "LGPL-2.1-or-later"
 

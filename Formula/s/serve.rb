@@ -1,7 +1,7 @@
 class Serve < Formula
   desc "Static http server anywhere you need one"
   homepage "https://github.com/syntaqx/serve"
-  url "https://ghproxy.com/https://github.com/syntaqx/serve/archive/v0.6.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/syntaqx/serve/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "7797a24564d95038d9e0a44f0dafd1dacb7853ee94d21bc0587bdfba6faaa6cb"
   license "MIT"
   head "https://github.com/syntaqx/serve.git", branch: "main"

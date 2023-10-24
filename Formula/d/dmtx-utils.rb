@@ -1,7 +1,7 @@
 class DmtxUtils < Formula
   desc "Read and write data matrix barcodes"
   homepage "https://github.com/dmtx/dmtx-utils"
-  url "https://ghproxy.com/https://github.com/dmtx/dmtx-utils/archive/v0.7.6.tar.gz"
+  url "https://ghproxy.com/https://github.com/dmtx/dmtx-utils/archive/refs/tags/v0.7.6.tar.gz"
   sha256 "0d396ec14f32a8cf9e08369a4122a16aa2e5fa1675e02218f16f1ab777ea2a28"
   license "LGPL-2.1"
   revision 6

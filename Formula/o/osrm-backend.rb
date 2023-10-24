@@ -6,7 +6,7 @@ class OsrmBackend < Formula
   head "https://github.com/Project-OSRM/osrm-backend.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/Project-OSRM/osrm-backend/archive/v5.27.1.tar.gz"
+    url "https://ghproxy.com/https://github.com/Project-OSRM/osrm-backend/archive/refs/tags/v5.27.1.tar.gz"
     sha256 "52391580e0f92663dd7b21cbcc7b9064d6704470e2601bf3ec5c5170b471629a"
 
     # Backport fix for missing include. Remove in the next release.

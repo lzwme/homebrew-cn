@@ -1,7 +1,7 @@
 class Pex < Formula
   desc "Package manager for PostgreSQL"
   homepage "https://github.com/petere/pex"
-  url "https://ghproxy.com/https://github.com/petere/pex/archive/1.20140409.tar.gz"
+  url "https://ghproxy.com/https://github.com/petere/pex/archive/refs/tags/1.20140409.tar.gz"
   sha256 "5047946a2f83e00de4096cd2c3b1546bc07be431d758f97764a36b32b8f0ae57"
   license "MIT"
   revision 4

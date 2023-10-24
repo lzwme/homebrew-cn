@@ -1,7 +1,7 @@
 class Ctlptl < Formula
   desc "Making local Kubernetes clusters fun and easy to set up"
   homepage "https://github.com/tilt-dev/ctlptl"
-  url "https://ghproxy.com/https://github.com/tilt-dev/ctlptl/archive/v0.8.22.tar.gz"
+  url "https://ghproxy.com/https://github.com/tilt-dev/ctlptl/archive/refs/tags/v0.8.22.tar.gz"
   sha256 "ae725092f085be1685933fac19c6a3af1bd5da8deb4847a0fb3e11a39db460ea"
   license "Apache-2.0"
 

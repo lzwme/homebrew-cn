@@ -5,7 +5,7 @@ class WebpPixbufLoader < Formula
   head "https://github.com/aruiz/webp-pixbuf-loader.git", branch: "mainline"
 
   stable do
-    url "https://ghproxy.com/https://github.com/aruiz/webp-pixbuf-loader/archive/0.2.5.tar.gz"
+    url "https://ghproxy.com/https://github.com/aruiz/webp-pixbuf-loader/archive/refs/tags/0.2.5.tar.gz"
     sha256 "e1b76c538a1d3b3fc41323d044c7c84365ab9bd5ab3dcc8de7efb0c7dc2f206b"
 
     # patch libweb version constraint

@@ -1,7 +1,7 @@
 class Libdmtx < Formula
   desc "Data Matrix library"
   homepage "https://libdmtx.sourceforge.net/"
-  url "https://ghproxy.com/https://github.com/dmtx/libdmtx/archive/v0.7.7.tar.gz"
+  url "https://ghproxy.com/https://github.com/dmtx/libdmtx/archive/refs/tags/v0.7.7.tar.gz"
   sha256 "7aa62adcefdd6e24bdabeb82b3ce41a8d35f4a0c95ab0c4438206aecafd6e1a1"
   license "BSD-2-Clause"
 

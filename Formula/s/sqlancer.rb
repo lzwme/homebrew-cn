@@ -1,7 +1,7 @@
 class Sqlancer < Formula
   desc "Detecting Logic Bugs in DBMS"
   homepage "https://github.com/sqlancer/sqlancer"
-  url "https://ghproxy.com/https://github.com/sqlancer/sqlancer/archive/v2.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/sqlancer/sqlancer/archive/refs/tags/v2.0.0.tar.gz"
   sha256 "4811fea3d08d668cd2a41086be049bdcf74c46a6bb714eb73cdf6ed19a013f41"
   license "MIT"
   head "https://github.com/sqlancer/sqlancer.git", branch: "main"

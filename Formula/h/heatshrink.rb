@@ -1,7 +1,7 @@
 class Heatshrink < Formula
   desc "Data compression library for embedded/real-time systems"
   homepage "https://github.com/atomicobject/heatshrink"
-  url "https://ghproxy.com/https://github.com/atomicobject/heatshrink/archive/v0.4.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/atomicobject/heatshrink/archive/refs/tags/v0.4.1.tar.gz"
   sha256 "7529a1c8ac501191ad470b166773364e66d9926aad632690c72c63a1dea7e9a6"
   license "ISC"
 

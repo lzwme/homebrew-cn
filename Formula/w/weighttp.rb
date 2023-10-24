@@ -1,7 +1,7 @@
 class Weighttp < Formula
   desc "Webserver benchmarking tool that supports multithreading"
   homepage "https://redmine.lighttpd.net/projects/weighttp/wiki"
-  url "https://ghproxy.com/https://github.com/lighttpd/weighttp/archive/weighttp-0.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/lighttpd/weighttp/archive/refs/tags/weighttp-0.4.tar.gz"
   sha256 "b4954f2a1eca118260ffd503a8e3504dd32942e2e61d0fa18ccb6b8166594447"
   license "MIT"
   head "https://git.lighttpd.net/lighttpd/weighttp.git", branch: "master"

@@ -1,7 +1,7 @@
 class PscPackage < Formula
   desc "Package manager for PureScript based on package sets"
   homepage "https://psc-package.readthedocs.io"
-  url "https://ghproxy.com/https://github.com/purescript/psc-package/archive/v0.6.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/purescript/psc-package/archive/refs/tags/v0.6.2.tar.gz"
   sha256 "96c3bf2c65d381c61eff3d16d600eadd71ac821bbe7db02acec1d8b3b6dbecfc"
   license "BSD-3-Clause"
   revision 2

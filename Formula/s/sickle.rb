@@ -1,7 +1,7 @@
 class Sickle < Formula
   desc "Windowed adaptive trimming for FASTQ files using quality"
   homepage "https://github.com/najoshi/sickle"
-  url "https://ghproxy.com/https://github.com/najoshi/sickle/archive/v1.33.tar.gz"
+  url "https://ghproxy.com/https://github.com/najoshi/sickle/archive/refs/tags/v1.33.tar.gz"
   sha256 "eab271d25dc799e2ce67c25626128f8f8ed65e3cd68e799479bba20964624734"
   license "MIT"
 

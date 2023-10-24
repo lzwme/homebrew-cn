@@ -1,7 +1,7 @@
 class So < Formula
   desc "Terminal interface for StackOverflow"
   homepage "https://github.com/samtay/so"
-  url "https://ghproxy.com/https://github.com/samtay/so/archive/v0.4.9.tar.gz"
+  url "https://ghproxy.com/https://github.com/samtay/so/archive/refs/tags/v0.4.9.tar.gz"
   sha256 "b6327268acf3e9652acebea49c1dfa5d855cf25db6c7b380f1a0a85737464a4a"
   license "MIT"
 

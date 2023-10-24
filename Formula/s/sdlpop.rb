@@ -1,7 +1,7 @@
 class Sdlpop < Formula
   desc "Open-source port of Prince of Persia"
   homepage "https://github.com/NagyD/SDLPoP"
-  url "https://ghproxy.com/https://github.com/NagyD/SDLPoP/archive/v1.23.tar.gz"
+  url "https://ghproxy.com/https://github.com/NagyD/SDLPoP/archive/refs/tags/v1.23.tar.gz"
   sha256 "41a9aa64b4e8d0a9d7a84ffced48f74f9528d81adbffc08593ecf84776c5d77a"
   license "GPL-3.0-or-later"
 

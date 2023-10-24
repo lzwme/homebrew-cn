@@ -1,7 +1,7 @@
 class Goreman < Formula
   desc "Foreman clone written in Go"
   homepage "https://github.com/mattn/goreman"
-  url "https://ghproxy.com/https://github.com/mattn/goreman/archive/v0.3.15.tar.gz"
+  url "https://ghproxy.com/https://github.com/mattn/goreman/archive/refs/tags/v0.3.15.tar.gz"
   sha256 "3eb3bd3b80a1d0e0a28e595b6dae524770dc1f9d47bd1a1664b291ba6a08ff6b"
   license "MIT"
   head "https://github.com/mattn/goreman.git", branch: "master"

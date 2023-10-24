@@ -1,7 +1,7 @@
 class Julius < Formula
   desc "Two-pass large vocabulary continuous speech recognition engine"
   homepage "https://github.com/julius-speech/julius"
-  url "https://ghproxy.com/https://github.com/julius-speech/julius/archive/v4.6.tar.gz"
+  url "https://ghproxy.com/https://github.com/julius-speech/julius/archive/refs/tags/v4.6.tar.gz"
   sha256 "74447d7adb3bd119adae7915ba9422b7da553556f979ac4ee53a262d94d47b47"
   license "BSD-3-Clause"
 

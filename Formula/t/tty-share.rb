@@ -1,7 +1,7 @@
 class TtyShare < Formula
   desc "Terminal sharing over the Internet"
   homepage "https://tty-share.com/"
-  url "https://ghproxy.com/https://github.com/elisescu/tty-share/archive/v2.4.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/elisescu/tty-share/archive/refs/tags/v2.4.0.tar.gz"
   sha256 "90e566cd4c064a1c0b31a418c149a1766f158dd01b3563e7501c98dafd8c244f"
   license "MIT"
 

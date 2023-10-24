@@ -1,7 +1,7 @@
 class Logtalk < Formula
   desc "Declarative object-oriented logic programming language"
   homepage "https://logtalk.org/"
-  url "https://ghproxy.com/https://github.com/LogtalkDotOrg/logtalk3/archive/lgt3710stable.tar.gz"
+  url "https://ghproxy.com/https://github.com/LogtalkDotOrg/logtalk3/archive/refs/tags/lgt3710stable.tar.gz"
   version "3.71.0"
   sha256 "62ae49a8b74f2ef66c8086b37bdde30f5beb4245725fd15a95a9c4d078d5bfa5"
   license "Apache-2.0"

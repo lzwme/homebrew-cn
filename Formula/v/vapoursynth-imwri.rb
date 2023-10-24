@@ -1,7 +1,7 @@
 class VapoursynthImwri < Formula
   desc "VapourSynth filters - ImageMagick HDRI writer/reader"
   homepage "https://github.com/vapoursynth/vs-imwri"
-  url "https://ghproxy.com/https://github.com/vapoursynth/vs-imwri/archive/R2.tar.gz"
+  url "https://ghproxy.com/https://github.com/vapoursynth/vs-imwri/archive/refs/tags/R2.tar.gz"
   sha256 "f4d2965d32877005d0709bd8339828f951885a0cb51e0c006d123ede0b74307b"
   license "LGPL-2.1-or-later"
   version_scheme 1

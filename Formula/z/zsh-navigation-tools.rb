@@ -1,7 +1,7 @@
 class ZshNavigationTools < Formula
   desc "Zsh curses-based tools, e.g. multi-word history searcher"
   homepage "https://github.com/psprint/zsh-navigation-tools"
-  url "https://ghproxy.com/https://github.com/psprint/zsh-navigation-tools/archive/v2.2.7.tar.gz"
+  url "https://ghproxy.com/https://github.com/psprint/zsh-navigation-tools/archive/refs/tags/v2.2.7.tar.gz"
   sha256 "ee832b81ce678a247b998675111c66aa1873d72aa33c2593a65626296ca685fc"
   license any_of: ["GPL-3.0-only", "MIT"]
 

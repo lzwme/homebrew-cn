@@ -6,7 +6,7 @@ class Pit < Formula
 
   # upstream commit to allow PREFIX-ed installs
   stable do
-    url "https://ghproxy.com/https://github.com/michaeldv/pit/archive/0.1.0.tar.gz"
+    url "https://ghproxy.com/https://github.com/michaeldv/pit/archive/refs/tags/0.1.0.tar.gz"
     sha256 "ddf78b2734c6dd3967ce215291c3f2e48030e0f3033b568eb080a22f041c7a0e"
 
     patch do

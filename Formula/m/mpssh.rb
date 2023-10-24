@@ -5,7 +5,7 @@ class Mpssh < Formula
   head "https://github.com/ndenev/mpssh.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/ndenev/mpssh/archive/1.3.3.tar.gz"
+    url "https://ghproxy.com/https://github.com/ndenev/mpssh/archive/refs/tags/1.3.3.tar.gz"
     sha256 "510e11c3e177a31c1052c8b4ec06357c147648c86411ac3ed4ac814d0d927f2f"
     patch do
       # don't install binaries as root (upstream commit)

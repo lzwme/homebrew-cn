@@ -1,7 +1,7 @@
 class TCompletion < Formula
   desc "Completion for CLI power tool for Twitter"
   homepage "https://sferik.github.io/t/"
-  url "https://ghproxy.com/https://github.com/sferik/t/archive/v4.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/sferik/t/archive/refs/tags/v4.0.0.tar.gz"
   sha256 "82e4afa54015c2297854854490be8dd3a09d7c99ed5af3f64de6866bb484ddde"
   license "MIT"
   head "https://github.com/sferik/t.git", branch: "master"

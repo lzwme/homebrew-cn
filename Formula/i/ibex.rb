@@ -1,7 +1,7 @@
 class Ibex < Formula
   desc "C++ library for constraint processing over real numbers"
   homepage "https://web.archive.org/web/20190826220512/www.ibex-lib.org/"
-  url "https://ghproxy.com/https://github.com/ibex-team/ibex-lib/archive/ibex-2.8.9.tar.gz"
+  url "https://ghproxy.com/https://github.com/ibex-team/ibex-lib/archive/refs/tags/ibex-2.8.9.tar.gz"
   sha256 "fee448b3fa3929a50d36231ff2f14e5480a0b82506594861536e3905801a6571"
   license "LGPL-3.0-only"
   head "https://github.com/ibex-team/ibex-lib.git", branch: "master"

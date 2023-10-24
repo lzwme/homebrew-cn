@@ -1,7 +1,7 @@
 class NlohmannJson < Formula
   desc "JSON for modern C++"
   homepage "https://github.com/nlohmann/json"
-  url "https://ghproxy.com/https://github.com/nlohmann/json/archive/v3.11.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/nlohmann/json/archive/refs/tags/v3.11.2.tar.gz"
   sha256 "d69f9deb6a75e2580465c6c4c5111b89c4dc2fa94e3a85fcd2ffcd9a143d9273"
   license "MIT"
   head "https://github.com/nlohmann/json.git", branch: "develop"

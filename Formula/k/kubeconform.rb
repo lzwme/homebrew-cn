@@ -1,7 +1,7 @@
 class Kubeconform < Formula
   desc "FAST Kubernetes manifests validator, with support for Custom Resources!"
   homepage "https://github.com/yannh/kubeconform"
-  url "https://ghproxy.com/https://github.com/yannh/kubeconform/archive/v0.6.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/yannh/kubeconform/archive/refs/tags/v0.6.3.tar.gz"
   sha256 "66aa8eb5f3c69b7039c474da20b1f0d341e15eda4d9ef1853060ed0744de63fb"
   license "Apache-2.0"
   head "https://github.com/yannh/kubeconform.git", branch: "master"

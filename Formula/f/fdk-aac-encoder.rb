@@ -1,7 +1,7 @@
 class FdkAacEncoder < Formula
   desc "Command-line encoder frontend for libfdk-aac"
   homepage "https://github.com/nu774/fdkaac"
-  url "https://ghproxy.com/https://github.com/nu774/fdkaac/archive/v1.0.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/nu774/fdkaac/archive/refs/tags/v1.0.5.tar.gz"
   sha256 "87b2d2cc913a1f90bd19315061ede81c1c3364e160802c70117a7ea81e80bd33"
   license "Zlib"
 

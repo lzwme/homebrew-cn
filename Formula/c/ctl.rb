@@ -6,7 +6,7 @@ class Ctl < Formula
   head "https://github.com/ampas/CTL.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/ampas/CTL/archive/ctl-1.5.2.tar.gz"
+    url "https://ghproxy.com/https://github.com/ampas/CTL/archive/refs/tags/ctl-1.5.2.tar.gz"
     sha256 "d7fac1439332c4d84abc3c285b365630acf20ea041033b154aa302befd25e0bd"
 
     # Backport support for OpenEXR/Imath 3. Remove in the next release.

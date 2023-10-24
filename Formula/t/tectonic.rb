@@ -1,7 +1,7 @@
 class Tectonic < Formula
   desc "Modernized, complete, self-contained TeX/LaTeX engine"
   homepage "https://tectonic-typesetting.github.io/"
-  url "https://ghproxy.com/https://github.com/tectonic-typesetting/tectonic/archive/tectonic@0.14.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/tectonic-typesetting/tectonic/archive/refs/tags/tectonic@0.14.1.tar.gz"
   sha256 "3703a4fc768b3c7be6a4560857b17b2671f19023faee414aa7b6befd24ec9d25"
   license "MIT"
   revision 2

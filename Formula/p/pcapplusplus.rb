@@ -1,7 +1,7 @@
 class Pcapplusplus < Formula
   desc "C++ network sniffing, packet parsing and crafting framework"
   homepage "https://pcapplusplus.github.io"
-  url "https://ghproxy.com/https://github.com/seladb/PcapPlusPlus/archive/v23.09.tar.gz"
+  url "https://ghproxy.com/https://github.com/seladb/PcapPlusPlus/archive/refs/tags/v23.09.tar.gz"
   sha256 "608292f7d2a2e1b7af26adf89347597a6131547eea4e513194bc4f584a40fe74"
   license "Unlicense"
 

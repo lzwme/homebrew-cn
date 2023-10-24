@@ -1,7 +1,7 @@
 class Fio < Formula
   desc "I/O benchmark and stress test"
   homepage "https://github.com/axboe/fio"
-  url "https://ghproxy.com/https://github.com/axboe/fio/archive/fio-3.36.tar.gz"
+  url "https://ghproxy.com/https://github.com/axboe/fio/archive/refs/tags/fio-3.36.tar.gz"
   sha256 "b34b8f3c5cd074c09ea487ffe3f444e95565c214b34a73042f35b00cbaab0e17"
   license "GPL-2.0-only"
 

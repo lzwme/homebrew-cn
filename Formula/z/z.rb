@@ -3,7 +3,7 @@ class Z < Formula
   homepage "https://github.com/rupa/z"
   # Please don't update this formula to 1.11.
   # https://github.com/rupa/z/issues/205
-  url "https://ghproxy.com/https://github.com/rupa/z/archive/v1.9.tar.gz"
+  url "https://ghproxy.com/https://github.com/rupa/z/archive/refs/tags/v1.9.tar.gz"
   sha256 "e2860e4f65770e02297ca4ca08ec1ee623a658bd9cc1acddbbe5ad22e1de70a7"
   license "WTFPL"
   version_scheme 1

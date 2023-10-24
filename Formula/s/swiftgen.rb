@@ -1,7 +1,7 @@
 class Swiftgen < Formula
-  desc "Swift code generator for assets, storyboards, Localizable.strings, …"
+  desc "Swift code generator for assets, storyboards, Localizable.strings, etc."
   homepage "https://github.com/SwiftGen/SwiftGen"
-  url "https://ghproxy.com/https://github.com/SwiftGen/SwiftGen/archive/6.6.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/SwiftGen/SwiftGen/archive/refs/tags/6.6.2.tar.gz"
   sha256 "73b73e32ce22554c9db44c8edf0fa0ada33b413c73e8f991eebfaac4073df3de"
   license "MIT"
   head "https://github.com/SwiftGen/SwiftGen.git", branch: "stable"
@@ -20,7 +20,7 @@ class Swiftgen < Formula
   uses_from_macos "ruby" => :build, since: :high_sierra
 
   resource("testdata") do
-    url "https://ghproxy.com/https://github.com/SwiftGen/SwiftGen/archive/6.6.2.tar.gz"
+    url "https://ghproxy.com/https://github.com/SwiftGen/SwiftGen/archive/refs/tags/6.6.2.tar.gz"
     sha256 "73b73e32ce22554c9db44c8edf0fa0ada33b413c73e8f991eebfaac4073df3de"
   end
 

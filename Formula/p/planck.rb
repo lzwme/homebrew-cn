@@ -1,7 +1,7 @@
 class Planck < Formula
   desc "Stand-alone ClojureScript REPL"
   homepage "https://planck-repl.org/"
-  url "https://ghproxy.com/https://github.com/planck-repl/planck/archive/2.27.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/planck-repl/planck/archive/refs/tags/2.27.0.tar.gz"
   sha256 "d69be456efd999a8ace0f8df5ea017d4020b6bd806602d94024461f1ac36fe41"
   license "EPL-1.0"
   revision 2

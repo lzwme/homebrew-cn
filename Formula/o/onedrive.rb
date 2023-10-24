@@ -1,7 +1,7 @@
 class Onedrive < Formula
   desc "Folder synchronization with OneDrive"
   homepage "https://github.com/abraunegg/onedrive"
-  url "https://ghproxy.com/https://github.com/abraunegg/onedrive/archive/v2.4.25.tar.gz"
+  url "https://ghproxy.com/https://github.com/abraunegg/onedrive/archive/refs/tags/v2.4.25.tar.gz"
   sha256 "e7d782ea7d1973b6b578899a84c4f90ba69302263b4be30d80a363ba8ba27eb3"
   license "GPL-3.0-only"
 

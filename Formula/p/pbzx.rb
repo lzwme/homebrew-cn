@@ -1,7 +1,7 @@
 class Pbzx < Formula
   desc "Parser for pbzx stream"
   homepage "https://github.com/NiklasRosenstein/pbzx/"
-  url "https://ghproxy.com/https://github.com/NiklasRosenstein/pbzx/archive/v1.0.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/NiklasRosenstein/pbzx/archive/refs/tags/v1.0.2.tar.gz"
   sha256 "33db3cf9dc70ae704e1bbfba52c984f4c6dbfd0cc4449fa16408910e22b4fd90"
   license "GPL-3.0-or-later"
   head "https://github.com/NiklasRosenstein/pbzx.git", branch: "master"

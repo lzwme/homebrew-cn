@@ -1,7 +1,7 @@
 class Smu < Formula
   desc "Simple markup with markdown-like syntax"
   homepage "https://github.com/Gottox/smu"
-  url "https://ghproxy.com/https://github.com/Gottox/smu/archive/v1.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/Gottox/smu/archive/refs/tags/v1.5.tar.gz"
   sha256 "f3bb18f958962679a7fb48d7f8dcab8b59154d66f23c9aba02e78103106093a4"
   license "MIT"
   head "https://github.com/Gottox/smu.git", branch: "master"

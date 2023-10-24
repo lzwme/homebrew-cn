@@ -30,8 +30,8 @@ class Suil < Formula
   depends_on "qt@5"
 
   def install
-    system "meson", "build", *std_meson_args
-    system "meson", "compile", "-C", "build"
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
 

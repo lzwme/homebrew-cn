@@ -1,7 +1,7 @@
 class Pagmo < Formula
   desc "Scientific library for massively parallel optimization"
   homepage "https://esa.github.io/pagmo2/"
-  url "https://ghproxy.com/https://github.com/esa/pagmo2/archive/v2.19.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/esa/pagmo2/archive/refs/tags/v2.19.0.tar.gz"
   sha256 "701ada528de7d454201e92a5d88903dd1c22ea64f43861d9694195ddfef82a70"
   license any_of: ["LGPL-3.0-or-later", "GPL-3.0-or-later"]
   revision 2

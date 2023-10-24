@@ -1,7 +1,7 @@
 class Zrepl < Formula
   desc "One-stop ZFS backup & replication solution"
   homepage "https://zrepl.github.io"
-  url "https://ghproxy.com/https://github.com/zrepl/zrepl/archive/v0.6.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/zrepl/zrepl/archive/refs/tags/v0.6.1.tar.gz"
   sha256 "263c82501b75a1413f8a298c1d67d7e940c1b0cb967979790773237e2a30adbd"
   license "MIT"
   head "https://github.com/zrepl/zrepl.git", branch: "master"

@@ -1,7 +1,7 @@
 class Mosml < Formula
   desc "Moscow ML"
   homepage "https://mosml.org/"
-  url "https://ghproxy.com/https://github.com/kfl/mosml/archive/ver-2.10.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/kfl/mosml/archive/refs/tags/ver-2.10.1.tar.gz"
   sha256 "fed5393668b88d69475b070999b1fd34e902591345de7f09b236824b92e4a78f"
   license "GPL-2.0-or-later"
 

@@ -1,7 +1,7 @@
 class Gitleaks < Formula
   desc "Audit git repos for secrets"
   homepage "https://github.com/zricethezav/gitleaks"
-  url "https://ghproxy.com/https://github.com/zricethezav/gitleaks/archive/v8.18.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/zricethezav/gitleaks/archive/refs/tags/v8.18.0.tar.gz"
   sha256 "dedbfd01223d162c62fb1f271cd25cf48869ea40adcc12b90fc2939d55b27612"
   license "MIT"
 

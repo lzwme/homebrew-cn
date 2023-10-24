@@ -1,7 +1,7 @@
 class Wordgrinder < Formula
   desc "Unicode-aware word processor that runs in a terminal"
   homepage "https://cowlark.com/wordgrinder"
-  url "https://ghproxy.com/https://github.com/davidgiven/wordgrinder/archive/0.8.tar.gz"
+  url "https://ghproxy.com/https://github.com/davidgiven/wordgrinder/archive/refs/tags/0.8.tar.gz"
   sha256 "856cbed2b4ccd5127f61c4997a30e642d414247970f69932f25b4b5a81b18d3f"
   license "MIT"
   revision 1

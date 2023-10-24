@@ -1,7 +1,7 @@
 class Juliaup < Formula
   desc "Julia installer and version multiplexer"
   homepage "https://github.com/JuliaLang/juliaup"
-  url "https://ghproxy.com/https://github.com/JuliaLang/juliaup/archive/v1.11.22.tar.gz"
+  url "https://ghproxy.com/https://github.com/JuliaLang/juliaup/archive/refs/tags/v1.11.22.tar.gz"
   sha256 "8a0b4540262a8bea9e61a4f287ced32ec4ad2ac4cb528a1b473eea6f139256df"
   license "MIT"
   head "https://github.com/JuliaLang/juliaup.git", branch: "master"

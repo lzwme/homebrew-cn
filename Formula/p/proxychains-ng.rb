@@ -1,7 +1,7 @@
 class ProxychainsNg < Formula
   desc "Hook preloader"
   homepage "https://github.com/rofl0r/proxychains-ng"
-  url "https://ghproxy.com/https://github.com/rofl0r/proxychains-ng/archive/v4.16.tar.gz"
+  url "https://ghproxy.com/https://github.com/rofl0r/proxychains-ng/archive/refs/tags/v4.16.tar.gz"
   sha256 "5f66908044cc0c504f4a7e618ae390c9a78d108d3f713d7839e440693f43b5e7"
   license "GPL-2.0-or-later"
   head "https://github.com/rofl0r/proxychains-ng.git", branch: "master"

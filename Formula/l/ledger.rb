@@ -1,7 +1,7 @@
 class Ledger < Formula
   desc "Command-line, double-entry accounting tool"
   homepage "https://ledger-cli.org/"
-  url "https://ghproxy.com/https://github.com/ledger/ledger/archive/v3.3.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/ledger/ledger/archive/refs/tags/v3.3.2.tar.gz"
   sha256 "555296ee1e870ff04e2356676977dcf55ebab5ad79126667bc56464cb1142035"
   license "BSD-3-Clause"
   revision 2

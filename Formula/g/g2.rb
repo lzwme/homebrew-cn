@@ -1,7 +1,7 @@
 class G2 < Formula
   desc "Friendly git client"
   homepage "https://orefalo.github.io/g2/"
-  url "https://ghproxy.com/https://github.com/orefalo/g2/archive/v1.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/orefalo/g2/archive/refs/tags/v1.1.tar.gz"
   sha256 "bc534a4cb97be200ba4e3cc27510d8739382bb4c574e3cf121f157c6415bdfba"
   license "MIT"
   head "https://github.com/orefalo/g2.git", branch: "master"

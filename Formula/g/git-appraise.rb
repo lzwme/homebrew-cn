@@ -5,7 +5,7 @@ class GitAppraise < Formula
   head "https://github.com/google/git-appraise.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/google/git-appraise/archive/v0.7.tar.gz"
+    url "https://ghproxy.com/https://github.com/google/git-appraise/archive/refs/tags/v0.7.tar.gz"
     sha256 "b57dd4ac4746486e253658b2c93422515fd8dc6fdca873b5450a6fb0f9487fb3"
 
     # Backport go.mod from https://github.com/google/git-appraise/pull/111

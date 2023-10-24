@@ -4,7 +4,7 @@ class Terraform < Formula
   # NOTE: Do not bump to v1.6.0+ as license changed to BUSL-1.1
   # https://github.com/hashicorp/terraform/pull/33661
   # https://github.com/hashicorp/terraform/pull/33697
-  url "https://ghproxy.com/https://github.com/hashicorp/terraform/archive/v1.5.7.tar.gz"
+  url "https://ghproxy.com/https://github.com/hashicorp/terraform/archive/refs/tags/v1.5.7.tar.gz"
   sha256 "6742fc87cba5e064455393cda12f0e0241c85a7cb2a3558d13289380bb5f26f5"
   license "MPL-2.0"
   head "https://github.com/hashicorp/terraform.git", branch: "main"

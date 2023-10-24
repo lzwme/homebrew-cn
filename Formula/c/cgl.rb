@@ -1,7 +1,7 @@
 class Cgl < Formula
   desc "Cut Generation Library"
   homepage "https://github.com/coin-or/Cgl"
-  url "https://ghproxy.com/https://github.com/coin-or/Cgl/archive/releases/0.60.7.tar.gz"
+  url "https://ghproxy.com/https://github.com/coin-or/Cgl/archive/refs/tags/releases/0.60.7.tar.gz"
   sha256 "93b30a80b5d2880c2e72d5877c64bdeaf4d7c1928b3194ea2f88b1aa4517fb1b"
   license "EPL-2.0"
 

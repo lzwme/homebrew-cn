@@ -1,7 +1,7 @@
 class SshVault < Formula
   desc "Encrypt/decrypt using SSH keys"
   homepage "https://ssh-vault.com/"
-  url "https://ghproxy.com/https://github.com/ssh-vault/ssh-vault/archive/0.12.10.tar.gz"
+  url "https://ghproxy.com/https://github.com/ssh-vault/ssh-vault/archive/refs/tags/0.12.10.tar.gz"
   sha256 "8dd05033aed9a00cb30ab2b454b5709987799e187f298b5817c8f2c8e37ecaf6"
   license "BSD-3-Clause"
   head "https://github.com/ssh-vault/ssh-vault.git", branch: "master"

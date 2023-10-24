@@ -1,7 +1,7 @@
 class LibbitcoinNetwork < Formula
   desc "Bitcoin P2P Network Library"
   homepage "https://github.com/libbitcoin/libbitcoin-network"
-  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-network/archive/v3.8.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-network/archive/refs/tags/v3.8.0.tar.gz"
   sha256 "d317582bc6d00cba99a0ef01903a542c326c2a4262ef78a4aa682d3826fd14ad"
   license "AGPL-3.0"
   revision 1

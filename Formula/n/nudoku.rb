@@ -1,7 +1,7 @@
 class Nudoku < Formula
   desc "Ncurses based sudoku game"
   homepage "https://jubalh.github.io/nudoku/"
-  url "https://ghproxy.com/https://github.com/jubalh/nudoku/archive/2.1.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/jubalh/nudoku/archive/refs/tags/2.1.0.tar.gz"
   sha256 "eeff7f3adea5bfe7b88bf7683d68e9a597aabd1442d1621f21760c746400b924"
   license "GPL-3.0-or-later"
   revision 1

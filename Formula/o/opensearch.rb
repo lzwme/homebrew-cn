@@ -1,7 +1,7 @@
 class Opensearch < Formula
   desc "Open source distributed and RESTful search engine"
   homepage "https://github.com/opensearch-project/OpenSearch"
-  url "https://ghproxy.com/https://github.com/opensearch-project/OpenSearch/archive/2.11.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/opensearch-project/OpenSearch/archive/refs/tags/2.11.0.tar.gz"
   sha256 "fa4d7b7300fbb95ae9becbf099c6c33be3ae306a2a067fbee69108212524778e"
   license "Apache-2.0"
 

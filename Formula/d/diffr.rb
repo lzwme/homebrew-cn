@@ -1,7 +1,7 @@
 class Diffr < Formula
   desc "LCS based diff highlighting tool to ease code review from your terminal"
   homepage "https://github.com/mookid/diffr"
-  url "https://ghproxy.com/https://github.com/mookid/diffr/archive/v0.1.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/mookid/diffr/archive/refs/tags/v0.1.5.tar.gz"
   sha256 "6c5861e5b8f5d798e027fe69cc186452848dc4ae5641326b41b5c160d3e91654"
   license "MIT"
 

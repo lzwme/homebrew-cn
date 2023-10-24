@@ -1,7 +1,7 @@
 class Pdf2json < Formula
   desc "PDF to JSON and XML converter"
   homepage "https://github.com/flexpaper/pdf2json"
-  url "https://ghproxy.com/https://github.com/flexpaper/pdf2json/archive/0.71.tar.gz"
+  url "https://ghproxy.com/https://github.com/flexpaper/pdf2json/archive/refs/tags/0.71.tar.gz"
   sha256 "54878473a2afb568caf2da11d6804cabe0abe505da77584a3f8f52bcd37d9c55"
   license "GPL-2.0"
 

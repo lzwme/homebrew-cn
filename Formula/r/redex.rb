@@ -8,7 +8,7 @@ class Redex < Formula
   head "https://github.com/facebook/redex.git", branch: "main"
 
   stable do
-    url "https://ghproxy.com/https://github.com/facebook/redex/archive/v2017.10.31.tar.gz"
+    url "https://ghproxy.com/https://github.com/facebook/redex/archive/refs/tags/v2017.10.31.tar.gz"
     sha256 "18a840e4db0fc51f79e17dfd749b2ffcce65a28e7ef9c2b3c255c5ad89f6fd6f"
 
     # Fix for automake 1.16.5

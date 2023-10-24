@@ -1,7 +1,7 @@
 class Youplot < Formula
   desc "Command-line tool that draw plots on the terminal"
   homepage "https://github.com/red-data-tools/YouPlot/"
-  url "https://ghproxy.com/https://github.com/red-data-tools/YouPlot/archive/v0.4.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/red-data-tools/YouPlot/archive/refs/tags/v0.4.5.tar.gz"
   sha256 "aa7339139bc4ea9aa0b2279e4e8052fde673a60ad47e87d50fde06626dc2b3c3"
   license "MIT"
 

@@ -1,7 +1,7 @@
 class Lean < Formula
   desc "Theorem prover"
   homepage "https://leanprover-community.github.io/"
-  url "https://ghproxy.com/https://github.com/leanprover-community/lean/archive/v3.51.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/leanprover-community/lean/archive/refs/tags/v3.51.1.tar.gz"
   sha256 "5a4734bf345d6c5ba6eacd2d33d86d9540eea7d008b4ebf8dde126e729fcbcaf"
   license "Apache-2.0"
   head "https://github.com/leanprover-community/lean.git", branch: "master"

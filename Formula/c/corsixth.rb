@@ -1,7 +1,7 @@
 class Corsixth < Formula
   desc "Open source clone of Theme Hospital"
   homepage "https://github.com/CorsixTH/CorsixTH"
-  url "https://ghproxy.com/https://github.com/CorsixTH/CorsixTH/archive/v0.67.tar.gz"
+  url "https://ghproxy.com/https://github.com/CorsixTH/CorsixTH/archive/refs/tags/v0.67.tar.gz"
   sha256 "4e88cf1916bf4d7c304b551ddb91fb9194f110bad4663038ca73d31b939d69e3"
   license "MIT"
   head "https://github.com/CorsixTH/CorsixTH.git", branch: "master"
@@ -41,7 +41,7 @@ class Corsixth < Formula
   end
 
   resource "luafilesystem" do
-    url "https://ghproxy.com/https://github.com/keplerproject/luafilesystem/archive/v1_8_0.tar.gz"
+    url "https://ghproxy.com/https://github.com/keplerproject/luafilesystem/archive/refs/tags/v1_8_0.tar.gz"
     sha256 "16d17c788b8093f2047325343f5e9b74cccb1ea96001e45914a58bbae8932495"
   end
 

@@ -1,7 +1,7 @@
 class DbVcs < Formula
   desc "Version control for MySQL databases"
   homepage "https://github.com/infostreams/db"
-  url "https://ghproxy.com/https://github.com/infostreams/db/archive/1.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/infostreams/db/archive/refs/tags/1.1.tar.gz"
   sha256 "90f07c13c388896ba02032544820f8ff3a23e6f9dc1e320a1a653dd77e032ee7"
   license "MIT"
 

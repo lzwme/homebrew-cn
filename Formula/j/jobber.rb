@@ -1,7 +1,7 @@
 class Jobber < Formula
   desc "Alternative to cron, with better status-reporting and error-handling"
   homepage "https://dshearer.github.io/jobber/"
-  url "https://ghproxy.com/https://github.com/dshearer/jobber/archive/v1.4.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/dshearer/jobber/archive/refs/tags/v1.4.4.tar.gz"
   sha256 "fd88a217a413c5218316664fab5510ace941f4fdb68dcb5428385ff09c68dcc2"
   license "MIT"
   head "https://github.com/dshearer/jobber.git", branch: "master"

@@ -1,7 +1,7 @@
 class LaunchSocketServer < Formula
   desc "Bind to privileged ports without running a server as root"
   homepage "https://github.com/mistydemeo/launch_socket_server"
-  url "https://ghproxy.com/https://github.com/mistydemeo/launch_socket_server/archive/v2.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/mistydemeo/launch_socket_server/archive/refs/tags/v2.0.0.tar.gz"
   sha256 "507184544d170dab63e6112198212033aaa84edf0e092c1dfe641087f092f365"
   license "MIT"
   head "https://github.com/mistydemeo/launch_socket_server.git", branch: "master"

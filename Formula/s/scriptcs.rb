@@ -1,7 +1,7 @@
 class Scriptcs < Formula
   desc "Tools to write and execute C#"
   homepage "https://github.com/scriptcs/scriptcs"
-  url "https://ghproxy.com/https://github.com/scriptcs/scriptcs/archive/v0.17.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/scriptcs/scriptcs/archive/refs/tags/v0.17.1.tar.gz"
   sha256 "e876118d82f52cbdd9569783ec9278c4ac449055aa628cdcb2d785bf8098a434"
   license "Apache-2.0"
 

@@ -1,7 +1,7 @@
 class Density < Formula
   desc "Superfast compression library"
   homepage "https://github.com/k0dai/density"
-  url "https://ghproxy.com/https://github.com/k0dai/density/archive/density-0.14.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/k0dai/density/archive/refs/tags/density-0.14.2.tar.gz"
   sha256 "0b130ea9da3ddaad78810a621a758b47c4135d91d5b5fd22d60bbaf04bc147da"
   license "BSD-3-Clause"
 
@@ -28,7 +28,7 @@ class Density < Formula
   end
 
   resource "spookyhash" do
-    url "https://ghproxy.com/https://github.com/k0dai/spookyhash/archive/spookyhash-1.0.6.tar.gz"
+    url "https://ghproxy.com/https://github.com/k0dai/spookyhash/archive/refs/tags/spookyhash-1.0.6.tar.gz"
     sha256 "11215a240af513e673e2d5527cd571df0b4f543f36cce50165a6da41695144c6"
   end
 

@@ -1,7 +1,7 @@
 class MrubyCli < Formula
   desc "Build native command-line applications for Linux, MacOS, and Windows"
   homepage "https://github.com/hone/mruby-cli"
-  url "https://ghproxy.com/https://github.com/hone/mruby-cli/archive/v0.0.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/hone/mruby-cli/archive/refs/tags/v0.0.4.tar.gz"
   sha256 "97d889b5980193c562e82b42089b937e675b73950fa0d0c4e46fbe71d16d719f"
   license "MIT"
   head "https://github.com/hone/mruby-cli.git", branch: "master"

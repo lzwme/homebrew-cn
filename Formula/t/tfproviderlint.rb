@@ -1,7 +1,7 @@
 class Tfproviderlint < Formula
   desc "Terraform Provider Lint Tool"
   homepage "https://github.com/bflad/tfproviderlint"
-  url "https://ghproxy.com/https://github.com/bflad/tfproviderlint/archive/v0.28.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/bflad/tfproviderlint/archive/refs/tags/v0.28.1.tar.gz"
   sha256 "df66a164256ffbacbb260e445313c0666bb14ce4b8363f123903259ecc0f4eb5"
   license "MPL-2.0"
   revision 1
@@ -26,7 +26,7 @@ class Tfproviderlint < Formula
   depends_on "go@1.17" => [:build, :test]
 
   resource "test_resource" do
-    url "https://ghproxy.com/https://github.com/russellcardullo/terraform-provider-pingdom/archive/v1.1.3.tar.gz"
+    url "https://ghproxy.com/https://github.com/russellcardullo/terraform-provider-pingdom/archive/refs/tags/v1.1.3.tar.gz"
     sha256 "3834575fd06123846245eeeeac1e815f5e949f04fa08b65c67985b27d6174106"
   end
 

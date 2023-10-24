@@ -1,7 +1,7 @@
 class Dartsim < Formula
   desc "Dynamic Animation and Robotics Toolkit"
   homepage "https://dartsim.github.io/"
-  url "https://ghproxy.com/https://github.com/dartsim/dart/archive/v6.13.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/dartsim/dart/archive/refs/tags/v6.13.0.tar.gz"
   sha256 "4da3ff8cee056252a558b05625a5ff29b21e71f2995e6d7f789abbf6261895f7"
   license "BSD-2-Clause"
   revision 3

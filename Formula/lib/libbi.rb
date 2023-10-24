@@ -1,7 +1,7 @@
 class Libbi < Formula
   desc "Bayesian state-space modelling on parallel computer hardware"
   homepage "https://libbi.org/"
-  url "https://ghproxy.com/https://github.com/lawmurray/LibBi/archive/1.4.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/lawmurray/LibBi/archive/refs/tags/1.4.5.tar.gz"
   sha256 "af2b6d30e1502f99a3950d63ceaf7d7275a236f4d81eff337121c24fbb802fbe"
   license "GPL-2.0-only"
   revision 4
@@ -107,7 +107,7 @@ class Libbi < Formula
   end
 
   resource "thrust" do
-    url "https://ghproxy.com/https://github.com/NVIDIA/thrust/archive/1.8.2.tar.gz"
+    url "https://ghproxy.com/https://github.com/NVIDIA/thrust/archive/refs/tags/1.8.2.tar.gz"
     sha256 "83bc9e7b769daa04324c986eeaf48fcb53c2dda26bcc77cb3c07f4b1c359feb8"
   end
 

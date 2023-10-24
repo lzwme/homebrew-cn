@@ -1,7 +1,7 @@
 class Vtclock < Formula
   desc "Text-mode fullscreen digital clock"
   homepage "https://github.com/dse/vtclock"
-  url "https://ghproxy.com/https://github.com/dse/vtclock/archive/0.0.20161228.tar.gz"
+  url "https://ghproxy.com/https://github.com/dse/vtclock/archive/refs/tags/0.0.20161228.tar.gz"
   sha256 "0148411febd672c34e436361f5969371ae5291bdc497c771af403a5ee85a78b4"
   license "GPL-2.0-or-later"
   version_scheme 1

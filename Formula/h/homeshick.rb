@@ -1,7 +1,7 @@
 class Homeshick < Formula
   desc "Git dotfiles synchronizer written in bash"
   homepage "https://github.com/andsens/homeshick"
-  url "https://ghproxy.com/https://github.com/andsens/homeshick/archive/v2.0.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/andsens/homeshick/archive/refs/tags/v2.0.1.tar.gz"
   sha256 "949f5de3c7f235ceb37c08e0cc8f3f7ad166f741a8fd01bf4b935a2031e37557"
   license "MIT"
   head "https://github.com/andsens/homeshick.git", branch: "master"

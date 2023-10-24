@@ -1,7 +1,7 @@
 class Pilosa < Formula
   desc "Distributed bitmap index that queries across data sets"
   homepage "https://www.pilosa.com"
-  url "https://ghproxy.com/https://github.com/pilosa/pilosa/archive/v1.4.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/pilosa/pilosa/archive/refs/tags/v1.4.1.tar.gz"
   sha256 "a250dda8788fefdb0b0b7eeff1bb44375a570cd4c6a0c501bc55612775b1578e"
   license "Apache-2.0"
 

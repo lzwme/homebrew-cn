@@ -1,7 +1,7 @@
 class Mp3cat < Formula
   desc "Reads and writes mp3 files"
   homepage "https://tomclegg.ca/mp3cat"
-  url "https://ghproxy.com/https://github.com/tomclegg/mp3cat/archive/0.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/tomclegg/mp3cat/archive/refs/tags/0.5.tar.gz"
   sha256 "b1ec915c09c7e1c0ff48f54844db273505bc0157163bed7b2940792dca8ff951"
   license "GPL-2.0-or-later"
 

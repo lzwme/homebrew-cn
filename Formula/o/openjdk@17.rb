@@ -1,7 +1,7 @@
 class OpenjdkAT17 < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.java.net/"
-  url "https://ghproxy.com/https://github.com/openjdk/jdk17u/archive/jdk-17.0.9-ga.tar.gz"
+  url "https://ghproxy.com/https://github.com/openjdk/jdk17u/archive/refs/tags/jdk-17.0.9-ga.tar.gz"
   sha256 "365c6b7d506f25e2249cac7658ada8b72b8652ceb15bbc8316de3e6fe8ea0976"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
 

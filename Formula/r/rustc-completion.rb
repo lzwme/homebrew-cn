@@ -5,7 +5,7 @@ class RustcCompletion < Formula
   head "https://github.com/roshan/rust-bash-completion.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/roshan/rust-bash-completion/archive/0.12.1.tar.gz"
+    url "https://ghproxy.com/https://github.com/roshan/rust-bash-completion/archive/refs/tags/0.12.1.tar.gz"
     sha256 "562f84ccab40f2b3e7ef47e2e6d9b6615070a0e7330d64ea5368b6ad75455012"
 
     # upstream commit to fix an undefined command when sourcing the file directly

@@ -1,7 +1,7 @@
 class Clfft < Formula
   desc "FFT functions written in OpenCL"
   homepage "https://github.com/clMathLibraries/clFFT"
-  url "https://ghproxy.com/https://github.com/clMathLibraries/clFFT/archive/v2.12.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/clMathLibraries/clFFT/archive/refs/tags/v2.12.2.tar.gz"
   sha256 "e7348c146ad48c6a3e6997b7702202ad3ee3b5df99edf7ef00bbacc21e897b12"
   license "Apache-2.0"
 

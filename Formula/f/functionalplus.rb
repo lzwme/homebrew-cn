@@ -1,7 +1,7 @@
 class Functionalplus < Formula
   desc "Functional Programming Library for C++"
   homepage "https://github.com/Dobiasd/FunctionalPlus"
-  url "https://ghproxy.com/https://github.com/Dobiasd/FunctionalPlus/archive/v0.2.20-p0.tar.gz"
+  url "https://ghproxy.com/https://github.com/Dobiasd/FunctionalPlus/archive/refs/tags/v0.2.20-p0.tar.gz"
   version "0.2.20"
   sha256 "6a8e56bd7976b7d5a6a31001f36bc199c2997f1144994fa0b48a1a5b8497abbc"
   license "BSL-1.0"

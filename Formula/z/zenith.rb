@@ -1,7 +1,7 @@
 class Zenith < Formula
   desc "In terminal graphical metrics for your *nix system"
   homepage "https://github.com/bvaisvil/zenith/"
-  url "https://ghproxy.com/https://github.com/bvaisvil/zenith/archive/0.14.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/bvaisvil/zenith/archive/refs/tags/0.14.0.tar.gz"
   sha256 "2cbcea2625cfa97c161b974ad412a47e330f7fd31bec0479e329ed3606cfc569"
   license "MIT"
   version_scheme 1

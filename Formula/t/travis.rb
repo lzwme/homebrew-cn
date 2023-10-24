@@ -1,7 +1,7 @@
 class Travis < Formula
   desc "Command-line client for Travis CI"
   homepage "https://github.com/travis-ci/travis.rb/"
-  url "https://ghproxy.com/https://github.com/travis-ci/travis.rb/archive/v1.11.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/travis-ci/travis.rb/archive/refs/tags/v1.11.1.tar.gz"
   sha256 "438b30362b54ed5c8668abf4212f239ac9081ab3aeb7cb9a24a9bf4b044495c3"
   license "MIT"
   revision 2

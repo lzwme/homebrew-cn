@@ -24,7 +24,7 @@ class Hbase < Formula
   uses_from_macos "netcat" => :test
 
   resource "hadoop-lzo" do
-    url "https://ghproxy.com/https://github.com/cloudera/hadoop-lzo/archive/0.4.14.tar.gz"
+    url "https://ghproxy.com/https://github.com/cloudera/hadoop-lzo/archive/refs/tags/0.4.14.tar.gz"
     sha256 "aa8ddbb8b3f9e1c4b8cc3523486acdb7841cd97c002a9f2959c5b320c7bb0e6c"
 
     patch do

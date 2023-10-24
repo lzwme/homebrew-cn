@@ -1,7 +1,7 @@
 class Chakra < Formula
   desc "Core part of the JavaScript engine that powers Microsoft Edge"
   homepage "https://github.com/chakra-core/ChakraCore"
-  url "https://ghproxy.com/https://github.com/chakra-core/ChakraCore/archive/v1.11.24.tar.gz"
+  url "https://ghproxy.com/https://github.com/chakra-core/ChakraCore/archive/refs/tags/v1.11.24.tar.gz"
   sha256 "b99e85f2d0fa24f2b6ccf9a6d2723f3eecfe986a9d2c4d34fa1fd0d015d0595e"
   license "MIT"
   revision 6

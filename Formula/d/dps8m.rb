@@ -1,5 +1,5 @@
 class Dps8m < Formula
-  desc "Simulator of the 36‑bit GE/Honeywell/Bull 600/6000‑series mainframe computers"
+  desc "Simulator of the 36-bit GE/Honeywell/Bull 600/6000-series mainframe computers"
   homepage "https://dps8m.gitlab.io/"
   url "https://dps8m.gitlab.io/dps8m-r3.0.1-archive/R3.0.1/dps8m-r3.0.1-src.tar.gz"
   sha256 "4c7daf668021204b83dde43504396d80ddc36259fd80f3b9f810d6db83b29b28"

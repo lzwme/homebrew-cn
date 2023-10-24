@@ -1,7 +1,7 @@
 class PandocCrossref < Formula
   desc "Pandoc filter for numbering and cross-referencing"
   homepage "https://github.com/lierdakil/pandoc-crossref"
-  url "https://ghproxy.com/https://github.com/lierdakil/pandoc-crossref/archive/v0.3.17.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/lierdakil/pandoc-crossref/archive/refs/tags/v0.3.17.0.tar.gz"
   sha256 "a1933b7aba27ef352b7624d234980dc4c4b46ebb607e940c669c2a187e6c6426"
   license "GPL-2.0-or-later"
 

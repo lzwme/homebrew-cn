@@ -1,7 +1,7 @@
 class Oauth2l < Formula
   desc "Simple CLI for interacting with Google oauth tokens"
   homepage "https://github.com/google/oauth2l"
-  url "https://ghproxy.com/https://github.com/google/oauth2l/archive/v1.3.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/google/oauth2l/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "3f708e3fab87c6ae50e0608b02b01a66ce427a4097f3a73f1fa8c6ea43839110"
   license "Apache-2.0"
   head "https://github.com/google/oauth2l.git", branch: "master"

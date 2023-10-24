@@ -1,7 +1,7 @@
 class Distribution < Formula
   desc "Create ASCII graphical histograms in the terminal"
   homepage "https://github.com/time-less-ness/distribution"
-  url "https://ghproxy.com/https://github.com/time-less-ness/distribution/archive/1.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/time-less-ness/distribution/archive/refs/tags/1.3.tar.gz"
   sha256 "d7f2c9beeee15986d24d8068eb132c0a63c0bd9ace932e724cb38c1e6e54f95d"
   license "GPL-2.0-only"
   head "https://github.com/time-less-ness/distribution.git", branch: "master"

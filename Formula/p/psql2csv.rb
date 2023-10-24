@@ -1,7 +1,7 @@
 class Psql2csv < Formula
   desc "Run a query in psql and output the result as CSV"
   homepage "https://github.com/fphilipe/psql2csv"
-  url "https://ghproxy.com/https://github.com/fphilipe/psql2csv/archive/v0.12.tar.gz"
+  url "https://ghproxy.com/https://github.com/fphilipe/psql2csv/archive/refs/tags/v0.12.tar.gz"
   sha256 "bd99442ee5b6892589986cb93f928ec9e823d17d06f10c8e74e7522bf021ca28"
   license "MIT"
   revision 1

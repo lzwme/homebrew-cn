@@ -1,7 +1,7 @@
 class RedisLeveldb < Formula
   desc "Redis-protocol compatible frontend to leveldb"
   homepage "https://github.com/KDr2/redis-leveldb"
-  url "https://ghproxy.com/https://github.com/KDr2/redis-leveldb/archive/v1.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/KDr2/redis-leveldb/archive/refs/tags/v1.4.tar.gz"
   sha256 "b34365ca5b788c47b116ea8f86a7a409b765440361b6c21a46161a66f631797c"
   license "MIT"
   revision 3

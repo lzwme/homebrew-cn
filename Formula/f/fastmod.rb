@@ -1,7 +1,7 @@
 class Fastmod < Formula
   desc "Fast partial replacement for the codemod tool"
   homepage "https://github.com/facebookincubator/fastmod"
-  url "https://ghproxy.com/https://github.com/facebookincubator/fastmod/archive/v0.4.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/facebookincubator/fastmod/archive/refs/tags/v0.4.3.tar.gz"
   sha256 "0c00d7e839caf123c97822542d7f16e6f40267ea0c6b54ce2c868e3ae21de809"
   license "Apache-2.0"
 

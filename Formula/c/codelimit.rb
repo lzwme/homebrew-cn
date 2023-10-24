@@ -6,15 +6,16 @@ class Codelimit < Formula
   url "https://files.pythonhosted.org/packages/ef/b0/17e7b12b587af10b1096ba44250eddc71dd28446ae4c9bac708587a0a607/codelimit-0.7.0.tar.gz"
   sha256 "4e6caa1cbd85fb7989f24e3b9f151c43f28e4bb807cb2f7a3046bfd5b6872e57"
   license "ISC"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "883b5f50aa8452588df1bc7ac64e0f630b7212c3b0461faeec9ae08cefa8f511"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a023ccd8ca65c535513e752573177c7e3f0a85f9bc97ea96b92eecc7ce96ddc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "30a22c8361727be4f5da25e892a3ebe949b62d832e83cb66b288065f0a6872e1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "80ee603ee0aa105667b59a0d3dca77df5e4be4f9d45c0baee0e62a48b9c75766"
-    sha256 cellar: :any_skip_relocation, ventura:        "1ec39ff82b1eda91633c0dddd34a8b7c2d264ea7cbcedd73d7a134a1dcbab79f"
-    sha256 cellar: :any_skip_relocation, monterey:       "6cffd9c2e2b53d62a26c7944a25dd495ec869410a0db6a5281e929910a6d5417"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef18bf33ae94745dc174a47a0791fa91e82823ef5a8de0631e7a4dcc433778e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8525f5f25eba33443cdbd1a6f3e9769c59ab56f9eb959a7fe3d50dd01a12833e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f97846438c7b77a53c88f24858174de81e7462a6b97cf81f085dd30fa29e1f0e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e7ddd585f9364ced3e5e70449ed29357c1edd233bc7fbad3f058554377395831"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a8bf74323691aab54a20b3e045ba84c8804253c48352b8a153aeea428f037eef"
+    sha256 cellar: :any_skip_relocation, ventura:        "6af155f7201da853281252b96fb35738ec6c440b3e61adaf1bda41343ec8a575"
+    sha256 cellar: :any_skip_relocation, monterey:       "93573f6d57571acf997e4143d91238e1439d364bb34d030a48ffc5c64d95b861"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ad54c6a81e50d462c9f02752b4ca31b5977c5f6edf76df0934df87e1b4c8278"
   end
 
   depends_on "pygments"
@@ -29,8 +30,8 @@ class Codelimit < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
+    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
   end
 
   resource "click" do
@@ -139,8 +140,8 @@ class Codelimit < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz"
-    sha256 "b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "zipp" do

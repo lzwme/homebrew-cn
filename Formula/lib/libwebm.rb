@@ -1,7 +1,7 @@
 class Libwebm < Formula
   desc "WebM container"
   homepage "https://www.webmproject.org/code/"
-  url "https://ghproxy.com/https://github.com/webmproject/libwebm/archive/libwebm-1.0.0.30.tar.gz"
+  url "https://ghproxy.com/https://github.com/webmproject/libwebm/archive/refs/tags/libwebm-1.0.0.30.tar.gz"
   sha256 "6c1381fd1a66e86e095b76028ede696724e198ea0e39957c9649af5f0718b96a"
   license "BSD-3-Clause"
 

@@ -3,7 +3,7 @@ class Libbtbb < Formula
 
   desc "Bluetooth baseband decoding library"
   homepage "https://github.com/greatscottgadgets/libbtbb"
-  url "https://ghproxy.com/https://github.com/greatscottgadgets/libbtbb/archive/2020-12-R1.tar.gz"
+  url "https://ghproxy.com/https://github.com/greatscottgadgets/libbtbb/archive/refs/tags/2020-12-R1.tar.gz"
   version "2020-12-R1"
   sha256 "9478bb51a38222921b5b1d7accce86acd98ed37dbccb068b38d60efa64c5231f"
   license "GPL-2.0-or-later"

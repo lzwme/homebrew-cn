@@ -1,7 +1,7 @@
 class Gitbatch < Formula
   desc "Manage your git repositories in one place"
   homepage "https://github.com/isacikgoz/gitbatch"
-  url "https://ghproxy.com/https://github.com/isacikgoz/gitbatch/archive/v0.6.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/isacikgoz/gitbatch/archive/refs/tags/v0.6.1.tar.gz"
   sha256 "0ef36a4ea0b6cf4beb51928dd51281ec106006ba800c439d2588515c1bfeaf41"
   license "MIT"
 

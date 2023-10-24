@@ -1,7 +1,7 @@
 class V < Formula
   desc "Z for vim"
   homepage "https://github.com/rupa/v"
-  url "https://ghproxy.com/https://github.com/rupa/v/archive/v1.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/rupa/v/archive/refs/tags/v1.1.tar.gz"
   sha256 "6483ef1248dcbc6f360b0cdeb9f9c11879815bd18b0c4f053a18ddd56a69b81f"
   revision 1
   head "https://github.com/rupa/v.git", branch: "master"

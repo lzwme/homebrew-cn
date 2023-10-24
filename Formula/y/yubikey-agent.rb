@@ -1,7 +1,7 @@
 class YubikeyAgent < Formula
   desc "Seamless ssh-agent for YubiKeys and other PIV tokens"
   homepage "https://filippo.io/yubikey-agent"
-  url "https://ghproxy.com/https://github.com/FiloSottile/yubikey-agent/archive/v0.1.6.tar.gz"
+  url "https://ghproxy.com/https://github.com/FiloSottile/yubikey-agent/archive/refs/tags/v0.1.6.tar.gz"
   sha256 "f156d089376772a34d2995f8261d821369a96a248ab586d27e3be0d9b72d7426"
   license "BSD-3-Clause"
   head "https://github.com/FiloSottile/yubikey-agent.git", branch: "main"

@@ -1,7 +1,7 @@
 class ZshAsync < Formula
   desc "Perform tasks asynchronously without external tools"
   homepage "https://github.com/mafredri/zsh-async"
-  url "https://ghproxy.com/https://github.com/mafredri/zsh-async/archive/v1.8.6.tar.gz"
+  url "https://ghproxy.com/https://github.com/mafredri/zsh-async/archive/refs/tags/v1.8.6.tar.gz"
   sha256 "0f2778cb882b73471569b016bbfa6d9d75572bff40dc7f25ac50b3a8dc94ef47"
   license "MIT"
 

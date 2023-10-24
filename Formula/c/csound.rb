@@ -68,7 +68,7 @@ class Csound < Formula
   fails_with gcc: "5"
 
   resource "ableton-link" do
-    url "https://ghproxy.com/https://github.com/Ableton/link/archive/Link-3.1.0.tar.gz"
+    url "https://ghproxy.com/https://github.com/Ableton/link/archive/refs/tags/Link-3.1.0.tar.gz"
     sha256 "6a9e70a70b5ea1d8825f6b2f34085f8e3e52d0581a62e6eb3f72de168c1a13bc"
   end
 

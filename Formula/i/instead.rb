@@ -1,7 +1,7 @@
 class Instead < Formula
   desc "Interpreter of simple text adventures"
   homepage "https://instead.hugeping.ru/"
-  url "https://ghproxy.com/https://github.com/instead-hub/instead/archive/3.5.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/instead-hub/instead/archive/refs/tags/3.5.1.tar.gz"
   sha256 "53380f94be7f1ec46de309d513f7fe62a1c63d607a247715d87815e83a9c7d63"
   license "MIT"
 

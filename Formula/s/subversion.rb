@@ -2,7 +2,7 @@ class Subversion < Formula
   desc "Version control system designed to be a better CVS"
   homepage "https://subversion.apache.org/"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   stable do
     url "https://www.apache.org/dyn/closer.lua?path=subversion/subversion-1.14.2.tar.bz2"
@@ -17,15 +17,13 @@ class Subversion < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "b7749b7cbcfb15adc448b5e29c281e02abc67ceb43eebac13b0cd3b37e07f6c4"
-    sha256 arm64_ventura:  "a1944d2503dc470e05a476b5ee92311f3429580ca76e12047b0767be3f800252"
-    sha256 arm64_monterey: "8b25a02d63873fac081173d33bdf6470909c67d20312afd99dd8a63e2aaa8876"
-    sha256 arm64_big_sur:  "88709a23df567166aa8a77778c062d31a25dd72cb3acf34e3c022ca970213798"
-    sha256 sonoma:         "d4caf902d2191de7936f14a5bcc0dff4e94bffd89ce5c34cb931c92d9408498f"
-    sha256 ventura:        "8e15088554e65c305691a63e11a211eacd2baa3c85ccda4f2febc16c54f3d609"
-    sha256 monterey:       "2ef69fa39e874278419d3e48e73048a5a3a75a25854e397f6074db2f75fe8575"
-    sha256 big_sur:        "efe17cc852974f2c4ef4ad6c793f4ee879b5a6443d46aea91b9d58122138d192"
-    sha256 x86_64_linux:   "85843632d86ff2bb2a8307d7834f61b434ce1c4ac7fb8a0c6c5ef09b6dd98453"
+    sha256 arm64_sonoma:   "5f8c705c2cc6024506f6b5d8fe913d1ff4634a886faee716a547b7f78e88a324"
+    sha256 arm64_ventura:  "821c5be00766471545a5a1a861ecba97407a0391ce739f47dd16952255a6ea53"
+    sha256 arm64_monterey: "37a3db6e3d3f19bf0a38819534d8fecbe12a9fc6d9f26aab1af66db602f8e808"
+    sha256 sonoma:         "b5d2888e5cffe7f369573e2ea3f186dec13b10c5bb3eeee72e9b23d099438ef3"
+    sha256 ventura:        "ccc720b040567395f0fce683ec641e231a1db4e279ce5b8b483983ade4ddc80d"
+    sha256 monterey:       "a0401c8592d5f90bc42ef710c205d5f1c5d1e9b0d896e608c902315d293a7ee6"
+    sha256 x86_64_linux:   "b1faa203109e0b15d75250cbec3ecc32b4212d89106baf2104100fc3cb48a8e9"
   end
 
   head do
@@ -67,7 +65,7 @@ class Subversion < Formula
   end
 
   resource "py3c" do
-    url "https://ghproxy.com/https://github.com/encukou/py3c/archive/v1.1.tar.gz"
+    url "https://ghproxy.com/https://github.com/encukou/py3c/archive/refs/tags/v1.1.tar.gz"
     sha256 "c7ffc22bc92dded0ca859db53ef3a0b466f89a9f8aad29359c9fe4ff18ebdd20"
   end
 

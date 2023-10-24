@@ -1,7 +1,7 @@
 class Ocproxy < Formula
   desc "User-level SOCKS and port forwarding proxy"
   homepage "https://github.com/cernekee/ocproxy"
-  url "https://ghproxy.com/https://github.com/cernekee/ocproxy/archive/v1.60.tar.gz"
+  url "https://ghproxy.com/https://github.com/cernekee/ocproxy/archive/refs/tags/v1.60.tar.gz"
   sha256 "a7367647f07df33869e2f79da66b6f104f6495ae806b12a8b8d9ca82fb7899ac"
   license "BSD-3-Clause"
   revision 1

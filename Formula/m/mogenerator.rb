@@ -1,7 +1,7 @@
 class Mogenerator < Formula
   desc "Generate Objective-C & Swift classes from your Core Data model"
   homepage "https://rentzsch.github.io/mogenerator/"
-  url "https://ghproxy.com/https://github.com/rentzsch/mogenerator/archive/1.32.tar.gz"
+  url "https://ghproxy.com/https://github.com/rentzsch/mogenerator/archive/refs/tags/1.32.tar.gz"
   sha256 "4fa660a19934d94d7ef35626d68ada9912d925416395a6bf4497bd7df35d7a8b"
   license "MIT"
   head "https://github.com/rentzsch/mogenerator.git", branch: "master"

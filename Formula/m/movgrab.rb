@@ -1,7 +1,7 @@
 class Movgrab < Formula
   desc "Downloader for youtube, dailymotion, and other video websites"
   homepage "https://sites.google.com/site/columscode/home/movgrab"
-  url "https://ghproxy.com/https://github.com/ColumPaget/Movgrab/archive/3.1.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/ColumPaget/Movgrab/archive/refs/tags/3.1.2.tar.gz"
   sha256 "30be6057ddbd9ac32f6e3d5456145b09526cc6bd5e3f3fb3999cc05283457529"
   license "GPL-3.0-or-later"
   revision 5

@@ -1,7 +1,7 @@
 class Rebar3 < Formula
   desc "Erlang build tool"
   homepage "https://github.com/erlang/rebar3"
-  url "https://ghproxy.com/https://github.com/erlang/rebar3/archive/3.22.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/erlang/rebar3/archive/refs/tags/3.22.1.tar.gz"
   sha256 "2855b5784300865d2e43cb7a135cb2bba144cf15214c619065b918afc8cc6eb9"
   license "Apache-2.0"
 

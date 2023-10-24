@@ -1,7 +1,7 @@
 class DarkskyWeather < Formula
   desc "Command-line weather from the darksky.net API"
   homepage "https://github.com/genuinetools/weather"
-  url "https://ghproxy.com/https://github.com/genuinetools/weather/archive/v0.15.7.tar.gz"
+  url "https://ghproxy.com/https://github.com/genuinetools/weather/archive/refs/tags/v0.15.7.tar.gz"
   sha256 "e5efd17d40d4246998293de6191e39954aee59c5a0f917f319b493a8dc335edb"
   license "MIT"
 

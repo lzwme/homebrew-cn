@@ -1,7 +1,7 @@
 class OcamlNum < Formula
   desc "OCaml legacy Num library for arbitrary-precision arithmetic"
   homepage "https://github.com/ocaml/num"
-  url "https://ghproxy.com/https://github.com/ocaml/num/archive/v1.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/ocaml/num/archive/refs/tags/v1.4.tar.gz"
   sha256 "015088b68e717b04c07997920e33c53219711dfaf36d1196d02313f48ea00f24"
   license "LGPL-2.1"
   revision 3

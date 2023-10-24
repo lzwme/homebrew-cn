@@ -1,7 +1,7 @@
 class Zmqpp < Formula
   desc "High-level C++ binding for zeromq"
   homepage "https://zeromq.github.io/zmqpp/"
-  url "https://ghproxy.com/https://github.com/zeromq/zmqpp/archive/4.2.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/zeromq/zmqpp/archive/refs/tags/4.2.0.tar.gz"
   sha256 "c1d4587df3562f73849d9e5f8c932ca7dcfc7d8bec31f62d7f35073ef81f4d29"
   license "MPL-2.0"
 

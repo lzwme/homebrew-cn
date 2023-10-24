@@ -1,7 +1,7 @@
 class PyenvVirtualenv < Formula
   desc "Pyenv plugin to manage virtualenv"
   homepage "https://github.com/pyenv/pyenv-virtualenv"
-  url "https://ghproxy.com/https://github.com/pyenv/pyenv-virtualenv/archive/v1.2.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/pyenv/pyenv-virtualenv/archive/refs/tags/v1.2.1.tar.gz"
   sha256 "c60fe08d8d0d5c3ae0eba224081214ce831135d62d75e1d607206411621427d7"
   license "MIT"
   version_scheme 1

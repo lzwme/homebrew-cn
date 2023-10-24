@@ -1,7 +1,7 @@
 class Dehydrated < Formula
   desc "LetsEncrypt/acme client implemented as a shell-script"
   homepage "https://dehydrated.io"
-  url "https://ghproxy.com/https://github.com/dehydrated-io/dehydrated/archive/v0.7.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/dehydrated-io/dehydrated/archive/refs/tags/v0.7.1.tar.gz"
   sha256 "3d993237af5abd4ee83100458867454ed119e41fac72b3d2bce9efc60d4dff32"
   license "MIT"
 

@@ -1,7 +1,7 @@
 class Nap < Formula
   desc "Code snippets in your terminal"
   homepage "https://github.com/maaslalani/nap"
-  url "https://ghproxy.com/https://github.com/maaslalani/nap/archive/v0.1.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/maaslalani/nap/archive/refs/tags/v0.1.1.tar.gz"
   sha256 "2954577d2bd99c1114989d31e994d7bef0f1c934795fc559b7c90f6370d9f98b"
   license "MIT"
   head "https://github.com/maaslalani/nap.git", branch: "main"

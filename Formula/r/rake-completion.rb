@@ -1,7 +1,7 @@
 class RakeCompletion < Formula
   desc "Bash completion for Rake"
   homepage "https://github.com/JoeNyland/rake-completion"
-  url "https://ghproxy.com/https://github.com/JoeNyland/rake-completion/archive/v1.0.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/JoeNyland/rake-completion/archive/refs/tags/v1.0.1.tar.gz"
   sha256 "085801e62cb240311d77885778a603f649b3fd5d85ee279691d1d00bc060bba6"
   license "MIT"
 

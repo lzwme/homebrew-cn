@@ -1,7 +1,7 @@
 class Ship < Formula
   desc "Reducing the overhead of maintaining 3rd-party applications in Kubernetes"
   homepage "https://www.replicated.com/ship"
-  url "https://ghproxy.com/https://github.com/replicatedhq/ship/archive/v0.55.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/replicatedhq/ship/archive/refs/tags/v0.55.0.tar.gz"
   sha256 "39cc74fdd884e49301474acafba74128b1a083bbd7e11e349ab6c5da26be8fef"
   license "Apache-2.0"
 

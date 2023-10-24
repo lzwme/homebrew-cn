@@ -6,7 +6,7 @@ class Wrangler < Formula
   head "https://github.com/RefactoringTools/wrangler.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/RefactoringTools/wrangler/archive/wrangler1.2.tar.gz"
+    url "https://ghproxy.com/https://github.com/RefactoringTools/wrangler/archive/refs/tags/wrangler1.2.tar.gz"
     sha256 "a6a87ad0513b95bf208c660d112b77ae1951266b7b4b60d8a2a6da7159310b87"
 
     # upstream commit "Fix -spec's to compile in Erlang/OTP 19"

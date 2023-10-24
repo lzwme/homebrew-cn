@@ -3,7 +3,7 @@ class Klee < Formula
 
   desc "Symbolic Execution Engine"
   homepage "https://klee.github.io/"
-  url "https://ghproxy.com/https://github.com/klee/klee/archive/v3.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/klee/klee/archive/refs/tags/v3.0.tar.gz"
   sha256 "204ebf0cb739886f574b1190b04fa9ed9088770c0634984782e9633d1aa4bdc9"
   license "NCSA"
   head "https://github.com/klee/klee.git", branch: "master"

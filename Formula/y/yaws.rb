@@ -1,7 +1,7 @@
 class Yaws < Formula
   desc "Webserver for dynamic content (written in Erlang)"
   homepage "http://yaws.hyber.org"
-  url "https://ghproxy.com/https://github.com/erlyaws/yaws/archive/yaws-2.1.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/erlyaws/yaws/archive/refs/tags/yaws-2.1.1.tar.gz"
   sha256 "aeb74f0051fe9a2925b1a1b4f13af31ec5404acfbe000ac32cda25ee9779f4bf"
   license "BSD-3-Clause"
   head "https://github.com/erlyaws/yaws.git", branch: "master"

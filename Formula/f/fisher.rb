@@ -1,7 +1,7 @@
 class Fisher < Formula
   desc "Plugin manager for the Fish shell"
   homepage "https://github.com/jorgebucaran/fisher"
-  url "https://ghproxy.com/https://github.com/jorgebucaran/fisher/archive/4.4.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/jorgebucaran/fisher/archive/refs/tags/4.4.4.tar.gz"
   sha256 "856e490e35cb9b1f1f02d54c77c6f4e86eb6f97fb5cfd8883a9df7b1d148a8e6"
   license "MIT"
 

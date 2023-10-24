@@ -1,7 +1,7 @@
 class Cacli < Formula
   desc "Train machine learning models from Cloud Annotations"
   homepage "https://cloud.annotations.ai"
-  url "https://ghproxy.com/https://github.com/cloud-annotations/cloud-annotations/archive/v1.3.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/cloud-annotations/cloud-annotations/archive/refs/tags/v1.3.2.tar.gz"
   sha256 "e7d8fd54f16098a6ac9a612b021beea3218d9747672d49eff20a285cdee69101"
   license "MIT"
 

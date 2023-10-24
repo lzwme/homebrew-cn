@@ -1,7 +1,7 @@
 class Icon < Formula
   desc "General-purpose programming language"
   homepage "https://www.cs.arizona.edu/icon/"
-  url "https://ghproxy.com/https://github.com/gtownsend/icon/archive/v9.5.23a.tar.gz"
+  url "https://ghproxy.com/https://github.com/gtownsend/icon/archive/refs/tags/v9.5.23a.tar.gz"
   version "9.5.23a"
   sha256 "0c2e8b70a19e476c7a5a4aaaa46160f2f6197d14d6f8e01e164b6a3fff8c210a"
   license :public_domain

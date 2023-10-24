@@ -1,7 +1,7 @@
 class Squashfs < Formula
   desc "Compressed read-only file system for Linux"
   homepage "https://github.com/plougher/squashfs-tools"
-  url "https://ghproxy.com/https://github.com/plougher/squashfs-tools/archive/4.6.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/plougher/squashfs-tools/archive/refs/tags/4.6.1.tar.gz"
   sha256 "94201754b36121a9f022a190c75f718441df15402df32c2b520ca331a107511c"
   license "GPL-2.0-or-later"
   head "https://github.com/plougher/squashfs-tools.git", branch: "master"

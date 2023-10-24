@@ -1,7 +1,7 @@
 class Procs < Formula
   desc "Modern replacement for ps written by Rust"
   homepage "https://github.com/dalance/procs"
-  url "https://ghproxy.com/https://github.com/dalance/procs/archive/v0.14.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/dalance/procs/archive/refs/tags/v0.14.3.tar.gz"
   sha256 "a3012bba984faddcf8da2a72d21eb9a7e9be8d5d86a387d321987743b0080a8c"
   license "MIT"
 

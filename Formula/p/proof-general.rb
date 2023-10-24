@@ -1,7 +1,7 @@
 class ProofGeneral < Formula
   desc "Emacs-based generic interface for theorem provers"
   homepage "https://proofgeneral.github.io"
-  url "https://ghproxy.com/https://github.com/ProofGeneral/PG/archive/v4.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/ProofGeneral/PG/archive/refs/tags/v4.5.tar.gz"
   sha256 "b408ab943cfbfe4fcb0d3322f079f41e2a2d29b50cf0cc704fbb4d5e6c26e3a2"
   license "GPL-3.0-or-later"
   head "https://github.com/ProofGeneral/PG.git", branch: "master"

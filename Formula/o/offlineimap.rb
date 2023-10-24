@@ -3,7 +3,7 @@ class Offlineimap < Formula
 
   desc "Synchronizes emails between two repositories"
   homepage "https://github.com/OfflineIMAP/offlineimap3"
-  url "https://ghproxy.com/https://github.com/OfflineIMAP/offlineimap3/archive/v8.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/OfflineIMAP/offlineimap3/archive/refs/tags/v8.0.0.tar.gz"
   sha256 "5d40c163ca2fbf89658116e29f8fa75050d0c34c29619019eee1a84c90fcab32"
   license "GPL-2.0-or-later"
   revision 1

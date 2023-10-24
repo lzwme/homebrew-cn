@@ -1,7 +1,7 @@
 class Nutcracker < Formula
   desc "Proxy for memcached and redis"
   homepage "https://github.com/twitter/twemproxy"
-  url "https://ghproxy.com/https://github.com/twitter/twemproxy/archive/0.5.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/twitter/twemproxy/archive/refs/tags/0.5.0.tar.gz"
   sha256 "73f305d8525abbaaa6a5f203c1fba438f99319711bfcb2bb8b2f06f0d63d1633"
   license "Apache-2.0"
   revision 1

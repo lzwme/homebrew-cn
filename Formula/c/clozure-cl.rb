@@ -1,7 +1,7 @@
 class ClozureCl < Formula
   desc "Common Lisp implementation with a long history"
   homepage "https://ccl.clozure.com"
-  url "https://ghproxy.com/https://github.com/Clozure/ccl/archive/v1.12.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/Clozure/ccl/archive/refs/tags/v1.12.2.tar.gz"
   sha256 "7f424c52041486dde91e32726f919a16fb1d7272d2a6e404673ae63e04f2d185"
   license "Apache-2.0"
   head "https://github.com/Clozure/ccl.git", branch: "master"

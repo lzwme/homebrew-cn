@@ -2,7 +2,7 @@ class Tmux < Formula
   desc "Terminal multiplexer"
   homepage "https://tmux.github.io/"
   license "ISC"
-  revision 2
+  revision 3
 
   stable do
     # Remove `stable` block in next release.
@@ -25,15 +25,13 @@ class Tmux < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a3e273ee4ccfaeb5035b37cb361338c92a92a472bb87f19e1740f24148d3795f"
-    sha256 cellar: :any,                 arm64_ventura:  "cf149268a57056eaa65e5c238668fc818caf5850a604b02e019ca3017184e731"
-    sha256 cellar: :any,                 arm64_monterey: "e5b94436fc6bb4b2b60b9ccb8b0dfa7dc66429a148a68afd8250f1af4d963544"
-    sha256 cellar: :any,                 arm64_big_sur:  "c7ceb9e78083537f4c7fcf3a22e620c1f0f03bea65573cb7660ecacd61d91004"
-    sha256 cellar: :any,                 sonoma:         "c1b69eabc58e5a23984cf9c862ba857dd9725e641a7fe056a430d1b2153a524d"
-    sha256 cellar: :any,                 ventura:        "5d9f6bfa55bd892f0d79acd5d8513e31553493267add167b0f195354ed0bd0ab"
-    sha256 cellar: :any,                 monterey:       "a24369c3d46641aa541f6a791bb23aa3e2fb91f3768086be6e9934af7bca5e74"
-    sha256 cellar: :any,                 big_sur:        "48055e1e39515db54922c2068d4da9800724727786763f9b4af198e13a44a75d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aec481263694618cf74e6c9b7e7208d828a46f45071226e7a6ac6af62f46a036"
+    sha256 cellar: :any,                 arm64_sonoma:   "2cbeabc833f6195d4dc8c2f01f17f5ae3303a72c769567b6cd57a850ed2e1713"
+    sha256 cellar: :any,                 arm64_ventura:  "e93de471a812083476ed413a5ffbe64fbd5597c120c6d00d0c68ba47b74dd1bf"
+    sha256 cellar: :any,                 arm64_monterey: "f1da3204877186c49a899e17948e86a03ae827b743f8cb6d7e574d7348bcb0bc"
+    sha256 cellar: :any,                 sonoma:         "f84a10a56a5c48c1efce9f83656551e4527c198c8847516099fae838ee319468"
+    sha256 cellar: :any,                 ventura:        "0737f0e22e3e533d3c59968bb55e48b920721a56ec4720568d133312c4643a7b"
+    sha256 cellar: :any,                 monterey:       "c106e345ad90b3c64c65a5ed60f30a50baafaaa906d8042220beb78177c4a053"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "43d9d8c0cc2221508fe522a40660ca829a5a0406093ed2b6ddb8012196cbfabe"
   end
 
   head do

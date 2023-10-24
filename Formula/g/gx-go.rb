@@ -3,7 +3,7 @@ require "language/go"
 class GxGo < Formula
   desc "Tool to use with the gx package manager for packages written in go"
   homepage "https://github.com/whyrusleeping/gx-go"
-  url "https://ghproxy.com/https://github.com/whyrusleeping/gx-go/archive/v1.9.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/whyrusleeping/gx-go/archive/refs/tags/v1.9.0.tar.gz"
   sha256 "f3a0ee17359e0e5efab8008361da0e312ca723a0c9e165342a0306caba55a535"
   license "MIT"
   head "https://github.com/whyrusleeping/gx-go.git", branch: "master"

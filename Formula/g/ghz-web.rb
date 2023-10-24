@@ -1,7 +1,7 @@
 class GhzWeb < Formula
   desc "Web interface for ghz"
   homepage "https://ghz.sh"
-  url "https://ghproxy.com/https://github.com/bojand/ghz/archive/v0.117.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/bojand/ghz/archive/refs/tags/v0.117.0.tar.gz"
   sha256 "33014936ee67f8f139e89e342756d8415880b65c6bb6acb9fbf97132745a1528"
   license "Apache-2.0"
 

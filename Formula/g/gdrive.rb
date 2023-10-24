@@ -1,7 +1,7 @@
 class Gdrive < Formula
   desc "Google Drive CLI Client"
   homepage "https://github.com/prasmussen/gdrive"
-  url "https://ghproxy.com/https://github.com/prasmussen/gdrive/archive/2.1.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/prasmussen/gdrive/archive/refs/tags/2.1.1.tar.gz"
   sha256 "9092cb356acf58f2938954784605911e146497a18681199d0c0edc65b833a672"
   license "MIT"
   head "https://github.com/prasmussen/gdrive.git", branch: "master"

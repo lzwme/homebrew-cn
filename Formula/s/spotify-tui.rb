@@ -5,7 +5,7 @@ class SpotifyTui < Formula
   head "https://github.com/Rigellute/spotify-tui.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/Rigellute/spotify-tui/archive/v0.25.0.tar.gz"
+    url "https://ghproxy.com/https://github.com/Rigellute/spotify-tui/archive/refs/tags/v0.25.0.tar.gz"
     sha256 "9d6fa998e625ceff958a5355b4379ab164ba76575143a7b6d5d8aeb6c36d70a7"
 
     # Update dirs in order to apply socket2 PR. Remove in the next release.

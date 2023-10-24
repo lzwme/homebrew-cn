@@ -3,7 +3,7 @@ require "language/node"
 class Emscripten < Formula
   desc "LLVM bytecode to JavaScript compiler"
   homepage "https://emscripten.org/"
-  url "https://ghproxy.com/https://github.com/emscripten-core/emscripten/archive/3.1.46.tar.gz"
+  url "https://ghproxy.com/https://github.com/emscripten-core/emscripten/archive/refs/tags/3.1.46.tar.gz"
   sha256 "2c1474286f6b3a06b3442a57ba043f809849573a179db681c6a350bf327ce360"
   license all_of: [
     "Apache-2.0", # binaryen

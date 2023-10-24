@@ -1,7 +1,7 @@
 class Libpinyin < Formula
   desc "Library to deal with pinyin"
   homepage "https://github.com/libpinyin/libpinyin"
-  url "https://ghproxy.com/https://github.com/libpinyin/libpinyin/archive/2.8.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/libpinyin/libpinyin/archive/refs/tags/2.8.1.tar.gz"
   sha256 "42c4f899f71fc26bcc57bb1e2a9309c2733212bb241a0008ba3c9b5ebd951443"
   license "GPL-3.0-or-later"
 

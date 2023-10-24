@@ -1,7 +1,7 @@
 class ZshAutopair < Formula
   desc "Auto-close and delete matching delimiters in zsh"
   homepage "https://github.com/hlissner/zsh-autopair"
-  url "https://ghproxy.com/https://github.com/hlissner/zsh-autopair/archive/v1.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/hlissner/zsh-autopair/archive/refs/tags/v1.0.tar.gz"
   sha256 "4b6f4d20d89ea08fd239089ad4133cff5ebdb71f07f589d5e41d0814d4cf4165"
   license "MIT"
 

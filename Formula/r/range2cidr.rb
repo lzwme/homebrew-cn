@@ -1,7 +1,7 @@
 class Range2cidr < Formula
   desc "Converts IP ranges to CIDRs"
   homepage "https://ipinfo.io"
-  url "https://ghproxy.com/https://github.com/ipinfo/cli/archive/range2cidr-1.3.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/ipinfo/cli/archive/refs/tags/range2cidr-1.3.0.tar.gz"
   sha256 "562f130483c8c7b2d376f8b0325392136f53e74912c879fae0677ffe46299738"
   license "Apache-2.0"
 

@@ -1,7 +1,7 @@
 class C10t < Formula
   desc "Minecraft cartography tool"
   homepage "https://github.com/udoprog/c10t"
-  url "https://ghproxy.com/https://github.com/udoprog/c10t/archive/1.7.tar.gz"
+  url "https://ghproxy.com/https://github.com/udoprog/c10t/archive/refs/tags/1.7.tar.gz"
   sha256 "0e5779d517105bfdd14944c849a395e1a8670bedba5bdab281a0165c3eb077dc"
   license "BSD-3-Clause"
   revision 6

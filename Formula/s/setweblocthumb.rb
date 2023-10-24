@@ -1,7 +1,7 @@
 class Setweblocthumb < Formula
   desc "Assigns custom icons to webloc files"
   homepage "https://hasseg.org/setWeblocThumb/"
-  url "https://ghproxy.com/https://github.com/ali-rantakari/setWeblocThumb/archive/v1.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/ali-rantakari/setWeblocThumb/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "0258fdabbd24eed2ad3ff425b7832c4cd9bc706254861a6339f886efc28e35be"
   license "Apache-2.0"
 

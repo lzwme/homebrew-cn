@@ -3,7 +3,7 @@ class ZabbixCli < Formula
 
   desc "CLI tool for interacting with Zabbix monitoring system"
   homepage "https://github.com/unioslo/zabbix-cli/"
-  url "https://ghproxy.com/https://github.com/unioslo/zabbix-cli/archive/2.3.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/unioslo/zabbix-cli/archive/refs/tags/2.3.1.tar.gz"
   sha256 "1d6de0486a5cd6b4fdd53c35810bd14e423ed039ed7ad0865ea08f6082309564"
   license "GPL-3.0-or-later"
   revision 4

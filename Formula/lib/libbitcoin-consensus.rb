@@ -1,7 +1,7 @@
 class LibbitcoinConsensus < Formula
   desc "Bitcoin Consensus Library (optional)"
   homepage "https://github.com/libbitcoin/libbitcoin-consensus"
-  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-consensus/archive/v3.8.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-consensus/archive/refs/tags/v3.8.0.tar.gz"
   sha256 "3f63b233a25323ff81de71a6c96455a6f5141e21cb0678a2304b36b56e771ca2"
   license "AGPL-3.0"
 
@@ -24,7 +24,7 @@ class LibbitcoinConsensus < Formula
   depends_on "pkg-config" => :build
 
   resource "secp256k1" do
-    url "https://ghproxy.com/https://github.com/libbitcoin/secp256k1/archive/v0.1.0.20.tar.gz"
+    url "https://ghproxy.com/https://github.com/libbitcoin/secp256k1/archive/refs/tags/v0.1.0.20.tar.gz"
     sha256 "61583939f1f25b92e6401e5b819e399da02562de663873df3056993b40148701"
   end
 

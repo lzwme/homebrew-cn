@@ -1,7 +1,7 @@
 class Sysstat < Formula
   desc "Performance monitoring tools for Linux"
   homepage "https://github.com/sysstat/sysstat"
-  url "https://ghproxy.com/https://github.com/sysstat/sysstat/archive/v12.7.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/sysstat/sysstat/archive/refs/tags/v12.7.4.tar.gz"
   sha256 "7a1be97b642e80b358ab4d273d0194ffa149ad208a2a927a064870340cd19d44"
   license "GPL-2.0-or-later"
   head "https://github.com/sysstat/sysstat.git", branch: "master"

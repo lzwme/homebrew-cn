@@ -1,7 +1,7 @@
 class Minisat < Formula
   desc "Minimalistic and high-performance SAT solver"
   homepage "https://github.com/stp/minisat"
-  url "https://ghproxy.com/https://github.com/stp/minisat/archive/releases/2.2.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/stp/minisat/archive/refs/tags/releases/2.2.1.tar.gz"
   sha256 "432985833596653fcd698ab439588471cc0f2437617d0df2bb191a0252ba423d"
   license "MIT"
   head "https://github.com/stp/minisat.git", branch: "master"

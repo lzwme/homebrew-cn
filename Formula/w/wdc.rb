@@ -1,7 +1,7 @@
 class Wdc < Formula
   desc "WebDAV Client provides easy and convenient to work with WebDAV-servers"
   homepage "https://cloudpolis.github.io/webdav-client-cpp"
-  url "https://ghproxy.com/https://github.com/CloudPolis/webdav-client-cpp/archive/v1.1.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/CloudPolis/webdav-client-cpp/archive/refs/tags/v1.1.5.tar.gz"
   sha256 "3c45341521da9c68328c5fa8909d838915e8a768e7652ff1bcc2fbbd46ab9f64"
   revision 1
 

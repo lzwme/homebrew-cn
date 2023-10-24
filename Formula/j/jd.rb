@@ -1,7 +1,7 @@
 class Jd < Formula
   desc "JSON diff and patch"
   homepage "https://github.com/josephburnett/jd"
-  url "https://ghproxy.com/https://github.com/josephburnett/jd/archive/v1.7.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/josephburnett/jd/archive/refs/tags/v1.7.1.tar.gz"
   sha256 "3d0b693546891bab41ca5c3be859bc760631608c9add559aa561fb751cdd1c92"
   license "MIT"
 

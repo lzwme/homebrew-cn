@@ -1,7 +1,7 @@
 class GetFlashVideos < Formula
   desc "Download or play videos from various Flash-based websites"
   homepage "https://github.com/monsieurvideo/get-flash-videos"
-  url "https://ghproxy.com/https://github.com/monsieurvideo/get-flash-videos/archive/1.25.99.03.tar.gz"
+  url "https://ghproxy.com/https://github.com/monsieurvideo/get-flash-videos/archive/refs/tags/1.25.99.03.tar.gz"
   sha256 "37267b41c7b0c240d99ed1f5e7ba04d00f98a8daff82ac9edd2b12c3bca83d73"
   license "Apache-2.0"
   revision 2

@@ -1,7 +1,7 @@
 class MypaintBrushes < Formula
   desc "Brushes used by MyPaint and other software using libmypaint"
   homepage "https://github.com/mypaint/mypaint-brushes"
-  url "https://ghproxy.com/https://github.com/mypaint/mypaint-brushes/archive/v2.0.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/mypaint/mypaint-brushes/archive/refs/tags/v2.0.2.tar.gz"
   sha256 "01032550dd817bb0f8e85d83a632ed2e50bc16e0735630839e6c508f02f800ac"
   license "CC0-1.0"
 

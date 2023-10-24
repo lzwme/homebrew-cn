@@ -1,7 +1,7 @@
 class Sbtenv < Formula
   desc "Command-line tool for managing sbt environments"
   homepage "https://github.com/sbtenv/sbtenv"
-  url "https://ghproxy.com/https://github.com/sbtenv/sbtenv/archive/version/0.0.24.tar.gz"
+  url "https://ghproxy.com/https://github.com/sbtenv/sbtenv/archive/refs/tags/version/0.0.24.tar.gz"
   sha256 "f483769e5467c718c9de72baa4eb3c679315e4f4a9ac02bb636996a63c28e3d5"
   license "MIT"
   head "https://github.com/sbtenv/sbtenv.git", branch: "master"

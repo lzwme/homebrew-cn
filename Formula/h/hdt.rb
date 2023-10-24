@@ -1,7 +1,7 @@
 class Hdt < Formula
   desc "Header Dictionary Triples (HDT) is a compression format for RDF data"
   homepage "https://github.com/rdfhdt/hdt-cpp"
-  url "https://ghproxy.com/https://github.com/rdfhdt/hdt-cpp/archive/v1.3.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/rdfhdt/hdt-cpp/archive/refs/tags/v1.3.3.tar.gz"
   sha256 "3abc8af7a0b19760654acf149f0ec85d4e9589a32c4331d3bfbe2fcd825173e6"
   license "LGPL-2.1-or-later"
 

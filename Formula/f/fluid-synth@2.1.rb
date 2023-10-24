@@ -1,7 +1,7 @@
 class FluidSynthAT21 < Formula
   desc "Real-time software synthesizer based on the SoundFont 2 specs"
   homepage "https://www.fluidsynth.org"
-  url "https://ghproxy.com/https://github.com/FluidSynth/fluidsynth/archive/v2.1.9.tar.gz"
+  url "https://ghproxy.com/https://github.com/FluidSynth/fluidsynth/archive/refs/tags/v2.1.9.tar.gz"
   sha256 "365642cc64bafe0491149ad643ef7327877f99412d5abb93f1fa54e252028484"
   license "LGPL-2.1-or-later"
   revision 1

@@ -1,7 +1,7 @@
 class Rmate < Formula
   desc "Edit files from an SSH session in TextMate"
   homepage "https://github.com/textmate/rmate"
-  url "https://ghproxy.com/https://github.com/textmate/rmate/archive/v1.5.8.tar.gz"
+  url "https://ghproxy.com/https://github.com/textmate/rmate/archive/refs/tags/v1.5.8.tar.gz"
   sha256 "40be07ae251bfa47b408eb56395dd2385d8e9ea220a19efd5145593cd8cbd89c"
   license "MIT"
   head "https://github.com/textmate/rmate.git", branch: "master"

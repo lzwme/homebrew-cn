@@ -1,7 +1,7 @@
 class Cadubi < Formula
   desc "Creative ASCII drawing utility"
   homepage "https://github.com/statico/cadubi/"
-  url "https://ghproxy.com/https://github.com/statico/cadubi/archive/v1.3.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/statico/cadubi/archive/refs/tags/v1.3.4.tar.gz"
   sha256 "624f85bb16d8b0bc392d761d1121828d09cfc79b3ded5b1220e9b4262924a1a0"
   license "MIT"
 

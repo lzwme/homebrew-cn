@@ -1,7 +1,7 @@
 class Depqbf < Formula
   desc "Solver for quantified boolean formulae (QBF)"
   homepage "https://lonsing.github.io/depqbf/"
-  url "https://ghproxy.com/https://github.com/lonsing/depqbf/archive/version-6.03.tar.gz"
+  url "https://ghproxy.com/https://github.com/lonsing/depqbf/archive/refs/tags/version-6.03.tar.gz"
   sha256 "9684bb1562bfe14559007401f52975554373546d3290a19618ee71d709bce76e"
   license "GPL-3.0-or-later"
   head "https://github.com/lonsing/depqbf.git", branch: "master"
@@ -24,7 +24,7 @@ class Depqbf < Formula
   end
 
   resource "nenofex" do
-    url "https://ghproxy.com/https://github.com/lonsing/nenofex/archive/version-1.1.tar.gz"
+    url "https://ghproxy.com/https://github.com/lonsing/nenofex/archive/refs/tags/version-1.1.tar.gz"
     sha256 "972755fd9833c9cd050bdbc5a9526e2b122a5550fda1fbb3ed3fc62912113f05"
   end
 

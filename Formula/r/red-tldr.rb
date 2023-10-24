@@ -1,7 +1,7 @@
 class RedTldr < Formula
   desc "Used to help red team staff quickly find the commands and key points"
   homepage "https://payloads.online/red-tldr/"
-  url "https://ghproxy.com/https://github.com/Rvn0xsy/red-tldr/archive/v0.4.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/Rvn0xsy/red-tldr/archive/refs/tags/v0.4.3.tar.gz"
   sha256 "3f32a438226287d80ae86509964d7767c2002952c95da03501beb882cae22d2d"
   license "MIT"
   head "https://github.com/Rvn0xsy/red-tldr.git", branch: "main"

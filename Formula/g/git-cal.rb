@@ -1,7 +1,7 @@
 class GitCal < Formula
   desc "GitHub-like contributions calendar but on the command-line"
   homepage "https://github.com/k4rthik/git-cal"
-  url "https://ghproxy.com/https://github.com/k4rthik/git-cal/archive/v0.9.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/k4rthik/git-cal/archive/refs/tags/v0.9.1.tar.gz"
   sha256 "783fa73197b349a51d90670480a750b063c97e5779a5231fe046315af0a946cd"
   license "MIT"
   revision 1

@@ -1,7 +1,7 @@
 class Staq < Formula
   desc "Full-stack quantum processing toolkit"
   homepage "https://github.com/softwareQinc/staq"
-  url "https://ghproxy.com/https://github.com/softwareQinc/staq/archive/v3.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/softwareQinc/staq/archive/refs/tags/v3.3.tar.gz"
   sha256 "2a1232474f7b7fc0153c18f49e6231e82b6f9c3d1f9ed506bbbb578972cf5067"
   license "MIT"
 

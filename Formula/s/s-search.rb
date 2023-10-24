@@ -1,7 +1,7 @@
 class SSearch < Formula
   desc "Web search from the terminal"
   homepage "https://github.com/zquestz/s"
-  url "https://ghproxy.com/https://github.com/zquestz/s/archive/v0.6.9.tar.gz"
+  url "https://ghproxy.com/https://github.com/zquestz/s/archive/refs/tags/v0.6.9.tar.gz"
   sha256 "7097264e7da0e7ac209e5be5e50f07f17593e2753607325870131af3000ccaf2"
   license "MIT"
   head "https://github.com/zquestz/s.git", branch: "master"

@@ -1,7 +1,7 @@
 class Gofumpt < Formula
   desc "Stricter gofmt"
   homepage "https://github.com/mvdan/gofumpt"
-  url "https://ghproxy.com/https://github.com/mvdan/gofumpt/archive/v0.5.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/mvdan/gofumpt/archive/refs/tags/v0.5.0.tar.gz"
   sha256 "e27f04b8b5619747ebfb955699d6895c1e4c7c5e4478507ca4e2d8b658b8b51c"
   license "BSD-3-Clause"
 

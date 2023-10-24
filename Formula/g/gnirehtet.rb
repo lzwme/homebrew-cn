@@ -1,7 +1,7 @@
 class Gnirehtet < Formula
   desc "Reverse tethering tool for Android"
   homepage "https://github.com/Genymobile/gnirehtet"
-  url "https://ghproxy.com/https://github.com/Genymobile/gnirehtet/archive/v2.5.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/Genymobile/gnirehtet/archive/refs/tags/v2.5.1.tar.gz"
   sha256 "0d41361b9ac8b3b7fa4f4a0aff933472a72886556bd3fc4659be299b546274e6"
   license "Apache-2.0"
   head "https://github.com/Genymobile/gnirehtet.git", branch: "master"

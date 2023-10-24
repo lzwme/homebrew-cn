@@ -1,7 +1,7 @@
 class Fifechan < Formula
   desc "C++ GUI library designed for games"
   homepage "https://fifengine.github.io/fifechan/"
-  url "https://ghproxy.com/https://github.com/fifengine/fifechan/archive/0.1.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/fifengine/fifechan/archive/refs/tags/0.1.5.tar.gz"
   sha256 "29be5ff4b379e2fc4f88ef7d8bc172342130dd3e77a3061f64c8a75efe4eba73"
   license "LGPL-2.1"
 

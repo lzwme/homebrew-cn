@@ -1,7 +1,7 @@
 class YarnCompletion < Formula
   desc "Bash completion for Yarn"
   homepage "https://github.com/dsifford/yarn-completion"
-  url "https://ghproxy.com/https://github.com/dsifford/yarn-completion/archive/v0.17.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/dsifford/yarn-completion/archive/refs/tags/v0.17.0.tar.gz"
   sha256 "cc9d86bd8d4c662833424f86f1f86cfa0516c0835874768d9cf84aaf79fb8b21"
   license "MIT"
 

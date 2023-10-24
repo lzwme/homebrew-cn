@@ -1,7 +1,7 @@
 class OpenCompletion < Formula
   desc "Bash completion for open"
   homepage "https://github.com/moshen/open-bash-completion"
-  url "https://ghproxy.com/https://github.com/moshen/open-bash-completion/archive/v1.0.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/moshen/open-bash-completion/archive/refs/tags/v1.0.5.tar.gz"
   sha256 "bee63ee57278de3305b26a581ae23323285a3e2af80ee75d7cfca3f92dfe3721"
   license "MIT"
   head "https://github.com/moshen/open-bash-completion.git", branch: "master"

@@ -357,6 +357,7 @@ Homebrew-homebrew-core/Formula/b/babl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/backupninja.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bacon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bacula-fd.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/badkeys.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bagit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/baidupcs-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/balena-cli.rb, Homebrew/homebrew-core, 0
@@ -5745,6 +5746,7 @@ Homebrew-homebrew-core/Formula/s/sse2neon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/ssed.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/ssh-audit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/ssh-copy-id.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/ssh-mitm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/ssh-permit-a38.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/ssh-vault.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sshfs.rb, Homebrew/homebrew-core, 1
@@ -6618,6 +6620,7 @@ Homebrew-homebrew-core/Formula/x/xdot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xdotool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xdpyinfo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xe.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/x/xeol.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xerces-c.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xfig.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xgboost.rb, Homebrew/homebrew-core, 0
@@ -6765,6 +6768,7 @@ Homebrew-homebrew-core/Formula/z/zinit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zita-convolver.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/z/zix.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zlib-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zlib.rb, Homebrew/homebrew-core, 0
@@ -7502,6 +7506,7 @@ Homebrew-homebrew-cask/Casks/c/command-pad.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/command-tab-plus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/command-x.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/commander-one.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/commandpost.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/commandq.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/composercat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/compositor.rb, Homebrew/homebrew-cask, 0
@@ -11030,6 +11035,7 @@ Homebrew-homebrew-cask/Casks/x/xquartz.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xrg.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xscope.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xscreensaver.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/x/xsplit-vcam.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xstation5.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xtool-creative-space.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xtorrent.rb, Homebrew/homebrew-cask, 0

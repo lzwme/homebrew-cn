@@ -1,7 +1,7 @@
 class Exodriver < Formula
   desc "Thin interface to LabJack devices"
   homepage "https://labjack.com/support/linux-and-mac-os-x-drivers"
-  url "https://ghproxy.com/https://github.com/labjack/exodriver/archive/v2.7.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/labjack/exodriver/archive/refs/tags/v2.7.0.tar.gz"
   sha256 "ef11760322b31f16802ec202406e780339f54bde774689b97e926778417d6c79"
   license "MIT"
   head "https://github.com/labjack/exodriver.git", branch: "master"

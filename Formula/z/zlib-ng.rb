@@ -1,7 +1,7 @@
 class ZlibNg < Formula
   desc "Zlib replacement with optimizations for next generation systems"
   homepage "https://github.com/zlib-ng/zlib-ng"
-  url "https://ghproxy.com/https://github.com/zlib-ng/zlib-ng/archive/2.1.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.1.4.tar.gz"
   sha256 "a0293475e6a44a3f6c045229fe50f69dc0eebc62a42405a51f19d46a5541e77a"
   license "Zlib"
 

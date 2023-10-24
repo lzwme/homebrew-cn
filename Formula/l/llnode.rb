@@ -1,7 +1,7 @@
 class Llnode < Formula
   desc "LLDB plugin for live/post-mortem debugging of node.js apps"
   homepage "https://github.com/nodejs/llnode"
-  url "https://ghproxy.com/https://github.com/nodejs/llnode/archive/v4.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/nodejs/llnode/archive/refs/tags/v4.0.0.tar.gz"
   sha256 "abc295c077443f823444faffb165ada4c6ca377f2b1af4c002e8a9eea0f30135"
   license "MIT"
 

@@ -1,7 +1,7 @@
 class Libosmium < Formula
   desc "Fast and flexible C++ library for working with OpenStreetMap data"
   homepage "https://osmcode.org/libosmium/"
-  url "https://ghproxy.com/https://github.com/osmcode/libosmium/archive/v2.20.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/osmcode/libosmium/archive/refs/tags/v2.20.0.tar.gz"
   sha256 "3d3e0873c6aaabb3b2ef4283896bebf233334891a7a49f4712af30ca6ed72477"
   license "BSL-1.0"
 
@@ -18,7 +18,7 @@ class Libosmium < Formula
   uses_from_macos "zlib"
 
   resource "protozero" do
-    url "https://ghproxy.com/https://github.com/mapbox/protozero/archive/v1.7.1.tar.gz"
+    url "https://ghproxy.com/https://github.com/mapbox/protozero/archive/refs/tags/v1.7.1.tar.gz"
     sha256 "27e0017d5b3ba06d646a3ec6391d5ccc8500db821be480aefd2e4ddc3de5ff99"
   end
 

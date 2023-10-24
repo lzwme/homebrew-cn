@@ -1,7 +1,7 @@
 class Flif < Formula
   desc "Free Loseless Image Format"
   homepage "https://flif.info/"
-  url "https://ghproxy.com/https://github.com/FLIF-hub/FLIF/archive/v0.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/FLIF-hub/FLIF/archive/refs/tags/v0.4.tar.gz"
   sha256 "cc98313ef0dbfef65d72bc21f730edf2a97a414f14bd73ad424368ce032fdb7f"
   license "LGPL-3.0-or-later"
   head "https://github.com/FLIF-hub/FLIF.git", branch: "master"

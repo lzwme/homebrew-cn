@@ -1,7 +1,7 @@
 class DiffSoFancy < Formula
   desc "Good-lookin' diffs with diff-highlight and more"
   homepage "https://github.com/so-fancy/diff-so-fancy"
-  url "https://ghproxy.com/https://github.com/so-fancy/diff-so-fancy/archive/v1.4.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/so-fancy/diff-so-fancy/archive/refs/tags/v1.4.4.tar.gz"
   sha256 "3eac2cfb3b1de9d14b6a712941985d6b240b7f3726c94a5e337317c7161e869d"
   license "MIT"
   head "https://github.com/so-fancy/diff-so-fancy.git", branch: "next"

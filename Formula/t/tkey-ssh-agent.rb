@@ -1,7 +1,7 @@
 class TkeySshAgent < Formula
   desc "SSH agent for use with the TKey security stick"
   homepage "https://tillitis.se/"
-  url "https://ghproxy.com/https://github.com/tillitis/tillitis-key1-apps/archive/v0.0.6.tar.gz"
+  url "https://ghproxy.com/https://github.com/tillitis/tillitis-key1-apps/archive/refs/tags/v0.0.6.tar.gz"
   sha256 "d15fc7f556548951989abf6973374f71e039028202e8cad4b70f79539da00aff"
   license "GPL-2.0-only"
 

@@ -1,7 +1,7 @@
 class Glbinding < Formula
   desc "C++ binding for the OpenGL API"
   homepage "https://github.com/cginternals/glbinding"
-  url "https://ghproxy.com/https://github.com/cginternals/glbinding/archive/v2.1.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/cginternals/glbinding/archive/refs/tags/v2.1.4.tar.gz"
   sha256 "cb5971b086c0d217b2304d31368803fd2b8c12ee0d41c280d40d7c23588f8be2"
   license "MIT"
 

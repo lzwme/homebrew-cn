@@ -1,7 +1,7 @@
 class ConsoleBridge < Formula
   desc "Robot Operating System-independent package for logging"
   homepage "https://wiki.ros.org/console_bridge/"
-  url "https://ghproxy.com/https://github.com/ros/console_bridge/archive/1.0.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/ros/console_bridge/archive/refs/tags/1.0.2.tar.gz"
   sha256 "303a619c01a9e14a3c82eb9762b8a428ef5311a6d46353872ab9a904358be4a4"
   license "BSD-3-Clause"
 

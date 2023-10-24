@@ -1,7 +1,7 @@
 class OcamlZarith < Formula
   desc "OCaml library for arbitrary-precision arithmetic"
   homepage "https://github.com/ocaml/Zarith"
-  url "https://ghproxy.com/https://github.com/ocaml/Zarith/archive/release-1.13.tar.gz"
+  url "https://ghproxy.com/https://github.com/ocaml/Zarith/archive/refs/tags/release-1.13.tar.gz"
   sha256 "a5826d33fea0103ad6e66f92583d8e075fb77976de893ffdd73ada0409b3f83b"
   license "LGPL-2.0-only"
 

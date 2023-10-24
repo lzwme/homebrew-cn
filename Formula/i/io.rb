@@ -1,7 +1,7 @@
 class Io < Formula
   desc "Small prototype-based programming language"
   homepage "http://iolanguage.com/"
-  url "https://ghproxy.com/https://github.com/IoLanguage/io/archive/2017.09.06.tar.gz"
+  url "https://ghproxy.com/https://github.com/IoLanguage/io/archive/refs/tags/2017.09.06.tar.gz"
   sha256 "9ac5cd94bbca65c989cd254be58a3a716f4e4f16480f0dc81070457aa353c217"
   license "BSD-3-Clause"
   revision 1

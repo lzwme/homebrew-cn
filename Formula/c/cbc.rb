@@ -1,7 +1,7 @@
 class Cbc < Formula
   desc "Mixed integer linear programming solver"
   homepage "https://github.com/coin-or/Cbc"
-  url "https://ghproxy.com/https://github.com/coin-or/Cbc/archive/releases/2.10.10.tar.gz"
+  url "https://ghproxy.com/https://github.com/coin-or/Cbc/archive/refs/tags/releases/2.10.10.tar.gz"
   sha256 "f394efecccc40a51bf79fba2c2af0bc92561f3e6b8b6e4c6e36d5e70986f734f"
   license "EPL-2.0"
 

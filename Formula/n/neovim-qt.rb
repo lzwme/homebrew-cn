@@ -1,7 +1,7 @@
 class NeovimQt < Formula
   desc "Neovim GUI, in Qt5"
   homepage "https://github.com/equalsraf/neovim-qt"
-  url "https://ghproxy.com/https://github.com/equalsraf/neovim-qt/archive/v0.2.18.tar.gz"
+  url "https://ghproxy.com/https://github.com/equalsraf/neovim-qt/archive/refs/tags/v0.2.18.tar.gz"
   sha256 "b1e1e019946ecb106b3aea8e35fc6e367d2efce44ca1c1599a2ccdfb35a28635"
   license "ISC"
   head "https://github.com/equalsraf/neovim-qt.git", branch: "master"

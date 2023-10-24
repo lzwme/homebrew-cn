@@ -6,7 +6,7 @@ class Ponysay < Formula
   head "https://github.com/erkin/ponysay.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/erkin/ponysay/archive/3.0.3.tar.gz"
+    url "https://ghproxy.com/https://github.com/erkin/ponysay/archive/refs/tags/3.0.3.tar.gz"
     sha256 "c382d7f299fa63667d1a4469e1ffbf10b6813dcd29e861de6be55e56dc52b28a"
 
     # upstream commit 16 Nov 2019, `fix: do not compare literal with "is not"`

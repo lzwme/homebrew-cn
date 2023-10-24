@@ -1,7 +1,7 @@
 class GitAbsorb < Formula
   desc "Automatic git commit --fixup"
   homepage "https://github.com/tummychow/git-absorb"
-  url "https://ghproxy.com/https://github.com/tummychow/git-absorb/archive/0.6.10.tar.gz"
+  url "https://ghproxy.com/https://github.com/tummychow/git-absorb/archive/refs/tags/0.6.10.tar.gz"
   sha256 "6cc58d2ae50027a212811faa065623666ccb6e8bd933e801319aaf92b164aa0a"
   license "BSD-3-Clause"
 

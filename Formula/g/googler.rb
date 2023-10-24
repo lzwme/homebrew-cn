@@ -3,7 +3,7 @@ class Googler < Formula
 
   desc "Google Search and News from the command-line"
   homepage "https://github.com/jarun/googler"
-  url "https://ghproxy.com/https://github.com/jarun/googler/archive/v4.3.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/jarun/googler/archive/refs/tags/v4.3.2.tar.gz"
   sha256 "bd59af407e9a45c8a6fcbeb720790cb9eccff21dc7e184716a60e29f14c68d54"
   license "GPL-3.0-or-later"
   revision 2

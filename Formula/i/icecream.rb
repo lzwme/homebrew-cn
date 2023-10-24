@@ -1,7 +1,7 @@
 class Icecream < Formula
   desc "Distributed compiler with a central scheduler to share build load"
   homepage "https://en.opensuse.org/Icecream"
-  url "https://ghproxy.com/https://github.com/icecc/icecream/archive/1.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/icecc/icecream/archive/refs/tags/1.4.tar.gz"
   sha256 "249dcf74f0fc477ff9735ff0bdcdfaa4c257a864c4db5255d8b25c9f4fd20b6b"
   license "GPL-2.0-or-later"
 

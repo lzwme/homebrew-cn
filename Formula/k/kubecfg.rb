@@ -1,7 +1,7 @@
 class Kubecfg < Formula
   desc "Manage complex enterprise Kubernetes environments as code"
   homepage "https://github.com/kubecfg/kubecfg"
-  url "https://ghproxy.com/https://github.com/kubecfg/kubecfg/archive/v0.34.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/kubecfg/kubecfg/archive/refs/tags/v0.34.2.tar.gz"
   sha256 "85931a3a4fa1e16973a7861a4cc70cc783973641556ed433ef7a9fb02f110f7a"
   license "Apache-2.0"
 

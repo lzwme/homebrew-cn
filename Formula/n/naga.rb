@@ -1,7 +1,7 @@
 class Naga < Formula
   desc "Terminal implementation of the Snake game"
   homepage "https://github.com/anayjoshi/naga/"
-  url "https://ghproxy.com/https://github.com/anayjoshi/naga/archive/naga-v1.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/anayjoshi/naga/archive/refs/tags/naga-v1.0.tar.gz"
   sha256 "7f56b03b34e2756b9688e120831ef4f5932cd89b477ad8b70b5bcc7c32f2f3b3"
   license "BSD-3-Clause"
 

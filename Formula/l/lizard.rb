@@ -1,7 +1,7 @@
 class Lizard < Formula
   desc "Efficient compressor with very fast decompression"
   homepage "https://github.com/inikep/lizard"
-  url "https://ghproxy.com/https://github.com/inikep/lizard/archive/v1.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/inikep/lizard/archive/refs/tags/v1.0.tar.gz"
   sha256 "6f666ed699fc15dc7fdaabfaa55787b40ac251681b50c0d8df017c671a9457e6"
   license all_of: ["BSD-2-Clause", "GPL-2.0-or-later"]
   version_scheme 1

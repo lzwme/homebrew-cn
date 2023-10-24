@@ -1,7 +1,7 @@
 class LibxdgBasedir < Formula
   desc "C implementation of the XDG Base Directory specifications"
   homepage "https://github.com/devnev/libxdg-basedir"
-  url "https://ghproxy.com/https://github.com/devnev/libxdg-basedir/archive/libxdg-basedir-1.2.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/devnev/libxdg-basedir/archive/refs/tags/libxdg-basedir-1.2.3.tar.gz"
   sha256 "ff30c60161f7043df4dcc6e7cdea8e064e382aa06c73dcc3d1885c7d2c77451d"
   license "MIT"
 

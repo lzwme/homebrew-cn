@@ -3,8 +3,8 @@ class Black < Formula
 
   desc "Python code formatter"
   homepage "https://black.readthedocs.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/2d/e0/8433441b0236b9d795ffbf5750f98144e0378b6e20401ba4d2db30b99a5c/black-23.10.0.tar.gz"
-  sha256 "31b9f87b277a68d0e99d2905edae08807c007973eaa609da5f0c62def6b7c0bd"
+  url "https://files.pythonhosted.org/packages/36/bf/a462f36723824c60dc3db10528c95656755964279a6a5c287b4f9fd0fa84/black-23.10.1.tar.gz"
+  sha256 "1f8ce316753428ff68749c65a5f7844631aa18c8679dfd3ca9dc1a289979c258"
   license "MIT"
   head "https://github.com/psf/black.git", branch: "main"
 
@@ -14,13 +14,13 @@ class Black < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "628e6cb4c8b91e32ed8f9215fc1891ea8e2df2acaccea63cd68913c9207cbf39"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d3a8ba2550bf8157158760c271ff785e1c6109b646dbad820d0f4dd95a5b0a38"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e7ecdbd40affceff5e4e85bb637a9d12db1076d7b7b766017907bab66c05fb3a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "52df1e3eb5679f5c2488050440809d6b9c21ba975d4e18da08d7000f29f07f0a"
-    sha256 cellar: :any_skip_relocation, ventura:        "0fa55b16a6e5eb04f700b458dd02e30ada19e3b4c7e85b0b04845ee2dc51c079"
-    sha256 cellar: :any_skip_relocation, monterey:       "0c50ce9d5e9cefb91f460341a4b4e0bf272b62aaa3f3c7c769b5bd7bcc85ce87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e894f0d6e3d3d1a635830861a90810353283b75e4df46bd8f13166216d1d93b8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b6cec84275d7c4c8e723eed17b9383e67d9dd772277dafbe0756d93275d49cab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eda39f9107096413af32368fcd97b7c6103498c93e2db8a1f670dcf1e0eea58d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "506f7146040c7daf0246b228c4355235af9fe9440ff2002431424d54101417fa"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9417b23112d44670f5b3409ae5291a478fd528a882d366bcfd2c8da9acea8dd4"
+    sha256 cellar: :any_skip_relocation, ventura:        "bd8bfd5dbc92551173bd4dd5b317d602d69a55e10ed8dd857f786ef8b07e65ce"
+    sha256 cellar: :any_skip_relocation, monterey:       "9cd8e30290debeba842f03aaeacf2d8b724f550583211d9ee553f503109fa998"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8a9397030beccea90e62c09a0800d7d1e62e9446fa4145ca749690fdbf31c66"
   end
 
   depends_on "python-packaging"
@@ -47,8 +47,8 @@ class Black < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
+    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
   end
 
   resource "click" do

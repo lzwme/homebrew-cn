@@ -1,7 +1,7 @@
 class Yh < Formula
   desc "YAML syntax highlighter to bring colours where only jq could"
   homepage "https://github.com/andreazorzetto/yh"
-  url "https://ghproxy.com/https://github.com/andreazorzetto/yh/archive/v0.4.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/andreazorzetto/yh/archive/refs/tags/v0.4.0.tar.gz"
   sha256 "78ef799c500c00164ea05aacafc5c34dccc565e364285f05636c920c2c356d73"
   license "Apache-2.0"
   head "https://github.com/andreazorzetto/yh.git", branch: "master"

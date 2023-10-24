@@ -1,7 +1,7 @@
 class Mbelib < Formula
   desc "P25 Phase 1 and ProVoice vocoder"
   homepage "https://github.com/szechyjs/mbelib"
-  url "https://ghproxy.com/https://github.com/szechyjs/mbelib/archive/v1.3.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/szechyjs/mbelib/archive/refs/tags/v1.3.0.tar.gz"
   sha256 "5a2d5ca37cef3b6deddd5ce8c73918f27936c50eb0e63b27e4b4fc493310518d"
   license "ISC"
   head "https://github.com/szechyjs/mbelib.git", branch: "master"

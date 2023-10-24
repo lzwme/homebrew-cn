@@ -1,7 +1,7 @@
 class Ngrep < Formula
   desc "Network grep"
   homepage "https://github.com/jpr5/ngrep"
-  url "https://ghproxy.com/https://github.com/jpr5/ngrep/archive/V1_47.tar.gz"
+  url "https://ghproxy.com/https://github.com/jpr5/ngrep/archive/refs/tags/V1_47.tar.gz"
   sha256 "dc4dbe20991cc36bac5e97e99475e2a1522fd88c59ee2e08f813432c04c5fff3"
   license :cannot_represent # Described as 'BSD with advertising' here: https://src.fedoraproject.org/rpms/ngrep/blob/rawhide/f/ngrep.spec#_8
 

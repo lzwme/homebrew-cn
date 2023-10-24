@@ -1,7 +1,7 @@
 class Povray < Formula
   desc "Persistence Of Vision RAYtracer (POVRAY)"
   homepage "https://www.povray.org/"
-  url "https://ghproxy.com/https://github.com/POV-Ray/povray/archive/v3.7.0.10.tar.gz"
+  url "https://ghproxy.com/https://github.com/POV-Ray/povray/archive/refs/tags/v3.7.0.10.tar.gz"
   sha256 "7bee83d9296b98b7956eb94210cf30aa5c1bbeada8ef6b93bb52228bbc83abff"
   license "AGPL-3.0-or-later"
   revision 8

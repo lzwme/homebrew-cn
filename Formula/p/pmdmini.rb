@@ -1,7 +1,7 @@
 class Pmdmini < Formula
   desc "Plays music in PC-88/98 PMD chiptune format"
   homepage "https://github.com/mistydemeo/pmdmini"
-  url "https://ghproxy.com/https://github.com/mistydemeo/pmdmini/archive/v2.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/mistydemeo/pmdmini/archive/refs/tags/v2.0.0.tar.gz"
   sha256 "e3288dcf356e83ef4ad48cde44fcb703ca9ce478b9fcac1b44bd9d2d84bf2ba3"
   license "GPL-2.0-or-later"
 

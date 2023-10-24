@@ -3,7 +3,7 @@ class GitWhenMerged < Formula
 
   desc "Find where a commit was merged in git"
   homepage "https://github.com/mhagger/git-when-merged"
-  url "https://ghproxy.com/https://github.com/mhagger/git-when-merged/archive/v1.2.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/mhagger/git-when-merged/archive/refs/tags/v1.2.1.tar.gz"
   sha256 "46ba5076981862ac2ad0fa0a94b9a5401ef6b5c5b0506c6e306b76e5798e1f58"
   license "GPL-2.0-only"
   head "https://github.com/mhagger/git-when-merged.git", branch: "master"

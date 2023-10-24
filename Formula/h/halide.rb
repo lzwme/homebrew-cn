@@ -2,7 +2,7 @@ class Halide < Formula
   desc "Language for fast, portable data-parallel computation"
   homepage "https://halide-lang.org"
   # TODO: Check if we can use unversioned `llvm` at version bump.
-  url "https://ghproxy.com/https://github.com/halide/Halide/archive/v16.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/halide/Halide/archive/refs/tags/v16.0.0.tar.gz"
   sha256 "a0cccee762681ea697124b8172dd65595856d0fa5bd4d1af7933046b4a085b04"
   license "MIT"
   revision 1

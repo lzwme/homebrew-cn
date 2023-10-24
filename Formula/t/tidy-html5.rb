@@ -1,7 +1,7 @@
 class TidyHtml5 < Formula
   desc "Granddaddy of HTML tools, with support for modern standards"
   homepage "https://www.html-tidy.org/"
-  url "https://ghproxy.com/https://github.com/htacg/tidy-html5/archive/5.8.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/htacg/tidy-html5/archive/refs/tags/5.8.0.tar.gz"
   sha256 "59c86d5b2e452f63c5cdb29c866a12a4c55b1741d7025cf2f3ce0cde99b0660e"
   license "Zlib"
   head "https://github.com/htacg/tidy-html5.git", branch: "next"

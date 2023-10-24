@@ -1,7 +1,7 @@
 class ChrubyFish < Formula
   desc "Thin wrapper around chruby to make it work with the Fish shell"
   homepage "https://github.com/JeanMertz/chruby-fish#readme"
-  url "https://ghproxy.com/https://github.com/JeanMertz/chruby-fish/archive/v1.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/JeanMertz/chruby-fish/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "db1023255fa55c9a01b06404cd394cccf790d42985cf85706211e5a0dda4fd9f"
   license "MIT"
   head "https://github.com/JeanMertz/chruby-fish.git", branch: "master"

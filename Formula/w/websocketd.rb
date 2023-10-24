@@ -1,7 +1,7 @@
 class Websocketd < Formula
   desc "WebSockets the Unix way"
   homepage "http://websocketd.com"
-  url "https://ghproxy.com/https://github.com/joewalnes/websocketd/archive/v0.4.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/joewalnes/websocketd/archive/refs/tags/v0.4.1.tar.gz"
   sha256 "6b8fe0fad586d794e002340ee597059b2cfc734ba7579933263aef4743138fe5"
   license "BSD-2-Clause"
 

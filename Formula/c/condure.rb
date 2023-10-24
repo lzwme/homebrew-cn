@@ -3,7 +3,7 @@ class Condure < Formula
 
   desc "HTTP/WebSocket connection manager"
   homepage "https://github.com/fanout/condure"
-  url "https://ghproxy.com/https://github.com/fanout/condure/archive/1.10.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/fanout/condure/archive/refs/tags/1.10.0.tar.gz"
   sha256 "abe4d83ae2494a8eabd036f6f455fb4d8ebc71b29d8d50a0b35a7a59f8e0ea60"
   license "Apache-2.0"
 

@@ -1,7 +1,7 @@
 class Liboqs < Formula
   desc "Library for quantum-safe cryptography"
   homepage "https://openquantumsafe.org/"
-  url "https://ghproxy.com/https://github.com/open-quantum-safe/liboqs/archive/0.9.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/open-quantum-safe/liboqs/archive/refs/tags/0.9.0.tar.gz"
   sha256 "e6940b4d6dd631e88a2e42f137d12dc59babbd5073751846cabfb4221ece7ad0"
   license "MIT"
 

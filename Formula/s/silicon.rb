@@ -1,7 +1,7 @@
 class Silicon < Formula
   desc "Create beautiful image of your source code"
   homepage "https://github.com/Aloxaf/silicon/"
-  url "https://ghproxy.com/https://github.com/Aloxaf/silicon/archive/v0.5.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/Aloxaf/silicon/archive/refs/tags/v0.5.1.tar.gz"
   sha256 "784a6f99001f2000422b676e637fe83a5dc27f5fc55ad33e227c882ce20e6439"
   license "MIT"
 

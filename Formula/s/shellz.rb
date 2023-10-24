@@ -1,7 +1,7 @@
 class Shellz < Formula
   desc "Small utility to track and control custom shellz"
   homepage "https://github.com/evilsocket/shellz"
-  url "https://ghproxy.com/https://github.com/evilsocket/shellz/archive/v1.6.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/evilsocket/shellz/archive/refs/tags/v1.6.0.tar.gz"
   sha256 "3a89e3d573563a0c2ccb1831ff41fc0204c8b4efb011c10108ab98451a309b1c"
   license "GPL-3.0-only"
 

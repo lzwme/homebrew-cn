@@ -1,7 +1,7 @@
 class Terrahelp < Formula
   desc "Tool providing extra functionality for Terraform"
   homepage "https://github.com/opencredo/terrahelp"
-  url "https://ghproxy.com/https://github.com/opencredo/terrahelp/archive/v0.7.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/opencredo/terrahelp/archive/refs/tags/v0.7.5.tar.gz"
   sha256 "bfcffdf06e1db075872a6283d1f1cc6858b8139bf10dd480969b419aa6fc01f7"
   license "Apache-2.0"
   head "https://github.com/opencredo/terrahelp.git", branch: "main"

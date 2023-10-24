@@ -1,7 +1,7 @@
 class Globjects < Formula
   desc "C++ library strictly wrapping OpenGL objects"
   homepage "https://github.com/cginternals/globjects"
-  url "https://ghproxy.com/https://github.com/cginternals/globjects/archive/v1.1.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/cginternals/globjects/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "68fa218c1478c09b555e44f2209a066b28be025312e0bab6e3a0b142a01ebbc6"
   license "MIT"
   head "https://github.com/cginternals/globjects.git", branch: "master"

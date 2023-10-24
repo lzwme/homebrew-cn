@@ -1,7 +1,7 @@
 class MathComp < Formula
   desc "Mathematical Components for the Coq proof assistant"
   homepage "https://math-comp.github.io/math-comp/"
-  url "https://ghproxy.com/https://github.com/math-comp/math-comp/archive/mathcomp-1.17.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/math-comp/math-comp/archive/refs/tags/mathcomp-1.17.0.tar.gz"
   sha256 "1779bcdac5d23d90997627364a5943ef4883c6eb54d67ddbb1dfbe6b7795a188"
   license "CECILL-B"
   revision 1

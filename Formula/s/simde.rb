@@ -1,7 +1,7 @@
 class Simde < Formula
   desc "Implementations of SIMD intrinsics for systems which don't natively support them"
   homepage "https://github.com/simd-everywhere/simde"
-  url "https://ghproxy.com/https://github.com/simd-everywhere/simde/archive/v0.7.6.tar.gz"
+  url "https://ghproxy.com/https://github.com/simd-everywhere/simde/archive/refs/tags/v0.7.6.tar.gz"
   sha256 "c63e6c61392e324728da1c7e5de308cb31410908993a769594f5e21ff8de962b"
   license "MIT"
   head "https://github.com/simd-everywhere/simde.git", branch: "master"

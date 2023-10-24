@@ -1,7 +1,7 @@
 class RbenvBundlerRubyVersion < Formula
   desc "Pick a ruby version from bundler's Gemfile"
   homepage "https://github.com/aripollak/rbenv-bundler-ruby-version"
-  url "https://ghproxy.com/https://github.com/aripollak/rbenv-bundler-ruby-version/archive/v1.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/aripollak/rbenv-bundler-ruby-version/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "96c6b7eb191d436142fef0bb8c28071d54aca3e1a10ca01a525d1066699b03f2"
   license "Unlicense"
   revision 1

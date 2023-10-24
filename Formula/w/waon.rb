@@ -1,7 +1,7 @@
 class Waon < Formula
   desc "Wave-to-notes transcriber"
   homepage "https://kichiki.github.io/WaoN/"
-  url "https://ghproxy.com/https://github.com/kichiki/WaoN/archive/v0.11.tar.gz"
+  url "https://ghproxy.com/https://github.com/kichiki/WaoN/archive/refs/tags/v0.11.tar.gz"
   sha256 "75d5c1721632afee55a54bcbba1a444e53b03f4224b03da29317e98aa223c30b"
   license "GPL-2.0-or-later"
 

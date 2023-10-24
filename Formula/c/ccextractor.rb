@@ -1,7 +1,7 @@
 class Ccextractor < Formula
   desc "Free, GPL licensed closed caption tool"
   homepage "https://www.ccextractor.org/"
-  url "https://ghproxy.com/https://github.com/CCExtractor/ccextractor/archive/v0.94.tar.gz"
+  url "https://ghproxy.com/https://github.com/CCExtractor/ccextractor/archive/refs/tags/v0.94.tar.gz"
   sha256 "9c7be386257c69b5d8cd9d7466dbf20e3a45cea950cc8ca7486a956c3be54a42"
   license "GPL-2.0-only"
   revision 1

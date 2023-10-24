@@ -4,11 +4,11 @@ class GitFlowAvh < Formula
   license "BSD-2-Clause"
 
   stable do
-    url "https://ghproxy.com/https://github.com/petervanderdoes/gitflow-avh/archive/1.12.3.tar.gz"
+    url "https://ghproxy.com/https://github.com/petervanderdoes/gitflow-avh/archive/refs/tags/1.12.3.tar.gz"
     sha256 "54e9fd81aa1aa8215c865503dc6377da205653c784d6c97baad3dafd20728e06"
 
     resource "completion" do
-      url "https://ghproxy.com/https://github.com/petervanderdoes/git-flow-completion/archive/0.6.0.tar.gz"
+      url "https://ghproxy.com/https://github.com/petervanderdoes/git-flow-completion/archive/refs/tags/0.6.0.tar.gz"
       sha256 "b1b78b785aa2c06f81cc29fcf03a7dfc451ad482de67ca0d89cdb0f941f5594b"
     end
   end

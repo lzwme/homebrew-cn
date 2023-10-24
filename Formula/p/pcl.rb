@@ -1,7 +1,7 @@
 class Pcl < Formula
   desc "Library for 2D/3D image and point cloud processing"
   homepage "https://pointclouds.org/"
-  url "https://ghproxy.com/https://github.com/PointCloudLibrary/pcl/archive/pcl-1.13.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/PointCloudLibrary/pcl/archive/refs/tags/pcl-1.13.1.tar.gz"
   sha256 "8ab98a9db371d822de0859084a375a74bdc7f31c96d674147710cf4101b79621"
   license "BSD-3-Clause"
   revision 3

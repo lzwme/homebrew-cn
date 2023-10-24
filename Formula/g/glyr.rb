@@ -1,7 +1,7 @@
 class Glyr < Formula
   desc "Music related metadata search engine with command-line interface and C API"
   homepage "https://github.com/sahib/glyr"
-  url "https://ghproxy.com/https://github.com/sahib/glyr/archive/1.0.10.tar.gz"
+  url "https://ghproxy.com/https://github.com/sahib/glyr/archive/refs/tags/1.0.10.tar.gz"
   sha256 "77e8da60221c8d27612e4a36482069f26f8ed74a1b2768ebc373c8144ca806e8"
   license "LGPL-3.0-or-later"
   revision 2

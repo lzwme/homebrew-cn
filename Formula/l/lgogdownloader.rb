@@ -1,10 +1,9 @@
 class Lgogdownloader < Formula
   desc "Unofficial downloader for GOG.com games"
   homepage "https://sites.google.com/site/gogdownloader/"
-  url "https://ghproxy.com/https://github.com/Sude-/lgogdownloader/releases/download/v3.11/lgogdownloader-3.11.tar.gz"
-  sha256 "d8d015cce6e002876305517367dc006c332e4d492263173b58bfe5a94b057b09"
+  url "https://ghproxy.com/https://github.com/Sude-/lgogdownloader/releases/download/v3.12/lgogdownloader-3.12.tar.gz"
+  sha256 "bf3a16c1b2ff09152f9ac52ea9b52dfc0afae799ed1b370913149cec87154529"
   license "WTFPL"
-  revision 3
   head "https://github.com/Sude-/lgogdownloader.git", branch: "master"
 
   livecheck do
@@ -13,13 +12,13 @@ class Lgogdownloader < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c9a814578f4633c887af74d794371311256ec1af78c1673d4c73569059a017ae"
-    sha256 cellar: :any,                 arm64_ventura:  "f4146e80d0cfe394b7b141029ae75f95ccbe50ddd924097ca0faf0b5b2b9ceb2"
-    sha256 cellar: :any,                 arm64_monterey: "4bd6fa1fb5527eb8eb5a7d48a61641f33f94d3489d5669b55c82c5e621cedd44"
-    sha256 cellar: :any,                 sonoma:         "7d470133cdd8be28a3c73c762fbcf444a412602f0f2d32ec3187e4995c774699"
-    sha256 cellar: :any,                 ventura:        "9472a37f1e07d124b97260d30f92ae4788602918e72793fd32d63ef7b57bfedd"
-    sha256 cellar: :any,                 monterey:       "9b46782875afd73e5c80a42df7ec82a161a4784b476092a3fd1f929057593343"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac9f56cb52313da4298b69f83b14632bde16a3db531a7be6d5f2ecf39fdcb55e"
+    sha256 cellar: :any,                 arm64_sonoma:   "97023f97d4d5ed35f0539c7e744d54558befe7e7dfeb37e5a2161d6e77a99e9e"
+    sha256 cellar: :any,                 arm64_ventura:  "1e7dbdea45ebc15b3beeee679e36b011fcb783844168805f12c25f0ef6ecfc82"
+    sha256 cellar: :any,                 arm64_monterey: "992dca40e5cd78f3bd5b1305ee3cea3fcceae07b41f2a31636bba22051af6262"
+    sha256 cellar: :any,                 sonoma:         "5a5b6d8ba49defb1df309931cd8caf3e3564f709965beb4e62f24dd9bb0f877d"
+    sha256 cellar: :any,                 ventura:        "d97855706a9f0c9742630f645b091e561c8aa37305932cb1f95d49a73ae73184"
+    sha256 cellar: :any,                 monterey:       "3a0bee78906b6c6d6896290d4fc7c92f355b97bb22337a583ca81c525ee7ce08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1199cade4bb886e13e8f753f27ad2300621fc3eca162f35c7701c195f120656c"
   end
 
   depends_on "cmake" => :build

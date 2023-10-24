@@ -1,7 +1,7 @@
 class FcitxRemoteForOsx < Formula
   desc "Handle input method in command-line"
   homepage "https://github.com/xcodebuild/fcitx-remote-for-osx"
-  url "https://ghproxy.com/https://github.com/xcodebuild/fcitx-remote-for-osx/archive/0.4.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/xcodebuild/fcitx-remote-for-osx/archive/refs/tags/0.4.0.tar.gz"
   sha256 "453c99a0c2e227c29e2db640c592b657342a9294a3386d1810fd4c9237deeaae"
   license "GPL-3.0-or-later"
 

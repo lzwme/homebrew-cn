@@ -1,7 +1,7 @@
 class GitTest < Formula
   desc "Run tests on each distinct tree in a revision list"
   homepage "https://github.com/spotify/git-test"
-  url "https://ghproxy.com/https://github.com/spotify/git-test/archive/v1.0.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/spotify/git-test/archive/refs/tags/v1.0.4.tar.gz"
   sha256 "7c2331c8dc3c815e440ffa1a4dc7a9ff8a28a0a8cbfd195282f53c3e4cb2ee00"
   license "Apache-2.0"
 

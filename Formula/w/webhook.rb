@@ -1,7 +1,7 @@
 class Webhook < Formula
   desc "Lightweight, configurable incoming webhook server"
   homepage "https://github.com/adnanh/webhook"
-  url "https://ghproxy.com/https://github.com/adnanh/webhook/archive/2.8.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/adnanh/webhook/archive/refs/tags/2.8.1.tar.gz"
   sha256 "a1e3eb2231e5631ebb374b76a79c3bac9cbdc7010974395e2d5e4e2e62ffd187"
   license "MIT"
   head "https://github.com/adnanh/webhook.git", branch: "master"

@@ -5,7 +5,7 @@ class Tmate < Formula
   head "https://github.com/tmate-io/tmate.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/tmate-io/tmate/archive/2.4.0.tar.gz"
+    url "https://ghproxy.com/https://github.com/tmate-io/tmate/archive/refs/tags/2.4.0.tar.gz"
     sha256 "62b61eb12ab394012c861f6b48ba0bc04ac8765abca13bdde5a4d9105cb16138"
 
     # Fix finding `msgpack`

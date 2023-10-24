@@ -1,7 +1,7 @@
 class CodeMinimap < Formula
   desc "High performance code minimap generator"
   homepage "https://github.com/wfxr/code-minimap"
-  url "https://ghproxy.com/https://github.com/wfxr/code-minimap/archive/v0.6.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/wfxr/code-minimap/archive/refs/tags/v0.6.4.tar.gz"
   sha256 "4e2f15e4a0f7bd31e33f1c423e3120318e13de1b6800ba673037e38498b3a423"
   license any_of: ["Apache-2.0", "MIT"]
 

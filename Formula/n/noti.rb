@@ -1,7 +1,7 @@
 class Noti < Formula
   desc "Trigger notifications when a process completes"
   homepage "https://github.com/variadico/noti"
-  url "https://ghproxy.com/https://github.com/variadico/noti/archive/3.7.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/variadico/noti/archive/refs/tags/3.7.0.tar.gz"
   sha256 "f970a4dd242e6b58edf51320aa237bb20d689bbc8fd0f7d0db5aa1980a2dc269"
   license "MIT"
 

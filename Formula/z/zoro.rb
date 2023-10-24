@@ -1,7 +1,7 @@
 class Zoro < Formula
   desc "Expose local server to external network"
   homepage "https://github.com/txthinking/zoro"
-  url "https://ghproxy.com/https://github.com/txthinking/zoro/archive/v20211230.tar.gz"
+  url "https://ghproxy.com/https://github.com/txthinking/zoro/archive/refs/tags/v20211230.tar.gz"
   sha256 "5e78704f4d955cc4fd6dcc3395392e52516f00296cb65454f6959d4b7b54e319"
   license "GPL-3.0-only"
 

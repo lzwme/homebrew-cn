@@ -3,7 +3,7 @@ class Q < Formula
 
   desc "Run SQL directly on CSV or TSV files"
   homepage "https://harelba.github.io/q/"
-  url "https://ghproxy.com/https://github.com/harelba/q/archive/2.0.20.tar.gz"
+  url "https://ghproxy.com/https://github.com/harelba/q/archive/refs/tags/2.0.20.tar.gz"
   sha256 "46793aef623aac3700856c699cc04810b7a53533f829318729cee900c499a7e1"
   license "GPL-3.0-or-later"
   head "https://github.com/harelba/q.git", branch: "master"

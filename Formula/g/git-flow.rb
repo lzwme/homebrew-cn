@@ -11,7 +11,7 @@ class GitFlow < Formula
         revision: "1ffb6b1091f05466d3cd27f2da9c532a38586ed5"
 
     resource "completion" do
-      url "https://ghproxy.com/https://github.com/bobthecow/git-flow-completion/archive/0.4.2.2.tar.gz"
+      url "https://ghproxy.com/https://github.com/bobthecow/git-flow-completion/archive/refs/tags/0.4.2.2.tar.gz"
       sha256 "1e82d039596c0e73bfc8c59d945ded34e4fce777d9b9bb45c3586ee539048ab9"
     end
   end

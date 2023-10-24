@@ -1,7 +1,7 @@
 class Cli53 < Formula
   desc "Command-line tool for Amazon Route 53"
   homepage "https://github.com/barnybug/cli53"
-  url "https://ghproxy.com/https://github.com/barnybug/cli53/archive/0.8.22.tar.gz"
+  url "https://ghproxy.com/https://github.com/barnybug/cli53/archive/refs/tags/0.8.22.tar.gz"
   sha256 "5acf576662cf8cb01ecbe027dfc3531e19bd03c1cd22425125e2a0a986273a7a"
   license "MIT"
 

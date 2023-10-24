@@ -4,7 +4,7 @@ class Minetest < Formula
   license "LGPL-2.1-or-later"
 
   stable do
-    url "https://ghproxy.com/https://github.com/minetest/minetest/archive/5.7.0.tar.gz"
+    url "https://ghproxy.com/https://github.com/minetest/minetest/archive/refs/tags/5.7.0.tar.gz"
     sha256 "0cd0fd48a97f76e337a2e1284599a054f8f92906a84a4ef2122ed321e1b75fa7"
 
     resource "irrlichtmt" do

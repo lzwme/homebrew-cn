@@ -1,7 +1,7 @@
 class Scrcpy < Formula
   desc "Display and control your Android device"
   homepage "https://github.com/Genymobile/scrcpy"
-  url "https://ghproxy.com/https://github.com/Genymobile/scrcpy/archive/v2.1.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/Genymobile/scrcpy/archive/refs/tags/v2.1.1.tar.gz"
   sha256 "6f3d055159cb125eabe940a901bef8a69e14e2c25f0e47554f846e7f26a36c4d"
   license "Apache-2.0"
 

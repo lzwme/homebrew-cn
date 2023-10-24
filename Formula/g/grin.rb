@@ -2,7 +2,7 @@ class Grin < Formula
   desc "Minimal implementation of the Mimblewimble protocol"
   homepage "https://grin.mw/"
   # TODO: remove the `cargo update` line when this is next updated (5.2.x).
-  url "https://ghproxy.com/https://github.com/mimblewimble/grin/archive/v5.1.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/mimblewimble/grin/archive/refs/tags/v5.1.2.tar.gz"
   sha256 "a4856335d88630e742b75e877f1217d7c9180b89f030d2e1d1c780c0f8cc475c"
   license "Apache-2.0"
 

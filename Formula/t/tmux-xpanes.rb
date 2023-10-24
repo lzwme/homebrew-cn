@@ -1,7 +1,7 @@
 class TmuxXpanes < Formula
   desc "Ultimate terminal divider powered by tmux"
   homepage "https://github.com/greymd/tmux-xpanes"
-  url "https://ghproxy.com/https://github.com/greymd/tmux-xpanes/archive/v4.1.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/greymd/tmux-xpanes/archive/refs/tags/v4.1.4.tar.gz"
   sha256 "617dc90c2c9922bf05e4e9e465b009a0e87fd7931cb5fcf448408cf9ee64c02f"
   license "MIT"
 

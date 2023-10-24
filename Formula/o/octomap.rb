@@ -1,7 +1,7 @@
 class Octomap < Formula
   desc "Efficient probabilistic 3D mapping framework based on octrees"
   homepage "https://octomap.github.io/"
-  url "https://ghproxy.com/https://github.com/OctoMap/octomap/archive/v1.9.8.tar.gz"
+  url "https://ghproxy.com/https://github.com/OctoMap/octomap/archive/refs/tags/v1.9.8.tar.gz"
   sha256 "417af6da4e855e9a83b93458aa98b01a2c88f880088baad2b59d323ce162586e"
   license "BSD-3-Clause"
 

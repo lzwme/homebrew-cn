@@ -1,7 +1,7 @@
 class CloudflareWrangler < Formula
   desc "CLI tool for Cloudflare Workers"
   homepage "https://github.com/cloudflare/wrangler-legacy"
-  url "https://ghproxy.com/https://github.com/cloudflare/wrangler-legacy/archive/v1.21.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/cloudflare/wrangler-legacy/archive/refs/tags/v1.21.0.tar.gz"
   sha256 "b3fb6b896c20657625777fee2a4199d24c9fc789f3979e950afc50c7cffb4620"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/cloudflare/wrangler-legacy.git", branch: "master"

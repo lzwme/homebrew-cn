@@ -1,7 +1,7 @@
 class Jack < Formula
   desc "Audio Connection Kit"
   homepage "https://jackaudio.org/"
-  url "https://ghproxy.com/https://github.com/jackaudio/jack2/archive/v1.9.22.tar.gz"
+  url "https://ghproxy.com/https://github.com/jackaudio/jack2/archive/refs/tags/v1.9.22.tar.gz"
   sha256 "1e42b9fc4ad7db7befd414d45ab2f8a159c0b30fcd6eee452be662298766a849"
   license "GPL-2.0-or-later"
 

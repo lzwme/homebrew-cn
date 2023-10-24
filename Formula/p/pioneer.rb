@@ -1,7 +1,7 @@
 class Pioneer < Formula
   desc "Game of lonely space adventure"
   homepage "https://pioneerspacesim.net/"
-  url "https://ghproxy.com/https://github.com/pioneerspacesim/pioneer/archive/20230203.tar.gz"
+  url "https://ghproxy.com/https://github.com/pioneerspacesim/pioneer/archive/refs/tags/20230203.tar.gz"
   sha256 "80eea94e0f7e4d8e6a0c4629bdfb89201f82aae2f59ee7a1f7a487eeeccf27c7"
   license "GPL-3.0-only"
   head "https://github.com/pioneerspacesim/pioneer.git", branch: "master"

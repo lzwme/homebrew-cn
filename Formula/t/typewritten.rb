@@ -1,7 +1,7 @@
 class Typewritten < Formula
   desc "Minimal zsh prompt"
   homepage "https://typewritten.dev"
-  url "https://ghproxy.com/https://github.com/reobin/typewritten/archive/v1.5.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/reobin/typewritten/archive/refs/tags/v1.5.1.tar.gz"
   sha256 "db9165ea4490941d65bfa6d7d74ba0312e1667f5bbe712922a6d384bb5166aa6"
   license "MIT"
   head "https://github.com/reobin/typewritten.git", branch: "main"

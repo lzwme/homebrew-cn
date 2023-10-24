@@ -1,7 +1,7 @@
 class Pelikan < Formula
   desc "Production-ready cache services"
   homepage "https://twitter.github.io/pelikan"
-  url "https://ghproxy.com/https://github.com/twitter/pelikan/archive/0.1.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/twitter/pelikan/archive/refs/tags/0.1.2.tar.gz"
   sha256 "c105fdab8306f10c1dfa660b4e958ff6f381a5099eabcb15013ba42e4635f824"
   license "Apache-2.0"
   head "https://github.com/twitter/pelikan.git", branch: "master"

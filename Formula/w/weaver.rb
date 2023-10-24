@@ -1,7 +1,7 @@
 class Weaver < Formula
   desc "Command-line tool for Weaver"
   homepage "https://github.com/scribd/Weaver"
-  url "https://ghproxy.com/https://github.com/scribd/Weaver/archive/1.1.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/scribd/Weaver/archive/refs/tags/1.1.5.tar.gz"
   sha256 "746b0506fdae675bfa0ef0353f38f1ab5ac6ba465bd17f85cb7b9561fb4e1da1"
   license "MIT"
 

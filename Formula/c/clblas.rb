@@ -1,7 +1,7 @@
 class Clblas < Formula
   desc "Library containing BLAS functions written in OpenCL"
   homepage "https://github.com/clMathLibraries/clBLAS"
-  url "https://ghproxy.com/https://github.com/clMathLibraries/clBLAS/archive/v2.12.tar.gz"
+  url "https://ghproxy.com/https://github.com/clMathLibraries/clBLAS/archive/refs/tags/v2.12.tar.gz"
   sha256 "7269c7cb06a43c5e96772010eba032e6d54e72a3abff41f16d765a5e524297a9"
   license "Apache-2.0"
   revision 1

@@ -1,7 +1,7 @@
 class ZshYouShouldUse < Formula
   desc "ZSH plugin that reminds you to use existing aliases for commands you just typed"
   homepage "https://github.com/MichaelAquilina/zsh-you-should-use"
-  url "https://ghproxy.com/https://github.com/MichaelAquilina/zsh-you-should-use/archive/1.7.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/MichaelAquilina/zsh-you-should-use/archive/refs/tags/1.7.3.tar.gz"
   sha256 "db4486cd12974332ec858d446aff9393dae6be430d425a56d7036d2ce4edeb9e"
   license "GPL-3.0-or-later"
 

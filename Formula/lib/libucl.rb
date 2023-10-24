@@ -1,7 +1,7 @@
 class Libucl < Formula
   desc "Universal configuration library parser"
   homepage "https://github.com/vstakhov/libucl"
-  url "https://ghproxy.com/https://github.com/vstakhov/libucl/archive/0.8.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/vstakhov/libucl/archive/refs/tags/0.8.2.tar.gz"
   sha256 "d95a0e2151cc167a0f3e51864fea4e8977a0f4c473faa805269a347f7fb4e165"
   license "BSD-2-Clause"
 

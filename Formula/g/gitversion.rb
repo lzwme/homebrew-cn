@@ -2,7 +2,7 @@ class Gitversion < Formula
   desc "Easy semantic versioning for projects using Git"
   homepage "https://gitversion.net"
   # TODO: Switch `dotnet@6` to `dotnet` with v6 release
-  url "https://ghproxy.com/https://github.com/GitTools/GitVersion/archive/5.12.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/GitTools/GitVersion/archive/refs/tags/5.12.0.tar.gz"
   sha256 "fe2ecbd2d63a4458f19eb9f0ee6853b5041e8b2f6d7c75b0fa606be2d1a81476"
   license "MIT"
 

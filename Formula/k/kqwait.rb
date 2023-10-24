@@ -1,7 +1,7 @@
 class Kqwait < Formula
   desc "Wait for events on files or directories on macOS"
   homepage "https://github.com/sschober/kqwait"
-  url "https://ghproxy.com/https://github.com/sschober/kqwait/archive/kqwait-v1.0.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/sschober/kqwait/archive/refs/tags/kqwait-v1.0.3.tar.gz"
   sha256 "878560936d473f203c0ccb3d42eadccfb50cff15e6f15a59061e73704474c531"
   license "BSD-2-Clause"
   head "https://github.com/sschober/kqwait.git", branch: "master"

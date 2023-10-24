@@ -1,7 +1,7 @@
 class Libmowgli < Formula
   desc "Core framework for Atheme applications"
   homepage "https://github.com/atheme/libmowgli-2"
-  url "https://ghproxy.com/https://github.com/atheme/libmowgli-2/archive/v2.1.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/atheme/libmowgli-2/archive/refs/tags/v2.1.3.tar.gz"
   sha256 "b7faab2fb9f46366a52b51443054a2ed4ecdd04774c65754bf807c5e9bdda477"
   license "ISC"
   revision 1

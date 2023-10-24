@@ -1,7 +1,7 @@
 class Chamber < Formula
   desc "CLI for managing secrets through AWS SSM Parameter Store"
   homepage "https://github.com/segmentio/chamber"
-  url "https://ghproxy.com/https://github.com/segmentio/chamber/archive/v2.13.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/segmentio/chamber/archive/refs/tags/v2.13.4.tar.gz"
   sha256 "0ff3bd73f959caad29638545da59146c0fca740c22c7d4e064c09d695e873412"
   license "MIT"
   head "https://github.com/segmentio/chamber.git", branch: "master"

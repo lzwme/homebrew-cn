@@ -1,7 +1,7 @@
 class Eless < Formula
   desc "Better `less` using Emacs view-mode and Bash"
   homepage "https://eless.scripter.co/"
-  url "https://ghproxy.com/https://github.com/kaushalmodi/eless/archive/v0.7.tar.gz"
+  url "https://ghproxy.com/https://github.com/kaushalmodi/eless/archive/refs/tags/v0.7.tar.gz"
   sha256 "de7a7891a20a5e7f25c0b5df812edaea87ab0d3336d41821a24e2d248aaf4abc"
   license "MIT"
 

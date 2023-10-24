@@ -5,7 +5,7 @@ class Libpgm < Formula
   head "https://github.com/steve-o/openpgm.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/steve-o/openpgm/archive/release-5-3-128.tar.gz"
+    url "https://ghproxy.com/https://github.com/steve-o/openpgm/archive/refs/tags/release-5-3-128.tar.gz"
     version "5.3.128"
     sha256 "8d707ef8dda45f4a7bc91016d7f2fed6a418637185d76c7ab30b306499c6d393"
 

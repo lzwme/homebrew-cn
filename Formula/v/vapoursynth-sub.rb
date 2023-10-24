@@ -1,7 +1,7 @@
 class VapoursynthSub < Formula
   desc "VapourSynth filters - Subtitling filter"
   homepage "https://www.vapoursynth.com"
-  url "https://ghproxy.com/https://github.com/vapoursynth/subtext/archive/R5.tar.gz"
+  url "https://ghproxy.com/https://github.com/vapoursynth/subtext/archive/refs/tags/R5.tar.gz"
   sha256 "d1e4649c5417e671679753840ae0931cdbd353a862333129d7bd600770fd3db8"
   license "MIT"
   version_scheme 1

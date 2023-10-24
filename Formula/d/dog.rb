@@ -1,7 +1,7 @@
 class Dog < Formula
   desc "Command-line DNS client"
   homepage "https://dns.lookup.dog/"
-  url "https://ghproxy.com/https://github.com/ogham/dog/archive/v0.1.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/ogham/dog/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "82387d38727bac7fcdb080970e84b36de80bfe7923ce83f993a77d9ac7847858"
   license "EUPL-1.2"
   head "https://github.com/ogham/dog.git", branch: "master"

@@ -1,7 +1,7 @@
 class Rapidjson < Formula
   desc "JSON parser/generator for C++ with SAX and DOM style APIs"
   homepage "https://rapidjson.org/"
-  url "https://ghproxy.com/https://github.com/Tencent/rapidjson/archive/v1.1.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/Tencent/rapidjson/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "bf7ced29704a1e696fbccf2a2b4ea068e7774fa37f6d7dd4039d0787f8bed98e"
   license "MIT"
   head "https://github.com/Tencent/rapidjson.git", branch: "master"

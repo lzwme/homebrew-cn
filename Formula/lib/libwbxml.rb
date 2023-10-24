@@ -1,7 +1,7 @@
 class Libwbxml < Formula
   desc "Library and tools to parse and encode WBXML documents"
   homepage "https://github.com/libwbxml/libwbxml"
-  url "https://ghproxy.com/https://github.com/libwbxml/libwbxml/archive/libwbxml-0.11.8.tar.gz"
+  url "https://ghproxy.com/https://github.com/libwbxml/libwbxml/archive/refs/tags/libwbxml-0.11.8.tar.gz"
   sha256 "a6fe0e55369280c1a7698859a5c2bb37c8615c57a919b574cd8c16458279db66"
   license "LGPL-2.1"
   head "https://github.com/libwbxml/libwbxml.git", branch: "master"

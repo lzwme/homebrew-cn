@@ -1,7 +1,7 @@
 class TarsnapGui < Formula
   desc "Cross-platform GUI for the Tarsnap command-line client"
   homepage "https://github.com/Tarsnap/tarsnap-gui/wiki"
-  url "https://ghproxy.com/https://github.com/Tarsnap/tarsnap-gui/archive/v1.0.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/Tarsnap/tarsnap-gui/archive/refs/tags/v1.0.2.tar.gz"
   sha256 "3b271f474abc0bbeb3d5d62ee76b82785c7d64145e6e8b51fa7907b724c83eae"
   license "BSD-2-Clause"
   revision 1

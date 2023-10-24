@@ -1,7 +1,7 @@
 class Termcolor < Formula
   desc "Header-only C++ library for printing colored messages"
   homepage "https://termcolor.readthedocs.io/"
-  url "https://ghproxy.com/https://github.com/ikalnytskyi/termcolor/archive/v2.1.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/ikalnytskyi/termcolor/archive/refs/tags/v2.1.0.tar.gz"
   sha256 "435994c32557674469404cb1527c283fdcf45746f7df75fd2996bb200d6a759f"
   license "BSD-3-Clause"
 

@@ -1,7 +1,7 @@
 class Odt2txt < Formula
   desc "Convert OpenDocument files to plain text"
   homepage "https://github.com/dstosberg/odt2txt/"
-  url "https://ghproxy.com/https://github.com/dstosberg/odt2txt/archive/v0.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/dstosberg/odt2txt/archive/refs/tags/v0.5.tar.gz"
   sha256 "23a889109ca9087a719c638758f14cc3b867a5dcf30a6c90bf6a0985073556dd"
   license "GPL-2.0-only"
 

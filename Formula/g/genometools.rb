@@ -2,20 +2,19 @@ class Genometools < Formula
   desc "Versatile open source genome analysis software"
   homepage "http://genometools.org/"
   # genometools does not have source code on par with their binary dist on their website
-  url "https://ghproxy.com/https://github.com/genometools/genometools/archive/v1.6.4.tar.gz"
-  sha256 "eda9cf3a5d63e5017f3c315c5700b0e308c08793d5795bc889350a536369a449"
+  url "https://ghproxy.com/https://github.com/genometools/genometools/archive/refs/tags/v1.6.5.tar.gz"
+  sha256 "f71b95c84761847223cd52a17d30ad9e6d55854448c2139fcd0aac437f73fbbe"
   license "ISC"
   head "https://github.com/genometools/genometools.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "4735666536bc7081bae338bebf4e9415ae9881826cce4dc63cdd49930b8cb472"
-    sha256 cellar: :any,                 arm64_ventura:  "b28f195383ed189e24b78057c0dcc62f792a39a681f47930763e0e163ce9744c"
-    sha256 cellar: :any,                 arm64_monterey: "0c3f0e9c6ddfb69b78b08425a863f2b2a80d63f86c928cd52aed5ae04e038727"
-    sha256 cellar: :any,                 sonoma:         "832ad65e5843c6bbdf75c8948c7be18dd263604299cae01a46f7e7a8f2627a9e"
-    sha256 cellar: :any,                 ventura:        "a8c34cdb1af7e0e93fd36be1e187b84a8f2d576a6bcddd8b58eb34c0f7dabcd8"
-    sha256 cellar: :any,                 monterey:       "5cc81847071662320ac79444fc76e040c2f9abbcaeaba7b31da3ce1a4efa0e2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ecb5b123239bf914c042628f716803e92a8ce3790a6da3292205014e0068326"
+    sha256 cellar: :any,                 arm64_sonoma:   "b77af810fa9096b084bb34232bb09883a7237ddac28d7fc35957793892a516eb"
+    sha256 cellar: :any,                 arm64_ventura:  "c079e91767b29ab5b0379cc09e4ca0960717c9cfa5e580d3527696edb59a6680"
+    sha256 cellar: :any,                 arm64_monterey: "fb27b879e1e52641f42f05e8ce408583e17722bddfe0e1c3f6cd677001eabc6d"
+    sha256 cellar: :any,                 sonoma:         "0092f0d2c9f6ba739db151bebfa5251372d34458577b16abeba11e816ca212f7"
+    sha256 cellar: :any,                 ventura:        "7e4baa8bc25ac68f65b1c2b1ea66b0e909514779d9c66bf40fca41aa4cc3cb3d"
+    sha256 cellar: :any,                 monterey:       "5d93f579a6e42f7a472ece7eb28116a7b9010c4782a3f8727547f81d2684801a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da071e747525684debd137ce912248016a49ed34377020ca7a4192258ba44cc0"
   end
 
   depends_on "pkg-config" => :build

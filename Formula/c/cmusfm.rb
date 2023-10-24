@@ -1,7 +1,7 @@
 class Cmusfm < Formula
   desc "Last.fm standalone scrobbler for the cmus music player"
   homepage "https://github.com/Arkq/cmusfm"
-  url "https://ghproxy.com/https://github.com/Arkq/cmusfm/archive/v0.5.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/Arkq/cmusfm/archive/refs/tags/v0.5.0.tar.gz"
   sha256 "17aae8fc805e79b367053ad170854edceee5f4c51a9880200d193db9862d8363"
   license "GPL-3.0-or-later"
 

@@ -1,7 +1,7 @@
 class Threemux < Formula
   desc "Terminal multiplexer inspired by i3"
   homepage "https://github.com/aaronjanse/3mux"
-  url "https://ghproxy.com/https://github.com/aaronjanse/3mux/archive/v1.1.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/aaronjanse/3mux/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "0f4dae181914c73eaa91bdb21ee0875f21b5da64c7c9d478f6d52a2d0aa2c0ea"
   license "MIT"
   head "https://github.com/aaronjanse/3mux.git", branch: "master"

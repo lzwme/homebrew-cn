@@ -1,7 +1,7 @@
 class Uni < Formula
   desc "Unicode database query tool for the command-line"
   homepage "https://github.com/arp242/uni"
-  url "https://ghproxy.com/https://github.com/arp242/uni/archive/v2.5.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/arp242/uni/archive/refs/tags/v2.5.1.tar.gz"
   sha256 "806fbba66efaa45cd5691efcd8457ba8fe88d3b2f6fd0b027f1e6ef62253d6fb"
   license "MIT"
 

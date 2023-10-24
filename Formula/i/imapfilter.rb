@@ -1,7 +1,7 @@
 class Imapfilter < Formula
   desc "IMAP message processor/filter"
   homepage "https://github.com/lefcha/imapfilter/"
-  url "https://ghproxy.com/https://github.com/lefcha/imapfilter/archive/v2.8.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/lefcha/imapfilter/archive/refs/tags/v2.8.1.tar.gz"
   sha256 "758a0f78aff30935916426c878d2cc803bdcd31c74982fbfcd2372e6744262cc"
   license "MIT"
 

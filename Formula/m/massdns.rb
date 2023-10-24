@@ -1,7 +1,7 @@
 class Massdns < Formula
   desc "High-performance DNS stub resolver"
   homepage "https://github.com/blechschmidt/massdns"
-  url "https://ghproxy.com/https://github.com/blechschmidt/massdns/archive/v1.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/blechschmidt/massdns/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "0eba00a03e74a02a78628819741c75c2832fb94223d0ff632249f2cc55d0fdbb"
   license "GPL-3.0-only"
 

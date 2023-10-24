@@ -1,7 +1,7 @@
 class Epeg < Formula
   desc "JPEG/JPG thumbnail scaling"
   homepage "https://github.com/mattes/epeg"
-  url "https://ghproxy.com/https://github.com/mattes/epeg/archive/v0.9.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/mattes/epeg/archive/refs/tags/v0.9.3.tar.gz"
   sha256 "efcd7e72c530c3ff46f9efd86ec1dbb042e4a55fc5a7ea75e6ade9f83cf77ba3"
   license "MIT-enna"
   head "https://github.com/mattes/epeg.git", branch: "master"

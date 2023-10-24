@@ -1,7 +1,7 @@
 class Ndpi < Formula
   desc "Deep Packet Inspection (DPI) library"
   homepage "https://www.ntop.org/products/deep-packet-inspection/ndpi/"
-  url "https://ghproxy.com/https://github.com/ntop/nDPI/archive/4.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/ntop/nDPI/archive/refs/tags/4.4.tar.gz"
   sha256 "5df3a7bc251e3838079c403707334c1cd93f20c17b33e31e090f30a16adb3702"
   license "LGPL-3.0-or-later"
   head "https://github.com/ntop/nDPI.git", branch: "dev"

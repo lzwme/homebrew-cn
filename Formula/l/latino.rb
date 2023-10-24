@@ -1,5 +1,5 @@
 class Latino < Formula
-  desc "Lenguaje de programación de código abierto para latinos y de habla hispana"
+  desc "Open source programming language for Latinos and Hispanic speakers"
   homepage "https://www.lenguajelatino.org/"
   url "https://github.com/lenguaje-latino/latino.git",
       tag:      "v1.4.1",

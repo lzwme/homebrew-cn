@@ -1,7 +1,7 @@
 class Dashing < Formula
   desc "Generate Dash documentation from HTML files"
   homepage "https://github.com/technosophos/dashing"
-  url "https://ghproxy.com/https://github.com/technosophos/dashing/archive/0.4.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/technosophos/dashing/archive/refs/tags/0.4.0.tar.gz"
   sha256 "81b21acae83c144f10d9eea05a0b89f0dcdfa694c3760c2a25bd4eab72a2a3b9"
   license "MIT"
   revision 1

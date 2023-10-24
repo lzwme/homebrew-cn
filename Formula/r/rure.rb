@@ -1,7 +1,7 @@
 class Rure < Formula
   desc "C API for RUst's REgex engine"
   homepage "https://github.com/rust-lang/regex/tree/HEAD/regex-capi"
-  url "https://ghproxy.com/https://github.com/rust-lang/regex/archive/1.10.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/rust-lang/regex/archive/refs/tags/1.10.2.tar.gz"
   sha256 "ddd5a9267870129e037a03aa6073bac03308798492c2022c9fa426d264f587a8"
   license all_of: [
     "Unicode-TOU",

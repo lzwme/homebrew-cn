@@ -4,7 +4,7 @@
 class XbeeComm < Formula
   desc "XBee communication libraries and utilities"
   homepage "https://github.com/guyzmo/xbee-comm"
-  url "https://ghproxy.com/https://github.com/guyzmo/xbee-comm/archive/v1.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/guyzmo/xbee-comm/archive/refs/tags/v1.5.tar.gz"
   sha256 "c474d22feae5d9c05b3ec167b839c8fded512587da0f020ca682d60db174f24a"
   license "GPL-3.0"
   head "https://github.com/guyzmo/xbee-comm.git", branch: "master"

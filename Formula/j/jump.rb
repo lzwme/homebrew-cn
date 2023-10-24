@@ -1,7 +1,7 @@
 class Jump < Formula
   desc "Helps you navigate your file system faster by learning your habits"
   homepage "https://github.com/gsamokovarov/jump"
-  url "https://ghproxy.com/https://github.com/gsamokovarov/jump/archive/v0.51.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/gsamokovarov/jump/archive/refs/tags/v0.51.0.tar.gz"
   sha256 "ce297cada71e1dca33cd7759e55b28518d2bf317cdced1f3b3f79f40fa1958b5"
   license "MIT"
   head "https://github.com/gsamokovarov/jump.git", branch: "main"

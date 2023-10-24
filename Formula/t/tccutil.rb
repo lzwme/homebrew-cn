@@ -3,7 +3,7 @@ class Tccutil < Formula
 
   desc "Utility to modify the macOS Accessibility Database (TCC.db)"
   homepage "https://github.com/jacobsalmela/tccutil"
-  url "https://ghproxy.com/https://github.com/jacobsalmela/tccutil/archive/v1.2.13.tar.gz"
+  url "https://ghproxy.com/https://github.com/jacobsalmela/tccutil/archive/refs/tags/v1.2.13.tar.gz"
   sha256 "b0e3f660857426372588b0f659056a059ccbd35a4c91538c75671d960cb91030"
   license "GPL-2.0-or-later"
   head "https://github.com/jacobsalmela/tccutil.git", branch: "main"

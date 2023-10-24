@@ -1,7 +1,7 @@
 class WlaDx < Formula
   desc "Yet another crossassembler package"
   homepage "https://github.com/vhelin/wla-dx"
-  url "https://ghproxy.com/https://github.com/vhelin/wla-dx/archive/v10.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/vhelin/wla-dx/archive/refs/tags/v10.5.tar.gz"
   sha256 "b2d093c3c46caa399ed3a8e5f18f1f0eb7aefa958755bec752f2806bad3af802"
   license "GPL-2.0-or-later"
 

@@ -1,7 +1,7 @@
 class Td < Formula
   desc "Your todo list in your terminal"
   homepage "https://github.com/Swatto/td"
-  url "https://ghproxy.com/https://github.com/Swatto/td/archive/1.4.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/Swatto/td/archive/refs/tags/1.4.2.tar.gz"
   sha256 "e85468dad3bf78c3fc32fc2ab53ef2d6bc28c3f9297410917af382a6d795574b"
   license "MIT"
 

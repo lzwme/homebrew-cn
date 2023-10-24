@@ -1,7 +1,7 @@
 class Qcli < Formula
   desc "Report audiovisual metrics via libavfilter"
   homepage "https://bavc.org/preserve-media/preservation-tools"
-  url "https://ghproxy.com/https://github.com/bavc/qctools/archive/v1.2.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/bavc/qctools/archive/refs/tags/v1.2.1.tar.gz"
   sha256 "17cdc326819d3b332574968ee99714ac982c3a8e19a9c80bcbd3dc6dcb4db2b1"
   license "GPL-3.0-or-later"
   head "https://github.com/bavc/qctools.git", branch: "master"

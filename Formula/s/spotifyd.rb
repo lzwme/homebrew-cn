@@ -1,7 +1,7 @@
 class Spotifyd < Formula
   desc "Spotify daemon"
   homepage "https://github.com/Spotifyd/spotifyd"
-  url "https://ghproxy.com/https://github.com/Spotifyd/spotifyd/archive/v0.3.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/Spotifyd/spotifyd/archive/refs/tags/v0.3.5.tar.gz"
   sha256 "59103f7097aa4e2ed960f1cc307ac8f4bdb2f0067aad664af32344aa8a972df7"
   license "GPL-3.0-only"
   head "https://github.com/Spotifyd/spotifyd.git", branch: "master"

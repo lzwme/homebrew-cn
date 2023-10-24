@@ -1,7 +1,7 @@
 class GitHound < Formula
   desc "Git plugin that prevents sensitive data from being committed"
   homepage "https://github.com/ezekg/git-hound"
-  url "https://ghproxy.com/https://github.com/ezekg/git-hound/archive/1.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/ezekg/git-hound/archive/refs/tags/1.0.0.tar.gz"
   sha256 "32f79f470c790db068a23fd68e9763b3bedc84309a281b4c99b941d4f33f5763"
   license "MIT"
 

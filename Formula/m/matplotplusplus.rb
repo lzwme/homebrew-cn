@@ -1,7 +1,7 @@
 class Matplotplusplus < Formula
   desc "C++ Graphics Library for Data Visualization"
   homepage "https://github.com/alandefreitas/matplotplusplus"
-  url "https://ghproxy.com/https://github.com/alandefreitas/matplotplusplus/archive/v1.2.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/alandefreitas/matplotplusplus/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "42e24edf717741fcc721242aaa1fdb44e510fbdce4032cdb101c2258761b2554"
   license "MIT"
 

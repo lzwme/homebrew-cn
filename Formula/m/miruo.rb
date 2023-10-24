@@ -1,7 +1,7 @@
 class Miruo < Formula
   desc "Pretty-print TCP session monitor/analyzer"
   homepage "https://github.com/KLab/miruo/"
-  url "https://ghproxy.com/https://github.com/KLab/miruo/archive/0.9.6b.tar.gz"
+  url "https://ghproxy.com/https://github.com/KLab/miruo/archive/refs/tags/0.9.6b.tar.gz"
   version "0.9.6b"
   sha256 "0b31a5bde5b0e92a245611a8e671cec3d330686316691daeb1de76360d2fa5f1"
   license "GPL-3.0"

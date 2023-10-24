@@ -1,7 +1,7 @@
 class Dnscontrol < Formula
   desc "Synchronize your DNS to multiple providers from a simple DSL"
   homepage "https://dnscontrol.org/"
-  url "https://ghproxy.com/https://github.com/StackExchange/dnscontrol/archive/v4.5.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/StackExchange/dnscontrol/archive/refs/tags/v4.5.0.tar.gz"
   sha256 "2afce3acb1451917090e988fee3d10a9c7ab922659d3431b4dcfd56178b05301"
   license "MIT"
   version_scheme 1

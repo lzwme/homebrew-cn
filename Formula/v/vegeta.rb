@@ -1,7 +1,7 @@
 class Vegeta < Formula
   desc "HTTP load testing tool and library"
   homepage "https://github.com/tsenart/vegeta"
-  url "https://ghproxy.com/https://github.com/tsenart/vegeta/archive/v12.11.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/tsenart/vegeta/archive/refs/tags/v12.11.1.tar.gz"
   sha256 "e3e65be2c79195aab39384faf15950c2c2fd61f228f6c9255c99611ac6c8f329"
   license "MIT"
 

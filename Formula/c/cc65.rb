@@ -1,7 +1,7 @@
 class Cc65 < Formula
   desc "6502 C compiler"
   homepage "https://cc65.github.io/cc65/"
-  url "https://ghproxy.com/https://github.com/cc65/cc65/archive/V2.19.tar.gz"
+  url "https://ghproxy.com/https://github.com/cc65/cc65/archive/refs/tags/V2.19.tar.gz"
   sha256 "157b8051aed7f534e5093471e734e7a95e509c577324099c3c81324ed9d0de77"
   license "Zlib"
   head "https://github.com/cc65/cc65.git", branch: "master"

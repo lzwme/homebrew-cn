@@ -1,7 +1,7 @@
 class Stern < Formula
   desc "Tail multiple Kubernetes pods & their containers"
   homepage "https://github.com/stern/stern"
-  url "https://ghproxy.com/https://github.com/stern/stern/archive/v1.26.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/stern/stern/archive/refs/tags/v1.26.0.tar.gz"
   sha256 "1caf2a6f1492f763bb6a961d4c8af8cd3ab1952d216b0ab21059fe1a1d4426db"
   license "Apache-2.0"
   head "https://github.com/stern/stern.git", branch: "master"

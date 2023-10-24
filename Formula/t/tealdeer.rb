@@ -1,7 +1,7 @@
 class Tealdeer < Formula
   desc "Very fast implementation of tldr in Rust"
   homepage "https://github.com/dbrgn/tealdeer"
-  url "https://ghproxy.com/https://github.com/dbrgn/tealdeer/archive/v1.6.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/dbrgn/tealdeer/archive/refs/tags/v1.6.1.tar.gz"
   sha256 "d42db25a56a72faec173c86192656c5381281dc197171f385fccffd518930430"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/dbrgn/tealdeer.git", branch: "main"

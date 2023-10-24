@@ -3,20 +3,19 @@ class Awscurl < Formula
 
   desc "Curl like simplicity to access AWS resources"
   homepage "https://github.com/okigan/awscurl"
-  url "https://files.pythonhosted.org/packages/09/5b/98f022bc96ceb68b12fb4cfe6fdf52cc3051fa0b7bf51dc805521afe72bd/awscurl-0.31.tar.gz"
-  sha256 "6ce032543c0ec00857ce9c08cafe8041270b5508b08ec73e264e63f1e1255601"
+  url "https://files.pythonhosted.org/packages/fa/71/2bd268f518591a82400eeccaef4cc11987b6a49912bccbf46339388eb98a/awscurl-0.32.tar.gz"
+  sha256 "0c4c91a9c9873e1ad95c37371b63ebf8be20c70722b5fb9cdec430553117594e"
   license "MIT"
-  revision 1
   head "https://github.com/okigan/awscurl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a55974060f69e84b9fc9b507be2b9be3cc9f79ee8e2ee89dfe4c962580f8d934"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0810425114ae89adfb02068cb106fe8518ae9b7f35b67392724c093c3c41c384"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "970f6678fdbfe8e0cbecdd5a354a982eb4e9cd818060d4b68768db97ce8e8e5c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d7d794cf2b354e2f627a5965fe26413d4153b5a7a0cdc6070032eeac6cc8e8b8"
-    sha256 cellar: :any_skip_relocation, ventura:        "9160b480de144b1423f19ab0df8e824c832870980ddd8929709b94a51866dafb"
-    sha256 cellar: :any_skip_relocation, monterey:       "254e3c98b37430acecc91a5c89d5cde6efbb02653adf65360011f0144517f6dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "84e1eac66005d85821321079180fb955390bcf1331e3ea47a0df36a01b8908e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "692fa4ce1184d846de9a33a6c79e63d25d3d1d6fe0d30b7816940dc117087ae6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7c09759c3419821d62992a55145a1419ecfcc2d373a08b7bb5d8459d20867bf2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1000feb4fcc0cd10fceb4904ac8cd6181d6bb7e80bd6d342f57d433142727600"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2abc19057d9b4a3a37d95dd0a07c2b9e024e03a16e552a1dc4ba52da1c07c571"
+    sha256 cellar: :any_skip_relocation, ventura:        "5341420cfb7591d726a33158d9becb34c03ae375b6816171a6821e35cc4ecac8"
+    sha256 cellar: :any_skip_relocation, monterey:       "204e51eda87a881a450779fa9559327db754cb9b7d9ed5de8fff48d76fa73314"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7cc913c2814175a57b646985d9ca3d2e602591beaf5c1d4dcbe2a53ec01b80d3"
   end
 
   depends_on "cffi"
@@ -28,8 +27,8 @@ class Awscurl < Formula
   uses_from_macos "libffi"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
+    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
   end
 
   resource "configargparse" do

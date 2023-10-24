@@ -3,7 +3,7 @@ class GitArchiveAll < Formula
 
   desc "Archive a project and its submodules"
   homepage "https://github.com/Kentzo/git-archive-all"
-  url "https://ghproxy.com/https://github.com/Kentzo/git-archive-all/archive/1.23.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/Kentzo/git-archive-all/archive/refs/tags/1.23.1.tar.gz"
   sha256 "0c440d15be18e336672549231510fa3c66d0cb95069a5e4800fdd876ab6814df"
   license "MIT"
   head "https://github.com/Kentzo/git-archive-all.git", branch: "master"

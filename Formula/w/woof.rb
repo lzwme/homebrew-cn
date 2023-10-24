@@ -3,7 +3,7 @@ class Woof < Formula
 
   desc "Ad-hoc single-file webserver"
   homepage "http://www.home.unix-ag.org/simon/woof.html"
-  url "https://ghproxy.com/https://github.com/simon-budig/woof/archive/woof-20220202.tar.gz"
+  url "https://ghproxy.com/https://github.com/simon-budig/woof/archive/refs/tags/woof-20220202.tar.gz"
   sha256 "cf29214aca196a1778e2f5df1f5cc653da9bee8fc2b19f01439c750c41ae83c1"
   license "GPL-2.0-or-later"
 

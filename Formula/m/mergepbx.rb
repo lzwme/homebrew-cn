@@ -1,7 +1,7 @@
 class Mergepbx < Formula
   desc "Merge XCode project files in git"
   homepage "https://github.com/simonwagner/mergepbx"
-  url "https://ghproxy.com/https://github.com/simonwagner/mergepbx/archive/v0.10.tar.gz"
+  url "https://ghproxy.com/https://github.com/simonwagner/mergepbx/archive/refs/tags/v0.10.tar.gz"
   sha256 "1727ea75ffbd95426fe5d1d825bfcfb82dbea3dbc03e96f6d7d7ab2699c67572"
   license "GPL-3.0"
 

@@ -1,7 +1,7 @@
 class Charm < Formula
   desc "Tool for managing Juju Charms"
   homepage "https://github.com/juju/charmstore-client"
-  url "https://ghproxy.com/https://github.com/juju/charmstore-client/archive/v2.5.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/juju/charmstore-client/archive/refs/tags/v2.5.2.tar.gz"
   sha256 "3dd52c9a463bc09bedb3a07eb0977711aec77611b9c0d7f40cd366a66aa2ca03"
   license "GPL-3.0"
 

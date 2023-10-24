@@ -1,7 +1,7 @@
 class GitSeries < Formula
   desc "Track changes to a patch series over time"
   homepage "https://github.com/git-series/git-series"
-  url "https://ghproxy.com/https://github.com/git-series/git-series/archive/0.9.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/git-series/git-series/archive/refs/tags/0.9.1.tar.gz"
   sha256 "c0362e19d3fa168a7cb0e260fcdecfe070853b163c9f2dfd2ad8213289bc7e5f"
   license "MIT"
   revision 10

@@ -1,7 +1,7 @@
 class Mdxmini < Formula
   desc "Plays music in X68000 MDX chiptune format"
   homepage "https://github.com/mistydemeo/mdxmini/"
-  url "https://ghproxy.com/https://github.com/mistydemeo/mdxmini/archive/v2.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/mistydemeo/mdxmini/archive/refs/tags/v2.0.0.tar.gz"
   sha256 "9b623b365e893a769084f7a2effedc9ece453c6e3861c571ba503f045471a0e0"
   license "GPL-2.0-or-later"
 

@@ -1,7 +1,7 @@
 class Libming < Formula
   desc "C library for generating Macromedia Flash files"
   homepage "https://github.com/libming/libming"
-  url "https://ghproxy.com/https://github.com/libming/libming/archive/ming-0_4_8.tar.gz"
+  url "https://ghproxy.com/https://github.com/libming/libming/archive/refs/tags/ming-0_4_8.tar.gz"
   sha256 "2a44cc8b7f6506adaa990027397b6e0f60ba0e3c1fe8c9514be5eb8e22b2375c"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
   revision 2

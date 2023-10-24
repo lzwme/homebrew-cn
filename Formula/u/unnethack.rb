@@ -1,7 +1,7 @@
 class Unnethack < Formula
   desc "Fork of Nethack"
   homepage "https://unnethack.wordpress.com/"
-  url "https://ghproxy.com/https://github.com/UnNetHack/UnNetHack/archive/5.3.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/UnNetHack/UnNetHack/archive/refs/tags/5.3.2.tar.gz"
   sha256 "a32a2c0e758eb91842033d53d43f718f3bc719a346e993d9b23bac06f0ac9004"
   license "NGPL"
   head "https://github.com/UnNetHack/UnNetHack.git", branch: "master"

@@ -6,7 +6,7 @@ class Tcptraceroute < Formula
   head "https://github.com/mct/tcptraceroute.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/mct/tcptraceroute/archive/tcptraceroute-1.5beta7.tar.gz"
+    url "https://ghproxy.com/https://github.com/mct/tcptraceroute/archive/refs/tags/tcptraceroute-1.5beta7.tar.gz"
     sha256 "57fd2e444935bc5be8682c302994ba218a7c738c3a6cae00593a866cd85be8e7"
 
     # Call `pcap_lib_version()` rather than access `pcap_version` directly

@@ -1,7 +1,7 @@
 class Slimerjs < Formula
   desc "Scriptable browser for Web developers"
   homepage "https://slimerjs.org/"
-  url "https://ghproxy.com/https://github.com/laurentj/slimerjs/archive/1.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/laurentj/slimerjs/archive/refs/tags/1.0.0.tar.gz"
   sha256 "6fd07fa6953e4e497516dd0a7bc5eb2f21c68f9e60bdab080ac2c86e8ab8dfb2"
   license "MPL-2.0"
   head "https://github.com/laurentj/slimerjs.git", branch: "master"

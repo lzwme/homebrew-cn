@@ -1,7 +1,7 @@
 class Nanomsgxx < Formula
   desc "Nanomsg binding for C++11"
   homepage "https://achille-roussel.github.io/nanomsgxx/doc/nanomsgxx.7.html"
-  url "https://ghproxy.com/https://github.com/achille-roussel/nanomsgxx/archive/0.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/achille-roussel/nanomsgxx/archive/refs/tags/0.2.tar.gz"
   sha256 "116ad531b512d60ea75ef21f55fd9d31c00b172775548958e5e7d4edaeeedbaa"
   license "MIT"
   revision 3

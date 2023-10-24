@@ -4,7 +4,7 @@ class Nomad < Formula
   # NOTE: Do not bump to v1.7.0+ as license changed to BUSL-1.1
   # https://github.com/hashicorp/nomad/pull/18187
   # https://github.com/hashicorp/nomad/pull/18218
-  url "https://ghproxy.com/https://github.com/hashicorp/nomad/archive/v1.6.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/hashicorp/nomad/archive/refs/tags/v1.6.2.tar.gz"
   sha256 "8f6f0c2759654b10f64a185ee35c33f221fe662a6a2ba800f7339d955bbec8e5"
   license "MPL-2.0"
   head "https://github.com/hashicorp/nomad.git", branch: "main"

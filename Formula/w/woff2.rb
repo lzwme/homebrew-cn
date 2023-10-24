@@ -1,7 +1,7 @@
 class Woff2 < Formula
   desc "Utilities to create and convert Web Open Font File (WOFF) files"
   homepage "https://github.com/google/woff2"
-  url "https://ghproxy.com/https://github.com/google/woff2/archive/v1.0.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/google/woff2/archive/refs/tags/v1.0.2.tar.gz"
   sha256 "add272bb09e6384a4833ffca4896350fdb16e0ca22df68c0384773c67a175594"
   license "MIT"
 

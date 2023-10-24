@@ -1,7 +1,7 @@
 class Cql < Formula
   desc "Decentralized SQL database with blockchain features"
   homepage "https://covenantsql.io"
-  url "https://ghproxy.com/https://github.com/CovenantSQL/CovenantSQL/archive/v0.8.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/CovenantSQL/CovenantSQL/archive/refs/tags/v0.8.1.tar.gz"
   sha256 "73abb65106e5045208aa4a7cda56bc7c17ba377557ae47d60dad39a63f9c88a6"
   license "Apache-2.0"
   head "https://github.com/CovenantSQL/CovenantSQL.git", branch: "develop"

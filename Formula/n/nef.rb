@@ -1,7 +1,7 @@
 class Nef < Formula
   desc "Steroids for Xcode Playgrounds"
   homepage "https://nef.bow-swift.io"
-  url "https://ghproxy.com/https://github.com/bow-swift/nef/archive/0.7.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/bow-swift/nef/archive/refs/tags/0.7.1.tar.gz"
   sha256 "147b8723d65ababedd04abf2ea4445c2b16dd7c18814a92182ae61978eb1152e"
   license "Apache-2.0"
 

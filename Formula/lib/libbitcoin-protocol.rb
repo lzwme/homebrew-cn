@@ -1,7 +1,7 @@
 class LibbitcoinProtocol < Formula
   desc "Bitcoin Blockchain Query Protocol"
   homepage "https://github.com/libbitcoin/libbitcoin-protocol"
-  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-protocol/archive/v3.8.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-protocol/archive/refs/tags/v3.8.0.tar.gz"
   sha256 "654aee258d7e110cce3c445906684f130c7dc6b8be2273c8dab4b46a49d8f741"
   license "AGPL-3.0"
   revision 1

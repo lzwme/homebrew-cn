@@ -1,7 +1,7 @@
 class Libwebsockets < Formula
   desc "C websockets server library"
   homepage "https://github.com/warmcat/libwebsockets"
-  url "https://ghproxy.com/https://github.com/warmcat/libwebsockets/archive/v4.3.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/warmcat/libwebsockets/archive/refs/tags/v4.3.2.tar.gz"
   sha256 "6a85a1bccf25acc7e8e5383e4934c9b32a102880d1e4c37c70b27ae2a42406e1"
   license "MIT"
   revision 1

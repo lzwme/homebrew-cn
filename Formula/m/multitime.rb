@@ -1,7 +1,7 @@
 class Multitime < Formula
   desc "Time command execution over multiple executions"
   homepage "https://tratt.net/laurie/src/multitime/"
-  url "https://ghproxy.com/https://github.com/ltratt/multitime/archive/multitime-1.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/ltratt/multitime/archive/refs/tags/multitime-1.4.tar.gz"
   sha256 "31597066239896ee74a3aaaea3b22931a50a1ec1470090c5457ef35500c44249"
   license "MIT"
 

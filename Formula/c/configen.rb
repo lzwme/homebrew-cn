@@ -1,7 +1,7 @@
 class Configen < Formula
   desc "Configuration file code generator for use in Xcode projects"
   homepage "https://github.com/theappbusiness/ConfigGenerator"
-  url "https://ghproxy.com/https://github.com/theappbusiness/ConfigGenerator/archive/1.1.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/theappbusiness/ConfigGenerator/archive/refs/tags/1.1.2.tar.gz"
   sha256 "24a0d51f90b36d56c2f75ced9653cf34fe396fd687305903b31eeb822d520608"
   license "MIT"
   head "https://github.com/theappbusiness/ConfigGenerator.git", branch: "main"

@@ -1,7 +1,7 @@
 class Twemcache < Formula
   desc "Twitter fork of memcached"
   homepage "https://github.com/twitter/twemcache"
-  url "https://ghproxy.com/https://github.com/twitter/twemcache/archive/v2.6.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/twitter/twemcache/archive/refs/tags/v2.6.3.tar.gz"
   sha256 "ab05927f7d930b7935790450172187afedca742ee7963d5db1e62164e7f4c92b"
   license "BSD-3-Clause"
   revision 1

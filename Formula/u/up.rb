@@ -1,7 +1,7 @@
 class Up < Formula
   desc "Tool for writing command-line pipes with instant live preview"
   homepage "https://github.com/akavel/up"
-  url "https://ghproxy.com/https://github.com/akavel/up/archive/v0.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/akavel/up/archive/refs/tags/v0.4.tar.gz"
   sha256 "3ea2161ce77e68d7e34873cc80324f372a3b3f63bed9f1ad1aefd7969dd0c1d1"
   license "Apache-2.0"
 

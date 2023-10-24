@@ -1,7 +1,7 @@
 class Multimarkdown < Formula
   desc "Turn marked-up plain text into well-formatted documents"
   homepage "https://fletcher.github.io/MultiMarkdown-6/"
-  url "https://ghproxy.com/https://github.com/fletcher/MultiMarkdown-6/archive/6.7.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/fletcher/MultiMarkdown-6/archive/refs/tags/6.7.0.tar.gz"
   sha256 "aa386f54631dbc4e0beeb6b9cf9eb769db95a3f505a69b663140a80008cf0595"
   license "MIT"
   head "https://github.com/fletcher/MultiMarkdown-6.git", branch: "develop"

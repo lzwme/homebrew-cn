@@ -1,7 +1,7 @@
 class Eureka < Formula
   desc "CLI tool to input and store your ideas without leaving the terminal"
   homepage "https://github.com/simeg/eureka"
-  url "https://ghproxy.com/https://github.com/simeg/eureka/archive/v2.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/simeg/eureka/archive/refs/tags/v2.0.0.tar.gz"
   sha256 "e874549e1447ee849543828f49c4c1657f7e6cfe787deea13d44241666d4aaa0"
   license "MIT"
   head "https://github.com/simeg/eureka.git", branch: "master"

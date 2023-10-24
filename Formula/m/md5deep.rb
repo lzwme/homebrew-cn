@@ -1,7 +1,7 @@
 class Md5deep < Formula
   desc "Recursively compute digests on files/directories"
   homepage "https://github.com/jessek/hashdeep"
-  url "https://ghproxy.com/https://github.com/jessek/hashdeep/archive/release-4.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/jessek/hashdeep/archive/refs/tags/release-4.4.tar.gz"
   sha256 "dbda8ab42a9c788d4566adcae980d022d8c3d52ee732f1cbfa126c551c8fcc46"
   license "GPL-2.0"
   revision 1

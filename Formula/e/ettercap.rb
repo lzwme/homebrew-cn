@@ -6,7 +6,7 @@ class Ettercap < Formula
   head "https://github.com/Ettercap/ettercap.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/Ettercap/ettercap/archive/v0.8.3.1.tar.gz"
+    url "https://ghproxy.com/https://github.com/Ettercap/ettercap/archive/refs/tags/v0.8.3.1.tar.gz"
     sha256 "d0c3ef88dfc284b61d3d5b64d946c1160fd04276b448519c1ae4438a9cdffaf3"
 
     # Fix build for curl 8+

@@ -1,7 +1,7 @@
 class Xlearn < Formula
   desc "High performance, easy-to-use, and scalable machine learning package"
   homepage "https://xlearn-doc.readthedocs.io/en/latest/index.html"
-  url "https://ghproxy.com/https://github.com/aksnzhy/xlearn/archive/v0.4.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/aksnzhy/xlearn/archive/refs/tags/v0.4.4.tar.gz"
   sha256 "7b0e9db901c0e6feda4dfb793748ec959b2b56188fc2a80de5983c37e2b9f7d2"
   license "Apache-2.0"
 

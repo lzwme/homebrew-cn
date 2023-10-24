@@ -5,7 +5,7 @@ class Sleef < Formula
   head "https://github.com/shibatch/sleef.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/shibatch/sleef/archive/3.5.1.tar.gz"
+    url "https://ghproxy.com/https://github.com/shibatch/sleef/archive/refs/tags/3.5.1.tar.gz"
     sha256 "415ee9b1bcc5816989d3d4d92afd0cd3f9ee89cbd5a33eb008e69751e40438ab"
 
     # Fix CMake detection of Apple Silicon (arm64).

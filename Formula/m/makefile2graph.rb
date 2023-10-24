@@ -1,7 +1,7 @@
 class Makefile2graph < Formula
   desc "Create a graph of dependencies from GNU-Make"
   homepage "https://github.com/lindenb/makefile2graph"
-  url "https://ghproxy.com/https://github.com/lindenb/makefile2graph/archive/2021.11.06.tar.gz"
+  url "https://ghproxy.com/https://github.com/lindenb/makefile2graph/archive/refs/tags/2021.11.06.tar.gz"
   sha256 "5be8e528fa2945412357a8ef233e68fa3729639307ec1c38fd63768aad642c41"
   license "MIT"
   head "https://github.com/lindenb/makefile2graph.git", branch: "master"

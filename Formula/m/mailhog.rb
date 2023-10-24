@@ -7,7 +7,7 @@ class Mailhog < Formula
   head "https://github.com/mailhog/MailHog.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/mailhog/MailHog/archive/v1.0.1.tar.gz"
+    url "https://ghproxy.com/https://github.com/mailhog/MailHog/archive/refs/tags/v1.0.1.tar.gz"
     sha256 "6227b566f3f7acbfee0011643c46721e20389eba4c8c2d795c0d2f4d2905f282"
 
     go_resource "github.com/gorilla/context" do

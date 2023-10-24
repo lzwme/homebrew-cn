@@ -1,7 +1,7 @@
 class DosboxStaging < Formula
   desc "Modernized DOSBox soft-fork"
   homepage "https://dosbox-staging.github.io/"
-  url "https://ghproxy.com/https://github.com/dosbox-staging/dosbox-staging/archive/v0.80.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/dosbox-staging/dosbox-staging/archive/refs/tags/v0.80.1.tar.gz"
   sha256 "2ca69e65e6c181197b63388c60487a3bcea804232a28c44c37704e70d49a0392"
   license "GPL-2.0-or-later"
   revision 1

@@ -1,7 +1,7 @@
 class Fabio < Formula
   desc "Zero-conf load balancing HTTP(S) router"
   homepage "https://github.com/fabiolb/fabio"
-  url "https://ghproxy.com/https://github.com/fabiolb/fabio/archive/v1.6.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/fabiolb/fabio/archive/refs/tags/v1.6.3.tar.gz"
   sha256 "e85b70a700652b051260b8c49ce63d21d2579517601a91d893a7fa9444635ad3"
   license "MIT"
   head "https://github.com/fabiolb/fabio.git", branch: "master"

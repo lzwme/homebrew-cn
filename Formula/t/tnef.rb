@@ -1,7 +1,7 @@
 class Tnef < Formula
   desc "Microsoft MS-TNEF attachment unpacker"
   homepage "https://github.com/verdammelt/tnef"
-  url "https://ghproxy.com/https://github.com/verdammelt/tnef/archive/1.4.18.tar.gz"
+  url "https://ghproxy.com/https://github.com/verdammelt/tnef/archive/refs/tags/1.4.18.tar.gz"
   sha256 "fa56dd08649f51b173017911cae277dc4b2c98211721c2a60708bf1d28839922"
   license "GPL-2.0"
 

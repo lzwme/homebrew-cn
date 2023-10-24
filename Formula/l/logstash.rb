@@ -1,7 +1,7 @@
 class Logstash < Formula
   desc "Tool for managing events and logs"
   homepage "https://www.elastic.co/products/logstash"
-  url "https://ghproxy.com/https://github.com/elastic/logstash/archive/v8.9.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/elastic/logstash/archive/refs/tags/v8.9.2.tar.gz"
   sha256 "d68695777f7edc7579bff361c15159a7a6c324d7927de9ebad853968c640ea36"
   license "Apache-2.0"
   version_scheme 1

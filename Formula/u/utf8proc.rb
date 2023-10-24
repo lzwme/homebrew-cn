@@ -1,21 +1,18 @@
 class Utf8proc < Formula
   desc "Clean C library for processing UTF-8 Unicode data"
   homepage "https://juliastrings.github.io/utf8proc/"
-  url "https://ghproxy.com/https://github.com/JuliaStrings/utf8proc/archive/v2.8.0.tar.gz"
-  sha256 "a0a60a79fe6f6d54e7d411facbfcc867a6e198608f2cd992490e46f04b1bcecc"
+  url "https://ghproxy.com/https://github.com/JuliaStrings/utf8proc/archive/refs/tags/v2.9.0.tar.gz"
+  sha256 "18c1626e9fc5a2e192311e36b3010bfc698078f692888940f1fa150547abb0c1"
   license all_of: ["MIT", "Unicode-DFS-2015"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "539dbffd0d8c36de242f70a8cf2c79ad2e38022c748e3310259476743181bb31"
-    sha256 cellar: :any,                 arm64_ventura:  "30ed86d43d46f716a4a1b72387914314e4a59340e1baa4fbb737af16c3307d08"
-    sha256 cellar: :any,                 arm64_monterey: "509a6e2796a043ba5fcc913adf088330edd7b0196d80a9978de685757f113b8d"
-    sha256 cellar: :any,                 arm64_big_sur:  "42a02f08806443010d52cfe20390fde9e0a20b995f0cee8aaf1ff69761dee632"
-    sha256 cellar: :any,                 sonoma:         "f7175f22c305955749992df0b04c33bb086b580e9a94351d86a9797ffd919a2e"
-    sha256 cellar: :any,                 ventura:        "205b140d52a4e1c1fe8ff42514f95b230e7a9542789a7eb1da599b454aefd7df"
-    sha256 cellar: :any,                 monterey:       "f6e51a50dc42de33bca46db0dc1a065c417a3ade6dc812cf184da6ea88bc48d8"
-    sha256 cellar: :any,                 big_sur:        "e1572b897d7f68c664ff54d8b701f1f839c909bd10ea8d47cc5ea221cbc39018"
-    sha256 cellar: :any,                 catalina:       "a4985025c7b99050f9f136d13de2446a77d2d36f8067469c7ac11813be9848ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f445634d879944ce4965d2c0c022859fd3f8c15022e96ab51e4257cbc5d6376b"
+    sha256 cellar: :any,                 arm64_sonoma:   "cde8cdd879129b6e34ced18440c8149e180175ef74c42c560d8139382971aeb9"
+    sha256 cellar: :any,                 arm64_ventura:  "fb2efcc310a7627642f9dc0e617e6f311b53b286dd8c5bcfbf630ee19525b804"
+    sha256 cellar: :any,                 arm64_monterey: "9bedbdf0984e79f7a47a21c5299e9e564e91e0819ef65314b6697f40974ef83c"
+    sha256 cellar: :any,                 sonoma:         "f7628ae1bf35bb9ebeb4cc23dad23ecdb2657e6a08fad466749f1a88859772ee"
+    sha256 cellar: :any,                 ventura:        "9bf2ae6ade6a7c5c873d8e4947e3511edd209c092cf0ad8c0c4246311a4ba76d"
+    sha256 cellar: :any,                 monterey:       "ec9ae8d290f855575f8d756ab08ca28eba8d151182ec14fd6daa8cd102655853"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ab616bad52f9ad576dfc6d3ea4048a146999e53d810ba10a99c2244c518a0de"
   end
 
   def install

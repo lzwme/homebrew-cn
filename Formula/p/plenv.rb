@@ -1,7 +1,7 @@
 class Plenv < Formula
   desc "Perl binary manager"
   homepage "https://github.com/tokuhirom/plenv"
-  url "https://ghproxy.com/https://github.com/tokuhirom/plenv/archive/2.3.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/tokuhirom/plenv/archive/refs/tags/2.3.1.tar.gz"
   sha256 "12004cfed7ed083911dbda3228a9fb9ce6e40e259b34e791d970c4f335935fa3"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   head "https://github.com/tokuhirom/plenv.git", branch: "master"

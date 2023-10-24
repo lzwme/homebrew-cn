@@ -5,16 +5,16 @@ class Julia < Formula
   url "https://ghproxy.com/https://github.com/JuliaLang/julia/releases/download/v1.9.3/julia-1.9.3-full.tar.gz"
   sha256 "8fc0c9dc5443a28d359bd79dda3940fa94ba2b7966b89865beb20da81123c316"
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
+  revision 1
   head "https://github.com/JuliaLang/julia.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "b475ca8ae3ebf22c435f03659677afbd6aa4ebe355aeab4f4ba8d937beb7ee60"
-    sha256 cellar: :any, arm64_ventura:  "3c230a8f5038fad6a23e8a7f4e9905938f8ccabb8700ebf17686eebe7cd43e0c"
-    sha256 cellar: :any, arm64_monterey: "3b1dd6d4423df6f4b86a73dc63c47d35ff4fda295930499d3cf5bd0e73faf54c"
-    sha256 cellar: :any, arm64_big_sur:  "730979ec7eccbbe5b9bb9d91d980b1525e693a7944301ea37e0ddd4f0845c067"
-    sha256 cellar: :any, ventura:        "ffc5a024dbd489145a747d5cef8453dc5c2e008d6cf24e063a7fcb08769be65d"
-    sha256 cellar: :any, monterey:       "5aa78f98bff618afd7e8577305f59ac8ee3ad00e446a9ea8d5bf39b39eb41f8a"
-    sha256 cellar: :any, big_sur:        "7b030c2d66e9d3a74743231a993d5c4a8b7ef728cbf058a033aa145a8aa618ba"
+    sha256 cellar: :any, arm64_sonoma:   "61d086496e72eba77f6a8ac893d488dd25d7a1f0d74521be940d542a001cbd48"
+    sha256 cellar: :any, arm64_ventura:  "b663f6d826534b41963d09de1f70c43656e76d9e03926d8376a0bfc29f957c69"
+    sha256 cellar: :any, arm64_monterey: "9bafca4ea7f446822660b846a754a9c82f024d8ab66ddf7c9fccc7b997d902c6"
+    sha256 cellar: :any, sonoma:         "33521aff72d957f72861b6ab510e0dd5cacc15d2d016237d429de4d5ea27e10e"
+    sha256 cellar: :any, ventura:        "55628baeccb1f8b82a42a4e558891cb2c11eaff7e4a64f2ce11709416c99e4f5"
+    sha256 cellar: :any, monterey:       "6b433ce620a7b96cb6da5bacdae8f7d979050b7866a97740271fa39012da0040"
   end
 
   depends_on "cmake" => :build # Needed to build LLVM

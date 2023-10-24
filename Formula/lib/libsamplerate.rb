@@ -1,7 +1,7 @@
 class Libsamplerate < Formula
   desc "Library for sample rate conversion of audio data"
   homepage "https://github.com/libsndfile/libsamplerate"
-  url "https://ghproxy.com/https://github.com/libsndfile/libsamplerate/archive/0.2.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/libsndfile/libsamplerate/archive/refs/tags/0.2.2.tar.gz"
   sha256 "16e881487f184250deb4fcb60432d7556ab12cb58caea71ef23960aec6c0405a"
   license "BSD-2-Clause"
 

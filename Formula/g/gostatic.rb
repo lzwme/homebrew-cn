@@ -1,7 +1,7 @@
 class Gostatic < Formula
   desc "Fast static site generator"
   homepage "https://github.com/piranha/gostatic"
-  url "https://ghproxy.com/https://github.com/piranha/gostatic/archive/2.36.tar.gz"
+  url "https://ghproxy.com/https://github.com/piranha/gostatic/archive/refs/tags/2.36.tar.gz"
   sha256 "a66e306c0289bac541af10cb88acc9b9576153de5d4acec566c3f927acefd778"
   license "ISC"
   head "https://github.com/piranha/gostatic.git", branch: "master"

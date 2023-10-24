@@ -1,7 +1,7 @@
 class WrenCli < Formula
   desc "Simple REPL and CLI tool for running Wren scripts"
   homepage "https://github.com/wren-lang/wren-cli"
-  url "https://ghproxy.com/https://github.com/wren-lang/wren-cli/archive/0.4.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/wren-lang/wren-cli/archive/refs/tags/0.4.0.tar.gz"
   sha256 "fafdc5d6615114d40de3956cd3a255e8737dadf8bd758b48bac00db61563cb4c"
   license "MIT"
 

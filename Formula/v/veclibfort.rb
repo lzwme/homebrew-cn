@@ -1,7 +1,7 @@
 class Veclibfort < Formula
   desc "GNU Fortran compatibility for Apple's vecLib"
   homepage "https://github.com/mcg1969/vecLibFort"
-  url "https://ghproxy.com/https://github.com/mcg1969/vecLibFort/archive/0.4.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/mcg1969/vecLibFort/archive/refs/tags/0.4.3.tar.gz"
   sha256 "fe9e7e0596bfb4aa713b2273b21e7d96c0d7a6453ee4b214a8a50050989d5586"
   license "BSL-1.0"
   head "https://github.com/mcg1969/vecLibFort.git", branch: "master"

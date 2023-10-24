@@ -1,7 +1,7 @@
 class CapCompletion < Formula
   desc "Bash completion for Capistrano"
   homepage "https://github.com/bashaus/capistrano-autocomplete"
-  url "https://ghproxy.com/https://github.com/bashaus/capistrano-autocomplete/archive/v1.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/bashaus/capistrano-autocomplete/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "66a94420be44d82ff18f366778e05decde3f16ad05d35fd8ec7b51860b102c0c"
 
   bottle do

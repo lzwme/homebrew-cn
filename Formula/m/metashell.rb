@@ -1,7 +1,7 @@
 class Metashell < Formula
   desc "Metaprogramming shell for C++ templates"
   homepage "http://metashell.org"
-  url "https://ghproxy.com/https://github.com/metashell/metashell/archive/v5.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/metashell/metashell/archive/refs/tags/v5.0.0.tar.gz"
   sha256 "028e37be072ec4e85d18ead234a208d07225cf335c0bb1c98d4d4c3e30c71f0e"
   license "GPL-3.0-or-later"
 

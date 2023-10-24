@@ -1,7 +1,7 @@
 class Elm < Formula
   desc "Functional programming language for building browser-based GUIs"
   homepage "https://elm-lang.org"
-  url "https://ghproxy.com/https://github.com/elm/compiler/archive/0.19.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/elm/compiler/archive/refs/tags/0.19.1.tar.gz"
   sha256 "aa161caca775cef1bbb04bcdeb4471d3aabcf87b6d9d9d5b0d62d3052e8250b1"
   license "BSD-3-Clause"
 

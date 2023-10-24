@@ -1,7 +1,7 @@
 class Wsk < Formula
   desc "OpenWhisk Command-Line Interface (CLI)"
   homepage "https://openwhisk.apache.org/"
-  url "https://ghproxy.com/https://github.com/apache/openwhisk-cli/archive/1.2.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/apache/openwhisk-cli/archive/refs/tags/1.2.0.tar.gz"
   sha256 "cafc57b2f2e29f204c00842541691038abcc4e639dd78485f9c042c93335f286"
   license "Apache-2.0"
 

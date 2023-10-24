@@ -1,7 +1,7 @@
 class Sniffglue < Formula
   desc "Secure multithreaded packet sniffer"
   homepage "https://github.com/kpcyrd/sniffglue"
-  url "https://ghproxy.com/https://github.com/kpcyrd/sniffglue/archive/v0.15.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/kpcyrd/sniffglue/archive/refs/tags/v0.15.0.tar.gz"
   sha256 "ac30c0748a4247d2a36b82d623e88863480c300d3f6bbbdc303077240a8292c5"
   license "GPL-3.0-or-later"
 

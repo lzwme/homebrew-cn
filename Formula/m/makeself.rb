@@ -1,7 +1,7 @@
 class Makeself < Formula
   desc "Generates a self-extracting compressed tar archive"
   homepage "https://makeself.io/"
-  url "https://ghproxy.com/https://github.com/megastep/makeself/archive/release-2.5.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/megastep/makeself/archive/refs/tags/release-2.5.0.tar.gz"
   sha256 "705d0376db9109a8ef1d4f3876c9997ee6bed454a23619e1dbc03d25033e46ea"
   license "GPL-2.0-or-later"
   head "https://github.com/megastep/makeself.git", branch: "master"

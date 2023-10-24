@@ -1,7 +1,7 @@
 class Launchdns < Formula
   desc "Mini DNS server designed solely to route queries to localhost"
   homepage "https://github.com/josh/launchdns"
-  url "https://ghproxy.com/https://github.com/josh/launchdns/archive/v1.0.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/josh/launchdns/archive/refs/tags/v1.0.4.tar.gz"
   sha256 "60f6010659407e3d148c021c88e1c1ce0924de320e99a5c58b21c8aece3888aa"
   license "MIT"
   revision 2

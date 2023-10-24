@@ -1,7 +1,7 @@
 class KubernetesServiceCatalogClient < Formula
   desc "Consume Services in k8s using the OSB API"
   homepage "https://svc-cat.io/"
-  url "https://ghproxy.com/https://github.com/kubernetes-retired/service-catalog/archive/v0.3.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/kubernetes-retired/service-catalog/archive/refs/tags/v0.3.1.tar.gz"
   sha256 "5b463be2102b32bd5a5fed5d433ef53da4d1f70bf007b5a4b78eee7024ca52e3"
   license "Apache-2.0"
 

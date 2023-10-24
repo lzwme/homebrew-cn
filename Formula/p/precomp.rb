@@ -1,7 +1,7 @@
 class Precomp < Formula
   desc "Command-line precompressor to achieve better compression"
   homepage "http://schnaader.info/precomp.php"
-  url "https://ghproxy.com/https://github.com/schnaader/precomp-cpp/archive/v0.4.7.tar.gz"
+  url "https://ghproxy.com/https://github.com/schnaader/precomp-cpp/archive/refs/tags/v0.4.7.tar.gz"
   sha256 "b4064f9a18b9885e574c274f93d73d8a4e7f2bbd9e959beaa773f2e61292fb2b"
   license "Apache-2.0"
   head "https://github.com/schnaader/precomp-cpp.git", branch: "master"

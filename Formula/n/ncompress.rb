@@ -1,7 +1,7 @@
 class Ncompress < Formula
   desc "Fast, simple LZW file compressor"
   homepage "https://github.com/vapier/ncompress"
-  url "https://ghproxy.com/https://github.com/vapier/ncompress/archive/v5.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/vapier/ncompress/archive/refs/tags/v5.0.tar.gz"
   sha256 "96ec931d06ab827fccad377839bfb91955274568392ddecf809e443443aead46"
   license "Unlicense"
   head "https://github.com/vapier/ncompress.git", branch: "main"

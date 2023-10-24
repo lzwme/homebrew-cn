@@ -6,7 +6,7 @@ class Gost < Formula
   head "https://github.com/ginuerzh/gost.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/ginuerzh/gost/archive/v2.11.5.tar.gz"
+    url "https://ghproxy.com/https://github.com/ginuerzh/gost/archive/refs/tags/v2.11.5.tar.gz"
     sha256 "dab48b785f4d2df6c2f5619a4b9a2ac6e8b708f667a4d89c7d08df67ad7c5ca7"
 
     # go1.20 build patch, remove in next release

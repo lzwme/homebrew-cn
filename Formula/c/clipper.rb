@@ -1,7 +1,7 @@
 class Clipper < Formula
   desc "Share macOS clipboard with tmux and other local and remote apps"
   homepage "https://wincent.com/products/clipper"
-  url "https://ghproxy.com/https://github.com/wincent/clipper/archive/2.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/wincent/clipper/archive/refs/tags/2.0.0.tar.gz"
   sha256 "9c9fa0b198d11513777d40c88e2529b2f2f84d7045a500be5946976a5cdcfe83"
   license "BSD-2-Clause"
 

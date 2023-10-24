@@ -1,7 +1,7 @@
 class Lm4tools < Formula
   desc "Tools for TI Stellaris Launchpad boards"
   homepage "https://github.com/utzig/lm4tools"
-  url "https://ghproxy.com/https://github.com/utzig/lm4tools/archive/v0.1.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/utzig/lm4tools/archive/refs/tags/v0.1.3.tar.gz"
   sha256 "e8064ace3c424b429b7e0b50e58b467d8ed92962b6a6dfa7f6a39942416b1627"
   license "GPL-2.0"
 

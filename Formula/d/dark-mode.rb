@@ -1,7 +1,7 @@
 class DarkMode < Formula
   desc "Control the macOS dark mode from the command-line"
   homepage "https://github.com/sindresorhus/dark-mode"
-  url "https://ghproxy.com/https://github.com/sindresorhus/dark-mode/archive/v3.0.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/sindresorhus/dark-mode/archive/refs/tags/v3.0.2.tar.gz"
   sha256 "fda7d4337fe3f0af92267fb517a17f11a267b5f8f38ec2db0c416526efd42619"
   license "MIT"
   head "https://github.com/sindresorhus/dark-mode.git", branch: "main"

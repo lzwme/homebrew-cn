@@ -1,7 +1,7 @@
 class Grepip < Formula
   desc "Filters IPv4 & IPv6 addresses with a grep-compatible interface"
   homepage "https://ipinfo.io"
-  url "https://ghproxy.com/https://github.com/ipinfo/cli/archive/grepip-1.2.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/ipinfo/cli/archive/refs/tags/grepip-1.2.2.tar.gz"
   sha256 "2ed9477bc5599a10348a7026968242fb4609e6b580c04aaae46d7c71b9fa3d55"
   license "Apache-2.0"
 

@@ -1,7 +1,7 @@
 class Hr < Formula
   desc "<hr />, for your terminal window"
   homepage "https://github.com/LuRsT/hr"
-  url "https://ghproxy.com/https://github.com/LuRsT/hr/archive/1.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/LuRsT/hr/archive/refs/tags/1.4.tar.gz"
   sha256 "decaf6e09473cb5792ba606f761786d8dce3587a820c8937a74b38b1bf5d80fb"
   license "MIT"
   head "https://github.com/LuRsT/hr.git", branch: "master"

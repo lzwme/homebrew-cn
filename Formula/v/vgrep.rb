@@ -1,7 +1,7 @@
 class Vgrep < Formula
   desc "User-friendly pager for grep"
   homepage "https://github.com/vrothberg/vgrep"
-  url "https://ghproxy.com/https://github.com/vrothberg/vgrep/archive/v2.7.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/vrothberg/vgrep/archive/refs/tags/v2.7.0.tar.gz"
   sha256 "0fb2ca6df8cdbb57bc50589e626e456f8a62b2d8d545b93425070844fcff26ea"
   license "GPL-3.0-only"
   version_scheme 1

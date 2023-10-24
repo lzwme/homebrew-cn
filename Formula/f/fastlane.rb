@@ -1,7 +1,7 @@
 class Fastlane < Formula
   desc "Easiest way to build and release mobile apps"
   homepage "https://fastlane.tools"
-  url "https://ghproxy.com/https://github.com/fastlane/fastlane/archive/2.216.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/fastlane/fastlane/archive/refs/tags/2.216.0.tar.gz"
   sha256 "f525e6114eff667977bd3ceae1cb1342049f81654f7baba5c01771e315ef61f4"
   license "MIT"
   head "https://github.com/fastlane/fastlane.git", branch: "master"

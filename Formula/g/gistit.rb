@@ -1,7 +1,7 @@
 class Gistit < Formula
   desc "Command-line utility for creating Gists"
   homepage "https://gistit.herokuapp.com/"
-  url "https://ghproxy.com/https://github.com/jrbasso/gistit/archive/v0.1.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/jrbasso/gistit/archive/refs/tags/v0.1.4.tar.gz"
   sha256 "9d87cfdd6773ebbd3f6217b11d9ebcee862ee4db8be7e18a38ebb09634f76a78"
   license "MIT"
   head "https://github.com/jrbasso/gistit.git", branch: "master"

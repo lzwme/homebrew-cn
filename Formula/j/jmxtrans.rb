@@ -1,7 +1,7 @@
 class Jmxtrans < Formula
   desc "Tool to connect to JVMs and query their attributes"
   homepage "https://github.com/jmxtrans/jmxtrans"
-  url "https://ghproxy.com/https://github.com/jmxtrans/jmxtrans/archive/jmxtrans-parent-272.tar.gz"
+  url "https://ghproxy.com/https://github.com/jmxtrans/jmxtrans/archive/refs/tags/jmxtrans-parent-272.tar.gz"
   sha256 "73691dc634be8ff504ed33867807266545d9ff9402e365c09fcf0272720cc160"
   license "MIT"
   version_scheme 1

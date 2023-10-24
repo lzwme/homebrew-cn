@@ -1,7 +1,7 @@
 class Pkger < Formula
   desc "Embed static files in Go binaries (replacement for gobuffalo/packr)"
   homepage "https://github.com/markbates/pkger"
-  url "https://ghproxy.com/https://github.com/markbates/pkger/archive/v0.17.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/markbates/pkger/archive/refs/tags/v0.17.1.tar.gz"
   sha256 "da775b5ec5675f0db75cf295ff07a4a034ba15eb5cc02d278a5767f387fb8273"
   license "MIT"
   head "https://github.com/markbates/pkger.git", branch: "master"

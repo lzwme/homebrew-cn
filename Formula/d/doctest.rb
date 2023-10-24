@@ -1,7 +1,7 @@
 class Doctest < Formula
   desc "Feature-rich C++11/14/17/20 single-header testing framework"
   homepage "https://github.com/doctest/doctest"
-  url "https://ghproxy.com/https://github.com/doctest/doctest/archive/v2.4.11.tar.gz"
+  url "https://ghproxy.com/https://github.com/doctest/doctest/archive/refs/tags/v2.4.11.tar.gz"
   sha256 "632ed2c05a7f53fa961381497bf8069093f0d6628c5f26286161fbd32a560186"
   license "MIT"
 

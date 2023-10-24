@@ -1,7 +1,7 @@
 class Shellcheck < Formula
   desc "Static analysis and lint tool, for (ba)sh scripts"
   homepage "https://www.shellcheck.net/"
-  url "https://ghproxy.com/https://github.com/koalaman/shellcheck/archive/v0.9.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/koalaman/shellcheck/archive/refs/tags/v0.9.0.tar.gz"
   sha256 "3cec1fec786feee79dacdabf9de784a117b7f82388dbcca97ba56a5c9ff7d148"
   license "GPL-3.0-or-later"
   head "https://github.com/koalaman/shellcheck.git", branch: "master"

@@ -1,7 +1,7 @@
 class Diskonaut < Formula
   desc "Terminal visual disk space navigator"
   homepage "https://github.com/imsnif/diskonaut"
-  url "https://ghproxy.com/https://github.com/imsnif/diskonaut/archive/0.11.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/imsnif/diskonaut/archive/refs/tags/0.11.0.tar.gz"
   sha256 "355367dbc6119743d88bfffaa57ad4f308596165a57acc2694da1277c3025928"
   license "MIT"
 

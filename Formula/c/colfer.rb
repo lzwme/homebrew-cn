@@ -1,7 +1,7 @@
 class Colfer < Formula
   desc "Schema compiler for binary data exchange"
   homepage "https://github.com/pascaldekloe/colfer"
-  url "https://ghproxy.com/https://github.com/pascaldekloe/colfer/archive/v1.8.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/pascaldekloe/colfer/archive/refs/tags/v1.8.1.tar.gz"
   sha256 "5d184c8a311543f26c957fff6cad3908b9b0a4d31e454bb7f254b300d004dca7"
   license "CC0-1.0"
 

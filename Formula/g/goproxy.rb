@@ -1,7 +1,7 @@
 class Goproxy < Formula
   desc "Global proxy for Go modules"
   homepage "https://github.com/goproxyio/goproxy"
-  url "https://ghproxy.com/https://github.com/goproxyio/goproxy/archive/v2.0.7.tar.gz"
+  url "https://ghproxy.com/https://github.com/goproxyio/goproxy/archive/refs/tags/v2.0.7.tar.gz"
   sha256 "d87f3928467520f8d6b0ba8adcbf5957dc6eb2dc9936249edd6568ceb01a71ca"
   license "MIT"
   head "https://github.com/goproxyio/goproxy.git", branch: "master"

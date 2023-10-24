@@ -1,7 +1,7 @@
 class Libecpint < Formula
   desc "Library for the efficient evaluation of integrals over effective core potentials"
   homepage "https://github.com/robashaw/libecpint"
-  url "https://ghproxy.com/https://github.com/robashaw/libecpint/archive/v1.0.7.tar.gz"
+  url "https://ghproxy.com/https://github.com/robashaw/libecpint/archive/refs/tags/v1.0.7.tar.gz"
   sha256 "e9c60fddb2614f113ab59ec620799d961db73979845e6e637c4a6fb72aee51cc"
   license "MIT"
 

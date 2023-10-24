@@ -1,7 +1,7 @@
 class Saldl < Formula
   desc "CLI downloader optimized for speed and early preview"
   homepage "https://saldl.github.io/"
-  url "https://ghproxy.com/https://github.com/saldl/saldl/archive/v41.tar.gz"
+  url "https://ghproxy.com/https://github.com/saldl/saldl/archive/refs/tags/v41.tar.gz"
   sha256 "fc9980922f1556fd54a8c04fd671933fdc5b1e6847c1493a5fec89e164722d8e"
   license "AGPL-3.0-or-later"
   head "https://github.com/saldl/saldl.git", branch: "master"

@@ -1,7 +1,7 @@
 class Coinutils < Formula
   desc "COIN-OR utilities"
   homepage "https://github.com/coin-or/CoinUtils"
-  url "https://ghproxy.com/https://github.com/coin-or/CoinUtils/archive/releases/2.11.9.tar.gz"
+  url "https://ghproxy.com/https://github.com/coin-or/CoinUtils/archive/refs/tags/releases/2.11.9.tar.gz"
   sha256 "15d572ace4cd3b7c8ce117081b65a2bd5b5a4ebaba54fadc99c7a244160f88b8"
   license "EPL-2.0"
   head "https://github.com/coin-or/CoinUtils.git", branch: "master"

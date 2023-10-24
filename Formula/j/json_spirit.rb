@@ -1,7 +1,7 @@
 class JsonSpirit < Formula
   desc "C++ JSON parser/generator"
   homepage "https://www.codeproject.com/Articles/20027/JSON-Spirit-A-C-JSON-Parser-Generator-Implemented"
-  url "https://ghproxy.com/https://github.com/png85/json_spirit/archive/json_spirit-4.0.8.tar.gz"
+  url "https://ghproxy.com/https://github.com/png85/json_spirit/archive/refs/tags/json_spirit-4.0.8.tar.gz"
   # Current release is misnamed on GitHub. Previous versioning scheme and
   # homepage dictate the release as "4.08".
   version "4.08"

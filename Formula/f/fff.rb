@@ -1,7 +1,7 @@
 class Fff < Formula
   desc "Simple file manager written in bash"
   homepage "https://github.com/dylanaraps/fff"
-  url "https://ghproxy.com/https://github.com/dylanaraps/fff/archive/2.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/dylanaraps/fff/archive/refs/tags/2.2.tar.gz"
   sha256 "45f6e1091986c892ea45e1ac82f2d7f5417cfb343dc569d2625b5980e6bcfb62"
   license "MIT"
 

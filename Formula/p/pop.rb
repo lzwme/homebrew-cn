@@ -1,7 +1,7 @@
 class Pop < Formula
   desc "Send emails from your terminal"
   homepage "https://github.com/charmbracelet/pop"
-  url "https://ghproxy.com/https://github.com/charmbracelet/pop/archive/v0.2.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/charmbracelet/pop/archive/refs/tags/v0.2.0.tar.gz"
   sha256 "360db66ff46cf6331b2851f53477b7bf3a49303b0b46aaacff3d6c1027bf3f40"
   license "MIT"
 

@@ -1,7 +1,7 @@
 class Openlibm < Formula
   desc "High quality, portable, open source libm implementation"
   homepage "https://openlibm.org"
-  url "https://ghproxy.com/https://github.com/JuliaMath/openlibm/archive/v0.8.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/JuliaMath/openlibm/archive/refs/tags/v0.8.1.tar.gz"
   sha256 "ba8a282ecd92d0033f5656bb20dfc6ea3fb83f90ba69291ac8f7beba42dcffcf"
   license all_of: ["MIT", "ISC", "BSD-2-Clause"]
 

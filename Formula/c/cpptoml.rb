@@ -1,7 +1,7 @@
 class Cpptoml < Formula
   desc "Header-only library for parsing TOML"
   homepage "https://github.com/skystrife/cpptoml"
-  url "https://ghproxy.com/https://github.com/skystrife/cpptoml/archive/v0.1.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/skystrife/cpptoml/archive/refs/tags/v0.1.1.tar.gz"
   sha256 "23af72468cfd4040984d46a0dd2a609538579c78ddc429d6b8fd7a10a6e24403"
   license "MIT"
   revision 1

@@ -2,7 +2,7 @@ class Gyb < Formula
   include Language::Python::Virtualenv
   desc "CLI for backing up and restoring Gmail messages"
   homepage "https://github.com/GAM-team/got-your-back/"
-  url "https://ghproxy.com/https://github.com/GAM-team/got-your-back/archive/v1.74.tar.gz"
+  url "https://ghproxy.com/https://github.com/GAM-team/got-your-back/archive/refs/tags/v1.74.tar.gz"
   sha256 "64029c4eadd191ed00847ef08ed6853b85f16d9955847a1fc71bec2616e60250"
   license "Apache-2.0"
   head "https://github.com/GAM-team/got-your-back.git", branch: "main"

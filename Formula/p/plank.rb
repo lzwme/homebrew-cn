@@ -1,7 +1,7 @@
 class Plank < Formula
   desc "Framework for generating immutable model objects"
   homepage "https://pinterest.github.io/plank/"
-  url "https://ghproxy.com/https://github.com/pinterest/plank/archive/v1.6.tar.gz"
+  url "https://ghproxy.com/https://github.com/pinterest/plank/archive/refs/tags/v1.6.tar.gz"
   sha256 "6a233120905ff371b5c06a23b3fc7dd67e96355dd4d992a58ac087db22c500ef"
   license "Apache-2.0"
   head "https://github.com/pinterest/plank.git", branch: "master"

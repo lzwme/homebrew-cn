@@ -1,7 +1,7 @@
 class Luaver < Formula
   desc "Manage and switch between versions of Lua, LuaJIT, and Luarocks"
   homepage "https://github.com/DhavalKapil/luaver"
-  url "https://ghproxy.com/https://github.com/DhavalKapil/luaver/archive/v1.1.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/DhavalKapil/luaver/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "441b1b72818889593d15a035807c95321118ac34270da49cf8d5d64f5f2e486d"
   license "MIT"
   head "https://github.com/DhavalKapil/luaver.git", branch: "master"

@@ -1,7 +1,7 @@
 class Ddate < Formula
   desc "Converts boring normal dates to fun Discordian Date"
   homepage "https://github.com/bo0ts/ddate"
-  url "https://ghproxy.com/https://github.com/bo0ts/ddate/archive/v0.2.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/bo0ts/ddate/archive/refs/tags/v0.2.2.tar.gz"
   sha256 "d53c3f0af845045f39d6d633d295fd4efbe2a792fd0d04d25d44725d11c678ad"
 
   bottle do

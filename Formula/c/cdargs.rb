@@ -1,7 +1,7 @@
 class Cdargs < Formula
   desc "Directory bookmarking system - Enhanced cd utilities"
   homepage "https://github.com/cbxbiker61/cdargs"
-  url "https://ghproxy.com/https://github.com/cbxbiker61/cdargs/archive/2.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/cbxbiker61/cdargs/archive/refs/tags/2.1.tar.gz"
   sha256 "062515c3fbd28c68f9fa54ff6a44b81cf647469592444af0872b5ecd7444df7d"
   license "GPL-2.0"
   head "https://github.com/cbxbiker61/cdargs.git", branch: "master"

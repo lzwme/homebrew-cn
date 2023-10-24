@@ -1,7 +1,7 @@
 class LincityNg < Formula
   desc "City simulation game"
   homepage "https://github.com/lincity-ng/lincity-ng/"
-  url "https://ghproxy.com/https://github.com/lincity-ng/lincity-ng/archive/lincity-ng-2.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/lincity-ng/lincity-ng/archive/refs/tags/lincity-ng-2.0.tar.gz"
   sha256 "e05a2c1e1d682fbf289caecd0ea46ca84b0db9de43c7f1b5add08f0fdbf1456b"
   license "GPL-2.0"
   revision 3

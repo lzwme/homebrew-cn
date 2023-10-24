@@ -1,7 +1,7 @@
 class Logcli < Formula
   desc "Run LogQL queries against a Loki server"
   homepage "https://grafana.com/loki"
-  url "https://ghproxy.com/https://github.com/grafana/loki/archive/v2.9.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/grafana/loki/archive/refs/tags/v2.9.2.tar.gz"
   sha256 "9c1a153ab4d57d5c109dbf55d4ea5aeab2159ccf51d3b8cc8fea19970f0a88d8"
   license "AGPL-3.0-only"
   head "https://github.com/grafana/loki.git", branch: "main"

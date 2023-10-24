@@ -1,7 +1,7 @@
 class Forego < Formula
   desc "Foreman in Go for Procfile-based application management"
   homepage "https://github.com/ddollar/forego"
-  url "https://ghproxy.com/https://github.com/ddollar/forego/archive/20180216151118.tar.gz"
+  url "https://ghproxy.com/https://github.com/ddollar/forego/archive/refs/tags/20180216151118.tar.gz"
   sha256 "23119550cc0e45191495823aebe28b42291db6de89932442326340042359b43d"
   license "Apache-2.0"
   head "https://github.com/ddollar/forego.git", branch: "master"

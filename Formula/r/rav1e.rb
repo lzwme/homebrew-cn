@@ -5,7 +5,7 @@ class Rav1e < Formula
   head "https://github.com/xiph/rav1e.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/xiph/rav1e/archive/v0.6.6.tar.gz"
+    url "https://ghproxy.com/https://github.com/xiph/rav1e/archive/refs/tags/v0.6.6.tar.gz"
     sha256 "723696e93acbe03666213fbc559044f3cae5b8b888b2ddae667402403cff51e5"
 
     # keep the version in sync

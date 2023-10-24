@@ -1,7 +1,7 @@
 class Pdftoipe < Formula
   desc "Reads arbitrary PDF files and generates an XML file readable by Ipe"
   homepage "https://github.com/otfried/ipe-tools"
-  url "https://ghproxy.com/https://github.com/otfried/ipe-tools/archive/v7.2.24.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/otfried/ipe-tools/archive/refs/tags/v7.2.24.1.tar.gz"
   sha256 "561b18fc2a7ae45c37c5d0390443b37f4585549f09cd7765d856456be24e5dbc"
   license "GPL-2.0-or-later"
   revision 16

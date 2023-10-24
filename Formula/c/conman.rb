@@ -1,7 +1,7 @@
 class Conman < Formula
   desc "Serial console management program supporting a large number of devices"
   homepage "https://github.com/dun/conman"
-  url "https://ghproxy.com/https://github.com/dun/conman/archive/conman-0.3.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/dun/conman/archive/refs/tags/conman-0.3.1.tar.gz"
   sha256 "cd47d3d9a72579b470dd73d85cd3fec606fa5659c728ff3c1c57e970f4da72a2"
   license "GPL-3.0-or-later"
 

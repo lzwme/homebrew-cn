@@ -1,7 +1,7 @@
 class Gpm < Formula
   desc "Barebones dependency manager for Go"
   homepage "https://github.com/pote/gpm"
-  url "https://ghproxy.com/https://github.com/pote/gpm/archive/v1.4.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/pote/gpm/archive/refs/tags/v1.4.0.tar.gz"
   sha256 "2e213abbb1a12ecb895c3f02b74077d3440b7ae3221b4b524659c2ea9065b02a"
   license "MIT"
   revision 1

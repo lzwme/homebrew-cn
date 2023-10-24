@@ -1,7 +1,7 @@
 class Libint < Formula
   desc "Library for computing electron repulsion integrals efficiently"
   homepage "https://github.com/evaleev/libint"
-  url "https://ghproxy.com/https://github.com/evaleev/libint/archive/v2.7.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/evaleev/libint/archive/refs/tags/v2.7.2.tar.gz"
   sha256 "fd0466ce9eb6786b8c5bbe3d510e387ed44b198a163264dfd7e60b337e295fd9"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later"]
 

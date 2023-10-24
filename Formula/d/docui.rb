@@ -1,7 +1,7 @@
 class Docui < Formula
   desc "TUI Client for Docker"
   homepage "https://github.com/skanehira/docui"
-  url "https://ghproxy.com/https://github.com/skanehira/docui/archive/2.0.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/skanehira/docui/archive/refs/tags/2.0.4.tar.gz"
   sha256 "9af1a720aa7c68bea4469f1d7eea81ccb68e15a47ccfc9c83011a06d696ad30d"
   license "MIT"
   head "https://github.com/skanehira/docui.git", branch: "master"

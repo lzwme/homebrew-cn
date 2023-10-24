@@ -1,7 +1,7 @@
 class Gotags < Formula
   desc "Tag generator for Go, compatible with ctags"
   homepage "https://github.com/jstemmer/gotags"
-  url "https://ghproxy.com/https://github.com/jstemmer/gotags/archive/v1.4.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/jstemmer/gotags/archive/refs/tags/v1.4.1.tar.gz"
   sha256 "2df379527eaa7af568734bc4174febe7752eb5af1b6194da84cd098b7c873343"
   license "MIT"
   head "https://github.com/jstemmer/gotags.git", branch: "master"

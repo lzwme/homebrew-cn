@@ -3,7 +3,7 @@ class EulerPy < Formula
 
   desc "Project Euler command-line tool written in Python"
   homepage "https://github.com/iKevinY/EulerPy"
-  url "https://ghproxy.com/https://github.com/iKevinY/EulerPy/archive/v1.4.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/iKevinY/EulerPy/archive/refs/tags/v1.4.0.tar.gz"
   sha256 "0d2f633bc3985c8acfd62bc76ff3f19d0bfb2274f7873ec7e40c2caef315e46d"
   license "MIT"
   revision 2

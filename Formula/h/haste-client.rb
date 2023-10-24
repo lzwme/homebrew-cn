@@ -1,7 +1,7 @@
 class HasteClient < Formula
   desc "CLI client for haste-server"
   homepage "https://hastebin.com/"
-  url "https://ghproxy.com/https://github.com/toptal/haste-client/archive/v0.3.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/toptal/haste-client/archive/refs/tags/v0.3.0.tar.gz"
   sha256 "9f7e943be47408ba0b9765328794e7b87bdb2a785f1e9edb5d541d67b4a75d31"
   license "MIT"
   head "https://github.com/toptal/haste-client.git", branch: "master"

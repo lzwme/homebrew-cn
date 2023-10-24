@@ -1,7 +1,7 @@
 class Flamegraph < Formula
   desc "Stack trace visualizer"
   homepage "https://github.com/brendangregg/FlameGraph"
-  url "https://ghproxy.com/https://github.com/brendangregg/FlameGraph/archive/v1.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/brendangregg/FlameGraph/archive/refs/tags/v1.0.tar.gz"
   sha256 "c5ba824228a4f7781336477015cb3b2d8178ffd86bccd5f51864ed52a5ad6675"
   license "CDDL-1.0"
   revision 1

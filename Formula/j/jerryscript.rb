@@ -1,7 +1,7 @@
 class Jerryscript < Formula
   desc "Ultra-lightweight JavaScript engine for the Internet of Things"
   homepage "https://jerryscript.net"
-  url "https://ghproxy.com/https://github.com/jerryscript-project/jerryscript/archive/v2.4.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/jerryscript-project/jerryscript/archive/refs/tags/v2.4.0.tar.gz"
   sha256 "5850947c23db6fbce032d15560551408ab155b16a94a7ac4412dc3bb85762d2d"
   license "Apache-2.0"
   head "https://github.com/jerryscript-project/jerryscript.git", branch: "master"

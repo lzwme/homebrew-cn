@@ -1,7 +1,7 @@
 class Willgit < Formula
   desc "William's miscellaneous git tools"
   homepage "https://github.com/DanielVartanov/willgit"
-  url "https://ghproxy.com/https://github.com/DanielVartanov/willgit/archive/1.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/DanielVartanov/willgit/archive/refs/tags/1.0.0.tar.gz"
   sha256 "3bb99d6ec2614a90f40962311daf51f393b3d0abfdb0f9e0a14ba7340b33a2c8"
   license "MIT"
   head "https://github.com/DanielVartanov/willgit.git", branch: "master"

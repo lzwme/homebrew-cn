@@ -1,7 +1,7 @@
 class Rargs < Formula
   desc "Util like xargs + awk with pattern matching support"
   homepage "https://github.com/lotabout/rargs"
-  url "https://ghproxy.com/https://github.com/lotabout/rargs/archive/v0.3.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/lotabout/rargs/archive/refs/tags/v0.3.0.tar.gz"
   sha256 "22d9aa4368a0f9d1fd82391439d3aabf4ddfb24ad674a680d6407c9e22969da3"
   license "MIT"
 

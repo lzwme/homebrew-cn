@@ -1,7 +1,7 @@
 class Gibo < Formula
   desc "Access GitHub's .gitignore boilerplates"
   homepage "https://github.com/simonwhitaker/gibo"
-  url "https://ghproxy.com/https://github.com/simonwhitaker/gibo/archive/v3.0.7.tar.gz"
+  url "https://ghproxy.com/https://github.com/simonwhitaker/gibo/archive/refs/tags/v3.0.7.tar.gz"
   sha256 "1e07ca4d5e7a0303784c42c5c9633b63cc0532d5b9dc69e7400caa501be51497"
   license "Unlicense"
 

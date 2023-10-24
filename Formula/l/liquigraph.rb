@@ -1,7 +1,7 @@
 class Liquigraph < Formula
   desc "Migration runner for Neo4j"
   homepage "https://www.liquigraph.org/"
-  url "https://ghproxy.com/https://github.com/liquibase/liquigraph/archive/liquigraph-4.0.6.tar.gz"
+  url "https://ghproxy.com/https://github.com/liquibase/liquigraph/archive/refs/tags/liquigraph-4.0.6.tar.gz"
   sha256 "c51283a75346f8d4c7bb44c6a39461eb3918ac5b150ec3ae157f9b12c4150566"
   license "Apache-2.0"
   head "https://github.com/liquibase/liquigraph.git", branch: "4.x"

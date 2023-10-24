@@ -1,7 +1,7 @@
 class TigerVnc < Formula
   desc "High-performance, platform-neutral implementation of VNC"
   homepage "https://tigervnc.org/"
-  url "https://ghproxy.com/https://github.com/TigerVNC/tigervnc/archive/v1.13.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/TigerVNC/tigervnc/archive/refs/tags/v1.13.1.tar.gz"
   sha256 "b7c5b8ed9e4e2c2f48c7b2c9f21927db345e542243b4be88e066b2daa3d1ae25"
   license "GPL-2.0-or-later"
 

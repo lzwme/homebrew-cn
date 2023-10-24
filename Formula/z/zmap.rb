@@ -1,7 +1,7 @@
 class Zmap < Formula
   desc "Network scanner for Internet-wide network studies"
   homepage "https://zmap.io"
-  url "https://ghproxy.com/https://github.com/zmap/zmap/archive/v3.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/zmap/zmap/archive/refs/tags/v3.0.0.tar.gz"
   sha256 "e3151cdcdf695ab7581e01a7c6ee78678717d6a62ef09849b34db39682535454"
   license "Apache-2.0"
   head "https://github.com/zmap/zmap.git", branch: "main"

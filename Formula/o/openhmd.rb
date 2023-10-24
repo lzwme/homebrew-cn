@@ -1,7 +1,7 @@
 class Openhmd < Formula
   desc "Free and open source API and drivers for immersive technology"
   homepage "http://openhmd.net"
-  url "https://ghproxy.com/https://github.com/OpenHMD/OpenHMD/archive/0.3.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/OpenHMD/OpenHMD/archive/refs/tags/0.3.0.tar.gz"
   sha256 "ec5c97ab456046a8aef3cde6d59e474603af398f1d064a66e364fe3c0b26a0fa"
   license "BSL-1.0"
   head "https://github.com/OpenHMD/OpenHMD.git", branch: "master"

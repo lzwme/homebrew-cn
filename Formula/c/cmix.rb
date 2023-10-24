@@ -1,7 +1,7 @@
 class Cmix < Formula
   desc "Data compression program with high compression ratio"
   homepage "https://www.byronknoll.com/cmix.html"
-  url "https://ghproxy.com/https://github.com/byronknoll/cmix/archive/v19.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/byronknoll/cmix/archive/refs/tags/v19.1.tar.gz"
   version "19.1.0"
   sha256 "d9d911b17f31bfe4b1f1879ea1d9fb022339d5886d88ed15a1146e502d606808"
   license "GPL-3.0-or-later"

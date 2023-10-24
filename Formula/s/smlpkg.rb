@@ -1,7 +1,7 @@
 class Smlpkg < Formula
   desc "Package manager for Standard ML libraries and programs"
   homepage "https://github.com/diku-dk/smlpkg"
-  url "https://ghproxy.com/https://github.com/diku-dk/smlpkg/archive/v0.1.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/diku-dk/smlpkg/archive/refs/tags/v0.1.5.tar.gz"
   sha256 "53440d8b0166dd689330fc686738076225ac883a00b283e65394cf9312575c33"
   license "MIT"
   head "https://github.com/diku-dk/smlpkg.git", branch: "master"

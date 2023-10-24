@@ -1,7 +1,7 @@
 class Nethogs < Formula
   desc "Net top tool grouping bandwidth per process"
   homepage "https://raboof.github.io/nethogs/"
-  url "https://ghproxy.com/https://github.com/raboof/nethogs/archive/v0.8.7.tar.gz"
+  url "https://ghproxy.com/https://github.com/raboof/nethogs/archive/refs/tags/v0.8.7.tar.gz"
   sha256 "957d6afcc220dfbba44c819162f44818051c5b4fb793c47ba98294393986617d"
   license "GPL-2.0"
 

@@ -1,10 +1,9 @@
 class V2ray < Formula
   desc "Platform for building proxies to bypass network restrictions"
   homepage "https://v2fly.org/"
-  url "https://ghproxy.com/https://github.com/v2fly/v2ray-core/archive/v5.7.0.tar.gz"
-  sha256 "599fcd264537e39178b6008a11af68816dfd1609e19a9cf8adc8b2a4240ee370"
+  url "https://ghproxy.com/https://github.com/v2fly/v2ray-core/archive/refs/tags/v5.8.0.tar.gz"
+  sha256 "340798554d2c7f0e5fb719f9d9dd6a667dfe93ccdd3b1d653c3a3bdb04ed2d00"
   license all_of: ["MIT", "CC-BY-SA-4.0"]
-  revision 1
   head "https://github.com/v2fly/v2ray-core.git", branch: "master"
 
   livecheck do
@@ -13,15 +12,14 @@ class V2ray < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ffbf514dbfc3d9a3a3803e1d278226454c76746f6a7a2941f2a88d8aab546bc4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "38e84f1f30b5835c66cf81834003afdce126f387b9281a4f93165a70863c8ebb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "38e84f1f30b5835c66cf81834003afdce126f387b9281a4f93165a70863c8ebb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "38e84f1f30b5835c66cf81834003afdce126f387b9281a4f93165a70863c8ebb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "047e307951548ef501a41e251779125508d9c969f2c2206e0195a3213bb89f36"
-    sha256 cellar: :any_skip_relocation, ventura:        "16cc7dca1bef1c45ee9989d57c9097fb1bce97f4f75ba854c39628fea6c20ad9"
-    sha256 cellar: :any_skip_relocation, monterey:       "16cc7dca1bef1c45ee9989d57c9097fb1bce97f4f75ba854c39628fea6c20ad9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "16cc7dca1bef1c45ee9989d57c9097fb1bce97f4f75ba854c39628fea6c20ad9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c09457ba4832a2d44e7bf70be876b04d5de9a4f49bb7a2ac135d96fa86c8a9e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2a6d79d56835f0e56e21d96f25065be350c9c490c2bd885dfa96e8f6ddaac79d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2a6d79d56835f0e56e21d96f25065be350c9c490c2bd885dfa96e8f6ddaac79d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2a6d79d56835f0e56e21d96f25065be350c9c490c2bd885dfa96e8f6ddaac79d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cb3df5f743ea21b51ef897dab557cb2d4b6efc7abad616cbc96abad1a4fe4ebc"
+    sha256 cellar: :any_skip_relocation, ventura:        "cb3df5f743ea21b51ef897dab557cb2d4b6efc7abad616cbc96abad1a4fe4ebc"
+    sha256 cellar: :any_skip_relocation, monterey:       "cb3df5f743ea21b51ef897dab557cb2d4b6efc7abad616cbc96abad1a4fe4ebc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8cb07c76bf03b2fc7d0ffdf33594a5353ac8014ec29435c396406868951fe0a6"
   end
 
   # This requires Go 1.20 until there is a `v2ray` release that supports Go
@@ -31,18 +29,18 @@ class V2ray < Formula
   depends_on "go@1.20" => :build
 
   resource "geoip" do
-    url "https://ghproxy.com/https://github.com/v2fly/geoip/releases/download/202307060057/geoip.dat"
-    sha256 "a200767fcf152a4886c8bbfc8e9b8325cb405dd8076f911a7d49edb3ddf20024"
+    url "https://ghproxy.com/https://github.com/v2fly/geoip/releases/download/202310190037/geoip.dat"
+    sha256 "bc989d73a81be233e57b7bb4d6aed2b8e60f8d3e33f76cb78b89e14b67d12725"
   end
 
   resource "geoip-only-cn-private" do
-    url "https://ghproxy.com/https://github.com/v2fly/geoip/releases/download/202307060057/geoip-only-cn-private.dat"
-    sha256 "6794c150eac1bb8727dc9c3ffb6cc576374ca2b6ec262f8d742007c96966ddc7"
+    url "https://ghproxy.com/https://github.com/v2fly/geoip/releases/download/202310190037/geoip-only-cn-private.dat"
+    sha256 "16889c54d791e4f77e439d738c3a31b599de985e514a23a4ebc7f68f10fd2358"
   end
 
   resource "geosite" do
-    url "https://ghproxy.com/https://github.com/v2fly/domain-list-community/releases/download/20230711133630/dlc.dat"
-    sha256 "bcbad43679badb8eb383f63ed753732d0378042c42199b17edcdfedba6d458b0"
+    url "https://ghproxy.com/https://github.com/v2fly/domain-list-community/releases/download/20231021075451/dlc.dat"
+    sha256 "0cc377429d005c72a6ca0c5f6db6feb30dd273869cca9cb517906454fea7a920"
   end
 
   def install

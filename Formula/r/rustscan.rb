@@ -1,7 +1,7 @@
 class Rustscan < Formula
   desc "Modern Day Portscanner"
   homepage "https://github.com/rustscan/rustscan"
-  url "https://ghproxy.com/https://github.com/RustScan/RustScan/archive/2.1.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/RustScan/RustScan/archive/refs/tags/2.1.1.tar.gz"
   sha256 "51244a5bde278b25de030bd91e4ebe1d4b87269b2d0f7f601565caef4fb5749a"
   license "GPL-3.0-or-later"
 

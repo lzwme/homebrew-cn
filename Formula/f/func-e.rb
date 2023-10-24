@@ -1,7 +1,7 @@
 class FuncE < Formula
   desc "Easily run Envoy"
   homepage "https://func-e.io"
-  url "https://ghproxy.com/https://github.com/tetratelabs/func-e/archive/v1.1.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/tetratelabs/func-e/archive/refs/tags/v1.1.4.tar.gz"
   sha256 "f8829bde3201960edbea764002c16ade4d68e0a7ddc453d042cd1fb5bba3f6d5"
   license "Apache-2.0"
 

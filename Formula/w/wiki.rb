@@ -1,7 +1,7 @@
 class Wiki < Formula
   desc "Fetch summaries from MediaWiki wikis, like Wikipedia"
   homepage "https://github.com/walle/wiki"
-  url "https://ghproxy.com/https://github.com/walle/wiki/archive/v1.4.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/walle/wiki/archive/refs/tags/v1.4.1.tar.gz"
   sha256 "529c6a58b3b5c5eb3faab07f2bf752155868b912e4f753e432d14040ff4f4262"
   license "MIT"
 

@@ -1,7 +1,7 @@
 class Unicorn < Formula
   desc "Lightweight multi-architecture CPU emulation framework"
   homepage "https://www.unicorn-engine.org/"
-  url "https://ghproxy.com/https://github.com/unicorn-engine/unicorn/archive/2.0.1.post1.tar.gz"
+  url "https://ghproxy.com/https://github.com/unicorn-engine/unicorn/archive/refs/tags/2.0.1.post1.tar.gz"
   version "2.0.1.post1"
   sha256 "6b276c857c69ee5ec3e292c3401c8c972bae292e0e4cb306bb9e5466c0f14737"
   license all_of: [

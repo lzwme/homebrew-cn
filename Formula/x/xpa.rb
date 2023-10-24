@@ -1,7 +1,7 @@
 class Xpa < Formula
   desc "Seamless communication between Unix programs"
   homepage "https://hea-www.harvard.edu/RD/xpa/"
-  url "https://ghproxy.com/https://github.com/ericmandel/xpa/archive/2.1.20.tar.gz"
+  url "https://ghproxy.com/https://github.com/ericmandel/xpa/archive/refs/tags/2.1.20.tar.gz"
   sha256 "854af367c0f4ffe7a65cb4da854a624e20af3c529f88187b50b22b68f024786a"
   license "MIT"
 

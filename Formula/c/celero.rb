@@ -1,7 +1,7 @@
 class Celero < Formula
   desc "C++ Benchmark Authoring Library/Framework"
   homepage "https://github.com/DigitalInBlue/Celero"
-  url "https://ghproxy.com/https://github.com/DigitalInBlue/Celero/archive/v2.9.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/DigitalInBlue/Celero/archive/refs/tags/v2.9.0.tar.gz"
   sha256 "d59df84696e0dd58022d2c42837362c06eba6d1e29bac61f7b3143bc73d779e5"
   license "Apache-2.0"
 

@@ -32,7 +32,7 @@ class Ciphey < Formula
   fails_with gcc: "5"
 
   resource "cipheycore" do
-    url "https://ghproxy.com/https://github.com/Ciphey/CipheyCore/archive/v0.3.2.tar.gz"
+    url "https://ghproxy.com/https://github.com/Ciphey/CipheyCore/archive/refs/tags/v0.3.2.tar.gz"
     sha256 "d05b4c15077b56121e96c1b934ae2d49f14004834a9b8fbc1bdc76782cd66253"
 
     # Switch build-system to poetry-core to avoid rust dependency on Linux.

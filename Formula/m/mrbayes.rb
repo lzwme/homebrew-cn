@@ -1,7 +1,7 @@
 class Mrbayes < Formula
   desc "Bayesian inference of phylogenies and evolutionary models"
   homepage "https://nbisweden.github.io/MrBayes/"
-  url "https://ghproxy.com/https://github.com/NBISweden/MrBayes/archive/v3.2.7a.tar.gz"
+  url "https://ghproxy.com/https://github.com/NBISweden/MrBayes/archive/refs/tags/v3.2.7a.tar.gz"
   sha256 "3eed2e3b1d9e46f265b6067a502a89732b6f430585d258b886e008e846ecc5c6"
   license "GPL-3.0-or-later"
   revision 3

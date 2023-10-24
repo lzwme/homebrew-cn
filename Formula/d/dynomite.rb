@@ -1,7 +1,7 @@
 class Dynomite < Formula
   desc "Generic dynamo implementation for different k-v storage engines"
   homepage "https://github.com/Netflix/dynomite"
-  url "https://ghproxy.com/https://github.com/Netflix/dynomite/archive/v0.6.22.tar.gz"
+  url "https://ghproxy.com/https://github.com/Netflix/dynomite/archive/refs/tags/v0.6.22.tar.gz"
   sha256 "9c3c60d95b39939f3ce596776febe8aa00ae8614ba85aa767e74d41e302e704a"
   license "Apache-2.0"
 

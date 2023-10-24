@@ -1,7 +1,7 @@
 class LunchyGo < Formula
   desc "Friendly wrapper for launchctl"
   homepage "https://github.com/sosedoff/lunchy-go"
-  url "https://ghproxy.com/https://github.com/sosedoff/lunchy-go/archive/v0.2.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/sosedoff/lunchy-go/archive/refs/tags/v0.2.1.tar.gz"
   sha256 "58f10dd7d823eff369a3181b7b244e41c09ad8fec2820c9976b822b3daee022e"
   license "MIT"
 

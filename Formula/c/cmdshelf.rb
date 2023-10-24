@@ -1,7 +1,7 @@
 class Cmdshelf < Formula
   desc "Better scripting life with cmdshelf"
   homepage "https://github.com/toshi0383/cmdshelf"
-  url "https://ghproxy.com/https://github.com/toshi0383/cmdshelf/archive/2.0.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/toshi0383/cmdshelf/archive/refs/tags/2.0.2.tar.gz"
   sha256 "dea2ea567cfa67196664629ceda5bc775040b472c25e96944c19c74892d69539"
   license any_of: ["Apache-2.0", "MIT"]
 

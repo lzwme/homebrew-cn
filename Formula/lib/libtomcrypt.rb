@@ -1,7 +1,7 @@
 class Libtomcrypt < Formula
   desc "Comprehensive, modular and portable cryptographic toolkit"
   homepage "https://www.libtom.net/"
-  url "https://ghproxy.com/https://github.com/libtom/libtomcrypt/archive/v1.18.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/libtom/libtomcrypt/archive/refs/tags/v1.18.2.tar.gz"
   sha256 "d870fad1e31cb787c85161a8894abb9d7283c2a654a9d3d4c6d45a1eba59952c"
   license "Unlicense"
 

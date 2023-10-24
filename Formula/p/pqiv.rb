@@ -1,7 +1,7 @@
 class Pqiv < Formula
   desc "Powerful image viewer with minimal UI"
   homepage "https://github.com/phillipberndt/pqiv"
-  url "https://ghproxy.com/https://github.com/phillipberndt/pqiv/archive/2.12.tar.gz"
+  url "https://ghproxy.com/https://github.com/phillipberndt/pqiv/archive/refs/tags/2.12.tar.gz"
   sha256 "1538128c88a70bbad2b83fbde327d83e4df9512a2fb560eaf5eaf1d8df99dbe5"
   license "GPL-3.0"
   revision 6

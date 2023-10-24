@@ -1,7 +1,7 @@
 class Gotop < Formula
   desc "Terminal based graphical activity monitor inspired by gtop and vtop"
   homepage "https://github.com/xxxserxxx/gotop"
-  url "https://ghproxy.com/https://github.com/xxxserxxx/gotop/archive/v4.2.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/xxxserxxx/gotop/archive/refs/tags/v4.2.0.tar.gz"
   sha256 "e9d9041903acb6bd3ffe94e0a02e69eea53f1128274da1bfe00fe44331ccceb1"
   license "BSD-3-Clause"
 

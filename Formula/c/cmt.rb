@@ -1,7 +1,7 @@
 class Cmt < Formula
   desc "Write consistent git commit messages based on a custom template"
   homepage "https://github.com/smallhadroncollider/cmt"
-  url "https://ghproxy.com/https://github.com/smallhadroncollider/cmt/archive/0.7.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/smallhadroncollider/cmt/archive/refs/tags/0.7.1.tar.gz"
   sha256 "364faaf5f44544f952b511be184a724e2011fba8f0f88fdfc05fef6985dd32f6"
   license "BSD-3-Clause"
   revision 1

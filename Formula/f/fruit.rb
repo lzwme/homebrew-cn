@@ -1,7 +1,7 @@
 class Fruit < Formula
   desc "Dependency injection framework for C++"
   homepage "https://github.com/google/fruit/wiki"
-  url "https://ghproxy.com/https://github.com/google/fruit/archive/v3.7.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/google/fruit/archive/refs/tags/v3.7.1.tar.gz"
   sha256 "ed4c6b7ebfbf75e14a74e21eb74ce2703b8485bfc9e660b1c36fb7fe363172d0"
   license "Apache-2.0"
 

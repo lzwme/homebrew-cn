@@ -1,7 +1,7 @@
 class Tdlib < Formula
   desc "Cross-platform library for building Telegram clients"
   homepage "https://core.telegram.org/tdlib"
-  url "https://ghproxy.com/https://github.com/tdlib/td/archive/v1.8.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/tdlib/td/archive/refs/tags/v1.8.0.tar.gz"
   sha256 "30d560205fe82fb811cd57a8fcbc7ac853a5b6195e9cb9e6ff142f5e2d8be217"
   license "BSL-1.0"
   head "https://github.com/tdlib/td.git", branch: "master"

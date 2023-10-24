@@ -1,7 +1,7 @@
 class Luv < Formula
   desc "Bare libuv bindings for lua"
   homepage "https://github.com/luvit/luv"
-  url "https://ghproxy.com/https://github.com/luvit/luv/archive/1.45.0-0.tar.gz"
+  url "https://ghproxy.com/https://github.com/luvit/luv/archive/refs/tags/1.45.0-0.tar.gz"
   sha256 "97e89940f9eeaa8dfb34f1c19f80dd373299c42719d15228ec790f415d4e4965"
   license "Apache-2.0"
   head "https://github.com/luvit/luv.git", branch: "master"
@@ -24,7 +24,7 @@ class Luv < Formula
   depends_on "libuv"
 
   resource "lua-compat-5.3" do
-    url "https://ghproxy.com/https://github.com/keplerproject/lua-compat-5.3/archive/v0.10.tar.gz"
+    url "https://ghproxy.com/https://github.com/keplerproject/lua-compat-5.3/archive/refs/tags/v0.10.tar.gz"
     sha256 "d1ed32f091856f6fffab06232da79c48b437afd4cd89e5c1fc85d7905b011430"
   end
 

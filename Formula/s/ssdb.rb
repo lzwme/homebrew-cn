@@ -1,7 +1,7 @@
 class Ssdb < Formula
   desc "NoSQL database supporting many data structures: Redis alternative"
   homepage "https://ssdb.io/"
-  url "https://ghproxy.com/https://github.com/ideawu/ssdb/archive/1.9.9.tar.gz"
+  url "https://ghproxy.com/https://github.com/ideawu/ssdb/archive/refs/tags/1.9.9.tar.gz"
   sha256 "a32009950114984d6e468e10d964b0ef1e846077b69d7c7615715fdfa01aaf6e"
   license "BSD-3-Clause"
   head "https://github.com/ideawu/ssdb.git", branch: "master"

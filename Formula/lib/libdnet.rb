@@ -1,7 +1,7 @@
 class Libdnet < Formula
   desc "Portable low-level networking library"
   homepage "https://github.com/ofalk/libdnet"
-  url "https://ghproxy.com/https://github.com/ofalk/libdnet/archive/libdnet-1.17.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/ofalk/libdnet/archive/refs/tags/libdnet-1.17.0.tar.gz"
   sha256 "6be1ed0763151ede4c9665a403f1c9d974b2ffab2eacdb26b22078e461aae1dc"
   license "BSD-3-Clause"
 

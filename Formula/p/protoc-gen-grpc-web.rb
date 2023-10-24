@@ -3,7 +3,7 @@ require "language/node"
 class ProtocGenGrpcWeb < Formula
   desc "Protoc plugin that generates code for gRPC-Web clients"
   homepage "https://github.com/grpc/grpc-web"
-  url "https://ghproxy.com/https://github.com/grpc/grpc-web/archive/1.4.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/grpc/grpc-web/archive/refs/tags/1.4.2.tar.gz"
   sha256 "376937b22095bdbea00f8bcd9442c1824419a99cbc37caf0967e4a0fa8b16658"
   license "Apache-2.0"
 

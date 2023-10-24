@@ -1,7 +1,7 @@
 class Pgpdump < Formula
   desc "PGP packet visualizer"
   homepage "https://www.mew.org/~kazu/proj/pgpdump/en/"
-  url "https://ghproxy.com/https://github.com/kazu-yamamoto/pgpdump/archive/v0.35.tar.gz"
+  url "https://ghproxy.com/https://github.com/kazu-yamamoto/pgpdump/archive/refs/tags/v0.35.tar.gz"
   sha256 "50b817d0ceaee41597b51e237e318803bf561ab6cf2dc1b49f68e85635fc8b0f"
   license "BSD-3-Clause"
   head "https://github.com/kazu-yamamoto/pgpdump.git", branch: "master"

@@ -1,7 +1,7 @@
 class LaunchctlCompletion < Formula
   desc "Bash completion for Launchctl"
   homepage "https://github.com/CamJN/launchctl-completion"
-  url "https://ghproxy.com/https://github.com/CamJN/launchctl-completion/archive/v1.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/CamJN/launchctl-completion/archive/refs/tags/v1.0.tar.gz"
   sha256 "b21c39031fa41576d695720b295dce57358c320964f25d19a427798d0f0df7a0"
   license "MIT"
 

@@ -1,7 +1,7 @@
 class Libvatek < Formula
   desc "User library to control VATek chips"
   homepage "https://github.com/VisionAdvanceTechnologyInc/vatek_sdk_2"
-  url "https://ghproxy.com/https://github.com/VisionAdvanceTechnologyInc/vatek_sdk_2/archive/v3.08.tar.gz"
+  url "https://ghproxy.com/https://github.com/VisionAdvanceTechnologyInc/vatek_sdk_2/archive/refs/tags/v3.08.tar.gz"
   sha256 "b2ccf79d2575a9a63faac394e739ed483ed6267039e55cebcb7c4b35bf76122e"
   license "BSD-2-Clause"
   head "https://github.com/VisionAdvanceTechnologyInc/vatek_sdk_2.git", branch: "main"

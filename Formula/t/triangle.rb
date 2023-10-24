@@ -1,7 +1,7 @@
 class Triangle < Formula
   desc "Convert images to computer generated art using Delaunay triangulation"
   homepage "https://github.com/esimov/triangle"
-  url "https://ghproxy.com/https://github.com/esimov/triangle/archive/v2.0.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/esimov/triangle/archive/refs/tags/v2.0.0.tar.gz"
   sha256 "071ba2a39b62e7914a233af74e7935ddb7a875bc2a5f193cd43862da65b1c516"
   license "MIT"
 

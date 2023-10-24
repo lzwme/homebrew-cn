@@ -1,7 +1,7 @@
 class Cobalt < Formula
   desc "Static site generator written in Rust"
   homepage "https://cobalt-org.github.io/"
-  url "https://ghproxy.com/https://github.com/cobalt-org/cobalt.rs/archive/v0.19.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/cobalt-org/cobalt.rs/archive/refs/tags/v0.19.0.tar.gz"
   sha256 "b6f18d72b22ebbad7cbaaff54a53a65c2e37de1356eb20588541fe5a2381fcc3"
   license "MIT"
 

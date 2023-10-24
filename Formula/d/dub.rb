@@ -1,7 +1,7 @@
 class Dub < Formula
   desc "Build tool for D projects"
   homepage "https://code.dlang.org/getting_started"
-  url "https://ghproxy.com/https://github.com/dlang/dub/archive/v1.34.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/dlang/dub/archive/refs/tags/v1.34.0.tar.gz"
   sha256 "970a33561310eb62a5494170e2a542f0c675952a18d4ba38a399449be0a8caff"
   license "MIT"
   version_scheme 1

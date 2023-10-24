@@ -1,7 +1,7 @@
 class Ldpl < Formula
   desc "Compiled programming language inspired by COBOL"
   homepage "https://www.ldpl-lang.org/"
-  url "https://ghproxy.com/https://github.com/Lartu/ldpl/archive/4.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/Lartu/ldpl/archive/refs/tags/4.4.tar.gz"
   sha256 "c34fb7d67d45050c7198f83ec9bb0b7790f78df8c6d99506c37141ccd2ac9ff1"
   license "Apache-2.0"
 

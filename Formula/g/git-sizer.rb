@@ -1,7 +1,7 @@
 class GitSizer < Formula
   desc "Compute various size metrics for a Git repository"
   homepage "https://github.com/github/git-sizer"
-  url "https://ghproxy.com/https://github.com/github/git-sizer/archive/v1.5.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/github/git-sizer/archive/refs/tags/v1.5.0.tar.gz"
   sha256 "07a5ac5f30401a17d164a6be8d52d3d474ee9c3fb7f60fd83a617af9f7e902bb"
   license "MIT"
 

@@ -1,7 +1,7 @@
 class StylishHaskell < Formula
   desc "Haskell code prettifier"
   homepage "https://github.com/haskell/stylish-haskell"
-  url "https://ghproxy.com/https://github.com/haskell/stylish-haskell/archive/v0.14.5.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/haskell/stylish-haskell/archive/refs/tags/v0.14.5.0.tar.gz"
   sha256 "580af1dc2f2cc3089bb255fd0af15dfb795a9ba0d9e76b2d0ce0c9ed2bcd9f07"
   license "BSD-3-Clause"
   head "https://github.com/haskell/stylish-haskell.git", branch: "main"

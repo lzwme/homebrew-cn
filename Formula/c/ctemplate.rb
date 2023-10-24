@@ -1,7 +1,7 @@
 class Ctemplate < Formula
   desc "Template language for C++"
   homepage "https://github.com/olafvdspek/ctemplate"
-  url "https://ghproxy.com/https://github.com/OlafvdSpek/ctemplate/archive/ctemplate-2.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/OlafvdSpek/ctemplate/archive/refs/tags/ctemplate-2.4.tar.gz"
   sha256 "ccc4105b3dc51c82b0f194499979be22d5a14504f741115be155bd991ee93cfa"
   license "BSD-3-Clause"
   revision 1

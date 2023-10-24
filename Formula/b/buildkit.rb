@@ -1,5 +1,5 @@
 class Buildkit < Formula
-  desc "Сoncurrent, cache-efficient, and Dockerfile-agnostic builder toolkit"
+  desc "Concurrent, cache-efficient, and Dockerfile-agnostic builder toolkit"
   homepage "https://github.com/moby/buildkit"
   url "https://github.com/moby/buildkit.git",
       tag:      "v0.12.3",

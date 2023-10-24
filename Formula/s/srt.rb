@@ -1,7 +1,7 @@
 class Srt < Formula
   desc "Secure Reliable Transport"
   homepage "https://www.srtalliance.org/"
-  url "https://ghproxy.com/https://github.com/Haivision/srt/archive/v1.5.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/Haivision/srt/archive/refs/tags/v1.5.3.tar.gz"
   sha256 "befaeb16f628c46387b898df02bc6fba84868e86a6f6d8294755375b9932d777"
   license "MPL-2.0"
   head "https://github.com/Haivision/srt.git", branch: "master"

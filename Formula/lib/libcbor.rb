@@ -1,7 +1,7 @@
 class Libcbor < Formula
   desc "CBOR protocol implementation for C and others"
   homepage "https://github.com/PJK/libcbor"
-  url "https://ghproxy.com/https://github.com/PJK/libcbor/archive/v0.10.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/PJK/libcbor/archive/refs/tags/v0.10.2.tar.gz"
   sha256 "e75f712215d7b7e5c89ef322a09b701f7159f028b8b48978865725f00f79875b"
   license "MIT"
 

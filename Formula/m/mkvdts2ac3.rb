@@ -6,7 +6,7 @@ class Mkvdts2ac3 < Formula
   head "https://github.com/JakeWharton/mkvdts2ac3.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/JakeWharton/mkvdts2ac3/archive/1.6.0.tar.gz"
+    url "https://ghproxy.com/https://github.com/JakeWharton/mkvdts2ac3/archive/refs/tags/1.6.0.tar.gz"
     sha256 "f9f070c00648c1ea062ac772b160c61d1b222ad2b7d30574145bf230e9288982"
 
     # patch with upstream fix for newer mkvtoolnix compatibility

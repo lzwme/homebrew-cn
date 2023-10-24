@@ -1,7 +1,7 @@
 class Leaps < Formula
   desc "Collaborative web-based text editing service written in Golang"
   homepage "https://github.com/jeffail/leaps"
-  url "https://ghproxy.com/https://github.com/Jeffail/leaps/archive/v0.9.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/Jeffail/leaps/archive/refs/tags/v0.9.1.tar.gz"
   sha256 "8335e2a939ac5928a05f71df4014529b5b0f2097152017d691a0fb6d5ae27be4"
   license "MIT"
 

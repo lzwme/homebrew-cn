@@ -5,7 +5,7 @@ class Jvgrep < Formula
   head "https://github.com/mattn/jvgrep.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/mattn/jvgrep/archive/v5.8.10.tar.gz"
+    url "https://ghproxy.com/https://github.com/mattn/jvgrep/archive/refs/tags/v5.8.10.tar.gz"
     sha256 "93b253a75a505bf0f58b23428b0aaa4bed842fe0060e282793066ee88d7672c9"
 
     # upstream PR, https://github.com/mattn/jvgrep/pull/81

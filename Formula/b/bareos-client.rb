@@ -1,8 +1,8 @@
 class BareosClient < Formula
   desc "Client for Bareos (Backup Archiving REcovery Open Sourced)"
   homepage "https://www.bareos.org/"
-  url "https://ghproxy.com/https://github.com/bareos/bareos/archive/Release/22.1.0.tar.gz"
-  sha256 "f1ee802751cdf89c46d1817e08a7caa937d02c6615940666c420cf17601b8b9c"
+  url "https://ghproxy.com/https://github.com/bareos/bareos/archive/refs/tags/Release/22.1.1.tar.gz"
+  sha256 "6fb0b57a7bfc8fb68c678003b5a8cc7b95f5d3f3b55d837219af183999fab451"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -11,15 +11,13 @@ class BareosClient < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "c85663b87c2069674f74daa467b427dbb0adde00ecdd23d2d5da70ce5849bc0b"
-    sha256 arm64_ventura:  "e86d1ce16bc66fdf6dfe1970900f30caa047ae168010314e361c4f381992b6d0"
-    sha256 arm64_monterey: "41c162660184898882572268b91b7c5d7e1e4c212fae191dff57a742d1ac153d"
-    sha256 arm64_big_sur:  "844bdbffec650e13937bfe75d5320d82785f3934524fcc8467c11362814507e4"
-    sha256 sonoma:         "cafc0eedc3067e6f86d31fd7dcc555625802b3cf00422501e458973b3c778b5f"
-    sha256 ventura:        "14881605ad0493cd05cfaa77c1737290e6fbeb1771810d4b0694e64a8f92a202"
-    sha256 monterey:       "9e27718126d33afedb0b01634011c4a9edffcc2cb648f409699aa6484a688ffd"
-    sha256 big_sur:        "69c7bc9ce269bd759fdfb1846187e1e594b9e4652c621cc5fb99c49edb5ededf"
-    sha256 x86_64_linux:   "fcaf2fafe2c5e2fe23adf648ccf5c22c2a1b211c6addbd3ab6b87e2af2575676"
+    sha256 arm64_sonoma:   "90e24e71f6e5001ec088f9ae3b3d76dcadd9f6d0cfc43bf29df69dc760aa092e"
+    sha256 arm64_ventura:  "e67e3026fba9a1754bf3083c4c3ce33a3aad8b42360b5dbcc9b8d3834f38f031"
+    sha256 arm64_monterey: "af94f17f91de8e2f4f084bd23baecbe7c10b5e4079d55f7247ebd7ac3774b5e3"
+    sha256 sonoma:         "e4aa2474c0a4f8f903e5655bd4bd17f9c62e4c885ed4086223843e6450e5b7bb"
+    sha256 ventura:        "0e92f8657163700624e253126f10931f21264520fc838dfa5857d5a3dfc55b9b"
+    sha256 monterey:       "a136e88d223636f04d604acbb3d273aeee91f4c34284f23c7aa69a18f6d133ef"
+    sha256 x86_64_linux:   "42b9c2bf70ceccbf29fa89990b2edc0f16f350a29e67e30bb8d9c4e8c0a4bdfe"
   end
 
   depends_on "cmake" => :build

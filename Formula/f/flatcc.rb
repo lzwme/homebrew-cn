@@ -1,7 +1,7 @@
 class Flatcc < Formula
   desc "FlatBuffers Compiler and Library in C for C"
   homepage "https://github.com/dvidelabs/flatcc"
-  url "https://ghproxy.com/https://github.com/dvidelabs/flatcc/archive/v0.6.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/dvidelabs/flatcc/archive/refs/tags/v0.6.1.tar.gz"
   sha256 "2533c2f1061498499f15acc7e0937dcf35bc68e685d237325124ae0d6c600c2b"
   license "Apache-2.0"
   head "https://github.com/dvidelabs/flatcc.git", branch: "master"

@@ -1,7 +1,7 @@
 class Wasm3 < Formula
   desc "High performance WebAssembly interpreter"
   homepage "https://github.com/wasm3/wasm3"
-  url "https://ghproxy.com/https://github.com/wasm3/wasm3/archive/v0.5.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/wasm3/wasm3/archive/refs/tags/v0.5.0.tar.gz"
   sha256 "b778dd72ee2251f4fe9e2666ee3fe1c26f06f517c3ffce572416db067546536c"
   license "MIT"
 

@@ -1,7 +1,7 @@
 class Rfcstrip < Formula
   desc "Strips headers and footers from RFCs and Internet-Drafts"
   homepage "https://github.com/mbj4668/rfcstrip"
-  url "https://ghproxy.com/https://github.com/mbj4668/rfcstrip/archive/1.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/mbj4668/rfcstrip/archive/refs/tags/1.3.tar.gz"
   sha256 "bba42a64535f55bfd1eae0cf0b85f781dacf5f3ce323b16515f32cefff920c6b"
 
   bottle do

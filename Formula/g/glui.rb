@@ -1,7 +1,7 @@
 class Glui < Formula
   desc "C++ user interface library"
   homepage "https://glui.sourceforge.net/"
-  url "https://ghproxy.com/https://github.com/libglui/glui/archive/2.37.tar.gz"
+  url "https://ghproxy.com/https://github.com/libglui/glui/archive/refs/tags/2.37.tar.gz"
   sha256 "f7f6983f7410fe8dfaa032b2b7b1aac2232ec6a400a142b73f680683dad795f8"
   license "Zlib"
   revision 1

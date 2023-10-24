@@ -1,7 +1,7 @@
 class Slacknimate < Formula
   desc "Text animation for Slack messages"
   homepage "https://github.com/mroth/slacknimate"
-  url "https://ghproxy.com/https://github.com/mroth/slacknimate/archive/v1.1.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/mroth/slacknimate/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "71c7a65192c8bbb790201787fabbb757de87f8412e0d41fe386c6b4343cb845c"
   license "MPL-2.0"
   head "https://github.com/mroth/slacknimate.git", branch: "master"

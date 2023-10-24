@@ -1,7 +1,7 @@
 class Nuraft < Formula
   desc "C++ implementation of Raft core logic as a replication library"
   homepage "https://github.com/eBay/NuRaft"
-  url "https://ghproxy.com/https://github.com/eBay/NuRaft/archive/v2.1.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/eBay/NuRaft/archive/refs/tags/v2.1.0.tar.gz"
   sha256 "42d19682149cf24ae12de0dabf70d7ad7e71e49fbfa61d565e9b46e2b3cd517f"
   license "Apache-2.0"
 

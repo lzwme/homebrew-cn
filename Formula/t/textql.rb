@@ -1,7 +1,7 @@
 class Textql < Formula
   desc "Executes SQL across text files"
   homepage "https://github.com/dinedal/textql"
-  url "https://ghproxy.com/https://github.com/dinedal/textql/archive/2.0.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/dinedal/textql/archive/refs/tags/2.0.3.tar.gz"
   sha256 "1fc4e7db5748938c31fe650e882aec4088d9123d46284c6a6f0ed6e8ea487e48"
   license "MIT"
 

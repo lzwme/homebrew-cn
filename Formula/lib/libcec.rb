@@ -1,7 +1,7 @@
 class Libcec < Formula
   desc "Control devices with TV remote control and HDMI cabling"
   homepage "http://libcec.pulse-eight.com/"
-  url "https://ghproxy.com/https://github.com/Pulse-Eight/libcec/archive/libcec-6.0.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/Pulse-Eight/libcec/archive/refs/tags/libcec-6.0.2.tar.gz"
   sha256 "090696d7a4fb772d7acebbb06f91ab92e025531c7c91824046b9e4e71ecb3377"
   license "GPL-2.0-or-later"
 
@@ -23,7 +23,7 @@ class Libcec < Formula
   uses_from_macos "ncurses"
 
   resource "p8-platform" do
-    url "https://ghproxy.com/https://github.com/Pulse-Eight/platform/archive/p8-platform-2.1.0.1.tar.gz"
+    url "https://ghproxy.com/https://github.com/Pulse-Eight/platform/archive/refs/tags/p8-platform-2.1.0.1.tar.gz"
     sha256 "064f8d2c358895c7e0bea9ae956f8d46f3f057772cb97f2743a11d478a0f68a0"
   end
 

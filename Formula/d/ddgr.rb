@@ -3,7 +3,7 @@ class Ddgr < Formula
 
   desc "DuckDuckGo from the terminal"
   homepage "https://github.com/jarun/ddgr"
-  url "https://ghproxy.com/https://github.com/jarun/ddgr/archive/v2.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/jarun/ddgr/archive/refs/tags/v2.1.tar.gz"
   sha256 "fb6601ad533f2925d2d6299ab9e6dd48da0b75e99ef9ed9068f37e516380b5e6"
   license "GPL-3.0-or-later"
 

@@ -1,7 +1,7 @@
 class WifiPassword < Formula
   desc "Show the current WiFi network password"
   homepage "https://github.com/rauchg/wifi-password"
-  url "https://ghproxy.com/https://github.com/rauchg/wifi-password/archive/0.1.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/rauchg/wifi-password/archive/refs/tags/0.1.0.tar.gz"
   sha256 "6af6a34a579063eb21c067f10b7c2eb5995995eceb70e6a1f571dc78d4f3651b"
 
   bottle do

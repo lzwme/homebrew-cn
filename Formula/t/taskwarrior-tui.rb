@@ -1,7 +1,7 @@
 class TaskwarriorTui < Formula
   desc "Terminal user interface for taskwarrior"
   homepage "https://github.com/kdheepak/taskwarrior-tui"
-  url "https://ghproxy.com/https://github.com/kdheepak/taskwarrior-tui/archive/v0.25.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/kdheepak/taskwarrior-tui/archive/refs/tags/v0.25.4.tar.gz"
   sha256 "86a00c0c33f825824ac432c50e57a9bac150c3ba9e3d06e6d86f65790a99a458"
   license "MIT"
   head "https://github.com/kdheepak/taskwarrior-tui.git", branch: "main"

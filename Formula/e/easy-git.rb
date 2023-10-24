@@ -1,7 +1,7 @@
 class EasyGit < Formula
   desc "Wrapper to simplify learning and using git"
   homepage "https://github.com/newren/easygit/"
-  url "https://ghproxy.com/https://github.com/newren/easygit/archive/v1.8.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/newren/easygit/archive/refs/tags/v1.8.5.tar.gz"
   sha256 "e2c6ac7fb390de1440a15808e5460b959bfb5000add11af91757ab61c48dead7"
   license "GPL-2.0-only"
 

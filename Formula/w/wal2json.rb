@@ -1,7 +1,7 @@
 class Wal2json < Formula
   desc "Convert PostgreSQL changesets to JSON format"
   homepage "https://github.com/eulerto/wal2json"
-  url "https://ghproxy.com/https://github.com/eulerto/wal2json/archive/wal2json_2_5.tar.gz"
+  url "https://ghproxy.com/https://github.com/eulerto/wal2json/archive/refs/tags/wal2json_2_5.tar.gz"
   sha256 "b516653575541cf221b99cf3f8be9b6821f6dbcfc125675c85f35090f824f00e"
   license "BSD-3-Clause"
 

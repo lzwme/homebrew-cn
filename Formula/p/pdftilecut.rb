@@ -1,7 +1,7 @@
 class Pdftilecut < Formula
   desc "Sub-divide a PDF page(s) into smaller pages so you can print them"
   homepage "https://github.com/oxplot/pdftilecut"
-  url "https://ghproxy.com/https://github.com/oxplot/pdftilecut/archive/v0.6.tar.gz"
+  url "https://ghproxy.com/https://github.com/oxplot/pdftilecut/archive/refs/tags/v0.6.tar.gz"
   sha256 "fd2383ee0d0acfa56cf6e80ac62881bd6dda4555adcd7f5a397339e7d3eca9ac"
   license "BSD-3-Clause"
   revision 1

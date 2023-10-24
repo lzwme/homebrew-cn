@@ -1,7 +1,7 @@
 class Pulledpork < Formula
   desc "Snort rule management"
   homepage "https://github.com/shirkdog/pulledpork"
-  url "https://ghproxy.com/https://github.com/shirkdog/pulledpork/archive/v0.7.4.tar.gz"
+  url "https://ghproxy.com/https://github.com/shirkdog/pulledpork/archive/refs/tags/v0.7.4.tar.gz"
   sha256 "f0149eb6f723b622024295e0ee00e1acade93fae464b9fdc323fdf15e99c388c"
   license "GPL-2.0-or-later"
   head "https://github.com/shirkdog/pulledpork.git", branch: "master"

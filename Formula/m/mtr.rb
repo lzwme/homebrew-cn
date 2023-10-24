@@ -1,7 +1,7 @@
 class Mtr < Formula
   desc "'traceroute' and 'ping' in a single tool"
   homepage "https://www.bitwizard.nl/mtr/"
-  url "https://ghproxy.com/https://github.com/traviscross/mtr/archive/v0.95.tar.gz"
+  url "https://ghproxy.com/https://github.com/traviscross/mtr/archive/refs/tags/v0.95.tar.gz"
   sha256 "12490fb660ba5fb34df8c06a0f62b4f9cbd11a584fc3f6eceda0a99124e8596f"
   license "GPL-2.0-only"
   head "https://github.com/traviscross/mtr.git", branch: "master"

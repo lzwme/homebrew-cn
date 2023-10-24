@@ -1,7 +1,7 @@
 class Sqlbench < Formula
   desc "Measures and compares the execution time of one or more SQL queries"
   homepage "https://github.com/felixge/sqlbench"
-  url "https://ghproxy.com/https://github.com/felixge/sqlbench/archive/v1.1.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/felixge/sqlbench/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "deaf4c299891ce75abff00429343eded76e8ddc8295d488938aa9ee418a7c9b3"
   license "MIT"
   head "https://github.com/felixge/sqlbench.git", branch: "master"

@@ -1,7 +1,7 @@
 class Sd < Formula
   desc "Intuitive find & replace CLI"
   homepage "https://github.com/chmln/sd"
-  url "https://ghproxy.com/https://github.com/chmln/sd/archive/v0.7.6.tar.gz"
+  url "https://ghproxy.com/https://github.com/chmln/sd/archive/refs/tags/v0.7.6.tar.gz"
   sha256 "faf33a97797b95097c08ebb7c2451ac9835907254d89863b10ab5e0813b5fe5f"
   license "MIT"
   revision 1

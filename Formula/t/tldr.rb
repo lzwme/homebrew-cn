@@ -1,7 +1,7 @@
 class Tldr < Formula
   desc "Simplified and community-driven man pages"
   homepage "https://tldr.sh/"
-  url "https://ghproxy.com/https://github.com/tldr-pages/tldr-c-client/archive/v1.6.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/tldr-pages/tldr-c-client/archive/refs/tags/v1.6.0.tar.gz"
   sha256 "2cd16cd956d15b1d33d7a5e2a2566500ab5766d2fa1b9ee7e49e64acc0352785"
   license "MIT"
   head "https://github.com/tldr-pages/tldr-c-client.git", branch: "main"

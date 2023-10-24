@@ -1,7 +1,7 @@
 class Gx < Formula
   desc "Language-agnostic, universal package manager"
   homepage "https://github.com/whyrusleeping/gx"
-  url "https://ghproxy.com/https://github.com/whyrusleeping/gx/archive/v0.14.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/whyrusleeping/gx/archive/refs/tags/v0.14.3.tar.gz"
   sha256 "2c0b90ddfd3152863f815c35b37e94d027216c6ba1c6653a94b722bf6e2b015d"
   license "MIT"
   head "https://github.com/whyrusleeping/gx.git", branch: "master"

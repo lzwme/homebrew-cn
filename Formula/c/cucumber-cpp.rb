@@ -1,7 +1,7 @@
 class CucumberCpp < Formula
   desc "Support for writing Cucumber step definitions in C++"
   homepage "https://cucumber.io"
-  url "https://ghproxy.com/https://github.com/cucumber/cucumber-cpp/archive/v0.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/cucumber/cucumber-cpp/archive/refs/tags/v0.5.tar.gz"
   sha256 "9e1b5546187290b265e43f47f67d4ce7bf817ae86ee2bc5fb338115b533f8438"
   license "MIT"
   revision 9

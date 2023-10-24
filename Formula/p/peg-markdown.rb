@@ -1,7 +1,7 @@
 class PegMarkdown < Formula
   desc "Markdown implementation based on a PEG grammar"
   homepage "https://github.com/jgm/peg-markdown"
-  url "https://ghproxy.com/https://github.com/jgm/peg-markdown/archive/0.4.14.tar.gz"
+  url "https://ghproxy.com/https://github.com/jgm/peg-markdown/archive/refs/tags/0.4.14.tar.gz"
   sha256 "111bc56058cfed11890af11bec7419e2f7ccec6b399bf05f8c55dae0a1712980"
   license any_of: ["GPL-2.0-or-later", "MIT"]
   revision 1

@@ -1,7 +1,7 @@
 class Dwarf < Formula
   desc "Object file manipulation tool"
   homepage "https://github.com/elboza/dwarf-ng/"
-  url "https://ghproxy.com/https://github.com/elboza/dwarf-ng/archive/dwarf-0.4.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/elboza/dwarf-ng/archive/refs/tags/dwarf-0.4.0.tar.gz"
   sha256 "a64656f53ded5166041ae25cc4b1ad9ab5046a5c4d4c05b727447e73c0d83da0"
   license "GPL-2.0"
   revision 1

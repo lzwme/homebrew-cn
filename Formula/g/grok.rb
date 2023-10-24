@@ -1,7 +1,7 @@
 class Grok < Formula
   desc "DRY and RAD for regular expressions and then some"
   homepage "https://github.com/jordansissel/grok"
-  url "https://ghproxy.com/https://github.com/jordansissel/grok/archive/v0.9.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/jordansissel/grok/archive/refs/tags/v0.9.2.tar.gz"
   sha256 "40edbdba488ff9145832c7adb04b27630ca2617384fbef2af014d0e5a76ef636"
   license "BSD-2-Clause"
   revision 2

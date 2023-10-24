@@ -1,7 +1,7 @@
 class Libiodbc < Formula
   desc "Database connectivity layer based on ODBC. (alternative to unixodbc)"
   homepage "https://www.iodbc.org/"
-  url "https://ghproxy.com/https://github.com/openlink/iODBC/archive/v3.52.16.tar.gz"
+  url "https://ghproxy.com/https://github.com/openlink/iODBC/archive/refs/tags/v3.52.16.tar.gz"
   sha256 "a0cf0375b462f98c0081c2ceae5ef78276003e57cdf1eb86bd04508fb62a0660"
   license any_of: ["BSD-3-Clause", "LGPL-2.0-only"]
 

@@ -3,7 +3,7 @@ require "language/node"
 class ImageoptimCli < Formula
   desc "CLI for ImageOptim, ImageAlpha and JPEGmini"
   homepage "https://jamiemason.github.io/ImageOptim-CLI/"
-  url "https://ghproxy.com/https://github.com/JamieMason/ImageOptim-CLI/archive/3.1.7.tar.gz"
+  url "https://ghproxy.com/https://github.com/JamieMason/ImageOptim-CLI/archive/refs/tags/3.1.7.tar.gz"
   sha256 "e2bff77c2cace9d28deb464c92dcf393b98baab30439541e2dc073ad1c0b9caf"
   license "MIT"
 

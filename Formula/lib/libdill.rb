@@ -1,7 +1,7 @@
 class Libdill < Formula
   desc "Structured concurrency in C"
   homepage "http://libdill.org/"
-  url "https://ghproxy.com/https://github.com/sustrik/libdill/archive/2.14.tar.gz"
+  url "https://ghproxy.com/https://github.com/sustrik/libdill/archive/refs/tags/2.14.tar.gz"
   sha256 "ebba0e5b433ec123b74a57d49b89dfa673aa258e03e6a452959e556b4c4529b9"
   license "MIT"
 

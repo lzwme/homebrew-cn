@@ -1,7 +1,7 @@
 class Teip < Formula
   desc 'Masking tape to help commands "do one thing well"'
   homepage "https://github.com/greymd/teip"
-  url "https://ghproxy.com/https://github.com/greymd/teip/archive/v2.3.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/greymd/teip/archive/refs/tags/v2.3.0.tar.gz"
   sha256 "4c39466613f39d27fa22ae2a6309ac732ea94fdbc8711ecd4149fc1ecdfbaedf"
   license "MIT"
   head "https://github.com/greymd/teip.git", branch: "main"

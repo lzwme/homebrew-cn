@@ -1,7 +1,7 @@
 class Massren < Formula
   desc "Easily rename multiple files using your text editor"
   homepage "https://github.com/laurent22/massren"
-  url "https://ghproxy.com/https://github.com/laurent22/massren/archive/v1.5.6.tar.gz"
+  url "https://ghproxy.com/https://github.com/laurent22/massren/archive/refs/tags/v1.5.6.tar.gz"
   sha256 "49758b477a205f3fbf5bbe72c2575fff8b5536f8c6b45f8f6bd2fdde023ce874"
   license "MIT"
 

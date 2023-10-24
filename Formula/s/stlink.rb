@@ -1,7 +1,7 @@
 class Stlink < Formula
   desc "STM32 discovery line Linux programmer"
   homepage "https://github.com/stlink-org/stlink"
-  url "https://ghproxy.com/https://github.com/stlink-org/stlink/archive/v1.7.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/stlink-org/stlink/archive/refs/tags/v1.7.0.tar.gz"
   sha256 "57ec1214905aedf59bee7f70ddff02316f64fa9ba5a9b6a3a64952edc5b65855"
   license "BSD-3-Clause"
   head "https://github.com/stlink-org/stlink.git", branch: "develop"

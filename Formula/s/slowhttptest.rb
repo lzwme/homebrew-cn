@@ -1,7 +1,7 @@
 class Slowhttptest < Formula
   desc "Simulates application layer denial of service attacks"
   homepage "https://github.com/shekyan/slowhttptest"
-  url "https://ghproxy.com/https://github.com/shekyan/slowhttptest/archive/v1.9.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/shekyan/slowhttptest/archive/refs/tags/v1.9.0.tar.gz"
   sha256 "a3910b9b844e05ee55838aa17beddc6aa9d6c5c0012eab647a21cc9ccd6c8749"
   license "Apache-2.0"
   head "https://github.com/shekyan/slowhttptest.git", branch: "master"

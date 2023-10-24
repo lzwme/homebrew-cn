@@ -1,7 +1,7 @@
 class Hiredis < Formula
   desc "Minimalistic client for Redis"
   homepage "https://github.com/redis/hiredis"
-  url "https://ghproxy.com/https://github.com/redis/hiredis/archive/v1.2.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/redis/hiredis/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "82ad632d31ee05da13b537c124f819eb88e18851d9cb0c30ae0552084811588c"
   license "BSD-3-Clause"
   head "https://github.com/redis/hiredis.git", branch: "master"

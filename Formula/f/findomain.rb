@@ -1,7 +1,7 @@
 class Findomain < Formula
   desc "Cross-platform subdomain enumerator"
   homepage "https://github.com/Findomain/Findomain"
-  url "https://ghproxy.com/https://github.com/Findomain/Findomain/archive/9.0.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/Findomain/Findomain/archive/refs/tags/9.0.2.tar.gz"
   sha256 "1c98f5634ed19ce36a232f8a955098ae84c2d04dfe20bfcc0f10e6e335b8a562"
   license "GPL-3.0-or-later"
 

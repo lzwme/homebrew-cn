@@ -1,7 +1,7 @@
 class Run < Formula
   desc "Easily manage and invoke small scripts and wrappers"
   homepage "https://github.com/TekWizely/run"
-  url "https://ghproxy.com/https://github.com/TekWizely/run/archive/v0.11.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/TekWizely/run/archive/refs/tags/v0.11.2.tar.gz"
   sha256 "942427701caa99a9a3a6458a121b5c80b424752ea8701b26083841de5ae43ff6"
   license "MIT"
 

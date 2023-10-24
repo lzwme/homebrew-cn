@@ -1,7 +1,7 @@
 class S2n < Formula
   desc "Implementation of the TLS/SSL protocols"
   homepage "https://github.com/aws/s2n-tls"
-  url "https://ghproxy.com/https://github.com/aws/s2n-tls/archive/v1.3.55.tar.gz"
+  url "https://ghproxy.com/https://github.com/aws/s2n-tls/archive/refs/tags/v1.3.55.tar.gz"
   sha256 "3b4d51d08326757440a7a134dd4d73c904b700d64837aa7fec0aca908b70fd9b"
   license "Apache-2.0"
   head "https://github.com/aws/s2n-tls.git", branch: "main"

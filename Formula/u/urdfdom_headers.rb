@@ -1,7 +1,7 @@
 class UrdfdomHeaders < Formula
   desc "Headers for Unified Robot Description Format (URDF) parsers"
   homepage "https://wiki.ros.org/urdfdom_headers/"
-  url "https://ghproxy.com/https://github.com/ros/urdfdom_headers/archive/1.1.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/ros/urdfdom_headers/archive/refs/tags/1.1.0.tar.gz"
   sha256 "01b91c2f7cb42b0033cbdf559684a60001f9927e5d0a5a3682a344cc354f1d39"
   license "BSD-3-Clause"
 

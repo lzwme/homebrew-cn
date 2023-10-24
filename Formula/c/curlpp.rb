@@ -1,7 +1,7 @@
 class Curlpp < Formula
   desc "C++ wrapper for libcURL"
   homepage "https://www.curlpp.org/"
-  url "https://ghproxy.com/https://github.com/jpbarrette/curlpp/archive/v0.8.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/jpbarrette/curlpp/archive/refs/tags/v0.8.1.tar.gz"
   sha256 "97e3819bdcffc3e4047b6ac57ca14e04af85380bd93afe314bee9dd5c7f46a0a"
   license "MIT"
   revision 1

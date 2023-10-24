@@ -1,7 +1,7 @@
 class Publish < Formula
   desc "Static site generator for Swift developers"
   homepage "https://github.com/JohnSundell/Publish"
-  url "https://ghproxy.com/https://github.com/JohnSundell/Publish/archive/0.9.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/JohnSundell/Publish/archive/refs/tags/0.9.0.tar.gz"
   sha256 "e098a48e8763d3aef9abd1a673b8b28b4b35f8dbad15218125e18461104874ca"
   license "MIT"
   revision 1

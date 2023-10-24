@@ -1,7 +1,7 @@
 class Osqp < Formula
   desc "Operator splitting QP solver"
   homepage "https://osqp.org/"
-  url "https://ghproxy.com/https://github.com/osqp/osqp/archive/v0.6.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/osqp/osqp/archive/refs/tags/v0.6.3.tar.gz"
   sha256 "a6b4148019001f87489c27232e2bdbac37c94f38fa37c1b4ee11eaa5654756d2"
   license "Apache-2.0"
 
@@ -20,7 +20,7 @@ class Osqp < Formula
   depends_on "cmake" => [:build, :test]
 
   resource "qdldl" do
-    url "https://ghproxy.com/https://github.com/osqp/qdldl/archive/v0.1.7.tar.gz"
+    url "https://ghproxy.com/https://github.com/osqp/qdldl/archive/refs/tags/v0.1.7.tar.gz"
     sha256 "631ae65f367859fa1efade1656e4ba22b7da789c06e010cceb8b29656bf65757"
   end
 

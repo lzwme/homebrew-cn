@@ -1,7 +1,7 @@
 class Nomino < Formula
   desc "Batch rename utility"
   homepage "https://github.com/yaa110/nomino"
-  url "https://ghproxy.com/https://github.com/yaa110/nomino/archive/1.3.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/yaa110/nomino/archive/refs/tags/1.3.2.tar.gz"
   sha256 "2923903b75a6a892e39345b7ed61708719912dc8c7bda28be3f55b1615fd102c"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/yaa110/nomino.git", branch: "master"

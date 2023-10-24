@@ -1,7 +1,7 @@
 class TesseractLang < Formula
   desc "Enables extra languages support for Tesseract"
   homepage "https://github.com/tesseract-ocr/tessdata_fast/"
-  url "https://ghproxy.com/https://github.com/tesseract-ocr/tessdata_fast/archive/4.1.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/tesseract-ocr/tessdata_fast/archive/refs/tags/4.1.0.tar.gz"
   sha256 "d0e3bb6f3b4e75748680524a1d116f2bfb145618f8ceed55b279d15098a530f9"
   license "Apache-2.0"
 

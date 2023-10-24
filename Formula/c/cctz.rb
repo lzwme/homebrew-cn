@@ -1,7 +1,7 @@
 class Cctz < Formula
   desc "C++ library for translating between absolute and civil times"
   homepage "https://github.com/google/cctz"
-  url "https://ghproxy.com/https://github.com/google/cctz/archive/v2.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/google/cctz/archive/refs/tags/v2.3.tar.gz"
   sha256 "8615b20d4e33e02a271c3b93a3b208e3d7d5d66880f5f6208b03426e448f32db"
   license "Apache-2.0"
 

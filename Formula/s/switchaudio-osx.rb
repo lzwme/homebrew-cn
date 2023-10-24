@@ -1,7 +1,7 @@
 class SwitchaudioOsx < Formula
   desc "Change macOS audio source from the command-line"
   homepage "https://github.com/deweller/switchaudio-osx/"
-  url "https://ghproxy.com/https://github.com/deweller/switchaudio-osx/archive/1.2.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/deweller/switchaudio-osx/archive/refs/tags/1.2.2.tar.gz"
   sha256 "3d12b57cbd6063a643a12f12287af99c87894c33449c6bcac0a71fd15776b3ed"
   license "MIT"
   head "https://github.com/deweller/switchaudio-osx.git", branch: "master"

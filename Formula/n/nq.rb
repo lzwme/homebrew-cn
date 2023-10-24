@@ -1,7 +1,7 @@
 class Nq < Formula
   desc "Unix command-line queue utility"
   homepage "https://github.com/leahneukirchen/nq"
-  url "https://ghproxy.com/https://github.com/leahneukirchen/nq/archive/v0.5.tar.gz"
+  url "https://ghproxy.com/https://github.com/leahneukirchen/nq/archive/refs/tags/v0.5.tar.gz"
   sha256 "3f01aaf0b8eee4f5080ed1cd71887cb6485d366257d4cf5470878da2b734b030"
   license "CC0-1.0"
   head "https://github.com/leahneukirchen/nq.git", branch: "master"

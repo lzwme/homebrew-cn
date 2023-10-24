@@ -1,7 +1,7 @@
 class Vitetris < Formula
   desc "Terminal-based Tetris clone"
   homepage "https://www.victornils.net/tetris/"
-  url "https://ghproxy.com/https://github.com/vicgeralds/vitetris/archive/v0.59.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/vicgeralds/vitetris/archive/refs/tags/v0.59.1.tar.gz"
   sha256 "699443df03c8d4bf2051838c1015da72039bbbdd0ab0eede891c59c840bdf58d"
   license "BSD-2-Clause"
   head "https://github.com/vicgeralds/vitetris.git", branch: "master"

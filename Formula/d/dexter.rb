@@ -1,7 +1,7 @@
 class Dexter < Formula
   desc "Automatic indexer for Postgres"
   homepage "https://github.com/ankane/dexter"
-  url "https://ghproxy.com/https://github.com/ankane/dexter/archive/v0.5.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/ankane/dexter/archive/refs/tags/v0.5.1.tar.gz"
   sha256 "280403858ea209b41910f487f737fd602b41c60cc6cd3e5cf54ed5db9330b321"
   license "MIT"
 

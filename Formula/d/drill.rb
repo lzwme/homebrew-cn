@@ -1,7 +1,7 @@
 class Drill < Formula
   desc "HTTP load testing application written in Rust"
   homepage "https://github.com/fcsonline/drill"
-  url "https://ghproxy.com/https://github.com/fcsonline/drill/archive/0.8.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/fcsonline/drill/archive/refs/tags/0.8.3.tar.gz"
   sha256 "12096bfeb57fa567f9104615c872b5fec787bacf5b9efcc9f14d496c08efe30d"
   license "GPL-3.0-or-later"
   head "https://github.com/fcsonline/drill.git", branch: "master"

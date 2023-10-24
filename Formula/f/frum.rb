@@ -1,7 +1,7 @@
 class Frum < Formula
   desc "Fast and modern Ruby version manager written in Rust"
   homepage "https://github.com/TaKO8Ki/frum/"
-  url "https://ghproxy.com/https://github.com/TaKO8Ki/frum/archive/v0.1.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/TaKO8Ki/frum/archive/refs/tags/v0.1.2.tar.gz"
   sha256 "0a67d12976b50f39111c92fa0d0e6bf0ae6612a0325c31724ea3a6b831882b5d"
   license "MIT"
   head "https://github.com/TaKO8Ki/frum.git", branch: "main"

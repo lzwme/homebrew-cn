@@ -1,7 +1,7 @@
 class Cmus < Formula
   desc "Music player with an ncurses based interface"
   homepage "https://cmus.github.io/"
-  url "https://ghproxy.com/https://github.com/cmus/cmus/archive/v2.10.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/cmus/cmus/archive/refs/tags/v2.10.0.tar.gz"
   sha256 "ff40068574810a7de3990f4f69c9c47ef49e37bd31d298d372e8bcdafb973fff"
   license "GPL-2.0-or-later"
   revision 2

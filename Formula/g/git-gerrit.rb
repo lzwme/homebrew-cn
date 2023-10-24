@@ -1,7 +1,7 @@
 class GitGerrit < Formula
   desc "Gerrit code review helper scripts"
   homepage "https://github.com/fbzhong/git-gerrit"
-  url "https://ghproxy.com/https://github.com/fbzhong/git-gerrit/archive/v0.3.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/fbzhong/git-gerrit/archive/refs/tags/v0.3.0.tar.gz"
   sha256 "433185315db3367fef82a7332c335c1c5e0b05dabf8d4fbeff9ecf6cc7e422eb"
   license "BSD-3-Clause"
   head "https://github.com/fbzhong/git-gerrit.git", branch: "master"

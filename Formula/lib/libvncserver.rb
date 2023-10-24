@@ -1,7 +1,7 @@
 class Libvncserver < Formula
   desc "VNC server and client libraries"
   homepage "https://libvnc.github.io"
-  url "https://ghproxy.com/https://github.com/LibVNC/libvncserver/archive/LibVNCServer-0.9.14.tar.gz"
+  url "https://ghproxy.com/https://github.com/LibVNC/libvncserver/archive/refs/tags/LibVNCServer-0.9.14.tar.gz"
   sha256 "83104e4f7e28b02f8bf6b010d69b626fae591f887e949816305daebae527c9a5"
   license "GPL-2.0-or-later"
   revision 1

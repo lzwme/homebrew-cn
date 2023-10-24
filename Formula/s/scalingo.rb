@@ -1,7 +1,7 @@
 class Scalingo < Formula
   desc "CLI for working with Scalingo's PaaS"
   homepage "https://doc.scalingo.com/cli"
-  url "https://ghproxy.com/https://github.com/Scalingo/cli/archive/1.29.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/Scalingo/cli/archive/refs/tags/1.29.1.tar.gz"
   sha256 "70cf9399434c9f8a46bd0fd46fee345e1bb83b8f7691d4288e0e29ccf9422ec3"
   license "BSD-4-Clause"
 

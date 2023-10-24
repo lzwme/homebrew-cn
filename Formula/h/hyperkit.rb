@@ -1,7 +1,7 @@
 class Hyperkit < Formula
   desc "Toolkit for embedding hypervisor capabilities in your application"
   homepage "https://github.com/moby/hyperkit"
-  url "https://ghproxy.com/https://github.com/moby/hyperkit/archive/v0.20210107.tar.gz"
+  url "https://ghproxy.com/https://github.com/moby/hyperkit/archive/refs/tags/v0.20210107.tar.gz"
   sha256 "095f5f5ef550d7cad10e4d13e9c9ce8b58cc319d654a6d837d8d87ee70537835"
   license "BSD-2-Clause"
 

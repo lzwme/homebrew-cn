@@ -1,7 +1,7 @@
 class ChromeCli < Formula
   desc "Control Google Chrome from the command-line"
   homepage "https://github.com/prasmussen/chrome-cli"
-  url "https://ghproxy.com/https://github.com/prasmussen/chrome-cli/archive/1.9.3.tar.gz"
+  url "https://ghproxy.com/https://github.com/prasmussen/chrome-cli/archive/refs/tags/1.9.3.tar.gz"
   sha256 "cc213ebd087bafd6f1faaaeb4cc1fae4da2a7e1c484ee9265cf113f6ce108376"
   license "MIT"
   head "https://github.com/prasmussen/chrome-cli.git", branch: "master"

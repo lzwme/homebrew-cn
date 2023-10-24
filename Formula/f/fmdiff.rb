@@ -1,7 +1,7 @@
 class Fmdiff < Formula
   desc "Use FileMerge as a diff command for Subversion and Mercurial"
   homepage "https://github.com/brunodefraine/fmscripts"
-  url "https://ghproxy.com/https://github.com/brunodefraine/fmscripts/archive/20150915.tar.gz"
+  url "https://ghproxy.com/https://github.com/brunodefraine/fmscripts/archive/refs/tags/20150915.tar.gz"
   sha256 "45ead0c972aa8ff5b3f9cf1bcefbc069931fd8218b2e28ff76958437a3fabf96"
   license :public_domain
   head "https://github.com/brunodefraine/fmscripts.git", branch: "master"

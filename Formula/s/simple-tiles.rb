@@ -1,7 +1,7 @@
 class SimpleTiles < Formula
   desc "Image generation library for spatial data"
   homepage "https://github.com/propublica/simple-tiles"
-  url "https://ghproxy.com/https://github.com/propublica/simple-tiles/archive/v0.6.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/propublica/simple-tiles/archive/refs/tags/v0.6.2.tar.gz"
   sha256 "343ae52a0b20ee091b14bc145b7c78fed13b7272acd827626283b70f178dfa34"
   license "MIT"
   revision 2

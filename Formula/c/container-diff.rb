@@ -1,7 +1,7 @@
 class ContainerDiff < Formula
   desc "Diff your Docker containers"
   homepage "https://github.com/GoogleContainerTools/container-diff"
-  url "https://ghproxy.com/https://github.com/GoogleContainerTools/container-diff/archive/v0.17.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/GoogleContainerTools/container-diff/archive/refs/tags/v0.17.0.tar.gz"
   sha256 "b1d909c4eff0e3355ba45516daddef0adfa4cdcd0c8b41863060c66f524353f9"
   license "Apache-2.0"
 

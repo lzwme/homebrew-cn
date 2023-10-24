@@ -1,7 +1,7 @@
 class Webdis < Formula
   desc "Redis HTTP interface with JSON output"
   homepage "https://webd.is/"
-  url "https://ghproxy.com/https://github.com/nicolasff/webdis/archive/0.1.22.tar.gz"
+  url "https://ghproxy.com/https://github.com/nicolasff/webdis/archive/refs/tags/0.1.22.tar.gz"
   sha256 "4ee465f85999aeba3743a8ed6c7d79690bffe7a8ffb6c7ddec1d4bb6bd1d8685"
   license "BSD-2-Clause"
 

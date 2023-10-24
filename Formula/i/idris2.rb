@@ -1,7 +1,7 @@
 class Idris2 < Formula
   desc "Pure functional programming language with dependent types"
   homepage "https://www.idris-lang.org/"
-  url "https://ghproxy.com/https://github.com/idris-lang/Idris2/archive/v0.6.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/idris-lang/Idris2/archive/refs/tags/v0.6.0.tar.gz"
   sha256 "7f5597652ed26abc2d2a6ed4220ec28fafdab773cfae0062a8dfafe7d133e633"
   license "BSD-3-Clause"
   revision 2

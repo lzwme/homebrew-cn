@@ -1,7 +1,7 @@
 class Rename < Formula
   desc "Perl-powered file rename script with many helpful built-ins"
   homepage "http://plasmasturm.org/code/rename"
-  url "https://ghproxy.com/https://github.com/ap/rename/archive/v1.601.tar.gz"
+  url "https://ghproxy.com/https://github.com/ap/rename/archive/refs/tags/v1.601.tar.gz"
   sha256 "e8fd67b662b9deddfb6a19853652306f8694d7959dfac15538a9b67339c87af4"
   head "https://github.com/ap/rename.git", branch: "master"
 

@@ -1,7 +1,7 @@
 class Pcalc < Formula
   desc "Calculator for those working with multiple bases, sizes, and close to the bits"
   homepage "https://github.com/alt-romes/programmer-calculator"
-  url "https://ghproxy.com/https://github.com/alt-romes/programmer-calculator/archive/v3.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/alt-romes/programmer-calculator/archive/refs/tags/v3.0.tar.gz"
   sha256 "6ede71e1442710e73edb99eb1742452e67ad5095cad328526633722850aa1136"
   license "GPL-3.0-or-later"
 

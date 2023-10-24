@@ -1,7 +1,7 @@
 class Lepton < Formula
   desc "Tool and file format for losslessly compressing JPEGs"
   homepage "https://github.com/dropbox/lepton"
-  url "https://ghproxy.com/https://github.com/dropbox/lepton/archive/1.2.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/dropbox/lepton/archive/refs/tags/1.2.1.tar.gz"
   sha256 "c4612dbbc88527be2e27fddf53aadf1bfc117e744db67e373ef8940449cdec97"
   license "Apache-2.0"
   head "https://github.com/dropbox/lepton.git", branch: "master"

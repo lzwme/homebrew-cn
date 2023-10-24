@@ -3,7 +3,7 @@ class Httpstat < Formula
 
   desc "Curl statistics made simple"
   homepage "https://github.com/reorx/httpstat"
-  url "https://ghproxy.com/https://github.com/reorx/httpstat/archive/1.3.2.tar.gz"
+  url "https://ghproxy.com/https://github.com/reorx/httpstat/archive/refs/tags/1.3.2.tar.gz"
   sha256 "56c45aebdb28160dd16c73cf23af8208c19b30ec0166790685dfec115df9c92f"
   license "MIT"
 

@@ -1,7 +1,7 @@
 class Pup < Formula
   desc "Parse HTML at the command-line"
   homepage "https://github.com/EricChiang/pup"
-  url "https://ghproxy.com/https://github.com/ericchiang/pup/archive/v0.4.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/ericchiang/pup/archive/refs/tags/v0.4.0.tar.gz"
   sha256 "0d546ab78588e07e1601007772d83795495aa329b19bd1c3cde589ddb1c538b0"
   license "MIT"
   head "https://github.com/EricChiang/pup.git", branch: "master"

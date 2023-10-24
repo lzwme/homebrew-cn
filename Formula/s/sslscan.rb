@@ -1,7 +1,7 @@
 class Sslscan < Formula
   desc "Test SSL/TLS enabled services to discover supported cipher suites"
   homepage "https://github.com/rbsec/sslscan"
-  url "https://ghproxy.com/https://github.com/rbsec/sslscan/archive/2.1.1.tar.gz"
+  url "https://ghproxy.com/https://github.com/rbsec/sslscan/archive/refs/tags/2.1.1.tar.gz"
   sha256 "ccb1ffcc97cbde5c184542debe2ac3529e2c64b3690a402b592ed4ee374955e1"
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
   head "https://github.com/rbsec/sslscan.git", branch: "master"

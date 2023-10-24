@@ -1,7 +1,7 @@
 class Jenv < Formula
   desc "Manage your Java environment"
   homepage "https://www.jenv.be/"
-  url "https://ghproxy.com/https://github.com/jenv/jenv/archive/0.5.6.tar.gz"
+  url "https://ghproxy.com/https://github.com/jenv/jenv/archive/refs/tags/0.5.6.tar.gz"
   sha256 "1afac0386ab4459b8523fb45937eb3111f3ce2b83f5b0da11327f5dd200e0672"
   license "MIT"
   head "https://github.com/jenv/jenv.git", branch: "master"

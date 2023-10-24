@@ -1,7 +1,7 @@
 class Ddclient < Formula
   desc "Update dynamic DNS entries"
   homepage "https://ddclient.net/"
-  url "https://ghproxy.com/https://github.com/ddclient/ddclient/archive/v3.11.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/ddclient/ddclient/archive/refs/tags/v3.11.0.tar.gz"
   sha256 "0e7ad53049c7e8699a316c834cf12cf14134671c7d87a44fe5783a481b886b64"
   license "GPL-2.0-or-later"
   head "https://github.com/ddclient/ddclient.git", branch: "master"

@@ -1,7 +1,7 @@
 class Snag < Formula
   desc "Automatic build tool for all your needs"
   homepage "https://github.com/Tonkpils/snag"
-  url "https://ghproxy.com/https://github.com/Tonkpils/snag/archive/v1.2.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/Tonkpils/snag/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "37bf661436edf4526adf5428ac5ff948871c613ff4f9b61fbbdfe1fb95f58b37"
   license "MIT"
   head "https://github.com/Tonkpils/snag.git", branch: "master"

@@ -1,7 +1,7 @@
 class LibbitcoinExplorer < Formula
   desc "Bitcoin command-line tool"
   homepage "https://github.com/libbitcoin/libbitcoin-explorer"
-  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-explorer/archive/v3.8.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-explorer/archive/refs/tags/v3.8.0.tar.gz"
   sha256 "c10993ab4846e98ec4618ca2d2aab31669dc091fa2feb17d421eb96b9c35c340"
   license "AGPL-3.0"
   revision 1

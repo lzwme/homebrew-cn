@@ -2,7 +2,7 @@ class OsmPbf < Formula
   desc "Tools related to PBF (an alternative to XML format)"
   homepage "https://wiki.openstreetmap.org/wiki/PBF_Format"
   # TODO: Check if we can use unversioned `protobuf` at version bump
-  url "https://ghproxy.com/https://github.com/openstreetmap/OSM-binary/archive/v1.5.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/openstreetmap/OSM-binary/archive/refs/tags/v1.5.0.tar.gz"
   sha256 "2abf3126729793732c3380763999cc365e51bffda369a008213879a3cd90476c"
   license "LGPL-3.0-or-later"
   revision 5

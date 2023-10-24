@@ -1,7 +1,7 @@
 class Editorconfig < Formula
   desc "Maintain consistent coding style between multiple editors"
   homepage "https://editorconfig.org/"
-  url "https://ghproxy.com/https://github.com/editorconfig/editorconfig-core-c/archive/v0.12.6.tar.gz"
+  url "https://ghproxy.com/https://github.com/editorconfig/editorconfig-core-c/archive/refs/tags/v0.12.6.tar.gz"
   sha256 "36052a5371731d915b53d9c7a24a11c4032585ccacb392ec9d58656eef4c0edf"
   license "BSD-2-Clause"
   head "https://github.com/editorconfig/editorconfig-core-c.git", branch: "master"
