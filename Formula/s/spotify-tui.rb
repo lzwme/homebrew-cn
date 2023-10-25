@@ -29,6 +29,8 @@ class SpotifyTui < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5214a242010de3e25360daf3d1322f353b626e22ca784302032a12bf92a8616c"
   end
 
+  deprecate! date: "2023-10-24", because: "uses deprecated `openssl@1.1`"
+
   depends_on "rust" => :build
 
   on_linux do

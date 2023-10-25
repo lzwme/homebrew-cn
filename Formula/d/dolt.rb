@@ -1,8 +1,8 @@
 class Dolt < Formula
   desc "Git for Data"
   homepage "https://github.com/dolthub/dolt"
-  url "https://ghproxy.com/https://github.com/dolthub/dolt/archive/refs/tags/v1.21.1.tar.gz"
-  sha256 "3508a28a05d51e6937bbd69f4544b80f1d3c6b83456f2ecc19e0333afcfe7298"
+  url "https://ghproxy.com/https://github.com/dolthub/dolt/archive/refs/tags/v1.21.3.tar.gz"
+  sha256 "7d740d6c5305c405861e83878f0d955c8e415f2eba5ce7b5669b4016d5371d79"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Dolt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0eecd724ed2a15b8ba101c8d9d376fe15a33d107754a5475a570ff09f228f1f8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "110486a40b435105070a2ba700f42f322d63c28a28fd06d86493fab3ffc65ee1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "685e6ceecd6a0b3654ea6b0353bd7301659ea4dad364bdae1b70fce9bac74cee"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9ffb982beb2cfc97b3b5a86a18e78db60b9e83dbac7a1addf126a040defd5c05"
-    sha256 cellar: :any_skip_relocation, ventura:        "907536214e4d34ce1b919f1297f400991efea5ff2c1dd48685024d0e64ccf796"
-    sha256 cellar: :any_skip_relocation, monterey:       "44e5edeaa9c95c01bfa7c673ec8351b0e5c78b7ec2063c21379ed305dc95eeb6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94300f85f6b0c0191991f55ac6670515991891e23320d8483d0da87072549123"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e213ba21c61ebc5a08b5333d4f10565fa63680a97c8e560fac7bd0f22fe41adf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0948d45208454cd3014f059f6b7335885040c7c328f37fba973b2a3353dfe91e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e8ac0b2d300d002f52feda16626991a56236ae6cc909cbfeaa9d2f7124e03561"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e46b7843616a746b4c7798529d873d57689dece42f40d1e5789742476ef9718e"
+    sha256 cellar: :any_skip_relocation, ventura:        "e00ba0e77f0681ceed4bac7cc4340dfd0bfdbacdcb9ed21bdf6cbe360350e6c7"
+    sha256 cellar: :any_skip_relocation, monterey:       "818d43baf5a8b1bc1d4342cde59020a31243de289b5615ca92916f78078214e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "86c84b83ca69404775f4f582e0006e2837b76e82aee69a14f5768d7ab3ff8e6f"
   end
 
   depends_on "go" => :build

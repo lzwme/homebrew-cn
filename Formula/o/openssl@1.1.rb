@@ -11,11 +11,6 @@ class OpensslAT11 < Formula
   license "OpenSSL"
   version_scheme 1
 
-  livecheck do
-    url "https://www.openssl.org/source/"
-    regex(/href=.*?openssl[._-]v?(1\.1(?:\.\d+)+[a-z]?)\.t/i)
-  end
-
   bottle do
     sha256 arm64_sonoma:   "38619f708ae1def3de15383de7cd351eaf0069a9862fcce645ddfaf516e4b8d5"
     sha256 arm64_ventura:  "126ec75895d314da98734a62483aa8e39a6014fa9b02ce297599ce16643d7349"
@@ -31,7 +26,7 @@ class OpensslAT11 < Formula
   keg_only :versioned_formula
 
   # See: https://www.openssl.org/policies/releasestrat.html
-  deprecate! date: "2023-11-11", because: :unsupported
+  deprecate! date: "2023-10-24", because: :unsupported
 
   depends_on "ca-certificates"
 

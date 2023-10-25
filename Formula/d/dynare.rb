@@ -2,12 +2,11 @@ class Dynare < Formula
   desc "Platform for economic models, particularly DSGE and OLG models"
   homepage "https://www.dynare.org/"
   license "GPL-3.0-or-later"
-  revision 3
 
   # Remove when patch is no longer needed.
   stable do
-    url "https://www.dynare.org/release/source/dynare-5.4.tar.xz"
-    sha256 "c174a3ebcaf8c4566b9836abad8c04148011bec2ec610ded234f406bfbdd10f8"
+    url "https://www.dynare.org/release/source/dynare-5.5.tar.xz"
+    sha256 "11deae32997e79e500a9802c6408067749485ea7ef3c08bbf24141f2b0e00326"
 
     on_arm do
       # Needed since we patch a `Makefile.am` below.
@@ -32,15 +31,13 @@ class Dynare < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "dca7a9f2c42dff817e2bd8b9506ca12286676f9901571b88103e1e79e657099d"
-    sha256                               arm64_ventura:  "b0dd7c5ee63b6b5b43a1329794a1491ae1e146881f0786d79bf20866483bd0ef"
-    sha256                               arm64_monterey: "cb8e792c83f4137b50ce60aeeaf2525eaed133771f26563d2fd5ef1206f707fd"
-    sha256                               arm64_big_sur:  "7da08f1aadaf44592ac7ca9de4c19abe524e342d7f3cc9bf47f74287281c8084"
-    sha256 cellar: :any,                 sonoma:         "0dc9b819826baed79e0ed4d6a2082bea09db15922ea2a55431f21030f63b157b"
-    sha256                               ventura:        "f532e19598a494ee11f857210047c614389a0b707dd9b01e9b35af81b6f51f36"
-    sha256                               monterey:       "307231733746225517044e5038d24c349e1a49c14fe796d48b9ac7edc9799ae5"
-    sha256                               big_sur:        "0ba4e71943a7c99f86d03ca25d99c76c266d08041b02382f01f1471505c7d0a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3da6684f9b314ccdbd400d8d17a2629e6ccfedae91839511fb4d42e97d98f23"
+    sha256 cellar: :any,                 arm64_sonoma:   "89af2f9bc6a8a9b3357496f0ea2f0bc8682ead3b89cb3b3ea4ce8811b5140383"
+    sha256 cellar: :any,                 arm64_ventura:  "da3560dc7ec52d676c9640720f91f27e557496e1cc7cc933249ca4cb27aea862"
+    sha256 cellar: :any,                 arm64_monterey: "fce184e3d71f432ec50abf4b7eeeac93528a7a1ec19e1628441bd4ec715b1244"
+    sha256 cellar: :any,                 sonoma:         "43421d8ba5a1df263cbd05d301085cf3e44770a1386c170f65f3f4f501c70248"
+    sha256 cellar: :any,                 ventura:        "367357088638ffdd7c3d224d6044531239457e8ae0cc826e78410d741a6f3af5"
+    sha256 cellar: :any,                 monterey:       "41ccc196c920038c95a352ba366cb9c7c509a97cc88729f589067f39a0c0b3f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0d4e4bf6b182972101e82a07e91b0f95f64b2615429bd2f822bbc345e5368ef"
   end
 
   head do

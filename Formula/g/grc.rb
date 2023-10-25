@@ -10,11 +10,11 @@ class Grc < Formula
   head "https://github.com/garabik/grc.git", branch: "devel"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "841503533bb5af397541ac6231a6c836b8079d9024c5045a754759d7c163bf85"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "25dc5e1654cd8f367e5488cdd853f8c594cac49a401f49f46997553fd0aceb32"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     # fix non-standard prefix installs

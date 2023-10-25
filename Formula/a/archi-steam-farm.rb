@@ -7,11 +7,6 @@ class ArchiSteamFarm < Formula
   license "Apache-2.0"
   head "https://github.com/JustArchiNET/ArchiSteamFarm.git", branch: "main"
 
-  livecheck do
-    url :stable
-    strategy :github_latest
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "04ad1e0347d8069b5f0617147c1bea9203923d911ff46b565b1bf6529259fdc7"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "398aef08bd1c4047b684d24a34d529a1f36635c180a058c89b941310471eec6a"
@@ -19,6 +14,8 @@ class ArchiSteamFarm < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "85cb3d5cf8dcf661dfe02f9917eed1f1a79793a10de805014b39151cd5f3d4ff"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ffa5bfc5adb56308de15d541a6a6eed49a0c15b0fc84ad6797611f15b03b293"
   end
+
+  deprecate! date: "2023-10-24", because: "uses deprecated `dotnet`"
 
   depends_on "dotnet"
 

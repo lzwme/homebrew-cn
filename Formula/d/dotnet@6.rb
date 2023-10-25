@@ -7,21 +7,6 @@ class DotnetAT6 < Formula
       revision: "346c0065dd9540261ec07e938b808833446d2a9e"
   license "MIT"
 
-  # https://github.com/dotnet/source-build/#support
-  livecheck do
-    url "https://dotnetcli.blob.core.windows.net/dotnet/release-metadata/6.0/releases.json"
-    strategy :json do |json|
-      latest_release = json["releases"].find do |release|
-        release["release-version"] == json["latest-release"]
-      end
-
-      # Get _oldest_ SDK version.
-      latest_release["sdks"].map do |sdk|
-        Version.new(sdk["version"])
-      end.min.to_s
-    end
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "e321d22cf019fcf43b9182ab920fb56b06472eb44a841d5e9da7c68efd06d099"
     sha256 cellar: :any,                 arm64_monterey: "bec272194da05a71880e7f81fcfbfbd6d2b52369d87563b3776bca4c73fc06f3"
@@ -33,6 +18,8 @@ class DotnetAT6 < Formula
   end
 
   keg_only :versioned_formula
+
+  deprecate! date: "2023-10-24", because: "uses deprecated `openssl@1.1`"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build

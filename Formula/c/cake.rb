@@ -15,6 +15,8 @@ class Cake < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3fda2e3c37cbad6ae0e407291e5447857dbc36359500be831b34b19a673679c"
   end
 
+  deprecate! date: "2023-10-24", because: "uses deprecated `dotnet`"
+
   depends_on "dotnet"
 
   conflicts_with "coffeescript", because: "both install `cake` binaries"

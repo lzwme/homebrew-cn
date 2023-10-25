@@ -15,12 +15,13 @@ class Rpm < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "ec816d797170c592fe18feb85c38f2ed09be140c4da9c8e48ff8c2d17cf380e6"
+    rebuild 1
+    sha256 x86_64_linux: "4162c7d5db7ba52ceaf08abff6f9a38fe3b6a6ba5988e8a6ff338629bbb4aa42"
   end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "acl"
   depends_on "bzip2"
   depends_on "dbus"
@@ -133,6 +134,6 @@ class Rpm < Formula
     files = shell_output(bin/"rpm --query --list --package #{testpath}/rpmbuild/RPMS/noarch/test-1.0-1.noarch.rpm")
     assert_match (HOMEBREW_PREFIX/"share/doc/test").to_s, files
 
-    system "python3.11", "-c", "import rpm"
+    system "python3.12", "-c", "import rpm"
   end
 end

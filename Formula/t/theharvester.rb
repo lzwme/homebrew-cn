@@ -9,14 +9,14 @@ class Theharvester < Formula
   head "https://github.com/laramies/theHarvester.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "d5286ad279de95090f1ac763f1d416f7f3fd467c2c65824d8ba24617bf12eb03"
-    sha256 cellar: :any,                 arm64_ventura:  "4ceaef30ae983878ef850cadbc657215b6637c78348ce79b26c58dcf59bddab8"
-    sha256 cellar: :any,                 arm64_monterey: "fea60a9f42888a5f29031ee2ae6f0c4e4cdba2deb3f247b0f683043f0d4a2cc7"
-    sha256 cellar: :any,                 sonoma:         "c974816ddde5fed74d84b58ceef37a732aca4e4318688f003300e9cb6b04f768"
-    sha256 cellar: :any,                 ventura:        "29519a6795712966049c4d2f08d51107d16636d0b1c8568304e8e89e998c88bc"
-    sha256 cellar: :any,                 monterey:       "6c13e02ac5a33648ebeaa53aed7e7e4adfba54154c95e0240414e926a063b461"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "87a69dd30e5234a058e1a159da73e32dcc1514b671b560ca4e9a97df5c356766"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "c3728f67032a05a67a7045213031aa494bf8a8ced369824e808082984d42f756"
+    sha256 cellar: :any,                 arm64_ventura:  "d8eefe643885ac281309fb522966f538940c7e9830d3fdd0e8b67c1c282ac7ee"
+    sha256 cellar: :any,                 arm64_monterey: "8eebf9d75fd10979fed9f28ad1681450866306f6920a5178c0efb73af48f888d"
+    sha256 cellar: :any,                 sonoma:         "2110aff0a73ae68761d677024635de4b7910df831f56dcb7485b283a9da09ec5"
+    sha256 cellar: :any,                 ventura:        "4cdd784e21a8a66ff048b25e163aa02fcbbff1b144743f0b4a138412d34c1046"
+    sha256 cellar: :any,                 monterey:       "5f986958358b6938f2a2848ac9aafcc6ba700497f4a53d41034f2091ce014cd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "37045b91397c9b3846803e519f787c3afc9308ff2825efdf93d187a71bcd6a2e"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -29,16 +29,13 @@ class Theharvester < Formula
   depends_on "python-lxml"
   depends_on "python-packaging"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
-
   # How to update the resources
   # tar -zxvf theHarvester-#{version}.tar.gz
-  # cd theHarvester-#{version} && virtualenv -p python3.11 .
+  # cd theHarvester-#{version} && virtualenv -p python3.12 .
   # source usr/local/bin/activate && pip install -r requirements/base.txt
   # pip freeze > dependencies.log
   # run homebrew-pypi-poet on the freezed dependencies
@@ -53,8 +50,8 @@ class Theharvester < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/d6/12/6fc7c7dcc84e263940e87cbafca17c1ef28f39dae6c0b10f51e4ccc764ee/aiohttp-3.8.5.tar.gz"
-    sha256 "b9552ec52cc147dbf1944ac7ac98af7602e51ea2dcd076ed194ca3c0d1c7d0bc"
+    url "https://files.pythonhosted.org/packages/c4/50/a717a133bda2efc27efbf8a65398c925b6d0605213da0db6929627ccb758/aiohttp-3.9.0b0.tar.gz"
+    sha256 "cecc64fd7bae6debdf43437e3c83183c40d4f4d86486946f412c113960598eee"
   end
 
   resource "aiomultiprocess" do
@@ -288,8 +285,8 @@ class Theharvester < Formula
   end
 
   resource "uvloop" do
-    url "https://files.pythonhosted.org/packages/ba/86/6dda1760481abf244cbd3908b79a4520d757040ca9ec37a79fc0fd01e2a0/uvloop-0.17.0.tar.gz"
-    sha256 "0ddf6baf9cf11a1a22c71487f39f15b2cf78eb5bde7e5b45fbb99e8a9d91b9e1"
+    url "https://files.pythonhosted.org/packages/9c/16/728cc5dde368e6eddb299c5aec4d10eaf25335a5af04e8c0abd68e2e9d32/uvloop-0.19.0.tar.gz"
+    sha256 "0246f4fd1bf2bf702e06b0d45ee91677ee5c31242f39aab4ea6fe0c51aedd0fd"
   end
 
   resource "websockets" do

@@ -1,8 +1,8 @@
 class Sratom < Formula
   desc "Library for serializing LV2 atoms to/from RDF"
   homepage "https://drobilla.net/software/sratom.html"
-  url "https://download.drobilla.net/sratom-0.6.14.tar.xz"
-  sha256 "9982faf40db83aedd9b3850e499fecd6852b8b4ba6dede514013655cffaca1e6"
+  url "https://download.drobilla.net/sratom-0.6.16.tar.xz"
+  sha256 "71c157991183e53d0555393bb4271c75c9b5f5dab74a5ef22f208bb22de322c4"
   license "ISC"
 
   livecheck do
@@ -11,16 +11,13 @@ class Sratom < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "ba0f4d3695f6855c7afa297ffcf31080ada1a8b35401eb6d97d626dc43cf8aaf"
-    sha256 cellar: :any, arm64_ventura:  "b884d697b5ca163cb39767e13f7efa886e05019103fcf370d9f45929848d4097"
-    sha256 cellar: :any, arm64_monterey: "4279011c330c294669c4a0269d588a2a13c94dd8572cbe5bd142a7e896f76b33"
-    sha256 cellar: :any, arm64_big_sur:  "44288a39e0ff6b9744818a3cb288149f846ad5f53db803c8b0d833b0f912b3f9"
-    sha256 cellar: :any, sonoma:         "5daf5582481a24985d811e12b9b05e98546514076e2c4bd5f59839a2da5c2725"
-    sha256 cellar: :any, ventura:        "697d38170f40d06ad287a1df04319f77720820eda51beb1b653562f78a1f4758"
-    sha256 cellar: :any, monterey:       "be71b80a11c1bb0e0abd54ec1e6823b962cedeb9be33da38ed880251ce4ad3ee"
-    sha256 cellar: :any, big_sur:        "a9080fe9fb2599855f5b512caab3cfdce9c40f3c285597de3899c67dfe8cb2d0"
-    sha256 cellar: :any, catalina:       "d6514a036efc5cd3820bcd686aaea2ab4fc9d85071dc32f09d702cf48d6c9004"
-    sha256               x86_64_linux:   "1a5c19504309b0a88bf93ca6c4e4176438af55b2bb638df0d54e31614cc811cb"
+    sha256 cellar: :any, arm64_sonoma:   "e83b77c4790cd4fbb8a1f37fdb33a78c20298d89b3345559e5990f632d06f533"
+    sha256 cellar: :any, arm64_ventura:  "c8ae52b2eea3191e28ec3fb96bce4b067715c0daca5e37681b368fc44350c43e"
+    sha256 cellar: :any, arm64_monterey: "e9d9c40f47a753b41d128e9d061ff61f39b84483df9f67c6b7d5ca04318b55f3"
+    sha256 cellar: :any, sonoma:         "920202525fe2153f008e5dacf59d6fda97ae33b127e4fa363735c1a7cd4d1598"
+    sha256 cellar: :any, ventura:        "67e160e20bbf18673f2a1a91697a405478310cadf43413989dcb35a7a06ac4cf"
+    sha256 cellar: :any, monterey:       "8d55f793f9a463ac0d7ce4a2e6537f10303b37bc1b8192ff3906bb07987cc670"
+    sha256               x86_64_linux:   "e108a73b3a47181df80686a66bcdfb8fdbbcbb9682aeefc7a5b058699356b395"
   end
 
   depends_on "meson" => :build

@@ -1,20 +1,18 @@
 class Gifski < Formula
   desc "Highest-quality GIF encoder based on pngquant"
   homepage "https://gif.ski/"
-  url "https://ghproxy.com/https://github.com/ImageOptim/gifski/archive/refs/tags/1.12.2.tar.gz"
-  sha256 "daaeefd21d8328282d2c1082faddbc1f4870c60c1453e6e85e1a421aa77738d6"
+  url "https://ghproxy.com/https://github.com/ImageOptim/gifski/archive/refs/tags/1.13.0.tar.gz"
+  sha256 "af49394306f7ececedad3237b4e36ec8f8b85095d8cb6c05f8cc1197c4cb0340"
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "88852eb048bc4a649783505818410e8f606ab084d2c32fb37ab5f0970d8a18ec"
-    sha256 cellar: :any,                 arm64_ventura:  "241c6d9928465d33cf91c8c704a07d9b1da5c4836773e3fc3d044c67d68cc788"
-    sha256 cellar: :any,                 arm64_monterey: "366cbf286f39497de764e0cbb5e15295e9d579c64af565fc2be3eacfd4b65cdb"
-    sha256 cellar: :any,                 arm64_big_sur:  "d819e23d2c30a92eb809f7ae8831ac0290b6e74c2fa2aa296108c64a7e38de95"
-    sha256 cellar: :any,                 sonoma:         "901561ba7b02de8beb85a030fb53f994084a37a938483831bb6e282f6003af6a"
-    sha256 cellar: :any,                 ventura:        "d0d92370ea89d281fe10d0717b226407f31184faf7ee944ce87e2f6054a414e0"
-    sha256 cellar: :any,                 monterey:       "8df2267b7fa3203ed573e7660d37140045bce5dbbe6e8261b2f09b803f492ed5"
-    sha256 cellar: :any,                 big_sur:        "afefc72dcb0d3e8223c2a1df12bf38b730d9b169de34f45bc6b706ed9c2d77d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4bb51932f9e4a6c37f974a01724620a0d99eec8354536ff78bd0f6afe85e0fb"
+    sha256 cellar: :any,                 arm64_sonoma:   "d4c07bb9554c2da9c857ddb8cbb178778215ef1a3c00849025c76d326feb4a2e"
+    sha256 cellar: :any,                 arm64_ventura:  "0b22592980489848cdb2eec9eba85cf5979a7cde3ee7aed6a9d991f8861ee12e"
+    sha256 cellar: :any,                 arm64_monterey: "5500f4461163a45763bd9e5421e9c1b2f0dfdbe84509f7735eb085e299e61891"
+    sha256 cellar: :any,                 sonoma:         "708fc0cbe944bb4ae5244e4024deca5cb64288874b7b42c366568449110236f8"
+    sha256 cellar: :any,                 ventura:        "0747136aee00a913b4b316411d0e92112447f9709be91a79c60f596abbc5d9ea"
+    sha256 cellar: :any,                 monterey:       "cb238d958b5346fb809d262084f77878354f42c72680aa65063c0014379f3340"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "117615056c17f84b5341097343cf5512f86da079c1dbf7072f4a039cb4f3b47c"
   end
 
   depends_on "pkg-config" => :build

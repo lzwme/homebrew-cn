@@ -7,7 +7,8 @@ class Systemd < Formula
   head "https://github.com/systemd/systemd.git", branch: "main"
 
   bottle do
-    sha256 x86_64_linux: "db8561d16b1dd430c362de4cabdfbd6125bfd4ebcfcdeee601ce2d967e2695a3"
+    rebuild 1
+    sha256 x86_64_linux: "4438494f7f7c753f5678b9bb74deb88708cb737f61835cfa99d7cf23247a6b57"
   end
 
   depends_on "coreutils" => :build
@@ -23,7 +24,7 @@ class Systemd < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on "rsync" => :build
   depends_on "expat"
   depends_on "glib"
@@ -38,7 +39,7 @@ class Systemd < Formula
   uses_from_macos "libxcrypt"
 
   def install
-    ENV["PYTHONPATH"] = Formula["jinja2-cli"].opt_libexec/Language::Python.site_packages("python3.11")
+    ENV["PYTHONPATH"] = Formula["jinja2-cli"].opt_libexec/Language::Python.site_packages("python3.12")
     ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}/systemd"
 
     args = %W[

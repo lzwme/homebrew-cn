@@ -6,23 +6,23 @@ class Sail < Formula
   url "https://files.pythonhosted.org/packages/14/a7/7f3f93ab1d8d9f58e8dce01ff5bbbdaf5f6ce679e5e13638df0cd2bdbe9a/sailed.io-0.10.8.tar.gz"
   sha256 "c31f7adbf97ea4c2827e35f9615a54fe9a013bd0b16a655ad29a926d9f86f014"
   license "GPL-3.0-only"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4f1bf0a830fc2f81758a7f6edcf17758e647469d1db1aeb3045f1371ad765044"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "65cc6e9718ce9b762d04192f30d27e30beacbb0b3c60d54cbc0d0d547dddee5d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b701470745d3dd9d1159d2ecc2d4c754517ec1ed8696ddc74fdfa85a16e4d4c3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "184b3179b6c47f7631ab34c7481c2fa0de4a6d4b584f6af6b87c90ba79052621"
-    sha256 cellar: :any_skip_relocation, ventura:        "094685a638dcf6bff29b000e27faadfa4a92570f0805eb4e3ee6641eae32be45"
-    sha256 cellar: :any_skip_relocation, monterey:       "e546836eb204dea5cb70bab00e57484a44d4d4d8dd377fb3f71af05913385bc5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e43defd27c3e7af9834e6667112eafbec54cb9a165ffa9c3960bb3582388ef1f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5013457534eb36de6af759de9fd5b0be76542615e525e48ce3143cde0ef7f341"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29b815a748b4a8df5929b99ca96e43559c4cabbe63209c23c0bb0e8238d1b90e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "290f339414e85ae53b45e7553665cccb65371b3393320e6d056e1fca0583f1ec"
+    sha256 cellar: :any_skip_relocation, sonoma:         "eb67b834b6b5b2a7816ef214c80909c85180918dfa2b4e4433811f86bb16dbe4"
+    sha256 cellar: :any_skip_relocation, ventura:        "52e7d05205c6a4a91a7125601a2cab605d20250f2298fc0d5097ac374b1da365"
+    sha256 cellar: :any_skip_relocation, monterey:       "c210afa55c9f1a8321f396f8495c2d745ae92d50bb323591113fd37809c0cd61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d43381f84b05319ef5de21250329747732ca85d86af7a53ff0951a7dee32279c"
   end
 
   depends_on "fabric"
   depends_on "pyinvoke"
   depends_on "python-certifi"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
@@ -87,15 +87,13 @@ class Sail < Formula
   end
 
   def install
-    python3 = "python3.11"
+    python3 = "python3.12"
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources
 
     site_packages = Language::Python.site_packages(python3)
-    %w[fabric pyinvoke].each do |package_name|
-      package = Formula[package_name].opt_libexec
-      (libexec/site_packages/"homebrew-#{package_name}.pth").write package/site_packages
-    end
+    fabric = Formula["fabric"].opt_libexec
+    (libexec/site_packages/"homebrew-fabric.pth").write fabric/site_packages
 
     venv.pip_install_and_link buildpath
 

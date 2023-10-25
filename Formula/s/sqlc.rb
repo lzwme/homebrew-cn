@@ -1,19 +1,19 @@
 class Sqlc < Formula
   desc "Generate type safe Go from SQL"
   homepage "https://sqlc.dev/"
-  url "https://ghproxy.com/https://github.com/sqlc-dev/sqlc/archive/refs/tags/v1.22.0.tar.gz"
-  sha256 "858846f4c1f0ee49d20caa1cdcc0b5d7e1c41c79fa5e2091811451b69dd7c8dc"
+  url "https://ghproxy.com/https://github.com/sqlc-dev/sqlc/archive/refs/tags/v1.23.0.tar.gz"
+  sha256 "29171425b68bf5ca99c0fd7fd2107e087fec17778f56493d952c03b3b84d2913"
   license "MIT"
   head "https://github.com/sqlc-dev/sqlc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d7185768dd63e1f2d64567caf22c71ca7b77160cd9a478e343bde200243fcf11"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d2c95be3f2f92032b53664ba3c1b160b1478be30fdbb65f3ca5901f48fd36930"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c45eff9c3aa7df7123058ef11dc10a0e47bc15675dadb1eefec749a2ded9861d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "de75afd757482afa9ffa7f6bab2334b21adac99e00b43024d46d04e16c699afb"
-    sha256 cellar: :any_skip_relocation, ventura:        "5c943a6fd7683e79752e67a6c877729545072d18897a7543682acb91033115c2"
-    sha256 cellar: :any_skip_relocation, monterey:       "22cfea89e6dad27d8a7714c066eb2eb8c09a1076c1ca50bd9a0708a4bdb6bc3c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "58fbfaf55efd9caf39ff8973947d92121e4f8728c4447050cdb85f4ffe252ed8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b8703d9aaad5bb01ea5753ba2056dad918d1621871c9074b8ca2b15613765c30"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "742c83b3218adb7cca7d56be8758d9a6c130020d2592cffe508a82408edda99d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e5f58eb33b64cbc0ed8836324be9b00030e09f0c862cfcc139d4bad63b4ebf28"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9725688a254d0804a104eb226cff7662216966e5ca8bfb60377297af0177a39c"
+    sha256 cellar: :any_skip_relocation, ventura:        "79e58390b92c8937ab8fd110681690a700ad7a7b905382fe114f7ed582345d7f"
+    sha256 cellar: :any_skip_relocation, monterey:       "8dcef7c94fdaa121e11b2bb4e3a6d23b00b718e343faff3a0f79279485cbfaf6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a1d2409c3078a1b36826fb14a11fe044b4cc5d0e1652a97b31083eb2c228eaf"
   end
 
   depends_on "go" => :build

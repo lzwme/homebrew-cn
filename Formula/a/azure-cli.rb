@@ -3,8 +3,8 @@ class AzureCli < Formula
 
   desc "Microsoft Azure CLI 2.0"
   homepage "https://docs.microsoft.com/cli/azure/overview"
-  url "https://ghproxy.com/https://github.com/Azure/azure-cli/archive/refs/tags/azure-cli-2.53.0.tar.gz"
-  sha256 "8076c55a6c6327879b973a1906f4ad45928004292ece5d696fc5855e92e1aeb2"
+  url "https://ghproxy.com/https://github.com/Azure/azure-cli/archive/refs/tags/azure-cli-2.53.1.tar.gz"
+  sha256 "9edeed0968a829df79fcf2670d86c8d4acef10014b4680188a4c7ddf93e18865"
   license "MIT"
   head "https://github.com/Azure/azure-cli.git", branch: "dev"
 
@@ -15,13 +15,13 @@ class AzureCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a3d09b2b057a132b832fe5eda69ea987189b55b5c976c87b27a42073c20100d4"
-    sha256 cellar: :any,                 arm64_ventura:  "166d5f49911be6551a8ff948a20cbbfada59cac0e8aa44b77d644ff70a13535e"
-    sha256 cellar: :any,                 arm64_monterey: "2d815b1e9cf31d96304c493196a8edf92026af70f368483540eb74c33aabada5"
-    sha256 cellar: :any,                 sonoma:         "422ce59279b0964a39c22086ae262994486d1f0af03dac8d508428b18337dc9c"
-    sha256 cellar: :any,                 ventura:        "76d18647d5f2453ace9f1dceabfc1bb401fa94c22b8300a455f3ec7b201d3000"
-    sha256 cellar: :any,                 monterey:       "c3cf5b2d649ff7956e551c1f2e3e32acead40cc53029d8e9367e4df013e4b0c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31fdc1ed412509e1917a0e55d0e1ecc124ff4bacc4c1ce665b099f93a500fa86"
+    sha256 cellar: :any,                 arm64_sonoma:   "72651db492fd7467c38289b5b8c021887dbbe92bc05625ea199b3e232a3472c1"
+    sha256 cellar: :any,                 arm64_ventura:  "4563b2569ea01e561d5c21ecee7a0b98bf7c7a7ef1cf30433743430838e3f821"
+    sha256 cellar: :any,                 arm64_monterey: "6fb4d17d03aefdbf42e28eed13ead57cb9f33258d9dee615830afaa82360dc57"
+    sha256 cellar: :any,                 sonoma:         "bdba1c2dff8ed6671a54ca5325411d10acc2f7a0b4e06743ed8df9ac0aec54cd"
+    sha256 cellar: :any,                 ventura:        "d29cd1e7f07f7ebaa433193805b5a2a78bc67c86b131979c1886a30a61a0dd5d"
+    sha256 cellar: :any,                 monterey:       "68ac4d6c0cdd6719e2f41808b7ba89b10cc27378ebd98f590a962cc26e1e03a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5002776a13229a914415aa085f3b6b039ddc2bde4d149ea7c102f59ebe74a208"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -517,8 +517,8 @@ class AzureCli < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
-    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
+    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
+    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
   end
 
   resource "colorama" do

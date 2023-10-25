@@ -344,6 +344,7 @@ Homebrew-homebrew-core/Formula/a/awsume.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/awsweeper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/axel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azcopy.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/azion-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aztfexport.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/azure-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azure-storage-cpp.rb, Homebrew/homebrew-core, 1
@@ -1293,7 +1294,7 @@ Homebrew-homebrew-core/Formula/d/djl-serving.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/djview4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/djvu2pdf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/djvulibre.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/d/dlib.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/dlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dmagnetic.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dmalloc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dmd.rb, Homebrew/homebrew-core, 1
@@ -2399,6 +2400,7 @@ Homebrew-homebrew-core/Formula/h/h3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hackrf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hadolint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hadoop.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/h/haiti.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/halibut.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/halide.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hamlib.rb, Homebrew/homebrew-core, 1
@@ -5907,7 +5909,7 @@ Homebrew-homebrew-core/Formula/t/talloc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tanka.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/taplo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tarantool.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/t/tarlz.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/tarlz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tarsnap-gui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tarsnap.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tarsnapper.rb, Homebrew/homebrew-core, 0
@@ -6030,6 +6032,7 @@ Homebrew-homebrew-core/Formula/t/theora.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/thors-serializer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/thrax.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/threadweaver.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/three-body.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/threemux.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/thrift.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/thrift@0.9.rb, Homebrew/homebrew-core, 1
@@ -7132,6 +7135,7 @@ Homebrew-homebrew-cask/Casks/b/bartender.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/base.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/basecamp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/basictex.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/batchoutput-pdf.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bathyscaphe.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/batteries.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/battery-buddy.rb, Homebrew/homebrew-cask, 0

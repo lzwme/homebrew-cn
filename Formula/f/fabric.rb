@@ -6,25 +6,24 @@ class Fabric < Formula
   url "https://files.pythonhosted.org/packages/0d/3f/337f278b70ba339c618a490f6b8033b7006c583bd197a897f12fbc468c51/fabric-3.2.2.tar.gz"
   sha256 "8783ca42e3b0076f08b26901aac6b9d9b1f19c410074e7accfab902c184ff4a3"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/fabric/fabric.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a3092e230cf9521c17147347fba5b79f732a0cc014c36aadb2bcc35510d5d958"
-    sha256 cellar: :any,                 arm64_ventura:  "80521f790edd96a98f5dc165f54251db414f0aa26cbe9f6befd3af485548b34f"
-    sha256 cellar: :any,                 arm64_monterey: "e5c877a7e2f8d3481ea133141d43c40e8ba060c0dd25e4285b0ee04f032b9330"
-    sha256 cellar: :any,                 arm64_big_sur:  "1886e1e7b192390c298446765f102fef6cc161d882e4766d9cada677b8978858"
-    sha256 cellar: :any,                 sonoma:         "eeffb809b0a3453d8f1457a0b40993524713096ee011b9b568bdab0ef36a29f4"
-    sha256 cellar: :any,                 ventura:        "10ad520172e0ef0b55f3be8f85518a91cc9565938cc2b2ea146994a9def5279a"
-    sha256 cellar: :any,                 monterey:       "d2a7d513578c76afa64546e96c79a105f6eca58ff4932f88eff91e2bd667feb5"
-    sha256 cellar: :any,                 big_sur:        "13a77afe7812e1bb0bb78b178f47552b40ccddaf5ce61fc1f0331b3ac6353691"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5520a143a3975b19283527502efba0d9b48642939ee7f0ac6737f3af32035768"
+    sha256 cellar: :any,                 arm64_sonoma:   "11b378c00038fbf0171992d17858d5e9d7fec55483a047502c2d61a24601bfcb"
+    sha256 cellar: :any,                 arm64_ventura:  "0ba4c0f22a31cd03f6fe59d4a0a715d79f854b1d30ca0c430f5c25ec26384c8d"
+    sha256 cellar: :any,                 arm64_monterey: "78b4be982e8c66db9ae8539f6a9728c09caae9d1ae0380ba98cce11b7fce5a87"
+    sha256 cellar: :any,                 sonoma:         "b0570d2dfcdd7102d60e2074c27fe9fdac41e1a0d8aa235c7bc427f6ffb197e2"
+    sha256 cellar: :any,                 ventura:        "4013d9617ed2d2dd81f8d757c8cb771846f3e56783cec59c3331b30454c5a61d"
+    sha256 cellar: :any,                 monterey:       "aaca4973d5ce8754c8752788bc1b1cf40382d5612a13f19fa101823bc36cfbf0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7ba8a7bfa6cce747b2498e19f9547b36a392bf289675c71c3c81d75b6870890"
   end
 
   depends_on "rust" => :build # for bcrypt
   depends_on "cffi"
   depends_on "pyinvoke"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "bcrypt" do
     url "https://files.pythonhosted.org/packages/8c/ae/3af7d006aacf513975fd1948a6b4d6f8b4a307f8a244e1a3d3774b297aad/bcrypt-4.0.1.tar.gz"
@@ -58,11 +57,6 @@ class Fabric < Formula
 
   def install
     virtualenv_install_with_resources
-
-    # we depend on pyinvoke, but that's a separate formula, so install a `.pth` file to link them
-    site_packages = Language::Python.site_packages("python3.11")
-    pyinvoke = Formula["pyinvoke"].opt_libexec
-    (libexec/site_packages/"homebrew-pyinvoke.pth").write pyinvoke/site_packages
   end
 
   test do

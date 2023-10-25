@@ -1,20 +1,18 @@
 class Grpcurl < Formula
   desc "Like cURL, but for gRPC"
   homepage "https://github.com/fullstorydev/grpcurl"
-  url "https://ghproxy.com/https://github.com/fullstorydev/grpcurl/archive/refs/tags/v1.8.8.tar.gz"
-  sha256 "b36990189922ee3ac07e91be83e6dafcb5e6fcfc0039378d42a1c76c87a7cbd8"
+  url "https://ghproxy.com/https://github.com/fullstorydev/grpcurl/archive/refs/tags/v1.8.9.tar.gz"
+  sha256 "962fe7d3da7653519d2975e130244af9286db32041b0745613aebf89949a9009"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f39c9cbc93767fdc0d4582c393421f5d5a4355c4c1460c1ef902f1ebf4291717"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "73aa020887bbfd505d1d9cd74fb30d83f696b00dbbff462ce186f18e02017b2d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c483a82109e8e90c88df75803ecd52aa816850085d7d87cad01fc88cac011538"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "33423e62a521007067f8a0cdd2ba3f6047dc5e77c251b3c90036911359b90e35"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fc774ec6b2cd6a06fb7ec559264fd1da07465cfac30a80c1f8ba995d4d89beb2"
-    sha256 cellar: :any_skip_relocation, ventura:        "d07c310be5bdfd492647f696c7dd4f8816054c2d5f1bb90f185702be031d1b59"
-    sha256 cellar: :any_skip_relocation, monterey:       "e279d0a8384f3cc69b8b9605472e5d53e332181aab280ded64d722754b1eb0c4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6c09776cc6061c824cbe167adc3099ee3a6df1991d495f5c2060cc9ee1da47f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ef38454054085afabced3c11c7c91bcbf7b391c7330c78d374087eb9d6fc3bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "552935a3a42486550742866a814d59b9939c96ded35729b994f83a5d434457c5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9583f39476fb1d1b740feb48a285281ec6309f1d0bc5bb73014e52533004621c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bd99bef6ce4a47666fb27e618201c1c2663cbe88001e4e491e5c94f878fb62e5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "617641e6227ac00767a3672f76fdee8bb5e99d82d14050293ac62a9ac5d61c43"
+    sha256 cellar: :any_skip_relocation, ventura:        "81705e0eebe0228a7a58047419d73a295ae61c4dd2fed218ae68f51948e61e2a"
+    sha256 cellar: :any_skip_relocation, monterey:       "13755998f96a7b09e674b93a434160ae4362a1b99ebf4d29ba0496b5294e7667"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38e1c96a3116b1eb7d323b406a504bcf1556aacc3d5b7ae6b600eec5596e40e9"
   end
 
   depends_on "go" => :build

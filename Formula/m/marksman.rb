@@ -16,6 +16,8 @@ class Marksman < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb8eb4232c1cc858efe61d63bbac0192ca11a9d5a5881bc5f05ee4a20a0ccf7a"
   end
 
+  deprecate! date: "2023-10-24", because: "uses deprecated `dotnet`"
+
   depends_on "dotnet" => :build
 
   uses_from_macos "zlib"

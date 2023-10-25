@@ -8,6 +8,11 @@ class ApacheFlink < Formula
   license "Apache-2.0"
   head "https://github.com/apache/flink.git", branch: "master"
 
+  livecheck do
+    url "https://flink.apache.org/downloads/"
+    regex(/href=.*?flink[._-]v?(\d+(?:\.\d+)+)-bin[^"' >]*?\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "e132f80cf593ffde79da2787f166afcdc24a5348ea4619e588849d828b9f20ac"
   end

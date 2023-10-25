@@ -8,19 +8,19 @@ class PythonYq < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "534922d4dc796a3527002c9fabfc51f01cf775c021adf99bfb2b959ece405779"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d438c01ebfccf527e7a51373f51f9cea74064d50cd86f894c6b95b89377314b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c6c73cb19b674b6771f5917086015f8c14ea5fe4a1fdc7da10efdefb1ac83ccd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "633e99d25ff61721a19e1289bf9760577f1ec48eb62cba1feccd04e80fb1f25e"
-    sha256 cellar: :any_skip_relocation, ventura:        "4a9f3f1f2eabcd6290e762106b89bc4f04dd7d31513411fb61a7c4208a501528"
-    sha256 cellar: :any_skip_relocation, monterey:       "d03392dc88c85d2fa5b25c0c69528f44fb04141f747c0a64cd08500496215637"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a7f3236ba42735197d91fdd43b650059d2e9c00475fb0f87d13a7faacca0ade"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9e8b3ed115a18be3f2dd9a673b297369dc4c0e12c358c604c9e41210e2eb9775"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7bba9994b1127c69e8fd8cda70e483875003ac48d2ff4721877c6a4f2e6f01d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1d3d582fe3391801d3789c0aca487c4b3337cdb99caf215a30d35ebe25442c6f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c99b002316eb5a01dade67cf813e1bc96405d6fafee29c504dec1f0a5fecd2f8"
+    sha256 cellar: :any_skip_relocation, ventura:        "7e20037c3efa17d35e917eb6e369dd4eca98b358a92e564083b03194c4484b0c"
+    sha256 cellar: :any_skip_relocation, monterey:       "f5a3158d68ca11187b65e6aeaa23e3228db0735b410a30f6f1ad27593509d15a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63f678c0102d10126d0fd16e95ae98039bfc6ff4088d53ccb64b6b9c375b905e"
   end
 
   depends_on "jq"
   depends_on "python-argcomplete"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   conflicts_with "yq", because: "both install `yq` executables"
@@ -38,11 +38,11 @@ class PythonYq < Formula
   def install
     virtualenv_install_with_resources
 
-    python_exe = Formula["python@3.11"].opt_bin/"python3.11"
+    python3 = "python3.12"
     register_argcomplete = Formula["python-argcomplete"].opt_bin/"register-python-argcomplete"
     %w[yq xq tomlq].each do |script|
       generate_completions_from_executable(
-        python_exe, register_argcomplete, script,
+        python3, register_argcomplete, script,
         base_name:              script,
         shell_parameter_format: :arg
       )

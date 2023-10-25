@@ -8,32 +8,6 @@ class Dotnet < Formula
   version "7.0.100"
   license "MIT"
 
-  # https://github.com/dotnet/source-build/#support
-  livecheck do
-    url "https://dotnetcli.blob.core.windows.net/dotnet/release-metadata/releases-index.json"
-    strategy :json do |json|
-      # Find latest release channel still supported.
-      valid_channels = json["releases-index"].select do |release|
-        release["support-phase"] == "active"
-      end
-      latest_channel = valid_channels.max_by do |release|
-        Version.new(release["channel-version"])
-      end
-
-      # Fetch the releases.json for that channel and find the latest release info.
-      channel_page = Homebrew::Livecheck::Strategy.page_content(latest_channel["releases.json"])
-      channel_json = JSON.parse(channel_page[:content])
-      latest_release = channel_json["releases"].find do |release|
-        release["release-version"] == channel_json["latest-release"]
-      end
-
-      # Get _oldest_ SDK version.
-      latest_release["sdks"].map do |sdk|
-        Version.new(sdk["version"])
-      end.min.to_s
-    end
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "a48ccb41aef44b23111a8c9af155a7d4ca687d12e693abdf16a460606b643534"
     sha256 cellar: :any,                 arm64_monterey: "d3b31cc177ef4abc05cbfc638bf10c5d208c727862698a65f2f1c1f200381134"
@@ -43,6 +17,8 @@ class Dotnet < Formula
     sha256 cellar: :any,                 big_sur:        "015dca815eb4ea5b4a9a7160b79ad45e509ae6525e939f3a81d3985ec88533cf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a75b5f8d7331b1db749735e6a8fb3f9dbfe6298c44fa0e8911d727e7195b8eb"
   end
+
+  deprecate! date: "2023-10-24", because: "uses deprecated `openssl@1.1`"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build

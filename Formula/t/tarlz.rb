@@ -1,9 +1,9 @@
 class Tarlz < Formula
   desc "Data compressor"
   homepage "https://www.nongnu.org/lzip/tarlz.html"
-  url "https://download.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.23.tar.lz"
-  mirror "https://download-mirror.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.23.tar.lz"
-  sha256 "3cefb4f889da25094f593b43a91fd3aaba33a02053a51fb092e9b5e8adb660a3"
+  url "https://download.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.24.tar.lz"
+  mirror "https://download-mirror.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.24.tar.lz"
+  sha256 "49838effe95acb29d548b7ef2ddbb4b63face40536df0d9a80a62900c7170576"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,18 +12,22 @@ class Tarlz < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f34d88b446e9a9890484c64313eea9429b9a3fb2c138377529436edfd365444f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1c7f680ff8a870429c7a98f8bb0edf8b850bfbc0c626b37310b21dca9fb4dc6d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0fcc9cf154b30fea24d72a427df605d4b72ee416f1e84f11ea57a058e0cb37ab"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3b06bcb32d18976af959d11e388647c81d6374aee847bff9b8449176e87fd5bb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e0f2253d33b0df1eadbafa93e1a11474f41b4f4edd5b552802fcf4d3b44086d7"
-    sha256 cellar: :any_skip_relocation, ventura:        "66c15f18d1a4bf05abde08bcc1e28622c97ee2be33457c28b6a57c8af53416c1"
-    sha256 cellar: :any_skip_relocation, monterey:       "465b6e8af9bb245935f364856954d6970f4f5f853d1c7d76d65e9e5fcc98285a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "994f2a00cfed90ac4892b1e134d176db4a6cdaea9ceea3b6118988a19ba7d9aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "caabaeecb23126c911dc1d0cb8e3c677b92818450ee4f3388dfaa558b354a864"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8253224a69a54c9d86b7ce062a19a16202855672c321fe6637f3a2c4492f3844"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c246f551b1b7aac697aa6fa07ef8cab03356dea54dffd2057ca72fce33b5b15"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9163497b962fdcc9f0d846d4529dd9e2467534760de8b09262488a0e7969d4f8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "efb13a712648bee26fbda8e096c309bed4095bae3bc6de035993918f875f94f5"
+    sha256 cellar: :any_skip_relocation, ventura:        "94b6ae7dabb81f2fb79a2a3263f419a69590ef889517a4c73f6f71b093a40e6f"
+    sha256 cellar: :any_skip_relocation, monterey:       "1003be058ef246a8db7fafadf561c706572304dc567680148ecb39f6f673b632"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c437f5d15a94bb56857ae9687f2f530de669c41f3cb9aae69f6cec5878378fa1"
   end
 
   depends_on "lzlib"
+
+  # patch for missing major/minor/makedev for osx builds
+  patch do
+    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/0fe617f/tarlz/0.24.patch"
+    sha256 "289a90c49c6ae7990debca5d4516cbb2c17d64d7e8ab23564e65b12d1f2feb9c"
+  end
 
   def install
     system "./configure", *std_configure_args

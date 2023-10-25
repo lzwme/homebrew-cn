@@ -3,8 +3,8 @@ class Nginx < Formula
   homepage "https://nginx.org/"
   # Use "mainline" releases only (odd minor version number), not "stable"
   # See https://www.nginx.com/blog/nginx-1-12-1-13-released/ for why
-  url "https://nginx.org/download/nginx-1.25.2.tar.gz"
-  sha256 "05dd6d9356d66a74e61035f2a42162f8c754c97cf1ba64e7a801ba158d6c0711"
+  url "https://nginx.org/download/nginx-1.25.3.tar.gz"
+  sha256 "64c5b975ca287939e828303fa857d22f142b251f17808dfe41733512d9cded86"
   license "BSD-2-Clause"
   head "https://hg.nginx.org/nginx/", using: :hg
 
@@ -14,15 +14,13 @@ class Nginx < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "95d252cd7e7bef56a5947da6425bab59b24373ce04ae121f3d8992b3b83a7272"
-    sha256 arm64_ventura:  "bb7b7e469df875b0dae7fdbb02bc25af6d711daa72c8003f421dafe3a32ba2cf"
-    sha256 arm64_monterey: "b279d889a15c902af6fef8d1b176c9d2ee176eacfbff24149970f03656619fe0"
-    sha256 arm64_big_sur:  "3947690efcf7a3114d2136d6deae709fba48b2db868236dd79be0189a69a4879"
-    sha256 sonoma:         "aea49adaf0685cb8706c657fce0b724f12c8cfe20d3d4bba6352f10098cce23b"
-    sha256 ventura:        "bfc0c38f83251ab8e3117379b5b0628a23a3f73000763c4ca4e5fcd6cbc61a94"
-    sha256 monterey:       "9d21ff12ad5b8fe3d7c5c44b9754e75847e06c1ecfcdc828d2092e4e121b640d"
-    sha256 big_sur:        "4f364d17f86ba8d37b1a6d4d80994ca7d2d95cc830edcdd7b58bbbaf4e712eaa"
-    sha256 x86_64_linux:   "96853f356ac8b25b7f8d7cf455342bab56d22854b87b0199c5ab88748086666b"
+    sha256 arm64_sonoma:   "08d1fb66a5566c3e38c6249d2104f6a9d3973cce4c416e50a0292d7af8567147"
+    sha256 arm64_ventura:  "80881b0bc5bdc5fac40ddcaa3fc34d68a89ddd6d61505c9489e5699f26430d90"
+    sha256 arm64_monterey: "29d5587cb38d18cd8ccaea0bac2bd8aa4acbeb01c080817b4b57f994e0d9b01d"
+    sha256 sonoma:         "22ebed3da9b8d279905c6df5d9f1a9b1077c0ae3c72ea26fb546ff41acd7eec3"
+    sha256 ventura:        "90d750b97b2119cd02945047b6dacd36f03f0060e7cf851442fcee2e4293ada5"
+    sha256 monterey:       "e0e4362ed0777f481f6e6ceb44ac5c65b0d1aeb092a5686e14c329ec692950a1"
+    sha256 x86_64_linux:   "95afdb7211d06b8b6835e85e62824feefa0cf48642941efb2afed465c1ff4cb7"
   end
 
   depends_on "openssl@3"

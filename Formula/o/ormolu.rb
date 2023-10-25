@@ -1,21 +1,19 @@
 class Ormolu < Formula
   desc "Formatter for Haskell source code"
   homepage "https://github.com/tweag/ormolu"
-  url "https://ghproxy.com/https://github.com/tweag/ormolu/archive/refs/tags/0.7.2.0.tar.gz"
-  sha256 "bc0aa2efed178fb67d0b06acffcdefed0ea31f0b9a42af56aec969d49504a124"
+  url "https://ghproxy.com/https://github.com/tweag/ormolu/archive/refs/tags/0.7.3.0.tar.gz"
+  sha256 "dfc3cd77ad55e80719a80583f0a0d753b7f6061fe1f1fc49f6805cbb06452c0c"
   license "BSD-3-Clause"
   head "https://github.com/tweag/ormolu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b82cecb66cf36ad8f64629cda2bcbb60a07a79778668c5a23e7b09fded34493a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "08ba95c61b387c4a63539ee60cb7398e555ee06196c266baddfc091b184cb834"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a91e25eb115a01a12be0636758b268aef69bec0adbb64e8f86164eee076632b6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "89d40d88f7b2e3ec3220a57ecbd617ef8d35299a437a8e82728dcba4a18ea142"
-    sha256 cellar: :any_skip_relocation, sonoma:         "081de4146adf17ffd49f2c251f051484855f7559b05498c0c36e06eaba0a97ef"
-    sha256 cellar: :any_skip_relocation, ventura:        "329de960e423b67866b010a0760b560e5392c81435070b88bf1a90a91b6c7050"
-    sha256 cellar: :any_skip_relocation, monterey:       "c3fc2fa26c21dc95674f2a0941addc4c6e6aace570db76fac06d184733d6415f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "79d0b05ac7b248e23b879629fc6e31aa84d97999189780ba5e383d404a0d9ae8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b76c38bb2770cd61a93939f2223ad4f340c4254f6a8f1896a97c6ca76786cb20"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4716fa363194d0d5d29efb2767491e2225a32a1ba00401dce93983db6de63ffa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "181ab611423b0ce0febc61e759748639e5a952d044e15ea7e5f9227a7a9561ea"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5a5b5b2c187aa54611920363a03395b0ef21df36aa02784f2e7f452cec968b2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7e8de20e723c0934308a8bb1ff484e519e2e78192082ead8dadfb4fa49c1153f"
+    sha256 cellar: :any_skip_relocation, ventura:        "c082e04b30e5132968c6618484b34227d0b3b669d857155888684fc221d3d638"
+    sha256 cellar: :any_skip_relocation, monterey:       "f3883e8bbc2eea2c319cf0b6a8d3b7e42d5ac55aac4e694200df04fe08c91225"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7372e5876e9d9f6d2fc0d0b7fa06f817061829e29665f5bf56bdf25bb1e17b87"
   end
 
   depends_on "cabal-install" => :build

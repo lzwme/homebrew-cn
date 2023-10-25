@@ -1,20 +1,19 @@
 class Fbthrift < Formula
   desc "Facebook's branch of Apache Thrift, including a new C++ server"
   homepage "https://github.com/facebook/fbthrift"
-  url "https://ghproxy.com/https://github.com/facebook/fbthrift/archive/refs/tags/v2023.10.09.00.tar.gz"
-  sha256 "d402676e08df73e2e4b45ed99bef8b0c05f08ef41f606c8c2c19efea552948e6"
+  url "https://ghproxy.com/https://github.com/facebook/fbthrift/archive/refs/tags/v2023.10.23.00.tar.gz"
+  sha256 "87c6dbc8b37190ae0030f06c029de1fd83f9aab4fd53d7fc67d16be517e7c50e"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/facebook/fbthrift.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5244a0fa103f708fa4697146cc5f6e24a27b2fc31df56278b76a16f4ac46b8dc"
-    sha256 cellar: :any,                 arm64_ventura:  "a804cb447a5832c79f7aeb637d84a1d474367de0ba65692575a9a6cd06b14998"
-    sha256 cellar: :any,                 arm64_monterey: "54bdf21212006e0b6261913d86b93ad84b01d0042db946d8cf72a51061297b19"
-    sha256 cellar: :any,                 sonoma:         "98dcee81cade744a4d4f7fb50c2746058e78ea3b06fba9de3e3b6f3d1abc1f89"
-    sha256 cellar: :any,                 ventura:        "f326274205f69d0ce33185f40396379651a5a1246da71f41c5688310ad55095e"
-    sha256 cellar: :any,                 monterey:       "3e7501208cb8d991c1da31e5a08bd461474b8e3b2ff29ea60a28cda05527ec72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29440e3408ccf4a0a79db7eb628e6b8b46179dadca0406c18feb8a2f6a271c48"
+    sha256 cellar: :any,                 arm64_sonoma:   "10e9cfdc59a7344c609931e3ea2ceb50af9445fb77d026a4a1cdd1a28914ca47"
+    sha256 cellar: :any,                 arm64_ventura:  "eab2ef9e93f287f6eb9522f97b04d262f28a8d68dd51c2dc8315ef3544ce469d"
+    sha256 cellar: :any,                 arm64_monterey: "c575b3fbc892b4f51aa09243fb3515bff7ca50cd7442a3cf979c983c585d9df1"
+    sha256 cellar: :any,                 sonoma:         "6bb7f873fcddc14f2e8d9f952a1d9dbd6e903b5dfc6e70fb71a53755fac75e49"
+    sha256 cellar: :any,                 ventura:        "b65bedc1d4fe17810d5c920587b85c4d351b854c14eaf787c7cd3cb655aa9da5"
+    sha256 cellar: :any,                 monterey:       "1eae45a26a15fa4fdb26bb1c158604d7edd309c9d56a6308dcfce472694c0f3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfb6e13c28a7b5973aad63028dab18d4b3d54213bff74b4bb56481be2b06550e"
   end
 
   depends_on "bison" => :build # Needs Bison 3.1+
@@ -49,14 +48,10 @@ class Fbthrift < Formula
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
     ENV["OPENSSL_ROOT_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV.append_to_cflags "-fPIC" if OS.linux?
 
-    # The static libraries are a bit annoying to build. If modifying this formula
-    # to include them, make sure `bin/thrift1` links with the dynamic libraries
-    # instead of the static ones (e.g. `libcompiler_base`, `libcompiler_lib`, etc.)
-    shared_args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
-    shared_args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-undefined,dynamic_lookup" if OS.mac?
-
-    system "cmake", "-S", ".", "-B", "build/shared", *std_cmake_args, *shared_args
+    # Setting `BUILD_SHARED_LIBS=ON` fails the build.
+    system "cmake", "-S", ".", "-B", "build/shared", *std_cmake_args
     system "cmake", "--build", "build/shared"
     system "cmake", "--install", "build/shared"
 

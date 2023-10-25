@@ -4,19 +4,17 @@ class Passenger < Formula
   url "https://ghproxy.com/https://github.com/phusion/passenger/releases/download/release-6.0.18/passenger-6.0.18.tar.gz"
   sha256 "dfcd9bcae364ce09b6ae59ea598f9dcad3e27a980b12c4b245acd336fa02c5a2"
   license "MIT"
-  revision 3
+  revision 4
   head "https://github.com/phusion/passenger.git", branch: "stable-6.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e4ae9120ee5e23389b93d0bf40618aa7c3a5d841163b2c4da38a2fde32156cc4"
-    sha256                               arm64_ventura:  "64261fcbe859cb04c75c09026224619ed28117c6aa6a8e67cd1c2a6df4db940e"
-    sha256                               arm64_monterey: "290fea979c89b6d82add7ec94304678689983fbbdc34e68fcbc03482d7879d9d"
-    sha256                               arm64_big_sur:  "6dd5c3a43a584ee6b9da56f29f020bb468b797472a3ea50e7b17f831ff91e20a"
-    sha256 cellar: :any,                 sonoma:         "85a6da3d90c03976d9cb63b847c34589b9bd6fa3c716f57b8fdc252dc2a8c55b"
-    sha256                               ventura:        "208c33acc007dec45e421f6f47ed49c3b18bd14254128a46d4ef2c7c30d29406"
-    sha256                               monterey:       "4bbae9f2d361dfc56715ba191b2c1e00d07ecbc6bb9647ba33800e688df7af9f"
-    sha256                               big_sur:        "e3a374c42b51be97f78331948a651f62ae98f384804990323769887f46af7c63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50bf68e47c7d1ad046aaf8a10a1ced178bc30b089de9b761f9b95c6956ccf03d"
+    sha256 cellar: :any,                 arm64_sonoma:   "9a8e0b903008a9df2f0cfc7bdb89d785745efda7dde7d286694abfdc4582a27b"
+    sha256 cellar: :any,                 arm64_ventura:  "ae4d4a1fad4cb8e09f6b46467d36b1384a45804f1b4fd3c7185297d5dae30dd3"
+    sha256 cellar: :any,                 arm64_monterey: "26da12ecd3c66a702e5df77084fe5718c00853ee0e09a6f972ff967bf89857b4"
+    sha256 cellar: :any,                 sonoma:         "7aa78f0a659c21df6fc1f9b212a98aaf68556faf050d8c2a3dcb62fd422ecfc4"
+    sha256 cellar: :any,                 ventura:        "65336d28a2360ed2cbf54aad44013927dc109b5670acef3d4c94a56625faad70"
+    sha256 cellar: :any,                 monterey:       "0059ac5da1b2724bf3e7b50380467b9626a63b75545b168ab1406ff9f699afd1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "58ccef091c2ba8c14ed845f1dc97ae603b3797741027623b19a627ee28616ed2"
   end
 
   depends_on "httpd" => :build # to build the apache2 module

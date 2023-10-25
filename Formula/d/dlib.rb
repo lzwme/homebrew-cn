@@ -1,10 +1,9 @@
 class Dlib < Formula
   desc "C++ library for machine learning"
   homepage "http://dlib.net/"
-  url "http://dlib.net/files/dlib-19.24.tar.bz2"
-  sha256 "28fdd1490c4d0bb73bd65dad64782dd55c23ea00647f5654d2227b7d30b784c4"
+  url "https://ghproxy.com/https://github.com/davisking/dlib/archive/refs/tags/v19.24.2.tar.gz"
+  sha256 "0f5c7e3de6316a513635052c5f0a16a84e1cef26a7d233bf00c21348462b6d6f"
   license "BSL-1.0"
-  revision 1
   head "https://github.com/davisking/dlib.git", branch: "master"
 
   livecheck do
@@ -13,15 +12,13 @@ class Dlib < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "72d97fda7f1615c971e268477e67f8ca5969fa2a98a368fbd0d28bc762991864"
-    sha256 cellar: :any,                 arm64_monterey: "20350a3f0a638a1a5b6466c4809c7beea386545b35a98de7181bc66e2d3a0e3d"
-    sha256 cellar: :any,                 arm64_big_sur:  "2546c7c03817f1181c406a1e6167c2a66a0a87b224567b7a7feb7c4111736e39"
-    sha256 cellar: :any,                 sonoma:         "8d11ad5a0f1d950bd91b816c8c8d249d7325bc310ba7ea6bf4b403d2be3559d6"
-    sha256 cellar: :any,                 ventura:        "86647e13b66b5aa7285c47144c30ca79075583a97805c1409e11366ae4592ab7"
-    sha256 cellar: :any,                 monterey:       "3be4dd9f52d3d4aa041c1909159466b57f4ccbbb32404f3a07325d37d0fd8144"
-    sha256 cellar: :any,                 big_sur:        "2d16a7080c79a77d00003641420e051dd08a69f6b1f2233af47afd76de567909"
-    sha256 cellar: :any,                 catalina:       "d52920f7bb619e287c2eb05e902ca4041d6dc08344e48d75b6ad7575e0d27774"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d95e3ef4dce0839979479f9d75e24a6776f74d04f7f3a6f0ec9b365e7e81392"
+    sha256 cellar: :any,                 arm64_sonoma:   "22eab3f6edb254c1d4e2ded48f795bad876f130f03d81edbc4679ec66136820c"
+    sha256 cellar: :any,                 arm64_ventura:  "6d6cae37f9439f4bbaa534412c3ec957ed8da0c9a14febdc387eae7d8e9a96dd"
+    sha256 cellar: :any,                 arm64_monterey: "773966ac744aada4490deba607795cbbf4a506af2a3fa4196045f613fffcbb55"
+    sha256 cellar: :any,                 sonoma:         "3882169b190fd2f7eda3d39c4f1fd9800f2e610ee5e058a91e0613574eea85db"
+    sha256 cellar: :any,                 ventura:        "f0a79ecbfd60fba3650eb41c2abe5d93a3dae2a1756102bcc0b524cab2dbd91c"
+    sha256 cellar: :any,                 monterey:       "8c67247601b0b4d2824e0eaac979c7f22d1ac43ab3b1cb55d765775b1e90d27d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "548d76fa95dc4639132aef2f2637db129f6c0a94d8e15f57db34b8fe4c580345"
   end
 
   depends_on "cmake" => :build
@@ -60,7 +57,7 @@ class Dlib < Formula
         dlog << dlib::LINFO << "The answer is " << 42;
       }
     EOS
-    system ENV.cxx, "-pthread", "-std=c++11", "test.cpp", "-o", "test", "-I#{include}",
+    system ENV.cxx, "-pthread", "-std=c++14", "test.cpp", "-o", "test", "-I#{include}",
                     "-L#{lib}", "-ldlib"
     assert_match(/INFO.*example: The answer is 42/, shell_output("./test"))
   end

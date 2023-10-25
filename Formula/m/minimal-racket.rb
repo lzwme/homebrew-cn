@@ -5,15 +5,6 @@ class MinimalRacket < Formula
   sha256 "9353739a489880f90fe3653ed3c2e38dbdc5114ece337944697b0b1f6f61bde0"
   license any_of: ["MIT", "Apache-2.0"]
 
-  # File links on the download page are created using JavaScript, so we parse
-  # the filename from a string in an object. We match the version from the
-  # "Unix Source + built packages" option, as the `racket-minimal` archive is
-  # only found on the release page for a given version (e.g., `/releases/8.0/`).
-  livecheck do
-    url "https://download.racket-lang.org/"
-    regex(/["'][^"']*?racket(?:-minimal)?[._-]v?(\d+(?:\.\d+)+)-src\.t/i)
-  end
-
   bottle do
     sha256 arm64_sonoma:   "7113d2033b213accb4680da8b309c24d1e6a756b1c5670e139f077b1ae957c9d"
     sha256 arm64_ventura:  "cea1af4de3e74fbee75b3b95f1f37883118f88b088ead31b5f5c924b6bdd130d"
@@ -25,6 +16,8 @@ class MinimalRacket < Formula
     sha256 big_sur:        "729eca5613020c1bf6ceb19311cc601aeace343771d5b9cb9593870314baff4d"
     sha256 x86_64_linux:   "b3ba24168e281895a9b5a71f5d1e21e4e074036819014ccbee31b4168e91910f"
   end
+
+  deprecate! date: "2023-10-24", because: "uses deprecated `openssl@1.1`"
 
   depends_on "openssl@1.1"
 

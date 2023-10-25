@@ -7,13 +7,14 @@ class Vroom < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "859c96f16425d43095001a384482d808a9d742c4febceee0531a94f0e69262c4"
-    sha256 cellar: :any,                 arm64_monterey: "7256965a8b0e0cb8cc03f7163a02ab20d5aa47a1c429bc1fc51969fd7b9945d7"
-    sha256 cellar: :any,                 arm64_big_sur:  "7c9b175e5a1f2b11ab3e9a7be8f6ff834a5226962235f47d587e3860c482d4aa"
-    sha256 cellar: :any,                 ventura:        "cd18b305b6dc45c8ef5eae74b8dd4e4e78f18aca39289f50e8a9df9349133041"
-    sha256 cellar: :any,                 monterey:       "83c33eb3a050885e5454fa3e99bf994b8aef714c942700cff16c9d0703b37b51"
-    sha256 cellar: :any,                 big_sur:        "184dce5a9f14d067c94912e868311be03a262c8e116f7845360de6b48edbe703"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bea99376fd729d0749d7823f55b0d1e63c3c277739d18b849a01860504a2ad7c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "6165a7cb235b8a0bc6e57479ec80257751698945e9a4b699115d3163fa1a0add"
+    sha256 cellar: :any,                 arm64_ventura:  "0c57cf1a0b33c08327c768bf70580b3c9687fa18694466965b8d3f2e794f9093"
+    sha256 cellar: :any,                 arm64_monterey: "e9748811a768dafc95d402f4626c04e0a63b69aa3e503a22c835334b4503d814"
+    sha256 cellar: :any,                 sonoma:         "7cd025997ecb18d3d5fc35a953720fb96ce631ede626a9cb8bcf315187ce83c8"
+    sha256 cellar: :any,                 ventura:        "788ecd2b38d2c912a0a573f7a0a7b2f7ac926dcf0ea9de61a1bb7e7ed8111d88"
+    sha256 cellar: :any,                 monterey:       "bb59f660179205c05dc8ab2990b8fd3064be81b436f4b9ec12466906fa17c2fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42d4abf7176dba741db892b3708064ea7ffaa687892edd30dc0146d9144fe767"
   end
 
   depends_on "cxxopts" => :build
@@ -26,6 +27,10 @@ class Vroom < Formula
   fails_with gcc: "5"
 
   def install
+    # fixes https://github.com/VROOM-Project/vroom/issues/997 , remove in version > 1.13.0
+    inreplace "src/main.cpp", "throw cxxopts::OptionException", "throw cxxopts::exceptions::parsing"
+    inreplace "src/main.cpp", "catch (const cxxopts::OptionException", "catch (const cxxopts::exceptions::exception"
+
     # Use brewed dependencies instead of vendored dependencies
     cd "include" do
       rm_rf ["cxxopts", "rapidjson"]

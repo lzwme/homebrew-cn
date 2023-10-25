@@ -1,20 +1,18 @@
 class Psalm < Formula
   desc "PHP Static Analysis Tool"
   homepage "https://psalm.dev"
-  url "https://ghproxy.com/https://github.com/vimeo/psalm/releases/download/5.13.1/psalm.phar"
-  sha256 "90c34be3831ad00dd1058c4b50697a917bcea6967c14ab761136f665aaac3ac6"
+  url "https://ghproxy.com/https://github.com/vimeo/psalm/releases/download/5.15.0/psalm.phar"
+  sha256 "780be880ab27bd730d5191e1e3844f1e977488ca8463d7f3a89bd73d3ed21350"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f7be5c1c55842cee1ac95a18db5dacb421e7b3251519a141989384dce3f5c75c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d07c1f4b179f5e94e02abe2e01bd1312b6359160a836c1142bea57f78b027f48"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d07c1f4b179f5e94e02abe2e01bd1312b6359160a836c1142bea57f78b027f48"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d07c1f4b179f5e94e02abe2e01bd1312b6359160a836c1142bea57f78b027f48"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ce203bbc75d90b452ad1ba279e19f192adf6519178b3428a897d557b89863c41"
-    sha256 cellar: :any_skip_relocation, ventura:        "77b36603304bf2336bb0741a915ce6af7fde2724663c9f8b66ed880a30234d78"
-    sha256 cellar: :any_skip_relocation, monterey:       "77b36603304bf2336bb0741a915ce6af7fde2724663c9f8b66ed880a30234d78"
-    sha256 cellar: :any_skip_relocation, big_sur:        "77b36603304bf2336bb0741a915ce6af7fde2724663c9f8b66ed880a30234d78"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d07c1f4b179f5e94e02abe2e01bd1312b6359160a836c1142bea57f78b027f48"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "008070538c8e4e09f4bc97b6298b435a30e3e93224ff55b0f9fee5c6d7357bda"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "008070538c8e4e09f4bc97b6298b435a30e3e93224ff55b0f9fee5c6d7357bda"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "008070538c8e4e09f4bc97b6298b435a30e3e93224ff55b0f9fee5c6d7357bda"
+    sha256 cellar: :any_skip_relocation, sonoma:         "04f3e3fe7e0b50df63cea333054129219abc3d47e2e39ef48c03557abc2bde58"
+    sha256 cellar: :any_skip_relocation, ventura:        "04f3e3fe7e0b50df63cea333054129219abc3d47e2e39ef48c03557abc2bde58"
+    sha256 cellar: :any_skip_relocation, monterey:       "04f3e3fe7e0b50df63cea333054129219abc3d47e2e39ef48c03557abc2bde58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "008070538c8e4e09f4bc97b6298b435a30e3e93224ff55b0f9fee5c6d7357bda"
   end
 
   depends_on "composer" => :test
@@ -98,7 +96,6 @@ class Psalm < Formula
 
     assert_match "Config file created successfully. Please re-run psalm.",
                  shell_output("#{bin}/psalm --init")
-    assert_match "No errors found!",
-                 shell_output("#{bin}/psalm")
+    system bin/"psalm", "--no-progress"
   end
 end

@@ -1,6 +1,6 @@
 cask "chronos" do
-  version "6.1.0"
-  sha256 "100375094187ea1f6cc97ce90ec54a807c6c80dcb6ab1f2a7012a181d1bae7f1"
+  version "6.3.0"
+  sha256 "a505965020e15f7a961cf29b5160dddf7f7d4df69dda32e8ed1f8b6b0e47e587"
 
   url "https://ghproxy.com/https://github.com/web-pal/chronos-timetracker/releases/download/v#{version}/Chronos-#{version}-mac.zip"
   name "Chronos Timetracker"

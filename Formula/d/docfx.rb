@@ -13,6 +13,8 @@ class Docfx < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "720ed02cea63ae7469f4ab7250556e12ce462f53d05b635fb6fe498ff44bc8fa"
   end
 
+  deprecate! date: "2023-10-24", because: "uses deprecated `dotnet`"
+
   depends_on "dotnet"
 
   def install

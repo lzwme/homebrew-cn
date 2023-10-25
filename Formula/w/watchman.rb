@@ -1,31 +1,19 @@
 class Watchman < Formula
   desc "Watch files and take action when they change"
   homepage "https://github.com/facebook/watchman"
+  url "https://ghproxy.com/https://github.com/facebook/watchman/archive/refs/tags/v2023.10.23.00.tar.gz"
+  sha256 "34ec8f9fa744190c9effac22f5f9684cf323743fb9f77c64318ad0cde02d136b"
   license "MIT"
-  revision 1
   head "https://github.com/facebook/watchman.git", branch: "main"
 
-  stable do
-    url "https://ghproxy.com/https://github.com/facebook/watchman/archive/refs/tags/v2023.10.09.00.tar.gz"
-    sha256 "f7e92f4007c151480f91b57c6b687b376a91a8c4dd3a7184588166b45445861c"
-
-    # Add support for fmt 10
-    # See https://github.com/facebook/watchman/pull/1141
-    # Remove with `stable` block on next release.
-    patch do
-      url "https://github.com/facebook/watchman/commit/e9be5564fbff3b9efd21caed524cd72e33584773.patch?full_index=1"
-      sha256 "dc3ef949b0a4be7dd67267eb057fb855926b3708e0ce1df310f431fd157721ca"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6f4022c251338bbdb496886775239f6cd023c354e2f79c98e93dcf899814b942"
-    sha256 cellar: :any,                 arm64_ventura:  "c40872901c50bf34008609522898f6d06accf88bf9f588af1e4bd24c751774a1"
-    sha256 cellar: :any,                 arm64_monterey: "d20e9567c275fcbd10a2afce4f97e0fcc9ae5e4179cbdafc91e8dba7f05aea97"
-    sha256 cellar: :any,                 sonoma:         "35caf0c03ee34e2745260f18b3a0844c2a6f2dbc689db20c5a84664fd8041a5f"
-    sha256 cellar: :any,                 ventura:        "8385d8184ffe1b3033f4f7d9e80f234e7251cbc466405e3055d40c8404dfa966"
-    sha256 cellar: :any,                 monterey:       "a7dc2739b1ec9af8bdddeb77416079df84f4c285a697bf3af3a2c4185f406169"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80e056f44cc35f9480bd031b71a3ce4f5824ec106c0ec54eed18be8cdb95ba36"
+    sha256 cellar: :any,                 arm64_sonoma:   "c5102f923ed521b373851e674fa899080f71665d4ea74cae6dc09affa7b2e555"
+    sha256 cellar: :any,                 arm64_ventura:  "93738deeb35e7ec65550692f1b1522964b546130c3d018246baa9ef4663b7291"
+    sha256 cellar: :any,                 arm64_monterey: "99b1e1d4edd6e0c824bedc965e4129078cbf7d12af54cc0848aaf148ce155cbd"
+    sha256 cellar: :any,                 sonoma:         "5f285afccf5031b821061fcc15533c4ee0d062318c644471dcfa755c2eab1265"
+    sha256 cellar: :any,                 ventura:        "b90c0ee5bf0b6be2eef673bc3295820071ddf4e3ec69399d0fdcb78c28a5a5e8"
+    sha256 cellar: :any,                 monterey:       "71f989f3afaaae9a1123112124ddefa3cbb9764607f6b062a2db097a6edf582c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6aa74c3a835334cbb946c04319edb6903d85dd19ca738e5822e5a8d5809e63dc"
   end
 
   # https://github.com/facebook/watchman/issues/963

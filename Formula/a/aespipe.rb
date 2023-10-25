@@ -1,8 +1,8 @@
 class Aespipe < Formula
   desc "AES encryption or decryption for pipes"
   homepage "https://loop-aes.sourceforge.net/"
-  url "https://loop-aes.sourceforge.net/aespipe/aespipe-v2.4f.tar.bz2"
-  sha256 "b135e1659f58dc9be5e3c88923cd03d2a936096ab8cd7f2b3af4cb7a844cef96"
+  url "https://loop-aes.sourceforge.net/aespipe/aespipe-v2.4g.tar.bz2"
+  sha256 "bfb97e7de161e8d7ce113b163bda1d1a8ec77d2c1afab56dcc8153d7a90187fc"
 
   livecheck do
     url "https://loop-aes.sourceforge.net/aespipe/"
@@ -11,18 +11,13 @@ class Aespipe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "54dc95b28165e092902384509f41a4ac9836363e2073aa1a44fcd4b36ce0ed37"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b129be891af0e105e708632942b655e614a35c522111872643b287c368aa2d52"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "67e4984fc6794d5e6c5b973b7faa472d86b1e434d3c4ca8757ce8e7ab7625e4d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "204ddb0b9c6fde98f4bdec7c3c93aa2ad95cde565dd22538f2c61a55875a398e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "751a503435f85b160670a81cba1c9314e49d50b73c670633bb0f7601ad47ee9b"
-    sha256 cellar: :any_skip_relocation, ventura:        "ecf3f1412a063d7f942ff00de628f119072dc98f9d85d82f70e04815ac2e4ddc"
-    sha256 cellar: :any_skip_relocation, monterey:       "3182b08b5f9aa35f3a56e4012da53b569f7e4458e86c0c522957b26daf247e0d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b94579255152f8761049784697e757d2399f075bb77b7c194741311aad2943c3"
-    sha256 cellar: :any_skip_relocation, catalina:       "c96c3f1ba5bcd7672630d7c9d693cb5d9333e3473ecdca6771290a68ac54db2e"
-    sha256 cellar: :any_skip_relocation, mojave:         "f52e6c3afc951ca588522d8073b62300113a30cb6d3927a25de643cc10622d74"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "00d7cb8240e8e1beb4b8cf701bf38961531df8a9f2d497c4ff5a95747ac3dbae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff7fc1cc1e3cdc08237e3136d528c11c80fdc6c0ded76d812f9d3c141046bc00"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "40c2c108b9af80459022740d9ab1dba9829d02f690da4806bf72d81ee865da58"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7277d8d08b30057357e1b4a9d46f6695773c5bbac3e545ffb00a8578736c6148"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cbf2f7af4672b1f12aa21297624bb0688529be30c99bcf9ed6431652221370e6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1c2e21eab82bca6f64ded46b5efaf95c16a28f62e8c26597c64b2e39f5211ea9"
+    sha256 cellar: :any_skip_relocation, ventura:        "03e4c7d995988175b5d4d4ef5ae7c44ded67d1ded3f35456f8b7af87d97edadc"
+    sha256 cellar: :any_skip_relocation, monterey:       "099142fa7fd621c86caa12a7e71a7a9a07e7d697d9a2e53f28e9bf2abf0f6653"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "51ee6b5d90d8f14a86a7771c996e50ddcb3f17d586aa3ea04379a8cc2c21b9c8"
   end
 
   def install
