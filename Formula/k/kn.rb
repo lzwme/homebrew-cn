@@ -2,19 +2,19 @@ class Kn < Formula
   desc "Command-line interface for managing Knative Serving and Eventing resources"
   homepage "https://github.com/knative/client"
   url "https://github.com/knative/client.git",
-      tag:      "knative-v1.11.1",
-      revision: "0680c81b43c2caae6ca5edd21213dfde4b77efd9"
+      tag:      "knative-v1.12.0",
+      revision: "ae35736892402050eb910d2b43a70f41e1d225c4"
   license "Apache-2.0"
   head "https://github.com/knative/client.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cd8b0e70cfc29ee135e342429823b9b50ba8e9aa4fffcf07c1d05edc0f9e2f93"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cd8b0e70cfc29ee135e342429823b9b50ba8e9aa4fffcf07c1d05edc0f9e2f93"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cd8b0e70cfc29ee135e342429823b9b50ba8e9aa4fffcf07c1d05edc0f9e2f93"
-    sha256 cellar: :any_skip_relocation, sonoma:         "32e95b23c3b2cbe119a8ce49a2e84be922b960d9e9a72fb51ec7f3d8ca8830c1"
-    sha256 cellar: :any_skip_relocation, ventura:        "32e95b23c3b2cbe119a8ce49a2e84be922b960d9e9a72fb51ec7f3d8ca8830c1"
-    sha256 cellar: :any_skip_relocation, monterey:       "32e95b23c3b2cbe119a8ce49a2e84be922b960d9e9a72fb51ec7f3d8ca8830c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8794c5d7071a0f3a44e6009251f6e995dd28f9e3be1789a97a431f0dac58bfc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "70cf84af1c41b456369abcff2b9ff096b35aaa2253934a37a3fe04695ba256ef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "70cf84af1c41b456369abcff2b9ff096b35aaa2253934a37a3fe04695ba256ef"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "70cf84af1c41b456369abcff2b9ff096b35aaa2253934a37a3fe04695ba256ef"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9701f158cdc1d701dbbc7e2238190f21fbd6a30d946e3673a14407eb14e8ed75"
+    sha256 cellar: :any_skip_relocation, ventura:        "9701f158cdc1d701dbbc7e2238190f21fbd6a30d946e3673a14407eb14e8ed75"
+    sha256 cellar: :any_skip_relocation, monterey:       "9701f158cdc1d701dbbc7e2238190f21fbd6a30d946e3673a14407eb14e8ed75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6bbfecae1b0b7564ae9a0425decd66151c90b40cdcf0685acfd37aac4ef9a57b"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class MysqlClientAT80 < Formula
   desc "Open source relational database management system"
   homepage "https://dev.mysql.com/doc/refman/8.0/en/"
-  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.34.tar.gz"
-  sha256 "0b881a19bcef732cd4dbbfc8dfeb84eff61f5dfe0d9788d015d699733e0adf1f"
+  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.35.tar.gz"
+  sha256 "41253c3a99cefcf6d806040c6687692eb0c37b4c7aae5882417dfb9c5d3ce4ce"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
@@ -10,15 +10,13 @@ class MysqlClientAT80 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "05e847cab488ff1ee6efce3d2c2b4cd23de96a019267e474324b7714a0c33439"
-    sha256 arm64_ventura:  "87ab7064db0bac620bb7fba66062e594c71ce86a87f29729f4b452169501104c"
-    sha256 arm64_monterey: "248eb2aa4f84e2b9c4cbf1f2775d538fcf7171494d6f3b8ad2632d428d5f7714"
-    sha256 arm64_big_sur:  "24028a62c41a83bdb66e80a6147d7d8af2dbb42c9846f0249b4ce2808738b862"
-    sha256 sonoma:         "3259cb6b10ac7eedf5ac15d1e0586ce5613cc89b668b2a50766a8a711bd23412"
-    sha256 ventura:        "6c1c5391dc81e2ad3f6000e21f82c273434801cc560a53c4f1d9e7188df11618"
-    sha256 monterey:       "21f0930daa861c9a6e14c67092618a2b3aae5ee974e986dc71cb90738a1bd09d"
-    sha256 big_sur:        "cbab29dc7390154cbd61c1c5653cad983dc69640484cbaf4163c867c0ea2d969"
-    sha256 x86_64_linux:   "ccf8919d07249e0cf0279282590b22a4c3fc1c8affe81e6b19f2852f2ffbd80b"
+    sha256 arm64_sonoma:   "9ca9c15264dc26a5ff5d9c4330faaf9b4ebc148850eac839840d15fdf81c71ae"
+    sha256 arm64_ventura:  "02a319f726afb9d098b80b2eba2f63b75ad6794e45e990f0d166a386576c95ce"
+    sha256 arm64_monterey: "77cde582494a9c3bdac3d9e45d911028e119e18669ec14d7c50c51d86431674f"
+    sha256 sonoma:         "ae5e759db96d47ba1f9d2d7bd8d5a8c398896ad630035cd9b1f4af210c5174b8"
+    sha256 ventura:        "e0485988d5ef7b5d1d92e4837b272dab74c3d418ff062e68a4a2004f5fdd88b2"
+    sha256 monterey:       "3b1f4c6d84a2c7b85d4649c52c6b2d806bc732d08c7aa0b87f1adbab0c54c916"
+    sha256 x86_64_linux:   "64e607b5a2a77ec443b76754a91b89109d5db17b238ba2e41953a8655fa08cce"
   end
 
   keg_only :versioned_formula

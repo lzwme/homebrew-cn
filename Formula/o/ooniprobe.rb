@@ -1,8 +1,9 @@
 class Ooniprobe < Formula
   desc "Network interference detection tool"
   homepage "https://ooni.org/"
-  url "https://ghproxy.com/https://github.com/ooni/probe-cli/archive/refs/tags/v3.18.1.tar.gz"
-  sha256 "7a2b77e6fb303bcdf80e269aa3c8c71e273d2af7c940580d5623a668d1d094e2"
+  # TODO: check if we can build with go1.21
+  url "https://ghproxy.com/https://github.com/ooni/probe-cli/archive/refs/tags/v3.19.0.tar.gz"
+  sha256 "9ec38edb7bb4254e16a58f184ddceafc4a0ede060e08f6741ab02d1e7d6820a2"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,16 +12,15 @@ class Ooniprobe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d493c5821e7c0265c8275e25dd6b943e39fef56f2c7004436c083caad49bad59"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a477c4e5b6ffc8c13f5ebbe980315dfea7e2ff88bafa101a03731cf18a455344"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9788a1bec0c68727fb1be1584655bceccd779184cc9df0dab733513e2d0668bd"
-    sha256 cellar: :any_skip_relocation, ventura:        "bb0c9deb311a6efd3421005d612d176aa0f962ea8b8acecb76c827f67d97cf57"
-    sha256 cellar: :any_skip_relocation, monterey:       "1c55c6b83ba096a2dc93302ede2fae39459eaaa6d9f888b7a4be48c1290ee5d4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1aa8c8b8d76d26e7a5515a7c599f168dc13acf93b3d5eede5454ef2df372587a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc04d4e62efc3b7c5799c01be559569b72d8c50dd084f6d667fe0a33ef373447"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a4995f93bb678d34dd7f348ea1ff5633db41e5964d62830dc4512be145e8057c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "62b9b9595774096e75061b8ce9bf058c0e56d8a3a5b33b1ed74a01fe9c16f582"
+    sha256 cellar: :any_skip_relocation, ventura:        "f717726bff1eb2824ca9b97e53114c371eab96dac46d1ced7d9cf87d2c852b87"
+    sha256 cellar: :any_skip_relocation, monterey:       "1c11c5e783a47c1698f5f45ec164d93d9d1eea0eff983cc7941767531e027c7c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a6e054572e1399860103cad22cc42089b0e1d1bd9de682bee25fe7eda031109"
   end
 
-  depends_on "go" => :build
+  # go1.21 build issue report, https://github.com/ooni/probe/issues/2585
+  depends_on "go@1.20" => :build
   depends_on "tor"
 
   def install
@@ -30,6 +30,7 @@ class Ooniprobe < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/ooniprobe version")
+
     # failed to sufficiently increase receive buffer size (was: 208 kiB, wanted: 2048 kiB, got: 416 kiB).
     return if OS.linux?
 

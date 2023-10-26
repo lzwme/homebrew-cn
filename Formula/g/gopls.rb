@@ -1,8 +1,8 @@
 class Gopls < Formula
   desc "Language server for the Go language"
   homepage "https://github.com/golang/tools/tree/master/gopls"
-  url "https://ghproxy.com/https://github.com/golang/tools/archive/refs/tags/gopls/v0.13.2.tar.gz"
-  sha256 "fa8a5d38c1e040686fda6018c3456801229d6ed992b6eecfbaba146e1fc772b2"
+  url "https://ghproxy.com/https://github.com/golang/tools/archive/refs/tags/gopls/v0.14.0.tar.gz"
+  sha256 "a0705600556f09f52a4dc6ddca44a84b9ff626690e5ce8d49dc9c06ebc8425be"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,15 +12,13 @@ class Gopls < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "66a539f6c9e0929bc583ee8e9f398722287685e5f4e6143f29624c12c1ccc28e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a70553eebb2218b4062c6b452eb7a5168e33224eaa396e847c45abb1825fbf5e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "be814087f6076a7dfe35dd081c0ba4f19f7ea8f0afb02e6ca67e6d6903b379c7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c8e143169671f2de627e2eafb1aeaa01fd2f968b3c4d3f3a099203bb1bfeaa02"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dfce79d6bcd3367feadd17044f1bdfb43e8bee2d359bf8ea178ed4eb0e6c182d"
-    sha256 cellar: :any_skip_relocation, ventura:        "387c68defd0858cd6a1b10faa3ffe257c07690de0839613d7e28da2371c7cb6c"
-    sha256 cellar: :any_skip_relocation, monterey:       "b23844b76ed2804c6d3542b674d4de76d2efc1fc8f15866f34254e888382933d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e6ee2673f9a1fdb85b7992d2dd8bd06f3dc1b924159eedc87099c11fcfa27265"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbf94c5f4b6e967c8d4357b82970af8764ce4b6166c2c1039f8cee23beb7549c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "efc844b121282e9a293c16b44bc7281643ad1fecbc9e34c67dbc3ebe0756f5ab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "761b9f357e6106c5a68b15a1d3932e8af73ce153d2c4e03b961d13ddac49a25c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b5f33b682d8610e254caa5cebc7203a104598a8ff2a83a6bd9e52cfb8a605834"
+    sha256 cellar: :any_skip_relocation, sonoma:         "efcdaa81f23c2ad94e08dfd8fd0590cff5f0b7f7a6f0835326a603c8244c0832"
+    sha256 cellar: :any_skip_relocation, ventura:        "3d3dcf9f32090e557ffa6011a5958b751bbdb2f122a20a4be6f0304982a45137"
+    sha256 cellar: :any_skip_relocation, monterey:       "09181cd81feebcdc3e93af14ee84d085f897e183a19d00aa202c489058820e15"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38593619035a43111ce992d0d1ddc184e2f3b9165d92a451057f7bc60d9d4588"
   end
 
   depends_on "go" => :build

@@ -1,20 +1,18 @@
 class Velero < Formula
   desc "Disaster recovery for Kubernetes resources and persistent volumes"
   homepage "https://velero.io/"
-  url "https://ghproxy.com/https://github.com/vmware-tanzu/velero/archive/refs/tags/v1.12.0.tar.gz"
-  sha256 "dc8579c6938e803fd74bcf8e463a61b1f22971ad4f2b2be25d55bd05486ce1da"
+  url "https://ghproxy.com/https://github.com/vmware-tanzu/velero/archive/refs/tags/v1.12.1.tar.gz"
+  sha256 "6190a8ea4c4abe71be5cc8f4de645ba1dc17554b8e368b8f30f8fbada43f54f9"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a9942dd6b2690504db187dcbf8995d81dbe016c3d588fa02077c1616e33a143"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d82dbb68f0149463f1ca239d09a2110115113cac091af410fece3ea79bae687c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a95561ca9360d8b294ba8d7b1e691442a72cb09a4a49a532a1577cd82fe22d14"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ac530e04f119ab9c7926c196476e7a03881452c10d6f1bc6a9045c70811db734"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a2495af67629bb0450f5c97378671ffdd92592aad96b197f18eeeb27596872f4"
-    sha256 cellar: :any_skip_relocation, ventura:        "6bead351e3d4e1cd42c1faf030de440d0c3c062945ef9bbf453b3c92abf1e36b"
-    sha256 cellar: :any_skip_relocation, monterey:       "bc2790b3117f4b2d83547fea5da17e4cd564e834b39fbb5c0f49158f25c0b1ea"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2a7e3a74cd211d1d51109a1968e3b2a28d60d3414eaede6fa5e190ed51dd3597"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4854431a759218bbade3b0f221518513c37fde5ce3511872fbe8d1b7c328522"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0d3c5dac73278a82c47405497b8b58372b59893e16fe556add5fb3bdee48a77e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3fc69d2c3663e121a12f97c1a4abe8fee93052d060f08a25121969072425f596"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bfe34bbc41f2b1ef95989da2c8eee55c8e53f13d9234d8daf5f169b627208660"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6ce1d7280b70caa16671333ce7c110a5595b4e94662b4415e5b32e41622c1046"
+    sha256 cellar: :any_skip_relocation, ventura:        "f6f04c504e5f6213f68e33c21f0707276db1de11eb873ff6c6f6fdb8d0233508"
+    sha256 cellar: :any_skip_relocation, monterey:       "f5ea8861dbf45f6dac6faab3820850e7b77941d11456d16fa05467002f116383"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a059f1eaf2599c4560ac5e7ebc9e9959da1000e321f1511b6a7505186899bb9b"
   end
 
   depends_on "go" => :build

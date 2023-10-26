@@ -1,8 +1,8 @@
 class Coinutils < Formula
   desc "COIN-OR utilities"
   homepage "https://github.com/coin-or/CoinUtils"
-  url "https://ghproxy.com/https://github.com/coin-or/CoinUtils/archive/refs/tags/releases/2.11.9.tar.gz"
-  sha256 "15d572ace4cd3b7c8ce117081b65a2bd5b5a4ebaba54fadc99c7a244160f88b8"
+  url "https://ghproxy.com/https://github.com/coin-or/CoinUtils/archive/refs/tags/releases/2.11.10.tar.gz"
+  sha256 "80c7c215262df8d6bd2ba171617c5df844445871e9891ec6372df12ccbe5bcfd"
   license "EPL-2.0"
   head "https://github.com/coin-or/CoinUtils.git", branch: "master"
 
@@ -12,15 +12,13 @@ class Coinutils < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "dbf9d49418cd5634960a6f0f4eaab31fc84a2f250030e38c90ea743e82baa4c7"
-    sha256 cellar: :any,                 arm64_ventura:  "e128f68e7b7b57a947deeeafda81ed30c0fb83e49a4c8986508dc8b042140bcd"
-    sha256 cellar: :any,                 arm64_monterey: "83d0958d9de79ffdc75670607d4bc051fe9f390d5aedfb72e0974732005806b5"
-    sha256 cellar: :any,                 arm64_big_sur:  "94c51f335a7d7f7eb233bd2bcc7dd9e1523753bda3046a01a38553553ce60d26"
-    sha256 cellar: :any,                 sonoma:         "6b1636a65bfe2854b8ae53e200f85682c7c3a09d4736c190d7566723e05f3d8d"
-    sha256 cellar: :any,                 ventura:        "07179b2940c27689e601d7f700d8a8e08a0d05cea46ec549ea1f2c693032390e"
-    sha256 cellar: :any,                 monterey:       "503c15755800c6317a1f807c8a1cf04ac4d43ed817240f0e1f68559d697cabc3"
-    sha256 cellar: :any,                 big_sur:        "748e0e405663940dec0aea8841d004c22ef0431432067d0e494d8339069022b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a905269ccb4b8b016e7356b06076ec2327d418b1d28190668f2fdff4d3ec05f6"
+    sha256 cellar: :any,                 arm64_sonoma:   "8ec00da73ae5ce6c33a2bbf89c43ddd6df1b9ab10826f2da39f5214fcb991c4f"
+    sha256 cellar: :any,                 arm64_ventura:  "e4d6de981b7e8f12e9ae56d94fb5807864618c06d248254b72a57083b9afdfb7"
+    sha256 cellar: :any,                 arm64_monterey: "87d125df0b857d8a42a1a1d0237e80a70c7f9984e4043d3f05392ea3daea7bd0"
+    sha256 cellar: :any,                 sonoma:         "6c048622f2b24225c77948ae2fb8425852b8acc1cde5c6a23599afaf9e2e1858"
+    sha256 cellar: :any,                 ventura:        "f808e437ed6a88ef270454d8d7c2bbe8cc177f80e559bc4cf49990475c06235b"
+    sha256 cellar: :any,                 monterey:       "a1db503dabf507b3de876de29084e100221e1eb6a3f626f7a4002efd6c82e4ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "555eb1ef4de9326d93e9023a9922c1546f1621367940e77134eba81442f68e1d"
   end
 
   depends_on "pkg-config" => :build

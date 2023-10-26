@@ -1,21 +1,19 @@
 class CargoZigbuild < Formula
   desc "Compile Cargo project with zig as linker"
   homepage "https://github.com/rust-cross/cargo-zigbuild"
-  url "https://ghproxy.com/https://github.com/rust-cross/cargo-zigbuild/archive/refs/tags/v0.17.3.tar.gz"
-  sha256 "9eb83bf6f1499a2c656a8cb0e8ff95c76470b1f24ae396bd880ed2e076db05b7"
+  url "https://ghproxy.com/https://github.com/rust-cross/cargo-zigbuild/archive/refs/tags/v0.17.4.tar.gz"
+  sha256 "e0a8611e699be8650b9a99e9e8206380906d00df913e623e19bfb381b4f861a8"
   license "MIT"
   head "https://github.com/rust-cross/cargo-zigbuild.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "559cdf9839e96f0bbc3a1540af7d46a5e78c5b8629769a331a23d9a64fa58582"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5a19ccace19fdd4522ee1567addc199fbe883560294605b2d57245f33e12800"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ec944facdd9d7b5625da191fb1dad3db7a5c4c65dbfdab0be37359c20d106200"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "adea90aa720c0a9cf8065d6ca1476169b08fdbdc8a8ef150bf9a1783c37f4d77"
-    sha256 cellar: :any_skip_relocation, sonoma:         "23d6760bf5270bc274c828f905e9f809249557a76f24384937949070b06d6de2"
-    sha256 cellar: :any_skip_relocation, ventura:        "814ea08644c01ab533d7b6a273efc9fb2aa13119e79210366597b5efafc26dc9"
-    sha256 cellar: :any_skip_relocation, monterey:       "e58fb49ee73a7e35556016152abfa4184aff9f6b29977dce0735571ea12230d5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "263087830d9c960347a27b603f20f37a210ab2b024eba00e24d5032fe5e4100f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6cc6d019e8d40580737f3c3fe5beb15d83a58147ccac7df4b0a921595ec4e272"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d078cb40f6abb7fafae98971f4346da01011b80a581fed6f8158ff8c8b40dc2e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "acd7a65f8c59ae36240c30ddc49bfceb322fcd0baec4b2401c2466a9e7494c2d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "71ae95a283eb5b353113e750b524982df850692c426d300f81da711ab0d7a643"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2c80b92740c584d6d573695e64646088d1cb392472779264c68d220fb65a55b7"
+    sha256 cellar: :any_skip_relocation, ventura:        "5e01b38c30e700be71a63f2b539d417534fbcba7b1a24652a4478e5dda6597f1"
+    sha256 cellar: :any_skip_relocation, monterey:       "4bc07e3f3b021f32927f59cd3b4279d4af4c7a50b93b5bce6dbd25b7d8df2c86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c304df87d9503c8089b04b65248409d3d0a998f4c624428b926af5c44cdc0883"
   end
 
   depends_on "rust" => :build

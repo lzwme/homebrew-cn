@@ -1,8 +1,8 @@
 class Testkube < Formula
   desc "Kubernetes-native framework for test definition and execution"
   homepage "https://testkube.io"
-  url "https://ghproxy.com/https://github.com/kubeshop/testkube/archive/refs/tags/v1.15.2.tar.gz"
-  sha256 "98143e063467a2aad2d8100362d01f42bcedee5a01e0f20f8306224fcabbe093"
+  url "https://ghproxy.com/https://github.com/kubeshop/testkube/archive/refs/tags/v1.15.4.tar.gz"
+  sha256 "f330fe6a71dda46159cfa006328c2d892ca3f62c8c10bbc1e709ba7fb0331a7a"
   license "MIT"
   head "https://github.com/kubeshop/testkube.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Testkube < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e88259a851114329e81a43536fb91550ecf331ad391bba86c5980ef1e257d091"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5da5bb62d52ad81d451bf4dd30105815a194435d5b979691188a3d9d17672ca6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "30d5cd5da27476e9cfcf59d86467a2548b8af9a109956890eee0bd3a4407f2f1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6b20b3290bc364b8c4c32ba81372094224d6e3bd30c877c4eabb3d251931fdb8"
-    sha256 cellar: :any_skip_relocation, ventura:        "b8d51c0290857d07693a65c7f75cde09b61a2a9638c745ae1b882623ba3d1891"
-    sha256 cellar: :any_skip_relocation, monterey:       "6f17cb1929a5e02b2fd6a6cded97a19a769ff3d888b1839e89196adc43fe56f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7088d070ce100b2ed7fd5d54bf49cb2417716a906b009977bf3bf37434cca887"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1e394a783db33fa5286d1eeac5bec26480d1ca822e8b31c775d06b81838e1ef4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1665a7a382a09bc6d597b21e6c28864cadd0dff91579156039576a06fe3ebf1b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "016b678a077d28495ad21bf68ba2c7db01829bc2d9079cce237839d78eaeea8a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c6384b6e977ab91372768773e54beff77958abddba28f6aa322635972f0fd0ac"
+    sha256 cellar: :any_skip_relocation, ventura:        "c7fde30edf1acf0165e02a8c4b12b5d70b13cc44fa7811ae83ff80d90abc97ca"
+    sha256 cellar: :any_skip_relocation, monterey:       "7d94664bc8467ed8375d76693c7d09bc0f55e82cc01df1c480d3856bfee268d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b249f632af381aa6876fcddd3637446995367bae75a92dafa73cb1816b8b726a"
   end
 
   depends_on "go" => :build

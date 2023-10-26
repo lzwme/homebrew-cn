@@ -1,8 +1,8 @@
 class Uffizzi < Formula
   desc "Self-serve developer platforms in minutes, not months with k8s virtual clusters"
   homepage "https://uffizzi.com"
-  url "https://ghproxy.com/https://github.com/UffizziCloud/uffizzi_cli/archive/refs/tags/v2.2.1.tar.gz"
-  sha256 "0671fbfec6378889397bece533cfef48ab6d65f249c85f1c3cbfb5d4baf0eddd"
+  url "https://ghproxy.com/https://github.com/UffizziCloud/uffizzi_cli/archive/refs/tags/v2.2.2.tar.gz"
+  sha256 "59896c1646c8cd9261b32154efbd063fba507382899e1377f2369fb0e58b608b"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Uffizzi < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5ff602edbfcfea058438671d0ee6d1294709d086c6ad69bf372ed68599b8ac63"
-    sha256 cellar: :any,                 arm64_ventura:  "73f51b9d9a569ddf99bb6c904afdd190e33b985516f6bf6df5c3499500cc7a32"
-    sha256 cellar: :any,                 arm64_monterey: "91da0386cad55c4567f6ad8d20f24ad0bf134afa37176dcfb03ef4e6b846da15"
-    sha256 cellar: :any,                 sonoma:         "46ed19d29857e0d8394a1003c2c246d193cb56877ddd59a755e3dd1970fa6d5a"
-    sha256 cellar: :any,                 ventura:        "82a7d6d9a109726465fa8f5fe34e2594c9fdcbdc916a179c44d2615aede06c4d"
-    sha256 cellar: :any,                 monterey:       "7a4cb03baec906f1a50a3d2f84dc76e6ce4528bd254813aec6b2b2124af61618"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea1f4499c4ca3d1688b4732d37502d5dcdd3ee317d88867d4bc744d982f4db18"
+    sha256 cellar: :any,                 arm64_sonoma:   "b2db5d6504f33d06f01dd2e47a75bab87ae2d1144c9a75c7961a137ff58eb38b"
+    sha256 cellar: :any,                 arm64_ventura:  "6f8f9c163fd19c0eada45655919308d5cc1970daba6c60cf12769584422ad94a"
+    sha256 cellar: :any,                 arm64_monterey: "417b53a4f1f36fde6f49b621d95bd3675872890096202117134adcf6672bb886"
+    sha256 cellar: :any,                 sonoma:         "9be850b8f8f1322f358d0d07d01f692c1f2728b77917c23076bae9c004173a3a"
+    sha256 cellar: :any,                 ventura:        "365a33db90f25d3db67fb6b9b7167725f0127dc3ef2ad9edbf447660ce39e4db"
+    sha256 cellar: :any,                 monterey:       "e201f52373d09eecb04e0175b95966d6c6bb009bd1d9c26378da0ba1903bef49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9308d4c7b90fa57fa8a4a00206925e6c8859834c83b36b0cacc92d32aec00b5"
   end
 
   depends_on "ruby@3.0"
@@ -53,13 +53,13 @@ class Uffizzi < Formula
   end
 
   resource "sentry-ruby" do
-    url "https://rubygems.org/gems/sentry-ruby-5.11.0.gem"
-    sha256 "27f603638d75d28b974def362792f442ae39e3e1c1496427910f9a0f434f3a71"
+    url "https://rubygems.org/gems/sentry-ruby-5.12.0.gem"
+    sha256 "2a8c161a9e5af6e8af251a778b5692fa3bfaf355a9cf83857eeef9f84e0e649a"
   end
 
   resource "thor" do
-    url "https://rubygems.org/gems/thor-1.2.2.gem"
-    sha256 "2f93c652828cba9fcf4f65f5dc8c306f1a7317e05aad5835a13740122c17f24c"
+    url "https://rubygems.org/gems/thor-1.3.0.gem"
+    sha256 "1adc7f9e5b3655a68c71393fee8bd0ad088d14ee8e83a0b73726f23cbb3ca7c3"
   end
 
   resource "tty-prompt" do
@@ -73,8 +73,8 @@ class Uffizzi < Formula
   end
 
   resource "uffizzi-cli" do
-    url "https://rubygems.org/gems/uffizzi-cli-2.2.1.gem"
-    sha256 "a11fbb843d009f20f399e75a6b93448c41ac59c70e4aecf2fecbe2d3817b9b22"
+    url "https://rubygems.org/gems/uffizzi-cli-2.2.2.gem"
+    sha256 "287690243c2e9bfc29c5cba33153ae89426773d9f45cb2944ca2d75b6ddba971"
   end
 
   def install

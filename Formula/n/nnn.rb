@@ -7,15 +7,14 @@ class Nnn < Formula
   head "https://github.com/jarun/nnn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b6db038e5881996c464a0a03cff5822a1ef447b7a871aa74cbf7d49a584e049b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aedf2b937bfbc61834f9373386907ef9aef7e2c5582ee8b7fb189557937067de"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a325f22a8f7d399aaa7d24cc7e92e72f26afbbdf122fae72fb4d4f435987142b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5e49a1963570a2bf1ac43bd44a88a417dddd383c2cbe0636c7d331aa9726d143"
-    sha256 cellar: :any,                 sonoma:         "4ad5b7bea096a5a0a1a47b1c05dfc5e9290ab8cba0045b48683432c61b92fd86"
-    sha256 cellar: :any_skip_relocation, ventura:        "d44bae7e9592cf3deeba0be69df4e7a79cb98aed93270ec16126fe12fc5d8189"
-    sha256 cellar: :any_skip_relocation, monterey:       "6c5fbf8f266297f31e77e288dc8b1844854ac5e2ca5de6306951b41fde18327a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8e218da4b7158b4d7e14a1fcc95d26d2448e308e45a131d4e8b7540c1735c2c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a85922f41bf36871d8f31755c1d0de81011bff8de457350e7f3b2fbe1e881672"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "c8743d31f512639a6424da5c9f37fbfd2c7cb3de66eddba2d697abac4cefc953"
+    sha256 cellar: :any,                 arm64_ventura:  "5f13d617bef10862e45d3a1234a9fb515cb91f665286620b739c1a270830ce5c"
+    sha256 cellar: :any,                 arm64_monterey: "b1898d5e9926e2645a017442cfa66fc3a8b6a0814fc18bdbf7a70f561c2552f4"
+    sha256 cellar: :any,                 sonoma:         "6426f4ac716e4203e1dc6cea5018af7f7bc1225dfc602c19fc6af9a7ce2f09de"
+    sha256 cellar: :any,                 ventura:        "f55965fd3c847e11d74e902214a509456e1c940c9d37a6ccd78f15ca1cb5128d"
+    sha256 cellar: :any,                 monterey:       "31de38134834caa63a2a27d42c0945a97ae13f3f7ca153fae61be4f0f7c3d724"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "503611604b9999f9f9ed73db027403b4ee20f5039c8278e99f47bdd23c9c291c"
   end
 
   depends_on "gnu-sed"
@@ -23,7 +22,13 @@ class Nnn < Formula
   depends_on "readline"
 
   def install
-    system "make", "install", "PREFIX=#{prefix}"
+    args = %w[
+      O_EMOJI=1
+      O_NERD=1
+      O_ICONS=1
+    ]
+
+    system "make", "install", "PREFIX=#{prefix}", *args
 
     bash_completion.install "misc/auto-completion/bash/nnn-completion.bash"
     zsh_completion.install "misc/auto-completion/zsh/_nnn"

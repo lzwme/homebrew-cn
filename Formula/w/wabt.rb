@@ -2,8 +2,8 @@ class Wabt < Formula
   desc "Web Assembly Binary Toolkit"
   homepage "https://github.com/WebAssembly/wabt"
   url "https://github.com/WebAssembly/wabt.git",
-      tag:      "1.0.33",
-      revision: "963f973469b45969ce198e0c86d3af316790a780"
+      tag:      "1.0.34",
+      revision: "46e554971eb593f9a071b8d9acd8229027b1c374"
   license "Apache-2.0"
 
   livecheck do
@@ -12,15 +12,13 @@ class Wabt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4ad7998c357d89b6deee22f2483110c77b284a5c29286abd8ae21f0a97f84be7"
-    sha256 cellar: :any,                 arm64_ventura:  "420800d9acb60c8bb5a8cdeed2bd6f3f1a2e35e048dd8b2d3d09cfb097461d0d"
-    sha256 cellar: :any,                 arm64_monterey: "d8c1cd106d8b9bffee03675b55702b66752cfc7d8191997e939fb682882103ff"
-    sha256 cellar: :any,                 arm64_big_sur:  "7148f5d2dfa56da56a4df51843493a2a5f72b1bae748da0e5e94a8484d4c1db7"
-    sha256 cellar: :any,                 sonoma:         "5ddaa2013aefcc7f9e6f507dc1972d6cce7abc819c7eccd0e35da7ebaf477ebb"
-    sha256 cellar: :any,                 ventura:        "cafbe4b7f8cd4b86aaefa31ae01a3fe67d24614c7414eaf6eeb6258a784bdbf3"
-    sha256 cellar: :any,                 monterey:       "9db80d4b0eb11cc665eba586100ea872a70f5773ed32554b19ebe83e35990317"
-    sha256 cellar: :any,                 big_sur:        "b52a3276d284cd520b8f07d32d8de17a71650d135ccda2044a05edaa2cad9bb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5d76141576f861a87c72b94da7fc0009f67de6a9a0c4469dc985d215de8b369"
+    sha256 cellar: :any,                 arm64_sonoma:   "faa22a39441bb893fb98b32da3f7536a4cb077023939d7a053caaa2f0faced34"
+    sha256 cellar: :any,                 arm64_ventura:  "18654972e19a5a3ac6505e1433a0c2132d293600bcec00d83dcee037b47a5d67"
+    sha256 cellar: :any,                 arm64_monterey: "e2bd5d6e8db478db0b64a112440ed29d644f906e1b12777844dd0bebad6bfcb2"
+    sha256 cellar: :any,                 sonoma:         "04e05978ef89af86e94ec9b4e1229291f75e4ba2a32f5fa0bb10d2d15584ced5"
+    sha256 cellar: :any,                 ventura:        "d1c4a18839dd492a7c1033f423a6bf1418a1e5512234ef30b20dc885061cd072"
+    sha256 cellar: :any,                 monterey:       "7eb68e859161c15a9fa818078b355901d977a76ac39bad8ca1a8cc5be9ae5e8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "860c2f917d9ca19df555542833bac2519b3c71e4c6c9ba6bd6896a66e1c373f3"
   end
 
   depends_on "cmake" => :build

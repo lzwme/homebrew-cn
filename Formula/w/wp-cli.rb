@@ -1,8 +1,8 @@
 class WpCli < Formula
   desc "Command-line interface for WordPress"
   homepage "https://wp-cli.org/"
-  url "https://ghproxy.com/https://github.com/wp-cli/wp-cli/releases/download/v2.8.1/wp-cli-2.8.1.phar"
-  sha256 "8503cd579480d0cb237b4bef35e0c3da11c2ab872a1bc8f26d2da0ca0729b6a7"
+  url "https://ghproxy.com/https://github.com/wp-cli/wp-cli/releases/download/v2.9.0/wp-cli-2.9.0.phar"
+  sha256 "af6b7ccc21ed0907cb504db5a059f0e120117905a6017bfdd4375cee3c93d864"
   license "MIT"
 
   livecheck do
@@ -11,15 +11,13 @@ class WpCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "acb797300bd0e5ebe085dafe27f9555653ee3eaaf41b964223352cc39a389f71"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9ffb49dd4e4f31aba979ab2619d095fcea87ed9881a9aa59584c753a41ef4e67"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ffb49dd4e4f31aba979ab2619d095fcea87ed9881a9aa59584c753a41ef4e67"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9ffb49dd4e4f31aba979ab2619d095fcea87ed9881a9aa59584c753a41ef4e67"
-    sha256 cellar: :any_skip_relocation, sonoma:         "928bd3cb32c6aa7a2e429c076986ff324fee6cc113b946efe3c1f62794924004"
-    sha256 cellar: :any_skip_relocation, ventura:        "6f48c52ef73dde3146221da2c72a83137efcdf1a35c737fd043bf9718109d1bc"
-    sha256 cellar: :any_skip_relocation, monterey:       "6f48c52ef73dde3146221da2c72a83137efcdf1a35c737fd043bf9718109d1bc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6f48c52ef73dde3146221da2c72a83137efcdf1a35c737fd043bf9718109d1bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ffb49dd4e4f31aba979ab2619d095fcea87ed9881a9aa59584c753a41ef4e67"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7195f7831f27aacbebb92b3daff2c7f5663133383f8d80a6dfdd631faf330995"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7195f7831f27aacbebb92b3daff2c7f5663133383f8d80a6dfdd631faf330995"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7195f7831f27aacbebb92b3daff2c7f5663133383f8d80a6dfdd631faf330995"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bc3d13a54b99943771395542bee2629e54117aa5f14759f5826eb7c9884f4c15"
+    sha256 cellar: :any_skip_relocation, ventura:        "bc3d13a54b99943771395542bee2629e54117aa5f14759f5826eb7c9884f4c15"
+    sha256 cellar: :any_skip_relocation, monterey:       "bc3d13a54b99943771395542bee2629e54117aa5f14759f5826eb7c9884f4c15"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7195f7831f27aacbebb92b3daff2c7f5663133383f8d80a6dfdd631faf330995"
   end
 
   depends_on "php"

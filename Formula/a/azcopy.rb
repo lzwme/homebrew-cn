@@ -1,8 +1,8 @@
 class Azcopy < Formula
   desc "Azure Storage data transfer utility"
   homepage "https://github.com/Azure/azure-storage-azcopy"
-  url "https://ghproxy.com/https://github.com/Azure/azure-storage-azcopy/archive/refs/tags/v10.21.0.tar.gz"
-  sha256 "a7a81921ac48aa6663912e498ee578cc62a09161f7523ce8019fe341d6ea7922"
+  url "https://ghproxy.com/https://github.com/Azure/azure-storage-azcopy/archive/refs/tags/v10.21.1.tar.gz"
+  sha256 "6ddb6f6f291075aec5c9ab788ea5ab21dc957cadc8cfc4823851199755b77158"
   license "MIT"
 
   livecheck do
@@ -11,22 +11,16 @@ class Azcopy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a29221c76956c520174201939acdc012d154a843ffa56765bb01131a0a2048c0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "93d0574b468933d518f6f22ed33ca499d0e973f6a5c768bbb812e19d9dd6facb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d8e983dcbffb5f924c82df48a2192b7e7809c2ee63dc9375a439d5dd05e90cec"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1a0c38d3480b832b64e87d6853d0e2bb3608a11f89ffcb76508d71bf8e45ed2a"
-    sha256 cellar: :any_skip_relocation, ventura:        "169e9a38fa3e198b3528623e311f0288a58856743406835707b810694c72cea0"
-    sha256 cellar: :any_skip_relocation, monterey:       "4b074a7e3e647552747483cd9fbd01c9d424265369aa602dc1b0ab9e766b7805"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c60700efc127c66561262415535909dc51c106e55d825ac0778e2c53aebd6fd3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "53a4324834e8d7cfde541898bc4620c8f7b6f64382519a3dacd9591a85f61235"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "67e873ed2205157e3f7db629ae389babd8cdc4fa7a2dd17344c71589ea2ef269"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "63beac340c39e840e9cf789a3e9577faf2d188cc5c113f1574dd12a985e2de3d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "140846f90c1fc89cd0b1a964d0a1d56fa9d1d1d6de8466c72ee79e96a7901f63"
+    sha256 cellar: :any_skip_relocation, ventura:        "6926c5b49efa60aa5f14f8b359d699b1d8bb82dc3f991191ae2edc571526ba6b"
+    sha256 cellar: :any_skip_relocation, monterey:       "8299d3265104072ead169646e4c03c9d8e46d7c5d6a1259b3b3610c555eb225c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a32548722dfd7062a377940b8f26ec9ec69e00607588017396e96d2bc8e62ff"
   end
 
   depends_on "go" => :build
-
-  # Build patch, upstream ref, https://github.com/Azure/azure-storage-azcopy/pull/2393
-  patch do
-    url "https://github.com/Azure/azure-storage-azcopy/commit/99f2bd8af8d55cbc2cba7320636af880f2e84955.patch?full_index=1"
-    sha256 "6142ddf542b8f9ae1b92095c93402e00883b266099b1f17e1f0779ce2628c580"
-  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")

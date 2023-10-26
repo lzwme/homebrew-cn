@@ -1,4 +1,4 @@
-class GnuCobol < Formula
+class Gnucobol < Formula
   desc "COBOL85-202x compiler supporting lots of dialect specific extensions"
   homepage "https://www.gnu.org/software/gnucobol/"
   url "https://ftp.gnu.org/gnu/gnucobol/gnucobol-3.2.tar.xz"
@@ -12,16 +12,13 @@ class GnuCobol < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "fbcc72a5f64c3bba2fa960aa302e43aee0843ea06c56658fa90e07e8caa40c9b"
-    sha256 arm64_ventura:  "d01c72df3a149061c95811e7796a6de37fea2eb38e3dc7ff792c4c8b021e3ae5"
-    sha256 arm64_monterey: "1ea182723a1ff54e10c49cb133af6baf21f1e0e3f97ece6d51e46796d7f8de19"
-    sha256 arm64_big_sur:  "0bacd95ade364209c06081b2ae6255acf393502ac8c0130d37a2f86aa9dee5df"
-    sha256 sonoma:         "ea200e8c1c0d30c3e173788b920af6160c29468e97499c5b02bb8a30664d05a6"
-    sha256 ventura:        "b284db83cc174f2db09b0f7ee799d43512645969ec5a9ad00542c549f640fb14"
-    sha256 monterey:       "6209c9f8ccb8a34e1da4d936d521d9fde5b74cd4e3aebf0df010c5d76659f2e0"
-    sha256 big_sur:        "ad2f3b544b029285ac0e6ac318c0233588cf7c194ec61ee32fe343abcd046c99"
-    sha256 x86_64_linux:   "c763f44853c5ab079d4a101c283214713faa5b79fcd5610402587b22f00085e3"
+    sha256 arm64_sonoma:   "35b99190f38a4ce4f20096a3fcc9e258eae128303f7651c1b0502376577e1ab0"
+    sha256 arm64_ventura:  "5346f5e18d5a2cd7d60b2e78258d5648a28ca361a470d4417cde6cdc2f88dbe9"
+    sha256 arm64_monterey: "1b5edf54a76b888a4f74c5e50523c71f78dc69aebabf3413972373594a9d9f0a"
+    sha256 sonoma:         "4ed0c37599d25d885b605f78c35d3b17dd0ed698ac63ed7b0cb430d67ff2ab79"
+    sha256 ventura:        "1d308479bccc3242c6db39f8e68048a21550b0d911c689de7fe7f6ac648f3cbe"
+    sha256 monterey:       "02976793288f851d75f1abd5c802908b68abf7f097722ee1460f2b6b451aa021"
+    sha256 x86_64_linux:   "3d5a97f7c0349499a790b2f312f0b018e30fc1bffa8268fe6d652ccfb3a8f7c8"
   end
 
   head do
@@ -29,8 +26,7 @@ class GnuCobol < Formula
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
-    depends_on "bison" => :build
-    depends_on "flex" => :build
+    depends_on "bison" => :build # head needs Bison 3.x+, not available with macos one
     depends_on "gettext" => :build
     depends_on "help2man" => :build
     depends_on "libtool" => :build
@@ -41,10 +37,16 @@ class GnuCobol < Formula
     depends_on "lmdb"
     depends_on "unixodbc"
     # TODO: add "visam" and --with-visam, once formula is added
+
+    uses_from_macos "flex" => :build
   end
 
   depends_on "pkg-config" => :build
+
+  # MacOSX provided BDB does not work (only _way_ work adjusted CFLAGS)
+  # so we use the homebrew one
   depends_on "berkeley-db"
+
   depends_on "gmp"
   depends_on "json-c"
 

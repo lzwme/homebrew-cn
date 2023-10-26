@@ -1,20 +1,20 @@
 class PhpAT84 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghproxy.com/https://github.com/php/php-src/archive/6b73fcc2b3cfaa134c5c779d0cd39a513bb86b14.tar.gz?commit=6b73fcc2b3cfaa134c5c779d0cd39a513bb86b14"
+  url "https://ghproxy.com/https://github.com/php/php-src/archive/8fc3615a7a1757953e044682edfad3c99ba5ef02.tar.gz?commit=8fc3615a7a1757953e044682edfad3c99ba5ef02"
   version "8.4.0"
-  sha256 "8b51f09cd770a7769ed6dd02776e182c525c158bcb621be093e76132bbc5a3b6"
+  sha256 "141936e71ab9a7d7509b61d307ca95142cb8246f97ca3583192880dfa6a80140"
   license "PHP-3.01"
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 27
-    sha256 arm64_sonoma:   "b7f731b0f4ba52870c7e9dc34df97a7d89164738c9494925ad74e4927e140d48"
-    sha256 arm64_ventura:  "1d131fac32f4f9f9ea87de5f263a216f8cdd2bdecab70e70aa61f014e1c227fe"
-    sha256 arm64_monterey: "b03f621d15cbb550ab94962f87fdaf3a3658c02683c53f8d61babf05efe3aace"
-    sha256 ventura:        "cc3b431ca1de09bd4a59abe730898a3eeb2cf8ca95d7b6c80145b952a31675dc"
-    sha256 monterey:       "9a7dc371b0cd4c7dc1640eb935e499f744e86ddd0f497da4e2cc84b0a575135c"
-    sha256 x86_64_linux:   "1f42c47a41eb1244676908064e971448c7081e3a91beb3c6f143a7b93526dc29"
+    rebuild 28
+    sha256 arm64_sonoma:   "5d71fec71a33f9abd1239f354ffda0f7b199a193847346b207ff4480205d1789"
+    sha256 arm64_ventura:  "5cbe84e292dfa1ef97d173ce17c9a21d5eacd647969a01decf1dd2522efe82d7"
+    sha256 arm64_monterey: "72e179f94ec54fdab0f4f406852eb4dbdafdcd3d9d066e7397ec91479aeb2e73"
+    sha256 ventura:        "499cda0a2b62f1fa79cbee0e0b05368813ab1c1e671e4f4839c99bf2febb6a11"
+    sha256 monterey:       "313dec2460485a197eb99c02c6f80eb8dc5f9ba8c3411fec22e46be9fb6087d9"
+    sha256 x86_64_linux:   "a4fba4f81072dae2c96a515274b648bbf5092b378e5f90d80d3e5b27f8c10a38"
   end
 
   keg_only :versioned_formula
@@ -28,6 +28,7 @@ class PhpAT84 < Formula
   depends_on "argon2"
   depends_on "aspell"
   depends_on "autoconf"
+  depends_on "capstone"
   depends_on "curl"
   depends_on "freetds"
   depends_on "gd"
@@ -143,6 +144,7 @@ class PhpAT84 < Formula
       --enable-sysvshm
       --with-apxs2=#{Formula["httpd"].opt_bin}/apxs
       --with-bz2#{headers_path}
+      --with-capstone
       --with-curl
       --with-external-gd
       --with-external-pcre

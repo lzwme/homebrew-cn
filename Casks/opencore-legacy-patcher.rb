@@ -9,4 +9,13 @@ cask "opencore-legacy-patcher" do
   homepage "https://dortania.github.io/OpenCore-Legacy-Patcher/"
 
   app "OpenCore-Patcher.app", target: "/Library/Application Support/Dortania/OpenCore-Patcher.app"
+
+  postflight do
+    system "sudo", "rm", "-f", "/Applications/OpenCore-Patcher.app"
+    system "sudo", "ln", "-s", "/Library/Application Support/Dortania/OpenCore-Patcher.app", "/Applications"
+  end
+
+  uninstall_postflight do
+    system "sudo", "rm", "-f", "/Applications/OpenCore-Patcher.app"
+  end
 end

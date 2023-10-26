@@ -1,8 +1,8 @@
 class Newt < Formula
   desc "Library for color text mode, widget based user interfaces"
   homepage "https://pagure.io/newt"
-  url "https://releases.pagure.org/newt/newt-0.52.23.tar.gz"
-  sha256 "caa372907b14ececfe298f0d512a62f41d33b290610244a58aed07bbc5ada12a"
+  url "https://releases.pagure.org/newt/newt-0.52.24.tar.gz"
+  sha256 "5ded7e221f85f642521c49b1826c8de19845aa372baf5d630a51774b544fbdbb"
   license "LGPL-2.0-or-later"
 
   livecheck do
@@ -11,16 +11,13 @@ class Newt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5e9fe3da98c843bf7b16e0f76159daa7dce8f2c640055e15f052ef97c9396325"
-    sha256 cellar: :any,                 arm64_ventura:  "5df728ad1e151aaac5b625718e46d08da895ca69723d3784468d73769e935afa"
-    sha256 cellar: :any,                 arm64_monterey: "10b1d3a167cb58d3395e658ade694a7d1399b055bd3ac73e927b5d72ce6365c5"
-    sha256 cellar: :any,                 arm64_big_sur:  "ef5db051a9a6a3e2d4ef1640e9bd457ff7fb93e4bdecf375a616997de030f0c7"
-    sha256 cellar: :any,                 sonoma:         "8edf3b66cac7ad5203c382fe91a8f3630acb2ae6bd46d2ddf31b472d28bfffb6"
-    sha256 cellar: :any,                 ventura:        "ab855ccc5e8616cfb5fde2b1f22280c7d985a865286d2d5a38053d7efb920108"
-    sha256 cellar: :any,                 monterey:       "fa3933a096a7fb991019e7136da6904f83f68c1fe22a1cf8fbbaba7bc032d8f9"
-    sha256 cellar: :any,                 big_sur:        "5cfff166cb954acea8b020cca6d0e583edf3edfcc0e313d9dfe5e2f77d813104"
-    sha256 cellar: :any,                 catalina:       "600d9b87f410ba129edb1fb51d82573e22dba023d69c201ebb8bed5ccbcdb982"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b67e8869197eab4707919551f3f3358d31820cbe3ce3eb7f892682a3e6fa52b0"
+    sha256 cellar: :any,                 arm64_sonoma:   "6fef0c730e2f3d0b515f083aea35a4ae49392f3569ef1aca6504844affc383c4"
+    sha256 cellar: :any,                 arm64_ventura:  "fd94edbcdf0629ef5fb24db2703123de900979f369e9e25b7bda03fc5d033859"
+    sha256 cellar: :any,                 arm64_monterey: "22eb2fad05aa6aff24b2b7505104b5c4271ad70a8df926f251af9a9c593c0d30"
+    sha256 cellar: :any,                 sonoma:         "819cb00422244756274b585a0bccf7f54762370a0ea648965ef39138d3a685de"
+    sha256 cellar: :any,                 ventura:        "b3f5fcd756f1dd4f14b1567119a6ce0541a6c443d8ee7b96b7c64464b730712d"
+    sha256 cellar: :any,                 monterey:       "a20db7d51b6ef173321eecb82d77d665b6a8b0854c33eb4a5cc7da2b00edc73c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6cf13c11b78ec2b669d9097139a3248d019f5f614f34d463fae6cfb3dd64eb98"
   end
 
   depends_on "popt"

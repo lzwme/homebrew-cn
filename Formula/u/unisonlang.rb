@@ -10,11 +10,6 @@ class Unisonlang < Formula
   license "MIT"
   head "https://github.com/unisonweb/unison.git", branch: "trunk"
 
-  livecheck do
-    url :stable
-    regex(%r{^release/(M\d+[a-z]*)$}i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "47a5327b2e9356d82a7a0c581f5be6d6269f8b8a10c0b7196696f1774a18e53b"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fbd8a5fe611dfd9f61e4110fbef149787fa705275512609f77b8fe40017fd234"
@@ -23,6 +18,8 @@ class Unisonlang < Formula
     sha256 cellar: :any_skip_relocation, big_sur:        "8089a855ed40041e818a99af9b2c4a3187db2eb68936e6b7628bbc8152cc37f1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2fb2da2b4a3940763e250042884dc564a3dc527da842f3213e79be1aa6ef811"
   end
+
+  deprecate! date: "2023-10-24", because: "uses deprecated `elm`"
 
   depends_on "ghc@9.2" => :build
   depends_on "haskell-stack" => :build

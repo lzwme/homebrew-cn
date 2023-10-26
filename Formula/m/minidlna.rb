@@ -4,18 +4,16 @@ class Minidlna < Formula
   url "https://downloads.sourceforge.net/project/minidlna/minidlna/1.3.0/minidlna-1.3.0.tar.gz"
   sha256 "47d9b06b4c48801a4c1112ec23d24782728b5495e95ec2195bbe5c81bc2d3c63"
   license "GPL-2.0-only"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "367651c797c908776eca47c29866d1fbed048fa3be34e475e228907be78d7349"
-    sha256 cellar: :any,                 arm64_ventura:  "7084ce93804a189f7b06791ab9a8fe25b5c5a94c6e2d8772002a899fe8eb0925"
-    sha256 cellar: :any,                 arm64_monterey: "1edd947d1252977df7f73d95afef4c68937e91454cf8cfd2b7b304fbd1a0c334"
-    sha256 cellar: :any,                 arm64_big_sur:  "36072976cbebd7c14eac5400ec5b5495955e980ec922a72732384b830df19674"
-    sha256 cellar: :any,                 sonoma:         "47354a6b673d90ba807d2906234a7b2589fdca97b1679d55ca4ed3a480c98eee"
-    sha256 cellar: :any,                 ventura:        "713ac9c912faf4cf0b5d7ba9d84b9fd33703c8712d1d88fdbc9d1148143b3ecc"
-    sha256 cellar: :any,                 monterey:       "0ddb7b01d43497351f8daef3aeed5daad168a6ce58c432d5d930f3a14a3858a4"
-    sha256 cellar: :any,                 big_sur:        "390f161b6057e85f58af6be48c388c3ea72b5f168c15becac79ce121f31763de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9920adc04f7e7b8d9559d32c86e691a0d33d168bd44e5e736306bf17ed1d9bec"
+    sha256 cellar: :any,                 arm64_sonoma:   "d261c6f4253c3cc116f401cd9f19477b18ed420cd69c31cb3be6962681f2be08"
+    sha256 cellar: :any,                 arm64_ventura:  "cfd025521ba36a33600ee9e3d5290d5a10f0a4af23b89d86ce32746a3c8efcca"
+    sha256 cellar: :any,                 arm64_monterey: "4e6a1b8067676b0a60e5ed9f1390daa4b092c77c58c4d73bdd0673e641b5f49f"
+    sha256 cellar: :any,                 sonoma:         "9a2271f4d4ff5d634d27bf5c185896eac777bc2d6b81862c0a279968de21bdc3"
+    sha256 cellar: :any,                 ventura:        "2b4e3dee83d3d796e0efc9863eaebcdd4a387c63a1e4abf0036fccfba286df8b"
+    sha256 cellar: :any,                 monterey:       "ce9be9a9aad4e43a685d51f68da156efd7a5d368740ef097b688d44387b645d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54c206b143287d9a20f4c0126bdf9b1461c96e2af5d40011759a7a8df2c8826d"
   end
 
   head do

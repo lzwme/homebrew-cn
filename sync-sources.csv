@@ -344,7 +344,7 @@ Homebrew-homebrew-core/Formula/a/awsume.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/awsweeper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/axel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azcopy.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/azion-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/azion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aztfexport.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/azure-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azure-storage-cpp.rb, Homebrew/homebrew-core, 1
@@ -507,6 +507,7 @@ Homebrew-homebrew-core/Formula/b/bmake.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bmon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bnd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bnfc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/bob.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bochs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bogofilter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bombadillo.rb, Homebrew/homebrew-core, 0
@@ -2147,7 +2148,6 @@ Homebrew-homebrew-core/Formula/g/gnome-themes-extra.rb, Homebrew/homebrew-core, 
 Homebrew-homebrew-core/Formula/g/gnu-apl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnu-barcode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnu-chess.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/g/gnu-cobol.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnu-complexity.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnu-getopt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnu-go.rb, Homebrew/homebrew-core, 0
@@ -2161,6 +2161,7 @@ Homebrew-homebrew-core/Formula/g/gnu-time.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnu-typist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnu-units.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnu-which.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gnucobol.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnumeric.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnunet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnupg-pkcs11-scd.rb, Homebrew/homebrew-core, 1
@@ -4620,6 +4621,7 @@ Homebrew-homebrew-core/Formula/p/pcapplusplus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pcb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pcb2gcode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pce.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pciutils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pcl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pcp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pcre++.rb, Homebrew/homebrew-core, 0
@@ -5180,6 +5182,7 @@ Homebrew-homebrew-core/Formula/r/regina-rexx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/regipy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/regldg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/regula.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/rekor-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/release-it.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rem.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/remake.rb, Homebrew/homebrew-core, 0
@@ -5615,6 +5618,7 @@ Homebrew-homebrew-core/Formula/s/snowflake.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snownews.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snowpack.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sntop.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/snyk-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snzip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/so.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/soapyrtlsdr.rb, Homebrew/homebrew-core, 1
@@ -5753,6 +5757,7 @@ Homebrew-homebrew-core/Formula/s/ssh-permit-a38.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/ssh-vault.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sshfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sshguard.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/sshportal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sshs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sshtrix.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sshuttle.rb, Homebrew/homebrew-core, 0
@@ -13477,8 +13482,8 @@ Homebrew-homebrew-cask-versions/Casks/zulu17.rb, Homebrew/homebrew-cask-versions
 Homebrew-homebrew-cask-versions/Casks/zulu21.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/zulu7.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/zulu8.rb, Homebrew/homebrew-cask-versions, 0
+nicerloop-homebrew-nicerloop/Formula/arx.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/bison@1.875c.rb, nicerloop/homebrew-nicerloop, 0
-nicerloop-homebrew-nicerloop/Formula/czkawka.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/diffoci.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/f2c.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/ftnchek.rb, nicerloop/homebrew-nicerloop, 0
@@ -13515,7 +13520,6 @@ nicerloop-homebrew-nicerloop/Casks/8bitdo-firmware-updater.rb, nicerloop/homebre
 nicerloop-homebrew-nicerloop/Casks/airdisplay-client.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Casks/archi.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Casks/archivewebpage.rb, nicerloop/homebrew-nicerloop, 1
-nicerloop-homebrew-nicerloop/Casks/arx.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/audiobookbinder.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/cmis-workbench.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Casks/dbptk.rb, nicerloop/homebrew-nicerloop, 1

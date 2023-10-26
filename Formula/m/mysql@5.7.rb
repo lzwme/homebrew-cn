@@ -1,8 +1,8 @@
 class MysqlAT57 < Formula
   desc "Open source relational database management system"
   homepage "https://dev.mysql.com/doc/refman/5.7/en/"
-  url "https://cdn.mysql.com/Downloads/MySQL-5.7/mysql-boost-5.7.43.tar.gz"
-  sha256 "22998c0fe8439a6946644f175b6f219d5f503d4c194b246a338f1dfcd87db045"
+  url "https://cdn.mysql.com/Downloads/MySQL-5.7/mysql-boost-5.7.44.tar.gz"
+  sha256 "b8fe262c4679cb7bbc379a3f1addc723844db168628ce2acf78d33906849e491"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,15 +11,13 @@ class MysqlAT57 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "4b69c3381dc94ec413f48e786be30c53a20000f8bc3c4870971c02a7815426cc"
-    sha256 arm64_ventura:  "ca8626687368282a0dfc23d451e2d41a418642c2ae66cf38b1138b994224c2f5"
-    sha256 arm64_monterey: "80bae6d458cc8947d81469ded28ca1d107183fe90533d42e049d46a921b0db58"
-    sha256 arm64_big_sur:  "c3324d764ce81e9d8848139d9539fd7caa935f90b45a8d821e507395089a603d"
-    sha256 sonoma:         "3fc1a8a490f54b97e111c15e6f8ac570986b4b4307a2932fef01128825ff0d65"
-    sha256 ventura:        "29d83234fed92cf4d932c6101f36f40fbb8679e3057422c352f0e605c4556cb9"
-    sha256 monterey:       "c59712c401c2dab69c6a61d8717e8bcd848e6ce5fe252ac0c4a489ab2192505c"
-    sha256 big_sur:        "f28d9d37d617ff9e72245c7fef70efff874665e8015a894e6eac50ada5d645b7"
-    sha256 x86_64_linux:   "d992bf4f717c499d73a0ab653ff48efaa59003493e325b48e975c26ef1285a3b"
+    sha256 arm64_sonoma:   "f000efc9d4fc1dc21a4add778a57baa062adefcf9e3ec828f4ce2568f44b1298"
+    sha256 arm64_ventura:  "36d950062b695741765265294f06ae77427b6d65dda6a6cf5cce764b7a3dfc77"
+    sha256 arm64_monterey: "45a2ecd3d2ea2bf7b7322aa3fe0cb988ede1fd54702195df481bc960a8da69b5"
+    sha256 sonoma:         "5d3cea75cd9f3976859bb2fe798742ab45af976d1064b5fb55da1bc93f7dcb7b"
+    sha256 ventura:        "8f0084fe59635d2b1a841efb9057b3ae8edfbd40c16fed61ff79b22b9bef414f"
+    sha256 monterey:       "cb2faa9ff392143aabeb95cb909986014a42f692529686c049dfadc09a6ee113"
+    sha256 x86_64_linux:   "9e5bf68a344852e0e62936f0507dd956ae1d71fb9b2dac3133388a8b8962327f"
   end
 
   keg_only :versioned_formula

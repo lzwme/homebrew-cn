@@ -1,8 +1,8 @@
 class Osi < Formula
   desc "Open Solver Interface"
   homepage "https://github.com/coin-or/Osi"
-  url "https://ghproxy.com/https://github.com/coin-or/Osi/archive/refs/tags/releases/0.108.8.tar.gz"
-  sha256 "8b01a49190cb260d4ce95aa7e3948a56c0917b106f138ec0a8544fadca71cf6a"
+  url "https://ghproxy.com/https://github.com/coin-or/Osi/archive/refs/tags/releases/0.108.9.tar.gz"
+  sha256 "8b09802960d7d4fd9579b3e4320bfb36e7f8dca5e5094bf1f5edf1b7003f5562"
   license "EPL-2.0"
 
   livecheck do
@@ -11,15 +11,13 @@ class Osi < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0d3658c7777315147edd9b18cb2aa16e46c1ad57109c6ca2bf004aba836f8c36"
-    sha256 cellar: :any,                 arm64_ventura:  "c8c3a725db022a6b778c5978cb0f75f52801178afd5a3b188e9b0e4da820b54b"
-    sha256 cellar: :any,                 arm64_monterey: "6096f7d19bec96189b2952eb084868ad02929239d124e4cd64f75414d8c4653b"
-    sha256 cellar: :any,                 arm64_big_sur:  "f5470a9e3c06da29cfba1b032114b80c7318db99a8012d3e4ad0712e0094e359"
-    sha256 cellar: :any,                 sonoma:         "317f8a9e8a661e1c4a1cbe1d9b1c397539993f1b2dc7e32a884f42c99ec4bf6e"
-    sha256 cellar: :any,                 ventura:        "52aed1baafbef0913c13b7d241c6ba4dadd245f36c41e4c86df17fd7aaced06c"
-    sha256 cellar: :any,                 monterey:       "fa3fe31ee9b82b6587527183fed072899f708dc1b3cbb08f4c980d2ea2fdeb43"
-    sha256 cellar: :any,                 big_sur:        "1c54abe37d8f2500077cd1ec1ba2ba9b447b46df75d80e76fda9a9088310a867"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70dedde843f78011d381805f0da706d48bdd2a30143996efdd3d36de3f87d3e2"
+    sha256 cellar: :any,                 arm64_sonoma:   "1b4a807addf9f40d64a208be6122d2b804363824c65b8ffb8da3eec8ac3741fd"
+    sha256 cellar: :any,                 arm64_ventura:  "d553f6352d8d3aa1cb29eb616a2ea71bc2bb4d5da7e4bfa38a833ed9d5b4e142"
+    sha256 cellar: :any,                 arm64_monterey: "13f6987eb58a6eb065d331e49e2c55e2c468f7793a930d010cf4a0157256fcfa"
+    sha256 cellar: :any,                 sonoma:         "73a8f48411ee84c77897ce180577513500811384d5f91a21d75f5fca8c621be7"
+    sha256 cellar: :any,                 ventura:        "2d13fc32b0062fbc65b2d7cc39524c1274577d37a1d30903bba94f55f605604b"
+    sha256 cellar: :any,                 monterey:       "21b58eb4d5e7a3de57aa33ebccec4b265938fd03287916614eb6b7b6607889d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f3586bd6e32fb870e2c2f413105b446f00257bcbcd70a724632132c6d3ccece"
   end
 
   depends_on "pkg-config" => :build

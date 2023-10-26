@@ -1,8 +1,8 @@
 class Clp < Formula
   desc "Linear programming solver"
   homepage "https://github.com/coin-or/Clp"
-  url "https://ghproxy.com/https://github.com/coin-or/Clp/archive/refs/tags/releases/1.17.8.tar.gz"
-  sha256 "f9931b5ba44f0daf445c6b48fc2c250dc12e667e59ace8ea7b025f158fe31556"
+  url "https://ghproxy.com/https://github.com/coin-or/Clp/archive/refs/tags/releases/1.17.9.tar.gz"
+  sha256 "b02109be54e2c9c6babc9480c242b2c3c7499368cfca8c0430f74782a694a49f"
   license "EPL-2.0"
 
   livecheck do
@@ -11,15 +11,13 @@ class Clp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3d04e87ef2c2ae1131a3538c8d8c618d2c989a68df9e48cf420ff84c8d9e861e"
-    sha256 cellar: :any,                 arm64_ventura:  "efe170c0bf8394a5db5fab7fe2eacd52471337cd7cb2d144b39c8ad621e7ff2e"
-    sha256 cellar: :any,                 arm64_monterey: "9d2980cc39519cf78053c951cafee4b0fb11f900a6cef87eaff3c50f3612dcfc"
-    sha256 cellar: :any,                 arm64_big_sur:  "6dc3cc5e3b85420d45d610f7743e45541b3bf62511040d5046092fd9361a73b3"
-    sha256 cellar: :any,                 sonoma:         "6b9ac5776ea25fc8161cb30f98a5506b033aadbe11f79c2da815b9daecf5167c"
-    sha256 cellar: :any,                 ventura:        "88d6a80f4da99110a34a5b37cf44324e7cad52c063db6d7fac5ae48d753b4f82"
-    sha256 cellar: :any,                 monterey:       "6e458f50c974e968c541288ae791a70768caacc4f03819a0ac886edf86e6c25d"
-    sha256 cellar: :any,                 big_sur:        "0562833cfb1dac1a446690e0633b64421920628f9df7dbfa0f8ce9071efabe99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e784d51dc920a31d3134473c8d92cd5ead97e34fa90d8bf1a205abe31586f4c4"
+    sha256 cellar: :any,                 arm64_sonoma:   "7f9c9a92ee99cd58465990fe1a5b0eea86b793b1b85443b686484276f0ce27d5"
+    sha256 cellar: :any,                 arm64_ventura:  "17bad573877ae8f874338ee776d53bde7a322cb0170e67641162bab6c2cf3b4b"
+    sha256 cellar: :any,                 arm64_monterey: "266553c24bb15cca1b4dcfbd44fef937db5823d18b12cbfc02cfaf102adb4b43"
+    sha256 cellar: :any,                 sonoma:         "7a80f23d0e92466a1ae9e31885737c2ee10b45095fa4059e9da6ea19066aeaed"
+    sha256 cellar: :any,                 ventura:        "3124a065da0e993785eb90ae0b48e1866347267618fe2b45820564a521090acb"
+    sha256 cellar: :any,                 monterey:       "3bb2642ad847e14d942e8b3274a4217b6010d664adfaf5625233103e9465f3ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a61110512ca9feed14da907c7d8ed159dcde989728433e5ee34b5debce1ac3e"
   end
 
   depends_on "pkg-config" => [:build, :test]
