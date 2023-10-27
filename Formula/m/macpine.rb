@@ -1,8 +1,8 @@
 class Macpine < Formula
   desc "Lightweight Linux VMs on MacOS"
   homepage "https://beringresearch.github.io/macpine/"
-  url "https://ghproxy.com/https://github.com/beringresearch/macpine/archive/refs/tags/v1.0.3.tar.gz"
-  sha256 "96cdb060bc6985cce3e9d985cdf85ce61fc9139776da9b25b8daf042e492e5b9"
+  url "https://ghproxy.com/https://github.com/beringresearch/macpine/archive/refs/tags/v1.0.4.tar.gz"
+  sha256 "040beffd58ab22ef8d10b4241c2b86347dfc960e27934f6fc6cad002b9747c3a"
   license "Apache-2.0"
   head "https://github.com/beringresearch/macpine.git", branch: "main"
 
@@ -21,15 +21,13 @@ class Macpine < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "54f2d2b1ea37c5f42973b907e8ebb84c5bf5ef8aee1d99f6e95dfc44bd15093e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "27ac2c43820daee2a450370ada921e41e5c0e89cf1898db3143cae08f90f5a92"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c9767f32fafb9a243222e103a7c7d6eb426cfa484d23d8cba6e2d043a4e518c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0ce63299663e73cd5ba19cb34e2d4fb8081e811ff48850e6e99cccd9f1c7898e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "69dff6d1e82afe8f1b1aa56a60933182287927db54f9ece6adb8c239f2e6509b"
-    sha256 cellar: :any_skip_relocation, ventura:        "f4fe128c08668a405def079af6900dcf52e522cd5632cefd70f9065275e30635"
-    sha256 cellar: :any_skip_relocation, monterey:       "741d7b0bc6325694f894d1594e37258b1d40b567bcdbd8d8e784411ebc617904"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a3945ae2fb4f9499f3fbd063397723111d983769949754ea074c960660d8c902"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e037b0dd335a188fe107183d820c0498543f359106290ba3b63f27c233fc3578"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "97402f3464c5d9792989c9ec4e49b1bbc1cc81f1b5ed94051c02f1e1826a413e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d1de48268a4d5cf5526c6b83466729b1eb612e96e1cda9c3ae0777848f42a3e1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0bd4ce3ca1d4bee46e8dfa3ca16b0d3145d2bba20525d9de32114aad42ea15fc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6a787c7070ad6c25994ce2a94c122e2efe9daae720f4ea36d418896ed31e8237"
+    sha256 cellar: :any_skip_relocation, ventura:        "049ea3b0294331f6c9139986e242e73fe063924d24af73c649328e08bc993d72"
+    sha256 cellar: :any_skip_relocation, monterey:       "925afc8e32fa3c59b8048bb1a11639611030672dad97d7b0f9e961127ab5538d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e93ea286c5168161917dce8575213380f827a1bf03a9a8f2482af00f43652eaf"
   end
 
   depends_on "go" => :build

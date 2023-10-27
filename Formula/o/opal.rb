@@ -2,21 +2,19 @@ class Opal < Formula
   desc "Ruby to JavaScript transpiler"
   homepage "https://opalrb.com/"
   url "https://github.com/opal/opal.git",
-      tag:      "v1.7.4",
-      revision: "3c2076f81fe5813a4b65557cd82e1c60aa0a3424"
+      tag:      "v1.8.0",
+      revision: "2430f2ba18a4aebc6bfb48736acebf0dc288a545"
   license "MIT"
   head "https://github.com/opal/opal.git", branch: "master"
 
   bottle do
-    sha256                               arm64_sonoma:   "fe981c8bdb30df18d92cbf643c425baa7ec3a906000b66d5bc6a2411f3b46af1"
-    sha256                               arm64_ventura:  "b76cbd70f31e95fbf8c4ad29d346bcf3c2a5c16122d92951f1292b1f200c9218"
-    sha256                               arm64_monterey: "ff085bf0b14a7fb6a660aa3f85749bab517bca88412ee7f304c034b89aa4e3ac"
-    sha256                               arm64_big_sur:  "3c66c5c8ecf6710e0f031d85224a6f78229f28d6ff6863aa6e09abd5bc5bc46c"
-    sha256                               sonoma:         "cc8cb2938787e88be2becc3b3139ab04bf69fe67404a0cf8ee93e7a89b0119b7"
-    sha256                               ventura:        "c4aaae83eeebf5b776831ac1962e6ad7b1044498943420cf7de069869c617be8"
-    sha256                               monterey:       "70c51cfc747978a3087ebd8d0d4e8b1371eaaf393196ce6aa2e28c290b0ba5d3"
-    sha256                               big_sur:        "161697f10ac184bfe28bfd4f7e404cabac9e340f55da781f53df9ed6e0fdf366"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e85f16a1624067635445e0a953b7bc6e1d280f89f2ae0ff5867930f36fe66ff4"
+    sha256                               arm64_sonoma:   "e2fa03986ee9681d660d3fbce55979544193aac0df4e0f9108200589d07c731c"
+    sha256                               arm64_ventura:  "9bd8d09b29673abcb70dbf21e871ff7dc52c9c708bd338ed85c5043a59c6cbb3"
+    sha256                               arm64_monterey: "577efb6f7fb6588ea2f1a750b6dc61f4e89198c253f880c2a79402524916e6f7"
+    sha256                               sonoma:         "b11de1e6783aa8db43dd0340e119b2d2e61db6d968fdb0d0ebbe7cc7b766bb7a"
+    sha256                               ventura:        "8f824f3c0fe784e48bf4ecf6e155d20bb235c2af04b3a51ebd878c0ff0b835b1"
+    sha256                               monterey:       "fb1fb05ddd91d83ff5ad0b768f6514bf7d7713302f3d83a2f43831ad3b4df07c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4c3732d821c15f60c20b2c26270ccdae6da64b2a5078039b675dc47efdfa5eb"
   end
 
   depends_on "quickjs" => :test

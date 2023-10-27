@@ -6,14 +6,14 @@ class Locust < Formula
   url "https://files.pythonhosted.org/packages/2f/f2/8228f690df243562edf03f5b42d2542f868903ebd123cdb97c47ab3e14c3/locust-2.17.0.tar.gz"
   sha256 "e50bb4647370c22d27010cd700cc87a519a0f25fef012efa7b42af68982b58f0"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c17b5d1279902a2e88ffc7837eefbaa8325cb6b9a6f803632d8e3d2beba295b0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "81e133ec641da34b1f00e3a5c2773360ef2c3b135a2012e06d16cda329ca9590"
-    sha256 cellar: :any_skip_relocation, ventura:        "40424ef5c43b4a4d9ef72d98ac8c05841810c4f21f0082d698d7c9e088f78a17"
-    sha256 cellar: :any_skip_relocation, monterey:       "b58b340e7f912a21c6d0ebd586dcdaaded4eb10c2c8ea544046c44421bf236a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7fbe51a80f8b72db6b16c5bbb7292909d5df72f2a6f881d2aca83bc886bfc6aa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "271b637e141eba8fa9e3b42747017adb8ebc3fff315385d0b394982c1a8bf584"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3c820e64809264a918b75a3b6a27e2d1187ebd679b3e1bd4b96f4aea8ffbbfca"
+    sha256 cellar: :any_skip_relocation, ventura:        "4f35ab138da0cb2cb6de525b39583f42f14db0425af7bcb3c89435ba331f2ecf"
+    sha256 cellar: :any_skip_relocation, monterey:       "ed13708a0ab138de6df064a8e05d462ce899211d952f75c482005c2d1f468ebb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "755dbe47aff65b4c04855a2f2f34104e2b3399fc6b1f4c5a1564730ca50a02ae"
   end
 
   depends_on "python-certifi"
@@ -35,8 +35,8 @@ class Locust < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
+    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
   end
 
   resource "configargparse" do
@@ -70,8 +70,8 @@ class Locust < Formula
   end
 
   resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/b6/02/47dbd5e1c9782e6d3f58187fa10789e308403f3fc3a490b3646b2bff6d9f/greenlet-3.0.0.tar.gz"
-    sha256 "19834e3f91f485442adc1ee440171ec5d9a4840a1f7bd5ed97833544719ce10b"
+    url "https://files.pythonhosted.org/packages/54/df/718c9b3e90edba70fa919bb3aaa5c3c8dabf3a8252ad1e93d33c348e5ca4/greenlet-3.0.1.tar.gz"
+    sha256 "816bd9488a94cba78d93e1abb58000e8266fa9cc2aa9ccdd6eb0696acb24005b"
   end
 
   resource "idna" do
@@ -115,8 +115,8 @@ class Locust < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/8c/47/75c7099c78dc207486e30cdb2b16059ca6d5c6cdcf9290f4621368bd06e4/werkzeug-3.0.0.tar.gz"
-    sha256 "3ffff4dcc32db52ef3cc94dff3000a3c2846890f3a5a51800a27b909c5e770f0"
+    url "https://files.pythonhosted.org/packages/0d/cc/ff1904eb5eb4b455e442834dabf9427331ac0fa02853bf83db817a7dd53d/werkzeug-3.0.1.tar.gz"
+    sha256 "507e811ecea72b18a404947aded4b3390e1db8f826b494d76550ef45bb3b1dcc"
   end
 
   resource "zope-event" do

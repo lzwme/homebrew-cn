@@ -3,20 +3,19 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/58/fd/b081937c283502be42efdf7ae4d7c7f8014c57bd74dbc7f9b629f44d22a2/pdm-2.9.3.tar.gz"
-  sha256 "0b1195b51e9630b5a0b063f27dfcb0120cb6ea284f1a4cd975a3a26f0856d253"
+  url "https://files.pythonhosted.org/packages/10/6a/51f833b6dd9f4e65416c6b7b15c5ae9d8232d0cf58fc9bfeeb8dfe1c1120/pdm-2.10.0.tar.gz"
+  sha256 "ce2249595af9f61b0926a0899632df49b1c711261e8056a4fae14b53f93d9193"
   license "MIT"
-  revision 2
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2f5c71000ed5def833a740b8f3632de2684aea14ee954db6ac98fa41808f8120"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b0a8ff6114502859de71ed23d2bfbdd161f63549c39a08597de1e33b33f2579f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "05bf57a1008a3b4c6e423d3d9b63ce164c4e2a32da8ff1e15145a39fd33c8cc7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5053517c0e8138dc46daca03a2581f4cd688e84fa904fb662ad1ffce4f208d57"
-    sha256 cellar: :any_skip_relocation, ventura:        "e13779230b10cf0010a02b0438d4f9d878cfa7a0b37bd907fb896aff613538ca"
-    sha256 cellar: :any_skip_relocation, monterey:       "4800c67360ffb6ca05d0744198047a135a404b867e03daa3ac3c98c6e8b78c5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "598bc81995ca61f2cbd0ff8eef91e6714edccd576c949fb00a93c86d8f150a0c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0eca1f094d3c94a3c679ffd95a691761d9cf2eb1dc94da52244b2b70c89d070f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "05f0ccbd8199615ff1030b1d532b43257b0e93c8f87b33c6749cec38062ad050"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a782ce706db5afdc4062f670cd7786cd05b0935c78b2d76367263b3a8022e961"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4d28f00f67d511d26e0609d28da45d55ea1813587356f8350355aca9f1fce94a"
+    sha256 cellar: :any_skip_relocation, ventura:        "654fecca993fdf7c8f16d02b6e493463286054fac928394c57105ba02eeafeda"
+    sha256 cellar: :any_skip_relocation, monterey:       "051dd585c4c016fe17274e8708db64b1fce2d165964d6b6a87d6ad3f40529ffd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "871e1d85462d31a58ef8a827acc8ca6878112ce2bd9d450b597d6ac1f9d2fb9f"
   end
 
   depends_on "pygments"
@@ -37,8 +36,8 @@ class Pdm < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
+    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
   end
 
   resource "findpython" do
@@ -97,8 +96,8 @@ class Pdm < Formula
   end
 
   resource "shellingham" do
-    url "https://files.pythonhosted.org/packages/74/31/6d2297b76389dd1b542962063675eb19bb9225421f278d9241da0c672739/shellingham-1.5.3.tar.gz"
-    sha256 "cb4a6fec583535bc6da17b647dd2330cf7ef30239e05d547d99ae3705fd0f7f8"
+    url "https://files.pythonhosted.org/packages/58/15/8b3609fd3830ef7b27b655beb4b4e9c62313a4e8da8c676e142cc210d58e/shellingham-1.5.4.tar.gz"
+    sha256 "8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de"
   end
 
   resource "tomlkit" do
@@ -112,8 +111,8 @@ class Pdm < Formula
   end
 
   resource "unearth" do
-    url "https://files.pythonhosted.org/packages/54/7d/dd8e93dfa689af5b131a7de9a4066c6c1e55d814295ab6d020c584672553/unearth-0.11.2.tar.gz"
-    sha256 "0eb5a8800fda0610e095fef768b48d47c858c9b8417a785af647046c2df5ed2b"
+    url "https://files.pythonhosted.org/packages/07/0f/17dce4ecf6e1dc736bf6545ef6183d0a07284ced5ca0b8a38563d7148e29/unearth-0.12.1.tar.gz"
+    sha256 "4caad941b60f51e50fdc109866234d407910aef77f1233aa1b6b5d168c7427ee"
   end
 
   resource "urllib3" do

@@ -3,19 +3,19 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/f4/ff/25d2069135013d49ee1d61073e28abf8cc7f8e8e0f4e354e91510810c04f/streamlink-6.3.0.tar.gz"
-  sha256 "3ef99688e8140f0d9899ed8aaf45ffea2fa21786f6782c19912366e9aae0caea"
+  url "https://files.pythonhosted.org/packages/32/66/388d91190e70f7d27d0c8beb6766065893bf19c5ec9e9d33f556eb18aafd/streamlink-6.3.1.tar.gz"
+  sha256 "93c0dfae5d1789ee7317f1a155d3ff44a19a8c3c866e5030bb8f547a45f55844"
   license "BSD-2-Clause"
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "51a574c74bb4db8a2e10c41bae002f5909fb7a6dac0a433fcc777a66b1b7cffa"
-    sha256 cellar: :any,                 arm64_ventura:  "b5c393d74751ce1fb5de9f57969482797f07169942888e7bc5a16293f1241001"
-    sha256 cellar: :any,                 arm64_monterey: "162e9cd607090d1a281222ded52f3eeb8e2c4ba584679312c20d2d96d72204f3"
-    sha256 cellar: :any,                 sonoma:         "84d00ca0a5a9db76d13718b77c8e5b708290080ada0b4b9b203abcfb10b3642a"
-    sha256 cellar: :any,                 ventura:        "d7dbd1ac2e708fa1d6242910a094cfccaeeadbdec56228b9f3e19e530bd51ec9"
-    sha256 cellar: :any,                 monterey:       "9462490ac448a3a1562abd23bb9e8eb555764d49ab92e75b56d311ddc703f311"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "063e920c54dd1d222073753cbcae57d6ba8a9e3e3fa855353245ac0553363e8e"
+    sha256 cellar: :any,                 arm64_sonoma:   "bef5fb11444c94e1f32acf5d2671f8ca3b1d2df824cd44d1871fa5299ef6be78"
+    sha256 cellar: :any,                 arm64_ventura:  "68d090a3093cdc74540aa0c617adc7a467c8d857929e0f386aa812605e324310"
+    sha256 cellar: :any,                 arm64_monterey: "2fc2dcf4b99e458bb996c8d48c89d1874fdf6375b81dcfa79de18b5118f618d4"
+    sha256 cellar: :any,                 sonoma:         "39cbab04dd4ffa344a567479f3da864b7d7f1bb10141f4528f746c9fefd45cc7"
+    sha256 cellar: :any,                 ventura:        "0c15efa8880b8e08a1bc11e410bdbd0e37590e0304b512cb1114d0205d17dabb"
+    sha256 cellar: :any,                 monterey:       "771d328fd0eecb61a068b3dfcb5b3652886d25a01214366a1b8f3b2c7c8cd207"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23c15502659e2350e9c155ab4c0da436d22da19e136b3e1253dafc29546ff19e"
   end
 
   depends_on "libxml2" # https://github.com/Homebrew/homebrew-core/issues/98468
@@ -62,8 +62,8 @@ class Streamlink < Formula
   end
 
   resource "outcome" do
-    url "https://files.pythonhosted.org/packages/64/1a/07e59b55f180506c72843d767a229c48084f5440005c646353742a4301bb/outcome-1.3.0.tar.gz"
-    sha256 "588ef4dc10b64e8df160d8d1310c44e1927129a66d6d2ef86845cef512c5f24c"
+    url "https://files.pythonhosted.org/packages/98/df/77698abfac98571e65ffeb0c1fba8ffd692ab8458d617a0eed7d9a8d38f2/outcome-1.3.0.post0.tar.gz"
+    sha256 "9dcf02e65f2971b80047b377468e72a268e15c0af3cf1238e6ff14f7f91143b8"
   end
 
   resource "pycountry" do

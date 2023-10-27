@@ -1,20 +1,18 @@
 class Cocoapods < Formula
   desc "Dependency manager for Cocoa projects"
   homepage "https://cocoapods.org/"
-  url "https://ghproxy.com/https://github.com/CocoaPods/CocoaPods/archive/refs/tags/1.13.0.tar.gz"
-  sha256 "acc1c331d9120e6a4fe73094f0748d5744d2445f01e266ad3b567d6d777158a9"
+  url "https://ghproxy.com/https://github.com/CocoaPods/CocoaPods/archive/refs/tags/1.14.1.tar.gz"
+  sha256 "d321ddc9cfd3eba729d2c91e063fd63c6174d027be3d2635bae3ed4b7e952af3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a3315bfd8fdd6273d30744ab2bb6fcc5a7316534f0969c7a8baf9dfb28c0c940"
-    sha256 cellar: :any,                 arm64_ventura:  "b3fe75543e09903f2f31b7a70de1812ff89d71422207a0e1d75c66711e5ad898"
-    sha256 cellar: :any,                 arm64_monterey: "66c7da5278b764cc39069da5744dfa3885f15a6e7f860bb629b21a6e26f49f17"
-    sha256 cellar: :any,                 arm64_big_sur:  "f6961f01c0b4816ef520343b8a63a78230870c3b7e68ae639dddf4c23d02a9d9"
-    sha256 cellar: :any,                 sonoma:         "99864a97a35c64e2edabce6def450eb82d120be291b4328d83cdf9e6e92db936"
-    sha256 cellar: :any,                 ventura:        "25dfd3c10dd4b166b6efc929afb2e5a8e4213872456d4dc14f44b36adf241931"
-    sha256 cellar: :any,                 monterey:       "2e8e355ea4f6febcf86aae62977cf95d6f5216136da2e6b6754500228a0adab8"
-    sha256 cellar: :any,                 big_sur:        "16f058a34ac1b09c983aa192c785a53222e04cad4edb43b69230ab7354aa8749"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb75b7690ff99d4258ba7a5a4b0c61b49169925989a4b67f89e1a530eb275015"
+    sha256 cellar: :any,                 arm64_sonoma:   "c7c336c4337c302d3cfb29e1bc02853e7cca6d3c3e3f815501a51b05e9e8ae3b"
+    sha256 cellar: :any,                 arm64_ventura:  "6f7f43a9ddc01c6457be1b7d8b4d380a8e0b1775a0781d1b3a77be98da003df4"
+    sha256 cellar: :any,                 arm64_monterey: "3c965c80304e989c5c0ecf02c96c7a0d524dcb62c207ffebb7234197ca0c52ea"
+    sha256 cellar: :any,                 sonoma:         "c573ccf8e2c6ecc8acc9aeaba3907704e4511ac4175b0b05b8f68d47381d7175"
+    sha256 cellar: :any,                 ventura:        "28b7f7c37866df7556a66c610d1ca66661a4a6206d77aa042048a30c9c93927a"
+    sha256 cellar: :any,                 monterey:       "c6c2b2bfd3832fbb34f18857dbba20e977c53b8074a828ead5b126638adab647"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6998759886d81fa09e58e362d58fa82c3e62d8adec941092f1b78f1553871ab9"
   end
 
   depends_on "pkg-config" => :build

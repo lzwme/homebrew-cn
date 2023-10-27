@@ -6,17 +6,16 @@ class Moto < Formula
   url "https://files.pythonhosted.org/packages/80/40/239f1834d73e92b5a071aa23373c5bb01ad7f97d4103c5d0ba5fabd5ea1e/moto-4.2.6.tar.gz"
   sha256 "ce0a55d7e756c59a5a4392c7097aa5ca53e00aa2dd3f7000093356be15e7aef9"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "575aef924a5386992fe6cdf3e478c57f75555d8380c83c34a85b61b7126b767a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c658c02a5ce3a8a35b15258a95944bdb597f550b71de16d6e4e20c7aeeb70b73"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5251a283e12c91ebdbaf1446d6cb13a678698dccd9b9225c073c770823d01892"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1f952938d5b95d33ffeff893cea785fd51a2bbb4b032f6d6deb2b516c980622e"
-    sha256 cellar: :any_skip_relocation, ventura:        "c49ea5424043b27a1a351fb707c767ec31279fc5e7377de0e57140ae97d5a72c"
-    sha256 cellar: :any_skip_relocation, monterey:       "8fc1e6e56f01e3dcd5def7c121486ce6b17d1ac2d50492ff32fd3cec2891a795"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea3328f552756f59f194a56814fc041c071b9cccc30dddd43e0a27bbc3326404"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f410f6873ba3ef8437cf65f995d201224babcdd5bd7875d41a6a6685a7ca23a4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c0d4f0354a2f343265d9ed61cae174ee18f811c57d202a331ffa55d3947dae1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f0650b54173c4abef003e858223a08aba31ffde64941da60b6f4e98f2f0d4247"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0d489d4a4ade2a74b0cdf41142773f035714e7bdce8c30df0913a27ee7197210"
+    sha256 cellar: :any_skip_relocation, ventura:        "e82b3595d02fcb0ca6641e0b516cab8b17b9f8d75bd0ca1e31efce6ff9ae7759"
+    sha256 cellar: :any_skip_relocation, monterey:       "542ccf654d8edb04e096c7fa60535d3dbc8df26ab3a15eda600c914e1229b9d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03fd6e6ad59d8849d45313857506f479b927bfe21b0687939126ad83d2edec56"
   end
 
   depends_on "cffi"
@@ -44,8 +43,8 @@ class Moto < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
+    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
   end
 
   resource "docker" do
@@ -174,8 +173,8 @@ class Moto < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/8c/47/75c7099c78dc207486e30cdb2b16059ca6d5c6cdcf9290f4621368bd06e4/werkzeug-3.0.0.tar.gz"
-    sha256 "3ffff4dcc32db52ef3cc94dff3000a3c2846890f3a5a51800a27b909c5e770f0"
+    url "https://files.pythonhosted.org/packages/0d/cc/ff1904eb5eb4b455e442834dabf9427331ac0fa02853bf83db817a7dd53d/werkzeug-3.0.1.tar.gz"
+    sha256 "507e811ecea72b18a404947aded4b3390e1db8f826b494d76550ef45bb3b1dcc"
   end
 
   resource "wrapt" do

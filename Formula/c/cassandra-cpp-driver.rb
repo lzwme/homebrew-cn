@@ -6,6 +6,11 @@ class CassandraCppDriver < Formula
   license "Apache-2.0"
   head "https://github.com/datastax/cpp-driver.git", branch: "master"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "2b60f48fe3cb1655bda7864a812512b0f869dfdc02ec1c26cbcd6c9e22199c98"
     sha256 cellar: :any,                 arm64_ventura:  "f2c0f84c604ce004d37cd749bb37340f647fd5abc51d0acbeef3e1bb29b44cba"

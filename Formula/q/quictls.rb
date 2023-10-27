@@ -1,9 +1,9 @@
 class Quictls < Formula
   desc "TLS/SSL and crypto library with QUIC APIs"
   homepage "https://github.com/quictls/openssl"
-  url "https://ghproxy.com/https://github.com/quictls/openssl/archive/refs/tags/openssl-3.1.2-quic1.tar.gz"
-  version "3.1.2-quic1"
-  sha256 "1651412ec136a693fcc84c77df664ca0dc0495eab2785afa2c7ba064a00fb1b6"
+  url "https://ghproxy.com/https://github.com/quictls/openssl/archive/refs/tags/openssl-3.1.4-quic1.tar.gz"
+  version "3.1.4-quic1"
+  sha256 "4bf990243d6aa39b8befa0c399834415842912ef67f88bef98e74dc619469618"
   license "Apache-2.0"
 
   livecheck do
@@ -12,15 +12,13 @@ class Quictls < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "e7573f3d557754e41b30e9db14bfef8ffdef2b9330b7e5b52ba1e6f443325b12"
-    sha256 arm64_ventura:  "4ffa722fb1756ea0c30d697a5dffc811e129062346e50e40ff976e31a0111745"
-    sha256 arm64_monterey: "1cd25250ea9d032dfd5dbc7f7118d9a287935541eadef9019fd3cbfec877bb33"
-    sha256 arm64_big_sur:  "b00e7991d2420650932db6f72d1d947ec9bffa1715df40ddd5107e90250b5166"
-    sha256 sonoma:         "4e8e48ef59b17d2c33e606a3ca6da3517f8083c9d341c78ebc58f36ae3f6dabe"
-    sha256 ventura:        "8eb411af2ce71bc976ba60aa1a8e35c450e6fbf3e2bdb7d30b2d4ac4a1d35baf"
-    sha256 monterey:       "5c3890ccf66c1177ea60ee444821a5592d5e6c372f85aa264ea69a508ea598ae"
-    sha256 big_sur:        "03714b1a508f5d85cc79239ce88566396a3a9e680a150aa4aa29b477aa7538bb"
-    sha256 x86_64_linux:   "7564b141c8b8ce127fda129677342c85c9ea0ba18b4768df2c24f5bdf8a1dc31"
+    sha256 arm64_sonoma:   "b935d3c20432ee4c30287c619ef15e7eb04c53375cfd910a0094c20edf0aa5e9"
+    sha256 arm64_ventura:  "f06a54674f3eeff0a011313c8cbf778315a2d555c1aaa9799801dcba4bab5b75"
+    sha256 arm64_monterey: "8072b1e4965fe8b271539f927a03d550758268e8841842f6a4b6298da5505140"
+    sha256 sonoma:         "28b6d5895cb7fbe3a9d09ec1908526f71b91a50754d825108d8b9a61b43ec2e2"
+    sha256 ventura:        "80fd4424f7bee7218208a8153218e2fc4493db774ec79bd2496dabd8d598bfda"
+    sha256 monterey:       "3b8c85997c5cfe55f90facef8aff805465e23c2c661b294fac88b74df6c344fe"
+    sha256 x86_64_linux:   "63edb370864adcb173929b83dc3e2a6d56386ada55f56f0657d41b611b4e3270"
   end
 
   keg_only "it conflicts with OpenSSL"

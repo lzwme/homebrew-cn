@@ -1,21 +1,19 @@
 class Gauge < Formula
   desc "Test automation tool that supports executable documentation"
   homepage "https://gauge.org"
-  url "https://ghproxy.com/https://github.com/getgauge/gauge/archive/refs/tags/v1.5.4.tar.gz"
-  sha256 "1cdb85854afdeee380afe70228184167be378e94151b2a9faf9a4a3ee35d0242"
+  url "https://ghproxy.com/https://github.com/getgauge/gauge/archive/refs/tags/v1.5.5.tar.gz"
+  sha256 "2273df0d3093bffaf90937dac60e2ebed5ca79009c8ce2ea6b6bf28861e7ddf3"
   license "Apache-2.0"
   head "https://github.com/getgauge/gauge.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "53dc445f7b4b27539579227805232a558bfeca76acaff3324f10f28dc6deb844"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "94ac8bfeda745226340c88ca6a60ba3c12e6ca778ff2e148251f338dcada7f9d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "036ff550d7bd1c69c5045f9fbdec439709b6bad455f419393e4ee747884c1ac8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4343ea4eeebe8f843303eeb925a9db8c64eb93cf57611a33ef86ee0521506f02"
-    sha256 cellar: :any_skip_relocation, sonoma:         "78b171de075f4c9d82c06accc86b4cb7f0e0a3d88f6fac1aa99ff0ef501930f3"
-    sha256 cellar: :any_skip_relocation, ventura:        "7ebc22023f0ac904b212a02cfa0e9b5183772fd0896bf24a65467b312193272d"
-    sha256 cellar: :any_skip_relocation, monterey:       "6767f283852c19e19c71ffccd59459c82c3b87e7eaab8a651dd241368bb86da1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4f61ec8e15a02458caace2cc942ea447b9749283d52403216429daab14f9107e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22268ff698cfd1ac4eed89097a1e9d1c95bc9fadc26e896dfe8b90c89478b1a4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ff5d5f1d6eb29587eb417d5b1641491b084ec89fb0f9d0b6f374b4e422a56925"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e210cb32ee830a49e2df310548636d671837673313e1c7166826782c2b8366f7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1cebff5daf347bbf8ddb9031b0095c92ab23a7f82ee23927f1fda8ba765961c6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0adcfc20ae2a0be1e88695f3d58083cce726bc4d2b70f8589c288ce8bc4489d3"
+    sha256 cellar: :any_skip_relocation, ventura:        "69ebdbf04a3d3c5a0b74acd37743fbbe4345ef61fd3e22d8ea20931ce4803137"
+    sha256 cellar: :any_skip_relocation, monterey:       "0c3b9c5fa35adb8ddcd2abcc3bcd8f7ba4dc323298ded1a32be4b281915d10b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c533c794b2926a7a47357f4da4fea940d060fb665f5f71c5928baaffd828b3f"
   end
 
   depends_on "go" => :build

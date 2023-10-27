@@ -14,6 +14,7 @@ Homebrew-homebrew-core/Formula/a/abcmidi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/abduco.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/abi-compliance-checker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/abi-dumper.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/abi3audit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/abnfgen.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/abook.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/abricate.rb, Homebrew/homebrew-core, 1
@@ -282,6 +283,7 @@ Homebrew-homebrew-core/Formula/a/aubio.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/audacious.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/audiofile.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/auditbeat.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/auditwheel.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/augeas.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/augustus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aurora.rb, Homebrew/homebrew-core, 1
@@ -2251,6 +2253,7 @@ Homebrew-homebrew-core/Formula/g/gotestwaf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gotify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goto.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gotop.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gotpm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gource.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/govc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/govendor.rb, Homebrew/homebrew-core, 1
@@ -4567,6 +4570,7 @@ Homebrew-homebrew-core/Formula/p/paket.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pam-reattach.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pam-u2f.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pam_yubico.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pan.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pandemics.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pandoc-crossref.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pandoc-include-code.rb, Homebrew/homebrew-core, 0
@@ -5525,6 +5529,7 @@ Homebrew-homebrew-core/Formula/s/sift.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/signal-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/signify-osx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sigrok-cli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/sigstore.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sile.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/silicon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/silk.rb, Homebrew/homebrew-core, 0
@@ -5952,7 +5957,6 @@ Homebrew-homebrew-core/Formula/t/tea.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tealdeer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/teapot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tectonic.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/tee-clc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/teem.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/teensy_loader_cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/teip.rb, Homebrew/homebrew-core, 1
@@ -6437,6 +6441,7 @@ Homebrew-homebrew-core/Formula/v/vulkan-loader.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vulkan-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vulkan-utility-libraries.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vulkan-validationlayers.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/vulsio-gost.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vultr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vulture.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vunnel.rb, Homebrew/homebrew-core, 0

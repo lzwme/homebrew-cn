@@ -7,11 +7,12 @@ class Fastfetch < Formula
   head "https://github.com/fastfetch-cli/fastfetch.git", branch: "dev"
 
   bottle do
-    sha256 arm64_ventura:  "a5fc25e4099442741cae3b692fcb7369e63644af643cbc90fbe69eaa81681ffd"
-    sha256 arm64_monterey: "68f6cbb04fc55eecb71eef91cf21ba168dc08845b46408b967fbb4d7a4e5f8b1"
-    sha256 ventura:        "31d45a55846a0bd82c579a20bdce02e4645dffe732057b35c3e6cb26839a3fa2"
-    sha256 monterey:       "2233b7765eee69b09cc81db2828b27901a91b1a7a39a96eea678f67e2697a5a9"
-    sha256 x86_64_linux:   "337d6e1d28a2da0678293b98c6f7345b65900ae87920640efe8193375f23d543"
+    rebuild 1
+    sha256 arm64_ventura:  "bd189ca57b44ba87ac06df473e0c98785c5f4edc8a1254d922473af88ca8dfc9"
+    sha256 arm64_monterey: "afcd666ca0461f9bcee7cc0e24bc89a43993003f6274495a015204ace0e0f7de"
+    sha256 ventura:        "c8bad3c2dcb88e22bce9adc58a1283d47693344c61fdb4668cb67618c6485fc1"
+    sha256 monterey:       "0196542deb225fa9ab34cf71ea902a26cebf7a52f6287b3c644247ffdef349f7"
+    sha256 x86_64_linux:   "d39f42b0374c789449107ed223974bf6f4dcd822fd64b805e30de6ba28350bf2"
   end
 
   depends_on "chafa" => :build
@@ -32,6 +33,7 @@ class Fastfetch < Formula
     depends_on "libxrandr" => :build
     depends_on "mesa" => :build
     depends_on "opencl-icd-loader" => :build
+    depends_on "pciutils" => :build
     depends_on "pulseaudio" => :build
     depends_on "rpm" => :build
     depends_on "wayland" => :build

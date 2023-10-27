@@ -1,20 +1,18 @@
 class Clifm < Formula
   desc "Command-line Interface File Manager"
   homepage "https://github.com/leo-arch/clifm"
-  url "https://ghproxy.com/https://github.com/leo-arch/clifm/archive/refs/tags/v1.14.6.tar.gz"
-  sha256 "f26b9ee1c41f02ec50dcae4108865b7f463d6dcf5dbd1f0271fbe1dbed93b2a1"
+  url "https://ghproxy.com/https://github.com/leo-arch/clifm/archive/refs/tags/v1.15.tar.gz"
+  sha256 "6248c8352f6fb77f9dc6bc0a3f84c06c881b82c08679f93ed8c32d6c208787b4"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "48a91f74710d9575f33e85673707a5270ae2e516d0f2fdd3c49cdd84ea14d8f8"
-    sha256 arm64_ventura:  "e3bd211f34fd99670724ed5b334f54fd141097e120c8f2431e5008fb218d1baa"
-    sha256 arm64_monterey: "2ab7f27b8d53efcf6c5a1449f3cf4d751fbb5d11557166b52968889b901682e9"
-    sha256 arm64_big_sur:  "ba5fcb45b1c66b9ccaa0a2dd68c799154af693c32f1fa2b6d02849065a89183a"
-    sha256 sonoma:         "3b364c581ff722c8af0788dbf6d06bee6264e259f87171697eebc2d7e422e4cb"
-    sha256 ventura:        "9ed28887dd4d23ec26247224ceec5332b8166da887412d5e4892154a5f3b3362"
-    sha256 monterey:       "a11b66a2b67c2306638c4db3cdb48087f5ec57e15d4e4be63047a8c55bb826e7"
-    sha256 big_sur:        "fa0149d54de9a375ff250ea2a0d8aca27ff276d7fcd7dfc04edb4521bac25832"
-    sha256 x86_64_linux:   "fa273ff811c036be867199414107b2410e1b2b4069e924e86946dd12fb538c5a"
+    sha256 arm64_sonoma:   "350c6589a28e1cac903a62cabfdec54484ba79efcd27e5c8add98060f1e678a5"
+    sha256 arm64_ventura:  "36721cdfa2e2310d4eda359153ec48755346c70a8f5f12c4678e094662a0cf96"
+    sha256 arm64_monterey: "bec307fd1face3a1b024893459b9543932f80f92f2c3a2e053c0313b2735afc6"
+    sha256 sonoma:         "f5a3f9906dafaf9144575937e973bce0f9be07e6829c48e30e0c45e7612c1b90"
+    sha256 ventura:        "75c1b7c464760a8ff321e19902c6d2cdc608d29e53eecd3ea97927aa51ac12c5"
+    sha256 monterey:       "749e8a1039edabd4ed43936663e2834f4a749f3ac3f50075ec195c3801d98c8a"
+    sha256 x86_64_linux:   "3e203de5896f74905b4f6dd29ccd3154118a0a654ad93266092dc0e65722c242"
   end
 
   depends_on "cmake" => :build

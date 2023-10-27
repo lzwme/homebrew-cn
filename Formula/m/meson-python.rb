@@ -1,19 +1,18 @@
 class MesonPython < Formula
   desc "Meson PEP 517 Python build backend"
   homepage "https://meson-python.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/38/a7/ddc350902a1b3b960db8d0e501f61468f925f994e0b4e6d696aeb6a75c00/meson_python-0.14.0.tar.gz"
-  sha256 "b96866690326544dfe452583753ac3f43313227e9fd9416701a8df90af212234"
+  url "https://files.pythonhosted.org/packages/a2/3b/276b596824a0820987fdcc7721618453b4f9a8305fe20b611a00ac3f948e/meson_python-0.15.0.tar.gz"
+  sha256 "fddb73eecd49e89c1c41c87937cd89c2d0b65a1c63ba28238681d4bd9484d26f"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "affd6140dfeed5e48c1b832d4a95607899f55f8785c20b6992ca65bc777371d7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6090f97a35767a42780d4860e0fa601632d664066c6fab915c84efa3027d8b06"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "34886da80ab2a00676808504e60979902ee1520f515f1fb0cca763ef4933c0b6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2d09f6699329347599b8eb814c41ee99180e2b28225edcebb859fe4b7341ef9c"
-    sha256 cellar: :any_skip_relocation, ventura:        "17bc9bc95d1af5d74906a1be9c0722104f3e01547151aee2041056eeed273869"
-    sha256 cellar: :any_skip_relocation, monterey:       "0f6b24ed5e0eb5b5fbefee6877e72bd25a752d4972f4ff760ec0a1948f9969fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db276acd242f90eed155d6fb961eded65a00a4d05b64006df6531d3f97f5e0f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "37c75fdb3518c8a4135277f559b2f07bb9412c1d716c021dc881788eedb1ff34"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "169a4cb0f1bad11010bedb9f5e1e850ad6139a002adc4fdc817166be3e725171"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5a7ed3c4aaa02596a64ff81e61103430289e86dfb28a22bb779de97210244a80"
+    sha256 cellar: :any_skip_relocation, sonoma:         "87c6d96b1853d619df476c79fd587ce1417dd88583284e1413841c03adbd770b"
+    sha256 cellar: :any_skip_relocation, ventura:        "19f02d977f3c967333551e5dc530ad085718c9891c408df295da67e67cc7abd9"
+    sha256 cellar: :any_skip_relocation, monterey:       "88d4388ebf27b9ca03580d365dd13fbba741d8bf4f65671b250a524c0c47e64f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "733bb899ea2139bab6a9b830304012b5ea78ab57fb096b460923c8eb867186b7"
   end
 
   depends_on "python-flit-core" => :build

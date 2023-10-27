@@ -1,8 +1,8 @@
 class NagaCli < Formula
   desc "Shader translation command-line tool"
   homepage "https://github.com/gfx-rs/naga"
-  url "https://ghproxy.com/https://github.com/gfx-rs/naga/archive/refs/tags/v0.13.0.tar.gz"
-  sha256 "126393320084c6bb5aa3916f9edc8de80824e9eb169db805432226eef4a56b15"
+  url "https://ghproxy.com/https://github.com/gfx-rs/naga/archive/refs/tags/v0.14.0.tar.gz"
+  sha256 "408128a255eba79763d9b7c5422d9c9d6a62019001f80f5ab28d34436c6189eb"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/gfx-rs/naga.git", branch: "master"
 
@@ -12,15 +12,13 @@ class NagaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9f8c781cb52c5d43b429791185af7dd0a81f9ac7f82bde32d76fd10ee3dd84db"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c543c9fdd14ecad2e76a70bf0f68e00d3250c0feb16c349cc41f874120aa7418"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "de5e76261c1506daac39a7e8a011e9d58032cceb476d965756d6f9bd9ae9c42d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8eba7c210d9e603094835c4260f7bf8c283feca150d31bb22c5299411f214a93"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8b840c3781a5deb0dee6e58ec5b75de2c07aadb399279f99130402f1f6e125d9"
-    sha256 cellar: :any_skip_relocation, ventura:        "b503d864cdcd12579cb770f37d680e5993ae8eb2f94a09bcea7f532cfa36a109"
-    sha256 cellar: :any_skip_relocation, monterey:       "ff9c1f73090bb5c15b22ebf24d1599ffb2fc2cd4446995c2d38f073102c8325c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "adf516821a40526a2dd8eefb680c202f50ccccf1c23423cdc7500edd1fd6bd5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "734bb3da70b49386352ad5161f8bfc402738c84aff4c7454d15ee1be414715b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "42e71c4549c315dc91834ce7d227b9d9f0415be3597df973fa34704270ac6ab8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0001ad2fdf8d515a98cb9e6bbcdcb6fd758adc93a0a38e326b36a0c812e05d1b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "08a1b293aaf4ba443bb0659b02392025643e86f6411cf5dfd9f5271392341e06"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d79d01969fb1f617cd58a776b79a6861d7e9b85e5a0cccbee21b5062c269181e"
+    sha256 cellar: :any_skip_relocation, ventura:        "afee30c8dbbdf7abceb6ecc479b65074747bbc15004a06059b9d421d503adfd3"
+    sha256 cellar: :any_skip_relocation, monterey:       "edbddf341fd6349827649272141b8855daba030c4daf579f0007b9e59fae6b60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7fb254beea5acaaccb1215137b30271235382aa388c4f2e1a4a73815d1af2039"
   end
 
   depends_on "rust" => :build
@@ -79,7 +77,7 @@ class NagaCli < Formula
 
     EOF
     assert_equal test_out_metal.read, <<~EOF
-      // language: metal2.0
+      // language: metal1.0
       #include <metal_stdlib>
       #include <simd/simd.h>
 

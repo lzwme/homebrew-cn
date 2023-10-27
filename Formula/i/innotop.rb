@@ -4,17 +4,15 @@ class Innotop < Formula
   url "https://ghproxy.com/https://github.com/innotop/innotop/archive/refs/tags/v1.13.0.tar.gz"
   sha256 "6ec91568e32bda3126661523d9917c7fbbd4b9f85db79224c01b2a740727a65c"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
-  revision 5
+  revision 6
   head "https://github.com/innotop/innotop.git"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b141f9ff15ff71a137932ce0d92782fe456f16da7797c8ea01e8d442327ef27"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d4435fa9d4eddf25fa938fd5a27997399340291b80b9fa0c51329ef895b6f877"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e3191f7604047d76c459f0c5d4f342a9a3613ddb315235f6c5d275224c1ecc55"
-    sha256 cellar: :any_skip_relocation, ventura:        "d7a2b580ecac088e1e4da1d76cb09bb41849a6b56e294e59502b64813d7045b4"
-    sha256 cellar: :any_skip_relocation, monterey:       "e2e4617476609c115395c72820fa66f54e8dcde160c081791ea0547312fa0d7c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f7ee202e37395f89fa8bbdda66f08e6087d324a764034d28d51bafecfae2e093"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab969696af775acad4be0288eb659937e1777d14693e766164994de8f9a86302"
+    sha256 cellar: :any,                 arm64_ventura:  "6ebac90fa631d9aaf0e8f388db5c7f2b5199884822792d1e8b4426e27544e969"
+    sha256 cellar: :any,                 arm64_monterey: "64e15253d62337db2f0ec1be9c7d33f9a67325df905d4a6490f24e41465b401f"
+    sha256 cellar: :any,                 ventura:        "0c8ff89b827aa1925b6aa607ea4ae518fc8c5b253742e33f801066b04432acac"
+    sha256 cellar: :any,                 monterey:       "a0a0f1e3750a70f93fca1e3b99bd0eca0893f2dc767acf0cb0e0f96733897e1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5331cfdb419c2669ad272183abccd8e622e182b863e156b2bf5a8634d84a28d"
   end
 
   depends_on "mysql-client"
@@ -23,8 +21,8 @@ class Innotop < Formula
   uses_from_macos "perl"
 
   resource "Devel::CheckLib" do
-    url "https://cpan.metacpan.org/authors/id/M/MA/MATTN/Devel-CheckLib-1.14.tar.gz"
-    sha256 "f21c5e299ad3ce0fdc0cb0f41378dca85a70e8d6c9a7599f0e56a957200ec294"
+    url "https://cpan.metacpan.org/authors/id/M/MA/MATTN/Devel-CheckLib-1.16.tar.gz"
+    sha256 "869d38c258e646dcef676609f0dd7ca90f085f56cf6fd7001b019a5d5b831fca"
   end
 
   resource "DBI" do
@@ -33,8 +31,8 @@ class Innotop < Formula
   end
 
   resource "DBD::mysql" do
-    url "https://cpan.metacpan.org/authors/id/D/DV/DVEEDEN/DBD-mysql-4.050.tar.gz"
-    sha256 "4f48541ff15a0a7405f76adc10f81627c33996fbf56c95c26c094444c0928d78"
+    url "https://cpan.metacpan.org/authors/id/D/DV/DVEEDEN/DBD-mysql-5.002.tar.gz"
+    sha256 "8dbf87c2b5b8eaf79cd16507cc07597caaf4af49bc521ec51c0ea275e8332e25"
   end
 
   resource "TermReadKey" do

@@ -1,18 +1,18 @@
 class Eza < Formula
   desc "Modern, maintained replacement for ls"
   homepage "https://github.com/eza-community/eza"
-  url "https://ghproxy.com/https://github.com/eza-community/eza/archive/refs/tags/v0.15.0.tar.gz"
-  sha256 "e4cce5a6f60e6b7405af911e3f168cf17a1e86c33c292a449c1c25c15052967a"
+  url "https://ghproxy.com/https://github.com/eza-community/eza/archive/refs/tags/v0.15.1.tar.gz"
+  sha256 "07981a535ed0eaddfe40c2d921fd996f53d1c8273ebf0a82faf8207d2ad1ee0a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "db1b7468d426348b224230c69747bfb76ff5bd71cfec23651a9a97007c65859f"
-    sha256 cellar: :any,                 arm64_ventura:  "d908a22deb5a47ebbffbc130e2afee57c61589bf184347cec6ed4fabe03b6d22"
-    sha256 cellar: :any,                 arm64_monterey: "02e8c7e1e87598e4087069ed8ad2a101510b3ddb5d1d71bd656bdfbabce90991"
-    sha256 cellar: :any,                 sonoma:         "4057583600690e2ad112b72ba0dd67eda9df1f36d4839543abd63a4b617131e6"
-    sha256 cellar: :any,                 ventura:        "f1dfe92922a2934a549c7e59c9cb9fa61229c312fe3c6acd3944edfdffa434f8"
-    sha256 cellar: :any,                 monterey:       "f261093b93fd0ea08203c96b963b673a75731ba3c9050efe8bf44385e4845d9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebd63a728275c49f197477ced7c6269a69b999949407ad3e3ab0f6ce41d03b7a"
+    sha256 cellar: :any,                 arm64_sonoma:   "44ca20ad0d8e23b304622783f15da22956763837314cc27a6e77f3cf39a71aff"
+    sha256 cellar: :any,                 arm64_ventura:  "64647d2bb723e939ab15d85354d350c40e56f3a2636c01e42cfc3dfd37116394"
+    sha256 cellar: :any,                 arm64_monterey: "59c60d92245cad5486098f0a549f2ac26c6521e31498a6797e6c0df41e3ed134"
+    sha256 cellar: :any,                 sonoma:         "45a58ce6f176852be4abfa3cb1289cf40fec61f2b077a48d20e27689a6ac059c"
+    sha256 cellar: :any,                 ventura:        "9e9a96184e3957ad989e65f4d6b05c0dc13fbe0bc201a209ff8e0d375980b975"
+    sha256 cellar: :any,                 monterey:       "4d65e458dba0d7e5ba36e11eef56844a6dc50ecd7509adb609a7b2b7e1c361fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2ef7b397d34a50fedd87f4178e1d109e601900479c68cfef33edb52b79d2777"
   end
 
   depends_on "pandoc" => :build

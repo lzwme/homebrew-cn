@@ -2,8 +2,8 @@ class Postgrest < Formula
   desc "Serves a fully RESTful API from any existing PostgreSQL database"
   homepage "https://github.com/PostgREST/postgrest"
   # TODO: Try to switch `ghc@9.2` to `ghc` when postgrest.cabal allows base>=4.17
-  url "https://ghproxy.com/https://github.com/PostgREST/postgrest/archive/refs/tags/v11.2.1.tar.gz"
-  sha256 "7f1dcd0a8e92363ea51504b21cf59860850a882e91607329066f21ccd9ec30e8"
+  url "https://ghproxy.com/https://github.com/PostgREST/postgrest/archive/refs/tags/v11.2.2.tar.gz"
+  sha256 "014db32718fd0c6c32a7bcf8331535ce8edcb412baeee697441668fa5bd50692"
   license "MIT"
   head "https://github.com/PostgREST/postgrest.git", branch: "main"
 
@@ -13,11 +13,11 @@ class Postgrest < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "65b1abaa8da850a5a7937b60619bde1a70aed838c67cb9c10aff1ec3696c1025"
-    sha256 cellar: :any,                 arm64_monterey: "0be15ca6bd357a48c80d4768a775084b5450d08d9e79ad256a8515cb3e2cdda3"
-    sha256 cellar: :any,                 ventura:        "a2213bb791e07aba4a50f2fccf2402329d048697ea335e3cbe9506ab4c78c9f7"
-    sha256 cellar: :any,                 monterey:       "d8d7f8ecae1534a5c0ea2a9e4462897f172c8bfa5ba672420907386e36a22ca1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a7ac2e26d621e8a7eb623061ca9c119a0b9d0e58e9cc57fcd58fc52210755269"
+    sha256 cellar: :any,                 arm64_ventura:  "e60ddc7e578bb77312a6879c12f0c36efc814ac16a7c6df320d660bf84080a78"
+    sha256 cellar: :any,                 arm64_monterey: "dc589bd9dcd0d2553dafc98a074190a614c3cc569529a0c4b634a99d7f46eab6"
+    sha256 cellar: :any,                 ventura:        "b5d08a2bfcafd672e490537dbde130e3544f6a1e3764e48902fce8a233c5587e"
+    sha256 cellar: :any,                 monterey:       "d97ab52764b6c38542932cfaa09d75a4616446f7a443d60ca76d0f73baea0f39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b6367318ec92f72ad30a202138ce9b2211eb3de43cb34ff3f98d56120a3c5f9"
   end
 
   depends_on "cabal-install" => :build

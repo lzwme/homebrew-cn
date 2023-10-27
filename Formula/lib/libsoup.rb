@@ -1,20 +1,18 @@
 class Libsoup < Formula
   desc "HTTP client/server library for GNOME"
   homepage "https://wiki.gnome.org/Projects/libsoup"
-  url "https://download.gnome.org/sources/libsoup/3.4/libsoup-3.4.3.tar.xz"
-  sha256 "b7f1bbaeeb43f5812daba3ee258a72e1b4b14c2fd91f4a1a75d4eea10dcf288f"
+  url "https://download.gnome.org/sources/libsoup/3.4/libsoup-3.4.4.tar.xz"
+  sha256 "291c67725f36ed90ea43efff25064b69c5a2d1981488477c05c481a3b4b0c5aa"
   license "LGPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "c3ade9e20bf3ea03797a318d07ef8fc8206c6b6847252068f97949e24b230828"
-    sha256 arm64_ventura:  "bbd63967797a9e2cb8e6bf2ded17e4ceca55ecdc2f0081b36e98ec7d4d9ea6be"
-    sha256 arm64_monterey: "fde5a1b7198294423a38b7dc3315f94a23e809f050aa2a2b78378f1a35de7684"
-    sha256 arm64_big_sur:  "1ed93a0e32c9a10583123991e26fb25d62bd6b6d695d8efd72f289bdd62655c4"
-    sha256 sonoma:         "11176fcfd4a989c00771a6fed73792aaf0af9fe6a42c17f09206fdbd461e074a"
-    sha256 ventura:        "49f11b9e9da31be090fd8d93cdc644fe481fe9de01fc4d8722f1774d8a195f19"
-    sha256 monterey:       "f88bb6ed28ef15bafdefaf8fd24cfb03ff7bac2509596d0f2b51adf15233cd12"
-    sha256 big_sur:        "a42d3dbe8e4a21e9e04c084f616dce7fcdbab0b313c5a602991228e55e7994f7"
-    sha256 x86_64_linux:   "189e4c090c0abc6f1db514725e0ca84a21894b88ff8293bf75f85d2452070a21"
+    sha256 arm64_sonoma:   "c4dc531ea8036eec8fd72a8113a9732c48463b648a1a386faceb347a12f35d95"
+    sha256 arm64_ventura:  "518bf9d6ce898df5024f8c6b987b58ad71c8bcdeec285d9469fd12a561412441"
+    sha256 arm64_monterey: "ed970d47202f2f621f1ee7565c6dfa82f7aeb25b492a6b133665cf2597baade7"
+    sha256 sonoma:         "53f7084a45d065c75bbe1e0bc21695a6dd0cc743984adff14b70f2a639e10a96"
+    sha256 ventura:        "e0b9b6e695e1772341d9d32c6a247e6c4cfa18bea3f1f6162ac4d3d6fb5cd2c8"
+    sha256 monterey:       "57ce39074439c5a3e4a14661ae4012ebdde7692e745101d8f03db76f33852248"
+    sha256 x86_64_linux:   "fec1b30444388241915ec32a660aa139d56084e5223abaaf123a884ccbf24e58"
   end
 
   depends_on "gobject-introspection" => :build

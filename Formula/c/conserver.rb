@@ -4,6 +4,7 @@ class Conserver < Formula
   url "https://ghproxy.com/https://github.com/bstansell/conserver/releases/download/v8.2.7/conserver-8.2.7.tar.gz"
   sha256 "0607f2147a4d384f1e677fbe4e6c68b66a3f015136b21bcf83ef9575985273d8"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,25 +12,22 @@ class Conserver < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "18063d8dc8777cfa74adbdcd2014c955f6961f9eaf1b9049a9a13946b1fe6203"
-    sha256 cellar: :any,                 arm64_ventura:  "8c85d9e24aeeb0f9e6ef4840f5927511db3179ad29fcccfc4643d8d17660402c"
-    sha256 cellar: :any,                 arm64_monterey: "cbe78e9a34501f728a0815e9ccf11c3a149b6e16fd902339ccf1680cebefcebe"
-    sha256 cellar: :any,                 arm64_big_sur:  "a01d04c6b9b777e20f96e1a05d32040d636b624c647f114c2093e04d117d11b3"
-    sha256 cellar: :any,                 sonoma:         "7d631907a0b42cd0c3988f9a61466237b6d65d71999862b756849bce69d08274"
-    sha256 cellar: :any,                 ventura:        "223d91506822b1d74d0bd1c0c8c2c4e7649ebe23d8ef2f5c431b76f84d7d975f"
-    sha256 cellar: :any,                 monterey:       "3184c7059ff555f33cfe4e8c6b06c58266bd6cfd17991493ec1edd2f79436091"
-    sha256 cellar: :any,                 big_sur:        "909d45ca31f883bc661141cb2fa173c2c218dd5cd9305ddb5737aac0081eb81d"
-    sha256 cellar: :any,                 catalina:       "73e2f36eedeb506e1730c6b5b55eea95899f69232f52e86796964ad61e81e856"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e543125304a0b15fb67371473346c48ebd27ce69377ce920ac8645f2f0cdea8"
+    sha256 cellar: :any,                 arm64_sonoma:   "6070a08f377c33c31c8aea3edabfdeb4c9bdf830c6d4a6586ee44b0444d47eda"
+    sha256 cellar: :any,                 arm64_ventura:  "74dc851dc7fbf69e4ef2dd38eb0d60f6741a16cb2a22d0d963d26aca9dc8c5ca"
+    sha256 cellar: :any,                 arm64_monterey: "52680e8e2d323b4cde6de75a037d04e729c4321b238135ac58a7565fced2bd5b"
+    sha256 cellar: :any,                 sonoma:         "ae11c71a862224b9c9543f9f7260ce46a4e99e217394686df0349ebe9535fd03"
+    sha256 cellar: :any,                 ventura:        "6a0660b32b3125db2e2606e0bcbe3c1bb20b736d992965d23a833e51c584eca9"
+    sha256 cellar: :any,                 monterey:       "17d0fb890c0930ee9754f6e9689b3b7f311172a163b43aa4d2722a25627257d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2df28d58e8e82327adc6b6a0b60bd10f6d92d17eb918668a72ceea68ae8f952b"
   end
 
   depends_on "openssl@3"
 
+  uses_from_macos "krb5"
   uses_from_macos "libxcrypt"
 
   def install
-    system "./configure", "--prefix=#{prefix}", "--with-openssl", "--with-ipv6"
+    system "./configure", "--prefix=#{prefix}", "--with-openssl", "--with-ipv6", "--with-gssapi", "--with-striprealm"
     system "make"
     system "make", "install"
   end

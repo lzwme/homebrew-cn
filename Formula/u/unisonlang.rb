@@ -19,8 +19,6 @@ class Unisonlang < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2fb2da2b4a3940763e250042884dc564a3dc527da842f3213e79be1aa6ef811"
   end
 
-  deprecate! date: "2023-10-24", because: "uses deprecated `elm`"
-
   depends_on "ghc@9.2" => :build
   depends_on "haskell-stack" => :build
   depends_on "node@18" => :build

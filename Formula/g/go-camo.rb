@@ -1,18 +1,18 @@
 class GoCamo < Formula
   desc "Secure image proxy server"
   homepage "https://github.com/cactus/go-camo"
-  url "https://ghproxy.com/https://github.com/cactus/go-camo/archive/refs/tags/v2.4.5.tar.gz"
-  sha256 "8a9e64266f6809a01df7a3089c311978004cd066c92ce96b7b09b786a1d27c97"
+  url "https://ghproxy.com/https://github.com/cactus/go-camo/archive/refs/tags/v2.4.6.tar.gz"
+  sha256 "bc0ac24978dabc9a37b191f9a0ef36a5078009d2d56f823c299caf89e1fa5d14"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3ffe16387678a0122ef9cbee954c16455a9e00168dd98bd07b956b47591dcd2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c3ffe16387678a0122ef9cbee954c16455a9e00168dd98bd07b956b47591dcd2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c3ffe16387678a0122ef9cbee954c16455a9e00168dd98bd07b956b47591dcd2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "88e4df7ba1c356cce6689ebbf363ffedbe32097d924998f6080ba772077c87c8"
-    sha256 cellar: :any_skip_relocation, ventura:        "88e4df7ba1c356cce6689ebbf363ffedbe32097d924998f6080ba772077c87c8"
-    sha256 cellar: :any_skip_relocation, monterey:       "88e4df7ba1c356cce6689ebbf363ffedbe32097d924998f6080ba772077c87c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01e2e715963ce5828e81737a84fdf28cbbb93a7033fbbac8d53dfc04fac53168"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9003c3addd7fababed200b5aa571d6fc5b7382a55a0ab4dd78412fbc3a496c0f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9003c3addd7fababed200b5aa571d6fc5b7382a55a0ab4dd78412fbc3a496c0f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9003c3addd7fababed200b5aa571d6fc5b7382a55a0ab4dd78412fbc3a496c0f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "205f258aed826a00465b4af35af2b8be4d32a29b76c8a6748604e019cd2089fd"
+    sha256 cellar: :any_skip_relocation, ventura:        "205f258aed826a00465b4af35af2b8be4d32a29b76c8a6748604e019cd2089fd"
+    sha256 cellar: :any_skip_relocation, monterey:       "205f258aed826a00465b4af35af2b8be4d32a29b76c8a6748604e019cd2089fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8d733b5a7c2f141518028c794f3a2b8c88c768316ddd439c0ff6fd46a90d8c7"
   end
 
   depends_on "go" => :build

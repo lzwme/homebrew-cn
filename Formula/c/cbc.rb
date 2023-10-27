@@ -1,8 +1,8 @@
 class Cbc < Formula
   desc "Mixed integer linear programming solver"
   homepage "https://github.com/coin-or/Cbc"
-  url "https://ghproxy.com/https://github.com/coin-or/Cbc/archive/refs/tags/releases/2.10.10.tar.gz"
-  sha256 "f394efecccc40a51bf79fba2c2af0bc92561f3e6b8b6e4c6e36d5e70986f734f"
+  url "https://ghproxy.com/https://github.com/coin-or/Cbc/archive/refs/tags/releases/2.10.11.tar.gz"
+  sha256 "1fb591dd88336fdaf096b8e42e46111e41671a5eb85d4ee36e45baff1678bd33"
   license "EPL-2.0"
 
   livecheck do
@@ -11,16 +11,13 @@ class Cbc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "4dad34d4dfb037ad4e8c9b190869231f791e2db66d155a1e36a33f71650ed0dd"
-    sha256 cellar: :any,                 arm64_ventura:  "32da450c124aa43693350de653d23fa411fabaed1ba97f8e94933573eb0e1357"
-    sha256 cellar: :any,                 arm64_monterey: "fd6a0b813968f05f2bad57997854b015544b05e1f85b311491e8a91ee740f52f"
-    sha256 cellar: :any,                 arm64_big_sur:  "196878c4018b81771965a8bda4708df33265570d1eaa8af8556188da729e8ecc"
-    sha256 cellar: :any,                 sonoma:         "6040daacde10ef830d3f7714a4fa12f1a499608dd5dab98d70a298b6cb2cbdf9"
-    sha256 cellar: :any,                 ventura:        "8aed7852512faccee24efcb137c5ca34dbb34a0623286ab197a85d5d45528686"
-    sha256 cellar: :any,                 monterey:       "f5e472945f58484d6ac18920aca10ed79e9dd64e41b98cfb5dec00e0e9def371"
-    sha256 cellar: :any,                 big_sur:        "a206dcdd7b939067d87e21689f2c55f97259ae2cff3941813de0ef7fa555d715"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bbfab36d64d93b418cf658d0f06a73eaff5a582124846b5740e9756a07f5a0d5"
+    sha256 cellar: :any,                 arm64_sonoma:   "20cf15d9f4b94bda6dec714179f0bf8f4b2041befd318d47b818a2aa8f5d6544"
+    sha256 cellar: :any,                 arm64_ventura:  "ab9a31d37001cccbbe991f9185c6cf579ea7c8358936838144090362f52d8f9c"
+    sha256 cellar: :any,                 arm64_monterey: "6bbaea4a01bd7fde7a1eb81ac1558c5a6532b091a3934b1a6452deb7e1057251"
+    sha256 cellar: :any,                 sonoma:         "92ac8263cb8afc9d316a8831a9ee0cf00c7af1443896abfd5daf2405b16728d1"
+    sha256 cellar: :any,                 ventura:        "7f7abb311e436c0f62792a072a6fd5ff716fb3aad1bfedf1adada1c86faf96e5"
+    sha256 cellar: :any,                 monterey:       "653963fc07b1b37d2256bc928620cf086469d1c4ad0122e1402c444f2c6f6bce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15e5afed407b3fea202f1c18c8637c15b1c909121ae22b2560e6521f182621d4"
   end
 
   depends_on "pkg-config" => :build
