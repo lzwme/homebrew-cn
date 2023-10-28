@@ -1,18 +1,18 @@
 class Cocoapods < Formula
   desc "Dependency manager for Cocoa projects"
   homepage "https://cocoapods.org/"
-  url "https://ghproxy.com/https://github.com/CocoaPods/CocoaPods/archive/refs/tags/1.14.1.tar.gz"
-  sha256 "d321ddc9cfd3eba729d2c91e063fd63c6174d027be3d2635bae3ed4b7e952af3"
+  url "https://ghproxy.com/https://github.com/CocoaPods/CocoaPods/archive/refs/tags/1.14.2.tar.gz"
+  sha256 "63dea3b89485ae417ba30712e1c898d8fb93d7bb14b14fe576d62b42bf8beb47"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c7c336c4337c302d3cfb29e1bc02853e7cca6d3c3e3f815501a51b05e9e8ae3b"
-    sha256 cellar: :any,                 arm64_ventura:  "6f7f43a9ddc01c6457be1b7d8b4d380a8e0b1775a0781d1b3a77be98da003df4"
-    sha256 cellar: :any,                 arm64_monterey: "3c965c80304e989c5c0ecf02c96c7a0d524dcb62c207ffebb7234197ca0c52ea"
-    sha256 cellar: :any,                 sonoma:         "c573ccf8e2c6ecc8acc9aeaba3907704e4511ac4175b0b05b8f68d47381d7175"
-    sha256 cellar: :any,                 ventura:        "28b7f7c37866df7556a66c610d1ca66661a4a6206d77aa042048a30c9c93927a"
-    sha256 cellar: :any,                 monterey:       "c6c2b2bfd3832fbb34f18857dbba20e977c53b8074a828ead5b126638adab647"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6998759886d81fa09e58e362d58fa82c3e62d8adec941092f1b78f1553871ab9"
+    sha256 cellar: :any,                 arm64_sonoma:   "3d97509030c7fe205db528e8a721779f996baee9178e648b5d896cca28de85bf"
+    sha256 cellar: :any,                 arm64_ventura:  "bb420dfa19b74875873bb8ae163c5ebde49c17f82c990ab19cb77103ce70fe7c"
+    sha256 cellar: :any,                 arm64_monterey: "033eac5fc9560e801edd519d11eccd91e54b7848fc035e3c6af8d5076195729a"
+    sha256 cellar: :any,                 sonoma:         "2406f691200c97053887c5659e3f1f52aa413904a7ee64d000f1862fabc956d8"
+    sha256 cellar: :any,                 ventura:        "40aafc727a110f10505ee6b7f4f6d051be72dc467b7c1d4a18f5cd09f608c060"
+    sha256 cellar: :any,                 monterey:       "f87f6f0a7a57fb9a8682f9a685bdf7f576d3223480ec90c4bc605f3007c8ddaf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13e24e0309f634de3154d601f9b65f5f915ada547c3f37340240f150bf89650d"
   end
 
   depends_on "pkg-config" => :build

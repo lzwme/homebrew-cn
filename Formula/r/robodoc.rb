@@ -11,15 +11,14 @@ class Robodoc < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "a279a45d7a1bfdcba730c3be5811f449807f7eb190990407e3f6a7218f5e6129"
-    sha256 arm64_monterey: "228f269b8f73406ae0386c01329c95ff14e4a395344e59f93abbfb079fc8cfa4"
-    sha256 arm64_big_sur:  "4dddc1a534d6c0e60601403b9272f84cb14ce2e665e6882b9609b6f7db27d981"
-    sha256 ventura:        "188ca55049ef7179545b9886787b5a68739d5034bb106eafb4ff1a19f7de8554"
-    sha256 monterey:       "429855c906311ee18428eaaa31cafc1c51384f1651fdb010c1678aa24a08b883"
-    sha256 big_sur:        "72127c3a10a58f3a4d1c5eaaae50c33944063d3fe10eb71a95f17c7c32635d44"
-    sha256 catalina:       "8c02f006c5ef0639855d20c284bdc9ce03f2e4ad11e6d4659a75f3080e815abf"
-    sha256 mojave:         "f6cf96a433e670f0e92079848d45062fc93da258c3bda2749464aedb9bffc1f9"
-    sha256 x86_64_linux:   "7664b1da3c0a3d949f7c77cc7307cd16b7ee8c1e6af275e9a4f4d2c229dc2125"
+    rebuild 1
+    sha256 arm64_sonoma:   "becedbbed4480801e9f68683d8b4d360699e4538b435a6f2da766b6142d02a31"
+    sha256 arm64_ventura:  "daac2544b28bf80b15e7e55dc680058443e3c34b8c0405e3e8bc14b2bc1da871"
+    sha256 arm64_monterey: "2b8577eec80c48eab7323c77dadb33617b8fde3ac834abbd8df2923cd4bc7748"
+    sha256 sonoma:         "be14e9b85a7065d98b327d0b20d8515f7dcf05a6a1d6fed73a56443e669cbd8d"
+    sha256 ventura:        "0043d16b63613205e223c9fe4128261d01204d961fd50a1b0945d69ccc763014"
+    sha256 monterey:       "4b153cb1a62f10633593b400965dc3bec1350c4aeda23c2f0f6174dc8c3ff2da"
+    sha256 x86_64_linux:   "960614e0d6ecfe4051cfe544814b4d4008222e2817a0d3146191a5ec7602d570"
   end
 
   head do
@@ -28,6 +27,12 @@ class Robodoc < Formula
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
+  end
+
+  # Fixes https://github.com/gumpu/ROBODoc/issues/22
+  patch do
+    url "https://github.com/lutzmad/ROBODoc/commit/0f8b35c42523810415bec70bb2200d2ecb41c82f.patch?full_index=1"
+    sha256 "5fa0e63deaf9eb0eb82e53047a684159d572c116b96fcf4aa61777b663eb156d"
   end
 
   def install

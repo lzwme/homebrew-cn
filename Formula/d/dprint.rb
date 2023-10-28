@@ -1,21 +1,19 @@
 class Dprint < Formula
   desc "Pluggable and configurable code formatting platform written in Rust"
   homepage "https://dprint.dev/"
-  url "https://ghproxy.com/https://github.com/dprint/dprint/archive/refs/tags/0.41.0.tar.gz"
-  sha256 "b456f0d77224338d6002188237f3cd2b977837e2d993143a5bfabc6e4fbf3837"
+  url "https://ghproxy.com/https://github.com/dprint/dprint/archive/refs/tags/0.42.3.tar.gz"
+  sha256 "1ad679659a56b02f334d2a05ccf9f07ca74140357932037c24fd4f64234e2671"
   license "MIT"
   head "https://github.com/dprint/dprint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b67fd3afe9ef749058722f5544841e76857db51acf96a790d97b9d0b1a58f3d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e718bb1c72719c07302b4cb4d5ea186a34d0b5b8291c5e40abdbbfe12d778593"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3f045aad454241c05173940444d008215915aa91ebdd2dd371a16d9ccb1fa51"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0e0820a996dc46629bf7e5c306d9c329d83c85273e242b889b9a3499e734cbea"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c95e136e7dd40d157faca12cbdfd291256ba4e2a111341a03bed196329ed46c5"
-    sha256 cellar: :any_skip_relocation, ventura:        "d5ae402e85f0fe44dcb13283d11730d59525f98a2553ea89d5177be99f999be3"
-    sha256 cellar: :any_skip_relocation, monterey:       "da9a6b73f45a988f6157359170a121a6dd0de323230682a30e5c5cee4855e6cd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d67a54402b56f6251f9f1565ab810f301854dc5cad038382f5dc7bc727f8a017"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2690fd1bab2945a46940573f4cdcabb0bb47256e8168dd76cddb92a4f93f7f4d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2e2cffe830e61079b1b20280be079cd9cfbddee73a6a7165ddcdb0b2d3e92934"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6eea379705f0d224b776b3edc133b72a1e59f6370eed4bdd22679d14be581e81"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c16f86aa6982b5846e0ba188dff0963d6f884fa89755fbef541fda40e7f1393"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ff8b1b245963dbe87bc0ff838ce281763a923fab46a1f7a6134cb4f5195735af"
+    sha256 cellar: :any_skip_relocation, ventura:        "1332f3525ba2d0d4c6e4b69a975444b4ec00c34da08a47c17c623d1e4a770aed"
+    sha256 cellar: :any_skip_relocation, monterey:       "b4510d376ab42d81256bfba02205862faf77765bdd543093de9d115efd3589a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e490d2eb73273aedfbdffc3d08f57bdb3493ad9dcefacf2fd180c8f0cdc72945"
   end
 
   depends_on "rust" => :build

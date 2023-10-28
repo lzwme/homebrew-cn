@@ -3,12 +3,18 @@ require "language/node"
 class Solhint < Formula
   desc "Linter for Solidity code"
   homepage "https://protofire.github.io/solhint/"
-  url "https://registry.npmjs.org/solhint/-/solhint-3.6.2.tgz"
-  sha256 "1bbe6a5146378320ee01b7f69fb6ff7cdd321644fdcde862dd82ba28bd9af4db"
+  url "https://registry.npmjs.org/solhint/-/solhint-4.0.0.tgz"
+  sha256 "5e1b1c7d22f43a399a172591393c09d34beaf69205f8b323384bc4ee5274de35"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6324c453a6c07d09909ce7a0ea302de752e6847de3cd25aafc62289f433df87c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "741495caac816a6784c3732b4308147015ebd39918a64f89a3d85b3348f3605a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "741495caac816a6784c3732b4308147015ebd39918a64f89a3d85b3348f3605a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "741495caac816a6784c3732b4308147015ebd39918a64f89a3d85b3348f3605a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "965b360eb9ce92b902f79297809f05343d889d4c1601371645761e7491f1c88c"
+    sha256 cellar: :any_skip_relocation, ventura:        "965b360eb9ce92b902f79297809f05343d889d4c1601371645761e7491f1c88c"
+    sha256 cellar: :any_skip_relocation, monterey:       "965b360eb9ce92b902f79297809f05343d889d4c1601371645761e7491f1c88c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "741495caac816a6784c3732b4308147015ebd39918a64f89a3d85b3348f3605a"
   end
 
   depends_on "node"

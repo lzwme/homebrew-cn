@@ -17,6 +17,8 @@ class GitAbsorb < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca37a602deefa46db849de95f898da60481a4d93095613493b789ffe4fd5c8c4"
   end
 
+  disable! date: "2024-04-01", because: "requires libgit2 v1.5, which is unmaintained"
+
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "libgit2@1.5"

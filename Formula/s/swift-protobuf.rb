@@ -1,19 +1,19 @@
 class SwiftProtobuf < Formula
   desc "Plugin and runtime library for using protobuf with Swift"
   homepage "https://github.com/apple/swift-protobuf"
-  url "https://ghproxy.com/https://github.com/apple/swift-protobuf/archive/refs/tags/1.24.0.tar.gz"
-  sha256 "9ddba59e6361d9fa8077149b8142861d04513f744b31aa2458f26338977a4d21"
+  url "https://ghproxy.com/https://github.com/apple/swift-protobuf/archive/refs/tags/1.25.0.tar.gz"
+  sha256 "f4b4bc7d5637dbdd9b65ddbc1d0351975c5dee92c6b38ecb74bd325c50540d4c"
   license "Apache-2.0"
   head "https://github.com/apple/swift-protobuf.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "197c9828ec145a354296428aa432614875e2c97e98a58a7d2649a678f4e7b652"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3e09b6bec9c4d7e8e1520a6575df83b9688e567061a92c0e56ced1f6a5388752"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c8f65d271940d82a8af8dafa4ca580eb98472f7780118796863590146e01c2e1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4170a59f8f6718f0a3cd20f0d07391e55824998121c35ed8f26495fc1990b266"
-    sha256 cellar: :any_skip_relocation, ventura:        "6bb7207fd61eee7c3dd5d1ec262baf32aed96fb7a02dd59694f248536ea8bb8e"
-    sha256 cellar: :any_skip_relocation, monterey:       "35442ca4141c56489cc8a29ccd01b5f21b73f89061ae2b77be0ee8d6aaca19f2"
-    sha256                               x86_64_linux:   "bd79275cc80c52b5dc888e1e9a193ce10e071e0384e7e5f1c6b203af5b00ba4b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "10cc899dfb1d549043c767b6ba031514da04dddf9bfda8f42cd72f5f33f4abe9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "878c6ec3e88e7a314868ddf01e1346d3aa66d354c327889917010e70f9ea83ac"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c2b3a97097eb0853783105d9a3aca36d4db890087238c8bab54f1995137b50a3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "76bd5d93e6ea46bf2ccbe81672f24b1536cca8de4c0818b3a972163a2c60649b"
+    sha256 cellar: :any_skip_relocation, ventura:        "d8717225519dffec172e77ca851f2831a67fcef4af32e2abd3d53bb366f0e044"
+    sha256 cellar: :any_skip_relocation, monterey:       "b96cd28dbf8f1b9d6b3e0eff2d666618af36b9eae915188a00558f398e3ea454"
+    sha256                               x86_64_linux:   "c41cf5728e32d394bcfa424f54b6712cb6ffa676f95ba918b5e00dd94f3ea96b"
   end
 
   depends_on xcode: ["8.3", :build]

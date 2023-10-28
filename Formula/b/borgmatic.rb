@@ -3,19 +3,18 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/72/07/d38dedf5d64f7213420a0353f7acd3439e12808c4abbbe145449962b0d75/borgmatic-1.8.3.tar.gz"
-  sha256 "980851fa10b0ca3f9879ddb6e2fc4c12839cff583e97a8d5c9cc5f2c908b25ff"
+  url "https://files.pythonhosted.org/packages/e0/5b/f95ca2c0aec6efcf835150695f21ef7b751f874e12902c23d11d3fdf50c1/borgmatic-1.8.4.tar.gz"
+  sha256 "6621058953fa0b42ea5d0cb7105fa86cb871a2bbdca4e0a8d9cf44f96f589c7b"
   license "GPL-3.0-or-later"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "17e8a059de3eea812a1d1ce0749e71f71ccc8c1fda50bb5d8137d51c590247d5"
-    sha256 cellar: :any,                 arm64_ventura:  "f980aba754ac216f48564274b450f170d7a2fa5af1fe5c2cca67ed541825c2d0"
-    sha256 cellar: :any,                 arm64_monterey: "9d14e28002b9e551802b2bcdd56b395eb072927abbcec677c4c9f7f7a7c221c0"
-    sha256 cellar: :any,                 sonoma:         "d1a305403c02aa37a84511fe723e93694e16c0fe2af65e0e46629be095caeadc"
-    sha256 cellar: :any,                 ventura:        "4ffc7b2c5c8956c1f1bf60a6c1180015196e26e048f3f43584993c4a2edfab00"
-    sha256 cellar: :any,                 monterey:       "2cd536a3116aa552a5d8c066b0da9e120469926a51d2766076224f42084b780e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2c499cf552a15cd30a4ff48fa2d99b6601a5e00fc5d41321598793f0d930082"
+    sha256 cellar: :any,                 arm64_sonoma:   "59be2f4c5a782157455d4ac32cd3027140e004198af432deb46ad98923485e1b"
+    sha256 cellar: :any,                 arm64_ventura:  "8d88653c0df0caf2bf7060b0507f941314a5d09561890ae2846fb19b4928ad57"
+    sha256 cellar: :any,                 arm64_monterey: "b0657f035d8df9d582acb2f7549be702fb138330947d85b2b8d9b18825f48d9c"
+    sha256 cellar: :any,                 sonoma:         "00dc3cc4ead2d4d2eb50d70bf8ee1e69b457bfe5cfa4f272c100a3765fb9023d"
+    sha256 cellar: :any,                 ventura:        "b8ca4d3883323bef2c2e7c4b6e937b6520776dbd4d86b70eb7cc76ee9ae52c9e"
+    sha256 cellar: :any,                 monterey:       "75ff7a6fc400fa060f8871d7e976685ee6a9d8a7ffd88c42d6ed4b79a421d97f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5bf8966e629c066f525b811c9afb03b525bc2ba362109262b22de62ff9b7c155"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -29,8 +28,8 @@ class Borgmatic < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
+    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
   end
 
   resource "colorama" do
@@ -69,8 +68,8 @@ class Borgmatic < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/de/7d/4f70a93fb0bdc3fb2e1cbd859702d70021ab6962b7d07bd854ac3313cb54/ruamel.yaml-0.17.35.tar.gz"
-    sha256 "801046a9caacb1b43acc118969b49b96b65e8847f29029563b29ac61d02db61b"
+    url "https://files.pythonhosted.org/packages/d1/d6/eb2833ccba5ea36f8f4de4bcfa0d1a91eb618f832d430b70e3086821f251/ruamel.yaml-0.17.40.tar.gz"
+    sha256 "6024b986f06765d482b5b07e086cc4b4cd05dd22ddcbc758fa23d54873cf313d"
   end
 
   resource "ruamel-yaml-clib" do

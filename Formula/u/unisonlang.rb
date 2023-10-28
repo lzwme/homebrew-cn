@@ -10,6 +10,11 @@ class Unisonlang < Formula
   license "MIT"
   head "https://github.com/unisonweb/unison.git", branch: "trunk"
 
+  livecheck do
+    url :stable
+    regex(%r{^release/(M\d+[a-z]*)$}i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "47a5327b2e9356d82a7a0c581f5be6d6269f8b8a10c0b7196696f1774a18e53b"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fbd8a5fe611dfd9f61e4110fbef149787fa705275512609f77b8fe40017fd234"

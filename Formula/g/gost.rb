@@ -30,6 +30,8 @@ class Gost < Formula
 
   depends_on "go@1.20" => :build
 
+  conflicts_with "vulsio-gost", because: "both install `gost` binaries"
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gost"
     prefix.install "README_en.md"

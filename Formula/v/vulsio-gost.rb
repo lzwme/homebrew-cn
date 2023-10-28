@@ -17,6 +17,8 @@ class VulsioGost < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "gost", because: "both install `gost` binaries"
+
   def install
     ldflags = %W[
       -s -w

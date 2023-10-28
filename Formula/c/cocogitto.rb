@@ -17,6 +17,8 @@ class Cocogitto < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e2db3d7839f814f183e7c2273c54672a1eeef2ab0ae22d49ad0d6c159413fef"
   end
 
+  disable! date: "2024-04-01", because: "requires libgit2 v1.5, which is unmaintained"
+
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   # To check for `libgit2` version:

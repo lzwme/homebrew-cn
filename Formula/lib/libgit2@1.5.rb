@@ -26,6 +26,8 @@ class Libgit2AT15 < Formula
 
   keg_only :versioned_formula
 
+  disable! date: "2024-04-01", because: :unmaintained
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "libssh2"
