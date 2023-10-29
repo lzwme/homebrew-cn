@@ -6,17 +6,17 @@ class Poetry < Formula
   url "https://files.pythonhosted.org/packages/c6/5f/f60c900299e05736900a732f079a306b762d1343e47d965862d140b6e550/poetry-1.6.1.tar.gz"
   sha256 "0ab9b1a592731cc8b252b8d6aaeea19c72cc0a109d7468b829ad57e6c48039d2"
   license "MIT"
-  revision 3
+  revision 4
   head "https://github.com/python-poetry/poetry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4cc649882840e5f31cc0f79db16053a7d365d51f0e5cd532812e2d57f6a546ce"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bfc5f670c405164833141a36d3ca3655b1a95428d71c9b3e2b2ea016f1bebb9b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0727f1c96df4573c9ff4fe389fd31e14a9989894a186aa15a4f32e56f6b6099b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2645104b97ee64a15300219daa5b1ca868177fb42cdf0feb9777e4cbc7624c93"
-    sha256 cellar: :any_skip_relocation, ventura:        "1d26c1200fafcc583ba6fb1da8e774f712367af48f23b49b4f3030eeed46b77f"
-    sha256 cellar: :any_skip_relocation, monterey:       "55111898d2cdea1673bbddb1de13cff8c74cb0f2ac5acd622f75768b24025f5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1305eb808c445fd603a57fe82b060541bf865a557047d64bec3f084ce68fd768"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "74f0e31ad70fea2033aa5485394700b9ceabb8ceda3d66254398a318348161a6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "559f5a1496dfd6c36ba18a2d9ccaf3486e9fbc89ce6faef12448e1da6d4498a9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9abfb3c523f960986b12ef14a690d0b7abb4f50135584747d55a3c675f78a31a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "09dfad4417e16aae298b1c91e853c64c8d61c17506ea544cc207c0b67c7a9a04"
+    sha256 cellar: :any_skip_relocation, ventura:        "14f166d37f90db738ee8670c62062a04201bf1049ec13f32c58c4c9a590633ff"
+    sha256 cellar: :any_skip_relocation, monterey:       "d8766b2707c30c455ce2909eb155e2be7033df69068356c772f75e9709182212"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4c81fa1ea32d11291b94bef50534c0cc03de9dc784cf652e9f42fcf2f999f42"
   end
 
   depends_on "cmake" => :build # for rapidfuzz
@@ -25,7 +25,7 @@ class Poetry < Formula
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "virtualenv"
 
   resource "attrs" do
@@ -161,7 +161,7 @@ class Poetry < Formula
   def install
     virtualenv_install_with_resources
 
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     paths = %w[keyring virtualenv].map { |p| Formula[p].opt_libexec/site_packages }
     (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
 

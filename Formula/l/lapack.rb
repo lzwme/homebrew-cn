@@ -6,6 +6,11 @@ class Lapack < Formula
   license "BSD-3-Clause"
   head "https://github.com/Reference-LAPACK/lapack.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256                               arm64_sonoma:   "939edf8fa10adf5140f91e6208a23a6466ea113d94eb4cec666dc3128ecf66bc"
     sha256 cellar: :any,                 arm64_ventura:  "f70b3ce19cf4a9fb328f71caba7b40bacbddda80e9ad196401bcb3e0cd9e4ad7"

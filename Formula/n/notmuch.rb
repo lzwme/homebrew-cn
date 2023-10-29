@@ -1,8 +1,8 @@
 class Notmuch < Formula
   desc "Thread-based email index, search, and tagging"
   homepage "https://notmuchmail.org/"
-  url "https://notmuchmail.org/releases/notmuch-0.38.tar.xz"
-  sha256 "a17901adbe43f481a6bf53c15a2a20268bc8dc7ad5ccf685a0d17c1456dbaf6e"
+  url "https://notmuchmail.org/releases/notmuch-0.38.1.tar.xz"
+  sha256 "c1418760d0e53efad1f35267eb99a50f8b7fa2855c1473e0a4c982b86f8ecdd4"
   license "GPL-3.0-or-later"
   head "https://git.notmuchmail.org/git/notmuch", using: :git, branch: "master"
 
@@ -12,15 +12,13 @@ class Notmuch < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8c3e06ef8b2aa40df2cce195a1f08e7d5060ac9b825573434e1112e3db9e98ed"
-    sha256 cellar: :any,                 arm64_ventura:  "dd9ce318f993e932a562519a047e9bb8509549c1c7baf23e51894fcf2ccc97dd"
-    sha256 cellar: :any,                 arm64_monterey: "d5e2f6c85fe241e503f3d427308476a453bcbbd573253d191a22ef6ac69a997d"
-    sha256 cellar: :any,                 arm64_big_sur:  "03b4bd37d3208ee63332ab72a06c9547e59a6ab8b07a87b7a7ba909292a22acb"
-    sha256 cellar: :any,                 sonoma:         "295713e495bd4bc744d5141621a58ecaa1c9aaacaff115298225099a1b04713a"
-    sha256 cellar: :any,                 ventura:        "1142fb66ea9482b075f399fa8214e39ef15b9afec690b5963a33af81e8a0fdbe"
-    sha256 cellar: :any,                 monterey:       "0e85ce4e585e7d4fb12853f2e3db4a8203e92849aaf5681e36cfb5134d3c7d04"
-    sha256 cellar: :any,                 big_sur:        "d14ee543acd0c0155ea53c33030fffcdbaaad7fb43c1755ff2a0a888c64f4958"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5461181e8ec5fda26da1a67f9a08c34dc3d598aa0a1b783824d021ddd7d9f260"
+    sha256 cellar: :any,                 arm64_sonoma:   "4af530a0937246affbc143d652be35ee2dbf54b9b352af88eb4ee5483d6d3135"
+    sha256 cellar: :any,                 arm64_ventura:  "4a2a250d7f0d65cbd859b1a357a27ceb9ac826405cd620f301b329b9982a385f"
+    sha256 cellar: :any,                 arm64_monterey: "bbb73975aeb66a3763bb5ffed408bc5b53414f63e23282b4b0b0444bbfec3314"
+    sha256 cellar: :any,                 sonoma:         "24390fb332a8bf7b61e5c849878984d49b8e8a814cfeba991228668bdc98946d"
+    sha256 cellar: :any,                 ventura:        "4b230b0402daef4ac2429217b3163cec65f3a5ab4e950b2f8779bc07d6188bae"
+    sha256 cellar: :any,                 monterey:       "281ef6e41b34e9b29bcad8becd0a80c7b4f02221ee4e18d5beb0428a08aba1d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff756e68ca27d66f4fd9a24df031ad4f1d630de92468be6cce4673fd105895bc"
   end
 
   depends_on "doxygen" => :build

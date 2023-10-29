@@ -6,17 +6,17 @@ class AwsGoogleAuth < Formula
   url "https://files.pythonhosted.org/packages/32/4c/3a1dd1781c9d3bb4a85921b3d3e6e32fc0f0bad61ace6a8e1bd1a59c5ba0/aws-google-auth-0.0.38.tar.gz"
   sha256 "7a044636df2f0ce6ceb01f8f57aba0b6a79ae58a91bef788b0ccc6474914e8ee"
   license "MIT"
-  revision 7
+  revision 8
   head "https://github.com/cevoaustralia/aws-google-auth.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d560600d4c1d176f0c20edad77d9b476a6ed20718e2fb7dcc2dee1558f139466"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "33d2fd9d2f04cb797787e21520aa1fc85ad0712324452b6e1e7b9e49291f5358"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4e59752fd1422a72cf033fa8babf94cbca6c8afc14eacb9efc1ce48059b93cfb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "70e127359f7bbaf6071194981adc7ab42e041551592df5ddea8f9785ecc44280"
-    sha256 cellar: :any_skip_relocation, ventura:        "d852a788396a350cf48b0c48c75e63af7cd617bc2eee3dd935eb97db0d8fc41f"
-    sha256 cellar: :any_skip_relocation, monterey:       "dbf5e9e9204d6558fd7508a64cd283aa77e3fbd93eb59ff81918a69f8614a0ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3002b47f0d7bf305389bae7e952f2c8cc2bfa6b3c0c675c50b02b782319a395"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cab988a28c7f4b89345c94e14817edce836d857c1c8b2626648ba628b79d28a2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f6600562da29af345ac983454c838c37263cfe6061aa59b2be95062704e974d7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e55b85436c2ef4bd7a15775d20723242e9fe82f546e56dad98489d4dd7d462df"
+    sha256 cellar: :any_skip_relocation, sonoma:         "da8e029980da2e1eec5b2025c16a9306c5671e3bc26d4c8fb303b43ef1969dec"
+    sha256 cellar: :any_skip_relocation, ventura:        "28818f276d339655e71fddcab24d87ef321d574715cf5fde5b54dac899d6643b"
+    sha256 cellar: :any_skip_relocation, monterey:       "69837678c48131b581457e65649bd10b9325601660731cfe1610a527eed166e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9b02955f390c24d9eddb0587169c8d6f5e95b6402e028ccdc3701c3011feb8a"
   end
 
   depends_on "keyring"
@@ -24,7 +24,7 @@ class AwsGoogleAuth < Formula
   depends_on "python-certifi"
   depends_on "python-lxml"
   depends_on "python-tabulate"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   uses_from_macos "libffi"
@@ -112,7 +112,7 @@ class AwsGoogleAuth < Formula
     virtualenv_install_with_resources
 
     # we depend on keyring, but that's a separate formula, so install a `.pth` file to link them
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     keyring = Formula["keyring"].opt_libexec
     (libexec/site_packages/"homebrew-keyring.pth").write keyring/site_packages
   end

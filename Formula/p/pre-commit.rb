@@ -6,19 +6,20 @@ class PreCommit < Formula
   url "https://files.pythonhosted.org/packages/04/b3/4ae08d21eb097162f5aad37f4585f8069a86402ed7f5362cc9ae097f9572/pre_commit-3.5.0.tar.gz"
   sha256 "5804465c675b659b0862f07907f96295d490822a450c4c40e747d0b1c6ebcb32"
   license "MIT"
+  revision 1
   head "https://github.com/pre-commit/pre-commit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "28ce6ba6dd59ec13eacac4a1b171c1ed099e9f127de5a8a6cee7f7dc9432d64f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d82241c3f04f0a03c29b49a719fe5ed64339c091198feda4bdd0b8eca68aa9e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c94e5d2a1c99ea66b776e5ac94e106bd671a11a0af4c10957d1b841da5adeaa5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "eb14ef95acfd9a43fcf2787af5bb9f45afc54828a403366ddf46c9b155f4b1cc"
-    sha256 cellar: :any_skip_relocation, ventura:        "c95137bd9a0f1b4416bedfabd26f91f0631b5373634fb6b777a32d31eaf39508"
-    sha256 cellar: :any_skip_relocation, monterey:       "d61c2f8e66bc52d521d0bbdd3beeeb6ea7fe1aae208a88c9e3331de0993e9cc9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7307ff518d8fbe92e6dba41c51e9de5abee076b54ec23dc00f7cf5d4da0f4370"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6043fea5396b85b6c44713a20e56aadc35b08aca67dc60aaff90dd4f7973dc1e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8e8c220af41070fe067f7096929011aa8b0318bd48450245b5be5a624c5ae653"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "33b665aafcdd7dccb01fb6853937ffd603d75a83955fb4f005c13c5e4bf69a72"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1fdcb07e81e5460be10fd7d929469944e2b3892ebf5deca241070144e9d09c8e"
+    sha256 cellar: :any_skip_relocation, ventura:        "7a7219a65f572b63fab969a7af7b4ea5009bca4b33173a4eb164834fcff2359b"
+    sha256 cellar: :any_skip_relocation, monterey:       "7f2b56bf97b7f05043ecda1f1e64e396e065ec2da9bd6d45b854f159b189dbdf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26aa23bf87c5a1f961b179a26e6ff7d9fb1b9d81ff8754c8c7858a4ccb4cba0a"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "virtualenv"
 
@@ -38,7 +39,7 @@ class PreCommit < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
@@ -50,14 +51,14 @@ class PreCommit < Formula
     virtualenv_install_with_resources
 
     # we depend on virtualenv, but that's a separate formula, so install a `.pth` file to link them
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     virtualenv = Formula["virtualenv"].opt_libexec
     (libexec/site_packages/"homebrew-virtualenv.pth").write virtualenv/site_packages
   end
 
   # Avoid relative paths
   def post_install
-    xy = Language::Python.major_minor_version Formula["python@3.11"].opt_bin/python3
+    xy = Language::Python.major_minor_version Formula["python@3.12"].opt_bin/python3
     dirs_to_fix = [libexec/"lib/python#{xy}"]
     dirs_to_fix << (libexec/"bin") if OS.linux?
     dirs_to_fix.each do |folder|

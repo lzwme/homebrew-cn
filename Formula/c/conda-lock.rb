@@ -6,15 +6,16 @@ class CondaLock < Formula
   url "https://files.pythonhosted.org/packages/45/a0/825b63c665c97c5c4bb0f7feaca238307eb2dcfe952a71f7aa9584bdfff2/conda_lock-2.4.2.tar.gz"
   sha256 "3367b83ae3a6884a4214786349daacc1a3eba601755e335cb6008216de9e55db"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ec0b83d52ea798c148dddf0e4176b11ed5db20308c8591fd60164ce70ee756ae"
-    sha256 cellar: :any,                 arm64_ventura:  "8da2a0fc0a2bcb9aef7bfa69a177a9cfadce2fa1acd360ef30d0f766193ee3db"
-    sha256 cellar: :any,                 arm64_monterey: "22e561d2378508a9f6b64b287feb12900991f1391165174eab841f0c086c2da5"
-    sha256 cellar: :any,                 sonoma:         "f8c686f1b799a72631d9f00bac47025561623b5e7e4d0000e50b93435ba386f9"
-    sha256 cellar: :any,                 ventura:        "7072b68669d18415809b976a57dabee5a1c115e1c4594d1b59145c9f272aa90b"
-    sha256 cellar: :any,                 monterey:       "ae8a6f78d927713b91e38523d2861b74605a1899a988bcdbe1ee4dbea092ee70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c5af223b514340c0d06a8f28b2fd5f1fe703e42a2e9d5102d3ea45f81e08832"
+    sha256 cellar: :any,                 arm64_sonoma:   "5026ec728e8b18d193e9e666646e2359482444b6635c13ae6c2d90615d2e5eed"
+    sha256 cellar: :any,                 arm64_ventura:  "78734320cf7871b3eae66863bb22a64453f1b4057317e3c142b0701d16af019d"
+    sha256 cellar: :any,                 arm64_monterey: "cc4e487f5b89c4e9bc3d5d309321266974ac775f928b1593eff2cb54f188b517"
+    sha256 cellar: :any,                 sonoma:         "e77c2a34aacc69cc0bcf2d550b8e6c9525a897e4c94257f81173c768f3fcfca0"
+    sha256 cellar: :any,                 ventura:        "33498ab1a7b1e54a7118f5a11b0e81919dca41a63f6a78b1ac815eae46232537"
+    sha256 cellar: :any,                 monterey:       "0037e22194b8df2c4c473b9cb82e18a521c99d78d73c4b8ac020ad9458cbf257"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11fd6873d1211fa3f5888ed4c1ae7bef51293a52e644cab6632b1aa1a250647f"
   end
 
   depends_on "rust" => :build # for pydantic
@@ -24,7 +25,7 @@ class CondaLock < Formula
   depends_on "python-certifi"
   depends_on "python-packaging"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
   depends_on "virtualenv"
@@ -183,7 +184,7 @@ class CondaLock < Formula
     virtualenv_install_with_resources
 
     # we depend on virtualenv, but that's a separate formula, so install a `.pth` file to link them
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     paths = %w[keyring virtualenv].map { |p| Formula[p].opt_libexec/site_packages }
     (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end
@@ -196,7 +197,7 @@ class CondaLock < Formula
       channels:
         - conda-forge
       dependencies:
-        - python=3.11
+        - python=3.12
     EOS
     system bin/"conda-lock", "-p", "osx-64", "-p", "osx-arm64"
     assert_path_exists testpath/"conda-lock.yml"

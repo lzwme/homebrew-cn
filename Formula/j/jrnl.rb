@@ -6,25 +6,23 @@ class Jrnl < Formula
   url "https://files.pythonhosted.org/packages/04/59/c15befa8f1a6ff159af29d86c1abc50135e4f8768afe5a1621930e21a0d8/jrnl-4.0.1.tar.gz"
   sha256 "f3b17c4b040af44fde053ae501832eb313f2373d1b3b1a82564a8214d223ede8"
   license "GPL-3.0-only"
-  revision 4
+  revision 5
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b133157df1c07005abc8be367a28fd5c70bc6da77246a481275fbd45e3cb37d9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e8023c19c8d51de9420a1405942d802bebfed64d402251de139ee4256187976"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "667dd5a5f42f90f7e80588a55add0880d6d4aebf7936398ac15520843f3dba6f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d2d08dbfd2571715f489833af6de0afbf0dc481fe206d514b78620de1ae0d8c5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1a1193de3baede8bbff9472ab95ad37bf7b6a606eb4a09bf092cf4596a39f0fa"
-    sha256 cellar: :any_skip_relocation, ventura:        "b87332491a22d044b9a7ce81498cea8f195509cd74c125c6a5ea31180a93b426"
-    sha256 cellar: :any_skip_relocation, monterey:       "8640a3b9d5449d449f5a675cd3874aa50b3f93247b1127a1ade0e73220b1af36"
-    sha256 cellar: :any_skip_relocation, big_sur:        "58ec0e20fa23d1ca8a66c39c525866282707b307ffbfcc7dd9e37844c6b2b8b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0e726aaefed69288f3cf9157f776a2af172d14a7d0f1643420a55184114462e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5b5711ff07f367d12ff9d5e0ef6c773620a5fb082795b49818da35c7bf2993cf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "60eda1430b934b9a5b726a545664779905530268066de3ae272ce76a8b115dda"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7f33cbb9662d5a6ac0ec1d74374e89e2d1e37f430a8f20ef3013271f679b8c22"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3fc47b56b684cb3c089eaa6a8b53e697e3e12317ea3e3e42f02aec03c3d722eb"
+    sha256 cellar: :any_skip_relocation, ventura:        "51fee7bd6710265124065109f92ce18824db36d73aa354fb3ad0d642a7257084"
+    sha256 cellar: :any_skip_relocation, monterey:       "1c09a222f0b63341103d543562f212884f97b04879139c3884c97bf397d7fc4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b05373117dd8c5108644f2d20c230dfe989b266fc9ad608a687ff0ed9438717b"
   end
 
   depends_on "cffi"
   depends_on "keyring"
   depends_on "pygments"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   uses_from_macos "expect" => :test
@@ -65,18 +63,18 @@ class Jrnl < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/ad/1a/94fe086875350afbd61795c3805e38ef085af466a695db605bcdd34b4c9c/rich-13.5.2.tar.gz"
-    sha256 "fb9d6c0a0f643c99eed3875b5377a184132ba9be4d61516a55273d3554d75a39"
+    url "https://files.pythonhosted.org/packages/b1/0e/e5aa3ab6857a16dadac7a970b2e1af21ddf23f03c99248db2c01082090a3/rich-13.6.0.tar.gz"
+    sha256 "5c14d22737e6d5084ef4771b62d5d4363165b403455a30a1c8ca39dc7b644bef"
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/63/dd/b4719a290e49015536bd0ab06ab13e3b468d8697bec6c2f668ac48b05661/ruamel.yaml-0.17.32.tar.gz"
-    sha256 "ec939063761914e14542972a5cba6d33c23b0859ab6342f61cf070cfc600efc2"
+    url "https://files.pythonhosted.org/packages/65/40/34c5fe13ef544ed241fb2dd621d0160c065652a0575137b5ad66e5b279c8/ruamel.yaml-0.18.2.tar.gz"
+    sha256 "9bce33f7a814cea4c29a9c62fe872d2363d6220b767891d956eacea8fa5e6fe8"
   end
 
   resource "ruamel-yaml-clib" do
-    url "https://files.pythonhosted.org/packages/d5/31/a3e6411947eb7a4f1c669f887e9e47d61a68f9d117f10c3c620296694a0b/ruamel.yaml.clib-0.2.7.tar.gz"
-    sha256 "1f08fd5a2bea9c4180db71678e850b995d2a5f4537be0e94557668cf0f5f9497"
+    url "https://files.pythonhosted.org/packages/46/ab/bab9eb1566cd16f060b54055dd39cf6a34bfa0240c53a7218c43e974295b/ruamel.yaml.clib-0.2.8.tar.gz"
+    sha256 "beb2e0404003de9a4cab9753a8805a8fe9320ee6673136ed7f04255fe60bb512"
   end
 
   resource "textwrap3" do
@@ -85,15 +83,19 @@ class Jrnl < Formula
   end
 
   resource "tzlocal" do
-    url "https://files.pythonhosted.org/packages/ee/f5/3e644f08771b242f7460438cdc0aaad4d1484c1f060f1e52f4738d342983/tzlocal-5.0.1.tar.gz"
-    sha256 "46eb99ad4bdb71f3f72b7d24f4267753e240944ecfc16f25d2719ba89827a803"
+    url "https://files.pythonhosted.org/packages/04/d3/c19d65ae67636fe63953b20c2e4a8ced4497ea232c43ff8d01db16de8dc0/tzlocal-5.2.tar.gz"
+    sha256 "8d399205578f1a9342816409cc1e46a93ebd5755e39ea2d85334bea911bf0e6e"
   end
+
+  # Support python 3.12. Patch is from upstream commit but does not apply.
+  # https://github.com/jrnl-org/jrnl/commit/cb69bb474c55aa013e7c816f01fe25c1224c94fe
+  patch :DATA
 
   def install
     virtualenv_install_with_resources
 
     # we depend on keyring, but that's a separate formula, so install a `.pth` file to link them
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     keyring = Formula["keyring"].opt_libexec
     (libexec/site_packages/"homebrew-keyring.pth").write keyring/site_packages
   end
@@ -132,3 +134,93 @@ class Jrnl < Formula
     assert_match "encrypt: true", (testpath/".config/jrnl/jrnl.yaml").read
   end
 end
+
+__END__
+diff --git a/jrnl/journals/Entry.py b/jrnl/journals/Entry.py
+index 5b35d7346..6c45303eb 100644
+--- a/jrnl/journals/Entry.py
++++ b/jrnl/journals/Entry.py
+@@ -7,10 +7,9 @@
+ import re
+ from typing import TYPE_CHECKING
+
+-import ansiwrap
+-
+ from jrnl.color import colorize
+ from jrnl.color import highlight_tags_with_background_color
++from jrnl.output import wrap_with_ansi_colors
+
+ if TYPE_CHECKING:
+     from .Journal import Journal
+@@ -129,7 +128,7 @@ def pprint(self, short: bool = False) -> str:
+                     columns = 79
+
+             # Color date / title and bold title
+-            title = ansiwrap.fill(
++            title = wrap_with_ansi_colors(
+                 date_str
+                 + " "
+                 + highlight_tags_with_background_color(
+@@ -143,35 +142,17 @@ def pprint(self, short: bool = False) -> str:
+             body = highlight_tags_with_background_color(
+                 self, self.body.rstrip(" \n"), self.journal.config["colors"]["body"]
+             )
+-            body_text = [
+-                colorize(
+-                    ansiwrap.fill(
+-                        line,
+-                        columns,
+-                        initial_indent=indent,
+-                        subsequent_indent=indent,
+-                        drop_whitespace=True,
+-                    ),
+-                    self.journal.config["colors"]["body"],
+-                )
+-                or indent
+-                for line in body.rstrip(" \n").splitlines()
+-            ]
+-
+-            # ansiwrap doesn't handle lines with only the "\n" character and some
+-            # ANSI escapes properly, so we have this hack here to make sure the
+-            # beginning of each line has the indent character and it's colored
+-            # properly. textwrap doesn't have this issue, however, it doesn't wrap
+-            # the strings properly as it counts ANSI escapes as literal characters.
+-            # TL;DR: I'm sorry.
+-            body = "\n".join(
+-                [
++
++            body = wrap_with_ansi_colors(body, columns - len(indent))
++            if indent:
++                # Without explicitly colorizing the indent character, it will lose its
++                # color after a tag appears.
++                body = "\n".join(
+                     colorize(indent, self.journal.config["colors"]["body"]) + line
+-                    if not ansiwrap.strip_color(line).startswith(indent)
+-                    else line
+-                    for line in body_text
+-                ]
+-            )
++                    for line in body.splitlines()
++                )
++
++            body = colorize(body, self.journal.config["colors"]["body"])
+         else:
+             title = (
+                 date_str
+diff --git a/jrnl/output.py b/jrnl/output.py
+index 2d7064cb3..0230244bc 100644
+--- a/jrnl/output.py
++++ b/jrnl/output.py
+@@ -131,3 +131,12 @@ def format_msg_text(msg: Message) -> Text:
+     text = textwrap.dedent(text)
+     text = text.strip()
+     return Text(text)
++
++
++def wrap_with_ansi_colors(text: str, width: int) -> str:
++    richtext = Text.from_ansi(text, no_wrap=False, tab_size=None)
++
++    console = Console(width=width)
++    with console.capture() as capture:
++        console.print(richtext, sep="", end="")
++    return capture.get()

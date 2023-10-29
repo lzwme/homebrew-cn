@@ -1,20 +1,18 @@
 class Enchant < Formula
   desc "Spellchecker wrapping library"
   homepage "https://abiword.github.io/enchant/"
-  url "https://ghproxy.com/https://github.com/AbiWord/enchant/releases/download/v2.6.1/enchant-2.6.1.tar.gz"
-  sha256 "f24e12469137ae1d03140bb9032a47a5947c36f4d1e2f12b929061005eb15279"
+  url "https://ghproxy.com/https://github.com/AbiWord/enchant/releases/download/v2.6.2/enchant-2.6.2.tar.gz"
+  sha256 "6686a728e56e760f8dee09a22f0fb53b46ee9dbe7d64cf9e5bb35a658bff7e1d"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "87cc14b7ea2f853a38808aef390503316d0ef66407d39665f01297e04dac837f"
-    sha256 arm64_ventura:  "823bbb3f99b42ad0166ad71fc633e618f1924fbb43d1649518c94f76495d97e4"
-    sha256 arm64_monterey: "2a0522e912ccfaf35d55e5dc78bbdd5de47f66338cc7f3c216f0c1b12ac61ed2"
-    sha256 arm64_big_sur:  "01a03e1177d717c4f72ed163a5e6ddf92840e6362ac9c55a7c6ab661eb3264de"
-    sha256 sonoma:         "886265261a046ce8c2382e21df1faf78558d3f5d9de53114d0dbcdaa5125ca8c"
-    sha256 ventura:        "bd7d7322789a19456eedc5a1faa312631bfb282e35711a499f3f00d235560d3e"
-    sha256 monterey:       "45ceea44ccb9cc1a2d85c437ca809b872abd14259ac46984affc7e2ea8df28a7"
-    sha256 big_sur:        "3d070c8586b3eaad737ceff6bef6dafcb3cac3ced5cbcf943936a1127bb3a593"
-    sha256 x86_64_linux:   "16077f5281c7eb511e359cc0cbb1d7c1c976eb345b4c4354e27066b7c39499f2"
+    sha256 arm64_sonoma:   "043c9e1569940eefb1cc045d2d4311d85139e84e85fd0f1fe03a7c5c6a1f4759"
+    sha256 arm64_ventura:  "919a2dd33e64b62cd1ade814946c98b67651db2d2abd35befb324dcc55bfbb38"
+    sha256 arm64_monterey: "f4f615e2436b80ed4294b07da9f177e83eff7b828772cfe063c4138e2b958be9"
+    sha256 sonoma:         "27a5981ef3d92012086f20472365be6889584fcd245057345cd33514045e7683"
+    sha256 ventura:        "4363aa246116d4341edee73b3efc98dbc1f503f9804d1ba352ff5c8fe3dad65b"
+    sha256 monterey:       "20f42f4b6b84893b7257321931338d3472a6b1cf71256648a97707cfbf39dbb9"
+    sha256 x86_64_linux:   "afa8a086ff6101d467fe18ffece1fa8592074f89a25d83aa5344c254201d0765"
   end
 
   depends_on "pkg-config" => :build

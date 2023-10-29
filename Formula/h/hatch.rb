@@ -6,24 +6,23 @@ class Hatch < Formula
   url "https://files.pythonhosted.org/packages/5a/ff/d0dc75f39798af1d3d2258c82c5fdeca2817cbfadba7c41e8fb7cf0db984/hatch-1.7.0.tar.gz"
   sha256 "7afc701fd5b33684a6650e1ecab8957e19685f824240ba7458dcacd66f90fb46"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f63c894aaf0aa08e1b1dbf95e1a65392b5ab683c325b70bf64dc1cadc28d637d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "566b9cd8194678656d5e01780c90d20073b73aed5eec035124fae20547d1e8f9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "69686b2f5f34c9e7aab654df6e9facb04e27a6fbed6c452d8c1016faec63f064"
-    sha256 cellar: :any_skip_relocation, sonoma:         "48d8e889236773c485801693dc79efae2c9f56cb867a854f56c5e1aebe93e09c"
-    sha256 cellar: :any_skip_relocation, ventura:        "331f3a7159272c99d5b9f37927727993e9e2dd4d09e82165fa1d4069b743ba94"
-    sha256 cellar: :any_skip_relocation, monterey:       "986f951ec4f3e4eaab5c323359e3e9a8d73f57e8d25ad029e87c8bdda93e15e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff140095bfa80fe6da51daceec9776af0ecc80dce1982e327dddd1ab43b204d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3245c662b844819134026f56be91a83c906dae3945a936aa3719188bf7b44b62"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89b70f5e40af3293e28dede82ba154fc29debeca358fd9deab3c073c435ba6b5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e63833b288653adaed9fee29a80d105bc977a655d4c7e0fe9cd15c3a751d07a6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8f7a28ea3525838aec52c69948a87305cddcdd2f465b32a8e6dbfa438b07f3ff"
+    sha256 cellar: :any_skip_relocation, ventura:        "bfd63b5a05ce4a5b43f7053cbd43b6d1b72dd81ec0209444d280a2f78ae44cdc"
+    sha256 cellar: :any_skip_relocation, monterey:       "9ba55e1a2dd7d2f75ad744806e8905c72641376d83e2bc1b1208cfb49c58ac48"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b687aa9c56945342a8e8adae06e677f3d9f85d3828c0d567db85c98a7b3bdea"
   end
 
   depends_on "keyring"
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "virtualenv"
 
   on_linux do
@@ -170,7 +169,7 @@ class Hatch < Formula
     virtualenv_install_with_resources
 
     # install a `.pth` file to link separate formulae
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     paths = %w[keyring virtualenv].map { |p| Formula[p].opt_libexec/site_packages }
     (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
 
@@ -183,11 +182,11 @@ class Hatch < Formula
     assert_predicate testpath/"homebrew/pyproject.toml", :exist?
 
     cd testpath/"homebrew" do
-      inreplace "pyproject.toml", "dependencies = []", "dependencies = ['requests==2.24.0']"
+      inreplace "pyproject.toml", "dependencies = []", "dependencies = ['requests==2.31.0']"
       system bin/"hatch", "config", "set", "dirs.env.virtual", ".venv"
       system bin/"hatch", "env", "create"
       output = shell_output("#{bin}/hatch env run -- python -c 'import requests;print(requests.__version__)'")
-      assert_equal "2.24.0", output.strip.lines.last
+      assert_equal "2.31.0", output.strip.lines.last
     end
   end
 end

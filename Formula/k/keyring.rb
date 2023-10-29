@@ -6,22 +6,21 @@ class Keyring < Formula
   url "https://files.pythonhosted.org/packages/14/c5/7a2a66489c66ee29562300ddc5be63636f70b4025a74df71466e62d929b1/keyring-24.2.0.tar.gz"
   sha256 "ca0746a19ec421219f4d713f848fa297a661a8a8c1504867e55bfb5e09091509"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c73093fadc6206f85c54b1b9f1a1282a1173816d53f246edf79191676ac52d63"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8797fe9a4034c91c3873dc33d676ec98807da9bcb43d3897ec255fe425438b73"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2e41ba025c0746f77a994a88969064a678e44ebf9d9b975f357420fde165adb0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ff4ebe77687fae1c26945d955c6e7d9c65c896613a68205a79eb695e2f91e6ef"
-    sha256 cellar: :any_skip_relocation, ventura:        "8f427c1011516d6f649a2ba09780c437a7a2a72e6b3c79333da37fcf5c5abb40"
-    sha256 cellar: :any_skip_relocation, monterey:       "f4013c6e4fac1dc350b9a605581be0b373ead2832262666ec303ef0d3e8d0d10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bbc0e9a9715811ba1c8a47aa79f7d66ce8e3f194a54c18347b17f76eecc5ce29"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bfb207b6f641c2ff7961319af501360fd9ee77247ca443bc29e31f896f6e4cfb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b527b69ed89f91958d64a6dd2b2b04eb520a89941b43f6d420d7e740fb89bc9f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d4513434e3f247a7106767ff10e5682495ee45af8644e5c0c644dad52f8a9c39"
+    sha256 cellar: :any_skip_relocation, sonoma:         "dded1608eb74f126ec6b78a26ab6b01818af3fc2842721efe34c15442a78a1d2"
+    sha256 cellar: :any_skip_relocation, ventura:        "051d8b236aeefb5a2e0be6a2184b2937a30353b673e57ad0905a60b43e99ec2e"
+    sha256 cellar: :any_skip_relocation, monterey:       "f15be5fcfb67ae863aa19f7adc2548e0b186cd7df4a44ad502ea7719db91b6e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "861e579bbfb8fc83eb38ee6c1685abd366e67ae65e5ceed7fe6f4b8226a82a00"
   end
 
   depends_on "cffi"
   depends_on "pycparser"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   on_linux do
     depends_on "python-cryptography"

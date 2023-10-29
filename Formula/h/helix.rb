@@ -7,13 +7,14 @@ class Helix < Formula
   head "https://github.com/helix-editor/helix.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "79e8d2d32a3c09461fc136013a103ce171aaf2921acbcf3345458701b1deebcb"
-    sha256 cellar: :any,                 arm64_ventura:  "4bec584df52681497f2688eb030f86d496cad35bbea288a856515ce714d9cab4"
-    sha256 cellar: :any,                 arm64_monterey: "ec2c5741cb351b122b3cb19b035f659e571fb1d5f92eb4b8fed0de9c92face21"
-    sha256 cellar: :any,                 sonoma:         "690626087dc09b6dba29b672c4d3c25f14b5c3909d86011577e533aa3d042b76"
-    sha256 cellar: :any,                 ventura:        "4f09069b920b2c508dd56805d8078842a187fa72d2bc44eb789281a0a76b6b2a"
-    sha256 cellar: :any,                 monterey:       "cb30ba51441b3430845b027bbc8df206aa0a0058d128ae06c5fbe52e06340ab8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13c651e189f210a3e6be381b6094daed308facebf228a60fa8abfb582cb184fb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "dee02487f9c105a18817a0f197ed19f325b42b2c40bf514ccdcd2655af8ce0be"
+    sha256 cellar: :any,                 arm64_ventura:  "356bd6411fc9c63961a53670d1ef037e6514199e2da7f323a5c61359263ca8c4"
+    sha256 cellar: :any,                 arm64_monterey: "c76e8f748ac49510a80cd2694bf64bbf5851ec88ec824e46f55557c92d337ec9"
+    sha256 cellar: :any,                 sonoma:         "660b93003f12d892ff04b52bb0e16e6b32bdd082f4a84d0ec4a08fe4a495ae41"
+    sha256 cellar: :any,                 ventura:        "bb7706f9cc929cec273b8dfcdf850a5af1c9319035d675e2134466d13b9e68db"
+    sha256 cellar: :any,                 monterey:       "2259dff225e211d439c4da877102883dc339843b5c1151c02eedc8b27d09a207"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "529cf06bde429542b516cdf91972d8204c1049eb9f414b79b906320bde68386f"
   end
 
   depends_on "rust" => :build
@@ -21,11 +22,10 @@ class Helix < Formula
   fails_with gcc: "5" # For C++17
 
   def install
-    system "cargo", "install", "-vv", *std_cargo_args(root: libexec, path: "helix-term")
+    ENV["HELIX_DEFAULT_RUNTIME"] = libexec/"runtime"
+    system "cargo", "install", "-vv", *std_cargo_args(path: "helix-term")
     rm_r "runtime/grammars/sources/"
     libexec.install "runtime"
-
-    (bin/"hx").write_env_script(libexec/"bin/hx", HELIX_RUNTIME: libexec/"runtime")
 
     bash_completion.install "contrib/completion/hx.bash" => "hx"
     fish_completion.install "contrib/completion/hx.fish"

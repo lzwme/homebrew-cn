@@ -6,23 +6,24 @@ class Pdm < Formula
   url "https://files.pythonhosted.org/packages/10/6a/51f833b6dd9f4e65416c6b7b15c5ae9d8232d0cf58fc9bfeeb8dfe1c1120/pdm-2.10.0.tar.gz"
   sha256 "ce2249595af9f61b0926a0899632df49b1c711261e8056a4fae14b53f93d9193"
   license "MIT"
+  revision 1
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0eca1f094d3c94a3c679ffd95a691761d9cf2eb1dc94da52244b2b70c89d070f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "05f0ccbd8199615ff1030b1d532b43257b0e93c8f87b33c6749cec38062ad050"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a782ce706db5afdc4062f670cd7786cd05b0935c78b2d76367263b3a8022e961"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4d28f00f67d511d26e0609d28da45d55ea1813587356f8350355aca9f1fce94a"
-    sha256 cellar: :any_skip_relocation, ventura:        "654fecca993fdf7c8f16d02b6e493463286054fac928394c57105ba02eeafeda"
-    sha256 cellar: :any_skip_relocation, monterey:       "051dd585c4c016fe17274e8708db64b1fce2d165964d6b6a87d6ad3f40529ffd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "871e1d85462d31a58ef8a827acc8ca6878112ce2bd9d450b597d6ac1f9d2fb9f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f18a087ed5a187059095ce4dd4622a327fe043d5768b99754f65d9275ec89c4f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ea0dbe866527868c3a4f485677d49adc85b7d26f29659bc84a29add727d163b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "95fce853c18c2a587a906c5a7d7f2636129134dba761a8a495522b6234170d61"
+    sha256 cellar: :any_skip_relocation, sonoma:         "eb400029840f815e6e5a8f90c46c6e526b335a871158d4cc3acba6aada8edc7a"
+    sha256 cellar: :any_skip_relocation, ventura:        "c2f54219686aee1e15f15b8d87a51d5e3aaa64c929b4dc2538fdd5ba15b34952"
+    sha256 cellar: :any_skip_relocation, monterey:       "0b32fccc5a8d59732cb1b7431f130099e6b33c403d6869bd22630e693f0a00e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e5525ff85c7ad068aa930ff0010fcbf1fc2d1af2ff875ae77b1d16d2f597a7c"
   end
 
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-packaging"
   depends_on "python-pyproject-hooks"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "virtualenv"
 
   resource "blinker" do
@@ -128,7 +129,7 @@ class Pdm < Formula
   def install
     virtualenv_install_with_resources
 
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     paths = %w[virtualenv].map { |p| Formula[p].opt_libexec/site_packages }
     (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
 
@@ -144,15 +145,14 @@ class Pdm < Formula
       license = {text = "MIT"}
 
       [build-system]
-      requires = ["pdm-pep517>=0.12.0"]
-      build-backend = "pdm.pep517.api"
-
+      requires = ["pdm-backend"]
+      build-backend = "pdm.backend"
     EOS
-    system bin/"pdm", "add", "requests==2.24.0"
-    assert_match "dependencies = [\n    \"requests==2.24.0\",\n]", (testpath/"pyproject.toml").read
+    system bin/"pdm", "add", "requests==2.31.0"
+    assert_match "dependencies = [\n    \"requests==2.31.0\",\n]", (testpath/"pyproject.toml").read
     assert_predicate testpath/"pdm.lock", :exist?
     assert_match "name = \"urllib3\"", (testpath/"pdm.lock").read
     output = shell_output("#{bin}/pdm run python -c 'import requests;print(requests.__version__)'")
-    assert_equal "2.24.0", output.strip
+    assert_equal "2.31.0", output.strip
   end
 end

@@ -6,23 +6,23 @@ class GimmeAwsCreds < Formula
   url "https://files.pythonhosted.org/packages/69/76/a6c0e4d65438ef3b95099c919388fbdc617d89afb40e024ec2c22665e3d5/gimme_aws_creds-2.7.2.tar.gz"
   sha256 "71526a98bd249bb3880cb2813817623d29ea880eaf260bbb5d1d366ccfae9474"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0fea2d9bec04b3b14dc5f4ee335671f69a1e25700ea938ba58c5748217c50e90"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c4a075450a000134c4b80e728b245637c2abb518f98ff81acb7d8bd1905a5969"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d92111b1933337ccc3bf0ee07977bedb019c95119c480ed247856a6193b163fe"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b94939165e68ddcf09a8f00cbdfecff4025bc87a2869b4a66b7562c5ad488ea4"
-    sha256 cellar: :any_skip_relocation, ventura:        "970cc8a4ee0b448f958b72474e7d506e6bc56a94c43d9f3d0097135e03bf2b04"
-    sha256 cellar: :any_skip_relocation, monterey:       "da42f53cebba384a9c5d5c5cf63eb246a7e8b7dc1431f3c18b59fab958370ad1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b36abe7e8b4a56c403f1b2f98b885219f97c5ea18f737cffc85044277ec3d592"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cd7822856a9d60a04c674feed9d635b21f7eb920df601ca64eddf2c87bb1de8c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3ed0a3baf25950338c8a0df941ca32f734cce6e13750ee287b3df73017a1aec6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "24d1ace0575ed8f58460473fa29b3916199c87f260352269cb9d090789359952"
+    sha256 cellar: :any_skip_relocation, sonoma:         "50622534050259bf9be48d50efbb7d8b3d9179331ab0ef0b7f06f74c76e04f19"
+    sha256 cellar: :any_skip_relocation, ventura:        "ac5014125a0baa142ba3e2d8e0d2dffa50b64166d28d13cd54cba0df765821ab"
+    sha256 cellar: :any_skip_relocation, monterey:       "84fa7c179e3f0bff28356d1cc6147025935e3400885ec4c3aad98981a1989aac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b02e4ad919378ab489c5bace400a90c68b9857f78d7393e6fd00b7a428bca59"
   end
 
   depends_on "cffi"
   depends_on "keyring"
   depends_on "python-certifi"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   uses_from_macos "libffi"
@@ -136,12 +136,12 @@ class GimmeAwsCreds < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.11")
+    venv = virtualenv_create(libexec, "python3.12")
     venv.pip_install resources.reject { |r| r.name.start_with?("pyobjc") && OS.linux? }
     venv.pip_install_and_link buildpath
 
     # we depend on virtualenv, but that's a separate formula, so install a `.pth` file to link them
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     paths = %w[keyring].map { |p| Formula[p].opt_libexec/site_packages }
     (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end

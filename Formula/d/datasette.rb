@@ -8,14 +8,14 @@ class Datasette < Formula
   head "https://github.com/simonw/datasette.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "452ddbe226535756e688bb135e6c9d8759ce92e0475fad097eac26f8570d49ca"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e5b428ea4dcad6f7c5e627e3159d67bf2e79b295d2123eeb38450fb45efd73e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b75cb9ada88cdb3905b32f3255a18ec9a9dffecbc7742e4e399aa5bdd170c465"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e07477c2d89aa6107926f3f22982abd50378934c0046f2874aa9d28abd6d8f3d"
-    sha256 cellar: :any_skip_relocation, ventura:        "a2729dbe249fe66a461a5b5e1182eaf6491acb887c36be21cf3deda72cb9d068"
-    sha256 cellar: :any_skip_relocation, monterey:       "f71a37609ad6578c51abf0122254ad2be375c665ecb1dd95e93998887f4ebd97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc6ee8cb9499e984535a064d3fa8e6fd70db27901ee56a30a31c694472423f13"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a22ed5570133bc8893433953c0b411b0f7d77d5d6de171832494a21069299331"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f804998d90b945c39e1d9d1597937033dbd285fc8d3165dd00f87b8fb7863f87"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "98697a74f3781fcdec9a183d0cdfda1d3ae8f3754e79c4cf2fab8c85ea647aba"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fe9465d0a251bd364182fd0bc1ee235a6ae558ebaec28350112e5aed7a2962e2"
+    sha256 cellar: :any_skip_relocation, ventura:        "15f5e0c931bbf92ceb4d9247236bd2483b261a439f7ae08148ff2399e3c3405a"
+    sha256 cellar: :any_skip_relocation, monterey:       "2256e32c0b6ac276b2749510abf7d25a7cc1943ccb569e031ceb28395f7ca454"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c1df409389a482e8a4fb9a0fb720cacfd4423216929b238b11b852aa516b4d9"
   end
 
   depends_on "python-certifi"
@@ -26,15 +26,11 @@ class Datasette < Formula
   depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
+  depends_on "uvicorn"
 
   resource "aiofiles" do
     url "https://files.pythonhosted.org/packages/af/41/cfed10bc64d774f497a86e5ede9248e1d062db675504b41c320954d99641/aiofiles-23.2.1.tar.gz"
     sha256 "84ec2218d8419404abcb9f0c02df3f34c6e0a68ed41072acfb1cef5cbc29051a"
-  end
-
-  resource "anyio" do
-    url "https://files.pythonhosted.org/packages/74/17/5075225ee1abbb93cd7fc30a2d343c6a3f5f71cf388f14768a7a38256581/anyio-4.0.0.tar.gz"
-    sha256 "f7ed51751b2c2add651e5747c891b47e26d2a21be5d32d9311dfe9692f3e5d7a"
   end
 
   resource "asgi-csrf" do
@@ -52,11 +48,6 @@ class Datasette < Formula
     sha256 "eb3f3c99ec0d456ca6cd2a7f08f7d4e91771bef51b01bdd9580cc6450fe1251e"
   end
 
-  resource "h11" do
-    url "https://files.pythonhosted.org/packages/f5/38/3af3d3633a34a3316095b39c8e8fb4853a28a536e55d347bd8d8e9a14b03/h11-0.14.0.tar.gz"
-    sha256 "8f19fbbe99e72420ff35c00b27a34cb9937e902a8b810e2c88300c6f0a3b699d"
-  end
-
   resource "httpcore" do
     url "https://files.pythonhosted.org/packages/23/b6/d71729dc09e5a5b361b655ae18e85fbf97e5e27a076c4f9b4606b4eb0340/httpcore-0.18.0.tar.gz"
     sha256 "13b5e5cd1dca1a6636a6aaea212b19f4f85cd88c366a2b82304181b769aab3c9"
@@ -70,11 +61,6 @@ class Datasette < Formula
   resource "hupper" do
     url "https://files.pythonhosted.org/packages/42/3d/70bef845298bb4746b94418efde81bcfe0fad479169c2e9649f95630bfa7/hupper-1.12.tar.gz"
     sha256 "18b1653d9832c9f8e7d3401986c7e7af2ae6783616be0bc406bfe0b14134a5c6"
-  end
-
-  resource "idna" do
-    url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
-    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
   end
 
   resource "itsdangerous" do
@@ -112,18 +98,12 @@ class Datasette < Formula
     sha256 "e9925a80bb668529f1b67c7fdb0a5dacdd7cbfc6fb0bff3ea443fe22bdd62132"
   end
 
-  resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/cd/50/d49c388cae4ec10e8109b1b833fd265511840706808576df3ada99ecb0ac/sniffio-1.3.0.tar.gz"
-    sha256 "e60305c5e5d314f5389259b7f22aaa33d8f7dee49763119234af3755c55b9101"
-  end
-
-  resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/4c/b3/aa7eb8367959623eef0527f876e371f1ac5770a3b31d3d6db34337b795e6/uvicorn-0.23.2.tar.gz"
-    sha256 "4d3cc12d7727ba72b64d12d3cc7743124074c0a69f7b201512fc50c3e3f1569a"
-  end
-
   def install
     virtualenv_install_with_resources
+
+    site_packages = Language::Python.site_packages("python3.12")
+    paths = %w[uvicorn].map { |p| Formula[p].opt_libexec/site_packages }
+    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
 
     generate_completions_from_executable(bin/"datasette", shells: [:fish, :zsh], shell_parameter_format: :click)
   end

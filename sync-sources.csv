@@ -1081,6 +1081,7 @@ Homebrew-homebrew-core/Formula/c/crowdin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cruft.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/crun.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crunch.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/crunchy-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crush-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cryfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cryptol.rb, Homebrew/homebrew-core, 0
@@ -2808,6 +2809,7 @@ Homebrew-homebrew-core/Formula/j/jpeg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jpeginfo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jpegoptim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jpegrescan.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/j/jprq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jr.rb, Homebrew/homebrew-core, 1
@@ -6317,6 +6319,7 @@ Homebrew-homebrew-core/Formula/u/uutils-coreutils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uutils-findutils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uuu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uvg266.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/u/uvicorn.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/uwsgi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/v.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/v2ray-plugin.rb, Homebrew/homebrew-core, 1
@@ -6531,6 +6534,7 @@ Homebrew-homebrew-core/Formula/w/whalebrew.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/whatmask.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/whatmp3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/when.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/whisper-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/whistle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/whois.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/widelands.rb, Homebrew/homebrew-core, 1
@@ -11755,6 +11759,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-gandhi-sans.rb, Homebrew/homebrew-cask-f
 Homebrew-homebrew-cask-fonts/Casks/font-gantari.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-gasoek-one.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-gayathri.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-geist-mono.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-gelasio.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-gemunu-libre.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-genjyuugothic-l.rb, Homebrew/homebrew-cask-fonts, 0

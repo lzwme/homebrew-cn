@@ -9,13 +9,14 @@ class Checkov < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8c211856fc0176e3f5c65010cacd5c5affce5aa4f3b378dddd2b6dcf0a34adae"
-    sha256 cellar: :any,                 arm64_ventura:  "99e174e2aed8704df7de797b854dabbeef0db08b3660ed7a06c5407e7c8234fb"
-    sha256 cellar: :any,                 arm64_monterey: "506f46fdc1232af7cd991ef2cfd217cff31b9a64ca67b63b515c22f4308e25e8"
-    sha256 cellar: :any,                 sonoma:         "ce125c61d17d0e9cb930ddd9c355e9cc4d2ff6bcad172a348d7c1eca8d98753d"
-    sha256 cellar: :any,                 ventura:        "9ea0db5f61a07e61a7a4037ce283407ea0233f476bf1b3381cad3d6bf93c7a4e"
-    sha256 cellar: :any,                 monterey:       "a3d872bbd76f0f321fb1dea0f9bfd2d9af32f7150efc922ee008c318bc590a8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "225bc5ea697c30bad693ff7336a1011ed9cbd88c118ef5016f6a07749a37609f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "7a0c5c69d0f68ce8608ae0156ae91b755206454a12d47da1c7b98eedde317e9c"
+    sha256 cellar: :any,                 arm64_ventura:  "0d61bdfeee592399366b26b866efb0d384c9418181b7c02a4c64eed6066e0081"
+    sha256 cellar: :any,                 arm64_monterey: "eb91043039bd7bdb9167130b9ec41a9334459a76be1fcd3e3c9633a68c4b6cc2"
+    sha256 cellar: :any,                 sonoma:         "722155e71b3bcd9dbec8aaabb9d1b30c0e4f1504817b50d04815576b61c180b1"
+    sha256 cellar: :any,                 ventura:        "1339453c4ea2c92ea3def57c79ebb6ad492d9e74a2831b50c53339c9cebf45f2"
+    sha256 cellar: :any,                 monterey:       "92e10fd9d30a137457d844fff357f8c765d3c237a84f1a2fe0b36c465aa21d0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c6fd1678db69a5c0d133d45d9eac95517b7b0c05b45e06201d48613def753aa"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -444,6 +445,13 @@ class Checkov < Formula
   resource "zipp" do
     url "https://files.pythonhosted.org/packages/58/03/dd5ccf4e06dec9537ecba8fcc67bbd4ea48a2791773e469e73f94c3ba9a6/zipp-3.17.0.tar.gz"
     sha256 "84e64a1c28cf7e91ed2078bb8cc8c259cb19b76942096c8d7b84947690cabaf0"
+  end
+
+  # Fix SyntaxWarning for python 3.12
+  # https://github.com/bridgecrewio/checkov/pull/5699
+  patch do
+    url "https://github.com/bridgecrewio/checkov/commit/1950691d37415706697b0d59ac5f6986f035e50d.patch?full_index=1"
+    sha256 "d0f379b481145f836005e786a03128e6d5f34fb952e80384d1a3f4f030c5cae1"
   end
 
   def install

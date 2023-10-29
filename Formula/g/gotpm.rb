@@ -1,18 +1,18 @@
 class Gotpm < Formula
   desc "CLI for using TPM 2.0"
   homepage "https://github.com/google/go-tpm-tools"
-  url "https://ghproxy.com/https://github.com/google/go-tpm-tools/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "cc59da0b2a302b533af5198a71ffeb3aa939c9ae4f65337afb5effc681dd599c"
+  url "https://ghproxy.com/https://github.com/google/go-tpm-tools/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "efaa8fcc40b9552ee5f2a83c66e32980e611e68be5a9dc8ecbdc160f93d06fa8"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a591b4e52dd9ce272ac288d1fafd1932e166080b385bedea16ec458af4bea65"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ec772914b8fd3ab44610f7c49016b315803f88e199ec5c7c7f54ebad5cb087e6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bbff2adec56c152308477c0423b87f6f9a1d5975e454851cf6248e8718afa1d8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0d34488061e28076d6e69af33156a67bbafb51c87ee7a998858c162c25f66d14"
-    sha256 cellar: :any_skip_relocation, ventura:        "2335ecc8f7daf9822508bce95eb909dcae7c9802cf82130661e4b4dbb7e96d78"
-    sha256 cellar: :any_skip_relocation, monterey:       "03733f14d26b765725e3695ea1cf6112483b5896b4300ed0dade8e2401a2e0d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01497d9585fba19f95af58aa3841ffb2a55fc23a148c4a0cd095619f00bf215c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "10409852abe9c8eb652bd27f940e49d0f1be7f0bea0550ae7e98d7285b4214c6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "033fe9d2c32fac0297c409aeac6a746351461ddc009bdc226daf700d37df9cef"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f0aa423a21df58542cf94d1c08b7e114f71b181eb71e7ff260ad98be5efc4905"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5aa35812ec29fe9a7f1a41e14876fc1a48a2cb512906beaffe7218c67024b697"
+    sha256 cellar: :any_skip_relocation, ventura:        "9ab920734938a43c01f1d168e9768b1a63fa60f116a8862055fe790464a16d81"
+    sha256 cellar: :any_skip_relocation, monterey:       "a44b5e55884ea822754730625a8cb904ab9977b9f8ff3a55b92abcc7af6f20a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3e8b38dbe5a86e4107b3228bf5bad41ab69c43e401f1bebcf385434184abff9"
   end
 
   depends_on "go" => :build

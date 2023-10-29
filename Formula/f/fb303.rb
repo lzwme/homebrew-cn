@@ -17,7 +17,7 @@ class Fb303 < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "fbthrift" => :build
+  depends_on "fbthrift" => [:build, :test]
   depends_on "mvfst" => :build
   depends_on "fizz"
   depends_on "fmt"

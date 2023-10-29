@@ -1,19 +1,19 @@
 class Trivy < Formula
   desc "Vulnerability scanner for container images, file systems, and Git repos"
   homepage "https://aquasecurity.github.io/trivy/"
-  url "https://ghproxy.com/https://github.com/aquasecurity/trivy/archive/refs/tags/v0.46.0.tar.gz"
-  sha256 "1708186df90a1981479d7273bc2f2468d6fcaa90c45eb9464b349c3a5f11c072"
+  url "https://ghproxy.com/https://github.com/aquasecurity/trivy/archive/refs/tags/v0.46.1.tar.gz"
+  sha256 "174c14da3494bb5cb350154fa902abc53e7e617c7b63c994004448d9f719d02c"
   license "Apache-2.0"
   head "https://github.com/aquasecurity/trivy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "22bb5364a03a1233853bb11eb2de3570104777fef7fc3156c35f31123a3e8809"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1edb101c342400303d9cb23c03b92721840b3debf46d5028961f8c9f87ba68a1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aab02eb2ae0fd7bad3c04b62fb86241d287d7da050c3abfaa244cac1bac532ff"
-    sha256 cellar: :any_skip_relocation, sonoma:         "20c1f69868f1f8219101c3500396dc4de5c25fb01249f8dc3eb4179bb1ac2046"
-    sha256 cellar: :any_skip_relocation, ventura:        "9a40d6278e0b86b27b898a4d0ac45e2ab7941ca470505d0a28ee6af3039029be"
-    sha256 cellar: :any_skip_relocation, monterey:       "0bf4d6469d742dd10509be4b38e304f28efbf0a5241fbe56741d0f6141159d20"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a337f5d5c922d596e5c65e2fd1ec9e1d66ac6b81e2819920a3b16c5e4228ec51"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "42f7a367ab5ce9bb70b297c5cf236346d5e8186e006e344b4deeb328c639286f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e1557e9db6d133e87a7e276e010491a46377da7431eae69e4ea73f83e81965c6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5e523f81cc03792573ce65757f893a441c6dd49c912902dfc1d53ebb1d9d07ae"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7eed4145a92fd43aa424c55a0b43b1976e21898a0b446f9d936b252003970f02"
+    sha256 cellar: :any_skip_relocation, ventura:        "b6311afbf10ece259dfe0ffe87a247c84d04897f03da669a464fab70f1e8a4f1"
+    sha256 cellar: :any_skip_relocation, monterey:       "d322e3cd110e7bc75f2377192bfe4afcfc7b9452cce399c0e9c6da76cf820277"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b55331d82cc26a2e46961fdab80050a98af18a51ef5f96be1b52960eca0c9ad"
   end
 
   depends_on "go" => :build

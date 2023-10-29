@@ -9,16 +9,17 @@ class Twtxt < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f3aae43e883e94a56fa92f3c8bf4bfa6dfdd04c9f52527d53502effadb56c962"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4f514b62bc63f978f39929115fd57e329966426611d5a281c3535eef2e515be"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ab582facffacaff620fe7aee8944ceee7fdcb5ebd4f44c860c3dd7bda04baa6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b689433915d58dd5400ca606e3ce6356ab87c6ae087553413cac9807399d91b8"
-    sha256 cellar: :any_skip_relocation, ventura:        "0c3179cb2a0aa414b2876792e2027f1ef379e30ff651cb4cd88e670e6dd4d652"
-    sha256 cellar: :any_skip_relocation, monterey:       "744e52d56287003e23980e22189fd1f840845a43124719734e66e6e18832812c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1426ec869f8312fb9f5c27f39848d772f2ed73ecfecf423e957a09b27c21d607"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a4c89a9bfa235cfaa070064500061c9d14a37bae7fd5a0b9f8539885794ffb1c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "501b0660e32aa1938bc29dcc795e4e50cdabe544f0ca9ebddb083717633570d3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9f066b8786cf7cfd8c0fdf9910dd85a63b0cd1114e4d86c89e0621b4c7f4add2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fc8d917b5c7b771c427a50e08422378fcf390c0fc7d581bbc9fe3043c39d4b33"
+    sha256 cellar: :any_skip_relocation, ventura:        "4b0068ff90622bf33b5af562e4b842fc7c521c144a89663350e636b1243b3cf8"
+    sha256 cellar: :any_skip_relocation, monterey:       "f3bc972b3cbd992fb9a860cf8d70520b4358da086fdc76e20af7f1d03eed9508"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5163536b47a0c4f1c359f8ee10e3c8bd1dc5c7ed53621ea1edf6c35307718b4"
   end
 
+  depends_on "python-click"
   depends_on "python-setuptools"
   depends_on "python@3.12"
   depends_on "six"
@@ -46,11 +47,6 @@ class Twtxt < Formula
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
     sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "frozenlist" do
@@ -85,6 +81,8 @@ class Twtxt < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"twtxt", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
