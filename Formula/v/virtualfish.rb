@@ -9,14 +9,14 @@ class Virtualfish < Formula
   head "https://github.com/justinmayer/virtualfish.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "869c8a12184ad98701a95942837e86ba30a8651f84f482f15c8d49ff6f42732e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "283a6425d3bd1d9ca8b2d212923b854683abf4137513d3e31d63fdd8739d52ec"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9dcedf8f5e261b6f571dd62f9cb3cce49446dce451eeaaffb0918982815671f7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9973b9fb1e8178283ab5fc0424f28deaaa7130cfd7edcf90ed2e2adf59ddc07a"
-    sha256 cellar: :any_skip_relocation, ventura:        "709e6684df5d34e84e37508e8f3640ce8818db3c726b14fa3d1ab142d672e354"
-    sha256 cellar: :any_skip_relocation, monterey:       "2d18040a59d0c4d2279a1cf6d2d1cc5e98067a143854b3b196b287d8bb80e705"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ceff02ecc7db355983c71e51f6dd4ca74129bfd8c19d5961021162c9611200e"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1f247a3d61821e4b5b0cc1ede4f39c4c698037a6490816229a9a770b341fc902"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f86626ae92fe1c934fe678be8fd4fb5835c8696e8bc4a56d5be413fe8418e806"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d95595eca51362b908d0a2d2f51c4fd14df93bc1520000e84a7fece52badd769"
+    sha256 cellar: :any_skip_relocation, sonoma:         "51af3c2433d0d84776e468f95179695a0b1dd9d10530b53892ed5237b1a5769b"
+    sha256 cellar: :any_skip_relocation, ventura:        "4b7198e35a518a0f45eb70a04429deddd63e5281246283ba0d4a7dcdb29cc1f3"
+    sha256 cellar: :any_skip_relocation, monterey:       "7f569f4c0a255980b8245b59204ac037e3bae382b387dbfeddb11c8152f715be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d02d694ebc0f8363cb640d3493f18a44b23c2399110db2db09c8111070e34028"
   end
 
   depends_on "fish"
@@ -24,34 +24,19 @@ class Virtualfish < Formula
   depends_on "python-psutil"
   depends_on "python-setuptools"
   depends_on "python@3.12"
-
-  resource "distlib" do
-    url "https://files.pythonhosted.org/packages/29/34/63be59bdf57b3a8a8dcc252ef45c40f3c018777dc8843d45dd9b869868f0/distlib-0.3.7.tar.gz"
-    sha256 "9dafe54b34a028eafd95039d5e5d4851a13734540f1331060d31c9916e7147a8"
-  end
-
-  resource "filelock" do
-    url "https://files.pythonhosted.org/packages/d5/71/bb1326535231229dd69a9dd2e338f6f54b2d57bd88fc4a52285c0ab8a5f6/filelock-3.12.4.tar.gz"
-    sha256 "2e6f249f1f3654291606e046b09f1fd5eac39b360664c27f5aad072012f8bcbd"
-  end
+  depends_on "virtualenv"
 
   resource "pkgconfig" do
     url "https://files.pythonhosted.org/packages/c4/e0/e05fee8b5425db6f83237128742e7e5ef26219b687ab8f0d41ed0422125e/pkgconfig-1.5.5.tar.gz"
     sha256 "deb4163ef11f75b520d822d9505c1f462761b4309b1bb713d08689759ea8b899"
   end
 
-  resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/d3/e3/aa14d6b2c379fbb005993514988d956f1b9fdccd9cbe78ec0dbe5fb79bf5/platformdirs-3.11.0.tar.gz"
-    sha256 "cf8ee52a3afdb965072dcc652433e0c7e3e40cf5ea1477cd4b3b1d2eb75495b3"
-  end
-
-  resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/d3/50/fa955bbda25c0f01297843be105f9d022f461423e69a6ab487ed6cabf75d/virtualenv-20.24.5.tar.gz"
-    sha256 "e8361967f6da6fbdf1426483bfe9fca8287c242ac0bc30429905721cefbff752"
-  end
-
   def install
     virtualenv_install_with_resources
+
+    site_packages = Language::Python.site_packages("python3.12")
+    paths = %w[virtualenv].map { |p| Formula[p].opt_libexec/site_packages }
+    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end
 
   def caveats

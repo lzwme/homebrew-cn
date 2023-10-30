@@ -10,18 +10,22 @@ class Fava < Formula
   head "https://github.com/beancount/fava.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "332404a1f6324cc9247d1b06cead6f6cfee86196d385fd8821675bcb43b7ff86"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "badbe4d6a005e792882001c75106b804b94f92cd18e61232f9be65728d27a1b1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "92b84f7656008c47fd51b5e96b20ced55a517d968b25facfbef7039c0fcf3f8d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1ff0b56ad41d47fc8c9038c4bef7d867f5412f1bb3ea95c2c915115f1a8d4b8e"
-    sha256 cellar: :any_skip_relocation, ventura:        "7e4d95b754bf257001e36d53ae38c796b8ef578e2bc36b16473746cc6c14783e"
-    sha256 cellar: :any_skip_relocation, monterey:       "afa81942bf24e0819e6bc379dd5807f6e940fb04cb57b3d70c1a093583611233"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0870504d29d17eb4dc5a927db16c990277a9a6cf3fdfb9c88822def8ee8d8e64"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b834ebdcd9ab88ee441fb1ded8d629c1cfa9f6e77a5d25c54aff3d30518c3ec2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f88bbb94152305601a9c7d2424bc642e3c0760299f0624e023db5ca8b8776d2e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fcb22f4f95cd162118a1420c9ab03778e4c07368a18bea77ca12f4c8d8ceddad"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8b9efa3b520b25319d422624665457323baa8997385cce5279bfa17efa44c9f9"
+    sha256 cellar: :any_skip_relocation, ventura:        "6d4e39acc28dad4e627af1a6512e5442c51ebb1b1bfcc8b05b75af8b53821c8f"
+    sha256 cellar: :any_skip_relocation, monterey:       "054b43abeec9d6eab9baca3e49a21b2e4dfcd4d7e998b3a5295e0b1d2356adb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9bf6953e98a328b969a11e79a17b77394d0b687dd107b8a0ce5d8824def1e9a2"
   end
 
   depends_on "python-certifi"
+  depends_on "python-click"
   depends_on "python-lxml"
+  depends_on "python-markupsafe"
   depends_on "python-packaging"
+  depends_on "python-pyparsing"
   depends_on "python-pytz"
   depends_on "python@3.11"
   depends_on "six"
@@ -69,11 +73,6 @@ class Fava < Formula
   resource "cheroot" do
     url "https://files.pythonhosted.org/packages/08/7c/95c154177b16077de0fec1b821b0d8b3df2b59c5c7b3575a9c1bf52a437e/cheroot-10.0.0.tar.gz"
     sha256 "59c4a1877fef9969b3c3c080caaaf377e2780919437853fc0d32a9df40b311f0"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "flask" do
@@ -146,11 +145,6 @@ class Fava < Formula
     sha256 "cdba126d90dc3aef6f4070ac342f974d63f415678959329cc7909f96cc235d72"
   end
 
-  resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
-    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
-  end
-
   resource "more-itertools" do
     url "https://files.pythonhosted.org/packages/2d/73/3557e45746fcaded71125c0a1c0f87616e8258c78391f0c365bf97bbfc99/more-itertools-10.1.0.tar.gz"
     sha256 "626c369fa0eb37bac0291bce8259b332fd59ac792fa5497b59837309cd5b114a"
@@ -184,11 +178,6 @@ class Fava < Formula
   resource "pyasn1-modules" do
     url "https://files.pythonhosted.org/packages/3b/e4/7dec823b1b5603c5b3c51e942d5d9e65efd6ff946e713a325ed4146d070f/pyasn1_modules-0.3.0.tar.gz"
     sha256 "5bd01446b736eb9d31512a30d46c1ac3395d676c6f3cafa4c03eb54b9925631c"
-  end
-
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
   end
 
   resource "pytest" do

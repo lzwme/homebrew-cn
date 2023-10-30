@@ -1,6 +1,6 @@
 cask "font-iosevka-etoile" do
-  version "27.3.1"
-  sha256 "0854c8db2f4daa96f407b48e2368afb445416a2cf16b0de86cffb8cbbdf6da99"
+  version "27.3.3"
+  sha256 "2c09a9ae0d94f8a110bf2b191c44d1cb38edf8afb992692722c9e86cbaec89c8"
 
   url "https://ghproxy.com/https://github.com/be5invis/Iosevka/releases/download/v#{version}/ttc-iosevka-etoile-#{version}.zip"
   name "Iosevka Etoile"

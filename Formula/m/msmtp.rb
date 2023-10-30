@@ -1,8 +1,8 @@
 class Msmtp < Formula
   desc "SMTP client that can be used as an SMTP plugin for Mutt"
   homepage "https://marlam.de/msmtp/"
-  url "https://marlam.de/msmtp/releases/msmtp-1.8.24.tar.xz"
-  sha256 "bd6644b1aaab17d61b86647993e3efad860b23c54283b00ddc579c1f5110aa59"
+  url "https://marlam.de/msmtp/releases/msmtp-1.8.25.tar.xz"
+  sha256 "2dfe1dbbb397d26fe0b0b6b2e9cd2efdf9d72dd42d18e70d7f363ada2652d738"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,15 +11,13 @@ class Msmtp < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "7bc9118b35019df9f73dad57eb62accf997a15aefbd2b2c82e9a49644e88e946"
-    sha256 arm64_ventura:  "5f5d5357335fe1c163aff3daede12982893e0510345d9a7fb1b2ffb9e9b312da"
-    sha256 arm64_monterey: "6c7e4cca084ef1440c202a24e1bc2bbd4e87fb144b20614b90f0f4dec33283c3"
-    sha256 arm64_big_sur:  "c2244185a32bc16bb6cac7f7094cb379fc925f9d0e3dedfef4761f0a012f0fba"
-    sha256 sonoma:         "7f04af7fd81f9658d83571e878178c112a3fb7ec5754080df4e024a2afbca07a"
-    sha256 ventura:        "6cdea01606ab43764a97082cac4e486e693b557a739ab0c5b0865a9d0bac7f51"
-    sha256 monterey:       "28aa80afe8886e3d60f6b5e08bf63fb0c94e8937f0d422a3e265d76f44405620"
-    sha256 big_sur:        "04424ed650cf2330a5ff7e3cf65e2476dfae18d9b2bb961d99c2a83fea8ad8aa"
-    sha256 x86_64_linux:   "286904b8002879ca37c1d52a30b823e137322115989c1049363c830f4a449a78"
+    sha256 arm64_sonoma:   "2db770299573a11409efc9107eb9b70b0b92fa346eb70bcb719e0d14b3552aa6"
+    sha256 arm64_ventura:  "be963c8b3c8f6dc98f00cc0070916c033186a789d7c14d5e6c06a8243f8c54e1"
+    sha256 arm64_monterey: "eddccee3f5c54a14f747249ce62029ab1609962b4df80706e6cc7baecf1fc067"
+    sha256 sonoma:         "c2386b2f34d62ce01f230f27f41536073ad27542eebba26f1f511f269f844cf5"
+    sha256 ventura:        "80f7cad00e988855092b5ce3d9071f755ef2c14461f39d406f2eb23537158142"
+    sha256 monterey:       "280c817c144c9a21290822fe36220f7cf072912cd209ee25dd842b821ecb1d45"
+    sha256 x86_64_linux:   "f9d7fcb222e909d6cff9225972c69014a5f3e18ec585a2891227815a8db2eafe"
   end
 
   depends_on "pkg-config" => :build

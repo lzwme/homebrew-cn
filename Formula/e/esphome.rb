@@ -8,13 +8,14 @@ class Esphome < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1c1ad283cbc449f2e648af389b33e4e93a624fa359c13b21dde3c7c9f62c9e5c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d74d91b96f7040bf14b5e061ec34dd5ba040e4aed1265b248cd64aaa1f9aba8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5fe543c0282f026d6c36545fdaac29dd2d2b5be77320a5a861b23f7c52338c48"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e233db12fcf8f81b49bc4a8f3548ff44b440a5c52a8e815280cda43bef4302b1"
-    sha256 cellar: :any_skip_relocation, ventura:        "a6a3bf0d7d6851d7a89ccc48d68ef0428516642a648b5fe56c8250dd81aa3fe0"
-    sha256 cellar: :any_skip_relocation, monterey:       "7da4f903b7bc69f22766495fd22c105dda5040722d82abf239d9fe55535369e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ccfe69b9e8a19a1a06345b45affe913c45e1dda40be17b04bfcfb413b47477df"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "89b07b9a84818af7f8047ad50ea40cca9655c855fd76ee4673fc4f9e083121c5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "75e9e1b201e18d86e21271160588d61ffea125567881880a084182eab5f2a8d2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "31fb0ca62ac3aa2d78a975662669bf56911474b4ffce1df5f7e9ae9eb8ae7257"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c0ff661168a5680b2dfc0801534b9ba221313cca7dc14304dbd9813ad66effa2"
+    sha256 cellar: :any_skip_relocation, ventura:        "5bdc98a430008d24731a8fe529704785772454a7d1671d1a984583de2f502f9a"
+    sha256 cellar: :any_skip_relocation, monterey:       "881549a9e9227a9bf4daf2ade9d27ea2e15847a03f708f5fe48c1e257518361a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "de455ce2c0cb5fdd6b326a6b76b8c0074abf4528873029b3b2a7a6bdc17d8f11"
   end
 
   depends_on "cffi"
@@ -23,8 +24,9 @@ class Esphome < Formula
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-pyparsing"
   depends_on "python-tabulate"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
@@ -83,11 +85,6 @@ class Esphome < Formula
     sha256 "2a8291c81623aec00372b5a85558a372c747cbca8e9934dfe218638b8eefc26f"
   end
 
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
-  end
-
   resource "reedsolo" do
     url "https://files.pythonhosted.org/packages/f7/61/a67338cbecf370d464e71b10e9a31355f909d6937c3a8d6b17dd5d5beb5e/reedsolo-1.7.0.tar.gz"
     sha256 "c1359f02742751afe0f1c0de9f0772cc113835aa2855d2db420ea24393c87732"
@@ -121,7 +118,7 @@ class Esphome < Formula
   def install
     virtualenv_install_with_resources
 
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     paths = %w[platformio].map { |p| Formula[p].opt_libexec/site_packages }
     (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end

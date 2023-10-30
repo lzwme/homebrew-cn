@@ -9,14 +9,14 @@ class TrezorAgent < Formula
   revision 2
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "63f143d7c24c62f6c6ff9731f72155054e49c60d46915c569ef51edf96f6066f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aa62ddf992508c99169762ff51157ddb66bc92c7b54f5c10dc98bc6d1ce0dee5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ea33ea359a69ba46711c984f1c4982d46b3dde7317dc329df366192b8200f8e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "07b05a880c8bf5121535b4b19f0dfd712efffa0b02ffcef19503371ffac05000"
-    sha256 cellar: :any_skip_relocation, ventura:        "420865d8596b9816eddba23ca25efe0ac88ef83ecc85b5198e7d3061bae78eee"
-    sha256 cellar: :any_skip_relocation, monterey:       "b22396f248a8c11d8dd21c40745051d063d48d88c9ae511083fdf547a9a601c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "056fb13f79cb3e17a4bd4f25d64d36740012f9ccc4af54621be57dac2cb3325c"
+    rebuild 5
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "451166c6e1b5d1a5d7400ead03728a21034c9f0bd446f94607107601f5cb77a4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d8112e4613a19855c717fa603f93ae37be4f817c7162df18c21fc24c022f7d81"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "80b8b4fe25f74496f135c5bb830a4772e4e552b10123b0d45bc2df177323879b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f79f569a6c5888d3fc60e762e2d46585d773a714cf4aa016d5ec74c8ef3f6372"
+    sha256 cellar: :any_skip_relocation, ventura:        "5b8f9359862c039552958ad61ce72ac63b80e6c488b5fda04fb1f350b823cdd4"
+    sha256 cellar: :any_skip_relocation, monterey:       "40f285518160f94b36ee01db5cfcbb627dbc0a3db6ad45a3cb88be83373d0799"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48a9b9a41a2fab60043b807481d447e84e36d7a1dfad24356ac963a140240d99"
   end
 
   depends_on "cffi"
@@ -25,6 +25,7 @@ class TrezorAgent < Formula
   depends_on "pillow"
   depends_on "pycparser"
   depends_on "python-certifi"
+  depends_on "python-click"
   depends_on "python-cryptography"
   depends_on "python-setuptools"
   depends_on "python-typing-extensions"
@@ -49,11 +50,6 @@ class TrezorAgent < Formula
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
     sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "configargparse" do

@@ -10,29 +10,26 @@ class Ykman < Formula
   head "https://github.com/Yubico/yubikey-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "89da2a453d08f3552317a27119baad1dab9c00b899df8266eaed03139f05fd63"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2deeeb5eb977a97385b8564c08973657956c199815c8c7c25d29ad60e9506998"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b10384b3b74a506c8bc93ed17c332dee8db7ea1d61fbfd6bfba7c678425cd632"
-    sha256 cellar: :any_skip_relocation, sonoma:         "601c14c67869da05aabf9d73175ce156b058adcf338a1c7a247b9e6606f8e4ee"
-    sha256 cellar: :any_skip_relocation, ventura:        "cd78402635fdd416ac30bdbe09ac540b82e544decc3f9c106301239706b1c874"
-    sha256 cellar: :any_skip_relocation, monterey:       "60451616f7314c6c8ba51258c7db0e22dfa71646cbbe2aad7cbb64b72e633c2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3536a90f7bd24df38b78797032fd514cb4e942ee845416abd69956a08b5b77fd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1114a2fa7d4ff58ebcdfbd33683bfb3e45ab21a685336d13f3dd19776d63805b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b59a868935e8f1a4f549c5f4de8ba6a3d93a428323b84d5ef141d399ceea972"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e4f4a6ea15fe8a1f03e83ccdc6b69bd1322ada76c7c58f888049d56e408e273d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4ea75c8ca9f3db5aa281d07ac9f86151e753b609f45270f3dfabf1f47f0af2b7"
+    sha256 cellar: :any_skip_relocation, ventura:        "277f46b2ce0d20761f41b0acc68eefee3038fd4969b60523f4634c6f59aaf8e9"
+    sha256 cellar: :any_skip_relocation, monterey:       "7ec58eab87a2767c03916f6160fb24206e7ef9f63d122e2d19f9cfb2e64ec199"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41bc427d193a6a18049f2fadfbfc4df774e0f503718d14ed679a35facb2a645d"
   end
 
   depends_on "swig" => :build
   depends_on "cffi"
   depends_on "keyring"
   depends_on "pycparser"
+  depends_on "python-click"
   depends_on "python-cryptography"
   depends_on "python@3.12"
 
   uses_from_macos "libffi"
   uses_from_macos "pcsc-lite"
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
-  end
 
   resource "fido2" do
     url "https://files.pythonhosted.org/packages/a7/0f/b9f940372e0baa5a44742012f1eef1563296569db030a422ef3ce287b0ac/fido2-1.1.2.tar.gz"

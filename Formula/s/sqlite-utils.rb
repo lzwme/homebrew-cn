@@ -7,24 +7,20 @@ class SqliteUtils < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e1822b55f47005af43f5b55b8b97e8e6d661a6a9a357155653001f6db5b5650a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2249970d2711d8ea776982d2c26e02a7c519e6c7531063605326a592c5264cb2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "30de8a78f62cea2852bdfde9ea1b2854fcee30f69e7931fe50dbe79231120c1c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e191f44a2eea51972e609d8f1a215cf7cd9d3ebfd118ed27eee96dc5c2b355d4"
-    sha256 cellar: :any_skip_relocation, ventura:        "a9149d6f792f04e2484b75a8020f7cd4093051b99788506be49e96b90d0a2d8f"
-    sha256 cellar: :any_skip_relocation, monterey:       "f6444387bf656f64535eb8af3e5611052bd35cc6ec11e7488d14eb0703974b10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b8dde21b71257d408aefe7e4d2623971b669d8680b680d4d95c4b1ea57f9f7c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "87f9b93722bbd6e9dec772f16fb62c3aeb092ea23ba13ca0adc33d660f8cc581"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "726d86fb5289945e085538309593fc7fd4372cd9b6b7926c9576c9c2bee3d029"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d24eec9674d0c56155cec3853431530ddedca6e13dedf2dec22ed91ede2fa8cb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "eb59d1fbd3438d52b4c6d7584253c3dd59bd57a5e4067b48d20d1e8a98151093"
+    sha256 cellar: :any_skip_relocation, ventura:        "d95fdcc63de01fe7c5dc530d5e07f8bc015c61534af388d552743a789838bff5"
+    sha256 cellar: :any_skip_relocation, monterey:       "aa337c7c341ffe2d017f14e3aa05316233a34a7a3328a00c94429cc48683e85e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f530775c4033e2598e3a31ef9b32b76de5012bf2ade9f16cc1de2683e6d4fdd5"
   end
 
+  depends_on "python-click"
   depends_on "python-tabulate"
   depends_on "python@3.12"
   depends_on "six"
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
-  end
 
   resource "click-default-group" do
     url "https://files.pythonhosted.org/packages/1d/ce/edb087fb53de63dad3b36408ca30368f438738098e668b78c87f93cd41df/click_default_group-1.2.4.tar.gz"
@@ -48,6 +44,8 @@ class SqliteUtils < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"sqlite-utils", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

@@ -1,19 +1,19 @@
 class Dprint < Formula
   desc "Pluggable and configurable code formatting platform written in Rust"
   homepage "https://dprint.dev/"
-  url "https://ghproxy.com/https://github.com/dprint/dprint/archive/refs/tags/0.42.3.tar.gz"
-  sha256 "1ad679659a56b02f334d2a05ccf9f07ca74140357932037c24fd4f64234e2671"
+  url "https://ghproxy.com/https://github.com/dprint/dprint/archive/refs/tags/0.42.5.tar.gz"
+  sha256 "3843644d142efb61222d7fb9faaab2776f350bc3243830c7f82bcf609ef7bfb9"
   license "MIT"
   head "https://github.com/dprint/dprint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2e2cffe830e61079b1b20280be079cd9cfbddee73a6a7165ddcdb0b2d3e92934"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6eea379705f0d224b776b3edc133b72a1e59f6370eed4bdd22679d14be581e81"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c16f86aa6982b5846e0ba188dff0963d6f884fa89755fbef541fda40e7f1393"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ff8b1b245963dbe87bc0ff838ce281763a923fab46a1f7a6134cb4f5195735af"
-    sha256 cellar: :any_skip_relocation, ventura:        "1332f3525ba2d0d4c6e4b69a975444b4ec00c34da08a47c17c623d1e4a770aed"
-    sha256 cellar: :any_skip_relocation, monterey:       "b4510d376ab42d81256bfba02205862faf77765bdd543093de9d115efd3589a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e490d2eb73273aedfbdffc3d08f57bdb3493ad9dcefacf2fd180c8f0cdc72945"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "47c41cb24ecf4f6dd8ea8ac785fc40d9dae933ef8f9791fdb558b5ed8c4845c5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2142d908eda0630c91e3c60487c128dd34b4c36c8d93bd129068a6613fe693b2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a436f6540fc4a45e0d6420c04e954c794736409f189eeef86b5bcbb1d4942a7f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8ffc79ac27ce3d061cd7c3445b023125ff261e3522c6563381e189156b89eb62"
+    sha256 cellar: :any_skip_relocation, ventura:        "bbde9804a8c57a9bbdb89ce4ab858650629ddef3818698a822286719fd401bf6"
+    sha256 cellar: :any_skip_relocation, monterey:       "f5b7d3320e0c7d451dced93d8e4bbfe1ccc89da003a31891240beecd1bdb6ef9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "51a0506c086c366a558efa6e82b38d08ad2838a6df779d579e3a534085aeb1ef"
   end
 
   depends_on "rust" => :build

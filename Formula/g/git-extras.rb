@@ -1,21 +1,19 @@
 class GitExtras < Formula
   desc "Small git utilities"
   homepage "https://github.com/tj/git-extras"
-  url "https://ghproxy.com/https://github.com/tj/git-extras/archive/refs/tags/7.0.0.tar.gz"
-  sha256 "3adcbc247d6cb78dc58cace22e9ad789cd6f5061522516660dfb59cc6ec08def"
+  url "https://ghproxy.com/https://github.com/tj/git-extras/archive/refs/tags/7.1.0.tar.gz"
+  sha256 "e5c855361d2f1ec1be6ee601247153d9c8c04a221949b6ec3903b32fa736f542"
   license "MIT"
   head "https://github.com/tj/git-extras.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1dbb26bbe72045d94f5d1dd7173f5b65bd002080ae7eaeb955215047fff75b4f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "59d95f1583bfadaf3d3088fda40871c703668e8acc9592f544e49de5341956ec"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "59d95f1583bfadaf3d3088fda40871c703668e8acc9592f544e49de5341956ec"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "59d95f1583bfadaf3d3088fda40871c703668e8acc9592f544e49de5341956ec"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1dbb26bbe72045d94f5d1dd7173f5b65bd002080ae7eaeb955215047fff75b4f"
-    sha256 cellar: :any_skip_relocation, ventura:        "59d95f1583bfadaf3d3088fda40871c703668e8acc9592f544e49de5341956ec"
-    sha256 cellar: :any_skip_relocation, monterey:       "59d95f1583bfadaf3d3088fda40871c703668e8acc9592f544e49de5341956ec"
-    sha256 cellar: :any_skip_relocation, big_sur:        "59d95f1583bfadaf3d3088fda40871c703668e8acc9592f544e49de5341956ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57de92d7366e7b2f23d2d767bf43bb82c7710a745074eaf7a166a40ac091ea68"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6490784e1856994d585dfc937e3866bfc45f124ae724eaebc727bbe8a173740d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6490784e1856994d585dfc937e3866bfc45f124ae724eaebc727bbe8a173740d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6490784e1856994d585dfc937e3866bfc45f124ae724eaebc727bbe8a173740d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6490784e1856994d585dfc937e3866bfc45f124ae724eaebc727bbe8a173740d"
+    sha256 cellar: :any_skip_relocation, ventura:        "6490784e1856994d585dfc937e3866bfc45f124ae724eaebc727bbe8a173740d"
+    sha256 cellar: :any_skip_relocation, monterey:       "6490784e1856994d585dfc937e3866bfc45f124ae724eaebc727bbe8a173740d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5f7ae4a6652f41107a9e038ccaeef053ca6074a81c3213e7381c6b6d5a05970"
   end
 
   on_linux do

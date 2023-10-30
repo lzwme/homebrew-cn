@@ -1,18 +1,18 @@
 class Fclones < Formula
   desc "Efficient Duplicate File Finder"
   homepage "https://github.com/pkolaczk/fclones"
-  url "https://ghproxy.com/https://github.com/pkolaczk/fclones/archive/refs/tags/v0.33.1.tar.gz"
-  sha256 "7a876743a84f0ff367a47dfc0e37587b9ed07618decbfe1914945a2b334ae382"
+  url "https://ghproxy.com/https://github.com/pkolaczk/fclones/archive/refs/tags/v0.34.0.tar.gz"
+  sha256 "5e8c94bb5fb313a5c228bdc870cf6605487338f31c5a14305e54e7e3ac15d0ad"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dd9b6d5797fa0684a7ee8ca65474f9df0e945bb471d9a46613652b3ea30d759f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb46eeae970e16f81668d2e6d257b6793c03d6e07070ff17d33c4f4db0ceebe6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d727f8c12f64a01d27f4a5ac351190d1f837363ee0d266345365708ed36cf4a8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0b6a50011892b5d18ced26cfc4633a48b6d1103771d64e5b30ec090f7ff6b3ed"
-    sha256 cellar: :any_skip_relocation, ventura:        "c2b33af5df8a3d4175a0e09c5e8c48d339e7c0c3693ea701ad8e4aa8cef994db"
-    sha256 cellar: :any_skip_relocation, monterey:       "8df7819cae0e6c1ca66767bbdf4d68c1a2a1336aa3dec856cf80178319bdcad4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c385e383aed895e45334cbcbd2c2f483bbf25339863eccefa921e52eced69d44"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d720767853cc23dd6fb8a35008d39c8b005f99b367c0d260b1197d1a9d4c19dd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "16fa6fb02ca993ef54bd942f18860dd602ea04946149c296fabaaecde93dd55c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "68841eacebe1435bb4e39325ed55522bc51d8668ceeb7f108fb9482c7c32f49f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "87e479b0556ee718fa992c697584d1c64eb6e8d55c1fc30ce0d2851179bff293"
+    sha256 cellar: :any_skip_relocation, ventura:        "30095d67ac23b747bddc931e8a083394809b22e7a479f390d50b234a7e045481"
+    sha256 cellar: :any_skip_relocation, monterey:       "dc7a8ba4486994b7296fda40c49d0df7c7178042b55677ec64a333ff9e7455f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "774daef5f511aac75797d39d11b8076ab58a6e004fbb604dc4a4fd7ca1c2d802"
   end
 
   depends_on "rust" => :build

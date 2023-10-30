@@ -9,16 +9,14 @@ class Fdroidserver < Formula
   revision 1
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_sonoma:   "1f8c444981709cd7a454212c68f67aa2c8a96b408654f21d892fe56ad9cec064"
-    sha256 cellar: :any,                 arm64_ventura:  "19180fb2a67e68548f57dde4db9cc53625ac5ad0bcd0838f8e9f828995a216b5"
-    sha256 cellar: :any,                 arm64_monterey: "ad63561c3f1897e49ceb5b0a84c988fc4adf11ff66c4e0b35451a1a39ffdeb35"
-    sha256 cellar: :any,                 arm64_big_sur:  "32899b19f8a6477b83697e94bdca3644439fb9ab769226a419bacdd11ed45fce"
-    sha256 cellar: :any,                 sonoma:         "7cd8f0829038212e1cb66fb76ea0df29d9afb07db2204a29efb6492258a040d4"
-    sha256 cellar: :any,                 ventura:        "0708ec00e87636526b5ebc4e83b8ce4565e197ae74c2a277263805e6f5937f97"
-    sha256 cellar: :any,                 monterey:       "e43e66af913f77f405bfd2e29c5c7617b439128c1d5a4670f4c5e408dd856342"
-    sha256 cellar: :any,                 big_sur:        "e0731c1e74ee2ecd84f22d180be2eaf4d17af87c18efc9af267ae53785e05643"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f7ba37033f0e6cfb19d6364030cb07ff5d13be1b720ba80c069e1222cc48013"
+    rebuild 5
+    sha256 cellar: :any,                 arm64_sonoma:   "59869eeca8776a33ee464e1612f4d2387e3628f58c3cfc816f22c1b94994b2a4"
+    sha256 cellar: :any,                 arm64_ventura:  "14b961ada1af941ac41fecadd327b6d921eae2ebb7209ba98d9954168dc18525"
+    sha256 cellar: :any,                 arm64_monterey: "25e66e5eca7a05547d90c1e652010a95f725e1950c84498c9263f20195dd89d8"
+    sha256 cellar: :any,                 sonoma:         "a9982f0b0cc386ac2f723a07f0319a41a2340abd9a586c180fe2ef17aef1ad8f"
+    sha256 cellar: :any,                 ventura:        "5449d4740432a23928e6f658e7ea717f902f949d959852a0ea69c43512a1ce6a"
+    sha256 cellar: :any,                 monterey:       "e4ffddfb2dfba5789fd664594d9149fb0952e1790e329f66df6bdd3e3f8d39da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54d18f643e1d0f483b99f049906ffa5f11575855d5a77b161d66fb593fdbd204"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -29,9 +27,11 @@ class Fdroidserver < Formula
   depends_on "pillow"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-click"
   depends_on "python-cryptography"
   depends_on "python-lxml"
   depends_on "python-packaging"
+  depends_on "python-pyparsing"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -69,11 +69,6 @@ class Fdroidserver < Formula
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
     sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "clint" do
@@ -154,11 +149,6 @@ class Fdroidserver < Formula
   resource "pynacl" do
     url "https://files.pythonhosted.org/packages/a7/22/27582568be639dfe22ddb3902225f91f2f17ceff88ce80e4db396c8986da/PyNaCl-1.5.0.tar.gz"
     sha256 "8ac7448f09ab85811607bdd21ec2464495ac8b7c66d146bf545b0f08fb9220ba"
-  end
-
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz"
-    sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
   end
 
   resource "pypng" do

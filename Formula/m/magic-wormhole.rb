@@ -9,20 +9,21 @@ class MagicWormhole < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2aa7c03d7382976b7375cb4dcf347ebfdb44b4265615051cdc7d84d928cca973"
-    sha256 cellar: :any,                 arm64_ventura:  "b47b1f25241e906b7bc935fe39885655e5873aa4f7ae3a54691e465e4d185a4a"
-    sha256 cellar: :any,                 arm64_monterey: "28cbec8064156925776bec88a4facec94483ffd5bb14ac011ebd192f6bed1b09"
-    sha256 cellar: :any,                 sonoma:         "3febb59c4136965a4a661c8e36f51f4cfa33cd3ba046e7832cd77f351c7e6d77"
-    sha256 cellar: :any,                 ventura:        "0ef7bad047726cff55bd16a5bb51b889a5d74e500bc90a81982fb6c9371d91d2"
-    sha256 cellar: :any,                 monterey:       "2f51ac5ca7501fe1130e24425ea425c4ac04ed8c24b016ba775b63a6148af124"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54204bc1e05834b7fc9c441c704ebe5906d06e8a710fc5026db307132c3701ec"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "7dce1537a6fd61deec9271f7db723eb23f8876c4539a92f13ed26f16cbccab8c"
+    sha256 cellar: :any,                 arm64_ventura:  "337f3800f2c4ad6dabbeeb99fef2097d13196e551647d4ef5b1416aadac4ff3a"
+    sha256 cellar: :any,                 arm64_monterey: "82b93dc7b4b2d0305be8913ac9686878e25f8eb990d78787e88232de03c442c6"
+    sha256 cellar: :any,                 sonoma:         "43f3b002c750926aed6faf8293dac6699f1eb5db502339d6ffe461e89e0ab5c0"
+    sha256 cellar: :any,                 ventura:        "b9a5ec4ffedf6a2b3c19cd0931146e5a35fb66a77d6bd7f9f693b35cf5bb2522"
+    sha256 cellar: :any,                 monterey:       "6cc0ffa2f2e9a6cdf3f3d4e0770e90927f7a887790d879b65770f64e2a22996f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "918fba864891b5c5da19b0c40bc1b7d170385e0972a4b0ed29c540f2605852fa"
   end
 
   depends_on "cffi"
   depends_on "libsodium"
   depends_on "python-cryptography"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   uses_from_macos "libffi"
@@ -48,8 +49,8 @@ class MagicWormhole < Formula
   end
 
   resource "constantly" do
-    url "https://files.pythonhosted.org/packages/95/f1/207a0a478c4bb34b1b49d5915e2db574cadc415c9ac3a7ef17e29b2e8951/constantly-15.1.0.tar.gz"
-    sha256 "586372eb92059873e29eba4f9dec8381541b4d3834660707faf8ba59146dfc35"
+    url "https://files.pythonhosted.org/packages/4d/6f/cb2a94494ff74aa9528a36c5b1422756330a75a8367bf20bd63171fc324d/constantly-23.10.4.tar.gz"
+    sha256 "aa92b70a33e2ac0bb33cd745eb61776594dc48764b06c35e0efd050b7f1c7cbd"
   end
 
   resource "hkdf" do
@@ -105,6 +106,13 @@ class MagicWormhole < Formula
   resource "spake2" do
     url "https://files.pythonhosted.org/packages/60/0b/bb5eca8e18c38a10b1c207bbe6103df091e5cf7b3e5fdc0efbcad7b85b60/spake2-0.8.tar.gz"
     sha256 "c17a614b29ee4126206e22181f70a406c618d3c6c62ca6d6779bce95e9c926f4"
+
+    # Update versioneer script for 3.12. Remove when merged/released
+    # https://github.com/warner/python-spake2/pull/15
+    patch do
+      url "https://github.com/warner/python-spake2/commit/5079cc963305c8aa6465e2a4bbbb08781fb49d3b.patch?full_index=1"
+      sha256 "2e095162aeb910eb5ca399763499b414b400bcf5cf59fd851f5810d7b6d11646"
+    end
   end
 
   resource "tqdm" do
@@ -138,6 +146,11 @@ class MagicWormhole < Formula
   end
 
   def install
+    # Workaround versioneer script broken on 3.12. Remove on next release.
+    # https://github.com/magic-wormhole/magic-wormhole/pull/507
+    inreplace "setup.py", "commands = versioneer.get_cmdclass()", "commands = {}"
+    inreplace "setup.py", "version=versioneer.get_version(),", "version='#{version}',"
+
     ENV["SODIUM_INSTALL"] = "system"
     virtualenv_install_with_resources
     man1.install "docs/wormhole.1"

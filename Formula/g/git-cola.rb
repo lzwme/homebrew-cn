@@ -9,25 +9,20 @@ class GitCola < Formula
   head "https://github.com/git-cola/git-cola.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "33678584870160d2f3613872bd1d1a8b52b7921e273b2111b9fa98748c4e6987"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b2068b9aeeb7b411d9ee29f7c9e96637cb4574d73b65964d76359f7bcfb8c90"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e03d55101ab978f3e7bc2edf169e9e68ed0ff49ead0ed174d6b18b0a63d905f4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2fa82169f18dedcf1dd83309d57ab7518ee1f665fe4c564ea28066ba1187c2bc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "be5ec2a4fafbcccc67a03524627e3a8a810270bfa332b72f88269f79f9f3fdb0"
-    sha256 cellar: :any_skip_relocation, ventura:        "c25c8646fca823cda352b50cef673df8834a7c27e411b4627544d95bbe5c6041"
-    sha256 cellar: :any_skip_relocation, monterey:       "237dfe103071dc7a7f7c0042e20ae9e4fdcb3cfa2dc2283f8c5eb2f97fd64992"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0827100bd8425d2c811eef3511687f64f58a32d53cc039509ed2323896b39160"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56986142690b372507b4ec22ee53142fae8809d5ab6ee51c239c4a4c5c7552fb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9c0556f0121b30e663fc8aec942fbe60c60986bd323e4f9129dc34b4373b569c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d889576442db7b7b75029c6c366b6244c2e248903c62d8f7580e9e2e4e20d31e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b03ec98981423445d2f809e7a3060e5a308097c3c4be31d2c6b325c4d3057a8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d0c68840b86da85550c16e033433695b6755310e554292c3b69b3a01e2af3631"
+    sha256 cellar: :any_skip_relocation, ventura:        "bd11bfb10479b74eecd00359cbcf93cb35d45fa68a7f5c4715a82fde8f15f547"
+    sha256 cellar: :any_skip_relocation, monterey:       "fa440d9ce00bc70a07a1bd7188935c94d270c359da331ee10e4dad85e8f59a54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ea6d8b43f14d8f8582f8e10512848b347f1d9f44ef3e1d50e8ddbc2590b05c0"
   end
 
   depends_on "pyqt@5"
   depends_on "python-packaging"
+  depends_on "python-pyparsing"
   depends_on "python@3.11"
-
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
-  end
 
   resource "QtPy" do
     url "https://files.pythonhosted.org/packages/ad/6b/0e753af1197f82d2359c9aa91cef8abaaef4c547396ffdc71ea6a889e52c/QtPy-2.3.1.tar.gz"

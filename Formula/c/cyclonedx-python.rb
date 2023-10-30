@@ -9,16 +9,18 @@ class CyclonedxPython < Formula
   head "https://github.com/CycloneDX/cyclonedx-python.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f1345bd103a034ec48a83abb7c576e52cf1c09b6008ac2d5461b7759637a4e4d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dabdc218280cd4848fac0afa29a2d6101802b3bfccebf75b91adc2f1ce281a69"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "44288cb55384fd69b44b7e87d5729376627a8cd645b928232f532c632fa3d807"
-    sha256 cellar: :any_skip_relocation, sonoma:         "eaa853c06af6fb66b4141a07f11e58d1745ed9fab9b991d6f1abaec206891652"
-    sha256 cellar: :any_skip_relocation, ventura:        "3ce16a1531551b0986dc42b7b005df3019d034b9c7f76d303e0f823366342e8e"
-    sha256 cellar: :any_skip_relocation, monterey:       "43eb0bb3884557db4af6b6d6f2e6d756f40ff573c499097235c73fe1681d67bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "452a58f4ce1f50f2f715e7055320f1ab62431ca0ae97f6f768e1b3f67c8fc1ad"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "160ddc2542877001202fe0e1fedadf4e74f89cdd1ee7dd3eb13326ca0491c5a8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f14bc9e204bdc217bb444968ac2aec148f0c19063dad0962394cde47348b7e7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d639932d214bf07f06537024c235fbd0206235c119193eeeca6be4c713b1925c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "eaa8f9542a4401deaa0a6df9cecb316ceae72f101146cee14b0f1126a102b4fb"
+    sha256 cellar: :any_skip_relocation, ventura:        "128a6c5872dbd7c5d542d047fe6b3b6651ae06e7d6dfde8eed132e71e653082e"
+    sha256 cellar: :any_skip_relocation, monterey:       "dbb5844ecccdd194e20f0111723003cb4530a2c7cfc5d3c3aad2d5d974cf8913"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5204a8c62b905e9b91dba7ca28abf696819cbdf8b91ae121ffdc9764106e6e90"
   end
 
   depends_on "python-packaging"
+  depends_on "python-pyparsing"
   depends_on "python-setuptools"
   depends_on "python-toml"
   depends_on "python@3.12"
@@ -41,11 +43,6 @@ class CyclonedxPython < Formula
   resource "pip-requirements-parser" do
     url "https://files.pythonhosted.org/packages/5e/2a/63b574101850e7f7b306ddbdb02cb294380d37948140eecd468fae392b54/pip-requirements-parser-32.0.1.tar.gz"
     sha256 "b4fa3a7a0be38243123cf9d1f3518da10c51bdb165a2b2985566247f9155a7d3"
-  end
-
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
   end
 
   resource "sortedcontainers" do

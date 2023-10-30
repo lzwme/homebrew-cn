@@ -1890,7 +1890,7 @@ Homebrew-homebrew-core/Formula/g/ganglia.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/garble.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/garmintools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gat.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/gateway-go.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gateway-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gatsby-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gau.rb, Homebrew/homebrew-core, 1
@@ -2968,7 +2968,6 @@ Homebrew-homebrew-core/Formula/k/kubent.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kubeprod.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubergrunt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubernetes-cli.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/k/kubernetes-cli@1.22.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kubernetes-service-catalog-client.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubescape.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubeseal.rb, Homebrew/homebrew-core, 0
@@ -4614,6 +4613,7 @@ Homebrew-homebrew-core/Formula/p/passpie.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/passwdqc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pastebinit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pastel.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/patch-package.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/patchelf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/patchutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pax-construct.rb, Homebrew/homebrew-core, 0
@@ -11161,6 +11161,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-adinatha-tamil-brahmi.rb, Homebrew/homeb
 Homebrew-homebrew-cask-fonts/Casks/font-adlam-display.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-adobe-blank.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-advent-pro.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-afacad.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-african-sans.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-african-serif.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-agave-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
@@ -11760,6 +11761,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-gantari.rb, Homebrew/homebrew-cask-fonts
 Homebrew-homebrew-cask-fonts/Casks/font-gasoek-one.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-gayathri.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-geist-mono.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-geist.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-gelasio.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-gemunu-libre.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-genjyuugothic-l.rb, Homebrew/homebrew-cask-fonts, 0
@@ -11872,6 +11874,8 @@ Homebrew-homebrew-cask-fonts/Casks/font-hasklig.rb, Homebrew/homebrew-cask-fonts
 Homebrew-homebrew-cask-fonts/Casks/font-hasklug-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-headland-one.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-heavy-data-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-hedvig-letters-sans.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-hedvig-letters-serif.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-heebo.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-henny-penny.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-hepta-slab.rb, Homebrew/homebrew-cask-fonts, 0
@@ -12048,6 +12052,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-kaisei-opti.rb, Homebrew/homebrew-cask-f
 Homebrew-homebrew-cask-fonts/Casks/font-kaisei-tokumin.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-kaiso.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-kalam.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-kalnia.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-kameron.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-kanit.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-kanjistrokeorders.rb, Homebrew/homebrew-cask-fonts, 0

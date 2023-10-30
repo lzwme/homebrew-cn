@@ -1,8 +1,8 @@
 class Podofo < Formula
   desc "Library to work with the PDF file format"
   homepage "https://github.com/podofo/podofo"
-  url "https://ghproxy.com/https://github.com/podofo/podofo/archive/refs/tags/0.10.1.tar.gz"
-  sha256 "9b2bb5d54185a547e440413ca2e9ec3ea9c522fec81dfeb9a23dbc3d65fbaa55"
+  url "https://ghproxy.com/https://github.com/podofo/podofo/archive/refs/tags/0.10.2.tar.gz"
+  sha256 "565168132e8fbfcdbad4ea4c5567bcc57ebbffb4528f6273baf3f490a3cf7563"
   license all_of: ["LGPL-2.0-only", "GPL-2.0-only"]
   head "https://github.com/podofo/podofo.git", branch: "master"
 
@@ -12,15 +12,13 @@ class Podofo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "81516020646fe703d27a95b47568ccb72f3e320de47c54e11b0a90c86cd251ed"
-    sha256 cellar: :any,                 arm64_ventura:  "57bb0c459a607efc63fffbf3fc441a31ff5429326048c661303d13f9c2578205"
-    sha256 cellar: :any,                 arm64_monterey: "2b6116b1d99b7499367c66b449c18323258d9d63c248673d2671c078e4ac8cfc"
-    sha256 cellar: :any,                 arm64_big_sur:  "2885c35de6a79655a3bd388f121bd4c85b16bba6bd26b431d08d0b404d5ccd6f"
-    sha256 cellar: :any,                 sonoma:         "7acfe528e3d2f541f6cd106169ef3c02fc405f435d5236376088eb66794c6a95"
-    sha256 cellar: :any,                 ventura:        "e8d8ed810ea8911cbbdabf9fe0f5e881dd4753a10302f3f59336db42c5d2afd9"
-    sha256 cellar: :any,                 monterey:       "7e6e8a4f4ca608bc9ecd7e656ef4d783d6dab07de01639d7c1f0088ba952cbb7"
-    sha256 cellar: :any,                 big_sur:        "eef1a0c69311eec0cea327113d6135a5a4f91e1654daca0b9399b9dc7483c27c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57050d099ff592d3921c0c718aeb5f0f2af9fa79cd5ccc3adc0bc52199126cd3"
+    sha256 cellar: :any,                 arm64_sonoma:   "d5d6f4bd6103e2ea02056675f2a70db604979a89ad5b5a1b67b7f0fedd5f3e45"
+    sha256 cellar: :any,                 arm64_ventura:  "d02a757b88f6293d253fa0efea2acb74a976317c77ff2027ad240e06432734d4"
+    sha256 cellar: :any,                 arm64_monterey: "78fda71ee4e0ec571577d525ef4d3ae1d46a5ebd6549ffbcc5e305fbbda208a0"
+    sha256 cellar: :any,                 sonoma:         "f6427587aab5819f70feac5cfb2c9ff633ab2b5da417e855bd14e75bee7d2fe4"
+    sha256 cellar: :any,                 ventura:        "07fc4b06987a91e68901677b673e5aecf29747c440f52da9a046f6d4ef522b5b"
+    sha256 cellar: :any,                 monterey:       "ccbd31dfb68217561d643890975edbe8b7f195f79baa2b6edfd4e4929be9b224"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38b2fb776f88ec5afcea1b48a0f59d74e88cfb5fe25f2da60db8097f07ab1771"
   end
 
   depends_on "cmake" => :build

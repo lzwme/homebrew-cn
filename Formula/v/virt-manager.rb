@@ -10,11 +10,11 @@ class VirtManager < Formula
   head "https://github.com/virt-manager/virt-manager.git", branch: "main"
 
   bottle do
-    rebuild 6
-    sha256 cellar: :any, arm64_ventura:  "a75d570b617fb75b03f40b684fe319ce9c8aaf09d30bb3f320b47253c7cad572"
-    sha256 cellar: :any, arm64_monterey: "6b295f52f38a006101871fc80a36bffa007e18b163c761f9a4c8cccd5f54cafb"
-    sha256 cellar: :any, ventura:        "925399764789c23fdeadd145ef0ba625e150977f81527a069fa6be65c978f321"
-    sha256 cellar: :any, monterey:       "6710fe9edcfdf3a64d5dfca1055d00836d8aeeacd33e35b8dab687bbb458fb08"
+    rebuild 7
+    sha256 cellar: :any, arm64_ventura:  "ad8c67854985fd7c4a792efde25ae3f3b279af77fadad2c01f54a807f000d802"
+    sha256 cellar: :any, arm64_monterey: "3140dab3b4e3dc02d369591b9d14975a59cebf61b954b3a5e4090c0d17f9964b"
+    sha256 cellar: :any, ventura:        "464496e4118c2162fb710d73f3f8af35fe0fbf59b464783468b88147be168f0d"
+    sha256 cellar: :any, monterey:       "32bb70e4857933dc50f23cd2f2addb13061c89918b91ff336ecb91e3c5be9b93"
   end
 
   depends_on "docutils" => :build
@@ -33,7 +33,7 @@ class VirtManager < Formula
   depends_on "py3cairo"
   depends_on "pygobject3"
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "spice-gtk"
   depends_on "vte3"
 
@@ -66,7 +66,7 @@ class VirtManager < Formula
   end
 
   def install
-    python = "python3.11"
+    python = "python3.12"
     venv = virtualenv_create(libexec, python)
     venv.pip_install resources
 

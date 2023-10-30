@@ -2,21 +2,22 @@ class Ponyc < Formula
   desc "Object-oriented, actor-model, capabilities-secure programming language"
   homepage "https://www.ponylang.io/"
   url "https://github.com/ponylang/ponyc.git",
-      tag:      "0.57.0",
-      revision: "4bc307ffaac9f26375e28d379ccf7e31cef3ff3c"
+      tag:      "0.57.1",
+      revision: "6ed042ee16a5d77671da56cfbd72f0330f072e50"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f706cea09b2b2ae475c2e1a03eab4b269f15352032f2232e599ce5fa11b0c5ce"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "14d1f58e432bf7e3f9748561de7167942c7dc674fe3d9fa9a2b4465af969824e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "20e17f2a7b818fb7613eb9cb877b6265d8fa3f0a2f5dafb5de32633b01d7042c"
-    sha256 cellar: :any_skip_relocation, ventura:        "c8ecec13e17fe31605df664841f08e3218ae9a71a442f83b2379f5413c527a6d"
-    sha256 cellar: :any_skip_relocation, monterey:       "d4854d7f819f39664923abc77c12dc718d38c0ec7f8bdf483f3c10686a3411e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9c92dade12496339e9e7e4643e33728eb73598b407c152f437682ce105f0138"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "72f3f45057a514be7022a38732d0175e424d992129c25b6d3ea828e657b0c43c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dcc55418f16795f434c36ae314bc971a93eb620a1442998770bf01a54986af36"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "28a4e42870418c4d92a1649b7206cf55a722dedfd470cb245520fde73b3d1bdc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "209b96b37ad14982ac9be5dff61d889b9a7d3c7f19c05f42f64a52ffb40919d2"
+    sha256 cellar: :any_skip_relocation, ventura:        "8cc0690a280320875f9d8b890fb7b0e665f6aa1d3244fa69d51c3f56370c25ab"
+    sha256 cellar: :any_skip_relocation, monterey:       "0e07e03d03a382caf73dde4e32e7ca8ca91645568f1b4553b7af5553345b78ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fdbbea1ece403cd68980d289fd691e75c4bd731d8f6c4c8e65f19fc511b97596"
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
 
   uses_from_macos "llvm" => [:build, :test]
   uses_from_macos "zlib"

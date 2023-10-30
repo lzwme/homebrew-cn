@@ -9,18 +9,20 @@ class Hatch < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3245c662b844819134026f56be91a83c906dae3945a936aa3719188bf7b44b62"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89b70f5e40af3293e28dede82ba154fc29debeca358fd9deab3c073c435ba6b5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e63833b288653adaed9fee29a80d105bc977a655d4c7e0fe9cd15c3a751d07a6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8f7a28ea3525838aec52c69948a87305cddcdd2f465b32a8e6dbfa438b07f3ff"
-    sha256 cellar: :any_skip_relocation, ventura:        "bfd63b5a05ce4a5b43f7053cbd43b6d1b72dd81ec0209444d280a2f78ae44cdc"
-    sha256 cellar: :any_skip_relocation, monterey:       "9ba55e1a2dd7d2f75ad744806e8905c72641376d83e2bc1b1208cfb49c58ac48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b687aa9c56945342a8e8adae06e677f3d9f85d3828c0d567db85c98a7b3bdea"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ab02ffbe45c601af24434f2773540b49058ede9ba7e68e65d407f74dd668d6ae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f645263779366d516df0bcace51d50d934f0137e429d20370580719406183b77"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dd47fac0e1a02f802fa9d99776d63f1285863765a913b52136d27708cf63ce4a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "93f8f11377f3544d7c1631f21d6311f0e3434fbf62c3db44ff59a0ac3c250b10"
+    sha256 cellar: :any_skip_relocation, ventura:        "7a82b41b2bc9fa24f2fa3b7c8aea4d8c3684c76fe6277804a000bcb4d6e64e29"
+    sha256 cellar: :any_skip_relocation, monterey:       "461a6ca7ee6b83509c572d5edae0a851334ac9e720de954c7b2bb65b96c9ad6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e67c8e924dc601edb1ce731c79ee919765454d2cd35c913c5a9e2a70bbf50be"
   end
 
   depends_on "keyring"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-click"
   depends_on "python-packaging"
   depends_on "python@3.12"
   depends_on "virtualenv"
@@ -33,11 +35,6 @@ class Hatch < Formula
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/8b/94/6928d4345f2bc1beecbff03325cad43d320717f51ab74ab5a571324f4f5a/anyio-3.6.2.tar.gz"
     sha256 "25ea0d673ae30af41a0c442f81cf3b38c7e79fdc7b60335a4c14e05eb0947421"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
   end
 
   resource "distlib" do

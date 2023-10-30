@@ -9,16 +9,18 @@ class Principalmapper < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fb0e42a91b655ec406681c90f4f5b3146702d2cc22b6592ab4c5ff128cb8fda1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d90c850fdba77ddb8cc477a62472361b1d43a861dc15e403f645754fe70f5913"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e03cfca7d3bc537fcd64e5ade182b4be8e5f400d3687629b0c33ed2bb19f9819"
-    sha256 cellar: :any_skip_relocation, sonoma:         "17da4fcf6eeefc4bf20ddb5158b53f4461b5d8e148faeb806863a09eb61fceab"
-    sha256 cellar: :any_skip_relocation, ventura:        "0dfa59618f7a9c278843265366b0e5fe8eb5e731b26733af773016712bc4af0a"
-    sha256 cellar: :any_skip_relocation, monterey:       "4bb5acc0afba8c403c94f051030d53239d6b7cf8ca43797394d6bd0116dda614"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8d106b821705f88a2c7003b7cf7652d436563d8f340e9c74b7e75d756ef1bc1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "57ab3bf7969b488a522d7f96422d51e71110655f862e4d66fd4756974346d98f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ff16319ad2e6d138b2afcbf3ab96f0e8016a2cd807ac720e45dd979901481b9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c30306569885d9e313a1e6a8854774439a32f8e5a55a03766268016b64d572da"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7347a0ae555a0794de92b822edfa7b4a59527235b857d3583c1a478833c5366c"
+    sha256 cellar: :any_skip_relocation, ventura:        "f944f671ce9fab549323ef531c16b4f276d184cca6145fc800e18caf05a6a6d6"
+    sha256 cellar: :any_skip_relocation, monterey:       "4b43edf024ad756848f4ae9a139aecf6a5384324aa890924982ae5879706b50d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20b7d3899889dd835192acf03e376bd9921b2eeed70d93210572aefab495a869"
   end
 
   depends_on "python-packaging"
+  depends_on "python-pyparsing"
   depends_on "python@3.12"
   depends_on "six"
 
@@ -35,11 +37,6 @@ class Principalmapper < Formula
   resource "pydot" do
     url "https://files.pythonhosted.org/packages/13/6e/916cdf94f9b38ae0777b254c75c3bdddee49a54cc4014aac1460a7a172b3/pydot-1.4.2.tar.gz"
     sha256 "248081a39bcb56784deb018977e428605c1c758f10897a339fce1dd728ff007d"
-  end
-
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
   end
 
   resource "python-dateutil" do

@@ -1,19 +1,19 @@
 class Broot < Formula
   desc "New way to see and navigate directory trees"
   homepage "https://dystroy.org/broot/"
-  url "https://ghproxy.com/https://github.com/Canop/broot/archive/refs/tags/v1.26.1.tar.gz"
-  sha256 "1cd2e98a9afe8a8d8bed08beaa98bdef0eed0de5d99e38599a59ea0f50d68ac5"
+  url "https://ghproxy.com/https://github.com/Canop/broot/archive/refs/tags/v1.27.0.tar.gz"
+  sha256 "bf4df0d933efbc2093855c4be3d8bfed29c612a57d14b853a3c729e917505728"
   license "MIT"
   head "https://github.com/Canop/broot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "71d6f6dcf15827e1ab0c340b57fb288c4085f196a44119cf7ef424c55aec1ae2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f528572e6f6b0860acb07872614f7d6b6434db5b329e446eb1a61f995650406f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f5e3260f0e9797d5cc0ade4633dfc5107e299abe2d1c62e169f79c6a3f22cef1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "158b9c505ac40576fd91eb1eca841cbe68f13ede507b6af116825b83a26eb7d6"
-    sha256 cellar: :any_skip_relocation, ventura:        "72872508d3580bd2cf87aebd99acfc4d8ac156bb8fe52e634ed1bf72adf2578c"
-    sha256 cellar: :any_skip_relocation, monterey:       "a912db70fc624b2331d896c0df84b63604f3da52a06b64c421d80c3ea2369e8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b4e94729224a86173425b1b4acb19995c8bf97acc82b6cdfb9f652be61759db"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "111d1bfecb0aedab492949020e30e383a06874450324698881b83599a6c8cb71"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b0ddbaca23d6d1074d5b39e7a0ff0accd4ffbc079f1ce18a5c6a61e0a55926d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bf630f7c0df50e7f30550a16642909f6262b92d054a5ce211b36ac36255a073a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c8a1929433a283ff00313aaf1f8fdc795ea2dbf198de53c2b632c530af00d3e1"
+    sha256 cellar: :any_skip_relocation, ventura:        "7aa331c6ba7fe44c11d9a72a93bec57ee35aa5b85017986e04f01b9165bbca5a"
+    sha256 cellar: :any_skip_relocation, monterey:       "693a053a813f216bc2020f18b766a6dc8ec17da7d7b32e172ac30b2dbee023f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cee717af36d13befea43567fb27a51c45463938f552eb845c71153e8dc2dc6a2"
   end
 
   depends_on "rust" => :build

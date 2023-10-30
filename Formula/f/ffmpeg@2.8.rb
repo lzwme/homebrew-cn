@@ -1,12 +1,11 @@
 class FfmpegAT28 < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-2.8.21.tar.xz"
-  sha256 "e5d956c19bff2aa5bdd60744509c9d8eb01330713d52674a7f650d54b570c82d"
+  url "https://ffmpeg.org/releases/ffmpeg-2.8.22.tar.xz"
+  sha256 "1fbbf622806a112c5131d42b280a9e980f676ffe1c81a4e0f2ae4cb121241531"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
-  revision 2
 
   livecheck do
     url "https://ffmpeg.org/download.html"
@@ -14,15 +13,13 @@ class FfmpegAT28 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "89be05eeb2d6d6b6a6b2d21f0d158f9dd31c6f0014ab4371f39013dfe600fecc"
-    sha256 arm64_ventura:  "39ab9275cf8e96084bf71186064c3b44a266bb9738bfbed6e276182acbc62c9e"
-    sha256 arm64_monterey: "e2933796de987f8b85ccf3a8ad0cfc762866a5d51cea54fd0202d74c64736050"
-    sha256 arm64_big_sur:  "be1a0c4ce83319cb11a6df578ac665968e8ce79696229bcb3d9624cdf1c1dca2"
-    sha256 sonoma:         "46bbc62d6e8fc5c801dcefe7d81322fd6b69b8d728dcf9048c107deb626f09d5"
-    sha256 ventura:        "1de0658a8355e4879bed836d15f58e30832b42ed3b0b968c810874d5408d5eb1"
-    sha256 monterey:       "7d9ed87744201a90e1c40432484584b5485e359002f982796e07425dfe85a8e3"
-    sha256 big_sur:        "b68fb395e1651b58d0f5edd40f49bbaf7a9a02b2f5aa1466dd62a991ea967676"
-    sha256 x86_64_linux:   "c82117dfcbefff995ca06b5f033ffa37f7ba0b1e22030083a9e440c536e8c86b"
+    sha256 arm64_sonoma:   "00fe33dbef855097d0a45c4c154c0a96b582343a59456cedd13ace31cf7300aa"
+    sha256 arm64_ventura:  "709564e3afc39a1c3e8ad99a2e6c1dcbed32060cc1eea2aad4d627468be60dcc"
+    sha256 arm64_monterey: "695f2440ba89672b76d159b613ceebfaf444a1b606a084298a704a0ca43cee47"
+    sha256 sonoma:         "a7ef1aa921ac56de58f16cf393255e747932bc61d74d5b1f4e02399bd4ff5766"
+    sha256 ventura:        "8e3204980c368a650a13a4943b07e41ef3c94b346ba7e4ebb471aecdba3f09bb"
+    sha256 monterey:       "02519afb764a5e0b40eb81907e6821aa81a69b8c0dfccf464382c2ee75d9090a"
+    sha256 x86_64_linux:   "3e335a395cf3a49a6a9e2eab1f4acabfe7c24916a3bdc2b391ed63837bb9be20"
   end
 
   keg_only :versioned_formula

@@ -9,13 +9,14 @@ class Openstackclient < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "28aba7138881035e159502736b53331572ccc8ca43fff2d730969aeaebc63005"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b95e89438a9dcd38cb95028c8d040a79be8bc4e67df24b9524272577b2839537"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bda5fe8b55fb4120387f05df1a029460f397d2661939846a3c5caa6c9ea3a62a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "01e716f93d468b4d6eee13283805ecd69a4caeada335544700ac48b870787b8b"
-    sha256 cellar: :any_skip_relocation, ventura:        "2de143204131d4d00ccdcbf5ae98f695ef4624df10cef81ea6dedbcbf3f28b34"
-    sha256 cellar: :any_skip_relocation, monterey:       "63bc2687bf117aae517242804e56c3697f6f659114dd522b45f743e8f23ec8c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "245874920656f4e692f491bb0c0e1a7af7968faac278c4468c94013f5bfba8b3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "836c88df83bebbbc346a9a506e7f72521ff65653b394ecf29017fe189e796619"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7cb690e92b9e2abfcece80eb1332f8dc71de594086e4eab89f630e5d165b7f14"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a45c925c0b260556d2b6f79c36d13d7af3ec1c2d373f1935a575a6a6b85fe078"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6be00573a00b9d887e4cb5e284a4ba6251b7276ac8d53b569d63fc80653c26d8"
+    sha256 cellar: :any_skip_relocation, ventura:        "f93d2cae9b28f8d73fa7f741abb5ff5332a3d96500025bd89049a7b7e4ef6c93"
+    sha256 cellar: :any_skip_relocation, monterey:       "293573f2579a7f81f93ba09c1127bfa9ce47c277da48124b2c93a7a9b4b3c348"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e404623397c7bb7398eed64861c1c3e2ae90dacf15814515318a86ad456be9b3"
   end
 
   depends_on "cffi"
@@ -23,6 +24,7 @@ class Openstackclient < Formula
   depends_on "python-certifi"
   depends_on "python-cryptography"
   depends_on "python-packaging"
+  depends_on "python-pyparsing"
   depends_on "python-pytz"
   depends_on "python@3.12"
   depends_on "pyyaml"
@@ -186,11 +188,6 @@ class Openstackclient < Formula
   resource "prettytable" do
     url "https://files.pythonhosted.org/packages/e1/c0/5e9c4d2a643a00a6f67578ef35485173de273a4567279e4f0c200c01386b/prettytable-3.9.0.tar.gz"
     sha256 "f4ed94803c23073a90620b201965e5dc0bccf1760b7a7eaf3158cab8aaffdf34"
-  end
-
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
   end
 
   resource "pyperclip" do

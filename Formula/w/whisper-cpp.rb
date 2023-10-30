@@ -6,6 +6,11 @@ class WhisperCpp < Formula
   license "MIT"
   head "https://github.com/ggerganov/whisper.cpp.git", branch: "master"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a423b0a1f92abfc6943b532974d147d669c2b2186adef609e45c8ae0aba7ab81"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba631877ce4264b21bc92059c00d7126e221eefb6c3af71817d13950943a1cfd"

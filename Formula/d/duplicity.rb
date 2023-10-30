@@ -8,43 +8,33 @@ class Duplicity < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6e1a4587483d7f6421de094fa862d76b0356918cebc8978e8f11be1e3fd7f070"
-    sha256 cellar: :any,                 arm64_ventura:  "ea7967ac8903f1a03cfa61de250e26c8c04e85de9365fa2a54edf2a63d8a399b"
-    sha256 cellar: :any,                 arm64_monterey: "ef9e82087aa16298752bdc65c811d350d679b7bd01b512c06ef723a52d1026ac"
-    sha256 cellar: :any,                 sonoma:         "ecdbaadb096f16cf9b4d64cc44322617b913c8e4e2d92cf0ebaf218dc6559343"
-    sha256 cellar: :any,                 ventura:        "31945d5358612e47c328874807c78b9b556e54ee19cbe00d5269f0518794f636"
-    sha256 cellar: :any,                 monterey:       "c132563eed27cdcc33ac8bdadf7903e62158cb6cfc48e144667d1097ba15b67b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4b59e4a228a7509681f60dae358d2e59e4f7d4ecadde14da44db8119e97bc7c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "7ea76a706e89e1b08f9a18326cad76452506b35ca452f05a3507a595c8e314c8"
+    sha256 cellar: :any,                 arm64_ventura:  "16d9da7f5b890ac1b22a675ae2daedd3402ac261ece5c6e839fdcb1c41bb03ff"
+    sha256 cellar: :any,                 arm64_monterey: "9167694109bb2413eaa31bb60730ca766aefa25c81198355da21c1f185b87325"
+    sha256 cellar: :any,                 sonoma:         "0abb0aafd0d1b0bc1ddf955edc9382803cfdeeed0a085017d8539bfc7871c941"
+    sha256 cellar: :any,                 ventura:        "e7453ddceabbe49c6220e06743d327140d66f0afa619cd255c1e4195ff61e698"
+    sha256 cellar: :any,                 monterey:       "a1d09fb63d4601f8f5f5e33f7e26fba817fb498e2b67ca2364bb71809a1c8293"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e12bfef3df4c234a7b31d24c07879524ce3d03a737e6eb0e727f8b7d42d65126"
   end
 
   depends_on "gettext" => :build # for msgfmt
   depends_on "rust" => :build # for bcrypt
-  depends_on "cffi"
   depends_on "gnupg"
+  depends_on "keyring"
   depends_on "librsync"
   depends_on "protobuf"
-  depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
   depends_on "python-lxml"
   depends_on "python-packaging"
+  depends_on "python-psutil"
+  depends_on "python-pyparsing"
   depends_on "python-pytz"
   depends_on "python-typing-extensions"
   depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
-
-  on_linux do
-    resource "jeepney" do
-      url "https://files.pythonhosted.org/packages/d6/f4/154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdf/jeepney-0.8.0.tar.gz"
-      sha256 "5efe48d255973902f6badc3ce55e2aa6c5c3b3bc642059ef3a91247bcfcc5806"
-    end
-
-    resource "secretstorage" do
-      url "https://files.pythonhosted.org/packages/53/a4/f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691/SecretStorage-3.3.3.tar.gz"
-      sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
-    end
-  end
 
   resource "args" do
     url "https://files.pythonhosted.org/packages/e5/1c/b701b3f4bd8d3667df8342f311b3efaeab86078a840fb826bd204118cc6b/args-0.1.0.tar.gz"
@@ -186,11 +176,6 @@ class Duplicity < Formula
     sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
   end
 
-  resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/33/44/ae06b446b8d8263d712a211e959212083a5eda2bf36d57ca7415e03f6f36/importlib_metadata-6.8.0.tar.gz"
-    sha256 "dbace7892d8c0c4ac1ad096662232f831d4e64f4c4545bd53016a3e9d4654743"
-  end
-
   resource "iso8601" do
     url "https://files.pythonhosted.org/packages/b9/f3/ef59cee614d5e0accf6fd0cbba025b93b272e626ca89fb70a3e9187c5d15/iso8601-2.1.0.tar.gz"
     sha256 "6b1d3829ee8921c4301998c909f7829fa9ed3cbdac0d3b16af2d743aed1ba8df"
@@ -199,11 +184,6 @@ class Duplicity < Formula
   resource "isodate" do
     url "https://files.pythonhosted.org/packages/db/7a/c0a56c7d56c7fa723988f122fa1f1ccf8c5c4ccc48efad0d214b49e5b1af/isodate-0.6.1.tar.gz"
     sha256 "48c5881de7e8b0a0d648cb024c8062dc84e7b840ed81e864c7614fd3c127bde9"
-  end
-
-  resource "jaraco-classes" do
-    url "https://files.pythonhosted.org/packages/8b/de/d0a466824ce8b53c474bb29344e6d6113023eb2c3793d1c58c0908588bfa/jaraco.classes-3.3.0.tar.gz"
-    sha256 "c063dd08e89217cee02c8d5e5ec560f2c8ce6cdc2fcdc2e68f7b2e5547ed3621"
   end
 
   resource "jmespath" do
@@ -234,11 +214,6 @@ class Duplicity < Formula
   resource "megatools" do
     url "https://files.pythonhosted.org/packages/69/0e/cc12d8dfa5cee8b11c72179de7b23b00d1c1555dfe8c25101d88ae86a7ec/megatools-0.0.4.tar.gz"
     sha256 "4418b67fd6ec4b9417d32e2a153a1757d47bc2819b32c155d744640345630112"
-  end
-
-  resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/2d/73/3557e45746fcaded71125c0a1c0f87616e8258c78391f0c365bf97bbfc99/more-itertools-10.1.0.tar.gz"
-    sha256 "626c369fa0eb37bac0291bce8259b332fd59ac792fa5497b59837309cd5b114a"
   end
 
   resource "msgpack" do
@@ -311,11 +286,6 @@ class Duplicity < Formula
     sha256 "00c7c1aaa88358b9c765b6d3000c6eec0ba42abca5351b095321aef446081da3"
   end
 
-  resource "psutil" do
-    url "https://files.pythonhosted.org/packages/2d/01/beb7331fc6c8d1c49dd051e3611379bfe379e915c808e1301506027fce9d/psutil-5.9.6.tar.gz"
-    sha256 "e4b92ddcd7dd4cdd3f900180ea1e104932c7bce234fb88976e2a3b296441225a"
-  end
-
   resource "ptyprocess" do
     url "https://files.pythonhosted.org/packages/20/e5/16ff212c1e452235a90aeb09066144d0c5a6a8c0834397e03f5224495c4e/ptyprocess-0.7.0.tar.gz"
     sha256 "5c5d0a3b48ceee0b48485e0c26037c0acd7d29765ca3fbb5cb3831d347423220"
@@ -349,11 +319,6 @@ class Duplicity < Formula
   resource "pyopenssl" do
     url "https://files.pythonhosted.org/packages/bf/a0/e667c3c43b65a188cc3041fa00c50655315b93be45182b2c94d185a2610e/pyOpenSSL-23.3.0.tar.gz"
     sha256 "6b2cba5cc46e822750ec3e5a81ee12819850b11303630d575e98108a079c2b12"
-  end
-
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
   end
 
   resource "python-dateutil" do
@@ -448,15 +413,14 @@ class Duplicity < Formula
     sha256 "d06730c6aed78cee4126234cf2d071e01b44b915e725a6cb439a879ec9754a3a"
   end
 
-  resource "zipp" do
-    url "https://files.pythonhosted.org/packages/58/03/dd5ccf4e06dec9537ecba8fcc67bbd4ea48a2791773e469e73f94c3ba9a6/zipp-3.17.0.tar.gz"
-    sha256 "84e64a1c28cf7e91ed2078bb8cc8c259cb19b76942096c8d7b84947690cabaf0"
-  end
-
   def install
     venv = virtualenv_create(libexec, "python3.12")
     venv.pip_install resources
     venv.pip_install_and_link(buildpath, link_manpages: true)
+
+    site_packages = Language::Python.site_packages("python3.12")
+    paths = %w[keyring].map { |p| Formula[p].opt_libexec/site_packages }
+    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end
 
   test do

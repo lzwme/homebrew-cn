@@ -9,14 +9,14 @@ class Bzt < Formula
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c9c5aaf675c1104181dc6642641a5d421891d1e7eef912dd7e8a6714f7eac4f7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cd1c63f4ee657efda16e53d7a1e6a66c3adf3c5ec91a3a850e554a7fca4ad851"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "23f3eb38958eec0f6902b1122e92493e81ac2aa878f55920b6cc0ac6a1b590fc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5d0434c765d4296eea84d1ba763039bea385acbfa4c7ece3b84b17ed82583026"
-    sha256 cellar: :any_skip_relocation, ventura:        "6c5042e185243b59a31887f3449d922f0ef475f19c0fe243cd58a96f330856bc"
-    sha256 cellar: :any_skip_relocation, monterey:       "e962617eafd0f6e29e3ee204c34c52b51afe6cb2aed58b92af4db84c85013236"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba7b62853501080c4e946c51d8a40f0ad5b9297b11c99ea66ea2f91926574a56"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "53d40dbc4103dcf0855e2979465f344ad01b09534283f54e53c072642828df14"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d0908d0cc48eb5543bb8618b8e57819a3341bb4ce5dfb8afc90387c8e4d60fa3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b4f5ebb2a721f15f4c2d79867e8d2316f0afd1e5a473cc2c9e19066123991c7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "67bffd746dc7be03c97a6ab3c4ab046f9cb266dba180edb12a0226e5e530e747"
+    sha256 cellar: :any_skip_relocation, ventura:        "fec1ec22cd606b9d5c5f26b28fb0418679a2bd488854c083a21c949c0126af6f"
+    sha256 cellar: :any_skip_relocation, monterey:       "16ba95da390c79c6ca6bd158f61babceacc9e79dbcb331ee77de78922a778b70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "945219a9b39a63a57a3fe5859989bd66710c038252b728e1ae52f1d06ecd84c3"
   end
 
   depends_on "cmake" => :build
@@ -27,6 +27,7 @@ class Bzt < Formula
   depends_on "numpy"
   depends_on "python-certifi"
   depends_on "python-lxml"
+  depends_on "python-psutil"
   depends_on "python-pytz"
   depends_on "python-setuptools"
   depends_on "python@3.12"
@@ -151,11 +152,6 @@ class Bzt < Formula
   resource "prompt-toolkit" do
     url "https://files.pythonhosted.org/packages/9a/02/76cadde6135986dc1e82e2928f35ebeb5a1af805e2527fe466285593a2ba/prompt_toolkit-3.0.39.tar.gz"
     sha256 "04505ade687dc26dc4284b1ad19a83be2f2afe83e7a828ace0c72f3a1df72aac"
-  end
-
-  resource "psutil" do
-    url "https://files.pythonhosted.org/packages/2d/01/beb7331fc6c8d1c49dd051e3611379bfe379e915c808e1301506027fce9d/psutil-5.9.6.tar.gz"
-    sha256 "e4b92ddcd7dd4cdd3f900180ea1e104932c7bce234fb88976e2a3b296441225a"
   end
 
   resource "python-dateutil" do

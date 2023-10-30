@@ -8,17 +8,19 @@ class EvernoteBackup < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "15341ddca3eb92cbd60011406ac7a377743f18fc42de679fced071121e32a77e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fc52d4a30b0cb4b156b367d9fc181ace61d8eacb62e35f8d72da1778154cda2f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c0011244898178cbcbca4a13c4d95ef57ea01b8b79cd77e2fa4ea6865d284d65"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ee24e1b35ab6e0f7d1dceaaa147f8601ecd979368f9f7c46842448923f8bc8a1"
-    sha256 cellar: :any_skip_relocation, ventura:        "355078484c2acabf03f8471902f68d5453a55361c46f095fd00558de6129ee4f"
-    sha256 cellar: :any_skip_relocation, monterey:       "8b9d5660a55c5a8759b00c13b3bfbba1310d41a49a519637b1ccb2bb573473f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be585f448d2e45f7c5c8a1c4911afdaf640ef67b93cf3b378bde0a1e631e3f59"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "298b46c545c6b590023b38465bee503cb2c9a0476c45761990e38b4a200917d4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "afab45aa9da401ea982a9801afb3bf85afd0c34bb117ed70888240d91eef159e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b4874a7d21e36d75b774f6b557f004170a881d6c25c4a4fde97e3454c6632482"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1b1d60c818125c323281f5a40d4967ffedf7d7335be0bed1831216072448be9c"
+    sha256 cellar: :any_skip_relocation, ventura:        "9ea7d30733aed3843a1f706e83f881fa61fbf6433a3bcbd3fdec7fb4f81d5540"
+    sha256 cellar: :any_skip_relocation, monterey:       "2705cd481a89b88d9792b3829665944347474772222ff66862f84b4405278bfc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c1cf3e219a529a044d04cab3028cee083aea9358082b9c7c6ae7bc7808358cad"
   end
 
   depends_on "python-certifi"
   depends_on "python-click"
+  depends_on "python-pyparsing"
   depends_on "python-setuptools"
   depends_on "python@3.12"
 
@@ -57,11 +59,6 @@ class EvernoteBackup < Formula
     sha256 "9859c40929662bec5d64f34d01c99e093149682a3f38915dc0655d5a633dd918"
   end
 
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
-  end
-
   resource "requests" do
     url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
@@ -84,6 +81,8 @@ class EvernoteBackup < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"evernote-backup", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

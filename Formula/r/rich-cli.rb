@@ -9,28 +9,25 @@ class RichCli < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "47fb8d2d88151e91f0f68f92723fe357b3e58e7664cc8d74a195cfaca82897ae"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "90faa5c747089a3dfe9cda144a1323f34e43ce3f41d54d684ad442abc8493038"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "95244e7c998a0407d076f252daa802977ca967c08ddd5a88c83e2756c28457ae"
-    sha256 cellar: :any_skip_relocation, sonoma:         "366d00e49ce13c8edc2d5b7d88fc4d58b0b182211bba69ac35276b52969f39c9"
-    sha256 cellar: :any_skip_relocation, ventura:        "ec7baea1a09e98bbfd925a8dda6f68d0e1080938b9c1b8a08e9eaf2761b12ac4"
-    sha256 cellar: :any_skip_relocation, monterey:       "4f3025f2fd53aa5e3e853a14b6b17ac576364a11ad0394c20060e843240744b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b46e9e250edcbf628a50f6270ea8fd3368e4a8aab73d23d4e44b93df28c9ed11"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "82331a89e44a3ff1444eedaa2f7829260b74e79f0c0fef100557a3c10774bd40"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "913969e5b9a90d2d8cae6f9721ca4a5e7e9286379f8463bae14a773f62fdda53"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ec85fafad9a0c65a68501cc58f8facc7f28160ab956c4a40c9c0d45c26b5211f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7c7a5f074cc8a7b57b0b80e7ce86509c0f1db386102e75187ece1f27bdfd4730"
+    sha256 cellar: :any_skip_relocation, ventura:        "47581b38ff90c70028862b3bd5194b1a8394cd0c56f7e9aabeddcc73b2ea28a4"
+    sha256 cellar: :any_skip_relocation, monterey:       "db1c74876bce240cdc2302a34e65a727e87580b838cdcaf2865de0342edcb655"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e1a49f24cda1228c32d5b68e913d638aec58349295578f34ad19c7e6c06f9f8"
   end
 
   depends_on "docutils"
   depends_on "pygments"
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python-click"
+  depends_on "python@3.12"
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
     sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "commonmark" do
@@ -70,6 +67,8 @@ class RichCli < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"rich", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

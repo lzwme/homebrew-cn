@@ -17,7 +17,8 @@ class Ufraw < Formula
     sha256 catalina:       "c908174e4789deed5e024420d7b65dcaf53fd82293d52015a32d10ee1b3a0660"
   end
 
-  deprecate! date: "2022-11-22", because: :unmaintained
+  # https://sourceforge.net/p/ufraw/feature-requests/328/
+  disable! date: "2023-10-29", because: :unmaintained
 
   depends_on "pkg-config" => :build
   depends_on "dcraw"

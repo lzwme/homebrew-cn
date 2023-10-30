@@ -9,15 +9,14 @@ class Mitmproxy < Formula
   head "https://github.com/mitmproxy/mitmproxy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a6b2fa7f72fbd3377fa17e1b0f24f42d2d2e0d98e239b649c7b926f44bb23911"
-    sha256 cellar: :any,                 arm64_ventura:  "ba140147a03e55be287f61a14ba42493966df2bec5fd05a25c6b169d3aaadcc4"
-    sha256 cellar: :any,                 arm64_monterey: "2669265031fa84adc1b036fd41048c5ca7e993d0487ff71545cd2ab5b5861163"
-    sha256 cellar: :any,                 arm64_big_sur:  "a8fd652fe8a136da8961ed06bb6481b8bba043a2374362eaa537486c1d1ff3a2"
-    sha256 cellar: :any,                 sonoma:         "9cb9cb0f3f88cf9df404496d387658237b3752a0802789c9101cf8444407bb9f"
-    sha256 cellar: :any,                 ventura:        "d43a9c6187394f439a9c513cd43d05d8574e4c5d8f8bc7cfe5533aded54aafec"
-    sha256 cellar: :any,                 monterey:       "f5de6bdd2fcc0e447c9db2748c8cbea156c2b940755d1d6e9ac961c61021718b"
-    sha256 cellar: :any,                 big_sur:        "02680be135d0e90ed04f1490892f6c631c8f8cb56487e7f47be19cefeb0ec398"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff25592590686f5a19e2278b5adc684f4bb9c37b5ce626947df1823ce5705352"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "ce482e68207cf11a5f8326f549c54ae58741c638f599d03500202683669c13f5"
+    sha256 cellar: :any,                 arm64_ventura:  "b1d0cbd66f78ed043a9bc2b2c7fdfffde6a6761b8d8f58ec6a4062fd5808c24c"
+    sha256 cellar: :any,                 arm64_monterey: "5592ba12806a558361e4e1d4ac827f8f2cb0816acc9f71c3dc0b1104bf0be522"
+    sha256 cellar: :any,                 sonoma:         "b9d926cb268655dae5846620e57d0c8508649233d10bb3c9053ac0f0d6fbdf8d"
+    sha256 cellar: :any,                 ventura:        "c8b57c74bc98e48a8b5d0cafdf4d338342f2952bdbb04519464163df9889b8fd"
+    sha256 cellar: :any,                 monterey:       "7056ae01af495f0c3b1fc90053a071d33963832d0617404d59e070dd44cc7387"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23395280ed210ef34050a92a6c911c6a7a953a5c6b7149117aad7662c0696c70"
   end
 
   depends_on "rust" => :build # for mitmproxy-wireguard
@@ -25,8 +24,11 @@ class Mitmproxy < Formula
   depends_on "protobuf"
   depends_on "pycparser"
   depends_on "python-certifi"
+  depends_on "python-click"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python-markupsafe"
+  depends_on "python-pyparsing"
+  depends_on "python@3.12"
 
   uses_from_macos "libffi"
 
@@ -41,8 +43,8 @@ class Mitmproxy < Formula
   end
 
   resource "blinker" do
-    url "https://files.pythonhosted.org/packages/e8/f9/a05287f3d5c54d20f51a235ace01f50620984bc7ca5ceee781dc645211c5/blinker-1.6.2.tar.gz"
-    sha256 "4afd3de66ef3a9f8067559fb7a1cbe555c17dcbe15971b05d1b625c3e7abe213"
+    url "https://files.pythonhosted.org/packages/ea/96/ed1420a974540da7419094f2553bc198c454cee5f72576e7c7629dd12d6e/blinker-1.6.3.tar.gz"
+    sha256 "152090d27c1c5c722ee7e48504b02d76502811ce02e1523553b4cf8c8b3d3a8d"
   end
 
   resource "brotli" do
@@ -50,14 +52,9 @@ class Mitmproxy < Formula
     sha256 "4d1b810aa0ed773f81dceda2cc7b403d01057458730e309856356d4ef4188438"
   end
 
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
-    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
-  end
-
   resource "flask" do
-    url "https://files.pythonhosted.org/packages/4d/00/ef81c18da32fdfcde6381c315f4b11597fb6691180a330418848efee0ae7/Flask-2.3.2.tar.gz"
-    sha256 "8c2f9abd47a9e8df7f0c3f091ce9497d011dc3b31effcf4c85a6e2b50f4114ef"
+    url "https://files.pythonhosted.org/packages/46/b7/4ace17e37abd9c21715dea5ee11774a25e404c486a7893fa18e764326ead/flask-2.3.3.tar.gz"
+    sha256 "09c347a92aa7ff4a8e7f3206795f30d826654baf38b873d0744cd571ca609efc"
   end
 
   resource "h11" do
@@ -100,11 +97,6 @@ class Mitmproxy < Formula
     sha256 "f3e7fc4718e3f09dda568b57100095e0ce58633bcabbed8667ce3f8fbaa4229f"
   end
 
-  resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
-    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
-  end
-
   resource "mitmproxy-rs" do
     url "https://files.pythonhosted.org/packages/d5/94/8ebe25c964595b6394201a96083631f43d87b86c5cea70bfdcc09790923f/mitmproxy_rs-0.2.2.tar.gz"
     sha256 "64493b1aeb13d1c1f0d746fc8633d3ba378788cdb689f408683cd0c4783a872f"
@@ -115,8 +107,8 @@ class Mitmproxy < Formula
   end
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/dc/a1/eba11a0d4b764bc62966a565b470f8c6f38242723ba3057e9b5098678c30/msgpack-1.0.5.tar.gz"
-    sha256 "c075544284eadc5cddc70f4757331d99dcbc16b2bbd4849d15f8aae4cf36d31c"
+    url "https://files.pythonhosted.org/packages/c2/d5/5662032db1571110b5b51647aed4b56dfbd01bfae789fa566a2be1f385d1/msgpack-1.0.7.tar.gz"
+    sha256 "572efc93db7a4d27e404501975ca6d2d9775705c2d922390d878fcf768d92c87"
   end
 
   resource "passlib" do
@@ -144,24 +136,19 @@ class Mitmproxy < Formula
     sha256 "276f931f55a452e7dea69c7173e984eb2a4407ce413c918aa34b55f82f9b8bac"
   end
 
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
-  end
-
   resource "pyperclip" do
     url "https://files.pythonhosted.org/packages/a7/2c/4c64579f847bd5d539803c8b909e54ba087a79d01bb3aba433a95879a6c5/pyperclip-1.8.2.tar.gz"
     sha256 "105254a8b04934f0bc84e9c24eb360a591aaf6535c9def5f29d92af107a9bf57"
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/63/dd/b4719a290e49015536bd0ab06ab13e3b468d8697bec6c2f668ac48b05661/ruamel.yaml-0.17.32.tar.gz"
-    sha256 "ec939063761914e14542972a5cba6d33c23b0859ab6342f61cf070cfc600efc2"
+    url "https://files.pythonhosted.org/packages/d1/d6/eb2833ccba5ea36f8f4de4bcfa0d1a91eb618f832d430b70e3086821f251/ruamel.yaml-0.17.40.tar.gz"
+    sha256 "6024b986f06765d482b5b07e086cc4b4cd05dd22ddcbc758fa23d54873cf313d"
   end
 
   resource "ruamel-yaml-clib" do
-    url "https://files.pythonhosted.org/packages/d5/31/a3e6411947eb7a4f1c669f887e9e47d61a68f9d117f10c3c620296694a0b/ruamel.yaml.clib-0.2.7.tar.gz"
-    sha256 "1f08fd5a2bea9c4180db71678e850b995d2a5f4537be0e94557668cf0f5f9497"
+    url "https://files.pythonhosted.org/packages/46/ab/bab9eb1566cd16f060b54055dd39cf6a34bfa0240c53a7218c43e974295b/ruamel.yaml.clib-0.2.8.tar.gz"
+    sha256 "beb2e0404003de9a4cab9753a8805a8fe9320ee6673136ed7f04255fe60bb512"
   end
 
   resource "sortedcontainers" do
@@ -170,8 +157,8 @@ class Mitmproxy < Formula
   end
 
   resource "tornado" do
-    url "https://files.pythonhosted.org/packages/30/f0/6e5d85d422a26fd696a1f2613ab8119495c1ebb8f49e29f428d15daf79cc/tornado-6.3.2.tar.gz"
-    sha256 "4b927c4f19b71e627b13f3db2324e4ae660527143f9e1f2e2fb404f3a187e2ba"
+    url "https://files.pythonhosted.org/packages/48/64/679260ca0c3742e2236c693dc6c34fb8b153c14c21d2aa2077c5a01924d6/tornado-6.3.3.tar.gz"
+    sha256 "e7d8db41c0181c80d76c982aacc442c0783a2c54d6400fe028954201a2e032fe"
   end
 
   resource "urwid-mitmproxy" do
@@ -180,8 +167,8 @@ class Mitmproxy < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/d1/7e/c35cea5749237d40effc50ed1a1c7518d9f2e768fcf30b4e9ea119e74975/Werkzeug-2.3.6.tar.gz"
-    sha256 "98c774df2f91b05550078891dee5f0eb0cb797a522c757a2452b9cee5b202330"
+    url "https://files.pythonhosted.org/packages/0d/cc/ff1904eb5eb4b455e442834dabf9427331ac0fa02853bf83db817a7dd53d/werkzeug-3.0.1.tar.gz"
+    sha256 "507e811ecea72b18a404947aded4b3390e1db8f826b494d76550ef45bb3b1dcc"
   end
 
   resource "wsproto" do
@@ -211,7 +198,7 @@ __END__
 +++ b/local_dependencies/mitmproxy/build.rs
 @@ -1,9 +1,11 @@
  extern crate prost_build;
- 
+
  fn main() {
 -    if let Ok(protoc_path) = protoc_bin_vendored::protoc_bin_path() {
 -        std::env::set_var("PROTOC", protoc_path);
@@ -221,6 +208,6 @@ __END__
 +        _ => protoc_bin_vendored::protoc_bin_path().expect("protoc is not available"),
 +    };
 +    std::env::set_var("PROTOC", protoc_path);
- 
+
      prost_build::compile_protos(
          &["./src/packet_sources/ipc.proto"],

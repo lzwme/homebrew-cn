@@ -10,13 +10,14 @@ class Scrapy < Formula
   head "https://github.com/scrapy/scrapy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5e5372cf327ff435e884d0d669e6a16a512f1489f08e1cb94cc90dca1e711fcd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5fe573541086bb38d5c26d56ec810cd672c8c04e15a716bd4c40688155425d64"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c0e75a98d2817d046339aa1d6fa7a4bb3e45db498ffd37328bbaea4bff68896"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5ec5c207efdc3614e152a1b94ab54d543e4ad0fd8649787acd5c8983eaee8fa8"
-    sha256 cellar: :any_skip_relocation, ventura:        "6da2993d5edfaa122429f04c2f3fe4984e8432e9c1148321bd172567e8e3a548"
-    sha256 cellar: :any_skip_relocation, monterey:       "f547499ea131dea324ef02bbe1b2a3ffa673600f365e432b03356ef090511487"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8300c3e216d65bfe679c8c5592d75e4b947b98dea30f7ab21e2d65eebe5523cc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1a20902e19d3e4aae4224c0aa86bdc08cfe5708f53806a1159259605852ad89d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9abe8434fdd52e459b75ae8ba73bb6046e4de3dfc0707601cd061d78df5a706d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "938ca86f46214b7bd2aca9ce6f2c491a4753dbf6e8e35713ec0f5579c45c3614"
+    sha256 cellar: :any_skip_relocation, sonoma:         "177f0012fa231afe07b1a47f936ca049da23b2574fe9cf190b0b24497218b264"
+    sha256 cellar: :any_skip_relocation, ventura:        "0d75e7393272675a1e5d870bc5f517156999f7fd47b2e5220d6b3d8307eff670"
+    sha256 cellar: :any_skip_relocation, monterey:       "406d41b67a1f69bcb3c1d5e156bc86f4521fd74d2101d44df7c792124529da7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e01ba58a3da09a8170df4377aa4e8159d7d10e1a479cc6a7bd97ebb93c8004cd"
   end
 
   depends_on "cffi"
@@ -26,7 +27,7 @@ class Scrapy < Formula
   depends_on "python-lxml"
   depends_on "python-packaging"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "attrs" do
@@ -40,13 +41,13 @@ class Scrapy < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
+    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
   end
 
   resource "constantly" do
-    url "https://files.pythonhosted.org/packages/95/f1/207a0a478c4bb34b1b49d5915e2db574cadc415c9ac3a7ef17e29b2e8951/constantly-15.1.0.tar.gz"
-    sha256 "586372eb92059873e29eba4f9dec8381541b4d3834660707faf8ba59146dfc35"
+    url "https://files.pythonhosted.org/packages/4d/6f/cb2a94494ff74aa9528a36c5b1422756330a75a8367bf20bd63171fc324d/constantly-23.10.4.tar.gz"
+    sha256 "aa92b70a33e2ac0bb33cd745eb61776594dc48764b06c35e0efd050b7f1c7cbd"
   end
 
   resource "cssselect" do
@@ -55,8 +56,8 @@ class Scrapy < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/d5/71/bb1326535231229dd69a9dd2e338f6f54b2d57bd88fc4a52285c0ab8a5f6/filelock-3.12.4.tar.gz"
-    sha256 "2e6f249f1f3654291606e046b09f1fd5eac39b360664c27f5aad072012f8bcbd"
+    url "https://files.pythonhosted.org/packages/6c/93/59c180bd2d637ad8ff58bacd3187abdd1af3a76d26d34a2544cec93dbfcc/filelock-3.13.0.tar.gz"
+    sha256 "63c6052c82a1a24c873a549fbd39a26982e8f35a3016da231ead11a5be9dad44"
   end
 
   resource "hyperlink" do
@@ -115,8 +116,8 @@ class Scrapy < Formula
   end
 
   resource "pyopenssl" do
-    url "https://files.pythonhosted.org/packages/be/df/75a6525d8988a89aed2393347e9db27a56cb38a3e864314fac223e905aef/pyOpenSSL-23.2.0.tar.gz"
-    sha256 "276f931f55a452e7dea69c7173e984eb2a4407ce413c918aa34b55f82f9b8bac"
+    url "https://files.pythonhosted.org/packages/bf/a0/e667c3c43b65a188cc3041fa00c50655315b93be45182b2c94d185a2610e/pyOpenSSL-23.3.0.tar.gz"
+    sha256 "6b2cba5cc46e822750ec3e5a81ee12819850b11303630d575e98108a079c2b12"
   end
 
   resource "queuelib" do

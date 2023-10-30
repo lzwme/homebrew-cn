@@ -1,20 +1,18 @@
 class Walk < Formula
   desc "Terminal navigator"
   homepage "https://github.com/antonmedv/walk"
-  url "https://ghproxy.com/https://github.com/antonmedv/walk/archive/refs/tags/v1.6.2.tar.gz"
-  sha256 "b6ba7a5e3873a25944e0f18c8a3ebbfdc0e8681756517905c75972c824315970"
+  url "https://ghproxy.com/https://github.com/antonmedv/walk/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "b657523d637727cfa408040e9816f45ae868c5192fb3962c32a0edab9d9b00dd"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4475065655feff3220990d93e885ed681b5228c8c8eccb32ff9a41bd721729b8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5578755af5859148ad9c163aa88bd3c7215f71cfd938f2b2bfadbd0d21d40248"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5578755af5859148ad9c163aa88bd3c7215f71cfd938f2b2bfadbd0d21d40248"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5578755af5859148ad9c163aa88bd3c7215f71cfd938f2b2bfadbd0d21d40248"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c3c0bab2aaa8f88487e5fe1ef22d17e02c5c7617dc90fcf2a8d7db8567077913"
-    sha256 cellar: :any_skip_relocation, ventura:        "5747b2a9e5f9147a4a00e05d07c1121b065603d46ed739dfa735fee2437522bf"
-    sha256 cellar: :any_skip_relocation, monterey:       "5747b2a9e5f9147a4a00e05d07c1121b065603d46ed739dfa735fee2437522bf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5747b2a9e5f9147a4a00e05d07c1121b065603d46ed739dfa735fee2437522bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0156820bc8b40bfa01252bf681616ae860db3cdb0eb53976b9546baf146db3e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "537142d9f0227961b01d774084514fd724bc10789d6d237013ee7b23bb24f392"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "537142d9f0227961b01d774084514fd724bc10789d6d237013ee7b23bb24f392"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "537142d9f0227961b01d774084514fd724bc10789d6d237013ee7b23bb24f392"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ac0112f53613cc4910ba605c8494150492352fb38d2a7b95e81e458ab021fbdc"
+    sha256 cellar: :any_skip_relocation, ventura:        "ac0112f53613cc4910ba605c8494150492352fb38d2a7b95e81e458ab021fbdc"
+    sha256 cellar: :any_skip_relocation, monterey:       "ac0112f53613cc4910ba605c8494150492352fb38d2a7b95e81e458ab021fbdc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd0aec9f0061f88be352c10566a6513a9edcddb10d3034a417bf60e93f921002"
   end
 
   depends_on "go" => :build

@@ -14,13 +14,12 @@ class SpiceGtk < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "2a6e8931ad271174c6f0ed8db774939cdde78d024c3ecdda9f9f2035e2536547"
-    sha256 arm64_monterey: "500b53e19c783d9a5267dc2ca98a195e2d434f2bb65493d114036365bcb1a39c"
-    sha256 arm64_big_sur:  "26ba9072a37ada8a8ffe4b7fc72ce5e818ac285e43e9c3d313bb3a67c00b97e6"
-    sha256 ventura:        "c7bc533bf415ffdda9cbf3129bff469457c84e266c1ee88ddac5be721e66431d"
-    sha256 monterey:       "cb802775855bc572d85b75a854cb4ad1eab6fa558a72c8b208c9963c2c326862"
-    sha256 big_sur:        "8988ac006388c1c9992ee19b844d108cbca3fc8c6642f67e623b4781cba3e6a7"
-    sha256 x86_64_linux:   "b68695adcd56e47248083082f0a09b9aa2c9cb80a78d684c2cc644bd5ecad469"
+    rebuild 1
+    sha256 arm64_ventura:  "72e82feb3a6e163e87202dfec50f6e434519cdd080511fe6d50179c3f913c36b"
+    sha256 arm64_monterey: "7405f31550ec07d48ec970158f3b5498d4d8b940bcfcf930a078c681f13b5383"
+    sha256 ventura:        "7a98d59c135af9d0512ef1da66d03ae1017bef61442ced1b22aeb8851025e477"
+    sha256 monterey:       "c7f1f4442a9ede6b40507db3195b1fa1eb5720e3dfca7ef9522e5cb32db69048"
+    sha256 x86_64_linux:   "13080eae5ee1a111247b04dacde796c2a63e02a3104800c55cd26fc31675aa42"
   end
 
   depends_on "gobject-introspection" => :build
@@ -29,7 +28,7 @@ class SpiceGtk < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on "six" => :build
   depends_on "vala" => :build
 
@@ -48,22 +47,14 @@ class SpiceGtk < Formula
   depends_on "opus"
   depends_on "pango"
   depends_on "pixman"
+  depends_on "python-pyparsing"
   depends_on "spice-protocol"
   depends_on "usbredir"
-
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz"
-    sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
-  end
 
   # https://gitlab.com/keycodemap/keycodemapdb/-/merge_requests/18
   patch :DATA
 
   def install
-    venv = virtualenv_create(buildpath/"venv", "python3.11")
-    venv.pip_install resources
-    ENV.prepend_path "PATH", buildpath/"venv/bin"
-
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build"
     system "meson", "install", "-C", "build"

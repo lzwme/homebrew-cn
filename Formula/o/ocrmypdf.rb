@@ -3,18 +3,18 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://ocrmypdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/36/0f/81ba4b490b4a0f565ca219ce748c317a0bd3776cb30084efbb83792ece99/ocrmypdf-15.3.0.tar.gz"
-  sha256 "70be7e01ea8ff33037230a8dfc189185e12258b692a7013d10d2a42ed85ba0d0"
+  url "https://files.pythonhosted.org/packages/23/5d/57297eeb9b56afdf280b97b29e8a98a5484ca843faec8a570923dbde2156/ocrmypdf-15.3.1.tar.gz"
+  sha256 "88fa1e422a6f77fc56440ec5e3cc3bd561156b6d7afbc210cf7d701558405350"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fccb3e7efc355ae52f245e964a98a354e5093eb7307babb121d037151a0ad43e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b29f505894e02472edb9ed2b453806d70a1549c972abba7b1d41ead7d3663e4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e3a2415616de817aa16ce1f5a4e8e57d32df96eafcf9d5c89f5ff34955ff7e44"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cbe5448150d85e85a689214d1ac96f22331705efd12e4655417453b4b545dd26"
-    sha256 cellar: :any_skip_relocation, ventura:        "d97aec65012e2b29092107fe57b6744b7b0a9a6b260ae6c5b0af277f2c08ad32"
-    sha256 cellar: :any_skip_relocation, monterey:       "f7a5c248476229509766d726c759550e022a112d6f1b3690c475466aa46822ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5cb0167852b060b64b3dee6fd6a0a0264a91f334ecfb62d322f7691237d645cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "07a53a8a669998098571b56b7b81576f58d0ae8e83763541e8c04153d90cf579"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bcd51d285be0fc6b622705e47cad7a9a3b11a0d72245db15ff6bb98f0eff7f26"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d23b6f6d5fe7c2d1e96e9c967adcc35f0341133f2b10ee2d091920ec5ea07c95"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d0334a8604a5b6674766ad1898032191d0900308cf16830f3cfd4ae0359bd302"
+    sha256 cellar: :any_skip_relocation, ventura:        "70db08a2d9520753722de1a30baa85672c4bd2c5a2377c903317154d2a45d54c"
+    sha256 cellar: :any_skip_relocation, monterey:       "f9d64a2ae21c145bd08bae9b6f9b0537642748a5adac0e2b96d122a2a6fd2880"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3581f5aa3eef72990dc6cf60e68bfa356bc07dfbae491d6e145ad302588b39fc"
   end
 
   depends_on "cffi"
@@ -41,8 +41,8 @@ class Ocrmypdf < Formula
   fails_with gcc: "5"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
+    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
   end
 
   resource "markdown-it-py" do
