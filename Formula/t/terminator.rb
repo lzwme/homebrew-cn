@@ -8,19 +8,18 @@ class Terminator < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f8f4be27e312cfe816bf3562e11bdbba2b1b33787cbe451227a3d907ef2af3d1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2307bdb153aa6a5fc0e05cdac0b3b71e7c6e4277c293bf65c722b60e5319ad5c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "77b5e90f5d1fc261e196e25196d73be1c936d1f91ab2c4a19b8db4f62925d2c4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9a9e3d8693c6bd2d93d3aa7b56e958e53d4fb2d0c0bbe457f91e6394df2438d8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cd66ced8fa625394f315143b59782dc1cbf32ddc0f536e0de7d7c12e8fb4fd22"
-    sha256 cellar: :any_skip_relocation, ventura:        "9827d8d873ac411d20b41aaf7610c1f2e9d7b2526620f7df2bc9be2b5da8af05"
-    sha256 cellar: :any_skip_relocation, monterey:       "311ad497c491d2e0667c16671c6a95ab683b47b1946422d51aee6d131f69b67e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "85457c6098ae589d2b16d6aa4cbed08df9ce4c364503ff4a5c8385d9e8da616d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8dc1c9a39ed76ef6d67b3831a687776f880afd77609982e37cc7459b334a2190"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "052165795930397e5a73e38488a3c4e1dc8093c47d9e5b15cf89fbde85fcde78"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9a457a8648e9c7854e507a0ff0c3fdb8556c97d7aba7d99c58bb8996ca5993c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed8774631ad42ddc984ef7740a5640863fdaa48f9f3e6fab2e8c60be130212f2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9db11ee4db1c49a67cf236d6b8dc1e3a5431a131ecd1f95c29e3e564aa1135bf"
+    sha256 cellar: :any_skip_relocation, ventura:        "f8b5279a4e1c1496fcbf930f823454aef287852c8bc2cb85a5df817cf812fa39"
+    sha256 cellar: :any_skip_relocation, monterey:       "289a434c46d119b40e412ff507248fa84b622aeafa4018e17741107b878f6c2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d4a92242883f7649493fb09721cb1c336c09871ea7abeba66ad69627aa04785"
   end
 
   depends_on "pygobject3"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
   depends_on "vte3"
 

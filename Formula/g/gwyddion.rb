@@ -1,8 +1,8 @@
 class Gwyddion < Formula
   desc "Scanning Probe Microscopy visualization and analysis tool"
   homepage "http://gwyddion.net/"
-  url "http://gwyddion.net/download/2.63/gwyddion-2.63.tar.gz"
-  sha256 "8067b5470f0319a3be3ec077f9ace59ce071d359382d6cd7ede82c01f01c8f38"
+  url "https://downloads.sourceforge.net/project/gwyddion/gwyddion/2.64/gwyddion-2.64.tar.xz"
+  sha256 "1432f85c31c7e96605e3b3ac9e1c6933bb3b61a76eb620838dc24a085f19942c"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,15 +11,13 @@ class Gwyddion < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "6407eb8054f88dc28f0e5594613d3f6829d5354e0c1503e068aa75aa281d1f2c"
-    sha256 arm64_ventura:  "d3c1514b6223703e6ee86bccd1b65ef1a069348f93bd85cf58d9172f1df989e1"
-    sha256 arm64_monterey: "9e222c291217ea8edb89a2a38db7f9134688ae17b241a7d6484a4203fe306c97"
-    sha256 arm64_big_sur:  "d584e56ce7ec0e6ce276291ccd4736c5789a74a66e86c67afce5cda13d16934b"
-    sha256 sonoma:         "410bff6f1c820d28b45a81996770f0b45ed8c9a508c2d6bfbea1180b6e772331"
-    sha256 ventura:        "6d7cb651783e738c339c0ebdc34a37d13d4d59aceabf14a05cae8d3638408530"
-    sha256 monterey:       "1c5c6b71147ae9f0aa759aeef371921b5f311d3749e7f439a99f3aab365b1ea2"
-    sha256 big_sur:        "ae68bb295a84085c97e725e406fc6f6680c22e82708b048c646f22c82c84ef1c"
-    sha256 x86_64_linux:   "63bf4dce8b7644885ba8951250a2fcbaf6e615c495e42fc79749dbaf237c9bf2"
+    sha256 arm64_sonoma:   "23b2370f16c4598b0a52243632dbc56bdfb0ae47162e853c5227f00b54e528cc"
+    sha256 arm64_ventura:  "efe5f82058607a4eb1eda938d1c8701ef3bc6835231c2b51298002d9bfb3eda3"
+    sha256 arm64_monterey: "8d5c8932185d338b36a07704e9920569ab8383789c110b773eee1076d1eb1daf"
+    sha256 sonoma:         "3118b40bf2ee000f0f6037aa28f41fc31ba82b340c93255a75e03aeab7722c2c"
+    sha256 ventura:        "9a3b211e5b6260f1594b0b61c16dce73c4d3d64942b472524bf709dd64bbfee4"
+    sha256 monterey:       "685e9406129afe972b1f51cd8cecc98698cd34a24348bb48d55074a7d1ae671a"
+    sha256 x86_64_linux:   "e2df2d55d30fe232795d517113231d6e3a0f474a3b179b19ef9d8f76376c0206"
   end
 
   depends_on "pkg-config" => :build

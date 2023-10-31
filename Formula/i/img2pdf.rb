@@ -3,19 +3,18 @@ class Img2pdf < Formula
 
   desc "Convert images to PDF via direct JPEG inclusion"
   homepage "https://gitlab.mister-muffin.de/josch/img2pdf"
-  url "https://files.pythonhosted.org/packages/95/b5/f933f482a811fb9a7b3707f60e28f2925fed84726e5a6283ba07fdd54f49/img2pdf-0.4.4.tar.gz"
-  sha256 "8ec898a9646523fd3862b154f3f47cd52609c24cc3e2dc1fb5f0168f0cbe793c"
+  url "https://files.pythonhosted.org/packages/56/a4/755e7c296d6e24e3e40b0f98e639ee93be1bd91c62ed698bbc7ceec420f6/img2pdf-0.5.0.tar.gz"
+  sha256 "ae6c19731bde2551356c178bf356ca118ac32a232c737a14b423f8039df3c24b"
   license "LGPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a93aa3091566600d462cdada6230f1f4e719936965b789dba7754606aabeb47a"
-    sha256 cellar: :any,                 arm64_ventura:  "01650a4d1aa5234b48eeeee4209e9e71aa6a0ed0debaa3cd706a294a95c30954"
-    sha256 cellar: :any,                 arm64_monterey: "ff3374f676856e052de7d1db31574dd21bb097d92dffc98e329f65fce265bee6"
-    sha256 cellar: :any,                 sonoma:         "c348745f00f56765220dd0eaa23997c1bf83845d6e6a8260b19dc14f1b3b4ced"
-    sha256 cellar: :any,                 ventura:        "008a2f535e03de53b70b65ec6b8c4d0575f3dc250bb72a422c2cdae2d61adbb6"
-    sha256 cellar: :any,                 monterey:       "81c4510ca8e11eb6c72f29dbc87a8f9d5b5702f33ca913cd6557c28aa4d2d928"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed561971b932a1b94a74d0f96dae9ea7dd37567633568a9f85de9fc0ffac077e"
+    sha256 cellar: :any,                 arm64_sonoma:   "492b0d07a574f776f02af896bdaff257492d086ee6dfaddf9d7f07ff735b5716"
+    sha256 cellar: :any,                 arm64_ventura:  "309b4c9fd9da6b1bb858d01124e3961c59605580bd902278d5f4f0e6e6cd0c53"
+    sha256 cellar: :any,                 arm64_monterey: "f632abe8306b30d27742dcdc201985ef0a389b96bb70896aac697506a45d39ae"
+    sha256 cellar: :any,                 sonoma:         "36f941f12619c369374271d943d922ff46050f60d1307c5215e68e32b114401a"
+    sha256 cellar: :any,                 ventura:        "b42e9e40a5c2dd209bab9bf759b0eb007225e73f9abd8716448f4e863497155a"
+    sha256 cellar: :any,                 monterey:       "74c4047679ebcb7b918cb02a6938d19dc49b1cbda519294487173fe83acf6a83"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e6e6fcc37339427d439ec1be62ca53f436cf8e391833e8597b131deb3257f47"
   end
 
   depends_on "pillow"
@@ -30,8 +29,8 @@ class Img2pdf < Formula
   end
 
   resource "pikepdf" do
-    url "https://files.pythonhosted.org/packages/d0/a3/b4951d002af6fc1fc6a938ce48f82c0561f18bbcb4fca64910b01c801bf2/pikepdf-8.2.3.tar.gz"
-    sha256 "77dc52bc0064af10abce890bc0e2496d57ba766e0946a5ac8701a853b00f3403"
+    url "https://files.pythonhosted.org/packages/25/03/5d12db46d10d6f8979edaedf286f7c4f399c8b022ed653c5f78f6a74e0f4/pikepdf-8.5.3.tar.gz"
+    sha256 "7b4303e9000375b4f6ff51779bd5ca72aba3befb01cfdb5530f4ebabdde3f82b"
   end
 
   def install

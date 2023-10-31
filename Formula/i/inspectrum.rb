@@ -1,24 +1,19 @@
 class Inspectrum < Formula
   desc "Offline radio signal analyser"
   homepage "https://github.com/miek/inspectrum"
-  url "https://ghproxy.com/https://github.com/miek/inspectrum/archive/refs/tags/v0.2.3.tar.gz"
-  sha256 "7be5be96f50b0cea5b3dd647f06cc00adfa805a395484aa2ab84cf3e49b7227b"
+  url "https://ghproxy.com/https://github.com/miek/inspectrum/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "94e42333aceb06c15fb6fc10d186d61112975fdcf9539357a279e886e9edf35e"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/miek/inspectrum.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "df58ddbe6202b234796fcb891a8f3d3b0adaa24d72c1f9cf7f64f2024f856e45"
-    sha256 cellar: :any,                 arm64_ventura:  "8a34eeb6438451da34d80743d43610ffc0f36943e24c8d71038a94c0afea6843"
-    sha256 cellar: :any,                 arm64_monterey: "987ec702b9c0a62d782d08827ceca63cf930e3b32fa65b3ac6d6c1a808fc4c80"
-    sha256 cellar: :any,                 arm64_big_sur:  "c87caeeaecdf7dee81c4c8d557a5acb25a511a6a80418d829f0e87293970cd61"
-    sha256 cellar: :any,                 sonoma:         "5144474663a0a264f2e57af1e5b75857ea4679c2ea52a45c2cb76563c747d84b"
-    sha256 cellar: :any,                 ventura:        "802a9b0c1775c15610f8024542fbd4263df60370b8ebbd8dbf7ddaa98a1efa9e"
-    sha256 cellar: :any,                 monterey:       "bf95d982178b20894aa627dc49c4af81601d78dbd7cca7ad17d75d73676f3a9e"
-    sha256 cellar: :any,                 big_sur:        "a3b1a2e902c182dbe8821025facb01cfe6b35945cc88302e7e1a14904ef98778"
-    sha256 cellar: :any,                 catalina:       "17c0d00e0191db31868a384d773ee1ac74da82fd01ceee06b425e99b15809670"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d7b5c146e089b5eceb3ccf9456ba2c15b2535c9eafdbe4e37ed92512ea79cdd5"
+    sha256 cellar: :any,                 arm64_sonoma:   "b8fed8bc9e251d6f90e191b260fba14a907183b966ce9058eca5e45832fd096b"
+    sha256 cellar: :any,                 arm64_ventura:  "85676ab09338e0dc82b50ef359f7ac49e8f1ae09eaa673ad23da5edb55dcbe07"
+    sha256 cellar: :any,                 arm64_monterey: "a4a8b084973fc6d26f895e56e82e3bb5b6f10ef5f803a2ae41b85ecd7e84d06f"
+    sha256 cellar: :any,                 sonoma:         "d362f00903bb5068748061931788f911ecc8f219453822eb5e2dbfbefbe77e7d"
+    sha256 cellar: :any,                 ventura:        "4698d8a738a586230abc96eafdf2b8e5ddc404eed157a9793232742c60689f0d"
+    sha256 cellar: :any,                 monterey:       "dd6e9a06f5bb1a627906d9b87b5f2a54c0589f9663335224092eed9d4ec8e038"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebd0cb2283b88fad36bb8c481cab44ee8fa12be897a798697d3643646772cf4c"
   end
 
   depends_on "cmake" => :build

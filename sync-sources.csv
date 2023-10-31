@@ -2634,6 +2634,7 @@ Homebrew-homebrew-core/Formula/i/imgdiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/imgproxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/imgur-screenshot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/imlib2.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/i/immer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/immortal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/immudb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/imposm3.rb, Homebrew/homebrew-core, 1
@@ -13510,7 +13511,7 @@ nicerloop-homebrew-nicerloop/Formula/bison@1.875c.rb, nicerloop/homebrew-nicerlo
 nicerloop-homebrew-nicerloop/Formula/diffoci.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/f2c.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/ftnchek.rb, nicerloop/homebrew-nicerloop, 0
-nicerloop-homebrew-nicerloop/Formula/get-scoop.rb, nicerloop/homebrew-nicerloop, 1
+nicerloop-homebrew-nicerloop/Formula/get-scoop.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/git-credential-keepassxc.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/git-credential-lastpass.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/git-credential-rbw.rb, nicerloop/homebrew-nicerloop, 1
@@ -13526,11 +13527,11 @@ nicerloop-homebrew-nicerloop/Formula/macos-scripts.rb, nicerloop/homebrew-nicerl
 nicerloop-homebrew-nicerloop/Formula/mas.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/moproxy.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/optic.rb, nicerloop/homebrew-nicerloop, 1
-nicerloop-homebrew-nicerloop/Formula/orbicfg.rb, nicerloop/homebrew-nicerloop, 1
-nicerloop-homebrew-nicerloop/Formula/pcap-proxy.rb, nicerloop/homebrew-nicerloop, 1
+nicerloop-homebrew-nicerloop/Formula/orbicfg.rb, nicerloop/homebrew-nicerloop, 0
+nicerloop-homebrew-nicerloop/Formula/pcap-proxy.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/pdf-strip-watermark.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/pdfbox.rb, nicerloop/homebrew-nicerloop, 0
-nicerloop-homebrew-nicerloop/Formula/pdfjam-extras.rb, nicerloop/homebrew-nicerloop, 1
+nicerloop-homebrew-nicerloop/Formula/pdfjam-extras.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/pdfjam.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/pinfinder.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/qrscan.rb, nicerloop/homebrew-nicerloop, 1

@@ -1,8 +1,8 @@
 class DsdaDoom < Formula
   desc "Fork of prboom+ with a focus on speedrunning"
   homepage "https://github.com/kraflab/dsda-doom"
-  url "https://ghproxy.com/https://github.com/kraflab/dsda-doom/archive/refs/tags/v0.27.1.tar.gz"
-  sha256 "caa16845cd3a2273dce8b71ff55f463183724788a6850a5012e694956f94cd80"
+  url "https://ghproxy.com/https://github.com/kraflab/dsda-doom/archive/refs/tags/v0.27.2.tar.gz"
+  sha256 "29071be8fffde4df2834026f40c5b6a268e00e43453d9255314601be9c336445"
   license "GPL-2.0-only"
   head "https://github.com/kraflab/dsda-doom.git", branch: "master"
 
@@ -12,13 +12,13 @@ class DsdaDoom < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "eb9e6d514b98c4349b7a6061e50c6589265fb84a6305dd97012fbbe08c2f05f5"
-    sha256 arm64_ventura:  "48548246b67953ff72dd0e014a3c33d7207242ace2a770cf6c87d742e3de5783"
-    sha256 arm64_monterey: "1ea2f2877a9108623b58e6a8d84f3f29b16e7a131c715ba28981422602f9268d"
-    sha256 sonoma:         "7379c3edb59a0ae5401d6c29e407d485d0e3c5c3a4dc437917511ff3189ed602"
-    sha256 ventura:        "0907d2db65bd550c236ae18bfe41f9f86f91d0d9211014c3ec2f339afad5b6a5"
-    sha256 monterey:       "ffc6f84d6dd74a1f692b58d0f8ec286749235f6ab5693914567c67ba5df61f11"
-    sha256 x86_64_linux:   "e37ff871aded0ae84881ed2df336245d31e78cd0d0a8e0abb21411bd6ffb6dcf"
+    sha256 arm64_sonoma:   "78143f8ab731975fb41c63cc622fc6b5ab4fa2a9495267ae20821bda44594530"
+    sha256 arm64_ventura:  "a0bd67a12f96f97c837445e7e55848ee1e2db721a316a62fa69702df4a3a27cc"
+    sha256 arm64_monterey: "d361ce5fc583c269b6cff243bd0a128a4fcb310de2495ce1de7479f0507f8b5f"
+    sha256 sonoma:         "040407f59925d2e5171a3fb9e6450aee52f1ae52926e25a40f73ea25675b279c"
+    sha256 ventura:        "7f8fa63caa7655d2a90890a126ca6d074b846879edaf5738e07d4ea0d214fcab"
+    sha256 monterey:       "3ee6aded7b7a412f757736b36f1f9777e40f428b1095326a5abebf5c5449256f"
+    sha256 x86_64_linux:   "631a2912ab00cccd9cf61263d42482022b736f206eeca2a1c5ba9b3975f37504"
   end
 
   depends_on "cmake" => :build

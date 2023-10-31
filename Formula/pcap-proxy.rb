@@ -1,10 +1,12 @@
 class PcapProxy < Formula
   desc "Userland TCP proxy application that captures the network flow into a .pcap file"
   homepage "https://github.com/irsl/pcap-proxy"
-  url "https://ghproxy.com/https://github.com/irsl/pcap-proxy/archive/17288c3e7f5e6f68a2268fe4edb1a48454e9c15e.tar.gz"
-  version "2021-06-14"
-  sha256 "1725e7cff914d524ca04c8473dd1758becaeebd8f67e2f789987204b563d074a"
   license "Unlicense"
+  head "https://github.com/irsl/pcap-proxy.git"
+
+  livecheck do
+    skip "head-only formula"
+  end
 
   uses_from_macos "perl"
 

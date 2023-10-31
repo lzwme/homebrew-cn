@@ -7,22 +7,23 @@ class GitCredentialOauth < Formula
   head "https://github.com/hickford/git-credential-oauth.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "312dc79d5e87a513e19ae4eb0021e4e489662fd7e3cc8720e58e6ac1e22f0823"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a1933c80ac6ac7257628cfbb30bed000bb07fc559de8a5b0d3119b240c6b7e71"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e62d9c0429e18441905d1c0d49c62e6c96c64f894601ea2429da3707f4efd896"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5898225216e2cc183e2b419919f4454d9f294a070b7d6feee2c1555f5deecdb5"
-    sha256 cellar: :any_skip_relocation, ventura:        "711e5d0da5aadf6562b1a4c9d9005201a92f909b407c52d246b7deb67eb2d325"
-    sha256 cellar: :any_skip_relocation, monterey:       "6fc18bdfaab89a5fbc37320573392f5a9fd5dc3d9e2d2e466709d1a1d9d51e63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16fcbf9d42394829d2962f4e61fb60aad8478fdc9a6bc9e1ea6897a2ab0b7012"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f7a5aeb8aafae8e93044a882827b62e3f331abc3402916acb83732430e258eb7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed1ac4f7647852451aeefcf7da02362f5f05e3612526ef47047c2fbc0620aff5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3814b38d39fd0b242c059668ed7c16310b7ee0b78832b7be1453e44f03b45015"
+    sha256 cellar: :any_skip_relocation, sonoma:         "53e9e8b0ea4b6525ca5e1d6c9a5c452be73759131af33fafe092dfc71f003031"
+    sha256 cellar: :any_skip_relocation, ventura:        "d92df5253409dfd81386ad48bb4c5d48cf02dcc0bb0f1334a855b46d1c558d0b"
+    sha256 cellar: :any_skip_relocation, monterey:       "2599bd4f7d6ccd14c409321648e1f82216c0542a00da7cc6926c4a54332f99eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c1e36c953f49d40205e2caee0579d8f59d0c3f2c7ab14515eb40e096767f512"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
   end
 
   test do
-    assert_empty shell_output("#{bin}/git-credential-oauth", 2)
+    assert_match "git-credential-oauth #{version}", shell_output("#{bin}/git-credential-oauth -verbose 2>&1", 2)
   end
 end

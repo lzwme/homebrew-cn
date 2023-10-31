@@ -4,18 +4,16 @@ class Ivtools < Formula
   url "https://ghproxy.com/https://github.com/vectaport/ivtools/archive/refs/tags/ivtools-2.1.tar.gz"
   sha256 "6a5a55883399cbfef317d8bbf553e57e54945188666b344d9efa98ba3edb57ad"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "7509e92b7513508704aa54be6b92f5f57890f7c413d20ed03ecbdd6307bb140f"
-    sha256               arm64_ventura:  "f15b4a00bb27f6b6ef480beb15cf07076054e599879409354b5c13ca1d1b49a5"
-    sha256               arm64_monterey: "6f44556326e4df7ca2daadd1c835c090496782647cc2505697a73fd4080d3d66"
-    sha256               arm64_big_sur:  "df3bb35a27ec88a243afd189bb8e4366c23d490e3312046a4c8e2bd3beee88f4"
-    sha256 cellar: :any, sonoma:         "3f4a5b6a443badeef88b230c3045b49f7dd223e86a8dcca941294bdde0e8e1a3"
-    sha256               ventura:        "a0c20b2a2bbbda73dea23f86dfba32850979feb63217203dfe06abfb25fc7eab"
-    sha256               monterey:       "a50ab5e6eef0b90a7a9a0fbe76a3706fa6eec73935a9ea6f3a009608d755df5e"
-    sha256               big_sur:        "b8cb965c3d966deed879d6a91ae48301462539b282f9bd06f460e90c52eb1059"
-    sha256               x86_64_linux:   "27d69d71ef38b8ad9811cc8310799ec1a14503d83cf04df51dde36ff460e4e5e"
+    sha256 cellar: :any, arm64_sonoma:   "e4d71bcf5053cf0ba2ce9995bbafc4153479fe70c7f21549abbc7f0155c3f782"
+    sha256               arm64_ventura:  "f9ea66a6aad08b33b6ed9076bf39d752063396c2af45c60749aa69866d7f7a35"
+    sha256               arm64_monterey: "beeef8b0986b07c3e379ac7b7143d2355185b65e4b01862eb309df4ed25b5fa3"
+    sha256 cellar: :any, sonoma:         "db8db6b7fbc12d4179c33046aa880c79366132e5a0a9b4ca44041b9285122fa7"
+    sha256               ventura:        "68a88e01f27a4ba70ed314d17b9bf396a7d51d54b1c218d043c8d9f365d2709f"
+    sha256               monterey:       "a25df16f46c406df9507cfa2f54ef42f0d8ba2f432b0340c5487e388fb503956"
+    sha256               x86_64_linux:   "e21da8a185c06c012b98719182c2ae50285664e540287cb8542203d30e93d24f"
   end
 
   depends_on "ace"

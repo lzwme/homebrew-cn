@@ -1,9 +1,9 @@
 class Ispell < Formula
   desc "International Ispell"
   homepage "https://www.cs.hmc.edu/~geoff/ispell.html"
-  url "https://www.cs.hmc.edu/~geoff/tars/ispell-3.4.05.tar.gz"
-  mirror "https://deb.debian.org/debian/pool/main/i/ispell/ispell_3.4.05.orig.tar.gz"
-  sha256 "cf0c6dede3fd25fada4375d86acafe583cb96d8fe546de746a92ebb6df895602"
+  url "https://www.cs.hmc.edu/~geoff/tars/ispell-3.4.06.tar.gz"
+  mirror "https://deb.debian.org/debian/pool/main/i/ispell/ispell_3.4.06.orig.tar.gz"
+  sha256 "17c91633d4c8075acc503163a16463fc54ab1c7453280ad39cd3db75c783eba6"
   license :cannot_represent # modified BSD license
 
   livecheck do
@@ -12,14 +12,13 @@ class Ispell < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "e4701e042d4de17a21ae9f90e3b3a11f17289fbc47d5b1c9f4a7b8a9612990f3"
-    sha256 arm64_ventura:  "a945c230dfa19ca5d6386e93175a9b783c981b986fb6b4706a87f23867f3dbfe"
-    sha256 arm64_monterey: "cd60564b8dd85c18dcef91d4b5d90aa66fc4ccfbe2008009d33aa190554661bb"
-    sha256 arm64_big_sur:  "e76131c8422ce43a180cf8d13fd74c2ff9073b82f9f749f50ddb27bda01bdaaa"
-    sha256 monterey:       "eb6ac3922256a30c140ceb738cceacb4564ae5f80f23e06b0029743fda181902"
-    sha256 big_sur:        "e5c67fdf342bda317f71d1fee34817164fb2d8ec5d14c0bf4313d0fdc50499d5"
-    sha256 catalina:       "a21626f709579f26673e5bb5a9be7a5d8d58d4bcebb6d5ae214aca1cfc3bd6ab"
-    sha256 x86_64_linux:   "a5a1ed2e6abadcda57b87db07c2e06746460a5ebcc085f5838ded950f4989998"
+    sha256 arm64_sonoma:   "f59130f4372ea62fbc0e9eb4278f334c2c0560bda769da34124eaa09be982308"
+    sha256 arm64_ventura:  "55b954a652b789b190d4ec1e6ff44dadfe98dc3136c7b1a7899a4ca98ba69dac"
+    sha256 arm64_monterey: "50ddb869e8a2cbac73c222c44c3d0fc05e53e688fea457f9f36f6bccc4eebabf"
+    sha256 sonoma:         "b694e02bc0e7ed4f22e3cb6acbc65e102ce247f7e51b56c5993f0d9e257a923f"
+    sha256 ventura:        "09c4567d275b8bc4aaf705c61b55415efc4ca531d1aac0affc77accf25f37cbb"
+    sha256 monterey:       "2823acb91a77394cb0cc476ad86713e5a40de442e3f6a3e8b50837db31ad0468"
+    sha256 x86_64_linux:   "869cb27e3534e6aa9503dd0598a7115207ddf665f8183fd14f99dd931f61fe6c"
   end
 
   uses_from_macos "bison" => :build

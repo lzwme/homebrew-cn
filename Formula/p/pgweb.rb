@@ -1,20 +1,18 @@
 class Pgweb < Formula
   desc "Web-based PostgreSQL database browser"
   homepage "https://sosedoff.github.io/pgweb/"
-  url "https://ghproxy.com/https://github.com/sosedoff/pgweb/archive/refs/tags/v0.14.1.tar.gz"
-  sha256 "e6636ff079c8b01ac2add78c7a05f86d61550a5213155065c892015e6217be01"
+  url "https://ghproxy.com/https://github.com/sosedoff/pgweb/archive/refs/tags/v0.14.2.tar.gz"
+  sha256 "58c1268b8fd08513fb818ceb8bb1de82715e88978f27a7a33e7f1689fec4c868"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6f4f8df9bff7ffb929b32ccbb5577437090b59845f158565cb067bd23465a46f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "73093fce59a7f8815216c7ee4305e8de347cd3fb954da693c9e7756e6370e210"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "73093fce59a7f8815216c7ee4305e8de347cd3fb954da693c9e7756e6370e210"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "73093fce59a7f8815216c7ee4305e8de347cd3fb954da693c9e7756e6370e210"
-    sha256 cellar: :any_skip_relocation, sonoma:         "db0f1c9466ecced514a74c13f209dd45e3696f05958c7ba0500deb98a3e87eef"
-    sha256 cellar: :any_skip_relocation, ventura:        "959a11dfa202fd1ef99fde030aec2d86e54db11a1f5f871c9a2e65965af604aa"
-    sha256 cellar: :any_skip_relocation, monterey:       "959a11dfa202fd1ef99fde030aec2d86e54db11a1f5f871c9a2e65965af604aa"
-    sha256 cellar: :any_skip_relocation, big_sur:        "959a11dfa202fd1ef99fde030aec2d86e54db11a1f5f871c9a2e65965af604aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "198b8cd7f8cd609dc113eff8e92f09bd78c3b555095f4a17f27c0496b60aee3a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ec8dfd03b6f3b6b0d95c8868fddfbbe0841554133343fc293428bf0ebbb0e993"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7aa300ef40d8cdd85697b3cb5b2c6e9c07cd5231b3e812e899dbdfec4f77cb8b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5015d53add1c6a615649c1c5dea87df25969bcdd8ea1b59d7af780cb1f6e9b7a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4549aa5f8de87cca67c7354c210bdcd2e0f54f5cf3fb6e7626163ad4b4ac8b22"
+    sha256 cellar: :any_skip_relocation, ventura:        "06c2957ecf2dd17776979a200e55c7a9fbfc8f4bfd5862b9e127990c87cc540b"
+    sha256 cellar: :any_skip_relocation, monterey:       "c3b03a8a0e75b3097692dc07e1d2fdb7272772d63f0cefed893ea9ce542e16d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eac8b536a2dcd186c1938d319aae4414c5dd63f15372e2912ed1eb100dbf571c"
   end
 
   depends_on "go" => :build

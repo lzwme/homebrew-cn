@@ -1,8 +1,8 @@
 class KitchenSync < Formula
   desc "Fast efficiently sync database without dumping & reloading"
   homepage "https://github.com/willbryant/kitchen_sync"
-  url "https://ghproxy.com/https://github.com/willbryant/kitchen_sync/archive/refs/tags/v2.19.tar.gz"
-  sha256 "ca9373afb2e532c50ba9106f0c3923811694cb72334ea14162c4d128bdc2e91d"
+  url "https://ghproxy.com/https://github.com/willbryant/kitchen_sync/archive/refs/tags/v2.20.tar.gz"
+  sha256 "e79e5dfad48b8345b1d80444a0e992b2f9b9c53f29f6f607647e567292a7d0f2"
   license "MIT"
   head "https://github.com/willbryant/kitchen_sync.git", branch: "master"
 
@@ -12,13 +12,13 @@ class KitchenSync < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e981419d14a99200a80cc6581e643745f6ae9be9255968289e13eae5da8f3dfb"
-    sha256 cellar: :any,                 arm64_ventura:  "85519df52705a3a53b33c488849e09cab5c09b7c20e5f55aa373cc991e6fd398"
-    sha256 cellar: :any,                 arm64_monterey: "b30703e668e9751c85b607ac8c3bc70ea8ddf6556803829efebe9db994303f9b"
-    sha256 cellar: :any,                 sonoma:         "c7c4e795a0b3f8c38b1c6a9c1f1d3e2cb59d4a0284fc1eed76427e6d98aed49e"
-    sha256 cellar: :any,                 ventura:        "e8687c91c06343b396f66bbdb772c0e79cf62f3ee03f7325761e213650cfc2ae"
-    sha256 cellar: :any,                 monterey:       "d56833a49416c7cdce5ecf74a23fa0cf70128fc73d7e35318843ba5763cb647c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7763cd06e88174e11b8c6bf21e2d3e5a4c8a3df405e5e1842555773815f99bbc"
+    sha256 cellar: :any,                 arm64_sonoma:   "c9821f09b7f11d7dabec107ae7bb120ff7711721149cffe458e0e1efc976e58f"
+    sha256 cellar: :any,                 arm64_ventura:  "52da1db89b0c2d36ee37651f789c9544fcb9e598464e4c141098cac805cce66d"
+    sha256 cellar: :any,                 arm64_monterey: "68405e9bce21249e1cd3a7edb2c166b9322851858ec84c2de9147309eb7f6156"
+    sha256 cellar: :any,                 sonoma:         "8a33caa241b8a4402c0c70c2e328e85f20ddf347679b2ef3432e1a4a917a2c47"
+    sha256 cellar: :any,                 ventura:        "f43ba4ad13d25b2625a8f186a1e5b929467c6d17bf597e0557d95d9cad20fbaa"
+    sha256 cellar: :any,                 monterey:       "7c95652e20014ae659264af72721db5e6ad1e9c2eec1b7eac286d3ee1e79f2e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "127c662bc3b1f282cefe2e883e8d28727d6ba136eecddb3bc9266f7a756e6915"
   end
 
   depends_on "cmake" => :build

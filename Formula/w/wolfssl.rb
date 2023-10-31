@@ -2,8 +2,8 @@ class Wolfssl < Formula
   desc "Embedded SSL Library written in C"
   homepage "https://www.wolfssl.com"
   url "https://github.com/wolfSSL/wolfssl.git",
-      tag:      "v5.6.3-stable",
-      revision: "3b3c175af0e993ffaae251871421e206cc41963f"
+      tag:      "v5.6.4-stable",
+      revision: "37884f864d6fd9b04f44677cb04da15d0c9d6526"
   license "GPL-2.0-or-later"
   head "https://github.com/wolfSSL/wolfssl.git", branch: "master"
 
@@ -14,15 +14,13 @@ class Wolfssl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "037a842e3d3f81f38278e0042adde563c4c9f1bbac319862327cc3310c0f72ec"
-    sha256 cellar: :any,                 arm64_ventura:  "a1d6a49c07a15973365becf2cfef4afc7b03d9b88d51a6fa878fc28b5201f37c"
-    sha256 cellar: :any,                 arm64_monterey: "db15ca1ae6d3d4c14c3363ba48c51d38090ef0c974d30e4d478db4992ed0d58d"
-    sha256 cellar: :any,                 arm64_big_sur:  "726a2d1711346d381d22f7d5b30ccc2ee5eed8fa5d05cda12f7cfd362bdc219f"
-    sha256 cellar: :any,                 sonoma:         "cd717fa5e5141a0ee5a825a47784ac8f40f2faf273d6aa4b11ad0d8aede1b7d5"
-    sha256 cellar: :any,                 ventura:        "077b1f2430cd52f70312929ce546d7a821e50d6bd0eeb7df00717005569241b7"
-    sha256 cellar: :any,                 monterey:       "108d4d33023d05aeb0bbfbaed29ecedd2a4ee6dd3ec400da0fa904efeba9fd2a"
-    sha256 cellar: :any,                 big_sur:        "9bd9d570c8c20607547d2a09e847c744505173f8fa7bfdd58f800cbf5bd4cc41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ff70d7c64c02deb614da42290f6b785ab1ff6affb723e9c71506b918f2ce9da"
+    sha256 cellar: :any,                 arm64_sonoma:   "007d4ddf18f960ecb4f68a21cf32af5d3d2c03ca32a1c00bfb2ffdf36391ca57"
+    sha256 cellar: :any,                 arm64_ventura:  "a8e42fe1857726571e6c9c96a419e420cbd50bf4c2187ffce5ec1acfd3506e20"
+    sha256 cellar: :any,                 arm64_monterey: "0f9cad5024441d378000218c740c70c85aa563848c2dde7394aa588bc4a37d53"
+    sha256 cellar: :any,                 sonoma:         "d93e301a5b44e519725a10363778fc2ebf24ea62d1703a3728efcf4b1a0ccbd8"
+    sha256 cellar: :any,                 ventura:        "95b918b60dabe425bd9e01b2dce8d7158050e5916c5ce1cb889e4a4f3a06d0b7"
+    sha256 cellar: :any,                 monterey:       "e834f400971353cd70f8a9cf09a7227d1c8423e66f4ed299da2b6310e144d780"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc553edf10a54fd40dc2f00c9f902ebcd1a76a45c7574c71f86b008c25f6279e"
   end
 
   depends_on "autoconf" => :build

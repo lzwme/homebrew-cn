@@ -1,19 +1,19 @@
 class Massdriver < Formula
   desc "Manage applications and infrastructure on Massdriver Cloud"
   homepage "https://www.massdriver.cloud/"
-  url "https://ghproxy.com/https://github.com/massdriver-cloud/mass/archive/refs/tags/1.5.10.tar.gz"
-  sha256 "43aaf7aa59413d4948e9e40b02671b85e122734508c8cda7c32be7a29b17a064"
+  url "https://ghproxy.com/https://github.com/massdriver-cloud/mass/archive/refs/tags/1.5.11.tar.gz"
+  sha256 "5de36f78e11d0e5ef54797f1529b27c46e47e6966b092956e70a2486cb4c0dba"
   license "Apache-2.0"
   head "https://github.com/massdriver-cloud/mass.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "121c5c8bf358887497ffba6c17ae0133ddc4615ee033457e1717937470f0b903"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9f0fd6a2c65c0a594191ef00f8d827e6981445e1472dbbf4564b468db836e36b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ddac650aaf9b30edec6a5909a48f59c0bc59788075f81c68e89b80e57aedea67"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bf0f97c97d7c3c091aedf52e04eeea964aeb307bf2303ce7c4a5272dbcf87b5b"
-    sha256 cellar: :any_skip_relocation, ventura:        "12d0eb7c80128ec49180fc08fdec7ba85321523c88e6d8cd6c1b0f8e23932eff"
-    sha256 cellar: :any_skip_relocation, monterey:       "458acb89f41c429809deaf6ec9f2e31743f70b5798a41a23bdb545771703e605"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17b82ffbcb5f9efe39bdad6676ac1c3d4024f7c01d8406c26970c16121c715d0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b9b89d0b2c25b90afbc3a7dad01c0c91fae483bc93c362d35bd68558b5f3e80b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5eace24db59c31e4a3f05693d3bbab687fe9bb96dfdbe839181b01dd89031cbf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cf6a5fd6964bcffc3b6773ce413745844a6987ddfa67111601b541f94d524541"
+    sha256 cellar: :any_skip_relocation, sonoma:         "64e091fcccfecf9f173819e3221a2d4905082222c0f4d019af4dae7ef0ef9d5e"
+    sha256 cellar: :any_skip_relocation, ventura:        "f6000a7991fc03cf78834c541035b173de9d9963cdaaabc0d05330166da3002f"
+    sha256 cellar: :any_skip_relocation, monterey:       "1d10443e3653856461d6d7d100b0e3e5cb3a464ff7d12f1cebb1c1be40445f62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a2c48ee766e4d5fe560dc8b1bcc2306a36465056da55833ab8154478bb339f7"
   end
 
   depends_on "go" => :build

@@ -1,22 +1,19 @@
 class Multitail < Formula
   desc "Tail multiple files in one terminal simultaneously"
   homepage "https://vanheusden.com/multitail/"
-  url "https://ghproxy.com/https://github.com/folkertvanheusden/multitail/archive/refs/tags/7.0.0.tar.gz"
-  sha256 "23f85f417a003544be38d0367c1eab09ef90c13d007b36482cf3f8a71f9c8fc5"
+  url "https://ghproxy.com/https://github.com/folkertvanheusden/multitail/archive/refs/tags/7.1.2.tar.gz"
+  sha256 "c8552e10093f0690b8baef84945753c878e234d7b3d0e3ff27e509ed5515998c"
   license "Apache-2.0"
   head "https://github.com/folkertvanheusden/multitail.git"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "500bb76266f0a1c130e6ae3c8021a67e8132d8c26f4812ae0dcbc601fb9e2fd6"
-    sha256 cellar: :any,                 arm64_ventura:  "a19b4eb52cc23c3a9f3190dbdca3db1d34032bd8790a357f022f1b408dbd0cff"
-    sha256 cellar: :any,                 arm64_monterey: "2d1abd3e7e31719e362d7a1f7e22375b60eb75403bab05562975dc8758b424d2"
-    sha256 cellar: :any,                 arm64_big_sur:  "746bcb020d1cac7511697bb8c0a0933a3e2948544aa3069c44c79bfe7179f031"
-    sha256 cellar: :any,                 sonoma:         "daa674ab915ff077d6729ff75e971d752576b6f8d14ab2d01cce1223e0ca9e61"
-    sha256 cellar: :any,                 ventura:        "0bd2424867668b48d47985d2679c6aa705a6d1ce8801ebad42d737828a3d11c7"
-    sha256 cellar: :any,                 monterey:       "a59560fd92bc0e68010cbe215edbcb6d31cc7f57a9acd43715f7adf93bd754f2"
-    sha256 cellar: :any,                 big_sur:        "4361b3a0326daff64e701bfdfcdd105d2a36003a87a9e4196ceff935beba9807"
-    sha256 cellar: :any,                 catalina:       "1506d3e77bb07b8c8e6726982ce235497ba2914f872b87587a5e21b0fa3bf627"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9ea2a3e55053e2784688f277a659e1a977165e3616205f6706b3ec0ff8e4492"
+    sha256 cellar: :any,                 arm64_sonoma:   "f3fc083b287b8f49b9c79ca1951be8f5032ad00f839110eb8a778dc2487925fd"
+    sha256 cellar: :any,                 arm64_ventura:  "98444fd682fdb68e33acef1864f3364d2048a50c4d707453bafbf04246314e86"
+    sha256 cellar: :any,                 arm64_monterey: "65cfe67e4d5634b323c1bf70a5d8264f52b26320083188af4a1f68a0db7cf67f"
+    sha256 cellar: :any,                 sonoma:         "074de6e786a2ba9a0f45415eab5977fb9adf4edf88996931ceba3d6f4bb45827"
+    sha256 cellar: :any,                 ventura:        "a453421f0d555ad4b6be1d09b91f3bd8d90801e0990df31ca1e3316f8e017a77"
+    sha256 cellar: :any,                 monterey:       "79ba0b2ef4b92fba512392fef29417216feb83a6e598f3dbfec0c3afb8254bf3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa9ed05dd7832ab4b6f705d3196f13f8c0526ee74db4ac9dbdfb4c6d96be0f41"
   end
 
   depends_on "pkg-config" => :build

@@ -1,21 +1,19 @@
 class Nomino < Formula
   desc "Batch rename utility"
   homepage "https://github.com/yaa110/nomino"
-  url "https://ghproxy.com/https://github.com/yaa110/nomino/archive/refs/tags/1.3.2.tar.gz"
-  sha256 "2923903b75a6a892e39345b7ed61708719912dc8c7bda28be3f55b1615fd102c"
+  url "https://ghproxy.com/https://github.com/yaa110/nomino/archive/refs/tags/1.3.3.tar.gz"
+  sha256 "eca89f615f5891df227dab6162200a12b17e3a6517bd888c9b050a714ef8708b"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/yaa110/nomino.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dffc2e50cf7c63047dfa21190a1b9301c9c42ef57e89a96bee76868dfa650ea5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d895cd974f67c9d202190567199b369f655e998b7a8fbc4e8d0f2ebf6e42df5a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f0fe46b75bcaa00b2a061d24ccfcf391817949c03e9406265c82974b4d77d157"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "298644c6d44e434928d063cb1e429b0eb734e7ee74d34c59d0b7649665aa3157"
-    sha256 cellar: :any_skip_relocation, sonoma:         "38190848f9f76192ac7474e957ef2abb8d89bbdddc3615f21901210b966c8618"
-    sha256 cellar: :any_skip_relocation, ventura:        "7e89a79d75476eed1c9540e83fdbb99fbf61a5f2bec130a57c359118b981a67f"
-    sha256 cellar: :any_skip_relocation, monterey:       "0f589b3a7bb8a9cb0a6c5b8bc59264985bcb5a5e04d29e1b3ca0500436b42012"
-    sha256 cellar: :any_skip_relocation, big_sur:        "99a0689bde495763685732819d49859ca90002f9575b3b147bcbc96f062e8ae3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4f0c2a3b9785138a58c99584d3b97e21a5910e2f6894ba588fc0c22b2b110ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dafcda84a28362f50d969606895d6760bb5d2380d9fa0f787232a0499bf0e686"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b37b09479bfaa55b021d0c1242532b2249acf822aab0f9583cf96fe5df3bc5e6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c55f03e2f3342e7ba7dcd159fda91c5f540109bdfc0e079c69dd0c3c805ee9e9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "da020725f227ad9cf4f5f8dca0c64495f33c2a63fab162ba2a83dd7b7bbabce9"
+    sha256 cellar: :any_skip_relocation, ventura:        "a4bc37c42bef56392adef4873880ede46447212e2252c2803ed70cf893740ed5"
+    sha256 cellar: :any_skip_relocation, monterey:       "7c79d5312984f4292b1a82ebd50236cb16ea1935b5ce8f7d6ae2fc6170d282d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9eab0305fdb7b2e9da3e180328dcb90188e4bb4bbd77148ffd5363866dcc6c21"
   end
 
   depends_on "rust" => :build

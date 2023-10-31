@@ -6,6 +6,14 @@ class Apko < Formula
   license "Apache-2.0"
   head "https://github.com/chainguard-dev/apko.git", branch: "main"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "65b793a6d7adf48fc1f24de17873472b1b5f8c3bf012747c597196dfac779d68"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f36d97d3cdafeaf771da0567c91bd5e2f64926bfad6ec46983ddc4e8ccc96457"
