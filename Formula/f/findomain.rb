@@ -1,18 +1,18 @@
 class Findomain < Formula
   desc "Cross-platform subdomain enumerator"
   homepage "https://github.com/Findomain/Findomain"
-  url "https://ghproxy.com/https://github.com/Findomain/Findomain/archive/refs/tags/9.0.2.tar.gz"
-  sha256 "1c98f5634ed19ce36a232f8a955098ae84c2d04dfe20bfcc0f10e6e335b8a562"
+  url "https://ghproxy.com/https://github.com/Findomain/Findomain/archive/refs/tags/9.0.3.tar.gz"
+  sha256 "7ac191d5d7c3f7cb9fc74750f9cba3963f77dba5edcf84965d55f887b21f3d0e"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f45cad3732dfb8f286e9be640a5546ccb5555809a991e9d49969c20d9e089d7f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e93d310aeab978fcb802f7dd7c42546ff8d17f358b7c21d9fe33a066e8658139"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "741ccdabe2c7c68e357fcb4e15f69996c880a79ef242f3d1a2457e141fedf5f9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "150a3ca1de07e6b74d227e93161958741f9de9801b4305be1349024ec2303bf5"
-    sha256 cellar: :any_skip_relocation, ventura:        "0a9152e5041e328aa0ffac534d9669f75bfc5a8f43649d6f097018cbcdb8c0d5"
-    sha256 cellar: :any_skip_relocation, monterey:       "1486cbba1a7c495af67292ca74760e389e129da7df3cd4de919c863594d9cfdd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5267e52927c004cfb03e9dc049d3a9319607d8bce688e8871a0abca3436e191"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1c25937053c35b80a1bcce27b6bf136d993f344b8b7ab9c55e0088a57d20bc89"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fbe41a854a6f1de8a6af33ee04ca537496c96c32c7730d83aebfa96b8ddd4287"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "953cf29f67076ff1020986d851adab8c8ac90c74cc5ab1beb0dd515036396b34"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e895134a22456d2657717a50d291317f75cf573acd0eebd18fd2f8d4230dd768"
+    sha256 cellar: :any_skip_relocation, ventura:        "e65fe4ddfe88769e6c1a0a0239034536a7deb18969b59d2ea1870749efc53212"
+    sha256 cellar: :any_skip_relocation, monterey:       "dd8f820f034dd8f1b7973e0273c35e86d0f771319ca82bb140f1f6e7bcb0c5dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1117429f919281c223780f672305dd545fe34efe5988a5c48462b45b6ba7253"
   end
 
   depends_on "pkg-config" => :build

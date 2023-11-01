@@ -3,19 +3,19 @@ class Uhdm < Formula
 
   desc "Universal Hardware Data Model, modeling of the SystemVerilog Object Model"
   homepage "https://github.com/chipsalliance/UHDM"
-  url "https://ghproxy.com/https://github.com/chipsalliance/UHDM/archive/refs/tags/v1.76.tar.gz"
-  sha256 "72fffa0f53632716536ad70495749f460f90903650d41fe4d11e454b8b7de68a"
+  url "https://ghproxy.com/https://github.com/chipsalliance/UHDM/archive/refs/tags/v1.77.tar.gz"
+  sha256 "c60e5d1d1953e40a0687f3734eb7a799e54a74c728da45e0bfbeffa3d13aceac"
   license "Apache-2.0"
   head "https://github.com/chipsalliance/UHDM.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5404b860df06e17d87552d0e98f7afba95fc4e71fe31370e7df0c55ecebf1690"
-    sha256 cellar: :any,                 arm64_ventura:  "0a311e894647c4c2a2da45e3c2a91c2edb7bc32f19a85b29dca95d4d40d78945"
-    sha256 cellar: :any,                 arm64_monterey: "72314681085aee06c4a99d0c5e202b388eacf34963c0e93bd72d2fa522b70b18"
-    sha256 cellar: :any,                 sonoma:         "42e56547864ebc7067098b1e98b6f95c23355371790848a051a5384b7ede52cd"
-    sha256 cellar: :any,                 ventura:        "e3548def42c56e802784a9482c73a748c420130bc05043848f88fda2b7111132"
-    sha256 cellar: :any,                 monterey:       "30e8901c3a629b1afecd15009c8ff162f60451d2f33e81486cf74081f12f344c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e8752164babfa0db3cb1e9051f3eab3ae6b61e43f615bb6871e66d210f424d7"
+    sha256 cellar: :any,                 arm64_sonoma:   "219f7b05f7e5fcc687319def68deabf8e922ac0f0774377271d3e87f6d0a5dcb"
+    sha256 cellar: :any,                 arm64_ventura:  "a1fb0be2a32a435fea2ea74a5228a54cd5fa82f8660ab5c05495801e52ecec13"
+    sha256 cellar: :any,                 arm64_monterey: "595ce205e324e00016336dee283f16a7f907eca07bd6bd2f999723052e059d7f"
+    sha256 cellar: :any,                 sonoma:         "9d1e2daad2c41ed0584d254ce964c8ae24239b276e946ce0a85ad3c7345a6b50"
+    sha256 cellar: :any,                 ventura:        "a89c424770fb70274028e46c5fcba9e1e001f37cf0b94e0ac0844932bf5b122b"
+    sha256 cellar: :any,                 monterey:       "f0b43183a49871be4c9093f3ebd5b1213caf3d0c617e93f182f3382c16db9dc6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab7505d6576817ae918643e9013eed58fb5478806907f4a49cabe16ecd07a489"
   end
 
   depends_on "cmake" => :build

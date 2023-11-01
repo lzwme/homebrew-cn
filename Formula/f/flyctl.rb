@@ -2,8 +2,8 @@ class Flyctl < Formula
   desc "Command-line tools for fly.io services"
   homepage "https://fly.io"
   url "https://github.com/superfly/flyctl.git",
-      tag:      "v0.1.112",
-      revision: "fb160d4fd5fd653cd1afe725121230b6cba46cff"
+      tag:      "v0.1.115",
+      revision: "f319604141d1646d8c9c256017874cb10fa325b3"
   license "Apache-2.0"
   head "https://github.com/superfly/flyctl.git", branch: "master"
 
@@ -18,13 +18,13 @@ class Flyctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8a70af3118319efe13b6bf87b840a3172a9b5f46e1f2539cb70a7d5eb32d8057"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a70af3118319efe13b6bf87b840a3172a9b5f46e1f2539cb70a7d5eb32d8057"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8a70af3118319efe13b6bf87b840a3172a9b5f46e1f2539cb70a7d5eb32d8057"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8992e521a634832e6985593b495bfa32a3d657b552a3a368a7922ce7e1e95ef3"
-    sha256 cellar: :any_skip_relocation, ventura:        "8992e521a634832e6985593b495bfa32a3d657b552a3a368a7922ce7e1e95ef3"
-    sha256 cellar: :any_skip_relocation, monterey:       "8992e521a634832e6985593b495bfa32a3d657b552a3a368a7922ce7e1e95ef3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ffdddf04018632e9971105ded6b6ff8bb19c1460d135d927709953316b5d1a0c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e0e36f9d22aff083997d879fab3deb08034a51db347e49375574ea5a7fbb3b29"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e0e36f9d22aff083997d879fab3deb08034a51db347e49375574ea5a7fbb3b29"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e0e36f9d22aff083997d879fab3deb08034a51db347e49375574ea5a7fbb3b29"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9c4498081be6edeb476fa90a7f5a27b99e26e58af00a7e5d0576419b9978941d"
+    sha256 cellar: :any_skip_relocation, ventura:        "9c4498081be6edeb476fa90a7f5a27b99e26e58af00a7e5d0576419b9978941d"
+    sha256 cellar: :any_skip_relocation, monterey:       "9c4498081be6edeb476fa90a7f5a27b99e26e58af00a7e5d0576419b9978941d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13cc053a6ef1a47bedf65e0a5a0040b30a85ca13caa9edf111986dd068642823"
   end
 
   depends_on "go" => :build

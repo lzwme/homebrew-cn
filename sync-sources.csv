@@ -1156,6 +1156,7 @@ Homebrew-homebrew-core/Formula/d/daemonlogger.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/daemontools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dafny.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dagger.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/daktilo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dante.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/daq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dar.rb, Homebrew/homebrew-core, 0
@@ -2996,6 +2997,7 @@ Homebrew-homebrew-core/Formula/l/lab.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lablgtk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lacework-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/ladspa-sdk.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/l/lager.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lame.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lammps.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/languagetool.rb, Homebrew/homebrew-core, 0
@@ -4802,6 +4804,7 @@ Homebrew-homebrew-core/Formula/p/plzip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pmccabe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pmd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pmdmini.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pmix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pms.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pmtiles.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pnetcdf.rb, Homebrew/homebrew-core, 1
@@ -5536,6 +5539,7 @@ Homebrew-homebrew-core/Formula/s/sickchill.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sickle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/siege.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sift.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sigma-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/signal-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/signify-osx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sigrok-cli.rb, Homebrew/homebrew-core, 0
@@ -6836,6 +6840,7 @@ Homebrew-homebrew-core/Formula/z/zssh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zstd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zsxd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zsync.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/z/zug.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zurl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zxcc.rb, Homebrew/homebrew-core, 0

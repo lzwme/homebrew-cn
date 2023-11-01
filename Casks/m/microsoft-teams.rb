@@ -1,6 +1,6 @@
 cask "microsoft-teams" do
-  version "23247.720.2421.8365"
-  sha256 "d27227e722499b3f15e38812b01f48d39bb99caddb5756643ba32201e7aa55e0"
+  version "23272.2708.2452.9689"
+  sha256 "08f7c19323581ede391fc881c0c0adf53c5e92306b44a3b1d869ca73cefdfa71"
 
   url "https://statics.teams.cdn.office.net/production-osx/#{version}/MicrosoftTeams.pkg",
       verified: "statics.teams.cdn.office.net/production-osx/"
@@ -26,7 +26,7 @@ cask "microsoft-teams" do
   auto_updates true
   conflicts_with cask: "microsoft-office-businesspro"
   depends_on cask: "microsoft-auto-update"
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :big_sur"
 
   pkg "MicrosoftTeams.pkg",
       choices: [
@@ -46,21 +46,31 @@ cask "microsoft-teams" do
             quit:      "com.microsoft.autoupdate2",
             delete:    [
               "/Applications/Microsoft Teams (work or school).app",
+              "/Library/Application Support/Microsoft/TeamsUpdaterDaemon",
               "/Library/Logs/Microsoft/Teams",
+              "/Library/Logs/Microsoft/MSTeams",
               "/Library/Preferences/com.microsoft.teams.plist",
             ]
 
   zap trash: [
+        "~/Library/Application Scripts/com.microsoft.teams2",
+        "~/Library/Application Scripts/com.microsoft.teams2.launcher",
+        "~/Library/Application Scripts/com.microsoft.teams2.notificationcenter",
         "~/Library/Application Support/com.microsoft.teams",
         "~/Library/Application Support/Microsoft/Teams",
         "~/Library/Application Support/Teams",
         "~/Library/Caches/com.microsoft.teams",
+        "~/Library/Containers/com.microsoft.teams2",
+        "~/Library/Containers/com.microsoft.teams2.launcher",
+        "~/Library/Containers/com.microsoft.teams2.notificationcenter",
         "~/Library/Cookies/com.microsoft.teams.binarycookies",
         "~/Library/HTTPStorages/com.microsoft.teams",
         "~/Library/HTTPStorages/com.microsoft.teams.binarycookies",
         "~/Library/Logs/Microsoft Teams",
+        "~/Library/Logs/Microsoft Teams Helper (Renderer)",
         "~/Library/Preferences/com.microsoft.teams.plist",
         "~/Library/Saved Application State/com.microsoft.teams.savedState",
+        "~/Library/Saved Application State/com.microsoft.teams2.savedState",
         "~/Library/WebKit/com.microsoft.teams",
       ],
       rmdir: "~/Library/Application Support/Microsoft"

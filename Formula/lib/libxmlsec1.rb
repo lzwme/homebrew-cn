@@ -1,10 +1,9 @@
 class Libxmlsec1 < Formula
   desc "XML security library"
   homepage "https://www.aleksey.com/xmlsec/"
-  url "https://www.aleksey.com/xmlsec/download/xmlsec1-1.3.1.tar.gz"
-  sha256 "10f48384d4fd1afc05fea545b74fbf7c152582f0a895c189f164d55270400c63"
+  url "https://www.aleksey.com/xmlsec/download/xmlsec1-1.3.2.tar.gz"
+  sha256 "4003c56b3d356d21b1db7775318540fad6bfedaf5f117e8f7c010811219be3cf"
   license "MIT"
-  revision 1
 
   livecheck do
     url "https://www.aleksey.com/xmlsec/download/"
@@ -12,15 +11,13 @@ class Libxmlsec1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "81fa47273137c51b8fb4d7890d527e35c41aa62c1f7b6e191600aa1be756ca64"
-    sha256 cellar: :any,                 arm64_ventura:  "84885abab4b76878e7d54faa368f1739e67f1851f76fdeb95f58a90ccdeefe10"
-    sha256 cellar: :any,                 arm64_monterey: "594f5d42459172e49c90d37cc78e52981288aa10c400c3cdafd870ff36a7fcd2"
-    sha256 cellar: :any,                 arm64_big_sur:  "8a585dcd1bb0ea9c552eb2e62ac3149f099979eabf9e3d63678d5615d9910875"
-    sha256 cellar: :any,                 sonoma:         "8a5bbbc448e0ec8ad3ac48f0f79bdd7baea46a52946d802ab6c48ac8b90078f8"
-    sha256 cellar: :any,                 ventura:        "a8cfbb4816047952db369fb4048c145aa71776c57b23d557dec835600cd38852"
-    sha256 cellar: :any,                 monterey:       "f09549465cb0d1471a0f754a3fa80bf0482c471eebe6f4791e2213833395abf4"
-    sha256 cellar: :any,                 big_sur:        "1cb5ce8f22460be220613f0bc543197fe395e261e2e34f1f0ef2cb8c98467f66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea32b3ff9330f1230c0366c2e266149180d69afbbddf6fb20372e8dbd7694b14"
+    sha256 cellar: :any,                 arm64_sonoma:   "f55904ed40085b1f70559f4b77bdab8a6f2ed34e4e089423f382834bee58cf12"
+    sha256 cellar: :any,                 arm64_ventura:  "cf2cd4b830192272b767c7d2e417ca07f97d1678ac4753ee3e32cd535f8eeac7"
+    sha256 cellar: :any,                 arm64_monterey: "c65068dd3d8322c114538e1450dc8fdf7b51efe09126aabedc7191b7b81215ac"
+    sha256 cellar: :any,                 sonoma:         "61978c07417332345a59915df8950084e362b121c0fd92b11986d92985778c78"
+    sha256 cellar: :any,                 ventura:        "c3df350196ad05f4130ac7fa3bc6887a8f9dac0d86bbf5efeb933ada1d5f90ee"
+    sha256 cellar: :any,                 monterey:       "0b698cbcb50260e51397047d751b4937b2f9c695975a7e8013cf1ec364fb74d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54ec703677c04282bb0551fc97b43f6ee05ae168295481548f962c22f1db743a"
   end
 
   depends_on "pkg-config" => :build

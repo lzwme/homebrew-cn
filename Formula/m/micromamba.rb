@@ -8,7 +8,9 @@ class Micromamba < Formula
 
   livecheck do
     url :stable
-    regex(/^micromamba[._-]v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest do |json, regex|
+      json["name"]&.scan(regex)&.map { |match| match[0] }
+    end
   end
 
   bottle do

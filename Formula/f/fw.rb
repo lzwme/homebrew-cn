@@ -5,6 +5,15 @@ class Fw < Formula
   sha256 "9b87924c5384c65f7012ae545d40e550f830fdf1b3e75bbbde5f9b4bd64aab86"
   license "WTFPL"
 
+  # This repository also contains version tags for other tools (e.g., `v4.4.0`
+  # is an `fblog` tag), so we can't reliably determine which tags are for `fw`.
+  # Upstream only creates GitHub releases from `fw` tags, so we have to check
+  # releases instead.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "2b9d3a5075a1e89d1bf3a5967986183c688fb1b9655b33aa12abe55c92440026"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "13c029efb1090dd4fcf1a15087e35ffddcfd53833066cf3024ac07a7fccf73da"

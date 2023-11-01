@@ -3,18 +3,19 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/4e/e4/028dbca76293d896fbce5bd74523d0612f005b1404066fccedd411281a35/dvc-3.27.1.tar.gz"
-  sha256 "958ed99c71df6466a1663694d2788caff9319f3eac87834d62203bbdaa59c622"
+  url "https://files.pythonhosted.org/packages/a3/77/d07d34df019a01eedc6e61328482331d098139d016dee78e8186a7ee8101/dvc-3.28.0.tar.gz"
+  sha256 "78441431c7d341540b1e7179d32c1a7ad574b898a63598d0b2647a381856ab38"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1eaa8135abf59668ddbe9656fdd5d41933ade802d397bbb9bb2c7945f42e6628"
-    sha256 cellar: :any,                 arm64_ventura:  "cb41e85a5c3c59939a78b1b742e0ca1693680c675c8b1b9f203c8c99d2144a39"
-    sha256 cellar: :any,                 arm64_monterey: "b7fe17110f649dc2f50171c1700f4b8dd38f3a270f326b4aa99e29397568e411"
-    sha256 cellar: :any,                 sonoma:         "62e8f11aa347b047c4c68cfde38e935e8c348e5edcf558a82237753bca29e342"
-    sha256 cellar: :any,                 ventura:        "25edd296778a506bb040cdb998bc35e542d1ff83b47672f8e17ae80f2a7d9048"
-    sha256 cellar: :any,                 monterey:       "5180a2853af9c18dfa2da4c30f18d8ddf3b7f0ca009e51d55e7ded5a649bb0cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68091c05d4221e3c1a451055dcd5abb898149936132ba067fb65ad326c3e5bc7"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "5f37d9eb6de7314a7c06d10c054e73598cc546632ee22ba3afc6d02cea11a014"
+    sha256 cellar: :any,                 arm64_ventura:  "c9b479aadf0e1fc5c5ba33687acf5d4c4adee2ca84436079c7717c45095ee41d"
+    sha256 cellar: :any,                 arm64_monterey: "59fee631d2241f7524954ea8de1dd380425a3e52b01eae37d29efd716c24a2a9"
+    sha256 cellar: :any,                 sonoma:         "138350245632a9c063919d8e057c069a867d989f8070f8f18bb0e68e6de49a86"
+    sha256 cellar: :any,                 ventura:        "66ffc7488c23739b97880d318d8492853b12df80d4213479f8b0430187887d2d"
+    sha256 cellar: :any,                 monterey:       "0ae1270ff791d77e999ad8c7f4b6dd0a9e5a16dc9f5f809f03193eb1785e07a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c974e6a091e2da8a9ba1ffd58ba2f4e0d2e6093d76099d26e03ed530b1634ddf"
   end
 
   depends_on "openjdk" => :build # for hydra-core
@@ -28,8 +29,11 @@ class Dvc < Formula
   depends_on "pygments"
   depends_on "python-argcomplete"
   depends_on "python-certifi"
+  depends_on "python-click"
   depends_on "python-cryptography"
   depends_on "python-packaging"
+  depends_on "python-psutil"
+  depends_on "python-pyparsing"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -179,11 +183,6 @@ class Dvc < Formula
     sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
   end
 
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
-  end
-
   resource "click-didyoumean" do
     url "https://files.pythonhosted.org/packages/2f/a7/822fbc659be70dcb75a91fb91fec718b653326697d0e9907f4f90114b34f/click-didyoumean-0.3.0.tar.gz"
     sha256 "f184f0d851d96b6d29297354ed981b7dd71df7ff500d82fa6d11f0856bee8035"
@@ -250,8 +249,8 @@ class Dvc < Formula
   end
 
   resource "dvc-data" do
-    url "https://files.pythonhosted.org/packages/47/59/d7c9c0702aea7104af73d9aac89c7e705d6d9b9271ee46662839039a5a13/dvc-data-2.19.0.tar.gz"
-    sha256 "68e34c9dbd0592e85b767ef8f562e9614509e19e90aaa6f6a37fc1e783437e5b"
+    url "https://files.pythonhosted.org/packages/6f/a1/fe414be00c8ea1b83ebac0ca4ca04c860c7c90e7fbf1faa71427754b5fb6/dvc-data-2.20.0.tar.gz"
+    sha256 "9b907905f901fcad3279db99f639bf88bf21c9fcd2df9f44565ceb316b977a5a"
   end
 
   resource "dvc-gdrive" do
@@ -275,8 +274,8 @@ class Dvc < Formula
   end
 
   resource "dvc-objects" do
-    url "https://files.pythonhosted.org/packages/9e/92/8ea3b09602601a959a02d9db8e16f3ae33b1925ae0ef86cc2d44b113dd53/dvc-objects-1.0.1.tar.gz"
-    sha256 "a9fdf55552b95d3dfa1d4572b3938e893c4b4365bb551e168e164fcf5eab93dd"
+    url "https://files.pythonhosted.org/packages/f1/26/cc6b9e25c3b110fb5ff35ce755cc169a0c8f5974187b718569d89161cbb7/dvc-objects-1.1.0.tar.gz"
+    sha256 "b4249a13734f32e2a6d3d973441c113dcf05d551b0f35a9da60d9d5f460ed19e"
   end
 
   resource "dvc-oss" do
@@ -564,11 +563,6 @@ class Dvc < Formula
     sha256 "04505ade687dc26dc4284b1ad19a83be2f2afe83e7a828ace0c72f3a1df72aac"
   end
 
-  resource "psutil" do
-    url "https://files.pythonhosted.org/packages/2d/01/beb7331fc6c8d1c49dd051e3611379bfe379e915c808e1301506027fce9d/psutil-5.9.6.tar.gz"
-    sha256 "e4b92ddcd7dd4cdd3f900180ea1e104932c7bce234fb88976e2a3b296441225a"
-  end
-
   resource "pyasn1" do
     url "https://files.pythonhosted.org/packages/61/ef/945a8bcda7895717c8ba4688c08a11ef6454f32b8e5cb6e352a9004ee89d/pyasn1-0.5.0.tar.gz"
     sha256 "97b7290ca68e62a832558ec3976f15cbf911bf5d7c7039d8b861c2a0ece69fde"
@@ -617,11 +611,6 @@ class Dvc < Formula
   resource "pyopenssl" do
     url "https://files.pythonhosted.org/packages/bf/a0/e667c3c43b65a188cc3041fa00c50655315b93be45182b2c94d185a2610e/pyOpenSSL-23.3.0.tar.gz"
     sha256 "6b2cba5cc46e822750ec3e5a81ee12819850b11303630d575e98108a079c2b12"
-  end
-
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
   end
 
   resource "python-dateutil" do
@@ -750,8 +739,8 @@ class Dvc < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/cb/ee/20850e9f388d8b52b481726d41234f67bc89a85eeade6e2d6e2965be04ba/wcwidth-0.2.8.tar.gz"
-    sha256 "8705c569999ffbb4f6a87c6d1b80f324bd6db952f5eb0b95bc07517f4c1813d4"
+    url "https://files.pythonhosted.org/packages/a6/ad/428bc4ff924e66365c96994873e09a17bb5e8a1228be6e8d185bc2a11de9/wcwidth-0.2.9.tar.gz"
+    sha256 "a675d1a4a2d24ef67096a04b85b02deeecd8e226f57b5e3a72dbb9ed99d27da8"
   end
 
   resource "webdav4" do
