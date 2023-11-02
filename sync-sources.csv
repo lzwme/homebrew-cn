@@ -3991,6 +3991,7 @@ Homebrew-homebrew-core/Formula/m/modgit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/modman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mods.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/modsecurity.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/modsurfer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/modules.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/moe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mogenerator.rb, Homebrew/homebrew-core, 1
@@ -5083,7 +5084,7 @@ Homebrew-homebrew-core/Formula/q/qt-mysql.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qt-percona-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qt-postgresql.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qt-unixodbc.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/q/qt.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/q/qt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qt@5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qtads.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qthreads.rb, Homebrew/homebrew-core, 1
@@ -7704,6 +7705,7 @@ Homebrew-homebrew-cask/Casks/d/detexify.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/devbook.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/devcleaner.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/devdocs.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/d/deveco-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/developerexcuses.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/deviceinfo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/devilutionx.rb, Homebrew/homebrew-cask, 1
@@ -12258,7 +12260,8 @@ Homebrew-homebrew-cask-fonts/Casks/font-masinahikan.rb, Homebrew/homebrew-cask-f
 Homebrew-homebrew-cask-fonts/Casks/font-mate-sc.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-mate.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-material-design-icons-webfont.rb, Homebrew/homebrew-cask-fonts, 0
-Homebrew-homebrew-cask-fonts/Casks/font-material-icons.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-material-icons.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-material-symbols.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-maven-pro-vf-beta.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-maven-pro.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-mclaren.rb, Homebrew/homebrew-cask-fonts, 0

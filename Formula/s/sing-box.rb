@@ -7,13 +7,14 @@ class SingBox < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c63bb381a74579ef215f3a9a9b5adc23b17cdc26a5d8be6ec3df8842ea004d09"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a3d50b1f33d37248c064f888451d3355fccf72fe66a89f5bf6e12c06266b1dbc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "43e554167b544aebca5cdad91101aefbf8c01b49ee970835e35e48fe80d21bab"
-    sha256 cellar: :any_skip_relocation, sonoma:         "25a5dfe694fd23297c558c726d8c8659c710ea35f72e6e3c85cc03439e693a42"
-    sha256 cellar: :any_skip_relocation, ventura:        "b14b30ac9ec961ceef05113b0828088cb61b07b573dc22a8fa753b6059c20d43"
-    sha256 cellar: :any_skip_relocation, monterey:       "50cbc32f5ad344c7f694c1a0d243279d01ed2ada57f61c1768450473eebca535"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "634f9364c7ef92f3fae6ecbbe25f445dfc8f1268e797e167ec56c8e4bad75322"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "983e2910613229dd6e60612b113776e3c4802505a37d743e1c073ad4e86dd244"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b6585275c332d5dfc63f2c6efae9a7fc3d2e61bfcbebc781b12c7d951342b65c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6faa2f92f33aa744804447ce9541e1957b4f05fbf28b8ba875bcac1984b5259a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a64f6d793eb8f2b079805df931d4322ba5a93496ffe30b9c51205029583fb910"
+    sha256 cellar: :any_skip_relocation, ventura:        "c60d092b54ea1bdf548bdbfba9ce2110d56155dbaf6b63ef9988f8e090d05148"
+    sha256 cellar: :any_skip_relocation, monterey:       "233759c288629f9fa7b66e98dab1c5cca654db9b4901908f64bb1bb0513396e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cfa98687b8168f6028bd0fb8e77a36222d00151d5b7e48e713e84acb5081761d"
   end
 
   depends_on "go" => :build
@@ -22,6 +23,12 @@ class SingBox < Formula
     ldflags = "-s -w -X github.com/sagernet/sing-box/constant.Version=#{version} -buildid="
     tags = "with_gvisor,with_quic,with_wireguard,with_utls,with_reality_server,with_clash_api"
     system "go", "build", "-tags", tags, *std_go_args(ldflags: ldflags), "./cmd/sing-box"
+  end
+
+  service do
+    run [opt_bin/"sing-box", "run", "--config", etc/"sing-box/config.json"]
+    run_type :immediate
+    keep_alive true
   end
 
   test do
