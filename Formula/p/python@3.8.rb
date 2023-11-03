@@ -4,6 +4,7 @@ class PythonAT38 < Formula
   url "https://www.python.org/ftp/python/3.8.18/Python-3.8.18.tar.xz"
   sha256 "3ffb71cd349a326ba7b2fadc7e7df86ba577dd9c4917e52a8401adbda7405e3f"
   license "Python-2.0"
+  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -11,15 +12,13 @@ class PythonAT38 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "1600c7c13c514c57428c1d6057df0d935ef7b836919f4c2febde7acb72c32eda"
-    sha256 arm64_ventura:  "e46543e4b7c3eba41b67530b1f4f95b7a7f7bcc3955c88667bcaf7f774910eb8"
-    sha256 arm64_monterey: "f0b098a991698f07a990b6c33bbb0a3ecd0afd0f4592eb6e9fd6214e42afa877"
-    sha256 arm64_big_sur:  "d62d849037220459e4795fb6b3504fe026f03ed7c3342077a5c7cc014118b637"
-    sha256 sonoma:         "c654f3f66ab693ff1389e0b4d8f58ea087c19439977e0bfc7d5d4cb159c1fb5f"
-    sha256 ventura:        "0dc45f8ce4621dda697f67e37d3c566a5b66d745b1a7574483ac645cf5a92053"
-    sha256 monterey:       "9134d12fdb3896a24d1dd876b551459024491d3926d22dadfefbe87e7cbbc588"
-    sha256 big_sur:        "34012296f4cb3f8a877e905af35a33e658ad250f64f6ad29203aa662eabd8ce6"
-    sha256 x86_64_linux:   "8076a79df232035817b166b73b23e50d41eef747668eec8c7936b353c5d42fd2"
+    sha256 arm64_sonoma:   "824db0b533d835a52d4012551db4b20e4ddbd37c1afb4780629189e770545e31"
+    sha256 arm64_ventura:  "ec8c706b462a41908de8f315d539b98ca29b73ac482a23038c9f354bfdc250e7"
+    sha256 arm64_monterey: "394eac20f56312698b16e998c97bfe11be79c18f496f3e647f262a6a16bc0693"
+    sha256 sonoma:         "704e624bcb70dd63d62d17387431f157a3cbe8dd436046dd03119a7bdc6630fc"
+    sha256 ventura:        "0dc715ab0bc5886a78b18e642c58e8de7b381ec19bcb4d131c4746f66058db36"
+    sha256 monterey:       "3d7b4c66509f33403cb91db5573fe7d08268b6e2b76cd8b5894e46c134ab5b0d"
+    sha256 x86_64_linux:   "5485b4805ea56f2e2317a34c3e1b31a6f1171bd2921bd97cbc7d43e8c1a0d57b"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -52,19 +51,19 @@ class PythonAT38 < Formula
              "bin/easy_install-3.7", "bin/easy_install-3.8"
 
   # Always update to latest release
-  resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/19/20/d8dd9d8becaf3e2d6fdc17cc41870d5ada5ceda518996cf5968c2ca71bd8/setuptools-68.1.2.tar.gz"
-    sha256 "3d4dfa6d95f1b101d695a6160a7626e15583af71a5f52176efa5d39a054d475d"
+  resource "pip" do
+    url "https://files.pythonhosted.org/packages/1f/7f/4da15e07ccd11c84c1ccc8f6e24288d5e76c99441bf80e315b33542db951/pip-23.3.1.tar.gz"
+    sha256 "1fcaa041308d01f14575f6d0d2ea4b75a3e2871fe4f9c694976f908768e14174"
   end
 
-  resource "pip" do
-    url "https://files.pythonhosted.org/packages/ba/19/e63fb4e0d20e48bd2167bb7e857abc0e21679e24805ba921a224df8977c0/pip-23.2.1.tar.gz"
-    sha256 "fb0bd5435b3200c602b5bf61d2d43c2f13c02e29c1707567ae7fbc514eb9faf2"
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/ef/cc/93f7213b2ab5ed383f98ce8020e632ef256b406b8569606c3f160ed8e1c9/setuptools-68.2.2.tar.gz"
+    sha256 "4ac1475276d2f1c48684874089fefcd83bd7162ddaafb81fac866ba0db282a87"
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/a4/99/78c4f3bd50619d772168bec6a0f34379b02c19c9cced0ed833ecd021fd0d/wheel-0.41.2.tar.gz"
-    sha256 "0c5ac5ff2afb79ac23ab82bab027a0be7b5dbcf2e54dc50efe4bf507de1f7985"
+    url "https://files.pythonhosted.org/packages/fb/d0/0b4c18a0b85c20233b0c3bc33f792aefd7f12a5832b4da77419949ff6fd9/wheel-0.41.3.tar.gz"
+    sha256 "4d4987ce51a49370ea65c0bfd2234e8ce80a12780820d9dc462597a6e60d0841"
   end
 
   # Link against libmpdec.so.3, update for mpdecimal.h symbol cleanup.

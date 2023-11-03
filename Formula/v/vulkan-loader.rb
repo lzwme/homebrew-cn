@@ -12,13 +12,14 @@ class VulkanLoader < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "5ce6fae4be15f7c97c252204ac1508e3d66cfa2cab74d7b01d577d1927f2a7a4"
-    sha256 arm64_ventura:  "73379bfb34775398258402de37790e7d1482fd5334948ef4a028f390451a43f5"
-    sha256 arm64_monterey: "c64224bc189b95d379f20c5abb33b95c10cf45a661b54ac2d894e98aa2c5a0a6"
-    sha256 sonoma:         "7530b01f307398b49fdd0f9549aad54840e1fe48ed8db6e5a51b457af3d0e73c"
-    sha256 ventura:        "c5a24fc6fb6dacdbde789dd99ae47eb1f0346de4e09b3c035bf1d97167821b15"
-    sha256 monterey:       "088afd172f9b19d06e62b7685ec8b87b3d86464bc4cf667c72fe00a8c2bdaefe"
-    sha256 x86_64_linux:   "348af431791370c56fa91796317d237716f071043e16815eeb651512fcb02f40"
+    rebuild 1
+    sha256 arm64_sonoma:   "16ae080c10cf1c2cef4b55f2bca578b2f6016d83ba53b1a556fc78a86e56327a"
+    sha256 arm64_ventura:  "8572f377c8f6a1b25c674c2130a3b0686f919c223ed0488d3fac6b98a5fe0b4b"
+    sha256 arm64_monterey: "26b1a9382239dc79df05c7b4a9ecc3bffb80d00d96b77d7bc579f2fbd126ee43"
+    sha256 sonoma:         "f465427ce384aaf52b73f1c5d4bfce2be8117fb94828e9be13f2d23091fc97a2"
+    sha256 ventura:        "dcbd8555d61006e3bb0f2933cf2fb505cbadcbd49f9a8c4620c88b3201cf2032"
+    sha256 monterey:       "d7e07703454ee86763f5611c2dd55f3b34923a0ca54156d97f19ea4a955679c3"
+    sha256 x86_64_linux:   "636845468ccf4efa2cda2a4ca36f3d2fc4deb22424e34334d1e77de0c254e481"
   end
 
   depends_on "cmake" => :build
@@ -35,7 +36,8 @@ class VulkanLoader < Formula
 
   def install
     system "cmake", "-S", ".", "-B", "build",
-                    "-DVULKAN_HEADERS_INSTALL_DIR=#{Formula["vulkan-headers"].opt_prefix}",
+                    "-DVULKAN_HEADERS_INSTALL_DIR=#{Formula["vulkan-headers"].prefix}",
+                    "-DCMAKE_INSTALL_INCLUDEDIR=#{Formula["vulkan-headers"].include}",
                     "-DFALLBACK_DATA_DIRS=#{HOMEBREW_PREFIX}/share:/usr/local/share:/usr/share",
                     "-DCMAKE_INSTALL_SYSCONFDIR=#{etc}",
                     "-DFALLBACK_CONFIG_DIRS=#{etc}/xdg:/etc/xdg",

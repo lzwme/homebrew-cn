@@ -6,13 +6,14 @@ class Pan < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 arm64_sonoma:   "9995d00e0ba6d07fe9fe3a271c3133ff31e5da106383d96593714bc8ed4bcf3a"
-    sha256 arm64_ventura:  "873724a984f6e7839fd5a9947f423280977165da3db7868ba5e9db9d534b8083"
-    sha256 arm64_monterey: "89c7f22316455b0b6e346b76974c366342266ee19a639db37602326e9d1717a6"
-    sha256 sonoma:         "9b6723e941f00aa205a929ac82645111649071abd7339b56a3a08edaa8b7cfbc"
-    sha256 ventura:        "b2dbaa803a0babc78e70a72a659686fa55a7492d253c966e6b649082a2020a76"
-    sha256 monterey:       "9b3ae4ff209499cf00ae7802bf2ac3836d358d32d3ab2d8135732e6d6f284249"
-    sha256 x86_64_linux:   "d07382a16da0bd0b1324f7397979179aaad46861880a6d5dade15f1cf7727149"
+    rebuild 1
+    sha256 arm64_sonoma:   "4ca4f98c9d8b4b1fb18019135f6a71cbd332e926d0460f3b788998a50ac3fde7"
+    sha256 arm64_ventura:  "b67ea740c7a1d737d8d9bc20928e45d95d943f7ffee9d4a5af46ac57eedc4930"
+    sha256 arm64_monterey: "ccba3ea41228197e3c59b93a1fff7c07a386e80a6c556148882cf45bdd0fd4d7"
+    sha256 sonoma:         "5b291b7dc052238e8eee4b1b4e5f82b40c84a93c342cabcb94b76a41bed10a74"
+    sha256 ventura:        "122648c9eb00130a90f204a1fad3a25ffc9cc2a64044e60bcdcf6c8883474178"
+    sha256 monterey:       "d0dfa5ffd7fb269ca5709d2234c524fe9eb59f7d22f413dc943034621e1c27ee"
+    sha256 x86_64_linux:   "acca0e04ffd203e54e8aad6d04a56c7c41bb621c60887a08de00c8a92071aa6f"
   end
 
   depends_on "autoconf" => :build
@@ -36,8 +37,6 @@ class Pan < Formula
     # use brew name for gtk3 version of tool update-icon-cache
     inreplace "pan/icons/Makefile.am", "gtk-update-icon-cache", "gtk3-update-icon-cache"
 
-    # fix libiconv linking https://gitlab.gnome.org/GNOME/pan/-/issues/171
-    ENV.append "LDFLAGS", "-liconv" if OS.mac?
     ENV.append "CXXFLAGS", "-std=c++11"
 
     system "NOCONFIGURE=1 ./autogen.sh"

@@ -20,7 +20,6 @@ class ArgyllCms < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdf87674a178a4e64514780b64cd2d96d18099cfb46f3759d0d8c7ca6e04fa78"
   end
 
-  depends_on "jam" => :build
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
@@ -39,6 +38,30 @@ class ArgyllCms < Formula
 
   conflicts_with "num-utils", because: "both install `average` binaries"
 
+  resource "jam" do
+    # The "Jam Documentation" page has a banner stating:
+    # "Perforce is no longer actively contributing to the Jam Open Source project.
+    # The last Perforce release of Jam was version 2.6 in August of 2014. We will
+    # keep the Perforce-controlled links and information posted here available
+    # until further notice."
+
+    # The argyll-cms maintainer told us that they want to keep jam as a build system
+    # even if it is not maintained anymore
+    # https://www.freelists.org/post/argyllcms/Status-of-Jam-build,1
+    # Vendoring jam will allow to get rid of our jam formula
+    url "https://swarm.workshop.perforce.com/downloads/guest/perforce_software/jam/jam-2.6.1.zip"
+    sha256 "72ea48500ad3d61877f7212aa3d673eab2db28d77b874c5a0b9f88decf41cb73"
+
+    # * Ensure <unistd.h> is included on macOS, fixing the following error:
+    #   `make1.c:392:8: error: call to undeclared function 'unlink'`.
+    # * Fix a typo that leads to an undeclared function error:
+    #   `parse.c:102:20: error: call to undeclared function 'yylineno'`
+    patch do
+      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/42252ab3d438f7ada66e83b92bb51a9178d3df10/jam/2.6.1-undeclared_functions.diff"
+      sha256 "d567cbaf3914f38bb8c5017ff01cc40fe85970c34d3ad84dbeda8c893518ffae"
+    end
+  end
+
   # Fixes a missing header, which is an error by default on arm64 but not x86_64
   patch do
     url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/f6ede0dff06c2d9e3383416dc57c5157704b6f3a/argyll-cms/unistd_import.diff"
@@ -46,6 +69,11 @@ class ArgyllCms < Formula
   end
 
   def install
+    resource("jam").stage do
+      system "make", "CC=#{ENV.cc}", "CFLAGS=#{ENV.cflags}", "LOCATE_TARGET=bin"
+      libexec.install "bin/jam"
+    end
+
     # Remove bundled libraries to prevent fallback
     %w[jpeg png tiff zlib].each { |l| (buildpath/l).rmtree }
 
@@ -69,10 +97,14 @@ class ArgyllCms < Formula
     end
 
     ENV["NUMBER_OF_PROCESSORS"] = ENV.make_jobs.to_s
+    inreplace "makeall.sh", "jam", libexec/"jam"
+    inreplace "makeinstall.sh", "jam", libexec/"jam"
     system "sh", "makeall.sh"
     system "./makeinstall.sh"
     rm "bin/License.txt"
     prefix.install "bin", "ref", "doc"
+
+    rm libexec/"jam"
   end
 
   test do

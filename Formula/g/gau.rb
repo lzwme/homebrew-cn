@@ -1,19 +1,19 @@
 class Gau < Formula
   desc "Open Threat Exchange, Wayback Machine, and Common Crawl URL fetcher"
   homepage "https://github.com/lc/gau"
-  url "https://ghproxy.com/https://github.com/lc/gau/archive/refs/tags/v2.2.0.tar.gz"
-  sha256 "b027a6c0edcd5045303d1a5f2b28333f2c146a8689403d1e360c2c3f7b3a7801"
+  url "https://ghproxy.com/https://github.com/lc/gau/archive/refs/tags/v2.2.1.tar.gz"
+  sha256 "31abcc1f12fc00078898d96bd32531cd3404a66147b40ab64b31c1d7027671f3"
   license "MIT"
   head "https://github.com/lc/gau.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0460867ddbf29092f9639f851c1908d0afc559761547d2517b343246508512f4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "04ffedae81fd81ef01f25bc11e3518da30dcde4541ba2392e9412ff236a8f9e2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "eec697e65bc05417c1e3dde723b020475dc4df0f6ff01c24a6d9fd0c3f0412f6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "395d3e9c0427bc0af353abe85023aefb7e82c29d7585ade7e422e55cd8b87acc"
-    sha256 cellar: :any_skip_relocation, ventura:        "946fea53fbaf6fee3855943132943b84c76f3ee8fbd56b19a99f8b9efa8fbf3d"
-    sha256 cellar: :any_skip_relocation, monterey:       "2417f59527b5a28206562bcd93dc96bf74df5226f41aaeffde428f4c3ee52189"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "69af641b210fe088b497e3ae2b734b49220072013e985ee9be15df99478b6fab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5feec1f20d6bea906cea864f3b6e0d039dcbc18a2fd192d0bc3282789dc3d69c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f21a557798a53b0c544bbf1d226dd920b67656d7b092c5995e3396c993877216"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c0ef6a3f83c8166ffce3fbfd2952e0201321f0ef3f7b6f384d50514caf957a43"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a22664f35f2cdcb07c1175aab5897b833a8bcc141379d1b0dc269007607aecaa"
+    sha256 cellar: :any_skip_relocation, ventura:        "55bf84bceb9e9f09bf12af1072e19f9a662a05edbbbe3393afdda7096738c9b8"
+    sha256 cellar: :any_skip_relocation, monterey:       "4cbdb008eed488a7fed1777b606230c080577da45bb79cf43f2c325fd100a068"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2feabdd0dec1bfa3187bad2d256c0f84bb93a8ced58aa2340021e7974b2a201"
   end
 
   depends_on "go" => :build

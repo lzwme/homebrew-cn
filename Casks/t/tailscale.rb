@@ -1,6 +1,6 @@
 cask "tailscale" do
-  version "1.52.0"
-  sha256 "c8811803c2a33b8a8dd061f1289c45066a247e2c0634348c1e65d35ee465577a"
+  version "1.52.1"
+  sha256 "8e9c5011c828175f6c92abc76b804fabca629b8286ebca52174ca4e5885974d7"
 
   url "https://pkgs.tailscale.com/stable/Tailscale-#{version}-macos.zip"
   name "Tailscale"
@@ -32,7 +32,7 @@ cask "tailscale" do
             quit:       "io.tailscale.ipn.macsys"
 
   zap trash: [
-    "Library/Tailscale",
+    "~/Library/Tailscale",
     "~/Library/Application Scripts/*.io.tailscale.ipn.macsys",
     "~/Library/Application Scripts/io.tailscale.ipn.macsys.share-extension",
     "~/Library/Application Scripts/io.tailscale.ipn.macsys",

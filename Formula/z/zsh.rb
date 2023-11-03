@@ -11,16 +11,14 @@ class Zsh < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "286312ead95470ac7a1f42d2de6104f2b366fa0be7407fec2598e7565a40db39"
-    sha256 arm64_ventura:  "03171d3b9ea605b88cfa73682a6f06f8e6c3e5e44fb96dbc9eedb3ab70a69c28"
-    sha256 arm64_monterey: "1c6d208a7aa0601b25d04c5d41a393424b1094cf188e5b0c80fafc6e1e2755ef"
-    sha256 arm64_big_sur:  "0a93821dee76829dac49770d4b32d08d0678272c43937e3858d7f901bab86cd6"
-    sha256 sonoma:         "e3de4dff570a9ca5e8bdec663e48f0e08cfb48e02ca63a72fe1ddbead359554a"
-    sha256 ventura:        "1175aa3d19707da832bcb82e6a5ef49f513d98a840bcc252f96379eec4d5c18e"
-    sha256 monterey:       "b9a38fa0344b187333771a5585ad2d01c27e69a7e5362ba3fc8d7389aa3279f3"
-    sha256 big_sur:        "722236bd8c9a094e1eca09263f5e83a94d4c97c2ca797804eef4f9564ef729ec"
-    sha256 catalina:       "64c8757cc6db0247fb9f604ff84f61726fb5d91318c566157fa2957782040403"
-    sha256 x86_64_linux:   "fb0b59e7b1407323ea06b7c757de4d75bbcfb0836ce05857b0b2cf7816a231e0"
+    rebuild 1
+    sha256 arm64_sonoma:   "519ac684bde7d002b28851dfdca5f0c02f8235d445114fba4f329651966f0e90"
+    sha256 arm64_ventura:  "d260e78c0186bfe9e7237f5aba94db8d9c4aff2906f175c0f582abf532a29c37"
+    sha256 arm64_monterey: "0406eafa36972e0b447df157011415167d8a7f1f28a2194d66446da6f11c8725"
+    sha256 sonoma:         "e4ae0f2597d7a179ecbfe483aa2b8a8db3336d2b1bfd56bba3ad3cc034d8b32e"
+    sha256 ventura:        "54dd4fa7aaf6a5156a95d15fd56ec84b6c8a09a9d5911826c85bda6209a5f863"
+    sha256 monterey:       "94a2c1b6c6a417eb337983083e1840805aa8f28948bd8c7c812bd0c28cff07d5"
+    sha256 x86_64_linux:   "b88efbef1131013971b1bd957e2368f6e319d4ab960758782727e7e541636f63"
   end
 
   head do
@@ -29,7 +27,7 @@ class Zsh < Formula
   end
 
   depends_on "ncurses"
-  depends_on "pcre"
+  depends_on "pcre2"
 
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build

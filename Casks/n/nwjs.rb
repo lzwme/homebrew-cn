@@ -1,8 +1,11 @@
 cask "nwjs" do
-  version "0.81.0"
-  sha256 "9f660f81231cc9ae47e7f160ccac55614783a828b922bf390022393701858b9e"
+  arch arm: "arm64", intel: "x64"
 
-  url "https://dl.nwjs.io/v#{version}/nwjs-sdk-v#{version}-osx-x64.zip"
+  version "0.82.0"
+  sha256 arm:   "d2f38741cd6065e255aab6f947a8a1d417e59b2d6419a03f7ac45ac863621803",
+         intel: "111b51501d443b042efca94b8a668e35290964d87de9ce0af8ce6374affea82f"
+
+  url "https://dl.nwjs.io/v#{version}/nwjs-sdk-v#{version}-osx-#{arch}.zip"
   name "NW.js"
   desc "Call all Node.js modules directly from the DOM and Web Workers"
   homepage "https://nwjs.io/"
@@ -12,8 +15,8 @@ cask "nwjs" do
     regex(/^nw[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
-  app "nwjs-sdk-v#{version}-osx-x64/nwjs.app"
-  binary "nwjs-sdk-v#{version}-osx-x64/nwjc"
+  app "nwjs-sdk-v#{version}-osx-#{arch}/nwjs.app"
+  binary "nwjs-sdk-v#{version}-osx-#{arch}/nwjc"
 
   zap trash: [
     "~/Library/Application Support/nwjs",

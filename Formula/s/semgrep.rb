@@ -15,13 +15,14 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "04f1aea667729ecfc6d4ada478944354eb7184e6b66f6ce2ef6119518fd0e05e"
-    sha256 cellar: :any, arm64_ventura:  "c34924fb96775ef0f0f19dd50a2192b10836f52433def26908a05c90e249c44f"
-    sha256 cellar: :any, arm64_monterey: "5c02e3deb5a840888c23c863855918426e280c7288ad643c3a2925c9ab21f653"
-    sha256 cellar: :any, sonoma:         "d2dfcb8564c55b029ee2f9f5262d07c7bca9c91465d658e727857c24bd4332b6"
-    sha256 cellar: :any, ventura:        "048e9eb4e27a7c9b4569dc8062e81358c032a9923d1da0e5c120268165e0f194"
-    sha256 cellar: :any, monterey:       "a95e7949eecabdbafa3e5b96969f23bd02bdc25ecd2245b06bfa532e380b4125"
-    sha256               x86_64_linux:   "86340e915bce95e0d6f5a7cd0775305a95de73cd92116928a3ecaeefd6aa228e"
+    rebuild 2
+    sha256 cellar: :any, arm64_sonoma:   "11f97f55486c601ecf0dc4a66539dc98d1aa531c41faae0755056a415b2b2957"
+    sha256 cellar: :any, arm64_ventura:  "f866b4821ebdb2bfde1b091793d41851287840e836d18f6af8b84753169ccfbd"
+    sha256 cellar: :any, arm64_monterey: "556e43371e0e6ca25a6d7e619c72a624e732907e7ba354706601aacf6be45da9"
+    sha256 cellar: :any, sonoma:         "438f8aa9719b54e58477e67c6ecac6807d61d066c016bdcff7e654b5823bc5c7"
+    sha256 cellar: :any, ventura:        "1e1fee9d296772c39019557022278cddc047642e4a83e058a6bb4c5c6b627cb1"
+    sha256 cellar: :any, monterey:       "0fc9a3a946af41cac9f6310b90d5aa0a66ea1d54f21ab114db2dbe70f0e0d3c7"
+    sha256               x86_64_linux:   "5cc824f5f154d98f5fa9fe270f242611c2fed9937087bfdfff7ec017e25e9905"
   end
 
   depends_on "autoconf" => :build
@@ -34,6 +35,7 @@ class Semgrep < Formula
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "gmp"
+  depends_on "libev"
   depends_on "pcre"
   depends_on "pygments"
   depends_on "python-certifi"
@@ -186,6 +188,8 @@ class Semgrep < Formula
     Dir.mktmpdir("opamroot") do |opamroot|
       ENV["OPAMROOT"] = opamroot
       ENV["OPAMYES"] = "1"
+      # Set library path so opam + lwt can find libev
+      ENV["LIBRARY_PATH"] = "#{HOMEBREW_PREFIX}/lib"
 
       system "opam", "init", "--no-setup", "--disable-sandboxing"
       ENV.deparallelize { system "opam", "switch", "create", "ocaml-base-compiler.4.14.0" }

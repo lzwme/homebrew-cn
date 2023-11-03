@@ -4,9 +4,9 @@ class Unisonlang < Formula
   desc "Friendly programming language from the future"
   homepage "https://unison-lang.org/"
   url "https://github.com/unisonweb/unison.git",
-      tag:      "release/M5f",
-      revision: "04ba01c6372c5b9ddf64d985b649e05313ca5947"
-  version "M5f"
+      tag:      "release/M5g",
+      revision: "f761c09f7b963a3012a95465b568f96573bba185"
+  version "M5g"
   license "MIT"
   head "https://github.com/unisonweb/unison.git", branch: "trunk"
 
@@ -16,12 +16,11 @@ class Unisonlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "47a5327b2e9356d82a7a0c581f5be6d6269f8b8a10c0b7196696f1774a18e53b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fbd8a5fe611dfd9f61e4110fbef149787fa705275512609f77b8fe40017fd234"
-    sha256 cellar: :any_skip_relocation, ventura:        "bf4c489e1f7ed9756710fb621b10b12bb26e60a8a76cc875443ca0b7fac429fe"
-    sha256 cellar: :any_skip_relocation, monterey:       "3f062f42e82d5186ed533e5973bb4f111ddf6243f7c8b2931d3661d70c08daea"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8089a855ed40041e818a99af9b2c4a3187db2eb68936e6b7628bbc8152cc37f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2fb2da2b4a3940763e250042884dc564a3dc527da842f3213e79be1aa6ef811"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e633f72a6ceedcc637644772c4e6324f0d10e71697ecfdb3360a15764313acc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c52511d1259038b72a492635ba743aa0272fa7dfc25c4bab41cca20a64e8d49"
+    sha256 cellar: :any_skip_relocation, ventura:        "e99e06d2d331fc2a943024d029a303893d05b55b3d7e2e5b1bee7c617a4ee9fd"
+    sha256 cellar: :any_skip_relocation, monterey:       "c221cf81c38451ee32338bd4630475ceb00d68c97a90d278eb02797b8d177d5b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1370f281557abd31d49c08502aa63ff3050192994510f2fbe9b44d00fe9448ff"
   end
 
   depends_on "ghc@9.2" => :build
@@ -41,9 +40,9 @@ class Unisonlang < Formula
   end
 
   resource "local-ui" do
-    url "https://ghproxy.com/https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/M5f.tar.gz"
-    version "M5f"
-    sha256 "26becc00486f1574b14d86452b3e1f45b3361af009c576d3a17b0cb518a07191"
+    url "https://ghproxy.com/https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/M5g.tar.gz"
+    version "M5g"
+    sha256 "534b599119ca5d84836912e6965dc2b9bd53bc3ee875d3219a4a184fcaa62248"
   end
 
   def install

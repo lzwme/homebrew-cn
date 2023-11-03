@@ -1,19 +1,19 @@
 class Smlfmt < Formula
   desc "Custom parser and code formatter for Standard ML"
   homepage "https://github.com/shwestrick/smlfmt"
-  url "https://ghproxy.com/https://github.com/shwestrick/smlfmt/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "cbbdfbcf1f929c6e933a2e4f7a562bf71b0709ca9cd2888bf58a53c4ac0240e5"
+  url "https://ghproxy.com/https://github.com/shwestrick/smlfmt/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "ca957b3a72615d292443742a1b155d180d963e1c4e17d4d2644af4fb53be627f"
   license "MIT"
   head "https://github.com/shwestrick/smlfmt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1bd2a194676f77170769c94b4202571282b9120b207fea0f9ab918065586c27b"
-    sha256 cellar: :any,                 arm64_ventura:  "3e7920a121398c2b18d065bb0a36f2e86db8443888f1b5a0b63fb088e323767b"
-    sha256 cellar: :any,                 arm64_monterey: "93c73fa1847999f8e9623244f422db8c08f185fe416b8937f55d524cb54793d1"
-    sha256 cellar: :any,                 sonoma:         "ef51e9b376793682192313b74f45100b598abb377a553b1e51c8bd8b9391fc83"
-    sha256 cellar: :any,                 ventura:        "812942077d36a625b66b4193dfd3d4452bee0459518f5e6508e54263711f1e5f"
-    sha256 cellar: :any,                 monterey:       "5669c96246d4621e7d9f3000df96bac67b7d5c77acc85b92b013a3b9457ed70b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf5fb6d02d84f4819ae99f6049dd399771d14a746fdce712cca5e6d4c290ef38"
+    sha256 cellar: :any,                 arm64_sonoma:   "36c764b23fb9b73301fcf0601c7b09ec340da7e9196ae447ea38fa3060bfb8ef"
+    sha256 cellar: :any,                 arm64_ventura:  "868903facaf75ef62c7287e3cb00e2c2f2b6196c63329d0b79ce6e11c6a34ead"
+    sha256 cellar: :any,                 arm64_monterey: "f445a8363987d090c4e699f4875e16d05c04f0debb27b15bc2fc34fd3dcc2049"
+    sha256 cellar: :any,                 sonoma:         "a380f2a3f561e4a0f2c4c9a78caa9767d8f5585ed33dd6a49fd495dcf75f0323"
+    sha256 cellar: :any,                 ventura:        "f40b271e4ea6a8d87e64a7776e1ba2d57cb0c0bd25d242ce8ed3d5bee74eb6fa"
+    sha256 cellar: :any,                 monterey:       "cd0d919fc4a9557aedc0e2e6ef8e854b66b9daf5c956f66a45d38a30a815e635"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1b92b3ef804bcf8cb98eed9d42550f9752ac31479328e53e7e2d74c86687ec3"
   end
 
   depends_on "mlton" => :build

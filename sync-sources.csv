@@ -2099,6 +2099,7 @@ Homebrew-homebrew-core/Formula/g/gitql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitsign.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitslave.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gitter-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gittuf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitup.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gitversion.rb, Homebrew/homebrew-core, 1
@@ -5138,6 +5139,7 @@ Homebrew-homebrew-core/Formula/r/rasqal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ratfor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rats.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rav1e.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/raven.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rawgl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/raxml-ng.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/raylib.rb, Homebrew/homebrew-core, 1
@@ -5923,6 +5925,7 @@ Homebrew-homebrew-core/Formula/t/taglib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tagref.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tailor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tailscale.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/tailspin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tailwindcss-language-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tailwindcss.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/takt.rb, Homebrew/homebrew-core, 1
@@ -8323,6 +8326,8 @@ Homebrew-homebrew-cask/Casks/g/grisbi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/groestlcoin-core.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/growlnotify.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/grs-bluewallet.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/g/gstreamer-development.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/gstreamer-runtime.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gswitch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gtkwave.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/guijs.rb, Homebrew/homebrew-cask, 1
@@ -9050,6 +9055,7 @@ Homebrew-homebrew-cask/Casks/m/messenger.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/metabase.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/metaimage.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/metamer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/metashape.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/metashapepro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/metasploit.rb, Homebrew/homebrew-cask, 0
@@ -9229,6 +9235,7 @@ Homebrew-homebrew-cask/Casks/m/musaicfm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/muse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/museeks.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/musescore.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/music-decoy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/music-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/music-miniplayer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/music-remote.rb, Homebrew/homebrew-cask, 0

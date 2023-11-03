@@ -24,7 +24,7 @@ class NodeAT16 < Formula
   keg_only :versioned_formula
 
   # https://nodejs.org/en/about/releases/
-  # disable! date: "2023-09-11", because: :unsupported
+  deprecate! date: "2023-11-02", because: :unsupported
 
   depends_on "pkg-config" => :build
   depends_on "python-setuptools" => :build

@@ -5,15 +5,16 @@ class Symengine < Formula
   url "https://ghproxy.com/https://github.com/symengine/symengine/releases/download/v0.11.1/symengine-0.11.1.tar.gz"
   sha256 "217b39955dc19f920c6f54c057fdc89e8e155ddee8f0e3c3cacc67b3e3850b64"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "452da25ab2ac00b95aa885ae5e3f47169dc309f76afa0b662c2469032615b4af"
-    sha256 cellar: :any,                 arm64_ventura:  "dcfec817fb0b4ac1bb455d7e880c4eb09202b2396ce2a3c5ee668dfdf7afe6fa"
-    sha256 cellar: :any,                 arm64_monterey: "8726f63a9c1e49521d17b9b8ce0bf0a7b7522261ade102cc21b163ccb45b0533"
-    sha256 cellar: :any,                 sonoma:         "52b05a062669c7d8dcbafbeb4fe8290a7e9100c5a2f1405e3146a76fa12309f7"
-    sha256 cellar: :any,                 ventura:        "ae7957ea5a89e3b173380fde901a813221896ef5413fcdf7ca5634bcdf348de4"
-    sha256 cellar: :any,                 monterey:       "cf73ccf03218d5fef43a2746afddff296fac3b162ea8e71c9caf3dae5b4c43a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b87ca38ef53f35491afab8bb022f034681d2a5b5dacef31c692c8412abbdfdd"
+    sha256 cellar: :any,                 arm64_sonoma:   "fe11b29c50b5ac1d28bef924361dffeb2de8b09da2247ba123819ca2552a5760"
+    sha256 cellar: :any,                 arm64_ventura:  "efc0ff53a082ca117aa7d0d819564cc9021ba84fac02d39588e01be1661c9170"
+    sha256 cellar: :any,                 arm64_monterey: "e05322d032bdc1c0ae174674565285ada017a481a3cf81981e6e7c0b520fe179"
+    sha256 cellar: :any,                 sonoma:         "24fe7172403cd00a3e32f819a6c7c3601a36c0c1b69e248e520cb7dc68d578a9"
+    sha256 cellar: :any,                 ventura:        "3e9d869cb1d90555aca46f2cc1c5b20208ce6c3561f3eceb37e8bb3852316447"
+    sha256 cellar: :any,                 monterey:       "efa17ff396750bea4f9ccfb9bb9a40e80f539209efc4b008897635f4ae2507e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46c51c1ac6419fb5966a192f83f4d85ca01725e8044a7c16fb4df84b6322f70f"
   end
 
   depends_on "cereal" => :build
@@ -33,6 +34,13 @@ class Symengine < Formula
   patch do
     url "https://gitweb.gentoo.org/repo/gentoo.git/plain/sci-libs/symengine/files/symengine-0.8.1-fix_llvm.patch?id=83ab9587be9f89e667506b861208d613a2f016e5"
     sha256 "c654ea7c4ee44c689433e87f71c7ae78e6c04968e7dfe89be5e4ba4c8c53713b"
+  end
+
+  # fix flint 3 compatibility
+  # https://github.com/symengine/symengine/pull/1985, remove in next release
+  patch do
+    url "https://github.com/symengine/symengine/commit/9b2526ffee85ebb2b3011513ae544aec1b54d623.patch?full_index=1"
+    sha256 "8232c3cd757e8f9eecf296bc8e8353830c604d89e368b12de0c45715a7fa660d"
   end
 
   def install

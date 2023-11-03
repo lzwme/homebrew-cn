@@ -1,8 +1,8 @@
 class Glslang < Formula
   desc "OpenGL and OpenGL ES reference compiler for shading languages"
   homepage "https://www.khronos.org/opengles/sdk/tools/Reference-Compiler/"
-  url "https://ghproxy.com/https://github.com/KhronosGroup/glslang/archive/refs/tags/13.0.0.tar.gz"
-  sha256 "bcda732434f829aa74414ea0e06d329ec8ac28637c38a0de45e17c8fd25a4715"
+  url "https://ghproxy.com/https://github.com/KhronosGroup/glslang/archive/refs/tags/13.1.1.tar.gz"
+  sha256 "1c4d0a5a38c8aaf89a2d7e6093be734320599f5a6775b2726beeb05b0c054e66"
   license all_of: ["BSD-3-Clause", "GPL-3.0-or-later", "MIT", "Apache-2.0"]
   head "https://github.com/KhronosGroup/glslang.git", branch: "main"
 
@@ -12,22 +12,24 @@ class Glslang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a232c95928f7290ca3e522767a4b78c8a82e987ce0e292b4048b26fc72f52a15"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e2be96e21667fe8d9a8e460bfedc66ea987ae84ec6182f111fbf271f78575bc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f4fee0fd697e72808ead1fa38c3bac431c3900e6abce3ba0f7d863472428ba29"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e6052182c9e6abd813c18a588ba7ef068a112644245046c8e0323a7563d7c466"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a80c534eccc16d7131a9e9021492631976a61b63f8ac8b3b70baa3c20a73e4a5"
-    sha256 cellar: :any_skip_relocation, ventura:        "73766c5f491747e8370345a13aca133fe72fed695ee243dd0ca635d08f42c117"
-    sha256 cellar: :any_skip_relocation, monterey:       "1eb23999503d854e66c03ff5f286dc0b2bddd942cb7cb0f9e0b44be14f33666e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "792616dfb9a016c8d189796aa771b2cc0c88365229f03a23c1ff35e8c14b14d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4dd35b0b9c3e7262dc23bd0836d28b989951d7e155138ac4c9c826fe69dca532"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "82125054d400fbf989277d611522edd4b0224d6fee78205ce68bd5bfb5698b99"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eaabfb5a0be3ed448bca92ec3509f2cc47b80627dd9e51fe880c11b66a7b0bb9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0505de184924cf59d53065247082bd66c789f46894f651d3484609c1e78fc71f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "dd2decd9f89031c9835c871018504317204fcf902b4f803ec4054ee1bc8092d9"
+    sha256 cellar: :any_skip_relocation, ventura:        "4f83040703624f75f7bfd627a6a01ea7e9574e8bd83cc3038db643bd38a12239"
+    sha256 cellar: :any_skip_relocation, monterey:       "5886f7d5817a9281fe3758eb847abbd9f197913dfe347349c3a440c5125e71c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7fa5f6acef44ab05cbbb45e4913b4d92fffd4be6f553e35e3c7a22becb4d187e"
   end
 
   depends_on "cmake" => :build
   uses_from_macos "python" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DBUILD_EXTERNAL=OFF", "-DENABLE_CTEST=OFF", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DBUILD_EXTERNAL=OFF",
+                    "-DENABLE_CTEST=OFF",
+                    "-DENABLE_OPT=OFF",
+                    *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

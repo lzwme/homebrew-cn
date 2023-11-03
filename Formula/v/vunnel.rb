@@ -3,19 +3,19 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/b6/c9/606e1f0765750990f10bda7f8eb4288c683a5fe0d37aecacef3a515faa1b/vunnel-0.17.4.tar.gz"
-  sha256 "4befe43b034129314961475ff8a829f1803dbe6ccdcf178e25a47ebb1841d591"
+  url "https://files.pythonhosted.org/packages/07/2e/3b97788f2c07eceaee249858627c3a94745d20c1b4a59a75ff5990adea58/vunnel-0.17.5.tar.gz"
+  sha256 "5a7cbbb6568825f303eaa351500cb5a5c131d4be32362fff153f99f1b107c3f8"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e5f98fc292ed7f86f69d3f759b76a8d9ae719c86b78a11dc5fc422aeacde10c4"
-    sha256 cellar: :any,                 arm64_ventura:  "798dc25e5f4592d57b3bf662cf438d78ef6e9c9895e88d6799a3b54aba72c8b6"
-    sha256 cellar: :any,                 arm64_monterey: "3516303b77271d45c0d2f8112392032f910bb08d44af24bb82974d38067fa78b"
-    sha256 cellar: :any,                 sonoma:         "3a03e23fc3502aa31992d881658d0a9e2ca485895af2d5c88bb5a713f7952702"
-    sha256 cellar: :any,                 ventura:        "ced01240d0b6f3cb21d8b819eb22bc9da03b5662b78cdf18827d0755d3cf7fe3"
-    sha256 cellar: :any,                 monterey:       "f9111df1f79544d56afc089cde37d971a002915541e13b975c5a3272931edeb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9346348b10ebe0c8dea59793fe2750f0591540e8de3a469a4ee15b012a538dc2"
+    sha256 cellar: :any,                 arm64_sonoma:   "9f103163c3539b53681fdb1865bac31d65d5ab3531f7f859072677d042817814"
+    sha256 cellar: :any,                 arm64_ventura:  "3791d5d92ee0d260af9c61e570bc4660d9e59e85a1d5897c5f6b521b29189a8c"
+    sha256 cellar: :any,                 arm64_monterey: "b2bc5486ff460cbe743c136ce3d681d20ba8cb8eee219d30fde46d146274ffcd"
+    sha256 cellar: :any,                 sonoma:         "561a03c3805ef96e0403b64a322a2ab86a0a77807af2cd4459bfe18d7fff4f84"
+    sha256 cellar: :any,                 ventura:        "8b68eb5ffc75babc31b2221d88285131d285349a63db9a6a3af2ba110fd4e882"
+    sha256 cellar: :any,                 monterey:       "a8a584a9220b5163b48835f7a89ad62b2e60b913d647224490fc3576e38d8111"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cacf103a8de48deb68c4bd53dee1f34d87f9d0698f6d1339ef0b84e53da041c7"
   end
 
   depends_on "rust" => :build
@@ -30,8 +30,8 @@ class Vunnel < Formula
   depends_on "six"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
-    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
+    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
+    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
   resource "click-default-group" do

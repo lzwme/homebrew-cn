@@ -1,22 +1,20 @@
 class Gawk < Formula
   desc "GNU awk utility"
   homepage "https://www.gnu.org/software/gawk/"
-  url "https://ftp.gnu.org/gnu/gawk/gawk-5.2.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gawk/gawk-5.2.2.tar.xz"
-  sha256 "3c1fce1446b4cbee1cd273bd7ec64bc87d89f61537471cd3e05e33a965a250e9"
+  url "https://ftp.gnu.org/gnu/gawk/gawk-5.3.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gawk/gawk-5.3.0.tar.xz"
+  sha256 "ca9c16d3d11d0ff8c69d79dc0b47267e1329a69b39b799895604ed447d3ca90b"
   license "GPL-3.0-or-later"
   head "https://git.savannah.gnu.org/git/gawk.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "7d7710fa6bdd0e3cdbb29c0a9492ffaa94a0536b02b328ecdb88bf0190467331"
-    sha256 arm64_ventura:  "65f1eef20c9020d64d6e664d556d3b55cba583c3e64986dff74833176de62129"
-    sha256 arm64_monterey: "6a22d40e0864a6bd67522c0c1ebcefb92a08d4370ca11f47fd505c6cc26a58c7"
-    sha256 arm64_big_sur:  "3d7e64fc455d1cb077101b6be42ae8e4e595a94a2325eb14f4b2278f6dd05009"
-    sha256 sonoma:         "3c6908020ad430acece358dd67711d95ff1f62567466c63f0d59ba1b89d7375d"
-    sha256 ventura:        "aff1e481cdfb6f23d99e951a3b3b7efcb628141856666eb5d70d824125959031"
-    sha256 monterey:       "36a97b5d58be2e0f4c59dd0a408d6508e13ebad9ca83c72e60ce9a94cc2d2d1b"
-    sha256 big_sur:        "dac1bf3984e01fe1dd3ed03ecb98116eeaaf631a2a15d9417b55c4e8dd7a8e73"
-    sha256 x86_64_linux:   "5dff4bf12d6526e57e13d81cdc9fd5273d0c52a83418fefa5411e4a50634fa20"
+    sha256 arm64_sonoma:   "0ef661ff666f91dc709142739643045cdb0d5e551ebd50e291ff5aba6eb618cc"
+    sha256 arm64_ventura:  "e4d8d214cf4fbb002e8e126f67cf18846920133b4a65ed8ba2ad468cc49209e3"
+    sha256 arm64_monterey: "e467ce97a8c5a7900696215c9b47ac0e1b995ff341248de063e743cd2e6c7e81"
+    sha256 sonoma:         "5b86d052d87f04b68db3f72000edb6c685c88ac1b7ffa0f895ca8273f6ddef06"
+    sha256 ventura:        "961cdc2469d6024f727f9ed6565aeec04e33770a53350109461389366a33d01e"
+    sha256 monterey:       "2c31bf294df4959ff3dadb71268416885aaa52ba25ece4dfc79b617ab5ce3f6b"
+    sha256 x86_64_linux:   "3027c2f8c9192fa35085eeadb6c88b1aa9f577660a7955b0a30f7ca2121c34ab"
   end
 
   depends_on "gettext"

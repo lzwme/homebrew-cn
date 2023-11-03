@@ -4,6 +4,7 @@ class Dockutil < Formula
   url "https://ghproxy.com/https://github.com/kcrawford/dockutil/archive/refs/tags/2.0.5.tar.gz"
   sha256 "6dbbc1467caaab977bf4c9f2d106ceadfedd954b6a4848c54c925aff81159a65"
   license "Apache-2.0"
+  head "https://github.com/kcrawford/dockutil.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "f5f87d9e286c2b294bb157ac9f87baa2720fff044c7a92c0b80b9cb82db8a87e"

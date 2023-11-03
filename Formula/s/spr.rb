@@ -1,22 +1,19 @@
 class Spr < Formula
   desc "Submit pull requests for individual, amendable, rebaseable commits to GitHub"
   homepage "https://github.com/getcord/spr"
-  url "https://ghproxy.com/https://github.com/getcord/spr/archive/refs/tags/v1.3.4.tar.gz"
-  sha256 "eada48e089a7edef98a45cfa7ba8b4f31102e72c9b9fba519712b3cfb8663229"
+  url "https://ghproxy.com/https://github.com/getcord/spr/archive/refs/tags/v1.3.5.tar.gz"
+  sha256 "d1f53f4222fd9916c9edc0457bfe04bac66d9ff60a7c0e7a0c4519317c3f3fb8"
   license "MIT"
+  head "https://github.com/getcord/spr.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "485437f4a9693472550a79ff10972dfbd42055eb96f6755352b25d5042ed168d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9930a1a635480ecbb6c6dc6a05f79058a96e46b3892c1518a86238b263bc7d2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "53115bf257ae552982f512f008bb7f7f88d13249111d7ed58b3b42dce447c060"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "59cca6a0a52c53c8c758ba8722e24b52239c668273cdeb89884b9f9964bab36e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dcf09c01e85956f0484bac72f1ecb5d719a1ee91ff177caeb38e286f2beda48b"
-    sha256 cellar: :any_skip_relocation, ventura:        "b80056f73d8861eaa031f4b73e2492e87e409247827f6605ad91c6b0c38abc4c"
-    sha256 cellar: :any_skip_relocation, monterey:       "e4fc2f7bab9f2b2d2688e8a92517b07004dec292d8e000b988d01e976d5f516c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d92cfc824a5c4bd30ac14c88fd1147b5dc5c84d560ab8ddb8cbc93694d668894"
-    sha256 cellar: :any_skip_relocation, catalina:       "34791a0fc2f0421bc7334137c5a538d4b77311430fbe5167e937ee2c36774a35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "021b7008382f3b08eb08933c099c347203dd751684b27ff22cd6ac3e9eede534"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "410664abef3b1b365b94d63b796d963b8b0f95fc7396bc1057172b53ee1ce914"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "53a073f763bd23c04670ad82ef854ff0df0d4d9bcbb4210f24bd2e1bbccbc6db"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a1b34ebc1f5dcd278a53d31aae1a2e86706ceaeb0c0e129a03ee9af9016e8f21"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8305e6d5e45e90c71b91647d4bdda118a0890885c100f75d7ef0d4a1b71e9379"
+    sha256 cellar: :any_skip_relocation, ventura:        "27d08142f74458a94301ca05fae06fea6b2273b991195227f472688fa74e839e"
+    sha256 cellar: :any_skip_relocation, monterey:       "709fbfb646bc6dc827d6e2f7c604941009801a4891fdf7d307c97166f3e7782a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3749d08a6e871d9a0e68cd0eb667d1e667fe5e64ca967c59a2ee5f72728be93"
   end
 
   depends_on "rust" => :build
@@ -27,7 +24,7 @@ class Spr < Formula
   end
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "spr")
   end
 
   test do
