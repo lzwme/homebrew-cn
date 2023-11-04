@@ -4,7 +4,7 @@ class OrTools < Formula
   url "https://ghproxy.com/https://github.com/google/or-tools/archive/refs/tags/v9.7.tar.gz"
   sha256 "054d9517fc6c83f15150c93ef1c2c674ffd7d4a0d1fdc78f6ef8bc3e25c2e339"
   license "Apache-2.0"
-  revision 4
+  revision 5
   head "https://github.com/google/or-tools.git", branch: "stable"
 
   livecheck do
@@ -13,13 +13,13 @@ class OrTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "25cead7bc22693406222e361949769e509f5ae55cac37c61cc49884a09c0ac97"
-    sha256 cellar: :any,                 arm64_ventura:  "de80e7cb943246e4202b2d57624715dffaaee14432cf98638d75d2c20d68ba98"
-    sha256 cellar: :any,                 arm64_monterey: "f83efe4f58984b3de57b78cc85dfa54a0edc481c105947794ae8a26237ec207c"
-    sha256 cellar: :any,                 sonoma:         "f0220a1934ed533aec309f1a5f83c0d33eb8a05c8d8b2d46363d2a98c4d1f966"
-    sha256 cellar: :any,                 ventura:        "bd2d99d46de42d438fcb5ee2b4c7764ca3fa37716e4e44c5357a571a1c877ad5"
-    sha256 cellar: :any,                 monterey:       "135d7551b590526f0edbfe944aec606f6065df780ff3b48c1fcb7afc3bbc8fd7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "472a2c36a88923235e4533b98813a3e59aec42bf7844ed459fdcfe480d6d7ec9"
+    sha256 cellar: :any,                 arm64_sonoma:   "36a026337dbae0bd3cc6c0c6531088a82185f7b502e4b2adfcb8e6ba1a41bc53"
+    sha256 cellar: :any,                 arm64_ventura:  "b2ae227b39a1269254fb914ff36fc8c1afcd1643e3dd3663bae3c965f78f0575"
+    sha256 cellar: :any,                 arm64_monterey: "88810428d4cebbbc74c4a640e4307b8bdf0d48150af8b2a4d9b6559e21f0f2f4"
+    sha256 cellar: :any,                 sonoma:         "85b37dc475189c708465dd9709bb63db6a9b8a37a0db9ec01e7f9e0845ce7e86"
+    sha256 cellar: :any,                 ventura:        "4fea378372b1d5cdd4bc458b7f645e92a94701cfdbfffbb2a38dc243153267f4"
+    sha256 cellar: :any,                 monterey:       "49aa546a8661f2f3a1a36587dfc20d32d16456167f5642078e5690d9f6149f0b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26d590f6120d25ac7d2abe3a1fbd5fadc8cedcd6161bef5fbb406c6707b664c9"
   end
 
   depends_on "cmake" => :build

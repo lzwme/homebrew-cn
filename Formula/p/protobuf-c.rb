@@ -4,16 +4,16 @@ class ProtobufC < Formula
   url "https://ghproxy.com/https://github.com/protobuf-c/protobuf-c/releases/download/v1.4.1/protobuf-c-1.4.1.tar.gz"
   sha256 "4cc4facd508172f3e0a4d3a8736225d472418aee35b4ad053384b137b220339f"
   license "BSD-2-Clause"
-  revision 8
+  revision 9
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d4e2f1dc4429a893df2cfc2da5a658d13376c6b83f96ae2c20207a9438d2a4d0"
-    sha256 cellar: :any,                 arm64_ventura:  "54d267eb2c007918ab3e712e9c556ca157a5ea99753bbe9f5817427e90f45820"
-    sha256 cellar: :any,                 arm64_monterey: "53e5aba64daac0bf347d1be652feb3ccf3b1280d546dfd1cc50a211ac3c97a69"
-    sha256 cellar: :any,                 sonoma:         "142c2873aa51ec46d8a3ade0fff18b7773983e31bf1a5cd96d83e380b54e9f6e"
-    sha256 cellar: :any,                 ventura:        "ded06834cb6e165df54c71612d09d3cc60907581e70a0255e47e16debd8d5677"
-    sha256 cellar: :any,                 monterey:       "10b026444c3da6fc0b4b38a9f46c3078d921393e980d3e0bb28ee9f8eb046b4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b228990cf1f54f2a615841d5eab0f7d1f91027b418e61bc4b821ae7424660d74"
+    sha256 cellar: :any,                 arm64_sonoma:   "ca5c74cd7442d724251d73216979189f6bbcab19ec28ec46c9ad3754271f40bb"
+    sha256 cellar: :any,                 arm64_ventura:  "082ac09ce977c3f7a732cf2d8b89d49d902c6e85e6208b6bad7f0cc05cbb60df"
+    sha256 cellar: :any,                 arm64_monterey: "9185d97bc7c4ff65b392bf3bca15c8bff98381b677ae3c38caae64734634a06b"
+    sha256 cellar: :any,                 sonoma:         "22886dbe1c6c99fdfc14a8eaa77f1a6cc1fd95c534c7475e660762b6231e7729"
+    sha256 cellar: :any,                 ventura:        "e03e0f18ecdcefd41d6b57222b1ed6794d3f0243f051f3d7fde700f0b969d00c"
+    sha256 cellar: :any,                 monterey:       "c4824400b94a6deb4c6113b7f29fd7c8dfa34987149f5e83a182dbe5facb7947"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10dce16662fcb88e641faf6571097d6dfa90a0e4473f0285d436f13696897c77"
   end
 
   head do

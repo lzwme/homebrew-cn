@@ -6,16 +6,16 @@ class Vineyard < Formula
   url "https://ghproxy.com/https://github.com/v6d-io/v6d/releases/download/v0.18.0/v6d-0.18.0.tar.gz"
   sha256 "c08ba6a320c742ab6bb14bc24d07811cb6f4a91cd85f213921256e7c29059318"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256                               arm64_sonoma:   "7bb824e8934fd4a805a1feef828d919b0ddc912ced5c85607cc794fd53dd7d33"
-    sha256                               arm64_ventura:  "7d0150981c8a5aa66ecfc7009d99634b15056109211c6a0150a2a81b10f3f190"
-    sha256                               arm64_monterey: "f7934c1470bbbe9edfa8c8f8380e731e9294542a0c1a05650eb50516d27b71f0"
-    sha256                               sonoma:         "b88b1f50cdb48834fdfdd04646a45310290a0fd7f37cafc413a88be3577f5fcc"
-    sha256                               ventura:        "79180c636ae30017498afa8709bcaf9536100b3df2f31e0f6f74ce0f6e02d8ef"
-    sha256                               monterey:       "94b243669f9f40707599d3e16ba13fe7007eef4ee8fc58830c1864d6e544dfd8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce1edc1309ca8025a2da6722ba8413fa571b147ab2ef1d3debed24c9467c205e"
+    sha256                               arm64_sonoma:   "dc5c6957fcc9b2d46296834ebbd3c7078cd610937f945817e7db9c41787f58a9"
+    sha256                               arm64_ventura:  "320591f17ca30a5c031eebf37e4d7476112ad77efaa89af633f47242f63b3912"
+    sha256                               arm64_monterey: "e23091c490b2fd77ec6cea566b9b093d5e669f1c4e62928a8ba000b633a168c9"
+    sha256                               sonoma:         "226e317b264c53d1abae629f66b9f2dc907b1394a2f9df6364eb907e74f6175f"
+    sha256                               ventura:        "f9387563dd9770c6b46fa9074f59d1f596eb91386e8dd1247e87c03076bb8ca4"
+    sha256                               monterey:       "2ee3b0451ab5c0d04ae692f0272524307377a8cce00b593809d3e09c77f7b198"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ce295feb9724980bdea2cb90a69816fd9c18d1741285a6071d67d33d7bbdb8a"
   end
 
   depends_on "cmake" => [:build, :test]

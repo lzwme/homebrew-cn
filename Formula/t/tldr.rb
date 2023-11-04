@@ -23,6 +23,7 @@ class Tldr < Formula
 
   uses_from_macos "curl"
 
+  conflicts_with "tlrc", because: "both install `tldr` binaries"
   conflicts_with "tealdeer", because: "both install `tldr` binaries"
 
   def install

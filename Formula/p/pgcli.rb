@@ -3,23 +3,24 @@ class Pgcli < Formula
 
   desc "CLI for Postgres with auto-completion and syntax highlighting"
   homepage "https://pgcli.com/"
-  url "https://files.pythonhosted.org/packages/5f/2c/f0d4bae5a9ba6d03c959fcbf1e94daeed268991671ee2e8b7b55dbddc7fd/pgcli-4.0.0.tar.gz"
-  sha256 "0bf5f8dbbc9047e0646d016a421328a260c46cff2108908b11bb55c96475ee8d"
+  url "https://files.pythonhosted.org/packages/08/a7/448bcaf13dbcb4bd00c4f62fea1b2b491958653646da41c785755df6235f/pgcli-4.0.1.tar.gz"
+  sha256 "f2feea2099ce1ad5e8a9d5d93b0edaf60dc61e97b21b75e91d9723939ce53bd2"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9b1e16a5d8ab595184300812a8ecedd7c9ee7ce7cf6fbf105190af2197f630b1"
-    sha256 cellar: :any,                 arm64_ventura:  "0db161867fc9e5d70cb3bac6c5b85f3a3337357604a043f9f8b493bf785bef49"
-    sha256 cellar: :any,                 arm64_monterey: "91c99b650222fe3f490ef9b6f78a9b9ff02efe9106b7ec34a8f3de089eb047f5"
-    sha256 cellar: :any,                 sonoma:         "ee36b69e8d9b59aacc4935e626ea7d0291dc4d80b2d477a42b3e9d9d88bbf908"
-    sha256 cellar: :any,                 ventura:        "a5309ca818c26f50facf1413f966daead9f566d644b515cb9043fb0bdf6e8126"
-    sha256 cellar: :any,                 monterey:       "774bdd1584bebe574c2f960f23ba4182245f35d727e5b6d5682901c4a668ca1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e07559863f6c9a6b62ed42d1da767f4ac087d3e825bbcfb93c1a1862e8a93cf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "86e4def3477b49f091c9e8c15381b8c17699a9025e6c063246b3169ebc492e0e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3b23918cc18f198c081626dd6ad5911d53402742ca3fd3d981fbb018be40b926"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c8e3e1ef0b5e3e0cbaf4909fd50175996a62342ee8731797db1024b405d6157d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bb15b6e12f03fdbbbb21a5f9a635f210fcaf0b103d1490f64d284032f1d733e9"
+    sha256 cellar: :any_skip_relocation, ventura:        "bd85d8fe5134674de16e513be86efaa1f44a9610d29e99bc1548c6673ca1e3d6"
+    sha256 cellar: :any_skip_relocation, monterey:       "3d125e807afe293b5d71297598d41e093f556b7808df2f78955594ba809bf1d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa1dddde994f75c2f4d75a0e06ed591798bb7afa1064a573bf23922b2f0171f0"
   end
 
-  depends_on "rust" => :build # for pendulum
+  depends_on "python-setuptools" => :build # for pendulum
   depends_on "libpq"
   depends_on "pygments"
+  depends_on "python-click"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.12"
@@ -30,24 +31,19 @@ class Pgcli < Formula
     sha256 "e7174d003a2b58fd3e31a73fbbc45d5aa513de62cbd42d437f78b9658bd5f967"
   end
 
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
-  end
-
   resource "configobj" do
     url "https://files.pythonhosted.org/packages/cb/87/17d4c6d634c044ab08b11c0cd2a8a136d103713d438f8792d7be2c5148fb/configobj-5.0.8.tar.gz"
     sha256 "6f704434a07dc4f4dc7c9a745172c1cad449feb548febd9f7fe362629c627a97"
   end
 
   resource "pendulum" do
-    url "https://files.pythonhosted.org/packages/50/8d/46fb2d097947b2c717475c584247e47f635e5524ff8b227f18e991e7057a/pendulum-3.0.0b1.tar.gz"
-    sha256 "5331e3106e9a5690136daf386ac78a7c7e47bd4b777b8dc8925b608633788718"
+    url "https://files.pythonhosted.org/packages/db/15/6e89ae7cde7907118769ed3d2481566d05b5fd362724025198bb95faf599/pendulum-2.1.2.tar.gz"
+    sha256 "b06a0ca1bfe41c990bbf0c029f0b6501a7f2ec4e38bfec730712015e8860f207"
   end
 
   resource "pgspecial" do
-    url "https://files.pythonhosted.org/packages/2a/77/93b39f02da1acd73fe8d775329b7fdd4ef394101c6e52f6ef715f8fe6003/pgspecial-2.1.0.tar.gz"
-    sha256 "099a9c43b5768885a99c761b1f14a8c6504bb14e9631ad8755739adaf758266f"
+    url "https://files.pythonhosted.org/packages/2e/b8/52f0d19d80872df8ed2bbfc4569196e30d455d3b5f91659a6bf5c0d8e57e/pgspecial-2.1.1.tar.gz"
+    sha256 "a38239cd961fac33ce6da35c466d758acb6f942901598d7df74e5b82fe6f5636"
   end
 
   resource "prompt-toolkit" do
@@ -65,6 +61,11 @@ class Pgcli < Formula
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
+  resource "pytzdata" do
+    url "https://files.pythonhosted.org/packages/67/62/4c25435a7c2f9c7aef6800862d6c227fc4cd81e9f0beebc5549a49c8ed53/pytzdata-2020.1.tar.gz"
+    sha256 "3efa13b335a00a8de1d345ae41ec78dd11c9f8807f522d39850f2dd828681540"
+  end
+
   resource "setproctitle" do
     url "https://files.pythonhosted.org/packages/ff/e1/b16b16a1aa12174349d15b73fd4b87e641a8ae3fb1163e80938dbbf6ae98/setproctitle-1.3.3.tar.gz"
     sha256 "c913e151e7ea01567837ff037a23ca8740192880198b7fbb90b16d181607caae"
@@ -75,19 +76,9 @@ class Pgcli < Formula
     sha256 "d446183e84b8349fa3061f0fe7f06ca94ba65b426946ffebe6e3e8295332420c"
   end
 
-  resource "time-machine" do
-    url "https://files.pythonhosted.org/packages/48/50/d0c443bc1287dc20a22597346864175774d39f40239223f95fb03d70a044/time_machine-2.13.0.tar.gz"
-    sha256 "c23b2408e3adcedec84ea1131e238f0124a5bc0e491f60d1137ad7239b37c01a"
-  end
-
-  resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/70/e5/81f99b9fced59624562ab62a33df639a11b26c582be78864b339dafa420d/tzdata-2023.3.tar.gz"
-    sha256 "11ef1e08e54acb0d4f95bdb1be05da659673de4acbd21bf9c69e94cc5e907a3a"
-  end
-
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/cb/ee/20850e9f388d8b52b481726d41234f67bc89a85eeade6e2d6e2965be04ba/wcwidth-0.2.8.tar.gz"
-    sha256 "8705c569999ffbb4f6a87c6d1b80f324bd6db952f5eb0b95bc07517f4c1813d4"
+    url "https://files.pythonhosted.org/packages/a6/ad/428bc4ff924e66365c96994873e09a17bb5e8a1228be6e8d185bc2a11de9/wcwidth-0.2.9.tar.gz"
+    sha256 "a675d1a4a2d24ef67096a04b85b02deeecd8e226f57b5e3a72dbb9ed99d27da8"
   end
 
   def install
@@ -100,7 +91,24 @@ class Pgcli < Formula
       venv.pip_install Pathname.pwd
     end
 
-    venv.pip_install resources.reject { |r| r.name == "psycopg" }
+    # add setuptools dependency to pendulum
+    # upstream PR ref, https://github.com/sdispater/pendulum/pull/765
+    resource("pendulum").stage do
+      inreplace "pyproject.toml", "\"poetry-core>=1.0.0a9\"",
+                                  "\"poetry-core>=1.0.0a9\", \"setuptools>=67.2.0; python_version>='3.12'\""
+      venv.pip_install Pathname.pwd
+    end
+
+    # Switch build-system to poetry-core to avoid rust dependency on Linux.
+    # Remove when merged/released: https://github.com/sdispater/pytzdata/pull/13
+    resource("pytzdata").stage do
+      inreplace "pyproject.toml", 'requires = ["poetry>=1.0.0"]', 'requires = ["poetry-core>=1.0"]'
+      inreplace "pyproject.toml", 'build-backend = "poetry.masonry.api"', 'build-backend = "poetry.core.masonry.api"'
+      venv.pip_install_and_link Pathname.pwd
+    end
+
+    res = resources.to_set(&:name) - ["psycopg", "pendulum", "pytzdata"]
+    venv.pip_install res
     venv.pip_install_and_link buildpath
 
     generate_completions_from_executable(bin/"pgcli", shells: [:fish, :zsh], shell_parameter_format: :click)

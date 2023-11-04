@@ -4,16 +4,16 @@ class Mosh < Formula
   url "https://ghproxy.com/https://github.com/mobile-shell/mosh/releases/download/mosh-1.4.0/mosh-1.4.0.tar.gz"
   sha256 "872e4b134e5df29c8933dff12350785054d2fd2839b5ae6b5587b14db1465ddd"
   license "GPL-3.0-or-later"
-  revision 8
+  revision 9
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d7aea82f60f0933b35bab857c48e0d200e5c2bcffdb3748bc838cd45cfcf4100"
-    sha256 cellar: :any,                 arm64_ventura:  "29b964018f1f0173b023abddc806fb73902e71f30d8dc8c9293334da8fa47465"
-    sha256 cellar: :any,                 arm64_monterey: "aa0e43e028aae30cbf6ff37582016a8057c7185521193e15ae7ec41509e6e1eb"
-    sha256 cellar: :any,                 sonoma:         "b0793b904c499756f0cb7ede18a0e0a6e3011d741f32a38554582ea88f6f8fe7"
-    sha256 cellar: :any,                 ventura:        "020b3c9a05aa43829f6f8d8f65754e73c23cb59daea16e898d14bd7e346c98f2"
-    sha256 cellar: :any,                 monterey:       "82a63af034edd9125b108fc6140e2d31ee8fcbefe1033999387798a0ed5d8c5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89eb0c0de944e7f6f0d43ef0fe8d1332c9ca78779384f848e1a4e2b58dd7b17d"
+    sha256 cellar: :any,                 arm64_sonoma:   "8978c29279fc1cd41da7a99fc822abca729f84bd1cfbe7e771850cbbd9526196"
+    sha256 cellar: :any,                 arm64_ventura:  "3cde3013718322848ea14101f029fd582b624eae86887e3854b1da14e0d4cb9d"
+    sha256 cellar: :any,                 arm64_monterey: "30a7d1bb1096e0b1a3d5253dfa71801bbb606c6c5497bbd472efb834a59ffcde"
+    sha256 cellar: :any,                 sonoma:         "1439d63cfb07be56b3a5ce133273ad51b5ba6d30842270f02fe1f1a7806e4644"
+    sha256 cellar: :any,                 ventura:        "8b3244f63c8be0d6a033bc360495e1125e505d737f60a94c693a0581eb8224eb"
+    sha256 cellar: :any,                 monterey:       "c182c981b85772f3de20017c2abc15abbff1526327c25bd32b78d0d68a406fc4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56309e6ca9014cb174e06b0623f45b9e29a60f8a925ae0527428494ed3c3131a"
   end
 
   head do

@@ -4,16 +4,16 @@ class Bloaty < Formula
   url "https://ghproxy.com/https://github.com/google/bloaty/releases/download/v1.1/bloaty-1.1.tar.bz2"
   sha256 "a308d8369d5812aba45982e55e7c3db2ea4780b7496a5455792fb3dcba9abd6f"
   license "Apache-2.0"
-  revision 18
+  revision 19
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "637a28eba79bd3aef262038120006a4675ca9432655392f5d12b769c1ae89f95"
-    sha256 cellar: :any,                 arm64_ventura:  "000fa53d08c9cdac9608d238e30eb867ad2c609cf2ad0c6f8c4ae5aed24eb2bd"
-    sha256 cellar: :any,                 arm64_monterey: "f6d7287c456de5ee5c750e361b4b60af29c9e171195054343be9710ac3a2f215"
-    sha256 cellar: :any,                 sonoma:         "2453cf8f2c4c9b9fde240f4202243eb3d6d408e803301ceae9954d7908214487"
-    sha256 cellar: :any,                 ventura:        "01b216cd29f7d71accc573fd2c5b7bcaa198901fa472772231edba52cb9c9386"
-    sha256 cellar: :any,                 monterey:       "2ee46c0910182b0064eb2265672ca03dbaa477d2e97377d6e99aac4eb283ebd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8cc539deb68014042a9ca0c8f5502cf32ba477b23dc72cb168b0c4486d97e31f"
+    sha256 cellar: :any,                 arm64_sonoma:   "e44107f9826c174f18ad1b2531401dcc7fab6778275502d91bbd94133e01dd54"
+    sha256 cellar: :any,                 arm64_ventura:  "74e296002d2860c9ba8a4ce110aba63651071abe3d78048b8d0825c9a39bf97d"
+    sha256 cellar: :any,                 arm64_monterey: "ec8edad62676bc9d64833f28988e15075b4902526e190e425dd99167fee0bd4e"
+    sha256 cellar: :any,                 sonoma:         "c3fdc19ed423e2bed95d0333024097716d990fb43c98295f1fc11dae5ec8494c"
+    sha256 cellar: :any,                 ventura:        "bba16d22e71945ddf8eb32c29b445aea27a40ab395196a9927365a25e9403aa8"
+    sha256 cellar: :any,                 monterey:       "8a863a40544af444e4618dcd665dc6cda7077be74b4f1a6ed0e72d91ec51745e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "578b9fcbf9c32481fe95f0b07a1afc53cdc5befcf2f540212fe2caa73969d04a"
   end
 
   depends_on "cmake" => :build

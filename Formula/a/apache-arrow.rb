@@ -5,16 +5,18 @@ class ApacheArrow < Formula
   mirror "https://archive.apache.org/dist/arrow/arrow-14.0.0/apache-arrow-14.0.0.tar.gz"
   sha256 "4eb0da50ec071baf15fc163cb48058931e006f1c862c8def0e180fd07d531021"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/apache/arrow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "527033ed287018e1a3e96fa0bdf646745fe871247003b0ad35433a5142226e23"
-    sha256 cellar: :any, arm64_ventura:  "61a418515c4731f61576575093c42acab169de43b3cf3cafcf57620ad7f0d76d"
-    sha256 cellar: :any, arm64_monterey: "4e8c9c831023f5ed832fcfc2b164b91db755924ab38b114fe7fb852c6e9907fa"
-    sha256 cellar: :any, sonoma:         "86dfdeff418fabcbfbab72793eefe534edfabaa1e2d73a3151f532e078dffa6d"
-    sha256 cellar: :any, ventura:        "ee802e08a8e735b45ae1d8e97d3c87583a7fda1cf26639fd3eaaa8bf1f32062f"
-    sha256 cellar: :any, monterey:       "bf64d118932a62af66994527bdd4be9ce5ab61f3be973b8fb130c1d7ff7727a6"
-    sha256               x86_64_linux:   "536a1d3d7c5ee9c8c58aa4d3a1cfb0168599abd971745a88858b501311cc1470"
+    rebuild 1
+    sha256 cellar: :any, arm64_sonoma:   "d940202aa3b2b38cc4547eb7d0beec915c0558c293b6ce1d737670416f36525e"
+    sha256 cellar: :any, arm64_ventura:  "8c2f970e1d4bccc5e82da1a24efd14655bcec2f4a18ed137094fe6c1ec98f5a4"
+    sha256 cellar: :any, arm64_monterey: "4e421aca88ce071ba041081c65b9b99233f2c2418842a65f343b3678a7ae0e95"
+    sha256 cellar: :any, sonoma:         "002329b2326050b0c7aba5c95fea4567e223a316ca7f40689fa9867e5e87234d"
+    sha256 cellar: :any, ventura:        "39efd5bc61675e23bf5d8805bc7d1378280b1c3a6e423fd483a24289b7408973"
+    sha256 cellar: :any, monterey:       "a76d9e31f6123e4e46404e4418f18a8efbf72365f29776ecc868e77e0a6fa742"
+    sha256               x86_64_linux:   "76081459f399cf8bd7abb1e908972ef0f8190d552e015d805d6f25f6b067151b"
   end
 
   depends_on "boost" => :build
@@ -41,7 +43,7 @@ class ApacheArrow < Formula
   def install
     # Work around an Xcode 15 linker issue which causes linkage against LLVM's
     # libunwind due to it being present in a library search path.
-    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
+    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib if DevelopmentTools.clang_build_version >= 1500
 
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}

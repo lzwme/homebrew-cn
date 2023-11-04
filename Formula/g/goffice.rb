@@ -1,20 +1,18 @@
 class Goffice < Formula
   desc "Gnumeric spreadsheet program"
   homepage "https://gitlab.gnome.org/GNOME/goffice"
-  url "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.55.tar.xz"
-  sha256 "16a221191855a6a6c0d06b1ef8e481cf3f52041a654ec96d35817045ba1a99af"
+  url "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.56.tar.xz"
+  sha256 "b8640a2fee0c0a57784b2a5b92944a2932c789db1039ddf5a269ad634796e7e2"
   license any_of: ["GPL-3.0-only", "GPL-2.0-only"]
 
   bottle do
-    sha256 arm64_sonoma:   "6407f88e8474f59ce4871d4e4639d0c6864ebaca7fd06b2a9cd56e2d0e491757"
-    sha256 arm64_ventura:  "b4fba5dd3adb45ec2bbd704602870bebdb56498f8e32a0d9cc73695e56d70539"
-    sha256 arm64_monterey: "d65b7f9ed3f4f20f40db33f6a5e0524a7bb4eefbf7aa64cf2bd6d16ee36a10fe"
-    sha256 arm64_big_sur:  "0aa63ad148cb4aae4c65266661a83918c908e20215370f370a83539b76013925"
-    sha256 sonoma:         "b731c3e928f0148ca59d4c1076962458f0495df4f6d7e982680e9dbebba1f509"
-    sha256 ventura:        "64237ea971207b9ed98c30df3fd174e43655c961e3fda8f477c694046906d6eb"
-    sha256 monterey:       "e504938af2973d98cfed4e9a402ba7abafbfa9a1d93cb5deebda0af512bc70db"
-    sha256 big_sur:        "b4b6abb961eb7cc3485f517d1ea196104b0bddfdaa6dee3f258f906584f6e434"
-    sha256 x86_64_linux:   "8cde966d15d0204ea00adf282e606d026988617d25d5e2f139a623a8ce8f1b66"
+    sha256 arm64_sonoma:   "5a613d5b56c610af0735ced2c4084a7fadaf1977afb1156d14273e28d80e5c53"
+    sha256 arm64_ventura:  "b381103634690f60bec710b4eb8fb0bd6151a7db4c800564b3460a9498bda2b7"
+    sha256 arm64_monterey: "132313c560eed410b17a3092d8a4198ac7783baada45bc4c85d5b019ff0d2291"
+    sha256 sonoma:         "308b048eb8fc34007783d4fcb185b42338a73663c2a90f459ddd600606014e40"
+    sha256 ventura:        "da5ca181943406c89273fde578694db085e1d507459875d544bea1e74c0fae71"
+    sha256 monterey:       "c9f9f7fbcbdc52a0de548e7990931b52c5bafb9cfc335079e1e11ed93b4d50cb"
+    sha256 x86_64_linux:   "e374e7fec0b9b5ec3deda040be56cde513914cbbb9517d3ea6a55d2ac9e3e022"
   end
 
   head do
@@ -38,6 +36,7 @@ class Goffice < Formula
   depends_on "pango"
 
   uses_from_macos "perl" => :build
+  uses_from_macos "python" => :build
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
 

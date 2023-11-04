@@ -1,17 +1,17 @@
 class Brpc < Formula
   desc "Better RPC framework"
   homepage "https://brpc.apache.org/"
-  url "https://dlcdn.apache.org/brpc/1.6.1/apache-brpc-1.6.1-src.tar.gz"
-  sha256 "7bea77e2f28d33480bf2c6dfe171077e0b51d5d56fcc5d7a1dd7cc5702620e4c"
+  url "https://dlcdn.apache.org/brpc/1.7.0/apache-brpc-1.7.0-src.tar.gz"
+  sha256 "767fa5d70118ce7dda89edb958da5c873bac7d2e21753892765e0e4ffe4a9854"
   license "Apache-2.0"
   head "https://github.com/apache/brpc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "0694f50284159f02ea36fa531b8e6aec9aa0405395f71b7446b01d341289a31c"
-    sha256 cellar: :any,                 arm64_monterey: "75ef2dea505e6346555de1072c9a4097d2083db9e132f288c2019eb79c3442d3"
-    sha256 cellar: :any,                 ventura:        "9da00fce05ce3d5bed17ba53e7b7d31a82682b15548258c6ba3ebfa5e821b0e6"
-    sha256 cellar: :any,                 monterey:       "b897f1411027a4abcc69cf7e8d536c00136b20e377046c756c7e202d267d64e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "84e5c646dab222a86bde6e4a14e3cd8c8314a968cb05255af113afe8a6faaffb"
+    sha256 cellar: :any,                 arm64_ventura:  "2d6362b167c9b39b6496ac03c7dd3f44225b4af6e01baa7711287e7c96e24426"
+    sha256 cellar: :any,                 arm64_monterey: "4329a5f727e5191c2ba4f0867eb508723754619bb57e08c8185ca9460e2290e3"
+    sha256 cellar: :any,                 ventura:        "18950c2221f71ebaae25aed94896ff813a5067376a73ee1801d8cf99b85c8a2e"
+    sha256 cellar: :any,                 monterey:       "5ae5b53f0178a13bfb99d5160ee71e1bd5186c0e223a8098c679ff23008f4bd9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1401707da2744aabfe5ff96085ae0791505b7bc8894280898b62dece143fb7d"
   end
 
   depends_on "cmake" => :build

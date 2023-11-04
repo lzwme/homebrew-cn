@@ -4,17 +4,16 @@ class Movgrab < Formula
   url "https://ghproxy.com/https://github.com/ColumPaget/Movgrab/archive/refs/tags/3.1.2.tar.gz"
   sha256 "30be6057ddbd9ac32f6e3d5456145b09526cc6bd5e3f3fb3999cc05283457529"
   license "GPL-3.0-or-later"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7fbbd62fc17257b90c9fe91b83062f2d42c8e7112c74e38e3f9e69ac08c59f39"
-    sha256 cellar: :any,                 arm64_monterey: "17ab24e1802ce6001bac7698b77016147e3cd65e08b00bd306d83dbdbda24a47"
-    sha256 cellar: :any,                 arm64_big_sur:  "a59426ffc7941233eebd052796c1827884fe9ba508dbc57d2f24d8b1d1e64a59"
-    sha256 cellar: :any,                 ventura:        "4d3a6b36fc96ea07500f4102847be29b9de1d0cc77555a8ed49465d97cc38301"
-    sha256 cellar: :any,                 monterey:       "a4a6388501b014b23c14682d78350ad7f80e2cdf13990db1ab426680cd5fe46b"
-    sha256 cellar: :any,                 big_sur:        "711c6f888dd3aee65b4f8b095a833f14c7bb14d4c6ab972825a64f565e3627c3"
-    sha256 cellar: :any,                 catalina:       "08e18d14b3208844a4fdf805ea914770c4ea140ae1e11d643b425e5ecf50abcf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae91e23b93a7761f927bb2aa7dd68af847fe70d0b873a4e93f4b7af6fdf86d0c"
+    sha256 cellar: :any,                 arm64_sonoma:   "00bae61b99036c125722e286765989750625ea2e101cb72b423d66b6d0e89885"
+    sha256 cellar: :any,                 arm64_ventura:  "2125f5ed70f10bc4a52fe12c2039bac9c5962fbc11279649a4afcb74edafbe25"
+    sha256 cellar: :any,                 arm64_monterey: "6862be98fc9700fe5387119419841f26933e19914cb5cc29cc1740ddbc7f5c91"
+    sha256 cellar: :any,                 sonoma:         "19b7eca42fa3da28533ebc1fcd5d591829945c9437e95856eeeb0e7866da7f91"
+    sha256 cellar: :any,                 ventura:        "be017c6a743b1e9e2da0fd70e84929e5c4922b86d4320c0a3bb9f0cd866904e3"
+    sha256 cellar: :any,                 monterey:       "2e6696b7eba9cfd5ddc641e08bca87e98f03005673f17d4be0a42888598ccac5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8dcd83d074d217a70c8e52ab8fb1eaf827c83c104af436ec1bbd3e0b71bcafb"
   end
 
   depends_on "libressl"
@@ -36,6 +35,9 @@ class Movgrab < Formula
   patch :DATA
 
   def install
+    # workaround for Xcode 14.3
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     # Can you believe this? A forgotten semicolon! Probably got missed because it's
     # behind a conditional #ifdef.
     # Fixed upstream: https://github.com/ColumPaget/libUseful/commit/6c71f8b123fd45caf747828a9685929ab63794d7
@@ -45,7 +47,7 @@ class Movgrab < Formula
     # this one does not. https://github.com/ColumPaget/Movgrab/blob/HEAD/libUseful/Process.c#L95-L99
     inreplace "libUseful-2.8/Process.c", "setresuid(uid,uid,uid)", "setreuid(uid,uid)"
 
-    system "./configure", "--prefix=#{prefix}", "--disable-debug", "--disable-dependency-tracking", "--enable-ssl"
+    system "./configure", "--enable-ssl", *std_configure_args
     system "make"
 
     # because case-insensitivity is sadly a thing and while the movgrab

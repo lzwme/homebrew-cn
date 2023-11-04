@@ -1,9 +1,9 @@
 class Gpsim < Formula
   desc "Simulator for Microchip's PIC microcontrollers"
   homepage "https://gpsim.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/gpsim/gpsim/0.31.0/gpsim-0.31.0.tar.gz"
-  sha256 "110ee6be3a5d02b32803a91e480cbfc9d423ef72e0830703fc0bc97b9569923f"
-  license "GPL-2.0"
+  url "https://downloads.sourceforge.net/project/gpsim/gpsim/0.32.0/gpsim-0.32.1.tar.gz"
+  sha256 "c704d923ae771fabb7f63775a564dfefd7018a79c914671c4477854420b32e69"
+  license "GPL-2.0-or-later"
   head "https://svn.code.sf.net/p/gpsim/code/trunk"
 
   livecheck do
@@ -12,16 +12,10 @@ class Gpsim < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "ff38f5f57aec23966b25cdaae05ce47af0395ae78093e3bbc62435369377e462"
-    sha256 cellar: :any,                 arm64_big_sur: "7c2f982e48f43bd5b4bf96bc789292d2e786be2cba23cda8b23303cb4f323ad9"
-    sha256 cellar: :any,                 sonoma:        "8092f60096211d2ccd3e8d68915e6013abffd44489cf4b019ea372666c1aad2a"
-    sha256 cellar: :any,                 monterey:      "67592314e36ca6c5c0bfa338ec40ba7b2c168665bbff42f280429866da401e3c"
-    sha256 cellar: :any,                 big_sur:       "65f8044f61bd55813e73385c46ec6bb167c45ac9af373d14c544cdbdff932fb4"
-    sha256 cellar: :any,                 catalina:      "7f92c6ae94438c73050aea08fa41c56b93efa9464855b3b0861b0bb3c6a08621"
-    sha256 cellar: :any,                 mojave:        "00c585480ada4e552a32ee3f0e11bc68142ce4f6671eeb14badc51007d07be9f"
-    sha256 cellar: :any,                 high_sierra:   "612ce9c2f03a5c6464aee9b9bdcd6884e434e457f515bbbc2adceb8417f1c6d1"
-    sha256 cellar: :any,                 sierra:        "5a366b0dccfe1ff92aaed6d29f9bd5ca66806471b17e8941206e985f6bd8817a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b7d6c3c3efa789c2087087ce41658a08cb659273ac61dc5c8df05fa3a8bf6b7"
+    sha256 cellar: :any,                 arm64_sonoma: "fa23f8c80ac0345a2f22b8ea0ba306c915947df7eac7ace8cbd14e1eff4a6b9c"
+    sha256 cellar: :any,                 sonoma:       "2981d50ca8314999f1aed8b224da83e52b74d013fc6dd3c5ff9d14fa98fe482c"
+    sha256 cellar: :any,                 monterey:     "82ed0708bc543e6a067d5b23647de05de60c2abf4c4851adcb9c7f58d2f60b43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ed7b77aad09ad8845ef7b7f7481c8d480e65f69eb92715b0045d9c8d80ac5c27"
   end
 
   depends_on "gputils" => :build
@@ -34,13 +28,9 @@ class Gpsim < Formula
   def install
     ENV.cxx11
 
-    # Upstream bug filed: https://sourceforge.net/p/gpsim/bugs/245/
-    inreplace "src/modules.cc", "#include \"error.h\"", ""
-
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-gui",
+    system "./configure", "--disable-gui",
                           "--disable-shared",
-                          "--prefix=#{prefix}"
+                          *std_configure_args
     system "make", "all"
     system "make", "install"
   end

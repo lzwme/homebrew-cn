@@ -5,6 +5,14 @@ class Opendht < Formula
   sha256 "1405dc110af85375c205f711e03e231b82d1737040814f1318f3bb2bfa63d8f8"
   license "GPL-3.0-or-later"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "4750d21f1e46f87f3374812f3b9fea6804a5060b5d8ab3c2ce0624dd472a3a26"
     sha256 cellar: :any,                 arm64_ventura:  "3b4b7ad45085e3b510a46e26d8f2086b0cbec19bb21244fe4ebc92419d0269e2"

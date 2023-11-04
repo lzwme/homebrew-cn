@@ -3,20 +3,18 @@ class Gupnp < Formula
 
   desc "Framework for creating UPnP devices and control points"
   homepage "https://wiki.gnome.org/Projects/GUPnP"
-  url "https://download.gnome.org/sources/gupnp/1.6/gupnp-1.6.5.tar.xz"
-  sha256 "437dff970142e8407087a89855f717e20d27c9d76e05b4cd517df621c7d888cd"
+  url "https://download.gnome.org/sources/gupnp/1.6/gupnp-1.6.6.tar.xz"
+  sha256 "c9dc50e8c78b3792d1b0e6c5c5f52c93e9345d3dae2891e311a993a574f5a04f"
   license "LGPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "e6ee5368a0c33eab4032d7d34dc82c78a072dd5767cac9b4c2423a0a850302a6"
-    sha256 cellar: :any, arm64_ventura:  "fef28e8b65542025e4758d4ff4ad85e50dfff492e1421ea2e612211174093cb7"
-    sha256 cellar: :any, arm64_monterey: "eec2372a8db3fb0d68d66e740db85b4589d63814d65eeda74870790825bdc7b2"
-    sha256 cellar: :any, arm64_big_sur:  "637c1f9909de8a9fdb6095ab7e114f973039803523389b218da1f4faee2482e4"
-    sha256 cellar: :any, sonoma:         "f9069b0ceabb2a670a7ec7c0a72ee9e210e0ca2b0db213d082534ee0ac220771"
-    sha256 cellar: :any, ventura:        "f4ace8c0c53b34b582a37323df1b4b813e605031ac7a898d2f8ff6388021b4d8"
-    sha256 cellar: :any, monterey:       "adeba1418919f58162de30c1bb6b74ed06a48ecc53363e5254c4054ae608770f"
-    sha256 cellar: :any, big_sur:        "da88d6e7d2da07422fea4cdcc4b2f4475281018ee959bb969b08527644f89258"
-    sha256               x86_64_linux:   "1c9e8e93453993b8560273ba0e1903074ae2a354c37f687e441ad44e486e6113"
+    sha256 cellar: :any, arm64_sonoma:   "015196de1b4d30bf9f813483e62b405b254ffd59f0ada46fc5131743a755b05c"
+    sha256 cellar: :any, arm64_ventura:  "15f2967d08d7bb95e3fd9ac8b7eba0aa6c197d64ddd78ece41c454d9cd0754d0"
+    sha256 cellar: :any, arm64_monterey: "f6499c492c8347a8f769db41634df06deb88fd2d0f8b0bd9e2e4035d64007640"
+    sha256 cellar: :any, sonoma:         "99d916fbba332bb2642a41f1a21961aa9d5d270b3d0bcf605c40db3a9640f1ea"
+    sha256 cellar: :any, ventura:        "44565ee4eb34af29dad778fc5f042af5cdf152208f69c0919bed2a2a5a823169"
+    sha256 cellar: :any, monterey:       "e95283c0946443b136d9a080e14f1493e3d737a5f2a4de65a5907254f4e0e8e9"
+    sha256               x86_64_linux:   "04cf309eee9f3047e8ae8d13a21d58d0e2e9ddd6756a8c29b646d4c5f8cde1ae"
   end
 
   depends_on "docbook-xsl" => :build
@@ -30,7 +28,7 @@ class Gupnp < Formula
   depends_on "gssdp"
   depends_on "libsoup"
   depends_on "libxml2"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     ENV.prepend_path "XDG_DATA_DIRS", HOMEBREW_PREFIX/"share"

@@ -5,6 +5,11 @@ class BaculaFd < Formula
   sha256 "0949c32be1090585e88e4c01d828002e87603136d87c598a29dff42bb3ed2a40"
   license "AGPL-3.0-only" => { with: "openvpn-openssl-exception" }
 
+  livecheck do
+    url "https://sourceforge.net/projects/bacula/rss?path=/bacula"
+    regex(%r{url=.*?/bacula(?:(?!/[^/]*beta[^/]*)/[^/]+)*/bacula[._-]v?(\d+(?:\.\d+)+)\.t}i)
+  end
+
   bottle do
     sha256                               arm64_sonoma:   "4545cd51a096acd747f52d5d15054fc230cef04fea23d50c5b6972503df88174"
     sha256                               arm64_ventura:  "093e3cd13f2eeff54913fff81ea84b986e4a110a4dc3119ec3ec881118741962"

@@ -1,27 +1,24 @@
 class Mafft < Formula
   desc "Multiple alignments with fast Fourier transforms"
   homepage "https://mafft.cbrc.jp/alignment/software/"
-  url "https://mafft.cbrc.jp/alignment/software/mafft-7.490-with-extensions-src.tgz"
-  sha256 "d6eef33d8b9e282e20f9b25b6b6fb2757b9b6900e397ca621d56da86d9976541"
+  url "https://gitlab.com/sysimm/mafft.git",
+      tag:      "v7.520",
+      revision: "52b59f064c600da59bca8233736418fb8bb35d5e"
+  license "BSD-3-Clause"
 
-  # The regex below is intended to avoid releases with trailing "Experimental"
-  # text after the link for the archive.
   livecheck do
-    url "https://mafft.cbrc.jp/alignment/software/source.html"
-    regex(%r{href=.*?mafft[._-]v?(\d+(?:\.\d+)+)-with-extensions-src\.t.+?</a>\s*?<(?:br[^>]*?|/li|/ul)>}i)
+    url :homepage
+    regex(/The latest version is (\d+(?:\.\d+)+)/i)
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8bfa44a371cbf49b38133b1ae3cff744e84f7ca10922029ea2f72183b75a4282"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "09e3af4a92f5d01b7f715dd2d0d4d91798cc674ae5bf34040b36abfcaf0f9d31"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ce2343170fba164088b8d138cb9043b5e3cd4674327243d3e6530aabb63082a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a28296f4008623699ca60650cb7bbc4bfafa85aecb9a4b7b446db67b26b3edbd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "33f52822314cbd7a94c56e826dda5220b67308bdc34696d12222057f5e41b114"
-    sha256 cellar: :any_skip_relocation, ventura:        "74017d9b65eb10417d9df8141871f47603d3d3eb5c8454ed3974e806a16dcd57"
-    sha256 cellar: :any_skip_relocation, monterey:       "75f785fd4c67164de44a419b3eb75cb51ffce3c346d6c87958706267bcf36b3c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e4e4474c70b87a31a5b439013f9a1d747bb61f2ce9dd578950675a995cc7fb0f"
-    sha256 cellar: :any_skip_relocation, catalina:       "40c08564f300305c9e279255cceca05e89c85362d3dcf23dd474c86a4074c3f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a496b783ed050a16748f638289c61b17cc54729ae17d61df879909adcfcb5e64"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "256ec7b1ed45a40135d2b4ca03c9d108a84177a85f8b119f2209188309766f65"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "219e442bf7af3df694fe8db914e6028b9e11d0bf5c314446373156a686e2ec3e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "06cdd139defbac1ef1ac3e0021f4e0e889145f4a84d97e504c0e82a555a1a5a2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2a6e523ad86aa8db7212ddd47ca5193df7e3409465836d6c3749004c184e3cd4"
+    sha256 cellar: :any_skip_relocation, ventura:        "010b2bd3a37895feb8a2effbe47a35711786394f78cda4292613ff0ba6b99fe6"
+    sha256 cellar: :any_skip_relocation, monterey:       "4f238aae0d4e8404f247e79134a70fdc80e3b31c5acca1cfd002d07b10b85d09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c44ff19df4e8f79b5ceb8c6cf29f064fd2bdcd11654af87b1f9475b25f90ee2"
   end
 
   def install

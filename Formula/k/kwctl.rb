@@ -1,19 +1,19 @@
 class Kwctl < Formula
   desc "CLI tool for the Kubewarden policy engine for Kubernetes"
   homepage "https://www.kubewarden.io/"
-  url "https://ghproxy.com/https://github.com/kubewarden/kwctl/archive/refs/tags/v1.8.0.tar.gz"
-  sha256 "4bf0d5517b2f45555a395bf61caed151947a776b5c07fc3ba689cadb0e9d7677"
+  url "https://ghproxy.com/https://github.com/kubewarden/kwctl/archive/refs/tags/v1.9.0.tar.gz"
+  sha256 "9f770025338b7b5a5097dfe9fd128c39eededf0237ee9dada06376d846a674ea"
   license "Apache-2.0"
   head "https://github.com/kubewarden/kwctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c134198339b931c79123b93b007901b228bfd55f7beca1289c904c16261a4109"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a79892d41c71df4ff6449f701150be9588d5b4d817d297f980235340621c111d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4af8518f621a243122ab710603b668da9d9fa7a785c64228cabbf07ff47b3c1a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3ab9b125368c78ef0e5b650bfc21cef6c4771195b53706cac4c51489eb3d6ee1"
-    sha256 cellar: :any_skip_relocation, ventura:        "bc09ae158da6893d10a70357ba0c9d146dfe5cc3c4555d26fc9abf39f49c89df"
-    sha256 cellar: :any_skip_relocation, monterey:       "07aace836444f3783d8df9d4a7d5686bb8a1f6ee4f15de1a775942d67e8f8f66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a20951a257bc5256c03717eda7b2a45f67bbe25ceaff1305143a142cc6a3fcc1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1ae953ad3c30995e0f9cfaef70854e51da392ea47e160add7f28dcea1f8cf94e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8671cca3c4572bb69e841721f9243b9b2ce0b6cb39b60d3ae5d6efd825424cd3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1adf6aa92b5863ce9674cea60b04fe36c5aa3c4ea03fefc97e89a23a7f244d2b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "96198fa8f45b5ef8672aea55661dae920992b15fe91eec55fc6f9a01a74c888e"
+    sha256 cellar: :any_skip_relocation, ventura:        "ec098ed76fb15a8c3ba8d83c6e7e45691bd0aeb73bade7d816dc0f2771bdbcdc"
+    sha256 cellar: :any_skip_relocation, monterey:       "b06edd43227eef98271e27d6b4692e98caa7207cdd3a2b6e29979764469055dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3cadc9a52e305f2d9aa39d40e11d4803b0edacf04e9664b97af3213ff3db721e"
   end
 
   depends_on "rust" => :build
@@ -39,6 +39,20 @@ class Kwctl < Formula
           "group": "networking.k8s.io",
           "kind": "Ingress",
           "version": "v1"
+        },
+        "resource": {
+          "group": "networking.k8s.io",
+          "version": "v1",
+          "resource": "ingresses"
+        },
+        "name": "foobar",
+        "operation": "CREATE",
+        "userInfo": {
+          "username": "kubernetes-admin",
+          "groups": [
+            "system:masters",
+            "system:authenticated"
+          ]
         },
         "object": {
           "apiVersion": "networking.k8s.io/v1",

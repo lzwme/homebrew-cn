@@ -1,23 +1,17 @@
 class Clipper < Formula
   desc "Share macOS clipboard with tmux and other local and remote apps"
   homepage "https://wincent.com/products/clipper"
-  url "https://ghproxy.com/https://github.com/wincent/clipper/archive/refs/tags/2.0.0.tar.gz"
-  sha256 "9c9fa0b198d11513777d40c88e2529b2f2f84d7045a500be5946976a5cdcfe83"
+  url "https://ghproxy.com/https://github.com/wincent/clipper/archive/refs/tags/2.1.0.tar.gz"
+  sha256 "9c13254e418a45c2577bd8a0b61d9736d474eec81947c615f48f53dacf3df756"
   license "BSD-2-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb860fc6db9dbad5c62e2501ec592f25f4d1adad41e28557ecf85467c9bd1373"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d029ac8ca30a76a9e4825071d1f082a9b1f1d922846f8c6b131381e065b8245c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cbcfb891555f7d4da43b749781f5e3b28ff1cd693c446f91d4300bbe49f52e7d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a114dd1e41872b63ca5ced700ee503aa4eb87f0add568e3dc1ad9e10cca9459b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6804f1f1044b14f798fe8acb3222658f87bb37a53f7114585f6d38ce9dcdfe84"
-    sha256 cellar: :any_skip_relocation, ventura:        "861c78501ae9ef8bd85c6305b4c5c9dbd62810a07b6b30e3020d953c4b55ee9f"
-    sha256 cellar: :any_skip_relocation, monterey:       "c38aa99876034b161cf484ef0d28e62bd01ff20f51322d9aab883733167d8dca"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3322412e9d0979650ad863bf42ba473c4eaabf06f48ef6d1053cf3fbc89dfc8a"
-    sha256 cellar: :any_skip_relocation, catalina:       "6e16549f9930f652364f727cf42ea04608d92f172e7916c85900c3b6feb98df0"
-    sha256 cellar: :any_skip_relocation, mojave:         "2216327dbb3a341f14db9d2da767749d00e460917bcf1098665948e24eeb2e8b"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "a2230d8cb54b244b82ea5f5c47cebabe2f63a6b9dc1b98d47cd4a0fcd4eb743f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b4430a2ed4f0c3c46fbfbbe3b439ec13693f5d9b4d644a93a58abcda5ee22463"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "786decdda1515fb47e7defc2d5b4b8f8663ae3bc5af905a8333394404f5bac4e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b590d188d9161d5bb518cd7459350e26884a94d0a6b34a28d88ff8a8bd7a6e26"
+    sha256 cellar: :any_skip_relocation, sonoma:         "357b34301d35c90be7799c7cc702370ec0877e975e62c9033f2e2f1b8c5cfdf5"
+    sha256 cellar: :any_skip_relocation, ventura:        "3af42ac07c4fd9f399ad8ddf10762d992610911b6afc59ea0ef02290d8c74b5b"
+    sha256 cellar: :any_skip_relocation, monterey:       "86f8afc1e505c633c5c592cff7710184ce48e195ec038514682f1cdd78d3525c"
   end
 
   depends_on "go" => :build
