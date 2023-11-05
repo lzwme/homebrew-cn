@@ -3,19 +3,18 @@ class Dolphie < Formula
 
   desc "Feature-rich top tool for monitoring MySQL"
   homepage "https://github.com/charles-001/dolphie"
-  url "https://files.pythonhosted.org/packages/42/62/5853fe74430773e0e4e5c29483f1ca633a5955d25f9ede4fad24f333a809/dolphie-3.1.3.tar.gz"
-  sha256 "62b008053c1ac7b5e17815782726345b95e5970ab22d29b517af58b71d3dfdb1"
+  url "https://files.pythonhosted.org/packages/60/87/612bbc66b33f266405027053fde3632e42936f8793a073c60c37e3f6a3d0/dolphie-3.1.4.tar.gz"
+  sha256 "68ad316da4bea5ec4024254fd3e5e926f5cfcc52d9ead02832eb3e2f6882e01a"
   license "GPL-3.0-or-later"
-  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "01eb71c04c0b7d8c7b857e1234da956ec4079d85fd0d383bde41e0a9a4d693eb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1de946dc43a3b7eb1f34dbb2fce621672f30cc76044b39b8102fcb155c865a2a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e81619f3df88b6b80b5f400be20bdab1eecf9de5a0b74193653c0300e80323c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3815c4fa864a9851629afc9c637291fa37a6d7d7edf230e450146bc496dede91"
-    sha256 cellar: :any_skip_relocation, ventura:        "6fd85ac036448f71794c43f274db8071692dfaff1f1c449da7187585ddd51d0e"
-    sha256 cellar: :any_skip_relocation, monterey:       "d2a5f5b464b49307ba8ac8b3c4fdd664439b9fdeea38c49eab439ac07f97c902"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "221efbf561cc9f8f0c8cd7cc16e93588a546f7e0ec56244742fdd19ae9647ba0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e3e69148f8db27fbc55c79c5429d3cccb66083fc75fbc5dccda1175b1d4b90ab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0c953dce2e263a1731c23b99e7967f551cedd2f32877a17fa10b6b4d6bd3f526"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e72c0d4b8d6aa510e49089681f46de2b3652cef3327d2d9103e3e5b70aa79253"
+    sha256 cellar: :any_skip_relocation, sonoma:         "77187ae8a702207661f4d49476a7b365dbb89c0b8407ca17613c4917fb542659"
+    sha256 cellar: :any_skip_relocation, ventura:        "c1fbb009d8d94c144bc892dbb744d58faff8a9189a30eab277b046f8f122e6e6"
+    sha256 cellar: :any_skip_relocation, monterey:       "ea93ac80d1f79b484d5f1eaad034a09f6bcfcbe34417de63d8c837bf877503fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24511e91c5d061acd0232f677858a9cf7b7299d0449e8f1179a2063e11d3b9d3"
   end
 
   depends_on "cffi"
@@ -28,8 +27,8 @@ class Dolphie < Formula
   depends_on "python@3.12"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
+    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
   resource "idna" do
@@ -93,8 +92,8 @@ class Dolphie < Formula
   end
 
   resource "textual" do
-    url "https://files.pythonhosted.org/packages/46/47/dda242d5de6dea10b64e118b194fb0934b84b28555783b1e7f04c25a0289/textual-0.37.1.tar.gz"
-    sha256 "0498894da7f4af5cac62d99e412e9d813e784f7a87834dd29aa656d31d068760"
+    url "https://files.pythonhosted.org/packages/01/22/99db4365d3f883c73d02135a1f312f146a59d18cf72e6462aed014339897/textual-0.40.0.tar.gz"
+    sha256 "0fd014f9fab7f6d88167c82f90e115b118b3016b8597281d14c9257967f7812e"
   end
 
   resource "textual-autocomplete" do
@@ -122,6 +121,10 @@ class Dolphie < Formula
   end
 
   test do
+    # Fails in Linux CI with "ParseError: end of file reached"
+    # See https://github.com/Homebrew/homebrew-core/pull/152912#issuecomment-1787257320
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     output = shell_output("#{bin}/dolphie mysql://dolphie:test@localhost:3306 2>&1")
     assert_match "Failed to connect to database host", output
 

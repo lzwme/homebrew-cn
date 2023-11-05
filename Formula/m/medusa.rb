@@ -22,6 +22,8 @@ class Medusa < Formula
   depends_on "truffle" => :test
   depends_on "crytic-compile"
 
+  conflicts_with "bash-completion", because: "both install `medusa` bash completion"
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
     generate_completions_from_executable(bin/"medusa", "completion", shells: [:bash, :zsh])

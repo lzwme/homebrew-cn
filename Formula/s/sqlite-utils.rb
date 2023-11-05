@@ -2,19 +2,18 @@ class SqliteUtils < Formula
   include Language::Python::Virtualenv
   desc "CLI utility for manipulating SQLite databases"
   homepage "https://sqlite-utils.datasette.io/"
-  url "https://files.pythonhosted.org/packages/84/39/4ce5c5ac7ac6a485349f8636a920cd2568bf8f11298519d552b0c57351db/sqlite-utils-3.35.1.tar.gz"
-  sha256 "e0f03e6976b05bdb7a5c56454971a0e980fc16dbfd3512bbd3bdcac4f0e4370e"
+  url "https://files.pythonhosted.org/packages/10/91/4febf8cfe2d0b57a6a77595180bdb4ab97a89ffd36223ed295d1d8bfbbc7/sqlite-utils-3.35.2.tar.gz"
+  sha256 "590b14ad277914cb3fc7d5e254764847facdaaa23c7bafd85ec93874f6f42143"
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "87f9b93722bbd6e9dec772f16fb62c3aeb092ea23ba13ca0adc33d660f8cc581"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "726d86fb5289945e085538309593fc7fd4372cd9b6b7926c9576c9c2bee3d029"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d24eec9674d0c56155cec3853431530ddedca6e13dedf2dec22ed91ede2fa8cb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "eb59d1fbd3438d52b4c6d7584253c3dd59bd57a5e4067b48d20d1e8a98151093"
-    sha256 cellar: :any_skip_relocation, ventura:        "d95fdcc63de01fe7c5dc530d5e07f8bc015c61534af388d552743a789838bff5"
-    sha256 cellar: :any_skip_relocation, monterey:       "aa337c7c341ffe2d017f14e3aa05316233a34a7a3328a00c94429cc48683e85e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f530775c4033e2598e3a31ef9b32b76de5012bf2ade9f16cc1de2683e6d4fdd5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bb6f6d669566b74281d65fcc4157b952ec57b967e9ddedb30711f410e44127d5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0acd4e40a96a5672909f7729f2a2e32db3265897e270747aaeba8e37fa880420"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e6b7110638184196ebb0517447b5938758ed41ec585aa5d02eeb991a282963e4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "67c70e5eca6263d4898057ab927f0a3eee92f4253458886f2751ff609194c17a"
+    sha256 cellar: :any_skip_relocation, ventura:        "663d6c6d8355620a720a384e7d8b797fa09a347a04924caed23598b8640d69b1"
+    sha256 cellar: :any_skip_relocation, monterey:       "62660205116777c23232f6fdfb01297b5b9ec1a96aa3ede781deb67534deae4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7332828175e3847cd75e065a2c4d39ee17506e398e56565ac84e9440189f614"
   end
 
   depends_on "python-click"

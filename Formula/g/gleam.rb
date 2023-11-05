@@ -1,18 +1,24 @@
 class Gleam < Formula
   desc "Statically typed language for the Erlang VM"
   homepage "https://gleam.run"
-  url "https://ghproxy.com/https://github.com/gleam-lang/gleam/archive/refs/tags/v0.32.1.tar.gz"
-  sha256 "c81f4a8278002c6172283d08234ab2a24ef19e2633e3bb81be2aca0d237398ff"
+  url "https://ghproxy.com/https://github.com/gleam-lang/gleam/archive/refs/tags/v0.32.2.tar.gz"
+  sha256 "46581d9a62312a40923eabc41a3c52a2da36f986b2529692d7dd2b41460fb13a"
   license "Apache-2.0"
+  head "https://github.com/gleam-lang/gleam.git", branch: "main"
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "52ea501a7b84032afbe9abb3b8dc3b91f209af3612886c3cc763ac76edbb9cd5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7cadb9c00457a3b1fa4931676b98f97dd772ea82cdaef2e03076bbfd24436f3d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "786ad2f200a41645af32d9da8db8e2bee74472fac39832261339079212a5937a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f97bd1701727c331a113f247fdde938725d57d8631a48f93a9ebc60c6141308e"
-    sha256 cellar: :any_skip_relocation, ventura:        "97173127e9b38755707d5f1b05c033c3c5a74e9a198e39ae290b4d454b7376b6"
-    sha256 cellar: :any_skip_relocation, monterey:       "744d06f9fba98b0f918712b4f56d2dd067c3725f34bd9910333ba59baa88bbb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45708b8a3382593cde2e387950bd7abdbeb737694750961727771c00b7ba94e4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4c5c45c184713fa01b33cd2b8b406ca23b3020782a2d796e187101097326d731"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "74edac62954633ce47e71645cd2b7893ce88bfabbb063c67759569593c563916"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "23e5caa4d549bc21d134d499867a342cabaf0fcf32cf0c1e9079cebd918ea817"
+    sha256 cellar: :any_skip_relocation, sonoma:         "43ee88757f2f0be16d26b84503b7db3acface053b7095826e3b3e136a68d6be2"
+    sha256 cellar: :any_skip_relocation, ventura:        "bed700b017898eaa5efbbabfb3e82440c7baa552dbbf967e855c6a9db63d98a6"
+    sha256 cellar: :any_skip_relocation, monterey:       "3b64ceb877d1d52bb2b9bfaf58a41854ee4eab50f2f5a83017267a2ae1e11f20"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe4612738d95a09e10a9f794cc972f2ee4ac99c50434aa5e5eea1680b0ecfcb9"
   end
 
   depends_on "rust" => :build

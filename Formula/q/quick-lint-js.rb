@@ -1,18 +1,17 @@
 class QuickLintJs < Formula
   desc "Find bugs in your JavaScript code"
   homepage "https://quick-lint-js.com/"
-  url "https://c.quick-lint-js.com/releases/2.17.0/source/quick-lint-js-2.17.0.tar.gz"
-  sha256 "8a7ed7f7bcc664da23b7d112bf03d0cdc747aed62d5ba0f466ce1c2998e94966"
+  url "https://c.quick-lint-js.com/releases/2.18.0/source/quick-lint-js-2.18.0.tar.gz"
+  sha256 "4e729af360be59bf068a5dcd7ce5e365d8777d37d56a35d469a1aad62133744b"
   license "GPL-3.0-or-later"
-  revision 3
   head "https://github.com/quick-lint/quick-lint-js.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "769a0ef728a215f5c0184a9bc6724a4ac3dae0cbb63476e90668548156790950"
-    sha256 cellar: :any,                 arm64_monterey: "5c0b351a5f532f916a6964913b511e054ba5518e844dafd68c4d4e36b3d6fda0"
-    sha256 cellar: :any,                 ventura:        "490819c9628870b0f58e848f299e51120f1376da231430e5bb087f46134f18fd"
-    sha256 cellar: :any,                 monterey:       "4024270e79971bcdfe3589ed67832a9736cbde679549c2dc47bdbdb64c5557c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f7d6a38fa54dfe40c73d0518bca1b72a23cb70589d8987756b30a156422de2c"
+    sha256 cellar: :any,                 arm64_ventura:  "ab63676f77b354e19de1822cf4aa0c4485e3517d247c5eec846158e63c4d9bac"
+    sha256 cellar: :any,                 arm64_monterey: "4f61ecb219533abe48250ca5849dd49b30fde54801fdae3d8f6e8e56ccdec678"
+    sha256 cellar: :any,                 ventura:        "c449de15cc45af99201aae4c99a03594e20ba766451ecb9cada8d218a445ec0e"
+    sha256 cellar: :any,                 monterey:       "584d5d8509c619bf9738d491b5d4eb9532e1706e8df0497e5aec79316387a3cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3bba62728cc7c77b157418f1629d8e0ca1ea8a2e978e1ebf553aa51ed4cc5729"
   end
 
   depends_on "cmake" => :build

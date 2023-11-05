@@ -30,6 +30,8 @@ class Pkgconf < Formula
     depends_on "libtool" => :build
   end
 
+  conflicts_with "pkg-config", because: "both install `pkg.m4` file"
+
   def install
     if build.head?
       ENV["LIBTOOLIZE"] = "glibtoolize"

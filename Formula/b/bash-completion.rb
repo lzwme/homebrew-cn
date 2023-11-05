@@ -34,6 +34,7 @@ class BashCompletion < Formula
 
   conflicts_with "bash-completion@2",
     because: "each are different versions of the same formula"
+  conflicts_with "medusa", because: "both install `medusa` bash completion"
 
   # Backports the following upstream patch from 2.x:
   # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=740971

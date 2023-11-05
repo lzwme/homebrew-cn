@@ -2,21 +2,19 @@ class Sfml < Formula
   # Don't update SFML until there's a corresponding CSFML release
   desc "Multi-media library with bindings for multiple languages"
   homepage "https://www.sfml-dev.org/"
-  url "https://www.sfml-dev.org/files/SFML-2.6.0-sources.zip"
-  sha256 "dc477fc7266641709046bd38628c909f5748bd2564b388cf6c750a9e20cdfef1"
+  url "https://www.sfml-dev.org/files/SFML-2.6.1-sources.zip"
+  sha256 "5bf19e5c303516987f7f54d4ff1b208a0f9352ffa1cd55f992527016de0e8cb7"
   license "Zlib"
   head "https://github.com/SFML/SFML.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8827811e22510a6b9e487e6442356787ff39fe6d2f8a7da6a2495c01951831ed"
-    sha256 cellar: :any,                 arm64_ventura:  "f81fcb668f0b343a8863489b33cbe7062a90f7ec28069b86e04339ed2a73a850"
-    sha256 cellar: :any,                 arm64_monterey: "b6f6b53466d4b1ffba4b98d77daa194c323e88fb306225f8fe9960aaff7f4367"
-    sha256 cellar: :any,                 arm64_big_sur:  "30abec4b2f8877b50f044d38fc1b8f10a159bfbf1b093792a86ccd79c6085e8f"
-    sha256 cellar: :any,                 sonoma:         "174a51f0261332bc8f06d955a44e43429c60e35b7a55f66543d6c0d4e36dd3c0"
-    sha256 cellar: :any,                 ventura:        "7a7194cecd4e0375834be5f36301789c583c893dbe4b145a8861f8620f1459db"
-    sha256 cellar: :any,                 monterey:       "517fc7a77b3692b139f4323187693ace6c87bd83a1a21698916ac205b75bd655"
-    sha256 cellar: :any,                 big_sur:        "528175b17d67dfd504df6804e03e88671f72b56e35bd68fe83cbcaf7cf404dec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93c2c2be521fefca19dc534a177847cde4e70e2e8626847948a55fa911425574"
+    sha256 cellar: :any,                 arm64_sonoma:   "a7975776a6cc79b56b3f24e2b479ebec22de528a0d0ceb39a2661b817e249dd5"
+    sha256 cellar: :any,                 arm64_ventura:  "dfb67204535360d3addd78d234dfebc885766bca2ca0e16a92225aec0228dcd1"
+    sha256 cellar: :any,                 arm64_monterey: "318fa96aca743fb92d730fd8ddfdd583173f9022e989c0931435035cc25cd3db"
+    sha256 cellar: :any,                 sonoma:         "c879bf7e4b5f343a9c821a35f232c0238021b9e97ba6308f86b307cd59836714"
+    sha256 cellar: :any,                 ventura:        "8a65d2d67f7fa763bac2b15c85b3ec7c0c6db3aab2cc2b2a3a9a2891061e532b"
+    sha256 cellar: :any,                 monterey:       "b81ac4939baef78b092833edf511cb3ee32c303799aed32454f09c206706bb29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d0504ed719b8fefc75d3a8c92a4658e86e648c2f318d7ed994224518ee8f479"
   end
 
   depends_on "cmake" => :build

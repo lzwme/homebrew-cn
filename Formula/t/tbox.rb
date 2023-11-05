@@ -1,21 +1,19 @@
 class Tbox < Formula
   desc "Glib-like multi-platform C library"
   homepage "https://tboox.org/"
-  url "https://ghproxy.com/https://github.com/tboox/tbox/archive/refs/tags/v1.7.4.tar.gz"
-  sha256 "c2eb29ad0cab15b851ab54cea6ae99555222a337a0f83340ae820b4a6e76a10c"
+  url "https://ghproxy.com/https://github.com/tboox/tbox/archive/refs/tags/v1.7.5.tar.gz"
+  sha256 "6382cf7d6110cbe6f29e8346d0e4eb078dd2cbf7e62913b96065848e351eb15e"
   license "Apache-2.0"
   head "https://github.com/tboox/tbox.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2a33a9faeb3e0380de70712c793704a9c3cbf35dc0c558870853626aba2eb28d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "62ebb24dc724b7f3dba2c8262ba1ab5bf226caf6920223719e73102bfe61e873"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc5826b5d50388fcd27c47f7d24b03f2cc9b76d6bc05157f329844cc4336df6b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fda8ab8fc03a875e824aaa5993d3f16ec790b82ab09dc4c987549a5416b5c887"
-    sha256 cellar: :any_skip_relocation, sonoma:         "11beaf16f7612a3ab0ff0187ea87cd6ca788f1a68d6e0e096bf85ef2b64b2015"
-    sha256 cellar: :any_skip_relocation, ventura:        "5bbf7c0031e08716dc41c7a4a17d8e67498b213ad8556c15d383f3ea3ef7421a"
-    sha256 cellar: :any_skip_relocation, monterey:       "ed7db509f9251ebd6cf983ed840a72192213b2ea610211da7c3699d239d47eb6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d0eeb6cdc6ad63e9e6e5a6441d77600182c9fa4f5a72271936b79ec38158a028"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2412788a8bb0123e5e342ae659f495d53347e15863068ecc41a2a9fdf76cad86"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0cba603567a21c953c379d310ef4e739ab85e89166ee9ca0820e6de954377c97"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2142d282316e44304970e782ded4fd7e0a8452e6ad73d0a6cf1b9a0545ec531b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "692c95557e62dda6982466fbe66a22d7ed64549f2c158d928a520c8a0ea3fedb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "772cb2e215b8aba72180a7703bc94bd42514e65f79abb16f6c29d57f038c26fb"
+    sha256 cellar: :any_skip_relocation, ventura:        "cefd8cdb4944f9559e7e36b29b2b544fd993ef5e9b3923ab077625bbd65fe4f0"
+    sha256 cellar: :any_skip_relocation, monterey:       "7232c7cb489e7cf1a66375b4cabf4697c4ab1824835ed051b0fd5d067bdbcc65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32e69718b923819a194a1fba1efdfd0393602ea4048da27f5d519a09e02d4158"
   end
 
   depends_on "xmake" => :build

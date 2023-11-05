@@ -1,9 +1,8 @@
 class Qd < Formula
   desc "C++/Fortran-90 double-double and quad-double package"
   homepage "https://www.davidhbailey.com/dhbsoftware/"
-  url "https://www.davidhbailey.com/dhbsoftware/qd-2.3.23.tar.gz"
-  sha256 "b3eaf41ce413ec08f348ee73e606bd3ff9203e411c377c3c0467f89acf69ee26"
-  revision 1
+  url "https://www.davidhbailey.com/dhbsoftware/qd-2.3.24.tar.gz"
+  sha256 "ad6738e8330928308e10346ff7fd357ed17386408f8fb7a23704cd6f5d52a6c8"
 
   livecheck do
     url :homepage
@@ -11,16 +10,13 @@ class Qd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "93fd5e8be0b4925ef4d8495e1003485b3b74337bad41317dc872dde102690a0d"
-    sha256 cellar: :any,                 arm64_ventura:  "bc67a1611a730d5a0e3ad87ed5c18ab92eabedf6502b849df81f2885056d64d4"
-    sha256 cellar: :any,                 arm64_monterey: "c1cef2704e1fcd44953f70cdde726d584a09b4dab2ad4622783deabc6f64caf5"
-    sha256 cellar: :any,                 arm64_big_sur:  "98047f6136ad8b68370755021b1e127e60b5050a6a5b903c68943527b28ecfae"
-    sha256 cellar: :any,                 sonoma:         "48167ada269ae36efbd2b55610d811d53d967f2cc74cc38280aa5127673c264b"
-    sha256 cellar: :any,                 ventura:        "deaae413218273ffa3a41a629f7ca98eaf72a45e4ba6bfdfcc64da4f60d0ecb0"
-    sha256 cellar: :any,                 monterey:       "2f324b4dd203182d4f6b4944ce69d62bcf0720365e19a77903d4829570a6b6a9"
-    sha256 cellar: :any,                 big_sur:        "e9b1241f3d1d0f3b78d129ee8bd863eaaa42db2b6bfa74c5d53b419d47cfd331"
-    sha256 cellar: :any,                 catalina:       "d9900fff146db8cf036730fa0ac5c6cbed48c9ea362e91875dcd3393f30093cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "551b9eac56f835c4b4a210be82d30dd2692018967c236b50bc0697820c1a7515"
+    sha256 cellar: :any,                 arm64_sonoma:   "2d6c0fe69adbd654ff4c13130bce14f46e7fdb3d594b260c7236b32a3bc55a7c"
+    sha256 cellar: :any,                 arm64_ventura:  "ce4f6ee31dd29ec69e078441f3aba096597de505b0b0098fccb8cb2a6a0edeb8"
+    sha256 cellar: :any,                 arm64_monterey: "a77fe42799177e1e4eb2ab359107d450cf3d9cff86f00ddc1bae02330a2e2962"
+    sha256 cellar: :any,                 sonoma:         "2a13b392dc4c3b7ebe4d016839378fa40f91c6329e883ca291e4de2b8b8234e0"
+    sha256 cellar: :any,                 ventura:        "c1b6d2b69e6105e815ea8e097483db818ca57de111e79890b01254f807094f04"
+    sha256 cellar: :any,                 monterey:       "4153abaea2631b5f77092cdc3916e76e5b612306b5439e8b7ade5c7ed086327f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2849d06e8b854584a38e5ace7959467baa93d2bd1816b13b031f25bb97b2b4dd"
   end
 
   depends_on "gcc" # for gfortran

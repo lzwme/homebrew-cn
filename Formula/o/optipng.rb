@@ -1,24 +1,19 @@
 class Optipng < Formula
   desc "PNG file optimizer"
   homepage "https://optipng.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/optipng/OptiPNG/optipng-0.7.7/optipng-0.7.7.tar.gz"
-  sha256 "4f32f233cef870b3f95d3ad6428bfe4224ef34908f1b42b0badf858216654452"
+  url "https://downloads.sourceforge.net/project/optipng/OptiPNG/optipng-0.7.8/optipng-0.7.8.tar.gz"
+  sha256 "25a3bd68481f21502ccaa0f4c13f84dcf6b20338e4c4e8c51f2cefbd8513398c"
   license "Zlib"
   head "http://hg.code.sf.net/p/optipng/mercurial", using: :hg
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "c30ada078299e92b8daaf932e77040d45c2924f65cbac36dc189baca581a4f79"
-    sha256 cellar: :any,                 arm64_ventura:  "0f832f65504580d7eeda792024065ad257118cf15f94d2df0dd8cb12dc9880f0"
-    sha256 cellar: :any,                 arm64_monterey: "9392bd48565d6102eb0991d836040944055394863d5a186fd617a7788032f91c"
-    sha256 cellar: :any,                 arm64_big_sur:  "796af028b1dea8b680e40103712976b4f9df285df553db06d2643779630c716c"
-    sha256 cellar: :any,                 sonoma:         "f9e219efd7723e2803300e44487c0d2faebae16c58f5c5f3e6b4cab559d2f6f0"
-    sha256 cellar: :any,                 ventura:        "f09c4149b72ff18a1689820a4872f3037242c82c6bf73b621eafcdf828fc829a"
-    sha256 cellar: :any,                 monterey:       "c366c7c45b9cb9c2e97e001fcf3cf008fdc1843da37cc42f7c0fa864d0311f22"
-    sha256 cellar: :any,                 big_sur:        "5cee26efb92016f057a55b2711a08c4a0350046b7c0b1d969c75a913caf66fc2"
-    sha256 cellar: :any,                 catalina:       "3d423dfa59e07122f70e2a15026289dfc6884798ac76898065dbe587256c6e35"
-    sha256 cellar: :any,                 mojave:         "bd44fa66b00a6ee0340a9a5b239d22823787fcaa26312783b21c0f4afc39fd0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e515f83962de17813907616541a6e9bdcb3b51a64db9f4c58abd8c5960a47764"
+    sha256 cellar: :any,                 arm64_sonoma:   "c1b42258526f71e84ecda4f7e72ca8c8a9e6685179a7b0b792d37c29cbbb03a2"
+    sha256 cellar: :any,                 arm64_ventura:  "ad99b4693060ef805451b6d3a3bc9c2fbbdec2284d18395a686eeba68d33a5d3"
+    sha256 cellar: :any,                 arm64_monterey: "c560ecc7ba7c3f33620b4d808e498ee8d1cdb693da8830424aa2de76fc8561a9"
+    sha256 cellar: :any,                 sonoma:         "345a986c5e59c4c14d43500de9862e5b3c09f75916da5d979603877d0b27f844"
+    sha256 cellar: :any,                 ventura:        "03b4a5b9aba8fa77b708a64417d26362860fcbfb8b563b4d2fa7f1be2e15135a"
+    sha256 cellar: :any,                 monterey:       "86ff3ec0b11f375a0efe8b02bfd6e39d929199623f6b898651ce5f565983f685"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e41ab8506824deb6ce70a14bef6d4c9d15209e1c19316934c859e6111fccee4"
   end
 
   depends_on "libpng"

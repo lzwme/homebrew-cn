@@ -736,8 +736,10 @@ Homebrew-homebrew-core/Formula/c/cereal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/ceres-solver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cern-ndiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/certbot.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/certgraph.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/certigo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/certstrap.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/certsync.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/ceylon.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cf-tool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cf.rb, Homebrew/homebrew-core, 0
@@ -752,6 +754,7 @@ Homebrew-homebrew-core/Formula/c/cfn-format.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cfn-lint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cfonts.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cfr-decompiler.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/cfripper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cfssl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cfv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cgal.rb, Homebrew/homebrew-core, 1
@@ -3635,7 +3638,7 @@ Homebrew-homebrew-core/Formula/lib/libunibreak.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libuninameslist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libunistring.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libunwind-headers.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libunwind.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libunwind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libupnp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/liburing.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libusb-compat.rb, Homebrew/homebrew-core, 0
@@ -7725,7 +7728,7 @@ Homebrew-homebrew-cask/Casks/d/devtoys.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/devtunnel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/devutils.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dexed.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/d/dhs.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/dhs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dia.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/diagnostics.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dialpad.rb, Homebrew/homebrew-cask, 0
@@ -11112,7 +11115,7 @@ Homebrew-homebrew-cask/Casks/y/yousician.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/youtrack-workflow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/youtube-downloader.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/youtube-to-mp3.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/y/youtype.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/y/youtype.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yt-music.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/ytmdesktop-youtube-music.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yu-writer.rb, Homebrew/homebrew-cask, 1

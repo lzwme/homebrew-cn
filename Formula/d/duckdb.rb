@@ -7,14 +7,14 @@ class Duckdb < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "179d8717e57225098d3607306baad2342fdc023a4a3a61fc25327b887c4ac279"
-    sha256 cellar: :any,                 arm64_ventura:  "18dfc4a1e2cc91357d52ace7937ea35ddc9cf2fbd9714e1df209215097902688"
-    sha256 cellar: :any,                 arm64_monterey: "7c766051d957ab13294a90cc674e9bff53f60f933f7bb4e6d1186064e0126634"
-    sha256 cellar: :any,                 sonoma:         "21d7b8b4f4d147849f0a3ece8164ab82943a6ea0c6d82710e597135fcd418243"
-    sha256 cellar: :any,                 ventura:        "556e73ca20a8552abcd04107f04a91fc6fd2c709aaa6a52b5686bb357d672aeb"
-    sha256 cellar: :any,                 monterey:       "c11c19aae255c2875cafee6fb07a7f7fbbabb9e7413b851f2495db7ab41576e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "72fe93d4c9bd0335616c5f4cbf4025b8dfd6f8ab38583f22697b5e292a1edca1"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1c4a8b868083bdb727a1ccaef157ce6d7fd1c124ea863ddf9e44dc6e309c9312"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ec8156408c76e69677f194400e8f8e7dafa27612793522eda5182014b5d4da3a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fcad466ca906f96e114bd0207c31152b666b1cd4fa8fa0b03a2b6d3299ea6c5c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b3aaf2f002b0914cd1fbc36d008cab1a3bb6888ca727f7548a321e2f27d424fa"
+    sha256 cellar: :any_skip_relocation, ventura:        "e94502626807a8bd7cf010af173aab8cba93d946857313fdf35f98880e165c66"
+    sha256 cellar: :any_skip_relocation, monterey:       "b23240ca3ce4fb4dd73ba9742b6974dc7268f632596455214be043e1b4e8ad7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ef8f4d2be9d94cfa27cf290a920154a2fe0b294280152e8093411e3ac2a5c01"
   end
 
   depends_on "cmake" => :build
@@ -26,7 +26,6 @@ class Duckdb < Formula
              "-DENABLE_EXTENSION_AUTOLOADING=1",
              "-DENABLE_EXTENSION_AUTOINSTALL=1"
       system "make"
-      system "make", "install"
       bin.install "duckdb"
       # The cli tool was renamed (0.1.8 -> 0.1.9)
       # Create a symlink to not break compatibility
