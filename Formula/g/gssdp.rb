@@ -1,19 +1,18 @@
 class Gssdp < Formula
   desc "GUPnP library for resource discovery and announcement over SSDP"
   homepage "https://wiki.gnome.org/GUPnP/"
-  url "https://download.gnome.org/sources/gssdp/1.6/gssdp-1.6.2.tar.xz"
-  sha256 "410b376deeced9836b57f488f80052fe4a14f89e075b1ceccf28e51f490f9fb9"
+  url "https://download.gnome.org/sources/gssdp/1.6/gssdp-1.6.3.tar.xz"
+  sha256 "2fedb5afdb22cf14d5498a39a773ca89788a250fcf70118783df821e1f3f3446"
+  license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "f66a3c00786eeaa115d631b7d965a173faf5282713c0582433b5f5c6a8c6e825"
-    sha256 cellar: :any, arm64_ventura:  "6701a2078922a13caa8c7f09474c41eeb2e459a53749436f930bba454eafb0ea"
-    sha256 cellar: :any, arm64_monterey: "6c8e3452a6be3e1979f22a3fed7c735cfd0d6079d516c9488f9c39a692620f25"
-    sha256 cellar: :any, arm64_big_sur:  "bd4de4c06d98ee9aa8510749553f7f5691b32a41dd9f741a9b72455b828027cc"
-    sha256 cellar: :any, sonoma:         "c31078fe8fa764d0a302fdc13d6cdeab24c4bc36d0b5588ca4f06980deb9e8e6"
-    sha256 cellar: :any, ventura:        "d848a54ccae3f584f55a642882b80a608ace5676119801ae6aa5c4da60ab9505"
-    sha256 cellar: :any, monterey:       "1f355bf2303dcfe429cc74fc544f61e782eef5a01ebb3900a1b35d28c43ca95b"
-    sha256 cellar: :any, big_sur:        "fe653acf7db752b092cb3d778211b3937b1feffb7dd03f925b58e1943b072582"
-    sha256               x86_64_linux:   "8e2b9ea4bdf09f66ccefc2fb3e7a2e2dcf380881a4ec35fd0e67ba1c93223c61"
+    sha256 cellar: :any, arm64_sonoma:   "1883e3ff3aabb0e94c3655d0730c9ef57197e179882fce345968718d9d706b05"
+    sha256 cellar: :any, arm64_ventura:  "6780845ffd82b7162e83933d15c02a40f14173c46c42aaa3048c78a368741173"
+    sha256 cellar: :any, arm64_monterey: "90ce94882c16fabbcae645e03ac1f1e4653e05e71ff79847d4849ede89ec13d4"
+    sha256 cellar: :any, sonoma:         "6d12bf3d48221158ae35d8f121ecf5a6ab1a255ce7cd8db2c212c99da44d4f17"
+    sha256 cellar: :any, ventura:        "e26411028be8edf072f647c9c8dd4fb7929c2aea8aa46940d70c36bb26f71d21"
+    sha256 cellar: :any, monterey:       "dc149d84e33f123c18e0a11858b16672f802bdef637d6f27322e310a23d7f237"
+    sha256               x86_64_linux:   "1fdb4562ada9ffb0252f97fe765ce023d2530ff2528e4237cace63a29f75688a"
   end
 
   depends_on "gobject-introspection" => :build
@@ -25,6 +24,8 @@ class Gssdp < Formula
   depends_on "gettext"
   depends_on "glib"
   depends_on "libsoup"
+
+  uses_from_macos "python" => :build
 
   def install
     ENV.prepend_path "XDG_DATA_DIRS", HOMEBREW_PREFIX/"share"

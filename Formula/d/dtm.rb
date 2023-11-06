@@ -1,18 +1,18 @@
 class Dtm < Formula
   desc "Cross-language distributed transaction manager"
   homepage "https://en.dtm.pub/"
-  url "https://ghproxy.com/https://github.com/dtm-labs/dtm/archive/refs/tags/v1.17.8.tar.gz"
-  sha256 "8dfb94582bf07c58ad39c4a0707f51e0269c2ad86c74c1eca4061574ab731eb0"
+  url "https://ghproxy.com/https://github.com/dtm-labs/dtm/archive/refs/tags/v1.18.0.tar.gz"
+  sha256 "97499e49afb8c433282844b13865b2d66eae36fb346795d1afb838d53753e06e"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d96a6950fd9ce82a53d35f846f04d8143e1d9a6c1c347ea4361fe7c92e545b97"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "090fbf169bdbf175c2483a8960bc6832e43f069853f2fa24c8cf584afd0e0b92"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dd664f1ac053f7d73351adccf162a215fbe6511a7d0768b0d5d8df601953e4cb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0991230e0d62d106edbfa259d5bb56de451d03516254062234baea7f55177d44"
-    sha256 cellar: :any_skip_relocation, ventura:        "1d5a63129262b2859798ab243238c18bc18cbc0ea4f6dc34dc7fe0411df65fdc"
-    sha256 cellar: :any_skip_relocation, monterey:       "1b3e5e6932a44c5d8e875f25f232ec6ffc31b12caa00d2331705ea3f05f40a49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2c88d4b6d9dc3ccc1023cd78434e1a0c80d60d49d7270afcc38d981afb5af6b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "63c45a54c45da8f99b35a6fcb77fe61c7ffb569f91ab0b9512b5402f99c3736d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "72464eb0df2c29f9e37cfc324e70c54539e8cad7cadc905d5ad11c1fd6fc8178"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6b600ee1db91a2fcbf1dc223e4c943bc2010af24ba546c9a6f58b36702cf8346"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9d0c38e3ced18c92c54b39e8c275c6e0a460fc0127cd1e9e7745eeaf5b58e831"
+    sha256 cellar: :any_skip_relocation, ventura:        "d11da745c086298e7dfa1876440bf3ca8af99b44e0123a6dcef83d2c19619549"
+    sha256 cellar: :any_skip_relocation, monterey:       "6a795a583080ac09c9866a8ccc742e2985d11c834ea4164501b33269d70b1dee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8c34cf469f8007319bfbf08f98f5d1649e00ede21536a7be68ef26447e4475d"
   end
 
   depends_on "go" => :build

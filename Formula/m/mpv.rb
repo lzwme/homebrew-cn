@@ -7,15 +7,14 @@ class Mpv < Formula
   head "https://github.com/mpv-player/mpv.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "3a2d3b11efb6a2173fe25288ff53753cc551bd1d88af6b13c8fe3f1a5250af33"
-    sha256 arm64_ventura:  "d40f0a6adbc878015072abfa6fab245fa1ab84b4194037f80f98749ae7253130"
-    sha256 arm64_monterey: "f507a0a0dd4b4a82815ed258756f1114909f34b391691df5e6ac9217fcab6c98"
-    sha256 arm64_big_sur:  "76bf1d5ef0a80d12548a5019ebe99357efc6148d0d6bb9a6858e403d90e9bc53"
-    sha256 sonoma:         "93be09fabc09ed7d316ddc99d3cc64a4bb5defe80defa9d40c3fd0c6537e1688"
-    sha256 ventura:        "9ac9b56929dd55c88a4e74d3099c257ccd9d31ad2ec5fd338e9d6b5b37b653bc"
-    sha256 monterey:       "7b5e2d9c085c257b56129787763e15a51b3faa1cfd3574a2366c3e3d2f07876b"
-    sha256 big_sur:        "43c0b1a4c038566734f9f6fae295b8151e67c8cd5e2e283f0b07d3ee53dfcd8c"
-    sha256 x86_64_linux:   "6f9af11f617268035b7c867bf5aa392a8b0196193891a1b427a0fd96d732378f"
+    rebuild 1
+    sha256 arm64_sonoma:   "ac4ac761953fa4f60b8cc89dd7e50b858848ac6bf2dd3261a26e8a3dcbd88d05"
+    sha256 arm64_ventura:  "9ce84a4b91458042f142b5d16081cfc5e57a8e09d3306fc5c5d4643467e5035e"
+    sha256 arm64_monterey: "cba94988f688214e7ab997cc61b5327e4b0fcbae5e061723deda18897d2c8e9c"
+    sha256 sonoma:         "f5a0586b34ef65b7f652a75ccc464da405667382c1ae98adb56db1e76344aa06"
+    sha256 ventura:        "3756a699dbc655ee50e4e0562318a23c32f045f131a0d8a172cae0e50bd0bef3"
+    sha256 monterey:       "31519705d2827ffc36c89d6527f0e8e55cf592919a93f5b702a7e1c35a4b23ca"
+    sha256 x86_64_linux:   "65c4d2170fe3d7df98ab09b1fa5e997033b40c255d1d2237b86209081dfcc2f2"
   end
 
   depends_on "docutils" => :build
@@ -26,6 +25,7 @@ class Mpv < Formula
   depends_on "jpeg-turbo"
   depends_on "libarchive"
   depends_on "libass"
+  depends_on "libplacebo"
   depends_on "little-cms2"
   depends_on "luajit"
   depends_on "mujs"

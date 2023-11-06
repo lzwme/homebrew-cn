@@ -1,8 +1,8 @@
 class Iproute2 < Formula
   desc "Linux routing utilities"
   homepage "https://wiki.linuxfoundation.org/networking/iproute2"
-  url "https://mirrors.edge.kernel.org/pub/linux/utils/net/iproute2/iproute2-6.5.0.tar.xz"
-  sha256 "a70179085fa1b96d3c33b040c809b75e2b57563adc505a4ad05e2609df373463"
+  url "https://mirrors.edge.kernel.org/pub/linux/utils/net/iproute2/iproute2-6.6.0.tar.xz"
+  sha256 "8738c804afd09f0bf756937f0c3de23117832a98d8cbbf50386cf5005cd613ce"
   license "GPL-2.0-only"
   head "https://git.kernel.org/pub/scm/network/iproute2/iproute2.git", branch: "main"
 
@@ -12,19 +12,29 @@ class Iproute2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "593391f568a2ddeef2b154876e579e2fe537f4b9925fbda8f85647613e049e86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "48b9ae459928ca2bd9b5d5a351a07e824a8acc22ead752c8501e0cd5e4171c1a"
   end
 
   depends_on "bison" => :build
   depends_on "flex" => :build
+  depends_on "pkg-config" => :build
+
+  depends_on "berkeley-db"
+  depends_on "elfutils"
+  depends_on "libbpf"
+  depends_on "libcap"
+  depends_on "libmnl"
+  depends_on "libtirpc"
   depends_on :linux
 
   def install
     system "make"
     system "make", "install",
            "PREFIX=#{prefix}",
+           "LIBDIR=#{lib}",
            "SBINDIR=#{sbin}",
-           "CONFDIR=#{etc}/iproute2",
+           "CONF_USR_DIR=#{etc}/iproute2",
+           "CONF_ETC_DIR=#{pkgetc}",
            "NETNS_RUN_DIR=#{var}/run/netns",
            "NETNS_ETC_DIR=#{etc}/netns",
            "ARPDDIR=#{var}/lib/arpd",

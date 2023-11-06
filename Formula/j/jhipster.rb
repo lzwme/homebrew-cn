@@ -3,20 +3,18 @@ require "language/node"
 class Jhipster < Formula
   desc "Generate, develop and deploy Spring Boot + Angular/React applications"
   homepage "https://www.jhipster.tech/"
-  url "https://registry.npmjs.org/generator-jhipster/-/generator-jhipster-7.9.4.tgz"
-  sha256 "6d24c81e0cb3218d42f7c39d2f95ed6870ac1deb99ce43a61f37d98046f9f8a2"
+  url "https://registry.npmjs.org/generator-jhipster/-/generator-jhipster-8.0.0.tgz"
+  sha256 "8c96f780cbae4159292d49716e675d2a97d7cdd054427fc1449684b93a16063a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1574ac40d09244c8d58bfe981cd80be9310b105609b9bcb8cf239bdda5807294"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "94c8be9ac8e7b6016531321ceb2be0c1626499d59a74f1195539917c594c32fb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "94c8be9ac8e7b6016531321ceb2be0c1626499d59a74f1195539917c594c32fb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "94c8be9ac8e7b6016531321ceb2be0c1626499d59a74f1195539917c594c32fb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "eee47f78245cccafee78f1810ba6a2a8640d0bab6184f698558907caee11510a"
-    sha256 cellar: :any_skip_relocation, ventura:        "9cf8133bece2718e287b3c01ff6f068b07bc57ff56648e0e56fe724f3a93572f"
-    sha256 cellar: :any_skip_relocation, monterey:       "9cf8133bece2718e287b3c01ff6f068b07bc57ff56648e0e56fe724f3a93572f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9cf8133bece2718e287b3c01ff6f068b07bc57ff56648e0e56fe724f3a93572f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94c8be9ac8e7b6016531321ceb2be0c1626499d59a74f1195539917c594c32fb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ce09179c1438fcc4cc70b0d8ef7a587e1b75519a7fa78606b1a6e32c29712a14"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce09179c1438fcc4cc70b0d8ef7a587e1b75519a7fa78606b1a6e32c29712a14"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ce09179c1438fcc4cc70b0d8ef7a587e1b75519a7fa78606b1a6e32c29712a14"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b70a926bbae43c723decf4bc937e3ea97f236193cb0b44340c81ae07ed734d5d"
+    sha256 cellar: :any_skip_relocation, ventura:        "b70a926bbae43c723decf4bc937e3ea97f236193cb0b44340c81ae07ed734d5d"
+    sha256 cellar: :any_skip_relocation, monterey:       "b70a926bbae43c723decf4bc937e3ea97f236193cb0b44340c81ae07ed734d5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9c7c986b142ba3abee3fa8ab9f03374d50f032cf71d1f930bfac9fc351ba61a"
   end
 
   depends_on "node"
@@ -29,6 +27,10 @@ class Jhipster < Formula
   end
 
   test do
-    assert_match "execution is complete", shell_output("#{bin}/jhipster info")
+    output = shell_output("#{bin}/jhipster info 2>&1")
+    assert_match "JHipster configuration not found", output
+    assert_match "execution is complete", output
+
+    assert_match version.to_s, shell_output("#{bin}/jhipster --version")
   end
 end

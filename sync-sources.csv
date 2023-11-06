@@ -289,6 +289,7 @@ Homebrew-homebrew-core/Formula/a/augustus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aurora.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/austin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/authoscope.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/authz0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/autobench.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/autocannon.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/autocode.rb, Homebrew/homebrew-core, 0
@@ -372,6 +373,7 @@ Homebrew-homebrew-core/Formula/b/bandcamp-dl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bandicoot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bandit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bandwhich.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/bao.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/baobab.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bar.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bareos-client.rb, Homebrew/homebrew-core, 1
@@ -680,7 +682,6 @@ Homebrew-homebrew-core/Formula/c/cask.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cassandra-cpp-driver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cassandra-reaper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cassandra.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/c/cassandra@2.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cassandra@3.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cassowary.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/castget.rb, Homebrew/homebrew-core, 0
@@ -1347,6 +1348,7 @@ Homebrew-homebrew-core/Formula/d/docker-machine.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/docker-slim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker-squash.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/docker.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/dockerfile-language-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dockerize.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dockly.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dockutil.rb, Homebrew/homebrew-core, 1
@@ -1548,7 +1550,6 @@ Homebrew-homebrew-core/Formula/e/envchain.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/envconsul.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/envd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/envoy.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/e/envoy@1.18.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/envv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/enzyme.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eot-utils.rb, Homebrew/homebrew-core, 0
@@ -3421,6 +3422,7 @@ Homebrew-homebrew-core/Formula/lib/libiscsi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libisofs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libjcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libjson-rpc-cpp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libjuice.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libjwt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libkate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libkeccak.rb, Homebrew/homebrew-core, 0
@@ -4322,7 +4324,6 @@ Homebrew-homebrew-core/Formula/n/numbat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/numcpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/numdiff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/numpy.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/n/numpy@1.16.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nuraft.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nushell.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nut.rb, Homebrew/homebrew-core, 1
@@ -5024,6 +5025,7 @@ Homebrew-homebrew-core/Formula/p/python-gdbm@3.12.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-launcher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lsp-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-lxml.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-mako.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-markdown.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-markupsafe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-mutagen.rb, Homebrew/homebrew-core, 0
@@ -7453,8 +7455,6 @@ Homebrew-homebrew-cask/Casks/c/cityofzion-neon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/ckan.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/ckb-next.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clamxav.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/c/clash-for-windows.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/c/clashx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/classicftp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/classroom-assistant.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/classroom-mode-for-minecraft.rb, Homebrew/homebrew-cask, 0
@@ -9228,7 +9228,7 @@ Homebrew-homebrew-cask/Casks/m/multibit-hd.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/multifirefox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/multimc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/multipass.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/multipatch.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/multipatch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/multitouch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/multiviewer-for-f1.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mumble.rb, Homebrew/homebrew-cask, 1
@@ -13321,7 +13321,6 @@ Homebrew-homebrew-cask-versions/Casks/calibre4.rb, Homebrew/homebrew-cask-versio
 Homebrew-homebrew-cask-versions/Casks/carbon-copy-cloner5.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/charles-applejava.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/chromedriver-beta.rb, Homebrew/homebrew-cask-versions, 0
-Homebrew-homebrew-cask-versions/Casks/clashx-pro.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/cleanmymac3.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/corretto11.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/corretto17.rb, Homebrew/homebrew-cask-versions, 0

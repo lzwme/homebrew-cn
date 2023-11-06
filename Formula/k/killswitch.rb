@@ -1,22 +1,17 @@
 class Killswitch < Formula
   desc "VPN kill switch for macOS"
   homepage "https://vpn-kill-switch.com"
-  url "https://ghproxy.com/https://github.com/vpn-kill-switch/killswitch/archive/refs/tags/v0.7.2.tar.gz"
-  sha256 "21b5f755fd5f23f9785bab6815f83056b0291ea9200706debd490a69aa565558"
+  url "https://ghproxy.com/https://github.com/vpn-kill-switch/killswitch/archive/refs/tags/v0.7.3.tar.gz"
+  sha256 "dbc1fc04e9945049e0cad3aa18740394cac9d93a0aacca00d45c82ec891346f1"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6046e0651dbe643a18f990226484960f38a73a0e5c6e8dcc13f8d7f0a0304801"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4e8274a56bcdefb89eec6aa37d881866e77833f8e29291066adcfc55a7436088"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "73d4c8aa15e1aa363089be53bc11fb347994c1144ad35a65d01584727f74082d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cf8c995419a923e0512fd5e2d54a88d46719e157f1f9592ec82289e97f3da876"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c562a7bf378042372d2cc9227db029779db7077e64ffce9880564978b33b2812"
-    sha256 cellar: :any_skip_relocation, ventura:        "894d0603001920b3ac4f419cb730b52e3b273ba4d0cd38a5f318e86fb4c3d577"
-    sha256 cellar: :any_skip_relocation, monterey:       "aaddf26597e4de2554dfc11bb909615a612e0389774cea37f4356432a666bb41"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8d3e4381fb6137e38fd394941e40f1c0fab743c7b4bfef3c2ecb43679b6ab03b"
-    sha256 cellar: :any_skip_relocation, catalina:       "3e00a8591a897509a48c65d76e529c6f4ef6fc910ebb762c8e5e7f54e2e03a43"
-    sha256 cellar: :any_skip_relocation, mojave:         "4cdbf573342205befe4e908ae318125be61850d2346c5ca649cdd867067eab63"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "82a98dbef512e928dfcee02d0c7c50889856ce88740645ec1af0fcac7edfab12"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "94166ec9298fa9ecabd8f1f736c7a1105aba2ee0cc3188d290206c3192977846"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "db44f0faa40d85df1ced75869c6fa1246cfb8b9b46ca509f70a18feb8c5e0bdc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c9dffd3626a47003a56db382b174ccfb1d02457ec762fc7d8d16df999fcb71a8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "00e16e045b4dd9f5d1f5013c9194b4d94954289a8d54a581165fe8dcf9a8924c"
+    sha256 cellar: :any_skip_relocation, ventura:        "70b9b5e586bcf54547835f5a9f56f5230080846446768d5fe2611c69b7c7eabb"
+    sha256 cellar: :any_skip_relocation, monterey:       "d942fff71b6a5c2178f10dd222bb6fb5e52d2bd01d537f85e3b4ea1dff53cdab"
   end
 
   depends_on "go" => :build
