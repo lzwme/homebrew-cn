@@ -8,13 +8,14 @@ class Vtk < Formula
   head "https://gitlab.kitware.com/vtk/vtk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b63d4eb0fac25f53d537a94f3fe74507b19f3495cf544a559eaaafff755dc0b9"
-    sha256 cellar: :any,                 arm64_ventura:  "8074a85c6aa5995b4e356eb5e5e505194e0e4adef1fe255c27d385c2bdef0f21"
-    sha256 cellar: :any,                 arm64_monterey: "c6d3d0080a7d4e1ed409077e29c98be39fe7ac8a4106b9bd42f99c5483351701"
-    sha256 cellar: :any,                 sonoma:         "5501c7422968c9f09bc4ce9401ddc2bee52bd4c88a90b6938a1c3f6f1624f868"
-    sha256 cellar: :any,                 ventura:        "5612dafb4964af87b236db7aef609b682de3de147fd228f5af6e20703d6611d6"
-    sha256 cellar: :any,                 monterey:       "d4237645a1d7fe9a1d3505c1589f91880aaba07716b255a8a04948ea4a469436"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "77e6fd63bcac89d044922094219f8fb09b88aa929bcc26db914ae4c1ee4fb7b4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "17bffd382c3651317a5efc157c3236ad397f910f853bfac71ce7004590e4cc6f"
+    sha256 cellar: :any,                 arm64_ventura:  "ad94384d242a530ba1df182ef3e35be670266ca6ba7afa92f005dc4c8279fedd"
+    sha256 cellar: :any,                 arm64_monterey: "e8d6bed3e05c6a3cbd10cb0e26cc9f9e80511670ea1c05a4f266781f49427c25"
+    sha256 cellar: :any,                 sonoma:         "5d667d78e212d9cd2568d68ed46bcfbf3670b5badddb6433d08f49a680e287b8"
+    sha256 cellar: :any,                 ventura:        "dc36b0a197207a2044f9b4995c630b5bf9c461e7ec918317cf8cdc4ea67be660"
+    sha256 cellar: :any,                 monterey:       "bc62daee9c68d7c8c093f25ceca8ad2c1ab3f815e7bda25f44c8041856a819af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "772bb7928864c336996e6c9c3404c6e9a81e0be3f5655f3e8147ba96502b652a"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -34,7 +35,7 @@ class Vtk < Formula
   depends_on "netcdf"
   depends_on "pugixml"
   depends_on "pyqt"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "qt"
   depends_on "sqlite"
   depends_on "theora"
@@ -69,7 +70,7 @@ class Vtk < Formula
   def install
     ENV.llvm_clang if DevelopmentTools.clang_build_version == 1316 && Hardware::CPU.arm?
 
-    python = "python3.11"
+    python = "python3.12"
     qml_plugin_dir = lib/"qml/VTK.#{version.major_minor}"
     vtkmodules_dir = prefix/Language::Python.site_packages(python)/"vtkmodules"
     rpaths = [rpath, rpath(source: qml_plugin_dir), rpath(source: vtkmodules_dir)]

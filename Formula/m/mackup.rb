@@ -3,19 +3,19 @@ class Mackup < Formula
 
   desc "Keep your Mac's application settings in sync"
   homepage "https://github.com/lra/mackup"
-  url "https://files.pythonhosted.org/packages/89/ed/91b0a13329ce4e5ea4fcbbcffb89ad573adc83dfb8af87154aa1ab0dff0e/mackup-0.8.39.tar.gz"
-  sha256 "a769d49adf73457e45bc7232aacf9da0fa7f9ec1de240ee3ac5a9613af003687"
+  url "https://files.pythonhosted.org/packages/47/98/87dfab0ae5d1abad48a56825585dcd406cdc183dbce930e24ef8439769ba/mackup-0.8.40.tar.gz"
+  sha256 "d267c38719679d4bd162d7f0d0743a51b4da98a5d454d3ec7bb2f3f22e6cadaf"
   license "GPL-3.0-or-later"
   head "https://github.com/lra/mackup.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9347905bc0ae17d3d51df785ca6bd45145ff02898d2710fe06a3788f6e4009ba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "867e96bb7aa178db0a1fd3a6844cd9d6acfd9ad470ec99bd95b3a37521ab1ae2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dc91ac18a0ca0d292b9fc2e622d992cc3eac3c4b0fb9cda3537ad4708ba3a2f2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dfa129ab5fb7c18db970dccb2a26b60d7ea241af5ea7da6057118422a7c6b34e"
-    sha256 cellar: :any_skip_relocation, ventura:        "1f3d64c2bbfd4d7ea921c43a8156fb41ae4f61e74b2abbdb023c2a63343c12e6"
-    sha256 cellar: :any_skip_relocation, monterey:       "dc34cd14c91d75d6a40474134849670426d104799151c4912f13c044fa82a66a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1dd4397391d603c29201e7d2a3293083a43de69f5dd4736a70c538b4adc2f6b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0c68eab85cbed5c2269b4ba470184a53b7f1d27f01cd4fe08736b0f8ae030126"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb0e8a8cfef053a5d238fe4e109fa499956d76ecc32942eaf3a84329016a0d28"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bef9c324a26d5f93ce0d480db47fb1675288a2ce84e06132d11eff6fdfa3d5a6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5d0a18af86164067cacea62b13f4cb0856ba1e238e6b00174f4e492073daea71"
+    sha256 cellar: :any_skip_relocation, ventura:        "fe2304bfe5b7a82524d4c1df7c3f70fe6b0632a7320148e379dcc5bce671b16c"
+    sha256 cellar: :any_skip_relocation, monterey:       "ab7fdca1f9621ee3534ca7c6979bf84e84709b9720e1544f30f02587c5b297f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c818c7735d3347dbc2419b604aeaebcae7a93e7acd036cbb4222b051668ab70d"
   end
 
   depends_on "python@3.12"

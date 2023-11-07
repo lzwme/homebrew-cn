@@ -1,19 +1,19 @@
 class Mvfst < Formula
   desc "QUIC transport protocol implementation"
   homepage "https://github.com/facebookincubator/mvfst"
-  url "https://ghproxy.com/https://github.com/facebookincubator/mvfst/archive/refs/tags/v2023.10.30.00.tar.gz"
-  sha256 "3d666330073aff36db4d61f8a6819e5850802aed20795a0578186f9a6fe97d00"
+  url "https://ghproxy.com/https://github.com/facebookincubator/mvfst/archive/refs/tags/v2023.11.06.00.tar.gz"
+  sha256 "107e6d46c8c8f98fb375082f9439692884be89ffbf29d1d7e5e422248de02f85"
   license "MIT"
   head "https://github.com/facebookincubator/mvfst.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "058f2065f58b1f2c62a0f5581440e6dfccf8bb2961d1175b519defdb4aa59c75"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7217f7d6016582419123b8613f5ac1421060515edd55029d476fb3d53e0c097"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "17ba84ea36b553177c0bb14640063a0a4d1780a5fdcab987821f83a5ed662815"
-    sha256 cellar: :any_skip_relocation, sonoma:         "19edb5810c518659d0c7ef1b2989bdf12d062c1aef1dafdcb7d793b4af3c4025"
-    sha256 cellar: :any_skip_relocation, ventura:        "e0aaeb7e7036514b3fa5e43ca28232c2a8738414d5369142ab46ee69d813959e"
-    sha256 cellar: :any_skip_relocation, monterey:       "15ea213b91449fc5a2574415fbef96f66fabcfd89ea3a43b212fd396d813a775"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0afc7c2bbc403b89b337a2016b6fd2473fe99ce7be072a0b82bff1ffde16d1f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b690b4587a3b3d48fc40bbac39595849e3a6be94a533d114f120ef0b20db1541"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b8c7dce5a1ac68d465cef047b8e77ce92f051528e36a15080cca578e01dbfa6f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f2c2df218a0811ef2c4fb494c81cd29ad151a3810edef1ee279c88722386cc65"
+    sha256 cellar: :any_skip_relocation, sonoma:         "99cddaac7307eea89495cc02e48f56a0abb64ba106460b22d7f4f114daca15de"
+    sha256 cellar: :any_skip_relocation, ventura:        "eda346f4318e552b19924ae09d5bdd1588422220e471b77442bc6b425e1e42ad"
+    sha256 cellar: :any_skip_relocation, monterey:       "3c4ab3cca2d214023a796421d89f5acd09fbb32e47c0354e31ac07a19061a622"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c4e39422008f58c913e665982b612e49449252369a958790b9864db26848910"
   end
 
   depends_on "cmake" => [:build, :test]

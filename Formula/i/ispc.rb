@@ -2,10 +2,9 @@ class Ispc < Formula
   desc "Compiler for SIMD programming on the CPU"
   homepage "https://ispc.github.io"
   # TODO: Check if we can use unversioned `llvm` at version bump.
-  url "https://ghproxy.com/https://github.com/ispc/ispc/archive/refs/tags/v1.21.0.tar.gz"
-  sha256 "ac0941ce4a0aae76901133c0d65975a17632734534668ce2871aacb0d99a036c"
+  url "https://ghproxy.com/https://github.com/ispc/ispc/archive/refs/tags/v1.21.1.tar.gz"
+  sha256 "9f4a11d68c1a3f64be7bad912ef00df50fa8fb3c3e98cebb502ee41d8f9e9fd7"
   license "BSD-3-Clause"
-  revision 1
 
   # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
   # but are labeled as "pre-release" on GitHub, so it's necessary to use the
@@ -16,15 +15,13 @@ class Ispc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "af5ef48ee6f33c9ac86c183eca004fbf4f254187c715f5d2c3c0f42b8f5243c0"
-    sha256 cellar: :any,                 arm64_ventura:  "7e43f261e5dfc5b6062bcdf8dacf85c8f13d8019bfd5b91bff91e09724d95359"
-    sha256 cellar: :any,                 arm64_monterey: "f37589c9357b32bbf8274630132d4e87b8affdcb6f39490ee6fedc1b272dce6b"
-    sha256 cellar: :any,                 arm64_big_sur:  "52716d7e78db928ed6cc15b79cf45ce0d57327e4650a68b31de885c3057da246"
-    sha256 cellar: :any,                 sonoma:         "c20fed701b750163625b9704a870bc2752e2e73393c8298ba2563edb635a331a"
-    sha256 cellar: :any,                 ventura:        "75f9cda460ab9dc1217bfee756ec3542869498fb27d3875de070b85be607e860"
-    sha256 cellar: :any,                 monterey:       "3f3ceec3a5612c379c913d397ba78aa1797898845457df0e4ed0746b69b71bcd"
-    sha256 cellar: :any,                 big_sur:        "24c8a8f743f466ebb7e66f35bdb93995562528dbfc132f642ed35cf08e24dfe1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8feece2fe5d215ca1114272961bd30c7b8549dd2d8efd6988721ddd9f78a9439"
+    sha256 cellar: :any,                 arm64_sonoma:   "ecdc2e5ec7da53ccc3c48b3963a5ba0ba71510037fcac9b955fa3dfb7b9fe7c2"
+    sha256 cellar: :any,                 arm64_ventura:  "7487d082ac5feefe14e2b5a1549c7f77aa88e570818c1520a8fb293f535693a5"
+    sha256 cellar: :any,                 arm64_monterey: "35b0ed609fd87ff6c605b910266287b80aece935b81cd7f0de0d133d112e26b8"
+    sha256 cellar: :any,                 sonoma:         "89430b43a5594b7c3a3b24ca3c54e9ee4d6d9fd3227a66680fb88051cfaaec8c"
+    sha256 cellar: :any,                 ventura:        "83f51cb7bde56837353a313d335a1cf31165181ee1875be28d10bc01b3f731fa"
+    sha256 cellar: :any,                 monterey:       "e2ce2cd87cdb86aa2a0819e9d552c5753b0e5de7b9942fda9a9f4b44628cb15f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "815e96df718b195c4399443b4a8aa6badabcbb908696fee2a4603d0df9266d8f"
   end
 
   depends_on "bison" => :build

@@ -5,6 +5,7 @@ class Vim < Formula
   url "https://ghproxy.com/https://github.com/vim/vim/archive/refs/tags/v9.0.2050.tar.gz"
   sha256 "0387014cba4283d55e3b6611b7b574c81670fbb5d195d0fc7b264b94e95592e3"
   license "Vim"
+  revision 1
   head "https://github.com/vim/vim.git", branch: "master"
 
   # The Vim repository contains thousands of tags and the `Git` strategy isn't
@@ -17,13 +18,13 @@ class Vim < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "293d8ae75fb44244bb916e4422401704ab5db8c2b50d01d17073982baa380966"
-    sha256 arm64_ventura:  "ffeea762ce0c0f9e247f1f979353b18a70140d64e8c95cce0fd0cee507e150b9"
-    sha256 arm64_monterey: "2d2f2237bb9506822dde3bcf5fa32ec818cd97a822d6c966ac0c42a466e3c334"
-    sha256 sonoma:         "e318fdc17503ae8721677a6ecce7488aa2910beb6148c05ba48ac363d8a9050f"
-    sha256 ventura:        "5b8ed99f3adaeed4a523fdbffe6b47cbd35f92b7462cacb2eeeee3f86048e7d4"
-    sha256 monterey:       "a2a727cf7cab6dd79055835e8662e838671bc455fd1cbdf3d86f71e684b52b63"
-    sha256 x86_64_linux:   "9d272077004910f255d40e46a36749cd32d8ec2e2ffaea9804a3735052f9d8ad"
+    sha256 arm64_sonoma:   "c379888f2e2d54b041dffaca51e51a1c4dca8213fac06fda2552c0291195377f"
+    sha256 arm64_ventura:  "b569ed3e64a432e3ce7db18d0e99971434ece33a9797214c436a736cff0a71db"
+    sha256 arm64_monterey: "7ca9a03dd67dc4e8be181639e8643e8c63b83ae8790d8cd02027a188fe12dec7"
+    sha256 sonoma:         "e033621873c16b278a29eb999af860caba825512ae3d16436c1cf04e4dff4ed2"
+    sha256 ventura:        "6a5f4f070b6ede5a5d1549823c767e2b911bb1934ff81af1911cec4baf1dbf47"
+    sha256 monterey:       "35f6328356f262a94d1f194e63a3eba616364be42882292103f82eef12acf175"
+    sha256 x86_64_linux:   "db52cfa310079b927110e9a9a7c49adedd82de436455cf37151381fe3d14bfc4"
   end
 
   depends_on "gettext"
@@ -33,6 +34,10 @@ class Vim < Formula
   depends_on "perl"
   depends_on "python@3.12"
   depends_on "ruby"
+
+  on_linux do
+    depends_on "acl"
+  end
 
   conflicts_with "ex-vi",
     because: "vim and ex-vi both install bin/ex and bin/view"

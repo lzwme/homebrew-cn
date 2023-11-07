@@ -4,19 +4,14 @@ class DnscryptWrapper < Formula
   url "https://ghproxy.com/https://github.com/cofyc/dnscrypt-wrapper/archive/refs/tags/v0.4.2.tar.gz"
   sha256 "911856dc4e211f906ca798fcf84f5b62be7fdbf73c53e5715ce18d553814ac86"
   license "ISC"
-  revision 1
+  revision 2
   head "https://github.com/Cofyc/dnscrypt-wrapper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 sonoma:       "ef935c99e091b3ce2b7460e2b3e424d9a9faf341f9da24920c8fbe240384fa00"
-    sha256 cellar: :any,                 ventura:      "61e6dfcf7a47b5eef4fb86464e366c3bba8b6f04cb9505342115862e5b29480b"
-    sha256 cellar: :any,                 monterey:     "95c31e73ffe3e10426f4859731e62d1c29bd1d8454bdc4b822828e5cf5f57ba8"
-    sha256 cellar: :any,                 big_sur:      "6a4ce514c0ec1c41cf197b6201cba95ded39f0e7018755ec1bf42824aa8675d6"
-    sha256 cellar: :any,                 catalina:     "ea344feb10cc87d14e8b30cd3fcbbabed2b55f5c76014fcdc18aff49cb9fc5cd"
-    sha256 cellar: :any,                 mojave:       "129be9e2c08af0351401437f09a950f0d4050e99cce47da220561a3153d5334d"
-    sha256 cellar: :any,                 high_sierra:  "226bbce3fbcc39a1619bfd77451c6e0cf0d0054b61696acc2617e4f30580e69b"
-    sha256 cellar: :any,                 sierra:       "92da097e90b1cd593efb8d0d1a16c24dd016aa93933a3036be671b5596c6af0d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9100b272b791ea13c1909e604aa3adf0fab649c86bdb5775e870462c276bb7ac"
+    sha256 cellar: :any,                 sonoma:       "bc437509b36ffd78cb7e5f560ae00ebcefe8c63790ce6cebe11e739d985a1729"
+    sha256 cellar: :any,                 ventura:      "1aeb1619be4bfddebbe11aae4cd7763e045e76f7002426291c2b3d41b2d4db68"
+    sha256 cellar: :any,                 monterey:     "5ef765f7940b89b56f2fe21d5d540c1dc35f4c710292bd046b172b405b2f0814"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "dfaec9e6087a736aabf33b3a638e6133e7da8fc76700d2404bd29e5b33ec5380"
   end
 
   depends_on "autoconf" => :build

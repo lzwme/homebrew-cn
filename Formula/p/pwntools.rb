@@ -10,14 +10,14 @@ class Pwntools < Formula
   head "https://github.com/Gallopsled/pwntools.git", branch: "dev"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "83c321cf3e777f833d90e0381a9cc3cd4a70c2dddc668d33d50b953d7b25f495"
-    sha256 cellar: :any,                 arm64_ventura:  "5c00c79b9e4c00d6d304a344101d348761a9f91649706416c74e949cbf89aa3f"
-    sha256 cellar: :any,                 arm64_monterey: "422c9bd50d413cba06f5fc9aacdc9acbd678142e7bdfa4e0208cff9cf7e4c73a"
-    sha256 cellar: :any,                 sonoma:         "a8c7b4290fd29524c7033ab332ed7946f7f8dda79d2bcc5f3378722aa318aa62"
-    sha256 cellar: :any,                 ventura:        "964ac075620d1d773e2f149820620a17b02ff6585129de0e4a9c2054f13e0c37"
-    sha256 cellar: :any,                 monterey:       "41339e76db64949a2eeea2e6cd8f0ea8c6acfaa0a636e9565774c83b6d9188da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0da6d936dba520cef88f11681b771c2d665f85dfe190ade0d225cb430f31654"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "54409cea1aca744da73323765a1e53ed329b88957fc3972ef95e5171121c9101"
+    sha256 cellar: :any,                 arm64_ventura:  "6ed44801e6c84e8dfefb96c3a64bb4735dfd5ef605ce101e2b99a19532c90c2f"
+    sha256 cellar: :any,                 arm64_monterey: "ae0d447f2badeafbfeaad3f60215c65bb7b2111fbd7b3b89be4549af620a7db3"
+    sha256 cellar: :any,                 sonoma:         "b324d05c53ad6f2ef15313deb6f6985c6694a5c588297dc84cd1699c4032ab5f"
+    sha256 cellar: :any,                 ventura:        "5107d37cd1bf5eb8f4367c16ec83da111efd613ff9ab63203c1ef6c69718c828"
+    sha256 cellar: :any,                 monterey:       "00b573b9df543dc7edaffb175e112ff92e9b5cf17617f841002fa1a6bca653e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6d5b989f11933c1e337a657c7d7184c4cb5ebe98237eab7d034a04550800591"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -26,6 +26,7 @@ class Pwntools < Formula
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-mako"
   depends_on "python-markupsafe"
   depends_on "python-packaging"
   depends_on "python-psutil"
@@ -65,11 +66,6 @@ class Pwntools < Formula
   resource "intervaltree" do
     url "https://files.pythonhosted.org/packages/50/fb/396d568039d21344639db96d940d40eb62befe704ef849b27949ded5c3bb/intervaltree-3.1.0.tar.gz"
     sha256 "902b1b88936918f9b2a19e0e5eb7ccb430ae45cde4f39ea4b36932920d33952d"
-  end
-
-  resource "mako" do
-    url "https://files.pythonhosted.org/packages/05/5f/2ba6e026d33a0e6ddc1dddf9958677f76f5f80c236bd65309d280b166d3e/Mako-1.2.4.tar.gz"
-    sha256 "d60a3903dc3bb01a18ad6a89cdbe2e4eadc69c0bc8ef1e3773ba53d44c3f7a34"
   end
 
   resource "paramiko" do

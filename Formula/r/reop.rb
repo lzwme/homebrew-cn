@@ -4,25 +4,20 @@ class Reop < Formula
   url "https://flak.tedunangst.com/files/reop-2.1.1.tgz"
   mirror "https://bo.mirror.garr.it/OpenBSD/distfiles/reop-2.1.1.tgz"
   sha256 "fa8ae058c51efec5bde39fab15b4275e6394d9ab1dd2190ffdba3cf9983fdcac"
+  revision 1
 
   livecheck do
     skip "No longer developed"
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "811d5368a58de105456fe94f00b900e6d3d433a7eb19becbe927fe809ff92a82"
-    sha256 cellar: :any,                 arm64_ventura:  "d1ac56f04d4010007247372bc939e57aede683ca431c4f6426e587add87bf29f"
-    sha256 cellar: :any,                 arm64_monterey: "8db72af3ee635c310ecc3fac68ef41eabd0808442c295da16fc380ef9c78593d"
-    sha256 cellar: :any,                 arm64_big_sur:  "2f19ce5ab996a6d2cf7e5152160f0f0298e3c19eed633a9c52c0d548b2be0017"
-    sha256 cellar: :any,                 sonoma:         "2e774b2260c6c64c714b7f6f1b58fefede50407c0c93ee429c3cb9d5a277afe7"
-    sha256 cellar: :any,                 ventura:        "dc7414711fe53ab8de8276160881c85c6344b6c210cfc30a522584d4e4f3a9aa"
-    sha256 cellar: :any,                 monterey:       "68ca1188f2246247c5025502802889c5483bdcd13ae49662ef8e231874dcd4d8"
-    sha256 cellar: :any,                 big_sur:        "125c56793715854faa4c1785f48e119a364ea3fb3239ea7edc4d885b6071099f"
-    sha256 cellar: :any,                 catalina:       "9a871be9b2fa42aa2d9e5035712733c4b764c4eb7497958389018f0451a16cd6"
-    sha256 cellar: :any,                 mojave:         "ef7c8dc250f93b18a84fc4b22006f1b5c59b34bf5d3fd3caa07da03184a0cf61"
-    sha256 cellar: :any,                 high_sierra:    "e0f5cdb5c8b3af4919afa8b442eba703dec9ef9f5b7a25cbe56440e6c646d3b2"
-    sha256 cellar: :any,                 sierra:         "1fdb2fd33a36c6cc57971c3399e2536ee2548acfde8761f0536cee33b2f61354"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d80f151eacf4cc18df604fb3bf3daf0e786e07b6e82860399dc20b8d30b6363"
+    sha256 cellar: :any,                 arm64_sonoma:   "0a34d7d7270cd31264c8064b44f2fd1475a6edec8d159f2455ba6d5f6a5dce80"
+    sha256 cellar: :any,                 arm64_ventura:  "8068e06ca891b71c1a18097fff6be93b18f56bade43aa6855d1490dfef7ad4c4"
+    sha256 cellar: :any,                 arm64_monterey: "55cc0d36de154d5a561c5f02c64ea5498283cf83eba356433712e17f9be81a15"
+    sha256 cellar: :any,                 sonoma:         "743de0a38cb6ec3d1f7988376bccd80f9a5b8501b72d4bd0812118e17b63644b"
+    sha256 cellar: :any,                 ventura:        "c89f4b388723c96fc8152e3d95d5817ca8dc66f1b23fe62c37bf0d26b33ceb8d"
+    sha256 cellar: :any,                 monterey:       "04fa8b5abe8bf9c8064a70c32393933339a60f66e3306d95e44b5748b1a960b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39a6b6aaa92dc34131e9ecf9c22a8ef890b8d662960a5dba258bb58f87d71516"
   end
 
   depends_on "libsodium"

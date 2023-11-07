@@ -1,13 +1,13 @@
 class ZshViMode < Formula
   desc "Better and friendly vi(vim) mode plugin for ZSH"
   homepage "https://github.com/jeffreytse/zsh-vi-mode"
-  url "https://ghproxy.com/https://github.com/jeffreytse/zsh-vi-mode/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "fbb8f9d96cff3ff874b4ef8e5fcda10045bd75c28fc2c4edb480fca6b8c39e71"
+  url "https://ghproxy.com/https://github.com/jeffreytse/zsh-vi-mode/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "03e1b5f0eef89afa834416bd2751584093b929506e11867fbabf9a7f9e57452a"
   license "MIT"
   head "https://github.com/jeffreytse/zsh-vi-mode.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fff4a6c1429f60ec378742fb9714374dbe548336237694bdce979e7c8f7663af"
+    sha256 cellar: :any_skip_relocation, all: "ac68701f582b67a709e3a7c767418c7e819bd19fb4fd6811ce0a6991a7ff6bd6"
   end
 
   uses_from_macos "zsh"

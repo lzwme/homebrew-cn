@@ -4,18 +4,16 @@ class LibbitcoinClient < Formula
   url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-client/archive/refs/tags/v3.8.0.tar.gz"
   sha256 "cfd9685becf620eec502ad53774025105dda7947811454e0c9fea30b27833840"
   license "AGPL-3.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fc3651632bac9150341f1bd662863858e80c7ca54b0ddaeaaa1888d0e1f4dbd1"
-    sha256                               arm64_ventura:  "6cd52d67b61c293fe9eae7a05007f0d2798c7bdf1483a9145adf48a7daabdb64"
-    sha256                               arm64_monterey: "da7ac2398a151e1b0af03207e4eef26d08df8b565ecbaddad84b3b43ac9a7e37"
-    sha256                               arm64_big_sur:  "768a1626433335c8bb487df321106d3013bab53806f7e8ca029c46db0b61bd4a"
-    sha256 cellar: :any,                 sonoma:         "e6b57dbce8334361663c836f85c3f1621500dfbbaefdc03d0f3e73edbeb24220"
-    sha256                               ventura:        "3b0f4378906286d1d77c73b7d004ad862fa05df23d3452e2de008f1f0cb0f0b8"
-    sha256                               monterey:       "c4557d75674e0ad4f90b43819ea84790f5d0dccca2540948b6c9aaf8a9ef3d3d"
-    sha256                               big_sur:        "1a1bfda7ce37123ab469c8d946d005afbda55b371a349479ec516cc2076fefd1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b51731e5dccac31a9616b2d0e7cc87d0a33277d15f3043c41fda35986f63e26"
+    sha256 cellar: :any,                 arm64_sonoma:   "7aab15e9fbacb91b793be00809efb2634813fb719f171d698d8acdc9b73bab9d"
+    sha256 cellar: :any,                 arm64_ventura:  "82d9f59cee3f405fe35961470c6404a1a44d026935414bdce4baff5401c2b2e9"
+    sha256 cellar: :any,                 arm64_monterey: "30cfca391b2f95c09305b27b952c23151e59e9a85c767ec314ac125dee9985ab"
+    sha256 cellar: :any,                 sonoma:         "20713787a1372dedb7546febdf4bca454d8249068bc6a189a6644b513e9d90f0"
+    sha256 cellar: :any,                 ventura:        "8a2ce6e56369b086d124c1247f7bb7656cbe8f67676663b5c6d6f133313d941a"
+    sha256 cellar: :any,                 monterey:       "787b413db3f35739c3f8a5acc11533eeb7225d4f4f85f61218fe50fe0d3b3311"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f069aba8a3b4a0d5b25866f9122b9958456610c93bb1bb26f984736e4a1f24a"
   end
 
   depends_on "autoconf" => :build
@@ -25,6 +23,8 @@ class LibbitcoinClient < Formula
   # https://github.com/libbitcoin/libbitcoin-system/issues/1234
   depends_on "boost@1.76"
   depends_on "libbitcoin-protocol"
+  depends_on "libsodium"
+  depends_on "zeromq"
 
   def install
     ENV.cxx11

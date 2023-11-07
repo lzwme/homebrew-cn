@@ -1,21 +1,19 @@
 class Aichat < Formula
   desc "ChatGPT cli"
   homepage "https://github.com/sigoden/aichat"
-  url "https://ghproxy.com/https://github.com/sigoden/aichat/archive/refs/tags/v0.8.0.tar.gz"
-  sha256 "9073d96afdab56ff51f392cffa8d04fd70d47602236bd10e58248de5594bfd2a"
+  url "https://ghproxy.com/https://github.com/sigoden/aichat/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "63ec9b08b2ce3fad0baae256aa77fcd6612afb061d10da8d96af2d3a013dc3b2"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/sigoden/aichat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "21a09f374e6225714e347b0786252093a14b7a66171829b11f187dd5401e1b28"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "586f6e8b98e82c9684e6e40faaef2e76650ff1f8d28cbcf73c5eec2d7e32ce52"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b2e1d6a11c8e3a68434a7b201d75864ae2bb52e66818bebae8e300680b89d004"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ce4f5e090a145e3e8668eff23ef5c3e96490992cafa3584689d300f32b8a4ca1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0771f878326db04052a3d669537296985bd4edcd4d96805f60529feeb31aaea6"
-    sha256 cellar: :any_skip_relocation, ventura:        "b39b884380eb96d46df3a1b8449d4c13aee99597c723c0b72bb3d05b5451ee53"
-    sha256 cellar: :any_skip_relocation, monterey:       "851b3fd79ae8365d7ee5bb75230b9ede1d39f12993413e92bd1d846cc2062847"
-    sha256 cellar: :any_skip_relocation, big_sur:        "376447e0fc60cbf980224b66030a4fcd7454e47bebf96044cc0bc3ff7ea6d96b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ed48064b265ff9b7b847135d6fc8532b4c9fadd51b18c632aa92042c58b78d6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e9384ead441cb772816a447745e71936838c45e2018ee6e508e6e8f6821fdf15"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7c4d37b7168a90b373fe42f51013b743d9ffbd29e1daef20ca85742bf1d733f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "77dca5268f19f9d4bdfd93a8e4649adf0e52827c2fb7108ba9fb33f2fbd4f18e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9aa2f148903a8685bac08259d15efa8256fdc46c9138e5c723666a380c5fc68c"
+    sha256 cellar: :any_skip_relocation, ventura:        "e85f5bd2126585088bd7908b0e8d7b8d3b4e11e2e82e4dc2ceb8737bfa4fb846"
+    sha256 cellar: :any_skip_relocation, monterey:       "466e9555f46006e0bf49f2e0ef908f6c7a9a921092a58d7e4fe85ae16da84e87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd29397b0dfcb9d55a5f609fbfee843ec8e1551123efbf83033f010f21565ba1"
   end
 
   depends_on "rust" => :build
@@ -25,7 +23,7 @@ class Aichat < Formula
   end
 
   test do
-    ENV["AICHAT_API_KEY"] = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    ENV["OPENAI_API_KEY"] = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
     output = shell_output("#{bin}/aichat --dry-run math 3.2x4.8")
     assert_match "math 3.2x4.8", output
   end

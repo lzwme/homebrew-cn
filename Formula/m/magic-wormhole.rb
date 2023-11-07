@@ -6,17 +6,16 @@ class MagicWormhole < Formula
   url "https://files.pythonhosted.org/packages/cc/e1/75c31ad5db873268ba0750006b3d0e40c30b0ad39e6f58b1e28a28d6de48/magic-wormhole-0.13.0.tar.gz"
   sha256 "ac3bd68286270e7f149c06149a8e409e5fa34d7feb0e88844a26d29eed2d1516"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "7dce1537a6fd61deec9271f7db723eb23f8876c4539a92f13ed26f16cbccab8c"
-    sha256 cellar: :any,                 arm64_ventura:  "337f3800f2c4ad6dabbeeb99fef2097d13196e551647d4ef5b1416aadac4ff3a"
-    sha256 cellar: :any,                 arm64_monterey: "82b93dc7b4b2d0305be8913ac9686878e25f8eb990d78787e88232de03c442c6"
-    sha256 cellar: :any,                 sonoma:         "43f3b002c750926aed6faf8293dac6699f1eb5db502339d6ffe461e89e0ab5c0"
-    sha256 cellar: :any,                 ventura:        "b9a5ec4ffedf6a2b3c19cd0931146e5a35fb66a77d6bd7f9f693b35cf5bb2522"
-    sha256 cellar: :any,                 monterey:       "6cc0ffa2f2e9a6cdf3f3d4e0770e90927f7a887790d879b65770f64e2a22996f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "918fba864891b5c5da19b0c40bc1b7d170385e0972a4b0ed29c540f2605852fa"
+    sha256 cellar: :any,                 arm64_sonoma:   "4c11c68a6c13f5a69b0ade5592d2332185bc874db1cfb4d4452ebeb94fbf7a0e"
+    sha256 cellar: :any,                 arm64_ventura:  "060e9ca5eab90501103fe06f4ca7e90f18b84aa327fc3544ad4f184c39eb2447"
+    sha256 cellar: :any,                 arm64_monterey: "39f36fb6c40a9f623c58c7fdc7509127d48facf447d3065180990e60efbcb87a"
+    sha256 cellar: :any,                 sonoma:         "f9b2dab69195f87b3f95df968a163c964d9b7ad780bafef716ef0bd768ec37af"
+    sha256 cellar: :any,                 ventura:        "d9e6f9cd2eb32cc35a573a1677bb619920ba43804b2a0dee87a11a53c0283c6e"
+    sha256 cellar: :any,                 monterey:       "2584db38b3e6058181d7841cf26d20fce45067066286975a8012dfe124159400"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3981b8cd256b51960bf250662089e61878451f9e1aad120ed1784d31881ef28e"
   end
 
   depends_on "cffi"

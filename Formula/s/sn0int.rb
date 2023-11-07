@@ -4,16 +4,15 @@ class Sn0int < Formula
   url "https://ghproxy.com/https://github.com/kpcyrd/sn0int/archive/refs/tags/v0.26.0.tar.gz"
   sha256 "4ce71f69410a9c9470edf922c3c09b6a53bfbf41d154aa124859bbce8014cf13"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6415a95bd619a030f851a83a60f405c23d5ea4492263b51eeb6c137e0101785a"
-    sha256 cellar: :any,                 arm64_ventura:  "4d20a6e19b7aa98c411722f19bffef7ffc3e75554be86d248d7a0ff970e51eb7"
-    sha256 cellar: :any,                 arm64_monterey: "a19b7a410639c804bc04d5052ae49df58d834bd4116b1268e007be6016cd6d63"
-    sha256 cellar: :any,                 arm64_big_sur:  "c0c9e6010d3400a040ffeb4a512174f0565aad224f7dc9f6b0d9a96d9ca9f01a"
-    sha256 cellar: :any,                 ventura:        "dd83c87da148fd5a745b1e4148f0312b8c1b243b33488c92f40bfa971fdf89c9"
-    sha256 cellar: :any,                 monterey:       "67e5aead2e26fac75cb92fe0b6133c905637b6d4f855bfeb8fd556e96e77f2d6"
-    sha256 cellar: :any,                 big_sur:        "c3777031f85c33a0a541d973d2c970368f785e75906eb3f2fc15c505f7b9a239"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb3272429b612d549220af36d0ae97a867c69747d7c13965c0baa12514bcfd98"
+    sha256 cellar: :any,                 arm64_sonoma:   "4c653c908a5dcdd3cae0ccae42321a281e01f2530a35e4153997a2fe161d1b8d"
+    sha256 cellar: :any,                 arm64_ventura:  "42a404e0734f6c386b56b078919b20225d9fef3abf867801303babfa4ee734e7"
+    sha256 cellar: :any,                 arm64_monterey: "acdf793db2ffef84e021185aa89a1e388ddbd78f67e6e09398142dc4d9923ad2"
+    sha256 cellar: :any,                 ventura:        "95ffc0357363e5d4d526c35466e132857d9aeb93bfd0f201e7e309443912f8cb"
+    sha256 cellar: :any,                 monterey:       "32f7111dde2b5fdaed7236698c515d7cf59484d780e88b0decd24d1bfbaaeb26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7407c25ca45288c49d33c2c091c09ec20223b561e92994bb5e6f02b94307be16"
   end
 
   depends_on "pkg-config" => :build

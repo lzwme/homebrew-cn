@@ -3,18 +3,18 @@ require "language/node"
 class Kubevious < Formula
   desc "Detects and prevents Kubernetes misconfigurations and violations"
   homepage "https://github.com/kubevious/cli"
-  url "https://registry.npmjs.org/kubevious/-/kubevious-1.0.59.tgz"
-  sha256 "914f56db7addbd52154530483b125f8eef17f1cda231be43ea1d53d997d41d6b"
+  url "https://registry.npmjs.org/kubevious/-/kubevious-1.0.60.tgz"
+  sha256 "d03e17806812c60575bcd6e47b11f5dbf2a95b1f0f4b45fb33cdad22a342ac36"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2e15d42c234894f5eb57e8f21355c490b1811a23f30ed0497131f48aff2eae98"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e15d42c234894f5eb57e8f21355c490b1811a23f30ed0497131f48aff2eae98"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2e15d42c234894f5eb57e8f21355c490b1811a23f30ed0497131f48aff2eae98"
-    sha256 cellar: :any_skip_relocation, sonoma:         "26741c298a464c0c1f662fe6a2bd513f55efcd85e1c9dc6246ba7dd975e7f6cd"
-    sha256 cellar: :any_skip_relocation, ventura:        "26741c298a464c0c1f662fe6a2bd513f55efcd85e1c9dc6246ba7dd975e7f6cd"
-    sha256 cellar: :any_skip_relocation, monterey:       "26741c298a464c0c1f662fe6a2bd513f55efcd85e1c9dc6246ba7dd975e7f6cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e15d42c234894f5eb57e8f21355c490b1811a23f30ed0497131f48aff2eae98"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a5ae3e51b4be2e74fcdb75912e0ff65d90ef93773f0ad6f264b3be96b7867dab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5ae3e51b4be2e74fcdb75912e0ff65d90ef93773f0ad6f264b3be96b7867dab"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5ae3e51b4be2e74fcdb75912e0ff65d90ef93773f0ad6f264b3be96b7867dab"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bc3f9abcb07f7189f8151b7afa8acdae1a82c916771603a51bb1e8faf2d175ca"
+    sha256 cellar: :any_skip_relocation, ventura:        "bc3f9abcb07f7189f8151b7afa8acdae1a82c916771603a51bb1e8faf2d175ca"
+    sha256 cellar: :any_skip_relocation, monterey:       "bc3f9abcb07f7189f8151b7afa8acdae1a82c916771603a51bb1e8faf2d175ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5ae3e51b4be2e74fcdb75912e0ff65d90ef93773f0ad6f264b3be96b7867dab"
   end
 
   depends_on "node"

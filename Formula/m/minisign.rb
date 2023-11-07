@@ -4,17 +4,16 @@ class Minisign < Formula
   url "https://ghproxy.com/https://github.com/jedisct1/minisign/archive/refs/tags/0.11.tar.gz"
   sha256 "74c2c78a1cd51a43a6c98f46a4eabefbc8668074ca9aa14115544276b663fc55"
   license "ISC"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8aeb7785a0ee08c48d84a487bcc68bdafc4a1cbeec5c94fec250d286cd187b18"
-    sha256 cellar: :any,                 arm64_ventura:  "4798596d748b11ca8b076b66c5488f1271dd8d1179937aea0b9a4734b7333176"
-    sha256 cellar: :any,                 arm64_monterey: "0bd20aceb1c9a087bd7d3ff8fe157968696f8b0dda9f7be0b018f03df9f6ad03"
-    sha256 cellar: :any,                 arm64_big_sur:  "faac66b2478afa78e0ced45c48c83ef727806322b77bd97037e58fcf1f158c0a"
-    sha256 cellar: :any,                 sonoma:         "8a538c1bcc5c93b9f81cfa332a7d115635f13353b3f9ae97789ef5780402111f"
-    sha256 cellar: :any,                 ventura:        "7cba50523996a6c90d0c9d22fbd4f7303801f7e5f011e13ae552aa90cd7c58bc"
-    sha256 cellar: :any,                 monterey:       "1fd0d2269db30eb0a550e74c47313c0dd0d1dabefeeca59cb89aca9cb7822074"
-    sha256 cellar: :any,                 big_sur:        "718f2322f19aad89ddc5fececca9762aeb6718caca091059789085892e581911"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e73c41864c4c168f096e9a6c8480ea85a1070736a9ac267c35414a09dea8a21"
+    sha256 cellar: :any,                 arm64_sonoma:   "15bb5196196433571ebaf41afe8005ea47912d16dafe3c2d4fa4d2e0e18fc9a5"
+    sha256 cellar: :any,                 arm64_ventura:  "a81fea50d53645c045ab117414f4aa99567bc38fe735f48766956d82e29eec5d"
+    sha256 cellar: :any,                 arm64_monterey: "45006c92f229303c788dd4b73bc5c3872c88eddb127fd75b508f9e8c356d2ebe"
+    sha256 cellar: :any,                 sonoma:         "c9757b400301bec4203e95955c7ce34be0e6f54039b77bd470b97a05feba7dd4"
+    sha256 cellar: :any,                 ventura:        "9daec2dcc65faacb0d701749a16d354c72a2426fe951b0d9b275281e17a881ef"
+    sha256 cellar: :any,                 monterey:       "dc38390b76728747a95b3675094ef600b564467ce2c390229e8dd1cbeb7f10fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a0a5c0e17f95961134b996c04fc60d978a53abd2835f88a326aebfffcb66cc0"
   end
 
   depends_on "cmake" => :build

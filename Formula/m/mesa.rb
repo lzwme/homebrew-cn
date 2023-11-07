@@ -1,6 +1,4 @@
 class Mesa < Formula
-  include Language::Python::Virtualenv
-
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
   license "MIT"
@@ -19,15 +17,14 @@ class Mesa < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "a8764d6e6d6750f9f9b627364d15a694d7ee2e2457d547347f120c92f279dafc"
-    sha256 arm64_ventura:  "df893b97b1c0460423a0e502281bb18761e6e0700902fb6707ab4346cb8ce184"
-    sha256 arm64_monterey: "c48b72bc09cefa4569a81eb625921a6d90bfaf8b234de5895bbefd638e7252c7"
-    sha256 arm64_big_sur:  "7dd6a62f76a806bd3e1d8412851bf10b91b4c8b581203ce94930884c3a7dc832"
-    sha256 sonoma:         "dad3751ed010f406a2da13a50350e9c32def51c7fc450157dc57f50632352329"
-    sha256 ventura:        "cdb0eae3f365ae073ec6b54bb05fbb98e6d3662b57909e30839c5d18e42ffbce"
-    sha256 monterey:       "0f48ffa01370e27b0eedad929d4fff5a39e9329feb10e9e7f741394ff9a8a2e7"
-    sha256 big_sur:        "dbe917f2856aa021b0f92818e861e63b972946001a02e60fc537d297ff41f521"
-    sha256 x86_64_linux:   "4b57f13f3c984072442d60c959db7952958532fde89ea0bfb629696028925b41"
+    rebuild 1
+    sha256 arm64_sonoma:   "dddd482d9ce3c3039cb6e2cb723d6574d530eef7bde7c7479d67f3c527f6e3ab"
+    sha256 arm64_ventura:  "23ab97f0b19d4f29bbb29f99098b03a351beb9b742a07141e5b9df6f1f28ca6d"
+    sha256 arm64_monterey: "afa96fc1b42afee3f3a87a96995be248bd6c14db878137cfda97befdf77b1593"
+    sha256 sonoma:         "c192ead99cce30c3144631a0bfbdab742c83c9282ed5d7a83eda8cbe1e834abe"
+    sha256 ventura:        "914668e4f5dfb87ea564d63e94933ef972e3e4c9c4572171b905af9a52cf09c5"
+    sha256 monterey:       "539337056f221acea7ad231bdff22ce6c3f34574f9e9b1146469070bebbdf342"
+    sha256 x86_64_linux:   "c489ab18612fbafecd6c52fb8ba66eeb0c345e7587c459ac528e976e98643fa5"
   end
 
   depends_on "bison" => :build # can't use from macOS, needs '> 2.3'
@@ -35,7 +32,9 @@ class Mesa < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "pygments" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python-mako" => :build
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12" => :build
   depends_on "xorgproto" => :build
 
   depends_on "expat"
@@ -72,16 +71,6 @@ class Mesa < Formula
 
   fails_with gcc: "5"
 
-  resource "Mako" do
-    url "https://files.pythonhosted.org/packages/05/5f/2ba6e026d33a0e6ddc1dddf9958677f76f5f80c236bd65309d280b166d3e/Mako-1.2.4.tar.gz"
-    sha256 "d60a3903dc3bb01a18ad6a89cdbe2e4eadc69c0bc8ef1e3773ba53d44c3f7a34"
-  end
-
-  resource "MarkupSafe" do
-    url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
-    sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
-  end
-
   resource "glxgears.c" do
     url "https://gitlab.freedesktop.org/mesa/demos/-/raw/caac7be425a185e191224833375413772c4aff8d/src/xdemos/glxgears.c"
     sha256 "344a03aff01708350d90603fd6b841bccd295157670f519b459bbf3874acf847"
@@ -93,15 +82,6 @@ class Mesa < Formula
   end
 
   def install
-    venv_root = buildpath/"venv"
-    venv = virtualenv_create(venv_root, "python3.11")
-
-    %w[Mako MarkupSafe].each do |res|
-      venv.pip_install resource(res)
-    end
-
-    ENV.prepend_path "PATH", "#{venv_root}/bin"
-
     args = ["-Db_ndebug=true"]
 
     if OS.linux?

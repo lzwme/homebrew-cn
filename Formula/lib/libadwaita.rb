@@ -1,8 +1,8 @@
 class Libadwaita < Formula
   desc "Building blocks for modern adaptive GNOME applications"
   homepage "https://gnome.pages.gitlab.gnome.org/libadwaita/"
-  url "https://download.gnome.org/sources/libadwaita/1.3/libadwaita-1.3.5.tar.xz"
-  sha256 "faa3ff0f36db18ab4942f4904a295293ccb144755b9bb85131393f201926b586"
+  url "https://download.gnome.org/sources/libadwaita/1.4/libadwaita-1.4.0.tar.xz"
+  sha256 "e51a098a54d43568218fc48fcf52e80e36f469b3ce912d8ce9c308a37e9f47c2"
   license "LGPL-2.1-or-later"
 
   # libadwaita doesn't use GNOME's "even-numbered minor is stable" version
@@ -14,24 +14,26 @@ class Libadwaita < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "ef1daeea57ba4deb70ef5338bd739ae51646c471edc3bd4c0d8ad1bf3c3b4f40"
-    sha256 arm64_ventura:  "6d85d0d5c2d4d48934730d04b1d71fcdaaaa4d5340121de7331be6a454df411a"
-    sha256 arm64_monterey: "8f6bfd36aa92234f34c453fbb9d8556470b18c0955610551c4d1a3e1a1fd46fe"
-    sha256 arm64_big_sur:  "63ce30ff4af57ce0a74b87470b1924407af75a14b94cc9c81740a62b7b46e9d9"
-    sha256 sonoma:         "2f5c848d832ea53d1b9649104bc727b7886458b0e1091194339f1c26fb8b736b"
-    sha256 ventura:        "a65f238ab3becb3d69862e92ded83bc75255ce9291e58a2622497798a0537340"
-    sha256 monterey:       "eb4efa96500402a29400b4ed1a7bf6813904bce971e5637052d88efdcc37e44d"
-    sha256 big_sur:        "0c21c762f5e5e0a84d8d749cc6214ee9aae2ff566e4dfd4abf5b75923553ae83"
-    sha256 x86_64_linux:   "9c9ed668d719bab47cc21c920d3214de8c81b9447232ba8f0bce968053a41b05"
+    sha256 arm64_sonoma:   "af9d726140b9d513403fdc40d1a7fc79498b31d9aabec6f21fb49e2c0f512b27"
+    sha256 arm64_ventura:  "d95e293f4ba64792c4d1dcd345787f7c9fc4374bddf1c5d39509fa42671e20d7"
+    sha256 arm64_monterey: "1f25ce26257c45db9b84e208178015f71583ea6f5870b9b8804c54e4a9a69fde"
+    sha256 sonoma:         "2839c84b74b81463361ac23f6dab3018b3d2bf3c0e9c5da24c761909253791a5"
+    sha256 ventura:        "a1fc78b592393ecfe6d44e00e026668baaa92c554a37ac47f251356a82150ec5"
+    sha256 monterey:       "56ef2911d9e94707539118e46bfda676e8d32df5ab16433c74ac95c1a4bc6701"
+    sha256 x86_64_linux:   "b19c8e185da0f554f66df7959e4a2b3bdbe2f4826aaf980119a8747c5ad34d8d"
   end
 
+  depends_on "cmake" => :build
   depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "vala" => :build
+  depends_on "appstream"
   depends_on "gtk4"
+
+  uses_from_macos "python" => :build
 
   def install
     system "meson", "setup", "build", "-Dtests=false", *std_meson_args

@@ -4,19 +4,16 @@ class ShadowsocksLibev < Formula
   url "https://ghproxy.com/https://github.com/shadowsocks/shadowsocks-libev/releases/download/v3.3.5/shadowsocks-libev-3.3.5.tar.gz"
   sha256 "cfc8eded35360f4b67e18dc447b0c00cddb29cc57a3cec48b135e5fb87433488"
   license "GPL-3.0-or-later"
-  revision 4
+  revision 5
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d202507f9360f6289c0e1c576d2a47daf3644279c1e70289acbd99fdc3a9a541"
-    sha256 cellar: :any,                 arm64_ventura:  "6490e3800ef7d2705e550b066a1b4c70b06e6563c9c1e5d1b8e4f2c3824611b3"
-    sha256 cellar: :any,                 arm64_monterey: "bcdae7a01e62e6af170c92174da04167b501787e7b041afa652f8f267c21a080"
-    sha256 cellar: :any,                 arm64_big_sur:  "0974cdce9f0a548d04d0798d9b878013075206938ebf8b68273aa57f02df3ef4"
-    sha256 cellar: :any,                 sonoma:         "a5e234098848204164120d60e00ab0fb3bd05b8a3d40c5210c482a7e6063a041"
-    sha256 cellar: :any,                 ventura:        "616bbd5f8db762784be79dc2735192ab22f21dbf3219efc8e3ae2a222bc496ce"
-    sha256 cellar: :any,                 monterey:       "27acec0ff096021b2a7fb186451522a74699bbd0c185e66bb460425a768bdb40"
-    sha256 cellar: :any,                 big_sur:        "88117a8122f9724516e77265546624b6581b6ff3b9980bb6caf3a49fa5fd1aec"
-    sha256 cellar: :any,                 catalina:       "99b4f3a61adefcca75290f2957f22bc1506779119789e0a81fe4c635fe5045e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d275effb2feb43f639da0ee1f5dfb91dce384b1815232f852386cd61f3ae010"
+    sha256 cellar: :any,                 arm64_sonoma:   "36afad86fca33908c9f81c18511aa4d59f6114e4dc85b66735eb1450bfec79bf"
+    sha256 cellar: :any,                 arm64_ventura:  "c56ecc0ed12edf94c2f375ce6cbb0b878501dbf7696cd223211a095f84b362d7"
+    sha256 cellar: :any,                 arm64_monterey: "5baa9ccd2a55ca92f1951b7c25839b6dd4b0fc9a1cf9a3f7238a1f7f7b6ed5b5"
+    sha256 cellar: :any,                 sonoma:         "089044be226fa8913cea75aa91e488c9b0a4a20bdab101c53bcf73629b912a39"
+    sha256 cellar: :any,                 ventura:        "64e0226723e4b01a528bd151671bf72cd53cb620821f7db372a1776eea430cf3"
+    sha256 cellar: :any,                 monterey:       "3f8d3f710752c395800db2d8805d126c67a4ea63665ce24eb8f4d562d3f139ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "707c0ff929995f51fd54807d4a569a754173288596df027fd49290021a25a1a0"
   end
 
   head do

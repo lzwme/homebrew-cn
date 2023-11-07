@@ -4,18 +4,16 @@ class LibbitcoinServer < Formula
   url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-server/archive/refs/tags/v3.8.0.tar.gz"
   sha256 "17e6f72606a2d132a966727c87f8afeef652b0e882b6e961673e06af89c56516"
   license "AGPL-3.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 arm64_sonoma:   "b62af4658d5a5375d77ac181cbc738a1cd45a68eef07d2b35a3db0eff78dbdfd"
-    sha256 arm64_ventura:  "71d1f57d2446328e535c521e14b1c4f027f369d49834a2485af0576df448c27d"
-    sha256 arm64_monterey: "87c42ad4f2da45a0f62b101f0cfdd981098eb70ee437e31c81c327eaf1885290"
-    sha256 arm64_big_sur:  "32e27907e71f923f2ecd8562b5e29b3055d4500faa66b0b11814276be2ccbf02"
-    sha256 sonoma:         "6ae1bba8b575b18d3845a3d66e50bb078ff1eb0ce43f65e5ec7c27f4c7c53e42"
-    sha256 ventura:        "f77c06804b9da714661c8707e2de9be98ab0d078780f26b4446239b90b3c8919"
-    sha256 monterey:       "24850c05ded89e22c89801ad9ac3deca5e4f764ef6b208477d91d10b0b3bde05"
-    sha256 big_sur:        "194c6a6061a86800d4617935976654e63c292b6f8dfeb5d3644cd6242d33864b"
-    sha256 x86_64_linux:   "092e84e3154ec07e9ed1efcf143fb241b2d2473071632eeae6d274b060bb05d9"
+    sha256 arm64_sonoma:   "fd1942df520a583e95d6ad957bfa1e22922ea7c5716e5ca6ab3bb5194bb8c8ea"
+    sha256 arm64_ventura:  "8ca606e26ec8127227ef7397f16886d84e79b459272fac5f4a1f7206f2019a4d"
+    sha256 arm64_monterey: "3cd9b1de869b049995f5db8ecf2885c8b8b1f4e8511e1c067c868022812c80be"
+    sha256 sonoma:         "920adcf91e6630683855a81d532478fcdf5915806607ee15433648b43c17c6c3"
+    sha256 ventura:        "182667a8d5d2d523db0c4e4ce50da3b5f03c5c301823f4f503971e8fdcd4f9c4"
+    sha256 monterey:       "7437aebdff9448085b44ff4a2de92dd228642b35af9c75cfb484c355f48e1d4e"
+    sha256 x86_64_linux:   "f6962cd5d1c1b6d33e3ecd3f2a7f680ad6a985f2defc221db20fdad01d0e0553"
   end
 
   depends_on "autoconf" => :build
@@ -26,6 +24,8 @@ class LibbitcoinServer < Formula
   depends_on "boost@1.76"
   depends_on "libbitcoin-node"
   depends_on "libbitcoin-protocol"
+  depends_on "libsodium"
+  depends_on "zeromq"
 
   def install
     ENV.cxx11

@@ -4,17 +4,17 @@ class Proxygen < Formula
   url "https://ghproxy.com/https://github.com/facebook/proxygen/releases/download/v2023.09.04.00/proxygen-v2023.09.04.00.tar.gz"
   sha256 "e4db076db908b003a23ac139b6c433d8c34daa77cbdea33fd5a77bf9889dcdb2"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
   head "https://github.com/facebook/proxygen.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c2dbe0929a15bf044c13f7ea81640eff6a811d6cfba58fe794907d6dca2afbcc"
-    sha256 cellar: :any,                 arm64_ventura:  "a26b4802c745cb7e377703f45ad0cc4e537251cf8808e64f2ebcf58862bbbcd3"
-    sha256 cellar: :any,                 arm64_monterey: "9cf3bb099c1138eac2c9e1e40f53e967d4a1ab50aba1e18bc2be46935582f3c7"
-    sha256 cellar: :any,                 sonoma:         "5b6d6a4fa8e97c4718e9d8a1f3465c60b52f24578f77373de612d09f8841463d"
-    sha256 cellar: :any,                 ventura:        "0cb918d9c2dd6706afd8bcebc63786b30eb40cdc6cc5229bedd38dfcc9b16190"
-    sha256 cellar: :any,                 monterey:       "d831ef95873a1f8c008b729104fd542942e16143d49745992e55468c13d1bcb7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "36f5761fb73e8a5b51fd799448f661ab13b75527500ca7697b00f230ebbe9bd1"
+    sha256 cellar: :any,                 arm64_sonoma:   "162dd2c512d8a37e62f2971a96113c22ec3a80598e2d3d160b89f79fff75f085"
+    sha256 cellar: :any,                 arm64_ventura:  "3e821d893f536249ffea5974f31294c6661abeb603aeca4de8902d7334567daf"
+    sha256 cellar: :any,                 arm64_monterey: "91eaa6a38fe8f31ce422228a7b0b57d5c7f77d6363d613ed1c8feacefaffbded"
+    sha256 cellar: :any,                 sonoma:         "0434b70be6c183ddfe961cd6e20fb73949494fcdc228ebd9f4aa9ac255f4452c"
+    sha256 cellar: :any,                 ventura:        "feee4e02ccb23f6cde31d5d58834a3dc59f280a236e146e4c194fdb22411e648"
+    sha256 cellar: :any,                 monterey:       "bfeb024ea50d046c977bc458331d397f4037b3dd8369dd81203b52fd3e003734"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2fac1d5ebd71f4e13e95cd587f47699ce71df9d3ee676df701185244fcfa8f1"
   end
 
   depends_on "cmake" => :build
@@ -23,6 +23,7 @@ class Proxygen < Formula
   depends_on "fmt"
   depends_on "folly"
   depends_on "gflags"
+  depends_on "libsodium"
   depends_on "openssl@3"
   depends_on "wangle"
   depends_on "zstd"

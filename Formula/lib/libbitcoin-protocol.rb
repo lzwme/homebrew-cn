@@ -4,18 +4,16 @@ class LibbitcoinProtocol < Formula
   url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-protocol/archive/refs/tags/v3.8.0.tar.gz"
   sha256 "654aee258d7e110cce3c445906684f130c7dc6b8be2273c8dab4b46a49d8f741"
   license "AGPL-3.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6f65941ceb0117dddcdffeba143f12576349b58cee051b2dd9ee9743b3500fdb"
-    sha256                               arm64_ventura:  "3c587e28a40ccc268220b03f49db30c2bda7bc33804a7199c5d12e3eb3d39ca3"
-    sha256                               arm64_monterey: "d354d235a093c9c45023844595f060185e66a96a51e5b34ee1a9e57919345f93"
-    sha256                               arm64_big_sur:  "5ac648e724db6e394eb88bd1183027b9f08770e0ec12cbeba1843ff660f3b05c"
-    sha256 cellar: :any,                 sonoma:         "53b3f84c1ac5fbf0f2470b1e670a7f855f18a8bcaf803646396b4c20f066efa9"
-    sha256                               ventura:        "38b6d0a27c96288a0bf855fab65a2372e96dd3a473685d9a6e3f2d109447fff0"
-    sha256                               monterey:       "704058e2ad64d8ee6b367aa079155ad854cd92fa0054e341f7e2ab5a4738748c"
-    sha256                               big_sur:        "643c4eef9890fa62ee862f19892fc9fbb46f7ffd50eaaea1c0097adec9968b19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe92a2d85f4c2aad06829a398e78b6f61b617f9c10b5ccceb94dbd87faeab327"
+    sha256 cellar: :any,                 arm64_sonoma:   "32d61b8663e5fab859bee922db71b16ccdeab283690837513a432187a151e38c"
+    sha256 cellar: :any,                 arm64_ventura:  "5be699a3d80e31a8eb398fa12a578e895f6c205a3a142e7dfb05d772c14e9106"
+    sha256 cellar: :any,                 arm64_monterey: "742149127e38e37075f9781f33281a939216bc506574fd3cc93c7f45cf692516"
+    sha256 cellar: :any,                 sonoma:         "0dfab6ce1f61c24a8382d91827cef7b2159bfc6a1ced7650ca122f74acd58dbe"
+    sha256 cellar: :any,                 ventura:        "d4b8881f4efbffac9c05558a89779bdfced6bb15a7ab4b25ad3d4e38014a5d41"
+    sha256 cellar: :any,                 monterey:       "edb6856e737a04bc92421a3520f35b9db06b234ec7aa0385b4e5fb26e66dff9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "746249bddfec92921117988b74797a1bf4797bf954693fc36c04af6b6946bab1"
   end
 
   depends_on "autoconf" => :build
@@ -25,6 +23,7 @@ class LibbitcoinProtocol < Formula
   # https://github.com/libbitcoin/libbitcoin-system/issues/1234
   depends_on "boost@1.76"
   depends_on "libbitcoin-system"
+  depends_on "libsodium"
   depends_on "zeromq"
 
   def install

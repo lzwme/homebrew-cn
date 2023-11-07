@@ -1,13 +1,13 @@
 class Argparse < Formula
   desc "Argument Parser for Modern C++"
   homepage "https://github.com/p-ranav/argparse"
-  url "https://ghproxy.com/https://github.com/p-ranav/argparse/archive/refs/tags/v2.9.tar.gz"
-  sha256 "cd563293580b9dc592254df35b49cf8a19b4870ff5f611c7584cf967d9e6031e"
+  url "https://ghproxy.com/https://github.com/p-ranav/argparse/archive/refs/tags/v3.0.tar.gz"
+  sha256 "ba7b465759bb01069d57302855eaf4d1f7d677f21ad7b0b00b92939645c30f47"
   license "MIT"
   head "https://github.com/p-ranav/argparse.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b06b4b33d861e3940c10cfcebc48c96a7154bd0495beb206206ac39e0c7e5fb2"
+    sha256 cellar: :any_skip_relocation, all: "83247bc96ba531d3c00bedb4ff57b5c704e33ab3e2fa53eb2ef82385f99bd022"
   end
 
   depends_on "cmake" => :build

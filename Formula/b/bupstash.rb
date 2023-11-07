@@ -4,18 +4,16 @@ class Bupstash < Formula
   url "https://ghproxy.com/https://github.com/andrewchambers/bupstash/releases/download/v0.12.0/bupstash-v0.12.0-src+deps.tar.gz"
   sha256 "e3054c03b0d57ba718bd2cab8c24df13153369dea311e5a595d586ad24865793"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "35d85bb020d1597e862ddd4e69525d4fa74de8f0fc2a277bac3ddf15a62aa075"
-    sha256 cellar: :any,                 arm64_ventura:  "a454d4cc3ee169b4a120d858d27b622a4fdd4115029e0d3e1e4eeb4201ee2874"
-    sha256 cellar: :any,                 arm64_monterey: "e0c0fb31abb504c253430639b0696097d1fa383d34ebad8b29c072a32159031d"
-    sha256 cellar: :any,                 arm64_big_sur:  "723d0b64009392264d64cd0368c6d7ae256eb121a7343776b284a74c87cd9143"
-    sha256 cellar: :any,                 sonoma:         "a25769e72a7ef242b41c764a3335644db0e7e1c01c6c15191fa00cf5df56d5f3"
-    sha256 cellar: :any,                 ventura:        "32f5b7c2b59eabf50fa186bd5a6f0b8f729d8567bdb19e8e22405aaec55e824d"
-    sha256 cellar: :any,                 monterey:       "18d6b61b755aa59d3a6d3c02052a122f746ab8ec8a74af39cd8f6ac000e53f0e"
-    sha256 cellar: :any,                 big_sur:        "4715e7d817e328362ebe2ce4cc56eec49a7b9b39d8531b3ca8ba3d21c8626206"
-    sha256 cellar: :any,                 catalina:       "b9c6707655d96ef1504957795a9b534ec4913a6919742f53533885762310c430"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45d12691a3dfd70fff9be32cbeffa18233ea789211e1f20142cde85f06777f74"
+    sha256 cellar: :any,                 arm64_sonoma:   "282702198d0383461a3827c2727a2cef576f7e68cf32f88af49fd1591602e0ed"
+    sha256 cellar: :any,                 arm64_ventura:  "5c75007fe3422c999e4843325a6d7939850e60266485ae78b514b4f56f19114f"
+    sha256 cellar: :any,                 arm64_monterey: "31c1594f63290770e6b4e5e624c24a471fc905a4484da6d0c6675371e093b22c"
+    sha256 cellar: :any,                 sonoma:         "5e4323b39fdc2751adfb15eeb1fb6224f7f5631fbb44995dfaaf9b8bd5bca6e3"
+    sha256 cellar: :any,                 ventura:        "553dcd5d10275673f1106914e7af449ac1ebe52ec80f99150206370426a7d558"
+    sha256 cellar: :any,                 monterey:       "a78d691c6274743184a5ec48d717f1835d016c615bdb1e6bb3e1e9a5d6b3c3f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b61eb9cbb571a97f1064e6b0e0766e2fc19e1b7691ab8cc988ea4db67f8d5182"
   end
 
   depends_on "pkg-config" => :build

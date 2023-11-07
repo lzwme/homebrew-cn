@@ -12,13 +12,14 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "69a1cab483c105a311d3aa7e5517718241340df64eb654cac6851807c989cf1f"
-    sha256 arm64_ventura:  "f48ba7e2219205b41dfebf04d3eb30d46352fa8011e7e355847ff83128def377"
-    sha256 arm64_monterey: "b2ee15166fc700a0d2725dc188a674744c46667f997fbe1e6b400675f436a443"
-    sha256 sonoma:         "c3060f0046e6e759029f2de080a15818c54d93d3de3d24bc7142c58b1edfe2e9"
-    sha256 ventura:        "6c6b1ae3c83bbddf3ea1e1cfd5502837e6ccb14adeab57c7e24bb8f697aae27f"
-    sha256 monterey:       "ed29bed06e57fa5eea4b70c12703fca63720a40a9510748f1c84d90e8148c445"
-    sha256 x86_64_linux:   "85a7d1412b47d9a70fd8fe00473eac8c861e6c7315ddcb108d0e2bfb1cbd0477"
+    rebuild 1
+    sha256 arm64_sonoma:   "5535de14a58e3cb0d3312b800a261246679820895288df230589fff1f7505720"
+    sha256 arm64_ventura:  "21d2e0b00a21ba11b1dfb9c01590c09ec857124984ba49b57d1949acb9af3203"
+    sha256 arm64_monterey: "0f02a499d8b39a2cbafde67adbb7327395e687c3d3ce15f75c3d2d2ea2884f37"
+    sha256 sonoma:         "27bcbf21a16f7b98ac049be4773003874536fcd197e86b0b727997783c51fbb9"
+    sha256 ventura:        "ea5f0af7c1226dec2329e45b5c32251bf482f8bae4338bbd42d95f2a47285b09"
+    sha256 monterey:       "64ad3fec66527c400f5ded6bde956513b25de68f52dc0c16a2bcebe620c30f4f"
+    sha256 x86_64_linux:   "88f3f7d3809edb899aee16dfd28fa9899acde27890783e2de95f3a6f21df8f00"
   end
 
   depends_on "cmake" => :build
@@ -37,7 +38,8 @@ class Opencv < Formula
   depends_on "openjpeg"
   depends_on "openvino"
   depends_on "protobuf"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "tbb"
   depends_on "vtk"
   depends_on "webp"
@@ -59,7 +61,7 @@ class Opencv < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

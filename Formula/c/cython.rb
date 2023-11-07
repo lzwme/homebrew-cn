@@ -6,13 +6,14 @@ class Cython < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "67d4231cdb917c60336abc8b9870da497607f6b215435c8d1d6b2eaee0e2f2e0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "606edec1e5f6c9b8dc025f20b7834cae4686327d07c792a8d5e1a4fa027fe424"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cbf8ae7c1f613f19facaecc5baad7af5c4c880d8c191ab4312dab253a023bfe3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "faff053a15a76da41528f9ee1bf307cd2e3f5a84ea35f3317a119123ed2caaf7"
-    sha256 cellar: :any_skip_relocation, ventura:        "089259b6205ce35c69c9d3d61b3fefe2fd5fa5eeeea50220282f6fea6d06653e"
-    sha256 cellar: :any_skip_relocation, monterey:       "d4765d2173977c5bbc6b4f49faf60541a85f4b2ea497b5a78b9b61f632487970"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf9b224e592de0521c87028a28894f97e45f2df48447f7ad3de069241ee1f4bb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1b8560892dd2869a8ec8906236d8d27f979deba4330386501fdb559d0e608ca8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d01fb2ad9de34cf2be44cd7576cd8f9e9f91e347392da3e36fb180082d8bbb12"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a89997e9e1acc778e8e29c4de0196042f10a2ef7917deeb836f1a294981dc3d5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ce33d0a63f399646fcd47c82a2c78a7e2574e9f5e0b603d8668e80e7111047d5"
+    sha256 cellar: :any_skip_relocation, ventura:        "636c86a24eb19afa93e60cb57b779573b5fda9bde7569e0e882da6acca0b022e"
+    sha256 cellar: :any_skip_relocation, monterey:       "8db439afcd38218a2784d36efc4c19c0d95d52e14dff0ed8227b12da085f65fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "36389d385f776ee8c853e728f8e546ce33230483a85117a2b02c517508d58357"
   end
 
   keg_only <<~EOS
@@ -20,10 +21,11 @@ class Cython < Formula
     Users are advised to use `pip` to install cython
   EOS
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools" => [:build, :test]
+  depends_on "python@3.12"
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

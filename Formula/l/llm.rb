@@ -3,18 +3,18 @@ class Llm < Formula
 
   desc "Access large language models from the command-line"
   homepage "https://llm.datasette.io/"
-  url "https://files.pythonhosted.org/packages/49/c6/12a34c856d4046fdd14f449e022892618b0c9cddecd0542378fcd450cc2e/llm-0.11.1.tar.gz"
-  sha256 "631214181e904e75795885b40e6371d56acbd238ce24d3218b5007cb13be7d7b"
+  url "https://files.pythonhosted.org/packages/dd/55/6191c46709f6aee2c80fbed7535130f868780f1b152b2e596dc81d202ebe/llm-0.12.tar.gz"
+  sha256 "e6a3fac275b9b80a29fe018a7b8467d97871fd4194912bcd2a8c844e9aab03d1"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7fcfefe565e2b4c10a6434dc7a75f18e0a71def87ea96059577a9dd6cb9e278b"
-    sha256 cellar: :any,                 arm64_ventura:  "9f7b72988495fa7540c9bea978154b76d0223dbdd1e3186653cf2d8ed0f2e629"
-    sha256 cellar: :any,                 arm64_monterey: "2d3ba66c2f8839deab73877736a3039ce7aaced9ac2cb912716699969aa83892"
-    sha256 cellar: :any,                 sonoma:         "4e811289524649ff0498b52dedf8189103f7820eb284efab6ec947ec50795132"
-    sha256 cellar: :any,                 ventura:        "ba866a7b5be593d57407101177daffaadd5d4f006e82e40e7ce25e2cabced5f0"
-    sha256 cellar: :any,                 monterey:       "779dad26959333f01e4bfa130bc2ef77123c527255107d6f2011e3dd1fbb9073"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6de8972010a2eefd0ad609b7c5a8b0843fdf9a9cf70278e7f44cd802b0367e65"
+    sha256 cellar: :any,                 arm64_sonoma:   "68c3125a1991894e76f912f6172bf4483965e7543eeb897198a01fcf0c3aa922"
+    sha256 cellar: :any,                 arm64_ventura:  "5b4e456151e9f22efe4c61aa5c4b356ef20d44a74782a68e390f3be389418ea4"
+    sha256 cellar: :any,                 arm64_monterey: "7e1e8074254310996797163249b81aee8b01fbac22116626cc33be2623cbdfa1"
+    sha256 cellar: :any,                 sonoma:         "d629be78cd7fd86dbcac5964235465bd13456b6e89f1e4273cacfb0e8c5e0eab"
+    sha256 cellar: :any,                 ventura:        "addd7b2b55fe986c7ac698017316a2be590f48264fed56aefd36b170639350d6"
+    sha256 cellar: :any,                 monterey:       "ff75f5b1a2544e1ecb745d82aae54bd54b2f2a5ac949421f4ba13c889efa9170"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "125e0c15fee473a96aacd0cb0938542704b81135e5250ffc81737de2420bcfd7"
   end
 
   depends_on "rust" => :build
@@ -28,8 +28,8 @@ class Llm < Formula
   depends_on "six"
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/c4/50/a717a133bda2efc27efbf8a65398c925b6d0605213da0db6929627ccb758/aiohttp-3.9.0b0.tar.gz"
-    sha256 "cecc64fd7bae6debdf43437e3c83183c40d4f4d86486946f412c113960598eee"
+    url "https://files.pythonhosted.org/packages/2f/d2/1e9a33d15b85b0ea0d4029e3fdca0979e9b864314b965a4d3f0882e5dede/aiohttp-3.9.0b1.tar.gz"
+    sha256 "d6e120b08ac168825239c64e0a850a108edb9cd17be247e25bced9b07a14a403"
   end
 
   resource "aiosignal" do
@@ -128,8 +128,8 @@ class Llm < Formula
   end
 
   resource "sqlite-utils" do
-    url "https://files.pythonhosted.org/packages/84/39/4ce5c5ac7ac6a485349f8636a920cd2568bf8f11298519d552b0c57351db/sqlite-utils-3.35.1.tar.gz"
-    sha256 "e0f03e6976b05bdb7a5c56454971a0e980fc16dbfd3512bbd3bdcac4f0e4370e"
+    url "https://files.pythonhosted.org/packages/10/91/4febf8cfe2d0b57a6a77595180bdb4ab97a89ffd36223ed295d1d8bfbbc7/sqlite-utils-3.35.2.tar.gz"
+    sha256 "590b14ad277914cb3fc7d5e254764847facdaaa23c7bafd85ec93874f6f42143"
   end
 
   resource "tqdm" do

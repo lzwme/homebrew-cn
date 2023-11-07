@@ -4,18 +4,16 @@ class LibbitcoinExplorer < Formula
   url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-explorer/archive/refs/tags/v3.8.0.tar.gz"
   sha256 "c10993ab4846e98ec4618ca2d2aab31669dc091fa2feb17d421eb96b9c35c340"
   license "AGPL-3.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 arm64_sonoma:   "a77f5daa4276b5b3de16eda7f1a7cdb493c41b3ee3b41d98465879f89fc0656f"
-    sha256 arm64_ventura:  "d5fc065a4adae41bad1efcbafa5d52f0711af9c796dedbf10d4bd1d1146e474f"
-    sha256 arm64_monterey: "a4d4bcb767aece7188b6c8243981dc73bb94ae38e76723c99673360e05fd231e"
-    sha256 arm64_big_sur:  "054bb3bee90b894445e989211340eb082b5f271ab1d30916a09f7ca909fa4462"
-    sha256 sonoma:         "3c85de2b08a5f8eaf28734763f9b931fa92d8e2c34ce91bdaf0db3e217797328"
-    sha256 ventura:        "3f5070a099083f4777bec5f31c73f9440f1dcdceca65b4e38f830c38aaddb008"
-    sha256 monterey:       "480e13a7e581d74e31cfa6be2902765ec7b6bc9fda794c20125fc1652274addd"
-    sha256 big_sur:        "50676d0d3790be0a842e3bb07545dd6bad666c5b8bb3f8acbe8ea5e685d21ab4"
-    sha256 x86_64_linux:   "4f51230a63c0edc7078d666f53dcaee6e8e4b97a4475cded4f4e1705869f3cc6"
+    sha256 arm64_sonoma:   "7ce16a07286ba0403891fe6db304e4d2db29d5358b1d8b8b8eb827e6568756bb"
+    sha256 arm64_ventura:  "b273e60879e4345bfd9c2eb9f82261748db1eafbbe108d81b5fb97e829b29196"
+    sha256 arm64_monterey: "b7685b9d3f2bce471a847685b0bd22a66066af0f8e9540c7904d48e475fe1d48"
+    sha256 sonoma:         "e39834054ba8fcf5c32e72cfa74daa87fb0c1c3ecccde48f722581798c3fa2ae"
+    sha256 ventura:        "fbf0b96e5c4908e3bc0aadf17845694c7bf1ea29a7b25c7c651c74013d950386"
+    sha256 monterey:       "f98a3cee4322b881f2f77b07e2384a0d42f84777b8a4dc1665b10c8f5e55ed0d"
+    sha256 x86_64_linux:   "847b8b76af5d255821ff814d26846bbeb2b1d86bd2c47a3a5ce98314e701843c"
   end
 
   depends_on "autoconf" => :build
@@ -24,6 +22,8 @@ class LibbitcoinExplorer < Formula
   depends_on "pkg-config" => :build
   depends_on "libbitcoin-client"
   depends_on "libbitcoin-network"
+  depends_on "libsodium"
+  depends_on "zeromq"
 
   def install
     ENV.cxx11

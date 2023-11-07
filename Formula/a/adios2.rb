@@ -4,6 +4,7 @@ class Adios2 < Formula
   url "https://ghproxy.com/https://github.com/ornladios/ADIOS2/archive/refs/tags/v2.9.2.tar.gz"
   sha256 "78309297c82a95ee38ed3224c98b93d330128c753a43893f63bbe969320e4979"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/ornladios/ADIOS2.git", branch: "master"
 
   livecheck do
@@ -12,11 +13,11 @@ class Adios2 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "6f7df98e0fd0f5acfed8ab2edb114254bafef28913c514c77b28fb30fc7e2afe"
-    sha256 arm64_monterey: "7a443661143267a67e6f3ca1387d7df1d273ee169bbb6dcf4b35cc7e6ac9872b"
-    sha256 ventura:        "4ec25898f235f0e0b39981a12750726bb5f83dee3e7f9a9ff423a52c6a6ee929"
-    sha256 monterey:       "96ef1dd335fcee0f6b07e3893413007d040a50a22457cfd501227bbc0e32ed12"
-    sha256 x86_64_linux:   "521601dfbc7dbd92feb7315ae113d4c5b3f5ea422c126cd80e1c91a0009d1251"
+    sha256 arm64_ventura:  "244917f2984bbd229e220116b0ec45f59c1841414cf9fc593a0bc576783a198f"
+    sha256 arm64_monterey: "723303d3cf743fae4533139f719571e45aed2a81c3aebdb7b4558d58aecb68d7"
+    sha256 ventura:        "2bf04f4b002e6e6d0d2351fffdb6d23e568144f63c83664bf08ebc92205775a9"
+    sha256 monterey:       "ec25d3ee5d6052b4ce150e41a9e391c7d97bcdc11b6fc5136a976b4f3cae50f9"
+    sha256 x86_64_linux:   "43c9daa3cba699d21de9ed64842387bd37175ebd9ab613bef703ac49f70a7385"
   end
 
   depends_on "cmake" => :build
@@ -25,6 +26,7 @@ class Adios2 < Formula
   depends_on "gcc" # for gfortran
   depends_on "libfabric"
   depends_on "libpng"
+  depends_on "libsodium"
   depends_on "mpi4py"
   depends_on "numpy"
   depends_on "open-mpi"
