@@ -87,6 +87,6 @@ class Trafilatura < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/trafilatura --version")
 
-    assert_match "Search\nImages\nMaps\nPlay", shell_output("#{bin}/trafilatura -u https://www.google.com")
+    assert_match "Google", shell_output("#{bin}/trafilatura -u https://www.google.com")
   end
 end

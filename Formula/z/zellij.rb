@@ -1,25 +1,30 @@
 class Zellij < Formula
   desc "Pluggable terminal workspace, with terminal multiplexer as the base feature"
   homepage "https://zellij.dev"
-  url "https://ghproxy.com/https://github.com/zellij-org/zellij/archive/refs/tags/v0.38.2.tar.gz"
-  sha256 "18e8ae9fa2ad995af5f6c64b3c0713143d260cdc6c1a978831313bfaf305ad5e"
+  url "https://ghproxy.com/https://github.com/zellij-org/zellij/archive/refs/tags/v0.39.0.tar.gz"
+  sha256 "dee3c677eb4545d302895e1c0020f7da9aba8b154927c6ff215b59aec4fbec9f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5a7f6a02985312828166a777ef1a798c057a5a4c6be5dda1711d2cf522e79280"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "56284918c1e0bcbf56e579b7211be422c375cbf9ed5e1a2580d4874ee25c5da8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c96c2447a8c05a9f86475a933ad685f045a0a3680d7ef84c676068d16866915d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b3e7d27c15a7aed71d3dd9fa75639b719fcb47913cd09e664b2406c9a4c251ee"
-    sha256 cellar: :any_skip_relocation, sonoma:         "91eba6d554be7859ad01079d6017ac3fb907b6d0d9bb2294a9170eebde194ae6"
-    sha256 cellar: :any_skip_relocation, ventura:        "905e43f067e3802698f0d528015e83b559ae1568afecd08910758a804e92217e"
-    sha256 cellar: :any_skip_relocation, monterey:       "2bddbc92eb031b412fa4fc64ea2b2b5c5a7ca0b3b3bd8a4e19de391107dcd0f9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1863058033a21e3d977326f390d735d91079130bd869114a8aae1b1d35bb1cf8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fbb1dffe561563a1668ee638b8706bdfc2f119a435f89dde387d8bdb17167c51"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "02a190b44759e254e978944ef574b14d8b626937d31458873702e9a02d89b0c1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1678bb5537fbaa06f60912504116c7a60dcfa93b6561af002692ba4700d6b3bd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1c19cf46e7252eef1a094394cb76361514da1f2eae73a4f627b81894fdf39c24"
+    sha256 cellar: :any_skip_relocation, sonoma:         "936f0c7fb1cf1966945829ce19d5dd84f404683375611244571533e08e7a7d4b"
+    sha256 cellar: :any_skip_relocation, ventura:        "1d9470ad93f809fcee2fbce8fab79454cb7fc7a0526e00a045447472290773a3"
+    sha256 cellar: :any_skip_relocation, monterey:       "2dd4b6a1fbac828ac4200875bc8f964c27b92c689432e3221822aabe17648993"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "779e8545c7494b2172b72c11030ca5c677319fba83ea47ed0d8567753d68254c"
   end
 
   depends_on "rust" => :build
+  depends_on "openssl@3"
+
+  uses_from_macos "zlib"
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     system "cargo", "install", *std_cargo_args
 
     generate_completions_from_executable(bin/"zellij", "setup", "--generate-completion")

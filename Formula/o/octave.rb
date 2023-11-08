@@ -7,6 +7,13 @@ class Octave < Formula
   license "GPL-3.0-or-later"
   revision 2
 
+  # New tarballs appear on https://ftp.gnu.org/gnu/octave/ before a release is
+  # announced, so we check the octave.org download page instead.
+  livecheck do
+    url "https://octave.org/download"
+    regex(%r{Octave\s+v?(\d+(?:\.\d+)+)(?:\s*</[^>]+?>)?\s+is\s+the\s+latest\s+stable\s+release}im)
+  end
+
   bottle do
     sha256 arm64_sonoma:   "8ae5e8c4a431f922a5aa6bf7f5e8f5232645150af909681541767acb33e6cef8"
     sha256 arm64_ventura:  "0fde25bc570c10a6d9849c836ba3f1debc7c754deae1bcd776ea7e9822c0f826"

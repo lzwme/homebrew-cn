@@ -1,9 +1,9 @@
 class Blast < Formula
   desc "Basic Local Alignment Search Tool"
   homepage "https://blast.ncbi.nlm.nih.gov/"
-  url "https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.14.1/ncbi-blast-2.14.1+-src.tar.gz"
-  version "2.14.1"
-  sha256 "712c2dbdf0fb13cc1c2d4f4ef5dd1ce4b06c3b57e96dfea8f23e6e99f5b1650e"
+  url "https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.15.0/ncbi-blast-2.15.0+-src.tar.gz"
+  version "2.15.0"
+  sha256 "6918c370524c8d44e028bf491e8f245a895e07c66c77b261ce3b38d6058216e0"
   license :public_domain
 
   livecheck do
@@ -12,21 +12,20 @@ class Blast < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "39921182f3bd695d7471a823f3665ede38c3b26663797c4bb33400535ac8fd68"
-    sha256 arm64_ventura:  "5ac733bc4b3dd1dad7e31743523fbbda7e373ef046eedb5b63efd3337377278a"
-    sha256 arm64_monterey: "48a21807f138f6f32c8961e3e42d6d95fe28c3ece6b044a99b0261a2f775683b"
-    sha256 arm64_big_sur:  "14c11bab160ab54a32636d20f0e7d7966cd4e555c597e0b45b8b68c253d1fbf4"
-    sha256 sonoma:         "0459862bcb6556b952bb6c6e1569481e2e10f72b208017ddefd158a9418c0409"
-    sha256 ventura:        "a037c5f6b34bfc3a6da7df53040982820f4fa6bc04b40d267029a5609bc70aa0"
-    sha256 monterey:       "e03015a5f73afdd483c0a4b50641a4f536a838813f4eb080a10495b1ac7eb1b6"
-    sha256 big_sur:        "b663ea74f93a8cb23661aab8b831bef3b1c11877bef219057e1361c4e12021ba"
-    sha256 x86_64_linux:   "6a9d61075581b765efc9e632d1f72099a262fdcbac402db9bc6e052745d096a1"
+    sha256 arm64_sonoma:   "c94e6f275774f19ae13655c4a060728c79101c0450686afb80cff7a9a2d211d1"
+    sha256 arm64_ventura:  "7b57dceca3f83fa852fa225dc8a749a2f46af68c1234bd8694cc19411323c91e"
+    sha256 arm64_monterey: "f35317bdbed37113b13278e32228ec0f941b2bedd62a7623b5ed1b7638a1769b"
+    sha256 sonoma:         "014528e069266455d50f9e8073e54d24ed5125b3fb01d7e20380700453746e05"
+    sha256 ventura:        "a96e1d915905547dff084c59a55c656422076e22719a0ff82819c36a2f9fe64c"
+    sha256 monterey:       "d0ed36de012c79a90fa3b9ecaae13092f5bb1cab51f0cb39f5d43ba90b2a4662"
+    sha256 x86_64_linux:   "8522583e6941497542ca844027479240ba5e248e9099d32579688e3eef6a707e"
   end
 
   depends_on "lmdb"
 
   uses_from_macos "cpio" => :build
   uses_from_macos "bzip2"
+  uses_from_macos "sqlite"
   uses_from_macos "zlib"
 
   on_macos do

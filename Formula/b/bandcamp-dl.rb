@@ -10,16 +10,18 @@ class BandcampDl < Formula
   head "https://github.com/iheanyi/bandcamp-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "93661605a6836e791ccdf48e912c7b942a20f6505a47ff33706fcc6fc03662e9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "63e3097d6b318c618c45605f58b2e3bd3aa7194af3b8196c8ed43995e5b467b2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b7b539c6181f2550212d833d6e04320609756b3246a9bd9117125b16aa70973"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7daf5c519da78e1ae4e1f08883d44b0df3f4a8f891cef81899ac963ce6c807f0"
-    sha256 cellar: :any_skip_relocation, ventura:        "edf8dc8d0213a10abf747b093cacdd1b018c65a1d3d1c82d45c4ff207a9a8bf8"
-    sha256 cellar: :any_skip_relocation, monterey:       "cd22a1c08df6803c30ab4e7a5473f93af2286c4e3a8f2a2ac0329b4f600731bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dcd35281c71568c94268fa131483689585e8e6a6866d5c71ac0425291dd7f3e1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3fcde9cbd092bbad26f8d217a508ddee3907f5c90545b094b98f4e693df75307"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aa649557058cc3cf1d12cb9b059f699a54e0c3321fa469c1f6d34a3e4fa345d7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0f1891b49ffafe195d12d5122d5bc73ebbd9e12b772e17d137a32ee8e68ec611"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7afb83cf20cc18dec43813a98a3169c6c6ef1e0f2830f2088059787ab4be1ab5"
+    sha256 cellar: :any_skip_relocation, ventura:        "30f1ea2d685a26846d480de0fd55df87701064374e3bc3a013fe31259f4ea66c"
+    sha256 cellar: :any_skip_relocation, monterey:       "1c6795cde3185c60e38b764916aac626a32a950b394aee905070a85dfd1c1f45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d38d6d36d2c3e8f70aab556499389eb05f010c8265fc99031523e9df66bd00f"
   end
 
   depends_on "python-certifi"
+  depends_on "python-docopt"
   depends_on "python-lxml"
   depends_on "python-mutagen"
   depends_on "python@3.12"
@@ -43,11 +45,6 @@ class BandcampDl < Formula
   resource "demjson3" do
     url "https://files.pythonhosted.org/packages/f7/d2/6a81a9b5311d50542e11218b470dafd8adbaf1b3e51fc1fddd8a57eed691/demjson3-3.0.6.tar.gz"
     sha256 "37c83b0c6eb08d25defc88df0a2a4875d58a7809a9650bd6eee7afd8053cdbac"
-  end
-
-  resource "docopt" do
-    url "https://files.pythonhosted.org/packages/a2/55/8f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9/docopt-0.6.2.tar.gz"
-    sha256 "49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"
   end
 
   resource "idna" do

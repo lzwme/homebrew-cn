@@ -3,19 +3,19 @@ class Apkleaks < Formula
 
   desc "Scanning APK file for URIs, endpoints & secrets"
   homepage "https://github.com/dwisiswant0/apkleaks"
-  # upstream pypi artifact issue report, https://github.com/dwisiswant0/apkleaks/issues/79
-  url "https://ghproxy.com/https://github.com/dwisiswant0/apkleaks/archive/refs/tags/v2.6.1.tar.gz"
-  sha256 "c22557f527ee49c04947c1bed1b5ee50857ee68b0f4f3b99a5e4b18dffe30d16"
+  url "https://files.pythonhosted.org/packages/8e/7f/95822c947138c8fc127d88128fb8fa9b0ed37a7fddf0b840685075ee288e/apkleaks-2.6.1.tar.gz"
+  sha256 "47eea4683a9916e4099d05776be2ec3892791f5fd854f49cb5ed489cc9867c62"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0d1642e014d02f28ded46af09bae9164bf18e87cfdc2f7a42c5371ea2ee61596"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a084f66f1bafe098cecf59e190b92e0b9b757130ceedad1e6ff27ceed1fd6158"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f90f01ee4a50177915fbe2308e7485bbefd75f0fb8fb91498e6395b3a90fd9f6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7bd00eebc656a6d6af1d5b28da3efc4246766e439ba018dbf881a05e1b7143e4"
-    sha256 cellar: :any_skip_relocation, ventura:        "d18adda84119bdc2ee1e91068eb5727b6b4c9860f34895d0c97d4e21ee4e8366"
-    sha256 cellar: :any_skip_relocation, monterey:       "f5b99e22155da33920de571b4bb3f17d13844d4594b5cb69f3a6416c9827c8ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4364b8284f7edfec2908e0feeedb52c8dd68bb0f3470580c8e247b7414c367ee"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8c43bdd892cd83f9c27958b30655f419d2b8af1f9fcaf4ce529471b19e5f0980"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "df4aee641334907e439140a7640c8aee046bc4f15a23d206625d2afa0dba954f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "efb05e2117c82deddabaa566c4b05cfd0fd6fda68b7b62109737524cf6664a7d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a8153cb2b92fbfafe4c332a0bdebd102aac565f481d0c24816b68b39d9a95bf7"
+    sha256 cellar: :any_skip_relocation, ventura:        "4db43c5527230b6b7602b4e488ac99a42d1785fbe0e06e7818445e651e2232b8"
+    sha256 cellar: :any_skip_relocation, monterey:       "3ea73b3e545b925eff2a45766a5d3fae48905ecf0418aa456a7ec3a2ad25442c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e452964c171dd29cdb50651872aef32cf2981a110149b34b795022991c98fa4"
   end
 
   depends_on "jadx"

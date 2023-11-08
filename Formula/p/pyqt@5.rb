@@ -1,35 +1,35 @@
 class PyqtAT5 < Formula
   desc "Python bindings for v5 of Qt"
   homepage "https://www.riverbankcomputing.com/software/pyqt/intro"
-  url "https://files.pythonhosted.org/packages/5c/46/b4b6eae1e24d9432905ef1d4e7c28b6610e28252527cdc38f2a75997d8b5/PyQt5-5.15.9.tar.gz"
-  sha256 "dc41e8401a90dc3e2b692b411bd5492ab559ae27a27424eed4bd3915564ec4c0"
+  url "https://files.pythonhosted.org/packages/4d/5d/b8b6e26956ec113ad3f566e02abd12ac3a56b103fcc7e0735e27ee4a1df3/PyQt5-5.15.10.tar.gz"
+  sha256 "d46b7804b1b10a4ff91753f8113e5b5580d2b4462f3226288e2d84497334898a"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9398c47f03210dddad2db4419553223f43113d7fe302656b20f6aa5fd0b3eecf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bdebe6cce54a45c856b8b2237308f4ba53e45ea0bc460769b615f557bc69ac09"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "83b6ea13c4b1389d0fe758bcd9f83b8d6564b8b6abbfc05c57ce102d4734940d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0926e76447c749f669f1a2cc13c9fa06ff2da0ae8071c62d1e96f8ea1357227f"
-    sha256 cellar: :any,                 sonoma:         "e069472245fac9dd5d02dffd92a9af711763757a4330dfd1b7b7278539304df4"
-    sha256 cellar: :any_skip_relocation, ventura:        "e05bf795d62839535e0e0e6ee6c70a6bef82bc90a953de0393c21ed1f870b4bb"
-    sha256 cellar: :any_skip_relocation, monterey:       "04905257fd09737552946add20a940e065cbe973080bc60c63022f0b5cacc939"
-    sha256 cellar: :any_skip_relocation, big_sur:        "25533e0e23fb89a027e17c991cc9ddd0dc76c3d4805acc4f1d6f3e506bde88b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ccf729fadf5aec8e76778c9ea6cc1abe3a1abe6c19016a56a4a7713348dcd45f"
+    sha256 cellar: :any,                 arm64_sonoma:   "d6669361745e9102a636347aee93a854d65f5a3823d97499c57021948a6bbfb4"
+    sha256 cellar: :any,                 arm64_ventura:  "ba75381ca90419e1caca9aea1f49356a1716beeb6762c032ec9e6f7aa19f3cd8"
+    sha256 cellar: :any,                 arm64_monterey: "272a159c4a8e2652203df1b79936623631fff2136adba1c2eddb1a66239acbbe"
+    sha256 cellar: :any,                 sonoma:         "97ec53f240ba671451919bd6b75aef4b3070b4de17a898dc31c3b445e1c2af9f"
+    sha256 cellar: :any,                 ventura:        "e38fde9c5940c4c8aa0e466a613bc62c6f4da83033363ff69e5a68b8ac4f9136"
+    sha256 cellar: :any,                 monterey:       "b2f8be04556ee826dcdb9f27eed73114d9f9d50fe111d26e404d3bd3109ccff0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f9bba8c73a7383f8d53d0f61a35fdd816f6351352e1e4fa77e03568d73f83e2"
   end
 
-  depends_on "pyqt-builder" => :build
-  depends_on "python@3.10"  => [:build, :test]
-  depends_on "python@3.11"  => [:build, :test]
-  depends_on "python@3.9"   => [:build, :test]
-  depends_on "sip"          => :build
+  depends_on "pyqt-builder"      => :build
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.10"       => [:build, :test]
+  depends_on "python@3.11"       => [:build, :test]
+  depends_on "python@3.12"       => [:build, :test]
+  depends_on "python@3.9"        => [:build, :test]
+  depends_on "sip"               => :build
   depends_on "qt@5"
 
   fails_with gcc: "5"
 
   # extra components
   resource "PyQt5-sip" do
-    url "https://files.pythonhosted.org/packages/c1/61/4055e7a0f36339964956ff415e36f4abf82561904cc49c021da32949fc55/PyQt5_sip-12.12.1.tar.gz"
-    sha256 "8fdc6e0148abd12d977a1d3828e7b79aae958e83c6cb5adae614916d888a6b10"
+    url "https://files.pythonhosted.org/packages/ee/81/fce2a475aa56c1f49707d9306b930695b6ff078c2242c9f2fd72a3214e1f/PyQt5_sip-12.13.0.tar.gz"
+    sha256 "7f321daf84b9c9dbca61b80e1ef37bdaffc0e93312edae2cd7da25b953971d91"
   end
 
   resource "PyQt3D" do
@@ -98,7 +98,7 @@ class PyqtAT5 < Formula
     end
 
     # Replace hardcoded reference to Python version used with sip/pyqt-builder with generic python3.
-    bin.children.each { |script| inreplace script, Formula["python@3.11"].opt_bin/"python3.11", "python3" }
+    bin.children.each { |script| inreplace script, Formula["python@3.12"].opt_bin/"python3.12", "python3" }
   end
 
   test do

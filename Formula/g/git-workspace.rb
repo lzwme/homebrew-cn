@@ -1,20 +1,18 @@
 class GitWorkspace < Formula
   desc "Sync personal and work git repositories from multiple providers"
   homepage "https://github.com/orf/git-workspace"
-  url "https://ghproxy.com/https://github.com/orf/git-workspace/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "fa89f047bdf5654cc5090cd72fcf0c599cce4182ae0db42bf7eea8c89f387d47"
+  url "https://ghproxy.com/https://github.com/orf/git-workspace/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "fb66b03f4068950ba2fac73b445a964b2b941137f9b31f5db9f4fba1a73d3d4d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "cbe97d0e1db8c7f897ed10fe11f3598f68cd0dd6d5b41d71738e6c9037aa0c5d"
-    sha256 cellar: :any,                 arm64_ventura:  "cf8a85240ef63473754e3b0e35b209a29933b69b869e8496930742372ff30d4b"
-    sha256 cellar: :any,                 arm64_monterey: "5ac102a439b3bd585443706aa5007ea6de52bdcb51cd96492e19273bd5b6d3b4"
-    sha256 cellar: :any,                 arm64_big_sur:  "d1478ec957a2eb18150917f35dbe4dc808adb5d3844e62cda73cb77cade5113d"
-    sha256 cellar: :any,                 sonoma:         "582b89b2da681bba0c83a62d7930627d4a975b3a2974f9b94afc5f6e9469cd69"
-    sha256 cellar: :any,                 ventura:        "c21822111578c48341b68fab63d9859326a9e895a0c588716ab1da86fb21dc44"
-    sha256 cellar: :any,                 monterey:       "d45cc54c40cd65837b0d80f8807743cbd65397d074281a30d5f5cba12162f62a"
-    sha256 cellar: :any,                 big_sur:        "b42260ce3fd93089ae0fa86bc2353de252cfc0a746fa86d2aaf857d5d80bbf4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b156efac1e9c4f361210d9c4213c4e793e428a22d0d5dc65d9760be0c1b5096"
+    sha256 cellar: :any,                 arm64_sonoma:   "cdc40292261367e43efac7c65c58247c660b86cb6595c1e1fbe87b14b8545fb9"
+    sha256 cellar: :any,                 arm64_ventura:  "e8ed90e4eb662292f10163db48f4ef25aa70bc3a4b82a03b96b89ccd486f5013"
+    sha256 cellar: :any,                 arm64_monterey: "66fd4cd3620dd1df2e6a9bf651564d259f7c23905e8840dc234aabf413c1a5c5"
+    sha256 cellar: :any,                 sonoma:         "a563a1d8c3a123f233385e37fbe9069473e0647abcf00dd72ea82a9981f1fd2f"
+    sha256 cellar: :any,                 ventura:        "55f0f1a536630d5c7e77d0ceb992a036d5c256c8585ef1181a9b5639d82256fe"
+    sha256 cellar: :any,                 monterey:       "3965dc4c9d752cea518b063a113fdd16a41f74f93f4a413f7e8758567121d9f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba758eb783b257fb2bf928c55ef65877cb0d222687ded4913d3ec85b1afe759b"
   end
 
   depends_on "pkg-config" => :build

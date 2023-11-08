@@ -3,21 +3,19 @@ class LuaLanguageServer < Formula
   homepage "https://github.com/LuaLS/lua-language-server"
   # pull from git tag to get submodules
   url "https://github.com/LuaLS/lua-language-server.git",
-      tag:      "3.7.0",
-      revision: "d912dfc05636ca113eb074d637905f4b2514229d"
+      tag:      "3.7.1",
+      revision: "5a763b0ceecc9a817c8ce534dc726f5f6f6e1ac9"
   license "MIT"
   head "https://github.com/LuaLS/lua-language-server.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d5d4e5a7eed5f4b7ae5a2685e3029965174906d855fb4f96af6d5491c5e4e309"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eee868e27ee4a091b72e6245cbc1cac4a6543de2cbcbbfc33c6a62f0dc764392"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e5f7c9befde839be7de51d784e10e975b10a551eec57dfa678e8dea90a643bd5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "036f70fe0f14e926932df7b3339d5da5e416988f914fee83938fa0f9eb70d8f9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d0912bcb6a040c9445e5c183e1a4629b70bbedf0ffcc91167fc9c81f5b4381d9"
-    sha256 cellar: :any_skip_relocation, ventura:        "40a12ac0dd71b7ace79fcd5bfa739710bdd1b0d9909d7ba2e9df4439de857645"
-    sha256 cellar: :any_skip_relocation, monterey:       "e3b36c93e38c6ebaa0fa9811cc6fb9345275274613d043a51a335d3bf55ffef4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c151d26800f775db2987792320fbc4b004048723cf7d17709ff36e7f1b386a0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3301b708ee21ffde3628f191d7836eedc679dcbda1caf28c271a8ce132cff49"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8f2fc77dc7bcb363c83ff5d9cdf08aba3e89dd3a25ab34f64ad83ebf6b993afc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "62e893fe3193a9e7bc096da43380756665deeccc717502196f30d8a4ff88d51a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a3cfe0f0ae495e23c7b594989e2248755294674f391218dd9c4d1a89cba6a900"
+    sha256 cellar: :any_skip_relocation, sonoma:         "72939af59cd650fa171aa11d6b7e71748ad02f985b77c8098d01a9fcba65b012"
+    sha256 cellar: :any_skip_relocation, ventura:        "e2feed0a6fb967c3b8389fc48ed2bebbd882d40deddc35f0284096b2f9662e38"
+    sha256 cellar: :any_skip_relocation, monterey:       "ceb10baf0cd0a31c09325e22f841cb620e1ad6203a886e82a630f1ee7592cec8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8fa5f550e2f501bb37e6c3792da593d6dbe6a5b58c02ce44003980d0729be4a0"
   end
 
   depends_on "ninja" => :build

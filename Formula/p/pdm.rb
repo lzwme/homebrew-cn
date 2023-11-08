@@ -3,20 +3,19 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/10/6a/51f833b6dd9f4e65416c6b7b15c5ae9d8232d0cf58fc9bfeeb8dfe1c1120/pdm-2.10.0.tar.gz"
-  sha256 "ce2249595af9f61b0926a0899632df49b1c711261e8056a4fae14b53f93d9193"
+  url "https://files.pythonhosted.org/packages/f5/77/f55b2189a07e4e2cee44b08dcc37f6110cf2dec5ab9e588f7946ecafa57d/pdm-2.10.1.tar.gz"
+  sha256 "d166531c659fc4905933546544dd2e16cf648c2ba6d898c82126ad6a42117a81"
   license "MIT"
-  revision 1
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f18a087ed5a187059095ce4dd4622a327fe043d5768b99754f65d9275ec89c4f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ea0dbe866527868c3a4f485677d49adc85b7d26f29659bc84a29add727d163b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "95fce853c18c2a587a906c5a7d7f2636129134dba761a8a495522b6234170d61"
-    sha256 cellar: :any_skip_relocation, sonoma:         "eb400029840f815e6e5a8f90c46c6e526b335a871158d4cc3acba6aada8edc7a"
-    sha256 cellar: :any_skip_relocation, ventura:        "c2f54219686aee1e15f15b8d87a51d5e3aaa64c929b4dc2538fdd5ba15b34952"
-    sha256 cellar: :any_skip_relocation, monterey:       "0b32fccc5a8d59732cb1b7431f130099e6b33c403d6869bd22630e693f0a00e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e5525ff85c7ad068aa930ff0010fcbf1fc2d1af2ff875ae77b1d16d2f597a7c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "18774c0945f3a4b38f90fad5a433b3b3f68e79a7cce358fafc8a2adbc12f8d46"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c67a1e7da62378524dc64a9b314ab18a0d9e6c6147e6ad8412c902a49e000388"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ad09fe1c320fc68b90e9baf617c304fd88a5f182ead397db4e8f90cb6ba40603"
+    sha256 cellar: :any_skip_relocation, sonoma:         "661e90fa0e53ddc4f95c6ecd6682684d8ba9547763858505715481b977bf25e1"
+    sha256 cellar: :any_skip_relocation, ventura:        "c990731e9a03713dc5910a79fa87a1cda971ec98023b528e6a8043b40b7dfa93"
+    sha256 cellar: :any_skip_relocation, monterey:       "149a768cb9bbc2ceb210311eaa3447464a10c61c4c96e6323264b471b646ca72"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "44c437450da832ea55534135720ff2c57e2f70ee1f0975ac7a6d4369174d22d7"
   end
 
   depends_on "pygments"
@@ -27,8 +26,8 @@ class Pdm < Formula
   depends_on "virtualenv"
 
   resource "blinker" do
-    url "https://files.pythonhosted.org/packages/ea/96/ed1420a974540da7419094f2553bc198c454cee5f72576e7c7629dd12d6e/blinker-1.6.3.tar.gz"
-    sha256 "152090d27c1c5c722ee7e48504b02d76502811ce02e1523553b4cf8c8b3d3a8d"
+    url "https://files.pythonhosted.org/packages/a1/13/6df5fc090ff4e5d246baf1f45fe9e5623aa8565757dfa5bd243f6a545f9e/blinker-1.7.0.tar.gz"
+    sha256 "e6820ff6fa4e4d1d8e2747c2283749c3f547e4fee112b98555cdcdae32996182"
   end
 
   resource "cachecontrol" do
@@ -37,8 +36,8 @@ class Pdm < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
-    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
+    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
+    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
   resource "findpython" do
@@ -102,8 +101,8 @@ class Pdm < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/0d/07/d34a911a98e64b07f862da4b10028de0c1ac2222ab848eaf5dd1877c4b1b/tomlkit-0.12.1.tar.gz"
-    sha256 "38e1ff8edb991273ec9f6181244a6a391ac30e9f5098e7535640ea6be97a7c86"
+    url "https://files.pythonhosted.org/packages/9b/93/93f12cdd3b9da81e94f2435d01fe6b3e9edc7704a25d4ad260ce7906ca62/tomlkit-0.12.2.tar.gz"
+    sha256 "df32fab589a81f0d7dc525a4267b6d7a64ee99619cbd1eeb0fae32c1dd426977"
   end
 
   resource "truststore" do
@@ -122,8 +121,8 @@ class Pdm < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/a4/99/78c4f3bd50619d772168bec6a0f34379b02c19c9cced0ed833ecd021fd0d/wheel-0.41.2.tar.gz"
-    sha256 "0c5ac5ff2afb79ac23ab82bab027a0be7b5dbcf2e54dc50efe4bf507de1f7985"
+    url "https://files.pythonhosted.org/packages/fb/d0/0b4c18a0b85c20233b0c3bc33f792aefd7f12a5832b4da77419949ff6fd9/wheel-0.41.3.tar.gz"
+    sha256 "4d4987ce51a49370ea65c0bfd2234e8ce80a12780820d9dc462597a6e60d0841"
   end
 
   def install

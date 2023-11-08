@@ -2,21 +2,19 @@ class K9s < Formula
   desc "Kubernetes CLI To Manage Your Clusters In Style!"
   homepage "https://k9scli.io/"
   url "https://github.com/derailed/k9s.git",
-      tag:      "v0.27.4",
-      revision: "f4543e9bd2f9e2db922d12ba23363f6f7db38f9c"
+      tag:      "v0.28.0",
+      revision: "4bbdaec56d621503ffac743e4fe29037f96841bd"
   license "Apache-2.0"
   head "https://github.com/derailed/k9s.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3594b27fde50a1d15a297d8fd82f7df3c3e079d8da1687379b5b7413081c76ed"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0f0eab634ccffd0520bc096b29b0f2e4e41cd838b7dc54bc446ab87f96098b0d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a06cdc10cc636b46e35e7729a1fb35f722a8f51c787c3cef3aef7b03efad8e24"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7a97c1a861bc020d523e9c606bc77c15e9cc2e71334245f3da4edf12f8b086d5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c6fa96dee9728e746350fe5d7d50cf1989d961481ac57469ba19c8aad47e6355"
-    sha256 cellar: :any_skip_relocation, ventura:        "849252858d85f8f99ba5d930435dea66e2634f5facf6e30760f7fddf18dcca1b"
-    sha256 cellar: :any_skip_relocation, monterey:       "0d79e1232b503f977436a4c7970859204de4cfedac06cfa96294bac3a6d0865a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6ad0af28e4e9131245477728550b17001ef6e863bb6d11f5705407b8faf44047"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "440dafe23e099a97defb31ca8b7535c0afeda6f8b44979f888b8ac6ba438324c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3f70b3cc61045be1dcc1ba47336b5f5f95b28f005506677a274c95266c6f97a0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d92a04d35beeda7e06c7b09157ab3d80234c455876b5bbf3f85f71b21bafda4a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f4fa8f229a98858cfa693d3dbfea17d0181a50dcd3810fe0b9668ee776baa1a4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f1cb46ff4e380fe2449f888fc9ae9879e90fe9af658c89069ecf40a4c2c124fb"
+    sha256 cellar: :any_skip_relocation, ventura:        "15ed2cf623335659554387a7e2ee4f08b6891e3c767bc916189cf650c6b16184"
+    sha256 cellar: :any_skip_relocation, monterey:       "e398d3395b10aa4bcddb6adc844b9045bc98ce2f666171dd2a533a971c330425"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed586466e90411c475da94baef0a13dde24fa8a4e6a1d41859fb120b34865d7b"
   end
 
   depends_on "go" => :build

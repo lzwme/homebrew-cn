@@ -1,10 +1,9 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
   homepage "https://www.manticoresearch.com"
-  url "https://ghproxy.com/https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/6.0.4.tar.gz"
-  sha256 "5081f4f60152d041f14fdaf993f4cc67b127e76c970b58db9bc9532cd1325d8a"
+  url "https://ghproxy.com/https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/6.2.12.tar.gz"
+  sha256 "272d9e3cc162b1fe08e98057c9cf6c2f90df0c3819037e0dafa200e5ff71cef9"
   license "GPL-2.0-only"
-  revision 2
   version_scheme 1
   head "https://github.com/manticoresoftware/manticoresearch.git", branch: "master"
 
@@ -15,13 +14,13 @@ class Manticoresearch < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "382659914489e64dd2771386eec177c354dae58fe39d1079c412449129945a58"
-    sha256 arm64_monterey: "b56a169ed02a580e6ee0db4ce5733dd4834d2f2222b3f467516a674ccf5db566"
-    sha256 arm64_big_sur:  "3304df12246dc8a9f6d42326314d15a6b53868e861d19199b5fe03d0c7678a44"
-    sha256 ventura:        "f61a87c738bff32816b0603dfb4c436315460b67dbde81e2e59be44267167b6a"
-    sha256 monterey:       "f5ee8de69414f39de8115ee0c03a1b01b642a3de66e7bf2708f3d53dc0f6c637"
-    sha256 big_sur:        "4725718f3048471a5fb43c797896818e24a89b63b91ca719a5f04b6a202f8f23"
-    sha256 x86_64_linux:   "1f42805be6d88b8bff08136540e27bfd593115698506fa79e257f97ff3375725"
+    sha256 arm64_sonoma:   "88a7ac99768a0d8313b5b0b72e05cd57ba9cf6c84316048df817f55aeb4eba6d"
+    sha256 arm64_ventura:  "b03a8a5897c278984acbe7fc72fb609d49920ff764024f0c2d9714a147c4ed81"
+    sha256 arm64_monterey: "2a5d9e258f58f0c799a31cf4f90f380c0b8ad096ce2102ba3920feba585d983b"
+    sha256 sonoma:         "fa49091b7e8f66ff3c4753a4de19597f5bb3564eea08cd342cb69e49714a90d3"
+    sha256 ventura:        "d3c65a18ffe018ee3a9d2f21e21d01e9b14ccb4ef47441a7722180203e9a99be"
+    sha256 monterey:       "a389f2fc1d4e8091a9e06c40c72fcc985c7379d231cd5b648eb6087b61c646cb"
+    sha256 x86_64_linux:   "29c75ee74b81ea8872de55babf0de4193e7cc15c73703f5137ffe0f35d48bc0f"
   end
 
   depends_on "boost" => :build

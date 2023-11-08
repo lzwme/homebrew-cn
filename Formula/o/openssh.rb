@@ -13,13 +13,14 @@ class Openssh < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "c7c898f3a6e50afd94929e69c90201e7a9a7fc59485e8afe62eadc960b2f1c68"
-    sha256 arm64_ventura:  "7585270636197d459baf48faf639c328e85d01352edc497370ff0b54bf45ac2a"
-    sha256 arm64_monterey: "93a8b3176317e6667ad73f61e2c64273f8912321da40963d3b811d56f11678e9"
-    sha256 sonoma:         "4e429a6cfa9e3187f4ffe98940cb23c2b1206cdc868841ca22d74d189871b346"
-    sha256 ventura:        "66b7c6096a85751971fe424445921bf9bd1b46d2a1b66ae720e251b2e0be9733"
-    sha256 monterey:       "f2082c8e164cf19f7828098af5a4eeaf17dc92701c827c8701e450f3a95586f2"
-    sha256 x86_64_linux:   "b0429083dc9a4ff42256cb938becbf333343bf9790bf2e4664c8fdc5e60c1d00"
+    rebuild 1
+    sha256 arm64_sonoma:   "b50530ed5e22e2be7650edc28d8b94ba72f274ca73c828ff93fabe49efd47b71"
+    sha256 arm64_ventura:  "5b8d1bfebc8e8323bfd2363075d578ebbe63176276f1fcf3ee89fb85473bd3c5"
+    sha256 arm64_monterey: "624975ac10b48d802dabb883cd8c9e3465a3b0428ffb59cc243f38b8cf594c90"
+    sha256 sonoma:         "fb69dc459f50c70582ff14599bc8474ccdffe59e614080701e4edf5efdaee8f1"
+    sha256 ventura:        "fc6a1d4c76072c7dcc06e4090f8c3cf3aff7fdc9f9d051825c724e4b2015f026"
+    sha256 monterey:       "97a641b18430ea4bdf908f8b2ec802ed55ad7a12ffd0a0b026a3e243fb394260"
+    sha256 x86_64_linux:   "d3f190725051f8963f37c59cb868bde19b950397a0dc5d7ebd96977bcd18e522"
   end
 
   # Please don't resubmit the keychain patch option. It will never be accepted.
@@ -30,6 +31,7 @@ class Openssh < Formula
   depends_on "libfido2"
   depends_on "openssl@3"
 
+  uses_from_macos "mandoc" => :build
   uses_from_macos "lsof" => :test
   uses_from_macos "krb5"
   uses_from_macos "libedit"

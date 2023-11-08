@@ -8,16 +8,18 @@ class Csvkit < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a72fbb58f7d66c2fca28a7895bbfec05d6549beb08734a7d3045d3e65157b37b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b4803a89acd39feab7ec8393c8e2aeaff0c05fb8e158694179708a628dc41ce"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0c1338275f03f206661ae99f9196bffb9f6f55e7c8ff2db8cedd348b6798354b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "46c27e6a4b07712623a6f0f768f56b6b59f40f18253cc51ef42b533e28bd4278"
-    sha256 cellar: :any_skip_relocation, ventura:        "7c02b10381b42ee4994c471f230a56eeeb763fbb61f03245fad9db26b0658e80"
-    sha256 cellar: :any_skip_relocation, monterey:       "b29c964d0b89ac3fe0167960576f3442a095ef83dabaffa154627096b21a97c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42cd4c59d73f9dbcb0aecddff291a7aaa720b0707c0b5714e9dad4d4b04a3c08"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "97ee3801b05a0e37b1f14c6f52c607576c21312c18f7ecf780d033628dd96a93"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b6764e18f88804f322658408eaf415f41fdc2ad0769ac7c3715331e91d4847d8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b53c9154254e022e001ad2134ea0a63d4dd6cea5446fe14cdad8a8d04ced39a6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "30e5ce573d4bbe09c7f4e2cb79898131ba8a07cb39650a2344b07206190f0954"
+    sha256 cellar: :any_skip_relocation, ventura:        "bdacb9a6dd39e8aab58089b369776ec349a4e23d4314a5c3b07f48f4352fda96"
+    sha256 cellar: :any_skip_relocation, monterey:       "d9b0a8f84478acffea76489661a521a8e881b14ddc79ccf86f31e71708077b26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c3729a51afb8c010123fff0e7b8c4d82e4e8c3d6b6150b932dabfb795b764e1"
   end
 
   depends_on "python-pytz"
+  depends_on "python-typing-extensions"
   depends_on "python@3.12"
   depends_on "six"
 
@@ -104,11 +106,6 @@ class Csvkit < Formula
   resource "text-unidecode" do
     url "https://files.pythonhosted.org/packages/ab/e2/e9a00f0ccb71718418230718b3d900e71a5d16e701a3dae079a21e9cd8f8/text-unidecode-1.3.tar.gz"
     sha256 "bad6603bb14d279193107714b288be206cac565dfa49aa5b105294dd5c4aab93"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/1f/7a/8b94bb016069caa12fc9f587b28080ac33b4fbb8ca369b98bc0a4828543e/typing_extensions-4.8.0.tar.gz"
-    sha256 "df8e4339e9cb77357558cbdbceca33c303714cf861d1eef15e1070055ae8b7ef"
   end
 
   resource "xlrd" do

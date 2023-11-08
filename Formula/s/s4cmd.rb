@@ -10,27 +10,28 @@ class S4cmd < Formula
   head "https://github.com/bloomreach/s4cmd.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1ee35d4a4d11c4297df0b6bf56ff1448616960db0a3f0afbd67291b66c353e65"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0e2d3884cd5a992cd9423e76561be1e0de1fabaa724b7a7bfc2963fb6577b26"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5f5bdce73e592f7f2cab9b54e0d8b0b9540b4ebfb3419eee3ee5522c3ed8c2dd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8752f2baff2da9bcabc021c1d683ca543331ee3f0e01564c458e115b2cfaa026"
-    sha256 cellar: :any_skip_relocation, ventura:        "dd08c43715a3175b6e4f4a16111cf13e86f8848a58fad720bed8e5887d5d058d"
-    sha256 cellar: :any_skip_relocation, monterey:       "bf90beebe88af4bddecbdc0417c5f5d7ed19de6291717621b64f79081062ae47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "251decd2246f8d66a5aca060fcd18300ba378993e8f1a59292e362f74ae500ca"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2422fd3cfc7d26bf2d6a928c8200e5a492254d343b544ba18b5d1c81bef7c795"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "75185449973afa555ca68d183ac8f52ab55b6f071f017314b8b9199c9f83b2f2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6c50276fc8504006255a52c3850c386ef944bd96fa6f6dcc13faefa7788e268f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f9c671e266a8c7c20f255a10e2a339ec0ebbc24dac6e26e93695b37ec628c68e"
+    sha256 cellar: :any_skip_relocation, ventura:        "28cb5879f4d53c3f739f6e797fab6643f069ce539c44524eaea6c318e3b65c4c"
+    sha256 cellar: :any_skip_relocation, monterey:       "4039bac60900e575c917adabb32202ea14d9bca482992894796c2d46852a7bce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3577d2d77fe3ba4f379ecabb34aef8ea74b1f509c83072d24dbe7b6c06c4e101"
   end
 
   depends_on "python-pytz"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/42/56/633b5f5b930732282e8dfb05c02a3d19394d41f4e60abfe85d26497e8036/boto3-1.28.61.tar.gz"
-    sha256 "7a539aaf00eb45aea1ae857ef5d05e67def24fc07af4cb36c202fa45f8f30590"
+    url "https://files.pythonhosted.org/packages/32/e0/451d5ff97dd90376224ba54c6771ead856b020c74939d16f7923f88bc601/boto3-1.28.79.tar.gz"
+    sha256 "b8acb57a124434284d6ab69c61d32d70e84e13e2c27c33b4ad3c32f15ad407d3"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/05/2e/9cb8adca433af2bb6240514448b35fa797c881975ea752242294d6e0b79f/botocore-1.31.61.tar.gz"
-    sha256 "39b059603f0e92a26599eecc7fe9b141f13eb412c964786ca3a7df5375928c87"
+    url "https://files.pythonhosted.org/packages/64/4a/c4829451faaf9c7b670a4520864e6838bdbb7eec7b92450d879e4b8e4d1a/botocore-1.31.79.tar.gz"
+    sha256 "07ecb93833475dde68e5c0e02a7ccf8ca22caf68cdc892651c300529894133e1"
   end
 
   resource "jmespath" do
@@ -49,8 +50,8 @@ class S4cmd < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/dd/19/9e5c8b813a8bddbfb035fa2b0c29077836ae7c4def1a55ae4632167b3511/urllib3-1.26.17.tar.gz"
-    sha256 "24d6a242c28d29af46c3fae832c36db3bbebcc533dd1bb549172cd739c82df21"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

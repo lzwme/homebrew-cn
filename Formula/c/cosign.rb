@@ -2,21 +2,19 @@ class Cosign < Formula
   desc "Container Signing"
   homepage "https://github.com/sigstore/cosign"
   url "https://github.com/sigstore/cosign.git",
-      tag:      "v2.2.0",
-      revision: "546f1c5b91ef58d6b034a402d0211d980184a0e5"
+      tag:      "v2.2.1",
+      revision: "12cbf9ea177d22bbf5cf028bcb4712b5f174ebc6"
   license "Apache-2.0"
   head "https://github.com/sigstore/cosign.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9f662d607140e4e4a883d47f5a77d570de6b912540578f1b6512723619eefe26"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f6f218b52b221290281f129a82bf097737fb638dfa28d47364cc643287471011"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "78dbd9f5066f6898e8581f478d9a5c2ac2e4dfa34f40e24d8b6e743b2dedfc04"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "eb70234f9a49d90e345dfce140f8d3eb9d0642f80d58617128c3c7799dcd0409"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cdea92b3ea94a19094c5a0605f708237e7849d5621bd39fc244c2f33cd72b712"
-    sha256 cellar: :any_skip_relocation, ventura:        "a90ca99b1c53a31f5fb255e2740f7d5bb00996fb2f846e88752a2ec2128044b0"
-    sha256 cellar: :any_skip_relocation, monterey:       "f9132375db866516d17fa2cdf4d227bea7ffddd710d2480d9a2bcb2557f50769"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1d877474cc3ef3cc62c321676239a52c35f152a32759216c9c867beb81072e95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3aab23466f98590e0a353a3da2cd837b1c1d67e8d3540f7fca0882622457df53"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0cb4c26782bb2461ae1c5663e0039570341e02597fa323584f2ea69e19578bd7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a4269e3c4429ce1700057a9dfd10a61d4558c30f25d668b1740efda22bad786a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1547269d20758ac24bc03f6e899326a97b7b26f0757f88f9a01a08f4cc2f47a9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8cd63572bdb9b39260ed783b6ea0d13674d9e923ebbe4376f00fe6b1e263984b"
+    sha256 cellar: :any_skip_relocation, ventura:        "7a6da3b1a9f28d3bbf560b9c148a6a7386bfcdd0aee998cede6451ae2c6249cd"
+    sha256 cellar: :any_skip_relocation, monterey:       "eed5d0a6be5f2f227df044fc85618ab01a78f62ffea35e88dfd4db5562aa161e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8ef6c8273fb0667fa31332c1520e92a2a05db190548e1b829d6cc590912007f"
   end
 
   depends_on "go" => :build

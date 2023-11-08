@@ -10,19 +10,21 @@ class SlitherAnalyzer < Formula
   head "https://github.com/crytic/slither.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ee26b5cc30a0e66eaab8a109f92a3fe2e2d9357de6055674cbe7d64f33777a50"
-    sha256 cellar: :any,                 arm64_ventura:  "df077dc9168d9c3b5c8463f62bf0b00c9b9be9da2700a3cb0a537daee206da73"
-    sha256 cellar: :any,                 arm64_monterey: "46c2a94fb1798dbfd445ed7b94dec22f1deddd4a3e5e72f5843073acda339eb2"
-    sha256 cellar: :any,                 sonoma:         "7b1cd63b50af448d83a1396c648de7a1890223e62bb2c6bea31221ea8621af73"
-    sha256 cellar: :any,                 ventura:        "2653243dc1c6ced4d1f249d74c38dfea928f94c1e671916f17e873dff60d3706"
-    sha256 cellar: :any,                 monterey:       "9ef88c8fae12eec2f6549c12b98f02c5d05dc1f776ca099a172f489ba9952a18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59e9d9a132c77171107f1a73190ab5ba6c94edf100fcb38dc0ae3a74811da358"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "26dfb7391757a60a655ae02ab551da1d2506a6fc0c6a94a2be530a85523428bb"
+    sha256 cellar: :any,                 arm64_ventura:  "5d5cde15a8b57cbb6444bc0303b29a9c87e6c7a2381e13ce8204b034ea824631"
+    sha256 cellar: :any,                 arm64_monterey: "6845f2cd92db511bd2dc37baee146c8fda3969aae3f1c2b69888e9a2b51a7bda"
+    sha256 cellar: :any,                 sonoma:         "716eb398ca5e1eb047525a68532b181a549ead6075f265d7ab5157493d7d08a7"
+    sha256 cellar: :any,                 ventura:        "5f532b7e4a31c880194ca8e45a00235d5065772d7aeb47db856041f4fa3cb634"
+    sha256 cellar: :any,                 monterey:       "b0c26d1ab91fae62c6e2d13254daec22da0695c6cd5e5cb4536976994521b01e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9044f67cf69430ff8c4744dda5e7af25e71c9f07b81b52ae5e8a8b24a4546b3"
   end
 
   depends_on "rust" => :build # for rpds-py
   depends_on "crytic-compile"
   depends_on "python-certifi"
   depends_on "python-packaging"
+  depends_on "python-typing-extensions"
   depends_on "python@3.12"
   depends_on "solc-select"
 
@@ -190,11 +192,6 @@ class SlitherAnalyzer < Formula
   resource "toolz" do
     url "https://files.pythonhosted.org/packages/cf/05/2008534bbaa716b46a2d795d7b54b999d0f7638fbb9ed0b6e87bfa934f84/toolz-0.12.0.tar.gz"
     sha256 "88c570861c440ee3f2f6037c4654613228ff40c93a6c25e0eba70d17282c6194"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/1f/7a/8b94bb016069caa12fc9f587b28080ac33b4fbb8ca369b98bc0a4828543e/typing_extensions-4.8.0.tar.gz"
-    sha256 "df8e4339e9cb77357558cbdbceca33c303714cf861d1eef15e1070055ae8b7ef"
   end
 
   resource "urllib3" do

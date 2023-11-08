@@ -1,8 +1,8 @@
 class Xapian < Formula
   desc "C++ search engine library"
   homepage "https://xapian.org/"
-  url "https://oligarchy.co.uk/xapian/1.4.23/xapian-core-1.4.23.tar.xz"
-  sha256 "30d3518172084f310dab86d262b512718a7f9a13635aaa1a188e61dc26b2288c"
+  url "https://oligarchy.co.uk/xapian/1.4.24/xapian-core-1.4.24.tar.xz"
+  sha256 "eda5ae6dcf6b0553a8676af64b1fd304e998cd20f779031ccaaf7ab9a373531a"
   license "GPL-2.0-or-later"
   version_scheme 1
 
@@ -12,18 +12,16 @@ class Xapian < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7e02d698795533d2fc00d8bdcb5e7c1e299153dd050b663e9d8f0dd804a8f940"
-    sha256 cellar: :any,                 arm64_ventura:  "964bcaecbc86ffc7a83bf1f51b2f80f860a2936cdecdf99aaf101f866689c26d"
-    sha256 cellar: :any,                 arm64_monterey: "71a995c4879a0c0cc02a6615de1e585d54d4b6fb95c2666b3e73f06ffb469b3b"
-    sha256 cellar: :any,                 arm64_big_sur:  "4d76db4f93a0d4bfc8697dcc6d946d045c21da7b3abd4d09225649a714ec0cbc"
-    sha256 cellar: :any,                 sonoma:         "45fd9e64ee86dc7256c954d15cb540b36a41da5486bf416218340ab7cfddff69"
-    sha256 cellar: :any,                 ventura:        "b38555358adf041578b80fe2bbfe2e7a6783362394e6aa94eebd9eed1a92176d"
-    sha256 cellar: :any,                 monterey:       "dc235c003c6c9d47846d34e91f1808b94e2eaf92067ec714a8e94d525f88111c"
-    sha256 cellar: :any,                 big_sur:        "1067cab11ff4ce022d78040b1ec29228075496a67fb0e593bb1a791bad5e45b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b22baed91ec43e7de0d55aabbc5fe9820a266d872be5453393f302726e6ec4c"
+    sha256 cellar: :any,                 arm64_sonoma:   "bcba507d3df7d2f760f14ac6e9e7c3267d018aea8ff253a43e8079aeb53dc1b9"
+    sha256 cellar: :any,                 arm64_ventura:  "c65d6bec3f6b4cf34d1e443c8378f91b0075a55c05afaf5b9ea4d4d1927f477b"
+    sha256 cellar: :any,                 arm64_monterey: "9ae46890756661b50abb01882b18accf52343006d3530d18e4d504dc350d4f9d"
+    sha256 cellar: :any,                 sonoma:         "573b6ac05eac13c1b686bb1f1ee58ca07d720277181ca7b155e4f5157572c21b"
+    sha256 cellar: :any,                 ventura:        "7260ce2a63dc21c39a3a8764c011ab3c155025bd2015c111a9a08de5b3406f92"
+    sha256 cellar: :any,                 monterey:       "8d20ed8c0da9ae9d6035bf2f4577eb99432103d6ca5a5d89d30701ddd0c61d16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02fb04af41c95cb3820c2b284da4dabc1c68b68d4c540232c32fe64eb2a00182"
   end
 
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "sphinx-doc" => :build
 
   uses_from_macos "zlib"
@@ -46,7 +44,7 @@ class Xapian < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

@@ -4,16 +4,17 @@ class Mfem < Formula
   url "https://ghproxy.com/https://github.com/mfem/mfem/archive/refs/tags/v4.6.tar.gz"
   sha256 "250bb6aa0fd5f6a6002c072d357656241ed38acfc750e43e87d8c36a8f8a4b4f"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/mfem/mfem.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "292fbde591e849f8ab68227d2ce11c2413eb50b7aabde23023664a94bd1dde3b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9346ba1c03ecd5af2ff25d86913786d604b9b89b8306b47319f82e63b78f44b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "82f356f2539c0be8cbda5f3e3cdbfe2341f36d27ccc9740983e929259da95ede"
-    sha256 cellar: :any_skip_relocation, sonoma:         "35d380c43b1b58588d7e39fdf17abcd1a9701fd2c42e6e28387a6cdc0f11ab58"
-    sha256 cellar: :any_skip_relocation, ventura:        "f8ba072821194be67e0c5df9f75d327ea8bb41be7e62354cf98eac03c532785c"
-    sha256 cellar: :any_skip_relocation, monterey:       "2b3f5d26158cc7086905036a770a2e240140433f1929f90700dc119c0f4f2c0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a55f727fbf719d8fb9f746dc38f0881e8aea1ddc7cba8cac6b0c58f1b8e75b0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "62ff9733940e031a023deaba54716e3800d9ed9187d21e10407a15c7ea69a584"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4f1e1b59d02c77596d197c89a2871e23b0b9049791b2ea2a5b90926a4d896f34"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d029b6df96209a1fa21b25fc316375f0ab579e6f98abbbd4b51e04296d7c4669"
+    sha256 cellar: :any_skip_relocation, sonoma:         "47f92f4c919705628ebd66af6f37ca796fa29093a27220fc5343594be8f9279f"
+    sha256 cellar: :any_skip_relocation, ventura:        "969ce230ca46647d1a2ae906f22ad906ef4d9c7cb336712489defb8476de97cd"
+    sha256 cellar: :any_skip_relocation, monterey:       "9a68a845acc55b825a4fe7c26260d864e8477c35e500e9ce8ea94f9655ed9877"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "415a1c62d6854e17058a8db000ef97a62da5f0c4b5823146400391869706dce6"
   end
 
   depends_on "cmake" => :build

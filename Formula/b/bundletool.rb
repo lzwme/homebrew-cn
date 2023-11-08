@@ -1,18 +1,18 @@
 class Bundletool < Formula
   desc "Command-line tool to manipulate Android App Bundles"
   homepage "https://github.com/google/bundletool"
-  url "https://ghproxy.com/https://github.com/google/bundletool/releases/download/1.15.5/bundletool-all-1.15.5.jar"
-  sha256 "0ebac88764e16b2154aa7506187917d169959338ad9d510e3174bcc96c9d0f40"
+  url "https://ghproxy.com/https://github.com/google/bundletool/releases/download/1.15.6/bundletool-all-1.15.6.jar"
+  sha256 "38ae8a10bcdacef07ecce8211188c5c92b376be96da38ff3ee1f2cf4895b2cb8"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c51a6e1addbac32737fc9a66681ff773261095e5e675a951aa496e151ec47fd9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c51a6e1addbac32737fc9a66681ff773261095e5e675a951aa496e151ec47fd9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c51a6e1addbac32737fc9a66681ff773261095e5e675a951aa496e151ec47fd9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c51a6e1addbac32737fc9a66681ff773261095e5e675a951aa496e151ec47fd9"
-    sha256 cellar: :any_skip_relocation, ventura:        "c51a6e1addbac32737fc9a66681ff773261095e5e675a951aa496e151ec47fd9"
-    sha256 cellar: :any_skip_relocation, monterey:       "c51a6e1addbac32737fc9a66681ff773261095e5e675a951aa496e151ec47fd9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbd08229dcc79dc71e217b4178e712a3f2899f7087a0ca91ea707ecaf49e07ee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f220b43e7cc35d4d81c96f83e0a4df119b7844056564920c2fa05eabc0aa8439"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f220b43e7cc35d4d81c96f83e0a4df119b7844056564920c2fa05eabc0aa8439"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f220b43e7cc35d4d81c96f83e0a4df119b7844056564920c2fa05eabc0aa8439"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f220b43e7cc35d4d81c96f83e0a4df119b7844056564920c2fa05eabc0aa8439"
+    sha256 cellar: :any_skip_relocation, ventura:        "f220b43e7cc35d4d81c96f83e0a4df119b7844056564920c2fa05eabc0aa8439"
+    sha256 cellar: :any_skip_relocation, monterey:       "f220b43e7cc35d4d81c96f83e0a4df119b7844056564920c2fa05eabc0aa8439"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ea62556f28c7b01f47b806d11d78f79ffbd2f647c4e187a8b04eff692f51685"
   end
 
   depends_on "openjdk"
