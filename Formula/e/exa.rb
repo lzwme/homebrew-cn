@@ -7,11 +7,6 @@ class Exa < Formula
   revision 2
   head "https://github.com/ogham/exa.git", branch: "master"
 
-  livecheck do
-    url :stable
-    strategy :github_latest
-  end
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sonoma:   "d99ebf95ff1080b152f3ea15631987f6203cbffb9766f5585cf3ca5695626936"

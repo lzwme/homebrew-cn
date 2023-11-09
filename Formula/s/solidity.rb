@@ -1,8 +1,8 @@
 class Solidity < Formula
   desc "Contract-oriented programming language"
   homepage "https://soliditylang.org"
-  url "https://ghproxy.com/https://github.com/ethereum/solidity/releases/download/v0.8.22/solidity_0.8.22.tar.gz"
-  sha256 "f4beee1ec28abcf5e844c93b0f2b46133437eb0736024a9b6b0742a6078c0726"
+  url "https://ghproxy.com/https://github.com/ethereum/solidity/releases/download/v0.8.23/solidity_0.8.23.tar.gz"
+  sha256 "cce2c489ba0e29a5c37cc58bd3b3621d996658ffc78c6be8e75f744698068239"
   license all_of: ["GPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0", "CC0-1.0"]
 
   livecheck do
@@ -11,13 +11,13 @@ class Solidity < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d233da0a2c56188bf6808fba5046183e1a5887dc6db51488bda798caa2f2b9a2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "523265adfec9b24050d3b6e2240e51fc43d5098798106a5574f8f684bd1c46f3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1ad524465e81ab0b843dbcc0a626aa377f265ce4913bd80ca002bb3c99d18248"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ae788f35a9d52064fa3aead0eb0a567bee0cdb8bed719c2e26c2c650c9867231"
-    sha256 cellar: :any_skip_relocation, ventura:        "3eccf79a4bb6bf0b5d7d4e287b0875455cbf316275b4bb35f4cf2eb3dfaf80b9"
-    sha256 cellar: :any_skip_relocation, monterey:       "4ae810bbba3979e2d380b2132baa384c2aee79a0c9c59afc8ff490f1a5687046"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "449fbaf8c7362b46874a0f0653d092b00b7b502cd89c816f43d7d735ce406c98"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf41ebaf0239c267516e61cacb2f448c4e6ce92e31bd6113ec1c8cda6200a17f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "11a03dcae36a7f39e2e132bba0551a0664c9ff60bfa452c8afc0c6e8056d4a71"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c289ebd7e11c62cd34156a8252c58c8f505d850ae9f38a5bc7014e766bc9cac"
+    sha256 cellar: :any_skip_relocation, sonoma:         "87961638ce35dbd517111606c58cf766040f1ec54eb34454531a42ee00fb3f3f"
+    sha256 cellar: :any_skip_relocation, ventura:        "bfcbc97ddd6cf739b2ab3eceac154f98b5596898e39e1caf19b750b330924249"
+    sha256 cellar: :any_skip_relocation, monterey:       "0c7115c22b33cc4d077f1dc87433529fe582dfa894eb5e8a4a10c406b7d612e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52bc28a4c457f84ad5e07a8a7c759f41e2718cd49102e983c68aec210804e29f"
   end
 
   depends_on "cmake" => :build

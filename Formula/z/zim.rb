@@ -2,12 +2,13 @@ class Zim < Formula
   desc "Graphical text editor used to maintain a collection of wiki pages"
   homepage "https://zim-wiki.org/"
   url "https://ghproxy.com/https://github.com/zim-desktop-wiki/zim-desktop-wiki/archive/refs/tags/0.75.2.tar.gz"
-  sha256 "7f7a21a37c3f81c4c52f3712573b2a67279f16cf81870155532c3d33678657f0"
+  sha256 "79d20946d2c51fb1285b8a80b8afedb39402d6e4f1349ebe4be945318f275493"
   license "GPL-2.0-or-later"
   head "https://github.com/zim-desktop-wiki/zim-desktop-wiki.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "05e3421ed1bd3fa9d8c285e6fa8c1d5fb06c70ccf83429dec8ce3fc411028c82"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "2a4540798783567312cf13df45741f747e95e46a7e2e57f2b37d524acb5f62b5"
   end
 
   depends_on "pkg-config" => :build
@@ -16,7 +17,7 @@ class Zim < Formula
   depends_on "gtk+3"
   depends_on "gtksourceview3"
   depends_on "pygobject3"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "pyxdg" do
     url "https://files.pythonhosted.org/packages/b0/25/7998cd2dec731acbd438fbf91bc619603fc5188de0a9a17699a781840452/pyxdg-0.28.tar.gz"
@@ -24,7 +25,7 @@ class Zim < Formula
   end
 
   def install
-    python3 = "python3.11"
+    python3 = "python3.12"
     site_packages = Language::Python.site_packages(python3)
     ENV.prepend_create_path "PYTHONPATH", libexec/site_packages
     resource("pyxdg").stage do

@@ -1,18 +1,18 @@
 class Bedtools < Formula
   desc "Tools for genome arithmetic (set theory on the genome)"
   homepage "https://github.com/arq5x/bedtools2"
-  url "https://ghproxy.com/https://github.com/arq5x/bedtools2/archive/refs/tags/v2.31.0.tar.gz"
-  sha256 "8a88e9433cad4cfc4269d45acbc820c41a333a965b59ce42d81d925422d1a026"
+  url "https://ghproxy.com/https://github.com/arq5x/bedtools2/archive/refs/tags/v2.31.1.tar.gz"
+  sha256 "79a1ba318d309f4e74bfa74258b73ef578dccb1045e270998d7fe9da9f43a50e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4d3e127abd1e657e10f7ccf6272c33297dd2c6c7db41ea6530061de42797e072"
-    sha256 cellar: :any,                 arm64_monterey: "3aad51926581a91abd4d894ce98a800b3cbd584d3938f81484ffc297162de8e9"
-    sha256 cellar: :any,                 arm64_big_sur:  "d055a492f1ff9106e4180affe304f2d0f82cdb13d1a732f2c8e5c4e3f541a494"
-    sha256 cellar: :any,                 ventura:        "9d7eeaa7d94215ac91ca574a26b9aa7420ac4d3bcfa10c5733a9d3dcf58e6124"
-    sha256 cellar: :any,                 monterey:       "e21ccaac7d8b125f8b2b2a2660a2dd05e75064fe9834cd03eda9911bf7c006dd"
-    sha256 cellar: :any,                 big_sur:        "fdefdfe979c0f75b84e8425fd95b7ea3cb3e3f7bddb0a03c96489dd1a7b26971"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10e94997135138c50255614b0abc6cf79814ab861aa4114a3894212ab133e336"
+    sha256 cellar: :any,                 arm64_sonoma:   "6b96362dc4065246cfd8a311991b81b13d1901feb8edd5db27c2911b47432f00"
+    sha256 cellar: :any,                 arm64_ventura:  "31c196dcf1892f9a483abacfe84ed3922e09842d27c396880657fafd2dc98c52"
+    sha256 cellar: :any,                 arm64_monterey: "ad11f55f0de575280f25dea508fb8096bb80b4f1029cb1c0c7f8d88e81a0f4bb"
+    sha256 cellar: :any,                 sonoma:         "99cb51ae62edfdd1f194fc1baf75c1133e061db3ca260f0699967ab421d5b015"
+    sha256 cellar: :any,                 ventura:        "651f6403baaf21f1a9d3ee1735820d034896e6bbe74fa8c8e0ce0723ecbe3535"
+    sha256 cellar: :any,                 monterey:       "4637c3326795fef57d614b6107fa563a767ecd779d32da27103a6f92e7e1f286"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16348989a791c74aa29f518072b2e696bca7c5818806dfae80ec2bec341d0af1"
   end
 
   depends_on "xz"

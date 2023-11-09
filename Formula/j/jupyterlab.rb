@@ -9,15 +9,16 @@ class Jupyterlab < Formula
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a0226a713e6c65697e91293969995b4bab0e775bc71e8cece1c2be4caf4f5e37"
-    sha256 cellar: :any,                 arm64_ventura:  "391bee72f9043176ef658f04157b5d837a15dd105ad85cad1eb755461dda7c51"
-    sha256 cellar: :any,                 arm64_monterey: "b2cf55212fae43d52e45707ca7085205857bcf2971ca9b903d392766c7a95c5d"
-    sha256 cellar: :any,                 sonoma:         "9b358988a591b358d993aca43ba090adb1101e7fc9066089239f2170a1bd73ef"
-    sha256 cellar: :any,                 ventura:        "b6d78a2a4488c48a21f36aa62514d64c5e37df268afe62a2b6eec6e6c5b29659"
-    sha256 cellar: :any,                 monterey:       "1e469f9aa13fd7ebb6aef249b6dae00904646e6abadf8a160571087a9cc1ee7c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "60bcf5aa5ac92860dd714cd9e7955424a720ddbd6ed31c8b815d28bf6464e14c"
+    sha256 cellar: :any,                 arm64_sonoma:   "aba880a46b25a953134efbdcc43b9ccd097a906fd2709f8fbe2aa4d6724a958c"
+    sha256 cellar: :any,                 arm64_ventura:  "f49c730ae5dc6ff81f86790288189b456911b68ea5f94a486be5042fb66e739c"
+    sha256 cellar: :any,                 arm64_monterey: "66c311e9951d3e4238d7aa498f8bfb842d1f99af7d3e54c4ead59081c1d7504d"
+    sha256 cellar: :any,                 sonoma:         "713f611c67e379221eafc6a9e995bb1a5acb0ad00185ea7bba2d8e79585b77bd"
+    sha256 cellar: :any,                 ventura:        "497fad7bd5b0d94a92bb46170a5e4df847b3e14d7b830ce2ef3aacd135d54d25"
+    sha256 cellar: :any,                 monterey:       "c77e416c05cac13067d5944588aa4f9f7a4c27d886bd2d6c992f549fd4185e84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5139102f45d30c9ad5844b5705f04dfd550c2a4ffd0382283ccb6536fac1ff26"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -31,7 +32,7 @@ class Jupyterlab < Formula
   depends_on "python-lsp-server"
   depends_on "python-packaging"
   depends_on "python-psutil"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
   depends_on "zeromq"
@@ -361,7 +362,7 @@ class Jupyterlab < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

@@ -5,11 +5,6 @@ class NodeAT16 < Formula
   sha256 "576f1a03c455e491a8d132b587eb6b3b84651fc8974bb3638433dd44d22c8f49"
   license "MIT"
 
-  livecheck do
-    url "https://registry.npmmirror.com/-/binary/node/"
-    regex(%r{href=["']?v?(16(?:\.\d+)+)/?["' >]}i)
-  end
-
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sonoma:   "27070fb9275d5dd1d4bf816659705acc1048ff947a30cc6b0816900d198fab69"

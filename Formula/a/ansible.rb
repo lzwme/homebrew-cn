@@ -6,16 +6,17 @@ class Ansible < Formula
   url "https://files.pythonhosted.org/packages/50/d4/97b8f6d10c6881c161d8677850062c9d8d4838ef8a491f34779c12253278/ansible-8.6.0.tar.gz"
   sha256 "95f4e593274d59d53f36f62207535b7d272adc2701ac7a0ed7af6a6d81637a60"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7a20336d5e5e91f138640f6cc1ad9a88f1082d6f4e8436406d0294e4ce96c284"
-    sha256 cellar: :any,                 arm64_ventura:  "17d6447a2bcc59f5a257b67467216386d3d4c78398664fd98f0acc3f2548fdd6"
-    sha256 cellar: :any,                 arm64_monterey: "3fb958f7ae3391565d6fc310dd1cf22ba789ac8adcf448d9899d1381e0c113fc"
-    sha256 cellar: :any,                 sonoma:         "660afcf64a22e14ebb2dc17a13f7b47761e583530a4a009c973a8fbd1519f0ed"
-    sha256 cellar: :any,                 ventura:        "10ca5012bb985ebf00426512bb90494b5a8456bd3c880ad9703681472c74bb2a"
-    sha256 cellar: :any,                 monterey:       "8e9339db55b78220cc9daa7095372c3cd0dc23a6ebfc9fca88f5059b48cc29ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d8d58e56d5a0bdb3ad78cfd2a796cee7ba5309115f3c1734654035a006c180e"
+    sha256 cellar: :any,                 arm64_sonoma:   "b98cb8b8d7247e17766e06606b585ba6e9c359d67e45d7a028b904f65ef299be"
+    sha256 cellar: :any,                 arm64_ventura:  "b9f73acd999ba6e5615d5bc94a3fb653c200579a0c135540a279cb2cc25a7b12"
+    sha256 cellar: :any,                 arm64_monterey: "a9e14a45159d0b43f0a5e2bc2b35b577de5e333e31b6f2ec6a53d8d6bed320ad"
+    sha256 cellar: :any,                 sonoma:         "095babb3d5033d142517f091fde8817d0a5646d42334483849824a92496deb33"
+    sha256 cellar: :any,                 ventura:        "4b88bfe6a09423132f5b8ee660d80cc7f994ba6c2c7b1ebb71b542e1350b42f3"
+    sha256 cellar: :any,                 monterey:       "3576102dbf1e38c98e335c8cbc6896ea4ef4555750f679cde4d688db4f274b66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b348c3b1b4620c2ab0da1569b63a18745028854dd672bc58e832f7f1d9d2af70"
   end
 
   # `pkg-config` and `rust` are for bcrypt
@@ -29,7 +30,7 @@ class Ansible < Formula
   depends_on "python-markupsafe"
   depends_on "python-packaging"
   depends_on "python-pytz"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
@@ -191,8 +192,8 @@ class Ansible < Formula
   end
 
   resource "ncclient" do
-    url "https://files.pythonhosted.org/packages/ee/6f/ef2796c82d097dbead1b804db8457fc8fdc244e3d6860eb0a702315dbf67/ncclient-0.6.13.tar.gz"
-    sha256 "f9f8cea8bcbe057e1b948b9cd1b241eafb8a3f73c4981fbdfa1cc6ed69c0a7b3"
+    url "https://files.pythonhosted.org/packages/6d/db/887f9002c3e6c8b838ec7027f9d8ac36337f44bcd146c922e3deee60e55e/ncclient-0.6.15.tar.gz"
+    sha256 "6757cb41bc9160dfe47f22f5de8cf2f1adf22f27463fb50453cc415ab96773d8"
   end
 
   resource "netaddr" do
@@ -500,21 +501,28 @@ class Ansible < Formula
     sha256 "84e64a1c28cf7e91ed2078bb8cc8c259cb19b76942096c8d7b84947690cabaf0"
   end
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    venv = virtualenv_create(libexec, "python3.11")
-    # Install all of the resources declared on the formula into the virtualenv.
-    resources.each do |r|
-      # ansible-core provides all ansible binaries
-      if r.name == "ansible-core"
-        venv.pip_install_and_link r
-      else
-        venv.pip_install r
-      end
-    end
+    venv = virtualenv_create(libexec, python3)
+    skipped = %w[ansible-core junos-eznc]
+    venv.pip_install resources.reject { |r| skipped.include? r.name }
     venv.pip_install_and_link buildpath
 
     resource("ansible-core").stage do
-      man1.install Pathname.glob("docs/man/man1/*.1")
+      # Add python3.12 to interpreters. Remove in ansible-core 2.16+
+      inreplace "lib/ansible/config/base.yml", "default:\n  - python3.11", "default:\n  - python3.12\n  - python3.11"
+      venv.pip_install_and_link Pathname.pwd
+    end
+
+    # Support python3.12. Remove when fixed upstream.
+    # https://github.com/Juniper/py-junos-eznc/issues/1276
+    resource("junos-eznc").stage do
+      inreplace "setup.py", "version=versioneer.get_version(),", "version='#{resource("junos-eznc").version}',"
+      inreplace "setup.py", "cmdclass=versioneer.get_cmdclass(),", "#cmdclass=versioneer.get_cmdclass(),"
+      venv.pip_install Pathname.pwd
     end
   end
 
@@ -530,7 +538,7 @@ class Ansible < Formula
     EOS
     (testpath/"hosts.ini").write [
       "localhost ansible_connection=local",
-      " ansible_python_interpreter=#{Formula["python@3.11"].opt_bin}/python3.11",
+      " ansible_python_interpreter=#{which(python3)}",
       "\n",
     ].join
     system bin/"ansible-playbook", testpath/"playbook.yml", "-i", testpath/"hosts.ini"

@@ -3,9 +3,10 @@ class Black < Formula
 
   desc "Python code formatter"
   homepage "https://black.readthedocs.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/36/bf/a462f36723824c60dc3db10528c95656755964279a6a5c287b4f9fd0fa84/black-23.10.1.tar.gz"
-  sha256 "1f8ce316753428ff68749c65a5f7844631aa18c8679dfd3ca9dc1a289979c258"
+  url "https://files.pythonhosted.org/packages/ef/21/c2d38c7c98a089fd0f7e1a8be16c07f141ed57339b3082737de90db0ca59/black-23.11.0.tar.gz"
+  sha256 "4c68855825ff432d197229846f971bc4d6666ce90492e5b02013bcaca4d9ab05"
   license "MIT"
+  revision 1
   head "https://github.com/psf/black.git", branch: "main"
 
   livecheck do
@@ -14,21 +15,21 @@ class Black < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b6cec84275d7c4c8e723eed17b9383e67d9dd772277dafbe0756d93275d49cab"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eda39f9107096413af32368fcd97b7c6103498c93e2db8a1f670dcf1e0eea58d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "506f7146040c7daf0246b228c4355235af9fe9440ff2002431424d54101417fa"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9417b23112d44670f5b3409ae5291a478fd528a882d366bcfd2c8da9acea8dd4"
-    sha256 cellar: :any_skip_relocation, ventura:        "bd8bfd5dbc92551173bd4dd5b317d602d69a55e10ed8dd857f786ef8b07e65ce"
-    sha256 cellar: :any_skip_relocation, monterey:       "9cd8e30290debeba842f03aaeacf2d8b724f550583211d9ee553f503109fa998"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8a9397030beccea90e62c09a0800d7d1e62e9446fa4145ca749690fdbf31c66"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2608211fdd65bea3a47fad9335a19acca8311a939d117f52b1bfc64c3fe69e49"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6d32eb30be1b99a80c86f16872939407588166ab2c6d9edc263687a77ceb4cf5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2098d4c41a15f67826a6f3672a18ddc3da05a6824d8633c0b33f7e579e45f4ee"
+    sha256 cellar: :any_skip_relocation, sonoma:         "588bad2e13232aa268a1986028f926cbf762b9537c69a017404c967a94813a5c"
+    sha256 cellar: :any_skip_relocation, ventura:        "f89c6a9d617f52653bd321b5b5a7493ef7ad4945243a7b16b3531bbf70587173"
+    sha256 cellar: :any_skip_relocation, monterey:       "5026e9f2a9338f0d9a1438f43b443cb2f23696d893159e29f32e3ccea9a1ca63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "afa67780cba8a50b20176fe660e7db606fe9389e73e308b2dc024713f8b77338"
   end
 
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/fd/01/f180d31923751fd20185c96938994823f00918ee5ac7b058edc005382406/aiohttp-3.8.6.tar.gz"
-    sha256 "b0cf2a4501bff9330a8a5248b4ce951851e415bdcce9dc158e76cfd55e15085c"
+    url "https://files.pythonhosted.org/packages/c4/50/a717a133bda2efc27efbf8a65398c925b6d0605213da0db6929627ccb758/aiohttp-3.9.0b0.tar.gz"
+    sha256 "cecc64fd7bae6debdf43437e3c83183c40d4f4d86486946f412c113960598eee"
   end
 
   resource "aiosignal" do
@@ -47,8 +48,8 @@ class Black < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
-    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
+    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
+    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
   resource "click" do

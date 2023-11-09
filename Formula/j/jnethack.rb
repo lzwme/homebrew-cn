@@ -1,27 +1,21 @@
-# NetHack the way God intended it to be played: from a terminal.
-# This formula is based on the NetHack formula.
-
 class Jnethack < Formula
   desc "Japanese localization of NetHack"
   homepage "https://jnethack.osdn.jp/"
   # We use a git checkout to avoid patching the upstream NetHack tarball.
-  url "https://scm.osdn.net/gitroot/jnethack/source.git",
-      tag:      "v3.6.6-0.6",
-      revision: "1fe57469d3f3bc20997f5f219c33bf4973a41b82"
+  url "https://github.com/jnethack/jnethack-release.git",
+      tag:      "v3.6.7-0.1",
+      revision: "3b3a9c4e25df60f9bce2ad09ce368410b4360e85"
   license "NGPL"
-  head "https://github.com/jnethack/jnethack-alpha.git", branch: "develop"
+  head "https://github.com/jnethack/jnethack-release.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "7298feacfb1a205d0bf1c02eabe54e9df3aae702b616a96b3c52a1cea55b5573"
-    sha256 arm64_ventura:  "bbe1c0eb7582de509ecb7c93b4ba51ada47037ed587f683acaf96733bde9760e"
-    sha256 arm64_monterey: "2265c4c5dca76edc0c3672b3746f75d1cbeab782b4ef86463ab8848b312673d5"
-    sha256 arm64_big_sur:  "48982dc5af4eaa7ebd63ef444f842ef9c6f765f8d6e0961b15169f6e457206a1"
-    sha256 sonoma:         "8ec5b2df65cc46350bc70f124542507a69446c3c2dc86c8fd830391a26cf00fa"
-    sha256 ventura:        "0810b061a4a0f4383b5e0d6efd2b4559003d6e29b3f3e8cb3cb348132a41afbb"
-    sha256 monterey:       "a52cfa300594235e2eb059b600d4d752fa2d444793df11efff657ef0d142c9e0"
-    sha256 big_sur:        "d549f80aa1df93f3ebdfdd51e0ddbb2924fb812b76fb2659089403c942f59ec5"
-    sha256 catalina:       "3a2629567e689e94a69a3cf813ae6b4e9619dd1737b0ca7336a0732eca87887a"
-    sha256 x86_64_linux:   "5bb2c49b8456a359624524768f73fe67e7461bc19e4b4d70d1e0bdf68a286b4c"
+    sha256 arm64_sonoma:   "bae280dd42e8d357d686b2482676de03a1acd4b65b5eefcae753bba91fc42951"
+    sha256 arm64_ventura:  "44ca7f443ece59eef081c6d4a270d6aa63f6bd4d6bc173c7cfbd991dd2fb743b"
+    sha256 arm64_monterey: "3f4432dcdbf52b38e53446c0f35ec23d6d7438cc019b3b7587aaf5a28187e799"
+    sha256 sonoma:         "3b46b1e5f270af3786dcebde6c0fc008dd22ffdf0a51a3aaa6daa08fd96a0696"
+    sha256 ventura:        "84ac8940603749b3f1e3dbf11f8bdef227307c0e34bb9f0d2b227dd138223ac4"
+    sha256 monterey:       "82edd9a68cc86d599b8eb70f23b6e813c3b587af96b9986eb51679d82f6b1f83"
+    sha256 x86_64_linux:   "b9d9a667b5f140032db12e1384be61894be2bc94340bba0fd08dfcfd5ec16031"
   end
 
   depends_on "nkf" => :build

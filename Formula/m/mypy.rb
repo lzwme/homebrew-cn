@@ -6,19 +6,20 @@ class Mypy < Formula
   url "https://files.pythonhosted.org/packages/50/f8/0a8d4d8781b41b445534bc4f9210b7793bf0ab52aacfd06ebd2699663e2c/mypy-1.6.1.tar.gz"
   sha256 "4d01c00d09a0be62a4ca3f933e315455bde83f37f892ba4b08ce92f3cf44bcc1"
   license "MIT"
+  revision 1
   head "https://github.com/python/mypy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "55efdfb633e1bf3168afbfc768cb2883e7940a869f5a376617055d14e58b1282"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "61f88c552c5ddfa49e7dab1bb2b4c798385ae75e54786adba0f1ae72455d5576"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e542b07eea57db32f16e30f0a8fffddd628c42470fbac8f9c17279850df5a8ce"
-    sha256 cellar: :any_skip_relocation, sonoma:         "132e26cff6e3dece103787dd3b14e1fadfbac8997315b6a32de28ed52e139a00"
-    sha256 cellar: :any_skip_relocation, ventura:        "f448d85a3281b8db8b56e3f64e8fbc6ccd1a73a1fbf60a366dc5277f1eab4919"
-    sha256 cellar: :any_skip_relocation, monterey:       "221342f70b8ca5fb001cc6d45c910eeeefd5113db3abd8c086e5a6f93455a6c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f084ee2e800be5d526f0a88000f56e1ae82af32bc513e9acea047901288ee3e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "717191f666788135666d990d45101dad87f6fa54d04b106e2b115287801c76b1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "08c06e024130019d23c9759f4cc24e0d27ed156e6c9bdc37bb5494fb177e0e25"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d7b6abfc292ccb20f42cfa1c88a749821e764cb182297dacc63569b0570aac67"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8e6077ed35e3839664c69e75fc88a74c86b40a41eb9970e3db314ae12cad54e6"
+    sha256 cellar: :any_skip_relocation, ventura:        "3d3dc16ec31998c94a0484aba880b32acd43cc53579bc25772f6478ce652506e"
+    sha256 cellar: :any_skip_relocation, monterey:       "6f45b8f4077e2ade136a78d11dd42c5a8b3b9111fa20a512b6c6b8ecafa73b4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4feea627ba7e1b03f3207ad046dae6abcb5c8696d5a3c209fa4f95d5727abeb8"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "mypy-extensions" do
     url "https://files.pythonhosted.org/packages/98/a4/1ab47638b92648243faf97a5aeb6ea83059cc3624972ab6b8d2316078d3f/mypy_extensions-1.0.0.tar.gz"

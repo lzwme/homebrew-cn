@@ -5,10 +5,6 @@ class Jam < Formula
   sha256 "72ea48500ad3d61877f7212aa3d673eab2db28d77b874c5a0b9f88decf41cb73"
   license "Jam"
 
-  livecheck do
-    skip "No longer developed"
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "750191fa0660e62dee16dca7e7105fa4cbc783fa3b5dd87bddb727bddcbaa5a3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae7aceb6a763b9da9860724b7347f2449f4983c004d3b58bdb21580deeb45482"

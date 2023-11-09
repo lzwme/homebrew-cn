@@ -6,11 +6,6 @@ class Falcon < Formula
   sha256 "f4b00983e7f91a806675d906afd2d51dcee048f12ad3af4b1dadd92059fa44b9"
   revision 1
 
-  livecheck do
-    url "http://www.falconpl.org/index.ftd?page_id=official_download"
-    regex(/href=.*?Falcon[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "683542b650e4c3b170b0a616e415994f00e44531bc7718961edcf9a6656deb55"
     sha256 cellar: :any, arm64_ventura:  "4175de46b048ba1b5ad68abaa8168d97f9b39483efa53b8c3ecdfb42519b3dbc"

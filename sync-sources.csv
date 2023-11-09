@@ -1846,6 +1846,7 @@ Homebrew-homebrew-core/Formula/f/frei0r.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fribidi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/frobtads.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/frotz.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/frozen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/frpc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/frps.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/frugal.rb, Homebrew/homebrew-core, 1
@@ -5216,6 +5217,7 @@ Homebrew-homebrew-core/Formula/r/redshift.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redstore.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/redwax-tool.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/reg.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/regclient.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/regex-opt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/regina-rexx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/regipy.rb, Homebrew/homebrew-core, 1
@@ -5566,6 +5568,7 @@ Homebrew-homebrew-core/Formula/s/sift.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sigma-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/signal-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/signify-osx.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/signmykey.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sigrok-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sigstore.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sile.rb, Homebrew/homebrew-core, 1
@@ -8701,6 +8704,7 @@ Homebrew-homebrew-cask/Casks/k/keycombiner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/keycue.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/keyman.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/keymanager.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/k/keymapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/keypad-layout.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/keysafe.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/keyshot.rb, Homebrew/homebrew-cask, 0
@@ -13370,6 +13374,7 @@ Homebrew-homebrew-cask-versions/Casks/firefox-esr.rb, Homebrew/homebrew-cask-ver
 Homebrew-homebrew-cask-versions/Casks/firefox-nightly.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/folding-at-home-beta.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/forklift2.rb, Homebrew/homebrew-cask-versions, 0
+Homebrew-homebrew-cask-versions/Casks/forklift3.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/geogebra5.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/gimp-dev.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/github-beta.rb, Homebrew/homebrew-cask-versions, 0

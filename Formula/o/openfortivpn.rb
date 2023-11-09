@@ -1,20 +1,18 @@
 class Openfortivpn < Formula
   desc "Open Fortinet client for PPP+SSL VPN tunnel services"
   homepage "https://github.com/adrienverge/openfortivpn"
-  url "https://ghproxy.com/https://github.com/adrienverge/openfortivpn/archive/refs/tags/v1.20.5.tar.gz"
-  sha256 "82581408fd3fff3e017ad188e648ce6e935febc97f6bcd96945372638bfc7f13"
+  url "https://ghproxy.com/https://github.com/adrienverge/openfortivpn/archive/refs/tags/v1.21.0.tar.gz"
+  sha256 "e03242e1bc39de9d916674a4641830a004309c2fd52f0f23aae2f431924ec4ae"
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
 
   bottle do
-    sha256 arm64_sonoma:   "87b67b968c81b6fcd6348c81de7d04f565dec841ea73e1d34f701feed95c000a"
-    sha256 arm64_ventura:  "bb5a5b6b5ab6973248fc31e515dd0c5aacd6b561da97147fad765147bad00cc2"
-    sha256 arm64_monterey: "f9156532189d835e4f553e9a3a0f972b2a6d291f989e9081c60212d89b386d27"
-    sha256 arm64_big_sur:  "bdb736636517a29186dbec1df79a6f052121b67a6303506a6c06f141844f3c2a"
-    sha256 sonoma:         "d745264742fdff6e41467df1b18408f8e03a00433a3fbe1e976a05a34b92288e"
-    sha256 ventura:        "762b9c5121cac1f784cc5c13de3bafda6d2f0051b617c922a1c6e6ac8c0d596d"
-    sha256 monterey:       "144c5ac14ba1feb3830233863ab58b22483bc305aee92f6a8c8273a9480a814e"
-    sha256 big_sur:        "709394e33207ebbe85a3d2d38e3957908d85c7eabc229e8038d32cc17478d328"
-    sha256 x86_64_linux:   "cbebe377274c394f94f8b570056c549486abd6d5541e4f7d942dbfd4582705c9"
+    sha256 arm64_sonoma:   "821fe22feeb2023d71104727bc101bad96b77b2e980e848d612e94ea739705da"
+    sha256 arm64_ventura:  "b563facf7935cfb3cdf0cf62d5f012be041b54bc6caaffbb686562eec5530467"
+    sha256 arm64_monterey: "f3089385c13bfddb24691427df774bcd3728df992cddd07104f8ba8df4ed93e3"
+    sha256 sonoma:         "b00ae30a1b1dba63057fede4b15c68036e0ebe001c5d633e34f435c69c365f9b"
+    sha256 ventura:        "49ea326a6d542d2940523de1298ed36e27ae9205a4d74e170109614b3be90288"
+    sha256 monterey:       "2552cc3b196a3c2db9867cb6bd12bb8288b37a638e2a92b43456935cc2587ab2"
+    sha256 x86_64_linux:   "a9fddfe0c49d465a13e5492612ccc2ced64b88e428dc3ab955218a11eee6ba3c"
   end
 
   depends_on "autoconf" => :build

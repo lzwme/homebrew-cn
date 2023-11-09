@@ -6,22 +6,23 @@ class PythonLspServer < Formula
   url "https://files.pythonhosted.org/packages/f1/cf/812d3bc1fb63e32edaf291950a188d6acce9a177c59e6d7baee487dc6912/python-lsp-server-1.9.0.tar.gz"
   sha256 "dc0c8298f0222fd66a52aa3170f3a5c8fe3021007a02098bb72f7fd8df353d13"
   license "MIT"
+  revision 1
   head "https://github.com/python-lsp/python-lsp-server.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ae89db9953d04a4b562642d2ee7caa9a346515aad3c3150253763ba278aa4a4b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "847e5b525ac3045a16785fe293267e9f8c0a42425aa3ae019df22dc2bf5bb2af"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c56c8f2a050c9f0de4c520e7cad7f18762089823802698415f88781e20c95d66"
-    sha256 cellar: :any_skip_relocation, sonoma:         "71fd8b74ec122ce42d4a4e4852e903ceb9dca53a3aaf18650253273f2b700dfb"
-    sha256 cellar: :any_skip_relocation, ventura:        "566ddadebd3c3ddc9d53d0965c6b1e24306d7a9987684733f92732b6435c9905"
-    sha256 cellar: :any_skip_relocation, monterey:       "d9f25971ff0a9bae836d479c45c043b621d1336aed3bd7ae63dd8a95a43497a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "656eeca5d105639d5f9a0586797d23ceda1f99595deccffbec3f15b7e6f3e6b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1a738b0cc5bb556ee02cad380914e3910aa1b90eff3dba287dcecb199d926cf0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2706864b273199227fe249d82afb7d3d0f926a724dd3bbbf930c317fad561230"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ba42f3d444a56609c2c5ef675c6f04318bee8a88dd9f9a0dabfad7da05951f21"
+    sha256 cellar: :any_skip_relocation, sonoma:         "929d30fd556532fd66baf512cf760c30a1b4f64e2d27097bbaa2e67c644681fc"
+    sha256 cellar: :any_skip_relocation, ventura:        "bb1ee9c1b6eb60464f23f76ad3209f65ab9a5b733cbb1317f5707882f37b1567"
+    sha256 cellar: :any_skip_relocation, monterey:       "efe3a97f62d4bda0d7aee2060bbbe538939147cf256e6e8c53b78192a98de092"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e733d08a57d2ff9d92da0b09a575f009a03ad54fdbbf901335f7584a2b0904c7"
   end
 
   depends_on "black"
   depends_on "mypy"
   depends_on "pydocstyle"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "ruff"
 
   resource "attrs" do
@@ -109,7 +110,7 @@ class PythonLspServer < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

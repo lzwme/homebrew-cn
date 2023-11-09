@@ -1,8 +1,8 @@
 class Hdf5Mpi < Formula
   desc "File format designed to store large amounts of data"
   homepage "https://www.hdfgroup.org/HDF5"
-  url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.14/hdf5-1.14.2/src/hdf5-1.14.2.tar.bz2"
-  sha256 "ea3c5e257ef322af5e77fc1e52ead3ad6bf3bb4ac06480dd17ee3900d7a24cfb"
+  url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.14/hdf5-1.14.3/src/hdf5-1.14.3.tar.bz2"
+  sha256 "9425f224ed75d1280bb46d6f26923dd938f9040e7eaebf57e66ec7357c08f917"
   license "BSD-3-Clause"
   version_scheme 1
 
@@ -11,15 +11,13 @@ class Hdf5Mpi < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d5de48368ae20f43de5573474d9bbc92509fcc3b249fad4880fcab5fafdd6efd"
-    sha256                               arm64_ventura:  "edede25cfb4fd86afa0c3fa6fa2aec8f4c2df46380bad6f34ed2b0cbbf8542e8"
-    sha256                               arm64_monterey: "6f7f49e0ea2bdce98c10e1723d78059760d3abb8c9eeba8a50da8deeb6f45922"
-    sha256                               arm64_big_sur:  "b1ab7578b5991214f75eafba3cd69caea579eb7718edfb5f91ace83d65b6c37f"
-    sha256 cellar: :any,                 sonoma:         "7d15b2eadfc3f695c4befb63f03ed2de42253bd87d244a73c6ecbd8a1ad8be13"
-    sha256                               ventura:        "8f256323fff257cc50260b01523354f7e13bc4381320926a49926618517caa8a"
-    sha256                               monterey:       "27242c2f0a00d4b8991e806fe52c54a05e3f003eda409ea1d38f415a2f8c374c"
-    sha256                               big_sur:        "9b7ad8f6efac3a7f6e64ce77d6cd1418d6a863d61aa97ff5ebef89b270cb2a44"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "97bbbd545ba0c51a7bbedb6df37f632465d8c790048573c50e9af4b34b597555"
+    sha256 cellar: :any,                 arm64_sonoma:   "e9691a00ac8e505fbfe276547fac8f40c926659b7ae756a04ecfc0cd86d06ea2"
+    sha256 cellar: :any,                 arm64_ventura:  "2c045a01641c589a3f73e7e5b49f90bedb3b4d362818a97016403536d966bd61"
+    sha256 cellar: :any,                 arm64_monterey: "edaecb37c499f575aaec2a724faf835dd6ee04299d4f54e735c2c3a528d6e898"
+    sha256 cellar: :any,                 sonoma:         "592edf06d0dd539e324787d4b658361e9e73554faea1100a16c595194774748a"
+    sha256 cellar: :any,                 ventura:        "dbea915eb8b1494edcca4f0df5bfdcb83d8467c86fb4de555da1779f28e8089a"
+    sha256 cellar: :any,                 monterey:       "ae5544130fdd0843e7b281d97a538aa307823f5dee429e681412e35d93ba5cd0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d3d1ccbf33cbbe10e13a6969d682217e650eefbaecc0f4a2e62c79394ce06a7"
   end
 
   depends_on "autoconf" => :build

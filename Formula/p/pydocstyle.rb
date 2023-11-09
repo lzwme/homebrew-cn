@@ -6,21 +6,20 @@ class Pydocstyle < Formula
   url "https://files.pythonhosted.org/packages/e9/5c/d5385ca59fd065e3c6a5fe19f9bc9d5ea7f2509fa8c9c22fb6b2031dd953/pydocstyle-6.3.0.tar.gz"
   sha256 "7ce43f0c0ac87b07494eb9c0b462c0b73e6ff276807f204d6b53edc72b7e44e1"
   license "MIT"
+  revision 1
   head "https://github.com/PyCQA/pydocstyle.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dce81096e008f94f5f66adc15acee7060452a46b8e9ec2f8125b92c26cb17732"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ded273a89181fc24508db6ac20fc5209cc79ad923e2106e3de7e889b59711d3a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e4eb0b044ac8618e1b641ce53914c4e637d7b4dda414ff8f7f0ecff914278ef"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "51de6784ad7eacf7e71abfd0a009566881fdcd97db71dcc9aa2b78b7c96f40c1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "aa208b1bedff1664c6bc851c22428831eb44c0f2cfe97692c61eaf4ba698585a"
-    sha256 cellar: :any_skip_relocation, ventura:        "0ef946f3ac8f8d1c805d010b207d55c691d795ef365e65eae8d82f32dbf8be91"
-    sha256 cellar: :any_skip_relocation, monterey:       "9b145d7b416f4274d592aaa309659bbf5f535bfb2d6351017af9cf0b5b86acb7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "66422fa848a63b8c185db46bde38ad09d2a7bd9954294d3408a6bb6b3c417f6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f5028fbde0c073b5929daabb7fca939454809943f98fb5e15076899883277a4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3ec360acd50933d2848eded9d479931d25f81ea10235d21ec4400669ecf46b14"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "06e475eb6dcd37d605dfd2f3a8ccf5aa5572892bd1e32c0408c6f443e2bc5e48"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "93135b8bb66249764784f87bda720d7aa6888d7a8b4a1c8ea6f8ac4f30b6f38a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "331782f216f94fcb457da05bb07e716c87e51447bc335926e94971479d981a3d"
+    sha256 cellar: :any_skip_relocation, ventura:        "d0b9e922fa45bd73713fedec79771a9288190e22f8e2fe59cfb7e515102d972a"
+    sha256 cellar: :any_skip_relocation, monterey:       "967bf915382d42d17c1fb558bc1065835f7c0f2483d7682b681fe15ee54c93c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e9481d4c84b7d0328fa500dfca9acf2898235745391773b2aa85d096d34b10d"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "snowballstemmer" do
     url "https://files.pythonhosted.org/packages/44/7b/af302bebf22c749c56c9c3e8ae13190b5b5db37a33d9068652e8f73b7089/snowballstemmer-2.2.0.tar.gz"

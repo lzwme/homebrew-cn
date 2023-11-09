@@ -3,19 +3,19 @@ class Surelog < Formula
 
   desc "SystemVerilog Pre-processor, parser, elaborator, UHDM compiler"
   homepage "https://github.com/chipsalliance/Surelog"
-  url "https://ghproxy.com/https://github.com/chipsalliance/Surelog/archive/refs/tags/v1.77.tar.gz"
-  sha256 "c579e763ba99a8f6a1888602c777215fd4338418242e60e52fdebd2a144b5d21"
+  url "https://ghproxy.com/https://github.com/chipsalliance/Surelog/archive/refs/tags/v1.78.tar.gz"
+  sha256 "11d6506a6332da1f4c8d73f744bdaf002ce56774667eaab282eeb5af763f8166"
   license "Apache-2.0"
   head "https://github.com/chipsalliance/Surelog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "17e57efd11c850ef5951b5e58072e9fe7fd1e4335b6264a167242505292dea4f"
-    sha256 cellar: :any,                 arm64_ventura:  "485f57ec19690bef87e042703b8c782a3c7224d128b0981fd0c2fa91f36c1fa7"
-    sha256 cellar: :any,                 arm64_monterey: "8775e71f4fc760b0883f84b053cdc7aadd18accaf94002421751ef5629043648"
-    sha256 cellar: :any,                 sonoma:         "83db7c0c84fa8127cee3c193d2bf4dbc6ebdf8489ddcfc74494acdbf14c92f76"
-    sha256 cellar: :any,                 ventura:        "e3a753059e938ef033bca4f565414a893728240d3225a002a08cdd6898d72603"
-    sha256 cellar: :any,                 monterey:       "94b19659b4c9e8aa310085d158fe2ce685a6d961eb101c11718c639599011023"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0cbd17e1ee15ef8671c003ed50ce2ef9927fb8333c342e6ce0368404b5262d93"
+    sha256 cellar: :any,                 arm64_sonoma:   "aae682d097378d303b377bd60b91ceb34fe8a5478dd634e71e111be380569f04"
+    sha256 cellar: :any,                 arm64_ventura:  "292aaaea90fff4be6383f3640010617794b6183be6d6d49c566f8e4effcaa7df"
+    sha256 cellar: :any,                 arm64_monterey: "1bc74b9645d02937b8b5af1ace6e97f026d3b036bd5355586578fc4fa344f87e"
+    sha256 cellar: :any,                 sonoma:         "af5fce6e063c14f003ed5aba73d876e55d2a5be8180eedfbeb8ff704cbc53443"
+    sha256 cellar: :any,                 ventura:        "4d6f562e89601b6811ec90074eb7bec37a43ed7a5dbf88582c276a5286f24051"
+    sha256 cellar: :any,                 monterey:       "7b3b1052dc37d8435cfa594bbfcbe717d9412acb480c06c729eb7ea28f4b843e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a8d3896278184b0d86e4b47b831752828d8f7f624b4c06ebc3f69ced3971cfa"
   end
 
   depends_on "antlr" => :build

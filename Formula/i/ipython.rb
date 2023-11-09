@@ -6,20 +6,21 @@ class Ipython < Formula
   url "https://files.pythonhosted.org/packages/a9/e9/c83d1a5756bf44f1802045a54dacc910d3d254c5ec56040993978d8c1b8d/ipython-8.17.2.tar.gz"
   sha256 "126bb57e1895594bb0d91ea3090bbd39384f6fe87c3d57fd558d0670f50339bb"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/ipython/ipython.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "63e0692483380f5f360742033c91e0162cab1cdc0def38cf80b2fcafdb06520f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9a48b864d237079105a812a0363a1e79174077d76e6b2a33efba85da5695cc83"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a7856d319c1e30f5c48f835eefd2c4b4d0e12c7d2726917b084d02ab26f3dd98"
-    sha256 cellar: :any_skip_relocation, sonoma:         "69698a4808f06b30dfa0aa4cca082a0108c65dad2c4ffb809c887e52323d3c43"
-    sha256 cellar: :any_skip_relocation, ventura:        "83c9abba1b9e1d73cd8b630d58885a5d8762ac1edc9f5efa455dcf2f80a4e86e"
-    sha256 cellar: :any_skip_relocation, monterey:       "d222e4d655acd6ae694a8075e4534f02324835d49407b916347e2eaac9f36664"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "afb1bfcf4e0f6288b7aa4476bc2bf56f91b072a65fcc2cb1a30149b2c4bba6ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "892629a0d6ed38dfad9c8175e8050e522f3c74181cf967e7affce72ab10f6275"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "17edb50e26511cfd72fcb68095121c92ce2eea26f11b9c439b8336d6e427d244"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1c03e14fea6ae8aabde0617079bdef4236d3ee84da5f97c250e6749b1687b003"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c51d1692bb7a84f67d3a84adaaf5445f1cb95df49fd421f631b1b7c44e124f2b"
+    sha256 cellar: :any_skip_relocation, ventura:        "4d9224c6f05f4417bcd3b0923dc128150a32c77dcb268564f83bff93224ce15c"
+    sha256 cellar: :any_skip_relocation, monterey:       "dcf03502b93e3cfc2cb0dc2366ebbf86da89331286564540b5dc0d50cf4418bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e7df2c343a73818ce4925e8bfc73f9e9da382c1168fd109b95a1bfca75694aa4"
   end
 
   depends_on "pygments"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "appnope" do
@@ -93,7 +94,7 @@ class Ipython < Formula
   end
 
   def install
-    python3 = "python3.11"
+    python3 = "python3.12"
     venv = virtualenv_create(libexec, python3)
     res = resources.reject { |r| r.name == "appnope" && OS.linux? }
     venv.pip_install res

@@ -1,8 +1,8 @@
 class Mbedtls < Formula
   desc "Cryptographic & SSL/TLS library"
   homepage "https://tls.mbed.org/"
-  url "https://ghproxy.com/https://github.com/Mbed-TLS/mbedtls/archive/refs/tags/mbedtls-3.5.0.tar.gz"
-  sha256 "02311fc8bd032d89ff9aee535dddb55458108dc0d4c5280638fc611aea7c5e4a"
+  url "https://ghproxy.com/https://github.com/Mbed-TLS/mbedtls/archive/refs/tags/mbedtls-3.5.1.tar.gz"
+  sha256 "0da345cda55ec6f6d71afa84cfae55632a16ba0b8b4644f4d0e8a32c9d1117b0"
   license "Apache-2.0"
   head "https://github.com/Mbed-TLS/mbedtls.git", branch: "development"
 
@@ -13,14 +13,13 @@ class Mbedtls < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "74a6aeafe024b9e8adff110b0db2fb1222118f1f9dec3750d078454ede5b1d00"
-    sha256 cellar: :any,                 arm64_ventura:  "6fa84ddefb5b288640e435f4acfd743c49506ec7817809ad8e25c96e4b6a91a0"
-    sha256 cellar: :any,                 arm64_monterey: "df053aeb5748a8f92c03f7bf316f487582dfc96ee93eb3b65408aad7fee08796"
-    sha256 cellar: :any,                 sonoma:         "513873323db8063a7ff788e3ef1aad64b5e3adab81304aef49cb0ae35325aae9"
-    sha256 cellar: :any,                 ventura:        "fcf0d128cd9c0063f8c22ce2817dcf7be6c8b0c5ddd4d2544a8b54a90e6d6d66"
-    sha256 cellar: :any,                 monterey:       "e7aeb3b1608da64173278f1f07ad64622fff4def27d7cf828062bc8cb8023427"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "291c847c785254fa3f4c08bce04469a2f3582df9bfe8bf5d43e517979f99065c"
+    sha256 cellar: :any,                 arm64_sonoma:   "737687d78655b6725f243a4f5a362a89be1e0d5a9677dce6e8e01730489e13b5"
+    sha256 cellar: :any,                 arm64_ventura:  "956d113cb54e5eb3ba82b10c420ca6cadc03bddeedb035c54cc0ed9192d8a999"
+    sha256 cellar: :any,                 arm64_monterey: "3bb93f697b43858b04cc6d59a07aa3ec695a47cb17f8f7bdb3889297ba230d5b"
+    sha256 cellar: :any,                 sonoma:         "0bc0b0f4e62c2f0d7693e9c375262f06b86246adee7087fff03be12d3aa6b8a6"
+    sha256 cellar: :any,                 ventura:        "b4cfe004615770b6fea461df7ced8218322b08368921cba7a92d9994b53525f7"
+    sha256 cellar: :any,                 monterey:       "0bebf9032279186ab07c12356b332845bf77bdd290cb7d90998060559af47159"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85f388ddfe5e855c0457be5491b6f616cb7846569dc37ca7cd563916fd87db86"
   end
 
   depends_on "cmake" => :build

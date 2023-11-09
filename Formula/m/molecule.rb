@@ -6,16 +6,16 @@ class Molecule < Formula
   url "https://files.pythonhosted.org/packages/e6/60/cc687cbccfb3543b17ba5d404007f7e43edcb7fa3c780b4f9ec1cadee83f/molecule-6.0.2.tar.gz"
   sha256 "b919353f799746de60b16a27575627783e39c268fdf2f2aa0372f0162c7b5478"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b93233a3ca9a340faacd1576218557ebdcf8cdfef86f893e823a7786cd3d6c9f"
-    sha256 cellar: :any,                 arm64_ventura:  "d2b7ef4fc837ee32b145abb82b7de67ac90930b04461aa3465ecccd3cf249ffb"
-    sha256 cellar: :any,                 arm64_monterey: "098c7f8719a87658743e15fc2dea5be1019dd9ad81f32e498371c4a292c3e6e2"
-    sha256 cellar: :any,                 sonoma:         "a54aca9cce989e42d492f5d219510cde09c56af4e5c65ec63b64872a51ab1bbc"
-    sha256 cellar: :any,                 ventura:        "116984dcdff915e8c517b331173f4c69d6703d72a7799da4898df494fbfc6726"
-    sha256 cellar: :any,                 monterey:       "4252236a1847908cf0d85943d2d21b6505c422b79ec7df8f5b8355023bc8db86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98471bfa3995b7a2b56952bab654c6b943ad7351d08a1714dd0af72dad68d1ff"
+    sha256 cellar: :any,                 arm64_sonoma:   "62e70bbc440e674029a6504641559ad72009916298aadd10f36aef20450f77ac"
+    sha256 cellar: :any,                 arm64_ventura:  "1d49ee7a39a8dce17b7e8b84c84fae57ab72e244f43e4cc713871830b11e8506"
+    sha256 cellar: :any,                 arm64_monterey: "c0fa1e01ab4c74fa3bd87b6fd837dcb80ad890ec4e216a273a304b95fab807b1"
+    sha256 cellar: :any,                 sonoma:         "228bbdcb287aedc0c17e2cb06a0ac70d3ef784d2e550ccc2f69c4da17a7afe71"
+    sha256 cellar: :any,                 ventura:        "5be81929d5fb3bc03b298c0cf24de1a4b7e34cafc620362bf9e37143bc5101d5"
+    sha256 cellar: :any,                 monterey:       "6bdb1f80a79e65ac21f1330a6894597c050a8eda28737ec20f9940ea73cce382"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d84f8e5c2b0c943dc13accf1b278c90bb2147960990fcee1cd3d47caec55395"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -23,7 +23,7 @@ class Molecule < Formula
   depends_on "pygments"
   depends_on "python-cryptography"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
@@ -59,8 +59,8 @@ class Molecule < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
+    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
   end
 
   resource "click" do
@@ -104,8 +104,8 @@ class Molecule < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/e4/43/087b24516db11722c8687e0caf0f66c7785c0b1c51b0ab951dfde924e3f5/jsonschema-4.19.1.tar.gz"
-    sha256 "ec84cc37cfa703ef7cd4928db24f9cb31428a5d0fa77747b8b51a847458e0bbf"
+    url "https://files.pythonhosted.org/packages/95/18/618159fb2efbe3fb2cd32b16c40278954cde94744957734ef0482286a052/jsonschema-4.19.2.tar.gz"
+    sha256 "c9ff4d7447eed9592c23a12ccee508baf0dd0d59650615e847feb6cdca74f392"
   end
 
   resource "jsonschema-specifications" do
@@ -193,6 +193,10 @@ class Molecule < Formula
     sha256 "b3324019b3c28572086c4a319f91d1dcd44e6e11cd340232978c684a7650d0df"
   end
 
+  def python3
+    "python3.12"
+  end
+
   def install
     virtualenv_install_with_resources
 
@@ -201,6 +205,7 @@ class Molecule < Formula
 
   test do
     ENV["ANSIBLE_REMOTE_TMP"] = testpath/"tmp"
+    ENV["ANSIBLE_PYTHON_INTERPRETER"] = which(python3)
     # Test the Vagrant driver
     system bin/"molecule", "init", "scenario", "acme.foo_vagrant", "--driver-name",
                            "vagrant", "--provisioner-name", "ansible"

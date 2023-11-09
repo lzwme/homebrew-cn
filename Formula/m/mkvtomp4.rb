@@ -11,8 +11,10 @@ class Mkvtomp4 < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a58d04cc69f6741f09e59325916e0c8403312ff479416cc6866d172294559896"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d0172b3bc26de89c91c4660b9bb2a7efbe5d02d804eb971ce57eb2f095a8d26c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b17897f565647cc96ef82d31e285e720e7bbf8f24b3ff8ca82982a8f6cf41400"
+    sha256 cellar: :any_skip_relocation, sonoma:         "378f41a2adc37cd369ab54c4c5fa1a96e25593f26ea6ba2ac58bd793bee3900b"
     sha256 cellar: :any_skip_relocation, ventura:        "27f5efc06b833837ca9bfda6dbd879f638c0f968bf29076145f1ae150e45ad29"
     sha256 cellar: :any_skip_relocation, monterey:       "d50e60e03cf5c79a517df1d861b1c681df15a438e14245443a70187faef0ac32"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "26c9985853df8ccc0ee242454c6bec5e82d4334262b05f7ec00c153e0a844e6e"
