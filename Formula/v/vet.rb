@@ -1,18 +1,18 @@
 class Vet < Formula
   desc "Policy driven vetting of open source dependencies"
   homepage "https://github.com/safedep/vet"
-  url "https://ghproxy.com/https://github.com/safedep/vet/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "fd245e74f693eb6a4456627cdccce19ea59af3cba4b84e3fc6a53334076b51fa"
+  url "https://ghproxy.com/https://github.com/safedep/vet/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "1a5062586b799e3dd2fcf6cecdccce82753a225fe8e2f3166a5ce5d3d3a1b995"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "27819ac98c4a9281e243dcfeb1c9fa34b8a13ef00856dbd14b375b8aaabc7f03"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c8afbb76ab9b0fa1a0ce06e425eee2701d80fd33c760ca525f950c4d751d0576"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2f86f69bede826312918a4fb676cd113a89f4397569d00d2b07d607a3ac2a30b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "12f6a51d194302f09123bfeccb0a37caa601c3953c68a63e0f1dfdcff410ef77"
-    sha256 cellar: :any_skip_relocation, ventura:        "7be72d0fabdec3341c6624425af512bc4992e30745bb6e5614e90cc04e619b80"
-    sha256 cellar: :any_skip_relocation, monterey:       "6b4d428c26d9e2b9e8cd8ef77de9a2cfe5be0c182cb71412d8f25584ab411a2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "60c08f7340cca0873b8015f8b9cca6f2d8554c4a2f3f1a4d91c569810e35e537"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9ec888f21e15f11729112acc88c9b47a1c79e7eb0389884bad51ee0b976d1204"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "170183de834f4c79b1c72478a6b8354c9cea03defbebb5be712d8dfe95fb1136"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e34c8aa2fe07475647ccff5ce8b8c871d2985182ccc277fc053358687d78b327"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6e72d0d49eda2d013cdcda00ba579a8ec133fb29742289253099fff4130a3583"
+    sha256 cellar: :any_skip_relocation, ventura:        "e30914a0f7f015569e8a674b7ed28bf8ec464e3c1b2f9220f346334853bfa5c6"
+    sha256 cellar: :any_skip_relocation, monterey:       "c26e81c0bdcc0015710c0500c83f4c9d2d6625184764a7c4869ebc1f9f0c0245"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af334a6ea4772762c50a8869c2e72d2d8807232f1064df8ca58e5df1f11ec17a"
   end
 
   depends_on "go" => :build

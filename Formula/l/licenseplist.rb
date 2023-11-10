@@ -1,17 +1,17 @@
 class Licenseplist < Formula
   desc "License list generator of all your dependencies for iOS applications"
   homepage "https://www.slideshare.net/mono0926/licenseplist-a-license-list-generator-of-all-your-dependencies-for-ios-applications"
-  url "https://ghproxy.com/https://github.com/mono0926/LicensePlist/archive/refs/tags/3.24.11.tar.gz"
-  sha256 "a4b6bf1fb050d6905f52c462f734990a45e604ec80ac74424620c3c4f89fd65f"
+  url "https://ghproxy.com/https://github.com/mono0926/LicensePlist/archive/refs/tags/3.25.0.tar.gz"
+  sha256 "49a7b65fea46b71a70690555ca0c9c6179539f35797779feefccdc53ef73254f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "87c277b768ef63a84610c071f8e96c60bc36a6126c7d4f6f50c911dfdcf9a06a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5005436abb8a9f4fbe0f34541b8db70918b9317eb5d49a224df05180f0ad8f63"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dd0f916e8a2f76aa124779f49384fbf04f539334ce0efd4856d7ce30431d0e35"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cb73666c255b6b66e49bf8696c7e68e28a115e298079d3db81716c17edee90f4"
-    sha256 cellar: :any_skip_relocation, ventura:        "5f45fccde816c6809040b38cb7aa090efa50931de527073da5833c84443f4e73"
-    sha256 cellar: :any_skip_relocation, monterey:       "d6babdaccbcfc62dfc9e0fc27e75c0b12a8f9501584348d955ad83c917d01b35"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "96c56fecbde595fc08e1814f85cdad34da7000f079424daaad82d5e658802e8c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aee5145ad5f851377a4e4d0b63ad8bfe9a70cac72d5b573a8aceb4b893f04ec5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "79feca226cf04328a539c939b4614baf8505e1e9800fa581d59e7e322a735701"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c5bb8699daa94bf9373e88b276cd4309974d20dfa5c94494d1b86336b8e0bdb1"
+    sha256 cellar: :any_skip_relocation, ventura:        "3b46e6fc6b2331d6cc28a3a621be4fcdda75ab326354201bf1545a15f84aa6d6"
+    sha256 cellar: :any_skip_relocation, monterey:       "569bacc0080bf5e1b4bf42c5586fa457960a2b68d744db99721df69c679ff2e3"
   end
 
   depends_on xcode: ["13.3", :build]

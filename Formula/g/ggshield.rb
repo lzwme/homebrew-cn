@@ -3,20 +3,19 @@ class Ggshield < Formula
 
   desc "Scanner for secrets and sensitive data in code"
   homepage "https://www.gitguardian.com"
-  url "https://files.pythonhosted.org/packages/eb/bf/8dc9c74caa26d4d6ee9c4c14b9c2edb72f6367a81d23d0f6f95980509613/ggshield-1.20.0.tar.gz"
-  sha256 "b12cbedc88cf381667e38a0c0fe5e9416291a1702309a68944bd5a872372c4a6"
+  url "https://files.pythonhosted.org/packages/a5/f4/4179dbc77e554956a53a6cf2252c0981b867104e6be6ef3e90fd284eafdc/ggshield-1.21.0.tar.gz"
+  sha256 "fea9045bff7c7143696f05598fb328588737baeaacc3f2aced44bbf4a3fd6207"
   license "MIT"
-  revision 1
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8584dafe24cca747b99e8ea6c84eb498de2e00c691d1d9faab80b07dbc1cf536"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "03cdae123330e4b2a9867f5ec4b66f81c276ce62767b97def6142964b58b0343"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f5e18d6129d52646316fed5e31d3ffb19fe6518860c44c6fd4795c1ad780369a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1e2b5910153c25bd44f59ba0647284a44ac63e678dcb11cb68a9ee6d33ac5423"
-    sha256 cellar: :any_skip_relocation, ventura:        "9087c57fe0365bd077dbc17ac0b2c6d3e873a2e599afc06180f04194bd3866f3"
-    sha256 cellar: :any_skip_relocation, monterey:       "fe1e1b18ffcca8c6e1a25718eb7f8136a79d8ec582e6435fb8ff37ba9c17b0f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7b27afdf71862d55d21657e5997074bbd1ace6a5e461f25ce63c0eca1d1ba79"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0e4c49e4d4070b3d97509fb0632ad32eeecdd4ce81cf645a098eccf55e1325ad"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "55e259f8425b8cda3f2a1bd103dad165bb0cdb02138fa3390cac0f578712e99e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e347615104a7a755a1616623e4b02f1938ce505131ded47544aa26f3702e01c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0f7d29d460a5477a1a6a9ff7edf974f67bbb88bf92b5221c07cc76cccabb6f82"
+    sha256 cellar: :any_skip_relocation, ventura:        "04128b1b9e9afc7213929b7ebf39fb6ad5d9e48c31e70489ef85e2ba3a76ca92"
+    sha256 cellar: :any_skip_relocation, monterey:       "513a2e4e309c6c8d2f9084940afee151f5730cf33036ae6b925d8f7840fe060e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d37b0cd8761cea9e7decff44a0995bcfc738f931f00769ca88bd9ad0bab711b2"
   end
 
   depends_on "cffi"

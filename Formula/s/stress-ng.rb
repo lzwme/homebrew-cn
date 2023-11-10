@@ -1,18 +1,18 @@
 class StressNg < Formula
   desc "Stress test a computer system in various selectable ways"
   homepage "https://wiki.ubuntu.com/Kernel/Reference/stress-ng"
-  url "https://ghproxy.com/https://github.com/ColinIanKing/stress-ng/archive/refs/tags/V0.17.00.tar.gz"
-  sha256 "eca62128f4918edc6d1e309f426a223968f44b304b737275443ec9e62855d42e"
+  url "https://ghproxy.com/https://github.com/ColinIanKing/stress-ng/archive/refs/tags/V0.17.01.tar.gz"
+  sha256 "b628409c1934bd4f0ac4b390a5253d383ffb8f962931379c7fb9bb2852ffcbe9"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "15878746c59e68b1b24ae5611d1a6b76650789c5180b135d1c50c970aa9fe4fa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d560afedb5a04ed8d3318b2ad50c636e07687f8f22a68319d31d01b9cc0d4ba1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ca6c941361c978516f6d2263325edf61df02659063f85b00e3aba5ddf7f30fd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bb8480909be4eaea7f37d5f1a935623448eb3e3f85831b533c31051efa19ed02"
-    sha256 cellar: :any_skip_relocation, ventura:        "5c61487816b7df7f92ed0bcc3fd982cc05c76287f93b79a1bc3f65f60521b8b4"
-    sha256 cellar: :any_skip_relocation, monterey:       "7ef269640070a6d1d2160c65612b8138b352434f430f8c172904b21fa29b6f4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8070a92907f6910df35e05443fe531a6305b9dc18e1483d5f885940674b0615"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a58c20cfc6170ec8883b9ada01549413ce3bc85edf0fcc70b728472abf9aa919"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "43a2ace414552b0929393aad78cee087844181f4b92cfa989dc79a8f34bcf437"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dd799dfaca7f719a03ce75e213684558bb43388a5f3408cb90d2a339d44310f2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "14bb1ecdac447e03403882149c6f6da0acb9f0592347ba38cddc300143bca4f3"
+    sha256 cellar: :any_skip_relocation, ventura:        "db99e9b2c780cf55aeeb944b3203ec06a44deb7eab4504e218ef5847d2c398dd"
+    sha256 cellar: :any_skip_relocation, monterey:       "971f3719099202175153ed79e47fda4646107aad93157de99ad4fc6e1a2beed8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7a6348efaaa11aa66617b5a078e507d6ba2071234bef89c2413932831070a96"
   end
 
   depends_on macos: :sierra

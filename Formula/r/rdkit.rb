@@ -4,7 +4,7 @@ class Rdkit < Formula
   url "https://ghproxy.com/https://github.com/rdkit/rdkit/archive/refs/tags/Release_2023_09_1.tar.gz"
   sha256 "e0ff8e330c98b93ac8277a59b2369d9a38027afadb4f03bb34c6924d445f08d5"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/rdkit/rdkit.git", branch: "master"
 
   livecheck do
@@ -16,13 +16,13 @@ class Rdkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "61bdf8de08cf1a9612f52107e96734218005ffb06f79beda68e632cdfe2a5744"
-    sha256 cellar: :any,                 arm64_ventura:  "848ac75e7d5e4d9ae9c392d3b03938386db0058442286b835e50052cccbf09b6"
-    sha256 cellar: :any,                 arm64_monterey: "549b804201ddff07696bac1155c399793b0efdc4746e304072bdff5a556a5e6a"
-    sha256 cellar: :any,                 sonoma:         "471690a7f4fc2f2cbfffdf7763af023a080b17d49ce484c9f4c40292d0644e2b"
-    sha256 cellar: :any,                 ventura:        "f838cf3b96d13cd17634f6d52bf44e27afe3833fe253422b961793b815fec867"
-    sha256 cellar: :any,                 monterey:       "21c6cf7559163004a6f894aacb0019a44aeb89e30cbac73972681420400381b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb5bfc27459078461ea6d4e496a99a272803bb85ac8ff50acd265c0d083f949e"
+    sha256 cellar: :any,                 arm64_sonoma:   "c7395ef0eb724c497b1af71168fd73ade87558e7249f4840970b9e0855283800"
+    sha256 cellar: :any,                 arm64_ventura:  "31e3de4f1c58a09244ef08026064785879fa02f0069e630e1efec14b637ea27c"
+    sha256 cellar: :any,                 arm64_monterey: "489ef08d1accf7ce44d2333cb56e0635bc08a43fbdd3d40e242e05322bcb7c91"
+    sha256 cellar: :any,                 sonoma:         "7b2002155ff92dff7ff8701b088c956c6ffe37396e1bff41a17ea643dcc7cd63"
+    sha256 cellar: :any,                 ventura:        "34a0d94d7a54766c2a87b6682517ff8f83499b30d147a96119c0f6dd9ca9f64b"
+    sha256 cellar: :any,                 monterey:       "1ff28f2f3a508ad87af8f8bc104251d5d1382489827c2f6837592640cf5c6a36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b5142494251129331669559333892095faca5068a9880003c044317b3f64077"
   end
 
   depends_on "cmake" => :build
@@ -34,7 +34,7 @@ class Rdkit < Formula
   depends_on "numpy"
   depends_on "postgresql@15"
   depends_on "py3cairo"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def python
     deps.map(&:to_formula)

@@ -6,16 +6,17 @@ class ScikitImage < Formula
   url "https://files.pythonhosted.org/packages/65/c1/a49da20845f0f0e1afbb1c2586d406dc0acb84c26ae293bad6d7e7f718bc/scikit_image-0.22.0.tar.gz"
   sha256 "018d734df1d2da2719087d15f679d19285fce97cd37695103deadfaef2873236"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/scikit-image/scikit-image.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "14dc715dc566ceb423e058f4b9be7c3c1145453a8c85a6c93911286b2c8c3c73"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "086cad269e43bfbeb38a3229665c9eeb7669339907634527166789f56460dcf7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "612d04cf228f8801eb968a44a12fc3703831daeb9c6fe0e21feacf43c0d7b7e9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b741902f152a8f66315700c81749188ed1c4cf02b201cfb6e4d077cf4f67c3ad"
-    sha256 cellar: :any_skip_relocation, ventura:        "fdb2a512b3a97c4d0d9bd726838b240ec05057acb82905ff60d7391b4c1fdf8a"
-    sha256 cellar: :any_skip_relocation, monterey:       "d3f33c9709f8ccb7afc58906518e657a18fc7ce3dc4adb7f57e9364026195075"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d7978fe5f86cce29a0fba68497bd75dca9c23cf37dc7bc9ed73d2087b60f56c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d6ffbb862fd7a99014c09da60238b6cb963645842abef371b04b9d1f39d10ce1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "118e7278c3e134dc2b27f9f4b5bb8f95d122c4cf7e4226d7c324d051bd270371"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4891bdc3064a1d4861ac72a8370dd9220be9b59f10ed7674f78acb11383227c5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "181777436397fa8568a644b4096295cab0b2be3f0841e75df3675cb5dbce2ab0"
+    sha256 cellar: :any_skip_relocation, ventura:        "fc1a32d2fa0f3828f4af1af8af88e6092b829aa842c41f5b31c849186f3fbc9b"
+    sha256 cellar: :any_skip_relocation, monterey:       "0b2f8a9385e13e9d4a7f7c3aecb302ee1db966d1e6f9c1588af30e201d9475a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85677ddc9e10921de4eb89be19631d4b2c9d4b1456d7ff9f16d40d63f64ec9df"
   end
 
   depends_on "libcython" => :build
@@ -27,7 +28,7 @@ class ScikitImage < Formula
   depends_on "numpy"
   depends_on "pillow"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "scipy"
 
   resource "imageio" do
@@ -51,7 +52,7 @@ class ScikitImage < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

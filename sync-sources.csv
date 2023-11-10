@@ -543,6 +543,7 @@ Homebrew-homebrew-core/Formula/b/bossa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/botan.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/botan@2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bottom.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/bounceback.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bower.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bowtie2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/box2d.rb, Homebrew/homebrew-core, 1
@@ -4095,7 +4096,7 @@ Homebrew-homebrew-core/Formula/m/msgpack-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/msgpack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/msgpuck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/msitools.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/msktutil.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/msktutil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/msmtp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mspdebug.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mstch.rb, Homebrew/homebrew-core, 1
@@ -4734,7 +4735,6 @@ Homebrew-homebrew-core/Formula/p/php-code-sniffer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/php-cs-fixer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/php-cs-fixer@2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/php.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/php@7.4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/php@8.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/php@8.1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/phpbrew.rb, Homebrew/homebrew-core, 1
@@ -5216,6 +5216,7 @@ Homebrew-homebrew-core/Formula/r/redpen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redshift.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redstore.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/redwax-tool.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/reflex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/reg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/regclient.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/regex-opt.rb, Homebrew/homebrew-core, 0
@@ -5731,6 +5732,7 @@ Homebrew-homebrew-core/Formula/s/speedtest-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/speex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/speexdsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spek.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/spglib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sphinx-doc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sphinx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spice-gtk.rb, Homebrew/homebrew-core, 0
@@ -7346,6 +7348,7 @@ Homebrew-homebrew-cask/Casks/b/browserosaurus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/browserstacklocal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bruno.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/btcpayserver-vault.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/b/btp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bubo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/buckets.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bugdom.rb, Homebrew/homebrew-cask, 1
@@ -9914,7 +9917,6 @@ Homebrew-homebrew-cask/Casks/q/quicklookapk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quicklookase.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/quicknfo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/quicksilver.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/q/quickwords.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/quiet-reader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quik.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quip.rb, Homebrew/homebrew-cask, 0

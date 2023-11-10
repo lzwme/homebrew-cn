@@ -22,6 +22,9 @@ class AnimeDownloader < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c54196e4e2bd20d52d715c585705d3f4f4be4aa898bb87e528af48a0f2abc4c"
   end
 
+  # https://github.com/anime-dl/anime-downloader/commit/24de83d
+  deprecate! date: "2023-11-08", because: :unmaintained
+
   depends_on "aria2"
   depends_on "node"
   depends_on "python-certifi"

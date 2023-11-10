@@ -1,15 +1,10 @@
 class IncludeWhatYouUse < Formula
   desc "Tool to analyze #includes in C and C++ source files"
   homepage "https://include-what-you-use.org/"
+  url "https://include-what-you-use.org/downloads/include-what-you-use-0.21.src.tar.gz"
+  sha256 "6a351919ff89bda7c95c895472601868db3daab96a958b38e0362890d58760b6"
   license "NCSA"
-  revision 2
-
-  stable do
-    # TODO: Check if we can use unversioned `llvm` at version bump.
-    url "https://include-what-you-use.org/downloads/include-what-you-use-0.20.src.tar.gz"
-    sha256 "75fce1e6485f280f8f13f4c2d090b11d2fd2102b50857507c8413a919b7af899"
-    depends_on "llvm@16"
-  end
+  head "https://github.com/include-what-you-use/include-what-you-use.git", branch: "master"
 
   # This omits the 3.3, 3.4, and 3.5 versions, which come from the older
   # version scheme like `Clang+LLVM 3.5` (25 November 2014). The current
@@ -21,23 +16,17 @@ class IncludeWhatYouUse < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ef8f37cc8f4eebacb2b5d00cf63f45697a7766920cfad74ac9ed9c4a2b053723"
-    sha256 cellar: :any,                 arm64_ventura:  "0afd0990d819a2568df41c17f085d9b160230bee5574a6033602296a9e188ded"
-    sha256 cellar: :any,                 arm64_monterey: "843aef80aacd7d951c74263a2f4c521114e0a52f8f95514c4ebda405e0eaa1f4"
-    sha256 cellar: :any,                 arm64_big_sur:  "27ac00895576941fb13b3caa6d0d1f6a464c0a0ebcc240feefece53e8cf382de"
-    sha256 cellar: :any,                 sonoma:         "062d2677974e4dd52eba2904339b0260606632cb4c1e5bfc9f42a4e499afb919"
-    sha256 cellar: :any,                 ventura:        "ddfce96e790ca3b1c6482159148725f8fa9ee058cbdffd405d53aa1bfcd13df6"
-    sha256 cellar: :any,                 monterey:       "30badd3f3516e107b32f22eae3dc47750e0d748095a797b7d2d5a59c84506e43"
-    sha256 cellar: :any,                 big_sur:        "34834940add5003d4495185c6f4108ab83c0adf85b2cd30a2d5f8b459a6f2201"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c7abdfa312fab71542b757c034cd5617c99898d12f4cc5c7ce0e5e1d9b24c6e"
-  end
-
-  head do
-    url "https://github.com/include-what-you-use/include-what-you-use.git", branch: "master"
-    depends_on "llvm"
+    sha256 cellar: :any,                 arm64_sonoma:   "d73713688df68b04e19cbb9c0e4317f7524d74258d35b516aeb8e016870bc491"
+    sha256 cellar: :any,                 arm64_ventura:  "c18fc64dead650d5e5b34606188f6fcd98ed57661cb8c774b2ae3468ae0e0dac"
+    sha256 cellar: :any,                 arm64_monterey: "66ead0c020efe55e4330871f5b0ee60a375df1d4edfa7f0ad8ecc04ae0ac584e"
+    sha256 cellar: :any,                 sonoma:         "272aaff9519d7010989ba3e41d5dd0aabe73fe83d1466f30c545fd2fe1a796c9"
+    sha256 cellar: :any,                 ventura:        "ccff25bc7fbd08fab7f333b2ad385515abfc35b70019e62f3a3b408738da38bb"
+    sha256 cellar: :any,                 monterey:       "3927a880a129bb8767a416f964b811fc051fc0f76c373e40e1e62742de721827"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "097776120d33c8f1eb54bc676e874dd1736528422561c40bdcb7947b35868a7e"
   end
 
   depends_on "cmake" => :build
+  depends_on "llvm"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 

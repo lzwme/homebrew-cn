@@ -1,25 +1,25 @@
 class WoodpeckerCli < Formula
   desc "CLI client for the Woodpecker Continuous Integration server"
   homepage "https://woodpecker-ci.org/"
-  url "https://ghproxy.com/https://github.com/woodpecker-ci/woodpecker/archive/refs/tags/v1.0.4.tar.gz"
-  sha256 "5e3246deae90b8dc709d9723b2463f73b4a55f5249f05e41e6153ac18b4c2c75"
+  url "https://ghproxy.com/https://github.com/woodpecker-ci/woodpecker/archive/refs/tags/v1.0.5.tar.gz"
+  sha256 "6e2985140640f06417a9e40959964b4a66a2b1a517575fec74456e10a81bb4de"
   license "Apache-2.0"
   head "https://github.com/woodpecker-ci/woodpecker.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b4cdfa61755343f97e37cc43c7a7f304f1bd0c864dc8e088b83a84ee269e45f6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1274caef2634599d7cff3fc690cbce1942369a5c86a5bcc18a04bd84bdaf3b09"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9890e90710faad5e3e43c4da62bbac151f3367724ea7207c41160314cb64f16e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "39110c5695e1e9c4223e9187bb0b8a9b02479a146835dd8c2c3210dbe89f4a9a"
-    sha256 cellar: :any_skip_relocation, ventura:        "f05cb169ab4ad92bc54a1f12b52afbaa76d136d0b2ce1109543e56457aa90352"
-    sha256 cellar: :any_skip_relocation, monterey:       "d4a9b2c826273b86c7da5d03bbf6b1dd27a9a124dd494e77aaa3a6ee547b1999"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff9827621a92c5a05d5c06bd9c86580811405f0d86e4fe55ea3a563e51866031"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dec329001c7c6f198a472995c3fb27a3f0efe469158a5710b89646e17868e740"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "645c437ecd591cc4379e925d214ba54b417f5ecac080d19519ea4705a97e39ce"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4878e5a9f1ad05fe2ae185d0474984951b9b0b1cb8663ce871ff1e60549bb5f0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0d7b1af59e9fa2590536a364fbc0c488d0cec6083563fbb30393600dc95d4ac7"
+    sha256 cellar: :any_skip_relocation, ventura:        "3a4f0ba2c60ee08d410a5cf6b922fff84b36f4e9e0ccf0f3986824b924d057e5"
+    sha256 cellar: :any_skip_relocation, monterey:       "421ce24ba55f2a3a39c7b96d7eb6997452c2ca94c7612d7e1a53244fa9351cfa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f6802ded6c13cdb01a45dd8c7c07285a920de86e33960aec0cdecac37fe5d63b"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/woodpecker-ci/woodpecker/version.Version=#{version}"
+    ldflags = "-s -w -X go.woodpecker-ci.org/woodpecker/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/cli"
   end
 

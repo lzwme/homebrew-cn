@@ -3,18 +3,16 @@ require "language/node"
 class JoplinCli < Formula
   desc "Note taking and to-do application with synchronization capabilities"
   homepage "https://joplinapp.org/"
-  url "https://registry.npmjs.org/joplin/-/joplin-2.12.1.tgz"
-  sha256 "257b23c511f5b54e533ae2fcb6ed2796205ad52fb9003b987c7546254e7371ba"
+  url "https://registry.npmjs.org/joplin/-/joplin-2.13.1.tgz"
+  sha256 "d15c88cd7a9e01eb602459aacdaaed0cc004105fea9de177aff10307703bccd8"
   license "MIT"
 
   bottle do
-    sha256                               arm64_ventura:  "5464a404afcaf28400743113b40539c3fade8f7f7bdac3e9ac16dcc89b3b3ca4"
-    sha256                               arm64_monterey: "fc9fc97408e1ad88e924b030a2f97b28d26af76735489124ffb5d6eaa9f57e83"
-    sha256                               arm64_big_sur:  "64a64501dc9ae34f45eb17e910c3b3eee2790d3300a479c29d5ab9c8a345ce32"
-    sha256                               ventura:        "27e833410ab4ca2cfbc186aac58f368db2d72f29e8cc11e226844da43327c949"
-    sha256                               monterey:       "743c535faf7a38ef6f7af36b47230417580fdc583537d7ea0368b7d8cd2956d0"
-    sha256                               big_sur:        "cd92eebbee2591622a751a2c08a9d9cf1526b56d2766045ba45eb41b817b1abc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "485e9ad92ec32ea04fc8627ef3aeb1763d2fbe4283d6b554cc36d79d5ae53615"
+    sha256                               arm64_ventura:  "0bb164baf4416e66c00c93ebd506845538351021861259fd706ca1a549e70e5e"
+    sha256                               arm64_monterey: "f2206768c7032ecf192280c462988f52223a5963c713110ef68729a7e6b4ad2e"
+    sha256                               ventura:        "b6cfad372b6240bad59899dde464c8a7a5256871c152d82add54b437263b8820"
+    sha256                               monterey:       "7fd151095bcb657c22bec1a62500b294ed8b1052022528a7f12a165f542f16d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11f480d3182b00ad4d51130523942d3e2aea356b88e71669418d020702290c8f"
   end
 
   depends_on "pkg-config" => :build

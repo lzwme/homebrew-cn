@@ -1,8 +1,8 @@
 class Ngt < Formula
   desc "Neighborhood graph and tree for indexing high-dimensional data"
   homepage "https://github.com/yahoojapan/NGT"
-  url "https://ghproxy.com/https://github.com/yahoojapan/NGT/archive/refs/tags/v2.1.3.tar.gz"
-  sha256 "fbbaa7ce5d175eba22e443f008869a4ee080d63be4e49fd7d42b2ef3451252d1"
+  url "https://ghproxy.com/https://github.com/yahoojapan/NGT/archive/refs/tags/v2.1.4.tar.gz"
+  sha256 "9e02fb11a71e596d7f2d3ba3949c6c6730d57b8713afa8dcbaafe67f51923604"
   license "Apache-2.0"
 
   livecheck do
@@ -11,15 +11,13 @@ class Ngt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9e4b640f4a40a692f7af69a21ee81e99bd0c4d2c5c11cc628da28e8bbd99cf2a"
-    sha256 cellar: :any,                 arm64_ventura:  "ef9674ebcf889b50fdf21414e40145db3dc186468dc6f1148a2fa97e5858d028"
-    sha256 cellar: :any,                 arm64_monterey: "eb772e743d3ca74effc7b3aa5fb868cf7e8f3e3ac8b5a52ec9a08d018dc44636"
-    sha256 cellar: :any,                 arm64_big_sur:  "58e4088a31bc89b6f4097dd5b63b68029197ec1810bc6c9b2e441ae5c8f07396"
-    sha256 cellar: :any,                 sonoma:         "c79f1057c960c12a36952a1e8dd6cfd2a1d800ef2225e5ee80f3fe399d4682b8"
-    sha256 cellar: :any,                 ventura:        "dafad91da026c63d8f2601afebf61728413a1df5c10132267c2f5b8fe0a5ac4f"
-    sha256 cellar: :any,                 monterey:       "b7184f19cb2ec2132fcb057a2ac9f718a00ea7c23606623fe8291366171ddcac"
-    sha256 cellar: :any,                 big_sur:        "25159f292b647b0ff44454b0468fdb03a165f065b3110f4b111eabbfdf9a1250"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eceaa458d3f6e6c650850a382f5b3ab637f243132e63c5830d3b101938a08c11"
+    sha256 cellar: :any,                 arm64_sonoma:   "955f8ceac5b2d5e6beafaae46c016ea3e32e741552419074d48821242ce599ba"
+    sha256 cellar: :any,                 arm64_ventura:  "1810bee6e34da6bc772e98b12aa6c158dbfb57c3ab635fcbab6538a888dbd56c"
+    sha256 cellar: :any,                 arm64_monterey: "bb2b786f22d50b427ca70e4819f3250a90220b639bc8c40412c85b1698b37783"
+    sha256 cellar: :any,                 sonoma:         "27f982e3c74caad5f8084c549dfb687fedcacf5f60cc392463a28242e5c09a43"
+    sha256 cellar: :any,                 ventura:        "5dcbb1a05c8d788abc6cdd9cccd8862e64519d69184a71c4dbffbd9f590677f2"
+    sha256 cellar: :any,                 monterey:       "d7abf0b4b3eafa92d7431d63be5710d99e0a6e3a752907e733518eca804db4cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31867db6d7dfc252079700cf7b3f18d35dc5dc852b0ed098c84f9817fe2be313"
   end
 
   depends_on "cmake" => :build

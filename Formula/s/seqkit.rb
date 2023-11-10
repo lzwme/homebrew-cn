@@ -1,21 +1,19 @@
 class Seqkit < Formula
   desc "Cross-platform and ultrafast toolkit for FASTA/Q file manipulation in Golang"
   homepage "https://bioinf.shenwei.me/seqkit"
-  url "https://ghproxy.com/https://github.com/shenwei356/seqkit/archive/refs/tags/v2.5.1.tar.gz"
-  sha256 "76d105921f918be20e616fbb607fe0fb2db603535a254ec0f853cb36bef817da"
+  url "https://ghproxy.com/https://github.com/shenwei356/seqkit/archive/refs/tags/v2.6.0.tar.gz"
+  sha256 "2b0ca71f07a2b1e8c2341169148348708497a24fcbe76b888a4a641c09f00383"
   license "MIT"
   head "https://github.com/shenwei356/seqkit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4ac38302880be42acf6ddc1f954224f09e12e42bc3149c3359388c5ec07151e4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fafcd5531a29dd73b5870d0c9525c0a9f6bcf77967d750e4bb62bc9a18ebf3b5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fafcd5531a29dd73b5870d0c9525c0a9f6bcf77967d750e4bb62bc9a18ebf3b5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fafcd5531a29dd73b5870d0c9525c0a9f6bcf77967d750e4bb62bc9a18ebf3b5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e993bf831de972607dd79ba0af74ba7b0a0ed99f3ee82f6af5c053e177b635a0"
-    sha256 cellar: :any_skip_relocation, ventura:        "bb9b4b600fe138d1544f3ed9e9024e6b53f5d47d7fc868a8ece96f0a3c74430f"
-    sha256 cellar: :any_skip_relocation, monterey:       "bb9b4b600fe138d1544f3ed9e9024e6b53f5d47d7fc868a8ece96f0a3c74430f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bb9b4b600fe138d1544f3ed9e9024e6b53f5d47d7fc868a8ece96f0a3c74430f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b84099abd1282a294988c4f94180188c98e43d3462c62e84dbfceb5537d50777"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6508944a8b1e559aca1bf8517a5c5d6a0e70c8a105b6cfd4d6aab9dd191dbc85"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "28110264d2e417c9357ad28f42b99a680cec251bf982b3296c65b28c8df8de9e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "975d55610d697ae325859b0bc551a2ceab27e6ce6748deb2970069ff9650f2b2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "16d2409e2fd7891902d686dc8dd1fda848f2bf8b06cc1c29112450f17afa819f"
+    sha256 cellar: :any_skip_relocation, ventura:        "755c3e17cce4f83a7ba6210d25545ecd46c1be78dc6cd503cf1bee72ad03790b"
+    sha256 cellar: :any_skip_relocation, monterey:       "b7a09773db836324a2827dfee6dbbca9fc4883236afeaea3b7b8a3b3d2e4de6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc5e598510a4f32a24c18b32825d26d10351fd9f5e0933ad52d49ebdd97a1ba3"
   end
 
   depends_on "go" => :build

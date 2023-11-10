@@ -7,11 +7,11 @@ class Hashlink < Formula
   head "https://github.com/HaxeFoundation/hashlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 sonoma:       "734ef85ae86fa57b3ba6dd8fe174527ab78e50cc9a408028163304d3ea003b86"
-    sha256 cellar: :any,                 ventura:      "873297b1650b732c537367ca8f6ff1ef92bacf295147f9d35c2c06fffb5fe8c3"
-    sha256 cellar: :any,                 monterey:     "050593487fc03f29ffde9e2439e9b31bbc89f472875f5aff47706af69023cc1a"
-    sha256 cellar: :any,                 big_sur:      "95508443ab609188bd8e6dc592186877da5269340602c2236ee77e5f68bcbb77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "31fb972ebeab20da4999297696f339b6055b3e3021951f0f342c6baaae1d4a06"
+    rebuild 1
+    sha256 cellar: :any,                 sonoma:       "b8a75d4ef538ef2024dc205c971a3f27bfacbaaeacb26b55c7b5869267c44c3e"
+    sha256 cellar: :any,                 ventura:      "f0778094f28f41cad49813acef8c2bd12a1e6de08704ec50028d3562cd9496e9"
+    sha256 cellar: :any,                 monterey:     "fce1d6958a7bfe325d971f506d7cc6dade67e9ce78f6211da1f8e5cd25b78bbd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1ba98c0c9c014651b55e6b23401ff0338c02032dab6c76c387cf76aca9e75f54"
   end
 
   depends_on "haxe" => :test
@@ -23,6 +23,8 @@ class Hashlink < Formula
   depends_on "mbedtls@2"
   depends_on "openal-soft"
   depends_on "sdl2"
+
+  uses_from_macos "sqlite"
 
   on_linux do
     depends_on "mesa"

@@ -1,21 +1,19 @@
 class Asnmap < Formula
   desc "Quickly map organization network ranges using ASN information"
   homepage "https://github.com/projectdiscovery/asnmap"
-  url "https://ghproxy.com/https://github.com/projectdiscovery/asnmap/archive/refs/tags/v1.0.5.tar.gz"
-  sha256 "66941d550238de9dc3b9486072acb2baf5f158c800bb3ab7c75d81f1b1df9df7"
+  url "https://ghproxy.com/https://github.com/projectdiscovery/asnmap/archive/refs/tags/v1.0.6.tar.gz"
+  sha256 "a11b7262134b959347b8bb3e380e8788d1fb07d5a0c31860f7053a96e4134612"
   license "MIT"
   head "https://github.com/projectdiscovery/asnmap.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ffc30a0823b44858fcd95d58690e05a9ef8461cb8f2804b7f36fcf84dd639672"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "74f6face763385abcd3e34b6cd80d09518c9ac32ff391f7acc0cc37b0d98dadc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "930050a225bf414ea4a1a623f043bb7c1837f33c5b17fce6ba50039a2ff11ec0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bfb632e8c5a3081d4dcc168acde3017964878b67dd95c1bb7234679035e9e81f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "961bc5f7277e94da91e1b22cf237fde6802918bf374e1ab3ffd9f66abbb77a5d"
-    sha256 cellar: :any_skip_relocation, ventura:        "6c264c751c1bfeeaaecea4821812ac7104df668696727897f93bd41495c5e803"
-    sha256 cellar: :any_skip_relocation, monterey:       "4fd1ee8804310cbcb2f6a5cb63c0d5bebcc478c7b5a652f4748ad13c51dc4082"
-    sha256 cellar: :any_skip_relocation, big_sur:        "af93a5b7997ae0cf976ed75f52e8213f400f92da312a03bf4f4f335c1ce349ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c85a0bd97acc0c31dbfd44410d8f66e79418bc2bf0e705f8a31396be7cb8b315"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0d584d116081a7064acc68e52693045a494032bfc51c42d8b80c05063fa64ef7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1c051624c0d8aab30fd9ff384ea7ffb1a645d8c04579b49b085586849c746086"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "598ba2103f7cb3b295e38725893390fe73e3088386639ffcdf6eb5912e557e71"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a9c5137a3353a681dd04fdca643f859521a09d4bc1c943e5244af194af17008f"
+    sha256 cellar: :any_skip_relocation, ventura:        "7c0208b8f4b8bc508849fb9bfa0a221336efd5aa112ab0035ba425696089be2d"
+    sha256 cellar: :any_skip_relocation, monterey:       "31226ca6a4a5decf96c4245183f91aeb96cbca8b843a41500f2c78a95a38fcf6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e515aab2b535554c861cb31d29b507ad883a108f37ff442ab6c1854e3921370a"
   end
 
   depends_on "go" => :build

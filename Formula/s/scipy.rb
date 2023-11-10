@@ -4,16 +4,17 @@ class Scipy < Formula
   url "https://files.pythonhosted.org/packages/39/7b/9f265b7f074195392e893a5cdc66116c2f7a31fd5f3d9cceff661ec6df82/scipy-1.11.3.tar.gz"
   sha256 "bba4d955f54edd61899776bad459bf7326e14b9fa1c552181f0479cc60a568cd"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/scipy/scipy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ebe5a63603e24a4ca17131c957e72f93aa49bc101c8c08798c1f57e12405915a"
-    sha256 cellar: :any,                 arm64_ventura:  "c001e62674458c5875cf06f301c86ab9b14d4e71a7e24eaaa83ec908aba8d716"
-    sha256 cellar: :any,                 arm64_monterey: "cfe4ada39860d229ea94632e6c7292a9192ab0a3e77c4c516fd247dda5bd8c2d"
-    sha256 cellar: :any,                 sonoma:         "a9fb9a36174436e19ba946afec394f6b404835580115ff8d84d6be7d2eab12ba"
-    sha256 cellar: :any,                 ventura:        "d6b1da45259ebd8cda4b6258b848f88b55a2bd8f7cfa29949facd7279c33c735"
-    sha256 cellar: :any,                 monterey:       "cd2528d95402ca7608e07e976a7dc67bbec2a68f4876ea52a4fed23d2f20e30b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb9ce8dabb7b29350e92e51a0192907f4f65bc3fa9e428ad5daa212ce065bfe9"
+    sha256 cellar: :any,                 arm64_sonoma:   "28e42a4a4aa3ef3607305e4e9f8d5552a1ccedb390f2186bc2df9ce14cc0a1e5"
+    sha256 cellar: :any,                 arm64_ventura:  "9c9828c4697fcf7c63b0712107b7357ed783c826336560a6013dfacab236b19d"
+    sha256 cellar: :any,                 arm64_monterey: "e364186b50e4ed108c29d6fb66b069b1aee2291323e7f551e2c04a13f9229627"
+    sha256 cellar: :any,                 sonoma:         "f025e479e90fe41a240faa9b0d1e12988068ec3b29c04ec96af4692087d5ba01"
+    sha256 cellar: :any,                 ventura:        "31f4904d87bea447fc793c1bb8abfdc57b48ede19a8520b4f0fbd8ac5049c1a6"
+    sha256 cellar: :any,                 monterey:       "9e999683403d69f710da052fca0017467b22aa8742bf71a8fc4c45a6bf9f5ba5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8cd5982a74d6a6a45cf4cdeb3db1647a92fe04967a177465cc4fbdaa5b17da31"
   end
 
   depends_on "libcython" => :build
@@ -26,7 +27,7 @@ class Scipy < Formula
   depends_on "numpy"
   depends_on "openblas"
   depends_on "pybind11"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "xsimd"
 
   cxxstdlib_check :skip
@@ -34,7 +35,7 @@ class Scipy < Formula
   fails_with gcc: "5"
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

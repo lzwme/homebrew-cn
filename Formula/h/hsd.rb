@@ -3,8 +3,8 @@ require "language/node"
 class Hsd < Formula
   desc "Handshake Daemon & Full Node"
   homepage "https://handshake.org"
-  url "https://ghproxy.com/https://github.com/handshake-org/hsd/archive/refs/tags/v6.1.0.tar.gz"
-  sha256 "5eae5d24e1bace863e7cc52e3b95af66613e179a2dcc896642a7a2ce69801abf"
+  url "https://ghproxy.com/https://github.com/handshake-org/hsd/archive/refs/tags/v6.1.1.tar.gz"
+  sha256 "6a0040832f92b08973b2eb5dd350ee7b6cb20234b0d523f133b935e876e9d9a6"
   license "MIT"
 
   livecheck do
@@ -13,15 +13,13 @@ class Hsd < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "ab61b874aa100661c7aa4c90e4f07b06557f367da4d7e70ad357ce05eef5abec"
-    sha256                               arm64_ventura:  "026ce9081c77b9a5aa26770abac7a6b18304bf382b0e4da6a030e0e11815048f"
-    sha256                               arm64_monterey: "2c00bde4691b91403be4535538ce60995b35721a7845af6abd8201c8455391c2"
-    sha256                               arm64_big_sur:  "d5be878d38892d7c3ac9dbc98538cec12629df3d82e27f43b88d82dff5fd13d8"
-    sha256                               sonoma:         "01475e73b6cd9da60d627c2da1dc27f0493de7bfca29e1710875d40b30b79450"
-    sha256                               ventura:        "74b2a8b7e621b2cfa1ea48d08643a1ec09738dac92160b0c17827dbe3e54e069"
-    sha256                               monterey:       "84e4ec6a4f64c8a4143214f9869f910854b342dedecd018255bae00eb21f00a6"
-    sha256                               big_sur:        "1efc758aef083883e82dca7b67f5a631922d8278cb87efa053a5958eefe2600e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ee6a5e2349e7fdc3acfe28cf52aab45693aec37cff9c7963ceffb05c409844a"
+    sha256                               arm64_sonoma:   "61c2aa6a86c332b29b03754702df5e26cb6e263eb6a25df50c19ecf27794643a"
+    sha256                               arm64_ventura:  "2f3102a965e2e4ce59a7702309301cf448e89bdea3d370f489b38310aa1298d3"
+    sha256                               arm64_monterey: "42f2b274e0732cdde5412969b9200ffc32b1fd38818ea4c79901ac6b986448ab"
+    sha256                               sonoma:         "373070fc85e6e71ba588c7ed147c9ca5dfbfd7d8658687b8ff0b35b8f744bdac"
+    sha256                               ventura:        "ee3f6cc11f3a8b7d403a2881c68c2bc25046553f03f85b787115a918351b0cc8"
+    sha256                               monterey:       "2e68c505a331dce0c06e9dc3446d4d0586dbaee5caf4e4d9e35a5256654e915d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c48b88c9874c7717a3ca4ef378bd3a9233d3fe73cacc9ed56befbf8aeb316e17"
   end
 
   depends_on "node"

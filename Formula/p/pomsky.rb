@@ -1,21 +1,19 @@
 class Pomsky < Formula
   desc "Regular expression language"
   homepage "https://pomsky-lang.org/"
-  url "https://ghproxy.com/https://github.com/rulex-rs/pomsky/archive/refs/tags/v0.10.tar.gz"
-  sha256 "a7c02046c8919c16204d66161dfffd4e752ce86657213cb114fe0df9f561a657"
+  url "https://ghproxy.com/https://github.com/rulex-rs/pomsky/archive/refs/tags/v0.11.tar.gz"
+  sha256 "602cf73d7f7343b8c59ae82973635f5f62f26e2fe341fa990fca5fe504736384"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/rulex-rs/pomsky.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8b050f408a7e4c53a39e2c93171db2954aec7c43b551355db9b02f800a007ebd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6bc84242e960decb30596151d9ffa6f7141bf9952c102a3b68e1e33e8b178b44"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "79c1fb83c49630eb05d5005a071676c7a82d4a0b3a49db913806ffa043661dd2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "27c7b47d0b580a43d932faf0ed064479b71fc2657be5ad250e10681a6c09c028"
-    sha256 cellar: :any_skip_relocation, sonoma:         "35bf74518261f639c5b2c88a01341991742e997d11d3d3ea4806be2bc9ec29a5"
-    sha256 cellar: :any_skip_relocation, ventura:        "50d1717df00fc80230fa8db2785beb78c3d20e33e55c7b3216e4862a01b930c7"
-    sha256 cellar: :any_skip_relocation, monterey:       "9f688b014c303d98a47b92df85c83dab197a96ad40c0e44f1ca227ffcd14c0d8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "66debf5cb72985eb6a7933aaacd8070ffdf17f1fd021562e9f417f316c34cdeb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bae27e061c5f9cfe506bfbc2513f901fe5bacc5a1a7e4e5602a1de68a61012bb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "01842f19977a4477d2c0883fe93afd2f12b9ea76fcb11125ce90607799c448cf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6c0bfe04867190d21ec09bd8ba714eb24ebd1c17cea13e6a36d7b048b5d693d4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac38361c357ac818f40046e80d9c1d40bbfc46d58338bd42d703ce0268a8dd5f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1d179a2613cb6b3992b92faf7a8c5c30afd39b5a46057464c1fd1718095c38db"
+    sha256 cellar: :any_skip_relocation, ventura:        "5d6bf119921ada1fcf6ebcc77d0ccc083333f87dfaf86d9acd9b447392085a24"
+    sha256 cellar: :any_skip_relocation, monterey:       "d1ba43175ec2204522560eb8deaf5d6ee460ecbca9bdea22331924e92fd43def"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "67ac6ce4cfcedd9f918924fc199a8d4fff46017eb0a465d995cb1fa55f53deff"
   end
 
   depends_on "rust" => :build

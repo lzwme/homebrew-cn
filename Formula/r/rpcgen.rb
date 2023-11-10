@@ -1,22 +1,17 @@
 class Rpcgen < Formula
   desc "Protocol Compiler"
   homepage "https://opensource.apple.com/"
-  url "https://ghproxy.com/https://github.com/apple-oss-distributions/developer_cmds/archive/refs/tags/developer_cmds-66.tar.gz"
-  sha256 "ac994255d8e86286e15dd6924c95f4a7c20e845e93c99708be9e49a62fbcfb38"
+  url "https://ghproxy.com/https://github.com/apple-oss-distributions/developer_cmds/archive/refs/tags/developer_cmds-68.tar.gz"
+  sha256 "6f9e01612453ea37b8af384e1160e13215ecbdc2c2bd8631e3b872219ab1a0f0"
   # Sun-RPC license issue, https://github.com/spdx/license-list-XML/issues/906
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "80eaf162c2d2637375b693ddfdc8695d097e56daee7554c1e257bbaf99b84899"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "526706cff9cc8d304a10c7fb6e8d1d5d9e9809a5dfd01d43672df89ced300293"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "78dfb8bb78945458e7800dcc9dec612a7b2d72dcc8f128965c3a62463641526d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9e4b76a3f59923370fd526a8d0d7c2d045e24c0fd3bc8a90520a75a0600b2b42"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fec223db5af2d5a2132be261267da3c79b97634898050c0a3060270f089dcccb"
-    sha256 cellar: :any_skip_relocation, ventura:        "9813ba259c023d2055737aa1ebfc0b0aab8b5891bc62798787d8c2342952994b"
-    sha256 cellar: :any_skip_relocation, monterey:       "614287949fb3eecb3109d34b8d0c8573d2b46ebf63dc1d59bf97fac5ab02942a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8168bcd5de6cb890aae1bd5deb67f732c193f6729606632d7ece185c10dd3b75"
-    sha256 cellar: :any_skip_relocation, catalina:       "4d9702a8541f7db461c81f761bd446167473d0b7ad9590370fbbd9cb775442d4"
-    sha256 cellar: :any_skip_relocation, mojave:         "6bc4a8c391b448681db323c894b07a57a22a8e4d67015f0b9be7f1cff876d23a"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "2a4a7cf95e773ee5a2721cc90832031c6d5bb6dffefd575233acccca0d446631"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "632f111183949b67cdd6ae0d09dcd163456dbc8ac3c404b2d7b357b3f64ee869"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b826f320d3f8cf37b7a4d5ac2ab65f31672af8a1114f99ddac98c8ac70b9b2f0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "52f4353e3908706487141b09bdc5e30c24fddf1189c819dfbba09e810d2f50af"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d2c65967becdac24363421d8a162f8a41de3914d148b9b17921a366626f01e89"
+    sha256 cellar: :any_skip_relocation, ventura:        "5f2fe33def023209592904ededfe4dab17fb97ee251aaab96440473195d1d4b0"
+    sha256 cellar: :any_skip_relocation, monterey:       "ba85e2a510a78d09e64b8d2cf051ffaa8eeee41e851e22ab0cc2a2953faa3e4a"
   end
 
   keg_only :provided_by_macos

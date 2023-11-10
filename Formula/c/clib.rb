@@ -1,8 +1,8 @@
 class Clib < Formula
   desc "Package manager for C programming"
   homepage "https://github.com/clibs/clib"
-  url "https://ghproxy.com/https://github.com/clibs/clib/archive/refs/tags/2.8.3.tar.gz"
-  sha256 "0ad8262d13ef138a12452e67e081e3eb31a264e2040cfce09417e8f7eed4e1f5"
+  url "https://ghproxy.com/https://github.com/clibs/clib/archive/refs/tags/2.8.5.tar.gz"
+  sha256 "181cd5c6c73aa1e090af06c1d6dfa4e6477312bba877850a89ed107717b7c1dc"
   license "MIT"
   head "https://github.com/clibs/clib.git", branch: "master"
 
@@ -12,15 +12,13 @@ class Clib < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "62afdbcd5bb7648517ce1aba70e8d2c33e3c47fd657cda7f5fe4f0f1d5766a48"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e32fd4fabf6ae444d06ac04f3f469fc8b45a6313db7d5d33da2c41974e5d991"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "531b420f544115b76de3f062ca797e29d8d67033606d900fb4f24110be6d79a4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5570b36fd28e42add8fc2bacc2bde04bbba0964c703b54a166cb28edade444da"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1555405363781981ca9907281190f8b0f160714741816318c31a3d53bd2373bb"
-    sha256 cellar: :any_skip_relocation, ventura:        "191e02d060b9a2802b7bc9e99dd3a68572ee3cc68f732f5de4208a32c7961586"
-    sha256 cellar: :any_skip_relocation, monterey:       "690ee73163b6fa61ad18f2edf33191f073e547ffa1b996573daf1d563e235043"
-    sha256 cellar: :any_skip_relocation, big_sur:        "42094b31e28fa21086e7765abb6d09e02eff56bea9088227895dee48e97c1477"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9fae1b2b9a3c8dd01a954573192eb2106fd0b2590c83180210c11cbdbe38be8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6731e2dac2c1366e927a181c6f36a8550222d7af6ec2a5966330dd642315cb40"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cda0f0c819604faaf6b06cc0fa759fdf57be408126ccd253bcc8cbb1aa8bf8c8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dcd1e902b95d5a768583dcbabf27d47c2d5f5bc07f34f953e3c92eabc93e7525"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4357f7fb71fab00af4da6ecd69284c0935b94a88fa1546ee8137a942e705ae96"
+    sha256 cellar: :any_skip_relocation, ventura:        "144626f6491b5ae931e442e72853583c22acfa2f36d1a366a1cbf10a3fcff582"
+    sha256 cellar: :any_skip_relocation, monterey:       "3caa83703a1f806930e08d62311f2b0af95c6efefdf62e12ac90ce9ab7a7be15"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1bafac64063408b040c9829ffc7cd32a26596c85abbbef6b045fbe2b27b6839"
   end
 
   uses_from_macos "curl"

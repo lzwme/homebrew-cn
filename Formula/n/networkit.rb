@@ -6,32 +6,31 @@ class Networkit < Formula
   url "https://ghproxy.com/https://github.com/networkit/networkit/archive/refs/tags/10.1.tar.gz"
   sha256 "35d11422b731f3e3f06ec05615576366be96ce26dd23aa16c8023b97f2fe9039"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "373572010294de60707d78c79dac5a1de76ec7f5a31b5b73097e10f4bb271af3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "728f021d0fbf6fe3237db7ba75b3cc637fe38b0db5d4bcf1f8c88f4fc0461dfd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "23470b1cb591899116c01c966304451024bcea4ed7ba8f13ae4bbe1986ec00c1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fcb9af0f8f137c35009fe9ac19c25c165adc7e123653a221c00b6f780cb4ac7a"
-    sha256 cellar: :any,                 sonoma:         "7c54e33533baae65e91d5adb57ed732f5e675e8d6d1fe25edb7a6f93c74915dc"
-    sha256 cellar: :any_skip_relocation, ventura:        "7d3e07e85b55cda32842c7eae2d7752a59618a3fbcb2fe11231bf9c392cc641b"
-    sha256 cellar: :any_skip_relocation, monterey:       "b6ce1a8d4694d1e3434fc23e0a99d605bd777f151b2e7c8da56b5312ce3e7130"
-    sha256 cellar: :any_skip_relocation, big_sur:        "45397cfad06aeb74e92fd34c773772d5fa14ecf9aa32d23b79643e31e1ae33a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c288ca970f924b07fb6619e453ebb54f013b4665f5f6d90b797af2026e134161"
+    sha256 cellar: :any,                 arm64_sonoma:   "51d5f50643575477d34fd784a2e3dbfdb6f67a7c4942c7a371d5ae1cb41888f9"
+    sha256 cellar: :any,                 arm64_ventura:  "81bc8ed620831f97e3b4efb0cb119a4aae38a5faa2125b214afff45068169255"
+    sha256 cellar: :any,                 arm64_monterey: "043ba6ce8f8849c9c9c24ce0328ef8b43b84d3d7e1c3dfe4e6792753184423e3"
+    sha256 cellar: :any,                 sonoma:         "2e202215dbfd0abe2e8d33661a1ddccb086d3aa48c650d9a9bf92ebebbe97969"
+    sha256 cellar: :any,                 ventura:        "06cdca4aa2b099b88161702de0020a028a53864fb187237da77508beeedb9088"
+    sha256 cellar: :any,                 monterey:       "2357291a1153c65a87cd11c5c155fa829d676e4cf4d2dc18a60f33f7b1b9cab2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a147cbbf3bdc317f42bcb876220842ff89ce29dab109cde8893e847942ee83c"
   end
 
   depends_on "cmake" => :build
   depends_on "libcython" => :build
   depends_on "ninja" => :build
+  depends_on "python-setuptools" => :build
   depends_on "tlx" => :build
 
   depends_on "libnetworkit"
   depends_on "numpy"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "scipy"
 
   def python3
-    which("python3.11")
+    which("python3.12")
   end
 
   def install

@@ -8,20 +8,14 @@ class Sift < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d0530df43f6a11f1896f7520c499708945c213f842be222c9745af4193e39851"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "85a34b9b8aaf883d3659eabf4d5ed58c26c695f8882d6fbcb1987a8fd2bc59ec"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c93899f610215c5f879a7dc895c6d549573bde6389ecd1b5624bf119e585d7a6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "28fd605e32b0dbf9526939fd5e366c46f5ad0c45b2a5e9cb2bb7fb8815a7f97c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ebb503184c83ea315c083b3be32217d43caef2cde6cd25ba32f42f8bd3908e5f"
-    sha256 cellar: :any_skip_relocation, ventura:        "62ad19beb77a328b4ad7a1bba2ec84fe1d87d91aa01bd4dafaa5a229c5835e27"
-    sha256 cellar: :any_skip_relocation, monterey:       "eaa4c4e84606b8dd32e3064819fc05f16b22a76f0be493bc283a2d256c050ff8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "08978d211e26b262c551418ca7c6d93f2b05a0e7887e10831a5a70f23f445e8f"
-    sha256 cellar: :any_skip_relocation, catalina:       "d2c0f8e64a32bcbaa45976a350d302dd13e3b68595162d69005dae7599d9be40"
-    sha256 cellar: :any_skip_relocation, mojave:         "08aae3031f30b5502bd93b26c4a2e655077f3a91c212b04898c19d14444ec0e6"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "b0d584ae926816c4f525c9070cb67c7622e851c3cbba67e7c0b9cae5d30feb00"
-    sha256 cellar: :any_skip_relocation, sierra:         "42fbf76075951fd28a27b4e2763b3af58eb93b0260c3a3c82719d7a32ef7baec"
-    sha256 cellar: :any_skip_relocation, el_capitan:     "6ee1bdf8b60fe3c3528a4a2698f19518a7bf71838ceba58ab9a199a6624f3dba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d9feea7d6e51c11b1a56043ed9b15731dac5440dd4eb492c1468ef0497a1af9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "677bc238dc0f303ab31800d2c3695539d2756365937c555a162b20a7c453da2e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "80ae5c278ab9dcb654474a7a2f0306dc5d96d4de01e73e96b69715aa48eeaad8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dbc851806c100acc052be58ce103f0b2b5304a79e22a1331f6541f4f37b88ef9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f4d9aa5a4b8c3f188da9966e82d1aee1bae3c530a2180d2fa5a667ce314d00a4"
+    sha256 cellar: :any_skip_relocation, ventura:        "676602a4f1fd5a0a903b5094ce0b5e044ca5c2bce6967d680683e7c4a641478c"
+    sha256 cellar: :any_skip_relocation, monterey:       "2bf9fe6ef94f951254079c5e6bed757526b4b8bf68e2eeb862fa07c71302a32d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a5dc83483b444b3850237050f761c8967ce36008114dad661a1424aa6068da3"
   end
 
   depends_on "go" => :build
@@ -50,6 +44,8 @@ class Sift < Formula
     cd "src/github.com/svent/sift" do
       system "go", "build", "-o", bin/"sift"
       prefix.install_metafiles
+
+      bash_completion.install "sift-completion.bash" => "sift"
     end
   end
 

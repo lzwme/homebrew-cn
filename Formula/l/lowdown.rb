@@ -1,20 +1,18 @@
 class Lowdown < Formula
   desc "Simple markdown translator"
   homepage "https://kristaps.bsd.lv/lowdown"
-  url "https://ghproxy.com/https://github.com/kristapsdz/lowdown/archive/refs/tags/VERSION_1_0_2.tar.gz"
-  sha256 "049b7883874f8a8e528dc7c4ed7b27cf7ceeb9ecf8fe71c3a8d51d574fddf84b"
+  url "https://ghproxy.com/https://github.com/kristapsdz/lowdown/archive/refs/tags/VERSION_1_1_0.tar.gz"
+  sha256 "5cc997f742fd9e3268a2bf15cb9c58bfa173b303bc13f5c61f67dedfff3bccce"
   license "ISC"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "13d7f9a0d20b89394eb33c9590eaaa4655bcbacd51206af96e43fd6a124920ef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8fb0c7d57f545fd6ed5902049ec23eaa7f54a3bde10c0e6808cc54adb76e6abb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2bc8fd2653eab9542d2afe9d6aad18481ed647dec62228d1b2e2f5a2cb03d141"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "da6b18b0d4734244f9e5d677298f4a0874d87326f269656e76120d4fb867d8de"
-    sha256 cellar: :any_skip_relocation, sonoma:         "36031659a27a0ea01f41c8593e901783b9742e41d1db2c2abe95cd9be18c25ff"
-    sha256 cellar: :any_skip_relocation, ventura:        "05886e27d8b52b8755130af5e4741f0920908d9742781975aa3cdf398ca613c3"
-    sha256 cellar: :any_skip_relocation, monterey:       "a4a41ff54df94cafab6b52b1ce062cf5dbf3a99c6ad22b494c59e99bf95088b3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fb19bded8bdfe9220682b03c8c9aeaf7c24c86bd20d8cc294ad5cc35fba5e87b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b3aae261818590324f0ed233f8f104541d5adddc0da9abe36f035919c480657"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "255c337ab676dffb3ef9b340b4d068e24b6b872f0f8c7f8f97849ce75ca8a4bb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c4f1b67c96014feb0f6491d5082d455e6d35efda11153235f9ed2e8cdc05e2b4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "80ac7b1a9025db2dfbeab480863f5a4f078e9915825eae09443138ef5f164251"
+    sha256 cellar: :any_skip_relocation, sonoma:         "17472061e49483d9c4e756a57ded3ffa838a3222ce507f78aaf28a8c0374db66"
+    sha256 cellar: :any_skip_relocation, ventura:        "48ae3bf827b706dc7db75d2203a636eb6bbdfd7a6172a7c851a34db93c67629b"
+    sha256 cellar: :any_skip_relocation, monterey:       "bb6ec656e57b50f3b7486fd31bd08f5b227b7eb4c11c18b48c2572feb705510d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f28e7aa9a05b850a201e2c9869d0f970314ca095b0d72a1f32c3fb95502e8c0"
   end
 
   def install

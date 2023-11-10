@@ -3,21 +3,18 @@ require "language/node"
 class ProtocGenGrpcWeb < Formula
   desc "Protoc plugin that generates code for gRPC-Web clients"
   homepage "https://github.com/grpc/grpc-web"
-  url "https://ghproxy.com/https://github.com/grpc/grpc-web/archive/refs/tags/1.4.2.tar.gz"
-  sha256 "376937b22095bdbea00f8bcd9442c1824419a99cbc37caf0967e4a0fa8b16658"
+  url "https://ghproxy.com/https://github.com/grpc/grpc-web/archive/refs/tags/1.5.0.tar.gz"
+  sha256 "d3043633f1c284288e98e44c802860ca7203c7376b89572b5f5a9e376c2392d5"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9647774210c88c63cf9dcf29f69dcb68524da62027ef73b08fd26a74a2cf17c9"
-    sha256 cellar: :any,                 arm64_ventura:  "54e59010fc995ac571f6c76369721c28dad336723404e858cce02e893db30e61"
-    sha256 cellar: :any,                 arm64_monterey: "b7ad14af33ee7f73663972c1ceb97727bc0fea026c1e4c16ba2913272208578d"
-    sha256 cellar: :any,                 arm64_big_sur:  "9d8551246e95b74f03875968666431ed0a5b9db6282c752ed49e106eb5e70034"
-    sha256 cellar: :any,                 sonoma:         "08e6590755eb9a5b621b0970496e2ae4fe392e644b279032700f683f96272993"
-    sha256 cellar: :any,                 ventura:        "70b8eac814308965112d0101ab8033ad5897c4e3c509ee9c9755583a0bccb55b"
-    sha256 cellar: :any,                 monterey:       "f5435c6bc4f25d62a67d56904a593640ddf4a7c868e8255f9d86620693a34873"
-    sha256 cellar: :any,                 big_sur:        "52b8503b1b9053fc90043c83d7d3b86767a97616955b89841f4d59ab6269daa8"
-    sha256 cellar: :any,                 catalina:       "b839a0129eca03ab237945ff1a81249b860bb3421814dc42ca52132cb5303ecb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95f9dcef9a241e6104e446900dc34fc9daafa8bc38886d3ba55cbf49b1f66cd4"
+    sha256 cellar: :any,                 arm64_sonoma:   "5ab0ae27b604ea0dbec2c4b3148a4fca8d53f0010ce9f1dd566bb22fcafc24f0"
+    sha256 cellar: :any,                 arm64_ventura:  "ba446addb28734a91b4236a52dd8b17e9be933d90bd0bd6a1eac37368f64e023"
+    sha256 cellar: :any,                 arm64_monterey: "57a3d2185dc31f48a53ef3ce0f3ec32fc3fcc22d72774a2cb1f1cbb4ba38e278"
+    sha256 cellar: :any,                 sonoma:         "b4d8f1ba3299e952a09e5822df7dcf1571a731899e74198bad7810afdd9b8ab4"
+    sha256 cellar: :any,                 ventura:        "7afe339c30a097798f4863d24e5dbac7452ea85c918651478ba3bfc7fe2680b3"
+    sha256 cellar: :any,                 monterey:       "50076fd59b916ccc38cec5b4b7f0b1c43bc902aa47a2e12175b6efec80217984"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2cb5155debaa31e15a2f385298a09aca0f6041d7da2bc2612c73ad7deb33e80"
   end
 
   depends_on "cmake" => :build

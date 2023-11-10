@@ -1,8 +1,8 @@
 class SlsaVerifier < Formula
   desc "Verify provenance from SLSA compliant builders"
   homepage "https://github.com/slsa-framework/slsa-verifier"
-  url "https://ghproxy.com/https://github.com/slsa-framework/slsa-verifier/archive/refs/tags/v2.4.0.tar.gz"
-  sha256 "8588428d22f931b751dcdc7d9b0489e11840efe91c5074ec3fb84b9d4206a52f"
+  url "https://ghproxy.com/https://github.com/slsa-framework/slsa-verifier/archive/refs/tags/v2.4.1.tar.gz"
+  sha256 "f601e768a3a1b073a0e89d5933fcece349e4c729f75f149319696eb5a88b8df2"
   license "Apache-2.0"
   head "https://github.com/slsa-framework/slsa-verifier.git", branch: "main"
 
@@ -15,15 +15,13 @@ class SlsaVerifier < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd70ae71d6b72fa8875f5be8b96b2e50c76f0a7357f242c7254dff0f31e80ed0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5d42a4343dbb0f18108faf80fa71f3a5a01ab9d67bc0134c104ac4b952b60de4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d75c507634ec7ffbb8f117ef1d37186f222b12760938a7fa225459a8468034dd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f329c0aa0b2a8d7513040272bb07dc6a4168969016fc92581682044cda39b2ab"
-    sha256 cellar: :any_skip_relocation, sonoma:         "30e53c87de38a1880db80ee0857a4f438c2fe1479480f078c5d5e438d8aa1d4b"
-    sha256 cellar: :any_skip_relocation, ventura:        "2ac447f426b4c461d5c3b857dc878a62932e3fb4c960a641d8bf314595d9aac4"
-    sha256 cellar: :any_skip_relocation, monterey:       "b01c7c7b5d18701275e9358b96fef1921cd4b0a697119caa81acd8faa6256996"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8a8680a86d01243fe13ddb6b3c73af02abe22dda9a1b543f0c48ce075cce9839"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d430eb83cbaad15ea0929fcc1c4155b4e981e3246a690fdacabc8907bcb68b5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "975e1854760e9ca124a7e7374f03b5d000a3ee8dbe6100965d9269cc3f1a1e0f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ecde6acfec216988e574ce374fe0c580b96699a3539d25a497d6b42d044909d5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f950b178108ab59febfa53ef4b040e480c557b957855d2907e5970791517a277"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c4a6d76256ddf33b89e98280b70e6e559353bde3650f6a19ac2a6200adbc3281"
+    sha256 cellar: :any_skip_relocation, ventura:        "88028d14b515fc10ddd964156742b226f6b2b1f654998e03c94de80467dfa724"
+    sha256 cellar: :any_skip_relocation, monterey:       "3dcbbf5f343b4bed93080329865754d101df568322d9c4adf91aea29d7d73ba0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8aafaf9ae4d3f9895d247c435b954c85e1e8e384aed64f5a24ff87be8c4eed04"
   end
 
   depends_on "go" => :build

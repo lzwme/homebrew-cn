@@ -1,10 +1,9 @@
 class Gambit < Formula
   desc "Software tools for game theory"
   homepage "http://www.gambit-project.org"
-  url "https://ghproxy.com/https://github.com/gambitproject/gambit/archive/refs/tags/v16.0.2.tar.gz"
-  sha256 "49837f2ccb9bb65dad2f3bba9c436c7a7df8711887e25f6bf54b074508a682d4"
+  url "https://ghproxy.com/https://github.com/gambitproject/gambit/archive/refs/tags/v16.1.0.tar.gz"
+  sha256 "de3e3d561cf46aeaec135efaf23f41ddef28968d9071251ca8cb6266babece62"
   license all_of: ["GPL-2.0-or-later", "Zlib"]
-  revision 3
 
   livecheck do
     url :stable
@@ -12,16 +11,13 @@ class Gambit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5cb5990e339a9b45230838aca0f780ef0bc9539fb8aa02ed7ab1a150456a7782"
-    sha256 cellar: :any,                 arm64_ventura:  "183dc5a8d5d31cd73296b04216727a1049cebb34788f1b58c421536a6d9d9d36"
-    sha256 cellar: :any,                 arm64_monterey: "9e8a6532979a76099a1aec227b3b581f72ace90d5d6df95ef92a9aee4695ea91"
-    sha256 cellar: :any,                 arm64_big_sur:  "8095ee116fc0670d6f2a162851c65bcfd975bafdb728c3a7748a09a59f09c72b"
-    sha256 cellar: :any,                 sonoma:         "13305ae8ef1ce1ab306fdf528859aa584ba895af5731f1ba44c631cfec3f64d0"
-    sha256 cellar: :any,                 ventura:        "7c088cdd93af9aa729243909d2f0d1b6b4d04e2893c5b49293f22ea1b75a9059"
-    sha256 cellar: :any,                 monterey:       "bcfcbfc39abea04e9a9f724ac800042003ce9d3dd56a9bab77615825032e0ef0"
-    sha256 cellar: :any,                 big_sur:        "57c1e208efcda541d09673f8852ef2903a5bae47ddfcaccfcfa5b42b9f46070a"
-    sha256 cellar: :any,                 catalina:       "a05c834248ab760aeffe219b232ef13c10e002350e91bde1bfa4259bbb879d7c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1ebe528c6a77da1d27ad4460732d11bc0daddaf4a7afe2a4db0e0af96991f0f"
+    sha256 cellar: :any,                 arm64_sonoma:   "0f7167c81ed8284493c0823edd9f83a715084433e1a2f4de79c638c2a86058d9"
+    sha256 cellar: :any,                 arm64_ventura:  "5b5d2d8c2bc1e987e25ff250fe087f30e414ca72d6f30ba062f0c749e55a4403"
+    sha256 cellar: :any,                 arm64_monterey: "344c69984e404b101446cea287bcab018c52ee726bbb1d8ff6d75b2502396e87"
+    sha256 cellar: :any,                 sonoma:         "3f9eb0214ae51afbd18abe8f295207656118cdc4a85a1a0a0c35a420893f1371"
+    sha256 cellar: :any,                 ventura:        "5de50218265d69c4c8624f6be43d317e9679201c138ce40c081c1d61a7deb325"
+    sha256 cellar: :any,                 monterey:       "49117412f0e3ba6bd363db338b981c1b7b9a548dc617c92e1b7882ec43144ee4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3bce95ec53af3ae5cb8dfeb5b2019d98e8398e65b9fb39a1e2918b6813ac1799"
   end
 
   depends_on "autoconf" => :build
@@ -44,7 +40,6 @@ class Gambit < Formula
 
   test do
     system bin/"gambit-enumpure", pkgshare/"contrib/games/e02.efg"
-    system bin/"gambit-enumpoly", pkgshare/"contrib/games/e01.efg"
     system bin/"gambit-enummixed", pkgshare/"contrib/games/e02.nfg"
     system bin/"gambit-gnm", pkgshare/"contrib/games/e02.nfg"
     system bin/"gambit-ipa", pkgshare/"contrib/games/e02.nfg"

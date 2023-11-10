@@ -1,9 +1,9 @@
 class Snort < Formula
   desc "Flexible Network Intrusion Detection System"
   homepage "https://www.snort.org"
-  url "https://ghproxy.com/https://github.com/snort3/snort3/archive/refs/tags/3.1.73.0.tar.gz"
-  mirror "https://fossies.org/linux/misc/snort3-3.1.73.0.tar.gz"
-  sha256 "d04edf07e9b695fb22de73f0987537d35b4c8466119940e39a056d1a13888b27"
+  url "https://ghproxy.com/https://github.com/snort3/snort3/archive/refs/tags/3.1.74.0.tar.gz"
+  mirror "https://fossies.org/linux/misc/snort3-3.1.74.0.tar.gz"
+  sha256 "4a4529e74bc202303c0330ae8b2317f0bef3ac92ae7216df8cfedfce24ddd129"
   license "GPL-2.0-only"
   head "https://github.com/snort3/snort3.git", branch: "master"
 
@@ -16,11 +16,11 @@ class Snort < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "2ebce7964ef455dd3e2c98ead05afcd43c2770b57929ed2060e1db46e6e86401"
-    sha256 cellar: :any,                 arm64_monterey: "530e56ad93831a107a7a4ab69e82a6e49e133af0a419836e9d823cb430fcc0cf"
-    sha256 cellar: :any,                 ventura:        "5c51a03a1db0f4e1540b81b3d7f26fd9d9bdf1366b78b1a111bbbd82d5ccd89f"
-    sha256 cellar: :any,                 monterey:       "f2a04f6cfdbd550f31a819c73b25d1fa50966d2046b2879486051dd30b7eaf7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d961147f9abef88d2eb5ebb0987a51c354d8d54c5d5b192c76ca1790144f400"
+    sha256 cellar: :any,                 arm64_ventura:  "caaeb592c46c762b2f1c5f5e80404f8b58fbbf3131ee2829a166ea6ef835f63b"
+    sha256 cellar: :any,                 arm64_monterey: "630fc011870aaa0e2bf9a543447890a2c2793879694a59b587ec682e9b57ba06"
+    sha256 cellar: :any,                 ventura:        "5ebf79f0aa6bc1ce36637a35746a8a208186e7c937649b8145ca5b513e278866"
+    sha256 cellar: :any,                 monterey:       "8d163fc73ed2e655a3d88c5a7ddea548c41914c905fe72b7efbac4029692f833"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d346c8dca54a3e9a58ecd223336bb3322d3de1c5a9af281c53a77cf8e25fe898"
   end
 
   depends_on "cmake" => :build

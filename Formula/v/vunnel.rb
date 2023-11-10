@@ -3,19 +3,19 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/07/2e/3b97788f2c07eceaee249858627c3a94745d20c1b4a59a75ff5990adea58/vunnel-0.17.5.tar.gz"
-  sha256 "5a7cbbb6568825f303eaa351500cb5a5c131d4be32362fff153f99f1b107c3f8"
+  url "https://files.pythonhosted.org/packages/4d/42/f3cd9061f4b60edd0dd6c4eb0802d6896b0d2d1b9579ce04ee8c39cd059e/vunnel-0.17.6.tar.gz"
+  sha256 "2a952b74e47ee85243d678c24ad30694681258733e6a5e4d795ddc572640c66c"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9f103163c3539b53681fdb1865bac31d65d5ab3531f7f859072677d042817814"
-    sha256 cellar: :any,                 arm64_ventura:  "3791d5d92ee0d260af9c61e570bc4660d9e59e85a1d5897c5f6b521b29189a8c"
-    sha256 cellar: :any,                 arm64_monterey: "b2bc5486ff460cbe743c136ce3d681d20ba8cb8eee219d30fde46d146274ffcd"
-    sha256 cellar: :any,                 sonoma:         "561a03c3805ef96e0403b64a322a2ab86a0a77807af2cd4459bfe18d7fff4f84"
-    sha256 cellar: :any,                 ventura:        "8b68eb5ffc75babc31b2221d88285131d285349a63db9a6a3af2ba110fd4e882"
-    sha256 cellar: :any,                 monterey:       "a8a584a9220b5163b48835f7a89ad62b2e60b913d647224490fc3576e38d8111"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cacf103a8de48deb68c4bd53dee1f34d87f9d0698f6d1339ef0b84e53da041c7"
+    sha256 cellar: :any,                 arm64_sonoma:   "a2d97cfeb5070dde643d7023a16c0ba3d3cc135162f1930c6c296ce13756d330"
+    sha256 cellar: :any,                 arm64_ventura:  "ff827153a45656fe5d6697b8767b24488bd7d61356f5a152ad049f018dd137c5"
+    sha256 cellar: :any,                 arm64_monterey: "811f8aa83dda15b9f3dee059663eaacc44bac22b2800064d67c0c7a858954b18"
+    sha256 cellar: :any,                 sonoma:         "249f29585d7cce754d076cbdffe55ddf49ca3c2787da294953e5374439143187"
+    sha256 cellar: :any,                 ventura:        "0cbcc29bf61848f5130c9a1e4280566c42ee515ed6965172e33aff9a086777fb"
+    sha256 cellar: :any,                 monterey:       "4f0035dcf6eabe654f234855dd7ffbb5a14adcbfa01bc3fe44072f841edb3d5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20476a9a89b559b9bc5df96a2ad82789da117432b04c356d5f3f96159d9ef726"
   end
 
   depends_on "rust" => :build
@@ -47,11 +47,6 @@ class Vunnel < Formula
   resource "cvss" do
     url "https://files.pythonhosted.org/packages/79/16/d2b86a5506ad5fee720c6f281d8499d86277ae05fea4861b3788d51cf295/cvss-2.6.tar.gz"
     sha256 "1e8f0c7ac1c1d7f4fb6d901950aa216358809de25ee7c41bc138615a23936c80"
-  end
-
-  resource "dataclass-wizard" do
-    url "https://files.pythonhosted.org/packages/cb/5b/00d70960d5277b8be8c5a79c986b6170285a07f162cf05ee33e87fd7f392/dataclass-wizard-0.22.2.tar.gz"
-    sha256 "211f842e5e9a8ace50ba891ef428cd78c82579fb98024f80f3e630ca8d1946f6"
   end
 
   resource "defusedxml" do
@@ -92,6 +87,11 @@ class Vunnel < Formula
   resource "jinja2" do
     url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
+  end
+
+  resource "mashumaro" do
+    url "https://files.pythonhosted.org/packages/93/4b/50b95e3180b5454ee533ffc32a73c34695b1a9ca777ab5c387dec6f7e912/mashumaro-3.10.tar.gz"
+    sha256 "0248a5c8574aa6cd20696621502d38a7ea66af3d6d93c5d03f93b33298edc878"
   end
 
   resource "mergedeep" do

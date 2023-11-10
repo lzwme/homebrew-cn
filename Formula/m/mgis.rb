@@ -4,25 +4,25 @@ class Mgis < Formula
   url "https://ghproxy.com/https://github.com/thelfer/MFrontGenericInterfaceSupport/archive/refs/tags/MFrontGenericInterfaceSupport-2.1.tar.gz"
   sha256 "f5b556aab130da0c423f395fe4c35d6bf509dd8fc958242f2e37ea788464aea9"
   license any_of: ["LGPL-3.0-only", "CECILL-1.0"]
-  revision 1
+  revision 2
   head "https://github.com/thelfer/MFrontGenericInterfaceSupport.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d35eeacabd8ade1b19dee20bcc839bc9cf3d4d75f33bed4021f5a41d1b74edc3"
-    sha256 cellar: :any,                 arm64_monterey: "fba6608e28cafcd3e8833ff2773d39c0115572231fe86404c034b8fc9f5ee958"
-    sha256 cellar: :any,                 ventura:        "14b53d88997a7d620f05cad5be6c8eed0a6e8e8b981118e7556d6092523a1568"
-    sha256 cellar: :any,                 monterey:       "b38dff28f3b85c1dc7f7f62b8cab0ff25a589f91296caaa76d605b28fae46c13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd8a72d6f65924ff42a7967e69ea008d8d54ea627abbeed8d0688c3bb20005cf"
+    sha256 cellar: :any,                 arm64_ventura:  "71742b6725218f4d2f6ff0aebdbfc040f3edc83d61112dd66fd67fe8a0db437a"
+    sha256 cellar: :any,                 arm64_monterey: "703fa4d895ac3c7acca1d11625be5a0aa26da3053933f19963a0fcb40ed29fb2"
+    sha256 cellar: :any,                 ventura:        "4da2f6342a60e9c71353875acffd6a21bb92720d7a6402b1fc283163129f3936"
+    sha256 cellar: :any,                 monterey:       "7b9f309d493cfbd7fdf1218b5de31a2f9fc341335ca79b1e46c8ec8e8ed17ba3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6556e3e21bb4de6a483824c9baa874ec80511d0e95058a4312adb15238d38c2f"
   end
 
   depends_on "cmake" => :build
   depends_on "llvm" => :build
   depends_on "boost-python3"
   depends_on "numpy"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def python3
-    which("python3.11")
+    which("python3.12")
   end
 
   def install

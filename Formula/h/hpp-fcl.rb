@@ -4,7 +4,7 @@ class HppFcl < Formula
   url "https://ghproxy.com/https://github.com/humanoid-path-planner/hpp-fcl/releases/download/v2.3.6/hpp-fcl-2.3.6.tar.gz"
   sha256 "17b7aa65d942168b44ca4ad17be28454aef50729867034021d7789a122dce6a7"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
   head "https://github.com/humanoid-path-planner/hpp-fcl.git", branch: "devel"
 
   livecheck do
@@ -13,26 +13,29 @@ class HppFcl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9c979d5cfa38e91c9ceba35e1ff22fdf120c57f0110b2b487bd481e9d553ea3a"
-    sha256 cellar: :any,                 arm64_ventura:  "0357cf3cbe5d390f1b522544d34dc43f769bf41ef2610215d0254dfab74c090e"
-    sha256 cellar: :any,                 arm64_monterey: "eaf32066fba97c74646360a3e5e2ed22b7520b36e4de7d6047afa301077a2cfc"
-    sha256 cellar: :any,                 sonoma:         "4041d9ac1b2281e8cd7ff1eece54d1ca56728faf38599e479969b3efe8e1f8b3"
-    sha256 cellar: :any,                 ventura:        "ced5b0043d61d3950e999a98232bea374107543b766d207dea837083802b61dc"
-    sha256 cellar: :any,                 monterey:       "b0bf47d12a19211f3efa995a791e6aa44e7c52b68f2b3598adc4c35e80827098"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11d87805ba57abaf948fa9d5f48495037fd84ad48c275b177dd2abc03beee52c"
+    sha256 cellar: :any,                 arm64_sonoma:   "a030f08255136350398ed06336eefb9a5c8a7d24fe9539b864177d68fc11750f"
+    sha256 cellar: :any,                 arm64_ventura:  "4ef0d5dad3f138a75fa4e06554f5c4e0f6d936dd990f0376c9eedfd854c32260"
+    sha256 cellar: :any,                 arm64_monterey: "c5e998f3c21652bd42b98ea5293fc4b355d83df3200d4a93a7af837164ef9e3d"
+    sha256 cellar: :any,                 sonoma:         "d216a424bfadb9bd09e8bcef93d802a1828768495c4e3ae94bc8e2333c83a656"
+    sha256 cellar: :any,                 ventura:        "cc851918c433dfff3f80a064c70fedd84d919b9e8ce1d7f3fdd19dd984a4fc78"
+    sha256 cellar: :any,                 monterey:       "b4fba46c4fd8964167ab3b1044a649f2accc4e464c2ab07ae46a861edad0e655"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1edaca5f2ade555d073d9f021aa52b8695cc934dc53aad5e6d20e73a88609334"
   end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
+  depends_on "pkg-config" => :build
+  depends_on "python-lxml" => :build
+  depends_on "python-setuptools" => :build
   depends_on "assimp"
   depends_on "boost"
   depends_on "eigen"
   depends_on "eigenpy"
   depends_on "octomap"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

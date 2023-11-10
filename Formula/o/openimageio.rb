@@ -4,6 +4,7 @@ class Openimageio < Formula
   url "https://ghproxy.com/https://github.com/OpenImageIO/oiio/archive/refs/tags/v2.5.5.0.tar.gz"
   sha256 "8c0de6cd8cfc8aeb696e9cf4fbd067c8c1d9fc22a3b7b81dfeda857ab526b1c8"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/OpenImageIO/oiio.git", branch: "master"
 
   livecheck do
@@ -13,12 +14,12 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a0d0a02fc0f0bc9fe4ad704f3d4337b4f1b422391c9f6cd9524d16b25608c5ba"
-    sha256 cellar: :any,                 arm64_ventura:  "3f236af6c36e61ba501e10fcf5b0f3f4d04605167eb6d323f2b7b5f52424c7b8"
-    sha256 cellar: :any,                 arm64_monterey: "795a35616761885a8e90d4cbe764e9b26868f25b2fe31f3e86f6edc990f221fa"
-    sha256 cellar: :any,                 ventura:        "603c6bebe40a6a45fc7c48e4c54c94b1c85fcd2774f047d22be635c79609438a"
-    sha256 cellar: :any,                 monterey:       "a608805a120be3b1d7d5b59c93e4c20c0e5d9e43da823e1574b1e7b44c23965d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52d5dba833ab6b429bdd4be5712d4bd83c8a27f14f62ef32acf24fc66e1e2b10"
+    sha256 cellar: :any,                 arm64_sonoma:   "5bc50ecc00e508035179efdf99f4550044b1ca58800df29baf0cc86113932acb"
+    sha256 cellar: :any,                 arm64_ventura:  "ad7eb56c578887dcdafcb6df3a1f3f0e03a52dbbe49cd6a6a7825fc13fd9909a"
+    sha256 cellar: :any,                 arm64_monterey: "16fcf53d1b090f36ae67d613be0a3b223067ac516032d8be56cf7084552fbfbb"
+    sha256 cellar: :any,                 ventura:        "04938386c0bd68638fde3c61e0d7d606c6b2d8b9d82171c00f78c81598c842da"
+    sha256 cellar: :any,                 monterey:       "6f8df5f7e2a446796c882706254117a8ad431a94a23a83ebe764694c4ee92b9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "544d0933b27872688b0525bf7f41e5c1bc8a1c322c15ddf5a2f265cfbb82504b"
   end
 
   depends_on "cmake" => :build
@@ -39,7 +40,7 @@ class Openimageio < Formula
   depends_on "openexr"
   depends_on "pugixml"
   depends_on "pybind11"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "webp"
 
   # https://github.com/OpenImageIO/oiio/blob/master/INSTALL.md
@@ -49,7 +50,7 @@ class Openimageio < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

@@ -1,21 +1,19 @@
 class Croc < Formula
   desc "Securely send things from one computer to another"
   homepage "https://github.com/schollz/croc"
-  url "https://ghproxy.com/https://github.com/schollz/croc/archive/refs/tags/v9.6.5.tar.gz"
-  sha256 "2d3ba7bae3c49e3870e2f8523c6be00e92fe6e46828269a8cea34d4034102cad"
+  url "https://ghproxy.com/https://github.com/schollz/croc/archive/refs/tags/v9.6.6.tar.gz"
+  sha256 "9dd954e0068df2be416c71161665bfc283f150d30ba0bf96cee723701e93616f"
   license "MIT"
   head "https://github.com/schollz/croc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c23240fb6c8645b0e0c284d89c8b834f1f519ec2a719b076cb0ed23f05f8ece4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "34be7a4340de866aa4b1f883cdc9604a30d1ceea355d38cad459986377964766"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "34be7a4340de866aa4b1f883cdc9604a30d1ceea355d38cad459986377964766"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "34be7a4340de866aa4b1f883cdc9604a30d1ceea355d38cad459986377964766"
-    sha256 cellar: :any_skip_relocation, sonoma:         "67b4914c201e910ebe96b995ccbfede73cf369bdf1aef5f4d704cb94a0ad5cc8"
-    sha256 cellar: :any_skip_relocation, ventura:        "b22e747202aa670bbbe75d68e618cda3fd1fd595d93391f14f38ee5b42e78aad"
-    sha256 cellar: :any_skip_relocation, monterey:       "b22e747202aa670bbbe75d68e618cda3fd1fd595d93391f14f38ee5b42e78aad"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b22e747202aa670bbbe75d68e618cda3fd1fd595d93391f14f38ee5b42e78aad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "894d52ea147115cf2fc1109b3bfd3349647546d12a2191b20a95d92369d1066e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "21b6f7c98dd5036ee4849444cabce50531eccb48a587b46d8e160093656c8a9d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "00ad494b6dd19f28a19662209ac812ec6c0adf9fb0f91c94e6073639b5842135"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dd9cb1d51fa88744e8669966e3100964a10a02a769650a4a54761a7be36b38f5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "25f7320e27aac35f89d57c581ae47c7e9f701e5d4924ccc0326ca67c6259ffce"
+    sha256 cellar: :any_skip_relocation, ventura:        "af789dbd6730f4bef6b583ddfb9408566933b514624deac041315ce2d436e872"
+    sha256 cellar: :any_skip_relocation, monterey:       "66894d0391934c4a564c8d6588096ab0ff2812abaef6c8521bfb8fb0acd796f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0be2d1a21436a9914e90487389d2c28355d1fe12d235bf0d4057904654fb1155"
   end
 
   depends_on "go" => :build
