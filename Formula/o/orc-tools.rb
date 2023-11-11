@@ -1,8 +1,8 @@
 class OrcTools < Formula
   desc "ORC java command-line tools and utilities"
   homepage "https://orc.apache.org/"
-  url "https://search.maven.org/remotecontent?filepath=org/apache/orc/orc-tools/1.9.1/orc-tools-1.9.1-uber.jar"
-  sha256 "bd4b799b3a69506fcd11e2fac3219a215fff0bd6a467edef8bb7a7732f5abd5a"
+  url "https://search.maven.org/remotecontent?filepath=org/apache/orc/orc-tools/1.9.2/orc-tools-1.9.2-uber.jar"
+  sha256 "25f5063535f0ed1f5bccad7fa614595b0f765e7569e3203ebb0074e79b86f167"
   license "Apache-2.0"
 
   livecheck do
@@ -11,15 +11,13 @@ class OrcTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "79b2bb4ecd0d9d21f8b809399e1b2ca9fa414c8664f4bdb2586a166123867431"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "79b2bb4ecd0d9d21f8b809399e1b2ca9fa414c8664f4bdb2586a166123867431"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "79b2bb4ecd0d9d21f8b809399e1b2ca9fa414c8664f4bdb2586a166123867431"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "79b2bb4ecd0d9d21f8b809399e1b2ca9fa414c8664f4bdb2586a166123867431"
-    sha256 cellar: :any_skip_relocation, sonoma:         "79b2bb4ecd0d9d21f8b809399e1b2ca9fa414c8664f4bdb2586a166123867431"
-    sha256 cellar: :any_skip_relocation, ventura:        "79b2bb4ecd0d9d21f8b809399e1b2ca9fa414c8664f4bdb2586a166123867431"
-    sha256 cellar: :any_skip_relocation, monterey:       "79b2bb4ecd0d9d21f8b809399e1b2ca9fa414c8664f4bdb2586a166123867431"
-    sha256 cellar: :any_skip_relocation, big_sur:        "79b2bb4ecd0d9d21f8b809399e1b2ca9fa414c8664f4bdb2586a166123867431"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "226350e7cec7f6c8cb87a7e6ea6d6501a0cd2c68ed52eac7361b1acd670218c9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5d2fd6e6d7b6c09b591c9f07bebd7bdb9850067c5a625b6514edde66b01ab8bf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5d2fd6e6d7b6c09b591c9f07bebd7bdb9850067c5a625b6514edde66b01ab8bf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5d2fd6e6d7b6c09b591c9f07bebd7bdb9850067c5a625b6514edde66b01ab8bf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5d2fd6e6d7b6c09b591c9f07bebd7bdb9850067c5a625b6514edde66b01ab8bf"
+    sha256 cellar: :any_skip_relocation, ventura:        "5d2fd6e6d7b6c09b591c9f07bebd7bdb9850067c5a625b6514edde66b01ab8bf"
+    sha256 cellar: :any_skip_relocation, monterey:       "5d2fd6e6d7b6c09b591c9f07bebd7bdb9850067c5a625b6514edde66b01ab8bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3125344ef3d086497ad3a9528af88f1ebc650d48c40efbef9deb744ef3433e58"
   end
 
   depends_on "openjdk"

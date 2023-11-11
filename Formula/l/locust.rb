@@ -3,16 +3,16 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/cb/d4/02c49e14da81cf93bc3b133cf64131bfff174f163d593c6fc5efa95d89f6/locust-2.18.1.tar.gz"
-  sha256 "503985a240f8f8098636c9493689caca2cc923b83f241393bb2c92bde5801278"
+  url "https://files.pythonhosted.org/packages/70/84/d5904be15627024741b85662076febfb910160497a49c0b9aee68bc7f672/locust-2.18.2.tar.gz"
+  sha256 "802300a30b4d88555854e3687ff30a0cf5e73b35f264e45ec6f0aa2c8792569f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb227fb8cd9f93b9891ce4d10dd8ffb9d2c1a619ddbec22f7d2800d8a3b4cd9d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "777c9563b37a5e9f82ab4c03b0ebaae400f81c113f778bd5f5617b92393dfb1f"
-    sha256 cellar: :any_skip_relocation, ventura:        "3ecfb5efa9bf22866046f56350b317a365a380750141b7ed43135c42978072d9"
-    sha256 cellar: :any_skip_relocation, monterey:       "f0a3b919d3d910e393e4775e8a4af86748b8da66340373822a7518b7eb4196e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03ce4c2500eb8be527951fdf5cd09420f8506cba9add0069443b54b0c7ddb064"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b8a59462dfdad0e7dd414414471b03f8660854acb60a4f0e7b85fb1e9e4cbe79"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b275ad88192f47967d7abe3fb672299de6fa31c9c49acc425bcdd84d3ec43aaa"
+    sha256 cellar: :any_skip_relocation, ventura:        "1aff9f389645901af57d16d755874828ced9f1c6cc78ed007ca154fb9b59ce74"
+    sha256 cellar: :any_skip_relocation, monterey:       "5f1a4582b19032b2d2b2c1b628ffed988aeb728de68bf210418e165931f19532"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99263331206bf8c085b55307044f02dcbdd87072b5158db9afc6eb3b77ff3c53"
   end
 
   depends_on "python-certifi"
@@ -24,8 +24,8 @@ class Locust < Formula
   depends_on "six"
 
   resource "blinker" do
-    url "https://files.pythonhosted.org/packages/ea/96/ed1420a974540da7419094f2553bc198c454cee5f72576e7c7629dd12d6e/blinker-1.6.3.tar.gz"
-    sha256 "152090d27c1c5c722ee7e48504b02d76502811ce02e1523553b4cf8c8b3d3a8d"
+    url "https://files.pythonhosted.org/packages/a1/13/6df5fc090ff4e5d246baf1f45fe9e5623aa8565757dfa5bd243f6a545f9e/blinker-1.7.0.tar.gz"
+    sha256 "e6820ff6fa4e4d1d8e2747c2283749c3f547e4fee112b98555cdcdae32996182"
   end
 
   resource "brotli" do

@@ -1,6 +1,4 @@
 class AdbEnhanced < Formula
-  include Language::Python::Virtualenv
-
   desc "Swiss-army knife for Android testing and development"
   homepage "https://ashishb.net/tech/introducing-adb-enhanced-a-swiss-army-knife-for-android-development/"
   url "https://files.pythonhosted.org/packages/82/11/1228620ea0c9204d6d908d8485005141ab3d71d3db71a152080439fa927d/adb-enhanced-2.5.22.tar.gz"
@@ -8,26 +6,27 @@ class AdbEnhanced < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fbcf991278bfba5448ce602eada9d52b3e32d7bcf0647be3f660c000652c6b85"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ab565774036a07c0bbd16bec1e885553ef81e2c3397ac5e6dc5e32b42891f1f5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "baba9cf752a3e8c6ab1c0639198912077b30ec93b27b8b8b3972f44a8c6b169a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "563e9a24a27e970bf58325056c6e6bb8fb7473f9a367419e0016d9d38f20c5f9"
-    sha256 cellar: :any_skip_relocation, ventura:        "261c053331bb35c365f6ddd5f56183cc3666529caa036d78bda854906f30bcde"
-    sha256 cellar: :any_skip_relocation, monterey:       "f440d2cc3c7c6cc20e7c8a2382328bab6d57b56d912d45f25bc6fb56d56f2e6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4fd029125051b0f8099c3f3a2c5ced238cd53b1cf572aa51900c478761b6b9f3"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "270501b0f07f5c76764995f31d5087e01ba332d0c502ea48eb1a7667252c8fe2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "28b951d3551788ea09a1023fa2747ce1dca87dae27338a333588f5b642de8e37"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "50a7a3e27bfb779e210f5b3634e3241d825456de52b8c4a5e07fd39a33c5ec0e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e63b32d87f4ae42d22a824b92a77fae7c6175bb4cdec1020bc10a0d7e288340e"
+    sha256 cellar: :any_skip_relocation, ventura:        "1f56b440e4049c680867db385d72d8e7b254e3ca66b2f2ab0eb5efd7bd1f0305"
+    sha256 cellar: :any_skip_relocation, monterey:       "d78f6ae319faf0fe1a6afe2ee9cce68596fc4176d21147b4f699849d16b92c53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8127d39ce29748af15e37457179cb1518d11d5f7e6dcf6f2a6b873f8828dd6f8"
   end
 
+  depends_on "python-setuptools" => :build
+  depends_on "python-docopt"
   depends_on "python-psutil"
   depends_on "python@3.12"
 
-  resource "docopt" do
-    url "https://files.pythonhosted.org/packages/a2/55/8f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9/docopt-0.6.2.tar.gz"
-    sha256 "49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"
+  def python3
+    "python3.12"
   end
 
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

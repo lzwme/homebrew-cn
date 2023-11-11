@@ -1,8 +1,8 @@
 class Ser2net < Formula
   desc "Allow network connections to serial ports"
   homepage "https://ser2net.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/ser2net/ser2net/ser2net-4.5.0.tar.gz"
-  sha256 "6ee1b217aad026948fd17ea00c5ecf6e982de822384c4349118461ad83caa0da"
+  url "https://downloads.sourceforge.net/project/ser2net/ser2net/ser2net-4.5.1.tar.gz"
+  sha256 "6d60c2eb9e15f6a23743ce7fc3687a8880042d7fca43572e73ca76ed003de258"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,15 +11,13 @@ class Ser2net < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "357956ffe1622a30a3a9b311a16c861131727f0802ff5cdf2e6398757e7e8b21"
-    sha256 arm64_ventura:  "583fbb6ffe6cc7dd58639ac1a6f5b14ba75541ef9c2ed066d5f740c84e8473d1"
-    sha256 arm64_monterey: "4b900e82626e24c157084304615a868c0ecbffa3fb8abda876833a70f98d2a36"
-    sha256 arm64_big_sur:  "3b70f3d7144922876879130b05dbf47350e00e30469d11fe50f6e6b0e8ab84ca"
-    sha256 sonoma:         "f413a08f69ae5cc26bcb780ae249485a28868a7903394286d2c6d603e896d9ce"
-    sha256 ventura:        "e41d11911d6775f88f3a09fa2f3f014469d701353f4e0d5039ca16953ca66b7a"
-    sha256 monterey:       "b910fca757159622dd5d15cffd0273218f828cc84e054b9fe35dd0e72c5e530b"
-    sha256 big_sur:        "007510adffa38bda93f2c357e8a262ab3fca31125479f0f005d6de0cac008e22"
-    sha256 x86_64_linux:   "d164194ac933f0828696ae3eaff539aea03ce8fd80f35cb1a6d51c64ccac80a7"
+    sha256 arm64_sonoma:   "35a4aefb1aaddaed3f8f55d19f64305389ce0baa468e6a7ce8dfaac449434290"
+    sha256 arm64_ventura:  "beb7db22123b9d7d43fa806813cf1252509e88c00e30f53ee7cc8345b6b3abd1"
+    sha256 arm64_monterey: "6b41ec90f306f21457954670e8a551d4fd67bdbd53079533d68f844f734abec9"
+    sha256 sonoma:         "c175eb4e157661dd2d236ad51f4a490bf52d45856df7371b45e2a439ffe0e232"
+    sha256 ventura:        "c2fbc2e040bbb19ae4ecd3cce1e7eadb0b9894678ddfe75c624a898fcf5efb86"
+    sha256 monterey:       "7dd9026a6c7a7fb2106c3b79508c6ead6b65787b4084cbb12ef75d897360a040"
+    sha256 x86_64_linux:   "cd5af9e632b035b4a82e2f297938fffea0922a08d8c7be5113199d3936867ad9"
   end
 
   depends_on "libyaml"

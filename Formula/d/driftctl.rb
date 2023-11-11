@@ -6,6 +6,14 @@ class Driftctl < Formula
   license "Apache-2.0"
   head "https://github.com/snyk/driftctl.git", branch: "main"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "89a9e5e3de6017f4f0989651dfec73a452b412f2203df1cf99bb09e19391dbc2"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4bd0ef3cf76e7168310eaf9d4cfa8154d0cfc32e107feda9288b3ca18c26e76c"

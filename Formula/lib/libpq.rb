@@ -1,8 +1,8 @@
 class Libpq < Formula
   desc "Postgres C API library"
   homepage "https://www.postgresql.org/docs/current/libpq.html"
-  url "https://ftp.postgresql.org/pub/source/v16.0/postgresql-16.0.tar.bz2"
-  sha256 "df9e823eb22330444e1d48e52cc65135a652a6fdb3ce325e3f08549339f51b99"
+  url "https://ftp.postgresql.org/pub/source/v16.1/postgresql-16.1.tar.bz2"
+  sha256 "ce3c4d85d19b0121fe0d3f8ef1fa601f71989e86f8a66f7dc3ad546dd5564fec"
   license "PostgreSQL"
 
   livecheck do
@@ -11,15 +11,13 @@ class Libpq < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "a1b3317ad90188aeecfba22df993ef3b03952a2ac848886f9c9d7c10273ce957"
-    sha256 arm64_ventura:  "83bd2fc0f930e55833eb20c01ee8ac76691040a88d3fb2c75bc47884208714a0"
-    sha256 arm64_monterey: "b4f695eb4aa4c15c2ff6384f65ff08a11b28ce95c378b2c3f18f21e3daf2b6a7"
-    sha256 arm64_big_sur:  "591d0797f094ba77df24119f444654c3b7aae8d71704c4d0955deb6f372a7966"
-    sha256 sonoma:         "77b16644b1dd3137441b9bb89c54bf5430d39fd3cb0de1a36c680e32f113620d"
-    sha256 ventura:        "4e7cd93cdc7f17a9ac7ef0fa23fd0489fae91bc69f8c6a9fe469cc2b413d3f70"
-    sha256 monterey:       "5cdf6c833744fc3734dcf9522cd35f7621ed495c464e2149dc152f02f55695bb"
-    sha256 big_sur:        "6dcd42ae451b43e9b535b53c3a106d5ea9ae9f100ecef8e32172eb1b5bb827be"
-    sha256 x86_64_linux:   "b36679d5711b99eb55da99653292206d8c0b8c2353b1aeec80503c827cd9a154"
+    sha256 arm64_sonoma:   "49ad6314bad02cc469d16edb472898ac17d0d2d5bc4033391b3d0933db1ab5a3"
+    sha256 arm64_ventura:  "d368cb57bb4f04df6f6ace665a11bc34a2fe9cc39b8d8c337de61b3f937148d0"
+    sha256 arm64_monterey: "7c96fa78808730ababf21f2c8dd938c9d56b50ea1c6f2362695a3a73ed17d921"
+    sha256 sonoma:         "2ac1c0e20d1e3974e81d7cdc9c6d24bbdcf6e050dd3a60e2ed89f15922f21c4e"
+    sha256 ventura:        "2a43fdee20b343e1c437d8c8cabeb17e0a46ca28c9478ac94d0fca96ae11e5b4"
+    sha256 monterey:       "a80489ca19e00aa6920a9f9e2e30b7378df089a11f8b1dcb86276a9756384255"
+    sha256 x86_64_linux:   "4d099a83019b774f9884bbae34d3c84ac981035c349bcfab661afe879d389280"
   end
 
   keg_only "conflicts with postgres formula"

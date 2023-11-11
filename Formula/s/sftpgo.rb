@@ -1,20 +1,18 @@
 class Sftpgo < Formula
   desc "Fully featured SFTP server with optional HTTP/S, FTP/S and WebDAV support"
   homepage "https://github.com/drakkan/sftpgo"
-  url "https://ghproxy.com/https://github.com/drakkan/sftpgo/releases/download/v2.5.4/sftpgo_v2.5.4_src_with_deps.tar.xz"
-  sha256 "9d96480bc17c9863dbf09ec49e6109a55a0be3392d8fc31dd87d197da701f3d1"
+  url "https://ghproxy.com/https://github.com/drakkan/sftpgo/releases/download/v2.5.5/sftpgo_v2.5.5_src_with_deps.tar.xz"
+  sha256 "886da134f01ef68b2c22e9fc90e437eaf5b4829b5f550a0f1adaa6e9be93432e"
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 arm64_sonoma:   "40ad6229e6b1e50c3dec3c8d023439547012681edbec692e8e7d6850644b7ccc"
-    sha256 arm64_ventura:  "7edea42abb38b445af640c39a47d1b81790f5f80187a93216a79718c507df638"
-    sha256 arm64_monterey: "953753b67120f59e4b5eacfa0b1bed38c7db6c9fe1bc3734552266d6daea88ed"
-    sha256 arm64_big_sur:  "b2990de634d2bf3d259d64f24d1ed379df61ddaf44c804ae67f5f18dbc11eff7"
-    sha256 sonoma:         "3b1567e35c89cac7758b194e92581d840609136e2ec8e8b38ca462f747c84480"
-    sha256 ventura:        "a7161c298c2a6312acdff226c881d822c0cd8a0824142709352bac98d3dd3899"
-    sha256 monterey:       "122d1270c7701bd52f2d33f6585c6388b160cd34b4a9785e6b63a7d15d1885d5"
-    sha256 big_sur:        "be8dca4b4a19715eb5eec94257ca2d96865d328350f81414bca85dda31461f8a"
-    sha256 x86_64_linux:   "4ad236cab3c8fa964ef5889eee6fb19a0a42e3ffd95dce7affa8a31f2fdf503e"
+    sha256 arm64_sonoma:   "75318a239cd51aa34aca387f53008c69d5842fb1e0c82d40171701144ef13fe0"
+    sha256 arm64_ventura:  "012e0c2903a8916420bda1fce768b080276ea23e6c86d1ec9e1a2b7034bd207d"
+    sha256 arm64_monterey: "027a2c4193eaab20580cb2b68d600e0ce7a2b87f72d5ba091002f6cc153389c2"
+    sha256 sonoma:         "4315b39ce53babf3b7fc11d6c6f87e1c45acfcd08b5d9a8000e76014b49a59ce"
+    sha256 ventura:        "a6f72464eab21e90ca29f450dfb7611877ea675a6d546f61054cf2c7b1c36bbf"
+    sha256 monterey:       "9c75255eae26643627eb7fa83d49acfd3065c82c74d24ecb9b5197fce5ed9de0"
+    sha256 x86_64_linux:   "a49eb78c9f435e6f98c086da3244edc43643b43278131b93e684d06347f5f0ee"
   end
 
   depends_on "go" => :build

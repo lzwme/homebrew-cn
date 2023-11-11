@@ -1,8 +1,8 @@
 class Flint < Formula
   desc "C library for number theory"
   homepage "https://flintlib.org/"
-  url "https://flintlib.org/flint-3.0.0.tar.gz"
-  sha256 "b9086e31e3dab89896d7edbf05a5b758d5b4b72183a1a3478f23eabdcaaae044"
+  url "https://flintlib.org/flint-3.0.1.tar.gz"
+  sha256 "7b311a00503a863881eb8177dbeb84322f29399f3d7d72f3b1a4c9ba1d5794b4"
   license "LGPL-2.1-or-later"
   head "https://github.com/wbhart/flint2.git", branch: "trunk"
 
@@ -12,13 +12,13 @@ class Flint < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c8d2a2e4923ae4a084f2bc54e4c39682f186d6777954a905a23245a773375e7d"
-    sha256 cellar: :any,                 arm64_ventura:  "7fb4d8f1322617d55c70442af86565e3a1fc1d581480acfac1712d7f3e5e59e7"
-    sha256 cellar: :any,                 arm64_monterey: "0c9f580bb8d76f9eafd2c109d43bfd0f83d344abc35a208b27950573dbd9b806"
-    sha256 cellar: :any,                 sonoma:         "d58914cfe029e878907ac49ae2b08ba640e21c425dec77bf3ffeb14c4ac3c127"
-    sha256 cellar: :any,                 ventura:        "51fc677fc7a3fc12bfbcf68cc8ba224cace5b743e3529acee1cbaedc970d4cdb"
-    sha256 cellar: :any,                 monterey:       "ff39ca4802003425f500525083f1900ccbbe7475d5e3d6d2be32218c7418c71f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f4e172e634ad69d6dfce250fe31bb26064e8b32b56fc9bfc602f009180c7d2a"
+    sha256 cellar: :any,                 arm64_sonoma:   "e75f2c0f162efd57be88f49d2d82e185fe1cb32a47bfcd396aa0aa13606bbaa1"
+    sha256 cellar: :any,                 arm64_ventura:  "de5db34546d9d7d45a28fad4d7e8b7209ad29910b779feadfeb8412e5ef628d9"
+    sha256 cellar: :any,                 arm64_monterey: "f6a985f0559d1fb8b641f5aefcb5d403b4a00f6687d74f6f34ae4a4fd6271b14"
+    sha256 cellar: :any,                 sonoma:         "acddb19a44d203bc6b2bba73e359995b8f83ccf015c89984668315f336029afd"
+    sha256 cellar: :any,                 ventura:        "f1355bdf3d0960e3318096e16fe4ae68b411d766a1bb689df9905d97e741f207"
+    sha256 cellar: :any,                 monterey:       "c03703bd499c38aca8db90594a56db1933654fda770564f96dd2450081c76fb2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd8b74d4c9e922d246704eb30c6ba45462036e26933625a69880d2b9a5245f3e"
   end
 
   depends_on "gmp"

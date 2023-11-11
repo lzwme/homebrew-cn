@@ -1,18 +1,18 @@
 class Xeol < Formula
   desc "Xcanner for end-of-life software in container images, filesystems, and SBOMs"
   homepage "https://github.com/xeol-io/xeol"
-  url "https://ghproxy.com/https://github.com/xeol-io/xeol/archive/refs/tags/v0.9.8.tar.gz"
-  sha256 "3e04858d116a8b2dedbd1323ae3b639025647246447315d10981084775cddb70"
+  url "https://ghproxy.com/https://github.com/xeol-io/xeol/archive/refs/tags/v0.9.9.tar.gz"
+  sha256 "3124a02131d927fe7354cf617a5b7b11e57067cf56c724afae4443db56f7549a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "36ec49279b39c65b2e5059b78c6f1099d9c663f4948fcde1af7df80848df0e26"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1881ac77fb053fb8d557299b71bd4a6b0049539d44ba2d6975bb82c86b1594cd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a8dd9cf30334e0bf2036f8155e34d008d118fa7e59cd9060cdc5647ee015eb35"
-    sha256 cellar: :any_skip_relocation, sonoma:         "49e2170fd5af7e3a541db3fece9a011623a0df0d38322d42f0fbb4b85dac01ff"
-    sha256 cellar: :any_skip_relocation, ventura:        "040ef04cbcdb57d19d655420b23cf5ad79a7911d5c401f649433f11ad91825eb"
-    sha256 cellar: :any_skip_relocation, monterey:       "91512550df67308e66f2ef7c13cce696fd1bbab5acc3e55378b0f1889d95fb9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba7c063c46e933d672f160d76c2b72c637a501ae8734cc3d87cbdb27195f74cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a524d2effadcaa6aeee73f65249f1978835541dea30e59ecf3d1a1ba6756eaf1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3c44300a9dc31dbfb2260dea0b0087431e5b0d6f09e8707b828273616bd2532d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0da0db8d7a6b4805d7bdc0c9c1a12db4d6c3d807502fadd2ebaf9977580bb2fb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7527c1cd0641f93a093862bdd48a4e6a8ded9350c3f4ceef5ecffca60a3e6cf1"
+    sha256 cellar: :any_skip_relocation, ventura:        "857ba6b427fec413252e22eaae5b0f92a0f2ea14279d320c69360ec9bfecaef3"
+    sha256 cellar: :any_skip_relocation, monterey:       "a41f165e4d8235292a6f5d5abcc8a3f16f4a9c1c005fcae6c880cfbfdfcb886c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "486589204ca944db5fcc7ce9d43dbdf9ef8cc930bc301f01edcd4889387b7e34"
   end
 
   depends_on "go" => :build

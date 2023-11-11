@@ -1,8 +1,8 @@
 class Freeciv < Formula
   desc "Free and Open Source empire-building strategy game"
   homepage "http://freeciv.org"
-  url "https://downloads.sourceforge.net/project/freeciv/Freeciv%203.0/3.0.8/freeciv-3.0.8.tar.xz"
-  sha256 "3b5aa32f628890be1741c3ac942cee82c79c065f8db6baff18d734a5c0e776d4"
+  url "https://downloads.sourceforge.net/project/freeciv/Freeciv%203.0/3.0.9/freeciv-3.0.9.tar.xz"
+  sha256 "16c46a9c378b4a511c1e3d3a7c435a78230a432d8b852202aaf5d5d584962742"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,15 +11,13 @@ class Freeciv < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "25b8029d258012c3df04f7106422432a9607ac5abf437884c10c3ccbd379552d"
-    sha256 arm64_ventura:  "12103450985cb49a61edf1d54047ddfec154ef20a60cad28015369a729771c63"
-    sha256 arm64_monterey: "c577c7eb56ce28f3972b8d342237f6cd60dfcbd87679abfe74ba7dbe048eb74e"
-    sha256 arm64_big_sur:  "5ab40e524f2c262b68994733ac5b33c2006ffc14fc2299b4d9a6624b14470317"
-    sha256 sonoma:         "09f9dc123ebf438ea715611c45914a99d1c6b7d44bdc99701a50af4cc1e66840"
-    sha256 ventura:        "c3c647835c5c603896ce2bd39d9cfc5fb7c14a7f7ead7d5ee6bfbaad869fdaa8"
-    sha256 monterey:       "c26d89d174ee14e179c6844d15ae988856d30c67b000d7bcfbb1f0bc274c49df"
-    sha256 big_sur:        "f83674bd7f14a400f4c13094c845b37f739806854a65d8b0719b9461296e99e6"
-    sha256 x86_64_linux:   "883cc5053a98eb6d02459c9ae496d348fafd5a92b7c9a9d0073e0f5afd0187ed"
+    sha256 arm64_sonoma:   "240a68815576916c7a2bdb1bb3fb845217fc4359c5f279c7bb00b95764cfad5a"
+    sha256 arm64_ventura:  "612a97af225705592ea9f707a7f74c4bf18a86f09f322efe699c886ca5d71d72"
+    sha256 arm64_monterey: "cb121743441d8e6315466de0f17a9857079b8e9598441c7bb61dc519b353653c"
+    sha256 sonoma:         "596f187286631e7949e3026b94427d07ef4208d6c63b19d3ca11434f895dec4b"
+    sha256 ventura:        "5fbd4a1a450064f1f0e5f80dd6119e6d56d88fb2fb6a4dff6a46bf3dd0d1fb79"
+    sha256 monterey:       "7bed78286936135408eeb5350781418a73490d1bc1f8b4d3df62066fe0458e8b"
+    sha256 x86_64_linux:   "f663487d18ccc02a3e9506f41d09ec7aabecd7c5aba302d252f2718fed708943"
   end
 
   head do
