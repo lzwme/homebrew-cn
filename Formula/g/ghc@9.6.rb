@@ -1,30 +1,31 @@
-class Ghc < Formula
+class GhcAT96 < Formula
   desc "Glorious Glasgow Haskell Compilation System"
   homepage "https://haskell.org/ghc/"
-  url "https://downloads.haskell.org/~ghc/9.8.1/ghc-9.8.1-src.tar.xz"
-  sha256 "b2f8ed6b7f733797a92436f4ff6e088a520913149c9a9be90465b40ad1f20751"
+  url "https://downloads.haskell.org/~ghc/9.6.3/ghc-9.6.3-src.tar.xz"
+  sha256 "dfcde67b4aa550a0b8a1a9bb8105835dc999fad6397cce33d72fd55d21eb77f5"
   # We build bundled copies of libffi and GMP so GHC inherits the licenses
   license all_of: [
     "BSD-3-Clause",
     "MIT", # libffi
     any_of: ["LGPL-3.0-or-later", "GPL-2.0-or-later"], # GMP
   ]
-  head "https://gitlab.haskell.org/ghc/ghc.git", branch: "master"
 
   livecheck do
     url "https://www.haskell.org/ghc/download.html"
-    regex(/href=.*?download[._-]ghc[._-][^"' >]+?\.html[^>]*?>\s*?v?(\d+(?:\.\d+)+)\s*?</i)
+    regex(/href=.*?download[._-]ghc[._-][^"' >]+?\.html[^>]*?>\s*?v?(9\.6(?:\.\d+)+)\s*?</i)
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d31fff3b9145e36820d923b18610b27678dcb6e97bc1d998a64259d29721e34e"
-    sha256 cellar: :any,                 arm64_ventura:  "187d9973e9c08563c726a706763e30945a134aedb966f31a788ae0b08a1d7bc6"
-    sha256 cellar: :any,                 arm64_monterey: "573a16f21d139a3f19d5290e87729b59753c87e4fb01fa1cbdb6fe0175334acf"
-    sha256 cellar: :any,                 sonoma:         "248682ad64a7111df9df3837a88b7681bc9186a9ec6f0e04b06a718cfb0ecf54"
-    sha256 cellar: :any,                 ventura:        "4df2872cb476212a37d22898fd2b37060f117638b00efbc0874d337789717271"
-    sha256 cellar: :any,                 monterey:       "43bb243f9a884d8c328397c02cea8805d24f34a0d0a5424d2a40fdf3ebf4cc9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d20df0d9a435d1f0dc27e293bfadbe38749cbdbb86a56579d68312268692bfc5"
+    sha256 cellar: :any,                 arm64_sonoma:   "4090536366174048455a6cbc22dfcfde6bd651a4514d1c5db2616dad6fa856b2"
+    sha256 cellar: :any,                 arm64_ventura:  "4cb14f641c0528875106cd2da6467d16bb4a2f235668713ff53e65d59936b334"
+    sha256 cellar: :any,                 arm64_monterey: "4780ec3532aaa127f5af54da4b80852b185403cd3df62d6d862679836228716a"
+    sha256 cellar: :any,                 sonoma:         "217e396300b2f4409280a60cf5cb0f807474ba60cc9fa7f94b2b30ebbdf5a170"
+    sha256 cellar: :any,                 ventura:        "c120f617c6e869bf0f3665445da22c7c2ad5e5b87dc2845411d97519bdb4ba24"
+    sha256 cellar: :any,                 monterey:       "6073bbdf81da5055ec819eeb19fd6c9c3a589755e63db5b2e1d3240ddcb8e9a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5a089e4157c5f5230050c272606661a902840f66bb8ebbb963548b6ca9e23e3"
   end
+
+  keg_only :versioned_formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
@@ -48,22 +49,22 @@ class Ghc < Formula
   resource "binary" do
     on_macos do
       on_arm do
-        url "https://downloads.haskell.org/~ghc/9.6.3/ghc-9.6.3-aarch64-apple-darwin.tar.xz"
-        sha256 "e1cdf458926b2eaf52d2a8287d99a965040ff9051171f5c3b7467049cf0eb213"
+        url "https://downloads.haskell.org/~ghc/9.4.7/ghc-9.4.7-aarch64-apple-darwin.tar.xz"
+        sha256 "5d85f9836d72d45634039218ed52e9faa0ed00c0db056f3d1162b4c2b3838e38"
       end
       on_intel do
-        url "https://downloads.haskell.org/~ghc/9.6.3/ghc-9.6.3-x86_64-apple-darwin.tar.xz"
-        sha256 "dde46118ab8388fb1066312c097123e93b1dcf6ae366e3370f88ea456382c9db"
+        url "https://downloads.haskell.org/~ghc/9.4.7/ghc-9.4.7-x86_64-apple-darwin.tar.xz"
+        sha256 "2c874dc685cb72b0c4d6f226b795051705a923c25080eeba05d546350474cb1e"
       end
     end
     on_linux do
       on_arm do
-        url "https://downloads.haskell.org/~ghc/9.6.3/ghc-9.6.3-aarch64-deb10-linux.tar.xz"
-        sha256 "03c389859319f09452081310fc13af7525063ea8930830ef76be2a14b312271e"
+        url "https://downloads.haskell.org/~ghc/9.4.7/ghc-9.4.7-aarch64-deb10-linux.tar.xz"
+        sha256 "05896fc4bc52c117d281eac9c621c6c3a0b14f9f9eed5e42cce5e1c4485c7623"
       end
       on_intel do
-        url "https://downloads.haskell.org/~ghc/9.6.3/ghc-9.6.3-x86_64-ubuntu20_04-linux.tar.xz"
-        sha256 "d2018768b53ab2c9ab4d543d1e8d7c2b1fb78707b70c74c96ff1733e82f22b80"
+        url "https://downloads.haskell.org/~ghc/9.4.7/ghc-9.4.7-x86_64-ubuntu20_04-linux.tar.xz"
+        sha256 "f1c5c4f9257d06acf9da655f0491cf897ed05dece95f6266fdd880998125467a"
       end
     end
   end
@@ -83,6 +84,14 @@ class Ghc < Formula
       url "https://downloads.haskell.org/~cabal/cabal-install-3.10.2.0/cabal-install-3.10.2.0-x86_64-linux-ubuntu20_04.tar.xz"
       sha256 "c2a8048caa3dbfe021d0212804f7f2faad4df1154f1ff52bd2f3c68c1d445fe1"
     end
+  end
+
+  # Backport fix for building docs with sphinx-doc 7.
+  # TODO: Remove patch if fix is backported to 9.2.
+  # Ref: https://gitlab.haskell.org/ghc/ghc/-/merge_requests/10520
+  patch do
+    url "https://gitlab.haskell.org/ghc/ghc/-/commit/70526f5bd8886126f49833ef20604a2c6477780a.diff"
+    sha256 "54cdde1ca5d1b6fe3bbad8d0eac2b8c112ca1f346c4086d1e7361fa9510f1f44"
   end
 
   def install

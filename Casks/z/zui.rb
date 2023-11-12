@@ -1,6 +1,6 @@
 cask "zui" do
-  version "1.3.1"
-  sha256 "cf3e536476e3f13f8a210499d6544c371f7bdd8a3e87fd6dc022c6b9084c1932"
+  version "1.4.1"
+  sha256 "93257f8f0e0f0d2fe432aed1a6d0ed6ae4c67c0135e119893178d1da6805b4f5"
 
   url "https://ghproxy.com/https://github.com/brimdata/zui/releases/download/v#{version}/Zui-#{version}.dmg",
       verified: "github.com/brimdata/zui/"

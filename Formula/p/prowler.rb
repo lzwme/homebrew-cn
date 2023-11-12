@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Open Source Security tool to perform Cloud Security best practices"
   homepage "https://prowler.pro/"
-  url "https://files.pythonhosted.org/packages/26/0a/74c9c70f46d216f3ccc0d38a7f28d36c9eced66974e9709a23534c0ef1a5/prowler-3.11.0.tar.gz"
-  sha256 "92caca36640171b4f32d577a6c2ef2d34d2bcaf0d274429d5ba7064041da7dd2"
+  url "https://files.pythonhosted.org/packages/8c/46/760f6cfe92cea98673a7b562c84b99bcfe5dd610f4c9b604dae09dd77d7b/prowler-3.11.1.tar.gz"
+  sha256 "43a83b202d1918b98cdbae521b1c2f1e8ee9e80738164f8e5551ffd4a41b1e50"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cc381f18996e8a6267212be7f15af1e3fa482d878d4373b3b1bf47aa8a7eb2a1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "60f4d965e6b5f4ce1f52f886a76a6cff25a9040d10940a064ab5519ab5117670"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d380cf47b8f8d713cd281297e13479e62beb141c84043568c4c904475c6f122b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "59a602c97e1bea17adc80053b8c475d14ec8e49906d02a2ff23e9e9583424972"
-    sha256 cellar: :any_skip_relocation, ventura:        "07eeacdf693d48e71e1e30e86d0cefcdd2fcb851e875afc769c8a98657d62583"
-    sha256 cellar: :any_skip_relocation, monterey:       "fb8a7ef750b3ce1ea4f31e58ee56eb2048f86c31a9cca88c64fc29e3b5f8f04d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba30ef6f26653ac4bffbed619fa6f5b78ccfa0219dc4f6f1beacb3a4ab594a42"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fa2c4ae75c0ff6d134eccbf29fbd181c31a01f04c7ebe82cf8ac3d8aa4a3b55b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b884b7c2469fd7fe3ca6bb1cce38407a32072bb4c9026f301207b5adc7f8193"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "58edfb0cc654648fa32bd9446e563c7e03fdbfcc7b9e44ff0348f0afac10e385"
+    sha256 cellar: :any_skip_relocation, sonoma:         "da57816bc184bcbdb84c5233e393a65124f26f158a6b1508836e05934059028a"
+    sha256 cellar: :any_skip_relocation, ventura:        "8bcec67e0ea4307ba9c7bedcf54bc79cc8caa534cbdee146f5a380b88f84b950"
+    sha256 cellar: :any_skip_relocation, monterey:       "173120285742d57a206870c1feb318ef89a69b18953e91e4e07a2ddc346ed000"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d91875d887d6ec3ddc0f1158a1b5de2c874d044edecf5fc43ee335802621a2a"
   end
 
   depends_on "cffi"
@@ -110,8 +110,8 @@ class Prowler < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
-    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
+    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
+    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
   resource "click-plugins" do
@@ -140,18 +140,18 @@ class Prowler < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/3f/5d/9138d873205a38e5264a78fd4ebf446fc987f20e2566719ed6eee69c200a/google-api-core-2.12.0.tar.gz"
-    sha256 "c22e01b1e3c4dcd90998494879612c38d0a3411d1f7b679eb89e2abe3ce1f553"
+    url "https://files.pythonhosted.org/packages/10/3c/a25588d309f439aaa27e98621ab2e7fef90cb4b7b0a91a188b0faeb7c4b6/google-api-core-2.14.0.tar.gz"
+    sha256 "5368a4502b793d9bbf812a5912e13e4e69f9bd87f6efb508460c43f5bbd1ce41"
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/03/75/7a04c88700a6c186bb7e9979c1b2b15d1944bf66453b778ea69e4efcccb6/google-api-python-client-2.105.0.tar.gz"
-    sha256 "0a8b32cfc2d9b3c1868ae6faef7ee1ab9c89a6cec30be709ea9c97f9a3e5902d"
+    url "https://files.pythonhosted.org/packages/72/eb/4ad7d8685f89f2435ce0c4d3eed42e3c72423708de056ce46009e5207a56/google-api-python-client-2.106.0.tar.gz"
+    sha256 "f6a3862be2f6e5e0536d7bd47b5af3f24ac0b9147c76c830cafb3329d71d5724"
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/45/71/0f19d6f51b6ea291fc8f179d152d675f49acf88cb44f743b37bf51ef2ec1/google-auth-2.23.3.tar.gz"
-    sha256 "6864247895eea5d13b9c57c9e03abb49cb94ce2dc7c58e91cba3248c7477c9e3"
+    url "https://files.pythonhosted.org/packages/f9/ff/06d757a319b551bccd70772dc656dd0bdedec54e72e407bdd6162116cb3a/google-auth-2.23.4.tar.gz"
+    sha256 "79905d6b1652187def79d491d6e23d0cbb3a21d3c7ba0dbaa9c8a01906b13ff3"
   end
 
   resource "google-auth-httplib2" do
@@ -190,8 +190,8 @@ class Prowler < Formula
   end
 
   resource "msal" do
-    url "https://files.pythonhosted.org/packages/5d/03/fa40e4a7c9bd32492ed5e222b23f699553f0d25ff8f7d489fcb21a745787/msal-1.24.1.tar.gz"
-    sha256 "aa0972884b3c6fdec53d9a0bd15c12e5bd7b71ac1b66d746f54d128709f3f8f8"
+    url "https://files.pythonhosted.org/packages/df/55/2e3047c723a2e3ed880b8a37ab020419c2bae1c0ba3b994fefe0508cb351/msal-1.25.0.tar.gz"
+    sha256 "f44329fdb59f4f044c779164a34474b8a44ad9e4940afbc4c3a3a2bbe90324d9"
   end
 
   resource "msal-extensions" do
@@ -220,8 +220,8 @@ class Prowler < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/52/5c/f2c0778278259089952f94b0884ca27a001a17ffbd992ebe30c841085f4c/protobuf-4.24.4.tar.gz"
-    sha256 "5a70731910cd9104762161719c3d883c960151eea077134458503723b60e3667"
+    url "https://files.pythonhosted.org/packages/84/75/a4641e4795ee3f95b71e6f2bf1ebf395ee7eddd717a10a813f69b25d2b1d/protobuf-4.25.0.tar.gz"
+    sha256 "68f7caf0d4f012fd194a301420cf6aa258366144d814f358c5b32558228afa7c"
   end
 
   resource "pyasn1" do
@@ -290,8 +290,8 @@ class Prowler < Formula
   end
 
   resource "tldextract" do
-    url "https://files.pythonhosted.org/packages/ed/41/0a06e38f7fb55a3a2abaf998e018ed7d22987c0f1abbbcc1d50e06975b4f/tldextract-5.0.1.tar.gz"
-    sha256 "ac1c5daa02616e9c2608f5fb6dd93049db03d0cf46c7f6fad46e2850a984f019"
+    url "https://files.pythonhosted.org/packages/29/93/6291afba24410e9925ac825e415c7b875b6246fc541fd619cbadc3a97aca/tldextract-5.1.0.tar.gz"
+    sha256 "366acfb099c7eb5dc83545c391d73da6e3afe4eaec652417c3cf13b002a160e1"
   end
 
   resource "uritemplate" do

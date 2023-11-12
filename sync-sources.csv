@@ -778,6 +778,7 @@ Homebrew-homebrew-core/Formula/c/chadwick.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chafa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chain-bench.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chainloop-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/chainsaw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chaiscript.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chakra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chalk-cli.rb, Homebrew/homebrew-core, 0
@@ -869,6 +870,7 @@ Homebrew-homebrew-core/Formula/c/clfft.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clhep.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cli11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cli53.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cliam.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/click.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clickhouse-cpp.rb, Homebrew/homebrew-core, 1
@@ -1992,6 +1994,7 @@ Homebrew-homebrew-core/Formula/g/ghc@8.6.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@8.8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@9.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@9.4.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/ghc@9.6.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghcup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/ghex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghi.rb, Homebrew/homebrew-core, 1

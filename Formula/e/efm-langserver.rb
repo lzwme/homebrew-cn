@@ -1,21 +1,19 @@
 class EfmLangserver < Formula
   desc "General purpose Language Server"
   homepage "https://github.com/mattn/efm-langserver"
-  url "https://ghproxy.com/https://github.com/mattn/efm-langserver/archive/refs/tags/v0.0.48.tar.gz"
-  sha256 "39d56178a11c39f865eb2e3677d51af7ac62c79e0b6daa9176dcd8f58a4c0b05"
+  url "https://ghproxy.com/https://github.com/mattn/efm-langserver/archive/refs/tags/v0.0.49.tar.gz"
+  sha256 "db9ff85f5eba5439f771488434bb9f4fe93e724094189cac3a536539e7ec1e3e"
   license "MIT"
   head "https://github.com/mattn/efm-langserver.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eed9a37c25ac1d8cb6e65af9d54adab0db45991e5e7cffc2a52d724bd12f9a3f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "34e9c2849538000efb03912f10eafe86359b8991760508b4859b920385f6a374"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "34e9c2849538000efb03912f10eafe86359b8991760508b4859b920385f6a374"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "34e9c2849538000efb03912f10eafe86359b8991760508b4859b920385f6a374"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c771af36639ee4fe1de34ad0cb0334d21d2c90d7a059dd8c5515354781ea4f16"
-    sha256 cellar: :any_skip_relocation, ventura:        "d60ab1b882a1d5057e4dfd4f139d781a40cb84e535af5c6fc9893b45104362dc"
-    sha256 cellar: :any_skip_relocation, monterey:       "d60ab1b882a1d5057e4dfd4f139d781a40cb84e535af5c6fc9893b45104362dc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d60ab1b882a1d5057e4dfd4f139d781a40cb84e535af5c6fc9893b45104362dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0297f619f11165dd6c4ca392549d609b1ecbb2be390bdad613dc33b2c25c77f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "12d9872df404d4ed9e4ed14f3e9ea941b1466b19c476c5ef8471addac223b5e3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "12d9872df404d4ed9e4ed14f3e9ea941b1466b19c476c5ef8471addac223b5e3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "12d9872df404d4ed9e4ed14f3e9ea941b1466b19c476c5ef8471addac223b5e3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "114076c67e9ceee4e5ac3a6dfef3ec5fc9b9a1ad3f43a03f4a20c97e8771ecf9"
+    sha256 cellar: :any_skip_relocation, ventura:        "114076c67e9ceee4e5ac3a6dfef3ec5fc9b9a1ad3f43a03f4a20c97e8771ecf9"
+    sha256 cellar: :any_skip_relocation, monterey:       "114076c67e9ceee4e5ac3a6dfef3ec5fc9b9a1ad3f43a03f4a20c97e8771ecf9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "87d3310758d03e2433b322190595e986d6c3b0de76ccff2b9e30ed8713c52764"
   end
 
   depends_on "go" => :build

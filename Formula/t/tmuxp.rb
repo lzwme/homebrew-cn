@@ -8,18 +8,17 @@ class Tmuxp < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "495cf47a30c007f7d7466d419b26a3e241889d8a9e775e9f1c4f57b0515fda2a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "754c240bdf8ffaa72525ea331f0bc75ebe0d39ef6181e35f4a3a3e8b199b8a9e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d62bb14c2365027c812a550ba3eaf86efbec6074c865c4b0c08d73d1366c9837"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b533d1a79a35707ac7ba3cfbce11a78bc3459a78745490cc8f26bee4113ecd22"
-    sha256 cellar: :any_skip_relocation, sonoma:         "476943e24d423fd26e5a758abd4c07451aa37a4fa94248bc0b93e469b6328556"
-    sha256 cellar: :any_skip_relocation, ventura:        "1f14981e50821c6d5244860eeac72e5b7e10ac1be107f4a7ca4003d115dc0a95"
-    sha256 cellar: :any_skip_relocation, monterey:       "b079261df8bfa907bc4e90fe344f8c72394f5529cc68b50cb67a8ff541854330"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fa0b373f7d21fcba09d274d1292b5150874d8333cffc37b472ed8c84af092c8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e62d13235128ab72b39d1521f25eef21b907eff3304363df8f6277d3ea2cbec"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cdaf3b4de5af1faf10ed91a3e623ef3907323c912d07ff8e3071684533cfdd11"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8ac0def26a4d794effe447e5fe5aaa56407825e0caca456fe86ad31fb44c2704"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4052a90329772a793c4fa64c0ec375a1e8121710511466be4ea259933aef5ad1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "44c078127fa300f0e6731fdd400edacb0c8bba87922098b657488a9dd920f122"
+    sha256 cellar: :any_skip_relocation, ventura:        "52fd8a22d2744d9fad6a8c7dddd7f4ade853141715916e76917d798e261a9181"
+    sha256 cellar: :any_skip_relocation, monterey:       "a61cffa5a5ebcccca2b948206ef7dad13e1ad1c1a9a8c95aab6fb3cb1fbc8cae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61f2be9f953a12a23b186a8613f513c7b1f4e2b6c351dd2f9b187d45f51f06f8"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "tmux"
 

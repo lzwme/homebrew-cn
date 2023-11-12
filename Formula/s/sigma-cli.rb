@@ -3,19 +3,19 @@ class SigmaCli < Formula
 
   desc "CLI based on pySigma"
   homepage "https://github.com/SigmaHQ/sigma-cli"
-  url "https://files.pythonhosted.org/packages/69/f1/ef1c069d97cc8b7404aa0588be1fc6b02b9d2b1997bdd1587687394fb8c9/sigma_cli-0.7.8.tar.gz"
-  sha256 "bf62f5f65c94e55ab62dd2800a5ba2b46cfdfcbc82c04ec107cf9e5e3a1a46bf"
+  url "https://files.pythonhosted.org/packages/f9/62/7a5d20b138a41799477ef4b5d2b199feb19c3ab627ecfba369e4c2dbb4cf/sigma_cli-0.7.9.tar.gz"
+  sha256 "2f8385bb4f647214df67f88405e9a4fd029ebf32fc3960b45efb03ffb7466183"
   license "LGPL-2.1-or-later"
   head "https://github.com/SigmaHQ/sigma-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ec6f5987f308a5314696ca007e90e0b66fabc1a07d65ca0866395523b5d45b1a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f266f59631e91a5004bb3f4931fc83678cedd7587354aa96e0ca0c4357ea68a2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "75451f891c24ed11e6caff81f9185348835757f7ce45a817350e370e24369091"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dadbd96d0f95ac400e1ca78de3ffaea68f94329be2ce231aca27cf9bb46c22b1"
-    sha256 cellar: :any_skip_relocation, ventura:        "bbb849da7826cfd3bdbbe806259296814e661d9eedbb3561128c9f3d3578f534"
-    sha256 cellar: :any_skip_relocation, monterey:       "041cc256e57168ef384977d065e1704b04ff16fa65391ebee56cd310a3f1e6b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50d23a93ca46fce7638d8be22d5e612b2d35b40a75d46de9f8a9653d21bf706e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ad007f0a43e138abe3421fc6289719ecd93d48856f576ab960487c407854e26b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "12487fb40369bf19ffbb9d7266a9c2d77bcc76bd855b1b05837f459c872869ba"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5fbae47d78042e7d1d0fa3442dfca7ed36b61e2d3f80081025d4fce2561e8679"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d7f00a2d724563390f09c3bc60850ebf8bf869f87a0dc793f2df07439d60c2d7"
+    sha256 cellar: :any_skip_relocation, ventura:        "7fd7a89ee7321fc2559668c9e7d2b6c7852df24bacab48620ca328fdd1cc9fec"
+    sha256 cellar: :any_skip_relocation, monterey:       "c6d453684f3785d5df0f52e297e8b64b61b880920a9dfd9046043119a09ba072"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05b0197e14664648a795c27468f516a31e492e82513636fc181407c23505c3a3"
   end
 
   depends_on "python-certifi"
@@ -26,8 +26,8 @@ class SigmaCli < Formula
   depends_on "pyyaml"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
-    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
+    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
+    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
   resource "colorama" do

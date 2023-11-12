@@ -4,20 +4,20 @@ class Bnfc < Formula
   url "https://ghproxy.com/https://github.com/BNFC/bnfc/archive/refs/tags/v2.9.5.tar.gz"
   sha256 "32a6293b95e10cf1192f348ec79f3c125b52a56350caa4f67087feb3642eef77"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/BNFC/bnfc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "86455ba8a49c6ad2542941c61df7d2613ae24b680de09b6807e70acd33d5bfdd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "24ac4b832b20fe0784592cf12cc9a31216bc888da2eb768b663c9596563c1e76"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e5a7ff964b499eefcdc1e90b01ab03fe4d4758d005fd1e602a13dc713962021e"
-    sha256 cellar: :any_skip_relocation, ventura:        "635de57c74c25986bffcdfb07eff97fc2a1ca984d7374b2d5c52e61ccec6ce5f"
-    sha256 cellar: :any_skip_relocation, monterey:       "be862b5fde9501ed14cca11ae5befee4a6e0d76d9a679d44c8eddbaafd31d6bc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "14e52b14ede5eeeb6042bc0387279e9aa252170b6d7f33a92686f49ae2909e3d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b475af14f574da226f75aca8daf26aaaac264059c10d02a46ddfc6162a986b1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d6495160b391c2f2df39f2bea851f7af0a55eae3c61d50a42915236a13e7ffa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "98764cf7fb287c267adbb0bf39b49c74396375ea93635f509b02d27954e2451c"
+    sha256 cellar: :any_skip_relocation, ventura:        "2b3c7ed91b5489b2242ce90f13fcb4579d360dd62f50d306ab13a3b5e370eede"
+    sha256 cellar: :any_skip_relocation, monterey:       "72fab056fe4ccaf675e0c1cc7e975cd674ddf0ac035eac1689c55c96e7e80d9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "767ae7164902739f188191a4626ea1e66fa83e6df32920f3352c79f6f9907aea"
   end
 
   depends_on "cabal-install" => [:build, :test]
-  depends_on "ghc" => [:build, :test]
+  # ghc 9.8 support issue, https://github.com/BNFC/bnfc/issues/469
+  depends_on "ghc@9.6" => [:build, :test]
   depends_on "sphinx-doc" => :build
   depends_on "agda" => :test
   depends_on "antlr" => :test

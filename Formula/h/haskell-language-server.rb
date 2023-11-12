@@ -4,6 +4,7 @@ class HaskellLanguageServer < Formula
   url "https://ghproxy.com/https://github.com/haskell/haskell-language-server/archive/refs/tags/2.4.0.0.tar.gz"
   sha256 "67bbfae1275aabbfdb26869bc6df91feb58e03427cb76df89f74b864dbb5d57b"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/haskell/haskell-language-server.git", branch: "master"
 
   # we need :github_latest here because otherwise
@@ -14,19 +15,20 @@ class HaskellLanguageServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b0c4afe14bc78ccee8865ab32baec658d786080ea3fbaabdb82b78ea6c95dda4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d428be5d261a58d0c50017290478a150ea4508412dd31f35da4ca81bbe6e8581"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "db7b3d8c2f0b5f5de1a7d7d43bf622afe6ac465de70bd42ed79022a4cdf42728"
-    sha256 cellar: :any_skip_relocation, sonoma:         "38a68d6c518792d2ee6c1c40a837a931b9abda201cf2c8339377c693ec89efe2"
-    sha256 cellar: :any_skip_relocation, ventura:        "c10b30a7a8a7d7524c31d2bd5e1fac56bfd06f3110ca73b95bbba990c4dc6e23"
-    sha256 cellar: :any_skip_relocation, monterey:       "a618bfc394a815db8f881568fdfed20f568360fe9deb6366ca18ddfead10704e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0caecce009a1e206f68145f0598382a8b6878c7f0a2aa5eb91897161a27bc95"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4ca1626c2e2efcefafaab806a625a14ae57fb6a64cb9f43090bf2d1ceea3959f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7918d6e2f1fa5b58d60e28516eac5028f0334b66ab1e75b932300c0b5f879bc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a7c1e10939cadb8d6b160bdb1c2eb187637a191e4969310378db74ffb70c5202"
+    sha256 cellar: :any_skip_relocation, sonoma:         "26aa2d10780198d9bcaa520c0c492bc6ef4cfb9ccb442b006a86805b93859d3c"
+    sha256 cellar: :any_skip_relocation, ventura:        "ac96303407de0dc69874b565a11aec964aae5d1ad3817556d8df89b94d4d2fe9"
+    sha256 cellar: :any_skip_relocation, monterey:       "052ac78f31285479a438210e2677572546875713150a1b17a203b24acd45faae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c08d30dfabd84fd385c4f7f77f13555ac491efd8ae51295761d8c67cd7ee448b"
   end
 
   depends_on "cabal-install" => [:build, :test]
-  depends_on "ghc" => [:build, :test]
+  # ghc 9.8 support issue, https://github.com/haskell/haskell-language-server/issues/3861
   depends_on "ghc@9.2" => [:build, :test]
   depends_on "ghc@9.4" => [:build, :test]
+  depends_on "ghc@9.6" => [:build, :test]
 
   uses_from_macos "ncurses"
   uses_from_macos "zlib"

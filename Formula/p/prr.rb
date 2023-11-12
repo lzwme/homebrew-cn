@@ -1,19 +1,19 @@
 class Prr < Formula
   desc "Mailing list style code reviews for github"
   homepage "https://github.com/danobi/prr"
-  url "https://ghproxy.com/https://github.com/danobi/prr/archive/refs/tags/v0.8.2.tar.gz"
-  sha256 "f155191fdf220b0dfe5f86ff8ad5cd042ad2ab6e152ae61f33cbd578517197de"
+  url "https://ghproxy.com/https://github.com/danobi/prr/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "c713aa543e1c2987430ff0fbfa3892a543d02bb24549ebf7127c06b55f6b14f1"
   license "GPL-2.0-only"
   head "https://github.com/danobi/prr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "93f018bc6d898193286cb621c140513303c8a39e38cb67b0379b7a99ddedfa77"
-    sha256 cellar: :any,                 arm64_ventura:  "1eb1d3b027d39cdea646245cd386eefd8ca131d1b3c915e6d3c9359ed81309c3"
-    sha256 cellar: :any,                 arm64_monterey: "17ef9bed3912174f2ea77e5a4bddf1a2ea3bb459eb944161e959bcc1ba834756"
-    sha256 cellar: :any,                 sonoma:         "38395e82d85d0ec5e0f7c755b5c396ce273cbe48f866dbb745f0e1812e796f1d"
-    sha256 cellar: :any,                 ventura:        "25d75d538b13d4e2734f3ea6d35eb5c719f8b5f086957da390da8d9ac2880efb"
-    sha256 cellar: :any,                 monterey:       "d92103489c15c6bc5df18d87c18b6274dfdbd56a715588e6a6f802a065b405ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6da94ed784fbd44ba3d7bedfecaef1fb4f1c5adfe9f3e2ce573d476d7f3b1373"
+    sha256 cellar: :any,                 arm64_sonoma:   "9c4090b1619a36b5a561d6c35edb9015eb1b11dfc6304cc653d5273dc9386963"
+    sha256 cellar: :any,                 arm64_ventura:  "6c5d48e1b9fa46864bac608f1e91a6d34e1515f8b4f8b6f74050cd1dbc411f64"
+    sha256 cellar: :any,                 arm64_monterey: "2969893f0070442a91452b2d32f12c48142b82c75cbadfc7f68ba45b42476878"
+    sha256 cellar: :any,                 sonoma:         "f3ba4f65de66424fb0ca8f07660a711ba8c7bd072f284db877a5d5657fc64f1c"
+    sha256 cellar: :any,                 ventura:        "2d98039e5a7fe041c8bd0eb4d7c8e536492bdc97016a51deb426c76fa3a3012a"
+    sha256 cellar: :any,                 monterey:       "0ec7fda34a0494a898244d1889f017e01ba9838378d5f86334a9b61e6efd31f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16ae6f73a6aca6e0e26cb46c26ef9b0459fec89958d2a7a4b71c8aa2b2fed512"
   end
 
   depends_on "rust" => :build
