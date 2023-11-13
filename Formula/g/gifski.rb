@@ -1,18 +1,18 @@
 class Gifski < Formula
   desc "Highest-quality GIF encoder based on pngquant"
   homepage "https://gif.ski/"
-  url "https://ghproxy.com/https://github.com/ImageOptim/gifski/archive/refs/tags/1.13.0.tar.gz"
-  sha256 "af49394306f7ececedad3237b4e36ec8f8b85095d8cb6c05f8cc1197c4cb0340"
+  url "https://ghproxy.com/https://github.com/ImageOptim/gifski/archive/refs/tags/1.31.1.tar.gz"
+  sha256 "5d06fc2eeefb4abc8ce4e2a7722178e177837c561561fc1019d1438ba85999b5"
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d4c07bb9554c2da9c857ddb8cbb178778215ef1a3c00849025c76d326feb4a2e"
-    sha256 cellar: :any,                 arm64_ventura:  "0b22592980489848cdb2eec9eba85cf5979a7cde3ee7aed6a9d991f8861ee12e"
-    sha256 cellar: :any,                 arm64_monterey: "5500f4461163a45763bd9e5421e9c1b2f0dfdbe84509f7735eb085e299e61891"
-    sha256 cellar: :any,                 sonoma:         "708fc0cbe944bb4ae5244e4024deca5cb64288874b7b42c366568449110236f8"
-    sha256 cellar: :any,                 ventura:        "0747136aee00a913b4b316411d0e92112447f9709be91a79c60f596abbc5d9ea"
-    sha256 cellar: :any,                 monterey:       "cb238d958b5346fb809d262084f77878354f42c72680aa65063c0014379f3340"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "117615056c17f84b5341097343cf5512f86da079c1dbf7072f4a039cb4f3b47c"
+    sha256 cellar: :any,                 arm64_sonoma:   "d449584828bda7fc55259c00c707621a9fb4fdd73221ea660389ed11e802a133"
+    sha256 cellar: :any,                 arm64_ventura:  "b813e553cfb3c658c6547f03d6399776661014341294c4bd6afa96bf72daf5d2"
+    sha256 cellar: :any,                 arm64_monterey: "8f1028bc85484e47677a41ce3b3a25d1073acbaab7b874a1e1f2423dbc31aca1"
+    sha256 cellar: :any,                 sonoma:         "32b9c8ae4418c0b42aa5fbb1c73f8793c2709d41d05c22298acb73d9beda90a2"
+    sha256 cellar: :any,                 ventura:        "31171c36cf7f560a15e299a9df1ffb1c03d0ec2ecfb14eef9b195f7fb1937e1c"
+    sha256 cellar: :any,                 monterey:       "0f540d5ceb3075021f5476c4f6a90c92f867c4465e194eeab3167b2b0623dd0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4cbdb9acee82d4d967ac54e81651a2f1f25a35f6fb4255ee474ab6044b2141b"
   end
 
   depends_on "pkg-config" => :build

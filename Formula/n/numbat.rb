@@ -1,19 +1,19 @@
 class Numbat < Formula
   desc "Statically typed programming language for scientific computations"
   homepage "https://github.com/sharkdp/numbat"
-  url "https://ghproxy.com/https://github.com/sharkdp/numbat/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "852502496718892c2de0d3f0b45caef642d07cbcc50a838a0d0b192a5d062354"
+  url "https://ghproxy.com/https://github.com/sharkdp/numbat/archive/refs/tags/v1.8.0.tar.gz"
+  sha256 "b02e4227ba1e7234c246099365143e01b957dfe5ce530424912b485ca42d28f9"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/sharkdp/numbat.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b01980ed42c1ff7ef22d3562ab5a2967434595dd25bc3fd52df1d1ef01fb6f79"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0eec1645d6303dded809fd8aba5dc7f7582b62a9bdbf178582a70452dc5fc9e3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c287f1554226eeceea21863264779c9a7001f1f3a1bc6cfb8ee6b440dd1d885d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "642f2e4d65359241f70aef0a480b09a3eb32d31f9481697c37009d8a946a11c7"
-    sha256 cellar: :any_skip_relocation, ventura:        "190da677a920b2a2add044c35b677600a684e0d4dbcb96b0b038161076cda98b"
-    sha256 cellar: :any_skip_relocation, monterey:       "70eb72c745301ea5c897ab327a463f8ca6d09fd1b2e82336e2e7dfc7df6941e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8ae48622e3e2510e2a86a359f8054de51503223c7b5f2a50e3c85eb6dd598bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd8ad3b664a1a98d472a4ad59ff2db2bff4ba8dca4fadd0792a27cc5efbf4f32"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ab7dab83cb291585659b1615d9ef4cbef07add75dc106433b6647489f8ca314"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4032341a613ab8e89ee68f71ad2006279308e4f5a66aec09199aaaea966c5d9b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "926c306f92d43654bd8e577faa5d1e48dad271c040849f3903157096956d3814"
+    sha256 cellar: :any_skip_relocation, ventura:        "cb303aefe51de3d497bcbad5d2c18ed925bf3c1b13e22b5ce16c81706e4cfdbf"
+    sha256 cellar: :any_skip_relocation, monterey:       "f9c3f28dd050fd27162a9abdc2ec9fb1c5482b03c6dcfc35c4ca9a48ae52171e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5ae35c6f3ce28288045f047317d462384be6e17c30e504fc29c0cb2c5c1db80"
   end
 
   depends_on "rust" => :build

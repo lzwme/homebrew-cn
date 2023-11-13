@@ -12,13 +12,14 @@ class Jupyterlab < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "aba880a46b25a953134efbdcc43b9ccd097a906fd2709f8fbe2aa4d6724a958c"
-    sha256 cellar: :any,                 arm64_ventura:  "f49c730ae5dc6ff81f86790288189b456911b68ea5f94a486be5042fb66e739c"
-    sha256 cellar: :any,                 arm64_monterey: "66c311e9951d3e4238d7aa498f8bfb842d1f99af7d3e54c4ead59081c1d7504d"
-    sha256 cellar: :any,                 sonoma:         "713f611c67e379221eafc6a9e995bb1a5acb0ad00185ea7bba2d8e79585b77bd"
-    sha256 cellar: :any,                 ventura:        "497fad7bd5b0d94a92bb46170a5e4df847b3e14d7b830ce2ef3aacd135d54d25"
-    sha256 cellar: :any,                 monterey:       "c77e416c05cac13067d5944588aa4f9f7a4c27d886bd2d6c992f549fd4185e84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5139102f45d30c9ad5844b5705f04dfd550c2a4ffd0382283ccb6536fac1ff26"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "4821a881a7516f53d6ba66f3adff5cee0667e12bc7c38081d1f6cf38c8cab66e"
+    sha256 cellar: :any,                 arm64_ventura:  "e4033cefcdbdcb8b5f4f111c6f5e6a9970ac0ceec9f878a6e10c068ce22ee305"
+    sha256 cellar: :any,                 arm64_monterey: "49d9cd2f3c8b38eb24fa0a868f06a6a3f9f669c777329c8385db5aaaab04f293"
+    sha256 cellar: :any,                 sonoma:         "853b6f551fa801cc763da189650290e498d65d5bbbc11f53aa02e1d7dc403e0d"
+    sha256 cellar: :any,                 ventura:        "237834d293e04c62ef1866243110e1221d56f15c8f507b76f4054e1b6f53f70a"
+    sha256 cellar: :any,                 monterey:       "f94b5b160bea1e6eb91062546d4ccf0ea7d6221e27ffc087658d437cb704b40d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e763f62faa8468834c486771b29831470cc081d0cfa56cb3d3ab0a49f6af3a7f"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -29,7 +30,9 @@ class Jupyterlab < Formula
   depends_on "pycparser"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-jinja"
   depends_on "python-lsp-server"
+  depends_on "python-markupsafe"
   depends_on "python-packaging"
   depends_on "python-psutil"
   depends_on "python@3.12"
@@ -131,11 +134,6 @@ class Jupyterlab < Formula
     sha256 "ac2f9015137935279eac671f94f89eb00584f940f5dc49462a0c4ee692ba1bd9"
   end
 
-  resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
-    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
-  end
-
   resource "json5" do
     url "https://files.pythonhosted.org/packages/f9/40/89e0ecbf8180e112f22046553b50a99fdbb9e8b7c49d547cda2bfa81097b/json5-0.9.14.tar.gz"
     sha256 "9ed66c3a6ca3510a976a9ef9b8c0787de24802724ab1860bc0153c7fdd589b02"
@@ -199,11 +197,6 @@ class Jupyterlab < Formula
   resource "jupyterlab-server" do
     url "https://files.pythonhosted.org/packages/39/50/e6ed3c392bf304ccbde96b4f2ae7da6f5f7c758deeaf95e117647605c136/jupyterlab_server-2.25.0.tar.gz"
     sha256 "77c2f1f282d610f95e496e20d5bf1d2a7706826dfb7b18f3378ae2870d272fb7"
-  end
-
-  resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
-    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
   end
 
   resource "mistune" do

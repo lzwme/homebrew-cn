@@ -14,21 +14,18 @@ class Asciidoc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8a50a066a93e3c1123ddcb598da231d463c5a6ff5b0ea96275cbffa898ef1f12"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e2f219174f367e4f191679e888c14db8391a531f99e5830a491ca7a5a38d5a9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1e2f219174f367e4f191679e888c14db8391a531f99e5830a491ca7a5a38d5a9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1e2f219174f367e4f191679e888c14db8391a531f99e5830a491ca7a5a38d5a9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5ded30ec60906462bdbd578655ff30014882c5e259d07113d4593a8eaa90e222"
-    sha256 cellar: :any_skip_relocation, ventura:        "ef0ff79ca1a2494626667efc995c8e3ff75993889d75312fd46d9acb408d0e4c"
-    sha256 cellar: :any_skip_relocation, monterey:       "ef0ff79ca1a2494626667efc995c8e3ff75993889d75312fd46d9acb408d0e4c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ef0ff79ca1a2494626667efc995c8e3ff75993889d75312fd46d9acb408d0e4c"
-    sha256 cellar: :any_skip_relocation, catalina:       "ef0ff79ca1a2494626667efc995c8e3ff75993889d75312fd46d9acb408d0e4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4791ddff487d774346c8e313b7b3bee367ca06cdc79bef543da253166401cbab"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7d572ef00422334fba5642887f4105eb6d966bcc0f7e1ed72e3c1a7d81a3e6d1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a63d6fe4b1b62644a832dc32e4b5cc568626237339f82efea9b33933e957a60"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d6f388fc22a7cb0cf189c1f60cda0727ebab34d87fea51a3b0680702ac5c0ff5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7b599255846848071776a5238e0c505956759e7066bc4e7f92399014f56c4d7b"
+    sha256 cellar: :any_skip_relocation, ventura:        "a4c3074ac129b19507523cf0abe33d97fe7eaa5223c05602e5f51ffc17ccd059"
+    sha256 cellar: :any_skip_relocation, monterey:       "4bd1bb2811ac2d28fc822776699e5e14c0533bf7eb3ac60e97b71c596b950b30"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "639ca69c03c6ff8b653b02fde67b3bfa828c8610956b9ae930e9cfecbd16911e"
   end
 
   depends_on "docbook"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "source-highlight"
 
   def install

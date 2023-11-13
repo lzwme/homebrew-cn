@@ -10,13 +10,14 @@ class ScikitImage < Formula
   head "https://github.com/scikit-image/scikit-image.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d6ffbb862fd7a99014c09da60238b6cb963645842abef371b04b9d1f39d10ce1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "118e7278c3e134dc2b27f9f4b5bb8f95d122c4cf7e4226d7c324d051bd270371"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4891bdc3064a1d4861ac72a8370dd9220be9b59f10ed7674f78acb11383227c5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "181777436397fa8568a644b4096295cab0b2be3f0841e75df3675cb5dbce2ab0"
-    sha256 cellar: :any_skip_relocation, ventura:        "fc1a32d2fa0f3828f4af1af8af88e6092b829aa842c41f5b31c849186f3fbc9b"
-    sha256 cellar: :any_skip_relocation, monterey:       "0b2f8a9385e13e9d4a7f7c3aecb302ee1db966d1e6f9c1588af30e201d9475a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85677ddc9e10921de4eb89be19631d4b2c9d4b1456d7ff9f16d40d63f64ec9df"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bd1db9cce79197508fccbc39747ea3e73a32fde20570f1b04a5976afa473153a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "36bbb80bdcbd7006c8ac5cf455362e2a5ab3d6db2681c2d6798f2b8b969b6ff9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "783d14ad0663ef04049ad0d86608a00c1ae67d9c825ae79561e0cb558b717006"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7b4449ac4a1df85ad8bde5e4e716d501c787c7f77669da51217b26c69f850027"
+    sha256 cellar: :any_skip_relocation, ventura:        "56fe3cb6085942201e15a9fe4cddc2a9d4c683c222cb4a800f6ad7e9577d5090"
+    sha256 cellar: :any_skip_relocation, monterey:       "576a0b7dc7e672b1e4c8248da9ef438a88059c8bad81d085bf0065b9bb71e469"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "67288d99340a9f0aabc28585a3f5808346eb2574cd6330d190a8317152bdc903"
   end
 
   depends_on "libcython" => :build
@@ -27,6 +28,7 @@ class ScikitImage < Formula
   depends_on "pythran" => :build
   depends_on "numpy"
   depends_on "pillow"
+  depends_on "python-networkx"
   depends_on "python-packaging"
   depends_on "python@3.12"
   depends_on "scipy"
@@ -39,11 +41,6 @@ class ScikitImage < Formula
   resource "lazy-loader" do
     url "https://files.pythonhosted.org/packages/0e/3a/1630a735bfdf9eb857a3b9a53317a1e1658ea97a1b4b39dcb0f71dae81f8/lazy_loader-0.3.tar.gz"
     sha256 "3b68898e34f5b2a29daaaac172c6555512d0f32074f147e2254e4a6d9d838f37"
-  end
-
-  resource "networkx" do
-    url "https://files.pythonhosted.org/packages/c4/80/a84676339aaae2f1cfdf9f418701dd634aef9cc76f708ef55c36ff39c3ca/networkx-3.2.1.tar.gz"
-    sha256 "9f1bb5cf3409bf324e0a722c20bdb4c20ee39bf1c30ce8ae499c8502b0b5e0c6"
   end
 
   resource "tifffile" do

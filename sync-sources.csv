@@ -1639,6 +1639,7 @@ Homebrew-homebrew-core/Formula/f/fabric-installer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fabric.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fades.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fail2ban.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/faircamp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fairymax.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/faiss.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fakeroot.rb, Homebrew/homebrew-core, 1
@@ -5035,16 +5036,20 @@ Homebrew-homebrew-core/Formula/p/python-certifi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-click.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-cryptography.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-docopt.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-filelock.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-flit-core.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.12.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-jinja.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-launcher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lsp-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-lxml.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-mako.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-markdown.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-markupsafe.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-mpmath.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-mutagen.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-networkx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-packaging.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-psutil.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pycurl.rb, Homebrew/homebrew-core, 0
@@ -5052,6 +5057,7 @@ Homebrew-homebrew-core/Formula/p/python-pyparsing.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pyproject-hooks.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pytz.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-setuptools.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-sympy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tabulate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tk@3.10.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tk@3.11.rb, Homebrew/homebrew-core, 0
@@ -7727,6 +7733,7 @@ Homebrew-homebrew-cask/Casks/d/deluge.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dendroscope.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/denemo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/descript.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/deskpad.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/deskreen.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/desktoppr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/desktoputility.rb, Homebrew/homebrew-cask, 0
@@ -8613,6 +8620,7 @@ Homebrew-homebrew-cask/Casks/j/jandi-statusbar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jandi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jasp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jasper.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/j/jazz2-resurrection.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jazzup.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jbrowse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jclasslib-bytecode-viewer.rb, Homebrew/homebrew-cask, 1
@@ -12159,9 +12167,6 @@ Homebrew-homebrew-cask-fonts/Casks/font-lalezar.rb, Homebrew/homebrew-cask-fonts
 Homebrew-homebrew-cask-fonts/Casks/font-lancelot.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-langar.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-langdon.rb, Homebrew/homebrew-cask-fonts, 0
-Homebrew-homebrew-cask-fonts/Casks/font-lao-muang-don.rb, Homebrew/homebrew-cask-fonts, 0
-Homebrew-homebrew-cask-fonts/Casks/font-lao-muang-khong.rb, Homebrew/homebrew-cask-fonts, 0
-Homebrew-homebrew-cask-fonts/Casks/font-lao-sans-pro.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-last-resort-high-efficiency.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-last-resort.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-lateef.rb, Homebrew/homebrew-cask-fonts, 0
@@ -12298,7 +12303,6 @@ Homebrew-homebrew-cask-fonts/Casks/font-mate-sc.rb, Homebrew/homebrew-cask-fonts
 Homebrew-homebrew-cask-fonts/Casks/font-mate.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-material-design-icons-webfont.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-material-icons.rb, Homebrew/homebrew-cask-fonts, 0
-Homebrew-homebrew-cask-fonts/Casks/font-material-symbols.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-maven-pro-vf-beta.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-maven-pro.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-mclaren.rb, Homebrew/homebrew-cask-fonts, 0
@@ -12991,11 +12995,6 @@ Homebrew-homebrew-cask-fonts/Casks/font-sedgwick-ave-display.rb, Homebrew/homebr
 Homebrew-homebrew-cask-fonts/Casks/font-sedgwick-ave.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-sen.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-send-flowers.rb, Homebrew/homebrew-cask-fonts, 0
-Homebrew-homebrew-cask-fonts/Casks/font-seoul-hangang-condensed.rb, Homebrew/homebrew-cask-fonts, 0
-Homebrew-homebrew-cask-fonts/Casks/font-seoul-hangang.rb, Homebrew/homebrew-cask-fonts, 0
-Homebrew-homebrew-cask-fonts/Casks/font-seoul-namsan-condensed.rb, Homebrew/homebrew-cask-fonts, 0
-Homebrew-homebrew-cask-fonts/Casks/font-seoul-namsan-vertical.rb, Homebrew/homebrew-cask-fonts, 0
-Homebrew-homebrew-cask-fonts/Casks/font-seoul-namsan.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-sevillana.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-seymour-one.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-sf-arabic.rb, Homebrew/homebrew-cask-fonts, 0

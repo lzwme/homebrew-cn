@@ -1,21 +1,19 @@
 class Selene < Formula
   desc "Blazing-fast modern Lua linter"
   homepage "https://kampfkarren.github.io/selene"
-  url "https://ghproxy.com/https://github.com/Kampfkarren/selene/archive/refs/tags/0.25.0.tar.gz"
-  sha256 "e62c1328b1cb7ff2014a8419501a3fabaa87341a8932456283b53c148040e9e4"
+  url "https://ghproxy.com/https://github.com/Kampfkarren/selene/archive/refs/tags/0.26.1.tar.gz"
+  sha256 "44a4485b880aca3a70970167faa6cd467418cb49ddfb3b87fe616af7462180fd"
   license "MPL-2.0"
   head "https://github.com/Kampfkarren/selene.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cd71cd371bda982bfd47f95bd0235c97b406607adcd70bbaa8550135136193a7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "feee5fdb67f02c32ab7afe87ea3f7a73338047061a029e6a58173955e49b8e39"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "eb83ea98bc1ebdc6287e08712447c66c9519e24ad6fc6f23eb8f1302cb0b82bf"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "969f80f18b98d37031e1c1c85b4c21e74b54f31ec39c20a50feae9f43228e003"
-    sha256 cellar: :any_skip_relocation, sonoma:         "de65c3c0c9602f33bd2187ca7873a91df44943b4643b493ac2040e594cb353f9"
-    sha256 cellar: :any_skip_relocation, ventura:        "384992c4ae8547b8163852beebe45005d4c99f250aeacedaee45cbbc989eb4ae"
-    sha256 cellar: :any_skip_relocation, monterey:       "feded6522fa99c1cc39e8f3c1f161416fda201b9991317f5ae60a25ca374f5ad"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8738fb84726af42535684ecea253aaa32bff32074f9c54e597cb7b83a17949f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "768f04c3bc90a8f028854a371e8c3a02602c3342a20d9ffa415b0daff61933e1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b8be32b99bd7c582742f8a57d7483e53749bf777bea0e835884e2d8377b98bce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bbb8ae0eef4c8f53481bd6f81e6029c39835e710371d648b97b3da079552e154"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "552eb2fa15999c6a702c20a670cb152f6eb33687513feec266b341ac6cf2b503"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d7b5010660fd55fdf50c7dbca71e0f38a3da6a0eeb0905bb59cd1a37c711187b"
+    sha256 cellar: :any_skip_relocation, ventura:        "c78d099a304c4641be142d970abc4393c9ec9449ebb7dacdc457c007481037ff"
+    sha256 cellar: :any_skip_relocation, monterey:       "92b1773ac7dea42d0ddef56f7d5c5c977d44a20d51c17c1fcbafd5b0a328df45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "194a76463eb92d1f147b0bff825214a9137fdbf32d2491d1152d8c3e1a634297"
   end
 
   depends_on "rust" => :build

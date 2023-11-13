@@ -9,18 +9,19 @@ class Apprise < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2bb9755338ed19822b03e6a7023fe3adae97cc2a6feb8732427d6586d71777de"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "181f23bec8f1ed53c1c21705857e34e95dd52634a575f1c1d9d52135b9e5eff5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "65e4da7aa0b1cb91e54a36889f9801ab85368f40886681e4a18e6db4af414d63"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0061cfca38e9a477d7da725f6bab2f5afaf0df31054707eb5ba2dac0345458ac"
-    sha256 cellar: :any_skip_relocation, ventura:        "4531dabb5e250be6ec7c56055b5b4210ebbe187053778fa02eb44c324b4aaf08"
-    sha256 cellar: :any_skip_relocation, monterey:       "4749101567e80e289764bcf70b2d276ca4b9400c1d434a47a78e771b4fb167ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26638084c6398cd94d0052f0777b39419e12b7f3734204fa806b108b25bb1b24"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0e3cc51405039f4d591b9722268a15e7faa0e96014aef9ddaccc6f209d680ffb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0c5ee6bef723d95fe4bd485d111f92ce9b08121cb8f459d9bb3352442ebef011"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d95f95ec6528a58a4a3750748986a3d614d56c5504fd8888a038f8b74370980f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "af0b32c3dd31dc7081d47897e7c68e18477ec5b730125b3b4daaa374e27373c1"
+    sha256 cellar: :any_skip_relocation, ventura:        "6e7368c87ff3a3715397bf9ebe7fc59f142c6ee3afac1d94c3e0e856fe0c83b3"
+    sha256 cellar: :any_skip_relocation, monterey:       "ad7c4d6044ae06bb4cb6be70f4a5a8190adf39524550e5194113e9fa103e83a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "55408ba1fc2a9a62f6342b0d490706796070ee4beb4b068ec6b3317e4245f86c"
   end
 
   depends_on "python-certifi"
   depends_on "python-markdown"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   resource "charset-normalizer" do

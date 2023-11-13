@@ -14,18 +14,18 @@ class AstrometryNet < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "36cdffb5f2d46c92e05cff1ee5889f930e28e465837f568be8eb5f54092990b0"
-    sha256 cellar: :any,                 arm64_ventura:  "356db74e6046493a7127d43ea1de143bf091a84c39787429976d3ab0e090c25f"
-    sha256 cellar: :any,                 arm64_monterey: "256c59d966aaf972fc85c0e7e9ecbcda086d44d748f332fa99e4c35a72d04340"
-    sha256 cellar: :any,                 arm64_big_sur:  "ab294e1b740d8a0a0ac9780b8b509bad3440d674cb4a0114ff24dacf8156b400"
-    sha256 cellar: :any,                 sonoma:         "9f4d92c0f6b5238786ff19de2a6b974b7d51652502ada85833c06286a0afd15c"
-    sha256 cellar: :any,                 ventura:        "6ce43a9102d8a11dc8065925ca9621255edd20c3feb61a09c0a3216806ba0e9d"
-    sha256 cellar: :any,                 monterey:       "d620964767090e24f85d5893772c6fe4edf7a2770b5f1b4cd3d31f6549996baf"
-    sha256 cellar: :any,                 big_sur:        "3e9fd0fa60d70e538921151ec1f32c60e4dd45b2148ef41ff6237a0d0196c89d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9be1eddc62ef98158eb65ba839be9d798f104b57c0ed1b42f08fe348bec94975"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "74ed6b8e8114f32c5d29b8e2eb84c87e5d5ceafaca6a21fe6b8ee5404b0f6223"
+    sha256 cellar: :any,                 arm64_ventura:  "b8f2403b1165e7723111bafd6b697ae4e1ee504503d8cc916d35742ade4af6e1"
+    sha256 cellar: :any,                 arm64_monterey: "c2b14e52434a8767a5268034ea76ee03b7745b0b96896fc11ca3aab58628c55c"
+    sha256 cellar: :any,                 sonoma:         "8710c8d9c37acc8d307ca2edc358a45aa12c76075a27cce6b3e95e7481fbb5b8"
+    sha256 cellar: :any,                 ventura:        "33255a455c88e5ae8ee6b7fe6386db0768a309e287ca5ab515845b446aa6fbc4"
+    sha256 cellar: :any,                 monterey:       "ed7ca096dbfb927e8800395c0799313c42411014c25f321404c9ae6dfc97af35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebe73a8422de550c2700a5a14053e845cfaa7af91847840c3ae9664a07cf5220"
   end
 
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "swig" => :build
   depends_on "cairo"
   depends_on "cfitsio"
@@ -34,12 +34,12 @@ class AstrometryNet < Formula
   depends_on "libpng"
   depends_on "netpbm"
   depends_on "numpy"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "wcslib"
 
   resource "fitsio" do
-    url "https://files.pythonhosted.org/packages/1f/0e/b312ff3f6b588c13fc2256a5df4c4d63c527a07e176012d0593136af53ee/fitsio-1.1.8.tar.gz"
-    sha256 "61f569b2682a0cadce52c9653f0c9b81f951d000522cef645ce1cb49f78300f9"
+    url "https://files.pythonhosted.org/packages/aa/03/d7d0b77f938627cb46f6d91257d859c78459fbb5b155899d6c4c78970faa/fitsio-1.2.1.tar.gz"
+    sha256 "c64f60588f25fb2ba499854082bca73b0eda43b32ed6091f09dfcbcb72a911a6"
   end
 
   # https://github.com/Homebrew/homebrew-core/issues/130484
@@ -54,14 +54,15 @@ class AstrometryNet < Formula
     # See https://github.com/dstndstn/astrometry.net/issues/178#issuecomment-592741428
     ENV.deparallelize
 
-    python = which("python3.11")
+    python = which("python3.12")
+    ENV["FITSIO_USE_SYSTEM_FITSIO"] = "1"
     ENV["NETPBM_INC"] = "-I#{Formula["netpbm"].opt_include}/netpbm"
     ENV["NETPBM_LIB"] = "-L#{Formula["netpbm"].opt_lib} -lnetpbm"
     ENV["SYSTEM_GSL"] = "yes"
     ENV["PYTHON"] = python
 
     venv = virtualenv_create(libexec, python)
-    venv.pip_install resources
+    venv.pip_install(resources, build_isolation: false)
 
     ENV["INSTALL_DIR"] = prefix
     site_packages = Language::Python.site_packages(python)

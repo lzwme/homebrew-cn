@@ -1,19 +1,17 @@
 class Swiftplantuml < Formula
   desc "Generate UML class diagrams from Swift sources"
   homepage "https://github.com/MarcoEidinger/SwiftPlantUML"
-  url "https://ghproxy.com/https://github.com/MarcoEidinger/SwiftPlantUML/archive/refs/tags/0.7.6.tar.gz"
-  sha256 "d4d57be917fcf86e534877c19c56b0507cf26b7c63e55b5926cf9c6cd5922f8f"
+  url "https://ghproxy.com/https://github.com/MarcoEidinger/SwiftPlantUML/archive/refs/tags/0.7.7.tar.gz"
+  sha256 "da632fe8d97326ac914ddbb676328faae4e26eab6f506f8a138ea20636528403"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2ea0704c0009453dfe11f20b76b3814d939180429025fc2cd5574e962e24aa88"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "64b7368a338264ea5d909349c6056f1d34be8a32cdfd9fceb2e55bfda11d3a76"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "92f1c20a5e5b57f5a18cb947a6666d348469be9a0db42d41cb99488a3b90e1ab"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0771dbc96974de310796084d08048aad85aa27f35ce1f082141ba69acf82a979"
-    sha256 cellar: :any_skip_relocation, sonoma:         "807242b7e362a9732d4f8ed3a145625a15948e6f39dc658ae99b5ba5b444c6cd"
-    sha256 cellar: :any_skip_relocation, ventura:        "206547259f05a648df243d6a7713a1762959b5f77e7509c5d21e5f484c6974cd"
-    sha256 cellar: :any_skip_relocation, monterey:       "924a8165c2ef5b47bf1ad0afd1ec81cb09ed60d040fba4628f5d8c0d6b3ade58"
-    sha256 cellar: :any_skip_relocation, big_sur:        "45b0cef6a4db9677b6ee2e2291167dd99eb665ee7016a9497fa43cb6e96d1e21"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3c7e99a66454ab93d25b12a033f8a3ad0523f705becaef9e98983000f1d8aeea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "20ef718b80c7a0b84085f2ec44af10e1bcc8d4071f98290001adbc2d6b0b66bd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c2b6c8e78dd39373e254f2a599d79c10b9895a306a47202be4055c6d14e14075"
+    sha256 cellar: :any_skip_relocation, sonoma:         "686c65d524ea253f079423347e52b211c1b3322d929032c81d19d7f13c2e246f"
+    sha256 cellar: :any_skip_relocation, ventura:        "04dee9a6954b046105871d1fd63a61aad9a39cbb02e76aa312131088da42106a"
+    sha256 cellar: :any_skip_relocation, monterey:       "bad92434830d4eaefd4fad89c271450e9d21dd4041fcf69c8732c3729b7df421"
   end
 
   depends_on xcode: ["12.2", :build]

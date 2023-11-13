@@ -8,20 +8,19 @@ class Restview < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "69e9f52fded0cb1401fbe75560ffe235371f5e8bbde2bf090c2e487c6d3d6c16"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7144d1e54ac3ed388b6af07e9d5d4d5c3ab69a7d8335827d436e5d95cd90700"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c41b60a583752a7c15309695cdc0dccccc9f98771cc28d290352863877fadfd4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f0526020a022a59774f2eb26fbcf5f9422085fce34286004c37e8a74f715ff51"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bad5747d70d3b49a67555aab7e324de6f5f442558166dbdb93a47dc0bd5518aa"
-    sha256 cellar: :any_skip_relocation, ventura:        "5c36b262a3d8898d9caeebc8f9faf3806e2554a3836d430ad2ce985ae389c69d"
-    sha256 cellar: :any_skip_relocation, monterey:       "045d7c7fbec94805454c23b54ac749995171610eb9b7e8a39d96f740bd02e44d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "41c9ba7729e2494ef67b6158b715b03dbf186e33cd12f9cdf7f35263578ea456"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c959a52879a1835bda4c7e8b9e454afc7ac20613a72c31547cfad5264e294991"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2c2c1e9644f738c54a085b51d220af690897518d11f553397c5abefeaf445d01"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5210f186429a421ad538c68c9691eb75f9f82672272eded412452096075a9a15"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "29b87b6d761847fbc10cd31dbfa6191fa8dc7a3478eec0719d7ae296109c7f7e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8447d46fae305f35d3dd7bb976753f76b76568e4ea9746a8a972131b71c6dde1"
+    sha256 cellar: :any_skip_relocation, ventura:        "907b93b8222821255a1fce0f4d55e7ad7ed2bceefe230bb829b9f3bc844ec644"
+    sha256 cellar: :any_skip_relocation, monterey:       "97c1469ca2fc25a10abe1c81254b40269480a157b32f073722fb7b6c0fb5aa5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9166e1a0ffdbe51501417f6916a94f98f1a5e030e38a457d6faafc2744f723ba"
   end
 
   depends_on "docutils"
   depends_on "pygments"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "bleach" do

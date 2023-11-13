@@ -3,8 +3,8 @@ class NanopbGenerator < Formula
 
   desc "C library for encoding and decoding Protocol Buffer messages"
   homepage "https://jpa.kapsi.fi/nanopb/docs/index.html"
-  url "https://jpa.kapsi.fi/nanopb/download/nanopb-0.4.7.tar.gz"
-  sha256 "87055a0d9a99a95429a95497e566e59d8d16103cfd90b7b6e8ee364b6559666a"
+  url "https://jpa.kapsi.fi/nanopb/download/nanopb-0.4.8.tar.gz"
+  sha256 "d685e05fc6e56fd7e4e3cacc71f45bd91d90c0455257603ed98a39d2b0f1dd4b"
   license "Zlib"
 
   livecheck do
@@ -13,11 +13,12 @@ class NanopbGenerator < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8fa99a6f2d8fbb4fc69952cc533309c554578f983f5413d882bd86d9ddef37b7"
+    sha256 cellar: :any_skip_relocation, all: "6636f540fd6289d663ec675571f5799e7ac29337496e8ba2a45b73696dadd376"
   end
 
   depends_on "protobuf"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
 
   def install
     cd "generator" do

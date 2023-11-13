@@ -13,21 +13,21 @@ class Z3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e89c212b7dedbf507ebf0a7539d8976bf751631f026915bbe36fc8d0ecdbb872"
-    sha256 cellar: :any,                 arm64_ventura:  "e8006cc04b33c0d2f834c7b73f2887b9832f979600488851b7a5091d13239a7c"
-    sha256 cellar: :any,                 arm64_monterey: "431799c83071ea311fbaf551e6857edc93242e2858beadb8487f564575bd8128"
-    sha256 cellar: :any,                 arm64_big_sur:  "56e46cd536c280cc8fb5e960f0cae7b70cccc0c7891e658aeec1c8a8717dc7b3"
-    sha256 cellar: :any,                 sonoma:         "c9d1a67120787d5f3d9efd6c0467d30d1df277a18041272ed580362fc3d76bea"
-    sha256 cellar: :any,                 ventura:        "70990b1e46735ced52fe8ee0f8746982d13dbb0ba104b4af21755795e9e79cc1"
-    sha256 cellar: :any,                 monterey:       "80ce63d42c4377b4e4d30299bbb9a99f3adfd2d878936ad6717e63bd73fd28d9"
-    sha256 cellar: :any,                 big_sur:        "6bb2b22e2ac439e31e786f17b4cc6d64e2449b438fbf899b3cd9cc004351ba24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f947a5b0ea9e97728008bff971b390dc6140849cebe059a431a7a41dab5ea13"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "3cefdb9b53c5f6b9bbac30630f7e2498a50d3081fd5c332b3ee48d984960129b"
+    sha256 cellar: :any,                 arm64_ventura:  "f22e57323803087dbd3d716c3d637af5b3e606906027899e7428b412b2776c33"
+    sha256 cellar: :any,                 arm64_monterey: "70cbff047978886125f28a24926398d2f84310039a39ba8e1d898099396606a6"
+    sha256 cellar: :any,                 sonoma:         "6ab4f5b41405b259bba990f259a97f34f371a9051c9cc621a71ed97084dd87c3"
+    sha256 cellar: :any,                 ventura:        "57f7090b42df9bce9b095b922ffbd4e6f2ec22f6ddb68651c16a95dc75bce6d1"
+    sha256 cellar: :any,                 monterey:       "3c9f8a788f325077119a4be747f7462c2804fed4143a82e8cf35847ba7803d03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03e5e838aceb33a27d58731b22a71d4c6063c0c1c2ce26babe696925b4d2512c"
   end
 
   depends_on "cmake" => :build
   # Has Python bindings but are supplementary to the main library
   # which does not need Python.
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
+  depends_on "python-setuptools" => :test
 
   fails_with gcc: "5"
 
@@ -41,7 +41,7 @@ class Z3 < Formula
   end
 
   def python3
-    which("python3.11")
+    which("python3.12")
   end
 
   def install

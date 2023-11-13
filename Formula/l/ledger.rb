@@ -13,13 +13,14 @@ class Ledger < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b0dc74b62b52e5d980aedf03a7f35155450d928cb0bfcfbadeeb1402236bf868"
-    sha256 cellar: :any,                 arm64_ventura:  "70313b14bf52c7721fbcaccf2d3ad81be89faec6230f69632842362f52227cf7"
-    sha256 cellar: :any,                 arm64_monterey: "0b9c0c3b030ff2d1e90f12bcda638cd991fe0a2454d20ee8c466c468910161d3"
-    sha256 cellar: :any,                 sonoma:         "93309f297cb3a9931db80633b66e575282104699f46d683afa29775e190d278b"
-    sha256 cellar: :any,                 ventura:        "1615ec32941999e6596e2455ddc12043e9ac1fcd4b385bd161820e3fa72ee076"
-    sha256 cellar: :any,                 monterey:       "23322a8bda67c6fd6bac3ff2603a61df5eaebe376c4767095cb5c29d6e6938e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c2527a7f03514d652d5b7f68483fb048b1fe1c451e23441e1c46031f2802de5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "248d392147c9c0cb22291b9d10335e67d43afeebfadf0f10eae92d20d54896ed"
+    sha256 cellar: :any,                 arm64_ventura:  "b259e7568ab75cf1cca681ce03daaa42a2a05dd70ccebcf1679dddc9ba3b36e0"
+    sha256 cellar: :any,                 arm64_monterey: "84027e5700a4aa84bea85cffbb6ca795450cd960d91fa8e23b73787db5f9066d"
+    sha256 cellar: :any,                 sonoma:         "9316cefc41ff3ce69b5f230c91446b0edf9d095a686fafea94e01d3d95c89824"
+    sha256 cellar: :any,                 ventura:        "4f6e8d4df6fbe4a53a494eb171df343cc8133359a0fbf7eb046833b8a42717f9"
+    sha256 cellar: :any,                 monterey:       "81dc67ce324583144d371b57225b4dac01a0c5ad6a90cb814399683822f33b0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "37d312f365a2895f89532e50a7caf129e06dd614d4c094ffba45ae2e5fe1db87"
   end
 
   depends_on "cmake" => :build
@@ -28,7 +29,7 @@ class Ledger < Formula
   depends_on "gmp"
   depends_on "gpgme"
   depends_on "mpfr"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   uses_from_macos "libedit"
 
@@ -38,7 +39,7 @@ class Ledger < Formula
 
   def install
     ENV.cxx11
-    ENV.prepend_path "PATH", Formula["python@3.11"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["python@3.12"].opt_libexec/"bin"
 
     args = %W[
       --jobs=#{ENV.make_jobs}

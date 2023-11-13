@@ -8,7 +8,8 @@ class Uftrace < Formula
   head "https://github.com/namhyung/uftrace.git", branch: "master"
 
   bottle do
-    sha256 x86_64_linux: "477cdea5a6cc69342c42492c1fcb4a7f0ed2ca21bfd165febaec626e72a30eff"
+    rebuild 1
+    sha256 x86_64_linux: "8086e68d0c5cf6bc746f343d390dc7ca338357deba55034d58c1e349a2cc79d9"
   end
 
   depends_on "pandoc" => :build
@@ -19,13 +20,13 @@ class Uftrace < Formula
   depends_on :linux
   depends_on "luajit"
   depends_on "ncurses"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     # TODO: Obsolete with git master, to be removed when updating to next release
     inreplace "misc/version.sh", "deps/have_libpython2.7", "deps/have_libpython*"
 
-    python3 = "python3.11"
+    python3 = "python3.12"
     pyver = Language::Python.major_minor_version python3
     # Help pkg-config find python as we only provide `python3-embed` for aliased python formula
     inreplace Dir["check-deps/Makefile{,.check}"], "pkg-config python3", "pkg-config python-#{pyver}"

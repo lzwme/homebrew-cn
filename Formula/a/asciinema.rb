@@ -1,6 +1,4 @@
 class Asciinema < Formula
-  include Language::Python::Virtualenv
-
   desc "Record and share terminal sessions"
   homepage "https://asciinema.org"
   url "https://files.pythonhosted.org/packages/f1/19/45b405438e90ad5b9618f3df62e9b3edaa2b115b530e60bd4b363465c704/asciinema-2.4.0.tar.gz"
@@ -9,19 +7,25 @@ class Asciinema < Formula
   head "https://github.com/asciinema/asciinema.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "393a402f4c28a3aed2db166e5fff6ea6cce93af5b3f6c03af4f23d9f79fb0fe9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "43e7a7f5bed84cca809d1d2d6b1ccd93ec53b33e35d628d3ff4d4d01592e8ec4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "11aa0f514bcbae441f7ac420a8aa34df9197f3124bdcb95a08d4179f3235fa08"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a9c437d7e2229f1ca12f37fb851d832046f8809f0cfee59479d85d719f02b59b"
-    sha256 cellar: :any_skip_relocation, ventura:        "d12c60fff4c98c2b3703e8f13b5f3122c2d77447d9be0aceef1d66f2b7adb7a1"
-    sha256 cellar: :any_skip_relocation, monterey:       "53402504d5c8b0533289c2ec53618c6e34ecfcf6c84eb753a14a094a5c36d8ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b922f833eefb8fee5dc01fe81bf68f146a06ec251cbbcbdf7689e04b87345f3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cbb7eae66bb3f4258e0e0097409a03942b8c42579b393ffb819c65e70609f947"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d8c54e783163691902137e2db879183ea55b677f5d9570726c723d148773d269"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3100dd9b9de99b47ff198cd9b9c9068ae656909f949f59161a3899e5456e3564"
+    sha256 cellar: :any_skip_relocation, sonoma:         "917a40df83301b3f5fcaaebbe0d999523b7c931561bb1e3604461824e47aa94e"
+    sha256 cellar: :any_skip_relocation, ventura:        "01bdf0637272b5b0b6b6ebcca8499aa6cb4a8f41990fb10a3cd4eecafc099733"
+    sha256 cellar: :any_skip_relocation, monterey:       "1c3bdc9b1128c12359a4614831b6513b73ef0e19313c99a77da2081cbb191020"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ecb93ab4fa6cec9f6346eefd2d9ddac8dc5a981a8c946494fa12b5784b5ad669"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
 
+  def python3
+    which("python3.12")
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

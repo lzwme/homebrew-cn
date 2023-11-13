@@ -9,20 +9,18 @@ class Redo < Formula
   revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f7e392b19dabdac8d71937132f56dc068b462b36cb90c1bc345f8f3362935bd8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7e392b19dabdac8d71937132f56dc068b462b36cb90c1bc345f8f3362935bd8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f7e392b19dabdac8d71937132f56dc068b462b36cb90c1bc345f8f3362935bd8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f7e392b19dabdac8d71937132f56dc068b462b36cb90c1bc345f8f3362935bd8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f7e392b19dabdac8d71937132f56dc068b462b36cb90c1bc345f8f3362935bd8"
-    sha256 cellar: :any_skip_relocation, ventura:        "f7e392b19dabdac8d71937132f56dc068b462b36cb90c1bc345f8f3362935bd8"
-    sha256 cellar: :any_skip_relocation, monterey:       "f7e392b19dabdac8d71937132f56dc068b462b36cb90c1bc345f8f3362935bd8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f7e392b19dabdac8d71937132f56dc068b462b36cb90c1bc345f8f3362935bd8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8311708347ac6e5dd70472cbae269bb3a647e49068ff2cc4d6c87571523364ce"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6e8da91520948cb3d4fa12e3ab21d96eb2524f000022e23f5612bd068b0695e9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e8da91520948cb3d4fa12e3ab21d96eb2524f000022e23f5612bd068b0695e9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e8da91520948cb3d4fa12e3ab21d96eb2524f000022e23f5612bd068b0695e9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6e8da91520948cb3d4fa12e3ab21d96eb2524f000022e23f5612bd068b0695e9"
+    sha256 cellar: :any_skip_relocation, ventura:        "6e8da91520948cb3d4fa12e3ab21d96eb2524f000022e23f5612bd068b0695e9"
+    sha256 cellar: :any_skip_relocation, monterey:       "6e8da91520948cb3d4fa12e3ab21d96eb2524f000022e23f5612bd068b0695e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d00ceaedc38e851648a18f9e76f013d3f14f1e147e046bfb0011bad9c2bc896d"
   end
 
   depends_on "python-markdown"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/e8/b0/cd2b968000577ec5ce6c741a54d846dfa402372369b8b6861720aa9ecea7/beautifulsoup4-4.11.1.tar.gz"
@@ -35,7 +33,7 @@ class Redo < Formula
   end
 
   def install
-    python3 = "python3.11"
+    python3 = "python3.12"
     # Prevent system Python 2 from being detected
     inreplace "redo/whichpython.do", " python python3 python2 python2.7;", " #{python3};"
 

@@ -4,23 +4,25 @@ class Mpi4py < Formula
   url "https://ghproxy.com/https://github.com/mpi4py/mpi4py/releases/download/3.1.5/mpi4py-3.1.5.tar.gz"
   sha256 "a706e76db9255135c2fb5d1ef54cb4f7b0e4ad9e33cbada7de27626205f2a153"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "384f50c2948a0ee3394cf55923e3b1d16e5e43405bddd7232f93e8b5dec20c88"
-    sha256 cellar: :any, arm64_ventura:  "44951c7cfcdf29e3ab19a538a4b29eececfddc423e56f9691774b63a9ffc0283"
-    sha256 cellar: :any, arm64_monterey: "608da0b1163e29267168ab334d6578f1dffe76e1305a2eb9562ab2c46c6548cf"
-    sha256 cellar: :any, sonoma:         "b0d90ac0c85fb56bc7e6e6b9908237894c945cd01e6610f87cf9fcfd19e82cec"
-    sha256 cellar: :any, ventura:        "4112b2e41b4624794c801112728f033ce205e66d9a3436222d23143f885021be"
-    sha256 cellar: :any, monterey:       "2f4cfa512e19b5c261a13d3ff02270c05856717596a898e96f825716b9c7d308"
-    sha256               x86_64_linux:   "e953370f964d4fcaa04248469b34d5001a5c617aa7187e044f97c5338b0fb1bf"
+    sha256 cellar: :any, arm64_sonoma:   "d7f26ed77ae5882fe4b3df0f901f7faf51e290a94e5b6670819c5238ead605af"
+    sha256 cellar: :any, arm64_ventura:  "55a18c637efd4f150d0bd0e26d6c4bf291b8c5a6cf06f767c6521a11d4de923f"
+    sha256 cellar: :any, arm64_monterey: "a96bd6e4e743bb125063e7566a06944c750f91421eee383f0e074f91cc05e30b"
+    sha256 cellar: :any, sonoma:         "2a9a9eb680b3d7e5f5b23a2926f0d0d123157940547c5d1f72d4447d85253d88"
+    sha256 cellar: :any, ventura:        "cd1b35148ecec6ddb88a712cca2a77584e925780930bfd0c38bfd971ce282e90"
+    sha256 cellar: :any, monterey:       "5387c6df33cf0b059b1b827271c54ed1ce9fe7c46e57b27450bc81d016dcc4f7"
+    sha256               x86_64_linux:   "f239cce1b3d52ac7a059bb3624c84959a1c60f8479a8db858802a70097ab0f26"
   end
 
   depends_on "libcython" => :build
+  depends_on "python-setuptools" => :build
   depends_on "open-mpi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

@@ -17,13 +17,14 @@ class Subversion < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "5f8c705c2cc6024506f6b5d8fe913d1ff4634a886faee716a547b7f78e88a324"
-    sha256 arm64_ventura:  "821c5be00766471545a5a1a861ecba97407a0391ce739f47dd16952255a6ea53"
-    sha256 arm64_monterey: "37a3db6e3d3f19bf0a38819534d8fecbe12a9fc6d9f26aab1af66db602f8e808"
-    sha256 sonoma:         "b5d2888e5cffe7f369573e2ea3f186dec13b10c5bb3eeee72e9b23d099438ef3"
-    sha256 ventura:        "ccc720b040567395f0fce683ec641e231a1db4e279ce5b8b483983ade4ddc80d"
-    sha256 monterey:       "a0401c8592d5f90bc42ef710c205d5f1c5d1e9b0d896e608c902315d293a7ee6"
-    sha256 x86_64_linux:   "b1faa203109e0b15d75250cbec3ecc32b4212d89106baf2104100fc3cb48a8e9"
+    rebuild 1
+    sha256 arm64_sonoma:   "e124d3d7d989cde4c49fa55a9cdf27a9878cf9cb8a0b337924ae9887298756c9"
+    sha256 arm64_ventura:  "c17e5a9411dc38bddf2e797070e9872f4103cc2017a0d1a8ed5084752d3fc698"
+    sha256 arm64_monterey: "40ed45cec72f4e0f6e95f473cc4b2bd415cd8bd715d683518001a786d07c7877"
+    sha256 sonoma:         "b62dafdc9ebfcb65d124fee52b5b41b4ab3f4ee5f4486b27c4946dd84c9b8e1d"
+    sha256 ventura:        "9857d2acdce335c97d851d9ae68a00f931b26b76699f070e7da5cea3fd4cc8d2"
+    sha256 monterey:       "f9e7cadc6d1764ec9e54650b3548c269cd243b54926269c27ddd279388ddbadd"
+    sha256 x86_64_linux:   "6f7a9841187088ae93d3744bb8323a9536148c78b3d8d049055766ce58a8a64d"
   end
 
   head do
@@ -35,7 +36,8 @@ class Subversion < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12" => [:build, :test]
   depends_on "scons" => :build # For Serf
   depends_on "swig" => :build
   depends_on "apr"
@@ -76,7 +78,7 @@ class Subversion < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

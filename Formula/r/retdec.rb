@@ -2,22 +2,21 @@ class Retdec < Formula
   desc "Retargetable machine-code decompiler based on LLVM"
   homepage "https://github.com/avast/retdec"
   url "https://github.com/avast/retdec.git",
-    tag:      "v5.0",
-    revision: "53e55b4b26e9b843787f0e06d867441e32b1604e"
+      tag:      "v5.0",
+      revision: "53e55b4b26e9b843787f0e06d867441e32b1604e"
   license all_of: ["MIT", "Zlib"]
   revision 1
   head "https://github.com/avast/retdec.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a13dc26a54022a10d84c27df2a23437de8c80729b6e6e43309ce6213488363db"
-    sha256 cellar: :any,                 arm64_ventura:  "e976bb48ed3134c1b66577c8a16371f58c919fb2e19de6aac69f4fe05fb90b9c"
-    sha256 cellar: :any,                 arm64_monterey: "2e10771a8c543677b24d9a8e7834f0e68bad87d5ce0c79fd8d81c7aec5c37907"
-    sha256 cellar: :any,                 arm64_big_sur:  "c862bcb6fc9aca00707abe35c7e2fef22a51a9907fe0ed74b5ba70b72bed1412"
-    sha256 cellar: :any,                 sonoma:         "4178f85f6136abe80073e969e06c829716651691febd951b0e6752ac0f1bd53b"
-    sha256 cellar: :any,                 ventura:        "e781c8d105388cc40825b04848f2168c67b5bcf381aebc77914f3752c59846d2"
-    sha256 cellar: :any,                 monterey:       "61e8941ee8c7658c36728bc6cbe7d8cc89c343b60541a5c914cd05a6f8d74d50"
-    sha256 cellar: :any,                 big_sur:        "c9b06269e6cefdc03d0045db89b812bd59a653b146c4550124f1109fbceaf6d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5e6808edcaf5f70d1d753dcd5f358e7714c153a310a336780cb8d919e12e70f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "6a14274c63866419820218f69a6e36fe17d9dbc3986a36650e5e95caf54ec2b1"
+    sha256 cellar: :any,                 arm64_ventura:  "a5abd589cfd3394603c6add4e4f366376b70524c8aa052a402a661914a943e4e"
+    sha256 cellar: :any,                 arm64_monterey: "dca8e0ebc65fe1055e006e72c9136e084bc7340020bff9caf411383ea802467e"
+    sha256 cellar: :any,                 sonoma:         "8c080642f7e3b754ecf734c2d2e8dbcda730ded9cebf256b8b0fe34506b1880d"
+    sha256 cellar: :any,                 ventura:        "ca1d84d78998a8bb2486739802da5ef48d5064ac89bf09123e097fdb5ae9c403"
+    sha256 cellar: :any,                 monterey:       "5049e79d0a05645ad65c00b76abccd8cdd50f1124af262f16e7e29abd6b4fde5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c95537f564ebebe2513e2208cccff8b35c8bb6863864236f9236a4b1917d8736"
   end
 
   depends_on "autoconf" => :build
@@ -26,7 +25,7 @@ class Retdec < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "openssl@3"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   on_macos do
     depends_on xcode: :build

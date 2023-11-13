@@ -9,18 +9,19 @@ class AwsShell < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aaf27ed12585ec444d44da6bf199e69bf5612d0c77a4b26f5b23503d0eae11aa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a114891ad7ff51fc9a97c7e4e43a77d9d47ec33a9bac3faafcc47b9e81bbbc18"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "79518c0775923795eead774c4b08558d92cc9b9cb2e7e6710808fa00fd7081ce"
-    sha256 cellar: :any_skip_relocation, sonoma:         "753eb66a18ae95842b8552cd052549aeaf8e4992e22dbd52f897ff00f8eacbd3"
-    sha256 cellar: :any_skip_relocation, ventura:        "f9ad906cfb80bf60b5d22d3a9e8d9d6c9db199160f153fd90342dd97943ee840"
-    sha256 cellar: :any_skip_relocation, monterey:       "3b08df3d518156f8e4d8c33653669bc4d08bdd73afb9b9d9fa5ddb4b1326442a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b95e051b3132c04035efc5e96f6340d3edf43e19d8d6da838f76bb97b1574ccd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "25c783491817c522035224a860ca396153b767aedfd6aeb1c3293982f0402fbe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "916a3c58a50542afce354b2973d7d0a2f6b433f7bcbefcbcfa60aca60aa6dbf9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0845806e8dcb4728c80ae18b5389aea7055dd99472f49b28ceef718690af720f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4bb6f76520d66420ab6c8b77c106bdb99e2bd30389e27b6269bbf7b4f5bec56e"
+    sha256 cellar: :any_skip_relocation, ventura:        "e37cd094a982ee15d05c7e505e1a0e7527a2eae3502ae6d8f955e01f48c3f9f6"
+    sha256 cellar: :any_skip_relocation, monterey:       "f6b6b005857e154b8209b778fce3d7f88f938c1845ae6a292259688cf3c28031"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54fd717c5e564bb254920636f995c34d203805e966cffaa4094d83571563bfb1"
   end
 
   depends_on "docutils"
   depends_on "pygments"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "awscli" do
@@ -94,12 +95,7 @@ class AwsShell < Formula
   end
 
   def install
-    # setuptools>=60 prefers its own bundled distutils, which is incompatible with docutils~=0.15
-    # Force the previous behavior of using distutils from the stdlib
-    # Remove when fixed upstream: https://github.com/aws/aws-cli/pull/6011
-    with_env(SETUPTOOLS_USE_DISTUTILS: "stdlib") do
-      virtualenv_install_with_resources
-    end
+    virtualenv_install_with_resources
   end
 
   test do

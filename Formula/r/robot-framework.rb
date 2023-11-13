@@ -10,20 +10,21 @@ class RobotFramework < Formula
   head "https://github.com/robotframework/robotframework.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "dbfca69ddb7ea711be3b9a754af2c717427d0fca67ff7470631ac998ef4562fb"
-    sha256 cellar: :any,                 arm64_ventura:  "e8a98136fa59b574ed14f996e5a069f22102b0e47e24cf994e35f077c19c464d"
-    sha256 cellar: :any,                 arm64_monterey: "0cb3aa0206638e47d12729acba8af114c268c4d0d840f39a2671ee38d6a2a3ea"
-    sha256 cellar: :any,                 sonoma:         "2b58b84076eeb1aec8590c5ebd3568bdba839a9aebdeaed9cc8c582a0027047e"
-    sha256 cellar: :any,                 ventura:        "9c00cec5269eaa98cc0a398d952529a8e57159c9fb4365a6edf634f9aec8af67"
-    sha256 cellar: :any,                 monterey:       "941e4d0102462013dca151952d5b82a88f25044a71e92bf3e9cf08af0628ce14"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0df8c120b5b02f0703b4bdb9d5a7c2410f18eda1fa8dde670eea56e1cba392d9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "df3ef6ecd16546119a9fbc79e8f60f91a61d2f686e31ee42dd288daa287d8530"
+    sha256 cellar: :any,                 arm64_ventura:  "cf2e6ab17d0320b63c2f9aa0a17cbbbe8c62619071437b0cab11420bbc315f7d"
+    sha256 cellar: :any,                 arm64_monterey: "26ed1598dd6c5fe7c374c654abc43215d2a7befd11fdd1a0bb25eed4573eac27"
+    sha256 cellar: :any,                 sonoma:         "749f358efb3be65dea8ea3db297d589e737530222c5022767b22c2a3e959e3d0"
+    sha256 cellar: :any,                 ventura:        "0ae74252a9ce90bc6b1670bc7aecfe7247a277bc1067851ec4bca27d1457e7fb"
+    sha256 cellar: :any,                 monterey:       "5abf91b2041526d3a3482483e86796b423ad8e8e313f720203269fc84b3ff9f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8e1807224c185c8f4ecdd54a744ba7b6b57af242a65711d2f420935050fff71"
   end
 
   depends_on "rust" => :build # for bcrypt
   depends_on "cffi"
   depends_on "python-certifi"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "attrs" do

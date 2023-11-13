@@ -9,19 +9,25 @@ class YouGet < Formula
   head "https://github.com/soimort/you-get.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "33cb5f58e3867b76c7eaf564af7f439f40e9d67a67db2764d34cd6eadd107ab5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "10cbedc1662e5e93abf11da1dbfdfcafece91370708bb7bd2a90563424a941ba"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "10cbedc1662e5e93abf11da1dbfdfcafece91370708bb7bd2a90563424a941ba"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "10cbedc1662e5e93abf11da1dbfdfcafece91370708bb7bd2a90563424a941ba"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9e70f77a60c7b82b4c7ba4f59f851c35a12856db41a77c1264734ae118782822"
-    sha256 cellar: :any_skip_relocation, ventura:        "937b557473bf5b2d762c4d78bfb44f755353c429d1e370c36de26487b26c4949"
-    sha256 cellar: :any_skip_relocation, monterey:       "937b557473bf5b2d762c4d78bfb44f755353c429d1e370c36de26487b26c4949"
-    sha256 cellar: :any_skip_relocation, big_sur:        "937b557473bf5b2d762c4d78bfb44f755353c429d1e370c36de26487b26c4949"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e5144f23c00dfd8ffc7379be1c542f464a5644e7c586bbc35b1c62fd6fb23f4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5a8b5077c1235ebe12d7a5fd8f69724fec9a8ef17305c1e807073daa500de253"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d1e898a9109cc895bda7b81990150439d356af30bdf8e98cf3fd0f8be2c9158"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9dd328f83f3ad81597e30958dc22c0342066a1acab8e35706056da47256a76ed"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a8e9c2794b890b68ca0f8ff2a394d2d95d5e69d8f201109151b0dffdebe27f14"
+    sha256 cellar: :any_skip_relocation, ventura:        "ea3bc507cf699314cab4eee92f3e5cc0d343cd87e7d2a3f9858f3eb7732956ec"
+    sha256 cellar: :any_skip_relocation, monterey:       "e4afbfd0a6c182751edf23f07bc7a459182fa494854003fbcfc554dbd93a844e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1dae4ca3134063cdc80d51525059b054d89cbcd17d3f247a890c093252d77083"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "rtmpdump"
+
+  # Support Python 3.12
+  # https://github.com/soimort/you-get/pull/2677
+  patch do
+    url "https://github.com/soimort/you-get/commit/aedf3e458f3ec6083ebe4c3e3c0f21e1eb582000.patch?full_index=1"
+    sha256 "a585310a37a54bcbe077bcbff99f39dcbfe53457179dbf035409cbdda042275f"
+  end
 
   def install
     virtualenv_install_with_resources

@@ -59,12 +59,13 @@ class MoltenVk < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "ee5b936fad91304926ca93f9aa6d0713949ef919710b845f0338cf9108f38975"
-    sha256 cellar: :any, arm64_ventura:  "42c9bf8b7c8cd4be859984c2ca6c4685b3fb624188a886ad39446aeba9e47879"
-    sha256 cellar: :any, arm64_monterey: "bb5f63a0d04268b0cf2024e8716cfe6fd31e403882905cbb8bb97f4afbce5f8b"
-    sha256 cellar: :any, sonoma:         "74af35e57398649518fbfbf3e42fc282369bf2780d19e9a19a0bc271cac957f6"
-    sha256 cellar: :any, ventura:        "fdfb778e14f617e126ea2de9e25e76e00bf8ae0d75950e2e06e528f6b6efa02e"
-    sha256 cellar: :any, monterey:       "7c50a4e6da0f2ee6ad3ce3abdf282d741ba2e1a54638f9b80213161fabc98fc5"
+    rebuild 1
+    sha256 cellar: :any, arm64_sonoma:   "824854916a8585d9ca8c4aa5320207c6c7d9a17ea80231a296353cc99c7c67ec"
+    sha256 cellar: :any, arm64_ventura:  "ef70b4f7386544e4501ca678d0c4161675bd7255cdd2feed40236dbd93dd3733"
+    sha256 cellar: :any, arm64_monterey: "582db3ddb81439b7d6a6521b0173615906c903ff13bf2a59e1c07d6ce13732f2"
+    sha256 cellar: :any, sonoma:         "1b6217a945ce747dbdfd73d628bdaff2522929cdecd0e37f8a10ef5af53ba9f3"
+    sha256 cellar: :any, ventura:        "95c0a376b5e4b736fa409d2871897da543497554519eefcfce1ae1cb94bd012f"
+    sha256 cellar: :any, monterey:       "a5d0472bbc7c2049f070aa19b3f7b6f70f6c1d9538400ccf619fe8636e781609"
   end
 
   head do
@@ -152,6 +153,7 @@ class MoltenVk < Formula
                "-scheme", "MoltenVK Package (macOS only)",
                "-derivedDataPath", "#{buildpath}/build",
                "SYMROOT=#{buildpath}/build", "OBJROOT=build",
+               "GCC_PREPROCESSOR_DEFINITIONS=${inherited} MVK_CONFIG_LOG_LEVEL=MVK_CONFIG_LOG_LEVEL_NONE",
                "build"
 
     (libexec/"lib").install Dir["External/build/Intermediates/XCFrameworkStaging/Release/" \

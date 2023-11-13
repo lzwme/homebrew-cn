@@ -9,20 +9,22 @@ class Sail < Formula
   revision 3
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "745fb352fac87fe768cddc9de0364239860f29d7438e757c3bfedec66fbd2580"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fbfae2ec4cb1ce900222e8e141508efbbff5597d52d1e331054cf8eda9a28d20"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3ac6620c8bd27231eabfb9fc726d763580b5e2007b78ecafcff4f289474bba9b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a064bb34332f82ed0d7c768a63780703ec99f18054ecaaef16a4233c7e104df9"
-    sha256 cellar: :any_skip_relocation, ventura:        "f7eea9e4a5cccbbfbc742475d73e916cb576113ac146442a2c22353d0292baf1"
-    sha256 cellar: :any_skip_relocation, monterey:       "31dc0482a70729534c08d8fcc2e1b2a76f5781c87465805a05effdbaad54fd38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63b300469099a180300962f56d5683d7c079ec0b105eed61b5330c310d71c63f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "683b664520bdc527c8cf90bae1446c4d18fb1cf3c029c36f63f1119dd2e058c3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4353778cb21326a1a538d3b23b4eaa892326a6dc6e1cafcf53adf934be241cad"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac7adb6bca5a5123896d7e6ba6b3e084bb95f2e4ba06970a937623745d72c195"
+    sha256 cellar: :any_skip_relocation, sonoma:         "def6f099466e8475b882eaa362bf05648a44a9377e7d1aa43c3b2725fb0b3d62"
+    sha256 cellar: :any_skip_relocation, ventura:        "378c2c8300ff86429bb2ea773d25896d63505b7d2617ba090cb564aa12846229"
+    sha256 cellar: :any_skip_relocation, monterey:       "997a26c5b0fd84761e8fd68025819e21db4a7ba37c982e9f4aedbe95e7ae274b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f6b5188c8d5c6dabfdde6fbc37cf9d6c8631440034042eb97c57d0744ac2271"
   end
 
   depends_on "fabric"
   depends_on "pyinvoke"
   depends_on "python-certifi"
   depends_on "python-click"
+  depends_on "python-filelock"
+  depends_on "python-jinja"
   depends_on "python-markupsafe"
   depends_on "python-packaging"
   depends_on "python@3.12"
@@ -34,19 +36,9 @@ class Sail < Formula
     sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
-  resource "filelock" do
-    url "https://files.pythonhosted.org/packages/d5/71/bb1326535231229dd69a9dd2e338f6f54b2d57bd88fc4a52285c0ab8a5f6/filelock-3.12.4.tar.gz"
-    sha256 "2e6f249f1f3654291606e046b09f1fd5eac39b360664c27f5aad072012f8bcbd"
-  end
-
   resource "idna" do
     url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
     sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
-  end
-
-  resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
-    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
   end
 
   resource "jsonpickle" do

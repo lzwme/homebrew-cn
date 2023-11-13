@@ -2,20 +2,18 @@ class ArgocdVaultPlugin < Formula
   desc "Argo CD plugin to retrieve secrets from Secret Management tools"
   homepage "https://argocd-vault-plugin.readthedocs.io"
   url "https://github.com/argoproj-labs/argocd-vault-plugin.git",
-      tag:      "v1.16.1",
-      revision: "77b07b1d16442a0faef952d4f910f3fac008845d"
+      tag:      "v1.17.0",
+      revision: "b393c7afa63a43197c084a99959a78d0d26e5e74"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4659c5a97feb603b498c5d0080052542a14fdfb9e6ac1ddfe72aa7efc4b00ecc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d7be79ced0f90cd76b237f13cf3f42fa7122d361b7cf3c512dac7952b5e13a84"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d7be79ced0f90cd76b237f13cf3f42fa7122d361b7cf3c512dac7952b5e13a84"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d7be79ced0f90cd76b237f13cf3f42fa7122d361b7cf3c512dac7952b5e13a84"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cbce0e77a6e90f9e0238734460fcf7ff67628dee60705b58f2ee0b311e5ebeaa"
-    sha256 cellar: :any_skip_relocation, ventura:        "084167429a16d4611084a75ec7641c67e793c56b5370c3002940a61681210d64"
-    sha256 cellar: :any_skip_relocation, monterey:       "084167429a16d4611084a75ec7641c67e793c56b5370c3002940a61681210d64"
-    sha256 cellar: :any_skip_relocation, big_sur:        "084167429a16d4611084a75ec7641c67e793c56b5370c3002940a61681210d64"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba21a70daa6c9a99c6055fd483a7ba1207f032e661e9fece4095d91c9ab6a385"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "751d8825ad59355be8be07aa151a0636b51b3f36244c9dc4b43196924f481354"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "751d8825ad59355be8be07aa151a0636b51b3f36244c9dc4b43196924f481354"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "751d8825ad59355be8be07aa151a0636b51b3f36244c9dc4b43196924f481354"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e8a39a9ec1e919f7931e586ab7d17c09a5ef7dc252de0aa60d4e1aa87a368149"
+    sha256 cellar: :any_skip_relocation, ventura:        "e8a39a9ec1e919f7931e586ab7d17c09a5ef7dc252de0aa60d4e1aa87a368149"
+    sha256 cellar: :any_skip_relocation, monterey:       "e8a39a9ec1e919f7931e586ab7d17c09a5ef7dc252de0aa60d4e1aa87a368149"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "75ec9163c119d670352008b558f1c6d96d651dcc804bad145f068021751ee70d"
   end
 
   depends_on "go" => :build

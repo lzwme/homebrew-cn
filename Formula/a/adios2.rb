@@ -4,7 +4,7 @@ class Adios2 < Formula
   url "https://ghproxy.com/https://github.com/ornladios/ADIOS2/archive/refs/tags/v2.9.2.tar.gz"
   sha256 "78309297c82a95ee38ed3224c98b93d330128c753a43893f63bbe969320e4979"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/ornladios/ADIOS2.git", branch: "master"
 
   livecheck do
@@ -13,11 +13,11 @@ class Adios2 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "244917f2984bbd229e220116b0ec45f59c1841414cf9fc593a0bc576783a198f"
-    sha256 arm64_monterey: "723303d3cf743fae4533139f719571e45aed2a81c3aebdb7b4558d58aecb68d7"
-    sha256 ventura:        "2bf04f4b002e6e6d0d2351fffdb6d23e568144f63c83664bf08ebc92205775a9"
-    sha256 monterey:       "ec25d3ee5d6052b4ce150e41a9e391c7d97bcdc11b6fc5136a976b4f3cae50f9"
-    sha256 x86_64_linux:   "43c9daa3cba699d21de9ed64842387bd37175ebd9ab613bef703ac49f70a7385"
+    sha256 arm64_ventura:  "283d482432e189fe6cb1a302089e2615e49a12bfac57db69f087efe80290eae9"
+    sha256 arm64_monterey: "e28f7eb517b74faaefb469e0b7bca433a7f68f04e0bde43743a866f8d3e3effc"
+    sha256 ventura:        "4a90152c29da3dcb1b329191b3bdb783eb11730b3014864080d93005fdc17534"
+    sha256 monterey:       "e883fb195102fcb4e142baee668cb5532bfb0aec8413e67d35d28575915dd2a4"
+    sha256 x86_64_linux:   "50dab40f7ef2a78b751fc532b74ee32d0c28a0636e1fa5c81fe59450c4806e55"
   end
 
   depends_on "cmake" => :build
@@ -32,7 +32,7 @@ class Adios2 < Formula
   depends_on "open-mpi"
   depends_on "pugixml"
   depends_on "pybind11"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "yaml-cpp"
   depends_on "zeromq"
 
@@ -48,7 +48,7 @@ class Adios2 < Formula
   fails_with :clang if DevelopmentTools.clang_build_version == 1400
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

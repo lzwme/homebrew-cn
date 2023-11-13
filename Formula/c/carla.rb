@@ -12,13 +12,14 @@ class Carla < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "896ca3dcf1b37351bfc1a15b2d7954af88ed7b35fa31d7353513e596a6d4cd7e"
-    sha256 cellar: :any,                 arm64_ventura:  "bd481c1b38dd6258d32e8ce8baf47d0f78d2d2c218d7a4a7be20ff2c13c4425a"
-    sha256 cellar: :any,                 arm64_monterey: "6d34406f719286500d8c4a3a6111a39082c70faf60c560f1f051687ef30b80a8"
-    sha256 cellar: :any,                 sonoma:         "69c166a47f9080b79197832851f36dcca8f60b2249b8e6439c57015fda995dc1"
-    sha256 cellar: :any,                 ventura:        "bf97f69ad97b5e098e2385f9330d68e56e42df62c760f1e09a7822aacb8c3077"
-    sha256 cellar: :any,                 monterey:       "7809ab93127dab0523581aab8ded5a1a7c0a24406d6bb22634e55c6997cd6e6e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03acbd37705d2f9845ebc6f95393b256307e47d7f80ee35a95d3b5e049aeae44"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "8b1fc019e03ccb20df662d8a812c47fe7c188b75383a401d75d8f08f46a34e7c"
+    sha256 cellar: :any,                 arm64_ventura:  "346b3100b75135bf0708a71777b064a5fffdf485f46df9d1e0f1b6eca7176966"
+    sha256 cellar: :any,                 arm64_monterey: "fa8df3a4b3b54e3c5449ca7225deba9221c88542db3631120ae0474056d992bf"
+    sha256 cellar: :any,                 sonoma:         "6cf1daeb9bd989e3bde1c85d326ec16cc1ef3b993ae6d13ce09be6441f4847dd"
+    sha256 cellar: :any,                 ventura:        "8161e588f71b39dd0e9214b12ba0fecafe6da329230ba4f5d378b05d738ab6f7"
+    sha256 cellar: :any,                 monterey:       "72cc42ad4923546fc5f17ef02d40e28a213d57ebfd5f7df5faa347afbacaf74f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "638fae24097e8ce2cda757e0df55b2b92b079a6b5f36988e0db75213821e9f48"
   end
 
   depends_on "pkg-config" => :build
@@ -26,7 +27,7 @@ class Carla < Formula
   depends_on "liblo"
   depends_on "libmagic"
   depends_on "pyqt@5"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   fails_with gcc: "5"
 
@@ -35,7 +36,7 @@ class Carla < Formula
     system "make", "install", "PREFIX=#{prefix}"
 
     inreplace bin/"carla", "PYTHON=$(which python3 2>/dev/null)",
-                           "PYTHON=#{Formula["python@3.11"].opt_bin}/python3.11"
+                           "PYTHON=#{which("python3.12")}"
   end
 
   test do

@@ -9,13 +9,14 @@ class Checkov < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "11edf20740f494c44c7b8395ee45fafd4f1244a9643ef466c9ef0813f44d39f2"
-    sha256 cellar: :any,                 arm64_ventura:  "cd3d1b036242dbec9ea23428ab7a227b6474e5f1fcd9630f64a676e2880693e9"
-    sha256 cellar: :any,                 arm64_monterey: "22f536cb7159c2d921488822d62f69f8af0b3677f8484e61bf9a32ac62d8984f"
-    sha256 cellar: :any,                 sonoma:         "65a62c805dcda64579930f325b07723e92cda8296b8344c2d569d6b8753f3453"
-    sha256 cellar: :any,                 ventura:        "0cde5f853efabd49f1cd1913e8c68a7f479217aeaf0833947466df295e5086ee"
-    sha256 cellar: :any,                 monterey:       "2267391626942c196d5d03d206813761c98dadab4499034ccb0a946690d945fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f71762bc1f3e38ba9bb321a4b02fdee93df2e40b6ff49bc07e12a9d72bd27bb1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "a58b103b475f8775e31fbc9dff67c656b2d8cd0c1635783d0fcc3f67d3a2b37d"
+    sha256 cellar: :any,                 arm64_ventura:  "8124b361e417f83d2c17d089e33ce67d1b75e6977a856164806a3708fde17fb5"
+    sha256 cellar: :any,                 arm64_monterey: "1dac686b196bff29344dee6be20542a2e2e87229be1a7886cf72142631f70e96"
+    sha256 cellar: :any,                 sonoma:         "02237e00f9cc44364f17d012c571e00621547b0073ed3778f6e44b4733e7b321"
+    sha256 cellar: :any,                 ventura:        "27e62a8b8bd94003e6938c2faa48bc4b31b75a164a1f92848ddfed4dba04bc94"
+    sha256 cellar: :any,                 monterey:       "3ac409dc66d21e91d2337e8f5ee245ed3406bf5419d133bbcbc705b0a9b891a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f6a549ad1556e3f6428d27881174b794a100b8abe33b38a93753020ac495e2f7"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -26,8 +27,10 @@ class Checkov < Formula
   depends_on "python-argcomplete"
   depends_on "python-certifi"
   depends_on "python-click"
+  depends_on "python-jinja"
   depends_on "python-markdown"
   depends_on "python-markupsafe"
+  depends_on "python-networkx"
   depends_on "python-packaging"
   depends_on "python-pyparsing"
   depends_on "python-tabulate"
@@ -242,11 +245,6 @@ class Checkov < Formula
     sha256 "48c5881de7e8b0a0d648cb024c8062dc84e7b840ed81e864c7614fd3c127bde9"
   end
 
-  resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
-    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
-  end
-
   resource "jmespath" do
     url "https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz"
     sha256 "90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
@@ -280,11 +278,6 @@ class Checkov < Formula
   resource "multidict" do
     url "https://files.pythonhosted.org/packages/4a/15/bd620f7a6eb9aa5112c4ef93e7031bcd071e0611763d8e17706ef8ba65e0/multidict-6.0.4.tar.gz"
     sha256 "3666906492efb76453c0e7b97f2cf459b0682e7402c0489a95484965dbc1da49"
-  end
-
-  resource "networkx" do
-    url "https://files.pythonhosted.org/packages/97/ae/7497bc5e1c84af95e585e3f98585c9f06c627fac6340984c4243053e8f44/networkx-2.6.3.tar.gz"
-    sha256 "c0946ed31d71f1b732b5aaa6da5a0388a345019af232ce2f49c766e2d6795c51"
   end
 
   resource "openai" do

@@ -1,12 +1,12 @@
 class MagicEnum < Formula
   desc "Static reflection for enums (to string, from string, iteration) for modern C++"
   homepage "https://github.com/Neargye/magic_enum"
-  url "https://ghproxy.com/https://github.com/Neargye/magic_enum/archive/refs/tags/v0.9.3.tar.gz"
-  sha256 "3cadd6a05f1bffc5141e5e731c46b2b73c2dbff025e723c8abaa659e0a24f072"
+  url "https://ghproxy.com/https://github.com/Neargye/magic_enum/archive/refs/tags/v0.9.4.tar.gz"
+  sha256 "0ffc840d881a377a520e999b79ec2823b3b8ffadccad5d94084cc37fcf6fe2c9"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d106a548298cae974bd65aded36cc2812bfefaa4d5bd111a50cbb3235dc49336"
+    sha256 cellar: :any_skip_relocation, all: "65ef8321b4638f71dd6366ac3568583fc984f4aa22356ba3a0ea594c6a66140e"
   end
 
   depends_on "cmake" => :build

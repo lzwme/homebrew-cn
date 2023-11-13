@@ -14,19 +14,20 @@ class AwscliAT1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e00a079db51bbb23a8f79b35e3587e097c7f3145b8744715c750293d86adb3a4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb5caeb49c7116fba28e34293c54675f89c6a679eea29b3df74cb2b3f7c474dc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "df3d9b519f3561b43d3dd38d8c9e6ff1a6b2b25cd1fd721871a4c66b9a23adc9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5894ccfe47c571854dd41634f0c3eaaa6f373f5c75bee40d095521ce14c4c2da"
-    sha256 cellar: :any_skip_relocation, ventura:        "3e72fa268c397c634f5982abf121031319ecc265e7f5051f14a2b1db2b88b9c1"
-    sha256 cellar: :any_skip_relocation, monterey:       "5728428d34da069d5a2520f28f929ceac866e8df7c8ed53d6f2bd37e911383e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8566fe19d816073f9564c7737ec712aed619ad44ceefe2a03b8c5fdfad1a9278"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a8d86070731c376a8e1f0c32632dd1fbc7466f69ec6ca6fdca9ea29b894e9cc4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "19a627add4f845e6ada2cc77a3709dfdee984d5c7e12ffda05bbce979e5793e2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "367b1ca3d65c13e42245050935b925d6c827f323945300a67b0c294a590b1ca3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d7f5cb2b115b6132cb6ff00135b82bcf586ba6e16f8de9844dd7da905533d9a7"
+    sha256 cellar: :any_skip_relocation, ventura:        "e87e80d016dda997d4261dee931d914f8a2aeb577dffbb10cb07db3eee6f8694"
+    sha256 cellar: :any_skip_relocation, monterey:       "90ad99bb3b435f5112b30d6b0bbbac64f061c099299097c06a7e352603926085"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa8818cc9120321fc5e68ee198522822f2e88ec0c2c44b9994a932b384475c90"
   end
 
   keg_only :versioned_formula
 
   depends_on "docutils"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 

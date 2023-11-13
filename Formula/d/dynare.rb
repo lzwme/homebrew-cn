@@ -2,6 +2,7 @@ class Dynare < Formula
   desc "Platform for economic models, particularly DSGE and OLG models"
   homepage "https://www.dynare.org/"
   license "GPL-3.0-or-later"
+  revision 1
 
   # Remove when patch is no longer needed.
   stable do
@@ -31,13 +32,13 @@ class Dynare < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "89af2f9bc6a8a9b3357496f0ea2f0bc8682ead3b89cb3b3ea4ce8811b5140383"
-    sha256 cellar: :any,                 arm64_ventura:  "da3560dc7ec52d676c9640720f91f27e557496e1cc7cc933249ca4cb27aea862"
-    sha256 cellar: :any,                 arm64_monterey: "fce184e3d71f432ec50abf4b7eeeac93528a7a1ec19e1628441bd4ec715b1244"
-    sha256 cellar: :any,                 sonoma:         "43421d8ba5a1df263cbd05d301085cf3e44770a1386c170f65f3f4f501c70248"
-    sha256 cellar: :any,                 ventura:        "367357088638ffdd7c3d224d6044531239457e8ae0cc826e78410d741a6f3af5"
-    sha256 cellar: :any,                 monterey:       "41ccc196c920038c95a352ba366cb9c7c509a97cc88729f589067f39a0c0b3f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0d4e4bf6b182972101e82a07e91b0f95f64b2615429bd2f822bbc345e5368ef"
+    sha256 cellar: :any,                 arm64_sonoma:   "e9569f6f2da358dbc46a38c2b18162e53606250e346af5fc8e14314a5bf3be35"
+    sha256 cellar: :any,                 arm64_ventura:  "4f98c00ec565b4e2c9d6c3f3fe1ebc2317833e3723f6a2e9ae4cf454b1c28af4"
+    sha256 cellar: :any,                 arm64_monterey: "777a6cdbc7f5b33be2bb98b8eeead00b924e1400bbf67d4ec0e1edc0d3b948a3"
+    sha256 cellar: :any,                 sonoma:         "c84f5e5d7a3e8635fc058e90126e9489d04abcde16fd440223ed3d92fcfea7bc"
+    sha256 cellar: :any,                 ventura:        "1cd9f23919fd19bdbe41ac56b83bca967d02a752880d93acdb6089ab3eac6469"
+    sha256 cellar: :any,                 monterey:       "9cca9affc6588bdba92edc3976cf7b826d5f2af564f171da0c1acb27f2b8fa3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40ebc11d72ea9d2a100a5a75f0b5598700f1739c8f6087275aea64522b5396fc"
   end
 
   head do

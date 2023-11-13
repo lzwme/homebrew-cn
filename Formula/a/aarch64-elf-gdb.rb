@@ -12,20 +12,19 @@ class Aarch64ElfGdb < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "12979644dfcb418ec38471c5dcebd210d167704637228a317b554ddc5a3ec98b"
-    sha256 arm64_ventura:  "b1efda07dd935af505f521904384bf36e34985037baad7190114026d1f5b7e75"
-    sha256 arm64_monterey: "c7eb740063212c35f576edb8da4872c71599494d5955298f0b6c5307e0b3fbca"
-    sha256 arm64_big_sur:  "a17cc6ab305fb77ad7764895eef888172bcd3dfd07c90e6bfa79aaf832958c06"
-    sha256 sonoma:         "95db8dfd0521a99b3fd001408d5f9906ff57d7cec8f6eeac09077cd163c5f2a3"
-    sha256 ventura:        "b4a73241baeaf7a6857c126578baa0eb2ce5d0f46fc3cac2a3981ba6ab50b193"
-    sha256 monterey:       "c3b55ff017d18a3dd0a8f8876ec73958659daa8b28b6b77ff576077dda64d414"
-    sha256 big_sur:        "31ac4b41ec94970f6ccde66d73c7a293a1b735e940e361da630d1ec9170757f1"
-    sha256 x86_64_linux:   "4e32ff069f804c1ca8042dac7f2b6d3c8f5105a531ddf1fff6e0862c9e9bfdbc"
+    rebuild 1
+    sha256 arm64_sonoma:   "c079442c342ce94b213f7551fc57a67c81ac91d1344da58c4aa77f3935bd99ac"
+    sha256 arm64_ventura:  "e5fbbe574ba723fe4fcb3f9b3bdadd882750b1b749e72d43a6ad63eb470f5a2e"
+    sha256 arm64_monterey: "4c13676f6ae41a761955748c4bfa00ea1f63ec98747562baf70f20cfbad97138"
+    sha256 sonoma:         "2bbb1821162de6f90f1d3a5da4b68dfafc376900faf0bbc1a77791b53b5e47a2"
+    sha256 ventura:        "92c1733e1328ca927d2ee9c24913b910f2c151d73742d3befc19a04a57548a62"
+    sha256 monterey:       "2fc80c9827c68d611d9d8f930f5f83ab196ab85a2190e063e9eb5e356f74530e"
+    sha256 x86_64_linux:   "6f4bc10aca712b3983b25ae43d7fe4b0e5b5800dd1d5aedcdd50dc4555cb313f"
   end
 
   depends_on "aarch64-elf-gcc" => :test
   depends_on "gmp"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "xz" # required for lzma support
 
   uses_from_macos "zlib"
@@ -46,7 +45,7 @@ class Aarch64ElfGdb < Formula
       --disable-debug
       --disable-dependency-tracking
       --with-lzma
-      --with-python=#{Formula["python@3.11"].opt_bin}/python3.11
+      --with-python=#{which("python3.12")}
       --with-system-zlib
       --disable-binutils
     ]

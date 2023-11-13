@@ -1,11 +1,10 @@
 class Octave < Formula
   desc "High-level interpreted language for numerical computing"
   homepage "https://www.gnu.org/software/octave/index.html"
-  url "https://ftp.gnu.org/gnu/octave/octave-8.3.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/octave/octave-8.3.0.tar.xz"
-  sha256 "919c9494f02ca435e1e3474990e6df8ddef9acbc9c90565e08d40b8f50445ba9"
+  url "https://ftp.gnu.org/gnu/octave/octave-8.4.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/octave/octave-8.4.0.tar.xz"
+  sha256 "6f9ad73a3ee4291b6341d6c0f5e5c85d6e0310376e4991b959a6d340b3ffa8a8"
   license "GPL-3.0-or-later"
-  revision 2
 
   # New tarballs appear on https://ftp.gnu.org/gnu/octave/ before a release is
   # announced, so we check the octave.org download page instead.
@@ -15,15 +14,13 @@ class Octave < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "8ae5e8c4a431f922a5aa6bf7f5e8f5232645150af909681541767acb33e6cef8"
-    sha256 arm64_ventura:  "0fde25bc570c10a6d9849c836ba3f1debc7c754deae1bcd776ea7e9822c0f826"
-    sha256 arm64_monterey: "43803af5509d210d34d002931fd788377cad1ce1e98c4661743287aa934e44d3"
-    sha256 arm64_big_sur:  "ffc066b4a4b17475943b4af0b918a55068ce285e919f8933af8d98b6999bacc3"
-    sha256 sonoma:         "122d9e2bd794827b14f46b693e1a1bdc8138866d01eb5207ed09ad99a26badfa"
-    sha256 ventura:        "f8a4358ab506f538f18b26680c02473671515330839b55f9fa7ea416c1fe674f"
-    sha256 monterey:       "3ce5276b7678a148ffc6571eeaa7c4d4feab2efb244f3eeff5ba17cce5e4ed5c"
-    sha256 big_sur:        "96d558383ae7a1c265c903e96e6c6805e3b4f9c9255532bbdae81b61a311b7d7"
-    sha256 x86_64_linux:   "f0b9501a82ba1d4aac132c4f84d2bd9a5529cd3f50172ce6e66a0c422863aed5"
+    sha256 arm64_sonoma:   "00a52eb37eeffb8e092ad9fa6b06e7c90c53609c4d0019649b3f2286247f9800"
+    sha256 arm64_ventura:  "c24bc5b25fe5df6ca647858263efe201c21db89dc898ac9b5308f9104b40b3f1"
+    sha256 arm64_monterey: "a50149961cb96a6a8dd5a6e8f5d75d9dc0b3d09e06afa06c8b5708bab4c07638"
+    sha256 sonoma:         "82696acdd68d9fb354d0c8e617c179a040558538efc14878aae8a95e8bfa2b0e"
+    sha256 ventura:        "be298e0b3eec2548bdf10bf649df75bc18f8cd7c0c858c21700e821e4fa67c72"
+    sha256 monterey:       "fd643d6a6ef2ec968b3854bbf6d857fbea019350e701af5bf1cb6ea62fdd7571"
+    sha256 x86_64_linux:   "0651d4d134631faa76a443d2b8fcdf57224ac8c0059f2bb47f0856634f08ae41"
   end
 
   head do

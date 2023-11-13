@@ -8,8 +8,8 @@ class Homebank < Formula
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "http://homebank.free.fr/public/sources/"
-    regex(/href=.*?homebank[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https://deb.debian.org/debian/pool/main/h/homebank/"
+    regex(/href=.*?homebank[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
   end
 
   bottle do
