@@ -472,6 +472,7 @@ Homebrew-homebrew-core/Formula/b/binkd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/binutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/binwalk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bioawk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/biodiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/biome.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bioperl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/biosig.rb, Homebrew/homebrew-core, 0
@@ -487,6 +488,7 @@ Homebrew-homebrew-core/Formula/b/bittwist.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bitwarden-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bitwise.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/bkcrack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bkt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/black.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/blackbox.rb, Homebrew/homebrew-core, 1
@@ -2682,6 +2684,7 @@ Homebrew-homebrew-core/Formula/i/install-peerdeps.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/instalooter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/instead.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/intercal.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/i/intercept.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/interface99.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/internetarchive.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/intltool.rb, Homebrew/homebrew-core, 0
@@ -3747,7 +3750,7 @@ Homebrew-homebrew-core/Formula/lib/libyaml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libyubikey.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libzdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libzen.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/lib/libzim.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libzim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libzip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libzzip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/m-cli.rb, Homebrew/homebrew-core, 1
@@ -5168,7 +5171,7 @@ Homebrew-homebrew-core/Formula/r/rasqal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ratfor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rats.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rav1e.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/raven.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/raven.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rawgl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/raxml-ng.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/raylib.rb, Homebrew/homebrew-core, 1
@@ -5363,6 +5366,7 @@ Homebrew-homebrew-core/Formula/r/ruby@3.1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rubyfmt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/ruff-lsp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/ruff.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/ruler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/run.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/runcocoa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rune.rb, Homebrew/homebrew-core, 1
@@ -7663,7 +7667,6 @@ Homebrew-homebrew-cask/Casks/c/cyberghost-vpn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cycling74-max.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dadroit-json-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/daedalus-mainnet.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/d/daedalus-testnet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/daisydisk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dangerzone.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/darktable.rb, Homebrew/homebrew-cask, 1
@@ -7818,6 +7821,7 @@ Homebrew-homebrew-cask/Casks/d/dotnet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/double-commander.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/doubletwist.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/doughnut.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/d/douyin-chat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/douyin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/downie.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/doxie.rb, Homebrew/homebrew-cask, 0
@@ -8824,6 +8828,7 @@ Homebrew-homebrew-cask/Casks/l/letter-opener.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lg-onscreen-control.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/libcblite-community.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/libcblite.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/libndi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/librecad.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/libreoffice-language-pack.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/libreoffice.rb, Homebrew/homebrew-cask, 0
@@ -10091,7 +10096,6 @@ Homebrew-homebrew-cask/Casks/r/rsyncosx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rsyncui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rubymine.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rubymotion.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/r/runcat-plugins-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/runelite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/runescape.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/runjs.rb, Homebrew/homebrew-cask, 1
@@ -10193,7 +10197,7 @@ Homebrew-homebrew-cask/Casks/s/session.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sessionrestore.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/setapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sf-symbols.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/s/sf.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/sf.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sfdx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sfm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/shades.rb, Homebrew/homebrew-cask, 0
@@ -12303,6 +12307,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-mate-sc.rb, Homebrew/homebrew-cask-fonts
 Homebrew-homebrew-cask-fonts/Casks/font-mate.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-material-design-icons-webfont.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-material-icons.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-material-symbols.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-maven-pro-vf-beta.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-maven-pro.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-mclaren.rb, Homebrew/homebrew-cask-fonts, 0

@@ -9,13 +9,14 @@ class Fava < Formula
   head "https://github.com/beancount/fava.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fcd3fb10182ef5c115a30fc25450bc38ad473a45100050003b549ee29cfde4aa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d9ea130123a58fd0c823d23e6182a5d8e829ed1c825485c49651218ca2dbaa87"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "789212c6296d0a85eb91bed34ced711b053d78b88559b1d3ba7c3bb90a16332f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b9775e5264ae2e3d8adf1ce57ca00e5b407432e9785846395c0c8ea63da13f4c"
-    sha256 cellar: :any_skip_relocation, ventura:        "b1c618c3f67c7c1799cec86016558623b6ad74ef84475c16743a4f31150d4ab2"
-    sha256 cellar: :any_skip_relocation, monterey:       "8aa041a45d6d72bf8df32ba5e650e0b2cf540eb5e2214b972753c289152c0cdd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3690db3d6adb6992b18b4c6502bd5002c7a9e38c88d774e69be055214318a50c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "26ddf6353908b39d21fa6943d40395a8b9b32334d9b3140412d9722f06babc80"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b5d489545698fbc57a6864f86c9193c1cc02fc9294bd0993e2aa8910c8437e3c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f4732e6989b7ba717a95055bd7bc23819070decfa3b13995c1538a016cf58323"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a95e1a3cfd4a6a21ae36dc276ba783ffb434ead02ed016f5db447d092ee4534d"
+    sha256 cellar: :any_skip_relocation, ventura:        "d039c302b2f59348fd5b3268f7f5c5b0a8b06e04bafcd56ac340f12695b34988"
+    sha256 cellar: :any_skip_relocation, monterey:       "227437fe83cb94c756333c24196c6aba252e0c335e14623c43f146ab64771e84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc7dd48b06bf231a67b3b7ad953fff1b42a72122e77f5b056612978f9e5d0f6c"
   end
 
   depends_on "python-certifi"
@@ -25,7 +26,7 @@ class Fava < Formula
   depends_on "python-packaging"
   depends_on "python-pyparsing"
   depends_on "python-pytz"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "babel" do

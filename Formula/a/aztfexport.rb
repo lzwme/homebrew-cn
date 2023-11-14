@@ -2,21 +2,19 @@ class Aztfexport < Formula
   desc "Bring your existing Azure resources under the management of Terraform"
   homepage "https://azure.github.io/aztfexport/"
   url "https://github.com/Azure/aztfexport.git",
-      tag:      "v0.13.1",
-      revision: "c690456672104b905d7ccdf703d056d6785a9bc9"
+      tag:      "v0.14.0",
+      revision: "fb772ba9d0a129a48d2a2a4c26df4eb6f2f7d948"
   license "MPL-2.0"
   head "https://github.com/Azure/aztfexport.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "52df819747fe3e0929dd2b412fe3e31d208ee97322d9d9e4bd66a86eb4b3ea8c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5516289353798b0e5d7693e60921eaa646bc1ad94134ef3784ea9a027c0dc8b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5516289353798b0e5d7693e60921eaa646bc1ad94134ef3784ea9a027c0dc8b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a5516289353798b0e5d7693e60921eaa646bc1ad94134ef3784ea9a027c0dc8b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dd7e06770d3dd64570f6b8e0cdd80eb17c34d024222f4b03814688a2a0dae355"
-    sha256 cellar: :any_skip_relocation, ventura:        "07cc454845dd6f24e68a9d446cf02369d14b451c4e5c799f965edb38b9cab970"
-    sha256 cellar: :any_skip_relocation, monterey:       "07cc454845dd6f24e68a9d446cf02369d14b451c4e5c799f965edb38b9cab970"
-    sha256 cellar: :any_skip_relocation, big_sur:        "07cc454845dd6f24e68a9d446cf02369d14b451c4e5c799f965edb38b9cab970"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9056b7aa993abb3ce43d89abebeecd26a049e28da7489429488a62521b881fd7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "34f9f530e3d23d43d76d0c0901b421ef20ada197d926584dccaa3cec4528d869"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "34f9f530e3d23d43d76d0c0901b421ef20ada197d926584dccaa3cec4528d869"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "34f9f530e3d23d43d76d0c0901b421ef20ada197d926584dccaa3cec4528d869"
+    sha256 cellar: :any_skip_relocation, sonoma:         "601bfd72dc473d538e96183e772bce9b600e8616bfcef50deefeefab1675bb7b"
+    sha256 cellar: :any_skip_relocation, ventura:        "601bfd72dc473d538e96183e772bce9b600e8616bfcef50deefeefab1675bb7b"
+    sha256 cellar: :any_skip_relocation, monterey:       "601bfd72dc473d538e96183e772bce9b600e8616bfcef50deefeefab1675bb7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9dff52d025d24869ae2a8280ef725e556fa670213a57bec1ee8bc1b9739d4a81"
   end
 
   depends_on "go" => :build

@@ -6,17 +6,16 @@ class Gexiv2 < Formula
   url "https://download.gnome.org/sources/gexiv2/0.14/gexiv2-0.14.2.tar.xz"
   sha256 "2a0c9cf48fbe8b3435008866ffd40b8eddb0667d2212b42396fdf688e93ce0be"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "21456f0d9f146e737dfcafcbca6bf138b4b154152a6f3273223a05fdff4b6cf7"
-    sha256 cellar: :any, arm64_ventura:  "35d3a7abe2c441366641dfa49341e741a0850041cbb1498bf4a916fa2dbe8988"
-    sha256 cellar: :any, arm64_monterey: "dd18a7a934b25bc03b0bab02dacaca8d6bda12a934ea3fb566a6dd2cd0f840b3"
-    sha256 cellar: :any, arm64_big_sur:  "1e6b309ab6e74bbe315a19db19252ed5e6837ffce275025ca2564fff12db6f66"
-    sha256 cellar: :any, sonoma:         "c595d87216be6c429c41c952c5ab529864d2be75fbd6e665cc1f4ac93ab7ca70"
-    sha256 cellar: :any, ventura:        "56c24c526d715211d5e4301e56b7aeb22b0f8ab32f0d613c76fadae27839ab18"
-    sha256 cellar: :any, monterey:       "0ba2f996b0423efb0dbad102ffbb3cebb530f247927da34f3d7864ed4d5de6da"
-    sha256 cellar: :any, big_sur:        "278657972231bf1cf85ee3027fde22c509377980bf9552c3d98fc5a45b47143e"
-    sha256               x86_64_linux:   "073c9867aa36797320047535854b00c861eaa3b9f04755bf1f8196f9e773cf4b"
+    sha256 cellar: :any, arm64_sonoma:   "946792d04c7db89b11192f4d3cf5cd0d18ccfb6a9e4911ed48d89198bf0bdfd3"
+    sha256 cellar: :any, arm64_ventura:  "e2341c3fefd5644a3c8f636fcd69d1defde69bb2bd93213622c04444499d24f7"
+    sha256 cellar: :any, arm64_monterey: "4b181df721ec247288cae8797e8a2ec67c59d28d8c29d4cbe1ce27f129df8489"
+    sha256 cellar: :any, sonoma:         "db64e4074fbca3d8e33fed25f0133f74bc610a3e069df77e78fe706117c3c489"
+    sha256 cellar: :any, ventura:        "48ac72a299229652ed8c62c1b38eac0f291f1e1a7df0825a8d25e59f2a9a0317"
+    sha256 cellar: :any, monterey:       "3896495b29c74c5e4a10198cab6491861f37758fc8691ccfc08ea7c20b7c7f2a"
+    sha256               x86_64_linux:   "b17f76ea6f1c459d28abb2b0738541eb2cc1ce386d445cb277538fe3c498afe1"
   end
 
   depends_on "gobject-introspection" => :build

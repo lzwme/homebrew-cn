@@ -1,38 +1,24 @@
 class Tfproviderlint < Formula
   desc "Terraform Provider Lint Tool"
   homepage "https://github.com/bflad/tfproviderlint"
-  url "https://ghproxy.com/https://github.com/bflad/tfproviderlint/archive/refs/tags/v0.28.1.tar.gz"
-  sha256 "df66a164256ffbacbb260e445313c0666bb14ce4b8363f123903259ecc0f4eb5"
+  url "https://ghproxy.com/https://github.com/bflad/tfproviderlint/archive/refs/tags/v0.29.0.tar.gz"
+  sha256 "60427ce6952106ba6c321555352645f051781ff55fe876b591e5dd2454852692"
   license "MPL-2.0"
-  revision 1
   head "https://github.com/bflad/tfproviderlint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "348c60ce10a68a54c1211233bb9942907862085f12a5244408c557a96276efb5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cd36003e58d30dadaea71799a395ba6b6e351eec59ba2327b8e7578f46496ace"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0b15d7545d090d848ea12f981fe19a1671c2deba219ce0a3dc216e9f781fd329"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0b15d7545d090d848ea12f981fe19a1671c2deba219ce0a3dc216e9f781fd329"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c513af55bfca007e066a6f62f168ee218a3203072369388105ae49a9ed75cb7b"
-    sha256 cellar: :any_skip_relocation, ventura:        "e09b93dbbacd69092e3b3a69fbd6ea34101224c2eb99332d643c18e1a95081dd"
-    sha256 cellar: :any_skip_relocation, monterey:       "5d9d0e0daed9c55ab38aceabebd89421d61cf56e600185189fa126941497f149"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5d9d0e0daed9c55ab38aceabebd89421d61cf56e600185189fa126941497f149"
-    sha256 cellar: :any_skip_relocation, catalina:       "5d9d0e0daed9c55ab38aceabebd89421d61cf56e600185189fa126941497f149"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76c181e440e93dca6784ff49c7592f2a039ba64785220c7f9eb66bdc73f3273a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9780b7215ac0cb5cb77729c5abec0a470222de4341b60cbeb60f578d7efa6767"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9780b7215ac0cb5cb77729c5abec0a470222de4341b60cbeb60f578d7efa6767"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9780b7215ac0cb5cb77729c5abec0a470222de4341b60cbeb60f578d7efa6767"
+    sha256 cellar: :any_skip_relocation, sonoma:         "32c205b8bff8ecc8ecd59818a5ad3f5e1280b25b9046747a7149b9cd9c8b17af"
+    sha256 cellar: :any_skip_relocation, ventura:        "32c205b8bff8ecc8ecd59818a5ad3f5e1280b25b9046747a7149b9cd9c8b17af"
+    sha256 cellar: :any_skip_relocation, monterey:       "32c205b8bff8ecc8ecd59818a5ad3f5e1280b25b9046747a7149b9cd9c8b17af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d5103190a14b75826496cbe28614f49619a25d8f8492b4a1804e48e6c22bfca"
   end
 
-  # Issue ref: https://github.com/bflad/tfproviderlint/issues/255
-  deprecate! date: "2023-02-14", because: "errors with Go 1.18 or later"
-
-  depends_on "go@1.17" => [:build, :test]
-
-  resource "test_resource" do
-    url "https://ghproxy.com/https://github.com/russellcardullo/terraform-provider-pingdom/archive/refs/tags/v1.1.3.tar.gz"
-    sha256 "3834575fd06123846245eeeeac1e815f5e949f04fa08b65c67985b27d6174106"
-  end
+  depends_on "go" => [:build, :test]
 
   def install
-    ENV["CGO_ENABLED"] = "0"
-
     ldflags = %W[
       -s -w
       -X github.com/bflad/tfproviderlint/version.Version=#{version}
@@ -50,7 +36,12 @@ class Tfproviderlint < Formula
   end
 
   test do
-    testpath.install resource("test_resource")
+    resource "homebrew-test_resource" do
+      url "https://ghproxy.com/https://github.com/russellcardullo/terraform-provider-pingdom/archive/refs/tags/v1.1.3.tar.gz"
+      sha256 "3834575fd06123846245eeeeac1e815f5e949f04fa08b65c67985b27d6174106"
+    end
+
+    testpath.install resource("homebrew-test_resource")
     assert_match "S006: schema of TypeMap should include Elem",
       shell_output(bin/"tfproviderlint -fix #{testpath}/... 2>&1", 3)
 

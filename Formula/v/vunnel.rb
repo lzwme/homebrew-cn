@@ -3,19 +3,19 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/4d/42/f3cd9061f4b60edd0dd6c4eb0802d6896b0d2d1b9579ce04ee8c39cd059e/vunnel-0.17.6.tar.gz"
-  sha256 "2a952b74e47ee85243d678c24ad30694681258733e6a5e4d795ddc572640c66c"
+  url "https://files.pythonhosted.org/packages/c0/a3/cd01655526512a416c6e6bc266bbcc465d46505f564b60329d6de017a5cb/vunnel-0.17.7.tar.gz"
+  sha256 "8a9042e8f6297a2a73bd8ce33bb73a2172544d5ee12fcd86fa42228cc18d2a0f"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a2d97cfeb5070dde643d7023a16c0ba3d3cc135162f1930c6c296ce13756d330"
-    sha256 cellar: :any,                 arm64_ventura:  "ff827153a45656fe5d6697b8767b24488bd7d61356f5a152ad049f018dd137c5"
-    sha256 cellar: :any,                 arm64_monterey: "811f8aa83dda15b9f3dee059663eaacc44bac22b2800064d67c0c7a858954b18"
-    sha256 cellar: :any,                 sonoma:         "249f29585d7cce754d076cbdffe55ddf49ca3c2787da294953e5374439143187"
-    sha256 cellar: :any,                 ventura:        "0cbcc29bf61848f5130c9a1e4280566c42ee515ed6965172e33aff9a086777fb"
-    sha256 cellar: :any,                 monterey:       "4f0035dcf6eabe654f234855dd7ffbb5a14adcbfa01bc3fe44072f841edb3d5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20476a9a89b559b9bc5df96a2ad82789da117432b04c356d5f3f96159d9ef726"
+    sha256 cellar: :any,                 arm64_sonoma:   "c5b43e0013731d2342532496084386a72546b9fc35e5a953e0857d874ef1dc93"
+    sha256 cellar: :any,                 arm64_ventura:  "a5798671fd5dfd6651be0f8478b8d8db56fd6281a5f54d7dd5ef06a252ef7639"
+    sha256 cellar: :any,                 arm64_monterey: "55f462ab5c8256be9aebb8b8ff3a496b0deb57b3240d83ac043b85ff26e41c9d"
+    sha256 cellar: :any,                 sonoma:         "7ff0a456043a04c09f0e42421a9d5653263de2400b278c13f8f64628f9a37a3d"
+    sha256 cellar: :any,                 ventura:        "950a1c7a399ac4ff649eafde5f91b420e7f4329e7dcf41d5b04a83cfaf97defa"
+    sha256 cellar: :any,                 monterey:       "7b11aa297fd6c7a141ecd0e21a9431e22a95ddf9fcc07d9d2767baf5b9c473b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "14508d0af1187d95a02587de6545b7f1ff64d813208c75dcfa1234f45efc1bf2"
   end
 
   depends_on "rust" => :build
@@ -150,8 +150,8 @@ class Vunnel < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
+    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
   resource "xsdata" do

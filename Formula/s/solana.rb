@@ -1,8 +1,8 @@
 class Solana < Formula
   desc "Web-Scale Blockchain for decentralized apps and marketplaces"
   homepage "https://solana.com"
-  url "https://ghproxy.com/https://github.com/solana-labs/solana/archive/refs/tags/v1.16.18.tar.gz"
-  sha256 "05710c6cb9b9ce88ee9fb9698660e7d360a8ffc9d6dbaf56419547cf6f1fa04b"
+  url "https://ghproxy.com/https://github.com/solana-labs/solana/archive/refs/tags/v1.16.19.tar.gz"
+  sha256 "4c5b3d42bdfef923c8b17c7edeb83f2a15bceb6264d8c39311651c1c4a9d491c"
   license "Apache-2.0"
   version_scheme 1
 
@@ -26,13 +26,13 @@ class Solana < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "43e9f3be1638b0a4d85fb1d702a679eae5b03374ef92263c41e875a2ba3acfb0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dff9efab2eba9308e18cad8379ed53665eefa01ba828bbb745760d0dd6344c93"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3d8a2dc8fd6ca4c4416ce73f2e2db1aaf6af3c431c1c909e728f95d09911fea4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c387e6b7b2edf8f7eb8b21f9073b14b128d85df808608feab94bc7f84589a609"
-    sha256 cellar: :any_skip_relocation, ventura:        "484e4a632532110bb5600db68f2d6f2eebc1704f1d663c52dfa9720e6d3d654d"
-    sha256 cellar: :any_skip_relocation, monterey:       "b4e7175a6a802418f60f567982ff7217b8451bc983cd90372b57ab52ac7b5495"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc95d113a5f45b3898548af943d178a3f440cc21ba009d62c200ccf4ad6a263b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d187c536bb1045326f85a57ad3338e25f2fcb15e60a58bcf9c04555e59a82522"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "83cfb043afa6a4e6db022d26c04dbb22b56be26ae323464a517502a435945eb8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f3720210b63bb7cf6d2a670fd8b3175e7d13441683697daf665d8d9bd2bd9e27"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1532d6d50d9cd1dd2d0d84def4dd0905eae9bcf167f9a6a719bae2de07803343"
+    sha256 cellar: :any_skip_relocation, ventura:        "252d0dca8ad0706c6f89a30967360f834ae1925ba7516075268916a612e29acd"
+    sha256 cellar: :any_skip_relocation, monterey:       "a3dc0d11eae059053642234ff7745da0125858674c55bf0f7f7430b970ac5a37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52d064d62ab447c7c7024c1df19f818f477ce0c710f94b5d2547fee7f2eea574"
   end
 
   depends_on "protobuf" => :build

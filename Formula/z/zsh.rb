@@ -1,33 +1,39 @@
 class Zsh < Formula
   desc "UNIX shell (command interpreter)"
   homepage "https://www.zsh.org/"
-  url "https://downloads.sourceforge.net/project/zsh/zsh/5.9/zsh-5.9.tar.xz"
-  mirror "https://www.zsh.org/pub/zsh-5.9.tar.xz"
-  sha256 "9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5"
   license "MIT-Modern-Variant"
+
+  # TODO: Switch to `pcre2` on next release and remove stable block
+  stable do
+    url "https://downloads.sourceforge.net/project/zsh/zsh/5.9/zsh-5.9.tar.xz"
+    mirror "https://www.zsh.org/pub/zsh-5.9.tar.xz"
+    sha256 "9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5"
+
+    depends_on "pcre"
+  end
 
   livecheck do
     url "https://sourceforge.net/projects/zsh/rss?path=/zsh"
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "519ac684bde7d002b28851dfdca5f0c02f8235d445114fba4f329651966f0e90"
-    sha256 arm64_ventura:  "d260e78c0186bfe9e7237f5aba94db8d9c4aff2906f175c0f582abf532a29c37"
-    sha256 arm64_monterey: "0406eafa36972e0b447df157011415167d8a7f1f28a2194d66446da6f11c8725"
-    sha256 sonoma:         "e4ae0f2597d7a179ecbfe483aa2b8a8db3336d2b1bfd56bba3ad3cc034d8b32e"
-    sha256 ventura:        "54dd4fa7aaf6a5156a95d15fd56ec84b6c8a09a9d5911826c85bda6209a5f863"
-    sha256 monterey:       "94a2c1b6c6a417eb337983083e1840805aa8f28948bd8c7c812bd0c28cff07d5"
-    sha256 x86_64_linux:   "b88efbef1131013971b1bd957e2368f6e319d4ab960758782727e7e541636f63"
+    rebuild 2
+    sha256 arm64_sonoma:   "2724270ffc9ec802c84de94466076bbff2e9de712dc4542e2b98646d5bdf9120"
+    sha256 arm64_ventura:  "de824bdff0cf68af18e1ca615d3e0646968a9cc0411cde518c86ff4e446e75ed"
+    sha256 arm64_monterey: "9f2b18137c50145752b9c64f02a2be3ffbfedfcbff5b91ebe3f0d20358fe2a07"
+    sha256 sonoma:         "ab60dacfc4fa57a741cd735b268ef64e51bab181b39cfb3846f2a546c22793ff"
+    sha256 ventura:        "3e0713581f6c028b856556e9f5e2201e9fd9d333bc13fc6156bdb0c58d097626"
+    sha256 monterey:       "e09b2792c4d231b4917ebe8c3565ba66c22d15c5242043af47e3075f50470839"
+    sha256 x86_64_linux:   "28d2fb59ee1c2db1ea2a0a2923201fde83b4b8cb2891ac3bbee288e7cf9cb2c6"
   end
 
   head do
     url "https://git.code.sf.net/p/zsh/code.git", branch: "master"
     depends_on "autoconf" => :build
+    depends_on "pcre2"
   end
 
   depends_on "ncurses"
-  depends_on "pcre2"
 
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
@@ -84,5 +90,6 @@ class Zsh < Formula
   test do
     assert_equal "homebrew", shell_output("#{bin}/zsh -c 'echo homebrew'").chomp
     system bin/"zsh", "-c", "printf -v hello -- '%s'"
+    system bin/"zsh", "-c", "zmodload zsh/pcre"
   end
 end

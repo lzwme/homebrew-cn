@@ -1,12 +1,17 @@
 class Osmosis < Formula
   desc "Command-line OpenStreetMap data processor"
   homepage "https://wiki.openstreetmap.org/wiki/Osmosis"
-  url "https://ghproxy.com/https://github.com/openstreetmap/osmosis/releases/download/0.48.3/osmosis-0.48.3.tgz"
-  sha256 "b24c601578ea4cb0ca88302be6768fd0602bde86c254a0e0b90513581dba67ff"
-  license "LGPL-3.0"
+  url "https://ghproxy.com/https://github.com/openstreetmap/osmosis/releases/download/0.49.0/osmosis-0.49.0.tar"
+  sha256 "d2a35bdbff190ffa66a6304ea1f73db9e7048c55340306e569086730518675ae"
+  license :public_domain
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "03b25119fbe3db2e9ebde3b6752951ef2aa84501e9e68e1a9d39ac30fde7ed0b"
+    sha256 cellar: :any_skip_relocation, all: "5a62a77b661449efd017f9eb3dd87dd2d9720d5b9245f419963d627413b2c009"
   end
 
   depends_on "openjdk"
@@ -15,7 +20,7 @@ class Osmosis < Formula
   patch :DATA
 
   def install
-    libexec.install %w[bin/osmosis lib config script]
+    libexec.install %w[bin/osmosis lib script]
     (bin/"osmosis").write_env_script libexec/"osmosis", Language::Java.overridable_java_home_env
   end
 
@@ -46,13 +51,15 @@ class Osmosis < Formula
 end
 
 __END__
---- a/bin/osmosis 2010-11-16 06:58:44.000000000 +0100
-+++ b/bin/osmosis  2010-11-23 12:13:01.000000000 +0100
-@@ -83,6 +83,7 @@
- saveddir=`pwd`
- MYAPP_HOME=`dirname "$PRG"`/..
- MYAPP_HOME=`cd "$MYAPP_HOME" && pwd`
-+MYAPP_HOME="$MYAPP_HOME/libexec"
- cd "$saveddir"
+diff --git a/bin/osmosis b/bin/osmosis
+index 04b040a..648824e 100755
+--- a/bin/osmosis
++++ b/bin/osmosis
+@@ -84,6 +84,7 @@ done
+ # shellcheck disable=SC2034
+ APP_BASE_NAME=${0##*/}
+ APP_HOME=$( cd "${APP_HOME:-./}.." && pwd -P ) || exit
++APP_HOME="$APP_HOME/libexec"
 
- # Build up the classpath of required jar files via classworlds launcher.
+ # Use the maximum available, or set MAX_FD != -1 to use that value.
+ MAX_FD=maximum

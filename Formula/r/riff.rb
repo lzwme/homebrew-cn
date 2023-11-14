@@ -1,20 +1,18 @@
 class Riff < Formula
   desc "Diff filter highlighting which line parts have changed"
   homepage "https://github.com/walles/riff"
-  url "https://ghproxy.com/https://github.com/walles/riff/archive/refs/tags/2.27.0.tar.gz"
-  sha256 "bd51ff2747ee27d10fb5c7841b2ef7d550eb011b1cd9ced209cd7a66faef3011"
+  url "https://ghproxy.com/https://github.com/walles/riff/archive/refs/tags/2.27.1.tar.gz"
+  sha256 "ba52c76c103f7e88301a61227b648d63115e52c7b14ff966073a8d0264f42bde"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ab02bb76625c66a9f465284e2efc0365a74d9c654942af0b05f5142b844b8f89"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "317449f99db80877017627711e5ddd70b5d331e618f0562b078eab381df79ed9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "618002aeb404cf30daf1a46b5802d1880a20b62736c225a25614cfc78cd9823f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bddf1ab6700622ec0300a00ca29edbb72e25565f7a9b7573031ec6233bcaa126"
-    sha256 cellar: :any_skip_relocation, sonoma:         "de499e52167ac53c22a132450b3b529164643cb23b6f56238e5ca3c31f247ff8"
-    sha256 cellar: :any_skip_relocation, ventura:        "3c2876305293dd9f21f919aadf58db2af95e1374ceb255b24cdc49736d361b77"
-    sha256 cellar: :any_skip_relocation, monterey:       "0dc5e7c4802700300da4b4fa7a58769173eb65cd017ccaeb85ceb0659443ffe2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "025375408e2b11e98d9e9ced9254352adb7ddc066f47ab98477b60cca97cb97e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9ebfddbb35efc9fbb03f58206909568e795447c8e94d7fd13c2aaea196c1e4d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0fbf28af59c487f96d9c3c26e5aaaee8fcbf8c14e8323fedfaf5c7fa6c3e0cd6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb53ab33ba318c2bc737c0e28db2292621925f915da4497f0e032b4dfe296950"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "58d620bbc20c0bad828b8874b2b66641df97af763ea052039287a27fea8593a8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f5c3888eabe1e26d9df0136eec55bf45b1704b3727283c9e06f6e16790c029b3"
+    sha256 cellar: :any_skip_relocation, ventura:        "617fa9a7a3e19cc3ee8b8df0aff15d89cb2582b43fbaf241549e78c701d2db80"
+    sha256 cellar: :any_skip_relocation, monterey:       "62f0c6042fcc8630e31fdf4a45c9d0debb27701fb8a2997bab5a7f384a868209"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad3a9189aa6031560b59a93dd5ac2438b4651f67f14334e9c057b765acf85e45"
   end
 
   depends_on "rust" => :build

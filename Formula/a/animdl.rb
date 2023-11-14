@@ -9,20 +9,21 @@ class Animdl < Formula
   head "https://github.com/justfoolingaround/animdl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "620777fb678e3dd8b9c3c114658870a9ed793a5ed382d837e99b188253b79b61"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "143082c451f51ba269d040dfd102baab0e6d272c4d151fa04f25c5f92a907b0f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ae661af8fe3320dd0fca30681620667fefe723c503773e0482d8f9202ff0a66d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "baba1172152b745e9adfd398d8b6395eea8b8f72fbb63b7909d5bec30a6b4cae"
-    sha256 cellar: :any_skip_relocation, ventura:        "c95114d157f7289d921e85dad1a42feee53ca0b9e2e4730c666a7b8a12e04d31"
-    sha256 cellar: :any_skip_relocation, monterey:       "847a7a2bbe78299363118cf8a4b07052732655ccd446c2fa99a8669db5701981"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c1270feed65d1eac5a01803ca1ac36341058b8e7a08b9c064df2dcd0c432411"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "25cd9aed6dfbaecd215f2dc19e2c75380212ce86b9eb6eb930743aad954860e7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6682b014b480486174e12a09160a8837296dc84dda1a408d25608bb3955108aa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6419b7a4b4f1f05561a033ead058b2891345ee9da160072353435f5bc33414a7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b72a3c959d4653f2b3891ff32c52ab221a5d12e85ed9036370a83990bf02dd47"
+    sha256 cellar: :any_skip_relocation, ventura:        "f814763cae1e1bf9d64cbe45ad329d1cabc3e25d5fde59670799577739ba0dba"
+    sha256 cellar: :any_skip_relocation, monterey:       "291e6294278069e75d023cfed921de0ca721bea2c40b6aed49d700bb9a0487cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "86a1f18d9b57d612027e82c715e5e6ce5b46d581caff181306572f83d1b1de5a"
   end
 
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-lxml"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   resource "anchor-kr" do
@@ -126,8 +127,8 @@ class Animdl < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/c4/1e/1b204050c601d5cd82b45d5c8f439cb6f744a2ce0c0a6f83be0ddf0dc7b2/yarl-1.8.2.tar.gz"
-    sha256 "49d43402c6e3013ad0978602bf6bf5328535c48d192304b91b97a3c6790b1562"
+    url "https://files.pythonhosted.org/packages/5f/3f/04b3c5e57844fb9c034b09c5cb6d2b43de5d64a093c30529fd233e16cf09/yarl-1.9.2.tar.gz"
+    sha256 "04ab9d4b9f587c06d801c2abfe9317b77cdf996c65a90d5e84ecc45010823571"
   end
 
   def install

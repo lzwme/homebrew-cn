@@ -1,20 +1,17 @@
 class CargoInstruments < Formula
   desc "Easily generate Instruments traces for your rust crate"
   homepage "https://github.com/cmyr/cargo-instruments"
-  url "https://ghproxy.com/https://github.com/cmyr/cargo-instruments/archive/refs/tags/v0.4.8.tar.gz"
-  sha256 "c5fc2a4133a888633ce132f41c3ec542788de41cd03848ac34e36cfb8bafcce0"
+  url "https://ghproxy.com/https://github.com/cmyr/cargo-instruments/archive/refs/tags/v0.4.9.tar.gz"
+  sha256 "e59715bb4bc87d93c2b779c04d9262d26418e58216acb93ef79145d8a99730a0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "ea58b40c441569387d91950eff65cdb7aad164b9058b24d2ba76fbd76888aed8"
-    sha256 cellar: :any, arm64_ventura:  "e53774bdc10813969f128afed67d151e2ea73e2da3642d90fceb5a2ce0ab2fb2"
-    sha256 cellar: :any, arm64_monterey: "517f55d64777be77eabe09fcc2318486acac7d2d72ea05a251150d9e9508672f"
-    sha256 cellar: :any, arm64_big_sur:  "ea43a6b13ee8bab547c14182fe8022b8f4f2cd9de9d10f68b69067cd57308ffc"
-    sha256 cellar: :any, sonoma:         "ceb5e374f70a36e7a2fc980c038ba5e5ef074d4e54f59e92b704743b0c0d7b50"
-    sha256 cellar: :any, ventura:        "9a2a75de53ca739155bf9a38d0e7b611544f3c647641fe3569d3194cec9b0639"
-    sha256 cellar: :any, monterey:       "739e75a78c51709fb30681eb383c7978bf813732ebac4006a91e79cd87c2bebf"
-    sha256 cellar: :any, big_sur:        "34087ee37b15a2d460386633797f6b19562c87beefae8609c5d8ec766b1620bb"
-    sha256 cellar: :any, catalina:       "8d957e40b0d946cfa58d041c63536a0fe205a9893b4e2122811dc7ee98596eb3"
+    sha256 cellar: :any, arm64_sonoma:   "3e1e0ccdd9052bad2af13e4c55e37ceb9928d40aa219a1c931b52fb9e75af2a6"
+    sha256 cellar: :any, arm64_ventura:  "a4b65f5dba54dd193db05e4df09abe03518ce93b2e3a74f13452c768637211bf"
+    sha256 cellar: :any, arm64_monterey: "dd5739c8aa34699954f078ba04fb72bc854690af3dbd0b48159ca83b28dd8779"
+    sha256 cellar: :any, sonoma:         "a9176be794c87cca16ba814b9daa649369e46c4725aef9edcf07937baf96fa50"
+    sha256 cellar: :any, ventura:        "65df44fba5416006eb5c78204e245916b931f59d66679312e4ae7c4df2762216"
+    sha256 cellar: :any, monterey:       "822736da673a0eb1f7c52f9cbbe5ee8a329e44f204464e2a709eb962b5a90246"
   end
 
   depends_on "rust" => :build

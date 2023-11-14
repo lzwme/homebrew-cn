@@ -3,18 +3,18 @@ class HuggingfaceCli < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/index"
-  url "https://files.pythonhosted.org/packages/d5/31/4ae775122014855aa626043bf348a5473fb80ce6492ca57017930eda98d5/huggingface_hub-0.19.0.tar.gz"
-  sha256 "7395c9b8053dc8aa0dec2900f367890f66be07bfe46369b95af3f4c1013eb09e"
+  url "https://files.pythonhosted.org/packages/6a/ef/753ae80052fdff3a3778f3ec34ccc5801786ecd2cad04f1f7bbf70b1b785/huggingface_hub-0.19.1.tar.gz"
+  sha256 "a84ad99b802ba58b40a5444689e679420657dc187179d57521b6bc4cde725898"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "51867003bdf079c31a808944093ed9eb30fe485d1aaa7a3ec211af11caab1079"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3c9b224c7482c007822806d0b09b61846bf91acd773f1e4832179e9eb415816"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2cf56c004aac4cfadd2204cb24347ac6f4ea7923187a17e3a697cb6a50c32831"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4e3b1c69c181f6e9d477b10cfb7252b1fc7e8aa150709c8e5eba2f022a77b662"
-    sha256 cellar: :any_skip_relocation, ventura:        "b6fd03749cb9cb688ec4f18f77c1f0369096ffcb3bdbcfd2cb2c04f9aa1ba92e"
-    sha256 cellar: :any_skip_relocation, monterey:       "3ccb5e52786466250e3d8638380e3688715fd211d88ed4602b61cd11f387f605"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b3c60cf8f028c35191e1c6be13d7a960161a0131557b59221881540fde5b923"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "80d8b146cbf5d9cffd89793aa8df6da8e36fe71eebf184ec7678b440be02aae9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a3f80fc3cae2bab24dd1afdc9c009cd9961a5457d631b4f2f49e407d6175721a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3f7dc1d7a8f93ddb1b2eb2e87ed9670a3e656ff601c36a77f7a19ad35601ea1d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "29068dcb68f53260318b8e1ed6db62dae11545e1d73e1d9ae0f105f8e9ded2cc"
+    sha256 cellar: :any_skip_relocation, ventura:        "59dcef7cbe225a730b6fc8592494ccb87d3b795c416e15120dad694f06652089"
+    sha256 cellar: :any_skip_relocation, monterey:       "fd9d26f4308614871ce21e2c2e46e1ef42c2c9bd731738101a951e1a9172cbde"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17d279fedd6364bba322db9c139ea1550b313f4868d55c86647d8d7c2f1160b6"
   end
 
   depends_on "git-lfs"
@@ -55,8 +55,8 @@ class HuggingfaceCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
+    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
   def install

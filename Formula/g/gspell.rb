@@ -6,15 +6,14 @@ class Gspell < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "9fe16435b608c7bef5b81bfe50bbbabe02e508977ec2203bc044973e349909ee"
-    sha256 arm64_ventura:  "7bfb5fdecb36da507e6234090327933860b173f9c08a9e7682badae3bbc22717"
-    sha256 arm64_monterey: "e1ce8928f95abc14f8a2a61d91d649606dd89e01996158ace98e12e989088ca8"
-    sha256 arm64_big_sur:  "adbbfccca9d4485334b7bafdd26377a677d5bc231e338695bb9ce2558bd3fb71"
-    sha256 sonoma:         "5356188007084aa4e8194f911511a9751ae43198c6d048e70f5d54dcd3fa3c58"
-    sha256 ventura:        "f54298f524ea6f40d3296aee5cd4b3feb326cc5398c21c9a8329973ff4c0ba33"
-    sha256 monterey:       "011bcc30fc443fa9a280706cb3ec7313eb30083a6e7f11c4eadf8ddac433ac06"
-    sha256 big_sur:        "62927471883510fe62139fd7c82595601872549c92fe94b522905de0174f5220"
-    sha256 x86_64_linux:   "94b89a03bd2ba58d82701cc63bb3d81d0704a0e0c41e75eedb81f816b4e6581e"
+    rebuild 1
+    sha256 arm64_sonoma:   "b22cc1e212e9b8b9fd368cd019da6c760ac7ff11849a82bb52d8876c5abd5b2a"
+    sha256 arm64_ventura:  "af0643674872cf9f1aa31e4e64a8ebb12253186baa0747876db9a5eb9aff70d3"
+    sha256 arm64_monterey: "b1ce6d330d9de465b7ad381e86eb2b79fa00bdd1ca071c7380f62c3ba81f7f5e"
+    sha256 sonoma:         "d0434115e51d903d721f085da754818f308e8f7653536a0680a4148d7218d7d5"
+    sha256 ventura:        "9b751542f1d4f31c0d456d1848570d4a7b0444a9bedb1d7c225e6f7a5fbcba0b"
+    sha256 monterey:       "c8cbc56062a5debafd5cc9049afd9ef49f5451fabc7402878d122a5c742e473b"
+    sha256 x86_64_linux:   "bc56612892174afb1c5a51518dadb60e509e3643a5c9e43a936bc5875d2845f9"
   end
 
   depends_on "gobject-introspection" => :build

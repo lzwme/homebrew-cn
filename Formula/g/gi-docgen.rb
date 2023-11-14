@@ -9,38 +9,27 @@ class GiDocgen < Formula
   head "https://gitlab.gnome.org/GNOME/gi-docgen.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5357f03b83c3cd07774f3203a950d03814e85e864b1dd892c395a5b36c441adf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a07a6ee343dd01b6a02d9c434e370d8eba715b823f11127d753cfa73083f01a2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "20f7770a9f981349686f2c53251a3fcecbcaf2f7d03cb389b5585924485f1917"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "951f7b180d34b2f267a6c017cbbbc4f87506aa6a425943a63d676e631fcb70a6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "33afe70485e7577a419477f136b64ea3be1bbe8ffa2a09558bff3a2cc9a8a669"
-    sha256 cellar: :any_skip_relocation, ventura:        "8d65cee7d820365bb9a33072e5eb87d96dec598d989d66abb2da4df724fbac3f"
-    sha256 cellar: :any_skip_relocation, monterey:       "058fe642dd88f7a68fcb7101c551767a14c4db932dae0def872507129f29f2e5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a6b55bc3deb6b107fa5c052e920669a5fa56a3ab5a3818626aa85fb234d4218a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "812246d1f6d362897f0e60e658416cd048c66dd9e67cb5d714628c89c1fd1429"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "46217aee749a6691dfbcec02af97e8ad6834553fa1ad591dcacb5e8eba1c9688"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "91811775d0906814c9c9004023c184ce5e5e71bcadfa6b35edf33c7a71bdd17c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b3b00b09a055ce0f82f330697b45025d169f4afda2df7225e08c0e8dc738a81"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3d4592669e57cad57601795f0dd4ef0bb4975627a89e36e1a043271e6ea44c21"
+    sha256 cellar: :any_skip_relocation, ventura:        "f5571b1de9e123f0153e14c5e834fe53ff1fe25219be0fb60db3d3931f0ba967"
+    sha256 cellar: :any_skip_relocation, monterey:       "7f15ec32dee46b8a27d15d9ad99865b4fa8be6b3f9fe555f3584bd0cf7d52440"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b89c27fca95bcc0b90b423c3d3414802ba13b5e710977219b11bb89ae40f706"
   end
 
   depends_on "pygments"
+  depends_on "python-jinja"
   depends_on "python-markdown"
-  depends_on "python-toml"
-  depends_on "python@3.11"
+  depends_on "python-markupsafe"
+  depends_on "python@3.12"
 
   # Source for latest version is not available on PyPI, so using GitHub tarball instead.
   # Issue ref: https://github.com/leohemsted/smartypants.py/issues/8
   resource "smartypants" do
     url "https://ghproxy.com/https://github.com/leohemsted/smartypants.py/archive/refs/tags/v2.0.1.tar.gz"
     sha256 "b98191911ff3b4144ef8ad53e776a2d0ad24bd508a905c6ce523597c40022773"
-  end
-
-  resource "Jinja2" do
-    url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
-    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
-  end
-
-  resource "MarkupSafe" do
-    url "https://files.pythonhosted.org/packages/1d/97/2288fe498044284f39ab8950703e88abbac2abbdf65524d576157af70556/MarkupSafe-2.1.1.tar.gz"
-    sha256 "7f91197cc9e48f989d12e4e6fbc46495c446636dfc81b9ccf50bb0ec74b91d4b"
   end
 
   resource "typogrify" do
@@ -50,11 +39,6 @@ class GiDocgen < Formula
 
   def install
     virtualenv_install_with_resources
-
-    # we depend on python-markdown, but that's a separate formula, so install a `.pth` file to link them
-    site_packages = Language::Python.site_packages("python3.11")
-    python_markdown = Formula["python-markdown"].opt_libexec
-    (libexec/site_packages/"homebrew-python-markdown.pth").write python_markdown/site_packages
   end
 
   test do

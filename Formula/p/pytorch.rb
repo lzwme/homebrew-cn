@@ -41,6 +41,8 @@ class Pytorch < Formula
     depends_on "libomp"
   end
 
+  conflicts_with "fmt", because: "both install `include/fmt/args.h` headers"
+
   resource "filelock" do
     url "https://files.pythonhosted.org/packages/d5/71/bb1326535231229dd69a9dd2e338f6f54b2d57bd88fc4a52285c0ab8a5f6/filelock-3.12.4.tar.gz"
     sha256 "2e6f249f1f3654291606e046b09f1fd5eac39b360664c27f5aad072012f8bcbd"

@@ -9,22 +9,20 @@ class Flintrock < Formula
   revision 7
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sonoma:   "46a845df284feb079ea1406c3e6458be92fcc2c7e2a3b79ef889d9bb1bd0d03e"
-    sha256 cellar: :any,                 arm64_ventura:  "43feda1c89b72135cc7390386c39ade62c992b7e66104b465d0b38929a601633"
-    sha256 cellar: :any,                 arm64_monterey: "c77e8d00ee2152bbdc616dbde4b0093a92855e7e64340d485e3b56fe418b48a9"
-    sha256 cellar: :any,                 arm64_big_sur:  "24c5a6c10bf16c6c0ff9859fa4380886a95b2a7beef71d7be28f034199221624"
-    sha256 cellar: :any,                 sonoma:         "a251c69c8792a0276870b749fc913fc66c4341f14084f0444def9efe4eeefd3d"
-    sha256 cellar: :any,                 ventura:        "6fba1800ef8b82207a82fe5ff77a6b48deb099b6cb1fa92e706a30415867d121"
-    sha256 cellar: :any,                 monterey:       "862a3aa80efca9871c745622e4578f27c04522db12a7f157e02e9e1b968f580d"
-    sha256 cellar: :any,                 big_sur:        "e5b50682434b31091c86a8a0d5c68be4ee87dae044423b341b718cb55edcc1e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "86f49049502bf32b12a1a1cf54dc03d9a7fd301f826501a47607053d631dc8db"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_sonoma:   "c62d0778e58f1c65fe2e38c27ac721e4b993d3ae4d6a2aa935765e3149fff19b"
+    sha256 cellar: :any,                 arm64_ventura:  "b863dbe1faebd77071133c982f862cc996c01e4709c1401f4834265fa01ab1e1"
+    sha256 cellar: :any,                 arm64_monterey: "d84dd921448aa5848934f2abe5ca198e812f8ac6a73a1416c173100bec820842"
+    sha256 cellar: :any,                 sonoma:         "335a7374442bcb189f2346edef5d16df56116edcd8a3496ee8117d2a6a6db24f"
+    sha256 cellar: :any,                 ventura:        "582bef6c7ec11a033754239dbff5882e49801b77dce67d2621d7e8621a6a1f0e"
+    sha256 cellar: :any,                 monterey:       "251bdccda137c921787cd92c8142d2f97888e18b86994b164b26b9dd3a7897bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63b872a2e2e24f99a80121701edf41992f606969a3a414be80fcb7a2624a9dc5"
   end
 
   depends_on "rust" => :build # for bcrypt
   depends_on "cffi"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
@@ -41,6 +39,13 @@ class Flintrock < Formula
   resource "botocore" do
     url "https://files.pythonhosted.org/packages/d4/a4/ef715db7192535688fae0130714fde5dce91ce2ed8e521aad55a213a5820/botocore-1.20.90.tar.gz"
     sha256 "b301810c4bd6cab1b6eaf6bfd9f25abb27959b586c2e1689bbce035b3fb8ae66"
+
+    # Backport commit to fix ModuleNotFoundError on Python 3.12.
+    # Remove in the next formula release.
+    patch do
+      url "https://github.com/boto/botocore/commit/411f45a014a116bc72462206f3b3b3fc1ac9a630.patch?full_index=1"
+      sha256 "4d77944b344b3b35e6c95b73005462b860699349a5c27dee60025f802e80ebb8"
+    end
   end
 
   resource "click" do

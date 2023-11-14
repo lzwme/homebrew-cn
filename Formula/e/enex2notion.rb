@@ -6,21 +6,23 @@ class Enex2notion < Formula
   url "https://files.pythonhosted.org/packages/de/5c/c0ce22d810226345411b03177f9b43c35b82c3a671d5d73f56fc43b0858e/enex2notion-0.3.1.tar.gz"
   sha256 "f11d8a7b6c135b4d08c63e1256279d56b3798cdd48ad3b6e39c0770dc3bd82e6"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cdd2946806ad70f13aaec20f66d996e19e4801f4bd3dc7eb1f9df784d015b392"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d0ad3c9d257d4943429a9e2f88aaf59df2534270c1016f2ea10a0ff2fa4858f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "60645c4bccbe1be19dcd697d1f64347ea9798f83b2616df3e66f986aaf5ce71d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c624980ad0340f8ef0dcf09668c63a234477871906fa3ff051da073f51d66cad"
-    sha256 cellar: :any_skip_relocation, ventura:        "882e2d93aa41ee13199b0ce4e9c93400e320438d361fbb54f0b479cc7c8c255b"
-    sha256 cellar: :any_skip_relocation, monterey:       "4460c05069568797c6997d0f106a2a5771776dd25034cfb25a37a6b048f5150c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bda9efd19dec394c9cc0d8fb6987091b05b3f057c79d1537644d437baea35a93"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5121ca6c2ef36580bc94ddf141944d39cea02e5d814a724cffae2ead831fbfb6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e591980b55a3ee3e3bef16beed0d727823616fb8f43f4e3b6204ce5f42cf0f9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2cd613360a4e6f7c8e6241194491135d6c426bfb2559ade8496e664ceef0cd85"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5c19247aaef118b29e84925ec5acbdfc9f4d3c3d8ad6470235409b6002451236"
+    sha256 cellar: :any_skip_relocation, ventura:        "eb3a4c1eb082a02e37ff5182c075ccc1b6e80abe13d51281f06b47443ac1900a"
+    sha256 cellar: :any_skip_relocation, monterey:       "d99d9b2a7940e536c7ea7562f8fabc86c0df71646e916f1766feb80cdde3cc14"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76bd203066f36a9590ad411c9915a6a001c50350d57e84c522d6cb4bfc2c0a22"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "pymupdf"
   depends_on "python-certifi"
   depends_on "python-lxml"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "beautifulsoup4" do

@@ -4,15 +4,16 @@ class Baobab < Formula
   url "https://download.gnome.org/sources/baobab/45/baobab-45.0.tar.xz"
   sha256 "a7d2cf308a6c839ee0b0bf074f8f5fd60d62ae2f064a94b3c610d6560b758e86"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "ef1f68b4bfa8df91c108145460ca781da7dbd9177ec02cd042aae5afcee6b01e"
-    sha256 arm64_ventura:  "67e2f474770e54d21b438458c102257064b4fe936ebce7f7f1e511c3deaa3aa6"
-    sha256 arm64_monterey: "9bb7893436b82350a739b5d66f4bc8c9b55c2fa23de4a74bf7b0f73d0728d1b1"
-    sha256 sonoma:         "3490e08911e6251a53edc312c27defe582a97c720e0e1271fbb6cc0177fe3138"
-    sha256 ventura:        "1f02d172c8b41de2ccb7de6f8e8006ed3844fbf6b5c2c745f9158a8441c73e42"
-    sha256 monterey:       "cfad299814bea3271406e5a55cb21f894c80e1fe40d96fe594ea8de89947bde0"
-    sha256 x86_64_linux:   "8659a7944031096bb3472a2210fc8dc350b65d7e417607d221dea0d41c951e3c"
+    sha256 arm64_sonoma:   "976ee19963aca9875c5f2535890982f0ada6c3859f9f219974828fdb5d587c96"
+    sha256 arm64_ventura:  "4536d768a8ce57ac327a8807b5a915426b84246fe71a60e670fc7e9eaf8919fa"
+    sha256 arm64_monterey: "1dbcc7aff96c0e13e0a3f111dcc224c20a18f5a994bc146aaa59a882fa1e17cb"
+    sha256 sonoma:         "86c04921a9dd7e05050a2337c66ebfce846b423fe8139bb0d36ce2cc1d273f0e"
+    sha256 ventura:        "eb5964c8ad54f6eb620f13f680db20fd4811049a1c5b40d8c3a3b4641726c1e5"
+    sha256 monterey:       "d96c43667ebf5e04f5e2757134c6e123a6b0b48fa9a638ab461d9c021b18b946"
+    sha256 x86_64_linux:   "9619add2ac0cd8952ff8de166e3c871ee3de5981551c547b268e2ebb60f14b21"
   end
 
   depends_on "desktop-file-utils" => :build

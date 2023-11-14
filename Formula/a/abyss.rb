@@ -35,7 +35,7 @@ class Abyss < Formula
   depends_on "google-sparsehash" => :build
   depends_on "meson" => :build # For btllib
   depends_on "ninja" => :build # For btllib
-  depends_on "python@3.11" => :build # For btllib
+  depends_on "python@3.12" => :build # For btllib
   depends_on "gcc"
   depends_on "open-mpi"
 
@@ -62,10 +62,12 @@ class Abyss < Formula
   end
 
   def install
+    python3 = "python3.12"
     ENV.delete("HOMEBREW_SDKROOT") if MacOS.version >= :mojave && MacOS::CLT.installed?
 
     (buildpath/"btllib").install resource("btllib")
     cd "btllib" do
+      inreplace "compile", '"python3-config"', "\"#{python3}-config\""
       system "./compile"
     end
 

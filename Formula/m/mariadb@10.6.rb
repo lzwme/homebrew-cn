@@ -1,8 +1,8 @@
 class MariadbAT106 < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https://mariadb.org/"
-  url "https://archive.mariadb.org/mariadb-10.6.15/source/mariadb-10.6.15.tar.gz"
-  sha256 "b2f6bdba17ead4d91c4d254fafc34a728ac6b027dd1d7178bc26758dce694335"
+  url "https://archive.mariadb.org/mariadb-10.6.16/source/mariadb-10.6.16.tar.gz"
+  sha256 "5ef83843e796dcda9aea47b24690ddf6d848f43f43e11f9d9a0cc21c78fbb9cf"
   license "GPL-2.0-only"
 
   livecheck do
@@ -18,15 +18,13 @@ class MariadbAT106 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "fc08339c424612ac31095b558e8e9183b7ae96002978697ff73bd7b4ff32e2c8"
-    sha256 arm64_ventura:  "22ec94bbc067f0d7e73b48f753ce7956eb6319fcceeb6c501e6f9f9a1cc924e2"
-    sha256 arm64_monterey: "c506cba757b65545f6abe0fca3ffe55af36641f22a5cb60bdd7f1fe22c29b8e6"
-    sha256 arm64_big_sur:  "4cc0367b7fd5c0d19ded36a75175c43673ee654167a142bc5c1eced86b89c135"
-    sha256 sonoma:         "c4609b76091ba2b29e244bb51ebc88fc49cd056e43a895c7884027e4491e36af"
-    sha256 ventura:        "5988ea3e711d350123e412d3c81776527bfc070cc60c17cc20d1540b01e66be5"
-    sha256 monterey:       "68fda77447d84bf7c4d31405a07fb5387b97f606bfe53a43fa230eedafa0326e"
-    sha256 big_sur:        "f10268b56a2c11ad6b117ffddedddf5658ae8731a354cf2173476aa48c0e2f0a"
-    sha256 x86_64_linux:   "c7be61391584ff6864ddf7e7b01a69e044705fa6cf7c8321ce7797e994fb3866"
+    sha256 arm64_sonoma:   "50b84ad1620db01d898f85d616b7bcd542bfdb4b2b5e3fea0a515f29d270ce7f"
+    sha256 arm64_ventura:  "251d23d0c1ce6b1dd3777047665c564ba7d0abcb001a778d162e1bcbf077cdef"
+    sha256 arm64_monterey: "d0469603f44136de74093981d5563c172b03484402b035b3ea34d20286d59a89"
+    sha256 sonoma:         "6f12ae9e948f1ef84dbcaf5007f1d8b02c919b52fb481722f26abc5b5b7ee2f7"
+    sha256 ventura:        "1230758055dc17fd3d5cd7b345bd78111bf1a533148a0e0e4ddde46e2c2c71d4"
+    sha256 monterey:       "bdd9f5d6cfcc1c4827145bd16711da245d7fdeac155931a0ab50e8bd801bf331"
+    sha256 x86_64_linux:   "4f535d58e6601598d0688f9f6b9c7fbb288e7439ec0cc38c8b66211875f8cc88"
   end
 
   keg_only :versioned_formula

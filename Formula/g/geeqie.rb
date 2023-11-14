@@ -4,6 +4,7 @@ class Geeqie < Formula
   url "https://ghproxy.com/https://github.com/BestImageViewer/geeqie/releases/download/v2.1/geeqie-2.1.tar.xz"
   sha256 "d0511b7840169d37e457880d1ab2a787c52b609a0ab8fa1a8a391e841fdd2dde"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,15 +12,13 @@ class Geeqie < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "e6e1462c3a54b425aa4f75fcb7601689a4748dcde4eef5a65518be2974f67790"
-    sha256 cellar: :any, arm64_ventura:  "5dc3d8108dc89c601254d03d2fb205ff913677d3a510aab498a54002d508e2b6"
-    sha256 cellar: :any, arm64_monterey: "6eca40757daafea7f1f3263f8c77ce86a338a72a4f80dfa5be46d437d142ee17"
-    sha256 cellar: :any, arm64_big_sur:  "70c05cc4f22c37536d25349b014107476ff280e11424f4775425de3cecf71e7a"
-    sha256 cellar: :any, sonoma:         "d8d26f59d6c40d0d2a9dcb2f23e9c72d5694ce75a68d9615caf76f5182152871"
-    sha256 cellar: :any, ventura:        "7666cdb78780d0c00bacebc4a31009ca5fea4bfdd4b0cbca759eb8503a44b84e"
-    sha256 cellar: :any, monterey:       "b666a29f80ff281e9ec6911462a2bc61e2dd0108d272829e5448c017e588f23b"
-    sha256 cellar: :any, big_sur:        "17265308454403a649990cb8fc949e5fdbd46197ad9c9f3ef8d8a4befa87ac94"
-    sha256               x86_64_linux:   "2cdba76dac3d5aff7cd0941b825b4e333ceec0096e7c17f1bc92319851d85a90"
+    sha256 cellar: :any, arm64_sonoma:   "82aab3a3043bfb4cb20b3a9dfd4712962c9a9ef29008489b7eed1621f9f97c93"
+    sha256 cellar: :any, arm64_ventura:  "13811bfe1db32a6382981a9e96a4cad44d841c27cd14041d8d68679e49ce1309"
+    sha256 cellar: :any, arm64_monterey: "7b67b06b1f1ac205a892aad310dc953671736f631fcc580ab4d6981a34ac0fb7"
+    sha256 cellar: :any, sonoma:         "0d7c4d29e6da9097537841dec76c651e116707e02fb0ea2c6ce6d6a65fb07495"
+    sha256 cellar: :any, ventura:        "8d30e3c9192385c314cab258cdf844ed778c4a64ddb92aff58d4811c4f1bad7b"
+    sha256 cellar: :any, monterey:       "36f6fbe9f4ecbf8c5585e64a4dc656d6033143b7efba9a8ec2ceeb77b566ec58"
+    sha256               x86_64_linux:   "6870d6da92fc7dadef99578d19216e5df2f32279b60f5296a602af62001c9c4e"
   end
 
   depends_on "meson" => :build
@@ -49,6 +48,7 @@ class Geeqie < Formula
   depends_on "poppler" # for pdf support # for video thumbnails support
   depends_on "webp-pixbuf-loader" # for webp support
 
+  uses_from_macos "python" => :build
   uses_from_macos "vim" => :build # for xxd
 
   def install

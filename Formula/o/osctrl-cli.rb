@@ -1,18 +1,18 @@
 class OsctrlCli < Formula
   desc "Fast and efficient osquery management"
   homepage "https://osctrl.net"
-  url "https://ghproxy.com/https://github.com/jmpsec/osctrl/archive/refs/tags/v0.3.3.tar.gz"
-  sha256 "b3d2303dba5898200d7a4f0b432d821fc7f80f293179382ef92ef067e470ee86"
+  url "https://ghproxy.com/https://github.com/jmpsec/osctrl/archive/refs/tags/v0.3.4.tar.gz"
+  sha256 "612c27fffab5f9e1742dd6abc5879dcc11b89966542dde7ee9f88a31249352cb"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cd5e885921d744f1d92c7d1f6c5d991eeb4e7c0089da91e0b52c0596a275da1a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d1bf08442b0813d6c1c457524323a6b5baf89f6cd3aa69f44b63651c1518694"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bdfb8376e9d49ae032b816f7f1e641d491cf680351bec2c4ea577b84aeaa02b8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8fb8d6fb18e5662a6fbe4b5eb6024ba367b8477335c2d54920140125ee5f40dc"
-    sha256 cellar: :any_skip_relocation, ventura:        "7583753070756178f399565e4ace5a5655bccf58c86f56658a8a6fbefad86437"
-    sha256 cellar: :any_skip_relocation, monterey:       "af123d1afaa81995ba0e7e59c2dcb7941b79935af454e5f186a5cda62da0792c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8cb3aa513feddba1b44e97c207ad99f74bbdcd810b4538b176637ac809dd9b74"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "494f37ae2466ebcea3f1d331d8210f1a1145453d32987a748f4560ff5d2c5eb4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "761bbdbdc5f3a2d5b49f25a70e758cc073d87b91f82603a2c25237b5c545a26e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "53cb96f9b2889100d91bb553c2aba7ea614890ea1361f5371047a5f674131308"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f39a05e461bc34cc4fc2c5507f135c9e20bd8b7721a4eacc2914822d79026ce0"
+    sha256 cellar: :any_skip_relocation, ventura:        "e74f355b6d299fe025fcb650dd41217ac6c89028e19668c77194e1053f941b84"
+    sha256 cellar: :any_skip_relocation, monterey:       "3c814a0b3dfbb6c98eafe72897e5485030c9e600ddc3386cef51a28e0a87be09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4ca0c25b6f06d0b142795d891fc65ef8637f65cb8204c6d4ecc0fb6f16cd142"
   end
 
   depends_on "go" => :build

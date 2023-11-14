@@ -1,20 +1,18 @@
 class Libzim < Formula
   desc "Reference implementation of the ZIM specification"
   homepage "https://github.com/openzim/libzim"
-  url "https://download.openzim.org/release/libzim/libzim-8.2.1.tar.xz"
-  sha256 "fcddb400cb71b2c21d5da86fd606e0f45083873f0df5d4529345855a39b5707c"
-  license "GPL-2.0-only"
+  url "https://ghproxy.com/https://github.com/openzim/libzim/archive/refs/tags/9.0.0.tar.gz"
+  sha256 "681f0419d421be05ffd14dbab65c42103ebffb86deceed70b8bd6f9b0590ecd6"
+  license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "5f67ef868eadf40eb888f6717035d83c8a967e20d320a7911466fd1ba64d72f0"
-    sha256 cellar: :any, arm64_ventura:  "b32179995f464b76d374d1d34502fb21c00303e3ced9b353953ac2320dee8eb2"
-    sha256 cellar: :any, arm64_monterey: "54112606a0c0a8aa3fa1084e8978f92604124e12ad4584aa0f8df8cc01c62ad0"
-    sha256 cellar: :any, arm64_big_sur:  "e0a3011dc1e857f84f77e2a9e0b56e2c730f954f22f8ff9a191f873e66290444"
-    sha256 cellar: :any, sonoma:         "76920e8c97661744b522b6a17f26b83fa623b463f6cb6123054c9b90397393c1"
-    sha256 cellar: :any, ventura:        "0acf18de8f6cd3d2bbc8e4dff266af813466dedaae89e9cfc5f93a3c1116e9e0"
-    sha256 cellar: :any, monterey:       "7298365283c04ea9a9e1917d94f1348f2fd28da409b223ed2d185847f57eb770"
-    sha256 cellar: :any, big_sur:        "15997699641928c370eec76dd3a8f52bc614d19d6b8c89a2e7cac5b162c07c66"
-    sha256               x86_64_linux:   "b59dae0b79f9d692ffb5ff2aecf4d468a984b1a99bc5e2a3b56d64ddbc300a38"
+    sha256 cellar: :any, arm64_sonoma:   "05556b0dd7e15025d7f0ee32b9a77e974ee03970a5ba2eedb1a976be1cf568b8"
+    sha256 cellar: :any, arm64_ventura:  "7384f32beed27dd8b60109003d61ac6b355380784f73c4a56232c5f7fccc2acd"
+    sha256 cellar: :any, arm64_monterey: "7f87d54a0c70c681527780059f59be67864f09c7d3652ef83227117a78462e9c"
+    sha256 cellar: :any, sonoma:         "11157004064b95c8af93dff1ccafbeda934c4cb6c55020a3f9810d81fde4a166"
+    sha256 cellar: :any, ventura:        "80455360ada79773869ca22b4860d8fc6252ed0487fa24d8908ae9c5ef30b3f0"
+    sha256 cellar: :any, monterey:       "f2061b18ad748166d32a3e101f3e52df2bfd86647fe7b4e3fb8da77e255943e1"
+    sha256               x86_64_linux:   "3a3e0b3464b95a4bfdee53add4abebed77501629cf68d85a90a63730461e1ca7"
   end
 
   depends_on "meson" => :build

@@ -10,7 +10,7 @@ class Viewvc < Formula
     sha256 cellar: :any_skip_relocation, big_sur:       "50ae5ca9505d4f6ee810972360c6538fdf6e1e028ee3bea7c7b40d7000867ad0"
   end
 
-  deprecate! date: "2022-10-27", because: "has no python 3 support"
+  disable! date: "2023-11-12", because: "has no python 3 support"
 
   depends_on :macos # Due to Python 2 (https://github.com/viewvc/viewvc/issues/138)
 

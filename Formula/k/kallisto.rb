@@ -1,24 +1,25 @@
 class Kallisto < Formula
   desc "Quantify abundances of transcripts from RNA-Seq data"
   homepage "https://pachterlab.github.io/kallisto/"
-  url "https://ghproxy.com/https://github.com/pachterlab/kallisto/archive/refs/tags/v0.50.0.tar.gz"
-  sha256 "f9cc0058d08206cb6dde4a4dcaf8a778df5a939a6e021508eea9b00b0d6d5368"
+  url "https://ghproxy.com/https://github.com/pachterlab/kallisto/archive/refs/tags/v0.50.1.tar.gz"
+  sha256 "030752bab3b0e33cd3f23f6d8feddd74194e5513532ffbf23519e84db2a86d34"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b256f3c779c3921f006889df1a7e5471b34dd51ca92eedb229284c6663c2538d"
-    sha256 cellar: :any,                 arm64_monterey: "a641d25d2867d075b408e4dd51c8f9e438b8eb7a575ee910c3d26e5207a4a9c8"
-    sha256 cellar: :any,                 arm64_big_sur:  "b8037445c024eca5fa9747ca315c305f2559529abf9630cad0bf74094fac57c7"
-    sha256 cellar: :any,                 ventura:        "2a274aa468fec02e86aeb5ce53fffcf6dbcbc751aeb2a8f25b3f0fa578abeae6"
-    sha256 cellar: :any,                 monterey:       "c705153b7b85313979f9941f938481f9af98b32ee2c4a44b2e943a0804f20245"
-    sha256 cellar: :any,                 big_sur:        "ca929c6f7dac9089af4f70ab5dc68d122968b817379ae317036b28664ff26dc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "47a9332b96fb56256ef26ac2f73f9fa100d2f9ed0a8a19992b39744f4015f252"
+    sha256 cellar: :any,                 arm64_sonoma:   "b72e208558837c34d5d568870efd392d4ace50736201577926f1c470231cb51f"
+    sha256 cellar: :any,                 arm64_ventura:  "881cc4e56078e9b8bfa5d40d8870d595041ec8ec330332b18e55894626902394"
+    sha256 cellar: :any,                 arm64_monterey: "32356e5bfc9de68eea6b181ae391f3c4730462882ac6cb397d8205c54654f207"
+    sha256 cellar: :any,                 sonoma:         "47e3b307b8fea2c470d523bf3406c2d34573a63c6cb0fd68008f0a57c2940640"
+    sha256 cellar: :any,                 ventura:        "8b91fa3d58a117c213fd5040ea3d500cae0f467279be9428f36374be6653b997"
+    sha256 cellar: :any,                 monterey:       "352acfa20a7bce0e87bddfb385cca39fc6979342866d48a13306338e6941e272"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a837f4beaf83ee36cffdebdcc833da829f5ca973555c9258c6b8c45b08a9744e"
   end
 
   depends_on "cmake" => :build
   depends_on "hdf5"
 
   def install
+    ENV["SDKROOT"] = MacOS.sdk_path if OS.mac?
     ENV.deparallelize
 
     system "cmake", ".", "-DUSE_HDF5=ON", *std_cmake_args

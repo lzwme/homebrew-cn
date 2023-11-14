@@ -34,10 +34,6 @@ class Xmlto < Formula
 
   uses_from_macos "libxslt"
 
-  # xmlto forces --nonet on xsltproc, which causes it to fail when
-  # DTDs/entities aren't available locally.
-  patch :DATA
-
   def install
     # GNU getopt is keg-only, so point configure to it
     ENV["GETOPT"] = Formula["gnu-getopt"].opt_bin/"getopt"
@@ -60,16 +56,3 @@ class Xmlto < Formula
     assert_equal "Passing test.", pipe_output("#{bin}/xmlif foo=bar", (testpath/"test").read).strip
   end
 end
-
-__END__
---- xmlto-0.0.25/xmlto.in.orig
-+++ xmlto-0.0.25/xmlto.in
-@@ -209,7 +209,7 @@
- export VERBOSE
- 
- # Disable network entities
--XSLTOPTS="$XSLTOPTS --nonet"
-+#XSLTOPTS="$XSLTOPTS --nonet"
- 
- # The names parameter for the XSLT stylesheet
- XSLTPARAMS=""

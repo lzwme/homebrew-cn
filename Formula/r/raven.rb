@@ -3,18 +3,18 @@ class Raven < Formula
 
   desc "Risk Analysis and Vulnerability Enumeration for CI/CD"
   homepage "https://github.com/CycodeLabs/raven"
-  url "https://ghproxy.com/https://github.com/CycodeLabs/raven/archive/refs/tags/v1.0.4.tar.gz"
-  sha256 "35bb528c902909acb5793243d1a865c22c35ac3fec81624b4aabf2de2304ffae"
+  url "https://files.pythonhosted.org/packages/f1/68/13983346fc57a535fd0f583f89399b0bcd988d5adb2ce89575b1b80c95ba/raven-cycode-1.0.5.tar.gz"
+  sha256 "f54ebcc495ac27305b0acbc88747130d70a80903a63ce468797d84a6a02dcead"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "91218b6ec7d2e1768a545bdc1e10b55290935f9761c5fbaa14650fd02eb94184"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "150f177a30ec93fe89c6d99d7e4f0eed72e7c3b9aa7f0f8e4ac950f8cfa642d7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3aa61987edd0037c373c45889d5ccb12fc6e1e924dec1c3c469473a686ca27db"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2637b8a3b3a0cc40526f9f9aae2652f9e836e8c7060380bb621cac3cf5a54721"
-    sha256 cellar: :any_skip_relocation, ventura:        "993b9cff0d7bc4aaaedf2339273132b482094739b5fdffb1fbd4e301ea36b56b"
-    sha256 cellar: :any_skip_relocation, monterey:       "0299c585d8854aa99f94efdf2622385f56650ba6ec0c8ea66d2fe3eda09d3cb7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "460c1079fe63b77cb0c3d0afe684e3fb556bd5c207c033c7076e3dc497b0f369"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e21261fda43a10ec2e3af7afde600496cda66f3d72216fdd53a4422605f224cc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e0915b5c9aab2ca8aa4721cc3cfeae6fed2959ff2a96c4c245b9ce50b082f67"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "305e25e1e080cc665b3712c74ae28b6498f36d2114980802224e175e4bf6cda6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bbca4951a17762fc4a3f7e2050aa6f948d599e152843c672cea06868bd456861"
+    sha256 cellar: :any_skip_relocation, ventura:        "1ea1e1e7a459ef0eba7e1b30ae17aabd3a23309cb390e0e399bb8910a37bec86"
+    sha256 cellar: :any_skip_relocation, monterey:       "c6931ceb62cd4fcd00e119ebdc64ea6142f5ca0d3730d1480ddf1a0a33444007"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cfc5fc8f43ef95b43efd49b6ab90872bab40c0d6c1d76761f3fbb314bd0cb788"
   end
 
   depends_on "pygments"
