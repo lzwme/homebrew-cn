@@ -1,6 +1,6 @@
 cask "fork" do
-  version "2.36"
-  sha256 "2de268f24b187562d61ba8be379893972929f6e609bf01ebb4e1e95745b190c3"
+  version "2.36.2"
+  sha256 "031d7255fcd6bea5186f5c30890c071dbf3f9b2673c37d9004ce730d392718d2"
 
   url "https://cdn.fork.dev/mac/Fork-#{version}.dmg"
   name "Fork"
@@ -13,19 +13,20 @@ cask "fork" do
   end
 
   auto_updates true
+  depends_on macos: ">= :high_sierra"
 
   app "Fork.app"
   binary "#{appdir}/Fork.app/Contents/Resources/fork_cli", target: "fork"
 
   zap trash: [
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.danpristupov.fork.sfl2",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.danpristupov.fork.sfl*",
     "~/Library/Application Support/com.DanPristupov.Fork",
     "~/Library/Application Support/Fork",
     "~/Library/Caches/com.DanPristupov.Fork",
     "~/Library/Caches/com.plausiblelabs.crashreporter.data/com.DanPristupov.Fork",
     "~/Library/Cookies/com.DanPristupov.Fork.binarycookies",
-    "~/Library/HTTPStorages/com.DanPristupov.Fork.binarycookies",
     "~/Library/HTTPStorages/com.DanPristupov.Fork",
+    "~/Library/HTTPStorages/com.DanPristupov.Fork.binarycookies",
     "~/Library/Logs/Fork.log",
     "~/Library/Preferences/com.DanPristupov.Fork.plist",
     "~/Library/Saved Application State/com.DanPristupov.Fork.savedState",

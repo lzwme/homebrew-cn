@@ -8,13 +8,14 @@ class Schemathesis < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4475fd20b552bafe35480b4f6f552de65e10d2120d9c98c10ca9f7d1372adf43"
-    sha256 cellar: :any,                 arm64_ventura:  "fc4dca2be843efb9be46906d62ffb535be4b19859c4ec509edba9dbd96a87fbd"
-    sha256 cellar: :any,                 arm64_monterey: "02d792a6ca2d8acf62e70ecd2d509947284757c96693d7c2c33e5745135e9497"
-    sha256 cellar: :any,                 sonoma:         "491b18216f5c9db2cc9525e08aa063d1ba12feb1be86891fe8d8c70615094caf"
-    sha256 cellar: :any,                 ventura:        "0e15e576a1ac3a0447ee78724985b1f81b519835c3bea9ed7d8a0b5c43a69380"
-    sha256 cellar: :any,                 monterey:       "2c8b68d8d584efb68fb985d0469b91773aff2c9f46df12bae89ae432360e4ec4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17e9938ef1799c92579dd82aa9aeff7af709a1512c8771e776832a108856f424"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "3ebff6917ef5ad13a970d352e5ff23c708f5a14a59c9894f7406664b8c80079a"
+    sha256 cellar: :any,                 arm64_ventura:  "70f4189c576b5d4937e2e057bc892c57c16787a1f264c5cb19e8d0e34cd1c742"
+    sha256 cellar: :any,                 arm64_monterey: "cd2f73ae1a973246b0349fffa59dbb8ceb0d6a8d2a11522953b953df4eceddeb"
+    sha256 cellar: :any,                 sonoma:         "17b969f8e70c62fdd20231272682fbc88c494f35d2728a123bd850fd9967486d"
+    sha256 cellar: :any,                 ventura:        "46751336aac5d7803e6c6b4cb625aac424dbea4e5ca9bffe1ac002eba9ec93db"
+    sha256 cellar: :any,                 monterey:       "d06dc32a1671548b04e0a64893ad9eff8576c5d1d84901dca0c144870184f18d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "063bca0f86f9938366b582151b819e5a2f15fdb2afbd8ff84634d178fed72e81"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -23,7 +24,7 @@ class Schemathesis < Formula
   depends_on "python-markupsafe"
   depends_on "python-packaging"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 

@@ -9,15 +9,14 @@ class SyslogNg < Formula
   revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "b77ea6bad52e9fea0baed6afe621bdaeefce0ed35cf14a600e54cfef34a140a0"
-    sha256 arm64_ventura:  "4ef97eb024a908a39221bfecee23ed2578b3846c12e62b31004feeeffddf7456"
-    sha256 arm64_monterey: "fe3bcb50386bd8920f3a65b161d0300bb16f212a024cc67c664d2289dacf4971"
-    sha256 arm64_big_sur:  "de9817a4897edd2784b052ea4522b8a0eadaf6412a325c190eebb221db42d630"
-    sha256 sonoma:         "af44538a08a589214820e51da3697ec984520557af2e43e5c65926ab762d4f8e"
-    sha256 ventura:        "eb0c417c37cd153382100bc7941a305db19b1264bd003472fc74465b0d5d41c9"
-    sha256 monterey:       "ad846597fded4dc7bb58fc75403b3480ad113f2d55dfb3288b0ca76c459bfba8"
-    sha256 big_sur:        "9b38e7118f424020b318f7c917fc627adc145ceefb3c93e7a38190d45c0901d0"
-    sha256 x86_64_linux:   "169cb8db5df8ddc1298f6fed1ffa639cab1d68c70b5eaab0d554c4a5c77e40cd"
+    rebuild 1
+    sha256 arm64_sonoma:   "823add8e8248ea4c2206a311797c0c887508828c2968b0b59e6b3ea1a3b49261"
+    sha256 arm64_ventura:  "910f192f0e9e821da9502926c3a5af3982cad275dae6e90f20797768d064d383"
+    sha256 arm64_monterey: "62a6a218f17b6195b839a080ed857fec3c6157e6ba823b7cf27facb7076327e5"
+    sha256 sonoma:         "8d9464b1449917ae78b0c143a487519d9972a606d1093b79183fcdd6c323d466"
+    sha256 ventura:        "06ff04bde3b5ef7cd30b484a2f1bde3d095919b9fe7e0ba6c10a25ff3db75844"
+    sha256 monterey:       "5e458ac603e8caa85267e1e3bf520e4279e0f29dab83d5dedb3582361a3bb921"
+    sha256 x86_64_linux:   "09513aa00e81b44f43418c5c411b775aea1dab17367042f92b84cef2e637f8f3"
   end
 
   depends_on "autoconf" => :build
@@ -37,7 +36,7 @@ class SyslogNg < Formula
   depends_on "mongo-c-driver"
   depends_on "openssl@3"
   depends_on "pcre"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "riemann-client"
 
   uses_from_macos "curl"
@@ -50,7 +49,8 @@ class SyslogNg < Formula
   end
 
   def install
-    sng_python_ver = Formula["python@3.11"].version.major_minor
+    python3 = "python3.12"
+    sng_python_ver = Language::Python.major_minor_version python3
 
     venv_path = libexec/"python-venv"
     system "./configure", *std_configure_args,
@@ -66,7 +66,7 @@ class SyslogNg < Formula
     system "make", "install"
 
     requirements = lib/"syslog-ng/python/requirements.txt"
-    venv = virtualenv_create(venv_path, "python3.11")
+    venv = virtualenv_create(venv_path, python3)
     venv.pip_install requirements.read
     cp requirements, venv_path
   end

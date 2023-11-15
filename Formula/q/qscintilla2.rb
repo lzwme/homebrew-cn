@@ -17,15 +17,14 @@ class Qscintilla2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a33886535d1e56ddf77070b440f6dc10913c7a0e3c7bfbabb3194c4419614477"
-    sha256 cellar: :any,                 arm64_ventura:  "b4fc34f2bf9994694a2bcc79186fcc3c63b2c76f3a8147183c5c3bf4429c3cf5"
-    sha256 cellar: :any,                 arm64_monterey: "c6de8f883ab5941a03bd2bed30500ff4785bb4aaa5b19cebf205d56c08118df4"
-    sha256 cellar: :any,                 arm64_big_sur:  "9623a679469c1803e948315ed0d34758d3bde435e1b232e6e2588076edbe4c92"
-    sha256 cellar: :any,                 sonoma:         "2aed1edfe9a762195ffca12ce85a40e9b25187e6999b3b913fe0edba4c194320"
-    sha256 cellar: :any,                 ventura:        "d6fd65f0cebf021208064ad096e3a6183a9d4a2b10a9d1e4e9376c4ffbcde767"
-    sha256 cellar: :any,                 monterey:       "0c90e3302753557ce769634718bb8b3c083da16c8ca8694930cbb31beee2fd0d"
-    sha256 cellar: :any,                 big_sur:        "2c769ed8817441f8a905b01b7463c48a84b3208b230ca72cbdc680548a6821ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22420bf92a32afdfeb6d489f1f683cecb411c62781312394e6efb20af8861210"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "62b11b73e1f2c7b9dbc85ea61504571e05bb7e7e4cb1c8c4ad1e402d573f887c"
+    sha256 cellar: :any,                 arm64_ventura:  "554edeca7a68a9ac7e16a7c28355ee27aee4ec3001efe29a6fc6fda8e9f956b5"
+    sha256 cellar: :any,                 arm64_monterey: "2471feb09b256bd5b0e847cce6b5291536380773b9b6f0d72577e3597300a4d0"
+    sha256 cellar: :any,                 sonoma:         "824426310deab401b0af20fc45035ea788303532208a5fa64656b4a074f033a7"
+    sha256 cellar: :any,                 ventura:        "2777660ed371b133d7ca1948bb438c5a695c20f1c282075222159ec1f7e71615"
+    sha256 cellar: :any,                 monterey:       "0bb6440e93f8363d1dfde69b72124e24cffeaf3f4bcef36580e1e038eea7c8c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "116b23e1fce19896461513216aa2f7b7c59d127317ce5e23b85b5dec0ea473da"
   end
 
   depends_on "pyqt-builder" => :build
@@ -33,13 +32,13 @@ class Qscintilla2 < Formula
 
   # TODO: use qt when octave can migrate to qt6
   depends_on "pyqt@5"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "qt@5"
 
   fails_with gcc: "5"
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

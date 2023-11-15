@@ -8,21 +8,21 @@ class PipTools < Formula
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ed82cad8ebbbf4bfb447d49ea3e89e5546be4c8d1254b7c04283fd2b466de036"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3dcff6c22ef1a05f5846bbf9cf431b344050e2b3e853800a996dab97ef9ee1c9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "329c56c262ca94575608eafc4942da4e0f2da6d620f712470b34333fdd96c033"
-    sha256 cellar: :any_skip_relocation, sonoma:         "921d69128f0eb2a9a6ff78c9b5008b6cb0209253ef1c4a92f14171c1b4f180f5"
-    sha256 cellar: :any_skip_relocation, ventura:        "3cb23886622d45b3baec561b870ac8b867982e4f936ae9d702f6097fc53ea0b6"
-    sha256 cellar: :any_skip_relocation, monterey:       "de5f7ece56856ef180a01f074ad836dbf1704a608e95df5f3e727d46c5acf683"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9cd55fdd04736b8d83a06308a650b921e4bce51096d713d815ef2e1ae398fdda"
+    rebuild 5
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0a3aa6b5725bdfa2a46bea21df9af7634a21ef9e7dd7e9d0e060adb6be67d895"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "04b03da4f27362629b807d141e1047c6d2361b8da1599498811e58c28fc80cc5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4c30eda80147a77de1b9f2f240fc5a914543bb0ca408dbb4ca61132205fc1ea3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bd1466ef17b50690da920e625684332cf6c8ee72df6c88c57c5706dcd1a71f02"
+    sha256 cellar: :any_skip_relocation, ventura:        "c4da8f78a4191fb947463e36d09d8be27fa48ace739b106b7458fa7c61b4872a"
+    sha256 cellar: :any_skip_relocation, monterey:       "332350d46df9bc0d76bd43490dfd5b9f58f7e4b1d92cd536636f732df9f6f01b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "92765b45f9e45b60d7de8d2931fc67c12b1cba7487d7b5e893a8720f53c7764c"
   end
 
   depends_on "python-build"
   depends_on "python-click"
   depends_on "python-packaging"
   depends_on "python-pyproject-hooks"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "wheel" do
     url "https://files.pythonhosted.org/packages/c9/3d/02a14af2b413d7abf856083f327744d286f4468365cddace393a43d9d540/wheel-0.41.1.tar.gz"

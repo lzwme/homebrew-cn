@@ -243,6 +243,7 @@ Homebrew-homebrew-core/Formula/a/asciitex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/asdf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asimov.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asio.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/asitop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ask-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/asn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asn1c.rb, Homebrew/homebrew-core, 1
@@ -1783,6 +1784,7 @@ Homebrew-homebrew-core/Formula/f/fluxctl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/flvmeta.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/flvstreamer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/flyctl.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/flyscrape.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flyway.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fmdiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fmpp.rb, Homebrew/homebrew-core, 0
@@ -8438,6 +8440,7 @@ Homebrew-homebrew-cask/Casks/h/honer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/honto.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hookmark.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hookshot.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/h/hoppscotch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/horndis.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/horos.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hostsx.rb, Homebrew/homebrew-cask, 1

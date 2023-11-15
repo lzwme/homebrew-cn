@@ -1,5 +1,5 @@
 class Cliam < Formula
-  desc "Bitwarden Secrets Manager CLI"
+  desc "Cloud agnostic IAM permissions enumerator"
   homepage "https://github.com/securisec/cliam"
   url "https://ghproxy.com/https://github.com/securisec/cliam/archive/refs/tags/2.2.0.tar.gz"
   sha256 "3fd407787b49645da3ac14960c751cd90acf1cfacec043c57bbf4d81be9b2d9e"

@@ -1,8 +1,8 @@
 class Socat < Formula
   desc "SOcket CAT: netcat on steroids"
   homepage "http://www.dest-unreach.org/socat/"
-  url "http://www.dest-unreach.org/socat/download/socat-1.7.4.4.tar.gz"
-  sha256 "0f8f4b9d5c60b8c53d17b60d79ababc4a0f51b3bb6d2bd3ae8a6a4b9d68f195e"
+  url "http://www.dest-unreach.org/socat/download/socat-1.8.0.0.tar.gz"
+  sha256 "6010f4f311e5ebe0e63c77f78613d264253680006ac8979f52b0711a9a231e82"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,16 +11,13 @@ class Socat < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "02820d408d23f4939ac39b7e1f3c2c997a93aba8932dbc6dbd499147c60521f1"
-    sha256 cellar: :any,                 arm64_ventura:  "f6aa50ee21327847f916a61422569ae7fff43c92024e3413fafbf28248c02f4e"
-    sha256 cellar: :any,                 arm64_monterey: "4e96a37131487c816cde4020cc70a7a595c7b9cdb45ea7451484bb6d89f7ffcd"
-    sha256 cellar: :any,                 arm64_big_sur:  "580ce7d208ec94379e1080ce76095b292535d6109b5e7bb6d133711e5e9e0151"
-    sha256 cellar: :any,                 sonoma:         "8c0d0cfd02cc27bba36b9c8dbc39c3c4c905ec86759201e0dd6d1d08a5dd1aad"
-    sha256 cellar: :any,                 ventura:        "75fad6c257fd4845d78eb46c1586de8aa3ba450a9d317ff87b327ece2222b9b2"
-    sha256 cellar: :any,                 monterey:       "4b77fd5affd99347d487a9da3fdac453e03eb1d9f114e10a1a7dbfe6e771e3ec"
-    sha256 cellar: :any,                 big_sur:        "72ed3ae16d6f7cc35e184eea5ccf5a88bbdb9a0aa7506d3acd960c8348bebb23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9cd03f1295c55fc5dc62d20d77a75412a113b69e2506aed038d3a7389768369"
+    sha256 cellar: :any,                 arm64_sonoma:   "ff5c098db313f3df10b6f5cecef409b260ecb9b9103e7326699053f0094d1b6c"
+    sha256 cellar: :any,                 arm64_ventura:  "1d173fedbbbff9af5bc3a794d0faed5ef703fc219ccf8d66cb196486d550276d"
+    sha256 cellar: :any,                 arm64_monterey: "37643b2b32b6aede3a7002a63d25002ea939778b318692f87db48fb85f21948f"
+    sha256 cellar: :any,                 sonoma:         "39f37b1b1798d765a4e156a7ad41937c8f3cc67c4a6b9e7ae445b632d60ae1c4"
+    sha256 cellar: :any,                 ventura:        "fc0b566014714676a99fcbc63acb65493d5cb569e22e17d4b51de203cc44fc2f"
+    sha256 cellar: :any,                 monterey:       "e5b1ceb2803cc892aea2d4baef9367d86a53bf104199f57a2763fd92041ccf2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6015a9c04bef57893a367772f86625873b591e27ccdd0f9d9f66f7a5f8bc5ac8"
   end
 
   depends_on "openssl@3"

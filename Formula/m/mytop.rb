@@ -8,9 +8,11 @@ class Mytop < Formula
   revision 12
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "cfcc1cb5ec497d290bc9cd24b459dbae81251f26ff9a29294fa032297da3206c"
     sha256 cellar: :any,                 arm64_ventura:  "a2e750cd273cfb1d3110dddfd70a4937dd6d7242d2a83d3ee172155d297c550d"
     sha256 cellar: :any,                 arm64_monterey: "544c937403f18212d99c8835b30fde5736aa4ee3387fc67788a23a4e23deb208"
     sha256 cellar: :any,                 arm64_big_sur:  "4a09f6e45e3878f24acc90d480520e8b0499bab96ec5226af695b93657fef79e"
+    sha256 cellar: :any,                 sonoma:         "26c480c31a6487799df197d3e8eece7754afc7013876cc80f2edac0286266ff8"
     sha256 cellar: :any,                 ventura:        "e93ba00dce926fef622407103246a0f86e1fe7766512754db65c8e39e8bd41e6"
     sha256 cellar: :any,                 monterey:       "1e12316b18917e634d08d1edea087b82fa33c8ec1f26cfad09ea69d9404c8407"
     sha256 cellar: :any,                 big_sur:        "e28bdce153b9d901145a85ec86be714b8d1f63a12354dd6db995e56f509cbf05"

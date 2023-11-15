@@ -3,8 +3,8 @@ class Netpbm < Formula
   homepage "https://netpbm.sourceforge.net/"
   # Maintainers: Look at https://sourceforge.net/p/netpbm/code/HEAD/tree/
   # for stable versions and matching revisions.
-  url "https://svn.code.sf.net/p/netpbm/code/stable", revision: "4686"
-  version "11.02.04"
+  url "https://svn.code.sf.net/p/netpbm/code/stable", revision: "4785"
+  version "11.02.05"
   license "GPL-3.0-or-later"
   version_scheme 1
   head "https://svn.code.sf.net/p/netpbm/code/trunk"
@@ -16,13 +16,13 @@ class Netpbm < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "427b198a07652a7f65bb169a20981d07e4637596f91a14cdb9854d51d0644af6"
-    sha256 arm64_ventura:  "c1b046be00fa6ae2b975076015185a498d3834d5f9d76900ca0404cdae8b7bcd"
-    sha256 arm64_monterey: "f140febcd2c64de858b73710a7ee0d398f9a5877fd4bfa4a098d8e4e47f3d3d9"
-    sha256 sonoma:         "e2fded1fdca72d9b537b29b886e5130b9d78d618e41856b2d8192dd7195016cf"
-    sha256 ventura:        "63653e967d465a61cde31cb2281a35e4b3e40655fe89eee76854e3b42a76f858"
-    sha256 monterey:       "878e2279ec5358d3afb4396b315002eec97f81e71578082740f165196c7cb3ac"
-    sha256 x86_64_linux:   "a0be676203bad768eacfce53628e837e3ca98c57f2bd9a4746d8df2a0f761922"
+    sha256 arm64_sonoma:   "57fd49c35556a139bf9b3fdfa79b2cd517f067689f6b09dce777b353153c7435"
+    sha256 arm64_ventura:  "c5874e61f33dd2b6ba2bab4b9c6d694e58af50ca7ce350ecb7b567ba4fbaf3c0"
+    sha256 arm64_monterey: "058f9f25da9fb2285537615fad7fbe1b9f987cd922c35d56bf33955c1bcde973"
+    sha256 sonoma:         "134d4291a631316ecd53396abc62a4df93a957a49eb7b193574c25a5814ff113"
+    sha256 ventura:        "742b78609624fc5fb872bd789a5b89b3ff06a46e65577d2f75f83695393f4812"
+    sha256 monterey:       "aba031d93912112d6602a841d69bec6545f6a07f3150954fc7333abd8cad3314"
+    sha256 x86_64_linux:   "0f2ad7d2afd2984ba0af7ff5e36727e2058b0d84d6c0e8572406925ea5f63f0d"
   end
 
   depends_on "jasper"

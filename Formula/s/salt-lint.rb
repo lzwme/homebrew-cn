@@ -8,18 +8,18 @@ class SaltLint < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "10ba885f733d52f226a9643e7b0aadbf5e237b076265345d3e125809ff2b48f6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c2cd0d7d476e651ba383c2fac5d342b6ff6cacd4c067d06d1ee532238ba9447"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2dab22268d03811a93cabfdf358bc0bfd13f3051b72317672bfd976eaaa110c4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9524446bac5fa0e317fa7e46ecf0be18e1d2fbbc54a8e0eeccb2c39cfe4b03f7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f5c6b23ee3b6e6c58d21e43e61579bdf86ba7b50e080b46118e2040c21f4f4c1"
-    sha256 cellar: :any_skip_relocation, ventura:        "f0a06c52e6a37db529743d9432a35f7893c77a1725084c26a85e482c22cb99d2"
-    sha256 cellar: :any_skip_relocation, monterey:       "1cad246b52cda8bfe5504099ff779da5aa2076767d18a0c9b1c47557d8f0556e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b8f74d038dd22849312195c816b2a56a75231ba046b0ddb485ed03d38651fb73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d13825dc04e6d3dbb7bde6189810da4d2258d9dcfbdff472aa69dc0cc8735fd6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4aa6d52ad713ad741107e27746cf36349d3bf6503c48c7dacfe059680522c7af"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ff87917f1c01f50567df9f03939b239d5efb0b8a26e35c71948a87245112bd09"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd386d5dabf7425a6ff46fcdf019c8b0db487e313fcef28f7f5c8c307af341fb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a22c60f222b99cf485deae3dcb79102996ad9da397188b4285e7d92b52712440"
+    sha256 cellar: :any_skip_relocation, ventura:        "8c1575dd9c2072c3e4d64a48f8efd0a41a2e1f6362d04ca1e6e42ce590ed21e0"
+    sha256 cellar: :any_skip_relocation, monterey:       "93b3f147408614ca88f3b2b51982659d7c47296d0a30d0e56197335c429bb309"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6fa24e67b78fcbd393fc6b4906dc96b33d5ad4fb9cbbc5df513afc09fd5c813"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   resource "pathspec" do

@@ -25,7 +25,6 @@ class Libint < Formula
   depends_on "boost"
   depends_on "eigen"
   depends_on "mpfr"
-  depends_on "python@3.11"
 
   def install
     system "glibtoolize", "--install", "--force"

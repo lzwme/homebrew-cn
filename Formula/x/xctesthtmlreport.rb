@@ -1,29 +1,27 @@
 class Xctesthtmlreport < Formula
   desc "Xcode-like HTML report for Unit and UI Tests"
   homepage "https://github.com/XCTestHTMLReport/XCTestHTMLReport"
-  url "https://ghproxy.com/https://github.com/XCTestHTMLReport/XCTestHTMLReport/archive/refs/tags/2.3.4.tar.gz"
-  sha256 "85e10b9350de8842efba29dd241968ad5112e34429ec1d5fbfb79b713ba98822"
+  url "https://ghproxy.com/https://github.com/XCTestHTMLReport/XCTestHTMLReport/archive/refs/tags/2.4.0.tar.gz"
+  sha256 "d6d9d3b4c1c2dba1068909ef94e90cdd99039485845afca12f4bf7ac8964807d"
   license "MIT"
   head "https://github.com/XCTestHTMLReport/XCTestHTMLReport.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "25f0968bab563d1f744b08c35d47f6e7bc55954f65520e0a0781e554b70f8745"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a84083c4a80d8d234262865980098b7b14f891929f0c650e490d99394c50248c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d0b1162793fde42637ddf3eb7db6e2a3a39cde34c92623d7876909e968604a99"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cbf430d113006facac15eb7c0816c7efd1d48c9f354aa66358bec6cefa0cc2c3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f31778ad3d2151873e64aafa1c488dd7c6f496905d5f681503d9bc3ad5f58e58"
-    sha256 cellar: :any_skip_relocation, ventura:        "59285b5b0c735ec906c6017b58bdbd3c09d51f56c6a8fee81c8be72de9cddc25"
-    sha256 cellar: :any_skip_relocation, monterey:       "949b3f2d12295dc053fb22a5ca832055277046d81dabb93856cddedf933465a4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4d2906e77f7a67dde660c17dc14b692a9f9831bae52ad013a08ff82ad0510842"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d9d5bbae56b3d378cddef569fb6a18757f79c2a3cb75d7dd5c8af24a6c5e002c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2c496fd126145499f7a92251d022b3083807dc0bf04cec23e8a27db3ae28fa79"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4004ac815f976b0d716b76fc84aa4ec13007a4f5075dc1056ba670c751e7c1df"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1060e7f022dfecad1e723a8c17c37d252a95ac9de1092d5fa8f2c462c625e3e3"
+    sha256 cellar: :any_skip_relocation, ventura:        "722ed4cef8ecd284564e8f0313a174c07a03d3a7125be63f7096327a83092252"
+    sha256 cellar: :any_skip_relocation, monterey:       "1c72a49ffa699a72d70b610a88c2eac94d99adb068efd02cd1484f7cec422ccc"
   end
 
   depends_on :macos
-  depends_on xcode: "13.0"
+  depends_on xcode: "14.0"
   uses_from_macos "swift"
 
   resource "homebrew-testdata" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/tylervick/XCTestHTMLReport/sanity-xcresult/Tests/XCTestHTMLReportTests/Resources/SanityResults.xcresult.tar.gz"
-    sha256 "ce574435d6fc4de6e581fa190a8e77a3999f93c4714582226297e11c07d8fb66"
+    url "https://pub-0b56a3a43f5b4adc91c743afc384fe1a.r2.dev/SanityResults.xcresult.tar.gz"
+    sha256 "e04a42a99dc05910aa31e6819016e5a481553d27d0dde121840f36fdb58e57b7"
   end
 
   def install

@@ -1,11 +1,10 @@
 class Sapling < Formula
   desc "Source control client"
   homepage "https://sapling-scm.com"
-  url "https://ghproxy.com/https://github.com/facebook/sapling/archive/refs/tags/0.2.20230523-092610+f12b7eee.tar.gz"
-  version "0.2.20230523-092610-f12b7eee"
-  sha256 "57a04327052f900d95d0dd3800d8b13a411b08222307bb141109afca1d1d0eaf"
+  url "https://ghproxy.com/https://github.com/facebook/sapling/archive/refs/tags/0.2.20231113-145254+995db0d6.tar.gz"
+  version "0.2.20231113-145254-995db0d6"
+  sha256 "e927c386336ddd047d36a33d6dfb06286960d9c2a56c843fbb2d5ed1ecaf749a"
   license "GPL-2.0-or-later"
-  revision 2
   head "https://github.com/facebook/sapling.git", branch: "main"
 
   livecheck do
@@ -15,14 +14,13 @@ class Sapling < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "46ef832a77d24f2b329fd5db6121cecc5a7adecd263523616f10a05c4b86bc5e"
-    sha256 cellar: :any,                 arm64_ventura:  "e7eba951f6ab4b6c156696c2e213c59f36e66bcbc06cf70cb4e3ec034dc2d14d"
-    sha256 cellar: :any,                 arm64_monterey: "294ee1972306ada79023dcc819b1aa20d88d3dc233f9c86810aa9d0f29e5231f"
-    sha256 cellar: :any,                 sonoma:         "24a477053e6751ef017521e674ee271cd726951de9a7b82351155851b5d82084"
-    sha256 cellar: :any,                 ventura:        "be5a01f25f0c72f1262b8ad58b0e4fcfba226b8ff0abbcd4d016d89898b0d5e8"
-    sha256 cellar: :any,                 monterey:       "f9b28b788a775f1f04a91eb3a3a7d1bc5e00f61f35a2dec8b214ca48f41ccfe5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8180631c6928a00ddb1727341c374252e6298fea74969a33d4617e4c61f323b"
+    sha256 cellar: :any,                 arm64_sonoma:   "9cd67b8e188d58e58014082cfcce5061bfaf942983de0a5f9867ffb8b18711e6"
+    sha256 cellar: :any,                 arm64_ventura:  "27d68c803ffde407eb6bc55e957b7803440be27825252ed685e9b1d714f62adb"
+    sha256 cellar: :any,                 arm64_monterey: "39ee1cb6a31e9a63961531c0ecb39efe171f3e05e5f9ea65f33908811ae1536b"
+    sha256 cellar: :any,                 sonoma:         "376aeaa170e95f0fa05a98f030bedf3e2f13c133e679ac5127e594de8f5b6619"
+    sha256 cellar: :any,                 ventura:        "b66a5dc6c37d423889af8756162ec34ffe7131f89909a4f030f724cd81e76f51"
+    sha256 cellar: :any,                 monterey:       "dc71b96d8ba1324485b8edb3a724721dc7ce026a946a342f5bc505f2c4da27ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "100ee712048709028dff1056c55052a5c9e5c8e053eb11a702b8461a52576afb"
   end
 
   depends_on "cmake" => :build

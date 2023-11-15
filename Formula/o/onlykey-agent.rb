@@ -8,16 +8,14 @@ class OnlykeyAgent < Formula
   license "LGPL-3.0-only"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sonoma:   "cfe26b89aa44b006d82132036f2200b46b5bb077a34207b32a0e95e76692bfdc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1133ee61bfd2d0f209c8e02b168c97db978ccdd96cefaa6ec57d67fd7730bc5a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4857723af86dfa00dff3a67ef91518c88e2d76c89769fca9c7ee151d61f649c3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0f92f72e7071213a2b6a6e1f0a606f1b7b83748769e98c29233b09c239d06b5c"
-    sha256 cellar: :any,                 sonoma:         "ee04af2e8e06c1d25c5cbcd87f84031010962df500c1db4f2d0ca33be32b7a97"
-    sha256 cellar: :any_skip_relocation, ventura:        "b1e82daaecbd965237b419e09e6995374a9791c583f9cb55b825bbd7023e34e6"
-    sha256 cellar: :any_skip_relocation, monterey:       "c5e95d33ff2c466fd952dda040c54645f667db02b9723a7372c624addf4dccd6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b969768f4604c21ee90174153c1e66dbd9c9e30a1932f971f5845a5e9664a1ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1960d347a71ef38fe775040b59286fcc4bbae94ce2225aff1a9e1ce86f143e8f"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_sonoma:   "a7ab74dce4925b2c656fe31fa239662525a26b832bcfc47ec6a07e1fe4b57f03"
+    sha256 cellar: :any,                 arm64_ventura:  "797a7c071623b7bfb1c9c1faadec5507c7e41edd8b99b628120340db756fcefb"
+    sha256 cellar: :any,                 arm64_monterey: "49013e12111c4909d3a00e123f654d24108aad4db08991417bf4e69dc9dda1d8"
+    sha256 cellar: :any,                 sonoma:         "979b507eb70cb4ede4e36863df12a3fc8e7cd44e25d1b6b464a0a33188325697"
+    sha256 cellar: :any,                 ventura:        "2c222461fffe5426cbf1087c0ed87df80e934dbf14e9a7d6879c1ef941596da2"
+    sha256 cellar: :any,                 monterey:       "75eaa6d2be2dc155868b1710470a81a23b763dd0377c96a00516a692514208cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1019c811776a507bace341d16d98b2184b2777f6fcc4b04c2126278570a11c5"
   end
 
   depends_on "cffi"
@@ -29,7 +27,7 @@ class OnlykeyAgent < Formula
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "aenum" do
@@ -184,7 +182,7 @@ class OnlykeyAgent < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

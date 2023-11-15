@@ -9,15 +9,14 @@ class Global < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "ee29492d0200b60982a55ac301888f9a0151cf265872c2b547ab554e78dad575"
-    sha256 arm64_ventura:  "ab5d00488d82ef4d6bb53ab2b149584fa3349c07996c3c71335c8afcb97f983c"
-    sha256 arm64_monterey: "04de3a2049cb3947e09af8d378384a8f882cb33833a59427e8b4f7504504d4d9"
-    sha256 arm64_big_sur:  "e9417586ab588d26a6384d2ba010b406a2c0b4feadc4221d7745f2704605debd"
-    sha256 sonoma:         "35ce37b34c58275860ef39f217e7d6152e9f3b2a93353e567d531e74f781d3a5"
-    sha256 ventura:        "f572a117a2318f132d27272cf2872a10cceea9c436c8933a38c99884fb80b173"
-    sha256 monterey:       "a55bfa20d77cda1e1d7448972511adf54e78311e8c03951ddeb2c0188b3fd085"
-    sha256 big_sur:        "3a45c02b24c75ed96347d28b8fa67e767cf99ac02c8478d4f38c7abe50a46791"
-    sha256 x86_64_linux:   "238f9b7b4ee814fe82a6b27d7adf171ec918d125563e2a212d108df9f2b9fa85"
+    rebuild 1
+    sha256 arm64_sonoma:   "185a7a451ac56e08d37b028841a1507ddd4b567d609ea1ee6e99fe805ee9b721"
+    sha256 arm64_ventura:  "ea4f7e4544b40e270ea0e87c332724d79fc104aff4b3b09724f75889bf7c614f"
+    sha256 arm64_monterey: "bd03d8aa4733e515510867709ed42239f5b233946db6cd55d12a65d42589bf8f"
+    sha256 sonoma:         "9d97ba5a05a6283599e0b3c9ab45709c0f61d63305bc90b63d4a198026e0568b"
+    sha256 ventura:        "41f0853fa9e26369ec034a0741b71d915f7e69fcbcec808b0f142c89d8c0c693"
+    sha256 monterey:       "ca29470019e9c9bc62e63fb44e85aaa2f4fde00311f6ce3439a4022deb92cd3a"
+    sha256 x86_64_linux:   "a962ea7fa57f87f986d8706b9367f17cf81baf222a21834a4c732d69307dd535"
   end
 
   head do
@@ -34,7 +33,7 @@ class Global < Formula
   depends_on "libtool"
   depends_on "ncurses"
   depends_on "pygments"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "sqlite"
   depends_on "universal-ctags"
 
@@ -43,7 +42,7 @@ class Global < Formula
   def install
     system "sh", "reconf.sh" if build.head?
 
-    python3 = "python3.11"
+    python3 = "python3.12"
     ENV.prepend_create_path "PYTHONPATH", libexec/Language::Python.site_packages(python3)
 
     args = %W[

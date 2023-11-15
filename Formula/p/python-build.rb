@@ -4,17 +4,17 @@ class PythonBuild < Formula
   url "https://files.pythonhosted.org/packages/98/e3/83a89a9d338317f05a68c86a2bbc9af61235bc55a0c6a749d37598fb2af1/build-1.0.3.tar.gz"
   sha256 "538aab1b64f9828977f84bc63ae570b060a8ed1be419e7870b8b4fc5e6ea553b"
   license "MIT"
+  revision 1
   head "https://github.com/pypa/build.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "956e021cc014c6b1601984e7feff66f0245ea10380262e68182a55acb9b10f33"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "26a65bd9866f8e4f1355a75cffdc6d35c2eec22ef47aa361222cec39c29ff5e8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ca00dce67a2c83d81c04c807c0508ec2a8253bd82f44f266397e547f0f7c5d2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dda5797abdf1680f250ff942d006da6bec9422048de190e4653d58fbaa2ff434"
-    sha256 cellar: :any_skip_relocation, ventura:        "2449fc76f7eaeee8bff032a1054f651d45135eb5c950ddbd33d07c3d758ed7b3"
-    sha256 cellar: :any_skip_relocation, monterey:       "68011a81160b3b8a0528a102d12fbe696069db857c1b142a8a6e731cc3a5e996"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99d3e6a03e99a71bc47add889ff3b7984500ca30da1a5a20508b8b80728916c9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e124971150ba80ab9d16393fc8459e5467cc2a830109c50aa1ea6469481a88cf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c05da3dd3bf27fa9a255aacf3c6cd1199d109db6df7b142ccff8ab7fbd47a39d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3d5471e851dadcb1ff0043857d09e19a88fad5c71a06f0256e4e5b778a6bdb20"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d7e5485ce65492e9166911f2d41b2beb0787bb7c586fdde44ac81798b02cfe2b"
+    sha256 cellar: :any_skip_relocation, ventura:        "4b13178342239b805c683627ff128882f6808badce620c229219e1de3c63c5b1"
+    sha256 cellar: :any_skip_relocation, monterey:       "2c375bdcfa72510f1f7d144dbcfc6a5333d74939ea06c780bd18057bec26c228"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23f7c8f74062691b7e6012d20aa4d596a27ebf74c90aba9dd9c753df4e1cbfd8"
   end
 
   depends_on "python-flit-core" => :build

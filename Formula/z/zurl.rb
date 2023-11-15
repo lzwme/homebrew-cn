@@ -20,7 +20,10 @@ class Zurl < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :test
+  depends_on "libcython" => :test
+  depends_on "python-packaging" => :test
+  depends_on "python-setuptools" => :test
+  depends_on "python@3.12" => :test
   depends_on "qt@5"
   depends_on "zeromq"
 
@@ -33,8 +36,8 @@ class Zurl < Formula
   fails_with gcc: "5"
 
   resource "pyzmq" do
-    url "https://files.pythonhosted.org/packages/46/0d/b06cf99a64d4187632f4ac9ddf6be99cd35de06fe72d75140496a8e0eef5/pyzmq-24.0.1.tar.gz"
-    sha256 "216f5d7dbb67166759e59b0479bca82b8acf9bed6015b526b8eb10143fb08e77"
+    url "https://files.pythonhosted.org/packages/3f/7c/69d31a75a3fe9bbab349de7935badac61396f22baf4ab53179a8d940d58e/pyzmq-25.1.1.tar.gz"
+    sha256 "259c22485b71abacdfa8bf79720cd7bcf4b9d128b30ea554f01ae71fdbfdaa23"
   end
 
   def install
@@ -44,14 +47,15 @@ class Zurl < Formula
   end
 
   test do
-    python3 = "python3.11"
+    python3 = "python3.12"
 
     conffile = testpath/"zurl.conf"
     ipcfile = testpath/"zurl-req"
     runfile = testpath/"test.py"
 
+    ENV.append_path "PYTHONPATH", Formula["libcython"].opt_libexec/Language::Python.site_packages(python3)
     venv = virtualenv_create(testpath/"vendor", python3)
-    venv.pip_install resource("pyzmq")
+    venv.pip_install(resource("pyzmq"), build_isolation: false)
 
     conffile.write(<<~EOS,
       [General]

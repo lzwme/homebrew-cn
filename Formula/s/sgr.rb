@@ -9,15 +9,17 @@ class Sgr < Formula
   revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "987306995e4eda72e09ef92b6230cf80abcadf6d027d95c717c2126e27719a21"
-    sha256 cellar: :any,                 arm64_ventura:  "bb50ad599560d4311a820f98463f9d5a00c7860aa6ccb2553594a499c7ac40ef"
-    sha256 cellar: :any,                 arm64_monterey: "21b8260071fdb3a45a4c7e8fbb086020225953303e67fa35bef97e87533bfb97"
-    sha256 cellar: :any,                 sonoma:         "d0ae585e5756b33c9136ee27785547fee2aa40c7fd9da7385bdcb0a3a9e0b62a"
-    sha256 cellar: :any,                 ventura:        "f452fa02a17db34263ed312c3243533d31c08e54821768f5043fcd468b5bf8b6"
-    sha256 cellar: :any,                 monterey:       "e25ed3d6864ac3a5fdc098c6e832721b323610d263099e49121ca1408e4d9066"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa0b8ac84754cf0ff7b1e8565c53835519d8a7454dce9da232edd2f4394260d2"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "b7423a19b5c73b05156cb6f103da47d6da9e5c3629cfa9d766f39fd4c938a887"
+    sha256 cellar: :any,                 arm64_ventura:  "0786ad206e8301d3fcb3bc0949be66edc26584d8c19b96e014236a33e3f844c1"
+    sha256 cellar: :any,                 arm64_monterey: "e5d62ed8c6052078acf202e807db3bb8d11c31708344c65f882927f9810c3f02"
+    sha256 cellar: :any,                 sonoma:         "09798654656e8168a31b78da9dcd4ed47c945052a137b170e78a718b4223ee1f"
+    sha256 cellar: :any,                 ventura:        "c4d73607d7b50aee13015c00cadd78193108be82591509212342e06dff781b36"
+    sha256 cellar: :any,                 monterey:       "366c2b32058d052ff060cbeff5f1293f939d4c33965b1038c03aaed7fed26ede"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d28850d676f34dafeb69e9357b3e7c33a285b127a6ddf9466df54298dcb6b1d"
   end
 
+  depends_on "libcython" => :build # TODO: remove with newer `pglast` (4.4+)
   depends_on "rust" => :build # for pydantic
   depends_on "libpq" # for psycopg2-binary
   depends_on "pycparser"
@@ -26,7 +28,7 @@ class Sgr < Formula
   depends_on "python-packaging"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   # Manually update `pglast` from ==3.4 to support python 3.11
@@ -185,6 +187,9 @@ class Sgr < Formula
   end
 
   def install
+    # TODO: remove with newer `pglast` (4.4+)
+    ENV.append_path "PYTHONPATH", Formula["libcython"].opt_libexec/Language::Python.site_packages("python3.12")
+
     virtualenv_install_with_resources
 
     generate_completions_from_executable(bin/"sgr", shells: [:fish, :zsh], shell_parameter_format: :click)

@@ -1,22 +1,19 @@
 class Gmailctl < Formula
   desc "Declarative configuration for Gmail filters"
   homepage "https://github.com/mbrt/gmailctl"
-  url "https://ghproxy.com/https://github.com/mbrt/gmailctl/archive/refs/tags/v0.10.6.tar.gz"
-  sha256 "85757469561fd612209c8d7c5146b4a23d377d236a918c1636113c3d115acf60"
+  url "https://ghproxy.com/https://github.com/mbrt/gmailctl/archive/refs/tags/v0.10.7.tar.gz"
+  sha256 "0e1c4dd9d641a9f68d1016082d842c576bde761ae9eba9b434d944766278e681"
   license "MIT"
   head "https://github.com/mbrt/gmailctl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0285276278aeae2cd70f168b446643cc0cadea0de3320797cbcbb33d3061ff29"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f94ddd5b80ac901282cb4e9d6ab837f0260c16ced3b1b47ea3d960d50a68cfd2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c8f85806b696fe87c80b9769dba5c2e7aeaccbda8a2556d8ba9cab48b3a0baa3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "767e31d78fe9ce25a0bf0edffb32c923da320140428ec3b5a84b4364467386bc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "629431d43b6655d94b8cc5b301f8bf6d38e0860f5291a806da84cddeafb183ac"
-    sha256 cellar: :any_skip_relocation, ventura:        "496ad97ff738102c0d59f8483bb7888486ec6feedff9f0955a1b01aa0e3e3602"
-    sha256 cellar: :any_skip_relocation, monterey:       "b5bc82815fa4e14df3d9b084c56b5e6883dadf09dbf4b728d28fe48e1c94620e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "74c1212da4c70372c8cf1149f2f04ce7677217108e06ecec6f8bfdab764d795a"
-    sha256 cellar: :any_skip_relocation, catalina:       "8ac17b8b385eb1b4b964d990ac9dc1bce622d72214f0f22a28a150cb271bbd95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "380d3964ab5cac3f3dc71b37de03e699197e433990cda2ce0aa3c3b470605fe7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e437e7d93c81fec27997c331a13b565ab8d02942e5612010889581afbbc4070d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3cac5567a901f9dcdc977ebac936c74c15c43d219964f79c8a6acdb3da910751"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c4d4358f5fcffd42bd0c20e8f565f05947839a29111e8482e2595d4fddc9b4c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e1d7d46948f4cd985d488aadc2e1274a6fb3aefbd32de45e839c2cbe073ac80a"
+    sha256 cellar: :any_skip_relocation, ventura:        "43b565f1edff01db5d4a90e17c979935d5f95b25078c1c9986d079a1b05029d2"
+    sha256 cellar: :any_skip_relocation, monterey:       "38bdbb5cad55fdb22caf0a243f9ea6897fb5c3bd8272157fbc2e8466d73af655"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b87baba1f581f80753bf26035a9eabeeb933ec05352bdf832355bec4a9cdf53d"
   end
 
   depends_on "go" => :build

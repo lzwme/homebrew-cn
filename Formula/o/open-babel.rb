@@ -1,6 +1,6 @@
 class OpenBabel < Formula
   desc "Chemical toolbox"
-  homepage "https://openbabel.org"
+  homepage "https://github.com/openbabel/openbabel"
   url "https://ghproxy.com/https://github.com/openbabel/openbabel/archive/refs/tags/openbabel-3-1-1.tar.gz"
   version "3.1.1"
   sha256 "c97023ac6300d26176c97d4ef39957f06e68848d64f1a04b0b284ccff2744f02"
@@ -9,30 +9,29 @@ class OpenBabel < Formula
   head "https://github.com/openbabel/openbabel.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256                               arm64_sonoma:   "1044343f7917db7d84d2009d7914bc780ca77d4ffc65e02566dd880efc00f3b9"
-    sha256                               arm64_ventura:  "9f5f17dab6ecc4ef0a26c15d34fa3a07e15690459ac36372b0cb9e6a7a9d3173"
-    sha256                               arm64_monterey: "b8c4d0d18ffe49772d39f86e9a204262c3e32fef92aa29b38b76d36b61e0cade"
-    sha256                               arm64_big_sur:  "89817f17e6d1b7fa33a3a7c9321c2fe529f546fa6cbf59c014de0cf2ca279736"
-    sha256                               sonoma:         "83c055be7c2f4a744c0d99af11833d406f5b5b0402d0b0cfefa90e5cdd92927f"
-    sha256                               ventura:        "c8baf6ace5ea1d8700dc74642ebaf1f6a33fe172fcc8e016490688c4c4c66908"
-    sha256                               monterey:       "d7a93ad5a24deefcbd87ebcc094a9fe41024e938f54428f2d148da057e3dd7c3"
-    sha256                               big_sur:        "f4e76d3d62eabd132f5d177c62bd0c6ecc65bdb89b37d06661f66903d1726eb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18b1935653e40d9044045217cfeb9476cfb529763887a063ee6b81db8b3b9b3b"
+    rebuild 2
+    sha256 arm64_sonoma:   "f419ccc5548f2ef7476cf80f63a9202026a342955ab6636b52defa8ff4a49613"
+    sha256 arm64_ventura:  "3897a0b1768ca3e0037070cb17890ca83ad9e5ac165832c97b5b3b25c4077164"
+    sha256 arm64_monterey: "145b1a3f4d2d295f35bcec9e8698191caccc1798d478fc76563d7eb5301dd504"
+    sha256 sonoma:         "cbf0992d5a6f648fc362d7c0e6a34ff4f36c4997d6220e8d0c6d2b784e5b4b14"
+    sha256 ventura:        "ec8cb56581eaaf3cc1f39b31697ddf23898a9da5716aa6905aeeaca99a30caa1"
+    sha256 monterey:       "dfee32016d8264bdddbceaf883e7997f12e5064ad7596b0dd898b0fd0e76a52d"
+    sha256 x86_64_linux:   "7e950edb7779a9f98d7acee8aab9215fd3fa9fc64ab57b64fe2a2f37940d72bc"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "rapidjson" => :build
   depends_on "swig" => :build
   depends_on "cairo"
   depends_on "eigen"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   uses_from_macos "libxml2"
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

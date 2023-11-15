@@ -16,13 +16,14 @@ class PerconaToolkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a0762888134304fa077823d51393d367658135f447a3b99eec824e6fa91ab9b4"
-    sha256 cellar: :any,                 arm64_ventura:  "0a05af6d3c4557487e0ee7af75d639660929edb750701bfff3fd7726a2650943"
-    sha256 cellar: :any,                 arm64_monterey: "16e5e49279be074cb9dc3aa66ccb10e683b55691d291626f3e86872b1a9a7b35"
-    sha256 cellar: :any,                 sonoma:         "1569cc102d0ac56785bba4cdb144d1eee9eed17336cb79f64d281c4b5c7e8ce1"
-    sha256 cellar: :any,                 ventura:        "fe4764533d14ac5c46a944c15f7086b579d257a298a828c131e2daf998a6d71b"
-    sha256 cellar: :any,                 monterey:       "638fd29497b2bb281b8778831cd3be2f8f52b265b114f962d8ccc872ec05bb22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2dc312a085262d7450a5066fae822f4089007754e2d006e4d30dc3783b95bdbc"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "356c2ddcfd02830d02663a7e073fcca708f23a8a79e7f9b5d627a11c506a8465"
+    sha256 cellar: :any,                 arm64_ventura:  "22759eb912f87d16404cadd9de43f6dedcb1b7ad2a04703e27581d3d01cfbd66"
+    sha256 cellar: :any,                 arm64_monterey: "9f98c5ad1175a3a5c3d6ebfe60aa423be81ef97e96d42408dad89b3ce9fa04dd"
+    sha256 cellar: :any,                 sonoma:         "9123096f65086906e48048cc4080463a2e5a414b42c3d970739417556679f229"
+    sha256 cellar: :any,                 ventura:        "f428db5e4b9647ef825b166d46969efbd6efd53c63f34acc52b33dd6c084cb42"
+    sha256 cellar: :any,                 monterey:       "941ac31f6fb49c95db06930027c7aac863dd2511d72232eee97f4bf009c03e38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d830b67b9486645f6bc29c60fab820d67b08011fac498d7f0cd3d6ae2a0f75f6"
   end
 
   depends_on "mysql-client"
@@ -42,8 +43,8 @@ class PerconaToolkit < Formula
   end
 
   resource "DBD::mysql" do
-    url "https://cpan.metacpan.org/authors/id/D/DV/DVEEDEN/DBD-mysql-5.001.tar.gz"
-    sha256 "bf6411d26301c6361d48ebbf5cfaa09805de7ded5da3eb280089c00ade4449d4"
+    url "https://cpan.metacpan.org/authors/id/D/DV/DVEEDEN/DBD-mysql-5.002.tar.gz"
+    sha256 "8dbf87c2b5b8eaf79cd16507cc07597caaf4af49bc521ec51c0ea275e8332e25"
   end
 
   resource "JSON" do
@@ -63,7 +64,7 @@ class PerconaToolkit < Formula
         else
           libexec
         end
-        system "perl", "Makefile.PL", "INSTALL_BASE=#{install_base}"
+        system "perl", "Makefile.PL", "INSTALL_BASE=#{install_base}", "NO_PERLLOCAL=1", "NO_PACKLIST=1"
         system "make", "install"
       end
     end
@@ -77,12 +78,15 @@ class PerconaToolkit < Formula
     # https://github.com/Homebrew/homebrew-core/issues/4936
     rewrite_shebang detected_perl_shebang, *bin.children
 
-    bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
+    bin.env_script_all_files(libexec/"bin", PERL5LIB: libexec/"lib/perl5")
   end
 
   test do
     input = "SELECT name, password FROM user WHERE id='12823';"
     output = pipe_output("#{bin}/pt-fingerprint", input, 0)
     assert_equal "select name, password from user where id=?;", output.chomp
+
+    # Test a command that uses a native module, like DBI.
+    assert_match version.to_s, shell_output("#{bin}/pt-online-schema-change --version")
   end
 end

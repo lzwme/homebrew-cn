@@ -7,13 +7,14 @@ class Neomutt < Formula
   head "https://github.com/neomutt/neomutt.git", branch: "main"
 
   bottle do
-    sha256 arm64_sonoma:   "4d0a32e3443ca4d42e12c83d4e877e480ae43c7ef194b90092ce45e6d60286da"
-    sha256 arm64_ventura:  "38a3a1a18d863032e20bd287650a7415b632b6b97f146c4901b86857b9d8c607"
-    sha256 arm64_monterey: "98c49a3a39434aa23b8a84039695f6e5e31e6070f8a7efba38a9e912b12fb896"
-    sha256 sonoma:         "f5a020d2d0915bb63779490d8a8bd563ccb14a926c56c1f0c6693839519d4d43"
-    sha256 ventura:        "ec4b78adf8a88ae88e56b4724df8b41c0173a420b0a123af67c8d60d26134815"
-    sha256 monterey:       "d5f20eabb547c20c79403b98fa6660db0af3488af2bb06adc95112661473171b"
-    sha256 x86_64_linux:   "1a5e0163d5cf1d10695f7a55511552eebafc4c7a98800f62f058f6400f0e1159"
+    rebuild 1
+    sha256 arm64_sonoma:   "6d49fcf5dd81efafe06f36203bbfb08a91d2a8d3009d2e1422ef01279a5941c7"
+    sha256 arm64_ventura:  "2ee309bf5d98b00891d9dd744b06066ddcfed0ca52b2eecfbe572f732151e3a1"
+    sha256 arm64_monterey: "b4dd35cbe87c8d66807ac1e18edbc3e3830e5ce04a5a551b6cec9bd8ba0891e8"
+    sha256 sonoma:         "bc5a0881c9e438a5d926111da3371bc6950487946205a591f1f597ef9f427f1c"
+    sha256 ventura:        "a55303858d5b75f9ba83809e583657bd51e1b1c474e999ac17b348aa4df4ee35"
+    sha256 monterey:       "d2043c07e7c4bc6565106fea6a8bb1c4265b9f1d5e671547d4914c293bc41d6d"
+    sha256 x86_64_linux:   "d64ede90ebca988fb11084a0bea120f502906b711709336495400ff89d7a4985"
   end
 
   depends_on "docbook-xsl" => :build
@@ -36,11 +37,16 @@ class Neomutt < Formula
   uses_from_macos "krb5"
   uses_from_macos "zlib"
 
+  on_macos do
+    # Build again libiconv for now on,
+    # but reconsider when macOS 14.2 is released
+    depends_on "libiconv"
+  end
+
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 
     args = %W[
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --autocrypt
       --gss
@@ -54,13 +60,16 @@ class Neomutt < Formula
       --sqlite
       --tokyocabinet
       --zlib
+      --with-idn2=#{Formula["libidn2"].opt_prefix}
       --with-lua=#{Formula["lua"].opt_prefix}
       --with-ncurses=#{Formula["ncurses"].opt_prefix}
       --with-ssl=#{Formula["openssl@3"].opt_prefix}
       --with-sqlite=#{Formula["sqlite"].opt_prefix}
     ]
 
-    system "./configure", *args
+    args << "--with-iconv=#{Formula["libiconv"].opt_prefix}" if OS.mac?
+
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 

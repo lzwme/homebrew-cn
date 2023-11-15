@@ -3,14 +3,18 @@ class S3ql < Formula
 
   desc "POSIX-compliant FUSE filesystem using object store as block storage"
   homepage "https://github.com/s3ql/s3ql"
+  # TODO: Try to remove `libcython` and corresponding build_cython in the next release.
+  # Ref: https://github.com/s3ql/s3ql/issues/335
   url "https://ghproxy.com/https://github.com/s3ql/s3ql/releases/download/s3ql-5.1.2/s3ql-5.1.2.tar.gz"
   sha256 "5921f6286247792ecb93cd78105eaa5d71e8b3037628ae1bce5c78dc6cf08fd2"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5545a8f84859fd469580a713c8cf89bf9ae138919b103496f590cc31c8be5d8a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "653c0762d45748098f7d48b1705dc5beef3b609ad6811997b86557c9b19fae11"
   end
 
+  depends_on "libcython" => :build
   depends_on "pkg-config" => :build
   depends_on "cffi"
   depends_on "libffi"
@@ -19,7 +23,7 @@ class S3ql < Formula
   depends_on "openssl@3"
   depends_on "python-cryptography"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six"
 
   resource "apsw" do
@@ -97,16 +101,19 @@ class S3ql < Formula
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
-    venv = virtualenv_create(libexec, "python3")
-    resources.each do |r|
-      venv.pip_install r
-    end
+    python3 = "python3.12"
+    venv = virtualenv_create(libexec, python3)
+    venv.pip_install resources
 
     # The inreplace changes the name of the (fsck|mkfs|mount|umount).s3ql
     # utilities to use underscore (_) as a separator, which is consistent
     # with other tools on macOS.
     # Final names: fsck_s3ql, mkfs_s3ql, mount_s3ql, umount_s3ql
     inreplace "setup.py", /'(?:(mkfs|fsck|mount|umount)\.)s3ql =/, "'\\1_s3ql ="
+
+    # Regenerate Cython files for Python 3.12 support. Try to remove in next release.
+    ENV.prepend_path "PYTHONPATH", Formula["libcython"].opt_libexec/Language::Python.site_packages(python3)
+    system libexec/"bin/python3", "setup.py", "build_cython"
 
     system libexec/"bin/python3", "setup.py", "build_ext", "--inplace"
     venv.pip_install_and_link buildpath
