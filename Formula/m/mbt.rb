@@ -1,19 +1,19 @@
 class Mbt < Formula
   desc "Multi-Target Application (MTA) build tool for Cloud Applications"
   homepage "https://sap.github.io/cloud-mta-build-tool"
-  url "https://ghproxy.com/https://github.com/SAP/cloud-mta-build-tool/archive/refs/tags/v1.2.26.tar.gz"
-  sha256 "91e4d00563c760741aa730e210c4ce867a04d564267ca31d4ebe21af5dc1eb8d"
+  url "https://ghproxy.com/https://github.com/SAP/cloud-mta-build-tool/archive/refs/tags/v1.2.27.tar.gz"
+  sha256 "6e9d71b5560b68a89e76033d7738bd46aff5fb16ce41c3c04c2410b00e91889a"
   license "Apache-2.0"
   head "https://github.com/SAP/cloud-mta-build-tool.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "58278ae62283e56e7c15561d2e71de807ee738f41af7a8600cd6e29c76dad9dd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "22291992ba3b219972dfd29c8672b39fa6cb01abfaf16078dc9c7d97447fd675"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e20c0df4a662975724b6fe58659c44dae08f547d52531bc105f95db688c7ae77"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a9f7356c83f061ba935de40d894ad865b5921df5c50f51d08f4e6b31165277a6"
-    sha256 cellar: :any_skip_relocation, ventura:        "decfe5504069580968c2b103dee91ad0236fb177623b5f062b3c3f250e2b6f78"
-    sha256 cellar: :any_skip_relocation, monterey:       "42b80b7dfde1305728b448b427094835cae49f60b500dabbccb8a8168d36bd95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04fc3b5a6c16ff977a53abfb5c6bb6002de430cb195b5c0c32033fdfb661788a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "74e185df33a6cfa7349a3f1fa610a56f7676215c08a9f023d64df98e3f38e118"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7183f6ea5328a673e3f392f0ff1de5c8e5e7786e09103a70f4776acfeffe5eb5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "00efdf8946e6b6810fcd38381d0942d5b0662a9a568abaf74f7e4e508b5068ee"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b3a04d74a2b9c52ca4dd6b5f0dc0d6466c99596565c076c252c63a2405abec2c"
+    sha256 cellar: :any_skip_relocation, ventura:        "768d9c7f2b16a3a7c81f1df6a3ab6e5008ef7bb7da76a79503f5952b857daa09"
+    sha256 cellar: :any_skip_relocation, monterey:       "fa80d2250ee738bb1248b92250a7bbc27c3533982b4ae04a491bed127646a99d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f152dd9b126a800a494969b7da0f94a5e940f6aae5879f6ac5c3ac242fabae7"
   end
 
   depends_on "go" => :build

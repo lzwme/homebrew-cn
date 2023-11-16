@@ -1,8 +1,8 @@
 class CucumberRuby < Formula
   desc "Cucumber for Ruby"
   homepage "https://cucumber.io"
-  url "https://ghproxy.com/https://github.com/cucumber/cucumber-ruby/archive/refs/tags/v9.0.2.tar.gz"
-  sha256 "2e65f68e0d1d9bbcf58dc528873c23a6cdbd077b66b406de456879d00e357388"
+  url "https://ghproxy.com/https://github.com/cucumber/cucumber-ruby/archive/refs/tags/v9.1.0.tar.gz"
+  sha256 "49397539d952ff95399ba133cc5b8c0c8e85c2177de0cf08b363a21bd5ac2cd7"
   license "MIT"
 
   livecheck do
@@ -11,15 +11,13 @@ class CucumberRuby < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a8f8f13f0d1f129304becaaa05c225edcadc19af08ead95d52b56e730a375f8d"
-    sha256 cellar: :any,                 arm64_ventura:  "89895c6a4aa25ddca79c64bb1337702097aac2a9ea3b84df417354f5e6bf0792"
-    sha256 cellar: :any,                 arm64_monterey: "6cd8dc6a74b2b73dcf50b4e746b94ee9b83b1eeeefe2bcb961940f93ee69cc30"
-    sha256 cellar: :any,                 arm64_big_sur:  "2c8ac5748d9ae3957ce8ac1a51449d336212a36c4aef69cccec67d37762ff070"
-    sha256 cellar: :any,                 sonoma:         "f43aa924272415c2fef5573756410e4380486e8b8bf83557a27e9bf2a484b49f"
-    sha256 cellar: :any,                 ventura:        "9bdbabe46b36e5487e6e37bd39f1b097ecac3ec407b3e1bc1bfe27364a30f73f"
-    sha256 cellar: :any,                 monterey:       "fb0c14505012de5b22ccf129b974fbf9a288f21602eedc5be8bb1bc54b8a74fc"
-    sha256 cellar: :any,                 big_sur:        "5660abb051e16cc797fc404c03f4237cd143cbbf8029dc7abc34a98e7183e596"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cde07b55ea51d1299e8e5601c241ba14c5b5cefcacd3e201eed2d631b1a9f0d3"
+    sha256 cellar: :any,                 arm64_sonoma:   "221fdc929a6cb031f589a090cd57fe4b8fd83d1c23e942a758a8fa9a97b83e35"
+    sha256 cellar: :any,                 arm64_ventura:  "351d11164a018bdd3d61b68fe21d4de9edcafd25a766e00228866a6db757fbfd"
+    sha256 cellar: :any,                 arm64_monterey: "54429e08adab1d520609951256da1c0e9f40e445fa05e83582b9b7abff0aba19"
+    sha256 cellar: :any,                 sonoma:         "6133cf5d9a36dcfd385254ddf840c74ff2e87ecc4215f75df7b44cab7547c72f"
+    sha256 cellar: :any,                 ventura:        "3bfd875969c9b69e745a4310d47ecef9dbea1a149f7281fc4a8700941f5106be"
+    sha256 cellar: :any,                 monterey:       "230bc84e7bb1a2460197c8766d9082490ffcd046e5b537ac27c2fb694a1d02fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f450ad7d4f0a9c8afdb6a12f422b901916ed6caa64c8f593cc1dac4de81bcfcf"
   end
 
   depends_on "pkg-config" => :build
@@ -57,8 +55,8 @@ class CucumberRuby < Formula
   end
 
   resource "cucumber-messages" do
-    url "https://rubygems.org/gems/cucumber-messages-21.0.1.gem"
-    sha256 "b16000afd9b086a014b7903fe08a2808b700c84340ec256c56c0d7e387510211"
+    url "https://rubygems.org/gems/cucumber-messages-22.0.0.gem"
+    sha256 "d08a6c228675dd036896bebe82a29750cbdc4dacd461e39edd1199dfa36da719"
   end
 
   resource "cucumber-html-formatter" do
@@ -72,18 +70,18 @@ class CucumberRuby < Formula
   end
 
   resource "cucumber-cucumber-expressions" do
-    url "https://rubygems.org/gems/cucumber-cucumber-expressions-16.1.2.gem"
-    sha256 "d56f5f2da2b6b07fe4325f702b3d27c4dfda3bb9260c91d50795f285dc570b69"
+    url "https://rubygems.org/gems/cucumber-cucumber-expressions-17.0.0.gem"
+    sha256 "56f8b1eb9a9869f843da6ac97643cd4c08bbcefb408919162dbe1d9d043497e0"
   end
 
   resource "cucumber-tag-expressions" do
-    url "https://rubygems.org/gems/cucumber-tag-expressions-4.1.0.gem"
-    sha256 "0d279dcaf6af70a8b927202c9d2ca31b5417190c52d0d6c264504dc8c8d33a6c"
+    url "https://rubygems.org/gems/cucumber-tag-expressions-5.0.6.gem"
+    sha256 "4e98a9f78691cbd59c6a1aca6033dfb8bba5905719dbeb4d39c2374708e0ab66"
   end
 
   resource "cucumber-core" do
-    url "https://rubygems.org/gems/cucumber-core-11.1.0.gem"
-    sha256 "4b5a76518555f97be0e7220011a593462941c7dbd225e610f0f1f7ccf5f4b90a"
+    url "https://rubygems.org/gems/cucumber-core-12.0.0.gem"
+    sha256 "c2a7f4c457dd64df6cc7f430392fb5c03160805eafb27849639fee65d5bb9dfa"
   end
 
   resource "cucumber-ci-environment" do

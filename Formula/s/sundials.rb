@@ -1,8 +1,8 @@
 class Sundials < Formula
   desc "Nonlinear and differential/algebraic equations solver"
   homepage "https://computing.llnl.gov/projects/sundials"
-  url "https://ghproxy.com/https://github.com/LLNL/sundials/releases/download/v6.6.0/sundials-6.6.0.tar.gz"
-  sha256 "f90029b8da846c8faff5530fd1fa4847079188d040554f55c1d5d1e04743d29d"
+  url "https://ghproxy.com/https://github.com/LLNL/sundials/releases/download/v6.6.2/sundials-6.6.2.tar.gz"
+  sha256 "08f8223a5561327e44c072e46faa7f665c0c0bc8cd7e45d23f486c3d24c65009"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,15 +11,13 @@ class Sundials < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f1366fbdcd3545e70761a2cc5be7d91149f854396665de8c489150a301f5cc67"
-    sha256 cellar: :any,                 arm64_ventura:  "19f612e9c55be79129d63dcf98ccdd1df828d8c0c2320bd03283b5023cf6c630"
-    sha256 cellar: :any,                 arm64_monterey: "d17e912f61413ebf29f8524442a900b65a1a5c0a639b315ed02ffc60275cab1e"
-    sha256 cellar: :any,                 arm64_big_sur:  "7cbf64721de476e45e09e423ea8de04d571def9bfa1aab48e0428cea9e8968b2"
-    sha256 cellar: :any,                 sonoma:         "f7a19440e05edac0740253c4410074c617e2445e5f8f450b8b2cc9a1bb380512"
-    sha256 cellar: :any,                 ventura:        "937d494253bc03f2223782869b58caae6ec967018d54adf379caf24ff1c9f176"
-    sha256 cellar: :any,                 monterey:       "841eafce5549ac27d0f1814e6ecd4e645b88a2d75b9ae65f88b2ecc1f232dbc0"
-    sha256 cellar: :any,                 big_sur:        "7de5eb895847aaf8a19e4d5dfd661b7f37366e1c75af2ca14f6fc988ff374446"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56d5f74f4ff14170811c970cabb287f869cdf716a60beaf91b26eb7c69a126e2"
+    sha256 cellar: :any,                 arm64_sonoma:   "2f3390dc51554b6502fc2389903fd1d5b91a79e4ab4f15015a091fcadcc980a4"
+    sha256 cellar: :any,                 arm64_ventura:  "a7321b2b3453445aca8431544df06e5f1d3986cd8a672bbaf54ba14f24310e20"
+    sha256 cellar: :any,                 arm64_monterey: "40f3c72236f6cac7afca54b2b73773f9b00e5cf8acb2d474dae4f6319f4585ed"
+    sha256 cellar: :any,                 sonoma:         "33027ee26798e4c966059ca95b8f7a3e7921bb1d8063914fbb4e2face8319334"
+    sha256 cellar: :any,                 ventura:        "90ee5103eed190baa3451306d9fb32096f654876b0410471a8b7d4f68dc20dd0"
+    sha256 cellar: :any,                 monterey:       "e1a320afa5d96fa16fd08a6118337eed09a0c029111ae268e19824afd83c7ac9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4dff61c5da4b195ffcd78fe70c9c50b2079e8afd01f416891e5606099fd47544"
   end
 
   depends_on "cmake" => :build

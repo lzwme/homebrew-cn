@@ -4,16 +4,16 @@ class PythonTabulate < Formula
   url "https://files.pythonhosted.org/packages/ec/fe/802052aecb21e3797b8f7902564ab6ea0d60ff8ca23952079064155d1ae1/tabulate-0.9.0.tar.gz"
   sha256 "0095b12bf5966de529c0feb1fa08671671b3368eec77d7ef7ab114be2c068b3c"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "82adfd13997556aaa1a2c3d70df498ff8ce85bc14a5cd05a71c20e17f06aa28c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f14c4a0547033da7bbd63156643bc74a9637edf100c663cc411cf8fd5b3ac042"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3a6e9aa47ae45a92384d4232dc5f4e1cfb207da717943255140b52920aab6b0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "adffa4d3698dca4606a5c17a3eda30904c4733e0102aa53d65b24a17cccf849c"
-    sha256 cellar: :any_skip_relocation, ventura:        "b9e431bc31ccc805517121f05b2401b4a9bba39ae24a9291e1ea43b7006bd806"
-    sha256 cellar: :any_skip_relocation, monterey:       "10e6f0b23030d5abea903d88d64a8a78ac4c82750063e12f628cd35b549fec66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e359253d90d409f0c8c98916ab2ee01a39b680ecc567f62f34dab245eddb4654"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0ca82727ef78f7d331376f9efbf41cc30be2cb360e152b6a0d2c5598db587af8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fb7b857656008430de487cd7857be570b1be30c3d9f9b424f018427225c1f72a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fda06e4337f59b0dcadb2ba7a9dcceb20fe4af6d0b94aa3db4266e8968a51a39"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cc39a57ecdfca7b246ee977e1d5d6cbd89f9380a3ed9b6b2a92e26da931f1188"
+    sha256 cellar: :any_skip_relocation, ventura:        "ec65515d9973b2d2a1a5769693758e7a7a5fa229547e000ee1f680e056d03bd4"
+    sha256 cellar: :any_skip_relocation, monterey:       "ce09838138626262d49f419571b95f5463ed77f7755e59b07bcec48f2ccf753b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3bbde18d6b5f051024d82ea01797c4d851c143837092d248f3dbc49c76f4eac5"
   end
 
   depends_on "python-setuptools" => :build

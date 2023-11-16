@@ -3,18 +3,18 @@ require "language/node"
 class AwsCdk < Formula
   desc "AWS Cloud Development Kit - framework for defining AWS infra as code"
   homepage "https://github.com/aws/aws-cdk"
-  url "https://registry.npmjs.org/aws-cdk/-/aws-cdk-2.108.0.tgz"
-  sha256 "2db75fb82a8a41154113512b096f48995153f2be1ed0caa37cd23acdc1cf4de0"
+  url "https://registry.npmjs.org/aws-cdk/-/aws-cdk-2.109.0.tgz"
+  sha256 "1ce390fc0f287f9acae9dbc8c6107a73e042986e0c55d4ebefc081cf8392b37b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0e9a6c989ceb231b1d91f7ef9033b383561d5f213511a10c3db20600af7b030e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e9a6c989ceb231b1d91f7ef9033b383561d5f213511a10c3db20600af7b030e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0e9a6c989ceb231b1d91f7ef9033b383561d5f213511a10c3db20600af7b030e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b635736853e4cb2aa4a593999da1b3ae0e5bd0e0cafbaf9ffd88ebc1739d92db"
-    sha256 cellar: :any_skip_relocation, ventura:        "b635736853e4cb2aa4a593999da1b3ae0e5bd0e0cafbaf9ffd88ebc1739d92db"
-    sha256 cellar: :any_skip_relocation, monterey:       "b635736853e4cb2aa4a593999da1b3ae0e5bd0e0cafbaf9ffd88ebc1739d92db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a82907e97a56d501791978e29f84d2ba8caf574f6307cd6eecc07b56f006c1ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2575b5c1e006ad6095305a83f950e08a6f174e9807ff0654a320377ccd7b38be"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2575b5c1e006ad6095305a83f950e08a6f174e9807ff0654a320377ccd7b38be"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2575b5c1e006ad6095305a83f950e08a6f174e9807ff0654a320377ccd7b38be"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f349256e9a0d1abfff7573300d14028c737cfd4ae5ee2cd9b6b9a3156691959d"
+    sha256 cellar: :any_skip_relocation, ventura:        "f349256e9a0d1abfff7573300d14028c737cfd4ae5ee2cd9b6b9a3156691959d"
+    sha256 cellar: :any_skip_relocation, monterey:       "f349256e9a0d1abfff7573300d14028c737cfd4ae5ee2cd9b6b9a3156691959d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c36ffc42ddfba8bb7cbea232c1760cae8f2f7416e9be9f702b6988da35632fd"
   end
 
   depends_on "node"

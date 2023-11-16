@@ -8,21 +8,18 @@ class RstLint < Formula
   license "Unlicense"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "98c38faf3d7d4e1aaf8caebc1132f5c4259b524d2ca5b74c2174c16f4eee5a6e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "977a9d1c0f562445d972e95d59e883d26a7966b18ca3a124577936d8dde74018"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "977a9d1c0f562445d972e95d59e883d26a7966b18ca3a124577936d8dde74018"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "977a9d1c0f562445d972e95d59e883d26a7966b18ca3a124577936d8dde74018"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9394725006d6fa373a52556f9a884c747fd80ecc7021510e050382573dc82ad3"
-    sha256 cellar: :any_skip_relocation, ventura:        "c8bbc56f35fe2f218241996e273e173cbb2e19535ca95dd77bf97c6ce6ca5479"
-    sha256 cellar: :any_skip_relocation, monterey:       "c8bbc56f35fe2f218241996e273e173cbb2e19535ca95dd77bf97c6ce6ca5479"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c8bbc56f35fe2f218241996e273e173cbb2e19535ca95dd77bf97c6ce6ca5479"
-    sha256 cellar: :any_skip_relocation, catalina:       "c8bbc56f35fe2f218241996e273e173cbb2e19535ca95dd77bf97c6ce6ca5479"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "680297bd09a922363c112da4ce90736e24c732d5907727684625aa639ac777c3"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d6daabe5f77da7cfa5d97729c57c1e5e5075bc17e5e876cf487260db84b9a787"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4541426741a2bd4ed685fe19a9ede90749c46fc53409994e087a90c2bf4096bb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d9dca620dc6d95839222daa0899871c76361c477147f9a1e4f8ff68e51b54090"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9a44fbaaa0ad9a209729f3ddf45e6c0632263e53a76bbfb9cfc5b687d6381086"
+    sha256 cellar: :any_skip_relocation, ventura:        "2c9f9831c0fc8621b5b93dca532758f0cfd46866d386f66f759384403ae413fa"
+    sha256 cellar: :any_skip_relocation, monterey:       "f0ebcbe939c0f88cd09d569f7b33544948e191cc389ef8c836f3ebbff2a1442d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15bfc2601533522d36ddfcc91f9db2b93a329179b71ed341032543ce51079329"
   end
 
   depends_on "docutils"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
     virtualenv_install_with_resources

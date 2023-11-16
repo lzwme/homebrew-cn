@@ -3,10 +3,9 @@ class Uhd < Formula
   homepage "https://files.ettus.com/manual/"
   # The build system uses git to recover version information
   url "https://github.com/EttusResearch/uhd.git",
-      tag:      "v4.5.0.0",
-      revision: "471af98f6b595f5fd52d62303287d968ed2a8d0b"
+      tag:      "v4.6.0.0",
+      revision: "50fa3baa2e11ea3b30d5a7e397558e9ae76d8b00"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0"]
-  revision 1
   head "https://github.com/EttusResearch/uhd.git", branch: "master"
 
   livecheck do
@@ -15,14 +14,13 @@ class Uhd < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_sonoma:   "554f812585d412dee606291230167b08ab3b2b86a532e34b296eec8c2088b703"
-    sha256                               arm64_ventura:  "8a42aa72c0a15d9c3604cc56cb19f1e9c73496a184485a1c7f20f12ad7c8448c"
-    sha256                               arm64_monterey: "69a51f737c40227b6e08110f3190ecfada05fd5d875db376afa22e3b351a7c2f"
-    sha256                               sonoma:         "e4b9c6068c0accf852fa430ac3fc718cadbf579bf2be6f4176038f9901cb4993"
-    sha256                               ventura:        "699be5efeaea6b60750e815c183be24b3f615b83fe7cbd80e109bd602ff2145a"
-    sha256                               monterey:       "79081a35d4f45cbe61903dd095fe9dde9ea1cecd4897bc1ac3ecba6e56e481f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "58049be7948bed3c9e49547af2d40fdafdc41543a47d9c4a19c4d41d625148b1"
+    sha256                               arm64_sonoma:   "9d9bbe423f7b7c2c71b8dc073586963771bdbfb035a6cb4e11becfc1c76ae5fc"
+    sha256                               arm64_ventura:  "685c06d0059ccdd6622a987e545b873cbac2952fd1fb2eacfa83d84b69f316bd"
+    sha256                               arm64_monterey: "87de0479c5439eb3b7dbfff6bd64ce0beec486f4c45c159f5fe07dd98f0550c1"
+    sha256                               sonoma:         "0c563f267209c1334f1900606135ec3dd3f1eb1cfebfe2b6d38fed71a6faeed3"
+    sha256                               ventura:        "b99b93a93aa37c95bfbb7f013bc0dcd7d15023c837420ef69a34a03be50ae5ef"
+    sha256                               monterey:       "fe0d306684277144020498f84a77f0666bec521e4b61ae9ee0e4969d87ea9c1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e314b2e94684bb8ef793fa8b64de52d56d038f495c1db7166649c06521b10bf"
   end
 
   depends_on "cmake" => :build

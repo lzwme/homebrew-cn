@@ -1,19 +1,19 @@
 class Edencommon < Formula
   desc "Shared library for Watchman and Eden projects"
   homepage "https://github.com/facebookexperimental/edencommon"
-  url "https://ghproxy.com/https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2023.11.06.00.tar.gz"
-  sha256 "412a2e1831b4ed2a2f8c69a8e6455fe663ae61bb0aeef1a7abee0bef857bf190"
+  url "https://ghproxy.com/https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2023.11.13.00.tar.gz"
+  sha256 "8f02182471106abed5fbb964af78b4de97e2f63557a78bd2691f47ab082c89c5"
   license "MIT"
   head "https://github.com/facebookexperimental/edencommon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "680fef997a25bd35a904769bc096d8b1ddbc34572b1231eeabd51aaab0cbdbe3"
-    sha256 cellar: :any,                 arm64_ventura:  "22619e8c3256a3fd12c6e4e1619ef867645683ca6cc91bc7a2bfa991263946ce"
-    sha256 cellar: :any,                 arm64_monterey: "9880485978add556a60a9f56ae1998f2fa5a545f92147e2d43555de0cd2693b1"
-    sha256 cellar: :any,                 sonoma:         "c0e790e2de57dd9f34cba2c36c5112f3f081e2597409baf5b360b86eb5414977"
-    sha256 cellar: :any,                 ventura:        "2b2a66ebd9b853b7a460368b67761452d55183af47cc033d4413bfadd30649ac"
-    sha256 cellar: :any,                 monterey:       "730f1502a122adaf4b15b025bc6995852f47f96cfbaa302e6e7210c9cbe4c103"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ef2c53d2c82d279c170df4d49807769aab153c1483015a51e8ce29cf3a48b6b"
+    sha256 cellar: :any,                 arm64_sonoma:   "e3a57702152fbf06849bd9229e9430bd79382231d20a795716ab7a3c9623b4e9"
+    sha256 cellar: :any,                 arm64_ventura:  "49df244abb60af27cbecf6d93d8d8d8be6b8b42fc17ae9df926cc2b670cace6b"
+    sha256 cellar: :any,                 arm64_monterey: "2a108d7291e7b7e98cedb841cac076fdf16b894c8040ea9f5b6cb84944daf9fc"
+    sha256 cellar: :any,                 sonoma:         "e90a31f63a7d0f75aef03c8c3cad7da65412c636267768f77a8ce5d5d78f1400"
+    sha256 cellar: :any,                 ventura:        "1acffd68443eb4d491d0c46ffbb663d8d24e63ffb551f61ae933a1a13ae3d6d9"
+    sha256 cellar: :any,                 monterey:       "dd4abd9af4b5de1d61d84629eca54d1b0fc3185f294c9c8c211a198238880438"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "47ec3130382e6de6f24a1fbbc5677dc317d1bcd4807d38fb8ffda445fd58e2f3"
   end
 
   depends_on "cmake" => :build

@@ -14,15 +14,14 @@ class Csound < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "f8e19a40f4f2e66f30714ac3eda31c9252d5330a8fd3d7279c4a310a666b2ca6"
-    sha256 arm64_ventura:  "ae764437e6448fc70ace10e8932487b3e136b4cc12ab5d07e08fdde7ff45d1fa"
-    sha256 arm64_monterey: "aa903abec753e1d1f850ba0050fd982bfe54e52f4db3737120fca90a4f1e7834"
-    sha256 arm64_big_sur:  "c5be70240c4d54762463547499053f8a488b5033b60b92796b6dd358253f013c"
-    sha256 sonoma:         "de3e95858554c42065343f61e7e0c2f33411b87bc9cd9844a58d8a1fede9625b"
-    sha256 ventura:        "3143d0de41809667d9e8ae46a24c87b492534e6aa866c7a4b8b0ce9123f6ace3"
-    sha256 monterey:       "e95eff8aa14d9466ecad003eeca4bc8393a1b67c92951a80dd0266bd63218c68"
-    sha256 big_sur:        "64a7a619b22139c1c8504c1a1a9c4267cd18923d6b5a14afeee80c95665c7daf"
-    sha256 x86_64_linux:   "4052998a3e130cc91b45ec8a5fd493f4e2d80a69d4d0da0f64ddcd583bce0bde"
+    rebuild 1
+    sha256 arm64_sonoma:   "75d6561cc73a64ba6d2bc0ac143b5e3c71b6e451ae40da6a3c7acddaf84de532"
+    sha256 arm64_ventura:  "c42c9488d704921247575992b2c1c0e6e6d7696ce670916bf286e5fa43bfb17c"
+    sha256 arm64_monterey: "8e11cef26d91a5c67375d893420751f28c689de042292458c50fc41b936ec7c7"
+    sha256 sonoma:         "d2a51b434914b50f8ed78ea4a8316ba471cbe97881f998f3319d46561cb4dca4"
+    sha256 ventura:        "e0675831eceb5b5329c24f1a2c96143e4fd9bf11afc1e47cc6d66e14b6a58c61"
+    sha256 monterey:       "f8ebe4391d15ed12b3e44da707c9020ab48ab0e6e4280392de502506a1078492"
+    sha256 x86_64_linux:   "0c4269ab1edaf2e785b548835dbf45d9188be66833a294c507b1b45f956b1f98"
   end
 
   depends_on "asio" => :build
@@ -46,7 +45,7 @@ class Csound < Formula
   depends_on "openssl@3"
   depends_on "portaudio"
   depends_on "portmidi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "stk"
 
   uses_from_macos "bison" => :build
@@ -89,9 +88,7 @@ class Csound < Formula
   end
 
   def python3
-    deps.map(&:to_formula)
-        .find { |f| f.name.match?(/^python@\d\.\d+$/) }
-        .opt_libexec/"bin/python"
+    which("python3.12")
   end
 
   def install

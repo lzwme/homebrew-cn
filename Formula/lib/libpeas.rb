@@ -6,15 +6,14 @@ class Libpeas < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "e1df7d7f1e9e17396322c5dc61b79ed6e2daea812deb5861603c36e8f37e9bce"
-    sha256 arm64_ventura:  "5035cbd0ee756c5ee11237a3a76793f8baddf9efd7ac642942655d7dee6f0263"
-    sha256 arm64_monterey: "c41fbcf2dd609afa94e61573ddc2d696e3319c736be0cb6a7287ab124ab27edb"
-    sha256 arm64_big_sur:  "1e84d7e5d18d247efb35a15750fae0d5639ccf1bdc566d24171527682ee9259e"
-    sha256 sonoma:         "12969ddacdd011c7c5bd9b258738ef47d355dec995e195005189c5dad5d32904"
-    sha256 ventura:        "b1f6f50765a449fb859b31775ee9c8fd3b7719619749e217af51fd34d2b7ddef"
-    sha256 monterey:       "17b8dba6575562741d55c46022e0bfddca9223d389955990712679b1436f27d0"
-    sha256 big_sur:        "ccbf503dc2c680a7f0ba32f0a22e05e68bc2a7d50557c4754c8de7f473f32724"
-    sha256 x86_64_linux:   "3df218b0dcc953b55eb149454943c4ccead6397720b313dd65af783ccd03ab49"
+    rebuild 1
+    sha256 arm64_sonoma:   "64ad8a90b23f3872951a88c7d039b93090548b911939b66146920c169b02ae11"
+    sha256 arm64_ventura:  "7bdbcc97af2820929b7903c72719996d73346eddf9b5fb2c6155bb0f64195e99"
+    sha256 arm64_monterey: "23bc7ec788fb30020b8ec94ee0840ab56e0294806ef8c671f28d42ccbe97d78a"
+    sha256 sonoma:         "be7a1ecf84dee4276c4be25259ff185a6ff209d3ff25af154251ba718bd11530"
+    sha256 ventura:        "51b49689824a60dbbd86b43bd0155b0761ab986de209337a10bb57a6145c57c2"
+    sha256 monterey:       "9cfa0e4714aa857bccca9764f09942848124922fc3184d90c159191f40967852"
+    sha256 x86_64_linux:   "786564f40ef81e40b300117b6dffdc9369abf4cac2c49a29cb3a16dc2be84d48"
   end
 
   depends_on "meson" => :build
@@ -25,9 +24,13 @@ class Libpeas < Formula
   depends_on "gobject-introspection"
   depends_on "gtk+3"
   depends_on "pygobject3"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
+    pyver = Language::Python.major_minor_version "python3.12"
+    # Help pkg-config find python as we only provide `python3-embed` for aliased python formula
+    inreplace "meson.build", "'python3-embed'", "'python-#{pyver}-embed'"
+
     args = %w[
       -Dpython3=true
       -Dintrospection=true

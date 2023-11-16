@@ -1,21 +1,19 @@
 class Sslscan < Formula
   desc "Test SSL/TLS enabled services to discover supported cipher suites"
   homepage "https://github.com/rbsec/sslscan"
-  url "https://ghproxy.com/https://github.com/rbsec/sslscan/archive/refs/tags/2.1.1.tar.gz"
-  sha256 "ccb1ffcc97cbde5c184542debe2ac3529e2c64b3690a402b592ed4ee374955e1"
+  url "https://ghproxy.com/https://github.com/rbsec/sslscan/archive/refs/tags/2.1.2.tar.gz"
+  sha256 "c218d21fdf0b57dfc7c7b110ff32d9c7e77eb8c631b670a2c0fc92a80ded294d"
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
   head "https://github.com/rbsec/sslscan.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6eba6cb5038b1e7791ae8ecf1102ee75c6306cc300ef90cef57485ee3c7d8c7c"
-    sha256 cellar: :any,                 arm64_ventura:  "609817a01a69046da06ac7a42ebdf99722d2dd148e4cdbabb0a3fca8e984b453"
-    sha256 cellar: :any,                 arm64_monterey: "66f53276cbf5d56d752471b38a13a746fca35cacdc46fad546b2b86906b48d53"
-    sha256 cellar: :any,                 arm64_big_sur:  "2f6c213950706cea1804b55ae9bd70e4dd9c8daab1347fcd8eb4edc1af011da7"
-    sha256 cellar: :any,                 sonoma:         "0703828d0cd1ff7a4337b5b3eaef5a436d3e817dfea6098ea8bbbc4e400402a8"
-    sha256 cellar: :any,                 ventura:        "9309f17b8fae569e45942b25327a4c022fbb1db8797c950e8872587fcdfc324d"
-    sha256 cellar: :any,                 monterey:       "dc39d6bd74d4db919ee8bde5d9cbab396c43464bd8eb648d2ebc6d237edc77f6"
-    sha256 cellar: :any,                 big_sur:        "22ebe049e3e896037414a0f994ec5a3c4be7266d5c8277c548992e8644d523c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7cc3a9aa2d9fb36734be81ad92983c9547332eb10780328051ad65abe9fa162"
+    sha256 cellar: :any,                 arm64_sonoma:   "91e65ff070dca7b5773b4bdcc7ed3de0ce50d908687216ed0daa6563d8b8bc17"
+    sha256 cellar: :any,                 arm64_ventura:  "e1416f22475be6a61f667231fb8625d366475446afd8af4108df804af61c30a1"
+    sha256 cellar: :any,                 arm64_monterey: "57bb73e5c267f319e6c7bc5db646061202ee3a483c8f03b2555100e21fd2e3cc"
+    sha256 cellar: :any,                 sonoma:         "5912296ff6ad719758a1aacd0bde2bfa6e09d49bf443005afe6cac78c9b01b0b"
+    sha256 cellar: :any,                 ventura:        "7eab4640e8cb714a9f0a025537fc14e6fb135938be0afeb2f15f4da79d23e583"
+    sha256 cellar: :any,                 monterey:       "13b8c4d0624ff2d43fd5314c06211549242f0a83a31899756a9f74e8f0316d79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71e9ea4dc9b5e68ad9d6687f15a8ef298737441c3d10913a8f459895c2f254bf"
   end
 
   depends_on "openssl@3"

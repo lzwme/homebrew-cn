@@ -1,21 +1,19 @@
 class Stern < Formula
   desc "Tail multiple Kubernetes pods & their containers"
   homepage "https://github.com/stern/stern"
-  url "https://ghproxy.com/https://github.com/stern/stern/archive/refs/tags/v1.26.0.tar.gz"
-  sha256 "1caf2a6f1492f763bb6a961d4c8af8cd3ab1952d216b0ab21059fe1a1d4426db"
+  url "https://ghproxy.com/https://github.com/stern/stern/archive/refs/tags/v1.27.0.tar.gz"
+  sha256 "ae87a657544808e35fe7f3dcdb6f2c8b2c86845cf76c6ebb1058bb9154f0799f"
   license "Apache-2.0"
   head "https://github.com/stern/stern.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2d8e7897c385185f4c3eb10ae3b73e82a0d3922c989eb1833672636eb6864034"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "484a069bddba5e729d026cb5cc30cd1c3044ab024bfb2d5c713a24b2e50026a9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6483cdf23b31bf38e7b16f5f251d2788612c2ea68113ac58959df978a82aa4d4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "72cd77054e851ebda6cb6c8046fdf768326d7356f6717342b8ef6fbaedf56cef"
-    sha256 cellar: :any_skip_relocation, sonoma:         "75a76757081e0028ed3169f4657f76e79445f192e27c8c00632b2a220ec42207"
-    sha256 cellar: :any_skip_relocation, ventura:        "74a733462052b5af3e2c998482d1bd15c4fc8d95cb311d9f6065c79f418c5a26"
-    sha256 cellar: :any_skip_relocation, monterey:       "da0c26a22154ceeea5428d7fa2405c779bc43be39ab9a48bda13c1d5636787f9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "34e615a98b044b463c00bc11efac67f8eb1f53b065473c2a002a239e0b2dbecc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "164b0c3ae1ab177ddf011f2b9d2f2f7868b1be031eacf902802702aba9f61d70"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "97fcc24d4338a843f5330cdc7f75c1a438ec07418995df137487c2d6d2831569"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d0108aa6ea6ba4f0270f09e53c17819ce4842c620d0b73715eabb2f692bca0b5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fcf33bda1fa1449f2cb684658bc9065af1c7a95332e51d5818ed2e950f050083"
+    sha256 cellar: :any_skip_relocation, sonoma:         "08325f407752b92879642606b79ddbeb7df4a2a2c796c70f77ea78859dc45fef"
+    sha256 cellar: :any_skip_relocation, ventura:        "da4679eb2a33d95af54c03e03ad8f51f611b25ff3d93f5b875adb8d3e2342acd"
+    sha256 cellar: :any_skip_relocation, monterey:       "b84c26af79f0c696b071da38b17a885b8eb15a678795874a6436839320c071b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4fa1beac122af43961abb80fa42dde199298d6ee5261d1b9a8e6fb5d81927434"
   end
 
   depends_on "go" => :build

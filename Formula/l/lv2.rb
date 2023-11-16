@@ -1,7 +1,4 @@
 class Lv2 < Formula
-  include Language::Python::Shebang
-  include Language::Python::Virtualenv
-
   desc "Portable plugin standard for audio systems"
   homepage "https://lv2plug.in/"
   url "https://lv2plug.in/spec/lv2-1.18.10.tar.xz"
@@ -21,11 +18,10 @@ class Lv2 < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "python@3.11"
 
   def install
     system "meson", "build", *std_meson_args, "-Dplugins=disabled", "-Dlv2dir=#{lib}/lv2"
-    system "meson", "compile", "-C", "build"
+    system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
 
     (pkgshare/"example").install "plugins/eg-amp.lv2/amp.c"

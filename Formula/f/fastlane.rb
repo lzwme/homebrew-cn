@@ -1,8 +1,8 @@
 class Fastlane < Formula
   desc "Easiest way to build and release mobile apps"
   homepage "https://fastlane.tools"
-  url "https://ghproxy.com/https://github.com/fastlane/fastlane/archive/refs/tags/2.216.0.tar.gz"
-  sha256 "f525e6114eff667977bd3ceae1cb1342049f81654f7baba5c01771e315ef61f4"
+  url "https://ghproxy.com/https://github.com/fastlane/fastlane/archive/refs/tags/2.217.0.tar.gz"
+  sha256 "e66a2c45b9a44c352ec20dc9e1846345110fd20d30407cecd5739651824c8c15"
   license "MIT"
   head "https://github.com/fastlane/fastlane.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Fastlane < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f60ec0538c55869a0097200e23b3cfb8a38ffb42bbcb607cddb5e11f88566665"
-    sha256 cellar: :any,                 arm64_ventura:  "8d40688785cb82a03168957ea8c8697c5c98ed4ba9fb9a6228ddf999844d3f9b"
-    sha256 cellar: :any,                 arm64_monterey: "67e077b4c0f9f5c17c8c92b3a387068c5473b1ad7c7ee223ec9714cf4a914310"
-    sha256 cellar: :any,                 arm64_big_sur:  "bc8ebe163bde63ca15e94de26ec4ca3c784b4a66a7a619e30cfcb57f395ab81a"
-    sha256 cellar: :any,                 ventura:        "a1e7d6cf2528f388ca4669a532ded945e89b5e3da484776b2a5a04bed8d2c331"
-    sha256 cellar: :any,                 monterey:       "2a481f104ec3d1044aed6eca5d368a512f18d48580d9f4f07680fa31726f07f0"
-    sha256 cellar: :any,                 big_sur:        "638f6f82d855ce93a57edecb49e78dd889ce224c769ce83dff65f8ea404096fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "62855f0c6dc143835fe0af6196cf06d4d38c239e6647153d361409cd5282ea9c"
+    sha256 cellar: :any,                 arm64_sonoma:   "373a0052913bef4adce931af403de7d1118f51101dc3505b6f724e32e0fbe3c4"
+    sha256 cellar: :any,                 arm64_ventura:  "a11ea22a0e0bf201aefe2463b7adfc628d901bf2acf69eccae14c9586e8f9156"
+    sha256 cellar: :any,                 arm64_monterey: "e4a7f20348285aa36ec9ecf5822bef9d8b2f1674deadca6571e24ab6cbd214aa"
+    sha256 cellar: :any,                 ventura:        "996a9b90cffff6a9317c967765c01e6144bc6a67b0570a672586ae7493c33af9"
+    sha256 cellar: :any,                 monterey:       "220814f1a7340071ecbbf7980ebcf2e6d09e19df116beec12cabeff061b1a952"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2592c13c7abf7e5f0089531c6a6a58608bd447e07a53d8d4531da80a909e6bfc"
   end
 
   depends_on "ruby@3.1"

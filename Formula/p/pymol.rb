@@ -8,17 +8,14 @@ class Pymol < Formula
   head "https://github.com/schrodinger/pymol-open-source.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "24d4ba0d575991dce546bc859aa4b3ddcb89448731cb03e232a9e1b2d7143d05"
-    sha256 cellar: :any,                 arm64_ventura:  "83349892fd62c0e7f4779f518466ac427a3a1c8c94942d1d5c6cd28dd36dca83"
-    sha256 cellar: :any,                 arm64_monterey: "dca9c78b36701af74a6c3d0809e7c1e56342d2c71ee1c9c65426256ad7964dc2"
-    sha256 cellar: :any,                 arm64_big_sur:  "65d1a74e957aae8f1b02dd4706d332a0b53305b065053df3ece0dc136a66d790"
-    sha256 cellar: :any,                 sonoma:         "c6c7818f5a7fd85896443499d3e0933eaf172c0bc8d9daca749f79707ebc1263"
-    sha256 cellar: :any,                 ventura:        "fc1a8e0a998879a07f1e04f7b045766d993728e9ff9d11debd4ff849879ccde0"
-    sha256 cellar: :any,                 monterey:       "28467563c8d033cea9c34bb660d439342d08bf20fe1caf8e8bf372cf28e0679f"
-    sha256 cellar: :any,                 big_sur:        "28d5d457a0f29a105752da1d9fbdeec8ce17d00624d5d3ecedd2fe13fc4bfe06"
-    sha256 cellar: :any,                 catalina:       "18d79ec5dcb396fcc9cbc7b9c3e877b4d00ee43ac35e265a2a0fcadf6e03fc20"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a891505c17ae5a8e97512a4096b9bd520fd9d0c6dce3ab8c935d5dff883a287e"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "1b3edf37eaeb5b3c38e5fdf9f6a72f4eafecb1f4ea0bb7a9208b0a4e41202a1f"
+    sha256 cellar: :any,                 arm64_ventura:  "33fb5ec69774436e99803273fe04c69ec04d4af245361b3ef916141e867c0b08"
+    sha256 cellar: :any,                 arm64_monterey: "e2c6c18ea8a6643a96692e427d31b33cf21003c30ec74fadc8aa019b20e881d0"
+    sha256 cellar: :any,                 sonoma:         "0d8fa8d46524c5c87123860a1fa0641a1ed0390ab6b2230301f055ad95e8a6a7"
+    sha256 cellar: :any,                 ventura:        "2172933239097915902897e01cbef8bf505aa80ec88cc9c1a8028c48de982aed"
+    sha256 cellar: :any,                 monterey:       "e9580cbfe839e0ed7cc37d13982ac6928684ff8baf426fc9b23bd2a1ec668290"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ecb4cb75a88e52dcdbced60b2bd41dddf14bb5c3671e23737b5b20e6ae4a1a2"
   end
 
   depends_on "cmake" => :build
@@ -31,7 +28,8 @@ class Pymol < Formula
   depends_on "netcdf"
   depends_on "numpy"
   depends_on "pyqt@5"
-  depends_on "python@3.11"
+  depends_on "python-setuptools" # for pymol/plugins/installation.py
+  depends_on "python@3.12"
   uses_from_macos "libxml2"
 
   on_linux do
@@ -59,7 +57,7 @@ class Pymol < Formula
   end
 
   def python3
-    which("python3.11")
+    which("python3.12")
   end
 
   def install

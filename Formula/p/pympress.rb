@@ -9,15 +9,14 @@ class Pympress < Formula
   head "https://github.com/Cimbali/pympress.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "927a480a5e7839195f0cdff8c6ed5f7c5a85b6d27fc85addc75e7e09342f4bdf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4aad20967579ed6336c439cd43479ee629f462457551ec1933fd48c522f95e73"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5c86e6d2e4dc15f051306fd163459262bec890dd5c92bb700544eb7068790496"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c18b1adf0fe81bcf0de1fcc3e4bfc1588daac39ec24549100196c8d20c72e09c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f875c068d33334d0a6ae16ba684859758cb45c4bacde1a72f0bb0b897a8e06ed"
-    sha256 cellar: :any_skip_relocation, ventura:        "063caefab7d4550f34ce2b9691ad1952b062df9b9e022e4d630450a9683e5a2a"
-    sha256 cellar: :any_skip_relocation, monterey:       "8a218b585ecec29f5db849f463af0362625127106bd038dd87284b5532e86845"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0962fbc7a213a9314e236e8deecc5bc6ebdb8bfbc6c77672772eab985ae6a367"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "183c35f48fff970202af2a6a501c7c3c715bd9a2c459f13659e0c7ab7719ccbe"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1c4ddd3f1b0c73133abe92076ece05865c46b29b0f21fe043983610d992a67bb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "24177f278b28c9b1504df98a9ba183b91f3436b9d1b77319afa9f657fd8cb1ef"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5d5a8bd58fc2b21fbd744a22220884d9ad014cce751c29e7252f10ca9970ba22"
+    sha256 cellar: :any_skip_relocation, sonoma:         "55833a12c097b1a74a9d852522c3071c7a6943b5f52b67dfb3160828117841a5"
+    sha256 cellar: :any_skip_relocation, ventura:        "de8cd17331ac3b641ab6a2614b310fcabea5e798f6a50a764fb0178cdce6412a"
+    sha256 cellar: :any_skip_relocation, monterey:       "4975114e3ee11877c08b8b3a92c98025b63a5d6cfb1f210d616b7d2276692ccb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3be0b1e750d5130c37079276e59505427b21e2d894300ef378159156169a1c5d"
   end
 
   depends_on "gobject-introspection"
@@ -26,7 +25,7 @@ class Pympress < Formula
   depends_on "libyaml"
   depends_on "poppler"
   depends_on "pygobject3"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "watchdog" do
     url "https://files.pythonhosted.org/packages/95/a6/d6ef450393dac5734c63c40a131f66808d2e6f59f6165ab38c98fbe4e6ec/watchdog-3.0.0.tar.gz"
@@ -35,12 +34,13 @@ class Pympress < Formula
 
   def install
     virtualenv_install_with_resources
-    bin.install_symlink libexec/"bin/pympress"
   end
 
   test do
     # (pympress:48790): Gtk-WARNING **: 13:03:37.080: cannot open display
     ENV["PYMPRESS_HEADLESS_TEST"]="1" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
+    (testpath/"Library/Preferences").mkpath
 
     system bin/"pympress", "--quit"
 

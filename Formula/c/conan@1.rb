@@ -13,13 +13,14 @@ class ConanAT1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2771e799732b3aea81862ca2697275473d974b619bd422e9713e4b417ba86409"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3050aaa8f05d24c5aafa266e656605af3879ddc75cb7a372183920169531aa4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0b93f805569b8724fbdb140f12a957de03e0b041f1cf10ef0be854e20902c597"
-    sha256 cellar: :any_skip_relocation, sonoma:         "163c3a3705ac050dee71fa0dc85e32550e662a1c82d65026c00992663de46f4c"
-    sha256 cellar: :any_skip_relocation, ventura:        "4c5dfb40af5ff7987df3bb4b36ebba23df75ce67806a561c46ae8df379d9daeb"
-    sha256 cellar: :any_skip_relocation, monterey:       "a5cc53aa46780b960d8d4cf6e53726b2362e299dd60b8d04f9fb548a3182090e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a7cc9761375839d22ad1914df2fcb8a43a5577b74c7e1ccf279ea1fbe4340e3e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a0ac58760c0bfef6fb4e511e13b467f495308548589f3b83f525927bc69b01f1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d181793963efd5cdf59dd1768de5fe30b51bc7d80b3da710885b45e31b3fe748"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f44ccd7dd7a1fd288f0b8d213f3cc8d36678c1490459b82678f4df0d97737abd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6ae4dbb02ceb63b83b45d4f1fdf64d502dc0ff444d702a7a9e7bfe13d133b86c"
+    sha256 cellar: :any_skip_relocation, ventura:        "b26caaccbf06893c9750feee456b46436298f6560c892f53e07ea66d6dc40fc4"
+    sha256 cellar: :any_skip_relocation, monterey:       "54d1c69eb4d97ddb500c78495fa92d70772d22c3cc1d731a35db828eee720626"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d37b8ac3bfe22e2746549a91f120506c7427f2012eabf288c99d23c5fc094e01"
   end
 
   keg_only :versioned_formula
@@ -28,7 +29,7 @@ class ConanAT1 < Formula
   depends_on "cmake" => :test
   depends_on "pygments"
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 

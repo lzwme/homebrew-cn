@@ -25,7 +25,7 @@ class Libtcod < Formula
   depends_on macos: :catalina
   depends_on "sdl2"
 
-  conflicts_with "libzip", "minizip-ng", because: "libtcod, libzip and minizip-ng install a `zip.h` header"
+  conflicts_with "libzip", because: "libtcod and libzip install a `zip.h` header"
 
   fails_with gcc: "5"
 

@@ -7,7 +7,8 @@ class Systemd < Formula
   head "https://github.com/systemd/systemd.git", branch: "main"
 
   bottle do
-    sha256 x86_64_linux: "6fe0e309edd193befb94861b60ef768ec87cb8277a349ba721e3c3778deedf1a"
+    rebuild 1
+    sha256 x86_64_linux: "c59c7e191c00eaee9eb5aa1db0ff15687d6fed3d6a8c59f622f3b16e6d90382b"
   end
 
   depends_on "coreutils" => :build
@@ -23,6 +24,7 @@ class Systemd < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+  depends_on "python-lxml" => :build
   depends_on "python@3.12" => :build
   depends_on "rsync" => :build
   depends_on "expat"
@@ -36,6 +38,21 @@ class Systemd < Formula
   depends_on "zstd"
 
   uses_from_macos "libxcrypt"
+
+  resource "docbook" do
+    url "https://downloads.sourceforge.net/docbook/docbook-xsl/1.79.1/docbook-xsl-1.79.1.tar.bz2"
+    sha256 "725f452e12b296956e8bfb876ccece71eeecdd14b94f667f3ed9091761a4a968"
+  end
+
+  resource "oasis-open-4.2" do
+    url "https://www.oasis-open.org/docbook/xml/4.2/docbook-xml-4.2.zip"
+    sha256 "acc4601e4f97a196076b7e64b368d9248b07c7abf26b34a02cca40eeebe60fa2"
+  end
+
+  resource "oasis-open-4.5" do
+    url "https://www.oasis-open.org/docbook/xml/4.5/docbook-xml-4.5.zip"
+    sha256 "4e4e037a2b83c98c6c94818390d4bdd3f6e10f6ec62dd79188594e26190dc7b4"
+  end
 
   def install
     ENV["PYTHONPATH"] = Formula["jinja2-cli"].opt_libexec/Language::Python.site_packages("python3.12")
@@ -54,7 +71,19 @@ class Systemd < Formula
       -Dlz4=true
       -Dgcrypt=false
       -Dp11kit=false
+      -Dman=true
     ]
+
+    %w[docbook oasis-open-4.2 oasis-open-4.5].each do |r|
+      resource(r).stage "man/#{r}"
+    end
+
+    inreplace "man/custom-man.xsl", "http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl",
+              "docbook/manpages/docbook.xsl"
+    inreplace Dir["man/*.xml"] do |f|
+      f.gsub! "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd", "oasis-open-4.2/docbookx.dtd", false
+      f.gsub! "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd", "oasis-open-4.5/docbookx.dtd", false
+    end
 
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build"

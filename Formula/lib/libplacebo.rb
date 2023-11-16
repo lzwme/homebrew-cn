@@ -4,6 +4,7 @@ class Libplacebo < Formula
   desc "Reusable library for GPU-accelerated image/video processing primitives"
   homepage "https://code.videolan.org/videolan/libplacebo"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://code.videolan.org/videolan/libplacebo.git", branch: "master"
 
   stable do
@@ -27,25 +28,25 @@ class Libplacebo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e1c42d1327983e90d82f4e077e8bf14c7afae01c95aae6113b7a3f371b9ac4bf"
-    sha256 cellar: :any,                 arm64_ventura:  "e6a5759fbca2ef6e6004b6a2b7e356d84061e8723559d0f56ecd0f46dd86f67f"
-    sha256 cellar: :any,                 arm64_monterey: "886b67b276e0c879a497b20826f8d5377cfefff60d88ecb5cb71816a53d40957"
-    sha256 cellar: :any,                 sonoma:         "d35b66c02f1933b3723b2531075aa6a28df8c18ba16fc4bf0067039970a7e2f1"
-    sha256 cellar: :any,                 ventura:        "88deccd1f3d40a6449b6f71467168d1e56c0a85c30e282042b610783aeaca4e1"
-    sha256 cellar: :any,                 monterey:       "820949127d8d376762ce0c3184e2a63ad85eb55da68b8bafb98ebd9a5a44bada"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f1fbe78408554a619163e3a09961d95cab0ce22b445ae47583b65edec9e44463"
+    sha256 cellar: :any, arm64_sonoma:   "577a51429582caf30d0d24247b1b626393bce79e73a0a49794d2dba8da7c90d6"
+    sha256 cellar: :any, arm64_ventura:  "2c55ed71dbbfba03e4c640f9983fe2f1efaf67277a7fc763251ed1c3c6a255e9"
+    sha256 cellar: :any, arm64_monterey: "ca90a437a9336825fe6a6e871d73d5281a34b4f7843a5159747f2d2352c5e7ff"
+    sha256 cellar: :any, sonoma:         "2c77c0e0ada6e5122f9ad19695e6ee58fa1e00047adb3e50a4f36c64fe8399ff"
+    sha256 cellar: :any, ventura:        "97dd7cf5f6e6e1e1f50204a0daa3ccf8786c7761d442d58cc1194e6edbacefb1"
+    sha256 cellar: :any, monterey:       "f947b0e79a977b544e1ecc38c7aa2af8ffa9f4011299c7a0bdc48fc863d83781"
+    sha256               x86_64_linux:   "e7fa0f3a2f564af33caf681ec0e871d75664191f8fa7f9e28641e7d1e9291897"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
+  depends_on "pkg-config" => :build
   depends_on "python-setuptools" => :build
   depends_on "python@3.12" => :build
   depends_on "vulkan-headers" => :build
 
-  depends_on "glslang"
   depends_on "little-cms2"
   depends_on "python-markupsafe"
-  depends_on "sdl2"
+  depends_on "shaderc"
   depends_on "vulkan-loader"
 
   def install
@@ -63,6 +64,7 @@ class Libplacebo < Formula
 
     system "meson", "setup", "build",
                     "-Dvulkan-registry=#{Formula["vulkan-headers"].share}/vulkan/registry/vk.xml",
+                    "-Dshaderc=enabled", "-Dvulkan=enabled", "-Dlcms=enabled",
                     *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"

@@ -9,20 +9,21 @@ class Ford < Formula
   head "https://github.com/Fortran-FOSS-Programmers/ford.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "648b7cf1a428b4b26c2f6aee8c92f9e43c578fadc2d1b591a9a0ef1bb8a5cf0a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "78040072594dce45d756a579a247d5883e20aeb04a8ae10267c831828ead820d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca0fb68832e29bc9f5229b33d6236799cbdfe894462866f343036ec301d9d859"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1faf40a41a2920746ed0f22e9a0a94a12fa015c80ad8a354414b4d1414cb6a39"
-    sha256 cellar: :any_skip_relocation, ventura:        "9e4867ea470c3361a518d112f3d7acef28e333ed9fc5f3a14069e509f7bb7187"
-    sha256 cellar: :any_skip_relocation, monterey:       "ab7755a1fbc17ba4cb84ee6b0886856bc56fdaeb0aba38ab08346dba72c411f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5ec15cd36d09753cf3625054a435e5256f970e934482ba8696184af430e063f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5dd00bf72012c671142bce586abb8dbc969c0a0def51c7a045247be28bcd9d24"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b72862ad18aa8b32d6a8427cb85077f4e8566f143aa61a350ae0e3532795de69"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d5db43c1af48d0dc3a7f7d76051080463116295eeeef9ebee71754b3998e43e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "baeb0427ce28c5f6908bfe5c5a5b9f0f6e16aee29052954deb5125137aa53406"
+    sha256 cellar: :any_skip_relocation, ventura:        "199529cac9ebcd22953a94872e2c1f61d3e62a7443557b25ab348dafb4a0287d"
+    sha256 cellar: :any_skip_relocation, monterey:       "16c45b13474c3230dee7070f114c052281bb35e91d8e8dc49030ec691169ce00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d21b465569559e889ef37a321d1f60338f205eba51d2c4ecd7646d7394f2e23c"
   end
 
   depends_on "graphviz"
   depends_on "pygments"
   depends_on "python-markdown"
   depends_on "python-markupsafe"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "beautifulsoup4" do
     url "https://files.pythonhosted.org/packages/af/0b/44c39cf3b18a9280950ad63a579ce395dda4c32193ee9da7ff0aed547094/beautifulsoup4-4.12.2.tar.gz"

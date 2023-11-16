@@ -7,8 +7,8 @@ class Dlib < Formula
   head "https://github.com/davisking/dlib.git", branch: "master"
 
   livecheck do
-    url :homepage
-    regex(/href=.*?dlib[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do

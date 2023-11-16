@@ -1969,6 +1969,7 @@ Homebrew-homebrew-core/Formula/g/geocode-glib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/geogram.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/geographiclib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/geoip.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/geoip2fast.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/geoipupdate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/geometry.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/geomview.rb, Homebrew/homebrew-core, 1
@@ -3945,6 +3946,7 @@ Homebrew-homebrew-core/Formula/m/millet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mimalloc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mimic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mimirtool.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/minder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minetest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mingw-w64.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/minica.rb, Homebrew/homebrew-core, 1
@@ -4677,6 +4679,7 @@ Homebrew-homebrew-core/Formula/p/pdf2djvu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pdf2image.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pdf2json.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pdf2svg.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pdfalyzer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pdfcpu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pdfcrack.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pdfgrep.rb, Homebrew/homebrew-core, 0
@@ -6606,6 +6609,7 @@ Homebrew-homebrew-core/Formula/w/wiremock-standalone.rb, Homebrew/homebrew-core,
 Homebrew-homebrew-core/Formula/w/wireshark.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wirouter_keyrec.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/with-readline.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/witness.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wla-dx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wllvm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wmctrl.rb, Homebrew/homebrew-core, 1
@@ -9446,6 +9450,7 @@ Homebrew-homebrew-cask/Casks/o/odbc-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/odrive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/offset-explorer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/ogdesign-eagle.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/ok-json.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oka-unarchiver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/okta-advanced-server-access.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/old-school-runescape.rb, Homebrew/homebrew-cask, 0

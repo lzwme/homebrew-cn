@@ -1,21 +1,19 @@
 class Buildifier < Formula
   desc "Format bazel BUILD files with a standard convention"
   homepage "https://github.com/bazelbuild/buildtools"
-  url "https://ghproxy.com/https://github.com/bazelbuild/buildtools/archive/refs/tags/v6.3.3.tar.gz"
-  sha256 "42968f9134ba2c75c03bb271bd7bb062afb7da449f9b913c96e5be4ce890030a"
+  url "https://ghproxy.com/https://github.com/bazelbuild/buildtools/archive/refs/tags/v6.4.0.tar.gz"
+  sha256 "05c3c3602d25aeda1e9dbc91d3b66e624c1f9fdadf273e5480b489e744ca7269"
   license "Apache-2.0"
   head "https://github.com/bazelbuild/buildtools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8b42897cbf09c84898ffe1904ad0b6b3b79bcb52e7c9c6ca32c9bcdc12ae3ba0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "589335bc64b8abb27ddc067d45997690d127e4d68ce65f6b9779aadec86b4740"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "589335bc64b8abb27ddc067d45997690d127e4d68ce65f6b9779aadec86b4740"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "589335bc64b8abb27ddc067d45997690d127e4d68ce65f6b9779aadec86b4740"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2ab0626f6f0de00aad10aa8dd3ecbfdeab1e7b953fc3e835c91dddd1ecd6fc8a"
-    sha256 cellar: :any_skip_relocation, ventura:        "bb31887f6435b72704f5796c18b37e2bca69d27421b1950b4e961401ec0f1760"
-    sha256 cellar: :any_skip_relocation, monterey:       "bb31887f6435b72704f5796c18b37e2bca69d27421b1950b4e961401ec0f1760"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bb31887f6435b72704f5796c18b37e2bca69d27421b1950b4e961401ec0f1760"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8037b227982aa454aaa4c574e76818a1ed4b702c82f0d363ee243db75482e1fb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "93aeee5ed1632e7bd4a47bb458840d709ce955aa73cae383700831881631fe8e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "93aeee5ed1632e7bd4a47bb458840d709ce955aa73cae383700831881631fe8e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "93aeee5ed1632e7bd4a47bb458840d709ce955aa73cae383700831881631fe8e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a0f5523dd4cbcad9221857faeb7277a2fad4cad2e42a7fba40b6d46b3eda5a73"
+    sha256 cellar: :any_skip_relocation, ventura:        "a0f5523dd4cbcad9221857faeb7277a2fad4cad2e42a7fba40b6d46b3eda5a73"
+    sha256 cellar: :any_skip_relocation, monterey:       "a0f5523dd4cbcad9221857faeb7277a2fad4cad2e42a7fba40b6d46b3eda5a73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e0a455de960b2b6ae0709b1aa9d32f0a0000edffe07534453a4deae653239ca"
   end
 
   depends_on "go" => :build

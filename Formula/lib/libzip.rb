@@ -35,8 +35,7 @@ class Libzip < Formula
     depends_on "openssl@3"
   end
 
-  conflicts_with "libtcod", "minizip-ng",
-    because: "libtcod, libzip and minizip-ng install a `zip.h` header"
+  conflicts_with "libtcod", because: "libtcod and libzip install a `zip.h` header"
 
   def install
     crypto_args = %w[

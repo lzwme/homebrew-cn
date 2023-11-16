@@ -11,7 +11,8 @@ class Src < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5cbfa8adeb53bfa81b0e81f53cf8f0f10231bc80ba9ffc80ad94432fe4c814fd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "1c15712ee9d5ae8af81b5b60634cd4d084fee0a666492cb0c447098654f5069c"
   end
 
   head do
@@ -19,8 +20,9 @@ class Src < Formula
     depends_on "asciidoc" => :build
   end
 
-  depends_on "python@3.11"
   depends_on "rcs"
+
+  uses_from_macos "python", since: :catalina
 
   def install
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog" if build.head?

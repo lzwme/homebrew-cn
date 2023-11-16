@@ -9,13 +9,14 @@ class CharmTools < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f1ebc5b1c207084871bc9f11f22cf93b616b140ef38800395e398f27467c9107"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5f4d454a9753150db3d2da0350501d5d8190bea6e4611220ba65c3dca7aac641"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6da039dc61724448b5bffda814bcd32b872e86f32143af2df1b59d9ca8ed589c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "daf9154a22e33ef1b70056e40f0a311525fbc3f901c62993057cbaebc8925d82"
-    sha256 cellar: :any_skip_relocation, ventura:        "8e1c900c882b34a24a10dba1827b0310380975593d7e90b844a7e944fc4ce6fa"
-    sha256 cellar: :any_skip_relocation, monterey:       "816b3c27b9c10ec017caac8814b5a5da70cdd7ba7bcc0ba57a0f920494425f6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6f3c479f1cba585352d03fe957840f68bfbeccf45d63a20cdfb72e666a79208"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "13eac8c5ca598352ad4e8b7bde20521ddea8196a62d1183c8d35ee71cbba5ea5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "03a1248c9dbfb2537e15770a758c21dc8d115295ca70218843c7eba723865bd6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ceafd902cb1523a7ec7e85282edfe9dda907e61f0e3e24b1cb570f8d4331df4d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "12afb595c383543bbb805918ed713926e93a8416bada1d25e15b00fad48190e5"
+    sha256 cellar: :any_skip_relocation, ventura:        "68a83c3a10314ea90038e91020c194a220d3ff9ebd196dfc6b568b0685d13620"
+    sha256 cellar: :any_skip_relocation, monterey:       "691ce11a635a6a729fd33f5e02f453590ac24892e5195f7d912972fa5892c629"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "307e005d33b2506485b986b8647de4b7937ed76f31f014efa6e9caa3b11b6670"
   end
 
   # `pkg-config` and `rust` are for `rpds-py`
@@ -26,7 +27,7 @@ class CharmTools < Formula
   depends_on "libyaml"
   depends_on "python-certifi"
   depends_on "python-cryptography"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 

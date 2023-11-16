@@ -3,19 +3,19 @@ class Mentat < Formula
 
   desc "Coding assistant that leverages GPT-4 to write code"
   homepage "https://www.mentat.ai"
-  url "https://files.pythonhosted.org/packages/09/96/d2bd94212d6a8724da1c1a06ccb35c91a30b9d62715346e1a7e0d14b2f07/mentat-0.1.20.tar.gz"
-  sha256 "b24b142dd9ff1cb5858b1a517dea4af38d610d16113abc27b0f48e3fb6d4b264"
+  url "https://files.pythonhosted.org/packages/60/10/35e95a04333ce58c5db0c645f776aa49361676957b03e2cf3edc9799dd54/mentat-1.0.2.tar.gz"
+  sha256 "afead6c532cbe20d6a2637dea7d51fe337736782127a7a2736ae24f4ffed3ef9"
   license "Apache-2.0"
   head "https://github.com/AbanteAI/mentat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d59eee68963afc1ce4821204e5cc0e50938f20a012a99672ad6c9d1e2c547cf8"
-    sha256 cellar: :any,                 arm64_ventura:  "a01d5ca8d9fbb0255b8f58a9785cc4b391a1081ff6f07ca7ce13a574c3ff4136"
-    sha256 cellar: :any,                 arm64_monterey: "8f5b6c3b9efabbfc6b6d53b908c9b1b17c8169d46671aca88d85f08bc4b64d67"
-    sha256 cellar: :any,                 sonoma:         "e60f36f9cea27da0987aa0186616231db5a5129d48e4237fbcc6c950665a087a"
-    sha256 cellar: :any,                 ventura:        "1a027669801b0799ce5eb66999b8cffd1166e6c369bf06f7c2338b8daed5612b"
-    sha256 cellar: :any,                 monterey:       "cf60a1dda85a23a426c9375baa5f5847a6ad36da4647c7331ab63d1a03b57311"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8399135fea5df57c7a180a46b556019abddcbcf35d440ef47a6a583c9f8d16a7"
+    sha256 cellar: :any,                 arm64_sonoma:   "455d1da04a157a27c80f3e6531cec4d0119c5c2872c4d12731386d6d53c25d1a"
+    sha256 cellar: :any,                 arm64_ventura:  "0d697b5da7e845b5a7dfd7ab3acbd7fcd7f2ba6cf388c65c8ac8dc01b84a2534"
+    sha256 cellar: :any,                 arm64_monterey: "9515e21534026fef68a19b5fe57805b2bf273c9d6db7d62814315ef468838657"
+    sha256 cellar: :any,                 sonoma:         "4ce356a112c9708271b68b4c0a6e9d54b014be5bab0a595aeb414a16f5bced35"
+    sha256 cellar: :any,                 ventura:        "1df7895025d3f90ff51627a0f8f9a712d4f521a7226d99f6d3d17352d5b9914b"
+    sha256 cellar: :any,                 monterey:       "e71c1303df4481eea9feffd251a449fd4b1eb00d6a4c52a46ceb0d88c147add9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb47053425280c3d7209733d259979e557e7638de713838c851a0d112dd5cdaa"
   end
 
   depends_on "rust" => :build # for tiktoken
@@ -132,6 +132,11 @@ class Mentat < Formula
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
+  resource "sentry-sdk" do
+    url "https://files.pythonhosted.org/packages/00/e5/cf944fd98a68dcde5567949061322577200222d4a897a471e8eaafdbaed4/sentry-sdk-1.34.0.tar.gz"
+    sha256 "e5d0d2b25931d88fa10986da59d941ac6037f742ab6ff2fce4143a27981d60c3"
+  end
+
   resource "termcolor" do
     url "https://files.pythonhosted.org/packages/b8/85/147a0529b4e80b6b9d021ca8db3a820fcac53ec7374b87073d004aaf444c/termcolor-2.3.0.tar.gz"
     sha256 "b5b08f68937f138fe92f6c089b99f1e2da0ae56c52b78bf7075fd95420fd9a5a"
@@ -148,13 +153,13 @@ class Mentat < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
+    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/a6/ad/428bc4ff924e66365c96994873e09a17bb5e8a1228be6e8d185bc2a11de9/wcwidth-0.2.9.tar.gz"
-    sha256 "a675d1a4a2d24ef67096a04b85b02deeecd8e226f57b5e3a72dbb9ed99d27da8"
+    url "https://files.pythonhosted.org/packages/2e/1c/21f2379555bba50b54e5a965d9274602fe2bada4778343d5385840f7ac34/wcwidth-0.2.10.tar.gz"
+    sha256 "390c7454101092a6a5e43baad8f83de615463af459201709556b6e4b1c861f97"
   end
 
   resource "yarl" do

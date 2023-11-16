@@ -1,10 +1,9 @@
 class HppFcl < Formula
   desc "Extension of the Flexible Collision Library"
   homepage "https://github.com/humanoid-path-planner/hpp-fcl"
-  url "https://ghproxy.com/https://github.com/humanoid-path-planner/hpp-fcl/releases/download/v2.3.6/hpp-fcl-2.3.6.tar.gz"
-  sha256 "17b7aa65d942168b44ca4ad17be28454aef50729867034021d7789a122dce6a7"
+  url "https://ghproxy.com/https://github.com/humanoid-path-planner/hpp-fcl/releases/download/v2.3.7/hpp-fcl-2.3.7.tar.gz"
+  sha256 "b5588c0661bd90a979ad98984cdbf9f5af57a983f1354bc375fd1966d633735d"
   license "BSD-2-Clause"
-  revision 2
   head "https://github.com/humanoid-path-planner/hpp-fcl.git", branch: "devel"
 
   livecheck do
@@ -13,13 +12,13 @@ class HppFcl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a030f08255136350398ed06336eefb9a5c8a7d24fe9539b864177d68fc11750f"
-    sha256 cellar: :any,                 arm64_ventura:  "4ef0d5dad3f138a75fa4e06554f5c4e0f6d936dd990f0376c9eedfd854c32260"
-    sha256 cellar: :any,                 arm64_monterey: "c5e998f3c21652bd42b98ea5293fc4b355d83df3200d4a93a7af837164ef9e3d"
-    sha256 cellar: :any,                 sonoma:         "d216a424bfadb9bd09e8bcef93d802a1828768495c4e3ae94bc8e2333c83a656"
-    sha256 cellar: :any,                 ventura:        "cc851918c433dfff3f80a064c70fedd84d919b9e8ce1d7f3fdd19dd984a4fc78"
-    sha256 cellar: :any,                 monterey:       "b4fba46c4fd8964167ab3b1044a649f2accc4e464c2ab07ae46a861edad0e655"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1edaca5f2ade555d073d9f021aa52b8695cc934dc53aad5e6d20e73a88609334"
+    sha256 cellar: :any,                 arm64_sonoma:   "feb06516fceb864aa2304a458c338fcc531a50e5d37d64215b9da05d2768fea3"
+    sha256 cellar: :any,                 arm64_ventura:  "9400b37145376ce4ea6d0b9c72c3553ad9828acd01d0916c6779a82efaa4b2c1"
+    sha256 cellar: :any,                 arm64_monterey: "c0f0e531f17bb570142e8978a4c3eef4b2e8b124b5400e3a879e6dd97ac2713a"
+    sha256 cellar: :any,                 sonoma:         "981a2ac4fb05b9daf9694eea24e7eeea0b601f6164500c5a2736c31de054d98e"
+    sha256 cellar: :any,                 ventura:        "0a89115eec46949ba4555bef15a4a90831a32f7a7d159b9b1c27a1a87441a6e7"
+    sha256 cellar: :any,                 monterey:       "1e5afe36aa0fca4b639e6f397bfa1c3805e0408dfc4ea5be6863f196f4371e6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26feb8ce19155bc385848421563e1e1394d2b5242d6a5dc2660da4c3caad4ba5"
   end
 
   depends_on "cmake" => :build

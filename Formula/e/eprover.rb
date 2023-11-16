@@ -1,8 +1,8 @@
 class Eprover < Formula
   desc "Theorem prover for full first-order logic with equality"
   homepage "https://eprover.org/"
-  url "https://wwwlehre.dhbw-stuttgart.de/~sschulz/WORK/E_DOWNLOAD/V_2.6/E.tgz"
-  sha256 "aa1f3deaa229151e60d607560301a46cd24b06a51009e0a9ba86071e40d73edd"
+  url "https://wwwlehre.dhbw-stuttgart.de/~sschulz/WORK/E_DOWNLOAD/V_3.0/E.tgz"
+  sha256 "8a7b229eb8aa4ef1dfd14951f51d6229fb19c431bf56c31b46ea361402fccdf9"
   license any_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   livecheck do
@@ -11,17 +11,13 @@ class Eprover < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "00f72e1343bbd0500616967a713ec1a6069abdf982c01a3754539c165638686d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "933c3244099f0d7631bc4b5fff2ff790686d3fd8519448118d80a57664133984"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f2df4ffe6c58bfdbd59c96e662f1ca66a91f5f26b21b8de2cbf6e36368443f4c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6c5b3ef3fe7c4d8a83d6bc36414cc31a75ee9ec0444e8bc3a53ad9c0e398d388"
-    sha256 cellar: :any_skip_relocation, sonoma:         "90de544bd2613abe310df52da1fef3562e281f467ecc49cc0bbfb7e409901e2b"
-    sha256 cellar: :any_skip_relocation, ventura:        "fa5c8ccf21c2651c3e5ce3ee03cd4b02bfd17e2f6d4a4cd7d84f27a0eb86fa8b"
-    sha256 cellar: :any_skip_relocation, monterey:       "d43e11494bbb94729f103b7680e258d98397954b26ec1ee876c7600f6433ea37"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5ca253b65f824844b7238c6a48870d62aa7c59759b30caaaf297019dddb1546f"
-    sha256 cellar: :any_skip_relocation, catalina:       "fdad068ad22a703c18f58502d91a24fa16ba2fce017b0f39b9145583930b19c2"
-    sha256 cellar: :any_skip_relocation, mojave:         "2d9b6284695c33af156b99e32026eb934a889ffa0d8891cb1f7f49a8a1b72942"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5038a0c14455835be07e268a78233512aed9ecc0cfcb22bb0041c533d58cdbe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d27b54edf4fcfcb678c7948e0c90615ccbe4e04b909beada2bc26459ff88b8c9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "82bbeb6a99ad2ee81a87d6d4c6414ee0e61890941da6f26a831536d10f84e91d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e5d6e193b7558437cd79dae86094d573214f90257345b956ac0d8ada5d9e9eba"
+    sha256 cellar: :any_skip_relocation, sonoma:         "072889b72ea3087de5e169ea8d6e5cd6eb92f1fda102dd6f2d7950d1b4c8a345"
+    sha256 cellar: :any_skip_relocation, ventura:        "9761629088a3cca1a04dcb66a609e3e66ac17779f6bae56a922867cfbf3f7900"
+    sha256 cellar: :any_skip_relocation, monterey:       "f120fb627a57eb9371c89f7054c103af01dc945e3da850ad0931d47e347a7f46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0176c21e2abc754a765a859b5ba22db9393bd5590293a08bb94e3612747ca557"
   end
 
   def install

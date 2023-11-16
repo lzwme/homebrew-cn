@@ -4,7 +4,7 @@ class Openimageio < Formula
   url "https://ghproxy.com/https://github.com/OpenImageIO/oiio/archive/refs/tags/v2.5.5.0.tar.gz"
   sha256 "8c0de6cd8cfc8aeb696e9cf4fbd067c8c1d9fc22a3b7b81dfeda857ab526b1c8"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/OpenImageIO/oiio.git", branch: "master"
 
   livecheck do
@@ -14,12 +14,13 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5bc50ecc00e508035179efdf99f4550044b1ca58800df29baf0cc86113932acb"
-    sha256 cellar: :any,                 arm64_ventura:  "ad7eb56c578887dcdafcb6df3a1f3f0e03a52dbbe49cd6a6a7825fc13fd9909a"
-    sha256 cellar: :any,                 arm64_monterey: "16fcf53d1b090f36ae67d613be0a3b223067ac516032d8be56cf7084552fbfbb"
-    sha256 cellar: :any,                 ventura:        "04938386c0bd68638fde3c61e0d7d606c6b2d8b9d82171c00f78c81598c842da"
-    sha256 cellar: :any,                 monterey:       "6f8df5f7e2a446796c882706254117a8ad431a94a23a83ebe764694c4ee92b9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "544d0933b27872688b0525bf7f41e5c1bc8a1c322c15ddf5a2f265cfbb82504b"
+    sha256 cellar: :any,                 arm64_sonoma:   "dc6a6da12c742f90f6aff0ff6845d3ee32de6f7757999017dc287387b686edf1"
+    sha256 cellar: :any,                 arm64_ventura:  "8b407810bea37c8fcf647a292a658bc115b840cf7f6c9df4c675da0b0d0e5f31"
+    sha256 cellar: :any,                 arm64_monterey: "31e2e7490f02ddb8c5d6ddf8685d63078d7cb96e40476c44a943de545fde57d7"
+    sha256 cellar: :any,                 sonoma:         "6fa1c1c6e58afb55e5a341761afd2646bda610764c3217e226bec639faa4933d"
+    sha256 cellar: :any,                 ventura:        "a5e5bd28663996e9ada692f656128b7eeb03f213020829b7951aafeb0119c0b8"
+    sha256 cellar: :any,                 monterey:       "2a6f6e6f85e51d0e4aa171115332601870cdf9780c04c4406c777235c5f2ebe0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31e1df2db35abca64701c4e49a2a55cb113074c6f98f5bdca94094b3f3c464ce"
   end
 
   depends_on "cmake" => :build

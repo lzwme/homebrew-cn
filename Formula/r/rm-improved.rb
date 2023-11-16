@@ -37,11 +37,11 @@ class RmImproved < Formula
     deleted_file = Pathname.new File.join(trash, source_file)
     touch source_file
 
-    system bin/"rip", source_file
+    system "#{bin}/rip", source_file
     assert_match deleted_file.to_s, shell_output("#{bin}/rip -s")
     assert_predicate deleted_file, :exist?
 
-    system bin/"rip", "-u", deleted_file
+    system "#{bin}/rip", "-u", deleted_file
     assert_predicate source_file, :exist?
   end
 end

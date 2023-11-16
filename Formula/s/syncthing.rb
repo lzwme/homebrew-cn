@@ -1,8 +1,8 @@
 class Syncthing < Formula
   desc "Open source continuous file synchronization application"
   homepage "https://syncthing.net/"
-  url "https://ghproxy.com/https://github.com/syncthing/syncthing/archive/refs/tags/v1.26.0.tar.gz"
-  sha256 "d454be5e6e0aa8fa86817c46c0a80685027f9bee6ca5000292ea4ad4115fed67"
+  url "https://ghproxy.com/https://github.com/syncthing/syncthing/archive/refs/tags/v1.26.1.tar.gz"
+  sha256 "fcb6933f0e6cd3825f40f59986ab19a1a9fdd3f1a65c0fad935c71a32bc441d5"
   license "MPL-2.0"
   head "https://github.com/syncthing/syncthing.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Syncthing < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f490f0768d2c4ee627f917c954842b8dfba0912b07c5a2bbe18cc36ca323a4bd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d40fea0b5f896903108fee0cbba90a5204717a02d17f9ffb2813b964bab339c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "56251c6bace319f550c4662750db98f27309d67aef0c4f4a8def8556c7144349"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f083eeb91087cfdb7168f366e1c8832cf78e28a54c730fc0bd027e366d01890d"
-    sha256 cellar: :any_skip_relocation, ventura:        "ec5ee9507f578549441dee643017b68ac48000730d56e8b9dbbed7431c10c2e1"
-    sha256 cellar: :any_skip_relocation, monterey:       "14b0bf24aea80e1b43ef9939bd44a9e469ccdd59fdce20d6a76510750bafafa2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40d36a327c3ee7a7df603183b98e37cc93f461ccd54c93aa0c5f41ba66000eec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fdba5836720109736974b0c73dedaf831b70a24c4debc7bb372886c65d3b4e94"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d82d57eed76d5c17bd55231113a00af6d3713fbe04060463271d1dbfd1b2147b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a73aade83688633e18ff63b2276b3f40c84818bed8c198ac98373f508b45ee98"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0e6aee91c925d0b170aaac3b843f7337aa4c4702ee2a04cc97f28b7399c75ed2"
+    sha256 cellar: :any_skip_relocation, ventura:        "abadf28ba9312f3cddf05e4d8c80f912ac1fb74261b0dce23ce322d045ab2118"
+    sha256 cellar: :any_skip_relocation, monterey:       "358d1371af1facde12235f1776a2c8d1e9bd4efa6932c46da9e5fd5976bd495a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c50fd96f48e108628156793af03e7e33164f4e51553913cd148903f213e00d0"
   end
 
   depends_on "go" => :build

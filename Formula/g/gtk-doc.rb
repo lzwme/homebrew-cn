@@ -16,14 +16,14 @@ class GtkDoc < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3afb405fa87b3a9f5941a309df3324f321a90bb24fbd7dfb77b167eaa935d3b4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b91f5788ff06df5f60b16c7605fad3b8a5d79bee26acaa2b19e68d53074ea2b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0c9fc2e3043e496c91d493bfeb63674084755a36e16dc92e4aac61084cd0cc97"
-    sha256 cellar: :any_skip_relocation, sonoma:         "485eada6f6e9cb02f341b9e6cb8a56c04f89b91c999032c33e943775ec837cc8"
-    sha256 cellar: :any_skip_relocation, ventura:        "ed131246acbddedd184a939ff78a612cb868611f532eeeb7a4ff94bd11f16db8"
-    sha256 cellar: :any_skip_relocation, monterey:       "ff95b1fdc87a87444d779daf595a0dec88ac906baa04683d41fc171f4b09a183"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05966d470e6ec9eb3ae8a08f0fc3117f4036e952308b52f717f57121feb9b2f4"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b4e1506fd994f382eb7ee00efee0745d75e8874784a90ebc393c23b430f7cfdb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1041ba8b732f965dc41eec98ee229e376f967527bcddf52538a3088eabf92db7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a8faba080b682669a47015ab5b6606c6528210fad30e60cd22949f23de6cc21f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ceb949f591965436723ecdaecbcce8279a8a878d9a7928d14a785c93a1d637ba"
+    sha256 cellar: :any_skip_relocation, ventura:        "ca5b1b876cb87c764efd6d60ff6cc654fabdf0742307a22e223cb89e3fe13761"
+    sha256 cellar: :any_skip_relocation, monterey:       "ae8a5b119ff95163e74fa4b930fbff6ff2446749d09209c0b7d1cf17b38d5971"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83bf5530fd27c2f92f22ec0c710af8a47cd56ad559d6b3e4f32141f2323aed2e"
   end
 
   depends_on "meson" => :build
@@ -33,7 +33,7 @@ class GtkDoc < Formula
   depends_on "docbook-xsl"
   depends_on "pygments"
   depends_on "python-lxml"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six" # for anytree
 
   resource "anytree" do
@@ -45,7 +45,7 @@ class GtkDoc < Formula
     # To avoid recording pkg-config shims path
     ENV.prepend_path "PATH", Formula["pkg-config"].bin
 
-    venv = virtualenv_create(libexec, "python3.11")
+    venv = virtualenv_create(libexec, "python3.12")
     venv.pip_install resources
     ENV.prepend_path "PATH", libexec/"bin"
 

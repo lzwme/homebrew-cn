@@ -9,13 +9,14 @@ class Pipx < Formula
   head "https://github.com/pypa/pipx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "debeab71ad334251712228fa2040f9b2098b8cecd15ceccfeb0d711dd2f049c0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6d1974f6b6a99e2ac4e0a78382aadefdc8e4caaca2936923ce89058c9bc311d0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f4318481332018a8a2fa78d127df329743cbd54b8ce73eeb5d0e78c28326dda5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4711d69030c0a6aa90cd95e013dfc11a47399a37d57d7e6ab414a6f96648503b"
-    sha256 cellar: :any_skip_relocation, ventura:        "66c838eb9adca857b9678a577f76daaf5f7dcb91acb064286bff1d0a42623a6f"
-    sha256 cellar: :any_skip_relocation, monterey:       "1715d6c22088a7b18dda60d6bc9a79e817f6c5adbd7ee97c855d155417cd359e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e804f64ddeb976d60f39efd2fb5ea8a3e921ce4585f0b50e6bf0f0dc5b56f9b3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9c251e061f562598efd8fb642a6fb54d0006f4dda3f303653d7ed3de56934c3e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "39685c5ea5a709516d11217daf53256a1c65dec3f489047ea22c9815751c05f2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b9ccd7f5991fb704e7fe748cebdeea5725c40ba488e3f7135c021ae0b042d56"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d2b007633eac75ff0a3d4422774d959ea52f730190d6f63a04c4defb54176a4b"
+    sha256 cellar: :any_skip_relocation, ventura:        "51d1c73eac458262a27c2c90dd0b07f68ffb52d53b5d53927c0ca451955632ed"
+    sha256 cellar: :any_skip_relocation, monterey:       "ccd050e76a2f9bf90458c17ad50c269e0465f67bb3be26f2dd82638789ae0b1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40a91a9140f14d59863121e043c963325a4aee2f03adb50f8b40352a39fa9dd0"
   end
 
   depends_on "python-argcomplete"
@@ -32,7 +33,17 @@ class Pipx < Formula
     sha256 "ce8176728d98c914b6401781bf3b23fccd968d1647539c8788c7010375e02796"
   end
 
+  def python3
+    deps.map(&:to_formula)
+        .find { |f| f.name.start_with?("python@") }
+  end
+
   def install
+    # Avoid Cellar path reference, which is only good for one version.
+    inreplace "src/pipx/interpreter.py",
+              "DEFAULT_PYTHON = _get_sys_executable()",
+              "DEFAULT_PYTHON = '#{python3.opt_libexec/"bin/python"}'"
+
     virtualenv_install_with_resources
 
     register_argcomplete = Formula["python-argcomplete"].opt_bin/"register-python-argcomplete"
