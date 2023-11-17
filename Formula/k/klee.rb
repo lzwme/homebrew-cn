@@ -6,23 +6,23 @@ class Klee < Formula
   url "https://ghproxy.com/https://github.com/klee/klee/archive/refs/tags/v3.0.tar.gz"
   sha256 "204ebf0cb739886f574b1190b04fa9ed9088770c0634984782e9633d1aa4bdc9"
   license "NCSA"
+  revision 1
   head "https://github.com/klee/klee.git", branch: "master"
 
   bottle do
-    sha256 arm64_ventura:  "b5f061339b7061a9d44a038e09a9d71579af070590f216bd38a0d312bb34e00f"
-    sha256 arm64_monterey: "75864bddc2c44e63bb721c69c461a694e9614448861bfff69c2ca3de8196a58e"
-    sha256 arm64_big_sur:  "c2c7664241661c67dfadffe0eebb62bc1caea059215367f45c22e7fe20f3b95b"
-    sha256 ventura:        "fb9816be6391e114836380c3550fe7518600d3eff2b16bfc69d1e7053e8060d4"
-    sha256 monterey:       "8b578e55bb14346578ebfb852e4cf6dfdf3f717b941e16a0062a7204b46f91b5"
-    sha256 big_sur:        "407ae407ca05e578ec4e13c3134b1e88f0b99a89af75a803746a99a3af768f70"
-    sha256 x86_64_linux:   "06ceef2504cd321af3e2f428bd6e7098341608b53165d3d7ae2f0ab16c849e66"
+    sha256 arm64_ventura:  "dca27b1bf29fd452ed22a13630e057c995f6b2c803a9a3b1e0465e33e71e7ff6"
+    sha256 arm64_monterey: "cc3fee3a318ca3899bc092e2fb8d54f89cd89df827dc301315452e255594e0c3"
+    sha256 ventura:        "23b79adbc30a317df0832aff2054433a8c7954514168ef90c937fc54de3c4e37"
+    sha256 monterey:       "4430bc699a8b540955c6555ab10592a212ad2f395e26905a90d5dc5c129ff127"
+    sha256 x86_64_linux:   "93949378eb98df17b78cc7c2e5f0607e7033dafc09e669841026f9130a96d87c"
   end
 
   depends_on "cmake" => :build
+  depends_on "python-setuptools" => :build
   depends_on "gperftools"
   depends_on "llvm@14"
   depends_on "python-tabulate"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "sqlite"
   depends_on "stp"
   depends_on "wllvm"

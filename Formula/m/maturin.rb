@@ -1,20 +1,19 @@
 class Maturin < Formula
   desc "Build and publish Rust crates as Python packages"
   homepage "https://github.com/PyO3/maturin"
-  url "https://ghproxy.com/https://github.com/PyO3/maturin/archive/refs/tags/v1.3.1.tar.gz"
-  sha256 "9e4f6cf2b5127103042d7319e9cbeee3df5b429c3c29b930fd360cbf8da84828"
+  url "https://ghproxy.com/https://github.com/PyO3/maturin/archive/refs/tags/v1.3.2.tar.gz"
+  sha256 "4506920ebe88401de129b5d5579c433ba0702192aa0e0537f97520d3719c4d2c"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 1
   head "https://github.com/PyO3/maturin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0d223db2b214366ed6f35f44aaa0ecb09b814cca08469eabcbc4597862a375cd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3224e0f21bc8b045d8921ecaf156433dd30bfdbf437de1cd9e7490c15b31747"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "53e6a2c3ae745df6c69d1d736ee43142020d170771f1a5b9d61bcf84800078c3"
-    sha256 cellar: :any,                 sonoma:         "c09056f41f176e1a7b80971c5f754c7be18e368cab6ddc2ac24c50206bb6e66a"
-    sha256 cellar: :any_skip_relocation, ventura:        "1556e7b56f062c8091829ee73134ccae258efd875b0a0a6dfeb6b2a72207b9cc"
-    sha256 cellar: :any_skip_relocation, monterey:       "fd6e77c547732b200d4d8e6f053cf0efd976bb46098d4ea01f904e5526b74727"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6844f259b9c0cdc45c384dfcc70e54f34284635117a44814ba52315cc8f6a21"
+    sha256 cellar: :any,                 arm64_sonoma:   "7bdbfd174fa1572f9ab360c8a38aedba4bc2aa1e653d068002c653301d7eccf8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8bd5208acfbe86f8e05044fa22bed6cef0727158d418c63c8e18511945904b4d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5e46fa52cf95fbeae78f795cc19abd23c36e30f1efc1261351a54c9313ea1eee"
+    sha256 cellar: :any,                 sonoma:         "e8bfc615d80fdb97f53ef7f97b48739ba709a975d8fdaf5f95f8a1e545c96d24"
+    sha256 cellar: :any_skip_relocation, ventura:        "c5aed950054a89f615ff4b19b51f5c0c1298d75c5d9bf20d90c3452bddc98464"
+    sha256 cellar: :any_skip_relocation, monterey:       "5e6d9537322923af9bd8087c36ebf92d35f771280c19a412a53b2a9f627f6926"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c63ffadc624a3d60e5d609da31b39f011feec90905096304e14ce60381da9586"
   end
 
   depends_on "python-flit-core" => :build

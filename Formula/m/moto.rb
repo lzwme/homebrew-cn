@@ -3,18 +3,18 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/7f/1a/3707521f422178c44f93f5dd145ecdc096e7348a453fe7dd06588912ef54/moto-4.2.8.tar.gz"
-  sha256 "9b5a363f36f8c3fb36388764e7b8c01c615da2f2cba7da3e681680de14bfc769"
+  url "https://files.pythonhosted.org/packages/0a/d6/b1614a8f6009275af0f6a5845613fcb5891058c059df4e285ae4d37bedd2/moto-4.2.9.tar.gz"
+  sha256 "24de81eeaa450a20b57c5cdf9a757ea5216bddc7db798e335d2de1f2376bf324"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a4c44e5fd077e9f9ebde8bd66d0d4bfa706e6152edf51be1ccad4ceca4b987af"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c46896b163b44247aa8fde1d170ee9c57f2a310f2ee2ec98deba26d8f2284d39"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7faffe477f9f455a511013fb64769faa80cda42a0db5a266a98e07e884f1a0e5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "545b30f73d16031d4893b1af12261ab70211a92136858feda6b5c6f2d94d3fea"
-    sha256 cellar: :any_skip_relocation, ventura:        "fbff4eb22af0e4f8c5032292a0d1dc605dbcda314df4dfacf3d0bc893082b829"
-    sha256 cellar: :any_skip_relocation, monterey:       "26f598a5544d8829b332e08389f1488e9d6593f4bc9910111d139174a1908d0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db11746e25b93c7a41089cdf92490a769f553d6911cadd184faa5ca39cc05109"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "39b38995cd17655553fff0e11e083fd3877901e09d0a8ce7b0fd51fd68ed91a9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae3362b73e842b28d65ffeaf5405227a7da141a4deecafbbc0917d6604fa0b33"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0cf9707bca646f3757aacc34a348709a9c5dd312a55ca7045053dafc8bf72d89"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b71e31844fab5a85b5a77293ee1d53bc148cea5e184aa849bea161acdfdcfe60"
+    sha256 cellar: :any_skip_relocation, ventura:        "087e87731d4dbe272ce6fb6e32498a4409973444bd5c5c3984bae48485c2e526"
+    sha256 cellar: :any_skip_relocation, monterey:       "c3a045015eea70b6a5ea184c5a2f32a02f718f0672d1223c0e07f41c854b6bde"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b559217fc836a60c581ad62613dfc0eb958943b81933f2ce5165a2b2e381c05"
   end
 
   depends_on "cffi"
@@ -92,8 +92,8 @@ class Moto < Formula
   end
 
   resource "jsonschema-path" do
-    url "https://files.pythonhosted.org/packages/92/91/fbdab127309e70d60945ebec5ada96f5b2ff3c7f06011217d4e5eb6c56bf/jsonschema_path-0.3.1.tar.gz"
-    sha256 "07ea584b5c9b41a614b4d011c5575955676f48d0abbfd93d9ea8e933018d716d"
+    url "https://files.pythonhosted.org/packages/6d/17/47bf2da4582a6d35a1254bc058258835a452698f97dade2ce9ed3dabd512/jsonschema_path-0.3.2.tar.gz"
+    sha256 "4d0dababf341e36e9b91a5fb2a3e3fd300b0150e7fe88df4e55cc8253c5a3989"
   end
 
   resource "lazy-object-proxy" do
@@ -142,8 +142,8 @@ class Moto < Formula
   end
 
   resource "responses" do
-    url "https://files.pythonhosted.org/packages/72/7b/3730ec729b4e7302aeb7bf552be2f4dc927d2a2345a6f5fb22db692f908c/responses-0.24.0.tar.gz"
-    sha256 "3df82f7d4dcd3e5f61498181aadb4381f291da25c7506c47fe8cb68ce29203e7"
+    url "https://files.pythonhosted.org/packages/a0/c5/2f4f243e9b9ddb2fa70d696fb66daafd8fde20c9663a4a22c6a02d61bd97/responses-0.24.1.tar.gz"
+    sha256 "b127c6ca3f8df0eb9cc82fd93109a3007a86acb24871834c47b77765152ecf8c"
   end
 
   resource "rfc3339-validator" do

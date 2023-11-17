@@ -64,7 +64,7 @@ class Build2 < Formula
     # Note that while Homebrew's clang wrapper will strip any optimization
     # options, we still want to pass them since they will also be included
     # into the ~host and ~build2 configurations that will be used to build
-    # built-time dependencies and build system modules, respectively, when
+    # build-time dependencies and build system modules, respectively, when
     # the user uses actual clang.
     system "build2/build2/b-boot", "-V",
            "config.cxx=#{ENV.cxx}",

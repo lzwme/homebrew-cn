@@ -15,6 +15,8 @@ class Darcs < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee3f9ad7d74ba60c4f75fea414168304c2bd7d3dbe9c6ee0ca249a7d10703740"
   end
 
+  deprecate! date: "2023-11-16", because: "depends on GHC 8.10 to build"
+
   depends_on "cabal-install" => :build
   depends_on "ghc@8.10" => :build # GHC 9.2 open patch: http://bugs.darcs.net/patch2244
   depends_on "gmp"

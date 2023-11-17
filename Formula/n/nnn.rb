@@ -7,14 +7,14 @@ class Nnn < Formula
   head "https://github.com/jarun/nnn.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "c8743d31f512639a6424da5c9f37fbfd2c7cb3de66eddba2d697abac4cefc953"
-    sha256 cellar: :any,                 arm64_ventura:  "5f13d617bef10862e45d3a1234a9fb515cb91f665286620b739c1a270830ce5c"
-    sha256 cellar: :any,                 arm64_monterey: "b1898d5e9926e2645a017442cfa66fc3a8b6a0814fc18bdbf7a70f561c2552f4"
-    sha256 cellar: :any,                 sonoma:         "6426f4ac716e4203e1dc6cea5018af7f7bc1225dfc602c19fc6af9a7ce2f09de"
-    sha256 cellar: :any,                 ventura:        "f55965fd3c847e11d74e902214a509456e1c940c9d37a6ccd78f15ca1cb5128d"
-    sha256 cellar: :any,                 monterey:       "31de38134834caa63a2a27d42c0945a97ae13f3f7ca153fae61be4f0f7c3d724"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "503611604b9999f9f9ed73db027403b4ee20f5039c8278e99f47bdd23c9c291c"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "e95d6dabf1c2978ce3b79af2367b1e8ff807004407ca2f5f8213388da8b10057"
+    sha256 cellar: :any,                 arm64_ventura:  "319f05996936a704db7db659cd48932954f64bf9778d9ec6c84d54560d101310"
+    sha256 cellar: :any,                 arm64_monterey: "732cbc35409a1978427871bfc7d1779bde7de7e200b923e91a851bfeb559e858"
+    sha256 cellar: :any,                 sonoma:         "58ba8428aa041974ae10c6c55ab19ef58de94184a9635672f04c50cde56f7d08"
+    sha256 cellar: :any,                 ventura:        "da8e698ff9288e4c5eacc7008edb7d5d30338ff28cad6828c01c42a728be1d5b"
+    sha256 cellar: :any,                 monterey:       "2c8f93e2a63d06cf6182bb2cb88cef079cf3bf5d3ec61355c6c6690595fe3903"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd28af47ecbf2a496af613441d751d4b491a111d56a8511a4a7719138b4debdc"
   end
 
   depends_on "gnu-sed"
@@ -23,10 +23,9 @@ class Nnn < Formula
 
   def install
     args = %w[
-      O_EMOJI=1
       O_NERD=1
-      O_ICONS=1
     ]
+    # args: choose one of O_NERD/O_EMOJI/O_ICONS
 
     system "make", "install", "PREFIX=#{prefix}", *args
 

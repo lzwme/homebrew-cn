@@ -1,19 +1,19 @@
 class Legitify < Formula
   desc "Tool to detect/remediate misconfig and security risks of GitHub/GitLab assets"
   homepage "https://legitify.dev/"
-  url "https://ghproxy.com/https://github.com/Legit-Labs/legitify/archive/refs/tags/v1.0.3.tar.gz"
-  sha256 "2d2647dabfb174060b626120142848bd316f2c7a4bb0fcdcc6c6fda31ea5644c"
+  url "https://ghproxy.com/https://github.com/Legit-Labs/legitify/archive/refs/tags/v1.0.4.tar.gz"
+  sha256 "7113a4f937c8ecf6d0071ad2e82956d0db9a88d66c194865ebecfac8a6aac409"
   license "Apache-2.0"
   head "https://github.com/Legit-Labs/legitify.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "164a08192676742c70940f22564ad72cd51872ecc209ba7083c553db10483f59"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9e2176f72febba3b32d8ee68138c10c7769ed184cd2e8aa6adf8a54c4f744006"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "33ef3758a6c38f47ad5a5f6c01d2c659da495a7686e1312f9db04ab9ccacc055"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9a4b5820950fbcabd263818a0c533edaa7c0883dcabc6a303ea72e70cba88116"
-    sha256 cellar: :any_skip_relocation, ventura:        "37fe9bd476ec858b3b38c2bcaee514194bf2286894fb2b1821b90cb9687e6ae9"
-    sha256 cellar: :any_skip_relocation, monterey:       "d7e8d33bde44b7a320f2a87b3cc6de80f11e200a292ddd0c031fee6249400b83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e54b6f3e897c0edbba20db34f858b10f0ac4a09fc6b797b1b61465f569fa5a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d43b5a925f494950fbe650a31cb098238f2af4ad1e20c4a9f2056e03befa5e98"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e68ee8b4391dcf8625e77639a2b22390ed28345d27a664ee3516531522bfd4e2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4da1d5b406ec12a66916f41c7480cd2a8cc9c5e0c7ed218f9578caf825e6017b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cc6d32dbc64f01f8b0dc6e7288c6dcf5e81871a634343fe195d090188bc294bf"
+    sha256 cellar: :any_skip_relocation, ventura:        "7a6a136dc2f45f2b597155ea85a5b2a34e78c90badd442c556ee5c29f9ff103b"
+    sha256 cellar: :any_skip_relocation, monterey:       "0fad12deb41aa5ad8f25556f1dcaf1cd6031a725b100dc45be33567c68c73d2d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "07b9cf02e9715d48589fa2763a27b43de19188f3f2e6655d4ca8fc663598027d"
   end
 
   depends_on "go" => :build

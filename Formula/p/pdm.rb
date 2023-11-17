@@ -3,19 +3,19 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/f5/77/f55b2189a07e4e2cee44b08dcc37f6110cf2dec5ab9e588f7946ecafa57d/pdm-2.10.1.tar.gz"
-  sha256 "d166531c659fc4905933546544dd2e16cf648c2ba6d898c82126ad6a42117a81"
+  url "https://files.pythonhosted.org/packages/af/6f/65b10a9f29e0f29955117b0126b5d424ca05826243309e07e0271f7d53a0/pdm-2.10.3.tar.gz"
+  sha256 "46dafc8a4fe268c46479876e52c6967f7a9aa385e1e574e64248670a37b358ff"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "18774c0945f3a4b38f90fad5a433b3b3f68e79a7cce358fafc8a2adbc12f8d46"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c67a1e7da62378524dc64a9b314ab18a0d9e6c6147e6ad8412c902a49e000388"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ad09fe1c320fc68b90e9baf617c304fd88a5f182ead397db4e8f90cb6ba40603"
-    sha256 cellar: :any_skip_relocation, sonoma:         "661e90fa0e53ddc4f95c6ecd6682684d8ba9547763858505715481b977bf25e1"
-    sha256 cellar: :any_skip_relocation, ventura:        "c990731e9a03713dc5910a79fa87a1cda971ec98023b528e6a8043b40b7dfa93"
-    sha256 cellar: :any_skip_relocation, monterey:       "149a768cb9bbc2ceb210311eaa3447464a10c61c4c96e6323264b471b646ca72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "44c437450da832ea55534135720ff2c57e2f70ee1f0975ac7a6d4369174d22d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a3faad709daa150a8def50f50267a6fab07f9ed49cb4b8e449861160e47c1404"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce084e0343bfca82b378f379337d9fe1d0b0d6313da04057a5440d5e75472488"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a1734cada7138ac39a1b0464e5a98bf4f9c329afe92689d07a8ec1b4e073703c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7bd183800509a12038e191a9abbaafe6cd6108f7d7c628194f5b489b70859298"
+    sha256 cellar: :any_skip_relocation, ventura:        "d36b4988ef8014710cdb49b2260173a0b71defe87ba6c71a0a6e650e7b2c8259"
+    sha256 cellar: :any_skip_relocation, monterey:       "a9036c0357a031af0cacc0a97dda7a3d9ec0c8db390b6d565266d7a5f77744cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d02ee62396d2eda181d660d72c14f21dc40099a41329a3ef9f7beb880400e6e9"
   end
 
   depends_on "pygments"
@@ -91,8 +91,8 @@ class Pdm < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/b1/0e/e5aa3ab6857a16dadac7a970b2e1af21ddf23f03c99248db2c01082090a3/rich-13.6.0.tar.gz"
-    sha256 "5c14d22737e6d5084ef4771b62d5d4363165b403455a30a1c8ca39dc7b644bef"
+    url "https://files.pythonhosted.org/packages/a7/ec/4a7d80728bd429f7c0d4d51245287158a1516315cadbb146012439403a9d/rich-13.7.0.tar.gz"
+    sha256 "5cb5123b5cf9ee70584244246816e9114227e0b98ad9176eede6ad54bf5403fa"
   end
 
   resource "shellingham" do
@@ -101,8 +101,8 @@ class Pdm < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/9b/93/93f12cdd3b9da81e94f2435d01fe6b3e9edc7704a25d4ad260ce7906ca62/tomlkit-0.12.2.tar.gz"
-    sha256 "df32fab589a81f0d7dc525a4267b6d7a64ee99619cbd1eeb0fae32c1dd426977"
+    url "https://files.pythonhosted.org/packages/df/fc/1201a374b9484f034da4ec84215b7b9f80ed1d1ea989d4c02167afaa4400/tomlkit-0.12.3.tar.gz"
+    sha256 "75baf5012d06501f07bee5bf8e801b9f343e7aac5a92581f20f80ce632e6b5a4"
   end
 
   resource "truststore" do
@@ -116,8 +116,8 @@ class Pdm < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
+    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
   resource "wheel" do

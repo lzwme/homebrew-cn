@@ -7,8 +7,8 @@ class Libvterm < Formula
   version_scheme 1
 
   livecheck do
-    url :homepage
-    regex(/href=.*?libvterm[._-]v?(\d+(?:\.\d+)+)\./i)
+    url :stable
+    regex(/href=.*?libvterm[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do

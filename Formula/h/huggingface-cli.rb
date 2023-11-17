@@ -3,18 +3,18 @@ class HuggingfaceCli < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/index"
-  url "https://files.pythonhosted.org/packages/6a/ef/753ae80052fdff3a3778f3ec34ccc5801786ecd2cad04f1f7bbf70b1b785/huggingface_hub-0.19.1.tar.gz"
-  sha256 "a84ad99b802ba58b40a5444689e679420657dc187179d57521b6bc4cde725898"
+  url "https://files.pythonhosted.org/packages/64/74/c85a5c59888da14c9904dad8109cf1c744055ffde38a8fb830a1e3cf1d66/huggingface_hub-0.19.4.tar.gz"
+  sha256 "176a4fc355a851c17550e7619488f383189727eab209534d7cef2114dae77b22"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "80d8b146cbf5d9cffd89793aa8df6da8e36fe71eebf184ec7678b440be02aae9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a3f80fc3cae2bab24dd1afdc9c009cd9961a5457d631b4f2f49e407d6175721a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3f7dc1d7a8f93ddb1b2eb2e87ed9670a3e656ff601c36a77f7a19ad35601ea1d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "29068dcb68f53260318b8e1ed6db62dae11545e1d73e1d9ae0f105f8e9ded2cc"
-    sha256 cellar: :any_skip_relocation, ventura:        "59dcef7cbe225a730b6fc8592494ccb87d3b795c416e15120dad694f06652089"
-    sha256 cellar: :any_skip_relocation, monterey:       "fd9d26f4308614871ce21e2c2e46e1ef42c2c9bd731738101a951e1a9172cbde"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17d279fedd6364bba322db9c139ea1550b313f4868d55c86647d8d7c2f1160b6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ed522bda88120de25ae444fce5a8264d8cd3da9c06014355bbd040cb5fc22087"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "013bc83de7ec5de499526b120158feab113b82e67da01e2add19da1b23e0b35b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1b52dfa6a14a27a40b0a8c5816edd8ba028cd66124696e236e6c20f44ce8a079"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fe06c36e06c355dfc87f345e0ea92b75c39428b5a8a294e1eb0638dca8a909b7"
+    sha256 cellar: :any_skip_relocation, ventura:        "545439425298c2b4c78b7ebc1991b6979fce26652b6a1a44db83903e9340b04c"
+    sha256 cellar: :any_skip_relocation, monterey:       "d3b6444e4d86ef7ba698893fe03ce8aafa8a7623edf98e0b75da6c158fcdc776"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "435745aea8fa54bc47fac152cda9ab3773d461b058696002f5dd62f56d46a233"
   end
 
   depends_on "git-lfs"

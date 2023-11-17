@@ -21,7 +21,7 @@ class Atop < Formula
         s.sub!(/"$/, "-#{Utils.git_short_head}\"")
       end
     end
-    # As this project does not use configrue, we have to configure manually:
+    # As this project does not use configure, we have to configure manually:
     ENV["BINPATH"] = bin.to_s
     ENV["SBINPATH"] = bin.to_s
     ENV["MAN1PATH"] = man1.to_s

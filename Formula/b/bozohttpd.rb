@@ -22,7 +22,7 @@ class Bozohttpd < Formula
   def install
     # Both `cflags` are explained at http://www.eterna.com.au/bozohttpd/bozohttpd.8.html
     cflags = [
-      # Disable NetBSD blocklistd supprt, which is enabled by default (see section "BLOCKLIST SUPPORT")
+      # Disable NetBSD blocklistd support, which is enabled by default (see section "BLOCKLIST SUPPORT")
       "-DNO_BLOCKLIST_SUPPORT",
       # Enable basic authentication, which is disabled by default (see section "HTTP BASIC AUTHORIZATION")
       "-DDO_HTPASSWD",

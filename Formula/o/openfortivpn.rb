@@ -6,13 +6,14 @@ class Openfortivpn < Formula
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
 
   bottle do
-    sha256 arm64_sonoma:   "821fe22feeb2023d71104727bc101bad96b77b2e980e848d612e94ea739705da"
-    sha256 arm64_ventura:  "b563facf7935cfb3cdf0cf62d5f012be041b54bc6caaffbb686562eec5530467"
-    sha256 arm64_monterey: "f3089385c13bfddb24691427df774bcd3728df992cddd07104f8ba8df4ed93e3"
-    sha256 sonoma:         "b00ae30a1b1dba63057fede4b15c68036e0ebe001c5d633e34f435c69c365f9b"
-    sha256 ventura:        "49ea326a6d542d2940523de1298ed36e27ae9205a4d74e170109614b3be90288"
-    sha256 monterey:       "2552cc3b196a3c2db9867cb6bd12bb8288b37a638e2a92b43456935cc2587ab2"
-    sha256 x86_64_linux:   "a9fddfe0c49d465a13e5492612ccc2ced64b88e428dc3ab955218a11eee6ba3c"
+    rebuild 1
+    sha256 arm64_sonoma:   "b4771b967f920be533a02071151acf1993b5e7a23c6721434f1634af5c2912b4"
+    sha256 arm64_ventura:  "fdf89a41fb091d8e31335a60441a30add086c386f40f20b4036c7ce478d7848b"
+    sha256 arm64_monterey: "a62558b10fe6d8ebe8e4b2248bafd87ccee2753af3a2d8b2c99f549ede7aa629"
+    sha256 sonoma:         "b326509c4c5e9425dc862fe620bbba34bf3a9a8ce839acae73fd51ac024fa432"
+    sha256 ventura:        "52fd759e336d2921d01a9b7facce76274af558daf92e6467c6512da7f0e9a2bc"
+    sha256 monterey:       "4695372eeaeb1772b0ec63422932f2970c59487e70b2908c4406c6d2d3f73da5"
+    sha256 x86_64_linux:   "8f08d3314a70126a2dc00807b2f1ed5782fe0b41945900a5cf22c527001e9dd6"
   end
 
   depends_on "autoconf" => :build
@@ -20,10 +21,14 @@ class Openfortivpn < Formula
   depends_on "pkg-config" => :build
   depends_on "openssl@3"
 
+  # awaiting formula creation
+  # uses_from_macos "pppd"
+
   def install
     system "./autogen.sh"
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
+                          "--enable-legacy-pppd", # only for pppd < 2.5.0
                           "--prefix=#{prefix}",
                           "--sysconfdir=#{etc}/openfortivpn"
     system "make", "install"

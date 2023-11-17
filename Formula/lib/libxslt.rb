@@ -1,10 +1,9 @@
 class Libxslt < Formula
   desc "C XSLT library for GNOME"
   homepage "http://xmlsoft.org/XSLT/"
-  url "https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.38.tar.xz"
-  sha256 "1f32450425819a09acaff2ab7a5a7f8a2ec7956e505d7beeb45e843d0e1ecab1"
+  url "https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.39.tar.xz"
+  sha256 "2a20ad621148339b0759c4d4e96719362dee64c9a096dbba625ba053846349f0"
   license "X11"
-  revision 1
 
   # We use a common regex because libxslt doesn't use GNOME's "even-numbered
   # minor is stable" version scheme.
@@ -14,15 +13,13 @@ class Libxslt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "dc6544dbba1492f85ff365e022f509e5b90cf1eefd718b741e80389c33050de5"
-    sha256 cellar: :any,                 arm64_ventura:  "35d88548858fbda1b24792cd42c06393cac959deead4dc75dce6da512b1148a1"
-    sha256 cellar: :any,                 arm64_monterey: "c0d279287ad596dc0f645c26a2395122dcc11d2ade608b6f5550ab8cbac5fafd"
-    sha256 cellar: :any,                 arm64_big_sur:  "0e787304a2bbc5159bdd73eee1a10eb5f72bad6ffb7adc2d3a13548e680c0107"
-    sha256 cellar: :any,                 sonoma:         "4719a37904a229ce1d78f0c7f761d72a775f9177be9976134b766c22f9d1b421"
-    sha256 cellar: :any,                 ventura:        "607d4cb7bbbad12f0b2008ee1f696881335ea1560f02b559b2dae8ad3a895437"
-    sha256 cellar: :any,                 monterey:       "5b000778f50c467c9f28e882ef5b3e0c9711d8c4e42083f59d0e5bd716127c44"
-    sha256 cellar: :any,                 big_sur:        "bd8e4f4cb5883bee9cdc2aeab754a679b9166a2f80f2ec013b7f3bcd9b395387"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32f5991ea5c42e4f76e859e4ba4406da9183e621dd09bc0c955be5fe865b7df9"
+    sha256 cellar: :any,                 arm64_sonoma:   "28019195eef786264be3a0e67f814753a9108653c5f9e07964b89502c66b06e9"
+    sha256 cellar: :any,                 arm64_ventura:  "9921d7bd84d8fc6914244d5142fb60741eabc71a9a3af87b3c04967f9d334aba"
+    sha256 cellar: :any,                 arm64_monterey: "c48449d1ad89ada8cf9133ea7ea88b247730144ea874dff9608eae0a7b89b882"
+    sha256 cellar: :any,                 sonoma:         "9a4458989d734defc29a7c042b1144a0a66c3768530fb0e07fe52ea78828e606"
+    sha256 cellar: :any,                 ventura:        "695cb26667ee927b4f20fae395b48b8af4bf666f3dc9625bef2e3823aa2e65d8"
+    sha256 cellar: :any,                 monterey:       "ed196bcf4372dacf751a8ba6d45feac8aa6220a877828785651c4694e6209f5b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81e671ea1b060a25b0db9ab3486ae21b1da5982b6e4a35593a411e9c6d103544"
   end
 
   head do

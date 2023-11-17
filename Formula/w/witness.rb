@@ -6,6 +6,11 @@ class Witness < Formula
   license "Apache-2.0"
   head "https://github.com/in-toto/witness.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b758e2bab3db9871bd6bc186045abcf32cd8f689decfd50ecc4fea2b433478d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c314219273d42f35194a7d40e905a21787dd3feb4149c7412e29b15a3dbfc952"

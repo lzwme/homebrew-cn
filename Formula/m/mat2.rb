@@ -6,15 +6,14 @@ class Mat2 < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "99d84117fd20b26cf499e7ca42c45cb2895159953d1a24e312f50a81f4fa4c18"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d819a4c3378ae61661b84cb80b6af98dbad0a428f1df8d449535921f02aa4b0b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d70ff80d80b17a49cb04e3a7a9f57193b6c6ecb4d8d16ef4ed3e6c774c1cabf4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b46db4fed2cc62e1d49ea4dae92e377be930a5ec4c68567f238cc040ad9aa2b2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "25b11fc3fe767c4b708a6188e63e60249cd4b9fbfe6d185eeba17362ecbd7cd4"
-    sha256 cellar: :any_skip_relocation, ventura:        "e2dd7f2c2173b2b9ed71e7679eaabc566662f29b022ec79bc02e27bfa7c129ba"
-    sha256 cellar: :any_skip_relocation, monterey:       "9a853a6c22eea046e1215a2bb0b27285f7d676257804d54372d67463be5c5b32"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e2f8e5df6a82ec6922cd6d37f1b5324f5f230cff057e24a3aeee7e7c1aad74ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96f1839a0c399423ac7ceff166d28ea992671b2b52cd1a43fde19d9a8293c5e2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2d029eaa7463e795b24ca8fbbc958aa296acd2e0c229f0f272d7bfc3c689173d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6c3f81cda2ad80e7fff2ad6057910983821953d35f3a00e55ff166444803219f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9f6f8b108b3c77a2bb9a17a6f4f179e465a307a5ecb827456214ce92a2394e1a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6c163a7c500b2caa50a6b4e0dd1f9ab57eaea59acf5a349cafdf575d72b0aec5"
+    sha256 cellar: :any_skip_relocation, ventura:        "6edf65d88a4493625f0b5893778b76fea9bb8e0b502e7ae11684fca21a37f850"
+    sha256 cellar: :any_skip_relocation, monterey:       "78069965b1edffc23c317d6fd38884c641e51ca6db02aa47a6180b8562b63c8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d024a4da451994028b3f3611cfaf1b2202a5fd58473903920ffce173b4031c2"
   end
 
   depends_on "exiftool"
@@ -25,7 +24,7 @@ class Mat2 < Formula
   depends_on "py3cairo"
   depends_on "pygobject3"
   depends_on "python-mutagen"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   # patch man1 file layout, remove in next release
   # https://0xacab.org/jvoisin/mat2/-/merge_requests/111
@@ -35,7 +34,7 @@ class Mat2 < Formula
   end
 
   def python3
-    which("python3.11")
+    which("python3.12")
   end
 
   def install

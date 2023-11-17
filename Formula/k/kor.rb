@@ -1,18 +1,18 @@
 class Kor < Formula
   desc "CLI tool to discover unused Kubernetes resources"
   homepage "https://github.com/yonahd/kor"
-  url "https://ghproxy.com/https://github.com/yonahd/kor/archive/refs/tags/v0.2.9.tar.gz"
-  sha256 "16c1e4c50274dc200f37dbd40abaa5aebed8e431c8733bc29325ceb30bba1070"
+  url "https://ghproxy.com/https://github.com/yonahd/kor/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "078403454fe397f3ab894e2f226537c56b9ddc2db3c29ebb24ee90d511738735"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ff1402ac31210693e441b7a7a15598ef797cd9442aef295fd4b7ccaa3c31a192"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d186da2d0cafab366f591c967beb2eaac61464239b11d5af9f5f5538ef344513"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7d4e001b5a206f2f035ccc2d5f8b8f3c94e47169d1eb82121d823bcb9ec658a7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "59743bd2e86cecce2f2e95985d0a161ff315ef96b37411b9e6d62c0e15c387c1"
-    sha256 cellar: :any_skip_relocation, ventura:        "fc48c8c2754748230beb6b2b79f0dfe2e0617d7ce1f11412a827c928c6afd87e"
-    sha256 cellar: :any_skip_relocation, monterey:       "5d00409cbb687507ea9c1570ae4cd5f3323797db26095025f1e25651c98688cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a617ae7366f312a26f5b1219a7ec1bfd66d2ac91a5bab9c685865a4e24016d57"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b6574e026818adfb5f5132ae3e064f27667b1ec8b762a11e638172a61326194f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e057304cebafd06dc3380b4543747deea75ed2e32d708f91eb910bd4cf1ddd3d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5db7b5f0d646b4c7855628a5d3d40b28b8c92317764334680c016f20d2d0d52d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e2eedce17ba3193db87d22a2be952f412a27740804f4c22b7bb8189dd5a07566"
+    sha256 cellar: :any_skip_relocation, ventura:        "729aa4963d0b8b8a0ce1a87f55a17918a3c39429408235b35fea0dcdc9e1c602"
+    sha256 cellar: :any_skip_relocation, monterey:       "c672435540542edd9c96624fb641e5ffe0f37d133ceedbc105cb1ecf732daea2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b6ca46b354f90b327c7ca7f6641c8f3f73ff520fc61603531a0021819477e62"
   end
 
   depends_on "go" => :build

@@ -9,22 +9,22 @@ class NicotinePlus < Formula
   head "https://github.com/nicotine-plus/nicotine-plus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dcb6cc973d437536e48441319193eb5b29bb20176f6743b5940f98c6149af86f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dae22739f46074ff222fb8b6a132f4e2a7f671c40ac9c9661217160d675e5ea6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dae22739f46074ff222fb8b6a132f4e2a7f671c40ac9c9661217160d675e5ea6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dae22739f46074ff222fb8b6a132f4e2a7f671c40ac9c9661217160d675e5ea6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d6b78dd020d8a9f964ab95c36f384aacd019b13b1efece6f9b74aa063b5e0772"
-    sha256 cellar: :any_skip_relocation, ventura:        "b6a2c3a40eef25cfe31c57bc010993e7bc91685c30d3f7c72e402b69b1c5b9a6"
-    sha256 cellar: :any_skip_relocation, monterey:       "b6a2c3a40eef25cfe31c57bc010993e7bc91685c30d3f7c72e402b69b1c5b9a6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b6a2c3a40eef25cfe31c57bc010993e7bc91685c30d3f7c72e402b69b1c5b9a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5443bc6c67686123968bbf9ac266ee0ccbd8e95b962e1e5bf24c23e7fe32151d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "64a3c9de5c69415b80b2356108628e5448d352155a14d3f997eecfd678ac4edd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02bca0b2770a44635bbd958622fe63f5cf2a8350d294cadacd14e8c822f100a4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f9d8ff92f3487e9d6e2c8b35c0a9ce1abc970a5fb389d63482ea00f599ab59a5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fad5fc1f0302cfcbe1313f24937a2466a0cc366a97fd97111b899aa7de0d08f6"
+    sha256 cellar: :any_skip_relocation, ventura:        "d2541e0ef599206ef3d7adbb827cb2ae3cf148fcbccc4ca31336b8df925ace02"
+    sha256 cellar: :any_skip_relocation, monterey:       "4289833b8db2cb2a469e46c4569e761de09f6e6c034ff4604f47d209938c3d69"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e2181a4f34689217adab51c3ad6957d3766eed290561aac47d7fadd56084510"
   end
 
   depends_on "adwaita-icon-theme"
   depends_on "gtk+3"
   depends_on "py3cairo"
   depends_on "pygobject3"
-  depends_on "python@3.11"
+  depends_on "python-gdbm@3.12"
+  depends_on "python@3.12"
 
   on_linux do
     depends_on "gettext" => :build # for `msgfmt`

@@ -7,8 +7,11 @@ class HopenpgpTools < Formula
   head "https://salsa.debian.org/clint/hOpenPGP.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "2594f0655586997352c9ee99763670060b8dce25c465991554336037c810b88a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a1e03da071e9e02873068fcd3ef5bc01b12eb7661f5a4144ca8bcfd08f9be96c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c6e3ec151bf0dcdd8763a1e38b15f46d8f631387365f938e8e5a944605c25e86"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3dcb691db29afcb3c1230189085d41daad9f13e9d32dc0950daf18c102558e5b"
+    sha256 cellar: :any,                 sonoma:         "f913b18d2bf982b65591a1b9b0c4e721f23c863b85d5dae28214490738bb12b6"
     sha256 cellar: :any_skip_relocation, ventura:        "8370937e307f6fe9abf7465cc83db8598598b05dfb65e327b0fc4679c03bfae8"
     sha256 cellar: :any_skip_relocation, monterey:       "be3d61452b9b26924c2286162e7b013f7111ece5a2c59e7696dbf4877f33d039"
     sha256 cellar: :any_skip_relocation, big_sur:        "e577fed1816884cb7fa00040b84f255ad3eb7f852ddbe4a1816506640b8d5a0a"
@@ -16,7 +19,7 @@ class HopenpgpTools < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@8.10" => :build
+  depends_on "ghc@9.4" => :build
   depends_on "pkg-config" => :build
   depends_on "nettle"
 

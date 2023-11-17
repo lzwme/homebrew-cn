@@ -2,19 +2,18 @@ class Julia < Formula
   desc "Fast, Dynamic Programming Language"
   homepage "https://julialang.org/"
   # Use the `-full` tarball to avoid having to download during the build.
-  url "https://ghproxy.com/https://github.com/JuliaLang/julia/releases/download/v1.9.3/julia-1.9.3-full.tar.gz"
-  sha256 "8fc0c9dc5443a28d359bd79dda3940fa94ba2b7966b89865beb20da81123c316"
+  url "https://ghproxy.com/https://github.com/JuliaLang/julia/releases/download/v1.9.4/julia-1.9.4-full.tar.gz"
+  sha256 "61843b9647fd06d3b2994f3277a64de1cb5a5a5297d930b8c8e3bc0e93740024"
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
-  revision 1
   head "https://github.com/JuliaLang/julia.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "61d086496e72eba77f6a8ac893d488dd25d7a1f0d74521be940d542a001cbd48"
-    sha256 cellar: :any, arm64_ventura:  "b663f6d826534b41963d09de1f70c43656e76d9e03926d8376a0bfc29f957c69"
-    sha256 cellar: :any, arm64_monterey: "9bafca4ea7f446822660b846a754a9c82f024d8ab66ddf7c9fccc7b997d902c6"
-    sha256 cellar: :any, sonoma:         "33521aff72d957f72861b6ab510e0dd5cacc15d2d016237d429de4d5ea27e10e"
-    sha256 cellar: :any, ventura:        "55628baeccb1f8b82a42a4e558891cb2c11eaff7e4a64f2ce11709416c99e4f5"
-    sha256 cellar: :any, monterey:       "6b433ce620a7b96cb6da5bacdae8f7d979050b7866a97740271fa39012da0040"
+    sha256 cellar: :any, arm64_sonoma:   "f7190a479a0c6fd8539631d215505652591e5795f2388b999330f5657890b214"
+    sha256 cellar: :any, arm64_ventura:  "f9b50f7c75869390088d26cfd2cc48c7166005bbb4f0236cc92258eee050e03d"
+    sha256 cellar: :any, arm64_monterey: "f29d42348293d046097f29c50f393b60c2137b878ca1471cb0162e933d2b5428"
+    sha256 cellar: :any, sonoma:         "f597ec6e14e109c215bd19ea13eee6bdfd9713823445363f375c35ead52667f6"
+    sha256 cellar: :any, ventura:        "10c8cd0f065c31168b596d99568c23fdf9102012c3905ef2a408c61a5eab598a"
+    sha256 cellar: :any, monterey:       "c8c3dd46f4996160b257eb00fd356ebd63f9f1fa75a191645b8f94b371b29e3d"
   end
 
   depends_on "cmake" => :build # Needed to build LLVM

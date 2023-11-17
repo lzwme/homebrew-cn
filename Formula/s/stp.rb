@@ -4,7 +4,7 @@ class Stp < Formula
   url "https://ghproxy.com/https://github.com/stp/stp/archive/refs/tags/2.3.3.tar.gz"
   sha256 "ea6115c0fc11312c797a4b7c4db8734afcfce4908d078f386616189e01b4fffa"
   license "MIT"
-  revision 7
+  revision 8
   head "https://github.com/stp/stp.git", branch: "master"
 
   livecheck do
@@ -13,34 +13,35 @@ class Stp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "df203f08ddff7a08fa2b967ef008cfe14cc82a9703ae0fa1ad83ea3603da2cb3"
-    sha256 cellar: :any,                 arm64_ventura:  "a0c9c388c24b6f86c13f53099399a2ee9f2c2603e231b1ea533f1a28ad6425d8"
-    sha256 cellar: :any,                 arm64_monterey: "d0cd11c1e75e9d6965ee6fbac27308eddd72744c559f43d7f4e569fbf6391954"
-    sha256 cellar: :any,                 sonoma:         "8301a5e49fd277788d4085edec1922ffe782a9e03f4fbdf43aa3204604c86040"
-    sha256 cellar: :any,                 ventura:        "d394e87302eb22cbeaf8db5c99f057edae0a6e5a98f79905bdd01cef9abdd152"
-    sha256 cellar: :any,                 monterey:       "83f85d893568f0b5ee34d55428981e5aae35355cd2453012c6d013462163fa2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ba95876b0a7084bd5a6ac91ca0817ff4aeb9ef6ea1fd59dbfd67e5546e12fe7"
+    sha256 cellar: :any,                 arm64_sonoma:   "b12c4a9145e67c68639ad6ab9600a56fff075d819163eadb8422c600761bf3ac"
+    sha256 cellar: :any,                 arm64_ventura:  "6aadc8b0307425e991331316a590a32e2a58bfdff299fb88cc816dc8a5fa2e71"
+    sha256 cellar: :any,                 arm64_monterey: "09a0b186febb6588ad2aef0c8d7be05ba1fcbb23a5f3cca900d57670d903ff0e"
+    sha256 cellar: :any,                 sonoma:         "ccd8462d42b78b656a59cf50009e0a5ff684cbadb1782b6bd86f1d75fe5048d1"
+    sha256 cellar: :any,                 ventura:        "ae42c8fc7e9a2cf3b87acab72c51236dcbdf49398ce6cf5b2226912ccd910161"
+    sha256 cellar: :any,                 monterey:       "26bf5d1472e541b4d6971531544e268b804c75c4b87d4bef0b5c525c063d7d24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d64345bfcdf48933e9199c07aa9363cdccc1c5e118776bf1d2d7b3395dce0ee4"
   end
 
   # stp refuses to build with system bison and flex
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "flex" => :build
+  depends_on "python-setuptools" => :build
   depends_on "boost"
   depends_on "cryptominisat"
   depends_on "minisat"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   uses_from_macos "perl"
 
   def install
-    python = "python3.11"
+    python = "python3.12"
     site_packages = prefix/Language::Python.site_packages(python)
     site_packages.mkpath
     inreplace "lib/Util/GitSHA1.cpp.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
 
     system "cmake", "-S", ".", "-B", "build",
-                    "-DPYTHON_EXECUTABLE=#{Formula["python@3.11"].opt_bin}/#{python}",
+                    "-DPYTHON_EXECUTABLE=#{Formula["python@3.12"].opt_bin}/#{python}",
                     "-DPYTHON_LIB_INSTALL_DIR=#{site_packages}",
                     *std_cmake_args
     system "cmake", "--build", "build"

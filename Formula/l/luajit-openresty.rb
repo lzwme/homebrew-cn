@@ -1,8 +1,8 @@
 class LuajitOpenresty < Formula
   desc "OpenResty's Branch of LuaJIT 2"
   homepage "https://github.com/openresty/luajit2"
-  url "https://ghproxy.com/https://github.com/openresty/luajit2/archive/refs/tags/v2.1-20231006.tar.gz"
-  sha256 "41530b3f00d3f284e771cfd09add2a0c672f1214f8780644ca9261da9e4d9310"
+  url "https://ghproxy.com/https://github.com/openresty/luajit2/archive/refs/tags/v2.1-20231021.tar.gz"
+  sha256 "2e7179885d167dffd894a458fdea23f8aba7f199ddabd7928bfa19427091e3d5"
   license "MIT"
   version_scheme 1
   head "https://github.com/openresty/luajit2.git", branch: "v2.1-agentzh"
@@ -19,13 +19,13 @@ class LuajitOpenresty < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "bdfc85aaf23979a1b7c6cf05d19038bb9e4363af988874fbf92fc565f01c0971"
-    sha256 cellar: :any,                 arm64_ventura:  "e4e99e03dcbf46e53862677225ea87b0ef45538e91e7fd157f327eb81d1e822d"
-    sha256 cellar: :any,                 arm64_monterey: "4593fe8bdb1d347bbe43e6356930fdcd74bb310ef909b64154fac10cbe5485a7"
-    sha256 cellar: :any,                 sonoma:         "d81ccb649ac54bf4743d286c33289619839eb0d9ef3c85c69ef8e588914e6af1"
-    sha256 cellar: :any,                 ventura:        "4e88d1dc14b49d18951ed50663c879d315c661b0da8c7aefd689dbb5ade6c09b"
-    sha256 cellar: :any,                 monterey:       "c645ba5334381818b317e1e09a5a8e0f523f2c1458031ff4908c8a9dc56e2607"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02f2e537cbdc9d3e8c4c6b965f4de06cb4eee643815a2cfdd98f71655f0a5b99"
+    sha256 cellar: :any,                 arm64_sonoma:   "1d3259747de2de8de67aeaf4ed5a649c92a7815d74942bb031b91bb96424c70a"
+    sha256 cellar: :any,                 arm64_ventura:  "4b23ad20c51188d602245fb834cf5ffaf4b7b88d91dd0c537617c9d470bf5ec9"
+    sha256 cellar: :any,                 arm64_monterey: "6d855300e9944696e28007a156d16b73520787aee542b6c9c27623b765b16e0c"
+    sha256 cellar: :any,                 sonoma:         "ff677e664e3b2131c998426e24d1e0eaf7d40d7b74ec7328d15705cab038d965"
+    sha256 cellar: :any,                 ventura:        "247ca58bd4d917dd7f663366ecc2ec87147c5ff9c6749c094bb186faa97adc34"
+    sha256 cellar: :any,                 monterey:       "31eca496f129ddbcb1a7e2aa5f199ed9b4f5a4b3884b03393079e9ec7f5e0d0b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "925ef41a6b80894ac0f9fe9cfd5c5db427fa90db0510c1edc859c6d3bd1dc8ca"
   end
 
   keg_only "it conflicts with the LuaJIT formula"

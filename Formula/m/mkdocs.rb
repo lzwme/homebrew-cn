@@ -8,21 +8,22 @@ class Mkdocs < Formula
   license "BSD-2-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d265b9eb4167e6c3f7e3924666c94840ecaa824cc614d4b99d1312f5f19c70de"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f195c032f34e3cf521d9747e16f5d7eada8f820c88774713f92a900d1a86051f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "41cdc1ebb990b2b918b15b24ba59a9ac474fd83bbc9d62d204c34fd6bcfdffa6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6882b163de5b2bb03e84cfc0ea6393cc37e9eec993555b8210edc52590339b5b"
-    sha256 cellar: :any_skip_relocation, ventura:        "f1e012b3d2f71fd3a5ec080efa67221b93511bc9771430b597f6d3a06ad0c2a6"
-    sha256 cellar: :any_skip_relocation, monterey:       "2f70c24c75fc4d120012bd2da14731ba02e587adcd969709688915c7e52aed4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "de47d980cbf275d945d58d5d9bfd254f8664b30e53892feed97e16e43d778ad9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd01b3b1d516a6c8d7b25aecb49d461079ea0598f9fb97c7c96bc96ecc3704a6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6cd140612935d6e7c411f2960384b97f8ed227d68b045065acfae6da95681237"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c049dda058913fe8843c33f95b1bf24f35c6c5da01ca970094373fee9f61d2f0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "54805885c95db7f19d9bed2358bc2b97434562fbf9b10b388624468339db0f92"
+    sha256 cellar: :any_skip_relocation, ventura:        "444d2605e198a3b57aeffa5aacd28407ff7613790ea0d7598e1a5407b3a85e27"
+    sha256 cellar: :any_skip_relocation, monterey:       "6b298e538e0fa4d8758324cc2201cd9fe89449692e38649953999844df6a7ec0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad45bc119e7ec9dc85a0123480e32bdc53241674635ca5671bc9fedc63d5be99"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python-click"
   depends_on "python-markdown"
   depends_on "python-markupsafe"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 

@@ -8,18 +8,20 @@ class Mdv < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4f6de617a2cbecc970673a7ec47d098f43abd079d8d6a021f4b7785ef8dcf374"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "14350a360592220984c9d62be076631c7e80e47f67fb95a547e25ee336ff75ab"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d2bb088679117e8008e856b478e1b1f30f4d343f8860e3a35de5bcf84ab4199c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1fc8735b48352547eb5417ff16abb4506a0ff4ffabab613af1c9cb3185371117"
-    sha256 cellar: :any_skip_relocation, ventura:        "00d97593906271ca6da2a01f7c8e8dc0d159936d314efc55c3cc90204781279e"
-    sha256 cellar: :any_skip_relocation, monterey:       "1ab21c351a5fc98d7a376aabb88bcf9f566e0e583e32d515be0ed245783dd3fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57ebe8bbb634bbc88fd57785e791eab18de60599a4ad2cb7c9f2abf7693dc713"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf551327ed54191a4305cc7872250dc40d5ef3ccbc24a61d2cda9989b4f3dac5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5036d6657a0ebb6e020cffa0958b7c9b7f367544bc5de52e9a94da7c93fffea3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8126dddeeb05b9f2e0a2790aa86428c79d6688ffa83900244d0df88e221bf18b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "61844e454dfaee1d13b0c685c2d97a62348f74a7c4b20fbcd0a5bfd1fcdc1811"
+    sha256 cellar: :any_skip_relocation, ventura:        "45d781475ff78c917bad0349fd0ce7a33308fce1277e6c98c8885d42e7b5e20a"
+    sha256 cellar: :any_skip_relocation, monterey:       "e1c4764a5e4ed91c40f8a0a687a99b451768af512ae86d15117920fff2417ffa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d72c632fd1912834de9619d7e0ec08575df9dc7ecf469f90fee07335c5c0d804"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "pygments"
   depends_on "python-markdown"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   def install

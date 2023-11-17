@@ -13,7 +13,7 @@ class GitMediate < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0086a8e11d14f3f9b29e0d4972c61ab5daa2a7b357fcc54c29dfdf7699c436b6"
   end
 
-  depends_on "ghc@9.2" => :build
+  depends_on "ghc" => :build
   depends_on "haskell-stack" => :build
 
   def install
