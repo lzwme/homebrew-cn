@@ -13,15 +13,14 @@ class LlvmAT16 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "81f212c7551f00423633e9b6a1ca31b2c6a5867ef11782c4b4456571b82700ac"
-    sha256 cellar: :any,                 arm64_ventura:  "27a5fb204fa1527f59a0e5e5b5e8ac38b8f0d277aedf1f1c0caf591f47cd0a3d"
-    sha256 cellar: :any,                 arm64_monterey: "99f03a72e55e3bd150efce1986c4c222f29cf816a1603cfb20f5e21c2b6ba5bf"
-    sha256 cellar: :any,                 arm64_big_sur:  "cb2e5bf72cd9a9bcb1f64b3152136b5f254a1128b34c27dd4f653ef0008e00a5"
-    sha256 cellar: :any,                 sonoma:         "dd1251e1ac3d36763f001b31583a9231e129232799ea331de701bd38b1362b3d"
-    sha256 cellar: :any,                 ventura:        "76b4e48cd98725698332f12c86c34d56ebae85b39716a38a308a4b9a60981dd8"
-    sha256 cellar: :any,                 monterey:       "e715afb5ea84deb02a5c546222b6a9e5279c9e22a4021e1f63514db579404fd1"
-    sha256 cellar: :any,                 big_sur:        "e730097d562a31c03efb9f24c37d36649980fed0fe7b2f4d72d91fe491219017"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22ff6a08a852f8243574d97a78a5b6fb63923ace012674efa16a6d308ba68a62"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "9bab38bfbe2c1e785fa2fc46929ebf75ca50eb8d20926f1b290ae103f51d4216"
+    sha256 cellar: :any,                 arm64_ventura:  "833e6a2c39b667ecbb39c10f549d7e79187e8c4395c056eebae5439af4eac77c"
+    sha256 cellar: :any,                 arm64_monterey: "8da9dba46e6be61025f2b40e3e67d1c154cddb5db282ee2cc063a9330bf488b9"
+    sha256 cellar: :any,                 sonoma:         "336f479820f2a8fd236ef5c7cdf4d58acdc2b84879fd37586403aec3ef3c134a"
+    sha256 cellar: :any,                 ventura:        "fca6a8c3cde7cf7c6c2038c28a4836b8675d62ebb9c126a29f74c960571ffae0"
+    sha256 cellar: :any,                 monterey:       "9bedaf4519f8bba86b4deb6b3bbf2c1651f204b19d5789425c267c7fc94de80c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "165c4888dd34e3722ade1ea7dc35b2e4aa4ad1ead86e250cc027572862901257"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
@@ -33,7 +32,7 @@ class LlvmAT16 < Formula
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "swig" => :build
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "six" # TODO: Remove at next release.
   depends_on "z3"
   depends_on "zstd"
@@ -60,7 +59,7 @@ class LlvmAT16 < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

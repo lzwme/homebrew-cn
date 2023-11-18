@@ -1,10 +1,9 @@
 class Ephemeralpg < Formula
   desc "Run tests on an isolated, temporary Postgres database"
   homepage "https://eradman.com/ephemeralpg/"
-  url "https://eradman.com/ephemeralpg/code/ephemeralpg-3.2.tar.gz"
-  sha256 "c07df30687191dc632460d96997561d0adfc32b198f3b59b14081783f4a1b95d"
+  url "https://eradman.com/ephemeralpg/code/ephemeralpg-3.3.tar.gz"
+  sha256 "a5542b7d2a70267c42457014a59419b1bd19ff094b6e375a6268557af807ae0a"
   license "ISC"
-  revision 1
 
   livecheck do
     url "https://eradman.com/ephemeralpg/code/"
@@ -12,16 +11,13 @@ class Ephemeralpg < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f25d36f5760972d69dbfe8f188795f5aa6497ca948d7b7e6282cffa8f53308af"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "317bb739f9ec9100420e8610b60de8545f9415f6e1842968bdee2c6aa3eb8bd0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cbc1d493222d98063a3a26ea7c544ed95069a206405428fb8ed768a359f4e781"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "da97cd5215b93c553ed8e83be7daf0e96e5fe18aa86cebd1811605f2a46914b8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1a460112485da581c671c0d781a3a0a73a8470558849f38680a9ffb215f4745e"
-    sha256 cellar: :any_skip_relocation, ventura:        "263930f92f1db1a82a3572b37ceb871ba2744df7c3a5068e1bf39934218f5b8e"
-    sha256 cellar: :any_skip_relocation, monterey:       "bdcd29d9bb83d00a3c268601e136f8e74fdf3bf9c978e26da82e759c0e02a32e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "87f038160a7d518b665937d40ed387edc90e7b0f92641ec7d6346464a825df49"
-    sha256 cellar: :any_skip_relocation, catalina:       "cf6b45e47f686ab47ca274a30dbd6fe787eea74f8162e7dc61322188a9a0c686"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b3454fbf8bece737cc086c64244bea28033481d4db4b0d55426096483f32537"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ecf856847b6aff6ab068bdb117c5f28bae5b4f075640a87166f4bd3025e49b9b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3ab31d0519112830bee42b0b3548bf56604b263fd3b0b2876125c4d58f897d92"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "00527173690ac6008cab51f1c07280a064e9067288609ac0adde6df9ade3e734"
+    sha256 cellar: :any_skip_relocation, sonoma:         "93e5251251096b39758db89bfe15aec91e03fd9617fc4823e1ac2a716aa7d597"
+    sha256 cellar: :any_skip_relocation, ventura:        "c5c4f8f2f0f913156fb7cd29e1af079689f8df230d1d98a1d676923ffc36a7e0"
+    sha256 cellar: :any_skip_relocation, monterey:       "0eb22d58e070b23cc9ac05ffdf772a7686706b05be5b27bde6883f70df7f9a0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c65a1a3261c1f1633accdbeae50624751450c826f6ea113c533e2b20bbeedea"
   end
 
   depends_on "libpq"

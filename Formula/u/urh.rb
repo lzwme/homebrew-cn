@@ -9,13 +9,14 @@ class Urh < Formula
   head "https://github.com/jopohl/urh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8ead1182b0e0ecc33490ca4e5c1f905313e5dfe5fc3417f050073ba1c6043ac2"
-    sha256 cellar: :any,                 arm64_ventura:  "98448be5e683cb6766c6c3bc34244af7569488665d2b682212ad2323ad4ef27f"
-    sha256 cellar: :any,                 arm64_monterey: "5c66054e666159046daa2b2f56c04a91977bbe24d81340ff354e746d03a0327b"
-    sha256 cellar: :any,                 sonoma:         "55ffaa570b46ee8c4618725dd553a28709c3017f9763489e6fd21495e4bfc92b"
-    sha256 cellar: :any,                 ventura:        "2efb7fe8bf8f29911b10bf80134c14434e7b555e32f2aa818154dacda46c642f"
-    sha256 cellar: :any,                 monterey:       "45afb31a54dbc3b5250fc9a1f4ca02306876c0924234a955e5f6f5ea2b31a5df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "014b3a0dba1d8d681cc266a156c3c30d0888e9727ca0367b8832d76d04c76fc8"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "ad61c232478ac7b456cd3713a7a3d87d663b6e9d01218f10c0366c79588677f9"
+    sha256 cellar: :any,                 arm64_ventura:  "9ea899a6df94c9d97f9bf795b693651e8b2bea1fa17d167a220f2ed571672f8c"
+    sha256 cellar: :any,                 arm64_monterey: "de41e4e2e98dd2c791d3a08f4f2dd394c2ae72773fa1f21be87941cf58b5daad"
+    sha256 cellar: :any,                 sonoma:         "0d7af4b9dda3efb846cb47ff97627077884fd84380c7b5c51cb7bc58da91c329"
+    sha256 cellar: :any,                 ventura:        "401f29ab2e995b37fe14b21898e4e7ec874377583dc4e54f2a4ce03499e1f5ba"
+    sha256 cellar: :any,                 monterey:       "5aa0d23ee74dae5cbc2a9db225bf230b6bf52ebae3aeb701cc834985f7e9588e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa8eec6f5246fa1b88cfd865bc954213c42f1644d277799c0ccfc793cf575fe7"
   end
 
   depends_on "pkg-config" => :build
@@ -24,10 +25,11 @@ class Urh < Formula
   depends_on "numpy"
   depends_on "pyqt@5"
   depends_on "python-psutil"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
 
   def install
-    python3 = "python3.11"
+    python3 = "python3.12"
 
     # Enable finding cython, which is keg-only
     site_packages = Language::Python.site_packages(python3)
@@ -36,7 +38,10 @@ class Urh < Formula
     EOS
     (libexec/site_packages/"homebrew-libcython.pth").write pth_contents
 
-    virtualenv_install_with_resources
+    # We disable build isolation to avoid trying to build another numpy for build-only usage.
+    # We can replace the virtualenv with pip install if we decide to link `libcython`.
+    venv = virtualenv_create(libexec, python3)
+    venv.pip_install_and_link(buildpath, build_isolation: false)
   end
 
   test do

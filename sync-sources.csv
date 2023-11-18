@@ -5045,16 +5045,20 @@ Homebrew-homebrew-core/Formula/p/pyside@2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyspelling.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pystring.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-argcomplete.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-brotli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-build.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-certifi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-click.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-cryptography.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-cycler.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-dateutil.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-docopt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-filelock.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-flit-core.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.12.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-jinja.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-kiwisolver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-launcher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lsp-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-lxml.rb, Homebrew/homebrew-core, 0
@@ -5809,7 +5813,6 @@ Homebrew-homebrew-core/Formula/s/sqliteodbc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlmap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlpage.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlparse.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/s/sqls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlsmith.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlx-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqsmover.rb, Homebrew/homebrew-core, 1
@@ -6065,6 +6068,7 @@ Homebrew-homebrew-core/Formula/t/terracognita.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terraform-docs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terraform-graph-beautifier.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terraform-inventory.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/terraform-local.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/terraform-ls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terraform-lsp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/terraform-provider-libvirt.rb, Homebrew/homebrew-core, 1

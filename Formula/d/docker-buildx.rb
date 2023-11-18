@@ -2,21 +2,19 @@ class DockerBuildx < Formula
   desc "Docker CLI plugin for extended build capabilities with BuildKit"
   homepage "https://docs.docker.com/buildx/working-with-buildx/"
   url "https://github.com/docker/buildx.git",
-      tag:      "v0.11.2",
-      revision: "9872040b6626fb7d87ef7296fd5b832e8cc2ad17"
+      tag:      "v0.12.0",
+      revision: "542e5d810e4a1a155684f5f3c5bd7e797632a12f"
   license "Apache-2.0"
   head "https://github.com/docker/buildx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c08efee9bc1bd9cda36503edffacb3778780c8c68c5aa07d81c22c87635dd1eb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d9725a277a0819ee7377757e94b83d30b14d69314756110aec9638ad6d13e858"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d9725a277a0819ee7377757e94b83d30b14d69314756110aec9638ad6d13e858"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d9725a277a0819ee7377757e94b83d30b14d69314756110aec9638ad6d13e858"
-    sha256 cellar: :any_skip_relocation, sonoma:         "98749a98f045ca87ebab37026162b4def68fef4b1e7a566386ae78e6a1d9e3e2"
-    sha256 cellar: :any_skip_relocation, ventura:        "058c89a3d99ac1468dc4c4c597d046fc45d0841676d4580daec5b2e4595f8917"
-    sha256 cellar: :any_skip_relocation, monterey:       "058c89a3d99ac1468dc4c4c597d046fc45d0841676d4580daec5b2e4595f8917"
-    sha256 cellar: :any_skip_relocation, big_sur:        "058c89a3d99ac1468dc4c4c597d046fc45d0841676d4580daec5b2e4595f8917"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d751b318df3339bda76840e644c926d73bb0f96141f1b3817997701cf26e669"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "316f90184d51579d9e80a5a38a3d93c176c8d55375215c4831a7a99db978eaa4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02f9a1eaf4bba5c814319d869c51e2f4a3735edb3efaaa6024c4a2f2d36d3447"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ef0e340df516654d0a875aa8fa4aa9ba3cf5ebbf4006f0160b3af28b4d859fc2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bd2a75dc3d9a83a5d7ff486aa70a62d45aae05ff4a9dc2f9ceffd341e931efa8"
+    sha256 cellar: :any_skip_relocation, ventura:        "5f708a0a7942fe2d5f15df48d855e73d9a0728b327f347834c4ef82589fcda0d"
+    sha256 cellar: :any_skip_relocation, monterey:       "ecb3b0461d12213562d307c81ee2aa9fef5eea0730fb3174e6b29b968bf9431d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17342b7168b50bc0076f81da96da8cc93204c3974f26716fa905e767505b6ed9"
   end
 
   depends_on "go" => :build

@@ -3,19 +3,19 @@ require "language/node"
 class Serverless < Formula
   desc "Build applications with serverless architectures"
   homepage "https://www.serverless.com/"
-  url "https://ghproxy.com/https://github.com/serverless/serverless/archive/refs/tags/v3.36.0.tar.gz"
-  sha256 "43b0c61fb3533c539813e712ba6925886613ef647e1950c4d725874d1e6d8dc1"
+  url "https://ghproxy.com/https://github.com/serverless/serverless/archive/refs/tags/v3.37.0.tar.gz"
+  sha256 "1d417226d4ff82c827a4bf72ccf7919e655098a1df1f67d0daadfa45243e339e"
   license "MIT"
   head "https://github.com/serverless/serverless.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4aa13af3dd6e2961ff50a48de52c9b8c340eb9aa064cb04e335e63becf69250f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4aa13af3dd6e2961ff50a48de52c9b8c340eb9aa064cb04e335e63becf69250f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4aa13af3dd6e2961ff50a48de52c9b8c340eb9aa064cb04e335e63becf69250f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "62d9fec648cff9b177b0e976e9fdcc3729d7a2c911a562df778b8010d7a4a760"
-    sha256 cellar: :any_skip_relocation, ventura:        "62d9fec648cff9b177b0e976e9fdcc3729d7a2c911a562df778b8010d7a4a760"
-    sha256 cellar: :any_skip_relocation, monterey:       "62d9fec648cff9b177b0e976e9fdcc3729d7a2c911a562df778b8010d7a4a760"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c1cb5025d0ab98643449a67a0517e8f8eeda9cd8b9cfe7851c973fe7085cfa2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf29a0cec9c36000569e9917c24dd4d2ea36ea406c85aad7c52ea72513dc1294"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf29a0cec9c36000569e9917c24dd4d2ea36ea406c85aad7c52ea72513dc1294"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cf29a0cec9c36000569e9917c24dd4d2ea36ea406c85aad7c52ea72513dc1294"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bb10a3e39f6ec11496f0bedf8ef28c506e604d1b8f92560707974c17842f6f19"
+    sha256 cellar: :any_skip_relocation, ventura:        "bb10a3e39f6ec11496f0bedf8ef28c506e604d1b8f92560707974c17842f6f19"
+    sha256 cellar: :any_skip_relocation, monterey:       "bb10a3e39f6ec11496f0bedf8ef28c506e604d1b8f92560707974c17842f6f19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aadd4760de262486dbcfc803294b7238595b5408a192146718b07c5aee6e6a62"
   end
 
   depends_on "node"

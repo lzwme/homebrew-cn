@@ -1,20 +1,18 @@
 class Igraph < Formula
   desc "Network analysis package"
   homepage "https://igraph.org/"
-  url "https://ghproxy.com/https://github.com/igraph/igraph/releases/download/0.10.7/igraph-0.10.7.tar.gz"
-  sha256 "b9e2a46b70896a379d784ea227f076b59750cc7411463b1d4accbf9e38b361ad"
+  url "https://ghproxy.com/https://github.com/igraph/igraph/releases/download/0.10.8/igraph-0.10.8.tar.gz"
+  sha256 "ac5fa94ae6fd1eace651e4b235e99c056479a5c5d0d641aed30240ac33b19403"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "39e5a3d70fd4520d6afe3fae3950624dcc96fd6117b3755783a550ac9677badb"
-    sha256 cellar: :any,                 arm64_ventura:  "49020dadfecfbd851179096fe42425f85c97a683579c95db38aa5292901c5c08"
-    sha256 cellar: :any,                 arm64_monterey: "26b016bbdf93559f0f5d00332238bc1f11da04039728183c8eaa7138cbbd4aee"
-    sha256 cellar: :any,                 arm64_big_sur:  "2ea5120c3ee598d518ac861d015057aa8076b260ced5799253d2354c561baad3"
-    sha256 cellar: :any,                 sonoma:         "b1f824e38e516d586d4357b9bec5f98009b1e69fa2d6c62074ca871c10dd9597"
-    sha256 cellar: :any,                 ventura:        "08f3e8bdac296dac446a462551fc8e69c4546d619b0df87957e7ac093a87fc78"
-    sha256 cellar: :any,                 monterey:       "dc040a9e757957789671c17fa78351b19fe439f633cfeec555ad0518fb8e90fa"
-    sha256 cellar: :any,                 big_sur:        "fc26790b7c8ab086a321d789fe1df52e67a61eecc954072d9c9660eb365cc6cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d1babcd095b75507ebc19635ee6f42ecb2e8c250cd54fe57034de4df96121b5"
+    sha256 cellar: :any,                 arm64_sonoma:   "ed772e6924ee9c55a022c65519d85ffa5b02261ced32b54d61250bf7f8e24830"
+    sha256 cellar: :any,                 arm64_ventura:  "bc9bef8198f9aeb8d588b05b25853d2b20e2177f3d2d5d0d289567b54c4ee4da"
+    sha256 cellar: :any,                 arm64_monterey: "f32c7cc9f03154e5296284fb727e130e217b151f4aa1ad25eae68e627aca1bc0"
+    sha256 cellar: :any,                 sonoma:         "0d93a6369c84f78b02f95d871cf061f0070019bb64708b2f6493817496ec9751"
+    sha256 cellar: :any,                 ventura:        "e72215cc6cb8ad21a4db3136cf7f40669308adbd9fc71290fa86f32722b3852a"
+    sha256 cellar: :any,                 monterey:       "0f657f6629f6856902c27ca4b286098de29345138316f77ed3f74d969123dd56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "daf9d2d524e80bbd6c06790cd9f6dc9ecff8e4c61361e78ad1f5616da8ce1a43"
   end
 
   depends_on "cmake" => :build

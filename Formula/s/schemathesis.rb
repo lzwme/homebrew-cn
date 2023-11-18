@@ -3,19 +3,18 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/f8/50/e5b85a3d5f638408b529f1970bbb5409d63f31ae9337582ed65036cc1755/schemathesis-3.21.0.tar.gz"
-  sha256 "1f9ce6472b8413632eda4685655ec3f1d23a62a9330038e419db84946a3bca9c"
+  url "https://files.pythonhosted.org/packages/9a/f6/b828b9fbe4194848d9c58f0bb4e24cc326779e62096a412a73d16c098cda/schemathesis-3.21.1.tar.gz"
+  sha256 "6ae57e4bbc872f0dbf7065bc5709e8b1a3d86405c25cf404a50e5142c87cd9bf"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "3ebff6917ef5ad13a970d352e5ff23c708f5a14a59c9894f7406664b8c80079a"
-    sha256 cellar: :any,                 arm64_ventura:  "70f4189c576b5d4937e2e057bc892c57c16787a1f264c5cb19e8d0e34cd1c742"
-    sha256 cellar: :any,                 arm64_monterey: "cd2f73ae1a973246b0349fffa59dbb8ceb0d6a8d2a11522953b953df4eceddeb"
-    sha256 cellar: :any,                 sonoma:         "17b969f8e70c62fdd20231272682fbc88c494f35d2728a123bd850fd9967486d"
-    sha256 cellar: :any,                 ventura:        "46751336aac5d7803e6c6b4cb625aac424dbea4e5ca9bffe1ac002eba9ec93db"
-    sha256 cellar: :any,                 monterey:       "d06dc32a1671548b04e0a64893ad9eff8576c5d1d84901dca0c144870184f18d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "063bca0f86f9938366b582151b819e5a2f15fdb2afbd8ff84634d178fed72e81"
+    sha256 cellar: :any,                 arm64_sonoma:   "be6740e2c904c929fd5fdf1ddadec8e0bfa6f6b3b461c76a5139a27d3c31d071"
+    sha256 cellar: :any,                 arm64_ventura:  "107968a38c8e71774df732bd856d41d6a12b1828644e168ca76ce598dbad810a"
+    sha256 cellar: :any,                 arm64_monterey: "bbcf8df9cab5a69d9eeb0e4123c7f5707804a490e30f76bc671c6439bdae8b9a"
+    sha256 cellar: :any,                 sonoma:         "924ede67144cf54f9acd4dbb291ddae3fe461126f193a1739bf0143201f808b4"
+    sha256 cellar: :any,                 ventura:        "2c00246786b0674603ec6ac51b3c14b67d2398b3bf0952d48bafe98e4e9ff929"
+    sha256 cellar: :any,                 monterey:       "1692d7405ff727baa7c200924811e52bc2f0719f447b2bbba9ca63f8cbe16c11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc990eabda36eca2fe46a135e18160dfc2e06ba64628d8da7d021867d4fb84e0"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -64,8 +63,8 @@ class Schemathesis < Formula
   end
 
   resource "httpcore" do
-    url "https://files.pythonhosted.org/packages/f7/c5/873ef8e44b0d74583a5f100bf5b3edea5c0930508510d6f1138af07725a9/httpcore-1.0.1.tar.gz"
-    sha256 "fce1ddf9b606cfb98132ab58865c3728c52c8e4c3c46e2aabb3674464a186e92"
+    url "https://files.pythonhosted.org/packages/18/56/78a38490b834fa0942cbe6d39bd8a7fd76316e8940319305a98d2b320366/httpcore-1.0.2.tar.gz"
+    sha256 "9fc092e4799b26174648e54b74ed5f683132a464e95643b226e00c2ed2fa6535"
   end
 
   resource "httpx" do
@@ -74,8 +73,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/e9/1b/bfbf5ff8fcb63008baf87ab7a4fbf2deccf27efcbae03f9b695859e95f5e/hypothesis-6.88.3.tar.gz"
-    sha256 "5cfda253e34726c98ab04b9595fca15677ee9f4f6055146aea25a6278d71f6f1"
+    url "https://files.pythonhosted.org/packages/91/c3/921f661e82ad5a548b9ac9d52f1d121135ec5342cc57a8c5a95a5de61cf1/hypothesis-6.89.0.tar.gz"
+    sha256 "9168bb12cd29001067e66b5f25f1bbdeff08b80c29c3909e19fc8205d8b9aeed"
   end
 
   resource "hypothesis-graphql" do
@@ -99,13 +98,13 @@ class Schemathesis < Formula
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/95/18/618159fb2efbe3fb2cd32b16c40278954cde94744957734ef0482286a052/jsonschema-4.19.2.tar.gz"
-    sha256 "c9ff4d7447eed9592c23a12ccee508baf0dd0d59650615e847feb6cdca74f392"
+    url "https://files.pythonhosted.org/packages/a8/74/77bf12d3dd32b764692a71d4200f03429c41eee2e8a9225d344d91c03aff/jsonschema-4.20.0.tar.gz"
+    sha256 "4f614fd46d8d61258610998997743ec5492a648b33cf478c1ddc23ed4598a5fa"
   end
 
   resource "jsonschema-specifications" do
-    url "https://files.pythonhosted.org/packages/12/ce/eb5396b34c28cbac19a6a8632f0e03d309135d77285536258b82120198d8/jsonschema_specifications-2023.7.1.tar.gz"
-    sha256 "c91a50404e88a1f6ba40636778e2ee08f6e24c5613fe4c53ac24578a5a7f72bb"
+    url "https://files.pythonhosted.org/packages/d4/84/8f5072792a260016048d3a5ae5186ec3be9e090480ddf5446484394dd8c3/jsonschema_specifications-2023.11.1.tar.gz"
+    sha256 "c9b234904ffe02f079bf91b14d79987faa685fd4b39c377a0996954c0090b9ca"
   end
 
   resource "junit-xml" do
@@ -139,8 +138,8 @@ class Schemathesis < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/e1/43/d3f6cf3e1ec9003520c5fb31dc363ee488c517f09402abd2a1c90df63bbb/referencing-0.30.2.tar.gz"
-    sha256 "794ad8003c65938edcdbc027f1933215e0d0ccc0291e3ce20a4d87432b59efc0"
+    url "https://files.pythonhosted.org/packages/61/11/5e947c3f2a73e7fb77fd1c3370aa04e107f3c10ceef4880c2e25ef19679c/referencing-0.31.0.tar.gz"
+    sha256 "cc28f2c88fbe7b961a7817a0abc034c09a1e36358f82fedb4ffdf29a25398863"
   end
 
   resource "requests" do
@@ -149,8 +148,8 @@ class Schemathesis < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/75/be/e3f366aa4cd1e3a814f136773e506fc5423eff903ef0372a251df34e6e45/rpds_py-0.12.0.tar.gz"
-    sha256 "7036316cc26b93e401cedd781a579be606dad174829e6ad9e9c5a0da6e036f80"
+    url "https://files.pythonhosted.org/packages/81/b8/c18e4fa683dd67fd2f1b9239648ba8c29fed467b4aa80387b14116e3a06b/rpds_py-0.13.0.tar.gz"
+    sha256 "35cc91cbb0b775705e0feb3362490b8418c408e9e3c3b9cb3b02f6e495f03ee7"
   end
 
   resource "sniffio" do
@@ -184,8 +183,8 @@ class Schemathesis < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
+    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
   resource "werkzeug" do

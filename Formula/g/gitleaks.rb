@@ -1,20 +1,18 @@
 class Gitleaks < Formula
   desc "Audit git repos for secrets"
   homepage "https://github.com/zricethezav/gitleaks"
-  url "https://ghproxy.com/https://github.com/zricethezav/gitleaks/archive/refs/tags/v8.18.0.tar.gz"
-  sha256 "dedbfd01223d162c62fb1f271cd25cf48869ea40adcc12b90fc2939d55b27612"
+  url "https://ghproxy.com/https://github.com/zricethezav/gitleaks/archive/refs/tags/v8.18.1.tar.gz"
+  sha256 "8901854f09ebf18029e650afb7d908d8e58f13c80d34c01d83d8362944237dcb"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "01e58a2eacbe5aac49180dc371665f0310d742fd20a6f7bf6ca59dd0ffd39cd0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "15961f42d5d76fde1f709b87aff180d515cbbbe23087cb655f02dd79aa72e63c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "189c1a785d09fddb2850d2b691b0b09d0b44e6d26ad50415ec053336f10b47e9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cbdbe734257c5f8c1b5a5aa8d195ab48a596b69aeac072a40a78e48e8884a63e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e2c1529d52eae0f4e3b89373a9d95ebbd078e28603e4059f7e1c0e0f8b4e55a0"
-    sha256 cellar: :any_skip_relocation, ventura:        "b3004841e376ce9f767175d62669536aca22aea68334386d683f00f4956b3ce3"
-    sha256 cellar: :any_skip_relocation, monterey:       "bba7ecb9f27bf75c06a2cba67602ee4ce8738bae3215e92876cc51cfc77412d9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9ae0db8a3875d8e9748592fe57a89d6affeb8021e51e80b555f86d622c310e8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "de53975f2431267591002b2bff56370e51ce124956111923a2e6ee8953c7445f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dade54700cf4e0cb82ccf009e5dfc3bbd2dbef6b16da3a6c45173c23ab0f0bfa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "00aa64adfaa65f23469a7272d37f151a92193acdcd3d51a3cd437d04323aa73d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0156bde75d425860364026dd2cbfde689bd608d57347b43fed95bbfd8ff885e2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6953077d2dc42d571ecad769d4531176c19ea7efc1d0641611640546c0c34b3d"
+    sha256 cellar: :any_skip_relocation, ventura:        "85bf3dfc8db564648b393def0de779688dde26d571905295ce05642682826025"
+    sha256 cellar: :any_skip_relocation, monterey:       "de268c3c2410d8fa5db43a7f6109580c457ae00d2eb3e6eb4599d80554976150"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e907be45bf5bef2de0e21c82ce5688bf7c6e02c932baa3f19c85fbe6c4bfadb2"
   end
 
   depends_on "go" => :build

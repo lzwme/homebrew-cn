@@ -1,8 +1,8 @@
 class WhisperCpp < Formula
   desc "Port of OpenAI's Whisper model in C/C++"
   homepage "https://github.com/ggerganov/whisper.cpp"
-  url "https://ghproxy.com/https://github.com/ggerganov/whisper.cpp/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "b2e34e65777033584fa6769a366cdb0228bc5c7da81e58a5e8dc0ce94d0fb54e"
+  url "https://ghproxy.com/https://github.com/ggerganov/whisper.cpp/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "088e6fcb5a38179308c4120c6ac4296918d2ea974321f6f2a062aec067c36880"
   license "MIT"
   head "https://github.com/ggerganov/whisper.cpp.git", branch: "master"
 
@@ -12,24 +12,24 @@ class WhisperCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a423b0a1f92abfc6943b532974d147d669c2b2186adef609e45c8ae0aba7ab81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba631877ce4264b21bc92059c00d7126e221eefb6c3af71817d13950943a1cfd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0477268232b8a0cac4c9bdfba2f5761f32ceeeaae2e831af384da25cce82ee26"
-    sha256 cellar: :any_skip_relocation, sonoma:         "911dde991f864552eda6f9e1f02cde50b8f3553e17f97e8a2b45b11a3b027bcb"
-    sha256 cellar: :any_skip_relocation, ventura:        "82e500f75ec0b6fc70637b87bd6fe9c05f69e646c93e64e9189233c4784a5522"
-    sha256 cellar: :any_skip_relocation, monterey:       "9a781ea22a2d82c29109dc2fb6b510a90195bda0fe39a630560f357746bff60b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "51fcf294e742b544a23228614574065af4fb37ded56050083d31b4cab7f0f23c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "10b69a46356e65d88efd09abe35508ca675aff3ae9c392000f93eab7ca2f0f77"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d1d8dc3b35ca4003548af911b942e6be7300544c251d6237cb550931ddebb31"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "250022722501d35c7f0ecebaf43c1e671b113307f834ca79f294b87e22fd2cdc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f4bd6e460748c0d90b931bb4ae7641e99e4156c83b0944012362d6add38e5d5e"
+    sha256 cellar: :any_skip_relocation, ventura:        "363b162df16a3c6e425b09059efa00615ddcb4c2ecba32624694d9562091e9c4"
+    sha256 cellar: :any_skip_relocation, monterey:       "bdc0128871e213a2962bf029dd030f6268f65b5b60c6bd530f624086eeeddb51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a19aa2dee6fa206eea58a365815f3352efd2a9aa7b63e7b99ee5061f374d92d"
   end
 
   def install
     system "make"
     bin.install "main" => "whisper-cpp"
 
-    pkgshare.install ["samples/jfk.wav", "models/for-tests-ggml-tiny.bin"]
+    pkgshare.install ["samples/jfk.wav", "models/for-tests-ggml-tiny.bin", "ggml-metal.metal"]
   end
 
   test do
-    cp [pkgshare/"jfk.wav", pkgshare/"for-tests-ggml-tiny.bin"], testpath
+    cp [pkgshare/"jfk.wav", pkgshare/"for-tests-ggml-tiny.bin", pkgshare/"ggml-metal.metal"], testpath
 
     system "#{bin}/whisper-cpp", "samples", "-m", "for-tests-ggml-tiny.bin"
     assert_equal 0, $CHILD_STATUS.exitstatus, "whisper-cpp failed with exit code #{$CHILD_STATUS.exitstatus}"

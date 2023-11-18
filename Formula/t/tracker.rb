@@ -7,10 +7,12 @@ class Tracker < Formula
       revision: "624ef729966f2d9cf748321bd7bac822489fa8ed"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
 
-  # Tracker doesn't follow GNOME's "even-numbered minor is stable" version scheme.
+  # Tracker doesn't follow GNOME's "even-numbered minor is stable" version
+  # scheme but they do appear to use 90+ minor/patch versions, which may
+  # indicate unstable versions (e.g., 1.99.0, 2.2.99.0, etc.).
   livecheck do
     url :stable
-    regex(/tracker[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(/^v?(\d+(?:(?!\.9\d)\.\d+)+)$/i)
   end
 
   bottle do

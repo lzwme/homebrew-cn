@@ -1,20 +1,18 @@
 class Mods < Formula
   desc "AI on the command-line"
   homepage "https://github.com/charmbracelet/mods"
-  url "https://ghproxy.com/https://github.com/charmbracelet/mods/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "7272c4062095c63e6c8a2cc3b5233bf9261a027237512123c073c2128284e6d0"
+  url "https://ghproxy.com/https://github.com/charmbracelet/mods/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "a615e7db5aa6e0cd353a488219bb35ea8f9732fc107daee6d3b89d7f16cef54d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e6ed316340a32ae8fee1309f22839280eca9054080041252a21567f21173decf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "13760592d727f5369869e3fd76ab323f6f263c189f996403ee8d71125dc00704"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "80c5a80865413a35f96309759a88ccf52bcd3cda6d82ce67ff856e007262fde2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fad46cf1ae5df42f505a4b4b8ea42aceb31fbbc03c5739e99a103be247b80bac"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3a517ff8703200fe8bb7aefa386700ff31263052f0da2360da86f707fff8982b"
-    sha256 cellar: :any_skip_relocation, ventura:        "3559e0119d53d36127c11fb4d414c22fd5762d72a4c9ac67d9db29b3189a16d3"
-    sha256 cellar: :any_skip_relocation, monterey:       "83809a1894cf76d40af463a24347abc69a1ab889d9a798d6c99948a170b55bba"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3a005be424f46fc92da62904c5608b0dcdf62670684b762703696ace5ec107da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11d734ee693fb5aa3f04d8edd949437967b8ba5ef4d48e269860863b056c83a8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "020a09cc252ea44db99e0fdc4202258bf90e66fea5f76ec41d1356a3721017aa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8c5e9d92362920f0d9da25a0a33894f904e8f27ac9938638a1832776d263e61f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7528018ee38c126b3e51effde3f1f4a2231162a2022a0a7b0105ba992fd25215"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d6f2332e2efdb11e88cc6f0dd54c7c5c495a37628aed56f06d7839dee1c1e56d"
+    sha256 cellar: :any_skip_relocation, ventura:        "1a03d2931f36cf6101da24ee694de260f63aeeb0d6b003a1fe916dc4c67795c0"
+    sha256 cellar: :any_skip_relocation, monterey:       "1cd1d1176d06510e4f1cc37182867e4af9423ecacc941bc9093b91f34f1394bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e140d90095afbbcde1a1bd58b02cf79441dcf3de4dc745af3814924f18c3ed20"
   end
 
   depends_on "go" => :build

@@ -8,13 +8,14 @@ class YtDlp < Formula
   license "Unlicense"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "da295e79a90f6cc38d5bd134648c787b4ed62cbda25dfc022f240c5a2c4c2ccc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd44c167794b9fa66e812717fdaa8410bced2c2f16d12969df9bcfcd6865d6da"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c2cbab41270fe50e23fc4462bc7d43c7eeae6dcb89d4a73c6bed2bc586b5a107"
-    sha256 cellar: :any_skip_relocation, sonoma:         "55eeff30ecf34c8fc48ab43b69da664711cc987b80d0957783a751e76c9123e0"
-    sha256 cellar: :any_skip_relocation, ventura:        "b0b84ccc264b29570f72d18364964007727f98f816d311db2af529c3c4d37a9e"
-    sha256 cellar: :any_skip_relocation, monterey:       "18a068e669b2ab517c4579fc96b97563d0507cee208eee491ed56d5110ae9761"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df7c7b1f29e82311108afa6a7566fe44346c3303e220f7ce9dfd8a72c95c37b8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0e492c0fe0dd6fc6b898cc9acb50b3f345da3dd38d2cb63b21196ab130b05e2f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f0559dd8febc7ca17981fb4ad38ffd914b9b65b822abf9b5083af687e0350ed5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0879a05b4aca935a0f625cd0e57f1d387682cba91cef7da8a96fb57956b9243d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f011cc8e8ad166232e9757df213142649110ed6395ea3435a86e1059ef36b049"
+    sha256 cellar: :any_skip_relocation, ventura:        "a96c137da6c44ba246e4326858de8e7253f30477d9276d937c06744185ffbc6a"
+    sha256 cellar: :any_skip_relocation, monterey:       "5f79c097a0022dbcbfa3c7204b42e78ea08da0e516197da9fab7774d4458c7d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "19935f8171eec54b837b902ba123db6df12ad4f981e76cfeecf43a237fd4b337"
   end
 
   head do
@@ -22,14 +23,10 @@ class YtDlp < Formula
     depends_on "pandoc" => :build
   end
 
+  depends_on "python-brotli"
   depends_on "python-certifi"
   depends_on "python-mutagen"
   depends_on "python@3.12"
-
-  resource "brotli" do
-    url "https://files.pythonhosted.org/packages/2f/c2/f9e977608bdf958650638c3f1e28f85a1b075f075ebbe77db8555463787b/Brotli-1.1.0.tar.gz"
-    sha256 "81de08ac11bcb85841e440c13611c00b67d3bf82698314928d0b676362546724"
-  end
 
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"

@@ -6,6 +6,7 @@ class Mercurial < Formula
   url "https://www.mercurial-scm.org/release/mercurial-6.5.3.tar.gz"
   sha256 "2cdc81fade129cf56b128417527f190ba72fd776567394ce54eed764e667e7d5"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://www.mercurial-scm.org/release/"
@@ -13,22 +14,23 @@ class Mercurial < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "d6e23d488820df784bd59398467a49ede4ffebf3eb0cfbe1f2e1ea311107e368"
-    sha256 arm64_ventura:  "7650c4b55b8b1b9ddd3fb44d326154a10ab4718db014bc62b1463c016cfcc83e"
-    sha256 arm64_monterey: "7d0aae1ba280d4a8d73e5569be82b7e572030dda2f67e6927fea67d9d8b9cc88"
-    sha256 sonoma:         "67ee32df063e66622ff43279e0b56274cc2c03f913e3ff364d61f06a804ee6de"
-    sha256 ventura:        "06f908db3a93cdf43b833be7a1cd639ea8dfd865db1e38cbcdf83137bbe7bce6"
-    sha256 monterey:       "a2722bfc707e69841a08f8b0e5114abf53004babb32435903b161402bb5df721"
-    sha256 x86_64_linux:   "4709006c47dda40d3a6d409f0b82e3ea09c06d50e9108a9294bcc5c2db7ac84f"
+    sha256 arm64_sonoma:   "dad5577f9d0df9a144e5a30af0b5e1fa561779ac406b7619f617fd15e43a1e56"
+    sha256 arm64_ventura:  "ac27b5de4ec0d4f8b957e3bafbeb83f9c2e1eb6fa263100ed89515b011b0901e"
+    sha256 arm64_monterey: "b17a6f0f6ebda7c7b63b3fed34d649e93ea796b844d58d66f457732d4f2959d5"
+    sha256 sonoma:         "301bace58627fa6ae0b95795b7595c645861e342fc6d0861fbaf68b05b2abedd"
+    sha256 ventura:        "a3a117932e8071b5af9769ec40284806f2cbce24a0a27ea3a48811e3e5614ba1"
+    sha256 monterey:       "449159c80eb782f8300b78d76f3f4a3dcc204bf7f728e7895c6bc0a34126be90"
+    sha256 x86_64_linux:   "22918f9e2a781fca78001fd438f60c98d9e1de877d9de1c252a242649ceae4ee"
   end
 
-  depends_on "python@3.11"
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12"
 
   def install
     ENV["HGPYTHON3"] = "1"
-    ENV["PYTHON"] = python3 = which("python3.11")
+    ENV["PYTHON"] = python3 = which("python3.12")
 
-    # FIXME: python@3.11 formula's "prefix scheme" patch tries to install into
+    # Homebrew's python "prefix scheme" patch tries to install into
     # HOMEBREW_PREFIX/{lib,bin}, which fails due to sandbox. As workaround,
     # manually set the installation paths to behave like prior python versions.
     setup_install_args = %W[

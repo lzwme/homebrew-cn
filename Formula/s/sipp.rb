@@ -2,20 +2,18 @@ class Sipp < Formula
   desc "Traffic generator for the SIP protocol"
   homepage "https://sipp.sourceforge.net/"
   url "https://github.com/SIPp/sipp.git",
-      tag:      "v3.7.1",
-      revision: "1126a8b27af21850a74b1f17b9c9af5c6c8d4309"
+      tag:      "v3.7.2",
+      revision: "e3b7748d7be7f32dcaeeed5ccd241a342635ac23"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f9cb7f510f1b396cb8b0bc2bdcb82159203c3e0ed8f9abba86f5471aab4e53c3"
-    sha256 cellar: :any,                 arm64_ventura:  "a8786cc5adcbe5899275b7cc504decd96a0df83729b39f24da584c326b3fd3f2"
-    sha256 cellar: :any,                 arm64_monterey: "3ab4877a57f6b5260db98d4b912a864e934420f5c1d3ec29a3ee96cd2b028124"
-    sha256 cellar: :any,                 arm64_big_sur:  "051f4ddf73a816d0ec591d0122b2e8dda508118e2130eb2b8d16da5d4ed2a2aa"
-    sha256 cellar: :any,                 sonoma:         "e44e86015b3c6e4261575ab6ea8f2bf0173c0a209e01dbc8f048f280dc42d224"
-    sha256 cellar: :any,                 ventura:        "faa45e7690f37061b2c21bc1d43c81756eeeceeec6067bb0466fccc8a0e9be30"
-    sha256 cellar: :any,                 monterey:       "c5d4946eb77659974a47635e096c83eab1f09aed85929bf76da9d1ff75eaafce"
-    sha256 cellar: :any,                 big_sur:        "3d52c34248ff03fccd8099c47c6cb962f454142a126ab5dca063a7572c2c5a97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa40e901e3d6e0301beb526ae94849cc185b1d53eccfe6a3a532adb0d32ad3b9"
+    sha256 cellar: :any,                 arm64_sonoma:   "ae45ca33cdc99fb1453e18c58f3d335e45399d9ea6dc6c6ed7c10e6c1552b658"
+    sha256 cellar: :any,                 arm64_ventura:  "b29b37874d620e771995ddacc91a1634eb418a8ab6011d45fab77199548c54f5"
+    sha256 cellar: :any,                 arm64_monterey: "d72679e95147af27b24199a6e9161963490e10ec3b15d28a5cd81560f0080f6b"
+    sha256 cellar: :any,                 sonoma:         "9672f2efb0243b9ca04667dd34b4ee8ac9519ff569b370a748931dd9d165dde7"
+    sha256 cellar: :any,                 ventura:        "256fede744b7bf3edac5fe1c30cbee5bbeb4aaacb2d9777ef524b39ae88e69c6"
+    sha256 cellar: :any,                 monterey:       "52eb2123094e28bdf3e91ad26a649631da885ed3c15ba19a8c0db6116a706115"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d38cf196ae21536968e3f7d874d6056cd38ab78b87cdb88480ab2ef9034c7b1c"
   end
 
   depends_on "cmake" => :build

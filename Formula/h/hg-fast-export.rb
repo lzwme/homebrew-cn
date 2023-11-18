@@ -6,15 +6,21 @@ class HgFastExport < Formula
   url "https://ghproxy.com/https://github.com/frej/fast-export/archive/refs/tags/v221024.tar.gz"
   sha256 "0dfecc3a2fd0833434d7ef57eb34c16432a8b2930df22a56ccf1a2bbb4626ba7"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "aefd99a8119ac0ac4fd41326020e2c46569bae1f99328c4a5cf4ebdef1aefb8a"
+    sha256 cellar: :any_skip_relocation, all: "8261baab910f89d19e65c2033c9138ad1288258e77ba6c2c2c650f8794166669"
   end
 
   depends_on "mercurial"
   depends_on "python@3.12"
+
+  # Fix compatibility with Python 3.12 using open PR.
+  # PR ref: https://github.com/frej/fast-export/pull/311
+  patch do
+    url "https://github.com/frej/fast-export/commit/a3d0562737e1e711659e03264e45cb47a5a2f46d.patch?full_index=1"
+    sha256 "8d9d5a41939506110204ae00607061f85362467affd376387230e074bcae2667"
+  end
 
   def install
     # The Python executable is tested from PATH

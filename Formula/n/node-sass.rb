@@ -17,7 +17,7 @@ class NodeSass < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf217e3d6ecd47328b11fa22aa2cf43de1dbf7d6c9845850317b22cdbfea953c"
   end
 
-  depends_on "node@20"
+  depends_on "node"
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)

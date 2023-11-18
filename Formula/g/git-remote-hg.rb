@@ -6,16 +6,16 @@ class GitRemoteHg < Formula
   url "https://ghproxy.com/https://github.com/felipec/git-remote-hg/archive/refs/tags/v0.6.tar.gz"
   sha256 "1d49ffda290c8a307d32191655bdd85015e0e2f68bb2d64cddea04d8ae50a4bf"
   license "GPL-2.0"
-  revision 1
+  revision 2
   head "https://github.com/felipec/git-remote-hg.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b625b36291d63e13cd8e9bcf1ee8861628b75a2897dda2dc235e065f456b4472"
+    sha256 cellar: :any_skip_relocation, all: "99779563fc8ad0f066f1531ec560061311e53479eeba3a79f920ba0675bf0a9e"
   end
 
   depends_on "asciidoctor" => :build
   depends_on "mercurial"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   conflicts_with "git-cinnabar", because: "both install `git-remote-hg` binaries"
 

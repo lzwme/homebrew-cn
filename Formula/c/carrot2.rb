@@ -17,7 +17,7 @@ class Carrot2 < Formula
   end
 
   depends_on "gradle" => :build
-  depends_on "node@18" => :build
+  depends_on "node" => :build
   depends_on "yarn" => :build
   depends_on "openjdk"
 
@@ -30,7 +30,7 @@ class Carrot2 < Formula
     # Use yarn and node from Homebrew
     inreplace "gradle/node/yarn-projects.gradle", "download = true", "download = false"
     inreplace "versions.toml" do |s|
-      s.gsub! "node = \"18.18.2\"", "node = \"#{Formula["node@18"].version}\""
+      s.gsub! "node = \"18.18.2\"", "node = \"#{Formula["node"].version}\""
       s.gsub! "yarn = \"1.22.19\"", "yarn = \"#{Formula["yarn"].version}\""
     end
 

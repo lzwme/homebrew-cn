@@ -1,8 +1,8 @@
 class HaskellStack < Formula
   desc "Cross-platform program for developing Haskell projects"
   homepage "https://haskellstack.org/"
-  url "https://ghproxy.com/https://github.com/commercialhaskell/stack/archive/refs/tags/v2.11.1.tar.gz"
-  sha256 "7a3a7e4aca8aef9ab6c081ea553a681844e6dad901c6b36b5e4cacae2fef6d23"
+  url "https://ghproxy.com/https://github.com/commercialhaskell/stack/archive/refs/tags/v2.13.1.tar.gz"
+  sha256 "00333782b1bda3bda02ca0c1bbc6becdd86e5a39f6448b0df788b634e1bde692"
   license "BSD-3-Clause"
   head "https://github.com/commercialhaskell/stack.git", branch: "master"
 
@@ -12,40 +12,43 @@ class HaskellStack < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b81fc81d3662235af6f1fed0d1f960fc728ffbd2eaa4e963ba7024227da4435d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b0d96a8ca7778d812662071c191dab3c588138a5327041842edfbd56378ca999"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d4fcc4cf54e777f2358c7c8437101efb72f2b84a0945f9e24bf813b4f4b233ba"
-    sha256 cellar: :any_skip_relocation, ventura:        "95f4fd991821862e3ea548a96a7cd93abeffbc22e0912de8bafec85d22f20d9d"
-    sha256 cellar: :any_skip_relocation, monterey:       "96e78b944ced64a81d399f3770ef55424b9664e541d90d2b07b8647c8862567c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "36bbb67964219186feacbc1860b4430962f2eb7bdae2295f7752e9f8b8fab99c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a7f98a6502cfd4dac42e044caa745b13a8d06b91f6b994255390ebce8cd50b9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0426cc31adddad813c139f9fefddce55a6e614893f2c1052b3ae56c0a9958cb7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3269aa3a8dcf82d1c8cbb8e362ed4609d99193611ece6ef0c00b1c820c9494f4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f20bef09d83372ced23f7cf80a7174a70640da5f228729b1c8b4cff39ea6fa2c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5ec70b9dbe8c49239f6058f8ad647478a063e879ddf663c49be1d9623e11fd1f"
+    sha256 cellar: :any_skip_relocation, ventura:        "ece414965294e7d82b7c073cf3607822541cec6ae171360fbcd01cc18da91ef8"
+    sha256 cellar: :any_skip_relocation, monterey:       "70b7031bd72c6c17ae139094c4471728a9d13d4e9b6141c7ac7818d39fd7fbf0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ddcddb8cc82773695f1733fb34caef081a8cb6f9a953e847ae4b7d5c1984c590"
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.2" => :build
+  depends_on "ghc" => :build
 
   uses_from_macos "zlib"
-
-  # All ghc versions before 9.2.1 requires LLVM Code Generator as a backend on
-  # ARM. GHC 8.10.7 user manual recommend use LLVM 9 through 12 and we met some
-  # unknown issue with LLVM 13 before so conservatively use LLVM 12 here.
-  #
-  # References:
-  #   https://downloads.haskell.org/~ghc/8.10.7/docs/html/users_guide/8.10.7-notes.html
-  #   https://gitlab.haskell.org/ghc/ghc/-/issues/20559
-  on_arm do
-    depends_on "llvm@12"
-  end
 
   def install
     # Remove locked dependencies which only work with a single patch version of GHC.
     # If there are issues resolving dependencies, then can consider bootstrapping with stack instead.
     (buildpath/"cabal.project").unlink
+    (buildpath/"cabal.project").write <<~EOS
+      packages: .
+    EOS
 
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args
+  end
 
-    bin.env_script_all_files libexec, PATH: "${PATH}:#{Formula["llvm@12"].opt_bin}" if Hardware::CPU.arm?
+  def caveats
+    on_macos do
+      on_arm do
+        <<~EOS
+          All GHC versions before 9.2.1 requires LLVM Code Generator as a backend
+          on ARM. If you are using one of those GHC versions with `haskell-stack`,
+          then you may need to install a supported LLVM version and add its bin
+          directory to the PATH.
+        EOS
+      end
+    end
   end
 
   test do

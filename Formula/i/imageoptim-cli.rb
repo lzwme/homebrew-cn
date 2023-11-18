@@ -18,7 +18,7 @@ class ImageoptimCli < Formula
     sha256 cellar: :any_skip_relocation, monterey: "24737964fe1dd7d2af554e33db1f31a3128e675954e256dc054ca435ebe518c6"
   end
 
-  depends_on "node@18" => :build
+  depends_on "node" => :build
   depends_on "yarn" => :build
   depends_on arch: :x86_64 # Installs pre-built x86-64 binaries
   depends_on :macos

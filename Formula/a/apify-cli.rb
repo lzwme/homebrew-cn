@@ -5,20 +5,18 @@ class ApifyCli < Formula
 
   desc "Apify command-line interface"
   homepage "https://docs.apify.com/cli"
-  url "https://registry.npmjs.org/apify-cli/-/apify-cli-0.18.1.tgz"
-  sha256 "ee638e7cae1947034602e656031b47e3a2ba1ab70e033097ab72ce9e9d911f1b"
+  url "https://registry.npmjs.org/apify-cli/-/apify-cli-0.19.0.tgz"
+  sha256 "f4359db5835d7007872a0efde7d82736c6a625107f61139ed06abf64495cafff"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0b5b46b7cb2e997a4aa1d9b7739500e4728b5a8af17987d3732d8f0937934e8d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c5dd67c07137004d0afe93eab2070c6b18544de201b14eefd8d996846bc3afd3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c5dd67c07137004d0afe93eab2070c6b18544de201b14eefd8d996846bc3afd3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c5dd67c07137004d0afe93eab2070c6b18544de201b14eefd8d996846bc3afd3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7bc71ae1ae89bca27b1723bfb5cfc3839ec4a389defe6ec235446cba81a659e2"
-    sha256 cellar: :any_skip_relocation, ventura:        "fa35d221e286aaebc337065d405a82585ffecf45febbcd0851fdee4731c24e79"
-    sha256 cellar: :any_skip_relocation, monterey:       "fa35d221e286aaebc337065d405a82585ffecf45febbcd0851fdee4731c24e79"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fa35d221e286aaebc337065d405a82585ffecf45febbcd0851fdee4731c24e79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a2198dba2bc75ac6323b0c2ebe1c58062665204f9c5c4fbae9dbc8478d385da"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7c2bcf5f69872e9e6db4dc236160c18b50915f0d71f7dffb64fbb63f2c7bd168"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7c2bcf5f69872e9e6db4dc236160c18b50915f0d71f7dffb64fbb63f2c7bd168"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7c2bcf5f69872e9e6db4dc236160c18b50915f0d71f7dffb64fbb63f2c7bd168"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0896df768350ff184b917652a708d14b9faf76401466049d5be732048f852702"
+    sha256 cellar: :any_skip_relocation, ventura:        "0896df768350ff184b917652a708d14b9faf76401466049d5be732048f852702"
+    sha256 cellar: :any_skip_relocation, monterey:       "0896df768350ff184b917652a708d14b9faf76401466049d5be732048f852702"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8071f6cb42fc55cff6552c5ec504b6fb11eb91e05dd4599de6a4441b7ad443d"
   end
 
   depends_on "node"
@@ -36,10 +34,10 @@ class ApifyCli < Formula
   end
 
   test do
-    # Test that the Apify CLI is at all installed and working
-    assert_match "apify-cli/#{version}", shell_output("#{bin}/apify --version")
-    # Test that the CLI can initialize a new actor
-    system "#{bin}/apify", "init", "testing-actor"
-    assert_predicate testpath/".actor/actor.json", :exist?
+    output = shell_output("#{bin}/apify init -y testing-actor")
+    assert_match "Success: The Apify actor has been initialized", output
+    assert_predicate testpath/"storage/key_value_stores/default/INPUT.json", :exist?
+
+    assert_match version.to_s, shell_output("#{bin}/apify --version")
   end
 end

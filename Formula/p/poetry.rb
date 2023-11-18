@@ -3,19 +3,19 @@ class Poetry < Formula
 
   desc "Python package management tool"
   homepage "https://python-poetry.org/"
-  url "https://files.pythonhosted.org/packages/c5/ff/d37625b6d2fe7f3b5a784da4684b011cc56b599f4d9aa249dac7e96b271a/poetry-1.7.0.tar.gz"
-  sha256 "796e2866f35cb57af36280a890f5a5b3f9ef1a2dcf780b945b02be2e82895391"
+  url "https://files.pythonhosted.org/packages/bb/cf/cfdd5ab997bdb51a29c5f1d1925c409c58d5e504062c105dc0d82ec9e7c5/poetry-1.7.1.tar.gz"
+  sha256 "b348a70e7d67ad9c0bd3d0ea255bc6df84c24cf4b16f8d104adb30b425d6ff32"
   license "MIT"
   head "https://github.com/python-poetry/poetry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "429535934ddb3d7dabcbbc1bf794036678e7aa5549f5c50da74582010d1aa630"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a9d59671d5352e6219f1fc8aaf9a3dfd803d730432b805a3320c373d93199fd3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7822e9ba2585f669800274f0fdd58493dce6b4ce1bdc8f5a7941246d60496b73"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d4d29b4223f542fd31e5d81d6a90edf2758502b96abc6f221aeecae6ab38c211"
-    sha256 cellar: :any_skip_relocation, ventura:        "8405667c87135dd1732b9f23d5134cb1b7f5412233ad242f76c48fa00c84a80c"
-    sha256 cellar: :any_skip_relocation, monterey:       "a4a1ef3b9813041503ac68f8857310a970666dab62bb280ebfa2361759d4f219"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfc56c6c5afc71b52a384f2092b949cd65c797129250a7a3d49ff32265beb515"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3ffdfeeaff0a39739f4c90caaaa36409e224aacf80b51f62466cfa9bc42aa33b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2f00fe9babab6dcad108435346338e3b353394227cb898ad1ce04665a25fd5f8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ce6c94a1846e65ff0326b52da6e5520a7f543cc4dfa3028d33e0e0841a921ac"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3bc4d7b3e9b32b171088621cadd8c7afbea2295314e787ac06a52aff0ddc1f33"
+    sha256 cellar: :any_skip_relocation, ventura:        "308fdee590d8e6e81ae01c4b94644d46f49bdb69032fab33cf1d1f0bf3d8dc75"
+    sha256 cellar: :any_skip_relocation, monterey:       "d1216894867d26bfe0d87907549ba90cd86376115cda46f4d8dccdb0d0480bc1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c5156ba2456994a4337332a1694414f1d2e8e3ff885c5fb74ba0dff370d51b6"
   end
 
   depends_on "cmake" => :build # for rapidfuzz
@@ -58,8 +58,8 @@ class Poetry < Formula
   end
 
   resource "fastjsonschema" do
-    url "https://files.pythonhosted.org/packages/82/d1/0e54b17b6ebae7a347602bb07bb2f5c4cff9bdbbd354f202b3af48f22f75/fastjsonschema-2.18.1.tar.gz"
-    sha256 "06dc8680d937628e993fa0cd278f196d20449a1adc087640710846b324d422ea"
+    url "https://files.pythonhosted.org/packages/7a/61/5fc12c3a9b206e2d85399253ecbe602a753bfb54ae891bc74819ab594312/fastjsonschema-2.19.0.tar.gz"
+    sha256 "e25df6647e1bc4a26070b700897b07b542ec898dd4f1f6ea013e7f6a88417225"
   end
 
   resource "idna" do
@@ -128,18 +128,18 @@ class Poetry < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/9b/93/93f12cdd3b9da81e94f2435d01fe6b3e9edc7704a25d4ad260ce7906ca62/tomlkit-0.12.2.tar.gz"
-    sha256 "df32fab589a81f0d7dc525a4267b6d7a64ee99619cbd1eeb0fae32c1dd426977"
+    url "https://files.pythonhosted.org/packages/df/fc/1201a374b9484f034da4ec84215b7b9f80ed1d1ea989d4c02167afaa4400/tomlkit-0.12.3.tar.gz"
+    sha256 "75baf5012d06501f07bee5bf8e801b9f343e7aac5a92581f20f80ce632e6b5a4"
   end
 
   resource "trove-classifiers" do
-    url "https://files.pythonhosted.org/packages/5b/fa/49b6a09e4f389d4d9406d2947a685de1462ffb676ea6e61c50905e27b0f4/trove-classifiers-2023.10.18.tar.gz"
-    sha256 "2cdfcc7f31f7ffdd57666a9957296089ac72daad4d11ab5005060e5cd7e29939"
+    url "https://files.pythonhosted.org/packages/bc/ca/877e9b50c0092e6a9df860901309d9ec70e7dd0b077ee9bedc8bab24bb7f/trove-classifiers-2023.11.14.tar.gz"
+    sha256 "64b5e78305a5de347f2cd7ec8c12d704a3ef0cb85cc10c0ca5f73488d1c201f8"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
+    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
   resource "xattr" do
