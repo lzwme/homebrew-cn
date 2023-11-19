@@ -3,13 +3,12 @@ class HgFastExport < Formula
 
   desc "Fast Mercurial to Git converter"
   homepage "https://repo.or.cz/fast-export.git"
-  url "https://ghproxy.com/https://github.com/frej/fast-export/archive/refs/tags/v221024.tar.gz"
-  sha256 "0dfecc3a2fd0833434d7ef57eb34c16432a8b2930df22a56ccf1a2bbb4626ba7"
+  url "https://ghproxy.com/https://github.com/frej/fast-export/archive/refs/tags/v231118.tar.gz"
+  sha256 "2173c8cb2649c05affe6ef1137bc6a06913f06e285bcd710277478a04a3a937f"
   license "GPL-2.0-or-later"
-  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8261baab910f89d19e65c2033c9138ad1288258e77ba6c2c2c650f8794166669"
+    sha256 cellar: :any_skip_relocation, all: "6019dfbf44fada2b341b35e2fa5b766cf624ce0967bbd551a5b1ffc52a2fde34"
   end
 
   depends_on "mercurial"

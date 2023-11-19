@@ -5,11 +5,6 @@ class PostgresqlAT11 < Formula
   sha256 "2cb7c97d7a0d7278851bbc9c61f467b69c094c72b81740b751108e7892ebe1f0"
   license "PostgreSQL"
 
-  livecheck do
-    url "https://ftp.postgresql.org/pub/source/"
-    regex(%r{href=["']?v?(11(?:\.\d+)+)/?["' >]}i)
-  end
-
   bottle do
     sha256 arm64_sonoma:   "3a8e0f24e7e667923d8a7621dd7739b2124b49e85a1e287b4751ba9b046bc5ab"
     sha256 arm64_ventura:  "a181708cda06eede952b82c103a81f0d8b103b543330827625b965e091ec2323"

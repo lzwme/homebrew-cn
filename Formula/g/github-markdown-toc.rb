@@ -1,18 +1,18 @@
 class GithubMarkdownToc < Formula
   desc "Easy TOC creation for GitHub README.md (in go)"
   homepage "https://github.com/ekalinin/github-markdown-toc.go"
-  url "https://ghproxy.com/https://github.com/ekalinin/github-markdown-toc.go/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "6e226067f65614ca59bd2e52b163ec1c4b4a86d31b243a0b861cdc6bb8737175"
+  url "https://ghproxy.com/https://github.com/ekalinin/github-markdown-toc.go/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "e8252635f85b0de2fd4fdcd1237214eeeeaf5f439f6f2c39182fc00cf3e6554b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "07f7d49c3487d72b9b721fe7a8b6ed60ade2bae55a186b921fede1850e89a78c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef031cecc5c4833d4434d69b1bfa25601587e781c58f9c5f2c912796664ee33e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8f709a5f44c5a146a3aec9ee5b96c526c1f01684c7f07bcdd230dfd8e5d09418"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d5147e6ec58ed9f7452d1ac21e253ad2ccd3a811d6b1ebc0c9b5b2dae2837f0c"
-    sha256 cellar: :any_skip_relocation, ventura:        "da05aa4967528595ea8b3b028ffbbe063dbec19d7b5d49d148fe179e415dfb0c"
-    sha256 cellar: :any_skip_relocation, monterey:       "94cb12926a3f636fdcc5af1ec7e8a2f3fe5a54a60becaff436c5922f915f4886"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45725902e7b92871f5e3af3f5cc6c74d3c7711cfe1b35d13f3fccf175b1cef67"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3b1ffae4ff13510484d9b92da36d5eabd6503dccf4348c46694fb6d2f093256c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f302afa229f6c57145b01001385479109a354c1a875e5121236c6cace7382fad"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cb7910e927c39861d9adae5fcfd84f3ee57cdef96b213bcc06f9c6cdd8a1192a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e6ac4b31d7d7e7fff4ca73e97900a10b935937bc6ecb51f5b6523f06a7963b60"
+    sha256 cellar: :any_skip_relocation, ventura:        "a0dbd6294c4654bce5dd2e659083c48d0de29b494b0fbc31a2a6ca0aa2a19a93"
+    sha256 cellar: :any_skip_relocation, monterey:       "ccf37b4e222315022b29ef6d3780c5262d0ec16879dce1d499333eb057bd4b1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb82828a3be012bcba319acc6bd0b9511eda911c16d21904f5748dc5c1709881"
   end
 
   depends_on "go" => :build

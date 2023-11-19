@@ -1,21 +1,19 @@
 class Raylib < Formula
   desc "Simple and easy-to-use library to learn videogames programming"
   homepage "https://www.raylib.com/"
-  url "https://ghproxy.com/https://github.com/raysan5/raylib/archive/refs/tags/4.5.0.tar.gz"
-  sha256 "0df98bfc553db31356cab46a2f9ed6d932065f186a0fff24bafa05f8a60e16d1"
+  url "https://ghproxy.com/https://github.com/raysan5/raylib/archive/refs/tags/5.0.tar.gz"
+  sha256 "98f049b9ea2a9c40a14e4e543eeea1a7ec3090ebdcd329c4ca2cf98bc9793482"
   license "Zlib"
   head "https://github.com/raysan5/raylib.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "662558c42eb94dd57d74769c8be1fa56dc511b2c532016725ea2f795ddc981d4"
-    sha256 cellar: :any,                 arm64_ventura:  "a3f03b9f6fc41dd1884d4c1694aa44a1ad0a035ddb1dc4dda690898d000cd407"
-    sha256 cellar: :any,                 arm64_monterey: "10a1d493f6abdfd66b2d0639d848c5972e65df7a475b1e77210da59e60ff57b3"
-    sha256 cellar: :any,                 arm64_big_sur:  "b50c3a4cea028ce463bce5f8cd857d61c9c0ac10fcab6f491cb62c98b08c3d08"
-    sha256 cellar: :any,                 sonoma:         "f6d9ec0179498117c61f08faacf4c3b5bb95d99a4804f961005c8541755f4c1e"
-    sha256 cellar: :any,                 ventura:        "a5fa31296b157523b968e2ba6a913e11140a06b46600d14fff7dfca08dec16d3"
-    sha256 cellar: :any,                 monterey:       "af0630c193767d75d93bead04d6b5ace6fa0db4f789f35a8980ec771b37face1"
-    sha256 cellar: :any,                 big_sur:        "f62b1dde82d0f33e6fbda710e75b0a2f4a7559dc6588201419bce5f2f9ca4b92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d9f930f5a0e98eece43c16318eaaf42e94629d7f45e07c0b6765ee36fe70ece"
+    sha256 cellar: :any,                 arm64_sonoma:   "df780cb94deb60db33809e7fed26dfb908f0e56b94ba9446b81feb81341429a4"
+    sha256 cellar: :any,                 arm64_ventura:  "6dfeb82614799cbb5ad1acbf7d5bb6c9b49aca625589792453d490eff0f06acd"
+    sha256 cellar: :any,                 arm64_monterey: "fb4f24b408d7e9ff3288f1cad7faba81f649ebf271389fa81a2034175330c3ff"
+    sha256 cellar: :any,                 sonoma:         "f5541a5c113575806fd5d0ecf0fa6a6ecccc5485745a7b3cf812003c8eea9914"
+    sha256 cellar: :any,                 ventura:        "a855f2f9a4904451c9c1f70e4083869ba1927ac1e9093752467f4796e289ebd4"
+    sha256 cellar: :any,                 monterey:       "c515bdd72672af2565897cb55c2d8d4adce5be582f7c0bb914f006d4471feeea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "72ebd3844b3be772438ef23365d7e27dc2604b93e127560398bcc5dd568c4bd5"
   end
 
   depends_on "cmake" => :build

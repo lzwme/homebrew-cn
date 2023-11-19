@@ -1,19 +1,19 @@
 class SshVault < Formula
   desc "Encrypt/decrypt using SSH keys"
   homepage "https://ssh-vault.com/"
-  url "https://ghproxy.com/https://github.com/ssh-vault/ssh-vault/archive/refs/tags/1.0.5.tar.gz"
-  sha256 "d1b68bfe54eb48f35302e4793037475546b3b320676e6178064d2c966dcfece1"
+  url "https://ghproxy.com/https://github.com/ssh-vault/ssh-vault/archive/refs/tags/1.0.6.tar.gz"
+  sha256 "8ea352a6c39e1c6854537fc441eb0bfec5ffb06643c1b254f1aef4ec4c389586"
   license "BSD-3-Clause"
   head "https://github.com/ssh-vault/ssh-vault.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "62ab051370bf7febef339dd31a588115ff39d63908278622d3e7808777e4bc35"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7249d1c67a24719c25951f76c42a6dd33c71587ad1a4c4a7182d96c0f333e848"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "99d1e536f2d786736bdbdbf9b4b98bac75dbd3ab74145a3aaf9ab82879be431e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7427edaabb0eeca139226ad26d7a6f7d514954f3cbe4bbd4c179084630fa4b55"
-    sha256 cellar: :any_skip_relocation, ventura:        "26bc2e0f64631fc69a25c2623497b76126ba89013042cc7afdabf818a827cf7d"
-    sha256 cellar: :any_skip_relocation, monterey:       "1f10ba36cbd64f39848ce39706ed4b75658d2d6d49bfa605d9916d0a88089884"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "163cca04f7f4b42b329c8dc2642564cd13f12123e152869c2a103d3c498c459c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b041a70fd2e311e7b7d105b1b548c181732a49e6c75fcf459c5d55a888e4ef0d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b5f0b8500962a514fcf73f3dc98e7ee5897223e099a14ac4ccfc6407a063275"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9de509afd5b9f122229f4c7b3f5996f410fe41694c6ca47eebac46b91f40b176"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d6853eba7ee198a1d1b31a9f9a93adddd8324286a54d219af51694b12ba9eacd"
+    sha256 cellar: :any_skip_relocation, ventura:        "6c8738c27222db9209db21cbf10a78676a10d420ec52917dee9f4ff4c384086d"
+    sha256 cellar: :any_skip_relocation, monterey:       "1847fdc33ad0cf3922720177d53b180ead87dedd89e74cb552abf4d40eefd3dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "64ccd7390db0b3b66a952664696a8dcbbbaad8e2cda716a757876ed3210e2f58"
   end
 
   depends_on "rust" => :build

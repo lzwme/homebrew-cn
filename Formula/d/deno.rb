@@ -1,19 +1,19 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.land/"
-  url "https://ghproxy.com/https://github.com/denoland/deno/releases/download/v1.37.2/deno_src.tar.gz"
-  sha256 "9b922f3cfd106a679156f5c3699728cbc08e053f3ea505b04da93aa8fc46a2f3"
+  url "https://ghproxy.com/https://github.com/denoland/deno/releases/download/v1.38.2/deno_src.tar.gz"
+  sha256 "9d2a241c8b1ee203ac49824dd7410dd7c8dc82599d2a62d704fd8a7a46abebc5"
   license "MIT"
   head "https://github.com/denoland/deno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a7d5325eaccdd39274d351afebd30a74bb2b370eeb8849299b70f6acfc0034e0"
-    sha256 cellar: :any,                 arm64_ventura:  "75b97a80faa5039fbab68598f3539490abd2464c0ffe0b1bdf36582c6959ab9f"
-    sha256 cellar: :any,                 arm64_monterey: "eb84a702256cb6d7f18e51212995977e19ff6c001433a4a28e28f0be4683abcb"
-    sha256 cellar: :any,                 sonoma:         "80da8825967065d9d4542c6b77eab4d6df60477fcc39093c072937a5352a5ef7"
-    sha256 cellar: :any,                 ventura:        "4202c5ca15ac113c2d937f1977b2ecef6cb4215cde828c4532b63d155b31ac53"
-    sha256 cellar: :any,                 monterey:       "fc9cc40a55bf135cda3ddcac7175b576ad9c6dc5137e0b6fafd138412fc2643b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1cd58a8899ca0860e5b5877941f9fcd2f81cfafe01e801ff5310b9532af060e"
+    sha256 cellar: :any,                 arm64_sonoma:   "dc7e95616634a06092a71baef1f8975e2ad666a697574c04f3d3638122bdab38"
+    sha256 cellar: :any,                 arm64_ventura:  "dcffe492e2b5764213b2eb2e2172c4fc4f0c306825cb636d547c77df55e7654a"
+    sha256 cellar: :any,                 arm64_monterey: "456b0a11fbff893359f014438276eae212a774559dea33299edd915707e2e016"
+    sha256 cellar: :any,                 sonoma:         "0e36fc5d148e3ebdea38dc2311e97bdde55d460b00eb5622933e8221f2889629"
+    sha256 cellar: :any,                 ventura:        "c4fdb41a43fa482c2f090a43d1576a67c18aff87d031280dc77cb8666f8f7b94"
+    sha256 cellar: :any,                 monterey:       "ba241abf3b252c71a17edaff1be4e1de7f5d465b02e4be17423d863cb44fb804"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9197232523b4eb00ed41f6f3988e58fc930b935bf4376b17288848ee6efce0a6"
   end
 
   depends_on "cmake" => :build
@@ -45,23 +45,23 @@ class Deno < Formula
   # Use the version of `v8` crate at: https://github.com/denoland/deno/blob/v#{version}/Cargo.lock
   # Search for 'name = "v8"' (without single quotes).
   resource "rusty_v8" do
-    url "https://static.crates.io/crates/v8/v8-0.79.2.crate"
-    sha256 "b15561535230812a1db89a696f1f16a12ae6c2c370c6b2241c68d4cb33963faf"
+    url "https://static.crates.io/crates/v8/v8-0.81.0.crate"
+    sha256 "b75f5f378b9b54aff3b10da8170d26af4cfd217f644cf671badcd13af5db4beb"
   end
 
   # Find the v8 version from the last commit message at:
   # https://github.com/denoland/rusty_v8/commits/v#{rusty_v8_version}/v8
   # Then, use the corresponding tag found in https://github.com/denoland/v8/tags.
   resource "v8" do
-    url "https://ghproxy.com/https://github.com/denoland/v8/archive/refs/tags/11.8.172.6-denoland-6dccdd60aac64dc962c3.tar.gz"
-    sha256 "c9a1320de81a9ed2c5d4d1e0edf2bdf073efe46bd3f489d9afd5501aaf646d40"
+    url "https://ghproxy.com/https://github.com/denoland/v8/archive/refs/tags/12.0.267.1-denoland-b287115fa7c9f0323c43.tar.gz"
+    sha256 "f8ede0e87d00c7c25f8833b6dc0f149929c511316e2c50100195b0a11b3052cc"
   end
 
   # Use the version of `deno_core` crate at: https://github.com/denoland/deno/blob/v#{version}/Cargo.lock
   # Search for 'name = "deno_core"' (without single quotes).
   resource "deno_core" do
-    url "https://ghproxy.com/https://github.com/denoland/deno_core/archive/refs/tags/0.220.0.tar.gz"
-    sha256 "2eecf64fdc28323e2b4e8cd10fa6ade57f1efabf2ba4bc3c960bd6e080fac3ee"
+    url "https://ghproxy.com/https://github.com/denoland/deno_core/archive/refs/tags/0.230.0.tar.gz"
+    sha256 "b470fd812012ed2cceb63e36603d74887cfe5c6e87ceec6e952272276c36a0d2"
   end
 
   # To find the version of gn used:
@@ -92,9 +92,6 @@ class Deno < Formula
     inreplace "ext/ffi/Cargo.toml",
               /^libffi-sys = "(.+)"$/,
               'libffi-sys = { version = "\\1", features = ["system"] }'
-    inreplace "ext/node/Cargo.toml",
-              /^libz-sys = { version = "(.+)", features = \["static"\] }$/,
-              'libz-sys = "\\1"'
     inreplace "Cargo.toml",
               /^rusqlite = { version = "(.+)", features = \["unlock_notify", "bundled"\] }$/,
               'rusqlite = { version = "\\1", features = ["unlock_notify"] }'
@@ -129,7 +126,8 @@ class Deno < Formula
     # hence the need for -j1
     # Issue ref: https://github.com/denoland/deno/issues/9244
     system "cargo", "--config", ".cargo/local-build.toml",
-                    "install", "-vv", "-j1", *std_cargo_args(path: "cli")
+                    "install", "--no-default-features", "-vv", "-j1",
+                    *std_cargo_args(path: "cli")
 
     generate_completions_from_executable(bin/"deno", "completions")
   end

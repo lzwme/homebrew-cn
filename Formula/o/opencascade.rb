@@ -5,7 +5,7 @@ class Opencascade < Formula
   version "7.7.2"
   sha256 "2fb23c8d67a7b72061b4f7a6875861e17d412d524527b2a96151ead1d9cfa2c1"
   license "LGPL-2.1-only"
-  revision 1
+  revision 2
 
   # The first-party download page (https://dev.opencascade.org/release)
   # references version 7.5.0 and hasn't been updated for later maintenance
@@ -21,15 +21,13 @@ class Opencascade < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b1c6e64d1b2960510981dfa9f0dae0bd5bf6b7d7d2468afece7d7ae74a26e084"
-    sha256 cellar: :any,                 arm64_ventura:  "58ccfbc5b3cce2e4526201ae799b57b5b56baa105eaeb7df521407a803ff58ff"
-    sha256 cellar: :any,                 arm64_monterey: "4036d7412743ad4f9fad8a260b1c9d4d178a6181a85458251c2431be25b1df4e"
-    sha256 cellar: :any,                 arm64_big_sur:  "26f8f8d7bfde327d8ce6dfcca92027d65de3cdbf58c2a6ef1c8ef0bc014499ac"
-    sha256 cellar: :any,                 sonoma:         "80ff952f97f98f4a05be4951d2eac734b992bb5892ea50a593901ee748c879e8"
-    sha256 cellar: :any,                 ventura:        "735838ed1b509a878a101690451c0348103292e2b0a89a6d721acc79c01358d1"
-    sha256 cellar: :any,                 monterey:       "4f31d63a97dc8ed4993cc94f1ce0052b0fff4e6c0b0632a592aadaca55ca741c"
-    sha256 cellar: :any,                 big_sur:        "dea2039879a80c1464ea88caedf93d5cfdc094f26b5695cf29b4c7a9985611b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8121480f2fc82a5806b43323a053dc39626ef8c3612c831633d0d7885819477f"
+    sha256 cellar: :any,                 arm64_sonoma:   "ac86e06df1837313ad33bb5f1fb2c73b7d2b06c4324b08ff95063190661928d0"
+    sha256 cellar: :any,                 arm64_ventura:  "0a95f11bf578d999f71a1bf8351b07632e1af283cea89cceb42968128c9d6526"
+    sha256 cellar: :any,                 arm64_monterey: "be30e7b01c9f1e5ce839ae597c6a20e9eb9377f6a04e05544ceb5a88dbbb0205"
+    sha256 cellar: :any,                 sonoma:         "9a9bf3b8405b429272962e6666080fa1b03d99d15ffbedae83eaab4ecdb1d184"
+    sha256 cellar: :any,                 ventura:        "7eaad7875b081f3895d568ec64a16b5f7989a601cd4e9dca51e5123a8c99838f"
+    sha256 cellar: :any,                 monterey:       "4de3495e2cfd924df9358fc92e19fd9c5cf4e3ffd13245cd22daad96b074047b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d8edac229f1a0029c99754aa2fc8da51c6f16eefce04570622d50ba8e69a263"
   end
 
   depends_on "cmake" => [:build, :test]

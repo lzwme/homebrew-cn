@@ -4,17 +4,17 @@ class Ncnn < Formula
   url "https://ghproxy.com/https://github.com/Tencent/ncnn/archive/refs/tags/20231027.tar.gz"
   sha256 "8d85896ed095d09f05fff32fc85d75eea0b971796ce0f48a9874d93d3d347674"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/Tencent/ncnn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "35c5e0ee2f1eb3d7c7b15985164c690c80c037ee2d95e710179b87d73e0e5418"
-    sha256 cellar: :any,                 arm64_ventura:  "d5c6ce4def8b0f3139876dd8e43d607da9ffee047dac6962a77fc71878e370fb"
-    sha256 cellar: :any,                 arm64_monterey: "5f983cc31d726d66bbda3c5cff63332b3e0be2a244c3c6fd2f82cb5361689462"
-    sha256 cellar: :any,                 sonoma:         "2fa6f3e778d80fc04928a20d9bfd71b2125accadbf7176ceac3a652cee05fb50"
-    sha256 cellar: :any,                 ventura:        "a02e578ecd9e87fc6f8a6c8ff5791dea4f3a75d6082862976e2afcc3bad960ba"
-    sha256 cellar: :any,                 monterey:       "9f046641c5b35a7526f373e1bc91982fc36eea1a4429181b20f860fbb63c98ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c4d9a3d52715b2041c143f3b7c06696f70146750fd656a3b5f00960439c3ac9"
+    sha256 cellar: :any,                 arm64_sonoma:   "b23c9027141674a70d605d9327042f903d0bb03dc7985d378ca7f739dad7ae87"
+    sha256 cellar: :any,                 arm64_ventura:  "d360e6eba72e11fe8278fb5a0b0758f882e824be4117321d78158fccc08146bf"
+    sha256 cellar: :any,                 arm64_monterey: "c374c47595c01b001db0a77088e7d0092a799d5c89b8445b7fcaff05d805d1b1"
+    sha256 cellar: :any,                 sonoma:         "fc2e611a03655d5774dbadb1e3548947f0647bfaa19d537340663e8bf7f7cbc3"
+    sha256 cellar: :any,                 ventura:        "b1e96f6d5fb66f67eef884d865d3358a89c7b587840127bfab304c4902019887"
+    sha256 cellar: :any,                 monterey:       "9326de1cf95113872d481078af4e1bb1def7e6592cc94ccd0c9c9f0dbbd2152c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0173e6aa228d9c61ac7b019a50083a94e0bcc772b68892b3c8d19955db4415a7"
   end
 
   depends_on "cmake" => :build
@@ -33,7 +33,7 @@ class Ncnn < Formula
     ENV.append "LDFLAGS", "-Wl,--copy-dt-needed-entries" if OS.linux?
 
     args = std_cmake_args + %w[
-      -DCMAKE_CXX_STANDARD=11
+      -DCMAKE_CXX_STANDARD=17
       -DCMAKE_CXX_STANDARD_REQUIRED=ON
       -DNCNN_SHARED_LIB=ON
       -DNCNN_BUILD_BENCHMARK=OFF

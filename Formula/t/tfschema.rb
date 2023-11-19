@@ -1,22 +1,19 @@
 class Tfschema < Formula
   desc "Schema inspector for Terraform providers"
   homepage "https://github.com/minamijoyo/tfschema"
-  url "https://ghproxy.com/https://github.com/minamijoyo/tfschema/archive/refs/tags/v0.7.5.tar.gz"
-  sha256 "0642b125805e812675f542feb5f2ab54bdf5660c12c93f86e90469407b204a04"
+  url "https://ghproxy.com/https://github.com/minamijoyo/tfschema/archive/refs/tags/v0.7.6.tar.gz"
+  sha256 "a441e65a8432b4e80732d7448f932e126a3a8d83d2f6e65a04d8ad49a60869f1"
   license "MIT"
   head "https://github.com/minamijoyo/tfschema.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6830378ca73150590c809842a31ce08782e296e20684f82c830618dc7d5812fc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a3f7e711f325ee58dda16f45d13187884c1b04f8e80d1c1d5fd3afbfb5105601"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b337919ffdcc2450e142cedfe51dfdd0ab91c5c97f451d047d024556430fe966"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a894518428d7803bb0d18617bed08805195eb02e7b56632c6202d730378c51aa"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9712a1ddfcf4c35d02d877151ce2d70f5153575e94033f6aaca6f456adfc8678"
-    sha256 cellar: :any_skip_relocation, ventura:        "17bed45c783f855c0ad44ae4c08319301ce56f1bbfaba05425bc4c9a6eb70f1f"
-    sha256 cellar: :any_skip_relocation, monterey:       "a5945fcd8872038b39d1315cfef5c803cabcd2c9189db0909fe55f484566568d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cb2c432065da78390f6902797fd439ecf645f20f12aa6a7302382f6e2e5b8def"
-    sha256 cellar: :any_skip_relocation, catalina:       "a69cfd013aaf2f42bda4e899fe427a36a4f552afcaf86ce13da04d53024d5056"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2215c0ed4688650a185e0dd4342ca5b89c6238a6ae46531a404dcdb2705a6fc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9df80dc04f36cce847a83eee4057df42afd0fa0f7da186ebb732bdd71c07185d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba7e33bf562737b3dc9cb99eda6a2e24ee43d287f16dbb8acd9158c5b64fe758"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d2305e8f8b8697ca6aa517a026ee79229e18c72809b6a0020e122d688aa35f9f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7ad0bbf93a0c28ac6255ef55387571de7f250fe7b5a36571adf769b008e7b69a"
+    sha256 cellar: :any_skip_relocation, ventura:        "28511dea75868ca4a87616a69063d2cbaf3960f911825181c04d41c4704bf8a1"
+    sha256 cellar: :any_skip_relocation, monterey:       "c4ab9a937e5efbc86acc234a2a66d0fa1254a6d57b71de8670cd2d12e846bce5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "258c47b8b8d81c10546cf37431cff48492ab939a83cfa25f396a79943d5175e4"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class Fheroes2 < Formula
   desc "Free Heroes of Might and Magic II is a recreation of HoMM2 game engine"
   homepage "https://ihhub.github.io/fheroes2/"
-  url "https://ghproxy.com/https://github.com/ihhub/fheroes2/archive/refs/tags/1.0.9.tar.gz"
-  sha256 "22e73ee4ff8a38e9e648fcb8df681fbb309b136e68483639517dfc9f61f867df"
+  url "https://ghproxy.com/https://github.com/ihhub/fheroes2/archive/refs/tags/1.0.10.tar.gz"
+  sha256 "f0bc60973bbdc3c333563a5f53252d6e3edd4ea8c4f91729e0480ff0e6a403a2"
   license "GPL-2.0-or-later"
   head "https://github.com/ihhub/fheroes2.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Fheroes2 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "5bc32db2fd0b0e3a0858dc723834edd0bbcf9ab0bdbbd420a9a7a6cae0bba19c"
-    sha256 arm64_ventura:  "7130860f665b300167bf5d571444b48bcdac1468aa565cf2cf7e1963de006037"
-    sha256 arm64_monterey: "5c7df58c5983f192709955357ad50f7468eb3edd022a0786134f221cb42beaf3"
-    sha256 sonoma:         "3078f147141ce141f346d649de89f307c0910c4bb6fbb79f1969a9688c2f5117"
-    sha256 ventura:        "5e0d09d2eebb21548d86c57b1c72e8d41a824727e6c1b42aef8530f329bc262f"
-    sha256 monterey:       "1c815d536ae714edc71761b8eec0032171981e1715c7bc9037639429c601a57b"
-    sha256 x86_64_linux:   "2fb8f9f0ce678d9be88e2bcc840481688cd20b6be59c2e786f27b99b5e7d3d49"
+    sha256 arm64_sonoma:   "4ae055248754ea7cfd5f2ba5abb172902e94cd9991dc779151a6e0c7e4f90255"
+    sha256 arm64_ventura:  "179ab463fc52fd87139e54d6b1d504aa1b416e25ed62f1febbabc6ebac3af2a5"
+    sha256 arm64_monterey: "4497d19db0de10bb71221e40285f042778f6b07f889b6cdb999948adcf6df44a"
+    sha256 sonoma:         "b627a0005b0910d6fe3586b5b9fdca642023331d3f0ece766398e3ace96fe292"
+    sha256 ventura:        "320cb4dc4d7d347904e65f69650fd456d6c8584051a79725f01654c1e7e49586"
+    sha256 monterey:       "de241fccabe4652eb5a0683a5f761d2b8fa941d6512fb145d3cec6d7f4039f3a"
+    sha256 x86_64_linux:   "260b147dd6b2ed7825830fcca85f5c4584490a110a68825de6156d8df52a77b1"
   end
 
   depends_on "cmake" => :build

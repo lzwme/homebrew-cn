@@ -1,21 +1,19 @@
 class Duckscript < Formula
   desc "Simple, extendable and embeddable scripting language"
   homepage "https://sagiegurari.github.io/duckscript"
-  url "https://ghproxy.com/https://github.com/sagiegurari/duckscript/archive/refs/tags/0.9.1.tar.gz"
-  sha256 "08a3f129d20f477566e287df5a6f4ad6a3cda0d768d2afd768cfd8bf5887c770"
+  url "https://ghproxy.com/https://github.com/sagiegurari/duckscript/archive/refs/tags/0.9.2.tar.gz"
+  sha256 "169f847610f04be13339210443a53e07a2ea162ce6f9136efc0a5b735b0df5fb"
   license "Apache-2.0"
   head "https://github.com/sagiegurari/duckscript.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f4eb087144be71ec3b9ae032a5d45cb57e0267f6293c7849fb2c4af5f1ac2f7d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c34cbf3c04918d7ed5f2eb74f7312c9802d50f88d72fed9634ad77faad880959"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "89fb3963f71ac1e0b8308042a8c7cbeabf46f9b44144e22b147345f57a7cc38d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "31e1c3e7e1d33513a27e7f847b6470f742a197265b001867094dcbf5bd976f5e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "63b6a12452f68d588094cff93b118b862e9cb54245f2589d087a57261c209e63"
-    sha256 cellar: :any_skip_relocation, ventura:        "3268db8ab4fa9e04140e2b7cfd23fbab4b7c996eaae1ac3ec80626183d44328a"
-    sha256 cellar: :any_skip_relocation, monterey:       "da2b397a39a48c8c1f020f7bd674c29d94b18901fe505661672da1a315d9c579"
-    sha256 cellar: :any_skip_relocation, big_sur:        "056a6fcfeabaafc88005d778ca5da53a2606abc2245512c05507fc2e02d2a526"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74726accb1c1ddee812cfc653a9e3c0e996ff217448d32c083cf0aed6719566d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ebb5ec0b3bdc935213b1db4a911016e0354a0d0bc72da0ad400059990d0fd6f4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9a0bcdcf3937c25cf5fb85509f8571270d3b90fb122e3a9784fbfe0ba2f940d6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3a5063d7d983d326d67163c6c2d8ac92d81c37525403fa6e45f3b3ea526f7a71"
+    sha256 cellar: :any_skip_relocation, sonoma:         "945c21a64e36626172560823bb1329eef9659c094e0bc139bb41354aff6a4c83"
+    sha256 cellar: :any_skip_relocation, ventura:        "532dcb33d08e4b51c2a019b8d2a585528af6f5f1fcc25c4b932f3974f3bc7c35"
+    sha256 cellar: :any_skip_relocation, monterey:       "76e6b56e4d72d2dbce83d4e5af4dba0c4b9f60d49bea8c2c704c1ace70cd4f97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c2a67ee136951625922cb98405ff793f41dee829d95fa18e6040e7c19c2ff7c"
   end
 
   depends_on "rust" => :build

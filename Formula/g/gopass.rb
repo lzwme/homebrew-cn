@@ -1,19 +1,17 @@
 class Gopass < Formula
   desc "Slightly more awesome Standard Unix Password Manager for Teams"
   homepage "https://github.com/gopasspw/gopass"
-  url "https://ghproxy.com/https://github.com/gopasspw/gopass/releases/download/v1.15.8/gopass-1.15.8.tar.gz"
-  sha256 "cbab66e5f7fd160711b690e267c61904e98b2cd6bb8d7dc1091df895ad071e35"
+  url "https://ghproxy.com/https://github.com/gopasspw/gopass/releases/download/v1.15.9/gopass-1.15.9.tar.gz"
+  sha256 "1643f6d0c8f96fe758497a1efa18ca9210045e9f103c551f9ac1ce621b114fc0"
   license "MIT"
   head "https://github.com/gopasspw/gopass.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d42477f75c5ee9b3f68878511bf25ab1d5c23c3ace285ced604267cc2d7bf95e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "47a3886dce320d52f82983091aeb0a0af83601a47b2031be060184a955c5f6a3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6839fa0bbda8b1b290f3caa9b351b7566b89d35ef4e5d3fb2730cd2efcb286d3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "083e918dc80fee3151cde816aaf7247353c88d8f5553758fb97aff4b5a0812a2"
-    sha256 cellar: :any_skip_relocation, ventura:        "810db507d9ab0a3511e2770b33d6ed8491ec2a8a196d814407135cfe7eeca018"
-    sha256 cellar: :any_skip_relocation, monterey:       "c6050892133f9283b0d45bda0c2f3ea50a7872d573a21ef3f5376cbfc49673c7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9c20eea1f055ee848bc1df21b0d21b0d5f974962bc3e0c39f0d977a1a4e76ad7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3d4d6af6a263b443e7916e03a71695561683862ad1efed4fd7ca1e7f59bc7d37"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f25ff73a24319a11d2a397219bf2f3d7069a2276ac1ccdcdeaf2f44b93915079"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a3030325a91da3ff01b8cdd57058c9ddb18f06d9580abcc809bd12c93a8a760f"
+    sha256 cellar: :any_skip_relocation, ventura:        "0bece4525cda872374976e8498fedf0d66e7f2969681a4eb2d46c4531f1e0066"
+    sha256 cellar: :any_skip_relocation, monterey:       "a54b154f5f1ce387ae76e3ed52828ec4d56378219f995dfa4aff81a449d99b6e"
   end
 
   depends_on "go" => :build

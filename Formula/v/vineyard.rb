@@ -6,15 +6,16 @@ class Vineyard < Formula
   url "https://ghproxy.com/https://github.com/v6d-io/v6d/releases/download/v0.18.2/v6d-0.18.2.tar.gz"
   sha256 "1255ca4ebeb5da34e33cb82a8d5530a5fc6b5fcebfb52d1b085058b2eab4a53c"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256                               arm64_sonoma:   "20dabe89550038cf87fdc1f5bea1b82d6f9b0e946a9bdbe15792183f8bbaa334"
-    sha256                               arm64_ventura:  "5e45faf4d62ead067822680363a764f103a68e5095c90904f66b20bcbfe1c4a7"
-    sha256                               arm64_monterey: "18fca6a0515e362e304b9d7696ea3196d5dc08e28b0fccd5e240db1a87c9fc25"
-    sha256                               sonoma:         "0c05c94833216cead2cd4f6d0f2e0c30e82efb597ae36835e895ab2129a35764"
-    sha256                               ventura:        "aa9385fdb6336082597be93570e34552da316cfd04a0c17e917bd8353a1fcb8b"
-    sha256                               monterey:       "98371f468479a18dfc9ff0f0557a47fa4704585a54d9f8b7fe11d251b5f4309a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff91ab6028f9f77c16038798ddd16fbf11a736025cd978a203fbf1b4b7eca1ef"
+    sha256                               arm64_sonoma:   "059930e4ca93f5c26c522738eb75ecc55a90f0c6284cffa412aac54cb1e3c1a6"
+    sha256                               arm64_ventura:  "b2ffbf0c1c0fe4b78bc0146b47b0aadd159c79634ba6b577a0cd0a78dda593ed"
+    sha256                               arm64_monterey: "37c1e2044aecc896b2acb816c922d8613e0a311a967b0577aaa34fd5a9e1e8ba"
+    sha256                               sonoma:         "2c7d1d140da8d50f95e6174fb2bd260e3a5f96524c9d047a22c42b332e0dfd4c"
+    sha256                               ventura:        "1d4b498ff53615b12e10f0785be5927254b7cf2b0bf8b513c242d3662b38f721"
+    sha256                               monterey:       "e7bc68d09baf5cae2c9f425c0669cd8c1eaf43881b68c44f9f95bc1585c089ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e315e075c2237b1ae0190695f9365ba381a3a3b16a1790ff2b9a9e170a0cde9"
   end
 
   depends_on "cmake" => [:build, :test]

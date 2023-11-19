@@ -4,17 +4,17 @@ class OpentelemetryCpp < Formula
   url "https://ghproxy.com/https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.12.0.tar.gz"
   sha256 "09c208a21fb1159d114a3ea15dc1bcc5dee28eb39907ba72a6012d2c7b7564a0"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/open-telemetry/opentelemetry-cpp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5a4824620a983eeeec90c204746312b149f0d968903282c8bbcb8e89f7c75c89"
-    sha256 cellar: :any,                 arm64_ventura:  "2c75e6f3ecd84e88b7e7580509ce8786bd0c75a62bb308ecfd9c6f01ce1e668d"
-    sha256 cellar: :any,                 arm64_monterey: "80c95f86ebf5ec0d2fa5cb7b671fb4407c4ac1def08cd0973ede81ac0e747463"
-    sha256 cellar: :any,                 sonoma:         "6bd5da535856563d08ed79e32ffbc84a4234ce20420d592349b25ed2f6e4ab0f"
-    sha256 cellar: :any,                 ventura:        "cc4b5d7b511e7a14f2a0a47cd6c88aca76f906730e5f1a9548ff72c56321f813"
-    sha256 cellar: :any,                 monterey:       "89628301de15c51d05787463e49a9953a28cd84fd15f68756cc6787e54a86302"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea480b7229c5502e1b005300aabbbb6ee2ecbf5a2c7ed870cee03746e33ae8da"
+    sha256 cellar: :any,                 arm64_sonoma:   "5645b5f4c91b066d57bb8630dc9d59d2fffb4a7ee913bf5a46c1f3458393f413"
+    sha256 cellar: :any,                 arm64_ventura:  "248785e0a4da8191d29555a82447e32b74f9c6d173a0d9be3d489166d97527b5"
+    sha256 cellar: :any,                 arm64_monterey: "7b2b1ae33e88d5b243c92491504d74a5dce3f9c26a990a0d30767a0259fe871c"
+    sha256 cellar: :any,                 sonoma:         "6dd6309adf166e0dcee390efd85adb92b01c20ccabec6802a69d735c13f9fa9e"
+    sha256 cellar: :any,                 ventura:        "d66c58598f0c8d188b76ab4de60c2833375f49b25cacd1cd278133f64c78656d"
+    sha256 cellar: :any,                 monterey:       "4e1331642b9022b443ec901e778882043f141a95cec02e2b7c13f9c6804982a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc7f78812e89e8fa402ec4d021ab83a1991390b94544ec23c916cb4eb3c9da5b"
   end
 
   depends_on "cmake" => :build

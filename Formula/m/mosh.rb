@@ -4,16 +4,16 @@ class Mosh < Formula
   url "https://ghproxy.com/https://github.com/mobile-shell/mosh/releases/download/mosh-1.4.0/mosh-1.4.0.tar.gz"
   sha256 "872e4b134e5df29c8933dff12350785054d2fd2839b5ae6b5587b14db1465ddd"
   license "GPL-3.0-or-later"
-  revision 9
+  revision 10
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8978c29279fc1cd41da7a99fc822abca729f84bd1cfbe7e771850cbbd9526196"
-    sha256 cellar: :any,                 arm64_ventura:  "3cde3013718322848ea14101f029fd582b624eae86887e3854b1da14e0d4cb9d"
-    sha256 cellar: :any,                 arm64_monterey: "30a7d1bb1096e0b1a3d5253dfa71801bbb606c6c5497bbd472efb834a59ffcde"
-    sha256 cellar: :any,                 sonoma:         "1439d63cfb07be56b3a5ce133273ad51b5ba6d30842270f02fe1f1a7806e4644"
-    sha256 cellar: :any,                 ventura:        "8b3244f63c8be0d6a033bc360495e1125e505d737f60a94c693a0581eb8224eb"
-    sha256 cellar: :any,                 monterey:       "c182c981b85772f3de20017c2abc15abbff1526327c25bd32b78d0d68a406fc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56309e6ca9014cb174e06b0623f45b9e29a60f8a925ae0527428494ed3c3131a"
+    sha256 cellar: :any,                 arm64_sonoma:   "11889adf1ed7b43e2f31e1109f81f3564f983d587f9970fd5725ba890a5ad9db"
+    sha256 cellar: :any,                 arm64_ventura:  "b9428a84a290385a426e7c41e61987c6fea314896567075614c424d25da67c05"
+    sha256 cellar: :any,                 arm64_monterey: "7e6eb9586a35a7361d1011716605b2533b13b5f2c22d6afdcd6fdfa593218b63"
+    sha256 cellar: :any,                 sonoma:         "9264262b960c50fe1d260615c33af45a9dd4d012b40987a327d1abb8223cb309"
+    sha256 cellar: :any,                 ventura:        "9312db1b1b7911e57cad50f8b7579bc109b1e50309c7d29edd0fa54145ad1b8e"
+    sha256 cellar: :any,                 monterey:       "3a8c080a86a6501edf4bf82a0a4dfdcb28ab2ddff45ff810f4ada11c113d8a03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "97c5b8d7f1f605030bbe7628fc63505371678c61f0441f8fb8d807efd855f08a"
   end
 
   head do

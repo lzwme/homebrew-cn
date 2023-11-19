@@ -6,11 +6,6 @@ class SkaffoldAT139 < Formula
       revision: "56d34aca35d19614743601be84f1987ebfc2e627"
   license "Apache-2.0"
 
-  livecheck do
-    url :stable
-    regex(/^v?(1\.39(?:\.\d+)+)$/i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d7092402e4fe734f57d06df3184d7e15e4f104817761f8e661fa19c9c5700162"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6adf6bac2313ca8f1ddaaafe621f7f22e8f1179dc2d727814844828b25bfee97"
