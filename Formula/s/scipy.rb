@@ -1,20 +1,19 @@
 class Scipy < Formula
   desc "Software for mathematics, science, and engineering"
   homepage "https://www.scipy.org"
-  url "https://files.pythonhosted.org/packages/39/7b/9f265b7f074195392e893a5cdc66116c2f7a31fd5f3d9cceff661ec6df82/scipy-1.11.3.tar.gz"
-  sha256 "bba4d955f54edd61899776bad459bf7326e14b9fa1c552181f0479cc60a568cd"
+  url "https://files.pythonhosted.org/packages/6e/1f/91144ba78dccea567a6466262922786ffc97be1e9b06ed9574ef0edc11e1/scipy-1.11.4.tar.gz"
+  sha256 "90a2b78e7f5733b9de748f589f09225013685f9b218275257f8a8168ededaeaa"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/scipy/scipy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "28e42a4a4aa3ef3607305e4e9f8d5552a1ccedb390f2186bc2df9ce14cc0a1e5"
-    sha256 cellar: :any,                 arm64_ventura:  "9c9828c4697fcf7c63b0712107b7357ed783c826336560a6013dfacab236b19d"
-    sha256 cellar: :any,                 arm64_monterey: "e364186b50e4ed108c29d6fb66b069b1aee2291323e7f551e2c04a13f9229627"
-    sha256 cellar: :any,                 sonoma:         "f025e479e90fe41a240faa9b0d1e12988068ec3b29c04ec96af4692087d5ba01"
-    sha256 cellar: :any,                 ventura:        "31f4904d87bea447fc793c1bb8abfdc57b48ede19a8520b4f0fbd8ac5049c1a6"
-    sha256 cellar: :any,                 monterey:       "9e999683403d69f710da052fca0017467b22aa8742bf71a8fc4c45a6bf9f5ba5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8cd5982a74d6a6a45cf4cdeb3db1647a92fe04967a177465cc4fbdaa5b17da31"
+    sha256 cellar: :any,                 arm64_sonoma:   "14ca1141efff56a2a0cf908d962a3b6598183109850cd058752551084e1871c7"
+    sha256 cellar: :any,                 arm64_ventura:  "7450fdcc89db83945b2474b3712dd3281be211c27d39ef44315d61db248eb9f3"
+    sha256 cellar: :any,                 arm64_monterey: "6488fdf4ab00ff55fabbc70f6deb2dfd41fd5946d6fa33be7a646cad5014375e"
+    sha256 cellar: :any,                 sonoma:         "c17511eb6f15a5e081c0fdc02536770db4f9863b95d8b3f36c8ba4c88d1544f6"
+    sha256 cellar: :any,                 ventura:        "0ea4f911e75230b063febacc732ef65c9f136be208df055770093df693f78bb5"
+    sha256 cellar: :any,                 monterey:       "7dc8355c6a8dec426c6a1a17f9d171023457af671b6192085bcfca96eaec90bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c74212b12edfde9e6b1d18db99e3291704bdc6f958f1dd10448029695c98b81"
   end
 
   depends_on "libcython" => :build

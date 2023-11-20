@@ -1,36 +1,25 @@
 class Sheldon < Formula
   desc "Fast, configurable, shell plugin manager"
   homepage "https://sheldon.cli.rs"
-  # TODO: check if we can use unversioned `libgit2` at version bump.
-  # See comments below for steps.
-  url "https://ghproxy.com/https://github.com/rossmacarthur/sheldon/archive/refs/tags/0.7.3.tar.gz"
-  sha256 "cf8844dce853156d076a6956733420ad7a9365e16a928e419b11de8bc634fc67"
+  url "https://ghproxy.com/https://github.com/rossmacarthur/sheldon/archive/refs/tags/0.7.4.tar.gz"
+  sha256 "5d8ecd432a99852d416580174be7ab8f29fe9231d9804f0cc26ba2b158f49cdf"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 2
   head "https://github.com/rossmacarthur/sheldon.git", branch: "trunk"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "686bf7d06e69d2d6e9265e40970b9bbbb73bdec0bea52b2d586f24a9c873cab8"
-    sha256 cellar: :any,                 arm64_ventura:  "118dc8ee031a0b2b159c66e6dbbbbd42fe407270220e5ff07de1a764dd5acdf4"
-    sha256 cellar: :any,                 arm64_monterey: "db0e38c468d5745f301fb3d90ef2f4aba554cd2e6aba7b7468349789aa25c892"
-    sha256 cellar: :any,                 arm64_big_sur:  "189fdb36ea4f1f1d95b69a6e246364bc860a6d596064f22b753fa1edd1fb12d0"
-    sha256 cellar: :any,                 sonoma:         "51d24f0620009443d8047bf1625d1a2b34ca3f89e46e83d750bed420dd70f750"
-    sha256 cellar: :any,                 ventura:        "d30c78b96cc49ee5074dcdb9bbd75e2b81305a2f940f83ea863ee8be12ef3b22"
-    sha256 cellar: :any,                 monterey:       "cb515d97b3b15a9b0b41620a7790b117f0618159bed8dbaad5199e3c2d1039d2"
-    sha256 cellar: :any,                 big_sur:        "70aced1caac7e5f67181cbf2ea32afdb73ada5be882049a9e1a94993bf8f9112"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5b623285df6357937868aeb66dfb6b7d610deb01686e52d84fc351d62ecb9a6"
+    sha256 cellar: :any,                 arm64_sonoma:   "8531c07eb57023dcc802e1d3f488294f0ee22e364cdf04b8188db0510d5ffa89"
+    sha256 cellar: :any,                 arm64_ventura:  "c76a61b084f19d54d276aeb651ef9f6d7007699979ced52e08785a635ccbc293"
+    sha256 cellar: :any,                 arm64_monterey: "7d413db8b6188d92572cb5030b7861d4fa731e7bddb54dc5501cd7cee7b82839"
+    sha256 cellar: :any,                 sonoma:         "f74c4d8a06138eeec623c99156fad09d223eab469bc57f0ce34890f4e0c6fc26"
+    sha256 cellar: :any,                 ventura:        "62f89b239c66be2c9fa896f0b33893e9e8181060b18dbfd2884e832b64a2a3e2"
+    sha256 cellar: :any,                 monterey:       "54add7d6552c888c77df6d15cfe43810d763a7de3e26fc9c588558efd328fbbe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c8ea594ab59e45d4dd071e45752f20f877244054ab2c12c7002ab217feacaff"
   end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "curl"
-  # To check for `libgit2` version:
-  # 1. Search for `libgit2-sys` version at https://github.com/rossmacarthur/sheldon/blob/#{version}/Cargo.lock
-  # 2. If the version suffix of `libgit2-sys` is newer than +1.6.*, then:
-  #    - Migrate to the corresponding `libgit2` formula.
-  #    - Change the `LIBGIT2_SYS_USE_PKG_CONFIG` env var below to `LIBGIT2_NO_VENDOR`.
-  #      See: https://github.com/rust-lang/git2-rs/commit/59a81cac9ada22b5ea6ca2841f5bd1229f1dd659.
-  depends_on "libgit2@1.6"
+  depends_on "libgit2"
   depends_on "openssl@3"
 
   def install
@@ -41,7 +30,7 @@ class Sheldon < Formula
 
     # Replace vendored `libgit2` with our formula
     inreplace "Cargo.toml", /features = \["vendored-libgit2"\]/, "features = []"
-    ENV["LIBGIT2_SYS_USE_PKG_CONFIG"] = "1"
+    ENV["LIBGIT2_NO_VENDOR"] = "1"
 
     system "cargo", "install", *std_cargo_args
 
@@ -63,7 +52,7 @@ class Sheldon < Formula
     assert_predicate testpath/"plugins.lock", :exist?
 
     [
-      Formula["libgit2@1.6"].opt_lib/shared_library("libgit2"),
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
       Formula["curl"].opt_lib/shared_library("libcurl"),
       Formula["openssl@3"].opt_lib/shared_library("libssl"),
       Formula["openssl@3"].opt_lib/shared_library("libcrypto"),

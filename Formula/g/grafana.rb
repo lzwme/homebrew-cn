@@ -1,23 +1,23 @@
 class Grafana < Formula
   desc "Gorgeous metric visualizations and dashboards for timeseries databases"
   homepage "https://grafana.com"
-  url "https://ghproxy.com/https://github.com/grafana/grafana/archive/refs/tags/v10.1.1.tar.gz"
-  sha256 "55f8822105d15fcb6e8dbfb16c3636dfa6e08f8fc6cd1f98700adbb6ba28bbb4"
+  url "https://ghproxy.com/https://github.com/grafana/grafana/archive/refs/tags/v10.2.1.tar.gz"
+  sha256 "66bc6141e322f5f73db9c10d7bd44b108b823d7b7e9b4e7b0eeed308aaaa92c2"
   license "AGPL-3.0-only"
   head "https://github.com/grafana/grafana.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "31f547ed00edb1ac7b60a764fee642f70c1eecb811400974f266861a8efba094"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc80fd27215878f15c86267e46b78a7da31c99ff022285dfa49b09089bedc0bf"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9f0bcc0b0dd381e5222db7a6395a717b4c6e1ab8c8fd916cc395446562518d8f"
-    sha256 cellar: :any_skip_relocation, ventura:        "f9e99037d79674a4b14db8f0eda54d373666b473e62d670acba9f73db281308b"
-    sha256 cellar: :any_skip_relocation, monterey:       "96fd109b20bd3cf6485e24631828f17510fb9adbbd9e8d8980b5f92094e1aa66"
-    sha256 cellar: :any_skip_relocation, big_sur:        "648cb1c891328082032559b3b85cea9a496747b43fb14cdae75637f0a6cfac43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f25d2de91fabe3a65a97fac3365be6f7f073e7dd1a32b5950c19dc8895fcb02"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f494b9216c8a866fcd533724233114911f239087421f378ff589896ab51d20eb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6976c8cd96675bc2ce959ad5c8f1a12568c7510bc43cb798088d248c88c66d0c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cfc49297c6dc780b9daee236af2c9f38d15ba569a486be3c10e4bf35af39db74"
+    sha256 cellar: :any_skip_relocation, sonoma:         "213860761209d1e7c43174506d036364c8d3b331c48652a83d75d6ebdce26fa5"
+    sha256 cellar: :any_skip_relocation, ventura:        "7b6d36adb0dd024cda18cb26191186bf77f8c4d5c17f420e918830ea4b2146cf"
+    sha256 cellar: :any_skip_relocation, monterey:       "8fb132146ddc13a7cb7994f6f307f26cbfccd1e3f111a33d93475f7b847c7c50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63eda0d3cb28a5fb9ef95ff5412fe01a9258a804492c04d320be4cf8906147aa"
   end
 
   depends_on "go" => :build
-  depends_on "node" => :build
+  depends_on "node@18" => :build # TODO: Update node once https://github.com/grafana/grafana/pull/76097 is in release
   depends_on "yarn" => :build
 
   uses_from_macos "zlib"

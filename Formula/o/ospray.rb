@@ -4,6 +4,7 @@ class Ospray < Formula
   url "https://ghproxy.com/https://github.com/ospray/ospray/archive/refs/tags/v2.12.0.tar.gz"
   sha256 "268b16952b2dd44da2a1e40d2065c960bc2442dd09b63ace8b65d3408f596301"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/ospray/ospray.git", branch: "master"
 
   livecheck do
@@ -12,14 +13,12 @@ class Ospray < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "ee87ad5cc6df01c6903f3ed97a3b6373a3c0bd0df33fee1217b173bf652da2ad"
-    sha256 cellar: :any, arm64_ventura:  "6f5fecb1c05c875d50e53dafd400703614e36839614b86261bdb98ac3e38d823"
-    sha256 cellar: :any, arm64_monterey: "3e0664c0b539c4f47c2b42706fee64d32c14cac1241de144e8d114f3f72a35cf"
-    sha256 cellar: :any, arm64_big_sur:  "7a24a8a3c4c554d02b59d03b9d7751d6448173a762d3ae8ed4b06c11126204bb"
-    sha256 cellar: :any, sonoma:         "e33af11a39c1466b6a89b839a3ebe4d9b6854065d88045270c9c12be35436a82"
-    sha256 cellar: :any, ventura:        "90e4b25add8ab1ce3ca89279244b1c6253014fc70e038adbb4f73a8a59a8ff35"
-    sha256 cellar: :any, monterey:       "7f2130305e1c5f3a86a8cba185e8d5f203f306fb678476eb3022db59bb48c949"
-    sha256 cellar: :any, big_sur:        "30ea6004307fb11e32af4bc28e20332e7d6d1c53dcf001f500552fc5c685fb2b"
+    sha256 cellar: :any, arm64_sonoma:   "8f0c2b7fc94018818e368fe539e533f58cb7bb6223fbedb08118153f57366564"
+    sha256 cellar: :any, arm64_ventura:  "3669abca9f9a4920fe97d08c318bb24ed7a42e203c40d814f42860f2f9054943"
+    sha256 cellar: :any, arm64_monterey: "62bbd8250633c21c5be47eca0087c81d1066b1f07ee33c77772c059f8158a707"
+    sha256 cellar: :any, sonoma:         "40dcc27c71be76c8894f02fb0721134c028f0d43da61356c809e10685eb47cf2"
+    sha256 cellar: :any, ventura:        "4459fbe2d70bdb75452b9933292d24cf1253d8430465f0d85fad23f82baffe06"
+    sha256 cellar: :any, monterey:       "874d511bb6038cd75a206d2d2ab0027baea27abfc3512dadc601d629b33d739e"
   end
 
   depends_on "cmake" => :build

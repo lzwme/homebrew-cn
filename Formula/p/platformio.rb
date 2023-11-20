@@ -6,18 +6,17 @@ class Platformio < Formula
   url "https://files.pythonhosted.org/packages/85/9b/37452c9b7e99638c9d761c7864a463e4721ce7206fb526174813ffe6a949/platformio-6.1.11.tar.gz"
   sha256 "1977201887cd11487adf1babf17a28f45f6dbbec8cbc5e3cc144cb43b320a0d0"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/platformio/platformio-core.git", branch: "develop"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0362f383b6238acb9261fa7b859abd4d47ac317826a187d082066add9e2398e0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "215ebe10122960bcc44c2e8171b2a04b2131c30e109a17cac0d0a10a5638c3bc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "86e5711747caeb375214c85ab8d2de4ca9017a3c64f91ade0b808b46a81faa45"
-    sha256 cellar: :any_skip_relocation, sonoma:         "87749f39d71936bde9cb8768d1dcd3b6c44365dc42418ff53aec7b1defcbc25c"
-    sha256 cellar: :any_skip_relocation, ventura:        "0607dbb98a5112b2071117dc9c6d7ebdd89445e827d8004089afd7918f41e243"
-    sha256 cellar: :any_skip_relocation, monterey:       "3566e2104b45827c0443c6133ce961f89c3a1b251aa8e51c46d3b921dce89b29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed1dbd71994dafa6a1c9fb5ae9b0758d06a9b2b19fb6ebf454580c8f12e2abb0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a554233014e2c5161ec3578c60411e4b8a60ed9edb7530c09d5fe011f081f65b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aefb1e36ab188a71be586374b7522e857adf1040da3f9bcb0242d4a069d5f389"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a8b03298518271ac24ff19cd0faa153f4ae2d7e8591e99892c79f5c1c55b886c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "014c6d1bc38e1d954ea13e5371a1107129c7310fa17e194815d90f01caf783f8"
+    sha256 cellar: :any_skip_relocation, ventura:        "bb52be700a428304a6c96dcc088507a8e501346b150f191ca3a4ba41b95bef89"
+    sha256 cellar: :any_skip_relocation, monterey:       "218a03ac5b5dbdb9b3c56d727bb88b14e54e76bdfc938102b0fb82884012fb17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a461d391078f9c6a2738eb0939d714a3138b28bf88e5a13138dfaab7ea360a60"
   end
 
   depends_on "python-certifi"
@@ -91,8 +90,8 @@ class Platformio < Formula
     virtualenv_install_with_resources
 
     site_packages = Language::Python.site_packages("python3.12")
-    paths = %w[uvicorn].map { |p| Formula[p].opt_libexec/site_packages }
-    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
+    pth_contents = "import site; site.addsitedir('#{Formula["uvicorn"].opt_libexec/site_packages}')\n"
+    (libexec/site_packages/"homebrew-uvicorn.pth").write pth_contents
 
     generate_completions_from_executable(bin/"pio", shells: [:fish, :zsh], shell_parameter_format: :click)
   end

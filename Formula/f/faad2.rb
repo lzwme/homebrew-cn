@@ -1,34 +1,30 @@
 class Faad2 < Formula
   desc "ISO AAC audio decoder"
   homepage "https://sourceforge.net/projects/faac/"
-  url "https://ghproxy.com/https://github.com/knik0/faad2/archive/refs/tags/2.10.1.tar.gz"
-  sha256 "4c16c71295ca0cbf7c3dfe98eb11d8fa8d0ac3042e41604cfd6cc11a408cf264"
+  url "https://ghproxy.com/https://github.com/knik0/faad2/archive/refs/tags/2.11.1.tar.gz"
+  sha256 "72dbc0494de9ee38d240f670eccf2b10ef715fd0508c305532ca3def3225bb06"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2ebed5aafcd31464d6c94c61ac0142faf278bfabf96cae166bdeccd8d90eacfa"
-    sha256 cellar: :any,                 arm64_ventura:  "be936a4a08251f0d708e5a470d4af401a5b0f683dc0cb82fc428b29e9d3754ca"
-    sha256 cellar: :any,                 arm64_monterey: "ed24e5dd89144695008089fc3f8de7031db3906cd64391e99eb67ba440056dad"
-    sha256 cellar: :any,                 arm64_big_sur:  "90f7a0219e6f512686cb37c39c7436c3572d19822c5687dfe6244a4deea1bc4a"
-    sha256 cellar: :any,                 sonoma:         "2a5c1c40284059b2b3f557bdc5965d7d339934671bd22badb929d4167ba6a4f9"
-    sha256 cellar: :any,                 ventura:        "555671b7420b43ac310ff7a5a135bc122a66a848cd7c903b66afef51189506d6"
-    sha256 cellar: :any,                 monterey:       "b749443a3607f7c18ac3dce49432d684f0446df8bc21173ab89b280bedaa5d7d"
-    sha256 cellar: :any,                 big_sur:        "23ce45f3f6c3fc6959e0b09595e129411d8b45443888a1f1c272f5645805cca1"
-    sha256 cellar: :any,                 catalina:       "9ff6536a2a0fa6b561750fa3d8886192de865edad71029e4ad68a27af18abe4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "300156e7a30d3e2b449f78f6671d1769f559a659241a55d9f074c8026193ab99"
+    sha256 cellar: :any,                 arm64_sonoma:   "0130a83d47053aa23ad1687d1eac324f9bde6b1f22ab758e640bf3922c962bd5"
+    sha256 cellar: :any,                 arm64_ventura:  "5f0fab6de9cf4dc35864e5ce8a7b8b5549dce4757da5f24d26bf7df058bbe628"
+    sha256 cellar: :any,                 arm64_monterey: "8c1b8e4f6a5381a051289223200107587f040bbb76e4187785e59e0887d27d75"
+    sha256 cellar: :any,                 sonoma:         "b4f4eeb17fc2aa94010f27a15996ab5a4e3285e6d9846b2ed436b20287c8d535"
+    sha256 cellar: :any,                 ventura:        "d92da7073a8fe95e076caa978732cd56030a1904813fb3a277982512db347bc8"
+    sha256 cellar: :any,                 monterey:       "c689f6e071a961e704f09722bc81d0c27aeccab1c155e322fdd44339b2894d3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "680c21b82bfc3510ae708fda077f4e74dbb4662f6fd8250a5481f522f99f36da"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
+  depends_on "cmake" => :build
 
   def install
-    system "./bootstrap"
-    system "./configure", *std_configure_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    assert_match "infile.mp4", shell_output("#{bin}/faad -h", 1)
+    output = shell_output("#{bin}/faad -i #{test_fixtures("test.m4a")} 2>&1")
+    assert_match "LC AAC\t0.192 secs, 2 ch, 8000 Hz", output
   end
 end

@@ -1,8 +1,8 @@
 class Xa < Formula
   desc "6502 cross assembler"
   homepage "https://www.floodgap.com/retrotech/xa/"
-  url "https://www.floodgap.com/retrotech/xa/dists/xa-2.3.14.tar.gz"
-  sha256 "1b9bbabddbd8d3b9410b852e50a128eea41e681339e6f76c3e8076fa5420f02e"
+  url "https://www.floodgap.com/retrotech/xa/dists/xa-2.4.0.tar.gz"
+  sha256 "9e587a0ca8ff791009880bfa331f6ed36935e08ef9c123822ca175285f8c030c"
   license "GPL-2.0"
 
   livecheck do
@@ -11,15 +11,13 @@ class Xa < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f439a05057a34ddc46c5785b4e2f2c06ece1df1e66257a445f42de47b9d93d6a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "172d4111c918fa05acf0602d2319fc82b132caa45ac28c5efb0e93b82eb31095"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e36e9f9ee137f4a114d18fe00824a3ee99a79402ab8ffa5fa163e1ce727b66fb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "de1f333683f9ee7da2f97a64b2d81f7e2dd1d682c7a344226d029a9fff5b2ad6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "927d750f4fb04fcfcb43057c339f7185f381d5ff85baca245072faf6af6f3238"
-    sha256 cellar: :any_skip_relocation, ventura:        "a7a11bcb7e77bf152fa9e7efadccb7d1f43b7deba30b230a7bea882ade915a59"
-    sha256 cellar: :any_skip_relocation, monterey:       "dde1b4784048684759394096b4ddf2fd26eeb78824bb0a18212b8ea31335062e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0868d331255bc58b921606c29f0f59d484e4331cd407645de6894fc67b4f3557"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "43df54eda0dc37af75135b339767dc19bad10aab69364abc149e32551dc031c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e3676a4ef6ea7df3826dd5b38050f0da10a026fff52e66f715ffcf180bebc08f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9866e46ff2c3b2b588dec46249bc974b8ee96d09477bfcbc01434630c17a8aa1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "017f53d4c1d680c62834d2b06e2d9cbb14f5af3ef75fd99fc6c0949213f223fe"
+    sha256 cellar: :any_skip_relocation, sonoma:         "799440d08e0c7fd00f5f35520f63e26953554e0dc18ad9e251e44d75f6b70f83"
+    sha256 cellar: :any_skip_relocation, ventura:        "e7dec3ed5103475661dcf521b0f053218e4928a08f8897d6c4697cba83c2dde0"
+    sha256 cellar: :any_skip_relocation, monterey:       "1f1e416b5b8a45d5cbb0b8d9058ce20f8294111a76c36de6a995964b01988286"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1026432ac3c0b0778e2bac60cee9a8ba3a94f7c2dd80e27906a5e43ef7acee6"
   end
 
   def install

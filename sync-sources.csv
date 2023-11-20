@@ -897,7 +897,7 @@ Homebrew-homebrew-core/Formula/c/cln.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clockywock.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/clog.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/clojure-lsp.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/clojure-lsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clojure.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clojurescript.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloog.rb, Homebrew/homebrew-core, 1
@@ -1391,7 +1391,7 @@ Homebrew-homebrew-core/Formula/d/dosfstools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotbot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dotdrop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dotenv-linter.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/dotnet.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dotnet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dotnet@6.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/double-conversion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/doublecpp.rb, Homebrew/homebrew-core, 0
@@ -5074,6 +5074,7 @@ Homebrew-homebrew-core/Formula/p/python-pycurl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pyparsing.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pyproject-hooks.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pytz.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-setuptools-scm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-setuptools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-sympy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tabulate.rb, Homebrew/homebrew-core, 0
@@ -8568,7 +8569,6 @@ Homebrew-homebrew-cask/Casks/i/instatus-out.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/insync.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/integrity.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/intel-haxm.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/i/intel-power-gadget.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/intel-psxe-ce-c-plus-plus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/intellidock.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/intellij-idea-ce.rb, Homebrew/homebrew-cask, 0
@@ -11979,6 +11979,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-hind.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-holtwood-one-sc.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-homemade-apple.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-homenaje.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-honk.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-hubballi.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-hubot-sans.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-humor-sans.rb, Homebrew/homebrew-cask-fonts, 0
@@ -12876,6 +12877,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-public-sans.rb, Homebrew/homebrew-cask-f
 Homebrew-homebrew-cask-fonts/Casks/font-puppies-play.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-puritan.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-purple-purse.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-pushster.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-qahiri.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-quando.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-quantico.rb, Homebrew/homebrew-cask-fonts, 0
@@ -13066,6 +13068,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-sintony.rb, Homebrew/homebrew-cask-fonts
 Homebrew-homebrew-cask-fonts/Casks/font-sirin-stencil.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-sitara.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-six-caps.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-sixtyfour.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-skranji.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-slabo-13px.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-slabo-27px.rb, Homebrew/homebrew-cask-fonts, 0
@@ -13290,6 +13293,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-windsong.rb, Homebrew/homebrew-cask-font
 Homebrew-homebrew-cask-fonts/Casks/font-wire-one.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-wix-madefor-display.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-work-sans.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-workbench.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-xanh-mono.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-xits.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-xkcd-script.rb, Homebrew/homebrew-cask-fonts, 0
@@ -13457,6 +13461,7 @@ Homebrew-homebrew-cask-versions/Casks/mi-beta.rb, Homebrew/homebrew-cask-version
 Homebrew-homebrew-cask-versions/Casks/microsoft-edge-beta.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/microsoft-edge-dev.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/microsoft-office-2016.rb, Homebrew/homebrew-cask-versions, 0
+Homebrew-homebrew-cask-versions/Casks/microsoft-office-2019.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/microsoft-openjdk11.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/microsoft-openjdk17.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/microsoft-teams-classic.rb, Homebrew/homebrew-cask-versions, 1

@@ -13,6 +13,7 @@ class OpenaiWhisper < Formula
     sha256 cellar: :any,                 arm64_ventura:  "a10c1c0ae356f0a593a20b9e4e060a25b0f862f43d6ae97371ecfd1fcd361169"
     sha256 cellar: :any,                 arm64_monterey: "412d130a5b2c883af7014afaa9aab44f8d38d4b631d523ffdc153152e0d19b61"
     sha256 cellar: :any,                 sonoma:         "8a163a1403a701cb9dc8f0c4f7126672422ba0b06183dcfee51f96095d1ca6a5"
+    sha256 cellar: :any,                 ventura:        "7307422ace6150df05b8011e9c809780b730635405220997b19fe7d181961d55"
     sha256 cellar: :any,                 monterey:       "7e7900bf190f9da6904867d80531ddd2aca70423b95c58e2fed7d78eeab2e529"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9aac4e852f7bc09ca215fc636bbd22601ae2459b644e5eb155978a2a23e2fa24"
   end

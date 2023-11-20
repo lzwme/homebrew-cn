@@ -3,24 +3,25 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/f3/e0/396d82cd687d7e31e7130c8b1bab1df12f2f33f154b24bde542991d2c19d/esphome-2023.10.6.tar.gz"
-  sha256 "7473f04fb786254ea38a123aaeda98616878a5da9a5b72934e387faca10b1879"
+  url "https://files.pythonhosted.org/packages/29/6e/3d1ac957cf4afba505239eaa99de280af07fcdf3fad5c772225951c5a007/esphome-2023.11.2.tar.gz"
+  sha256 "4da7f91b4fb8d786536062e9b7991677febbd11aa58b9eea769e050ccfd353f6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "66a0cff9c18cef2381f191681d4335e4ce035ce4ae62e0f6d15cff078e64dcd5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ad29deeb19c2f7acc7a9dd621ddd4f71e1d6d58b49d733274e376f3a63cc2427"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ef8d5963a08cc71a5aa9b41ae3b353b218ece57c4069b2391f7bd05aced4b20e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "97076e3d8b2ae69b5260b4942ebafe9e2b6e1dbc1bfc789027722f5b6f435292"
-    sha256 cellar: :any_skip_relocation, ventura:        "d3707a7ecca94ca0fbb448a3ad7ebd2905396b93d743bbedd6ed728d5f8d48cd"
-    sha256 cellar: :any_skip_relocation, monterey:       "195e8a07e2fbe67f5304bc468e611c06a1df06b1659f13cdb58aaa4c73dc2285"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8f74934d31ce4a3e5f80fd441a3e68a3902ff6b10ba23a108c70cce02f3f875"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bbba53e7e2f48e5af61acff1d285b2590cf5a3ab3c3b5f87c7fc9b1f0822f196"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4d12c9dc279884a0a57a97d01e928a684f4d93e8f0a80fa9d77506a2ae06d798"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c9bd6a68186be4f58a8b2fc1f9b85494e07f72027cb41556d431a49c1515a0f2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1a8a2003e11e0b629d65cf3bbdf42e6becaab738411c1da7c44dd5cd48c60ab8"
+    sha256 cellar: :any_skip_relocation, ventura:        "42e3e7ec47af5bad6eb785c8f781dfabcc21bc645c126a108548d3e30f9df695"
+    sha256 cellar: :any_skip_relocation, monterey:       "ca2981d57c61b59cfba6950a4ca74709cf1b9aa4fad4197e00f8ce6497033bcb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21bae3b334d3e253d108af517d16a65f7480113ecd28ae2141e579c25dd734b0"
   end
 
   depends_on "cffi"
   depends_on "platformio"
   depends_on "protobuf"
   depends_on "pycparser"
+  depends_on "python-argcomplete"
   depends_on "python-certifi"
   depends_on "python-cryptography"
   depends_on "python-pyparsing"
@@ -30,23 +31,23 @@ class Esphome < Formula
   depends_on "six"
 
   resource "aioesphomeapi" do
-    url "https://files.pythonhosted.org/packages/00/64/6c1907e7cfbc720587719caf91f8993b092a6abbef77e3b6fa999ab80ecb/aioesphomeapi-15.0.0.tar.gz"
-    sha256 "118abdd81b4de4970979fad6eaa3a62bdc3c04d87ac57f0cae2413aabb0faf3b"
-  end
-
-  resource "async-timeout" do
-    url "https://files.pythonhosted.org/packages/87/d6/21b30a550dafea84b1b8eee21b5e23fa16d010ae006011221f33dcd8d7f8/async-timeout-4.0.3.tar.gz"
-    sha256 "4640d96be84d82d02ed59ea2b7105a0f7b33abe8703703cd0ab0bf87c427522f"
+    url "https://files.pythonhosted.org/packages/bc/1d/ba53dc52bbc2694b30efd3c7d394d34f1f1908d10eb01d7fcdbe48fd0194/aioesphomeapi-18.5.2.tar.gz"
+    sha256 "2e74647f2c2ff88c714313b51f2b07097bbfd7f04fcc17c8a8bcb0d7a6a887e2"
   end
 
   resource "bitarray" do
-    url "https://files.pythonhosted.org/packages/99/f4/316cfb1cd62886d7bf87da48cf847ecfced48ed5f91ff8e54bc52f7fd76e/bitarray-2.8.2.tar.gz"
-    sha256 "f90b2f44b5b23364d5fbade2c34652e15b1fcfe813c46f828e008f68a709160f"
+    url "https://files.pythonhosted.org/packages/47/10/49d7e3b7cbe95ff602f47a5821c1c4bec27b146e5621dc516ca519070ac0/bitarray-2.8.3.tar.gz"
+    sha256 "e15587b2bdf18d32eb3ba25f5f5a51bedd0dc06b3112a4c53dab5e7753bc6588"
   end
 
   resource "bitstring" do
     url "https://files.pythonhosted.org/packages/23/fc/b5ace4f51fea5bcc7f8cca8859748ea5eb941680b82a5b3687c980d9589b/bitstring-4.1.2.tar.gz"
     sha256 "c22283d60fd3e1a8f386ccd4f1915d7fe13481d6349db39711421e24d4a9cccf"
+  end
+
+  resource "chacha20poly1305-reuseable" do
+    url "https://files.pythonhosted.org/packages/5c/79/07cc45f8a6321927793195bee1fb18ae75cf8c76f29466bee07ef3f257f0/chacha20poly1305_reuseable-0.11.0.tar.gz"
+    sha256 "c0c41359ada2e967f81ad000d2a1ba0b1d5fb7dcd010b2f12d20a87ecf1e59ab"
   end
 
   resource "ecdsa" do
@@ -55,8 +56,8 @@ class Esphome < Formula
   end
 
   resource "esphome-dashboard" do
-    url "https://files.pythonhosted.org/packages/39/57/0d329e71a79223fed13dc27cbb58a587b8512427534cb2f04f8c5335a223/esphome-dashboard-20230904.0.tar.gz"
-    sha256 "6fe36559e90d5db1af84b42542a16d492b0ef7d27e95d4ba35d7652b797291e0"
+    url "https://files.pythonhosted.org/packages/4c/26/0fd5346999ff61b7dce87b19b1a1fda5cbdcb772764e46035a2795264dee/esphome-dashboard-20231107.0.tar.gz"
+    sha256 "f3888cf7cee7c4d89d30e6e76d8de5b7bf3145b37d51236da90cdf3b391dd7b9"
   end
 
   resource "esptool" do
@@ -100,8 +101,8 @@ class Esphome < Formula
   end
 
   resource "tzlocal" do
-    url "https://files.pythonhosted.org/packages/ee/f5/3e644f08771b242f7460438cdc0aaad4d1484c1f060f1e52f4738d342983/tzlocal-5.0.1.tar.gz"
-    sha256 "46eb99ad4bdb71f3f72b7d24f4267753e240944ecfc16f25d2719ba89827a803"
+    url "https://files.pythonhosted.org/packages/04/d3/c19d65ae67636fe63953b20c2e4a8ced4497ea232c43ff8d01db16de8dc0/tzlocal-5.2.tar.gz"
+    sha256 "8d399205578f1a9342816409cc1e46a93ebd5755e39ea2d85334bea911bf0e6e"
   end
 
   resource "voluptuous" do
@@ -110,16 +111,16 @@ class Esphome < Formula
   end
 
   resource "zeroconf" do
-    url "https://files.pythonhosted.org/packages/d2/51/77c4bc6b117ba338091f0427a89a83dd9c0c155d941a3c92340809ab6a4f/zeroconf-0.115.1.tar.gz"
-    sha256 "401d737689565401ad0f36952eeabbbcd43e00498287b716e1bb6a50c2394238"
+    url "https://files.pythonhosted.org/packages/db/47/85eafb277f6ef78e1a1895cc72f0035dfa6a5e51396134eb9ce21564c72f/zeroconf-0.123.0.tar.gz"
+    sha256 "c50f24c9a7a6c7ba4bb301defad03a9d85dffb3ee280953de44eee9f432f2550"
   end
 
   def install
     virtualenv_install_with_resources
 
     site_packages = Language::Python.site_packages("python3.12")
-    paths = %w[platformio].map { |p| Formula[p].opt_libexec/site_packages }
-    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
+    pth_contents = "import site; site.addsitedir('#{Formula["platformio"].opt_libexec/site_packages}')\n"
+    (libexec/site_packages/"homebrew-platformio.pth").write pth_contents
   end
 
   test do
@@ -131,5 +132,9 @@ class Esphome < Formula
     EOS
 
     assert_includes shell_output("#{bin}/esphome config #{testpath}/test.yaml 2>&1"), "INFO Configuration is valid!"
+    return if Hardware::CPU.arm?
+
+    ENV.remove_macosxsdk if OS.mac?
+    system "#{bin}/esphome", "compile", "test.yaml"
   end
 end

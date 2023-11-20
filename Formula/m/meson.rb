@@ -1,13 +1,13 @@
 class Meson < Formula
   desc "Fast and user friendly build system"
   homepage "https://mesonbuild.com/"
-  url "https://ghproxy.com/https://github.com/mesonbuild/meson/releases/download/1.2.3/meson-1.2.3.tar.gz"
-  sha256 "4533a43c34548edd1f63a276a42690fce15bde9409bcf20c4b8fa3d7e4d7cac1"
+  url "https://ghproxy.com/https://github.com/mesonbuild/meson/releases/download/1.3.0/meson-1.3.0.tar.gz"
+  sha256 "4ba253ef60e454e23234696119cbafa082a0aead0bd3bbf6991295054795f5dc"
   license "Apache-2.0"
   head "https://github.com/mesonbuild/meson.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f2609629267212ee0479482c3fb7d7c4a26b53e4a7059a18e08f494904ba93fa"
+    sha256 cellar: :any_skip_relocation, all: "66f902068e3039b66057e177944f57fe9e8343cbd14a2b22d0ae97362c656c7d"
   end
 
   depends_on "python-setuptools" => :build

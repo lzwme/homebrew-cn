@@ -6,16 +6,18 @@ class PythonArgcomplete < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e8d4c6a34f724a2219f5f39ec630871fa8d67f19af35a159130ff5f0fd2d026d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "735cfa954219a3f535a469302a2719c8adbb4f80ce2222aad374811bf3f1a70b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "be19c9d6811b50c5dbf9ae2fc614c577859a44f2c14c8ee5ec19fcb6051caf4f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7f11d6efd2ec59c751c8ff79626fcce59275e3606360d36dd591315d32c51a3d"
-    sha256 cellar: :any_skip_relocation, ventura:        "631cfbf6b640ecc5e6f739d758c006d4394c52e3144a2851154805b4109aa4b2"
-    sha256 cellar: :any_skip_relocation, monterey:       "761a73c9cef599c2a1e191fb0869ef01a16f57a4d084ff23cf1a691f77bd5635"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e8c44299fb28636d550631fed3a78e2a88f0fcecd734b86a76c996a3523e591"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eaecc6ee932a61674a328652aefc43870e6770e5493c6a31f109995862debae4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29d434e9d29a9e276fea01bf58dfab7540495c1023c1241eafcc78690d88139b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5ab0ab1909932193f374e0e3433ee552932b78d40d2881ac7af313b5a671d9d1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "34d793285c0f9786639a45bf34b9b3e2e17e1a6c4b55b9e5f6f6e221042aef3e"
+    sha256 cellar: :any_skip_relocation, ventura:        "515689af1eda35e920078c0828d145aadaf673616cad95e7d0da7139e6912fb3"
+    sha256 cellar: :any_skip_relocation, monterey:       "1cae4ed02101f2ec892cb13bd28ff4d731f81796c58db63017743df399570801"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba1422a6dd9709bf13597f191e21d827a9d82780ff0b4b31fb1604f68250f5a5"
   end
 
   depends_on "python-setuptools" => :build
+  depends_on "python-setuptools-scm" => :build
   depends_on "python@3.10" => [:build, :test]
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]

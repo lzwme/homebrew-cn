@@ -1,8 +1,8 @@
 class Rio < Formula
   desc "Hardware-accelerated GPU terminal emulator powered by WebGPU"
   homepage "https://raphamorim.io/rio/"
-  url "https://ghproxy.com/https://github.com/raphamorim/rio/archive/refs/tags/v0.0.22.tar.gz"
-  sha256 "936fa0f1d648016a53f845c6a24d91eaa2cc93e08b7a4d08e98417e294ba40ab"
+  url "https://ghproxy.com/https://github.com/raphamorim/rio/archive/refs/tags/v0.0.27.tar.gz"
+  sha256 "2338d679eaec987bd50ab12ca1e9b79853690899d2e8e70efa88315d0c626090"
   license "MIT"
   head "https://github.com/raphamorim/rio.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Rio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3cef7d51c7d118590f41e7f6a91c87bdc3c6932d2d749dceb9a5cf13dbcb9236"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4a0841bc9b5b40ce506ed1ed601fbbdd168b887a01e9bcd81b768faade748062"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0991b71330bc794d8ee08e5af52ff0890887c8383bc2bac2178cea770fdccde1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "680e472741e450cd6bf5a74c4a271de980ffda88b4b2f6e924f11215f4a35384"
-    sha256 cellar: :any_skip_relocation, ventura:        "94c8fc31e286c2bfb2c4c76a4c2f6ffdce1bb556f0c91fa11a6668c8b9dc28fe"
-    sha256 cellar: :any_skip_relocation, monterey:       "bf765a763a4d227f133e98e8cc5a18ba472b3a0c42d031122d8f7b9de3852bde"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7527bca70e078d61791f592c74b4908148f23fd3f064a9b8ccc10ef4c4cf0358"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7f45254413b96fa0f532092ca33372924b4151790bbc63256ebdd8f26f277e70"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "39c09955a7e70b221b8f7811bafecd602827f0f02e1fd9c419f9137bd53e0ac3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e420240be18fb1ecb0a5ead30407a4792e2c32b783baf0c3e33983a91f82d1a3"
+    sha256 cellar: :any_skip_relocation, ventura:        "37c8a463712fc70c6481b1a464d287538b7882288da2dce1bf32b594b8c61f79"
+    sha256 cellar: :any_skip_relocation, monterey:       "c59c806b7a5bdfb1f35e8a3e82ffb369b41e5425a0255bb6a810f0fa9e3ea8f1"
   end
 
   depends_on "rust" => :build

@@ -8,26 +8,25 @@ class SimpleTiles < Formula
   head "https://github.com/propublica/simple-tiles.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a47cd53e74ec486fc2159b4ee55fddb202351c8dec99ef59819728156fc248ef"
-    sha256 cellar: :any,                 arm64_ventura:  "cc9b25089707786c77c954f339412e843776ebc992ed36372b838882336be711"
-    sha256 cellar: :any,                 arm64_monterey: "e2b588d5065161fd7db30ddcbb167fd02bbe15a42e36a624d2d2ab57fa5a719c"
-    sha256 cellar: :any,                 arm64_big_sur:  "a269fabb33d530d300f405e4363d195af41a83ff2801a08d38cf3b1cb6e365bc"
-    sha256 cellar: :any,                 sonoma:         "37fd7cef4daca2b641a7960e7f4271f9329065af95edc794219b70ac024b7b79"
-    sha256 cellar: :any,                 ventura:        "a39df0a3650cf0b17f8292bbae7b27771f8016a0651ffc3359c6d87a9b2056a9"
-    sha256 cellar: :any,                 monterey:       "edbff9be05fb653675118d54d517094a508fc34c2e35d0306bd6261858cc53d0"
-    sha256 cellar: :any,                 big_sur:        "8cfe1ac09b2c94e3ecc194f606bda135202afc7b8877954ca835a15b712a6d59"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17e7ce8eb9cf3eaff8118ee13604924e1cf320ab1176b175b746f2d2d26198d5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "23c7f4f531ac1bdcae1c24421c50d25a5c42626ae09913945ffc7909330dd30d"
+    sha256 cellar: :any,                 arm64_ventura:  "c22fe268a1347a3a22cecf8f580091dadd55a2a77abe48320147c079fc265770"
+    sha256 cellar: :any,                 arm64_monterey: "1e51c8462fff4047daee9620f47c0828349f587fb54880ff2622f872dc856ff5"
+    sha256 cellar: :any,                 sonoma:         "11345354cabbb4630172bd2b0b0ccbef88c53d756b5ed7ef994187ffaaecea27"
+    sha256 cellar: :any,                 ventura:        "7a5d8229fea8fcda8efa1610d3639556f5ea4f7e897d5f3a719f728aebbbf5ba"
+    sha256 cellar: :any,                 monterey:       "6ce9050d08df7573d922d05ce34fa2705e62a43ecc0d9ebf4178c1e3c4a1a73a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "439d4843643e955b62f8d354f11114ac47dd4bcaf23379d60a085a316585b98c"
   end
 
   depends_on "pkg-config" => [:build, :test]
+  depends_on "python@3.11" => :build
   depends_on "cairo"
   depends_on "gdal"
   depends_on "pango"
 
-  uses_from_macos "python" => :build
-
   def install
-    system "python3", "./waf", "configure", "--prefix=#{prefix}"
+    ENV.prepend_path "PATH", Formula["python@3.11"].libexec/"bin"
+    system "./waf", "configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 

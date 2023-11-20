@@ -9,31 +9,36 @@ class Fonttools < Formula
   head "https://github.com/fonttools/fonttools.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b3d4d070cc90ff171da579e67511486e2a3e747c0a0296b1830557f3b10cd374"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02310436fbc0a5bd311a7caebf21434e9fec016343e5e97ff2ce7d7a79bbdb95"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "07bddfadedc3fa41e5c57985194c0b6bb46353ca057c0677fc8bc9061c9af45c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b310bcef63ba28d9b3fb4ccfa2b6c87f0f8336becebff2a638fe613d119f5dfc"
-    sha256 cellar: :any_skip_relocation, ventura:        "2b44ef1f8475d13a388d1e79daeba390bee4006c207222c3c91447a93f7ffacb"
-    sha256 cellar: :any_skip_relocation, monterey:       "e8d53d2a521455b4eb92d5fee5c156ea6185044f9d923055e09a9c374fdae1c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f5882ed5c35176b03b9de36e08e9bf30a634a7a79d6cfc4d7c31062538a2e8f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c47129bb932ddd84c20b48d076fdbf0ff361a8394e4fd5ec6277110c0c58ee40"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "76fef3f93603d18a7bc2efa4cc3469491c0c5c45520a98a052fe50ae82472201"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ab92830f175d6622b8fb880116820a8b8406e2978500bcfdc89b523da051c4e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "60274153c942146e1be8e82097334be8703e1c7e5f7ffdf104af5ec1b97735ca"
+    sha256 cellar: :any_skip_relocation, ventura:        "f7bf3e5aa05c9b9edb87522e6ba077a0d09a2ef830bea7d29707af216e29344f"
+    sha256 cellar: :any_skip_relocation, monterey:       "db82f5edc1670867144d1d95aa059657ab07e5ab31db82b264adcf083b133045"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aba42632458d16451fe6a55f7379b298eadb5086834d7a6143ea3db0d220a44f"
   end
 
+  depends_on "python-setuptools" => :build
+  depends_on "python-brotli"
   depends_on "python@3.12"
 
-  resource "brotli" do
-    url "https://files.pythonhosted.org/packages/2f/c2/f9e977608bdf958650638c3f1e28f85a1b075f075ebbe77db8555463787b/Brotli-1.1.0.tar.gz"
-    sha256 "81de08ac11bcb85841e440c13611c00b67d3bf82698314928d0b676362546724"
+  def python3
+    which("python3.12")
   end
 
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
     if OS.mac?
       cp "/System/Library/Fonts/ZapfDingbats.ttf", testpath
+
       system bin/"ttx", "ZapfDingbats.ttf"
+      assert_predicate testpath/"ZapfDingbats.ttx", :exist?
       system bin/"fonttools", "ttLib.woff2", "compress", "ZapfDingbats.ttf"
+      assert_predicate testpath/"ZapfDingbats.woff2", :exist?
     else
       assert_match "usage", shell_output("#{bin}/ttx -h")
     end
