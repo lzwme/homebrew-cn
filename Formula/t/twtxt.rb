@@ -9,14 +9,14 @@ class Twtxt < Formula
   revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a4c89a9bfa235cfaa070064500061c9d14a37bae7fd5a0b9f8539885794ffb1c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "501b0660e32aa1938bc29dcc795e4e50cdabe544f0ca9ebddb083717633570d3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9f066b8786cf7cfd8c0fdf9910dd85a63b0cd1114e4d86c89e0621b4c7f4add2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fc8d917b5c7b771c427a50e08422378fcf390c0fc7d581bbc9fe3043c39d4b33"
-    sha256 cellar: :any_skip_relocation, ventura:        "4b0068ff90622bf33b5af562e4b842fc7c521c144a89663350e636b1243b3cf8"
-    sha256 cellar: :any_skip_relocation, monterey:       "f3bc972b3cbd992fb9a860cf8d70520b4358da086fdc76e20af7f1d03eed9508"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5163536b47a0c4f1c359f8ee10e3c8bd1dc5c7ed53621ea1edf6c35307718b4"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "94084bf50b4023c9717fed819b4ac3fdb2f5647f453d9a2e8613609fc0a94f5a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d7dd80e80d55c39478cce312b6587ddd49721a1e2492ca9fb52d81c8d533e7ea"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dca14622de8dda2e63577b05b8810ef671104787553a396a5ad3a0197b33914a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9f890820dd3b7b3a6d30b225db867a227259615c7d7facf963b23b6bb050d92e"
+    sha256 cellar: :any_skip_relocation, ventura:        "054f0f471019a0e9f4e6707b4cc853439df52cc24e4551f3fd5d22caae58ad71"
+    sha256 cellar: :any_skip_relocation, monterey:       "87d74fbbd094e3529ab3ff62d935ef4225c740b7c86305c7728f3f20a8712564"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e66e7434748b514f0411d5ff7919c462fcea51aa6c1287698add2200bd934758"
   end
 
   depends_on "python-click"
@@ -25,8 +25,8 @@ class Twtxt < Formula
   depends_on "six"
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/c4/50/a717a133bda2efc27efbf8a65398c925b6d0605213da0db6929627ccb758/aiohttp-3.9.0b0.tar.gz"
-    sha256 "cecc64fd7bae6debdf43437e3c83183c40d4f4d86486946f412c113960598eee"
+    url "https://files.pythonhosted.org/packages/71/80/68f3bd93240efd92e9397947301efb76461db48c5ac80be2423ffa9c20a3/aiohttp-3.9.0.tar.gz"
+    sha256 "09f23292d29135025e19e8ff4f0a68df078fe4ee013bca0105b2e803989de92d"
   end
 
   resource "aiosignal" do
@@ -34,19 +34,9 @@ class Twtxt < Formula
     sha256 "54cd96e15e1649b75d6c87526a6ff0b6c1b0dd3459f43d9ca11d48c339b68cfc"
   end
 
-  resource "async-timeout" do
-    url "https://files.pythonhosted.org/packages/87/d6/21b30a550dafea84b1b8eee21b5e23fa16d010ae006011221f33dcd8d7f8/async-timeout-4.0.3.tar.gz"
-    sha256 "4640d96be84d82d02ed59ea2b7105a0f7b33abe8703703cd0ab0bf87c427522f"
-  end
-
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
     sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
-  end
-
-  resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
   end
 
   resource "frozenlist" do

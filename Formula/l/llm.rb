@@ -8,28 +8,33 @@ class Llm < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "68c3125a1991894e76f912f6172bf4483965e7543eeb897198a01fcf0c3aa922"
-    sha256 cellar: :any,                 arm64_ventura:  "5b4e456151e9f22efe4c61aa5c4b356ef20d44a74782a68e390f3be389418ea4"
-    sha256 cellar: :any,                 arm64_monterey: "7e1e8074254310996797163249b81aee8b01fbac22116626cc33be2623cbdfa1"
-    sha256 cellar: :any,                 sonoma:         "d629be78cd7fd86dbcac5964235465bd13456b6e89f1e4273cacfb0e8c5e0eab"
-    sha256 cellar: :any,                 ventura:        "addd7b2b55fe986c7ac698017316a2be590f48264fed56aefd36b170639350d6"
-    sha256 cellar: :any,                 monterey:       "ff75f5b1a2544e1ecb745d82aae54bd54b2f2a5ac949421f4ba13c889efa9170"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "125e0c15fee473a96aacd0cb0938542704b81135e5250ffc81737de2420bcfd7"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "eb8f5ec0d80430a05721ea58eac86d29c6cac3dad3b807a2592b55b076a8aefc"
+    sha256 cellar: :any,                 arm64_ventura:  "1cf2a169e8f76f9fe77c1e8f65db1522b0c8992f6c378ce3693f6dcd0d8792ae"
+    sha256 cellar: :any,                 arm64_monterey: "0e242fe02cac1babd5ae685f5ba035c3b116ae1404660b0b28ad12247993fc16"
+    sha256 cellar: :any,                 sonoma:         "431d99d795d2cc56f65fe8ec42e565101fc7f0d56042933acb94bf0ee9bfe4a2"
+    sha256 cellar: :any,                 ventura:        "e063b6750550993c247eaa95b703bfd207e9b50f4bf826600eead02cea2830cc"
+    sha256 cellar: :any,                 monterey:       "975f3fba3df2ec50c941cae67e105c4ed6e8b9d1b89c42e94c68f34f2f0d3d6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e2b3ff067b1a276e9573582c68f8dd959fee8151116ab0777b9e9f0b8f59aa6"
   end
 
   depends_on "rust" => :build
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-click"
+  depends_on "python-dateutil"
+  depends_on "python-pluggy"
   depends_on "python-setuptools"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
+  depends_on "sqlite-utils"
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/2f/d2/1e9a33d15b85b0ea0d4029e3fdca0979e9b864314b965a4d3f0882e5dede/aiohttp-3.9.0b1.tar.gz"
-    sha256 "d6e120b08ac168825239c64e0a850a108edb9cd17be247e25bced9b07a14a403"
+    url "https://files.pythonhosted.org/packages/71/80/68f3bd93240efd92e9397947301efb76461db48c5ac80be2423ffa9c20a3/aiohttp-3.9.0.tar.gz"
+    sha256 "09f23292d29135025e19e8ff4f0a68df078fe4ee013bca0105b2e803989de92d"
   end
 
   resource "aiosignal" do
@@ -42,11 +47,6 @@ class Llm < Formula
     sha256 "563339e807e53ffd9c267e99fc6d9ea23eb8443c08f112651963e24e22f84a5d"
   end
 
-  resource "async-timeout" do
-    url "https://files.pythonhosted.org/packages/87/d6/21b30a550dafea84b1b8eee21b5e23fa16d010ae006011221f33dcd8d7f8/async-timeout-4.0.3.tar.gz"
-    sha256 "4640d96be84d82d02ed59ea2b7105a0f7b33abe8703703cd0ab0bf87c427522f"
-  end
-
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
     sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
@@ -55,16 +55,6 @@ class Llm < Formula
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
     sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
-  end
-
-  resource "click-default-group" do
-    url "https://files.pythonhosted.org/packages/1d/ce/edb087fb53de63dad3b36408ca30368f438738098e668b78c87f93cd41df/click_default_group-1.2.4.tar.gz"
-    sha256 "eb3f3c99ec0d456ca6cd2a7f08f7d4e91771bef51b01bdd9580cc6450fe1251e"
   end
 
   resource "frozenlist" do
@@ -87,24 +77,14 @@ class Llm < Formula
     sha256 "4be1dad329a65b4ce1a660fe6d5431b438f429b5855c883435f0f7fcb6d2dcc8"
   end
 
-  resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/36/51/04defc761583568cae5fd533abda3d40164cbdcf22dee5b7126ffef68a40/pluggy-1.3.0.tar.gz"
-    sha256 "cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12"
-  end
-
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/df/e8/4f94ebd6972eff3babcea695d9634a4d60bea63955b9a4a413ec2fd3dd41/pydantic-2.4.2.tar.gz"
-    sha256 "94f336138093a5d7f426aac732dcfe7ab4eb4da243c88f891d65deb4a2556ee7"
+    url "https://files.pythonhosted.org/packages/0b/6c/cebf0e87ee0f2496584e04079592f33610f1f9aaf3684cb3105f03969e2b/pydantic-2.5.1.tar.gz"
+    sha256 "0b8be5413c06aadfbe56f6dc1d45c9ed25fd43264414c571135c97dd77c2bedb"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/af/31/8e466c6ed47cddf23013d2f2ccf3fdb5b908ffa1d5c444150c41690d6eca/pydantic_core-2.10.1.tar.gz"
-    sha256 "0f8682dbdd2f67f8e1edddcbffcc29f60a6182b4901c367fc8c1c40d30bb0a82"
-  end
-
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+    url "https://files.pythonhosted.org/packages/4c/ee/b3479b31f47226bae5d9033761971bec215774a6078ce08e8618d6381470/pydantic_core-2.14.3.tar.gz"
+    sha256 "3ad083df8fe342d4d8d00cc1d3c1a23f0dc84fce416eb301e69f1ddbbe124d3f"
   end
 
   resource "python-ulid" do
@@ -117,19 +97,9 @@ class Llm < Formula
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
-  resource "sqlite-fts4" do
-    url "https://files.pythonhosted.org/packages/c2/6d/9dad6c3b433ab8912ace969c66abd595f8e0a2ccccdb73602b1291dbda29/sqlite-fts4-1.0.3.tar.gz"
-    sha256 "78b05eeaf6680e9dbed8986bde011e9c086a06cb0c931b3cf7da94c214e8930c"
-  end
-
   resource "sqlite-migrate" do
     url "https://files.pythonhosted.org/packages/13/86/1463a00d3c4bdb707c0ed4077d17687465a0aa9444593f66f6c4b49e39b5/sqlite-migrate-0.1b0.tar.gz"
     sha256 "8d502b3ca4b9c45e56012bd35c03d23235f0823c976d4ce940cbb40e33087ded"
-  end
-
-  resource "sqlite-utils" do
-    url "https://files.pythonhosted.org/packages/10/91/4febf8cfe2d0b57a6a77595180bdb4ab97a89ffd36223ed295d1d8bfbbc7/sqlite-utils-3.35.2.tar.gz"
-    sha256 "590b14ad277914cb3fc7d5e254764847facdaaa23c7bafd85ec93874f6f42143"
   end
 
   resource "tqdm" do
@@ -138,8 +108,8 @@ class Llm < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
+    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
   resource "yarl" do
@@ -149,6 +119,10 @@ class Llm < Formula
 
   def install
     virtualenv_install_with_resources
+
+    site_packages = Language::Python.site_packages("python3.12")
+    paths = %w[sqlite-utils].map { |p| Formula[p].opt_libexec/site_packages }
+    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
 
     generate_completions_from_executable(bin/"llm", shells: [:fish, :zsh], shell_parameter_format: :click)
   end

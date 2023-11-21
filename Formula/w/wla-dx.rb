@@ -1,8 +1,8 @@
 class WlaDx < Formula
   desc "Yet another crossassembler package"
   homepage "https://github.com/vhelin/wla-dx"
-  url "https://ghproxy.com/https://github.com/vhelin/wla-dx/archive/refs/tags/v10.5.tar.gz"
-  sha256 "b2d093c3c46caa399ed3a8e5f18f1f0eb7aefa958755bec752f2806bad3af802"
+  url "https://ghproxy.com/https://github.com/vhelin/wla-dx/archive/refs/tags/v10.6.tar.gz"
+  sha256 "010c4d426fd1733b978cbca7530a5e68bdfb6f62976c0d5ff7bff447894e19a8"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,15 +12,13 @@ class WlaDx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "40b08954e4d246584f9bec983b44cde15a757211537899bd8d1f81aa3ae744a9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0a57579303e021b9166138b11fcf0491ad8c87bcaea0d5f0dd8d498468b685d3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c7e70e4cc97cdecd269d28f3e59516e85d4a86c3fa523555d4c5bc2c9e486c69"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2ffdf36dc32cc35cca6f7ba63f60457fb6fcca206394f8aeb757f20bb259a2e6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "28f243caa07528269dc6e6493431d24399e47f6869634de166b7bbae8d3039f0"
-    sha256 cellar: :any_skip_relocation, ventura:        "24a9223c1db8e91d1955700d3c7a1bca0884f840ff3f5c544decdccedf340bd9"
-    sha256 cellar: :any_skip_relocation, monterey:       "d14bedd366731a95c1c6cc97bef89948dd480cc5406325137c9e32f9c540db40"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d0ac6385b89dc578b155af3aac5eff0c135a64b4def3b679a33c44e6e3ea5e82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ecc3e3dcc4955bc7245365bf0836acd7498eead3549061e57fae55c27df48ca"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "01e0f38cf29c205e76cb0950a41847867d3ee007e877f6607e5e5c352fe222da"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d86083d1dd34ccbb5f8309052d57e9b5ee52de04f7382510f41ba82e19d3b1ff"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3ca9f57e6ed396fd20774c44c4619e4b9583a772d3d0751ea90751e3ddb06545"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9ff72ea731a055cf23c426ab45fe5e33169ba1a4979c74ac90a9edd84a04730b"
+    sha256 cellar: :any_skip_relocation, ventura:        "db9b75eba0fe4403c2c41faaa0fc7d49bf173e32c8240718d18413aee0609d35"
+    sha256 cellar: :any_skip_relocation, monterey:       "6397fad5d0f3bbdb81022766ca0784206cb611dd7db402fb7eff80bb703860b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e5860c11c5bbbdb62949e01df2af3d006f8315f5d30a2d4f4c25740a57ef883"
   end
 
   depends_on "cmake" => :build

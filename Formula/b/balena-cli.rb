@@ -3,8 +3,8 @@ require "language/node"
 class BalenaCli < Formula
   desc "Command-line tool for interacting with the balenaCloud and balena API"
   homepage "https://www.balena.io/docs/reference/cli/"
-  url "https://registry.npmjs.org/balena-cli/-/balena-cli-17.4.3.tgz"
-  sha256 "0be2c0e133c78f0ba46c1b75a51b52a4aa365405a4ced7f8f457b6d5ac4c2c39"
+  url "https://registry.npmjs.org/balena-cli/-/balena-cli-17.4.4.tgz"
+  sha256 "37f52d447955830bca272e939d05af8cbe168a12f5db219448f559ab5831013c"
   license "Apache-2.0"
 
   livecheck do
@@ -13,13 +13,13 @@ class BalenaCli < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "230a2a46cebc192933c545905e26a6af9fc0bc8f02468a81014d897aa33d45df"
-    sha256                               arm64_ventura:  "f6df886b0f68acf335f4226efae430e659cf56fbb1ff160c097006201cecbc74"
-    sha256                               arm64_monterey: "b1f97b655e4179811d297f865c718eba4ba060f9092ccf5ad36044491077ceb3"
-    sha256                               sonoma:         "370de5e8f1b80824851306579e29a073f26769c3b3a2f1837f6b8a6ed60fdde8"
-    sha256                               ventura:        "f0a04c4ee358bc1612e4d388c89a9e896ecbc4fca3a95e395ea0126e1bdd13e1"
-    sha256                               monterey:       "fb684e8ec3aed0fc0f33057bd28cde926592867cb810f6010ad2798627c18052"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3dab4832ee7be763953e118e7ffd9613a3b807ba324bf32bbc8a42199d022f01"
+    sha256                               arm64_sonoma:   "17044164f433f97740d2aa8b63cf16b309fa956280dd4549d1b8d2cab6784643"
+    sha256                               arm64_ventura:  "c604663dbf40521421265ecb9e1447b2594845b4b29c704a4ab3e12f780cb0d2"
+    sha256                               arm64_monterey: "b9e29dbef798ea87fb4beab6b20533c359764ccab25337b732980aecded03dc7"
+    sha256                               sonoma:         "67c3f4985f2f26f2e643523406dc9b0bcf0d0d9b89c850e5f4bb608ad877a9e1"
+    sha256                               ventura:        "56a6a82fe0ebd03b393a9c24292f0c928cbdb542f8f6a6058b95e707caaeb376"
+    sha256                               monterey:       "42bef051c1e49b49039aba7f35592f1d1303b21fa0c4ac8096e21b777c30bb8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "755c02552df84dcb92ce2fb39a1dfbde775ec55f35e3c753bca8816f5c7350d4"
   end
 
   depends_on "node"

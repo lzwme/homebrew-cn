@@ -1,8 +1,8 @@
 class Kcgi < Formula
   desc "Minimal CGI and FastCGI library for C/C++"
   homepage "https://kristaps.bsd.lv/kcgi/"
-  url "https://kristaps.bsd.lv/kcgi/snapshots/kcgi-0.13.0.tgz"
-  sha256 "d886e5700f5ec72b00cb668e9f06b7b3906b6ccdc5bab4c89e436d4cc4c0c7a1"
+  url "https://kristaps.bsd.lv/kcgi/snapshots/kcgi-0.13.1.tgz"
+  sha256 "3246ee78a091b496f7040c5f29fb9e45a7aa2873f4d8d77a30b6437f07db4d49"
   license "ISC"
 
   livecheck do
@@ -11,17 +11,13 @@ class Kcgi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6fcb3b8c182fe400fd030cc7b7ba1841dc6d35859432c1f5b89b53700afdf822"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "554fd1a334f699a9b632d4f51092a202f817acaf3adfd3fb14c4ddc08742a03b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "94328c333800419711f54bb6bb199c632e8dd665dd04f8fdac22d54a2391c2fa"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "477a66993f541e9b595996d577c766c5eb205730b97885853322b32bb3d66285"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7403b067536b76f6fbcbcf98c022b83d5737b64ce81eed39c559b5b56fdc404c"
-    sha256 cellar: :any_skip_relocation, ventura:        "dd6b93a3da7b6b33bc534e05983f10b3bdb2c518d4cb5555ae052aefc1cb7b0c"
-    sha256 cellar: :any_skip_relocation, monterey:       "d8559957ace2184733fa9d74ebee348137efa4093e6f07b5c907cc924aaa1532"
-    sha256 cellar: :any_skip_relocation, big_sur:        "aea0950090e27a079ea4f104a726676c13f01de6c56284b2f98e8bfd1a208e21"
-    sha256 cellar: :any_skip_relocation, catalina:       "de0d79ace2d35397df1fa1e8d7e09128372d9c7989992675ae835d2d21a502e8"
-    sha256 cellar: :any_skip_relocation, mojave:         "a4779378456da9d3887e45136c69df85d47bef12d57b7f8903f840f4c2b12002"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1dbc844befbf8fcff4b08055dd7c9964ece3e846b6d0bbd6282663ebd89a6ff4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cfd11a18fcc780e1b5633b4a6bcfbaa3ca038f3f43a43b1b3f10c97f24bd74d1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ee27542043bf2ad17d59e30a5031015ad6fe0ee0b904c1d0f0c77ff442524269"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3b5e06977a915e3b64d6ba44937dadd62cb6d9dccd5be9be6818a9dd3a640db0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "04cb261b31b014fa155de0f61fb01430d508173ccdc915214f9ba84a2c648cf4"
+    sha256 cellar: :any_skip_relocation, ventura:        "6cc585147ac24b55ca342a69b33e3bd8fb9014f1b001456e85bdd1e2ca5d09f8"
+    sha256 cellar: :any_skip_relocation, monterey:       "df3b96ab72c60f0a9d43fb985a4f895e8d2956894f77637c26e21f49a2dac9ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da8d560e34bcfba9eeb6f70c41519c309a7344b88870dd4d30247834867deffc"
   end
 
   depends_on "bmake" => :build

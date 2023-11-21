@@ -1,20 +1,18 @@
 class Pgrok < Formula
   desc "Poor man's ngrok, multi-tenant HTTP/TCP reverse tunnel solution"
   homepage "https://github.com/pgrok/pgrok"
-  url "https://ghproxy.com/https://github.com/pgrok/pgrok/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "c1e9b3b506b39c5a1e6d9d31e78ba28c1c62ff698ceab8ba5f30881bfd8af6ad"
+  url "https://ghproxy.com/https://github.com/pgrok/pgrok/archive/refs/tags/v1.4.1.tar.gz"
+  sha256 "e0dd1a9ec350612df37ac5e4c90798ac6f6f8cf2003e6cbb3d736c667bba2198"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3f3c04a70e800411cafa8a6d0bf1fc6c71ba981fa5cb0765d1002f21b8aa82ed"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8165af1dc7d72e1c72eb642feb20e1da01911a8e5c027d5af113207e9144ae2e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f43696d9e60b6dff2bb3f93309fa67e5618143035759a92b02dc80875cb918e7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ef5d9be8ee4f399660c507eca7647606b3d6b2bb2f3bbe54c9167deda458792d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4cc88748f7cd6039f277cc17f9e6dd3d7dbc516c8584661a447e0153ba4341f1"
-    sha256 cellar: :any_skip_relocation, ventura:        "a0df041caadeec0edd908855e60e69ddeba089a85b8167eb235b230098c9c30f"
-    sha256 cellar: :any_skip_relocation, monterey:       "2b2ef4dd3b91082a88bb0d9dd86479ce26b846c5e60647f2a1ef7ba40b179f79"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1c31fb7b354524f3801b871d7b737b2d7adf1cbf6b1abd1e1551b02c0b713fb5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0fb845940a156201b9071a241b9bc193c4753e654065e8e96a40aeccfc688cc7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "37c6d36c1f6b0f22c3115b4be5c1d8af659b53bd845193319c7473d8653bb029"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7edafb5ce275e575f5d4a99954805c417d98b39386267b6c4c033fb7f61efcf7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3ddb52a95411ce24a9369da24259ef59b37b1d86d7b3d92b513aff1ac9f59421"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6aba6a48f1a592e25bde72a2d0fb9a7b07d9ffe23622ac3246e310cd025f2496"
+    sha256 cellar: :any_skip_relocation, ventura:        "30ad1b464b82fa3e9d6a08b08057a72666b8f6ac52eb775a4e6bb72ae8638b9f"
+    sha256 cellar: :any_skip_relocation, monterey:       "9310b35d240c739a5f0df1aa6b111e55fe08b3fa2401c6a9fc8f52f459a62e26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34491559e05fb7a8feb9e2d00428754ef5c2555ff954749956adf07c90301cd1"
   end
 
   depends_on "go" => :build

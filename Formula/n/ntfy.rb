@@ -2,21 +2,19 @@ class Ntfy < Formula
   desc "Send push notifications to your phone or desktop via PUT/POST"
   homepage "https://ntfy.sh/"
   url "https://github.com/binwiederhier/ntfy.git",
-      tag:      "v2.7.0",
-      revision: "2f0ec88f40418660e5b99a7ad589d661d8c4ff6f"
+      tag:      "v2.8.0",
+      revision: "aaa4976c7d10d54b0484d541816b465997e5521e"
   license any_of: ["Apache-2.0", "GPL-2.0-only"]
   head "https://github.com/binwiederhier/ntfy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5c8b968cb1b04e24afe646c9b65d0b406dbb61aace17680c27ab11b6b15b542e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29be8f25881322e5c1b5154c3e3b9c7bfdd74b550eafdfd10df60815a64eda64"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "29be8f25881322e5c1b5154c3e3b9c7bfdd74b550eafdfd10df60815a64eda64"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "29be8f25881322e5c1b5154c3e3b9c7bfdd74b550eafdfd10df60815a64eda64"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f89c3175ceaecfcafb93004d7939c29b0e82d60d1669721f1b01c1135bd8c3f7"
-    sha256 cellar: :any_skip_relocation, ventura:        "9f6a4c9ad4c6c17e7e680644fa50e78fbab475a209c2af06680d7b0cfdc62482"
-    sha256 cellar: :any_skip_relocation, monterey:       "9f6a4c9ad4c6c17e7e680644fa50e78fbab475a209c2af06680d7b0cfdc62482"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9f6a4c9ad4c6c17e7e680644fa50e78fbab475a209c2af06680d7b0cfdc62482"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46d20995998868f11cce74529f74483dd195a7a07fcb849b3ce60439cd950ec3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4d3313080b3f69cbf3e4342ca70e317402fe3f9c51bc796917615604ecff79d2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4d3313080b3f69cbf3e4342ca70e317402fe3f9c51bc796917615604ecff79d2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4d3313080b3f69cbf3e4342ca70e317402fe3f9c51bc796917615604ecff79d2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7dce9a30984c0f91b4673dacfcdd479275e4e0c4f93997d6ab2993bbb1dce6fd"
+    sha256 cellar: :any_skip_relocation, ventura:        "7dce9a30984c0f91b4673dacfcdd479275e4e0c4f93997d6ab2993bbb1dce6fd"
+    sha256 cellar: :any_skip_relocation, monterey:       "7dce9a30984c0f91b4673dacfcdd479275e4e0c4f93997d6ab2993bbb1dce6fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ffe5491e47e50debe535844d72d0762199820e4ec68d03af910606ff558d7e21"
   end
 
   depends_on "go" => :build

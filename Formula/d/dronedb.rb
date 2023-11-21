@@ -5,19 +5,17 @@ class Dronedb < Formula
        tag:      "v1.0.12",
        revision: "849e92fa94dc7cf65eb756ecf3824f0fe9dbb797"
   license "MPL-2.0"
-  revision 6
+  revision 7
   head "https://github.com/DroneDB/DroneDB.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "249f8e13597c4ed5126c539d71a62802583f2d4819d90164db81667a4961f3ca"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ae590b6c6ec538091753be46008aaa0f3b9ff38482b8936a2fd2598d079fad5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1937e9a80d0cb322bf7612eb67e7f191f420e4fddb85090bece51b507e14232c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0cd0daa313e88fa553b9334ed07f24e8246e761d539e497d2b62c3aa1c4d1522"
-    sha256 cellar: :any,                 sonoma:         "4a155e281801cc5d14fc281fe9e58404132a797227f043b44351737c03c5e8e0"
-    sha256 cellar: :any_skip_relocation, ventura:        "647a95d770753b5e803eef33460fc44ec06f2abaff906301d0343897c34d2818"
-    sha256 cellar: :any_skip_relocation, monterey:       "b170b1831a4793b29565df3b956d0c54a1948e7bfb72d198498ae51c19ca9869"
-    sha256 cellar: :any_skip_relocation, big_sur:        "333769d1c641b3af3e8d1692077b042bd1daf04a79871cb593219f353433675f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9bab5202fa668f96ec7f04fb22b3a2379dd6e26a3209d0428480e4456da40d27"
+    sha256 cellar: :any,                 arm64_sonoma:   "f3d3142c0a755873b372896657872fcac7e3a91a40f8576ffa5faf2a59630737"
+    sha256 cellar: :any,                 arm64_ventura:  "a6ee78ffab0b520948410840bbff68e931a66b8c0a34d052c8179709ecda39e0"
+    sha256 cellar: :any,                 arm64_monterey: "ca62fb9f855399d505c942c955240240528b83ddb502c34e1ac521b4fee3ef27"
+    sha256 cellar: :any,                 sonoma:         "609a84ef6f38adb0121c9a03f152838d40d4022e3cb0fbe23ffef069ab180aab"
+    sha256 cellar: :any,                 ventura:        "9f10917f8113df8ba4304b9ec4a8f5310aeb1a02800c54e133f213ef5c8e05c3"
+    sha256 cellar: :any,                 monterey:       "5c98ab4154799105787de9bb8c20282396ac3ac2792ecfd4cad761454340cdf2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "19c8fc899bf57bd4a80ad4f0673b4e24ef9143d903c89b274e80bf3b5c29ccc4"
   end
 
   depends_on "cmake" => :build

@@ -16,8 +16,6 @@ class Gitversion < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "145cf97b7cf3542f18a5cb1bde69518a090672cdefef3c6681ce4f5415934c6e"
   end
 
-  deprecate! date: "2023-10-24", because: "uses deprecated `dotnet@6`"
-
   depends_on "dotnet@6"
 
   def install

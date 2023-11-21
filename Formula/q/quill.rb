@@ -1,19 +1,19 @@
 class Quill < Formula
   desc "C++17 Asynchronous Low Latency Logging Library"
   homepage "https://github.com/odygrd/quill"
-  url "https://ghproxy.com/https://github.com/odygrd/quill/archive/refs/tags/v3.4.0.tar.gz"
-  sha256 "1aca35d184c9eaa5785d2cef5c1411960659d92823c0accb3687d3829cf75cff"
+  url "https://ghproxy.com/https://github.com/odygrd/quill/archive/refs/tags/v3.4.1.tar.gz"
+  sha256 "99f6497b8ba37c30c871fab89f14cd7bc989f3eaa921ccd940a521ee60a6a1c5"
   license "MIT"
   head "https://github.com/odygrd/quill.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "410702db7bccea1529e649c1319bb11e2227d7bc6d04dc7c8d58d34177736d7d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "91671ce93ea689fdbf3db883c2b39199f6594bcb2d92cf206a1789465117c635"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "395a4dfefe089244485d175011db22eb73059691ffb8fece9092ec8867608a2b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bc6818121771a8d207c3930aed3e62fb861f51073214a7949cb4d1f3f2d45694"
-    sha256 cellar: :any_skip_relocation, ventura:        "d2aae9ca6634ec99c74c05f51397f0827ae46e140e889e31a10cd75c6c712b2e"
-    sha256 cellar: :any_skip_relocation, monterey:       "acd397f1a1fe1788daa8bdf5df1ce127f2c891e1926e1dd11a8d505a900cd33f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cdd47662afe0ffc73e4508d312320b2ba5f627c02340db26c72e229ace9aafb2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4e87bd36e85febe01118026507f3c72b954077dc3c446aba111022cfd80b52f8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "180fa3ef2dc907018fea02932f767a59b7e5db78a9cd4181fee5d303f6489bcc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0c7e27bee9e6536473a0b6a9a83349f45017e24e46946a2e539d9ec7a9b67b9f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "68ce9dcf05b4d998fd873e7fba230705129ac196166144f7e97c8c49497b29ba"
+    sha256 cellar: :any_skip_relocation, ventura:        "dc3d80d3ba85f21e2cffd6754177bae6c23175c34b8ddcd251532216c4a58b5d"
+    sha256 cellar: :any_skip_relocation, monterey:       "571e94cceef724649af9a11a9f5a4108fd3556a19a90d8783f8ae1ae802f4167"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b46f54a2edf31ce36d16d81b63452b60822bf917ebce9ce6cfdbec5541066129"
   end
 
   depends_on "cmake" => :build

@@ -9,16 +9,19 @@ class Todoman < Formula
   head "https://github.com/pimutils/todoman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb93655f76048f7cd5245665e11f110034d8d3dbb514e4fb8dc81ba72a8262bb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "492177f78df507f2eec5575ed10c6b0df58c7119d7a2dd768b3bbf4eb0d201fe"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a480187a01c17dfa0c59ca48ea8cd43e00e803bf5afb7db20e99b13e559bc2c8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ce0bc55432b5d03cecf839d5a7cb93a2d2f8108d696edc0411aeb25414b2acf6"
-    sha256 cellar: :any_skip_relocation, ventura:        "54c731b3e58d3caad8558bd37064462d3a26d3ecc33d6b7134a8b9c71017fb21"
-    sha256 cellar: :any_skip_relocation, monterey:       "a0454aeb5a956dc66cd7973c7412d150b9582eb6bb76064b95ef425429277bb6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c858a25225e2f20e06a6003009a7c51969eb1ad11bcee4fe68beb8e74938baf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "635aa8bb34f25780c9f3b708e4ab45835a50cac7fae2ea25756938403bd49ce1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5feec760f05f90947b07b6c0a26e84e01da3b567c2d578cdcd4c147669887f3e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "199d07cf33110761686a8241a83940e1b4a808e875462859a2f2d404659e6b7e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f6a01c860ac96487c47744072df697c925f89890308c7726f50bf80cc9228a16"
+    sha256 cellar: :any_skip_relocation, ventura:        "2583c45b8ec7953f2c6b209a5a7c2fa58310842cb82bf9e2df5baa0f989235fa"
+    sha256 cellar: :any_skip_relocation, monterey:       "b514aa8af8e9f7222f4a2aa29c37e341f0db53a80352d367910ee3087d88cdef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41c754a9b585dcc35fb97d5912327f21858331ae8847c44d439442c714fffcf9"
   end
 
   depends_on "jq" # Needed for ZSH completions.
+  depends_on "python-click"
+  depends_on "python-dateutil"
   depends_on "python-pytz"
   depends_on "python@3.12"
   depends_on "six"
@@ -28,11 +31,6 @@ class Todoman < Formula
   resource "atomicwrites" do
     url "https://files.pythonhosted.org/packages/87/c6/53da25344e3e3a9c01095a89f16dbcda021c609ddb42dd6d7c0528236fb2/atomicwrites-1.4.1.tar.gz"
     sha256 "81b2c9071a49367a7f770170e5eec8cb66567cfbbc8c73d20ce5ca4a8d71cf11"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "click-log" do
@@ -53,11 +51,6 @@ class Todoman < Formula
   resource "parsedatetime" do
     url "https://files.pythonhosted.org/packages/a8/20/cb587f6672dbe585d101f590c3871d16e7aec5a576a1694997a3777312ac/parsedatetime-2.6.tar.gz"
     sha256 "4cb368fbb18a0b7231f4d76119165451c8d2e35951455dfee97c62a87b04d455"
-  end
-
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
   resource "pyxdg" do

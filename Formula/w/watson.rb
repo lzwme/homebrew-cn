@@ -10,17 +10,19 @@ class Watson < Formula
   head "https://github.com/TailorDev/Watson.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d657f84254a15ab03c0f1e6c5f36e61967600773a40f60073ab6ac97d4dead31"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "311406268fbf3fad08fa588b0ee0b1ed22bf8676d57a182fe7ca36ba645a3ad6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "052055745eda7eb7c056c5d84c6e26afe95e57a5dc0d83b8819cedfa24b65da3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "40a0e45cb3ec164985cabf2c7afaed8435a96127c059892979fb93575de46f18"
-    sha256 cellar: :any_skip_relocation, ventura:        "97d50ac1856fe5e846139474371cc09ba90d41e2678d0998b3b9e5f354bb470a"
-    sha256 cellar: :any_skip_relocation, monterey:       "68f689f46913838466ee435bd4c23372c00188be00aee36f857fa883c64dcc67"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "763188c25f86414ba75014b2e67eaf8d4655794852656c944896d6f4f90e5d8b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "94e684e89229c5bcf3989fd27d82918f6245d71761e32bf597e27ba9b7218b21"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02c61d18705e7917e29fa6cb57a72ef49169d1cf2bbb91b640d8a6be403205b7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4cbb1cfea5c4efa4d80da227824f11e4258e650a92f0b2fd52c6d259a798d42b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3250c2a199deb50ce04f87e550f4dd64865920074b633b5313e0890e0636f6fc"
+    sha256 cellar: :any_skip_relocation, ventura:        "65d5a97a8f94742aa7224530d97b16d9ebd303f86d43ef99de546a457175f7c5"
+    sha256 cellar: :any_skip_relocation, monterey:       "dd7bc67a9e037b5645cd043e949941f756db476f7bc0dbc942d1415124ca6ac8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32116f47634b4e0c3c4ed02992ca592fe80c7e8aa32d05008f976f52a1175467"
   end
 
   depends_on "python-certifi"
   depends_on "python-click"
+  depends_on "python-dateutil"
   depends_on "python@3.12"
   depends_on "six"
 
@@ -42,11 +44,6 @@ class Watson < Formula
   resource "idna" do
     url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
     sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
-  end
-
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
   resource "requests" do

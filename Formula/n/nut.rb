@@ -1,20 +1,9 @@
 class Nut < Formula
   desc "Network UPS Tools: Support for various power devices"
   homepage "https://networkupstools.org/"
+  url "https://ghproxy.com/https://github.com/networkupstools/nut/releases/download/v2.8.1/nut-2.8.1.tar.gz"
+  sha256 "7da48ee23b1f0d8d72560bb0af84f5c5ae4dbe35452b84cb49840132e47f099c"
   license "GPL-2.0-or-later"
-  revision 1
-
-  stable do
-    url "https://ghproxy.com/https://github.com/networkupstools/nut/releases/download/v2.8.0-signed/nut-2.8.0.tar.gz"
-    sha256 "c3e5a708da797b7c70b653d37b1206a000fcb503b85519fe4cdf6353f792bfe5"
-
-    # fix build failure
-    # remove in next release
-    patch do
-      url "https://github.com/networkupstools/nut/commit/9e6d3c79a4c0ed71c25fdfd350402bb2e78e42e8.patch?full_index=1"
-      sha256 "39472a04f1963a297713381a3a17e57183c1143a6602c194ca3016244caa6a9f"
-    end
-  end
 
   livecheck do
     url :stable
@@ -22,15 +11,13 @@ class Nut < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "f542034c790c6af69e0628e517b2e58f78f6f9c0462f9c6873e237355d30fe99"
-    sha256 arm64_ventura:  "2076a6fec70930a198b1ffc95372b783a953d893ed2531a704b8146014f6dda6"
-    sha256 arm64_monterey: "95970abbffadbffea2a7135b6650179c35fdf6896188c8e4e2b426052521f506"
-    sha256 arm64_big_sur:  "28d8de023cedfb15015a87d4bf8616ccff59b61c00918e652e82e55f4740bffc"
-    sha256 sonoma:         "4e2d4a44f34e4f8f05222edb39b0516f568c35ded7d0ecde048dcec2a150e3dd"
-    sha256 ventura:        "191e4df438c669eed832fcdce481e3a527d835699431b757ed4dd29c81ae19ce"
-    sha256 monterey:       "aa98d42f442ac810c3bb34341eefffa7893e5993934c57f4a95a43e9ac3fc001"
-    sha256 big_sur:        "d41f1ed095ccbf5efc17b1710d8f222bb0f0b7cf343e411eae2cc58f3e3d26fc"
-    sha256 x86_64_linux:   "da2d1bee4c97ef56f91023288452df6f5ea7744a0a9a75d907494c001aeea97a"
+    sha256 arm64_sonoma:   "e89241f392bb9fbbde389696485240a7113654b052272531ee06e5c5b05fc363"
+    sha256 arm64_ventura:  "97fbfd94c5ffd011a35964ec70fa6be53fbbf77b47a2e279581bc4f65654b0c4"
+    sha256 arm64_monterey: "d4bf0f41e9dac6c86f6ad87cd3478a7ccb7fbf09a3ede3ad9cff2561d05bc621"
+    sha256 sonoma:         "5ae77de59c94f3c8f95ca59d56de5c709baf773d87c0ab2d30319f8a0e8a2b6a"
+    sha256 ventura:        "39a83d05ae4ea2f34e03776749455f65c7daa845f04f8351a48bdae36d652c24"
+    sha256 monterey:       "33acde657d811e6f9ca36ffe2041f814fe763f61e1723fe339b30b4229302223"
+    sha256 x86_64_linux:   "bd17e0ea918ab4b2454c31d3a133fe116430530ce7dc55f4bb9dc98ef4e3cba8"
   end
 
   head do
@@ -51,9 +38,6 @@ class Nut < Formula
     if build.head?
       ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
       system "./autogen.sh"
-    else
-      # Regenerate configure, due to patch applied
-      system "autoreconf", "-i"
     end
 
     args = %W[
@@ -75,7 +59,9 @@ class Nut < Formula
       --without-libltdl
       --without-neon
       --without-nss
+      --without-nut_monitor
       --without-powerman
+      --without-pynut
       --without-snmp
       --without-wrap
     ]

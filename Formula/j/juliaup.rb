@@ -1,8 +1,8 @@
 class Juliaup < Formula
   desc "Julia installer and version multiplexer"
   homepage "https://github.com/JuliaLang/juliaup"
-  url "https://ghproxy.com/https://github.com/JuliaLang/juliaup/archive/refs/tags/v1.11.23.tar.gz"
-  sha256 "8c4e20a332e2966671cc14bdd4e628aa7363192c036b53963e75ef8f27846ce7"
+  url "https://ghproxy.com/https://github.com/JuliaLang/juliaup/archive/refs/tags/v1.12.0.tar.gz"
+  sha256 "57cfc5d7fc57acba6e90f5708f2420a2601f9a9a7bf3f1ca2f4c8e26d6e30df9"
   license "MIT"
   head "https://github.com/JuliaLang/juliaup.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Juliaup < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ce95a36657c5a8c89141af51e92853e45539acf1ad9e20c974475953f2d1edeb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "04bb78948cff6e478fce8c46789e97e2c84d8044afcca70e3dcf51e3524382de"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2931504991bfdc06be3934b30d0164d837817a3ec809c68e614f66ac646abece"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f3d61343a62fbc629745c9f0f2890cb4eef4b4a21de77f005161116f1f2fb06d"
-    sha256 cellar: :any_skip_relocation, ventura:        "e25cee129189bcc5d3aceecb31e5bdc9ce6ac0f95719902f813f05aaabac2b80"
-    sha256 cellar: :any_skip_relocation, monterey:       "5205a39c181f25aaf4db185def61ae11bb5eadff8353b73ded78bb2f3053f3f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a39f27b5c935bfa7de06d6a15275dae1afa6e24f3a661b5fc83296ac01cffcdb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "011990a417001e41eda5aaedb6cf0443fdecfe3025c4d8eb7abd2ad096ee2aa5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3722b6757a53051ce167151b89e10d887ef4bf9273eb59759ea7b24a77c972a4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "736bb5ecf33d067d5ba5e89adf54eb3e5f02b058e1c31e9c34e79b4846d33703"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b8042409a0380e9b13eb61cd42c2ebbceeadb909ce9101f7d35d0b3ffc392656"
+    sha256 cellar: :any_skip_relocation, ventura:        "d101234ea750bac92c3a4f7f727dd8573819c961a23310e9afb7ff2494f150ab"
+    sha256 cellar: :any_skip_relocation, monterey:       "f67710d645a5037ac9dc3b4df20f4d62fec7eaa9c7d5570a0fd0bd757c041dea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "292a814ba70eb7c6829f8a10bc6658f42dbc64482cbabb6ee9bda79cf3d76206"
   end
 
   depends_on "rust" => :build

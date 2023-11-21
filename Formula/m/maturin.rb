@@ -4,16 +4,17 @@ class Maturin < Formula
   url "https://ghproxy.com/https://github.com/PyO3/maturin/archive/refs/tags/v1.3.2.tar.gz"
   sha256 "4506920ebe88401de129b5d5579c433ba0702192aa0e0537f97520d3719c4d2c"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   head "https://github.com/PyO3/maturin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7bdbfd174fa1572f9ab360c8a38aedba4bc2aa1e653d068002c653301d7eccf8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8bd5208acfbe86f8e05044fa22bed6cef0727158d418c63c8e18511945904b4d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5e46fa52cf95fbeae78f795cc19abd23c36e30f1efc1261351a54c9313ea1eee"
-    sha256 cellar: :any,                 sonoma:         "e8bfc615d80fdb97f53ef7f97b48739ba709a975d8fdaf5f95f8a1e545c96d24"
-    sha256 cellar: :any_skip_relocation, ventura:        "c5aed950054a89f615ff4b19b51f5c0c1298d75c5d9bf20d90c3452bddc98464"
-    sha256 cellar: :any_skip_relocation, monterey:       "5e6d9537322923af9bd8087c36ebf92d35f771280c19a412a53b2a9f627f6926"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c63ffadc624a3d60e5d609da31b39f011feec90905096304e14ce60381da9586"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "28d29ac5ece1c60fb8cfd53cd6fa33428ccc2eacf31c009c5c6c43e95050963a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "46f5912f436be6230c34037f1c136c1d129991e3b35ad4d8002ef85badf928e0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "596fb3f04fd1e6c17792fe1bb2ab18f07a8403ffead8c24abcc3b1d49e7e02d9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4f8778253a1f4d7747b60e86af50b56ef25ffa6f3090bdd853a109844f8d8fca"
+    sha256 cellar: :any_skip_relocation, ventura:        "5ed1cfcbb456bc3f60132efc5e044b439092b8b4643b34bb3394804ee087c9aa"
+    sha256 cellar: :any_skip_relocation, monterey:       "8225660e5db829c5e8e197db36c9528028154967b076ad3ae7e9c37897115033"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09fe61583ea20af51c3acf24932de9d96782716307a80bb642622f1eda43d8de"
   end
 
   depends_on "python-flit-core" => :build
@@ -47,6 +48,15 @@ class Maturin < Formula
   end
 
   def install
+    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
+    # libunwind due to it being present in a library search path.
+    if DevelopmentTools.clang_build_version >= 1500
+      ENV.remove "HOMEBREW_LIBRARY_PATHS",
+                 recursive_dependencies.find { |d| d.name.match?(/^llvm(@\d+)?$/) }
+                                       .to_formula
+                                       .opt_lib
+    end
+
     pythons.each do |python|
       ENV.append_path "PYTHONPATH", buildpath/Language::Python.site_packages(python)
       resources.each do |r|

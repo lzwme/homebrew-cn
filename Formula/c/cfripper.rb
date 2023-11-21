@@ -2,19 +2,19 @@ class Cfripper < Formula
   include Language::Python::Virtualenv
 
   desc "Library and CLI tool to analyse CloudFormation templates for security issues"
-  homepage "https://cfripper.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/62/5a/28072c10707f99253b292e9a9de7b9e2a2b4da740052e1a3247fbac9a6eb/cfripper-1.14.0.tar.gz"
-  sha256 "e08237f45dc5e2b8ad7f71acfdb3525c0c5317e69a9392adc9bdcea8cfac69c1"
+  homepage "https://github.com/Skyscanner/cfripper"
+  url "https://files.pythonhosted.org/packages/ba/a5/36ce53ca9b14b2a10e73a8c5f2cff2adaa40b04c3e032b263d144009b3bf/cfripper-1.15.0.tar.gz"
+  sha256 "718ce7261705f47fc968c6dfd805f40a1e7854b209ae530b07bca23464f26d00"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9f170c89d796f67c36ed21a1815da90861132b7e131f764146496549b4c53151"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c3493102896d06a16e00bde9120f9d3f15d7f78fc318d970bb38eb72910e370e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3912e468b18944d06a637467bcf9300a958db48ade83ffeadaca654da8e29a0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "89aaf0e098a7911b509672d5d768f3077f35e5f15c592a233bb90f1e981be57e"
-    sha256 cellar: :any_skip_relocation, ventura:        "738e37c6de2cafe52b68161df239c4df5f5b23a0aa9401f13b40b646006a758a"
-    sha256 cellar: :any_skip_relocation, monterey:       "9e35dd2f18e52b9b1ae1bb7372ad34d6cde00dc46cbbc87b9a2cd44b9b5bb860"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "edcd7a813e3e845b4d8aa16558d4d80ef769fa273037249135ff38f1b1e1e3d9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "81e35b727560de8b78a39ee75959f92f782c05ba9c81933d2cb7d5fb6dbbb386"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d6adeb94dfc1469fa8f45b2b4c40df1a17e96c913dffe8d981172927be1eee0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1917d0895e6b85d4cd3b443d965014efe8f4ecee55619a021d64a78e1478ceaf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6dc5418b57c29936be9ef5caa2edab16620cdd3cd01289728a889198c2c47144"
+    sha256 cellar: :any_skip_relocation, ventura:        "ec5bcce79e2eb3c7b912eba94d66daaf10c6e11e7608e45769e2f02eec03b962"
+    sha256 cellar: :any_skip_relocation, monterey:       "d45bd0575882073f206f27478736e7b2fa21fa825c7ce1bede11dc516ade10fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fce5ed256bd20846ac491b6c2af1bbda266d37f501f409dd0d14bbb4d355ce6d"
   end
 
   depends_on "python-click"
@@ -24,13 +24,13 @@ class Cfripper < Formula
   depends_on "six"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/70/f7/da69e173dd5663775f114fad3827dcc49537e232e36266463ff70529f1a4/boto3-1.28.78.tar.gz"
-    sha256 "aa970b1571321846543a6e615848352fe7621f1cb96b4454e919421924af95f7"
+    url "https://files.pythonhosted.org/packages/6b/06/7e2ca443db1af4f3cb76d36eb9f20baf78688ddb095d473e733309a22bb2/boto3-1.29.3.tar.gz"
+    sha256 "d038b19cbe29d488133351ee6eb36ee11a0934df8bcbc0892bbeb2c544a327a4"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/84/a9/9c2752aa24c050323c37a9d2af6dec348889825b51db07fb7f1bb792e307/botocore-1.31.78.tar.gz"
-    sha256 "320c70bc412157813c2cf60217a592b4b345f8e97e4bf3b1ce49b6be69ed8965"
+    url "https://files.pythonhosted.org/packages/de/d1/6bbd2a3ade785ff5af9f46c0865c3e7e0f1e4d3c99e9530756ffda9cc1aa/botocore-1.32.3.tar.gz"
+    sha256 "be622915db1dbf1d6d5ed907633471f9ed8f5399dd3cf333f9dc2b955cd3e80d"
   end
 
   resource "cfn-flip" do

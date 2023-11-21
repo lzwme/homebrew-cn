@@ -15,13 +15,14 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4b21da961caf6a07da1a060289a9582bbffc10dcd64f68e2e4e4e1af2e057c06"
-    sha256 cellar: :any,                 arm64_ventura:  "6e1f064619902bec9e5dfb26ac55b5e287372b62ce6e234b31c4c807c00dbe52"
-    sha256 cellar: :any,                 arm64_monterey: "058460f7f14b2aec5fd0324fcda09f1b59635514513ba4f3240d298e1752be75"
-    sha256 cellar: :any,                 sonoma:         "ab812c8acc40ebf09c615acd8c5c9db351916e02ae2dab18e79faf71e17c85ca"
-    sha256 cellar: :any,                 ventura:        "7f1acd1ed3ce57ca0b1c7fff889fa6665273a34b28cd16dccc3db3e51f5d2420"
-    sha256 cellar: :any,                 monterey:       "7173f18b220068bfb3693087999e37f0394b03932607a1a6e5d3a3f4082a85e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "262c9474e64e64b89a87d086f141993a46992fb3be348454944a16c0695ac43a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "26cd71c7c94b601d4d4ccb5cfeba1f29ab54d96dd009816f5a8a9e89b6afc2f7"
+    sha256 cellar: :any,                 arm64_ventura:  "9a8ed1434eed68a7d52c2353686821e672256d10462c6b7c9fe62ca157cf4ce4"
+    sha256 cellar: :any,                 arm64_monterey: "e444d3501f6e685982ff1c8c5f66c812b55ab302447dcf2bad831dc474eb8dc7"
+    sha256 cellar: :any,                 sonoma:         "d89e14d324971c805322e65e5947fe76bd6c70398c96b76f108c1fa3f6e22dff"
+    sha256 cellar: :any,                 ventura:        "46885a9833e89320acb68b3abe898a1b6ed47d7b7a5fbf4dab98db5508b15787"
+    sha256 cellar: :any,                 monterey:       "c5bd87e18d5807491366f557359265477d5fa4eb452537bf52210b87bce86ace"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "012897269283e2d9c740a9f7c26fc502a52bd087e763ae149456b3bbc9aa0387"
   end
 
   head do
@@ -108,6 +109,7 @@ class Rust < Formula
       cargo
       clippy
       rustdoc
+      rust-analyzer-proc-macro-srv
       rust-demangler
       src
     ]

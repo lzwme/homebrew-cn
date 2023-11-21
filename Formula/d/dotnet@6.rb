@@ -3,29 +3,25 @@ class DotnetAT6 < Formula
   homepage "https://dotnet.microsoft.com/"
   # Source-build tag announced at https://github.com/dotnet/source-build/discussions
   url "https://github.com/dotnet/installer.git",
-      tag:      "v6.0.114",
-      revision: "346c0065dd9540261ec07e938b808833446d2a9e"
+      tag:      "v6.0.125",
+      revision: "e898a826c2b7f66602c8962134ef165fb9e6d44b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e321d22cf019fcf43b9182ab920fb56b06472eb44a841d5e9da7c68efd06d099"
-    sha256 cellar: :any,                 arm64_monterey: "bec272194da05a71880e7f81fcfbfbd6d2b52369d87563b3776bca4c73fc06f3"
-    sha256 cellar: :any,                 arm64_big_sur:  "b7edf93d33f58eaa16f6d3f590208fd32d46b7744125f35129502d9afeb1217d"
-    sha256 cellar: :any,                 ventura:        "cadb65f97ef88bcf4765925ed1927698b4392f3bf919190b6288283abc0b31b3"
-    sha256 cellar: :any,                 monterey:       "264e2d92b82139a7277655fbb68a45a6c9eb6f9badb7b289d38a2846ee8a2a58"
-    sha256 cellar: :any,                 big_sur:        "e5f103cdec092cdeaf95ba7760c07c0c81f1dbcd11d57350b2d69668dc5c2bf0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "968678d4e9ce603f57e9378906a1abab629a30eeefbf0c1143027b91c3ad1eae"
+    sha256 cellar: :any,                 arm64_ventura:  "74ae1e9f647dad3ca8ef8f05559e23284c0ce23163beff75749b43df90b2577d"
+    sha256 cellar: :any,                 arm64_monterey: "25fa40a478a1c3010c196bd29569675d4911cf68429fa570cfac9e75fd56254b"
+    sha256 cellar: :any,                 ventura:        "d11fcc9a7a3a3c20197ce240a871323a44041ec7ef348007152fb3c0c2d907e4"
+    sha256 cellar: :any,                 monterey:       "32cf49e5e8a0b4d431b0865d1e2d3844474259bd5fd744082264690dc7c682fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "beafa491d72204af7e2aa81b7a492a211b0db984b9030063a1955c5d646de49d"
   end
 
   keg_only :versioned_formula
 
-  deprecate! date: "2023-10-24", because: "uses deprecated `openssl@1.1`"
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on "icu4c"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "llvm" => :build
   uses_from_macos "krb5"
@@ -55,14 +51,6 @@ class DotnetAT6 < Formula
   resource "homebrew-msbuild-patch" do
     url "https://github.com/dotnet/msbuild/commit/64edb33a278d1334bd6efc35fecd23bd3af4ed48.patch?full_index=1"
     sha256 "5870bcdd12164668472094a2f9f1b73a4124e72ac99bbbe43028370be3648ccd"
-  end
-
-  # Backport fix for error on aspnetcore version while building 'installer in tarball'.
-  # TODO: Remove once backport PR is merged and available in a release
-  # PR ref: https://github.com/dotnet/installer/pull/14816
-  patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/f206f7a45b330cce79e6bfe9116fccd93b0d3ed8/dotnet/aspnetcore-version.patch"
-    sha256 "00103452e2f52831c04007f1b7f9fcd5ecddf0671943657104f0ac8d3a9ca613"
   end
 
   # Fix build failure on macOS due to missing bootstrap packages

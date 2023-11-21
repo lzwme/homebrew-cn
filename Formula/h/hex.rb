@@ -1,21 +1,19 @@
 class Hex < Formula
   desc "Futuristic take on hexdump"
   homepage "https://github.com/sitkevij/hex"
-  url "https://ghproxy.com/https://github.com/sitkevij/hex/archive/refs/tags/v0.4.2.tar.gz"
-  sha256 "a7cc1ece337fc19e77fbbbca145001bc5d447bde4118eb6de2c99407eb1a3b74"
+  url "https://ghproxy.com/https://github.com/sitkevij/hex/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "7159eb1bf14d3c55aeb260cc5fb857fc8c91aca36fec3d22123aa22ecbab0509"
   license "MIT"
   head "https://github.com/sitkevij/hex.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4326bfdb2206fc2209a2cfe3ba7e2cc7432411c7d1a3811f3cc6149d214f65a4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "245116da00ee18fb6c48ddbd0083b62e86a41957f2b599b47d51ffec1a5adcd4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d926a35caa10284418a160ec7a6cb5cb44121d2fd03b52d84fe7734196b4524f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "de567e3c63410e409c9d2940c0b95db95a1a7b86ef3b6583a701d0b6dfc4f77e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5f95efa77c3bd0efc60bd67aba2f112e89223e39f8a5fe6f131b00b6a97a9f0a"
-    sha256 cellar: :any_skip_relocation, ventura:        "f91fdf2c20304970c38cd1aec11cbe0e5e416917f9c22a4a19cd7d2d395f0401"
-    sha256 cellar: :any_skip_relocation, monterey:       "3630ae16eab4b22999fd1f4b34bdd69a8de15a63973f82268fb45dddbb5f080e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d4e9bcfc557b0325b96003c1626506f4c1f66ad0a6dda54b9a8868c251a61ba1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "965b7895b352c914b2bf1a8b26bff934adf9eb5d6223a3da309b5b57154e31c0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1dd9c0615db9ccb98760fb65e88a9186344be2c9e7d29d0d2fe6611dccc0523f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c62a623a1ef8a0f05ad516c808273c280138caaf93254fd73ab75b78a8bd13e2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "20ca7c372250ca8038c0dd5366f40bc840919693451b50389460e54b24b89041"
+    sha256 cellar: :any_skip_relocation, sonoma:         "75aab541165020ddfb189b70f556d02e20d5a610d786d83d7a61c2f0f40e2947"
+    sha256 cellar: :any_skip_relocation, ventura:        "bbd6e66c9c7be08ac12c14417a01ee6f0fad644761f6900f6e77b813f96f38ee"
+    sha256 cellar: :any_skip_relocation, monterey:       "6c3ebbc3732606adbbb30f7f77bfe6bacbaba67fe9a1bd734f90a76ccc77a4b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fcd0e1c2f352562dc8167235b72631296712633a66f67ad41655fc7027d6d16b"
   end
 
   depends_on "rust" => :build

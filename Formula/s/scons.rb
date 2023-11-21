@@ -3,19 +3,18 @@ class Scons < Formula
 
   desc "Substitute for classic 'make' tool with autoconf/automake functionality"
   homepage "https://www.scons.org/"
-  url "https://files.pythonhosted.org/packages/e6/a4/c7a1fb8e60067fe4eb5f4bfd13ce9f51bec963dd9a5c50321d8a20b7a3f2/SCons-4.5.2.tar.gz"
-  sha256 "813360b2bce476bc9cc12a0f3a22d46ce520796b352557202cb07d3e402f5458"
+  url "https://files.pythonhosted.org/packages/a4/ce/31e6d2f5e1d1cc23d65cfe4e28b2a83cc2d49f4bb99b5eec9240fb9a9857/SCons-4.6.0.tar.gz"
+  sha256 "7db28958b188b800f803c287d0680cc3ac7c422ed0b1cf9895042c52567803ec"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e038a0a50bf360903bf9fbca26bca748db4fbc648bb37048e748a7e2f9f58fc9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dc6eb1831587fbe82f157ede1c0c0692aac00ec0e5682316691588397cea3b8f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "05823bb9769bedc72562c7155e567941bee8e1996790b304abbd8adf559aa459"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a2b33ce8ab11c8dc58627a8a9e4a344ed94676da5835e73b6d7c89342b79e39d"
-    sha256 cellar: :any_skip_relocation, ventura:        "cc154f96a48e3433e62fd10df7e120ad578af6bad14b5752aa07b7e7fb584656"
-    sha256 cellar: :any_skip_relocation, monterey:       "2c3a08fae6e0cd9a3d9b62c7e4c054f475b691131bf7eb385b032dff88e8de47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c3761e947e8602d9bb75833f09ca4c08bd64b7d7048d374dd5c96749993d24c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1bcbf2c4b50ee697e3cd1678bdfe1900dead825c3c286c74fa6a18051c19928a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5396c05832549e8464db6a6eee137b0bf485253fa919b1f1f6265359da3cc8f3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6659091b103e9bae0c9792e063dec1b3543c707be6f0a46cc08e5ee77a9b1599"
+    sha256 cellar: :any_skip_relocation, sonoma:         "101bf22a790f07825ffb59b099900af2e80f3e39d7c60d6a6df305bfd839ed06"
+    sha256 cellar: :any_skip_relocation, ventura:        "14c2fc49d24cf38c241b3855031b06b0a58f5a73dbca235ddac9230c56008759"
+    sha256 cellar: :any_skip_relocation, monterey:       "a28dae92355e10c12c0803c72d97440a302f7bd4efd1874401fbe2490a1cd655"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "858e36218cd6e8ded5220619fd9afeaa2fdf76faa0e47ca06df7e9f4fc48cddc"
   end
 
   depends_on "python@3.12"

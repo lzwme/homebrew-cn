@@ -4,18 +4,16 @@ class Osmcoastline < Formula
   url "https://ghproxy.com/https://github.com/osmcode/osmcoastline/archive/refs/tags/v2.4.0.tar.gz"
   sha256 "2c1a28313ed19d6e2fb1cb01cde8f4f44ece378393993b0059f447c5fce11f50"
   license "GPL-3.0-or-later"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "31a08f6bb0527fe27aaa4d25d7a92a203d66170b9359ded44e6ec8648de04960"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bbd332274b375390b84ade56b4fb44cd7a5c0896ebafbf6ef5764944114fd3c9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "87a0953864bc90e8971ccc8ff258255cebb77d677ddb946d1f4806529573ea1c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "495472ea1b183dfc23f49e2b78d75c77a5afa9a5d45277dac595da44c43c2157"
-    sha256 cellar: :any,                 sonoma:         "606f5e56e84c5605ccbe4ce96b65418ea0e683c43f3bc04cb9002856830d0c20"
-    sha256 cellar: :any_skip_relocation, ventura:        "6360a644a0079631b9e6da6540f12973b973c7de6f85f1633f502e122e7fef92"
-    sha256 cellar: :any_skip_relocation, monterey:       "4b616a360a35c5c6dcaa25ec8e9a56b8d95cfdc570f3c3fd30e031e2fbc753db"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8099f8d01ff005e1a43d5f67afcac3f9e2474d4a1d7c56bb8e61110ed7cd4d23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "44531dd7f1c5cc978fd5b6c5b27871fff3de9106acd525fbf7818556892d1092"
+    sha256 cellar: :any,                 arm64_sonoma:   "7129acb1c9d8790b0fd50e7a6fca0cb9933d03f6ea56ca9ea455bf68a4d7959a"
+    sha256 cellar: :any,                 arm64_ventura:  "df0e075804bac1c78e799080ad8297668f51945b06f3e666b4b9a8527e3d71c5"
+    sha256 cellar: :any,                 arm64_monterey: "1ef19b07f64cbc970de11d1475cf98e9e62ac3cf2d1e43a272fa03a5ce07e556"
+    sha256 cellar: :any,                 sonoma:         "a3bb3d86820ad33dd7feb7312c55e74e9ad43a49f829d5df92f9687abbc79c2a"
+    sha256 cellar: :any,                 ventura:        "5050f910e2da648d6e5e1fac204aa740b3d4338fdd61ddab3fce04fe189febd3"
+    sha256 cellar: :any,                 monterey:       "21741707558fb05c03ec05d2000260792c0b904a927b5b973071346e7074dd4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1317604f274c36e016b48c980fc26c21475f6aefd358ef69766cfea7b5a56333"
   end
 
   depends_on "cmake" => :build

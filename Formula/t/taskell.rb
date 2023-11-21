@@ -31,7 +31,7 @@ class Taskell < Formula
     #     Not in scope: 'Brick.continue'
     #     Module 'Brick' does not export 'continue'.
     # Issue ref: https://github.com/smallhadroncollider/taskell/issues/125
-    cabal_install_constraints = ["--constraint=brick<1"]
+    cabal_install_constraints = ["--constraint=brick<1", "--constraint=vty<6"]
 
     system "hpack"
     system "cabal", "v2-update"

@@ -3,20 +3,19 @@ class Global < Formula
 
   desc "Source code tag system"
   homepage "https://www.gnu.org/software/global/"
-  url "https://ftp.gnu.org/gnu/global/global-6.6.10.tar.gz"
-  mirror "https://ftpmirror.gnu.org/global/global-6.6.10.tar.gz"
-  sha256 "2dd1e6a945e93c01390fb941a4e694f4c71bbd7569d64149c04e927bbf4dcce8"
+  url "https://ftp.gnu.org/gnu/global/global-6.6.11.tar.gz"
+  mirror "https://ftpmirror.gnu.org/global/global-6.6.11.tar.gz"
+  sha256 "0533319f78d3860b81668dfaeaa507901541e5dda8cfc30d52dfc6ce9489f5e3"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "185a7a451ac56e08d37b028841a1507ddd4b567d609ea1ee6e99fe805ee9b721"
-    sha256 arm64_ventura:  "ea4f7e4544b40e270ea0e87c332724d79fc104aff4b3b09724f75889bf7c614f"
-    sha256 arm64_monterey: "bd03d8aa4733e515510867709ed42239f5b233946db6cd55d12a65d42589bf8f"
-    sha256 sonoma:         "9d97ba5a05a6283599e0b3c9ab45709c0f61d63305bc90b63d4a198026e0568b"
-    sha256 ventura:        "41f0853fa9e26369ec034a0741b71d915f7e69fcbcec808b0f142c89d8c0c693"
-    sha256 monterey:       "ca29470019e9c9bc62e63fb44e85aaa2f4fde00311f6ce3439a4022deb92cd3a"
-    sha256 x86_64_linux:   "a962ea7fa57f87f986d8706b9367f17cf81baf222a21834a4c732d69307dd535"
+    sha256 arm64_sonoma:   "0ae09c0b9471d905f5a9f399bb17643dd153862116a56c81601b99bfe767ed8a"
+    sha256 arm64_ventura:  "14a33276a751118b2ebeea099902a25bbd7b826dfd172e379213877ae64c8697"
+    sha256 arm64_monterey: "de0f3eee9456a3799591efb3c87218eb9699117b7f9fc5c83cd4e39b6df6e925"
+    sha256 sonoma:         "3160ee134e7d82c258d7cc52728e22435cd4ccf4692fd888e855ddb28f3beec9"
+    sha256 ventura:        "b21d93a8e536e27767ab1e6bc2688f2f3bec6d9e5ae4a72ff9d8149b2ae53b3d"
+    sha256 monterey:       "c163ba5b737475fc2a376dbd37f672331b3d7764a4147791d4672407a0b7c361"
+    sha256 x86_64_linux:   "08bd95658b13c787c01605f57a0ce4c359ab1a20fe490742b724a3989774a911"
   end
 
   head do

@@ -38,22 +38,6 @@ class Scipy < Formula
   end
 
   def install
-    openblas = Formula["openblas"]
-    ENV["ATLAS"] = "None" # avoid linking against Accelerate.framework
-    ENV["BLAS"] = ENV["LAPACK"] = openblas.opt_lib/shared_library("libopenblas")
-
-    config = <<~EOS
-      [DEFAULT]
-      library_dirs = #{HOMEBREW_PREFIX}/lib
-      include_dirs = #{HOMEBREW_PREFIX}/include
-      [openblas]
-      libraries = openblas
-      library_dirs = #{openblas.opt_lib}
-      include_dirs = #{openblas.opt_include}
-    EOS
-
-    Pathname("site.cfg").write config
-
     site_packages = Language::Python.site_packages(python3)
     ENV.prepend_path "PATH", Formula["libcython"].opt_libexec/"bin"
     ENV.prepend_path "PYTHONPATH", Formula["libcython"].opt_libexec/site_packages

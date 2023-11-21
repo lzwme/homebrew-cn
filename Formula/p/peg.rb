@@ -6,9 +6,12 @@ class Peg < Formula
   sha256 "20193bdd673fc7487a38937e297fff08aa73751b633a086ac28c3b34890f9084"
   license "MIT"
 
+  # The homepage links to development tarballs using the stable version format
+  # (with nothing in the file name to distinguish stable/development), so we
+  # check the "current stable version is 1.2.3" text.
   livecheck do
     url :homepage
-    regex(/href=.*?peg[._-]v?(\d+(?:\.\d+)+)(?:\.orig)?\.t/i)
+    regex(/current\s+stable\s+version\s+is\s+v?(\d+(?:\.\d+)+)/im)
   end
 
   bottle do

@@ -1,20 +1,18 @@
 class ImessageExporter < Formula
   desc "Command-line tool to export and inspect local iMessage database"
   homepage "https://github.com/ReagentX/imessage-exporter"
-  url "https://ghproxy.com/https://github.com/ReagentX/imessage-exporter/archive/refs/tags/1.6.0.tar.gz"
-  sha256 "f0042062ee2a2a931fab54c4cdb0dccc3ca7a3b34c9220b5cf5a9d6059ddc432"
+  url "https://ghproxy.com/https://github.com/ReagentX/imessage-exporter/archive/refs/tags/1.7.0.tar.gz"
+  sha256 "9337023a399c86317b72e8d90b4ba7c1b97b35bc96b9065c3b6c6daf8d11de6d"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5b8c6a9d22339916c7bae43bd28354db4fb14ec5646e7a19bf883145f97f06b8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2bc66e7f0573bc397e13fc5c4a417351c7f7dc0eba92dfcc1c8f6c398d7931ec"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e546e987ab5ef9bd5b48f4c263a80ae3733b2285b5babf3fdc04ab0065971d68"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3c534953b2b27ddb97d45ae5761107c5e38372711445e0e7ceb89aa9ba3eb812"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d3c59d805005cbca4eb968c0125ef699884ddac30af997058630f7fb073fc48b"
-    sha256 cellar: :any_skip_relocation, ventura:        "078c0b6ff433b8612e3bcbcf688c20cb65066b34af0c135421c831ddbcdffd66"
-    sha256 cellar: :any_skip_relocation, monterey:       "7ac97704445fae10ce8fb1f1f69fb845b7076d38b31b2e455b2fda5367fef409"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6db4a1eea1b729fbbb1f2cb45cc28a715222f7118636f4d0ecb189c3e76af587"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a56b625cdec4b8e0143fed6cc36d186d880f9a704bd8f2b16f725bc9ca95ef2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "01d9141820456289b03094a4fd9e295c96556822b21c06ba05f3664ed50c04e5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "688dd45d364b2c7f09f0c2817b23fb088552e2b7380b026024402c31660e8bbe"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5f650eaae874db6dae06a213389d5aa6d6968e37e220debc8a95144356177b2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c23c45d5de61027c7bab478e0e2f6d882d7019e4e624a4704ff0ef12526b0e1c"
+    sha256 cellar: :any_skip_relocation, ventura:        "9e8c63192e857fbfa320e6ff597f1c7c31a529e1b5edf4d46651713dc0b22247"
+    sha256 cellar: :any_skip_relocation, monterey:       "be8e648828d65213a07a92fc15af6b0da74226d3cb403b9c11706550ebcd47ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3484cd50c9c47451f2c543eaadb5ed909813df0524297a53ccda2857c1397504"
   end
 
   depends_on "rust" => :build

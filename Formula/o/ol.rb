@@ -1,21 +1,19 @@
 class Ol < Formula
   desc "Purely functional dialect of Lisp"
   homepage "https://yuriy-chumak.github.io/ol/"
-  url "https://ghproxy.com/https://github.com/yuriy-chumak/ol/archive/refs/tags/2.4.tar.gz"
-  sha256 "019978ddcf0befc8b8de9f50899c9dd0f47a3e18cf9556bc72a75ae2d1d965d4"
+  url "https://ghproxy.com/https://github.com/yuriy-chumak/ol/archive/refs/tags/2.5.tar.gz"
+  sha256 "42a31697fc7974023c20e3249135689b77a9a8ed8f19bdc0d098b656d15b7649"
   license any_of: ["LGPL-3.0-or-later", "MIT"]
   head "https://github.com/yuriy-chumak/ol.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "1e727f70881bca0940f90bd0d1ca8a3dd14cd47e04d9628e5e34f351ccc4c922"
-    sha256 arm64_ventura:  "1b59e0382b8aedc6dbbfd70aa23dbc40b5ab46f393e572daf3504d06935c6afe"
-    sha256 arm64_monterey: "bf61e935696b0b2fedc393b470fa77c6c2a8ce3dfdf6ae78c960c2a5ba80bd2f"
-    sha256 arm64_big_sur:  "4d609dc724775f28c0cbafafe24cad7c270fba3bc2bebfecc2de3dbe52ad2c00"
-    sha256 sonoma:         "051b77f83be4db969e3118f3f6e09be3c067de97a35d133150e821f491e30e9e"
-    sha256 ventura:        "8a108afd70e91e04caf9055a4d0812c84247a1d4f0d45bd105b825f9cedf9f01"
-    sha256 monterey:       "0305e268f451d21f79e4313fb57af6e91e10800964ae4fd784f84b0b39b4cd44"
-    sha256 big_sur:        "bb8e699af96aeb0c0e98d970b175aabd40ba95e587593da055900b51a211addb"
-    sha256 x86_64_linux:   "b97fbaeeb79f73be05b95384b07d3f3f4970dbf1a14b84b8193439b31f4600df"
+    sha256 arm64_sonoma:   "0a2b9ab3ac2e7726505a1f3ecdc77d13943b175397ac7843786a652ef30c7f4b"
+    sha256 arm64_ventura:  "22c54a4f86b32f8d2e8bfec6549260314789012bfc7efce1ce8a38d342db5534"
+    sha256 arm64_monterey: "5910951a48547517b60d0e56cc911e42cf3b42d20a7a0557de48de64684ceab9"
+    sha256 sonoma:         "6e043eaeaec93006cc30f224ef67ab48429b3a4e1a70e213ccaed7a7d8f17430"
+    sha256 ventura:        "5640dae5de435477e613c4ab7cb4ec74e7502c9b82b6651f87b752835100fff8"
+    sha256 monterey:       "856ec1ef735ee7706306e1c284a9e9adcb899dd1fd0b2c1c8a55adc998896ec0"
+    sha256 x86_64_linux:   "77e2bb88642b3f7ecfe488fac9eb2224bbeffde3b6940cc373c4866846d91342"
   end
 
   uses_from_macos "vim" => :build # for xxd

@@ -5,7 +5,7 @@ class Csound < Formula
       tag:      "6.18.1",
       revision: "a1580f9cdf331c35dceb486f4231871ce0b00266"
   license "LGPL-2.1-or-later"
-  revision 4
+  revision 5
   head "https://github.com/csound/csound.git", branch: "master"
 
   livecheck do
@@ -15,13 +15,13 @@ class Csound < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_sonoma:   "75d6561cc73a64ba6d2bc0ac143b5e3c71b6e451ae40da6a3c7acddaf84de532"
-    sha256 arm64_ventura:  "c42c9488d704921247575992b2c1c0e6e6d7696ce670916bf286e5fa43bfb17c"
-    sha256 arm64_monterey: "8e11cef26d91a5c67375d893420751f28c689de042292458c50fc41b936ec7c7"
-    sha256 sonoma:         "d2a51b434914b50f8ed78ea4a8316ba471cbe97881f998f3319d46561cb4dca4"
-    sha256 ventura:        "e0675831eceb5b5329c24f1a2c96143e4fd9bf11afc1e47cc6d66e14b6a58c61"
-    sha256 monterey:       "f8ebe4391d15ed12b3e44da707c9020ab48ab0e6e4280392de502506a1078492"
-    sha256 x86_64_linux:   "0c4269ab1edaf2e785b548835dbf45d9188be66833a294c507b1b45f956b1f98"
+    sha256 arm64_sonoma:   "91def93dd4a084c7a958ed365592df110cece5ef72761acc9a38a142daeb4aa9"
+    sha256 arm64_ventura:  "7cbbca25dfb9ece6b483f4e5e3aa9e6cd4d7eced4d1602668a067911888e9943"
+    sha256 arm64_monterey: "b3e8e0fe6927aa9c8eebe330ad8d8556af0dfa26239bffca5cde6d60929912f5"
+    sha256 sonoma:         "df8c4649e222d58fcd232761e0aeaf2c1c78be75832ad0bd2e3c0d9615f2b682"
+    sha256 ventura:        "129da18c4f01c41a092da7e1c78b56c4c445342f82d07989750b3c8a3811877c"
+    sha256 monterey:       "6554bb1bb0a3e3fdf63ac70d2e03ec8221d72d76050870aaf448309f1691fbd1"
+    sha256 x86_64_linux:   "7c2a0698033b9e1d7608320413a798d25a3e279d40281f00ff259fb2f6d70e52"
   end
 
   depends_on "asio" => :build

@@ -9,23 +9,19 @@ class S3cmd < Formula
   head "https://github.com/s3tools/s3cmd.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "49c063c7d2a9ebf7ac266f11525017060f22663920a73720956c849ff6dc5dd1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9bba070e3a04a80a8004e89aa7e97d765ddd226105bd8f9bb05bb9f440f2d1d0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a85c3ca73d459db2aefe03eb0eb2f18ddf2910288fe50517ec41802cd6b6964d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e127cee8042729628fdfd70c6e122182e1a855ee7a2173be63629ca17b5a5e38"
-    sha256 cellar: :any_skip_relocation, ventura:        "44621e3c588d8d9933fc542f5fee916ca68930fa9c4d5406555fae6c01461c11"
-    sha256 cellar: :any_skip_relocation, monterey:       "d8fb2514382324799db5a36644469aa64905008a72713774493e814da5706ed9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9785c7ced06c286975b392882d054a445556ce494d3f0f6c68838b7ac937fdfc"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "28d9b2c93fface3ee5b3b7f425428899843271ab21857c6c4b665e0b121ebf28"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "be603203f6a2934b9c237d27ce3ca6a7a13f672710b0ce1e05f575316898f294"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "17923a25af17f825f4f14d1b61ca89001edd7ac42ea2cd21dcfd4d8859ea07d2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "96fab4bf6f11afd0a21f97d25613df0106a590cbe6fe98da242cfb68eebdb9e9"
+    sha256 cellar: :any_skip_relocation, ventura:        "a6f71d22a30b0047668626f7a9f456a414eb5e134ba53bf71aa972e7ffa86ff9"
+    sha256 cellar: :any_skip_relocation, monterey:       "9920ee31b5a0646888d9f06a941daa3c5c85a001536a296cd7acb4f647c8d750"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca9fb159b3ac96273a2932c457932f7ae5d584fea8f5b118460bfdb2428c20f7"
   end
 
+  depends_on "python-dateutil"
   depends_on "python@3.12"
   depends_on "six"
-
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
-  end
 
   resource "python-magic" do
     url "https://files.pythonhosted.org/packages/da/db/0b3e28ac047452d079d375ec6798bf76a036a08182dbb39ed38116a49130/python-magic-0.4.27.tar.gz"
