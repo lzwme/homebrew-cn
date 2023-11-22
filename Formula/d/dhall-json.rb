@@ -4,7 +4,7 @@ class DhallJson < Formula
   url "https://hackage.haskell.org/package/dhall-json-1.7.12/dhall-json-1.7.12.tar.gz"
   sha256 "ca48cd434380cbd979dbb12889f90da8fdc1ea90bc266cab14f061c60e19d5fa"
   license "BSD-3-Clause"
-  head "https://github.com/dhall-lang/dhall-haskell.git", branch: "master"
+  head "https://github.com/dhall-lang/dhall-haskell.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c953aa5b6578f99c770fcfea9d3ab337fbbb36dd35130f423b067b81aa32433c"
@@ -17,12 +17,13 @@ class DhallJson < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc" => :build
+  depends_on "ghc@9.6" => :build
 
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
   def install
+    cd "dhall-json" if build.head?
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args
   end

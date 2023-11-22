@@ -1,18 +1,19 @@
 class Azion < Formula
   desc "CLI for the Azion service"
   homepage "https://github.com/aziontech/azion"
-  url "https://ghproxy.com/https://github.com/aziontech/azion/archive/refs/tags/1.9.0.tar.gz"
-  sha256 "bd103a9f411e74c1fbc938d8efe81df3ca4f71a8a1d6afd2613484275b452345"
+  url "https://ghproxy.com/https://github.com/aziontech/azion/archive/refs/tags/1.9.2.tar.gz"
+  sha256 "8a4ab32e1a598e76c51625cb8bc3436ee2f1b736454e150209214c78a3fdb1ff"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "855ff9b248d6130001897e3d4dd96a0eb7f2efeaf6e0792652195392a2f7d870"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2777ed4d81fe9404bfccaa4b8352462bbdfe71a19eb429c47ff00c023bbc0722"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bf45e26876d2cb5e6e496e2bfab022c274a9d669c1e29afce5a4fc448a1b0369"
-    sha256 cellar: :any_skip_relocation, sonoma:         "efe0ba7cdd0edffc263078b6fd4f4c0ece3b9853b4aa34c7181964176998afa8"
-    sha256 cellar: :any_skip_relocation, ventura:        "eba360c4f8dbfa9beba314e17734ff061fe7341285f445c9ae7ceff6b6f3a0fb"
-    sha256 cellar: :any_skip_relocation, monterey:       "11bc605992f882ca0b29be5c02466e2840f7c4fed0db32750da8ac7b63a13efc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d45660fc4c6e3c6fb516ecbf8654ec94f02b8581799eab847cc4ad154c78eaf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1228f60791161b7abf28849f696fabd205124894db1dd6e194a1bb35fadd623c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "50ab9e9f38f574c6dcd8a6d9c45cf9dc3409caa0f182359db17fe6000966b60e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a47f7ea652f47e627fdd3aaf920246bd57029a14d402ef7f3d1d8b0942907392"
+    sha256 cellar: :any_skip_relocation, sonoma:         "33965ff908d7fce890e989dbb6effed2c9cf8eacf2311094118e8a9881a36c9c"
+    sha256 cellar: :any_skip_relocation, ventura:        "5b65813284dc941d2fce65aeec0fa30518bb51562c010384b55b9033fc5f6e5a"
+    sha256 cellar: :any_skip_relocation, monterey:       "89a5cb7712acb71bfd6252ce13c3bb49a94e94ee8448c82d7a4dd34765bef170"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdf0c3c251d5f089805e1c618a685df0ab7ffc5292a5d362eb13c7eb0ada064b"
   end
 
   depends_on "go" => :build
@@ -22,7 +23,7 @@ class Azion < Formula
       -s -w
       -X github.com/aziontech/azion-cli/pkg/cmd/version.BinVersion=#{version}
       -X github.com/aziontech/azion-cli/pkg/constants.StorageApiURL=https://storage-api.azion.com
-      -X github.com/aziontech/azion-cli/pkg/constants.AuthURL=https://sso.azion.com/api/user/me
+      -X github.com/aziontech/azion-cli/pkg/constants.AuthURL=https://sso.azion.com/api
       -X github.com/aziontech/azion-cli/pkg/constants.ApiURL=https://api.azionapi.net
     ]
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/azion"

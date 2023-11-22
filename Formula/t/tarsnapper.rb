@@ -9,16 +9,17 @@ class Tarsnapper < Formula
   revision 1
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "026355056a10fa2326548ecf07457fed9c9c13000b24d06e5509915e4709a4bb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3e9a0dd7678651dc5e6b74fb69e0753a54de1dac10c3014d69290331ede9c2ce"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a75e1ec70d9ac8e3ad98ec0ce4dcb1fd17bb8c5a981f2b775f4dad25ad8bf354"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5d3bb97776d3583bbe263d2cfa25e663b0bfdc4a64eb9cb0e0e44054a244be07"
-    sha256 cellar: :any_skip_relocation, ventura:        "a73eee3b708408e1df3aecc4e9e3cf9b60aae64dc492ca36a83afc44321b314b"
-    sha256 cellar: :any_skip_relocation, monterey:       "49ef96c3a76e577526b85f1ec95b43ec51d40e99ca0f1febf787aecd7d558d63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "281f63f9ab7c817ef7f706edd6e448b3fb6deb2df0ae47eff226de67e5091256"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0b48aef71d275be4e640ed1f99dea73050cee3600f0745f5bbc9c99b36454957"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d2f9c0a3797364ca219a20d6200ad6f0005c81ba6010e572f300ef39ec31b68a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9abbdd4147588aec9a0b33a804e8d672494330c14d6ec0e6e6a78fded43c25e0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d324865fef97a462dd0ca212179902e6f713da22769fb76477c0b8bd3d68314f"
+    sha256 cellar: :any_skip_relocation, ventura:        "fb6d4a1fcf598f49d227d4921f844a80e0c22edf374a758b5a1981be24a2b838"
+    sha256 cellar: :any_skip_relocation, monterey:       "12ef312292edb578e80d80f1ac2e7eaaad5ec1ddb446eda4a5e9dff8569be8bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e788ef51a4b7de45dcb87de4d509fe22852339b4257fa2946fb48113b01defc"
   end
 
+  depends_on "python-dateutil"
   depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
@@ -32,11 +33,6 @@ class Tarsnapper < Formula
   resource "ptyprocess" do
     url "https://files.pythonhosted.org/packages/20/e5/16ff212c1e452235a90aeb09066144d0c5a6a8c0834397e03f5224495c4e/ptyprocess-0.7.0.tar.gz"
     sha256 "5c5d0a3b48ceee0b48485e0c26037c0acd7d29765ca3fbb5cb3831d347423220"
-  end
-
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
   def install

@@ -1,8 +1,8 @@
 class Libdrm < Formula
   desc "Library for accessing the direct rendering manager"
   homepage "https://dri.freedesktop.org"
-  url "https://dri.freedesktop.org/libdrm/libdrm-2.4.116.tar.xz"
-  sha256 "46c53f40735ea3d26d614297f155f6131a510624a24274f654f6469ca905339a"
+  url "https://dri.freedesktop.org/libdrm/libdrm-2.4.118.tar.xz"
+  sha256 "a777bd85f2b5fc9c57f886c82058300578317cafdbc77d0a769d7e9a9567ab88"
   license "MIT"
 
   livecheck do
@@ -11,7 +11,7 @@ class Libdrm < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "f0f99c7cedf8010d9d704c1c64708be4ea111cb8523e6c9fd14de0c4ad9aacbd"
+    sha256 x86_64_linux: "c7dc3eac1b3fbbb300ce2512147f500a2d8a6c1f60b0e346f7c1eaef31f2046f"
   end
 
   depends_on "docutils" => :build

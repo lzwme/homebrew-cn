@@ -3,20 +3,19 @@ class Cookiecutter < Formula
 
   desc "Utility that creates projects from templates"
   homepage "https://github.com/cookiecutter/cookiecutter"
-  url "https://files.pythonhosted.org/packages/48/7e/5d9dba54ddd4301f2e50e857b9aea01dd8312f97eb87cd690817ee3bc421/cookiecutter-2.4.0.tar.gz"
-  sha256 "6d1494e66a784f23324df9d593f3e43af3db4f4b926b9e49e6ff060169fc042a"
+  url "https://files.pythonhosted.org/packages/1a/5d/9f6a7b748436597060654c8b5815dabedd78893e566bc9838c6dcbf05e04/cookiecutter-2.5.0.tar.gz"
+  sha256 "e61e9034748e3f41b8bd2c11f00d030784b48711c4d5c42363c50989a65331ec"
   license "BSD-3-Clause"
-  revision 3
   head "https://github.com/cookiecutter/cookiecutter.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "90aebb54a207e983a32de37a74c1f591974050cbfdfa851323ba92779795b725"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b63cdf4cd8bd894c8b1b648144973e09d530365d81138282387046f67fc8bfbb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "be79384756ed8dfb212a207375e2cc244840004d95328ed18059b6f4468d99f5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dcea38833e05c1ee8a9cf7d8124c05a89be0173ffd12db708284d936ada19c94"
-    sha256 cellar: :any_skip_relocation, ventura:        "34a5b9369b91df10ae614cd9aef674003d0bd7fed916c12fcd1c40772504d202"
-    sha256 cellar: :any_skip_relocation, monterey:       "ab54c35b6e5db5a8a2128c4c22bba62862975d3f082a90aa629750de0930ac09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "112ad11a118999a9d23688d554c32b31df4a4bd76c05ad56858765ad91fe131d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4f1bf97d9ce7077e28502e31358357db7fd5975c968c9b490c1d6bdb51d86621"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "15e7e0f8cc0bff1e143c2a5713976787347bd588aef58aa0322d889a7074bd0f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "df3769840902568bbbf1ebb8cd238c5c54dec7d75c1d78959ca78b44b13363cd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "724bb8628ea1e46158e825d1c7b005867236293dca58e61ff36163897161bce8"
+    sha256 cellar: :any_skip_relocation, ventura:        "543581663445d0bea546a38fde46152e3f98f73bdc39607747fcea2c6f7f5c11"
+    sha256 cellar: :any_skip_relocation, monterey:       "dfb67c576edd2dde03960ec088057665e6fe65151f354470c401f7a12bf3de47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "43c7a942080dd795a81ce770ae497c31727fabbecb6ad47e6acd718b1953b5eb"
   end
 
   depends_on "pygments"
@@ -43,8 +42,8 @@ class Cookiecutter < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
+    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
   resource "idna" do
@@ -83,8 +82,8 @@ class Cookiecutter < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/b1/0e/e5aa3ab6857a16dadac7a970b2e1af21ddf23f03c99248db2c01082090a3/rich-13.6.0.tar.gz"
-    sha256 "5c14d22737e6d5084ef4771b62d5d4363165b403455a30a1c8ca39dc7b644bef"
+    url "https://files.pythonhosted.org/packages/a7/ec/4a7d80728bd429f7c0d4d51245287158a1516315cadbb146012439403a9d/rich-13.7.0.tar.gz"
+    sha256 "5cb5123b5cf9ee70584244246816e9114227e0b98ad9176eede6ad54bf5403fa"
   end
 
   resource "text-unidecode" do
@@ -98,8 +97,8 @@ class Cookiecutter < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
+    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
   def install

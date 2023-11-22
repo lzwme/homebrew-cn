@@ -2,8 +2,8 @@ class Onnxruntime < Formula
   desc "Cross-platform, high performance scoring engine for ML models"
   homepage "https://github.com/microsoft/onnxruntime"
   url "https://github.com/microsoft/onnxruntime.git",
-      tag:      "v1.16.2",
-      revision: "0c5b95fc86750526d09ee9e669a98506116c6bde"
+      tag:      "v1.16.3",
+      revision: "2ac381c55397dffff327cc6efecf6f95a70f90a1"
   license "MIT"
 
   livecheck do
@@ -12,13 +12,13 @@ class Onnxruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b35414f88648d1c36683b3688df27fecfc5e68071fea2cb63abf2639f41f025e"
-    sha256 cellar: :any,                 arm64_ventura:  "826c2622e6b75e4cbdc82f1a22db36c69cf5b77346d6eb244726e2dd8d731655"
-    sha256 cellar: :any,                 arm64_monterey: "662cbdbb4e73da551da210bbcf1d24189df9fdde7f6e8548bf46c833a78fddec"
-    sha256 cellar: :any,                 sonoma:         "9834a7b77566051fba6d10b371320e1fafd5cc5e97091ef35922c84e926a767a"
-    sha256 cellar: :any,                 ventura:        "12443e8f48d22c847bf253eb8a43e107c973fc3d9a15dc02f2bc8af0e2e93920"
-    sha256 cellar: :any,                 monterey:       "2f59e83f0159548a97b88d2e3571566ee52cb322b494efa6baaa03eab3671feb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18f0a4125d1e192b9ae910810518862cf54c3287ae538b4872616d9bc59637ee"
+    sha256 cellar: :any,                 arm64_sonoma:   "b06b639f3c6b38472e881ae695d51366087dbcf5465c29e1d472ec594693d63b"
+    sha256 cellar: :any,                 arm64_ventura:  "73956bfb1672fc54d1d1a7eca4d2a6d13f38a6bc3bf313b1c9a1c80b04d28282"
+    sha256 cellar: :any,                 arm64_monterey: "5ec63b8456d4d50a8a61ff4ffb860f464d626685474291a0ed6cc21ac4b6f55c"
+    sha256 cellar: :any,                 sonoma:         "bf83e17fdf051cbb1acd9500ffb9df21e0b9752307690a481adb642630e0089e"
+    sha256 cellar: :any,                 ventura:        "a3037644b90c34f15da55cf0befd1774684bf9de272387cc6719cafb5b383982"
+    sha256 cellar: :any,                 monterey:       "c672337944b938b22e2b3774adb2e0f84324fb3f9e7c5a3a110172e10ba3d567"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1829d4385c6eedfecb33611581fb33a81e1f276c549a0613f5cb792ed99e5c78"
   end
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class Txr < Formula
   desc "Lisp-like programming language for convenient data munging"
   homepage "https://www.nongnu.org/txr/"
-  url "http://www.kylheku.com/cgit/txr/snapshot/txr-291.tar.bz2"
-  sha256 "06d9373da9c96ba872a0cfa17d0abe12120c68bd9e77285fc71f7a2a9cbe69a0"
+  url "http://www.kylheku.com/cgit/txr/snapshot/txr-292.tar.bz2"
+  sha256 "b45a9a401098babedbe94e926ed8401a9d0756f22b7c3eb7c4c39bcf3238f4e8"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,14 +11,12 @@ class Txr < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4bf6778c27c21d6c58b40da0c4d5d55c8535262d26386ad6433a57afc8a4e4a3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2a90b1bc2569342674c6a54b64419d86f246c4adb70f5cf089af5c46c360e7a6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e2403bf2f4673787c4319a3b7d85d27f7e235fdaa80fa591495905d8fef408ef"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c25a52b18da9023faece62f10baa1e0eb9982b0a4e6aa8624bc0bd4081b7cb6f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "17d2d6564b2efa1951aa6f29f3e8d8d7db5ea5b8f13e0fa47620ecaf4820ff7e"
-    sha256 cellar: :any_skip_relocation, ventura:        "33162896575e06dd8fa4ed56df95c2e4e509bdd55b35280e8b3615edc0614cd4"
-    sha256 cellar: :any_skip_relocation, monterey:       "99594fe91c215bf5d504972056c5edc4d8a1287586565a02fd917181ff306655"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e32f277e872eef7356e7d60652be06b204818acbc783902578734390ba266500"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4476ee793d4faf42bc01f9a88afd03a4b23a5fb991940bc4d88cfb343e53746c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bd513881a3cacc3d1bf803a6b9637c9336cb7453de4091fd1462d3c0ed14b282"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c3d34db5648685978df061f0d27a657bf64a148f6cb4cc71b2d9e0a556dece5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "84b3a0f1b43d38938f72a3d751f69153bcbb1ca85393962c3e28b6c5ee5b6c20"
+    sha256 cellar: :any_skip_relocation, ventura:        "181293186a3c6031a67f52e5bbbaa4c6561198cc4697dd87ca140a8bebfd53b9"
+    sha256 cellar: :any_skip_relocation, monterey:       "1d0d9324b34ed273ea2b33ad1ee326227a5047236d8eaf41aad440bfa65eecec"
   end
 
   depends_on "pkg-config" => :build

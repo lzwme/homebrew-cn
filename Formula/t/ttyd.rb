@@ -4,16 +4,17 @@ class Ttyd < Formula
   url "https://ghproxy.com/https://github.com/tsl0922/ttyd/archive/refs/tags/1.7.4.tar.gz"
   sha256 "300d8cef4b0b32b0ec30d7bf4d3721a5d180e22607f9467a95ab7b6d9652ca9b"
   license "MIT"
+  revision 1
   head "https://github.com/tsl0922/ttyd.git", branch: "main"
 
   bottle do
-    sha256 arm64_sonoma:   "c9adbdd1216b21fccbb48c99710476e3a775ae674fa7ab9917bcf460c87b4756"
-    sha256 arm64_ventura:  "14e4f30ed9d013899611d906d9763d9d69063789395d7cce1bbb51a11b643956"
-    sha256 arm64_monterey: "0223ca1acdd9631e08afdf6527b34b1cea5f16af32b96cea9e03d3035118e090"
-    sha256 sonoma:         "c757a2bf373d1734ec14eb11140df2ba9eff849af8f9c727b2385b4290eb6313"
-    sha256 ventura:        "c2ad72104df43b4988adcbe6eaaa74fb2ced88c96aa428c5fd3faff04d14a0ba"
-    sha256 monterey:       "959512318be4738c518d62f7113a111f3c49329e7e55b6e6aabc618a9c0e838c"
-    sha256 x86_64_linux:   "351b9e02f3a2083a20b29002d114a398e223d1581d30a7859e0846690060025c"
+    sha256 arm64_sonoma:   "5d5221d4830ab1585b19ead0094fbd0b4adf6134e0e655bbcedd0d24a71941fe"
+    sha256 arm64_ventura:  "54f68485bf4f3fc31008f9c80a716ee3be563b1875546aa195644935cc44c4c3"
+    sha256 arm64_monterey: "c66409ac053addfc2dc70858bb280c847fb317b3d2aaaa9c10530eca45621e28"
+    sha256 sonoma:         "0ca301788b35fc26ae6ccea0610a0759dbfb3f8032bbec71932d62fce3a15684"
+    sha256 ventura:        "de3d1bc7284cdc5c6b16d002c4da881383ec2f689bfd98dc14da9b48db2ea4a0"
+    sha256 monterey:       "baddb6a95956d40d190cbebcbbc9fdb547340f5689d262f396b5ba3b99e322f6"
+    sha256 x86_64_linux:   "bc55fd06cd64449931dcb4a9ad3908e9fa3ee7ec09a360b2fad6bc123f204a6c"
   end
 
   depends_on "cmake" => :build

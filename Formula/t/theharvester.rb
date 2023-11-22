@@ -9,14 +9,14 @@ class Theharvester < Formula
   head "https://github.com/laramies/theHarvester.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sonoma:   "1494af192a566a315b48ba8bb715b082a978c2314b338f5d6bb9736203bd34c7"
-    sha256 cellar: :any,                 arm64_ventura:  "24002563871fd2c6536eaf63ddc5c1a34bdaa0eded11747156fc1fc83e71c959"
-    sha256 cellar: :any,                 arm64_monterey: "03bff105a4ea796890b508837f487c108b9aa8c925dc232e0337c7a479830e0b"
-    sha256 cellar: :any,                 sonoma:         "6a4ae58b14016f7225551610c319c3344d90781add0b380df9437eaab65dcd12"
-    sha256 cellar: :any,                 ventura:        "08f0438a2db2c3f6bcb35a35c7b2b90474aca920bc8ea496cc188876ca133fca"
-    sha256 cellar: :any,                 monterey:       "c581780ed206ddfcf67a93e4443461e85ab9560db3e6be9187483458ec90d8fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "451f0c0e1611ee47eb2003cc7beb62db6d89dc73892efc348aec4640d5307307"
+    rebuild 4
+    sha256 cellar: :any,                 arm64_sonoma:   "d1bf2d692add4aa44ff4eeada192a226b026d34c7b35b0c6a3a43f55f3d43a68"
+    sha256 cellar: :any,                 arm64_ventura:  "fab2bde6dbbf9ef215ef5544df94573a7cd7a7a57184aaaa2166fd59537037e1"
+    sha256 cellar: :any,                 arm64_monterey: "5d4df693a07384dabebc179b05c75052990dd54c74508e44d88cc4951be11186"
+    sha256 cellar: :any,                 sonoma:         "7adbb2620ef5b11642c4bbae7fd6a311c1efd7c4596c18dbabf93d59c675800e"
+    sha256 cellar: :any,                 ventura:        "838bf56c4facf9ad04868e32de08da4cba4ec98ed23acf92a62aeb26af29e468"
+    sha256 cellar: :any,                 monterey:       "eaca8373194f4f1a309cddc7a1ee6e4551c96fea3e0dbda435b851847c48cd40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d59973ca47be2d5178ac19cec7b813b843a9efcb081c5decab60b1cbae6ae1f8"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -26,12 +26,15 @@ class Theharvester < Formula
   depends_on "python-argcomplete"
   depends_on "python-certifi"
   depends_on "python-click"
+  depends_on "python-dateutil"
+  depends_on "python-filelock"
   depends_on "python-lxml"
   depends_on "python-packaging"
   depends_on "python-typing-extensions"
   depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
+  depends_on "uvicorn"
 
   # How to update the resources
   # tar -zxvf theHarvester-#{version}.tar.gz
@@ -72,11 +75,6 @@ class Theharvester < Formula
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/67/fe/8c7b275824c6d2cd17c93ee85d0ee81c090285b6d52f4876ccc47cf9c3c4/annotated_types-0.6.0.tar.gz"
     sha256 "563339e807e53ffd9c267e99fc6d9ea23eb8443c08f112651963e24e22f84a5d"
-  end
-
-  resource "anyio" do
-    url "https://files.pythonhosted.org/packages/28/99/2dfd53fd55ce9838e6ff2d4dac20ce58263798bd1a0dbe18b3a9af3fcfce/anyio-3.7.1.tar.gz"
-    sha256 "44a3c9aba0f5defa43261a8b3efb97891f2bd7d804e0e1f56419befa1adfc780"
   end
 
   resource "appdirs" do
@@ -134,24 +132,9 @@ class Theharvester < Formula
     sha256 "345844e6a82062f06a096684196aaf96c1198b25c06b72c1311b882aa2d8a35d"
   end
 
-  resource "filelock" do
-    url "https://files.pythonhosted.org/packages/70/70/41905c80dcfe71b22fb06827b8eae65781783d4a14194bce79d16a013263/filelock-3.13.1.tar.gz"
-    sha256 "521f5f56c50f8426f5e03ad3b281b490a87ef15bc6c526f168290f0c7148d44e"
-  end
-
   resource "frozenlist" do
     url "https://files.pythonhosted.org/packages/8c/1f/49c96ccc87127682ba900b092863ef7c20302a2144b3185412a08480ca22/frozenlist-1.4.0.tar.gz"
     sha256 "09163bdf0b2907454042edb19f887c6d33806adc71fbd54afc14908bfdc22251"
-  end
-
-  resource "h11" do
-    url "https://files.pythonhosted.org/packages/f5/38/3af3d3633a34a3316095b39c8e8fb4853a28a536e55d347bd8d8e9a14b03/h11-0.14.0.tar.gz"
-    sha256 "8f19fbbe99e72420ff35c00b27a34cb9937e902a8b810e2c88300c6f0a3b699d"
-  end
-
-  resource "idna" do
-    url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
-    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
   end
 
   resource "importlib-metadata" do
@@ -214,11 +197,6 @@ class Theharvester < Formula
     sha256 "ddb0d15cb644720160d49abb1ad0d97e87a55581febf1b7531be9e983aad7742"
   end
 
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
-  end
-
   resource "requests" do
     url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
@@ -247,11 +225,6 @@ class Theharvester < Formula
   resource "slowapi" do
     url "https://files.pythonhosted.org/packages/f5/97/3e85a6097fb4986691b52dbef7ca7576f49740fc880160602f91a1062c69/slowapi-0.1.8.tar.gz"
     sha256 "8cc268f5a7e3624efa3f7bd2859b895f9f2376c4ed4e0378dd2f7f3343ca608e"
-  end
-
-  resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/cd/50/d49c388cae4ec10e8109b1b833fd265511840706808576df3ada99ecb0ac/sniffio-1.3.0.tar.gz"
-    sha256 "e60305c5e5d314f5389259b7f22aaa33d8f7dee49763119234af3755c55b9101"
   end
 
   resource "soupsieve" do
@@ -284,21 +257,6 @@ class Theharvester < Formula
     sha256 "f8ecc1bba5667413457c529ab955bf8c67b45db799d159066261719e328580a0"
   end
 
-  resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/4c/b3/aa7eb8367959623eef0527f876e371f1ac5770a3b31d3d6db34337b795e6/uvicorn-0.23.2.tar.gz"
-    sha256 "4d3cc12d7727ba72b64d12d3cc7743124074c0a69f7b201512fc50c3e3f1569a"
-  end
-
-  resource "uvloop" do
-    url "https://files.pythonhosted.org/packages/9c/16/728cc5dde368e6eddb299c5aec4d10eaf25335a5af04e8c0abd68e2e9d32/uvloop-0.19.0.tar.gz"
-    sha256 "0246f4fd1bf2bf702e06b0d45ee91677ee5c31242f39aab4ea6fe0c51aedd0fd"
-  end
-
-  resource "websockets" do
-    url "https://files.pythonhosted.org/packages/85/dc/549a807a53c13fd4a8dac286f117a7a71260defea9ec0c05d6027f2ae273/websockets-10.4.tar.gz"
-    sha256 "eef610b23933c54d5d921c92578ae5f89813438fded840c2e9809d378dc765d3"
-  end
-
   resource "wrapt" do
     url "https://files.pythonhosted.org/packages/95/4c/063a912e20bcef7124e0df97282a8af3ff3e4b603ce84c481d6d7346be0a/wrapt-1.16.0.tar.gz"
     sha256 "5f370f952971e7d17c7d1ead40e49f32345a7f7a5373571ef44d800d06b1899d"
@@ -323,6 +281,10 @@ class Theharvester < Formula
     inreplace "setup.py", "/etc/theHarvester", etc/"theharvester"
     virtualenv_install_with_resources
     bin.install_symlink libexec/"bin/theHarvester" => "theharvester"
+
+    site_packages = Language::Python.site_packages("python3.12")
+    paths = %w[uvicorn].map { |p| Formula[p].opt_libexec/site_packages }
+    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end
 
   test do

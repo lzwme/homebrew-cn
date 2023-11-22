@@ -18,6 +18,9 @@ class MitScheme < Formula
     sha256 x86_64_linux: "84fc2e7429a15a8a894e39b4edfe042e4ddc404ef517896bcf63c8ee0c97bbed"
   end
 
+  # Does not build: https://savannah.gnu.org/bugs/?64611
+  deprecate! date: "2023-11-20", because: :does_not_build
+
   # Has a hardcoded compile check for /Applications/Xcode.app
   # Dies on "configure: error: SIZEOF_CHAR is not 1" without Xcode.
   # https://github.com/Homebrew/homebrew-x11/issues/103#issuecomment-125014423

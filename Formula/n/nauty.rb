@@ -1,10 +1,9 @@
 class Nauty < Formula
   desc "Automorphism groups of graphs and digraphs"
   homepage "https://pallini.di.uniroma1.it/"
-  url "https://pallini.di.uniroma1.it/nauty2_8_6.tar.gz"
-  sha256 "f2ce98225ca8330f5bce35f7d707b629247e09dda15fc479dc00e726fee5e6fa"
+  url "https://pallini.di.uniroma1.it/nauty2_8_8.tar.gz"
+  sha256 "accf5eeddde623d179c8fee9d15cfb7d66d7a90cc7684d11c96ad9b3f3655dbb"
   license "Apache-2.0"
-  revision 1
   version_scheme 1
 
   livecheck do
@@ -16,23 +15,13 @@ class Nauty < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5422873434e0b55456afcbb4bc0f65d8b1d0586b24b057bf1aa773d58f6f1994"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bd9fd017b2becaafc0e2951e3b881007cdb265c7afa3c4dde115278452ac8094"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "75ed13b3638b9ad0f79d0acdfe3c1153556ee52bef69f3627e1b24486967e556"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1b0b84e739762349ce679448d604299ba0ca5bd755eb5473365cfbfd88a714e5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3ac4626dcf4336d660c01ca622d75981dc5412df6c60dc98d1a330f5c4a7cd11"
-    sha256 cellar: :any_skip_relocation, ventura:        "f6fae228f689c1b914e68e77b480a13e1578ce33d209119b14e8a8abd1ae138d"
-    sha256 cellar: :any_skip_relocation, monterey:       "afd16a1cb7af80145eec65bc2a0458b1e5c011b46fb13424c704972651dc554e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "674ff752456a99d44ddd63bf906d1f9cebf2517022f502fbc85c14fdb2d3de64"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "712e4cfba548cf16a9f95d108737fe818e1e4429ce7890a24f6bc0fcc4d9d0f3"
-  end
-
-  # Apply upstream fixes. See:
-  #   https://mailman.anu.edu.au/pipermail/nauty/2023-January.txt
-  #   https://github.com/Homebrew/homebrew-core/issues/125101
-  patch do
-    url "https://gitweb.gentoo.org/repo/gentoo.git/plain/sci-mathematics/nauty/files/nauty-2.8.6-gentreeg-gentourng.patch"
-    sha256 "2a6ae62a3064d24513442a094fe6db41c6733cb5259172350791819be7bf3c11"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fc17c5700166b0e9e5c17bb7454c2eddbe108e4b04863af6d5e0bdd89a75bc38"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b6432a71064390f2afa50d16ffa26b8fe907c2ef3a2cd0c8f5d7696c3953352"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f368b7a5e5d259c01226c1e95ca0eb53bc13549b4286db953a9f25220ae8fed6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "915f0ee5a28c9b40707d590b5051982c2df808405c1b9f27b919ff819850acf3"
+    sha256 cellar: :any_skip_relocation, ventura:        "b26562027d60564b34b4e27a987869f51e974c5903218e39d50fb23f163c0d98"
+    sha256 cellar: :any_skip_relocation, monterey:       "6cbfbb5e238919a56a2a7ba900c061c509f1f184af78059b929b8494adc058fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1571908d43d478112477c4e47a0bf17ae88851b5922c606dc2aa72e88f62b78d"
   end
 
   def install

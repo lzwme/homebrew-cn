@@ -5,18 +5,6 @@ class MariadbAT1010 < Formula
   sha256 "6db3d7be275b77181cf361499b76f40fa41b762a71ba75e78dec95e7b8215eb0"
   license "GPL-2.0-only"
 
-  livecheck do
-    url "https://downloads.mariadb.org/rest-api/mariadb/all-releases/?olderReleases=false"
-    strategy :json do |json|
-      json["releases"]&.map do |release|
-        next unless release["release_number"]&.start_with?(version.major_minor)
-        next if release["status"] != "stable"
-
-        release["release_number"]
-      end
-    end
-  end
-
   bottle do
     sha256 arm64_sonoma:   "5f460c753a8cf8b47bcd6e35932ad51ec185e4f9c2f4c2ac464c2a537aaeb095"
     sha256 arm64_ventura:  "efdc0681e993b65fe71f5067886cbfe49ca51c622e46a0f39d688fba58687c94"

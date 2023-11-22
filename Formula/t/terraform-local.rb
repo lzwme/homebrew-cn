@@ -8,16 +8,18 @@ class TerraformLocal < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5fe12426d5a3eb396883f11ffba95fab22ee69be3d51fc48fac8f4a91191e8d6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "846df2c08288bc8222d126bf147d617bd8043d06c9489a49ff3de659208c95a1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "40178edbab0454975f1514e3f5879c70e284c4358a2080bed303bfa982d5121b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e0d420e5a3d9cf1ac9a0513c8bbe5003f6d97b32b554b1b29ed1640689ff3c81"
-    sha256 cellar: :any_skip_relocation, ventura:        "0a1a653623b0b9207bb02db006577497ec1fb106be6a2a31c2854001b1508b0d"
-    sha256 cellar: :any_skip_relocation, monterey:       "52b51c8ecd50390b90af8f323be892fc86310a1ba8278920bc4dc929ad6317b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0871e2e1996d2147effaffba259901617b1fe1bb00e43ff391bf526ce2e80980"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4787ee0fd67f0a48555fe8f57f967958b7ba21e01c0a6c85a041682e05e895e7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "83b87457938333dad2ec3b84d48dad8f83f80af81fbc9ed496e1fbc1dc3c86d7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2db5173c4077797ae8d3675e4a6a324d16a4c4e4a97074483e4ebd1ec0745ce8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "351a8bc6364ff11b9b23043011d15f34637eacbe383cd16db74ef2b25da68bb3"
+    sha256 cellar: :any_skip_relocation, ventura:        "463318200f3932921761be0205850b3c155a0709b6d7def039d83cf42b16ec42"
+    sha256 cellar: :any_skip_relocation, monterey:       "ff0de69dc965fab6da50871c25de7971cdc554672a4d5fc008c4a78bbed5203f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "58cdb69108e7faa75be90a199fce526d274e55de43945c6bb90a8f840ca024d2"
   end
 
   depends_on "localstack"
+  depends_on "python-dateutil"
   depends_on "python@3.12"
   depends_on "six"
 
@@ -44,11 +46,6 @@ class TerraformLocal < Formula
   resource "localstack-client" do
     url "https://files.pythonhosted.org/packages/ce/f6/7c19f1249cdcdc946616387e8aa93472f879624eb6acdd31a78a76fc046f/localstack-client-2.5.tar.gz"
     sha256 "8b8b2ee6013265a55d3e312a4513efccd222131bed79395545a4f643704f9213"
-  end
-
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
   resource "python-hcl2" do

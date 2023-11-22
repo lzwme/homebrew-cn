@@ -10,16 +10,17 @@ class S4cmd < Formula
   head "https://github.com/bloomreach/s4cmd.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2422fd3cfc7d26bf2d6a928c8200e5a492254d343b544ba18b5d1c81bef7c795"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "75185449973afa555ca68d183ac8f52ab55b6f071f017314b8b9199c9f83b2f2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6c50276fc8504006255a52c3850c386ef944bd96fa6f6dcc13faefa7788e268f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f9c671e266a8c7c20f255a10e2a339ec0ebbc24dac6e26e93695b37ec628c68e"
-    sha256 cellar: :any_skip_relocation, ventura:        "28cb5879f4d53c3f739f6e797fab6643f069ce539c44524eaea6c318e3b65c4c"
-    sha256 cellar: :any_skip_relocation, monterey:       "4039bac60900e575c917adabb32202ea14d9bca482992894796c2d46852a7bce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3577d2d77fe3ba4f379ecabb34aef8ea74b1f509c83072d24dbe7b6c06c4e101"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dfa74e751836c043bb6d908e92f59818408e7eed6bb701d4cfe02feff676f587"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "11adfe8f1c87eb35d70d950465d4c9ff92482cf0da8ad84a1d02d09c1cd76820"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d7e56759aef5c24f86c1152e52c565de712f9706bb4111595e80c8ae895de180"
+    sha256 cellar: :any_skip_relocation, sonoma:         "854f04b313ddbc68dfb859749c49f343cdbcd384c278ae6e2d11b5b913076366"
+    sha256 cellar: :any_skip_relocation, ventura:        "c8f40364d09dcb7c9a72ebcc7b0aaf1f1d438ce7ccef44b6054becd37b0fd601"
+    sha256 cellar: :any_skip_relocation, monterey:       "681ddc2aba08ba18ec2d3bb4db42f3ba3a45cdcfce973ca24b3536fbf2dbf70f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8aa586e1f2f5f8c89f67f21ca0be9a3fe654263947ba34fd0634e3809dd94fa"
   end
 
+  depends_on "python-dateutil"
   depends_on "python-pytz"
   depends_on "python@3.12"
   depends_on "six"
@@ -37,11 +38,6 @@ class S4cmd < Formula
   resource "jmespath" do
     url "https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz"
     sha256 "90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
-  end
-
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
   resource "s3transfer" do

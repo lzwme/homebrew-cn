@@ -1,23 +1,19 @@
 class Viu < Formula
   desc "Simple terminal image viewer written in Rust"
   homepage "https://github.com/atanunq/viu"
-  url "https://ghproxy.com/https://github.com/atanunq/viu/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "9b359c2c7e78d418266654e4c94988b0495ddea62391fcf51512038dd3109146"
+  url "https://ghproxy.com/https://github.com/atanunq/viu/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "9682be1561f7a128436bd2e45d1f8f7146ca1dd7f528a69bd3c171e4e855474b"
   license "MIT"
   head "https://github.com/atanunq/viu.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9597580d72d7d39833bbcfd99a9a41ef632b05e4f87b804c4ce77f860224e5a6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5518815ffa424b2f4341703d8e12b62a7b0c7b86591e24e48f22e5dbebf9499"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "31abf104e6a99f2168f865b6461657aa6a7a30c014239eb72f76bffc525bec95"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fefcfa184185f643d81e7a206e782349a0813e947222f2ea092eff3f92dfa5b1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "32ce13bb7d67b3164df930ffd69e4f00e0571d8df437b08bd8b58f330e59b217"
-    sha256 cellar: :any_skip_relocation, ventura:        "9729333077ff480c91b5cba9108ba95dfff75fc0860c76691b4434932c066b10"
-    sha256 cellar: :any_skip_relocation, monterey:       "9f01ea745004309835c0ee4ebee71ff8186246ea0c74b2c5286a3f021d425238"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1d88e2dcf78308bdb60b2072cb03a31d6fad4d84d760360b597feea0a0a1b2a5"
-    sha256 cellar: :any_skip_relocation, catalina:       "d2082f85f1290d91864b6ff81b8ea76c93ae6482cf5375efede73afe69bb96fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9affa5440243080d044e7dce00b6d2efa411cfcbbbce88aeb4c2b5268b5107a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "45cfcb1acbd7e19baa29fcbc4a0bd4027f3bfb7110bef2c31b4efd3e332c36bc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7f6b33f89da3410d9cf4f52c8e619b7d47e3389f559ce74711581c5bf6a1e68"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7f048a4285ab17c0c33301504ad730131e9a79bd206488851dd667800ec2816b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f7450084c0cfc1232993ba43aee5662691c148dd7af2c95859d5e5e05e5b0827"
+    sha256 cellar: :any_skip_relocation, ventura:        "709237cca3b5b6095b1f25458c7cb7e4a512dcd0f05d9b4eb8126ccdda5581b9"
+    sha256 cellar: :any_skip_relocation, monterey:       "0c7901a2d48ca4300a67502bf3c1237f65cb9c816332ed603aab9066941f08ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "add357623e3978dad925fa66bc8ef8040644da3e9d2f1809bd2e3228f7eb1ced"
   end
 
   depends_on "rust" => :build

@@ -1,6 +1,8 @@
 class Hlint < Formula
   desc "Haskell source code suggestions"
   homepage "https://github.com/ndmitchell/hlint"
+  # TODO: Switch `ghc@9.6` dependency to `ghc` once the upstream PR
+  # https://github.com/ndmitchell/hlint/pull/1544 is merged and in a release.
   url "https://hackage.haskell.org/package/hlint-3.6.1/hlint-3.6.1.tar.gz"
   sha256 "3280132bb3c1b39faa4c8c6a937479d4622484914da6a227a2ce4b15a76741fd"
   license "BSD-3-Clause"
@@ -19,7 +21,7 @@ class Hlint < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc" => :build
+  depends_on "ghc@9.6" => :build
 
   uses_from_macos "ncurses"
 

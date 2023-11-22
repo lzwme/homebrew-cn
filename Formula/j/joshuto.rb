@@ -1,21 +1,19 @@
 class Joshuto < Formula
   desc "Ranger-like terminal file manager written in Rust"
   homepage "https://github.com/kamiyaa/joshuto"
-  url "https://ghproxy.com/https://github.com/kamiyaa/joshuto/archive/refs/tags/v0.9.5.tar.gz"
-  sha256 "14155a02cfeb0993a4906635a3c121589451e155e067d1c0d1673abdd1494ca8"
+  url "https://ghproxy.com/https://github.com/kamiyaa/joshuto/archive/refs/tags/v0.9.6.tar.gz"
+  sha256 "78d03e0c7971fe715da7e89c6e848112eedb993f04625e720997156c74578d42"
   license "LGPL-3.0-or-later"
   head "https://github.com/kamiyaa/joshuto.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e6a4fcb749dfa80441c735b716138d8f616d4d5216d9e115ed18d5c0ad106505"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b0fa5caad0bb515343b50a5b71284bac2ef80fa1e20d45e946c5de2827a57ac7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4b03edb2446a540b08c27d2479f57adc879f1ed88ce0df4938a278a1bed6337b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e7ed4e863b3abbee175c615e364e1fabbcaceb4965e31ff59bb950c41f1dc608"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0b190d261e2cfd5f9a21a21bfa7316cc0468abd2c1e562c9030f553a4b17de59"
-    sha256 cellar: :any_skip_relocation, ventura:        "623f1906e443bc94b46ffd9e45ddc33f1dc187facdac07b92a0ab34bebd956fe"
-    sha256 cellar: :any_skip_relocation, monterey:       "4aa2f3762feadd6fecb14d428696f1345cb44a33ca4a58201884dccfd084fd41"
-    sha256 cellar: :any_skip_relocation, big_sur:        "51bd053858f7a35857b16c4c22584786a3e1664c71d663eaf18808e5290d4c52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31b3d66a76fd106b2419e14b5de5635ba3b1500956de864a765c837da471d62f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f54db87868d342a1beec363a8baed41aa8811bb174c5080b4577a3c5adaa616e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a327a9734f25a095dce2dbb1ce1eadfb92f8ee3c6c7142206020f4484e2cfb7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8fcb2aad5679f0b24189b902b91f1b494f404e889739a9cd03c5e0f73a4a8066"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c6bfdf961c35b520c978819cdb94dd122fb304a44336179289a944467bb9f1cc"
+    sha256 cellar: :any_skip_relocation, ventura:        "793646259d3c902d1671f9a23846eb474429958d58a72bb2eb72f179c8a4058c"
+    sha256 cellar: :any_skip_relocation, monterey:       "558f4ae6a1d684b76f5a3004b7a0a84416f4b5fa6175fd79e8cfe5d5c8f6b5a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a52ad2c5bd3960335aaa286a261c5676aa431e2b4d5dff184f93f0999a9686b"
   end
 
   depends_on "rust" => :build

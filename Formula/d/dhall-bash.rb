@@ -4,7 +4,7 @@ class DhallBash < Formula
   url "https://hackage.haskell.org/package/dhall-bash-1.0.41/dhall-bash-1.0.41.tar.gz"
   sha256 "2aeb9316c22ddbc0c9c53ca0b347c49087351f326cba7a1cb95f4265691a5f26"
   license "BSD-3-Clause"
-  head "https://github.com/dhall-lang/dhall-haskell.git", branch: "master"
+  head "https://github.com/dhall-lang/dhall-haskell.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e6932266f568e291768e86c3e995c625d9295a6b5aa6e0509694b64da1befe55"
@@ -17,12 +17,13 @@ class DhallBash < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc" => :build
+  depends_on "ghc@9.6" => :build
 
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
   def install
+    cd "dhall-bash" if build.head?
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args
   end

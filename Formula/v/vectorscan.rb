@@ -1,15 +1,14 @@
 class Vectorscan < Formula
   desc "High-performance regular expression matching library"
   homepage "https://github.com/VectorCamp/vectorscan"
-  # TODO: update version check for new release
-  url "https://ghproxy.com/https://github.com/VectorCamp/vectorscan/archive/refs/tags/vectorscan/5.4.10.1.tar.gz"
-  sha256 "ed4fb5aafecca155c4ce2f9b2c0ab781dc92fee720f77f4f4d56b651787ae118"
+  url "https://ghproxy.com/https://github.com/VectorCamp/vectorscan/archive/refs/tags/vectorscan/5.4.11.tar.gz"
+  sha256 "905f76ad1fa9e4ae0eb28232cac98afdb96c479666202c5a4c27871fb30a2711"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "149dae0569f8e2adb301b7942c56cb0e7ad0c9e1f8ad35592c30be7b1910b101"
-    sha256 cellar: :any, arm64_monterey: "809da23231e472b698c49a0e70cf13867ebfd44bacdb552be44c0363442694a8"
-    sha256 cellar: :any, arm64_big_sur:  "456709a5ccd7fafce90c8f268d9f23625b9ef60ae358c15e4fbd51a25180b467"
+    sha256 cellar: :any, arm64_sonoma:   "f9f675e8abdcc7118df42cec8ab5235e50ae24632de7c28ca4156c6fc031b68a"
+    sha256 cellar: :any, arm64_ventura:  "389a64eeb361e53204fafaf212e6b408adfab6d02cdf27578a0f11d373ec767a"
+    sha256 cellar: :any, arm64_monterey: "d57e73bc3cefeba51e1e93b7a518b5e436efb56e1c7d93ae79e38b1e2200cadb"
   end
 
   depends_on "boost" => :build
@@ -21,8 +20,8 @@ class Vectorscan < Formula
 
   def install
     cmake_args = [
-      "-DBUILD_STATIC_AND_SHARED=ON",
-      "-DPYTHON_EXECUTABLE:FILEPATH=python3",
+      "-DBUILD_STATIC_LIBS=ON",
+      "-DBUILD_SHARED_LIBS=ON",
     ]
 
     system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args
@@ -41,6 +40,6 @@ class Vectorscan < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lhs", "-o", "test"
-    assert_match version.major_minor_patch.to_s, shell_output("./test")
+    assert_match version.to_s, shell_output("./test")
   end
 end

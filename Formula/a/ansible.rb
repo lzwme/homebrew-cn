@@ -9,13 +9,14 @@ class Ansible < Formula
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1318495c6f4387b1d7f6779343d0cf1cee032b9e7852967a1bcc4a9a8cf69478"
-    sha256 cellar: :any,                 arm64_ventura:  "d832bd74f780406afeebed9df29f83a014e09270d9d52528675612aafc232829"
-    sha256 cellar: :any,                 arm64_monterey: "7ef47b82fafbff1346d7c09604147bc0dc718007d5656a677c23dc320369be77"
-    sha256 cellar: :any,                 sonoma:         "2afcafacb3137a23e22f86b5ffd3d7e584a89b81b518df63c9a4fdc021d4e69f"
-    sha256 cellar: :any,                 ventura:        "eca9ebd4761fc8d56bf99f564882cc039fa3a32aa659a22052db00912f780a3e"
-    sha256 cellar: :any,                 monterey:       "d45703e8b611cac928a7a240c03f20bd62165d10126e5c95e61dd25d38af8b0d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8546dc4caad6a04d4c08e8e7f2a705b9f083d802c1f94abf0aa1fcf72ae10dac"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "600b2b51277aff38eb0c288ba74cf287c4fc8bf9ffc12b519d86381dba185e64"
+    sha256 cellar: :any,                 arm64_ventura:  "ab68b02a3e710f14fa01d23b7c74c138ae87bd21f1c6b02a19d3c6768a254fdf"
+    sha256 cellar: :any,                 arm64_monterey: "3ae63225e4d3303045e9062c81ec73af597d6adf87d56826ce0a80a65ccc6931"
+    sha256 cellar: :any,                 sonoma:         "a84445d6709b4f489775ffd6af3c14c4bbddda3a880c32421f3da9fca920d461"
+    sha256 cellar: :any,                 ventura:        "20da85353ced96256082c4bd93d373454859042a0d5ab39c18bdb30330aaa88b"
+    sha256 cellar: :any,                 monterey:       "68299263f561690ae75be8a79014339dbc93cb2ae48227bfb4c58260f2f6111c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18677e019fd2b4af620e01269bc9979d9f25b3301dff9ca4c9a0913a5873d4e1"
   end
 
   # `pkg-config` and `rust` are for bcrypt
@@ -25,9 +26,12 @@ class Ansible < Formula
   depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-dateutil"
+  depends_on "python-jinja"
   depends_on "python-lxml"
   depends_on "python-markupsafe"
   depends_on "python-packaging"
+  depends_on "python-pyparsing"
   depends_on "python-pytz"
   depends_on "python@3.12"
   depends_on "pyyaml"
@@ -146,11 +150,6 @@ class Ansible < Formula
   resource "iso8601" do
     url "https://files.pythonhosted.org/packages/b9/f3/ef59cee614d5e0accf6fd0cbba025b93b272e626ca89fb70a3e9187c5d15/iso8601-2.1.0.tar.gz"
     sha256 "6b1d3829ee8921c4301998c909f7829fa9ed3cbdac0d3b16af2d743aed1ba8df"
-  end
-
-  resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
-    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
   end
 
   resource "jmespath" do
@@ -334,11 +333,6 @@ class Ansible < Formula
     sha256 "8ac7448f09ab85811607bdd21ec2464495ac8b7c66d146bf545b0f08fb9220ba"
   end
 
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
-  end
-
   resource "pyperclip" do
     url "https://files.pythonhosted.org/packages/a7/2c/4c64579f847bd5d539803c8b909e54ba087a79d01bb3aba433a95879a6c5/pyperclip-1.8.2.tar.gz"
     sha256 "105254a8b04934f0bc84e9c24eb360a591aaf6535c9def5f29d92af107a9bf57"
@@ -362,11 +356,6 @@ class Ansible < Formula
   resource "python-consul" do
     url "https://files.pythonhosted.org/packages/7f/06/c12ff73cb1059c453603ba5378521e079c3f0ab0f0660c410627daca64b7/python-consul-1.1.0.tar.gz"
     sha256 "168f1fa53948047effe4f14d53fc1dab50192e2a2cf7855703f126f469ea11f4"
-  end
-
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
   resource "python-keystoneclient" do

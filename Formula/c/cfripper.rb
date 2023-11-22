@@ -2,19 +2,19 @@ class Cfripper < Formula
   include Language::Python::Virtualenv
 
   desc "Library and CLI tool to analyse CloudFormation templates for security issues"
-  homepage "https://github.com/Skyscanner/cfripper"
-  url "https://files.pythonhosted.org/packages/ba/a5/36ce53ca9b14b2a10e73a8c5f2cff2adaa40b04c3e032b263d144009b3bf/cfripper-1.15.0.tar.gz"
-  sha256 "718ce7261705f47fc968c6dfd805f40a1e7854b209ae530b07bca23464f26d00"
+  homepage "https://cfripper.readthedocs.io"
+  url "https://files.pythonhosted.org/packages/51/93/e375c84b0bdac3e718bebe99c4c91a5946200aac73fe166fca006a7b2125/cfripper-1.15.1.tar.gz"
+  sha256 "3a7b92daa036e4ed14bf2b01b0d14f76a7b71d664bfd572ee35a4eb96ca92bf8"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "81e35b727560de8b78a39ee75959f92f782c05ba9c81933d2cb7d5fb6dbbb386"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d6adeb94dfc1469fa8f45b2b4c40df1a17e96c913dffe8d981172927be1eee0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1917d0895e6b85d4cd3b443d965014efe8f4ecee55619a021d64a78e1478ceaf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6dc5418b57c29936be9ef5caa2edab16620cdd3cd01289728a889198c2c47144"
-    sha256 cellar: :any_skip_relocation, ventura:        "ec5bcce79e2eb3c7b912eba94d66daaf10c6e11e7608e45769e2f02eec03b962"
-    sha256 cellar: :any_skip_relocation, monterey:       "d45bd0575882073f206f27478736e7b2fa21fa825c7ce1bede11dc516ade10fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fce5ed256bd20846ac491b6c2af1bbda266d37f501f409dd0d14bbb4d355ce6d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e6e7e06335b8665b3137ac5dd722d67e21cbd7787e9aa404e262b752a1495a74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7bf398fbe660b3ba2b596b9e23cd50694f523c0cd5cbd5cbf234233a19295980"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ae0d9141cb2e80581ab6237b98774f50b3c1389dabb73e70930a87e7687b054"
+    sha256 cellar: :any_skip_relocation, sonoma:         "192c8b38219dca35861becf45221acafb4715a7b0b84163a72a10f9328071731"
+    sha256 cellar: :any_skip_relocation, ventura:        "d4a493fd40834f03a97562fa0896f107acebb2581d25a18078a6205902080d03"
+    sha256 cellar: :any_skip_relocation, monterey:       "931ef40b566fae134bb43c751f6f3bf9c43dcc12fb26c3ed6519e8eea715b6f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0206adea625e611debf235a7c1589d1d35cf2d8c31981df2838c4c7cae41ea4e"
   end
 
   depends_on "python-click"
@@ -24,13 +24,13 @@ class Cfripper < Formula
   depends_on "six"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/6b/06/7e2ca443db1af4f3cb76d36eb9f20baf78688ddb095d473e733309a22bb2/boto3-1.29.3.tar.gz"
-    sha256 "d038b19cbe29d488133351ee6eb36ee11a0934df8bcbc0892bbeb2c544a327a4"
+    url "https://files.pythonhosted.org/packages/8d/5f/4ee13ee77641c98032fcddb51456a26976f69365fdc3c6c9e699970b9e99/boto3-1.29.4.tar.gz"
+    sha256 "ca9b04fc2c75990c2be84c43b9d6edecce828960fc27e07ab29036587a1ca635"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/de/d1/6bbd2a3ade785ff5af9f46c0865c3e7e0f1e4d3c99e9530756ffda9cc1aa/botocore-1.32.3.tar.gz"
-    sha256 "be622915db1dbf1d6d5ed907633471f9ed8f5399dd3cf333f9dc2b955cd3e80d"
+    url "https://files.pythonhosted.org/packages/10/6f/e7fe287501ae0bb2732e0752dde93c4a2ad1922953be16dd912acc2c26be/botocore-1.32.4.tar.gz"
+    sha256 "6bfa75e28c9ad0321cefefa51b00ff233b16b2416f8b95229796263edba45a39"
   end
 
   resource "cfn-flip" do
@@ -49,8 +49,8 @@ class Cfripper < Formula
   end
 
   resource "pycfmodel" do
-    url "https://files.pythonhosted.org/packages/f2/72/0058257bbbc2c6cc3b92a3f3351bf84bf75bc24130d71801227b20531450/pycfmodel-0.21.0.tar.gz"
-    sha256 "0a4253f154f580b9d7465c909ab1a4f2a670adc16e86fabe215a40c66256805d"
+    url "https://files.pythonhosted.org/packages/ef/b0/0844b357c0d47ed9e83748107cd1dbccfc49d52396be48f52132893c30d7/pycfmodel-0.21.1.tar.gz"
+    sha256 "4429f8d623c35324dd1b04dfbc36607ade1743f020a02fac6d387096ef2c828f"
   end
 
   resource "pydantic" do

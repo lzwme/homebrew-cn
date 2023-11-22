@@ -3,19 +3,18 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https://dstack.ai/"
-  url "https://files.pythonhosted.org/packages/7f/e5/11db2db797c88fb559231e8f7cf9c4301ede56d86eb473b24bdf036bb4ba/dstack-0.12.2.tar.gz"
-  sha256 "12761d062ae6b0c3eb7e0e343e2c97aabe26c0cd5eb42dc20bae9efde5f3756a"
+  url "https://files.pythonhosted.org/packages/ac/f5/93aeec56550b1c9d1c9cf879045c04110b4107ae357a6b2939a24ad6e767/dstack-0.12.3.tar.gz"
+  sha256 "cdaf8cb1e98db86259bb1a14757dffc82cbdb1b1d0f62fec0d45dcabff839ff6"
   license "MPL-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sonoma:   "8ddcb71273224f667086ba7e1131efe0dda994d53bbc2f763574ba75f5e722ce"
-    sha256 cellar: :any,                 arm64_ventura:  "2d6b610cb18b468ec6f5196004e0a5e69b8562ea8aabd2666a0116fd13a68de5"
-    sha256 cellar: :any,                 arm64_monterey: "37466628deead4823b961fc266f4566a8beb1db08f16a9e790314d90dde3528a"
-    sha256 cellar: :any,                 sonoma:         "dc7c1153be4aaafa41a8f70ccb0281ee142729ae12a16960a3faebab9e0dfef1"
-    sha256 cellar: :any,                 ventura:        "2327d6fc2a59ccdaf4682d7457f34adbdd8f9405c783975f0b28a7d993c717ee"
-    sha256 cellar: :any,                 monterey:       "bc06b4b0438434347a4b9d2f2d8f35adc35a2686386fc93b535f4f51f9477375"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "430f2affec307920dcf6cea9b73bf92681f080aace52428830400d75f09d48ac"
+    sha256 cellar: :any,                 arm64_sonoma:   "3b12ec417b1d3c777eb4276b46ebe24806197628de82ae68ff436ac3d251a7ed"
+    sha256 cellar: :any,                 arm64_ventura:  "2c5b6fe345ee9c74218e20d9b4b12818093ca8e227da42b522286acc56a4be5c"
+    sha256 cellar: :any,                 arm64_monterey: "e22bced99a8046c6934f37984181f51fc384de7dca040af5130d58d36cd7802b"
+    sha256 cellar: :any,                 sonoma:         "e73ee1afc2aec63227d062041b81c2c10da8cccf2896144e9c5d3e1967212790"
+    sha256 cellar: :any,                 ventura:        "aaf81caad0f5e00569739bb852185ecc094bd95e0dd520d004d928d68769725f"
+    sha256 cellar: :any,                 monterey:       "bd7636838bbb8888e4635235ed2f2a81a9ad38bd1b91a32aa97dcdd81afc9f2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8464bf5cd17ee9297955bc0cb6621fe240f849079d23200c36d403e77cf1cbd4"
   end
 
   # `pkg-config` and `rust` are for bcrypt.
@@ -182,13 +181,13 @@ class Dstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/6b/06/7e2ca443db1af4f3cb76d36eb9f20baf78688ddb095d473e733309a22bb2/boto3-1.29.3.tar.gz"
-    sha256 "d038b19cbe29d488133351ee6eb36ee11a0934df8bcbc0892bbeb2c544a327a4"
+    url "https://files.pythonhosted.org/packages/8d/5f/4ee13ee77641c98032fcddb51456a26976f69365fdc3c6c9e699970b9e99/boto3-1.29.4.tar.gz"
+    sha256 "ca9b04fc2c75990c2be84c43b9d6edecce828960fc27e07ab29036587a1ca635"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/de/d1/6bbd2a3ade785ff5af9f46c0865c3e7e0f1e4d3c99e9530756ffda9cc1aa/botocore-1.32.3.tar.gz"
-    sha256 "be622915db1dbf1d6d5ed907633471f9ed8f5399dd3cf333f9dc2b955cd3e80d"
+    url "https://files.pythonhosted.org/packages/10/6f/e7fe287501ae0bb2732e0752dde93c4a2ad1922953be16dd912acc2c26be/botocore-1.32.4.tar.gz"
+    sha256 "6bfa75e28c9ad0321cefefa51b00ff233b16b2416f8b95229796263edba45a39"
   end
 
   resource "cachetools" do
@@ -322,8 +321,8 @@ class Dstack < Formula
   end
 
   resource "gpuhunt" do
-    url "https://files.pythonhosted.org/packages/7c/7d/b478171aea317ba020e3f3e0041d483d45de998105df74fe2dcde5fdb28d/gpuhunt-0.0.1rc3.tar.gz"
-    sha256 "6b20de0484877d919b6cb526312b17f1ae3bcfeb57e73edef9cc022bbef086c8"
+    url "https://files.pythonhosted.org/packages/96/4e/2b14edbe7d10d3d91866ff9098b3981a167f4b64fe008aa0016d8ae3890b/gpuhunt-0.0.1rc9.tar.gz"
+    sha256 "5729b7b81f6bd18fc2694e5d55520594422a5e9a9a11f0e7c57a1bef881cb2ed"
   end
 
   resource "grpc-google-iam-v1" do
@@ -437,8 +436,8 @@ class Dstack < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/61/ef/945a8bcda7895717c8ba4688c08a11ef6454f32b8e5cb6e352a9004ee89d/pyasn1-0.5.0.tar.gz"
-    sha256 "97b7290ca68e62a832558ec3976f15cbf911bf5d7c7039d8b861c2a0ece69fde"
+    url "https://files.pythonhosted.org/packages/ce/dc/996e5446a94627fe8192735c20300ca51535397e31e7097a3cc80ccf78b7/pyasn1-0.5.1.tar.gz"
+    sha256 "6d391a96e59b23130a5cfa74d6fd7f388dbbe26cc8f1edf39fdddf08d9d6676c"
   end
 
   resource "pyasn1-modules" do
@@ -497,8 +496,8 @@ class Dstack < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/81/b8/c18e4fa683dd67fd2f1b9239648ba8c29fed467b4aa80387b14116e3a06b/rpds_py-0.13.0.tar.gz"
-    sha256 "35cc91cbb0b775705e0feb3362490b8418c408e9e3c3b9cb3b02f6e495f03ee7"
+    url "https://files.pythonhosted.org/packages/94/3f/b58db0c212ba3a89378d1684f871e0e7783fc34fadc7696e5439c8c9338e/rpds_py-0.13.1.tar.gz"
+    sha256 "264f3a5906c62b9df3a00ad35f6da1987d321a053895bd85f9d5c708de5c0fbf"
   end
 
   resource "rsa" do
@@ -509,6 +508,11 @@ class Dstack < Formula
   resource "s3transfer" do
     url "https://files.pythonhosted.org/packages/3f/ff/5fd9375f3fe467263cff9cad9746fd4c4e1399440ea9563091c958ff90b5/s3transfer-0.7.0.tar.gz"
     sha256 "fd3889a66f5fe17299fe75b82eae6cf722554edca744ca5d5fe308b104883d2e"
+  end
+
+  resource "sentry-sdk" do
+    url "https://files.pythonhosted.org/packages/af/e3/78df2069dd13637349d4013c033b45b8ece6b13f676badd5f883ad630e7d/sentry-sdk-1.36.0.tar.gz"
+    sha256 "f32dd16547f2f45e1c71a96fd4a48925e629541f7ddfe3d5d25ef7d5e94eb3c8"
   end
 
   resource "simple-term-menu" do
@@ -577,22 +581,12 @@ class Dstack < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/5f/3f/04b3c5e57844fb9c034b09c5cb6d2b43de5d64a093c30529fd233e16cf09/yarl-1.9.2.tar.gz"
-    sha256 "04ab9d4b9f587c06d801c2abfe9317b77cdf996c65a90d5e84ecc45010823571"
-  end
-
-  resource "workflows.json" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/dstackai/dstack/e0014b9eea73014bff7f4d87688839bd8504adcc/cli/dstack/schemas/workflows.json"
-    sha256 "38cf87e5b1cd73c7e6d5ff5e43a6e793a7fad90c904b628b75a1013de52d9ab0"
+    url "https://files.pythonhosted.org/packages/ca/f7/2af788563995eeec32b920c0640a6bc54777c89c780030a7754f95166b7f/yarl-1.9.3.tar.gz"
+    sha256 "4a14907b597ec55740f63e52d7fee0e9ee09d5b9d57a4f399a7423268e457b57"
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.12")
-    venv.pip_install resources.reject { |r| r.name == "workflows.json" }
-    venv.pip_install_and_link buildpath
-
-    site_packages = Language::Python.site_packages("python3.12")
-    (libexec/site_packages/"dstack/schemas").install resource("workflows.json")
+    virtualenv_install_with_resources
   end
 
   test do
