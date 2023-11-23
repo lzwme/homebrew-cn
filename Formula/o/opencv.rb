@@ -23,6 +23,7 @@ class Opencv < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "ceres-solver"
   depends_on "eigen"
   depends_on "ffmpeg"
@@ -37,7 +38,6 @@ class Opencv < Formula
   depends_on "openjpeg"
   depends_on "openvino"
   depends_on "protobuf"
-  depends_on "python-setuptools"
   depends_on "python@3.12"
   depends_on "tbb"
   depends_on "vtk"

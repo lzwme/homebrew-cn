@@ -1,19 +1,19 @@
 class Geoip2fast < Formula
   desc "GeoIP2 country/ASN lookup tool"
   homepage "https://github.com/rabuchaim/geoip2fast"
-  url "https://files.pythonhosted.org/packages/96/c3/2abed46ccfec1f1c875d8f8e841e6bbaf33c471ccdfac12f559db70d17a2/geoip2fast-1.1.8.tar.gz"
-  sha256 "e24f578ceae8dd6d56c7b625f7c82f66d70fd2300df1b30e10b4e3c797ccf9ae"
+  url "https://files.pythonhosted.org/packages/27/48/b0477a7117b695dfe89eec0538abb0d66175cd7794060dcf5e3e57e2cfc6/geoip2fast-1.1.9.tar.gz"
+  sha256 "3ece4b07d7df1924b91d989921f8f3a219297a47b42c1ca8d2a12b9742bbcbf0"
   license "MIT"
   head "https://github.com/rabuchaim/geoip2fast.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0f999bb4afaa29f86f033fdbc6316b289e71a1c2b0158d0985fb4e7d63e4598d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "36d87744e7fd44aaca31dc8538c6dbe0250068da43e344b6e7c6c23976cee444"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2036fd43b13e7311d81b775b1185746b20cb409b9ffaaee3938374a9916bb037"
-    sha256 cellar: :any_skip_relocation, sonoma:         "864e66a3cd21d3727e7ad611a22c3aae0188794c9cedc8802a66945ff4e381a8"
-    sha256 cellar: :any_skip_relocation, ventura:        "7d1a34faf1dfc058f3a3545b43ec35cca56b78025e1f11d164de62cacbcfd58a"
-    sha256 cellar: :any_skip_relocation, monterey:       "4af043208658bd0ce2391bf72d5e99cdba9a516d4fc7d521b4ff5a0c31666247"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1321f2a461559db9a056caaee33e308e05e62134c4d9d1bdf2f2c4f0b7e0c92f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b8f2d9ae48a1305f2b369ed1ea21a709d5ca5ea78e7c96e42d3d694a3b83189d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f0a659e0504a9c13d86b3027dcd7e400350686d7c6685b96df81c0e79536d653"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8aceaa615e2d15845b354f0940ce651772bf0a4bc8d160ccb685730420e2ef2e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6ba77e917eeb860df06145a9346463b7ee3936798103eb1120deb2d2daa4a04e"
+    sha256 cellar: :any_skip_relocation, ventura:        "20cfd30239b53d9f02d88160b26d093716f2544a971d0759be272861f480ae5f"
+    sha256 cellar: :any_skip_relocation, monterey:       "54e9cfed3fc76d85ace156e9487949d2e16d7aedc510195d13512e80af48e96e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0537f8cab5344f9e217a694673972b4ae2c59049fef97fd90c5c360f6091f54f"
   end
 
   depends_on "python-setuptools" => :build

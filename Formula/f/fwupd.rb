@@ -1,20 +1,19 @@
 class Fwupd < Formula
   desc "Firmware update daemon"
   homepage "https://github.com/fwupd/fwupd"
-  url "https://ghproxy.com/https://github.com/fwupd/fwupd/releases/download/1.9.8/fwupd-1.9.8.tar.xz"
-  sha256 "6060075ce02ab11c66c96d6ca689c75f3abc909730c7279c5edd8cf5bfaed46a"
+  url "https://ghproxy.com/https://github.com/fwupd/fwupd/releases/download/1.9.9/fwupd-1.9.9.tar.xz"
+  sha256 "dd31c25b916005376be7ba31aa8e8d8f14eb2acabc24482412aaa2c88b7796e6"
   license "LGPL-2.1-or-later"
   head "https://github.com/fwupd/fwupd.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "1e049ad4cf51a9113a159e7cf248446300420acf210ba8728b2c88cc4369b3cd"
-    sha256 arm64_ventura:  "740333b1d8dc19652c3d52289181f76a2b8c4307a81aae37318cd4172dd94f6d"
-    sha256 arm64_monterey: "d73512dc2de94b8237861dee26146d41fb0c79a5cfc66648d176455cb19c9887"
-    sha256 sonoma:         "9857d0f1d567dc8893311eaf126c0708d5cf6e9786a8cef935cdecd0c2677d44"
-    sha256 ventura:        "6a2f191eb1eaaab288cd298fe2933e917ca72f0e68f8e9e16080406bde95f3a1"
-    sha256 monterey:       "56b8c797f7d274c7749d175509f42a5f8d1b5336fc250bc4dc851663ec1b06ef"
-    sha256 x86_64_linux:   "0b0cfddea45cf216436d3e2f17745d4da693eaba1b33d0d1a39e195f2a920d87"
+    sha256 arm64_sonoma:   "791e4de4f8adce81402c6c520ceece1e858def664799696e300b6fa86e072812"
+    sha256 arm64_ventura:  "32233825ba647ffd61d7c20927b681932422f51f83ae3af51ad27dc102bdcb2b"
+    sha256 arm64_monterey: "2c33ebd6359c7d419349fe77b64dc45fc6fa898850df71c139f6d5dac1a1ebec"
+    sha256 sonoma:         "b7541379338fe891e659c798a815c6a7605c7a5270007363b66643093403644e"
+    sha256 ventura:        "b1af103ed95436738636c6558a239a484d8e0c45d2c32cf4007b3d739ac26c84"
+    sha256 monterey:       "e4f4bea3b21e6bdd43387b75dc59b4248144c4dc37b346649577a410667e3a30"
+    sha256 x86_64_linux:   "6717a177fc250a2095767eb3431e75628cf77cae566af17b6b511bd6ff40d529"
   end
 
   depends_on "gi-docgen" => :build
@@ -43,6 +42,13 @@ class Fwupd < Formula
 
   def python3
     "python3.12"
+  end
+
+  # Fix meson build issue
+  # upstream PR ref, https://github.com/fwupd/fwupd/pull/6433
+  patch do
+    url "https://github.com/fwupd/fwupd/commit/8621c3039a10792ee4dfb7c461bb5e9dcffef4d5.patch?full_index=1"
+    sha256 "83f7c244e41dfeec290ab52740df0b83979f3ef36c2d361f7dd077e30c237c7d"
   end
 
   def install

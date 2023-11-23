@@ -1,6 +1,4 @@
 class CfnFlip < Formula
-  include Language::Python::Virtualenv
-
   desc "Convert AWS CloudFormation templates between JSON and YAML formats"
   homepage "https://github.com/awslabs/aws-cfn-template-flip"
   url "https://files.pythonhosted.org/packages/ca/75/8eba0bb52a6c58e347bc4c839b249d9f42380de93ed12a14eba4355387b4/cfn_flip-1.3.0.tar.gz"
@@ -9,23 +7,28 @@ class CfnFlip < Formula
   revision 1
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bfa8ad344050b051403b4e0e17b16e727c23b31e053b344efa306ca1b4c5dc13"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7fbb6d7209b9ea5d7d80515f120ad7f2202cef042b4991e4b569ed7f48c6548"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e1f83c3d97daf47b758ebe6055d49715208911ac59e49d2f962641eaae21b406"
-    sha256 cellar: :any_skip_relocation, sonoma:         "52d100482291788d00bf2514cb5bb39339fc6add1872a5d348297e099614875c"
-    sha256 cellar: :any_skip_relocation, ventura:        "25467adf968cf84863633dcc0f4214a704b57457d523979b08ceca02287dbd65"
-    sha256 cellar: :any_skip_relocation, monterey:       "792758b0485219c76a998bc0e59a32a824b6d1477b7c26e243ee1e64ab44217c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea89f0b93ab362a699c81b6663f8d79749a824d445d9a32630490d960d311816"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "37653f7ba16c65028c10b82843c3d1ea7e4a3fea47c53a7054f5863fba687bae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89737e5c00443baae9e9f367370d52f27fe9e236a817a74f372ebe05d00db2c9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "11a008eeffc4213639858877bce6d69ad61de8e0a38a419b4250eb6b7bb682b2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e7954930392be2b7df263551db02ca0c99a728bdb0e1dafdac66fbfdd4d2a84a"
+    sha256 cellar: :any_skip_relocation, ventura:        "f6b900069af123f2ced804365ea70e4b8bb3a7faf34dfade93be1835a199bc1c"
+    sha256 cellar: :any_skip_relocation, monterey:       "01d94ff67e1a59cb14b1e96d7c4f2f251a1c9aa2c6755357b7d4d56a7165dfea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3bc96af186bfe2d9498b7ba8ba5b34f01c7d39169189bfa7cd5563d92e5b952b"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python-click"
   depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

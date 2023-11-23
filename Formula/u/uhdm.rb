@@ -6,16 +6,17 @@ class Uhdm < Formula
   url "https://ghproxy.com/https://github.com/chipsalliance/UHDM/archive/refs/tags/v1.80.tar.gz"
   sha256 "e28cbae0e8bccc2c428356b109c254fe51169839bc55dd1091de9f24406a00f8"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/chipsalliance/UHDM.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c597a3f1ff18f9f9598c60bae4f459c5ec60d5542316f03ba9836827d499c1ec"
-    sha256 cellar: :any,                 arm64_ventura:  "dd87001bf1103eddd6f6547729b694c5794c4eb9f11c14944011a5e48d2f67e4"
-    sha256 cellar: :any,                 arm64_monterey: "2606850254b4c53b17d6c761cbc45eef8705e192bfcb9bb63844e22527ee598b"
-    sha256 cellar: :any,                 sonoma:         "94bca3ce0bc7870ebc8fc95bc55199905f82067572b01d46a390fa77f03e8917"
-    sha256 cellar: :any,                 ventura:        "88165833dbea98e7c1424f4b4f4b82be3129727c21217e1b911fbb083536b55c"
-    sha256 cellar: :any,                 monterey:       "46cc2c3d430056a2816c811a916abc7202b153e302417f2cb588a2d75d36cd13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0540b3715152c7fa3d2513483f72be4d5d3e729d6c505c8e499f347cc8ae63ea"
+    sha256 cellar: :any,                 arm64_sonoma:   "0058b4ec3185a43bc5866dd283d02f044d1a544b3878d043452b301a89672861"
+    sha256 cellar: :any,                 arm64_ventura:  "fef58ac455328f5afb82c0047c6c239f98922848eb5aae0c3163d2dd31cfd21b"
+    sha256 cellar: :any,                 arm64_monterey: "dd32952e15db240dea406164e9b3e837b64407115a1e5a4b0b7d0a33ff470d03"
+    sha256 cellar: :any,                 sonoma:         "6def05494db99b36a7dea4c3e0d0e698fd2d416fb9e908a4b88fb3eb5852e708"
+    sha256 cellar: :any,                 ventura:        "7908bdf1e4b54278494027a12d25cf460f5fa9c733145271655a38319e6b0301"
+    sha256 cellar: :any,                 monterey:       "4d195f6f189bb871f2f8a97f769a9bb74b4188d905661d9c31fa47db89d6f255"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33c2cf9257c224ceb88ae3e9067e01144429fc2403d59fd47bd9182bf5b015e8"
   end
 
   depends_on "cmake" => :build

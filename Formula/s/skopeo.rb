@@ -1,20 +1,18 @@
 class Skopeo < Formula
   desc "Work with remote images registries"
   homepage "https://github.com/containers/skopeo"
-  url "https://ghproxy.com/https://github.com/containers/skopeo/archive/refs/tags/v1.13.3.tar.gz"
-  sha256 "0b788fc5725ac79327f7c29797821a2bafc1c3c87bbfcb2998c2a1be949e314d"
+  url "https://ghproxy.com/https://github.com/containers/skopeo/archive/refs/tags/v1.14.0.tar.gz"
+  sha256 "062ca24dcc106c3758e90a4af207b67166437ab71128bd33749b0414e0a42f79"
   license "Apache-2.0"
 
   bottle do
-    sha256 arm64_sonoma:   "e3716b6713a5b71b8e43ff9a49dcd302e58713c5fb0c75c7bc727793a7c1f629"
-    sha256 arm64_ventura:  "1d994ad95fee2d772fc6d898ccc73a95dc36d89d2d006e74b59ef1975b20915a"
-    sha256 arm64_monterey: "f959986de44422fe153764522a42280f2379dfe4a86304feb47cfc0fbe6421cc"
-    sha256 arm64_big_sur:  "357eb35c2fced7a532d99989d4199b541db81004a13575801a57d52d7aa3ef54"
-    sha256 sonoma:         "8800f73910c034062271891f6d6e0ccb339bfcad8084d7f9721a8fb6d31e2ac7"
-    sha256 ventura:        "303dc9bd484c043e2f99a53c99f8d6d16c0dca970ad58022e8790c75d9a1ac9b"
-    sha256 monterey:       "7e9822bfc2cb9ba894b742818ea5a88e6ea2dae65541122a053226ab8678cd39"
-    sha256 big_sur:        "aace59677bbb4b09e547735ec09feeeaafcfd6961d4fa8ce369b07c855c087e1"
-    sha256 x86_64_linux:   "343ba543ce69fe7e5eb40dd00f8e91466da4a3fe63dec8bdf50d9be739ec55ca"
+    sha256 arm64_sonoma:   "1e38059439e585d3fca999b3bf1031590e6151fb0e4ec341a4d28aa1ad5d0c5f"
+    sha256 arm64_ventura:  "d15e5c5d55c9900d9c4e3a8411611cd7dfaccc1c63d1067bec791d6db889a7b3"
+    sha256 arm64_monterey: "75c5f3d70149e4fb002c16fddc37b28e97a1a2760634339c0b4d30ef089ba926"
+    sha256 sonoma:         "6b8876891a5dff56bd80d5269d09a268dddec5a5a845c0c801a4a2ed2d7a1833"
+    sha256 ventura:        "0686bf155b94815dc9f8fef1abfd322c3f80c398fb94567f975198ba83e24b55"
+    sha256 monterey:       "42c0a37751cc5a6826c0ef7a59c46d8f2428047462ed965fba7d33c89c664680"
+    sha256 x86_64_linux:   "09336203f9c537159af65395fe26286f91cd00d805f638617209aee49fe57809"
   end
 
   depends_on "go" => :build

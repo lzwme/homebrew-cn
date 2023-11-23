@@ -3,22 +3,20 @@ class Nbdime < Formula
 
   desc "Jupyter Notebook Diff and Merge tools"
   homepage "https://nbdime.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/12/ae/4c403b94984adaa3859a829d1b99e2bd8cf65c06c6cb950111467d4cbb39/nbdime-3.2.1.tar.gz"
-  sha256 "31409a30f848ffc6b32540697e82d5a0a1b84dcc32716ca74e78bcc4b457c453"
+  url "https://files.pythonhosted.org/packages/97/3f/8f926f0eba7b31a3c67a224e747b0e084c643180c7a7500f879f8bf7a09e/nbdime-4.0.1.tar.gz"
+  sha256 "f1a760c0b00c1ba9b4945c16ce92577f393fb51d184f351b7685ba6e8502098e"
   license "BSD-3-Clause"
-  revision 6
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c2f71ae956c43367b1a9b9edad31681cc3c028469c90ab48c0d42e08756e193e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3573b03e54a24c0ae72ea216bdabe45eec0bf61f27d8d4ca814295ecddb3b633"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "94cf4a59bfcf7801763067efceb3c1f55242781bd6976c17847ea04f62e5625f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9d2f11aac79b4bf903a57ddc20fc6d320c6bc55e99f9624bf2e577af2e8dc1fc"
-    sha256 cellar: :any_skip_relocation, ventura:        "a3cc690093aa2971c1b6675e8c45363b1ee5cbf362dd203a26db29165754c1c7"
-    sha256 cellar: :any_skip_relocation, monterey:       "52704dfd9ba79eeb55d2a1ab7d26fff324f27a3cb010b7be4edf5e07fd81fe16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23b4d44e363ddbad5b939a39681e98a043cf0a29fe4cbb1177984f97013e416f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "74306467ff5e6f94c21b708d9bb013eb18d1bde2312240dcd2d993ec3b10751c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b261b74c40dcd77207b98b6538a302ec68fb2e308f9911c842628f2cdd24a12"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "04cd1d5b2b66a02ebaec901fca8d27b9adcf4b9fa60f91c335faaa9af43032a1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "128ae01e650289c24844f53838849cbf9914fc26cb6567acc18cc39a721c2228"
+    sha256 cellar: :any_skip_relocation, ventura:        "004072f7a3ce7168b8bb62e46d051b6f9b4ca1be77e05af6a4d047adc194c031"
+    sha256 cellar: :any_skip_relocation, monterey:       "80629a210f677425dbfd4ac1563671ae18bc37a6a3d4b5a65445145250a51835"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "07ec505a09e8fd1af0edc3f6bb45df3270c8dc87e5d4e87c2d4e201d90c6a37f"
   end
 
-  depends_on "rust" => :build # for rpds-py
   depends_on "jupyterlab" # only to provide jupyter-server and nbconvert
   depends_on "python-certifi"
   depends_on "python@3.12"
@@ -26,8 +24,8 @@ class Nbdime < Formula
   depends_on "six"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
-    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
+    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
+    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
   resource "colorama" do
@@ -61,8 +59,8 @@ class Nbdime < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
+    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
   def python3
@@ -70,9 +68,11 @@ class Nbdime < Formula
   end
 
   def install
+    # We already have jupyterlab, but don't use --no-build-isolation since
+    # hatchling adds additional build deps
     inreplace "pyproject.toml",
-      'requires = ["jupyterlab~=3.0", "setuptools>=40.8.0", "wheel"]',
-      'requires = ["setuptools>=40.8.0", "wheel"]'
+      'requires = ["hatchling>=1.5.0", "jupyterlab>=4.0.0,<5"]',
+      'requires = ["hatchling>=1.5.0"]'
 
     virtualenv_install_with_resources
 

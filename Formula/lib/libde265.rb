@@ -1,18 +1,18 @@
 class Libde265 < Formula
   desc "Open h.265 video codec implementation"
   homepage "https://github.com/strukturag/libde265"
-  url "https://ghproxy.com/https://github.com/strukturag/libde265/releases/download/v1.0.13/libde265-1.0.13.tar.gz"
-  sha256 "b921bc90521f28914bbf0c638c436b79831857ca4f7af1f3dd4ce2228bf40cfd"
+  url "https://ghproxy.com/https://github.com/strukturag/libde265/releases/download/v1.0.14/libde265-1.0.14.tar.gz"
+  sha256 "99f46ef77a438be639aa3c5d9632c0670541c5ed5d386524d4199da2d30df28f"
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7b7c967d90b15aea2f9ff1fa55933cbc78f59d4c6ad048a1bf443d9cdf029850"
-    sha256 cellar: :any,                 arm64_ventura:  "c525955fce8a2ed32a39b0e2a8ebd6961111bd1837669d322cf625fe7063f0a6"
-    sha256 cellar: :any,                 arm64_monterey: "cacf5339101cbb767f8549f62360f1e3d77dbf35d10793da87243b3f1ec4d7ac"
-    sha256 cellar: :any,                 sonoma:         "6180cb068129c00d34a6740c5561a589b4543bffa113e01cc7d4f77e9a66dccd"
-    sha256 cellar: :any,                 ventura:        "87de0283611f30ad3ea12ca5558dd2e20ef90aede0be5be12dcd289e14d99ca4"
-    sha256 cellar: :any,                 monterey:       "bfd850c89bc435c78ff94b9dbdb68207da4c8bfa693dbc83d03d04055fba3eaa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9dc81c47c1b18dae592dc4e380bbf5a8edfaf226d3aee0a90a668c4f36035c2"
+    sha256 cellar: :any,                 arm64_sonoma:   "0be0b7a8497e2ec179a5ea96e0a7dc937df207f1ab488d5d0009ecc082597805"
+    sha256 cellar: :any,                 arm64_ventura:  "9581131acf8b1bd6b123f69b6494b9e3150c2cd302679d899579f408890d4b89"
+    sha256 cellar: :any,                 arm64_monterey: "1fe16ef408afbbc745f5fa2d35fbcc7b5edb68f54eddf9a1af61b0a90a88d0ac"
+    sha256 cellar: :any,                 sonoma:         "2ee68e781f874848e837e48d9267d132dd0f3ddeeb78b9a1fc466bd4f6441daf"
+    sha256 cellar: :any,                 ventura:        "477a583831cd2501c600da500b693540c467b07462a8d97fd45d60217c3e476e"
+    sha256 cellar: :any,                 monterey:       "814434a887fe79aa142c5cc994d381e5dc0f298d2655a917cc6133b455080265"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3933957dd1903a9418a71bc7d0a25b166ea8f8b7716cb58ff97242de5483a5f1"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.

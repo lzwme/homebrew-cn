@@ -1,11 +1,10 @@
 class Spidermonkey < Formula
   desc "JavaScript-C Engine"
   homepage "https://spidermonkey.dev"
-  url "https://archive.mozilla.org/pub/firefox/releases/91.13.0esr/source/firefox-91.13.0esr.source.tar.xz"
-  version "91.13.0"
-  sha256 "53be2bcde0b5ee3ec106bd8ba06b8ae95e7d489c484e881dfbe5360e4c920762"
+  url "https://archive.mozilla.org/pub/firefox/releases/115.5.0esr/source/firefox-115.5.0esr.source.tar.xz"
+  version "115.5.0"
+  sha256 "db3f710209b74c0416834f76a9cfa42da65a833bf7cf79116ff2c43c4946a728"
   license "MPL-2.0"
-  revision 3
   head "https://hg.mozilla.org/mozilla-central", using: :hg
 
   # Spidermonkey versions use the same versions as Firefox, so we simply check
@@ -16,62 +15,78 @@ class Spidermonkey < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "29a1f7b672b200702a8099e354447a64cdd9a6898c7705e24c366a7a0288e5d3"
-    sha256 cellar: :any,                 arm64_monterey: "0b8aa6694a714be0056dbfa2bd89ff986d54f00d85c399236404672ac3721895"
-    sha256 cellar: :any,                 arm64_big_sur:  "d861fe8fda486a803a6a9a053b3b68a8d9f0eb0a3e289799a63cb75435e9dc71"
-    sha256 cellar: :any,                 ventura:        "a96e9c8f66db222c7c1edc0cc547fbb23ceea26fa2ceb9946102d122f3ff98aa"
-    sha256 cellar: :any,                 monterey:       "c84fd9a36d06dd5c6c995d72d7e874f514d99790257f4b8e404368d13416c04a"
-    sha256 cellar: :any,                 big_sur:        "fc49a115c213765bdec4a17ba700bbf8ad34d64b97d148a10466e6940545c4e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d792e70d4ff39c9e4f09d4629ffe6f5952e94ec2b09e296af0ad03c0fcfcf12"
+    sha256 cellar: :any, arm64_sonoma:  "c0ec762951df07c64ed0f70d1e319bd6104d5f3fa09029cb36f8a53d15f1e7e5"
+    sha256 cellar: :any, arm64_ventura: "1344585e70d5539656c48b84a2bf5ccc9402c3260d2b2a9d673b0ecae659975b"
+    sha256 cellar: :any, sonoma:        "df8ab61ba0a7468446f2d2e2335f1ae1272aefae68c57efa9246924e248b65f1"
+    sha256 cellar: :any, ventura:       "1b6b8b743b604860a77ed25eccc6fae67a65fd6497d1bc977930961eff7d52d0"
+    sha256               x86_64_linux:  "7f5b65933d97ce1e5be3b33c4e8547c471f0e5e2f52990d1a5a727f172e4595d"
   end
 
-  depends_on "autoconf@2.13" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.9" => :build
+  depends_on "python@3.11" => :build # https://bugzilla.mozilla.org/show_bug.cgi?id=1857515
   depends_on "rust" => :build
-  depends_on "icu4c"
-  depends_on "nspr"
+  depends_on macos: :ventura # minimum SDK version 13.3
   depends_on "readline"
 
   uses_from_macos "llvm" => :build # for llvm-objdump
   uses_from_macos "m4" => :build
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "icu4c"
+    depends_on "nspr"
+  end
+
   conflicts_with "narwhal", because: "both install a js binary"
 
   # From python/mozbuild/mozbuild/test/configure/test_toolchain_configure.py
   fails_with :gcc do
-    version "6"
-    cause "Only GCC 7.1 or newer is supported"
+    version "7"
+    cause "Only GCC 8.1 or newer is supported"
+  end
+
+  # Apply patch used by `gjs` to bypass build error.
+  # ERROR: *** The pkg-config script could not be found. Make sure it is
+  # *** in your path, or set the PKG_CONFIG environment variable
+  # *** to the full path to pkg-config.
+  # Ref: https://bugzilla.mozilla.org/show_bug.cgi?id=1783570
+  # Ref: https://discourse.gnome.org/t/gnome-45-to-depend-on-spidermonkey-115/16653
+  patch do
+    on_macos do
+      url "https://github.com/ptomato/mozjs/commit/9f778cec201f87fd68dc98380ac1097b2ff371e4.patch?full_index=1"
+      sha256 "a772f39e5370d263fd7e182effb1b2b990cae8c63783f5a6673f16737ff91573"
+    end
   end
 
   def install
-    # Avoid installing into HOMEBREW_PREFIX.
-    # https://github.com/Homebrew/homebrew-core/pull/98809
-    ENV["SETUPTOOLS_USE_DISTUTILS"] = "stdlib"
+    # Help the build script detect ld64 as it expects logs from LD_PRINT_OPTIONS=1 with -Wl,-version
+    if DevelopmentTools.clang_build_version >= 1500
+      inreplace "build/moz.configure/toolchain.configure", '"-Wl,--version"', '"-Wl,-ld_classic,--version"'
+    end
 
-    # Remove the broken *(for anyone but FF) install_name
-    # _LOADER_PATH := @executable_path
-    inreplace "config/rules.mk",
-              "-install_name $(_LOADER_PATH)/$(SHARED_LIBRARY) ",
-              "-install_name #{lib}/$(SHARED_LIBRARY) "
-
-    inreplace "old-configure", "-Wl,-executable_path,${DIST}/bin", ""
-
-    cd "js/src"
-    system "autoconf213"
     mkdir "brew-build" do
-      system "../configure", "--prefix=#{prefix}",
-                             "--enable-optimize",
-                             "--enable-readline",
-                             "--enable-release",
-                             "--enable-shared-js",
-                             "--disable-bootstrap",
-                             "--disable-jemalloc",
-                             "--with-intl-api",
-                             "--with-system-icu",
-                             "--with-system-nspr",
-                             "--with-system-zlib"
+      args = %W[
+        --prefix=#{prefix}
+        --enable-optimize
+        --enable-readline
+        --enable-release
+        --enable-shared-js
+        --disable-bootstrap
+        --disable-debug
+        --disable-jemalloc
+        --with-intl-api
+        --with-system-zlib
+      ]
+      if OS.mac?
+        # Force build script to use Xcode install_name_tool
+        ENV["INSTALL_NAME_TOOL"] = DevelopmentTools.locate("install_name_tool")
+      else
+        # System libraries are only supported on Linux and build fails if args are used on macOS.
+        # Ref: https://bugzilla.mozilla.org/show_bug.cgi?id=1776255
+        args += %w[--with-system-icu --with-system-nspr]
+      end
+
+      system "../js/src/configure", *args
       system "make"
       system "make", "install"
     end
@@ -80,6 +95,7 @@ class Spidermonkey < Formula
 
     # Add an unversioned `js` to be used by dependents like `jsawk` & `plowshare`
     ln_s bin/"js#{version.major}", bin/"js"
+    return unless OS.linux?
 
     # Avoid writing nspr's versioned Cellar path in js*-config
     inreplace bin/"js#{version.major}-config",

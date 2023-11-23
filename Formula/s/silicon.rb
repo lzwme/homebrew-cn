@@ -1,21 +1,18 @@
 class Silicon < Formula
   desc "Create beautiful image of your source code"
   homepage "https://github.com/Aloxaf/silicon/"
-  url "https://ghproxy.com/https://github.com/Aloxaf/silicon/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "784a6f99001f2000422b676e637fe83a5dc27f5fc55ad33e227c882ce20e6439"
+  url "https://ghproxy.com/https://github.com/Aloxaf/silicon/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "815d41775dd9cd399650addf8056f803f3f57e68438e8b38445ee727a56b4b2d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e7dc4053eb49884338c705a8263c5a420e6daec91d7617370a9f5b6a14d1e9cc"
-    sha256 cellar: :any,                 arm64_ventura:  "17a640d9f978ea53a493a0a25a9933415d75ae33c9603df132a7ea5a708869eb"
-    sha256 cellar: :any,                 arm64_monterey: "7f73cd522e22922998f413298446ad3ce5833d27ada76ff274f463946f609a4f"
-    sha256 cellar: :any,                 arm64_big_sur:  "c7f1bdcc81caf5fe5be38bf12a6cad388d2f4af2e00425984b957601a3b95cfc"
-    sha256 cellar: :any,                 sonoma:         "4c4ec7a3a7a04c9954b93b9393148df215c0ea1a648de049acedbafc26bf768a"
-    sha256 cellar: :any,                 ventura:        "b2d7ef24d95632abf6b2c5c0201f8e67d72c8e062e89cd211f2d9d12da7d608f"
-    sha256 cellar: :any,                 monterey:       "07715b57308906eb249be0ed024f2654d5d465902a50dbc330920a78aa0224c7"
-    sha256 cellar: :any,                 big_sur:        "fb26a58ede0e4e3dd1c3d4e2868c3aff83612074e1fb30cf672921a573915ca7"
-    sha256 cellar: :any,                 catalina:       "e13e8d92e068ed65cb01d3f99ecead8f44051cc31082346ee75f1c20ca2d86f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "268361c7b38595c9856a75173ff14d537224a7e3102f2ea447ecdb1c7985bd62"
+    sha256 cellar: :any,                 arm64_sonoma:   "88fa342ff94f00149044ecd6f5fb126e104f13058b784e17cfe344eb6ca50b6b"
+    sha256 cellar: :any,                 arm64_ventura:  "766d31b996f3b41dd4a8b1dd34e7ff6a7fe68d6f05dd27f7e7205f7176b892c5"
+    sha256 cellar: :any,                 arm64_monterey: "ca9541fb80cb28ef973767d8dd0f1db2979f40653ca253b67491f3ea9f984259"
+    sha256 cellar: :any,                 sonoma:         "218d94bdbf0f5c1e6ceff4bad2a5945094b1a7baadef0177c1ad3f9cde18fc1b"
+    sha256 cellar: :any,                 ventura:        "051ac7f4d0d21dda5cb5a9372b0d9dedacf3c8b37fe7ae35b1860101c8ec7aa3"
+    sha256 cellar: :any,                 monterey:       "310caff3239a9e6b7bd16db58bf203224d51ea7f0b12fdf5acfe3f0522e72b12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2fa0cec538c14c858cd237c54b4660861fd9f0d60807134fde42fe971f6b8ee6"
   end
 
   depends_on "rust" => :build

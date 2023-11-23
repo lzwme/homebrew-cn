@@ -1,6 +1,4 @@
 class Bumpversion < Formula
-  include Language::Python::Virtualenv
-
   desc "Increase version numbers with SemVer terms"
   homepage "https://pypi.python.org/pypi/bumpversion"
   # maintained fork for the project
@@ -11,20 +9,25 @@ class Bumpversion < Formula
   revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4e11723522beaffcdca4d1914d36d0ae5369248a6c3749edddb4e12bc656b78a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "873410ca4e9032ab9e70b04af7d04d481bbf6a142bdeb45ffe79c14d4471c827"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d8a26b282fd5d8c23e7cd37c709fae5c4da19b962c3548654a6374051d5fbe87"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6f0af6ac266ccd03452b59c5de0c0dc0c27bf611407318c3a0b615e9db3f7ec1"
-    sha256 cellar: :any_skip_relocation, ventura:        "3b9d16690e15616243b507edb4638ee41b625dc84bc8fb8fb2de883459632118"
-    sha256 cellar: :any_skip_relocation, monterey:       "d41942f1e6929d68fcb17ae927388f37eb636afdd21272d0bb92d7fb2b7372a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0bbaf895f4bc339e8e7c9f724767a0b495a90632bf1a7fc55ea08073da23edd"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8074afa174f368b16b2fd1ad69dbcb6e2638ab933a164141437c2b55a173312e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c7ac3256bed2acde218fb3b3140ff2e8b44b41c0857c74dcdacb93a5f07aa058"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4a38fec8fdbccea9fab6a2006c427b31119a0f9371f479d8bce52f31c94e7464"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6547242b034e02eb54d814c4f4a94bc77aea66fbe6c8d0c4d188d6eee7ee1fea"
+    sha256 cellar: :any_skip_relocation, ventura:        "bd90b97e2a19061e7bcf0bdfe209e68fb57dfb57f6151b5451a7c1eb74e25915"
+    sha256 cellar: :any_skip_relocation, monterey:       "79bb3d11f64263e84fb45010f7a489bcd1cebd4330c861ca8c1bf87eb5534005"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c32d99fe94c3b0433a2e2c27562fac12e9d2cf3809b329e0c285898366277acf"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

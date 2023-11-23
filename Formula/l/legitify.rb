@@ -6,6 +6,11 @@ class Legitify < Formula
   license "Apache-2.0"
   head "https://github.com/Legit-Labs/legitify.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d43b5a925f494950fbe650a31cb098238f2af4ad1e20c4a9f2056e03befa5e98"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e68ee8b4391dcf8625e77639a2b22390ed28345d27a664ee3516531522bfd4e2"

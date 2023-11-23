@@ -130,6 +130,7 @@ Homebrew-homebrew-core/Formula/a/ansible.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible@2.9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible@6.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible@7.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/ansible@8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansifilter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansilove.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ansiweather.rb, Homebrew/homebrew-core, 1
@@ -812,6 +813,7 @@ Homebrew-homebrew-core/Formula/c/checkmake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/checkov.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/checkstyle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cheops.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cherrybomb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cherrytree.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chezmoi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chezscheme.rb, Homebrew/homebrew-core, 1
@@ -5070,10 +5072,12 @@ Homebrew-homebrew-core/Formula/p/python-markdown.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-markupsafe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-matplotlib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-mpmath.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-msgpack.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-mutagen.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-networkx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-packaging.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pathspec.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-pbr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pluggy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-psutil.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pycurl.rb, Homebrew/homebrew-core, 0
@@ -5108,6 +5112,7 @@ Homebrew-homebrew-core/Formula/q/q.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qalculate-gtk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qalculate-qt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qbe.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/q/qbittorrent-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qbs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qca.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qcachegrind.rb, Homebrew/homebrew-core, 0
@@ -5782,6 +5787,7 @@ Homebrew-homebrew-core/Formula/s/spice-protocol.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spicetify-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spidermonkey.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spidermonkey@78.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/spidermonkey@91.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spigot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spim.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spin.rb, Homebrew/homebrew-core, 1
@@ -6050,6 +6056,7 @@ Homebrew-homebrew-core/Formula/t/teip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tektoncd-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/teku.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/telegraf.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/telegram-downloader.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/teleport.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/teller.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/telnet.rb, Homebrew/homebrew-core, 1

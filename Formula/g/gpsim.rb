@@ -26,8 +26,6 @@ class Gpsim < Formula
   depends_on "readline"
 
   def install
-    ENV.cxx11
-
     system "./configure", "--disable-gui",
                           "--disable-shared",
                           *std_configure_args

@@ -1,5 +1,5 @@
 class Tfmigrate < Formula
-  desc "Terraform state migration tool for GitOps"
+  desc "Terraform/OpenTofu state migration tool for GitOps"
   homepage "https://github.com/minamijoyo/tfmigrate"
   url "https://ghproxy.com/https://github.com/minamijoyo/tfmigrate/archive/refs/tags/v0.3.19.tar.gz"
   sha256 "2175782a4cfba523ebf0b075293306fcd62a79242d16e45bc2a24729dcb6a8ed"
@@ -17,14 +17,26 @@ class Tfmigrate < Formula
   end
 
   depends_on "go" => :build
+  depends_on "opentofu" => :test
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
-    # rover hard depends on terraform, so we can't run the full test
-    # opentf support issue, https://github.com/minamijoyo/tfmigrate/issues/162
+    ENV["TFMIGRATE_EXEC_PATH"] = "tofu"
+
+    (testpath/"tfmigrate.hcl").write <<~EOS
+      migration "state" "brew" {
+        actions = [
+          "mv aws_security_group.foo aws_security_group.baz",
+        ]
+      }
+    EOS
+    output = shell_output(bin/"tfmigrate plan tfmigrate.hcl 2>&1", 1)
+    assert_match "[migrator@.] compute a new state", output
+    assert_match "No state file was found!", output
+
     assert_match version.to_s, shell_output(bin/"tfmigrate --version")
   end
 end

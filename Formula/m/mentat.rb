@@ -3,26 +3,27 @@ class Mentat < Formula
 
   desc "Coding assistant that leverages GPT-4 to write code"
   homepage "https://www.mentat.ai"
-  url "https://files.pythonhosted.org/packages/60/10/35e95a04333ce58c5db0c645f776aa49361676957b03e2cf3edc9799dd54/mentat-1.0.2.tar.gz"
-  sha256 "afead6c532cbe20d6a2637dea7d51fe337736782127a7a2736ae24f4ffed3ef9"
+  url "https://files.pythonhosted.org/packages/93/92/e6494fcddfc92ea80196d7b94aed9b808fd278f00dbd30caf5fdffa65496/mentat-1.0.3.tar.gz"
+  sha256 "ff1f821efcdbec7199445ad794e94dd0d9e45d7911b4d84162d57ac8664a3135"
   license "Apache-2.0"
   head "https://github.com/AbanteAI/mentat.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "ddd29115981cae2bfadb1fef6f0347f057b12f078485be34cfeffcfadfc89098"
-    sha256 cellar: :any,                 arm64_ventura:  "42d9752d8e85fef7379ad772887cc4e2837cc3f368bebb7224b0b88241a158d7"
-    sha256 cellar: :any,                 arm64_monterey: "7184fefa3637dcc2f31ee6b9fb80bfb5e701a5591283d6fdcbc68e09e91ae376"
-    sha256 cellar: :any,                 sonoma:         "bb6f780e2b94d41208af74c8b42ecd28aeea74b1273ee246189b9f43830e17a7"
-    sha256 cellar: :any,                 ventura:        "2d2c83bbe1109f802b362b67b2f7632f5ae1846a20c5ccec41d03681895fa3a3"
-    sha256 cellar: :any,                 monterey:       "01d34ff303d287b2e06a2972657f940a59dd50179573d9efd9ffdcef0a3e2e65"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db527f37ae0cda52b1a81fdf5aad9f49accbad782b3ac4ffb56511f8f6b4f9ec"
+    sha256 cellar: :any,                 arm64_sonoma:   "97b75d5d69687b734789eaa60d5b677b3abf753b9d08b9f19667413e3adcdffe"
+    sha256 cellar: :any,                 arm64_ventura:  "4b353eb24e42e106c40fdd61bc5a2aa329eef405766beafd764ec97e2c485b0a"
+    sha256 cellar: :any,                 arm64_monterey: "3485e1f3c225020a5fd342df380aae828fab03dffa51663078bee296a7e38684"
+    sha256 cellar: :any,                 sonoma:         "f278b761adac1c50de9cbed668ac8101eb872668929cbe536ff7cc53eaba351f"
+    sha256 cellar: :any,                 ventura:        "cbc42d54d31b71e6dbb533e9768aa06993d80fb3fc2af393a94eca1041bfda61"
+    sha256 cellar: :any,                 monterey:       "e3b13b62d384eabb8500bfce67e744edcaf178de9aa1e622425adc17ef81ecec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "420bb0e1ced698b0ea395f5cf3e856217028660bd183bf21052caa7fb4d52d77"
   end
 
   depends_on "rust" => :build # for tiktoken
   depends_on "numpy"
   depends_on "pygments"
   depends_on "python-certifi"
+  depends_on "python-jinja"
+  depends_on "python-markupsafe"
   depends_on "python-packaging"
   depends_on "python-typing-extensions"
   depends_on "python@3.12"
@@ -154,13 +155,13 @@ class Mentat < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/2e/1c/21f2379555bba50b54e5a965d9274602fe2bada4778343d5385840f7ac34/wcwidth-0.2.10.tar.gz"
-    sha256 "390c7454101092a6a5e43baad8f83de615463af459201709556b6e4b1c861f97"
+    url "https://files.pythonhosted.org/packages/d7/12/63deef355537f290d5282a67bb7bdd165266e4eca93cd556707a325e5a24/wcwidth-0.2.12.tar.gz"
+    sha256 "f01c104efdf57971bcb756f054dd58ddec5204dd15fa31d6503ea57947d97c02"
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/5f/3f/04b3c5e57844fb9c034b09c5cb6d2b43de5d64a093c30529fd233e16cf09/yarl-1.9.2.tar.gz"
-    sha256 "04ab9d4b9f587c06d801c2abfe9317b77cdf996c65a90d5e84ecc45010823571"
+    url "https://files.pythonhosted.org/packages/ca/f7/2af788563995eeec32b920c0640a6bc54777c89c780030a7754f95166b7f/yarl-1.9.3.tar.gz"
+    sha256 "4a14907b597ec55740f63e52d7fee0e9ee09d5b9d57a4f399a7423268e457b57"
   end
 
   def install

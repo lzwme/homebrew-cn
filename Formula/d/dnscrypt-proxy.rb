@@ -12,15 +12,14 @@ class DnscryptProxy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "47bd1911bc58efc2b21929d2805ea2b8f59b055b79d852bb3fbeb7c80ec21bd8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "288115da2b5dbd3ba90f2d6479dbd1697a6ca13da9bdac901866edd44cea8f99"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "288115da2b5dbd3ba90f2d6479dbd1697a6ca13da9bdac901866edd44cea8f99"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "288115da2b5dbd3ba90f2d6479dbd1697a6ca13da9bdac901866edd44cea8f99"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6bd9b2789f4ce963a4abcd06e2333b1d5350437c0278b8cb25bf8eb8444e534e"
-    sha256 cellar: :any_skip_relocation, ventura:        "d520dcc7b0c3183221fbda50ed0847ff0a1fd10f2dbde120ce45e8ab4799585f"
-    sha256 cellar: :any_skip_relocation, monterey:       "d520dcc7b0c3183221fbda50ed0847ff0a1fd10f2dbde120ce45e8ab4799585f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d520dcc7b0c3183221fbda50ed0847ff0a1fd10f2dbde120ce45e8ab4799585f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fea5a34cbe6e64ea9163827d9cfbf84b2c415f6f10ecc9dcd1ba6ead3a8a633d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5ba1ce4730b6a4cfc8c9bc0dee6673fa4976fd93210a9cfd0bda31cf323d7788"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1347d13d9ace17fc3ae034f12a3accff227cc6ae72a25a10981456fbd6de7d26"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed1192dffd1484ecfb6a5802a4e09ad00a16f5d907a09399cfc4132487ad8265"
+    sha256 cellar: :any_skip_relocation, sonoma:         "378fc9e369a39cd6a5274b8a6b61fecb9b409b36730aa1b8458fa7af78fe9495"
+    sha256 cellar: :any_skip_relocation, ventura:        "c27f790ca8f3e0c04b6f6cfc5fc0ccf7527d1e3447bd8728f15398731c008e19"
+    sha256 cellar: :any_skip_relocation, monterey:       "3624afaabee33cee1775589243dd20a6dfb9191bd5589d1a650ee3ee95d660e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6deb6772518d34e6845e043bf3eb00bfc4831d7a2a422156cf5ba50388b88297"
   end
 
   depends_on "go" => :build
@@ -61,6 +60,7 @@ class DnscryptProxy < Formula
     run [opt_sbin/"dnscrypt-proxy", "-config", etc/"dnscrypt-proxy.toml"]
     keep_alive true
     require_root true
+    process_type :background
   end
 
   test do

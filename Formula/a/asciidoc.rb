@@ -1,6 +1,4 @@
 class Asciidoc < Formula
-  include Language::Python::Virtualenv
-
   desc "Formatter/translator for text files to numerous formats"
   homepage "https://asciidoc-py.github.io/"
   url "https://files.pythonhosted.org/packages/8a/57/50180e0430fdb552539da9b5f96f1da6f09c4bfa951b39a6e1b4fbe37d75/asciidoc-10.2.0.tar.gz"
@@ -14,22 +12,27 @@ class Asciidoc < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7d572ef00422334fba5642887f4105eb6d966bcc0f7e1ed72e3c1a7d81a3e6d1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a63d6fe4b1b62644a832dc32e4b5cc568626237339f82efea9b33933e957a60"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d6f388fc22a7cb0cf189c1f60cda0727ebab34d87fea51a3b0680702ac5c0ff5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7b599255846848071776a5238e0c505956759e7066bc4e7f92399014f56c4d7b"
-    sha256 cellar: :any_skip_relocation, ventura:        "a4c3074ac129b19507523cf0abe33d97fe7eaa5223c05602e5f51ffc17ccd059"
-    sha256 cellar: :any_skip_relocation, monterey:       "4bd1bb2811ac2d28fc822776699e5e14c0533bf7eb3ac60e97b71c596b950b30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "639ca69c03c6ff8b653b02fde67b3bfa828c8610956b9ae930e9cfecbd16911e"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c95543879c161bccf01990df57089827d585cc6a3e88a481e58f4980c6b1e763"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b59530ee279f26e422727e2f5c7ea0c8251629b4a12ea3ff3df2201788942ae"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "06e286664c74ca53ffa2923c2d8fbdf2a853e65138580e59f8cff0423bcb2ca3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c9d131b85a4f4dd9b1c2eef29bff919346a320f616cb1d7c834f4d2216ffea86"
+    sha256 cellar: :any_skip_relocation, ventura:        "274217e7cc92359fbaa63418b1bfcd8adc3c53239f1907e1fdec85ba69cdab9c"
+    sha256 cellar: :any_skip_relocation, monterey:       "a0d321c181a191b9e576be38a6e7b02780fe3d3d97877a7e6602067ad10de766"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "19a26ffa77e57c0504f2668f3e5673e4e94a50075d74716eabcda1dc9ed3d536"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "docbook"
   depends_on "python@3.12"
   depends_on "source-highlight"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   def caveats

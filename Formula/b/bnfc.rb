@@ -8,16 +8,16 @@ class Bnfc < Formula
   head "https://github.com/BNFC/bnfc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d6495160b391c2f2df39f2bea851f7af0a55eae3c61d50a42915236a13e7ffa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "98764cf7fb287c267adbb0bf39b49c74396375ea93635f509b02d27954e2451c"
-    sha256 cellar: :any_skip_relocation, ventura:        "2b3c7ed91b5489b2242ce90f13fcb4579d360dd62f50d306ab13a3b5e370eede"
-    sha256 cellar: :any_skip_relocation, monterey:       "72fab056fe4ccaf675e0c1cc7e975cd674ddf0ac035eac1689c55c96e7e80d9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "767ae7164902739f188191a4626ea1e66fa83e6df32920f3352c79f6f9907aea"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "60af864f3a925d506214ea0caeb50df915dae976dfbb320f9adbb8801375c58b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "70fbff20aeb4526eee3da488f081c17660bbf390d598190687020cb6a0ebba04"
+    sha256 cellar: :any_skip_relocation, ventura:        "d645135dfed8bd688b12de81f12c3496d69dc58b1c6c523b48752c44df64cebe"
+    sha256 cellar: :any_skip_relocation, monterey:       "efe525933e08206d108405241096da7f5e4b55c00c5cda02fae546b14e94d7cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "428910364e4bb5f3fb7f79e578298b97d429b75793ed2dd3c91052209a130e2e"
   end
 
   depends_on "cabal-install" => [:build, :test]
-  # ghc 9.8 support issue, https://github.com/BNFC/bnfc/issues/469
-  depends_on "ghc@9.6" => [:build, :test]
+  depends_on "ghc" => [:build, :test]
   depends_on "sphinx-doc" => :build
   depends_on "agda" => :test
   depends_on "antlr" => :test
