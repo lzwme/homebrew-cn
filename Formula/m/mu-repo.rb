@@ -1,6 +1,4 @@
 class MuRepo < Formula
-  include Language::Python::Virtualenv
-
   desc "Tool to work with multiple git repositories"
   homepage "https://github.com/fabioz/mu-repo"
   url "https://files.pythonhosted.org/packages/fc/3f/46e5e7a3445a46197335e769bc3bf7933b94f2fe7207cc636c15fb98ba70/mu_repo-1.8.2.tar.gz"
@@ -8,22 +6,27 @@ class MuRepo < Formula
   license "GPL-3.0-only"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "32f19f981a0b5f89591c01a8b27f6b96dce2363003e03c431d948920f0b6f648"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "22ac2c05ef44e73cb0adc960c1b30c38bb399991b208fc14f894889b114ca928"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "30b17c86fdaf0137925c71fa893004c40e6598017bd9d0a8b09eb8a8f28d63d4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c25efe6df304f7ac9c3444ec7aa37f4e36ae15e00ac3f26c2ce3315f24534abc"
-    sha256 cellar: :any_skip_relocation, ventura:        "a510913eebdff79d1b3d9a170d55e4c181f186be04c3df7c4d3231d981cad49a"
-    sha256 cellar: :any_skip_relocation, monterey:       "2647a75ac88d39730d9266f536bd64e484d2426436119a1a65923eb1e766c8b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02c678e1101a3df4f587013a5d2da95c8a6a34f6892a5267d9e3f5019cf9da97"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c748c62da7e9983b7a3a1ee64cb134d206ce74d2ca8b8145752435e63a266ea7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9a44cf755ab0df3eb8514d0eb57455d54638506e8fd24e2185255aaa6246fd28"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "79d62e4af4026aaf23d8442840746da1a71b76bc35d3fb6de67cbac0beca7f4a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2215863f307d1d2d3bc095737064344c92a6dff1d26a8da3db967dfa57b653e3"
+    sha256 cellar: :any_skip_relocation, ventura:        "ad5fc9fc60840940996bcf49dce4eeba966546e0bf67c59e41195b85f030f1dc"
+    sha256 cellar: :any_skip_relocation, monterey:       "dc77f5c90c78bb093ffe620fb66858a0678f047ba56657deeae049b4933cdfe6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ac9b567238f2724f02f1961984261e1fb811c1067832252ffc889fb110ad1c8"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
 
   conflicts_with "mu", because: "both install `mu` binaries"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

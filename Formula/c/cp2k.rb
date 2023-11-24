@@ -4,6 +4,7 @@ class Cp2k < Formula
   url "https://ghproxy.com/https://github.com/cp2k/cp2k/releases/download/v2023.2/cp2k-2023.2.tar.bz2"
   sha256 "adbcc903c1a78cba98f49fe6905a62b49f12e3dfd7cedea00616d1a5f50550db"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,15 +12,13 @@ class Cp2k < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "fa48eab0f75ea1e3aabce2b9e7f529844d9ccc4f8df184fe79cc3f22eb81b6e0"
-    sha256 cellar: :any, arm64_ventura:  "542a2e362bf408de6339d11c5fa669ff2aaf19780648a3c44f38678a6bbf264c"
-    sha256 cellar: :any, arm64_monterey: "28a35f321d8a3a705c882eb54964d4c212ff7112c7320b2ac56185097d45d9be"
-    sha256 cellar: :any, arm64_big_sur:  "b82e5812fa861ed7578aa0d3ad0b9c0bd14c31654563d1c5a0f77c61e45c9d77"
-    sha256 cellar: :any, sonoma:         "c6e440ce4626f7993753447d03063917ad0d032e5f4e97afc43821addce59b01"
-    sha256 cellar: :any, ventura:        "5f82951b87c5f6b08b82e1bdd58ac34dda2f97cef530108d915b3ad01512de6c"
-    sha256 cellar: :any, monterey:       "8635ec176cdf6215df2f86fba78bcedc33f10dda0bdb2ce96f618c072be6160a"
-    sha256 cellar: :any, big_sur:        "d26512a39816dd2eb27106a8de91bc235b1976bd6c2bf0aadde38d2364b12832"
-    sha256               x86_64_linux:   "4c08e213964457d98b4f4c37bbe3e64f2f30c02670c66fbc93e58f3bc43dbccb"
+    sha256 cellar: :any, arm64_sonoma:   "16d19e131dfe40d6774fb25680078077948ea0e8e7a71dac89df5e0a46d7c5a4"
+    sha256 cellar: :any, arm64_ventura:  "a08b0a98ecac0d0625c0044b316a94f8667c6ce8afe7c9f7ff2697f4265de898"
+    sha256 cellar: :any, arm64_monterey: "d69dec225c6ceb45a5b59c3c6876130bbb20730a5f7312a9c11b24578ce914bf"
+    sha256 cellar: :any, sonoma:         "67803409aa250cab9fa820b5f70851a3a07661a96e92268c9471e07cc0ae5db6"
+    sha256 cellar: :any, ventura:        "2b56dd29a9e449f86d245b0a49d3388636c4b0b0cec159f430f2f58b0b00676e"
+    sha256 cellar: :any, monterey:       "71f02038d2e4fbb22e26f859935bc4c5b808df91e61de0f67e75ddb3145cfc87"
+    sha256               x86_64_linux:   "e7c09a2661f7e5b61fcdc7683fd5c52904510c35a2644630c5ba896e25987f7f"
   end
 
   depends_on "python@3.11" => :build

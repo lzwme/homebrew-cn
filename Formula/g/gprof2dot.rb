@@ -1,6 +1,4 @@
 class Gprof2dot < Formula
-  include Language::Python::Virtualenv
-
   desc "Convert the output from many profilers into a Graphviz dot graph"
   homepage "https://github.com/jrfonseca/gprof2dot"
   url "https://files.pythonhosted.org/packages/ab/0b/fc056b26a90c1836aa6c6e1332372dc13050d384f017e388131854ead8cf/gprof2dot-2022.7.29.tar.gz"
@@ -9,16 +7,17 @@ class Gprof2dot < Formula
   head "https://github.com/jrfonseca/gprof2dot.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d81d5d7e30f6fe2443386056a21f0682f7d4173ee08114bca0dcfa16fbf00d56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b29fa6f9e3716b2a344d34f766e38dffe4bd8f7d03bef04eac1559164fe7b271"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bec1b03d7f2bf9352e6626c27d1d7921f79a83a1eecccc770f433a1ea6637aeb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bb0b813127a6b986e3f0a3ea3f568f47d2fdb92c8b0e2328076a0b8f3a86d495"
-    sha256 cellar: :any_skip_relocation, ventura:        "287e26046fca0f033cbca837b6009c03d7bff89c77d8f6502910f73cc5d10f84"
-    sha256 cellar: :any_skip_relocation, monterey:       "6cda88439199685a35d2950409f818eb1ac6f73184b87e5e036900a4444cdcb7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "66111cc1fda2c7add502c5927e0eb4c30927a9be529358baef86dc43be83e83a"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9456b22a5f1ea1a88a2fcb65df72ff4c4ed5ec4b714417c9d3c678cf94b654d2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "694f97acfd4ce4a514df587b1396b476b950e8a6730cc3eaa91894080456f8e0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "471848628cbc17483623a3aab0ef5fee2f242349289b9a4229a75944bc68b03d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "eebf6d7ed273dcf792d493e6efd1df8a09299d0174bc0fade1b80922054cbce5"
+    sha256 cellar: :any_skip_relocation, ventura:        "df9c8a5fb51485f1d31172636d80f7bd3410aff359e635d687a4bba523108ce6"
+    sha256 cellar: :any_skip_relocation, monterey:       "dbdd608d5516ee2ff307a32919f3bd67f08d730d37fa35850db74d09ccf3a7b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0468bf4d41b3ddaf9795dd2dca04adb505191ed0323b3e8fb1630183c0dcbf61"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "graphviz"
   depends_on "python@3.12"
 
@@ -26,8 +25,12 @@ class Gprof2dot < Formula
     depends_on "libx11"
   end
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

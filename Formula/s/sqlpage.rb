@@ -1,19 +1,19 @@
 class Sqlpage < Formula
   desc "Web application framework, for creation of websites with simple database queries"
   homepage "https://sql.ophir.dev/"
-  url "https://ghproxy.com/https://github.com/lovasoa/SQLpage/archive/refs/tags/v0.16.0.tar.gz"
-  sha256 "d349fba5b6d26b7a8b1ad6c0f255f429f8134c0325c1b3b82dc60262ed03b705"
+  url "https://ghproxy.com/https://github.com/lovasoa/SQLpage/archive/refs/tags/v0.16.1.tar.gz"
+  sha256 "13be30c4882fee1b0e49b4a3f90f52cc3da7e0d78e485d781198f5e7f604bd4d"
   license "MIT"
   head "https://github.com/lovasoa/SQLpage.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a7d8483a09b2bac764775689933bd1d56b52ee6df5f53bb4de0993f35753ab50"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9655d24e41d704f68db751cb126b48a564f01d96af6ab9cbc15a5c15e16c81c0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e5580088080162ee57c34a0d1e801d4fb913e2bd515caa56e818c918700df93f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "380f7afa00bbb35e3055f88b66a8fa5676748e8f3948c011efa90f3697f243e7"
-    sha256 cellar: :any_skip_relocation, ventura:        "c470f301045c8776543b72385e726eed3b2ee7160259446773a7bb7fe9c5d6ec"
-    sha256 cellar: :any_skip_relocation, monterey:       "756e9bf13a23348ce37aed2e2e0f2a35437eb6768e506d525eda1bafa8e214b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ac360e0ec6ae7cc989845b888628f423051b399d8bd5e55e73abed44c00081b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6b5c3ec668b3ab28080693e4f637765a66415a148bc6e037e820800fb22740c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "43ae57b9eb32aefaf872842d4bed05dd4321f70b7a27f50c7abf01668a7b662b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c9811f64aabb618948b22d512cf76b194e01f47b6949ba9fd005565787be290d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9fad49995f72eb82fb4b6f31090ee14d24e0ad993a3dc545a9886f96311cbaaf"
+    sha256 cellar: :any_skip_relocation, ventura:        "ce263ecaa7b1f6a65e63bde39f10d8fb6a97f59c3d7a1cbfaf37b17861d3b3f9"
+    sha256 cellar: :any_skip_relocation, monterey:       "ab338d719e1947703f78e4963de296d13376266e983980d37a6a4acb83630dec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4bcdc99017ca52ff767a7fcef8f309789afe83fce11c0cc5cbe98b31c9a9670"
   end
 
   depends_on "rust" => :build

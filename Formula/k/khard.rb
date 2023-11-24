@@ -3,19 +3,18 @@ class Khard < Formula
 
   desc "Console carddav client"
   homepage "https://github.com/scheibler/khard/"
-  url "https://files.pythonhosted.org/packages/fd/d6/3172fc469cc09decfb502e5428f6a44b0fec48952ae5afe4d657d9e74ea0/khard-0.18.0.tar.gz"
-  sha256 "fe88d4b47fdd948610ac573c01fa13d1b7996265cbc44391085761af9a030615"
-  license "GPL-3.0"
+  url "https://files.pythonhosted.org/packages/2a/7f/495c11f3d5d9ddb1f1b8edd9731bb53f2afd226f6c430630b433a3680609/khard-0.19.0.tar.gz"
+  sha256 "e648be69d7f3ee6d3e15bc42f7e2171cb9fca1e2ca2e4012b94d799720c04ca4"
+  license "GPL-3.0-only"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ebcb9682ef7d03ead2e6891ac854bd1648da62d5704cf10f186de63498a6b812"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c9b8f624f653cec01ca2392f7140b95b9b40b71b40eaed68dfd80deeb96c904"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c8760af69d87d49f1536eca6f6310acac8a820c8eb476e14bc1519d669990c3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "40c280e7dbd3c11902685f7745c32a0d5b381794e608d3f40c739ac7179ffa99"
-    sha256 cellar: :any_skip_relocation, ventura:        "2f23dd70a15041371bce083b8f8f1d3f22dbf52f49b61fe82545504e305c47f4"
-    sha256 cellar: :any_skip_relocation, monterey:       "5a1ee17f028524563f520b745a8c7345e33a0753fa6af71fa1dd68f5169942d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23f01933d4b623ecaf9a2d10456abce81e11438f0808a5a27fee5aefc0807735"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "05322bef5f6b2dfc2464e326ddd20c9c560f0deee3fc2c7b62b75ab67fd26ba1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "15f7cb0c7663befeb29f932189adf381e54de281850a81397819762d33eebd8f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "83f17601c76ce9d0ed4870582704b0351a0be9380535c9b7ff193a43bb1059bd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4c316a12a74cc5182861de0ea00592d4a5e185785766cda924b1da4e98920169"
+    sha256 cellar: :any_skip_relocation, ventura:        "4174837ecc3ed971f9b7abfe280dc43de225592355de27cf181c1b1b96877b14"
+    sha256 cellar: :any_skip_relocation, monterey:       "745c976d09e2a43276679e7a5d352f71392f55bd6606e8b8b058488a01817daa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9857f5fb5f411e3ef48146fa3a6227b8bb980869758b6ca9869b0a402a8be0e0"
   end
 
   depends_on "python-dateutil"
@@ -32,9 +31,14 @@ class Khard < Formula
     sha256 "6f704434a07dc4f4dc7c9a745172c1cad449feb548febd9f7fe362629c627a97"
   end
 
+  resource "python-dateutil" do
+    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
+    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+  end
+
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/de/7d/4f70a93fb0bdc3fb2e1cbd859702d70021ab6962b7d07bd854ac3313cb54/ruamel.yaml-0.17.35.tar.gz"
-    sha256 "801046a9caacb1b43acc118969b49b96b65e8847f29029563b29ac61d02db61b"
+    url "https://files.pythonhosted.org/packages/82/43/fa976e03a4a9ae406904489119cd7dd4509752ca692b2e0a19491ca1782c/ruamel.yaml-0.18.5.tar.gz"
+    sha256 "61917e3a35a569c1133a8f772e1226961bf5a1198bea7e23f06a0841dea1ab0e"
   end
 
   resource "ruamel-yaml-clib" do

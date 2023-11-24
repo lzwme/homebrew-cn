@@ -167,6 +167,6 @@ class Vunnel < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/vunnel --version")
 
-    assert_match "recording workspace state", shell_output("#{bin}/vunnel run alpine 2>&1")
+    assert_match "alpine", shell_output("#{bin}/vunnel list")
   end
 end

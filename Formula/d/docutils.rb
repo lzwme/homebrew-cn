@@ -7,13 +7,14 @@ class Docutils < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dd4ba2b284e5267446046167888360a4d3ee4879259d1a6d2c16a0c302373cc1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9fe50df7baddc6b75851da3a9e8d68440bbcf21070e92e70a992b1684ba53574"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "12fdeaa68a7fbcbcf659679bbd34dcaf7eccfd5b1fce94f42c4d8f8e5f4a3d83"
-    sha256 cellar: :any_skip_relocation, sonoma:         "666284171cef102f63b2f3d8ad4e6edc422279264311e02e6b4562cec74da111"
-    sha256 cellar: :any_skip_relocation, ventura:        "18fa51222ab60c73986b5434796ea9a704d26d95b4d67cb41a984e90beb7a6f2"
-    sha256 cellar: :any_skip_relocation, monterey:       "5f5e79f59567a89afa053c5f92bd694120965b24a3895ca787d649ac5c5777e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "622a238e4cc5c6be5792bdbdd4f42b0c3f5052d3dbe928005183e48c6fec5b9e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1d4fef7ea86f0305f6a482f772d7d988bc8d077b1a613f8c74d559dbecf70b4f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f444a95c5321e31b105c21afc12c16be8c7b65c7c4cf28f861fecb069bb6fbb9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "32fd4f9936118b027e3a834cc54fdc31f9bd7d9d3b675fac4b2f5cb06e5a7023"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ee09a72453890700d748f071ef0a6138e91d694b2657e0199b1a0d808186564a"
+    sha256 cellar: :any_skip_relocation, ventura:        "1f9cf57be4ce59ca4055cc2bdc28a8c8b0ce52e4b524b94a3d0ed13882270dcc"
+    sha256 cellar: :any_skip_relocation, monterey:       "b6da8716b7095b5060e6595751df1f6f865d821790e31d0467e68f732ea4d109"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a90a2509497e5265edf387688b6351cca65a1a66b6d1d5b1053b925bbcf2d807"
   end
 
   depends_on "python-setuptools" => :build
@@ -24,17 +25,24 @@ class Docutils < Formula
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.start_with?("python@") }
-        .map { |f| f.opt_libexec/"bin/python" }
+        .sort_by(&:version)
   end
 
   def install
     pythons.each do |python|
-      system python, "-m", "pip", "install", *std_pip_args, "."
+      python_exe = python.opt_libexec/"bin/python"
+      system python_exe, "-m", "pip", "install", *std_pip_args, "."
     end
 
     bin.glob("*.py") do |f|
       bin.install_symlink f => f.basename(".py")
     end
+  end
+
+  def caveats
+    <<~EOS
+      To run front-end tools, you may need to `brew install #{pythons.last}`
+    EOS
   end
 
   test do
@@ -44,7 +52,8 @@ class Docutils < Formula
     system bin/"rst2man.py", testpath/"README.txt"
     system bin/"rst2man", testpath/"README.txt"
     pythons.each do |python|
-      system python, "-c", "import docutils"
+      python_exe = python.opt_libexec/"bin/python"
+      system python_exe, "-c", "import docutils"
     end
   end
 end

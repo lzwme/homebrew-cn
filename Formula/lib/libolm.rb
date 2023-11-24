@@ -1,20 +1,18 @@
 class Libolm < Formula
   desc "Implementation of the Double Ratchet cryptographic ratchet"
   homepage "https://gitlab.matrix.org/matrix-org/olm"
-  url "https://gitlab.matrix.org/matrix-org/olm/-/archive/3.2.15/olm-3.2.15.tar.gz"
-  sha256 "0c63362b8be78580c2ff862297386ceb00fb05b295ce346f6fff8be8ac49eded"
+  url "https://gitlab.matrix.org/matrix-org/olm/-/archive/3.2.16/olm-3.2.16.tar.gz"
+  sha256 "1e90f9891009965fd064be747616da46b232086fe270b77605ec9bda34272a68"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f33fba814e02d8881401a93773c265c70c821481d751782381ef9b4d976c77b2"
-    sha256 cellar: :any,                 arm64_ventura:  "ae2fce79fbf4a831388686618bf59126dbd90ff8695cc88c5b22997ac8022240"
-    sha256 cellar: :any,                 arm64_monterey: "b829de0f052d4256e5ac278288ba80f652b1501abd305a914e8733db02dbe2c2"
-    sha256 cellar: :any,                 arm64_big_sur:  "acc275d512ad0e668d3eafe8882f5a527b7ca6b179bfa470a5feecb850ea6557"
-    sha256 cellar: :any,                 sonoma:         "e0e3a6ee7864efefca9acb6f5ad8b1d0ad3585b0eaef7cf0bd110f3de9690de3"
-    sha256 cellar: :any,                 ventura:        "a89325d517b1e2a49fe253cdd4fa50fed2aff90682ea081591595d72a6d17521"
-    sha256 cellar: :any,                 monterey:       "22379c3407fd3cfc393a40f281ca11782b58a8207e4aecdc102c9535023235e3"
-    sha256 cellar: :any,                 big_sur:        "2aace47f007fb57beea4c7f8d72d5b1f6f7775b58721c2097a0e3a2e410dfebc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd99aa0000266d83803aeed496decb2df14b7d7ed78035e63d0aeaba501f83fb"
+    sha256 cellar: :any,                 arm64_sonoma:   "2dd9100bb3f29d104f285aa65085e786e4649709dbc66b057237085b3be32111"
+    sha256 cellar: :any,                 arm64_ventura:  "a98d48d4e45696f2645160b4aa2f345b58e3c61656c13ae8ded57bf2854e2d14"
+    sha256 cellar: :any,                 arm64_monterey: "2a8281300559d3538a102fd502f0e000c98d86acc6c35a99a0cb5294df7034f2"
+    sha256 cellar: :any,                 sonoma:         "ed06e4f79c3f1651dd77425482b55bb9876ead8c80adaacc7aaccd6def7f4f76"
+    sha256 cellar: :any,                 ventura:        "dfcc8778b58afac8e598e6f83fbefd6a18d2c34a2c23b23e332c4618847f4476"
+    sha256 cellar: :any,                 monterey:       "71019cfeedbd48f15b86c6249bcd4db630fc6aae5754ee2e6f0162615bf55fae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f116c980f972a0fe05051d0bedae1cd42392051566d51c9f25989639d6b05a37"
   end
 
   depends_on "cmake" => :build

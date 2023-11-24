@@ -1,6 +1,4 @@
 class Scour < Formula
-  include Language::Python::Virtualenv
-
   desc "SVG file scrubber"
   homepage "https://www.codedread.com/scour/"
   url "https://files.pythonhosted.org/packages/75/19/f519ef8aa2f379935a44212c5744e2b3a46173bf04e0110fb7f4af4028c9/scour-0.38.2.tar.gz"
@@ -11,21 +9,26 @@ class Scour < Formula
   head "https://github.com/scour-project/scour.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c688e78760b8c8f87118d0127b79c47886abe8288f8451365e3a59a0c7377703"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a533ea0ee18870e2e145fd1bbb99ca77805b54ab4b271e518852167ad90df855"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a023338435bb50e0c6ccc4518a9662d61c1fdb8d8321e30ef69f80254d34d005"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4a77607761ae0a822ae2c604967ee564a4a3742b3ebd383b616c848241aba8de"
-    sha256 cellar: :any_skip_relocation, ventura:        "8ab4b60f52781665c73102c1b06929463962340550fd5586456e62b517522ea5"
-    sha256 cellar: :any_skip_relocation, monterey:       "619e1bfd3cfe889adcb3c5f3bee930b07ba48f06d19ecad387b9b35c39e6ab92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa73fafa8bc987a621e1654972c49c6c15afd3db53f87994ff2aca7946a6844d"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bc5f5e857ec22d89871c1e33dc186015a8a76fb9afe1122a2eff34f99585d758"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3009abea4747222401235ca335cf412442850e50179259ba841639981973515a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "208bec3b0345834e4aad10b9cb1889e2bdd14e0aeb9bbeebbbab9bcd4d8dc6cb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9acb4f2ea41aa3969f12911f07d67b5e4e1e906e1a81c203f194d012faa2a99b"
+    sha256 cellar: :any_skip_relocation, ventura:        "c3384fee26760a4ffb6eb2335025573be3d1b0d79632b6053326d020a6a2d12e"
+    sha256 cellar: :any_skip_relocation, monterey:       "9bef809e6a0d173170b4c990742b8827eb6c2970601a8f9364824a8afa5d29a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc600b61a19b88d56999c0b025e8a25d5a7018c907a563124897c30a33e786a8"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
   depends_on "six"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

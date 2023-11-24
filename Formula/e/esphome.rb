@@ -3,18 +3,18 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/aa/d8/56c04c68825934d71f97cd7fdba93067c518ecc13e487579367f7f44b4f7/esphome-2023.11.3.tar.gz"
-  sha256 "cd3a627b5772954351f4353316104f71d87500940eb02f9af78c4e696ca113e7"
+  url "https://files.pythonhosted.org/packages/c3/2f/5f2bdb9b448643e478232bf4ac06273a14c36d674849e8fcaf9b40c1b142/esphome-2023.11.4.tar.gz"
+  sha256 "b5553fa6fc5ce0410fd3b9623157d1d88673be6b688cf5e5aca4bfb73b4b7ce1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5f8dce64bd439465a32b1ac4dc3388bd3bc5e6a642aa4a83d6af618384014c83"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fb4ebbb169645284855f5cc841c4dd905f7d9570dd5ee83dda1fde3d2d344ab4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "86c1bcd05b6637728409102b686619dfaf86048aca5abb63a7135eeb5c895d3d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "afc3708160a157ed3507bf0dce9e3d5be9b2416a4a35a21e8f7a252b4f8015d5"
-    sha256 cellar: :any_skip_relocation, ventura:        "9c008667a27f5242e10c7be381488afcf0a67ef0983fae35f355fc026707479f"
-    sha256 cellar: :any_skip_relocation, monterey:       "e3e4009ccc43946d567834ec5e6fb7b7efbcbeaf8aa981d753cb81af6fffe58d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "acb3794e661da3820dcebf2ac580f5cd9c6412116ba803c9c31fb98411572bc3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6bceb48e6e1d11c48ccfcbc95891e7efc9afddafeae2dc66b52b24c6d944e88d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1c1e36dbb81a17af5d270d7eca051ff5e137315b405da38fe6297d7d04451fdf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "09b41700028ec58295567d7ee89bf91276ac00638d3d184f055c0acfaa38ebcf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ecfd4ca475d16eb7bf6004616252be884fcb266c56ed973a2288d75a4435c9b4"
+    sha256 cellar: :any_skip_relocation, ventura:        "51578a32eafb4b71c86c2209563a0824b3708a51b18dd3a1c200219099c90091"
+    sha256 cellar: :any_skip_relocation, monterey:       "f1364572eb0b822034977a529c459ea53ef43de86c5013202592aef2cb4989fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "755cf6e1dace38b06c7e3f9d11f902ec5ce7613e1d87a4c4d07b2244290b2ff1"
   end
 
   depends_on "cffi"
@@ -41,8 +41,8 @@ class Esphome < Formula
   end
 
   resource "bitstring" do
-    url "https://files.pythonhosted.org/packages/23/fc/b5ace4f51fea5bcc7f8cca8859748ea5eb941680b82a5b3687c980d9589b/bitstring-4.1.2.tar.gz"
-    sha256 "c22283d60fd3e1a8f386ccd4f1915d7fe13481d6349db39711421e24d4a9cccf"
+    url "https://files.pythonhosted.org/packages/c1/f6/30459981d5c8f04b6b4c1d8f006e36ffe4be2bff060ba9291c3503356dd3/bitstring-4.1.3.tar.gz"
+    sha256 "1b47c84644a961ba8503db2bba8a5965ab53e81474becdf0a18383b5b5f3f795"
   end
 
   resource "chacha20poly1305-reuseable" do
@@ -83,6 +83,11 @@ class Esphome < Formula
   resource "paho-mqtt" do
     url "https://files.pythonhosted.org/packages/f8/dd/4b75dcba025f8647bc9862ac17299e0d7d12d3beadbf026d8c8d74215c12/paho-mqtt-1.6.1.tar.gz"
     sha256 "2a8291c81623aec00372b5a85558a372c747cbca8e9934dfe218638b8eefc26f"
+  end
+
+  resource "python-magic" do
+    url "https://files.pythonhosted.org/packages/da/db/0b3e28ac047452d079d375ec6798bf76a036a08182dbb39ed38116a49130/python-magic-0.4.27.tar.gz"
+    sha256 "c1ba14b08e4a5f5c31a302b7721239695b2f0f058d125bd5ce1ee36b9d9d3c3b"
   end
 
   resource "reedsolo" do

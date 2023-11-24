@@ -1821,7 +1821,7 @@ Homebrew-homebrew-core/Formula/f/form.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/format-udf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fortio.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fortls.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/f/fortran-language-server.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fortran-language-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fortune.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fossil.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fourmolu.rb, Homebrew/homebrew-core, 1
@@ -1894,7 +1894,7 @@ Homebrew-homebrew-core/Formula/f/fwknop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fwup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fwupd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fx.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/f/fypp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fypp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fzf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fzy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/g2.rb, Homebrew/homebrew-core, 1
@@ -3902,6 +3902,7 @@ Homebrew-homebrew-core/Formula/m/melody.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/memcache-top.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/memcached.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/memcacheq.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/memray.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/memtester.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/menhir.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mentat.rb, Homebrew/homebrew-core, 0
@@ -5079,6 +5080,7 @@ Homebrew-homebrew-core/Formula/p/python-packaging.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pathspec.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pbr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pluggy.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-ply.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-psutil.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pycurl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pyparsing.rb, Homebrew/homebrew-core, 0
@@ -6480,6 +6482,7 @@ Homebrew-homebrew-core/Formula/v/vip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vips.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/virgil.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/virt-manager.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/v/virtctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/virtualenv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/virtualenvwrapper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/virtualfish.rb, Homebrew/homebrew-core, 0
@@ -6825,7 +6828,7 @@ Homebrew-homebrew-core/Formula/y/yazpp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yconalyzer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/ydcv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yder.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/y/ydiff.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/y/ydiff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yelp-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yetris.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yh.rb, Homebrew/homebrew-core, 1
@@ -9465,7 +9468,6 @@ Homebrew-homebrew-cask/Casks/n/nvs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nwjs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nzbget.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nzbvortex.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/o/oak9.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/objectivesharpie.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/objektiv.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/obs-advanced-scene-switcher.rb, Homebrew/homebrew-cask, 1
@@ -9859,6 +9861,7 @@ Homebrew-homebrew-cask/Casks/p/prosys-opc-ua-browser.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/p/protege.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/protoio-overflow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/protokol.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/proton-drive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/protonmail-bridge.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/protonmail-import-export.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/protonvpn.rb, Homebrew/homebrew-cask, 0
@@ -11391,7 +11394,6 @@ Homebrew-homebrew-cask-fonts/Casks/font-atma.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-atomic-age.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-aubrey.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-audiowide.rb, Homebrew/homebrew-cask-fonts, 0
-Homebrew-homebrew-cask-fonts/Casks/font-aurulent-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-aurulent-sans-mono-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-autour-one.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-average-mono.rb, Homebrew/homebrew-cask-fonts, 0
@@ -13729,7 +13731,7 @@ shivammathur-homebrew-php/Formula/php@8.0-debug.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.0.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.1-debug.rb, shivammathur/homebrew-php, 0
 shivammathur-homebrew-php/Formula/php@8.1.rb, shivammathur/homebrew-php, 0
-shivammathur-homebrew-php/Formula/php@8.3-debug.rb, shivammathur/homebrew-php, 1
-shivammathur-homebrew-php/Formula/php@8.3.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.2-debug.rb, shivammathur/homebrew-php, 0
+shivammathur-homebrew-php/Formula/php@8.2.rb, shivammathur/homebrew-php, 0
 shivammathur-homebrew-php/Formula/php@8.4-debug.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.4.rb, shivammathur/homebrew-php, 1

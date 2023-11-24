@@ -1,10 +1,9 @@
 class Libphonenumber < Formula
   desc "C++ Phone Number library by Google"
   homepage "https://github.com/google/libphonenumber"
-  url "https://ghproxy.com/https://github.com/google/libphonenumber/archive/refs/tags/v8.13.25.tar.gz"
-  sha256 "229e16404dec98a9b09a368fb7b09e0916b2802e6b9f6428cb0278472245d537"
+  url "https://ghproxy.com/https://github.com/google/libphonenumber/archive/refs/tags/v8.13.26.tar.gz"
+  sha256 "a7df5f274dafa0b590524560fba72f561284a224344272fa8b2101677a7aa317"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,13 +11,13 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2594ac2911b84f5154e5cfa64d2006ea34b5b8fe89079e7c620a06d0e26491a9"
-    sha256 cellar: :any,                 arm64_ventura:  "954d3f60be0bfc164d3907a2a5eb725a74606d837168139a2b3c5b8f1c63d9eb"
-    sha256 cellar: :any,                 arm64_monterey: "df8b128bef57179203869a86c15bccfd6ff4aef113ffab23743ec8a06ab1bde8"
-    sha256 cellar: :any,                 sonoma:         "43439f0ad6ddef4ff8d8651b3d4e263eb5f70744a17c79536bfb741d30facb68"
-    sha256 cellar: :any,                 ventura:        "32304e07b610be73bbb31f7044ab14c82e4c57df141221062b59b09d7beda412"
-    sha256 cellar: :any,                 monterey:       "bb919040bb5e8e162bf19467025afb177cc4e03b6309c1779891668ee54c75ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "decf79545d3f15f769ea8ab6052dda8534ff807e30466489a0b05c1fb3743c04"
+    sha256 cellar: :any,                 arm64_sonoma:   "856da5eb9663f9e883f4f79b87f147a228edae572ade8f4ab3c0d7267b3422b3"
+    sha256 cellar: :any,                 arm64_ventura:  "cddc6c781ed229d75e873fd77ac80fc34420b7346a6e6e5a2783c897de5776a8"
+    sha256 cellar: :any,                 arm64_monterey: "6452463686763982a0e1c79a07c6f4d669701031048f323047ff913873026c67"
+    sha256 cellar: :any,                 sonoma:         "de9cfb5ddb1d817f1c74a92fb14f6c476cd13dbcdabf63ed60c47656fb0b0cfc"
+    sha256 cellar: :any,                 ventura:        "6ab011256162042945369dbcee1c73603ae0b7975d447942283dc9bcee29c998"
+    sha256 cellar: :any,                 monterey:       "fd0bb2fefcde4ca955468e1795003888a6c47e65c9b52443746635ac398730a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd4af45751afcdb76634e4ccccde5ccb57dbf8ff00039a85f6cef63bcfa60e9b"
   end
 
   depends_on "cmake" => :build

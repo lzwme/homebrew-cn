@@ -1,6 +1,4 @@
 class GitImerge < Formula
-  include Language::Python::Virtualenv
-
   desc "Incremental merge for git"
   homepage "https://github.com/mhagger/git-imerge"
   license "GPL-2.0-or-later"
@@ -17,20 +15,25 @@ class GitImerge < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "57d13c6304821922437453f05db4e29aee883e527d51366dd09c85634548fd2a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "96f159fb005c4a9a62e72b680dee461062bb6018dc3ad5c77ea749361232ecfd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f15fe3edb896c278026a62790fa1687259f9028dab9b635934c36035f979b1b1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "070645bd00796c61515f6df8613aa898a25e9a13dd1d6b6a582295ff9599c4a6"
-    sha256 cellar: :any_skip_relocation, ventura:        "f3e23fabe8fc07b74356e46eb62312662b285fb32c3851056c0be6464ed38786"
-    sha256 cellar: :any_skip_relocation, monterey:       "08100556e7b53b2ad48f5f1f42faf06a72ed2ad16aaf240d5329fd610031268e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "588ed41906d89362973aeced4b9e04ec7f8b16e94eb316243b189522a2a4457a"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2553c9a8ab46a5e1a8eba30fae465f3f18904a805d18b4dabead2a2834f7ffe0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "be9be74bcab3fe1e9647f15d73679116fb603a2099e3ba9c14f3fe68c5b5d41c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "31be9d067a48d1eedcfeb0d937d4ea50f06fb7f9e4abb3fce89eef8e4016f6a8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "896e8ca74494b063750de2bca61fce0ac58b46d64befb9e2e8fe2097010f4262"
+    sha256 cellar: :any_skip_relocation, ventura:        "a58c276c1b031d5a13f03218fa2091de8a544d48e1c015b548338cd4ec2528d4"
+    sha256 cellar: :any_skip_relocation, monterey:       "8911acc2155e1f094a6b90080d2161d82139a01ae27d823efbf02ba25ab6d5da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96f10ccf33457be8b0e265a79b4f270c9c6c8aa5c2ea51423e2b8f39d4a73847"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
     bash_completion.install "completions/git-imerge"
   end
 

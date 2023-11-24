@@ -3,19 +3,19 @@ class Toot < Formula
 
   desc "Mastodon CLI & TUI"
   homepage "https://toot.bezdomni.net/"
-  url "https://files.pythonhosted.org/packages/29/b0/1b060f39a1dd274d0708dd39420e550b6c8e21cf946651d6212470625a82/toot-0.38.2.tar.gz"
-  sha256 "4b507cfa8359de0e186ff7a14fbfe3972f51b65757b0c8366d827f4d2d230f68"
+  url "https://files.pythonhosted.org/packages/f9/ec/5648267071f8289d85ffc61f7aabb71ed9a1bc4aabba267c1e4ccd5b0248/toot-0.39.0.tar.gz"
+  sha256 "b359d47713de1440eea606a577e89c1fd63bba3a7797edad2fddc48447660819"
   license "GPL-3.0-only"
   head "https://github.com/ihabunek/toot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5dda6c50bb7779486cfc3cc8d722920fbb3d66c28c479efc24d7426995f660e4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d9b18704c46f54e152c1948a89f8e79131b31a238a9247bbf5087320afbd1893"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "13bb016a7df6c4ae07da7c2ee98364a9af2a72e02848225e5ba1d7895c99051e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "aeabd9874495a0afac590562905e137fb134fa33a6b719d27938f7b5e4b7e2cc"
-    sha256 cellar: :any_skip_relocation, ventura:        "f676dc8a7939a23a23d03df4f6d09775c29fc25cf8e8dece2e462dd9ebfab7b1"
-    sha256 cellar: :any_skip_relocation, monterey:       "25d3fb90e91e6f1362bd00fe6d159d29c9e724a66749224dbdae83b28b6075ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26a838a3f3f7189cc7d3e03a74fa74cd352409e53f9da480a974902076590e68"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9781bef6cc67c4c07fc2664f6550fd29fe808f2579bd939b68e9d35f13ef9514"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c7954eb724882c83744e101c7d4925544e3bb9f9ff4f32cad02ef89d66a9bf3c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "307b8da5b5b7b3d14f274de37e8a34cfdc1404c68694c4a7de19fbd1d9e3f2fa"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a9aba46aa68102f18343dd12a6c9a66cb29b4f8d588b50977d4d380301b3a0d8"
+    sha256 cellar: :any_skip_relocation, ventura:        "55422a9de73c27f9cd9312579156894963b755b1efac746d6f2ef1d8c2740bf6"
+    sha256 cellar: :any_skip_relocation, monterey:       "02f5c31c0db42f96088f07de0061856947723faad79c672be4de555707459497"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa41ae17acfbf8faba57faf581149f191009f2a5ee70d7e77722e6bc7aa4fb49"
   end
 
   depends_on "python-certifi"
@@ -62,8 +62,8 @@ class Toot < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/2e/1c/21f2379555bba50b54e5a965d9274602fe2bada4778343d5385840f7ac34/wcwidth-0.2.10.tar.gz"
-    sha256 "390c7454101092a6a5e43baad8f83de615463af459201709556b6e4b1c861f97"
+    url "https://files.pythonhosted.org/packages/d7/12/63deef355537f290d5282a67bb7bdd165266e4eca93cd556707a325e5a24/wcwidth-0.2.12.tar.gz"
+    sha256 "f01c104efdf57971bcb756f054dd58ddec5204dd15fa31d6503ea57947d97c02"
   end
 
   def install

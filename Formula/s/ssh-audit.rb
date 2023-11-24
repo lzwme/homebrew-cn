@@ -1,6 +1,4 @@
 class SshAudit < Formula
-  include Language::Python::Virtualenv
-
   desc "SSH server & client auditing"
   homepage "https://github.com/jtesta/ssh-audit"
   url "https://files.pythonhosted.org/packages/f2/b9/88c7f0ecba0a8fbf07e0d7674b7eac3dbf5270ac39a3b48bc34bb7c5a22c/ssh-audit-3.0.0.tar.gz"
@@ -9,23 +7,31 @@ class SshAudit < Formula
   head "https://github.com/jtesta/ssh-audit.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c883e4b2c2fa5f0694ba66916d581510479ba36b7f5e4a17b08f7846357bee5e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "208f5a752a3e9776c752d661574d76ec94c0b63574e281d189486a977e1d3edc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fbe512500b86bef0fd721ff16caefd41cb86f9792b28e444b8592832bfa622a6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b6aeb1dafaaab89a2b73986f94f3d43d2334a9374e0ebcb544756cb076b0c1b8"
-    sha256 cellar: :any_skip_relocation, ventura:        "f199d3a985d55b3f52f0dbd0b74ec1959f95fef5c17b56cd0be3c045c9116249"
-    sha256 cellar: :any_skip_relocation, monterey:       "7812a0804faf46c1451c5e163bc8ae45f94bf5a208016b71f5f6c78ee6d7490a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "122b8fc613a7b844dfe9f34d5a06e34de89dea54ea91ef82d73eca05b5728447"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5229302356d2e1839acdd9174bffbad77271c646048022051f1ea00cdfd1d0e9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "60f0fc9f4e0fe22be6fe39d74f5e3a2a38babefc61f0724ddfd479ef34946388"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "82575a183e2c6067111ae777d39e9c43ab5b6891ac3f173cab0ad5742e4e3f6c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "31ce6a625bc07187447328e5cbd24ad9dd81bd017ed96ac724ef2d854911194f"
+    sha256 cellar: :any_skip_relocation, ventura:        "95f583606745e4404dfcf4bafff08705cde48f19ec56bea2c22eba9d6dd06555"
+    sha256 cellar: :any_skip_relocation, monterey:       "0408b1b95477a41cb770d221acaa2cbd84e03a1dfb4258d0ccbf01e31dfd8fbf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1bc257c84d6d246e6e3c9302dfeaa23561867f9dc9a439378858fd400f3174f2"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
-    assert_match "[exception]", shell_output("#{bin}/ssh-audit -nt 0 ssh.github.com", 1)
+    output = shell_output("#{bin}/ssh-audit -nt 0 ssh.github.com", 1)
+    assert_match "[exception] cannot connect to ssh.github.com port 22", output
+
+    assert_match "ssh-audit v#{version}", shell_output("#{bin}/ssh-audit -h")
   end
 end

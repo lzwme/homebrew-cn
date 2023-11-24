@@ -1,20 +1,19 @@
-class PhpAT83Debug < Formula
+class PhpAT82 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghproxy.com/https://github.com/php/php-src/archive/1e66e6ae73c6d05db21cf0e11e926a8ecd789a39.tar.gz?commit=1e66e6ae73c6d05db21cf0e11e926a8ecd789a39"
-  version "8.3.0"
-  sha256 "35502687b764d92777a7dbcfa64008d51e5ea75fc03214541531e87ac7f572b3"
+  url "https://www.php.net/distributions/php-8.2.13.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.2.13.tar.xz"
+  sha256 "2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b"
   license "PHP-3.01"
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 285
-    sha256 arm64_sonoma:   "98cccae431be19604835d3c00f5d419bc546ea6124ec20c79766f16eee878c66"
-    sha256 arm64_ventura:  "a2271785b109fe47dd6bd9c1af23789b45c429bcf9646c60569ab263ec0fe939"
-    sha256 arm64_monterey: "0f84c97ae82fd5dbb4e843732b401691d788448496d6c5817a1af006c29d864c"
-    sha256 ventura:        "09eb7fe17dd154f1bfdd73f5056b73421ef61500a5b98d1c081f80cc6c8c7fc6"
-    sha256 monterey:       "e092b5566456fcee9c2ecb9b57d18d8d85d2313665ee5834a1e9042d03ac9641"
-    sha256 x86_64_linux:   "5a9b0c77c8742f6acb442b7c273275a16408effe57dcce0bf9411f3126af7cd4"
+    sha256 arm64_sonoma:   "ca687d43916988e1afc2201d9c4319eab1b121bdca2a20ed97d4b28bb89f5cd1"
+    sha256 arm64_ventura:  "e62779b27f1cb247192bf1147250be507e602cf58b03d2c7f20ae538fdd8e762"
+    sha256 arm64_monterey: "a56e777db6c3087aa46860767568ea7085af3a198c02c86521dce97625a26362"
+    sha256 ventura:        "8abb526f7d2305889ef97b4834749cfd0ade4c8b693268decd6b9381dca9c811"
+    sha256 monterey:       "b69ea6853e27c299e171a9bef9b3dbc46174cb6949420a48067dded09b7aaecc"
+    sha256 x86_64_linux:   "6528de4cd1aa7fc0d44ff1714f45f728770cc5c4293f84edafec5ed550a3263c"
   end
 
   keg_only :versioned_formula
@@ -46,6 +45,7 @@ class PhpAT83Debug < Formula
   depends_on "tidy-html5"
   depends_on "unixodbc"
 
+  uses_from_macos "xz" => :build
   uses_from_macos "bzip2"
   uses_from_macos "libedit"
   uses_from_macos "libffi", since: :catalina
@@ -56,6 +56,12 @@ class PhpAT83Debug < Formula
   on_macos do
     # PHP build system incorrectly links system libraries
     patch :DATA
+  end
+
+  # Remove in next PHP 8.2 patch release.
+  patch do
+    url "https://github.com/php/php-src/commit/6a76e5d0a2dcf46b4ab74cc3ffcbfeb860c4fdb3.patch?full_index=1"
+    sha256 "9960993a3b6759b8461fc6a181cc4dfdf93eb5da0453037b0b78dfecdeff2c4f"
   end
 
   def install
@@ -92,7 +98,7 @@ class PhpAT83Debug < Formula
     # Prevent system pear config from inhibiting pear install
     (config_path/"pear.conf").delete if (config_path/"pear.conf").exist?
 
-    # Prevent homebrew from harcoding path to sed shim in phpize script
+    # Prevent homebrew from hardcoding path to sed shim in phpize script
     ENV["lt_cv_path_SED"] = "sed"
 
     # system pkg-config missing
@@ -100,8 +106,7 @@ class PhpAT83Debug < Formula
     if OS.mac?
       ENV["SASL_CFLAGS"] = "-I#{MacOS.sdk_path_if_needed}/usr/include/sasl"
       ENV["SASL_LIBS"] = "-lsasl2"
-    end
-    if OS.linux?
+    else
       ENV["SQLITE_CFLAGS"] = "-I#{Formula["sqlite"].opt_include}"
       ENV["SQLITE_LIBS"] = "-lsqlite3"
       ENV["BZIP_DIR"] = Formula["bzip2"].opt_prefix
@@ -109,8 +114,11 @@ class PhpAT83Debug < Formula
 
     # Each extension that is built on Mojave needs a direct reference to the
     # sdk path or it won't find the headers
-    headers_path = ""
     headers_path = "=#{MacOS.sdk_path_if_needed}/usr" if OS.mac?
+
+    # `_www` only exists on macOS.
+    fpm_user = OS.mac? ? "_www" : "www-data"
+    fpm_group = OS.mac? ? "_www" : "www-data"
 
     args = %W[
       --prefix=#{prefix}
@@ -122,7 +130,6 @@ class PhpAT83Debug < Formula
       --enable-bcmath
       --enable-calendar
       --enable-dba
-      --enable-debug
       --enable-exif
       --enable-ftp
       --enable-fpm
@@ -131,11 +138,9 @@ class PhpAT83Debug < Formula
       --enable-mbregex
       --enable-mbstring
       --enable-mysqlnd
-      --enable-opcache
       --enable-pcntl
       --enable-phpdbg
       --enable-phpdbg-readline
-      --enable-phpdbg-webhelper
       --enable-shmop
       --enable-soap
       --enable-sockets
@@ -148,8 +153,8 @@ class PhpAT83Debug < Formula
       --with-external-gd
       --with-external-pcre
       --with-ffi
-      --with-fpm-user=_www
-      --with-fpm-group=_www
+      --with-fpm-user=#{fpm_user}
+      --with-fpm-group=#{fpm_group}
       --with-gettext=#{Formula["gettext"].opt_prefix}
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-iconv#{headers_path}
@@ -163,7 +168,7 @@ class PhpAT83Debug < Formula
       --with-mysqli=mysqlnd
       --with-ndbm#{headers_path}
       --with-openssl
-      --with-password-argon2
+      --with-password-argon2=#{Formula["argon2"].opt_prefix}
       --with-pdo-dblib=#{Formula["freetds"].opt_prefix}
       --with-pdo-mysql=mysqlnd
       --with-pdo-odbc=unixODBC,#{Formula["unixodbc"].opt_prefix}
@@ -185,8 +190,7 @@ class PhpAT83Debug < Formula
       args << "--enable-dtrace"
       args << "--with-ldap-sasl"
       args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}"
-    end
-    if OS.linux?
+    else
       args << "--disable-dtrace"
       args << "--without-ldap-sasl"
       args << "--without-ndbm"
@@ -317,7 +321,7 @@ class PhpAT83Debug < Formula
   end
 
   def php_version
-    version.to_s.split(".")[0..1].join(".") + "-debug"
+    version.to_s.split(".")[0..1].join(".")
   end
 
   service do

@@ -1,8 +1,8 @@
 class Kubergrunt < Formula
   desc "Collection of commands to fill in the gaps between Terraform, Helm, and Kubectl"
   homepage "https://github.com/gruntwork-io/kubergrunt"
-  url "https://ghproxy.com/https://github.com/gruntwork-io/kubergrunt/archive/refs/tags/v0.13.0.tar.gz"
-  sha256 "8868eeb9baf061ea0a3468bfcf62fda971a2e7e71d1dc7171ef256bfd7d93904"
+  url "https://ghproxy.com/https://github.com/gruntwork-io/kubergrunt/archive/refs/tags/v0.13.1.tar.gz"
+  sha256 "88e8162f86d5bfd7548a84bdb80db7490b8176c4aed776da087078e5e78e6d6a"
   license "Apache-2.0"
 
   # Upstream appears to use GitHub releases to indicate that a version is
@@ -14,13 +14,13 @@ class Kubergrunt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb31ba63d588ac954eac35101ee88fdf1268f2ddf0e5532112d6f316c09b8027"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7d36a2622a0c75540c6653de5698291da616f9397da9f6e3a6c0b1ea5426968b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8eeb1544fe0df0c8f64754812a0eb034c6afe489dfffb024d14583e332d67f1b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "baa5321bb78e551232e7bd096d7afa72cbecabe0c3f3ac528cbed639ddd28902"
-    sha256 cellar: :any_skip_relocation, ventura:        "962b39ae4ec269f397808a3ce4f652e0f1983b1dc63932f7e564ab9fcd7210d0"
-    sha256 cellar: :any_skip_relocation, monterey:       "0388fd2a189f9ddfd60f5ba115059adde5de1b4e689b973c70f25da605c1f1d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e62f4cea51436fcafb0d92948578543f2ea3f6795fd84c2ccf675320785687f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "29784598ffe5317c9eebf3082e20b7b0384d060f2d10b576c3c22e6510c80ec2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ceb8b019436065df349c62d93820c1cebea3a08cc0468130c93cc51f84929c25"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3be2017a5865dcbbfed9ce181c38bc5a1024b2651b311b35fdde604a9e31122d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "98dfb5528aeaaa24ce4157afe43b124023d1f7b46179ce1c3e4d05a40af892b4"
+    sha256 cellar: :any_skip_relocation, ventura:        "49f9b38dff5b49affe54195c60520695ed91999af54e4a42d34cb550725541fa"
+    sha256 cellar: :any_skip_relocation, monterey:       "317557a84280998fef5f14e9b5362565489c3b15c9b94ddc6bc5032dd58f8397"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8415d04eb5200d8f287e0ab856804f98b438830c8868590372c0b1b7cabe47b0"
   end
 
   depends_on "go" => :build

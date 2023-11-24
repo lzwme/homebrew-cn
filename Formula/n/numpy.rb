@@ -7,13 +7,14 @@ class Numpy < Formula
   head "https://github.com/numpy/numpy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "883125590816e213db9e7ec45b7c6f6d0291cac72001726c40779912ae3752da"
-    sha256 cellar: :any,                 arm64_ventura:  "bfd739e996446722ff3dd238a314ff9ec59999c00190a7ae01c328a81f793171"
-    sha256 cellar: :any,                 arm64_monterey: "ea093758cd7c5fc165f8408d98ff841c2a2b57a7267752042c751a58b8afe666"
-    sha256 cellar: :any,                 sonoma:         "03c9c470038c77226b05fd1f7808f4fb2523146a45a97e57ecb34f6e87c05e77"
-    sha256 cellar: :any,                 ventura:        "d9664fd0b99de89f1cfb3ccb3937618e91bebb7f32d1ccc7a9b6c5781f30ea7f"
-    sha256 cellar: :any,                 monterey:       "d5e9d91c2feb7d663953a46382ede8f7392add6a7d7d00166ee0d63f1843922f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "677c0f8ba6d4d43a1c77cbaa9cce8c1ea9d345020df7f5b57e1a7d5ad2eb9817"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "59af7bc320b4d6d3652387d6bd82427b71f15982f6d11d6c82b5043e4cc11fcb"
+    sha256 cellar: :any,                 arm64_ventura:  "e260547f705e28ba65f77404b5a9c9c0db3b840e5aa3597bc4f28283da810dac"
+    sha256 cellar: :any,                 arm64_monterey: "abc0899cc61f0d10231156b93a10965093dd27aaec050e8eb8cb9f9552933a07"
+    sha256 cellar: :any,                 sonoma:         "eaec11a16b2971a7d7501af8328ebd62a64183f6a3b23f8f31b64392f3ea5d0a"
+    sha256 cellar: :any,                 ventura:        "3e485bbb751d7d04a80d257b7c3a5179763df96c3c4f713b858baf55b94a8593"
+    sha256 cellar: :any,                 monterey:       "6119201c3bc3d614118bab056231353223cf921d3507c24f7011c1f60250a18a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1704539203b85d71127dcac8764ca0505f2c75f12a671b343dbad3fedca8195"
   end
 
   depends_on "gcc" => :build # for gfortran
@@ -29,8 +30,7 @@ class Numpy < Formula
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.match?(/^python@\d\.\d+$/) }
-        .sort_by(&:version) # so that `bin/f2py` and `bin/f2py3` use python3.10
-        .map { |f| f.opt_libexec/"bin/python" }
+        .sort_by(&:version) # so that `bin/f2py` and `bin/f2py3` use newest python
   end
 
   def install
@@ -48,18 +48,26 @@ class Numpy < Formula
     Pathname("site.cfg").write config
 
     pythons.each do |python|
-      site_packages = Language::Python.site_packages(python)
+      python_exe = python.opt_libexec/"bin/python"
+      site_packages = Language::Python.site_packages(python_exe)
       ENV.prepend_path "PYTHONPATH", Formula["libcython"].opt_libexec/site_packages
 
-      system python, "setup.py", "build", "--fcompiler=#{Formula["gcc"].opt_bin}/gfortran",
-                                          "--parallel=#{ENV.make_jobs}"
-      system python, *Language::Python.setup_install_args(prefix, python)
+      system python_exe, "setup.py", "build", "--fcompiler=#{Formula["gcc"].opt_bin}/gfortran",
+                                              "--parallel=#{ENV.make_jobs}"
+      system python_exe, *Language::Python.setup_install_args(prefix, python_exe)
     end
+  end
+
+  def caveats
+    <<~EOS
+      To run `f2py`, you may need to `brew install #{pythons.last}`
+    EOS
   end
 
   test do
     pythons.each do |python|
-      system python, "-c", <<~EOS
+      python_exe = python.opt_libexec/"bin/python"
+      system python_exe, "-c", <<~EOS
         import numpy as np
         t = np.ones((3,3), int)
         assert t.sum() == 9

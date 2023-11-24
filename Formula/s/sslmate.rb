@@ -17,27 +17,24 @@ class Sslmate < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "17ae6bb3ed5c430fdda554b990d5a1d5b539b89065ed5944288851b862f83c20"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d082114fb209257176956b1aebdad10478fc597de6604a5d9999e1c432e8e793"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d082114fb209257176956b1aebdad10478fc597de6604a5d9999e1c432e8e793"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d082114fb209257176956b1aebdad10478fc597de6604a5d9999e1c432e8e793"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a27cad29a05af1a278ce5472e7a93400ec29f3232d8336042c01db999b495f79"
-    sha256 cellar: :any_skip_relocation, ventura:        "ffcccf2b3dfba7bb454eec781fdda76a8e15ee958d3631c5cf5e2c0401bf30c2"
-    sha256 cellar: :any_skip_relocation, monterey:       "ffcccf2b3dfba7bb454eec781fdda76a8e15ee958d3631c5cf5e2c0401bf30c2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ffcccf2b3dfba7bb454eec781fdda76a8e15ee958d3631c5cf5e2c0401bf30c2"
-    sha256 cellar: :any_skip_relocation, catalina:       "ffcccf2b3dfba7bb454eec781fdda76a8e15ee958d3631c5cf5e2c0401bf30c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8cf9d5a489518810246c59334f5f0b2855888075b421698746f08391d965eb7"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "932e9dcb8e0fb10cbc525292fcacab324e5f919e951cdadcee3dd81a1d306c1c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "826a25dd77500137cc8305370256fe0f20c4d077f63d68c074ae853eba94a89f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "753c58a81a474c16a65283ce9001695feea621548b94e8c8520bb383bfc7a6b2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6259b02b5b9197e69f5efdf546481e16ece92e4b440a071a7ea1c9e372e91542"
+    sha256 cellar: :any_skip_relocation, ventura:        "88685486b03263d33975ffd699028b74d5cd91709c546f8fcc57a754ce873242"
+    sha256 cellar: :any_skip_relocation, monterey:       "a90a85b45f8b82b2a0dffd3fc4f2d492d8001494cb17ab4904ee8109a6ff21b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f84a12a2650d145b2d6ec14f502de800351aa19fb4b1c013ef7d8e7dd6a0b479"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   uses_from_macos "perl"
 
   on_linux do
     resource "URI::Escape" do
-      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.10.tar.gz"
-      sha256 "16325d5e308c7b7ab623d1bf944e1354c5f2245afcfadb8eed1e2cae9a0bd0b5"
+      url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.21.tar.gz"
+      sha256 "96265860cd61bde16e8415dcfbf108056de162caa0ac37f81eb695c9d2e0ab77"
     end
 
     resource "Term::ReadKey" do
@@ -46,19 +43,19 @@ class Sslmate < Formula
     end
   end
 
-  resource "boto" do
-    url "https://files.pythonhosted.org/packages/c8/af/54a920ff4255664f5d238b5aebd8eedf7a07c7a5e71e27afcfe840b82f51/boto-2.49.0.tar.gz"
-    sha256 "ea0d3b40a2d852767be77ca343b58a9e3a4b00d9db440efb8da74b4e58025e5a"
+  resource "boto3" do
+    url "https://files.pythonhosted.org/packages/d7/1e/919989cd5ffc34ac7bc1107cca3eb1a9e03bbe05232c5ae61f923ecb689e/boto3-1.29.6.tar.gz"
+    sha256 "d1d0d979a70bf9b0b13ae3b017f8523708ad953f62d16f39a602d67ee9b25554"
   end
 
   def install
     ENV.prepend_create_path "PERL5LIB", libexec/"vendor/lib/perl5"
 
-    venv = virtualenv_create(libexec, "python3.11")
-    venv.pip_install resource("boto")
+    venv = virtualenv_create(libexec, "python3.12")
+    venv.pip_install resource("boto3")
 
     resources.each do |r|
-      next if r.name == "boto"
+      next if r.name == "boto3"
 
       r.stage do
         system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}/vendor"

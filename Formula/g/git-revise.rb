@@ -1,6 +1,4 @@
 class GitRevise < Formula
-  include Language::Python::Virtualenv
-
   desc "Rebase alternative for easy & efficient in-memory rebases and fixups"
   homepage "https://github.com/mystor/git-revise"
   url "https://files.pythonhosted.org/packages/99/fe/03e0afc973c19af8ebf9c7a4a090a974c0c39578b1d4082d201d126b7f9a/git-revise-0.7.0.tar.gz"
@@ -9,21 +7,25 @@ class GitRevise < Formula
   head "https://github.com/mystor/git-revise.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f24bc3d536e9aa3ee38043d2d7f42169234474b6bff0d6f6dbdbf497c776f5e1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "938a6cfb9895ec730d162419eed3a0f0df43d0810c9599809ca25484d7355adf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d460d4fc56c643947602a3e171891d9b4d79679c49d982860fbb5039a725b5f5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9d526b3ee9ec7ac180a06861fe45f0dfd56d87c2d2f2a31603e99e04450b6e63"
-    sha256 cellar: :any_skip_relocation, ventura:        "8df48a5acf737f4910de8a4a9e0d2b8e451811897801fd5c64635dbf02462e4b"
-    sha256 cellar: :any_skip_relocation, monterey:       "b332573f0ea2df96b297f348d1097407fc03d0dd1233b98b1e6d80f735638453"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e820a84ec1cfd1c0f6fd708b00ad52f8029c88c0f0147fa23f88542ae7756029"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5a47af84d787b9dd31fbc70a63201f8b1aeb4229fcbf88ccc9c4490df88f0c44"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a9ee2921cac14ddea79e4c1e020e1b8d544e5bba16f5fcc2796b21ac6566a9f8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a85791ce1eaa49f13c5ad465d361dccb9b7afba1177e9b542f083f90321a1005"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8aa99a449a1352eca08754aa2ee6f85e5f96c65a9d7caf22d84b35755ef2a589"
+    sha256 cellar: :any_skip_relocation, ventura:        "75db0a7e791194ff3f89f0fce29a4998a92a9b3a532864bc6532544c9fe3e4e7"
+    sha256 cellar: :any_skip_relocation, monterey:       "6896a89a70307bf7487bf96ef4a65003e17e37e6636b4c05b19c4798b10fd3ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e5a2a0b8b28bc4151e1c06d88d8bcc401334c7cfd27c1122b7e9cbdcbdfd113"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
-    man1.install "git-revise.1"
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

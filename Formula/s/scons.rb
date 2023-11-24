@@ -1,6 +1,4 @@
 class Scons < Formula
-  include Language::Python::Virtualenv
-
   desc "Substitute for classic 'make' tool with autoconf/automake functionality"
   homepage "https://www.scons.org/"
   url "https://files.pythonhosted.org/packages/a4/ce/31e6d2f5e1d1cc23d65cfe4e28b2a83cc2d49f4bb99b5eec9240fb9a9857/SCons-4.6.0.tar.gz"
@@ -8,19 +6,25 @@ class Scons < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1bcbf2c4b50ee697e3cd1678bdfe1900dead825c3c286c74fa6a18051c19928a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5396c05832549e8464db6a6eee137b0bf485253fa919b1f1f6265359da3cc8f3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6659091b103e9bae0c9792e063dec1b3543c707be6f0a46cc08e5ee77a9b1599"
-    sha256 cellar: :any_skip_relocation, sonoma:         "101bf22a790f07825ffb59b099900af2e80f3e39d7c60d6a6df305bfd839ed06"
-    sha256 cellar: :any_skip_relocation, ventura:        "14c2fc49d24cf38c241b3855031b06b0a58f5a73dbca235ddac9230c56008759"
-    sha256 cellar: :any_skip_relocation, monterey:       "a28dae92355e10c12c0803c72d97440a302f7bd4efd1874401fbe2490a1cd655"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "858e36218cd6e8ded5220619fd9afeaa2fdf76faa0e47ca06df7e9f4fc48cddc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "353167afa9a64a00cd898ede3e9aafa5aae93ed15ab2e70d7d115062a776e007"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "efbb532f51729c66f5f42333144a2e08c6e0ca116be788ab15aea05876dad282"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d030e4e92504f0a2474ae6aa05f0fde5348d27bbcf0f069a6d44bdeb11cde45"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f4eeee8de9c308cf08901214dcae639d875910dc9e69443476faa12ead3e73fa"
+    sha256 cellar: :any_skip_relocation, ventura:        "880782191160aa35640cf2b009c7e0a1d6af08e6f969e898ca93fc6105a55c13"
+    sha256 cellar: :any_skip_relocation, monterey:       "fe4e3814e7ed2c04b17326c4d48168276b3a5fa2573d6c3bf5fc3b692375e6d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17e59f0211787451590668a9790ee7e37da4ef84c293955cf1193e401fc53caa"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

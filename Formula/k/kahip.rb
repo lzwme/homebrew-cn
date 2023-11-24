@@ -1,21 +1,19 @@
 class Kahip < Formula
   desc "Karlsruhe High Quality Partitioning"
   homepage "https://algo2.iti.kit.edu/documents/kahip/index.html"
-  url "https://ghproxy.com/https://github.com/KaHIP/KaHIP/archive/refs/tags/v3.15.tar.gz"
-  sha256 "20760099370ddf7ecb2f92bfdb727def48f6428001165be6ce504264b9a99a0b"
+  url "https://ghproxy.com/https://github.com/KaHIP/KaHIP/archive/refs/tags/v3.16.tar.gz"
+  sha256 "b0ef72a26968d37d9baa1304f7a113b61e925966a15e86578d44e26786e76c75"
   license "MIT"
   head "https://github.com/KaHIP/KaHIP.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f4f24b7397a122f5dfbbfbe46c9a11b8f4ee873a53f00d8d975993eb89b88614"
-    sha256 cellar: :any,                 arm64_ventura:  "60fc78ed51f4d78d9442ce39603a5c6f55802fa4092aa3ecb232e2f7dea46861"
-    sha256 cellar: :any,                 arm64_monterey: "43f0235ffb5230b4069abc2b53a0c88a114bc3e79d317247fe7e86dbd5c7d4ff"
-    sha256 cellar: :any,                 arm64_big_sur:  "f0edebe4d4485a71c21845dd760b2e6a04deb13179a81935122ed2151313e2d3"
-    sha256 cellar: :any,                 sonoma:         "c9a113c46dba4578f4f8c76f879d4a9ef1953574a91f0d0414c3dd073f67babd"
-    sha256 cellar: :any,                 ventura:        "39b3dfe20c92afaed1fb94a1acea77a09376494f394be4938a228ec0e5add8ad"
-    sha256 cellar: :any,                 monterey:       "6ba610be5b00f1114293d1d0eac272b36609728eda02ba3c6fd741847c68466d"
-    sha256 cellar: :any,                 big_sur:        "be0c6bb0acbfe826dca554e8c669d35720257c94bd0184644f4b456451b0c811"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8b0a6300a7a5448411828d565b3ab562384880999de7e2f89dc525642eefa9e"
+    sha256 cellar: :any,                 arm64_sonoma:   "970fe2a3d90298de2d44a30bce8a60f9bbcf2e0be59f2035c617d825fd4713e7"
+    sha256 cellar: :any,                 arm64_ventura:  "3ba222ed29cb5e903167de8216be60180d41a0f59d64edcaa00955e7c7670e0b"
+    sha256 cellar: :any,                 arm64_monterey: "ecd60dda8182bfcbd93e030c93d42f7bdca84e36e4bb1a0e0b11f7c64637387e"
+    sha256 cellar: :any,                 sonoma:         "e4eebc7fd9b608923efe1e17d006ffe7fd0a00261e3ee72239f5b744dc042a44"
+    sha256 cellar: :any,                 ventura:        "26def65973de379722881a0a714458586b23bf5e45fb9632252687de0cc49355"
+    sha256 cellar: :any,                 monterey:       "c3c24dfa4c3607db5b3de5a68123606c3883180cbf8436415e180a65d4c58f56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "438e8df826b458d6401fc3ddc7326b758c281597bace27f9a542a87389a8c60c"
   end
 
   depends_on "cmake" => :build

@@ -6,13 +6,14 @@ class PythonPbr < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ec50639a6856bcbed7ad5f34baa7e2ed70d87ceacec464e5709b845cb32459e3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "09f70851b62f61a9aceb3d1e7f7f2ea9ead8dae3b4f05064ac2e6168f06e919a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8aa17f55dedaff5e5ed6888542438d02df1f586bb2d1879eac22e23ef790984e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f470d34cab75d1ee824f33ee7441ca5553ed740b7942b9908ec0e726fa5a4663"
-    sha256 cellar: :any_skip_relocation, ventura:        "a887394fc2ebb50247b7fdfb9d76c539d020e8f6e2b81ee401c5b4e22fb76e08"
-    sha256 cellar: :any_skip_relocation, monterey:       "ba7f696a5fa9efb25199a5dacc0030a0b2247f4eb2bf26f14c2cbc5cfbf0b505"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "53affcca5c74a206b1efbdff00aaf42c14ab55afedddb0acae479b0c07b2bba1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "054b7472e390b7696eb6497484b2c74af8bbbaf34647ae1b685597e05e1841cb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "07209b05c8eed68f39f6d93dc6c0e883bed5a20300b03b5a0c208ad4cc4e427d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "af8140d13662b44929161227c4cea3302f07882f9aa77ed687aa1160c5fe9b08"
+    sha256 cellar: :any_skip_relocation, sonoma:         "235baac06589d1bd621a71768fd195f49693744ad134d288eebb2d566159b6b6"
+    sha256 cellar: :any_skip_relocation, ventura:        "08d08193ce362049dddd37fc5fdd0ce93a5712bfb75d85d8e32c99369bd7c621"
+    sha256 cellar: :any_skip_relocation, monterey:       "dfb722899a7f6e61cfd0d325b1d0d5c8bf22785885ec9f3d0575f7ee6a4e4efe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb3ea9e739e56fb54a763888aa1c4b570d9e279952065e9d0b9bf2f9c7610825"
   end
 
   depends_on "python-setuptools" => [:build, :test]
@@ -22,7 +23,7 @@ class PythonPbr < Formula
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.start_with?("python@") }
-        .map { |f| f.opt_libexec/"bin/python" }
+        .sort_by(&:version)
   end
 
   def install
@@ -33,8 +34,15 @@ class PythonPbr < Formula
     ENV["SKIP_GENERATE_RENO"] = "1"
 
     pythons.each do |python|
-      system python, "-m", "pip", "install", *std_pip_args, "."
+      python_exe = python.opt_libexec/"bin/python"
+      system python_exe, "-m", "pip", "install", *std_pip_args, "."
     end
+  end
+
+  def caveats
+    <<~EOS
+      To run `pbr`, you may need to `brew install #{pythons.last}`
+    EOS
   end
 
   test do
@@ -51,8 +59,9 @@ class PythonPbr < Formula
       version = 0.1.0
     EOS
     pythons.each do |python|
-      pyver = Language::Python.major_minor_version python
-      system python, "-m", "pip", "install", *std_pip_args(prefix: testpath/pyver), "."
+      python_exe = python.opt_libexec/"bin/python"
+      pyver = Language::Python.major_minor_version python_exe
+      system python_exe, "-m", "pip", "install", *std_pip_args(prefix: testpath/pyver), "."
     end
   end
 end

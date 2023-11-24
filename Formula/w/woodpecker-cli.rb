@@ -1,19 +1,19 @@
 class WoodpeckerCli < Formula
   desc "CLI client for the Woodpecker Continuous Integration server"
   homepage "https://woodpecker-ci.org/"
-  url "https://ghproxy.com/https://github.com/woodpecker-ci/woodpecker/archive/refs/tags/v1.0.5.tar.gz"
-  sha256 "6e2985140640f06417a9e40959964b4a66a2b1a517575fec74456e10a81bb4de"
+  url "https://ghproxy.com/https://github.com/woodpecker-ci/woodpecker/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "56429d9cbe1e6e81ab019b1549e6de49f2fa8b5abbc6322203a266b92139ca68"
   license "Apache-2.0"
   head "https://github.com/woodpecker-ci/woodpecker.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dec329001c7c6f198a472995c3fb27a3f0efe469158a5710b89646e17868e740"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "645c437ecd591cc4379e925d214ba54b417f5ecac080d19519ea4705a97e39ce"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4878e5a9f1ad05fe2ae185d0474984951b9b0b1cb8663ce871ff1e60549bb5f0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0d7b1af59e9fa2590536a364fbc0c488d0cec6083563fbb30393600dc95d4ac7"
-    sha256 cellar: :any_skip_relocation, ventura:        "3a4f0ba2c60ee08d410a5cf6b922fff84b36f4e9e0ccf0f3986824b924d057e5"
-    sha256 cellar: :any_skip_relocation, monterey:       "421ce24ba55f2a3a39c7b96d7eb6997452c2ca94c7612d7e1a53244fa9351cfa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f6802ded6c13cdb01a45dd8c7c07285a920de86e33960aec0cdecac37fe5d63b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7de61040a5a56c51360ef03558e8393af0b61c9be6b9f7aded27da25d679c08f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3a36c09d3d29e180067530546ec2886cd90adc04d585aa5cb8cd7aa8c0c4214c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2787be979e65d97c8e4dbc04ad5e403ffb479638943ebd04e94633ad3ff036ce"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6d75dfca05dc0a9b98daf844fd22acc2bbc461678a9b89598c9eea2e0590a584"
+    sha256 cellar: :any_skip_relocation, ventura:        "2eaf4651ae1a341f0167e42b62c6d47201604779252431f6f5b1b46d1fe7db1b"
+    sha256 cellar: :any_skip_relocation, monterey:       "842d2ea39771222968a939a4940ce8ed97e55c3bbab929216a58e0aa803e16a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d62c0fb747fbac7de6a6649cade4c10d58aac97f725b8d32f64c882abecee682"
   end
 
   depends_on "go" => :build

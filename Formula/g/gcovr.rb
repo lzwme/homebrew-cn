@@ -1,6 +1,4 @@
 class Gcovr < Formula
-  include Language::Python::Virtualenv
-
   desc "Reports from gcov test coverage program"
   homepage "https://gcovr.com/"
   url "https://files.pythonhosted.org/packages/19/6d/2942ab8c693f2b9f97052d6a6de4c27323a3bd85af7d062dc5bd3a2a9604/gcovr-6.0.tar.gz"
@@ -9,28 +7,29 @@ class Gcovr < Formula
   head "https://github.com/gcovr/gcovr.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "482b954d85f2feeb72f7699c7f6b8e70d9cbbcc904bcdcaec9b276507da8a32b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "38d423544896f5fffddd5e6514006461ef219c47979ef08ea60b8fa068c734d9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "46904919249f4e477db9336fd27db5a5b9a9b196a9abbdacfd4aaa7bd5413a3c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3bb194f19ae25d53cc0a701ddb84e3c9417b73271d385af4323fc449e64602fd"
-    sha256 cellar: :any_skip_relocation, ventura:        "bf1d15c9c92373761a37a2d8ceb1fc363b329e7ded3ba755da0f323d6733492c"
-    sha256 cellar: :any_skip_relocation, monterey:       "c45809d5f29dbb35fed915a894e483cf4de4f739bb75cade7431c3a12d7af654"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "541a7704b5fd30a5d311846d71c39a188278bba4be4fcb5455dc2bd953af0dd4"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5b85638a70c637af30f7b16f75cdd95fb4b5bfee535e61c8325cba35d90ede23"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d391aa2ebe3de2c65ab565af8ec1801c6ebd46fc8de6f4f52e70beb40e5b6671"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fb573b15c5aedac19a3c46c9ab006e854f2651c219c8c49dd95b6cbdc9018d2b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "de9c63bb1ed4a7b78b4af1fad78716fc8c6b258f1b9c657a9e4e25eae551476d"
+    sha256 cellar: :any_skip_relocation, ventura:        "360d4c9d26251034b095dce9e28259b7be28685b2882ba88f8e606b6d65cde03"
+    sha256 cellar: :any_skip_relocation, monterey:       "3ace6d9ce24206658429329b1eb2ac0a8b50519e5f92f922244e1f912245ff42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01bbe415ac4283725620fbb9b98dd329e5219afe69ab0b06b0a71263a147ad8a"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "pygments"
+  depends_on "python-jinja"
   depends_on "python-lxml"
   depends_on "python-markupsafe"
   depends_on "python@3.12"
 
-  resource "Jinja2" do
-    url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
-    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
+  def python3
+    "python3.12"
   end
 
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

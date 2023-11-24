@@ -3,7 +3,7 @@ class Madplay < Formula
   homepage "https://www.underbit.com/products/mad/"
   url "https://downloads.sourceforge.net/project/mad/madplay/0.15.2b/madplay-0.15.2b.tar.gz"
   sha256 "5a79c7516ff7560dffc6a14399a389432bc619c905b13d3b73da22fa65acede0"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -11,16 +11,13 @@ class Madplay < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "851a8ef6d0e408f21b28e54ec862c63ca862b26b357f43e01f781587ef147cc5"
-    sha256 arm64_ventura:  "12c5f62bc659cbae5db709292b63edfbd9fccd3950e2b7eb1fda7bc39f92d01a"
-    sha256 arm64_monterey: "6b0d3f661abe526d4cc4437bea68abe667f6faa9cff54d0e3a0670c0e54d4b4d"
-    sha256 arm64_big_sur:  "2407e2250bbd71166947df1e754d5fd39b8bfbb30deeec6d191349495c9ee2a2"
-    sha256 sonoma:         "cedb93bc3947c63052af2028ad7193dcc8ff5bdeb87bc091004bf7df25affde3"
-    sha256 ventura:        "96cf920da6b41481fa2054ed1e8bb33e655e7a1b1a21a9af5875b9bfdfb6eb68"
-    sha256 monterey:       "caacb11e058d2a15d13268f7e1b9b6ecbf76e92e64410a23eb32cda5bf94eda8"
-    sha256 big_sur:        "cc587c330d6005c039fdd974da44ffa3da8e649337912c41300fe095ebc52b6d"
-    sha256 catalina:       "b2a019e680f79bcd45a0c194439256d3211256449ad37378da25fb9376f1463e"
-    sha256 x86_64_linux:   "c03953ba98444a1e710f25411e169b7a4f586c131d820ec63b19fceb36efc937"
+    sha256 arm64_sonoma:   "bb53d0d999f2179e53c438c9fbcfc1fa57a6dfb0a0e87b144fe8d9f5c91689de"
+    sha256 arm64_ventura:  "544e014609eb4449054c2cb5ec02f550ec5ab3619e48faf881db9b71bf9a390b"
+    sha256 arm64_monterey: "e66c7d9d05cd323ad4091b07d063ce9ea5d65dd86fbc06e78ac9316522710432"
+    sha256 sonoma:         "719d4a1feb495f2c6f4f4e9e9e00689bdf4c4b21ad54add5d91ba97238fbd687"
+    sha256 ventura:        "3ad559cb2e38b5b0719a29bade20758642ecfd89c1afb724557b65442ca31e65"
+    sha256 monterey:       "0042b125f11f24d15a45f1b231f3ac2e3cda228c67a9ba0ddb1a3f8ceef336bd"
+    sha256 x86_64_linux:   "dcf38528c7c57f08ecc8e8ec764d8d7a4be39fb7cec6a37320bb5999cc495e17"
   end
 
   depends_on "libid3tag"

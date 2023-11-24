@@ -34,6 +34,12 @@ class PythonBuild < Formula
     end
   end
 
+  def caveats
+    <<~EOS
+      To run `pyproject-build`, you may need to `brew install #{pythons.last}`
+    EOS
+  end
+
   test do
     pythons.each do |python|
       python_exe = python.opt_libexec/"bin/python"

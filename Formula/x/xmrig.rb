@@ -1,8 +1,8 @@
 class Xmrig < Formula
   desc "Monero (XMR) CPU miner"
   homepage "https://github.com/xmrig/xmrig"
-  url "https://ghproxy.com/https://github.com/xmrig/xmrig/archive/refs/tags/v6.20.0.tar.gz"
-  sha256 "86c62eb6db83981b21ac1faac69c28fee2952cbbc207ea7476707d4f1799633f"
+  url "https://ghproxy.com/https://github.com/xmrig/xmrig/archive/refs/tags/v6.21.0.tar.gz"
+  sha256 "4b197c71fa06030216b641b4ea57f7a3d977a17df1b55bd13759d4705dbf5941"
   license "GPL-3.0-or-later"
   head "https://github.com/xmrig/xmrig.git", branch: "dev"
 
@@ -12,15 +12,13 @@ class Xmrig < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9037deb1a9c90a226f8637345d4e8ba4fdae230c5c56ab4b3ad040f1df6d1417"
-    sha256 cellar: :any,                 arm64_ventura:  "e4ee30ef215e315ffd3f10091ec17cd26bed3f8b55e92013cd4ae39881f605d7"
-    sha256 cellar: :any,                 arm64_monterey: "d972fcd5fbf5f99f30f9516aa761f2e6f2d2f9285a7cf5c618edf5f08dd5b19a"
-    sha256 cellar: :any,                 arm64_big_sur:  "3878a1e5f63c6401353eab8f98667fdc8ad4a4f316eec339f5b3e427e068730b"
-    sha256 cellar: :any,                 sonoma:         "4fe71b70883e857552655811702f9ab99039a86594baefeb52707b4083b1b067"
-    sha256 cellar: :any,                 ventura:        "44e2127f8956286847d68052bde394d84cc759c32213d194972c4fe2b1c54be8"
-    sha256 cellar: :any,                 monterey:       "c3c041f8f73d606068ab821d6c2a950a74792c1602a4b3cb50cacb75fd2f27da"
-    sha256 cellar: :any,                 big_sur:        "44ffbb9e76ace43ab79593b8574d6e627a9e2d3b1606b5259a9ce3ba6e9789d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "934d02c4376d1c1dd7d7919c0a873ca6468a46f6230d8e32bcf921239f528b11"
+    sha256 cellar: :any,                 arm64_sonoma:   "5a9684bf6686239161f986cd8fe1f5e5ba67750ee8416678f2fff70018af0dab"
+    sha256 cellar: :any,                 arm64_ventura:  "6d29e5f467350af4ef4e844cf76c43de1c803a9829be1f96489bdd37fd639ba9"
+    sha256 cellar: :any,                 arm64_monterey: "a8d8f679ecce0d5bd35cef12457c8764a053642b4565fb6fa198cedfba9148eb"
+    sha256 cellar: :any,                 sonoma:         "15f778027a76a1ec6f34e1f2210262c1dd3bb2e8d28016ac5892514ed7187abe"
+    sha256 cellar: :any,                 ventura:        "6a368395a7cd732223bae095f6a71da714934c45580bb5703a37135ec349661b"
+    sha256 cellar: :any,                 monterey:       "f362548a34b3b9211873c6fd23622cf8e16bfdfa72468e25f895a0f2106d4939"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e0db907067d978b9aba52ce5db74850abedd3f0b38de42f7dc164a44f930747"
   end
 
   depends_on "cmake" => :build

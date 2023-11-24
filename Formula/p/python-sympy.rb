@@ -31,6 +31,12 @@ class PythonSympy < Formula
     end
   end
 
+  def caveats
+    <<~EOS
+      To run `isympy`, you may need to `brew install #{pythons.last}`
+    EOS
+  end
+
   test do
     pythons.each do |python|
       python_exe = python.opt_libexec/"bin/python"

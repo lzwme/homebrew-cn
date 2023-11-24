@@ -1,8 +1,8 @@
 class Ddclient < Formula
   desc "Update dynamic DNS entries"
   homepage "https://ddclient.net/"
-  url "https://ghproxy.com/https://github.com/ddclient/ddclient/archive/refs/tags/v3.11.1.tar.gz"
-  sha256 "5eb5ca4118f14ae219da09e82dac39e0255048518a56311b2e9ec392505edd11"
+  url "https://ghproxy.com/https://github.com/ddclient/ddclient/archive/refs/tags/v3.11.2.tar.gz"
+  sha256 "243cd832abd3cdd2b49903e1b5ed7f450e2d9c4c0eaf8ce4fe692c244d3afd77"
   license "GPL-2.0-or-later"
   head "https://github.com/ddclient/ddclient.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Ddclient < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "07b5125c6163fe2380fcef8b3fbf853cac7c17c3fa5af09db7d994dc783426bf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "07b5125c6163fe2380fcef8b3fbf853cac7c17c3fa5af09db7d994dc783426bf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "07b5125c6163fe2380fcef8b3fbf853cac7c17c3fa5af09db7d994dc783426bf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "07b5125c6163fe2380fcef8b3fbf853cac7c17c3fa5af09db7d994dc783426bf"
-    sha256 cellar: :any_skip_relocation, ventura:        "07b5125c6163fe2380fcef8b3fbf853cac7c17c3fa5af09db7d994dc783426bf"
-    sha256 cellar: :any_skip_relocation, monterey:       "07b5125c6163fe2380fcef8b3fbf853cac7c17c3fa5af09db7d994dc783426bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9198fddf8a3851c1519f41b15b512ab65c4bf586da111b7eec1621fb6d8b1d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "414220db19df958c45f3d8ad699841ac8e115d1cba7a2c2b3768e36c9e0bbfbd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "414220db19df958c45f3d8ad699841ac8e115d1cba7a2c2b3768e36c9e0bbfbd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "414220db19df958c45f3d8ad699841ac8e115d1cba7a2c2b3768e36c9e0bbfbd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "414220db19df958c45f3d8ad699841ac8e115d1cba7a2c2b3768e36c9e0bbfbd"
+    sha256 cellar: :any_skip_relocation, ventura:        "414220db19df958c45f3d8ad699841ac8e115d1cba7a2c2b3768e36c9e0bbfbd"
+    sha256 cellar: :any_skip_relocation, monterey:       "414220db19df958c45f3d8ad699841ac8e115d1cba7a2c2b3768e36c9e0bbfbd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99341145cb0d0dcd3e2f2da1b726372b72e33a5ac9807d1b8f5a0bab26392078"
   end
 
   depends_on "autoconf" => :build
@@ -32,14 +32,17 @@ class Ddclient < Formula
       url "https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/IO-Socket-INET6-2.73.tar.gz"
       sha256 "b6da746853253d5b4ac43191b4f69a4719595ee13a7ca676a8054cf36e6d16bb"
     end
+
     resource "IO::Socket::SSL" do
-      url "https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.078.tar.gz"
-      sha256 "4cf83737a72b0970948b494bc9ddab7f725420a0ca0152d25c7e48ef8fa2b6a1"
+      url "https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.084.tar.gz"
+      sha256 "a60d1e04e192363155329560498abd3412c3044295dae092d27fb6e445c71ce1"
     end
+
     resource "JSON::PP" do
       url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-PP-4.16.tar.gz"
       sha256 "8bc2f162bafc42645c489905ad72540f0d3c284b360c96299095183c30cc9789"
     end
+
     resource "Net::SSLeay" do
       url "https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.92.tar.gz"
       sha256 "47c2f2b300f2e7162d71d699f633dd6a35b0625a00cbda8c50ac01144a9396a9"

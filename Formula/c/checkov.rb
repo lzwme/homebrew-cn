@@ -3,19 +3,18 @@ class Checkov < Formula
 
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
-  # checkov should only be updated every 10 releases on multiples of 10
-  url "https://files.pythonhosted.org/packages/3e/9e/ae87609021b129257006e8729bad57a5e12aec8213218581e6d1bd31d634/checkov-3.0.40.tar.gz"
-  sha256 "0b2f4aa430dc59e739be77cd452d3445be08f707773e2cc5cac789d407ea5e1d"
+  url "https://files.pythonhosted.org/packages/15/f4/099c0019645b77a51f0f0ff295ef01cd0dbd2765c2f96f30fa97c5c8049a/checkov-3.1.10.tar.gz"
+  sha256 "74309781e718907c57964935e8b9d6f8a01d1e05e426e87fbf51824c7248ec28"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4a9444e1b7e547922ea8e7d3b872a9065b77cd766e1545bbab8614c83ceb0dd7"
-    sha256 cellar: :any,                 arm64_ventura:  "b8bf6f4cc799baea6d5dd20e3c59b810dc51b2718a45d0bbb2b05b28c9615e0f"
-    sha256 cellar: :any,                 arm64_monterey: "063362da9afe40a9b89be7323c3e590831e85348ce0798cd010275c89793c48d"
-    sha256 cellar: :any,                 sonoma:         "8cd743c5383956e1fbfa1e5f31213755c13f56a493a554eb2d0775088f78784f"
-    sha256 cellar: :any,                 ventura:        "9792b20d90fe085644585c19d72683695dbdb5af749c1e01e2bb50c94dacde45"
-    sha256 cellar: :any,                 monterey:       "b876970847cb4aec099d1ef962838ef5cd2101f74f23cca353f780005da8b473"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f636f944546a13758e8fa76bfb57066e249c702caa14441fff7a20bfd2f15037"
+    sha256 cellar: :any,                 arm64_sonoma:   "98c27044044b4fa652126f68e5920b54579e7a123e9e53d929677de1282661ca"
+    sha256 cellar: :any,                 arm64_ventura:  "e8fcd9afa9bd78cba61f6ad2b822c247b1ade141a776010b6ab442db023ea4b9"
+    sha256 cellar: :any,                 arm64_monterey: "56ffa3b58c3c6e823a4c76827105b6051aaefc2b53b4fa6718f86347d4064b0e"
+    sha256 cellar: :any,                 sonoma:         "15ce3cfd1464bacf61cf497cc0609ab7956678946ebf11814697fd939228eba8"
+    sha256 cellar: :any,                 ventura:        "f9aeca453e9f31ad95b838f73d92e88555452740671b129844d38691a909b377"
+    sha256 cellar: :any,                 monterey:       "ea693d179ebc93f46584756dc23f565d6ceead8d160d1bc1b467fc1b2f122f56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca493b9a23ac5b6f6ef062d42be82724f89c1d008113f4037e5e37023e56ba72"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -100,13 +99,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/6b/06/7e2ca443db1af4f3cb76d36eb9f20baf78688ddb095d473e733309a22bb2/boto3-1.29.3.tar.gz"
-    sha256 "d038b19cbe29d488133351ee6eb36ee11a0934df8bcbc0892bbeb2c544a327a4"
+    url "https://files.pythonhosted.org/packages/d7/1e/919989cd5ffc34ac7bc1107cca3eb1a9e03bbe05232c5ae61f923ecb689e/boto3-1.29.6.tar.gz"
+    sha256 "d1d0d979a70bf9b0b13ae3b017f8523708ad953f62d16f39a602d67ee9b25554"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/de/d1/6bbd2a3ade785ff5af9f46c0865c3e7e0f1e4d3c99e9530756ffda9cc1aa/botocore-1.32.3.tar.gz"
-    sha256 "be622915db1dbf1d6d5ed907633471f9ed8f5399dd3cf333f9dc2b955cd3e80d"
+    url "https://files.pythonhosted.org/packages/52/03/dbfdf303237d40ff65d63dfbbafffc90ce5bdad208f23babbff0587c6260/botocore-1.32.6.tar.gz"
+    sha256 "ecec876103783b5efe6099762dda60c2af67e45f7c0ab4568e8265d11c6c449b"
   end
 
   resource "cached-property" do
@@ -290,13 +289,13 @@ class Checkov < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/0b/6c/cebf0e87ee0f2496584e04079592f33610f1f9aaf3684cb3105f03969e2b/pydantic-2.5.1.tar.gz"
-    sha256 "0b8be5413c06aadfbe56f6dc1d45c9ed25fd43264414c571135c97dd77c2bedb"
+    url "https://files.pythonhosted.org/packages/b7/41/3c8108f79fb7da2d2b17f35744232af4ffcd9e764ebe1e3fd4b26669b325/pydantic-2.5.2.tar.gz"
+    sha256 "ff177ba64c6faf73d7afa2e8cad38fd456c0dbe01c9954e71038001cd15a6edd"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/4c/ee/b3479b31f47226bae5d9033761971bec215774a6078ce08e8618d6381470/pydantic_core-2.14.3.tar.gz"
-    sha256 "3ad083df8fe342d4d8d00cc1d3c1a23f0dc84fce416eb301e69f1ddbbe124d3f"
+    url "https://files.pythonhosted.org/packages/64/26/cffb93fe9c6b5a91c497f37fae14a4b073ecbc47fc36a9979c7aa888b245/pydantic_core-2.14.5.tar.gz"
+    sha256 "6d30226dfc816dd0fdf120cae611dd2215117e4f9b124af8c60ab9093b6e8e71"
   end
 
   resource "python-dateutil" do
@@ -325,8 +324,8 @@ class Checkov < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/81/b8/c18e4fa683dd67fd2f1b9239648ba8c29fed467b4aa80387b14116e3a06b/rpds_py-0.13.0.tar.gz"
-    sha256 "35cc91cbb0b775705e0feb3362490b8418c408e9e3c3b9cb3b02f6e495f03ee7"
+    url "https://files.pythonhosted.org/packages/94/3f/b58db0c212ba3a89378d1684f871e0e7783fc34fadc7696e5439c8c9338e/rpds_py-0.13.1.tar.gz"
+    sha256 "264f3a5906c62b9df3a00ad35f6da1987d321a053895bd85f9d5c708de5c0fbf"
   end
 
   resource "rustworkx" do
@@ -405,8 +404,8 @@ class Checkov < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/2e/1c/21f2379555bba50b54e5a965d9274602fe2bada4778343d5385840f7ac34/wcwidth-0.2.10.tar.gz"
-    sha256 "390c7454101092a6a5e43baad8f83de615463af459201709556b6e4b1c861f97"
+    url "https://files.pythonhosted.org/packages/d7/12/63deef355537f290d5282a67bb7bdd165266e4eca93cd556707a325e5a24/wcwidth-0.2.12.tar.gz"
+    sha256 "f01c104efdf57971bcb756f054dd58ddec5204dd15fa31d6503ea57947d97c02"
   end
 
   resource "websocket-client" do
@@ -420,8 +419,8 @@ class Checkov < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/5f/3f/04b3c5e57844fb9c034b09c5cb6d2b43de5d64a093c30529fd233e16cf09/yarl-1.9.2.tar.gz"
-    sha256 "04ab9d4b9f587c06d801c2abfe9317b77cdf996c65a90d5e84ecc45010823571"
+    url "https://files.pythonhosted.org/packages/ca/f7/2af788563995eeec32b920c0640a6bc54777c89c780030a7754f95166b7f/yarl-1.9.3.tar.gz"
+    sha256 "4a14907b597ec55740f63e52d7fee0e9ee09d5b9d57a4f399a7423268e457b57"
   end
 
   resource "zipp" do

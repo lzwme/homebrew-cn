@@ -2,19 +2,19 @@ class Opal < Formula
   desc "Ruby to JavaScript transpiler"
   homepage "https://opalrb.com/"
   url "https://github.com/opal/opal.git",
-      tag:      "v1.8.1",
-      revision: "b13f31881120e673fe37fe7ea0feb12bdcc878bd"
+      tag:      "v1.8.2",
+      revision: "090897655fb1c0b9006a068012990375ead28049"
   license "MIT"
   head "https://github.com/opal/opal.git", branch: "master"
 
   bottle do
-    sha256                               arm64_sonoma:   "8b3ba46bdd717b06d8fffc9820145ba8b2181f1ff6af249e4e1c25432cb04407"
-    sha256                               arm64_ventura:  "19f0d93e606110900b823891f04523f190906de3ced754d596d43f1f94422487"
-    sha256                               arm64_monterey: "1d90fefcca64766661d92396a9a2bcaa4550fa12c06107be175547f212ee96f2"
-    sha256                               sonoma:         "e1abce46ab648208af0731fd9d9d8092d1c6a551214f8316de3147918b667173"
-    sha256                               ventura:        "526cb8ef409630cc921970b04e55736aed8a0018d3692df440f598160d330953"
-    sha256                               monterey:       "e0451fa109948e29eb3dedbb118d1fc973f0176774d2bcf77f825ea523beaa36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29ebf0e9997e7d0c88e9a69a51dcbbee717f13df6193565a44128894e753d01f"
+    sha256                               arm64_sonoma:   "a4cdd1358d5eb6508bf38cc2a67613a9e487cd250bdf9b35e85dea762894dffa"
+    sha256                               arm64_ventura:  "0923489b028e208d184eeb4013e81ba78ab01e9fd76edd2d999f46998c01ccb8"
+    sha256                               arm64_monterey: "faf628998eb0befec1ed127f51959fd57e12e5bd532aa47af4c8d142805fd734"
+    sha256                               sonoma:         "0221fb61f196b9cf8d920dab63202bbd88a1cca1c39faeddc90eeb98809a7825"
+    sha256                               ventura:        "c6d8ff163ca78c9704f439eb6028c9bfe886a8da9c33c954b4ecc6fb8ce63691"
+    sha256                               monterey:       "5509432b1bde3b1c78431961c976f1a791c547620365e73b0be9368b7376b61a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f250a308dd4b1ecfc9bab719bad3a47b2db363af2ca9642a3a81c1b6d9df815d"
   end
 
   depends_on "quickjs" => :test

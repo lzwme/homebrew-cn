@@ -3,18 +3,18 @@ require "language/node"
 class Lerna < Formula
   desc "Tool for managing JavaScript projects with multiple packages"
   homepage "https://lerna.js.org"
-  url "https://registry.npmjs.org/lerna/-/lerna-7.4.2.tgz"
-  sha256 "dcdfc090f86271a1ec5f960a75ba041110f11c0b4722acf65a20b3e56d635a89"
+  url "https://registry.npmjs.org/lerna/-/lerna-8.0.0.tgz"
+  sha256 "0d70a1e9df20ab272731aaba9a925b69e7bd10c548ecb69f4eb825773a5dd51c"
   license "MIT"
 
   bottle do
-    sha256                               arm64_sonoma:   "08ffe686b761f21f698f0e1b2feaf808ad725e2ff5722c8332154ad2ad0d4195"
-    sha256                               arm64_ventura:  "5ff0a64a951de7e54f7700fa094359115944f61c211fba0dc820e94afc5f25ac"
-    sha256                               arm64_monterey: "e002fb7b7c14687c0244a460a998b92b9ace87c108a435123b3750e28d5b587e"
-    sha256                               sonoma:         "790a3f01585c6fe7441e3fb62c21694f165bc1735bb0bb19effe0b8a4284021d"
-    sha256                               ventura:        "c501819731a785fcb5a3a0d1194dfc8dfc08a3ed97a27a7e09ccf69616789920"
-    sha256                               monterey:       "e3ced4c35dddb1b9a85705e62c27803021239aa4791329cb9200af0ba0da8485"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24716597ee8b095811598d0701850038fbe897dedbb745c33478124922224272"
+    sha256 cellar: :any,                 arm64_sonoma:   "531365645053ec9daf89624f297f213d112fd2297a2b1c365a9ff1914a8cf1d7"
+    sha256 cellar: :any,                 arm64_ventura:  "531365645053ec9daf89624f297f213d112fd2297a2b1c365a9ff1914a8cf1d7"
+    sha256 cellar: :any,                 arm64_monterey: "531365645053ec9daf89624f297f213d112fd2297a2b1c365a9ff1914a8cf1d7"
+    sha256 cellar: :any,                 sonoma:         "aaa539a15be2d8c3c903a2483ae9386e41d967d3b67cfaa56c60656663134be1"
+    sha256 cellar: :any,                 ventura:        "aaa539a15be2d8c3c903a2483ae9386e41d967d3b67cfaa56c60656663134be1"
+    sha256 cellar: :any,                 monterey:       "aaa539a15be2d8c3c903a2483ae9386e41d967d3b67cfaa56c60656663134be1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38e86e5e1ddc39792f380a815ab68be77d17daf76458e84d9db65de7f68056f0"
   end
 
   depends_on "node"
@@ -23,12 +23,8 @@ class Lerna < Formula
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
-    os = OS.kernel_name.downcase
-    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
     node_modules = libexec/"lib/node_modules/lerna/node_modules"
-    (node_modules/"@parcel/watcher/prebuilds/linux-x64/node.napi.musl.node").unlink
     (node_modules/"@nx/nx-linux-x64-musl/nx.linux-x64-musl.node").unlink if OS.linux?
-    (node_modules/"@parcel/watcher/prebuilds").each_child { |dir| dir.rmtree if dir.basename.to_s != "#{os}-#{arch}" }
 
     # Replace universal binaries with native slices
     deuniversalize_machos

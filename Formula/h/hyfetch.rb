@@ -1,6 +1,4 @@
 class Hyfetch < Formula
-  include Language::Python::Virtualenv
-
   desc "Fast, highly customisable system info script with LGBTQ+ pride flags"
   homepage "https://github.com/hykilpikonna/hyfetch"
   url "https://files.pythonhosted.org/packages/bf/04/13a5091a1da014fad160710abfad2aa03a72bc41e4678c95be2b5ee67818/HyFetch-1.4.10.tar.gz"
@@ -9,14 +7,14 @@ class Hyfetch < Formula
   head "https://github.com/hykilpikonna/hyfetch.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9405df3b72a2c20b7c8b545cd34eaa0427acd80a6a17ac731432a29e61f40d3c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e0428c9795b530114be08e3441d5fbd42c8441add7a02943798dde66d42cda7b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7bfac65828faa5dfaf102f8968ed91dc78b7a08b7e388bb53bad3826e1bd2325"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bb474bc2b302877b2d0fdfa87b8543a9b7e79999be650d82802fa83f023e3c05"
-    sha256 cellar: :any_skip_relocation, ventura:        "cda835fcbe65007c1467ee6f81e082212891b82887a87010d0724cbc267fa8cd"
-    sha256 cellar: :any_skip_relocation, monterey:       "b44afb5b713561b86d96c392c0f51f9c2693081f735dd48bd334116b78c948a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac0561bb315ce86c914ef69b98c51ac05347ce1a33612ceb36ab11a08df75fef"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "53bbaac30e00d9e4a83452f38cc901120a7b91194a1aee1bde9e873b7248bece"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "01c4269d226afe2976e22503e953b5a6e0392a0ff34ea01b9298ecc0211ac651"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "df3da56d1cb0d88978ba5efab69d9bcb8014fded6ad4174a04e982f42a1dcaef"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b5b1667572ea14ab811555cb9e6c37bb4693933a6f5cc421003e06ade7b2086e"
+    sha256 cellar: :any_skip_relocation, ventura:        "3d42bc57821e651591f6c19ade514bf97b6eddcbb827a96c41fef98930f719c9"
+    sha256 cellar: :any_skip_relocation, monterey:       "f5ccfd3d53357095a2be5f0bef3b099207fa6f2f16dad7d93969104b59bf8c42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83d274693ef365b9bb67fc2a72cbc4900befd2caea02386f3e5a73ce279ae41e"
   end
 
   depends_on "python-setuptools"
@@ -27,8 +25,12 @@ class Hyfetch < Formula
     depends_on "screenresolution"
   end
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

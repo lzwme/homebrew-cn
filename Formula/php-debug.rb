@@ -2,11 +2,10 @@ class PhpDebug < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.2.12.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.2.12.tar.xz"
-  sha256 "e1526e400bce9f9f9f774603cfac6b72b5e8f89fa66971ebc3cc4e5964083132"
+  url "https://www.php.net/distributions/php-8.3.0.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.3.0.tar.xz"
+  sha256 "1db84fec57125aa93638b51bb2b15103e12ac196e2f960f0d124275b2687ea54"
   license "PHP-3.01"
-  revision 1
 
   livecheck do
     url "https://www.php.net/downloads"
@@ -15,12 +14,12 @@ class PhpDebug < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_sonoma:   "93aadd8a2490d35bebc16fbe5954e6f2a98571bc1a6abaf8725cb8f3d179c60d"
-    sha256 arm64_ventura:  "b09e952f7e0d219eec2628e86b635682cd17581a06d6dc28dddd2aa3a6692bb3"
-    sha256 arm64_monterey: "1eaf58e0f4dce3e387ba1bf8817f0915e526493c7b8aa1ca5bf610354b332f8c"
-    sha256 ventura:        "14e345da9d080a4ef229bae67b9060cb9d3d56300c3428b87550b7188b1a90a4"
-    sha256 monterey:       "7e0a145e67566b4ef3c9acfe5dc6160e25569fdb95ac21ce84cf47f9dbf9bbf9"
-    sha256 x86_64_linux:   "3f3d8713a5b4c0380ec017396581bce6fbdb0ee78cd8c16a7d93a7cc05e33fd7"
+    sha256 arm64_sonoma:   "c5db89668fa3f8fa6d48a5a24165b7efaa887d23dd3ef6c8d5be01abc929a52b"
+    sha256 arm64_ventura:  "0808f44b43b83a2fb1f346918015f224876788e57e8b27d18c16cf157d717cff"
+    sha256 arm64_monterey: "1c7231bca8ac2d9338c166eec817d43ae80745ca93d6adea9e9236e464d08613"
+    sha256 ventura:        "f264442c3e311b8e84bef3ecd3e33e9234701c2ac2492de261d4c9392dbb3017"
+    sha256 monterey:       "cf5f98064660f543ac6c41b7d670dc09c166be194627bc96edf83cb4c2d6768d"
+    sha256 x86_64_linux:   "887d25fea5ffa757c716d997660135d2decb7dfbcf223d1a7659ce9b2ee8b207"
   end
 
   head do
@@ -100,7 +99,7 @@ class PhpDebug < Formula
     # Prevent system pear config from inhibiting pear install
     (config_path/"pear.conf").delete if (config_path/"pear.conf").exist?
 
-    # Prevent homebrew from harcoding path to sed shim in phpize script
+    # Prevent homebrew from hardcoding path to sed shim in phpize script
     ENV["lt_cv_path_SED"] = "sed"
 
     # system pkg-config missing
@@ -108,8 +107,7 @@ class PhpDebug < Formula
     if OS.mac?
       ENV["SASL_CFLAGS"] = "-I#{MacOS.sdk_path_if_needed}/usr/include/sasl"
       ENV["SASL_LIBS"] = "-lsasl2"
-    end
-    if OS.linux?
+    else
       ENV["SQLITE_CFLAGS"] = "-I#{Formula["sqlite"].opt_include}"
       ENV["SQLITE_LIBS"] = "-lsqlite3"
       ENV["BZIP_DIR"] = Formula["bzip2"].opt_prefix
@@ -117,8 +115,11 @@ class PhpDebug < Formula
 
     # Each extension that is built on Mojave needs a direct reference to the
     # sdk path or it won't find the headers
-    headers_path = ""
     headers_path = "=#{MacOS.sdk_path_if_needed}/usr" if OS.mac?
+
+    # `_www` only exists on macOS.
+    fpm_user = OS.mac? ? "_www" : "www-data"
+    fpm_group = OS.mac? ? "_www" : "www-data"
 
     args = %W[
       --prefix=#{prefix}
@@ -154,8 +155,8 @@ class PhpDebug < Formula
       --with-external-gd
       --with-external-pcre
       --with-ffi
-      --with-fpm-user=_www
-      --with-fpm-group=_www
+      --with-fpm-user=#{fpm_user}
+      --with-fpm-group=#{fpm_group}
       --with-gettext=#{Formula["gettext"].opt_prefix}
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-iconv#{headers_path}
@@ -169,7 +170,7 @@ class PhpDebug < Formula
       --with-mysqli=mysqlnd
       --with-ndbm#{headers_path}
       --with-openssl
-      --with-password-argon2=#{Formula["argon2"].opt_prefix}
+      --with-password-argon2
       --with-pdo-dblib=#{Formula["freetds"].opt_prefix}
       --with-pdo-mysql=mysqlnd
       --with-pdo-odbc=unixODBC,#{Formula["unixodbc"].opt_prefix}
@@ -191,8 +192,7 @@ class PhpDebug < Formula
       args << "--enable-dtrace"
       args << "--with-ldap-sasl"
       args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}"
-    end
-    if OS.linux?
+    else
       args << "--disable-dtrace"
       args << "--without-ldap-sasl"
       args << "--without-ndbm"

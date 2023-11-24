@@ -1,6 +1,4 @@
 class Pius < Formula
-  include Language::Python::Virtualenv
-
   desc "PGP individual UID signer"
   homepage "https://www.phildev.net/pius/"
   url "https://ghproxy.com/https://github.com/jaymzh/pius/archive/refs/tags/v3.0.0.tar.gz"
@@ -10,23 +8,29 @@ class Pius < Formula
   head "https://github.com/jaymzh/pius.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7db22333dff6771f81743380020357448e6636f1883f524e28b70a169d83f2b3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9f6ad056df2d84dc9bb16aeceabb5bb5c3bfeaffe7f0f8b569b1d9da78b79f9b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "15eedda033269333588112de00e19fdc24146d741e5856bd3605f1c058be9c2c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "38bf618af0df7d245eabf6d7fff12b399c22cdb678f24fa0d98d3b530683bc71"
-    sha256 cellar: :any_skip_relocation, ventura:        "31ccbff40673fd6f4dbce641f7eda3a2b534666f76d55a02bc67f6ed0dc8ef74"
-    sha256 cellar: :any_skip_relocation, monterey:       "9702a21095214752a4f4541f8dc19a97204d812c5f223ea645fa42c7ae4efb32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e0a5c15872c6e24e56cc856c25c78ac7c89a7845afe7abd8513db31192d3d97"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8d61505ec3e8d340eb73ba9aaa4a2660e1ffb625a0025b1898b4bde9229450b9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "79b3b946b30313322876f8c7162665452b36016cb4104bbd61c2a34625ea7305"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "de8e42fd48ced2f779174d71a2560d7bab6f1125cec510fb06ab0e93476a4e43"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c51ae66b1d1198fc3e3822da507bdde8687a1a055ee6b11c951a6e327312e661"
+    sha256 cellar: :any_skip_relocation, ventura:        "dd3fea786b40a2887356e3eab80b2456a2bad6e1507679a2973012ec3b057100"
+    sha256 cellar: :any_skip_relocation, monterey:       "72db7c293352ab01e5c8b6f4b2e9abece03f16e1a659d6679fa0ac4f40746999"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09737ff9917901073a9097aba3a656ac6421ccc62acd25308a41e1bd3a45c83d"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "gnupg"
   depends_on "python@3.12"
+
+  def python3
+    "python3.12"
+  end
 
   def install
     # Replace hardcoded gpg path (WONTFIX)
     inreplace "libpius/constants.py", %r{/usr/bin/gpg2?}, "/usr/bin/env gpg"
-    virtualenv_install_with_resources
+
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   def caveats
@@ -38,6 +42,9 @@ class Pius < Formula
   end
 
   test do
-    system bin/"pius", "-T"
+    output = shell_output("#{bin}/pius -T")
+    assert_match "Welcome to PIUS, the PGP Individual UID Signer", output
+
+    assert_match version.to_s, shell_output("#{bin}/pius --version")
   end
 end

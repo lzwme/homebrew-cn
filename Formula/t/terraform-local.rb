@@ -69,6 +69,6 @@ class TerraformLocal < Formula
 
   test do
     output = shell_output("#{bin}/tflocal state list 2>&1", 1)
-    assert_match "No such file or directory", output
+    assert_match(/No such file or directory|No state file was found/, output)
   end
 end

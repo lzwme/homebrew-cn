@@ -1,6 +1,4 @@
 class Lit < Formula
-  include Language::Python::Virtualenv
-
   desc "Portable tool for LLVM- and Clang-style test suites"
   homepage "https://llvm.org"
   url "https://files.pythonhosted.org/packages/98/a5/f3d49178d1e69224d8680b0a0a02d42d221b45e703587bb2339a0503f421/lit-17.0.5.tar.gz"

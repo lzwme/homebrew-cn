@@ -31,6 +31,12 @@ class PythonMarkdown < Formula
     end
   end
 
+  def caveats
+    <<~EOS
+      To run `markdown_py`, you may need to `brew install #{pythons.last}`
+    EOS
+  end
+
   test do
     (testpath/"test.md").write("# Hello World!")
     assert_equal "<h1>Hello World!</h1>", shell_output(bin/"markdown_py test.md").strip

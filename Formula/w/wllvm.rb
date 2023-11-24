@@ -1,6 +1,4 @@
 class Wllvm < Formula
-  include Language::Python::Virtualenv
-
   desc "Toolkit for building whole-program LLVM bitcode files"
   homepage "https://pypi.org/project/wllvm/"
   url "https://files.pythonhosted.org/packages/4b/df/31d7519052bc21d0e9771e9a6540d6310bfb13bae7dacde060d8f647b8d3/wllvm-1.3.1.tar.gz"
@@ -9,21 +7,26 @@ class Wllvm < Formula
   revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "162faf96612e2e8dfb52de0720628bfe1f005938ddd8609c46878585d90142e3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "052784dfa3e4966812b3185e43b0bae847a9a4374628405886d99dc6a26d6462"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "825431e5d7a4e7648a225ad3cf8496451fc4023e28a932b479a373b832bbf85d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0e847b904217b3ff75d71b6fc93f2cb1fd876f9dde62350a55b0ba40a3c4f63c"
-    sha256 cellar: :any_skip_relocation, ventura:        "4ce1a08acb570e729fbe54cceba7a823ab4b06e0dd309479de41bb6e661a33dd"
-    sha256 cellar: :any_skip_relocation, monterey:       "effb678ca8c8e22c77f914183c0baab062282d1e1a4acd53d7a115157c400725"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f6e082962d2128bf7909130811da0a85615d234a16c88a516f364c7a4e5b04d"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f248aeb32b9b78c63e59f10eb7d2a51506d97a17cd1566098a11bcb55cea4005"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3ac2be94727ddc9d9b96ebb3dd4bc5045220b274c56bf55146e03556e612ade0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6f1847d6339c7feaa5fa742a9176ba675ba85f500f8cd8d1982618ca8a96eb55"
+    sha256 cellar: :any_skip_relocation, sonoma:         "345ac6f068520408b820bd2e6db8848ab14183ff987a0657896b8de88d9d7d36"
+    sha256 cellar: :any_skip_relocation, ventura:        "f0e846f9ce218f4ba70cb5b4fc820873d7635b57e45d3380e9b95390ade46e00"
+    sha256 cellar: :any_skip_relocation, monterey:       "c0ab2b734ffe3421c7880dd8daf928775f481844c3b087343b48a43f232b8af2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d498bbcc563be8807d7bbdc6cd7aaf6d5f7fefb11b9f0fd38418a0274198f680"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "llvm" => :test
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

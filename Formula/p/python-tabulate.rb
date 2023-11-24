@@ -25,18 +25,25 @@ class PythonTabulate < Formula
     deps.map(&:to_formula)
         .select { |f| f.name.match?(/^python@\d\.\d+$/) }
         .sort_by(&:version)
-        .map { |f| f.opt_libexec/"bin/python" }
   end
 
   def install
     pythons.each do |python|
-      system python, "-m", "pip", "install", *std_pip_args, "."
+      python_exe = python.opt_libexec/"bin/python"
+      system python_exe, "-m", "pip", "install", *std_pip_args, "."
     end
+  end
+
+  def caveats
+    <<~EOS
+      To run `tabulate`, you may need to `brew install #{pythons.last}`
+    EOS
   end
 
   test do
     pythons.each do |python|
-      system python, "-c", "from tabulate import tabulate"
+      python_exe = python.opt_libexec/"bin/python"
+      system python_exe, "-c", "from tabulate import tabulate"
     end
 
     (testpath/"in.txt").write <<~EOS

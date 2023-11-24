@@ -43,6 +43,12 @@ class Pygments < Formula
     end
   end
 
+  def caveats
+    <<~EOS
+      To run `pygmentize`, you may need to `brew install #{pythons.last}`
+    EOS
+  end
+
   test do
     (testpath/"test.py").write <<~EOS
       import os

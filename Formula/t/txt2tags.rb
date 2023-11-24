@@ -1,6 +1,4 @@
 class Txt2tags < Formula
-  include Language::Python::Virtualenv
-
   desc "Conversion tool to generating several file formats"
   homepage "https://txt2tags.org/"
   url "https://files.pythonhosted.org/packages/27/17/c9cdebfc86e824e25592a20a8871225dad61b6b6c0101f4a2cb3434890dd/txt2tags-3.9.tar.gz"
@@ -8,19 +6,25 @@ class Txt2tags < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "834f5b3ff1ff7933cd7c9421a31cc2c77ccb354093c9323aca86772ef70bec96"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dbb22dcc68e0184645065d84171197251a31c5479a6e65725f9aeb7ab02fb82b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "73a1318632dd5895e35ee09bd6e2fd11d1982b11d01affce8acb7d409f069a75"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f2c99b59a535f8f8aaf130a0a5d0744e903e08f0f1ce2d9bf038386446aa7181"
-    sha256 cellar: :any_skip_relocation, ventura:        "7a126fb2632a8bfb9f256b4d2ce7f5ea48d43c5c7afcfafeb7eb420a18faf6b1"
-    sha256 cellar: :any_skip_relocation, monterey:       "667c1960e75ecdd6987943d0ed760df1255584d739d70dcaabc3a72c46cea6e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6f9061ed2a899e6af3ddbbf20bbac612ebfed7e81023a8fa2724dea339474a0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "60f9f591d57949313b15595aa632c72e5596b2f2a95c4b6b1022c9b299aeed78"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "035e98edb3c676e1b1d26c5cc574a005053e05cda0da7f03d8e883c21aab28c7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0f9d0c6eeb44c42c0f81b484e1a06dfe53b0d8450d70e884de3ac322cb2bcedf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e5c30ace29d07c134fe9c1b48202bcc64adadb35108457a5a53b7721f126612d"
+    sha256 cellar: :any_skip_relocation, ventura:        "57a19096879160bc84269c6144b6b151fe8c3e40cd0faeb3673d7e925bf8bf1f"
+    sha256 cellar: :any_skip_relocation, monterey:       "4b821b3b365e54f66e5df3c9843735ededf5f497bc336734dff54bf60627d20d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a075f97bedb110cc7d271e98fbf7deb3ebd315bd358b7e2b20570014559f9dd9"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
