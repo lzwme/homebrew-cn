@@ -8,14 +8,14 @@ class Mycli < Formula
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b912e5f834281a7956503d856e84c015bd3221d5359e203e7d6b4f430f30fd66"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2d866d3e248bbe263c8ea578bd60bf5bc165aa1e7f7b2619fa06bf073511131e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "46120e195909bfa13de1cd443508d1f60918cb68e6204960e0f14e1ce94d4cdd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bb4628dc32cd4dc299e21cf633e5c357746854266175abbec6bc8bf27e62fb80"
-    sha256 cellar: :any_skip_relocation, ventura:        "5d603932c673eafac54101a33bc71673f7e2749fe6c05eed41811ff8c78cb4fb"
-    sha256 cellar: :any_skip_relocation, monterey:       "bd5b2ae8a3d96f4e8772cfb8b3d73a8aeca7f75fcd189001fe6a51477ca598f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cea85758a2715c1689703e146aa5e0ba7274e0b4e456c77fe785af6dd12c4184"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e6dcedb30b4c5b17514f555a3d8ca3e01f30b8f4f4a4708cebc8987d760e1df0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "55ef9da00fce607b4feb3734102ed94ece28b231a162556e017d026f8e103fc7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3cca529f74fcc3495889acb3796162a47964a74e578e5c12dc8d62b7b398db15"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b87c7b6dbaad38df969f89ee554517dcf824da5140756df041084e740de85a58"
+    sha256 cellar: :any_skip_relocation, ventura:        "8464103a20c6c894adfad7794ce04f4d1d94089e4c8de3a32a2849f17a6a5da3"
+    sha256 cellar: :any_skip_relocation, monterey:       "332f906e978fa29a5a7bd749943acb5b3d51387438d0fd7788fdcaa2ad38272b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71f1cdd63d73a4f04c0c34515e17dcec4a773173346c51b6ab9907484b14005e"
   end
 
   depends_on "cffi"
@@ -25,6 +25,7 @@ class Mycli < Formula
   depends_on "python-tabulate"
   depends_on "python@3.12"
   depends_on "six"
+  depends_on "sqlparse"
 
   uses_from_macos "libffi"
 
@@ -61,11 +62,6 @@ class Mycli < Formula
   resource "sqlglot" do
     url "https://files.pythonhosted.org/packages/c1/b1/c0bda67234171f4d88ee936f4a7810275fceded0ed974dac893ebc0d4bd2/sqlglot-18.14.0.tar.gz"
     sha256 "e2b2f16598830e8acd5ffbe55e19c2e45af7e27596692c3214cf4cc1be82027b"
-  end
-
-  resource "sqlparse" do
-    url "https://files.pythonhosted.org/packages/65/16/10f170ec641ed852611b6c9441b23d10b5702ab5288371feab3d36de2574/sqlparse-0.4.4.tar.gz"
-    sha256 "d446183e84b8349fa3061f0fe7f06ca94ba65b426946ffebe6e3e8295332420c"
   end
 
   resource "wcwidth" do

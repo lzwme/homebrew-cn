@@ -1,8 +1,8 @@
 class Youtubeuploader < Formula
   desc "Scripted uploads to Youtube"
   homepage "https://github.com/porjo/youtubeuploader"
-  url "https://ghproxy.com/https://github.com/porjo/youtubeuploader/archive/refs/tags/23.05.tar.gz"
-  sha256 "d495a080bc5da4a852e8f9152cdabe937c9f218985151f98ccb26542a82ef9f9"
+  url "https://ghproxy.com/https://github.com/porjo/youtubeuploader/archive/refs/tags/23.06.tar.gz"
+  sha256 "54161eac7efc92dba00ad98a92bfd9e067bdf7cd7208d370e0e0e4bf58faa105"
   license "Apache-2.0"
   head "https://github.com/porjo/youtubeuploader.git", branch: "master"
 
@@ -16,13 +16,13 @@ class Youtubeuploader < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "12613400022d5c5481cd0b05bc9c708fb9c83678574bcbd2ab41a3e262aa9c79"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "138f798a3c67c0ed80aaaf3e09ca4faf75138ddf7d276eebbd47baef3909bb66"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "617581507d1f9dacab7214cd2eae5decf86f43150f97425fe16268415ac4c22e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3c9ea047e6391296d41ecba462e46b42405b95ee420f4ed62a78d376e77e4127"
-    sha256 cellar: :any_skip_relocation, ventura:        "3911380fb56b965066072e13425402b8a140c240bb0342b1dbb3cb156edfb79c"
-    sha256 cellar: :any_skip_relocation, monterey:       "d4651b54eeb9f762fc83bc92042078d2313c670ee3b34b9a06b659a5c55f2bf1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e797dbff05266325ec4db596ca5726132c02d799841f4c7a4f5008c1a2a43a2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "00e2f57d95d1d1e1ed9121fcdb0b102439eff1b1380e774aa9b8a6c8a75fe5e3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a365567c1261346db06e357fec2601b195366fe4f24e2cfbef0eb9574bb345b2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "72f018aac8b9426d338e742a738966ff5dbbb13e3d4574410a20e5dce3e56afa"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ad0fc6dd9921f37d9bc6f7688f07967e1caf71632c294c7e5c03943f698c0f66"
+    sha256 cellar: :any_skip_relocation, ventura:        "5e981f04e18660e5412de166bb2d3651ad1f6c35ccbe2cce5e7ad5fbe9ab6d51"
+    sha256 cellar: :any_skip_relocation, monterey:       "232d655d50aab5fd052b9ed160bf85be919d466597ff3b3bd16c4e05e424f451"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10b0774ac2da5a45cfc772cc2fefef188dfae5640ee325080d025fb5a137a23a"
   end
 
   depends_on "go" => :build

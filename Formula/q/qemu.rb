@@ -4,6 +4,7 @@ class Qemu < Formula
   url "https://download.qemu.org/qemu-8.1.3.tar.xz"
   sha256 "43cc176804105586f74f90398f34e9f85787dff400d3b640d81f7779fbe265bb"
   license "GPL-2.0-only"
+  revision 1
   head "https://git.qemu.org/git/qemu.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Qemu < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "addee81e787a98f03a9a99e7120d5e47e50e399ef11cef4aca5f57214f021887"
-    sha256 arm64_ventura:  "6f4d0c00a834d1b017c36cea5a8d5323dccdaed9d4800b818268a732fd4553dd"
-    sha256 arm64_monterey: "d6ae98115a0a3d92b3daeec4a2ce34ecb23c3a9266f46fa4688a88fbf41cf720"
-    sha256 sonoma:         "2c7002a0b716b6b3998c00d8c99e6de75a45f371a87700e71111d741f18ead1b"
-    sha256 ventura:        "66a6e3899755908f2a88f301fc366ebd4e17db1e4ca125f896278d13d28c51b2"
-    sha256 monterey:       "0fcf5119780516a6e36005c24152f3973b13c456604bb50ab52a0ff1b96b5c87"
-    sha256 x86_64_linux:   "dc8aa59b2b34b53628052a6e31976a3c37b1ba1daf47d93ba5b231e0dfbb2e4e"
+    sha256 arm64_sonoma:   "f754152f89de7291b5ce45318c35813c44552d34565a81e3d71ada1679ea2c17"
+    sha256 arm64_ventura:  "123ae1752bd8df3f045e72209c0c36fb8748443f9d0bb6f8ac11dc1494de8cf3"
+    sha256 arm64_monterey: "5a99a7ca79c3d175cc9a7dbd0dfa79d3710007582d448051f5b261719ff7c156"
+    sha256 sonoma:         "7d5584cf788135157592867aadc36763c52dee2cfc2722a899b132cda2b5ee0c"
+    sha256 ventura:        "174332acb37743ec324c8e98205578d54d5548d03b24f54cb32bd2fa60d04ab1"
+    sha256 monterey:       "2d60b648b6484e10241bc9f9c3e1b81217e8f3dc392cf72e9b17881e2be0f149"
+    sha256 x86_64_linux:   "b5d993d366e188e5a72cbf228fef7a410246c4ba80cf33fe45c8dadf321bd177"
   end
 
   depends_on "libtool" => :build
@@ -61,6 +62,19 @@ class Qemu < Formula
     sha256 "81237c7b42dc0ffc8b32a2f5734e3480a3f9a470c50c14a9c4576a2561a35807"
   end
 
+  # The default EFI image included in QEMU 8.1.3 (edk2-stable202302) does not work on Apple M3:
+  # https://gitlab.com/qemu-project/qemu/-/issues/1990
+  #
+  # The issue is reported to be fixed in:
+  # https://github.com/tianocore/edk2/commit/5ce29ae84db340244c3c3299f84713a88dec5171
+  # (included in edk2-stable202305 and later)
+  #
+  # Replace the EFI image until QEMU updates it, to rescue M3 users.
+  resource "efi-aarch64" do
+    url "https://snapshots.linaro.org/components/kernel/leg-virt-tianocore-edk2-upstream/5040/QEMU-AARCH64/RELEASE_CLANGDWARF/QEMU_EFI.fd"
+    sha256 "e5cc7beda96bc07d0e80745c84d648701586f8f1fd11223c3fe725327fd6e20c"
+  end
+
   def install
     ENV["LIBTOOL"] = "glibtool"
 
@@ -97,6 +111,17 @@ class Qemu < Formula
 
     system "./configure", *args
     system "make", "V=1", "install"
+
+    # Overwrite edk2-aarch64-code.fd
+    resource("efi-aarch64").stage do
+      # The file has to be padded to 64MiB: https://gitlab.com/qemu-project/qemu/-/blob/v8.1.3/roms/edk2-build.config?ref_type=tags#L113
+      # Otherwise it fails with: `device requires 67108864 bytes, block backend provides 2097152 bytes`
+      File.open("QEMU_EFI.fd", "a") do |file|
+        file.truncate(64 * 1024 * 1024)
+      end
+      rm pkgshare/"edk2-aarch64-code.fd"
+      pkgshare.install "QEMU_EFI.fd" => "edk2-aarch64-code.fd"
+    end
   end
 
   test do

@@ -3,26 +3,26 @@ class GiDocgen < Formula
 
   desc "Documentation tool for GObject-based libraries"
   homepage "https://gnome.pages.gitlab.gnome.org/gi-docgen/"
-  url "https://files.pythonhosted.org/packages/29/72/a319bce143e5d10677bc89b66e750c1511ec005c7a8bb098b415cc68ac68/gi-docgen-2023.1.tar.gz"
-  sha256 "88adeda9cbf882569479701eada009afa5d94fa29d728653ec388c32035f7fa3"
+  url "https://files.pythonhosted.org/packages/e5/6e/9f05646d0dbfa537c9328204212e7d22942e656b9279d1d36d8efedf5dec/gi-docgen-2023.2.tar.gz"
+  sha256 "1836b6496fdc27aff345d12bac8d4b024416a23e0745c8fe0fd38884437a1fc7"
   license any_of: ["Apache-2.0", "GPL-3.0-or-later"]
   head "https://gitlab.gnome.org/GNOME/gi-docgen.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "46217aee749a6691dfbcec02af97e8ad6834553fa1ad591dcacb5e8eba1c9688"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "91811775d0906814c9c9004023c184ce5e5e71bcadfa6b35edf33c7a71bdd17c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b3b00b09a055ce0f82f330697b45025d169f4afda2df7225e08c0e8dc738a81"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3d4592669e57cad57601795f0dd4ef0bb4975627a89e36e1a043271e6ea44c21"
-    sha256 cellar: :any_skip_relocation, ventura:        "f5571b1de9e123f0153e14c5e834fe53ff1fe25219be0fb60db3d3931f0ba967"
-    sha256 cellar: :any_skip_relocation, monterey:       "7f15ec32dee46b8a27d15d9ad99865b4fa8be6b3f9fe555f3584bd0cf7d52440"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b89c27fca95bcc0b90b423c3d3414802ba13b5e710977219b11bb89ae40f706"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b638c87d79f220948e38fdf06613009786c2e388c6e5a2fb8e7cc7ae0b0dcaee"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "415a6b670e0aeb4429fb2ee775e411c4605935c58dc8bc9379fc4d320f26772b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e34de37d53b61fb15aed46c53b63d21e504f67b923cd512735b7f14a99b6f8e5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ee69eecf093b1879dd8af20391e4a67a21ae20ace51d694125ad1f0528189676"
+    sha256 cellar: :any_skip_relocation, ventura:        "4e1f48296666669ab0caf1a87819eb44743966dab8f2aaecf3750e7f8b1e7c2c"
+    sha256 cellar: :any_skip_relocation, monterey:       "33484b2a7c2dc3a8f3d01fa434768bb6db9cd6d83f8883647620eb87480da71c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8689b47d280d7120f2baa4385a449efd308bfecb8cb5b06462a4f9b8ff02459b"
   end
 
   depends_on "pygments"
   depends_on "python-jinja"
   depends_on "python-markdown"
   depends_on "python-markupsafe"
+  depends_on "python-packaging"
   depends_on "python@3.12"
 
   # Source for latest version is not available on PyPI, so using GitHub tarball instead.

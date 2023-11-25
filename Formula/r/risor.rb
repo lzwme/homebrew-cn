@@ -1,8 +1,8 @@
 class Risor < Formula
   desc "Fast and flexible scripting for Go developers and DevOps"
   homepage "https://risor.io/"
-  url "https://ghproxy.com/https://github.com/risor-io/risor/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "016e9917226689560976d1f3c2e16d1af6530c05ae16adc92e71b9740e01057a"
+  url "https://ghproxy.com/https://github.com/risor-io/risor/archive/refs/tags/v1.1.2.tar.gz"
+  sha256 "7c7db6096bed26aef4726995bd5b2f9872238ca7fef434991c9fb2c11d3e694f"
   license "Apache-2.0"
   head "https://github.com/risor-io/risor.git", branch: "main"
 
@@ -12,15 +12,13 @@ class Risor < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "78774e8bff1ae13835a726a8e170ef6c62306cacc6fc63f46d9edf83351adcf1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf5b08c138141dd652a95ffe417006a326a14cd78b4d45b8702859ec7fa98523"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "206ee1737cd952fe7a3333ef80426ba5b0f0299b01760a13b34f692dda76a033"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "48b02df886cee81e90bce35431ebcc94bd3e8344b68688af586797eb0d644e1b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a97359084791fec4e743e41d57e64ab1e0eea18871a5c90d0af8e791adb4431e"
-    sha256 cellar: :any_skip_relocation, ventura:        "b1abf5d26b045c2a45e7731a392a9bbc67cbf1b38457aeeede9787faadcbb209"
-    sha256 cellar: :any_skip_relocation, monterey:       "e294f7a42aca359c290e28a771b376504213816531bccf9b574030a923e9edfe"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ae15467343a10c8dc7d39bb2a8cba1ebaf81dd43323baaacf1487df0665d3f87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "556bf467196ab4cc50c5aab6ed70537476ddfc87ac4e040789a23fbde2ac6086"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "971bfcd2b34f88661305b403cbc9a03f72d6d606fc9f691c7638c078ac6fa4d7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8b34c098d8c4654e8a1ad354aca3c051014bec63b009258ffb201062526e045c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f941151a423fb58263f7c1e78c1ffaaa2ef5fc313193486015021de8317678e7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8eb1f9c7dd36a974ce14686cb69af46543bac44f530a77ead064227be3fabfff"
+    sha256 cellar: :any_skip_relocation, ventura:        "fb3b177504d0f21e1c1fd48bbd000b400c6d72f2cb880bfdd31974ded20999f3"
+    sha256 cellar: :any_skip_relocation, monterey:       "f8b4f530345f1478bbb5538d7c2927e5ff540c728abb17379f1392d4fb4b3df6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08ddaa32c10c8ab443639abf35250bfd47da3ce5a786fd58f455a9164bd5b0b3"
   end
 
   depends_on "go" => :build

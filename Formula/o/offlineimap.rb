@@ -10,20 +10,18 @@ class Offlineimap < Formula
   head "https://github.com/OfflineIMAP/offlineimap3.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "657a6d23720a82033ebefeb8f9fe09d0d1d1ee919d79dc5069ea900a04058264"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "83f5ee79454aacd9cd58fb5c4c6eb4aa6932d0ba483b2199564d2af74997d040"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c81fb4109a28e931a6325beabcb5a19effe25d5852125d6e13354450a0923047"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "795ae0345b2044cc0db0c72b493bfc664419f196f5581a71d505db5f2a1c8cb7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9a152788e47489ef411db17030248443ed7f2c013021baee4857e17d002ad9c2"
-    sha256 cellar: :any_skip_relocation, ventura:        "362944ab2e8ed18b32808ffb6dbbba7758a5ed582836ac1ba6be8bf96bf5ebcb"
-    sha256 cellar: :any_skip_relocation, monterey:       "6f1108e087c2c9637a25219d38c2e3a02e654749f34ae45dfcb18b9230b6d66e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "91224cc003fba38cbdb80e9951a86e9a5544ba7f5aa2695c0d6727c4a8c557b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2aba649ccd6e7506f1f01e1116e6767d3ef95f66179cc8274f07272c28b986b"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b9e0a8ff12072770f975f828a2fea704819b9a6fecdfa9de79f9f2fa1c59451a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a02e3c8302de0a92ac8643a4f7f180d73fe21b5db94f5ec6c139e8478735441e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "33da7d64fb20940b09c44a0f2a8e60e9a54c5a20b852bce8ca3268c6794c69f3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "edc182248abc20d351a300d95a23cb4fce84fb69dda668d96d37e16b3906dc2f"
+    sha256 cellar: :any_skip_relocation, ventura:        "d3edfbf51853ede464760a7190510391aca69562e898768bff75e09b80b76515"
+    sha256 cellar: :any_skip_relocation, monterey:       "aecc142181b4bd7fac320fea4ca6f8b7500dbf908b0314f3066b939115193462"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17807b22a5818a6d03c8429eb1cc32a9fca98938e3bc8741a482c7dda351329e"
   end
 
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   uses_from_macos "krb5"
 
@@ -55,6 +53,22 @@ class Offlineimap < Formula
   resource "rfc6555" do
     url "https://files.pythonhosted.org/packages/f6/4b/24f953c3682c134e4d0f83c7be5ede44c6c653f7d2c0b06ebb3b117f005a/rfc6555-0.1.0.tar.gz"
     sha256 "123905b8f68e2bec0c15f321998a262b27e2eaadea29a28bd270021ada411b67"
+  end
+
+  # Support python 3.12
+  patch do
+    url "https://github.com/OfflineIMAP/offlineimap3/commit/b0c75495db9e1b2b2879e7b0500a885df937bc66.patch?full_index=1"
+    sha256 "6f22557b8d3bfabc9923e76ade72ac1d671c313b751980493f7f05619f57a8f9"
+  end
+
+  patch do
+    url "https://github.com/OfflineIMAP/offlineimap3/commit/a1951559299b297492b8454850fcfe6eb9822a38.patch?full_index=1"
+    sha256 "64065e061d5efb1a416d43e9f6b776732d9b3b358ffcedafee76ca75abd782da"
+  end
+
+  patch do
+    url "https://github.com/OfflineIMAP/offlineimap3/commit/4601f50d98cffcb182fddb04f8a78c795004bc73.patch?full_index=1"
+    sha256 "a38595f54fa70d3cdb44aec2f858c256265421171a8ec331a34cbe6041072954"
   end
 
   def install

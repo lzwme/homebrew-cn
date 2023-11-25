@@ -4,18 +4,19 @@ class PhpCsFixer < Formula
   url "https://ghproxy.com/https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v3.39.0/php-cs-fixer.phar"
   sha256 "c23fac1632666adb2cb48d5941a2c19a05b32135b39b2f98fe05607d241cdb0a"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "338e4dbb71aedba72e7c40827b64ee29eee051b099cbc1e78686819f04994d8f"
+    sha256 cellar: :any_skip_relocation, all: "f200d20faa422963c31b751721de4e5c38e18bd7bc4727b39fed6bff40d0ae79"
   end
 
-  depends_on "php"
+  depends_on "php@8.2"
 
   def install
     libexec.install "php-cs-fixer.phar"
 
     (bin/"php-cs-fixer").write <<~EOS
-      #!#{Formula["php"].opt_bin}/php
+      #!#{Formula["php@8.2"].opt_bin}/php
       <?php require '#{libexec}/php-cs-fixer.phar';
     EOS
   end

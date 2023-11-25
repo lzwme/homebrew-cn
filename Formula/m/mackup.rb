@@ -1,6 +1,4 @@
 class Mackup < Formula
-  include Language::Python::Virtualenv
-
   desc "Keep your Mac's application settings in sync"
   homepage "https://github.com/lra/mackup"
   url "https://files.pythonhosted.org/packages/47/98/87dfab0ae5d1abad48a56825585dcd406cdc183dbce930e24ef8439769ba/mackup-0.8.40.tar.gz"
@@ -9,22 +7,30 @@ class Mackup < Formula
   head "https://github.com/lra/mackup.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9d798f8600805537a50c7c4978540e3c9e7bfb26c29b362e3073d040558f9d20"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c81d9094937e2cae115cb461396e48fa04a4b05758fcd468499be25e2f8776e4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6adc28de1433fec1957fc6af1b4343fc84bd238eedef86d326ed397d8a267fa3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f49986ffac75dd6c863e5bc38383e6beb3d4cf995e95d869f48cdd236dabec36"
-    sha256 cellar: :any_skip_relocation, ventura:        "a76a015a0c57953e8848181794f28f0d784fc7341beed637d90d3d3629d645c3"
-    sha256 cellar: :any_skip_relocation, monterey:       "fe91f6cae5258fe6830fc5c5513946723c39a946ecffcdaa3e246bdc40b4302d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b9660c5181fc347de2f8f0d8fbfcdb06e97e3d564e4c5e7e0b27700092a376c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a078c5b2bc0cb61c80bc8058cbbdb9d955d0480316efeeccedbe96aabc364249"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e6400e4207eff59cc7f59f72f3615cedfcf409e319ba56e9d50696d877c0d019"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "eaa01f419244f2465d567fb383cd7383f34c0f26c4db19d926f3f335e5c3ac0a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5ade50897a5129abc3c26684f00b1ee1fb384d2413a252ce762df50d3dded343"
+    sha256 cellar: :any_skip_relocation, ventura:        "0e781465c87ab1d1c9ebb44442100eab49cad11efa5cab46c55f4781744f38f1"
+    sha256 cellar: :any_skip_relocation, monterey:       "27b67474dc527e8125bec2ab02e24153c55b0ad923e3fc6d7d9dee41b3c34e21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef78d3ada78aa1149aed572375451333f0d5c981a5621150332f9c6f159c1d4b"
   end
 
+  depends_on "poetry" => :build
   depends_on "python-docopt"
   depends_on "python@3.12"
   depends_on "six"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    site_packages = Language::Python.site_packages(python3)
+    ENV.prepend_path "PYTHONPATH", Formula["poetry"].opt_libexec/site_packages
+
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

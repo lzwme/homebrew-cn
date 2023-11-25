@@ -1,8 +1,8 @@
 class Lapack < Formula
   desc "Linear Algebra PACKage"
   homepage "https://www.netlib.org/lapack/"
-  url "https://ghproxy.com/https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.11.tar.gz"
-  sha256 "5a5b3bac27709d8c66286b7a0d1d7bf2d7170ec189a1a756fdf812c97aa7fd10"
+  url "https://ghproxy.com/https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.12.0.tar.gz"
+  sha256 "af3c3fe01dd739e98ad3f455260c77128707c3d994879e45800ab377b6e49fad"
   license "BSD-3-Clause"
   head "https://github.com/Reference-LAPACK/lapack.git", branch: "master"
 
@@ -12,15 +12,13 @@ class Lapack < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "939edf8fa10adf5140f91e6208a23a6466ea113d94eb4cec666dc3128ecf66bc"
-    sha256 cellar: :any,                 arm64_ventura:  "f70b3ce19cf4a9fb328f71caba7b40bacbddda80e9ad196401bcb3e0cd9e4ad7"
-    sha256 cellar: :any,                 arm64_monterey: "c9e7171ba3cc0159086737a3905e7403c81bcd3ad6cc506e955e00ac730eb302"
-    sha256 cellar: :any,                 arm64_big_sur:  "c814d96489b94449715fdab61925f859092e7d4103ec35d42bf46652628e9a52"
-    sha256 cellar: :any,                 sonoma:         "bad04b8e7d6f291c1c7d68d916b73aeb5b294963a15ba4524f444015b0a47054"
-    sha256 cellar: :any,                 ventura:        "7f59f3c3bb3d76b6f44d28bfb0abc7c13970c473b5f53f810acd58060c6a71df"
-    sha256 cellar: :any,                 monterey:       "f0ac2a70102bc54a9f617678161653d7d261966b6a9ec68d22a805f0d3f66658"
-    sha256 cellar: :any,                 big_sur:        "a98f6ed1c5cba50e0887b9599da3c881e83198965afd471f9532effd0dc9491a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39ebab237ba84c5ba207b2d31e84e75e901bffb769e8ee7680060e9ba36c2ed0"
+    sha256                               arm64_sonoma:   "0ae820c59f6c84b46a6682622fab86441a63656fcc637a10705e2a26cce2ea73"
+    sha256                               arm64_ventura:  "f8a3a11925ffd4de7440b8c86426e696e85d7c6da8217f21e998caee251eda99"
+    sha256                               arm64_monterey: "cda47755b619b51d24ebdb7af9f557194b223bad97c5ce6cc37714c416dc0d82"
+    sha256 cellar: :any,                 sonoma:         "db676f5cd8ef89ba92a07d8a181e7bb8c52fcc9f5bc638c56854f4d7d6b1d4ca"
+    sha256 cellar: :any,                 ventura:        "968c1f5c35e9ae460c15c63880301a0d615362856726f60e7640ec99406c75a7"
+    sha256 cellar: :any,                 monterey:       "2dcb650157f87c0d852fb2a0b8b814fb4fd2824f45b38b7cbbbf14a6ba837273"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a7b417d1eacb90be49cabc625f20fffc97cfc23f20850ae5045ec43275ec237f"
   end
 
   keg_only :shadowed_by_macos, "macOS provides LAPACK in Accelerate.framework"

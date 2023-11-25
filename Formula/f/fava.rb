@@ -9,23 +9,29 @@ class Fava < Formula
   head "https://github.com/beancount/fava.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "26ddf6353908b39d21fa6943d40395a8b9b32334d9b3140412d9722f06babc80"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b5d489545698fbc57a6864f86c9193c1cc02fc9294bd0993e2aa8910c8437e3c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f4732e6989b7ba717a95055bd7bc23819070decfa3b13995c1538a016cf58323"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a95e1a3cfd4a6a21ae36dc276ba783ffb434ead02ed016f5db447d092ee4534d"
-    sha256 cellar: :any_skip_relocation, ventura:        "d039c302b2f59348fd5b3268f7f5c5b0a8b06e04bafcd56ac340f12695b34988"
-    sha256 cellar: :any_skip_relocation, monterey:       "227437fe83cb94c756333c24196c6aba252e0c335e14623c43f146ab64771e84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc7dd48b06bf231a67b3b7ad953fff1b42a72122e77f5b056612978f9e5d0f6c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cbb89a0f136bf97cb3adb92c3fed9faa4cbdfa87dad16d87c55da9c9f33ab522"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d6e02350daa37f88f8b710c53e94046da1224aa6d0ad27c96564fb9f9676767"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dcfd3ec909d20f7017cabd7a93fc605a23f0b5c355b4b1ace8f673b4314b8200"
+    sha256 cellar: :any_skip_relocation, sonoma:         "083131fe5fb21b7a8174e96a06600b52a8dbadfffad52874b18d713af057607b"
+    sha256 cellar: :any_skip_relocation, ventura:        "4acaa20fb4e5c252fe34ca8e0bf0d2f8ca8efe25d4f50057c305a9d14321fbd1"
+    sha256 cellar: :any_skip_relocation, monterey:       "5d4635293da1961cb82ccb7a1864f02f0c1a470c52988a11463e671db8762d61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc347f6cff1b86c81a439fb384837c9dbdd9baa87f2159f35e8e2b41df9558cb"
   end
 
   depends_on "python-certifi"
   depends_on "python-click"
+  depends_on "python-dateutil"
+  depends_on "python-jinja"
   depends_on "python-lxml"
+  depends_on "python-magic"
   depends_on "python-markupsafe"
   depends_on "python-packaging"
+  depends_on "python-pluggy"
+  depends_on "python-ply"
   depends_on "python-pyparsing"
   depends_on "python-pytz"
+  depends_on "python-requests"
   depends_on "python@3.12"
   depends_on "six"
 
@@ -62,11 +68,6 @@ class Fava < Formula
   resource "chardet" do
     url "https://files.pythonhosted.org/packages/f3/0d/f7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079/chardet-5.2.0.tar.gz"
     sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
-  end
-
-  resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
-    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
   end
 
   resource "cheroot" do
@@ -114,11 +115,6 @@ class Fava < Formula
     sha256 "d7a10bc5ef5ab08322488bde8c726eeee5c8618723fdb399597ec58f3d82df81"
   end
 
-  resource "idna" do
-    url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
-    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
-  end
-
   resource "iniconfig" do
     url "https://files.pythonhosted.org/packages/d7/4b/cbd8e699e64a6f16ca3a8220661b5f83792b3017d0f79807cb8708d33913/iniconfig-2.0.0.tar.gz"
     sha256 "2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3"
@@ -134,11 +130,6 @@ class Fava < Formula
     sha256 "8b137b0feacc17fef4bacee04c011c9e86f2341099c870a1d12d3be37b32a638"
   end
 
-  resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
-    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
-  end
-
   resource "markdown2" do
     url "https://files.pythonhosted.org/packages/8e/b3/64c459af88ea8c2eeb020d0edf3e36c62176e988c47e412133c37c5da5e7/markdown2-2.4.10.tar.gz"
     sha256 "cdba126d90dc3aef6f4070ac342f974d63f415678959329cc7909f96cc235d72"
@@ -152,16 +143,6 @@ class Fava < Formula
   resource "pdfminer2" do
     url "https://files.pythonhosted.org/packages/55/18/0a856200ff54db80612f66878f9b037ddb9c873f885bc58339b528611994/pdfminer2-20151206.tar.gz"
     sha256 "7d05aa3dd1e779080fef13aef454501b51a3f7649d7f18e78c640bdbd34e1e77"
-  end
-
-  resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/36/51/04defc761583568cae5fd533abda3d40164cbdcf22dee5b7126ffef68a40/pluggy-1.3.0.tar.gz"
-    sha256 "cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12"
-  end
-
-  resource "ply" do
-    url "https://files.pythonhosted.org/packages/e5/69/882ee5c9d017149285cab114ebeab373308ef0f874fcdac9beb90e0ac4da/ply-3.11.tar.gz"
-    sha256 "00c7c1aaa88358b9c765b6d3000c6eec0ba42abca5351b095321aef446081da3"
   end
 
   resource "protobuf" do
@@ -184,21 +165,6 @@ class Fava < Formula
     sha256 "d989d136982de4e3b29dabcc838ad581c64e8ed52c11fbe86ddebd9da0818cd5"
   end
 
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
-  end
-
-  resource "python-magic" do
-    url "https://files.pythonhosted.org/packages/da/db/0b3e28ac047452d079d375ec6798bf76a036a08182dbb39ed38116a49130/python-magic-0.4.27.tar.gz"
-    sha256 "c1ba14b08e4a5f5c31a302b7721239695b2f0f058d125bd5ce1ee36b9d9d3c3b"
-  end
-
-  resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
-  end
-
   resource "rsa" do
     url "https://files.pythonhosted.org/packages/aa/65/7d973b89c4d2351d7fb232c2e452547ddfa243e93131e7cfa766da627b52/rsa-4.9.tar.gz"
     sha256 "e38464a49c6c85d7f1351b0126661487a7e0a14a50f1675ec50eb34d4f20ef21"
@@ -217,11 +183,6 @@ class Fava < Formula
   resource "uritemplate" do
     url "https://files.pythonhosted.org/packages/d2/5a/4742fdba39cd02a56226815abfa72fe0aa81c33bed16ed045647d6000eba/uritemplate-4.1.1.tar.gz"
     sha256 "4346edfc5c3b79f694bccd6d6099a322bbeb628dbf2cd86eea55a456ce5124f0"
-  end
-
-  resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   resource "werkzeug" do

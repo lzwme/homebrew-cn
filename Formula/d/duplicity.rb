@@ -8,14 +8,14 @@ class Duplicity < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "7ea76a706e89e1b08f9a18326cad76452506b35ca452f05a3507a595c8e314c8"
-    sha256 cellar: :any,                 arm64_ventura:  "16d9da7f5b890ac1b22a675ae2daedd3402ac261ece5c6e839fdcb1c41bb03ff"
-    sha256 cellar: :any,                 arm64_monterey: "9167694109bb2413eaa31bb60730ca766aefa25c81198355da21c1f185b87325"
-    sha256 cellar: :any,                 sonoma:         "0abb0aafd0d1b0bc1ddf955edc9382803cfdeeed0a085017d8539bfc7871c941"
-    sha256 cellar: :any,                 ventura:        "e7453ddceabbe49c6220e06743d327140d66f0afa619cd255c1e4195ff61e698"
-    sha256 cellar: :any,                 monterey:       "a1d09fb63d4601f8f5f5e33f7e26fba817fb498e2b67ca2364bb71809a1c8293"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e12bfef3df4c234a7b31d24c07879524ce3d03a737e6eb0e727f8b7d42d65126"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "fe8aa4712f82c04c2859a33f34fc47afbf8618eb0e0df75008633f57bf1437b0"
+    sha256 cellar: :any,                 arm64_ventura:  "c6225c8555e0022ff030413b0908ff3e4b38fee0e58a9952b578892159bb04a2"
+    sha256 cellar: :any,                 arm64_monterey: "d1e00615f7139e7c7269a5f523c50d6185809608f4746b7105005fd8e38e6ab6"
+    sha256 cellar: :any,                 sonoma:         "826ecd53088487403664abc146c25ad9b08e9bda3adae484baf68264d8120ac9"
+    sha256 cellar: :any,                 ventura:        "91a87bce78353950e9f936904842c5532d19498963c67e14cefe078d5bc00e24"
+    sha256 cellar: :any,                 monterey:       "7e6b7c58ef0fe946ba3bcd337ac071872bd9bf8436355187f15abaf2473e095c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "586dc8bc5dd230a7c04e17ad3406a044e0ff6ed81c49aa1376e047954321e099"
   end
 
   depends_on "gettext" => :build # for msgfmt
@@ -26,8 +26,10 @@ class Duplicity < Formula
   depends_on "protobuf"
   depends_on "python-certifi"
   depends_on "python-cryptography"
+  depends_on "python-dateutil"
   depends_on "python-lxml"
   depends_on "python-packaging"
+  depends_on "python-ply"
   depends_on "python-psutil"
   depends_on "python-pyparsing"
   depends_on "python-pytz"
@@ -196,11 +198,6 @@ class Duplicity < Formula
     sha256 "015c9a1772f06a2ad496278aff4b20ad41acc660304fa8f8b854932c662bb0a5"
   end
 
-  resource "keyring" do
-    url "https://files.pythonhosted.org/packages/14/c5/7a2a66489c66ee29562300ddc5be63636f70b4025a74df71466e62d929b1/keyring-24.2.0.tar.gz"
-    sha256 "ca0746a19ec421219f4d713f848fa297a661a8a8c1504867e55bfb5e09091509"
-  end
-
   resource "keystoneauth1" do
     url "https://files.pythonhosted.org/packages/9b/b3/ddee6a16e07fea73295476394ab75c8294a396fc164d6547b73922ab3ee5/keystoneauth1-5.3.0.tar.gz"
     sha256 "017c2b9b599453c92940750edbb20f17687121b2890114bf9d36df14a0627117"
@@ -281,11 +278,6 @@ class Duplicity < Formula
     sha256 "fc65a43959d153d0114afe13997d439c22823a27cefceb5ff35c2178c6784c0c"
   end
 
-  resource "ply" do
-    url "https://files.pythonhosted.org/packages/e5/69/882ee5c9d017149285cab114ebeab373308ef0f874fcdac9beb90e0ac4da/ply-3.11.tar.gz"
-    sha256 "00c7c1aaa88358b9c765b6d3000c6eec0ba42abca5351b095321aef446081da3"
-  end
-
   resource "ptyprocess" do
     url "https://files.pythonhosted.org/packages/20/e5/16ff212c1e452235a90aeb09066144d0c5a6a8c0834397e03f5224495c4e/ptyprocess-0.7.0.tar.gz"
     sha256 "5c5d0a3b48ceee0b48485e0c26037c0acd7d29765ca3fbb5cb3831d347423220"
@@ -319,11 +311,6 @@ class Duplicity < Formula
   resource "pyopenssl" do
     url "https://files.pythonhosted.org/packages/bf/a0/e667c3c43b65a188cc3041fa00c50655315b93be45182b2c94d185a2610e/pyOpenSSL-23.3.0.tar.gz"
     sha256 "6b2cba5cc46e822750ec3e5a81ee12819850b11303630d575e98108a079c2b12"
-  end
-
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
   resource "python-keystoneclient" do

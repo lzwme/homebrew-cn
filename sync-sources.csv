@@ -4760,6 +4760,7 @@ Homebrew-homebrew-core/Formula/p/php-cs-fixer@2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/php.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/php@8.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/php@8.1.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/php@8.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/phpbrew.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/phpmd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/phpmyadmin.rb, Homebrew/homebrew-core, 0
@@ -5049,10 +5050,12 @@ Homebrew-homebrew-core/Formula/p/pyside.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyside@2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyspelling.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pystring.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/python-abseil.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-argcomplete.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-brotli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-build.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-certifi.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-charset-normalizer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-click.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-cryptography.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-cycler.rb, Homebrew/homebrew-core, 0
@@ -5063,11 +5066,13 @@ Homebrew-homebrew-core/Formula/p/python-flit-core.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.12.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-hatchling.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-idna.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-jinja.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-kiwisolver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-launcher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lsp-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-lxml.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-magic.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-mako.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-markdown.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-markupsafe.rb, Homebrew/homebrew-core, 0
@@ -5086,6 +5091,7 @@ Homebrew-homebrew-core/Formula/p/python-pycurl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pyparsing.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pyproject-hooks.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pytz.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-requests.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-setuptools-scm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-setuptools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-sympy.rb, Homebrew/homebrew-core, 0
@@ -5097,6 +5103,7 @@ Homebrew-homebrew-core/Formula/p/python-tk@3.9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-toml.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-trove-classifiers.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-typing-extensions.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-urllib3.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-yq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python@3.10.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python@3.11.rb, Homebrew/homebrew-core, 1
@@ -5193,6 +5200,7 @@ Homebrew-homebrew-core/Formula/r/randomize-lines.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/range-v3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/range2cidr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ranger.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/rapidfuzz-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rapidjson.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/raptor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rargs.rb, Homebrew/homebrew-core, 1
@@ -5694,6 +5702,7 @@ Homebrew-homebrew-core/Formula/s/sn0int.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/snag.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/snakefmt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snakemake.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/snakeviz.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/snap7.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/snapcast.rb, Homebrew/homebrew-core, 1
@@ -7950,6 +7959,7 @@ Homebrew-homebrew-cask/Casks/e/edex-ui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/edfbrowser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/editaro.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/edrawmind.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/e/effect-house.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/egnyte.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/eiskaltdcpp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/ejector.rb, Homebrew/homebrew-cask, 0
@@ -8986,6 +8996,7 @@ Homebrew-homebrew-cask/Casks/m/macfuse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macgamestore.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macgdbp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macgesture.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/macgpt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/machacha.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/machg.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/machoexplorer.rb, Homebrew/homebrew-cask, 1
@@ -9190,6 +9201,7 @@ Homebrew-homebrew-cask/Casks/m/mimestream.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/min.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mindforger.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mindjet-mindmanager.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/mindmac.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/minecraft-server.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/minecraft.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/minecraftpe.rb, Homebrew/homebrew-cask, 0
@@ -10726,6 +10738,7 @@ Homebrew-homebrew-cask/Casks/t/time-tracker.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/timecamp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/timelane.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/timemachineeditor.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/timemachinestatus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/timemator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/timer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/timestamp.rb, Homebrew/homebrew-cask, 1

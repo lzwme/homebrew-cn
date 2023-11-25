@@ -1,6 +1,4 @@
 class Dunamai < Formula
-  include Language::Python::Virtualenv
-
   desc "Dynamic version generation"
   homepage "https://github.com/mtkennerly/dunamai"
   url "https://files.pythonhosted.org/packages/1d/03/338fba56a6c76ea6d99ca0b7af3098292c2dd6597ed656daa6ae26a07a77/dunamai-1.19.0.tar.gz"
@@ -8,21 +6,28 @@ class Dunamai < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "23134ecf6ddb25eccee07a2b51e8223826b5000d539c25e4bbbaf11804936f41"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ebe202fa284a2efaeb365cf9bfe3bb0ebe1b70876d3adbf994af3ab11848e137"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "57df59a50346a2f330055a2a110c1c3238b9415649efab5aba639de687d9d01d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d9a68b63346282df79d202d7dba6b86f1243ae1d0bb242d566e0630d6beadf80"
-    sha256 cellar: :any_skip_relocation, ventura:        "9449c31b2200dc0ef391a64b9e9514af9dd81e37b571a63c846b45dd64a34a65"
-    sha256 cellar: :any_skip_relocation, monterey:       "c92958c2a64a4d6f88ed34e7d12db8d8888586e9993732495e46b99767b4b33c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c7ce7a5209524f43bd013b76f27f1bb8372e15186f4ce58a46aa7c369bc3246"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3bdf36da31343b2b1fbd16a11d8ee822a9769207163927b066478ad535ec6bf8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "623ef3c20fbd5c99fd3d40f235cb79972b366952bd1e42d72bb86b7b2c75b4e1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "eeaf6e4233ade353870c8a8b9cba0c41f4182d5672cbf558914b822236f82aa8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "05ca3b47594995493ae9060913d67682f47892fcf23b2518bc36b9acfea19987"
+    sha256 cellar: :any_skip_relocation, ventura:        "cad35d5fff9c893b62877166b98a67d65aea0e2924498458dcf10c8986c8758b"
+    sha256 cellar: :any_skip_relocation, monterey:       "8a78ef790cac6b99445b13689b64e52370232973ec496cd7cf757c692398dbc1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85052e3983d05901270259344adc47719cc299c97ee844c486378eede8c0ae93"
   end
 
-  depends_on "python-packaging"
+  depends_on "poetry" => :build
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    site_packages = Language::Python.site_packages(python3)
+    ENV.prepend_path "PYTHONPATH", Formula["poetry"].opt_libexec/site_packages
+
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

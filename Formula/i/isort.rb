@@ -1,6 +1,4 @@
 class Isort < Formula
-  include Language::Python::Virtualenv
-
   desc "Sort Python imports automatically"
   homepage "https://pycqa.github.io/isort/"
   url "https://files.pythonhosted.org/packages/a9/c4/dc00e42c158fc4dda2afebe57d2e948805c06d5169007f1724f0683010a9/isort-5.12.0.tar.gz"
@@ -15,19 +13,28 @@ class Isort < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1a6fe0fa7fff82ad3f77066d49102cac7ced09f0431fe7c34ef4db390c2de8b0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "766a9c948c66313d18af5adeb24c2c55a7cd5f8419490e65846457535451c26a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "abf6cbbe5fee719854f6438726a39f358fdd623889948903fead3222f363e37f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c77093fe5ec5a3bf45df36a6eb761a304fef472adf4bab0c0d43d34b17bca813"
-    sha256 cellar: :any_skip_relocation, ventura:        "fdb28d5ebec41304551a8eaa70c69a21e5fe6099303d84d9ad96614c9b561f7b"
-    sha256 cellar: :any_skip_relocation, monterey:       "1d076d14e42b27fd509c01555439c83e3ae59d24ba4a5c20aeeb66781925a300"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be81f88db2b0136b2dd8803a5b6bd4c23b04b6f2f77337b22bb5fb50eb662d7d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "379756d92cda291dd3c986207bf8354929f7cae2fb6fa70328f0910a531cdfb2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "379bf2302bf9350adcf9251c1cea0a20dd866709767d51fc6202be875c9a0cc2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f56fdf2cc55f864921c976d6072f05cb5710ba56ba4af18e1a0f568f880f4ed2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "96edf8289f409494428280909766438e1e85fc265944f050ae224e8552aca67b"
+    sha256 cellar: :any_skip_relocation, ventura:        "7cef353885a0141c0f3dd1ee56270caca837c475ada8f075ec47fff7aef69da9"
+    sha256 cellar: :any_skip_relocation, monterey:       "f872bfceb6a103a01535962cdc79dd6b2242bca96f002cf279f06ff2ce52b62d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4de6b3973615de88f487ef0db6635fde93638ab0e841b792029d805526ac0306"
   end
 
+  depends_on "poetry" => :build
   depends_on "python@3.12"
 
+  def python3
+    "python3.12"
+  end
+
   def install
-    virtualenv_install_with_resources
+    site_packages = Language::Python.site_packages(python3)
+    ENV.prepend_path "PYTHONPATH", Formula["poetry"].opt_libexec/site_packages
+
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

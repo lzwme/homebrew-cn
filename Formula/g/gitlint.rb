@@ -8,32 +8,24 @@ class Gitlint < Formula
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f132913229a824db2a1248037c6c68b292b86e25b20e9128940e84b6355ffac4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c840313e2c51eb693fd53bb0e74b2c5a480df3e87a268ed8bf9d84b36f0724eb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "56254db8f4bafdc6ef946b5b3e56bc6afde3caab945abe60b67bb812eb5f99b8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1cbf066c25cdd5cd4c06fd2c2ffbf3ca2022654dbaaa9949462768408e38ca13"
-    sha256 cellar: :any_skip_relocation, ventura:        "64c8eb03905ca67c27b5ef424561457d628fbbd8a6445ba04fe5f0f9408f8560"
-    sha256 cellar: :any_skip_relocation, monterey:       "a36ae1e591e705bca710102ce9cd1de8a25d624ab8978ec0e5f84879af798db2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7337c2a46eec782bcda2cb48ae2d1419bf14da25e6c5b32af324ad22a38f75b6"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b36e41237bc79a88f0d8ea2ff76004fb814917768d31d22cc4cfc7144ea14856"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c9ed83b9615f97b13fcab06aa6c00312863fa0bbe3426f1ea5b5da7bb1d7ef1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e726076fe33d3ecf17c05881e319fbaa6f6fdc52a012cbcf6d24af094d00d5c8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "287142771c90b011d15aed675694735f43e533e50eaf713bc03241d711d16684"
+    sha256 cellar: :any_skip_relocation, ventura:        "d48411f02e6844198ff87da6b420ff63182c2b27b4e91232bea9a257c63b0e05"
+    sha256 cellar: :any_skip_relocation, monterey:       "7a8d1b29c4ccad5ac3fd9fb1a5742a94d4bbde2aed4f79c63e7e4c6cc2b7b0cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3d508fe3488012a9879660f98e74e687d6c34f6fa8596bda0dce119ac8c4421"
   end
 
+  depends_on "python-click"
+  depends_on "python-dateutil"
   depends_on "python@3.12"
   depends_on "six"
 
   resource "arrow" do
     url "https://files.pythonhosted.org/packages/2e/00/0f6e8fcdb23ea632c866620cc872729ff43ed91d284c866b515c6342b173/arrow-1.3.0.tar.gz"
     sha256 "d4540617648cb5f895730f1ad8c82a65f2dad0166f57b75f3ca54759c4d67a85"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
-  end
-
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
   resource "sh" do

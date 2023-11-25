@@ -10,34 +10,47 @@ class Sip < Formula
   head "https://www.riverbankcomputing.com/hg/sip", using: :hg
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "81472454e0a9781c11164d85829d24cb3f1ccf566e5847c3fa6ea16c625ebcf3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ecdfcc705f6ea39477af3d873323945efa3afea01353612ebc5d4e06bf8269e4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "29ed4515ddf4fb7e292adcadd77b9f52542bf0a810c8f9778d33b66a0b40dbd6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "18563470e033c08b78893b7977fb72185037d1adbe6575c2c455d238efcc75a6"
-    sha256 cellar: :any_skip_relocation, ventura:        "63f6de9fc50b7bfdbad254a98af5b1141203d8714d85b5826f9bb593940e5099"
-    sha256 cellar: :any_skip_relocation, monterey:       "3bbf56702657317a6ea5391d9da408d4eed0641b0bdf6f19b2ce649ec556e474"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1792c730d4be1cf5c126a116a4c15601fa40594b971e5aaadd93752e38e7988f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1647ecca1bd34681c703ab8b81456498c4fdef70027d41140d5ec4fd6e151fff"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "14e73168681a89130c5b5efc6b71a24401c2bcbb926e3977f72d299dedbd67bc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0f73f58cbbcc03e333028bbb5755f9d0c86ecbfc347deaf629ca9627adfc4b96"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3e05f10af54fa696800a2617bad7d593892480a94ce88c6dd3ea646490d79850"
+    sha256 cellar: :any_skip_relocation, ventura:        "b86b65f828679343b923e979fe521938a1cd4e34b1063d05e1430d11f5094e39"
+    sha256 cellar: :any_skip_relocation, monterey:       "28255dc1f579e00c48139785a4446c6541d6ec0b88caa42a68f4c4a556becd23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7986f4a1ce3adb36adaa847ade2dd209ddccfb478803404fbff28cac74e2d311"
   end
 
+  depends_on "python@3.11" => [:build, :test]
+  depends_on "python@3.12" => [:build, :test]
   depends_on "python-packaging"
+  depends_on "python-ply"
   depends_on "python-setuptools"
-  depends_on "python@3.12"
 
-  resource "ply" do
-    url "https://files.pythonhosted.org/packages/e5/69/882ee5c9d017149285cab114ebeab373308ef0f874fcdac9beb90e0ac4da/ply-3.11.tar.gz"
-    sha256 "00c7c1aaa88358b9c765b6d3000c6eec0ba42abca5351b095321aef446081da3"
+  def pythons
+    deps.map(&:to_formula)
+        .select { |f| f.name.start_with?("python@") }
+        .sort_by(&:version)
   end
 
   def install
-    python3 = "python3.12"
-    venv = virtualenv_create(libexec, python3)
-    venv.pip_install resources
-    # We don't install into venv as sip-install writes the sys.executable in scripts
-    system python3, "-m", "pip", "install", *std_pip_args, "."
+    clis = %w[sip-build sip-distinfo sip-install sip-module sip-sdist sip-wheel]
 
-    site_packages = Language::Python.site_packages(python3)
-    pth_contents = "import site; site.addsitedir('#{libexec/site_packages}')\n"
-    (prefix/site_packages/"homebrew-sip.pth").write pth_contents
+    pythons.each do |python|
+      python_exe = python.opt_libexec/"bin/python"
+      system python_exe, "-m", "pip", "install", *std_pip_args, "."
+
+      pyversion = Language::Python.major_minor_version(python_exe)
+      clis.each do |cli|
+        bin.install bin/cli => "#{cli}-#{pyversion}"
+      end
+
+      next if python != pythons.max_by(&:version)
+
+      # The newest one is used as the default
+      clis.each do |cli|
+        bin.install_symlink "#{cli}-#{pyversion}" => cli
+      end
+    end
   end
 
   test do
@@ -79,6 +92,11 @@ class Sip < Formula
       %End
     EOS
 
-    system "#{bin}/sip-install", "--target-dir", "."
+    pythons.each do |python|
+      python_exe = python.opt_libexec/"bin/python"
+      pyversion = Language::Python.major_minor_version(python_exe)
+
+      system "#{bin}/sip-install-#{pyversion}", "--target-dir", "."
+    end
   end
 end

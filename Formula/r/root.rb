@@ -1,8 +1,8 @@
 class Root < Formula
   desc "Object oriented framework for large scale data analysis"
   homepage "https://root.cern.ch/"
-  url "https://root.cern.ch/download/root_v6.28.06.source.tar.gz"
-  sha256 "af3b673b9aca393a5c9ae1bf86eab2672aaf1841b658c5c6e7a30ab93c586533"
+  url "https://root.cern.ch/download/root_v6.30.00.source.tar.gz"
+  sha256 "0592c066954cfed42312957c9cb251654456064fe2d8dabdcb8826f1c0099d71"
   license "LGPL-2.1-or-later"
   head "https://github.com/root-project/root.git", branch: "master"
 
@@ -15,14 +15,12 @@ class Root < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "94e1426e8d16fc3e3c825888cc63c19bc9fd4a13af34d1b19cc5fdcdcb4d2c0e"
-    sha256 arm64_ventura:  "3014c8d983209f274ea11ecb083270a840b6d3625519c60709e0c276c2d68e13"
-    sha256 arm64_monterey: "3ae3aec1ce5aec5dca74a146eb15c4f50e203b962299a134d1c855f2d672d514"
-    sha256 arm64_big_sur:  "98aa1bf5a2713e90c028d738c4f0b1e8e29952ac4ec8c7b233e077ed286b2f21"
-    sha256 sonoma:         "03c3f3b0423d8cb3c91e6b7b3812094b5e503d677fcfb647401598e9cca640e7"
-    sha256 ventura:        "38eba991e027f38d40aa0c6ad561f52673a6a0eaf01e61bb224a5d307c8cf981"
-    sha256 monterey:       "bc9a2362b26f94b57c28138bbc07daf904f25d92812374aebcd83faf947d8d75"
-    sha256 big_sur:        "c3408f666240f788efe6c0b852aab6458ddebb1c605f65e17dcb61d8eceee56a"
+    sha256 arm64_sonoma:   "5526713e8d0ae8d9642cefc85e84b40427b3447800ea70eebac65085f5b15735"
+    sha256 arm64_ventura:  "d194f2cb4d3758ffcce8472c0aa2857d19fa0cd4177f633f149834767ed5a52a"
+    sha256 arm64_monterey: "d6cb437036ebc4a6115b1cc8f4ef2efb2cfcf814306b42b6bf22f3d14385ee64"
+    sha256 sonoma:         "9a329626208dbdb3a600a1bc402b5976bd92df74f34bda406c01b1936f8ee9e0"
+    sha256 ventura:        "55d3e575c66dff67b15c0504768c1a36b7daa407867d9b166fe42af2632419b8"
+    sha256 monterey:       "7345abf866fef64b9a16febcefcf49bd637df252c1e775ced23faf26c3fec441"
   end
 
   depends_on "cmake" => :build

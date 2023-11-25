@@ -2,19 +2,19 @@ class Vcluster < Formula
   desc "Creates fully functional virtual k8s cluster inside host k8s cluster's namespace"
   homepage "https://www.vcluster.com"
   url "https://github.com/loft-sh/vcluster.git",
-      tag:      "v0.17.0",
-      revision: "1c6e3cb9594300b75a45bfe0b1d9004a3a98cc6c"
+      tag:      "v0.17.1",
+      revision: "e699d8e55a8b47fc91d35055983c2d5e6ba7a463"
   license "Apache-2.0"
   head "https://github.com/loft-sh/vcluster.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d5ce41eb57cbf14ef251556a4caf938a353364a23f1ae5ef2401f18340c74b3c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0bf50ebc142b2fe78c4a2437ba89aa926c161be59d192c5789540e0f9116f1a7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b04f04d2f9447fb7293555dbe4a6c6f96a083b904f97b926bf43ac308f4f6865"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c3bc64dd6a9b1c53db127de669da71e06c43fe876c7973c58957502d027e8b67"
-    sha256 cellar: :any_skip_relocation, ventura:        "ba7a591cfee8f9d4239e232433744c74352bf132ee17db981344b9ebe809f6b6"
-    sha256 cellar: :any_skip_relocation, monterey:       "f942a91c67387dacd3c9d5b18ffb1bc7507d5b92f6929736a0a31783003b9eed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83e178f5c40dd4d68b4a04d79639837d74ed27a20074533b9ecf9edd4aaaf56b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bca286b36267d945abd4f290e5c189e0b941ba1852232fac71c90546abc33b7b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd74d35effe1eaeb1eb047130358d7d2d4c95251a12c9c31afeda08e5994da9c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6852ea7d4f88e3900cb5610aa9f11bcb22bb8eab4701609d442ca121c7d31f0d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1a889da18bf0cf05a18acffeebca841dddae5b531c1803fb8b79d156d7f2af2c"
+    sha256 cellar: :any_skip_relocation, ventura:        "b56e16ad453ffc28a8c0de759a270a1c570b91b7d669d1680381d2bad74136e8"
+    sha256 cellar: :any_skip_relocation, monterey:       "4598ae3c7fe1d5eefecdb81d0a7e259796924e132c0c2ea2659e639a5d8df81e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e98dfb34c3f1a4eb59b7d1a006cc1e7c2eb99dea94a83a5b53b2e247ff823049"
   end
 
   depends_on "go" => :build
