@@ -1,6 +1,4 @@
 class Fonttools < Formula
-  include Language::Python::Virtualenv
-
   desc "Library for manipulating fonts"
   homepage "https://github.com/fonttools/fonttools"
   url "https://files.pythonhosted.org/packages/30/d9/44e654344d0078bdf8c734adee3274a534865a4e444c3cb9b826ef8cc57b/fonttools-4.45.1.tar.gz"

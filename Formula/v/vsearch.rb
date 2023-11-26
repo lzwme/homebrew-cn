@@ -1,18 +1,18 @@
 class Vsearch < Formula
   desc "Versatile open-source tool for microbiome analysis"
   homepage "https://github.com/torognes/vsearch"
-  url "https://ghproxy.com/https://github.com/torognes/vsearch/archive/refs/tags/v2.26.0.tar.gz"
-  sha256 "960b9b2693fa20a9547367b585542dae1cc93de78bdaea66d6904f14b8216d17"
+  url "https://ghproxy.com/https://github.com/torognes/vsearch/archive/refs/tags/v2.26.1.tar.gz"
+  sha256 "dc8513376405fc01ca3742624177113752870b05bb682fe1bf62d190d0a696bd"
   license any_of: ["BSD-2-Clause", "GPL-3.0-or-later"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e1410c0a4c9fab927373ecb97bd1bb33311a044b5b6d6a357ec5e1f5f286eca8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b3575a4cdc980b9d7e30921cebbf3a11afffcb6be4a04ad3c6b026c1aa436511"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f3cd2eaf7a188ec92d0aa5c782f08f92b832945b1afa83f430b23f605359fcf4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9e322ca71567c1aee21509b81f5e56db5488e6cbb61cc6a5264c8119e84d6ee8"
-    sha256 cellar: :any_skip_relocation, ventura:        "7e997861afe659ec43b637996a8fb1edc0d73c6c56c26f4d8b0efe4b71dfd214"
-    sha256 cellar: :any_skip_relocation, monterey:       "16d81cab6db5372728b737130b63a9e202c518b36b2888a05a4c57b8e18da7c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f1e8d80c12edc62c017dc569ffd7442e15d011ec3ff2e9f0aac061c99f8b183"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "400e672d0663e2707a75fc24f132626a3bebdf13b4e87251bb188e47a902fe8e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ade21c5d8c4a68497584e0513383b498716e55467d722748fb6b71faf49483f1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d9f1738c3312034b42273a49cd77709fc184b49acbb2422560e38defb4d1de40"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cda97178459d1348fa5a93b72d1dba9bd961a89cc49af0073822ebf645670b8a"
+    sha256 cellar: :any_skip_relocation, ventura:        "7de2d608661529a2765d9278ad2eb04df56f995c14e148a1751f92f1eb3bff53"
+    sha256 cellar: :any_skip_relocation, monterey:       "3c02df443c906d8c26b4f2d6950b10ac60df47369070577683905a907401362f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a15168395f67dc22313c0b8aee0a9ded7eb9dec16fc1279594433229653112bd"
   end
 
   depends_on "autoconf" => :build

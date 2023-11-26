@@ -7,16 +7,17 @@ class Vifm < Formula
   head "https://github.com/vifm/vifm.git", branch: "master"
 
   bottle do
-    sha256 arm64_ventura:  "dc48e8783bdc17a9b47dd55f3ed52d26903219e98c0e06f1a8111945ae3f7c52"
-    sha256 arm64_monterey: "6f355ca3cbcb187ee2c532df543bc6397be271f8d17bab414a71bed297f82278"
-    sha256 arm64_big_sur:  "8b675c527a9f72e79c78a11631954e76abbc46ebba233d01b3ce90dbc5dccc7d"
-    sha256 ventura:        "80c51d396cda06ab3f5a0da762d5fcd0230706329313a894bb7c3396ea9dfe18"
-    sha256 monterey:       "e0221857eab3abb6726d0608a028a75c0aaa5acaee7c28c72b555db9fa3d5492"
-    sha256 big_sur:        "cd22ccc9929ca7af51f74382ef100b71f0e2197f570e6a857214bacb38a2ef4f"
-    sha256 x86_64_linux:   "62cff341649c356910f64b26912563147957e19aacb58efef991492b3e461224"
+    rebuild 1
+    sha256 arm64_sonoma:   "f5b9c536515ef59ecb71b659d5d5d65b51d7e785e1694d49d32187fc17d7053c"
+    sha256 arm64_ventura:  "da33d548bddd49c65adf0978c4cc494cca83314f63e54138f30cd19ca967ea97"
+    sha256 arm64_monterey: "1704a6e7128ab882c015e8b037bbb28cd9d25105eaffaabb07fe633bf8024642"
+    sha256 sonoma:         "ba482e8390d4ae4a0eb9b6dbc059a29d9af7cbe802b17d195e6b0c6dd38ca9a7"
+    sha256 ventura:        "b01f54c3f7b7b6c2baec3b580e1fd2e7480dd6a4f980e499b5c0f07feabe2573"
+    sha256 monterey:       "eaf67e5eded879ea6681f69dc9e76ed9084fef39e23e21f93cf9fa1e588203bd"
+    sha256 x86_64_linux:   "2b0fb72b084da7b7d64a0d55ec1b7824f854eb09b23f6a624f806257e19e2cfa"
   end
 
-  uses_from_macos "ncurses"
+  depends_on "ncurses"
 
   on_system :linux, macos: :ventura_or_newer do
     depends_on "groff" => :build
@@ -25,6 +26,7 @@ class Vifm < Formula
   def install
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
+                          "--with-curses=#{Formula["ncurses"].opt_prefix}",
                           "--without-gtk",
                           "--without-libmagic",
                           "--without-X11"

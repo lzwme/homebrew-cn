@@ -8,31 +8,31 @@ class OrganizeTool < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6da2c3a4cb3764f15aa10c52928a82c23b05d08c9f5c09f34548fa7614758713"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba707ef9605b3e23950b1b7d3721b5ba59ca4d17f40af92c38cf059481711174"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "df01a404e8018a81b2f6f4f7de1030c520d437990714a31547b35193b91819c9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "91f54767f6cee47828baff47b7b03e17f43d535b001fdb27f4e4883bd527f545"
-    sha256 cellar: :any_skip_relocation, ventura:        "c7e2dace55f71c48f41a094ee9fb17915c499852db433feb243f7ceb1aef4ec5"
-    sha256 cellar: :any_skip_relocation, monterey:       "47966f23fab477313a29ba62c3e10de2a02a54f12e9231cfb6d530ea652aaca1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b6c71bad3aac6bfd2d9b5b630ac482fcb4ce2fca296fa1207cff7d768c4eec3d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e3f9d0e6eb6c00e7fd86df3e41b5ccdb073c8a6416dfe4e988d10670983700d6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "438f4a1cb5e6a95e6325200fa80f68ce83a1751d7f2db637338fdaec2ab92ba0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dee85bb647f2c958631da615b12cffbe4e3df600f56d61f812d23909532df1da"
+    sha256 cellar: :any_skip_relocation, sonoma:         "dee15155602c02c95edd91eaacdf6304830fdbe81fae1ad7616b6a1bf75f369b"
+    sha256 cellar: :any_skip_relocation, ventura:        "8083f6621c5beec389d359ab7d2221eb457041b3585c37b9337326ecb5292e6f"
+    sha256 cellar: :any_skip_relocation, monterey:       "395918e5847883a7709fc7665a6325e70d0635d8c8574ba80ee2390461e1f741"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "395f2b8a3b92488f60c8fd091714d7255bfa4ecd5ddc4e7fa358621476e46a78"
   end
 
   depends_on "cmake" => :build
   depends_on "freetype"
   depends_on "openjpeg"
   depends_on "pygments"
-  depends_on "python@3.11"
+  depends_on "python-click"
+  depends_on "python-jinja"
+  depends_on "python-markupsafe"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
   resource "appdirs" do
     url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
     sha256 "7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"
-  end
-
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "contextlib2" do
@@ -50,11 +50,6 @@ class OrganizeTool < Formula
     sha256 "ae97c7d51213f4b70b6a958292530289090de3a7e15841e108fbe144f069d313"
   end
 
-  resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
-    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
-  end
-
   resource "macos-tags" do
     url "https://files.pythonhosted.org/packages/d4/6e/e0b2ea37ef831a5c6b5aebbd14701d96d9dc061f04a867b05335a4bc099d/macos-tags-1.5.1.tar.gz"
     sha256 "f144c5bc05d01573966d8aca2483cb345b20b76a5b32e9967786e086a38712e7"
@@ -63,11 +58,6 @@ class OrganizeTool < Formula
   resource "markdown-it-py" do
     url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
     sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
-  end
-
-  resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
-    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
   end
 
   resource "mdfind-wrapper" do
@@ -91,8 +81,8 @@ class OrganizeTool < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/b1/0e/e5aa3ab6857a16dadac7a970b2e1af21ddf23f03c99248db2c01082090a3/rich-13.6.0.tar.gz"
-    sha256 "5c14d22737e6d5084ef4771b62d5d4363165b403455a30a1c8ca39dc7b644bef"
+    url "https://files.pythonhosted.org/packages/a7/ec/4a7d80728bd429f7c0d4d51245287158a1516315cadbb146012439403a9d/rich-13.7.0.tar.gz"
+    sha256 "5cb5123b5cf9ee70584244246816e9114227e0b98ad9176eede6ad54bf5403fa"
   end
 
   resource "schema" do
@@ -115,8 +105,12 @@ class OrganizeTool < Formula
     sha256 "09cb7e1efb3aa1b4991d6be4eb25b73dc518b4fe894f0915f5b0dcede972f346"
   end
 
+  # upstream issue report, https://github.com/tfeldmann/organize/issues/327
+  # upstream PR ref, https://github.com/tfeldmann/organize/pull/328
+  patch :DATA
+
   def install
-    venv = virtualenv_create(libexec, "python3.11")
+    venv = virtualenv_create(libexec, "python3.12")
     dependencies = resources.to_set(&:name)
     if OS.linux?
       # `macos-tags` and its dependencies are only needed on macOS
@@ -150,3 +144,18 @@ class OrganizeTool < Formula
     refute_predicate testpath/"homebrew.txt", :exist?
   end
 end
+
+__END__
+diff --git a/pyproject.toml b/pyproject.toml
+index cabf427..1027920 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -31,7 +31,7 @@ classifiers = [
+ organize = "organize.cli:cli"
+
+ [tool.poetry.dependencies]
+-python = ">=3.8,<3.12"
++python = ">=3.8,<3.13"
+ fs = ">=2.4.16"
+ rich = "^13.4.2"
+ PyYAML = "^6.0"

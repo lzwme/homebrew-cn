@@ -3,30 +3,24 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https://ipython.org/"
-  url "https://files.pythonhosted.org/packages/a9/e9/c83d1a5756bf44f1802045a54dacc910d3d254c5ec56040993978d8c1b8d/ipython-8.17.2.tar.gz"
-  sha256 "126bb57e1895594bb0d91ea3090bbd39384f6fe87c3d57fd558d0670f50339bb"
+  url "https://files.pythonhosted.org/packages/9b/af/e1ff4d5499165e330413e0fb9811ca937c332d20900eae641cd590c0ab71/ipython-8.18.0.tar.gz"
+  sha256 "4feb61210160f75e229ce932dbf8b719bff37af123c0b985fd038b14233daa16"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/ipython/ipython.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "892629a0d6ed38dfad9c8175e8050e522f3c74181cf967e7affce72ab10f6275"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "17edb50e26511cfd72fcb68095121c92ce2eea26f11b9c439b8336d6e427d244"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1c03e14fea6ae8aabde0617079bdef4236d3ee84da5f97c250e6749b1687b003"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c51d1692bb7a84f67d3a84adaaf5445f1cb95df49fd421f631b1b7c44e124f2b"
-    sha256 cellar: :any_skip_relocation, ventura:        "4d9224c6f05f4417bcd3b0923dc128150a32c77dcb268564f83bff93224ce15c"
-    sha256 cellar: :any_skip_relocation, monterey:       "dcf03502b93e3cfc2cb0dc2366ebbf86da89331286564540b5dc0d50cf4418bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e7df2c343a73818ce4925e8bfc73f9e9da382c1168fd109b95a1bfca75694aa4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dcca99b462e59b4369d5e736bceaa20f6710e36917b4c9f8c8ee11ee01dd5b19"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7cdc87f20e1b31abb19f3226659047bf730ec5d8f443e039ea7d706acddaf458"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a7118ef2a84b3ae277486379462675dd46dcca68362ea14fcb8c4f7df202c3d2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bbb6b0b221bce522834534001a35ea73ee091208eaf48e2aee79525b6f45eaac"
+    sha256 cellar: :any_skip_relocation, ventura:        "0322cb4340cb6836866d5c0e7558b5469c0e80c15abb22cbfff0cdee900b3a72"
+    sha256 cellar: :any_skip_relocation, monterey:       "ece49d31017293bc08143fd8924fbe62f3cf1983bef3913403bee09fd26656b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22704ea534cd2690421d0e7989abae1a4e5834f97444e927ce5ad322a791c464"
   end
 
   depends_on "pygments"
   depends_on "python@3.12"
   depends_on "six"
-
-  resource "appnope" do
-    url "https://files.pythonhosted.org/packages/6a/cd/355842c0db33192ac0fc822e2dcae835669ef317fe56c795fb55fcddb26f/appnope-0.1.3.tar.gz"
-    sha256 "02bd91c4de869fbb1e1c50aafc4098827a7a54ab2f39d9dcba6c9547ed920e24"
-  end
 
   resource "asttokens" do
     url "https://files.pythonhosted.org/packages/45/1d/f03bcb60c4a3212e15f99a56085d93093a497718adf828d050b9d675da81/asttokens-2.4.1.tar.gz"
@@ -64,8 +58,8 @@ class Ipython < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/9a/02/76cadde6135986dc1e82e2928f35ebeb5a1af805e2527fe466285593a2ba/prompt_toolkit-3.0.39.tar.gz"
-    sha256 "04505ade687dc26dc4284b1ad19a83be2f2afe83e7a828ace0c72f3a1df72aac"
+    url "https://files.pythonhosted.org/packages/d9/7b/7d88d94427e1e179e0a62818e68335cf969af5ca38033c0ca02237ab6ee7/prompt_toolkit-3.0.41.tar.gz"
+    sha256 "941367d97fc815548822aa26c2a269fdc4eb21e9ec05fc5d447cf09bad5d75f0"
   end
 
   resource "ptyprocess" do
@@ -89,16 +83,12 @@ class Ipython < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/a6/ad/428bc4ff924e66365c96994873e09a17bb5e8a1228be6e8d185bc2a11de9/wcwidth-0.2.9.tar.gz"
-    sha256 "a675d1a4a2d24ef67096a04b85b02deeecd8e226f57b5e3a72dbb9ed99d27da8"
+    url "https://files.pythonhosted.org/packages/d7/12/63deef355537f290d5282a67bb7bdd165266e4eca93cd556707a325e5a24/wcwidth-0.2.12.tar.gz"
+    sha256 "f01c104efdf57971bcb756f054dd58ddec5204dd15fa31d6503ea57947d97c02"
   end
 
   def install
-    python3 = "python3.12"
-    venv = virtualenv_create(libexec, python3)
-    res = resources.reject { |r| r.name == "appnope" && OS.linux? }
-    venv.pip_install res
-    venv.pip_install_and_link buildpath
+    virtualenv_install_with_resources
 
     # Install man page
     man1.install libexec/"share/man/man1/ipython.1"

@@ -15,14 +15,14 @@ class Rust < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "26cd71c7c94b601d4d4ccb5cfeba1f29ab54d96dd009816f5a8a9e89b6afc2f7"
-    sha256 cellar: :any,                 arm64_ventura:  "9a8ed1434eed68a7d52c2353686821e672256d10462c6b7c9fe62ca157cf4ce4"
-    sha256 cellar: :any,                 arm64_monterey: "e444d3501f6e685982ff1c8c5f66c812b55ab302447dcf2bad831dc474eb8dc7"
-    sha256 cellar: :any,                 sonoma:         "d89e14d324971c805322e65e5947fe76bd6c70398c96b76f108c1fa3f6e22dff"
-    sha256 cellar: :any,                 ventura:        "46885a9833e89320acb68b3abe898a1b6ed47d7b7a5fbf4dab98db5508b15787"
-    sha256 cellar: :any,                 monterey:       "c5bd87e18d5807491366f557359265477d5fa4eb452537bf52210b87bce86ace"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "012897269283e2d9c740a9f7c26fc502a52bd087e763ae149456b3bbc9aa0387"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "be46d15d3fbef5ae61104a8ce81e9a8f2719563f060fc84df5348081707f6d40"
+    sha256 cellar: :any,                 arm64_ventura:  "499c4effbd4234b1819ecd4cc60c11e1f6f907727df47914c3f1f2be52eab01f"
+    sha256 cellar: :any,                 arm64_monterey: "c617de08e813aaccabc42d4e72baa7fc701a7e91716ded6f6f7a2e526ef5611f"
+    sha256 cellar: :any,                 sonoma:         "948d49f447a47930260fc01d8f305aae3152f55d764d3452027a624258c18f1e"
+    sha256 cellar: :any,                 ventura:        "980242b3fb8cd42d7fff3716ca0d71ca77aac742c2fb0e0a1bbd71c75c45e38c"
+    sha256 cellar: :any,                 monterey:       "c5bad0c271901607e341fac2f5c58d92293d710036a4d264ba290c01ea108742"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a78550a978b777daf1a786d9a7d91692c1b9ccdabde32eb96e4dc5481429926a"
   end
 
   head do
@@ -121,6 +121,7 @@ class Rust < Formula
       --enable-llvm-link-shared
       --enable-vendor
       --disable-cargo-native-static
+      --enable-profiler
       --set=rust.jemalloc
       --release-description=#{tap.user}
     ]

@@ -1,20 +1,19 @@
 class PhpAT81Debug < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://www.php.net/distributions/php-8.1.25.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.1.25.tar.xz"
-  sha256 "66fdba064aa119b1463a7969571d42f4642690275d8605ab5149bcc5107e2484"
+  url "https://www.php.net/distributions/php-8.1.26.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.1.26.tar.xz"
+  sha256 "17f87133596449327451ad4b8d9911bfaea59ff5109f3a6f2bb679f967a8ea0f"
   license "PHP-3.01"
-  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    sha256 arm64_sonoma:   "86ed646cd545ba612c8a47dc41a42e3e453b2804844577723a274cd055e643cb"
-    sha256 arm64_ventura:  "84ff663326a9eafde132ded90baec0ea9620e7251cc49a918de83b7c7ab045e0"
-    sha256 arm64_monterey: "89998fd1532b246c0836d0455ae517cbbc2763d48e2340d1f0a7c680c07001c7"
-    sha256 ventura:        "18365c95bd02b6a85b379b8f2f78bc539eb179d294fda1bf1c58b28f7c87471e"
-    sha256 monterey:       "46ffd84bd09240f09715ff39219c6b6e38905e0595c373b2eba6b53b8c61b07e"
-    sha256 x86_64_linux:   "d822120b46ab0e6d1cf142e5890bb1864056d18ccf288c3694dc61c462b13d0f"
+    sha256 arm64_sonoma:   "d250602f477f31d457fbdd6faec3c4c113eb039c7765b8ffc25e16e3e6bb8a08"
+    sha256 arm64_ventura:  "2e252549781726ac4d4991a18b1426fece5a42d0620f5a7e86a92ead362cdc18"
+    sha256 arm64_monterey: "902513ceda4fbbc8807b72d46093e48a55321d9f4c757c669530e6e1d982a5de"
+    sha256 ventura:        "a82f791cd209c546b244d916072564f040bbc70a23232cc76a982d59acd283b6"
+    sha256 monterey:       "abb8ef0ea75d363687b3cda9b317cafc895b619931e2eda13e61e1195e56a654"
+    sha256 x86_64_linux:   "ba852d64e5ae9bd574911eae7d8ffef78dc1f8c5da9700dc1273b0756943a8c2"
   end
 
   keg_only :versioned_formula
@@ -56,6 +55,12 @@ class PhpAT81Debug < Formula
   on_macos do
     # PHP build system incorrectly links system libraries
     patch :DATA
+  end
+
+  # Remove in next PHP 8.1 patch release.
+  patch do
+    url "https://github.com/php/php-src/commit/6a76e5d0a2dcf46b4ab74cc3ffcbfeb860c4fdb3.patch?full_index=1"
+    sha256 "9960993a3b6759b8461fc6a181cc4dfdf93eb5da0453037b0b78dfecdeff2c4f"
   end
 
   def install

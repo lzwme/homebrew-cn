@@ -9,16 +9,16 @@ class Jupyterlab < Formula
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "c4200788c3fb420b586d7bc0a715818c48c00aff7124a51c758f5e1d2d507eb1"
-    sha256 cellar: :any,                 arm64_ventura:  "45d78a01f9c69e778b2eb7c4f2952ab5e6888a11e798e372f2d6f62469d00548"
-    sha256 cellar: :any,                 arm64_monterey: "a754ef2b6afa425a854756ea458211c796dcfc6d786f705b94db1aa0b1e6f0aa"
-    sha256 cellar: :any,                 sonoma:         "85c651609015056574ecd085c325f899930e6d21df601543ca1195659038e4a4"
-    sha256 cellar: :any,                 ventura:        "9f4897c9f49e6e1fe14ab694ddaa46ffc7a6d6c463e1c950a5ddee12fde878f3"
-    sha256 cellar: :any,                 monterey:       "dafc0975b66e2a25e0988814511948774c6b8b485d7b30e8a7f526f71a1599c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "00b05360d1b89f1c069d620ba33ffbb05266a7e2a97e77aca0d103d403a901fc"
+    sha256 cellar: :any,                 arm64_sonoma:   "e4a22547406e90b90e209761f76bfe8bde5edf897966e548673262105536dd5a"
+    sha256 cellar: :any,                 arm64_ventura:  "d7844aa3dfdf12bb899bdc91acd9c0e5829b224852a804f29b621ed997fa4b1d"
+    sha256 cellar: :any,                 arm64_monterey: "00ab8e895e8517036939bfcbec8ba0d6c27b3e3ab6718ba9f60d6201dc0c7238"
+    sha256 cellar: :any,                 sonoma:         "05fe0af81eb5d9b24e6ad146f32ec9b7586bbd8f7a8c0bd831e32eb8620b8acc"
+    sha256 cellar: :any,                 ventura:        "fed24f897e92ce5f9f426a4642446aa85fef518489d66c6561935132f31c4805"
+    sha256 cellar: :any,                 monterey:       "c4aeb5e0f5524676ee5b4901fd7e8e81728ddc446e26ea145850a5524a576e47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c53bc197622ef00b0ed8c1e57ef57645c98f1661f2ff32677062c0ef9403fcba"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -46,8 +46,13 @@ class Jupyterlab < Formula
   uses_from_macos "libxslt"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/74/17/5075225ee1abbb93cd7fc30a2d343c6a3f5f71cf388f14768a7a38256581/anyio-4.0.0.tar.gz"
-    sha256 "f7ed51751b2c2add651e5747c891b47e26d2a21be5d32d9311dfe9692f3e5d7a"
+    url "https://files.pythonhosted.org/packages/6e/57/075e07fb01ae2b740289ec9daec670f60c06f62d04b23a68077fd5d73fab/anyio-4.1.0.tar.gz"
+    sha256 "5a0bec7085176715be77df87fc66d6c9d70626bd752fcc85f57cdbee5b3760da"
+  end
+
+  resource "appnope" do
+    url "https://files.pythonhosted.org/packages/6a/cd/355842c0db33192ac0fc822e2dcae835669ef317fe56c795fb55fcddb26f/appnope-0.1.3.tar.gz"
+    sha256 "02bd91c4de869fbb1e1c50aafc4098827a7a54ab2f39d9dcba6c9547ed920e24"
   end
 
   resource "argon2-cffi" do
@@ -241,8 +246,8 @@ class Jupyterlab < Formula
   end
 
   resource "prometheus-client" do
-    url "https://files.pythonhosted.org/packages/35/d2/b7dc2f5d91ccfe1c64917874dc3db94b8866d0e631a55cd864ad12b275fb/prometheus_client-0.18.0.tar.gz"
-    sha256 "35f7a8c22139e2bb7ca5a698e92d38145bc8dc74c1c0bf56f25cca886a764e17"
+    url "https://files.pythonhosted.org/packages/00/02/a4e12fe70cd57137be321785c9d6a046c7f537d5888226a01d083b4c88f6/prometheus_client-0.19.0.tar.gz"
+    sha256 "4585b0d1223148c27a225b10dbec5ae9bc4c81a99a3fa80774fa6209935324e1"
   end
 
   resource "python-json-logger" do
@@ -271,8 +276,8 @@ class Jupyterlab < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/81/b8/c18e4fa683dd67fd2f1b9239648ba8c29fed467b4aa80387b14116e3a06b/rpds_py-0.13.0.tar.gz"
-    sha256 "35cc91cbb0b775705e0feb3362490b8418c408e9e3c3b9cb3b02f6e495f03ee7"
+    url "https://files.pythonhosted.org/packages/94/3f/b58db0c212ba3a89378d1684f871e0e7783fc34fadc7696e5439c8c9338e/rpds_py-0.13.1.tar.gz"
+    sha256 "264f3a5906c62b9df3a00ad35f6da1987d321a053895bd85f9d5c708de5c0fbf"
   end
 
   resource "send2trash" do

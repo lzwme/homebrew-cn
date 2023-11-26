@@ -1,18 +1,18 @@
 class PythonIdna < Formula
   desc "Internationalized Domain Names in Applications (IDNA)"
   homepage "https://github.com/kjd/idna"
-  url "https://files.pythonhosted.org/packages/9b/c4/db3e4b22ebc18ee797dae8e14b5db68e5826ae6337334c276f1cb4ff84fb/idna-3.5.tar.gz"
-  sha256 "27009fe2735bf8723353582d48575b23c533cc2c2de7b5a68908d91b5eb18d08"
+  url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz"
+  sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9646a15f727c1a9785303550c491c8f6b300323e9f362e9ef68427361cb42079"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5cb271ef1d35bee074250488f18c15dbc2cb8c5b017ce64d74165f5d34ad98c5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1e2849adf49db35a5fdf1777f2a798c2dcc540d12e4884a89b6629c8fd6cd72f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "23d22f4ae1cf269f424d7589fc06895610c03b332e93e04d004a0ce945bdb656"
-    sha256 cellar: :any_skip_relocation, ventura:        "901f66403219134b439407a96e49557a104def5a2bdfbf61a9be5f741b173b35"
-    sha256 cellar: :any_skip_relocation, monterey:       "21b602302c863d329615b0b13be526550b5feccc8ed94ef843b3d079a8b8dfa6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a63c27be5450277c302b82495fa3675ee2889c2452e234547c4b0897cc26f228"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f90af9305ceef80cc8496fa0cac3e8826987609458c837422ea317ba2f8f4f63"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b5a92a95f7b657c476f0d21d783f7f91756bf57485ef00e8bdf56e21315bcc52"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc4fb54e5e8d994cc019a987174e7e89e1f221cf48c0b2a0aa72724b5f460ba0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f5b25bd4399569642fd192f26ec9c316cd46eb26812c07520282bc68c80f58d5"
+    sha256 cellar: :any_skip_relocation, ventura:        "82e8ef90294d2b13cd77adc80af26bd2ccde80e5899d683208c2cc48d163e404"
+    sha256 cellar: :any_skip_relocation, monterey:       "6e26a5d8b2fe7165ba4515f180e46416e38d62b3847ec38748d2437d1875862b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8efe129e5a958477ceddfe5f1a6fa039924b4811a7315f2052b39d99eb27dc8e"
   end
 
   depends_on "python-flit-core" => :build

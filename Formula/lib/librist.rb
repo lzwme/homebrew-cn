@@ -1,10 +1,9 @@
 class Librist < Formula
   desc "Reliable Internet Stream Transport (RIST)"
   homepage "https://code.videolan.org/rist/"
-  url "https://code.videolan.org/rist/librist/-/archive/v0.2.7/librist-v0.2.7.tar.gz"
-  sha256 "7e2507fdef7b57c87b461d0f2515771b70699a02c8675b51785a73400b3c53a1"
+  url "https://code.videolan.org/rist/librist/-/archive/v0.2.10/librist-v0.2.10.tar.gz"
+  sha256 "797e486961cd09bc220c5f6561ca5a08e7747b313ec84029704d39cbd73c598c"
   license "BSD-2-Clause"
-  revision 4
   head "https://code.videolan.org/rist/librist.git", branch: "master"
 
   livecheck do
@@ -13,19 +12,23 @@ class Librist < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e8b52b9e6646458bcc6e01faad09a5c1a1ea7f21fc19db0b0d594c8645670d7a"
-    sha256 cellar: :any,                 arm64_ventura:  "c34b9b3bec932b5117ae23940472bedea37c04a1ed25fa7c4ab5dc69b7adc121"
-    sha256 cellar: :any,                 arm64_monterey: "f3749618b7e7fd77b3add6130f6e6c6da636557d59f572f50e217135ab9a4bf8"
-    sha256 cellar: :any,                 sonoma:         "c611e76dd56a9bad2e6d363204bd26c0f3bb44c1ccc9af2a4cf1c268e344a9f4"
-    sha256 cellar: :any,                 ventura:        "b5cc249c0c8598b51631a54077bf625a465e1ee5b41b319a75dcfcfa50330cf9"
-    sha256 cellar: :any,                 monterey:       "52e7fe15d152bf90d2e55e938958d48b2f870e91789396bd6e898c23c1c9df27"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a77e55467dea8a362cb494e2628b897d2cdbcfc65a3230d1733161ef27dc580"
+    sha256 cellar: :any,                 arm64_sonoma:   "a137368d63a4112828b2f8536e8ac419e5cc1fea7d829160366c0be7fee4d269"
+    sha256 cellar: :any,                 arm64_ventura:  "0fbf53eef9ff1e01ef086ef822f50e76502371f60c1aef285dc9f044ef58e491"
+    sha256 cellar: :any,                 arm64_monterey: "625d0cf67b82ec6e975ed740ba1d44b6545858b80518da9fc6949ff51cc063b2"
+    sha256 cellar: :any,                 sonoma:         "7a14f013c77cc1e7ee5374d1f3356e2b0e667f2cbe23d62cb04cbd2355f62714"
+    sha256 cellar: :any,                 ventura:        "210c5820e8ae2d4af924419051c03f1acbacb9ff1046cc0cf1be86547b22fc2e"
+    sha256 cellar: :any,                 monterey:       "b209c7a34ec23eff152b023d9d8408c17452c8189f794556b994942538b6c337"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "012694034be33f28319212b1bcc51a6f6eb55b9b64b742a6d577f10281acb8f8"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "cjson"
+  depends_on "libmicrohttpd"
   depends_on "mbedtls"
+
+  # Add build macos build patch
+  patch :DATA
 
   def install
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}"
@@ -39,3 +42,21 @@ class Librist < Formula
     assert_match "Starting ristsender", shell_output("#{bin}/ristsender 2>&1", 1)
   end
 end
+
+__END__
+diff --git a/tools/srp_shared.c b/tools/srp_shared.c
+index f782126..900db41 100644
+--- a/tools/srp_shared.c
++++ b/tools/srp_shared.c
+@@ -173,7 +173,11 @@ void user_verifier_lookup(char * username,
+ 	if (stat(srpfile, &buf) != 0)
+ 		return;
+
++#ifdef __APPLE__
++	*generation = ((uint64_t)buf.st_mtimespec.tv_sec << 32) | buf.st_mtimespec.tv_nsec;
++#else
+ 	*generation = ((uint64_t)buf.st_mtim.tv_sec << 32) | buf.st_mtim.tv_nsec;
++#endif
+ #endif
+
+ 	if (!lookup_data || !hashversion)

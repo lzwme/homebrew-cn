@@ -1,6 +1,4 @@
 class Networkit < Formula
-  include Language::Python::Virtualenv
-
   desc "Performance toolkit for large-scale network analysis"
   homepage "https://networkit.github.io"
   url "https://ghproxy.com/https://github.com/networkit/networkit/archive/refs/tags/10.1.tar.gz"

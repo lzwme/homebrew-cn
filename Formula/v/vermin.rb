@@ -1,21 +1,19 @@
 class Vermin < Formula
   desc "Concurrently detect the minimum Python versions needed to run code"
   homepage "https://github.com/netromdk/vermin"
-  # pypi sdist issue, https://github.com/netromdk/vermin/issues/243
-  url "https://ghproxy.com/https://github.com/netromdk/vermin/archive/refs/tags/v1.5.2.tar.gz"
-  sha256 "e4b6ca6f3e71b0d83a179dc4a4ba50682f60474cf8c948ba9f82e330f219ff4a"
+  url "https://files.pythonhosted.org/packages/3d/26/7b871396c33006c445c25ef7da605ecbd6cef830d577b496d2b73a554f9d/vermin-1.6.0.tar.gz"
+  sha256 "6266ca02f55d1c2aa189a610017c132eb2d1934f09e72a955b1eb3820ee6d4ef"
   license "MIT"
   head "https://github.com/netromdk/vermin.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "de20468b870e639343ad234f18d9018a908918e564bad6ce7195fb686ab96401"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b189d96bd21b141dd0ad3fa8d5449c72076202ca2890af8c6f6eec7bb514e25c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d16f1fc95033fd33a03535af4038165c67db5cbd11fe51962da37f42dc18096d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "162ef8421922d36df066859ec7dd5ca6a64aa75733e5fe6a2eb60f92e8e975a5"
-    sha256 cellar: :any_skip_relocation, ventura:        "1572e3bcd97121ea49832591a45c4559c10727db43f8ab202fe0e297b12f087c"
-    sha256 cellar: :any_skip_relocation, monterey:       "6cda0ed69fefec865c12698b3cb366c06288a98e43c237652ce0715af16154bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a89e102af8f9c60ef26fe7c0b8e37451c76c5d874763e1199b0909fc4311e031"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "95a7e3486feb8990603dfa27834dbe16be6ad931a1546309a5c3dd5f53593803"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "44ae5f182f2388c49e9e69bccfbb0d8a2f4eb41a68ff02c2861b98a3676854c2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7109c0f6c180b061158a73e4dc995bd9d4d13659a23058901c2bc0ada77c02e4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "61bec38ab180cc2a41f25842117c9120fd6dd9a441c54a23a2485987d397dfd9"
+    sha256 cellar: :any_skip_relocation, ventura:        "3428f28c303e7024f6781e1c7b92721d97303a2c42f98d41e301384e7e836cc5"
+    sha256 cellar: :any_skip_relocation, monterey:       "6a5b2ff1673cdb57ef1442daf520f8a6f71397574358bc0a1c177e3933f4eec5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e09aab935f0ca29d76b066a2e4e0b73467b63046f968957389fda7e50bb75256"
   end
 
   depends_on "python-setuptools" => :build

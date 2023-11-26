@@ -13,9 +13,11 @@ class ElmFormat < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "25f339b466676ecaa1be5b3d5fa0d49a1ea6c4a8593be06837e85695a93bebff"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "81d3cdebad68b53ebe6d615e9362359a433c371804e38c9ac274a6657ab4a972"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "d95da1452e810b7b381ae898269325caa6da8a3224de231479a515ad9e8aaf6f"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "94f1a4809976df842ac5e63efcd66b564bf4cca7ff833c90a9218f3652956af2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c69440ab4cbdacc7518c70b98d9a60f111423c53674820e1afff2c174a80f5cc"
     sha256 cellar: :any_skip_relocation, ventura:        "61520c04f08cbd3b0f0989718fb8b3df92ce41d2f1b2f68c1827bc4d0331e482"
     sha256 cellar: :any_skip_relocation, monterey:       "65b60d85cf68821087e2d5005778d552c15d7183d763bcdb893da033ec21ac38"
     sha256 cellar: :any_skip_relocation, big_sur:        "a0f4b8bde75fc24c1e8a3ab6693581a210f9c8a8886de800835c5623261e4fc1"

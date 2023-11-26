@@ -8,25 +8,23 @@ class Soapysdr < Formula
   head "https://github.com/pothosware/SoapySDR.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "035305ac2eb180aeebac325d50ee41dc36d679cf9c8ff11a0311d66b7f82bbff"
-    sha256 cellar: :any,                 arm64_ventura:  "6b73c034ca3f25efac4922bf336bff165074d79bc2ee0c276c74275728b81025"
-    sha256 cellar: :any,                 arm64_monterey: "28ed02a75df0cafb919f0d9e30c0a312884762736868fe094fbaacec27bb12a8"
-    sha256 cellar: :any,                 arm64_big_sur:  "d20855a9fdd81d185e576cd308b00ab1f657736c721167bdb61fc7ec2d17b507"
-    sha256 cellar: :any,                 sonoma:         "e71422f2fda7e627ac078f5f5e0ddff12e231fe46f24fda5ecbd9e663f701597"
-    sha256 cellar: :any,                 ventura:        "1479afce35a2e6b61412bd416041d85fe051a2ed6879734f6092c5fa1fe72f70"
-    sha256 cellar: :any,                 monterey:       "9f3a6c8d3c6a9f0b8aaa9030da6d246dd40119309372bebc9e0952dc271d7dfe"
-    sha256 cellar: :any,                 big_sur:        "3b7dfa0601c4c808ffb3f5195d1194f65adfb26a9182a8bd7ba61d0fdcd73202"
-    sha256 cellar: :any,                 catalina:       "a47d2eca6bf6f4c4c4aaf15887cb2ac5ee22c0f6b1859e7bd2ec1d008fa19b28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8708223be2fc61637991a16921166770a1977f19634aa61e4b7ec6473f0ee8e"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "ee59200eb0b063923ca172880d6242df8a0bd7ff193b42f0f559a3ccbae5ecb5"
+    sha256 cellar: :any,                 arm64_ventura:  "e25dda6534a1db99e4733c373f83bb280afeb46927a19d64c4cdb2208a769e99"
+    sha256 cellar: :any,                 arm64_monterey: "72b5f1b5b3b5558d99173774621de43d9880a6141075fb6d3752fdb437c84ed3"
+    sha256 cellar: :any,                 sonoma:         "7bb7356090f0398c9ace3fd4067122925581dbd83de3b9465d83bd572e38eae9"
+    sha256 cellar: :any,                 ventura:        "403895702ca2e9225a66b01ddfd0e69ba0aab0dd5df105812780e70142c48703"
+    sha256 cellar: :any,                 monterey:       "a6018b446f7827ef40e21a60f40b401fc85da58b65ef0a5905174c8eae926744"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f10dcf27a18c96fcdd36c27ab64bfd87dd38285117d142399a038e76de230c2"
   end
 
   depends_on "cmake" => :build
+  depends_on "python-setuptools" => :build
   depends_on "swig" => :build
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

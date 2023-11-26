@@ -9,19 +9,22 @@ class Cookiecutter < Formula
   head "https://github.com/cookiecutter/cookiecutter.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4f1bf97d9ce7077e28502e31358357db7fd5975c968c9b490c1d6bdb51d86621"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "15e7e0f8cc0bff1e143c2a5713976787347bd588aef58aa0322d889a7074bd0f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "df3769840902568bbbf1ebb8cd238c5c54dec7d75c1d78959ca78b44b13363cd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "724bb8628ea1e46158e825d1c7b005867236293dca58e61ff36163897161bce8"
-    sha256 cellar: :any_skip_relocation, ventura:        "543581663445d0bea546a38fde46152e3f98f73bdc39607747fcea2c6f7f5c11"
-    sha256 cellar: :any_skip_relocation, monterey:       "dfb67c576edd2dde03960ec088057665e6fe65151f354470c401f7a12bf3de47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "43c7a942080dd795a81ce770ae497c31727fabbecb6ad47e6acd718b1953b5eb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "63ef47cde166c85edcbdb3fa28abf13aa8529d64340d6340c6e99d213b7ca001"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ec0f93255eca1e3353d861be72a9e41a44de59f6f9a0d107a01074edff5d95e8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fca4b10868384750526006cb473b561a81d9a97ba1335a01be2c5dda4c42eee3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "882b12c81215cccfd62cfd978aeff99ded4a5f2c7ba0b63a278db12d5c11e826"
+    sha256 cellar: :any_skip_relocation, ventura:        "0a6142c430b97d88a9968f2643b7a7fcf5232f08ab78728e342ab9c8f77569c2"
+    sha256 cellar: :any_skip_relocation, monterey:       "f51a74efb8bc31c0b18114f8cbd72388538304af2bde70b4235ebf015c140ff6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32e9f2a4aa67f70601cc4c0b01d5fc13ce81f24a628be6b6f4502a0881b0a78d"
   end
 
   depends_on "pygments"
-  depends_on "python-certifi"
   depends_on "python-click"
+  depends_on "python-dateutil"
+  depends_on "python-jinja"
   depends_on "python-markupsafe"
+  depends_on "python-requests"
   depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
@@ -41,21 +44,6 @@ class Cookiecutter < Formula
     sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
   end
 
-  resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
-    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
-  end
-
-  resource "idna" do
-    url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
-    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
-  end
-
-  resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
-    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
-  end
-
   resource "markdown-it-py" do
     url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
     sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
@@ -66,19 +54,9 @@ class Cookiecutter < Formula
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
   end
 
-  resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
-  end
-
   resource "python-slugify" do
     url "https://files.pythonhosted.org/packages/de/63/0f60208d0d3dde1a87d30a82906fa9b00e902b57f1ae9565d780de4b41d1/python-slugify-8.0.1.tar.gz"
     sha256 "ce0d46ddb668b3be82f4ed5e503dbc33dd815d83e2eb6824211310d3fb172a27"
-  end
-
-  resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
   resource "rich" do
@@ -94,11 +72,6 @@ class Cookiecutter < Formula
   resource "types-python-dateutil" do
     url "https://files.pythonhosted.org/packages/1b/2d/f189e5c03c22700c4ce5aece4b51bb73fa8adcfd7848629de0fb78af5f6f/types-python-dateutil-2.8.19.14.tar.gz"
     sha256 "1f4f10ac98bb8b16ade9dbee3518d9ace017821d94b057a425b069f834737f4b"
-  end
-
-  resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
-    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
   def install

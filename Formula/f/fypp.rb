@@ -1,6 +1,4 @@
 class Fypp < Formula
-  include Language::Python::Virtualenv
-
   desc "Python powered Fortran preprocessor"
   homepage "https://fypp.readthedocs.io/en/stable/"
   url "https://files.pythonhosted.org/packages/01/35/0e2dfffc90201f17436d3416f8d5c8b00e2187e410ec899bb62cf2cea59b/fypp-3.2.tar.gz"

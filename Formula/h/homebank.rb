@@ -2,9 +2,9 @@ class Homebank < Formula
   desc "Manage your personal accounts at home"
   homepage "http://homebank.free.fr"
   # A mirror is used as primary URL because the official one is unstable.
-  url "https://deb.debian.org/debian/pool/main/h/homebank/homebank_5.7.1.orig.tar.gz"
-  mirror "http://homebank.free.fr/public/sources/homebank-5.7.1.tar.gz"
-  sha256 "7f0a929d775eef26a5a9f29fa3c013f3eefadbf6982cc086a7c75dddb9b4f429"
+  url "https://deb.debian.org/debian/pool/main/h/homebank/homebank_5.7.2.orig.tar.gz"
+  mirror "http://homebank.free.fr/public/sources/homebank-5.7.2.tar.gz"
+  sha256 "331d7ef88d90f3f34ca6610f7f18e89e935443b18b091a87d9b94bd7556399ef"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -13,13 +13,13 @@ class Homebank < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "f8f69b7528397655cec90fbb26c905c0f458302d8fcc62737e16e53ef85d0fe1"
-    sha256 arm64_ventura:  "6ec975c1c1f50c19e2d59ca183da7b6abe7d75445f939248b3aa6fd3e791a37b"
-    sha256 arm64_monterey: "6eac90b943e9b6e1156a0e2d6f0bc2b9cac3f7e34a8d78a88de20a824a2185b9"
-    sha256 sonoma:         "a59d2eeda8f39496f47312132780b160fd70806941b8acae6759b50afbdbdd55"
-    sha256 ventura:        "08078b68ce17ff2e41dd013a6e3ad13b4c061fcb4b8816744c2b110362330c10"
-    sha256 monterey:       "9d45eb8e77de3b14f94788466e5fccf3212901ad434f9cd53743755a90db30a0"
-    sha256 x86_64_linux:   "0f06ac514054a4d11c10dbc03e56d92cb04ca415823ccf4ea3658c53a57b12af"
+    sha256 arm64_sonoma:   "532262b58f63d8c0c4bf8175244475c5399555a3a2edb0cb0de31632f67bcb33"
+    sha256 arm64_ventura:  "d58d64a807f8a4b385e7817b74e20536b739357f96c23171b53a3d9eac3330e8"
+    sha256 arm64_monterey: "9f3ceeb52e70b12a0153f89621f7f010546155b8d4d3ccf13b41cfa5ac7934fe"
+    sha256 sonoma:         "3a27bc3fd7df7edd97283ef1f77acf166b73b817ed18dbf763e8a4a900a9eb41"
+    sha256 ventura:        "ec499a4a9436b1be392d6911bdde830ed29c0bdc15a6b67904f01dce67666614"
+    sha256 monterey:       "9e7ba6f4f71b579464b99dfbfd3ac0e674b456642ce8b8c7f9774b1323b72495"
+    sha256 x86_64_linux:   "9832a56ddd60b8a14fef16d5b21f1b53d1e910c3bc387d6819b4443732a9eb18"
   end
 
   depends_on "intltool" => :build

@@ -8,21 +8,20 @@ class Pyspelling < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9fa786885d4f4dec84ef1d42ed43362e8452df8cee3e641ed189052eb6c49580"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6c6954deb1b6db7bada545e28e3dace4fc26fc3f4612f15ade5221709a35b3ba"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1c9ab926a6bff7148400151417fd52a3e1b5b0e51fae0dd2bf9002c57654d49c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6db2a098714e7fef3bf41ad38a231557a339fef54313c9f6a976e68feee94e53"
-    sha256 cellar: :any_skip_relocation, sonoma:         "279bc6f4e95a686bc65113911356fa5f0238c7f591efdfb7fc6b6617e516c2a4"
-    sha256 cellar: :any_skip_relocation, ventura:        "6d3dd6fb3145cc2229f78bdf5739d096b3673a9c7b7deff6a242b9d7f704874c"
-    sha256 cellar: :any_skip_relocation, monterey:       "70115b4c31e5865ebf0150786385f0588b2f205d8e2f5edb0f9680c4b4a6c36c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4caf2e4be74224347c1403d7e77111b3304967ea0a4c856231e7cf0e7c45f090"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3da695e5c25cc1bffb08d2a9f88ed0886da1b82577fa48efcc715532356ad871"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4955931444a37d184aa4333aa375ba80b3c705bcab1685cf9f59b7a5e472cd61"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d8695b142445a11e36b3b88d1a9d9bfaefff0afcc687d8a9bcd528d2aa783ad"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ef306133073366de18475fcee2bfc1e9276a50d8d32ddf1448da175b461607e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8fb0caba189977a032fc4573462095e332fceeed462f5201b154b9a7df945234"
+    sha256 cellar: :any_skip_relocation, ventura:        "9ee5749e9ed26b61cd3a4b00caa57bcf5b5dff734fc543b7cf333dbcd17072cd"
+    sha256 cellar: :any_skip_relocation, monterey:       "f737111a0e037983820b5e3e03f2231534df40780b738acc868586cacdbc36d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b121441818a29b1ed89b1e8c2b6d9ad2b50be5ee390f3e3ecd0212ab9be4f639"
   end
 
   depends_on "aspell" => :test
   depends_on "python-lxml"
   depends_on "python-markdown"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 

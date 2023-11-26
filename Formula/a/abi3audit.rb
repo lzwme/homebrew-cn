@@ -8,19 +8,22 @@ class Abi3audit < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "32629132628155b7d6912a441572f154a3517d9b766a1715ef60caddc215a2fb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b0f331a37688fdf2630bd80d740831b6241438efc8af95926452e0f30f91399"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "73e1e88049fde36ac53ea374f296cf5a116e0172e667e24adb8f6ff52a53716a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "642f2bfacc6327af8113c09c928ace7aef127edfecc5214f84d2d401da532023"
-    sha256 cellar: :any_skip_relocation, ventura:        "2b285f42a7ef2e38b420e896aa8b17669cb6c0cb115a59a1dfbe559962b26410"
-    sha256 cellar: :any_skip_relocation, monterey:       "4056acb2d58d05903381a85328f6500f1972ed1da9de8b2633fc35fc8924d576"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4bb8143edd8abcafd85e0fd1cb3683240809bb611d6d621ed26a7322cad30598"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "975f11fb62809ceb38d2380f4ec49d056b0ad5b3f31074ea174f21b92fae1217"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "69af1583164604d24fb34794416fb53b5d55e00d829e2e24b32f153259b50d09"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6cdd917d31edfef5526ea8d568f1a938852028c025aeaa3e6ca8216d09c6288f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "78bb2ed3904bf719a5886b92d9c94fb72a2c24e1ac02561b840487dfdbe1f9be"
+    sha256 cellar: :any_skip_relocation, ventura:        "d470bc62bd5c74b1ed36f2c50f054c0ee2071112730aa6eb133b42666fed4a01"
+    sha256 cellar: :any_skip_relocation, monterey:       "5ce530d5ff454664fe4225dd672656d6bcbf608268a94bba4d5a168478444eb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96d660eb4c8bd0f87178886064529b69ef62faa142646570b25a700de7fbc1bc"
   end
 
   depends_on "cmake" => :build
   depends_on "pygments"
-  depends_on "python-certifi"
   depends_on "python-packaging"
+  depends_on "python-platformdirs"
+  depends_on "python-requests"
+  depends_on "python-rich"
   depends_on "python@3.12"
   depends_on "six"
 
@@ -40,18 +43,8 @@ class Abi3audit < Formula
   end
 
   resource "cattrs" do
-    url "https://files.pythonhosted.org/packages/68/d4/27f9fd840e74d51b6d6a024d39ff495b56ffde71d28eb82758b7b85d0617/cattrs-23.1.2.tar.gz"
-    sha256 "db1c821b8c537382b2c7c66678c3790091ca0275ac486c76f3c8f3920e83c657"
-  end
-
-  resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/6d/b3/aa417b4e3ace24067f243e45cceaffc12dba6b8bd50c229b43b3b163768b/charset-normalizer-3.3.1.tar.gz"
-    sha256 "d9137a876020661972ca6eec0766d81aef8a5627df628b664b234b73396e727e"
-  end
-
-  resource "idna" do
-    url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
-    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
+    url "https://files.pythonhosted.org/packages/91/dc/9e8bcf0ee80835cfc7da6d506ccc85ef6cb7a0ea924a61e029ba81093b1a/cattrs-23.2.2.tar.gz"
+    sha256 "b790b1c2be1ce042611e33f740e343c2593918bbf3c1cc88cdddac4defc09655"
   end
 
   resource "kaitaistruct" do
@@ -59,24 +52,9 @@ class Abi3audit < Formula
     sha256 "a044dee29173d6afbacf27bcac39daf89b654dd418cfa009ab82d9178a9ae52a"
   end
 
-  resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
-    sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
-  end
-
-  resource "mdurl" do
-    url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
-    sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
-  end
-
   resource "pefile" do
     url "https://files.pythonhosted.org/packages/78/c5/3b3c62223f72e2360737fd2a57c30e5b2adecd85e70276879609a7403334/pefile-2023.2.7.tar.gz"
     sha256 "82e6114004b3d6911c77c3953e3838654b04511b8b66e8583db70c65998017dc"
-  end
-
-  resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/d3/e3/aa14d6b2c379fbb005993514988d956f1b9fdccd9cbe78ec0dbe5fb79bf5/platformdirs-3.11.0.tar.gz"
-    sha256 "cf8ee52a3afdb965072dcc652433e0c7e3e40cf5ea1477cd4b3b1d2eb75495b3"
   end
 
   resource "pyelftools" do
@@ -84,29 +62,14 @@ class Abi3audit < Formula
     sha256 "2fc92b0d534f8b081f58c7c370967379123d8e00984deb53c209364efd575b40"
   end
 
-  resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
-  end
-
   resource "requests-cache" do
-    url "https://files.pythonhosted.org/packages/79/13/c37358338bbbe223caf2ec59580be675c1657f3f295598ac69e275590140/requests_cache-1.1.0.tar.gz"
-    sha256 "41b79166aa8e300cc4de982f7ab7c52af914a785160be1eda25c6e9265969a67"
-  end
-
-  resource "rich" do
-    url "https://files.pythonhosted.org/packages/b1/0e/e5aa3ab6857a16dadac7a970b2e1af21ddf23f03c99248db2c01082090a3/rich-13.6.0.tar.gz"
-    sha256 "5c14d22737e6d5084ef4771b62d5d4363165b403455a30a1c8ca39dc7b644bef"
+    url "https://files.pythonhosted.org/packages/4d/b6/24aeda90d94fb1fd2cd755d6ce176e526ef61d407f87fd77de6ab0d03157/requests_cache-1.1.1.tar.gz"
+    sha256 "764f93d3fa860be72125a568c2cc8eafb151cf29b4dc2515433a56ee657e1c60"
   end
 
   resource "url-normalize" do
     url "https://files.pythonhosted.org/packages/ec/ea/780a38c99fef750897158c0afb83b979def3b379aaac28b31538d24c4e8f/url-normalize-1.4.3.tar.gz"
     sha256 "d23d3a070ac52a67b83a1c59a0e68f8608d1cd538783b401bc9de2c0fac999b2"
-  end
-
-  resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install
