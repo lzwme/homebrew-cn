@@ -1,8 +1,8 @@
 class Goredo < Formula
   desc "Go implementation of djb's redo, a Makefile replacement that sucks less"
   homepage "http://www.goredo.cypherpunks.ru/"
-  url "http://www.goredo.cypherpunks.ru/download/goredo-2.4.0.tar.zst"
-  sha256 "a140bf37a34b11506b142ded484b16117501979a3264d9aa45315615b80bfb38"
+  url "http://www.goredo.cypherpunks.ru/download/goredo-2.5.0.tar.zst"
+  sha256 "915c421d743d3e368b62f881f2c7fca078859e2c8dac730ee82fea4998632bb9"
   license "GPL-3.0-only"
 
   livecheck do
@@ -11,13 +11,13 @@ class Goredo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "86f71fda60f5554c82e32e627c803585292894b02137a83c45b0b6314f64994d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dc3894af965d2d860569740dc8b6499e4a41bbfbe6df5ad6eed4d26002c551e0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a0f72997fb621a4960dc8894e224a95b2071dc3c5fadc54e09d8567fe880a13f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b781d82bb7e2f625243e731a20c7a24036131787c97d59671a1547e8659b949c"
-    sha256 cellar: :any_skip_relocation, ventura:        "d816d4d494162e8be5b5ef5d651539bc2a0765f35b933d9de7d11cf8c2643025"
-    sha256 cellar: :any_skip_relocation, monterey:       "46da3e4eaa492f4c7488e672b1cdd74c3cd2e084ae4f7578b1e6ce1c843b17af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "393ee7068da185f65b409c4d33a9193ee5df4a634457fcc8f8a35d9facfc8915"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd2283458efd6ab1e616780e656014d727683ffc97015092f5798755406ad05e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "70df98a79a7658525f43c3e2e5196410b126b2486a5117489ca066d3b913aaee"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "940aa38a9f6cb1df32b92af52e464cf9b6ec9afe5070c9235f685086c58c163d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c2df47bcb097cd53e76bd21982350a08e8d84b93f38f258a36a25f803f3cce6e"
+    sha256 cellar: :any_skip_relocation, ventura:        "ad5fb2d65bb2bfe87f742c6574780f813ca869c93c348fcc4d7b29b613bf212a"
+    sha256 cellar: :any_skip_relocation, monterey:       "1be825b2523e3c6c07ddf2b370eeb9591b42e9947e0a414175bd2d0c16cdfb2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b79e957699b579d077bc173c9c2a70c4b88f470df190246fbd9d3714b4a54b7"
   end
 
   depends_on "go" => :build

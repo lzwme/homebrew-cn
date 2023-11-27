@@ -1,16 +1,16 @@
 class GopassJsonapi < Formula
   desc "Gopass Browser Bindings"
   homepage "https://github.com/gopasspw/gopass-jsonapi"
-  url "https://ghproxy.com/https://github.com/gopasspw/gopass-jsonapi/archive/refs/tags/v1.15.9.tar.gz"
-  sha256 "a908cedbab59c48a30a94518c92d2a20b34f373c7e1654f1d398aa9cd8f3fc0b"
+  url "https://ghproxy.com/https://github.com/gopasspw/gopass-jsonapi/archive/refs/tags/v1.15.10.tar.gz"
+  sha256 "535af8ffd0d939e545209c3c27ce43a16ca5d6523c3c476eeea861cd7272d093"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9ce6fdaa550fb8eefcb2c758719ac104ccc04767c9903f6f9aaffe856bda8753"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "20f08fb617bb4ee5c4a19492a2bcb71084839a43be9e5e671c3abf67503549a5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4a1f2fb372314a486307a8af1efb77866169c9f9323901fbff9949be153117bf"
-    sha256 cellar: :any_skip_relocation, ventura:        "5567d10914f2494f56cf9fdfd60120143c87c47ba9409b81d88ce729d4db9de0"
-    sha256 cellar: :any_skip_relocation, monterey:       "46498a903804e625c8a5ca7c71e55ed999320d9884412da86f683d2fede428bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d010b7089cb85d4fad54a0d385edf56584fb5047fe63a5a257174185e8dbefd6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4a4d8676ba270a820f3376908b200fa1ffb0e3d27494c83d11b340fad09c9ca"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "76cbcf26f45cc478abba321c48c145bb76e21b3b0a671a5f442933156cf393ff"
+    sha256 cellar: :any_skip_relocation, ventura:        "b0135ca19218680cf87b48b3330a54cf02fbe1b8d184787bde993a8ecd858d33"
+    sha256 cellar: :any_skip_relocation, monterey:       "32e7ebf94bb3c2a89e3d6ce5bc4d105feed3352044595bd47276b80f506df941"
   end
 
   depends_on "go" => :build

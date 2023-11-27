@@ -1,9 +1,9 @@
 class Bento4 < Formula
   desc "Full-featured MP4 format and MPEG DASH library and tools"
   homepage "https://www.bento4.com/"
-  url "https://www.bok.net/Bento4/source/Bento4-SRC-1-6-0-640.zip"
-  version "1.6.0-640"
-  sha256 "abc319b553d6c3540e38e30a6286ef113118c1298ac80f37994a376db331ab6e"
+  url "https://www.bok.net/Bento4/source/Bento4-SRC-1-6-0-641.zip"
+  version "1.6.0-641"
+  sha256 "8258faf0de7253f2aac016018f33d4a04c16d9060735e14ec8711f84aaedf0c8"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,14 +12,13 @@ class Bento4 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "29eacfbc2a591a8993f0f1a67d7b2f09ea3b9e22b62de77b2b171c46e2b4801f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "06e22f1b67f96e5f58d907b4b86a430005f972a19ff7497827bd55236a440dbd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "be7d1155f3e4b8b7fe5e3018f152d6adfff3cbea1d54e11530f0ffdfe8447b2c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2c2b5e908cbe12f10fa17d253d7466e31362ddf170b8e1e32b3ab5bfb4cf731e"
-    sha256 cellar: :any_skip_relocation, ventura:        "74d680dec16a85cfe2a6f8ca7a6113c2248a4789bbe6218889ca750c649ebc21"
-    sha256 cellar: :any_skip_relocation, monterey:       "abb807eb1bfc0156e90722a436d91d183feb495124ab0c8a4b18800149df6640"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "341411d696ee13840263ad7bf2362e38d8630bf3e6dfe0548b2952a97be3dc7e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "44aaa692620d4fcb31befc2f516cd8f15bfa354ab8a63fc631041b7a4735eb20"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "547e1b2f4b7e69e81b629f3de5eb18ed2eff46189f1808d1dd06f79fa2ee8813"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2577abbd894889afbc8a0ead74920524141cdd61a8cc57cebd3c50dbd91d5238"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f04de9a02f0026b6af5b97b7b96a1f993cb1221cb091d2ca2dd32ae090d2367b"
+    sha256 cellar: :any_skip_relocation, ventura:        "259b55cdeada320d8aa368e18b592a860c086405afb20b7aa243e81f5099b7dc"
+    sha256 cellar: :any_skip_relocation, monterey:       "c62d997c1c99c82012bb95a37dbac91fcbe1575c27d9396e0e490dcab23bec95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "625ab4602c107e435c77e5af74109545ba3612ede1c8b6a6e06f5e17aeade282"
   end
 
   depends_on "cmake" => :build

@@ -1,19 +1,19 @@
 class Rclone < Formula
   desc "Rsync for cloud storage"
   homepage "https://rclone.org/"
-  url "https://ghproxy.com/https://github.com/rclone/rclone/archive/refs/tags/v1.64.2.tar.gz"
-  sha256 "85feffc2d60554bcc3c59140750dc4ccf008e109b52c451956a1f52387af1bd6"
+  url "https://ghproxy.com/https://github.com/rclone/rclone/archive/refs/tags/v1.65.0.tar.gz"
+  sha256 "22a15cbc381bab351c0698c83c1666344a07e1bde39ba44f33b95c5fb22cfaf4"
   license "MIT"
   head "https://github.com/rclone/rclone.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d4afe9d2f7486a3dddba567553bb03225b4fb190cff7e3f746ff3017b0cc4c31"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a8c2403d41ff5403491f22da9293cc57e8a3053105d9822ed418a5db41e80088"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "22b3103ac7971e23e1b6b408e554fccc5ebc878d439b047be07e17142419cea4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5b2c368073e7ce78737f25febd9006bcc232d07e768b96c24775e87c5422e55d"
-    sha256 cellar: :any_skip_relocation, ventura:        "899aa8fe00ccb9ed1acf2eb8948b9698847159b086c727f6f9a3b0cf3513936c"
-    sha256 cellar: :any_skip_relocation, monterey:       "e5d950991458913aa1ddc78faf25f4f52f5065248a385c62c65dda9d463d52d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a8d2b8e0c5760f8567190e2db6862fe18fc2b71e8f94482e79a26ec1b60df0d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2bea146cb528713b7688f5df43691ae1ec750160c5fe3c67b2433c28057ecfeb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "26d9e0a8ced71699ac144f22ecdae16ce813f5efdfaf7965f5fef52c0ede161c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "57b9723d1645b687ad4320bdc6c2f4e45d2e8d2fea9961788be09de64a3c71ff"
+    sha256 cellar: :any_skip_relocation, sonoma:         "869bbb672ece76f107ea68cb18871daa7604662279f1961d8cb068b56fdb4981"
+    sha256 cellar: :any_skip_relocation, ventura:        "8006137800bfe66417a9ea3b798f0cd0febc2ca58754e9c64e9e3d38f10ad98d"
+    sha256 cellar: :any_skip_relocation, monterey:       "2d1231b6eb0a36f706e396d5f2dd80626465dea4b54764bba3e5f283581e0468"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "062e5765989a33c75df27f0af31be9001c1ce536b1c4783bc31ae698305c7a87"
   end
 
   depends_on "go" => :build
@@ -33,7 +33,7 @@ class Rclone < Formula
 
   def caveats
     <<~EOS
-      Homebrew's installation does not include the `mount` subcommand on MacOS.
+      Homebrew's installation does not include the `mount` subcommand on macOS which depends on FUSE, use `nfsmount` instead.
     EOS
   end
 

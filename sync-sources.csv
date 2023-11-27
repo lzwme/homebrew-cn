@@ -5059,6 +5059,7 @@ Homebrew-homebrew-core/Formula/p/python-brotli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-build.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-certifi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-charset-normalizer.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-cli-helpers.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-click.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-configobj.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-cryptography.rb, Homebrew/homebrew-core, 0
@@ -5075,6 +5076,7 @@ Homebrew-homebrew-core/Formula/p/python-hatch-vcs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-hatchling.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-idna.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-jinja.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-jmespath.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-kiwisolver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-launcher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lsp-server.rb, Homebrew/homebrew-core, 0
@@ -5119,6 +5121,7 @@ Homebrew-homebrew-core/Formula/p/python-typing-extensions.rb, Homebrew/homebrew-
 Homebrew-homebrew-core/Formula/p/python-urllib3.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-wcwidth.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-websocket-client.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-xlsxwriter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-yq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python@3.10.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python@3.11.rb, Homebrew/homebrew-core, 1
@@ -6990,7 +6993,6 @@ Homebrew-homebrew-cask/Casks/a/ableton-live-intro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ableton-live-lite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ableton-live-standard.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ableton-live-suite.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/a/abricotine.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/abscissa.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/abstract.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/abyssoft-teleport.rb, Homebrew/homebrew-cask, 1
@@ -7316,6 +7318,7 @@ Homebrew-homebrew-cask/Casks/b/bettertouchtool.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/betterzip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/betwixt.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/beyond-compare.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/bezel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bfxr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bibdesk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/big-mean-folder-machine.rb, Homebrew/homebrew-cask, 0
@@ -7600,7 +7603,6 @@ Homebrew-homebrew-cask/Casks/c/cloudnet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cloudup.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cloudytabs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clover-configurator.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/c/clover.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cmake.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cmd-eikana.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cmdtap.rb, Homebrew/homebrew-cask, 0
@@ -7825,7 +7827,6 @@ Homebrew-homebrew-cask/Casks/d/devolo-cockpit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/devonagent.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/devonthink.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/devpod.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/d/devsquadron.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/devtoys.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/devtunnel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/devutils.rb, Homebrew/homebrew-cask, 0
@@ -13015,13 +13016,18 @@ Homebrew-homebrew-cask-fonts/Casks/font-rowdies.rb, Homebrew/homebrew-cask-fonts
 Homebrew-homebrew-cask-fonts/Casks/font-rozha-one.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-80s-fade.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-beastly.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-rubik-broken-fax.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-bubbles.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-burned.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-dirt.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-distressed.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-rubik-doodle-shadow.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-rubik-doodle-triangles.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-gemstones.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-glitch.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-iso.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-rubik-lines.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-rubik-maps.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-marker-hatch.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-maze.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-microbe.rb, Homebrew/homebrew-cask-fonts, 0
@@ -13030,6 +13036,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-rubik-moonrocks.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-one.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-pixels.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-puddles.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-rubik-scribble.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-spray-paint.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-storm.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-vinyl.rb, Homebrew/homebrew-cask-fonts, 0

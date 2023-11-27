@@ -3,19 +3,19 @@ class GiDocgen < Formula
 
   desc "Documentation tool for GObject-based libraries"
   homepage "https://gnome.pages.gitlab.gnome.org/gi-docgen/"
-  url "https://files.pythonhosted.org/packages/e5/6e/9f05646d0dbfa537c9328204212e7d22942e656b9279d1d36d8efedf5dec/gi-docgen-2023.2.tar.gz"
-  sha256 "1836b6496fdc27aff345d12bac8d4b024416a23e0745c8fe0fd38884437a1fc7"
+  url "https://files.pythonhosted.org/packages/ec/4e/7ae06ba557a1ef86abcf33c299bf955a4cf69f0b8f6268c6e97029b6329f/gi-docgen-2023.3.tar.gz"
+  sha256 "977616bcc0e2735bb596c71e8eb34533526680740c666e87f9dfc323acd488f0"
   license any_of: ["Apache-2.0", "GPL-3.0-or-later"]
   head "https://gitlab.gnome.org/GNOME/gi-docgen.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b638c87d79f220948e38fdf06613009786c2e388c6e5a2fb8e7cc7ae0b0dcaee"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "415a6b670e0aeb4429fb2ee775e411c4605935c58dc8bc9379fc4d320f26772b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e34de37d53b61fb15aed46c53b63d21e504f67b923cd512735b7f14a99b6f8e5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ee69eecf093b1879dd8af20391e4a67a21ae20ace51d694125ad1f0528189676"
-    sha256 cellar: :any_skip_relocation, ventura:        "4e1f48296666669ab0caf1a87819eb44743966dab8f2aaecf3750e7f8b1e7c2c"
-    sha256 cellar: :any_skip_relocation, monterey:       "33484b2a7c2dc3a8f3d01fa434768bb6db9cd6d83f8883647620eb87480da71c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8689b47d280d7120f2baa4385a449efd308bfecb8cb5b06462a4f9b8ff02459b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8ffaa25a68185527d542c6bf763029ba7596c65511472cbb89d63fd4d25c8982"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef0803489a89d5c0bc4c28062ccd034e292c7ed39845a741f6eee2e443226025"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "86c1ed75f3b0141ca6529d68bfad595d3c0c65fc83d3d90e9a4d1f236ff8d824"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2ab5eb00b893d72ca66ad946724d4d698efdd99f1a4c3463ade278c9024af644"
+    sha256 cellar: :any_skip_relocation, ventura:        "28715df65c4ce5e659d870f9c682930109ff988c00f5066ba9775e04e856c45e"
+    sha256 cellar: :any_skip_relocation, monterey:       "482c9adda5ff0f413b8dfad80c473c69707652605e30329d9ea7058b8d192e19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a371787a3b4b7258835b0203dc0ece4ce6bda83a1e18304223524437936150ae"
   end
 
   depends_on "pygments"

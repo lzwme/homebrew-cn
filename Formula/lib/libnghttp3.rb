@@ -1,19 +1,19 @@
 class Libnghttp3 < Formula
   desc "HTTP/3 library written in C"
   homepage "https://nghttp2.org/nghttp3/"
-  url "https://ghproxy.com/https://github.com/ngtcp2/nghttp3/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "838def499e368b24d8a4656ad9a1f38bb7ca8b2857a44c5de1c006420cc0bbee"
+  url "https://ghproxy.com/https://github.com/ngtcp2/nghttp3/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "b3ffb23a90442a0eafe8bfbefbc8b4ffb5179d68a7c0b8a416a34cf04b28d7c5"
   license "MIT"
   head "https://github.com/ngtcp2/nghttp3.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "127334f5feedba39e77ce78cd55babfc5ce4ff2d775f60bb852f9c35179e67b5"
-    sha256 cellar: :any,                 arm64_ventura:  "4df3b788e8e86b8f27a52ac01145a119cb17ea5610bf24357abf005b871e0112"
-    sha256 cellar: :any,                 arm64_monterey: "fa489ff71d62930003c540c22375da5620c8246adcb66375afa003bf8b3826a9"
-    sha256 cellar: :any,                 sonoma:         "9ade91c4ac6725e0e2023bb8bf9b257502891dadde3e5be6418700f3fa217eff"
-    sha256 cellar: :any,                 ventura:        "58e9cdf3be7bad3a645ef57269faeb90c536ed90387e9fc49cf6e421ff858b27"
-    sha256 cellar: :any,                 monterey:       "1a35c00d9e2125e057b3bea08dd87526f00807b72537d6927494dade7e727d36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "35e0ae981233e48d9b4920049e68de7679e0be06fbdac6ce306b331c4aae48e3"
+    sha256 cellar: :any,                 arm64_sonoma:   "71b2c40bfe0818a6cf4b667ab750154f0731d68ff764c7b982f1a2c5936fdeef"
+    sha256 cellar: :any,                 arm64_ventura:  "f5d3581f37ae8b8c3836f9f488819d9baf44ba2d35d55783e72d070e7b060ab0"
+    sha256 cellar: :any,                 arm64_monterey: "d294da4c4c26491a500bb723b5ec713b408f893b2008bc1806515e5825fc3fc2"
+    sha256 cellar: :any,                 sonoma:         "c0939b889c09fc6635f3cdd2df0c00d6f3fce13e68ac360088f87b9ba9df0f59"
+    sha256 cellar: :any,                 ventura:        "379d7b99e07295ea465a359d46afe178d98b89f252719e0b6384c03e7b57ec3e"
+    sha256 cellar: :any,                 monterey:       "2270b9a3f88efcf8d876cf3f1c7a61771b63b822c7b1db9d2be0e6e7e7ec006c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c1f4bc1624e454af1acfc2e89825991dbb522ac60971cdc36d27273e94013b0"
   end
 
   depends_on "cmake" => :build

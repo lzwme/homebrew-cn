@@ -1,8 +1,8 @@
 class Ripgrep < Formula
   desc "Search tool like grep and The Silver Searcher"
   homepage "https://github.com/BurntSushi/ripgrep"
-  url "https://ghproxy.com/https://github.com/BurntSushi/ripgrep/archive/refs/tags/13.0.0.tar.gz"
-  sha256 "0fb17aaf285b3eee8ddab17b833af1e190d73de317ff9648751ab0660d763ed2"
+  url "https://ghproxy.com/https://github.com/BurntSushi/ripgrep/archive/refs/tags/14.0.1.tar.gz"
+  sha256 "845cbf47729809fe82fd1f938f7880a29c1cd5c71d83e0feb9429552e0568bf6"
   license "Unlicense"
   head "https://github.com/BurntSushi/ripgrep.git", branch: "master"
 
@@ -12,17 +12,13 @@ class Ripgrep < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "c408d09a5b4ea293f8eed21e27dda6e6faed50b2e30e5fb6b64ebccbe34f46d4"
-    sha256 cellar: :any,                 arm64_ventura:  "ca37acadebbf8a719b4f985c484ffd381e0cbeccc73d73673ec116692bf5450a"
-    sha256 cellar: :any,                 arm64_monterey: "d21429f4b0a97e94f87cf7588958f53b57bf067876377d6a2e7a30259fa94394"
-    sha256 cellar: :any,                 arm64_big_sur:  "977038e704a31a1e362cb737e465324659061857c2fe5a0a7babe8d5d59673c8"
-    sha256 cellar: :any,                 sonoma:         "f0727ff4b6aeddff356a3319fe8844dfc2f7435c8ca81ba9bbbeaffd04906926"
-    sha256 cellar: :any,                 ventura:        "045b7757f7894aa1091ce0aaf41e58117901b5d6f4893195dd02d2abe5927787"
-    sha256 cellar: :any,                 monterey:       "a24a4ab187a9dac94b62c9a4271e6ba434d531a460f886212696bb2e1b5917eb"
-    sha256 cellar: :any,                 big_sur:        "f3a112620b217412149aef8d12e54508ce18f96c3f05f2376673f385ca5a0e3a"
-    sha256 cellar: :any,                 catalina:       "bab190961709b00de3da9a56ec89396cd773ead7531f62fd2c6756bb2743c9a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e7bf9e8cee09ae435aa694e1b8942f915f7a9f58ec16a1e0b1fc5f7a76014dae"
+    sha256 cellar: :any,                 arm64_sonoma:   "2a3179dc65738b5f3f905ed307a4d3a79c3af584f521af501f6604dcc5a8aeb4"
+    sha256 cellar: :any,                 arm64_ventura:  "f4bb082d2a8914c2454693f72f836d6c5326fe69f62d98451bf110eebe507d50"
+    sha256 cellar: :any,                 arm64_monterey: "c0636cc02aa9f0128bc1d7aac588a80bef2ed1b3c2681b8bbff8d7346a89b42f"
+    sha256 cellar: :any,                 sonoma:         "4695f24307c82f15a02bf172dad07c0af8421ce813f3ed67cbee5fa0ddaeab5d"
+    sha256 cellar: :any,                 ventura:        "a6c2bf7a45d58b2fc15dbc02d9f23da944ad066c94ccdb721434e903e4c433b3"
+    sha256 cellar: :any,                 monterey:       "bfd8bcff015c770fd2b71cd3ad34c2fedb90c23ba90e02d4fed73793bfe88298"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "64f83f393d74ee90aa9a6219d59ca39d72014d83489499e2d09468f01d0e9344"
   end
 
   depends_on "asciidoctor" => :build
@@ -33,13 +29,8 @@ class Ripgrep < Formula
   def install
     system "cargo", "install", "--features", "pcre2", *std_cargo_args
 
-    # Completion scripts and manpage are generated in the crate's build
-    # directory, which includes a fingerprint hash. Try to locate it first
-    out_dir = Dir["target/release/build/ripgrep-*/out"].first
-    man1.install "#{out_dir}/rg.1"
-    bash_completion.install "#{out_dir}/rg.bash"
-    fish_completion.install "#{out_dir}/rg.fish"
-    zsh_completion.install "complete/_rg"
+    generate_completions_from_executable(bin/"rg", "--generate", shell_parameter_format: "complete-")
+    (man1/"rg.1").write Utils.safe_popen_read(bin/"rg", "--generate", "man")
   end
 
   test do

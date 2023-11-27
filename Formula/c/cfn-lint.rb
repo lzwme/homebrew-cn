@@ -8,21 +8,24 @@ class CfnLint < Formula
   license "MIT-0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "3db870da9fa7a2626c00e5743cd50249ae78d12db60be6f52cd45c32c832b591"
-    sha256 cellar: :any,                 arm64_ventura:  "7a9d04ae0a26edce5b157ff522a441340f158463909f5f49742783a7f748d79e"
-    sha256 cellar: :any,                 arm64_monterey: "80eaaa380f1c3e71d1cd93ef97891ed60934e0b69131961c135de3f63abfa9dd"
-    sha256 cellar: :any,                 sonoma:         "136e019b3eb732cdf407d00f91892a7e9ceb2a62c42c997cafc67a71c074ef0b"
-    sha256 cellar: :any,                 ventura:        "ec2cf020a8e13b27f1ba2017f9bd6a9adb27f5120ebfc337acc8ec7eaf00acd5"
-    sha256 cellar: :any,                 monterey:       "d4a82f990cf41a7cc242efcaa6a4461d3b7dbd19ddfbc1f1001b6b304b2c1935"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a88c4634a2f4d13e9120ef0056e0e68a6b7bd213f3fad93ce66a397c8001a8c8"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "f72a66960b55894f5b2547ff122782242ef7497286e7617efadc6d71aaf8ef62"
+    sha256 cellar: :any,                 arm64_ventura:  "0aaf3b523fd755a4fc49d176daf2b2c983c72e4e0d98e1824d50514c339365b3"
+    sha256 cellar: :any,                 arm64_monterey: "dc078af592de2029063bef1ca76b1a6fc231c2d4b3c3be39f1429277626feef3"
+    sha256 cellar: :any,                 sonoma:         "e1fe401fd0704c03f25a9fa9cfb622e0ee6bf4459229fcb5fa67de7a80f80a1d"
+    sha256 cellar: :any,                 ventura:        "18fbbe0caa1da62c6e4636545fd27dfec4f47938bfdaf8fb51ca11442a9486ed"
+    sha256 cellar: :any,                 monterey:       "8e8e94e35bfe3165fb9f0c8ffd4f4eb959bdc57e78c8386cdc11e41aae82c325"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd77828fdca8a17a3cb00953c7cb2fe696c76e1a938788185e1bd71576f9eaa4"
   end
 
   depends_on "rust" => :build
+  depends_on "python-attrs"
   depends_on "python-dateutil"
   depends_on "python-networkx"
+  depends_on "python-pbr"
   depends_on "python-sympy"
   depends_on "python-typing-extensions"
+  depends_on "python-urllib3"
   depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
@@ -30,11 +33,6 @@ class CfnLint < Formula
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/67/fe/8c7b275824c6d2cd17c93ee85d0ee81c090285b6d52f4876ccc47cf9c3c4/annotated_types-0.6.0.tar.gz"
     sha256 "563339e807e53ffd9c267e99fc6d9ea23eb8443c08f112651963e24e22f84a5d"
-  end
-
-  resource "attrs" do
-    url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
-    sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
   end
 
   resource "aws-sam-translator" do
@@ -92,11 +90,6 @@ class CfnLint < Formula
     sha256 "de16a051990d4e25a3982b2dd9e89d671067548718866416faec14d9de56db9f"
   end
 
-  resource "pbr" do
-    url "https://files.pythonhosted.org/packages/8d/c2/ee43b3b11bf2b40e56536183fc9f22afbb04e882720332b6276ee2454c24/pbr-6.0.0.tar.gz"
-    sha256 "d1377122a5a00e2f940ee482999518efe16d745d423a670c27773dfbc3c9a7d9"
-  end
-
   resource "pydantic" do
     url "https://files.pythonhosted.org/packages/0b/6c/cebf0e87ee0f2496584e04079592f33610f1f9aaf3684cb3105f03969e2b/pydantic-2.5.1.tar.gz"
     sha256 "0b8be5413c06aadfbe56f6dc1d45c9ed25fd43264414c571135c97dd77c2bedb"
@@ -130,11 +123,6 @@ class CfnLint < Formula
   resource "sarif-om" do
     url "https://files.pythonhosted.org/packages/ba/de/bbdd93fe456d4011500784657c5e4a31e3f4fcbb276255d4db1213aed78c/sarif_om-1.0.4.tar.gz"
     sha256 "cd5f416b3083e00d402a92e449a7ff67af46f11241073eea0461802a3b5aef98"
-  end
-
-  resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install
