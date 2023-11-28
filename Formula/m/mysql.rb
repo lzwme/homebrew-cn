@@ -1,10 +1,8 @@
 class Mysql < Formula
   desc "Open source relational database management system"
-  homepage "https://dev.mysql.com/doc/refman/8.0/en/"
-  # TODO: Check if we can use unversioned `protobuf` at version bump
-  # https://bugs.mysql.com/bug.php?id=111469
-  url "https://cdn.mysql.com/Downloads/MySQL-8.1/mysql-boost-8.1.0.tar.gz"
-  sha256 "cb19648bc8719b9f6979924bfea806b278bd26b8d67740e5742c6f363f142188"
+  homepage "https://dev.mysql.com/doc/refman/8.2/en/"
+  url "https://cdn.mysql.com/Downloads/MySQL-8.2/mysql-boost-8.2.0.tar.gz"
+  sha256 "9a6fe88c889dfb54a8ee203a3aaa2af4d21c97fbaf171dadaf5956714552010e"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
@@ -13,15 +11,13 @@ class Mysql < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "8c32b652561e2f3efb888d83d7df34ec6b5dc6de5c1509a8d123a8fb7ccc472d"
-    sha256 arm64_ventura:  "2635ebe1066a0dc5c34337fe81d9872833b0f5e9d559a8703ca07b1822ccf0d4"
-    sha256 arm64_monterey: "1b4ef2d450f423881120a6ac35e8b87d012edaff7fd6e5a88ab6cccba1c87ab4"
-    sha256 arm64_big_sur:  "57e60dd46e6787de2d331ae73c0b5f5a7179d2e325560305100f4bb09bef429b"
-    sha256 sonoma:         "2239fec2ec6cedcb46923af7fd52326b7d904a737f67d3a06fa091066dcb778e"
-    sha256 ventura:        "6630ef74b2ec3554edcf4f02428e3a14a155961648bdda7cfcc029e4bc90c2b3"
-    sha256 monterey:       "45d0bc945be3a357f18283cdf39afffb48a9e9b1800ac44b1e07ebec1ee6af1d"
-    sha256 big_sur:        "184d9881c8d6e1fce906cbafca1fedc8edffefea8c892a04cf5ce54cd4d5b08a"
-    sha256 x86_64_linux:   "f9a1199c55cd9583a08fd320ef5df5c80ad6700965f2d5fdbd5b3ca03524089d"
+    sha256 arm64_sonoma:   "48fc4c67db269f4109ef3974f4edd7b266503da3f1cde1fc7b0ef3b84edf9281"
+    sha256 arm64_ventura:  "12313e81be31befb421e03388a88d6ce1125214e49b33dbfecec3f8f4f747170"
+    sha256 arm64_monterey: "82dca6accbc6927319641c057757987ab3ed1181ee51a20d43c02a12dc472d14"
+    sha256 sonoma:         "f17f8fce4afb74375dadb15296fc696f1e743523c2903c04d11f814f8f612427"
+    sha256 ventura:        "37ba734daa925a9899066838e9a39f6ef6282adccf57582406242150825a9aff"
+    sha256 monterey:       "0767841f5c72e978de0a371f04b760b95dd4f2d24b87293eebc77ff3b448c38e"
+    sha256 x86_64_linux:   "c3112206f1a263505843e5db5254e6aa15ebbf234178b30bb6c1e3b65daca521"
   end
 
   depends_on "bison" => :build
@@ -54,13 +50,9 @@ class Mysql < Formula
   # This should not be necessary when building inside `brew`.
   # https://github.com/Homebrew/homebrew-test-bot/pull/820
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/030f7433e89376ffcff836bb68b3903ab90f9cdc/mysql/boost-check.patch"
-    sha256 "af27e4b82c84f958f91404a9661e999ccd1742f57853978d8baec2f993b51153"
+    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/bd61f2edc4c551856f894d307140b855edb2b4f5/mysql/boost-check.patch"
+    sha256 "b90c6f78fa347cec6388d2419ee4bc9a5dc9261771eff2800d99610e1c449244"
   end
-
-  # Fix for "Cannot find system zlib libraries" even though they are installed.
-  # https://bugs.mysql.com/bug.php?id=110745
-  patch :DATA
 
   def datadir
     var/"mysql"
@@ -196,27 +188,3 @@ class Mysql < Formula
     system "#{bin}/mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
   end
 end
-
-__END__
-diff --git a/cmake/zlib.cmake b/cmake/zlib.cmake
-index 460d87a..36fbd60 100644
---- a/cmake/zlib.cmake
-+++ b/cmake/zlib.cmake
-@@ -50,7 +50,7 @@ FUNCTION(FIND_ZLIB_VERSION ZLIB_INCLUDE_DIR)
-   MESSAGE(STATUS "ZLIB_INCLUDE_DIR ${ZLIB_INCLUDE_DIR}")
- ENDFUNCTION(FIND_ZLIB_VERSION)
- 
--FUNCTION(FIND_SYSTEM_ZLIB)
-+MACRO(FIND_SYSTEM_ZLIB)
-   FIND_PACKAGE(ZLIB)
-   IF(ZLIB_FOUND)
-     ADD_LIBRARY(zlib_interface INTERFACE)
-@@ -61,7 +61,7 @@ FUNCTION(FIND_SYSTEM_ZLIB)
-         ${ZLIB_INCLUDE_DIR})
-     ENDIF()
-   ENDIF()
--ENDFUNCTION(FIND_SYSTEM_ZLIB)
-+ENDMACRO(FIND_SYSTEM_ZLIB)
- 
- MACRO (RESET_ZLIB_VARIABLES)
-   # Reset whatever FIND_PACKAGE may have left behind.

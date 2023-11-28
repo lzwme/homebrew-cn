@@ -12,13 +12,14 @@ class Ripgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2a3179dc65738b5f3f905ed307a4d3a79c3af584f521af501f6604dcc5a8aeb4"
-    sha256 cellar: :any,                 arm64_ventura:  "f4bb082d2a8914c2454693f72f836d6c5326fe69f62d98451bf110eebe507d50"
-    sha256 cellar: :any,                 arm64_monterey: "c0636cc02aa9f0128bc1d7aac588a80bef2ed1b3c2681b8bbff8d7346a89b42f"
-    sha256 cellar: :any,                 sonoma:         "4695f24307c82f15a02bf172dad07c0af8421ce813f3ed67cbee5fa0ddaeab5d"
-    sha256 cellar: :any,                 ventura:        "a6c2bf7a45d58b2fc15dbc02d9f23da944ad066c94ccdb721434e903e4c433b3"
-    sha256 cellar: :any,                 monterey:       "bfd8bcff015c770fd2b71cd3ad34c2fedb90c23ba90e02d4fed73793bfe88298"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "64f83f393d74ee90aa9a6219d59ca39d72014d83489499e2d09468f01d0e9344"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "dbd82dd08d29dcf108b351483cb92609efa78a4159aa27c3dd6a457f9886849e"
+    sha256 cellar: :any,                 arm64_ventura:  "75ef47553c46033dda0cb96f878bc5bd6b78494440c780441ce116d14277a720"
+    sha256 cellar: :any,                 arm64_monterey: "4abbf9b3a18a4e4da789398511dfb121952c2910a0fdfb35ec048f6b77038361"
+    sha256 cellar: :any,                 sonoma:         "f76b0fcad39cfa9af05c9a0e6a2e8dd9be4511e0359893c027da10b09b35544e"
+    sha256 cellar: :any,                 ventura:        "9bf63d219c64f5245992eb5e1d3723ca61674d144a6487f270a9d5bacfe46e69"
+    sha256 cellar: :any,                 monterey:       "e99c9246324a1dece4447643a2edc62d97509158e1433fa3a01bc579303d1bc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "470a87429d5c7e39e1422e6098c4a201855b01b362f454f5a52debb101e146a7"
   end
 
   depends_on "asciidoctor" => :build
@@ -29,7 +30,7 @@ class Ripgrep < Formula
   def install
     system "cargo", "install", "--features", "pcre2", *std_cargo_args
 
-    generate_completions_from_executable(bin/"rg", "--generate", shell_parameter_format: "complete-")
+    generate_completions_from_executable(bin/"rg", "--generate", base_name: "rg", shell_parameter_format: "complete-")
     (man1/"rg.1").write Utils.safe_popen_read(bin/"rg", "--generate", "man")
   end
 

@@ -3,20 +3,18 @@ class Flintrock < Formula
 
   desc "Tool for launching Apache Spark clusters"
   homepage "https://github.com/nchammas/flintrock"
-  url "https://files.pythonhosted.org/packages/dc/ad/6e3871a510f0d053aa49caee2140a2f64f2d3fa584d3b70408043295fa57/Flintrock-2.0.0.tar.gz"
-  sha256 "ccbbc912823772ea733802ca3f9751c98dacda8c67518683a3dc4ec8b1de38dd"
+  url "https://files.pythonhosted.org/packages/e9/3b/810c7757f6abb0a73a50c2da6da2dacb5af85a04b056aef81323b2b6a082/Flintrock-2.1.0.tar.gz"
+  sha256 "dde4032630ad44c374c2a9b12f0d97db87fa5117995f1c7dd0f70b631f47a035"
   license "Apache-2.0"
-  revision 7
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sonoma:   "c62d0778e58f1c65fe2e38c27ac721e4b993d3ae4d6a2aa935765e3149fff19b"
-    sha256 cellar: :any,                 arm64_ventura:  "b863dbe1faebd77071133c982f862cc996c01e4709c1401f4834265fa01ab1e1"
-    sha256 cellar: :any,                 arm64_monterey: "d84dd921448aa5848934f2abe5ca198e812f8ac6a73a1416c173100bec820842"
-    sha256 cellar: :any,                 sonoma:         "335a7374442bcb189f2346edef5d16df56116edcd8a3496ee8117d2a6a6db24f"
-    sha256 cellar: :any,                 ventura:        "582bef6c7ec11a033754239dbff5882e49801b77dce67d2621d7e8621a6a1f0e"
-    sha256 cellar: :any,                 monterey:       "251bdccda137c921787cd92c8142d2f97888e18b86994b164b26b9dd3a7897bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63b872a2e2e24f99a80121701edf41992f606969a3a414be80fcb7a2624a9dc5"
+    sha256 cellar: :any,                 arm64_sonoma:   "08b7a6ab1af7834ea9fd2fed66a6afb2e877f782c7a913c9c92fa65d4fd19f7f"
+    sha256 cellar: :any,                 arm64_ventura:  "9a2a41173acb8eb811d77bd52a274aa2651887eb2f60052db1543d1349652cbb"
+    sha256 cellar: :any,                 arm64_monterey: "e9f8bbc3a49676cd4f18a89468e0e4e0a79cb9d05ba390e9bb44f66d394032e3"
+    sha256 cellar: :any,                 sonoma:         "0ec71f114567a3f12eecc274c7fdb04f0c71e5dbb942b883a1b857f068635d68"
+    sha256 cellar: :any,                 ventura:        "e7666a403ab3c40986fb66d5b477d950b1b712379c5d0bed67558dc3247b4c7f"
+    sha256 cellar: :any,                 monterey:       "5005a42f59063cf7a42de6227dd630ad5d5f7791b10bd79fa309b3837a0411a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0bacf1f16f1a2a814131855981faa98b79fffdf238bc946d0617eab54c21b9d"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -32,35 +30,28 @@ class Flintrock < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/d3/61/3b325524005f8d89e5ab62ac71d697ae26f8a546402917b4f759ee707b00/boto3-1.17.90.tar.gz"
-    sha256 "bbf727d770a9844834bfbf3f811db1d3438320897f67cfb21cdca5bb8fc23c13"
+    url "https://files.pythonhosted.org/packages/8d/5f/4ee13ee77641c98032fcddb51456a26976f69365fdc3c6c9e699970b9e99/boto3-1.29.4.tar.gz"
+    sha256 "ca9b04fc2c75990c2be84c43b9d6edecce828960fc27e07ab29036587a1ca635"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/d4/a4/ef715db7192535688fae0130714fde5dce91ce2ed8e521aad55a213a5820/botocore-1.20.90.tar.gz"
-    sha256 "b301810c4bd6cab1b6eaf6bfd9f25abb27959b586c2e1689bbce035b3fb8ae66"
-
-    # Backport commit to fix ModuleNotFoundError on Python 3.12.
-    # Remove in the next formula release.
-    patch do
-      url "https://github.com/boto/botocore/commit/411f45a014a116bc72462206f3b3b3fc1ac9a630.patch?full_index=1"
-      sha256 "4d77944b344b3b35e6c95b73005462b860699349a5c27dee60025f802e80ebb8"
-    end
+    url "https://files.pythonhosted.org/packages/10/6f/e7fe287501ae0bb2732e0752dde93c4a2ad1922953be16dd912acc2c26be/botocore-1.32.4.tar.gz"
+    sha256 "6bfa75e28c9ad0321cefefa51b00ff233b16b2416f8b95229796263edba45a39"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/f8/5c/f60e9d8a1e77005f664b76ff8aeaee5bc05d0a91798afd7f53fc998dbc47/Click-7.0.tar.gz"
-    sha256 "5b94b49521f6456670fdb30cd82a4eca9412788a93fa6dd6df72c94d5a8ff2d7"
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "jmespath" do
-    url "https://files.pythonhosted.org/packages/3c/56/3f325b1eef9791759784aa5046a8f6a1aff8f7c898a2e34506771d3b99d8/jmespath-0.10.0.tar.gz"
-    sha256 "b85d0567b8666149a93172712e68920734333c0ce7e89b78b3e987f71e5ed4f9"
+    url "https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz"
+    sha256 "90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
   end
 
   resource "paramiko" do
-    url "https://files.pythonhosted.org/packages/cf/a1/20d00ce559a692911f11cadb7f94737aca3ede1c51de16e002c7d3a888e0/paramiko-2.7.2.tar.gz"
-    sha256 "7f36f4ba2c0d81d219f4595e35f70d56cc94f9ac40a6acdf51d6ca210ce65035"
+    url "https://files.pythonhosted.org/packages/44/03/158ae1dcb950bd96f04038502238159e116fafb27addf5df1ba35068f2d6/paramiko-3.3.1.tar.gz"
+    sha256 "6a3777a961ac86dbef375c5f5b8d50014a1a96d0fd7f054a43bc880134b0ff77"
   end
 
   resource "pynacl" do
@@ -74,13 +65,13 @@ class Flintrock < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/27/90/f467e516a845cf378d85f0a51913c642e31e2570eb64b352c4dc4c6cbfc7/s3transfer-0.4.2.tar.gz"
-    sha256 "cb022f4b16551edebbb31a377d3f09600dbada7363d8c5db7976e7f47732e1b2"
+    url "https://files.pythonhosted.org/packages/3f/ff/5fd9375f3fe467263cff9cad9746fd4c4e1399440ea9563091c958ff90b5/s3transfer-0.7.0.tar.gz"
+    sha256 "fd3889a66f5fe17299fe75b82eae6cf722554edca744ca5d5fe308b104883d2e"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/e2/7d/539e6f0cf9f0b95b71dd701a56dae89f768cd39fd8ce0096af3546aeb5a3/urllib3-1.26.16.tar.gz"
-    sha256 "8f135f6502756bde6b2a9b28989df5fbe87c9970cecaa69041edcce7f0589b14"
+    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def install

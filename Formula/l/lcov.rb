@@ -8,18 +8,17 @@ class Lcov < Formula
   url "https://ghproxy.com/https://github.com/linux-test-project/lcov/releases/download/v2.0/lcov-2.0.tar.gz"
   sha256 "1857bb18e27abe8bcec701a907d5c47e01db4d4c512fc098d1a6acd29267bf46"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/linux-test-project/lcov.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "14fd7ed1ee038ed25361a07aa2d7adb26f1d8d318dc90c7c66fed0700cc018d5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "551bbc6be7309a7c5d8266eedca0585e2646067ffa80c9edae9399c330e32188"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2456ea19d6f3bd4c9940793756581cfb8ab98a4bcc64fed17b9b48b21fcab511"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f67279c2b2383a28d8fbaf26283a7e89c05f5834f98318396b676728d3c54741"
-    sha256 cellar: :any_skip_relocation, sonoma:         "be356362151e66471ed10d3c49cf1796918a9ce3dd4dd0c6faa58bc879798c7d"
-    sha256 cellar: :any_skip_relocation, ventura:        "0f46116c2652ec1c173defef26e607c62f6a92ebbf20c8b2a128ddbcdce76aa2"
-    sha256 cellar: :any_skip_relocation, monterey:       "976cd806862faa7b3a461d8b23ba41b75ae376668b27d8837191edff0589be27"
-    sha256 cellar: :any_skip_relocation, big_sur:        "05124b6b34314e60394de24538131ce94d571f228a20d228bbb149fd9fb46f8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "591f26134c90d5759626fc4ef41fc6b1c0f1e97daaa837e5df901edadd6f4312"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "172a009c87b7d785c2cc04715eeec8d772061831822d5265b320aa4146462268"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5a6231f3e17455b364d6b6346078ee9badd5b331109518ab065441e0103dc934"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9232e041188c3cf09448887ba86e8b97b4146d93bd6197b222f47ea713410720"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7509e9a9969b883a14e8f0943ed197fcddae79a095f78a6a74167f9397642587"
+    sha256 cellar: :any_skip_relocation, ventura:        "d776c877cdced681a8b98e9314df0f8092d296e962105a9c2c5475b13d9e26d2"
+    sha256 cellar: :any_skip_relocation, monterey:       "90e58aab20d436920de381218a194dbd3d4e02007af05a56c6bc79ba31a57438"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "429363eb9cd5538a6e1e5e29071d5c279d58a1fbe1b1d7995edfb63d9ebb1055"
   end
 
   uses_from_macos "perl"

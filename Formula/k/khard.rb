@@ -3,18 +3,18 @@ class Khard < Formula
 
   desc "Console carddav client"
   homepage "https://github.com/scheibler/khard/"
-  url "https://files.pythonhosted.org/packages/2a/7f/495c11f3d5d9ddb1f1b8edd9731bb53f2afd226f6c430630b433a3680609/khard-0.19.0.tar.gz"
-  sha256 "e648be69d7f3ee6d3e15bc42f7e2171cb9fca1e2ca2e4012b94d799720c04ca4"
+  url "https://files.pythonhosted.org/packages/0d/00/215a69d2ae96cac511a6594116958bf13e210dd24f78c48f5ffaf039edec/khard-0.19.1.tar.gz"
+  sha256 "59f30a0da3c3da3eb04f4dbe18ee4763913b685d99ec8418fd574a88c491c490"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "05322bef5f6b2dfc2464e326ddd20c9c560f0deee3fc2c7b62b75ab67fd26ba1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "15f7cb0c7663befeb29f932189adf381e54de281850a81397819762d33eebd8f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "83f17601c76ce9d0ed4870582704b0351a0be9380535c9b7ff193a43bb1059bd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4c316a12a74cc5182861de0ea00592d4a5e185785766cda924b1da4e98920169"
-    sha256 cellar: :any_skip_relocation, ventura:        "4174837ecc3ed971f9b7abfe280dc43de225592355de27cf181c1b1b96877b14"
-    sha256 cellar: :any_skip_relocation, monterey:       "745c976d09e2a43276679e7a5d352f71392f55bd6606e8b8b058488a01817daa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9857f5fb5f411e3ef48146fa3a6227b8bb980869758b6ca9869b0a402a8be0e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "34687e03a06151c017e73d961efefe20f32b1cc111c83f92f9cc05b92e663321"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7cfba89e9af7781723d35bd502771df176d4e391fc9b1a03b50c5c1c1b2e858d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ed61a1b027bea298598d3a628a5a4d8d5b0ae1bf6f126506480239f89b2fde2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0d715c9003cca7ae2bb78cefcd5a65bf1a5fbb5b9e91ce5660149f329c6e6594"
+    sha256 cellar: :any_skip_relocation, ventura:        "4690b2ca3cec83fe1d435e8e52ae0285e8eb871eacd0cf6f1660bd19e8fc4dc8"
+    sha256 cellar: :any_skip_relocation, monterey:       "861363612fe66fb88ffc4b6065f2cf1677481db51b340202275702c06e21da8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c229765e86f1a6fb152037e5a408a81a46452f10e6fcdd23509b993d4ad6143"
   end
 
   depends_on "python-dateutil"

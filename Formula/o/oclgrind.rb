@@ -12,24 +12,28 @@ class Oclgrind < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9a6c05ef6801ee2e9933c837396f026da6dfde2ec749c63e60e116b87c6e8e12"
-    sha256 cellar: :any,                 arm64_ventura:  "89a927ac8cfbfe82e860a05347a7d7ca61bf3d426e2e3c6ab8c3ff93358230de"
-    sha256 cellar: :any,                 arm64_monterey: "952c3159099400839aaadcebec2c20f08bce32dc7de9e507d8435df6a5ba2e9a"
-    sha256 cellar: :any,                 arm64_big_sur:  "b56d81e7e93e41f6e339f216392541d1270a3c309d57d83328cf531802bc483c"
-    sha256 cellar: :any,                 sonoma:         "7e1dcd36f4191cb5735541ebd1e5021be11b55925b7e6ac995636b8cb8cbadad"
-    sha256 cellar: :any,                 ventura:        "c5c442f08c52f8a2a3ba70c9def1ce6b15d618c1952aefd3acb4b221be0cf7b9"
-    sha256 cellar: :any,                 monterey:       "4c9b7d599bde78dd00085ff802b84b499008e5800fc9c91a11901c9b0fec5c75"
-    sha256 cellar: :any,                 big_sur:        "37bf40f81471fedbeb7c295c7c6ecf22f2f2d32c28dd8d8e273922a66a959129"
-    sha256 cellar: :any,                 catalina:       "52da235facbe5b6d02b0990c8d987223ba8bd18e003820c4860b4fa5475179b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "658070a3826a514c4d72109792dfb85d5d79d6d4df5f79fee780f29edf0842b7"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "0dcf5df23a8e0972f081f74a530e1181e17d1fb7ad6d4af5d5a0d40faf25626b"
+    sha256 cellar: :any,                 arm64_ventura:  "ed53c5dcfe4878ac26531acdffe5ab48647c48b06f43332993f523986f99c797"
+    sha256 cellar: :any,                 arm64_monterey: "39f07818c2dffcce37d58d8aaeba1c824c68c33db786e89d6b692b262b76647a"
+    sha256 cellar: :any,                 sonoma:         "8c0333807ba86699af7cbe5daaf1fe1545f1ef0ebd4c93e081ba5b0722a97fba"
+    sha256 cellar: :any,                 ventura:        "ddaa39e73997893783482ef2744877704d393e069ddb999aa34ebedd9435d8b9"
+    sha256 cellar: :any,                 monterey:       "a04a89b7bde89c7bfa2d83ab13521f8ed5ea8b6b3ce7470ecf3c995408527986"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "867889a512d1c460d03496a763adf0d8c0d18b3ceea4d6ade2907d9513241b9a"
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm@13"
+  depends_on "llvm@14" # Issue for newer LLVM: https://github.com/jrprice/Oclgrind/issues/209
   depends_on "readline"
 
   on_linux do
     depends_on "opencl-headers" => :test
+  end
+
+  # Backport support for `llvm@14`. Remove in the next release.
+  patch do
+    url "https://github.com/jrprice/Oclgrind/commit/6c76e7bec0aa7fa451515a5cfcb35ab2384ba6e0.patch?full_index=1"
+    sha256 "8c1b8ec75d8d8c8d02246124b40452ec9ef1243d3e3c497fe4ffa8571cd98ade"
   end
 
   def install

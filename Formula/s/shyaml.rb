@@ -10,21 +10,23 @@ class Shyaml < Formula
   head "https://github.com/0k/shyaml.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "97c0a29a8a83f03d4fb8f04cee9932cc696308b9ceec4590cfb4f30caa8be9c8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "97c0a29a8a83f03d4fb8f04cee9932cc696308b9ceec4590cfb4f30caa8be9c8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "97c0a29a8a83f03d4fb8f04cee9932cc696308b9ceec4590cfb4f30caa8be9c8"
-    sha256 cellar: :any_skip_relocation, ventura:        "083e980a2579d509ae832e64e27b676d32b15b4ab8c5b85ac381f9a116e5c706"
-    sha256 cellar: :any_skip_relocation, monterey:       "083e980a2579d509ae832e64e27b676d32b15b4ab8c5b85ac381f9a116e5c706"
-    sha256 cellar: :any_skip_relocation, big_sur:        "083e980a2579d509ae832e64e27b676d32b15b4ab8c5b85ac381f9a116e5c706"
-    sha256 cellar: :any_skip_relocation, catalina:       "083e980a2579d509ae832e64e27b676d32b15b4ab8c5b85ac381f9a116e5c706"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9692d49037767d99705665957e0b26aa3a9f5619b06ed57d09a63aa4c176c510"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6b46bc1af5f896c10e67be0d37ca5fb830f9b4b8ca836767cf08f252977910be"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ceb01b2b4f42730b98fb82d286b75d3561e2de2bd9f1ac983b084bf23ed5ab0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "87e092771c2c63b1a2570b19d240772d32ddedeaf1e54b29ce5291e21f226a36"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6b30cf0dbf0da3d6c0a438d56ef85196cd9aa0542811bfdb0747f55a1cf74159"
+    sha256 cellar: :any_skip_relocation, ventura:        "16bbdf708763e764bbe770beb115144ffaf4043227fb0716e0c0e1257356e9f3"
+    sha256 cellar: :any_skip_relocation, monterey:       "ad208ce49424ec294458cba3192b9e04f7ff8f9665ca92cb73d1184f0ba65d93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b372f564fbc35d834bce20b9ed36af9f3a5e7bab5cb4895c09425691aa44fa2"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
 
   def install
+    # Remove unneeded/broken d2to1: https://github.com/0k/shyaml/pull/67
+    inreplace "setup.py", "setup_requires=['d2to1'],", "#setup_requires=['d2to1'],"
+    inreplace "setup.cfg", "[entry_points]", "[options.entry_points]"
     virtualenv_install_with_resources
   end
 

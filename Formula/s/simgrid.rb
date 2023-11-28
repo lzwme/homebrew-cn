@@ -3,10 +3,9 @@ class Simgrid < Formula
 
   desc "Studies behavior of large-scale distributed systems"
   homepage "https://simgrid.org/"
-  url "https://gitlab.inria.fr/simgrid/simgrid/uploads/9bdf42319806680ee59c56210287ee1e/simgrid-3.34.tar.gz"
-  sha256 "161f1c6c0ebb588c587aea6388114307bb31b3c6d5332fa3dc678151f1d0564d"
+  url "https://gitlab.inria.fr/simgrid/simgrid/-/archive/v3.35/simgrid-v3.35.tar.bz2"
+  sha256 "de4c34ea424d99702419736e51cb5ad425dc01502a39f303128483a70405c473"
   license "LGPL-2.1-only"
-  revision 1
 
   livecheck do
     url :homepage
@@ -14,13 +13,13 @@ class Simgrid < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "74b2b07b00f13d2474ce208225f4034666625ac6368ed56eeadb0081dc43c89b"
-    sha256 arm64_ventura:  "0b0269eeaf15438edace7e743dc71c5c60c1a7be3f90fdddd276e5dfe5dac657"
-    sha256 arm64_monterey: "518a8d49bd9b25052edb565fcdbacf6167b6db151e5ac79552bafee491deb939"
-    sha256 sonoma:         "9bf664dd427cc2050b7f025dbd851aace8941e5a2199d41a639e766c70d3dedd"
-    sha256 ventura:        "801431f43e08aaf16dc0af22d226e946da42c9f58f20b2798c6a7d9248bc343c"
-    sha256 monterey:       "d7eeef3d0f67652493912896c36d406f2f659a391483cd65b4338958abdb7a04"
-    sha256 x86_64_linux:   "304a802f1828e12afce2fe5c4839610162c08c8be6b0196efc8db6de26024329"
+    sha256 arm64_sonoma:   "0d7e04a36480444650abf5d0b766c50e94304a66fd3026188ee84ca0f28db83d"
+    sha256 arm64_ventura:  "e5b7d59b5edcd954b19453a9ef0afe07ef08810af6a041c26381acbbee9b619b"
+    sha256 arm64_monterey: "da3663b588128a0c2f0a891e1820f3dc5a9bdddae2d62dc76a299a1fa7ddb956"
+    sha256 sonoma:         "241eb81037a6200074c2912c4553b030bab62577a9a144683d8021a50c0a9fb5"
+    sha256 ventura:        "b884f297125ca2bcb20e57c39336a3eb4c0e86cee54dc3c4ec38c8409bab93bd"
+    sha256 monterey:       "ada9e26cffee590c1070288f3c719ee69a9910ace07f6bab9e11024ed66494b3"
+    sha256 x86_64_linux:   "4805d5ddc4e2b49c90a3f00d7582d5057b5bff3144f89f5a7a2cee26721a82cd"
   end
 
   depends_on "cmake" => :build

@@ -8,18 +8,16 @@ class Xmltoman < Formula
   url "https://downloads.sourceforge.net/project/xmltoman/xmltoman/xmltoman-0.4.tar.gz/xmltoman-0.4.tar.gz"
   sha256 "948794a316aaecd13add60e17e476beae86644d066cb60171fc6b779f2df14b0"
   license "GPL-2.0"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e552f3d2b725328b391473bf7e814376a87f6aee62802984470e86c7f230c7cc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bb945c423d08c88f0c8409149f4fd0314a46607be23429d756a9fd9bd2771a56"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bb945c423d08c88f0c8409149f4fd0314a46607be23429d756a9fd9bd2771a56"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bb945c423d08c88f0c8409149f4fd0314a46607be23429d756a9fd9bd2771a56"
-    sha256 cellar: :any_skip_relocation, sonoma:         "411e25e66b751e4e3e069a449c519bbf28f717eb35fa472c45a07761b6bf4c85"
-    sha256 cellar: :any_skip_relocation, ventura:        "5678e1d8274ec425e903d5263ba20d46b2cd931e33c161da471553f7e0f31d37"
-    sha256 cellar: :any_skip_relocation, monterey:       "5678e1d8274ec425e903d5263ba20d46b2cd931e33c161da471553f7e0f31d37"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5678e1d8274ec425e903d5263ba20d46b2cd931e33c161da471553f7e0f31d37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "77405cd2dfce160d216caf3513365b00f3af4cd01565b3ebd12dc1d4233a6a86"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "27b72d91e8bd4c48a82d2328598b1de5d21049cff8cf9d7466df9da57378110b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "27b72d91e8bd4c48a82d2328598b1de5d21049cff8cf9d7466df9da57378110b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "27b72d91e8bd4c48a82d2328598b1de5d21049cff8cf9d7466df9da57378110b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "38bd2ebadf4eef66896118cda5ee50038f94630e1d3da2ca4253e151bae7fc9b"
+    sha256 cellar: :any_skip_relocation, ventura:        "38bd2ebadf4eef66896118cda5ee50038f94630e1d3da2ca4253e151bae7fc9b"
+    sha256 cellar: :any_skip_relocation, monterey:       "38bd2ebadf4eef66896118cda5ee50038f94630e1d3da2ca4253e151bae7fc9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5690e906d64cedbdd8f98ba039f638dabac00067996ac5a95c0cb8d19702c8b"
   end
 
   uses_from_macos "perl"

@@ -8,6 +8,7 @@ class Kpcli < Formula
   url "https://downloads.sourceforge.net/project/kpcli/kpcli-4.0.pl"
   sha256 "5189d7dad69ddc9834d24757e561d2b48eaeda9cadb3e4999608ff8efe28fd35"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
+  revision 1
 
   livecheck do
     url :stable
@@ -15,13 +16,13 @@ class Kpcli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1b71e58c56c57b0fa759ea5786bf0ba36c880783a2f5f1baf86cc590d9f0a019"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ebbadc6474dbbd735f548d09e9dba2e3bc211780e56f7fdfb40a32e36a9038e3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "47c696e277df2f3c1396e8cb5694cc5abd596d2a506aa007b2cae9bcc004b08d"
-    sha256 cellar: :any_skip_relocation, ventura:        "ae3ef7aac135d8f8cbe80a37ca5b0093e2ab8b52ebc3617dcb68c3fccce50bc9"
-    sha256 cellar: :any_skip_relocation, monterey:       "34d64f8c1b9bb7242bc8493ecbae8c6e99f7222426c8f5df41aa7c3346a95b35"
-    sha256 cellar: :any_skip_relocation, big_sur:        "44716bf0ce766ef67916dfbb5f15af2711fcddf2b707439a148a04e928db6563"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3c8ff0cba1768546a1ade52f244bbef35447d911e6d0ae404a1cc1fb20c0d07"
+    sha256 cellar: :any,                 arm64_sonoma:   "f98cd2f6d98a766d2c37475e492624a9d5553be42139e0bdafc3c640983c5070"
+    sha256 cellar: :any,                 arm64_ventura:  "42b5c2760750cf2c6362b1cdfce067a4e3e1827b52d43149ceadafa7a3b76539"
+    sha256 cellar: :any,                 arm64_monterey: "21972f728630ae7cb65c6dd77390b21c0982acd3fb5a204e865249e83575ebe0"
+    sha256 cellar: :any,                 sonoma:         "2493eaa492127d148cbef665f11a50cf1137abdc433ae0fcd60799ceb06fc329"
+    sha256 cellar: :any,                 ventura:        "885e882245200b612ae79e5c80bfee45b213fcd85925965ed25722a62eacba3e"
+    sha256 cellar: :any,                 monterey:       "3d2d21f4d4de8c842cccba189a4e53e2097d4bec1d9e39ee9fd635f486afc855"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b79024eb825c3c57f0f7c1b55f06f78fd20f67f1e6a3cd6eb4e1b9053a549b96"
   end
 
   depends_on "readline"

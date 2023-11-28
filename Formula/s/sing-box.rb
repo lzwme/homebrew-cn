@@ -7,13 +7,14 @@ class SingBox < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "40148e5905b8005315042f1bdc26d1f4bca4931682ba83455892d5055832f812"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ee310cfc21c87c68511f9ccd580bf8fe6d525eb5ab37b84379eaba080f634f9c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f59eebfb1b9a00e8a61918d5620fd3f1a665c732a06799e978e0c80befea522e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b6c159dedd670820d4a9aca691efef5c6ee8f4900747aabe89ca25afd42381af"
-    sha256 cellar: :any_skip_relocation, ventura:        "b13818935a5e4cab7781865949246b3605dc5ecd9099fccac6cd14226fdbd870"
-    sha256 cellar: :any_skip_relocation, monterey:       "1cd7d6c85522e36e31a452898afb2b4f6735347d26ca43a996492adf9f083268"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "482f7409ec9aa23b584f693d896ff4da853a2f2f7e231a08b3f1457abcafe351"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "99349dc477e3db487fd108831e4bf9be1ab7fe70d43810439f9c2aa24c463642"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f235b907c34b4fe006547c9d2313bea3920694f51a0d5522ec1b1ceed74ea007"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f27910243a7b4e6d95e545bf592f232a3e070eb7d44dd77de20365026d20a272"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3d8efc84f8aa4d86d4d7d5df4ecccb8f49a971e3b5c454fcb77da2eadc182f93"
+    sha256 cellar: :any_skip_relocation, ventura:        "2a64861606e03d0f62e651f51926430512b329585269840e6c62be6b12556aa0"
+    sha256 cellar: :any_skip_relocation, monterey:       "9dbc19e6ef4228a7b3f265936292a5f0522cd5d6bd63b0304c3cb0f5519ceef1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13f1482d3f786a06fac3eb3d842e82f4c0ab395565809f4744b165bd84da4179"
   end
 
   depends_on "go" => :build
@@ -22,6 +23,7 @@ class SingBox < Formula
     ldflags = "-s -w -X github.com/sagernet/sing-box/constant.Version=#{version} -buildid="
     tags = "with_gvisor,with_quic,with_wireguard,with_utls,with_reality_server,with_clash_api"
     system "go", "build", "-tags", tags, *std_go_args(ldflags: ldflags), "./cmd/sing-box"
+    generate_completions_from_executable(bin/"sing-box", "completion")
   end
 
   service do

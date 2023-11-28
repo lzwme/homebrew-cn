@@ -30,12 +30,18 @@ class Gupnp < Formula
   depends_on "libxml2"
   depends_on "python@3.12"
 
+  # Backport fix for libxml 2.12. Remove in the next release.
+  patch do
+    url "https://gitlab.gnome.org/GNOME/gupnp/-/commit/00514fb62ebd341803fa44e26a6482a8c25dbd34.diff"
+    sha256 "2b8ead2dc0824bf30dc606421cff3cddc7d8ad785910b1228602bb861601f61c"
+  end
+
   def install
     ENV.prepend_path "XDG_DATA_DIRS", HOMEBREW_PREFIX/"share"
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 
-    system "meson", *std_meson_args, "build"
-    system "meson", "compile", "-C", "build", "-v"
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
     rewrite_shebang detected_python_shebang, *bin.children
   end

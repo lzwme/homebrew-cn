@@ -4,17 +4,16 @@ class ExtractUrl < Formula
   url "https://ghproxy.com/https://github.com/m3m0ryh0l3/extracturl/archive/refs/tags/v1.6.2.tar.gz"
   sha256 "5f0b568d5c9449f477527b4077d8269f1f5e6d6531dfa5eb6ca72dbacab6f336"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9065d9387cd8772f973fe3a07f3ace04cfee3d645ce9ed53b79a9bbc29abfc7a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b5b26f416b739e4c2641c9332594e2d6d914813b6eff3cf66da6ef75d8eea88f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "981106a1c822cd509a7faf37a7d45e5a1a08fe5bf8ab613202aef5716801a8c0"
-    sha256 cellar: :any_skip_relocation, ventura:        "97f03ae0f35706326e8ac5288c7def3e17fd35560d59e448ae111be1b4358554"
-    sha256 cellar: :any_skip_relocation, monterey:       "bb6c782787f42d77cafdb2039ca8011cbafab2a57bb027b3821e8f562ea160aa"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2fc7e57ed2a8c86f031bba43d9a2514f7937411ff6717b31118a9914d9357cca"
-    sha256 cellar: :any_skip_relocation, catalina:       "9c00896096c9d93a29c9cdac3345ecf277189148bbaebe36f9231a969b4aef46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05ce0f260316e5e8fb8faaa24128e8372618ee281ecf9b80d118046522ae4e99"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7fbcf24dcd91a69b5f8df429b98a735c2227e7fb6563c7bb487f40fc8f434de6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "04be0c8d96101e5200f1a27a4acc69406d365cd890365583b42d40ec6945d6de"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8ba8599dd1ea5209f84290c6f0f904e04962681c5c84311dfea7b63a7f8aacc8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "701cc9b1995de5d6b84996b5319f5f596864c3ef06fddd2408ac470c16215c0b"
+    sha256 cellar: :any_skip_relocation, ventura:        "a70f7a9fe4bf2cb3c21a88686c306d1c1f38fca1e2a12af4f0aa3debc603110b"
+    sha256 cellar: :any_skip_relocation, monterey:       "7eb00e81607e9e53ebd8e2d07eee49a09070bc76071705ee0ff51cfad5927b98"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c78463b54407c3c65b81c26270e36bb31b3be1788734f97e7e918ad8f0bc0bb"
   end
 
   uses_from_macos "ncurses"

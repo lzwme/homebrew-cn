@@ -1,18 +1,18 @@
 class Bob < Formula
   desc "Version manager for neovim"
   homepage "https://github.com/MordechaiHadad/bob"
-  url "https://ghproxy.com/https://github.com/MordechaiHadad/bob/archive/refs/tags/v2.6.0.tar.gz"
-  sha256 "05ac4956812d5cde18cf4059f0e5ce92a0556bf7a78bd487eec8670d235a4617"
+  url "https://ghproxy.com/https://github.com/MordechaiHadad/bob/archive/refs/tags/v2.7.0.tar.gz"
+  sha256 "ac9297395cd9d24b41aa7c5fbb9292ea46a4412ff6270447b19bda9cb4eb80ab"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b7f1cfc7f99a1d89fb25447da1188a86dea65a05588f678433f40c340100752"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f36b343d2ebcb6e64e592856143ac2c9f6ddcc30a6fb2bc22ad5ee3334031e7e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "afc74a19ebcb5791af1ae1e565559f0599c0f78c99e30cae7f7eef2c12bced08"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b28d36e21f34cf56160787d5cb337454436f614aea763e428c0e9499b76d19e9"
-    sha256 cellar: :any_skip_relocation, ventura:        "60607219fc1d337f4a9753b2757f093daf99f347402b75575fc569f2e48d7691"
-    sha256 cellar: :any_skip_relocation, monterey:       "cb8f0703a4384ca99d58c87dff01717fc6c9e403534b236feb52bb5f308aa79b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c905142359be287df601b380bb79984064fb84737ad1928bd18b93ce9c1eb66"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "44de7e96ce18bb64d61e80e0d433742ef4fd80954c83424c1f7d6bb6c9494f5e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ffeae9b73bd241e723c1676d46971847a8b1ac9f124ec24fae763c4a54b4d67"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e9653351307474b7b1d43a4a9478262086af53574c41226ebefe12853e213733"
+    sha256 cellar: :any_skip_relocation, sonoma:         "07e939711e11be0dc79ff8224c43cec1e318afc04018ba9574ad87c8d9c2065b"
+    sha256 cellar: :any_skip_relocation, ventura:        "8c37581b3dd1dea94285678907cce7df7e6ffbefc6666cac40128e8691b67109"
+    sha256 cellar: :any_skip_relocation, monterey:       "9c9cdf35e220ad67ac6f3583ea8ea65edc8e09e3b0575ece4d2bf93fb2a35be5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "deea9d34c6db4eb8efc0f2256a463b018505f460d2a5964b408c49c657f76fee"
   end
 
   depends_on "rust" => :build

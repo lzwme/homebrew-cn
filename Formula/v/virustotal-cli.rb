@@ -1,20 +1,18 @@
 class VirustotalCli < Formula
   desc "Command-line interface for VirusTotal"
   homepage "https://github.com/VirusTotal/vt-cli"
-  url "https://ghproxy.com/https://github.com/VirusTotal/vt-cli/archive/refs/tags/0.14.0.tar.gz"
-  sha256 "48b05532c8f3e02cf241a013a3e5a7747e9e882018e17fbf40c6a6b46af00fa8"
+  url "https://ghproxy.com/https://github.com/VirusTotal/vt-cli/archive/refs/tags/1.0.0.tar.gz"
+  sha256 "8fab50202ce3a3f8128e94565cb58cdc2cbf5f816fd7b0855d897a379c9cfaf6"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "440a0c3062d541e4c5d7ee87bfdf9836c098d9518a2714fb71549ceaf7cac326"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6420aaa30b5ac53b16a08d5b3cc50dcebba41848ad1f135ae51579a03ae90fe6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6420aaa30b5ac53b16a08d5b3cc50dcebba41848ad1f135ae51579a03ae90fe6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6420aaa30b5ac53b16a08d5b3cc50dcebba41848ad1f135ae51579a03ae90fe6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e8fb2275a0bcc96117a710691458b05e2667d8a5535525190e5939be77bf1300"
-    sha256 cellar: :any_skip_relocation, ventura:        "7cbc374310357980da7ed1e86f59da70cbc3f6897907aa4fb0a75f13f0575799"
-    sha256 cellar: :any_skip_relocation, monterey:       "7cbc374310357980da7ed1e86f59da70cbc3f6897907aa4fb0a75f13f0575799"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7cbc374310357980da7ed1e86f59da70cbc3f6897907aa4fb0a75f13f0575799"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "307bff82f7318cd44c26378d911c71c6afd811dde1b56df51e53792aa0443e61"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "51c8c0dd2a1a71900e5daac273038cd32baa8a95b05d0606d5f7c58533344fef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a17e44fe55495d9f0ca0ec43c6aa41d9be56d69db62d674d655ee8acc5f511d1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "94cab43683d247b0e69b8e4f0d55d6171746d6a3f13629d2a58a14828dcd810d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "82518e0802aa20ab83531a3d947d96b4ce61c1ff9bf173d224609b75dddaf7f3"
+    sha256 cellar: :any_skip_relocation, ventura:        "80bda0a84dfb631649cdd4c5d292066778d2f1fc5c7d2d76b13323bd485d7c4f"
+    sha256 cellar: :any_skip_relocation, monterey:       "90fe0c52129b503c43222e844a491bebb9dd70631e520b8d0c970b4c73a92e5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "089aa3d9f6c9d7deb1f49c5d622575b55b48b75a899a36ef56bf1347f3211dff"
   end
 
   depends_on "go" => :build

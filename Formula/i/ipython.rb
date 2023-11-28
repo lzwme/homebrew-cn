@@ -3,19 +3,19 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https://ipython.org/"
-  url "https://files.pythonhosted.org/packages/9b/af/e1ff4d5499165e330413e0fb9811ca937c332d20900eae641cd590c0ab71/ipython-8.18.0.tar.gz"
-  sha256 "4feb61210160f75e229ce932dbf8b719bff37af123c0b985fd038b14233daa16"
+  url "https://files.pythonhosted.org/packages/b1/b9/3ba6c45a6df813c09a48bac313c22ff83efa26cbb55011218d925a46e2ad/ipython-8.18.1.tar.gz"
+  sha256 "ca6f079bb33457c66e233e4580ebfc4128855b4cf6370dddd73842a9563e8a27"
   license "BSD-3-Clause"
   head "https://github.com/ipython/ipython.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dcca99b462e59b4369d5e736bceaa20f6710e36917b4c9f8c8ee11ee01dd5b19"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7cdc87f20e1b31abb19f3226659047bf730ec5d8f443e039ea7d706acddaf458"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a7118ef2a84b3ae277486379462675dd46dcca68362ea14fcb8c4f7df202c3d2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bbb6b0b221bce522834534001a35ea73ee091208eaf48e2aee79525b6f45eaac"
-    sha256 cellar: :any_skip_relocation, ventura:        "0322cb4340cb6836866d5c0e7558b5469c0e80c15abb22cbfff0cdee900b3a72"
-    sha256 cellar: :any_skip_relocation, monterey:       "ece49d31017293bc08143fd8924fbe62f3cf1983bef3913403bee09fd26656b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22704ea534cd2690421d0e7989abae1a4e5834f97444e927ce5ad322a791c464"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a2022e4319b4f928669baae1602cd566719abe2fb0707f93739dbbbd8d5da59"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "24b0d1977de9d03c178eca24f2f0d994aff7550d9d39d81ef5828e100cc34cf0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "13dfe2347a433703b994507736eb60f453540354284c91802942b5b5759787b4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a231f85e2aa94414b8d2f4aaae06cd0509d02c0fe2ecd28a1a3803317b4d9993"
+    sha256 cellar: :any_skip_relocation, ventura:        "9c51c610b59f31500ea2e11c39c5d80e49ee6a8f73f89bf9deb865cd2ab587eb"
+    sha256 cellar: :any_skip_relocation, monterey:       "1c0e00321adde2c8854ebc03349671e612eaf6d01709f9c038e978f043ac0b27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "499a6aebaba09aead77cd1fd9319ae96cbf1819b74a0c34115ce2af64ecc727d"
   end
 
   depends_on "pygments"
@@ -53,8 +53,8 @@ class Ipython < Formula
   end
 
   resource "pexpect" do
-    url "https://files.pythonhosted.org/packages/e5/9b/ff402e0e930e70467a7178abb7c128709a30dfb22d8777c043e501bc1b10/pexpect-4.8.0.tar.gz"
-    sha256 "fc65a43959d153d0114afe13997d439c22823a27cefceb5ff35c2178c6784c0c"
+    url "https://files.pythonhosted.org/packages/42/92/cc564bf6381ff43ce1f4d06852fc19a2f11d180f23dc32d9588bee2f149d/pexpect-4.9.0.tar.gz"
+    sha256 "ee7d41123f3c9911050ea2c2dac107568dc43b2d3b0c7557a33212c398ead30f"
   end
 
   resource "prompt-toolkit" do

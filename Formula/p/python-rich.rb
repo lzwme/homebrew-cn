@@ -6,18 +6,21 @@ class PythonRich < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ce8c39f4e5060c218364085263acd3d96f5698684706107b533c2a26219fc416"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e568f44d6ea8a63381d0c0e8ee4da5ff3808796f0709a04f89fd3950dbefe1a6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "909520205740d52899bc786e5cbeb9c8eb7343f801d36be714f7f99bd4ed5d34"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5559e962c8487b6234241fb337a411909350a07f2ca7e28e9dcc62cb78014d81"
-    sha256 cellar: :any_skip_relocation, ventura:        "ec7a436a4b9c1fc5cda1ff86c9827e278ed8509d66599dbfac38cebfd4679767"
-    sha256 cellar: :any_skip_relocation, monterey:       "6ca8c6ee3a20069691e73e9b985364105b518a236a4ffac5a62cc5a796bc4d0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a077244e4d1adc23d0f61ddbae0429ee796f0669e03a49e7cbb3f7f6fb8b79f6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8bdac72c4603be56977d316a2faaa8b3a872e37d0d71b5294e3c8eb7584cd9df"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "74942cf9462c32bd4f5ad67583d8965056cca5e662b4cc3d54d25caa8d8fe233"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fbec0aa47c29a1c3c6575077d5828e22ce0cca5c8fd997312067b174516240c2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0e2802e9753979b28ef295a72b78e6ac34214b2c4b7448207e4afa8dd01edbb2"
+    sha256 cellar: :any_skip_relocation, ventura:        "72fe9524538a566f3536cd2b4af00f517b5ca6cac9921f5936d027bebbe92baa"
+    sha256 cellar: :any_skip_relocation, monterey:       "1f0df4163a2390f312df9a705e5f711d0081525dfce216dc073f9f66cf30df21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed255505e83a5e57a4e7078630d414da5bb31b163a93b826dd734dead5060121"
   end
 
   depends_on "poetry" => :build
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
+  depends_on "pygments"
+  depends_on "python-markdown-it-py"
 
   def pythons
     deps.map(&:to_formula).sort_by(&:version).filter { |f| f.name.start_with?("python@") }

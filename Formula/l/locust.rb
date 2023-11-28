@@ -3,16 +3,18 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/b6/32/a280f0bc15bfb6ce40c8d63d6896f81d9b7ee5f8600bd1a5d079013ad5f1/locust-2.19.0.tar.gz"
-  sha256 "091bb8ee321a9a63e160d0f6de0a0819c62f18378e44986bc5d446d017875aa6"
+  url "https://files.pythonhosted.org/packages/fb/0d/565e425b3cc048d47875e7eb3571ac51a2b83c6852d00ca9ba5c4d0e7eac/locust-2.19.1.tar.gz"
+  sha256 "5c21609b1395833dc0b4bb3ddaaf709a88f6e70950aefce86e11eb5944fe9217"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "75c4a573d0669a4f6f611e97903027ac76c63df0d05300a9f2b4b42e4042547d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fe93f9e40c8df9cbc09f361d121a3e68478f85103854df628384c75e134949b8"
-    sha256 cellar: :any_skip_relocation, ventura:        "599abc396fe31b712c6dd3ad888f7eac3bacce1d0efaa3341b33a317feb62375"
-    sha256 cellar: :any_skip_relocation, monterey:       "35aa8695cf5b0843d571f54df080be19386ab26f208e88816c795b7aeee71a67"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f9c11833144f7293a2260ede7ab29625f3c76b7e10f346b9fe1589c6373feb1"
+    sha256 cellar: :any,                 arm64_sonoma:   "a564b53a2a0d63bc25ea6a74e6c119b9a674e3af56a4166fedcea10ab7c652f6"
+    sha256 cellar: :any,                 arm64_ventura:  "6f420e11d6c4637f055b66a84ada024a037ffe310d8d7bb3cd60df3ba09dbaf0"
+    sha256 cellar: :any,                 arm64_monterey: "454d0215fb3384dec6feb0278176a8baadfe695644c01b65d4153ae9a162bf95"
+    sha256 cellar: :any,                 sonoma:         "bd73df436b470bd63b4923282ab3419a3d934d8d1ecdfc7ff6e081a7c6c65fac"
+    sha256 cellar: :any,                 ventura:        "ed53f50a590245a9c5156ea20fc254c2003a015fac7cef4f06aee72070a90378"
+    sha256 cellar: :any,                 monterey:       "37e83873896cab2286a31b5ea9cdea851efabac7096f620da93807b05e416afe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd078d4d19272b8995435f1fb40a048ab6c143c2bf5f00e7b4097be5ffb2fe70"
   end
 
   depends_on "python-brotli"
@@ -23,6 +25,7 @@ class Locust < Formula
   depends_on "python-typing-extensions"
   depends_on "python@3.12"
   depends_on "six"
+  depends_on "zeromq"
 
   resource "blinker" do
     url "https://files.pythonhosted.org/packages/a1/13/6df5fc090ff4e5d246baf1f45fe9e5623aa8565757dfa5bd243f6a545f9e/blinker-1.7.0.tar.gz"
@@ -70,8 +73,8 @@ class Locust < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
-    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
+    url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz"
+    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
   end
 
   resource "itsdangerous" do

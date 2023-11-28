@@ -4,17 +4,16 @@ class Rex < Formula
   url "https://cpan.metacpan.org/authors/id/F/FE/FERKI/Rex-1.14.3.tar.gz"
   sha256 "027d3042ef940b67590e5989e96f22ae1e67ba744895c5dd3db569c05137025c"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "29f47620abab14389f36ece49eee43887cce02901ccf6c3dd4e8cb83d802b49a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29f47620abab14389f36ece49eee43887cce02901ccf6c3dd4e8cb83d802b49a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "29f47620abab14389f36ece49eee43887cce02901ccf6c3dd4e8cb83d802b49a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8cacde228c4b1ecbd7402f3a73bfbfc6b6118ed122adffc725e98ae6eb3f39fd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2e32a65bfd7263d2b04ba25fb23d16641bbf968c2f3395b42b3addde98945fe4"
-    sha256 cellar: :any_skip_relocation, ventura:        "2e32a65bfd7263d2b04ba25fb23d16641bbf968c2f3395b42b3addde98945fe4"
-    sha256 cellar: :any_skip_relocation, monterey:       "2e32a65bfd7263d2b04ba25fb23d16641bbf968c2f3395b42b3addde98945fe4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e7372738a947267ec35110cf49f940f57c22c6d06c4cc0cf7f2810d5298d47c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "404ffa6fffae8423757900e7451a1264426ee2a51256d93b2be1528f24b3ad01"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e4ed59ecebc57d3c14c8c4556a1ffb351bd1471b4e02675f60b4fd97938da2c6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2cbae6519c968141a6c04d9ac0c139a81d3877b3b483be31094532d0290a61a9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2cbae6519c968141a6c04d9ac0c139a81d3877b3b483be31094532d0290a61a9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "33c3755cd59ff9682953fcc3110d947dc02946f8695682350e9a866fe9d312ef"
+    sha256 cellar: :any_skip_relocation, ventura:        "d431a10b19c69e47309f1576fd60087ebd3ebbf3a8c461c3d6f31262032e1200"
+    sha256 cellar: :any_skip_relocation, monterey:       "d431a10b19c69e47309f1576fd60087ebd3ebbf3a8c461c3d6f31262032e1200"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b00c01f568cace9db429eacff7c4fdbfe0e783cc0916de189701453fd32f3de"
   end
 
   uses_from_macos "perl", since: :big_sur

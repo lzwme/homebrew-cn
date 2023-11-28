@@ -4,19 +4,17 @@ class Cmus < Formula
   url "https://ghproxy.com/https://github.com/cmus/cmus/archive/refs/tags/v2.10.0.tar.gz"
   sha256 "ff40068574810a7de3990f4f69c9c47ef49e37bd31d298d372e8bcdafb973fff"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
   head "https://github.com/cmus/cmus.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "1ba2da4ed1bc465370e8e2d42e88e590596b99e88d130d887074597428ac1993"
-    sha256 arm64_ventura:  "c676d903f551c4358b4fdc38f7b3152cdeb917b2a8390b0983f659fd6ba2d79d"
-    sha256 arm64_monterey: "952c7e7175254572228a1e7a5c6b04be1a613cc4757cbf0d87f1e53263f745e7"
-    sha256 arm64_big_sur:  "563768eef81faa0f544380e1cbe668da81038ad9252e80bb0cee275c8fcbacd8"
-    sha256 sonoma:         "9a369bba5c68a4148eeab73915827854c6f6cfe59605763c93ff7ae3535942eb"
-    sha256 ventura:        "65a22e527bfbd3dacd500e123452cf719e97011b95ede36e40b1e4e3496aca26"
-    sha256 monterey:       "d38a5f8f62abd393a8afb60a1bceea1fd48d7668919959d107624fb3576c8c06"
-    sha256 big_sur:        "98c14f791bef5c18758a47fe06da795cfa1f061665f7977959d7fd763cacd5ff"
-    sha256 x86_64_linux:   "78f8cb1c5aa2a1cb0c06fbc53800eef904b4995712e399c9617bf1a82c4c224f"
+    sha256 arm64_sonoma:   "ac3667bf52b88fe2cf1a91aee7444333eecbd1ee62ff2a1d35a696d286f7b555"
+    sha256 arm64_ventura:  "7ecb43c204b78e089e1d5086667d098a35e764f234a89745c20bb59b13903e04"
+    sha256 arm64_monterey: "8b7ad68e7c6559663e11a2e013f33967a97b084d2e8aa6b596bad4e78c951d03"
+    sha256 sonoma:         "a82a68671e957b955646335ec35dcaeab4a7613d0c508dd112e0fb0d293bb89d"
+    sha256 ventura:        "4beb90ae9a2dbb54575eb0bf8f7b4d6083a664d7f6d13f740281a40d449fed75"
+    sha256 monterey:       "ed1c0cd1c55495510d62bb1b1132a28d0dc9ea80dc31224040c5ec8c502c8a42"
+    sha256 x86_64_linux:   "2ba70e8f48e65519ffa546286baaf90e40b1ed573b2827456ae9145d4cd314f2"
   end
 
   depends_on "pkg-config" => :build
@@ -29,6 +27,7 @@ class Cmus < Formula
   depends_on "libvorbis"
   depends_on "mad"
   depends_on "mp4v2"
+  depends_on "ncurses"
   depends_on "opusfile"
 
   on_linux do

@@ -8,19 +8,16 @@ class SqlTranslator < Formula
   url "https://cpan.metacpan.org/authors/id/I/IL/ILMARI/SQL-Translator-1.62.tar.gz"
   sha256 "0acd4ff9ac3a2f8d5d67199aac02cdc127e03888e479c51c7bbdc21b85c1ce24"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "46990d0cac7b485a2db7fbe52061d62cc39a7cbe23a1cb0cc88bb1240ca67134"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5b569d3339ab37e0c8e963f4c314f05cfa4a7607cabc0c3b8076171a1b98415"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5b569d3339ab37e0c8e963f4c314f05cfa4a7607cabc0c3b8076171a1b98415"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1f655162409fb6814c1825c7ea6d6fc728fe48f92f2b8f0fd189e6e552112d97"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a6c80f26844f7f8aa4528cb7cf5f72a8538cc4d569c0f70a3897daa028da72f5"
-    sha256 cellar: :any_skip_relocation, ventura:        "37aa9abf5b79546cd961291b7ce884cbeb774b8c00f8830fba7837001e47111e"
-    sha256 cellar: :any_skip_relocation, monterey:       "37aa9abf5b79546cd961291b7ce884cbeb774b8c00f8830fba7837001e47111e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6f0b5a13935877fdf7e614525082c532ef76af02644dfda6acfdc427b6904668"
-    sha256 cellar: :any_skip_relocation, catalina:       "e099ac2d4b73aca1beaa61f8a267c8334256c9ae5b0073f86a53a25e6f9ce9c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90f5316e2c4de49810fdeb2825f12739c2420438648fdb374715fdde3154b8df"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "78517f7f8c11b9e601ed833b1d9d150504bf1025593cc5118eb28b8aca635395"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a9130885a44e325a2bac38b12376f2256999c29ec25ebe9c68205abadfd6626b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a9130885a44e325a2bac38b12376f2256999c29ec25ebe9c68205abadfd6626b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "abfe61301d558ba8458966977b541d98287ee8eb61f7f2561a4b82aa93ba40b9"
+    sha256 cellar: :any_skip_relocation, ventura:        "4c2d1a17220491814d9cb9e728b17c78f1ed7de30403d956f612dc95e25d3221"
+    sha256 cellar: :any_skip_relocation, monterey:       "4c2d1a17220491814d9cb9e728b17c78f1ed7de30403d956f612dc95e25d3221"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e6eb190aaf0e23c87a415f8794c292bf9443b6d8c65ada6736693392fe74608"
   end
 
   uses_from_macos "perl"

@@ -1,20 +1,18 @@
 class SqlxCli < Formula
   desc "Command-line utility for SQLx, the Rust SQL toolkit"
   homepage "https://github.com/launchbadge/sqlx"
-  url "https://ghproxy.com/https://github.com/launchbadge/sqlx/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "8e2697e3c8a102234f97e74c2d7c8ec83df2761c14eaf519b6e9302065f4c428"
+  url "https://ghproxy.com/https://github.com/launchbadge/sqlx/archive/refs/tags/v0.7.3.tar.gz"
+  sha256 "9f72c8099bbe35fc541d5a66fad59d751f35ef3efb4a510b273243b65118cdd4"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "207ba818beeb5eb4d742349ab31c196a80dcf143eb4987197a8272561ac3debd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6dde9a1bd9ed20e3395edf73c33e2ea1572c5ee0a82f04058ef7a39065f75ee7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b65718af623e94f46c515ea2b93f1c56bbdae6bdf9c188c6754fa830091dcab8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5994e742d40958fa3ba2044bca135d721e20ea90bc64677783106f889aa9d810"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4616af73fab887147e8cb226150308aacfde10e832d8d2f4944a16e8c041bd09"
-    sha256 cellar: :any_skip_relocation, ventura:        "72e6cc892d7379b35f17cd49255638710c6bc502a813c545bf8f9f22038230e5"
-    sha256 cellar: :any_skip_relocation, monterey:       "276bf1bce14d2d765792be811c070793fd978160fe66dd6a340c28cd3f74b49c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a8fe6c26135068f5e0b5817750e8537564ff926f1432cb5a04337c802ff45b7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "88d6e799789af1b3739b5a802bd676a7a0985ac9dd27e70f4cdc5b7ead6535c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "862fef6c7b20c4b93789efe6b1e240ee397f8bbac0272919111486c9f987c5ff"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c22c3ededb8d193305140326250768626c714e38cf9ad3967ccbcdbabc83bf1c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cb417cc88f9779689db7195e7052a233ed0767e4b420b17102014d666adebec8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "dbeb66a60dec9c553a434235b3e1b8d35759e762a91ff852ca66db6c10beed0c"
+    sha256 cellar: :any_skip_relocation, ventura:        "4f8a91b339fb4ca2a0e3a277e271033e4171ddb3219fa5cd200c45f843d8e9e6"
+    sha256 cellar: :any_skip_relocation, monterey:       "13014849852426315f500bdcd6c34f1c95795965d9ce12c720b72fd8780453d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39e99152ae18d0b0223ef14837e97fb39bc1bfd554e42fa413f3f1a1d5cb2860"
   end
 
   depends_on "rust" => :build
@@ -29,11 +27,10 @@ class SqlxCli < Formula
   end
 
   test do
-    assert_match "error: the following required arguments were not provided",
-      shell_output("#{bin}/sqlx prepare 2>&1", 2)
-
     ENV["DATABASE_URL"] = "postgres://postgres@localhost/my_database"
     assert_match "error: while resolving migrations: No such file or directory",
       shell_output("#{bin}/sqlx migrate info 2>&1", 1)
+
+    assert_match version.to_s, shell_output("#{bin}/sqlx --version")
   end
 end

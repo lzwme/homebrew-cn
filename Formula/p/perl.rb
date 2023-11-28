@@ -5,8 +5,8 @@ class Perl < Formula
   head "https://github.com/perl/perl5.git", branch: "blead"
 
   stable do
-    url "https://www.cpan.org/src/5.0/perl-5.38.0.tar.xz"
-    sha256 "eca551caec3bc549a4e590c0015003790bdd1a604ffe19cc78ee631d51f7072e"
+    url "https://www.cpan.org/src/5.0/perl-5.38.1.tar.xz"
+    sha256 "6a82c7930563086e78cb84d9c265e6b212ee65d509d19eedcd23ab8c1ba3f046"
   end
 
   livecheck do
@@ -15,13 +15,13 @@ class Perl < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "d745ab0b23a4393bba2df3a83f45aca492ac4dbd725fbbd70f6da0630b04f3f3"
-    sha256 arm64_ventura:  "a65fe1094e63104d7127c8d01b738bd22b17832137c81377740787d6386f7f92"
-    sha256 arm64_monterey: "f0e0898c09cc63eb1d5385e101f3eb54253bddd85ebd8324044f027b443f1bef"
-    sha256 sonoma:         "48c8d0446bd490a120355cac31a749392e460d4d8f1e69032ded567d5cf8c961"
-    sha256 ventura:        "db18bcd07056234dce8a2ae8772f7e1decc78bcc2cbaaf578e3b6017ba83bd72"
-    sha256 monterey:       "7acc87e52835adff7a89be9bd826c50839d591d881e0b6e935a416b179c38aa1"
-    sha256 x86_64_linux:   "a2976adfb7e88f694ff6f570d47cf34b961a3c259fea71d720a8ad8fedd56266"
+    sha256 arm64_sonoma:   "74e4760c88f4f778ddde918305693dbf24099a62040059b54884fac0a3f109de"
+    sha256 arm64_ventura:  "1566235a50fdfe52135e647ea86882a22daa6859e4c25d017169a37460e2b332"
+    sha256 arm64_monterey: "5fd1a6dc847c4e1bdfb7fd4b3e8d10e621b521c274e821905ce1d6412bbe571c"
+    sha256 sonoma:         "1954957c2694cf873351542cf4561defdd1bdc6619a956ae7bad0122f27f62b1"
+    sha256 ventura:        "8d328d5b4d7d99ce07cf68f9b440a2dc0f1d42eb07f0aeb95bdfc8fb03d88016"
+    sha256 monterey:       "61d11cd89993498ef8683c48bbe602ad1f90c741e25432f7a6791fba30d04be6"
+    sha256 x86_64_linux:   "29c4d7f3e9f0a0002ab187b030d4b9897f7a8ae61f4901653bfba7a97bb398bf"
   end
 
   depends_on "berkeley-db"

@@ -6,15 +6,14 @@ class GnuGetopt < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "450303b2d1824a68fc4fdaeeba057b424a0a78a74706e8961b9c1402887adf66"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3f49b9db06a09a471e7a8d74c1e8d38d71eb18ff1e915afdafe4947b082217f9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e862142e34c7703182b4330d8d857fef08dbea9546bcd9f651496e2b14e6f66e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6a4ff0005a74a517696be56bdca364a1fa1d636b7c5cb428023798e266bb8370"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9e2c744f1c12c0dc3b12c16706e8c5b451deea8735a5e6aeb19a69bdacef6981"
-    sha256 cellar: :any_skip_relocation, ventura:        "c8b6238e59f8cc2be57417b9952dde571b3df1a28bd4f9a42d453c124a3e303f"
-    sha256 cellar: :any_skip_relocation, monterey:       "da735fe28a12cf5f6dc2cbc62b4b4bddd80d4b9017f7fbf5f5ef68976a3c4d22"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cf3c02753157cad824055614a0d834bbc0eeb638ea1faef32b916a1b564657d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a81188804feb6a3040c14e813e591f3e86214233a51ba4d9a5d77823a18712a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "030b76f293a112b799f20edfb44f49a6674062914e945ed746384f61172702de"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "962335e20aba754efab14cb9bf35e956f395fe21da9f947fe75e467d5003e9a0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2788388193f2e6fcffda762f3bcffc880709b2ec9eebb18e567f777b6f5fb9f5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "63bdeb1a816abd155cb2d71d7e3850e0a05da44387412a377637ed7abe0bf4ba"
+    sha256 cellar: :any_skip_relocation, ventura:        "9142dcb2af8485ecc5d86875a7997f84e9fef2f5d707b15b7960ec9e690c3f7f"
+    sha256 cellar: :any_skip_relocation, monterey:       "e23d6d7f1b37ef6dfd5d8fe46c9341e3957931b447cf841cacf6203fb25ee004"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9de8f0bdca05a92679e4add65a6152583df1aa96268083a471c785dd7ffbfcdf"
   end
 
   keg_only :provided_by_macos
@@ -38,6 +37,7 @@ class GnuGetopt < Formula
     bin.install "getopt"
     man1.install "misc-utils/getopt.1"
     bash_completion.install "bash-completion/getopt"
+    doc.install "misc-utils/getopt-example.bash", "misc-utils/getopt-example.tcsh"
   end
 
   test do
