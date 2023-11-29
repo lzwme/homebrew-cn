@@ -1384,6 +1384,7 @@ Homebrew-homebrew-core/Formula/d/dolphie.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dolt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dooit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dopewars.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/doppler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dory.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dos2unix.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dosbox-staging.rb, Homebrew/homebrew-core, 1
@@ -2275,6 +2276,7 @@ Homebrew-homebrew-core/Formula/g/goread.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goredo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/goreleaser.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/goreman.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/goresym.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gosec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gossip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gost.rb, Homebrew/homebrew-core, 1
@@ -3340,6 +3342,7 @@ Homebrew-homebrew-core/Formula/lib/libdivsufsort.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libdmtx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libdmx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libdnet.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libdpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libdrawtext.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libdrm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libdshconfig.rb, Homebrew/homebrew-core, 0
@@ -3829,6 +3832,7 @@ Homebrew-homebrew-core/Formula/m/mariadb@10.7.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@10.8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@10.9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@11.0.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mariadb@11.1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/markdown-toc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/markdown.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/markdownlint-cli.rb, Homebrew/homebrew-core, 0
@@ -5067,6 +5071,7 @@ Homebrew-homebrew-core/Formula/p/python-chardet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-charset-normalizer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-cli-helpers.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-click.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-colorama.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-configargparse.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-configobj.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-cryptography.rb, Homebrew/homebrew-core, 0
@@ -5074,6 +5079,7 @@ Homebrew-homebrew-core/Formula/p/python-cycler.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-dateutil.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-dicttoxml.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-distlib.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-distro.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-docopt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-filelock.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-flit-core.rb, Homebrew/homebrew-core, 0
@@ -5879,6 +5885,7 @@ Homebrew-homebrew-core/Formula/s/sqsmover.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqtop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/squashfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/squashfuse.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/squealer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/squid.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/squiid.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/squirrel.rb, Homebrew/homebrew-core, 0
@@ -7640,6 +7647,7 @@ Homebrew-homebrew-cask/Casks/c/codelite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/codeql.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/coderunner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/codespace.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/codewhisperer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/codux.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/coffitivity-offline.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cog.rb, Homebrew/homebrew-cask, 0
@@ -8440,6 +8448,7 @@ Homebrew-homebrew-cask/Casks/g/graphql-ide.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/graphql-playground.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/graphsketcher.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gray.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/g/greenery.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/greenfoot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gretl.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/grid-clock.rb, Homebrew/homebrew-cask, 1
@@ -9133,6 +9142,7 @@ Homebrew-homebrew-cask/Casks/m/mcbopomofo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mcedit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mcgimp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mcreator.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/mdb-accdb-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mdimagesizemdimporter.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mdrp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mds.rb, Homebrew/homebrew-cask, 0
@@ -9144,6 +9154,7 @@ Homebrew-homebrew-cask/Casks/m/mediahuman-audio-converter.rb, Homebrew/homebrew-
 Homebrew-homebrew-cask/Casks/m/mediahuman-youtube-downloader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mediainfo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mediainfoex.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/mediamate.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mediathekview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/medibangpaintpro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/medis.rb, Homebrew/homebrew-cask, 0
@@ -12758,7 +12769,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-cjk-jp.rb, Homebrew/homebrew-
 Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-cjk-kr.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-cjk-sc.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-cjk-tc.rb, Homebrew/homebrew-cask-fonts, 0
-Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-cjk.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-cjk.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-devanagari.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-display.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-dogra.rb, Homebrew/homebrew-cask-fonts, 0

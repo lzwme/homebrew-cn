@@ -1,20 +1,18 @@
 class Phpbrew < Formula
   desc "Brew & manage PHP versions in pure PHP at HOME"
   homepage "https://phpbrew.github.io/phpbrew"
-  url "https://ghproxy.com/https://github.com/phpbrew/phpbrew/releases/download/2.1.0/phpbrew.phar"
-  sha256 "0f8f55bb31f6680ad3b9703cddb46d9c5186ea67778fc1896b35f44569d9d006"
+  url "https://ghproxy.com/https://github.com/phpbrew/phpbrew/releases/download/2.2.0/phpbrew.phar"
+  sha256 "d1f248d486d6d2368d67cf0bb79371ee0abfc7e566bfc279e750372d1b0f96bd"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "630b11c8b90e5426cf322b390975b392c8ae007fbe692cd631466c23b043cf54"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e20e3587cdb7bb9d7c599b3c6c886741175f816e15119342408db805d1040afc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e20e3587cdb7bb9d7c599b3c6c886741175f816e15119342408db805d1040afc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e20e3587cdb7bb9d7c599b3c6c886741175f816e15119342408db805d1040afc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1d9948981ed0ae1b0a865c406196f7fdfd715e21e177c14d32c537a6add52669"
-    sha256 cellar: :any_skip_relocation, ventura:        "0d565cc6354d5b0a0061356412f79ad79560072774a4bfbc1eb240f80e87c8eb"
-    sha256 cellar: :any_skip_relocation, monterey:       "0d565cc6354d5b0a0061356412f79ad79560072774a4bfbc1eb240f80e87c8eb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0d565cc6354d5b0a0061356412f79ad79560072774a4bfbc1eb240f80e87c8eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff8a8974f572904d08b66360b914c9198b632e6dcfee59a27e3d0db97aeb1638"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "53bc9521ba4a293a2e667bca5270760ed90af2bb83908d5fd5940a8dd5f7f443"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "53bc9521ba4a293a2e667bca5270760ed90af2bb83908d5fd5940a8dd5f7f443"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "53bc9521ba4a293a2e667bca5270760ed90af2bb83908d5fd5940a8dd5f7f443"
+    sha256 cellar: :any_skip_relocation, sonoma:         "524a21b9ca0896816a411948857b6d98d32d01e522a947bdfcb915ada945770a"
+    sha256 cellar: :any_skip_relocation, ventura:        "524a21b9ca0896816a411948857b6d98d32d01e522a947bdfcb915ada945770a"
+    sha256 cellar: :any_skip_relocation, monterey:       "524a21b9ca0896816a411948857b6d98d32d01e522a947bdfcb915ada945770a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "53bc9521ba4a293a2e667bca5270760ed90af2bb83908d5fd5940a8dd5f7f443"
   end
 
   # TODO: When `php` 8.2+ support is landed, switch back to `php`.

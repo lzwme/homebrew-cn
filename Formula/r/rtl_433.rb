@@ -2,20 +2,19 @@ class Rtl433 < Formula
   desc "Program to decode radio transmissions from devices"
   homepage "https://github.com/merbanan/rtl_433"
   url "https://github.com/merbanan/rtl_433.git",
-      tag:      "22.11",
-      revision: "c3c58d81e72ec3d80af480a7c2ef7995ef66147f"
+      tag:      "23.11",
+      revision: "59133f44a297eb2288e803e2e56587da4e586ffc"
   license "GPL-2.0-or-later"
-  revision 2
   head "https://github.com/merbanan/rtl_433.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7e2d3ca4bd584899032e7a8fd1be121e0ea2b6568c3fb836734fad011f1d851a"
-    sha256 cellar: :any,                 arm64_ventura:  "05b29053924008c6e7340fa5cba1c2b85fea2c1d5519fca6873a1c87aa28ba52"
-    sha256 cellar: :any,                 arm64_monterey: "ad98368da38d15d4788a2b71c659935c32bc1302a2a758ce0a613d568591841f"
-    sha256 cellar: :any,                 sonoma:         "780df13e28fe12ee535493e778425a536510183e46a885bd2caebd911b326046"
-    sha256 cellar: :any,                 ventura:        "150d0bc219d0cb5ebd545c8d29ea8a60483d20d126cd27b2e01a56a71e502620"
-    sha256 cellar: :any,                 monterey:       "86c2f53d0e571dc4cae49357409a05869281cc895ac6521629e9765969f7a81b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a625e5879cff419e3cceddf801248084fbbdd55820786d5f82ea17bf6fcaf87"
+    sha256 cellar: :any,                 arm64_sonoma:   "e55a0e0e62f174e25cc3f3d892a8e4dc9ef0b0adb6709cbc793b139b664e3a80"
+    sha256 cellar: :any,                 arm64_ventura:  "d3f17a8874d3e02d2c1b0ba9b1a7ad230d1e78e087fd687eefdca3eced8e4fbd"
+    sha256 cellar: :any,                 arm64_monterey: "4c809261d3dce9109ab94c05494e3412bde50eb0ba80c466365b72e8b6ead82a"
+    sha256 cellar: :any,                 sonoma:         "0a6dd47bd2e165af9603fcdb175392969e73ee68893aa3dbc6f9fae6286c465b"
+    sha256 cellar: :any,                 ventura:        "c803a214a219b58b1b3d00753177b81162da3dcbb26bcf20e02e9dfdb8874ff9"
+    sha256 cellar: :any,                 monterey:       "72724b2b1486bb5253075d7af35b61f909d37630f0ab0c4362d6d12a50218a95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2810378fa47bce1e015317722a6716f834558b98d963e3b92e07eb0ba5c9e161"
   end
 
   depends_on "cmake" => :build

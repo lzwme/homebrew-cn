@@ -19,16 +19,16 @@ class Jellyfish < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e1922bf36c12b1d56d19e1ead6bd461000bd7ed19a8ac5cfd4398f2bbd54e61"
   end
 
-  depends_on "autoconf@2.69" => :build
-  depends_on "automake" => :build
-  depends_on "gettext" => :build
-  depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "htslib"
 
+  # Fix -flat_namespace being used on Big Sur and later.
+  patch do
+    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+  end
+
   def install
-    # autoreconf to fix flat namespace detection bug.
-    system "autoreconf", "-fvi"
     system "./configure", *std_configure_args
     system "make"
     system "make", "install"

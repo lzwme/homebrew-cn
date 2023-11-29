@@ -4,6 +4,7 @@ class PostgresqlAT13 < Formula
   url "https://ftp.postgresql.org/pub/source/v13.13/postgresql-13.13.tar.bz2"
   sha256 "8af69c2599047a2ad246567d68ec4131aef116954d8c3e469e9789080b37a474"
   license "PostgreSQL"
+  revision 1
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -11,13 +12,13 @@ class PostgresqlAT13 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "421da87133f989c4d8915e319f84a9d4a6686c0512e338c0f301e1653ecd41de"
-    sha256 arm64_ventura:  "2251780ee8e54790ef305e5d590da6ab169739354a12c6b8a86f1b6be29f79aa"
-    sha256 arm64_monterey: "d8f4ff9a5d5faf6d91b6a64d7f2fbf6f26a9f4fdf046887203738dc2a4a2fca3"
-    sha256 sonoma:         "a3a04c7408dc5816d72b57f857634f6a57ed150429a1aaeb38d13a29be9b40ea"
-    sha256 ventura:        "ae0467af5251d11f620a29e658f56e3d96962d00b2624317c0def6bc9729ad35"
-    sha256 monterey:       "9b0315df47bc7c663b6b33fbb874573418a8557de815e346953aadfb5c642d3e"
-    sha256 x86_64_linux:   "044f9b67e443a3f3e7872c3a7668438754862ca18ead35b4b78361f9c4b61664"
+    sha256 arm64_sonoma:   "3f5726702af2f5445bb2a5aa275fff8a3af9ce95ce5a0d522987cd5f7c3a0fe8"
+    sha256 arm64_ventura:  "9d12d6a9a2badd16851b66b2518d0ac6f0b6645cc2a823da180fcef99cdb8215"
+    sha256 arm64_monterey: "b699aa5abdc5bbf6927bafc45299be5c247517d65236ae8e3400fd8a69f1d8ec"
+    sha256 sonoma:         "24b6e70b0fdf274c4ab0d1d050786d18ef86458fcbb869690fe3a101d14ea413"
+    sha256 ventura:        "2ba0f422a2f9ad6f97518614893fe62770cd29b9a45d09b32548f46c3b1f678d"
+    sha256 monterey:       "76d344edc661da3fb57d08b089a648803d8d5b58bf37d7e34e48869c27515481"
+    sha256 x86_64_linux:   "a431b819d9d09707e5ca0b507000b77462af7091a5fbdd0bb40b1e7e5a20b2a6"
   end
 
   keg_only :versioned_formula
@@ -44,6 +45,11 @@ class PostgresqlAT13 < Formula
     depends_on "linux-pam"
     depends_on "util-linux"
   end
+
+  # Fix compatibility with OpenSSL 3.2
+  # Remove once merged
+  # Ref https://www.postgresql.org/message-id/CX9SU44GH3P4.17X6ZZUJ5D40N%40neon.tech
+  patch :DATA
 
   def install
     ENV.delete "PKG_CONFIG_LIBDIR" if MacOS.version == :catalina
@@ -183,3 +189,89 @@ class PostgresqlAT13 < Formula
     assert_equal (opt_include/"postgresql/server").to_s, shell_output("#{bin}/pg_config --includedir-server").chomp
   end
 end
+
+__END__
+diff --git a/src/backend/libpq/be-secure-openssl.c b/src/backend/libpq/be-secure-openssl.c
+index 55fe59276a..76ef7afd77 100644
+--- a/src/backend/libpq/be-secure-openssl.c
++++ b/src/backend/libpq/be-secure-openssl.c
+@@ -748,10 +748,6 @@ be_tls_write(Port *port, void *ptr, size_t len, int *waitfor)
+  * to retry; do we need to adopt their logic for that?
+  */
+
+-#ifndef HAVE_BIO_GET_DATA
+-#define BIO_get_data(bio) (bio->ptr)
+-#define BIO_set_data(bio, data) (bio->ptr = data)
+-#endif
+
+ static BIO_METHOD *my_bio_methods = NULL;
+
+@@ -762,7 +758,7 @@ my_sock_read(BIO *h, char *buf, int size)
+
+ 	if (buf != NULL)
+ 	{
+-		res = secure_raw_read(((Port *) BIO_get_data(h)), buf, size);
++		res = secure_raw_read(((Port *) BIO_get_app_data(h)), buf, size);
+ 		BIO_clear_retry_flags(h);
+ 		if (res <= 0)
+ 		{
+@@ -782,7 +778,7 @@ my_sock_write(BIO *h, const char *buf, int size)
+ {
+ 	int			res = 0;
+
+-	res = secure_raw_write(((Port *) BIO_get_data(h)), buf, size);
++	res = secure_raw_write(((Port *) BIO_get_app_data(h)), buf, size);
+ 	BIO_clear_retry_flags(h);
+ 	if (res <= 0)
+ 	{
+@@ -858,7 +854,7 @@ my_SSL_set_fd(Port *port, int fd)
+ 		SSLerr(SSL_F_SSL_SET_FD, ERR_R_BUF_LIB);
+ 		goto err;
+ 	}
+-	BIO_set_data(bio, port);
++	BIO_set_app_data(bio, port);
+
+ 	BIO_set_fd(bio, fd, BIO_NOCLOSE);
+ 	SSL_set_bio(port->ssl, bio, bio);
+diff --git a/src/interfaces/libpq/fe-secure-openssl.c b/src/interfaces/libpq/fe-secure-openssl.c
+index 07d5daf4d9..1eb17dd280 100644
+--- a/src/interfaces/libpq/fe-secure-openssl.c
++++ b/src/interfaces/libpq/fe-secure-openssl.c
+@@ -1602,10 +1602,6 @@ PQsslAttribute(PGconn *conn, const char *attribute_name)
+  * to retry; do we need to adopt their logic for that?
+  */
+
+-#ifndef HAVE_BIO_GET_DATA
+-#define BIO_get_data(bio) (bio->ptr)
+-#define BIO_set_data(bio, data) (bio->ptr = data)
+-#endif
+
+ static BIO_METHOD *my_bio_methods;
+
+@@ -1614,7 +1610,7 @@ my_sock_read(BIO *h, char *buf, int size)
+ {
+ 	int			res;
+
+-	res = pqsecure_raw_read((PGconn *) BIO_get_data(h), buf, size);
++	res = pqsecure_raw_read((PGconn *) BIO_get_app_data(h), buf, size);
+ 	BIO_clear_retry_flags(h);
+ 	if (res < 0)
+ 	{
+@@ -1644,7 +1640,7 @@ my_sock_write(BIO *h, const char *buf, int size)
+ {
+ 	int			res;
+
+-	res = pqsecure_raw_write((PGconn *) BIO_get_data(h), buf, size);
++	res = pqsecure_raw_write((PGconn *) BIO_get_app_data(h), buf, size);
+ 	BIO_clear_retry_flags(h);
+ 	if (res < 0)
+ 	{
+@@ -1735,7 +1731,7 @@ my_SSL_set_fd(PGconn *conn, int fd)
+ 		SSLerr(SSL_F_SSL_SET_FD, ERR_R_BUF_LIB);
+ 		goto err;
+ 	}
+-	BIO_set_data(bio, conn);
++	BIO_set_app_data(bio, conn);
+
+ 	SSL_set_bio(conn->ssl, bio, bio);
+ 	BIO_set_fd(bio, fd, BIO_NOCLOSE);

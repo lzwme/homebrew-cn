@@ -1,10 +1,9 @@
 class Pinocchio < Formula
   desc "Efficient and fast C++ library implementing Rigid Body Dynamics algorithms"
   homepage "https://stack-of-tasks.github.io/pinocchio"
-  url "https://ghproxy.com/https://github.com/stack-of-tasks/pinocchio/releases/download/v2.6.20/pinocchio-2.6.20.tar.gz"
-  sha256 "2fcead7b1b2f08aa47acd28891e4b204f2e9cc14a4e4c9027168b8c58f9aedd2"
+  url "https://ghproxy.com/https://github.com/stack-of-tasks/pinocchio/releases/download/v2.6.21/pinocchio-2.6.21.tar.gz"
+  sha256 "11131e2a694388f7364f9d8d91615507ad2e13faf58a27a898b930f36f5e3db3"
   license "BSD-2-Clause"
-  revision 2
   head "https://github.com/stack-of-tasks/pinocchio.git", branch: "master"
 
   livecheck do
@@ -13,13 +12,13 @@ class Pinocchio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f4565652d2dc232fda2c3b4427b4e1d9581839cc509638f3df52d1e87bafe0ee"
-    sha256 cellar: :any,                 arm64_ventura:  "47f0089e85010418c67872759b87316ef578966e37897c1375f77a328b1b51fb"
-    sha256 cellar: :any,                 arm64_monterey: "25f613d7d086372e9dc0c573d44316a21b13b68f0bfbfbd1fb064ba950e794ac"
-    sha256 cellar: :any,                 sonoma:         "f271cdfb4111f48db5f979d5f671a9b8f240588ed228467e94ba8d6f08c9f79e"
-    sha256 cellar: :any,                 ventura:        "acaea27737c2873132a03048632b48bab728cf22f5001f5220a654af23f3f8e3"
-    sha256 cellar: :any,                 monterey:       "ad9ac82f8963d06b915fef44f636a97a7b93eecd4ae8604bd92445937cf84a74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d51b9bc1ca67c125248bc47fd6b074d932427a9ed127c0c140b1f6bba63865d"
+    sha256 cellar: :any,                 arm64_sonoma:   "db36ebd2e1cb8a09d6900d7f8f61df4becccb70c3721666c3abdf4adbb6dcf42"
+    sha256 cellar: :any,                 arm64_ventura:  "63bf8c4619ac9491d40a4163380e22e2c4ae4a0c5df6792bbe482361485ef850"
+    sha256 cellar: :any,                 arm64_monterey: "37b8b47c91537fab72d83833f45d1c1fbf873a011f97b138bbf30b5ee4a3333c"
+    sha256 cellar: :any,                 sonoma:         "6c9b3b7a464a4a8798c44254603b40e1c65db9753aa0872432da473cd5c21a73"
+    sha256 cellar: :any,                 ventura:        "5747f3cecd810341ddde894dc2790e0f50262e4af54d3fb41eea9b7deaee4220"
+    sha256 cellar: :any,                 monterey:       "cf148e237db796daeecbf59eb62f435ad67468aa3ee74cbb453685d1f47a8360"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0c095eade94bcb933943e72fe150e0d03f3edd268407f290a94f70a3caa5a2b"
   end
 
   depends_on "cmake" => :build

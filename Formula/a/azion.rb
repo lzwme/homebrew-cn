@@ -1,19 +1,18 @@
 class Azion < Formula
   desc "CLI for the Azion service"
   homepage "https://github.com/aziontech/azion"
-  url "https://ghproxy.com/https://github.com/aziontech/azion/archive/refs/tags/1.9.2.tar.gz"
-  sha256 "8a4ab32e1a598e76c51625cb8bc3436ee2f1b736454e150209214c78a3fdb1ff"
+  url "https://ghproxy.com/https://github.com/aziontech/azion/archive/refs/tags/1.9.3.tar.gz"
+  sha256 "7ea133af95ffea354915ccb766c198ba166194a00760c93e84dda76d5beb128e"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1228f60791161b7abf28849f696fabd205124894db1dd6e194a1bb35fadd623c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "50ab9e9f38f574c6dcd8a6d9c45cf9dc3409caa0f182359db17fe6000966b60e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a47f7ea652f47e627fdd3aaf920246bd57029a14d402ef7f3d1d8b0942907392"
-    sha256 cellar: :any_skip_relocation, sonoma:         "33965ff908d7fce890e989dbb6effed2c9cf8eacf2311094118e8a9881a36c9c"
-    sha256 cellar: :any_skip_relocation, ventura:        "5b65813284dc941d2fce65aeec0fa30518bb51562c010384b55b9033fc5f6e5a"
-    sha256 cellar: :any_skip_relocation, monterey:       "89a5cb7712acb71bfd6252ce13c3bb49a94e94ee8448c82d7a4dd34765bef170"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdf0c3c251d5f089805e1c618a685df0ab7ffc5292a5d362eb13c7eb0ada064b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "594660528cc7212300d133a45a35307cff95f8bb7849af54437916118facc3a7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9af7140c5d70ffbed6b9e6268ba6cb7164f9f004a7010dac39b36dbfff6308b8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fc4986511603b27b258c6f4feba2b87525ac483d9f62e9e1e7f357975bde7d5e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f33024e521913d36e778b7a98e029e3219ac6686406b2f998e81bf1036ec8204"
+    sha256 cellar: :any_skip_relocation, ventura:        "735dbb80d7858036f845cb7284cde106cb234eaef68a18b7ea3af19a7a3925ff"
+    sha256 cellar: :any_skip_relocation, monterey:       "0901ded6446c3fdaf34d00cb9cdf94934512874b21e03d40f982b99e73f4505c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7cfabb46b67ffb51c1fa4dbfb1599dadb83c3fecfbfc48a44abff920c9a5120"
   end
 
   depends_on "go" => :build

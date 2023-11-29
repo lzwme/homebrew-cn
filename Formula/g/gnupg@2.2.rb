@@ -1,8 +1,8 @@
 class GnupgAT22 < Formula
   desc "GNU Pretty Good Privacy (PGP) package"
   homepage "https://gnupg.org/"
-  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.2.41.tar.bz2"
-  sha256 "13f3291007a5e8546fcb7bc0c6610ce44aaa9b3995059d4f8145ba09fd5be3e1"
+  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.2.42.tar.bz2"
+  sha256 "9189fbd4ec83ad243a4e499d5cb7fe72e4532176817e5ea880ed36a71dd82557"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,15 +11,13 @@ class GnupgAT22 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "7f0efbe239c4226b8b56ab44d5880e69318df8d6d5f3f34ee5994d65073fed23"
-    sha256 arm64_ventura:  "5789285b2a977cf20b61a346fcf44f5260a20af5432d0cc62732a89609e3c828"
-    sha256 arm64_monterey: "e21c9ae6576afb03b728ed48a4a5a2458bf23cff71944d5f93939d02cca148ee"
-    sha256 arm64_big_sur:  "8fd172c5b153ea13239e921c186329218be6d4506ff4e91167753c756dc1d92c"
-    sha256 sonoma:         "a033569e3c2b8d075e43d039bfb5c28187619a2116da6da81b63659d3f67148a"
-    sha256 ventura:        "35a9d856bd6a1abe7585291295883d3f68d54076af55e881fc0356bcdbd84f88"
-    sha256 monterey:       "1ded70c04491779a692124ff3530e75bff9ed48a0d1d5d4448a03ac59424b3bb"
-    sha256 big_sur:        "00c4f5f0629f45826b4c1c163596c32f13e726c24c85149eb34267901ca0ad10"
-    sha256 x86_64_linux:   "e407d01641735fdeeb789ca26ee6dc4d8dfd445202c9612316981d5209314901"
+    sha256 arm64_sonoma:   "f6ada55cdb89e967471ae13ae1112babbc5448030200989620700db04778a921"
+    sha256 arm64_ventura:  "add419ba0ef86be97e5c1b04eb9047418d74ac7a8ac5b9ce4a465ac455e4b4a9"
+    sha256 arm64_monterey: "45a52dcf028778a013ef759596839b09f1d79e4f6883207a45e83a4ca76f54bb"
+    sha256 sonoma:         "df3458b4787f7594563e01503aad833b32ad51ac80b306c1496ee1797c9d0cef"
+    sha256 ventura:        "4c141c693d053bf4ec78d8538fbf29e83bb0990db9f9c32904cd00d42c9accca"
+    sha256 monterey:       "6abbed28e58ec984661998168edf06c74f18f1a80e1ffcc2c52662baeb00718e"
+    sha256 x86_64_linux:   "a6c8b1c57c926beaa04ec59adea0ace839183dfc3ebbad65622925e1a90ca87b"
   end
 
   keg_only :versioned_formula

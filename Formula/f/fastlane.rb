@@ -12,15 +12,16 @@ class Fastlane < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "373a0052913bef4adce931af403de7d1118f51101dc3505b6f724e32e0fbe3c4"
-    sha256 cellar: :any,                 arm64_ventura:  "a11ea22a0e0bf201aefe2463b7adfc628d901bf2acf69eccae14c9586e8f9156"
-    sha256 cellar: :any,                 arm64_monterey: "e4a7f20348285aa36ec9ecf5822bef9d8b2f1674deadca6571e24ab6cbd214aa"
-    sha256 cellar: :any,                 ventura:        "996a9b90cffff6a9317c967765c01e6144bc6a67b0570a672586ae7493c33af9"
-    sha256 cellar: :any,                 monterey:       "220814f1a7340071ecbbf7980ebcf2e6d09e19df116beec12cabeff061b1a952"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2592c13c7abf7e5f0089531c6a6a58608bd447e07a53d8d4531da80a909e6bfc"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "91af5f1200f28c3373e0c42829179cefe1996f454c635f30ca2cbff451915f6a"
+    sha256 cellar: :any,                 arm64_ventura:  "7fa76937d5e469bcbcdd938547a290523a442650453bc45d1c6e5d96ee5d2687"
+    sha256 cellar: :any,                 arm64_monterey: "b4c88dd9c23442eb89f9e793fced96a0d7aa37fcfbea4165c5fcc216d310d875"
+    sha256 cellar: :any,                 ventura:        "3c60d7d5471d5b4bc25aa940c62b5b8fa082556cf6faea3ff018e9771d1977f5"
+    sha256 cellar: :any,                 monterey:       "7bd2b50d0320ae8c8ae226fc96803469411065629caa8e9aef99d14b4f01bfaa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "669a63bf74a8000322f6191d49d6349a144d45122718ce0062dbcd7af58cb115"
   end
 
-  depends_on "ruby@3.1"
+  depends_on "ruby"
 
   on_macos do
     depends_on "terminal-notifier"

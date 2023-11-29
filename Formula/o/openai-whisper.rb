@@ -21,7 +21,7 @@ class OpenaiWhisper < Formula
   depends_on "rust" => :build # for tiktoken
   depends_on "ffmpeg"
   depends_on "huggingface-cli"
-  depends_on "llvm@14"
+  depends_on "llvm@14" # Issue for newer LLVM: https://github.com/numba/llvmlite/issues/914
   depends_on "numpy"
   depends_on "python-certifi"
   depends_on "python-markupsafe"

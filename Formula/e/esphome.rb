@@ -3,18 +3,18 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/4c/b8/b2afa0916a55eaaa8a7b35e814071972955e31b5bb48d62fbff700c16366/esphome-2023.11.5.tar.gz"
-  sha256 "d22ef4d29a956c033ee67b869873deb3c583e51cd0b4852e0504ca4cdf563865"
+  url "https://files.pythonhosted.org/packages/46/54/8772217490f0a428d57b625ad146dc3a61dc3a02d485b85e722df76f315a/esphome-2023.11.6.tar.gz"
+  sha256 "957f35509d9dd20de7157f4a55b001d3888aeb93993e5a1f126bca6a7b51e499"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4ff381ed8717c0de2588bdb2a2c6b92badad202aa7b975118238a2fb8c19120b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8debdda6b5c5aab46e78bfdd81cd8c4fdb10cabce82a40bd87b0bb30ad297185"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7a4cb0e7f3656975e45e1c9716406d97d59511a8349adaecec8d459144fac9a8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1fd9e9c228fcd57de3877f20bb68b583dde1e162cf6e430258cba509fc4efdfb"
-    sha256 cellar: :any_skip_relocation, ventura:        "63c7cf788ea4e25f606b944ab8d42354d871a0e080ed3ca285f9df4b8cf07ab6"
-    sha256 cellar: :any_skip_relocation, monterey:       "fc27ece377d1e923e6b888a44a641dcedf818baff6216fd0bb8a99cdc03d2482"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b84b47151554073336bd5fafab35c8d98c09b397ed8acde7d06a10aee3b47078"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9a7a54d2ee5f7e9388a45e70ef5ce7a97c334815e97a5a8755bb8dac21e292af"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ec9036bc7e8837d3ed4e1036583218ea830084d5ed1187d9de2ce4d54b8f3a0d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a1df9f59ef57b78bd902b22adab9a2d529a312d01d85f16a45d12286c4a05c3b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fddb5ba9e1959605321ccf8d8d4e7a9e91628bdb016768da377e272efabbda7f"
+    sha256 cellar: :any_skip_relocation, ventura:        "1520176d837d7fdbfa919226ec8babf9ff50778de2bf8ae77f51362ad572d7c9"
+    sha256 cellar: :any_skip_relocation, monterey:       "1ed4b65711c758843913e2ac377c9420a522515f56ab537a71ecf2b301d27a7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c5c2bc344e3d89816ea4f176f27acf4b3f081e19319b7e7400d7cc5d2e7f71c"
   end
 
   depends_on "cffi"

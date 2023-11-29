@@ -1,10 +1,9 @@
 class ZabbixCli < Formula
   desc "CLI tool for interacting with Zabbix monitoring system"
   homepage "https://github.com/unioslo/zabbix-cli/"
-  url "https://ghproxy.com/https://github.com/unioslo/zabbix-cli/archive/refs/tags/2.3.1.tar.gz"
-  sha256 "1d6de0486a5cd6b4fdd53c35810bd14e423ed039ed7ad0865ea08f6082309564"
+  url "https://ghproxy.com/https://github.com/unioslo/zabbix-cli/archive/refs/tags/2.3.2.tar.gz"
+  sha256 "e56b6be1c13c42c516c8e8e6b01948fc81591eae83f8babb7bee6d2025299c26"
   license "GPL-3.0-or-later"
-  revision 4
   head "https://github.com/unioslo/zabbix-cli.git", branch: "master"
 
   livecheck do
@@ -13,14 +12,13 @@ class ZabbixCli < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "14d3bc46edbe683f3bbf1b0242fb6bd71626f7cc5d00223111d8a1ae32acdd51"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8dfb1bb13c3ca82e02349f7b3a9424752caee80523241d8b6d0892b0ac6472fd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b411fbb46fea9923c277aa57bd0a7f4b40f9ea32c058e2c91080f39a4765365e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c4946145ce6eea493bf84289e95d1b95aef981c09892752ff7ca3271677e0c3f"
-    sha256 cellar: :any_skip_relocation, ventura:        "2aa50f2136732eb62371b47a58a1eb8ac9bf28e78396fbc863925e7fe473dd6d"
-    sha256 cellar: :any_skip_relocation, monterey:       "11f5089c40ecea4ec35bb120932a32c86132be9c006559824395bf33c35796e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "332ce3671efa9cbaf4fc2e49198adf35423ef476f1fddcc144e30ec1017e3b51"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6045d4260ee1e3eb050119e8e80f0b1daaf78551e73b9cbdc4f95310f15ca97d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f3fffae3994bfd7553bc828f97a42fc183313429c0c283796605b5d0f18bff1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5f5bc8108f0c921e6dc2045bfe508e781a5b1aea230151176c1ef5db821c420c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7c95788d0967958bde73a30a203cf13a42182aeefe56f63d2c09fed0523135f1"
+    sha256 cellar: :any_skip_relocation, ventura:        "fe978e32953f9a0f3e79638f0ad27a5ee51713059d7fad86bcfe789316a21525"
+    sha256 cellar: :any_skip_relocation, monterey:       "72da57d05cf66f8f06cbe00ec3e7a501418447030be66a9504f7b370ffd79cc4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "58ab30317704c5affc8a4dd85d1b4a74e4b9e7557284cd6c02c10b474edfc6dc"
   end
 
   depends_on "python-setuptools" => :build

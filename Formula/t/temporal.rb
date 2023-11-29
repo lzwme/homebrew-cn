@@ -7,13 +7,14 @@ class Temporal < Formula
   head "https://github.com/temporalio/cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1d52a07e3a91ece1bab8c9450abd7628405fa6252009da73c3d9677f5658e4f1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "522197ca06ffbae9129a353fdd47867f053852201874c8ea1f5fec3d1f819a49"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a99a44df0f2d41fdd59221b58a7249d00b0b89d2f98caf891c28da7dbc0d1756"
-    sha256 cellar: :any_skip_relocation, sonoma:         "773034cec65f2b147cf87dfa9669f2c210156bee32b0705d3c150fa462b02ee3"
-    sha256 cellar: :any_skip_relocation, ventura:        "e63d7403deb9975f14515d9a64d9d3345e1643a2f1a200fb7987868480d6a8aa"
-    sha256 cellar: :any_skip_relocation, monterey:       "fe14b885241ffde90e8fa39f90962e20be77e45908efcc5196b48525a5106d6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "afdbe4612683dd8966899c15b48f3f9d5518ee9b83ce5f5b481d39529c09f131"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d72f341da67dc3e0fcb505e0b72b6ef7110e630cddcb6c4c5972b0b049e58091"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a7abbc23d0604dcfedbb9ab28d0887cae955440dddf44e61d593a0c5aebe10c3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8cdc95bc0e32579b49130f3e1d8115aca6c70cc11b9e486b02f355534d40eae2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c459c0cfd83b0a658333cfad590109ceba1d5b13c2dd50ab21c33e001f582685"
+    sha256 cellar: :any_skip_relocation, ventura:        "5b72911c7e38e111af94a9dcaaab13c2d17ac0984ba122101749ca6cc992e8d1"
+    sha256 cellar: :any_skip_relocation, monterey:       "0287c9f4559aef8659550a7fce7520371deb8c9546ff8208e0892f15a88e693d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb1065c15d9da50914e376d5cba9b0bd5c2593aedabc70ff8bf903ecc195e681"
   end
 
   depends_on "go" => :build
@@ -21,6 +22,7 @@ class Temporal < Formula
   def install
     ldflags = "-s -w -X github.com/temporalio/cli/headers.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/temporal"
+    generate_completions_from_executable(bin/"temporal", "completion", shells: [:bash, :zsh])
   end
 
   test do

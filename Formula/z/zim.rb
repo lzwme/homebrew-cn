@@ -7,15 +7,15 @@ class Zim < Formula
   head "https://github.com/zim-desktop-wiki/zim-desktop-wiki.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "2a4540798783567312cf13df45741f747e95e46a7e2e57f2b37d524acb5f62b5"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "b6b1a5d27bfe83ff8ee09d82d1f85ebf575f8dfe102b09551b9ffe7ec1180c9d"
   end
 
   depends_on "pkg-config" => :build
   depends_on "adwaita-icon-theme"
   depends_on "graphviz"
   depends_on "gtk+3"
-  depends_on "gtksourceview3"
+  depends_on "gtksourceview4"
   depends_on "pygobject3"
   depends_on "python@3.12"
 

@@ -1,59 +1,45 @@
 class Pachi < Formula
   desc "Software for the Board Game of Go/Weiqi/Baduk"
   homepage "https://pachi.or.cz/"
-  url "https://ghproxy.com/https://github.com/pasky/pachi/archive/refs/tags/pachi-12.60.tar.gz"
-  sha256 "3c05cf4fe5206ba4cbe0e0026ec3225232261b44e9e05e45f76193b4b31ff8e9"
-  license "GPL-2.0"
+  url "https://ghproxy.com/https://github.com/pasky/pachi/archive/refs/tags/pachi-12.84.tar.gz"
+  sha256 "5ced9ffd9fdb0ee4cdb24ad341abbcb7df0ab8a7f244932b7dd3bfa0ff6180ba"
+  license "GPL-2.0-only"
   head "https://github.com/pasky/pachi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cc36b13c20604b90c51740831cce9701470241754f2b1e1376cf3b59d7013a26"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d25307a303833c144652b596baac8346e8274ed1669c5710f77675d978670692"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c38b47dfb6e9f48507f47be141963ea5fb4b6329a83f015f4bd0d52c09325408"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "71f7bf11f6d68a8768468e4494cdc0785f484a5ccd7713cfc4327f049e79e80a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "875a4356ea6a4746457358ad77a03c620a720eeb84c77bcd10b33b192577906f"
-    sha256 cellar: :any_skip_relocation, ventura:        "10306782a64e73d770c861e44c616a13cd417df1c346195f42426f62db6c1ec6"
-    sha256 cellar: :any_skip_relocation, monterey:       "7079a129c324c7411aabe2c5357f3b5c86658bcec6b897f06e8cccf02e775a23"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d14dec70d5fedd0d7ba63b05f175b06b12c40e1da71d24da64712ce63858dae1"
-    sha256 cellar: :any_skip_relocation, catalina:       "9a2adc64bf7dbfbaf9e3d9ff940d6c5bcb0e4040160ed62f57751ec87281132e"
-    sha256 cellar: :any_skip_relocation, mojave:         "c88f24dd1e7a267848eab540dc2b0961962825ab6e7088fc24b335159dacf31c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0fc26989c0cf90b6fa2256e129b0b87993464ec27ad88fefe569abdd9702292"
+    sha256 arm64_sonoma:   "57b6e6f43f52e5ef856feccee3a1a828872a90fb45a9e72149147ef8aa1e129d"
+    sha256 arm64_ventura:  "59b6a51156dc47e96991c92ce1fdd8060a4b9f2789f53ac515d9b08b8f117941"
+    sha256 arm64_monterey: "cba618e09fd5920a22b9e96b44aff7daaf2c1de834cc9b30dc1d13e9b3ce9498"
+    sha256 sonoma:         "08420848a56934b074a7044ceb0acc38c49c169a0d784b4b5bdf0af3431ba73c"
+    sha256 ventura:        "4f2ff8e1819b0982ae09db3be0935c36e38c809795d4b45776076e9a15e0c1d2"
+    sha256 monterey:       "8d0c1b96f212172117f2f44d2880d906d043c0601d8a7b1dd4dc796cf8ddc57d"
+    sha256 x86_64_linux:   "eb13f42af4891d563b870f8840182c9b6f99f76dfd7afcfeaf9c1cbf8bff4790"
   end
 
-  resource "patterns" do
-    url "https://sainet-dist.s3.amazonaws.com/pachi_patterns.zip"
-    sha256 "73045eed2a15c5cb54bcdb7e60b106729009fa0a809d388dfd80f26c07ca7cbc"
-  end
-
-  resource "book" do
-    url "https://gnugo.baduk.org/books/ra6.zip"
-    sha256 "1e7ffc75c424e94338308c048aacc479da6ac5cbe77c0df8adc733956872485a"
+  resource "datafiles" do
+    url "https://ghproxy.com/https://github.com/pasky/pachi/releases/download/pachi-12.84/pachi-12.84-linux-static.tgz", using: :nounzip
+    sha256 "c9b080a93468cb4eacfb6cb43ccd3c6ca2caacc784b02ebe5ec7ba3e4e071922"
   end
 
   def install
-    ENV["MAC"] = "1"
+    ENV["MAC"] = "1" if OS.mac?
+    ENV["GENERIC"] = "1"
     ENV["DOUBLE_FLOATING"] = "1"
 
     # https://github.com/pasky/pachi/issues/78
-    inreplace "Makefile", "build.h: .git/HEAD .git/index", "build.h:"
-    inreplace "Makefile", "DCNN=1", "DCNN=0"
+    inreplace "Makefile" do |s|
+      unless build.head?
+        s.gsub! "build.h: build.h.git", "build.h:"
+        s.gsub! "@cp build.h.git", "echo '#define PACHI_GIT_BRANCH \"\"\\n#define PACHI_GIT_HASH \"\"' >>"
+      end
+      s.change_make_var! "DCNN", "0"
+      s.change_make_var! "PREFIX", prefix
+    end
 
+    # Manually extract data files from Linux build, which is actually a zip file
+    system "unzip", "-oj", resource("datafiles").cached_download, "*/*", "-x", "*/*/*", "-d", buildpath
     system "make"
-    bin.install "pachi"
-
-    pkgshare.install resource("patterns")
-    pkgshare.install resource("book")
-  end
-
-  def caveats
-    <<~EOS
-      This formula also downloads additional data, such as opening books
-      and pattern files. They are stored in #{opt_pkgshare}.
-
-      At present, pachi cannot be pointed to external files, so make sure
-      to set the working directory to #{opt_pkgshare} if you want pachi
-      to take advantage of these additional files.
-    EOS
+    system "make", "install"
   end
 
   test do

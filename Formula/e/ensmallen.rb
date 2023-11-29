@@ -1,13 +1,13 @@
 class Ensmallen < Formula
   desc "Flexible C++ library for efficient mathematical optimization"
   homepage "https://ensmallen.org"
-  url "https://ghproxy.com/https://github.com/mlpack/ensmallen/archive/refs/tags/2.20.0.tar.gz"
-  sha256 "5c7cea756e544795b3861d171f7cc28ba0a0be6297f84026b0b17e1dfc583f24"
+  url "https://ghproxy.com/https://github.com/mlpack/ensmallen/archive/refs/tags/2.21.0.tar.gz"
+  sha256 "076f9d84e1ebc84c0ae19ee63accfc8fd3ec850f8993784bd9277776c3af2932"
   license "BSD-3-Clause"
   head "https://github.com/mlpack/ensmallen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0068070cf8fd7ce0b31e1488b4ab225fe0870816f60af08e37eae3296219165e"
+    sha256 cellar: :any_skip_relocation, all: "38946e793cc9a23f4de65d1cf3cdd4ffc2c2acd46148233fef8f963127d68eea"
   end
 
   depends_on "cmake" => :build

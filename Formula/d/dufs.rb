@@ -1,18 +1,18 @@
 class Dufs < Formula
   desc "Static file server"
   homepage "https://github.com/sigoden/dufs"
-  url "https://ghproxy.com/https://github.com/sigoden/dufs/archive/refs/tags/v0.37.1.tar.gz"
-  sha256 "cb09973b94e2209fa2f657a903c4115309dcb3be2a8232f60c97486ce62948f7"
+  url "https://ghproxy.com/https://github.com/sigoden/dufs/archive/refs/tags/v0.38.0.tar.gz"
+  sha256 "763e29ef0e6ca886d01f3974d8b0f3475eedf536eb3600bc13edf6fb6f9fabb8"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6460c9cdae7efde16b82c408ac26fb611c7fbffc72f5d17393591c9cba3340db"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "213bc86e0df37c39d9e1ea192209d1fe47fadefda7934f8e085b266b0cf0a358"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ffa26b1501aee815fd897cda0a7a4b1324b1972ce5b81d5a0ea5e41d563d7ff4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9508e866dfef650a9b5001474c82acc6bab673f5842233db7dc2f7ea0e82cc49"
-    sha256 cellar: :any_skip_relocation, ventura:        "538e2e7826090d3b7c55a84aaf345bc6fd0cf96aef7d89d6b243b0cf401f6630"
-    sha256 cellar: :any_skip_relocation, monterey:       "6f0d3c99e83a6db725c7f5a6e340192fad8f0f1ed93f6776b3f3979c24799d1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d929e00b750dc9736b0ed815125ea42fd1b0e6d1ca60faf2cd36d7cb4a1e3b24"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a655be01245f56462df32eb1228a11d8a1914d6e43fb287c78055bf322dc960a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8c0f1e96ac24087ad6200169d647318ca89c10959e2573716185a4b003ddc329"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e6731e505f03c9d252c8cfed90deccd674e98571a506558e9f11a1873e42d207"
+    sha256 cellar: :any_skip_relocation, sonoma:         "feb05619ecb107a02656183048f54848abf5b85852ef8b60453ca9b94278259a"
+    sha256 cellar: :any_skip_relocation, ventura:        "cb2c91c53abe5ac7b2668b0f963f1470a542caa8b53b0aff5ea6ba487a1edec6"
+    sha256 cellar: :any_skip_relocation, monterey:       "2913ce448503e7563a5f022a8594a0872e9beee1de3a55970629b4937877f02a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3143eba4cbf8cff90b0c0289067f736283a95b1a4c21745a0f6b74dfee22ef28"
   end
 
   depends_on "rust" => :build

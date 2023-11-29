@@ -1,18 +1,18 @@
 class Lit < Formula
   desc "Portable tool for LLVM- and Clang-style test suites"
   homepage "https://llvm.org"
-  url "https://files.pythonhosted.org/packages/98/a5/f3d49178d1e69224d8680b0a0a02d42d221b45e703587bb2339a0503f421/lit-17.0.5.tar.gz"
-  sha256 "696199a629c73712a5bebda533729ea2c7e4c798bcfc38d9cd1375aa668ced98"
+  url "https://files.pythonhosted.org/packages/34/87/33879055f7eff70482530396830a4a1c32e7b2cebbbd9b95742331704e8d/lit-17.0.6.tar.gz"
+  sha256 "dfa9af9b55fc4509a56be7bf2346f079d7f4a242d583b9f2e0b078fd0abae31b"
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "567dc79c15353450bf1ddfe468032a870c56fb6ea8807552747cce5ebd3ce3e6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d8fe3e7e73e5c254ca9b953cb3f47180526f2fe5898faf16aecdcc968ca53906"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "277b30d1ba5724e471b93968c10063192c8a242fa93bd291282b682a25eb2165"
-    sha256 cellar: :any_skip_relocation, sonoma:         "15fff58769989d66e3c4f668733655fc2713e666e7ace3852a2102780ceab79c"
-    sha256 cellar: :any_skip_relocation, ventura:        "d12672032bc1de3f7f302c9349c8c8cf65e6306f41dbba57bf78176cd2034781"
-    sha256 cellar: :any_skip_relocation, monterey:       "f3e4f3ff49c706ab44c22466f8f4724a9d5a530368c4265cdba84a4b67447715"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e279a6f038209e8b3cef565294da40b2e46079bd0c8e8687c387c6ddeb5126a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d108e9b9f850097d24dbe39a670283fcb1a953a141cce2d225035202b10e7498"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b89b796b84c2a7157fa6589fbe24bd01d90facd695f406d202f1d6040ef1b8d2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "86176d276e0deb7f75e7719053bc031deece7e5778b56fdc88c3592f300a3619"
+    sha256 cellar: :any_skip_relocation, sonoma:         "084f42cd8636af8ee1f038b2d38da5b265a843a7f1f85df19d1b01495d82a914"
+    sha256 cellar: :any_skip_relocation, ventura:        "d1100f694ef5823a0f2022f1cc9e206bf223c3fa3301e8320a0ed973374b14d2"
+    sha256 cellar: :any_skip_relocation, monterey:       "73746b6a2d27d09fdd1c6abe2b6611441bbbafbb7ca75c22e92fed078dadbcd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02c934a185a050250deaf52b6e88aa0472967802fc048a4c359c5dd105523e74"
   end
 
   depends_on "python-setuptools" => :build
