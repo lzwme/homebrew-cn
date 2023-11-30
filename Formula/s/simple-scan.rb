@@ -4,17 +4,16 @@ class SimpleScan < Formula
   url "https://download.gnome.org/sources/simple-scan/44/simple-scan-44.0.tar.xz"
   sha256 "39b870fd46f447f747eaecc2df26049ef773185099f0e13c675656264dd98e95"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "a151bc9892b812b9f4d002a5419fcb522ab13e974b618484fa37b82ab2d39e88"
-    sha256 arm64_ventura:  "ee3a3064079b059bd94d4192ae570cdbd69a9afc4170f96a0d79c06a05242a58"
-    sha256 arm64_monterey: "03cb79c0d57b59ee137039d945f06205bab8c1fb4d59d23a4b370cacf3354b69"
-    sha256 arm64_big_sur:  "2149639d70234943efafcf317b3b62d69db43ec2f481b44f6a407455f1bf3d68"
-    sha256 sonoma:         "b88cd22c4611d1d1d81973fb7df078cfc72c89fbe6dde6151c37550227a3d41f"
-    sha256 ventura:        "28e873b997239eda0a4eb2b5507ecbcf061cf8e332550a435f8460d1da6e188c"
-    sha256 monterey:       "cd801aeae0fdde16834189cf91378006e9c79e2c5bd74aacfb37ce24159b153a"
-    sha256 big_sur:        "63637752cefd64e78b6b0142056f1db280bb6854911471304c804cf1484a8b0b"
-    sha256 x86_64_linux:   "2df6eb455d83446edd9602cd61ee8649e97f5a1830a03d5b45bc5fd24dfc7ae3"
+    sha256 arm64_sonoma:   "ede4b8f1b73d0d696dd111ceb935176a9229cef508511a94a8643e89237b2107"
+    sha256 arm64_ventura:  "95d221ebd8db12997effdb57b515dcdf67db873967459990c7adfd051051d3a1"
+    sha256 arm64_monterey: "a80f90b79f99908c1cc605e094e95dadccaec4fd4e8d5787779f8165b5a03320"
+    sha256 sonoma:         "d41e03717c1b7a381c790aa4223553fc51ba20c58217f8bccd3dddd4775fa19c"
+    sha256 ventura:        "604b9a994a1849c54d3d85a3a8ec5b841e8548880fc3a9ba5537380314eff5b6"
+    sha256 monterey:       "6369e2e883f9bf6f69290c4ca660e7e21c2ce742b2102cd7c3cd2861584765ab"
+    sha256 x86_64_linux:   "e3dc89775898ce3019d4c3625ee196ce4c4f443001cb4b271001a6171080c105"
   end
 
   depends_on "gettext" => :build # for msgfmt
@@ -32,11 +31,9 @@ class SimpleScan < Formula
 
   def install
     ENV["DESTDIR"] = "/"
-    mkdir "build" do
-      system "meson", *std_meson_args, ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   def post_install

@@ -4,7 +4,7 @@ class Gtksourceviewmm3 < Formula
   url "https://download.gnome.org/sources/gtksourceviewmm/3.18/gtksourceviewmm-3.18.0.tar.xz"
   sha256 "51081ae3d37975dae33d3f6a40621d85cb68f4b36ae3835eec1513482aacfb39"
   license "LGPL-2.1-or-later"
-  revision 10
+  revision 11
 
   livecheck do
     url :stable
@@ -12,17 +12,13 @@ class Gtksourceviewmm3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "81d2a312369eee1c4d9fd5daf8e47e92c66a5fd632a7a841068d6c8a03322338"
-    sha256 cellar: :any,                 arm64_ventura:  "35d19a368cbe09ef00c30b816e506665229bd2fcaa683594007ac3883433ae9f"
-    sha256 cellar: :any,                 arm64_monterey: "0f6143ae59613281896b8e61962728fa445e0f01238be952dfeb8402e8de6796"
-    sha256 cellar: :any,                 arm64_big_sur:  "787713d0f6802ea858aa728be88507a6d1b3adc6e3e648c34af059651393e83a"
-    sha256 cellar: :any,                 sonoma:         "6542c9a51be67151cf2121f2df8663f031d2c00d5bbf890252d36392449b68c0"
-    sha256 cellar: :any,                 ventura:        "08044847e23c51115e5a4b8030d511857a9452addd35fd8bf7a0ce5b98095ae2"
-    sha256 cellar: :any,                 monterey:       "e3f82bddf2add81a84854eac842b29528e19175bcf473a5c29fdecb21702b49b"
-    sha256 cellar: :any,                 big_sur:        "e1cc731cb3f1d99a040da7719e8d91f325d7c00a46e19a10ffca8d1ec87991e8"
-    sha256 cellar: :any,                 catalina:       "2909f29ff9dce4266ba101d992bb8831487cd2084f467faad39198ce6923b729"
-    sha256 cellar: :any,                 mojave:         "548c9dfe0eb1fbbe8bf9234a3d631bc232514855457372633f37bf240e427a5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6de37b2284288c47e137939d4ff2eea5e235cc8967fddf00e227ed87b28855d"
+    sha256 cellar: :any,                 arm64_sonoma:   "dc3f50e8c5d192b4dc176878e95f4b7bf28d0a19e21c7c47b88f1c5905f64ebb"
+    sha256 cellar: :any,                 arm64_ventura:  "fa886fba1a65986e976859a1c9714b8892695850e6c8325dc534532f31536f0a"
+    sha256 cellar: :any,                 arm64_monterey: "9353790d382f15315725c82eb60364f0533d2cc4d3e7483abbc34ab4962f3688"
+    sha256 cellar: :any,                 sonoma:         "6d967d0889a430e64312a18afbae33554340938c8fae2a90ddd652cd2beb86cd"
+    sha256 cellar: :any,                 ventura:        "599a63e233b2cab4497e4266780a1c4a55616aeb6a8dfbdb7fa92c0f443720c6"
+    sha256 cellar: :any,                 monterey:       "e47d5fa75c9210450660bdd5bbb0ca206e90beba0a0954e49a7b7596e6bc5a42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b6489e67344895dad8ef93a694a47c49fec20dc0735989355b11489cd85fbccd"
   end
 
   depends_on "pkg-config" => [:build, :test]

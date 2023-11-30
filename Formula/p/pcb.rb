@@ -4,6 +4,7 @@ class Pcb < Formula
   url "https://downloads.sourceforge.net/project/pcb/pcb/pcb-4.3.0/pcb-4.3.0.tar.gz"
   sha256 "ae852f46af84aba7f51d813fb916fc7fcdbeea43f7134f150507024e1743fb5e"
   license "GPL-2.0-or-later"
+  revision 1
   version_scheme 1
 
   livecheck do
@@ -12,16 +13,13 @@ class Pcb < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "ecedb141b039b57367605465bd2b82b375b24c464a16e024bc4f48fdf6c07942"
-    sha256 arm64_ventura:  "20a606566fd0c8b018cdd0dd4ca211d099818286e0ebbdbcd157e721e38aaedc"
-    sha256 arm64_monterey: "71f5ca60f422ffc8d6555560f37167aae20a07c103c35fa3d100feafb9a9bc01"
-    sha256 arm64_big_sur:  "41a14f1d1a3439469248dd6b58535c082f084376a90ecf3ccca2513e70cd2028"
-    sha256 sonoma:         "af424765f5930108fe078dd23beb74c037350c0bdab0db25bb27865dbec7655e"
-    sha256 ventura:        "0a58696e6e8bef6689734d98d79644535cf34aec2616b120c587124a6daaaa90"
-    sha256 big_sur:        "f73590271ddcf104d25fecad90c916e4d535a5041280a1bbd661acdafc806b24"
-    sha256 catalina:       "a8937f1ce318a6472532eae067dc581ddef61518a5b56db83883cb2119c2bf32"
-    sha256 mojave:         "0607471efce526eb3fd06286f28fa664276ab8b4c3f407b14e18eb3c426cad59"
-    sha256 x86_64_linux:   "96a5bd2ef750cb1ae31604bb9f2e78daae83d9e20d7f432fa656601471465370"
+    sha256 arm64_sonoma:   "191403f5cf3241f6322f861bf87c986a5e9e584b718694a09e8d78ffe88090de"
+    sha256 arm64_ventura:  "50572577988176158590776ea433364a6198912f1a7a723894850210ed83df8d"
+    sha256 arm64_monterey: "7782eb09fd3afc492dee0cf01c174076d43d57af106b0e17179309dddeb691c2"
+    sha256 sonoma:         "c130c3df546d25dc2bd04ecab6bab91443a78ae03fbdc69ddbcd8cc9254cf41f"
+    sha256 ventura:        "146de3e1c90e9fd5cd77cbfc9e9f803d3aeff8c15488e8c58f4131dcbd73a920"
+    sha256 monterey:       "fcba66246a65011041d14e79b9374017581de797ed85de564ce79358f796caf4"
+    sha256 x86_64_linux:   "14d163a567ff23fb93d3c08b11c6e70d0ccd80a6897a01ffe4fdd3e112330ec1"
   end
 
   head do
@@ -48,13 +46,17 @@ class Pcb < Formula
     depends_on "gnu-sed"
   end
 
+  on_linux do
+    depends_on "perl-xml-parser" => :build
+  end
+
   conflicts_with "gts", because: "both install a `gts.h` header"
 
   def install
     if OS.mac?
       ENV.prepend_path "PATH", Formula["gnu-sed"].libexec/"gnubin"
     else
-      ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5"
+      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5"
     end
 
     system "./autogen.sh" if build.head?

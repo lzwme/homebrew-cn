@@ -4,22 +4,16 @@ class Gtkglext < Formula
   url "https://download.gnome.org/sources/gtkglext/1.2/gtkglext-1.2.0.tar.gz"
   sha256 "e5073f3c6b816e7fa67d359d9745a5bb5de94a628ac85f624c992925a46844f9"
   license "LGPL-2.1-or-later"
-  revision 3
+  revision 4
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_sonoma:   "568b8f7cdaecc598aacc510b0526003202407cb86257f0c7eccca898e61d3b3c"
-    sha256 cellar: :any, arm64_ventura:  "7e761fba5d5ae2e370a03c9f09336d0faa9c13f65ee73b8b2bdae413c035f471"
-    sha256 cellar: :any, arm64_monterey: "a42443e10af16bb89c45e2ebed7735f8a5693219e00964a6a8599cf105e4f289"
-    sha256 cellar: :any, arm64_big_sur:  "0e7132d3e408cb5d9bbff6e8f6e93bc6460ebbb4f3e6f365d8cb331edee9435a"
-    sha256 cellar: :any, sonoma:         "d82f4eebf08a2d7393f0cfcbb60b0aa8c403662b36d3115039dd9ce439d0839c"
-    sha256 cellar: :any, ventura:        "cd52e03d283779558b3eb60e58633be5ef0977e662710c265b7d7465ebfe52b2"
-    sha256 cellar: :any, monterey:       "9f4a28bef624c621d498d6f0c8dc1c0193735ab5f63b60373a9969dba9736c34"
-    sha256 cellar: :any, big_sur:        "b367a1ac2118e2bf146d4efd53f5c7b3870b1f0e123ebfc072edf3e1c7eee8d6"
-    sha256 cellar: :any, catalina:       "34d57545ff116ecf21f8e6f8695a6a20ac8f1fe90439be0f166420d4623b0050"
-    sha256 cellar: :any, mojave:         "aa701707e57b30e6bba5e9f4b28993e7393d43f471994a46572daaee6d678a55"
-    sha256 cellar: :any, high_sierra:    "6862527d7b86b6940a38f9fb189085d80b6ea67ee80adc2794e550999e8cc86c"
-    sha256               x86_64_linux:   "6e82f4383e3a88e158ad287109440ad81b8298efb14045efbc33b892a10482dc"
+    sha256 cellar: :any,                 arm64_sonoma:   "dbda7d73cfcf8ff56426e761be3d928b47cc25142be9e436f29634f306ceb02d"
+    sha256 cellar: :any,                 arm64_ventura:  "97c561405376a0e3f03d661edb63332c449464eca670d94d95276d7a16708ada"
+    sha256 cellar: :any,                 arm64_monterey: "4082e12c1b01e56342b49fb16241fb6e4e52b6c1f5691052b332f75b8892781f"
+    sha256 cellar: :any,                 sonoma:         "ea372181dc03023ea581b14ca996646f6da8cdb54d81911f5b999281c70ecdd7"
+    sha256 cellar: :any,                 ventura:        "986da9680b6032a4f4ae363e3c18176dce0bd276367e311c36b09494198d79d1"
+    sha256 cellar: :any,                 monterey:       "6f045d38e2a584449fa6b5fc275f13b46bce7a4bd892219bb9dbe9bae44a9835"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bea86597c739ebbf55d551970dee174085bfc3d0c4d70f06f0cce969979ef2af"
   end
 
   depends_on "pkg-config" => :build

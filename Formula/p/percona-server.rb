@@ -5,7 +5,7 @@ class PerconaServer < Formula
   url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.33-25/source/tarball/percona-server-8.0.33-25.tar.gz"
   sha256 "9871cac20c226bba7607f35c19ee23516a38c67573dd48618727c74eae22912e"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://docs.percona.com/percona-server/latest/"
@@ -20,15 +20,13 @@ class PerconaServer < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "598f4c74975b61f09220ed2c650bff47e6a4eb564b0338961e2ffe1ad0111c0e"
-    sha256 arm64_ventura:  "866b29e8fb5e9265f81f4b2102c2fd16671b0a118306f55b0c639959170e0574"
-    sha256 arm64_monterey: "00c71be1b3077e8a7dc4c23fbe91da0f3e58ed8a1b6ea46ca44d4f071006786a"
-    sha256 arm64_big_sur:  "b0004364879aa7b5b9b6eb2449551089e64abdbc2abe968fc86fc5a22b1d3a38"
-    sha256 sonoma:         "daea7a9d6f1ada1a007c8af3d7456a7310307b0e67c2ab910ebe59f553bff71a"
-    sha256 ventura:        "215a6aad27899458a2fba7cc1d771b831434494486b2c8189f681c1ea70c04b3"
-    sha256 monterey:       "3be17693d7b2d6cbd7aa8b3ae80f77e12af9bee25f7a1982889c7efcfc8c9dd7"
-    sha256 big_sur:        "4e735dd3aa75b3822de8fbac6782a788f7b0d4c95655277bcdc2228f2bc8762e"
-    sha256 x86_64_linux:   "ff5ac540d35bd831661ca43f8fb98b151556a31b636a767032f1b6d0d6256cab"
+    sha256 arm64_sonoma:   "0258c3dab06898c57f4fadedee41c60f12e66c64b8ba53beadccad386a536371"
+    sha256 arm64_ventura:  "892c6d995dea2f56b8f9b9e505df2b847c423c6e1d1de32b249adeabe308ee9d"
+    sha256 arm64_monterey: "775b3b26e8750ef2de21b169dd1fd4fc4c6e4eefac6711ce3a632feb6e17b790"
+    sha256 sonoma:         "f048cd7469765d6e19d3534ba76ba6d2b7a1a486c578032d0cab79a7feaa3b49"
+    sha256 ventura:        "b47c75fc2329d18308abba605ff09bbd793bb34913748bb0831c60c98ef3c568"
+    sha256 monterey:       "ee4bc7f153611ed7f3a2d53c7c7d2075498d8dbe32f4541a259cb95fd2f1397d"
+    sha256 x86_64_linux:   "17d4881e1e4fd06bcb8845f165284611a976b0dd3793977324b8b51ccb4e8409"
   end
 
   depends_on "cmake" => :build
@@ -115,7 +113,6 @@ class PerconaServer < Formula
       -DINSTALL_PLUGINDIR=lib/percona-server/plugin
       -DMYSQL_DATADIR=#{var}/mysql
       -DSYSCONFDIR=#{etc}
-      -DENABLED_LOCAL_INFILE=1
       -DWITH_EMBEDDED_SERVER=ON
       -DWITH_INNODB_MEMCACHED=ON
       -DWITH_UNIT_TESTS=OFF

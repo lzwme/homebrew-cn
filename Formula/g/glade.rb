@@ -4,18 +4,16 @@ class Glade < Formula
   url "https://download.gnome.org/sources/glade/3.40/glade-3.40.0.tar.xz"
   sha256 "31c9adaea849972ab9517b564e19ac19977ca97758b109edc3167008f53e3d9c"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "28e61c555dda9c24738a962df1d597fc713462c4c94b23a36a22e1c7181e5228"
-    sha256 arm64_ventura:  "e9d58dc0453a314a7f65b58a05c26a60e1738129d46ab680809dd6ef8c1a940a"
-    sha256 arm64_monterey: "3204eb2e65d9f7ee7bb01278866cd651584379e17bc3d9deb84fa3a9407e8c92"
-    sha256 arm64_big_sur:  "90b87f046dff0347c67730ecc5e616477add043a717d3014fe6a5d585c0b87c8"
-    sha256 sonoma:         "d8d85e0e39a27ac1efcdf785fff08a3f1500b796e069ef7c1ed7f8f2271aed3a"
-    sha256 ventura:        "9e7168e7ffcaaaadc81f3afa6206a77e00a76801f05d0a3a2b964770ca28caf9"
-    sha256 monterey:       "29586d6ceb94728ae1dc1195e512a9a53da6a67c0efa52786f9860f768f43b73"
-    sha256 big_sur:        "6ecb0865146c646602a1cfc885992a0d5f0e6b2a5b2eda31af6a6b05a3d25e2f"
-    sha256 catalina:       "5268fbbba91775b3c1c12b3b7bdbe614c59ec60c16b72c20d7a4981d17dedbde"
-    sha256 x86_64_linux:   "a00c2411a4290e3b5c38f49a7c69a74050e8997ae51a4f12ea11133c49eed945"
+    sha256 arm64_sonoma:   "271ff90536f47461687153dc97dd25d5ba9ad4f22c1a087e303fc52f54646dda"
+    sha256 arm64_ventura:  "a9a7c003418e9867e2ae9d1da7c4230a812638d06b1ff6626454c952e4107e16"
+    sha256 arm64_monterey: "254b71a95a632595fc9314162cd89607fac7ee27890bf57155fc2882473258a2"
+    sha256 sonoma:         "00e5ab66baac9cb320fc6f95281d3a0d647fef6c8f461c0ba4ff1c45ecc56a58"
+    sha256 ventura:        "ce76321eef07573869f0f9d38048981c32780dc98e1e8cd40761dd62725c770d"
+    sha256 monterey:       "6564eb300ee2bf7ad5b8d587cd77f66bddf91087626bb9b07c0148776a1fe95a"
+    sha256 x86_64_linux:   "a68666c43b3c79b9532742a2351093d587fe0da66c369ba3e62ed35f223c4deb"
   end
 
   depends_on "docbook-xsl" => :build
@@ -43,11 +41,9 @@ class Glade < Formula
     # Disable icon-cache update
     ENV["DESTDIR"] = "/"
 
-    mkdir "build" do
-      system "meson", *std_meson_args, "-Dintrospection=true", "-Dgladeui=true", ".."
-      system "ninja"
-      system "ninja", "install"
-    end
+    system "meson", "setup", "build", "-Dintrospection=true", "-Dgladeui=true", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   def post_install

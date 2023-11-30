@@ -4,6 +4,7 @@ class AtkmmAT228 < Formula
   url "https://download.gnome.org/sources/atkmm/2.28/atkmm-2.28.3.tar.xz"
   sha256 "7c2088b486a909be8da2b18304e56c5f90884d1343c8da7367ea5cd3258b9969"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,22 +12,19 @@ class AtkmmAT228 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "2cef03dc3af50d5f7b2619c2b0b8568729f632e3ecafa630ada0a0a9fcf44b7c"
-    sha256 cellar: :any, arm64_ventura:  "27e688d6ee177a411294848acda3aa39ced89fc8a9a12dc3822f3d42131e2673"
-    sha256 cellar: :any, arm64_monterey: "876683a0c5f4da334dadb0142c564fb2007d9a3a66c7696dbfdc03dfb9162f9f"
-    sha256 cellar: :any, arm64_big_sur:  "1b957048c912011d829c1b4842c8e7cb94526e80500046d732010881d33109ec"
-    sha256 cellar: :any, sonoma:         "577413f3408e7f51abe64a854670fdf5afc67c3f2fc87db5cc56a5d7212e1cdb"
-    sha256 cellar: :any, ventura:        "82b1072bb49372eb831a548c33461d13db549f5856019cb2f86705e589726715"
-    sha256 cellar: :any, monterey:       "8ca4c71ef66437838731e95a460d66430554fd3468b3c8856e638b09d94f2bc5"
-    sha256 cellar: :any, big_sur:        "473ce70bed27eac91868d6b8214c027b08e88abea444076d20615462842b86a2"
-    sha256 cellar: :any, catalina:       "4d2aeadd4d5114932d7d90ac2d53ed409e84b1703112e6dc5a0e8a5992d214b2"
-    sha256               x86_64_linux:   "0b1ed87427fb65199370db6a27c2bb18c0ebf330782ff32297bf1519c74d764d"
+    sha256 cellar: :any, arm64_sonoma:   "5a581861d6bb55bf9d28243cd840de350c30b849aec3603504dfcc2c71dfb951"
+    sha256 cellar: :any, arm64_ventura:  "4d8908bd0150a0b55e0cb5e326b605bf1193c8e9d0850254ee44bbd71424498c"
+    sha256 cellar: :any, arm64_monterey: "2feda909595a65e5b4ca13cf6ed7118468e574bdbb89c8f3612d1925ca4ce4ad"
+    sha256 cellar: :any, sonoma:         "7ad0339a62ca82729c825de625993d412f70aa336f46b960346ee262e25f00a9"
+    sha256 cellar: :any, ventura:        "17a4dd2668827e83301fdb66c484a31b114ef58ea2768f861298ec5d35f92e9d"
+    sha256 cellar: :any, monterey:       "0fbcc6e6b2afd35ac29a957a7ddc5bac274910af2ae2deb9d2661906f41c60ce"
+    sha256               x86_64_linux:   "fe41ce9bb29de1d598e38f0e06cca673b3703561108ebaa665fcaab73f368ad3"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "atk"
+  depends_on "at-spi2-core"
   depends_on "glibmm@2.66"
 
   def install
@@ -48,7 +46,7 @@ class AtkmmAT228 < Formula
          return 0;
       }
     EOS
-    atk = Formula["atk"]
+    atk = Formula["at-spi2-core"]
     gettext = Formula["gettext"]
     glib = Formula["glib"]
     glibmm = Formula["glibmm@2.66"]

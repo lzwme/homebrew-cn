@@ -5,18 +5,16 @@ class Eiffelstudio < Formula
   version "22.05.10.6302"
   sha256 "c2ede38b19cedead58a9e075cf79d6a4b113e049c0723fe9556c4f36ee68b80d"
   license "GPL-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0f874957ea698f23de6ad67f6bcde3d1f06d636857c5b81cfd69bc502dd4662f"
-    sha256 cellar: :any,                 arm64_ventura:  "f649798d11ada5d28576c801c4f9f3e5b73aae8e7b82ba73c502c4894e405415"
-    sha256 cellar: :any,                 arm64_monterey: "7702a2a1ad36efe8571c676468582eacc949c64fbd785684e64adbb9613c394b"
-    sha256 cellar: :any,                 arm64_big_sur:  "05891069a779e163414a4fb38126f81974375bb762a16391446efb7d8925213a"
-    sha256 cellar: :any,                 sonoma:         "e999afb43388ab169f86074adcf157008574d5e27024f492ff82dde005b46548"
-    sha256 cellar: :any,                 ventura:        "e462d3c40cc95e39824936bd6365416bcd968a16c605acae501e1f68b8ba08e6"
-    sha256 cellar: :any,                 monterey:       "7b93bd2cba3b0fd57de705bdce5d9f5d9602f12789468a067d40cafd2ab1a225"
-    sha256 cellar: :any,                 big_sur:        "6f6cdc2480c8fd52baa606189ef7a7f381779655640bb84ce89c7651d52858c5"
-    sha256 cellar: :any,                 catalina:       "b7ced66010ed23f1dbd4d25c959828188708924402a5e350e8858c235cfc7374"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48c2d59af7e2b897b4f5560f67a0818679a44542dcfb59f5a2c81cb74b45f980"
+    sha256 cellar: :any,                 arm64_sonoma:   "eb80572a9f45330718c9d37480bf5dd883654e1fef524447d828558d3fa86223"
+    sha256 cellar: :any,                 arm64_ventura:  "13f283babf97160d03bd4793575262df0d96abccbab80a0e23749c43c72b2000"
+    sha256 cellar: :any,                 arm64_monterey: "b38d768b91d114b8e1fcc2f010043ded8d4fafaec9858b1523044d33d3c78331"
+    sha256 cellar: :any,                 sonoma:         "c431ca8133ea66b0ca7d454c9df091cbbfe49919452eff177bcb60ef2704de05"
+    sha256 cellar: :any,                 ventura:        "b9e26ab5cd7c6743642b95b88062306a61e1347daa3cb78d986f8b66d770765b"
+    sha256 cellar: :any,                 monterey:       "94244ccd7e1fcb3c01386840912cc5a1e0b57e54431493b40a57b2258e05963d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e8570d391bf49d1208347ae385debef2ef5b3156a338417ecfa8b05610ee4ad"
   end
 
   depends_on "pkg-config" => :build

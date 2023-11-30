@@ -2,7 +2,7 @@ class OsmGpsMap < Formula
   desc "GTK+ library to embed OpenStreetMap maps"
   homepage "https://github.com/nzjrs/osm-gps-map"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   stable do
     url "https://ghproxy.com/https://github.com/nzjrs/osm-gps-map/releases/download/1.2.0/osm-gps-map-1.2.0.tar.gz"
@@ -15,16 +15,13 @@ class OsmGpsMap < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_sonoma:  "183abe2649476771d6429c806f6b64669a6602d3d3320cd897d17c780e0077eb"
-    sha256                               arm64_ventura: "cb2a486b55c1d892e15850c581795642594be622c74bccdf7b68399d05c45c2c"
-    sha256                               arm64_big_sur: "69c8b2b22877a14f14d04d3f40a890f6b092b992bcb86270c1f82ff79f54ae50"
-    sha256                               sonoma:        "7cdf31ba849d8212a0780de305d13c120415df2f4f65e8462cf45848e6e25574"
-    sha256                               ventura:       "42936a83f068fc0b03ea5925b0c8016bce98a7f9a043ec9306b52c8205ca8d8d"
-    sha256                               monterey:      "322015ebc1b2ce52d40d2db2d27662f639725bd474aca83b1af9238abccb903e"
-    sha256                               big_sur:       "5e88cd60732ed86ec019f82a136d3445af500893435b804f68c41d25fe8de72c"
-    sha256                               catalina:      "3bd120a4480aaf535f90b4660a3029682adf413eca6243c5a69e15856be192fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a70b74c033694c33f50fdd6190676cf47deb46e7ed0425e5be4e085fbc3c357"
+    sha256                               arm64_sonoma:   "4e99312645cad4b62bce40d08360aaf0071a7a5fce6e8331c3940fc9956d6a30"
+    sha256                               arm64_ventura:  "2bc5f12b6808b31bbc6fb791a90a8561c33eb88ac4d937d9d48df795570fe2fb"
+    sha256                               arm64_monterey: "8dddb7d2eee3341e52742fb0d9d2503a081dcf53777048e614ee0d873314af3a"
+    sha256                               sonoma:         "14f294ea2b9e3031d6e7f53b06f926846e3a2de6e7ff7c61a1ab68ed5f651d58"
+    sha256                               ventura:        "6cda5bd18d03de3bb11ddff9bf3b4451257f612ae26a03cf3d2f2cf09bdea496"
+    sha256                               monterey:       "23bdada15af6c8a29c89925199ebf59225d69edc709531a33f82f8e9be659085"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9267eb6c95ec708b3d3d1df50e7201f58ae05fb05816cf17656c5a4c71875ab2"
   end
 
   head do

@@ -4,19 +4,16 @@ class Gtkdatabox < Formula
   url "https://downloads.sourceforge.net/project/gtkdatabox/gtkdatabox-1/gtkdatabox-1.0.0.tar.gz"
   sha256 "8bee70206494a422ecfec9a88d32d914c50bb7a0c0e8fedc4512f5154aa9d3e3"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f4828cb2a7e45bd157bc9a675f5f05eb0de78f257c19619284329d6b263e00df"
-    sha256 cellar: :any,                 arm64_ventura:  "b2ebe0189a75ed8bc48c6eee421cd63b42fc0a7792a78c3783ae1ba2acaa4ad2"
-    sha256 cellar: :any,                 arm64_monterey: "af11118be54316daf2c684ab1ed515c1150e151bc58ae7d59e4c9afcb40c5180"
-    sha256 cellar: :any,                 arm64_big_sur:  "23e28de98208139a408ecdca12fbe9a7008bbbbca2929a4cc7a85b29bf57edf6"
-    sha256 cellar: :any,                 sonoma:         "fad620ac552152fcdade182178d29cc660d766a00ff2f252650caf1f2c7588fd"
-    sha256 cellar: :any,                 ventura:        "91b73d901896ec24e2297a1290de34bb3699784fda2f28796bc8a7c8c95e5983"
-    sha256 cellar: :any,                 monterey:       "f123f4e93272456caacfad30ae63252ea51001a0f5b2838f147c337ee6e2bf92"
-    sha256 cellar: :any,                 big_sur:        "534fd2192131f7d6a3b07e75bc02e1f184996f3bcadc01ef396cad541946f518"
-    sha256 cellar: :any,                 catalina:       "c9dc8748b00eddcc57d4d006c1f36bec576b4180bcd33458766e6c17d029c47b"
-    sha256 cellar: :any,                 mojave:         "7bd730c346c35c5a87d693e4c9bb4f87ae38031204bed90391027ad18c2786be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15a45c4557baf53c2ad7131bb167ad88ca2d9521e51bf738fb4ec35f23750eda"
+    sha256 cellar: :any,                 arm64_sonoma:   "c4c95de47b74f0a924c88543dfbfc01999cf3491ce8bac5e77b0db2a265bb0e9"
+    sha256 cellar: :any,                 arm64_ventura:  "058fb1cf99c7c1a34a9c7b81ebbb8720863009241ad47d69b47efb2f448ff84a"
+    sha256 cellar: :any,                 arm64_monterey: "1951c01226523dbbf91a85816a64fed3377b9c4fec4180536b608b93151eafb0"
+    sha256 cellar: :any,                 sonoma:         "bfaacbe85617357013ed6368753b261bc87963366680eac5f73cf85183710f96"
+    sha256 cellar: :any,                 ventura:        "7a86f4f2915d37de33ae84232fa05588e576a2e0698321501b3a75e0aedd9ace"
+    sha256 cellar: :any,                 monterey:       "abc35085101b1fdde0163eb859927e6dcc35e2d38451d033b78206cb24814fa0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1585023f5e6799a8eab163fae37ba597262d3352a01f2bee7763359224f94388"
   end
 
   depends_on "pkg-config" => :build

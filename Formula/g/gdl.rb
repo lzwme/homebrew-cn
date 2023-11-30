@@ -4,19 +4,16 @@ class Gdl < Formula
   url "https://download.gnome.org/sources/gdl/3.40/gdl-3.40.0.tar.xz"
   sha256 "3641d4fd669d1e1818aeff3cf9ffb7887fc5c367850b78c28c775eba4ab6a555"
   license "LGPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256                               arm64_sonoma:   "6afb4a5408293dbf345d97596a338dfe52947e942cb94358cf549b3002c7e138"
-    sha256                               arm64_ventura:  "05d8c74345f6a707a3a7f106b224457683c9f98da930d58a76ed60aee42596d8"
-    sha256                               arm64_monterey: "20a0742ffcaa3bf6a8ee5c1531ed48f2b51a18c7a816f4b96d85192c2906db23"
-    sha256                               arm64_big_sur:  "e96c5e69fc084fd421f08f651e8727fb7a5d28e270c804ebba7e6d860ccec583"
-    sha256                               sonoma:         "8cddff42604e103f61dfc97365f40fb04e306f29e014fdc3d06aedf29d4b1196"
-    sha256                               ventura:        "83bb5806dac6659eb548241dcdc75b241ba8f75f8591fcec7af37c5b0e7a3c02"
-    sha256                               monterey:       "b1a120f5c6ae1e9f6802be4306f00cc2fc54ca1aaf75c017fa74efd6dec2da0e"
-    sha256                               big_sur:        "98cb1563adec26dea9289d5ad3f5b006c26897cc9c586114efe0dcc2214a1a68"
-    sha256                               catalina:       "11df5d907431165eb6f9a6b8673f413dfd939199940b5a2e3a3f78eab11c2ce8"
-    sha256                               mojave:         "7d91a82fb426e6791aea2e93a9d0fdbf33aa8fb366d375734001614196212564"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26ae14bf457ab681be21fe8b61fa612af211f80c2d8f52416dbb4a9f55eaa0e7"
+    sha256                               arm64_sonoma:   "1cfd6543098b8fbd77e7fd87c1c16f37d6f486c50323e39bf2d52605409b0f11"
+    sha256                               arm64_ventura:  "d896433e025e9c24f986d70fbd82afca5692a82a1a94613b6f4542f341a9896d"
+    sha256                               arm64_monterey: "b3769eef48ccbaf262852d48819309afac933d962c7464d4fa3e28a1449b0334"
+    sha256                               sonoma:         "4696c6de941ce9c03db4631ce5bc3a53d83f5edfdbff117b3d9c4cba1af3ca1f"
+    sha256                               ventura:        "9485abd2cefbb7793c73f8de136bed12524f5e54452bc89b386bc19274f09b1b"
+    sha256                               monterey:       "96f6f072cd160b556e5f3e02eb8ffd5cbbe1d4a77877d8f1f4b0d9d986bdfc19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83b01e8322122e6bbca3d696cb820b83409a1320a3439ef5aa3f56a2de3e908f"
   end
 
   depends_on "gettext" => :build
@@ -30,6 +27,13 @@ class Gdl < Formula
 
   on_linux do
     depends_on "perl-xml-parser" => :build
+  end
+
+  # Fix build with libxml2 2.12. Remove if upstream PR is merged and in release.
+  # PR ref: https://gitlab.gnome.org/GNOME/gdl/-/merge_requests/4
+  patch do
+    url "https://gitlab.gnome.org/GNOME/gdl/-/commit/414f83eb4ad9e5576ee3d089594bf1301ff24091.diff"
+    sha256 "715c804e6d03304bc077b99f667bbeb062c873b3bbd737182fb2cd47a295de95"
   end
 
   def install

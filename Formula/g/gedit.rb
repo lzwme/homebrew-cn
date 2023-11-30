@@ -4,17 +4,16 @@ class Gedit < Formula
   url "https://download.gnome.org/sources/gedit/46/gedit-46.1.tar.xz"
   sha256 "a1a6e37f041765dff7227a1f5578b6f49faaf016b1e17e869caf5bfb94c6aa4e"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "08de43866055e24e23f9a4454283240453dc31689134ff5c8ad79920281c35eb"
-    sha256 arm64_ventura:  "c5c423f03f3223640738588e8b039ffba1a7aa693ee624c3351faa5befeee5e4"
-    sha256 arm64_monterey: "94eb96a3893d9ff2594a62d0121ee2e7da81c089612fab86fbb0889b2a3857c9"
-    sha256 arm64_big_sur:  "4c9bd81c2ac45b00625beab8471105e7e8c1b861f8749a30e1a7c3033697a7e2"
-    sha256 sonoma:         "b7c5a552209d74b04184e045677c7bd46568d51dbc0a6ba05db087e7f99956cd"
-    sha256 ventura:        "0e3029e4939dabcce383c8a3d69dee70863c2508d6af010da83e4e61af717132"
-    sha256 monterey:       "f3c17e4bfcf524a88662f4adab87a00b4b9ba7a5802623f7261a523dbd76eb28"
-    sha256 big_sur:        "aefd5b227129370ddb1d90bc92c6df4908980984fdec991a2f461edb6dbccb4d"
-    sha256 x86_64_linux:   "ccb491551263d3e43dc064c02141b0095ebf615e78374445f59df7a2eecd8a3e"
+    sha256 arm64_sonoma:   "3dc00cee81ce4db3e3d62fc48f48ed23f074eb55e3d767a2594a5630ba34a708"
+    sha256 arm64_ventura:  "12cfbae2966fdde44d786f39497b69416b992f2fb2c5ddefac80b7ca7b8e5c6c"
+    sha256 arm64_monterey: "d70cc384ceb71f0044a89d4ce63bad6636b4b2cbe8b3e635bcc7dc082d4c250b"
+    sha256 sonoma:         "16550a2071d4569b67761a1e0f046dc5dc8e6a81e1f9f984a6f661e255bc7742"
+    sha256 ventura:        "2fe8a8789a93f1cfacd424309c1a8c790c29f47345236e8c6649a55fd118ae8a"
+    sha256 monterey:       "ebf405597d4719e974f378b2ae032119d4f73ca0f826ec263858ab4fa26da9bd"
+    sha256 x86_64_linux:   "cf98197954d5156b7fe90ea20ef7ddfd1c5548b6e83e792d13925bdfc5f5d405"
   end
 
   depends_on "desktop-file-utils" => :build # for update-desktop-database
@@ -26,7 +25,7 @@ class Gedit < Formula
   depends_on "pkg-config" => [:build, :test]
   depends_on "vala" => :build
   depends_on "adwaita-icon-theme"
-  depends_on "atk"
+  depends_on "at-spi2-core"
   depends_on "cairo"
   depends_on "gdk-pixbuf"
   depends_on "gettext"

@@ -1,7 +1,7 @@
 class Tasksh < Formula
   desc "Shell wrapper for Taskwarrior commands"
   homepage "https://gothenburgbitfactory.org/projects/tasksh.html"
-  url "https://taskwarrior.org/download/tasksh-1.2.0.tar.gz"
+  url "https://ghproxy.com/https://github.com/GothenburgBitFactory/taskshell/releases/download/v1.2.0/tasksh-1.2.0.tar.gz"
   sha256 "6e42f949bfd7fbdde4870af0e7b923114cc96c4344f82d9d924e984629e21ffd"
   license "MIT"
   revision 1
@@ -14,9 +14,11 @@ class Tasksh < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "e03ada11df6af02686b40955cd55f00851e00ec558cbedd71bf84c1ed5098b94"
     sha256 cellar: :any,                 arm64_ventura:  "1a8bbc54e5712ab5b9caa686e6348365da4c8bdaebeaae474be2edda28368d72"
     sha256 cellar: :any,                 arm64_monterey: "6c6390a79e5f4645f2cf2507a1c29ad1b935a5f51d87387412e557343688a11d"
     sha256 cellar: :any,                 arm64_big_sur:  "590c43b791080cc6ca56cef896c9e75a8ca77915b061a1d0a711a0489e69ab63"
+    sha256 cellar: :any,                 sonoma:         "fc26e6d677232268991d4926c4c2e5f13f839918be416b4675326d227f4fc1ac"
     sha256 cellar: :any,                 ventura:        "d0a97986a19732ce4d3818c5b452f6ce636ce957e401350cade47190e5b7b2e0"
     sha256 cellar: :any,                 monterey:       "778d32859e2a65b224819a39d022611b7959fba4d72d08a45d42f76bf6cf6cf8"
     sha256 cellar: :any,                 big_sur:        "987789014e770fb3b4b1d4500321877c457ba2a1dde2fc9925762dfb0d7da541"

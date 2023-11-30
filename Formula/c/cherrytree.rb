@@ -4,6 +4,7 @@ class Cherrytree < Formula
   url "https://www.giuspen.com/software/cherrytree_1.0.2.tar.xz"
   sha256 "bc1ce491890e345513df2a93a804f75803966f28e9aacc6bdc825155a32a3123"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :homepage
@@ -11,13 +12,13 @@ class Cherrytree < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "e17739a0b2be2e2122c9f69f6a3a7208f5a22bf7f0ffebafa25a1581754f59c0"
-    sha256 arm64_ventura:  "0a4407bd1c5617a963543152d9080df36148860831570ad2bd95fc2dc8049dc4"
-    sha256 arm64_monterey: "4d82bfcb42527d8d84745ce89e173ead8f4b6adccee6cd049fbb548f878b7f46"
-    sha256 sonoma:         "5908f2797869a21acad1ae38ad119119d400a7e0c6dac97ff973a88d3b220bcf"
-    sha256 ventura:        "fbdd21135120eb956f03d82e477e3c13e2afbac24b601079cebe2da17f1cb435"
-    sha256 monterey:       "7051ad849901cfeb0b51253593cc915b3f5286767381e2560ffdac4742b1400f"
-    sha256 x86_64_linux:   "c09b53fc030b633d8df715cc4ff0975fc30af7f0d4b10ef2ebf037f010775b84"
+    sha256 arm64_sonoma:   "479ec49fd80ec82210d71030caa5b2830a1523cc7037f5a8d8216c742f867a5c"
+    sha256 arm64_ventura:  "f75f186e4b9b74f94e2b92e79d22149df6844f40eadf2307fdbd84d415e2bc0a"
+    sha256 arm64_monterey: "881c245d6dcbea6550d7613e8faf127b41b11fd540d3e624b6f3014336a667c4"
+    sha256 sonoma:         "d7487378007a456264bdbd065c2ef68bff6ffeb7caf82101accd29d270c407c5"
+    sha256 ventura:        "270a68a2dcbf0e7c28d99da5c6608d16a2f3e5cee9afa243a4da003da2df7660"
+    sha256 monterey:       "a42e76458df0e3d4caaff912d365e9fe9511c061ab9733f91108fa756e287458"
+    sha256 x86_64_linux:   "e9ada5c07944c38f4872b944ea92faee9f3cee02a961b20effbd9cd9e4315960"
   end
 
   depends_on "cmake" => :build

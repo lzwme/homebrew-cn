@@ -4,15 +4,16 @@ class GnomeThemesExtra < Formula
   url "https://download.gnome.org/sources/gnome-themes-extra/3.28/gnome-themes-extra-3.28.tar.xz"
   sha256 "7c4ba0bff001f06d8983cfc105adaac42df1d1267a2591798a780bac557a5819"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "34d4d0a58cbc2d46e00628d61d1eae314393c39439a7324096e7b5168e6327c3"
-    sha256 cellar: :any,                 arm64_monterey: "dbba4ae58f0979a6315ea273516bde29caee4b4e9ea2242db68c76b24b2be335"
-    sha256 cellar: :any,                 arm64_big_sur:  "594262977d1082f945db69fe5d76762669c124fc58d7ed183e293ee64ee672c1"
-    sha256 cellar: :any,                 ventura:        "2ba89f804c8abd86fc4b517171807fd7f2e1cd18b57fdb4b501a6ef85641b793"
-    sha256 cellar: :any,                 monterey:       "16b03f35efd37b1e25a5f69a3c83591f3ee678d832051b157d9c9e5069f99d4f"
-    sha256 cellar: :any,                 big_sur:        "bce14cf1e42eb6e0748174bd3b41831637f0b9c1db4a3593a487d6582ba5e8cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81d449ba26c4cd7191eb52c1ad0ed4b805ae85345741566faac662c6fa3e5390"
+    sha256 cellar: :any,                 arm64_sonoma:   "bc49731aec4652327aac34ead43265575048800ac75e769fb8effc8e975f6bad"
+    sha256 cellar: :any,                 arm64_ventura:  "291bd9c91143fd2dac260a4ae70c37e77fb3da2e92d3fecd66f88c23cc95d320"
+    sha256 cellar: :any,                 arm64_monterey: "35b85f8e887414d692cc57a6ada94634cbf446cad7e717714a499afcec1fe76e"
+    sha256 cellar: :any,                 sonoma:         "764d0ca9feceaf6a174c242d135cbe7d04bed2b98eee1208b9f0258c9545857a"
+    sha256 cellar: :any,                 ventura:        "11323caf0f8a1f3745f1f0ae6f0b5558590148a1eb0efd124a32b3ee945b50ab"
+    sha256 cellar: :any,                 monterey:       "ce23ae32bafec76ac518498866c1e32d4587909ed9c69f24ba9b5796f30428e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f5c9c176b316179b530c7d28fb245f93881339b1ec7737685c85f3d0857248e"
   end
 
   depends_on "gettext" => :build

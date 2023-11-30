@@ -1,13 +1,13 @@
 class Kew < Formula
   desc "Command-line music player"
   homepage "https://github.com/ravachol/kew"
-  url "https://ghproxy.com/https://github.com/ravachol/kew/archive/refs/tags/v1.8.tar.gz"
-  sha256 "5f7f9580011ce56bbd6c50e766542bee93965a9d6ec5998f3db28e989d1de056"
+  url "https://ghproxy.com/https://github.com/ravachol/kew/archive/refs/tags/v1.8.1.tar.gz"
+  sha256 "608a8720306207debf354558e547fc3b8e42f91b6e81c899bf7499ab5d3ef3d7"
   license "GPL-2.0-only"
   head "https://github.com/ravachol/kew.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "eed69af58ae7f2f1bd5205d1caa8c9b7db0deadc8bad0fdd6949d6d2b9a1e538"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "068d1c72cb845da4db93d166641d51185019fbe0343acaf5731538169aa50f29"
   end
 
   depends_on "pkg-config" => :build

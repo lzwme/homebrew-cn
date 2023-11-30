@@ -2,6 +2,7 @@ class GtkMacIntegration < Formula
   desc "Integrates GTK macOS applications with the Mac desktop"
   homepage "https://wiki.gnome.org/Projects/GTK+/OSX/Integration"
   license "LGPL-2.1-only"
+  revision 1
 
   stable do
     url "https://download.gnome.org/sources/gtk-mac-integration/3.0/gtk-mac-integration-3.0.1.tar.xz"
@@ -22,15 +23,12 @@ class GtkMacIntegration < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "85cd5c0a85e3e5dd6eb25fc472ff8bca8904dfe6e2d5c008cf94707979780b50"
-    sha256 arm64_ventura:  "9074e95f28068dc78a191df93877127a01cf4670bb9ccdfe9146e54a0ff7c0d9"
-    sha256 arm64_monterey: "26d230d66f0a6900e8590fbfa6a6d77fee9b1d42db18a48b457ede3c9fab8485"
-    sha256 arm64_big_sur:  "7151adc39408f9e6b22706c623c2d16f444612e767c6eaba59b0c40f87a0d05d"
-    sha256 sonoma:         "25c3fecf35f2b447f160fd4b8e5e1434c816a04d2fd6c3a5cc0c3d0163deafe9"
-    sha256 ventura:        "3f91d9bc293e808976fee70d4dcaa622a0fdb7b14592679f9b8947c13a741e5b"
-    sha256 monterey:       "802ed17bc9f4420482938c98e2ddcfdcd7b08f77dc56e99d06f1116ac06c974b"
-    sha256 big_sur:        "2cf4342b7faedc47562f7b5a1dc6215b9255833e7bb71e23d6bcddd01deac89d"
+    sha256 arm64_sonoma:   "8717c04c7659cff47328719a99ad71d0aba5ad1dcd51b765a312a97601a411d4"
+    sha256 arm64_ventura:  "1fc1129b7d43614e952bf740b905973eea3bdebfd2b3ca3f90421385a2e4464c"
+    sha256 arm64_monterey: "5fdb5ed12f5c58671b00a3c6075a72699f2329661416bc9ebb8a50843194bf96"
+    sha256 sonoma:         "ce2daefc2505d48d115c0731459c682892e6a157e0e5491af39ee3a8898361aa"
+    sha256 ventura:        "aad2d1bfb099a2b052d66d5c0b888ca00a55e657b7ba19d3485dd753a540cd5b"
+    sha256 monterey:       "342ebfd16e77e24285385a29d594b3cb28e750c19d9db8d4f4ee667181773c31"
   end
 
   head do

@@ -266,7 +266,6 @@ Homebrew-homebrew-core/Formula/a/asuka.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/asymptote.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/asyncapi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/asyncplusplus.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/at-spi2-atk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/at-spi2-core.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ata.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/atari800.rb, Homebrew/homebrew-core, 1
@@ -274,7 +273,6 @@ Homebrew-homebrew-core/Formula/a/atasm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aterm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/atf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/athenacli.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/a/atk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/atkmm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/atkmm@2.28.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/atlantis.rb, Homebrew/homebrew-core, 1
@@ -5163,7 +5161,7 @@ Homebrew-homebrew-core/Formula/q/qbittorrent-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qbs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qca.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qcachegrind.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/q/qcli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/q/qcli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qdae.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qdbm.rb, Homebrew/homebrew-core, 0
@@ -6073,7 +6071,7 @@ Homebrew-homebrew-core/Formula/t/task-spooler.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/task.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/taskd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/taskell.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/tasksh.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/tasksh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/taskwarrior-tui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tass64.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tbb.rb, Homebrew/homebrew-core, 1
@@ -12765,10 +12763,11 @@ Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-ahom.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-armenian.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-balinese.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-bengali.rb, Homebrew/homebrew-cask-fonts, 0
-Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-cjk-jp.rb, Homebrew/homebrew-cask-fonts, 0
-Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-cjk-kr.rb, Homebrew/homebrew-cask-fonts, 0
-Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-cjk-sc.rb, Homebrew/homebrew-cask-fonts, 0
-Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-cjk-tc.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-cjk-hk.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-cjk-jp.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-cjk-kr.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-cjk-sc.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-cjk-tc.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-cjk.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-devanagari.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-display.rb, Homebrew/homebrew-cask-fonts, 0

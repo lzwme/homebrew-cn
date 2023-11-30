@@ -4,18 +4,16 @@ class Pdfpc < Formula
   url "https://ghproxy.com/https://github.com/pdfpc/pdfpc/archive/refs/tags/v4.4.1.tar.gz"
   sha256 "4adb42fd1844a7e2ab44709dd043ade618c87f2aaec03db64f7ed659e8d3ddad"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 arm64_sonoma:   "4b76c88f065350a748304511382c62d9418dbbcea2baaeddbd749a1a7e27322e"
-    sha256 arm64_ventura:  "1aace7c3c440270bc84311fe981b884ad25ef95124ff8bb20ad8e1987a0b48b6"
-    sha256 arm64_monterey: "845616bcf0c462c48d7fe8560a990049cce37122a64f146048b2315b0a1c39eb"
-    sha256 arm64_big_sur:  "1460cd4ac02aabc384a1ef9f63b80d39324f20599071b1b30bc658d38b79b97e"
-    sha256 sonoma:         "5ee19f8d32c1e6ac995d93e54cdc68a192ce63c0cee67c33f9bb6b104ff497cb"
-    sha256 ventura:        "0db9b677c52f7918f1e880e732ab22dab9c497930540358cf8b5bbd1bbe4adaf"
-    sha256 monterey:       "394fdad94e1359040ab98677190efe4088eb7ce722a12a256ac05a76447b14e3"
-    sha256 big_sur:        "e9326d3ea690dc41682ff022c73798e14113b502779e295f737c62b2ccf74233"
-    sha256 x86_64_linux:   "aa2f690eacb00966ce31538971a580c18fabbefd1c222ddc69918c83a396e561"
+    sha256 arm64_sonoma:   "0fa98a189234582e235215997734a148ef5f4b6f96a0279e5212426eaca55a05"
+    sha256 arm64_ventura:  "e35ae948acccf50487a29318c6f1d204eefc15f0545115a4f957753723b2035c"
+    sha256 arm64_monterey: "5830c312af0de512390b27bcc880da91b1909195a33be690dd9f4f595469cfe8"
+    sha256 sonoma:         "dd22b140aec750615ee25dbad00cf8974154ff897d4097ee270f743b929e8f13"
+    sha256 ventura:        "6f042b935bb90f53a418fe117d894c95468ab193e7e10bd81756ff7907e537c0"
+    sha256 monterey:       "4c8be94abad2dec957196e7cf229c99f56bd790bde5fcf284bd61487dc9384e2"
+    sha256 x86_64_linux:   "581f359bbbeca6405785b33d0d9d7f3b33e59184b76f89db2f29ec79b1faaf48"
   end
 
   head do

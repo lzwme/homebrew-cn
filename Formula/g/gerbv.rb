@@ -4,17 +4,16 @@ class Gerbv < Formula
   url "https://ghproxy.com/https://github.com/gerbv/gerbv/archive/refs/tags/v2.10.0.tar.gz"
   sha256 "3eef8eb8a2755da8400e7a4394229475ad4cf1a2f85345720ee1da135a1aec44"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "fb11deb70368edf98c01b48d9fb7efa5c739fb644b10f72b0f912317e06f26ba"
-    sha256 arm64_ventura:  "a3d52691fec8e5390f999987c910f23c4d14818966a8b421a28e9ca104ff2314"
-    sha256 arm64_monterey: "0af672d2466f08aadddc69dbe37e116133e333d3b02e76f9a76c5877b15a8291"
-    sha256 arm64_big_sur:  "e7442945321db07ee1dd38ab656c10e97cb55eb14d22d612fae0379c4b731bef"
-    sha256 sonoma:         "f17163930197eefcc707002fdcfb91bb1fe552f10c6a070bda590e1b6eedec64"
-    sha256 ventura:        "08624343ddcd59b7e6b8114b40d8bc7f15ed907cc5da59e81be3760223d2f405"
-    sha256 monterey:       "138d281e679f97ba780765febd8f85dea1bcae50ebedda9db96d8a91106623bd"
-    sha256 big_sur:        "8ac4089a28578c37d40b9b852fc0ec2ce9eabde87750f4825fc9a0f7568d0fb2"
-    sha256 x86_64_linux:   "8862121aa856803f96e1b305881e7c5e48d13f3a45c59155c4fbac1cf9227d39"
+    sha256 arm64_sonoma:   "f0033cf40029771a108a543761225a8cf7f76a93978c64d5fe06b77e1d212ecf"
+    sha256 arm64_ventura:  "78372c7e31bacbc5f95a5741ccdbd2a2c1c45709c63cf1dda4df2e1e11e9df79"
+    sha256 arm64_monterey: "6b6149199423babe20ed89d917bde3217a1fde6064e58670ffd2b9bc9ea437bc"
+    sha256 sonoma:         "7f898d7cad1631c74609ef044011c7e16e7bf667e0d63af22b511ca31daa6f26"
+    sha256 ventura:        "0ad6231d51238f613960b2fa1344c0be1ce317a91464fd81295a882788b5157c"
+    sha256 monterey:       "01753a1244ff7d7a2c783aa1b1acb0dfe76b420b68b872fa8ef339885596d343"
+    sha256 x86_64_linux:   "581743d09f59d3e816c5f7f903e26d82eb53065b0cbbed29685f94967c96a641"
   end
 
   depends_on "autoconf" => :build

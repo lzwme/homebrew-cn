@@ -4,15 +4,16 @@ class Gucharmap < Formula
   url "https://gitlab.gnome.org/GNOME/gucharmap/-/archive/15.1.2/gucharmap-15.1.2.tar.bz2"
   sha256 "f8580cb191d0a430513d0384b1f619a5eb8ad40dbd609d0c0f8370afa756c1fe"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "c22f7ead176bde24d19ee63dca996c0805d2b8b8a3eed4086605315673d3a9fa"
-    sha256 arm64_ventura:  "36bddb28a682d518b6d931f8329c833129a484f138fc18df8ce435348e93c2c0"
-    sha256 arm64_monterey: "693ab829817863ac15880d67920ad502c81672c693ff91166d4433a56171b035"
-    sha256 sonoma:         "9c8c8e7df3d2376d9fa860fd78c5c0d5e4bdfa69238eb08aa925cce2e1cb2217"
-    sha256 ventura:        "a112495d47384cc0bfca2f7be8515951292dbc3a8a01da73bc67b1b8a2217cbb"
-    sha256 monterey:       "259e7121667d30b0e3ecd0615a92b1d2039796ee34a9087dbad965fadb9dd766"
-    sha256 x86_64_linux:   "5983b9f46d861e8d71c69c7874d0b4438b14d4213081a194e12e94bda2c58be2"
+    sha256 arm64_sonoma:   "937c7b65fa87ab5f513f85abb5c68960c517e9ef6f3da8b1c581b4a4fe27382a"
+    sha256 arm64_ventura:  "ee7e34c415afbda101e1784014aaa38985caa7fae057261350e4b77e09085b38"
+    sha256 arm64_monterey: "c1c2b25d5a17eeade8d045c04c2575fcfeeb17baab7bd348e2d01224d5834f91"
+    sha256 sonoma:         "fda688f5f05e15017b40e886fdc76576da5a7c61c09dca1e913bb23cbf4dc99d"
+    sha256 ventura:        "afe4c96b04b6cff057aa6aba089f0b42e06bf4de8747a35efb9f7ad75acfb8b6"
+    sha256 monterey:       "75d634ccc137cc07feac07f7a9e37d1cbcf8d982c4f5a429a6b65561de3393ed"
+    sha256 x86_64_linux:   "29690eb9d8b42c02ae8b8505a6fb62bf98a3ae52cb47f9c6606e004f4d4881de"
   end
 
   depends_on "desktop-file-utils" => :build
@@ -49,7 +50,7 @@ class Gucharmap < Formula
     # ERROR: Assert failed: -Wl,-Bsymbolic-functions is required but not supported
     inreplace "meson.build", "'-Wl,-Bsymbolic-functions'", "" if OS.mac?
 
-    system "meson", *std_meson_args, "build", "-Ducd_path=#{buildpath}/unicode"
+    system "meson", "setup", "build", "-Ducd_path=#{buildpath}/unicode", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end

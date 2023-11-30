@@ -1,6 +1,6 @@
 cask "timemachinestatus" do
-  version "0.0.8"
-  sha256 "dc5e9734bfc452c307c6464ff2953786de6ad1578845aaa593d26ad053e681c3"
+  version "0.0.10"
+  sha256 "d2db01548d3f59dda7b091b23070cff934b58820c113b467261d1c0dce6dbe75"
 
   url "https://ghproxy.com/https://github.com/lukepistrol/TimeMachineStatus/releases/download/#{version}/TimeMachineStatus.dmg"
   name "TimeMachineStatus"

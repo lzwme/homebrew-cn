@@ -4,6 +4,7 @@ class Gwyddion < Formula
   url "https://downloads.sourceforge.net/project/gwyddion/gwyddion/2.64/gwyddion-2.64.tar.xz"
   sha256 "1432f85c31c7e96605e3b3ac9e1c6933bb3b61a76eb620838dc24a085f19942c"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "http://gwyddion.net/download.php"
@@ -11,13 +12,13 @@ class Gwyddion < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "23b2370f16c4598b0a52243632dbc56bdfb0ae47162e853c5227f00b54e528cc"
-    sha256 arm64_ventura:  "efe5f82058607a4eb1eda938d1c8701ef3bc6835231c2b51298002d9bfb3eda3"
-    sha256 arm64_monterey: "8d5c8932185d338b36a07704e9920569ab8383789c110b773eee1076d1eb1daf"
-    sha256 sonoma:         "3118b40bf2ee000f0f6037aa28f41fc31ba82b340c93255a75e03aeab7722c2c"
-    sha256 ventura:        "9a3b211e5b6260f1594b0b61c16dce73c4d3d64942b472524bf709dd64bbfee4"
-    sha256 monterey:       "685e9406129afe972b1f51cd8cecc98698cd34a24348bb48d55074a7d1ae671a"
-    sha256 x86_64_linux:   "e2df2d55d30fe232795d517113231d6e3a0f474a3b179b19ef9d8f76376c0206"
+    sha256 arm64_sonoma:   "6b86791512d939364cdbdcac724ef13ecb591e37efc6c29cff66c5dfe0c1af9a"
+    sha256 arm64_ventura:  "a0ea4ab610c5cdf395ed2e0c38a0495716f9485309460f7c515ee7b965cca1d5"
+    sha256 arm64_monterey: "a191ac940ff4582588840095e00093a9062e0ee390685d4a32846668ddbd56a8"
+    sha256 sonoma:         "c05663ad1b698f42528b8355d4f186bbfcf99ae4877852841bf5ac0255804c3e"
+    sha256 ventura:        "a96d591a65531afe2bcc3f3c4ac04d03bc0e4e2774d03be9cf6070ef8ec453a4"
+    sha256 monterey:       "d2cbef6e449620993779b807ae320ab1770317acffdb618a2b7484a8151a9ce0"
+    sha256 x86_64_linux:   "53f6e3024a856bb1f2cc758f336101536aa5354f1f38d7d40d9a2eb31120ebf9"
   end
 
   depends_on "pkg-config" => :build

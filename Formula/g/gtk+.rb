@@ -4,7 +4,7 @@ class Gtkx < Formula
   url "https://download.gnome.org/sources/gtk+/2.24/gtk+-2.24.33.tar.xz"
   sha256 "ac2ac757f5942d318a311a54b0c80b5ef295f299c2a73c632f6bfb1ff49cc6da"
   license "LGPL-2.0-or-later"
-  revision 1
+  revision 2
 
   # From https://blog.gtk.org/2020/12/16/gtk-4-0/:
   # "It does mean, however, that GTK 2 has reached the end of its life.
@@ -17,20 +17,18 @@ class Gtkx < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "88471bad07da1e18a8abbbbcb0cb418471298459098729505ea248ae9453207c"
-    sha256 arm64_ventura:  "09d870f69784624a4585fd4778d622441689350d4ef444f658e5e8be0edb644c"
-    sha256 arm64_monterey: "9c86b442ae42c6842b04c5f2fba9014cf92da4ce1b6730821d400b1549fb9c4c"
-    sha256 arm64_big_sur:  "7f1fa14922a06171f2827daa56e7973721de2257a7920e8091081fedb641d63b"
-    sha256 sonoma:         "f2e00cee20e14f8a3f3cf5df3ed23865f9ec50e6a6a5f407339e240915fbb9d7"
-    sha256 ventura:        "336771ce80cf6413d18c87666abf8ff030faf96a8530c1f5e4185184d80d791b"
-    sha256 monterey:       "b9e663b0c11f3fbd74d92aacf6246202b600dc4346de26f43516d1531d88b60b"
-    sha256 big_sur:        "3eb689a0bf93bff2991160daa62cd31bea4ee77791ae216f2d6b30d5305ce6b4"
-    sha256 x86_64_linux:   "3ccb9319c9550fd10cedb09ef7cfc51ed8ffd71b1698aa66d143d83f5c1b895a"
+    sha256 arm64_sonoma:   "659b62a2677b7e945221ab78abfab6919d7a4ac7c635de52417ab96eb4970a92"
+    sha256 arm64_ventura:  "140729098a62031c80b8e43c29314f84a5d0152b1348612f83d01331251ba02c"
+    sha256 arm64_monterey: "88b226c05abe1a848ee8ab7d98e7b0388383b3cdd003dff8448aa9d1901202c3"
+    sha256 sonoma:         "2f73f9eafd45eef1e37f3e795d1cb086988fcba1cc374be9c4bc124744bc561a"
+    sha256 ventura:        "e1724dfbff3e12dfc41c91d4ea850c52fbc716d30cae80308f55afaeaa887e42"
+    sha256 monterey:       "29944de5a2598f393c086c1b9284dee31f94309826780204065d91de38c0a14d"
+    sha256 x86_64_linux:   "a73d8262778cf3541249d2ce04dbe9c2e545cc46401c695a77a893f812f35920"
   end
 
   depends_on "gobject-introspection" => :build
   depends_on "pkg-config" => [:build, :test]
-  depends_on "atk"
+  depends_on "at-spi2-core"
   depends_on "gdk-pixbuf"
   depends_on "hicolor-icon-theme"
   depends_on "pango"

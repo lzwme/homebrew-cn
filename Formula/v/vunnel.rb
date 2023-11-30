@@ -3,20 +3,19 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https://github.com/anchore/vunnel"
-  url "https://files.pythonhosted.org/packages/e8/da/45ad1554c3ee64d0cbdecd9ea3917f77e817b3190bae48c58de34b74ddf9/vunnel-0.17.8.tar.gz"
-  sha256 "2094a563cf5c1636b44a0b517ddc6060ab49e231532b5d6427bbb9aaafa625ff"
+  url "https://files.pythonhosted.org/packages/de/15/173e6b736075d070afe53877e7b198fa9e064d827f85495044ba89e0d09d/vunnel-0.17.10.tar.gz"
+  sha256 "21c4e1cb314718fde407e0a244342280c0abff7008c6c3decf0218c15e93b0bf"
   license "Apache-2.0"
   head "https://github.com/anchore/vunnel.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "84cef8fb6b2cd582eb08d547f065cf16abf3cfae0928bc0012e0f1a034e44ef3"
-    sha256 cellar: :any,                 arm64_ventura:  "150677f57ce63c938c89bf944415892b2727fb06ae943decabcc5dc9c44a67b0"
-    sha256 cellar: :any,                 arm64_monterey: "c62fa0b68923d8153de718db8600d8bf3898f929ca66b71c4f01003dbd3bbe56"
-    sha256 cellar: :any,                 sonoma:         "0c554561b9045b9fa0331e4b4c6dc8483214900ccb3b3d0fbe408e77202f8e0c"
-    sha256 cellar: :any,                 ventura:        "43cac6a77d857860a1ed868e3b81ff47996f34736a5437f69959b1e3e540a9f1"
-    sha256 cellar: :any,                 monterey:       "440753390c1b8848199e47f1aa4db34b2d5932313bd9bd2b52c811281d8b844c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41ff42c805de13420af3296e7d6c84ea3e3349f789a65bf1656d4b5757ee4ff3"
+    sha256 cellar: :any,                 arm64_sonoma:   "582dccb93d7e759eb6db077cf58df162007a5dd1d74bab3f3b01f221b3bd5ad3"
+    sha256 cellar: :any,                 arm64_ventura:  "98e65dd089ac65e12b245ef85fdbdb88e0e1dacd5522cc6e95f7262899010f72"
+    sha256 cellar: :any,                 arm64_monterey: "d2de74382f12febe18b9322d649c99c1b7d8c2dbcb9ecd443c195984745c900f"
+    sha256 cellar: :any,                 sonoma:         "dabc263bbf841245beec9093bb125409a59c1948640d4b82aca5971b0815364a"
+    sha256 cellar: :any,                 ventura:        "b8e99ac481da1be3a85889fc64424c2e9a3dde4dd6d8ce6dc54366cafacefcd6"
+    sha256 cellar: :any,                 monterey:       "bd21f1d92835d8d59e633506e5c9e309871bc6f46c739732753132eac18c4d3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ae1082d64fd76151e67f911c6c952fa42062582050d81f34a35a15823339c0c"
   end
 
   depends_on "rust" => :build
@@ -69,8 +68,8 @@ class Vunnel < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
-    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
+    url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz"
+    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
   end
 
   resource "ijson" do
@@ -89,8 +88,8 @@ class Vunnel < Formula
   end
 
   resource "mashumaro" do
-    url "https://files.pythonhosted.org/packages/93/4b/50b95e3180b5454ee533ffc32a73c34695b1a9ca777ab5c387dec6f7e912/mashumaro-3.10.tar.gz"
-    sha256 "0248a5c8574aa6cd20696621502d38a7ea66af3d6d93c5d03f93b33298edc878"
+    url "https://files.pythonhosted.org/packages/60/0c/fa3920716be345acc665de9ab3d16b3e38e41434ae01a208344b894bec32/mashumaro-3.11.tar.gz"
+    sha256 "b0b2443be4bdad29bb209d91fe4a2a918fbd7b63cccfeb457c7eeb567db02f5e"
   end
 
   resource "mergedeep" do
@@ -116,11 +115,6 @@ class Vunnel < Formula
   resource "requests" do
     url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
-  end
-
-  resource "rfc3339" do
-    url "https://files.pythonhosted.org/packages/91/fb/2835a62f2de226796fce76411daec6b9831eaf6d2fd04994ac1de055dc13/rfc3339-6.2.tar.gz"
-    sha256 "d53c3b5eefaef892b7240ba2a91fef012e86faa4d0a0ca782359c490e00ad4d0"
   end
 
   resource "sqlalchemy" do

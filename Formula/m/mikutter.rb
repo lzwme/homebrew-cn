@@ -4,6 +4,7 @@ class Mikutter < Formula
   url "https://mikutter.hachune.net/bin/mikutter-5.0.5.tar.gz", using: :homebrew_curl
   sha256 "8f8d633fedd1a05767eacbd6840c6c268dd2a47f5cf7f7a520a38c8ea869f6c2"
   license "MIT"
+  revision 1
   head "git://mikutter.hachune.net/mikutter.git", branch: "develop"
 
   livecheck do
@@ -12,14 +13,12 @@ class Mikutter < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e7ce00f31958e9554b25fd386852381dbadc40526bb5d51da157964c6815c7ad"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "805dd1277322aac659da0935d5ac2606e6d01f5cedff6c51227fa60f996057c8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed439f50638267e078091938b175fbcdcf397ced7b5ecfb4a5deefebe470188c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "57a3a7832956e6df3efecc47efa760fe7a66ef23eb2dd2a32898d315b31580a1"
-    sha256 cellar: :any_skip_relocation, ventura:        "c2a47e86634f99de1607af6c06ad23890e5007b14d36ffdbca74d4f3161579dc"
-    sha256 cellar: :any_skip_relocation, monterey:       "64506fe17d20986237b5d065466073d91288a3b87219aa9a46485f7a23a9e00e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "335fdf0ad75b7f22988f6fc547d3ad1f43cf9429feb7d64407251d43660b065f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f3e6986f8043dd2429c32cff83dc15eebb1ef7b1d41aaba9566e912816d2c7b"
+    sha256 cellar: :any,                 arm64_sonoma:   "efa933b07c8da1bc27d61fc3cb4b9b71b2cc4bc95f6a70a244f699ab987360ab"
+    sha256 cellar: :any,                 arm64_ventura:  "dff587adf0fe90128d15150470496dbdc101a8539f450086d8d6698b352ccd2e"
+    sha256 cellar: :any,                 arm64_monterey: "a482b000deb96a59d010d3aad8d15e4ba2102a260b4c0dc93ea17809d04e299b"
+    sha256 cellar: :any,                 ventura:        "87552b9d9962a9e7616dd40d7a46b1c56d1e57aa9d03f00bcfe6cb5afc9cea75"
+    sha256 cellar: :any,                 monterey:       "11956d25f67beda546cc65b67f73007c5fa4f32949685cbb797e582aef4bca12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dec586b039b6103928efe885e7b5422be323b4bee589f2d0ae500fbd9db212bc"
   end
 
   depends_on "gobject-introspection"

@@ -1,8 +1,8 @@
 class Hq < Formula
   desc "Jq, but for HTML"
   homepage "https://github.com/orf/html-query"
-  url "https://ghproxy.com/https://github.com/orf/html-query/archive/refs/tags/html-query-v1.2.1.tar.gz"
-  sha256 "db6c574acc701f337285839e1f7a3a6e30267fd0ba69733a9a74e637b827bcdb"
+  url "https://ghproxy.com/https://github.com/orf/html-query/archive/refs/tags/html-query-v1.2.2.tar.gz"
+  sha256 "0fdc12100c178cd2e5ae61c54e640ecb68533017fcee4845ceb4050d1e4fff60"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class Hq < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c65ca9e471a5bef7a3a8bfb6f6dd78e95b1b78995185689d09b419643fbb1cab"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f6656227b01124234c3a1505441834865ae58252a62cede9d1c60fdd44ec3e41"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "56583761d97662e07eb645a8b31b0666189849d0de2b0e55d962660b2a9a23ad"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fab9a596539febf33d15192d17875b7fd5d15b7201da7d87b58b2eead558d728"
-    sha256 cellar: :any_skip_relocation, ventura:        "f69e41e1eff45cf7b0de95e1d33afa7dc7b5ccf9d14a75e3976278c1c05c13fe"
-    sha256 cellar: :any_skip_relocation, monterey:       "86a496b6b4e311349ebb1490129de0daa7fb0248be2ccaf6f2bb08a9ef1b080c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01c4eadd2abc47f2a457f3b18dfedf3985996744d392fce30d7b1898eeda9df4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bb2ff0f3f904b95e1de83afa9df496e1cdb9e7b884f8bc6d6752e1d4f2e5add2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb0f1f15deae5619464b105b1fb9ac5c3086e9d74146d8d41155390f48a4eac6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "97c09153ae3ec35218ea7b371ecc89404e391eefa4b8e1510f7aa7ec98b3a0b8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "96168009af37277c094136a7fdfab3de012ffcfe9758becb2ab885279c3cbdfb"
+    sha256 cellar: :any_skip_relocation, ventura:        "1fc6b120bfea15968b556c36a75428a9c5f7df760b73c94e5eff5fc77cc3e714"
+    sha256 cellar: :any_skip_relocation, monterey:       "39119277ab30f7b0f5b5c60905cbe36764eb5aec06ec7b9d6ad1c780afa0cb9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98e9c85bd5a5304f6be3adb3ea8b0b69659f1622fc873dfae7b7fdfbaaee8ed2"
   end
 
   depends_on "rust" => :build

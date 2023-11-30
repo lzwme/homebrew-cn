@@ -3,18 +3,16 @@ class Goocanvas < Formula
   homepage "https://wiki.gnome.org/Projects/GooCanvas"
   url "https://download.gnome.org/sources/goocanvas/3.0/goocanvas-3.0.0.tar.xz"
   sha256 "670a7557fe185c2703a14a07506156eceb7cea3b4bf75076a573f34ac52b401a"
+  revision 1
 
   bottle do
-    sha256                               arm64_sonoma:   "96b058e8b6b133cc3321ab4caed7efd03e2a2ad908f2939bdd074845b3b9e026"
-    sha256                               arm64_ventura:  "0d114696187598ad5a64abe30c3bdb162b81499901baf74d33bfe60e78a5dfdd"
-    sha256                               arm64_monterey: "ffbe53df96aebdefad5bca437f0be3a0ca39b725736e943d300747a6bd7770dd"
-    sha256                               arm64_big_sur:  "d2881f093f710abde959761a53e797e7b7adab47b359136c52974cd0d39d9b3f"
-    sha256                               sonoma:         "1bbeecef896c66496444f7e979938b843a3dc6f55f38240eaf2f95f0cd439730"
-    sha256                               ventura:        "36413b12e3f7cf364cc16388e0dfd8f4592101516e8a26c3e506bc720fb0c582"
-    sha256                               monterey:       "201056ff9afb6af37984ba0586e8fa0fd6d55a4f09d344754bf7394defd54570"
-    sha256                               big_sur:        "2696cb6c47f70283a599e7b31d6ae359d1defb54d8c5cc2a466a0610ef8f470d"
-    sha256                               catalina:       "28e1912c12842419642d61a4aa400dc7028a4dde604dcf06f8088bf7cf3cc3a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f2a67e29fabc01031801decaff6a51fb6cd8196d33e78dca351b1aebe5f6a8f"
+    sha256                               arm64_sonoma:   "e700e5fb6f0f6454c9cc42975dae876c53f62ec1e6f5db3acadfea35232b72c5"
+    sha256                               arm64_ventura:  "337609cd9eec8d0ca6502b73524cb5f86bc07ce6527438266a61ed253de5dcea"
+    sha256                               arm64_monterey: "c5e356f708724c16f6594833df9ecca148f0e24862edbd3e8cb7632780cef5ea"
+    sha256                               sonoma:         "6994404c6b91d235eda6a3a10b5a3a1a6b268d1fbbcdbc81ea3d538b19c71db0"
+    sha256                               ventura:        "555e4e209cfcb7476df00bba6e4c23e99c3dddf938bdee7389f454cfc3dc7aba"
+    sha256                               monterey:       "142e227274383dbc2c9e492f4cd84b9d12299fbb1a59813ce0d67eba5455e305"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33355d4dbdef036db01c5948d764d8202047838d08a68c1de6d323e5f18bc6ef"
   end
 
   depends_on "gobject-introspection" => :build

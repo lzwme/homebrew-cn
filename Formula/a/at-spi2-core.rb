@@ -1,13 +1,18 @@
 class AtSpi2Core < Formula
   desc "Protocol definitions and daemon for D-Bus at-spi"
   homepage "https://www.freedesktop.org/wiki/Accessibility/AT-SPI2"
-  url "https://download.gnome.org/sources/at-spi2-core/2.44/at-spi2-core-2.44.1.tar.xz"
-  sha256 "4beb23270ba6cf7caf20b597354d75194d89afb69d2efcf15f4271688ba6f746"
+  url "https://download.gnome.org/sources/at-spi2-core/2.50/at-spi2-core-2.50.0.tar.xz"
+  sha256 "e9f5a8c8235c9dd963b2171de9120301129c677dde933955e1df618b949c4adc"
   license "LGPL-2.1-or-later"
 
   bottle do
-    rebuild 1
-    sha256 x86_64_linux: "5886c9ff2107a4f37c76767958c35c3fb1f5547f0a6d0342b533b58bbeb47222"
+    sha256 arm64_sonoma:   "c2a3ae2db2f7c4c9a51ff267a637099e9a2b374236a161b64250cc27abb878f3"
+    sha256 arm64_ventura:  "3b5eee43419542ae28c18fa30f3a129443a0af25ae7bdd568551a14666b4f1b8"
+    sha256 arm64_monterey: "1e2f0b026b13f9ecc88d85ea7855979c075a0e81bac42fd1fb03f73f2c231552"
+    sha256 sonoma:         "3b4398b7dc33d621b1e80f66eb29cfe671e5593decb734e4b1abe8972645034e"
+    sha256 ventura:        "d71d12231a51bff89eebb65f146ffa81e41a0445558423c9190e5d991092ee81"
+    sha256 monterey:       "b6b667cbb203fe6b4582ab9469f8217eb266d7098d10f8a85ba41e0f616993d6"
+    sha256 x86_64_linux:   "639419ad4ec369801ebf8d0064f62573c8ddfd0bb70bf393942e5815f3d544b9"
   end
 
   depends_on "gettext" => :build
@@ -15,13 +20,13 @@ class AtSpi2Core < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
-  depends_on "python@3.11" => :build
   depends_on "dbus"
   depends_on "glib"
   depends_on "libx11"
   depends_on "libxtst"
-  depends_on :linux
   depends_on "xorgproto"
+
+  uses_from_macos "libxml2"
 
   def install
     system "meson", "setup", "build", *std_meson_args

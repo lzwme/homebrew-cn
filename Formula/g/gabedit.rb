@@ -4,6 +4,7 @@ class Gabedit < Formula
   url "https://downloads.sourceforge.net/project/gabedit/gabedit/Gabedit251/GabeditSrc251.tar.gz"
   version "2.5.1"
   sha256 "efcb00151af383f662d535a7a36a2b0ed2f14c420861a28807feaa9e938bff9e"
+  revision 1
 
   # Consider switching back to checking SourceForge releases once we can alter
   # the matched version from `251` to `2.5.1`.
@@ -13,14 +14,13 @@ class Gabedit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3253d22cef1f9bffab225ca1d371437b83f7c1175d688e1688c527219fc2d822"
-    sha256 cellar: :any,                 arm64_monterey: "c2f02dce516ef80da80875e3e1326a9e9c989e8c1f029317e8d0c9375cbd548b"
-    sha256 cellar: :any,                 arm64_big_sur:  "5185932b990ba144b26dcae3696d27f8d2b4ecf240c9cac54e53aff6dfe4b127"
-    sha256 cellar: :any,                 ventura:        "6515311dbd91d785bf53d931c895deeefe526b3c53bd2d123d85b21a9c86434f"
-    sha256 cellar: :any,                 monterey:       "b89b7e33d371e36ed8ec359a56c5fdb86613f2b5239b3c08d3e098bea38f8de2"
-    sha256 cellar: :any,                 big_sur:        "5a911e86df1a48febaaf8840303bfeb185e458024fefeb38e09fa22176413fec"
-    sha256 cellar: :any,                 catalina:       "da7c3e7a62b1f57f16ffed4423849f03603b3183eea979e2ac5ffd42341ba55d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "66a31097edc926ea0029acfb0221368e3d25382cb69cb542123073c65e46aaa0"
+    sha256 cellar: :any,                 arm64_sonoma:   "33b7438a8b87b09821c9924d7a5c0a473c95c7abd04189c570b80fc8eeb51bbf"
+    sha256 cellar: :any,                 arm64_ventura:  "b2767fead690400c5b24a75122c4f951c02f440b19f8897534ae4af99c48f549"
+    sha256 cellar: :any,                 arm64_monterey: "e92333006a163760d34133bbaaa646696c85028baf4e7773cc479a3191e72948"
+    sha256 cellar: :any,                 sonoma:         "2b8c19f613ff297dc96f47ccfa68910c4b883e7c4b130e1c49428cde20ec58f9"
+    sha256 cellar: :any,                 ventura:        "8acd0846dd0cb1d925b104d87ceb402fe0663fa8bfc1b1ca85d4c3ac719b6c1e"
+    sha256 cellar: :any,                 monterey:       "e813fee190a63752c14c08a43dd17616e40d69c56b490dd0c6bb9c933cf1d04f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85b9f31c8d4f0b7daf320543f5da7d50a20212535bf1c753eca37aaa579c737d"
   end
 
   depends_on "pkg-config" => :build
@@ -55,6 +55,12 @@ class Gabedit < Formula
                 "OGLLIB=-L#{Formula["mesa"].opt_lib} -lGL -L#{Formula["mesa-glu"].opt_lib} -lGLU"
       end
       s.gsub! "GTKCFLAGS =", "GTKCFLAGS = -I#{buildpath}/brew_include"
+
+      # Work around build failures
+      if DevelopmentTools.clang_build_version >= 1403
+        s.gsub! " -Wall ",
+                " -Wall -Wno-implicit-function-declaration "
+      end
     end
 
     args = []

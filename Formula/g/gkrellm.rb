@@ -3,7 +3,7 @@ class Gkrellm < Formula
   homepage "https://billw2.github.io/gkrellm/gkrellm.html"
   url "http://gkrellm.srcbox.net/releases/gkrellm-2.3.11.tar.bz2"
   sha256 "1ee0643ed9ed99f88c1504c89d9ccb20780cf29319c904b68e80a8e7c8678c06"
-  revision 3
+  revision 4
 
   livecheck do
     url "http://gkrellm.srcbox.net/releases/"
@@ -11,19 +11,17 @@ class Gkrellm < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "6816f085dc6c091b9a94131eed3fb6b8b0a12dcb7ad89cb279d5dc89a15e3f94"
-    sha256 arm64_ventura:  "dd870efc661b45e29ad69fc2413a3d78069763d01e0b1b7c5234df19bf3c102f"
-    sha256 arm64_monterey: "3983e2437e1930f66c19ba5dfffe300ec7624aad43a3e0b4d4b49ead2ec70167"
-    sha256 arm64_big_sur:  "e2722e8eef55bf785c42548a507355bd44df8c6df7dcc40a8c2f5b40f8c2c290"
-    sha256 sonoma:         "caca1f881e66e407d6042369a2195856b9002960fab1135fb350437f17f7649a"
-    sha256 ventura:        "a2ce7b7c4e41372864b7de15a19d649dbbdb6bcd6c8de4bf1b96264358d834fb"
-    sha256 monterey:       "5871cd121aa7aa4b0bfc6af75e8e718a1e49d560f23efb2a98ad1255167143d9"
-    sha256 big_sur:        "7a4eaed03a5da148716b65e02cdddb03b13c3c1bdf6f43c65cd4833be4d09166"
-    sha256 x86_64_linux:   "5ce7b72ca02d9657b676754d3bcf936e8fba6c4f0aa4fa2e76520bd31f5975eb"
+    sha256 arm64_sonoma:   "993ebbc08b5ec357975352c9a128735a459e5e844d45502fc47179f2ffbb70e7"
+    sha256 arm64_ventura:  "b76e8a47e234dcaddce425c0c01250bd5055de84de83428e1035e7545fa59eeb"
+    sha256 arm64_monterey: "cffde5aecac4ab95199a6a127eefa70248eea91eab2e3eb48f67b808e8094bd1"
+    sha256 sonoma:         "2fd34cbbdb66f96ab134190c082ad04c14bd82a93a972f0cf5ad01636d71cda3"
+    sha256 ventura:        "39828a1b0aa6586591195d1b7175a9a127abf4ed13e6a22094410f88ed05da7c"
+    sha256 monterey:       "ac1bdf3dcd6745101eb07b106acd4ae64d7e68ea27307dfc7033d1915f8af74d"
+    sha256 x86_64_linux:   "8d8b012ba597fb48d4a205aecfff14230f67053b25a504e64945378fa3331fd4"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "atk"
+  depends_on "at-spi2-core"
   depends_on "cairo"
   depends_on "fontconfig"
   depends_on "freetype"

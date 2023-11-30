@@ -4,17 +4,16 @@ class Evince < Formula
   url "https://download.gnome.org/sources/evince/45/evince-45.0.tar.xz"
   sha256 "d18647d4275cbddf0d32817b1d04e307342a85be914ec4dad2d8082aaf8aa4a8"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "e03af0664ea68b59cd1cf48a6103442b39b41011c1213c17be63d2d684838cdc"
-    sha256 arm64_ventura:  "c4e9dc37d42dd89b29d2d4e7d321826ddefbdf84ce6a456075c34a0013af1809"
-    sha256 arm64_monterey: "334f7eaae917ac1f4073a8693740f81eba34cd190b8a16f99785d3609363003f"
-    sha256 arm64_big_sur:  "b29f4b6694bb06a50b1d07db20ce7e5fa3e31abe5de6d439d39f1d4b047be6a5"
-    sha256 sonoma:         "7e0d5f1f4cb8be6ffc6dc532665c350b33ef094ec2f92c9be716c20e22f776e7"
-    sha256 ventura:        "f20de7a8fd7f5bba31f94619bea1302a881baa0122659de7379231e8368c875e"
-    sha256 monterey:       "a8d19658c6432684fb582a8cb6583a2fa87c7c221f921a70812868db1e0f49ca"
-    sha256 big_sur:        "9ba79c6ccb16958bb63b44600f05cee1ad4a0899859ea897fcabde9788bd0a17"
-    sha256 x86_64_linux:   "5fcadf5fe0738904053dff0ece6a4afb50eeb5040d88f35614f084f065d8c455"
+    sha256 arm64_sonoma:   "2d7de07f0e32e455ab53524d8ebb23e70a969e31278a9bcb93fe9fce00a9e0ce"
+    sha256 arm64_ventura:  "53d2cbd7a0130b501c6bf0083a450496975579e1ffcc19aa121e2d4da131e12b"
+    sha256 arm64_monterey: "00c0e6884132528f2e3c76c07889ec368f835f8390a785ed8a6fb71e4b8c39d2"
+    sha256 sonoma:         "c33a2d0f2a933d21635ee0237e7a628ab29b566f4ecedb60ea8a354dca140036"
+    sha256 ventura:        "41f6401df7d5195a56b7104142bc52bb574f0b0881c213c3714ec39f7183049a"
+    sha256 monterey:       "de4b8aaa5eab3c811d642f49be3ceeec9729f8bcc632b2b50d4a138f15c11bcc"
+    sha256 x86_64_linux:   "d759f48a208296c412b9cd0fba7b3b13ddd46c5954adc25e8a78d3f5ea5652ed"
   end
 
   depends_on "desktop-file-utils" => :build # for update-desktop-database

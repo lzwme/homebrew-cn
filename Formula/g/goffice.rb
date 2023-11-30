@@ -4,15 +4,16 @@ class Goffice < Formula
   url "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.56.tar.xz"
   sha256 "b8640a2fee0c0a57784b2a5b92944a2932c789db1039ddf5a269ad634796e7e2"
   license any_of: ["GPL-3.0-only", "GPL-2.0-only"]
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "5a613d5b56c610af0735ced2c4084a7fadaf1977afb1156d14273e28d80e5c53"
-    sha256 arm64_ventura:  "b381103634690f60bec710b4eb8fb0bd6151a7db4c800564b3460a9498bda2b7"
-    sha256 arm64_monterey: "132313c560eed410b17a3092d8a4198ac7783baada45bc4c85d5b019ff0d2291"
-    sha256 sonoma:         "308b048eb8fc34007783d4fcb185b42338a73663c2a90f459ddd600606014e40"
-    sha256 ventura:        "da5ca181943406c89273fde578694db085e1d507459875d544bea1e74c0fae71"
-    sha256 monterey:       "c9f9f7fbcbdc52a0de548e7990931b52c5bafb9cfc335079e1e11ed93b4d50cb"
-    sha256 x86_64_linux:   "e374e7fec0b9b5ec3deda040be56cde513914cbbb9517d3ea6a55d2ac9e3e022"
+    sha256 arm64_sonoma:   "73369ec466e61971dd1248cf2adad9217043c109c45775df1ab4cdaf08d994ad"
+    sha256 arm64_ventura:  "4e7e542f2b3584bef9a1bfcf0503865ed865282d133da930712073cbf92172a2"
+    sha256 arm64_monterey: "79a318bba494f04b3ceff6ceb4e9226864b337736430e09dd608b32dd9c05ff1"
+    sha256 sonoma:         "ce154543b3a46d3b23db6311a8ce9d666b69c10e1a33d384f6e6f36b885771c6"
+    sha256 ventura:        "dc8a1bbcfed8832e350655a135cfbc3a5737632bd9b290f3f96a24faebfb2e8d"
+    sha256 monterey:       "707c4cd0b1c4e54e82083c82619aa1166792d34e84f414ae1c68be7ade8382a1"
+    sha256 x86_64_linux:   "8222eccbf384d0def02f985d77a209469455add91d00461aaf3f8d50183a11e5"
   end
 
   head do
@@ -26,7 +27,7 @@ class Goffice < Formula
   depends_on "gettext" => :build
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
-  depends_on "atk"
+  depends_on "at-spi2-core"
   depends_on "cairo"
   depends_on "gdk-pixbuf"
   depends_on "glib"
@@ -86,7 +87,7 @@ class Goffice < Formula
            "-I#{Formula["pango"].opt_include}/pango-1.0",
            "-I#{Formula["cairo"].opt_include}/cairo",
            "-I#{Formula["gdk-pixbuf"].opt_include}/gdk-pixbuf-2.0",
-           "-I#{Formula["atk"].opt_include}/atk-1.0",
+           "-I#{Formula["at-spi2-core"].opt_include}/atk-1.0",
            testpath/"test.c", "-o", testpath/"test"
     system "./test"
   end

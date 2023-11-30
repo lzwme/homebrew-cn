@@ -4,6 +4,7 @@ class Gtkmm3 < Formula
   url "https://download.gnome.org/sources/gtkmm/3.24/gtkmm-3.24.8.tar.xz"
   sha256 "d2940c64922e5b958554b23d4c41d1839ea9e43e0d2e5b3819cfb46824a098c4"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,15 +12,13 @@ class Gtkmm3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "4e45dd6bcbbcc6edea1604f8b9bf713de8e78309300e768a5540c7fe5799b270"
-    sha256 cellar: :any, arm64_ventura:  "d09df4ca0f3ab0d81e6f6adf49fb8897e69f8d8782fe435fd941e1f8e67ce367"
-    sha256 cellar: :any, arm64_monterey: "abc44666af25bedd6e470ed46dd54f6d8b9ce1e3e03c4020e335fa269e6f16e5"
-    sha256 cellar: :any, arm64_big_sur:  "74547d4474ffdc944b017fa8394681b7ee669216ca1d3b0957d69c17968c99ca"
-    sha256 cellar: :any, sonoma:         "ed0b7ec0302bec6e71c305d5912ce7d51114c31a314b3188d57095f5f0b4aea1"
-    sha256 cellar: :any, ventura:        "63fca66eadb4a64d3a4155e8671ec80dccc423150eeab5bb50534830eae4221d"
-    sha256 cellar: :any, monterey:       "25d28cb65838bb115c07facd15450f69b16919fca544e97c2302cb51e1d33070"
-    sha256 cellar: :any, big_sur:        "cc4a7601a18212b67b82c0b630a93d8bd95cd67cee936f2e8c93b612d7bbf12e"
-    sha256               x86_64_linux:   "4636cb05f997adce9a64c56c745dcc553f0f2884d6a803cfd25371ab7dd6dfe2"
+    sha256 cellar: :any, arm64_sonoma:   "de79dca06f3dfb036716b7a160060046906ea5150d40ca7b159220476ecfa4e0"
+    sha256 cellar: :any, arm64_ventura:  "7787e5acc82a86d6fecfb5dbdcf11a5017d55195eb316b11149c6572de21ee3f"
+    sha256 cellar: :any, arm64_monterey: "b0da6596d666382192cc05dd198e409fae3a1e1982c6678d85059c8190a598f0"
+    sha256 cellar: :any, sonoma:         "20d3111ea94300f070dc542a98207ed731beab610992a4935c595028841c556c"
+    sha256 cellar: :any, ventura:        "0d964d3a69ca598dc342c0f89e6e5506819b72f2ca13225ce8d17a9beaedf10c"
+    sha256 cellar: :any, monterey:       "1e2d63f0b7dd2441e3fdc12feb40fa746274c014fb9b56b9394f4acc02d5365f"
+    sha256               x86_64_linux:   "7542428aad76723deac89d2872af1788ecfa8206d80a8486ef860b22b7ed829b"
   end
 
   depends_on "meson" => :build

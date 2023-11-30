@@ -4,25 +4,22 @@ class Atkmm < Formula
   url "https://download.gnome.org/sources/atkmm/2.36/atkmm-2.36.2.tar.xz"
   sha256 "6f62dd99f746985e573605937577ccfc944368f606a71ca46342d70e1cdae079"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sonoma:   "ecea9807f8dd5786e056a48ff3effc59b2ad3f74e8c75e597c8ecf2b8470ffbc"
-    sha256 cellar: :any, arm64_ventura:  "00058c5e0579838d818c89064001c7389e0df4a0b92148a33cf354cc662eff24"
-    sha256 cellar: :any, arm64_monterey: "84e99c11a87b16554bf8a6f3682cad91fe3538afce18acc63cda1fdb8f374f38"
-    sha256 cellar: :any, arm64_big_sur:  "87202974bb4c7d0e5c7c8ecd3cf049113de10bf2a4df1c76c43effc72b1be682"
-    sha256 cellar: :any, sonoma:         "640295ebaa87cff83663fec7005dcc336c628032ccde904bda2db3851aeea205"
-    sha256 cellar: :any, ventura:        "970d410522bd804a3a2a9c846edb941a18a2afee480338ba553461ca380d86da"
-    sha256 cellar: :any, monterey:       "7f98497f232811faec23f3535d1dbb059f8eb6629c83286a72cc0073ffb09d75"
-    sha256 cellar: :any, big_sur:        "c87d7feef3d12d582873fe0acf9b419dde0d218684b4d9e3a407f8279cd15e43"
-    sha256 cellar: :any, catalina:       "b1fd80ccf96230f38a8faf3dd67cdf97bb359a075dbb4b48b016c08d7563e5f5"
-    sha256               x86_64_linux:   "5a473139c858d0c2be2d2a97751a095c5091dafad3cd8a44ac5e56223ca506e9"
+    sha256 cellar: :any, arm64_sonoma:   "2b26464c452d497c5f7733139178a5af27cc7bfe19887c1256a1ca062847fdc3"
+    sha256 cellar: :any, arm64_ventura:  "a8c0fa46900a62e555167c9e64daaaf99a23c309163c97628ab388c82f48dc94"
+    sha256 cellar: :any, arm64_monterey: "18c5366998778655f3b3e763112c25bd9ced8a6d39330259934c7d1a05860ee9"
+    sha256 cellar: :any, sonoma:         "cb5c29c19c8472bc5ae82df6aa9c8772c4008c69e677f902dc86b913129807aa"
+    sha256 cellar: :any, ventura:        "6c024b94531bc97c6b6a278a9b16dd23a263887ffc232012e7d586037a005e49"
+    sha256 cellar: :any, monterey:       "70d07f74ed39fc547ca95d8ef3d1f0e448719ace0299646b0fd4e58f235032d7"
+    sha256               x86_64_linux:   "f4418a0fe87c9891115c4e4093bb6b14639e7255fc0c0e23d94401e9c99c7dcf"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
-  depends_on "atk"
+  depends_on "at-spi2-core"
   depends_on "glibmm"
 
   fails_with gcc: "5"

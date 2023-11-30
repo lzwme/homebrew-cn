@@ -4,7 +4,7 @@ class Pidgin < Formula
   url "https://downloads.sourceforge.net/project/pidgin/Pidgin/2.14.12/pidgin-2.14.12.tar.bz2"
   sha256 "2b05246be208605edbb93ae9edc079583d449e2a9710db6d348d17f59020a4b7"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://sourceforge.net/projects/pidgin/files/Pidgin/"
@@ -13,13 +13,13 @@ class Pidgin < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "b2e5c0e2731a46e7979f8906ef13157590979ad6cb060c276f276ce1a6ebfb18"
-    sha256 arm64_ventura:  "f3a2601a1197c63c8e63cfed471019e1e5422511206848d6b37b6383431ce87d"
-    sha256 arm64_monterey: "945f3685930f41562f171b64f8714f80d52c52ab454b084201c493f4ab00d10b"
-    sha256 sonoma:         "d856de13e81f1e274b423f6c6a43aff86c7d4e9291cf288242beddc243bc65bd"
-    sha256 ventura:        "1cfa9ff27dab1b9d09e7ce7a14b0b4a28b9b69acf9167cdd2459bc2c23a5f4a3"
-    sha256 monterey:       "f88f5105b1d6b113c39e448455dc8069bdca68fb9d3a36a203218428a4ab76c6"
-    sha256 x86_64_linux:   "77505b9bb23f796cbaa6948e23a83e25e96ad88fc509a92f451456fcbeac6569"
+    sha256 arm64_sonoma:   "10a3ab6f15bbc312e9892162c382032dba4ba271b157cb413dceae7ff4ba4aac"
+    sha256 arm64_ventura:  "d2ecdaf8f1f2f2bfd38dff8a9b36e907d4f282e8c07b707114899608da49c533"
+    sha256 arm64_monterey: "4017c4cd7ef9eb0a7f48c5b0b18ebb9585601bf3071fa373cffdb136841b3cd4"
+    sha256 sonoma:         "61928f9b42f4d58ba6d28144b81e18d47cbe4db534356f6d547a35241fdbe31f"
+    sha256 ventura:        "af351f82d4eeeda1fad5042cab4074cee1c7c23f97d04dc480c1479adc3a40a1"
+    sha256 monterey:       "1b4014dfd435e48ba9c6beba93a383ffeab7cd951ee16f03b5aa252e8cbbcd61"
+    sha256 x86_64_linux:   "82d8db8e0a6f8f5246006c1039af03cdc97332a7b0888b2783267b26c63a19b0"
   end
 
   depends_on "intltool" => :build

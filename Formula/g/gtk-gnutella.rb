@@ -4,17 +4,16 @@ class GtkGnutella < Formula
   url "https://downloads.sourceforge.net/project/gtk-gnutella/gtk-gnutella/1.2.2/gtk-gnutella-1.2.2.tar.xz"
   sha256 "95a5d86878f6599df649b95db126bd72b9e0cecadb96f41acf8fdcc619771eb6"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "ddc6e4c9efc0894d47b720852b568a33aaf32b81d646ceccdd439566861b2295"
-    sha256 arm64_monterey: "dfc1a6e5ea48981b08e4ec2a74dbf2e60204c0577ebd42512252dfd465dfb312"
-    sha256 arm64_big_sur:  "e6569a85d4d46b2583050ab09c1716ebabef593d560c07808e9530a629b5db79"
-    sha256 sonoma:         "7e0c1b7fff9c8672f6669292140dc81023f41449c53d1b4592c93a1172ba62e6"
-    sha256 ventura:        "5f6a18f45f5ad9b696d4511a7f52de34440d2613d91e560a66232dc6a1ace873"
-    sha256 monterey:       "50e16867768e56729aa34a8a8b96a103652b056c508744542cf1108d11a9937c"
-    sha256 big_sur:        "92c2fcc1744502b5b1baf63ad167e70414c0434ad2d7aaf6598bfd2625ed8c5f"
-    sha256 catalina:       "78151f5c823fce4c91ec7fec4cd8845c420117b558f3664c38846172a05b6129"
-    sha256 x86_64_linux:   "801d4b14d9fe1195d465389d0281a1b3812f77bc116cb322f5213a5b87e7df77"
+    sha256 arm64_sonoma:   "29723e41ede038193d981a7067fb3f30241fb515511d3405bd2068004a3655ca"
+    sha256 arm64_ventura:  "716b6d60e49eee2e04685351a32eda115d1006a1f7170941f6579aa10c87e3d5"
+    sha256 arm64_monterey: "5a2733a7f6abb6536f4f4cd2963ea1998ea46f63b55066671565a747f4133922"
+    sha256 sonoma:         "19a16264b0e7465acbb2bb49dffe155dc9feb7eaf7a5a062e8c19c8e643a8d8d"
+    sha256 ventura:        "429d49588c862e7b994ad7198f3bb81863af198b928460f41f04a401756f5f7d"
+    sha256 monterey:       "4354077a23b85c65dafd4b408bff6fe496d0f371bce46078ff204110380f8310"
+    sha256 x86_64_linux:   "15c5a113ee3dfb9ed475958f8446e910f252f91edbee2f0d093e24a22943b388"
   end
 
   depends_on "pkg-config" => :build

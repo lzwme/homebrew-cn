@@ -4,6 +4,7 @@ class Gitg < Formula
   url "https://download.gnome.org/sources/gitg/44/gitg-44.tar.xz"
   sha256 "5b0e99ab3e7b94b0daa98ca8041d5ec9280ee0a2c28338a5506a968ac52e2354"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,15 +12,13 @@ class Gitg < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "9c1a21241afef48998a4af8a1144bb5a2c1b97e479940bcfee274ee9f86034f8"
-    sha256 arm64_ventura:  "a5d013b479cbb9b9a0f77448fa51f649654e629a5b48184a9e2aa571396354d1"
-    sha256 arm64_monterey: "1a46f7acc167edaac7e768a15aa09805e27f694c2f20fb21452db71bf832ef36"
-    sha256 arm64_big_sur:  "7e9c89e643ef04d97c5648f46965c43d24927a1206c9d07587fb54842b744c83"
-    sha256 sonoma:         "c3b249f0749a9be5db4f0850181b70564a6a766ffd5426642ec41c1abb128fbc"
-    sha256 ventura:        "6390aec004418998abbfbf5e1100e40dcd4fd852b53a6fdcd35791af2083e0e8"
-    sha256 monterey:       "e89020ed39c5a0476712b9b38872683132860cdde5a318b3cbca2b5dc4460054"
-    sha256 big_sur:        "b202491385fbc0b03d915cec9919c591f88768582fdfb8a67d8fbd2345de3670"
-    sha256 x86_64_linux:   "2788c52516db7b9904dfbd8de27b088a0a096bb79786ecdfe6c5b367d3855a0d"
+    sha256 arm64_sonoma:   "bdd73eeb6714dff95ae717dc812e794bf023681de6e3e43dc5c36b8b9bd6588a"
+    sha256 arm64_ventura:  "70ec29b54e3d54557c431853dcbaad0c70b31f37507054b6255c9cba96106abf"
+    sha256 arm64_monterey: "19351cc5535ea2b921a14591d2c1bf902b13c26287dae9fbac19efe0d9e5c23d"
+    sha256 sonoma:         "b60877bb50252d62f29f401fa7e91b624da5a9feb62f8ee14e5be066b5686399"
+    sha256 ventura:        "a3d8863e2cf58e8c1f10d29856c9bb21d8a40998d4b8efcac430491fa17a6f41"
+    sha256 monterey:       "d8cd6d8a3a6bd8b0f76ec18cf895dc9c9972fcd8ca20aa0eaaaec35a76f0fc9f"
+    sha256 x86_64_linux:   "102e277be5f21e445cc3c1ffc9920226e79df6e78eb1d8acbec58a97d4178ba8"
   end
 
   depends_on "intltool" => :build
@@ -48,7 +47,7 @@ class Gitg < Formula
     inreplace "meson.build", "version: '45.alpha'", "version: '#{version}'"
 
     ENV["DESTDIR"] = "/"
-    system "meson", *std_meson_args, "build", "-Dpython=false"
+    system "meson", "setup", "build", "-Dpython=false", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end

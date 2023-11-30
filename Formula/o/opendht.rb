@@ -1,8 +1,8 @@
 class Opendht < Formula
   desc "C++17 Distributed Hash Table implementation"
   homepage "https://github.com/savoirfairelinux/opendht"
-  url "https://ghproxy.com/https://github.com/savoirfairelinux/opendht/archive/refs/tags/v3.1.2.tar.gz"
-  sha256 "7b1e451a21a10ac1d189c9467be75e4e3e4e6769ed8cab37a9c7f098b361dd22"
+  url "https://ghproxy.com/https://github.com/savoirfairelinux/opendht/archive/refs/tags/v3.1.3.tar.gz"
+  sha256 "4dacaac70104e6b0b10e0716eba24691b65f5aa47660b6b93dde778378505b59"
   license "GPL-3.0-or-later"
 
   # There can be a notable gap between when a version is tagged and a
@@ -14,13 +14,13 @@ class Opendht < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "39114f04e733a53ef24637248a6e420a3b3d8de4f2f11274b76effc2c9c4920f"
-    sha256 cellar: :any,                 arm64_ventura:  "3617bdc64ac45b7d08e144677b04a0a3948f1b4848cd052a827bd3f6be67c250"
-    sha256 cellar: :any,                 arm64_monterey: "95274964c0cc8454a068d83a065e719782ac5b9e5aa53a809df2a36daf284470"
-    sha256 cellar: :any,                 sonoma:         "593812fee5dc81f8e0ea91e1edd4f6a89c009a64f9d4294577ee74aff67393d3"
-    sha256 cellar: :any,                 ventura:        "13face647e37f84b8e4d01653bfbefeeb68fde6df15938d067f3b00e3c318c35"
-    sha256 cellar: :any,                 monterey:       "565444c51c941cef5df829f0525b3a35fd8398acd2c3c3bb806ca2d21209e36c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70060d730fbef13025ab070ec939109622e331bd951f22ca740e1cada50b4ea0"
+    sha256 cellar: :any,                 arm64_sonoma:   "3bfc3db2c3f9ac898be4b2e3537f6a8fe755f86c06d5b5a042c9ed8a4b3b54f0"
+    sha256 cellar: :any,                 arm64_ventura:  "cc12b023f7384e0e82d7c7bc4864271d3ce29619572ed751b0e7f1db68a56aad"
+    sha256 cellar: :any,                 arm64_monterey: "2e22097bbdeb21e4be885b7a0ea4a3a2c45b6b3cd9cec9f3a32534eaf8e984c3"
+    sha256 cellar: :any,                 sonoma:         "d6f0e2484072f940407cd33720adb522dbe8b034f80df36fc88ce9cb21915e54"
+    sha256 cellar: :any,                 ventura:        "f03a66ffc7f8dc194e0a4f99508feeaa129c0b531f5e6975ccf4131f67e5979b"
+    sha256 cellar: :any,                 monterey:       "14f70e0bec74bbd9fa7e44ead0a1a2c7467a5f0d7e9741a58139341034ec72ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39fdfa1186cb781e49b6aa5ee8c833b817fb7853c002663cda5f913fa500fd0d"
   end
 
   depends_on "cmake" => :build

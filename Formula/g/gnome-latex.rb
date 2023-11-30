@@ -4,17 +4,16 @@ class GnomeLatex < Formula
   url "https://download.gnome.org/sources/gnome-latex/3.46/gnome-latex-3.46.0.tar.xz"
   sha256 "d67555639b2a15a8aebd54f335354e44fe3433143ae3cb3cca7a8e26f8112ada"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256                               arm64_sonoma:   "d1b02ad59cd60ee54deeaf695c4f8595a0768dc9d54591a57c82f59e75e9be36"
-    sha256                               arm64_ventura:  "babf74829df2d757f7b03485c681fbc4c76a43078c247f637ae227e29cfeb822"
-    sha256                               arm64_monterey: "d25c28a03cd594f3d65980d1b89820579e0a6be6d3f43d6e2990f3df67f26a84"
-    sha256                               arm64_big_sur:  "22644d43bcc27e2429e46fb12e4983d356e0c0ce0f0efe4add127a357f90786c"
-    sha256                               sonoma:         "ac843e6ee66c60e7669bc12a36533eecb520d38be5c6071ed83bc1586371223a"
-    sha256                               ventura:        "df375601b9b20cb8a3e6fb0621d87f3c57654ba29d44faa669b9947295f5cd89"
-    sha256                               monterey:       "6921484d22aeb89bf8d6c8932020a42f704a3a7df8bf4287610ad0b192b1ed3a"
-    sha256                               big_sur:        "09c10576ad649d1c3b5d1d72f149618078011264751dd428545deb7abf39ecc3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0ea3bae578a8706802e0cad61c2f5ab0bbe1402be092d186ef5de5bdc9b8196"
+    sha256                               arm64_sonoma:   "1c13cd8534607f8800921e54380c5c8de54a65bf6dc86343bcb9eeae270d0c6e"
+    sha256                               arm64_ventura:  "6eed165be159ebbb4a115b25fc89f0c6eb1894633795cc14866c81eebaab7f6d"
+    sha256                               arm64_monterey: "953fb8dfebd9d4c447c31059e06a744ec67481cfa32bc7a4716a1ef0f13a7def"
+    sha256                               sonoma:         "3afd744e2662cca98f1bd308081c70b9c4238dd81814529c496ff781cc522927"
+    sha256                               ventura:        "b0f7cd7369ff7cab0e673666e665a816025252ddaed489a643b4093224b1c838"
+    sha256                               monterey:       "a4d75e7e66c5caddefbe794455fa06450caf59f942060e0e170225aa9b2fe853"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d816325f5767669b7d709f3c9d5976b021345d124a2728984348c66d43fea6e6"
   end
 
   head do

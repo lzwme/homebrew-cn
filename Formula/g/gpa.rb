@@ -1,7 +1,7 @@
 class Gpa < Formula
   desc "Graphical user interface for the GnuPG"
   homepage "https://www.gnupg.org/related_software/gpa/"
-  revision 2
+  revision 3
 
   stable do
     url "https://gnupg.org/ftp/gcrypt/gpa/gpa-0.10.0.tar.bz2"
@@ -17,17 +17,13 @@ class Gpa < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "f53f576e085e3451d398975f7b31e3367d9f37a1f6e753b2ecb973ab95efe015"
-    sha256 arm64_ventura:  "1f824940f9f8cc87c48a418692a80d9819de7690b29982cdb768f0d13ff68459"
-    sha256 arm64_monterey: "0632898dac3f09ee39856db86625d0b4eca39e309850d4579daf9be230ff9af8"
-    sha256 arm64_big_sur:  "77f73e7161f535ed00a02c8df2f5818dad8574a0ff52f339949b1030a0bd7454"
-    sha256 sonoma:         "e804d3a352de3561807948cdf5f8481b8d9ca01bdc795b9d50202171c415bd26"
-    sha256 ventura:        "0523987f802bfcc47cb082984ae591c871e3b4f9623cd29f734d173a833d217d"
-    sha256 monterey:       "28a9fb24ea01ea5cc3d0e212c516b3d72a994ce70e339d911d7828f9be949669"
-    sha256 big_sur:        "b4476f76bdd1e9b7acb836a49cb7e216726d277d04d24ce1b5c2d3d7e392adf0"
-    sha256 catalina:       "c598e546d83f042d3de1011bff926a839c34e56c06a4c9cc6dbab25ff9c19df6"
-    sha256 mojave:         "14eace8606e49fe9d3d2fa39a9f79fbbaca7cff7d78c0cb7027033f92133fa04"
-    sha256 x86_64_linux:   "1a17d322fea230c75e6578aeab62b9a757bf0bdd26db04e7d1ec9277ec41c39e"
+    sha256 arm64_sonoma:   "61cec27ce8123b84e46f47630a9167e70b30c9ef6166c3a62260f242e48b4969"
+    sha256 arm64_ventura:  "1b4cca4d1ed836422734ca61db7900a99d7e2f9f7149b004dedef0c138f1dca8"
+    sha256 arm64_monterey: "f9f340091302287952e582f36bbe28762de66004dcbc430d7995d773e6417904"
+    sha256 sonoma:         "2686eeaf74794536fac813bbace0ab49100de3a53e8839fb2756b9cc4ec2275f"
+    sha256 ventura:        "c20a1ab617533f04bd338f57fa9ccd8b0e299faff92b080a9bbd05ba3a1b4a45"
+    sha256 monterey:       "b64fce454547afc4392698cbacb5780f05923ab26baf60843e68766d4817f10a"
+    sha256 x86_64_linux:   "a0ea367820fa2702f1f04dde97fb0fb8632dfe69221148a3a2bd0dba1170c818"
   end
 
   head do

@@ -31,9 +31,9 @@ class GhcAT96 < Formula
   depends_on "automake" => :build
   depends_on "python@3.12" => :build
   depends_on "sphinx-doc" => :build
-  depends_on "xz" => :build
 
   uses_from_macos "m4" => :build
+  uses_from_macos "xz" => :build
   uses_from_macos "ncurses"
 
   # Build uses sed -r option, which is not available in Catalina shipped sed.
@@ -81,13 +81,19 @@ class GhcAT96 < Formula
       end
     end
     on_linux do
-      url "https://downloads.haskell.org/~cabal/cabal-install-3.10.2.0/cabal-install-3.10.2.0-x86_64-linux-ubuntu20_04.tar.xz"
-      sha256 "c2a8048caa3dbfe021d0212804f7f2faad4df1154f1ff52bd2f3c68c1d445fe1"
+      on_arm do
+        url "https://downloads.haskell.org/~cabal/cabal-install-3.10.2.0/cabal-install-3.10.2.0-aarch64-linux-deb10.tar.xz"
+        sha256 "004ed4a7ca890fadee23f58f9cb606c066236a43e16b34be2532b177b231b06d"
+      end
+      on_intel do
+        url "https://downloads.haskell.org/~cabal/cabal-install-3.10.2.0/cabal-install-3.10.2.0-x86_64-linux-ubuntu20_04.tar.xz"
+        sha256 "c2a8048caa3dbfe021d0212804f7f2faad4df1154f1ff52bd2f3c68c1d445fe1"
+      end
     end
   end
 
   # Backport fix for building docs with sphinx-doc 7.
-  # TODO: Remove patch if fix is backported to 9.2.
+  # TODO: Remove patch if fix is backported to 9.6.
   # Ref: https://gitlab.haskell.org/ghc/ghc/-/merge_requests/10520
   patch do
     url "https://gitlab.haskell.org/ghc/ghc/-/commit/70526f5bd8886126f49833ef20604a2c6477780a.diff"
@@ -97,7 +103,7 @@ class GhcAT96 < Formula
   def install
     ENV["CC"] = ENV.cc
     ENV["LD"] = "ld"
-    ENV["PYTHON"] = which("python3.11")
+    ENV["PYTHON"] = which("python3.12")
     # Work around `ENV["CC"]` no longer being used unless set to absolute path.
     # Caused by https://gitlab.haskell.org/ghc/ghc/-/commit/6be2c5a7e9187fc14d51e1ec32ca235143bb0d8b
     # Issue ref: https://gitlab.haskell.org/ghc/ghc/-/issues/22175
@@ -122,11 +128,6 @@ class GhcAT96 < Formula
 
     resource("cabal-install").stage { (binary/"bin").install "cabal" }
     system "cabal", "v2-update"
-    if build.head?
-      cabal_args = std_cabal_v2_args.reject { |s| s["installdir"] }
-      system "cabal", "v2-install", "alex", "happy", *cabal_args, "--installdir=#{binary}/bin"
-      system "./boot"
-    end
 
     args = []
     if OS.mac?
@@ -145,20 +146,17 @@ class GhcAT96 < Formula
     ]
     # Work around linkage error due to RPATH in ghc-iserv-dyn-ghc
     # Issue ref: https://gitlab.haskell.org/ghc/ghc/-/issues/22557
-    unless build.head?
-      os = OS.mac? ? "osx" : OS.kernel_name.downcase
-      cpu = Hardware::CPU.arm? ? "aarch64" : Hardware::CPU.arch.to_s
-      extra_rpath = rpath(source: lib/"ghc-#{version}/bin",
-                          target: lib/"ghc-#{version}/lib/#{cpu}-#{os}-ghc-#{version}")
-      hadrian_args << "*.iserv.ghc.link.opts += -optl-Wl,-rpath,#{extra_rpath}"
-    end
+    os = OS.mac? ? "osx" : OS.kernel_name.downcase
+    cpu = Hardware::CPU.arm? ? "aarch64" : Hardware::CPU.arch.to_s
+    extra_rpath = rpath(source: lib/"ghc-#{version}/bin",
+                        target: lib/"ghc-#{version}/lib/#{cpu}-#{os}-ghc-#{version}")
+    hadrian_args << "*.iserv.ghc.link.opts += -optl-Wl,-rpath,#{extra_rpath}"
     # Let hadrian handle its own parallelization
     ENV.deparallelize { system "hadrian/build", "install", *hadrian_args }
 
     bash_completion.install "utils/completion/ghc.bash" => "ghc"
-    ghc_libdir = build.head? ? lib.glob("ghc-*").first : lib/"ghc-#{version}"
-    (ghc_libdir/"lib/package.conf.d/package.cache").unlink
-    (ghc_libdir/"lib/package.conf.d/package.cache.lock").unlink
+    (lib/"ghc-#{version}/lib/package.conf.d/package.cache").unlink
+    (lib/"ghc-#{version}/lib/package.conf.d/package.cache.lock").unlink
   end
 
   def post_install

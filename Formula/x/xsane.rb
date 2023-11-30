@@ -5,7 +5,7 @@ class Xsane < Formula
   mirror "https://fossies.org/linux/misc/xsane-0.999.tar.gz"
   sha256 "5782d23e67dc961c81eef13a87b17eb0144cae3d1ffc5cf7e0322da751482b4b"
   license "GPL-2.0-or-later"
-  revision 6
+  revision 7
 
   livecheck do
     url "https://ftp.osuosl.org/pub/blfs/conglomeration/xsane/"
@@ -13,15 +13,13 @@ class Xsane < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "94553b4c262972182e999053e32b2afcb4a21718afea67b1437053a8aa764fd0"
-    sha256 arm64_ventura:  "d2d0507a2156f930eef16374780022edf4e976e7a5bde9c7dcf7ac81a9725dca"
-    sha256 arm64_monterey: "0c763e8bdd1f31f25a5cde4f9f723719d6c4f2f7adf8a03148d05d18e690cf1e"
-    sha256 arm64_big_sur:  "85b52863f5e9fcbfeaa5802e86087d9a1cfbbd40ca725f8a7abb36c561882c64"
-    sha256 sonoma:         "ab5569ae3b2f6aabde79609a3611f3cb879eb37cd63e3e15ca27bdc2dda0295e"
-    sha256 ventura:        "08ef991d405a28926b28221dd64263751ca579106b8459e22f721d674d5a0874"
-    sha256 monterey:       "c1b28359dc4961aa9f705c3f0336da59ce5e303add9312d075fd1d48f7774b01"
-    sha256 big_sur:        "a4ad4d5b415fb56d65d87ec43898a2af0165c267eb709863cca9d8faf7736a70"
-    sha256 x86_64_linux:   "321247fec8198f7580ec51d2e237588c837bd1df6683c80eb49e0b36cf5bbef6"
+    sha256 arm64_sonoma:   "5532780b9dd6f8768a38d4fa9a845df83367ef96d0514ac41a7f3d337b4a20b5"
+    sha256 arm64_ventura:  "937f1a294ababd5e2c7815c599a185b83e67bb07ef6f86da4773bfcfcead1876"
+    sha256 arm64_monterey: "c7fc7231fcb5d959fc393a50388e7fa2bd152d6dde8dd0b2cb5530e2b9aa29c0"
+    sha256 sonoma:         "13df5fed03ac7d42542000ac00160e78ccb95e79877426719f51c27d38d888e4"
+    sha256 ventura:        "7f62506c8cdd4ed11beaaa735d3d9d49b034fd9b22595b58c1437bca0fb44390"
+    sha256 monterey:       "be01888247a3d7e510e17a484822c170dd3b7159eb97a73c2dd635a017a199be"
+    sha256 x86_64_linux:   "38f48e2fb08a821089e4419e0b0a6d6994a9e3d1faa009e3319107a4b393af03"
   end
 
   depends_on "pkg-config" => :build

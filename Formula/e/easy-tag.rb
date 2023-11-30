@@ -4,16 +4,16 @@ class EasyTag < Formula
   url "https://download.gnome.org/sources/easytag/2.4/easytag-2.4.3.tar.xz"
   sha256 "fc51ee92a705e3c5979dff1655f7496effb68b98f1ada0547e8cbbc033b67dd5"
   license "GPL-2.0-or-later"
-  revision 9
+  revision 10
 
   bottle do
-    sha256 arm64_sonoma:   "f0b8bfbb01993aff995701de379d3b5e6580cae861052972a744720dbb9cf526"
-    sha256 arm64_ventura:  "14041c9e8d1d5a87fa0543fe021f4b188b876c35c62ffc071b0bf65f1a30fcd9"
-    sha256 arm64_monterey: "9d96d60f458cb1c9e9b04cddb224ce280d7284391fc37163cc46d8db7dbde690"
-    sha256 sonoma:         "6763bbffcec0d1da9ba419287a0f776b6dd5946d5e2a8b5ace83cb87a6b04e30"
-    sha256 ventura:        "b4794e4b8df053b5e4d5512be47294528903db669891dc9a23a73205ad94daea"
-    sha256 monterey:       "709587da04117f21038b23b304c1cbcf9a1e7d6efd1ad92e394916692311357e"
-    sha256 x86_64_linux:   "9d4aff672568ae10160182dbde2c04f4a22283e6f871c5907004c6170c69fe41"
+    sha256 arm64_sonoma:   "c20d11415ff4338da9530ca0a9fb2f155105cec63965028b5b045e3b2fa8928c"
+    sha256 arm64_ventura:  "46009b3114243c1b11085877e3bc771160111652ce3cb2950c72a9aaa2702dd7"
+    sha256 arm64_monterey: "fe8d835568ec1832842b1dc9978812269c5ae41bfa678248c2ef5e9ef6db4ad0"
+    sha256 sonoma:         "a5c470008848cd9d62c02f55c224fcd5e5fe40d6b4c7136c96d7586080ccb514"
+    sha256 ventura:        "4943e0cc391ff8084187ffe9ea92b3cd2e106faf5a1ed677603ac52f14c5b8a1"
+    sha256 monterey:       "adeb0d50a0a2f865bf3353264edbbb44b79d9e366aab4a883317264f26408ad5"
+    sha256 x86_64_linux:   "8fc76e69f070f3bc6353479a850ad4cb6884c182bdd1b998624a76c880a10d34"
   end
 
   depends_on "gettext" => :build

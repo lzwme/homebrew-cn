@@ -4,15 +4,16 @@ class Gnumeric < Formula
   url "https://download.gnome.org/sources/gnumeric/1.12/gnumeric-1.12.56.tar.xz"
   sha256 "51a38f35ac5b0f71defa8b9e20bf2e08563798f1cb33379a9a17726fb1e3e1b2"
   license any_of: ["GPL-3.0-only", "GPL-2.0-only"]
+  revision 1
 
   bottle do
-    sha256                               arm64_sonoma:   "ab877bb7f4cf4c97578cdf000aad09296253aa23c92eb4806c99b0b94212fbc7"
-    sha256                               arm64_ventura:  "1c020c7feb05ac13299c19e3b9f3cad99bfc524919fdd818449129c4386eb901"
-    sha256                               arm64_monterey: "cc2413bea52858c9aa20d8aaa932c3dd96c3bea14fe6ac7235fe6d667291180a"
-    sha256                               sonoma:         "15e9fb010a04d1c17032de58ea456e81bebd4f7684d763700631c57aacc3246c"
-    sha256                               ventura:        "3d609921696fbf9bfd05652962bb2cb31d016903d877b780c8bfa4476c36bc2f"
-    sha256                               monterey:       "f13a55f84d4d3533474d80f90d86126e3d1ab0e124ada3545a8daf4b299b5766"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1967d0c2251845561168ab11766254ec39720d500d8a442a3cdc22e380272ce6"
+    sha256                               arm64_sonoma:   "4654930a19b5295b3808857cf1985b778999b4d04a9dfd3a58cdf253988bf5c1"
+    sha256                               arm64_ventura:  "1a43c1ca977f60182710adee735cdc107321326e9f258586a0e14ee3fba6161e"
+    sha256                               arm64_monterey: "4530fbd65dd79250711dcae5ed15edc7c3338892aeb4e73365a14a95fb74bf56"
+    sha256                               sonoma:         "afcc4c8fae9d15ab06ff3e103bb212fffe54a48f3b5cc473778b5e48c37e2578"
+    sha256                               ventura:        "bc3ca8c247541147ad1b019ad370a43cd118b45f5100491b62e35490facdc3dd"
+    sha256                               monterey:       "d5013e28b3a916249d65bbe7e1eca52102e0c98eab41593621f8a22f259a2c45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59e18dcd5e4cb826854ae189716f058f1a91dd2fb2a3cd60430a02e614d9765a"
   end
 
   depends_on "gettext" => :build
@@ -37,6 +38,13 @@ class Gnumeric < Formula
 
   on_linux do
     depends_on "perl-xml-parser"
+  end
+
+  # Fix build with libxml2 2.12. Remove if upstream PR is merged and in release.
+  # PR ref: https://gitlab.gnome.org/GNOME/gnumeric/-/merge_requests/32
+  patch do
+    url "https://gitlab.gnome.org/GNOME/gnumeric/-/commit/a95622e5da645481d87d8d4fc6b339123cce0498.diff"
+    sha256 "892b0ec2a566846c1545638336cdd4157bf9114d98abb3afbda074e179c0fa2a"
   end
 
   def install

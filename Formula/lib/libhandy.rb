@@ -4,17 +4,16 @@ class Libhandy < Formula
   url "https://gitlab.gnome.org/GNOME/libhandy/-/archive/1.8.2/libhandy-1.8.2.tar.gz"
   sha256 "2c551aae128dff918b84943a93a58bc9be84f42a709b9e43c8d074538e68c10e"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "3ebc1d3d66cfa5118353eb3d86d70b050c854059b3c6f0356cac7611672dbd47"
-    sha256 arm64_ventura:  "668691bf94bdb5c6bd900e5f0195863751846b55473e8e779727be361f59fe21"
-    sha256 arm64_monterey: "001495bb45f5be87376fe1643e8c1dd037904ea67d4bccc5b9f8e526bf24fc22"
-    sha256 arm64_big_sur:  "d13bb6d2bfc26b1f3f89e217efbba531be3929ebe7ce62f3fcd44a10c671b78e"
-    sha256 sonoma:         "4336ed97e5784f70dbe5d3bcca48c0d2d47bc160f5803d100d5fb06f87d644d7"
-    sha256 ventura:        "edc2b0389088589a19bf911340372ad9e1722850dc10e478e093c842cda4f220"
-    sha256 monterey:       "06fd70bcbb2a64fc528fc33baf9480c3944bb809615765529edec8103a63b06a"
-    sha256 big_sur:        "ae5ccaa60833a2a857309d0631b84d302df9e4724e5e70d6b3e3ea2d05456dee"
-    sha256 x86_64_linux:   "9d41a2ee187e6705d729bcb63e91dbd12821bbfdc8879ef7de3cfe5e1baf3943"
+    sha256 arm64_sonoma:   "9fcdb0173e9b576dea19107f98df0f2adbef3f1910b17daa89511f8e75bc5c3b"
+    sha256 arm64_ventura:  "9cdc845cfe0243135ae83aa3ab8c770bb6c8763bd052a741f27f12f45a16979c"
+    sha256 arm64_monterey: "94fd71c0c98c6c749cc666ca0cce066f5f8547591659daaa27aa40c74f186d53"
+    sha256 sonoma:         "9629c0503155554d87b27cd8ec9b06dcbbce2d80f2c8596b39b4f73cebdce893"
+    sha256 ventura:        "e864fa7bb18fbcb45305afef78fa15ad255fa109979ce798e822f343b22d25b6"
+    sha256 monterey:       "5f7e53fd66bc1f4d66da29f18dab681699f8ada46bd58f761835cd68b47554cc"
+    sha256 x86_64_linux:   "dd2e59d5253eb14f4937770eb5b57a78fc5de2812e09b93d4e1d8fc89157e0be"
   end
 
   depends_on "gettext" => :build
@@ -26,11 +25,9 @@ class Libhandy < Formula
   depends_on "gtk+3"
 
   def install
-    mkdir "build" do
-      system "meson", *std_meson_args, "-Dglade_catalog=disabled", ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", "setup", "build", "-Dglade_catalog=disabled", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do

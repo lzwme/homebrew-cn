@@ -5,6 +5,7 @@ class Mdk < Formula
   mirror "https://ftpmirror.gnu.org/mdk/v1.3.0/mdk-1.3.0.tar.gz"
   sha256 "8b1e5dd7f47b738cb966ef717be92a501494d9ba6d87038f09e8fa29101b132e"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,20 +13,16 @@ class Mdk < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "47ee27850adfee1124210ef08a2f71574a1120d41b4ba5f821d7bea73f08a97b"
-    sha256 arm64_ventura:  "72e741da4f22397c5a5d0f68438783f68191384a8d47059f52f8acb706d0830c"
-    sha256 arm64_monterey: "8da880cef0ca8a00dbc5508f0e805c0c7e356f80771a64dad4b5bd7983883a96"
-    sha256 arm64_big_sur:  "82feea4dde50c9990493575153eba005943911de642cfe855881f162739b36d8"
-    sha256 sonoma:         "f9f9d521f310fa86fce699b4cc029a17f2d9ee30d5d98eefa65bbd47698ae948"
-    sha256 ventura:        "fce1bcede18e32fb4958828e4caae184d69755933f042787bd9f3faed479d364"
-    sha256 monterey:       "74070fb72a32c176845c7df342a3c11d5f581ad70ffee3311bff1660c0e53089"
-    sha256 big_sur:        "305422ac29e1cb04827277976b3c2e7fe678a00cd2a648739d00684c9c1f3a78"
-    sha256 catalina:       "bd29f7cd3b52987492d17a4cfa9a51712bbacda1f738454cfb942596392fe9f7"
-    sha256 mojave:         "51c33dc12bf9277cd0d60d55a34236a1ab8d9577c9fbe296a8d893962e391d6a"
-    sha256 high_sierra:    "e8bd4f2623b6e6e55cc2ccf30339a39f14cc1b499d155b6c33144fdf0bf76745"
-    sha256 x86_64_linux:   "b316f2bb722d07f661f73e6b836a38679a00313e07bee00c4eff92870ac26ec5"
+    sha256 arm64_sonoma:   "fd1a717d1a4c992880d8afd9217b46416521dbe7d4c87b6caf86efdc9e603bb7"
+    sha256 arm64_ventura:  "916131e068d96db724db7c8fb50fa406dd2847ef028222b40a2c13bd2ee4d667"
+    sha256 arm64_monterey: "82a2cadce9c1f29cd4d7b53ec2ca15b8382a964627219ed87f3cd75927f851b8"
+    sha256 sonoma:         "af8fd1f81a41417af557691fc2cd065b7f4e9bca2f84110bca43a235c066eb0b"
+    sha256 ventura:        "c2b79558a41c36b848cb8b9ef2500a82ee961c1c427a09a01fce486e5b9b2a06"
+    sha256 monterey:       "90c9293131de5a4a7533cb6a1bc613cad2d9c1750833bde1fcd795cbbc7923ae"
+    sha256 x86_64_linux:   "baf283b8cdb2d96c284ced6a347f7754132b5f696663552bda24d45ca9ca2ca5"
   end
 
+  depends_on "gettext" => :build
   depends_on "intltool" => :build
   depends_on "pkg-config" => :build
   depends_on "adwaita-icon-theme"

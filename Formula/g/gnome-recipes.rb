@@ -5,20 +5,19 @@ class GnomeRecipes < Formula
   url "https://gitlab.gnome.org/GNOME/recipes.git",
       tag:      "2.0.4",
       revision: "d5e9733c49ea4f99e72c065c05ee1a35ef65e67d"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:  "f56acfdd1c9d668ab51fe01132a627d5d4d2ccf783424c517ea3c3d2a86ac401"
-    sha256 arm64_ventura: "7428b63c0372196f449fca8bd2c39eaa5fe8ee9c40b1d5ad7e54af040ccc495e"
-    sha256 arm64_big_sur: "a2feeebf2f5d464b1f888d59d30e713be65bb4f19def590684b5eeeaa11efe94"
-    sha256 sonoma:        "1c19f965d29db63d50e3b02fa8cdd7fe7e529c51dfc57209db328e874457b42a"
-    sha256 ventura:       "87af4fbd41d71170dfd659353c2caab957c9a3c36d84a0b4c6f79694c4bab07d"
-    sha256 monterey:      "8a9ff369bae0b3acbbf48ee50e7ac5a8ec5a1340aeb5b81a6cf5edc3fb5f571c"
-    sha256 big_sur:       "105a21c96546f36b1b419dd4c75fd2e7b8104734292133fd21f1380b426043d2"
-    sha256 catalina:      "854c2d0ce62d52830785e13faec7626e0c08769d9b9e618158d622acb20b1097"
-    sha256 x86_64_linux:  "ffedc8920bea9198ab547302ded99b2591f52d3f38f11e7cb00b29aa80e386eb"
+    sha256 arm64_sonoma:   "3b9c974d968a76db7c9b4c7b331f80a4c18f4ae239def0e0a14cabbc8b9a1f15"
+    sha256 arm64_ventura:  "f85b23251c9f5708f83dfe7838bd5d60ebdbc9b744bffd7781bacb7c2723de98"
+    sha256 arm64_monterey: "0da13a1bfba07c7d16367844b7b9374f64011b25795abded3503254b43ed833c"
+    sha256 sonoma:         "d6fa50383dd116d412c80161ff94e0017f20d3f3c1cf3961271b5c65e6b9f519"
+    sha256 ventura:        "9d3ec2b10fe2a963b2dc27bcaac37dcec4947b2efcc7a9a3ec09655f592e1cf0"
+    sha256 monterey:       "279fda299d0eda6b7848117d9c024d9b8dbafa308a105533ed2ffc683e522fed"
+    sha256 x86_64_linux:   "405e49631806535c5717ada6b62b82a22db1eb7144e81c9d1a83e02b9c53716b"
   end
 
+  depends_on "gettext" => :build
   depends_on "itstool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
@@ -67,11 +66,9 @@ class GnomeRecipes < Formula
     # stop meson_post_install.py from doing what needs to be done in the post_install step
     ENV["DESTDIR"] = ""
     ENV.delete "PYTHONPATH"
-    mkdir "build" do
-      system "meson", *std_meson_args, ".."
-      system "ninja"
-      system "ninja", "install"
-    end
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   def post_install

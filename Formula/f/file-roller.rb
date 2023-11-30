@@ -4,20 +4,19 @@ class FileRoller < Formula
   url "https://download.gnome.org/sources/file-roller/43/file-roller-43.0.tar.xz"
   sha256 "298729fdbdb9da8132c0bbc60907517d65685b05618ae05167335e6484f573a1"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "3a2c6468a868140f9d2b528fc61f9d904728171f5ea26fa7be0f9ec08f8c8ec5"
-    sha256 arm64_ventura:  "8d9d4d1a6e8951aab53925d81fea894e42673e44e74334de7389e4d4e0c45893"
-    sha256 arm64_monterey: "24c57252d20bf9c50965dbcd6758119b857455f98be186352e39f62220850708"
-    sha256 arm64_big_sur:  "20562e6dd43c1837bbd477a0772e54969e7b1941443232a638136046c3303a5d"
-    sha256 sonoma:         "899f677d5fdbf9a752d94d796106566156ba858516525cb0812a6f8954cfebb8"
-    sha256 ventura:        "69b06c6384434180a556b6c0e41021b836911e130edd19d8a48480ca441becd7"
-    sha256 monterey:       "34b892ba595a685455bfcffd699676e4773fb4fac5a32ee8ed72b78bf9562e7e"
-    sha256 big_sur:        "ca90cd09d4b7c310c39851d6880391a04c8838a82d4e00d9c3c275ce834d962d"
-    sha256 catalina:       "8e6a700c11ca46f433b159faa2aecc425791aa1b7acf9f6b8dd8a69b3caf1820"
-    sha256 x86_64_linux:   "26fafa0ed18cc3e19567609ed448f6cd6bae516a5490d71d16580d1bf4b45e0c"
+    sha256 arm64_sonoma:   "16b06490765c501c70bd3d0db457196928e0876d7fba03f2ab968a34c0806150"
+    sha256 arm64_ventura:  "912c7fb4afbc9cd54d953b77bbdbfe8569e75b8f16516edc34be4ba1151f26b1"
+    sha256 arm64_monterey: "3e639f65b5bd29eb0cb94ce800af5c1a1825fc52baefd424a801fa3f7cc72dd1"
+    sha256 sonoma:         "cd551c7219378d9c370723ca10bc698d29d2472bbc941c041ccdce4ffcae02fe"
+    sha256 ventura:        "d0e1e4be37b7f14ab5bc0a5b2ea31d0be48cc03208d9468e60a2d1505671d964"
+    sha256 monterey:       "321ee8fa8f9869c24dd61d558b0216fa0a56120f28f938b81968586b1eb0fcee"
+    sha256 x86_64_linux:   "5775c3a3a29583805a77c4db02f9e06696f77f8d7ca46adbe95220f14dcc848e"
   end
 
+  depends_on "gettext" => :build
   depends_on "itstool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
@@ -42,7 +41,7 @@ class FileRoller < Formula
     ENV.append "LIBS", "-L#{Formula["libmagic"].opt_lib}"
     ENV["DESTDIR"] = "/"
 
-    system "meson", *std_meson_args, "build", "-Dpackagekit=false", "-Duse_native_appchooser=false"
+    system "meson", "setup", "build", "-Dpackagekit=false", "-Duse_native_appchooser=false", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end

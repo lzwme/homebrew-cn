@@ -6,6 +6,7 @@ class MysqlAT80 < Formula
   url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.34.tar.gz"
   sha256 "0b881a19bcef732cd4dbbfc8dfeb84eff61f5dfe0d9788d015d699733e0adf1f"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
+  revision 1
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/8.0.html?tpl=files&os=src&version=8.0"
@@ -13,15 +14,13 @@ class MysqlAT80 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "e009be7dd6fdbc79e89c6cdfe40b027081aa13a6c4a047c8cf58aa34482900de"
-    sha256 arm64_ventura:  "c2f5cac94e7262ce3d190f4a58c96eda19ca4957b3724684651167488c535f37"
-    sha256 arm64_monterey: "a240d10bcb82598dde2d5d09bd4898f2ffb71ec6d698fb6c39eac80d754d39dc"
-    sha256 arm64_big_sur:  "f0239695c837fb67826f9101a7436582551df265db374ea4e3f9fc398f0a71a9"
-    sha256 sonoma:         "bb6d4fd92c624bb00387222b62b73a027796ebae720e2523b4cfbe2299bf968d"
-    sha256 ventura:        "7ac320da15cbbe7eb1d5b4f04fdb8e24fe5add10910f1efb0c20c9f1ac29dd6a"
-    sha256 monterey:       "211e23bb54c02f7a0279862e376e0db6dda7063b587b830dc0e8617249b59ed6"
-    sha256 big_sur:        "21022a30b4ed16bf353eb685bf1273f1f27323182f9972e7f5b7f72974284dbb"
-    sha256 x86_64_linux:   "ef8e5bd9e823bf462861d3e992a810633f8c27c7ae80c22851fca0dc730b203e"
+    sha256 arm64_sonoma:   "2bae2f3230db60f23d66806bffcf32bce1a84af1cd9870deee34d254ee2e53b6"
+    sha256 arm64_ventura:  "e3eeb5490f19480f353f10e62786857ba49cf998fbb08fb6cfce90b9637b50fc"
+    sha256 arm64_monterey: "dc1b82405ab9856a7d56b3e8cdaf852efcf8c3bf9bdccee36611e50c4f64f17c"
+    sha256 sonoma:         "6799aff389ffb1d9cc2d10490fa6fd6a59aa6eb9b0b70791cec0c69b6a913dbc"
+    sha256 ventura:        "88ec3862c960127f9a02b60ff584669ed9dfe40bce8472c5cf436336a347d11a"
+    sha256 monterey:       "ad25ce8b7bdd8b59e66e1f2a9720c86dd4b79f9ec78aa5dc5ab9c42ced8715b7"
+    sha256 x86_64_linux:   "8638fbecb36ab8f9daa0eafe2cedca8b1ebae6016851f650f670ec97a4a50e23"
   end
 
   keg_only :versioned_formula
@@ -99,7 +98,6 @@ class MysqlAT80 < Formula
       -DWITH_ZLIB=system
       -DWITH_ZSTD=system
       -DWITH_UNIT_TESTS=OFF
-      -DENABLED_LOCAL_INFILE=1
       -DWITH_INNODB_MEMCACHED=ON
     ]
 

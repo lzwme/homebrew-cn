@@ -4,15 +4,16 @@ class Aravis < Formula
   url "https://ghproxy.com/https://github.com/AravisProject/aravis/releases/download/0.8.30/aravis-0.8.30.tar.xz"
   sha256 "40380f06fa04524a7875bd456e5a5ea78b2c058fa84b5598bc6e0642fcef00b0"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "56b62cc4c88b0eaa1ee1681b7c6a8e8d19f3adaefd254d7b1f736e897e45dc84"
-    sha256 arm64_ventura:  "a1d44f5d913fd1ebb81778e4e221957c0ffc66a56c4027a10a7a3d5bcdc53cc6"
-    sha256 arm64_monterey: "6ac787f82f282a1694683b8d00e5f1a1a7c4287208e433a9fe83b40d2f0c209c"
-    sha256 sonoma:         "474f3f6d81ace01753742d4998b214ee38b997e3e04c8d4ceb8d33370ceeb7fd"
-    sha256 ventura:        "4ae57e8e2f9ff565eb469a942d6df73f544786263a696bfa7e6454c261515164"
-    sha256 monterey:       "b4eb54eb6a099375f9c9b0d7060771dbaea113ddc982be2e010e1ccfa52b98f1"
-    sha256 x86_64_linux:   "72e0788362c00f7f18b6dfb42247f8d53080e0be76dd34269825551d86e63066"
+    sha256 arm64_sonoma:   "1f4c2e38ab288ea7d63f6819b98d7ed6360bc96084f42c3238e6a01cce42ccaf"
+    sha256 arm64_ventura:  "37fe3ab86c269e0d29c3426caf4bde33fa9c0c6bc7a44cd9c9ccb74f1bb895aa"
+    sha256 arm64_monterey: "d6aed1ef3322c79867426e8362e0e140c7a60f36d4c06d929fa5993a55cf7dca"
+    sha256 sonoma:         "a9a529672a64eacb6a54ac796ec1e9e935d757b53badaeb5886e01b01daf6cce"
+    sha256 ventura:        "2633a32ebb17ea6d140445a86d8b19d9561f8840efdd3f961776f0a31c0a5ea5"
+    sha256 monterey:       "2c0315ba520f01d7b29cacc00504f9802d7ac9a8bff748a6d129fb7f0ed3d487"
+    sha256 x86_64_linux:   "46efd141618e6c8d828da803918377263e2642a836b49d38f457c24a2d60ec49"
   end
 
   depends_on "gobject-introspection" => :build

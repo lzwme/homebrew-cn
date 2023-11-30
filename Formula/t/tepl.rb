@@ -5,6 +5,7 @@ class Tepl < Formula
       tag:      "6.8.0",
       revision: "16ab2567257a053bd957699f89080fafd0999035"
   license "LGPL-2.1-or-later"
+  revision 1
   version_scheme 1
 
   # https://gitlab.gnome.org/swilmet/tepl/-/blob/main/docs/more-information.md
@@ -16,15 +17,13 @@ class Tepl < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "d290e634839b6849177badff65e9772497ad312b8fc975675b448778e5aef25a"
-    sha256 arm64_ventura:  "3ad1b0df7c916b748f28f31925a131f81d1b2783945d251f77c56f3ae9bcaad7"
-    sha256 arm64_monterey: "70d92e31fdb391e88e0584eb0d7306027416c236ae980435f4280052da79edc6"
-    sha256 arm64_big_sur:  "b6362478346ec052e324e1e484a23447c388167a0c2152bf5a4f06dcc7bfb729"
-    sha256 sonoma:         "ed4471b3f0087bae7fe4d8ec04ee2a26e5900c1930526546f03530d7ee63e174"
-    sha256 ventura:        "6ad695b2c17eaccae764ac2be498c1d391b388f6d09720439df9cd7e8f6a45de"
-    sha256 monterey:       "a58d0ba64fc81dc14a90d826f53752da0088d2db6658df13444462357be229e6"
-    sha256 big_sur:        "0098b383e7059ddfe9f4b26f768c47db8e4a93de3400d8ce5fec2fd7eb4406d3"
-    sha256 x86_64_linux:   "52a865174b3dabc1f335c7cefec5e362973b4a9cd8e6813a79efdeaaa3e4c1b0"
+    sha256 arm64_sonoma:   "904381040ea00a392676bf07a06285f804f2b264ef6abc32b0d60866ffba923b"
+    sha256 arm64_ventura:  "25a9ad09ff5c6c64dd08c1cb73ff231a39c262d1a63346587d6919d13a8d6c30"
+    sha256 arm64_monterey: "1f7eb850af645bab127b303f8ce2b7b2bf365c4791105d9f734cd179be35e1bd"
+    sha256 sonoma:         "441359d3ae864be1e4dc8b6bbd8c25445195d1fd6b6b718095870048689313fe"
+    sha256 ventura:        "9ad95345b1572244629ea1c55ffe429bd9e747eb19a0b803fcc74f7fd4debf45"
+    sha256 monterey:       "0349eb6b7d5b0d1eefda927cf1919e0f5c360dd785bbb9d30834b6e1ab5d04a5"
+    sha256 x86_64_linux:   "73f88e00cbe024ae362ea760159576d070bd065d4025366a7bdf77a7c2f58fca"
   end
 
   depends_on "gobject-introspection" => :build

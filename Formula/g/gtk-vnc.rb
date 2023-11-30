@@ -4,6 +4,7 @@ class GtkVnc < Formula
   url "https://download.gnome.org/sources/gtk-vnc/1.3/gtk-vnc-1.3.1.tar.xz"
   sha256 "512763ac4e0559d0158b6682ca5dd1a3bd633f082f5e4349d7158e6b5f80f1ce"
   license "LGPL-2.1-or-later"
+  revision 1
 
   # gtk-vnc doesn't use the usual "even-numbered minor is stable" GNOME version
   # scheme, so we have to provide a regex to opt out of the `Gnome` strategy's
@@ -14,16 +15,13 @@ class GtkVnc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "e3a7ae8507ea686b29315c59c5db6696ce255ea9c1e27c5d9430f91b361cce49"
-    sha256 arm64_ventura:  "74998a793c0d7fd96b2a9d4a7ed4b0da1a4d84dce9c2f3aac187fb1430f43423"
-    sha256 arm64_monterey: "2109dd9faa3e24eb8d2bab51a3e00cfde6f660bd690912326c0185d61b9b684b"
-    sha256 arm64_big_sur:  "45af9d03738555dea42232249d0b44d115efa45e45f7e3e304a156ca7101c92d"
-    sha256 sonoma:         "a307f16c381ebf7a05b18df474802accb200e550b49d82661aa6cc71d2c3ecb0"
-    sha256 ventura:        "0280b7af865b61bba28e5f921b7a3905be00621f831e51bdd4291c300bc4fa72"
-    sha256 monterey:       "9dd26957dbc1e2481560b641e34d363df11638713cc3e5872ac978f44e658b59"
-    sha256 big_sur:        "002f65ea23b94e3307cf9363670d4de923643cde75334294ce9df880dde01168"
-    sha256 x86_64_linux:   "4c70374f53d695c50ba007b971f9ea8c3b88136497f2b344e332107ba7807696"
+    sha256 arm64_sonoma:   "1d86f05b499aca8550e57a6ee7da3aa3dbac6c71315a8fb99744e8dc6c00fe58"
+    sha256 arm64_ventura:  "bf1f1b44af9394444c670557a75710c82d7b6f748150f80beec54eb30a81840e"
+    sha256 arm64_monterey: "48885c5c13f4d2a23eb1d236a8ee89f9be610831ac7f129d610f6e7b984c2b40"
+    sha256 sonoma:         "08bc0bff60068971369a5baaea058ba8e01e403a03f33f8f5f4d45d73b3551e0"
+    sha256 ventura:        "6c50230eb976ffcdb056931d1a3a4217ebb19e9a7ea23beba16fa274ec358a04"
+    sha256 monterey:       "7242716e44c0aa52b9b0a481e445a34eedbcb75cb15f0a8af38374666cc8d06b"
+    sha256 x86_64_linux:   "9992fdf41743bef7fb279857b510441e0b95b63082ccaad5690a36776de48089"
   end
 
   depends_on "gettext" => :build

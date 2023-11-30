@@ -3,20 +3,18 @@ class Trafilatura < Formula
 
   desc "Discovery, extraction and processing for Web text"
   homepage "https://trafilatura.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/a5/81/f7818b3d805427e8448429fd1bfc126a06b2e5daa58ea97a8b153e5454fb/trafilatura-1.6.2.tar.gz"
-  sha256 "a984630ad9c54d9fe803555d00f5a028ca65c766ce89bfd87d976f561c55b503"
+  url "https://files.pythonhosted.org/packages/aa/2d/e91ca57ca6ead5bf72e2c651fc81d47052c4c794a27d729598fba90404b4/trafilatura-1.6.3.tar.gz"
+  sha256 "671dd6e0000e101c4bce8d70f4408bcb79fcbf2275ee25591efe33e2c8a1600d"
   license "GPL-3.0-or-later"
-  revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e0ce8400dabe8866ce6bf41eade61e7b300a1d3dfc04f5ca000d00296680eca9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "77ff886350f79c1cc4a652681875e7fa645066d90c25493b7269c3405af66262"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b5e1e6fad1aa03fea77830ac75bcdfc210067bbd66a969efc415ad455af9788a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b895d654138d38fc997b2e096d186c366d2f5d839072b8236ec55b886b0d7e86"
-    sha256 cellar: :any_skip_relocation, ventura:        "c7f3bec5cbde0e23640ee8573de253521675c526555e082156daeed70153ec9f"
-    sha256 cellar: :any_skip_relocation, monterey:       "a0a2a3750c3a033201e7a5a43851f49e7f10d5024c7731428d784518b671079b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a9f477006d9c4307fa420279dee084865c2b8821aea44f4f2c96b4f57476952"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ce1f417092b1bb44cebe2246a298f0f047c582ae3e28eebf6b6a78d4a64d9eff"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "64f4462e7a1d54617d58c65858755370d5bbd994c66adf4bfb9952d6dc50213a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "43d0c5a9daadb723bb5d6a4b9f7e2f2282303c812955f25184cf96b4ccdb82b5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bc7b6f91fb0412e9f90e5a64e1fda276076b0e4caaad172d3c7381212576cbe5"
+    sha256 cellar: :any_skip_relocation, ventura:        "742652676096d33ef7e4e415cf2e52baf913c4c076b54f99d74a3973c54d9e42"
+    sha256 cellar: :any_skip_relocation, monterey:       "d1f0754016997d369676380e5c3f2985fa3c35fb25f1aee0934ac99bbfe9e8ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d33ebf460b091362c9ae2d45f9590a059e797e85a5bb2941986f99e7dd5269d7"
   end
 
   depends_on "python-certifi"
@@ -29,18 +27,18 @@ class Trafilatura < Formula
   depends_on "six"
 
   resource "courlan" do
-    url "https://files.pythonhosted.org/packages/53/35/d141b5ffc381cef94c95d32d7082aff443cfea22b2a75c2839297064d408/courlan-0.9.4.tar.gz"
-    sha256 "6906aa9a15ae9d442821e06ae153c60f385cff41a8d44b9597c00b349f7043c5"
+    url "https://files.pythonhosted.org/packages/dd/66/09e441e9130ea67201009b3e6020ebccf2c90df4a25a05edd79f08706d33/courlan-0.9.5.tar.gz"
+    sha256 "38dc35b2e3bf1f5d516d00d51ac12ebde543e3417c6be6f6a2273c0fc5b5b353"
   end
 
   resource "dateparser" do
-    url "https://files.pythonhosted.org/packages/7e/16/e95f1d2f8014bac38e00d037e192222e52de7db7c71268ed3b2e12d4893c/dateparser-1.1.8.tar.gz"
-    sha256 "86b8b7517efcc558f085a142cdb7620f0921543fcabdb538c8a4c4001d8178e3"
+    url "https://files.pythonhosted.org/packages/1a/b2/f6b29ab17d7959eb1a0a5c64f5011dc85051ad4e25e401cbddcc515db00f/dateparser-1.2.0.tar.gz"
+    sha256 "7975b43a4222283e0ae15be7b4999d08c9a70e2d378ac87385b1ccf2cffbbb30"
   end
 
   resource "htmldate" do
-    url "https://files.pythonhosted.org/packages/e4/81/b3b8c88bbb6cdf610098597b7b96d71151de4bc8bda456e882da0486a92d/htmldate-1.5.2.tar.gz"
-    sha256 "cc8b41c412b21d8a9236981755cfba7dfe25ebaf925a46417058d4902ad77e9b"
+    url "https://files.pythonhosted.org/packages/24/fb/26213bb6300dd7d17afb131d222b4f7e083d822d0fd72089eb60e3b134c1/htmldate-1.6.0.tar.gz"
+    sha256 "5827c8f626a16800a29e57e8188a3d32d0b08ca4c7bd662537b73bbbf22c45a6"
   end
 
   resource "justext" do
@@ -64,8 +62,8 @@ class Trafilatura < Formula
   end
 
   resource "tzlocal" do
-    url "https://files.pythonhosted.org/packages/b2/e2/adf17c75bab9b33e7f392b063468d50e513b2921bbae7343eb3728e0bc0a/tzlocal-5.1.tar.gz"
-    sha256 "a5ccb2365b295ed964e0a98ad076fe10c495591e75505d34f154d60a7f1ed722"
+    url "https://files.pythonhosted.org/packages/04/d3/c19d65ae67636fe63953b20c2e4a8ced4497ea232c43ff8d01db16de8dc0/tzlocal-5.2.tar.gz"
+    sha256 "8d399205578f1a9342816409cc1e46a93ebd5755e39ea2d85334bea911bf0e6e"
   end
 
   def install

@@ -4,16 +4,16 @@ class Pan < Formula
   url "https://gitlab.gnome.org/GNOME/pan/-/archive/v0.155/pan-v0.155.tar.bz2"
   sha256 "3624ac3171fa8089825ce55b62b053db4f86d592f717c4d874c48ce0e885dff2"
   license "GPL-2.0-only"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "4ca4f98c9d8b4b1fb18019135f6a71cbd332e926d0460f3b788998a50ac3fde7"
-    sha256 arm64_ventura:  "b67ea740c7a1d737d8d9bc20928e45d95d943f7ffee9d4a5af46ac57eedc4930"
-    sha256 arm64_monterey: "ccba3ea41228197e3c59b93a1fff7c07a386e80a6c556148882cf45bdd0fd4d7"
-    sha256 sonoma:         "5b291b7dc052238e8eee4b1b4e5f82b40c84a93c342cabcb94b76a41bed10a74"
-    sha256 ventura:        "122648c9eb00130a90f204a1fad3a25ffc9cc2a64044e60bcdcf6c8883474178"
-    sha256 monterey:       "d0dfa5ffd7fb269ca5709d2234c524fe9eb59f7d22f413dc943034621e1c27ee"
-    sha256 x86_64_linux:   "acca0e04ffd203e54e8aad6d04a56c7c41bb621c60887a08de00c8a92071aa6f"
+    sha256 arm64_sonoma:   "c08c401b97e32d8934db82f16c2b0e074227dd24925a4f39d6a51998e80be842"
+    sha256 arm64_ventura:  "1e14649519c4a583699826739cb764a2aa2fb01f9ae4d7ecd8986785aebecb0a"
+    sha256 arm64_monterey: "041774d3ef7be7739b5eff98d9e983e2fc9f18d432166957617d45f105ebd046"
+    sha256 sonoma:         "1efce928f716ef06e07190d7131fb35fed49fd9a6127daff0e5d1799d4c96ff6"
+    sha256 ventura:        "f4c9efe084a27257401588d8f7349de86098c8e9c8ccf08ee943d80180c09673"
+    sha256 monterey:       "7b9d202162e62d67ecaef4fe1b1b6d1416e883c999ce21cc16ed649f45003736"
+    sha256 x86_64_linux:   "9b26beb9076367133889cbe9b8204c503e10c087bc9f15159fbd074a5f062392"
   end
 
   depends_on "autoconf" => :build

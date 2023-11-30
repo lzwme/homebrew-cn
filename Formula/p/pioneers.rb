@@ -3,20 +3,16 @@ class Pioneers < Formula
   homepage "https://pio.sourceforge.net/"
   url "https://downloads.sourceforge.net/project/pio/Source/pioneers-15.6.tar.gz"
   sha256 "9a358d88548e3866e14c46c2707f66c98f8040a7857d47965e1ed9805aeb631d"
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "a38fc24e98822d7572e2b6425728501e150286f497add378a15b3cb4daae68b7"
-    sha256 arm64_ventura:  "df9880ff99449ca709eefd610061a0195de270ebac6fac9f6d1941db6a6dd2f9"
-    sha256 arm64_monterey: "3742eced28912e519fc675ba5ccbff4ad9e324e73994e785b9aceb78fe61f6f4"
-    sha256 arm64_big_sur:  "ef6e9c03dcc0c5d86ae0b08805352937c74d4ccaadbe4ac9aead56b5f7e0c7bb"
-    sha256 sonoma:         "1e3af731db800544cabfbc3ada5b83727fbdf11e86989c3f37596e26a0b9876c"
-    sha256 ventura:        "6d5c825e0a32001fe6fe04bcf44466a3545f80cffb4fbd1d2855523bf2483228"
-    sha256 monterey:       "0e14d946b05d63aba6c15ad997bb4bc2998fe33c7293c14aec0763e8cfa89a99"
-    sha256 big_sur:        "b9297939922709fc05a78ee98b24091678bf4e434bea4abfc14b089fde6e9728"
-    sha256 catalina:       "c2462078e412d1e2b60108f317550690b28675da5a248de69856a558fa4e07d4"
-    sha256 mojave:         "47ca43b992b0590f90758d9eef7894361c510dce5279a602decdf8ec019086f4"
-    sha256 high_sierra:    "fdd30d2f45b5b1f701b2f358c09a79ce04cea9793383f959811141617f3a4fc0"
-    sha256 x86_64_linux:   "ddd73b5ddca501f4e1f2087cdf571d5b5b9ceffdd3018917a22cdd423a078952"
+    sha256 arm64_sonoma:   "322552b3012b80d29fbb86bd7986a9819857e34f37a4e25d5787ba891318f17f"
+    sha256 arm64_ventura:  "e4593b8a69cf0aa9ce87ffe07240f877ec2462d6f2956d7757bc35656e7946d2"
+    sha256 arm64_monterey: "9dc75e65f88e84ce1354958dab915fc80436b07ea720239479e1d82ead6fbd8c"
+    sha256 sonoma:         "18c79c7b8137ddbb485fa0a501ab0b163dd08670370a25b8d1abbcac7032ccb7"
+    sha256 ventura:        "120b652031fbd995e43ef02538d039e44c99f5b845901d329703fb5d027b6d27"
+    sha256 monterey:       "b1f802ac210dbce9ce41084ea23c54af80519e44730546734b56dc2db6ae44f2"
+    sha256 x86_64_linux:   "3efeb1b6c8a348562ebb969cbd877612cefe83e65b54bd52533f9bed290f8bc9"
   end
 
   depends_on "intltool" => :build
@@ -28,8 +24,12 @@ class Pioneers < Formula
 
   uses_from_macos "perl" => :build
 
+  on_linux do
+    depends_on "perl-xml-parser" => :build
+  end
+
   def install
-    ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5" unless OS.mac?
+    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5" unless OS.mac?
 
     # fix usage of echo options not supported by sh
     inreplace "Makefile.in", /\becho/, "/bin/echo"

@@ -4,17 +4,16 @@ class Instead < Formula
   url "https://ghproxy.com/https://github.com/instead-hub/instead/archive/refs/tags/3.5.1.tar.gz"
   sha256 "53380f94be7f1ec46de309d513f7fe62a1c63d607a247715d87815e83a9c7d63"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "9b2a9f6f5a2e90d61b6166628584a8ca807daa7b4f9051d90291e472caf2efa3"
-    sha256 arm64_ventura:  "a9bd5abdd248c65e952ba89d83fd9fddeee5e0f2ada884e5c470cefb37b4550e"
-    sha256 arm64_monterey: "027b1dbae08e70a493d3428ba5b839f6975fbe778e235bcc25b6dbff7459f295"
-    sha256 arm64_big_sur:  "1ebdc3da038ee74ffea51dbbfd6d1995ad039d33b25dac010788fdf990e1c947"
-    sha256 sonoma:         "d9c1586348e3b24f3f838131f0af6574b864d93fec8f4a461c539ffa3c0fb6e2"
-    sha256 ventura:        "ad301e7189388e7b7aede2ecfdeda2b243862c3a5136b3587b4c43a543929e4b"
-    sha256 monterey:       "1e7d4e795c6b1515841bf5883c51a53d2ce8a2573daed5453664b455e45b250f"
-    sha256 big_sur:        "69c76a665f06ecb7569a5ed4c468ad22355e2133dd160c57affe6f511e960b23"
-    sha256 x86_64_linux:   "2c1fe3f4a6798671a55324a27faf2f1caadb1327f399a3b4ad0186945c7c9694"
+    sha256 arm64_sonoma:   "71ac2a3f9df4d5ca2edd62c7976d058bbfbd8e7f68360055a779505e8a59d7e9"
+    sha256 arm64_ventura:  "9261abc6caf12141ca3d0b491959cc949c682de5dfaad1dab9b34575496d0939"
+    sha256 arm64_monterey: "b2fd66063eaa0bc277240aa16b8ff43ad20dc77db674d6cde03abad2b328aee3"
+    sha256 sonoma:         "efb9d9734907b7fdf04273dbdefe9429ed39ce0e8d1914baa47ca97f598a3fff"
+    sha256 ventura:        "2ebf2f27fa41788ce3bbcb0ec16cd696196a1a31cbba63526c8e858105611e10"
+    sha256 monterey:       "fd4f2bcdce248746df7ba6fa325b4cf6175c1e4e193bd5f540d65cd8aeb04eaf"
+    sha256 x86_64_linux:   "9ae0b409809658af1bc41fd1784e56e26fc5c5ba84d647979826bb8b64c4f3db"
   end
 
   depends_on "cmake" => :build

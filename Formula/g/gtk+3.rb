@@ -4,6 +4,7 @@ class Gtkx3 < Formula
   url "https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.38.tar.xz"
   sha256 "ce11decf018b25bdd8505544a4f87242854ec88be054d9ade5f3a20444dd8ee7"
   license "LGPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,15 +12,13 @@ class Gtkx3 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "b079594552eccc9b13b01d55022811bf9acc981e62d0c107ad9d393a05dc4ef6"
-    sha256 arm64_ventura:  "12d42f5ba7caa43a83aba5babfee4cc745d8a12a58e108af642f366f2ca37d8f"
-    sha256 arm64_monterey: "9c57deb4a8e1360dfd057a58a24e6c7b4ce621ebd5916386cb8c4cd359691763"
-    sha256 arm64_big_sur:  "ce48bef582169d1f45bfa828b80214c9dd5204573699d2d97e631d29bdfcda27"
-    sha256 sonoma:         "9f283bf5b2b118d771aa7ef628b8798e527a7d499f225587295866c8a2dc39cb"
-    sha256 ventura:        "87f200d7945307fcb47cb2ea31da643d571c898b752e2e2ddecd62c1c4c64b51"
-    sha256 monterey:       "e0a18e7ae38a7ea9d5705e787fa01f3d4215c836e170f060662b85c1c0dd50cf"
-    sha256 big_sur:        "ad9c04a5ce0db0751cf1a485d60ec963aae7039c9332e0bcc972e06daacc8cc5"
-    sha256 x86_64_linux:   "84b8d60884ca0e11d3d86785415dd9d1d426c4900e9f3b62c71e0dc0ad0b2745"
+    sha256 arm64_sonoma:   "3dbd0c25ca2e49ac8147784568ea91cb5d6fd5a7765c32f075da13da120f8713"
+    sha256 arm64_ventura:  "82a619f5b897d681ba64b8db03dc18723f82ab20c102ef0b160035a102a15a0a"
+    sha256 arm64_monterey: "1df464c72a45110e84622fea564a747900c674a6a91cf5fdadadc56d2dbf844b"
+    sha256 sonoma:         "a10b19cac89da86a1421057dce504e560e7cf29056f0311fb251d5dd32aa624d"
+    sha256 ventura:        "267b60db633438d6af7fc9add7cd4a8653308f86df2708f805f354f86aef9ca3"
+    sha256 monterey:       "bcdeeb6d26710fd5f1537240de8593992d8516d71a5c187749a331c5ae1fa750"
+    sha256 x86_64_linux:   "e3fb6e62636355b4a2020668fb4ea97f91f16c74c03523f94855778800f47743"
   end
 
   depends_on "docbook" => :build
@@ -29,7 +28,7 @@ class Gtkx3 < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
-  depends_on "atk"
+  depends_on "at-spi2-core"
   depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "gsettings-desktop-schemas"
@@ -41,7 +40,6 @@ class Gtkx3 < Formula
 
   on_linux do
     depends_on "cmake" => :build
-    depends_on "at-spi2-atk"
     depends_on "cairo"
     depends_on "iso-codes"
     depends_on "libxkbcommon"

@@ -4,6 +4,7 @@ class MysqlAT57 < Formula
   url "https://cdn.mysql.com/Downloads/MySQL-5.7/mysql-boost-5.7.44.tar.gz"
   sha256 "b8fe262c4679cb7bbc379a3f1addc723844db168628ce2acf78d33906849e491"
   license "GPL-2.0-only"
+  revision 1
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/5.7.html?tpl=files&os=src&version=5.7"
@@ -11,13 +12,13 @@ class MysqlAT57 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "f000efc9d4fc1dc21a4add778a57baa062adefcf9e3ec828f4ce2568f44b1298"
-    sha256 arm64_ventura:  "36d950062b695741765265294f06ae77427b6d65dda6a6cf5cce764b7a3dfc77"
-    sha256 arm64_monterey: "45a2ecd3d2ea2bf7b7322aa3fe0cb988ede1fd54702195df481bc960a8da69b5"
-    sha256 sonoma:         "5d3cea75cd9f3976859bb2fe798742ab45af976d1064b5fb55da1bc93f7dcb7b"
-    sha256 ventura:        "8f0084fe59635d2b1a841efb9057b3ae8edfbd40c16fed61ff79b22b9bef414f"
-    sha256 monterey:       "cb2faa9ff392143aabeb95cb909986014a42f692529686c049dfadc09a6ee113"
-    sha256 x86_64_linux:   "9e5bf68a344852e0e62936f0507dd956ae1d71fb9b2dac3133388a8b8962327f"
+    sha256 arm64_sonoma:   "ca2e5c8b98bd92843578ffeae0e6280d3066afc33c814cb1ba49299fe9285f50"
+    sha256 arm64_ventura:  "c0ff4905882e49d8baf0446652ee9fa6158b00bcd0d17ef2c1a017d0875c5ae5"
+    sha256 arm64_monterey: "326f59da12d2b0f0c18465085d6539930cb75dc500856e7dd05ecc734b91a3f4"
+    sha256 sonoma:         "8676947218acdace558ac56f01a14c4499963201aa5834041146f8b3efe6eea0"
+    sha256 ventura:        "6e9e12bd8918e60560b4c95f3d3b4135bffba820bcdb7b671e7a43af3e948f5c"
+    sha256 monterey:       "de04d1a5af2794e0ee6ff76f3f17882ce4e8bbe81705483c7bfb799d42227266"
+    sha256 x86_64_linux:   "cf11c67e97a5a88a6788a07e7088f4525979f7eb4192dd41948ddcac6f1016c2"
   end
 
   keg_only :versioned_formula
@@ -77,7 +78,6 @@ class MysqlAT57 < Formula
       -DWITH_NUMA=OFF
       -DWITH_UNIT_TESTS=OFF
       -DWITH_EMBEDDED_SERVER=ON
-      -DENABLED_LOCAL_INFILE=1
     ]
 
     args << if OS.mac?

@@ -5,22 +5,16 @@ class Xboard < Formula
   mirror "https://ftpmirror.gnu.org/xboard/xboard-4.9.1.tar.gz"
   sha256 "2b2e53e8428ad9b6e8dc8a55b3a5183381911a4dae2c0072fa96296bbb1970d6"
   license "GPL-3.0-or-later"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 arm64_sonoma:   "4ca6f9bd7e7392905a39b3f278960b3695cbf748fc1a1e132dfae3a90a55a304"
-    sha256 arm64_ventura:  "376a2aeea0d01221d30c0b89f02744277d02648788848ffb241b26051b7ca0eb"
-    sha256 arm64_monterey: "5c4d443554623a1279efbe14d79eb4158a8ded4589e4d1e7a02c2d573685cc4d"
-    sha256 arm64_big_sur:  "87ddefe504448f88254af63c0eaef51f4380f76ea1d2f20fcf6ee780b9241b18"
-    sha256 sonoma:         "58cf8331c225e0377abd4a3e5d5d2ac67de55592e1390fca87de37ee495364ef"
-    sha256 ventura:        "848126c35a013573fab59448ef80ee5d65982c294c45acc13285f2ca3b7d7e7a"
-    sha256 monterey:       "cf88692979c82a3d4697dea0db80d433fc7c9c11f4e4bdfa4d104c88fb6f4f47"
-    sha256 big_sur:        "cd3b5c0a0ee1045a4ba3dc98077a2ed01fecb281bc6763ecd509b6f09efaf173"
-    sha256 catalina:       "561953a63ec6296b6faeb38b999f83ede6ba7c91501cce88eeb560c282985ee7"
-    sha256 mojave:         "c94386e2985c9a4175aba3280658670810269c0a6fe8315676cc49198070bf14"
-    sha256 high_sierra:    "eecee1fb605e34564d8906a72f41d1516a210cb41af86c9dd51cdd05376d8b48"
-    sha256 sierra:         "5c9c512b8267d66e69842e9f11b9f63169ae2b953108df72f200122267724f9d"
-    sha256 x86_64_linux:   "928cc685fd1d687167a7135641340cb53885c54323aa6c005c67c0119caca0ed"
+    sha256 arm64_sonoma:   "286ed707d8d03708c836b4ac6a00777425e5984b6fe5be083ae571cfcfccb877"
+    sha256 arm64_ventura:  "50cd0e9fe8b8c1e1cafca11ab050238c046b037db55561204c25bd238438cdd4"
+    sha256 arm64_monterey: "90dd23652bb03fee8b0ff31fba73ad979861fcefc17602a19d9197d0eee77170"
+    sha256 sonoma:         "e03a15e4427bb343a6f1bdfbae67eb899542e0b9b78bb9bd70c8b3fe8efa1bee"
+    sha256 ventura:        "144abeb78c31d18571fe410dbb0759657566bb9162013102bdb5c59fb95e1aae"
+    sha256 monterey:       "983ceebe82b7abeb9c0126c06e9d8954302431c2de2f47e3a05b40423633be98"
+    sha256 x86_64_linux:   "fa58bc09398cf9c5fcfe470ee69366d7d2e07b8e369475f54ca6d0c7426281fb"
   end
 
   head do
@@ -42,6 +36,8 @@ class Xboard < Formula
   end
 
   def install
+    ENV.append_to_cflags "-fcommon" if OS.linux?
+
     system "./autogen.sh" if build.head?
     args = ["--prefix=#{prefix}",
             "--with-gtk",

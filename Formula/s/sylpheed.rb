@@ -3,7 +3,7 @@ class Sylpheed < Formula
   homepage "https://sylpheed.sraoss.jp/en/"
   url "https://sylpheed.sraoss.jp/sylpheed/v3.7/sylpheed-3.7.0.tar.bz2"
   sha256 "eb23e6bda2c02095dfb0130668cf7c75d1f256904e3a7337815b4da5cb72eb04"
-  revision 5
+  revision 6
 
   livecheck do
     url "https://sylpheed.sraoss.jp/en/download.html"
@@ -11,15 +11,13 @@ class Sylpheed < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "ad3a93d423e13ce33827cf1813582a20c3587cb3888dfbef128e3262f8f89c2c"
-    sha256 arm64_ventura:  "bb7261752ea2aa71d885be5958619a4c29ce7695c9e1283ef20d511e5cf72612"
-    sha256 arm64_monterey: "8a86432333e80c75bf6bc4130c3a025147bd24537db18999c648cb0d1c68db8e"
-    sha256 arm64_big_sur:  "c592c4608ad89aaba66c8e5e4616f82a8618816074a577d8f804ade18a96823b"
-    sha256 sonoma:         "a94b75d6ed69e39f5a4248213845ab737138ea59cad5fab44fcf5245d2b20a92"
-    sha256 ventura:        "7727583d3d171cc0f9ad91a06f8b8b132243adf1abb99ff75177b30d2ebe4fc9"
-    sha256 monterey:       "858ccb14e9acb6829826f318c907bc591a16b323af88f0d6d44ad064e2b4fda3"
-    sha256 big_sur:        "73b567343fcab79f4ce085937e4a4aaf34045299927aa6ec71fe2e8d8ba38176"
-    sha256 x86_64_linux:   "2473c806a8960f5b3b190e4836bde47bac4e7276463310b6c3e5d6cc090442bc"
+    sha256 arm64_sonoma:   "5d721116ce6251186a708674cee20e33b3401bdeda3717ac4bce42b88cad326d"
+    sha256 arm64_ventura:  "bf0debe030355889d321d9067c9333c15f3d121b1db0d649677331feb0c2d86d"
+    sha256 arm64_monterey: "ac939d1e4db50c04b4ed1f885e43372bdf6a899161c4ff4e72660d53339e31cb"
+    sha256 sonoma:         "05053c3a4b44125484f4cd50e517aea97c49ae0a4c0ed0c43c3707ecc71097dd"
+    sha256 ventura:        "3cd656efec4737b8c7b951d8dcf43087c6e4b6ca80ad4a39d4f5cc8aca6c8e0a"
+    sha256 monterey:       "2f6e29e61c7b94044e37d994e4e81d8b6af1cb7bba6927bbab5e7dbf4fec2cd3"
+    sha256 x86_64_linux:   "7f6c1fda4cf4cd10ad6d862e0588c6f89b20a2471efeb562d74c09532a60ca41"
   end
 
   depends_on "pkg-config" => :build

@@ -4,7 +4,7 @@ class Gtkmm < Formula
   url "https://download.gnome.org/sources/gtkmm/2.24/gtkmm-2.24.5.tar.xz"
   sha256 "0680a53b7bf90b4e4bf444d1d89e6df41c777e0bacc96e9c09fc4dd2f5fe6b72"
   license "LGPL-2.1-or-later"
-  revision 8
+  revision 9
 
   livecheck do
     url :stable
@@ -12,18 +12,13 @@ class Gtkmm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "beecb4d5292b6cc042a5c874f36f4ada0fdf962611ecf9525e6924957ca21611"
-    sha256 cellar: :any,                 arm64_ventura:  "eb5a449be66c463ce2cca96c861c91ad509ec3bc1720089525fbbccee1ac0dc2"
-    sha256 cellar: :any,                 arm64_monterey: "a99c01f03822751ae2add9413279226e3dc62bb46f96f24f4dab38d71a787487"
-    sha256 cellar: :any,                 arm64_big_sur:  "ae2cb84a696c040281a8131961c755865f4ba96ef223e77cf8e5a8d02b88edb8"
-    sha256 cellar: :any,                 sonoma:         "a85abbf654e805ca0b7d4c35a093594b18dc12e70f3da905449f80a43eeab3ed"
-    sha256 cellar: :any,                 ventura:        "23282900c778b38cb847cfcf4d7fb34646ba437cbe3c83ff8a27e5393e335568"
-    sha256 cellar: :any,                 monterey:       "dcae86ed827870c397430d8f3d32005ca01d101b17fdda8c336f6a27bd140ab1"
-    sha256 cellar: :any,                 big_sur:        "cf3e818aadeda99afd5c51cdfd8ae950bdf56ce16c090d78f23e5a80631f6f13"
-    sha256 cellar: :any,                 catalina:       "bc967efcc4b25a56a79089c73db15a7fc61d5d83a62bd5c899777f7169f2e437"
-    sha256 cellar: :any,                 mojave:         "1ed0b8b0445bcb223f2d20112004ead1c8b5d598f9e0012180831e069375b6f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81c914f8dc798c013483fb31330a152eb4c1bdc62bd68a0a96de61202c94659b"
+    sha256 cellar: :any,                 arm64_sonoma:   "600f066eb0843c1af59bce66aa578afde52aa3a5754c42ed7b04445db839f837"
+    sha256 cellar: :any,                 arm64_ventura:  "d664e40ad1a7d3e5dbb9dc05cb36d73f97e5bc4ab71747bf1b08c7d73abeae02"
+    sha256 cellar: :any,                 arm64_monterey: "08400aebd2786edc67d2d6118dd98ea5e3e44ab3269f6fc49a651c7bc29589c3"
+    sha256 cellar: :any,                 sonoma:         "c4aeb2114cd8dc59900af9d10e65c026ff69f3ede03c18dbc1ea655f9f3fc612"
+    sha256 cellar: :any,                 ventura:        "992c80fea122b473d7788fe6733423dc729282fcce37095b204d5363e08b701a"
+    sha256 cellar: :any,                 monterey:       "dde66554a67d936733736fd0c92a372ea01f7fad3ff3407cd2ce516c1332de13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b8ee9aae96d13469d2ca251d59582d5577122d69769f9038e62b1792c08c861"
   end
 
   depends_on "pkg-config" => :build

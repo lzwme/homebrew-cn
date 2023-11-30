@@ -2,7 +2,7 @@ class Siril < Formula
   desc "Astronomical image processing tool"
   homepage "https://www.siril.org"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://gitlab.com/free-astro/siril.git", branch: "master"
 
   stable do
@@ -17,13 +17,13 @@ class Siril < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "167fb3ed38eb1799bfb99899c9f3979c2dd3dccae9e95e3fdbb822d1e7042a64"
-    sha256 arm64_ventura:  "3889fd0c75874e6b736de82471f837fe1685d0821b14547e50d80f921b67cf78"
-    sha256 arm64_monterey: "f79fd417b791382a23c6e8afac09c8e425a63e9f920b87758bdb535840f5e6d2"
-    sha256 sonoma:         "b6b66d66d499aff064b0e7a432170905b450583629b87beb4944136393910ceb"
-    sha256 ventura:        "0e3a6a09d544830dbb144c0c192e467f3eb2471ea6014a2c21166f69d4990487"
-    sha256 monterey:       "d158ead4b49dc102fb3083396dceee31cfe8e7d09e9cfe362e12f3835f39da05"
-    sha256 x86_64_linux:   "266ac82bad2e8b77368baf8d73a900e6ac1cfa2a4f92fcc360fd8e5fdc001e39"
+    sha256 arm64_sonoma:   "33922c686ad84821d5bc1a04a5c540725f0dfc77d0a4cdce27beb961c5949509"
+    sha256 arm64_ventura:  "8a4a6d473b8b693e79f706df3f9e36dd98a775c98f32d6e42fb87b10de2c44a9"
+    sha256 arm64_monterey: "c3ae5b816fe7a495308f6757a0efd7cea863d00adc4183e34e21b014529315e2"
+    sha256 sonoma:         "db52eb9a39ea334070995d0b21c1c36d8e2010f664988ae766909e0470c5e4ff"
+    sha256 ventura:        "7c37c42106b9914cebe8b2b5587074ff5b4b0ff5c51bebaa20b4258e02d40a94"
+    sha256 monterey:       "7e3ef4144957b19c986e3aa1c3192e45936d8b14b0cb446cfa9218e5a2b485a2"
+    sha256 x86_64_linux:   "12a108862be66ec25ec158ad9831619ee70fd3809af5860d8a23ad4066b54653"
   end
 
   depends_on "cmake" => :build

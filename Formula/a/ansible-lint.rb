@@ -3,19 +3,18 @@ class AnsibleLint < Formula
 
   desc "Checks ansible playbooks for practices and behaviour"
   homepage "https://ansible-lint.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/81/0a/8e3415cc2de7cab1a4eebe09d054d046d36dffbb39c03e05b33f8882355e/ansible-lint-6.22.0.tar.gz"
-  sha256 "0d17dd4a58c3c825b7729c1067f151787529a5b183713c9e4d13a62f9d1ad26a"
+  url "https://files.pythonhosted.org/packages/6c/19/3748e9642b3e9f8d09b1d82b0dfb7edd5ad54532cbeea4d996520450da66/ansible-lint-6.22.1.tar.gz"
+  sha256 "d4a3116e0726b98ffbc253f35c5ede98bee546d72d9c363f65e6e79467784d15"
   license all_of: ["MIT", "GPL-3.0-or-later"]
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "795c4ceb4957914ecb6a59f19bbb301df367cc41f2684b672b52f09f88035f9c"
-    sha256 cellar: :any,                 arm64_ventura:  "e190cc1e3d8372ef1e7ee86e59148d7c5584e170ac50836368b6b194bd9bc4a9"
-    sha256 cellar: :any,                 arm64_monterey: "038be238efd5269bcdceb119a5157de8e658788cb752fdc436730a2189d286c7"
-    sha256 cellar: :any,                 sonoma:         "339fe79d14c76c5e86502cb912f0b17844fe475b79219729ad113a69ae4492ec"
-    sha256 cellar: :any,                 ventura:        "04b1be8080edcf9f7bd005a5139d646dd4610f6b55248f35cc1ec651d232c2cf"
-    sha256 cellar: :any,                 monterey:       "845a95abcfcb4d36a51ab87f0063e40537970b6e10fd5b896f3fd6d7f978a5c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5a263c7b06e3eadbc9a4eade688644750af3a9845628e7f4f5fbf9d105472a5"
+    sha256 cellar: :any,                 arm64_sonoma:   "13689c7476ef9dc0ff60ad388da11fbd269d5dd9b1c7c18f967bbe40ee430f65"
+    sha256 cellar: :any,                 arm64_ventura:  "da768f40530d50ff70835efe7b2b152d9c36054d13cff33d6239c2ab403e3aff"
+    sha256 cellar: :any,                 arm64_monterey: "e5b5833814a6d29b1081d0c3fc8ee10939347beddd0cea0d70e1b6f76b57ef31"
+    sha256 cellar: :any,                 sonoma:         "7b07b0f4892fcced2934e1dd96f3d3d3eea5ce86c57cda5fbbb91949a58be60f"
+    sha256 cellar: :any,                 ventura:        "020866b86cd75d55cf8c5f4af8a125f97335344d9437a78b1bf1001a5dcfd13b"
+    sha256 cellar: :any,                 monterey:       "bc9daf49cb612b44714bd8ed47ce9255bbe1726c8394a48405541e75f41dca35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f35a8f32886d6ba903392cb94f479034301a287ed6b68e0a1bc0eab0d8acaf7e"
   end
 
   depends_on "pkg-config" => :build
@@ -54,18 +53,18 @@ class AnsibleLint < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
-    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
+    url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz"
+    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
   end
 
   resource "jsonschema" do
-    url "https://files.pythonhosted.org/packages/95/18/618159fb2efbe3fb2cd32b16c40278954cde94744957734ef0482286a052/jsonschema-4.19.2.tar.gz"
-    sha256 "c9ff4d7447eed9592c23a12ccee508baf0dd0d59650615e847feb6cdca74f392"
+    url "https://files.pythonhosted.org/packages/a8/74/77bf12d3dd32b764692a71d4200f03429c41eee2e8a9225d344d91c03aff/jsonschema-4.20.0.tar.gz"
+    sha256 "4f614fd46d8d61258610998997743ec5492a648b33cf478c1ddc23ed4598a5fa"
   end
 
   resource "jsonschema-specifications" do
-    url "https://files.pythonhosted.org/packages/12/ce/eb5396b34c28cbac19a6a8632f0e03d309135d77285536258b82120198d8/jsonschema_specifications-2023.7.1.tar.gz"
-    sha256 "c91a50404e88a1f6ba40636778e2ee08f6e24c5613fe4c53ac24578a5a7f72bb"
+    url "https://files.pythonhosted.org/packages/d4/84/8f5072792a260016048d3a5ae5186ec3be9e090480ddf5446484394dd8c3/jsonschema_specifications-2023.11.1.tar.gz"
+    sha256 "c9b234904ffe02f079bf91b14d79987faa685fd4b39c377a0996954c0090b9ca"
   end
 
   resource "markdown-it-py" do
@@ -79,8 +78,8 @@ class AnsibleLint < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/e1/43/d3f6cf3e1ec9003520c5fb31dc363ee488c517f09402abd2a1c90df63bbb/referencing-0.30.2.tar.gz"
-    sha256 "794ad8003c65938edcdbc027f1933215e0d0ccc0291e3ce20a4d87432b59efc0"
+    url "https://files.pythonhosted.org/packages/80/ce/e99def6196f53af8de12a9c36968de32f80b7871084d677d0dfcd2762d0b/referencing-0.31.1.tar.gz"
+    sha256 "81a1471c68c9d5e3831c30ad1dd9815c45b558e596653db751a2bfdd17b3b9ec"
   end
 
   resource "requests" do
@@ -89,13 +88,13 @@ class AnsibleLint < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/b1/0e/e5aa3ab6857a16dadac7a970b2e1af21ddf23f03c99248db2c01082090a3/rich-13.6.0.tar.gz"
-    sha256 "5c14d22737e6d5084ef4771b62d5d4363165b403455a30a1c8ca39dc7b644bef"
+    url "https://files.pythonhosted.org/packages/a7/ec/4a7d80728bd429f7c0d4d51245287158a1516315cadbb146012439403a9d/rich-13.7.0.tar.gz"
+    sha256 "5cb5123b5cf9ee70584244246816e9114227e0b98ad9176eede6ad54bf5403fa"
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/75/be/e3f366aa4cd1e3a814f136773e506fc5423eff903ef0372a251df34e6e45/rpds_py-0.12.0.tar.gz"
-    sha256 "7036316cc26b93e401cedd781a579be606dad174829e6ad9e9c5a0da6e036f80"
+    url "https://files.pythonhosted.org/packages/94/3f/b58db0c212ba3a89378d1684f871e0e7783fc34fadc7696e5439c8c9338e/rpds_py-0.13.1.tar.gz"
+    sha256 "264f3a5906c62b9df3a00ad35f6da1987d321a053895bd85f9d5c708de5c0fbf"
   end
 
   resource "ruamel-yaml" do
@@ -114,8 +113,8 @@ class AnsibleLint < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
+    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
   resource "wcmatch" do

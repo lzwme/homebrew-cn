@@ -1,8 +1,8 @@
 class Juicefs < Formula
   desc "Cloud-based, distributed POSIX file system built on top of Redis and S3"
   homepage "https://juicefs.com"
-  url "https://ghproxy.com/https://github.com/juicedata/juicefs/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "21df8049ddc02dbcb732c7a2fff3ad5e0dca71c7f568bb34a36e35f14c218397"
+  url "https://ghproxy.com/https://github.com/juicedata/juicefs/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "43e1df896fc4c32c8c5ef75b418bf08dd27ca0a078c7e01d2a8c17db57f2028d"
   license "Apache-2.0"
   head "https://github.com/juicedata/juicefs.git", branch: "main"
 
@@ -12,15 +12,13 @@ class Juicefs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "26ab09e158117d83499a5d1c0b1eee80de2a78c4886af61031dc6ddbf901d0fb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d4f2b828411be54759b68bd2c35de73e62c7a3765105d570e4d34ac2c97e119f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "723faba5b5a34649ef5c1eb6f46c773d4c3c83e93666995bde959488644e13a4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9bedcf875761f5442e08350bba29d9ee202f995efe706cfc3d3ac573a9a1e7be"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0ad5d208b8db05455ec5f87d1675936141e58c88c73d60c85c3ce2836e205388"
-    sha256 cellar: :any_skip_relocation, ventura:        "3022581aff6b242a1a57a23d0819c8aaf563ff1c7da9e23f99812dcd67c7bf5c"
-    sha256 cellar: :any_skip_relocation, monterey:       "dd007211ad22407b11a7bc7ebc75bcad01d0b2d06eec5f21d2084df9c205894a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "49c6aa4b817dace8f5fd14644061889c1bcdbc4ef568ec62f587a9f411c9ec63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2fc4b1c0bb4ee1cdf045b5897c47cd963a624f4711aa308a861908ce6b8564fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6991e448bcfdd3392fc7047d7558bf60131d31851c1e2d1af620976230020a54"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3b503dfb8991f02b1a0c5e6581ac15d76033da8e66bae8f826258da94c94bc32"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd9f9a2c4f883723777f15f495737037ba71e0ef45b959fb2540fc20e567d285"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e3742178f10a9a1e95b00fe61ba44af5d9da1b739d83da04769359594974b392"
+    sha256 cellar: :any_skip_relocation, ventura:        "f3dc437cad218ccd595aeddaf60b83c2df289ad842b5aaf8ad19e917e7c85028"
+    sha256 cellar: :any_skip_relocation, monterey:       "3b823e6214fe5195577a331533d638707633bd4dec1cf48ac8810dc54b36d350"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e00a8b341c88b76ab61f28da8c7892f8b50e31373c5588d6a832759f85e179a7"
   end
 
   depends_on "go" => :build

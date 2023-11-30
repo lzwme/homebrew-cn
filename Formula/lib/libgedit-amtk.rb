@@ -4,18 +4,17 @@ class LibgeditAmtk < Formula
   url "https://ghproxy.com/https://github.com/gedit-technology/libgedit-amtk/archive/refs/tags/5.8.0.tar.gz"
   sha256 "014d90bdc611ef855655c846a37341b8394db794b06344e07066b87c259b4f31"
   license "LGPL-3.0-or-later"
+  revision 1
   head "https://github.com/gedit-technology/libgedit-amtk.git", branch: "main"
 
   bottle do
-    sha256 arm64_sonoma:   "edc094d57a7a33b082bca018e8ba2e671e5a93cb4c53f21c2c2e4270236edd91"
-    sha256 arm64_ventura:  "e6b1196ae73eaeebc6722e30a1b331841405a4414f0395fd8ec9bfddaf0258d3"
-    sha256 arm64_monterey: "ce53bd6100c84e17f8d35bf92c8386369c26b396b69c4666d3b979776ad3ecb6"
-    sha256 arm64_big_sur:  "b942811c4c77c9c3eae4973dfdd0bdec4340d5bcd85bcb120d4fdf1d16e8083d"
-    sha256 sonoma:         "30a4ad7a60fe0bed7140358272d342bc5ba1761b47ba5fb7d2e047911e4d0eef"
-    sha256 ventura:        "5757401079d2a27249fadfd5a9e5dd6b9b382cc3c023128e296e8044506074c8"
-    sha256 monterey:       "6290de91843706bc42c743422b98158fd702893a475a7e7936683dfbefaf5909"
-    sha256 big_sur:        "d99e61c8a7632acd4c24af0c3ea49370d69329cad29fe5018b31669c1bf209e3"
-    sha256 x86_64_linux:   "9e3a21fa3a77d3c98fb22553a21abfe163456381d2e9b8e26bdaa4f1013546da"
+    sha256 arm64_sonoma:   "a3b8cde0ae3dce7fe45f0e61ded5d303478eb035929af8991cdc791078bf4025"
+    sha256 arm64_ventura:  "1a8ecc89f955d0f51f63a1d4b4cdd4513419cc9d72da6a2bf5e715e69a37f5ab"
+    sha256 arm64_monterey: "baf301d49f5cf05665ab91950ceb381b6b94154750355027dc163c9568c1e6fa"
+    sha256 sonoma:         "26851791308f3407ee90eee15cb9bf26477cd634778c53ab02f7069068b2e234"
+    sha256 ventura:        "29c17f1c43c9428faae1759e25e9e078975f61d947e75adaff0399ee42aef4c7"
+    sha256 monterey:       "ee29717adde47f1f32bc8b69230d4d8d43023062168d81da1683e67ad06106be"
+    sha256 x86_64_linux:   "61d99af175776561c482cbffa60cdc2438366b67519a9e69e06144deaaae556f"
   end
 
   depends_on "gobject-introspection" => :build
