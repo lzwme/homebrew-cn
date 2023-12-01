@@ -3,8 +3,8 @@ class Trino < Formula
 
   desc "Distributed SQL query engine for big data"
   homepage "https://trino.io"
-  url "https://search.maven.org/remotecontent?filepath=io/trino/trino-server/432/trino-server-432.tar.gz", using: :nounzip
-  sha256 "76fd07f89c269196196f9b92d287bc8ef189685383cc7400985ad2ff12e062f2"
+  url "https://search.maven.org/remotecontent?filepath=io/trino/trino-server/434/trino-server-434.tar.gz", using: :nounzip
+  sha256 "8a6b3a8fadab07e478c60157dbaefdc96e271360f2f6ebd5f5fd010b546f0d51"
   license "Apache-2.0"
 
   livecheck do
@@ -13,13 +13,7 @@ class Trino < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "17fe8aef45593faff9e12c3fabd049611433cf6d78bc480bd1a093ce5f0707b0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "17fe8aef45593faff9e12c3fabd049611433cf6d78bc480bd1a093ce5f0707b0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "17fe8aef45593faff9e12c3fabd049611433cf6d78bc480bd1a093ce5f0707b0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "17fe8aef45593faff9e12c3fabd049611433cf6d78bc480bd1a093ce5f0707b0"
-    sha256 cellar: :any_skip_relocation, ventura:        "17fe8aef45593faff9e12c3fabd049611433cf6d78bc480bd1a093ce5f0707b0"
-    sha256 cellar: :any_skip_relocation, monterey:       "17fe8aef45593faff9e12c3fabd049611433cf6d78bc480bd1a093ce5f0707b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b9ba1e01994e92ada98cf31f253d17a4c91f558f4eecaba6307965e7e94be87"
+    sha256 cellar: :any_skip_relocation, all: "1872204bf681ebbda92eb59ccb0129344f8087fea027d49bea5f3c350d94f7a7"
   end
 
   depends_on "gnu-tar" => :build
@@ -27,13 +21,13 @@ class Trino < Formula
   depends_on "python@3.12"
 
   resource "trino-src" do
-    url "https://ghproxy.com/https://github.com/trinodb/trino/archive/refs/tags/432.tar.gz", using: :nounzip
-    sha256 "dfa92f8210b7c0e222a7d0250866f194144cf7272761a0922ba65f3ee984b7b8"
+    url "https://ghproxy.com/https://github.com/trinodb/trino/archive/refs/tags/434.tar.gz", using: :nounzip
+    sha256 "8ac92e823d1bb4aadde206703e51c1934b1611969591fce0193662401c6e154c"
   end
 
   resource "trino-cli" do
-    url "https://search.maven.org/remotecontent?filepath=io/trino/trino-cli/432/trino-cli-432-executable.jar"
-    sha256 "83a581ad5463b475e658a6239c52b22edd8e53d87fd797c6ef002fb7e38d6d29"
+    url "https://search.maven.org/remotecontent?filepath=io/trino/trino-cli/434/trino-cli-434-executable.jar"
+    sha256 "96eeaac7a02162d356c24232759577df66791ea221d2e1b55882598985c8e40a"
   end
 
   def install
@@ -81,7 +75,7 @@ class Trino < Formula
   end
 
   test do
-    assert_match("432", shell_output("#{bin}/trino --version").strip)
+    assert_match version.to_s, shell_output("#{bin}/trino --version")
     # A more complete test existed before but we removed it because it crashes macOS
     # https://github.com/Homebrew/homebrew-core/pull/153348
     # You can add it back when the following issue is fixed:

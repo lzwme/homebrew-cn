@@ -1,10 +1,9 @@
 class LibvirtGlib < Formula
   desc "Libvirt API for glib-based programs"
   homepage "https://libvirt.org/"
-  url "https://download.libvirt.org/glib/libvirt-glib-4.0.0.tar.xz"
-  sha256 "8423f7069daa476307321d1c11e2ecc285340cd32ca9fc05207762843edeacbd"
+  url "https://download.libvirt.org/glib/libvirt-glib-5.0.0.tar.xz"
+  sha256 "9bfec346382416a3575d87299bc641b2a464aa519fd9b1287e318aa43a2f3b8b"
   license "LGPL-2.1-or-later"
-  revision 1
 
   livecheck do
     url "https://download.libvirt.org/glib/"
@@ -12,16 +11,13 @@ class LibvirtGlib < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "8b8c0253fbf2adbcf875fee0d4593e3f14053d5af85665b83ae30dc0d0dc9138"
-    sha256 arm64_ventura:  "6b0abd52b2307364ce3fe0eab6634fbf90321f368ec3011b6e5110b76d295251"
-    sha256 arm64_monterey: "9281991a193059f2d8a39184c823652dc025b8f9ba9c888aba64b5b66d948e9b"
-    sha256 arm64_big_sur:  "dabfb25d593762d34de972fa15e7ef7c6a972c4790c9fb617c22d8dc4645fd3f"
-    sha256 sonoma:         "6f4ddf3f6ab0deacbab297d71bdfb5a9b98bb9ec31c38dd4d91a6a0e8f2acef3"
-    sha256 ventura:        "f3836928dbd5c4d6102bb5be4e2676f2f0b0d2d10255d4144cc6df0ea78649c2"
-    sha256 monterey:       "f4a3e22facc0423d19b0a6adfcfa8bd678cf568b77d01f561dcb0e2c2341477b"
-    sha256 big_sur:        "fcd83bb1020ffbda0c8fd75b05e844708f0b08fe3068796af7270a0107e6f342"
-    sha256 catalina:       "4cffd32386653646d48037290a8c7d804a0ba75b1684312e8a2dc9d8f3ae42cb"
-    sha256 x86_64_linux:   "9ba421c50085712b450e1986d20e22b09b334548c70257cd83ca9afda92b07ed"
+    sha256 arm64_sonoma:   "21ae7fd8db1783b08631d8e44055cd7cc60eb4e4bf688df5cdead90fb7fc841a"
+    sha256 arm64_ventura:  "d43fac604883a2625dded58bcea30ac96f1631d534387ec02e990a385b70ee7d"
+    sha256 arm64_monterey: "091f75018e1ae32fae44da96b038a24738168fc580266595e2e5cff1a14c94a6"
+    sha256 sonoma:         "e2ac09fd3c7acd060404ef1ff2448762f37b10953bd7f0bf253c928ca3beecdc"
+    sha256 ventura:        "f2bde563d71a665861a881e003ecb1f81160c638dfc4879182416f4ad8c5ec21"
+    sha256 monterey:       "cc95cc480984e459d64e98ac4a34a28f098f01fdbe3a48eb4596ea0f04e18522"
+    sha256 x86_64_linux:   "5929261ba67ca634fd615cb4f8c159017963a9b1a46bba55993b0b728593df70"
   end
 
   depends_on "gobject-introspection" => :build

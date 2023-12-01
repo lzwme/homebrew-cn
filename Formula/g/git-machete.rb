@@ -1,19 +1,18 @@
 class GitMachete < Formula
   desc "Git repository organizer & rebase workflow automation tool"
   homepage "https://github.com/VirtusLab/git-machete"
-  url "https://pypi.org/packages/source/g/git-machete/git-machete-3.20.0.tar.gz"
-  sha256 "30020434d46f0102fe8018ba0262dc73e81c512018cdb77281a93531b7b66499"
+  url "https://pypi.org/packages/source/g/git-machete/git-machete-3.21.0.tar.gz"
+  sha256 "d4fd2e92f149f50f600b590708b96ffb6104a85463c2c17e17ef5390558ffde7"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "055189ad21194f9bfcde65bf3078bb9039646358da8759c52ee6c28b6202025a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e9255e892b8fea8cbdaaed51ca899b8ef0b218e0015a68755fd5ab5fce5b8e9c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "318cf19ddcb085e73126fd17282088ea8f6c01b22db88d2f18083b7a4d108e58"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1ca6e41e31b14be6ae9ce96d932d0024723cb59ff3ba5082e3c8743b5786f370"
-    sha256 cellar: :any_skip_relocation, ventura:        "a49fbfb2224c0144faaa4c04b9c4e4cca871894fbb4d1d56dca4d3feab3c91c7"
-    sha256 cellar: :any_skip_relocation, monterey:       "366c54a12d379ba80ce49b1222ef90a4b43b6904c8e78fb3dd71c1bfb53a03db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a60b9e7101cf304ba1ed7c6433e4997836811a217cfbddac64b621f4ddf8288"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "329023ec322cf2ccd3d1fb6c6b02b183b9e7135ed41eb597fb43eeea08fc212d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "371f59d83f3853d0cea85ad9554e905043378872ada98ce5d46d3c87e5f52b3e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0f7cce793781f6c222a6c2f0ec5d92c7d94479c8f9f0a9a23b961eb47d31b74f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1e66cad1ba70d4bc5029a8f30fecc138ce110dd2da5b31b4d0513329aaa4da55"
+    sha256 cellar: :any_skip_relocation, ventura:        "426b55a7175c21369aab490feb71bd27cfc4bd1379a9f4c02ace01c548006ad4"
+    sha256 cellar: :any_skip_relocation, monterey:       "badbc10d5b893b5c3131ec87d0260714f9eacc96266f0029f8b6fb7cca975c0b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09b7bab8d0c321b1cf69536274f9f3020351edf507d77038ca8d9943ad16bf29"
   end
 
   depends_on "python-setuptools" => :build

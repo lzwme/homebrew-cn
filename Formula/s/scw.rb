@@ -1,18 +1,18 @@
 class Scw < Formula
   desc "Command-line Interface for Scaleway"
   homepage "https://github.com/scaleway/scaleway-cli"
-  url "https://ghproxy.com/https://github.com/scaleway/scaleway-cli/archive/refs/tags/v2.24.0.tar.gz"
-  sha256 "203c8a2113e70ce266396cb7e2b5ee85cb1c7c09be8dc2c6ad680ac6c7c60b1e"
+  url "https://ghproxy.com/https://github.com/scaleway/scaleway-cli/archive/refs/tags/v2.25.0.tar.gz"
+  sha256 "31affac69ab3e27282fa9e2533ba7499232651b6a893534ceb80e14b8534c5ea"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a119876a00d737dcf2ee425202bfba808f2c90df2cccfdae37bf24d62c7ab9fe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "314a23b687aaf7cb9bb68eedcdf674da2a4644efd92a9ad68fd30d0df88f7e74"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e28cc4be1d5b1c756a3bd696f128664ac90d16929aba7922468a770c80106b75"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b8b0c921a78cda389b28ed87d0ec1e25d2d9e6f8186b09fdce810ae24aa1aaf9"
-    sha256 cellar: :any_skip_relocation, ventura:        "864d4cafbb01b5b1199325de14ec6a31d522bcf0f8d4f8d3af5dd0b531abb92e"
-    sha256 cellar: :any_skip_relocation, monterey:       "55d5a424d46c6cbe5cbe5743ddddef81f513bc70d5b8cca8d4ea3732d7b6da1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "44790fd0d2736d43dd4b3ea2377fdffc56648d7c9cef1d84b2c6c7d67e416285"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "59b3a7a6c73bb2b3356957f55c831f35c5d6907eefc58dc88af9fb96c07667da"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e9139a7ce077d84041f23cbd96461f3afc601ca72c99732245eedaea29ea4e79"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1ca66e0059fe9d97fe5bc63e254348ceef6cb9d323230569ac89412ae7bbaa27"
+    sha256 cellar: :any_skip_relocation, sonoma:         "418fef676bacf78b06caa39f97b63cd1ed322e5416e8987b0732ec34447f2da6"
+    sha256 cellar: :any_skip_relocation, ventura:        "ef92faf1e924f00092a6e18a8342b1343c4b1d80aac48302efa4efa6bfef9152"
+    sha256 cellar: :any_skip_relocation, monterey:       "5c755feab7b5bac511dd186758a04feb3bb3335a37b3b714139f36aa44246045"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc71c813b478c54260e7b6579b83a094e759b6ffc799ad4b8c87d509490f40bd"
   end
 
   depends_on "go" => :build

@@ -3,21 +3,19 @@ class Sip < Formula
 
   desc "Tool to create Python bindings for C and C++ libraries"
   homepage "https://www.riverbankcomputing.com/software/sip/intro"
-  url "https://files.pythonhosted.org/packages/a6/4e/c34eee70109e9a8110672f074fc18b5022bf4b9b4c92641245c73ae0b21a/sip-6.7.12.tar.gz"
-  sha256 "08e66f742592eb818ac8fda4173e2ed64c9f2d40b70bee11db1c499127d98450"
+  url "https://files.pythonhosted.org/packages/72/34/65d7891ea2c1232155bc0ccc5fac6db0d1baba184e17b494148bd42cc1a2/sip-6.8.0.tar.gz"
+  sha256 "2ed1904820cb661b7207eb1dccfaebec1a5463dcad903ba448ad1945502d089c"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
-  revision 1
   head "https://www.riverbankcomputing.com/hg/sip", using: :hg
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1647ecca1bd34681c703ab8b81456498c4fdef70027d41140d5ec4fd6e151fff"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "14e73168681a89130c5b5efc6b71a24401c2bcbb926e3977f72d299dedbd67bc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0f73f58cbbcc03e333028bbb5755f9d0c86ecbfc347deaf629ca9627adfc4b96"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3e05f10af54fa696800a2617bad7d593892480a94ce88c6dd3ea646490d79850"
-    sha256 cellar: :any_skip_relocation, ventura:        "b86b65f828679343b923e979fe521938a1cd4e34b1063d05e1430d11f5094e39"
-    sha256 cellar: :any_skip_relocation, monterey:       "28255dc1f579e00c48139785a4446c6541d6ec0b88caa42a68f4c4a556becd23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7986f4a1ce3adb36adaa847ade2dd209ddccfb478803404fbff28cac74e2d311"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "40f1cd829319617077117cb9dde2f8337b8eef848171a31135255f1db13b424d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2a8cf21d261af79d4bffd3566e5965b590ab8183cc00e74875a4d3ef8ad60451"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "84759d5795579e172dc97a943b62c9468e6921a426a616209a3225e9de9fe005"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1dca3b4f6168c08913fbb79e5bfc145514f80ea3becccad7a2a1a601470417d1"
+    sha256 cellar: :any_skip_relocation, ventura:        "94c947382742bd691b9f06250bd0ba989e0e19336e062e768ff35c660ad006a2"
+    sha256 cellar: :any_skip_relocation, monterey:       "53780c928e4773cb200566fad6117454705d671cacaf925654d6b556ef9ba4c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "930bb015bccb73c1081844d5e78ea80f95e0f185dd6217060e0f3cfacbcfdebd"
   end
 
   depends_on "python@3.11" => [:build, :test]

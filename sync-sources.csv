@@ -838,6 +838,7 @@ Homebrew-homebrew-core/Formula/c/chrpath.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chruby-fish.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chruby.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chuck.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/cidr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cidr2range.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cidrmerge.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cifer.rb, Homebrew/homebrew-core, 0
@@ -2704,7 +2705,6 @@ Homebrew-homebrew-core/Formula/i/io.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/iocextract.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ioctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/iodine.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/i/ioke.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ioping.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ios-class-guard.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ios-deploy.rb, Homebrew/homebrew-core, 1
@@ -3410,8 +3410,6 @@ Homebrew-homebrew-core/Formula/lib/libgit2@1.5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgit2@1.6.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libglade.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libglademm.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/lib/libgnomecanvas.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libgnomecanvasmm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgnt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgosu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgpg-error.rb, Homebrew/homebrew-core, 0
@@ -3639,7 +3637,6 @@ Homebrew-homebrew-core/Formula/lib/libsquish.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libssh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libssh2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libstatgrab.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libstfl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libstrophe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libstxxl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libsvg-cairo.rb, Homebrew/homebrew-core, 0
@@ -4613,7 +4610,6 @@ Homebrew-homebrew-core/Formula/p/packetbeat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/packetq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/packmol.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/packr.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/pacman4console.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pacmc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pacparser.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pacvim.rb, Homebrew/homebrew-core, 1
@@ -5856,7 +5852,6 @@ Homebrew-homebrew-core/Formula/s/spotifyd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spring-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spring-loaded.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/s/spring-roo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sproxy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sql-language-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sql-lint.rb, Homebrew/homebrew-core, 0
@@ -7111,6 +7106,7 @@ Homebrew-homebrew-cask/Casks/a/amazon-workdocs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/amazon-workspaces.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/amd-power-gadget.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/amethyst.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/amie.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/amitv87-pip.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/amm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/ammonite.rb, Homebrew/homebrew-cask, 0
@@ -13453,7 +13449,6 @@ Homebrew-homebrew-cask-versions/Casks/alfred4.rb, Homebrew/homebrew-cask-version
 Homebrew-homebrew-cask-versions/Casks/anaconda2.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/android-studio-preview-beta.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/android-studio-preview-canary.rb, Homebrew/homebrew-cask-versions, 0
-Homebrew-homebrew-cask-versions/Casks/anki-beta.rb, Homebrew/homebrew-cask-versions, 1
 Homebrew-homebrew-cask-versions/Casks/arduino-ide-nightly.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/arduino-nightly.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/arq5.rb, Homebrew/homebrew-cask-versions, 0

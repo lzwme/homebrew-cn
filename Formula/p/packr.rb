@@ -19,7 +19,7 @@ class Packr < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "71f763effa24fad2ae09028ea1d87f351cf0425ca40f1c25b5ef974839088f62"
   end
 
-  deprecate! date: "2022-11-27", because: :repo_archived
+  disable! date: "2023-11-29", because: :repo_archived
 
   depends_on "go" => [:build, :test]
 

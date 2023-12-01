@@ -4,17 +4,16 @@ class Colmap < Formula
   url "https://ghproxy.com/https://github.com/colmap/colmap/archive/refs/tags/3.8.tar.gz"
   sha256 "02288f8f61692fe38049d65608ed832b31246e7792692376afb712fa4cef8775"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3a0d7e341c1a9600b8caba970bee951d8b6d671fe9a263865eb589cb7d186aff"
-    sha256 cellar: :any,                 arm64_ventura:  "68ef3a962421476e89e4e5c3a875b3701e5b88794222ba3e007334c3ccdfaf0b"
-    sha256 cellar: :any,                 arm64_monterey: "7b53abdfe0eb5d6aa838fccf06ebe1df3879bec37bd9447675bc2ccde80dfdfc"
-    sha256 cellar: :any,                 arm64_big_sur:  "50943e75c8594f7a28e39f5cc849e38a8a88df0fa214198a30f59a1ca9cd8c14"
-    sha256 cellar: :any,                 sonoma:         "cf61dbc802d106d7f035eb6c5234940c7d28d3325615d0714583cf678c5546ae"
-    sha256 cellar: :any,                 ventura:        "ab90a4cdc6c2de4bb1f90d962cd1a6740179bd0ee1d6d8df7d8afd53aa5b22ee"
-    sha256 cellar: :any,                 monterey:       "799c8ca6554197413d7c16ce3d459017f6488ff33240e6f08c2a5fb178d804ec"
-    sha256 cellar: :any,                 big_sur:        "1c168baf35d8e55e8b77d2230ebf220dfc4222a649e3ba023adfb44db172cfbe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7199d1b452d304463ae3b3ceb28fc8936f6f191402e5e21f4dd2ecf8b115eb5b"
+    sha256 cellar: :any,                 arm64_sonoma:   "e1ddaf96fa7c3246de12e1d65cf2ae527ec008cef19849a3e0eb320a31329360"
+    sha256 cellar: :any,                 arm64_ventura:  "6c97cd4a2d62cff63e286344f64708602c1f3608e7aeb5cb1b4c0b6c7379b9db"
+    sha256 cellar: :any,                 arm64_monterey: "37bd3c433774da3be3911060587c1a5cfa44c5465c7174664d99f36cb0a7f92d"
+    sha256 cellar: :any,                 sonoma:         "6d20f05f1eb9e9a266787e770f748eed7cc591740ad24c284b09ca15bcc8da35"
+    sha256 cellar: :any,                 ventura:        "8554985b547b24d5e0f39fc9a80e53400aeb207e2a6255efbd4e1c037af042d4"
+    sha256 cellar: :any,                 monterey:       "b963662ccd118e8cb12f57b4f76c30bbbc6b3755cf4aee71a56e8a27b6ed53fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f7f55108299fdf377ad7a5db0bf2f0854ce192f23aad35b08232cbbb2d5c413"
   end
 
   depends_on "cmake" => :build
@@ -36,6 +35,10 @@ class Colmap < Formula
 
   def install
     ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].prefix
+
+    # Use C++17 for compatibility with ceres-solver >= 2.2.0.
+    # Issue ref: https://github.com/colmap/colmap/issues/2247
+    inreplace "src/CMakeLists.txt", "-std=c++14", "-std=c++17"
 
     system "cmake", "-S", ".", "-B", "build", "-DCUDA_ENABLED=OFF", *std_cmake_args
     system "cmake", "--build", "build"

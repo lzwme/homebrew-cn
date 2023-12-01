@@ -45,6 +45,13 @@ class Yaz < Formula
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
 
+  # Fix build with libxml2 2.12. Remove if upstream PR is merged and in release.
+  # PR Ref: https://github.com/indexdata/yaz/pull/103
+  patch do
+    url "https://github.com/indexdata/yaz/commit/b10643c42ea64b1ee09fe53aec2490129f903bcb.patch?full_index=1"
+    sha256 "7dba5fc599bfa3c54694c87f6978f24dd584ab746aab68bc82a41411da81bec6"
+  end
+
   def install
     if build.head?
       ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"

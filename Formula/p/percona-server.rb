@@ -2,10 +2,9 @@ class PerconaServer < Formula
   desc "Drop-in MySQL replacement"
   homepage "https://www.percona.com"
   # TODO: Check if we can use unversioned `protobuf` at version bump
-  url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.33-25/source/tarball/percona-server-8.0.33-25.tar.gz"
-  sha256 "9871cac20c226bba7607f35c19ee23516a38c67573dd48618727c74eae22912e"
+  url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.34-26/source/tarball/percona-server-8.0.34-26.tar.gz"
+  sha256 "c4e6977e787f960fd3bad6a7c06b7e126c46e1403ca133dd8a5da7bd4dcd6574"
   license "BSD-3-Clause"
-  revision 2
 
   livecheck do
     url "https://docs.percona.com/percona-server/latest/"
@@ -20,15 +19,16 @@ class PerconaServer < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "0258c3dab06898c57f4fadedee41c60f12e66c64b8ba53beadccad386a536371"
-    sha256 arm64_ventura:  "892c6d995dea2f56b8f9b9e505df2b847c423c6e1d1de32b249adeabe308ee9d"
-    sha256 arm64_monterey: "775b3b26e8750ef2de21b169dd1fd4fc4c6e4eefac6711ce3a632feb6e17b790"
-    sha256 sonoma:         "f048cd7469765d6e19d3534ba76ba6d2b7a1a486c578032d0cab79a7feaa3b49"
-    sha256 ventura:        "b47c75fc2329d18308abba605ff09bbd793bb34913748bb0831c60c98ef3c568"
-    sha256 monterey:       "ee4bc7f153611ed7f3a2d53c7c7d2075498d8dbe32f4541a259cb95fd2f1397d"
-    sha256 x86_64_linux:   "17d4881e1e4fd06bcb8845f165284611a976b0dd3793977324b8b51ccb4e8409"
+    sha256 arm64_sonoma:   "ff9b415bcc15b0d2e14767809c38bd48812f807ee0caa45013e4823fb9c989ce"
+    sha256 arm64_ventura:  "7d5345cdca37d90ea61442f9a53acf8af9e84f5002135a1876f3f547b17371f2"
+    sha256 arm64_monterey: "c81ed5aa0a18161812ace90f8dd7a8c2533891fa65fa73a94d44de2b13644235"
+    sha256 sonoma:         "e80ef52d1d5d870e15740c4686899631d55342baf9d0ddc06ec869c8e2bb9b2c"
+    sha256 ventura:        "ef3278a3591722b4137dce239742b23ec869034ee999f5279fa84db215504874"
+    sha256 monterey:       "3059ba46d1b29b4a6706dc2848f501f9b53b4ae48f37e7ffa4b124c2a4dc8573"
+    sha256 x86_64_linux:   "30430d7909d8810426c7555464ba41b08ad3df4cb01a0c99e22785a1efc46af5"
   end
 
+  depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "icu4c"
@@ -78,14 +78,6 @@ class PerconaServer < Formula
   patch do
     url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/030f7433e89376ffcff836bb68b3903ab90f9cdc/mysql/boost-check.patch"
     sha256 "af27e4b82c84f958f91404a9661e999ccd1742f57853978d8baec2f993b51153"
-  end
-
-  # Fix for "Cannot find system zlib libraries" even though they are installed.
-  # https://bugs.mysql.com/bug.php?id=110745
-  # https://bugs.mysql.com/bug.php?id=111467
-  patch do
-    url "https://bugs.mysql.com/file.php?id=32361&bug_id=111467"
-    sha256 "3fe1ebb619583fc1778b249042184ef48a4f85555c573fb3618697cf024d19cc"
   end
 
   def install

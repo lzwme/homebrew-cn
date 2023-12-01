@@ -350,8 +350,10 @@ class Texlive < Formula
         next if tex_resources.include? r.name
 
         if File.exist? "Makefile.PL"
-          system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}",
-                 "CCFLAGS=-I#{Formula["freetype"].opt_include}/freetype2"
+          args = ["INSTALL_BASE=#{libexec}"]
+          args += ["X11INC=#{HOMEBREW_PREFIX}/include", "X11LIB=#{HOMEBREW_PREFIX}/lib"] if r.name == "Tk"
+
+          system "perl", "Makefile.PL", *args
           system "make"
           system "make", "install"
         else

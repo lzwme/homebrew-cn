@@ -89,6 +89,6 @@ class Libosinfo < Formula
     ]
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
-    system bin/"osinfo-query", "device"
+    system bin/"osinfo-query", "device", "vendor=Apple Inc."
   end
 end

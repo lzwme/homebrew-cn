@@ -11,9 +11,11 @@ class IrcdHybrid < Formula
   end
 
   bottle do
+    sha256 arm64_sonoma:   "b1d51228ff4227f5c004295ad3dd01d05cae278355d7c88e206e9ef8b70ef9cf"
     sha256 arm64_ventura:  "6a81e2c060cd566f402869f96af0ed8c64a0ed34bab832d647e7376b55b208ff"
     sha256 arm64_monterey: "8278654b1edca6191c1d549e796919b6836e524feb4a59b44860f817965b81da"
     sha256 arm64_big_sur:  "b3927d1e5ddbfb44800b02eee5fd9fe88fc597589f3810fd1fd41deb20713f4a"
+    sha256 sonoma:         "241be12e6feffcef270561492c12315c6bfd10116adca9f5e9735aa265f01a53"
     sha256 ventura:        "5a528cd1893e00df7ccbfe9b9fb324dc3574da86c6a358113ded14fe7e2407bb"
     sha256 monterey:       "c7ffbfb6de2e476e248bd63c2b963abee68e684ce4aac3042c9406e12ecad09e"
     sha256 big_sur:        "2eea0b23275797fe30f9095cbaebb167d707a08250bc66f5a0c729851bba7776"

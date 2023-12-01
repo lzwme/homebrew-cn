@@ -6,19 +6,18 @@ class Metashell < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "109c76fa2e8da1b4bdddd8368c4c3e8328477658a44064bdd77da42f60e48bf6"
-    sha256 cellar: :any,                 arm64_ventura:  "2cc250a4e2c795206aed7e6e3c29bd58fd7c48adbb406ac9ad6076249c783537"
-    sha256 cellar: :any,                 arm64_monterey: "7cbd8c82695aad556936488bcfcf3bacf33866d2d75401ff31eaf5cd60920997"
-    sha256 cellar: :any,                 arm64_big_sur:  "287f647cf8550653078479c27d4e985a456e68ef24491a3de01175e92234e55a"
-    sha256 cellar: :any,                 sonoma:         "6ee5ee0f262ea927bd82f2860399ae5e3c751ecdd6ef8399a601f6dcb8db3c37"
-    sha256 cellar: :any,                 ventura:        "f196e01be3cba5fde64a8114afbd1c4adf6c6ef5a44fc5e7f848cf7f7797d086"
-    sha256 cellar: :any,                 monterey:       "5573b01681807008a818cdab233292aaeb7db1bf93694cade04410dd60dc39d1"
-    sha256 cellar: :any,                 big_sur:        "e2f9bdc3e9b406683dc706aa08d10efa38e5cebe033268f324341872c62ec390"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "069823ccd40ab1274639474bf62285dd7c92cac8afa0006a51cada9a28bd1a12"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "842e31ef53f8bd669b6e7344f028ab4de0255a77a593635b9720a451d2e2d47d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4533ad286ccc480236aebbfd1f16b0dd2db015b5c3ffd154c3747e2a25096bac"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2958abbe2881a59769b0638d4418acd8d3d5ebd3ab909221f72df4c1354eaf57"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8fca9954509cf6db5673c609974da67a844b2bc0f8b51b4acbc39a99ecea42da"
+    sha256 cellar: :any_skip_relocation, ventura:        "99787eaf229f32b79c509af891747afa30315dd4e8530a4d298f0bc438c051ce"
+    sha256 cellar: :any_skip_relocation, monterey:       "3e8541db362af85b6564cf836accecb73ec8d529d586d52adbae3fe7e5cc88b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd4c0e36370c2b809c525c309f22e0bc849bb0bc8cc92e5d1dfe34f29e9e9ddd"
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
 
   uses_from_macos "libedit"
   uses_from_macos "libxml2"
@@ -31,16 +30,16 @@ class Metashell < Formula
   def install
     # Build internal Clang
     system "cmake", "-S", "3rd/templight/llvm",
-                    "-B", "3rd/templight/build",
+                    "-B", "build/templight",
+                    "-DLIBCLANG_BUILD_STATIC=ON",
                     "-DLLVM_ENABLE_TERMINFO=OFF",
                     "-DLLVM_ENABLE_PROJECTS=clang",
                     *std_cmake_args
-    system "cmake", "--build", "3rd/templight/build"
-    system "cmake", "--install", "3rd/templight/build"
+    system "cmake", "--build", "build/templight", "--target", "templight"
 
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
-    system "cmake", "--build", "build"
-    system "cmake", "--install", "build"
+    system "cmake", "-S", ".", "-B", "build/metashell", *std_cmake_args
+    system "cmake", "--build", "build/metashell"
+    system "cmake", "--install", "build/metashell"
   end
 
   test do

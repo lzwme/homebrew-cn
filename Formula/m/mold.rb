@@ -1,19 +1,19 @@
 class Mold < Formula
   desc "Modern Linker"
   homepage "https://github.com/rui314/mold"
-  url "https://ghproxy.com/https://github.com/rui314/mold/archive/refs/tags/v2.3.3.tar.gz"
-  sha256 "dcba90d5ee852ececb3a1a70110bb2d385079dcd1aa103e970296683c642f856"
+  url "https://ghproxy.com/https://github.com/rui314/mold/archive/refs/tags/v2.4.0.tar.gz"
+  sha256 "be65f3d785d32ece7b3204ecaa57810847fdd25c232cf704cbfff2dafb1ac107"
   license "MIT"
   head "https://github.com/rui314/mold.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e83f2d54c81d127f31c284baffadeb01a88d2aa382b92dfbb78cf9d391ae4e99"
-    sha256 cellar: :any,                 arm64_ventura:  "845c44798f1ba64b97eeb66d218a9b5b4aa0afab4cc4d4a3ca38da1247ee7aa5"
-    sha256 cellar: :any,                 arm64_monterey: "7b5ac97769f666adf45346d0e5a824c60f410f95d4d867675ef319c2e3bf71e4"
-    sha256 cellar: :any,                 sonoma:         "ade5b87a3d470c2d9e9b7398e561199ab6f175d59cf6ab1b39943e624f96f525"
-    sha256 cellar: :any,                 ventura:        "6780e16f2d809f012dc30e0cb7437f1d1093dd5524564043f041a2e672bd2c28"
-    sha256 cellar: :any,                 monterey:       "d38a212aa2d29445ccc6c6ef5854dc2260f4755284dcb2f85af297cff2894395"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4d825d640e40717ad19731ac7c3daa5b0ebb44c8c74773641d9efc44f099882"
+    sha256 cellar: :any,                 arm64_sonoma:   "2ae7f9e6c901a7ed68e2b3213cb4a8664b51211fb8bf1875c0e69347b0b7c866"
+    sha256 cellar: :any,                 arm64_ventura:  "36e0512454fa434fb2c0af395ccb87aa5006958616c778071b5c2fc3ed77a4b0"
+    sha256 cellar: :any,                 arm64_monterey: "a6c18c561effc0d76ff5f82e098b8ad99da5c3d3343d807de14353f27c2febad"
+    sha256 cellar: :any,                 sonoma:         "30883294bf026345800afe7756a77d3da45837b80549c126a1fe5cfb727a92fa"
+    sha256 cellar: :any,                 ventura:        "3bdd4c72dd9ca224dbeac2037dbb4b3936301ed296c8e96521081c991c95edd5"
+    sha256 cellar: :any,                 monterey:       "854fcd54196d0b4aae52fbbef614178e1724a597309e9e93ef16a71e79b8be5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "beb44d813b16e90bbfdc304828b4264ff60522ed3517ec4cc324b48574c0a537"
   end
 
   depends_on "cmake" => :build

@@ -4,7 +4,7 @@ class GitSvn < Formula
   url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.43.0.tar.xz"
   sha256 "5446603e73d911781d259e565750dcd277a42836c8e392cac91cf137aa9b76ec"
   license "GPL-2.0-only"
-  revision 1
+  revision 2
   head "https://github.com/git/git.git", branch: "master"
 
   livecheck do
@@ -12,13 +12,13 @@ class GitSvn < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8098bad7c0478d2110aded533d3746ea6abfe9ffd94ff095eddc7d8a8c91fd95"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4aebfe6c82aefb2e5086f26b7984ebfe0a89d2eddf8e909e91799991f05a8d31"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4aebfe6c82aefb2e5086f26b7984ebfe0a89d2eddf8e909e91799991f05a8d31"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8098bad7c0478d2110aded533d3746ea6abfe9ffd94ff095eddc7d8a8c91fd95"
-    sha256 cellar: :any_skip_relocation, ventura:        "4aebfe6c82aefb2e5086f26b7984ebfe0a89d2eddf8e909e91799991f05a8d31"
-    sha256 cellar: :any_skip_relocation, monterey:       "4aebfe6c82aefb2e5086f26b7984ebfe0a89d2eddf8e909e91799991f05a8d31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85d08b62306060e7f2d36c6aaa913d92a35744c84cf672c2c072ed90a9881153"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "866e16af1f31a0bda49e3cd101135a0b3bfa1d8b7003f874fcb228d15959855c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b2c77b3c949c53c8b5842ab859e3273963b2f22ee4b69338831147a3940d05c1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b2c77b3c949c53c8b5842ab859e3273963b2f22ee4b69338831147a3940d05c1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "866e16af1f31a0bda49e3cd101135a0b3bfa1d8b7003f874fcb228d15959855c"
+    sha256 cellar: :any_skip_relocation, ventura:        "b2c77b3c949c53c8b5842ab859e3273963b2f22ee4b69338831147a3940d05c1"
+    sha256 cellar: :any_skip_relocation, monterey:       "b2c77b3c949c53c8b5842ab859e3273963b2f22ee4b69338831147a3940d05c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa065bf15a226abab14d9e1bd098a7121d7b0be7bc15115748abcf30ac9f35e0"
   end
 
   depends_on "git"

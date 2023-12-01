@@ -4,7 +4,7 @@ class HaskellLanguageServer < Formula
   url "https://ghproxy.com/https://github.com/haskell/haskell-language-server/archive/refs/tags/2.4.0.0.tar.gz"
   sha256 "67bbfae1275aabbfdb26869bc6df91feb58e03427cb76df89f74b864dbb5d57b"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/haskell/haskell-language-server.git", branch: "master"
 
   # we need :github_latest here because otherwise
@@ -15,13 +15,13 @@ class HaskellLanguageServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4ca1626c2e2efcefafaab806a625a14ae57fb6a64cb9f43090bf2d1ceea3959f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7918d6e2f1fa5b58d60e28516eac5028f0334b66ab1e75b932300c0b5f879bc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a7c1e10939cadb8d6b160bdb1c2eb187637a191e4969310378db74ffb70c5202"
-    sha256 cellar: :any_skip_relocation, sonoma:         "26aa2d10780198d9bcaa520c0c492bc6ef4cfb9ccb442b006a86805b93859d3c"
-    sha256 cellar: :any_skip_relocation, ventura:        "ac96303407de0dc69874b565a11aec964aae5d1ad3817556d8df89b94d4d2fe9"
-    sha256 cellar: :any_skip_relocation, monterey:       "052ac78f31285479a438210e2677572546875713150a1b17a203b24acd45faae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c08d30dfabd84fd385c4f7f77f13555ac491efd8ae51295761d8c67cd7ee448b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "00af4c28bfe393958ee2483b8048083559fe7bc217801e437bf5eaec2e8a972f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ad465fb691d784834b903224e3e5d2c6a41d22e1e5c089373baddac953b9d18"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4e13e6161536dc4416267b6302947f4d0125ab0e270edb3b3f71fe0b10aa44fa"
+    sha256 cellar: :any_skip_relocation, sonoma:         "55cd7e7913f4988053eaedd9a195e8ca8ea0a2e7fc0d767c47a0b1befe498ca8"
+    sha256 cellar: :any_skip_relocation, ventura:        "efb3454b042062bc29f9b74a53842214d04e7ebd218857831eac73d6ed39746d"
+    sha256 cellar: :any_skip_relocation, monterey:       "c40e40a5603875f954db19ce343e818100114b0fbaf57b52a760c8a60ee8b3de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0893c88c89683de459bc0f2acb6e0110329281461afd92a146db1197d4ccab58"
   end
 
   depends_on "cabal-install" => [:build, :test]

@@ -1,21 +1,19 @@
 class Trippy < Formula
   desc "Network diagnostic tool, inspired by mtr"
   homepage "https://trippy.cli.rs/"
-  url "https://ghproxy.com/https://github.com/fujiapple852/trippy/archive/refs/tags/0.8.0.tar.gz"
-  sha256 "4b2155ca20d53ee1d29c9459a6efc4ee094658e93033a90085e39c841d02666b"
+  url "https://ghproxy.com/https://github.com/fujiapple852/trippy/archive/refs/tags/0.9.0.tar.gz"
+  sha256 "bebd130c74ceacf4bc6b6f3aa92fa639e1904eb904c5135f53c45510370289ed"
   license "Apache-2.0"
   head "https://github.com/fujiapple852/trippy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "78a636171ac08b0588e7ea1a3afca8f8c2dbd63ca8ba5beca8e054717a0b33c8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2ca7942839c96151fee0e2abcc7d5b551fd53c75f797a96b786e11316d04baaf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4f0ea6d43dfa05b6bdda735eb6dfac2f3e38b99f4a09694929742633fbc12f47"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7b083e2f4d9afd3c82e2d1b2e01f52e6804972e4205818c0049f6e39ea688608"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2bef6c5c35fe3333fc44956aa38f7851b76b741b246a4d7464e23344edfa5080"
-    sha256 cellar: :any_skip_relocation, ventura:        "48e6cbda0b86865439925bd439e128b120e675ca97abf0798b9d3c4d83b9eefb"
-    sha256 cellar: :any_skip_relocation, monterey:       "cf4ce67bbe64a8cdda172993c16b9e74a08ef0ce094c9d8425b845108a1cb0e5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "452cbfe0a5557e9b8b2079bb61496d0e45f3bb0c9179873c709d0f472033be26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d134c0706c4f73e14a541865d16968e9c86ce81f2bb48a17ebf428316c08b281"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cb73a1170eb0df6ad758e22ddbab988660b051d11981458a9f0d635186e1dad2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "91361032e0686bd067dab5a091f79eba270508d8d9da114a20c07c77a7006e87"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "906d4750087f17b06fe4e60eba1647f5f09231520561d37f0f64118b25f38178"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3bcb3fd0dbe583d6b444921353e2039c8ee45d56c0f95b605466e61e022c1bd5"
+    sha256 cellar: :any_skip_relocation, ventura:        "a608dc82289e638defa28cd6bd8d6be081e453cec02fea2fb45cb07269aa4640"
+    sha256 cellar: :any_skip_relocation, monterey:       "2e5f71ce5c70cfc52569c0aae1cbd6796813661cfa5e2388f3c3b077d76ad81c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a02ccc325a2bcbceee089a91ab909ec30c4a25820e7d854c2f53fd544e4f8a7"
   end
 
   depends_on "rust" => :build
@@ -26,13 +24,8 @@ class Trippy < Formula
 
   test do
     # https://github.com/fujiapple852/trippy#privileges
-    expected = if OS.mac?
-      "root user required to use raw sockets"
-    else
-      "capability CAP_NET_RAW is required"
-    end
-
-    output = shell_output("#{bin}/trip brew.sh 2>&1", 255)
+    expected = "Error: privileges are required"
+    output = shell_output("#{bin}/trip brew.sh 2>&1", 1)
     assert_match expected, output
 
     assert_match "trip #{version}", shell_output("#{bin}/trip --version")

@@ -3,19 +3,19 @@ require "language/node"
 class Quicktype < Formula
   desc "Generate types and converters from JSON, Schema, and GraphQL"
   homepage "https://github.com/quicktype/quicktype"
-  url "https://registry.npmjs.org/quicktype/-/quicktype-23.0.79.tgz"
-  sha256 "ecd8992d9a3c2087952478f49afe7f191a93e649afca3b02ed72e8fbd9027541"
+  url "https://registry.npmjs.org/quicktype/-/quicktype-23.0.80.tgz"
+  sha256 "5a26c7561ea8211e5ccafa2cf8f195c933bf5c26eb4dc0f284043d8cc1722659"
   license "Apache-2.0"
   head "https://github.com/quicktype/quicktype.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9514d0dae547d8e5fccba202142370814c8db9d65558a000115d0f0b95377568"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9514d0dae547d8e5fccba202142370814c8db9d65558a000115d0f0b95377568"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9514d0dae547d8e5fccba202142370814c8db9d65558a000115d0f0b95377568"
-    sha256 cellar: :any_skip_relocation, sonoma:         "22166cb52e3e2efbcc813014ca8044a9d69a42e9031911b3d1c224552e1667e4"
-    sha256 cellar: :any_skip_relocation, ventura:        "22166cb52e3e2efbcc813014ca8044a9d69a42e9031911b3d1c224552e1667e4"
-    sha256 cellar: :any_skip_relocation, monterey:       "22166cb52e3e2efbcc813014ca8044a9d69a42e9031911b3d1c224552e1667e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9514d0dae547d8e5fccba202142370814c8db9d65558a000115d0f0b95377568"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1aa44a2869233c9afd9595dd7a315d262725e6b1fe16b61b3e90e12d26058807"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1aa44a2869233c9afd9595dd7a315d262725e6b1fe16b61b3e90e12d26058807"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1aa44a2869233c9afd9595dd7a315d262725e6b1fe16b61b3e90e12d26058807"
+    sha256 cellar: :any_skip_relocation, sonoma:         "490bc7336b1a0530308e52e8585bbda5f76b7d596e97925cace4b365350061b2"
+    sha256 cellar: :any_skip_relocation, ventura:        "490bc7336b1a0530308e52e8585bbda5f76b7d596e97925cace4b365350061b2"
+    sha256 cellar: :any_skip_relocation, monterey:       "490bc7336b1a0530308e52e8585bbda5f76b7d596e97925cace4b365350061b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1aa44a2869233c9afd9595dd7a315d262725e6b1fe16b61b3e90e12d26058807"
   end
 
   depends_on "node"

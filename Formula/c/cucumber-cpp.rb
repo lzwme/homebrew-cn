@@ -43,7 +43,7 @@ class CucumberCpp < Formula
     ENV["GEM_HOME"] = testpath
     ENV["BUNDLE_PATH"] = testpath
 
-    system "gem", "install", "cucumber", "-v", "5.2.0"
+    system "gem", "install", "activesupport:7.0.8", "cucumber:5.2.0"
 
     (testpath/"features/test.feature").write <<~EOS
       Feature: Test

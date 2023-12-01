@@ -71,7 +71,7 @@ class Hadoop < Formula
       "CLASSPATH" => classpaths.join(":"),
     }, Formula["openjdk@11"].opt_bin/"java", "org.apache.hadoop.yarn.server.resourcemanager.ResourceManager",
                                              "-Dyarn.resourcemanager.webapp.address=127.0.0.1:#{port}")
-    sleep 8
+    sleep 15
 
     Process.getpgid pid
     system "curl", "http://127.0.0.1:#{port}"

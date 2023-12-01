@@ -1,19 +1,19 @@
 class Giza < Formula
   desc "Scientific plotting library for C/Fortran built on cairo"
   homepage "https://danieljprice.github.io/giza/"
-  url "https://ghproxy.com/https://github.com/danieljprice/giza/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "6bd0e96393cf6b8676592b9ae570df9aba2cd289c0de1487a2ce0f3f509596b9"
+  url "https://ghproxy.com/https://github.com/danieljprice/giza/archive/refs/tags/v1.4.1.tar.gz"
+  sha256 "67c8eba2cc44a4eb16ff89b10147fa1a157be5801668391726200735c522faf7"
   license "LGPL-3.0-only"
   head "https://github.com/danieljprice/giza.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "efd6e38ca14edb4a28785d5e09a0e1d9c50904131330792cdebffadf037d6e28"
-    sha256 cellar: :any,                 arm64_ventura:  "6ad730962e7725b383e7333f1e6c95f5e5f2e3b3234a5582e47b7e02e86e867a"
-    sha256 cellar: :any,                 arm64_monterey: "f917df9516932f3eb466e06f2d48ec3dc35a17f3eeab70ad53bf92d66496961d"
-    sha256 cellar: :any,                 sonoma:         "8d497c5c6866bcffadd5d1eca2a7da7bd65e9ca9f790820fb63f8e6a494340aa"
-    sha256 cellar: :any,                 ventura:        "da022f7a7999a3a00afb8e037ac9385554fedc57956c15fa544d91280b12a06d"
-    sha256 cellar: :any,                 monterey:       "9f9d53f88f2b872f591a0431bbccde986535d61eb3da62d304527ea6d9a84335"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "157c3f949c3fa9f8455a1582d8d8596e24882910e0af4536fe7b5ef045d8da8a"
+    sha256 cellar: :any,                 arm64_sonoma:   "22cb653beed8d13da143eb46eb02c85923f512a59f28301cbad9d3d3fc461393"
+    sha256 cellar: :any,                 arm64_ventura:  "033d6270f86668e5400734f04b1d35dbeaac4ebeb66179ecb679a4a29af0f1fe"
+    sha256 cellar: :any,                 arm64_monterey: "3cae4c7547de87c4dea58f0c10581b4419676a70a52791fbaaeade23617dd404"
+    sha256 cellar: :any,                 sonoma:         "0a9de6e1beb8f7d26b3da09236d5f3d072548ad95e44b3a9ece430e88d4bef75"
+    sha256 cellar: :any,                 ventura:        "3ffc862d71532358649df9236f1e25f6889ccd6d16e16fda16881db6e7ac22f8"
+    sha256 cellar: :any,                 monterey:       "59f5440bf93bb86b074965904d9baaeca01e44d4825c71059085a7f8e44b84c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d59a3cb64df7fae5c3b094273d6dcfd0b455e05216bf251b0b116b8a4f0e3dfc"
   end
 
   depends_on "pkg-config" => :build

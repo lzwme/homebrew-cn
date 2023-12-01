@@ -3,8 +3,8 @@ class Snapcraft < Formula
 
   desc "Package any app for every Linux desktop, server, cloud or device"
   homepage "https://snapcraft.io/"
-  url "https://ghproxy.com/https://github.com/snapcore/snapcraft/archive/refs/tags/7.5.3.tar.gz"
-  sha256 "3dd5cc59a2cb56e647e7906af7e2c9c01493d19c91132a8d0208a930449db650"
+  url "https://ghproxy.com/https://github.com/snapcore/snapcraft/archive/refs/tags/7.5.4.tar.gz"
+  sha256 "3895fa74c66f8019579b126e4a95531b63314653e162fa70f9972e1b6aa80d45"
   license "GPL-3.0-only"
 
   livecheck do
@@ -13,14 +13,13 @@ class Snapcraft < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "238f6579c59cd76ef92b379f06c33ddc4acaf5d111e4b0cfad352aaeab32d28a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9f725f3c99690e48b306f36088c823b1211e2dc990100e8f610424983a193874"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b4763462ebac2b8e587ec98ea5b91e9d0870a93d97e91b20497baf4328868382"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9284bf6824080c7a1951701e688e25e3f1d2aaac50286e31d7dcd139fb98967e"
-    sha256 cellar: :any_skip_relocation, ventura:        "8460c32ec12b735b4dd8cefea7bbd293fb66bd3a025e7e30c7b8a6402aa3d003"
-    sha256 cellar: :any_skip_relocation, monterey:       "49049ebd99b0fed23d7c4026ed4f2ba3d67ca2e1961e38fffb6cd268d8c0b1d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79a757e3d6e03d4621f492fd142305106c334947843bb123702a39b8db059141"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2fa3bee5e0cd0518f2a79e1a9d51f95572bd437bfdda69b2257a49d81ae6e98b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "91848217dac372c428746e7ec809f90ca1c453890454dcc2a0654f2157e3b1c9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2bda12cfb70b8781ff04bd062b4fb19f40b0f7daed4ec03c10e6cd2f5ba81fa2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9a8dc7f98ac72e8aee59acfad32b42e70f40931934ccc3cf5ff996dfbd97b609"
+    sha256 cellar: :any_skip_relocation, ventura:        "ac62826eadd30eb7eec8a55f8d63d4348b1bb306858cf45ac55bf57d25d6a9e5"
+    sha256 cellar: :any_skip_relocation, monterey:       "baf4be2c75687e4d4d9e9bafa31b0879ec2b81055c7153aa0cf9ba52c6e4d58e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ac2e5ca977eefeae26b58e78e48c1e6f439f179c24055a980aea4adb309a9a4"
   end
 
   depends_on "cffi"
@@ -129,13 +128,13 @@ class Snapcraft < Formula
   end
 
   resource "craft-providers" do
-    url "https://files.pythonhosted.org/packages/e7/0d/5f7bc11fc6a839c553cb60462e0fd54b21c9adaf2c4ad8a37779c4327267/craft-providers-1.14.1.tar.gz"
-    sha256 "9102e5511cc1e87ddb6a0c8a65eba4ccf249702cdb5d407bcaece4a7e6a81a90"
+    url "https://files.pythonhosted.org/packages/b7/51/20947af2666098191a499b42eaea7597748f2574026705824b0f01b8503d/craft-providers-1.19.2.tar.gz"
+    sha256 "e2d505a185b81d8f42b44399a5fb8be7ae904d12e8ca4cfd63269610aa51e046"
   end
 
   resource "craft-store" do
-    url "https://files.pythonhosted.org/packages/2c/81/d1ef36c5bb5caece17c9361a8a9c45418286f13f74a25b9f60425e50e4cf/craft-store-2.4.0.tar.gz"
-    sha256 "6813e32df00003df16cf17257619ef25e86d5933b3ede41615b3d48a768a18cf"
+    url "https://files.pythonhosted.org/packages/7e/f4/db07807765354f0804227009858d4441f7207a6ebd9daf97324b309c662f/craft-store-2.5.0.tar.gz"
+    sha256 "30277224f9ab1ed9eeca1c6a48311e4644b745f0a3ca586721eafe2111feeb84"
   end
 
   resource "deprecated" do

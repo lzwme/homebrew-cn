@@ -1,8 +1,8 @@
 class PcscLite < Formula
   desc "Middleware to access a smart card using SCard API"
   homepage "https://pcsclite.apdu.fr/"
-  url "https://pcsclite.apdu.fr/files/pcsc-lite-2.0.0.tar.bz2"
-  sha256 "d6c3e2b64510e5ed6fcd3323febf2cc2a8e5fda5a6588c7671f2d77f9f189356"
+  url "https://pcsclite.apdu.fr/files/pcsc-lite-2.0.1.tar.bz2"
+  sha256 "5edcaf5d4544403bdab6ee2b5d6c02c6f97ea64eebf0825b8d0fa61ba417dada"
   license all_of: ["BSD-3-Clause", "GPL-3.0-or-later", "ISC"]
 
   livecheck do
@@ -11,15 +11,13 @@ class PcscLite < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4fd8fe7ce1abe39c416bf970acada7f78e4dbe4d40b540542a36784a003baa6d"
-    sha256 cellar: :any,                 arm64_ventura:  "f3bb47aadcadded2aa7dc974ea4776ab2d2a83a84d1dc49b9da2b193a1dff18a"
-    sha256 cellar: :any,                 arm64_monterey: "6562c3d1259a6b374948568a8c8912dbfab57d6908b3c8f722bbe267fb12bdec"
-    sha256 cellar: :any,                 arm64_big_sur:  "8842afebce7f1f49b4c4bcfd27f265796170c2a9c05d085653a6585adb83d36e"
-    sha256 cellar: :any,                 sonoma:         "f92b4e7699bce2dafc463a601c2a2fb4b161423d1876339dbfe53f47cf2a96c0"
-    sha256 cellar: :any,                 ventura:        "2bbf9296a78fb012b5846f9d2bac850e5dd8fe74fbe08fcf5a4cd8ee921d9bb2"
-    sha256 cellar: :any,                 monterey:       "9e8b14094fcf0ac9724251309ccb84fd995826b4460716277d466201e17c784f"
-    sha256 cellar: :any,                 big_sur:        "5e3b65fd730f8454409eeee874916ba1d70e2367da4845794ca98d3afbae9c89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "508f16bcfdfa4dbfc0bc8d918f262e73e872d381cf68fc993c1e6bb8cd9e1419"
+    sha256 cellar: :any,                 arm64_sonoma:   "e69b5ee55f8722ca29f1677c0c9789a0bde57759689b78814ea3ee2df9855a51"
+    sha256 cellar: :any,                 arm64_ventura:  "19c4716a366ee4de280345b15e11e05bdee39a4393c084cc19d2a0a245121657"
+    sha256 cellar: :any,                 arm64_monterey: "2aea1e033298ad17b66f49c6258e325c03d6d17a5dfd28100305a69d4e36680a"
+    sha256 cellar: :any,                 sonoma:         "2e88a05fb8d19a7e6e1b79199feb3b7d126944c73ee5fa73e6871b75a0ee1f3e"
+    sha256 cellar: :any,                 ventura:        "ae6ad65c38fa737309a27a55796254adad295ce12094b6aeba0c8983c60e3f6b"
+    sha256 cellar: :any,                 monterey:       "74ee27d36ada74a818796b9d42b9d567587e16e0b6f4fe945dc6cd90d781a71c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "437ba27784bd24b2202c9d637eaaf0285ef90a746ddf32f3d4498aaa6a65c4f0"
   end
 
   keg_only :shadowed_by_macos, "macOS provides PCSC.framework"
@@ -32,11 +30,14 @@ class PcscLite < Formula
   end
 
   def install
-    args = %W[--disable-dependency-tracking
-              --disable-silent-rules
-              --prefix=#{prefix}
-              --sysconfdir=#{etc}
-              --disable-libsystemd]
+    args = %W[
+      --disable-dependency-tracking
+      --disable-silent-rules
+      --prefix=#{prefix}
+      --sysconfdir=#{etc}
+      --disable-libsystemd
+      --disable-polkit
+    ]
 
     args << "--disable-udev" if OS.linux?
 

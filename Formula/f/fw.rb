@@ -1,8 +1,8 @@
 class Fw < Formula
   desc "Workspace productivity booster"
   homepage "https://github.com/brocode/fw"
-  url "https://ghproxy.com/https://github.com/brocode/fw/archive/refs/tags/v2.19.0.tar.gz"
-  sha256 "4daae47d2398aa0d5269baa6b416ddd2c58c9bc47c0238884392e765d4fed0b0"
+  url "https://ghproxy.com/https://github.com/brocode/fw/archive/refs/tags/v2.19.1.tar.gz"
+  sha256 "f949c3e29e11688c3ab2a7448b9fea2caf07d89d95da7bef00976541f4d957e7"
   license "WTFPL"
 
   # This repository also contains version tags for other tools (e.g., `v4.4.0`
@@ -15,13 +15,13 @@ class Fw < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "517db82c11621c1a7a6deaf84a70dbe5af3aa5f18f25eb016144c71c55568078"
-    sha256 cellar: :any,                 arm64_ventura:  "e4d3e49981925697b3c1db9ca7271412fa4c941ce539806e4d7edf3d01ba593d"
-    sha256 cellar: :any,                 arm64_monterey: "878aed5e61a87a303426da0b4fcd0c994ba5c07d2f1f27758c8657eff8acc868"
-    sha256 cellar: :any,                 sonoma:         "c25a85624eef4019aaca0ae699303b027fbee241f31c639ffad18384a4a468ef"
-    sha256 cellar: :any,                 ventura:        "6e8b8c6b0833784b82a8857908157ae0e6f3dc80ac01dd9877698f74def6e8bb"
-    sha256 cellar: :any,                 monterey:       "c6f95622215d73adc939e324798a8aba4ddfe3196af076c54e61ec4f7418bc91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "69646167a5cfb7a2f9af407c4bb56931468757969f934eb5c7061057fb6dda56"
+    sha256 cellar: :any,                 arm64_sonoma:   "9439cde7e0767daed5fef07280f6b6d8545fa34b637e36fd206770d7593a6089"
+    sha256 cellar: :any,                 arm64_ventura:  "df06452ad002deb1ae9228d3fa7291bd71d4c2b9ce7f6fb62fd774641598159b"
+    sha256 cellar: :any,                 arm64_monterey: "93860714a4c377a82c1ff7fcd9c11a4214806327ea635ade5fe450e18db83cca"
+    sha256 cellar: :any,                 sonoma:         "3810d6ee07419f3061037bdc5702a7ed9fccc3d3fa64ee29ea31c825c83ff917"
+    sha256 cellar: :any,                 ventura:        "f9844b68fa6c59d909ffd9a91923e0b676169af3df2606a66ed9ff9a11a23183"
+    sha256 cellar: :any,                 monterey:       "100612ba69fff5018c5641aded4920a3fc8830bdf62abc713b8d134ce8b8ca2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "057863e093e54e7e4e13a7e82097f3aba99a648bbf528e8ee513c7d3f72838f1"
   end
 
   depends_on "rust" => :build

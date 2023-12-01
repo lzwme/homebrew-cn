@@ -1,22 +1,22 @@
 class NlohmannJson < Formula
   desc "JSON for modern C++"
   homepage "https://github.com/nlohmann/json"
-  url "https://ghproxy.com/https://github.com/nlohmann/json/archive/refs/tags/v3.11.2.tar.gz"
-  sha256 "d69f9deb6a75e2580465c6c4c5111b89c4dc2fa94e3a85fcd2ffcd9a143d9273"
+  url "https://ghproxy.com/https://github.com/nlohmann/json/archive/refs/tags/v3.11.3.tar.gz"
+  sha256 "0d8ef5af7f9794e3263480193c491549b2ba6cc74bb018906202ada498a79406"
   license "MIT"
   head "https://github.com/nlohmann/json.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9ca4704d40b8e80ae9405d98e64c89922ace4de66ededabe63b65d73d14d8bc8"
+    sha256 cellar: :any_skip_relocation, all: "f171485a9f51d41eff592f4bf49bd14d09fa041c89370c00c4674211e15fddd6"
   end
 
   depends_on "cmake" => :build
 
   def install
-    mkdir "build" do
-      system "cmake", "..", "-DJSON_BuildTests=OFF", "-DJSON_MultipleHeaders=ON", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DJSON_BuildTests=OFF", "-DJSON_MultipleHeaders=ON", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

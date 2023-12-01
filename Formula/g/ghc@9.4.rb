@@ -1,8 +1,8 @@
 class GhcAT94 < Formula
   desc "Glorious Glasgow Haskell Compilation System"
   homepage "https://haskell.org/ghc/"
-  url "https://downloads.haskell.org/~ghc/9.4.7/ghc-9.4.7-src.tar.xz"
-  sha256 "06775a52b4d13ac09edc6dabc299fd11e59d8886bbcae450af367baee2684c8f"
+  url "https://downloads.haskell.org/~ghc/9.4.8/ghc-9.4.8-src.tar.xz"
+  sha256 "0bf407eb67fe3e3c24b0f4c8dea8cb63e07f63ca0f76cf2058565143507ab85e"
   # We build bundled copies of libffi and GMP so GHC inherits the licenses
   license all_of: [
     "BSD-3-Clause",
@@ -16,13 +16,13 @@ class GhcAT94 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e95b7bdb33044a5933232270fbb9d8cbdf8ee32a3f654f12d57fc84444aaeccc"
-    sha256 cellar: :any,                 arm64_ventura:  "94977aaf7e3c603f4954bfc9b92bae3f043d733fce0abb8a3b15d51e91f32472"
-    sha256 cellar: :any,                 arm64_monterey: "d4697ca409d8cd3c0257105fbe5562aca8912c220338ddbb1efce6d173dfc859"
-    sha256 cellar: :any,                 sonoma:         "4f39fd7e199d543d5b3d9a743a727d079a7af2df2ec2abda76bc4ae7ca36bacd"
-    sha256 cellar: :any,                 ventura:        "dc400241b4d3cb59dc42fc5e8f78e34c2b3e613b05be516a64c39fa3b52a8123"
-    sha256 cellar: :any,                 monterey:       "c11d02945c240ea3e172334e13e7622fe48ac55d2a856543edccacdae6df84a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ec4c2900baf81afba4e80b74a86600155c43b6147ee084a70316e4589baacc9"
+    sha256 cellar: :any,                 arm64_sonoma:   "6c1b596c79d78c3f0129159c35e06734ca148ec11d0b4f91c901ed3c7e38479b"
+    sha256 cellar: :any,                 arm64_ventura:  "3c048f7463acff61430ec00d162622e888cece890ee0f6a68f60c5b5104e951b"
+    sha256 cellar: :any,                 arm64_monterey: "199e84b11533244f17215e22728dd17d4a3dac003d2e25e994d45247e4ab2802"
+    sha256 cellar: :any,                 sonoma:         "9ff9d34ffc8ea3598d7291c5b3908e27abf89fa4502bbf9b5eb11589afe66c43"
+    sha256 cellar: :any,                 ventura:        "ab3a536d106db981fbf58d8516b561dbf2c9d72b9e3a55e287b96ec65fdf81f6"
+    sha256 cellar: :any,                 monterey:       "d1c8c2d9467575bdb2a2e08be2228eb27bdd5732495b991a3e4716e85860e05b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "407b41e9345808f2edb9f704f61c3e52df96d45b87c0fc89d823352d02d28990"
   end
 
   keg_only :versioned_formula

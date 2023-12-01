@@ -13,7 +13,8 @@ class AmmoniteRepl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "bc3ee73003b1b68cd598d24833dc3ca8ca8ba30dfac338bf5d2e48fe30bf6f4d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "bb99c7f9610f72dd03b1410868843d71b47d9dec8c5540f7d06f1eed530ad758"
   end
 
   depends_on "openjdk@17"
@@ -22,7 +23,7 @@ class AmmoniteRepl < Formula
     (libexec/"bin").install Dir["*"].first => "amm"
     chmod 0755, libexec/"bin/amm"
     env = Language::Java.overridable_java_home_env("17")
-    env["PATH"] = "$PATH:$JAVA_HOME/bin"
+    env["PATH"] = "$JAVA_HOME/bin:$PATH"
     (bin/"amm").write_env_script libexec/"bin/amm", env
   end
 
