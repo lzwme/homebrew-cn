@@ -4,6 +4,7 @@ class Camlp5 < Formula
   url "https://ghproxy.com/https://github.com/camlp5/camlp5/archive/refs/tags/8.02.01.tar.gz"
   sha256 "58d4bce0c20fa1151fc2c15f172f5884472e2044a4b0da22aababf46c361e515"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/camlp5/camlp5.git", branch: "master"
 
   livecheck do
@@ -12,15 +13,13 @@ class Camlp5 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "68bc1221b21f49d08586934bc06f19a62eef0308b92aa6257b5313e3f97e08e3"
-    sha256 arm64_ventura:  "b66cf027c5621a927617b974a01507b903b60f92aed85458b50bd1571241cb69"
-    sha256 arm64_monterey: "3176a9e4b1bf08b23615ada8387811cf2d63b8acbc18d1e1d4645007350a0bab"
-    sha256 arm64_big_sur:  "087ce00b6ef3367386236ba7832c658b01fe0e41288647f4a9a41dd304e6aebd"
-    sha256 sonoma:         "056cdf35c1cc5a6dfac714380f69cc3851d535464ef347af7ed70a866ddb3015"
-    sha256 ventura:        "7043d9895aa1e64a3ac4a7a9f26778770dd91b17a8507e35b43614f84d7dac21"
-    sha256 monterey:       "dcbffb83005849f1446742c2ba704577a495e2ef9ca82375d87b03d76640d977"
-    sha256 big_sur:        "dcc8d08791e3b42d7faba7faeebc3dc2c0fd17d23b730ad5a4dd468ad5d4d862"
-    sha256 x86_64_linux:   "16ba10a0ccfbda37bbed0d5513c5c7d4f82e5f7b40c102c48024429ddd4635d2"
+    sha256 arm64_sonoma:   "b759ee090fbf543cdc3fc06316f6e49688031dadc5f596dcb7d202c5e9b6259d"
+    sha256 arm64_ventura:  "fecb24a088b59346812faa716de555a939e6ff0efd38cec825ce4178834c3ba7"
+    sha256 arm64_monterey: "6b9fb48113e2cb84683f72fa3744da3bbe00f483df59ea1e07016a2e06352a9f"
+    sha256 sonoma:         "23da0a4d852c4d00da8523d2a2303b482dbddd40a9eb8d674f87907d9f718937"
+    sha256 ventura:        "07d9c205a10282211954729926982a14215def6e5ebf511bba15a39d0f77adf4"
+    sha256 monterey:       "582c31c1fd609b1904515b878ce4a2f886391a042ae6b9de6d595dabf832fda9"
+    sha256 x86_64_linux:   "6dbd19efdc0c99cd9fb94ee55ce1b8d5f6ee12e73ae93a3146c5bdec602e04d3"
   end
 
   depends_on "ocaml-findlib" => :build
@@ -48,11 +47,11 @@ class Camlp5 < Formula
     ocaml = Formula["ocaml"]
     (testpath/"hi.ml").write "print_endline \"Hi!\";;"
     assert_equal "let _ = print_endline \"Hi!\"",
-      # The purpose of linking with the file "bigarray.cma" is to ensure that the
+      # The purpose of linking with the file "str.cma" is to ensure that the
       # ocaml files are in sync with the camlp5 files.  If camlp5 has been
       # compiled with an older version of the ocaml compiler, then an error
       # "interface mismatch" will occur.
       shell_output("#{bin}/camlp5 #{lib}/ocaml/camlp5/pa_o.cmo #{lib}/ocaml/camlp5/pr_o.cmo " \
-                   "#{ocaml.opt_lib}/ocaml/bigarray.cma hi.ml")
+                   "#{ocaml.opt_lib}/ocaml/str/str.cma hi.ml")
   end
 end

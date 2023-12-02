@@ -4,16 +4,16 @@ class Pdftoipe < Formula
   url "https://ghproxy.com/https://github.com/otfried/ipe-tools/archive/refs/tags/v7.2.24.1.tar.gz"
   sha256 "561b18fc2a7ae45c37c5d0390443b37f4585549f09cd7765d856456be24e5dbc"
   license "GPL-2.0-or-later"
-  revision 16
+  revision 17
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "227d9c3807dd77e231d61636683f51b656b04966b5e36bc137c58df35d52230e"
-    sha256 cellar: :any,                 arm64_ventura:  "c1aeadaa563133053a09851b9423dd09a4d79eaa1e28f65ebdff21847f1d7f0e"
-    sha256 cellar: :any,                 arm64_monterey: "e63785c74d313bc1c4c8c92eb01bb9ec64f12914849d53b94f12f18a8b2e1c47"
-    sha256 cellar: :any,                 sonoma:         "cc075bf773ee919b496a3b6884c85c9ee21bb156ee5aae49ccdec2926884b531"
-    sha256 cellar: :any,                 ventura:        "e37f57b03832b091538d658e5e87bc2274f12bb80c4e834a7b108171372e34ca"
-    sha256 cellar: :any,                 monterey:       "8545109b7ddb2a27847df476137b24c66830d869fc869811b6b0934edd5dd2bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b66d17be67cc0dd12fd6f412664f4db59d891f4460890ba6fc7e8d08e36a6a0"
+    sha256 cellar: :any,                 arm64_sonoma:   "35954871b12da2d4ae306c6242b5f76b0b9d92184c116047ec35ea4ef3468ea7"
+    sha256 cellar: :any,                 arm64_ventura:  "00472ccf40fd114b37970e86342511cf064e49ecafa868503f0e15cc23808fb4"
+    sha256 cellar: :any,                 arm64_monterey: "7a2b32a5f63792685af61ba8fcb57d0d3e23812a6bf1e7e42e3cda44b507a4c3"
+    sha256 cellar: :any,                 sonoma:         "6469f8d2014033fb1b8c10a21689d042ea107b712a81c75f41cbfc6b5228d054"
+    sha256 cellar: :any,                 ventura:        "3cd4f332625762310793d80a9c78c4f53657f5a31a067330b7f860d73f4b08da"
+    sha256 cellar: :any,                 monterey:       "5107fc9b59224aa182933038873ccd1c6173cf17583a3a0e8e6eedca505fd0a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "acf90d0f6afd20e689a21868b4bf1e4ed9956328dc89f004820daa94f36c8b64"
   end
 
   depends_on "pkg-config" => :build

@@ -4,6 +4,7 @@ class OcamlFindlib < Formula
   url "http://download.camlcity.org/download/findlib-1.9.6.tar.gz"
   sha256 "2df996279ae16b606db5ff5879f93dbfade0898db9f1a3e82f7f845faa2930a2"
   license "MIT"
+  revision 1
 
   livecheck do
     url "http://download.camlcity.org/download/"
@@ -11,16 +12,13 @@ class OcamlFindlib < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "27f8601cdaa2e36271662c1284a30353c6b1c22f45ef7ccc3a7a4a1a73b60d6c"
-    sha256 arm64_ventura:  "bac75b12905f7138e93455ef3c4599fd417448dccafec8cbf5cc63b7192b63c7"
-    sha256 arm64_monterey: "3b7dc9a49293c982c8b8fbb4bd3a979b652d9bf48b6ae6a915fe734960acb2d3"
-    sha256 arm64_big_sur:  "259a336b537993add90ebef09bc6473dfa39426ee80292d443307f36e77e8ac4"
-    sha256 sonoma:         "86ddb1564581e10c8f1c59bad5fae8126411a12cc0218eb3af2835557913f7e7"
-    sha256 ventura:        "c9731166502de936c4897ce2f9c50b0432ac81f53dd904569ef406a4ac7bcbae"
-    sha256 monterey:       "716c17abb924c7958ebad686f456cd3c19842ba334875ae0a91f1392df756815"
-    sha256 big_sur:        "d6e7046fbe14735edb44ce83654736a476357344009fe7fd497416ade6374c47"
-    sha256 catalina:       "ef1c177401fad930e6912ae5103326dc673913e0ec16d1bd730bcc6ba5a43cf8"
-    sha256 x86_64_linux:   "c319106538e9f3e0faecd3900c1ebd105ad9b39645e0952ed5cd14de9b8ef2e4"
+    sha256 arm64_sonoma:   "57ff114e13929f3b5382c78418a43b896cd2c4f3d9627d9017b1d94a2609489a"
+    sha256 arm64_ventura:  "377870c6a2a9a7e059136d3fb161e9cf0d48191f4e3df7fb7adfc7003e0527fc"
+    sha256 arm64_monterey: "ad81c990d61dbcee8f0ab536ac519f697e7839313290a3b3f9ccff2717100a07"
+    sha256 sonoma:         "187c3979f7d1a04e3e009a9c36d0943c5d6bf7ae780fdfb38a27e0923d31eea6"
+    sha256 ventura:        "a0fc2d66f141c96efbf271429b7655ca53f05ee1c33350822903807beb8a96d7"
+    sha256 monterey:       "32251158ac86cbfafb14df0866da222e540fa0c4a30a023e631fb411dc604a8d"
+    sha256 x86_64_linux:   "0d81ac15dc0af7b4675ca0c2a5f302594ed5f5a676af51066d7d9c0f8f41faf5"
   end
 
   depends_on "ocaml"
@@ -45,6 +43,10 @@ class OcamlFindlib < Formula
 
     # Avoid conflict with ocaml-num package
     rm_rf Dir[lib/"ocaml/num", lib/"ocaml/num-top"]
+
+    # Save extra findlib.conf to work around https://github.com/Homebrew/homebrew-test-bot/issues/805
+    libexec.mkpath
+    cp etc/"findlib.conf", libexec/"findlib.conf"
   end
 
   test do

@@ -35,6 +35,9 @@ class Helidon < Formula
   end
 
   test do
+    # Avoid error: java.lang.IllegalArgumentException: `HOMEBREW_CACHE/"java_cache"` does not exist
+    mkdir_p HOMEBREW_CACHE/"java_cache"
+
     system bin/"helidon", "init", "--batch"
     assert_predicate testpath/"quickstart-se", :directory?
   end

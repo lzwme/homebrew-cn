@@ -1,8 +1,8 @@
 class PopplerQt5 < Formula
   desc "PDF rendering library (based on the xpdf-3.0 code base)"
   homepage "https://poppler.freedesktop.org/"
-  url "https://poppler.freedesktop.org/poppler-23.10.0.tar.xz"
-  sha256 "31a3dfdea79f4922402d313737415a44d44dc14d6b317f959a77c5bba0647dd9"
+  url "https://poppler.freedesktop.org/poppler-23.11.0.tar.xz"
+  sha256 "f99cca6799cb9cb6c92fc1e0eb78547b611cb733750ab7cb047cb0e6c246539c"
   license "GPL-2.0-only"
   head "https://gitlab.freedesktop.org/poppler/poppler.git", branch: "master"
 
@@ -11,13 +11,13 @@ class PopplerQt5 < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "d956b60eba746fab66c0f971aef85929357d6771bb71b482ea4ed35f9c2a13b6"
-    sha256                               arm64_ventura:  "ca3f3423ca69471c6fcbe374cc991743a34d1fad314df30d70701df7069da631"
-    sha256                               arm64_monterey: "a9c538cbf287297bdb8fd2d486eba8e789e0bffed8d6ac2f759db6d0a0fc7c1a"
-    sha256                               sonoma:         "4803105d5604cadbdda67a92b8b38f80cf3703c016349b401f4e5303655a58a7"
-    sha256                               ventura:        "ec44476be668fed187c844193e92e0ce76b5b9ebb29392b7cb84ace6981178eb"
-    sha256                               monterey:       "0295d91f895a5e24f1137606b6c5642ec458fa771a70782a321542a4ed8d52bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b357301337f4afac37fbf58ea7de0bea3d123c82048ac9d68dd3d76595768b6"
+    sha256                               arm64_sonoma:   "c0bb20ad9b17588af29292ecddea346dd819d3b977f09c812dbabae043df4d0e"
+    sha256                               arm64_ventura:  "4817b687b40324fe420b6d3140c26e21a7cd5b2f2de3ed835e1f1b9f4341d095"
+    sha256                               arm64_monterey: "63bcf327ed791982342ce6029e14a75e206bdf5c189873ffb85b83ce7cb31885"
+    sha256                               sonoma:         "7a8d7b75f6048813782c3658aa7da99a15e7c7cde4897a8137deb3c14b45459a"
+    sha256                               ventura:        "bb0123e78734342a0f3c829ad65842e970612495bdd609865b65af34fba98d77"
+    sha256                               monterey:       "81aead423eae0f13783b67dfd9322d5ba2c37c207c1bc862671136275a9c90c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6d4cb77fe8c6ab2e907b129bd250777448a745bbedf5ad7a9cde78614760496"
   end
 
   keg_only "it conflicts with poppler"

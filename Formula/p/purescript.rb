@@ -8,8 +8,10 @@ class Purescript < Formula
   head "https://github.com/purescript/purescript.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b9635623fa99414c51f6513d033286e1dbaf26f0ddc2809f81293f9d9edf01ae"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d4c20bde2362823f1dd1248ea0f7afc516b97bd723a733ff547a59c4471ca454"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1ee3f4e7d07ce654f35f099388c894a2aaad6bb9722a79f133e517e7700de762"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2d56e03f7fe3ccf85155d0b65a9644c7fff35e30a8eed7d87d44cae9e27b8c15"
     sha256 cellar: :any_skip_relocation, ventura:        "3e090d221fc65ccde1b9682d6e11e34cf40252f6a63b2dd7e4dd88825e7fd0ec"
     sha256 cellar: :any_skip_relocation, monterey:       "5ec9786de4f2d893eaa00c79b8b38bd62c1207552a09414046173f96544f2b50"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c374cf844b34785ec9f4c3b1d771b5e533c4cbdf0f82b1560c4c66e1bf19f811"

@@ -13,18 +13,10 @@
 class Ocaml < Formula
   desc "General purpose programming language in the ML family"
   homepage "https://ocaml.org/"
+  url "https://caml.inria.fr/pub/distrib/ocaml-5.1/ocaml-5.1.0.tar.xz"
+  sha256 "6ce8db393aafc264e5af731c68fbeb20920ab6ae84d5bf93511965b7423351ab"
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
   head "https://github.com/ocaml/ocaml.git", branch: "trunk"
-
-  stable do
-    url "https://caml.inria.fr/pub/distrib/ocaml-4.14/ocaml-4.14.0.tar.xz"
-    sha256 "36abd8cca53ff593d5e7cd8b98eee2f1f36bd49aaf6ff26dc4c4dd21d861ac2b"
-
-    # Remove use of -flat_namespace. Upstreamed at
-    # https://github.com/ocaml/ocaml/pull/10723
-    # We embed a patch here so we don't have to regenerate configure.
-    patch :DATA
-  end
 
   livecheck do
     url "https://ocaml.org/releases"
@@ -32,16 +24,13 @@ class Ocaml < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "dcc146a9db508622eb064afe702178fc97faadb67f373377f17541711e7d6f6e"
-    sha256 cellar: :any,                 arm64_ventura:  "fea680c0c2345edadc91fa0b9102ab2b1223a0f4312370a8fc4f917164f98e51"
-    sha256 cellar: :any,                 arm64_monterey: "4627e987e1517d78cfd6f40aa84a7f8c29b1d20ae845d345038fc7b548148413"
-    sha256 cellar: :any,                 arm64_big_sur:  "dd4cddcad1dd890d90d2db3cd4119ec0dc8b30e10053ca480812e16a90dff342"
-    sha256 cellar: :any,                 sonoma:         "4aff277d144252c0b5f68ccd386a05a2be1c50440f8ee72ae8dfd24c1b729f08"
-    sha256 cellar: :any,                 ventura:        "a0a61f07a68cce8bbc534d8b3f87059390c1082bd0d0d050fa28c3b05075d239"
-    sha256 cellar: :any,                 monterey:       "f744606227e8187baacabccec4baf57aca0f4309eb3bf93623a6789861369dab"
-    sha256 cellar: :any,                 big_sur:        "bfff444bfd1a9f4c441087537e602964e19f00adad4a8b15b5e0aad522b0c1b3"
-    sha256 cellar: :any,                 catalina:       "130c3b5d8c8de8cfbdafb57d48abf75a98e560c2ed4ae4bbc6f4a388145fe401"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "493cc9bbb57be2722ebf5203aa95fc93ec24af04cfadf474cbccba125dfbd215"
+    sha256 cellar: :any,                 arm64_sonoma:   "c58b2daea7553f2276e006f833b49edf1d0e0ea4598552457db3f7d284f45ea8"
+    sha256 cellar: :any,                 arm64_ventura:  "e74bcbd841101ac0f015593e03fb32e5f7c0d6893d187b3abb16306ea861360f"
+    sha256 cellar: :any,                 arm64_monterey: "8561604e9a2b36814efc882cedbff0a8faee43b98e86bd26b4677955143184c7"
+    sha256 cellar: :any,                 sonoma:         "d26232128990896f2af0d49ddbb53487184582000451ce342e099edc05729712"
+    sha256 cellar: :any,                 ventura:        "c38c39b1cad05df2ae44e87e369b8278f71d3fc82224224a409cd9f47c885135"
+    sha256 cellar: :any,                 monterey:       "1218880aab20da9ad579134974eb0c915c68965de9348345c611b909f29f0ee5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2e8fd353851e91aadd166cf0b7b737ddf19537917ca7ef6360df42042d73e9d"
   end
 
   # The ocaml compilers embed prefix information in weird ways that the default
@@ -74,16 +63,3 @@ class Ocaml < Formula
     assert_match HOMEBREW_PREFIX.to_s, shell_output("#{bin}/ocamlc -where")
   end
 end
-
-__END__
---- a/configure
-+++ b/configure
-@@ -14087,7 +14087,7 @@ if test x"$enable_shared" != "xno"; then :
-   case $host in #(
-   *-apple-darwin*) :
-     mksharedlib="$CC -shared \
--                   -flat_namespace -undefined suppress -Wl,-no_compact_unwind \
-+                   -undefined dynamic_lookup -Wl,-no_compact_unwind \
-                    \$(LDFLAGS)"
-       supports_shared_libraries=true ;; #(
-   *-*-mingw32) :

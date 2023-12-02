@@ -19,7 +19,8 @@ class Yazi < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "app")
+    path = build.head? ? "yazi-fm" : "app"
+    system "cargo", "install", *std_cargo_args(path: path)
   end
 
   test do

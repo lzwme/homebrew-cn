@@ -22,17 +22,16 @@ class Opencsg < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd3fc35ff3b4f3617a45eb3a86a6e2dc5f9e510808ea088172eb2b9aee3c1546"
   end
 
-  depends_on "qt@5" => :build
+  depends_on "qt" => :build
   depends_on "glew"
 
   def install
     # Disable building examples
     inreplace "opencsg.pro", "src example", "src"
 
-    qt5 = Formula["qt@5"].opt_prefix
-    system "#{qt5}/bin/qmake", "-r", "INSTALLDIR=#{prefix}",
-      "INCLUDEPATH+=#{Formula["glew"].opt_include}",
-      "LIBS+=-L#{Formula["glew"].opt_lib} -lGLEW"
+    system "qmake", "-r", "INSTALLDIR=#{prefix}",
+                          "INCLUDEPATH+=#{Formula["glew"].opt_include}",
+                          "LIBS+=-L#{Formula["glew"].opt_lib} -lGLEW"
     system "make", "install"
   end
 

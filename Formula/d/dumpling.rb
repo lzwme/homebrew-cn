@@ -1,8 +1,8 @@
 class Dumpling < Formula
   desc "Creating SQL dump from a MySQL-compatible database"
   homepage "https://github.com/pingcap/tidb"
-  url "https://ghproxy.com/https://github.com/pingcap/tidb/archive/refs/tags/v7.4.0.tar.gz"
-  sha256 "bebf20f649ec12fd7e1c2c86ca5359e9fb1671e677aa56d55a94a6c3c19eac00"
+  url "https://ghproxy.com/https://github.com/pingcap/tidb/archive/refs/tags/v7.5.0.tar.gz"
+  sha256 "d7514e5f8c787988540d0614aa75f573fe502c9a8381e2628dd6350b8db8e478"
   license "Apache-2.0"
   head "https://github.com/pingcap/tidb.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Dumpling < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "63f5f24eaf2c62045bd7b06835febb1f38fee862a24eb4be2715f818f4d513bd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf697ae071e2ae5e0b110e48f749cacaf362da15d902fe7f4a162f76cd5b164b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "16a1452e35b5a4413125e47be1add9a702380b14bce8f3ae17f5845544607897"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b2dcf1358aac8877d4023ff0a562e8b78ae89f564b76acb14ab9de390b8afcba"
-    sha256 cellar: :any_skip_relocation, ventura:        "de552484686ae47ff8a34c8ae3141a4ca7200576e89d2b3d1aa9d9eef27e1b9e"
-    sha256 cellar: :any_skip_relocation, monterey:       "0f9615e31f999c60a57bf3ac8ac39bebeba74d17e18f456c8321fc3b95dd7a00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c0c324b1b00069db40adb276eb92f042a63b32c45ec2a26cdf69de9de55c24d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "603d51eeae6d91ff21c7303927f5c45f59e97a6d2d1693bc1b74c753f1f3f165"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1987f76095c2d56d17987d98c929b49942bb56f4390ad8b637e44331265849e1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "78305859b784cf8ce1b5f86cc6b43c372ba19dc4a3c25183bbeb27976d316974"
+    sha256 cellar: :any_skip_relocation, sonoma:         "844bd50b70bc079f4ad644a484ef63346a359260bcc841f907b5d275d84a34ac"
+    sha256 cellar: :any_skip_relocation, ventura:        "3e937e53af62ac94f491998f98638d1740ee17adfdf7d19325c2c14e830959d4"
+    sha256 cellar: :any_skip_relocation, monterey:       "d2d7f2232d82b2007a468f6f4e29d6f14ee2ba6fb60fa305200692bd3f195a04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "946ea2f6edc579fec6ed6511d50a1603d3eca3fced9d1d48da19309ad46cb356"
   end
 
   depends_on "go" => :build

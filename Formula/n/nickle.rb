@@ -1,8 +1,8 @@
 class Nickle < Formula
   desc "Desk calculator language"
   homepage "https://www.nickle.org/"
-  url "https://deb.debian.org/debian/pool/main/n/nickle/nickle_2.93.tar.xz"
-  sha256 "a8dafb5f3e42528c212046a24559cbdbcb5d197c71b24f3e61543b85d3842beb"
+  url "https://deb.debian.org/debian/pool/main/n/nickle/nickle_2.94.tar.xz"
+  sha256 "1d09e4c3f9ec0b71b7905303028a82cac1b223bedb9a3810d6f7184210370727"
   license "MIT"
   head "https://keithp.com/cgit/nickle.git", branch: "master"
 
@@ -12,15 +12,13 @@ class Nickle < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "909f1ee1488fea628e21686b9235e779d691bfa5cb2ebcd640c56a43ed30c726"
-    sha256 arm64_ventura:  "d0d6255b9d3fb675313e9cffadbfc052e0277b7da6e89940c00c3154f349a5c6"
-    sha256 arm64_monterey: "519e19dfb3e6d0f240d9f9403e1d81fcc70058685dcd855d74d44373bf602204"
-    sha256 arm64_big_sur:  "235c2dc6123664e5ebd6357aaeb03fa9ab581607cff8d92c37e39b22585641c3"
-    sha256 sonoma:         "f9554c9387d7e224c4b6fb4da719a525f767dd24566985a55d67c91b713b4463"
-    sha256 ventura:        "2e40cebbf8c374d255374a28204b5905c650bd7a3653f921e585b5ef3085ba14"
-    sha256 monterey:       "bbd70d1d86297d8118ce157f99b588eba33e3b086356d20405f1bb6d1ee45e74"
-    sha256 big_sur:        "2920ed867e365086f38766c1b2df9d523f27046b02c50e88a5a454a41cc2ce13"
-    sha256 x86_64_linux:   "0ded2c09a3d1e1bcfb36d5d7fc0b0e2bf78354065b02a0c8927535f00b846a41"
+    sha256 arm64_sonoma:   "fd733f58ca03a64e4ae29f640d0372791b2db931d30b0ca21fd2229832f80cbb"
+    sha256 arm64_ventura:  "b5199b67e640a217c89c8133c4e6400daa3f99be89334328f6b18611cdfda43b"
+    sha256 arm64_monterey: "37123eca5bb70c6ac2d0f7c3bb457cc6910bba690719e765392ea96cfac23b56"
+    sha256 sonoma:         "6e622cdf5f98c4487de44f590e28962842d7691eaf59c3ce5452e2b3a55ec0d2"
+    sha256 ventura:        "6cf9cf73dffab15ef071cdf588f5283347aad5292cd24edc64cf4367dd541b32"
+    sha256 monterey:       "3743ea9e8c74a1acd5e38e5fb0c40c1e133fdcbbad521899cb5d1b03b9f367dd"
+    sha256 x86_64_linux:   "a9220899d32e294efe5ccf2ac1ef4b7e01725431be0a4af87bc8df5777f83ab3"
   end
 
   depends_on "autoconf" => :build

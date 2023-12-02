@@ -4,6 +4,7 @@ class CeresSolver < Formula
   url "http://ceres-solver.org/ceres-solver-2.2.0.tar.gz"
   sha256 "48b2302a7986ece172898477c3bcd6deb8fb5cf19b3327bc49969aad4cede82d"
   license "BSD-3-Clause"
+  revision 1
   head "https://ceres-solver.googlesource.com/ceres-solver.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class CeresSolver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c74e3b4365f764685510b4d277b5c945ccfc4efc524b6dc3d03166d379307989"
-    sha256 cellar: :any,                 arm64_ventura:  "92ab34d7e35dbe1f015b20284eaa2810b69c6146307d1665a72cfb9199d2a0a6"
-    sha256 cellar: :any,                 arm64_monterey: "1201db06e07cf8aee844b0438996438c48f0aadf49c5601b53d1eafb3552fbab"
-    sha256 cellar: :any,                 sonoma:         "e14d6739f2b7d650b277cfa6c2ebb3b06a84f13b6a1e28e5c0d5e5c388f26a88"
-    sha256 cellar: :any,                 ventura:        "c6ae823b78ee89841d53dfd421e24408c079edebad9c069ff5c0161e9931f858"
-    sha256 cellar: :any,                 monterey:       "29ed4fd9c6640e86b39ec981d62f3c536da8c8d9206e5356ee006ee2aa5163bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b1d5e0e8e50982f533b525b2301f68a814767bac2629e4a5854c8f4294b6f94"
+    sha256 cellar: :any,                 arm64_sonoma:   "82321500433aa189b94707782c92b280d9f370c2da70d81f337c33e7d3ce0924"
+    sha256 cellar: :any,                 arm64_ventura:  "7b298b5e784c97df200a87e5ecb612c6a8a3feaff2b7906a47254822c697ddfa"
+    sha256 cellar: :any,                 arm64_monterey: "3de5b3e4c7e884954abc07b9456ec86e08cc98dc172194b2ab7781d354ccc412"
+    sha256 cellar: :any,                 sonoma:         "f949ae21f99855aa96d25e8cb2a30cf7d001b8af8193a9b0ab4032969c5ab6a9"
+    sha256 cellar: :any,                 ventura:        "0fb671f15c3b25e771ebeacb0bd8cfe5f3b47535c766091e24adc6f50e7e4e23"
+    sha256 cellar: :any,                 monterey:       "c3dce08c0c5c4c239c60fad44ebe52333428f4925fd3f69faa30d1ad34d11f65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68107edf1952d270ebdad753857acf97e253956b48cd115047d89b6364c3f903"
   end
 
   depends_on "cmake" => [:build, :test]

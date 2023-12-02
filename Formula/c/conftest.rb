@@ -1,19 +1,19 @@
 class Conftest < Formula
   desc "Test your configuration files using Open Policy Agent"
   homepage "https://www.conftest.dev/"
-  url "https://ghproxy.com/https://github.com/open-policy-agent/conftest/archive/refs/tags/v0.46.0.tar.gz"
-  sha256 "87728a1bc02fe63227ec90d813c36197939f3c76a6f055d5556a42d1116cdc73"
+  url "https://ghproxy.com/https://github.com/open-policy-agent/conftest/archive/refs/tags/v0.47.0.tar.gz"
+  sha256 "a2a514438498b785e30a88075557ba7f29175256bc633404a40f699782ac55da"
   license "Apache-2.0"
   head "https://github.com/open-policy-agent/conftest.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0b2bca4472b281c0c4d5a83155fc3cd37e28179cd510406cd1ed4ac4b2d3fb06"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c603d8629ea2c9f6c08b2b3b870c23630adbb9f03bf800a3b95de6ad6ab43536"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3b0875bc1235d83d74a74850da6c5e7b270cf6b82190e37b63eec22f59494074"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e2d3d023b177dfb50fdb695eac6ff037667244ae7934ff65f28fffb3291a2d94"
-    sha256 cellar: :any_skip_relocation, ventura:        "1d2ff38890497f5133c307414c9bf62b85af845bdf8728637271713fb1b3f304"
-    sha256 cellar: :any_skip_relocation, monterey:       "75efef618044168d44fce6fe780d6ac413d83d1d71bf15f0b88e914e7d7a934c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9f6ba3eb6cac7ffc112f72532f55084900d47da18e6ffb12b07e4c749a433e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a1a7af2e2fbef6b5fe87b40151a3b4609c2a015716bb7de7ba1001a7156d98f6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "215af6ef7d89f3e46b1485e36a7203324bb641fb50d490087a9fe67d21150dc3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "eacb77274b63cca6bfa11bd44a8c4d7a04378ccf7f6c2c286927e897832e4150"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f1a60c3d78204125b605312df02448beafcc6b3e8b318e480ae9ad35af5a9d63"
+    sha256 cellar: :any_skip_relocation, ventura:        "7c13222f7279b70617bc0dd6b76dc546958d783e53bdc16f3c7ea25481d2b9f2"
+    sha256 cellar: :any_skip_relocation, monterey:       "d9b0f06eaa214b35103218715c6687d6d0d9ffdadf3a0c9714f6b522294062f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3862914816726164c63f75b8043110e18fb84fee273bc576391261d7b3f9117f"
   end
 
   depends_on "go" => :build

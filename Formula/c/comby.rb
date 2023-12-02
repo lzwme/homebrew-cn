@@ -6,21 +6,19 @@ class Comby < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "e1b1c09efa1955a2ae845e6783ef790f01f3afad0a170cc7f82f2b39d49b5a26"
-    sha256 cellar: :any, arm64_ventura:  "ead924a94b73aede202b3afc9146124efb1ac7b8416e0b0119a59cf2ab6d3310"
-    sha256 cellar: :any, arm64_monterey: "c75ee2deab2abc20778e51a40cbb7ca305948dc0e10c6e13e9d23004d26f8dfb"
-    sha256 cellar: :any, arm64_big_sur:  "886f0b5d1a6ac7075a18f3d0075578e81ae2462656a578cf61c344622629a5a4"
-    sha256 cellar: :any, sonoma:         "7ae11688f7baff37ed21570abb0615e0ae36103c1b8d83942bd7ee569b301544"
-    sha256 cellar: :any, ventura:        "535c3320832e70d126405a7535298c615dfdaa66e0ee0ddceaae680d3f189113"
-    sha256 cellar: :any, monterey:       "8e84488e24e0df5a5bbee5a2df201eb1027c90d177ebcd8bf030c91dec47d636"
-    sha256 cellar: :any, big_sur:        "72ce5e95f8772bc54d8d8706ed06e08ab99b9a6eb2682d8fea480ed1be202704"
-    sha256 cellar: :any, catalina:       "7519ef48876a5d5b3636556b0b6987c1c9ec7b568d299c49b849036aafcb61bb"
-    sha256               x86_64_linux:   "275be90d9ac8149c51abc9c5fc972e7aff125326cdadfd1ed0f55a8d6d84dc15"
+    rebuild 1
+    sha256 cellar: :any, arm64_sonoma:   "9879569428b8a7bde2b56490bf6bd99cf5f0cdc1c524250af7173eae9b3b6621"
+    sha256 cellar: :any, arm64_ventura:  "375dd89916c279b00020467fdbb699d05807a6caf866ad35fa76d9adabcaff8b"
+    sha256 cellar: :any, arm64_monterey: "fb4cc78f0a4a95aa911d3bc4a619e53fae22a1bd5a4bbb94e17cdc849baa4485"
+    sha256 cellar: :any, sonoma:         "fb116fe361c37cefad3d3d4aa0d37a8a76264e2920d3d9d49c4996423aaab5d4"
+    sha256 cellar: :any, ventura:        "f46b53e793bbce9dd888ec53a90224566c2b52ce4c2db664f93a945a425ac52c"
+    sha256 cellar: :any, monterey:       "54ab143ff66d46db4a02ad2c373edabf4c9ad23af83c0fd4945dc66b41ce9772"
+    sha256               x86_64_linux:   "919a845aa0880568e9ca2288c6f390437a8e14a12a59a597e0b8e90f0f540b79"
   end
 
   depends_on "autoconf" => :build
   depends_on "gmp" => :build
-  depends_on "ocaml" => :build
+  depends_on "ocaml@4" => :build # https://github.com/comby-tools/comby/issues/358
   depends_on "opam" => :build
   depends_on "pkg-config" => :build
   depends_on "gmp"

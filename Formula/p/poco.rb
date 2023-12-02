@@ -1,24 +1,24 @@
 class Poco < Formula
   desc "C++ class libraries for building network and internet-based applications"
   homepage "https://pocoproject.org/"
-  url "https://pocoproject.org/releases/poco-1.12.5/poco-1.12.5-all.tar.gz"
-  sha256 "2e8f6d03e31cd67ca597f45a77daa797db3760035b445710a1cf4973863c2d0f"
+  url "https://pocoproject.org/releases/poco-1.12.5p1/poco-1.12.5p1-all.tar.gz"
+  sha256 "d7c17b30f4536066f11f89e8b3b1145161ca477470a5482c63cfadb68cdf3e25"
   license "BSL-1.0"
   head "https://github.com/pocoproject/poco.git", branch: "master"
 
   livecheck do
     url "https://pocoproject.org/releases/"
-    regex(%r{href=.*?poco[._-]v?(\d+(?:\.\d+)+)/?["' >]}i)
+    regex(%r{href=.*?poco[._-]v?(\d+(?:\.\d+)+\w*)/?["' >]}i)
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "aaa8968655ea183add0b1553e7182b2fb0d65a0e041ed3e72983543d4103a730"
-    sha256 cellar: :any,                 arm64_ventura:  "fb61c043996963f726e97c85a4a3127a4d8859456a8317022ba454bd04a42402"
-    sha256 cellar: :any,                 arm64_monterey: "9c6e57dc12def2c1b1e51299fd443337ef3c9a203f18d40a26325a13275655e9"
-    sha256 cellar: :any,                 sonoma:         "acfbfb57d66c6b2d4e03e8c19bf1c521e5f96ef38d0342ab40d18997461f8119"
-    sha256 cellar: :any,                 ventura:        "7e0be8c3ba454c8e061f87aff8d18817675ef586951b6a12c288af79e7910e31"
-    sha256 cellar: :any,                 monterey:       "c08fabfd114c7b4f46f4cf6fbf849494981adac6179ae3f5b7cfcb28676746d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb267e0283362ee4771bd1660355b2efe09af18095f525e3947e877d85ba7774"
+    sha256 cellar: :any,                 arm64_sonoma:   "570e099a906dad609312f163df81150931bb6f703723c8b20398d8a1b93c0285"
+    sha256 cellar: :any,                 arm64_ventura:  "137f85664133b09bad2a4fc2db8dbc20a5686fe35242e4f730245202a0b6e15c"
+    sha256 cellar: :any,                 arm64_monterey: "cb8940a3a9af137b49787d67b9f2eb3ad45668635c0818d18462ab6fba6c638c"
+    sha256 cellar: :any,                 sonoma:         "e2f725ced4db7b1a997f0063366df2c0d6d143e0c3714fdbd29a1c044519fb2a"
+    sha256 cellar: :any,                 ventura:        "5a4d0c265b6aca1053b7f18b26a32afb0f7cd853fc6eca1544c2850868bb861f"
+    sha256 cellar: :any,                 monterey:       "3b4e515c16f305b723a7e239a7b18b2a7be99e510984766596b816f7a3e038cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a51e062fde554fb30f4ffc9a95931a8e41fafac972a045d82c7936f624ed9d7"
   end
 
   depends_on "cmake" => :build

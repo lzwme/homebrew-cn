@@ -29,16 +29,20 @@ class Snakeviz < Formula
   end
 
   test do
+    require "cgi"
     system "#{bin}/snakeviz", "--version"
+    system "python3.12", "-m", "cProfile", "-o", "output.prof", "-m", "cProfile"
 
     port = free_port
 
+    output_file = testpath/"output.prof"
+
     pid = fork do
-      exec "#{bin}/snakeviz", "--port", port.to_s, "--server", "."
+      exec "#{bin}/snakeviz", "--port", port.to_s, "--server", output_file
     end
     sleep 3
-    output = shell_output("curl -s http://localhost:#{port}/snakeviz/")
-    assert_match "SnakeViz", output
+    output = shell_output("curl -s http://localhost:#{port}/snakeviz/#{CGI.escape output_file}")
+    assert_match "cProfile", output
   ensure
     Process.kill("HUP", pid)
   end

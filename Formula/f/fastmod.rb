@@ -1,22 +1,18 @@
 class Fastmod < Formula
   desc "Fast partial replacement for the codemod tool"
   homepage "https://github.com/facebookincubator/fastmod"
-  url "https://ghproxy.com/https://github.com/facebookincubator/fastmod/archive/refs/tags/v0.4.3.tar.gz"
-  sha256 "0c00d7e839caf123c97822542d7f16e6f40267ea0c6b54ce2c868e3ae21de809"
+  url "https://ghproxy.com/https://github.com/facebookincubator/fastmod/archive/refs/tags/v0.4.4.tar.gz"
+  sha256 "b438cc7564ef34d01f27cdd3cd50ee66a9915b9c50939ca021c6bee2e9c1f069"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "75736ceaab98b58b7e118c312d341c87235b363f902dde8337970a0ca7716928"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7df620dfd7106cf71b1aab7d95a2d7e3b4e846fb65fad55a5a5b228539db1776"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dbdae4ac9ef2d408e51ed54b1e563090d2aaba5cd506cd6904cea7c2179f9a98"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "805f57f5a490b223d51e9608ed10ccf31c3532964f3f7414d81cc012f3430a4f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4518e479eaa60e6b64cae85a91cb614d6a36310fc44824302be69396c9bcbcaf"
-    sha256 cellar: :any_skip_relocation, ventura:        "ff90580cee3d30a722253377a55585c2914dbe4f7a64f765a4c3079ae3c505d0"
-    sha256 cellar: :any_skip_relocation, monterey:       "1397b657ee59c43478553a2b0f6e37dfd2b92e10c74986e98e405185be759797"
-    sha256 cellar: :any_skip_relocation, big_sur:        "89bcdaf3bc4230e1fea6b0d92da64a333d0ade90ed5ee3a8273842c8f7e3533a"
-    sha256 cellar: :any_skip_relocation, catalina:       "4bab7bc93a1d1db35666012bf7717ac61017be6437d59e7e7adce89226ab4ed9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "322cb4173cf2ff8cbdac4a81c249df2b2216c79ef340eb0692e8728295033c07"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "600929a7d4248733a13e358368319051565db1c568bca8c5a3c9ef11491fb9da"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7f264621edce82701f918ed54e31acc155523376ecd0b94735f189fd2e6cb82"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c3cf5f3e7db9c28665535bcd49de6370360a35a0df5d00666a8ccbaec1b6af5c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f880861191ce5e9d4ae1f72c71842c49f268075e6c5d17e102c40fe076e13979"
+    sha256 cellar: :any_skip_relocation, ventura:        "c2cd11d0b8f5bc395749013078c1667bf50b9f57d51768ec5bf47e6dbd85c79a"
+    sha256 cellar: :any_skip_relocation, monterey:       "13ed79ccecfb9373661a3ae969f438bb9bf1753cc6142a99d050ec0fc6383f07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9911efefe8693ee31af9c8b251ab3f524b67765b4f4920451c426b90bf05dc5"
   end
 
   depends_on "rust" => :build

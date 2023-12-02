@@ -5,6 +5,11 @@ class Libdpp < Formula
   sha256 "aa0c16a1583f649f28ec7739c941e9f2bf9c891c0b87ef8278420618f8bacd46"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any, arm64_sonoma: "9f05a962b1a82a872ffff8ac3ab084f762ce85b1bd076412164efa98f0d452c8"
+    sha256 cellar: :any, sonoma:       "6d3235f0f8c9bfd0ec3ed8be0266021e3c30b25c6414014d4eacd5781dfd1187"
+  end
+
   depends_on "cmake" => :build
   depends_on xcode: ["12.0", :build]
   depends_on "libsodium"

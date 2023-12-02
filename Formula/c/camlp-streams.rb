@@ -4,18 +4,16 @@ class CamlpStreams < Formula
   url "https://ghproxy.com/https://github.com/ocaml/camlp-streams/archive/refs/tags/v5.0.1.tar.gz"
   sha256 "ad71f62406e9bb4e7fb5d4593ede2af6c68f8b0d96f25574446e142c3eb0d9a4"
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e329a416fd6e58bde5d1b39a4ac5a194960f398b2e825c9b819c656d3729cb11"
-    sha256 cellar: :any,                 arm64_ventura:  "71fce4c1acb3764add19c7bc62932779d6eba6bd5a71c5eb0da1f1d94631f58f"
-    sha256 cellar: :any,                 arm64_monterey: "1aa419c01a3ca2738adf10d613def4cb213efea7c7af7682246287ef5a96a09a"
-    sha256 cellar: :any,                 arm64_big_sur:  "551ca86de9bdb769f0f22de773eb4a93f9faf31193f6b8833e39d30efe15fa03"
-    sha256 cellar: :any,                 sonoma:         "105139063c2a04638025f44bae454692f5cf2782fe977abbe6294319727109e0"
-    sha256 cellar: :any,                 ventura:        "0a47174a14ce39c3f2c3b1528a01365a2fd3269533f0eb7b6605faf698fb7545"
-    sha256 cellar: :any,                 monterey:       "f4fd0d6a51abb24f93fea4e7326dce470808aa5d6f2a8aca2750cd4bc9987174"
-    sha256 cellar: :any,                 big_sur:        "ee7ac1eda08673f956c10805187f58271fc1867522d93c004ebdbc085ca822af"
-    sha256 cellar: :any,                 catalina:       "0ef92902025844dd1abbe5fdc3f3c8e114b090738e6022f68d72c21aa608b9d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81e1d03158ed662d6266ae792dcb9145c042c61c0d3bd2b0e1079f8e42d6c72b"
+    sha256 cellar: :any,                 arm64_sonoma:   "1ab3f2156883e27bcfeff416cccb5e6f5e32102a52640299c5d6ca561b0b09f4"
+    sha256 cellar: :any,                 arm64_ventura:  "ee43234549a20178bcc759f2b630f68869c956527061079b3203091358c49195"
+    sha256 cellar: :any,                 arm64_monterey: "c88d7c4203e0111c6f21c6db54bfeb963e7962025741659d827a4153a096f3e0"
+    sha256 cellar: :any,                 sonoma:         "909acae960bc459db4f9f721801086296809a7b85db919229cc26ae67457f92e"
+    sha256 cellar: :any,                 ventura:        "e57d2a7c4e1ed7d865c72f6e0699a5e8439b22b76cff119ca10f41ccaf38ac92"
+    sha256 cellar: :any,                 monterey:       "584919e25737e013998be682d4cb0b79a512dd37180444e134f853c254586fd6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c23521a07bf157dc5f7fd018fdc804149a5e4c4acb375db87f1396bf50a1321c"
   end
 
   depends_on "dune" => :build
@@ -28,6 +26,11 @@ class CamlpStreams < Formula
   end
 
   test do
+    # Work around for https://github.com/Homebrew/homebrew-test-bot/issues/805
+    if ENV["HOMEBREW_GITHUB_ACTIONS"] && !(Formula["ocaml-findlib"].etc/"findlib.conf").exist?
+      ENV["OCAMLFIND_CONF"] = Formula["ocaml-findlib"].opt_libexec/"findlib.conf"
+    end
+
     (testpath/"test.ml").write <<~EOS
       let stream = Stream.of_list ([] : unit list)
     EOS

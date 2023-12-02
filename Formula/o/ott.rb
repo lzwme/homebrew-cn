@@ -12,19 +12,17 @@ class Ott < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0a5e35c9d327cc655a2bc83d1f4467cec858b823ad3613cfc144a89c80c8caf4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b202092d6fa42298024e584a97fd3349c500db3804857407c143656c5300699"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "511bf3f6279cba0c1714a9bcbc91b2b988b3407f5a9ffdcab04528bf1045a4a5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9dfaa3e076ad777bb50da8904c52eb7742fb9158747d7f83bec71542f871972d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "73f4042a2cfd5ba7f176657954780a327c691ca6421863c3d7de2ba85044ad9c"
-    sha256 cellar: :any_skip_relocation, ventura:        "9dba68010cc9178eb3933200efe0f7b4b358c79c62444b9a5f8733dd8868e0c1"
-    sha256 cellar: :any_skip_relocation, monterey:       "09ae9f15978dce2f09f98d3ee1bd0ea77f53bf9872a9f2270a759abfc85b6a5e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d80abf32c8153b5c72db279404531851fd09a5efdc6232c1d67bbf865dd8f73f"
-    sha256 cellar: :any_skip_relocation, catalina:       "f2045c4dbc0ef48247e47274dbf546624fa68d46bd022e0a4365153f3c5e0275"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ca84d7f68137c731edd143156701f3abca196a1aacfc36120ec31b545549a55"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd0f2fd9c600b741f4a67c547013f08904262e088af9c2bce6561f0e81c65118"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4bcd637f28c7e9f35695e9c42f4f43085c61af9e2aa602ff27dc860a878bcba4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "42c7e02e40e66fd3be87f2da780ceab61c2b2211b38a2f93a49d57ae844be70f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "91bc4fbcd4ba118ef1c2b5a7419c0791df3319784066cba6a3abe5137797ee91"
+    sha256 cellar: :any_skip_relocation, ventura:        "866c6d30e404716a80a6903c02d981e00c638afc0648b81931302af9d8d9e3d8"
+    sha256 cellar: :any_skip_relocation, monterey:       "04c5722ca0a6a51c3353e73a61dbab52e6fcf8aa7fd2171e459ff344ac27787c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80f076cb53a69044fd0007ccdae4998c2ed828ee432134c65a141a5bdb1a013a"
   end
 
-  depends_on "ocaml" => :build
+  depends_on "ocaml@4" => :build
 
   def install
     system "make", "world"

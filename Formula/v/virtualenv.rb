@@ -1,20 +1,19 @@
 class Virtualenv < Formula
   desc "Tool for creating isolated virtual python environments"
   homepage "https://virtualenv.pypa.io/"
-  url "https://files.pythonhosted.org/packages/ac/fe/028d5b32d0a54fe3ecac1c170966757f185f84b81e06af98c820a546c691/virtualenv-20.24.7.tar.gz"
-  sha256 "69050ffb42419c91f6c1284a7b24e0475d793447e35929b488bf6a0aade39353"
+  url "https://files.pythonhosted.org/packages/94/d7/adb787076e65dc99ef057e0118e25becf80dd05233ef4c86f07aa35f6492/virtualenv-20.25.0.tar.gz"
+  sha256 "bf51c0d9c7dd63ea8e44086fa1e4fb1093a31e963b86959257378aef020e1f1b"
   license "MIT"
   head "https://github.com/pypa/virtualenv.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "68564b034615b5f8b40e1b8a9622e70c9ee94ea056594bcd52c5cc82ee38e892"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c31e833bf7a9c7683f3b431a4865c8ab435b6497a71462b569b29f25d245688"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "278e4b93b61ebf00db3e84cf87a381d220718eb02c90f33cecef1aa25d655b67"
-    sha256 cellar: :any_skip_relocation, sonoma:         "38ad24d9c9c9563931ac6c4474a64f0ce6285d13c1366a97941b0dc7d72d0adb"
-    sha256 cellar: :any_skip_relocation, ventura:        "b436fe63ddfd02705abef4dcb95f7c7bcee81d7af3c87db2eeff0c0cfd165b39"
-    sha256 cellar: :any_skip_relocation, monterey:       "9287c643fed193633a84fa05c18f84afbd6277fa6fb92ecb05da45d2e3bfd55a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "011cf0227f47de297f92a7844f6414c32ce5be4605dd5f34beace2c4b55b06c4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "33b549d8c2ce12a315931e0c07e6ec2862e0f989069470ede68d45ecd3c43d56"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "653df5efc5b5bcfefc9b0118e14da23f751f0368effeb82eda5d614965db3d6a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bcf8a4b553761fee780e6c399a86544e689b27c96936d81b3eefdc78aa30b066"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4118d6e0ff85b6c48923aed30816c1f5a8c159c51116e5c225bff0ff1a16434f"
+    sha256 cellar: :any_skip_relocation, ventura:        "fa567862f3a8ff84ede5048740779ceb8b561790bd3bc955fd8e934e880a6b79"
+    sha256 cellar: :any_skip_relocation, monterey:       "a5c9ac36f093dac699ee15c2a6c6e4de8554dedb9dbcc57e0ff23cab039da3c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a88eb3ca67d40f32eec206a527905d038d58a57e833e611afe3cf93105598a28"
   end
 
   depends_on "python-hatch-vcs" => :build

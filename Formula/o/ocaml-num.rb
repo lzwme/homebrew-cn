@@ -4,25 +4,27 @@ class OcamlNum < Formula
   url "https://ghproxy.com/https://github.com/ocaml/num/archive/refs/tags/v1.4.tar.gz"
   sha256 "015088b68e717b04c07997920e33c53219711dfaf36d1196d02313f48ea00f24"
   license "LGPL-2.1"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c9fa6f0a88f6aae923bba24c8dbd7355e65523d4fd72b8b80260f4dee7d072eb"
-    sha256 cellar: :any,                 arm64_ventura:  "1376f678d4ee8141b6ce772985df8a1397f3e4831b02160a8057e3b195b26f90"
-    sha256 cellar: :any,                 arm64_monterey: "24a7c2eb700a74089c1fbdb5395473c4afa7f90e86372b556c7b48b4caab23fc"
-    sha256 cellar: :any,                 arm64_big_sur:  "e14151e4a14faa9a43774d4682930994110f9d654d533091b48a35ed95bfe8eb"
-    sha256 cellar: :any,                 sonoma:         "51ff686ec1003cddbcebfcb06f8fa03813ef1e23c571571916ccdbacf433093f"
-    sha256 cellar: :any,                 ventura:        "6fd4ac3c6c935c55379ff625b59501cda84097a366fd762d99d6cdc1d66d5f91"
-    sha256 cellar: :any,                 monterey:       "36835ca0d89b6ccf37c1dbb3596b2e1ba688148cac83d6ddda1d2bdf5ddb2a00"
-    sha256 cellar: :any,                 big_sur:        "0d247f113c3d0135e09a2b0a12a9299217600477083b089c5731bcf2b2245c36"
-    sha256 cellar: :any,                 catalina:       "5dbcc04ba33b58d14b77ae7382345b9abd913ce342c20c330c4cf15c936b24f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a1b1383e37f8f367f8f5c6c44a86f9e76c17080d3aa0465bfcff9328da88d68"
+    sha256 cellar: :any,                 arm64_sonoma:   "4f55c47b06e334594da2c757e4c2dc82affc09672796172648185d8cdd8aaf31"
+    sha256 cellar: :any,                 arm64_ventura:  "6522c296cac6b00245d89993e69ce05f529ba348cac150d33ab4cdb1e2cd9ce4"
+    sha256 cellar: :any,                 arm64_monterey: "2adae92ec142eb1aefa496b08ddc3632b3b0a57e3d44c5f561465039f6d29b43"
+    sha256 cellar: :any,                 sonoma:         "c59ad39d07225b342bd493c1d4531082e2798f160bc33663487981a6b265bb5b"
+    sha256 cellar: :any,                 ventura:        "9fa9786f28eb04e77dd3960bdf8e4674714b95d436183e9638cc646be0a19c8c"
+    sha256 cellar: :any,                 monterey:       "137b0fb7b9dbc961eee2a9449e4fcdf6a7e631cb77be7e8aa5448d366ef001e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "320ed8b1cb2b9e3018fe2c524a8781936b62b55ec2de65e732c0a1c08117936f"
   end
 
   depends_on "ocaml-findlib" => :build
   depends_on "ocaml"
 
   def install
+    # Work around for https://github.com/Homebrew/homebrew-test-bot/issues/805
+    if ENV["HOMEBREW_GITHUB_ACTIONS"] && !(Formula["ocaml-findlib"].etc/"findlib.conf").exist?
+      ENV["OCAMLFIND_CONF"] = Formula["ocaml-findlib"].opt_libexec/"findlib.conf"
+    end
+
     ENV["OCAMLFIND_DESTDIR"] = lib/"ocaml"
 
     (lib/"ocaml").mkpath

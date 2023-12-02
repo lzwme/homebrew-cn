@@ -1,26 +1,31 @@
 class Lima < Formula
   desc "Linux virtual machines"
   homepage "https://github.com/lima-vm/lima"
-  url "https://ghproxy.com/https://github.com/lima-vm/lima/archive/refs/tags/v0.18.0.tar.gz"
-  sha256 "f133c6fb3e4a382441d30bd8fc87581649cdd22dfddd0c024f11bf0367a9eac3"
+  url "https://ghproxy.com/https://github.com/lima-vm/lima/archive/refs/tags/v0.19.0.tar.gz"
+  sha256 "1c477cb0f7bfd18d8f9755103401d2efae599ab6b327f8b73bd35031a2fd5ebe"
   license "Apache-2.0"
   head "https://github.com/lima-vm/lima.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f95090e2360ab3680ed20648ca3888225efe587ba9229c648f1e63e219967687"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f6fab71646bd647da8b1fbe93ca93cb5c39ce550bcdec4c1961a6a2227478769"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "70413385beb65071461606ba214600f44182bacf40c027bef154592a3ebc974f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "94af9be3bbcd2bb0ebc6646226aa180165df96a0e6dc8b837b6ed4beb79dd04c"
-    sha256 cellar: :any_skip_relocation, ventura:        "3bbf83268ac0615a9012e5f9f939d1362aea1c85737b7839a0544dc201cd41cf"
-    sha256 cellar: :any_skip_relocation, monterey:       "7f313697af14437adebf45b0e42e9a94485fe24cbab0c8f56ec6410c99dbcf70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c77a7b5821db611f593056a0b211dd4fa615eb09036498b59fa98d95e67bfe5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0e8f947078c9ca24d3507a4c67a739557149157ce38797b0acb75ee4652d0219"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e6ade7cdb94fff032da7834f9c15e5f73d23ccd6cb019de8b9dd010b4d279ea8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "25ff5a968c228e812871bf2ad41d1e23fe01429cf35100f35c45a3395e32d012"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8b31de46fd8c3ad3212e5007c875b6e84bc4ec424af41947246336b97a1d7289"
+    sha256 cellar: :any_skip_relocation, ventura:        "af87fb5d44b5c39d72385f0df8346c9a2ef2e784fa9f70442e67aaa4b8c3585b"
+    sha256 cellar: :any_skip_relocation, monterey:       "a26b4e1d730911f2df9a5616be0205ae273291bc65d06dcaa7a9e8ca0ab871f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2bbc174341360febc1e847ca47fc6c16fb6c9fd29a25568b75b9352efdc0265e"
   end
 
   depends_on "go" => :build
   depends_on "qemu"
 
   def install
-    system "make", "VERSION=#{version}", "clean", "all"
+    if build.head?
+      system "make"
+    else
+      # VERSION has to be explicitly specified when building from tar.gz, as it does not contain git tags
+      system "make", "VERSION=#{version}"
+    end
 
     bin.install Dir["_output/bin/*"]
     share.install Dir["_output/share/*"]

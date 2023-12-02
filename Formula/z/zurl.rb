@@ -3,20 +3,17 @@ class Zurl < Formula
 
   desc "HTTP and WebSocket client worker with ZeroMQ interface"
   homepage "https://github.com/fanout/zurl"
-  url "https://ghproxy.com/https://github.com/fanout/zurl/releases/download/v1.11.1/zurl-1.11.1.tar.bz2"
-  sha256 "39948523ffbd0167bc8ba7d433b38577156e970fe9f3baa98f2aed269241d70c"
+  url "https://ghproxy.com/https://github.com/fanout/zurl/releases/download/v1.12.0/zurl-1.12.0.tar.bz2"
+  sha256 "46d13ac60509a1566a4e3ad3eaed5262adf86eb5601ff892dba49affb0b63750"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d61f6c9edd6c3dde53d2d27e60601facce836bdee497c72335143695da6ebfc3"
-    sha256 cellar: :any,                 arm64_monterey: "2efcee057b489a77051a02f057aea00f0834817816adb4d2142fef391d32054e"
-    sha256 cellar: :any,                 arm64_big_sur:  "97675f8113bb55f7580ea2486545460768a82116a593947fff9966ce6bdd32e4"
-    sha256 cellar: :any,                 sonoma:         "c25591faeb9c1a0140b9527c0274772be698cbf90aa5023ffbf9bd9e6c9df246"
-    sha256 cellar: :any,                 ventura:        "9cc2298a117300f4763b2de6a4952c4792e04af85321ae25002eedb7eee81f59"
-    sha256 cellar: :any,                 monterey:       "d5cf6cd530015d455a5f58dbf1dfe4a539e11130fee073391cbd46783f0230d4"
-    sha256 cellar: :any,                 big_sur:        "44482bd90787c77de93a589265ca0eb139c21dfb9c375307041146f88a6750f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b317aaefababd9955137556a3a246368fd4724370532013be9759bd39ed1501"
+    sha256 cellar: :any,                 arm64_ventura:  "e12d1eeabfc9d23cc6a0ef3058f46ae4102fd7df0d0fb7698aa088509aeacc61"
+    sha256 cellar: :any,                 arm64_monterey: "1d0ffa790ce260a143e2e128320ce7855dc4d7876daadd5739fe8c7a1ee43845"
+    sha256 cellar: :any,                 sonoma:         "2e6ac2a0fc30fc02b75d3220348ca9c15267d58de252a01b7f1c6484deb9cfe4"
+    sha256 cellar: :any,                 ventura:        "a692e80b53a7275e0ab4f4dff81f0dc5737a4d2fa350fa4b9d6aff76d887d77f"
+    sha256 cellar: :any,                 monterey:       "40652b39c795d9157fcd95c097791723af7ec011ad65ad959d07242fc6ed8143"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "62fc5497cd9456a5d5639870392b048f04d987f535ee167140950610ecb7a303"
   end
 
   depends_on "pkg-config" => :build
@@ -24,7 +21,7 @@ class Zurl < Formula
   depends_on "python-packaging" => :test
   depends_on "python-setuptools" => :test
   depends_on "python@3.12" => :test
-  depends_on "qt@5"
+  depends_on "qt"
   depends_on "zeromq"
 
   uses_from_macos "curl"
@@ -41,7 +38,10 @@ class Zurl < Formula
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}", "--extraconf=QMAKE_MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
+    args = ["--qtselect=#{Formula["qt"].version.major}"]
+    args << "--extraconf=QMAKE_MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}" if OS.mac?
+
+    system "./configure", "--prefix=#{prefix}", *args
     system "make"
     system "make", "install"
   end

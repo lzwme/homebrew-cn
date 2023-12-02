@@ -1,18 +1,18 @@
 class PythonTermcolor < Formula
   desc "ANSI color formatting for output in terminal"
   homepage "https://github.com/termcolor/termcolor"
-  url "https://files.pythonhosted.org/packages/b8/85/147a0529b4e80b6b9d021ca8db3a820fcac53ec7374b87073d004aaf444c/termcolor-2.3.0.tar.gz"
-  sha256 "b5b08f68937f138fe92f6c089b99f1e2da0ae56c52b78bf7075fd95420fd9a5a"
+  url "https://files.pythonhosted.org/packages/10/56/d7d66a84f96d804155f6ff2873d065368b25a07222a6fd51c4f24ef6d764/termcolor-2.4.0.tar.gz"
+  sha256 "aab9e56047c8ac41ed798fa36d892a37aca6b3e9159f3e0c24bc64a9b3ac7b7a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4f182f2018a5533bdb094af2ab939b0943f079d287d318e1694f4b83aa7e29fd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "455291ea47180f3f9e62ace232df0a010cf2dbe38e3a7469e3570158b81060b3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "30ba2fe70833e494e0cdeca79fa0d9d8a2b5074e4630f484413b38209de83cb7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "74dd75dab12cb34068b723dcce9eb49bfa920a4d3cdb772df7b71acd1c2db14e"
-    sha256 cellar: :any_skip_relocation, ventura:        "e7364c03c54c4b442b3ea545c8149ca0a0c1ade696e4bd63095fbb1c713258e0"
-    sha256 cellar: :any_skip_relocation, monterey:       "425d7252471829fa2a13fff76589ae0eda3a213e42f6b15210499dc2f8cd1ff5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f77462ea68e2d9e2a2fa2890baeef9af1359dfef8c8cb34797a1ac88f60b15ad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b1f2906f6d0ddf24f3d43842c859910e1a619ab5e2946ed96a147f25b03db676"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0bef20022d2caeafd1fe78aa6dbc3062b769fdd0ba51140c6de4c425d70c5bf6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "43fd6f9369571412d9deeb6a91c8058c484d89b832f6e172ed0575b347525073"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d0d08d7eea557252aef9183df8048f20240298d73064fdfb747f8633056e73a7"
+    sha256 cellar: :any_skip_relocation, ventura:        "2b8b63593bceba301d0dd591ce96e63d4c518ff6c31f6cfffc43264945c5a91b"
+    sha256 cellar: :any_skip_relocation, monterey:       "0d824e070089ce681881489cba81efc7e4104d478d4a222b2bb825c8fa1e77bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d84763dc9f321a22046593c91a18912cd50d866fe1d8460f2dcc4f09561bb645"
   end
 
   depends_on "python-hatch-vcs" => :build
