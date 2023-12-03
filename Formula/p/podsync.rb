@@ -7,20 +7,19 @@ class Podsync < Formula
   head "https://github.com/mxpv/podsync.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "57fb81284dbcb0b4b042edded9c4d56e37cd75bcaaa17f1f568b269bf5627fb2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0a819193e880f0f54cc926c324090b6aac012bced27e47c6835fde49065c6323"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6c739b189bc243d5b1622a720066048bed929054b795dabd1867b115874c6c4d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ac8333f73a2759b122a74d7b975a0afc50116913aef8726c3967a982325368ec"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bfa925ab0ac17ec1916140493f239f6e407f23d61b9f342cda2653466668e084"
-    sha256 cellar: :any_skip_relocation, ventura:        "b1465d7d2e3d055a8b3f1aceb2f1d6ff5cbcd0a82f49cc9cbb5b52a99ad12baa"
-    sha256 cellar: :any_skip_relocation, monterey:       "5710b2f920b20e94d6322751dafaaf459535a9b0e7b806e9df974b7b484e1045"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ff9eb8b1d9bde58246be6dd3b71c3c442814d348f4ebd55a01ea3a5ebbf737f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f364100244c9a0360063b065cd0f0868ba0ab914ae4176b00d1aa4b6641a0d02"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7c652dd561e4e4f06ad16976a5ef80240ff9a8421d3e8fc7545c4611795d56e7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "45265fe7a6f2afb29ba72bfdfbc5bc8bb9232f224b5f6fae36dadd2491188d05"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f8a32141e3799be613ef73ada6723efa2e092a2656f61c92084a0a0021c2eb4f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "db3a764badcaa09e98fde8d8eef16877bfa6a226fd4e5f8b6568730370b0eafa"
+    sha256 cellar: :any_skip_relocation, ventura:        "bcd513a3e5b67bd3d0b3aee3938c328af6aa486ea89e1b500a6fc778340d5649"
+    sha256 cellar: :any_skip_relocation, monterey:       "da08f2252e6462694fba0ab87e4f50097cd9f478d7849decd6e67e6ee7dfd74d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ad6e258c694031312fcafa59840ed7fad01d869f44dd33dd2d41571ede6951b"
   end
 
   depends_on "go" => :build
   depends_on "ffmpeg"
-  depends_on "youtube-dl"
+  depends_on "yt-dlp"
 
   def install
     system "make", "build"

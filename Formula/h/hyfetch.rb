@@ -1,20 +1,19 @@
 class Hyfetch < Formula
   desc "Fast, highly customisable system info script with LGBTQ+ pride flags"
   homepage "https://github.com/hykilpikonna/hyfetch"
-  url "https://files.pythonhosted.org/packages/bf/04/13a5091a1da014fad160710abfad2aa03a72bc41e4678c95be2b5ee67818/HyFetch-1.4.10.tar.gz"
-  sha256 "023733fa358380fd41589cd80e9b008d376eeef16b489fba8ee8610e71e42057"
+  url "https://files.pythonhosted.org/packages/bb/af/0c4590b16c84073bd49b09ada0756fd9bd75b072e3ba9aec73101f0cc9f4/HyFetch-1.4.11.tar.gz"
+  sha256 "9fa2c9c049ebaf0ad6d4e8e076ce90e64a4b9276946a1d2ffb6912bb1a4aa327"
   license "MIT"
   head "https://github.com/hykilpikonna/hyfetch.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "53bbaac30e00d9e4a83452f38cc901120a7b91194a1aee1bde9e873b7248bece"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "01c4269d226afe2976e22503e953b5a6e0392a0ff34ea01b9298ecc0211ac651"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "df3da56d1cb0d88978ba5efab69d9bcb8014fded6ad4174a04e982f42a1dcaef"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b5b1667572ea14ab811555cb9e6c37bb4693933a6f5cc421003e06ade7b2086e"
-    sha256 cellar: :any_skip_relocation, ventura:        "3d42bc57821e651591f6c19ade514bf97b6eddcbb827a96c41fef98930f719c9"
-    sha256 cellar: :any_skip_relocation, monterey:       "f5ccfd3d53357095a2be5f0bef3b099207fa6f2f16dad7d93969104b59bf8c42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83d274693ef365b9bb67fc2a72cbc4900befd2caea02386f3e5a73ce279ae41e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "66518af3ac7a67dc5cc4a67522fb15f8c57da8e91017ab08d24d11149ef86f0d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a2062969f75c14c16254f4a65f8ce57aedcf3564c14c4c4c7e9bf125b833ecfc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6608c26777b27a73f7a7df8bf754fd5d5b020e1b47aeea0b1610ff8771ce8e73"
+    sha256 cellar: :any_skip_relocation, sonoma:         "116960ddc9567b6ffa6edf5f10226d0faca504ec4b096cc353d77875502e51ac"
+    sha256 cellar: :any_skip_relocation, ventura:        "17d4cf5e4b3ed4eb74cd48130e7845c58fec217ac8ded689e033c2faaa005402"
+    sha256 cellar: :any_skip_relocation, monterey:       "6f1c82ee68b2d8b7416383bc6c5e313a7482077eadac0697c8a364868277ebb5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22b1f4ba18442e4200660c0a87848441a3b82658147661a5a63c94208856c90b"
   end
 
   depends_on "python-setuptools"

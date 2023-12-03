@@ -5,19 +5,19 @@ class Bazarr < Formula
 
   desc "Companion to Sonarr and Radarr for managing and downloading subtitles"
   homepage "https://www.bazarr.media"
-  url "https://ghproxy.com/https://github.com/morpheus65535/bazarr/releases/download/v1.3.1/bazarr.zip"
-  sha256 "02150caef9d9a28d1731f27a17d062e260b4864e53dc49103d7fece2d1d67227"
+  url "https://ghproxy.com/https://github.com/morpheus65535/bazarr/releases/download/v1.4.0/bazarr.zip"
+  sha256 "b023f5239ec54974dfe624259942101ccad218d3b11bf47669a854dc3f31e56c"
   license "GPL-3.0-or-later"
   head "https://github.com/morpheus65535/bazarr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5f8110d8fa7ac2da9c1ff3ec183e3a1d53fe2a05d092c33bb2533406802cf014"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b3094952807be577cd5547fac535060d69c6f24c0a6323d1500216a57b876fd1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5411e167b6577349e10d72bd1b713a6a8c2e3d669ed5d63fa6fe1520aeb66b7c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "55c304fa19b2a0c37ec161330b5b29499514da7ef3dfbfed5aafa9bfbd591a24"
-    sha256 cellar: :any_skip_relocation, ventura:        "b67dee5f86d031727a547dceebd80e84e180243802addaf2a83e381385e20401"
-    sha256 cellar: :any_skip_relocation, monterey:       "87bbe837214e2f6d7e5a85ca1e314eabfa66703944d4d5a94cdc509a951fb7a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d28f197321bdcb049bec199c1190d080eba53cb27b0193112f748821ce5c918a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7b86bda28c2999fc7d2635e05feb2e3851433c97488655bcb44234246d382d2d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "659b527ee019b664ac39f2ffca2937716ab4500254bfd3f011c1f866adddd4a6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "91de72f29d7dfaa19683efad12d8a6992a908a9e9725383c6bcd3dd2db2ca3d3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e393d35bcdf1a74d205a4671dc6265b5529fd61741d1fcf8edaafc3489f868db"
+    sha256 cellar: :any_skip_relocation, ventura:        "0919c7338b4793cbc4952a4cf7b6effa3df5268156094df1c4856fcbf9c5159c"
+    sha256 cellar: :any_skip_relocation, monterey:       "c34850c84d0710712c569d21ab2bed635cf51e1958358cfd438345b4f04e23c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f1a91a9d3660a49fc30ed3775e52c347798e4ff68723497a7efd92ae3fa164c"
   end
 
   depends_on "node" => :build
@@ -119,6 +119,10 @@ class Bazarr < Formula
       Process.wait wait_thr.pid
     end
 
-    assert_includes File.read(config_file), "#{testpath}/custom_backup"
+    assert_predicate (testpath/"config/config.ini.old"), :exist?
+    new_config_file = testpath/"config/config.yaml"
+    assert_includes File.read(new_config_file), "#{testpath}/custom_backup"
+    bazarr_log = testpath/"log/bazarr.log"
+    assert_match "BAZARR is started and waiting for request", bazarr_log.read
   end
 end

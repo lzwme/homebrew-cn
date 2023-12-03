@@ -39,13 +39,6 @@ class PyenvVirtualenv < Formula
     inreplace bin/"pyenv-virtualenv-prefix", "readlink", "#{Formula["coreutils"].opt_bin}/greadlink" if OS.mac?
   end
 
-  def caveats
-    <<~EOS
-      To enable auto-activation add to your profile:
-        if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-    EOS
-  end
-
   test do
     shell_output("eval \"$(pyenv init -)\" && pyenv virtualenvs")
   end

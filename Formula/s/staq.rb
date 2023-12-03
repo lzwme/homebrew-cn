@@ -1,24 +1,24 @@
 class Staq < Formula
   desc "Full-stack quantum processing toolkit"
   homepage "https://github.com/softwareQinc/staq"
-  url "https://ghproxy.com/https://github.com/softwareQinc/staq/archive/refs/tags/v3.3.tar.gz"
-  sha256 "2a1232474f7b7fc0153c18f49e6231e82b6f9c3d1f9ed506bbbb578972cf5067"
+  url "https://ghproxy.com/https://github.com/softwareQinc/staq/archive/refs/tags/v3.4.tar.gz"
+  sha256 "6a39d5ff9dace12fe29ad379d378bdf21a6d2515aba93f6008465280291381c2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd0b272fdf61d8aad9e907f1fe4f87593380df1acb459950942d32cb9425e2d5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a3907dd220835eae37adc2e540b0e79814f27eb0b132293dfc60d095854a9430"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7f469adedfe52fb32d7cab8e51efb57eb94bbd318fcd76ac987825aad606ea15"
-    sha256 cellar: :any_skip_relocation, sonoma:         "269a2c8e0f94d7f40eb235ca6bf49106ba6551ff320970b24315b32e4d6ee8cc"
-    sha256 cellar: :any_skip_relocation, ventura:        "873ceef30b1ac455f723555db46cb2ffcd2daa22fd50ab6d4022da29c8da71cb"
-    sha256 cellar: :any_skip_relocation, monterey:       "0c97108f8acf0ef3c6bf8e50535b985a1ec3469cc6bf69dba65fef328310eede"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8fa663721999cca606998ed744cf81f9a353d00ac1e851b0b191397f9ca419f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4e946d1bbfec0e8718098f9697b7d138cfc05ab82e1802ebee0fb8ca361cc060"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf40378514e78990329996cace89fd39ec4ebe8755f5e2aa9af3137a2a3a8a63"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f8d1d7076ec255cc7cf7273c17ea0efcf1496e8572f945be55ee6ba45dfe37b7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3b2d8036217fd420616ebcfc627103f9e3c4905a391d1add66394547913bdd0b"
+    sha256 cellar: :any_skip_relocation, ventura:        "374a00d133e35afd7c44e49d2e19368ba3b397dbaa47e63ba5d88db721e8586a"
+    sha256 cellar: :any_skip_relocation, monterey:       "a2e0403ce28982817e561288e1fe892968ba4f11d04adb4e7d30986f3a1d2f40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2abec55755901fbb2c340a66ed2b6bca76176d3e44e4ce433e4021ddf93e9770"
   end
 
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-D", "INSTALL_SOURCES=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

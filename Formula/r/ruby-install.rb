@@ -1,13 +1,13 @@
 class RubyInstall < Formula
   desc "Install Ruby, JRuby, Rubinius, TruffleRuby, or mruby"
   homepage "https://github.com/postmodern/ruby-install#readme"
-  url "https://ghproxy.com/https://github.com/postmodern/ruby-install/releases/download/v0.9.2/ruby-install-0.9.2.tar.gz"
-  sha256 "b8cb36ed5127eb23acbc36ebc44c43097dba7738cf860eca31be5e67a8996520"
+  url "https://ghproxy.com/https://github.com/postmodern/ruby-install/releases/download/v0.9.3/ruby-install-0.9.3.tar.gz"
+  sha256 "f1cc6c2fdba5591d7734c92201cca0dadb34038f8159ab89e0cf4e096ebb310a"
   license "MIT"
   head "https://github.com/postmodern/ruby-install.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "bdb99bb995275af921d07dad7e93acb3e4c5ff86fcab8ff902037e1f09b452e5"
+    sha256 cellar: :any_skip_relocation, all: "836bdda20e9b2867b97556d65a4e8b4a5ac18183e683601a85c617183eaaa72e"
   end
 
   depends_on "xz"

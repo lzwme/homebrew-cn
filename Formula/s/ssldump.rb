@@ -13,14 +13,14 @@ class Ssldump < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_ventura:  "233c699efc6adbf54ae1e0877b8376d016492116785942fa9cb7b5e38d6ac174"
-    sha256 cellar: :any,                 arm64_monterey: "a020925b76ade838f6462b00870256b47236390f4d185ffec7735ca33c6025fd"
-    sha256 cellar: :any,                 arm64_big_sur:  "3ff8463d5dc460c8d5775c307c492af601d12e455a27b3a5b966cd97d43560f1"
-    sha256 cellar: :any,                 ventura:        "728ec5ab844645fb4ccffebeda3cdaa8b99581261cae35ccd3193d6256aad34c"
-    sha256 cellar: :any,                 monterey:       "041b163945f15d099482ef9d7e4fa584d484439e90f11a2e81af663d004cab87"
-    sha256 cellar: :any,                 big_sur:        "747bc2115e5e70c9c38679cb13212f5b1a01266156b4c43756e209a5947b2523"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb5412234f420bc697835b6ede35a28ff31d03b2219f55e89c93352f1a0a74ea"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_sonoma:   "8fc8ca0f4b1fde91e0b45420c7a49400de0a6b350a2745c493914b19558dd734"
+    sha256 cellar: :any,                 arm64_ventura:  "83eb5a5e9b13ec2a5dbd1d0476b58e803318ac8243939997c91c61b08af6a705"
+    sha256 cellar: :any,                 arm64_monterey: "db2444ab2212b47e715351f51179244c4c141890f4b04af950fdb715668a3acc"
+    sha256 cellar: :any,                 sonoma:         "15554437c179041d78da4e2e64b9cf777f8b8f630d76e334f9ac3dac7d313a94"
+    sha256 cellar: :any,                 ventura:        "bae2a0625a830a84b52bc1067f0cbc2a97cb7bc699ee1a47a59edfec4f54248a"
+    sha256 cellar: :any,                 monterey:       "52da057720aa30c60b9a3ac7be09f9e5337ee3b1123108d44c5901e425a19bc7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6e48e727151bd543bb0784fbd8a79eb90acbba5c6cf369538ea8316e8ad9773"
   end
 
   depends_on "autoconf" => :build
@@ -34,6 +34,9 @@ class Ssldump < Formula
   patch :DATA
 
   def install
+    # Fix compile with newer Clang
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     ENV["LIBS"] = "-lssl -lcrypto"
 
     # .dylib, not .a

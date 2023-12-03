@@ -26,8 +26,6 @@ class Quicktype < Formula
   end
 
   test do
-    ENV.prepend_path "PATH", Formula["node@20"].bin
-
     (testpath/"sample.json").write <<~EOS
       {
         "i": [0, 1],

@@ -1,18 +1,18 @@
 class Scrcpy < Formula
   desc "Display and control your Android device"
   homepage "https://github.com/Genymobile/scrcpy"
-  url "https://ghproxy.com/https://github.com/Genymobile/scrcpy/archive/refs/tags/v2.3.tar.gz"
-  sha256 "70937335be7c8b0be3dcf4ae2b0371e5dbe6cf340bf4ccb341be3d10fc039c36"
+  url "https://ghproxy.com/https://github.com/Genymobile/scrcpy/archive/refs/tags/v2.3.1.tar.gz"
+  sha256 "76f38779f00d91d0b46a399ebca32c82ff1facdbd843871b7e46c2e7cad38a42"
   license "Apache-2.0"
 
   bottle do
-    sha256 arm64_sonoma:   "52585e520798ff519b2cd1bc47801f2941d0c400931c6cbc90af744b231c8a8f"
-    sha256 arm64_ventura:  "91b9b1534720b0e90205eff30a8da6773ec820f3ac54a73d7e80c8b390819d69"
-    sha256 arm64_monterey: "24b2905f21f601e1311d8ec7eb59036c04134c2b0e34d9db895fb96c6a742d70"
-    sha256 sonoma:         "0ff83ecae908c44f8dacae8dbf84d6e053b2f5f7a7d1df0f2d78af3a134cfada"
-    sha256 ventura:        "eda5fe74a87b5cb4543e5f03bdbd87a4aea609e4f0bd63a08cca1e8f53c5299a"
-    sha256 monterey:       "43c493039aaf755e6fd9e15459c7c38815dd4a43b57b88203652d86c29e6449d"
-    sha256 x86_64_linux:   "4f9a3cb26cbcb0cce68181a0f1bf38f548bf17c9f0f8bd0b81f5f837b549157a"
+    sha256 arm64_sonoma:   "2622646af93ea507ab817f69966c67fb13a87c8e6a4dcb58a25b84054e1399d4"
+    sha256 arm64_ventura:  "d4f260af82c6f6b2a293ce68dbb246d205c5a0c03255ecb1c6ffa9bb0a3a6c59"
+    sha256 arm64_monterey: "843f9da5d4a9e3bbe6f8a112c79d90f51eb72646f3fa861c80d1cee31599b2bc"
+    sha256 sonoma:         "436d404489fd28c4bb9f5eb3c95f584da0e25915853c3a126228838f78f7f760"
+    sha256 ventura:        "056862154ea1e0f6a2c44573a8b1a94a13783973b1f6b37f1c422160357a04e2"
+    sha256 monterey:       "60c11828a8319edd6c603ff6b2cbe813bb4f2909d9b3f6d155e209cc22f97b1d"
+    sha256 x86_64_linux:   "0c6fec4536fc30c03c8e1ed268505ae310e10fbec8882c22f8d6a2723d21b5a0"
   end
 
   depends_on "meson" => :build
@@ -25,19 +25,8 @@ class Scrcpy < Formula
   fails_with gcc: "5"
 
   resource "prebuilt-server" do
-    url "https://ghproxy.com/https://github.com/Genymobile/scrcpy/releases/download/v2.3/scrcpy-server-v2.3"
-    sha256 "8daed514d7796fca6987dc973e201bd15ba51d0f7258973dec92d9ded00dbd5f"
-  end
-
-  # Fix compilation error:
-  #   ../app/src/cli.c:2158:17: error: expected expression
-  #                   enum sc_orientation orientation;
-  #                   ^
-  #
-  # Patch accepted upstream, remove on next release
-  patch do
-    url "https://github.com/Genymobile/scrcpy/commit/4135c411af419f4f86dc9ec9301c88012d616c49.patch?full_index=1"
-    sha256 "634d3f936d72848e90579a327c6f61d065f42baf96798113d74fe73fc46000a7"
+    url "https://ghproxy.com/https://github.com/Genymobile/scrcpy/releases/download/v2.3.1/scrcpy-server-v2.3.1"
+    sha256 "f6814822fc308a7a532f253485c9038183c6296a6c5df470a9e383b4f8e7605b"
   end
 
   def install

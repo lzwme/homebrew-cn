@@ -1,8 +1,8 @@
 class Ott < Formula
   desc "Tool for writing definitions of programming languages and calculi"
   homepage "https://www.cl.cam.ac.uk/~pes20/ott/"
-  url "https://ghproxy.com/https://github.com/ott-lang/ott/archive/refs/tags/0.32.tar.gz"
-  sha256 "c4a9d9a6b67f3d581383468468ea36d54a0097804e9fac43c8090946904d3a2c"
+  url "https://ghproxy.com/https://github.com/ott-lang/ott/archive/refs/tags/0.33.tar.gz"
+  sha256 "d64ec4527f8ace56a407fc67957840d1653980fb0112d7fa8f2b0fc958501f7b"
   license "BSD-3-Clause"
   head "https://github.com/ott-lang/ott.git", branch: "master"
 
@@ -12,20 +12,28 @@ class Ott < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd0f2fd9c600b741f4a67c547013f08904262e088af9c2bce6561f0e81c65118"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4bcd637f28c7e9f35695e9c42f4f43085c61af9e2aa602ff27dc860a878bcba4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "42c7e02e40e66fd3be87f2da780ceab61c2b2211b38a2f93a49d57ae844be70f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "91bc4fbcd4ba118ef1c2b5a7419c0791df3319784066cba6a3abe5137797ee91"
-    sha256 cellar: :any_skip_relocation, ventura:        "866c6d30e404716a80a6903c02d981e00c638afc0648b81931302af9d8d9e3d8"
-    sha256 cellar: :any_skip_relocation, monterey:       "04c5722ca0a6a51c3353e73a61dbab52e6fcf8aa7fd2171e459ff344ac27787c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80f076cb53a69044fd0007ccdae4998c2ed828ee432134c65a141a5bdb1a013a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7c138f305f0c33843f5c9b69298f1ab095680bd72aef50f091635d74d3d8ce5b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "41c6201ade0bebc2bb75696d6e53e5fb589692aa716f3fd09178d5050e4bc00e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bfff4519a3ba70b177252aa268bee375fd93d59a4d0dc6adbe1b26169400f555"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c86c2362dee1ccfcec917430e9fb32de810ba4dad3e13bdecdd6ca2d73bdcd3a"
+    sha256 cellar: :any_skip_relocation, ventura:        "ff36d9f8050eafd7a789c078669418bf480f216e06b6d5a0dec9b399d14e563c"
+    sha256 cellar: :any_skip_relocation, monterey:       "d45a7148e22a09d5ee1bf4fe17a103aa5caf0b0acac1a12a88dc48c6c0a1d3cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7fac1121b49f993443edae09205bdaf9a63fe2252ee7d848def1f1ae88f22790"
   end
 
-  depends_on "ocaml@4" => :build
+  depends_on "gmp" => :build
+  depends_on "ocaml" => :build
+  depends_on "opam" => :build
 
   def install
-    system "make", "world"
+    opamroot = buildpath/".opam"
+    ENV["OPAMROOT"] = opamroot
+    ENV["OPAMYES"] = "1"
+
+    system "opam", "init", "--no-setup", "--disable-sandboxing"
+    system "opam", "exec", "--", "opam", "install", ".", "--deps-only", "-y", "--no-depexts"
+    system "opam", "exec", "--", "make", "world"
+
     bin.install "bin/ott"
     pkgshare.install "examples"
     (pkgshare/"emacs/site-lisp/ott").install "emacs/ott-mode.el"

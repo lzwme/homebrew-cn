@@ -25,8 +25,6 @@ class NodeSass < Formula
   end
 
   test do
-    ENV.prepend_path "PATH", Formula["node@20"].bin
-
     (testpath/"test.scss").write <<~EOS
       div {
         img {

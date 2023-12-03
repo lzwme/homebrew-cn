@@ -1,21 +1,19 @@
 class Ouch < Formula
   desc "Painless compression and decompression for your terminal"
   homepage "https://github.com/ouch-org/ouch"
-  url "https://ghproxy.com/https://github.com/ouch-org/ouch/archive/refs/tags/0.4.2.tar.gz"
-  sha256 "08015fa92770515cfa00570bc5f0f0a4f28f0ad238f360f3579ac043723a6ec2"
+  url "https://ghproxy.com/https://github.com/ouch-org/ouch/archive/refs/tags/0.5.0.tar.gz"
+  sha256 "79562550203d76eecbc7ea47b80d37cccffe08d16dd7a29ac248d38e48c20580"
   license "MIT"
   head "https://github.com/ouch-org/ouch.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "04bea02422ea581a8a9cd02f2d2d1564a7a94faae4b9547f4129252717fcb0b8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ec1b049ea8832d42f39f83a2d0ef2185ae737c7433e3acf9340007f18b79f862"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "db9109dee0173bb7e3eaf4e3e86f4315ec25e1797aa6572f3dccfbbf28f1c546"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "69f5b83f2cd0d737a7d7af53d1fe72a6b546ae176993a303b797099247413ed8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dc27917b2cbbe7823ee3ae138972881333673caae35ac5aea5e658682914341c"
-    sha256 cellar: :any_skip_relocation, ventura:        "28ef4e935f84559c0d05c5772700cc080e2cfce28ad422212035c6eb7c0ed089"
-    sha256 cellar: :any_skip_relocation, monterey:       "adf91e57dd711519450add15d3354f9950b0be6537b2c6e3793b3842cd09a17f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c74ec00b620845ee8f940c5345a45975d13ea24f8b410d34a5964370fc5180f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39c5252120495cb5020b2ff5e89a26faf3e7e77f68447b59bfd38a50a120f4ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "24264042ae8e5e296452bc0408dbd2b3418c6ed9cc96becc9ab41ebf34e2d567"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a8bc7c4e8978293c7411aba396d9427737591d5d48b4350fd7051aa6aa79f587"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "258b0f30beacee4d04dbafd002b6f28fc96dfc0c4f2a552c8894cb9ff3846b69"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9bbde75106968d12099e97728773917daf16798a88ba7079615ff0b5e21de4d0"
+    sha256 cellar: :any_skip_relocation, ventura:        "d3e5c0748030e21b408264ab969d129967340c16dfa295ecf0c73a03e37468d1"
+    sha256 cellar: :any_skip_relocation, monterey:       "d189f61cce4f186837aa9c41569cdcf406bf5c7918f8d4a93e7f2c283456edb7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d7f1895de3beeb0239c9a079fe199207c3884a281223d8302a117217e213972"
   end
 
   depends_on "rust" => :build
