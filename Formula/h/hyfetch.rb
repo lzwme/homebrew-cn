@@ -20,10 +20,6 @@ class Hyfetch < Formula
   depends_on "python-typing-extensions"
   depends_on "python@3.12"
 
-  on_macos do
-    depends_on "screenresolution"
-  end
-
   def python3
     "python3.12"
   end

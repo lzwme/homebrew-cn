@@ -1,18 +1,18 @@
 class PythonWebsocketClient < Formula
   desc "WebSocket client for Python"
   homepage "https://websocket-client.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/cb/eb/19eadbb717ef032749853ef5eb1c28e9ca974711e28bccd4815913ba5546/websocket-client-1.6.4.tar.gz"
-  sha256 "b3324019b3c28572086c4a319f91d1dcd44e6e11cd340232978c684a7650d0df"
+  url "https://files.pythonhosted.org/packages/20/07/2a94288afc0f6c9434d6709c5320ee21eaedb2f463ede25ed9cf6feff330/websocket-client-1.7.0.tar.gz"
+  sha256 "10e511ea3a8c744631d3bd77e61eb17ed09304c413ad42cf6ddfa4c7787e8fe6"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5f36812e650dc39270024e8d5114fea813bb2cb9f564f55dd876664ce79b1a4e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2d9ae103fecc0dab8050cf133f3cfedbcb1b2f01360fadb806e7c111cf59d01c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f47b37f1585f561dbdfe05b06bd3fcc79cc108392c95895584b2ef6904264f7f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2c879f52122b9f4340f00583643b88bdd566a07a61333ce631d7a468408daf14"
-    sha256 cellar: :any_skip_relocation, ventura:        "cc9926863b43ae39d562eb1ffdb591554367b0ffd768a64c3015e091d8827390"
-    sha256 cellar: :any_skip_relocation, monterey:       "120c645d3269eb0529df05be525498332a96900f0852196c11056aaa6cc93cd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e13ba8a7a568066f09a1a28258f7ac6ebb8849249f5c1e4972ed1e530f25f8d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e2ee36e9e239866be8f9e8be55e030e0d569fc080975b8ec17400ab4da65b728"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6ad5cdb5ddacc0f44c52e70479c40d27706864699e0250f18769fb29dec0c920"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b84206bfb5b6447036b36b2a9548bb38d827b27daef6b9d6c0afcbe42a0f74ed"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b8222d978814078b94b27cecb33e72310c32bb6d1d39a513fe279da7c626d9f2"
+    sha256 cellar: :any_skip_relocation, ventura:        "b1d8d75ff0744e95be3a0eec75e3bd05630da6cdaeea8bc51f14bfd0c53b6a44"
+    sha256 cellar: :any_skip_relocation, monterey:       "01420a929ca42eecebc77762f9c8ef2a669ec4ac9f4b2a8999f13c8bd6458fa2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e2f95beefb5b122edaba5fb95409ad0d77abeb4e92055b2605423b6263cf996"
   end
 
   depends_on "python-setuptools" => :build

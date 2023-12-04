@@ -1,8 +1,9 @@
 class Freebayes < Formula
   desc "Bayesian haplotype-based genetic polymorphism discovery and genotyping"
   homepage "https://github.com/freebayes/freebayes"
-  url "https://ghproxy.com/https://github.com/freebayes/freebayes/releases/download/v1.3.6/freebayes-1.3.6-src.tar.gz"
-  sha256 "6016c1e58fdf34a1f6f77b720dd8e12e13a127f7cbac9c747e47954561b437f5"
+  url "https://github.com/freebayes/freebayes.git",
+      tag:      "v1.3.7",
+      revision: "ae60517162d34ab6217bd6c58e2b71551abacac2"
   license "MIT"
   head "https://github.com/freebayes/freebayes.git", branch: "master"
 
@@ -17,16 +18,13 @@ class Freebayes < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "2fea2ef208c2908749c3d484c505c542ad2c5800e61f1a6629e45bc3a5703796"
-    sha256 cellar: :any, arm64_ventura:  "c696b05ef4fd11bd99a77e9903d9fd4878104de67ac41997bda00c29dfe817a2"
-    sha256 cellar: :any, arm64_monterey: "26799da3d54c7416f8c79cbc95ab4c7428cc60a3d5dba0d4f67e08050cd7d40c"
-    sha256 cellar: :any, arm64_big_sur:  "3045a4eb949197230993c9ddfb92406978b410d8beb18b401465867c8481ddff"
-    sha256 cellar: :any, sonoma:         "871b68530e26f58813645a3b5d965f771cbd6d449625b0428726f557028147c4"
-    sha256 cellar: :any, ventura:        "06c7dd2f3f3809f28a28ba5fce53e3ecbaeaa4dcb97a38f58c08f859b36f9cf9"
-    sha256 cellar: :any, monterey:       "00aeab78a22a3edd81add014b529383ec3deb49c6addb71c8319e5e5abe54a64"
-    sha256 cellar: :any, big_sur:        "63f3fcc4d0811b6077b5cd302e624220b736eaa0b2198e4f09df26d10cddf47d"
-    sha256 cellar: :any, catalina:       "3d38d37c49642117c959ce76ccf4653c77b779650f00c89839dbce0a8d7ea509"
-    sha256               x86_64_linux:   "7196ad033d4f6565b5603fdfc113f9d00f69873b32b7b46a44c6625bb133c9e0"
+    sha256 cellar: :any, arm64_sonoma:   "86e8ecdd554dd65c305d5c3a4a77199712a9135b0b3fb2c592ace85e725c4d11"
+    sha256 cellar: :any, arm64_ventura:  "9f39d67a92d9e832723820b80cb4fa43ba7e2337887ef689fa43340424c77007"
+    sha256 cellar: :any, arm64_monterey: "1d03d1fcb588e8e5f96d32c6ad511e46a61712d1a4521623f53ad8b9ded2727b"
+    sha256 cellar: :any, sonoma:         "8faa87eff6dcab27a9799df3fb4abbfe7e137db29c6edac31fa91ff65b8d0a37"
+    sha256 cellar: :any, ventura:        "dd99fa0c8d6c01e68341e49ff4c13e686661d7d2f33806b00be261f9284ade29"
+    sha256 cellar: :any, monterey:       "4379827c288c32cc19ab7aa290b2f724254e3538d2f30288c5f1c3110aee705c"
+    sha256               x86_64_linux:   "d2b3b2c133c9f59c8a29a77e5a60b933a63ae83c664b62ddd0802844623a9bc6"
   end
 
   depends_on "meson" => :build
@@ -38,11 +36,9 @@ class Freebayes < Formula
   uses_from_macos "zlib"
 
   def install
-    mkdir "build" do
-      system "meson", *std_meson_args, ".."
-      system "ninja"
-      system "ninja", "install"
-    end
+    system "meson", "setup", "build", "-Dcpp_std=c++14", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
     pkgshare.install "test"
   end
 

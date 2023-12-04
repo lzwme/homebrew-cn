@@ -1,19 +1,19 @@
 class SwiftOutdated < Formula
   desc "Check for outdated Swift package manager dependencies"
   homepage "https://github.com/kiliankoe/swift-outdated"
-  url "https://ghproxy.com/https://github.com/kiliankoe/swift-outdated/archive/refs/tags/0.8.1.tar.gz"
-  sha256 "e0092acf642b9689a89223385d4a2886751516e8c4dc0240277244cdc6f22449"
+  url "https://ghproxy.com/https://github.com/kiliankoe/swift-outdated/archive/refs/tags/0.9.0.tar.gz"
+  sha256 "b6ee31edc45711c6425d047fe1b4f177da2498201dab5d94dbe86d8bd483419c"
   license "MIT"
   head "https://github.com/kiliankoe/swift-outdated.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ac6839c9a3b7a883000a432a7ea36cf5a0b5422827afd40b243b971c24b99ff3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "07d9b16c637234ba1b34ec116fa416f2d47f13b262244e1cf88706dad8b919fe"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ff20e44402a59e4afae74c44ea3bc39f07613b0c409b7bdc470758acc5ba3ba"
-    sha256 cellar: :any_skip_relocation, sonoma:         "28c7b8e6bb6687625310336f43123e797500c08764c48d32711607de2095c94e"
-    sha256 cellar: :any_skip_relocation, ventura:        "1497ed9d0629176469e1a5e34836aeb36ec9f1336b8e34d8135e67bb5c494900"
-    sha256 cellar: :any_skip_relocation, monterey:       "fff809c2f6db2b76d19f6b33fa3439e760bda8feba8529c5b8ded9ac6595d9e9"
-    sha256                               x86_64_linux:   "5a6dee0598bced60150f06adb1b9ca0705fae1ae85eb55da665dcd55b4acb5b5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e51d1646a256b47a32512952ba7fa916f1744b11c3c09ddc3c5a576845ed270a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f64533b814302cc8f16f49ce3af1ffdc261f3c2a4a5659dc55ba70fcc9251472"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f60b56ed944d4428552ab6802d4ed69808eae4c4411223701c3fbcd1cf74d2a9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "476390766ef47a7427e44c7292238c009dc5859cdcc8908e99b74cf9516a9292"
+    sha256 cellar: :any_skip_relocation, ventura:        "baa8fc055b4b1df5bf20951f476ecd99f657711205508a36591cc1f189baa355"
+    sha256 cellar: :any_skip_relocation, monterey:       "b27aeed8749c5062d7a666ca041a77be76bcc785d19446d0007bc7d4d62af3e3"
+    sha256                               x86_64_linux:   "4723925318b3bbb4b9d000c519c3e5956fc3bd5073e6315e2be4cbf306b089ae"
   end
 
   depends_on xcode: ["13", :build]

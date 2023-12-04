@@ -3,18 +3,18 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/ee/bc/4ec843bf29f682e0aa14645ddcba9e203b4fe5363d3cce1724dda7199981/moto-4.2.10.tar.gz"
-  sha256 "92595fe287474a31ac3ef847941ebb097e8ffb0c3d6c106e47cf573db06933b2"
+  url "https://files.pythonhosted.org/packages/f0/9d/32031dee4457a6c6ef0b8c4ad18a170ca471c20cb83313c13bb896e09ead/moto-4.2.11.tar.gz"
+  sha256 "2da62d52eaa765dfe2762c920f0a88a58f3a09e04581c91db967d92faec848f1"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "96a886b856a6e471380798c23361b49b615425d61d49d026e22f20636bf21810"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f9e87f2ed6d5fcee16de43969d412d63185f95beadbaf3a2dc403012117c949d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9f85c6dc22c3e059f77eaa1cf64ec6eca5c00d4557f38c21ae88c54b3bdc7c40"
-    sha256 cellar: :any_skip_relocation, sonoma:         "24e3cb6533f80bde122834ca5189a30780a3f6a17336141cef537a20a4d98821"
-    sha256 cellar: :any_skip_relocation, ventura:        "06c8d16ff155b4fb9e17a78179345bfe238076e2f1270a302f6093ffe9b3e0ad"
-    sha256 cellar: :any_skip_relocation, monterey:       "c82e66cd6680dbe62e7bc0db28f05f53579a399063aa03ea0bf3ca0ab573a677"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d69456ff1f080ccc93860104c5c88cf35fa52f2c51eed9ff168ea798a93673b1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b046c70a0320bbe3ea8f66cc1404f5a1e33bf98d4abd59768b3c54f818847771"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dfdbee4e2091c3c662d7ecd865e5738ced560fef9ac7bfdfcfadfbaf42e4ec01"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8aa595e9b1fb0a92f02a6e0f33ab95878b4415e5f82d7486be3ae04c998061fc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "23f29a3ad6b0c70f5d599bc5ecabfeb8391984521b717b87a8d6f6ce5b8bce2d"
+    sha256 cellar: :any_skip_relocation, ventura:        "892d0c4099c871ea872bb06b661a026fe0c81006fda1a899af4c5ea11989edec"
+    sha256 cellar: :any_skip_relocation, monterey:       "5905774422131bda9446ac43c7d218f43da7ebd1b7cd9db82e1e5db25f549eb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c06a003bb2ac41871588339e0f75bce264500f4a60afcc539be1621dbae835f"
   end
 
   depends_on "cffi"
@@ -72,8 +72,8 @@ class Moto < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/9b/c4/db3e4b22ebc18ee797dae8e14b5db68e5826ae6337334c276f1cb4ff84fb/idna-3.5.tar.gz"
-    sha256 "27009fe2735bf8723353582d48575b23c533cc2c2de7b5a68908d91b5eb18d08"
+    url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz"
+    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
   end
 
   resource "itsdangerous" do

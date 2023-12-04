@@ -1,13 +1,13 @@
 class Asn < Formula
   desc "Organization lookup and server tool (ASN / IPv4 / IPv6 / Prefix / AS Path)"
   homepage "https://github.com/nitefood/asn"
-  url "https://ghproxy.com/https://github.com/nitefood/asn/archive/refs/tags/v0.75.tar.gz"
-  sha256 "98c52bfb02b36342ebdea0b9d7c487128576027c76bf39519d2ddc8f15997add"
+  url "https://ghproxy.com/https://github.com/nitefood/asn/archive/refs/tags/v0.75.2.tar.gz"
+  sha256 "b3d2f768f296bd8a8e6ab9f8e28287915390feca661d20110518c79580871b00"
   license "MIT"
   head "https://github.com/nitefood/asn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1b4b36ac094d3049dbc236573bb79a8da16d09edaa877b9c6dc88b1581ffc676"
+    sha256 cellar: :any_skip_relocation, all: "baa02015b1f3bc5a444df56681901d0a91af52616ea102448b6fc9ae29039f1b"
   end
 
   depends_on "aha"

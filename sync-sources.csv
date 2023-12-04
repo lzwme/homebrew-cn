@@ -1838,7 +1838,7 @@ Homebrew-homebrew-core/Formula/f/fq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fragroute.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fred.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/freealut.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/f/freebayes.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/freebayes.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/freeciv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/freediameter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/freedink.rb, Homebrew/homebrew-core, 1
@@ -7503,6 +7503,7 @@ Homebrew-homebrew-cask/Casks/c/carbide-create.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/carbon-copy-cloner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cardhop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cardinal.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/cardo-update.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cardpresso.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/caret.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cashnotify.rb, Homebrew/homebrew-cask, 1
@@ -8483,6 +8484,7 @@ Homebrew-homebrew-cask/Casks/h/hancom-word.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/handbrake.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/handbrakebatch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/handshaker.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/h/hapigo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/happygrep.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/happymac.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/haptic-touch-bar.rb, Homebrew/homebrew-cask, 0
@@ -10271,6 +10273,7 @@ Homebrew-homebrew-cask/Casks/s/sekey.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/selfcontrol.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/semeru-jdk-open.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/semulov.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/senabluetoothdevicemanager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sencha.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/send-anywhere.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/send-to-kindle.rb, Homebrew/homebrew-cask, 0
@@ -11140,6 +11143,7 @@ Homebrew-homebrew-cask/Casks/w/wireshark-chmodbpf.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wireshark.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiso-steuer-2022.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiso-steuer-2023.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/wiso-steuer-2024.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/witch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiznote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wjoy.rb, Homebrew/homebrew-cask, 1
@@ -13047,6 +13051,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-rubik-distressed.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-doodle-shadow.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-doodle-triangles.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-gemstones.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-rubik-glitch-pop.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-glitch.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-iso.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-rubik-lines.rb, Homebrew/homebrew-cask-fonts, 0

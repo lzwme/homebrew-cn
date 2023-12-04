@@ -1,8 +1,8 @@
 class Kcgi < Formula
   desc "Minimal CGI and FastCGI library for C/C++"
   homepage "https://kristaps.bsd.lv/kcgi/"
-  url "https://kristaps.bsd.lv/kcgi/snapshots/kcgi-0.13.1.tgz"
-  sha256 "3246ee78a091b496f7040c5f29fb9e45a7aa2873f4d8d77a30b6437f07db4d49"
+  url "https://kristaps.bsd.lv/kcgi/snapshots/kcgi-0.13.3.tgz"
+  sha256 "1c13538e21511086a6ba1a87f40543de257fc3d8871840b17626c16d714d2f5a"
   license "ISC"
 
   livecheck do
@@ -11,16 +11,18 @@ class Kcgi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cfd11a18fcc780e1b5633b4a6bcfbaa3ca038f3f43a43b1b3f10c97f24bd74d1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ee27542043bf2ad17d59e30a5031015ad6fe0ee0b904c1d0f0c77ff442524269"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3b5e06977a915e3b64d6ba44937dadd62cb6d9dccd5be9be6818a9dd3a640db0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "04cb261b31b014fa155de0f61fb01430d508173ccdc915214f9ba84a2c648cf4"
-    sha256 cellar: :any_skip_relocation, ventura:        "6cc585147ac24b55ca342a69b33e3bd8fb9014f1b001456e85bdd1e2ca5d09f8"
-    sha256 cellar: :any_skip_relocation, monterey:       "df3b96ab72c60f0a9d43fb985a4f895e8d2956894f77637c26e21f49a2dac9ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da8d560e34bcfba9eeb6f70c41519c309a7344b88870dd4d30247834867deffc"
+    sha256 cellar: :any,                 arm64_sonoma:   "3a05d82cb4e3c9265061d0cf05872cf12c591d4793dc6b7114232fd3ccdc3614"
+    sha256 cellar: :any,                 arm64_ventura:  "4a3714eb957ab3622c4eecb9add25a5e136971ad1030e32a712f08d3571efe94"
+    sha256 cellar: :any,                 arm64_monterey: "34d3a40ea1e1ab174589142b356ef3a758cead1806f823fc4413babd7e29342c"
+    sha256 cellar: :any,                 sonoma:         "b8a07a81577401eb7dac933817ab86d2cb62947c507cdb4697ddb49d3934681b"
+    sha256 cellar: :any,                 ventura:        "b0adefa894690c1f14ea7cd1bbf8de7d38c628bcc5ccc31c3f281bd06c3d6e63"
+    sha256 cellar: :any,                 monterey:       "72ebe7b1b8a88ec1b3567b05ff53200c37e6ccf88a434aac5ed8e39697dac8b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d9897e21cb8c9fe721e367847ddb11443b9793c73efe975c369e215ae0a66c9"
   end
 
   depends_on "bmake" => :build
+
+  uses_from_macos "zlib"
 
   on_linux do
     depends_on "libseccomp"

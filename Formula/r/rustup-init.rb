@@ -5,6 +5,7 @@ class RustupInit < Formula
   sha256 "6f20ff98f2f1dbde6886f8d133fe0d7aed24bc76c670ea1fca18eb33baadd808"
   license any_of: ["Apache-2.0", "MIT"]
   revision 1
+  head "https://github.com/rust-lang/rustup.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "23448f34076addfcb95eed04ba2bafcea32a25b57442e24baf1a92572ca0a9b4"

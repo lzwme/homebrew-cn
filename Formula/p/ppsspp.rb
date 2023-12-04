@@ -2,21 +2,19 @@ class Ppsspp < Formula
   desc "PlayStation Portable emulator"
   homepage "https://ppsspp.org/"
   url "https://github.com/hrydgard/ppsspp.git",
-      tag:      "v1.15.4",
-      revision: "9a80120dc09997e40c0a73fda05c3e07a347259f"
+      tag:      "v1.16.6",
+      revision: "ba0ce344937d17e177ec8656ab957f6b82facdda"
   license all_of: ["GPL-2.0-or-later", "BSD-3-Clause"]
   head "https://github.com/hrydgard/ppsspp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b7b7e1640343a34f3b98a9215e8b26709f5d3539dbfc841e002d3866dd098ae2"
-    sha256 cellar: :any,                 arm64_ventura:  "c3037b0cdec874f62f9035e6606a2891d0c3aa21722e2c91e43d94951d04360c"
-    sha256 cellar: :any,                 arm64_monterey: "b78305fdbc3f1b59e46fe9465c3b2744cca8498d963761a85da8cedfd3488388"
-    sha256 cellar: :any,                 arm64_big_sur:  "be8822b3d4e89aa7837e7832284045a591da27694c713ed0e69debe0ee217f3c"
-    sha256 cellar: :any,                 sonoma:         "b59c52218d5725e8c2395f1511e28053d4848f7e3efcdaa09daa9c9377478f6c"
-    sha256 cellar: :any,                 ventura:        "e488ae0f8b2fcce83e24dcfdd08655edc896ce67a0cf66096ed8d7afc7ef7790"
-    sha256 cellar: :any,                 monterey:       "ae96bf1d88b8c65df7383fe2019e063bb2dc8e2faf102f3fa343d84b0880f5fb"
-    sha256 cellar: :any,                 big_sur:        "1f356b1c681265c7e438e331378f08ac482534a47a6ed634b3c280be8ca68c9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff145a38da235b4ad92553594e935da3a8b019abeb1cfa069a638a67a7c8be46"
+    sha256 cellar: :any,                 arm64_sonoma:   "47743b26e05da06f873cfc04140c7b06fa05e4d2878b177bbce19695e9990693"
+    sha256 cellar: :any,                 arm64_ventura:  "477f6c0718844fe2bee283824073b18fff2c7f4c0deecafb4a1a852f4402ab1a"
+    sha256 cellar: :any,                 arm64_monterey: "b74129bc74e529fe429de60955418b48bf11478d06c42435b88b103cd0de7143"
+    sha256 cellar: :any,                 sonoma:         "22bfd4e83895801d990cc5d54245437dfcc3d9b90cd457c3390623965fbdb290"
+    sha256 cellar: :any,                 ventura:        "17545beac5230b6d3e25496b70bce39df3b1fe0c9117055f90d40dff044c0256"
+    sha256 cellar: :any,                 monterey:       "644a686a432655322b4a3bbf528519849e2110ea91600164996caadfc0830e03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5777f180bccc80ae3d8707f70d97c026def886899528bb52c15e7f67c90da634"
   end
 
   depends_on "cmake" => :build
@@ -73,6 +71,7 @@ class Ppsspp < Formula
         -DUSE_SYSTEM_LIBPNG=ON
         -DUSE_SYSTEM_ZSTD=ON
         -DUSE_SYSTEM_MINIUPNPC=ON
+        -DUSE_WAYLAND_WSI=OFF
       ]
 
       system "cmake", "..", *args

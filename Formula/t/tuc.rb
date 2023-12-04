@@ -1,22 +1,19 @@
 class Tuc < Formula
   desc "Text manipulation and cutting tool"
   homepage "https://github.com/riquito/tuc"
-  url "https://ghproxy.com/https://github.com/riquito/tuc/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "ea4d1adb1949b8f564c375cbd7e0569de5dcc1fcabd57d56174748091102eec2"
+  url "https://ghproxy.com/https://github.com/riquito/tuc/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "d5dc8f9a7739450707e3f630038fa83d97c080c7397e7afbcec44682646c497e"
   license "GPL-3.0-or-later"
   head "https://github.com/riquito/tuc.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e66ccf51805c5f8039a6dde6a482e8ad6008adb20b0469d8346f8cf5e01d0871"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9f578d51858fa5dda588b3a7517f7659be032593b1f160aacd4f792b251be03f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c38d7a077f7b23da3db1c4e8bf3269b16c5324a44ef3ae326f6640250717223a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "95e896f7d2562a0fb0339b1a5335cab57678c01bc7ad2176f23ff3e492eedf7d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "eda139c9e1defc35509dbe8e08841e42f31ca3a8356a97e61e633ae3b523b814"
-    sha256 cellar: :any_skip_relocation, ventura:        "1ec1cba84e3b510ce6e07369eeb85e933022d9fd894609b7d8eb50640a6b5748"
-    sha256 cellar: :any_skip_relocation, monterey:       "983376b05c608b5c1cd0bdf95678b948c1f96c3d565298b0c584845a7f622e2d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b1a0dc09cbb7cda41144e5d6e288bd238b6717a927015993c6a66b08b7a92919"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "334bfc02d97c2291a1b45d51d20afdc906e063b21baac1205e66c970adecb1b5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "199b4499932453f78a9815b2dec30d27c87bd969ed8a1252781466ca4edb8497"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b9c83897196b9a7ed5760db619dfe2c193184400ef45765589336cd25763762"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3ea9ff126127c2c2e5220444144c4e7d84b2462b583e31c72cec3dff5fe4ab43"
+    sha256 cellar: :any_skip_relocation, sonoma:         "55fb6237c0701cd0395fe0102114cdfd7f2a4d73e26e84023d63ee0273e2b233"
+    sha256 cellar: :any_skip_relocation, ventura:        "6b6586c6bd773195c60bd686bb85af35f6fbc21e5acdc769c3e5f46d77268d1e"
+    sha256 cellar: :any_skip_relocation, monterey:       "348692e46b6e85cf82330bfb4384244b45fd4fa2ca86ec83a3b18e635e55321c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "51480c02f0bbcf0216954cf3c1bf332d5ac7da27edceee9bc5d5275e7ff8288a"
   end
 
   depends_on "rust" => :build

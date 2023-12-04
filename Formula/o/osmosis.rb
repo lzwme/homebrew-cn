@@ -1,8 +1,8 @@
 class Osmosis < Formula
   desc "Command-line OpenStreetMap data processor"
   homepage "https://wiki.openstreetmap.org/wiki/Osmosis"
-  url "https://ghproxy.com/https://github.com/openstreetmap/osmosis/releases/download/0.49.0/osmosis-0.49.0.tar"
-  sha256 "d2a35bdbff190ffa66a6304ea1f73db9e7048c55340306e569086730518675ae"
+  url "https://ghproxy.com/https://github.com/openstreetmap/osmosis/releases/download/0.49.2/osmosis-0.49.2.tar"
+  sha256 "2a23a7bf7499a0727ae6987cf66fcafc03b37379dc02177c730f352bd67a0b97"
   license :public_domain
 
   livecheck do
@@ -11,7 +11,7 @@ class Osmosis < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5a62a77b661449efd017f9eb3dd87dd2d9720d5b9245f419963d627413b2c009"
+    sha256 cellar: :any_skip_relocation, all: "f1827ecda866771598f0f547d497e53793a646f91600292ef9c424079fe526ed"
   end
 
   depends_on "openjdk"

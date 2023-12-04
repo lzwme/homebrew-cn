@@ -32,6 +32,10 @@ class YoutubeDl < Formula
     depends_on "pandoc" => :build
   end
 
+  # https://github.com/ytdl-org/youtube-dl/issues/31585
+  # https://github.com/ytdl-org/youtube-dl/issues/31067
+  deprecate! date: "2023-11-23", because: "has a failing test since forever and no new release since 2021"
+
   depends_on "python@3.12"
 
   def install
@@ -51,6 +55,15 @@ class YoutubeDl < Formula
       bash_completion.install libexec/"etc/bash_completion.d/youtube-dl.bash-completion"
       fish_completion.install libexec/"etc/fish/completions/youtube-dl.fish"
     end
+  end
+
+  def caveats
+    <<~EOS
+      The current youtube-dl version has many unresolved issues.
+      Upstream have not tagged a new release since 2021.
+
+      Please use yt-dlp instead.
+    EOS
   end
 
   test do

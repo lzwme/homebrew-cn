@@ -6,24 +6,22 @@ class Tbb < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "54cfc46133d37fade8f3404d4be73127527cad56dc8212fd887885cc9440f613"
-    sha256 cellar: :any,                 arm64_ventura:  "c11a0e3e69cab1208064730e23f3c5b16e85755ec3067772c5a07dc773b8df8f"
-    sha256 cellar: :any,                 arm64_monterey: "9fd02a5e37c68c94315a89c194595d5f1b8d5faad760d2848c56f37deebbe182"
-    sha256 cellar: :any,                 sonoma:         "463e36411facadf4fe22376cc124dca6d69f46659635bdceb3609a147181f6ea"
-    sha256 cellar: :any,                 ventura:        "2c361a6bc460ad91b491ee27e25402749d346f80878d7ff97148e41ff049854f"
-    sha256 cellar: :any,                 monterey:       "9dcd86957cfa389c4d9c70794a0da08b2a5b623b1f465a7ed958f4a3b7da9b88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a76dd7893a0959e0b82dc2abf0e24c27ead22f574cf272a593cb5ba374242b4a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "c24bd15b42e0ae13e2cb12ac655a48719925625160e881ebe3f7106abe3c080d"
+    sha256 cellar: :any,                 arm64_ventura:  "a648bac2b48fe462ccba3ba5791d753b01ecc5ec8ee84fa4b86f2e34e2d7442e"
+    sha256 cellar: :any,                 arm64_monterey: "e9ff0aba06130659e53186ff76c843e922eeba909c19ccb9d1c4274cc51dcc38"
+    sha256 cellar: :any,                 sonoma:         "ac700eb4d553a63441a0b493aa30cd1b5b82d0d740293ae74e10d6f1f61c119d"
+    sha256 cellar: :any,                 ventura:        "b467ab5ad3cc9139e861a3d40059e83cbbcc5cfdddf7b8474a866cdbc9fe3bb5"
+    sha256 cellar: :any,                 monterey:       "757139751fed233518ed43992f0427b87cdf461459fd4ff2f6dabc759855acee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3d73744e801e49bedfc00ad68838cd6299a50563bf69c270f2808ad51bd7562"
   end
 
   depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
   depends_on "python-setuptools" => :build
   depends_on "python@3.12" => [:build, :test]
   depends_on "swig" => :build
-
-  on_linux do
-    depends_on "pkg-config" => :build
-    depends_on "hwloc"
-  end
+  depends_on "hwloc"
 
   # Fix installation of Python components
   # See See https://github.com/oneapi-src/oneTBB/issues/343
@@ -74,8 +72,6 @@ class Tbb < Formula
     assert_path_exists lib/"libtbb.a"
     assert_path_exists lib/"libtbbmalloc.a"
 
-    # on macOS core types are not distinguished, because libhwloc does not support it for now
-    # see https://github.com/oneapi-src/oneTBB/blob/690aaf497a78a75ff72cddb084579427ab0a8ffc/CMakeLists.txt#L226-L228
     (testpath/"cores-types.cpp").write <<~EOS
       #include <cstdlib>
       #include <tbb/task_arena.h>
@@ -84,11 +80,7 @@ class Tbb < Formula
           const auto numa_nodes = tbb::info::numa_nodes();
           const auto size = numa_nodes.size();
           const auto type = numa_nodes.front();
-      #ifdef __APPLE__
-          return size == 1 && type == tbb::task_arena::automatic ? EXIT_SUCCESS : EXIT_FAILURE;
-      #else
           return size != 1 || type != tbb::task_arena::automatic ? EXIT_SUCCESS : EXIT_FAILURE;
-      #endif
       }
     EOS
 

@@ -1,21 +1,19 @@
 class Rp < Formula
   desc "Tool to find ROP sequences in PE/Elf/Mach-O x86/x64 binaries"
   homepage "https://github.com/0vercl0k/rp"
-  url "https://ghproxy.com/https://github.com/0vercl0k/rp/archive/refs/tags/v2.1.2.tar.gz"
-  sha256 "7d0b523e123315c1a4e66ab6386a733ce3200d0cc2c489f04edbe398a016a160"
+  url "https://ghproxy.com/https://github.com/0vercl0k/rp/archive/refs/tags/v2.1.3.tar.gz"
+  sha256 "38a6ac4d1b97468c81b4da93d62b46d4486817b02bdb53de7f1196b4938ed2bc"
   license "MIT"
   head "https://github.com/0vercl0k/rp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c05472e61dd44e140b2be7b893f67ecaedd2961e8cf2b20427ccc9a8eafd0449"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bdd40e9a4e27e956fa2be3591ced32e8b0022c5c487f4c5cb20437db094eb36d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3d5f2862e0a53666572c7b03e80b3c652440f063b435d616f135bdfb0462ccdd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5e983fea67e1c46a4aa86b9bdb193c07519bfa94f137a975b106088011d200f3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "560e4493b90ca5052681c002b52abd0ac1bf3784e46f05c3db3795395a1b6e1e"
-    sha256 cellar: :any_skip_relocation, ventura:        "55eb4dce3cd61ded9718afecbab81d156a4d1d85786d7f10223a8492286233ce"
-    sha256 cellar: :any_skip_relocation, monterey:       "3f71e97c714faef8b03f0d1f2e8b787a6db8cb20a8853de18498d351e22c19a1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bb1a502f06dd14112dd034e6f81a7e3c398d36700b084c9bf1069a432f2ed6b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25a9224b577e2a01fa32da55b29c9cd070875f4a24517c8e25ca9e0a7a5e0d3c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "437df8822a4b9866faf2043ec857a9b343b67e025fd5bc7b2a3aaf5740fc252e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "35426462210f4dd5eaaceb8df295011bb12aa5b72a46e5cb5e44605d6dd946fe"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "281f5d8df4c7f005d0ddf5dffca73238d3e9bc0a81e73ce2cdf2808f31d9f286"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8713a1a59853c967bb9c092143f09747bfeb260a328aa77fa3307040f5270da4"
+    sha256 cellar: :any_skip_relocation, ventura:        "da1a88f4112dc24aa95895004ad5d33609a1d7f1f4ce8824f84cf0f43fc0f384"
+    sha256 cellar: :any_skip_relocation, monterey:       "5513b0659df6a25cf2b244fd5758f9384e1cc7e9157efb7b0bccc281a9e00252"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc83b397da9d66104d009b5a91a6b37a56b2b792fa5db52347b29027a66efa34"
   end
 
   depends_on "cmake" => :build
