@@ -1,20 +1,18 @@
 class Killport < Formula
   desc "Command-line tool to kill processes listening on a specific port"
   homepage "https://github.com/jkfran/killport"
-  url "https://ghproxy.com/https://github.com/jkfran/killport/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "f1efcce989196417dd71e12fcf72550d135d7dbf5cffb4a96278f603f0695b36"
+  url "https://ghproxy.com/https://github.com/jkfran/killport/archive/refs/tags/v0.9.2.tar.gz"
+  sha256 "d1a500b1700775a5e24754e2b1f29cde0ad5ad72776b6abe1973173a1a9507b8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "12b99fb9b7b08db9f87d76836ce91b5c6be927c1edf963ec2805e7e2316c5292"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d801ff5969ea060ee5bb689073d831810e15103222fec5a9e0d418bd3c7de815"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "07758231607878325924de6a6ab137675ce22e5cfc5bcf956bd590af581d8eae"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "767fb8411a66b16b14fd07ce8bfac0566595ef4965f14333799f27d8c68e8756"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6a4e327cce7bb5fbae0ac8a609389bff33046ba5fb26352b95a1dacb0fd43066"
-    sha256 cellar: :any_skip_relocation, ventura:        "095f9c94e2a55766ef7141b6b3726189c597f5ac1a56434d8ba9efb4c66fdc69"
-    sha256 cellar: :any_skip_relocation, monterey:       "9362f857a7de53e73703254a1e5e435f7b58757985a49e3c97e34e37b4ab76a7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d11a3478da9d7f992bafb727c2d312864233c59ae58fb64d6d91822661e47348"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "edb7359ba32beb946cb51ede12dbdf27ccad2fcebcb0c0f84b6a9521e840a82c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "46e829bee4c3af621e18f87cbe25c5ea5b759e2811e5b69a89561d56cc2d74f3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "22a7483323e568ffc62a1891c07f5402f3d6e6762283ad3009ed6f5e3ebe025b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0be5be415da4983f2a95de5ebda746ae1e7a99752680369eb9069859a327aed4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0b2b1c7ccddda2c640af2c518332edbfbdfb3c4970a351c6fb61ebd501d7e81b"
+    sha256 cellar: :any_skip_relocation, ventura:        "33a9863155900843b4483da41e62d7b0c65d15f894f5b6c5d7f9cf316cc19afb"
+    sha256 cellar: :any_skip_relocation, monterey:       "8e2d71dd17d1a294265d0bd3d644c24d38bf484423d85222f6263bc824abb325"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "edfb4ce5ad7c2097989a85543d673e77630845244c4ac8d9b9f5b477e6c77167"
   end
 
   depends_on "rust" => :build

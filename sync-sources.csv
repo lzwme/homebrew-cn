@@ -4180,7 +4180,7 @@ Homebrew-homebrew-core/Formula/n/nano.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nanoflann.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nanomsg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nanomsgxx.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/n/nanopb-generator.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/n/nanopb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nanorc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/narwhal.rb, Homebrew/homebrew-core, 1
@@ -7439,6 +7439,7 @@ Homebrew-homebrew-cask/Casks/b/bricklink-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bricksmith.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/brickstore.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bridge.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/brightintosh.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/brightness-sync.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/brisk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/brisync.rb, Homebrew/homebrew-cask, 1
@@ -8219,6 +8220,7 @@ Homebrew-homebrew-cask/Casks/f/focus-booster.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/focus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/focusatwill.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/focused.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/focusrite-control-2.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/focusrite-control.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/focusrite-saffire-mixcontrol.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fog.rb, Homebrew/homebrew-cask, 1
@@ -9427,6 +9429,8 @@ Homebrew-homebrew-cask/Casks/n/navicat-for-sql-server.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/n/navicat-for-sqlite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/navicat-premium-essentials.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/navicat-premium.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/navigraph-charts.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/navigraph-simlink.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/ncar-ncl.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/ndm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/neat-reader.rb, Homebrew/homebrew-cask, 0
@@ -9519,6 +9523,7 @@ Homebrew-homebrew-cask/Casks/n/nvalt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvidia-geforce-now.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nwjs.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/nx-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nzbget.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nzbvortex.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/objectivesharpie.rb, Homebrew/homebrew-cask, 0
@@ -9532,6 +9537,7 @@ Homebrew-homebrew-cask/Casks/o/obsbot-webcam.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/obsidian.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/ocenaudio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oclint.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/october.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/octomouse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/odbc-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/odrive.rb, Homebrew/homebrew-cask, 0
@@ -11000,6 +11006,7 @@ Homebrew-homebrew-cask/Casks/v/videostream.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vidl.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vieb.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vienna.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/v/vimcal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vimediamanager.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vimr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vincelwt-chatgpt.rb, Homebrew/homebrew-cask, 1

@@ -2,18 +2,18 @@ class SingBox < Formula
   desc "Universal proxy platform"
   homepage "https://sing-box.sagernet.org"
   # using `:homebrew_curl` to work around audit failure from TLS 1.3-only homepage
-  url "https://ghproxy.com/https://github.com/SagerNet/sing-box/archive/refs/tags/v1.7.1.tar.gz", using: :homebrew_curl
-  sha256 "e1a5d7c9a7f3a23da73f4d420aed19c8cc5f9b85af1e190fe9502658ec6fac3a"
+  url "https://ghproxy.com/https://github.com/SagerNet/sing-box/archive/refs/tags/v1.7.2.tar.gz", using: :homebrew_curl
+  sha256 "74bbe97b0f8df19c1196deda4ad53edc75c57259f51f88391d66071a315829d7"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e22d8dec18db4c02346a0945f47f66c32569cd3875ef4ef411f9e5284499bf9d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "19662f0dacc90b5a939ee156e91f3b741e406e1f50f822db3932747224b9a3d9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "19d24055141169b1399df4f5e4ee5b2bb92334cf2c13f0bcdab1060564356511"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8a61bd86e0f1bbc9706732e2f0136d7aab2b1b26f786a1f9a68bcfe2fe15bcec"
-    sha256 cellar: :any_skip_relocation, ventura:        "cdff26054bebaf881b939ecbc9aa76148b85688105acdf2361c328d2422aeeee"
-    sha256 cellar: :any_skip_relocation, monterey:       "da80d67585776bc020683f335e69136853b5e0f5bbb8f01f45a69dbfcfacb0dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a184eeb91a0684c14a3e337c488d96476a9664a398d92f496efde84cb226bff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6d057e096bd66fcef6d5e70c81f676cd73894df7ac2f1c8bc47996be1677efc2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "898b6c5af5e169375758aa089c4cae8980851f479d6d1a758fef8ecbc083e6f4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "77d48028b83c2442df3ccd2aa918244fe8fdaaa8b33659076b919565691e8bf8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "19a9221572063da1298d2ccc34d9986aeed3ccd9528916782e40bd63e4681f9f"
+    sha256 cellar: :any_skip_relocation, ventura:        "c94b9eddef87984c15928ef8e699c939e289ae33850ec5a6f5a5c8ef2d664ebb"
+    sha256 cellar: :any_skip_relocation, monterey:       "2d7fac48e34ccdc87380bcb3990658460c59530fb04a30d659262985c4d10298"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22abc25e4e0a6eed1982964c18758b9934bd077ecfa5c534b70adf0d78f137d2"
   end
 
   depends_on "go" => :build

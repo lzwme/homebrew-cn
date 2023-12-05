@@ -1,19 +1,18 @@
 class Liblouis < Formula
   desc "Open-source braille translator and back-translator"
-  homepage "https://liblouis.org"
-  url "https://ghproxy.com/https://github.com/liblouis/liblouis/releases/download/v3.27.0/liblouis-3.27.0.tar.gz"
-  sha256 "b3f1526f28612ee0297472100e3d825fcb333326c385f794f5a9072b8c29615d"
+  homepage "https://liblouis.io"
+  url "https://ghproxy.com/https://github.com/liblouis/liblouis/releases/download/v3.28.0/liblouis-3.28.0.tar.gz"
+  sha256 "69eddef2cf2118748a1d548cab3671ba31140c37dd821a2d893d95bc2796e1b0"
   license all_of: ["GPL-3.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "a81eea7d4800706fd8a6b41c3ae254acbd444cdf9424bfe65a16358f6ae01686"
-    sha256 arm64_ventura:  "7e970b0edb98af8e3a7b03cf3ed95848c0f8ee9eaa501b3fa5a227edd4fa04d4"
-    sha256 arm64_monterey: "5a8536e0073325a8f9e8a95044a7453d9c03bab9281de1cfcf089789a4715b49"
-    sha256 sonoma:         "32e6ba5134dc11c832d9639bb1871e6c9ba854262184b6d5c9168d09f8bb0898"
-    sha256 ventura:        "9898201b9f21fb473ee63c4b5a2df4afd928ef86c907c85fca2d4932e2041007"
-    sha256 monterey:       "ae00b24333293c97c2815ce7590d2f58d9a3b693bbf52d9ed355a0e68d3b8597"
-    sha256 x86_64_linux:   "4784b929e8e42d0bd1c3de30de2373aabe51699db2cf15c9efcccabd7de46f2b"
+    sha256 arm64_sonoma:   "e0c94db46779ebf8b5479e5ea1b01ce375de928e69c06c21b163e8bd1506116a"
+    sha256 arm64_ventura:  "f7c1672b2c0aa5463ec5dab18e77cda9cf8cc15e0618f9e1425c8807a86082b3"
+    sha256 arm64_monterey: "bbe4303bfc9ac0d9b04e2ee18b7eaac9473287d95713be459873fc9cf3384f95"
+    sha256 sonoma:         "304d531fd215bffd9977de111d567cfd14f2498ded8603d98e2e9c6b582809df"
+    sha256 ventura:        "6c4396e3849c9cfaa736b297cb93a5051a6ccb6e548f7671732fb37dc2e75de0"
+    sha256 monterey:       "aa7e813e8bfdc08da8f3a1dd68d4b92abe74db4616a92755a833c35e6673c316"
+    sha256 x86_64_linux:   "b712e8e7dd52a22583a4a2f170a97a3f77a2d4408e7ffbffc3d63167a21d14f1"
   end
 
   head do

@@ -1,29 +1,27 @@
 class Squid < Formula
   desc "Advanced proxy caching server for HTTP, HTTPS, FTP, and Gopher"
   homepage "http://www.squid-cache.org/"
-  url "http://www.squid-cache.org/Versions/v5/squid-5.9.tar.xz"
-  sha256 "3fe5c2007da2757446af91b6ef974f154b208120a9a39396ea681e5c4abb04b5"
+  url "http://www.squid-cache.org/Versions/v6/squid-6.5.tar.xz"
+  sha256 "5070f8a3ae6666870c8fc716326befb0a1abe8b5ff3a6f3932cbc5543d7c8549"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "http://www.squid-cache.org/Versions/v5/"
-    regex(/href=.*?squid[._-]v?(\d+(?:\.\d+)+)-RELEASENOTES\.html/i)
+    url "http://www.squid-cache.org/Versions/"
+    regex(%r{<td>\s*v?(\d+(?:\.\d+)+)\s*</td>}im)
   end
 
   bottle do
-    sha256 arm64_sonoma:   "2c8c347ca4f5d828380a8663f4a94f99221cb673229c0d0b4e41bea57d2f9e5a"
-    sha256 arm64_ventura:  "cbbdf13ee2098c32baa9bfe690f1446fbee226bf5cf0c80868a0698b467c3aa1"
-    sha256 arm64_monterey: "3537c064875681dcb687f279bd35913ce722d2fb6703fe1ebc7982aa1576bffc"
-    sha256 arm64_big_sur:  "ef839dc315ae730bc6fb368c9737cc93d3ad5b94ac7a9bc52718eee367024d60"
-    sha256 sonoma:         "f6606c267b727f9cc15de3a17f49f3fc8f6001ec2500db1f65c7c3ad8b884987"
-    sha256 ventura:        "0c3919881cbdff7c75ceec04d543f600f2202a7c937f97834f0d7ce3268a65ec"
-    sha256 monterey:       "da56d1913c356397fad87e2985f431c328aab8505a4a3c23bd3963b21b4bb12f"
-    sha256 big_sur:        "bf89451bfc3a8e21874bccc31554c74a9268d829dbe4056eab2bdea12025c5a8"
-    sha256 x86_64_linux:   "d01a8a7022a0e077201d9e433224092f726834cdb1923d051c29b902dffe706a"
+    sha256 arm64_sonoma:   "4ea12e2e42d1c9e17b2f6c4e3c2d897030b3f8a117e7a2ab927668873e381397"
+    sha256 arm64_ventura:  "91437b9cb20ec5da59b2592202f437eb84d291475f9bbc496f05083917d27478"
+    sha256 arm64_monterey: "af447106753a976d53895154926a3c3b2b3d24bef32ccac06b58d51d3d05f753"
+    sha256 sonoma:         "f1c9cf7bb847e779e60a93f3b393b35a542751ec093e3769dd60700b0f4e3430"
+    sha256 ventura:        "727d33520dc7d5a7841c6c83c37318ce03a40b57510f01429a89e690402f328f"
+    sha256 monterey:       "8c2ba6e6298f1a463e55ed001c948471810872097d503333de044929d4bd1d1c"
+    sha256 x86_64_linux:   "efd191966dc27a2bdc3705594d7132c49157b6bf3130c7e2338d296cffdd44d4"
   end
 
   head do
-    url "lp:squid", using: :bzr
+    url "git://git.launchpad.net/squid", branch: "v6"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -51,6 +49,8 @@ class Squid < Formula
       --disable-eui
       --enable-pf-transparent
       --with-included-ltdl
+      --with-gnutls=no
+      --with-nettle=no
       --with-openssl
       --enable-delay-pools
       --enable-disk-io=yes

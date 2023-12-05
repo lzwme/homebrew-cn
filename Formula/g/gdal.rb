@@ -12,13 +12,14 @@ class Gdal < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "890efe180eeaef8204b457e1a59158592b8fc576f28063aea51e8275ca95178a"
-    sha256 arm64_ventura:  "ad72d13032ed9711a08dc29da54cfb7c699cc3e155a3cd93f1370d5b8e7d4ff2"
-    sha256 arm64_monterey: "16c3ab74a94869aadaa27b895125afc11c69791a2d9afe93686273b11f20e593"
-    sha256 sonoma:         "21cf5fe5e015411bbab22a309d32cf52f3a95d31a6a3ddf1aac5ba3e80cc51f0"
-    sha256 ventura:        "b8eda7abc904eee2e68c6245eae78ba3be3fcb5276f51b960f3d59dde679c941"
-    sha256 monterey:       "b88b70cb3d46c21ee030ffd6baf87df4026d11313dab110be9737f2c4bfeb486"
-    sha256 x86_64_linux:   "5a5300367d59d9dc576c4a394ae2bac50e071fb3dc2f8ffcbd8159072a9ab1b3"
+    rebuild 1
+    sha256 arm64_sonoma:   "518edb92567ac216f93b380bbf94387e3a8497231e263fb23c09603d84d62c92"
+    sha256 arm64_ventura:  "4e0ad9caaf3a2760537bfc6c4b89c2e1e4255c5d9d7387416d7ce61f4a03a767"
+    sha256 arm64_monterey: "40d485f4a9f69e526c60249ddd3407751e4b32fbb261e74f8c658d0c3577147a"
+    sha256 sonoma:         "87bbbf629efbfd6eb44d37a37c5d3a207246faa389a588b8ae917e339e0c3866"
+    sha256 ventura:        "794c718629f2a5eb4dff8f682268c5e3ca2d6ff4918e2bbe9084a4c8cdb46bfa"
+    sha256 monterey:       "188cb364b82b691e9a253c045f7c1ef4c1ad19638771232b8f801e97e6ebeb33"
+    sha256 x86_64_linux:   "0bcc39ac75158b4738c82c95d579ff69f0f85eb99277799c7a198fb19edf13d8"
   end
 
   head do
@@ -59,7 +60,7 @@ class Gdal < Formula
   depends_on "pcre2"
   depends_on "poppler"
   depends_on "proj"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "qhull"
   depends_on "sqlite"
   depends_on "unixodbc"
@@ -80,7 +81,7 @@ class Gdal < Formula
   fails_with gcc: "5"
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install

@@ -3,19 +3,18 @@ class Johnnydep < Formula
 
   desc "Display dependency tree of Python distribution"
   homepage "https://github.com/wimglenn/johnnydep"
-  url "https://files.pythonhosted.org/packages/ac/4f/a6e38abe80edd42b366fc3420542e548ac1039f514126db605ee5a09c4c9/johnnydep-1.20.3.tar.gz"
-  sha256 "0f26a9e50e8f4d20eb7abbd2bd85fe352a6f28b5630999ee470c0d0c76c10911"
+  url "https://files.pythonhosted.org/packages/16/bf/158fac439f5465bf7a84d59c45677154e36f0d37e7eb1b0551a75f9dd779/johnnydep-1.20.4.tar.gz"
+  sha256 "34b5f44839fd6b42a0377e338ca7e6f1cadd8262936963c2d4799c4548876659"
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd287ff813a9fd0b924126a8c912e5ac156433703d51828d55d044b555870b5d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a2537d43f3186d4389f2751c187d28125451bd89858a0fdd120cad7edd415324"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a8cdb7318ba2e6ad2d7e0dc513d808cc396b9d6acbf21cf50f6fd04c76c74ac8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7316dcf0acd14aa7b2dea97a5f6d53eb51829c9ed0a842089aa86914ddaad61f"
-    sha256 cellar: :any_skip_relocation, ventura:        "550c089679864506d907bd2aa6fd29ee0e99a18c35a630600a69162ea59a4148"
-    sha256 cellar: :any_skip_relocation, monterey:       "a79bc27d4f7c50fdc8b9471516d96f2bfd456be762f4989ad3cc1873f2ff2222"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79241d8947792d84bd688a056b2178230230d8398fc79975a918c5d66674ace0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3cefe6a9404fe13705e9660dd13bf1a2a5af96d454e4ac3d259760e9ff390e2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b33759ab96d983487fc61d843b496e5ddcff08cb7c71c030208803777b2f8f9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "01e7506766de2dbd53c4014bc4fb51af67f877bc1d7131690d01b1915a3f3893"
+    sha256 cellar: :any_skip_relocation, sonoma:         "87c451722ac92beedfe339398b978b13b95c507372b417976238f627cc63bcf6"
+    sha256 cellar: :any_skip_relocation, ventura:        "d3d7037245b5c33a426d2b5691af1bc260813ec30da1acd4113a1dc3ee1563a7"
+    sha256 cellar: :any_skip_relocation, monterey:       "26b0157b53e702e446da6dcec2fad1ce8ef4ae5fd010fcc97f4136d8d598f12e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d359136f74783c97ee000c705c163c959d72f566b4d0fc6f891f85232ef7d90"
   end
 
   depends_on "python-packaging"
@@ -26,13 +25,13 @@ class Johnnydep < Formula
   depends_on "six"
 
   resource "anytree" do
-    url "https://files.pythonhosted.org/packages/45/66/29b55cc478fb15b8d50e63f4d7465d3123437369c0e6b86451d8739475cd/anytree-2.10.0.tar.gz"
-    sha256 "a5e922bef6bb5a154f8d306d37b40ea21885e4143856a9206a14b791cfc26102"
+    url "https://files.pythonhosted.org/packages/f9/44/2dd9c5d0c3befe899738b930aa056e003b1441bfbf34aab8fce90b2b7dea/anytree-2.12.1.tar.gz"
+    sha256 "244def434ccf31b668ed282954e5d315b4e066c4940b94aff4a7962d85947830"
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/9d/8b/8e2ebf5ee26c21504de5ea2fb29cc6ae612b35fd05f959cdb641feb94ec4/cachetools-5.3.1.tar.gz"
-    sha256 "dce83f2d9b4e1f732a8cd44af8e8fab2dbe46201467fc98b3ef8f269092bf62b"
+    url "https://files.pythonhosted.org/packages/10/21/1b6880557742c49d5b0c4dcf0cf544b441509246cdd71182e0847ac859d5/cachetools-5.3.2.tar.gz"
+    sha256 "086ee420196f7b2ab9ca2db2520aca326318b68fe5ba8bc4d49cca91add450f2"
   end
 
   resource "oyaml" do
@@ -46,8 +45,8 @@ class Johnnydep < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/a4/99/78c4f3bd50619d772168bec6a0f34379b02c19c9cced0ed833ecd021fd0d/wheel-0.41.2.tar.gz"
-    sha256 "0c5ac5ff2afb79ac23ab82bab027a0be7b5dbcf2e54dc50efe4bf507de1f7985"
+    url "https://files.pythonhosted.org/packages/b0/b4/bc2baae3970c282fae6c2cb8e0f179923dceb7eaffb0e76170628f9af97b/wheel-0.42.0.tar.gz"
+    sha256 "c45be39f7882c9d34243236f2d63cbd58039e360f85d0913425fbd7ceea617a8"
   end
 
   resource "wimpy" do

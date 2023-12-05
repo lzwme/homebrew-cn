@@ -1,21 +1,18 @@
 class Zlog < Formula
   desc "High-performance C logging library"
   homepage "https://github.com/HardySimpson/zlog"
-  url "https://ghproxy.com/https://github.com/HardySimpson/zlog/archive/refs/tags/1.2.16.tar.gz"
-  sha256 "742401902f2134eb272c49631fe5c38d7aeb9a2ad56fa3ec3d15219b371ba655"
-  license "LGPL-2.1-only"
+  url "https://ghproxy.com/https://github.com/HardySimpson/zlog/archive/refs/tags/1.2.17.tar.gz"
+  sha256 "7fe412130abbb75a0779df89ae407db5d8f594435cc4ff6b068d924e13fd5c68"
+  license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ea24c60b2039bcb5d8ce89c073801d8c4fb4b97d827896653c868aa06ac52f38"
-    sha256 cellar: :any,                 arm64_ventura:  "b1c7b07083c3667fb8f32eba4437d2f3f7c872a184476968963b902a8a850aac"
-    sha256 cellar: :any,                 arm64_monterey: "16588f7d867f7426696693b19ee0221ff7483c2d7a34a856e3acb32c46c8ea41"
-    sha256 cellar: :any,                 arm64_big_sur:  "04ed8b2ebcbbf23a3e6ad76b8d80914f939e6fc6cadfd297b91c3d4d1d29b8b0"
-    sha256 cellar: :any,                 sonoma:         "9e4179318cbdd948c5e7019358269e14014e1dcf91a277704d8b7ac3eb889ac9"
-    sha256 cellar: :any,                 ventura:        "f76ab42f65f676cd34a153fcac5c8a543edce5dd6bc462700dc23f0e99000b68"
-    sha256 cellar: :any,                 monterey:       "19cf707f5b5720aefa8f7cbb851a032a9a16900b7b17685530aa59081cbb0ee5"
-    sha256 cellar: :any,                 big_sur:        "f1384547bacef98381ae766dc90efc690a6a2a87dca0763a0572a3288ad68aee"
-    sha256 cellar: :any,                 catalina:       "62f3fbab6a72eb27a201c1c31cdb2cf8d4170053fdbfbe27130452026d01da69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "204935c1271f0c1cca1543ba6e71f7b1fcfcb611b97c6b32057c452abc1c2478"
+    sha256 cellar: :any,                 arm64_sonoma:   "e1c8fc12f6ca10885f95e4a8679dd2584d397bdfe60ba70281329e7a1e11204d"
+    sha256 cellar: :any,                 arm64_ventura:  "2d9322f96b62089204e0e2cd678942d35df790d2195b9402533aa0da495abe6f"
+    sha256 cellar: :any,                 arm64_monterey: "27debda881311329213187c060b2029122d939bc355f988000c9a73a410ca01d"
+    sha256 cellar: :any,                 sonoma:         "230642455c764960cfb097b80793cf5b04e417eda975638ea537a3f39b4924d9"
+    sha256 cellar: :any,                 ventura:        "00753664bd8dddc742ff431f821559d7f56b6d061bbffa5e8bdeebe5a82dda29"
+    sha256 cellar: :any,                 monterey:       "6d31422019f2bb265e13755d85ec9ba47d70d05833852badf8f57c6a0eed664b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78c9e0d1d1146eb99895e8736cf8fae032ad537193df9bdf5d6f6523559e8627"
   end
 
   def install

@@ -3,8 +3,8 @@ class Osc < Formula
 
   desc "Command-line interface to work with an Open Build Service"
   homepage "https://openbuildservice.org"
-  url "https://ghproxy.com/https://github.com/openSUSE/osc/archive/refs/tags/1.5.0.tar.gz"
-  sha256 "7d3be5b17338f11767441c451c50137356756b51786d0296e751f2fef1c87e27"
+  url "https://ghproxy.com/https://github.com/openSUSE/osc/archive/refs/tags/1.5.1.tar.gz"
+  sha256 "17b1268413561b3d1b8564d3d1ed8f025efa34774497df4d54205b6cf0882c28"
   license "GPL-2.0-or-later"
   head "https://github.com/openSUSE/osc.git", branch: "master"
 
@@ -14,13 +14,13 @@ class Osc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aef87af973608dbcce3417d24455da08c7b46b222c8a88aeb16afc9bc28b2d7a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0c8a153478b4e3394a8e7bb88f74e871aec083e4f29fb594a95c8259e521dee5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5d5ca6820491b5f6c4d9501bc11b6f1ec5d6eec97c8c11d2295f19c0dcdfc6b2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "50bcbf901561ad55626122d0a40035f6ee533728ad0bf5f478906c12bed29eb7"
-    sha256 cellar: :any_skip_relocation, ventura:        "a31b5ef06bec1ed6d1a3c643ee158da298f74e5b09d5c0e0980f624ab6ab8c09"
-    sha256 cellar: :any_skip_relocation, monterey:       "5fdbae99ee6bf1be38fe123a8ac005000198b1a53075b983896bcaea2f461b7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50254a3f469e202bc9e1d082ab4851a069b9d9f220e3c345754fa0e9c93bf119"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f06df6182229a4fdd1b9993085ed457dc2adecb92486e3dabfb11b13d405be8e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "424d163646a5b78b47e569c856334ae9b78046e87a07bbdde93d0e08603926e5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "853d0a71f8f50d491886fcabc13e337565d4d06bd3d4f4b27c8921aaf02c41f3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7311403384575e9612d4515d9e8852ed601fbe1c21d9230fc2fd2918755aaa18"
+    sha256 cellar: :any_skip_relocation, ventura:        "c6a7b554110f7d87395b38a45ee81024120df3b879fb780b669511ea49335b2c"
+    sha256 cellar: :any_skip_relocation, monterey:       "e3b813737232f817b4cf13a50dc4857ddd0dcfa6225bffbfc9dab9c2b18924bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83b829feaa1e869a12c74067ebe4a9f8196df4df98384bb5858911ad79a7efd6"
   end
 
   depends_on "cffi"
@@ -36,8 +36,8 @@ class Osc < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
+    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
   def install

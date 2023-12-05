@@ -4,12 +4,12 @@ class Minetest < Formula
   license "LGPL-2.1-or-later"
 
   stable do
-    url "https://ghproxy.com/https://github.com/minetest/minetest/archive/refs/tags/5.7.0.tar.gz"
-    sha256 "0cd0fd48a97f76e337a2e1284599a054f8f92906a84a4ef2122ed321e1b75fa7"
+    url "https://ghproxy.com/https://github.com/minetest/minetest/archive/refs/tags/5.8.0.tar.gz"
+    sha256 "610c85a24d77acdc3043a69d777bed9e6c00169406ca09df22ad490fe0d68c0c"
 
     resource "irrlichtmt" do
-      url "https://ghproxy.com/https://github.com/minetest/irrlicht/archive/refs/tags/1.9.0mt10.tar.gz"
-      sha256 "6d00348d8ff513f6a7cee5c930908ef67428ff637e6a9e4d5688409bdb6d547d"
+      url "https://ghproxy.com/https://github.com/minetest/irrlicht/archive/refs/tags/1.9.0mt13.tar.gz"
+      sha256 "2fde8e27144988210b9c0ff1e202905834d9d25aaa63ce452763fd7171096adc"
     end
 
     resource "minetest_game" do
@@ -24,15 +24,13 @@ class Minetest < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "a51793f104b2585825cb2e4493fc99048dc6aa9c6c4d7b804938cefe444180ef"
-    sha256 cellar: :any, arm64_ventura:  "32246b9a68c1cc58d353a7e1e472f440f01712d7baf90f4724b3e75c3a9cd824"
-    sha256 cellar: :any, arm64_monterey: "ff695caf85fac277c0e966adfb545c42647087dba289f1a587c5afba016d8c00"
-    sha256 cellar: :any, arm64_big_sur:  "b8ca9d49163a9b20fcaeec0f179d5095e509a1ef8a9b7955214e2d3751a1c1ee"
-    sha256 cellar: :any, sonoma:         "f2a724f43f985e44c707edd08ada668cc1b7051c5aa24f36662888e19bf30619"
-    sha256 cellar: :any, ventura:        "11877f115e82a11a88775d106c433107d5b1f68d966a56963a16cd6e613693af"
-    sha256 cellar: :any, monterey:       "14224d8d6ed9f0ae02b838423436b736b4eea64e7d44395ac00132d548e45c69"
-    sha256 cellar: :any, big_sur:        "9faec3d05ba52ed4363013f0e39734c8dbc947d18e449e19a28174ae36c7ce6c"
-    sha256               x86_64_linux:   "a57cbf410ed1abfa8e381715b327a2b154a6cec9d008ba880efc6b25591e5436"
+    sha256 cellar: :any, arm64_sonoma:   "6d1e18e736c85005e57e7925e0064836df8fea870335b0836fbc34a8a2ef9ed1"
+    sha256 cellar: :any, arm64_ventura:  "49c3f74ad32d15b9bdf5b9a50d0b030ceaee0765b807e6dd6ab88225d752de65"
+    sha256 cellar: :any, arm64_monterey: "d72725938e822706c585254b1b0b7bffe46be99e9859ee31b37a1370fd157d7b"
+    sha256 cellar: :any, sonoma:         "66e8431e983e91fe3337f52552f6296a825d7ef94b9fd92cc10ee21fe4097e63"
+    sha256 cellar: :any, ventura:        "65085a5002468b37fcb1be9d8641ae701522be9a926c4832b386da9efa4f75f0"
+    sha256 cellar: :any, monterey:       "7294300c1673038c329acda2ec74bea9f99752b98234dc5d238733d09a763875"
+    sha256               x86_64_linux:   "ed27729be489033f9b22b8fbf5789c2848a6c1547289c2a16759a155ba12bf4d"
   end
 
   head do

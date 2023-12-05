@@ -1,9 +1,9 @@
 class Pdfbox < Formula
   desc "Open source Java tool for working with PDF documents"
   homepage "https://pdfbox.apache.org"
-  url "https://www.apache.org/dyn/closer.lua?path=/pdfbox/3.0.0/pdfbox-app-3.0.0.jar"
-  mirror "https://archive.apache.org/dist/pdfbox/3.0.0/pdfbox-app-3.0.0.jar"
-  sha256 "1e5211dc668355510d332ea094ad91616fa8d8c7451205e8b57a4218bcbcb34e"
+  url "https://www.apache.org/dyn/closer.lua?path=/pdfbox/3.0.1/pdfbox-app-3.0.1.jar"
+  mirror "https://archive.apache.org/dist/pdfbox/3.0.1/pdfbox-app-3.0.1.jar"
+  sha256 "ab192ac7e0c03e5f58f12d2b130015c9f58d781bc312a940b6c47a7993e4a47e"
 
   depends_on "openjdk"
 

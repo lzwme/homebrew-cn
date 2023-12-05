@@ -3,10 +3,6 @@ class Qt < Formula
 
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.6/6.6.0/single/qt-everywhere-src-6.6.0.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.6/6.6.0/single/qt-everywhere-src-6.6.0.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.6/6.6.0/single/qt-everywhere-src-6.6.0.tar.xz"
-  sha256 "652538fcb5d175d8f8176c84c847b79177c87847b7273dccaec1897d80b50002"
   license all_of: [
     "BSD-3-Clause",
     "GFDL-1.3-no-invariants-only",
@@ -16,6 +12,21 @@ class Qt < Formula
   ]
   head "https://code.qt.io/qt/qt5.git", branch: "dev"
 
+  stable do
+    url "https://download.qt.io/official_releases/qt/6.6/6.6.0/single/qt-everywhere-src-6.6.0.tar.xz"
+    mirror "https://qt.mirror.constant.com/archive/qt/6.6/6.6.0/single/qt-everywhere-src-6.6.0.tar.xz"
+    mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.6/6.6.0/single/qt-everywhere-src-6.6.0.tar.xz"
+    sha256 "652538fcb5d175d8f8176c84c847b79177c87847b7273dccaec1897d80b50002"
+
+    # Backport fix for QTBUG-117765 which can cause build failure in `qca`
+    # .../MacOSX.sdk/usr/include/c++/v1/concept:318:1: error: Parse error at "::"
+    patch do
+      url "https://github.com/qt/qtbase/commit/a8c1c38f94ba9011b7646fe4f756ca213479cd30.patch?full_index=1"
+      directory "qtbase"
+      sha256 "dc33174b2b829f2cabb096bad654a984294986aea5d4a226ff225b951e77acfc"
+    end
+  end
+
   # The first-party website doesn't make version information readily available,
   # so we check the `head` repository tags instead.
   livecheck do
@@ -24,13 +35,14 @@ class Qt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "36abdf7a31580688b39447d9baffc76a45b76a01af6e6911e7ceef8722516c9b"
-    sha256 cellar: :any,                 arm64_ventura:  "da6b8e4dfcb405b4c4d3b1846b42b4fa0e77c27df4cefc122aaa296e0c56b073"
-    sha256 cellar: :any,                 arm64_monterey: "0cc9140f18437b7d1f4e110854e1a72b44497a891ac5a19594ad5d5bedf41af7"
-    sha256 cellar: :any,                 sonoma:         "be8f2b26cff18e744ffcd7f9832c6c60600ed297e2c7146cf98efa4035d64df2"
-    sha256 cellar: :any,                 ventura:        "8fa8d83184e2f27cc81fbe5419c2ad60ffc1a01d25dd0090c5108afbf9ae4c48"
-    sha256 cellar: :any,                 monterey:       "7fca175e333869e9da846caad9afb329320e7f26a029f0e8e711988b9b2bbe83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "35b32e2ed05837fce951d095f11e2da309acb04dbb50774ef079c9a2a6b46868"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "38e1c32b94b199a6068babac272b38506fda84dfe4157572df526e7449232da1"
+    sha256 cellar: :any,                 arm64_ventura:  "7162854c15fb55806abfa224f87123342f68fe982150b01a8e74d1545f48c644"
+    sha256 cellar: :any,                 arm64_monterey: "0ff1e7128524279e8410d5322f7d0d67ee34310389f08b98c832cb33e48fc193"
+    sha256 cellar: :any,                 sonoma:         "e371e09207ec538fe9a603520dfe254c338798472b6e3fee374a683a279f9274"
+    sha256 cellar: :any,                 ventura:        "2cc6a0abcef02ee96e216399af43ce390916c938b709cb27cfe8af5fd5d9eaad"
+    sha256 cellar: :any,                 monterey:       "691a20cc44f43013a6d49a353c213e4db4a82366fd4dc92738043477cb220980"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ae0d311bb958e49fd6845467ec4a6b0cdbf8680eb3a479f717cee65ecc35536"
   end
 
   depends_on "cmake"      => [:build, :test]

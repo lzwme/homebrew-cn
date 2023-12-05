@@ -1,80 +1,64 @@
 class CenterIm < Formula
   desc "Text-mode multi-protocol instant messaging client"
   homepage "https://github.com/petrpavlu/centerim5"
-  url "https://web.archive.org/web/20191105151123/https://www.centerim.org/download/releases/centerim-4.22.10.tar.gz"
-  sha256 "93ce15eb9c834a4939b5aa0846d5c6023ec2953214daf8dc26c85ceaa4413f6e"
+  url "https://ghproxy.com/https://github.com/petrpavlu/centerim5/releases/download/v5.0.1/centerim5-5.0.1.tar.gz"
+  sha256 "b80b999e0174b81206255556cf00de6548ea29fa6f3ea9deb1f9ab59d8318313"
   license "GPL-2.0-or-later"
-  revision 3
 
-  # Modify this to use `url :stable` if/when the formula is updated to use an
-  # archive from GitHub in the future.
   livecheck do
-    url :homepage
+    url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
-    sha256 arm64_sonoma:   "d75f8b87c2bcd20519e83e938faccbc543fd1501b7c606d6ebb629a725ed9d63"
-    sha256 arm64_ventura:  "06ea3b5f68d56428232fe118e9acd8991bc874339e4a871cc353090f8fd35279"
-    sha256 arm64_monterey: "1a7055bb3ef5921a9a7879b1d5a6b1c1e208e10e74775118aa266e60fdc1b0b4"
-    sha256 arm64_big_sur:  "da6277844c78cbc85d849be46094d4a67e3ab57cc6bf41d2cb5332a36db0ca7c"
-    sha256 sonoma:         "6e36cf572c5c13d94fbbc516f9ae591c03103fabfbbf4c3cb2587cfbd6021909"
-    sha256 ventura:        "eaac6faf7415659261e938587b564ee5190fe7df96ef1a7b9cd7e946a21a5c63"
-    sha256 monterey:       "5647b6358b2c0c1b95fef613b5dd9818a584b2e127bbd85ee1dd329b698c4ebc"
-    sha256 big_sur:        "d8b97d13db945bc0a2fe883bfa8394c70496f1cdd4bc8624c3fdf43dab824ccd"
-    sha256 x86_64_linux:   "da7275cf3357b6ba3b363fc938f80e4639ebf5e0732b0f5705a1c467093d5567"
+    sha256 arm64_sonoma:   "65761f72dce3b59dfa0b058aa2eff754ffb132b9c61e9cf36d595f9ad12b3054"
+    sha256 arm64_ventura:  "aeaea7b73d4df68699def112fc0b0108d22af0680a9f8bc1d323b9c605044091"
+    sha256 arm64_monterey: "5234f05e2c0871d7df29fa263734ee54feb09de3ee6fbd327ec0d8e3655530ab"
+    sha256 sonoma:         "02f27aa633b15c66529bd3d7c9d11f382b4998816fad2f048b1efd11be44cc2b"
+    sha256 ventura:        "c39b856a9f8a148f92c600bafb203b135e95ccb34e6a28fa891602c3b6d81858"
+    sha256 monterey:       "a8442a0d0e8ba9888577ddfd2d8c76699cb0eb20a1e96c0b0b143186ad27e63c"
+    sha256 x86_64_linux:   "7148aa25f016c25825f9ed5fb6526d14737ba38208779727937801f2c7dbc42f"
   end
 
+  depends_on "cmake" => :build
+  depends_on "gettext" => :build
   depends_on "pkg-config" => :build
-  depends_on "gettext"
-  depends_on "openssl@3"
+  depends_on "glib"
+  depends_on "libsigc++@2"
+  depends_on "pidgin" # for libpurple
 
-  uses_from_macos "curl"
+  uses_from_macos "ncurses", since: :sonoma
 
-  # Fix build with clang; 4.22.10 is an outdated release and 5.0 is a rewrite,
-  # so this is not reported upstream
-  patch :DATA
-
-  patch :p0 do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/677cb38/center-im/patch-libjabber_jconn.c.diff"
-    sha256 "ed8d10075c23c7dec2a782214cb53be05b11c04e617350f6f559f3c3bf803cfe"
+  on_macos do
+    depends_on "gettext"
   end
 
   def install
-    # Fix compile with newer Clang
-    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+    # Work around build error on macOS due to `version` file confusing system header.
+    # Also allow CMake to correctly set the version number inside binary.
+    # Issue ref: https://github.com/petrpavlu/centerim5/issues/1
+    mv "version", ".tarball-version"
 
-    # Uses `auto` as a variable name.
-    ENV.append "CXXFLAGS", "-std=gnu++03"
-
-    # Work around for C++ version header picking up VERSION file on
-    # case-insensitive systems. Can be removed on next update.
-    (buildpath/"intl/VERSION").unlink if OS.mac?
-
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--disable-msn",
-                          "--with-openssl=#{Formula["openssl@3"].opt_prefix}"
-    system "make", "install"
-
-    # /bin/gawk does not exist on macOS
-    inreplace bin/"cimformathistory", "/bin/gawk", "/usr/bin/awk"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    assert_match "trillian", shell_output("#{bin}/cimconv")
+    assert_match version.to_s, shell_output("#{bin}/centerim5 --version")
+
+    # FIXME: Unable to run TUI test in Linux CI.
+    # Error is "Placing the terminal into raw mode failed."
+    return if ENV["HOMEBREW_GITHUB_ACTIONS"] && OS.linux?
+
+    ENV["TERM"] = "xterm"
+    File.open("output.txt", "w") do |file|
+      $stdout.reopen(file)
+      pid = fork { exec bin/"centerim5", "--basedir", testpath }
+      sleep 10
+      Process.kill("TERM", pid)
+    end
+    assert_match "Welcome to CenterIM", (testpath/"output.txt").read
+    assert_predicate testpath/"prefs.xml", :exist?
   end
 end
-
-__END__
-diff --git a/libicq2000/libicq2000/sigslot.h b/libicq2000/libicq2000/sigslot.h
-index b7509c0..024774f 100644
---- a/libicq2000/libicq2000/sigslot.h
-+++ b/libicq2000/libicq2000/sigslot.h
-@@ -82,6 +82,7 @@
- #ifndef SIGSLOT_H__
- #define SIGSLOT_H__
-
-+#include <cstdlib>
- #include <set>
- #include <list>

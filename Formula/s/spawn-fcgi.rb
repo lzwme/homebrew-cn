@@ -1,31 +1,24 @@
 class SpawnFcgi < Formula
-  desc "Spawn fast-CGI processes"
+  desc "Spawn FastCGI processes"
   homepage "https://redmine.lighttpd.net/projects/spawn-fcgi"
-  url "https://www.lighttpd.net/download/spawn-fcgi-1.6.4.tar.gz"
-  sha256 "ab327462cb99894a3699f874425a421d934f957cb24221f00bb888108d9dd09e"
+  url "https://www.lighttpd.net/download/spawn-fcgi-1.6.5.tar.gz"
+  sha256 "a72d7bf7fb6d1a0acda89c93d4f060bf77a2dba97ddcfecd00f11e708f592c40"
   license "BSD-3-Clause"
+  head "https://git.lighttpd.net/lighttpd/spawn-fcgi.git", branch: "master"
 
   livecheck do
-    url "https://redmine.lighttpd.net/projects/spawn-fcgi/news"
-    regex(/href=.*?spawn-fcgi[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :head
+    regex(/^(?:spawn-fcgi-)?v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b2d8ec10284cf94e07007659f9c2a9dc3382156c112c7a2ff2d2be94389a1dcb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "56eaf8799a8a03bec6c678f53cf48aa3b9828a473479150a67a2a58399cc3613"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9efa91b0b383106235bc16d9fad9852f33233eb6b81891109b60733ec40ec71c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "89bc1faf59756165a4a27cd43fdbac4c5d81ba5e12613fc1152c181a60f5c0df"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8ea7022db50099998cfcee6056a57f79314e35d55cd9bce30c79a6473a0c546e"
-    sha256 cellar: :any_skip_relocation, ventura:        "16b2c04a3bca92100db5fe04d56741257daccd7f91737526af4ac45c5805167b"
-    sha256 cellar: :any_skip_relocation, monterey:       "d45cd6391796628d9bc7e6c6259150d763f9ab1dcef898f1901359b6e1844f8e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "23c10df486a01421d25bf7ffa44e42f4cc0c14a4fe4c81b6de1eaaf498bcabd1"
-    sha256 cellar: :any_skip_relocation, catalina:       "a0665cd25e441b8f798073125e2f4151588aed54408b17f894e62a353ca73d47"
-    sha256 cellar: :any_skip_relocation, mojave:         "2512789a14b629470c684a4694e7f26fb28a9734b156f0756279bc8f40c2f2bd"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "31c9d255c30ac65009b0972c7b9fe8a8835f8c305800c1b147471b44113fd285"
-    sha256 cellar: :any_skip_relocation, sierra:         "23140d56da75279d033d123b5cc5a7d50018dd08e6c74e3ed118eac5adbac555"
-    sha256 cellar: :any_skip_relocation, el_capitan:     "4e6f999ebcad8b7ce84473379b6358ec569559f9e4b772d31ef1a5b0e01fc865"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0298a54805a7a33df96d41668d628b3c062700328e5e40be7f745092fb3d3077"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4de0d3bcce309cbdc05bf9a6a26817b6387138d7277f7e2d7370cd1ad3084d5c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b8901315c6c844b9111dbfd8c6d7ddfcb42369700137fca1e415f3099241775"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "34d39121f6d102b995f16d7681ef5bbcf229212f4fff2ec26b8f8aba4140b40a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cb6d63cda1b37b7a8021c6cbd17283163b8ec27969557bea5661ad5c414358ce"
+    sha256 cellar: :any_skip_relocation, ventura:        "0703018e4e309fc74951e5d53cb46e603f798d229cde3c55b5deaba9bb7dc552"
+    sha256 cellar: :any_skip_relocation, monterey:       "a4dc94e1addab36efa0858be55e44c9944d7180f2f76d025498f9a4f61e59e27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "72213bcf6bfdc11d458bd7cd7ce57a2b75dff10c4d9cc197c2eb6a25025afa25"
   end
 
   def install
