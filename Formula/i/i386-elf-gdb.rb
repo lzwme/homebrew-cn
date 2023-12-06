@@ -1,9 +1,9 @@
 class I386ElfGdb < Formula
   desc "GNU debugger for i386-elf cross development"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftp.gnu.org/gnu/gdb/gdb-13.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gdb/gdb-13.2.tar.xz"
-  sha256 "fd5bebb7be1833abdb6e023c2f498a354498281df9d05523d8915babeb893f0a"
+  url "https://ftp.gnu.org/gnu/gdb/gdb-14.1.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-14.1.tar.xz"
+  sha256 "d66df51276143451fcbff464cc8723d68f1e9df45a6a2d5635a54e71643edb80"
   license "GPL-3.0-or-later"
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
@@ -12,18 +12,18 @@ class I386ElfGdb < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "6e6ec30907123d627334dcc3a274d8a6a49bc38b183994b80c1548dc88df0b0d"
-    sha256 arm64_ventura:  "04747e8ea7ea67b2b359aec44bdb7973882238bfa5875fdaacad6402fea5eacd"
-    sha256 arm64_monterey: "fd58ed1c1b40b86f8a7469aa9b111124b62c368f21f9127c924a149bfec74426"
-    sha256 sonoma:         "818a24f4556e1ffd16e0c86d9b694855455a0d7a05ae3778e342b128c30fb44a"
-    sha256 ventura:        "6548064be32454df6e80991675abfb80d17ef718c76cca2a82c966cdf283eb82"
-    sha256 monterey:       "2a8550dd4acf5be7dd83b6a1344a57e2347d6e0096cf9bca8e9875a88c1d0a56"
-    sha256 x86_64_linux:   "8902ec4589ec3d97754542038ec8c4790dbdb67194c8d2a3c789edf9c71e8dbb"
+    sha256 arm64_sonoma:   "a507ca4585ea75e4a5bb40c23ad4d94fe01357e134038b6568bccb5f8d237af4"
+    sha256 arm64_ventura:  "494134c5ffbba504bb6ec0d14bf286686fc2aa78212bbb559c22c49e0a3bff71"
+    sha256 arm64_monterey: "c653d91a6d669787c5435c94f662f6ca09092fd0fd9dabefbcc808cb810dbbaa"
+    sha256 sonoma:         "696ddf4bb8f04054a8583d6c64b6f88662b20167d3f3bf24ced945371dfea06f"
+    sha256 ventura:        "656b3c38d75d82222e3ef4044a41b3a9a63e727d1c3284226044529ddb15dd28"
+    sha256 monterey:       "a935c82c03ad1aa4877d0e2ee89bfad09d616a31f5e27a90c2051cb259b13000"
+    sha256 x86_64_linux:   "c68350e893c7e0af961784e1648b43061d69129ee48b3429b2a9a9da0869e2d3"
   end
 
   depends_on "i686-elf-gcc" => :test
   depends_on "gmp"
+  depends_on "mpfr"
   depends_on "python@3.12"
   depends_on "xz" # required for lzma support
 

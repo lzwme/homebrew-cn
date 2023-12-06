@@ -1,18 +1,18 @@
 class ManifestTool < Formula
   desc "Command-line tool to create and query container image manifest list/indexes"
   homepage "https://github.com/estesp/manifest-tool/"
-  url "https://ghproxy.com/https://github.com/estesp/manifest-tool/archive/refs/tags/v2.1.3.tar.gz"
-  sha256 "b44ea1c4f26f524e01013356fdcf173df222cb43fb1d48ca28e58f027a15281e"
+  url "https://ghproxy.com/https://github.com/estesp/manifest-tool/archive/refs/tags/v2.1.4.tar.gz"
+  sha256 "c4dcc3608d5a4e1139cb35fcbc2bb76c67072b1ed53c1e3497054e9021ea5b88"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "af347bca33b226375b047e77465c387a9786eb96dbb1971cf7ecdb5145c4e699"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3071d91be71cea3bfd5e37b89f7622bf683c9baf889b5088c3bd58eb75a45de2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2f5a7007d4baa1a16e699f4b442260122c1dfbb90f4e96c58303c4f47e29bff5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "eeb4e36b52181f64c33d762b8a146ac458edcabbb5f3e7f14a4d09b4a121bc74"
-    sha256 cellar: :any_skip_relocation, ventura:        "85cf739c0946c83469f41fe4f0489e4faf151231cdf5630f9b7deada0bec3e47"
-    sha256 cellar: :any_skip_relocation, monterey:       "6dfbb0ab1943aef18d87fafba0931f9b8a56012d9753c9f76861beef3618d3e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08ede82e74f06bc147c394970353733947a35c70eed1078eb00b97aeadefce02"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9d7573b73e5095119ba98372844dc301dff178f609b26f9f90efd4d441969b54"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b2daf8c8c84b0ebeae21a13afa00f8bc9fa545008e9c1c43049ed948fceff077"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ec8d068d20ad50905009e0dbdc426217aa862b6c29afd5fa3eef160af0058dd9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6daa891e3024dd1c75056b8bd0e61383bd039fcabce6519c3b9fabefccd16237"
+    sha256 cellar: :any_skip_relocation, ventura:        "0027b517c3dfb485f524de1ca119805817dde49fdb98b9a144f1b38c1be9fc83"
+    sha256 cellar: :any_skip_relocation, monterey:       "7a55c557ee8fa08e6d80ab37abe305703afc17526ad24bb4aad3ef9935364d71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11f4e01317e754f36cd3ca32ee7bcfbca2b985058fca20e2ceee7368153c8bdf"
   end
 
   depends_on "go" => :build

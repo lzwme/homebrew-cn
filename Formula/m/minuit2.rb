@@ -1,34 +1,32 @@
 class Minuit2 < Formula
   desc "Physics analysis tool for function minimization"
   homepage "https://root.cern.ch/doc/master/Minuit2Page.html"
-  url "https://root.cern.ch/download/root_v6.28.06.source.tar.gz"
-  sha256 "af3b673b9aca393a5c9ae1bf86eab2672aaf1841b658c5c6e7a30ab93c586533"
+  url "https://root.cern.ch/download/root_v6.30.02.source.tar.gz"
+  sha256 "7965a456d1ad1ee0d5fe4769bf5a8fec291af684ed93db0f3080a9c362435183"
   license "LGPL-2.1-or-later"
   head "https://github.com/root-project/root.git", branch: "master"
-  # Should be removed with new version
-  # https://github.com/root-project/root/commit/ef61c5a6dff06dacff74fc2e15856bbf80b19032
-  # https://github.com/root-project/root/commit/01d07d5b33ee91cd7fd6c6e615cd4c940710c397
+
   livecheck do
     formula "root"
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "372b6cc373807caa831565296bc78da73b9adfac810e2bd8cc4236b4c4b4ff1d"
-    sha256 cellar: :any,                 arm64_ventura:  "abe92b317e61d3a2eb9bbe0da2373403cb72ff65ca641bce2bc220e5d5fdca32"
-    sha256 cellar: :any,                 arm64_monterey: "8a37e38cb7b07af5d049c1c03dac34feb120af5b6a2aa6eb9ac60bdcf0010330"
-    sha256 cellar: :any,                 sonoma:         "825216002e5be60d60e5d12e1d7715091ac1c7f97e1a80fc4bff7284c17b02c3"
-    sha256 cellar: :any,                 ventura:        "d5038b5036cefcc0faacb3c7f453c538d43e986621c4d2015bcfc058797620da"
-    sha256 cellar: :any,                 monterey:       "4a6515d1d41ae6a26ad80422165c9411045d5439c32f8596b987c317a55ce569"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5474a1c7c17c66779d637b5f811e4ba0972b4389b84ed6e200c49b8b575752cc"
+    sha256 cellar: :any,                 arm64_sonoma:   "46a6c3ab833507b369ddaa8f01a17675f6be756a80397ad7352941dcc4fd715e"
+    sha256 cellar: :any,                 arm64_ventura:  "647a86580b40ceceb93ef633a11f48827b8ff5ff6b0a0f3fc10a019dbcd38731"
+    sha256 cellar: :any,                 arm64_monterey: "e047993fecb18867605f023cdac53f4b4e389d79e71ce67b75fdf5d66fd04c3e"
+    sha256 cellar: :any,                 sonoma:         "7c1c22861e9f17a9145ccd5b73f176f57096c3715d7b53fbcee882388423208e"
+    sha256 cellar: :any,                 ventura:        "12c9da2afbca594f7bc41f8fcb4917135ccd885e38a560351b65ee2911254c47"
+    sha256 cellar: :any,                 monterey:       "f292777a6f6a7a89f1d5d677a21cdfaab6623b616a03960fd901b1c23154190e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "202f11a06135d0b0b556135238ba974282a939a15c6814c071c230ff03639b8e"
   end
 
   depends_on "cmake" => :build
 
-  # Fixes missing header MnMatrixfwd.h
+  # Fix VERSION_FILE path for standalone mode
   # Remove in next release
   patch do
-    url "https://github.com/root-project/root/commit/ef61c5a6dff06dacff74fc2e15856bbf80b19032.patch?full_index=1"
-    sha256 "25a5e3fa2846c83e824bd0a21003658f4c03b6096aa52573179c8aea6228a604"
+    url "https://github.com/root-project/root/commit/25731a7b0731a65f6a949dd249b098fdd612095d.patch?full_index=1"
+    sha256 "058daafb2103b43b9d7775f895f16992050ba339083e844124c551ce9133b0a3"
   end
 
   def install

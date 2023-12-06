@@ -1,27 +1,20 @@
 class SstpClient < Formula
-  desc "SSTP (Microsofts Remote Access Solution for PPP over SSL) client"
+  desc "SSTP (Microsoft's Remote Access Solution for PPP over SSL) client"
   homepage "https://sstp-client.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/sstp-client/sstp-client/sstp-client-1.0.18.tar.gz"
-  sha256 "d879f4f35ab7eae87486edc48b50f99a9af65f5eb6fb4427993ca578bb0e0dc8"
+  url "https://gitlab.com/sstp-project/sstp-client/-/releases/1.0.19/downloads/dist-gzip/sstp-client-1.0.19.tar.gz"
+  sha256 "f14647a58eaa5e6aa65e348225dd3331a11a28ecd2e8ce6234bce25c53144505"
   license "GPL-2.0-or-later"
-  revision 1
   version_scheme 1
-
-  livecheck do
-    url :stable
-    regex(%r{url=.*?/sstp-client[._-]v?(\d+(?:\.\d+)+)\.t}i)
-  end
+  head "https://gitlab.com/sstp-project/sstp-client.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "c8e48110aea4e446af93bba8d6dc2f7919a779c7289f46dddc7dd43744cfb965"
-    sha256 arm64_ventura:  "4150a77157b10963596842ea5c257b70363cfaba28ac3bfff1f9f6074a47ed9a"
-    sha256 arm64_monterey: "6ff8857979b82f4b97457f03a665043bb224e5ad592367146598f66cac391f04"
-    sha256 arm64_big_sur:  "1fe3ed11b72387045483883c2924d15b5a25729edec8dc80a3ddab008d8d4887"
-    sha256 sonoma:         "0bd585f8c1f8b362045b2bb415fbd8eef02eef607b907f0532a0494d578e604d"
-    sha256 ventura:        "132b0a1692c51b79a389c0795fcc228fe980a095dcb5d5679fd0b5e106f3951c"
-    sha256 monterey:       "53b5a095eae90346d602fd869d866e51ae802996e5e709d48155546896e53ff6"
-    sha256 big_sur:        "32ac6352f38629719436d17b75fc28e03d8ddbb9f27710034858da21cc1bd4cd"
-    sha256 x86_64_linux:   "5f415ec7085cc1b3a82a5a5746ca5e27417b003753ed7bde514e6ccef9631404"
+    sha256 arm64_sonoma:   "2953f037ec852640b2b7d14354e8a9419b43141cd9809145d7a9eb14c99a3ced"
+    sha256 arm64_ventura:  "ad03a3a56ce84af2eeb91380f6b5effbff184506e43959319604186a199e9c18"
+    sha256 arm64_monterey: "5ceac69e2991116fe7ac5c77784aa296495fa15ace1885172a6752fb1f4b8029"
+    sha256 sonoma:         "1ec6f61f44a78d8989b253f0c5880d99318326ddd46e745b6ab7c4b247cf30a8"
+    sha256 ventura:        "f299f9f56b2d9a71172762a8fdfcff2af9b0398905329b25c9329c44088b9c16"
+    sha256 monterey:       "e52800df6c7a1b575f7bc10bcb3977f0d494f553f3f77ec3cdac58713ddf20f0"
+    sha256 x86_64_linux:   "7c50dd78ef394ec8eb4ec18347a3c13e529b3a01315be32a048a0da282488006"
   end
 
   depends_on "pkg-config" => :build

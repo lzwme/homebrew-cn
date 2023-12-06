@@ -7,13 +7,14 @@ class Fd < Formula
   head "https://github.com/sharkdp/fd.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "52d6ff0f147babfa22162f493c0cc7a97dc57b1461f57eb485c3f9dfcecd3be8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e8cae0dad642e8e9675133ffa28b71d0ac8e44d7539cd3d7b2c50de31a9537fc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5e089fd913851353ebf64ce69b19fbb5b6985c04710c3783c84778359d58d94a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c13159ca10073bc82ce3c955aa0aaa04eee6d98f0693c3eba3e4dd394acd12cc"
-    sha256 cellar: :any_skip_relocation, ventura:        "8ea4261b080f82ea6e286bddcf328e75ddff7e2cfc39c3d54329ccfb50716f75"
-    sha256 cellar: :any_skip_relocation, monterey:       "98802160ee5705eb5cf8aa5eb1478ee3bc5148073aab33eed23773cfc737b005"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "934ac23a2432d4055a59e30d88eb80af723076aad313e55625107a1e4080c931"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "314376b1b9785b927ebcf15e7395ddba0a1dfc8d10752b39a1e989651a07c8ed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1cdd3ad4bbd6f7edcd82b7e507c513cb8693bcf37669d67e23c985e8667b0f43"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ee8dda936246d9b6280f06ef7cf861b14f37926777f8d3746ed1694372c05e34"
+    sha256 cellar: :any_skip_relocation, sonoma:         "25ced192ca9dda96ebd8c52b4a944052a2147156ee10d01bb71211f1567ede17"
+    sha256 cellar: :any_skip_relocation, ventura:        "5bd1806efd2a1a79f387951528d82ffdba547ed4194a76e334d8e219d4bff3b3"
+    sha256 cellar: :any_skip_relocation, monterey:       "2c4c79a54ccd73e36730071793f42acbf8e39a262fcd6d26c8c6a52ef137ac2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b5cf8de26dcc9336857a3f93e9d66b92fdfe9aa874f697e8b579ed7bcde06f8"
   end
 
   depends_on "rust" => :build
@@ -23,6 +24,10 @@ class Fd < Formula
     man1.install "doc/fd.1"
     generate_completions_from_executable(bin/"fd", "--gen-completions", shells: [:bash, :fish])
     zsh_completion.install "contrib/completion/_fd"
+    # Bash completions are not compatible with Bash 3 so don't use v1 directory.
+    # bash: complete: nosort: invalid option name
+    # Issue ref: https://github.com/clap-rs/clap/issues/5190
+    (share/"bash-completion/completions").install bash_completion.children
   end
 
   test do

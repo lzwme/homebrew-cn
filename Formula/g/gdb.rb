@@ -1,22 +1,22 @@
 class Gdb < Formula
   desc "GNU debugger"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftp.gnu.org/gnu/gdb/gdb-13.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gdb/gdb-13.2.tar.xz"
-  sha256 "fd5bebb7be1833abdb6e023c2f498a354498281df9d05523d8915babeb893f0a"
+  url "https://ftp.gnu.org/gnu/gdb/gdb-14.1.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-14.1.tar.xz"
+  sha256 "d66df51276143451fcbff464cc8723d68f1e9df45a6a2d5635a54e71643edb80"
   license "GPL-3.0-or-later"
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
   bottle do
-    sha256 sonoma:       "98e8e18057f1a430167b0b7a281be4e8b3ef7037e1be360505a5a39cde446eac"
-    sha256 ventura:      "3bdf74b4973ed42f7f3fc1620d7dc50b3834d883067882a74ea1ddf9c7cb92a5"
-    sha256 monterey:     "1d69dacbbccd725c1b30efcf381d0239785999c6b14dacfc7b10caefe2686ebd"
-    sha256 big_sur:      "fdede992bdd9289f728b721d6489c96e93a37299ab64d817fab2a025a61ff4d7"
-    sha256 x86_64_linux: "21e2853f8bb446b674fd50382799fab4257f067268fd2eab8858e18001920c77"
+    sha256 sonoma:       "57922b323fbb136059a16827719005440be39647b9e9f548e8ec6ccfc25620b1"
+    sha256 ventura:      "a8dbbcc02d37be4a6b95d1676a14e1ba51190e4a0d0467d2b0c7ff58dd58d4f4"
+    sha256 monterey:     "6c954b0c7825b7613432476eb3877a8dad41825a3aa85851da253f70843a03f5"
+    sha256 x86_64_linux: "df38b5c447d9f463f6faf88a0905f86a8ec0e9efea8068100497f372d4326f1e"
   end
 
   depends_on arch: :x86_64 # gdb is not supported on macOS ARM
   depends_on "gmp"
+  depends_on "mpfr"
   depends_on "python@3.11"
   depends_on "xz" # required for lzma support
 

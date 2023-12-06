@@ -1,8 +1,8 @@
 class Freetds < Formula
   desc "Libraries to talk to Microsoft SQL Server and Sybase databases"
   homepage "https://www.freetds.org/"
-  url "https://www.freetds.org/files/stable/freetds-1.4.9.tar.bz2", using: :homebrew_curl
-  sha256 "f191ff106fe34ad4d277a3f83c7ebedd35b92436549b197a82a2d92025095598"
+  url "https://www.freetds.org/files/stable/freetds-1.4.10.tar.bz2", using: :homebrew_curl
+  sha256 "c7eaf226bdcb1cdc1b221696532ccd25f4e4e7754265a29777a3400084bde698"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Freetds < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "1fcec005bae9b4c5ec6615ce1e4a6248b72a523f17a8d36563c49eb35d832423"
-    sha256 arm64_ventura:  "8953434e15d48facd63f406f605d9cf36f1525e1789850de2ec027a10c17bc7b"
-    sha256 arm64_monterey: "dc9cf4710010e741e500b963bca3271dc28b4f8e6d4960c7dce89b83a20d44d4"
-    sha256 sonoma:         "768169bd8db27ed0c4a1670094b21239c158b2e102124ad41740ba89016edf78"
-    sha256 ventura:        "a8826f092b2e2ac443332a5be0e90f878fb5f4a36d5a36165bea5f14bad90765"
-    sha256 monterey:       "83b53e381982e0aeffd6eeab1ba54be9841ccd925b091efb199632efeceb65a8"
-    sha256 x86_64_linux:   "12f04553e73a17f330ac0849e647c8040dcb03efd3b2f9a0c8f015a285cb52c0"
+    sha256 arm64_sonoma:   "315e12474cf2c66f4ef2e5aa2bee074a7519cf684b8a620aa727574bdb535ae4"
+    sha256 arm64_ventura:  "356939e0d9ebaf186aadd07e3415cd169bf792d42a5266876a2c1f476f1173a1"
+    sha256 arm64_monterey: "cbc68148468adaeed5729454c328610e3938306d12cfd0bc735e388851e651ba"
+    sha256 sonoma:         "eb057539545529411ec00449559360e570c009398aa22574f9f98aae6ce9c19b"
+    sha256 ventura:        "79f9bbeb9ecbaa828722baef4a2613b94ae7059f04f031f971a5c71723b591c6"
+    sha256 monterey:       "25d5b36975a97e4689b963a026ed1420f816b461d502c8a74030f167986e1988"
+    sha256 x86_64_linux:   "ddd888f2fdacd03be1195029e9a9ede1593dceef4b81677f86718e9f199312f6"
   end
 
   head do

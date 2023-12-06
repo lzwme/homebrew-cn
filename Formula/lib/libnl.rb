@@ -1,12 +1,12 @@
 class Libnl < Formula
   desc "Netlink Library Suite"
   homepage "https://github.com/thom311/libnl"
-  url "https://ghproxy.com/https://github.com/thom311/libnl/releases/download/libnl3_8_0/libnl-3.8.0.tar.gz"
-  sha256 "bb726c6d7a08b121978d73ff98425bf313fa26a27a331d465e4f1d7ec5b838c6"
+  url "https://ghproxy.com/https://github.com/thom311/libnl/releases/download/libnl3_9_0/libnl-3.9.0.tar.gz"
+  sha256 "aed507004d728a5cf11eab48ca4bf9e6e1874444e33939b9d3dfed25018ee9bb"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 x86_64_linux: "2e884272eb8cb2d928b3ec6daefb1d2aaa570bde55ff64a95587b28ce4b2dac1"
+    sha256 x86_64_linux: "07804611bd9c14d970bba5b051a54e71045331061861dc1a9c128ef5ab6d80ca"
   end
 
   depends_on "pkg-config" => :test

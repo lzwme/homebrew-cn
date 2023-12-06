@@ -1,8 +1,8 @@
 class ArgyllCms < Formula
   desc "ICC compatible color management system"
   homepage "https://www.argyllcms.com/"
-  url "https://www.argyllcms.com/Argyll_V3.0.2_src.zip"
-  sha256 "b31ba4c055445be01d3a560cbc3a5a38c62fbd676e38d7495dc6ffc9aa3c964c"
+  url "https://www.argyllcms.com/Argyll_V3.1.0_src.zip"
+  sha256 "4fdd5a1d7bc6dde79a54e350ec9374f6ef00b53903ee0d184cdfa4a11f0ecdcb"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -11,13 +11,13 @@ class ArgyllCms < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "083267f64369a64dd0c5ed50b801270478444035dbc0675c990d9e2f5c375443"
-    sha256 cellar: :any,                 arm64_ventura:  "847b973903d22bf9d4a61a1b8f1dd44e64b2a5c7fe4bb406abc9a8f79a85734c"
-    sha256 cellar: :any,                 arm64_monterey: "03bd01d9a18255f331819f96758dc62096256c93657c727577532b1c573ffe35"
-    sha256 cellar: :any,                 sonoma:         "907afbf5faa2049f33e9b1c05ad1db0e6beb0874eabcbbf6573e1c7bce074aa5"
-    sha256 cellar: :any,                 ventura:        "9302648254a90f14748ed52470c8eb92b009520d54f847ab69165d5139217cf1"
-    sha256 cellar: :any,                 monterey:       "654fd0c65d0053d04fdf92f68d3b01e3157c4889458e5f25d2975a6863b1e9fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdf87674a178a4e64514780b64cd2d96d18099cfb46f3759d0d8c7ca6e04fa78"
+    sha256 cellar: :any,                 arm64_sonoma:   "4c387a6551506759bc97e05f1a8210c9daa6067766a928aec40f6f53f98cece4"
+    sha256 cellar: :any,                 arm64_ventura:  "f278516489fd047cf57e844c11b865d174dbca8d0fd3f8933d043a4ec8fcc9b5"
+    sha256 cellar: :any,                 arm64_monterey: "5291dc8cc86cead75c15e6911d38953c384bea72b2f73ef3ebc910b8f262bdfe"
+    sha256 cellar: :any,                 sonoma:         "a882ec21e0a632a75ff2ba7de2599811c18bf8418db0838c45c820392f999e51"
+    sha256 cellar: :any,                 ventura:        "1a8e2ff8c685c60e4bcadcc221453fe3d5dfdf7fc0394afcf99d628035139a5a"
+    sha256 cellar: :any,                 monterey:       "4b467bb519a71f349989b2ad225704703a6dd4ae8525624ac4f562f3ed2c4262"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c071c90cae813ef853d2b3d17fa25b4f846b2a6079392b0f7270e194d135c51e"
   end
 
   depends_on "jpeg-turbo"

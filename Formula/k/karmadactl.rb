@@ -1,19 +1,19 @@
 class Karmadactl < Formula
   desc "CLI for Karmada control plane"
   homepage "https://karmada.io/"
-  url "https://ghproxy.com/https://github.com/karmada-io/karmada/archive/refs/tags/v1.7.1.tar.gz"
-  sha256 "e3c61a69331fd9643a7530003486ac3aafdba5c58e3b8c921f4af62ebc6ab1c9"
+  url "https://ghproxy.com/https://github.com/karmada-io/karmada/archive/refs/tags/v1.8.0.tar.gz"
+  sha256 "3b238e4373a3d77fcea48848ebf2879ce7950513407a00fa767baf36595013e1"
   license "Apache-2.0"
   head "https://github.com/karmada-io/karmada.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "af659e4316241789e085e0f3adfbfaccebba8c30eb5a0e6b05ab4b12b84aa986"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce46258a7dfb3a51554705ecc01d21412269f567ccd70f3cf9f74731e3ea4a86"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "14cad6e7fb084cfb107f4bc0cc8e4f399bed74bc00abe1a08d03b5d4be8a7f72"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f994f81fcacafe2ac93198ff7b276497f40c1f3aaa42b458d6e62194a0aaa9dd"
-    sha256 cellar: :any_skip_relocation, ventura:        "7b09013f7cecdbfd98195f0d0679ec077d749a6a4d3e3a8c8869c063607405f2"
-    sha256 cellar: :any_skip_relocation, monterey:       "c5c55fb16583280d00882d452991a1b93571e075491fb5892dbec451dfd2a337"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34199a981edce2fcc3d9d44de8045970ae46ada27718862191338de8d6810b0b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb8d9d7957ec7bf6e6448bae2836a914ea8b04ce4682d978170a7bdab4161072"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "964f752775a32641203350713b0ac6dcc0b3ec9873af644574f19953332eba99"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c340de7f4595e650b5ee5c8321fd4d60fb42f2029aa05c645e7dc6c51df6bb72"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2b7564c51c5ee863b55646e3c6e3ac6f3baed44feafb0d88565b716a88f95a38"
+    sha256 cellar: :any_skip_relocation, ventura:        "f30f9a18285e46cc3c86af745885d117b17ac730b0e111843c895d155cb1a35b"
+    sha256 cellar: :any_skip_relocation, monterey:       "5a7117ec7fc58abaf4286a20e9e5a801572b5c721910be402b72e8030b3f91d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42d06522b6e60ad965aa4e0f874bb7985c59c4706ed51b7639e4c7d6829805f8"
   end
 
   depends_on "go" => :build

@@ -7,13 +7,14 @@ class Broot < Formula
   head "https://github.com/Canop/broot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4879bbeee97dc553247507b38e94fbcc1f3e2b077b893b48ade495753c0e20e3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6fb341cff0b1a265a48bff9f74dfdc68fd738f43fd310e2698dffe46e633c0c6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5a7148707de6fe0ad2aa2de915319779a27b2151cf2c9052c171a84ae50e88cf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "51297e5a8c0030808791d36879f729264dea65d1dd667f746dddeec184d78e8e"
-    sha256 cellar: :any_skip_relocation, ventura:        "46c59694416b5350d57b868f555e924a6e9f41d711fc41e051d5c73f4f288caf"
-    sha256 cellar: :any_skip_relocation, monterey:       "0a9276b984e2d962a3d3500af1870c73119b28fbcea79bafa45d67ae82b1fb3d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bbe7840e3955613a6e0d2c4032594b353809ec5feedf887772def0a522a5454f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0b7f74611b986c4a1a1deff4b058f6c32d65ce10db8fed887b580e573240985d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "10ae2914e9858c7559bc9b20ee6311d3efd0541a609384dbad1ce6434939d97a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e00f8bbe37acabf33e5de2208279dab294d32833876ebd3b5d3467f73e084073"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9bd397fb39e541a19e57400e87a59a375aafb060e5366697cc5e9887ca26f03e"
+    sha256 cellar: :any_skip_relocation, ventura:        "212fad928f2714ab8d6e51a06f8f9afdabda9b82d41783f4a3ba0bf942917395"
+    sha256 cellar: :any_skip_relocation, monterey:       "22ae914e2d7982fa84cc5a4b18506a965841777d58cb62e42dfb35c3de1ce227"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e807506a5d03965ebfa3072a50c39f4e07109167b862f1bf34148ef9d924e549"
   end
 
   depends_on "rust" => :build
@@ -35,12 +36,15 @@ class Broot < Formula
     # Completion scripts are generated in the crate's build directory,
     # which includes a fingerprint hash. Try to locate it first
     out_dir = Dir["target/release/build/broot-*/out"].first
-    bash_completion.install "#{out_dir}/broot.bash"
-    bash_completion.install "#{out_dir}/br.bash"
     fish_completion.install "#{out_dir}/broot.fish"
     fish_completion.install "#{out_dir}/br.fish"
     zsh_completion.install "#{out_dir}/_broot"
     zsh_completion.install "#{out_dir}/_br"
+    # Bash completions are not compatible with Bash 3 so don't use v1 directory.
+    # bash: complete: nosort: invalid option name
+    # Issue ref: https://github.com/clap-rs/clap/issues/5190
+    (share/"bash-completion/completions").install "#{out_dir}/broot.bash" => "broot"
+    (share/"bash-completion/completions").install "#{out_dir}/br.bash" => "br"
   end
 
   test do

@@ -1,19 +1,19 @@
 class Libextractor < Formula
   desc "Library to extract meta data from files"
   homepage "https://www.gnu.org/software/libextractor/"
-  url "https://ftp.gnu.org/gnu/libextractor/libextractor-1.12.tar.gz"
-  mirror "https://ftpmirror.gnu.org/libextractor/libextractor-1.12.tar.gz"
-  sha256 "4c87f339b482a038042498cf10af582222b577e937498cd654534e3108d5a7b1"
+  url "https://ftp.gnu.org/gnu/libextractor/libextractor-1.13.tar.gz"
+  mirror "https://ftpmirror.gnu.org/libextractor/libextractor-1.13.tar.gz"
+  sha256 "bb8f312c51d202572243f113c6b62d8210301ab30cbaee604f9837d878cdf755"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "c59d6276ab5571f7e5dd1be8f91d99259491b4e1c8f78493da6db5219d7cf719"
-    sha256 arm64_ventura:  "e4e7b3622d255c32e0f094f95f404211f539cc49b51896777a99d86da361cd5f"
-    sha256 arm64_monterey: "2356d67f6d875ef1096a750d7be42ea3d671ec71daed75b3d141d8da0d8fd436"
-    sha256 sonoma:         "344450e6100bef183b0e2e1e048ca35c89d94cebe0b35a274daf97cb01e29fff"
-    sha256 ventura:        "7a9736eed52e4c836a668b1c4033de1606893dd80a62bfe757ab35fa8dbd6a69"
-    sha256 monterey:       "efdbc43d2215985f645b9bc87a7e41291b32988b9e933e634728d27ef570a6ae"
-    sha256 x86_64_linux:   "2530119fb24ce9f027228cf1cd497e795ed43413d84ae7f4822919499f7bcd4e"
+    sha256 arm64_sonoma:   "e011f7851397a725c19c5774f33fd92a880476a8ae37c5c9f23a5d4aad084cac"
+    sha256 arm64_ventura:  "10788f93e331dd93dab2eb899fa31593b72fedcb789a0c7c807c4647c495d7f9"
+    sha256 arm64_monterey: "5eab278d0efbc37c53c5780bd0b7a709698d7339637268b13f0e943c06ef843b"
+    sha256 sonoma:         "c7c06e9774f028033a5204a67a76024ffc8b0f9abdba542ca314f2af92c0d524"
+    sha256 ventura:        "e4c884c473f6ac563510f45077f13108f48ada926b9c973e4207612f5cd77695"
+    sha256 monterey:       "18605b71d83d1d0cf0162b79d24e74917572cfb132aca81e11ed20570f8b3c7d"
+    sha256 x86_64_linux:   "f3cbd363b695aecf683d92a8b56aa5cb9a8d7e3d81b6190892c8393de7f4d648"
   end
 
   depends_on "pkg-config" => :build

@@ -1,8 +1,8 @@
 class Fish < Formula
   desc "User-friendly command-line shell for UNIX-like operating systems"
   homepage "https://fishshell.com"
-  url "https://ghproxy.com/https://github.com/fish-shell/fish-shell/releases/download/3.6.3/fish-3.6.3.tar.xz"
-  sha256 "55520128c8ef515908a3821423b430db9258527a6c6acb61c7cb95626b5a48d5"
+  url "https://ghproxy.com/https://github.com/fish-shell/fish-shell/releases/download/3.6.4/fish-3.6.4.tar.xz"
+  sha256 "0f3f610e580de092fbe882c8aa76623ecf91bb16fdf0543241e6e90d5d4bc393"
   license "GPL-2.0-only"
 
   livecheck do
@@ -13,13 +13,13 @@ class Fish < Formula
   pour_bottle? only_if: :default_prefix
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0abdaa242d16da4102e8ec60bafccfc275146a86cfa7f121555f836d37dbbc4b"
-    sha256 cellar: :any,                 arm64_ventura:  "440d15eb9224e4ca7463d92cb9e95e75cb426464954dd43d71c8f66da71e6b29"
-    sha256 cellar: :any,                 arm64_monterey: "90d8c90244fcb78a6cfa18756a64c9904a76f16866ee95b377aff83ae572fa37"
-    sha256 cellar: :any,                 sonoma:         "1d5c227e03b62bc5b3511f2407d661df4e59707cd8319cd0e1ee04ae85216eb1"
-    sha256 cellar: :any,                 ventura:        "ac808d5d75abcaa86d1bed39738a2ddd2e71ad1988d94b87161f06e7b383079c"
-    sha256 cellar: :any,                 monterey:       "430c75305b0861545f895dc15512d68cad1b8cc526e7ec1e891275698c128e4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24daeda46873924ab548a1f1253d9a6d6a91046321f7b93383d1788370bcaa6b"
+    sha256 cellar: :any,                 arm64_sonoma:   "9fd37026489e9daac1ce77284d05e9f7af0a4751c3dd97828112b58e71c10dd8"
+    sha256 cellar: :any,                 arm64_ventura:  "0529f97d5e5a07308ca8bedd29b038cf0050aebc546f05efa59aab292fa17c1c"
+    sha256 cellar: :any,                 arm64_monterey: "d60d08d8bca99b3bd96f2f9c226b483ca64d31940521ef5036da289ab82071f9"
+    sha256 cellar: :any,                 sonoma:         "81610211da71108ad9794f3bb3ee2a3db7fe43e08108c50161fccf71e3a87e9f"
+    sha256 cellar: :any,                 ventura:        "31f67946b37763f9abf17cdbf652a23747eabe49bab6f535c9706cd94b939fd2"
+    sha256 cellar: :any,                 monterey:       "7c969d93c021c32c671695bc0e5248e63e75344e5d2e2c58f2758d3abc6c1edd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0faad1c9fbeb7737b67fba61450fe5d4fe881559d0a4e56b5f654aba32f12b85"
   end
 
   head do

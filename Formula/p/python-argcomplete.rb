@@ -6,14 +6,14 @@ class PythonArgcomplete < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eaecc6ee932a61674a328652aefc43870e6770e5493c6a31f109995862debae4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29d434e9d29a9e276fea01bf58dfab7540495c1023c1241eafcc78690d88139b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5ab0ab1909932193f374e0e3433ee552932b78d40d2881ac7af313b5a671d9d1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "34d793285c0f9786639a45bf34b9b3e2e17e1a6c4b55b9e5f6f6e221042aef3e"
-    sha256 cellar: :any_skip_relocation, ventura:        "515689af1eda35e920078c0828d145aadaf673616cad95e7d0da7139e6912fb3"
-    sha256 cellar: :any_skip_relocation, monterey:       "1cae4ed02101f2ec892cb13bd28ff4d731f81796c58db63017743df399570801"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba1422a6dd9709bf13597f191e21d827a9d82780ff0b4b31fb1604f68250f5a5"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "22dd2c1b6e5e61c7c819cecb54d89e457f5c936859caaf738b755ec15cfcab25"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bb97b94c68fcf2db8ce0db387cb0cb10a14c1c9080b5258d511a92f6289df1ed"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5cdbab13e1844a6c65c9897229b583fcbae515aef7006fa49ff2acbc5d2461d2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b11e58a067d95dafe5b61cab890224a74e94a03b04812b983df5d3383c1980b6"
+    sha256 cellar: :any_skip_relocation, ventura:        "db5227723f1f36e243a3279534f4cf9d8afeaae33d664b172cfa92b036fcf678"
+    sha256 cellar: :any_skip_relocation, monterey:       "042cb233a610ec7b6a31ed085b21d2abb4aebdf6277fbb605c0ec466c31adb6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90dabf10008c342ed060fc9a3d0605d8197a44134f246de7945e2593a3ddbfd8"
   end
 
   depends_on "python-setuptools" => :build
@@ -32,7 +32,10 @@ class PythonArgcomplete < Formula
       system python_exe, "-m", "pip", "install", *std_pip_args, "."
     end
 
-    bash_completion.install "argcomplete/bash_completion.d/_python-argcomplete" => "python-argcomplete"
+    # Bash completions are not compatible with Bash 3 so don't use v1 directory.
+    # Ref: https://kislyuk.github.io/argcomplete/#global-completion
+    bash_completion_script = "argcomplete/bash_completion.d/_python-argcomplete"
+    (share/"bash-completion/completions").install bash_completion_script => "python-argcomplete"
     zsh_completion.install_symlink bash_completion/"python-argcomplete" => "_python-argcomplete"
   end
 

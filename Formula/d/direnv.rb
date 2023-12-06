@@ -21,7 +21,7 @@ class Direnv < Formula
   depends_on "bash"
 
   def install
-    system "make", "install", "PREFIX=#{prefix}", "BASH_PATH=#{Formula["bash"].bin}/bash"
+    system "make", "install", "PREFIX=#{prefix}", "BASH_PATH=#{Formula["bash"].opt_bin}/bash"
   end
 
   test do

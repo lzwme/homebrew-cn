@@ -1,22 +1,19 @@
 class MathComp < Formula
   desc "Mathematical Components for the Coq proof assistant"
   homepage "https://math-comp.github.io/math-comp/"
-  url "https://ghproxy.com/https://github.com/math-comp/math-comp/archive/refs/tags/mathcomp-1.17.0.tar.gz"
-  sha256 "1779bcdac5d23d90997627364a5943ef4883c6eb54d67ddbb1dfbe6b7795a188"
+  url "https://ghproxy.com/https://github.com/math-comp/math-comp/archive/refs/tags/mathcomp-1.18.0.tar.gz"
+  sha256 "7623544e912dcee643fda4b4c89e07fc011a515fd60e976462b6cc29cd5f2d1e"
   license "CECILL-B"
-  revision 1
   head "https://github.com/math-comp/math-comp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e68a6652740b64db0658a91b0ceff0d2ee184743477d25fa26347cf2f5dbea68"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3186adb11d4514d8c6d12dbf04260dc806aea29bc16b3cbd9dccfdb52d6f7059"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "94f8954a1405cad8a329d1503114d4852e921c7afc66d94aa225651dbd53d743"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0d514083ddf8572e14a423d560c7519fe13e7b5d0e581e9ee1db26b3efe272e5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "14e0815586a09d9d4ff063b29b8f913558a860c7d828a0ee95e3bc260fc87fd4"
-    sha256 cellar: :any_skip_relocation, ventura:        "e09517b8d92ebcbb3285d2320079c9df50277f1c3254d98f1a3ffd0bdc70a4d7"
-    sha256 cellar: :any_skip_relocation, monterey:       "68e9fffd287137266c5378b64fa2c98d0f3b115368593277d216b72af4840c2f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "91840883012bcc64b6bf43ea554c2568ac5a91de2cf616a0199a0918afb6b73d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5570b0f3dc1020a8229573f89d38cb3e2064539ef061b8cec693c632d3ac699e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf9910e17e82f0da672a0ab92f12291f36fd3dc39b43321f34d37017fbdca828"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "59f6e0cae487a24cba303a7e513d8ebba1d639fe34013d935206f66cc86616c3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "832f1814f6ecb2c9477e0551fa184e711d61dd6e4165218ca205fb190c8109a8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d48a062a31d521a6f9bbc821b101cf7c194116bc168d3e4d99f0487842b3304a"
+    sha256 cellar: :any_skip_relocation, ventura:        "d6528d8f8c3b631ebe20afaf72c33bd879abde7bef5f988237a0bd90c21c7f8c"
+    sha256 cellar: :any_skip_relocation, monterey:       "6849eebc16e35a589a9ef05988c858faaf2d3a35217e9a1b219f3d8f2605e630"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03d1f37344e58080999eb20598ad651910a325d998821b254792ec204383b129"
   end
 
   depends_on "ocaml" => :build

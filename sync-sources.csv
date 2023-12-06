@@ -1174,6 +1174,7 @@ Homebrew-homebrew-core/Formula/d/daemontools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dafny.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dagger.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/daktilo.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dalfox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dante.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/daq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dar.rb, Homebrew/homebrew-core, 0
@@ -4695,6 +4696,7 @@ Homebrew-homebrew-core/Formula/p/pdfcpu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pdfcrack.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pdfgrep.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pdfpc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pdfrip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pdfsandwich.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pdftilecut.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pdftk-java.rb, Homebrew/homebrew-core, 0
@@ -6864,6 +6866,7 @@ Homebrew-homebrew-core/Formula/y/yarn-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yarn.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yasm.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/y/yatas.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yaws.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yaz.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yaze-ag.rb, Homebrew/homebrew-core, 0
@@ -9493,6 +9496,7 @@ Homebrew-homebrew-cask/Casks/n/notable.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notch-simulator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notebooks.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/notedup.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/notes-better.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notesnook.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/noti.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notion-enhanced.rb, Homebrew/homebrew-cask, 1

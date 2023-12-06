@@ -1,18 +1,18 @@
 class RekorCli < Formula
   desc "CLI for interacting with Rekor"
   homepage "https://docs.sigstore.dev/logging/overview/"
-  url "https://ghproxy.com/https://github.com/sigstore/rekor/archive/refs/tags/v1.3.3.tar.gz"
-  sha256 "2e4e75fcae81ef85e6e3c20e00a9b590bfa86c0706a6c902024222cd61b64c47"
+  url "https://ghproxy.com/https://github.com/sigstore/rekor/archive/refs/tags/v1.3.4.tar.gz"
+  sha256 "08e220b6fbc473ecd3561e88c4fde2ca259f9daa895a17bed1f458c33c33a2b9"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8e9092fd560c12d23cc01b882692d249c0d77bca9fafd00a3d31857d2ca212e2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29542b8f977f39f3c7680d827a4df3489810c5f97697c40d5c1dce51ea33ca9f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cd41e1dbfc5539f559a13b59c33889b128cca9e853188aaaf21b7133b97365b9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "49b6c11db4055fdb9318843fd3d3274c0f6b7cf35b0347e31f1b3e9e82f11d04"
-    sha256 cellar: :any_skip_relocation, ventura:        "fc61b0c1aba0abd6491beffa1f26e5c2ae54aab100e786dffc343d13c6cf9694"
-    sha256 cellar: :any_skip_relocation, monterey:       "d0392124e8e477033933ac3027e702784c1fd366d0296c5cff30794e1670d089"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38b909afeff48519491095e9420c506b5ceca1d8667f96b1980b794427d5dedb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e8e26b614bd6b605583d37db40c0bb3dbddfd7ea6e725def7707060e36bda87b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cc9eb88576c282cf247282d44695b097560e7d3b27c2d3a38b20b152bf2f52fa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ff8766ff2a64b3fa5bba04d46095f67e979f79a3380bf0fff25a0fa348c8e66d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a57b83a3915f9a5426da8097d71a05071d84e6ebbfb6bf633e94e4eee4857952"
+    sha256 cellar: :any_skip_relocation, ventura:        "66b5187e35658f527e08cc31216c40b3274fde718fe61b1567f05b3fa8cbb011"
+    sha256 cellar: :any_skip_relocation, monterey:       "0d2643ccb1004498cd686728608ba6f901ac147f41c345a60bb25cff426ec208"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c10a4d35c226ad3d905235bfa08322ab2d69bc207fafd1d37f2a57ac544bbfe4"
   end
 
   depends_on "go" => :build

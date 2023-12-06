@@ -1,9 +1,9 @@
 class Aarch64ElfGdb < Formula
   desc "GNU debugger for aarch64-elf cross development"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftp.gnu.org/gnu/gdb/gdb-13.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gdb/gdb-13.2.tar.xz"
-  sha256 "fd5bebb7be1833abdb6e023c2f498a354498281df9d05523d8915babeb893f0a"
+  url "https://ftp.gnu.org/gnu/gdb/gdb-14.1.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-14.1.tar.xz"
+  sha256 "d66df51276143451fcbff464cc8723d68f1e9df45a6a2d5635a54e71643edb80"
   license "GPL-3.0-or-later"
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
@@ -12,18 +12,18 @@ class Aarch64ElfGdb < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "c079442c342ce94b213f7551fc57a67c81ac91d1344da58c4aa77f3935bd99ac"
-    sha256 arm64_ventura:  "e5fbbe574ba723fe4fcb3f9b3bdadd882750b1b749e72d43a6ad63eb470f5a2e"
-    sha256 arm64_monterey: "4c13676f6ae41a761955748c4bfa00ea1f63ec98747562baf70f20cfbad97138"
-    sha256 sonoma:         "2bbb1821162de6f90f1d3a5da4b68dfafc376900faf0bbc1a77791b53b5e47a2"
-    sha256 ventura:        "92c1733e1328ca927d2ee9c24913b910f2c151d73742d3befc19a04a57548a62"
-    sha256 monterey:       "2fc80c9827c68d611d9d8f930f5f83ab196ab85a2190e063e9eb5e356f74530e"
-    sha256 x86_64_linux:   "6f4bc10aca712b3983b25ae43d7fe4b0e5b5800dd1d5aedcdd50dc4555cb313f"
+    sha256 arm64_sonoma:   "065450534767b3ec1d9fbeca9110a0dd868bfc998db8be9fb475704107952504"
+    sha256 arm64_ventura:  "f9ea3aeff239d3ba7ddd1f0aaca076733677bd986ce279ef68b9b90ca8fca4cc"
+    sha256 arm64_monterey: "006e36da597f1b61a54ab821681fa4e4ac60088145fec620f9c6405573c9547d"
+    sha256 sonoma:         "04495b2b2e32e858a669556a40ad248d65c84e00d413ce5b4e7e8b1155782af0"
+    sha256 ventura:        "c09878cda47e647ee836b2c40b228ac09f4bbde2aa3329a2544e5a002dbdec7d"
+    sha256 monterey:       "5de4468cb0c77e443654e9a56308b436155ec8b93eaa79a7d1b57e39ded0ee02"
+    sha256 x86_64_linux:   "cce543b130cb30ba013fda6eae561373ecd5afd79945d4fb09e43f2b90e80578"
   end
 
   depends_on "aarch64-elf-gcc" => :test
   depends_on "gmp"
+  depends_on "mpfr"
   depends_on "python@3.12"
   depends_on "xz" # required for lzma support
 

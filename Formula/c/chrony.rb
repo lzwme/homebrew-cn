@@ -1,8 +1,8 @@
 class Chrony < Formula
   desc "Versatile implementation of the Network Time Protocol (NTP)"
   homepage "https://chrony-project.org"
-  url "https://chrony-project.org/releases/chrony-4.4.tar.gz"
-  sha256 "eafb07e6daf92b142200f478856dfed6efc9ea2d146eeded5edcb09b93127088"
+  url "https://chrony-project.org/releases/chrony-4.5.tar.gz"
+  sha256 "19fe1d9f4664d445a69a96c71e8fdb60bcd8df24c73d1386e02287f7366ad422"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,15 +11,13 @@ class Chrony < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fee2403905bacfa6db6342781141d755d688d1e3f36dfd4a1b48ef90d31a6470"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cfb99fd7b217e10e1d9ae7690c40e7f863fc6f42111b35ddc1b601a92827df5a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c8b3a86682971e2294dc86510f9a51b5537bc32010d1537c05f2f1b51f6e1e2d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4261a28c36662da557d8e52b70a25948f8096b0ba29f0017d1e19a66ee07f0c9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "55aece9c4b9253ec0318afd78a46d0136d4f6b6d1a018e394e69762d57f9256c"
-    sha256 cellar: :any_skip_relocation, ventura:        "940ecfd6fb5a46b2d39f182cd10c8f738be2a3bff664c544dd4c7466178b035a"
-    sha256 cellar: :any_skip_relocation, monterey:       "1de81641ae0c6205645751f4f9cbecfa788a7ce14f4dbff4f23675c6d8f5e8e5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e3917015f55056098ecb2f7526ca50df4ae90cfe6548ce3027708d2196009504"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38f294460a17ac1720cfe8c46b2958caf0fbf19c2cead23d468acf874d942f91"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "47ebf8f7344e63f305e91ef47109ce7cc2aa80c4161b6fd8dac72d1cbf31f7c5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4994b90406029f34204bb3054e4cf68b3eb06b3182e2461076612274db8ad0f8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "03f395c840e097380dd58718c16157a35edc0bfa7beb34b43754e2d0915bbe15"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f3fbf6340640302d181354813d3fb4fea3a2036e6909a1a54a7a70a37966190c"
+    sha256 cellar: :any_skip_relocation, ventura:        "43b22abad1f05d76255630567df0636902021a0588f2c58f0bed532a7996eb2f"
+    sha256 cellar: :any_skip_relocation, monterey:       "27264818aa759d9655b218f0c8a3ff8ae916b2374712fb3e9d5b8ee42330a5c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52eb2a90d0a86c0259c2bf09ae9474262adb420c5bc6dd75ecb0ff8b5124f1c9"
   end
 
   depends_on "nettle"

@@ -1,8 +1,8 @@
 class Coq < Formula
   desc "Proof assistant for higher-order logic"
   homepage "https://coq.inria.fr/"
-  url "https://ghproxy.com/https://github.com/coq/coq/archive/refs/tags/V8.17.1.tar.gz"
-  sha256 "724667de65825359081b747d41fdbead0620d43b57aa8377a27acd4b072585e6"
+  url "https://ghproxy.com/https://github.com/coq/coq/archive/refs/tags/V8.18.0.tar.gz"
+  sha256 "00a18c796a6e154a1f1bac7e1aef9e14107e0295fa4e0a18f10cdea6fc2e840b"
   license "LGPL-2.1-only"
   head "https://github.com/coq/coq.git", branch: "master"
 
@@ -12,15 +12,13 @@ class Coq < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "a71548b2617c87031535b97395750ba041cb524dddc1ab81634e78a8972b6f1d"
-    sha256 arm64_ventura:  "17428d897cd59b5ad624055c3de93ad2e40781ccc99db16333a71aaad58a3386"
-    sha256 arm64_monterey: "16f1d9f1950219e0af6e4e06c28813908367ed23bff7ff1c3c4310c8afbaf653"
-    sha256 arm64_big_sur:  "afc36bee0d091cc4902e1553daee20767dd4b4585ab7b54c8d34adf602616270"
-    sha256 sonoma:         "09071170eccb180640017811c7525da624c685453e46342901adeaae0a9b527a"
-    sha256 ventura:        "d78a6b69c915bf1529eb04aae3b2582a9226102abf02182eb12966a59f22e8de"
-    sha256 monterey:       "0e46aa5d4bc792918c9532644c16f40f7c67c351bb12731afb60b93b17d61591"
-    sha256 big_sur:        "ebc637b55147ceed8574602c71575281b7b12246859dd61eb0fdf1c71693cc5d"
-    sha256 x86_64_linux:   "19fb510814e223b19f28e0c2aa67c4b9add7fdbc65772ad7b8a41214685b9acd"
+    sha256 arm64_sonoma:   "873c6d95391701fe82d8d9e8fc2d37f399741c865987fd4f118568d7e8197d60"
+    sha256 arm64_ventura:  "be55d107e0a19675723d7c5225c17e2fd893ad675d2780581d25b0be3f8dd35b"
+    sha256 arm64_monterey: "ba5cdf62836250c574478192af992d2de33cedca9a5e2a6bcd9e4314de691925"
+    sha256 sonoma:         "7eba477a416eb26cc4d41d7774341d67310c239c31f677e850a98bf5f948eed9"
+    sha256 ventura:        "4512a999a40459a853f8201a02d23038ea64de444865416ae498bf41c1a6b68e"
+    sha256 monterey:       "ff48cd04e83a995d5607bd3bcd5b899656149009c2a021c5f7bfb389b84a8baf"
+    sha256 x86_64_linux:   "58ccc350c3fbd216e43ec92f547d4bf35deba6b1f88c82da988384731cd7cad6"
   end
 
   depends_on "dune" => :build

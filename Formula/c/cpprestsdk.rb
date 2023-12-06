@@ -3,22 +3,19 @@ class Cpprestsdk < Formula
   homepage "https://github.com/Microsoft/cpprestsdk"
   # pull from git tag to get submodules
   url "https://github.com/Microsoft/cpprestsdk.git",
-      tag:      "2.10.18",
-      revision: "122d09549201da5383321d870bed45ecb9e168c5"
+      tag:      "v2.10.19",
+      revision: "411a109150b270f23c8c97fa4ec9a0a4a98cdecf"
   license "MIT"
-  revision 1
   head "https://github.com/Microsoft/cpprestsdk.git", branch: "development"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "88b40e7b36f71334c11619729333c4c0a7232277734ebd6041b69d5ef5d45cc1"
-    sha256 cellar: :any,                 arm64_ventura:  "ecebaabee208c5c7337b1336b710505b865f6f01e45a8c94d2683b29c446bfa4"
-    sha256 cellar: :any,                 arm64_monterey: "fbb03884dcf8e1a9206e753e6a0c6d3acfe89d12f6087981bc94c1166ed0ca94"
-    sha256 cellar: :any,                 arm64_big_sur:  "fbf9e57e1d1af52cd599dc4888f5183532df41a408384c9025d7d70c45903328"
-    sha256 cellar: :any,                 sonoma:         "231375bef737cbc52c952dc4e05f6bde9ba8467e74356ae63a20c1264a213436"
-    sha256 cellar: :any,                 ventura:        "1ba3472004cb4a9ed97ac4ab28cde451ccbc2e3013b229a1ce6d02d049d780d1"
-    sha256 cellar: :any,                 monterey:       "aecde5f4fc4863f8ec372744514954850c4adc3138b3d1ea1270d70b662dd7e7"
-    sha256 cellar: :any,                 big_sur:        "e4b01652b3928771031ddd5fd36dfb960cc5fcee2e449239ddd9abb6e4d538e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70d83163b9b544a0e89f5b45d1cf6e08a103e1e873384bfb3fc6e5164febffd4"
+    sha256 cellar: :any,                 arm64_sonoma:   "252c1e2ad5f0123d2b31840601166a73bd72bfbc229792d54aa73d920948331e"
+    sha256 cellar: :any,                 arm64_ventura:  "93818f470b5411b1696aa60e04a31f42cabef407d05a26e937e24c2a467da693"
+    sha256 cellar: :any,                 arm64_monterey: "e4f4298398119a07041429688116832f67b33c4c9775ab1722a30c287125f8b6"
+    sha256 cellar: :any,                 sonoma:         "0bb14c095957af12e08500e024739f78176f6361ff90c5efdda5e682613cffae"
+    sha256 cellar: :any,                 ventura:        "14bb46f094fa800b287ad3f960de71cf0a401005e4bc552176dd8d585e107540"
+    sha256 cellar: :any,                 monterey:       "b6de216686c055332e5e6d2bcf36a4aff430f1e2121f3adfd59b9ed337a6bea6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e55392240623fb92f5f42a22d790950d856fd4a0416d90e9f1c721c3197ef80"
   end
 
   depends_on "cmake" => :build

@@ -34,6 +34,7 @@ class GnuTar < Formula
     args = %W[
       --prefix=#{prefix}
       --mandir=#{man}
+      --disable-nls
     ]
 
     args << if OS.mac?

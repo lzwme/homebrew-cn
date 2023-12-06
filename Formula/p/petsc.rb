@@ -1,10 +1,9 @@
 class Petsc < Formula
   desc "Portable, Extensible Toolkit for Scientific Computation (real)"
   homepage "https://petsc.org/"
-  url "https://web.cels.anl.gov/projects/petsc/download/release-snapshots/petsc-3.20.1.tar.gz"
-  sha256 "3d54f13000c9c8ceb13ca4f24f93d838319019d29e6de5244551a3ec22704f32"
+  url "https://web.cels.anl.gov/projects/petsc/download/release-snapshots/petsc-3.20.2.tar.gz"
+  sha256 "2a2d08b5f0e3d0198dae2c42ce1fd036f25c153ef2bb4a2d320ca141ac7cd30b"
   license "BSD-2-Clause"
-  revision 1
 
   livecheck do
     url "https://web.cels.anl.gov/projects/petsc/download/release-snapshots/"
@@ -12,13 +11,13 @@ class Petsc < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "762f9d28cd933c12b93a9cadce11c91153b63e857ca13b5b7899ec52c4ba8f3b"
-    sha256 arm64_ventura:  "507515feaca1c351128c147270672a95d7f8bca35efef3e9b1c8817a5efb8e83"
-    sha256 arm64_monterey: "04ae60e131d366a22dff1b42ae17c4a9714942c98707972322f060189111d231"
-    sha256 sonoma:         "59d276f7ab8bfbd4de8e49fc06402f56238e9ce66eba3c0ed7d29c7a78eca45d"
-    sha256 ventura:        "0082de88763407de028b22109ae344a380873b1e7909e832c413d908877ffac6"
-    sha256 monterey:       "43601918e3e9e8f8581ec6a1746475ea6752b56ad08e0e790e65f654f3fd4f3b"
-    sha256 x86_64_linux:   "2ddcebac58cd7bdca737d83bfd4f367bb1c168cc0a3f3c165e446bca6580962d"
+    sha256 arm64_sonoma:   "60049422bd4f66157b63b44cde2271a2c72aa41bcc9ef339292248211f53c53a"
+    sha256 arm64_ventura:  "847d288de875490db38e6e288740aae38c7dd5763bbba5e7e57ad7f4a8317679"
+    sha256 arm64_monterey: "8542bc2e5d8c753d622651527eb96add8acc2c531cdb140719fcea1fe68ae17a"
+    sha256 sonoma:         "8a52a09416a23440ada4d63fd657bb60e7b4cc6b9aa9c96a5a62b4f301c2ea4f"
+    sha256 ventura:        "dea1ea815b46e5205e53c766ab4b7c6b73cc6d6522d1dde6ab8b344d354eb506"
+    sha256 monterey:       "a5046413791b336415ff8be00fc762baf664fe178c04a244442bd6fbfcc9c268"
+    sha256 x86_64_linux:   "ce6887b15d79df95ef38505a52832711813747e80a07a27c3c1b28bc44416183"
   end
 
   depends_on "hdf5"

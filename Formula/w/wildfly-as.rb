@@ -1,8 +1,8 @@
 class WildflyAs < Formula
   desc "Managed application runtime for building applications"
   homepage "https://www.wildfly.org/"
-  url "https://ghproxy.com/https://github.com/wildfly/wildfly/releases/download/30.0.0.Final/wildfly-30.0.0.Final.tar.gz"
-  sha256 "e10404c9d3e035a7d364b22b2e343fe8ae867b6bbcbf945bf2a969eff7d9ebea"
+  url "https://ghproxy.com/https://github.com/wildfly/wildfly/releases/download/30.0.1.Final/wildfly-30.0.1.Final.tar.gz"
+  sha256 "c9c5db601ed47cd181a9c18740977817809986a517fd15b719a83a6bac74ed0f"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class WildflyAs < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "6bbea4633eb9c618e5d5fa08d926a9f65000dfcc7323c7ab7de3a110176eed48"
-    sha256 cellar: :any, arm64_ventura:  "6bbea4633eb9c618e5d5fa08d926a9f65000dfcc7323c7ab7de3a110176eed48"
-    sha256 cellar: :any, arm64_monterey: "6bbea4633eb9c618e5d5fa08d926a9f65000dfcc7323c7ab7de3a110176eed48"
-    sha256 cellar: :any, sonoma:         "f9cd88aa5606ec0c0911719149f3e8e92006d67b9026d2c87b5c3a49963db196"
-    sha256 cellar: :any, ventura:        "f9cd88aa5606ec0c0911719149f3e8e92006d67b9026d2c87b5c3a49963db196"
-    sha256 cellar: :any, monterey:       "f9cd88aa5606ec0c0911719149f3e8e92006d67b9026d2c87b5c3a49963db196"
+    sha256 cellar: :any, arm64_sonoma:   "57f9b8fc7e91024ffee776bd858f6a584bc1bf28db61f77d3a5fc7976bc89a4a"
+    sha256 cellar: :any, arm64_ventura:  "57f9b8fc7e91024ffee776bd858f6a584bc1bf28db61f77d3a5fc7976bc89a4a"
+    sha256 cellar: :any, arm64_monterey: "57f9b8fc7e91024ffee776bd858f6a584bc1bf28db61f77d3a5fc7976bc89a4a"
+    sha256 cellar: :any, sonoma:         "a2efe54e3d954ae2a6a9ecda2eb0bd5caed903225835b904cf118b9c3ea7ab39"
+    sha256 cellar: :any, ventura:        "a2efe54e3d954ae2a6a9ecda2eb0bd5caed903225835b904cf118b9c3ea7ab39"
+    sha256 cellar: :any, monterey:       "a2efe54e3d954ae2a6a9ecda2eb0bd5caed903225835b904cf118b9c3ea7ab39"
   end
 
   # Installs a pre-built `libartemis-native-64.so` file with linkage to libaio.so.1

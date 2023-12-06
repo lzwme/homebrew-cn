@@ -1,8 +1,8 @@
 class Openblas < Formula
   desc "Optimized BLAS library"
   homepage "https://www.openblas.net/"
-  url "https://ghproxy.com/https://github.com/xianyi/OpenBLAS/archive/refs/tags/v0.3.24.tar.gz"
-  sha256 "ceadc5065da97bd92404cac7254da66cc6eb192679cf1002098688978d4d5132"
+  url "https://ghproxy.com/https://github.com/xianyi/OpenBLAS/archive/refs/tags/v0.3.25.tar.gz"
+  sha256 "4c25cb30c4bb23eddca05d7d0a85997b8db6144f5464ba7f8c09ce91e2f35543"
   license "BSD-3-Clause"
   head "https://github.com/xianyi/OpenBLAS.git", branch: "develop"
 
@@ -12,15 +12,13 @@ class Openblas < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "14a69b61ba6db7000d23ff92cf4d1939552b8c33ea96945b187496a72afdcddf"
-    sha256 cellar: :any,                 arm64_ventura:  "5a6b8d2e10942011646cc64e19aa4c04444c4f521cccf7526a2f356520aaf3cd"
-    sha256 cellar: :any,                 arm64_monterey: "df4831fa56d2efec2cd36cd71d60293bb1661f7e2eb7c1ddb24c833609973d27"
-    sha256 cellar: :any,                 arm64_big_sur:  "7b7cb96ea76972f420604f8b60f2026f18823d5b0d7f72aa75c8332dc6496101"
-    sha256 cellar: :any,                 sonoma:         "fa3f40f9d5f8a7240820db4982bbb058ee459f1d80e6166e75e81d69654907af"
-    sha256 cellar: :any,                 ventura:        "70d123d74ef2cf47a313882b1cda4dba35cc16cb0b520cf9ee6415579ae8dbed"
-    sha256 cellar: :any,                 monterey:       "5ad17cd7f820015c4be5aea45051b63de1b8313d7afab842ac0cf5344b8f7f0a"
-    sha256 cellar: :any,                 big_sur:        "8db45e21713c1f461eafb2e5753793edad12491ba12f1cebc7012f9463a1f0a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15d267b68507989474e0283a9a6c259fa6de412a698e1b9124f0e2cc1521db77"
+    sha256 cellar: :any,                 arm64_sonoma:   "f9d7d6c1d67eb4a2eabda9f3b3737539f33fed18ab3e45bc229c16b7aa69fcd5"
+    sha256 cellar: :any,                 arm64_ventura:  "d627cc344206a867ef87b90aedd759e74ab8ae181770c90787917b2d819692f0"
+    sha256 cellar: :any,                 arm64_monterey: "cbdf4042b6f4e640d0feae0d45a7fc7de23fb4872651140e2692c1392bd2a03f"
+    sha256 cellar: :any,                 sonoma:         "b75eaf5f7323d0c7a873124db31e2154b35b74e0aad5645858804cd5a6e53dc8"
+    sha256 cellar: :any,                 ventura:        "063c9e17a851d3c25d2bcea57244a5ee2bb4d67631b9e1ac3be0aa160e7703dc"
+    sha256 cellar: :any,                 monterey:       "1068ec94f1e40f0a90fda45b8a23bb92e10c1aa0b87b11c3318f2dba38bec8f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1980994b54ec87848e79c99f0977a5ffae6cb79428744ee1cec54212ad305bee"
   end
 
   keg_only :shadowed_by_macos, "macOS provides BLAS in Accelerate.framework"

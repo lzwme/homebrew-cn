@@ -2,11 +2,10 @@ class Couchdb < Formula
   desc "Apache CouchDB database server"
   homepage "https://couchdb.apache.org/"
   # TODO: Check if we can use unversioned `erlang` at version bump.
-  url "https://www.apache.org/dyn/closer.lua?path=couchdb/source/3.3.2/apache-couchdb-3.3.2.tar.gz"
-  mirror "https://archive.apache.org/dist/couchdb/source/3.3.2/apache-couchdb-3.3.2.tar.gz"
-  sha256 "3d6823d42d10cf0d4f86c9c4fe59c9932c89d68578fcb6c4b4278dc769308daa"
+  url "https://www.apache.org/dyn/closer.lua?path=couchdb/source/3.3.3/apache-couchdb-3.3.3.tar.gz"
+  mirror "https://archive.apache.org/dist/couchdb/source/3.3.3/apache-couchdb-3.3.3.tar.gz"
+  sha256 "7a2007b5f673d4be22a25c9a111d9066919d872ddb9135a7dcec0122299bd39e"
   license "Apache-2.0"
-  revision 3
 
   livecheck do
     url :homepage
@@ -14,13 +13,13 @@ class Couchdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b90a5873d9b75314e113d434723fc78db182888fe7242026ac9d9a376e47e02c"
-    sha256 cellar: :any,                 arm64_ventura:  "abeaffd7a14c30a3f006a08b8948cf24b33a017037b1d331fb5d8375aadb518c"
-    sha256 cellar: :any,                 arm64_monterey: "14312031254ffe2b155c2b062d473dee60a25aae0d10886b70d36d7d5df88d1c"
-    sha256 cellar: :any,                 sonoma:         "66f99c4c62f269589ee9fc59c7cc7ea410051af18730a078449f20c556bef1dd"
-    sha256 cellar: :any,                 ventura:        "1ddd27752cd1a79e08383e9fe080d0e4da38b63d5a23aba6af426afb02e37b71"
-    sha256 cellar: :any,                 monterey:       "d12f6761c30f1b5a0ca8c750cd7fc4f4220a5758a89f79534db5559c73334040"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8353237aacf263acce6dc2044e6e652edbc03461c957d214aa258059cc2b89b1"
+    sha256 cellar: :any,                 arm64_sonoma:   "c62f82f36ed6e06e72bf02b809f23b4c5990c10f13ffe33a19c21dddbad3ff3c"
+    sha256 cellar: :any,                 arm64_ventura:  "31355e449ecb31c2af664b4c4d66402bfd8c568fefdab7ecbea28bcf49eefcbf"
+    sha256 cellar: :any,                 arm64_monterey: "7235967b0d2c319102055b1d473d6990f727227119641a23d4c5485611d6382f"
+    sha256 cellar: :any,                 sonoma:         "dc24bc6c4058fbf39a4d066a7c095045b881e189005b2efebcc5190c50386775"
+    sha256 cellar: :any,                 ventura:        "a2b506cfb131f2504f8f4c200ab6b41f740f0abe183184a34606cd96027b8aa2"
+    sha256 cellar: :any,                 monterey:       "e0511d28914934e1446cb8dff30b55cbac4f900d8b3ccd8eaf686b6bb243864f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cc21bd0a47af081af2aa8a03a0f67d029f8e79f18a137dfaee422601a5c21c0"
   end
 
   depends_on "autoconf" => :build

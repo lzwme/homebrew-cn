@@ -1,17 +1,17 @@
 class Docfx < Formula
   desc "Tools for building and publishing API documentation for .NET projects"
   homepage "https://dotnet.github.io/docfx/"
-  url "https://ghproxy.com/https://github.com/dotnet/docfx/archive/refs/tags/v2.74.0.tar.gz"
-  sha256 "58920322987ce5b67e4a6dc33cc268cfd014c69b498ee139c42acdf473cca4df"
+  url "https://ghproxy.com/https://github.com/dotnet/docfx/archive/refs/tags/v2.74.1.tar.gz"
+  sha256 "c77254cc4f5cbac235b728a01fd9bf3c94161535ea063494d07aec877a78b361"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f41fd4209dd58268627c42da325324ddaed8cade498679bfcdf736deb42e0114"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0231f4fe92c4347dabb48ead4a88afe8dc9e22e1bdc81c293b448451a6ac04d8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "234494e810d9ecd126bc962e3f745efb7cb004cba18385719df7cb26f3a6809f"
-    sha256 cellar: :any_skip_relocation, ventura:        "b6d2423c9144ce68d55461508837f8319045769bdaeaa519efe820da3f2508ac"
-    sha256 cellar: :any_skip_relocation, monterey:       "a4eb654264424aeba575f5c7dcadee50be17db7b8cdd16776cf13e57c94c8795"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "512a2c76b383c9711b7fa4963295118eea5a7befb689d84354d6210e85d032a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "57cf514074f7df6958bd672e8b90dc3956c8c3dfcef357bb9efaf0ffbe7b9402"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fba2895d1802dbca980bda887a91405b15c1f2350710ae1ac036d474e537e7f5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f90413b7c603f3ca4028e217efc606d814d7af2675a51a195c8290a499aca1cf"
+    sha256 cellar: :any_skip_relocation, ventura:        "d48302c96f06d61aa8eb0b44748f26a24d6e50327054260326bbedefc196abc9"
+    sha256 cellar: :any_skip_relocation, monterey:       "0a8c3f54bdc31afa2df900893cfdea08431748afe09866956eb99118645ee2b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a08d7921aecd13b024576eb0e8a59e38ce81b68ff92816a464d3a2b07e318c75"
   end
 
   depends_on "dotnet"

@@ -5,19 +5,19 @@ class Dmd < Formula
 
   stable do
     # make sure resources also use the same version
-    url "https://ghproxy.com/https://github.com/dlang/dmd/archive/refs/tags/v2.105.3.tar.gz"
-    sha256 "6798ad0cbcadf4aa7c13338061dc64e6213dd34d6ad84d05d43ee77a7380dad5"
+    url "https://ghproxy.com/https://github.com/dlang/dmd/archive/refs/tags/v2.106.0.tar.gz"
+    sha256 "1079649c41a9b8e0d3e81c573c82d84cd6873b3afc95b37d6f5206842cedc7c9"
 
     resource "phobos" do
-      url "https://ghproxy.com/https://github.com/dlang/phobos/archive/refs/tags/v2.105.3.tar.gz"
-      sha256 "9ea51cd0d4908a5826d0cb240e214912a2f6ca829561959865a1edef2326943d"
+      url "https://ghproxy.com/https://github.com/dlang/phobos/archive/refs/tags/v2.106.0.tar.gz"
+      sha256 "3f926ee26905c2f6fe457e7ad2fe4feac8cad83c571a70adea30b6cd4a4366b6"
     end
   end
 
   bottle do
-    sha256 ventura:      "e1919e30cafb4f9ca84b295ec67cd1eb744f2e4f0a06ca5e04c2c09d0c3490a3"
-    sha256 monterey:     "b25853a30aa2dc419487c6dc66b79867c39f61c3b2612dcea0a86e2b6ddf25f3"
-    sha256 x86_64_linux: "623f999180bad970e2a856d7238563d828baef7312bc7c2ca93669513f0a9d58"
+    sha256 ventura:      "ea35d2668abe2e6a9ad7869324b17397200a942647251724696bbf130c443104"
+    sha256 monterey:     "c9248af57534a70999145c0ec8bed4dd35c0a1e8af2f7df7a683d8927cec48d7"
+    sha256 x86_64_linux: "53bf66112cc646481e06eb2cd090a38c8cad1e2fe1cb28efa013fdbdb529c122"
   end
 
   head do
@@ -100,6 +100,8 @@ class Dmd < Formula
   end
 
   test do
+    assert_equal version, resource("phobos").version, "`phobos` resource needs updating!" if build.stable?
+
     system bin/"dmd", "-fPIC", pkgshare/"samples/hello.d"
     system "./hello"
   end
