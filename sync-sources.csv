@@ -976,7 +976,6 @@ Homebrew-homebrew-core/Formula/c/colfer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/colima.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/collada-dom.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/collectd.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/collector-sidecar.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/colmap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/color-code.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/colordiff.rb, Homebrew/homebrew-core, 0
@@ -4996,7 +4995,7 @@ Homebrew-homebrew-core/Formula/p/puf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pugixml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pulledpork.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pulp.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/pulseaudio.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pulseaudio.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pulumi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pumba.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pup.rb, Homebrew/homebrew-core, 1
@@ -11094,6 +11093,7 @@ Homebrew-homebrew-cask/Casks/w/wasabi-wallet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/watchfacestudio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/waterfox-classic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/waterfox.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/wave.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wavebox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/waves-central.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wavesurfer.rb, Homebrew/homebrew-cask, 0
@@ -12612,11 +12612,12 @@ Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-chakma.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-cham.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-cherokee.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-chorasmian.rb, Homebrew/homebrew-cask-fonts, 0
-Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-cjk-jp.rb, Homebrew/homebrew-cask-fonts, 0
-Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-cjk-kr.rb, Homebrew/homebrew-cask-fonts, 0
-Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-cjk-sc.rb, Homebrew/homebrew-cask-fonts, 0
-Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-cjk-tc.rb, Homebrew/homebrew-cask-fonts, 0
-Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-cjk.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-cjk-hk.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-cjk-jp.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-cjk-kr.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-cjk-sc.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-cjk-tc.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-cjk.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-coptic.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-cuneiform.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-cypriot.rb, Homebrew/homebrew-cask-fonts, 0
@@ -12687,6 +12688,11 @@ Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-meroitic.rb, Homebrew/homebrew
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-miao.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-modi.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-mongolian.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-mono-cjk-hk.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-mono-cjk-jp.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-mono-cjk-kr.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-mono-cjk-sc.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-mono-cjk-tc.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-mono.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-mro.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-multani.rb, Homebrew/homebrew-cask-fonts, 0

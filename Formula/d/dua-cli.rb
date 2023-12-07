@@ -1,18 +1,18 @@
 class DuaCli < Formula
   desc "View disk space usage and delete unwanted data, fast"
   homepage "https://lib.rs/crates/dua-cli"
-  url "https://ghproxy.com/https://github.com/Byron/dua-cli/archive/refs/tags/v2.20.3.tar.gz"
-  sha256 "b526c8c43853943f025ba36bf7297fbd9b1beb395ad92e70c41fed7d8d584be7"
+  url "https://ghproxy.com/https://github.com/Byron/dua-cli/archive/refs/tags/v2.21.0.tar.gz"
+  sha256 "57909e05212e125faa5052e5dc5b9cc607bb909b7456ff08203055bf0ed2d8d0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7d81afd1849b28bd4e41bdba6a0a714f1514f13769c60126870ec816c94d2140"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0de314c9094b8613907ba5667ccbcb4bfda22fc6e0debb8cc5323a6f4faa1bf7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4a3eedda2f9bd140c155e2a22fb20b2536c883e0aac93fe75bb86de90086c487"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4b7aa815b0763d27167e4e5f386ff19549bb86b69d77a868ec23a2291c0b321a"
-    sha256 cellar: :any_skip_relocation, ventura:        "e90a7437bef1c3e57660fc98319134fb2cc58de38ebc5350d2465d1ceee667fc"
-    sha256 cellar: :any_skip_relocation, monterey:       "5ec3d625018f756b9441a5219c4300ef2402879a04c6b80fc9cbd3fa1884eb8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0deb21aa58962188f750ebf6087e6c20d5ec679446d916ad3dc1ec705b60533"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c71f688ac32cc79c41cf47ea9f2fe73539648cbe6912fcf130fd99d0df25e1a9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3f8a5b1532abb714ede25db806b3169ecb7bf7fae88c55ebc1473f83c311eb62"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b982413a8d4586a589c558f4fa84780ab9665e916c5c2ae4b7d56b7e3c08392a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b8b541b569ee44d172ba01c185512ce42296ca97d95a43fd11de4d52dff7eb91"
+    sha256 cellar: :any_skip_relocation, ventura:        "dbe68bdf310708672e5186eb37b4b17ad90112fc2062ef6fb17968b9c1956f4e"
+    sha256 cellar: :any_skip_relocation, monterey:       "a1367241f87569c13bd21ddc42b67ffda5dffe985913ad2786acb7eaae969b67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bba0f2169fc6ff076632743c40d53950d83538f86527ffd10e4fc9b5f9283a08"
   end
 
   depends_on "rust" => :build

@@ -1,21 +1,19 @@
 class Gobackup < Formula
   desc "CLI tool for backup your databases, files to cloud storages"
   homepage "https://gobackup.github.io"
-  url "https://ghproxy.com/https://github.com/gobackup/gobackup/archive/refs/tags/v2.6.0.tar.gz"
-  sha256 "79c265bcd8342a713b145052781b55cffd55536244b9ce23ff241769a4b0eb83"
+  url "https://ghproxy.com/https://github.com/gobackup/gobackup/archive/refs/tags/v2.7.0.tar.gz"
+  sha256 "52c7f04d5c8c099b0f8396cc084af656e024539810652d4f49e40b994f9addb9"
   license "MIT"
   head "https://github.com/gobackup/gobackup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "34c45a3fd5149697062ac653d53e865f2e34d4f85c94b48198a1afb2c02d153c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7c558e3d238b0db24d3b2b7f45b9f10538e384216cbca2649146a2431d4a2a7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b7c558e3d238b0db24d3b2b7f45b9f10538e384216cbca2649146a2431d4a2a7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b7c558e3d238b0db24d3b2b7f45b9f10538e384216cbca2649146a2431d4a2a7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "70e0422d711fedbb563dab0864bbad02bfcb508cb85f5a960ebd5aeda8dd901f"
-    sha256 cellar: :any_skip_relocation, ventura:        "e0bc9130100c19c83e1330c806dd5bd68ec4e49ff4ec8b89d5c2956e1ceb4cda"
-    sha256 cellar: :any_skip_relocation, monterey:       "e0bc9130100c19c83e1330c806dd5bd68ec4e49ff4ec8b89d5c2956e1ceb4cda"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e0bc9130100c19c83e1330c806dd5bd68ec4e49ff4ec8b89d5c2956e1ceb4cda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70875c7af6467dfbf3aedbd88390bf34f0d44081a1571c481a7d633238791192"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "099d4f21e89ece87aeaeee31e49129f8bbacd4c78b2a1b650f35077b06f7d3c8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "58d4a606263fc2d1b0d705231abcd495d636c3fb54d457ebcb9c1ea050e0e1de"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "53c2745ea0bf9c288367ad676f6c68417392dadef206342466cac226f10ebbd2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2ab6beaad5f9cec8fc47c9e65d1d2d18ca6c4a89675eb5fa8c45ccfe18aad2b9"
+    sha256 cellar: :any_skip_relocation, ventura:        "ace53b5e3338cca10451a113f2df4b30ae8d007088925c587f8e3dc5f955461b"
+    sha256 cellar: :any_skip_relocation, monterey:       "7204285530ba84a6eb13b3a08673c5e4609693382e1342c869d9d66baf64c835"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c596924b51ff7ff1fe6c3227307b483fe2d6103d78c717d4754b5249b6c231b"
   end
 
   depends_on "go" => :build

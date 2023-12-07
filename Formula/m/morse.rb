@@ -12,21 +12,27 @@ class Morse < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c10ed6e8fcfc5eba8f26332554eab00725618885103a64012ae1439d6086a8b6"
-    sha256 cellar: :any,                 arm64_monterey: "a35043d1c63aa545d5bedb01c1e84c425a30f2b991468a00cd7a5aa12ee14d91"
-    sha256 cellar: :any,                 arm64_big_sur:  "cb06d8049d00c1b52a2c6538ea10918a7623541df2304c1f9c154e042fde868d"
-    sha256 cellar: :any,                 ventura:        "364dda70103cf7696e1a8f5b7506fa7a34bfce18f4a3a5552015b71dde9192e8"
-    sha256 cellar: :any,                 monterey:       "ed97cdede281a1b7adf2c483cca6630fbf91a4180724f58ea9a313a886bce8d1"
-    sha256 cellar: :any,                 big_sur:        "a956bb32257136228025435a70344d3322b621be1c932e1f61be3fbc1db3b000"
-    sha256 cellar: :any,                 catalina:       "f489bcc53ec31f5473e2116bd8d4f6867e15501cc8400e9992d1949331d18dee"
-    sha256 cellar: :any,                 mojave:         "e696b87957c0215da2e9f600f66460c341b4141b4ef86096dd78d9000a5ceafe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50847c19aed821be27839b60979e43ffd45f9c3ba66a469421a6204d950ffad2"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "3af87aea5f319406f1d7c0aac0820267902bbfbf8319fa266eca47797c020f34"
+    sha256 cellar: :any,                 arm64_ventura:  "474e74791c30812618775445b3880cced2be0fff47467e1d386f2162644e4255"
+    sha256 cellar: :any,                 arm64_monterey: "50a033c1ff5352adb6c0ccba3eb92e56f058e0f5b5a8bc4227e2f90a482bbb9e"
+    sha256 cellar: :any,                 sonoma:         "7ed3a3ef9cb8489cd27be32667d9f128af18c351c0b7498fa8dbb979ef01b71d"
+    sha256 cellar: :any,                 ventura:        "7b4ba57db993cdc7dbd7d5a171e69747c711e0bbbfb0f417cdb9ba9a4d1b54df"
+    sha256 cellar: :any,                 monterey:       "737180d50656e9582f64aa525cfeaa48c94d552be158964c963ebc22fed131e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fbd3a3a68b3ac4f584fd4cc13fc87699eb19d28079fda7e8f93a368fc5519432"
   end
 
   depends_on "pkg-config" => :build
   depends_on "pulseaudio"
 
+  # Use Debian patch to fix usage with newer `pulseaudio`
+  patch do
+    url "https://sources.debian.org/data/main/m/morse/2.5-2/debian/patches/04fix-pa_simple_write-with-mono-output.patch"
+    sha256 "69b57f6230fcb649ca0695b75cf0968d0ce82e6c30c7190dd50b87245e432fa2"
+  end
+
   def install
+    ENV["CC"] = "#{ENV.cc} -Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
     system "make", "all"
     bin.install %w[morse QSO]
     man1.install %w[morse.1 QSO.1]

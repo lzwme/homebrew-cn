@@ -1,15 +1,10 @@
 class Atasm < Formula
   desc "Atari MAC/65 compatible assembler for Unix"
-  homepage "https://atari.miribilist.com/atasm/"
-  url "https://atari.miribilist.com/atasm/atasm109.zip"
+  homepage "https://sourceforge.net/projects/atasm/"
+  url "https://downloads.sourceforge.net/project/atasm/atasm/atasm-1.09/atasm109.zip"
   version "1.09"
   sha256 "dbab21870dabdf419920fcfa4b5adfe9d38b291a60a4bc2ba824595f7fbc3ef0"
   license "GPL-2.0-or-later"
-
-  livecheck do
-    url "https://atari.miribilist.com/atasm/VERSION.TXT"
-    regex(/  version (\d+(?:\.\d+)+) /i)
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "727eea7c68b8de0a001e3b0937c429af8797af568433be534d74ada42a1925eb"

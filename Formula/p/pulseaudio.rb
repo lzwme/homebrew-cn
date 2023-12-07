@@ -2,16 +2,20 @@ class Pulseaudio < Formula
   desc "Sound system for POSIX OSes"
   homepage "https://wiki.freedesktop.org/www/Software/PulseAudio/"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later", "BSD-3-Clause"]
-  revision 1
+  head "https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git", branch: "master"
 
   stable do
-    url "https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-14.2.tar.xz"
-    sha256 "75d3f7742c1ae449049a4c88900e454b8b350ecaa8c544f3488a2562a9ff66f1"
+    url "https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-16.1.tar.xz"
+    sha256 "8eef32ce91d47979f95fd9a935e738cd7eb7463430dabc72863251751e504ae4"
 
-    # Fix -flat_namespace being used on Big Sur and later.
+    # Backport fix for macOS build. Remove in the next release
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+      url "https://gitlab.freedesktop.org/pulseaudio/pulseaudio/-/commit/baa3d24b760fe48d25d379b972728ea3ffa5492d.diff"
+      sha256 "af1862ed1196719ae404be9bfde4ea2d74fb512b50fd5a37445de43be00c30c1"
+    end
+    patch do
+      url "https://gitlab.freedesktop.org/pulseaudio/pulseaudio/-/commit/47a6918739cb06dafa970d0b528bed1951d95039.diff"
+      sha256 "03264a384ccc84a1c61e206ddb136cc9a6ae67e88172b08e5b4378aca74f06a5"
     end
   end
 
@@ -22,101 +26,78 @@ class Pulseaudio < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "27d4abbe8ff504b140b588fe78d7e7b798c0a076f94d1c25418b6a3be8fcd5e2"
-    sha256 arm64_ventura:  "18a8f6d639cdd2e3e387886eada41d7fcb458d9bf03375a39fe7d372d60a92cf"
-    sha256 arm64_monterey: "99b50d18d374013340228f611af63fcb66bdc9e0a681fa3a9ebb2c3b05a89430"
-    sha256 sonoma:         "252b453dab9684b191f8119c2992f70b8e3cab3cd9b65e248b5f01e3b3a40649"
-    sha256 ventura:        "cc5870768b17130fb40b517d422ef6e0b915695c2fac9a8e8931800caaab29d6"
-    sha256 monterey:       "6febd7d96e526e962947e64c597701d0be1000a9f626b4a02467f0bf582f83d6"
-    sha256 x86_64_linux:   "618016935992f4317a6cea21054682693644743dead13896e97af76ab93847b8"
+    sha256 arm64_sonoma:   "3d6c37dff594d1bb5e351ff86e7f6194b0b51df6fa74b4450671b2e1560625e3"
+    sha256 arm64_ventura:  "b198133d973cd324073cc2ec73f900eb7bfa02e156489d9830b4c1c058ebaf11"
+    sha256 arm64_monterey: "ef12808629107095cd7c5c9a8bacd88b186a9e03ff83b8d793e118cd2d8fed5e"
+    sha256 sonoma:         "f55b6dcebc24384f4049ec999da7353af2c70829628f4ef142a892da54e28c35"
+    sha256 ventura:        "446e0a771587285b5a86d201242d5615dd4640c09674178aa2a968ffe6969469"
+    sha256 monterey:       "4eeac72411307c5524442a61b809e7ba1930c41a727a1848cc3b60a5d262bb53"
+    sha256 x86_64_linux:   "2b3c51aa1cfe4b3b96775f03289b3fda30165a601db1f9adc6b69a8f2e8c9fd9"
   end
 
-  head do
-    url "https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "gettext" => :build
-    depends_on "intltool" => :build
-  end
-
+  depends_on "gettext" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "json-c"
+  depends_on "glib"
   depends_on "libsndfile"
   depends_on "libsoxr"
   depends_on "libtool"
   depends_on "openssl@3"
+  depends_on "orc"
   depends_on "speexdsp"
 
   uses_from_macos "perl" => :build
-  uses_from_macos "expat"
-  uses_from_macos "m4"
+
+  on_macos do
+    depends_on "gettext" # for libintl
+  end
 
   on_linux do
+    depends_on "perl-xml-parser" => :build
+    depends_on "alsa-lib"
     depends_on "dbus"
-    depends_on "glib"
     depends_on "libcap"
-
-    resource "XML::Parser" do
-      url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.44.tar.gz"
-      sha256 "1ae9d07ee9c35326b3d9aad56eae71a6730a73a116b9fe9e8a4758b7cc033216"
-    end
   end
 
   def install
-    if OS.linux?
-      ENV.prepend_create_path "PERL5LIB", buildpath/"lib/perl5"
-      resource("XML::Parser").stage do
-        system "perl", "Makefile.PL", "INSTALL_BASE=#{buildpath}"
-        system "make", "PERL5LIB=#{ENV["PERL5LIB"]}", "CC=#{ENV.cc}"
-        system "make", "install"
-      end
+    enabled_on_linux = if OS.linux?
+      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5"
+      "enabled"
+    else
+      # Restore coreaudio module as default on macOS
+      inreplace "meson.build", "cdata.set('HAVE_COREAUDIO', 0)", "cdata.set('HAVE_COREAUDIO', 1)"
+      "disabled"
     end
 
+    # Default `tdb` database isn't available in Homebrew
     args = %W[
-      --disable-dependency-tracking
-      --disable-silent-rules
-      --prefix=#{prefix}
-      --disable-neon-opt
-      --disable-nls
-      --disable-x11
+      -Ddatabase=simple
+      -Ddoxygen=false
+      -Dman=true
+      -Dtests=false
+      -Dstream-restore-clear-old-devices=true
+
+      -Dlocalstatedir=#{var}
+      -Dbashcompletiondir=#{bash_completion}
+      -Dzshcompletiondir=#{zsh_completion}
+      -Dudevrulesdir=#{lib}/udev/rules.d
+
+      -Dalsa=#{enabled_on_linux}
+      -Ddbus=#{enabled_on_linux}
+      -Dglib=enabled
+      -Dgtk=disabled
+      -Dopenssl=enabled
+      -Dorc=enabled
+      -Dsoxr=enabled
+      -Dspeex=enabled
+      -Dsystemd=disabled
+      -Dx11=disabled
     ]
 
-    if OS.mac?
-      args << "--enable-coreaudio-output"
-      args << "--with-mac-sysroot=#{MacOS.sdk_path}"
-      args << "--with-mac-version-min=#{MacOS.version}"
-    else
-      # Perl depends on gdbm.
-      # If the dependency of pulseaudio on perl is build-time only,
-      # pulseaudio detects and links gdbm at build-time, but cannot locate it at run-time.
-      # Thus, we have to
-      #  - specify not to use gdbm, or
-      #  - add a dependency on gdbm if gdbm is wanted (not implemented).
-      # See Linuxbrew/homebrew-core#8148
-      args << "--with-database=simple"
-
-      # Tell pulseaudio to use the brewed udev rules dir instead of the system one,
-      # which it does not have permission to modify
-      args << "--with-udev-rules-dir=#{lib}/udev/rules.d"
-    end
-
-    # Fix compilation with Xcode 14.3 and later
-    ENV.append_to_cflags "-Wno-strict-prototypes" if DevelopmentTools.clang_build_version >= 1403
-
-    if build.head?
-      # autogen.sh runs bootstrap.sh then ./configure
-      system "./autogen.sh", *args
-    else
-      system "./configure", *args
-    end
-    system "make", "install"
-
-    if OS.linux?
-      # https://stackoverflow.com/questions/56309056/is-gschemas-compiled-architecture-specific-can-i-ship-it-with-my-python-library
-      rm "#{share}/glib-2.0/schemas/gschemas.compiled"
-    end
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   service do

@@ -12,12 +12,13 @@ class Wxmaxima < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "1928ded22b27a7947f666bdc117c3f08451f446686dff6998bd82355bdce5c75"
-    sha256 arm64_ventura:  "acbac767d5e4c4e3a9f45105c2ca066577c533f3275aada35ca7660e3ebfd15a"
-    sha256 arm64_monterey: "1c3d23fdd30b3efdfd733d6638f22ae214317c007ca8f0c6c4d4f17e3d21b0fd"
-    sha256 sonoma:         "bec378e3765f6af196754b4354ed6bfe1135a3293fcbf77747716f4edcdcc1a9"
-    sha256 ventura:        "b57cde6ec9c481277bf6d4f69f7a01742166152bf3a9b41d06f926d8e147e54b"
-    sha256 monterey:       "620b4b0ad780363754a67b5e26ae74d481cf515ddfde6fdc800a2082846d6564"
+    rebuild 1
+    sha256 arm64_sonoma:   "679bde347bc35155c1479d3814d237215555c62d043d40a9ac0e9ff82f2e1dbe"
+    sha256 arm64_ventura:  "2f5cb889b07262e57afb26799d6f8e578063b61c252c841f2fb132bba0bf86ad"
+    sha256 arm64_monterey: "0b90d38d64e95a99e8c4424e92ac25455dcb5e54a149dbd961eb1e62b9119759"
+    sha256 sonoma:         "2f93a361f57848e3037477a5e48f18a8b528e316068bac6d26a4dbe473e3318e"
+    sha256 ventura:        "4d4ea8cc332868aa7f648266c06fc90145095c13511d2ea0df1c1451a9f15a4b"
+    sha256 monterey:       "c16f02666e7df28c8604a28d3a39903b2fd51818c3963dc825cf433ffb6ab7c2"
   end
 
   depends_on "cmake" => :build
@@ -43,6 +44,9 @@ class Wxmaxima < Formula
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1300)
 
+    # Disable CMake fixup_bundle to prevent copying dylibs
+    inreplace "src/CMakeLists.txt", "fixup_bundle(", "# \\0"
+
     system "cmake", "-S", ".", "-B", "build-wxm", "-G", "Ninja", *std_cmake_args
     system "cmake", "--build", "build-wxm"
     system "cmake", "--install", "build-wxm"
@@ -50,8 +54,7 @@ class Wxmaxima < Formula
 
     return unless OS.mac?
 
-    prefix.install "build-wxm/src/wxMaxima.app"
-    bin.write_exec_script prefix/"wxMaxima.app/Contents/MacOS/wxmaxima"
+    bin.write_exec_script prefix/"wxmaxima.app/Contents/MacOS/wxmaxima"
   end
 
   def caveats

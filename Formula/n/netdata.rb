@@ -1,10 +1,9 @@
 class Netdata < Formula
   desc "Diagnose infrastructure problems with metrics, visualizations & alarms"
   homepage "https://netdata.cloud/"
-  url "https://ghproxy.com/https://github.com/netdata/netdata/releases/download/v1.43.2/netdata-v1.43.2.tar.gz"
-  sha256 "d4a7ea2717ac7c8f04865f18e13aeaa0a36784156059f1b5ced75a44f74afc4d"
+  url "https://ghproxy.com/https://github.com/netdata/netdata/releases/download/v1.44.0/netdata-v1.44.0.tar.gz"
+  sha256 "87c761475e4020e8ec6e5bb04766affcd722e42252d400fb02afa6b260cc9d18"
   license "GPL-3.0-or-later"
-  revision 2
 
   livecheck do
     url :stable
@@ -12,13 +11,13 @@ class Netdata < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "4b29aefee0bfa6619b5b3a0c03b1cf38f482caacd0588638dd999923b07fd52d"
-    sha256 arm64_ventura:  "c099704763315b1a3fbfb0a9c76134b75645bc72a1a71a165db7598af8bba59a"
-    sha256 arm64_monterey: "18de2cce6fdde0098ac5a7ae96d942e65c27ce4660a48cf5ea2436ac214707b9"
-    sha256 sonoma:         "b884ee587564a5795685b9bfc6600307b6d9f03e0dc29fc87a0642f98a8930db"
-    sha256 ventura:        "2d6b47a6ffb4d97a40398e6db574c53909be4ea1361448a973b19b4e5fd6cbec"
-    sha256 monterey:       "64f3b601aec6e0f1a41ac875b90cd363e84583bec28d985ad2ce08135089e89d"
-    sha256 x86_64_linux:   "91566edb4090834cec05bd5a3f702ecbc938143a2bbf5c351dc9a8cc5fb93c10"
+    sha256 arm64_sonoma:   "d14dc12c84d956ed61b93ba0c76a4877a96c6cc35b9ba034a43f01a4c7e02229"
+    sha256 arm64_ventura:  "c3a01a08b2b968ecfbb9f97bd9a37606d93ecb0137ede1c8146582ec619c9cf6"
+    sha256 arm64_monterey: "ba3c54de1abf026b0a60fb1fae38c6817f3a61d69c1eafb962b1f0d974d368ae"
+    sha256 sonoma:         "83c49cfbabf2515128eac2dbc69cf5e1f2a09c3e051f58324424932a68b6ef3e"
+    sha256 ventura:        "1c99d5ebe189e889bca2c74001c27e27ce68ca556d846b67ed842133faace665"
+    sha256 monterey:       "36a436f9e7fdc5824982a1430a9106769ff5677f5d0c6ff23603be799f0a4dbc"
+    sha256 x86_64_linux:   "0b1ce7e92d15d58c98404348493e919a9284cdc3008401550b09570d8e65f5a7"
   end
 
   depends_on "autoconf" => :build
@@ -30,6 +29,7 @@ class Netdata < Formula
   depends_on "libyaml"
   depends_on "lz4"
   depends_on "openssl@3"
+  depends_on "pcre2"
   depends_on "protobuf"
   depends_on "protobuf-c"
 

@@ -1,19 +1,18 @@
 class Volk < Formula
   desc "Vector Optimized Library of Kernels"
   homepage "https://www.libvolk.org/"
-  url "https://ghproxy.com/https://github.com/gnuradio/volk/releases/download/v3.0.0/volk-3.0.0.tar.gz"
-  sha256 "797c208bd449f77186684c9fa368cc8577fb98ce3763db5de526e6809de32d28"
+  url "https://ghproxy.com/https://github.com/gnuradio/volk/releases/download/v3.1.0/volk-3.1.0.tar.gz"
+  sha256 "4f5bb84f535ce86cfadc953379587bdd5a1a171d684b0a6f35adcaf2ac46fd01"
   license "LGPL-3.0-or-later"
 
   bottle do
-    rebuild 3
-    sha256 arm64_sonoma:   "072cd45e79c9ac4963295c6fdfef3cff48896f6becef6ac7b8231435a89440f2"
-    sha256 arm64_ventura:  "912e1ea863bf9f6826659452f24d397858d54406c5fa54a006c77a7144199625"
-    sha256 arm64_monterey: "f72f8a5caa0dea45ed68270de221f572c55912d0166da58d604db2d857a94fda"
-    sha256 sonoma:         "0edaf57d20141a964fff36c396f96a6b6c885ea11066693c4c52c0f5cc7d0db1"
-    sha256 ventura:        "5f299db3defa0020c8f7ea479af41ff16648f0dfb117f87f652cd61afc3a0e8b"
-    sha256 monterey:       "33f296f46eedd9352a5c5fecd2fdd86b68941ef4589ab0ea0de56b13ce877616"
-    sha256 x86_64_linux:   "57c61351a927713042c5cf0d71fe440ff758cc072cb0e2d81f98a8b8b0508abe"
+    sha256 arm64_sonoma:   "8c5afb6748c91001cc91dad149293b0aa064ed73255de0411f533826395f4974"
+    sha256 arm64_ventura:  "f342dd05417a998c01d9623ce1b3ad152aa4d1140295df276cdded51d27be51e"
+    sha256 arm64_monterey: "5bcf5ac6a1ac0d283fb0159b69fb540bafd0dbce7bd6d40937443dbded97cb67"
+    sha256 sonoma:         "b803e52f3b1d6cda3370dfb2f13442d47039838accd56cf7e2b97da070510f89"
+    sha256 ventura:        "a1f9084ed264904da34adf0ffd1b655627e79cb25f38762b9f367a32b68cc7e5"
+    sha256 monterey:       "34923e18438de04b7682907a6ee8d5f95a5997d370d32205791cc3c8b2d64854"
+    sha256 x86_64_linux:   "3639e6f0a48fbf6f3b2b271c86768e42e4a2966e55047be42113cc8f141d1bb0"
   end
 
   depends_on "cmake" => :build

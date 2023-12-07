@@ -6,6 +6,11 @@ class Kitex < Formula
   license "Apache-2.0"
   head "https://github.com/cloudwego/kitex.git", branch: "develop"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "246bed522383afea4c44f5d3efcdd1c1a541ff5a33b74426ac14802e76419d48"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0bc1fab01c84da7c2847391ce546442039229279f768cd2409bf8724d46f39cc"
