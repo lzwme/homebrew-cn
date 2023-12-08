@@ -1,18 +1,18 @@
 class Azion < Formula
   desc "CLI for the Azion service"
   homepage "https://github.com/aziontech/azion"
-  url "https://ghproxy.com/https://github.com/aziontech/azion/archive/refs/tags/1.10.0.tar.gz"
-  sha256 "3ab6fb8767933f11a7002b5215e732552b18c16535354cefee97f7867f96856f"
+  url "https://ghproxy.com/https://github.com/aziontech/azion/archive/refs/tags/1.10.1.tar.gz"
+  sha256 "836adff69e94d546113d848480980bba4e39d1864e100b12fb9ead844317a656"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f4c4d3b5d31bd2628fc5c474ef371152239ef220e6ead2eba4782cb0631727d1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "77f80327f0ae8a508ffe3cee4d852aa621c5aa2ed25fa46c6e367debf49383d2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1b898c21e971bbbb20f856022a89269e83212103b4e62e51000f2712bc781cb5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6a837e6d37d2509b087a3784517bbab81a6ee93bb302331143cb73547c778328"
-    sha256 cellar: :any_skip_relocation, ventura:        "90034a919a8d4d2445e6af206eab1664eb20d2aaf32236888f5c2a54e18f611b"
-    sha256 cellar: :any_skip_relocation, monterey:       "14b2349e074b1177479deccdfd30e3fbe76cc788f620450ea1cb52150d20b2b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "37937b8c4adbd3e65f7ddb65649d270683b8d91c470a4fbb674021005e23b652"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aa49ca863903b0eb3d06ffcb77910a52cf6fb7cc307737584f0abda77af29e60"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fab8185244f447bb8fcb646791a3be3837d47d3f71a726237b77a49655a7c43c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dc06956e3e22eb5f7cb5fd5da3e6ac6346a680b6f61785c05f34e415f96dc8ca"
+    sha256 cellar: :any_skip_relocation, sonoma:         "96b1bcec213d9da716e3b21fc4439a4c5f096991b738861b4af8a236e0d7b63f"
+    sha256 cellar: :any_skip_relocation, ventura:        "29e6a88adce644e56caa2f1d2bef6e21b6eb36882c7c756166ff831fe1240ed6"
+    sha256 cellar: :any_skip_relocation, monterey:       "aa4618a1d574b59007a2aa86f31d1699116f874f9b7cb20a613e3964866fd265"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9209f0863eb2f9577fae6b2f5a5263307f385085c2b326acc24b41af772027b"
   end
 
   depends_on "go" => :build

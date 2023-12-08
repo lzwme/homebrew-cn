@@ -200,6 +200,7 @@ Homebrew-homebrew-core/Formula/a/archivemount.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/archiver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/arduino-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ares.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/argc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/argo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/argocd-autopilot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/argocd-vault-plugin.rb, Homebrew/homebrew-core, 0
@@ -1278,7 +1279,7 @@ Homebrew-homebrew-core/Formula/d/dhall-json.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dhall-lsp-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dhall-yaml.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dhall.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/d/dhcpdump.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/dhcpdump.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dhcping.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dhex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/di.rb, Homebrew/homebrew-core, 0
@@ -1411,6 +1412,7 @@ Homebrew-homebrew-core/Formula/d/drake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/driftctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/driftwood.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/drill.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/drogon.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dromeaudio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/drone-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dronedb.rb, Homebrew/homebrew-core, 0
@@ -4458,6 +4460,7 @@ Homebrew-homebrew-core/Formula/o/open-mesh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/open-mpi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/open-ocd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/open-scene-graph.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/open-simh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/open-sp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/open-tyrian.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/open-zwave.rb, Homebrew/homebrew-core, 0
@@ -5337,6 +5340,7 @@ Homebrew-homebrew-core/Formula/r/resty.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/resvg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/retdec.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rethinkdb.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/retire.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/retry.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/revive.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rex.rb, Homebrew/homebrew-core, 0
@@ -7128,6 +7132,8 @@ Homebrew-homebrew-cask/Casks/a/androidtool.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/angband.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/angry-ip-scanner.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/anka-build-cloud-controller-and-registry.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/anka-build-cloud-controller.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/anka-build-cloud-registry.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/anka-virtualization.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ankama.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ankermake.rb, Homebrew/homebrew-cask, 0
@@ -10252,6 +10258,7 @@ Homebrew-homebrew-cask/Casks/s/screencast.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/screenflick.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/screenflow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/screenfocus.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/screens-assist.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/screens-connect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/screens.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/scribus.rb, Homebrew/homebrew-cask, 0

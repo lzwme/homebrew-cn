@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v21.3.0/node-v21.3.0.tar.xz"
-  sha256 "ab4172ec827f770c6c3b4b6f30824104137eda474848e84d55ed55b341e67725"
+  url "https://registry.npmmirror.com/-/binary/node/v21.4.0/node-v21.4.0.tar.xz"
+  sha256 "7a80f6527654602d7358c5be2eefc4f80a64c8901630a83977b073c34f25479c"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "c2238b6df588092e3c42c2bfe1d0912b7032b74c57d414dae8cd5bbae5a1fda8"
-    sha256 arm64_ventura:  "0f5c06de547ca6433015c3e15ebe4c05a5f1e0fa1a3d9685f9e35e8440985794"
-    sha256 arm64_monterey: "ee321ef56b943b27fe4559ad0f91c6e6110fe7017131baa5251bb367319eaa33"
-    sha256 sonoma:         "5e1d674e8141d5fd3889122f1b9c77dde318ba59435f80888dc74eeee0e615bf"
-    sha256 ventura:        "86d5af5e933db0714696bc58b6ee6a13fc700083ac329356d298ad3957d7c888"
-    sha256 monterey:       "b1a8f1c4a2c94a1ebfc223fcf9e1105e08835b2cea7b0d230b7cab47c65cdaa9"
-    sha256 x86_64_linux:   "2e74946ef520bd0b79c231f8795c949be5f811b37219d2ccd0404fcf985db3e7"
+    sha256 arm64_sonoma:   "5ce0dc5bfdd74623cb562f2c81740791b2b0c98020b824ef6810749b561db0bc"
+    sha256 arm64_ventura:  "63b1328d85a91030e8ad5a8f0a3579c03785712e10c03ee4151b0c82cdf706ab"
+    sha256 arm64_monterey: "d62a37820aad743f9e7cee0c766ef00db179e9f2eb7fffd4da92b55b4e0ac1b4"
+    sha256 sonoma:         "9676e13489d7a49372aa4a70fd118de951604e6ef0a8ea7d3517e9af1f82fe43"
+    sha256 ventura:        "3e5b42767446670f88f3d0726a865a7f96ed3015fc3717f9e16729c02e8608ad"
+    sha256 monterey:       "0edec3d91aa9ecc5f2fdf55219d08ce8907d216f903ed5951a9d9b73ec5578d3"
+    sha256 x86_64_linux:   "361972040021f822e16fef9657784309b0e7d635956b79f8f8ae534d8327ede4"
   end
 
   depends_on "pkg-config" => :build
@@ -51,21 +51,6 @@ class Node < Formula
   resource "npm" do
     url "https://registry.npmjs.org/npm/-/npm-10.2.4.tgz"
     sha256 "36b548120f75f26408d04ff163cd4a699916f1c4b72ebeeab0bbaf054009eb5b"
-  end
-
-  # Fixes `return binding.writeFileUtf8( Error: ENOENT: no such file or directory`.
-  # Remove both patches when upstream releases a new version after they're merged.
-  # https://github.com/nodejs/node/issues/50989
-  # https://github.com/nodejs/node/pull/50990
-
-  patch do
-    url "https://github.com/nodejs/node/commit/c3236428e02b00a416858e9f76ce287923595266.patch?full_index=1"
-    sha256 "067f59bb4d769b775a35968d00e6d26adc34bd12ae899ab1bcdb2b2e478b6f8e"
-  end
-
-  patch do
-    url "https://github.com/nodejs/node/commit/aaa4edda7d2e16a284f893c9cb49459b1271e4d5.patch?full_index=1"
-    sha256 "16fab63b15d4ad2a9ab0cf0516d108d789a7b58fe14fecf5277aceeb3b56ac2f"
   end
 
   def install

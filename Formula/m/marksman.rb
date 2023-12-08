@@ -1,22 +1,19 @@
 class Marksman < Formula
   desc "Language Server Protocol for Markdown"
   homepage "https://github.com/artempyanykh/marksman"
-  url "https://ghproxy.com/https://github.com/artempyanykh/marksman/archive/refs/tags/2023-07-25.tar.gz"
-  sha256 "0b04ab2eeb185ab321f0ab0f7ab19c02d91b8c2ce377d6ea2af494cd1ef48a7b"
+  url "https://ghproxy.com/https://github.com/artempyanykh/marksman/archive/refs/tags/2023-12-07.tar.gz"
+  sha256 "b0fff091b87abfaccefc6276ed07e9bc35ecf43da197049a7295db175d593748"
   license "MIT"
   head "https://github.com/artempyanykh/marksman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bf3be1cdc036e59ecba83f07cc51ea06b8d7197b0ac531019bb6e264b08bb557"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a3f90276b1f17a84573149b4380188190a8cf62a66cf62644b0b5c38d2c4fa2c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "daf54f16db3c68f0314ebb56c98287adbd147690049209fadfe2acbfe14eb548"
-    sha256 cellar: :any_skip_relocation, ventura:        "5534cb88d413b457cc92d37f506d3b373abb750cb5a0bf852ebf7cbeeb05fd53"
-    sha256 cellar: :any_skip_relocation, monterey:       "aee1de132cd15a34a513c8d8a3f7e80f88b77d88d82ecfcd69122e7c930f58a8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fcde5660ad404c33f7e04a650ea42d7b459d99d4c3256374d3e23f5b8edae0b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb8eb4232c1cc858efe61d63bbac0192ca11a9d5a5881bc5f05ee4a20a0ccf7a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c4f1d6de07356d9cd0785a251bd24b171695d9ed45836b9178780b23a633fbbe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e25f02303d8cd7015adc3427aa3bc88988418cb5344454057c84f2919a1cdb0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "975ae37e4d9d34b24bdcc68a5bae6efde5944eb9f5cdba3ca819f79b1ae16f9f"
+    sha256 cellar: :any_skip_relocation, ventura:        "1f461065528fb9523f1e1e9f63cc8945c487cc5886d0825b9d05826f3f70bee5"
+    sha256 cellar: :any_skip_relocation, monterey:       "ee06e585cc2b152b6f67251d2da195a062bfd9c1ffbe270bfb6f421a9882a103"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db36a765cdea49355d0e150aa6bda5587b2a2cfae8815ec220afcf8449d2a82a"
   end
-
-  deprecate! date: "2023-10-24", because: "uses deprecated `dotnet`"
 
   depends_on "dotnet" => :build
 

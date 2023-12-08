@@ -8,6 +8,7 @@ class Sgn < Formula
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "959b57c87632494b1438e0c97731885b5372966ccf28a7a41cccd843ceff9f7b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d40c19505109d474901e0b70626635491f6d5242535bec7a8e249cf4aedc606"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5f5990b3ec44deda15b1feb6da75576080e00d5bfdfc9d23147c18940a09c8af"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "32c9256c57f43403fca7b8a9b7c868f62151456a93be910f5060eb74a49b2140"
     sha256 cellar: :any_skip_relocation, sonoma:         "8bb448c1d065c6bfe6edcb0887c73c3789efb99acdec649dc097dda60ba08351"

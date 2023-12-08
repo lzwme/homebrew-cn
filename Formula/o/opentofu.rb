@@ -15,13 +15,14 @@ class Opentofu < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "872afa2fe54405471b9ef8db43d3986da19074b0f6357d0a8eb3d4c940ac2992"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3debffc1a0d6f09a65393f35eb12303bf6ec494e5e1bcf65957fd73ec6e61cc4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f3586c20dcb19d1f5b310f09b61a8f1696068447488235ea97beae9d3dd8e1b6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "016a2bedd74680f7fc0c568f4663ae1214a7cb77770ec672ff7c3c978e452eb7"
-    sha256 cellar: :any_skip_relocation, ventura:        "ce0f7e69bc1b26f95183d962f3d6133c76a157786f1554f8cab309df859134f2"
-    sha256 cellar: :any_skip_relocation, monterey:       "f87dc0d19ff5aa58f7999bd1293f7464bc5b04077c717567929b35df2c29642f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "028506691cb8bb18b770358c3dfeb663612362c61df1ba2fb2decb58bfa6859b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "70487bcd11192e39cfd7de778ce033a65bfb3206e6df4170c8965bd799015d8e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e673957e514a32c2463df200ba921b7de0431d988ca7460e8714ee55e3ec3148"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1a216bb76c92ee8f47ba0a96bba5effc8f43275c6fb37973a974aea693e22570"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ff05eec7d8bfaf6951507a77fc91a6ba4a11263090249ecf03b6f4e384a68029"
+    sha256 cellar: :any_skip_relocation, ventura:        "b2fab9d12c3a4fa3a0e9985e473fec07356eba8aaa2536021d623fe855e0e02d"
+    sha256 cellar: :any_skip_relocation, monterey:       "43a210afa7398e52abb6822b81d427c402d480ff21a89c28a5b3c146e855ba68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "67615b3529fd4e30a0eb9418e6f976077fddcd521395c23a3089f3439267347f"
   end
 
   depends_on "go" => :build
@@ -31,7 +32,8 @@ class Opentofu < Formula
   fails_with gcc: "5"
 
   def install
-    system "go", "build", *std_go_args(output: bin/"tofu", ldflags: "-s -w"), "./cmd/tofu"
+    ldflags = "-s -w -X github.com/opentofu/opentofu/version.dev=no"
+    system "go", "build", *std_go_args(output: bin/"tofu", ldflags: ldflags), "./cmd/tofu"
   end
 
   test do

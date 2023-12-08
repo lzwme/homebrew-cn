@@ -2,19 +2,24 @@ class K9s < Formula
   desc "Kubernetes CLI To Manage Your Clusters In Style!"
   homepage "https://k9scli.io/"
   url "https://github.com/derailed/k9s.git",
-      tag:      "v0.28.2",
-      revision: "694159b857314de5b69f251e42a5931f32105cb8"
+      tag:      "v0.29.1",
+      revision: "a13412a6d985abf2a925ecbdca1fc9c71c47415a"
   license "Apache-2.0"
   head "https://github.com/derailed/k9s.git", branch: "master"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd35db638b0cc2d7c22760fdcd19cd49b4981e7e00c90ed948c1d2358da2bea3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1cf1ac2e450ff79f4070a6319e70bb795c738dfafe054625c19b914d0370a430"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a64a9047fe4c889bffcea17052669de8d0d6e2e154104baf01da18ecdebd0bab"
-    sha256 cellar: :any_skip_relocation, sonoma:         "85b52f0af3e114529d328aa97e302f1951398f951aa1a4127ccd6f369c99fb8d"
-    sha256 cellar: :any_skip_relocation, ventura:        "bb87353af47c39105623c445998044e94b402be24ba0a6a5ff5b42666958b20b"
-    sha256 cellar: :any_skip_relocation, monterey:       "54060af4f5a61581206a969a63bb2dff405bfd5195679134908d8169778b35d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0fdb21eb231aa243e0c21896b7c62b9a742ac1e424837a57a1e89d7dd439486"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "df83e2f14124619ca114c67978a086be9a5312dcade9553a221005f6285df4ae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "82d7b22291dcf78f7195c6a009e509f13ebbc8411cbd3628d493b4e99d8386ad"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1c1621e2c4821e012d0c081efe576634ecf29288c4562e22a097b40b984a2cb5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a221961407031e7b46e7093dd28f82bb66b05a68900833d8446141400df9ff59"
+    sha256 cellar: :any_skip_relocation, ventura:        "50359e8f8ac6e06ca72107c565be8a2d996c739b83922f5e3a6a579cedc666cc"
+    sha256 cellar: :any_skip_relocation, monterey:       "6cacf9e5133544ca1e17760c0a1bdd2ce8dda1bad99da8544b5f4caaa5724db3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b6a48e473c44dfb89aacdcfdb1f93151eb978cd1a1067565cdcd6fdff5ac8c05"
   end
 
   depends_on "go" => :build
