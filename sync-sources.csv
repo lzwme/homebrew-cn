@@ -2140,6 +2140,7 @@ Homebrew-homebrew-core/Formula/g/glade.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/glances.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/glassfish.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/glbinding.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/glbinding@2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gleam.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/glew.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/glfw.rb, Homebrew/homebrew-core, 1
@@ -9130,7 +9131,6 @@ Homebrew-homebrew-cask/Casks/m/marvin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/masscode.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/massreplaceit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/master-pdf-editor.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/mat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mate-translate.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mater.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/material-colors.rb, Homebrew/homebrew-cask, 1
@@ -9184,6 +9184,7 @@ Homebrew-homebrew-cask/Casks/m/memory-clean-3.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/memory-cleaner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/memory-map.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/memory.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/memoryanalyzer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mendeley-reference-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mendeley.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/menu-bar-splitter.rb, Homebrew/homebrew-cask, 1
@@ -12732,6 +12733,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-pahawh-hmong.rb, Homebrew/home
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-palmyrene.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-pau-cin-hau.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-phags-pa.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-phagspa.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-phoenician.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-psalter-pahlavi.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-rejang.rb, Homebrew/homebrew-cask-fonts, 0

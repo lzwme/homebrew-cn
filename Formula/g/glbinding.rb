@@ -1,28 +1,23 @@
 class Glbinding < Formula
   desc "C++ binding for the OpenGL API"
   homepage "https://github.com/cginternals/glbinding"
-  url "https://ghproxy.com/https://github.com/cginternals/glbinding/archive/refs/tags/v2.1.4.tar.gz"
-  sha256 "cb5971b086c0d217b2304d31368803fd2b8c12ee0d41c280d40d7c23588f8be2"
+  url "https://ghproxy.com/https://github.com/cginternals/glbinding/archive/refs/tags/v3.3.0.tar.gz"
+  sha256 "a0aa5e67b538649979a71705313fc2b2c3aa49cf9af62a97f7ee9a665fd30564"
   license "MIT"
+  head "https://github.com/cginternals/glbinding.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "d93a8400e4d2c6b76538d80d86ecddfda4c1d67c647115c0456d94a45503e2f0"
-    sha256 cellar: :any,                 arm64_ventura:  "8414c2062a0413be5ce4d3104464d77ded39a971883839f5162d1eda60c1dc9e"
-    sha256 cellar: :any,                 arm64_monterey: "6679892b95d63354d1aa3cde01824915003d8decbbe4479a19cea82e31d20be6"
-    sha256 cellar: :any,                 arm64_big_sur:  "5c77227ab2d41d56069711ea964f5222feb1d9f1f88228b88ff657131cec9093"
-    sha256 cellar: :any,                 sonoma:         "cfdf4e8efdb8b424521ed9a72852995a1b4f3462e82b782a59ddf7287661dda1"
-    sha256 cellar: :any,                 ventura:        "7eef393fef969da975966933406213df6d32a9ec757d3a581751c83aa7e0ef4a"
-    sha256 cellar: :any,                 monterey:       "53e55b3996a3e0a93dda11fe2060a9fd7e9a15f2b5985938b7c04beca5a49542"
-    sha256 cellar: :any,                 big_sur:        "a77f29c6cc40472d39646027e3d9b068ff5cf912edf600087ef4902e30f501a0"
-    sha256 cellar: :any,                 catalina:       "6a371e47b76cd227e12699de3e7a095e620150532789cdac48e1c9b59bee06b6"
-    sha256 cellar: :any,                 mojave:         "a44cd2f23650ce664d8f61634c27abce3a00f4b5d9efbb10687759a62ca26895"
-    sha256 cellar: :any,                 high_sierra:    "ad79687ca8b43832ab27d5a459a71c4cb7e2be5b02d5df15c667ad7689fe38d0"
-    sha256 cellar: :any,                 sierra:         "454bfd4f3f6a983a0614f469388cbe27437350d203c61aed34a8c05fa9bb0710"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f433dde2dd1326a5d9be03bbc45fcbe33f0d48cee1ea070c17dd878759c87a82"
+    sha256 cellar: :any,                 arm64_sonoma:   "84b1061882c8699d38f1da464f845118939b29c7f510e7e8576465a48787d844"
+    sha256 cellar: :any,                 arm64_ventura:  "cfb99ac70297a954286ed89144d7b67f0936325e73a275d50f413bb1a1b350c8"
+    sha256 cellar: :any,                 arm64_monterey: "6593ba056f01bc50e5aee54a79db11960f7fca69d7f075f3eedd9a30bab368c4"
+    sha256 cellar: :any,                 sonoma:         "c1ecb96e70f096e7e9929850694d5b117de529e0664033a4471284450b6984fb"
+    sha256 cellar: :any,                 ventura:        "87e34e3fc861ff0f702815f8740c100115d27cd20039903462693741bc683d6e"
+    sha256 cellar: :any,                 monterey:       "fbecccf80effb2edffda114a8fc92469a890a133d8f94cc245c168d35f903112"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eea31bb6671e1a09ab3e05f1af3a642d20ec758f597ac877bdc1ee846194f71b"
   end
 
   depends_on "cmake" => :build
+  depends_on "glfw" => :test
 
   on_linux do
     depends_on "mesa"
@@ -30,24 +25,37 @@ class Glbinding < Formula
   end
 
   def install
-    ENV.cxx11
-    system "cmake", ".", *std_cmake_args, "-DGLFW_LIBRARY_RELEASE="
-    system "cmake", "--build", ".", "--target", "install"
+    # Force install to use system directory structure as the upstream only
+    # considers /usr and /usr/local to be valid for a system installation
+    inreplace "CMakeLists.txt", "set(SYSTEM_DIR_INSTALL FALSE)", "set(SYSTEM_DIR_INSTALL TRUE)"
+
+    # NOTE: Can remove `OPTION_BUILD_OWN_KHR_HEADERS=ON` (at least on Linux)
+    # if we add `libglvnd` formula and use it as part of OpenGL solution.
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DOPTION_BUILD_OWN_KHR_HEADERS=ON",
+                    "-DEXECUTABLE_INSTALL_RPATH=#{rpath}",
+                    "-DLIBRARY_INSTALL_RPATH=#{loader_path}",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
     (testpath/"test.cpp").write <<~EOS
       #include <glbinding/gl/gl.h>
-      #include <glbinding/Binding.h>
+      #include <glbinding/glbinding.h>
+      #include <GLFW/glfw3.h>
       int main(void)
       {
-        glbinding::Binding::initialize();
+        glbinding::initialize(glfwGetProcAddress);
       }
     EOS
     open_gl = OS.mac? ? ["-framework", "OpenGL"] : ["-L#{Formula["mesa-glu"].lib}", "-lGL"]
     system ENV.cxx, "-o", "test", "test.cpp", "-std=c++11",
-                    "-I#{include}/glbinding", "-I#{lib}/glbinding", *open_gl,
-                    "-L#{lib}", "-lglbinding", *ENV.cflags.to_s.split
+                    "-I#{include}/glbinding", "-I#{lib}/glbinding",
+                    "-I#{include}/glbinding/3rdparty", *open_gl,
+                    "-L#{lib}", "-lglbinding", "-L#{Formula["glfw"].opt_lib}", "-lglfw",
+                    *ENV.cflags.to_s.split
     system "./test"
   end
 end

@@ -6,15 +6,16 @@ class Dvc < Formula
   url "https://files.pythonhosted.org/packages/26/80/6671d8b8c149822db924c991edfb6d1fff15711258b84079bcdf95ed053a/dvc-3.33.3.tar.gz"
   sha256 "a0bf0712cfe5db204f434021299de5149a947072af9882c4baacdb76d0ece99b"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "cc46f5ad3e1ffeb8d02b285a46c04ef2f99793b8f0c45c8537dcd6d5e25ebd05"
-    sha256 cellar: :any,                 arm64_ventura:  "2fbbb4ed81d26b8a98fbf7e95e21c6837f8aebf8b4e7547a30c53e8c0051fd1e"
-    sha256 cellar: :any,                 arm64_monterey: "5283facf4054d29ec9c3e09f25957d1ebcb227862f53f0004f0568636544d75e"
-    sha256 cellar: :any,                 sonoma:         "7f1c020022ade2d8af8729382ecbf0a17a8e7e8e042ed0854c2688d1086c0485"
-    sha256 cellar: :any,                 ventura:        "cda7d54b32c7c46936140909f9e70190703814fb38139fc0f4e5a6be633ea464"
-    sha256 cellar: :any,                 monterey:       "b4d94bc996e09c3f4efd1abb21b0ac8228bf52637fcea6b275d760fa219ba083"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "383a4befa73bcce65257f126156dd96f3efbbc51210a6149b61256d3432ada64"
+    sha256 cellar: :any,                 arm64_sonoma:   "f63af79076d6286217d91bdc52c06e67a96381755969267a615c94b7fcb3af91"
+    sha256 cellar: :any,                 arm64_ventura:  "c3ad6e4d0a8c3c268e0cac815414708dc24cb05395d84d5095a25f746724db9b"
+    sha256 cellar: :any,                 arm64_monterey: "4a99de69f88b6a106ca3c368aba4a366ad990a95fe462da04ded6db04507a3fa"
+    sha256 cellar: :any,                 sonoma:         "b956b6c654e732921bbd68f04858045215a2b2af7275577ad507299838f684ff"
+    sha256 cellar: :any,                 ventura:        "47c72ea4690b785b5b4eec83133dbbfdc3ff431c6d85a4f5b9d9fc47f2a54d0f"
+    sha256 cellar: :any,                 monterey:       "adc4d37368e02474d904aa200b5857e419c25839e10ab09e485dea607596d8a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e59c2c4459397706328b9a455182a057f7e3c7fc76ecd07a4dbea492fe05a547"
   end
 
   depends_on "openjdk" => :build # for hydra-core
@@ -368,13 +369,13 @@ class Dvc < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/10/3c/a25588d309f439aaa27e98621ab2e7fef90cb4b7b0a91a188b0faeb7c4b6/google-api-core-2.14.0.tar.gz"
-    sha256 "5368a4502b793d9bbf812a5912e13e4e69f9bd87f6efb508460c43f5bbd1ce41"
+    url "https://files.pythonhosted.org/packages/2c/e4/56b14d35057a23cab9067dd8fb841407d05d32b5d6c7a3c66c1360e8a7c0/google-api-core-2.15.0.tar.gz"
+    sha256 "abc978a72658f14a2df1e5e12532effe40f94f868f6e23d95133bd6abcca35ca"
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/f8/99/c83a13d7d7f15aa06e9a6811375688f8c45f5211f5f5c719d337a2596f3d/google-api-python-client-2.109.0.tar.gz"
-    sha256 "d06390c25477c361d52639fe00ef912c3fab8dafc7fbf29580c1144e92523a79"
+    url "https://files.pythonhosted.org/packages/7f/dc/9571f174fdab8766c5956ab0a61ecdec89a0da21f22befa3de7124bb3e6a/google-api-python-client-2.110.0.tar.gz"
+    sha256 "1f825e48c7fdc3c96ad6aac179cb73c3755dfff41d16487fa7130e5efcfe7b76"
   end
 
   resource "google-auth" do
@@ -393,8 +394,8 @@ class Dvc < Formula
   end
 
   resource "google-cloud-core" do
-    url "https://files.pythonhosted.org/packages/6b/60/dcc26e42d3754ac57c51a524f53c988f2aa755faec4cc00a232bb0077637/google-cloud-core-2.3.3.tar.gz"
-    sha256 "37b80273c8d7eee1ae816b3a20ae43585ea50506cb0e60f3cf5be5f87f1373cb"
+    url "https://files.pythonhosted.org/packages/b8/1f/9d1e0ba6919668608570418a9a51e47070ac15aeff64261fb092d8be94c0/google-cloud-core-2.4.1.tar.gz"
+    sha256 "9b7749272a812bde58fff28868d0c5e2f585b82f37e09a1f6ed2d4d10f134073"
   end
 
   resource "google-cloud-storage" do
@@ -413,8 +414,8 @@ class Dvc < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/95/41/f9d4425eac5cec8c0356575b8f183e8f1f7206875b1e748bd3af4b4a8a1e/googleapis-common-protos-1.61.0.tar.gz"
-    sha256 "8a64866a97f6304a7179873a465d6eee97b7a24ec6cfd78e0f575e96b821240b"
+    url "https://files.pythonhosted.org/packages/4a/5f/eb12d721b45d20a977289d674e179995a0ddab1684d2c61b29a63d43a5f1/googleapis-common-protos-1.62.0.tar.gz"
+    sha256 "83f0ece9f94e5672cced82f592d2a5edf527a96ed1794f0bab36d5735c996277"
   end
 
   resource "grandalf" do
@@ -593,8 +594,8 @@ class Dvc < Formula
   end
 
   resource "pydrive2" do
-    url "https://files.pythonhosted.org/packages/9b/f4/ac87aa67907033a3f55bdee46ac6d2dccf9dc9df23235c1d4efa464b5e32/PyDrive2-1.17.0.tar.gz"
-    sha256 "68fea934347bb612b7a848811d48149db840bcfb5fa4d7a8b6161b2d2adfec70"
+    url "https://files.pythonhosted.org/packages/24/f4/3cccf07407c3f737f0d166a80af9a446f90ce8b0977fb89f312d88f335a7/PyDrive2-1.18.0.tar.gz"
+    sha256 "df24e405d2704af517fb92200b4d5353058dc6a9e422d97082b2b916cc8ac0c3"
   end
 
   resource "pygtrie" do

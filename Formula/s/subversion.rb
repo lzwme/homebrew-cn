@@ -138,6 +138,10 @@ class Subversion < Formula
     if OS.linux?
       # svn can't find libserf-1.so.1 at runtime without this
       ENV.append "LDFLAGS", "-Wl,-rpath=#{serf_prefix}/lib"
+      # Fix linkage when build-from-source as brew disables superenv when
+      # `scons` is a dependency. Can remove if serf is moved to a separate
+      # formula or when serf's cmake support is stable.
+      ENV.append "LDFLAGS", "-Wl,-rpath=#{HOMEBREW_PREFIX}/lib" unless build.bottle?
     end
 
     perl = DevelopmentTools.locate("perl")

@@ -1,18 +1,18 @@
 class Ugrep < Formula
   desc "Ultra fast grep with query UI, fuzzy search, archive search, and more"
   homepage "https://github.com/Genivia/ugrep"
-  url "https://ghproxy.com/https://github.com/Genivia/ugrep/archive/refs/tags/v4.3.5.tar.gz"
-  sha256 "e7ba12da8c1ac4b9a1752e11aecc90067289b149e47d214f5befb0f63a1a7728"
+  url "https://ghproxy.com/https://github.com/Genivia/ugrep/archive/refs/tags/v4.3.6.tar.gz"
+  sha256 "39f3205a2b8b79eeb6d2eaf1727c68262010e06ba5a7c42d5164c7ed6b6822f2"
   license "BSD-3-Clause"
 
   bottle do
-    sha256                               arm64_sonoma:   "2bbec35ecbf9a93a67bac02827a830002347c11d10f94655018e0cf662eab90c"
-    sha256                               arm64_ventura:  "11f39404427b71ad7c73f7143a6364dcd89ff1626fe8bc110abb8bacbdc93952"
-    sha256                               arm64_monterey: "888cf0288cd12511c752c990dee257983ba86a740001886b5c848beaabc31e10"
-    sha256                               sonoma:         "69d135f64be9fed2d17a13a5d0ca07733b252135dc5f9c126d5bfd56afc66277"
-    sha256                               ventura:        "cf5d1dc4f2d43624382bea088f72f9596ad99db6544ccd16b1a5e67d09bfd06e"
-    sha256                               monterey:       "be01766d64a13d4d7032d933f24fd94299120903762bdc1d409279f2590d5806"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "223da4309afffba93385a0b142f5cd6f07962efabc1e113b219fca7a0e1b7b97"
+    sha256                               arm64_sonoma:   "4abfdeebfcfc638244ad02219ef5fbbdc3cceb749c976dbea8f49862718eacb0"
+    sha256                               arm64_ventura:  "51ebbe1bd2d9c86b24137ecdd252045dc369e72bac8a9ceeb03cb3055dab3ebb"
+    sha256                               arm64_monterey: "51acbd4695eeb55551693a2495d1ec450d3a00b44e96e010a3efe518425af886"
+    sha256                               sonoma:         "7a2149a0012606ce8e8fcffe77178fbe2751409df4acf3fd899d45f9f6fa5a53"
+    sha256                               ventura:        "a8575fe7b5d9f217aa8da1c9248000005e0164cd9166be519c03a422e36f1c37"
+    sha256                               monterey:       "86ea0f75b95d3ed54b08269e3a2d8c30091eb2e59fadfb70f16fce4c248a1945"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8fc071066e84c242f763efdf4b0f932aca9b67cd52b27ca312809b102df51559"
   end
 
   depends_on "pcre2"

@@ -1,9 +1,17 @@
 class Sile < Formula
   desc "Modern typesetting system inspired by TeX"
   homepage "https://sile-typesetter.org"
-  url "https://ghproxy.com/https://github.com/sile-typesetter/sile/releases/download/v0.14.13/sile-0.14.13.tar.xz"
-  sha256 "3d4f587da9e6cabe27010310bbfba70504900af576872a348bc951d0c9ee15c0"
   license "MIT"
+
+  # TODO: With 0.15 release:
+  # - Remove `cosmo` resource and corresponding references in install
+  # - Switch `lua` dependency to `luajit` and clean up `lua` references
+  stable do
+    url "https://ghproxy.com/https://github.com/sile-typesetter/sile/releases/download/v0.14.13/sile-0.14.13.tar.xz"
+    sha256 "3d4f587da9e6cabe27010310bbfba70504900af576872a348bc951d0c9ee15c0"
+
+    depends_on "lua"
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "eeb15cdf10649d97cd9f70bc1ee902dd1ed54d043e4d803ccb0f8deea0195c9d"
@@ -16,11 +24,20 @@ class Sile < Formula
   end
 
   head do
-    url "https://github.com/sile-typesetter/sile.git", branch: "master"
+    url "https://github.com/sile-typesetter/sile.git", branch: "develop"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
+    depends_on "jq" => :build
     depends_on "libtool" => :build
+    depends_on "poppler" => :build
+    depends_on "rust" => :build
+    depends_on "luajit"
+
+    resource "compat53" do
+      url "https://luarocks.org/manifests/lunarmodules/compat53-0.12-1.rockspec"
+      sha256 "880cdad8d1789a0756f2023d2c98f36d94e6d2c1cc507190b4f9883420435746"
+    end
   end
 
   depends_on "pkg-config" => :build
@@ -28,7 +45,6 @@ class Sile < Formula
   depends_on "harfbuzz"
   depends_on "icu4c"
   depends_on "libpng"
-  depends_on "lua"
   depends_on "luarocks"
   depends_on "openssl@3"
 
@@ -136,8 +152,15 @@ class Sile < Formula
   end
 
   def install
-    lua = Formula["lua"]
-    luaversion = lua.version.major_minor
+    if build.head?
+      lua = Formula["luajit"]
+      luaversion = "5.1"
+      luainclude = lua.opt_include/"luajit-2.1"
+    else
+      lua = Formula["lua"]
+      luaversion = lua.version.major_minor
+      luainclude = lua.opt_include/"lua"
+    end
     luapath = libexec/"vendor"
 
     paths = %W[
@@ -149,7 +172,7 @@ class Sile < Formula
     ENV["LUA_PATH"] = paths.join(";")
     ENV["LUA_CPATH"] = "#{luapath}/lib/lua/#{luaversion}/?.so"
 
-    ENV.prepend "CPPFLAGS", "-I#{lua.opt_include}/lua"
+    ENV.prepend "CPPFLAGS", "-I#{luainclude}"
     ENV.prepend "LDFLAGS", "-L#{lua.opt_lib}"
 
     zlib_dir = expat_dir = "#{MacOS.sdk_path_if_needed}/usr"
@@ -167,6 +190,9 @@ class Sile < Formula
     ]
 
     resources.each do |r|
+      # TODO: Remove this line when `cosmo` resource is removed
+      next if r.name == "cosmo" && build.head?
+
       r.stage do
         rock = Pathname.pwd.children(false).first
         unpack_dir = Utils.safe_popen_read("luarocks", "unpack", rock).split("\n")[-2]
@@ -176,14 +202,16 @@ class Sile < Formula
       end
     end
 
-    system "./bootstrap.sh" if build.head?
-    system "./configure", "FCMATCH=true",
-                          "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--with-system-luarocks",
-                          "--with-lua=#{prefix}",
-                          "--prefix=#{prefix}"
+    args = %w[
+      FCMATCH=true
+      --disable-silent-rules
+      --with-system-luarocks
+    ]
+    if build.head?
+      args += %w[--with-system-lua-sources --disable-embeded-resources]
+      system "./bootstrap.sh"
+    end
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
 

@@ -7,7 +7,7 @@ class CypherShell < Formula
   version_scheme 1
 
   livecheck do
-    url "https://neo4j.com/download-center/"
+    url "https://neo4j.com/deployment-center/"
     regex(/href=.*?cypher-shell[._-]v?(\d+(?:\.\d+)+)\.zip/i)
   end
 

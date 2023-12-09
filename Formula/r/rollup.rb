@@ -3,18 +3,18 @@ require "language/node"
 class Rollup < Formula
   desc "Next-generation ES module bundler"
   homepage "https://rollupjs.org/"
-  url "https://registry.npmjs.org/rollup/-/rollup-4.6.1.tgz"
-  sha256 "d60345d93390409e6c459784e675e883b37b2b0e92bc8cf95a2f99b1493946d5"
+  url "https://registry.npmjs.org/rollup/-/rollup-4.7.0.tgz"
+  sha256 "7782b9cdd6724c6f1f966098a5e1c3fee4ee4912366d5a29dbd3bae64df9fe4a"
   license all_of: ["ISC", "MIT"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6e8255e41399813641c41928266714c8e08b053335d1e10f7ae8046237530bf1"
-    sha256 cellar: :any,                 arm64_ventura:  "6e8255e41399813641c41928266714c8e08b053335d1e10f7ae8046237530bf1"
-    sha256 cellar: :any,                 arm64_monterey: "6e8255e41399813641c41928266714c8e08b053335d1e10f7ae8046237530bf1"
-    sha256 cellar: :any,                 sonoma:         "b3220c7391494a7a3e4edc5dafd1bf721030d7f85114382b5a474e1530832195"
-    sha256 cellar: :any,                 ventura:        "b3220c7391494a7a3e4edc5dafd1bf721030d7f85114382b5a474e1530832195"
-    sha256 cellar: :any,                 monterey:       "b3220c7391494a7a3e4edc5dafd1bf721030d7f85114382b5a474e1530832195"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf00cf4ba3f6a91b8b1aa8f80d7d0ce593e7d3a52c5d62257c8b3a45be4e5b41"
+    sha256 cellar: :any,                 arm64_sonoma:   "f027edf56b11d97c5ee284ae25ed60bcb889c46c3fa92817cdb4f54313acbaed"
+    sha256 cellar: :any,                 arm64_ventura:  "f027edf56b11d97c5ee284ae25ed60bcb889c46c3fa92817cdb4f54313acbaed"
+    sha256 cellar: :any,                 arm64_monterey: "f027edf56b11d97c5ee284ae25ed60bcb889c46c3fa92817cdb4f54313acbaed"
+    sha256 cellar: :any,                 sonoma:         "dbdc175e2a484374adc60a6516a02e44263ddf2b4ad15e6e8bd0718eca487229"
+    sha256 cellar: :any,                 ventura:        "dbdc175e2a484374adc60a6516a02e44263ddf2b4ad15e6e8bd0718eca487229"
+    sha256 cellar: :any,                 monterey:       "dbdc175e2a484374adc60a6516a02e44263ddf2b4ad15e6e8bd0718eca487229"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8a5702943b9370b2402a164bcbe992d7d83d056cd081c90c08c627202bb45f7"
   end
 
   depends_on "node"
