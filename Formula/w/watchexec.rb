@@ -1,8 +1,8 @@
 class Watchexec < Formula
   desc "Execute commands when watched files change"
   homepage "https://github.com/watchexec/watchexec"
-  url "https://ghproxy.com/https://github.com/watchexec/watchexec/archive/refs/tags/v1.23.0.tar.gz"
-  sha256 "2a321962669979feef44ea7a6220819d5c916ca939eba41b033ea346a44caa90"
+  url "https://ghproxy.com/https://github.com/watchexec/watchexec/archive/refs/tags/v1.24.0.tar.gz"
+  sha256 "ab010c66656bc123068c824f3b0c5350835a68e6721e3ad7173f6068412ce87d"
   license "Apache-2.0"
   head "https://github.com/watchexec/watchexec.git", branch: "main"
 
@@ -12,15 +12,13 @@ class Watchexec < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "85c11e34554b532e1f70de74dd65efe34314687b04db699d0eb076cba7838ff7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "65b8a41d554e9c60ac46d6e4597466c734628ead7ed3204314f9cc84fe4fdbdf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca06a1807059dc29baf7d86f14947b2d98e310de73186e66ac6015a0d600b9b8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b7f41a7b63d419a745ffefa9e5a10552ea80f1f746ec1b883d9207931789e2ae"
-    sha256 cellar: :any_skip_relocation, sonoma:         "abc3170892082d62208f3a2e7e8d93b86f4371798c8dfe9516a6f01f501d7ef9"
-    sha256 cellar: :any_skip_relocation, ventura:        "72bb7a376ac94c176d9260b5066cd98059fb314968f070f0d9067cd0b6b22f99"
-    sha256 cellar: :any_skip_relocation, monterey:       "df2a60f908e2320dc5be874be83b20571d067408ede685b49a1aefca8d291968"
-    sha256 cellar: :any_skip_relocation, big_sur:        "aa59a8de9c810d221d7c5c22c5bd4ebc93589f2b5d19c5ebd08f425443ea97bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23423161e6b28b6e5f99df05c81e1331d1fa15fca4551d7ba14b3f4d70742114"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "46ae3a875239a0792811d0fd2e0f6d0cacbcb390b31580d7a3dcefffbbdbef27"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7f082edb420f38e8588231e8e90e18a187d8ee6b01ad501e99a7e5150937310"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7155e231c6ed7b49013858c7790bd006215a54d2be6e64dc7676f4dd7c8ae9d1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fb9bec6b85acbe064d5834ee1d8f7fea7d4759a296d37c930491fe6987c8178e"
+    sha256 cellar: :any_skip_relocation, ventura:        "f328ec9123d075f1a84ffa0320a33d8a2bc6971ab88e45609cc8413147e4c6dd"
+    sha256 cellar: :any_skip_relocation, monterey:       "7b65c7fdf595d66aeaf813c3b5464c9caabce4d1ad5bee61b0a6569ffd679c56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b10578458d55df00c72d62e70a70403fbcb243c2b7602b494120e26db5b15999"
   end
 
   depends_on "rust" => :build

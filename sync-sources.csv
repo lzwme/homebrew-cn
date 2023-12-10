@@ -4248,7 +4248,6 @@ Homebrew-homebrew-core/Formula/n/netcdf-fortran.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/netcdf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/netdata.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nethack.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/n/nethacked.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nethogs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/netlify-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/netlistsvg.rb, Homebrew/homebrew-core, 1
@@ -10881,6 +10880,7 @@ Homebrew-homebrew-cask/Casks/t/trivial.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/trojanx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/trolcommander.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tropy.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/truhu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/trunk-io.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tsh.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/ttscoff-mmd-quicklook.rb, Homebrew/homebrew-cask, 1
