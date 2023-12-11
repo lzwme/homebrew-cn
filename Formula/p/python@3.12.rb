@@ -1,10 +1,9 @@
 class PythonAT312 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.12.0/Python-3.12.0.tgz"
-  sha256 "51412956d24a1ef7c97f1cb5f70e185c13e3de1f50d131c0aac6338080687afb"
+  url "https://www.python.org/ftp/python/3.12.1/Python-3.12.1.tgz"
+  sha256 "d01ec6a33bc10009b09c17da95cc2759af5a580a7316b3a446eb4190e13f97b2"
   license "Python-2.0"
-  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -12,13 +11,13 @@ class PythonAT312 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "891cce254f0f5a5f0f75c0209e1d672d5a80a30fae24a6f0680f94437934d456"
-    sha256 arm64_ventura:  "0b5b88b2d8fa4dd9b7b6285fb7c01018d87c44ab3e5b04e72a1693e6d0f92673"
-    sha256 arm64_monterey: "f6fe21b8155ad477c4a77b246ca4542a47992633b0c20fc3d1faae9f16deb767"
-    sha256 sonoma:         "a4494a3a010d118cd199555513ff6a1c8a5960a4f007358c033c715997e03991"
-    sha256 ventura:        "ec72a21e9d7c33110976493fdd1ac61f3b62b1d65880cc8320f4b62a5418edaf"
-    sha256 monterey:       "178783b8cee4b62e0bbe0668d4328d19f7a468a33efc7049029063908fbb573b"
-    sha256 x86_64_linux:   "edbf650ba0917c75d8f37a7023f9e6dd5de96244e9fd74416ea01f1d720639c2"
+    sha256 arm64_sonoma:   "cb1129c121cf124512dde5a7002d9aa10b671c5cb6c86402392f2c6c2bfe26e9"
+    sha256 arm64_ventura:  "6295e2dc67b5f8232e6985bc6a0a1e8c73068587426a6158d31b5edfaf71cc63"
+    sha256 arm64_monterey: "559eb35830598d4012014d4adc7132172a44e00d4208002041bb2642a9fb1985"
+    sha256 sonoma:         "3b6e3038669e718c63d4d323a0dfc165a7271461994d7dc7eb467e2cdf89519f"
+    sha256 ventura:        "3469949af656f884f5d49e21550c74815cd653aab9f9f27f55f1e07ff754bfa4"
+    sha256 monterey:       "5523fc39cc0ffb7850ed566aef6b04c1f2e0886f6baa7119d334225dc0163f00"
+    sha256 x86_64_linux:   "719f8a93546953005ad6212199a9c2b0a2bed37fa3c5334752ecdc2d6f829cd1"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -78,12 +77,6 @@ class PythonAT312 < Formula
   patch do
     url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/6d2fba8de3159182025237d373a6f4f78b8bd203/python/3.11-sysconfig.diff"
     sha256 "8bfe417c815da4ca2c0a2457ce7ef81bc9dae310e20e4fb36235901ea4be1658"
-  end
-
-  # Fix build with newer editline
-  patch do
-    url "https://github.com/Bo98/cpython/commit/42e00d754d162ab7ab633d78f5541297161b4c15.patch?full_index=1"
-    sha256 "1025eb881eb831d88f0bcf3579d256f08c613d19ece907ed148859bb8d92703c"
   end
 
   def lib_cellar

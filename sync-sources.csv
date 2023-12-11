@@ -680,6 +680,7 @@ Homebrew-homebrew-core/Formula/c/cargo-make.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-nextest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-outdated.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-release.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cargo-sweep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-udeps.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-watch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-zigbuild.rb, Homebrew/homebrew-core, 1
@@ -821,6 +822,7 @@ Homebrew-homebrew-core/Formula/c/chibi-scheme.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chicken.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chinadns-c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chipmunk.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/chisel-tunnel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chisel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chkrootkit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chmlib.rb, Homebrew/homebrew-core, 1
@@ -1303,6 +1305,7 @@ Homebrew-homebrew-core/Formula/d/digitemp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dirac.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/direnv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/direvent.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/direwolf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dirt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/discount.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/diskonaut.rb, Homebrew/homebrew-core, 1
@@ -5300,6 +5303,7 @@ Homebrew-homebrew-core/Formula/r/redis@6.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/redland.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redpen.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/redress.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redshift.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redstore.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/redwax-tool.rb, Homebrew/homebrew-core, 0

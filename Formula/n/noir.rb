@@ -4,15 +4,16 @@ class Noir < Formula
   url "https://ghproxy.com/https://github.com/noir-cr/noir/archive/refs/tags/v0.11.0.tar.gz"
   sha256 "37b0b78d4673cc2482ad346010de8b36be5f75c92724938aa6e2ec1fd1883e20"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "485206f0e38ee88b92b31a829ed1d1eac86bd56ca1020ba113fb232af86b76c6"
-    sha256 arm64_ventura:  "768eea0ecbe04d12e7a9784d4f826a265ae45f6a35262358fc5a8dbc5cd0a22d"
-    sha256 arm64_monterey: "a848b92d90aac9576de6030859ec52dae0ef457ce443829fcb16d04d8f8df9a8"
-    sha256 sonoma:         "6402b1e4ce537772af92ab41d34fb3e3ad5fb52e740b4435c8ad5882e6c71dc6"
-    sha256 ventura:        "08b6ddd4c8eceaae84a257b17094f3258df8ce30cd6086bd8fb55471a74b3895"
-    sha256 monterey:       "7907f5cda5c58bb022957b3ec67d1d10fc7e5fc1acd5d927628531f5a194131d"
-    sha256 x86_64_linux:   "18e742d134e891620565032264dd3453f2294f91f426a8a002f087858221fa66"
+    sha256 arm64_sonoma:   "65a453315181de7bdff8e9c8fb1b8eb1b35448e32c2b3705e70bbe419a8ec8a3"
+    sha256 arm64_ventura:  "d8ae269aa95daa33eb369afeb57640246613e369aac730c61c22d3ab87f890b3"
+    sha256 arm64_monterey: "811bfd0fb1b96ef9bef35de0609087fd1c405f77c9c3965c2943e5a54146cf40"
+    sha256 sonoma:         "9a41267eb4bfd6f3a6bee70dcfe917d138322348066a47cc3bdd330f71389a31"
+    sha256 ventura:        "42d1c99bc8a609d2771cd8d138159c3d8e8f96187bb98000fbaf88b193f8133d"
+    sha256 monterey:       "7ee7561d3ed30001eaa9b1987bc93d3ef4c7cf2f3aeaf315b5890b5868d03cb8"
+    sha256 x86_64_linux:   "d3cf110bcba845ad07c06bcb2d9dfc21f1f1b45ac4f2771dfb471d3f8796f16e"
   end
 
   depends_on "crystal"

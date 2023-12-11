@@ -19,15 +19,40 @@ class GrinWallet < Formula
 
   depends_on "rust" => :build
 
-  uses_from_macos "llvm" => :build # for libclang
+  # Use `llvm@15` to work around build failure with Clang 16 described in
+  # https://github.com/rust-lang/rust-bindgen/issues/2312.
+  # TODO: Switch back to `uses_from_macos "llvm" => :build` when `bindgen` is
+  # updated to 0.62.0 or newer. There is a check in the `install` method.
+  on_system :linux, macos: :sonoma_or_newer do
+    depends_on "llvm@15" => :build # for libclang
+  end
 
   on_linux do
     depends_on "pkg-config" => :build
     depends_on "openssl@3" # Uses Secure Transport on macOS
   end
 
+  # Backport fix for build error with Rust 1.71.0. Remove in the next release.
+  patch do
+    url "https://github.com/mimblewimble/grin-wallet/commit/0b491fea0fd5aa21fd28c171ed775e70f0877661.patch?full_index=1"
+    sha256 "ec3b485062135c7a09ca4c5cf6bb9a6de29a0bb60850d5e7d4a7264f2945c966"
+  end
+
   def install
-    ENV["CLANG_PATH"] = Formula["llvm"].opt_bin/"clang" if OS.linux?
+    bindgen_version = Version.new(
+      (buildpath/"Cargo.lock").read
+                              .match(/name = "bindgen"\nversion = "(.*)"/)[1],
+    )
+    if bindgen_version >= "0.62.0"
+      odie "`bindgen` crate is updated to 0.62.0 or newer! Please remove " \
+           'this check and try switching to `uses_from_macos "llvm" => :build`.'
+    end
+
+    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
+    # libunwind due to it being present in a library search path.
+    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm@15"].opt_lib
+
+    ENV["CLANG_PATH"] = Formula["llvm@15"].opt_bin/"clang" if OS.linux?
     system "cargo", "install", *std_cargo_args
   end
 
