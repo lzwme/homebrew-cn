@@ -2,29 +2,35 @@ class Mesa < Formula
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
   license "MIT"
-  revision 1
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   stable do
-    # TODO: Check if we can use unversioned `llvm` at version bump.
-    url "https://mesa.freedesktop.org/archive/mesa-22.3.6.tar.xz"
-    sha256 "4ec8ec65dbdb1ee9444dba72970890128a19543a58cf05931bd6f54f124e117f"
+    url "https://mesa.freedesktop.org/archive/mesa-23.3.0.tar.xz"
+    sha256 "50f729dd60ed6335b989095baad81ef5edf7cfdd4b4b48b9b955917cb07d69c5"
 
-    patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/f0a40cf7d70ee5a25639b91d9a8088749a2dd04e/mesa/fix-build-on-macOS.patch"
-      sha256 "a9b646e48d4e4228c3e06d8ca28f65e01e59afede91f58d4bd5a9c42a66b338d"
+    # Backport macOS build fixes from HEAD.
+    # Ref: https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/25992
+    on_macos do
+      patch :DATA # https://gitlab.freedesktop.org/mesa/mesa/-/commit/96d55d784cb4f047a4b58cd08330f42208641ea7
+      patch do
+        url "https://gitlab.freedesktop.org/mesa/mesa/-/commit/c8b64452c076c1768beb23280de25faf2bcbe2c8.diff"
+        sha256 "0404bf72f10c991444b22721c5a7801aa6f788d2e6efdd9884a074834e0e0b31"
+      end
+      patch do
+        url "https://gitlab.freedesktop.org/mesa/mesa/-/commit/4ef573735efc7f15d8b8700622a5865d33c34bf1.diff"
+        sha256 "df09ac99747aa0a79c4342b8233739c4b5e4eeee7bcba4473783cff299aae5e3"
+      end
     end
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "dddd482d9ce3c3039cb6e2cb723d6574d530eef7bde7c7479d67f3c527f6e3ab"
-    sha256 arm64_ventura:  "23ab97f0b19d4f29bbb29f99098b03a351beb9b742a07141e5b9df6f1f28ca6d"
-    sha256 arm64_monterey: "afa96fc1b42afee3f3a87a96995be248bd6c14db878137cfda97befdf77b1593"
-    sha256 sonoma:         "c192ead99cce30c3144631a0bfbdab742c83c9282ed5d7a83eda8cbe1e834abe"
-    sha256 ventura:        "914668e4f5dfb87ea564d63e94933ef972e3e4c9c4572171b905af9a52cf09c5"
-    sha256 monterey:       "539337056f221acea7ad231bdff22ce6c3f34574f9e9b1146469070bebbdf342"
-    sha256 x86_64_linux:   "c489ab18612fbafecd6c52fb8ba66eeb0c345e7587c459ac528e976e98643fa5"
+    sha256 arm64_sonoma:   "bac88585d678b4e788ba6e75385fd22c1d2c86e5470767837f54bd9baf9c6951"
+    sha256 arm64_ventura:  "856916431fd8edff1a97acf89e8b9838f993456e14d4c4094169cf8f49ef6a7f"
+    sha256 arm64_monterey: "619d8414db8c61b3cd413310e0fcf6f0e25effeaa89c9ce841a11e69fbdd83ac"
+    sha256 sonoma:         "a57889a610f965e34546010f80da300aa2c0e59047826c42d6cdef9e284cb756"
+    sha256 ventura:        "1dc93e7411330093c0b6d39fdf8e9abce58cbcd9eeb5cc8ee986643bdf32149c"
+    sha256 monterey:       "ed1ce8abca5ad84aba81adeb4c8bbf83cc72a0e25217fae2264fd98ec610515e"
+    sha256 x86_64_linux:   "7f4a07bbe1f2b91c90c42b363c2305ecc9ed7dfc1ca62093f6943599e5bf38c7"
   end
 
   depends_on "bison" => :build # can't use from macOS, needs '> 2.3'
@@ -44,6 +50,7 @@ class Mesa < Formula
   depends_on "libxext"
 
   uses_from_macos "flex" => :build
+  uses_from_macos "llvm"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
@@ -63,7 +70,6 @@ class Mesa < Formula
     depends_on "libxshmfence"
     depends_on "libxv"
     depends_on "libxxf86vm"
-    depends_on "llvm@15" # TODO: Change to `uses_from_macos` when this is unversioned.
     depends_on "lm-sensors"
     depends_on "wayland"
     depends_on "wayland-protocols"
@@ -83,6 +89,7 @@ class Mesa < Formula
 
   def install
     args = ["-Db_ndebug=true"]
+    compile_args = []
 
     if OS.linux?
       args += %w[
@@ -99,10 +106,13 @@ class Mesa < Formula
         -Dvalgrind=disabled
         -Dtools=drm-shim,etnaviv,freedreno,glsl,nir,nouveau,lima
       ]
+      # Work around fatal error: vtn_generator_ids.h: No such file or directory
+      # Issue ref: https://gitlab.freedesktop.org/mesa/mesa/-/issues/10277
+      compile_args << "--jobs=1"
     end
 
     system "meson", "setup", "build", *args, *std_meson_args
-    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "compile", "-C", "build", "--verbose", *compile_args
     system "meson", "install", "-C", "build"
     inreplace lib/"pkgconfig/dri.pc" do |s|
       s.change_make_var! "dridriverdir", HOMEBREW_PREFIX/"lib/dri"
@@ -132,3 +142,97 @@ class Mesa < Formula
     system ENV.cc, "glxgears.c", "-o", "gears", *flags
   end
 end
+
+__END__
+diff --git a/src/util/libdrm.h b/src/util/libdrm.h
+index cc153cf..045d724 100644
+--- a/src/util/libdrm.h
++++ b/src/util/libdrm.h
+@@ -33,6 +33,7 @@
+
+ #include <errno.h>
+ #include <stdint.h>
++#include <sys/types.h>
+
+ #define DRM_NODE_PRIMARY 0
+ #define DRM_NODE_CONTROL 1
+@@ -44,22 +45,79 @@
+ #define DRM_BUS_PLATFORM  2
+ #define DRM_BUS_HOST1X    3
+
++typedef struct _drmPciDeviceInfo {
++    uint16_t vendor_id;
++    uint16_t device_id;
++    uint16_t subvendor_id;
++    uint16_t subdevice_id;
++    uint8_t revision_id;
++} drmPciDeviceInfo, *drmPciDeviceInfoPtr;
++
++#define DRM_PLATFORM_DEVICE_NAME_LEN 512
++
++typedef struct _drmPlatformBusInfo {
++    char fullname[DRM_PLATFORM_DEVICE_NAME_LEN];
++} drmPlatformBusInfo, *drmPlatformBusInfoPtr;
++
++typedef struct _drmPlatformDeviceInfo {
++    char **compatible; /* NULL terminated list of compatible strings */
++} drmPlatformDeviceInfo, *drmPlatformDeviceInfoPtr;
++
++#define DRM_HOST1X_DEVICE_NAME_LEN 512
++
++typedef struct _drmHost1xBusInfo {
++    char fullname[DRM_HOST1X_DEVICE_NAME_LEN];
++} drmHost1xBusInfo, *drmHost1xBusInfoPtr;
++
++typedef struct _drmPciBusInfo {
++   uint16_t domain;
++   uint8_t bus;
++   uint8_t dev;
++   uint8_t func;
++} drmPciBusInfo, *drmPciBusInfoPtr;
++
+ typedef struct _drmDevice {
+     char **nodes; /* DRM_NODE_MAX sized array */
+     int available_nodes; /* DRM_NODE_* bitmask */
+     int bustype;
++    union {
++       drmPciBusInfoPtr pci;
++       drmPlatformBusInfoPtr platform;
++       drmHost1xBusInfoPtr host1x;
++    } businfo;
++    union {
++        drmPciDeviceInfoPtr pci;
++    } deviceinfo;
+     /* ... */
+ } drmDevice, *drmDevicePtr;
+
++static inline int
++drmGetDevice2(int fd, uint32_t flags, drmDevicePtr *device)
++{
++   return -ENOENT;
++}
++
+ static inline int
+ drmGetDevices2(uint32_t flags, drmDevicePtr devices[], int max_devices)
+ {
+    return -ENOENT;
+ }
+
++static inline int
++drmGetDeviceFromDevId(dev_t dev_id, uint32_t flags, drmDevicePtr *device)
++{
++   return -ENOENT;
++}
++
++static inline void
++drmFreeDevice(drmDevicePtr *device) {}
++
+ static inline void
+ drmFreeDevices(drmDevicePtr devices[], int count) {}
+
++static inline char*
++drmGetDeviceNameFromFd2(int fd) { return NULL;}
++
+ typedef struct _drmVersion {
+     int     version_major;        /**< Major version */
+     int     version_minor;        /**< Minor version */

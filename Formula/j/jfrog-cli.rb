@@ -1,18 +1,18 @@
 class JfrogCli < Formula
   desc "Command-line interface for JFrog products"
   homepage "https://www.jfrog.com/confluence/display/CLI/JFrog+CLI"
-  url "https://ghproxy.com/https://github.com/jfrog/jfrog-cli/archive/refs/tags/v2.52.1.tar.gz"
-  sha256 "26a7cc3bf41ac80c1a8626375ef3bf580072ffec2543e25b2eca313cea96a1b9"
+  url "https://ghproxy.com/https://github.com/jfrog/jfrog-cli/archive/refs/tags/v2.52.2.tar.gz"
+  sha256 "ce7f48289532ffb9bb3a091d0f69816282077d28703d4c11809c6956822b34c1"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ee7006a1843efe64d2645cc30719325a566133acf81522148ac04b9d4f1a6614"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "890197905dc9a95f57d4c5267337743ae93a5aef1eeac2971b8eaa02388f9ef9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "db6532f3c777a44600811f7f0ce7ac158fa22315b0ba88d9814b76f041784422"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b809cd0e8b4cf49a1ceb52ce3db12ae9fe7842eb701b8bc3c1942c07b2978cc3"
-    sha256 cellar: :any_skip_relocation, ventura:        "3419563dab0adc4314da5aa819c8a53a261f44e8506f036cfa736ed6c53e95ed"
-    sha256 cellar: :any_skip_relocation, monterey:       "4aef23216a7318e892f6a330de1bc0ae0c94f102fb0cf6c581c735b52dfeb8ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f705c0c218171a02f0d6cc87328862eab0f3f0545d220d3cd498a2e47484af09"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8d5df4ef5c8f0281820febf0a238d73b9f812c3db3853b4a69b9ac4d43978688"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7dc3dff0577d2a413d85854da3b295f9b75488a665bbfdcd9afc17b8f955bdd3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d4d76a8ab62d51f21b778e192d01236d353da4f58a20d0f63db40cced28dabd2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "71623413206a06e626aece76de29e90b99ea81ee64bd255952f48e51cf752835"
+    sha256 cellar: :any_skip_relocation, ventura:        "2dbcccec4fe43ffe450f0ea2c2d3bf9be87b3be16458f16cb08b174b9aeef6a0"
+    sha256 cellar: :any_skip_relocation, monterey:       "d3f528aefb289ce82ab19cfdb471a76ee36b195cc7eb2a06971a3e770cc68759"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1856c98be9a218a637d8e3385612a50685044c3cfbf167f463a05119dc64a5ea"
   end
 
   depends_on "go" => :build

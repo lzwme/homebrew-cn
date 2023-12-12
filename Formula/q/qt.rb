@@ -10,6 +10,7 @@ class Qt < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
     "LGPL-3.0-only",
   ]
+  revision 1
   head "https://code.qt.io/qt/qt5.git", branch: "dev"
 
   stable do
@@ -35,14 +36,13 @@ class Qt < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "38e1c32b94b199a6068babac272b38506fda84dfe4157572df526e7449232da1"
-    sha256 cellar: :any,                 arm64_ventura:  "7162854c15fb55806abfa224f87123342f68fe982150b01a8e74d1545f48c644"
-    sha256 cellar: :any,                 arm64_monterey: "0ff1e7128524279e8410d5322f7d0d67ee34310389f08b98c832cb33e48fc193"
-    sha256 cellar: :any,                 sonoma:         "e371e09207ec538fe9a603520dfe254c338798472b6e3fee374a683a279f9274"
-    sha256 cellar: :any,                 ventura:        "2cc6a0abcef02ee96e216399af43ce390916c938b709cb27cfe8af5fd5d9eaad"
-    sha256 cellar: :any,                 monterey:       "691a20cc44f43013a6d49a353c213e4db4a82366fd4dc92738043477cb220980"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ae0d311bb958e49fd6845467ec4a6b0cdbf8680eb3a479f717cee65ecc35536"
+    sha256 cellar: :any,                 arm64_sonoma:   "77d27336aa68580a68e3112c4f157cd2dde19dd59ad6bd47229a673cba0c6521"
+    sha256 cellar: :any,                 arm64_ventura:  "755da1a2628f2ffb0a563df6c12042a4da2bdb21586a765083c1c4abd6baaed3"
+    sha256 cellar: :any,                 arm64_monterey: "93b11e25ec9d71b9b148ded4fcf3575746d191a1ccb8fcc46593c2e9e636c465"
+    sha256 cellar: :any,                 sonoma:         "385d456c507606a3ef2d9fe3dcc1ad31485316c0f20e44c8156dad37d66636d7"
+    sha256 cellar: :any,                 ventura:        "00eecd3798721b2242735810d91e9cbc868124ed2daee22a5809295bf409de63"
+    sha256 cellar: :any,                 monterey:       "b79fa3554c2f1d49be1b527807ce54dd49532224656c32b3b5c7e1b8013abeb5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9eef515725a5895005cc7c7c08eea7b12bb9950d4f232c67535525e8c1e08cf"
   end
 
   depends_on "cmake"      => [:build, :test]

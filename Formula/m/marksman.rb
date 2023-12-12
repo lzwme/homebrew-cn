@@ -1,18 +1,18 @@
 class Marksman < Formula
   desc "Language Server Protocol for Markdown"
   homepage "https://github.com/artempyanykh/marksman"
-  url "https://ghproxy.com/https://github.com/artempyanykh/marksman/archive/refs/tags/2023-12-07.tar.gz"
-  sha256 "b0fff091b87abfaccefc6276ed07e9bc35ecf43da197049a7295db175d593748"
+  url "https://ghproxy.com/https://github.com/artempyanykh/marksman/archive/refs/tags/2023-12-09.tar.gz"
+  sha256 "1f4f5b76c2679426f6a5e93d50e15deb4faadad2da18e70bee66de1dbe68342a"
   license "MIT"
   head "https://github.com/artempyanykh/marksman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c4f1d6de07356d9cd0785a251bd24b171695d9ed45836b9178780b23a633fbbe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e25f02303d8cd7015adc3427aa3bc88988418cb5344454057c84f2919a1cdb0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "975ae37e4d9d34b24bdcc68a5bae6efde5944eb9f5cdba3ca819f79b1ae16f9f"
-    sha256 cellar: :any_skip_relocation, ventura:        "1f461065528fb9523f1e1e9f63cc8945c487cc5886d0825b9d05826f3f70bee5"
-    sha256 cellar: :any_skip_relocation, monterey:       "ee06e585cc2b152b6f67251d2da195a062bfd9c1ffbe270bfb6f421a9882a103"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db36a765cdea49355d0e150aa6bda5587b2a2cfae8815ec220afcf8449d2a82a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "72a80209860d562e1e0c6d275ad9de967c3f8a2406bd985c117d7c606a073f2a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c589b508c7dedcb77330d6d08fcd77918df7f21a2d2034136993445ab55b3689"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "30b4ec073d1faa78b582e48cc999b96e3688d4a3d240b3042dcf8e06a91f9978"
+    sha256 cellar: :any_skip_relocation, ventura:        "87621c040156f28adad1b60acac7b0e8696fd83caaa7fe4258242804f1b0682a"
+    sha256 cellar: :any_skip_relocation, monterey:       "70e10fecda6836850b0c9cdc06fc1897569735421d9d9b1702dc5191ed76d1a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f6d8ca3bd0313b53f1b9addf4c6c84840e9461bf16766779f09910dd58f3f0c"
   end
 
   depends_on "dotnet" => :build

@@ -7,9 +7,11 @@ class GrinWallet < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4ae74cbba7374e94f49571055d34b115dc7386e1cae18ecea8fc9f90a58abd9b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "5152a42e49a1bd399b3707318f7970f1274fdd99c1e2e4e9a3e8e4e868e47072"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b8b6431c3dd8e831f5cc1cb1fa4caf624b99f53eccb3869847207dd73562b5d8"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e73205d29f7a0b00fe6b94a32aa7dd93fa9e601670fbf24e4264572195d2fd88"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bd881c55cab32c6af2ef8d40a2e4223b2f1a3bebe9636d77fbf7cb9e29370fe3"
     sha256 cellar: :any_skip_relocation, ventura:        "9b1f868308182cc07476c1a63a8d0feefcee3a2fb232c0f31423cd185e0d2587"
     sha256 cellar: :any_skip_relocation, monterey:       "a4b51461588898026621ccf8416c681b9791dfb4b2e772f5528433d9304abd4a"
     sha256 cellar: :any_skip_relocation, big_sur:        "58f860c68a2072aa40fd625254efc8ff10c4df89df04b9c2095789af33b5c0dc"

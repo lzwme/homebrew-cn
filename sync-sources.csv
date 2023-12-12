@@ -3918,7 +3918,7 @@ Homebrew-homebrew-core/Formula/m/mergelog.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mergepbx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mermaid-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mesa-glu.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mesa.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mesa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mesalib-glw.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mesheryctl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/meson-python.rb, Homebrew/homebrew-core, 0
@@ -8325,6 +8325,7 @@ Homebrew-homebrew-cask/Casks/g/ganttproject.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gaphor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/garagesale.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gargoyle.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/g/garmin-basecamp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/garmin-express.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gas-mask.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gather.rb, Homebrew/homebrew-cask, 1
@@ -13153,7 +13154,10 @@ Homebrew-homebrew-cask-fonts/Casks/font-send-flowers.rb, Homebrew/homebrew-cask-
 Homebrew-homebrew-cask-fonts/Casks/font-sevillana.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-seymour-one.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-sf-arabic.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-sf-armenian.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-sf-compact.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-sf-georgian.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-sf-hebrew.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-sf-mono-for-powerline.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-sf-mono.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-sf-pro.rb, Homebrew/homebrew-cask-fonts, 0
