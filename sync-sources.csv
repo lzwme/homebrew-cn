@@ -209,7 +209,7 @@ Homebrew-homebrew-core/Formula/a/argon2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/argp-standalone.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/argparse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/argtable.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/argus-clients.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/argus-clients.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/argus.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/argyll-cms.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aria2.rb, Homebrew/homebrew-core, 1
@@ -9661,6 +9661,7 @@ Homebrew-homebrew-cask/Casks/o/oso-cloud.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/osp-tracker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/osquery.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/oss-browser.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/ossapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/osu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/osxfuse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/otto-matic.rb, Homebrew/homebrew-cask, 1
@@ -10700,7 +10701,6 @@ Homebrew-homebrew-cask/Casks/t/td-agent.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tdr-kotelnikov.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tdr-nova.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tdr-vos-slickeq.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/t/tea.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/teacode.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/teambition.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/teamspeak-client.rb, Homebrew/homebrew-cask, 0

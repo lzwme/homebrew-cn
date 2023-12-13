@@ -7,21 +7,22 @@ class Subnetcalc < Formula
   head "https://github.com/dreibh/subnetcalc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6dc971e4befb039bd4b84a152e6cdd4e52d875c45842b1612d39245df7d40809"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c95445e6a8172c0a9ad51750ae5bbd677de19a61cba0a6537e7cecdf5d7db0c6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7a4d19c85d4cba94c98fceb56d537981c431d87ab11201b0a4af86d245cc13b7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4c3c3343f86552062b6a8af07058aa56641512fd424cfdee515ab8d9574201fc"
-    sha256 cellar: :any_skip_relocation, ventura:        "5377b89fca83577c894fe4ca93bbfc1760cde07ee515e6f5d51566a0160c7078"
-    sha256 cellar: :any_skip_relocation, monterey:       "0fb9a13243122e30633366cdc62ba401cc80d3a127c5007218d332c464c99999"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e8edf85936558c5dbe251453c4bb1540e69b681b25c5d085d2b7e327605e643"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "48e6ddafc3e3ec5a398c0d7fa0d2da5ce205dd5d65adf7264037a52bc1be2fdd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c23e94c5393dbff89beb8183c27617d3d60506ae2a917cfead0acbe9d359e00e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7e8f04b4b36f2cce4c87c8f89ea785154a92ef34910ef6e3300b67525f78b9d9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "92b125e3c6753bc2ded7ae2d372bfd883597d916f9bdfe79a1f66e345fb814b6"
+    sha256 cellar: :any_skip_relocation, ventura:        "3c8061b49a179ea98fe6087e9b4cda6006168bebcd1e9fa9b84bb96b1e2dc54f"
+    sha256 cellar: :any_skip_relocation, monterey:       "b72f1faf131c21d490e193d079b0dfa822de569ff815acca5cdb5722acdfa8e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1582ddde342d5e7b02f1cc26266843aeb736a1abee8a1a08af2bf567ba6ed05"
   end
 
   depends_on "cmake" => :build
-  depends_on "geoip"
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

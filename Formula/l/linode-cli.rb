@@ -3,19 +3,19 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https://www.linode.com/products/cli/"
-  url "https://files.pythonhosted.org/packages/12/04/3500dc64982504b5c66d6ca16a20cb6af82e00b28b0e4537bfa07de21c04/linode-cli-5.45.2.tar.gz"
-  sha256 "b3e1cf85bf82e27ad7d8985da7a11d85c7b7ac2e4ac1fc6b4bafffb3d8bdc3b0"
+  url "https://files.pythonhosted.org/packages/74/8c/2129b89ffa06a3eeef5fda295cdc9d82bd737a1d86c7abe0c3b92d731db8/linode-cli-5.46.0.tar.gz"
+  sha256 "5ea971f446b632e1ad3558e7fedfce0ccd0d3998f2f17c29a030bc391c8240c8"
   license "BSD-3-Clause"
   head "https://github.com/linode/linode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6db10ce590c510a8cd1cc42ad1d4cb84a56cfa6ee2664d1ce7a4fb2fcba9c349"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4260a6457ca8422e72616b91e24d34adaf9135dca7f9a999b2884815ac0e0f51"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f7b20da90fcc6e122f9bd499e12f5af323b55d1910b29d4d6d5832f69a82128a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2f83e1dabac44e918d726f1b52f68c856d868a3de8f49a8779efb312de31478c"
-    sha256 cellar: :any_skip_relocation, ventura:        "d2cc4aa2616486b6edd9f6f5e7da16c10dd5fe9f13864c23e04e219389941403"
-    sha256 cellar: :any_skip_relocation, monterey:       "82e65350fe509fe23cfa07fa99c20613edc3df29088da29e88ca6989e696aadc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a8afd12a3b724beed3c06dc6595ebb507c71b6894d054de0e646e43c5a1a022"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "93169fcb5d6eec55a90268374e0006d0b87235d34577bdd7796c0da57eaa122b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7d9ac3b6d296fa66ad798ac51f5f8031bbef3a3e0cb8fa6c73f8747a3cfb3352"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "098349208b7856c992581a1dddee33463c9493bcceeeb06621ae565a98d5ffa4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b1c897ac3e8b4169ec7f66b3c3be4caee633eab1c3ff38ced6030b3b350d6e7d"
+    sha256 cellar: :any_skip_relocation, ventura:        "b9411d6f3b5b6366a600cea6a9cb208f6819ab492ef9d1a867f8a6f3776c0c72"
+    sha256 cellar: :any_skip_relocation, monterey:       "11c440cc3361bc17c7644b5859fb8c309e0645daef335a6167c84fc25f24e926"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3cada00da0697fd2401becf159366bef1127770ef1dd6cac2c23be77e49ccbd2"
   end
 
   depends_on "pygments"
@@ -36,8 +36,8 @@ class LinodeCli < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
-    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
+    url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz"
+    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
   end
 
   resource "markdown-it-py" do
@@ -61,13 +61,13 @@ class LinodeCli < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/b1/0e/e5aa3ab6857a16dadac7a970b2e1af21ddf23f03c99248db2c01082090a3/rich-13.6.0.tar.gz"
-    sha256 "5c14d22737e6d5084ef4771b62d5d4363165b403455a30a1c8ca39dc7b644bef"
+    url "https://files.pythonhosted.org/packages/a7/ec/4a7d80728bd429f7c0d4d51245287158a1516315cadbb146012439403a9d/rich-13.7.0.tar.gz"
+    sha256 "5cb5123b5cf9ee70584244246816e9114227e0b98ad9176eede6ad54bf5403fa"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
+    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
   def install

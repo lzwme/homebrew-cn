@@ -3,10 +3,9 @@ class Black < Formula
 
   desc "Python code formatter"
   homepage "https://black.readthedocs.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/ef/21/c2d38c7c98a089fd0f7e1a8be16c07f141ed57339b3082737de90db0ca59/black-23.11.0.tar.gz"
-  sha256 "4c68855825ff432d197229846f971bc4d6666ce90492e5b02013bcaca4d9ab05"
+  url "https://files.pythonhosted.org/packages/5a/73/618bcfd4a4868d52c02ff7136ec60e9d63bc83911d3d8b4998e42acf9557/black-23.12.0.tar.gz"
+  sha256 "330a327b422aca0634ecd115985c1c7fd7bdb5b5a2ef8aa9888a82e2ebe9437a"
   license "MIT"
-  revision 1
   head "https://github.com/psf/black.git", branch: "main"
 
   livecheck do
@@ -15,14 +14,13 @@ class Black < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "52ad060ad2a85a4fc6cc20ceb6c644eeff65847682b5f1eac0521a1fbfe283c2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "31b0638d860dc5307c53d200650d1e591a7f0e607f0b1c40d1a03c798ffd8dd0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b2d68837f68b987e9887b6550d16d3833ac3e68681699b705245e478a41a0a18"
-    sha256 cellar: :any_skip_relocation, sonoma:         "72dff657ef1505a69073cfd57edfc3016e9f77b18e041c6f5060f3d0bbd3ce20"
-    sha256 cellar: :any_skip_relocation, ventura:        "c72329f38fd922d639e0f1947038f910ee990b017fcdfede5d83d2bc3d4d037b"
-    sha256 cellar: :any_skip_relocation, monterey:       "298cc65930f9fee3aa48f175b40453b5397e0e6aaafe28dc4588e324f0283f5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c25eed4fcd03bd5f558e8afb43358270e7e27faeadd786bdcd126111daf6c84b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b1a782502004ad6bd5dbc0f1991148896978811dab7f0bdc6067e4c2c8b620e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a446d3801a02b904dfe0c3d343c2ac7c47ca2bf94fa808226084abd99f7dac3d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "af322cc507f7248adcbb024f8415d00f0705753023db60ddfa32de8504b6fbc9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f0e03d3514a22ffde65b4552d4948e7680e7f423a19ddc1af71773fd6e9aea1e"
+    sha256 cellar: :any_skip_relocation, ventura:        "299a02f89c492fa794c710da512256851831ae80aca6f7e0f16959b8cd711a81"
+    sha256 cellar: :any_skip_relocation, monterey:       "a72013e10ef95748570af020d7738778fdbed69e6df0b2a874336c3a29a6cbb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59f03494eb933fedd7878409c7b36ddb4d54dd94fecf0f5fda7122eec96dcec3"
   end
 
   depends_on "python-attrs"
@@ -34,8 +32,8 @@ class Black < Formula
   depends_on "python@3.12"
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/71/80/68f3bd93240efd92e9397947301efb76461db48c5ac80be2423ffa9c20a3/aiohttp-3.9.0.tar.gz"
-    sha256 "09f23292d29135025e19e8ff4f0a68df078fe4ee013bca0105b2e803989de92d"
+    url "https://files.pythonhosted.org/packages/54/07/9467d3f8dae29b14f423b414d9e67512a76743c5bb7686fb05fe10c9cc3e/aiohttp-3.9.1.tar.gz"
+    sha256 "8fc49a87ac269d4529da45871e2ffb6874e87779c3d0e2ccd813c0899221239d"
   end
 
   resource "aiosignal" do
@@ -59,8 +57,8 @@ class Black < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/5f/3f/04b3c5e57844fb9c034b09c5cb6d2b43de5d64a093c30529fd233e16cf09/yarl-1.9.2.tar.gz"
-    sha256 "04ab9d4b9f587c06d801c2abfe9317b77cdf996c65a90d5e84ecc45010823571"
+    url "https://files.pythonhosted.org/packages/e0/ad/bedcdccbcbf91363fd425a948994f3340924145c2bc8ccb296f4a1e52c28/yarl-1.9.4.tar.gz"
+    sha256 "566db86717cf8080b99b58b083b773a908ae40f06681e87e589a976faf8246bf"
   end
 
   def install

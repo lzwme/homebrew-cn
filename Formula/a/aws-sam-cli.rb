@@ -3,18 +3,18 @@ class AwsSamCli < Formula
 
   desc "CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM"
   homepage "https://aws.amazon.com/serverless/sam/"
-  url "https://files.pythonhosted.org/packages/aa/0d/07eb61e0bb03bb381613d2c39c8f731b4297d7d38c1aae5d770549e6c299/aws-sam-cli-1.104.0.tar.gz"
-  sha256 "db1908c45267d33defe2a9c86621e5e33fb05579ab9ede5669dd36ae37bf197a"
+  url "https://files.pythonhosted.org/packages/d6/58/c3b73370b3190e652404e3a737d1347fb4336f6236c76a801a0d193069ab/aws-sam-cli-1.105.0.tar.gz"
+  sha256 "4c57b9d305214373c0ba2a745a9c55e8c6c6fa01c5e9a15ca0553aef4a14ae78"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "63efc781a6bc937c3dfe5e77181197ee73d7dfe78c403848960bd0e7c71814ab"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c8cb96f762be6968152beb454497e28f350e4a1d76a44663bdb6c28917a726c1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "33c9c7a05395ab0dc24ad16820131bb45cce19d5c517c2b0dbfeddf461ae8e64"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f3c3920d4ed77817efc9702b19d938b37edc2eff100b18b18492449586d07417"
-    sha256 cellar: :any_skip_relocation, ventura:        "0f37d23f1470be1a01a27819bfa90ad7635d8b87ac933f055cca3b320d225d9d"
-    sha256 cellar: :any_skip_relocation, monterey:       "b932ba7d3e62d0eb5794474bb114c9bed58496ea3da23a2093aeced6313c890c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e898d1f97a87030440976c13f6ab29c81189a01b042ed193e21c4e9aa681992d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "81ccd8b2d9113ecb6d704b1e4f9867e3c1b93f9a18545d4872f4a4bf874f5f8a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b370b664856de814ca29e706fa75dd350adbd26f81d5f9c9d13c622b5db56134"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f3b6c3faec00ba48a6fea5329b5a85c2759453ddaa70ece5269e43c8c5c4ca76"
+    sha256 cellar: :any_skip_relocation, sonoma:         "19d79cd5776e9b7a4d6dc4b30a611d6bce4f696aec41f190a646780a34fef67c"
+    sha256 cellar: :any_skip_relocation, ventura:        "6a73e923c4873dab541f0aee5b14097785b8e18d4268f25f5da300e810ca2733"
+    sha256 cellar: :any_skip_relocation, monterey:       "cf7e0f72a567cbc7a86b419802589150c6471801467c1ac2c2f11a6229ebf492"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "36b5501383a85e2e666451de8ebca2e8b19db835fcf9351acd4b3edb94255e28"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -50,8 +50,8 @@ class AwsSamCli < Formula
   end
 
   resource "botocore-stubs" do
-    url "https://files.pythonhosted.org/packages/1c/e1/91fd06a7b42cb3609999feb6f9fa038dd1fe1b66be86f4b4cd477e6077fe/botocore_stubs-1.33.8.tar.gz"
-    sha256 "0356ff0fc918d8def8bdfc78523791eb4ce55c255c1ebe49ba105e168c817dcd"
+    url "https://files.pythonhosted.org/packages/8c/a6/032b037da415015e5f9e098e0dadb5a699714f22ec9051fa1529126dcaf4/botocore_stubs-1.33.13.tar.gz"
+    sha256 "b7b08a1beec9e6605fba12ffcd007b695bfc0a29f379a039f1ed69ec8eb1f7c7"
   end
 
   resource "chevron" do

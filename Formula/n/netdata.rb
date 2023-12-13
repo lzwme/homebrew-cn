@@ -1,8 +1,8 @@
 class Netdata < Formula
   desc "Diagnose infrastructure problems with metrics, visualizations & alarms"
   homepage "https://netdata.cloud/"
-  url "https://ghproxy.com/https://github.com/netdata/netdata/releases/download/v1.44.0/netdata-v1.44.0.tar.gz"
-  sha256 "87c761475e4020e8ec6e5bb04766affcd722e42252d400fb02afa6b260cc9d18"
+  url "https://ghproxy.com/https://github.com/netdata/netdata/releases/download/v1.44.1/netdata-v1.44.1.tar.gz"
+  sha256 "77e94acf7085c23ab20b2d0d2d4d2bc5a289f121fc7aac5d0daffb960041fd95"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Netdata < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "d14dc12c84d956ed61b93ba0c76a4877a96c6cc35b9ba034a43f01a4c7e02229"
-    sha256 arm64_ventura:  "c3a01a08b2b968ecfbb9f97bd9a37606d93ecb0137ede1c8146582ec619c9cf6"
-    sha256 arm64_monterey: "ba3c54de1abf026b0a60fb1fae38c6817f3a61d69c1eafb962b1f0d974d368ae"
-    sha256 sonoma:         "83c49cfbabf2515128eac2dbc69cf5e1f2a09c3e051f58324424932a68b6ef3e"
-    sha256 ventura:        "1c99d5ebe189e889bca2c74001c27e27ce68ca556d846b67ed842133faace665"
-    sha256 monterey:       "36a436f9e7fdc5824982a1430a9106769ff5677f5d0c6ff23603be799f0a4dbc"
-    sha256 x86_64_linux:   "0b1ce7e92d15d58c98404348493e919a9284cdc3008401550b09570d8e65f5a7"
+    sha256 arm64_sonoma:   "77c3421a4c0846cf873aa6fa439c53e757c8198e3099169976756a136f6fa037"
+    sha256 arm64_ventura:  "c51ff83aac639db4d79049c4165523eb0c16c09fbc1455cf6964c213216beae7"
+    sha256 arm64_monterey: "a4a313143740d68d2b722e0e9f1b6b5dc11fcf417d8a3402b7f1322900ff3ea4"
+    sha256 sonoma:         "ce02ebc41d95489d7a423eb2cb460974fb9c5b193c936aa1c51dafe91e9963ba"
+    sha256 ventura:        "8efcb99517b73c7efe5dd48409e1be0e5ff21e4f85db8bb5a35467869ec69cdb"
+    sha256 monterey:       "71e9099f80a3a7e083790f64402659d100eb70f21499e423d71a798b6dd1b77d"
+    sha256 x86_64_linux:   "5457dc92f1c6e366c25246297f0a8d3b350e1322b6e3d4fde7cd58f9c59dde23"
   end
 
   depends_on "autoconf" => :build

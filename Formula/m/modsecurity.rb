@@ -6,22 +6,20 @@ class Modsecurity < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ac3799e40cde1c8e7f94d9dd87e9cacf4fd9e8a490c98ca7ec9da0b18da47a68"
-    sha256 cellar: :any,                 arm64_ventura:  "74daa8baf155a510aacaddebd4167c30cf505cafe362ec6a20d32275643fef10"
-    sha256 cellar: :any,                 arm64_monterey: "a64c4749d95e04cdc07464c83552825bde05f70386fa0c2fb4e43d39afeccb5f"
-    sha256 cellar: :any,                 arm64_big_sur:  "a43c52792a2b656c82996afefb8248b77cf26a950d00ab4376e1d0084ce3f2a4"
-    sha256 cellar: :any,                 sonoma:         "52afd9aacd985288ae37e88d69473596a4682e438f0b4b85e4a2964c690b069f"
-    sha256 cellar: :any,                 ventura:        "cb90defa1cdf7988987e463594ff42d56294233c4e15a4dd8fdaf4e1cbf1bbad"
-    sha256 cellar: :any,                 monterey:       "4ba84464d43d3eda060ce94864ea6fe6cafaf6ffa365295fce20d6673285ecf3"
-    sha256 cellar: :any,                 big_sur:        "ecf3b809af81c2a7c8dc5a3067a1b0d9da346d0455567f52c0642a2de23a1a9c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "444547afdca675abe0c154f9aaa1bdc5fa7b384f95c24e78e3d032062754cd5a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "71154816630314ecc628277efa6ca6610a56350090de4234afc77cec5640b86f"
+    sha256 cellar: :any,                 arm64_ventura:  "dbf704acb2a892b25d57b1c135b98d5a3197af17c423b483f32176ef1df835c7"
+    sha256 cellar: :any,                 arm64_monterey: "4b84d1cd638486de1ed6337f5256f08a256bb186630265c893e2caa2aa7f693e"
+    sha256 cellar: :any,                 sonoma:         "95cc99b3cdda19c76142da1cb782880ff586afb5b29694a782a0c2f17684b414"
+    sha256 cellar: :any,                 ventura:        "1e8f0dc7db3d1692ad6df0bb8d429da7be0a2d2825b30370cd73f40369bbe309"
+    sha256 cellar: :any,                 monterey:       "0b99dec932e2fe5d3531e65b8c935888ab2d5487f2f6bf8535b7c5127d710a0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4389a2c8634f393b9a02a2948dd14811ee26f83215f6afed6858fe5e6683de9c"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  depends_on "geoip"
   depends_on "libmaxminddb"
   depends_on "lua"
   depends_on "pcre2"
@@ -30,11 +28,18 @@ class Modsecurity < Formula
   uses_from_macos "curl", since: :monterey
   uses_from_macos "libxml2"
 
+  # Use ArchLinux patch to fix build with libxml2 2.12.
+  # TODO: Check if fixed in future libxml2 release.
+  # Issue ref: https://github.com/SpiderLabs/ModSecurity/issues/3023
+  patch do
+    url "https://gitlab.archlinux.org/archlinux/packaging/packages/libmodsecurity/-/raw/5c78cfaaeb00c842731c52851341884c74bdc9b2/libxml-includes.patch"
+    sha256 "7ee0adbe5b164ca512c49e51e30ffd41e29244156a695e619dcf1d0387e69aef"
+  end
+
   def install
     system "autoreconf", "--force", "--install", "--verbose"
 
-    libxml2 = "#{MacOS.sdk_path_if_needed}/usr"
-    libxml2 = Formula["libxml2"].opt_prefix if OS.linux?
+    libxml2 = OS.mac? ? "#{MacOS.sdk_path_if_needed}/usr" : Formula["libxml2"].opt_prefix
 
     args = [
       "--disable-debug-logs",
@@ -44,6 +49,7 @@ class Modsecurity < Formula
       "--with-lua=#{Formula["lua"].opt_prefix}",
       "--with-pcre2=#{Formula["pcre2"].opt_prefix}",
       "--with-yajl=#{Formula["yajl"].opt_prefix}",
+      "--without-geoip",
     ]
 
     system "./configure", *args, *std_configure_args, "--disable-silent-rules"

@@ -1,18 +1,18 @@
 class PythonPathspec < Formula
   desc "Utility library for gitignore style pattern matching of file paths"
   homepage "https://github.com/cpburnz/python-pathspec"
-  url "https://files.pythonhosted.org/packages/b2/18/c365a967920edd1139664a3617648fd33a54edf4f919973924009630faf5/pathspec-0.12.0.tar.gz"
-  sha256 "c57e16065a97b7beb175f13c84d27cb05f7b7315741c2fbd5de541042f4ea6e1"
+  url "https://files.pythonhosted.org/packages/ca/bc/f35b8446f4531a7cb215605d100cd88b7ac6f44ab3fc94870c120ab3adbf/pathspec-0.12.1.tar.gz"
+  sha256 "a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f472abbcc2c95efda95b3095a555243c8ed3170fc8d724fa121289feff0b3f69"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "76125e4ebfd6d63edfc6c8e0b407c5942fb883195a9b71042acd1068b3e17daf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1baed96f328f215d1f5b47def846b1e50c5ff32fc8343cbac9c792e32d1ab9ea"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f4a5192129d8ae5d15036ae992f2750853a1221e45b2061dff1106b0592664e3"
-    sha256 cellar: :any_skip_relocation, ventura:        "495813231e4f77e9e3d73e1250b5f06ade829d0bc839b803460f232fcaebb62d"
-    sha256 cellar: :any_skip_relocation, monterey:       "358504d6bee290dc72cfba04bdfaab7af07abf17ba30698746e0b3cd35c9f70a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0977484c52467327e1bee8b1a3f7dd282722ece4a899f708217e63b303551e40"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3857d022a4b0162b232b1292fc6febf8e7123296089031059072a41837fb4c07"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b85a1e12f113596225647dc29210057d233064c3d477482069320eef28094833"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5940d6f31c02d1129d6dedd2fed5c24d8d9d14557e6f0f3b24240cac75102b11"
+    sha256 cellar: :any_skip_relocation, sonoma:         "845507b23872aa53715d1311e188f165434155f8f505e65b8c599c1b9fee5478"
+    sha256 cellar: :any_skip_relocation, ventura:        "747392ad23683f1f8c7746d2152a81630f89a1b9d4755bd7e3fc8235529beda0"
+    sha256 cellar: :any_skip_relocation, monterey:       "a295a9da7b9ca580ff22a3944d15cef85db836ba7dcc8902825028dd1b907f3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c188e414b65c7547a31197e8068c93c582c4c567426e190d01c6b3f96ba0ef8"
   end
 
   depends_on "python-flit-core" => :build
