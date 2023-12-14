@@ -3,18 +3,18 @@ class RuffLsp < Formula
 
   desc "Language Server Protocol implementation for Ruff"
   homepage "https://github.com/astral-sh/ruff-lsp"
-  url "https://files.pythonhosted.org/packages/cb/5b/5beed11bdabb27bc919dbd4fff128262992be4302a5ad18f1576a00b11a1/ruff_lsp-0.0.45.tar.gz"
-  sha256 "11c2d4979eabf81327b714f9395b91be1f3620a8861009ae4967f67e7de2671d"
+  url "https://files.pythonhosted.org/packages/1b/90/1eb29f87d0e50136dcd013282efaa1939ce07d971c08ebcfaa5f857cb178/ruff_lsp-0.0.46.tar.gz"
+  sha256 "37e1e7b40b2ea0309a1e97e46b016c426d1df6b51664a2af9024edda25a1032d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ef974c1d157e0a72a1eeac105eb8ab9bffc63db30b21b371937c3041dca6c21d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "91adba163bebd6f650bcfaae7b4b8c8ee7088d3fd58bd40d5b028eea6ace5486"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cd604f4c33784da95d7851acee2da02a464ca4226970c69417230a550a9e097b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2cf3bdb76be3a1a0734b83638d3dd5f35bbe22bd394a6f99be6d34cee38e6818"
-    sha256 cellar: :any_skip_relocation, ventura:        "41c60098aa2952fa1832143c4a21629fe446011c09600b6171579710e95a6029"
-    sha256 cellar: :any_skip_relocation, monterey:       "8b38bb37e30a0e03cdaf0e4dc358066d9456fb61ebe53d198ca509e6acefbf22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "687629d2909573881ece8e740afbb05e3e9f98a090c8036a2eb6a27c3aeacfec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc6bb3958c96950906e7a7d0f3aa37484a8c104bcd4edb062ad3c4ae510ebb77"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e4219fbabdeb98339444fa5c86e461778904296132d79f776bdb080f2505c4e1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "754f946c43a5539d7fef628a427cb030a3aeb3e177c50c6f1b24f0b80a1138b6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8b33689ba0869f4b2027f93878beb12d10a043b015acd574dee1cef8e9fcf5d6"
+    sha256 cellar: :any_skip_relocation, ventura:        "0dfabb42e842d61c0a157ecbcbdc0e2e4bae767116ab0fa79b56f6be4f6a096c"
+    sha256 cellar: :any_skip_relocation, monterey:       "f1797b3adbc8b3c28180710f2988c15157161da98598213ce0c9d1ad722373f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4780b7197cc7136dd67e80ed276bbed04d753ad0100364a388382302f04b70d"
   end
 
   depends_on "python-packaging"
@@ -28,23 +28,18 @@ class RuffLsp < Formula
   end
 
   resource "cattrs" do
-    url "https://files.pythonhosted.org/packages/68/d4/27f9fd840e74d51b6d6a024d39ff495b56ffde71d28eb82758b7b85d0617/cattrs-23.1.2.tar.gz"
-    sha256 "db1c821b8c537382b2c7c66678c3790091ca0275ac486c76f3c8f3920e83c657"
+    url "https://files.pythonhosted.org/packages/1e/57/c6ccd22658c4bcb3beb3f1c262e1f170cf136e913b122763d0ddd328d284/cattrs-23.2.3.tar.gz"
+    sha256 "a934090d95abaa9e911dac357e3a8699e0b4b14f8529bcc7d2b1ad9d51672b9f"
   end
 
   resource "lsprotocol" do
-    url "https://files.pythonhosted.org/packages/22/a1/4df53bbe3663de65ad90c6bbc2e6e8779b61fba1e13ee9a21a0f2f7db8f9/lsprotocol-2023.0.0b1.tar.gz"
-    sha256 "f7a2d4655cbd5639f373ddd1789807450c543341fa0a32b064ad30dbb9f510d4"
+    url "https://files.pythonhosted.org/packages/3e/fe/f7671a4fb28606ff1663bba60aff6af21b1e43a977c74c33db13cb83680f/lsprotocol-2023.0.0.tar.gz"
+    sha256 "c9d92e12a3f4ed9317d3068226592860aab5357d93cf5b2451dc244eee8f35f2"
   end
 
   resource "pygls" do
-    url "https://files.pythonhosted.org/packages/cb/d3/2d96ac29bbff44a2d37d43da67075c919d8f66870da0dce507f84d32d08f/pygls-1.1.2.tar.gz"
-    sha256 "93fe17c01fd03307774290e685e7fa25bc1411cd72f243ff33eef21927fd0ad5"
-  end
-
-  resource "typeguard" do
-    url "https://files.pythonhosted.org/packages/90/fb/e5d68ef7b0bca67d06bb4a15f9317decbd1a3f323c3d89221d2ca4c11512/typeguard-4.1.5.tar.gz"
-    sha256 "ea0a113bbc111bcffc90789ebb215625c963411f7096a7e9062d4e4630c155fd"
+    url "https://files.pythonhosted.org/packages/e6/94/534c11ba5475df09542e48d751a66e0448d52bbbb92cbef5541deef7760d/pygls-1.2.1.tar.gz"
+    sha256 "04f9b9c115b622dcc346fb390289066565343d60245a424eca77cb429b911ed8"
   end
 
   def install

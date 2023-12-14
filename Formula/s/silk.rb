@@ -37,7 +37,7 @@ class Silk < Formula
     ]
     # Work around macOS Sonoma having /usr/bin/podselect but Pod::Select was
     # removed from Perl 5.34 resulting in `Can't locate Pod/Select.pm in @INC`
-    args << "ac_cv_prog_PODSELECT=" if MacOS.version == :sonoma
+    args << "ac_cv_prog_PODSELECT=" if OS.mac? && MacOS.version == :sonoma
 
     system "./configure", *args
     system "make"

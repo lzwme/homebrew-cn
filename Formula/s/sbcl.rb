@@ -42,7 +42,7 @@ class Sbcl < Formula
       "--with-sb-thread",
     ]
 
-    ENV["SBCL_MACOSX_VERSION_MIN"] = MacOS.version.to_s
+    ENV["SBCL_MACOSX_VERSION_MIN"] = MacOS.version.to_s if OS.mac?
     system "./make.sh", *args
 
     ENV["INSTALL_ROOT"] = prefix

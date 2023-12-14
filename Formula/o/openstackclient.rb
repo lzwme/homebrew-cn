@@ -3,20 +3,18 @@ class Openstackclient < Formula
 
   desc "Command-line client for OpenStack"
   homepage "https://openstack.org"
-  url "https://files.pythonhosted.org/packages/4b/4a/4fa8b9e681dbd38ecf2a86e05f0f9fa48eb4e31e7c4f5925877367022127/python-openstackclient-6.3.0.tar.gz"
-  sha256 "9ba0bdf8d03087e585b40a8dcc429cebbdd5fdec24c1d60a102bf9f331320df1"
+  url "https://files.pythonhosted.org/packages/71/13/9556dd8c47b78a7542f5f9241f4798f66d1203b6fd5f069518f5cc51df3f/python-openstackclient-6.4.0.tar.gz"
+  sha256 "0c6ab40168ea51fed68819aa251f8253de9a61dacc96dd1b64739f189fc2183f"
   license "Apache-2.0"
-  revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sonoma:   "cb3fed6965ad589336bdfd0772457b7ae0a380d2797aa5f4333943d6f9c392c5"
-    sha256 cellar: :any,                 arm64_ventura:  "58ae8d72c288c4658c8bd3a71d1d903b5d50dbc5a0ed39b0d162b7b1b6ac4d32"
-    sha256 cellar: :any,                 arm64_monterey: "a18d236f2f6bd633e79fd5ba40c3f8caa21c792d197dc79fbbf567f7ed9168f8"
-    sha256 cellar: :any,                 sonoma:         "a4bdb802797426327bf91fedc56393117b803574003dafde370233cee552c94a"
-    sha256 cellar: :any,                 ventura:        "611fa9e82be17b57046741445f245cfcf404a30a6d5557aa5b8b9d94a587765c"
-    sha256 cellar: :any,                 monterey:       "1007d73412a13ed7c5875caa9637914aa2ac5845d8a5de17671e264a20623aa6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a9c5e6e627e3475a4f6c2a4311e8779f598131b97cb102a6e5e8ccdfbae89ca"
+    sha256 cellar: :any,                 arm64_sonoma:   "97fc78ab1accdefddf21f57ee75790e484e801bd6450db1a5061e34296ba2703"
+    sha256 cellar: :any,                 arm64_ventura:  "a164801b9d2774db511b75e998abe4d68ff247dd3d6c511c283faf9ae2834d18"
+    sha256 cellar: :any,                 arm64_monterey: "c07f59c868f1945baddac448377eaf5719f0b6f44f2f2b582103116b28cb107f"
+    sha256 cellar: :any,                 sonoma:         "299eb6eadca07e23b9597f3b6e1bc0f3afe4de8ac42274c4625a6d3302171c8e"
+    sha256 cellar: :any,                 ventura:        "785b21d4cff546341ebb12e9c678c4be5ae1c6730296576068c35d3c6259172d"
+    sha256 cellar: :any,                 monterey:       "c1a0c33b7ac25e5fccb5370faa30ed10bbc2e9d4cfe2ab5fb62adbe95f086441"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b90adebb8e94074513ed67e32ef633e0e8dd1a0ae14727f8144bbd396942390d"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -42,8 +40,8 @@ class Openstackclient < Formula
   end
 
   resource "babel" do
-    url "https://files.pythonhosted.org/packages/aa/6c/737d2345d86741eeb594381394016b9c74c1253b4cbe274bb1e7b5e2138e/Babel-2.13.1.tar.gz"
-    sha256 "33e0952d7dd6374af8dbf6768cc4ddf3ccfefc244f9986d4074704f2fbd18900"
+    url "https://files.pythonhosted.org/packages/e2/80/cfbe44a9085d112e983282ee7ca4c00429bc4d1ce86ee5f4e60259ddff7f/Babel-2.14.0.tar.gz"
+    sha256 "6919867db036398ba21eb5c7a0f6b28ab8cbc3ae7a73a44ebe34ae74a4e7d363"
   end
 
   resource "charset-normalizer" do

@@ -5487,7 +5487,6 @@ Homebrew-homebrew-core/Formula/s/sagittarius-scheme.rb, Homebrew/homebrew-core, 
 Homebrew-homebrew-core/Formula/s/sail.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/saldl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/salt-lint.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/s/salt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/samba.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sambamba.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/saml2aws.rb, Homebrew/homebrew-core, 0
@@ -13746,6 +13745,8 @@ nicerloop-homebrew-nicerloop/Formula/pinfinder.rb, nicerloop/homebrew-nicerloop,
 nicerloop-homebrew-nicerloop/Formula/qrscan.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/rups.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/scoop.rb, nicerloop/homebrew-nicerloop, 0
+nicerloop-homebrew-nicerloop/Formula/svgasm.rb, nicerloop/homebrew-nicerloop, 0
+nicerloop-homebrew-nicerloop/Formula/svgcleaner.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/tccplus.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/video-transcoding.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/warc2html.rb, nicerloop/homebrew-nicerloop, 1

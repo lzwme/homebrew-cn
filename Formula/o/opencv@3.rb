@@ -120,7 +120,7 @@ class OpencvAT3 < Formula
 
     if Hardware::CPU.intel? && build.bottle?
       args << "-DENABLE_AVX=OFF" << "-DENABLE_AVX2=OFF"
-      args << "-DENABLE_SSE41=OFF" << "-DENABLE_SSE42=OFF" unless MacOS.version.requires_sse42?
+      args << "-DENABLE_SSE41=OFF" << "-DENABLE_SSE42=OFF" if !OS.mac? || !MacOS.version.requires_sse42?
     end
 
     system "cmake", "-S", ".", "-B", "build_shared", *args

@@ -93,7 +93,7 @@ class Crystal < Formula
     ENV.append_path "PATH", "boot/bin"
     ENV["LLVM_CONFIG"] = llvm.opt_bin/"llvm-config"
     ENV["CRYSTAL_LIBRARY_PATH"] = ENV["HOMEBREW_LIBRARY_PATHS"]
-    ENV.append_path "CRYSTAL_LIBRARY_PATH", MacOS.sdk_path_if_needed/"usr/lib" if MacOS.sdk_path_if_needed
+    ENV.append_path "CRYSTAL_LIBRARY_PATH", MacOS.sdk_path_if_needed/"usr/lib" if OS.mac? && MacOS.sdk_path_if_needed
     non_keg_only_runtime_deps.each do |dep|
       # Our just built `crystal` won't link with some dependents (e.g. `bdw-gc`, `libevent`)
       # unless they're explicitly added to `CRYSTAL_LIBRARY_PATH`. The keg-only dependencies

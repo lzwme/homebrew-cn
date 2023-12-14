@@ -172,7 +172,7 @@ class Subversion < Formula
     ]
 
     # preserve compatibility with macOS 12.0–12.2
-    args.unshift "--enable-sqlite-compatibility-version=3.36.0" if MacOS.version == :monterey
+    args.unshift "--enable-sqlite-compatibility-version=3.36.0" if OS.mac? && MacOS.version == :monterey
 
     inreplace "Makefile.in",
               "toolsdir = @bindir@/svn-tools",
@@ -196,7 +196,7 @@ class Subversion < Formula
     perl_core = Pathname.new(perl_archlib)/"CORE"
     perl_extern_h = perl_core/"EXTERN.h"
 
-    unless perl_extern_h.exist?
+    if OS.mac? && !perl_extern_h.exist?
       # No EXTERN.h, maybe it's system perl
       perl_version = Utils.safe_popen_read(perl.to_s, "--version")[/v(\d+\.\d+)(?:\.\d+)?/, 1]
       perl_core = MacOS.sdk_path/"System/Library/Perl"/perl_version/"darwin-thread-multi-2level/CORE"

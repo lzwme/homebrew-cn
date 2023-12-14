@@ -12,13 +12,14 @@ class Rtx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dbb9a01c97caa3ff626292e28a0249d1915adad98c3b5d42abb3adac4aefada5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e72c37a87f26f6e86dbb540b49bf0ea946c3deb96930e24efe5767357d5aa70"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b072d4e217b6eeed5fd2a7f4fcbcecb756f66df6fa9acba747d6e9f9a6179f22"
-    sha256 cellar: :any_skip_relocation, sonoma:         "33cd86c89dd516006dd13e1c0743319977ee62773ed108a9014d1723998d6efd"
-    sha256 cellar: :any_skip_relocation, ventura:        "07b557297e8a7e0607275f3eaa1f19e4e03508ffbe608599b0a96017134702ef"
-    sha256 cellar: :any_skip_relocation, monterey:       "5957b701cbf4138e334d1eb99873b7be20fdaac857f2499366051f2d15082f68"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9d0b0ba6febfbffc785476f734756161130662c2ba5ae0dde5b7e97cad0048b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ab349ec1dc5f909cb3f37ff8bfc694b6308ad601ff3b6f123d896cf1d86cdda7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e1ff1e2928521c13211167c27941d357a52d4bdb3dec555c7d8701444cedef1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8525cc87837e60db02101b1a9e791d161a89064c1ca7e792dc2eeb88a8b43740"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f20fb89f115c07f9efd85f9436084b972cc7ddfbe9a0ee8585193158e62cd4a4"
+    sha256 cellar: :any_skip_relocation, ventura:        "029e2a130285d7dd30dea16e91f3003207f11c71699390a9c5bca8fb74b6a0b4"
+    sha256 cellar: :any_skip_relocation, monterey:       "b298f4a8bd6865a216d6afdb1f71e5f4c8427f399183c5c2b5cc8eb55e6e91ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1cbbf133ceca194555ed6423ae18a649a82cf4de7e9019649d7ae586983571c1"
   end
 
   depends_on "rust" => :build
@@ -31,10 +32,14 @@ class Rtx < Formula
   def install
     system "cargo", "install", *std_cargo_args
     man1.install "man/man1/rtx.1"
-    share.install "share/fish"
     generate_completions_from_executable(bin/"rtx", "completion")
     lib.mkpath
     touch lib/".disable-self-update"
+    (share/"fish"/"vendor_conf.d"/"rtx-activate.fish").write <<~EOS
+      if [ "$RTX_FISH_AUTO_ACTIVATE" != "0" ]
+        #{bin}/rtx activate fish | source
+      end
+    EOS
   end
 
   test do

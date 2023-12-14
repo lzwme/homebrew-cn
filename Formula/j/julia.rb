@@ -61,7 +61,6 @@ class Julia < Formula
       prefix=#{prefix}
       sysconfdir=#{etc}
       LOCALBASE=#{HOMEBREW_PREFIX}
-      MACOSX_VERSION_MIN=#{MacOS.version}
       PYTHON=python3
       USE_BINARYBUILDER=0
       USE_SYSTEM_BLAS=1
@@ -88,6 +87,8 @@ class Julia < Formula
       LIBLAPACKNAME=libopenblas
       USE_BLAS64=0
     ]
+
+    args << "MACOSX_VERSION_MIN=#{MacOS.version}" if OS.mac?
 
     # Set MARCH and JULIA_CPU_TARGET to ensure Julia works on machines we distribute to.
     # Values adapted from https://github.com/JuliaCI/julia-buildbot/blob/master/master/inventory.py

@@ -106,7 +106,7 @@ class Gdal < Formula
     ]
 
     # JavaVM.framework in SDK causing Java bindings to be built
-    args << "-DBUILD_JAVA_BINDINGS=OFF" if MacOS.version <= :catalina
+    args << "-DBUILD_JAVA_BINDINGS=OFF" if OS.mac? && MacOS.version <= :catalina
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

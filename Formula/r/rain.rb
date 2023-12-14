@@ -1,18 +1,18 @@
 class Rain < Formula
   desc "Command-line tool for working with AWS CloudFormation"
   homepage "https://github.com/aws-cloudformation/rain"
-  url "https://ghproxy.com/https://github.com/aws-cloudformation/rain/archive/refs/tags/v1.7.2.tar.gz"
-  sha256 "54d8fcafb118fac4c4cc24e099bbc5858b57d422a96d3dcb65704d8782ab52f2"
+  url "https://ghproxy.com/https://github.com/aws-cloudformation/rain/archive/refs/tags/v1.7.3.tar.gz"
+  sha256 "2cdf174a26bf5c73c267e09e8b81d6a2142d8d3ac265b1b002868fda1beea0b6"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3066e01751285e35ea559c28aff54d350c59deb4040bead520e5f75c20292fa2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "51f85ab38833348d2de426fa4fe264b335c8d676a0a58ce98709f926b3a50805"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a210c9b7c6b9e6d242c6eeaa7ee789510baa9272118aef5325f810716ecedb97"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bda22bc36a0bc148726c2671ccb290fc0480c9012f66ec7e8baa33250dd93892"
-    sha256 cellar: :any_skip_relocation, ventura:        "dae5b0f20ad8f63fb0249c475130cc5fc5085a38e89631560ded6af81407f931"
-    sha256 cellar: :any_skip_relocation, monterey:       "92b65081c65f3641b0e35f3ad6e2af8ba8b1ad5674511ea2fc9d25127f8aa864"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "812d17642fbf800d0173b6b6de16d154f7b2006cbee46251eb06b1254468716c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5cf7e1503ecbb79a53a938d91ec0c1a626cb6295ab5f63b03fb2f7fe3579b5a2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "837a8dedd5b4d9d8e6232b80179178a481593ff690c31415ae77788f7c220ddc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c4c0868a29f9255058d73db264233cc803bd86dd5a1313157339bc57b8ae4a13"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3b83a49d5e4190c45f6450cca03c5c923343db0aad7ebf87e71ff4c65c73cb84"
+    sha256 cellar: :any_skip_relocation, ventura:        "02cc875a387539109f53cf75a0e4b65b73f589a1c6430ce17df6c134cb1bf0a6"
+    sha256 cellar: :any_skip_relocation, monterey:       "41de027fb1ec835fcfc1f7737134a3663e3f742c2b43a834ff903bbae69eb52d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "baea9d6412bfd00c8f7a3187a40e83d4aa878a4a61d69e37341248c305795fdc"
   end
 
   depends_on "go" => :build

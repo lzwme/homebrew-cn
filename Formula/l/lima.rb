@@ -38,7 +38,7 @@ class Lima < Formula
     info = JSON.parse shell_output("#{bin}/limactl info")
     # Verify that the VM drivers are compiled in
     assert_includes info["vmTypes"], "qemu"
-    assert_includes info["vmTypes"], "vz" if MacOS.version >= :ventura
+    assert_includes info["vmTypes"], "vz" if OS.mac? && MacOS.version >= :ventura
     # Verify that the template files are installed
     template_names = info["templates"].map { |x| x["name"] }
     assert_includes template_names, "default"

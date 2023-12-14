@@ -43,7 +43,7 @@ class FluentBit < Formula
     # Per https://luajit.org/install.html: If MACOSX_DEPLOYMENT_TARGET
     # is not set then it's forced to 10.4, which breaks compile on Mojave.
     # fluent-bit builds against a vendored Luajit.
-    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s
+    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
@@ -70,7 +70,7 @@ __END__
 -    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
 +    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/lib
 +    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/lib)
- 
+
  # Build the luajit binary
 -if (LUAJIT_BUILD_EXE)
 +if (FALSE)

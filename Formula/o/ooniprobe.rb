@@ -2,8 +2,8 @@ class Ooniprobe < Formula
   desc "Network interference detection tool"
   homepage "https://ooni.org/"
   # TODO: check if we can build with go1.21
-  url "https://ghproxy.com/https://github.com/ooni/probe-cli/archive/refs/tags/v3.19.2.tar.gz"
-  sha256 "aefc8dad948cdc4a7269bf223c4cdccb6f31fdc153c1e857a9364e195e67cf47"
+  url "https://ghproxy.com/https://github.com/ooni/probe-cli/archive/refs/tags/v3.20.0.tar.gz"
+  sha256 "701bdcbd42ef34fc04b581b278b3cda914c5a78b39bbba9d7ffa74095472bdb2"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,11 +12,11 @@ class Ooniprobe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "975d29ac01455f0eb6a3bbd8303a847147a5d8fa20eaf82e1047f13d2ee3e9dd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5e6c5ab8ab8465deace688f926dd37935f4509887e82847e06b8f8728e7b569"
-    sha256 cellar: :any_skip_relocation, ventura:        "a306e9e94ad00f66e579f39e14fd76294c51e2cc70a42b247ab7595f5b62ea28"
-    sha256 cellar: :any_skip_relocation, monterey:       "bef20fd8ef1a5c50d38af4c5d2f6421dec9e2f7aabb5ec7b02ed9c89687b53d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "808907b8bec02270444786ff87e98b17f37f39a3e96c6fb71b6c114b099eb3c4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2c97369f89a7267bdf34f502d11eef85f0a1de984ef1662e5542e66b6189e647"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "702b91d47b750ad60c87eae19ea99351ebcc1604ebd136c1e585ac3320f92464"
+    sha256 cellar: :any_skip_relocation, ventura:        "23edc2887ad9dee99476091abdbb0af7d2786aca7dba8c806e279a3f511ffe0d"
+    sha256 cellar: :any_skip_relocation, monterey:       "8ae2619b7e50e18df603176b9ffeb3d8af6d7a418774d466c9b67cea6581750c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a8a563b82592d101032ca1135362bacf1a090db1160c9a5086a95f3a39ffc1d"
   end
 
   # go1.21 build issue report, https://github.com/ooni/probe/issues/2548

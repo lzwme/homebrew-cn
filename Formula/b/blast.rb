@@ -51,7 +51,7 @@ class Blast < Formula
 
       if OS.mac?
         # Allow SSE4.2 on some platforms. The --with-bin-release sets --without-sse42
-        args << "--with-sse42" if Hardware::CPU.intel? && MacOS.version.requires_sse42?
+        args << "--with-sse42" if Hardware::CPU.intel? && OS.mac? && MacOS.version.requires_sse42?
         args += ["OPENMP_FLAGS=-Xpreprocessor -fopenmp",
                  "LDFLAGS=-lomp"]
       end

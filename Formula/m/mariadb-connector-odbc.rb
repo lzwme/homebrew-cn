@@ -38,15 +38,21 @@ class MariadbConnectorOdbc < Formula
     ENV.append_to_cflags "-I#{Formula["mariadb-connector-c"].opt_include}/mariadb"
     ENV.append "LDFLAGS", "-L#{Formula["mariadb-connector-c"].opt_lib}/mariadb"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["mariadb-connector-c"].opt_lib}/mariadb" if OS.linux?
-    system "cmake", ".", "-DMARIADB_LINK_DYNAMIC=1",
-                         "-DWITH_SSL=OPENSSL",
-                         "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
-                         "-DWITH_IODBC=0",
-                         # Workaround 3.1.11 issues finding system's built-in -liconv
-                         # See https://jira.mariadb.org/browse/ODBC-299
-                         "-DICONV_LIBRARIES=#{MacOS.sdk_path}/usr/lib/libiconv.tbd",
-                         "-DICONV_INCLUDE_DIR=/usr/include",
-                         *std_cmake_args
+    args = [
+      "-DMARIADB_LINK_DYNAMIC=1",
+      "-DWITH_SSL=OPENSSL",
+      "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
+      "-DWITH_IODBC=0",
+      "-DICONV_INCLUDE_DIR=/usr/include",
+    ]
+
+    if OS.mac?
+      # Workaround 3.1.11 issues finding system's built-in -liconv
+      # See https://jira.mariadb.org/browse/ODBC-299
+      args << "-DICONV_LIBRARIES=#{MacOS.sdk_path}/usr/lib/libiconv.tbd"
+    end
+
+    system "cmake", ".", *args, *std_cmake_args
 
     # By default, the installer pkg is built - we don't want that.
     # maodbc limits the build to just the connector itself.
