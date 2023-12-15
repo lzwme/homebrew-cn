@@ -49,7 +49,7 @@ class Trafficserver < Formula
   def install
     # Per https://luajit.org/install.html: If MACOSX_DEPLOYMENT_TARGET
     # is not set then it's forced to 10.4, which breaks compile on Mojave.
-    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s
+    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s if OS.mac?
 
     args = %W[
       --prefix=#{prefix}

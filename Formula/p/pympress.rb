@@ -6,17 +6,17 @@ class Pympress < Formula
   url "https://files.pythonhosted.org/packages/17/65/ffd6b30dae047fab0d4b1bef14940f194f555e9b7b6fe1520a650233e6ca/pympress-1.8.4.tar.gz"
   sha256 "ddc9c21c6a0a517d204f3231d6484cf9bafac7dfa0f565e1dbc48b866f7d78de"
   license "GPL-2.0-or-later"
-  head "https://github.com/Cimbali/pympress.git", branch: "master"
+  head "https://github.com/Cimbali/pympress.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1c4ddd3f1b0c73133abe92076ece05865c46b29b0f21fe043983610d992a67bb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "24177f278b28c9b1504df98a9ba183b91f3436b9d1b77319afa9f657fd8cb1ef"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5d5a8bd58fc2b21fbd744a22220884d9ad014cce751c29e7252f10ca9970ba22"
-    sha256 cellar: :any_skip_relocation, sonoma:         "55833a12c097b1a74a9d852522c3071c7a6943b5f52b67dfb3160828117841a5"
-    sha256 cellar: :any_skip_relocation, ventura:        "de8cd17331ac3b641ab6a2614b310fcabea5e798f6a50a764fb0178cdce6412a"
-    sha256 cellar: :any_skip_relocation, monterey:       "4975114e3ee11877c08b8b3a92c98025b63a5d6cfb1f210d616b7d2276692ccb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3be0b1e750d5130c37079276e59505427b21e2d894300ef378159156169a1c5d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c6b2b7872768bcc7b5752eda38ecbcffa95996c46f2e2ae76310b44e9a0a37a3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0f68ccb6aa6943f2d02bdb89fd9e6a3eeb69a96ec2f0ff42c38595145085608d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "47679c46dbcf03fca943560d5d5d5a5c20fd98e0e33dec7fc8387ca01857cf9a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d5e56d129c2ed50f008c2f224b9fbaf9d3c938d17309b3e7816cfc248d3f31b1"
+    sha256 cellar: :any_skip_relocation, ventura:        "3560a08e36b9fe2aabfd6b104c09c6e15f5bf0b7c2f78d61ae46453e0be764f8"
+    sha256 cellar: :any_skip_relocation, monterey:       "8de9bf208783574c1052aea7b598e14b9dd747f1487f17e3cd797d6177c3b48b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfcff93ba45eb9eaafb4d20e4e81659e1c48faee7b3053c4f035fe6a7b88c353"
   end
 
   depends_on "gobject-introspection"

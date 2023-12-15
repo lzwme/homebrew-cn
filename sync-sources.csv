@@ -5009,6 +5009,7 @@ Homebrew-homebrew-core/Formula/p/pure-ftpd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pure.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/purescript-language-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/purescript.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/purr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pushpin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/putmail-queue.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/putmail.rb, Homebrew/homebrew-core, 0
@@ -10095,6 +10096,7 @@ Homebrew-homebrew-cask/Casks/r/react-proto.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/react-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/reactotron.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/readdle-spark.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/r/reader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/readmoreading.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/readwise-ibooks.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/readyapi.rb, Homebrew/homebrew-cask, 0

@@ -20,17 +20,18 @@ class Micronaut < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea6a713542e415f470e4ab95d6e8a235ef9a16f78aa4af0b2272e003566ac4e9"
   end
 
+  depends_on "gradle" => :build
   # Uses a hardcoded list of supported JDKs. Try switching to `openjdk` on update.
   depends_on "openjdk@17"
 
   def install
-    system "./gradlew", "micronaut-cli:assemble", "-x", "test"
+    ENV["JAVA_HOME"] = Language::Java.java_home("17")
+    system "gradle", "micronaut-cli:assemble", "--exclude-task", "test", "--no-daemon"
 
-    mkdir_p libexec/"bin"
-    mv "starter-cli/build/exploded/bin/mn", libexec/"bin/mn"
-    mv "starter-cli/build/exploded/lib", libexec/"lib"
+    libexec.install "starter-cli/build/exploded/lib"
+    (libexec/"bin").install "starter-cli/build/exploded/bin/mn"
 
-    bash_completion.install "starter-cli/build/exploded/bin/mn_completion"
+    bash_completion.install "starter-cli/build/exploded/bin/mn_completion" => "mn"
     (bin/"mn").write_env_script libexec/"bin/mn", Language::Java.overridable_java_home_env("17")
   end
 

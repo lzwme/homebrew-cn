@@ -1,8 +1,8 @@
 class Dnscontrol < Formula
   desc "Synchronize your DNS to multiple providers from a simple DSL"
   homepage "https://dnscontrol.org/"
-  url "https://ghproxy.com/https://github.com/StackExchange/dnscontrol/archive/refs/tags/v4.7.2.tar.gz"
-  sha256 "c2a9bc46b8f88c12184a03d685f8cb826f0639a8c93546941485a656208a3891"
+  url "https://ghproxy.com/https://github.com/StackExchange/dnscontrol/archive/refs/tags/v4.7.3.tar.gz"
+  sha256 "4d60ffb84b62005156b8b28d4c212a675946eb7bee557856517822e5bf2c1539"
   license "MIT"
   version_scheme 1
 
@@ -15,13 +15,13 @@ class Dnscontrol < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e2b1dba9d65b87e67c08692bde8829f9e089c0b8534cd7e3a741227fcbacc524"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "345cb359fca0e273264d82e4c200340cd238275f0329105b65004e7038ffa09d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e30eff5275d0b841ff315b34e1a2cf18e772e0dc07a908d95eaaa2523c3eb43a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "453bd4fd58c70bc2696c829ea9bdb92a6ef1558c54ad23d27e769ccb348792aa"
-    sha256 cellar: :any_skip_relocation, ventura:        "8972805a05a7c2a1fc32608260c76010785826fea91dc9f5784bd3c3b74b9361"
-    sha256 cellar: :any_skip_relocation, monterey:       "59ed73f7495aeed4998acfaffb7920a0cdbd6d868a332f531f3fac0f57554d25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "073f03abd17228e47e6db6bbb2f029ee8367d142633a2b94add38f52656e7183"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2483de3b45967d4eacceed82f661d988e2cea776470dbf4c89b08b129f80c041"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0d68d79e9a4ef9ebef6002395c75565641a90cffadbbe88cede92c506e410d6b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c5be258b393ac968552581931bc17b629f332a968ec2a209498333c7f5f8f84b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4a4ab3bac86fe7a2c6fdcd9761f00a13457ba3ed94f54af5171f4a280e060c09"
+    sha256 cellar: :any_skip_relocation, ventura:        "1a0effdf3e5a76a04b1827f6b51bea0d3ab6129df1f11dda327112c79363ae2d"
+    sha256 cellar: :any_skip_relocation, monterey:       "f6ff80b8effc8973d7a2dbe777cc182fd3d829315f789a4c2b6eb1ff6b072feb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49fad5ceff77ad1609922db92f314c349db1dc4001d626091e7ebc6ce1f73a98"
   end
 
   depends_on "go" => :build

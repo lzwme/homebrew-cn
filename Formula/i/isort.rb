@@ -1,8 +1,8 @@
 class Isort < Formula
   desc "Sort Python imports automatically"
   homepage "https://pycqa.github.io/isort/"
-  url "https://files.pythonhosted.org/packages/1e/59/98677f9085b607551b009833449c39bfc4ce8172b0d9545eece9b5e2f8e5/isort-5.13.1.tar.gz"
-  sha256 "aaed790b463e8703fb1eddb831dfa8e8616bacde2c083bd557ef73c8189b7263"
+  url "https://files.pythonhosted.org/packages/87/f9/c1eb8635a24e87ade2efce21e3ce8cd6b8630bb685ddc9cdaca1349b2eb5/isort-5.13.2.tar.gz"
+  sha256 "48fdfcb9face5d58a4f6dde2e72a1fb8dcaf8ab26f95ab49fab84c2ddefb0109"
   license "MIT"
   head "https://github.com/PyCQA/isort.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Isort < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5244e69f49d643c8cd7f92c6f841d73bbd1e92e1ec551384358877f4fc3e6825"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3cd8283d62857dc874aff541693aea9b7c9117beb8b3d8bb1273bd6b62aa2a87"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "824d29c79b43aa5568fd7ccaee39af224b73cde4c0b21c632b767dde8aca61f7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "93fe19d7c4a56c8282a9e24cefb2869312072fb6f956d52f4f3745653e0765bb"
-    sha256 cellar: :any_skip_relocation, ventura:        "4a248de7c1f5351fec46003e2f273d1a2c02240c5b4e0cd8106be4799daa8b84"
-    sha256 cellar: :any_skip_relocation, monterey:       "6905424aa448833c7138bc129813fa876f5fa342cad11fd6389aa5408a334586"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a629667254ae3ba921777781a89cddb6595be53a4aa897be886683f3b17993d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5a909b4271e03b607f22adca9f91450d06782dbde8578506ab752dfa284cfa75"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c191943e91ec93e8254a2063f08fa52a9694fc786ee4f93989cb76b29002c29"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ba1280febda448476d22f9e97eefdcbaa070963ec39d8dd08f65655320245e56"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4e2c285cf5a2475917e401bfbafa9baeeb2f7e6501eab6a87ced07d815081c90"
+    sha256 cellar: :any_skip_relocation, ventura:        "a27922320d9854b8791828a47a496cb676a2f61ae9cfde231b1c533b658c047d"
+    sha256 cellar: :any_skip_relocation, monterey:       "d055b10dca208ac46ebc32b456588b8253323cfbdfcb9b6c1ffe830470b0170e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9dd61f17354840ea1029f6221180547b2c451c23954a9273e99d64045980c61"
   end
 
   depends_on "poetry" => :build

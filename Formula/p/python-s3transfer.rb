@@ -1,18 +1,18 @@
 class PythonS3transfer < Formula
   desc "Amazon S3 Transfer Manager for Python"
   homepage "https://github.com/boto/s3transfer"
-  url "https://files.pythonhosted.org/packages/5f/cc/7e3b8305e22d7dcb383d4e1a30126cfac3d54aea2bbd2dfd147e2eff4988/s3transfer-0.8.2.tar.gz"
-  sha256 "368ac6876a9e9ed91f6bc86581e319be08188dc60d50e0d56308ed5765446283"
+  url "https://files.pythonhosted.org/packages/e4/45/973579466ff4869756f2ba5cc31773d5fc9db67085f722a6b38b8558d70d/s3transfer-0.9.0.tar.gz"
+  sha256 "9e1b186ec8bb5907a1e82b51237091889a9973a2bb799a924bcd9f301ff79d3d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "201b464ace00b9800ad35d4d3e98484e43e031cb6d0c754df5329d10d6deefd1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "347955d1fdbf17142d7d223492e865f6a1d7a831abb8aa54935bbcb7f18f9ffb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "53aa3393f171a5a73910f669fd77f279d68de70b30d5f36380446e353872e7d3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "463b9e054a00b9180776a570efe571d022924b1245eb2382d026d10bb830885d"
-    sha256 cellar: :any_skip_relocation, ventura:        "0822b0452697de6e27171475223c5eead6bc4418fc7469b20bc344e27fcf43af"
-    sha256 cellar: :any_skip_relocation, monterey:       "58141c295d0a5eccfbec2365d5d43d0cb846b96b3eca7e97f75d676f7c6fc02e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e04c08f56ba546997821a1692aa32f6f9292aa3a3a1bbde9649dcef043d37407"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3306c09d18760147103533e57f5f311deabaf98cc3706102ba985239db0d310d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "071bc0413bd3ff7b1aeb620bf8a4f0d376bc6532f8c29c2b9551344ed0b27143"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f7a8f57dcc7e7479df80bb5c77549f7370c094cdf664fda6c7baa815fd8ccba3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a10eb04bb7a03df07ebfa91ccb7bf357e2bc10eaa9ae22bb176e0e9af02e3e08"
+    sha256 cellar: :any_skip_relocation, ventura:        "70839a6be08dc6038764572fada17447f6cf8e991e3400418a58e6e48d04c43e"
+    sha256 cellar: :any_skip_relocation, monterey:       "a148453c5ed35abea7c4b1bfd5aa1b1238ab1ac9a02e3b14ba040ff7be87c904"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd0d1d0c0fe3a4f94dcf4e3c3256e438a58cfbb76f2884503486fea5c8638f17"
   end
 
   depends_on "python-setuptools" => :build

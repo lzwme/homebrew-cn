@@ -1,19 +1,19 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.land/"
-  url "https://ghproxy.com/https://github.com/denoland/deno/releases/download/v1.38.5/deno_src.tar.gz"
-  sha256 "df10fa5fbc97322e315ea638945ce943f91591337fdcc8d3917f33a4469081d6"
+  url "https://ghproxy.com/https://github.com/denoland/deno/releases/download/v1.39.0/deno_src.tar.gz"
+  sha256 "a384c70c4b8d0ef6bb2a6a0ab020ad9b80eb0fb30c77c8acc09e1ce4287f05eb"
   license "MIT"
   head "https://github.com/denoland/deno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8d008f5108445d13173e4a1eae3f987c111900f581e6fdb98d21bf10a95b8935"
-    sha256 cellar: :any,                 arm64_ventura:  "7214ff3205bef82a7673ea75269080a3c253615f6dd03f6e5f49d997d66c6348"
-    sha256 cellar: :any,                 arm64_monterey: "8b8672c32c7f541b217afc8cf8fb351cf61e84d1e96efc6faefbd0304d13d18b"
-    sha256 cellar: :any,                 sonoma:         "72ffef540e71cf0ab8b66285bc4f4c07fb2fb773bd48c448471f654584c05cd4"
-    sha256 cellar: :any,                 ventura:        "838cb5a90fde2d052e44e3e854bd1acdf3d16feffb62f36766d279a54fe60a9f"
-    sha256 cellar: :any,                 monterey:       "031e645a24b3a930e816a60e00eac45bdc969a39e91f6c7defd332eaf4dd08cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef8a5daaa9e8fbf4626c91664e6c6d0b4247928186733d922580c91fa9adfe95"
+    sha256 cellar: :any,                 arm64_sonoma:   "53ee89ed5f47366d8541fadd60b56ea648358e8df95eb5fdaea6de7c5a856098"
+    sha256 cellar: :any,                 arm64_ventura:  "aa7a2a1bb9e7a18326e97282dfcf7b19fcd5db1c07863930a8fa8b24d40550d8"
+    sha256 cellar: :any,                 arm64_monterey: "f7092caea507ec4090f516213187ae00fc46209290c940289868fbd7f7943d89"
+    sha256 cellar: :any,                 sonoma:         "84b1a4910dbbf8f4208b70729f99490a5617d40a2aa205796f67cea3e84a68c1"
+    sha256 cellar: :any,                 ventura:        "7ad36b1cf37a8df5f96079eec7447b94404c266c5ef1b3faa17e429c310288b5"
+    sha256 cellar: :any,                 monterey:       "7221dbd0f9cb9af2fb40df4e331814e295ab66c1c392c09f8f975d419a0d8f36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab96e1af1fd200d0556140d7174cd84b3b14da1bed9d5338e4234067687902a5"
   end
 
   depends_on "cmake" => :build
@@ -45,23 +45,23 @@ class Deno < Formula
   # Use the version of `v8` crate at: https://github.com/denoland/deno/blob/v#{version}/Cargo.lock
   # Search for 'name = "v8"' (without single quotes).
   resource "rusty_v8" do
-    url "https://static.crates.io/crates/v8/v8-0.81.0.crate"
-    sha256 "b75f5f378b9b54aff3b10da8170d26af4cfd217f644cf671badcd13af5db4beb"
+    url "https://static.crates.io/crates/v8/v8-0.82.0.crate"
+    sha256 "f53dfb242f4c0c39ed3fc7064378a342e57b5c9bd774636ad34ffe405b808121"
   end
 
   # Find the v8 version from the last commit message at:
   # https://github.com/denoland/rusty_v8/commits/v#{rusty_v8_version}/v8
   # Then, use the corresponding tag found in https://github.com/denoland/v8/tags.
   resource "v8" do
-    url "https://ghproxy.com/https://github.com/denoland/v8/archive/refs/tags/12.0.267.1-denoland-b287115fa7c9f0323c43.tar.gz"
-    sha256 "f8ede0e87d00c7c25f8833b6dc0f149929c511316e2c50100195b0a11b3052cc"
+    url "https://ghproxy.com/https://github.com/denoland/v8/archive/refs/tags/12.0.267.8-denoland-60a289a156e16eaf1ccf.tar.gz"
+    sha256 "66a429c798e7f67193c945d824db26ef11aaf99b61522f587f60457a0a57600e"
   end
 
   # Use the version of `deno_core` crate at: https://github.com/denoland/deno/blob/v#{version}/Cargo.lock
   # Search for 'name = "deno_core"' (without single quotes).
   resource "deno_core" do
-    url "https://ghproxy.com/https://github.com/denoland/deno_core/archive/refs/tags/0.232.0.tar.gz"
-    sha256 "37ec83d3c6d39c017cf12b99f9a4d10cd302cf95d5d8f7c42f8c18a6ba65f9c7"
+    url "https://ghproxy.com/https://github.com/denoland/deno_core/archive/refs/tags/0.238.0.tar.gz"
+    sha256 "a76a39e8563d3a79defaaf7e14efd9beadc5fd826d4a83b04b0fc0e911fe38e2"
   end
 
   # To find the version of gn used:

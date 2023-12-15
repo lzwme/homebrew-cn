@@ -1,21 +1,18 @@
 class Gibo < Formula
   desc "Access GitHub's .gitignore boilerplates"
   homepage "https://github.com/simonwhitaker/gibo"
-  url "https://ghproxy.com/https://github.com/simonwhitaker/gibo/archive/refs/tags/v3.0.7.tar.gz"
-  sha256 "1e07ca4d5e7a0303784c42c5c9633b63cc0532d5b9dc69e7400caa501be51497"
+  url "https://ghproxy.com/https://github.com/simonwhitaker/gibo/archive/refs/tags/v3.0.8.tar.gz"
+  sha256 "6402e74267edf595b222a5a0bdd431fe734df8fde0c7909e7c0f042c37712dd5"
   license "Unlicense"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fc9a70a4b9234a386cdafbc25c18d871b6a03a4cc175d17951183e3cee2f1e67"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2c39916cb2044cf8862b62b165f262b6a357cd0cf73c6e48a9a9b00d897606ed"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c39916cb2044cf8862b62b165f262b6a357cd0cf73c6e48a9a9b00d897606ed"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2c39916cb2044cf8862b62b165f262b6a357cd0cf73c6e48a9a9b00d897606ed"
-    sha256 cellar: :any_skip_relocation, sonoma:         "18054c169300316a66bd57f84401d42d31096b752f89cf85327b62269c69ed65"
-    sha256 cellar: :any_skip_relocation, ventura:        "0298262a6c11885b4777c350565df41865b71dbbdcecb037370e3ca0e0a42464"
-    sha256 cellar: :any_skip_relocation, monterey:       "0298262a6c11885b4777c350565df41865b71dbbdcecb037370e3ca0e0a42464"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0298262a6c11885b4777c350565df41865b71dbbdcecb037370e3ca0e0a42464"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10b4c3bffaa2cdfb2fc0c5076b13f73315f98c7ebd4e1e915ec5f0780cdc593c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "837eb02cf6d38ed6ac035c87469c908d98b4ef3b1d3082020339c94d22cc9278"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "66fcbcecb80a0cc49ec953138634a6ab043189536a0fe1f8f613cd0822d28102"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "04b5bc27a88d9c96fbdd6486a4aab3b80ab38b5b975712304e9358a5a4fd6473"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2f56ce01fbdf94890a9f4eb5fbe2ad579d34e8ef985cf0b230f1d9b7d01828ca"
+    sha256 cellar: :any_skip_relocation, ventura:        "73bca56e297aa24ca2f4e6e7a7bd0c7b3c582fcdab852db022fcc1febd3df7bc"
+    sha256 cellar: :any_skip_relocation, monterey:       "427eae7b50aff8ea4f4e6c9c2d9a7b58e5f6da8dcb009aaebc4ce76b6bbca56c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cddc7fe175e6daea6632828046b77b67fa81b103d998d43b38f3fe1a8d6bdd8c"
   end
 
   depends_on "go" => :build

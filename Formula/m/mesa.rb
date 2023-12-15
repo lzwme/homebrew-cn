@@ -5,8 +5,8 @@ class Mesa < Formula
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   stable do
-    url "https://mesa.freedesktop.org/archive/mesa-23.3.0.tar.xz"
-    sha256 "50f729dd60ed6335b989095baad81ef5edf7cfdd4b4b48b9b955917cb07d69c5"
+    url "https://mesa.freedesktop.org/archive/mesa-23.3.1.tar.xz"
+    sha256 "6e48126d70fdb3f20ffeb246ca0c2e41ffdc835f0663a03d4526b8bf5db41de6"
 
     # Backport macOS build fixes from HEAD.
     # Ref: https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/25992
@@ -24,13 +24,13 @@ class Mesa < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "bac88585d678b4e788ba6e75385fd22c1d2c86e5470767837f54bd9baf9c6951"
-    sha256 arm64_ventura:  "856916431fd8edff1a97acf89e8b9838f993456e14d4c4094169cf8f49ef6a7f"
-    sha256 arm64_monterey: "619d8414db8c61b3cd413310e0fcf6f0e25effeaa89c9ce841a11e69fbdd83ac"
-    sha256 sonoma:         "a57889a610f965e34546010f80da300aa2c0e59047826c42d6cdef9e284cb756"
-    sha256 ventura:        "1dc93e7411330093c0b6d39fdf8e9abce58cbcd9eeb5cc8ee986643bdf32149c"
-    sha256 monterey:       "ed1ce8abca5ad84aba81adeb4c8bbf83cc72a0e25217fae2264fd98ec610515e"
-    sha256 x86_64_linux:   "7f4a07bbe1f2b91c90c42b363c2305ecc9ed7dfc1ca62093f6943599e5bf38c7"
+    sha256 arm64_sonoma:   "af5711dd7af079563524818ae0131a1355599958e13d0fa5c9dc0f29a1cf0db5"
+    sha256 arm64_ventura:  "38121fa2cd61bbb4053b594484f38e4fb76c3a1739d29ab807c7392264af8aad"
+    sha256 arm64_monterey: "1711a0194b20dc52f57e4793537b76381dcd0adf08dc5fca70e6e3e74273b204"
+    sha256 sonoma:         "b928e98ebfbe12b6409253c0986c2ffd7afc72b6f0b6c73858278fb11e46eaf7"
+    sha256 ventura:        "348d86a68e5c0aed10a4aeb0ae8e8aa4897a5339243d66d67ae9df87915d5966"
+    sha256 monterey:       "d688cc6367f929a46dad999f2933a2e9b2f417ed41c6d768b373d5b2f3716a1c"
+    sha256 x86_64_linux:   "ffd055d694b7ceb12b3e0fd8cf19c30348fb37ea8f23ef6f632738b51301d991"
   end
 
   depends_on "bison" => :build # can't use from macOS, needs '> 2.3'

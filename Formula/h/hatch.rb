@@ -3,18 +3,18 @@ class Hatch < Formula
 
   desc "Modern, extensible Python project management"
   homepage "https://hatch.pypa.io/latest/"
-  url "https://files.pythonhosted.org/packages/19/a2/53530f20f27bc9a3db11dce22d8d8a441c36bb92c171b317323005b9f5aa/hatch-1.8.0.tar.gz"
-  sha256 "ab2b90888111b12d8baf0b7de3c99c5705f693858a0f76a51b872ed265a9785f"
+  url "https://files.pythonhosted.org/packages/bd/71/3465bb587b551ddcc1c03bb045a6c1d7424db959bed77ed8abb85eca48b4/hatch-1.8.1.tar.gz"
+  sha256 "fdc574184dcb1d52a63a3cfd08431bf674ad3be2fd7316cbf5fb6d4bdbc3032f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f00afcc6f39996310a4b039e664474a0dc482baa2ab02edfb0d3e047847e44d2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "68d609ab9620312d7312c5dab1bb9275401f57c61c6712629eda51d78456a801"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6bac93256dd6ebe5f95c784000f5b56fe8969304b83aa73b01783f5c3d8e1cf3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "95f1364dcf03e376c58f63897a7ebb345eaf11c9329805820cd8725b5b1ce03b"
-    sha256 cellar: :any_skip_relocation, ventura:        "193b20f9e1e0b57541d83643ee7e6d1893513d5afa460e3a0b163e55834bcab8"
-    sha256 cellar: :any_skip_relocation, monterey:       "525d4d6ca2e7de986d283167bae766609bd093d09d76d4fb752258e0fb069f1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c705010c5e0270c7c368542ff3a9d8514ebe31d4539cfd28da44f5ba2c4d26ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fe905f5b4f059530f1cca454bd3aaf82d32e77464d0a95c486a88a383c0b07e3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5655aa7c4f2ce64fb32e84f2f46b50f8569fa7e0f17166358042552062ec2d7c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1a67da54495914d055bbecfb84680f60a82e4b4c9f6b87aa0360da605339e787"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4c26f6724072782fd4fa179b6ae4fe29005cc1223e9b55a724cb99169a7591b6"
+    sha256 cellar: :any_skip_relocation, ventura:        "adaed9e0f4a15e2d591cff7cec5a8333d3a94a44ab10e431f45bf484cb3d48a7"
+    sha256 cellar: :any_skip_relocation, monterey:       "702e9bbdfeabe21894411842cdbdc9cb6bcda403f3be8d1ed59de04d20d9f8aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf344aea800379e0065c448479b256effd2c5a397d0afb8c374d688fb7e42cd4"
   end
 
   depends_on "keyring"

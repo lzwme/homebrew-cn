@@ -3,19 +3,19 @@ class Ptpython < Formula
 
   desc "Advanced Python REPL"
   homepage "https://github.com/prompt-toolkit/ptpython"
-  url "https://files.pythonhosted.org/packages/3f/dc/118d1dfd22e5274f3cc341cb3c92b128dba6c47d2c8749d213bf6b7d1e16/ptpython-3.0.24.tar.gz"
-  sha256 "6bc48211c0f6b5fc1ccfe617485167070311d7c79014eb9c06984e90802b54b0"
+  url "https://files.pythonhosted.org/packages/66/51/a86ee34f068e71a12ba611b69f327545606b138042f5b2562d0992c2631d/ptpython-3.0.25.tar.gz"
+  sha256 "887f0a91a576bc26585a0dcec41cd03f004ac7c46a2c88576c87fc51d6c06cd7"
   license "BSD-3-Clause"
   head "https://github.com/prompt-toolkit/ptpython.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4060c74dfa08fe09093aa717fc7cb7fa122339208b49caf043c518279e4c9cd4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5d684d442be1add09c9f4ee0521b8b42de192d3b7ed2281caa74b5372616121d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6b8a8aa28f1ee4d5ca4af284b2fa01a778afd22d31f3aeaca1026d84c45cc5a8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "65ff46af0a3b90d56156cc0063e05e6c4469dce1069181ece51d5fdc5def03cb"
-    sha256 cellar: :any_skip_relocation, ventura:        "3d9aa1229ed5b34be3d2db377f62367305a8dfd7442a8323d6860415c3c6fdc3"
-    sha256 cellar: :any_skip_relocation, monterey:       "097e167f29fdf1371a912500871eb2312f953c0b47f1f09c67b1dc434cb4220d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e114d13f3557e48aae6eb666f12d89525f7e552dadfd1563bea58ab06b3046ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "04b14d3a1b599721dc41360f375c5029059d8a08242d16a3495249a03c8726fb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cfddce9f859b9b47ebbcd9d30326e64888a2f3a4b248c6a6cb834369edc81d6f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f49614db1e7efe490e6fd8ffec1ca37f664ae56abf47094f77f3ca258f671431"
+    sha256 cellar: :any_skip_relocation, sonoma:         "679cff5d2226e7dfc593a3607ab9ba692308e4ddcc50fae06a6ed7dedc498a04"
+    sha256 cellar: :any_skip_relocation, ventura:        "f4a06bef4a18845e85af099a63e976b3971b4c1ddb17a89535963d7de8c7607f"
+    sha256 cellar: :any_skip_relocation, monterey:       "8d944463f583bd7752e5b62fd1da986a83eae3c74882fcdcba0b81432e30067c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fca01b24dbecbaa86d9402ca633bdca179d9e24af665fd034b0872186414d7fe"
   end
 
   depends_on "pygments"

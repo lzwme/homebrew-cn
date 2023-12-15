@@ -3,12 +3,12 @@ require "language/node"
 class Astgen < Formula
   desc "Generate AST in json format for JS/TS"
   homepage "https://github.com/joernio/astgen"
-  url "https://ghproxy.com/https://github.com/joernio/astgen/archive/refs/tags/v3.12.0.tar.gz"
-  sha256 "7aa703c75a59d783ed6f5241356fc4d91d21e913243e85c0a904eebb0a2aab1b"
+  url "https://ghproxy.com/https://github.com/joernio/astgen/archive/refs/tags/v3.13.0.tar.gz"
+  sha256 "ad5ea372399557431889fd2d0399542d33ed9a789a64d45180c8925cc76ef7cb"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fe09884d550d93b045f19e7b1456c2dfdeb45fed53c432d646876bc801edc15b"
+    sha256 cellar: :any_skip_relocation, all: "2d663dbadfd9d5e3e2e0ecb0da5c402d6e691960b1f7f3a7af0a2a42b01439b5"
   end
 
   depends_on "node"
