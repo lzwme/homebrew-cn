@@ -52,7 +52,6 @@ class PerconaServer < Formula
   end
 
   conflicts_with "mariadb", "mysql", because: "percona, mariadb, and mysql install the same binaries"
-  conflicts_with "percona-xtrabackup", because: "both install a `kmip.h`"
 
   # https://bugs.mysql.com/bug.php?id=86711
   # https://github.com/Homebrew/homebrew-core/pull/20538

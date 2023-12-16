@@ -80,7 +80,7 @@ class Pytorch < Formula
     # Update references to shared libraries
     inreplace "torch/__init__.py" do |s|
       s.sub!(/here = os.path.abspath\(__file__\)/, "here = \"#{lib}\"")
-      s.sub!(/get_file_path\('torch', 'bin', 'torch_shm_manager'\)/, "\"#{bin}/torch_shm_manager\"")
+      s.sub!("get_file_path('torch', 'bin', 'torch_shm_manager')", "\"#{bin}/torch_shm_manager\"")
     end
 
     inreplace "torch/utils/cpp_extension.py", "_TORCH_PATH = os.path.dirname(os.path.dirname(_HERE))",

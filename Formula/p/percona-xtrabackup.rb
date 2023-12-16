@@ -56,8 +56,6 @@ class PerconaXtrabackup < Formula
     depends_on "procps"
   end
 
-  conflicts_with "percona-server", because: "both install a `kmip.h`"
-
   fails_with :gcc do
     version "6"
     cause "The build requires GCC 7.1 or later."

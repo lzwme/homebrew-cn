@@ -35,7 +35,7 @@ class MinioMc < Formula
       system "go", "build", *std_go_args(output: bin/"mc")
     else
       minio_release = stable.specs[:tag]
-      minio_version = minio_release.gsub(/RELEASE\./, "").chomp.gsub(/T(\d+)-(\d+)-(\d+)Z/, 'T\1:\2:\3Z')
+      minio_version = minio_release.gsub("RELEASE.", "").chomp.gsub(/T(\d+)-(\d+)-(\d+)Z/, 'T\1:\2:\3Z')
       proj = "github.com/minio/mc"
       ldflags = %W[
         -X #{proj}/cmd.Version=#{minio_version}

@@ -32,7 +32,7 @@ class Crystal < Formula
   head do
     url "https://github.com/crystal-lang/crystal.git", branch: "master"
 
-    uses_from_macos "libffi"  # for the interpreter
+    uses_from_macos "libffi" # for the interpreter
 
     resource "shards" do
       url "https://github.com/crystal-lang/shards.git", branch: "master"

@@ -46,22 +46,22 @@ class Millet < Formula
     parse_content_length = lambda { |header_part|
       content_length_header = header_part.split("\r\n")[0]
       content_length = content_length_header.split(":")[1].to_i
-      return content_length
+      content_length
     }
 
     read_header_part = lambda { |pipe|
-      return pipe.readline("\r\n\r\n")
+      pipe.readline("\r\n\r\n")
     }
 
     read_response = lambda { |pipe|
       header_part = read_header_part.call(pipe)
       content_length = parse_content_length.call(header_part)
-      return JSON.parse(pipe.readpartial(content_length))
+      JSON.parse(pipe.readpartial(content_length))
     }
 
     json_rpc_message = lambda { |msg|
       msg_string = msg.to_json
-      return "Content-Length: #{msg_string.length}\r\n\r\n" + msg_string
+      "Content-Length: #{msg_string.length}\r\n\r\n" + msg_string
     }
 
     send_message = lambda { |pipe, msg|

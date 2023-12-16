@@ -13,13 +13,14 @@ class Vice < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "f385fcf101519c31d6caf155461008950f4258f10bd9c07b1caa1507801f8068"
-    sha256 arm64_ventura:  "45c2e5dc82f00a9af1f842952d973006a9271d1f95aa453daade60590c350868"
-    sha256 arm64_monterey: "56d9320d1308a310dfb61dd1f126c5c6aa4fcafb7624be35c089aac350efd715"
-    sha256 sonoma:         "9413ef0f9df6e275973281fcba2af9acb8a8c63b8129bd460b94d03cdd963516"
-    sha256 ventura:        "999c76296b09f407237461816f845f7277ec64e3ed33ffc65fb6879967d1d8b7"
-    sha256 monterey:       "fd062a03b9dca57b8a2da3e4a2183f3724fb9103297a5b9f2e377c86798ea9f4"
-    sha256 x86_64_linux:   "8e63953db7b910bc8ad0e8ebcd4690d7e978be37bf0d6976e2aa9b39589bc7e4"
+    rebuild 1
+    sha256 arm64_sonoma:   "39c8dc172e0dfc304fb76849778079cee5f4389857388d1a5585cb9d9622d110"
+    sha256 arm64_ventura:  "d2ccbb52caaaeaf1d09809fe69bfa78486b5b197fd5aaf3f95b43822880e9436"
+    sha256 arm64_monterey: "7a6ecdee0102c7804a5a936a4a6576039dfb966499c44a3e73be7d142b79a515"
+    sha256 sonoma:         "4180e55847f87f0b2e7d4fd9b5ff6d97b2a7e117f817e3edbf7b2f8f7d70f376"
+    sha256 ventura:        "f1fa4037f0688150acba2a8e6f546817d530dfab0f24fb16744f2b8181ed22c5"
+    sha256 monterey:       "0cbd22236550ec4d35246a355bd1c88d06d43abaa14c39c554172d08ea80c55a"
+    sha256 x86_64_linux:   "745e3282856808e1fc623dafd4a324e797661d7af6940081994e56cd22afd3d4"
   end
 
   depends_on "autoconf" => :build
@@ -31,12 +32,10 @@ class Vice < Formula
   depends_on "yasm" => :build
 
   depends_on "adwaita-icon-theme"
-  depends_on "ffmpeg@4"
   depends_on "flac"
   depends_on "giflib"
   depends_on "glew"
   depends_on "gtk+3"
-  depends_on "jpeg-turbo"
   depends_on "lame"
   depends_on "libogg"
   depends_on "libpng"
@@ -49,6 +48,7 @@ class Vice < Formula
 
   on_linux do
     depends_on "alsa-lib"
+    depends_on "pulseaudio"
   end
 
   def install
@@ -56,16 +56,14 @@ class Vice < Formula
     system "./configure", *std_configure_args,
                           "--disable-arch",
                           "--disable-pdf-docs",
-                          "--enable-native-gtk3ui",
+                          "--enable-gtk3ui",
                           "--enable-midi",
                           "--enable-lame",
-                          "--enable-external-ffmpeg",
                           "--enable-ethernet",
                           "--enable-cpuhistory",
                           "--with-flac",
                           "--with-vorbis",
                           "--with-gif",
-                          "--with-jpeg",
                           "--with-png"
     system "make", "install"
   end

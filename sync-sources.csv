@@ -597,7 +597,7 @@ Homebrew-homebrew-core/Formula/b/buku.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bulk_extractor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bullet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bumpversion.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/b/bundler-completion.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/bundler-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bundletool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bupstash.rb, Homebrew/homebrew-core, 1
@@ -1967,7 +1967,7 @@ Homebrew-homebrew-core/Formula/g/gedit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/geeqie.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gegl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gel.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/gem-completion.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gem-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gemgen.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/genact.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/genders.rb, Homebrew/homebrew-core, 1
@@ -4525,6 +4525,7 @@ Homebrew-homebrew-core/Formula/o/openrct2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openrtsp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opensaml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opensc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/opensca-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opensearch-dashboards.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opensearch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openshift-cli.rb, Homebrew/homebrew-core, 0
@@ -5227,7 +5228,7 @@ Homebrew-homebrew-core/Formula/r/rack.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/radamsa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/radare2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ragel.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/r/rails-completion.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/rails-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/railway.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rain.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rainbarf.rb, Homebrew/homebrew-core, 1
@@ -5439,7 +5440,7 @@ Homebrew-homebrew-core/Formula/r/rttr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rtx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rubberband.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/ruby-build.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/ruby-completion.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/ruby-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby-install.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/ruby@2.6.rb, Homebrew/homebrew-core, 0
