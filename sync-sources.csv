@@ -4104,7 +4104,6 @@ Homebrew-homebrew-core/Formula/m/mplayer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mplayershell.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mpop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mprocs.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mps-youtube.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mpssh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mpv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mqttui.rb, Homebrew/homebrew-core, 1
@@ -6886,6 +6885,7 @@ Homebrew-homebrew-core/Formula/y/yder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/ydiff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yelp-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yetris.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/y/yewtube.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yj.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/ykclient.rb, Homebrew/homebrew-core, 0
@@ -12942,6 +12942,8 @@ Homebrew-homebrew-cask-fonts/Casks/font-playfair-display-sc.rb, Homebrew/homebre
 Homebrew-homebrew-cask-fonts/Casks/font-playfair-display.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-playfair.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-playpen-sans.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-playwrite-co.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-playwrite-fr-trad.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-plemol-jp-hs.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-plemol-jp-nf.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-plemol-jp.rb, Homebrew/homebrew-cask-fonts, 1

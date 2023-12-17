@@ -3,24 +3,24 @@ class Vineyard < Formula
 
   desc "In-memory immutable data manager. (Project under CNCF)"
   homepage "https://v6d.io"
-  url "https://ghproxy.com/https://github.com/v6d-io/v6d/releases/download/v0.18.2/v6d-0.18.2.tar.gz"
-  sha256 "1255ca4ebeb5da34e33cb82a8d5530a5fc6b5fcebfb52d1b085058b2eab4a53c"
+  url "https://ghproxy.com/https://github.com/v6d-io/v6d/releases/download/v0.19.1/v6d-0.19.1.tar.gz"
+  sha256 "8da78864003cc559825cde30aa1de41ecf5c653ccc23a699c15a5b02796e86ca"
   license "Apache-2.0"
-  revision 3
 
   bottle do
-    sha256                               arm64_sonoma:   "f02de5281f928f585379e6c855246023659df8a9013351c310ec12e8968bbc67"
-    sha256                               arm64_ventura:  "85b89cc23d7c57be6c0fccf1e03ba9b669040a1a3c60e1d50eff0d30e2af7f32"
-    sha256                               arm64_monterey: "ced00127e9e7c8808e842dbcfe29df49040bb0bbaca3cbdb52490c557e7a93e0"
-    sha256                               sonoma:         "915c3620b457e8abcb5dc382813f825613fb9dbea43174670f56cc2b43b2cefc"
-    sha256                               ventura:        "b7996346fce45cb2493ae08f3f242312d281122675e1ec3d6285cff4b47c9ceb"
-    sha256                               monterey:       "77a0e412c2e916c83dcc08a333255f6c77a1714eda5207a53d4c6e6b0e9a2aee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6962835483cf7d3b7c28626e6af890d310c91fd546925ab0fd0dcf700e8f320e"
+    sha256                               arm64_sonoma:   "b2c9512b1342f9318c6cec60f20816e648d45836178131d2c88bf6ae54ae8354"
+    sha256                               arm64_ventura:  "a1a3c6c472dc6c41f0bd5e64a3826589f7cc66455e233fcb841552374afd3f3c"
+    sha256                               arm64_monterey: "fa1485ae55426276487933f01a7b84beebe3cd6b262b2fb6598fa6ed8cf61745"
+    sha256                               sonoma:         "076e6c63f4da6bc7511c3ac0de5db66da910111c820963a6df18ac29ec915bf7"
+    sha256                               ventura:        "dceb8508aa147eaafbc2da2157035f889799092365ab621d35f4cb34ffbdf5d8"
+    sha256                               monterey:       "bfc9892b02ded35fb3702d195b34b8aa93bcbbe8a6dd6c64a982c93cd60febd6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3da06566fbeb1903ee734e5b7493dd6264c931c2fd52f91040c87415a08e73f0"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "llvm" => [:build, :test]
-  depends_on "python@3.11" => :build
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12" => :build
   depends_on "apache-arrow"
   depends_on "boost"
   depends_on "etcd"
@@ -37,8 +37,11 @@ class Vineyard < Formula
 
   fails_with gcc: "5"
 
+  # upstream issue report, https://github.com/v6d-io/v6d/issues/1652
+  patch :DATA
+
   def install
-    python = "python3.11"
+    python = "python3.12"
     # LLVM is keg-only.
     ENV.prepend_path "PYTHONPATH", Formula["llvm"].opt_prefix/Language::Python.site_packages(python)
 
@@ -123,3 +126,22 @@ class Vineyard < Formula
     Process.kill("HUP", vineyardd_pid)
   end
 end
+
+__END__
+diff --git a/modules/graph/CMakeLists.txt b/modules/graph/CMakeLists.txt
+index 2e9e69f..781b11c 100644
+--- a/modules/graph/CMakeLists.txt
++++ b/modules/graph/CMakeLists.txt
+@@ -63,8 +63,10 @@ file(GLOB_RECURSE GRAPH_SRC_FILES "${CMAKE_CURRENT_SOURCE_DIR}" "fragment/*.cc"
+
+ add_library(vineyard_graph ${GRAPH_SRC_FILES} ${powturbo-target-objects})
+ target_add_debuginfo(vineyard_graph)
+-target_compile_options(vineyard_graph PUBLIC "-fopenmp")
+-target_link_options(vineyard_graph PUBLIC "-fopenmp")
++if(NOT APPLE)
++    target_compile_options(vineyard_graph PUBLIC "-fopenmp")
++    target_link_options(vineyard_graph PUBLIC "-fopenmp")
++endif()
+ target_include_directories(vineyard_graph PUBLIC ${MPI_CXX_INCLUDE_PATH})
+
+ find_package(Boost COMPONENTS leaf)

@@ -1,19 +1,19 @@
 class Pandoc < Formula
   desc "Swiss-army knife of markup format conversion"
   homepage "https://pandoc.org/"
-  url "https://ghproxy.com/https://github.com/jgm/pandoc/archive/refs/tags/3.1.10.tar.gz"
-  sha256 "a37832d5a462e058b9d98c2b2a5b6c6d3d45706b7850d26d11a4b9c17e14c6dc"
+  url "https://ghproxy.com/https://github.com/jgm/pandoc/archive/refs/tags/3.1.11.tar.gz"
+  sha256 "41d58aca9db2d0e3e27958f596a4cba23776ae38b0b29df5500e2bbd7fb833a9"
   license "GPL-2.0-or-later"
   head "https://github.com/jgm/pandoc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "88c5a2f0bb304ddbe68172cc498b7d12a091eab7d60959504901d43ad65a45d3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "71e8c865c303514c64cd0764b10f4285c700502a10d3612f99f51a7959d28548"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "987a3c1e0c529d88924f287c9cbbe167c925d587d343fe3fdcebef9bb6a97b06"
-    sha256 cellar: :any_skip_relocation, sonoma:         "25852a9c7342eed067028a0233dce64d3ad41866fef6cdc1a30e7fafe6337df4"
-    sha256 cellar: :any_skip_relocation, ventura:        "20bfc7993c08d676442dd6a0b86a81886c1a9d8b009106ef419fc4447b271656"
-    sha256 cellar: :any_skip_relocation, monterey:       "f86608ee1f28d240d7352fd017cc26898b8fc7dd3620237079c9a299ac74481d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13253774ddeb52f1e5fcbe1c21193ef88638741abe469544f5091f44c4168ac2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e7cb0e06452ef6b1b4055b562253d9193ca19cdaa8427373c41423ff6fea9813"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "068f7bbab56a583e18fbf131d25fb8e5e852393f75f59b372dee804226925bbf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4eec917bc84a9b6a2d2359996b841750022e3984ff370fa4da9676a19c4c5545"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4ac2c34aa9c5ff2e3f67704113146303702e7eb44b1256a7bbd95d8e04392b24"
+    sha256 cellar: :any_skip_relocation, ventura:        "709626f8446da8334086ffd3a7f9c89d2123da47d5ebbc5a64a1c6ad75a46522"
+    sha256 cellar: :any_skip_relocation, monterey:       "eec62355fe71b32e3c45d57405a39685d3e5bb0c53fb899692ce8c8da55548a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "352bc0503bd788c9af1519db15dd00eeb8bb2dd2d0953139b8b7fee8023ba1d6"
   end
 
   depends_on "cabal-install" => :build
