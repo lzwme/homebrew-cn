@@ -10,7 +10,7 @@
 
 ```bash
 # 安装 Homebrew
-/bin/bash -c "$(curl -fsSL https://ghproxy.com/raw.githubusercontent.com/lzwme/homebrew-cn/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://mirror.ghproxy.com/raw.githubusercontent.com/lzwme/homebrew-cn/HEAD/install.sh)"
 
 # 设置环境变量
 echo 'export HOMEBREW_NO_ANALYTICS=1' >> ~/.bash_profile
@@ -25,7 +25,7 @@ echo 'export HOMEBREW_API_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bo
 source ~/.bash_profile
 
 # 添加 `lzwme/homebrew-cn` 仓库源
-brew tap lzwme/cn --custom-remote https://ghproxy.com/github.com/lzwme/homebrew-cn
+brew tap lzwme/cn --custom-remote https://mirror.ghproxy.com/github.com/lzwme/homebrew-cn
 
 # 更新
 brew update
@@ -35,7 +35,7 @@ brew update
 
 ```bash
 # 添加当前仓库源
-brew tap lzwme/cn --custom-remote https://ghproxy.com/github.com/lzwme/homebrew-cn
+brew tap lzwme/cn --custom-remote https://mirror.ghproxy.com/github.com/lzwme/homebrew-cn
 
 # 搜索某个应用
 brew search switchhosts
@@ -44,7 +44,7 @@ brew search switchhosts
 brew install lzwme/cn/switchhosts
 
 # 也可以一次性从 rb 应用文件安装 (后续若有更新也只能手动检查判断)
-brew install https://ghproxy.com/github.com/lzwme/homebrew-cn/blob/main/Formula/<formula>.rb
+brew install https://mirror.ghproxy.com/github.com/lzwme/homebrew-cn/blob/main/Formula/<formula>.rb
 ```
 
 ## Sync From

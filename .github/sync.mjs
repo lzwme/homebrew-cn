@@ -10,6 +10,7 @@ const logger = getLogger("SYNC", isDebug ? "debug" : "log");
 const rootDir = path.resolve(fileURLToPath(import.meta.url), "../..");
 const CONFIG = {
   tmpDir: path.resolve("tmp"),
+  ghproxy: '',
   repo: [
     `Homebrew/homebrew-core`,
     `Homebrew/homebrew-cask`,
@@ -54,7 +55,7 @@ async function checkout(repo, dirName) {
     if (fs.existsSync(dirpath)) {
       execSync(`cd "${dirpath}" && git pull`, 'inherit', CONFIG.tmpDir);
     } else {
-      repo = isDebug ? `https://ghproxy.com//github.com/${repo}` : `https://github.com/${repo}.git`;
+      repo = isDebug ? `${CONFIG.ghproxy}/github.com/${repo}` : `https://github.com/${repo}.git`;
       execSync(`git clone --depth 1 ${repo} ${dirName}`, 'inherit', CONFIG.tmpDir)
     }
   } catch (error) {
@@ -106,10 +107,10 @@ async function syncDir(src, dest, repo = "") {
         content = content.replace(/(https:\/\/nodejs\.org\/dist\/)/gim, "https://registry.npmmirror.com/-/binary/node/");
       } else if (content.includes("github.com") || content.includes("githubusercontent.com")) {
         content = content
-          .replace(/(https:\/\/github\.com.+\/releases\/download\/)/gim, "https://ghproxy.com/$1")
-          .replace(/(https:\/\/github\.com.+\/archive\/)/gim, "https://ghproxy.com/$1")
-          .replace(/(https\:\/\/(raw|gist)\.githubusercontent\.com)/gim, "https://ghproxy.com/$1")
-          .replaceAll("https://ghproxy.com/https://ghproxy.com", "https://ghproxy.com");
+          .replace(/(https:\/\/github\.com.+\/releases\/download\/)/gim, `${CONFIG.ghproxy}/$1`)
+          .replace(/(https:\/\/github\.com.+\/archive\/)/gim, `${CONFIG.ghproxy}/$1`)
+          .replace(/(https\:\/\/(raw|gist)\.githubusercontent\.com)/gim, `${CONFIG.ghproxy}/$1`)
+          .replaceAll(`${CONFIG.ghproxy}/${CONFIG.ghproxy}`, CONFIG.ghproxy);
       }
 
       cacheItem.fixed = content !== rawContent;
@@ -156,11 +157,11 @@ async function gitCommit() {
 
 function updateInstall() {
   logger.info('starting update install.sh');
-  const installUrl = `${isDebug ? "https://ghproxy.com/" : ""}https://raw.githubusercontent.com/Homebrew/install/master/install.sh`;
+  const installUrl = `${isDebug ? `${CONFIG.ghproxy}/` : ""}https://raw.githubusercontent.com/Homebrew/install/master/install.sh`;
   execSync(`curl -fsSLO ${installUrl}`, "inherit", rootDir);
   const content = fs
     .readFileSync("install.sh", "utf8")
-    .replaceAll("https://github.com/Homebrew/", "https://ghproxy.com/github.com/Homebrew/");
+    .replaceAll("https://github.com/Homebrew/", `${CONFIG.ghproxy}/github.com/Homebrew/`);
   fs.writeFileSync("install.sh", content, "utf8");
 }
 async function updateReadme() {
